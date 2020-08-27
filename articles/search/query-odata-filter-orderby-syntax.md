@@ -19,12 +19,12 @@ translation.priority.mt:
 - ru-ru
 - zh-cn
 - zh-tw
-ms.openlocfilehash: 07f3e270e799753a582227abe53223bd05755eb5
-ms.sourcegitcommit: 1e6c13dc1917f85983772812a3c62c265150d1e7
+ms.openlocfilehash: d04311fce81d147a0830918aee1d4a2a9c0808d4
+ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/09/2020
-ms.locfileid: "86165215"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88923404"
 ---
 # <a name="odata-language-overview-for-filter-orderby-and-select-in-azure-cognitive-search"></a>Общие сведения о языке OData для `$filter` , `$orderby` и `$select` в Azure когнитивный Поиск
 
@@ -70,14 +70,14 @@ identifier ::= [a-zA-Z_][a-zA-Z_0-9]*
 
 Примеры путей к полям приведены в следующей таблице.
 
-| Путь к полю | Описание |
+| Путь к полю | Description |
 | --- | --- |
 | `HotelName` | Ссылается на поле индекса верхнего уровня |
 | `Address/City` | Ссылается на `City` вспомогательное поле сложного поля в индексе; `Address` тип `Edm.ComplexType` в этом примере |
 | `Rooms/Type` | Относится к `Type` вложенному полю сложного поля коллекции в индексе; `Rooms` тип `Collection(Edm.ComplexType)` в этом примере |
 | `Stores/Address/Country` | Относится к `Country` вложенному полю `Address` вложенного поля комплексной коллекции в индексе; `Stores` имеет тип `Collection(Edm.ComplexType)` и `Address` имеет тип `Edm.ComplexType` в этом примере. |
-| `room/Type` | Ссылается на `Type` вспомогательное поле `room` переменной диапазона, например в критерии фильтра`Rooms/any(room: room/Type eq 'deluxe')` |
-| `store/Address/Country` | Ссылается на `Country` подполе `Address` вспомогательного поля `store` переменной диапазона, например в критерии фильтра`Stores/any(store: store/Address/Country eq 'Canada')` |
+| `room/Type` | Ссылается на `Type` вспомогательное поле `room` переменной диапазона, например в критерии фильтра `Rooms/any(room: room/Type eq 'deluxe')` |
+| `store/Address/Country` | Ссылается на `Country` подполе `Address` вспомогательного поля `store` переменной диапазона, например в критерии фильтра `Stores/any(store: store/Address/Country eq 'Canada')` |
 
 Значение пути к полю различается в зависимости от контекста. В фильтрах поле пути к полю относится к значению *одного экземпляра* поля в текущем документе. В других контекстах, таких как **$OrderBy**, **$SELECT**или в [поле поиска в полном синтаксисе Lucene](query-lucene-syntax.md#bkmk_fields), путь к полю относится к самому полю. Это различие имеет некоторые последствия использования путей к полям в фильтрах.
 
@@ -91,25 +91,25 @@ Rooms/any(room: room/Type eq 'deluxe')
 
 ### <a name="using-field-paths"></a>Использование путей к полям
 
-Пути к полям используются во многих параметрах [интерфейсов API службы Azure когнитивный Поиск](https://docs.microsoft.com/rest/api/searchservice/). В следующей таблице перечислены все места, где их можно использовать, а также все ограничения на их использование.
+Пути к полям используются во многих параметрах [интерфейсов API службы Azure когнитивный Поиск](/rest/api/searchservice/). В следующей таблице перечислены все места, где их можно использовать, а также все ограничения на их использование.
 
 | API | Имя параметра | Ограничения |
 | --- | --- | --- |
-| [Создать](https://docs.microsoft.com/rest/api/searchservice/create-index) или [Обновить](https://docs.microsoft.com/rest/api/searchservice/update-index) индекс | `suggesters/sourceFields` | Нет |
-| [Создать](https://docs.microsoft.com/rest/api/searchservice/create-index) или [Обновить](https://docs.microsoft.com/rest/api/searchservice/update-index) индекс | `scoringProfiles/text/weights` | Может ссылаться только на поля с **возможностью поиска** |
-| [Создать](https://docs.microsoft.com/rest/api/searchservice/create-index) или [Обновить](https://docs.microsoft.com/rest/api/searchservice/update-index) индекс | `scoringProfiles/functions/fieldName` | Может ссылаться только на **фильтруемые** поля |
-| [Поиск](https://docs.microsoft.com/rest/api/searchservice/search-documents) | `search`Когда `queryType` имеет`full` | Может ссылаться только на поля с **возможностью поиска** |
-| [Поиск](https://docs.microsoft.com/rest/api/searchservice/search-documents) | `facet` | Может ссылаться только на поля с **аспектами** |
-| [Поиск](https://docs.microsoft.com/rest/api/searchservice/search-documents) | `highlight` | Может ссылаться только на поля с **возможностью поиска** |
-| [Поиск](https://docs.microsoft.com/rest/api/searchservice/search-documents) | `searchFields` | Может ссылаться только на поля с **возможностью поиска** |
-| [Предложение](https://docs.microsoft.com/rest/api/searchservice/suggestions) и [Автозаполнение](https://docs.microsoft.com/rest/api/searchservice/autocomplete) | `searchFields` | Может ссылаться только на поля, являющиеся частью средства [подбора](index-add-suggesters.md) |
-| [Поиск](https://docs.microsoft.com/rest/api/searchservice/search-documents), [предложение](https://docs.microsoft.com/rest/api/searchservice/suggestions)и [Автозаполнение](https://docs.microsoft.com/rest/api/searchservice/autocomplete) | `$filter` | Может ссылаться только на **фильтруемые** поля |
-| [Поиск](https://docs.microsoft.com/rest/api/searchservice/search-documents) и [предложение](https://docs.microsoft.com/rest/api/searchservice/suggestions) | `$orderby` | Может ссылаться только на поля, доступные для **сортировки** |
-| [Поиск](https://docs.microsoft.com/rest/api/searchservice/search-documents), [предложение](https://docs.microsoft.com/rest/api/searchservice/suggestions)и [Поиск](https://docs.microsoft.com/rest/api/searchservice/lookup-document) | `$select` | Может ссылаться только на **извлекаемые** поля |
+| [Создать](/rest/api/searchservice/create-index) или [Обновить](/rest/api/searchservice/update-index) индекс | `suggesters/sourceFields` | Нет |
+| [Создать](/rest/api/searchservice/create-index) или [Обновить](/rest/api/searchservice/update-index) индекс | `scoringProfiles/text/weights` | Может ссылаться только на поля с **возможностью поиска** |
+| [Создать](/rest/api/searchservice/create-index) или [Обновить](/rest/api/searchservice/update-index) индекс | `scoringProfiles/functions/fieldName` | Может ссылаться только на **фильтруемые** поля |
+| [Поиск](/rest/api/searchservice/search-documents) | `search` Когда `queryType` имеет `full` | Может ссылаться только на поля с **возможностью поиска** |
+| [Поиск](/rest/api/searchservice/search-documents) | `facet` | Может ссылаться только на поля с **аспектами** |
+| [Поиск](/rest/api/searchservice/search-documents) | `highlight` | Может ссылаться только на поля с **возможностью поиска** |
+| [Поиск](/rest/api/searchservice/search-documents) | `searchFields` | Может ссылаться только на поля с **возможностью поиска** |
+| [Предложение](/rest/api/searchservice/suggestions) и [Автозаполнение](/rest/api/searchservice/autocomplete) | `searchFields` | Может ссылаться только на поля, являющиеся частью средства [подбора](index-add-suggesters.md) |
+| [Поиск](/rest/api/searchservice/search-documents), [предложение](/rest/api/searchservice/suggestions)и [Автозаполнение](/rest/api/searchservice/autocomplete) | `$filter` | Может ссылаться только на **фильтруемые** поля |
+| [Поиск](/rest/api/searchservice/search-documents) и [предложение](/rest/api/searchservice/suggestions) | `$orderby` | Может ссылаться только на поля, доступные для **сортировки** |
+| [Поиск](/rest/api/searchservice/search-documents), [предложение](/rest/api/searchservice/suggestions)и [Поиск](/rest/api/searchservice/lookup-document) | `$select` | Может ссылаться только на **извлекаемые** поля |
 
 ## <a name="constants"></a>Константы
 
-Константы в OData — это литеральные значения заданного типа [EDM](https://docs.microsoft.com/dotnet/framework/data/adonet/entity-data-model) (EDM). Список поддерживаемых типов см. в разделе [Поддерживаемые типы данных](https://docs.microsoft.com/rest/api/searchservice/supported-data-types) когнитивный Поиск Azure. Константы типов коллекций не поддерживаются.
+Константы в OData — это литеральные значения заданного типа [EDM](/dotnet/framework/data/adonet/entity-data-model) (EDM). Список поддерживаемых типов см. в разделе [Поддерживаемые типы данных](/rest/api/searchservice/supported-data-types) когнитивный Поиск Azure. Константы типов коллекций не поддерживаются.
 
 В следующей таблице приведены примеры констант для каждого из типов данных, поддерживаемых Когнитивный поиск Azure.
 
@@ -243,6 +243,6 @@ select_expression ::= '*' | field_path(',' field_path)*
 
 - [Навигация с аспектами в Azure Когнитивный поиск](search-faceted-navigation.md)
 - [Фильтры в Когнитивный поиск Azure](search-filters.md)
-- [Поиск документов &#40;Azure Когнитивный поиск REST API&#41;](https://docs.microsoft.com/rest/api/searchservice/Search-Documents)
+- [Поиск документов &#40;Azure Когнитивный поиск REST API&#41;](/rest/api/searchservice/Search-Documents)
 - [Синтаксис запросов Lucene](query-lucene-syntax.md)
 - [Простой синтаксис запросов в Azure Когнитивный поиск](query-simple-syntax.md)

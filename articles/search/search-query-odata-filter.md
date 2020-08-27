@@ -19,12 +19,12 @@ translation.priority.mt:
 - ru-ru
 - zh-cn
 - zh-tw
-ms.openlocfilehash: 959adec9f74a8cda7fde941ccea7db75e981a650
-ms.sourcegitcommit: 3541c9cae8a12bdf457f1383e3557eb85a9b3187
+ms.openlocfilehash: 0f33b5a28d7c83be7e546c3f61bc517047c51312
+ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/09/2020
-ms.locfileid: "86201540"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88934860"
 ---
 # <a name="odata-filter-syntax-in-azure-cognitive-search"></a>Синтаксис $filter OData в Azure Когнитивный поиск
 
@@ -67,7 +67,7 @@ variable ::= identifier | field_path
 - Вызовы логических функций, включая:
   - `geo.intersects`, который проверяет, находится ли заданная точка в пределах заданного многоугольника. Дополнительные сведения см. [в статье геопространственные функции OData в Azure когнитивный Поиск](search-query-odata-geo-spatial-functions.md).
   - `search.in`, который сравнивает переменную поля или диапазона с каждым значением в списке значений. Дополнительные сведения см. [в разделе `search.in` функция OData в когнитивный Поиск Azure](search-query-odata-search-in-function.md).
-  - `search.ismatch`и `search.ismatchscoring` , которые выполняют операции полнотекстового поиска в контексте фильтра. Дополнительные сведения см. [в статье функции полнотекстового поиска OData в когнитивный Поиск Azure](search-query-odata-full-text-search-functions.md).
+  - `search.ismatch` и `search.ismatchscoring` , которые выполняют операции полнотекстового поиска в контексте фильтра. Дополнительные сведения см. [в статье функции полнотекстового поиска OData в когнитивный Поиск Azure](search-query-odata-full-text-search-functions.md).
 - Пути к полям или переменные диапазона типа `Edm.Boolean` . Например, если в индексе имеется логическое поле с именем `IsEnabled` и нужно вернуть все документы, в которых это поле имеет значение `true` , критерием фильтра может быть только имя `IsEnabled` .
 - Логические выражения в круглых скобках. Использование круглых скобок может помочь в явном определении порядка операций в фильтре. Дополнительные сведения о приоритете операторов OData по умолчанию см. в следующем разделе.
 
@@ -178,7 +178,7 @@ variable ::= identifier | field_path
     $filter=geo.distance(Location, geography'POINT(-122.131577 47.678581)') le 10
 ```
 
-Найти все гостиницы в заданном окне просмотра, описанные в виде многоугольника (где `Location` является полем типа EDM. GeographyPoint). Многоугольник должен быть замкнутым, то есть первый и последний наборы точек должны быть одинаковыми. Кроме того, [точки должны быть указаны в порядке против часовой стрелки](https://docs.microsoft.com/rest/api/searchservice/supported-data-types#Anchor_1).
+Найти все гостиницы в заданном окне просмотра, описанные в виде многоугольника (где `Location` является полем типа EDM. GeographyPoint). Многоугольник должен быть замкнутым, то есть первый и последний наборы точек должны быть одинаковыми. Кроме того, [точки должны быть указаны в порядке против часовой стрелки](/rest/api/searchservice/supported-data-types#Anchor_1).
 
 ```odata-filter-expr
     $filter=geo.intersects(Location, geography'POLYGON((-122.031577 47.578581, -122.031577 47.678581, -122.131577 47.678581, -122.031577 47.578581))')
@@ -214,7 +214,7 @@ variable ::= identifier | field_path
     $filter=Rooms/any(room: room/Tags/any(tag: search.in(tag, 'heated towel racks,hairdryer included', ','))
 ```
 
-Найти документы со словом waterfront. Этот запрос фильтрации идентичен [поисковому запросу](https://docs.microsoft.com/rest/api/searchservice/search-documents) с `search=waterfront`:
+Найти документы со словом waterfront. Этот запрос фильтрации идентичен [поисковому запросу](/rest/api/searchservice/search-documents) с `search=waterfront`:
 
 ```odata-filter-expr
     $filter=search.ismatchscoring('waterfront')
@@ -249,4 +249,4 @@ variable ::= identifier | field_path
 - [Фильтры в Когнитивный поиск Azure](search-filters.md)
 - [Общие сведения о языке выражений OData для Azure Когнитивный поиск](query-odata-filter-orderby-syntax.md)
 - [Справочник по синтаксису выражений OData для Azure Когнитивный поиск](search-query-odata-syntax-reference.md)
-- [Поиск документов &#40;Azure Когнитивный поиск REST API&#41;](https://docs.microsoft.com/rest/api/searchservice/Search-Documents)
+- [Поиск документов &#40;Azure Когнитивный поиск REST API&#41;](/rest/api/searchservice/Search-Documents)

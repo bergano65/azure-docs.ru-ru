@@ -6,12 +6,12 @@ ms.author: manishku
 ms.service: mysql
 ms.topic: conceptual
 ms.date: 6/30/2020
-ms.openlocfilehash: 079e3f9219d649d9740d38a8a8452e51b9d84acf
-ms.sourcegitcommit: d8b8768d62672e9c287a04f2578383d0eb857950
+ms.openlocfilehash: a2f319f7bbd3fa0c6c4efb7e225bfc85a76002f2
+ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/11/2020
-ms.locfileid: "88066412"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88919715"
 ---
 # <a name="azure-database-for-mysql-infrastructure-double-encryption"></a>Двойное шифрование инфраструктуры базы данных Azure для MySQL
 
@@ -62,6 +62,12 @@ ms.locfileid: "88066412"
 Для базы данных Azure для MySQL Поддержка двойного шифрования инфраструктуры с помощью ключа, управляемого службой, имеет следующие ограничения.
 
 * Поддержка этой функции ограничена **общего назначения** и **оптимизированными для памяти** ценовыми категориями.
+* Вы можете создать базу данных Azure для MySQL с включенным шифрованием инфраструктуры в следующих регионах:
+
+   * Восточная часть США
+   * Центрально-южная часть США
+   * Западная часть США 2
+   
 * * Эта функция поддерживается только в регионах и серверах, поддерживающих хранилище объемом до 16 ТБ. Список регионов Azure, поддерживающих хранилище объемом до 16 ТБ, см. в [документации по хранилищу](concepts-pricing-tiers.md#storage).
 
     > [!NOTE]

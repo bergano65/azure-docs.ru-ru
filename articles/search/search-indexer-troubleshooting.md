@@ -8,12 +8,12 @@ ms.author: magottei
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 11/04/2019
-ms.openlocfilehash: 79db94298d190f646393410ec73ba1a25bb48270
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 05d0cba2a3751ac010dc26f68137a31dd04c62ce
+ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85560387"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88935149"
 ---
 # <a name="troubleshooting-common-indexer-issues-in-azure-cognitive-search"></a>Устранение распространенных проблем с индексатором в Azure Когнитивный поиск
 
@@ -30,7 +30,7 @@ ms.locfileid: "85560387"
 >
 > IP-адрес службы поиска можно узнать, обратившись к полному доменному имени (например, `<your-search-service-name>.search.windows.net` ).
 >
-> Диапазон IP-адресов для `AzureCognitiveSearch` [тега службы](https://docs.microsoft.com/azure/virtual-network/service-tags-overview#available-service-tags) можно узнать с помощью [загружаемых файлов JSON](https://docs.microsoft.com/azure/virtual-network/service-tags-overview#discover-service-tags-by-using-downloadable-json-files) или через [API обнаружения тегов служб](https://docs.microsoft.com/azure/virtual-network/service-tags-overview#use-the-service-tag-discovery-api-public-preview). Диапазон IP-адресов обновляется еженедельно.
+> Диапазон IP-адресов для `AzureCognitiveSearch` [тега службы](../virtual-network/service-tags-overview.md#available-service-tags) можно узнать с помощью [загружаемых файлов JSON](../virtual-network/service-tags-overview.md#discover-service-tags-by-using-downloadable-json-files) или через [API обнаружения тегов служб](../virtual-network/service-tags-overview.md#use-the-service-tag-discovery-api-public-preview). Диапазон IP-адресов обновляется еженедельно.
 
 ### <a name="configure-firewall-rules"></a>Настройка правил брандмауэра
 
@@ -39,19 +39,19 @@ ms.locfileid: "85560387"
 Существует два варианта предоставления индексаторам доступа к этим ресурсам в таком экземпляре:
 
 * Отключите брандмауэр, разрешая доступ из **всех сетей** (если возможно).
-* Кроме того, можно разрешить доступ для IP-адреса службы поиска и диапазона IP-адресов `AzureCognitiveSearch` [тега службы](https://docs.microsoft.com/azure/virtual-network/service-tags-overview#available-service-tags) в правилах брандмауэра ресурса (ограничение диапазона IP-адресов).
+* Кроме того, можно разрешить доступ для IP-адреса службы поиска и диапазона IP-адресов `AzureCognitiveSearch` [тега службы](../virtual-network/service-tags-overview.md#available-service-tags) в правилах брандмауэра ресурса (ограничение диапазона IP-адресов).
 
 Сведения о настройке ограничений диапазона IP-адресов для каждого типа источника данных можно найти по следующим ссылкам:
 
-* [Хранилище Azure](https://docs.microsoft.com/azure/storage/common/storage-network-security#grant-access-from-an-internet-ip-range)
+* [Хранилище Azure](../storage/common/storage-network-security.md#grant-access-from-an-internet-ip-range)
 
-* [База данных Cosmos](https://docs.microsoft.com/azure/storage/common/storage-network-security#grant-access-from-an-internet-ip-range)
+* [База данных Cosmos](../storage/common/storage-network-security.md#grant-access-from-an-internet-ip-range)
 
-* [Azure SQL](https://docs.microsoft.com/azure/sql-database/sql-database-firewall-configure#create-and-manage-ip-firewall-rules)
+* [Azure SQL](../azure-sql/database/firewall-configure.md#create-and-manage-ip-firewall-rules)
 
 **Ограничение**. как указано в документации по службе хранилища Azure, ограничения диапазона IP-адресов будут работать только в том случае, если служба поиска и учетная запись хранения находятся в разных регионах.
 
-Функции Azure (которые могут использоваться в качестве [настраиваемых навыков веб-API](cognitive-search-custom-skill-web-api.md)) также поддерживают [ограничения IP-адресов](https://docs.microsoft.com/azure/azure-functions/ip-addresses#ip-address-restrictions). Список IP-адресов для настройки — это IP-адрес службы поиска и диапазон IP-адресов `AzureCognitiveSearch` тега службы.
+Функции Azure (которые могут использоваться в качестве [настраиваемых навыков веб-API](cognitive-search-custom-skill-web-api.md)) также поддерживают [ограничения IP-адресов](../azure-functions/ip-addresses.md#ip-address-restrictions). Список IP-адресов для настройки — это IP-адрес службы поиска и диапазон IP-адресов `AzureCognitiveSearch` тега службы.
 
 Сведения о доступе к данным в SQL Server на виртуальной машине Azure приведены [здесь](search-howto-connecting-azure-sql-iaas-to-azure-search-using-indexers.md)
 
@@ -61,13 +61,13 @@ ms.locfileid: "85560387"
 
 В таких случаях виртуальную машину Azure или управляемый экземпляр SQL можно настроить так, чтобы они находились в виртуальной сети. После этого Группа безопасности сети может быть настроена для фильтрации типа сетевого трафика, который может передаваться в подсетях виртуальной сети и сетевых интерфейсов.
 
-`AzureCognitiveSearch`Тег службы можно использовать непосредственно в [правилах NSG](https://docs.microsoft.com/azure/virtual-network/manage-network-security-group#work-with-security-rules) входящих подключений без необходимости поиска своего диапазона IP-адресов.
+`AzureCognitiveSearch`Тег службы можно использовать непосредственно в [правилах NSG](../virtual-network/manage-network-security-group.md#work-with-security-rules) входящих подключений без необходимости поиска своего диапазона IP-адресов.
 
 Дополнительные сведения о доступе к данным в управляемом экземпляре SQL см. [здесь](search-howto-connecting-azure-sql-mi-to-azure-search-using-indexers.md) .
 
 ### <a name="cosmosdb-indexing-isnt-enabled"></a>CosmosDB "индексирование" не включено
 
-Когнитивный поиск Azure имеет неявную зависимость от Cosmos DB индексирования. Если вы отключаете автоматическое индексирование в Cosmos DB, Azure Когнитивный поиск возвращает состояние "успешно", но не может индексировать содержимое контейнера. Процессы проверки параметров и включения индексирования описаны в статье [Управление индексированием в Azure Cosmos DB](https://docs.microsoft.com/azure/cosmos-db/how-to-manage-indexing-policy#use-the-azure-portal).
+Когнитивный поиск Azure имеет неявную зависимость от Cosmos DB индексирования. Если вы отключаете автоматическое индексирование в Cosmos DB, Azure Когнитивный поиск возвращает состояние "успешно", но не может индексировать содержимое контейнера. Процессы проверки параметров и включения индексирования описаны в статье [Управление индексированием в Azure Cosmos DB](../cosmos-db/how-to-manage-indexing-policy.md#use-the-azure-portal).
 
 ## <a name="document-processing-errors"></a>Ошибки обработки документов
 
@@ -108,11 +108,11 @@ api-key: [admin key]
 
 ### <a name="missing-documents"></a>Отсутствие документов
 
-Индексаторы находят документы из [источника данных](https://docs.microsoft.com/rest/api/searchservice/create-data-source). Иногда случается так, что в индексе отсутствует документ из источника данных, который должен быть индексирован. Такие ошибки могут возникать по нескольким распространенным причинам.
+Индексаторы находят документы из [источника данных](/rest/api/searchservice/create-data-source). Иногда случается так, что в индексе отсутствует документ из источника данных, который должен быть индексирован. Такие ошибки могут возникать по нескольким распространенным причинам.
 
 * Документ еще не был проиндексирован. Проверьте на портале, был ли индексатор успешно выполнен.
-* Проверьте значение [отслеживания изменений](https://docs.microsoft.com/rest/api/searchservice/create-data-source#data-change-detection-policies) . Если значение верхнего предела является датой, заданной в будущем, то индексатор будет пропущен для всех документов, имеющих дату меньше этого значения. Состояние отслеживания изменений индексатора можно узнать с помощью полей "Инитиалтраккингстате" и "Финалтраккингстате" в [состоянии индексатора](https://docs.microsoft.com/rest/api/searchservice/get-indexer-status#indexer-execution-result).
-* Нужный документ обновился уже после выполнения индексатора. Если индексатор выполняется по [расписанию](https://docs.microsoft.com/rest/api/searchservice/create-indexer#indexer-schedule), он через некоторое время будет выполнен снова и учтет нужный документ.
+* Проверьте значение [отслеживания изменений](/rest/api/searchservice/create-data-source#data-change-detection-policies) . Если значение верхнего предела является датой, заданной в будущем, то индексатор будет пропущен для всех документов, имеющих дату меньше этого значения. Состояние отслеживания изменений индексатора можно узнать с помощью полей "Инитиалтраккингстате" и "Финалтраккингстате" в [состоянии индексатора](/rest/api/searchservice/get-indexer-status#indexer-execution-result).
+* Нужный документ обновился уже после выполнения индексатора. Если индексатор выполняется по [расписанию](/rest/api/searchservice/create-indexer#indexer-schedule), он через некоторое время будет выполнен снова и учтет нужный документ.
 * Нужный документ исключается условиями [запроса](/rest/api/searchservice/create-data-source), который указан для этого источника данных. Индексаторы не могут индексировать документы, не являющихся частью источника данных.
-* [Сопоставления полей](https://docs.microsoft.com/rest/api/searchservice/create-indexer#fieldmappings) или [обогащение искусственного интеллекта](https://docs.microsoft.com/azure/search/cognitive-search-concept-intro) изменили документ, и он будет отличаться от предполагаемого.
-* Используйте [API поиска документа](https://docs.microsoft.com/rest/api/searchservice/lookup-document), чтобы найти нужный документ.
+* [Сопоставления полей](/rest/api/searchservice/create-indexer#fieldmappings) или [обогащение искусственного интеллекта](./cognitive-search-concept-intro.md) изменили документ, и он будет отличаться от предполагаемого.
+* Используйте [API поиска документа](/rest/api/searchservice/lookup-document), чтобы найти нужный документ.

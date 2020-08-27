@@ -3,12 +3,13 @@ title: Изменение данных — LUIS
 description: Узнайте, как изменить данные перед прогнозированием в службе "Распознавание речи" (LUIS).
 ms.topic: conceptual
 ms.date: 05/06/2020
-ms.openlocfilehash: 3a88739caa9b35679f10b0cb63a804e9464c871c
-ms.sourcegitcommit: f57297af0ea729ab76081c98da2243d6b1f6fa63
+ms.custom: devx-track-csharp
+ms.openlocfilehash: c675ac246f397b5949c870ad91ab936bbd92c7ef
+ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/06/2020
-ms.locfileid: "82872248"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88934673"
 ---
 # <a name="alter-utterance-data-before-or-during-prediction"></a>Изменение данных высказываний до или во время прогнозирования
 LUIS предоставляет способы управления высказыванием до или во время прогнозирования. Сюда входит [исправление орфографических](luis-tutorial-bing-spellcheck.md)ошибок и устранение проблем с часовым поясом для предварительно созданной [datetimeV2](luis-reference-prebuilt-datetimev2.md).
@@ -30,7 +31,7 @@ LUIS предоставляет способы управления высказ
 
 |Параметр|Значение|
 |--|--|
-|`spellCheck`|boolean|
+|`spellCheck`|Логическое|
 |`bing-spell-check-subscription-key`|Ключ конечной точки [API проверки орфографии Bing версии 7](https://azure.microsoft.com/services/cognitive-services/spell-check/)|
 
 Когда [API проверки орфографии Bing версии 7](https://azure.microsoft.com/services/cognitive-services/spell-check/) обнаруживает ошибку, из конечной точки возвращаются исходное выражение, исправленное выражение и прогнозирование.
@@ -80,7 +81,7 @@ API проверки орфографии Bing, используемый в LUIS
 В версии 3 `datetimeReference` определяет смещение часового пояса. Дополнительные сведения о [прогнозах v3](luis-migration-api-v3.md#v3-post-body).
 
 ### <a name="v2-prediction-api-to-alter-timezone"></a>API прогнозирования версии 2 для изменения часового пояса
-Часовой пояс исправляется путем добавления часового пояса пользователя к конечной точке с `timezoneOffset` помощью параметра, основанного на версии API. Значение параметра должно быть положительным или отрицательным числом в минутах для изменения времени.
+Часовой пояс исправляется путем добавления часового пояса пользователя к конечной точке с помощью `timezoneOffset` параметра, основанного на версии API. Значение параметра должно быть положительным или отрицательным числом в минутах для изменения времени.
 
 #### <a name="v2-prediction-daylight-savings-example"></a>Пример прогнозирования летнего времени на версии 2
 Если вам нужен возвращенный datetimeV2, чтобы настроить переход на летнее время, используйте параметр QueryString со значением +/-в минутах для запроса к [конечной точке](https://go.microsoft.com/fwlink/?linkid=2092356) .

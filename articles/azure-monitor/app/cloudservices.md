@@ -2,13 +2,14 @@
 title: Использование Application Insights для облачных служб Azure | Документация Майкрософт
 description: Эффективное отслеживание веб-ролей и рабочих ролей с помощью Application Insights
 ms.topic: conceptual
+ms.custom: devx-track-csharp
 ms.date: 09/05/2018
-ms.openlocfilehash: 2adcdcdc36fdd41b1f871acbea386beb1d7a9451
-ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
+ms.openlocfilehash: 2de853655524e99e958f043b7801ee73e937e7ad
+ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87318442"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88923863"
 ---
 # <a name="application-insights-for-azure-cloud-services"></a>Использование Application Insights для облачных служб Azure
 С помощью [Application Insights][start] можно отслеживать [приложения облачной службы Azure](https://azure.microsoft.com/services/cloud-services/) на предмет доступности, производительности, сбоев и использования, объединяя данные из пакета SDK Application Insights с данными [системы диагностики Azure](../platform/diagnostics-extension-overview.md) из облачных служб. Благодаря получаемым данным о производительности и эффективности работы приложения на практике вы можете принимать осознанные решения о направлении разработки в каждом жизненном цикле.
@@ -103,7 +104,7 @@ ms.locfileid: "87318442"
 
 1. Чтобы настроить **рабочие ролей**, сделайте следующее: 
 
-    a. Щелкните проект правой кнопкой мыши и выберите **Управление пакетами Nuget**.
+    а. Щелкните проект правой кнопкой мыши и выберите **Управление пакетами Nuget**.
 
     b. Добавьте [Application Insights для Windows Servers](https://www.nuget.org/packages/Microsoft.ApplicationInsights.WindowsServer/).
 
@@ -111,7 +112,7 @@ ms.locfileid: "87318442"
 
 1. Чтобы настроить пакет SDK для отправки данных в ресурс Application Insights, сделайте следующее:
 
-    a. В соответствующей функции запуска задайте ключ инструментирования, указанный в параметре конфигурации из файла *.cscfg*.
+    а. В соответствующей функции запуска задайте ключ инструментирования, указанный в параметре конфигурации из файла *.cscfg*.
  
     ```csharp
    
@@ -242,7 +243,7 @@ ms.locfileid: "87318442"
 
 Для рабочих ролей вы можете использовать пользовательский инициализатор телеметрии, чтобы задать атрибут общего контекста Operation.Id для всех данных телеметрии. Это позволит с первого взгляда понять, связаны ли сбой или задержка с некоторой зависимостью или ошибкой в коде. 
 
-Этот процесс описывается далее.
+Вот как это сделать.
 
 * [Настройте идентификатор корреляции в объекте CallContext](https://github.com/Microsoft/ApplicationInsights-Home/blob/master/Samples/AzureEmailService/WorkerRoleA/WorkerRoleA.cs#L36). В нашем примере мы используем идентификатор запроса как идентификатор корреляции.
 * Добавьте пользовательскую реализацию TelemetryInitializer, которая сохраняет в Operation.Id заданное ранее значение correlationId. Пример: [ItemCorrelationTelemetryInitializer](https://github.com/Microsoft/ApplicationInsights-Home/blob/master/Samples/AzureEmailService/WorkerRoleA/Telemetry/ItemCorrelationTelemetryInitializer.cs#L13).

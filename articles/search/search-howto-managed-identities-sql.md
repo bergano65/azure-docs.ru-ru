@@ -9,12 +9,12 @@ ms.devlang: rest-api
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 05/18/2020
-ms.openlocfilehash: 321c13e88cb09c7078a169c3e1666cf781ec7787
-ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
+ms.openlocfilehash: 8dabf69af8628bb0b168bfea94af5333df341423
+ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88553144"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88924135"
 ---
 # <a name="set-up-an-indexer-connection-to-azure-sql-database-using-a-managed-identity-preview"></a>Настройка подключения индексатора к базе данных SQL Azure с помощью управляемого удостоверения (Предварительная версия)
 
@@ -44,7 +44,7 @@ ms.locfileid: "88553144"
 
 При подключении к базе данных на следующем шаге вам потребуется учетная запись Azure Active Directory (Azure AD) с правами администратора на доступ к базе данных, чтобы вы могли предоставить службе поиска разрешение на доступ к базе данных.
 
-Выполните инструкции [здесь](https://docs.microsoft.com/azure/sql-database/sql-database-aad-authentication-configure?tabs=azure-powershell#provision-an-azure-active-directory-administrator-for-your-azure-sql-database-server), чтобы предоставить администратору учетной записи Azure AD доступ к базе данных.
+Выполните инструкции [здесь](../azure-sql/database/authentication-aad-configure.md?tabs=azure-powershell#provision-azure-ad-admin-sql-database), чтобы предоставить администратору учетной записи Azure AD доступ к базе данных.
 
 ### <a name="3---assign-the-search-service-permissions"></a>3\. Назначение разрешений службе поиска
 
@@ -97,9 +97,9 @@ ms.locfileid: "88553144"
 
 ### <a name="5---create-the-data-source"></a>5\. Создание источника данных
 
-[REST API](https://docs.microsoft.com/rest/api/searchservice/create-data-source), портал Azure и [пакет SDK для .NET](https://docs.microsoft.com/dotnet/api/microsoft.azure.search.models.datasource?view=azure-dotnet) поддерживают строку подключения управляемого удостоверения. Ниже приведен пример создания источника данных для индексации данных из базы данных SQL Azure с помощью [REST API](https://docs.microsoft.com/rest/api/searchservice/create-data-source) и строки подключения управляемой идентификации. Формат строки подключения управляемого удостоверения одинаков для REST API, пакета SDK для .NET и портал Azure.
+[REST API](/rest/api/searchservice/create-data-source), портал Azure и [пакет SDK для .NET](/dotnet/api/microsoft.azure.search.models.datasource?view=azure-dotnet) поддерживают строку подключения управляемого удостоверения. Ниже приведен пример создания источника данных для индексации данных из базы данных SQL Azure с помощью [REST API](/rest/api/searchservice/create-data-source) и строки подключения управляемой идентификации. Формат строки подключения управляемого удостоверения одинаков для REST API, пакета SDK для .NET и портал Azure.
 
-При создании источника данных с помощью [REST API](https://docs.microsoft.com/rest/api/searchservice/create-data-source)источник данных должен иметь следующие обязательные свойства:
+При создании источника данных с помощью [REST API](/rest/api/searchservice/create-data-source)источник данных должен иметь следующие обязательные свойства:
 
 * Свойство **name** — уникальное имя источника данных в службе поиска.
 * **type** — `azuresql`
@@ -109,7 +109,7 @@ ms.locfileid: "88553144"
         * *Initial Catalog|Database=**имя базы данных**;ResourceId=/subscriptions/**ИД подписки**/resourceGroups/**имя группы ресурсов**/providers/Microsoft.Sql/servers/**имя сервера SQL Server**/;Connection Timeout=**время ожидания подключения**;*
 * **container** указывает имя таблицы или представления, которые необходимо индексировать.
 
-Пример создания объекта SQL Azure в качестве источника данных с помощью [REST API](https://docs.microsoft.com/rest/api/searchservice/create-data-source):
+Пример создания объекта SQL Azure в качестве источника данных с помощью [REST API](/rest/api/searchservice/create-data-source):
 
 ```
 POST https://[service name].search.windows.net/datasources?api-version=2020-06-30
@@ -144,7 +144,7 @@ api-key: [admin key]
 }
 ```
 
-Дополнительные сведения о создании индексов см. в статье [Create Index](https://docs.microsoft.com/rest/api/searchservice/create-index) (Создание индекса).
+Дополнительные сведения о создании индексов см. в статье [Create Index](/rest/api/searchservice/create-index) (Создание индекса).
 
 ### <a name="7---create-the-indexer"></a>7\. Создание индексатора
 
@@ -169,13 +169,13 @@ api-key: [admin key]
 
 Этот индексатор будет выполняться каждые два часа (интервал расписания имеет значение "PT2H"). Чтобы запускать индексатор каждые 30 минут, задайте интервал "PT30M". Самый короткий интервал, который можно задать, составляет 5 минут. Расписание является необязательным. Если оно не указано, то индексатор выполняется только один раз при его создании. Однако индексатор можно запустить по запросу в любое время.   
 
-Дополнительные сведения об API создания индексатора см. в разделе [Создание индексатора](https://docs.microsoft.com/rest/api/searchservice/create-indexer).
+Дополнительные сведения об API создания индексатора см. в разделе [Создание индексатора](/rest/api/searchservice/create-indexer).
 
 Дополнительные сведения об определении расписаний индексаторов для Когнитивного поиска Azure см. [здесь](search-howto-schedule-indexers.md).
 
 ## <a name="troubleshooting"></a>Устранение неполадок
 
-Если при попытке индексатора подключиться к источнику данных появляется сообщение о том, что клиенту не разрешен доступ к серверу, ознакомьтесь с [общими ошибками индексатора](https://docs.microsoft.com/azure/search/search-indexer-troubleshooting).
+Если при попытке индексатора подключиться к источнику данных появляется сообщение о том, что клиенту не разрешен доступ к серверу, ознакомьтесь с [общими ошибками индексатора](./search-indexer-troubleshooting.md).
 
 ## <a name="see-also"></a>См. также раздел
 

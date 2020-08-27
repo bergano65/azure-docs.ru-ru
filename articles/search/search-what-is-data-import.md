@@ -8,12 +8,12 @@ ms.author: heidist
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 06/30/2020
-ms.openlocfilehash: 86982aa418433ecef6a81252363091714185fe22
-ms.sourcegitcommit: 3541c9cae8a12bdf457f1383e3557eb85a9b3187
+ms.openlocfilehash: 50c95dc9d045711cb6968b98957d255b4ca73d2c
+ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/09/2020
-ms.locfileid: "86202302"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88932769"
 ---
 # <a name="data-import-overview---azure-cognitive-search"></a>Общие сведения об импорте данных в Azure Когнитивный поиск
 
@@ -34,12 +34,12 @@ ms.locfileid: "86202302"
 
 Для загрузки одного или нескольких документов в индекс можно использовать следующие API-интерфейсы:
 
-+ [добавление, обновление и удаление документов (REST API)](https://docs.microsoft.com/rest/api/searchservice/AddUpdate-or-Delete-Documents);
-+ [класс indexAction](https://docs.microsoft.com/dotnet/api/microsoft.azure.search.models.indexaction?view=azure-dotnet) или [клаcс indexBatch](https://docs.microsoft.com/dotnet/api/microsoft.azure.search.models.indexbatch?view=azure-dotnet). 
++ [добавление, обновление и удаление документов (REST API)](/rest/api/searchservice/AddUpdate-or-Delete-Documents);
++ [класс indexAction](/dotnet/api/microsoft.azure.search.models.indexaction?view=azure-dotnet) или [клаcс indexBatch](/dotnet/api/microsoft.azure.search.models.indexbatch?view=azure-dotnet). 
 
 Инструментов для передачи данных через портал пока не существует.
 
-Общие сведения о каждой методологии см. в статье [Краткое руководство. Создание индекса когнитивный Поиск Azure с помощью PowerShell](search-create-index-rest-api.md) или [C#: создание индекса когнитивный Поиск для Azure с помощью пакета SDK для .NET](search-get-started-dotnet.md).
+Общие сведения о каждой методологии см. в статье [Краткое руководство. Создание индекса когнитивный Поиск Azure с помощью PowerShell](./search-get-started-powershell.md) или [C#: создание индекса когнитивный Поиск для Azure с помощью пакета SDK для .NET](search-get-started-dotnet.md).
 
 <a name="indexing-actions"></a>
 
@@ -52,7 +52,7 @@ ms.locfileid: "86202302"
 В пакете SDK для .NET упакуйте данные в `IndexBatch` объект. `IndexBatch`Инкапсулирует коллекцию `IndexAction` объектов, каждая из которых содержит документ и свойство, которое сообщает Azure когнитивный Поиск, какое действие выполнять с этим документом. Пример кода см. в [кратком руководстве по C#](search-get-started-dotnet.md).
 
 
-| @search.action | Описание | Необходимые поля для каждого документа | Примечания |
+| @search.action | Description | Необходимые поля для каждого документа | Примечания |
 | -------------- | ----------- | ---------------------------------- | ----- |
 | `upload` |Операция `upload` аналогична операции upsert, которая добавляет документ, если он новый, и обновляет либо заменяет его, если он уже существует. |Поле key, а также другие поля, которые вы хотите определить. |При обновлении или замене существующего документа все поля, не указанные в запросе, получат значение `null`. Это происходит, даже если для поля указано непустое значение. |
 | `merge` |Обновляет существующий документ с использованием указанных полей. Если документ не существует в индексе, объединение завершится ошибкой. |Поле key, а также другие поля, которые вы хотите определить. |Поля, указанные в запросе на объединение, заменяют собой существующие поля документа. В пакет SDK для .NET входят поля типа `DataType.Collection(DataType.String)` . В REST API сюда входят поля типа `Collection(Edm.String)` . Например, если документ содержит поле `tags` со значением `["budget"]` и вы выполняете операцию объединения со значением `["economy", "pool"]` для поля `tags`, в итоге поле `tags` примет значение `["economy", "pool"]`, а не `["budget", "economy", "pool"]`. |
@@ -61,7 +61,7 @@ ms.locfileid: "86202302"
 
 ### <a name="formulate-your-query"></a>Формулировка запроса
 
-Существует два способа [поиска в индексе с помощью REST API](https://docs.microsoft.com/rest/api/searchservice/Search-Documents). Один из них — отправка HTTP-запроса POST с текстом, содержащим объект JSON, в котором определены параметры запроса. Другой способ — отправка HTTP-запроса GET, содержащего URL-адрес, в котором определены параметры запроса. Обратите внимание, что в запросе POST предусмотрены [менее жесткие ограничения](https://docs.microsoft.com/rest/api/searchservice/Search-Documents) на размер параметров запроса, чем в запросе GET. Поэтому мы рекомендуем использовать запрос POST, за исключением особых случаев, когда удобнее использовать запрос GET.
+Существует два способа [поиска в индексе с помощью REST API](/rest/api/searchservice/Search-Documents). Один из них — отправка HTTP-запроса POST с текстом, содержащим объект JSON, в котором определены параметры запроса. Другой способ — отправка HTTP-запроса GET, содержащего URL-адрес, в котором определены параметры запроса. Обратите внимание, что в запросе POST предусмотрены [менее жесткие ограничения](/rest/api/searchservice/Search-Documents) на размер параметров запроса, чем в запросе GET. Поэтому мы рекомендуем использовать запрос POST, за исключением особых случаев, когда удобнее использовать запрос GET.
 
 Для POST и GET необходимо указать *имя службы*, *имя индекса*и *версию API* в URL-адресе запроса. 
 
@@ -98,7 +98,7 @@ ms.locfileid: "86202302"
 > [!TIP]
 > Многочисленные [примеры кода когнитивный Поиск Azure](https://github.com/Azure-Samples/?utf8=%E2%9C%93&query=search) включают в себя встроенные или готовые наборы данных, предлагающие простой способ начать работу. На портале также доступен пример индексатора и источника данных, представленного небольшим набором данных, связанных с недвижимостью (realestate-us-sample). При запуске предварительно настроенного индексатора с примером источника данных создается и загружается индекс с документами. Затем вы можете создать запрос к этому индексу, используя проводник поиска или программные средства.
 
-## <a name="see-also"></a>См. также раздел
+## <a name="see-also"></a>См. также
 
 + [Обзор индексатора](search-indexer-overview.md)
 + [Руководство по созданию первого индекса службы поиска Azure на портале](search-get-started-portal.md)

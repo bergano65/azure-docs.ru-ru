@@ -3,12 +3,12 @@ title: Балансировка нагрузки секций между нес�
 description: Описывает, как сбалансировать нагрузку секций между несколькими экземплярами приложения с помощью обработчика событий и пакета SDK концентраторов событий Azure.
 ms.topic: conceptual
 ms.date: 06/23/2020
-ms.openlocfilehash: ff68408be15d8160ea7ecd878a05441d82700f99
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.openlocfilehash: 8bf3f05b823a784f4f3fc2074719ed346f769f5e
+ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86512322"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88933799"
 ---
 # <a name="balance-partition-load-across-multiple-instances-of-your-application"></a>Балансировка нагрузки секций между несколькими экземплярами приложения
 Чтобы масштабировать приложение обработки событий, можно запустить несколько экземпляров приложения и распределить нагрузку между ними. В более ранних версиях [EventProcessorHost](event-hubs-event-processor-host.md) позволили сбалансировать нагрузку между несколькими экземплярами программы и событиями контрольной точки при получении. В более новых версиях (5,0 и выше) **евентпроцессорклиент** (.NET и Java) или **евенсубконсумерклиент** (Python и JavaScript) позволяют делать то же самое. Модель разработки упрощается с помощью событий. Подпишитесь на интересующие вас события, зарегистрировав обработчик событий.
@@ -78,7 +78,7 @@ ms.locfileid: "86512322"
 > Если вы используете хранилище BLOB-объектов Azure в качестве хранилища контрольных точек в среде, которая поддерживает другую версию пакета SDK для большого двоичного объекта хранилища, чем обычно доступно в Azure, необходимо использовать код, чтобы изменить версию API службы хранилища до определенной версии, поддерживаемой этой средой. Например, если вы используете [концентраторы событий в Azure Stack Hub версии 2002](/azure-stack/user/event-hubs-overview), самая высокая доступная версия для службы хранилища — версия 2017-11-09. В этом случае необходимо использовать код для настройки API службы хранилища до версии 2017-11-09. Пример назначения конкретной версии API хранилища см. в следующих примерах на сайте GitHub: 
 > - [.NET](https://github.com/Azure/azure-sdk-for-net/tree/master/sdk/eventhub/Azure.Messaging.EventHubs.Processor/samples/Sample10_RunningWithDifferentStorageVersion.cs). 
 > - [Java](https://github.com/Azure/azure-sdk-for-java/blob/master/sdk/eventhubs/azure-messaging-eventhubs-checkpointstore-blob/src/samples/java/com/azure/messaging/eventhubs/checkpointstore/blob/)
-> - [JavaScript](https://github.com/Azure/azure-sdk-for-js/blob/master/sdk/eventhub/eventhubs-checkpointstore-blob/samples/javascript) или [TypeScript](https://github.com/Azure/azure-sdk-for-js/blob/master/sdk/eventhub/eventhubs-checkpointstore-blob/samples/typescript)
+> - [JavaScript](https://github.com/Azure/azure-sdk-for-js/blob/master/sdk/eventhub/eventhubs-checkpointstore-blob/samples/javascript) или  [TypeScript](https://github.com/Azure/azure-sdk-for-js/blob/master/sdk/eventhub/eventhubs-checkpointstore-blob/samples/typescript)
 > - [Python](https://github.com/Azure/azure-sdk-for-python/blob/master/sdk/eventhub/azure-eventhub-checkpointstoreblob-aio/samples/)
 
 ## <a name="thread-safety-and-processor-instances"></a>Потокобезопасность и экземпляры процессора
@@ -88,7 +88,7 @@ ms.locfileid: "86512322"
 ## <a name="next-steps"></a>Дальнейшие действия
 См. следующие краткие руководства.
 
-- [.NET Core](get-started-dotnet-standard-send-v2.md)
+- [.NET Core](event-hubs-dotnet-standard-getstarted-send.md)
 - [Java](event-hubs-java-get-started-send.md)
-- [Python](get-started-python-send-v2.md)
-- [JavaScript](get-started-node-send-v2.md)
+- [Python](event-hubs-python-get-started-send.md)
+- [JavaScript](event-hubs-node-get-started-send.md)

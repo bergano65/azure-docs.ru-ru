@@ -5,15 +5,15 @@ author: normesta
 ms.subservice: data-lake-storage-gen2
 ms.service: storage
 ms.topic: conceptual
-ms.date: 07/21/2020
+ms.date: 08/26/2020
 ms.author: normesta
 ms.reviewer: jamesbak
-ms.openlocfilehash: 0309f4d07056e3986138139e10ab29faa675cfcd
-ms.sourcegitcommit: 269da970ef8d6fab1e0a5c1a781e4e550ffd2c55
+ms.openlocfilehash: fd500b80f0c564fc0f4c7e311483790a83a4101a
+ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/10/2020
-ms.locfileid: "88056084"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88923744"
 ---
 # <a name="known-issues-with-azure-data-lake-storage-gen2"></a>Известные проблемы с Azure Data Lake Storage 2-го поколения
 
@@ -60,9 +60,9 @@ API больших двоичных объектов и API Data Lake Storage 2-
 
 <a id="api-scope-data-lake-client-library"></a>
 
-## <a name="file-system-support-in-sdks-powershell-and-azure-cli"></a>Поддержка файловых систем в пакетах SDK, PowerShell и Azure CLI
+## <a name="support-for-setting-access-control-lists-acls-recursively"></a>Поддержка рекурсивного задания списков управления доступом (ACL)
 
-- Операции получения и сохранения списков управления доступом в данный момент не выполняются рекурсивно.
+Возможность рекурсивного применения изменений ACL от родительского каталога к дочерним элементам — в [общедоступной предварительной версии](recursive-access-control-lists.md). В текущем выпуске этой возможности можно применять изменения списков управления доступом с помощью PowerShell, пакета SDK для .NET и пакета SDK для Python. Поддержка для пакета SDK для Java, Azure CLI, портал Azure или Обозреватель службы хранилища Azure еще недоступна.
 
 <a id="known-issues-tools"></a>
 

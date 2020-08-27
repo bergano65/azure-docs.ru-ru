@@ -5,13 +5,13 @@ services: logic-apps
 ms.suite: integration
 ms.reviewer: estfan, logicappspm
 ms.topic: conceptual
-ms.date: 08/06/2020
-ms.openlocfilehash: ca6324bd27749d9be3f516dbcd8ff99eca39d1a6
-ms.sourcegitcommit: dea88d5e28bd4bbd55f5303d7d58785fad5a341d
+ms.date: 08/26/2020
+ms.openlocfilehash: e4f9fa554a7c0e45abe1e9686605c95bb79d1739
+ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87875461"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88932956"
 ---
 # <a name="reference-guide-to-using-functions-in-expressions-for-azure-logic-apps-and-power-automate"></a>Справочное руководство по использованию функций в выражениях для Azure Logic Apps и Power Automate
 
@@ -1120,7 +1120,7 @@ body('Get_user')
 
 ### <a name="bool"></a>bool
 
-Возвращает логическую версию значения.
+Возвращает значение в логическом формате.
 
 ```
 bool(<value>)
@@ -1128,27 +1128,27 @@ bool(<value>)
 
 | Параметр | Обязательно | Тип | Описание |
 | --------- | -------- | ---- | ----------- |
-| <*value*> | Да | Любой | Значение, которое необходимо преобразовать |
+| <*value*> | Да | Любой | Значение, преобразуемое в логический тип. |
 |||||
+
+Если используется `bool()` с объектом, значение объекта должно быть строкой или целым числом, которое может быть преобразовано в тип Boolean.
 
 | Возвращаемое значение | Тип | Описание |
 | ------------ | ---- | ----------- |
-| true или false | Логическое | Логическая версия указанного значения |
+| `true` или `false` | Логическое | Логическая версия указанного значения. |
 ||||
 
-*Пример*
+*Выходные данные*
 
-В этих примерах указанные значения преобразуются в логические:
+В этих примерах показаны различные поддерживаемые типы входных данных для `bool()` :
 
-```
-bool(1)
-bool(0)
-```
-
-И возвращаются следующие результаты:
-
-* Первый пример: `true`.
-* Второй пример: `false`.
+| Входное значение | Тип | Возвращаемое значение |
+| ----------- | ---------- | ---------------------- |
+| `bool(1)` | Целое число | `true` |
+| `bool(0)` | Целое число    | `false` |
+| `bool(-1)` | Целое число | `true` |
+| `bool('true')` | Строка | `true` |
+| `bool('false')` | Строка | `false` |
 
 <a name="coalesce"></a>
 
@@ -1705,7 +1705,7 @@ div(<dividend>, <divisor>)
 
 *Пример 1*
 
-Оба примера возвращают это значение с целочисленным типом:`2`
+Оба примера возвращают это значение с целочисленным типом: `2`
 
 ```
 div(10,5)
@@ -1714,7 +1714,7 @@ div(11,5)
 
 *Пример 2*
 
-Оба примера возвращают это значение с типом float:`2.2`
+Оба примера возвращают это значение с типом float: `2.2`
 
 ```
 div(11,5.0)
@@ -4781,7 +4781,7 @@ xpath('<xml>', '<xpath>')
 
 `xpath(xml(parameters('items')), '/produce/item/name[1]')`
 
-Результат:`Gala`
+Результат: `Gala`
 
 *Пример 3*
 
@@ -4789,7 +4789,7 @@ xpath('<xml>', '<xpath>')
 
 `xpath(xml(parameters('items')), '/produce/item/name[last()]')`
 
-Результат:`Honeycrisp`
+Результат: `Honeycrisp`
 
 *Пример 4*
 
@@ -4801,7 +4801,7 @@ xpath('<xml>', '<xpath>')
 
 `xpath(xml(parameters('items')), '//name[@expired]')`
 
-Результат:`[ Gala, Honeycrisp ]`
+Результат: `[ Gala, Honeycrisp ]`
 
 *Пример 5*
 
@@ -4813,7 +4813,7 @@ xpath('<xml>', '<xpath>')
 
 `xpath(xml(parameters('items')), '//name[@expired = 'true']')`
 
-Результат:`[ Gala ]`
+Результат: `[ Gala ]`
 
 *Пример 6.*
 
@@ -4828,7 +4828,7 @@ xpath('<xml>', '<xpath>')
 
 `xpath(xml(parameters('items')), '//name[price>35]')`
 
-Результат:`Honeycrisp`
+Результат: `Honeycrisp`
 
 *Пример 7*
 
@@ -4840,7 +4840,7 @@ xpath('<xml>', '<xpath>')
 
 `xpath(xml(parameters('items')), 'sum(/produce/item/count)')`
 
-Результат:`30`
+Результат: `30`
 
 *Пример 8*
 
@@ -4873,7 +4873,7 @@ xpath('<xml>', '<xpath>')
 
 `xpath(xml(body('Http')), 'string(/*[name()="file"]/*[name()="location"])')`
 
-Результат:`Paris`
+Результат: `Paris`
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

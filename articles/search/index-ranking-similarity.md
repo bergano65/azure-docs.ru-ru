@@ -8,12 +8,12 @@ ms.author: luisca
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 03/13/2020
-ms.openlocfilehash: c5597528d395c2c8facd4a1b916b1378b659a646
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: ee788125a5710e5a8b9861c28c4af8e6d83d5d80
+ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85565284"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88924543"
 ---
 # <a name="ranking-algorithm-in-azure-cognitive-search"></a>Алгоритм ранжирования в Azure Когнитивный поиск
 
@@ -61,7 +61,7 @@ PUT https://[search service name].search.windows.net/indexes/[index name]?api-ve
 
 Свойство **подобия** полезно в этом временном периоде, когда оба алгоритма доступны, только в существующих службах. 
 
-| Свойство. | Описание: |
+| Свойство | Description |
 |----------|-------------|
 | подобие | Необязательный элемент. Допустимые значения: *"#Microsoft. Azure. Search. классиксимиларити"* или *"#Microsoft. Azure. Search. BM25Similarity"*. <br/> Требуется `api-version=2019-05-06-Preview` или более поздняя версия службы поиска, созданной до 15 июля 2020. |
 
@@ -105,7 +105,7 @@ PUT https://[search service name].search.windows.net/indexes/[index name]?api-ve
 
 ## <a name="see-also"></a>См. также  
 
-+ [Справочник по REST API](https://docs.microsoft.com/rest/api/searchservice/)   
++ [Справочник по REST API](/rest/api/searchservice/)   
 + [Добавление профилей оценки в индекс](index-add-scoring-profiles.md)    
-+ [Создание API индекса](https://docs.microsoft.com/rest/api/searchservice/create-index)   
-+ [Библиотеки службы "Поиск Azure" для .NET](https://docs.microsoft.com/dotnet/api/overview/azure/search?view=azure-dotnet)  
++ [Создание API индекса](/rest/api/searchservice/create-index)   
++ [Библиотеки службы "Поиск Azure" для .NET](/dotnet/api/overview/azure/search?view=azure-dotnet)

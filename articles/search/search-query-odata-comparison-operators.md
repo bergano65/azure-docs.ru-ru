@@ -19,14 +19,14 @@ translation.priority.mt:
 - ru-ru
 - zh-cn
 - zh-tw
-ms.openlocfilehash: 572b653a49833ae06ee57b1718000e8555239de7
-ms.sourcegitcommit: 5cace04239f5efef4c1eed78144191a8b7d7fee8
+ms.openlocfilehash: fc5803f96c30ea1df362676aa8c4104bb0b69db3
+ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86146029"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88934877"
 ---
-# <a name="odata-comparison-operators-in-azure-cognitive-search---eq-ne-gt-lt-ge-and-le"></a>Операторы сравнения OData в Azure когнитивный поиск- `eq` , `ne` ,,, `gt` `lt` `ge` и`le`
+# <a name="odata-comparison-operators-in-azure-cognitive-search---eq-ne-gt-lt-ge-and-le"></a>Операторы сравнения OData в Azure когнитивный поиск- `eq` , `ne` ,,, `gt` `lt` `ge` и `le`
 
 Наиболее простой операцией в [выражении фильтра OData](query-odata-filter-orderby-syntax.md) в когнитивный поиске Azure является сравнение поля с заданным значением. Возможны два типа сравнения — сравнение на равенство и сравнение диапазонов. Для сравнения поля с постоянным значением можно использовать следующие операторы:
 
@@ -96,11 +96,11 @@ comparison_operator ::= 'gt' | 'lt' | 'ge' | 'le' | 'eq' | 'ne'
 
 <a name="special-case-nan"></a>
 
-### <a name="special-cases-for-null-and-nan"></a>Особые случаи для `null` и`NaN`
+### <a name="special-cases-for-null-and-nan"></a>Особые случаи для `null` и `NaN`
 
 При использовании операторов сравнения важно помнить, что все поля, не связанные с коллекцией, в Azure Когнитивный поиск потенциально могут быть `null` . В следующей таблице показаны все возможные результаты для выражения сравнения, где может быть одна из сторон `null` :
 
-| Оператор | Результат, если только поле или переменная`null` | Результат, если только константа имеет значение`null` | Результат, если как поле, так и переменная, и константа`null` |
+| Оператор | Результат, если только поле или переменная `null` | Результат, если только константа имеет значение `null` | Результат, если как поле, так и переменная, и константа `null` |
 | --- | --- | --- | --- |
 | `gt` | `false` | HTTP 400: ошибка неправильного запроса | HTTP 400: ошибка неправильного запроса |
 | `lt` | `false` | HTTP 400: ошибка неправильного запроса | HTTP 400: ошибка неправильного запроса |
@@ -113,7 +113,7 @@ comparison_operator ::= 'gt' | 'lt' | 'ge' | 'le' | 'eq' | 'ne'
 
 Если в индексе есть поля типа, `Edm.Double` а `NaN` значения отправляются в эти поля, необходимо учитывать это при записи фильтров. Когнитивный поиск Azure реализует стандарт IEEE 754 для обработки `NaN` значений, а сравнения с такими значениями дают неочевидные результаты, как показано в следующей таблице.
 
-| Оператор | Результат, если хотя бы один операнд имеет значение`NaN` |
+| Оператор | Результат, если хотя бы один операнд имеет значение `NaN` |
 | --- | --- |
 | `gt` | `false` |
 | `lt` | `false` |
@@ -164,9 +164,9 @@ Details/Sku ne null
 Rooms/any(room: room/Type eq 'Deluxe Room')
 ```
 
-## <a name="next-steps"></a>Следующие шаги  
+## <a name="next-steps"></a>Дальнейшие действия  
 
 - [Фильтры в Когнитивный поиск Azure](search-filters.md)
 - [Общие сведения о языке выражений OData для Azure Когнитивный поиск](query-odata-filter-orderby-syntax.md)
 - [Справочник по синтаксису выражений OData для Azure Когнитивный поиск](search-query-odata-syntax-reference.md)
-- [Поиск документов &#40;Azure Когнитивный поиск REST API&#41;](https://docs.microsoft.com/rest/api/searchservice/Search-Documents)
+- [Поиск документов &#40;Azure Когнитивный поиск REST API&#41;](/rest/api/searchservice/Search-Documents)

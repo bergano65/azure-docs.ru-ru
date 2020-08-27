@@ -4,16 +4,17 @@ ms.service: cognitive-services
 ms.topic: include
 ms.date: 03/09/2020
 ms.author: trbye
-ms.openlocfilehash: 21c4f88083fab28ae132379eae1b5d8a2afa5d9f
-ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
+ms.custom: devx-track-csharp
+ms.openlocfilehash: 313d2717e6e40280ed37322d695a2129d833dd59
+ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "81421732"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88934109"
 ---
-Чтобы выполнить потоковую передачу в сжатом аудио формате в службу распознавания `PullAudioInputStream` речи `PushAudioInputStream`, создайте или. Затем создайте объект `AudioConfig` из экземпляра класса Stream, указав формат сжатия потока.
+Чтобы выполнить потоковую передачу в сжатом аудио формате в службу распознавания речи, создайте `PullAudioInputStream` или `PushAudioInputStream` . Затем создайте объект `AudioConfig` из экземпляра класса Stream, указав формат сжатия потока.
 
-Предположим, что у вас есть класс входного потока с `pushStream` именем и используется опус/OGG. Код может выглядеть следующим образом:
+Предположим, что у вас есть класс входного потока `pushStream` с именем и используется опус/OGG. Код может выглядеть следующим образом:
 
 ```csharp
 using Microsoft.CognitiveServices.Speech;

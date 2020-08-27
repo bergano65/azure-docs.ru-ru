@@ -8,12 +8,12 @@ ms.author: heidist
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 04/08/2020
-ms.openlocfilehash: 03d4c2e0685ea165cbad524360a3db6e6c809733
-ms.sourcegitcommit: 5cace04239f5efef4c1eed78144191a8b7d7fee8
+ms.openlocfilehash: faa98f1c52cfe2dd0e19f085f4d33dedb6f01851
+ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86146132"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88934894"
 ---
 # <a name="fuzzy-search-to-correct-misspellings-and-typos"></a>Нечеткий поиск для исправления ошибок и опечаток
 
@@ -82,7 +82,7 @@ Azure Когнитивный поиск поддерживает нечетки�
 
 ### <a name="example-1-fuzzy-search-with-the-exact-term"></a>Пример 1. нечеткий поиск с точным термином
 
-Предположим, что в `"Description"` поле в документе поиска существует следующая строка:`"Test queries with special characters, plus strings for MSFT, SQL and Java."`
+Предположим, что в `"Description"` поле в документе поиска существует следующая строка: `"Test queries with special characters, plus strings for MSFT, SQL and Java."`
 
 Начните с нечеткого поиска по слову "Special" и добавьте выделение при попадании в поле "Описание":
 
@@ -136,5 +136,5 @@ search=scal~&highlight=Description
 
 + [Как работает полнотекстовый поиск в Когнитивный поиск Azure (архитектура анализа запросов)](search-lucene-query-architecture.md)
 + [Обозреватель поиска](search-explorer.md)
-+ [Выполнение запроса в .NET](search-query-dotnet.md)
-+ [Выполнение запроса в REST](search-create-index-rest-api.md)
++ [Выполнение запроса в .NET](./search-get-started-dotnet.md)
++ [Выполнение запроса в REST](./search-get-started-powershell.md)

@@ -3,13 +3,13 @@ title: Создание эффективных запросов на вывод 
 description: 'Сведения о повышении производительности за счет фильтрации запросов, а именно при запросе сведений о ресурсах пакетной службы: пулах, заданиях, задачах и вычислительных узлах.'
 ms.topic: how-to
 ms.date: 06/18/2020
-ms.custom: seodec18
-ms.openlocfilehash: bcf99dbc55d708af70a28155a3f98c20003e51f7
-ms.sourcegitcommit: 845a55e6c391c79d2c1585ac1625ea7dc953ea89
+ms.custom: seodec18, devx-track-csharp
+ms.openlocfilehash: 3a767cc8ae3c8c48e1e40e0735c33fa807ba0015
+ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/05/2020
-ms.locfileid: "85960611"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88933520"
 ---
 # <a name="create-queries-to-list-batch-resources-efficiently"></a>Эффективное создание запросов на вывод списка ресурсов пакетной службы
 
@@ -184,7 +184,7 @@ List<CloudPool> testPools =
 
 Для создания [ODATADetailLevel.SelectClause](/dotnet/api/microsoft.azure.batch.odatadetaillevel.selectclause) обратитесь к приведенной выше таблице в разделе "Сопоставления для строк выборки" и найдите страницу документации по REST API, которая соответствует типу выводимой сущности. В первой многострочной таблице на этой странице содержатся выбираемые свойства и соответствующие поддерживаемые ими операторы. Например, если вы хотите получить только идентификатор и командную строку для каждой задачи в списке. Эти строки вы найдете в соответствующей таблице [Получение информации о задаче](/rest/api/batchservice/task/get).
 
-| Свойство | Type | Примечания |
+| Свойство | Тип | Примечания |
 |:--- |:--- |:--- |
 | `id` |`String` |`The ID of the task.` |
 | `commandLine` |`String` |`The command line of the task.` |
