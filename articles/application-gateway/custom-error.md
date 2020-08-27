@@ -7,12 +7,12 @@ ms.service: application-gateway
 ms.topic: how-to
 ms.date: 11/16/2019
 ms.author: victorh
-ms.openlocfilehash: d78f7aa2a02f14dc9b875895e3057bd4dee29b74
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 953be98de855162127fd8b8b8273fe9817668db7
+ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84808087"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88934826"
 ---
 # <a name="create-application-gateway-custom-error-pages"></a>Создание пользовательских страниц ошибок с помощью службы "Шлюз приложений"
 
@@ -65,14 +65,24 @@ ms.locfileid: "84808087"
 
 Вы можете использовать Azure PowerShell для настройки страницы ошибки. Например, глобальная настраиваемая страница ошибки:
 
-`$updatedgateway = Add-AzApplicationGatewayCustomError -ApplicationGateway $appgw -StatusCode HttpStatus502 -CustomErrorPageUrl $customError502Url`
+```powershell
+$appgw   = Get-AzApplicationGateway -Name <app-gateway-name> -ResourceGroupName <resource-group-name>
+
+$updatedgateway = Add-AzApplicationGatewayCustomError -ApplicationGateway $appgw -StatusCode HttpStatus502 -CustomErrorPageUrl "http://<website-url>"
+```
 
 Или страница ошибки уровня прослушивателя:
 
-`$updatedlistener = Add-AzApplicationGatewayHttpListenerCustomError -HttpListener $listener01 -StatusCode HttpStatus502 -CustomErrorPageUrl $customError502Url`
+```powershell
+$appgw   = Get-AzApplicationGateway -Name <app-gateway-name> -ResourceGroupName <resource-group-name>
+
+$listener01 = Get-AzApplicationGatewayHttpListener -Name <listener-name> -ApplicationGateway $appgw
+
+$updatedlistener = Add-AzApplicationGatewayHttpListenerCustomError -HttpListener $listener01 -StatusCode HttpStatus502 -CustomErrorPageUrl "http://<website-url>"
+```
 
 Дополнительные сведения см. в статьях о командлетах [Add-AzApplicationGatewayCustomError](https://docs.microsoft.com/powershell/module/az.network/add-azapplicationgatewaycustomerror?view=azps-1.2.0) и [Add-AzApplicationGatewayHttpListenerCustomError](https://docs.microsoft.com/powershell/module/az.network/add-azapplicationgatewayhttplistenercustomerror?view=azps-1.3.0).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Сведения о диагностике службы "Шлюз приложений" см. в статье [Работоспособность серверной части, журналы диагностики и метрики для шлюза приложений](application-gateway-diagnostics.md).

@@ -8,12 +8,12 @@ ms.author: luisca
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 06/08/2020
-ms.openlocfilehash: 92c054b42a83d9753e2fcc9c02646c381da795b8
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 8347ca5a33790d0b35176be47a0fa4811a19e3f1
+ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85510875"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88935472"
 ---
 # <a name="tips-for-ai-enrichment-in-azure-cognitive-search"></a>Советы по расширению искусственного интеллекта в Azure Когнитивный поиск
 
@@ -54,7 +54,7 @@ https://docs.microsoft.com/azure/search/search-howto-indexing-azure-blob-storage
 
 ## <a name="tip-4-use-debug-sessions-to-identify-and-resolve-issues-with-your-skillset"></a>Совет 4. Использование отладочных сеансов для определения и устранения проблем с набором навыков 
 
-Сеансы отладки — это визуальный редактор, работающий с существующим набором навыков на портале Azure. В рамках сеанса отладки можно выявление и устранение ошибок, проверка изменений и фиксация изменений в рабочем наборе в конвейере обогащения искусственного интеллекта. Эта предварительная версия функции предназначена для ознакомления с [документацией](https://docs.microsoft.com/azure/search/cognitive-search-debug-session). Дополнительные сведения о концепциях и начале работы см. в разделе [сеансы отладки](https://docs.microsoft.com/azure/search/cognitive-search-tutorial-debug-sessions).
+Сеансы отладки — это визуальный редактор, работающий с существующим набором навыков на портале Azure. В рамках сеанса отладки можно выявление и устранение ошибок, проверка изменений и фиксация изменений в рабочем наборе в конвейере обогащения искусственного интеллекта. Эта предварительная версия функции предназначена для ознакомления с [документацией](./cognitive-search-debug-session.md). Дополнительные сведения о концепциях и начале работы см. в разделе [сеансы отладки](./cognitive-search-tutorial-debug-sessions.md).
 
 Сеансы отладки, работающие с одним документом, являются отличным способом для итеративного создания более сложных конвейеров обогащения.
 

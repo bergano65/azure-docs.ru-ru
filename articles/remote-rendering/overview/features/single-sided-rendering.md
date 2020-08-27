@@ -5,14 +5,14 @@ author: florianborn71
 ms.author: flborn
 ms.date: 02/06/2020
 ms.topic: article
-ms.openlocfilehash: 1a9f80166e47b17644b37d4bc9b93e1abefe3432
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: aff636adff48a8882c152eab398a96a8d28f84e0
+ms.sourcegitcommit: c6b9a46404120ae44c9f3468df14403bcd6686c1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84022766"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88892751"
 ---
-# <a name="no-loc-textsingle-sided-rendering"></a>:::no-loc text="Single-sided":::отчета
+# <a name="no-loc-textsingle-sided-rendering"></a>:::no-loc text="Single-sided"::: отчета
 
 Основная часть отрисовщиков использует [исключение задних поверхностей](https://en.wikipedia.org/wiki/Back-face_culling) для повышения производительности. Но в тех случаях, когда в сетках создается вырез [плоскостью сечения](cut-planes.md), пользователи увидят именно заднюю сторону треугольников. Если эти треугольники исключены, результат не выглядит убедительным.
 
@@ -27,7 +27,7 @@ ms.locfileid: "84022766"
 
 :::no-loc text="single-sided":::Параметр отрисовки влияет только на сетки, [преобразованные](../../how-tos/conversion/configure-model-conversion.md) с `opaqueMaterialDefaultSidedness` параметром в значение `SingleSided` . По умолчанию этот параметр имеет значение `DoubleSided`.
 
-## <a name="no-loc-textsingle-sided-rendering-setting"></a>:::no-loc text="Single-sided":::параметр подготовки к просмотру
+## <a name="no-loc-textsingle-sided-rendering-setting"></a>:::no-loc text="Single-sided"::: параметр подготовки к просмотру
 
 Поддерживаются три разных режима.
 
@@ -55,13 +55,13 @@ void ChangeSingleSidedRendering(AzureSession session)
 ```cpp
 void ChangeSingleSidedRendering(ApiHandle<AzureSession> session)
 {
-    ApiHandle<SingleSidedSettings> settings = *session->Actions()->SingleSidedSettings();
+    ApiHandle<SingleSidedSettings> settings = session->Actions()->GetSingleSidedSettings();
 
     // Single-sided geometry is rendered as is
-    settings->Mode(SingleSidedMode::Normal);
+    settings->SetMode(SingleSidedMode::Normal);
 
     // Single-sided geometry is always rendered double-sided
-    settings->Mode(SingleSidedMode::AlwaysDoubleSided);
+    settings->SetMode(SingleSidedMode::AlwaysDoubleSided);
 }
 ```
 

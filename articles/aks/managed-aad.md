@@ -3,14 +3,14 @@ title: Использование Azure AD в службе Kubernetes Azure
 description: Узнайте, как использовать Azure AD в службе Kubernetes Azure (AKS).
 services: container-service
 ms.topic: article
-ms.date: 07/27/2020
+ms.date: 08/26/2020
 ms.author: thomasge
-ms.openlocfilehash: fd13fbc3b1ada0a9e974742d36bd231e3caf6ef6
-ms.sourcegitcommit: d18a59b2efff67934650f6ad3a2e1fe9f8269f21
+ms.openlocfilehash: 32273bbb14e6cee73f03bd83b84be77299186370
+ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/20/2020
-ms.locfileid: "88661067"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88937002"
 ---
 # <a name="aks-managed-azure-active-directory-integration"></a>Интеграция Azure Active Directory с управляемым AKS
 
@@ -37,23 +37,25 @@ ms.locfileid: "88661067"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-* Azure CLI версии 2.9.0 или более поздней.
-* Kubectl с минимальной версией [1,18](https://github.com/kubernetes/kubernetes/blob/master/CHANGELOG/CHANGELOG-1.18.md#v1180)
+* Azure CLI версии 2.11.0 или более поздней.
+* Kubectl с минимальной версией [1.18.1](https://github.com/kubernetes/kubernetes/blob/master/CHANGELOG/CHANGELOG-1.18.md#v1181) или [кубелогин](https://github.com/Azure/kubelogin)
+* Если используется [Helm](https://github.com/helm/helm), минимальная версия Helm 3,3.
 
 > [!Important]
-> Необходимо использовать Kubectl с минимальной версией 1,18
+> Необходимо использовать Kubectl с минимальной версией 1.18.1 или кубелогин. Если вы не используете правильную версию, вы увидите проблемы с проверкой подлинности.
 
-Чтобы установить kubectl, выполните следующие команды:
+Чтобы установить kubectl и кубелогин, используйте следующие команды:
 
 ```azurecli-interactive
 sudo az aks install-cli
 kubectl version --client
+kubelogin --version
 ```
 
 Используйте [эти инструкции](https://kubernetes.io/docs/tasks/tools/install-kubectl/) для других операционных систем.
 
 
-## <a name="before-you-begin"></a>Перед началом
+## <a name="before-you-begin"></a>Подготовка к работе
 
 Для кластера требуется группа Azure AD. Эта группа необходима в качестве группы администраторов кластера для предоставления разрешений администратора кластера. Вы можете использовать существующую группу Azure AD или создать новую. Запишите идентификатор объекта вашей группы Azure AD.
 

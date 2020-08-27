@@ -5,14 +5,14 @@ ms.topic: conceptual
 author: timothymothra
 ms.author: tilee
 ms.date: 01/17/2020
-ms.custom: devx-track-javascript
+ms.custom: devx-track-javascript, devx-track-csharp
 ms.reviewer: mbullwin
-ms.openlocfilehash: 375929a983c5dfea01a88fb64fd5ab19bf105c0c
-ms.sourcegitcommit: 5b8fb60a5ded05c5b7281094d18cf8ae15cb1d55
+ms.openlocfilehash: 944257c93e00dca77507f26db15f7bf45fbb387e
+ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87383636"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88936424"
 ---
 # <a name="connection-strings"></a>Строки подключения
 
@@ -48,7 +48,7 @@ ms.locfileid: "87383636"
 
 ![Строка подключения в колонке "Обзор"](media/overview-dashboard/overview-connection-string.png)
 
-### <a name="schema"></a>Схема
+### <a name="schema"></a>схема
 
 #### <a name="max-length"></a>Максимальная длина
 
@@ -56,19 +56,19 @@ ms.locfileid: "87383636"
 
 #### <a name="key-value-pairs"></a>Пары "ключ-значение"
 
-Строка подключения состоит из списка параметров, представленных парами "ключ-значение", разделенных точкой с запятой.`key1=value1;key2=value2;key3=value3`
+Строка подключения состоит из списка параметров, представленных парами "ключ-значение", разделенных точкой с запятой. `key1=value1;key2=value2;key3=value3`
 
 #### <a name="syntax"></a>Синтаксис
 
-- `InstrumentationKey`(пример: 00000000-0000-0000-0000-000000000000)  Строка подключения является **обязательным** полем.
-- `Authorization`(пример: iKey) (Этот параметр является необязательным, так как сегодня поддерживается только ikeyная авторизация.)
-- `EndpointSuffix`(пример: applicationinsights.azure.cn) При настройке суффикса конечной точки будет указано, к какому пакету SDK подключается облако Azure. Пакет SDK будет собирать оставшуюся часть конечной точки для отдельных служб.
+- `InstrumentationKey` (пример: 00000000-0000-0000-0000-000000000000)  Строка подключения является **обязательным** полем.
+- `Authorization` (пример: iKey) (Этот параметр является необязательным, так как сегодня поддерживается только ikeyная авторизация.)
+- `EndpointSuffix` (пример: applicationinsights.azure.cn) При настройке суффикса конечной точки будет указано, к какому пакету SDK подключается облако Azure. Пакет SDK будет собирать оставшуюся часть конечной точки для отдельных служб.
 - Явные конечные точки.
   Любая служба может быть явно переопределена в строке подключения.
-   - `IngestionEndpoint`(пример: `https://dc.applicationinsights.azure.com` )
-   - `LiveEndpoint`(пример: `https://live.applicationinsights.azure.com` )
-   - `ProfilerEndpoint`(пример: `https://profiler.applicationinsights.azure.com` )
-   - `SnapshotEndpoint`(пример: `https://snapshot.applicationinsights.azure.com` )
+   - `IngestionEndpoint` (пример: `https://dc.applicationinsights.azure.com` )
+   - `LiveEndpoint` (пример: `https://live.applicationinsights.azure.com` )
+   - `ProfilerEndpoint` (пример: `https://profiler.applicationinsights.azure.com` )
+   - `SnapshotEndpoint` (пример: `https://snapshot.applicationinsights.azure.com` )
 
 #### <a name="endpoint-schema"></a>Схема конечной точки
 
@@ -89,9 +89,9 @@ ms.locfileid: "87383636"
 ##### <a name="valid-prefixes"></a>Допустимые префиксы
 
 - Прием [телеметрии](./app-insights-overview.md):`dc`
-- [Динамические метрики](./live-stream.md):`live`
-- [Профилировщик](./profiler-overview.md):`profiler`
-- [Моментальный снимок](./snapshot-debugger.md):`snapshot`
+- [Динамические метрики](./live-stream.md): `live`
+- [Профилировщик](./profiler-overview.md): `profiler`
+- [Моментальный снимок](./snapshot-debugger.md): `snapshot`
 
 
 
@@ -107,10 +107,10 @@ ms.locfileid: "87383636"
 - По умолчанию используется схема авторизации "iKey" 
 - Ключ инструментирования: 00000000-0000-0000-0000-000000000000
 - Коды URI региональных служб основаны на [стандартах SDK](https://github.com/microsoft/ApplicationInsights-dotnet/blob/e50d569cebf485e72e98f4a08a0bc0e30cdf42bc/BASE/src/Microsoft.ApplicationInsights/Extensibility/Implementation/Endpoints/Constants.cs#L6) и будут подключаться к общедоступному глобальному серверу Azure:
-   - Приема`https://dc.services.visualstudio.com/`
-   - Динамические метрики:`https://rt.services.visualstudio.com/`
-   - Profiler`https://agent.azureserviceprofiler.net/`
-   - Отладчик`https://agent.azureserviceprofiler.net/`
+   - Приема `https://dc.services.visualstudio.com/`
+   - Динамические метрики: `https://rt.services.visualstudio.com/`
+   - Profiler `https://agent.azureserviceprofiler.net/`
+   - Отладчик `https://agent.azureserviceprofiler.net/`
 
 
 
@@ -123,10 +123,10 @@ ms.locfileid: "87383636"
 - По умолчанию используется схема авторизации "iKey" 
 - Ключ инструментирования: 00000000-0000-0000-0000-000000000000
 - Коды URI региональных служб основаны на указанном суффиксе конечной точки: 
-   - Приема`https://dc.ai.contoso.com`
-   - Динамические метрики:`https://live.ai.contoso.com`
-   - Profiler`https://profiler.ai.contoso.com`
-   - Отладчик`https://snapshot.ai.contoso.com`  
+   - Приема `https://dc.ai.contoso.com`
+   - Динамические метрики: `https://live.ai.contoso.com`
+   - Profiler `https://profiler.ai.contoso.com`
+   - Отладчик `https://snapshot.ai.contoso.com`  
 
 
 
@@ -139,10 +139,10 @@ ms.locfileid: "87383636"
 - По умолчанию используется схема авторизации "iKey" 
 - Ключ инструментирования: 00000000-0000-0000-0000-000000000000
 - Региональные URI служб основаны на явных значениях переопределения: 
-   - Приема`https://custom.com:111/`
-   - Динамические метрики:`https://custom.com:222/`
-   - Profiler`https://custom.com:333/`
-   - Отладчик`https://custom.com:444/`  
+   - Приема `https://custom.com:111/`
+   - Динамические метрики: `https://custom.com:222/`
+   - Profiler `https://custom.com:333/`
+   - Отладчик `https://custom.com:444/`  
 
 
 ## <a name="how-to-set-a-connection-string"></a>Как задать строку подключения
@@ -164,7 +164,7 @@ ms.locfileid: "87383636"
 
 # <a name="netnetcore"></a>[.NET/. NetCore](#tab/net)
 
-Телеметриконфигуратион. ConnectionString:https://github.com/microsoft/ApplicationInsights-dotnet/blob/add45ceed35a817dc7202ec07d3df1672d1f610d/BASE/src/Microsoft.ApplicationInsights/Extensibility/TelemetryConfiguration.cs#L271-L274
+Телеметриконфигуратион. ConnectionString: https://github.com/microsoft/ApplicationInsights-dotnet/blob/add45ceed35a817dc7202ec07d3df1672d1f610d/BASE/src/Microsoft.ApplicationInsights/Extensibility/TelemetryConfiguration.cs#L271-L274
 
 .NET явным образом задается:
 ```csharp

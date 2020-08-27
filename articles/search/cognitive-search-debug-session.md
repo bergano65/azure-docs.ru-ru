@@ -8,19 +8,19 @@ ms.author: terrychr
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 05/19/2020
-ms.openlocfilehash: edce8f3460e92eef4f6665b1b38a61582d6841ad
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: b428ff4a9a4f4b9110e88dba57cfad20f2221cf1
+ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85560375"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88936169"
 ---
 # <a name="debug-sessions-in-azure-cognitive-search"></a>Сеансы отладки в Azure Когнитивный поиск
 
 Сеансы отладки — это визуальный редактор, работающий с существующим набором навыков на портале Azure. В рамках сеанса отладки можно выявлять и устранять ошибки, проверять изменения и отправлять изменения в рабочий набор навыков в конвейере обогащения с помощью ИИ.
 
 > [!Important]
-> Сеансы отладки — это предварительная версия функции, предоставляемая без соглашения об уровне обслуживания, и не рекомендуется для рабочих нагрузок в рабочей среде. Дополнительные сведения см. в статье [Дополнительные условия использования предварительных выпусков Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
+> Сеансы отладки — это функция в предварительной версии, которая предоставляется без соглашения об уровне обслуживания, поэтому использовать ее в рабочей среде не рекомендуется. Дополнительные сведения см. в статье [Дополнительные условия использования предварительных выпусков Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
 >
 
 ## <a name="using-debug-sessions"></a>Использование сеансов отладки
@@ -95,4 +95,4 @@ ms.locfileid: "85560375"
 Теперь, когда вы изучили элементы сеансов отладки, обратитесь к руководству по получению практического опыта.
 
 > [!div class="nextstepaction"]
-> [Обзор возможностей сеансов отладки](https://docs.microsoft.com/azure/search/cognitive-search-tutorial-debug-sessions)
+> [Обзор возможностей сеансов отладки](./cognitive-search-tutorial-debug-sessions.md)

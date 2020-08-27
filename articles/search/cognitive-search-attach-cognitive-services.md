@@ -8,12 +8,12 @@ ms.author: luisca
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 12/17/2019
-ms.openlocfilehash: ffb52cd34d56c227fc689ea70146e99983e17c0d
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: c9f6a5ebc4f3242181196bd40b62f7522d025b84
+ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85564440"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88924983"
 ---
 # <a name="attach-a-cognitive-services-resource-to-a-skillset-in-azure-cognitive-search"></a>Подключение Cognitive Services ресурса к набору навыков в Azure Когнитивный поиск 
 
@@ -37,7 +37,7 @@ ms.locfileid: "85564440"
 
 ## <a name="same-region-requirement"></a>Требования к одному региону
 
-Для этого необходимо, чтобы Azure Когнитивный поиск и Azure Cognitive Services существовали в одном регионе. В противном случае это сообщение будет получено во время выполнения:`"Provided key is not a valid CognitiveServices type key for the region of your search service."` 
+Для этого необходимо, чтобы Azure Когнитивный поиск и Azure Cognitive Services существовали в одном регионе. В противном случае это сообщение будет получено во время выполнения: `"Provided key is not a valid CognitiveServices type key for the region of your search service."` 
 
 Перемещение службы между регионами невозможно. При возникновении этой ошибки необходимо создать новый ресурс Cognitive Services в том же регионе, что и Когнитивный поиск Azure.
 
@@ -167,8 +167,8 @@ Content-Type: application/json
 
 Поместив все вместе, вы платите примерно $57,00, чтобы принять 1 000 PDF-документов этого типа с описанным набором навыков.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 + [Страница цен на Когнитивный поиск Azure](https://azure.microsoft.com/pricing/details/search/)
 + [Определение набора навыков](cognitive-search-defining-skillset.md)
-+ [Создание набора навыков (REST)](https://docs.microsoft.com/rest/api/searchservice/create-skillset)
++ [Создание набора навыков (REST)](/rest/api/searchservice/create-skillset)
 + [Сопоставление обогащенных полей](cognitive-search-output-field-mapping.md)

@@ -3,13 +3,14 @@ title: Справочник по файлу ApplicationInsights.config в Azure 
 description: Включение или отключение модулей сбора данных и добавление счетчиков производительности, а также других параметров.
 ms.topic: conceptual
 ms.date: 05/22/2019
+ms.custom: devx-track-csharp
 ms.reviewer: olegan
-ms.openlocfilehash: ec446190cd589eb511a7a905faeb5f29f31e7d69
-ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
+ms.openlocfilehash: 7c0759e78b1adc1704acb602daa12cf9cabbe153
+ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87310486"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88934809"
 ---
 # <a name="configuring-the-application-insights-sdk-with-applicationinsightsconfig-or-xml"></a>Настройка пакета SDK для Application Insights с использованием файла ApplicationInsights.config или ApplicationInsights.xml
 Пакет SDK .NET Application Insights состоит из нескольких пакетов NuGet. [Основной пакет](https://www.nuget.org/packages/Microsoft.ApplicationInsights) предоставляет API для отправки телеметрии в Application Insights. [Дополнительные пакеты](https://www.nuget.org/packages?q=Microsoft.ApplicationInsights) предоставляют *модули* и *инициализаторы* телеметрии для автоматического отслеживания телеметрии вашего приложения и его контекста. Настроив файл конфигурации, можно включить или отключить модули телеметрии и инициализаторы, а также задать параметры для некоторых из них.
@@ -69,7 +70,7 @@ ms.locfileid: "87310486"
 
 * `Microsoft.ApplicationInsights.Web.ExceptionTrackingTelemetryModule`
 * [Microsoft.ApplicationInsights.Web](https://www.nuget.org/packages/Microsoft.ApplicationInsights.Web)
-* `Microsoft.ApplicationInsights.WindowsServer.UnobservedExceptionTelemetryModule`— отслеживает исключения незамеченной задачи
+* `Microsoft.ApplicationInsights.WindowsServer.UnobservedExceptionTelemetryModule` — отслеживает исключения незамеченной задачи
 * `Microsoft.ApplicationInsights.WindowsServer.UnhandledExceptionTelemetryModule` отслеживает необработанные исключения для рабочих ролей, служб Windows и консольных приложений.
 * [Application Insights Windows Server](https://www.nuget.org/packages/Microsoft.ApplicationInsights.WindowsServer/) Пакет NuGet.
 
@@ -94,8 +95,8 @@ ms.locfileid: "87310486"
 ## <a name="telemetry-channel"></a>Канал телеметрии
 [Канал телеметрии](telemetry-channels.md) управляет буферизацией и передачей данных телеметрии в службу Application Insights.
 
-* `Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.ServerTelemetryChannel`— Это канал по умолчанию для веб-приложений. Он помещает данные в память и использует механизмы повтора и хранилище локального диска для более надежной доставки телеметрии.
-* `Microsoft.ApplicationInsights.InMemoryChannel`— Это упрощенный канал телеметрии, который используется, если другие каналы не настроены. 
+* `Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.ServerTelemetryChannel` — Это канал по умолчанию для веб-приложений. Он помещает данные в память и использует механизмы повтора и хранилище локального диска для более надежной доставки телеметрии.
+* `Microsoft.ApplicationInsights.InMemoryChannel` — Это упрощенный канал телеметрии, который используется, если другие каналы не настроены. 
 
 ## <a name="telemetry-initializers-aspnet"></a>Инициализаторы телеметрии (ASP.NET)
 Инициализаторы телеметрии устанавливают свойства контекста, которые отправляются вместе с каждым элементом телеметрии.
@@ -124,7 +125,7 @@ ms.locfileid: "87310486"
 
     `<Filters>` задает идентификационные свойства запросов.
 * `UserTelemetryInitializer` обновляет свойства `Id` и `AcquisitionDate` контекста `User` для всех элементов телеметрии со значениями, извлеченными из файла cookie `ai_user`, созданного кодом JavaScript инструментирования Application Insights, который выполняется в браузере пользователя.
-* `WebTestTelemetryInitializer`Задает идентификатор пользователя, идентификатор сеанса и свойства искусственного источника для HTTP-запросов, поступающих из [тестов доступности](./monitor-web-app-availability.md).
+* `WebTestTelemetryInitializer` Задает идентификатор пользователя, идентификатор сеанса и свойства искусственного источника для HTTP-запросов, поступающих из [тестов доступности](./monitor-web-app-availability.md).
   `<Filters>` задает идентификационные свойства запросов.
 
 Для приложений .NET, работающих в Service Fabric, можно добавить пакет NuGet `Microsoft.ApplicationInsights.ServiceFabric`. Данный пакет содержит компонент `FabricTelemetryInitializer`, который добавляет свойства Service Fabric в элементы телеметрии. Дополнительные сведения см. на [странице GitHub](https://github.com/Microsoft/ApplicationInsights-ServiceFabric/blob/master/README.md), посвященной свойствам, добавляемым пакетом NuGet.

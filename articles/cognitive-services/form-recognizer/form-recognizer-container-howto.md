@@ -9,12 +9,13 @@ ms.subservice: forms-recognizer
 ms.topic: conceptual
 ms.date: 07/14/2020
 ms.author: aahi
-ms.openlocfilehash: cdcf4182f098affba0a18be5846ae6f6e52d7229
-ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
+ms.custom: devx-track-csharp
+ms.openlocfilehash: e4e85de2fad5c08f296d8089f48fa8614f7f1739
+ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88547364"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88925187"
 ---
 # <a name="install-and-run-form-recognizer-containers-preview"></a>Установка и запуск контейнеров распознавателей форм (Предварительная версия)
 
@@ -34,7 +35,7 @@ ms.locfileid: "88547364"
 
 Прежде чем использовать контейнеры Распознавателя документов, необходимо выполнить следующие условия:
 
-| Обязательно | Назначение |
+| Обязательно | Цель |
 |----------|---------|
 | Модуль Docker | На [главном компьютере](#the-host-computer) должен быть установлен модуль Docker. Docker предоставляет пакеты, которые настраивают среду с Docker для [macOS](https://docs.docker.com/docker-for-mac/), [Windows](https://docs.docker.com/docker-for-windows/) и [Linux](https://docs.docker.com/engine/installation/#supported-platforms). Ознакомьтесь с [общими сведениями о Docker и контейнерах](https://docs.docker.com/engine/docker-overview/).<br><br> Docker нужно настроить таким образом, чтобы контейнеры могли подключать и отправлять данные о выставлении счетов в Azure. <br><br> В ОС Windows для Docker нужно также настроить поддержку контейнеров Linux.<br><br> |
 | Опыт работы с Docker | Требуется базовое представление о понятиях Docker, таких как реестры, репозитории, контейнеры и образы контейнеров, а также знание основных команд `docker`. |
@@ -72,7 +73,7 @@ ms.locfileid: "88547364"
 
 В приведенной ниже таблице указаны минимальное и рекомендуемое число ядер ЦП и памяти для каждого контейнера Распознавателя документов.
 
-| Контейнер | Минимальные | Рекомендуемая |
+| Контейнер | Минимальные | Рекомендуется |
 |-----------|---------|-------------|
 | Распознаватель документов | 2 ядра, 4 ГБ памяти | 4 ядра, 8 ГБ памяти |
 | Распознавание текста | 1 ядро, 8 ГБ памяти | 2 ядра, 8 ГБ памяти |
@@ -319,7 +320,7 @@ formrecognizer_config =
 
 [!INCLUDE [Discoverability of more container information](../../../includes/cognitive-services-containers-discoverability.md)]
 
-## <a name="summary"></a>Итоги
+## <a name="summary"></a>Сводка
 
 В этой статье вы узнали основные понятия и рабочий процесс для скачивания, установки и выполнения контейнеров Распознавателя документов. В разделе "Сводка" сделайте следующее.
 

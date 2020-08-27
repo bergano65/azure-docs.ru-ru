@@ -2,15 +2,16 @@
 title: Автоматический сбор зависимостей в Azure Application Insights | Документация Майкрософт
 description: Автоматический сбор и визуализация зависимостей Application Insights
 ms.topic: reference
+ms.custom: devx-track-dotnet
 author: mrbullwinkle
 ms.author: mbullwin
 ms.date: 05/06/2020
-ms.openlocfilehash: 2227facfcf469bc22034da0da504b390cc0deee1
-ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
+ms.openlocfilehash: ca1c63f042bd06c19f232c2ff8170d23741e73f2
+ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87324188"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88936441"
 ---
 # <a name="dependency-auto-collection"></a>Автоматический сбор зависимостей
 
@@ -53,7 +54,7 @@ ms.locfileid: "87324188"
 | [SQL Server]( https://mvnrepository.com/artifact/com.microsoft.sqlserver/mssql-jdbc) | 1 +<sup>†</sup> |
 | [PostgreSQL (бета-поддержка)](https://github.com/Microsoft/ApplicationInsights-Java/blob/master/CHANGELOG.md#version-240-beta) | |
 | [Oracle]( https://www.oracle.com/technetwork/database/application-development/jdbc/downloads/index.html) | 1 +<sup>†</sup> |
-| [MySql]( https://mvnrepository.com/artifact/mysql/mysql-connector-java) | 1 +<sup>†</sup> |
+| [MySQL]( https://mvnrepository.com/artifact/mysql/mysql-connector-java) | 1 +<sup>†</sup> |
 | <b>Библиотеки ведения журналов</b> | |
 | [Logback](https://logback.qos.ch/) | 1+ |
 | [Log4j](https://logging.apache.org/log4j/) | 1.2+ |

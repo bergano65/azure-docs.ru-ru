@@ -8,12 +8,12 @@ ms.author: heidist
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 04/21/2020
-ms.openlocfilehash: 2a0798ee923624aef9f29c1e9cc30f38b55770a3
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: b7918f83d5328c0bf75461d564f3833167c6195e
+ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85565330"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88924560"
 ---
 # <a name="create-a-suggester-to-enable-autocomplete-and-suggested-results-in-a-query"></a>Создание средства подбора для включения автозаполнения и предлагаемых результатов в запросе
 
@@ -25,7 +25,7 @@ ms.locfileid: "85565330"
 
 Эти функции можно использовать отдельно или вместе. Чтобы реализовать эти поведения в Azure Когнитивный поиск, существует компонент индекса и запроса. 
 
-+ В индексе добавьте предложение в индекс. Можно использовать портал, [REST API](https://docs.microsoft.com/rest/api/searchservice/create-index)или [пакет SDK для .NET](https://docs.microsoft.com/dotnet/api/microsoft.azure.search.models.suggester?view=azure-dotnet). Оставшаяся часть этой статьи посвящена созданию средства подбора.
++ В индексе добавьте предложение в индекс. Можно использовать портал, [REST API](/rest/api/searchservice/create-index)или [пакет SDK для .NET](/dotnet/api/microsoft.azure.search.models.suggester?view=azure-dotnet). Оставшаяся часть этой статьи посвящена созданию средства подбора.
 
 + В запросе запроса вызовите один из [интерфейсов API, перечисленных ниже](#how-to-use-a-suggester).
 
@@ -37,7 +37,7 @@ ms.locfileid: "85565330"
 
 ## <a name="define-a-suggester"></a>Определение средства подбора
 
-Чтобы создать предложение, добавьте его в [схему индекса](https://docs.microsoft.com/rest/api/searchservice/create-index) и [задайте каждое свойство](#property-reference). Лучшим моментом для создания средства подбора является то, что вы также определяете поле, которое будет его использовать.
+Чтобы создать предложение, добавьте его в [схему индекса](/rest/api/searchservice/create-index) и [задайте каждое свойство](#property-reference). Лучшим моментом для создания средства подбора является то, что вы также определяете поле, которое будет его использовать.
 
 + Использовать только строковые поля
 
@@ -57,7 +57,7 @@ ms.locfileid: "85565330"
 
 Выбор анализатора определяет, как будут размечены поля, а затем с префиксом. Например, для строки с дефисом, например "с учетом контекста", при использовании анализатора языка будут использоваться следующие сочетания токенов: "Context", "конфиденциально", "с учетом контекста". Если вы использовали стандартный анализатор Lucene, строка с дефисами не будет существовать. 
 
-При оценке анализаторов рассмотрите возможность использования [API анализа текста](https://docs.microsoft.com/rest/api/searchservice/test-analyzer) для получения сведений о том, как термины разделяются и помещаются в виде префиксов. После построения индекса можно попытаться использовать различные анализаторы в строке для просмотра выходных данных маркера.
+При оценке анализаторов рассмотрите возможность использования [API анализа текста](/rest/api/searchservice/test-analyzer) для получения сведений о том, как термины разделяются и помещаются в виде префиксов. После построения индекса можно попытаться использовать различные анализаторы в строке для просмотра выходных данных маркера.
 
 Поля, использующие [пользовательские анализаторы](index-add-custom-analyzers.md) или [стандартные анализаторы](index-add-custom-analyzers.md#predefined-analyzers-reference) (за исключением стандартного Lucene), явно запрещены для предотвращения неудачных результатов.
 
@@ -72,7 +72,7 @@ ms.locfileid: "85565330"
 
 ## <a name="create-using-rest"></a>Создание с помощью функции "ОСТАВШАЯся"
 
-В REST API добавьте средства подбора путем [создания индекса](https://docs.microsoft.com/rest/api/searchservice/create-index) или [обновления индекса](https://docs.microsoft.com/rest/api/searchservice/update-index). 
+В REST API добавьте средства подбора путем [создания индекса](/rest/api/searchservice/create-index) или [обновления индекса](/rest/api/searchservice/update-index). 
 
   ```json
   {
@@ -110,7 +110,7 @@ ms.locfileid: "85565330"
 
 ## <a name="create-using-net"></a>Создание с помощью .NET
 
-В C# Определите [объект](https://docs.microsoft.com/dotnet/api/microsoft.azure.search.models.suggester?view=azure-dotnet)средства подбора. `Suggesters`является коллекцией, но может принимать только один элемент. 
+В C# Определите [объект](/dotnet/api/microsoft.azure.search.models.suggester?view=azure-dotnet)средства подбора. `Suggesters` является коллекцией, но может принимать только один элемент. 
 
 ```csharp
 private static void CreateHotelsIndex(SearchServiceClient serviceClient)
@@ -133,11 +133,11 @@ private static void CreateHotelsIndex(SearchServiceClient serviceClient)
 
 ## <a name="property-reference"></a>Справочные данные по свойствам
 
-|Свойство.      |Описание:      |
+|Свойство      |Description      |
 |--------------|-----------------|
 |`name`        |Имя средства подбора.|
 |`searchMode`  |Стратегия, используемая для поиска фраз кандидата. В настоящее время поддерживается только режим `analyzingInfixMatching` , который в настоящее время соответствует началу термина.|
-|`sourceFields`|Список из одного или нескольких полей, которые служат источником содержимого для предложений. Поля должны иметь тип `Edm.String` и `Collection(Edm.String)` . Если в поле указан анализатор, он должен быть именованным анализатором из [этого списка](https://docs.microsoft.com/dotnet/api/microsoft.azure.search.models.analyzername?view=azure-dotnet) (а не настраиваемого анализатора).<p/> Рекомендуется указывать только те поля, которые приведут себя к ожидаемому и соответствующему ответу, будь то заполненная строка в строке поиска или раскрывающемся списке.<p/>Имя отеля является хорошим кандидатом, поскольку имеет точность. Поля с подробными сведениями, такие как описания и комментарии, слишком сжимаются. Аналогичным образом, повторяющиеся поля, такие как категории и теги, менее эффективны. В примерах мы все равно включаем «Category», чтобы показать, что можно включить несколько полей. |
+|`sourceFields`|Список из одного или нескольких полей, которые служат источником содержимого для предложений. Поля должны иметь тип `Edm.String` и `Collection(Edm.String)` . Если в поле указан анализатор, он должен быть именованным анализатором из [этого списка](/dotnet/api/microsoft.azure.search.models.analyzername?view=azure-dotnet) (а не настраиваемого анализатора).<p/> Рекомендуется указывать только те поля, которые приведут себя к ожидаемому и соответствующему ответу, будь то заполненная строка в строке поиска или раскрывающемся списке.<p/>Имя отеля является хорошим кандидатом, поскольку имеет точность. Поля с подробными сведениями, такие как описания и комментарии, слишком сжимаются. Аналогичным образом, повторяющиеся поля, такие как категории и теги, менее эффективны. В примерах мы все равно включаем «Category», чтобы показать, что можно включить несколько полей. |
 
 <a name="how-to-use-a-suggester"></a>
 
@@ -145,10 +145,10 @@ private static void CreateHotelsIndex(SearchServiceClient serviceClient)
 
 В запросе используется предложение. После создания средства подбора вызовите один из следующих интерфейсов API для поиска по мере использования.
 
-+ [Предложения REST API](https://docs.microsoft.com/rest/api/searchservice/suggestions) 
-+ [Автозаполнение REST API](https://docs.microsoft.com/rest/api/searchservice/autocomplete) 
-+ [Метод Сугжествисхттпмессажесасинк](https://docs.microsoft.com/dotnet/api/microsoft.azure.search.idocumentsoperations.suggestwithhttpmessagesasync?view=azure-dotnet)
-+ [Метод Аутокомплетевисхттпмессажесасинк](https://docs.microsoft.com/dotnet/api/microsoft.azure.search.idocumentsoperations.autocompletewithhttpmessagesasync?view=azure-dotnet&viewFallbackFrom=azure-dotnet)
++ [Предложения REST API](/rest/api/searchservice/suggestions) 
++ [Автозаполнение REST API](/rest/api/searchservice/autocomplete) 
++ [Метод Сугжествисхттпмессажесасинк](/dotnet/api/microsoft.azure.search.idocumentsoperations.suggestwithhttpmessagesasync?view=azure-dotnet)
++ [Метод Аутокомплетевисхттпмессажесасинк](/dotnet/api/microsoft.azure.search.idocumentsoperations.autocompletewithhttpmessagesasync?view=azure-dotnet&viewFallbackFrom=azure-dotnet)
 
 В приложении поиска клиентский код должен использовать библиотеку, например [JQUERY UI Автозаполнение](https://jqueryui.com/autocomplete/) , для получения полного запроса и обеспечения соответствия. Дополнительные сведения об этой задаче см. [в разделе Добавление автозаполнения или предлагаемых результатов в клиентский код](search-autocomplete-tutorial.md).
 
@@ -168,9 +168,9 @@ POST /indexes/myxboxgames/docs/autocomplete?search&api-version=2020-06-30
 
 + [Дотнесовтоаутокомплете](https://github.com/Azure-Samples/search-dotnet-getting-started/tree/master/DotNetHowToAutocomplete) — это более старый пример, содержащий код C# и Java. Здесь также демонстрируется конструкция средства подбора, предлагаемые запросы, автозаполнение и навигация с помощью аспектов. В этом примере кода используется размещенный образец данных [NYCJobs](https://github.com/Azure-Samples/search-dotnet-asp-net-mvc-jobs) . 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Для получения дополнительных сведений о том, как запросы формулировку, рекомендуется использовать следующую статью.
 
 > [!div class="nextstepaction"]
-> [Добавление автозаполнения и предложений в клиентский код](search-autocomplete-tutorial.md) 
+> [Добавление автозаполнения и предложений в клиентский код](search-autocomplete-tutorial.md)
