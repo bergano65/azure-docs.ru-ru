@@ -1,6 +1,6 @@
 ---
-title: Рекомендации по устранению гипотетических выполнений в Azure
-description: Рекомендации по устранению рисков при уязвимостях упреждающего исполнения по сторонним каналам в Azure.
+title: Рекомендации по устранению гипотетического выполнения
+description: Узнайте больше о том, как устранить уязвимости, связанные с гипотетическым выполнением на стороне канала в Azure.
 services: virtual-machines
 author: cynthn
 keywords: spectre,meltdown,specter
@@ -10,13 +10,13 @@ ms.subservice: security
 ms.topic: conceptual
 ms.date: 11/12/2019
 ms.author: cynthn
-ms.openlocfilehash: 1bd80ecdb4496f26c2138ac7dfe71500207f57b5
-ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
+ms.openlocfilehash: 3fe21b522688fab1d5974b6840c31c2ef2d7fe32
+ms.sourcegitcommit: e69bb334ea7e81d49530ebd6c2d3a3a8fa9775c9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87284903"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88950312"
 ---
-# <a name="guidance-for-mitigating-speculative-execution-side-channel-vulnerabilities-in-azure"></a>Рекомендации по устранению рисков при уязвимостях упреждающего исполнения по сторонним каналам в Azure
+# <a name="guidance-for-mitigating-speculative-execution-side-channel-vulnerabilities"></a>Рекомендации по устранению уязвимостей на стороне сервера
 
 [!INCLUDE [virtual-machines-common-mitigate-se](../../../includes/virtual-machines-common-mitigate-se.md)]

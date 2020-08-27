@@ -3,12 +3,13 @@ title: Мониторинг активного веб-приложения ASP.N
 description: Мониторинг производительности веб-сайта без необходимости его повторного развертывания. Работает с веб-приложениями ASP.NET, размещенными локально или в виртуальных машинах.
 ms.topic: conceptual
 ms.date: 08/26/2019
-ms.openlocfilehash: 70a405d2c32641be2ed4038fbffebce0e1340f83
-ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
+ms.custom: devx-track-dotnet
+ms.openlocfilehash: 603cbde20ae6e8d19e4ad3ae290bbfc925483595
+ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87310452"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88923829"
 ---
 # <a name="instrument-web-apps-at-runtime-with-application-insights-codeless-attach"></a>Инструментирование веб-приложений во время выполнения с помощью Application Insights бескодового подключения
 
@@ -39,10 +40,10 @@ ms.locfileid: "87310452"
 
 |  | Во время сборки | Во время выполнения |
 | --- | --- | --- |
-| **Запросы, & исключения** |да |Да |
+| **Запросы, & исключения** |Да |Да |
 | **[Более подробные исключения](./asp-net-exceptions.md)** | |Да |
 | **[Диагностика зависимостей](./asp-net-dependencies.md)** |На платформе .NET 4.6 или более поздней, неполные сведения |Да, полные сведения: коды результатов, текст команд SQL, HTTP-команда|
-| **[Счетчики производительности системы](./performance-counters.md)** |да |Да |
+| **[Счетчики производительности системы](./performance-counters.md)** |Да |Да |
 | **[API для пользовательской телеметрии][api]** |Да |Нет |
 | **[Интеграция журнала трассировки](./asp-net-trace-logs.md)** |Да |Нет |
 | **[Просмотр страницы & данных пользователя](./javascript.md)** |Да |Нет |
@@ -173,12 +174,12 @@ Start-ApplicationInsightsMonitoring -Name appName -InstrumentationKey 00000000-0
 
 * Ознакомьтесь с дополнительными [сведениями об устранении неполадок][qna].
 
-## <a name="system-requirements"></a>Системные требования
+## <a name="system-requirements"></a>Требования к системе
 Операционные системы, которые поддерживаются для монитора состояний Application Insights на сервере:
 
-* Windows Server 2008
+* Windows Server 2008
 * Windows Server 2008 R2
-* Windows Server 2012
+* Windows Server 2012
 * Windows Server 2012 R2.
 * Windows Server 2016
 
@@ -243,7 +244,7 @@ Import-Module 'C:\Program Files\Microsoft Application Insights\Status Monitor\Po
 `Update-ApplicationInsightsMonitoring -Name appName [-InstrumentationKey "0000000-0000-000-000-0000"`]
 
 * `-Name` — имя веб-приложения на сервере IIS.
-* `-InstrumentationKey`(Необязательно.) Используйте этот параметр, чтобы изменить ресурс, в который отправляется телеметрии приложения.
+* `-InstrumentationKey` (Необязательно.) Используйте этот параметр, чтобы изменить ресурс, в который отправляется телеметрии приложения.
 * Этот командлет:
   * Обновляет именованное приложение до последней версии пакета SDK, загруженной на этот компьютер (работает, только если `SdkState==EnabledAfterDeployment`).
   * Если указан ключ инструментирования, именованное приложение повторно настраивается для отправки данных телеметрии в ресурс с этим ключом (работает, если `SdkState != Disabled`).
@@ -305,7 +306,7 @@ Import-Module 'C:\Program Files\Microsoft Application Insights\Status Monitor\Po
 
 [Подробнее](https://apmtips.com/posts/2016-11-18-how-application-insights-status-monitor-not-monitors-dependencies/)
 
-## <a name="video"></a>Видеоролик
+## <a name="video"></a>Видео
 
 > [!VIDEO https://channel9.msdn.com/events/Connect/2016/100/player]
 

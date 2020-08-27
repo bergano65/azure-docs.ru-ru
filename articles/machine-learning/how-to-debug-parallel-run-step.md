@@ -11,12 +11,12 @@ ms.reviewer: jmartens, larryfr, vaidyas, laobri, tracych
 ms.author: trmccorm
 author: tmccrmck
 ms.date: 07/16/2020
-ms.openlocfilehash: 16366d9f3be1144a7588ceb9133fb4e2e60db95c
-ms.sourcegitcommit: f353fe5acd9698aa31631f38dd32790d889b4dbb
+ms.openlocfilehash: 0b914059567e9a513b605ce733407465b625a909
+ms.sourcegitcommit: e69bb334ea7e81d49530ebd6c2d3a3a8fa9775c9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87373714"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88950023"
 ---
 # <a name="debug-and-troubleshoot-parallelrunstep"></a>Отладка и устранение неполадок ParallelRunStep
 [!INCLUDE [applies-to-skus](../../includes/aml-applies-to-basic-enterprise-sku.md)]
@@ -25,11 +25,11 @@ ms.locfileid: "87373714"
 
 ## <a name="testing-scripts-locally"></a>Локальное тестирование сценариев
 
-См. раздел [Локальное тестирование сценариев](how-to-debug-pipelines.md#testing-scripts-locally) для конвейеров машинного обучения. Ваш класс ParallelRunStep выполняется как этап в конвейерах машинного обучения, поэтому в обоих случаях применимы одни и те же решения.
+См. раздел [Локальное тестирование сценариев](how-to-debug-pipelines.md#debug-scripts-locally) для конвейеров машинного обучения. Ваш класс ParallelRunStep выполняется как этап в конвейерах машинного обучения, поэтому в обоих случаях применимы одни и те же решения.
 
 ## <a name="debugging-scripts-from-remote-context"></a>Отладка сценариев из удаленного контекста
 
-Переход от локальной отладки сценария оценки к отладке сценария оценки в фактическом конвейере может оказаться сложной задачей. Сведения о поиске журналов на портале см. в разделе о [конвейерах машинного обучения для сценариев отладки из удаленного контента](how-to-debug-pipelines.md#debugging-scripts-from-remote-context). Сведения в этом разделе также применимы к классу ParallelRunStep.
+Переход от локальной отладки сценария оценки к отладке сценария оценки в фактическом конвейере может оказаться сложной задачей. Сведения о поиске журналов на портале см. в разделе о [конвейерах машинного обучения для сценариев отладки из удаленного контента](how-to-debug-pipelines.md#finding-and-reading-pipeline-log-files). Сведения в этом разделе также применимы к классу ParallelRunStep.
 
 Например, файл журнала `70_driver_log.txt` содержит сведения о контроллере, который запускает код ParallelRunStep.
 

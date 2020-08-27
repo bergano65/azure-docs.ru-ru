@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: calebb
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 7986ca441f7d274670d8fa0238e7dcfa01497b6f
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 6b2f9a6e13fdc39ab18a2056fab15982aa9fb0e4
+ms.sourcegitcommit: e69bb334ea7e81d49530ebd6c2d3a3a8fa9775c9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85253177"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88948170"
 ---
 # <a name="how-to-require-mfa-for-access-from-untrusted-networks-with-conditional-access"></a>Как запросить MFA для доступа из ненадежных сетей с помощью условного доступа   
 
@@ -67,6 +67,6 @@ Azure Active Directory (Azure AD) обеспечивает единый вход
 
 С помощью подхода, описанного в этой статье, можно настроить политику условного доступа для ненадежных расположений. Чтобы убедиться, что политика работает должным образом, рекомендуется протестировать ее перед развертыванием в рабочей среде. В идеале для проверки правильности работы новой политики следует использовать тестовый клиент. Дополнительные сведения см. в разделе [Как развертывать новую политику?](best-practices.md#how-should-you-deploy-a-new-policy) 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Следующие шаги
 
-Дополнительные сведения об условном доступе см [. в разделе что такое условный доступ в Azure Active Directory?](../active-directory-conditional-access-azure-portal.md)
+Дополнительные сведения об условном доступе см [. в разделе что такое условный доступ в Azure Active Directory?](./overview.md)

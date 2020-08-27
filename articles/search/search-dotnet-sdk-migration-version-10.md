@@ -9,16 +9,16 @@ ms.service: cognitive-search
 ms.devlang: dotnet
 ms.topic: conceptual
 ms.date: 11/04/2019
-ms.openlocfilehash: 61fee97323d110875cb05fb48157527a39c80f56
-ms.sourcegitcommit: 4e5560887b8f10539d7564eedaff4316adb27e2c
+ms.openlocfilehash: 101fd5298482f2f92e2a3fa4284d6e3fe94989a1
+ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87905787"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88923234"
 ---
 # <a name="upgrade-to-azure-cognitive-search-net-sdk-version-10"></a>Обновление до Azure Когнитивный поиск .NET SDK версии 10
 
-Если вы используете версию 9,0 или более раннюю версию [пакета SDK для .NET](https://docs.microsoft.com/dotnet/api/overview/azure/search), эта статья поможет вам обновить приложение для использования версии 10.
+Если вы используете версию 9,0 или более раннюю версию [пакета SDK для .NET](/dotnet/api/overview/azure/search), эта статья поможет вам обновить приложение для использования версии 10.
 
 Поиск Azure переименовывается в Когнитивный поиск Azure в версии 10, но пространства имен и имена пакетов не изменяются. Предыдущие версии пакета SDK (9,0 и более ранних версий) продолжают использовать прежнее имя. Дополнительные сведения об использовании пакета SDK, включая примеры, см. [в статье использование когнитивный Поиск Azure из приложения .NET](search-howto-dotnet-sdk.md).
 
@@ -35,13 +35,13 @@ ms.locfileid: "87905787"
 Версия 10 пакета SDK для Azure Когнитивный поиск .NET предназначена REST API `2019-05-06` с этими обновлениями:
 
 * Появление двух новых навыков — [условного](cognitive-search-skill-conditional.md) навыка и [навыков перевода текста](cognitive-search-skill-text-translation.md).
-* Для обеспечения консолидации из вложенных контекстов в качестве входных данных по [навыкам фигуры](cognitive-search-skill-shaper.md) были внесены реструктуризации. Дополнительные сведения см. в этом [примере определения JSON](https://docs.microsoft.com/azure/search/cognitive-search-skill-shaper#scenario-3-input-consolidation-from-nested-contexts).
+* Для обеспечения консолидации из вложенных контекстов в качестве входных данных по [навыкам фигуры](cognitive-search-skill-shaper.md) были внесены реструктуризации. Дополнительные сведения см. в этом [примере определения JSON](./cognitive-search-skill-shaper.md#scenario-3-input-consolidation-from-nested-contexts).
 * Добавление двух новых [функций сопоставления полей](search-indexer-field-mappings.md):
-    - [urlEncode](https://docs.microsoft.com/azure/search/search-indexer-field-mappings#urlencode-function)
-    - [урлдекоде](https://docs.microsoft.com/azure/search/search-indexer-field-mappings#urldecode-function)
-* В некоторых случаях ошибки и предупреждения, отображаемые в [состоянии выполнения индексатора](https://docs.microsoft.com/rest/api/searchservice/get-indexer-status) , могут содержать дополнительные сведения, помогающие при отладке. `IndexerExecutionResult`был обновлен для отражения этого поведения.
+    - [urlEncode](./search-indexer-field-mappings.md#urlencode-function)
+    - [урлдекоде](./search-indexer-field-mappings.md#urldecode-function)
+* В некоторых случаях ошибки и предупреждения, отображаемые в [состоянии выполнения индексатора](/rest/api/searchservice/get-indexer-status) , могут содержать дополнительные сведения, помогающие при отладке. `IndexerExecutionResult` был обновлен для отражения этого поведения.
 * Отдельные уровни опыта, определенные в наборе [навыков](cognitive-search-defining-skillset.md) , при необходимости можно определить, указав `name` свойство.
-* `ServiceLimits`показывает ограничения для [сложных типов](https://docs.microsoft.com/azure/search/search-howto-complex-data-types) и `IndexerExecutionInfo` показывает соответствующие ограничения и квоты индексатора.
+* `ServiceLimits` показывает ограничения для [сложных типов](./search-howto-complex-data-types.md) и `IndexerExecutionInfo` показывает соответствующие ограничения и квоты индексатора.
 
 <a name="UpgradeSteps"></a>
 
@@ -139,13 +139,13 @@ var skillset = new Skillset()
 }
 ```
 
-`SentimentSkill`присваивается имя `#1` , `WebApiSkill` назначается, назначается `#2` `ShaperSkill` `#3` и т. д.
+`SentimentSkill` присваивается имя `#1` , `WebApiSkill` назначается, назначается `#2` `ShaperSkill` `#3` и т. д.
 
 Если вы решили определить навыки по пользовательскому имени, сначала обновите все экземпляры клиентов до версии 10 пакета SDK. В противном случае существует вероятность, что клиент, использующий более старую версию пакета SDK `null` `Name` , может получить свойство навыка, что приведет к тому, что клиент вернется к схеме именования по умолчанию.
 
 ## <a name="details-about-errors-and-warnings"></a>Сведения об ошибках и предупреждениях
 
-`ItemError`и `ItemWarning` модели, инкапсулирующие подробные сведения об ошибках и предупреждениях (соответственно), происходящие при выполнении индексатора, были изменены с целью включения в процесс отладки индексатора трех новых свойств. К этим свойствам относятся следующие.
+`ItemError` и `ItemWarning` модели, инкапсулирующие подробные сведения об ошибках и предупреждениях (соответственно), происходящие при выполнении индексатора, были изменены с целью включения в процесс отладки индексатора трех новых свойств. К этим свойствам относятся следующие.
 
 - `Name`: Имя источника, в котором возникла ошибка. Например, он может ссылаться на определенный навык в присоединенном наборе навыков.
 - `Details`: Дополнительные подробные сведения об ошибке или предупреждении.
@@ -154,9 +154,8 @@ var skillset = new Skillset()
 > [!NOTE]
 > Мы начали структурировать наши ошибки и предупреждения, чтобы включить эти полезные сведения, когда это возможно. Мы работаем над тем, чтобы для всех ошибок и предупреждений эти сведения присутствовали, но это выполняемая работа, и эти дополнительные сведения не всегда могут быть заполнены.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Изменения, внесенные в навык создания фигуры, имеют наибольшее влияние на новый или существующий код. Чтобы перейти к следующему шагу, перейдите к этому примеру, проиллюстрированной структурой входных данных: [Пример определения формата JSON для подготовки к отметке](cognitive-search-skill-shaper.md)
 - Просмотрите [Обзор обогащения искусственного интеллекта](cognitive-search-concept-intro.md).
 - Будем рады вашим отзывам о пакете SDK. При возникновении проблем вы можете попросить нас получить помощь по [Stack overflow](https://stackoverflow.com/questions/tagged/azure-search). При обнаружении ошибки можно зарегистрировать проблему в [репозитории GitHub пакета SDK .NET для Azure](https://github.com/Azure/azure-sdk-for-net/issues). Обязательно добавьте в заголовок проблемы префикс "[Azure Когнитивный поиск]".
-

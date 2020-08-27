@@ -10,12 +10,13 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 06/18/2020
 ms.author: xiaojul
-ms.openlocfilehash: 1d84646fcb6769b7489cc0e03085e95fc47ef56c
-ms.sourcegitcommit: 0100d26b1cac3e55016724c30d59408ee052a9ab
+ms.custom: devx-track-csharp
+ms.openlocfilehash: f3a8cafa907cb66832faf033f7b62e68bf859097
+ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "86027636"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88918831"
 ---
 # <a name="integrate-with-a-client-application-using-speech-sdk"></a>Интеграция с клиентским приложением с помощью речевого пакета SDK
 
@@ -24,7 +25,7 @@ ms.locfileid: "86027636"
 - Публикация приложения настраиваемых команд и получение идентификатора приложения (идентификатор приложения)
 - Создание клиентского приложения универсальная платформа Windows (UWP) с помощью речевого пакета SDK, позволяющего взаимодействовать с приложением пользовательских команд.
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Для выполнения этой статьи требуется приложение с пользовательскими командами. Если вы еще не создали приложение с пользовательскими командами, это можно сделать, следуя кратким руководствам:
 > [!div class = "checklist"]
@@ -64,7 +65,7 @@ ms.locfileid: "86027636"
 
 Создайте пользовательский интерфейс приложения, добавив код XAML.
 
-1. В **Обозреватель решений**откройте`MainPage.xaml`
+1. В **Обозреватель решений**откройте `MainPage.xaml`
 
 1. В представлении XAML конструктора замените все содержимое следующим фрагментом кода:
 
@@ -302,7 +303,7 @@ ms.locfileid: "86027636"
     > 1. Выберите **Управление пакетами NuGet для решения**, а затем — **обновления** . 
     > 1. Если в списке обновлений отображается **Microsoft. NETCore. UniversalWindowsPlatform** , обновите **Microsoft. NETCore. UniversalWindowsPlatform** до последней версии.
 
-1. Добавьте следующий код в тело метода`InitializeDialogServiceConnector`
+1. Добавьте следующий код в тело метода `InitializeDialogServiceConnector`
 
    ```csharp
    // This code creates the `DialogServiceConnector` with your subscription information.
@@ -319,7 +320,7 @@ ms.locfileid: "86027636"
 
 1. Замените строки `YourApplicationId` , `YourSpeechSubscriptionKey` и `YourServiceRegion` собственными значениями для приложения, подписки на речь и [региона](regions.md) .
 
-1. Добавьте следующий фрагмент кода в конец тела метода`InitializeDialogServiceConnector`
+1. Добавьте следующий фрагмент кода в конец тела метода `InitializeDialogServiceConnector`
 
    ```csharp
    //
@@ -417,7 +418,7 @@ ms.locfileid: "86027636"
 
 1. Выберите **разговор**и говорите в микрофоне устройства фразу на английском языке или предложение. Ваша речь передастся в канал "Речь Direct Line" и преобразуется в текст, который появится в том же окне.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Пошаговое руководство. Отправка действия в клиентское приложение (Предварительная версия)](./how-to-custom-commands-send-activity-to-client.md)

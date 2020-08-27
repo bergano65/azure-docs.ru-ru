@@ -19,12 +19,12 @@ translation.priority.mt:
 - ru-ru
 - zh-cn
 - zh-tw
-ms.openlocfilehash: c31304228d9629b0df7f7511ecca2616b4891ee7
-ms.sourcegitcommit: 3541c9cae8a12bdf457f1383e3557eb85a9b3187
+ms.openlocfilehash: 0a84d0310573a1210e21157102a445fff9244782
+ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/09/2020
-ms.locfileid: "86206960"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88923982"
 ---
 # <a name="odata-searchscore-function-in-azure-cognitive-search"></a>`search.score`Функция OData в Azure когнитивный Поиск
 
@@ -46,4 +46,4 @@ ms.locfileid: "86206960"
 
 - [Общие сведения о языке выражений OData для Azure Когнитивный поиск](query-odata-filter-orderby-syntax.md)
 - [Справочник по синтаксису выражений OData для Azure Когнитивный поиск](search-query-odata-syntax-reference.md)
-- [Поиск документов &#40;API Azure Когнитивный поиск EST&#41;](https://docs.microsoft.com/rest/api/searchservice/Search-Documents)
+- [Поиск документов &#40;API Azure Когнитивный поиск EST&#41;](/rest/api/searchservice/Search-Documents)

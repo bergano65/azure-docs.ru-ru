@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: jairoc
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: cf3fd50b907e69311c475af844c7969f081a3094
-ms.sourcegitcommit: cec9676ec235ff798d2a5cad6ee45f98a421837b
+ms.openlocfilehash: 7d3fbb06355772794fbe3fab5cdf3c8622c2baf4
+ms.sourcegitcommit: e69bb334ea7e81d49530ebd6c2d3a3a8fa9775c9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85849938"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88948833"
 ---
 # <a name="how-to-require-managed-devices-for-cloud-app-access-with-conditional-access"></a>Как потребовать управляемых устройств для доступа к облачным приложениям с помощью условного доступа
 
@@ -24,11 +24,11 @@ Azure Active Directory (AAD) поддерживает единый вход дл
 
 В этой статье объясняется, как настроить политики условного доступа, требующие, чтобы управляемые устройства могли получать доступ к определенным облачным приложениям в вашей среде. 
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Требования управляемых устройств к облачным приложениям привязывает **Условный доступ Azure AD** к **управлению устройствами Azure AD** вместе. Если вы не знакомы с одной из этих областей, ознакомьтесь со следующими статьями:
 
-- **[Условный доступ в Azure Active Directory](../active-directory-conditional-access-azure-portal.md)** . Эта статья содержит общие сведения о условном доступе и соответствующей терминологии.
+- **[Условный доступ в Azure Active Directory](./overview.md)** . Эта статья содержит общие сведения о условном доступе и соответствующей терминологии.
 - **[Общие сведения об управлении устройствами в Azure Active Directory](../devices/overview.md)**. В этой статье описано несколько вариантов реализации контроля организации за устройствами. 
 - Для поддержки Chrome в **Windows 10 Creators Update (версия 1703)** или более поздней установите [Расширение учетных записей Windows 10](https://chrome.google.com/webstore/detail/windows-10-accounts/ppnbnpeolgkicgegkbkbjmhlideopiji). Это расширение требуется, если политика условного доступа требует сведений, относящихся к устройству.
 
@@ -124,6 +124,6 @@ Azure Active Directory (AAD) поддерживает единый вход дл
 
 В Windows 7, iOS, Android, macOS и некоторых сторонних веб-браузерах Azure AD определяет устройство с помощью сертификата клиента, подготовленного при регистрации устройства в Azure AD. При первом входе пользователя в систему через браузер пользователю предлагается выбрать сертификат. Конечный пользователь должен выбрать этот сертификат, прежде чем он сможет продолжить работу с браузером.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Следующие шаги
 
 Перед настройкой политики условного доступа на основе устройств в среде следует ознакомиться с [рекомендациями по условному доступу в Azure Active Directory](best-practices.md).

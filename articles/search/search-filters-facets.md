@@ -8,12 +8,12 @@ ms.author: heidist
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 11/04/2019
-ms.openlocfilehash: 852d8f8f85536dc62dd792e5727dd7ec0571ba29
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: eb5771a6e615535a9a158e6378cd36b6e0df58bc
+ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87084217"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88923132"
 ---
 # <a name="how-to-build-a-facet-filter-in-azure-cognitive-search"></a>Как создать фильтр аспекта в Azure Когнитивный поиск 
 
@@ -38,12 +38,12 @@ ms.locfileid: "87084217"
 
 При создании индекса аспекты включаются в зависимости от каждого поля, присвоив `facetable` атрибуту значение `true` . Как правило, атрибут должен быть задан `filterable` `true` для таких полей, чтобы приложение поиска может фильтровать по этим полям на основе аспектов, выбранных конечным пользователем. 
 
-При создании индекса с помощью REST API любой [тип поля](https://docs.microsoft.com/rest/api/searchservice/supported-data-types) , который может быть использован в аспектной навигации, помечается как по `facetable` умолчанию:
+При создании индекса с помощью REST API любой [тип поля](/rest/api/searchservice/supported-data-types) , который может быть использован в аспектной навигации, помечается как по `facetable` умолчанию:
 
 + `Edm.String`
 + `Edm.DateTimeOffset`
 + `Edm.Boolean`
-+ Числовые типы полей: `Edm.Int32` , `Edm.Int64` ,`Edm.Double`
++ Числовые типы полей: `Edm.Int32` , `Edm.Int64` , `Edm.Double`
 + Коллекции приведенных выше типов (например, `Collection(Edm.String)` или `Collection(Edm.Double)` )
 
 `Edm.GeographyPoint` `Collection(Edm.GeographyPoint)` В аспектной навигации нельзя использовать поля или. Аспекты лучше подходят для полей с низкой кратностью. Из-за разрешения географических координат редко бывает, что все два набора координат будут равны в данном наборе данных. Таким образом аспекты не поддерживаются для географических координат. Вам понадобится поле города или региона для поиска по местоположению с использованием фасетизации.
@@ -77,11 +77,11 @@ ms.locfileid: "87084217"
 ```
 
 > [!Note]
-> Это определение индекса копируется из [создания индекса когнитивный Поиск Azure с помощью REST API](https://docs.microsoft.com/azure/search/search-create-index-rest-api). Оно идентично, за исключением поверхностных различий в определениях полей. `filterable`Атрибуты и `facetable` явно добавляются в `category` поля, `tags` , `parkingIncluded` , `smokingAllowed` и `rating` . На практике `filterable` и будут `facetable` включены по умолчанию для этих полей при использовании REST API. При использовании пакета SDK для .NET эти атрибуты должны быть включены явным образом.
+> Это определение индекса копируется из [создания индекса когнитивный Поиск Azure с помощью REST API](./search-get-started-powershell.md). Оно идентично, за исключением поверхностных различий в определениях полей. `filterable`Атрибуты и `facetable` явно добавляются в `category` поля, `tags` , `parkingIncluded` , `smokingAllowed` и `rating` . На практике `filterable` и будут `facetable` включены по умолчанию для этих полей при использовании REST API. При использовании пакета SDK для .NET эти атрибуты должны быть включены явным образом.
 
 ## <a name="build-and-load-an-index"></a>Построение и загрузка индекса
 
-Промежуточным (и, возможно, очевидным) шагом является [сборка и заполнение индекса](https://docs.microsoft.com/azure/search/search-get-started-dotnet#1---create-index) перед формулировкой запроса. Здесь мы упомянем этот шаг для полноты картины. Один из способов определить доступность индекса — это проверить список индексов на [портале](https://portal.azure.com).
+Промежуточным (и, возможно, очевидным) шагом является [сборка и заполнение индекса](./search-get-started-dotnet.md#1---create-an-index) перед формулировкой запроса. Здесь мы упомянем этот шаг для полноты картины. Один из способов определить доступность индекса — это проверить список индексов на [портале](https://portal.azure.com).
 
 ## <a name="add-facet-filters-to-a-query"></a>Добавление фильтров аспектов в запрос
 
@@ -107,7 +107,7 @@ if (!String.IsNullOrEmpty(categoryFacet))
     filter = $"category eq '{categoryFacet}'";
 ```
 
-Если пользователь щелкает значение аспекта для поля коллекции `tags` , например, значение "пул", приложение должно использовать следующий синтаксис фильтра:`$filter=tags/any(t: t eq 'pool')`
+Если пользователь щелкает значение аспекта для поля коллекции `tags` , например, значение "пул", приложение должно использовать следующий синтаксис фильтра: `$filter=tags/any(t: t eq 'pool')`
 
 ## <a name="tips-and-workarounds"></a>Советы и обходные решения
 
@@ -121,8 +121,8 @@ if (!String.IsNullOrEmpty(categoryFacet))
 
 Хотя это распространенный вариант использования, структура фасетной навигации в настоящее время не предоставляет этого изначально. Разработчики, которым требуются статические аспекты, обычно обходят ограничение, выполняя два отфильтрованных запроса: один в пределах результатов, а другой для создания статического списка аспектов для навигации.
 
-## <a name="see-also"></a>См. также статью
+## <a name="see-also"></a>См. также
 
 + [Фильтры в Когнитивный поиск Azure](search-filters.md)
-+ [Create Index (Azure Search Service REST API)](https://docs.microsoft.com/rest/api/searchservice/create-index) (Создание индексов (REST API службы "Поиск Azure")).
-+ [Поиск документов REST API](https://docs.microsoft.com/rest/api/searchservice/search-documents)
++ [Create Index (Azure Search Service REST API)](/rest/api/searchservice/create-index) (Создание индексов (REST API службы "Поиск Azure")).
++ [Поиск документов REST API](/rest/api/searchservice/search-documents)
