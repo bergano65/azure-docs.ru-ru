@@ -8,12 +8,12 @@ ms.topic: article
 ms.date: 11/08/2018
 ms.author: msangapu
 ms.custom: seodec18
-ms.openlocfilehash: b168328f64f599de109dbd0a5bd95c0a26f5f902
-ms.sourcegitcommit: 2ffa5bae1545c660d6f3b62f31c4efa69c1e957f
+ms.openlocfilehash: b73c7e62c6b621d3ac86cfb99b10b567460534f1
+ms.sourcegitcommit: 648c8d250106a5fca9076a46581f3105c23d7265
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/11/2020
-ms.locfileid: "88083239"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88961862"
 ---
 # <a name="continuous-deployment-with-web-app-for-containers"></a>Непрерывное развертывание с использованием платформы Azure "Веб-приложения для контейнеров"
 
@@ -55,17 +55,17 @@ ms.locfileid: "88083239"
 
 ## <a name="automate-with-cli"></a>Автоматизация с помощью CLI
 
-Чтобы настроить CI/CD с помощью Azure CLI, выполните команду [AZ webapp Deployment container config](https://docs.microsoft.com/cli/azure/webapp/deployment/container?view=azure-cli-latest#az-webapp-deployment-container-config) , чтобы создать URL-адрес перехватчика. URL-адрес можно использовать для настройки реестра контейнеров DockerHub или Azure.
+Чтобы настроить CI/CD с помощью Azure CLI, выполните команду [AZ webapp Deployment container config](/cli/azure/webapp/deployment/container?view=azure-cli-latest#az-webapp-deployment-container-config) , чтобы создать URL-адрес перехватчика. URL-адрес можно использовать для настройки реестра контейнеров DockerHub или Azure.
 
 ```azurecli-interactive
 az webapp deployment container config --name <app-name> --resource-group <group-name> --enable-cd true
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * [Реестр контейнеров Azure](https://azure.microsoft.com/services/container-registry/)
 * [Создание веб-приложения .NET Core в службе приложений на платформе Linux](quickstart-dotnetcore.md?pivots=platform-linux)
 * [Создание веб-приложения Ruby в службе приложений на платформе Linux](quickstart-ruby.md)
-* [Краткое руководство. Запуск пользовательского контейнера в службе приложений](quickstart-custom-container.md?pivots=container-linux)
+* [Краткое руководство. Запуск пользовательского контейнера в Службе приложений](quickstart-custom-container.md?pivots=container-linux)
 * [Служба приложений в Linux: вопросы и ответы](faq-app-service-linux.md)
 * [Настройка пользовательских контейнеров Linux](configure-custom-container.md)

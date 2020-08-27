@@ -6,12 +6,12 @@ ms.assetid: 9af8a367-7d39-4399-9941-b80cbc5f39a0
 ms.topic: article
 ms.date: 08/13/2019
 ms.custom: devx-track-csharp, seodec18
-ms.openlocfilehash: 57039149afd22546bbd584db47e7a015b8b5f85c
-ms.sourcegitcommit: 4913da04fd0f3cf7710ec08d0c1867b62c2effe7
+ms.openlocfilehash: 4990862bacbf2afe2d4b5f39c2b9d31a7c48b78e
+ms.sourcegitcommit: 648c8d250106a5fca9076a46581f3105c23d7265
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88213568"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88962899"
 ---
 # <a name="configure-an-app-service-app-in-the-azure-portal"></a>Настройка приложения службы приложений в портал Azure
 
@@ -44,7 +44,7 @@ ms.locfileid: "88213568"
 Параметры приложения всегда шифруются при хранении.
 
 > [!NOTE]
-> Параметры приложения можно также разрешить из [Key Vault](/azure/key-vault/) с помощью [Key Vault ссылок](app-service-key-vault-references.md).
+> Параметры приложения можно также разрешить из [Key Vault](../key-vault/index.yml) с помощью [Key Vault ссылок](app-service-key-vault-references.md).
 
 ### <a name="show-hidden-values"></a>Показывать скрытые значения
 
@@ -115,7 +115,7 @@ ms.locfileid: "88213568"
 Строки подключения всегда шифруются при хранении.
 
 > [!NOTE]
-> Строки подключения можно также разрешить из [Key Vault](/azure/key-vault/) с помощью [Key Vault ссылок](app-service-key-vault-references.md).
+> Строки подключения можно также разрешить из [Key Vault](../key-vault/index.yml) с помощью [Key Vault ссылок](app-service-key-vault-references.md).
 
 ### <a name="show-hidden-values"></a>Показывать скрытые значения
 
@@ -245,7 +245,7 @@ ms.locfileid: "88213568"
 
 См. статью [Настройка пользовательского контейнера Linux для службы приложений Azure](configure-custom-container.md) .
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Следующие шаги
 
 - [Настройка личного доменного имени в службе приложений Azure]
 - [Настройка промежуточных сред в Службе приложений Azure]

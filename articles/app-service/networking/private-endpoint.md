@@ -9,12 +9,12 @@ ms.author: ericg
 ms.service: app-service
 ms.workload: web
 ms.custom: fasttrack-edit, references_regions
-ms.openlocfilehash: 773e63cb5eb2a9825975402f65439acd6ad192ae
-ms.sourcegitcommit: 1aef4235aec3fd326ded18df7fdb750883809ae8
+ms.openlocfilehash: 16ce03ad8d6af1908a9ea4d3b7759bb5eb3c1139
+ms.sourcegitcommit: 648c8d250106a5fca9076a46581f3105c23d7265
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/12/2020
-ms.locfileid: "88135391"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88961556"
 ---
 # <a name="using-private-endpoints-for-azure-web-app-preview"></a>Использование частных конечных точек для веб-приложения Azure (предварительная версия)
 
@@ -70,31 +70,31 @@ ms.locfileid: "88135391"
 По умолчанию без частной конечной точки общедоступное имя веб-приложения является каноническим именем кластера.
 Например, разрешение имен будет следующим:
 
-|Имя |Тип |Значение |
+|Имя |Type |Значение |
 |-----|-----|------|
 |mywebapp.azurewebsites.net|CNAME|clustername.azurewebsites.windows.net|
 |clustername.azurewebsites.windows.net|CNAME|cloudservicename.cloudapp.net|
-|cloudservicename.cloudapp.net|A|40.122.110.154| 
+|cloudservicename.cloudapp.net|Объект|40.122.110.154| 
 
 
 При развертывании частной конечной точки мы обновляем запись DNS, чтобы она указывала на каноническое имя mywebapp.privatelink.azurewebsites.net.
 Например, разрешение имен будет следующим:
 
-|Имя |Тип |Значение |Комментарий |
+|Имя |Type |Значение |Комментарий |
 |-----|-----|------|-------|
 |mywebapp.azurewebsites.net|CNAME|mywebapp.privatelink.azurewebsites.net|
 |mywebapp.privatelink.azurewebsites.net|CNAME|clustername.azurewebsites.windows.net|
 |clustername.azurewebsites.windows.net|CNAME|cloudservicename.cloudapp.net|
-|cloudservicename.cloudapp.net|A|40.122.110.154|< — этот общедоступный IP-адрес не является частной конечной точкой, вы получите ошибку 403.|
+|cloudservicename.cloudapp.net|Объект|40.122.110.154|< — этот общедоступный IP-адрес не является частной конечной точкой, вы получите ошибку 403.|
 
 Необходимо настроить частный DNS-сервер или Azure DNS частную зону. для тестов можно изменить запись узла тестового компьютера.
 Необходимо создать зону DNS: **privatelink.azurewebsites.NET**. Зарегистрируйте запись для веб-приложения, используя запись A и IP-адрес частной конечной точки.
 Например, разрешение имен будет следующим:
 
-|Имя |Тип |Значение |Комментарий |
+|Имя |Type |Значение |Комментарий |
 |-----|-----|------|-------|
 |mywebapp.azurewebsites.net|CNAME|mywebapp.privatelink.azurewebsites.net|
-|mywebapp.privatelink.azurewebsites.net|A|10.10.10.8|<--вы управляете этой записью в системе DNS, чтобы указать IP-адрес частной конечной точки.|
+|mywebapp.privatelink.azurewebsites.net|Объект|10.10.10.8|<--вы управляете этой записью в системе DNS, чтобы указать IP-адрес частной конечной точки.|
 
 После этой конфигурации DNS можно получить доступ к веб-приложению в частном порядке с именем по умолчанию mywebappname.azurewebsites.net.
 
@@ -103,10 +103,10 @@ ms.locfileid: "88135391"
 
 Для консоли KUDU или KUDU REST API (например, развертывание с помощью собственных агентов Azure DevOps) необходимо создать две записи в Azure DNS частной зоне или пользовательском DNS-сервере. 
 
-| Имя | Тип | Значение |
+| Имя | Type | Значение |
 |-----|-----|-----|
-| mywebapp.privatelink.azurewebsites.net | A | приватиндпоинтип | 
-| mywebapp.scm.privatelink.azurewebsites.net | A | приватиндпоинтип | 
+| mywebapp.privatelink.azurewebsites.net | Объект | приватиндпоинтип | 
+| mywebapp.scm.privatelink.azurewebsites.net | Объект | приватиндпоинтип | 
 
 
 
@@ -133,18 +133,18 @@ ms.locfileid: "88135391"
 
 
 <!--Links-->
-[serviceendpoint]: https://docs.microsoft.com/azure/virtual-network/virtual-network-service-endpoints-overview
-[privatelink]: https://docs.microsoft.com/azure/private-link/private-link-overview
-[vnetintegrationfeature]: https://docs.microsoft.com/azure/app-service/web-sites-integrate-with-vnet
-[disablesecuritype]: https://docs.microsoft.com/azure/private-link/disable-private-endpoint-network-policy
-[accessrestrictions]: https://docs.microsoft.com/azure/app-service/app-service-ip-restrictions
+[serviceendpoint]: ../../virtual-network/virtual-network-service-endpoints-overview.md
+[privatelink]: ../../private-link/private-link-overview.md
+[vnetintegrationfeature]: ../web-sites-integrate-with-vnet.md
+[disablesecuritype]: ../../private-link/disable-private-endpoint-network-policy.md
+[accessrestrictions]: ../app-service-ip-restrictions.md
 [tcpproxy]: ../../private-link/private-link-service-overview.md#getting-connection-information-using-tcp-proxy-v2
-[dnsvalidation]: https://docs.microsoft.com/azure/app-service/app-service-web-tutorial-custom-domain
-[pllimitations]: https://docs.microsoft.com/azure/private-link/private-endpoint-overview#limitations
+[dnsvalidation]: ../app-service-web-tutorial-custom-domain.md
+[pllimitations]: ../../private-link/private-endpoint-overview.md#limitations
 [pricing]: https://azure.microsoft.com/pricing/details/private-link/
-[howtoguide1]: https://docs.microsoft.com/azure/private-link/create-private-endpoint-webapp-portal
-[howtoguide2]: https://docs.microsoft.com/azure/app-service/scripts/cli-deploy-privateendpoint
-[howtoguide3]: https://docs.microsoft.com/azure/app-service/scripts/powershell-deploy-private-endpoint
-[howtoguide4]: https://docs.microsoft.com/azure/app-service/scripts/template-deploy-private-endpoint
+[howtoguide1]: ../../private-link/create-private-endpoint-webapp-portal.md
+[howtoguide2]: ../scripts/cli-deploy-privateendpoint.md
+[howtoguide3]: ../scripts/powershell-deploy-private-endpoint.md
+[howtoguide4]: ../scripts/template-deploy-private-endpoint.md
 [howtoguide5]: https://github.com/Azure/azure-quickstart-templates/tree/master/101-webapp-privateendpoint-vnet-injection
-[howtoguide6]: https://docs.microsoft.com/azure/app-service/scripts/terraform-secure-backend-frontend
+[howtoguide6]: ../scripts/terraform-secure-backend-frontend.md

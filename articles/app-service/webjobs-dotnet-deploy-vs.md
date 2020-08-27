@@ -8,12 +8,12 @@ ms.custom: devx-track-csharp, vs-azure
 ms.date: 07/30/2020
 ms.author: glenga
 ms.reviewer: david.ebbo;suwatch;pbatum;naren.soni
-ms.openlocfilehash: 14bb693ccaa1b1d16a1d07b7ee1cdeb4493960f5
-ms.sourcegitcommit: 4913da04fd0f3cf7710ec08d0c1867b62c2effe7
+ms.openlocfilehash: ed473568fbad5bad380001cd2e2faccd90994099
+ms.sourcegitcommit: 648c8d250106a5fca9076a46581f3105c23d7265
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88212877"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88959907"
 ---
 # <a name="develop-and-deploy-webjobs-using-visual-studio"></a>Разработка и развертывание веб-заданий с помощью Visual Studio
 
@@ -55,7 +55,7 @@ Visual Studio добавляет следующие элементы в прое
 
 ### <a name="prerequisites"></a>Предварительные требования
 
-Установите Visual Studio 2017 или Visual Studio 2019 с [рабочей нагрузкой разработки Azure](https://docs.microsoft.com/visualstudio/install/install-visual-studio#step-4---choose-workloads).
+Установите Visual Studio 2017 или Visual Studio 2019 с [рабочей нагрузкой разработки Azure](/visualstudio/install/install-visual-studio#step-4---choose-workloads).
 
 ### <a name="enable-webjobs-deployment-for-an-existing-console-app-project"></a><a id="convert"></a> Включение развертывания веб-заданий для существующего проекта консольного приложения
 
@@ -239,7 +239,7 @@ Visual Studio добавляет следующие элементы в прое
 
 1. Выберите **опубликовать** на вкладке **Публикация** , чтобы повторно опубликовать веб-задание с обновленными параметрами.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Следующие шаги
 
 > [!div class="nextstepaction"]
 > [Подробнее о пакете SDK веб-заданий](webjobs-sdk-how-to.md)

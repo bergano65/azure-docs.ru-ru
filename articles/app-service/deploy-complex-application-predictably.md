@@ -5,12 +5,12 @@ ms.assetid: bb51e565-e462-4c60-929a-2ff90121f41d
 ms.topic: article
 ms.date: 01/06/2016
 ms.custom: seodec18
-ms.openlocfilehash: f5e4c4d89a1119b0f59aa15885406cd7261d2f69
-ms.sourcegitcommit: 1e6c13dc1917f85983772812a3c62c265150d1e7
+ms.openlocfilehash: 6c45d2da8658740b5e5e7e3dceb7478ea28d712c
+ms.sourcegitcommit: 648c8d250106a5fca9076a46581f3105c23d7265
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/09/2020
-ms.locfileid: "86170009"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88962032"
 ---
 # <a name="provision-and-deploy-microservices-predictably-in-azure"></a>Предсказуемые подготовка и развертывание микрослужб в Azure
 В этом руководстве описано, как предсказуемо с помощью шаблонов групп ресурсов JSON и скриптов PowerShell подготовить и развернуть приложение, состоящее из [микрослужб](https://en.wikipedia.org/wiki/Microservices), в [службу приложений Azure](https://azure.microsoft.com/services/app-service/) как единое целое. 
@@ -29,7 +29,7 @@ ms.locfileid: "86170009"
 В этом учебнике будут использоваться следующие инструменты. Так как подробное изучение инструментов не входит в задачу данного учебника, будем придерживаться беглого сценария и остановимся лишь на кратком введении к каждому инструменту и скажем, где можно будет найти дополнительную информацию о них. 
 
 ### <a name="azure-resource-manager-templates-json"></a>Шаблоны диспетчера ресурсов Azure (JSON)
-Каждый раз при создании приложения, например в службе приложений Azure, Azure Resource Manager использует шаблон JSON для создания всей группы ресурсов с ресурсами компонентов. Сложный шаблон из [Azure Marketplace](/azure/marketplace) может содержать базу данных, учетные записи хранения, план службы приложений, само приложение, правила генерации оповещений, параметры приложения, параметры автоматического масштабирования и др. Все эти шаблоны доступны через PowerShell. Дополнительные сведения о создании шаблонов Azure Resource Manager см. [здесь](../azure-resource-manager/templates/template-syntax.md).
+Каждый раз при создании приложения, например в службе приложений Azure, Azure Resource Manager использует шаблон JSON для создания всей группы ресурсов с ресурсами компонентов. Сложный шаблон из [Azure Marketplace](../marketplace/index.yml) может содержать базу данных, учетные записи хранения, план службы приложений, само приложение, правила генерации оповещений, параметры приложения, параметры автоматического масштабирования и др. Все эти шаблоны доступны через PowerShell. Дополнительные сведения о создании шаблонов Azure Resource Manager см. [здесь](../azure-resource-manager/templates/template-syntax.md).
 
 ### <a name="azure-sdk-26-for-visual-studio"></a>Пакет SDK для Azure 2.6 для Visual Studio
 Новейший пакет SDK содержит улучшения для поддержки шаблонов диспетчера ресурсов в редакторе JSON. Здесь можно быстро создать шаблон группы ресурсов с нуля или открыть существующий шаблон JSON (например, скачанный шаблон коллекции) для изменения, заполнения файла параметров и даже развертывания группы ресурсов непосредственно из решения для групп ресурсов Azure.
@@ -39,7 +39,7 @@ ms.locfileid: "86170009"
 ### <a name="azure-powershell-080-or-later"></a>Azure PowerShell 0.8.0 или более поздней версии
 Начиная с версии 0.8.0, установка Azure PowerShell в дополнение к модулю Azure содержит модуль диспетчера ресурсов Azure. Этот новый модуль позволяет создавать скрипты развертывания групп ресурсов.
 
-Дополнительные сведения см. в разделе [использование Azure PowerShell с Azure Resource Manager](../powershell-azure-resource-manager.md)
+Дополнительные сведения см. в разделе [использование Azure PowerShell с Azure Resource Manager](../azure-resource-manager/management/manage-resources-powershell.md)
 
 ### <a name="azure-resource-explorer"></a>Обозреватель ресурсов Azure
 Этот [инструмент предварительного просмотра](https://resources.azure.com) позволяет изучать определения JSON всех групп ресурсов в подписке и отдельных ресурсов. Этот инструмент предназначен для изменения определений JSON ресурса, удаления всей иерархии ресурсов и создания новых ресурсов.  Сведения, доступные в этом средстве, очень полезны для создания шаблонов, так как они показывают, какие свойства необходимо задать для конкретного типа ресурса, правильные значения и т. д. Вы даже можете создать группу ресурсов на [портале Azure](https://portal.azure.com/), а затем проверить определения JSON в средстве обозревателя, чтобы помочь вам темплатизе группу ресурсов.
@@ -220,7 +220,7 @@ ms.locfileid: "86170009"
     Теперь в удобной таблице можно изменить все параметры, определенные в файле шаблона. Параметры, определяющие значения по умолчанию, уже будут иметь значения по умолчанию, а параметры, определяющие список допустимых значений, будут отображаться в виде раскрывающихся списков.
     
     ![Показывает параметры, определяющие список допустимых значений в виде раскрывающихся списков.](./media/app-service-deploy-complex-application-predictably/deploy-10-parametereditor.png)
-15. Заполните все пустые параметры и используйте [адрес репозитория GitHub для ToDoApp](https://github.com/azure-appservice-samples/ToDoApp.git) в **repoUrl**. Затем нажмите кнопку **Сохранить**.
+15. Заполните все пустые параметры и используйте [адрес репозитория GitHub для ToDoApp](https://github.com/azure-appservice-samples/ToDoApp.git) в **repoUrl**. Нажмите кнопку **Сохранить**.
     
     ![Отображает только что заполненные параметры для azuredeploy.jsфайла.](./media/app-service-deploy-complex-application-predictably/deploy-11-parametereditorfilled.png)
     
@@ -254,15 +254,15 @@ ms.locfileid: "86170009"
 * [Создание шаблонов Azure Resource Manager](../azure-resource-manager/templates/template-syntax.md)
 * [Функции шаблонов в диспетчере ресурсов Azure](../azure-resource-manager/templates/template-functions.md)
 * [Развертывание приложения с использованием шаблона диспетчера ресурсов Azure](../azure-resource-manager/templates/deploy-powershell.md)
-* [Использование Azure PowerShell с диспетчером ресурсов Azure](../azure-resource-manager/powershell-azure-resource-manager.md)
+* [Использование Azure PowerShell с диспетчером ресурсов Azure](../azure-resource-manager/management/manage-resources-powershell.md)
 * [Устранение неполадок при развертывании групп ресурсов в Azure](../azure-resource-manager/templates/common-deployment-errors.md)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Дополнительные сведения о синтаксисе JSON и свойствах для типов ресурсов, развертываемых в этой статье, см. таких справочниках:
 
 * [Microsoft.Sql/servers](/azure/templates/microsoft.sql/servers)
-* [Microsoft. SQL/Servers/databases](/azure/templates/microsoft.sql/servers/databases)
+* [Microsoft.Sql/servers/databases](/azure/templates/microsoft.sql/servers/databases)
 * [Microsoft.Sql/servers/firewallRules](/azure/templates/microsoft.sql/servers/firewallrules)
 * [Microsoft. Web/serverfarms](/azure/templates/microsoft.web/serverfarms)
 * [Microsoft. Web/Sites](/azure/templates/microsoft.web/sites)

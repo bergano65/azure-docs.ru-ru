@@ -7,12 +7,12 @@ ms.author: dobett
 ms.date: 08/13/2020
 ms.topic: troubleshooting
 ms.service: iot-central
-ms.openlocfilehash: 4c95c5eccb5ff804adeae94074136c6242678127
-ms.sourcegitcommit: d39f2cd3e0b917b351046112ef1b8dc240a47a4f
+ms.openlocfilehash: 6a1506de0bf21e44d84925fabeeea860f5807e2c
+ms.sourcegitcommit: 648c8d250106a5fca9076a46581f3105c23d7265
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88816071"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88958105"
 ---
 # <a name="troubleshoot-why-data-from-your-devices-isnt-showing-up-in-azure-iot-central"></a>Устранение неполадок, почему данные с устройств не отображаются в Azure IoT Central
 
@@ -95,8 +95,6 @@ version : 32
 rocessorArchitecture': 'ARM', 'swVersion': '1.0.0'}
 ```
 
-### <a name="interpreting-terminal-output"></a>Анализ выходных данных терминала
-
 Если в окне терминала отображаются данные, то данные будут переводиться в приложение IoT Central.
 
 Если через несколько минут данные не отображаются, попробуйте нажать клавишу `Enter` или `return` на клавиатуре, если выходные данные будут зависнуть.
@@ -133,7 +131,7 @@ https://aka.ms/iotcentral-docs-dps-SAS",
 
 | Состояние подготовки устройства | Описание | Возможное устранение рисков |
 | - | - | - |
-| Подготовлено | Не удается немедленно распознать ошибку. | Недоступно |
+| Подготовлено | Не удается немедленно распознать ошибку. | Н/Д |
 | Зарегистрировано | Устройство еще не подключено к IoT Central. | Проверьте журналы устройств на наличие проблем с подключением. |
 | Блокировано | Устройству запрещено подключаться к IoT Central. | Устройству запрещено подключаться к IoT Central приложению. Разблокируйте устройство в IoT Central и повторите попытку. Дополнительные сведения см. в разделе [блочные устройства](concepts-get-connected.md#device-status-values). |
 | Неутвержденные | Устройство не утверждено. | Устройство не утверждено для подключения к IoT Central приложению. Утвердите устройство в IoT Central и повторите попытку. Дополнительные сведения см. в разделе [утверждение устройств](concepts-get-connected.md#connect-without-registering-devices) . |
@@ -187,8 +185,6 @@ https://aka.ms/iotcentral-docs-dps-SAS",
     az iot central app validate-properties --app-id <app-id> --device-id <device-name>
     ```
 
-- Если вы предпочитаете использовать графический интерфейс пользователя, используйте IoT Central представление **необработанных данных** , чтобы определить, не моделируется ли что-либо. Представление " **необработанные данные** " не обнаруживает, отправляет ли устройство неверно сформированный код JSON.
-
 При первом запуске команды может появиться запрос на установку `uamqp` библиотеки `validate` .
 
 В следующих выходных данных показаны примеры сообщений об ошибках и предупреждений из команды Validate:
@@ -205,19 +201,16 @@ Exiting after 300 second(s), or 10 message(s) have been parsed (whichever happen
 tatype 'double'. Data '56'. All dates/times/datetimes/durations must be ISO 8601 compliant.
 ```
 
-:::image type="content" source="media/troubleshoot-connection/raw-data-view.png" alt-text="Снимок экрана представления необработанные данные":::
+Если вы предпочитаете использовать графический интерфейс пользователя, используйте IoT Central представление **необработанных данных** , чтобы определить, не моделируется ли что-либо. Представление " **необработанные данные** " не обнаруживает, отправляет ли устройство неверно сформированный код JSON.
 
-### <a name="interpreting-terminal-output"></a>Анализ выходных данных терминала
+:::image type="content" source="media/troubleshoot-connection/raw-data-view.png" alt-text="Снимок экрана представления "необработанные данные"":::
 
 После обнаружения проблемы может потребоваться обновить встроенное по устройства или создать новый шаблон устройства, моделирующий ранее несмоделированные данные.
 
 Если вы решили создать новый шаблон, который моделирует данные правильно, перенесите устройства из старого шаблона в новый шаблон. Дополнительные сведения см. в статье [Управление устройствами в приложении IOT Central Azure](howto-manage-devices.md).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
-Если вы не можете устранить неполадки и решить проблему с помощью этого руководством, отправьте запрос в службу поддержки. Клиенты Azure могут создавать запросы на поддержку и управлять ими в портал Azure:
-
-- [Портал Azure](https://ms.portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade/overview)
-- [Портал Azure для государственных учреждений США](https://portal.azure.us/)
+Если вам нужна дополнительная помощь, вы можете обратиться к экспертам по Azure на [форумах MSDN Azure и Stack overflow](https://azure.microsoft.com/support/community/). Кроме того, вы можете отправить запрос в [службу поддержки Azure](https://portal.azure.com/#create/Microsoft.Support).
 
 Дополнительные сведения см. в статье [Поддержка Azure IOT и параметры справки](../../iot-fundamentals/iot-support-help.md).

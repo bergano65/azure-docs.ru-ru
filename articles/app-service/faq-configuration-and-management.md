@@ -8,12 +8,12 @@ ms.assetid: 2fa5ee6b-51a6-4237-805f-518e6c57d11b
 ms.topic: article
 ms.date: 10/30/2018
 ms.author: genli
-ms.openlocfilehash: 867c011cb3086cab736d17501e72bc477d0d2889
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 5545acbfd6bb239b9518fbe352b819f300dafaf0
+ms.sourcegitcommit: 648c8d250106a5fca9076a46581f3105c23d7265
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "82160006"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88962355"
 ---
 # <a name="configuration-and-management-faqs-for-web-apps-in-azure"></a>Часто задаваемые вопросы о настройке и управлении для функции "Веб-приложения" в Azure
 
@@ -63,9 +63,9 @@ ms.locfileid: "82160006"
 2. В разделе **Параметры приложения** добавьте параметр:
     * Ключ = WEBSITE_TIME_ZONE
     * Значение = *требуемый часовой пояс*
-3. Щелкните **Сохранить**.
+3. Выберите **Сохранить**.
 
-Для служб приложений, работающих в Windows, см. столбец **TimeZone** в статье [по умолчанию часовых поясов](https://docs.microsoft.com/windows-hardware/manufacture/desktop/default-time-zones) для принятых значений. Для служб приложений, работающих в Linux, задайте [имя базы данных](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones) в качестве значения часового пояса. Ниже приведен пример имени базы данных с именем: America/Адак.
+Для служб приложений, работающих в Windows, см. столбец **TimeZone** в статье [по умолчанию часовых поясов](/windows-hardware/manufacture/desktop/default-time-zones) для принятых значений. Для служб приложений, работающих в Linux, задайте [имя базы данных](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones) в качестве значения часового пояса. Ниже приведен пример имени базы данных с именем: America/Адак.
 
 ## <a name="why-do-my-continuous-webjobs-sometimes-fail"></a>Почему при выполнении непрерывных веб-заданий иногда происходят сбои?
 
@@ -141,13 +141,13 @@ ms.locfileid: "82160006"
 Exception: System.Data.Entity.Core.EntityException: The underlying provider failed on Open. —> System.OverflowException: Arithmetic operation resulted in an overflow. or (64 bit Web app) System.OverflowException: Array dimensions exceeded supported range, at System.Data.SqlClient.TdsParser.ConsumePreLoginHandshake
 ```
 
-### <a name="resolution"></a>Решение
+### <a name="resolution"></a>Разрешение
 
 Исключение было порождено из-за проблемы с диспетчером гибридных подключений, которая затем была исправлена. Не забудьте [обновить диспетчер гибридных подключений](https://go.microsoft.com/fwlink/?LinkID=841308), чтобы устранить эту проблему.
 
 ## <a name="how-do-i-add-a-url-rewrite-rule"></a>Разделы справки добавить правило переопределения URL-адресов?
 
-Чтобы добавить правило переопределения URL-адресов, создайте файл web.config с соответствующими записями конфигурации в папке **wwwroot** . Дополнительные сведения см. в статье [о службе приложений Azure: Общие сведения о перезаписи URL-адресов](https://blogs.msdn.microsoft.com/madhurabharadwaj/2018/06/01/azure-app-services-understanding-url-re-write/).
+Чтобы добавить правило переопределения URL-адресов, создайте файл web.config с соответствующими записями конфигурации в папке **wwwroot** . Дополнительные сведения см. в статье [о службе приложений Azure: Общие сведения о перезаписи URL-адресов](/archive/blogs/madhurabharadwaj/azure-app-services-understanding-url-re-write).
 
 ## <a name="how-do-i-control-inbound-traffic-to-app-service"></a>Как контролировать входящий трафик в службе приложений?
 
@@ -222,7 +222,7 @@ Error:{"error":{"code":"ResourceDeploymentFailure","message":"The resource provi
 * Группа безопасности сети не поддерживает требования среды службы приложений к сетевому подключению.
 * Включено принудительное туннелирование.
 
-Дополнительные сведения см. в записи блога [Most frequent issues when deploying (creating) a new Azure App Service Environment](https://blogs.msdn.microsoft.com/waws/2016/05/13/most-frequent-issues-when-deploying-creating-a-new-azure-app-service-environment-ase/) (Частые проблемы при развертывании (создании) новой среды службы приложений Azure).
+Дополнительные сведения см. в записи блога [Most frequent issues when deploying (creating) a new Azure App Service Environment](/archive/blogs/waws/most-frequent-issues-when-deploying-creating-a-new-azure-app-service-environment-ase) (Частые проблемы при развертывании (создании) новой среды службы приложений Azure).
 
 ## <a name="why-cant-i-delete-my-app-service-plan"></a>Почему не удается удалить план службы приложений?
 
@@ -286,7 +286,7 @@ Invoke-AzResourceAction -ResourceGroupName "<App Service Certificate Resource Gr
 
 ## <a name="how-do-i-determine-which-version-of-net-version-is-installed-in-app-service"></a>Как определить, какая версия платформы .NET установлена в службе приложений?
 
-Проще всего найти версию Microsoft .NET, установленную в службе приложений, при помощи консоли Kudu. Доступ к консоли Kudu можно получить на портале или с помощью URL-адреса приложения службы приложений. Подробные инструкции см. в записи блога [Determine the installed .NET version in App Service](https://blogs.msdn.microsoft.com/waws/2016/11/02/how-to-determine-the-installed-net-version-in-azure-app-services/) (Определение установленной версии .NET в службе приложений).
+Проще всего найти версию Microsoft .NET, установленную в службе приложений, при помощи консоли Kudu. Доступ к консоли Kudu можно получить на портале или с помощью URL-адреса приложения службы приложений. Подробные инструкции см. в записи блога [Determine the installed .NET version in App Service](/archive/blogs/waws/how-to-determine-the-installed-net-version-in-azure-app-services) (Определение установленной версии .NET в службе приложений).
 
 ## <a name="why-isnt-autoscale-working-as-expected"></a>Почему автомасштабирование не работает правильно?
 

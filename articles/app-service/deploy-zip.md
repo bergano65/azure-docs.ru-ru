@@ -5,12 +5,12 @@ ms.topic: article
 ms.date: 08/12/2019
 ms.reviewer: sisirap
 ms.custom: seodec18
-ms.openlocfilehash: f547f60bf6c67b757f2e12f06f1e39100c3e76cb
-ms.sourcegitcommit: 2ffa5bae1545c660d6f3b62f31c4efa69c1e957f
+ms.openlocfilehash: e2959403d2e5db38d03013e798fe299d56837227
+ms.sourcegitcommit: 648c8d250106a5fca9076a46581f3105c23d7265
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/11/2020
-ms.locfileid: "88077158"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88962117"
 ---
 # <a name="deploy-your-app-to-azure-app-service-with-a-zip-or-war-file"></a>Развертывание приложения в Службе приложений Azure с помощью ZIP- или WAR-файла
 
@@ -31,9 +31,9 @@ ms.locfileid: "88077158"
 > [!NOTE]
 > При использовании `ZipDeploy` файлы копируются только в том случае, если их метки времени не совпадают с уже развернутыми. Создание ZIP-файла с помощью процесса сборки, который кэширует выходные данные, может привести к ускорению развертываний. Дополнительные сведения см. в разделе [развертывание из ZIP-файла или URL](https://github.com/projectkudu/kudu/wiki/Deploying-from-a-zip-file-or-url).
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
-Чтобы выполнить действия, описанные в этой статье, [Создайте приложение службы приложений](/azure/app-service/)или используйте приложение, созданное для другого руководства.
+Чтобы выполнить действия, описанные в этой статье, [Создайте приложение службы приложений](./index.yml)или используйте приложение, созданное для другого руководства.
 
 [!INCLUDE [quickstarts-free-trial-note](../../includes/quickstarts-free-trial-note.md)]
 
@@ -90,7 +90,7 @@ Publish-AzWebapp -ResourceGroupName <group-name> -Name <app-name> -ArchivePath <
 
 [!INCLUDE [What happens to my app during deployment?](../../includes/app-service-deploy-atomicity.md)]
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Чтобы изучить более сложные сценарии развертывания, ознакомьтесь с [развертыванием в Azure с помощью Git](deploy-local-git.md). Развертывание в Azure на основе Git обеспечивает систему управления версиями, восстановление пакета, MSBuild и многое другое.
 

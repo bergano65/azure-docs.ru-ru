@@ -6,16 +6,16 @@ ms.devlang: dotnet
 ms.topic: article
 ms.date: 08/29/2016
 ms.custom: devx-track-csharp, seodec18
-ms.openlocfilehash: 1ed7a6ebea12e5db37ec89c73db105dd7ce7e2ab
-ms.sourcegitcommit: 4913da04fd0f3cf7710ec08d0c1867b62c2effe7
+ms.openlocfilehash: de39789a45856211421e3ec5638a2df94d49976c
+ms.sourcegitcommit: 648c8d250106a5fca9076a46581f3105c23d7265
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88211991"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88958717"
 ---
 # <a name="troubleshoot-an-app-in-azure-app-service-using-visual-studio"></a>Устранение неполадок приложения в Cлужбе приложений Azure с помощью Visual Studio
-## <a name="overview"></a>Общие сведения
-В этом руководстве показано, как использовать инструменты Visual Studio, которые позволяют отлаживать работу приложения в [Cлужбе приложений](https://go.microsoft.com/fwlink/?LinkId=529714) путем запуска приложения удаленно в [режиме отладки](https://docs.microsoft.com/visualstudio/debugger/) или путем просмотра журналов приложения и журналов веб-сервера.
+## <a name="overview"></a>Обзор
+В этом руководстве показано, как использовать инструменты Visual Studio, которые позволяют отлаживать работу приложения в [Cлужбе приложений](https://go.microsoft.com/fwlink/?LinkId=529714) путем запуска приложения удаленно в [режиме отладки](/visualstudio/debugger/) или путем просмотра журналов приложения и журналов веб-сервера.
 
 Вы узнаете:
 
@@ -680,7 +680,7 @@ Storage accounts offer more storage and longer-lasting retention for logs compar
   Инструмент для просмотра данных в журналах веб-сервера (*LOG* -файлов).
 * [Устранение проблем производительности IIS или ошибок приложений с помощью LogParser](https://www.iis.net/learn/troubleshoot/performance-issues/troubleshooting-iis-performance-issues-or-application-errors-using-logparser)<br/>
    Введение в средство LogParser, которое можно использовать для анализа журналов веб-сервера.
-* [Записи блога Роберта Мак-Мюррея (Robert McMurray), посвященные использованию LogParser](https://docs.microsoft.com/archive/blogs/robert_mcmurray/using-logparser-with-ftp-7-x-sessions)<br/>
+* [Записи блога Роберта Мак-Мюррея (Robert McMurray), посвященные использованию LogParser](/archive/blogs/robert_mcmurray/using-logparser-with-ftp-7-x-sessions)<br/>
 * [Код состояния HTTP в IIS 7.0, IIS 7.5 и IIS 8.0](https://support.microsoft.com/kb/943891)
 
 ### <a name="analyzing-failed-request-tracing-logs"></a>Анализ журналов трассировки неудачно завершенных запросов

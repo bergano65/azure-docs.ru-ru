@@ -7,12 +7,12 @@ ms.assetid: bb51e565-e462-4c60-929a-2ff90121f41d
 ms.topic: article
 ms.date: 07/31/2019
 ms.author: jafreebe
-ms.openlocfilehash: addc4edba734c350a1e0e4246203c64315f345dd
-ms.sourcegitcommit: 2ffa5bae1545c660d6f3b62f31c4efa69c1e957f
+ms.openlocfilehash: b4581b7e93cde9d6ba9a20d46ee263a879c05402
+ms.sourcegitcommit: 648c8d250106a5fca9076a46581f3105c23d7265
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/11/2020
-ms.locfileid: "88081057"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88961879"
 ---
 # <a name="deployment-best-practices"></a>Рекомендации по развертыванию
 
@@ -127,7 +127,7 @@ az ad sp create-for-rbac --name "myServicePrincipal" --role contributor \
 
 ### <a name="java"></a>Java
 
-Используйте KUDU [зипдеплой/](deploy-zip.md) API для развертывания JAR-приложений, а также [WARDEPLOY/](deploy-zip.md#deploy-war-file) for War Apps. Если вы используете Jenkins, эти API можно использовать непосредственно на этапе развертывания. Дополнительные сведения см. в [этой статье](../jenkins/execute-cli-jenkins-pipeline.md).
+Используйте KUDU [зипдеплой/](deploy-zip.md) API для развертывания JAR-приложений, а также [WARDEPLOY/](deploy-zip.md#deploy-war-file) for War Apps. Если вы используете Jenkins, эти API можно использовать непосредственно на этапе развертывания. Дополнительные сведения см. в [этой статье](/azure/developer/jenkins/deploy-to-azure-app-service-using-azure-cli).
 
 ### <a name="node"></a>Узел
 
@@ -149,7 +149,7 @@ az ad sp create-for-rbac --name "myServicePrincipal" --role contributor \
 
 Если ваш план службы приложений использует более 90% доступного процессора или памяти, то при обработке развертывания может возникнуть проблема с базовой виртуальной машиной. В этом случае можно временно увеличить число экземпляров для выполнения развертывания. После завершения развертывания можно вернуть число экземпляров к его предыдущему значению.
 
-Дополнительные сведения о рекомендуемых методиках см. в статье [Диагностика службы приложений](https://docs.microsoft.com/azure/app-service/overview-diagnostics) .
+Дополнительные сведения о рекомендуемых методиках см. в статье [Диагностика службы приложений](./overview-diagnostics.md) .
 
 - Перейдите к веб-приложению в [портал Azure](https://portal.azure.com).
 - В области навигации слева щелкните **Диагностика и устранение проблем** , после чего откроется окно Диагностика службы приложений.

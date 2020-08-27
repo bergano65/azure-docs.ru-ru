@@ -7,12 +7,12 @@ ms.topic: article
 ms.date: 10/30/2018
 ms.author: msangapu
 ms.custom: seodec18
-ms.openlocfilehash: e01954e0f2f311a7229a69cb18f881e0491b80d3
-ms.sourcegitcommit: 2ffa5bae1545c660d6f3b62f31c4efa69c1e957f
+ms.openlocfilehash: c35647a46cd252ce045d10e8dfefcf78236ba74b
+ms.sourcegitcommit: 648c8d250106a5fca9076a46581f3105c23d7265
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/11/2020
-ms.locfileid: "88083167"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88961726"
 ---
 # <a name="azure-app-service-on-linux-faq"></a>Служба приложений Azure на платформе Linux: вопросы и ответы
 
@@ -35,7 +35,7 @@ ms.locfileid: "88083167"
 | Java SE         | команда для запуска приложения JAR (например, `java -jar /home/site/wwwroot/app.jar --server.port=80` ) |
 | Tomcat          | расположение скрипта для выполнения необходимых конфигураций (например, `/home/site/deployments/tools/startup_script.sh` ).          |
 | Node.js         | файл конфигурации PM2 или файл скрипта                                |
-| .NET Core       | имя скомпилированной библиотеки DLL как`dotnet <myapp>.dll`                                 |
+| .NET Core       | имя скомпилированной библиотеки DLL как `dotnet <myapp>.dll`                                 |
 | Ruby            | Скрипт Ruby, с которым требуется инициализировать приложение                     |
 
 Эти команды или скрипты выполняются после запуска встроенного контейнера DOCKER, но перед запуском кода приложения.
@@ -122,7 +122,7 @@ const io = require('socket.io')(server,{
 
 **Какой формат используется для имени образа в частном реестре?**
 
-Добавьте полное имя образа, включая URL-адрес частного реестра (например, myacr.azurecr.io/dotnet:latest). [На портале нельзя вводить](https://feedback.azure.com/forums/169385-web-apps/suggestions/31304650) имена образов, которые используют пользовательский порт. Для установки `docker-custom-image-name` Используйте [ `az` программу командной строки](https://docs.microsoft.com/cli/azure/webapp/config/container?view=azure-cli-latest#az-webapp-config-container-set).
+Добавьте полное имя образа, включая URL-адрес частного реестра (например, myacr.azurecr.io/dotnet:latest). [На портале нельзя вводить](https://feedback.azure.com/forums/169385-web-apps/suggestions/31304650) имена образов, которые используют пользовательский порт. Для установки `docker-custom-image-name` Используйте [ `az` программу командной строки](/cli/azure/webapp/config/container?view=azure-cli-latest#az-webapp-config-container-set).
 
 **Можно ли предоставить несколько портов в образе настраиваемого контейнера?**
 
@@ -130,7 +130,7 @@ const io = require('socket.io')(server,{
 
 **Можно ли использовать собственное хранилище?**
 
-Да, [функция использования собственного хранилища](https://docs.microsoft.com/azure/app-service/configure-connect-to-azure-storage) находится на этапе предварительной версии.
+Да, [функция использования собственного хранилища](./configure-connect-to-azure-storage.md) находится на этапе предварительной версии.
 
 **Почему мне не удается просматривать файловую систему или выполняющиеся процессы моего пользовательского контейнера на сайте SCM?**
 
@@ -201,7 +201,7 @@ image: <server-name>.azurecr.io/<image-name>:<tag>
 
 Вы можете отправить свои идеи на [форум отзывов о веб-приложениях](https://aka.ms/webapps-uservoice). Добавьте [Linux] в заголовок своей идеи.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - [Общие сведения о службе приложений на платформе Linux](overview.md#app-service-on-linux).
 - [Настройка промежуточных сред в Службе приложений Azure](deploy-staging-slots.md)

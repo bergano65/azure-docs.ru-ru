@@ -1,14 +1,14 @@
 ---
 title: Сведения о структуре определения политики
 description: Описывает, как определения политик используются для установки соглашений о ресурсах Azure в организации.
-ms.date: 08/17/2020
+ms.date: 08/27/2020
 ms.topic: conceptual
-ms.openlocfilehash: ba6b8160eefb0a59bc8273989c27a3a8501a79b7
-ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
+ms.openlocfilehash: 3b6509f684e611fbb79184383e1b332d793458b9
+ms.sourcegitcommit: 648c8d250106a5fca9076a46581f3105c23d7265
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88547806"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88958785"
 ---
 # <a name="azure-policy-definition-structure"></a>Структура определения службы "Политика Azure"
 
@@ -77,7 +77,7 @@ ms.locfileid: "88547806"
 > [!NOTE]
 > Во время создания или обновления определения политики **идентификатор**, **тип** и **имя** определяются свойствами, которые являются внешними по отношению к JSON и не обязательны в JSON-файле. Выборка определения политики с помощью пакета SDK возвращает **идентификатор**, **тип** и **имя** свойства как часть JSON, но все они являются сведениями только для чтения, относящимися к определению политики.
 
-## <a name="type"></a>Тип
+## <a name="type"></a>Type
 
 Хотя свойство **Type** не может быть задано, пакет SDK возвращает три значения, которые отображаются на портале:
 
@@ -652,6 +652,13 @@ ms.locfileid: "88547806"
   (Get-AzPolicyAlias -NamespaceMatch 'compute').Aliases
   ```
 
+  > [!NOTE]
+  > Чтобы найти псевдонимы, которые можно использовать с действием [изменения](./effects.md#modify) , используйте следующую команду:
+  >
+  > ```azurepowershell-interactive
+  > Get-AzPolicyAlias | Select-Object -ExpandProperty 'Aliases' | Where-Object { $_.DefaultMetadata.Attributes -eq 'Modifiable' }
+  > ```
+
 - Azure CLI
 
   ```azurecli-interactive
@@ -704,7 +711,7 @@ ms.locfileid: "88547806"
 
 Более подробную информацию см. в разделе [оценка псевдонима [\*]](../how-to/author-policies-for-arrays.md#evaluating-the--alias).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - См. [структуру определения инициативы](./initiative-definition-structure.md)
 - См. другие [примеры шаблонов для службы Политика Azure](../samples/index.md).

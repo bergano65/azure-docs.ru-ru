@@ -6,12 +6,12 @@ ms.assetid: 4859d0d5-3e3c-40cc-96eb-f318b2c51a3d
 ms.topic: article
 ms.date: 10/24/2019
 ms.custom: seodec18
-ms.openlocfilehash: d40f5db65ce9ca90ae978bac4491bdebccc2a328
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: bb0765a1d7934d60f787ed277dd3bd1f9bc1359b
+ms.sourcegitcommit: 648c8d250106a5fca9076a46581f3105c23d7265
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "80811710"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88962950"
 ---
 # <a name="manage-an-app-service-plan-in-azure"></a>Управлением планом службы приложений в Azure
 
@@ -82,7 +82,7 @@ ms.locfileid: "80811710"
 
 Сведения о том, как установить для плана службы приложений более высокую ценовую категорию, см. в статье [Увеличение масштаба приложения в Azure](manage-scale-up.md).
 
-Сведения о развертывании числа экземпляров приложения вы найдете в статье [Масштабирование числа экземпляров вручную или автоматически](../monitoring-and-diagnostics/insights-how-to-scale.md).
+Сведения о развертывании числа экземпляров приложения вы найдете в статье [Масштабирование числа экземпляров вручную или автоматически](../azure-monitor/platform/autoscale-get-started.md).
 
 <a name="delete"></a>
 
@@ -93,7 +93,7 @@ ms.locfileid: "80811710"
 > [!IMPORTANT]
 > За планы службы приложений всегда взимается плата, даже если с ними не связано ни одно приложение, так как план всегда резервирует настроенные экземпляры виртуальных машин.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Следующие шаги
 
 > [!div class="nextstepaction"]
 > [Увеличение масштаба приложения в Azure](manage-scale-up.md)

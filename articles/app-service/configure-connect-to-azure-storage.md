@@ -6,12 +6,12 @@ ms.topic: article
 ms.date: 7/01/2019
 ms.author: msangapu
 zone_pivot_groups: app-service-containers-windows-linux
-ms.openlocfilehash: 8ced35f30966a96061792ad2171afe19599ed22c
-ms.sourcegitcommit: 2ffa5bae1545c660d6f3b62f31c4efa69c1e957f
+ms.openlocfilehash: 8ca3688ad11bc7a694327990be22b8eccd8f8161
+ms.sourcegitcommit: 648c8d250106a5fca9076a46581f3105c23d7265
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/11/2020
-ms.locfileid: "88077260"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88962865"
 ---
 # <a name="access-azure-storage-as-a-network-share-from-a-container-in-app-service"></a>Доступ к хранилищу Azure в качестве сетевой папки из контейнера в службе приложений
 
@@ -27,7 +27,7 @@ ms.locfileid: "88077260"
 
 ::: zone-end
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 ::: zone pivot="container-windows"
 
@@ -77,7 +77,7 @@ ms.locfileid: "88077260"
 
 После создания [учетной записи хранения Azure, общей папки и каталога](#prerequisites)вы можете настроить приложение в службе хранилища Azure.
 
-Чтобы подключить файловый ресурс Azure к каталогу в приложении службы приложений, используйте [`az webapp config storage-account add`](https://docs.microsoft.com/cli/azure/webapp/config/storage-account?view=azure-cli-latest#az-webapp-config-storage-account-add) команду. Тип хранилища должен быть AzureFiles.
+Чтобы подключить файловый ресурс Azure к каталогу в приложении службы приложений, используйте [`az webapp config storage-account add`](/cli/azure/webapp/config/storage-account?view=azure-cli-latest#az-webapp-config-storage-account-add) команду. Тип хранилища должен быть AzureFiles.
 
 ```azurecli
 az webapp config storage-account add --resource-group <group-name> --name <app-name> --custom-id <custom-id> --storage-type AzureFiles --share-name <share-name> --account-name <storage-account-name> --access-key "<access-key>" --mount-path <mount-path-directory of form c:<directory name> >
@@ -91,7 +91,7 @@ az webapp config storage-account add --resource-group <group-name> --name <app-n
 
 После создания [учетной записи хранения Azure, общей папки и каталога](#prerequisites)вы можете настроить приложение в службе хранилища Azure.
 
-Чтобы подключить учетную запись хранения к каталогу в приложении службы приложений, используйте [`az webapp config storage-account add`](https://docs.microsoft.com/cli/azure/webapp/config/storage-account?view=azure-cli-latest#az-webapp-config-storage-account-add) команду. Тип хранилища может быть AzureBlob или AzureFiles. В этом примере используется AzureFiles. Параметр пути подключения соответствует папке, которую вы хотите подключить из службы хранилища Azure. Если задать для него значение "/", будет подключена вся служба хранилища Azure.
+Чтобы подключить учетную запись хранения к каталогу в приложении службы приложений, используйте [`az webapp config storage-account add`](/cli/azure/webapp/config/storage-account?view=azure-cli-latest#az-webapp-config-storage-account-add) команду. Тип хранилища может быть AzureBlob или AzureFiles. В этом примере используется AzureFiles. Параметр пути подключения соответствует папке, которую вы хотите подключить из службы хранилища Azure. Если задать для него значение "/", будет подключена вся служба хранилища Azure.
 
 
 > [!CAUTION]
@@ -114,7 +114,7 @@ az webapp config storage-account add --resource-group <group-name> --name <app-n
 az webapp config storage-account list --resource-group <resource-group> --name <app-name>
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 ::: zone pivot="container-windows"
 

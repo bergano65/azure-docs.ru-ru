@@ -8,12 +8,12 @@ ms.topic: article
 ms.date: 02/25/2019
 ms.author: msangapu
 ms.custom: seodec18
-ms.openlocfilehash: f663b58de666e2a0fe44fa3c023816a524b7d6c5
-ms.sourcegitcommit: 2ffa5bae1545c660d6f3b62f31c4efa69c1e957f
+ms.openlocfilehash: d46aacc441b412a117d906e0201a9bed6046a338
+ms.sourcegitcommit: 648c8d250106a5fca9076a46581f3105c23d7265
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/11/2020
-ms.locfileid: "88083152"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88961611"
 ---
 # <a name="open-an-ssh-session-to-a-linux-container-in-azure-app-service"></a>Открытие сеанса SSH для контейнера Linux в службе приложений Azure
 
@@ -111,13 +111,13 @@ Load average: 0.07 0.04 0.08 4/765 45738
 45738     1 root     Z        0   0%   0   0% [init]
 </pre>
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
-Если у вас возникли вопросы, опубликуйте их на [форуме Azure](https://docs.microsoft.com/answers/topics/azure-webapps.html).
+Если у вас возникли вопросы, опубликуйте их на [форуме Azure](/answers/topics/azure-webapps.html).
 
 Дополнительные сведения о платформе "Веб-приложения для контейнеров" см. в статьях:
 
 * [Общие сведения об удаленной отладке приложений Node.js в службе приложений Azure из VS Code](https://medium.com/@auchenberg/introducing-remote-debugging-of-node-js-apps-on-azure-app-service-from-vs-code-in-public-preview-9b8d83a6e1f0)
-* [Краткое руководство. Запуск пользовательского контейнера в службе приложений](quickstart-custom-container.md?pivots=container-linux)
+* [Краткое руководство. Запуск пользовательского контейнера в Службе приложений](quickstart-custom-container.md?pivots=container-linux)
 * [Использование Ruby в службе приложений Azure на платформе Linux](quickstart-ruby.md).
 * [Часто задаваемые вопросы о службе приложений Azure Веб-приложение для контейнеров](faq-app-service-linux.md)

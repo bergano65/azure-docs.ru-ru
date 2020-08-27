@@ -5,12 +5,12 @@ ms.topic: article
 ms.date: 11/04/2019
 ms.reviewer: yutlin
 ms.custom: seodec18
-ms.openlocfilehash: d76bac60bae11f0843d81de523030154af62a373
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: b62352d09419de11135f4d7a2740e0e74b80255d
+ms.sourcegitcommit: 648c8d250106a5fca9076a46581f3105c23d7265
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "80811696"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88962134"
 ---
 # <a name="use-a-tlsssl-certificate-in-your-code-in-azure-app-service"></a>Использование TLS/SSL-сертификата в коде в Службе приложений Azure
 
@@ -24,12 +24,12 @@ ms.locfileid: "80811696"
 
 Ознакомьтесь со следующими статьями:
 
-- [Создано приложение службы приложений](/azure/app-service/).
+- [Создано приложение службы приложений](./index.yml).
 - [Добавление сертификата в приложение](configure-ssl-certificate.md)
 
 ## <a name="find-the-thumbprint"></a>Найти отпечаток
 
-В <a href="https://portal.azure.com" target="_blank">портал Azure</a>в меню слева выберите **службы приложений**  >  **\<app-name>** .
+На <a href="https://portal.azure.com" target="_blank">портале Azure</a> в меню слева выберите **Службы приложений** >  **\<app-name>** .
 
 В левой области навигации приложения выберите **Параметры TLS/SSL**, а затем выберите **Сертификаты закрытого ключа (PFX)** или **Сертификаты открытого ключа (CER)**.
 
@@ -164,4 +164,4 @@ var cert = new X509Certificate2(bytes);
 * [Защита пользовательского доменного имени с помощью привязки TLS/SSL в Службе приложений Azure](configure-ssl-bindings.md)
 * [Принудительное использование HTTPS](configure-ssl-bindings.md#enforce-https)
 * [Принудительное применение TLS 1.1/1.2](configure-ssl-bindings.md#enforce-tls-versions)
-* [FAQ: Configuration and management FAQs for Web Apps in Azure](https://docs.microsoft.com/azure/app-service/faq-configuration-and-management/) (Часто задаваемые вопросы о настройке и управлении для функции "Веб-приложения" в Azure)
+* [FAQ: Configuration and management FAQs for Web Apps in Azure](./faq-configuration-and-management.md) (Часто задаваемые вопросы о настройке и управлении для функции "Веб-приложения" в Azure)

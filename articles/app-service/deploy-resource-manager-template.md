@@ -6,12 +6,12 @@ ms.topic: article
 ms.date: 01/03/2019
 ms.author: tomfitz
 ms.custom: seodec18
-ms.openlocfilehash: 0a282a412823207e5f662441158000e8c6121796
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 1146b5979d81b91c6c6894aa54b2e0ca50c896c1
+ms.sourcegitcommit: 648c8d250106a5fca9076a46581f3105c23d7265
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "80637926"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88961624"
 ---
 # <a name="guidance-on-deploying-web-apps-by-using-azure-resource-manager-templates"></a>Руководство по развертыванию веб-приложений с помощью шаблонов Azure Resource Manager
 
@@ -90,7 +90,7 @@ ms.locfileid: "80637926"
 
 1. Перейдите на [консоль Kudu](https://github.com/projectkudu/kudu/wiki/Kudu-console) сайта.
 2. Перейдите в папку по следующему пути: D:\home\LogFiles\SiteExtensions\MSDeploy.
-3. Найдите файлы appManagerStatus.xml и appManagerLog.xml. В первом файле указано состояние. Во втором файле содержатся сведения об ошибке. Если ошибка не устранена, ее можно включить при запросе справки на [форуме](https://docs.microsoft.com/answers/topics/azure-webapps.html).
+3. Найдите файлы appManagerStatus.xml и appManagerLog.xml. В первом файле указано состояние. Во втором файле содержатся сведения об ошибке. Если ошибка не устранена, ее можно включить при запросе справки на [форуме](/answers/topics/azure-webapps.html).
 
 ## <a name="choose-a-unique-web-app-name"></a>Выбор уникального имени веб-приложения
 
@@ -131,7 +131,7 @@ Set-AzKeyVaultAccessPolicy `
 
 Пример шаблона см. в разделе [Развертывание сертификата веб-приложения из секрета Key Vault и его использование для создания SSL-привязки](https://github.com/Azure/azure-quickstart-templates/tree/master/201-web-app-certificate-from-key-vault).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Следующие шаги
 
 * Руководство по развертыванию веб-приложений с помощью шаблона см. [здесь](deploy-complex-application-predictably.md).
 * Сведения о синтаксисе JSON и свойствах типов ресурсов в шаблонах см. в статье [Define resources in Azure Resource Manager templates](/azure/templates/) (Определение ресурсов в шаблонах Azure Resource Manager).

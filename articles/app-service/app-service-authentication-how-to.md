@@ -4,12 +4,12 @@ description: Научитесь настраивать функцию прове
 ms.topic: article
 ms.date: 07/08/2020
 ms.custom: seodec18
-ms.openlocfilehash: 7ec16b5de6053256fa6565db510ee94776def2c4
-ms.sourcegitcommit: 2bab7c1cd1792ec389a488c6190e4d90f8ca503b
+ms.openlocfilehash: 2fa2e3463e057062ba743c2f6989aa571c85c983
+ms.sourcegitcommit: 648c8d250106a5fca9076a46581f3105c23d7265
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88272320"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88962474"
 ---
 # <a name="advanced-usage-of-authentication-and-authorization-in-azure-app-service"></a>Расширенное использование проверки подлинности и авторизации в Службе приложений Azure
 
@@ -33,7 +33,7 @@ ms.locfileid: "88272320"
 
 В раскрывающемся списке **Action to take when request is not authenticated** (Предпринимаемое действие, если проверка подлинности для запроса не выполнена) выберите **Разрешить анонимные запросы (нет действия)**.
 
-На странице входа, на панели навигации или в любом другом расположении приложения добавьте ссылку входа для каждого включенного поставщика (`/.auth/login/<provider>`). Например:
+На странице входа, на панели навигации или в любом другом расположении приложения добавьте ссылку входа для каждого включенного поставщика (`/.auth/login/<provider>`). Пример:
 
 ```html
 <a href="/.auth/login/aad">Log in with Azure AD</a>
@@ -55,7 +55,7 @@ ms.locfileid: "88272320"
 
 При входе с помощью клиента приложение входит в систему поставщика вручную, а затем отправляет токен проверки подлинности службе приложений для проверки (см. [Поток проверки подлинности](overview-authentication-authorization.md#authentication-flow)). Эта проверка сама по себе не предоставляет вам доступ к требуемым ресурсам приложения, но успешная проверка даст вам токен сеанса, который вы можете использовать для доступа к ресурсам приложений. 
 
-Чтобы проверить токен поставщика, для приложения службы приложений сначала нужно настроить требуемый поставщик. Получив токен проверки подлинности у своего поставщика, во время выполнения отправьте токен по адресу `/.auth/login/<provider>` для проверки. Например: 
+Чтобы проверить токен поставщика, для приложения службы приложений сначала нужно настроить требуемый поставщик. Получив токен проверки подлинности у своего поставщика, во время выполнения отправьте токен по адресу `/.auth/login/<provider>` для проверки. Пример: 
 
 ```
 POST https://<appname>.azurewebsites.net/.auth/login/aad HTTP/1.1
@@ -86,7 +86,7 @@ Content-Type: application/json
 }
 ```
 
-Получив этот токен сеанса, вы можете получить доступ к защищенным ресурсам приложений, добавив заголовок `X-ZUMO-AUTH` к HTTP-запросам. Например: 
+Получив этот токен сеанса, вы можете получить доступ к защищенным ресурсам приложений, добавив заголовок `X-ZUMO-AUTH` к HTTP-запросам. Пример: 
 
 ```
 GET https://<appname>.azurewebsites.net/api/products/1
@@ -107,7 +107,7 @@ X-ZUMO-AUTH: <authenticationToken_value>
 <a href="/.auth/logout">Sign out</a>
 ```
 
-После успешного выхода клиент по умолчанию перенаправляется на URL-адрес `/.auth/logout/done`. Можно изменить страницу перенаправления после выхода, добавив параметр запроса `post_logout_redirect_uri`. Например:
+После успешного выхода клиент по умолчанию перенаправляется на URL-адрес `/.auth/logout/done`. Можно изменить страницу перенаправления после выхода, добавив параметр запроса `post_logout_redirect_uri`. Пример:
 
 ```
 GET /.auth/logout?post_logout_redirect_uri=/index.html
@@ -146,7 +146,7 @@ az webapp config appsettings set --name <app_name> --resource-group <group_name>
 
 Сведения из этих заголовков можно получить с помощью кода, написанного на любом языке или в любой платформе. Для приложений ASP.NET 4.6 автоматически настраивается класс **ClaimsPrincipal** с соответствующими значениями. Однако ASP.NET Core не предоставляет по промежуточного слоя для проверки подлинности, которое интегрируется с утверждениями пользователя службы приложений. Обходной путь см. в разделе [максимерауиллер. Azure. AppService. еасяус](https://github.com/MaximRouiller/MaximeRouiller.Azure.AppService.EasyAuth).
 
-Если [хранилище токенов](overview-authentication-authorization.md#token-store) включено для приложения, можно также получить дополнительные сведения о прошедшем проверку подлинности пользователе, вызвав метод `/.auth/me` . Пакеты SDK для серверной части мобильных приложений предоставляют вспомогательные методы для работы с этими данными  Дополнительные сведения см. Дополнительные сведения см. в разделах [Практическое руководство. Использование утверждений аутентификации для таблиц](../app-service-mobile/app-service-mobile-node-backend-how-to-use-server-sdk.md#howto-tables-getidentity) и [Практическое руководство. Получение сведений о пользователе, прошедшем проверку подлинности](../app-service-mobile/app-service-mobile-dotnet-backend-how-to-use-server-sdk.md#user-info).
+Если [хранилище токенов](overview-authentication-authorization.md#token-store) включено для приложения, можно также получить дополнительные сведения о прошедшем проверку подлинности пользователе, вызвав метод `/.auth/me` . Пакеты SDK для серверной части мобильных приложений предоставляют вспомогательные методы для работы с этими данными  Дополнительные сведения см. Дополнительные сведения см. в разделах [Практическое руководство. Использование утверждений аутентификации для таблиц](/previous-versions/azure/app-service-mobile/app-service-mobile-node-backend-how-to-use-server-sdk#howto-tables-getidentity) и [Практическое руководство. Получение сведений о пользователе, прошедшем проверку подлинности](/previous-versions/azure/app-service-mobile/app-service-mobile-dotnet-backend-how-to-use-server-sdk#user-info).
 
 ## <a name="retrieve-tokens-in-app-code"></a>Извлечение токенов в коде приложения
 
@@ -269,7 +269,7 @@ az webapp auth update --resource-group <group_name> --name <app_name> --token-re
 
 ### <a name="identity-provider-level"></a>Уровень поставщика удостоверений
 
-Поставщик удостоверений может предоставить некоторую проверку подлинности с помощью ключа. Например:
+Поставщик удостоверений может предоставить некоторую проверку подлинности с помощью ключа. Пример:
 
 - Для [службы приложений Azure](configure-authentication-provider-aad.md)вы можете [управлять доступом на уровне предприятия](../active-directory/manage-apps/what-is-access-management.md) непосредственно в Azure AD. Инструкции см. [в разделе Удаление доступа пользователя к приложению](../active-directory/manage-apps/methods-for-removing-user-access.md).
 - Для [Google](configure-authentication-provider-google.md), проектов Google API, входящих в [организацию](https://cloud.google.com/resource-manager/docs/cloud-platform-resource-hierarchy#organizations) , можно настроить разрешение доступа только для пользователей в вашей организации (см. [страницу поддержки **OAuth 2,0** в Google](https://support.google.com/cloud/answer/6158849?hl=en)).
@@ -489,7 +489,7 @@ az webapp auth update --resource-group <group_name> --name <app_name> --token-re
 
 ##### <a name="from-the-azure-cli"></a>Использование Azure CLI
 
-С помощью Azure CLI просмотрите текущую версию по промежуточного слоя с помощью команды [AZ webapp auth Показать](https://docs.microsoft.com/cli/azure/webapp/auth?view=azure-cli-latest#az-webapp-auth-show) .
+С помощью Azure CLI просмотрите текущую версию по промежуточного слоя с помощью команды [AZ webapp auth Показать](/cli/azure/webapp/auth?view=azure-cli-latest#az-webapp-auth-show) .
 
 ```azurecli-interactive
 az webapp auth show --name <my_app_name> \
@@ -520,7 +520,7 @@ az webapp auth show --name <my_app_name> \
 
 #### <a name="update-the-current-runtime-version"></a>Обновление текущей версии среды выполнения
 
-С помощью Azure CLI можно обновить `runtimeVersion` параметр в приложении с помощью команды [AZ webapp auth Update](https://docs.microsoft.com/cli/azure/webapp/auth?view=azure-cli-latest#az-webapp-auth-update) .
+С помощью Azure CLI можно обновить `runtimeVersion` параметр в приложении с помощью команды [AZ webapp auth Update](/cli/azure/webapp/auth?view=azure-cli-latest#az-webapp-auth-update) .
 
 ```azurecli-interactive
 az webapp auth update --name <my_app_name> \
@@ -530,9 +530,9 @@ az webapp auth update --name <my_app_name> \
 
 Замените `<my_app_name>` именем своего приложения. Также замените `<my_resource_group>` именем группы ресурсов для приложения. Кроме того, замените на `<version>` допустимую версию среды выполнения 1. x или `~1` для последней версии. Заметки о выпуске можно найти в разных версиях среды выполнения [здесь] ( https://github.com/Azure/app-service-announcements) чтобы определить версию для закрепления.
 
-Эту команду можно выполнить в [Azure Cloud Shell](../cloud-shell/overview.md), выбрав **Попробовать** в предыдущем примере кода. Также можно использовать [Azure CLI локально](https://docs.microsoft.com/cli/azure/install-azure-cli) для выполнения этой команды после выполнения команды [az login](https://docs.microsoft.com/cli/azure/reference-index#az-login) для входа.
+Эту команду можно выполнить в [Azure Cloud Shell](../cloud-shell/overview.md), выбрав **Попробовать** в предыдущем примере кода. Также можно использовать [Azure CLI локально](/cli/azure/install-azure-cli) для выполнения этой команды после выполнения команды [az login](/cli/azure/reference-index#az-login) для входа.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 > [!div class="nextstepaction"]
 > [Руководство. Сквозная аутентификация и авторизация пользователей](tutorial-auth-aad.md)

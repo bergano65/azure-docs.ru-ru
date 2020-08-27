@@ -7,12 +7,12 @@ ms.topic: article
 ms.date: 04/23/2020
 ms.author: byvinyal
 ms.custom: seodec18
-ms.openlocfilehash: 5507e6f97211f209eb559ff7491f22bdf1a00e54
-ms.sourcegitcommit: 2ffa5bae1545c660d6f3b62f31c4efa69c1e957f
+ms.openlocfilehash: 888118d227529110c209d7c8d5a3bb79cfcf3a9a
+ms.sourcegitcommit: 648c8d250106a5fca9076a46581f3105c23d7265
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/11/2020
-ms.locfileid: "88079677"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88959797"
 ---
 # <a name="monitor-apps-in-azure-app-service"></a>Мониторинг приложений в службе приложений Azure
 [Служба приложений Azure](https://go.microsoft.com/fwlink/?LinkId=529714) предоставляет встроенные функции мониторинга для веб-приложений, мобильных устройств и приложений API в [портал Azure](https://portal.azure.com).
@@ -152,14 +152,14 @@ ms.locfileid: "88079677"
 
 Щелкнув любую из этих диаграмм, вы перейдете к представлению метрик, где можно создавать пользовательские диаграммы, запрашивать различные метрики и многое другое. 
 
-Дополнительные сведения о метриках см. в статье о [данных мониторинга](../monitoring-and-diagnostics/insights-how-to-customize-monitoring.md).
+Дополнительные сведения о метриках см. в статье о [данных мониторинга](../azure-monitor/platform/data-platform.md).
 
 ## <a name="alerts-and-autoscale"></a>Оповещения и автомасштабирование
-Метрики для плана приложения или службы приложений можно привязать к оповещениям. Дополнительные сведения см. в статье [Получение уведомлений об оповещениях](../monitoring-and-diagnostics/insights-alerts-portal.md).
+Метрики для плана приложения или службы приложений можно привязать к оповещениям. Дополнительные сведения см. в статье [Получение уведомлений об оповещениях](../azure-monitor/platform/alerts-classic-portal.md).
 
 Приложения службы приложений, размещенные в планах служб приложений уровня Basic или выше, поддерживают Автомасштабирование. Автомасштабирование позволяет настроить правила, которые отслеживают метрики плана службы приложений. Правила могут увеличивать или уменьшать число экземпляров, предоставляя дополнительные ресурсы при необходимости. Правила также помогают сократить расходы на чрезмерную подготовку приложений.
 
-Дополнительные сведения об автомасштабировании см. в статьях [Начало работы с автомасштабированием в Azure](../monitoring-and-diagnostics/insights-how-to-scale.md) и [Рекомендации по автомасштабированию](../azure-monitor/platform/autoscale-best-practices.md).
+Дополнительные сведения об автомасштабировании см. в статьях [Начало работы с автомасштабированием в Azure](../azure-monitor/platform/autoscale-get-started.md) и [Рекомендации по автомасштабированию](../azure-monitor/platform/autoscale-best-practices.md).
 
 [fzilla]:https://go.microsoft.com/fwlink/?LinkId=247914
 [vmsizes]:https://go.microsoft.com/fwlink/?LinkID=309169

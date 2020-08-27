@@ -7,12 +7,12 @@ ms.date: 05/27/2020
 ms.author: mahender
 ms.reviewer: yevbronsh
 ms.custom: devx-track-csharp, devx-track-python
-ms.openlocfilehash: f5255041a97a56e6577f33b571403ff454bb65b4
-ms.sourcegitcommit: 4913da04fd0f3cf7710ec08d0c1867b62c2effe7
+ms.openlocfilehash: 86f501a145ea82f7a4499824dd0b21822c3f1cbd
+ms.sourcegitcommit: 648c8d250106a5fca9076a46581f3105c23d7265
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88211889"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88961590"
 ---
 # <a name="how-to-use-managed-identities-for-app-service-and-azure-functions"></a>Использование управляемых удостоверений в Службе приложений и Функциях Azure
 
@@ -52,7 +52,7 @@ ms.locfileid: "88211889"
 
 - использовать [Azure Cloud Shell](../cloud-shell/overview.md) с портала Azure;
 - использовать внедренный компонент Azure Cloud Shell с помощью кнопки "Попробовать", расположенной в правом верхнем углу каждого блока кода ниже.
-- [установить последнюю версию Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli) (2.0.31 или выше), если вы предпочитаете использовать локальную консоль CLI. 
+- [установить последнюю версию Azure CLI](/cli/azure/install-azure-cli) (2.0.31 или выше), если вы предпочитаете использовать локальную консоль CLI. 
 
 Ниже описаны действия по созданию веб-приложения и присвоению удостоверения ему с помощью CLI:
 
@@ -109,7 +109,7 @@ ms.locfileid: "88211889"
 
 1. При необходимости установите Azure PowerShell с помощью инструкций из [руководства по Azure PowerShell](/powershell/azure/), а затем выполните команду `Login-AzAccount`, чтобы создать подключение к Azure.
 
-2. Создание приложения-функции с помощью Azure PowerShell. Дополнительные примеры использования Azure PowerShell с функциями Azure см. в [справочнике по AZ. functions](https://docs.microsoft.com/powershell/module/az.functions/?view=azps-4.1.0#functions):
+2. Создание приложения-функции с помощью Azure PowerShell. Дополнительные примеры использования Azure PowerShell с функциями Azure см. в [справочнике по AZ. functions](/powershell/module/az.functions/?view=azps-4.1.0#functions):
 
     ```azurepowershell-interactive
     # Create a resource group.
@@ -219,7 +219,7 @@ ms.locfileid: "88211889"
 
 1. При необходимости установите Azure PowerShell с помощью инструкций из [руководства по Azure PowerShell](/powershell/azure/), а затем выполните команду `Login-AzAccount`, чтобы создать подключение к Azure.
 
-2. Создание приложения-функции с помощью Azure PowerShell. Дополнительные примеры использования Azure PowerShell с функциями Azure см. в [справочнике по AZ. functions](https://docs.microsoft.com/powershell/module/az.functions/?view=azps-4.1.0#functions). В приведенном ниже скрипте также используется, `New-AzUserAssignedIdentity` который должен быть установлен отдельно при [создании, перечислении или удалении назначенного пользователем управляемого удостоверения с помощью Azure PowerShell](../active-directory/managed-identities-azure-resources/how-to-manage-ua-identity-powershell.md).
+2. Создание приложения-функции с помощью Azure PowerShell. Дополнительные примеры использования Azure PowerShell с функциями Azure см. в [справочнике по AZ. functions](/powershell/module/az.functions/?view=azps-4.1.0#functions). В приведенном ниже скрипте также используется, `New-AzUserAssignedIdentity` который должен быть установлен отдельно при [создании, перечислении или удалении назначенного пользователем управляемого удостоверения с помощью Azure PowerShell](../active-directory/managed-identities-azure-resources/how-to-manage-ua-identity-powershell.md).
 
     ```azurepowershell-interactive
     # Create a resource group.
@@ -347,7 +347,7 @@ principalId — это уникальный идентификатор удос
 > | ресурс      | Ресурс, для которого был запрошен маркер доступа, соответствует параметру строки запроса `resource`.                                                                                                                               |
 > | token_type    | Указывает значение типа маркера. Единственный тип, который поддерживается Azure AD, — это FBearer. Дополнительные сведения о маркерах носителей см. в спецификации [OAuth 2.0 Authorization Framework: Bearer Token Usage (RFC 6750)](https://www.rfc-editor.org/rfc/rfc6750.txt) (OAuth2.0 Authorization Framework: использование маркера носителя (RFC 6750)). |
 
-Этот ответ совпадает с [ответом для запроса маркера взаимного доступа между службами Azure AD](../active-directory/develop/v1-oauth2-client-creds-grant-flow.md#service-to-service-access-token-response).
+Этот ответ совпадает с [ответом для запроса маркера взаимного доступа между службами Azure AD](../active-directory/azuread-dev/v1-oauth2-client-creds-grant-flow.md#service-to-service-access-token-response).
 
 ### <a name="rest-protocol-examples"></a>Примеры протокола REST
 

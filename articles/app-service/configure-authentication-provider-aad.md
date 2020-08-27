@@ -5,12 +5,12 @@ ms.assetid: 6ec6a46c-bce4-47aa-b8a3-e133baef22eb
 ms.topic: article
 ms.date: 04/14/2020
 ms.custom: seodec18, fasttrack-edit, has-adal-ref
-ms.openlocfilehash: cdbce7c11bc3184b624fa00f3ac33db7ad8730d8
-ms.sourcegitcommit: 2ffa5bae1545c660d6f3b62f31c4efa69c1e957f
+ms.openlocfilehash: 4022ca97f88e2f06d3b4c1eeb103bb60d1856eda
+ms.sourcegitcommit: 648c8d250106a5fca9076a46581f3105c23d7265
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/11/2020
-ms.locfileid: "88077444"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88962151"
 ---
 # <a name="configure-your-app-service-or-azure-functions-app-to-use-azure-ad-login"></a>Настройка Службы приложений или приложения "Функции Azure" для использования имени для входа в Azure AD
 
@@ -120,7 +120,7 @@ ms.locfileid: "88077444"
 1. В разделе **URI перенаправления** выберите **Общедоступный клиент (мобильный и классический)** и введите URL-адрес `<app-url>/.auth/login/aad/callback`. Например, `https://contoso.azurewebsites.net/.auth/login/aad/callback`.
 
     > [!NOTE]
-    > Для приложения Microsoft Store вместо этого используйте [идентификатор безопасности пакета](../app-service-mobile/app-service-mobile-dotnet-how-to-use-client-library.md#package-sid) в качестве универсального код ресурса (URI).
+    > Для приложения Microsoft Store вместо этого используйте [идентификатор безопасности пакета](/previous-versions/azure/app-service-mobile/app-service-mobile-dotnet-how-to-use-client-library#package-sid) в качестве универсального код ресурса (URI).
 1. Нажмите кнопку **создания**.
 1. После создания регистрации приложения скопируйте значение **идентификатора приложения (клиент)** .
 1. Выберите **Разрешения API** > **Добавить разрешение** > **Мои API**.

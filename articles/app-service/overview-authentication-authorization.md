@@ -6,12 +6,12 @@ ms.topic: article
 ms.date: 07/08/2020
 ms.reviewer: mahender
 ms.custom: seodec18, fasttrack-edit, has-adal-ref
-ms.openlocfilehash: b6984e16d1ddcee7d3f276ddcdf8c89609f14fe5
-ms.sourcegitcommit: 2bab7c1cd1792ec389a488c6190e4d90f8ca503b
+ms.openlocfilehash: 19d6a646df22e2f8c9bdfc03f15453a520e527a4
+ms.sourcegitcommit: 648c8d250106a5fca9076a46581f3105c23d7265
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88271028"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88962831"
 ---
 # <a name="authentication-and-authorization-in-azure-app-service-and-azure-functions"></a>Проверка подлинности и авторизация в службе приложений Azure и функциях Azure
 
@@ -31,7 +31,7 @@ ms.locfileid: "88271028"
 > [!NOTE]
 > Включение этой функции приведет к автоматическому перенаправлению **всех** небезопасных HTTP-запросов к приложению по протоколу HTTPS независимо от параметра конфигурации службы приложений для [принудительного применения HTTPS](configure-ssl-bindings.md#enforce-https). При необходимости его можно отключить с помощью `requireHttps` параметра в [файле конфигурации параметров проверки подлинности](app-service-authentication-how-to.md#configuration-file-reference), но необходимо убедиться, что маркеры безопасности не передаются через небезопасные подключения HTTP.
 
-Сведения для собственных мобильных приложений см. в статье [Проверка подлинности и авторизация в мобильных приложениях Azure](../app-service-mobile/app-service-mobile-auth.md).
+Сведения для собственных мобильных приложений см. в статье [Проверка подлинности и авторизация в мобильных приложениях Azure](/previous-versions/azure/app-service-mobile/app-service-mobile-auth).
 
 ## <a name="how-it-works"></a>Принцип работы
 
@@ -52,7 +52,7 @@ ms.locfileid: "88271028"
 
 ### <a name="on-containers"></a>В контейнерах
 
-Модуль проверки подлинности и авторизации выполняется в отдельном контейнере, изолированном от кода приложения. Используя то, что известно как [шаблон посредник](https://docs.microsoft.com/azure/architecture/patterns/ambassador), он взаимодействует с входящим трафиком для выполнения аналогичных функций в Windows. Поскольку она не выполняется в процессе, прямая интеграция с конкретными языковыми платформами невозможна; Однако соответствующие сведения, необходимые вашему приложению, передаются с помощью заголовков запросов, как описано ниже.
+Модуль проверки подлинности и авторизации выполняется в отдельном контейнере, изолированном от кода приложения. Используя то, что известно как [шаблон посредник](/azure/architecture/patterns/ambassador), он взаимодействует с входящим трафиком для выполнения аналогичных функций в Windows. Поскольку она не выполняется в процессе, прямая интеграция с конкретными языковыми платформами невозможна; Однако соответствующие сведения, необходимые вашему приложению, передаются с помощью заголовков запросов, как описано ниже.
 
 ### <a name="userapplication-claims"></a>Утверждения для пользователей и приложений
 
@@ -150,7 +150,7 @@ ms.locfileid: "88271028"
 ## <a name="more-resources"></a>Дополнительные ресурсы
 
 [Руководство по сквозной проверке подлинности и авторизации в службе приложений Azure (Windows)](tutorial-auth-aad.md)  
-[Руководство по сквозной проверке подлинности и авторизации в службе приложений Azure (Linux)](containers/tutorial-auth-aad.md)  
+[Руководство по сквозной проверке подлинности и авторизации в службе приложений Azure (Linux)](./tutorial-auth-aad.md?pivots=platform-linux%3fpivots%3dplatform-linux)  
 [Настройка проверки подлинности и авторизации в службе приложений](app-service-authentication-how-to.md) 
  [Интеграция .NET Core с Azure AppService еасяус (третья сторона)](https://github.com/MaximRouiller/MaximeRouiller.Azure.AppService.EasyAuth) 
  [Получение проверки подлинности службы приложений Azure с помощью .NET Core (третья сторона)](https://github.com/kirkone/KK.AspNetCore.EasyAuthAuthentication)
@@ -171,8 +171,8 @@ ms.locfileid: "88271028"
 [Twitter]: configure-authentication-provider-twitter.md
 [OIDC]: configure-authentication-provider-openid-connect.md
 
-[custom-auth]: ../app-service-mobile/app-service-mobile-dotnet-backend-how-to-use-server-sdk.md#custom-auth
+[custom-auth]: /previous-versions/azure/app-service-mobile/app-service-mobile-dotnet-backend-how-to-use-server-sdk#custom-auth
 
-[ADAL-Android]: ../app-service-mobile/app-service-mobile-android-how-to-use-client-library.md#adal
-[ADAL-iOS]: ../app-service-mobile/app-service-mobile-ios-how-to-use-client-library.md#adal
-[ADAL-dotnet]: ../app-service-mobile/app-service-mobile-dotnet-how-to-use-client-library.md#adal
+[ADAL-Android]: /previous-versions/azure/app-service-mobile/app-service-mobile-android-how-to-use-client-library#adal
+[ADAL-iOS]: /previous-versions/azure/app-service-mobile/app-service-mobile-ios-how-to-use-client-library#adal
+[ADAL-dotnet]: /previous-versions/azure/app-service-mobile/app-service-mobile-dotnet-how-to-use-client-library#adal
