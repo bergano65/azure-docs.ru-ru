@@ -5,14 +5,14 @@ author: cynthn
 ms.service: virtual-machines
 ms.workload: infrastructure-services
 ms.topic: article
-ms.date: 07/31/2020
+ms.date: 08/25/2020
 ms.author: cynthn
-ms.openlocfilehash: 17ab7ee75e335d686bf308c4b15a53dc4e2e6b0e
-ms.sourcegitcommit: 1a0dfa54116aa036af86bd95dcf322307cfb3f83
+ms.openlocfilehash: abc9a2ae130d987c90ce87ffaecbf2bb44b06010
+ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/10/2020
-ms.locfileid: "88041754"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88929450"
 ---
 # <a name="generate-and-store-ssh-keys-in-the-azure-portal"></a>Создание и хранение ключей SSH в портал Azure
 
@@ -28,7 +28,7 @@ ms.locfileid: "88041754"
 
 1. Откройте [портал Azure](https://portal.azure.com).
 
-1. В верхней части страницы введите *SSH* для поиска. В разделе **Marketplace*выберите **ключи SSH**.
+1. В верхней части страницы введите *SSH* для поиска. В разделе **Marketplace**выберите **ключи SSH**.
 
 1. На странице **ключ SSH** выберите **создать**.
 
@@ -89,6 +89,20 @@ ssh -i <path to the .pem file> username@<ipaddress of the VM>
 1. После завершения проверки щелкните **Создать**. 
 
 После отправки ключа его можно использовать при создании виртуальной машины.
+
+## <a name="list-keys"></a>получение списка ключей;
+
+Ключи SSH, созданные на портале, хранятся в виде ресурсов, поэтому можно отфильтровать представление ресурсов, чтобы увидеть их все.
+
+1. На портале выберите **все ресурсы**.
+1. В фильтрах выберите **тип**, снимите флажок **выбрать все** , чтобы очистить список.
+1. Введите **SSH** в фильтре и выберите **ключ SSH**.
+
+   :::image type="content" source="./media/ssh-keys/filter.png" alt-text="Снимок экрана, посвященный фильтрации списка для просмотра всех ключей SSH.":::
+
+## <a name="get-the-public-key"></a>Получение открытого ключа
+
+Если вам нужен открытый ключ, вы можете легко скопировать его со страницы портала для этого ключа. Просто перечислите ключи (используя процесс в последнем разделе), а затем выберите ключ из списка. Откроется страница ключа, и можно щелкнуть значок **Копировать в буфер обмена** рядом с ключом, чтобы скопировать его.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

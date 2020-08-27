@@ -10,12 +10,13 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 02/10/2020
 ms.author: trbye
-ms.openlocfilehash: 41ebcb7b44ea88af06a30a611960fd8bb0ceddee
-ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
+ms.custom: devx-track-csharp
+ms.openlocfilehash: 1138a970bf7c52182f13d0fd14d0178a2d0cfeba
+ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "81402220"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88918797"
 ---
 # <a name="how-to-recognize-intents-from-speech-using-the-speech-sdk-for-c"></a>Распознавание целей распознавания речи с помощью речевого пакета SDK для C #
 
@@ -40,7 +41,7 @@ ms.locfileid: "81402220"
 Прежде чем приступить к работе с этим руководством, убедитесь, что у вас есть следующие элементы:
 
 - Учетная запись LUIS. На [портале LUIS](https://www.luis.ai/home) ее можно получить бесплатно.
-- [Visual Studio 2019](https://visualstudio.microsoft.com/downloads/) (любой выпуск).
+- [Visual Studio 2019](https://visualstudio.microsoft.com/downloads/) (любой выпуск).
 
 ## <a name="luis-and-speech"></a>LUIS и речь
 
@@ -141,7 +142,7 @@ ms.locfileid: "81402220"
 
 Для добавления намерений нужно обеспечить три аргумента. Модель LUIS (которая была создана с именем `model`), имя намерения и его идентификатор. Разница между идентификатором и именем приведена в следующей таблице.
 
-| `AddIntent()`&nbsp;аргумент | Назначение |
+| `AddIntent()`&nbsp;аргумент | Цель |
 | --------------------------- | ------- |
 | `intentName` | Имя намерения, определенного в приложении LUIS. Это значение должно совпадать с именем намерения LUIS. |
 | `intentID` | Идентификатор, присвоенный намерению, распознанному пакетом SDK для службы "Речь". Это значение может быть любым. Оно не обязательно должно соответствовать имени намерения, определенному в приложении LUIS. Для обработки нескольких намерений может использоваться один код, как и один идентификатор используется для всех намерений. |
@@ -162,9 +163,9 @@ recognizer.AddIntent(model, "HomeAutomation.TurnOn", "on");
 | Режим распознавания | Вызываемые методы | Результат |
 | ---------------- | --------------- | ------ |
 | Одиночный | `RecognizeOnceAsync()` | Возвращает распознанное намерение, извлеченное из одного высказывания. |
-| Непрерывные | `StartContinuousRecognitionAsync()`<br>`StopContinuousRecognitionAsync()` | Распознает множественные речевые фрагменты; выдает события (например, `IntermediateResultReceived`), если результаты доступны. |
+| С задержкой | `StartContinuousRecognitionAsync()`<br>`StopContinuousRecognitionAsync()` | Распознает множественные речевые фрагменты; выдает события (например, `IntermediateResultReceived`), если результаты доступны. |
 
-Приложение использует Однофакторный режим и поэтому вызывает `RecognizeOnceAsync()` метод, чтобы начать распознавание. Результат — объект `IntentRecognitionResult`, который содержит информацию о распознанном намерении. Ответ LUIS в формате JSON извлекается с помощью следующего выражения:
+Приложение использует Однофакторный режим и поэтому вызывает метод `RecognizeOnceAsync()` , чтобы начать распознавание. Результат — объект `IntentRecognitionResult`, который содержит информацию о распознанном намерении. Ответ LUIS в формате JSON извлекается с помощью следующего выражения:
 
 ```csharp
 result.Properties.GetProperty(PropertyId.LanguageUnderstandingServiceResponse_JsonResult)
@@ -197,7 +198,7 @@ result.Properties.GetProperty(PropertyId.LanguageUnderstandingServiceResponse_Js
 [!INCLUDE [Download the sample](../../../includes/cognitive-services-speech-service-speech-sdk-sample-download-h2.md)]
 Код, используемый в данной статье, можно найти в папке **samples/csharp/sharedcontent/console**.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
-> [Краткое руководство. Распознавание речи с помощью микрофона](~/articles/cognitive-services/Speech-Service/quickstarts/speech-to-text-from-microphone.md?pivots=programming-language-csharp&tabs=dotnetcore)
+> [Краткое руководство. по распознаванию речи с микрофона](~/articles/cognitive-services/Speech-Service/quickstarts/speech-to-text-from-microphone.md?pivots=programming-language-csharp&tabs=dotnetcore)

@@ -9,12 +9,12 @@ ms.date: 2/22/2020
 ms.author: rogarana
 ms.subservice: files
 ms.custom: devx-track-azurecli, references_regions
-ms.openlocfilehash: aaba608ba80a751c40cd300dee80f673897c22a8
-ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
+ms.openlocfilehash: 236134887728ebc3dd4d03fa4c9d9d450b39eac2
+ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88525655"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88930678"
 ---
 # <a name="create-an-azure-file-share"></a>создать файловый ресурс Azure;
 Чтобы создать файловый ресурс Azure, необходимо ответить на три вопроса о том, как она будет использоваться:
@@ -267,6 +267,9 @@ Update-AzRmStorageShare `
     -AccessTier Cool
 ```
 
+> [!Note]  
+> Возможность устанавливать и изменять уровни с помощью PowerShell предоставляется в модуле предварительной версии AZ. Storage PowerShell. Эти командлеты или их выходные данные могут измениться до выпуска в общедоступном модуле AZ. Storage PowerShell, поэтому Создайте сценарии с учетом этого.
+
 # <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
 Функции создания или перемещения общей папки на конкретный уровень доступны в последнем Azure CLI обновления. Обновление Azure CLI зависит от используемого дистрибутива операционной системы или Linux. Инструкции по обновлению Azure CLI в системе см. в разделе [установка Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli).
 
@@ -282,9 +285,13 @@ az storage share-rm create \
     --name $shareName \
     --access-tier "Hot"
 ```
+
+> [!Note]  
+> Возможность задать уровень с `--access-tier` параметром предоставляется в последней версии пакета Azure CLI. Эта команда или ее выходные данные могут быть изменены до пометки как общедоступной, поэтому Создайте сценарии с учетом этого.
+
 ---
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 - [Спланируйте развертывание файлов Azure](storage-files-planning.md) или [запланируйте развертывание синхронизация файлов Azure](storage-sync-files-planning.md). 
 - [Обзор сетевых](storage-files-networking-overview.md)возможностей.
 - Подключите и подключите общую папку в [Windows](storage-how-to-use-files-windows.md), [macOS](storage-how-to-use-files-mac.md)и [Linux](storage-how-to-use-files-linux.md).

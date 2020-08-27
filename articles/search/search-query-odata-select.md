@@ -19,12 +19,12 @@ translation.priority.mt:
 - ru-ru
 - zh-cn
 - zh-tw
-ms.openlocfilehash: dfe438f6940d3ccd5632a47be1389a30748716b0
-ms.sourcegitcommit: 3541c9cae8a12bdf457f1383e3557eb85a9b3187
+ms.openlocfilehash: 54b6ae227fc4b3b951717799660543c02874dda0
+ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/09/2020
-ms.locfileid: "86206883"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88919664"
 ---
 # <a name="odata-select-syntax-in-azure-cognitive-search"></a>Синтаксис $select OData в Azure Когнитивный поиск
 
@@ -112,9 +112,9 @@ field_path ::= identifier('/'identifier)*
 }
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги  
+## <a name="next-steps"></a>Дальнейшие действия  
 
 - [Работа с результатами поиска в Azure Когнитивный поиск](search-pagination-page-layout.md)
 - [Общие сведения о языке выражений OData для Azure Когнитивный поиск](query-odata-filter-orderby-syntax.md)
 - [Справочник по синтаксису выражений OData для Azure Когнитивный поиск](search-query-odata-syntax-reference.md)
-- [Поиск документов &#40;Azure Когнитивный поиск REST API&#41;](https://docs.microsoft.com/rest/api/searchservice/Search-Documents)
+- [Поиск документов &#40;Azure Когнитивный поиск REST API&#41;](/rest/api/searchservice/Search-Documents)

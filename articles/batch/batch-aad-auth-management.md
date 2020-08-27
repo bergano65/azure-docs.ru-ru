@@ -3,13 +3,13 @@ title: Аутентификация решений по управлению п�
 description: Узнайте больше о выполнении аутентификации в приложениях, применяющих библиотеку .NET для управления пакетной службой, с помощью Azure Active Directory.
 ms.topic: how-to
 ms.date: 04/27/2017
-ms.custom: has-adal-ref
-ms.openlocfilehash: 829a742c144f2bba39f1ca392e80db25640d4dee
-ms.sourcegitcommit: 5cace04239f5efef4c1eed78144191a8b7d7fee8
+ms.custom: has-adal-ref, devx-track-csharp
+ms.openlocfilehash: ff49d5e88df7c56ed4dee0685f09e45eb372aa5c
+ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86141967"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88930219"
 ---
 # <a name="authenticate-batch-management-solutions-with-active-directory"></a>Аутентификация решений по управлению пакетной службой с помощью Active Directory
 

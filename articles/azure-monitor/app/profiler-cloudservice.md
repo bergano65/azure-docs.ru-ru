@@ -2,16 +2,17 @@
 title: Профилирование облачных служб реального времени Azure с помощью Application Insights | Документация Майкрософт
 description: Включите Application Insights Profiler для облачных служб Azure.
 ms.topic: conceptual
+ms.custom: devx-track-dotnet
 author: cweining
 ms.author: cweining
 ms.date: 08/06/2018
 ms.reviewer: mbullwin
-ms.openlocfilehash: 8119477a69771c67db1f1e59c082d5d0d611214b
-ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
+ms.openlocfilehash: 69a9ba316a1fda14a2e85d4d981321d4b2f9f289
+ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87305862"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88930321"
 ---
 # <a name="profile-live-azure-cloud-services-with-application-insights"></a>Профилирование облачных служб реального времени Azure с помощью Application Insights
 
@@ -37,7 +38,7 @@ Application Insights Profiler поставляется с расширением
 
 1. Настройте расширение система диагностики Azure, чтобы включить профилировщик:
 
-    a. Выберите файл [система диагностики Azure](../platform/diagnostics-extension-overview.md) *Diagnostics. wadcfgx* для роли приложения, как показано ниже:  
+    а. Выберите файл [система диагностики Azure](../platform/diagnostics-extension-overview.md) *Diagnostics. wadcfgx* для роли приложения, как показано ниже:  
 
       ![Расположение файла конфигурации диагностики](./media/profiler-cloudservice/cloudservice-solutionexplorer.png)  
 
@@ -68,7 +69,7 @@ Application Insights Profiler поставляется с расширением
 
 1. Разверните службу с новой конфигурацией диагностики. При этом Application Insights Profiler настраивается для этой службы.
  
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Создайте трафик к приложению (например, запустите [тест доступности](monitor-web-app-availability.md)). Подождите 10–15 минут, пока трассировки не начнут отправляться в экземпляр Application Insights.
 * См. раздел [трассировки профайлера](profiler-overview.md?toc=/azure/azure-monitor/toc.json) в портал Azure.

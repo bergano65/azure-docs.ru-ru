@@ -10,12 +10,13 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 07/24/2020
 ms.author: aahi
-ms.openlocfilehash: 10a75d19b7fb134b8e7498c422742e00f6475da5
-ms.sourcegitcommit: 56cbd6d97cb52e61ceb6d3894abe1977713354d9
+ms.custom: devx-track-csharp
+ms.openlocfilehash: b13a6944290f58f5ede239dee60610d67fff8b1c
+ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/20/2020
-ms.locfileid: "88690210"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88918474"
 ---
 # <a name="speech-service-containers-frequently-asked-questions-faq"></a>Часто задаваемые вопросы о контейнерах речевых служб
 
@@ -97,7 +98,7 @@ Cannot find Scan4_llvm__mcpu_skylake_avx512 in cache, using JIT...
 
 **Ответ.** `speech_recognition_language=<YOUR_LANGUAGE>` Должен быть явно настроен в запросе, если они используют клиента.
 
-Пример:
+Например:
 
 ```python
 if not recognize_once(
@@ -396,25 +397,25 @@ https://github.com/Azure-Samples/cognitive-services-speech-sdk/blob/6805d96bf69d
 
 # <a name="speech-to-text"></a>[Преобразование речи в текст](#tab/stt)
 
-| Контейнер      | Минимальные             | Рекомендуемая         |
+| Контейнер      | Минимальные             | Рекомендуется         |
 |----------------|---------------------|---------------------|
 | Преобразование речи в текст | 2 ядра, 2 ГБ памяти | 4 ядра, 4 ГБ памяти |
 
 # <a name="custom-speech-to-text"></a>[Пользовательское распознавание речи к тексту](#tab/cstt)
 
-| Контейнер             | Минимальные             | Рекомендуемая         |
+| Контейнер             | Минимальные             | Рекомендуется         |
 |-----------------------|---------------------|---------------------|
 | Пользовательское распознавание речи к тексту | 2 ядра, 2 ГБ памяти | 4 ядра, 4 ГБ памяти |
 
 # <a name="text-to-speech"></a>[Преобразование текста в речь](#tab/tts)
 
-| Контейнер      | Минимальные             | Рекомендуемая         |
+| Контейнер      | Минимальные             | Рекомендуется         |
 |----------------|---------------------|---------------------|
 | Преобразование текста в речь | 1 ядро, 2 ГБ памяти | 2 ядра, 3 ГБ памяти |
 
 # <a name="custom-text-to-speech"></a>[Пользовательский текст в речь](#tab/ctts)
 
-| Контейнер             | Минимальные             | Рекомендуемая         |
+| Контейнер             | Минимальные             | Рекомендуется         |
 |-----------------------|---------------------|---------------------|
 | Пользовательский текст в речь | 1 ядро, 2 ГБ памяти | 2 ядра, 3 ГБ памяти |
 

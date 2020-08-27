@@ -3,12 +3,12 @@ title: Отправка событий хранилища BLOB-объектов 
 description: Использование шаблона службы "Сетка событий Azure" и Resource Manager для создания учетной записи хранения BLOB-объектов и подписки на связанные события. Отправка событий в веб-перехватчик.'
 ms.date: 07/07/2020
 ms.topic: quickstart
-ms.openlocfilehash: e1d266f747671542059e0610cfcdd8cd12594e51
-ms.sourcegitcommit: f988fc0f13266cea6e86ce618f2b511ce69bbb96
+ms.openlocfilehash: 32fc17d1af552afa5a81fbc4a5973d69006742b9
+ms.sourcegitcommit: d18a59b2efff67934650f6ad3a2e1fe9f8269f21
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/31/2020
-ms.locfileid: "87460445"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88661271"
 ---
 # <a name="route-blob-storage-events-to-web-endpoint-by-using-an-arm-template"></a>Маршрутизация событий хранилища больших двоичных объектов в конечную веб-точку с помощью шаблона ARM
 
@@ -41,7 +41,7 @@ ms.locfileid: "87460445"
 
 Шаблон, используемый в этом кратком руководстве, взят из [шаблонов быстрого запуска Azure](https://azure.microsoft.com/resources/templates/101-event-grid-subscription-and-storage/).
 
-:::code language="json" source="~/quickstart-templates/101-event-grid-subscription-and-storage/azuredeploy.json" range="1-91" highlight="40-85":::
+:::code language="json" source="~/quickstart-templates/101-event-grid-subscription-and-storage/azuredeploy.json":::
 
 В шаблоне определено два ресурса Azure:
 

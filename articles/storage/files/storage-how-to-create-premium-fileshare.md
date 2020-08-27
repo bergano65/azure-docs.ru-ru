@@ -1,40 +1,43 @@
 ---
 title: Создание файлового ресурса Azure уровня "Премиум"
-description: В этой статье вы узнаете, как создать файловый ресурс Azure уровня "Премиум" с помощью портал Azure, PowerShell или Azure CLI.
+description: Узнайте, как создать общую папку Azure Premium с помощью портал Azure, Azure PowerShell модуля или Azure CLI.
 author: roygara
 ms.service: storage
 ms.topic: how-to
-ms.date: 05/05/2019
+ms.date: 08/26/2020
 ms.author: rogarana
 ms.subservice: files
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: adeb1635489441b30c15fee69922e3abef0a53f9
-ms.sourcegitcommit: 4e5560887b8f10539d7564eedaff4316adb27e2c
+ms.openlocfilehash: 27bedb2a5d9f95632141ce332773e0f4f9c696d5
+ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87903822"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88930644"
 ---
-# <a name="how-to-create-an-premium-azure-file-share"></a>Создание файлового ресурса Azure уровня "Премиум"
+# <a name="how-to-create-an-azure-premium-file-share"></a>Создание общей папки Azure Premium
+
 Общие файловые ресурсы уровня "Премиум" предоставляются на носителях с твердотельным накопителем (SSD) и полезны для рабочих нагрузок, интенсивно использующих ввод-вывод, включая размещение баз данных и высокопроизводительных вычислений (HPC). Общие файловые ресурсы уровня "Премиум" размещаются в специальном типе учетной записи хранения, который называется учетной записью Филестораже. Файловые ресурсы уровня "Премиум" предназначены для высокопроизводительных и масштабируемых приложений, обеспечивая постоянную задержку, высокую скорость операций ввода-вывода и высокую пропускную способность.
 
-В этой статье показано, как создать новый тип учетной записи с помощью [портал Azure](https://portal.azure.com/), Azure PowerShell и Azure CLI.
+В этой статье показано, как создать новый тип учетной записи с помощью [портал Azure](https://portal.azure.com/), Azure PowerShell модуля и Azure CLI.
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Чтобы получить доступ к ресурсам Azure, включая общие файловые ресурсы Azure уровня "Премиум", вам потребуется подписка Azure. Если у вас еще нет подписки, вы можете [создать бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
+- Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/), прежде чем начинать работу.
+- Если вы хотите использовать Azure CLI, [установите последнюю версию](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest).
+- Если вы планируете использовать модуль Azure PowerShell, [установите последнюю версию](https://docs.microsoft.com/powershell/azure/install-az-ps?view=azps-4.6.0).
 
-## <a name="create-a-premium-file-share-using-the-azure-portal"></a>Создайте общую папку уровня "Премиум" с помощью портал Azure
+## <a name="create-a-filestorage-storage-account"></a>Создание учетной записи хранения Филестораже
+
+Каждая учетная запись хранения должна принадлежать группе ресурсов Azure. Группа ресурсов — это логический контейнер для группирования служб Azure. При создании учетной записи хранения у вас есть возможность создать новую или использовать существующую группу ресурсов. Для файловых ресурсов Premium требуется учетная запись Филестораже.
+
+# <a name="portal"></a>[Портал](#tab/azure-portal)
 
 ### <a name="sign-in-to-azure"></a>Вход в Azure
 
 Войдите на [портал Azure](https://portal.azure.com/).
 
-### <a name="create-a-filestorage-storage-account"></a>Создание учетной записи хранения филестораже
-
 Теперь все готово для создания учетной записи хранения.
-
-Каждая учетная запись хранения должна принадлежать группе ресурсов Azure. Группа ресурсов — это логический контейнер для группирования служб Azure. При создании учетной записи хранения у вас есть возможность создать новую или использовать существующую группу ресурсов. В этой статье показано, как создать новую группу ресурсов.
 
 1. В портал Azure выберите **учетные записи хранения** в меню слева.
 
@@ -56,46 +59,13 @@ ms.locfileid: "87903822"
     ![Создание учетной записи хранения для файлового ресурса уровня "Премиум"](media/storage-how-to-create-premium-fileshare/create-filestorage-account.png)
 
 1. Выберите **Просмотр и создание**, чтобы просмотреть настройки учетной записи хранения и создать учетную запись.
-1. Нажмите кнопку **создания**.
+1. Нажмите кнопку **Создать**.
 
 После создания ресурса учетной записи хранения перейдите к нему.
 
-### <a name="create-a-premium-file-share"></a>Создание общей папки (цен. категория "Премиум")
+# <a name="powershell"></a>[PowerShell](#tab/azure-powershell)
 
-1. В меню слева для учетной записи хранения перейдите к разделу **Файловая служба** , а затем выберите **файлы**.
-1. Выберите Общая **Папка** , чтобы создать общую папку Premium.
-1. Введите имя и требуемую квоту для общей папки, а затем нажмите кнопку **создать**.
-
-> [!NOTE]
-> Подготовленные размеры общих ресурсов задаются квотой общего доступа. Общие ресурсы выставляются по подготовленному размеру. Дополнительные сведения см. на [странице с ценами](https://azure.microsoft.com/pricing/details/storage/files/) .
-
-   ![Создание общей папки (цен. категория "Премиум")](media/storage-how-to-create-premium-fileshare/create-premium-file-share.png)
-
-### <a name="clean-up-resources"></a>Очистка ресурсов
-
-Если вы хотите очистить ресурсы, созданные в этой статье, можно просто удалить группу ресурсов. При удалении группы ресурсов также удаляется связанная учетная запись хранения, а также другие ресурсы, связанные с группой ресурсов.
-
-## <a name="create-a-premium-file-share-using-powershell"></a>Создание общей папки Premium с помощью PowerShell
-
-### <a name="create-an-account-using-powershell"></a>Создание учетной записи с помощью PowerShell
-
-Сначала установите последнюю версию модуля [PowerShellGet](/powershell/scripting/gallery/installing-psget).
-
-Затем обновите модуль PowerShell, войдите в свою подписку Azure, создайте группу ресурсов, а затем создайте учетную запись хранения.
-
-### <a name="upgrade-your-powershell-module"></a>Обновление модуля PowerShell
-
-Для взаимодействия с файловым ресурсом уровня "Премиум" из с помощью PowerShell необходимо установить модуль AZ. Storage версии 1.4.0 или последний модуль AZ. Storage.
-
-Сначала откройте сеанс PowerShell с повышенными разрешениями.
-
-Установите модуль AZ. Storage.
-
-```powershell
-Install-Module Az.Storage -Repository PSGallery -AllowClobber -Force
-```
-
-### <a name="sign-in-to-your-azure-subscription"></a>Вход в подписку Azure
+### <a name="sign-in-to-azure"></a>Вход в Azure
 
 Чтобы выполнить проверку подлинности, используйте команду `Connect-AzAccount` и следуйте инструкциям на экране.
 
@@ -123,32 +93,11 @@ New-AzResourceGroup -Name $resourceGroup -Location $location
 $storageAcct = New-AzStorageAccount -ResourceGroupName $resourceGroup -Name "fileshowto" -SkuName "Premium_LRS" -Location "westus2" -Kind "FileStorage"
 ```
 
-### <a name="create-a-premium-file-share"></a>Создание общей папки (цен. категория "Премиум")
-
-Теперь, когда у вас есть учетная запись Филестораже, можно создать файловый ресурс уровня "Премиум". Используйте командлет [New-азсторажешаре](/powershell/module/az.storage/New-AzStorageShare) , чтобы создать его.
-
-> [!NOTE]
-> Подготовленные размеры общих ресурсов задаются квотой общего доступа. Общие ресурсы выставляются по подготовленному размеру. Дополнительные сведения см. на [странице с ценами](https://azure.microsoft.com/pricing/details/storage/files/) .
-
-```powershell
-New-AzStorageShare `
-   -Name myshare `
-   -Context $storageAcct.Context
-```
-
-### <a name="clean-up-resources"></a>Очистка ресурсов
-
-Чтобы удалить группу ресурсов и связанные с ней ресурсы, включая новую учетную запись хранения, используйте команду [Remove-AzResourceGroup](/powershell/module/az.resources/remove-azresourcegroup): 
-
-```powershell
-Remove-AzResourceGroup -Name $resourceGroup
-```
-
-## <a name="create-a-premium-file-share-using-azure-cli"></a>Создание общей папки Premium с помощью Azure CLI
+# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
 
 Чтобы запустить Azure Cloud Shell, войдите на [портал Azure](https://portal.azure.com).
 
-Если вы хотите войти в локальную установку интерфейса командной строки, сначала убедитесь, что у вас установлена последняя версия, а затем выполните команду Login:
+Если вы хотите войти в локальную установку интерфейса командной строки, убедитесь, что у вас установлена последняя версия, а затем выполните вход:
 
 ```azurecli
 az login
@@ -187,13 +136,42 @@ STORAGEKEY=$(az storage account keys list \
     --account-name $STORAGEACCT \
     --query "[0].value" | tr -d '"')
 ```
+---
 
-### <a name="create-a-premium-file-share"></a>Создание общей папки (цен. категория "Премиум")
+## <a name="create-a-premium-file-share"></a>Создание общей папки (цен. категория "Премиум")
 
-Теперь, когда у вас есть учетная запись филестораже, можно создать файловый ресурс уровня "Премиум". Чтобы создать его, используйте команду [AZ Storage Share Create](/cli/azure/storage/share) .
+Теперь, когда вы создали учетную запись Филестораже, вы можете создать файловый ресурс уровня "Премиум" в этой учетной записи хранения.
+
+# <a name="portal"></a>[Портал](#tab/azure-portal)
+
+1. В меню слева для учетной записи хранения перейдите к разделу **Файловая служба** , а затем выберите **файлы**.
+1. Выберите Общая **Папка** , чтобы создать общую папку Premium.
+1. Введите имя и требуемую квоту для общей папки, а затем нажмите кнопку **создать**.
 
 > [!NOTE]
-> Подготовленные размеры общих ресурсов задаются квотой общего доступа. Общие ресурсы выставляются по подготовленному размеру. Дополнительные сведения см. на [странице с ценами](https://azure.microsoft.com/pricing/details/storage/files/) .
+> Подготовленные размеры общих ресурсов задаются квотой общего доступа. Общие ресурсы выставляются по подготовленному размеру. Дополнительные сведения см. на [странице с расценками](https://azure.microsoft.com/pricing/details/storage/files/).
+
+   ![Создание общей папки (цен. категория "Премиум")](media/storage-how-to-create-premium-fileshare/create-premium-file-share.png)
+
+# <a name="powershell"></a>[PowerShell](#tab/azure-powershell)
+
+Чтобы создать файловый ресурс уровня "Премиум" с помощью модуля Azure PowerShell, используйте командлет [New-азсторажешаре](/powershell/module/az.storage/New-AzStorageShare) .
+
+> [!NOTE]
+> Подготовленные размеры общих ресурсов задаются квотой общего доступа. Общие ресурсы выставляются по подготовленному размеру. Дополнительные сведения см. на [странице с расценками](https://azure.microsoft.com/pricing/details/storage/files/).
+
+```powershell
+New-AzStorageShare `
+   -Name myshare `
+   -Context $storageAcct.Context
+```
+
+# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
+
+Чтобы создать общую папку уровня "Премиум" с помощью Azure CLI, используйте команду [AZ Storage Share Create](/cli/azure/storage/share) .
+
+> [!NOTE]
+> Подготовленные размеры общих ресурсов задаются квотой общего доступа. Общие ресурсы выставляются по подготовленному размеру. Дополнительные сведения см. на [странице с расценками](https://azure.microsoft.com/pricing/details/storage/files/).
 
 ```azurecli-interactive
 az storage share create \
@@ -201,14 +179,34 @@ az storage share create \
     --account-key $STORAGEKEY \
     --name "myshare" 
 ```
+---
 
-### <a name="clean-up-resources"></a>Очистка ресурсов
+## <a name="clean-up-resources"></a>Очистка ресурсов
+
+# <a name="portal"></a>[Портал](#tab/azure-portal)
+
+Если вы хотите очистить ресурсы, созданные в этой статье, удалите группу ресурсов. При удалении группы ресурсов также удаляется связанная учетная запись хранения, а также другие ресурсы, связанные с группой ресурсов.
+
+# <a name="powershell"></a>[PowerShell](#tab/azure-powershell)
+
+Если вы хотите очистить ресурсы, созданные в этой статье, удалите группу ресурсов. При удалении группы ресурсов также удаляется связанная учетная запись хранения, а также другие ресурсы, связанные с группой ресурсов.
+
+Чтобы удалить группу ресурсов и связанные с ней ресурсы, включая новую учетную запись хранения, используйте команду [Remove-AzResourceGroup](/powershell/module/az.resources/remove-azresourcegroup): 
+
+```powershell
+Remove-AzResourceGroup -Name $resourceGroup
+```
+
+# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
+
+Если вы хотите очистить ресурсы, созданные в этой статье, удалите группу ресурсов. При удалении группы ресурсов также удаляется связанная учетная запись хранения, а также другие ресурсы, связанные с группой ресурсов.
 
 Чтобы удалить группу ресурсов и связанные с ней ресурсы, включая новую учетную запись хранения, используйте команду [az group delete](/cli/azure/group).
 
 ```azurecli-interactive
 az group delete --name myResourceGroup
 ```
+---
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

@@ -11,13 +11,13 @@ ms.topic: conceptual
 ms.date: 05/19/2020
 ms.author: qiohu
 zone_pivot_groups: programming-languages-set-two
-ms.custom: devx-track-javascript
-ms.openlocfilehash: 10a07e00d451b5e23f49bbb3b0d358057c629b8c
-ms.sourcegitcommit: 42107c62f721da8550621a4651b3ef6c68704cd3
+ms.custom: devx-track-javascript, devx-track-csharp
+ms.openlocfilehash: 3d761bbad4cb2cd2cdd1c34459f25c811bb41c7e
+ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87406679"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88918695"
 ---
 # <a name="specify-source-language-for-speech-to-text"></a>Укажите исходный язык для перевода речи в текст
 
@@ -48,7 +48,7 @@ var recognizer = new SpeechRecognizer(speechConfig, sourceLanguageConfig, audioC
 ```
 
 >[!Note]
-> `SpeechRecognitionLanguage`и `EndpointId` методы Set являются устаревшими из `SpeechConfig` класса в C#. Использовать эти методы не рекомендуется, и их не следует использовать при создании `SpeechRecognizer` .
+> `SpeechRecognitionLanguage` и `EndpointId` методы Set являются устаревшими из `SpeechConfig` класса в C#. Использовать эти методы не рекомендуется, и их не следует использовать при создании `SpeechRecognizer` .
 
 ::: zone-end
 
@@ -78,7 +78,7 @@ auto recognizer = SpeechRecognizer::FromConfig(speechConfig, sourceLanguageConfi
 ```
 
 >[!Note]
-> `SetSpeechRecognitionLanguage`и `SetEndpointId` являются устаревшими методами из `SpeechConfig` класса в C++ и Java. Использовать эти методы не рекомендуется, и их не следует использовать при создании `SpeechRecognizer` .
+> `SetSpeechRecognitionLanguage` и `SetEndpointId` являются устаревшими методами из `SpeechConfig` класса в C++ и Java. Использовать эти методы не рекомендуется, и их не следует использовать при создании `SpeechRecognizer` .
 
 ::: zone-end
 
@@ -107,7 +107,7 @@ SpeechRecognizer recognizer = new SpeechRecognizer(speechConfig, sourceLanguageC
 ```
 
 >[!Note]
-> `setSpeechRecognitionLanguage`и `setEndpointId` являются устаревшими методами из `SpeechConfig` класса в C++ и Java. Использовать эти методы не рекомендуется, и их не следует использовать при создании `SpeechRecognizer` .
+> `setSpeechRecognitionLanguage` и `setEndpointId` являются устаревшими методами из `SpeechConfig` класса в C++ и Java. Использовать эти методы не рекомендуется, и их не следует использовать при создании `SpeechRecognizer` .
 
 ::: zone-end
 

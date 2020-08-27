@@ -10,12 +10,13 @@ ms.subservice: content-moderator
 ms.topic: conceptual
 ms.date: 10/24/2019
 ms.author: pafarley
-ms.openlocfilehash: b2d763454b86570b57a16fb9ae2107a2a2bcd23d
-ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
+ms.custom: devx-track-csharp
+ms.openlocfilehash: f2d0ddae8a9bd8054c740402b8beb3bb0bccfa9f
+ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "73744393"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88919222"
 ---
 # <a name="create-video-transcript-reviews-using-net"></a>Создание проверок для расшифровки видео .NET
 
@@ -80,7 +81,7 @@ using Newtonsoft.Json;
 
 ### <a name="add-private-properties"></a>Добавление частных свойств
 
-Добавьте следующие закрытые свойства в пространство имен **видеотранскриптревиевс**, класс **Program**. Обновите `AzureEndpoint` поля `CMSubscriptionKey` и, указав значения URL-адреса конечной точки и ключа подписки. Их можно найти на вкладке **Быстрый запуск** ресурса в портал Azure.
+Добавьте следующие закрытые свойства в пространство имен **видеотранскриптревиевс**, класс **Program**. Обновите `AzureEndpoint` поля и, `CMSubscriptionKey` указав значения URL-адреса конечной точки и ключа подписки. Их можно найти на вкладке **Быстрый запуск** ресурса в портал Azure.
 
 ```csharp
 namespace VideoReviews
@@ -144,7 +145,7 @@ public static ContentModeratorClient NewClient()
 **CreateVideoReviews** принимает следующие обязательные параметры.
 1. Строка, обозначающая тип MIME, которая должна иметь значение "application/json". 
 1. Имя команды Content Moderator.
-1. Объект **IList\<креатевидеоревиевсбодитем>** . Каждый объект **CreateVideoReviewsBodyItem** представляет отдельную проверку видео. В этом кратком руководстве проверки создаются по одной.
+1. Объект **IList\<CreateVideoReviewsBodyItem>**. Каждый объект **CreateVideoReviewsBodyItem** представляет отдельную проверку видео. В этом кратком руководстве проверки создаются по одной.
 
 **CreateVideoReviewsBodyItem** имеет несколько свойств. Необходимо задать по меньшей мере следующие свойства.
 - **Содержимое**. URL-адрес видео для проверки.
@@ -152,7 +153,7 @@ public static ContentModeratorClient NewClient()
 - **Состояние**. Укажите здесь значение "Unpublished" (Неопубликованное). Если значение не задано, по умолчанию используется значение "Pending" (Ожидание), что означает, что проверка видео уже опубликована и ожидает пользовательской проверки. После публикации проверки видео вы не сможете добавить в нее видеокадры, расшифровку или результат модерации расшифровки.
 
 > [!NOTE]
-> **Креатевидеоревиевс** возвращает строку IList\<>. Каждая из этих строк содержит идентификатор проверки видео. Эти идентификаторы являются глобально уникальными и их значения не совпадают со значениями свойства **ContentId**.
+> **CreateVideoReviews** возвращает IList\<string>. Каждая из этих строк содержит идентификатор проверки видео. Эти идентификаторы являются глобально уникальными и их значения не совпадают со значениями свойства **ContentId**.
 
 Добавьте следующее определение метода в пространство имен VideoReviews в классе Program.
 
@@ -234,15 +235,15 @@ static void AddTranscript(ContentModeratorClient client, string review_id, strin
 1. Строка, обозначающая тип MIME, которая должна иметь значение "application/json". 
 1. Имя команды Content Moderator.
 1. Идентификатор проверки видео, полученный от **CreateVideoReviews**.
-1. > IList\<транскриптмодератионбодитем. Объект **TranscriptModerationBodyItem** имеет следующие свойства.
-1. **Условия**. > IList\<транскриптмодератионбодитемтермситем. Объект **TranscriptModerationBodyItemTermsItem** имеет следующие свойства.
+1. Объект IList\<TranscriptModerationBodyItem>. Объект **TranscriptModerationBodyItem** имеет следующие свойства.
+1. **Условия**. Объект IList\<TranscriptModerationBodyItemTermsItem>. Объект **TranscriptModerationBodyItemTermsItem** имеет следующие свойства.
 1. **Индекс**. Отсчитываемый от нуля индекс терминов.
 1. **Термин**. Строка, содержащая термин.
 1. **Метка времени**. Строка, указывающая время в расшифровке (в секундах), в котором обнаружен указанный термин.
 
 Расшифровка должна иметь формат WebVTT. Дополнительные сведения см. в статье [о формате Web Video Text Tracks (WebVTT)](https://www.w3.org/TR/webvtt1/).
 
-Добавьте следующие определения методов в пространство имен VideoTranscriptReviews, в класс Program. Этот метод передает расшифровку в метод **ContentModeratorClient.TextModeration.ScreenText**. Результат также преобразуется в транскриптмодератионбодитем IList\<> и отправляется в **аддвидеотранскриптмодератионресулт**.
+Добавьте следующие определения методов в пространство имен VideoTranscriptReviews, в класс Program. Этот метод передает расшифровку в метод **ContentModeratorClient.TextModeration.ScreenText**. Также он преобразует результат в IList\<TranscriptModerationBodyItem> и передает его в **AddVideoTranscriptModerationResult**.
 
 ```csharp
 /// <summary>
@@ -366,7 +367,7 @@ Press any key to close the application.
 
 ## <a name="navigate-to-your-video-transcript-review"></a>Переход к проверке расшифровки видео
 
-Перейдите к рецензии видео в инструменте Content Moderatorной рецензии**на экране** **Проверка**>**записи видео**>.
+Перейдите к рецензии видео в инструменте Content Moderatorной рецензии на экране **Проверка** > **записи видео** > **Transcript** .
 
 Здесь вы увидите следующие компоненты:
 - две строки добавленной вами расшифровки;
@@ -375,7 +376,7 @@ Press any key to close the application.
 
 ![Проверка расшифровки видео для оценки человеком](images/ams-video-transcript-review.PNG)
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Получите [пакет SDK Content Moderator для .NET](https://www.nuget.org/packages/Microsoft.Azure.CognitiveServices.ContentModerator/) и [решение для Visual Studio](https://github.com/Azure-Samples/cognitive-services-dotnet-sdk-samples/tree/master/ContentModerator). Они вам понадобятся для работы с этим и другими руководствами по Content Moderator для .NET.
 

@@ -10,13 +10,13 @@ ms.subservice: computer-vision
 ms.topic: conceptual
 ms.date: 08/11/2020
 ms.author: pafarley
-ms.custom: seodec18
-ms.openlocfilehash: 9f9ebff77f54d86c3c4ed45fb5190de1900934e9
-ms.sourcegitcommit: 4913da04fd0f3cf7710ec08d0c1867b62c2effe7
+ms.custom: seodec18, devx-track-csharp
+ms.openlocfilehash: cb931d0b9c3dd4d3fa0fa69f69f5f90fc37ea8f6
+ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88207231"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88929199"
 ---
 # <a name="optical-character-recognition-ocr"></a>Оптическое распознавание текста (OCR)
 
@@ -141,7 +141,7 @@ API Компьютерное зрение [чтения](https://westcentralus.d
 [REST API "Read 3. x](./QuickStarts/CSharp-hand-text.md) " является предпочтительным вариантом для большинства клиентов из-за простоты интеграции и высокой продуктивности работы. Azure и служба Компьютерное зрение выполняют масштабирование, производительность, безопасность данных и соответствие требованиям, когда вы Сосредоточьтесь на соответствии потребностям ваших клиентов.
 
 ### <a name="use-containers-for-on-premise-deployment"></a>Использование контейнеров для локального развертывания
-[Контейнер DOCKER Read 2,0 (Предварительная версия)](https://docs.microsoft.com/azure/cognitive-services/computer-vision/computer-vision-how-to-install-containers) позволяет развертывать новые возможности OCR в локальной среде. Контейнеры отлично подходят для конкретных требований к безопасности и управлению данными.
+[Контейнер DOCKER Read 2,0 (Предварительная версия)](https://docs.microsoft.com/azure/cognitive-services/computer-vision/computer-vision-how-to-install-containers) позволяет развертывать новые возможности OCR в локальной среде. Контейнеры соответствуют конкретным требованиям к безопасности и управлению данными.
 
 ## <a name="read-ocr-examples"></a>Чтение примеров распознавания текста
 
@@ -186,7 +186,7 @@ API чтения поддерживает изображения и докуме
 > [!NOTE]
 > Операции Рекогнизетекст Computer Висон 2,0 в данный процесс являются нерекомендуемыми в пользу нового API для чтения, рассмотренного в этой статье. Существующие клиенты должны [Перейти на использование операций чтения](upgrade-api-versions.md).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Дополнительные сведения о [REST API Read 3,0](https://westcentralus.dev.cognitive.microsoft.com/docs/services/computer-vision-v3-ga/operations/5d986960601faab4bf452005).
 - Дополнительные сведения о [REST API общедоступной предварительной версии 3,1](https://westus.dev.cognitive.microsoft.com/docs/services/computer-vision-v3-1-preview-1/operations/5d986960601faab4bf452005) с дополнительной поддержкой упрощенного китайского языка.

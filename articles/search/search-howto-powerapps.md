@@ -9,12 +9,12 @@ ms.service: cognitive-search
 ms.devlang: rest-api
 ms.topic: tutorial
 ms.date: 08/21/2020
-ms.openlocfilehash: 04434753949f0e00eaf99610199cc4997ef53caf
-ms.sourcegitcommit: 62717591c3ab871365a783b7221851758f4ec9a4
+ms.openlocfilehash: 887017f60deb832bd5c53f28bde4b57a3d82bde5
+ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/22/2020
-ms.locfileid: "88751069"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88918049"
 ---
 # <a name="tutorial-query-a-cognitive-search-index-from-power-apps"></a>Руководство по Создание запроса к индексу Когнитивного поиска из Power Apps
 
@@ -261,5 +261,4 @@ ms.locfileid: "88751069"
 Power Apps позволяет очень быстро разрабатывать настраиваемые приложения. Теперь, когда вы знаете, как подключиться к индексу поиска, вы можете переходить к созданию дополнительных возможностей визуализации в настраиваемом приложении Power Apps.
 
 > [!div class="nextstepaction"]
-> [Каталог материалов для обучения в Power Apps ](https://docs.microsoft.com/powerapps/learning-catalog/get-started)
-
+> [Каталог материалов для обучения в Power Apps ](/powerapps/learning-catalog/get-started)
