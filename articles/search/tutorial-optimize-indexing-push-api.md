@@ -8,12 +8,12 @@ ms.author: delegenz
 ms.service: cognitive-search
 ms.topic: tutorial
 ms.date: 08/21/2020
-ms.openlocfilehash: 5cafb7927bb3ec697446b37df8936da65748a9ba
-ms.sourcegitcommit: 62717591c3ab871365a783b7221851758f4ec9a4
+ms.openlocfilehash: 3e1845eee9832770cc289821c60097e69eec6c08
+ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/22/2020
-ms.locfileid: "88749455"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88932021"
 ---
 # <a name="tutorial-optimize-indexing-with-the-push-api"></a>Руководство по Оптимизация индексирования с помощью API Push
 
@@ -21,7 +21,7 @@ ms.locfileid: "88749455"
 
 В этом руководстве описано, как эффективно индексировать данные [методом отправки](search-what-is-data-import.md#pushing-data-to-an-index) с применением запросов пакетной обработки и стратегии попыток повторов с экспоненциальной задержкой. Вы можете [скачать и запустить готовое приложение](https://github.com/Azure-Samples/azure-search-dotnet-samples/tree/master/optimize-data-indexing). В этой статье описываются ключевые аспекты приложения и факторы, которые нужно учитывать при индексировании данных.
 
-В этом учебнике используется C# и пакет [SDK для .NET](https://docs.microsoft.com/dotnet/api/overview/azure/search) для выполнения следующих задач:
+В этом учебнике используется C# и пакет [SDK для .NET](/dotnet/api/overview/azure/search) для выполнения следующих задач:
 
 > [!div class="checklist"]
 > * Создание индекса
@@ -111,7 +111,7 @@ ms.locfileid: "88749455"
 
 ### <a name="creating-the-index"></a>Создание индекса
 
-Этот пример программы использует пакет SDK для .NET, чтобы определить и создать индекс службы "Когнитивный поиск Azure". С помощью [FieldBuilder](https://docs.microsoft.com/dotnet/api/microsoft.azure.search.fieldbuilder) из класса C# модели данных программа создает структуру индекса.
+Этот пример программы использует пакет SDK для .NET, чтобы определить и создать индекс службы "Когнитивный поиск Azure". С помощью [FieldBuilder](/dotnet/api/microsoft.azure.search.fieldbuilder) из класса C# модели данных программа создает структуру индекса.
 
 Модель данных определяется в классе Hotel, который содержит также ссылки на класс Address. FieldBuilder углубляется в структуру определений нескольких классов, создавая на их основе сложную структуру данных для индекса. Теги метаданных применяются для определения атрибутов каждого поля, например сведений о поддержке поиска или сортировки.
 
@@ -162,8 +162,8 @@ List<Hotel> hotels = dg.GetHotels(100000, "large");
 
 Для загрузки одного или нескольких документов в индекс служба "Когнитивный поиск Azure" поддерживает следующие интерфейсы API:
 
-+ [добавление, обновление и удаление документов (REST API)](https://docs.microsoft.com/rest/api/searchservice/AddUpdate-or-Delete-Documents);
-+ [класс indexAction](https://docs.microsoft.com/dotnet/api/microsoft.azure.search.models.indexaction?view=azure-dotnet) или [клаcс indexBatch](https://docs.microsoft.com/dotnet/api/microsoft.azure.search.models.indexbatch?view=azure-dotnet).
++ [добавление, обновление и удаление документов (REST API)](/rest/api/searchservice/AddUpdate-or-Delete-Documents);
++ [класс indexAction](/dotnet/api/microsoft.azure.search.models.indexaction?view=azure-dotnet) или [клаcс indexBatch](/dotnet/api/microsoft.azure.search.models.indexbatch?view=azure-dotnet).
 
 Пакетное индексирование документов значительно повысит производительность индексирования. Каждый пакет может содержать до 1000 документов или до 16 МБ данных.
 
@@ -258,14 +258,14 @@ await TestBatchSizes(indexClient, numTries: 3);
 
 Некоторые из упомянутых выше факторов влияют на оптимальное число потоков. Вы можете изменить этот пример так, чтобы проверить работу с разным количеством потоков и выбрать оптимальный вариант для вашего сценария. Но обычно любое количество параллельных потоков позволяет добиться значительного повышения эффективности.
 
-По мере повышения числа запросов, передаваемых в службу поиска, могут возвращаться [коды состояния HTTP](https://docs.microsoft.com/rest/api/searchservice/http-status-codes) с ошибками, свидетельствующие о неудачном выполнении запроса. При индексировании часто используются следующие два кода состояния HTTP:
+По мере повышения числа запросов, передаваемых в службу поиска, могут возвращаться [коды состояния HTTP](/rest/api/searchservice/http-status-codes) с ошибками, свидетельствующие о неудачном выполнении запроса. При индексировании часто используются следующие два кода состояния HTTP:
 
 + **503 Service Unavailable** (Служба недоступна). Эта ошибка означает, что система перегружена и запрос не может быть обработан сейчас.
 + **207 Multi-Status** (Множественное состояние). Эта ошибка означает, что некоторые документы обработаны успешно, но хотя бы один — со сбоем.
 
 ### <a name="implement-an-exponential-backoff-retry-strategy"></a>Реализация стратегии повторов с экспоненциальной задержкой
 
-В случае сбоя следует повторить выполнение запроса, используя [стратегию повторов с экспоненциальной задержкой](https://docs.microsoft.com/dotnet/architecture/microservices/implement-resilient-applications/implement-retries-exponential-backoff).
+В случае сбоя следует повторить выполнение запроса, используя [стратегию повторов с экспоненциальной задержкой](/dotnet/architecture/microservices/implement-resilient-applications/implement-retries-exponential-backoff).
 
 Пакет SDK .NET для Когнитивного поиска Azure реализует автоматический повтор попыток при получении ошибок 503 и других сбоев, но для повторной обработки ошибок 207 вам потребуется собственная логика повторов. Также для реализации стратегии повторных попыток можно использовать средства с открытым кодом, например [Polly](https://github.com/App-vNext/Polly). 
 
@@ -281,7 +281,7 @@ TimeSpan delay = delay = TimeSpan.FromSeconds(2);
 int maxRetryAttempts = 5;
 ```
 
-Здесь важно перехватывать исключения [IndexBatchException](https://docs.microsoft.com/dotnet/api/microsoft.azure.search.indexbatchexception?view=azure-dotnet), которые означают частичное выполнение операции индексирования (ошибка 207). Для необработанных элементов следует повторить попытку с помощью метода `FindFailedActionsToRetry`, который позволяет легко создать новый пакет только из необработанных элементов.
+Здесь важно перехватывать исключения [IndexBatchException](/dotnet/api/microsoft.azure.search.indexbatchexception?view=azure-dotnet), которые означают частичное выполнение операции индексирования (ошибка 207). Для необработанных элементов следует повторить попытку с помощью метода `FindFailedActionsToRetry`, который позволяет легко создать новый пакет только из необработанных элементов.
 
 Следует перехватывать не только `IndexBatchException`, но и другие исключения, которые означают полностью неудачное выполнение запроса. Эти исключения встречаются реже, особенно при работе с пакетом SDK для .NET, так как он реализует автоматическое выполнение повторов для ошибок 503.
 
@@ -346,7 +346,7 @@ ExponentialBackoff.IndexData(indexClient, hotels, 1000, 8).Wait();
 
 ### <a name="programatically"></a>Программный способ
 
-Есть два основных метода проверки количества документов в индексе: API [Count Documents](https://docs.microsoft.com/rest/api/searchservice/count-documents) и API [Get Index Statistics](https://docs.microsoft.com/rest/api/searchservice/get-index-statistics). Оба метода могут потребовать дополнительного времени на обновление, поэтому не следует беспокоиться, если при первой попытке число документов окажется ниже ожидаемого.
+Есть два основных метода проверки количества документов в индексе: API [Count Documents](/rest/api/searchservice/count-documents) и API [Get Index Statistics](/rest/api/searchservice/get-index-statistics). Оба метода могут потребовать дополнительного времени на обновление, поэтому не следует беспокоиться, если при первой попытке число документов окажется ниже ожидаемого.
 
 #### <a name="count-documents"></a>Подсчет документов
 
@@ -370,7 +370,7 @@ IndexGetStatisticsResult indexStats = serviceClient.Indexes.GetStatistics(config
 
   ![Список индексов службы Когнитивный поиск Azure](media/tutorial-optimize-data-indexing/portal-output.png "Список индексов службы Когнитивный поиск Azure")
 
-Значения *Число документов* и *Размер хранилища* основаны на API [Get Index Statistics](https://docs.microsoft.com/rest/api/searchservice/get-index-statistics) и на их обновление может потребоваться несколько минут.
+Значения *Число документов* и *Размер хранилища* основаны на API [Get Index Statistics](/rest/api/searchservice/get-index-statistics) и на их обновление может потребоваться несколько минут.
 
 ## <a name="reset-and-rerun"></a>Сброс и повторный запуск
 

@@ -8,12 +8,12 @@ ms.service: virtual-machines-windows
 ms.topic: article
 ms.date: 12/02/2019
 ms.author: mbaldwin
-ms.openlocfilehash: c41207bedbea96c76f0a9a6ffd45ea6efa09138b
-ms.sourcegitcommit: 628be49d29421a638c8a479452d78ba1c9f7c8e4
+ms.openlocfilehash: 70dcee1cce49c658a60e98821a3ce60ec443408a
+ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/20/2020
-ms.locfileid: "88641778"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88932582"
 ---
 # <a name="key-vault-virtual-machine-extension-for-windows"></a>Расширение виртуальной машины Key Vault для Windows
 
@@ -25,7 +25,7 @@ ms.locfileid: "88641778"
 
 - Windows Server 2019
 - Windows Server 2016
-- Windows Server 2012
+- Windows Server 2012
 
 ### <a name="supported-certificate-content-types"></a>Поддерживаемые типы содержимого сертификатов
 
@@ -130,6 +130,8 @@ ms.locfileid: "88641778"
 
 
 ## <a name="azure-powershell-deployment"></a>Развертывание с помощью Azure PowerShell
+> [!WARNING]
+> Клиенты PowerShell часто добавляют в `\` `"` settings.js, что приведет к сбою akvvm_service с ошибкой: `[CertificateManagementConfiguration] Failed to parse the configuration settings with:not an object.`
 
 Azure PowerShell можно использовать для развертывания расширения виртуальной машины Key Vault на имеющейся виртуальной машине или в масштабируемых наборах виртуальных машин. 
 

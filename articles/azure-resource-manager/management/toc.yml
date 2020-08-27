@@ -116,13 +116,13 @@
           href: tag-support.md
     - name: Управление группами ресурсов
       items:
-        - name: портал Azure;
+        - name: Портал Azure
           displayName: 'create,list,open,delete,deploy,move,lock,tag,export'
           href: manage-resource-groups-portal.md
         - name: Azure CLI
           displayName: 'create,list,open,delete,deploy,move,lock,tag,export'
           href: manage-resource-groups-cli.md
-        - name: Azure PowerShell;
+        - name: Azure PowerShell
           displayName: 'create,list,open,delete,deploy,move,lock,tag,export'
           href: manage-resource-groups-powershell.md
     - name: Управление ресурсами
@@ -139,9 +139,9 @@
     - name: Подписки EA
       items:
         - name: Создание
-          href: programmatically-create-subscription.md
+          href: ../../cost-management-billing/manage/programmatically-create-subscription.md?toc=/azure/azure-resource-manager/management/toc.json
         - name: Предоставление доступа для создания
-          href: grant-access-to-create-subscription.md
+          href: ../../cost-management-billing/manage/grant-access-to-create-subscription.md?toc=/azure/azure-resource-manager/management/toc.json
     - name: Поставщики и типы ресурсов
       href: resource-providers-and-types.md
     - name: Удаление ресурсов и групп ресурсов

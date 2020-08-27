@@ -3,12 +3,12 @@ title: Метрики в Azure Monitor — Центры событий Azure |
 description: В этой статье описывается, как использовать приложение Azure Monitor для мониторинга Центров событий Azure.
 ms.topic: article
 ms.date: 06/23/2020
-ms.openlocfilehash: c7841007fa1736c88c30108099f86b99d3dad0fb
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 7ad570a41fd9dfff01e3a1da6b2d309a7a8464cc
+ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87074862"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88931154"
 ---
 # <a name="azure-event-hubs-metrics-in-azure-monitor"></a>Метрики Центров событий Azure в Azure Monitor
 
@@ -120,10 +120,10 @@ Azure Monitor предоставляет несколько способов д�
 Дополнительные сведения о Центрах событий см. по следующим ссылкам:
 
 - Начните работу с руководства по Центрам событий
-    - [.NET Core](get-started-dotnet-standard-send-v2.md)
-    - [Java](get-started-java-send-v2.md)
-    - [Python](get-started-python-send-v2.md)
-    - [JavaScript](get-started-java-send-v2.md)
+    - [.NET Core](event-hubs-dotnet-standard-getstarted-send.md)
+    - [Java](event-hubs-java-get-started-send.md)
+    - [Python](event-hubs-python-get-started-send.md)
+    - [JavaScript](event-hubs-java-get-started-send.md)
 * [Часто задаваемые вопросы о Центрах событий](event-hubs-faq.md)
 * [Примеры приложений, использующих Центры событий](https://github.com/Azure/azure-event-hubs/tree/master/samples)
 

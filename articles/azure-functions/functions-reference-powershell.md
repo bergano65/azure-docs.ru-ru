@@ -5,12 +5,12 @@ author: eamonoreilly
 ms.topic: conceptual
 ms.custom: devx-track-dotnet
 ms.date: 04/22/2019
-ms.openlocfilehash: 206f941360b5c7912db548c6d2cfdc9d3d6a41dc
-ms.sourcegitcommit: d39f2cd3e0b917b351046112ef1b8dc240a47a4f
+ms.openlocfilehash: 8af1e52477cf047bbbec46884717166ec014fc6c
+ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88816411"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88933530"
 ---
 # <a name="azure-functions-powershell-developer-guide"></a>Руководство разработчика PowerShell для Функций Azure.
 
@@ -384,14 +384,60 @@ param([string] $myBlob)
 
 ## <a name="powershell-versions"></a>Версии PowerShell
 
-В следующей таблице показаны версии PowerShell, поддерживаемые каждой основной версией среды выполнения функций, и требуемая версия .NET.
+В следующей таблице приведены версии PowerShell, доступные для каждой основной версии среды выполнения функций, и требуемая версия .NET.
 
 | Версия службы "Функции" | Версия PowerShell                               | Версия .NET  | 
 |-------------------|--------------------------------------------------|---------------|
-| 3. x (рекомендуется) | PowerShell 7 (рекомендуется)<br/>PowerShell Core 6 | .NET Core 3.1<br/>.NET Core 3.1 |
+| 3. x (рекомендуется) | PowerShell 7 (рекомендуется)<br/>PowerShell Core 6 | .NET Core 3.1<br/>.NET Core 2.1 |
 | 2.x               | PowerShell Core 6                                | .NET Core 2.2 |
 
 Текущую версию можно просмотреть, выполнив печать `$PSVersionTable` из любой функции.
+
+### <a name="running-local-on-a-specific-version"></a>Локальный запуск в определенной версии
+
+При локальном запуске среда выполнения функций Azure по умолчанию использует PowerShell Core 6. Чтобы вместо этого использовать PowerShell 7 при локальном запуске, необходимо добавить параметр `"FUNCTIONS_WORKER_RUNTIME_VERSION" : "~7"` в `Values` массив в файле local.setting.jsв корневом каталоге проекта. При локальном запуске в PowerShell 7 local.settings.jsв файле выглядит, как в следующем примере: 
+
+```json
+{
+  "IsEncrypted": false,
+  "Values": {
+    "AzureWebJobsStorage": "",
+    "FUNCTIONS_WORKER_RUNTIME": "powershell",
+    "FUNCTIONS_WORKER_RUNTIME_VERSION" : "~7"
+  }
+}
+```
+
+### <a name="changing-the-powershell-version"></a>Изменение версии PowerShell
+
+Приложение функции должно работать на версии 3. x, чтобы иметь возможность выполнить обновление с PowerShell Core 6 до PowerShell 7. Чтобы узнать, как это сделать, см. статью [Просмотр и обновление текущей версии среды выполнения](set-runtime-version.md#view-and-update-the-current-runtime-version).
+
+Чтобы изменить версию PowerShell, используемую приложением функции, выполните следующие действия. Это можно сделать либо в портал Azure, либо с помощью PowerShell.
+
+# <a name="portal"></a>[Портал](#tab/portal)
+
+1. На [портале Azure](https://portal.azure.com) перейдите к приложению-функции.
+
+1. В разделе **Параметры**выберите **Конфигурация**. На вкладке **Общие параметры** выберите **версию PowerShell**. 
+
+    :::image type="content" source="media/functions-reference-powershell/change-powershell-version-portal.png" alt-text="Выберите версию PowerShell, используемую приложением функции"::: 
+
+1. Выберите нужную **версию PowerShell Core** и нажмите кнопку **сохранить**. При предупреждении о ожидающем перезапуске выберите **Continue (продолжить**). Приложение функции перезапускается в выбранной версии PowerShell. 
+
+# <a name="powershell"></a>[PowerShell](#tab/powershell)
+
+Выполните следующий скрипт, чтобы изменить версию PowerShell: 
+
+```powershell
+Set-AzResource -ResourceId "/subscriptions/<SUBSCRIPTION_ID>/resourceGroups/<RESOURCE_GROUP>/providers/Microsoft.Web/sites/<FUNCTION_APP>/config/web" -Properties @{  powerShellVersion  = '<VERSION>' } -Force -UsePatchSemantics
+
+```
+
+Замените `<SUBSCRIPTION_ID>` , `<RESOURCE_GROUP>` и `<FUNCTION_APP>` идентификатором своей подписки Azure, именем группы ресурсов и приложением функции соответственно.  Кроме того, замените `<VERSION>` на `~6` либо `~7` . Вы можете проверить обновленное значение `powerShellVersion` параметра в `Properties` возвращаемой хэш-таблице. 
+
+---
+
+После внесения изменений в конфигурацию приложение-функция перезапускается.
 
 ## <a name="dependency-management"></a>Управление зависимостями
 

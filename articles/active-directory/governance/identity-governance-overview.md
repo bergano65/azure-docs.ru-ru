@@ -16,12 +16,12 @@ ms.date: 06/18/2020
 ms.author: ajburnle
 ms.reviewer: markwahl-msft
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: dcb7ab566d861e0c4256acda8f8facd1e94d4ad6
-ms.sourcegitcommit: fbb66a827e67440b9d05049decfb434257e56d2d
+ms.openlocfilehash: 711903b106bf6ff7d8f669e2b1d3489057e09fbc
+ms.sourcegitcommit: 9c3cfbe2bee467d0e6966c2bfdeddbe039cad029
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87796783"
+ms.lasthandoff: 08/24/2020
+ms.locfileid: "88783303"
 ---
 # <a name="what-is-azure-ad-identity-governance"></a>Что такое Azure AD Identity Governance?
 
@@ -58,9 +58,9 @@ ms.locfileid: "87796783"
 
 Обычно ИТ-подразделения передают решения по утверждению доступа ответственным лицам в организации.  Также в этом процессе могут участвовать сами пользователи.  Например, пользователям, которые работают с конфиденциальными данными клиентов в маркетинговом приложении для Европы, нужна информация о соответствующих корпоративных политиках. Гостевые пользователи могут ничего не знать о внутренних требованиях к обработке данных, которые действуют в пригласившей их организации.
 
-Организации могут автоматизировать процессы управления жизненным циклом доступа, применив такие технологии, как [динамические группы](../users-groups-roles/groups-dynamic-membership.md) и подготовка пользователей в [приложениях SaaS](../saas-apps/tutorial-list.md) или [приложениях, интегрированных с SCIM](../app-provisioning/use-scim-to-provision-users-and-groups.md).  Организации также могут выбирать, [какие гостевые пользователи получат доступ к локальным приложениям](../b2b/hybrid-cloud-to-on-premises.md).  Также эти права доступа можно регулярно проверять с помощью [проверок доступа Azure Active Directory](access-reviews-overview.md).   [Управления правами Azure AD](entitlement-management-overview.md) также позволяет определить, как пользователи запрашивают доступ, для разных пакетов членств в группах и командах, ролей приложений и ролей SharePoint Online.
+Организации могут автоматизировать процессы управления жизненным циклом доступа, применив такие технологии, как [динамические группы](../users-groups-roles/groups-dynamic-membership.md) и подготовка пользователей в [приложениях SaaS](../saas-apps/tutorial-list.md) или [приложениях, интегрированных с SCIM](../app-provisioning/use-scim-to-provision-users-and-groups.md).  Организации также могут выбирать, [какие гостевые пользователи получат доступ к локальным приложениям](../external-identities/hybrid-cloud-to-on-premises.md).  Также эти права доступа можно регулярно проверять с помощью [проверок доступа Azure Active Directory](access-reviews-overview.md).   [Управления правами Azure AD](entitlement-management-overview.md) также позволяет определить, как пользователи запрашивают доступ, для разных пакетов членств в группах и командах, ролей приложений и ролей SharePoint Online.
 
-Когда пользователь пытается получить доступ к приложениям, Azure AD применяет политики [условного доступа](/azure/active-directory/conditional-access/). Например, в политики условного доступа можно включить [отображение условий использования](../conditional-access/terms-of-use.md) и [получение согласия пользователя](../conditional-access/require-tou.md) на эти условия перед предоставлением доступа к приложению.
+Когда пользователь пытается получить доступ к приложениям, Azure AD применяет политики [условного доступа](../conditional-access/index.yml). Например, в политики условного доступа можно включить [отображение условий использования](../conditional-access/terms-of-use.md) и [получение согласия пользователя](../conditional-access/require-tou.md) на эти условия перед предоставлением доступа к приложению.
 
 ## <a name="privileged-access-lifecycle"></a>Жизненный цикл привилегированного доступа
 
@@ -100,6 +100,4 @@ ms.locfileid: "87796783"
 - [Общие сведения об управлении правами Azure AD](entitlement-management-overview.md)
 - [Общие сведения о службе проверок доступа Azure AD](access-reviews-overview.md)
 - [Что такое Azure AD Privileged Identity Management?](../privileged-identity-management/pim-configure.md)
-- [Для чего нужна функции "Условия использования"](active-directory-tou.md)
-
-
+- [Для чего нужна функции "Условия использования"](../conditional-access/terms-of-use.md)

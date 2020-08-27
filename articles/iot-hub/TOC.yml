@@ -188,6 +188,9 @@
           href: /azure/iot-fundamentals/iot-security-architecture?context=azure/iot-hub/rc/rc
         - name: Защита развертывания IoT
           href: /azure/iot-fundamentals/iot-security-deployment?context=azure/iot-hub/rc/rc
+        - name: Элементы управления безопасностью службы "Политика Azure"
+          displayName: 'regulatory, compliance, standards, domains'
+          href: ./security-controls-policy.md
     - name: Обеспечение безопасности с помощью сертификатов X.509 ЦС
       items:
         - name: 'Общие сведения о безопасности, обеспечиваемой сертификатами X.509 ЦС'

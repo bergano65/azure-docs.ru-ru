@@ -8,13 +8,13 @@ ms.service: cognitive-services
 ms.subservice: qna-maker
 ms.topic: conceptual
 ms.date: 07/16/2020
-ms.custom: devx-track-javascript
-ms.openlocfilehash: 7120f95b8b61fc08759f4d15061ec530849dfc05
-ms.sourcegitcommit: 42107c62f721da8550621a4651b3ef6c68704cd3
+ms.custom: devx-track-javascript, devx-track-csharp
+ms.openlocfilehash: d1258786ec6f611bea5f73f3cb1c176738733acd
+ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87406526"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88919069"
 ---
 # <a name="get-an-answer-with-the-generateanswer-api-and-metadata"></a>Получение ответа с помощью API и метаданных Женератеансвер
 
@@ -45,7 +45,7 @@ QnA Maker позволяет добавлять метаданные в виде
 После публикации базы знаний либо с [портала QnA Maker](https://www.qnamaker.ai), либо с помощью [API](https://docs.microsoft.com/rest/api/cognitiveservices/qnamaker/knowledgebase/publish)можно получить сведения о конечной точке женератеансвер.
 
 Вот как это можно сделать.
-1. Выполните вход на странице [https://www.qnamaker.ai](https://www.qnamaker.ai).
+1. Войдите на портал [https://www.qnamaker.ai](https://www.qnamaker.ai).
 1. В окне **Мои базы знаний**выберите **Просмотреть код** для своей базы знаний.
     ![Снимок экрана с базами знаний](../media/qnamaker-how-to-metadata-usage/my-knowledge-bases.png)
 1. Получите сведения о конечной точке GenerateAnswer.
@@ -215,8 +215,8 @@ var qnaResults = await this.qnaMaker.getAnswers(stepContext.context, qnaMakerOpt
 ### <a name="metadata-examples-in-quickstarts"></a>Примеры метаданных в кратком руководстве
 
 Дополнительные сведения о метаданных см. в кратком руководстве по QnA Maker портале для метаданных.
-* [Создание и добавление метаданных в пару QnA](../quickstarts/add-question-metadata-portal.md#add-metadata-to-filter-the-answers)
-* [Прогнозирование запросов — Фильтрация ответов по метаданным](../quickstarts/get-answer-from-knowledge-base-using-url-tool.md)
+* [Разработка: добавление метаданных в пару "вопрос-ответ"](../quickstarts/add-question-metadata-portal.md#add-metadata-to-filter-the-answers)
+* [Прогнозирование запросов: фильтрация ответов по метаданным](../quickstarts/get-answer-from-knowledge-base-using-url-tool.md)
 
 <a name="keep-context"></a>
 
@@ -267,9 +267,9 @@ var qnaResults = await this.qnaMaker.getAnswers(stepContext.context, qnaMakerOpt
 
 ## <a name="common-http-errors"></a>Распространенные ошибки HTTP
 
-|Код|Объяснение|
+|Код|Пояснение|
 |:--|--|
-|"2xx"|Успешно|
+|"2xx"|Успех|
 |400|Параметры запроса указаны неправильно. Это означает, что требуемые параметры отсутствуют, имеют неправильный формат или слишком большой размер|
 |400|Текст запроса указан неправильно. Это означает, что JSON отсутствует, имеет неправильный формат или слишком большой размер|
 |401|Недопустимый ключ|
