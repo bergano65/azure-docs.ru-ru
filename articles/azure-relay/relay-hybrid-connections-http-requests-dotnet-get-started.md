@@ -2,13 +2,14 @@
 title: Azure Relay запросы гибридные подключения-HTTP в .NET
 description: 'Написание консольного приложения #C для HTTP-запросов гибридных подключений Azure Relay в .NET.'
 ms.topic: conceptual
+ms.custom: devx-track-csharp
 ms.date: 06/23/2020
-ms.openlocfilehash: 270e1bf0f9655705afe4d3657af03152957227c3
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 7a11abb984da3601a4d6aa921224e01f94d0871c
+ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85317055"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88922588"
 ---
 # <a name="get-started-with-relay-hybrid-connections-http-requests-in-net"></a>Начало работы с HTTP-запросами гибридных подключений Azure Relay в .NET
 [!INCLUDE [relay-selector-hybrid-connections](../../includes/relay-selector-hybrid-connections.md)]
@@ -58,7 +59,7 @@ ms.locfileid: "85317055"
 
 Поздравляем, вы создали законченное приложение гибридные подключения!
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 В этом кратком руководстве описано, как создать клиентские и серверные приложения .NET, которые отправляют и получают сообщения по протоколу HTTP. Функция гибридных подключений службы Azure Relay также поддерживает использование протокола WebSocket для отправки и получения сообщений. См. дополнительные сведения об [использовании протокола WebSocket с гибридными подключениями Azure Relay](relay-hybrid-connections-dotnet-get-started.md).
 

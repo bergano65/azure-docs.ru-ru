@@ -4,14 +4,15 @@ description: Сведения о внутренних компонентах с�
 author: sffamily
 ms.service: signalr
 ms.topic: conceptual
+ms.custom: devx-track-dotnet
 ms.date: 11/13/2019
 ms.author: zhshang
-ms.openlocfilehash: f06b8f9a2d41fc5400aa0fa610a2be3f31e21f1c
-ms.sourcegitcommit: 1e6c13dc1917f85983772812a3c62c265150d1e7
+ms.openlocfilehash: 3fc6971c66d06ae9f25584f5be28b051075bfa49
+ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/09/2020
-ms.locfileid: "86169805"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88921976"
 ---
 # <a name="azure-signalr-service-internals"></a>Внутренние компоненты службы Azure SignalR
 
@@ -23,7 +24,7 @@ ms.locfileid: "86169805"
 
 Кроме того, рассматриваются отличия от локального приложения ASP.NET Core SignalR.
 
-![Architecture](./media/signalr-concept-internals/arch.png)
+![Архитектура](./media/signalr-concept-internals/arch.png)
 
 ## <a name="server-connections"></a>Подключения к серверу
 
