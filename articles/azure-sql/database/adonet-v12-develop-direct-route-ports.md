@@ -4,19 +4,19 @@ description: Взаимодействие с базой данных при кл
 services: sql-database
 ms.service: sql-database
 ms.subservice: development
-ms.custom: sqldbrb=1
+ms.custom: sqldbrb=1, devx-track-dotnet
 ms.devlang: ''
 ms.topic: conceptual
 author: stevestein
 ms.author: sstein
 ms.reviewer: genemi
 ms.date: 06/11/2020
-ms.openlocfilehash: c5ddcd083dfae1d0d4b79cd534b6ae4d034903b9
-ms.sourcegitcommit: 5a37753456bc2e152c3cb765b90dc7815c27a0a8
+ms.openlocfilehash: 73bd3a86d34f36c3737db62e531dc2f79c0db8b5
+ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/04/2020
-ms.locfileid: "87759314"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88928332"
 ---
 # <a name="ports-beyond-1433-for-adonet-45"></a>Порты для ADO.NET 4.5, отличные от порта 1433
 [!INCLUDE[appliesto-sqldb](../includes/appliesto-sqldb.md)]
@@ -77,10 +77,10 @@ ms.locfileid: "87759314"
 * 15 августа 2012 г. был выпущен ADO.NET 4.5. Объявление в блоге группы разработчиков для .NET доступно [здесь](https://devblogs.microsoft.com/dotnet/announcing-the-release-of-net-framework-4-5-rtm-product-and-source-code/).
   * Запись блога об ADO.NET 4.5.1 доступна [здесь](https://devblogs.microsoft.com/dotnet/announcing-the-net-framework-4-5-1-preview/).
 
-* Microsoft ODBC Driver 17 для SQL Serverhttps://aka.ms/downloadmsodbcsql
+* Microsoft ODBC Driver 17 для SQL Server https://aka.ms/downloadmsodbcsql
 
 * Подключение к Базе данных SQL Azure версии 12 с помощью перенаправления https://techcommunity.microsoft.com/t5/DataCAT/Connect-to-Azure-SQL-Database-V12-via-Redirection/ba-p/305362
 
 * [Список версий протокола TDS](https://www.freetds.org/)
 * [Общие сведения о разработке базы данных SQL](develop-overview.md)
-* [Брандмауэр Базы данных SQL Azure](firewall-configure.md)
+* [Брандмауэр базы данных SQL Azure](firewall-configure.md)

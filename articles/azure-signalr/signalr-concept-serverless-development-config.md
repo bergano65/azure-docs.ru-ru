@@ -6,13 +6,13 @@ ms.service: signalr
 ms.topic: conceptual
 ms.date: 03/01/2019
 ms.author: antchu
-ms.custom: devx-track-javascript
-ms.openlocfilehash: e25a874af66b73f5f75a07a5df65c155a16c9f01
-ms.sourcegitcommit: 5b8fb60a5ded05c5b7281094d18cf8ae15cb1d55
+ms.custom: devx-track-javascript, devx-track-csharp
+ms.openlocfilehash: 0b5056f221fdd6036e5f6dff3d69a21c3a2dc27e
+ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87387155"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88928570"
 ---
 # <a name="azure-functions-development-and-configuration-with-azure-signalr-service"></a>Azure Functions development and configuration with Azure SignalR Service (Разработка и настройка функций Azure с помощью Службы Azure SignalR)
 
@@ -109,20 +109,20 @@ public class SignalRTestHub : ServerlessHub
 
 ### <a name="define-hub-method"></a>Определение метода концентратора
 
-Все методы концентратора **должны** иметь `[SignalRTrigger]` атрибут и **должны** использовать конструктор без параметров. Затем **имя метода** обрабатывается как **событие**параметра.
+Все методы концентратора **должны**  иметь `[SignalRTrigger]` атрибут и **должны** использовать конструктор без параметров. Затем **имя метода** обрабатывается как **событие**параметра.
 
 По умолчанию, `category=messages` за исключением имени метода является одно из следующих имен:
 
-* **Onconnected**: обрабатывается как`category=connections, event=connected`
-* **Ondisconnectо**: обрабатывается как`category=connections, event=disconnected`
+* **Onconnected**: обрабатывается как `category=connections, event=connected`
+* **Ondisconnectо**: обрабатывается как `category=connections, event=disconnected`
 
 ### <a name="parameter-binding-experience"></a>Интерфейс привязки параметров
 
 В модели на основе класса `[SignalRParameter]` не требуется, так как все аргументы помечаются как по `[SignalRParameter]` умолчанию, за исключением одного из следующих ситуаций:
 
 * Аргумент снабжен атрибутом привязки.
-* Тип аргумента — `ILogger` или.`CancellationToken`
-* Аргумент оформлен атрибутом`[SignalRIgnore]`
+* Тип аргумента — `ILogger` или. `CancellationToken`
+* Аргумент оформлен атрибутом `[SignalRIgnore]`
 
 ### <a name="negotiate-experience-in-class-based-model"></a>Процесс согласования в модели на основе классов
 
@@ -218,10 +218,10 @@ const connection = new signalR.HubConnectionBuilder()
 
 При запуске приложения-функции на локальном компьютере можно добавить `Host` раздел в *local.settings.js* , чтобы включить CORS. В `Host` разделе добавьте два свойства:
 
-* `CORS`— Введите базовый URL-адрес, который является источником клиентского приложения.
-* `CORSCredentials`-Задайте значение `true` , чтобы разрешить запросы "вискредентиалс"
+* `CORS` — Введите базовый URL-адрес, который является источником клиентского приложения.
+* `CORSCredentials` -Задайте значение `true` , чтобы разрешить запросы "вискредентиалс"
 
-Пример:
+Пример.
 
 ```json
 {

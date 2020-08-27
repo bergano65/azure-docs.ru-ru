@@ -10,18 +10,18 @@ author: gvashishtha
 ms.date: 07/31/2020
 ms.topic: conceptual
 zone_pivot_groups: aml-control-methods
-ms.openlocfilehash: 6bbee606c59482e4a06f344d3221e8611f6dcc9d
-ms.sourcegitcommit: 8def3249f2c216d7b9d96b154eb096640221b6b9
+ms.openlocfilehash: a3aed23441df225316f52eb3acb1387cbba6d807
+ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87544589"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88935591"
 ---
 # <a name="profile-your-model-to-determine-resource-utilization"></a>Профилирование модели для определения использования ресурсов
 
 В этой статье показано, как профилировать машинное обучение для моделирования, чтобы определить, сколько ресурсов ЦП и памяти необходимо выделить для модели при ее развертывании в качестве веб-службы.
 
-## <a name="prerequisites"></a>Обязательные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 В этой статье предполагается, что модель обучена и зарегистрирована с помощью Машинное обучение Azure. Пример обучения и регистрации модели scikit с помощью Машинное обучение Azure см. в этом [руководстве](how-to-train-scikit-learn.md) .
 
@@ -36,6 +36,9 @@ ms.locfileid: "87544589"
 
 > [!IMPORTANT]
 > На этом этапе поддерживается только Профилирование служб, в которых данные запроса должны быть строками, например: сериализованный JSON, текст, сериализованное изображение строки и т. д. Содержимое каждой строки набора данных (строка) помещается в текст HTTP-запроса и отправляется службе, которая инкапсулирует модель для оценки.
+
+> [!IMPORTANT]
+> Мы поддерживаем профилирование до 2 процессоров в ChinaEast2 и Усговаризона регионе.
 
 Ниже приведен пример того, как можно создать входной набор данных для профилирования службы, которая предполагает, что входящие данные запроса должны содержать сериализованный код JSON. В этом случае мы создали набор данных на основе 100 экземпляров одного и того же содержимого данных запроса. В реальных сценариях мы рекомендуем использовать большие наборы данных, содержащие различные входные данные, особенно если использование ресурсов модели зависит от входных данных.
 
@@ -122,12 +125,12 @@ az ml model profile -g <resource-group-name> -w <workspace-name> --inference-con
 
 ::: zone-end
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Устранение неполадок при развертывании](how-to-troubleshoot-deployment.md)
 * [развертывание в Службе Azure Kubernetes](how-to-deploy-azure-kubernetes-service.md).
 * [Создание клиентских приложений для использования веб-служб](how-to-consume-web-service.md)
-* [Обновить веб-службу](how-to-deploy-update-web-service.md)
+* [Обновление веб-службы](how-to-deploy-update-web-service.md)
 * [Развертывание модели с помощью пользовательского образа DOCKER](how-to-deploy-custom-docker-image.md)
 * [Использование TLS для защиты веб-службы с помощью Машинного обучения Azure](how-to-secure-web-service.md).
 * [Мониторинг моделей Машинное обучение Azure с помощью Application Insights](how-to-enable-app-insights.md)

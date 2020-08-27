@@ -8,12 +8,12 @@ ms.author: heidist
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 06/12/2020
-ms.openlocfilehash: 3399ace71d3a28ea903991e0439f1c9ddcc939d4
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: eaafb9536a8667417c0abf4ab570609f2db290bc
+ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85565391"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88935353"
 ---
 # <a name="documentation-resources-for-ai-enrichment-in-azure-cognitive-search"></a>Ресурсы документации для обогащения данных с помощью ИИ в Когнитивном поиске Azure
 
@@ -90,14 +90,14 @@ ms.locfileid: "85565391"
 + [Устаревшие навыки](cognitive-search-skill-deprecated.md)
   + [Microsoft.Skills.Text.NamedEntityRecognitionSkill](cognitive-search-skill-named-entity-recognition.md)
 
-## <a name="apis"></a>API-интерфейсы
+## <a name="apis"></a>Программные интерфейсы
 
-+ [REST API](https://docs.microsoft.com/rest/api/searchservice/)
-  + [Создание набора навыков (API-Version = 2020-06-30)](https://docs.microsoft.com/rest/api/searchservice/create-skillset)
-  + [Create индексатор (API-Version = 2020-06-30)](https://docs.microsoft.com/rest/api/searchservice/create-indexer)
++ [REST API](/rest/api/searchservice/)
+  + [Создание набора навыков (API-Version = 2020-06-30)](/rest/api/searchservice/create-skillset)
+  + [Create индексатор (API-Version = 2020-06-30)](/rest/api/searchservice/create-indexer)
 
 ## <a name="see-also"></a>См. также
 
-+ [Azure Search Service REST](https://docs.microsoft.com/rest/api/searchservice/) (Руководство по REST Службы поиска Azure)
++ [REST API Когнитивного поиска Azure](/rest/api/searchservice/)
 + [Indexers in Azure Cognitive Search](search-indexer-overview.md) (Индексаторы в службе "Когнитивный поиск Azure")
 + [Что собой представляет Когнитивный поиск Azure?](search-what-is-azure-search.md)

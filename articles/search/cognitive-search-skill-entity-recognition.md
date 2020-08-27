@@ -8,16 +8,16 @@ ms.author: luisca
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 06/17/2020
-ms.openlocfilehash: 716951616a82dfd13d6bdcf127c4c4382576e792
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: fd35f297e88c37aec39938b0bfd60288e591a62c
+ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85080851"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88936084"
 ---
 #    <a name="entity-recognition-cognitive-skill"></a>Когнитивный навык распознавания сущностей
 
-Навык **распознавания сущностей** извлекает сущности различных типов из текста. Этот навык использует модели машинного обучения, предоставляемые функцией [Анализ текста](https://docs.microsoft.com/azure/cognitive-services/text-analytics/overview) в Cognitive Services.
+Навык **распознавания сущностей** извлекает сущности различных типов из текста. Этот навык использует модели машинного обучения, предоставляемые функцией [Анализ текста](../cognitive-services/text-analytics/overview.md) в Cognitive Services.
 
 > [!NOTE]
 > По мере расширения области путем увеличения частоты обработки и добавления большего количества документов или дополнительных алгоритмов ИИ, вам нужно будет [присоединить оплачиваемый ресурс Cognitive Services](cognitive-search-attach-cognitive-services.md). Плата взимается при вызове API в Cognitive Services и извлечении изображений при распознавании документов в службе "Когнитивный поиск Azure". За извлечение текста из документов плата не взимается.
@@ -29,7 +29,7 @@ ms.locfileid: "85080851"
 Microsoft.Skills.Text.EntityRecognitionSkill
 
 ## <a name="data-limits"></a>Ограничения данных
-Максимальный размер записи — 50 000 знаков, как определено в [`String.Length`](https://docs.microsoft.com/dotnet/api/system.string.length). Если вам нужно разбить данные перед отправкой для извлечения ключевой фразы, можно воспользоваться [навыком разделения текста](cognitive-search-skill-textsplit.md).
+Максимальный размер записи — 50 000 знаков, как определено в [`String.Length`](/dotnet/api/system.string.length). Если вам нужно разбить данные перед отправкой для извлечения ключевой фразы, можно воспользоваться [навыком разделения текста](cognitive-search-skill-textsplit.md).
 
 ## <a name="skill-parameters"></a>Параметры навыков
 
@@ -53,9 +53,9 @@ Microsoft.Skills.Text.EntityRecognitionSkill
 ## <a name="skill-outputs"></a>Выходные данные навыка
 
 > [!NOTE]
-> Для некоторых языков категории сущностей не поддерживаются. `"Person"` `"Location"` `"Organization"` Типы категорий сущностей, и поддерживаются для полного списка языков, описанных выше. При _de_извлечении _en_типов, _es_, и поддерживаются только de, EN, ES, _fr_и _zh-Ханс_ `"Quantity"` `"Datetime"` `"URL"` `"Email"` . Дополнительные сведения см. [в разделе Поддержка языков и регионов для API анализа текста](https://docs.microsoft.com/azure/cognitive-services/text-analytics/language-support).  
+> Для некоторых языков категории сущностей не поддерживаются. `"Person"` `"Location"` `"Organization"` Типы категорий сущностей, и поддерживаются для полного списка языков, описанных выше. При _de_извлечении _en_типов, _es_, и поддерживаются только de, EN, ES, _fr_и _zh-Ханс_ `"Quantity"` `"Datetime"` `"URL"` `"Email"` . Дополнительные сведения см. [в разделе Поддержка языков и регионов для API анализа текста](../cognitive-services/text-analytics/language-support.md).  
 
-| Имя вывода      | Описание:                   |
+| Имя вывода      | Description                   |
 |---------------|-------------------------------|
 | `persons`       | Массив строк, где каждая строка представляет имя человека. |
 | `locations`  | Массив строк, где каждая строка представляет расположение. |
@@ -187,7 +187,7 @@ Microsoft.Skills.Text.EntityRecognitionSkill
 }
 ```
 
-Обратите внимание, что смещения, возвращаемые для сущностей в выходных данных этого навыка, возвращаются непосредственно из [API анализа текста](https://docs.microsoft.com/azure/cognitive-services/text-analytics/overview). Это означает, что если вы используете их для индексации в исходной строке, следует использовать класс [StringInfo](https://docs.microsoft.com/dotnet/api/system.globalization.stringinfo?view=netframework-4.8) в .NET для извлечения правильного содержимого.  [Дополнительные сведения можно найти здесь.](https://docs.microsoft.com/azure/cognitive-services/text-analytics/concepts/text-offsets)
+Обратите внимание, что смещения, возвращаемые для сущностей в выходных данных этого навыка, возвращаются непосредственно из [API анализа текста](../cognitive-services/text-analytics/overview.md). Это означает, что если вы используете их для индексации в исходной строке, следует использовать класс [StringInfo](/dotnet/api/system.globalization.stringinfo?view=netframework-4.8) в .NET для извлечения правильного содержимого.  [Дополнительные сведения можно найти здесь.](../cognitive-services/text-analytics/concepts/text-offsets.md)
 
 ## <a name="error-cases"></a>Варианты ошибок
 Если код языка для документа не поддерживается, возвращается ошибка и сущности не извлекаются.

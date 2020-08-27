@@ -1,21 +1,21 @@
 ---
-title: Включить имя файла
-description: включить файл
+title: включить файл
+description: Включить файл
 services: storage
-author: tamram
+author: roygara
 ms.service: storage
 ms.topic: include
-ms.date: 04/11/2019
+ms.date: 08/26/2020
 ms.author: rogara
 ms.custom: include file
-ms.openlocfilehash: 55e5290630185466ea0801b06ece71069fc94d89
-ms.sourcegitcommit: 3d56d25d9cf9d3d42600db3e9364a5730e80fa4a
+ms.openlocfilehash: 897e5b58aed9c47e0b94ee47d1883e2b7a28bacb
+ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87545190"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88930811"
 ---
-## <a name="2-assign-access-permissions-to-an-identity"></a>2. Назначение разрешений на доступ удостоверению
+## <a name="assign-access-permissions-to-an-identity"></a>Назначение разрешений на доступ для удостоверения
 
 Чтобы получить доступ к ресурсам службы файлов Azure с проверкой подлинности на основе удостоверений, удостоверение (пользователь, группа или субъект-служба) должно иметь необходимые разрешения на уровне общего ресурса. Этот процесс аналогичен указанию разрешений для общей папки Windows, где указывается тип доступа, который определенный пользователь имеет в общей папке. В инструкциях в этом разделе описывается, как назначить для удостоверения права доступа на чтение, запись или удаление к файловому ресурсу. 
 
@@ -35,7 +35,9 @@ ms.locfileid: "87545190"
 
 Общая рекомендация заключается в использовании разрешения уровня общего доступа для управления доступом высокого уровня к группе AD, представляющей группу пользователей и удостоверений, а затем используйте разрешения NTFS для детального контроля доступа на уровне каталога/файла. 
 
-#### <a name="azure-portal"></a>Портал Azure
+### <a name="assign-an-azure-role-to-an-ad-identity"></a>Назначение роли Azure удостоверению AD
+
+# <a name="portal"></a>[Портал](#tab/azure-portal)
 Чтобы назначить роль Azure удостоверению Azure AD, используйте [портал Azure](https://portal.azure.com)выполните следующие действия.
 
 1. В портал Azure перейдите к общей папке или [Создайте общую папку](../articles/storage/files/storage-how-to-create-file-share.md).
@@ -44,7 +46,7 @@ ms.locfileid: "87545190"
 4. В колонке **Добавление назначения роли** выберите подходящую встроенную роль (средство чтения общих ресурсов SMB для данных файлов хранилища, участника общего ресурса SMB данных файлов хранилища) из списка **ролей** . Оставьте значение параметра **назначить доступ** в параметре по умолчанию: **пользователь, группа или субъект-служба Azure AD**. Выберите целевое удостоверение Azure AD по имени или адресу электронной почты.
 5. Нажмите кнопку **сохранить** , чтобы завершить операцию назначения роли.
 
-#### <a name="powershell"></a>PowerShell
+# <a name="powershell"></a>[PowerShell](#tab/azure-powershell)
 
 В следующем примере PowerShell показано, как назначить роль Azure удостоверению Azure AD на основе имени для входа. Дополнительные сведения о назначении ролей Azure с помощью PowerShell см. в статье [Управление доступом с использованием RBAC и Azure PowerShell](../articles/role-based-access-control/role-assignments-powershell.md).
 
@@ -59,7 +61,7 @@ $scope = "/subscriptions/<subscription-id>/resourceGroups/<resource-group>/provi
 New-AzRoleAssignment -SignInName <user-principal-name> -RoleDefinitionName $FileShareContributorRole.Name -Scope $scope
 ```
 
-#### <a name="cli"></a>CLI
+# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
   
 Следующая команда CLI 2,0 показывает, как назначить роль Azure удостоверению Azure AD на основе имени для входа. Дополнительные сведения о назначении ролей Azure с Azure CLI см. в разделе [Управление доступом с помощью RBAC и Azure CLI](../articles/role-based-access-control/role-assignments-cli.md). 
 
@@ -69,8 +71,10 @@ New-AzRoleAssignment -SignInName <user-principal-name> -RoleDefinitionName $File
 #Assign the built-in role to the target identity: Storage File Data SMB Share Reader, Storage File Data SMB Share Contributor, Storage File Data SMB Share Elevated Contributor
 az role assignment create --role "<role-name>" --assignee <user-principal-name> --scope "/subscriptions/<subscription-id>/resourceGroups/<resource-group>/providers/Microsoft.Storage/storageAccounts/<storage-account>/fileServices/default/fileshares/<share-name>"
 ```
+---
 
-## <a name="3-configure-ntfs-permissions-over-smb"></a>3. Настройка разрешений NTFS по протоколу SMB 
+## <a name="configure-ntfs-permissions-over-smb"></a>Настройка разрешений NTFS по протоколу SMB
+
 После назначения разрешений на уровне общего ресурса с помощью RBAC необходимо назначить соответствующие разрешения NTFS на уровне корневой папки, каталога или на уровне файла. Разрешения уровня общего доступа можно рассматривать как привратник высокого уровня, который определяет, может ли пользователь получить доступ к общей папке. В то время как разрешения NTFS работают на более детализированном уровне, чтобы определить, какие операции пользователь может выполнять на уровне каталога или файла.
 
 Служба файлов Azure поддерживает полный набор основных и дополнительных разрешений NTFS. Вы можете просматривать и настраивать разрешения NTFS для каталогов и файлов в файловом ресурсе Azure, подключив общую папку, а затем используя проводник Windows или выполнив команду Windows [icacls](https://docs.microsoft.com/windows-server/administration/windows-commands/icacls) или [Set-ACL](https://docs.microsoft.com/powershell/module/microsoft.powershell.security/set-acl) . 
@@ -108,6 +112,7 @@ else
 
 
 ### <a name="configure-ntfs-permissions-with-windows-file-explorer"></a>Настройка разрешений NTFS с помощью проводника файлов Windows
+
 Используйте проводник файлов Windows, чтобы предоставить полный доступ ко всем каталогам и файлам в общей папке, включая корневой каталог.
 
 1. Откройте проводник Windows и щелкните правой кнопкой мыши файл или каталог и выберите пункт **Свойства**.
@@ -115,11 +120,12 @@ else
 3. Нажмите кнопку **изменить.** для изменения разрешений.
 4. Можно изменить разрешения существующих пользователей или нажать кнопку **Добавить...** , чтобы предоставить разрешения новым пользователям.
 5. В окне запроса для добавления новых пользователей введите имя целевого пользователя, которому нужно предоставить разрешение, в поле **Введите имена объектов** и выберите **Проверить имена** , чтобы найти полное имя участника-пользователя.
-7.    Выберите **ОК**.
+7.    Нажмите кнопку **ОК**.
 8.    На вкладке **Безопасность** выберите все разрешения, которые вы хотите предоставить новому пользователю.
 9.    Нажмите кнопку **Применить**.
 
 ### <a name="configure-ntfs-permissions-with-icacls"></a>Настройка разрешений NTFS с помощью icacls
+
 Используйте следующую команду Windows, чтобы предоставить полный набор разрешений для всех каталогов и файлов в файловом ресурсе, включая корневую папку. Не забудьте заменить значения заполнителей в примере собственными значениями.
 
 ```
@@ -128,7 +134,7 @@ icacls <mounted-drive-letter>: /grant <user-email>:(f)
 
 Дополнительные сведения об использовании icacls для установки разрешений NTFS и о различных типах поддерживаемых разрешений см. [в справочнике по командной строке для icacls](https://docs.microsoft.com/windows-server/administration/windows-commands/icacls).
 
-## <a name="4-mount-a-file-share-from-a-domain-joined-vm"></a>4. Подключение общей папки из виртуальной машины, присоединенной к домену
+## <a name="mount-a-file-share-from-a-domain-joined-vm"></a>Подключение файлового ресурса с виртуальной машины, присоединенной к домену
 
 Следующий процесс проверяет правильность настройки общей папки и разрешений на доступ, а также доступ к файловому ресурсу Azure с виртуальной машины, присоединенной к домену. Учтите, что для назначения роли Azure уровня общего ресурса может потребоваться некоторое время. 
 

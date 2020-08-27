@@ -9,12 +9,12 @@ ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 01/15/2020
 ms.custom: devx-track-python
-ms.openlocfilehash: aac184b9dc7eae8afcf796376d2f7dca684b4367
-ms.sourcegitcommit: 7fe8df79526a0067be4651ce6fa96fa9d4f21355
+ms.openlocfilehash: 40e20ad4bab0275b44cd868521c7dc70dec52567
+ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87852792"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88936135"
 ---
 # <a name="example-create-a-custom-skill-using-python"></a>Пример. Создание пользовательского навыка с помощью Python
 
@@ -22,16 +22,16 @@ ms.locfileid: "87852792"
 
 Пользовательский навык прост в проектировании (он объединяет две строки), чтобы вы могли сосредоточиться на средствах и технологиях, используемых для разработки пользовательских навыков в Python. После того как вы пройдете простой навык, вы сможете создать более сложные сценарии.
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 + Изучите [Пользовательский интерфейс навыка](cognitive-search-custom-skill-interface.md) , чтобы получить представление о интерфейсе ввода-вывода, который должен быть реализован в пользовательском навыке.
 
-+ Настройте среду. Мы простроили [это руководство](https://docs.microsoft.com/azure/python/tutorial-vs-code-serverless-python-01) , чтобы настроить бессерверную функцию Azure с помощью расширений Visual Studio Code и Python. В этом учебнике описывается установка следующих средств и компонентов: 
++ Настройте среду. Мы простроили [это руководство](/azure/python/tutorial-vs-code-serverless-python-01) , чтобы настроить бессерверную функцию Azure с помощью расширений Visual Studio Code и Python. В этом учебнике описывается установка следующих средств и компонентов: 
 
   + [Python 3,75](https://www.python.org/downloads/release/python-375/)
   + [Visual Studio Code](https://code.visualstudio.com/)
   + [Расширение Python для Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=ms-python.python)
-  + [Azure Functions Core Tools](https://docs.microsoft.com/azure/azure-functions/functions-run-local#v2)
+  + [Azure Functions Core Tools](../azure-functions/functions-run-local.md#v2)
   + [Расширение "Функции Azure" для Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-azurefunctions)
 
 ## <a name="create-an-azure-function"></a>Создание функции Azure
@@ -270,5 +270,5 @@ POST [Function URL you copied above]
 + [Power Skills: репозиторий пользовательских навыков](https://github.com/Azure-Samples/azure-search-power-skills)
 + [Добавление пользовательского навыка в конвейер обогащения искусственного интеллекта](cognitive-search-custom-skill-interface.md)
 + [Определение набора навыков](cognitive-search-defining-skillset.md)
-+ [Создание набора навыков (REST)](https://docs.microsoft.com/rest/api/searchservice/create-skillset)
++ [Создание набора навыков (REST)](/rest/api/searchservice/create-skillset)
 + [Сопоставление обогащенных полей](cognitive-search-output-field-mapping.md)

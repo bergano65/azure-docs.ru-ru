@@ -8,18 +8,18 @@ ms.author: luisca
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 11/04/2019
-ms.openlocfilehash: 2994c55b39d30ff16a0ca135e93a116784feb201
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 46170a0eede92584b8ac4cc77ad61ca673cae65c
+ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "74113823"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88935489"
 ---
 # <a name="example-create-a-custom-skill-using-the-bing-entity-search-api"></a>Пример. Создание пользовательского навыка с помощью API Bing для поиска сущностей
 
 В этом примере вы узнаете, как создать пользовательский навык веб-API. Этот навык будет принимать местоположения, общедоступные рисунки и организации и возвращать их описания. В примере используется [функция Azure](https://azure.microsoft.com/services/functions/) для заключения [API Bing для поиска сущностей](https://azure.microsoft.com/services/cognitive-services/bing-entity-search-api/) , чтобы она реализовала пользовательский интерфейс квалификации.
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 + Ознакомьтесь со статьей о [пользовательском интерфейсе навыков](cognitive-search-custom-skill-interface.md) , если вы не знакомы с интерфейсом ввода-вывода, который должен быть реализован в пользовательском навыке.
 
@@ -325,7 +325,7 @@ namespace SampleSkills
 POST https://localhost:7071/api/EntitySearch
 ```
 
-### <a name="request-body"></a>Тело запроса
+### <a name="request-body"></a>Текст запроса
 ```json
 {
     "values": [
@@ -481,5 +481,5 @@ POST https://[your-entity-search-app-name].azurewebsites.net/api/EntitySearch?co
 + [Power Skills: репозиторий пользовательских навыков](https://github.com/Azure-Samples/azure-search-power-skills)
 + [Добавление пользовательского навыка в конвейер обогащения искусственного интеллекта](cognitive-search-custom-skill-interface.md)
 + [Определение набора навыков](cognitive-search-defining-skillset.md)
-+ [Создание набора навыков (REST)](https://docs.microsoft.com/rest/api/searchservice/create-skillset)
++ [Создание набора навыков (REST)](/rest/api/searchservice/create-skillset)
 + [Сопоставление обогащенных полей](cognitive-search-output-field-mapping.md)

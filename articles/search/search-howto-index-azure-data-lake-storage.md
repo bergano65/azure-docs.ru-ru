@@ -9,12 +9,12 @@ ms.devlang: rest-api
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 07/11/2020
-ms.openlocfilehash: 5862654dac99bea7755eab41cf3c1bd6cdd84526
-ms.sourcegitcommit: 5a37753456bc2e152c3cb765b90dc7815c27a0a8
+ms.openlocfilehash: b1a88398d657e6bc242c7db12f3c0ddc1af828ca
+ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/04/2020
-ms.locfileid: "87760317"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88935863"
 ---
 # <a name="indexing-documents-in-azure-data-lake-storage-gen2"></a>Индексирование документов в Azure Data Lake Storage 2-го поколения
 
@@ -22,7 +22,7 @@ ms.locfileid: "87760317"
 > Поддержка Azure Data Lake Storage 2-го поколения в настоящее время доступна в общедоступной предварительной версии. Для предварительной версии функции соглашение об уровне обслуживания не предусмотрено. Мы не рекомендуем использовать ее в рабочей среде. Дополнительные сведения см. в статье [Дополнительные условия использования предварительных выпусков Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/). Вы можете запросить доступ к предварительным просмотрам, заполнив [эту форму](https://aka.ms/azure-cognitive-search/indexer-preview). Эта функция предоставляется [REST API версии 2020-06-30-Preview](search-api-preview.md) и портале. Пакет SDK для .NET сейчас не поддерживается.
 
 
-При настройке учетной записи хранения Azure можно включить [Иерархическое пространство имен](https://docs.microsoft.com/azure/storage/blobs/data-lake-storage-namespace). Это позволяет организовать сбор содержимого в учетной записи в иерархию каталогов и вложенных подкаталогов. Включив иерархическое пространство имен, вы включаете [Azure Data Lake Storage 2-го поколения](https://docs.microsoft.com/azure/storage/blobs/data-lake-storage-introduction).
+При настройке учетной записи хранения Azure можно включить [Иерархическое пространство имен](../storage/blobs/data-lake-storage-namespace.md). Это позволяет организовать сбор содержимого в учетной записи в иерархию каталогов и вложенных подкаталогов. Включив иерархическое пространство имен, вы включаете [Azure Data Lake Storage 2-го поколения](../storage/blobs/data-lake-storage-introduction.md).
 
 В этой статье описывается, как приступить к индексированию документов, которые находятся в Azure Data Lake Storage 2-го поколения.
 
@@ -44,9 +44,9 @@ ms.locfileid: "87760317"
 
 ## <a name="access-control"></a>Управление доступом
 
-Azure Data Lake Storage 2-го поколения реализует [модель управления доступом](https://docs.microsoft.com/azure/storage/blobs/data-lake-storage-access-control) , поддерживающую управление доступом на основе ролей Azure (Azure RBAC) и списки управления доступом (ACL), аналогичные стандарту POSIX. При индексировании содержимого из Data Lake Storage 2-го поколения Azure Когнитивный поиск не извлечет сведения о RBAC и ACL из содержимого. В результате эта информация не будет включаться в индекс Azure Когнитивный поиск.
+Azure Data Lake Storage 2-го поколения реализует [модель управления доступом](../storage/blobs/data-lake-storage-access-control.md) , поддерживающую управление доступом на основе ролей Azure (Azure RBAC) и списки управления доступом (ACL), аналогичные стандарту POSIX. При индексировании содержимого из Data Lake Storage 2-го поколения Azure Когнитивный поиск не извлечет сведения о RBAC и ACL из содержимого. В результате эта информация не будет включаться в индекс Azure Когнитивный поиск.
 
-Если важна поддержка контроля доступа для каждого документа в индексе, разработчик приложения должен реализовать [фильтрацию безопасности](https://docs.microsoft.com/azure/search/search-security-trimming-for-azure-search).
+Если важна поддержка контроля доступа для каждого документа в индексе, разработчик приложения должен реализовать [фильтрацию безопасности](./search-security-trimming-for-azure-search.md).
 
 ## <a name="change-detection"></a>Обнаружение изменений
 

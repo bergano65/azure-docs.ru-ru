@@ -8,12 +8,12 @@ ms.author: vikurpad
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 06/18/2020
-ms.openlocfilehash: 3957884a8c559194c436487050f0dbc09acf0441
-ms.sourcegitcommit: f7e160c820c1e2eb57dc480b2a8fd6bef7053e91
+ms.openlocfilehash: 5596a2db32a0fe5b6b5eddf3ae20501e6edb0b99
+ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/10/2020
-ms.locfileid: "86232514"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88935387"
 ---
 # <a name="incremental-enrichment-and-caching-in-azure-cognitive-search"></a>Добавочное обогащение и кэширование в Azure Когнитивный поиск
 
@@ -28,9 +28,9 @@ ms.locfileid: "86232514"
 
 1. [Создайте или найдите учетную запись хранения Azure](../storage/common/storage-account-create.md) для хранения кэша.
 1. [Включить добавочное углубление](search-howto-incremental-index.md) в индексаторе.
-1. [Создание индексатора](https://docs.microsoft.com/rest/api/searchservice/create-indexer) и набора [навыков](https://docs.microsoft.com/rest/api/searchservice/create-skillset) для вызова конвейера. Во время обработки этапы обогащения сохраняются для каждого документа в хранилище BLOB-объектов для будущего использования.
-1. Протестируйте код и после внесения изменений используйте набор [квалификационных навыков](https://docs.microsoft.com/rest/api/searchservice/update-skillset) для изменения определения.
-1. [Запустите индексатор](https://docs.microsoft.com/rest/api/searchservice/run-indexer) , чтобы вызвать конвейер, извлекая кэшированные выходные данные для более быстрой и экономичной обработки.
+1. [Создание индексатора](/rest/api/searchservice/create-indexer) и набора [навыков](/rest/api/searchservice/create-skillset) для вызова конвейера. Во время обработки этапы обогащения сохраняются для каждого документа в хранилище BLOB-объектов для будущего использования.
+1. Протестируйте код и после внесения изменений используйте набор [квалификационных навыков](/rest/api/searchservice/update-skillset) для изменения определения.
+1. [Запустите индексатор](/rest/api/searchservice/run-indexer) , чтобы вызвать конвейер, извлекая кэшированные выходные данные для более быстрой и экономичной обработки.
 
 Дополнительные сведения о шагах и вопросах, касающихся работы с существующим индексатором, см. в разделе [Настройка добавочного уточнения](search-howto-incremental-index.md).
 
@@ -109,7 +109,7 @@ PUT https://customerdemos.search.windows.net/datasources/callcenter-ds?api-versi
 
 Целью кэша является избежание ненужной обработки, но предположим, что вы вносите изменения в навык, который не обнаруживает индексатор (например, изменение какого-либо внешнего кода, например пользовательского навыка).
 
-В этом случае можно использовать [Сброс навыков](https://docs.microsoft.com/rest/api/searchservice/preview-api/reset-skills) для принудительной повторной обработки определенного навыка, включая все нисходящие навыки, зависящие от выходных данных этого навыка. Этот API принимает запрос POST со списком навыков, которые должны быть аннулированы и помечены для повторной обработки. После сброса навыков запустите индексатор, чтобы вызвать конвейер.
+В этом случае можно использовать [Сброс навыков](/rest/api/searchservice/preview-api/reset-skills) для принудительной повторной обработки определенного навыка, включая все нисходящие навыки, зависящие от выходных данных этого навыка. Этот API принимает запрос POST со списком навыков, которые должны быть аннулированы и помечены для повторной обработки. После сброса навыков запустите индексатор, чтобы вызвать конвейер.
 
 ## <a name="change-detection"></a>Обнаружение изменений
 
@@ -150,17 +150,17 @@ PUT https://customerdemos.search.windows.net/datasources/callcenter-ds?api-versi
 
 ## <a name="api-reference"></a>Справочник по API
 
-REST API версия `2020-06-30-Preview` обеспечивает добавочное дополнение через дополнительные свойства индексаторов. Навыков и источники данных могут использовать общедоступную версию. В дополнение к справочной документации см. раздел [Настройка кэширования для добавочного уточнения](search-howto-incremental-index.md) для получения дополнительных сведений о вызове API.
+REST API версия `2020-06-30-Preview` обеспечивает добавочное дополнение через дополнительные свойства индексаторов. Навыков и источники данных могут использовать общедоступную версию. В дополнение к справочной документации см. раздел  [Настройка кэширования для добавочного уточнения](search-howto-incremental-index.md) для получения дополнительных сведений о вызове API.
 
-+ [Создание индексатора (API-Version = 2020 – 06 -30-Preview)](https://docs.microsoft.com/rest/api/searchservice/create-indexer) 
++ [Создание индексатора (API-Version = 2020 – 06 -30-Preview)](/rest/api/searchservice/create-indexer) 
 
-+ [Индексатор обновления (API версии = 2020-06 -30-Preview)](https://docs.microsoft.com/rest/api/searchservice/update-indexer) 
++ [Индексатор обновления (API версии = 2020-06 -30-Preview)](/rest/api/searchservice/update-indexer) 
 
-+ [Обновление набора навыков (API-Version = 2020-06-30)](https://docs.microsoft.com/rest/api/searchservice/update-skillset) (новый параметр URI в запросе)
++ [Обновление набора навыков (API-Version = 2020-06-30)](/rest/api/searchservice/update-skillset) (новый параметр URI в запросе)
 
-+ [Сброс навыков (API-Version = 2020-06-30)](https://docs.microsoft.com/rest/api/searchservice/preview-api/reset-skills)
++ [Сброс навыков (API-Version = 2020-06-30)](/rest/api/searchservice/preview-api/reset-skills)
 
-+ Индексаторы базы данных (SQL Azure, Cosmos DB). Некоторые Индексаторы получают данные через запросы. Для запросов, извлекающих данные, [Обновление источника данных](https://docs.microsoft.com/rest/api/searchservice/update-data-source) поддерживает новый параметр в запросе **игнорересетрекуиремент**, который должен быть установлен в, `true` Если действие обновления не должно сделать кэш недействительным. 
++ Индексаторы базы данных (SQL Azure, Cosmos DB). Некоторые Индексаторы получают данные через запросы. Для запросов, извлекающих данные, [Обновление источника данных](/rest/api/searchservice/update-data-source) поддерживает новый параметр в запросе **игнорересетрекуиремент**, который должен быть установлен в, `true` Если действие обновления не должно сделать кэш недействительным. 
 
   Используйте **игнорересетрекуиремент** экономно, так как это может привести к непредвиденному несогласованности данных, которые не будут обнаружены легко.
 

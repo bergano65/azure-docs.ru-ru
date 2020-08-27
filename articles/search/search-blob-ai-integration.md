@@ -8,12 +8,12 @@ ms.author: heidist
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 11/04/2019
-ms.openlocfilehash: 591437eb3951164d53388b6164103948e9ad65e0
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: ce5eafe0b36f07d8de366b6d4adb92e894fcb67e
+ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "73496435"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88936747"
 ---
 # <a name="use-ai-to-understand-blob-storage-data"></a>Использование искусственного интеллекта для понимания данных хранилища BLOB-объектов
 
@@ -112,7 +112,7 @@ For example, given a large blob of unstructured text, a sample order of operatio
 
 Расширить возможности искусственного интеллекта, чтобы максимально эффективно использовать данные в службе хранилища Azure, в том числе объединять Cognitive Services различными способами, а также создавать пользовательские навыки для случаев, когда для сценария нет существующей службы. Дополнительные сведения см. по ссылкам ниже.
 
-+ [Передача, скачивание и составление списка больших двоичных объектов с помощью портала Azure (хранилище BLOB-объектов)](https://docs.microsoft.com/azure/storage/blobs/storage-quickstart-blobs-portal)
++ [Передача, скачивание и составление списка больших двоичных объектов с помощью портала Azure (хранилище BLOB-объектов)](../storage/blobs/storage-quickstart-blobs-portal.md)
 + [Настройка индексатора больших двоичных объектов (Когнитивный поиск Azure)](search-howto-indexing-azure-blob-storage.md) 
 + [Общие сведения об обогащении искусственного интеллекта (Azure Когнитивный поиск)](cognitive-search-concept-intro.md) 
 + [Создание набора навыков (Когнитивный поиск Azure)](cognitive-search-defining-skillset.md)

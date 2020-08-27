@@ -9,26 +9,26 @@ ms.service: cognitive-search
 ms.devlang: dotnet
 ms.topic: conceptual
 ms.date: 07/08/2020
-ms.openlocfilehash: 5f6a198445f9c9bd8e02cd8b6df3405431263e0b
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 8648347eb48081389cf360fa949b31bbd0b8c71e
+ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87076412"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88936713"
 ---
 # <a name="upgrading-versions-of-the-azure-search-net-management-sdk"></a>Обновление версий пакета SDK для службы поиска Azure для .NET
 
 В этой статье объясняется, как перейти к последовательным версиям пакета SDK для управления .NET для службы поиска Azure, который используется для предоставления или отмены наполнения служб поиска, настройки емкости и управления ключами API.
 
-Пакеты SDK для управления предназначены для определенной версии REST API управления. Дополнительные сведения об основных понятиях и операциях см. в разделе [Управление поиском (остальные)](https://docs.microsoft.com/rest/api/searchmanagement/).
+Пакеты SDK для управления предназначены для определенной версии REST API управления. Дополнительные сведения об основных понятиях и операциях см. в разделе [Управление поиском (остальные)](/rest/api/searchmanagement/).
 
 ## <a name="versions"></a>Версии
 
 | Версия пакета SDK | Соответствующая версия REST API | Добавление компонентов или изменение поведения |
 |-------------|--------------------------------|-------------------------------------|
 | [3.0](https://www.nuget.org/packages/Microsoft.Azure.Management.Search/3.0.0) | API-Version = 2020-30-20 | Добавляет безопасность конечных точек (брандмауэры IP и интеграция с помощью [частной ссылки Azure](../private-link/private-endpoint-overview.md)) |
-| [2.0](https://www.nuget.org/packages/Microsoft.Azure.Management.Search/2.0.0) | API-Version = 2019-10-01 | Повышение удобства использования. Критическое изменение [ключей запроса списка](https://docs.microsoft.com/rest/api/searchmanagement/querykeys/listbysearchservice) (Get больше не поддерживается). |
-| [1.0](https://www.nuget.org/packages/Microsoft.Azure.Management.Search/1.0.1) | API-Version = 2015-08-19  | Первая версия |
+| [2.0](https://www.nuget.org/packages/Microsoft.Azure.Management.Search/2.0.0) | API-Version = 2019-10-01 | Повышение удобства использования. Критическое изменение [ключей запроса списка](/rest/api/searchmanagement/querykeys/listbysearchservice) (Get больше не поддерживается). |
+| [1,0](https://www.nuget.org/packages/Microsoft.Azure.Management.Search/1.0.1) | API-Version = 2015-08-19  | Первая версия |
 
 ## <a name="how-to-upgrade"></a>Обновление
 
@@ -46,17 +46,17 @@ ms.locfileid: "87076412"
 
 ### <a name="new-apis"></a>Новые интерфейсы API
 
-| API | Категория| Подробности |
+| API | Категория| Сведения |
 |-----|--------|------------------|
-| [нетворкрулесет](https://docs.microsoft.com/rest/api/searchmanagement/services/createorupdate#networkruleset) | Брандмауэр IP-адресов | Ограничьте доступ к конечной точке службы списком разрешенных IP-адресов. Основные понятия и инструкции на портале см. в разделе [Настройка брандмауэра IP](service-configure-firewall.md) . |
-| [Общий ресурс частной ссылки](https://docs.microsoft.com/rest/api/searchmanagement/sharedprivatelinkresources) | Приватный канал | Создайте общий ресурс частной ссылки, который будет использоваться службой поиска.  |
-| [Подключения к частным конечным точкам](https://docs.microsoft.com/rest/api/searchmanagement/privateendpointconnections) | Приватный канал | Установка и управление подключениями к службе поиска через закрытую конечную точку. Основные понятия и инструкции на портале см. [в разделе Создание частной конечной точки](service-create-private-endpoint.md) .|
-| [Ресурсы частной ссылки](https://docs.microsoft.com/rest/api/searchmanagement/privatelinkresources/) | Приватный канал | Для службы поиска, имеющей подключение к частной конечной точке, получите список всех служб, используемых в той же виртуальной сети. Если решение поиска содержит индексаторы, которые извлекаются из источников данных Azure (служба хранилища Azure, Cosmos DB, Azure SQL) или используют Cognitive Services или Key Vault, то все эти ресурсы должны иметь конечные точки в виртуальной сети, и этот API должен возвращать список. |
-| [публикнетворкакцесс](https://docs.microsoft.com/rest/api/searchmanagement/services/createorupdate#publicnetworkaccess)| Приватный канал | Это свойство при создании или обновлении запросов на обслуживание. Если этот параметр отключен, то частная связь является единственной модальностью доступа. |
+| [нетворкрулесет](/rest/api/searchmanagement/services/createorupdate#networkruleset) | Брандмауэр IP-адресов | Ограничьте доступ к конечной точке службы списком разрешенных IP-адресов. Основные понятия и инструкции на портале см. в разделе [Настройка брандмауэра IP](service-configure-firewall.md) . |
+| [Общий ресурс частной ссылки](/rest/api/searchmanagement/sharedprivatelinkresources) | Приватный канал | Создайте общий ресурс частной ссылки, который будет использоваться службой поиска.  |
+| [Подключения к частным конечным точкам](/rest/api/searchmanagement/privateendpointconnections) | Приватный канал | Установка и управление подключениями к службе поиска через закрытую конечную точку. Основные понятия и инструкции на портале см. [в разделе Создание частной конечной точки](service-create-private-endpoint.md) .|
+| [Ресурсы частной ссылки](/rest/api/searchmanagement/privatelinkresources/) | Приватный канал | Для службы поиска, имеющей подключение к частной конечной точке, получите список всех служб, используемых в той же виртуальной сети. Если решение поиска содержит индексаторы, которые извлекаются из источников данных Azure (служба хранилища Azure, Cosmos DB, Azure SQL) или используют Cognitive Services или Key Vault, то все эти ресурсы должны иметь конечные точки в виртуальной сети, и этот API должен возвращать список. |
+| [публикнетворкакцесс](/rest/api/searchmanagement/services/createorupdate#publicnetworkaccess)| Приватный канал | Это свойство при создании или обновлении запросов на обслуживание. Если этот параметр отключен, то частная связь является единственной модальностью доступа. |
 
 ### <a name="breaking-changes"></a>Критические изменения
 
-Вы больше не можете использовать запрос [ключей запроса](https://docs.microsoft.com/rest/api/searchmanagement/querykeys/listbysearchservice) на получение списка. В предыдущих выпусках можно было использовать GET или POST, в этом выпуске и во всех выпусках поддерживается только POST. 
+Вы больше не можете использовать запрос [ключей запроса](/rest/api/searchmanagement/querykeys/listbysearchservice) на получение списка. В предыдущих выпусках можно было использовать GET или POST, в этом выпуске и во всех выпусках поддерживается только POST. 
 
 ## <a name="upgrade-to-20"></a>Обновление до 2,0
 

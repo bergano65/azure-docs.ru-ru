@@ -19,19 +19,19 @@ translation.priority.mt:
 - ru-ru
 - zh-cn
 - zh-tw
-ms.openlocfilehash: 837237be636e67f37f5c744cd4863f1eb159652a
-ms.sourcegitcommit: 3541c9cae8a12bdf457f1383e3557eb85a9b3187
+ms.openlocfilehash: 78f9e4d8fa80fdf74bdb5cd79f4489d12696fcc2
+ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/09/2020
-ms.locfileid: "86201396"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88935795"
 ---
-# <a name="odata-full-text-search-functions-in-azure-cognitive-search---searchismatch-and-searchismatchscoring"></a>Функции полнотекстового поиска OData в Azure Когнитивный поиск — `search.ismatch` и`search.ismatchscoring`
+# <a name="odata-full-text-search-functions-in-azure-cognitive-search---searchismatch-and-searchismatchscoring"></a>Функции полнотекстового поиска OData в Azure Когнитивный поиск — `search.ismatch` и `search.ismatchscoring`
 
-Azure Когнитивный поиск поддерживает полнотекстовый поиск в контексте [выражений фильтра OData](query-odata-filter-orderby-syntax.md) с помощью `search.ismatch` `search.ismatchscoring` функций и. Эти функции позволяют объединять полнотекстовый поиск с помощью исключительной логической фильтрации, так как это невозможно только с помощью параметра верхнего уровня `search` [API поиска](https://docs.microsoft.com/rest/api/searchservice/search-documents).
+Azure Когнитивный поиск поддерживает полнотекстовый поиск в контексте [выражений фильтра OData](query-odata-filter-orderby-syntax.md) с помощью `search.ismatch` `search.ismatchscoring` функций и. Эти функции позволяют объединять полнотекстовый поиск с помощью исключительной логической фильтрации, так как это невозможно только с помощью параметра верхнего уровня `search` [API поиска](/rest/api/searchservice/search-documents).
 
 > [!NOTE]
-> `search.ismatch`Функции и `search.ismatchscoring` поддерживаются только в фильтрах в [API поиска](https://docs.microsoft.com/rest/api/searchservice/search-documents). Они не поддерживаются в интерфейсах API [предложения](https://docs.microsoft.com/rest/api/searchservice/suggestions) или [автозаполнения](https://docs.microsoft.com/rest/api/searchservice/autocomplete) .
+> `search.ismatch`Функции и `search.ismatchscoring` поддерживаются только в фильтрах в [API поиска](/rest/api/searchservice/search-documents). Они не поддерживаются в интерфейсах API [предложения](/rest/api/searchservice/suggestions) или [автозаполнения](/rest/api/searchservice/autocomplete) .
 
 ## <a name="syntax"></a>Синтаксис
 
@@ -69,14 +69,14 @@ search_mode ::= "'any'" | "'all'"
 
 Параметры определены в следующей таблице.
 
-| Имя параметра | Тип | Описание |
+| Имя параметра | Тип | Description |
 | --- | --- | --- |
 | `search` | `Edm.String` | Поисковый запрос (как [простой](query-simple-syntax.md) , так и [полный](query-lucene-syntax.md) синтаксис запроса Lucene). |
 | `searchFields` | `Edm.String` | Разделенный запятыми список полей с возможностью поиска, в которых выполняется поиск; по умолчанию для всех полей, поддерживающих поиск, в индексе. При использовании [поискового](query-lucene-syntax.md#bkmk_fields) запроса в `search` параметре описатели полей в запросе Lucene переопределяют все поля, указанные в этом параметре. |
 | `queryType` | `Edm.String` | `'simple'``'full'`значение по умолчанию — `'simple'` . Указывает, какой язык запроса использовался в параметре `search`. |
 | `searchMode` | `Edm.String` | `'any'``'all'`значение по умолчанию — `'any'` . Указывает, должны ли быть сопоставлены все или все условия поиска в `search` параметре, чтобы подсчитать документ как совпадение. При использовании [логических операторов Lucene](query-lucene-syntax.md#bkmk_boolean) в `search` параметре они будут иметь приоритет над этим параметром. |
 
-Все указанные выше параметры эквивалентны соответствующим [параметрам поискового запроса в API поиска](https://docs.microsoft.com/rest/api/searchservice/search-documents).
+Все указанные выше параметры эквивалентны соответствующим [параметрам поискового запроса в API поиска](/rest/api/searchservice/search-documents).
 
 Функция `search.ismatch` возвращает значение типа `Edm.Boolean`, которое позволяет составить его с другими подвыражениями фильтра с помощью [логических операторов](search-query-odata-logical-operators.md) Boolean.
 
@@ -96,7 +96,7 @@ search_mode ::= "'any'" | "'all'"
 
 ## <a name="examples"></a>Примеры
 
-Найти документы со словом waterfront. Этот запрос фильтрации идентичен [поисковому запросу](https://docs.microsoft.com/rest/api/searchservice/search-documents) с `search=waterfront`:
+Найти документы со словом waterfront. Этот запрос фильтрации идентичен [поисковому запросу](/rest/api/searchservice/search-documents) с `search=waterfront`:
 
 ```odata-filter-expr
     search.ismatchscoring('waterfront')
@@ -133,4 +133,4 @@ search_mode ::= "'any'" | "'all'"
 - [Фильтры в Когнитивный поиск Azure](search-filters.md)
 - [Общие сведения о языке выражений OData для Azure Когнитивный поиск](query-odata-filter-orderby-syntax.md)
 - [Справочник по синтаксису выражений OData для Azure Когнитивный поиск](search-query-odata-syntax-reference.md)
-- [Поиск документов &#40;Azure Когнитивный поиск REST API&#41;](https://docs.microsoft.com/rest/api/searchservice/Search-Documents)
+- [Поиск документов &#40;Azure Когнитивный поиск REST API&#41;](/rest/api/searchservice/Search-Documents)

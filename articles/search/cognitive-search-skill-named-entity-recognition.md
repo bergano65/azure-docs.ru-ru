@@ -8,12 +8,12 @@ ms.author: luisca
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 11/04/2019
-ms.openlocfilehash: 7d7227a0eeaa496dd774eb962946a4ee85e22009
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 8dc18af933a4570112beb025c1fb9163abafffff
+ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85080019"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88935948"
 ---
 #    <a name="named-entity-recognition-cognitive-skill"></a>Когнитивный навык распознавания именованных сущностей
 
@@ -32,7 +32,7 @@ ms.locfileid: "85080019"
 Microsoft.Skills.Text.NamedEntityRecognitionSkill
 
 ## <a name="data-limits"></a>Ограничения данных
-Максимальный размер записи — 50 000 знаков, как определено в [`String.Length`](https://docs.microsoft.com/dotnet/api/system.string.length). Если вам нужно разбить данные перед отправкой для извлечения ключевой фразы, можно воспользоваться [навыком разделения текста](cognitive-search-skill-textsplit.md).
+Максимальный размер записи — 50 000 знаков, как определено в [`String.Length`](/dotnet/api/system.string.length). Если вам нужно разбить данные перед отправкой для извлечения ключевой фразы, можно воспользоваться [навыком разделения текста](cognitive-search-skill-textsplit.md).
 
 ## <a name="skill-parameters"></a>Параметры навыков
 
@@ -46,14 +46,14 @@ Microsoft.Skills.Text.NamedEntityRecognitionSkill
 
 ## <a name="skill-inputs"></a>Входные данные навыков
 
-| Ввод имени      | Описание:                   |
+| Ввод имени      | Description                   |
 |---------------|-------------------------------|
 | languageCode  | Необязательный элемент. Значение по умолчанию — `"en"`.  |
 | text          | Текст для анализа.          |
 
 ## <a name="skill-outputs"></a>Выходные данные навыка
 
-| Имя вывода     | Описание:                   |
+| Имя вывода     | Description                   |
 |---------------|-------------------------------|
 | Люди      | Массив строк, где каждая строка представляет имя человека. |
 | Расположения  | Массив строк, где каждая строка представляет расположение. |

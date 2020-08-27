@@ -8,12 +8,12 @@ ms.author: luisca
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 11/04/2019
-ms.openlocfilehash: ef840dc84c04875333958fa59ce399f2d16d07b5
-ms.sourcegitcommit: 4913da04fd0f3cf7710ec08d0c1867b62c2effe7
+ms.openlocfilehash: 58bb87d5af785d3cffd96f3bd02477f97ed967a9
+ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88214015"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88935370"
 ---
 # <a name="how-to-map-ai-enriched-fields-to-a-searchable-index"></a>Как сопоставлять ИСКУССТВЕНные поля с индексом с возможностью поиска
 
@@ -32,7 +32,7 @@ ms.locfileid: "88214015"
 * У вас нет набора навыков, но выполняется индексирование сложного типа из базы данных Cosmos DB. Вы хотите перейти к узлу этого сложного типа и преобразовать его в поле в индексе.
 
 > [!NOTE]
-> Недавно мы включили функции сопоставления для сопоставления полей вывода. Дополнительные сведения о функциях сопоставления см. в разделе [функции сопоставления полей](https://docs.microsoft.com/azure/search/search-indexer-field-mappings#field-mapping-functions) .
+> Недавно мы включили функции сопоставления для сопоставления полей вывода. Дополнительные сведения о функциях сопоставления см. в разделе [функции сопоставления полей](./search-indexer-field-mappings.md#field-mapping-functions) .
 
 ## <a name="use-outputfieldmappings"></a>Использование outputFieldMappings
 
@@ -145,7 +145,7 @@ Content-Type: application/json
   "diseases" : ["heart failure","morquio"]
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 После сопоставления обогащенных полей с полями, поддерживающими поиск, для каждого поля, поддерживающего поиск, можно задать атрибуты поля [в качестве части определения индекса](search-what-is-an-index.md).
 
 Дополнительные сведения о сопоставлении полей см. [в разделе сопоставления полей в Azure когнитивный Поиск индексаторы](search-indexer-field-mappings.md).

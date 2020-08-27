@@ -3,12 +3,12 @@ title: Обзор функций Центров событий Azure | Доку
 description: В этой статье приводится терминология и сведения о функциях Центров событий Azure.
 ms.topic: article
 ms.date: 06/23/2020
-ms.openlocfilehash: 2de83be023c32df067712146937f880092025a44
-ms.sourcegitcommit: d7bd8f23ff51244636e31240dc7e689f138c31f0
+ms.openlocfilehash: 9e004b3a8a9dd454eae5a20564a1ab74a26b66d5
+ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/24/2020
-ms.locfileid: "87172122"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88936237"
 ---
 # <a name="features-and-terminology-in-azure-event-hubs"></a>Функции и терминология в Центрах событий Azure
 
@@ -37,7 +37,7 @@ ms.locfileid: "87172122"
 
 Решение об использовании AMQP или HTTPS обусловлено сценарием использования. AMQP требует установки постоянного двунаправленного сокета в дополнение к безопасности на уровне транспорта (TLS) или протоколу SSL/TLS. При инициализации сеанса AMQP имеет более высокие затраты на сеть, однако для каждого запроса протокол HTTPS требует дополнительной нагрузки TLS. AMQP отличается более высокой производительностью при частых публикациях.
 
-![Центры событий](./media/event-hubs-features/partition_keys.png)
+![Ключи секции](./media/event-hubs-features/partition_keys.png)
 
 Центры событий обеспечивают доставку всех событий, использующих одинаковое значение ключа секции, в соответствующем порядке и в одну секцию. Если ключи секций используются с применением политик издателя, удостоверение издателя и значение ключа секции должны совпадать. В противном случае возникает ошибка.
 
@@ -86,13 +86,13 @@ ms.locfileid: "87172122"
 
 На следующем рисунке показана архитектура обработки потока Центров событий.
 
-![Центры событий](./media/event-hubs-features/event_hubs_architecture.png)
+![Архитектура концентраторов событий](./media/event-hubs-features/event_hubs_architecture.png)
 
 ### <a name="stream-offsets"></a>Смещение потока
 
 *Смещение* — это положение события внутри секции. Смещение можно представить как клиентский курсор. Смещение представляет собой байт-нумерацию события. Благодаря этому потребитель события (модуль чтения) может указать точку в потоке событий, с которой требуется начать чтение событий. Можно указать смещение как отметку времени или как значение смещения. Потребители ответственны за хранение своих собственных значений смещения вне службы "Центры событий". В секции каждое событие включает смещение.
 
-![Центры событий](./media/event-hubs-features/partition_offset.png)
+![Смещение секции](./media/event-hubs-features/partition_offset.png)
 
 ### <a name="checkpointing"></a>Назначение контрольных точек
 
@@ -104,7 +104,7 @@ ms.locfileid: "87172122"
 > Если вы используете хранилище BLOB-объектов Azure в качестве хранилища контрольных точек в среде, которая поддерживает другую версию пакета SDK для большого двоичного объекта хранилища, чем обычно доступно в Azure, необходимо использовать код, чтобы изменить версию API службы хранилища до определенной версии, поддерживаемой этой средой. Например, если вы используете [концентраторы событий в Azure Stack Hub версии 2002](/azure-stack/user/event-hubs-overview), самая высокая доступная версия для службы хранилища — версия 2017-11-09. В этом случае необходимо использовать код для настройки API службы хранилища до версии 2017-11-09. Пример назначения конкретной версии API хранилища см. в следующих примерах на сайте GitHub: 
 > - [.NET](https://github.com/Azure/azure-sdk-for-net/tree/master/sdk/eventhub/Azure.Messaging.EventHubs.Processor/samples/Sample10_RunningWithDifferentStorageVersion.cs). 
 > - [Java](https://github.com/Azure/azure-sdk-for-java/blob/master/sdk/eventhubs/azure-messaging-eventhubs-checkpointstore-blob/src/samples/java/com/azure/messaging/eventhubs/checkpointstore/blob/)
-> - [JavaScript](https://github.com/Azure/azure-sdk-for-js/blob/master/sdk/eventhub/eventhubs-checkpointstore-blob/samples/javascript) или [TypeScript](https://github.com/Azure/azure-sdk-for-js/blob/master/sdk/eventhub/eventhubs-checkpointstore-blob/samples/typescript)
+> - [JavaScript](https://github.com/Azure/azure-sdk-for-js/blob/master/sdk/eventhub/eventhubs-checkpointstore-blob/samples/javascript) или  [TypeScript](https://github.com/Azure/azure-sdk-for-js/blob/master/sdk/eventhub/eventhubs-checkpointstore-blob/samples/typescript)
 > - [Python](https://github.com/Azure/azure-sdk-for-python/blob/master/sdk/eventhub/azure-eventhub-checkpointstoreblob-aio/samples/)
 
 ### <a name="common-consumer-tasks"></a>Стандартные задачи потребителя
@@ -113,7 +113,7 @@ ms.locfileid: "87172122"
 
 #### <a name="connect-to-a-partition"></a>Подключение к секции
 
-При соединении с секциями обычно используется механизм аренды для координации соединений чтения с конкретными секциями. Таким образом, каждый раздел в группе потребителей может иметь только один активный модуль чтения. Создание контрольных точек, предоставление аренды и управление читателями упрощены с помощью клиентов в пакетах SDK концентраторов событий, которые действуют как интеллектуальные агенты потребителей. Эти особые значения приведены ниже.
+При соединении с секциями обычно используется механизм аренды для координации соединений чтения с конкретными секциями. Таким образом, каждый раздел в группе потребителей может иметь только один активный модуль чтения. Создание контрольных точек, предоставление аренды и управление читателями упрощены с помощью клиентов в пакетах SDK концентраторов событий, которые действуют как интеллектуальные агенты потребителей. А именно:
 
 - [Евентпроцессорклиент](/dotnet/api/azure.messaging.eventhubs.eventprocessorclient) для .NET
 - [Евентпроцессорклиент](/java/api/com.azure.messaging.eventhubs.eventprocessorclient) для Java
@@ -138,10 +138,10 @@ ms.locfileid: "87172122"
 Дополнительные сведения о Центрах событий см. по следующим ссылкам:
 
 - Приступая к работе с Центрами событий
-    - [.NET](get-started-dotnet-standard-send-v2.md)
-    - [Java](get-started-java-send-v2.md)
-    - [Python](get-started-python-send-v2.md)
-    - [JavaScript](get-started-java-send-v2.md)
+    - [.NET](event-hubs-dotnet-standard-getstarted-send.md)
+    - [Java](event-hubs-java-get-started-send.md)
+    - [Python](event-hubs-python-get-started-send.md)
+    - [JavaScript](event-hubs-java-get-started-send.md)
 * [Руководство по программированию Центров событий](event-hubs-programming-guide.md)
 * [Доступность и согласованность в Центрах событий](event-hubs-availability-and-consistency.md)
 * [Часто задаваемые вопросы о Центрах событий](event-hubs-faq.md)

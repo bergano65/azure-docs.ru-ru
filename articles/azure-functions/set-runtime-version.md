@@ -3,12 +3,12 @@ title: Выбор целевых версий среды выполнения Ф
 description: Решение "Функции Azure" поддерживает разные версии среды выполнения. Узнайте, как указать версию среды выполнения приложения-функции, размещенного в Azure.
 ms.topic: conceptual
 ms.date: 07/22/2020
-ms.openlocfilehash: 74ee0d382dcd468aed118a7de330eef95b329402
-ms.sourcegitcommit: 2ff0d073607bc746ffc638a84bb026d1705e543e
+ms.openlocfilehash: a7d86ef26d50d60389ae09bf3245ed97fea2c3e3
+ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87830875"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88926581"
 ---
 # <a name="how-to-target-azure-functions-runtime-versions"></a>Выбор целевых версий среды выполнения Функций Azure
 
@@ -42,19 +42,16 @@ ms.locfileid: "87830875"
 > [!IMPORTANT]
 > Версию среды выполнения определяет параметр `FUNCTIONS_EXTENSION_VERSION`, но изменять это значение напрямую не следует. Вместо этого воспользуйтесь порталом Azure. Это обусловлено тем, что на портале изменения проверяются и при необходимости вносятся другие связанные с ними изменения.
 
-### <a name="from-the-azure-portal"></a>на портале Azure;
+# <a name="portal"></a>[Портал](#tab/portal)
 
 [!INCLUDE [Set the runtime version in the portal](../../includes/functions-view-update-version-portal.md)]
 
 > [!NOTE]
 > С помощью портал Azure нельзя изменить версию среды выполнения для приложения-функции, которое уже содержит функции.
 
-### <a name="from-the-azure-cli"></a><a name="view-and-update-the-runtime-version-using-azure-cli"></a>Использование Azure CLI
+# <a name="azure-cli"></a>[Azure CLI](#tab/azurecli)
 
-Параметр `FUNCTIONS_EXTENSION_VERSION` также можно просмотреть и задать с помощью интерфейса командной строки Azure.
-
->[!NOTE]
->Поскольку версия среды выполнения может влиять на другие параметры, следует изменить версию на портале. При изменении версии среды выполнения портал автоматически сделает другие необходимые обновления, например версии Node.js и стека среды выполнения.  
+Параметр `FUNCTIONS_EXTENSION_VERSION` также можно просмотреть и задать с помощью интерфейса командной строки Azure.  
 
 В Azure CLI просмотрите текущую версию среды выполнения с помощью команды [az functionapp config appsettings set](/cli/azure/functionapp/config/appsettings).
 
@@ -93,16 +90,36 @@ az functionapp config appsettings list --name <function_app> \
 Обновить параметр `FUNCTIONS_EXTENSION_VERSION` в приложении-функции можно с помощью команды [az functionapp config appsettings set](/cli/azure/functionapp/config/appsettings).
 
 ```azurecli-interactive
-az functionapp config appsettings set --name <function_app> \
---resource-group <my_resource_group> \
---settings FUNCTIONS_EXTENSION_VERSION=<version>
+az functionapp config appsettings set --name <FUNCTION_APP> \
+--resource-group <RESOURCE_GROUP> \
+--settings FUNCTIONS_EXTENSION_VERSION=<VERSION>
 ```
 
-Замените `<function_app>` на имя приложения-функции. Также замените `<my_resource_group>` именем группы ресурсов для приложения-функции. Замените также `<version>` на значение допустимой версии среды выполнения (для версии 1.x) или на значение `~2` (для версии 2).
+Замените `<FUNCTION_APP>` на имя приложения-функции. Также замените `<RESOURCE_GROUP>` именем группы ресурсов для приложения-функции. Кроме того, замените `<VERSION>` либо определенной версией, либо `~3` , `~2` или `~1` .
 
 Эту команду можно выполнить в [Azure Cloud Shell](../cloud-shell/overview.md), выбрав **Попробовать** в предыдущем примере кода. Также можно использовать [Azure CLI локально](/cli/azure/install-azure-cli) для выполнения этой команды после выполнения команды [az login](/cli/azure/reference-index#az-login) для входа.
 
+# <a name="powershell"></a>[PowerShell](#tab/powershell)
 
+Чтобы проверить среду выполнения функций Azure, используйте следующий командлет: 
+
+```powershell
+Get-AzFunctionAppSetting -Name "<FUNCTION_APP>" -ResourceGroupName "<RESOURCE_GROUP>"
+```
+
+Замените `<FUNCTION_APP>` именем приложения функции и `<RESOURCE_GROUP>` . Текущее значение `FUNCTIONS_EXTENSION_VERSION` параметра возвращается в хэш-таблице.
+
+Чтобы изменить среду выполнения функций, используйте следующий скрипт:
+
+```powershell
+Update-AzFunctionAppSetting -Name "<FUNCTION_APP>" -ResourceGroupName "<RESOURCE_GROUP>" -AppSetting @{"FUNCTIONS_EXTENSION_VERSION" = "<VERSION>"} -Force
+```
+
+Как и ранее, замените `<FUNCTION_APP>` именем приложения функции и `<RESOURCE_GROUP>` именем группы ресурсов. Кроме того, замените на `<VERSION>` конкретную версию или основную версию, например `~2` или `~3` . Вы можете проверить обновленное значение `FUNCTIONS_EXTENSION_VERSION` параметра в возвращенной хэш-таблице. 
+
+---
+
+Приложение-функция перезапускается после внесения изменений в параметр приложения.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
