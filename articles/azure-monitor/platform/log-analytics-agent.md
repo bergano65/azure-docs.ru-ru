@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 08/06/2020
-ms.openlocfilehash: d507db415a2438c97444ca008f0c9b182306242b
-ms.sourcegitcommit: b8702065338fc1ed81bfed082650b5b58234a702
+ms.openlocfilehash: e1fa2fe11873d08fae5add1ee3206f6f887975eb
+ms.sourcegitcommit: 648c8d250106a5fca9076a46581f3105c23d7265
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/11/2020
-ms.locfileid: "88121533"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88960923"
 ---
 # <a name="log-analytics-agent-overview"></a>Общие сведения об агенте Log Analytics
 Агент Log Analytics разработан для комплексного управления на виртуальных машинах, размещенных на облаке, на локальных компьютерах, и других отслеживаемых с помощью [System Center Operations Manager](/system-center/scom/) компьютерах. Агенты Windows и Linux отправляют в рабочую область вашего Log Analytics в Azure Monitor собранные данные из разных источников, а также уникальные журналы и метрики, как задано в решении мониторинга. Агент Log Analytics также поддерживает аналитику и другие службы в Azure Monitor, такие как [Azure Monitor для виртуальных машин](../insights/vminsights-enable-overview.md), [Центр безопасности Azure](../../security-center/index.yml) и [Служба автоматизации Azure](../../automation/automation-intro.md).
@@ -118,8 +118,8 @@ ms.locfileid: "88121533"
 ### <a name="python-2-requirement"></a>Требование к Python 2
  Для агента Log Analytics требуется Python 2. Если ваша виртуальная машина использует дистрибутив, которая по умолчанию не включает Python 2, ее необходимо установить. Приведенные ниже примеры команд будут устанавливать Python 2 на разных дистрибутивов.
 
- - Red Hat, CentOS, Oracle:`yum install -y python2`
- - Ubuntu, Debian:`apt-get install -y python2`
+ - Red Hat, CentOS, Oracle: `yum install -y python2`
+ - Ubuntu, Debian: `apt-get install -y python2`
  - SUSE: `zypper install -y python2`
 
 Исполняемый файл python2 должен быть псевдонимом для *Python* с помощью следующей процедуры:
@@ -213,9 +213,6 @@ ms.locfileid: "88121533"
 Для агента Linux прокси-сервер определяется во время или [после установки](agent-manage.md#update-proxy-settings), или при изменении файла конфигурации proxy.conf.  Конфигурация прокси-сервера агента Linux имеет следующий синтаксис:
 
 `[protocol://][user:password@]proxyhost[:port]`
-
-> [!NOTE]
-> Если прокси-сервер не требует аутентификацию, для агента Linux все равно необходимо указать псевдо-имя пользователя или пароль. Вы можете указать любое имя пользователя или пароль.
 
 |Свойство| Описание |
 |--------|-------------|

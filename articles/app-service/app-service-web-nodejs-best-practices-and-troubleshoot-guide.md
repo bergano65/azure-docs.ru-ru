@@ -8,12 +8,12 @@ ms.topic: article
 ms.date: 11/09/2017
 ms.author: msangapu
 ms.custom: seodec18
-ms.openlocfilehash: 3fd9a013eb3318abc48745e163d9ee0118b52b1d
-ms.sourcegitcommit: 2ffa5bae1545c660d6f3b62f31c4efa69c1e957f
+ms.openlocfilehash: 3b4a9547a1bd62b7464b4a79fe68720572630f3d
+ms.sourcegitcommit: 648c8d250106a5fca9076a46581f3105c23d7265
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/11/2020
-ms.locfileid: "88077481"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88961896"
 ---
 # <a name="best-practices-and-troubleshooting-guide-for-node-applications-on-azure-app-service-windows"></a>Рекомендации и руководство по устранению неполадок в приложениях Node.js в Службе приложений Azure (Windows)
 
@@ -274,8 +274,8 @@ NODE.exe поддерживает параметр с именем `NODE_PENDING
 Дополнительные сведения о приложениях Node.js в службе приложений Azure см. по следующим ссылкам.
 
 * [Приступая к работе с веб-приложениями Node.js в службе приложений Azure](quickstart-nodejs.md)
-* [Отладка веб-приложения Node.js в службе приложений Azure](https://blogs.msdn.microsoft.com/azureossds/2018/08/03/debugging-node-js-apps-on-azure-app-services/)
+* [Отладка веб-приложения Node.js в службе приложений Azure](/archive/blogs/azureossds/debugging-node-js-apps-on-azure-app-services)
 * [Использование модулей Node.js с приложениями Azure](../nodejs-use-node-modules-azure-apps.md)
-* [Azure App Service Web Apps: Node.js (Веб-приложения службы приложений Azure: Node.js)](https://blogs.msdn.microsoft.com/silverlining/2012/06/14/windows-azure-websites-node-js/)
+* [Azure App Service Web Apps: Node.js (Веб-приложения службы приложений Azure: Node.js)](/archive/blogs/silverlining/windows-azure-websites-node-js)
 * [Центр разработчика Node.js](../nodejs-use-node-modules-azure-apps.md)
 * [Exploring the Super Secret Kudu Debug Console (Обзор сверхсекретной консоли для отладки Kudu)](https://azure.microsoft.com/documentation/videos/super-secret-kudu-debug-console-for-azure-web-sites/)

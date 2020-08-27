@@ -5,12 +5,12 @@ ms.assetid: 70fb0e6e-8727-4cca-ba82-98a4d21586ff
 ms.topic: article
 ms.date: 11/24/2017
 ms.custom: seodec18
-ms.openlocfilehash: 0d0d0d19b9b84649867085a05efa656131e48c5a
-ms.sourcegitcommit: f844603f2f7900a64291c2253f79b6d65fcbbb0c
+ms.openlocfilehash: ae2d91233df25885bdfd765481f4bb6a1a36da37
+ms.sourcegitcommit: 648c8d250106a5fca9076a46581f3105c23d7265
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/10/2020
-ms.locfileid: "86220726"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88958734"
 ---
 # <a name="buy-a-custom-domain-name-for-azure-app-service"></a>Приобретение личного доменного имени в Службе приложений Azure
 
@@ -22,7 +22,7 @@ ms.locfileid: "86220726"
 
 Для работы с этим руководством сделайте следующее:
 
-* [Создайте приложение службы приложений](/azure/app-service/) или используйте приложение, созданное для работы с другим руководством.
+* [Создайте приложение службы приложений](./index.yml) или используйте приложение, созданное для работы с другим руководством.
 * [Снимите ограничение на предельную сумму расходов для подписки](../cost-management-billing/manage/spending-limit.md#remove). Невозможно приобрести домены службы приложений, используя деньги на счете бесплатной подписки.
 
 ## <a name="prepare-the-app"></a>Подготовка приложения
@@ -168,7 +168,7 @@ ms.locfileid: "86220726"
 Выберите **Добавить имя узла**.
 
 ### <a name="configure-hostname"></a>Настройка имени узла
-В диалоговом окне **Добавить имя узла** введите полное доменное имя домена службы приложений или любой поддомен. Например:
+В диалоговом окне **Добавить имя узла** введите полное доменное имя домена службы приложений или любой поддомен. Пример:
 
 - kontoso.net
 - www \. kontoso.NET

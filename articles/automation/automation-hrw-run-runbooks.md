@@ -3,14 +3,14 @@ title: Выполнение runbook службы автоматизации Azur
 description: В этой статье рассказывается о том, как выполнять runbook на компьютерах в локальном центре обработки данных или в поставщике облачных служб с помощью гибридной рабочей роли Runbook.
 services: automation
 ms.subservice: process-automation
-ms.date: 01/29/2019
+ms.date: 08/26/2020
 ms.topic: conceptual
-ms.openlocfilehash: 22ab982abe9f73aa77cb9bb2c8d3eaa383bc42fb
-ms.sourcegitcommit: ec682dcc0a67eabe4bfe242fce4a7019f0a8c405
+ms.openlocfilehash: 13c982dcfab21371ea6017f730065cc5ced4b79e
+ms.sourcegitcommit: 648c8d250106a5fca9076a46581f3105c23d7265
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/09/2020
-ms.locfileid: "86186220"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88959575"
 ---
 # <a name="run-runbooks-on-a-hybrid-runbook-worker"></a>Запуск модулей Runbook в гибридной рабочей роли Runbook
 
@@ -304,6 +304,14 @@ gpg –-clear-sign <runbook name>
 ```azurepowershell-interactive
 Start-AzAutomationRunbook –AutomationAccountName "MyAutomationAccount" –Name "Test-Runbook" -RunOn "MyHybridGroup"
 ```
+
+## <a name="logging"></a>Ведение журнала
+
+Чтобы помочь в устранении проблем с модулями Runbook, работающими в гибридной рабочей роли Runbook, журналы хранятся локально в следующем расположении:
+
+* В Windows в `C:\ProgramData\Microsoft\System Center\Orchestrator\<version>\SMA\Sandboxes` для подробного ведения журнала процесса среды выполнения задания. События высокого уровня задания модуля Runbook записываются в журнал событий **приложений и служб логс\микрософт-аутоматион\оператионс** .
+
+* В Linux журналы гибридных рабочих ролей пользователей можно найти по адресу `/home/nxautomation/run/worker.log` , а журналы рабочих ролей Runbook System можно найти по адресу `/var/opt/microsoft/omsagent/run/automationworker/worker.log` .
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

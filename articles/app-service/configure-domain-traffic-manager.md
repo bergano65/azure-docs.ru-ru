@@ -5,21 +5,21 @@ ms.assetid: 0f96c0e7-0901-489b-a95a-e3b66ca0a1c2
 ms.topic: article
 ms.date: 03/05/2020
 ms.custom: seodec18
-ms.openlocfilehash: 5ae68a8871bc2894191644e4ab183be4b469bf16
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 0e8d5fa14678a2a26234dfcd73f4a50af62ca7aa
+ms.sourcegitcommit: 648c8d250106a5fca9076a46581f3105c23d7265
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "82610247"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88962882"
 ---
 # <a name="configure-a-custom-domain-name-in-azure-app-service-with-traffic-manager-integration"></a>Настройка пользовательского доменного имени в службе приложений Azure с интеграцией диспетчера трафика
 
 [!INCLUDE [web-selector](../../includes/websites-custom-domain-selector.md)]
 
 > [!NOTE]
-> Сведения об облачных службах см. в статье [Настройка пользовательского доменного имени для облачной службы Azure](../cloud-services/cloud-services-custom-domain-name.md).
+> Сведения об облачных службах см. в статье [Настройка пользовательского доменного имени для облачной службы Azure](../cloud-services/cloud-services-custom-domain-name-portal.md).
 
-При использовании [диспетчера трафика Azure](/azure/traffic-manager/) для балансировки нагрузки трафика в [службу приложений Azure](overview.md)доступ к приложению службы приложений можно получить с помощью ** \<traffic-manager-endpoint> . trafficmanager.NET**. Вы можете назначить собственное доменное имя, например www \. contoso.com, в приложении службы приложений, чтобы предоставить пользователям более узнаваемое доменное имя.
+При использовании [диспетчера трафика Azure](../traffic-manager/index.yml) для балансировки нагрузки трафика в [службу приложений Azure](overview.md)доступ к приложению службы приложений можно получить с помощью ** \<traffic-manager-endpoint> . trafficmanager.NET**. Вы можете назначить собственное доменное имя, например www \. contoso.com, в приложении службы приложений, чтобы предоставить пользователям более узнаваемое доменное имя.
 
 В этой статье показано, как настроить пользовательское доменное имя с помощью приложения службы приложений, интегрированного с [диспетчером трафика](../traffic-manager/traffic-manager-overview.md).
 
@@ -55,7 +55,7 @@ ms.locfileid: "82610247"
 
 ## <a name="create-traffic-manager-endpoint"></a>Создать конечную точку диспетчера трафика
 
-Выполните действия, описанные в разделе [Добавление или удаление конечных точек](../traffic-manager/traffic-manager-endpoints.md), добавьте приложение службы приложений в качестве конечной точки в профиле диспетчера трафика.
+Выполните действия, описанные в разделе [Добавление или удаление конечных точек](../traffic-manager/traffic-manager-manage-endpoints.md), добавьте приложение службы приложений в качестве конечной точки в профиле диспетчера трафика.
 
 Когда приложение службы приложений находится в поддерживаемой ценовой категории, оно отображается в списке доступных целевых объектов службы приложений при добавлении конечной точки. Если приложение отсутствует в списке, [Проверьте ценовую категорию приложения](#prepare-the-app).
 
@@ -96,7 +96,7 @@ ms.locfileid: "82610247"
 
     ![Добавление DNS-имени в приложение](./media/configure-domain-traffic-manager/enable-traffic-manager-domain.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 > [!div class="nextstepaction"]
 > [Защита настраиваемого DNS-имени с помощью привязки SSL в Службе приложений Azure](configure-ssl-bindings.md)

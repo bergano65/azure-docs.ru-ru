@@ -2,13 +2,13 @@
 title: Создание спецификации шаблона со связанными шаблонами
 description: Узнайте, как создать спецификацию шаблона со связанными шаблонами.
 ms.topic: conceptual
-ms.date: 08/26/2020
-ms.openlocfilehash: 49a26bf61c3c66f41761afe293471575e76c4eb9
-ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
+ms.date: 08/27/2020
+ms.openlocfilehash: a70d4be2810b8d5a19fa9d806444cac1674e1a05
+ms.sourcegitcommit: 648c8d250106a5fca9076a46581f3105c23d7265
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88936373"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88959227"
 ---
 # <a name="tutorial-create-a-template-spec-with-linked-templates-preview"></a>Учебник. Создание спецификации шаблона со связанными шаблонами (Предварительная версия)
 
@@ -245,10 +245,10 @@ az deployment group create \
 ```
 
 > [!NOTE]
-> Существует известная ошибка при получении идентификатора спецификации шаблона, а затем ее присвоение переменной в Windows PowerShell.
+> Существует известная ошибка при получении идентификатора спецификации шаблона и присвоение ее переменной в Windows PowerShell.
 
 ---
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Дополнительные сведения о развертывании шаблона спецификации в качестве связанного шаблона см. в разделе [учебник. Развертывание шаблона спецификации в качестве связанного шаблона](template-specs-deploy-linked-template.md).

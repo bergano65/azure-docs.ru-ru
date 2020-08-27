@@ -7,12 +7,12 @@ ms.topic: article
 ms.date: 01/11/2017
 ms.author: stefsch
 ms.custom: seodec18
-ms.openlocfilehash: 5efca8ab51c789a619e48b1ae96a53494ae411ea
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: fe9326ea9ebd5afe981b7ba6c34b1a5d51e084b0
+ms.sourcegitcommit: 648c8d250106a5fca9076a46581f3105c23d7265
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85831171"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88962066"
 ---
 # <a name="how-to-control-inbound-traffic-to-an-app-service-environment"></a>Как управлять входящим трафиком в среде службы приложений
 ## <a name="overview"></a>Обзор
@@ -31,8 +31,8 @@ ms.locfileid: "85831171"
 
 В следующем списке содержатся порты, используемые Среда службы приложений. Это все **TCP**-порты, если явно не указано иное.
 
-* 454: **необходимый порт** , используемый инфраструктурой Azure для управления средами службы приложений и их обслуживания через TLS.  Не блокируйте трафик на этот порт.  Этот порт всегда привязан к общедоступному виртуальному IP-адресу ASE.
-* 455: **необходимый порт** , используемый инфраструктурой Azure для управления средами службы приложений и их обслуживания через TLS.  Не блокируйте трафик на этот порт.  Этот порт всегда привязан к общедоступному виртуальному IP-адресу ASE.
+* 454:  **необходимый порт** , используемый инфраструктурой Azure для управления средами службы приложений и их обслуживания через TLS.  Не блокируйте трафик на этот порт.  Этот порт всегда привязан к общедоступному виртуальному IP-адресу ASE.
+* 455:  **необходимый порт** , используемый инфраструктурой Azure для управления средами службы приложений и их обслуживания через TLS.  Не блокируйте трафик на этот порт.  Этот порт всегда привязан к общедоступному виртуальному IP-адресу ASE.
 * 80: порт по умолчанию для входящего HTTP-трафика для приложений, выполняемых в планах службы приложений в среде службы приложений.  В ASE с внутренним балансировщиком нагрузки этот порт привязан к адресу балансировщика нагрузки ASE.
 * 443: порт по умолчанию для входящего трафика TLS для приложений, которые выполняются в планах службы приложений в Среда службы приложений.  В ASE с внутренним балансировщиком нагрузки этот порт привязан к адресу балансировщика нагрузки ASE.
 * 21: канал управления для FTP.  Этот порт можно безопасно заблокировать, если FTP не используется.  В ASE с внутренним балансировщиком нагрузки этот порт может быть привязан к адресу балансировщика нагрузки ASE.
@@ -86,7 +86,7 @@ Get-AzureNetworkSecurityGroup -Name "testNSGexample" | Set-AzureNetworkSecurityR
 Get-AzureNetworkSecurityGroup -Name "testNSGexample" | Set-AzureNetworkSecurityRule -Name "RESTRICT FTPDataRange" -Type Inbound -Priority 500 -Action Allow -SourceAddressPrefix '1.2.3.4/32'  -SourcePortRange '*' -DestinationAddressPrefix '*' -DestinationPortRange '10001-10020' -Protocol TCP
 ```
 
-(**Примечание.** диапазон портов канала данных может измениться в период действия предварительной версии.)
+(**Примечание.**  диапазон портов канала данных может измениться в период действия предварительной версии.)
 
 Следующие правила показывают, как предоставить доступ при использовании удаленной отладки с помощью Visual Studio.  Для каждой поддерживаемой версии Visual Studio существует отдельное правило, так как каждая версия использует другой порт для удаленной отладки.  Как и для FTP-доступа, трафик удаленной отладки не может правильно проходить через традиционный брандмауэр WAF или прокси-устройство.  Для параметра *SourceAddressPrefix* вместо этого можно задать значение диапазона IP-адресов машины разработчиков, на которых запущена программа Visual Studio.
 
@@ -130,12 +130,11 @@ Get-AzureNetworkSecurityGroup -Name "testNSGexample" | Remove-AzureNetworkSecuri
 [!INCLUDE [app-service-web-try-app-service](../../../includes/app-service-web-try-app-service.md)]
 
 <!-- LINKS -->
-[virtualnetwork]: https://azure.microsoft.com/documentation/articles/virtual-networks-faq/
+[virtualnetwork]: ../../virtual-network/virtual-networks-faq.md
 [HowToCreateAnAppServiceEnvironment]: app-service-web-how-to-create-an-app-service-environment.md
-[NetworkSecurityGroups]: https://azure.microsoft.com/documentation/articles/virtual-networks-nsg/
+[NetworkSecurityGroups]: ../../virtual-network/virtual-network-vnet-plan-design-arm.md
 [IntroToAppServiceEnvironment]:  app-service-app-service-environment-intro.md
 [SecurelyConnecttoBackend]:  app-service-app-service-environment-securely-connecting-to-backend-resources.md
 [NewPortal]:  https://portal.azure.com  
 
 <!-- IMAGES -->
-

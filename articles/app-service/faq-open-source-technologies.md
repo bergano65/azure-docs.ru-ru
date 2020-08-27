@@ -9,12 +9,12 @@ ms.topic: article
 ms.date: 10/31/2018
 ms.author: genli
 ms.custom: seodec18, devx-track-python
-ms.openlocfilehash: 89c317e6623a868fd75b09274c726720e726e470
-ms.sourcegitcommit: 7fe8df79526a0067be4651ce6fa96fa9d4f21355
+ms.openlocfilehash: 512776f2498a88f1fda9b5e7f0e2db0ddd32b955
+ms.sourcegitcommit: 648c8d250106a5fca9076a46581f3105c23d7265
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87848644"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88962334"
 ---
 # <a name="open-source-technologies-faqs-for-web-apps-in-azure"></a>Часто задаваемые вопросы о технологиях с открытым кодом в веб-приложениях Azure
 
@@ -34,7 +34,7 @@ ms.locfileid: "87848644"
 6. Задайте файлу имя **.user.ini**.
 7. Щелкните значок карандаша рядом с файлом **.user.ini**.
 8. Добавьте в файл следующий код: `log_errors=on`.
-9. Щелкните **Сохранить**.
+9. Выберите **Сохранить**.
 10. Щелкните значок карандаша рядом с файлом **wp-config.php**.
 11. Вместо текста в файле добавьте следующий код:
     ```php
@@ -43,7 +43,7 @@ ms.locfileid: "87848644"
     ```
 12. На портале Azure в меню веб-приложения перезапустите свое веб-приложение.
 
-Дополнительные сведения см. в записи блога [Enable WordPress error logs](https://blogs.msdn.microsoft.com/azureossds/2015/10/09/logging-php-errors-in-wordpress-2/) (Включение журналов ошибок WordPress).
+Дополнительные сведения см. в записи блога [Enable WordPress error logs](/archive/blogs/azureossds/logging-php-errors-in-wordpress-2) (Включение журналов ошибок WordPress).
 
 ## <a name="how-do-i-log-python-application-errors-in-apps-that-are-hosted-in-app-service"></a>Как включить ведение журнала ошибок в приложениях Python, размещенных в службе приложений?
 [!INCLUDE [web-sites-python-troubleshooting-wsgi-error-log](../../includes/web-sites-python-troubleshooting-wsgi-error-log.md)]
@@ -80,7 +80,7 @@ ms.locfileid: "87848644"
 
 ## <a name="i-see-the-message-error-establishing-a-database-connection-in-my-wordpress-app-thats-hosted-in-app-service-how-do-i-troubleshoot-this"></a>В приложении WordPress, размещенном в службе приложений, отображается сообщение Error establishing a database connection (Ошибка при установке подключения к базе данных). Как устранить эту проблему?
 
-При появлении этой ошибки в приложении Azure WordPress необходимо включить файлы php_errors.log и debug.log. Для этого выполните действия, описанные в записи блога [Enable WordPress error logs](https://blogs.msdn.microsoft.com/azureossds/2015/10/09/logging-php-errors-in-wordpress-2/) (Включение журналов ошибок WordPress).
+При появлении этой ошибки в приложении Azure WordPress необходимо включить файлы php_errors.log и debug.log. Для этого выполните действия, описанные в записи блога [Enable WordPress error logs](/archive/blogs/azureossds/logging-php-errors-in-wordpress-2) (Включение журналов ошибок WordPress).
 
 После включения журналов воспроизведите ошибку и проверьте журналы:
 ```
@@ -97,11 +97,11 @@ ms.locfileid: "87848644"
 
 ## <a name="how-do-i-install-native-python-modules-in-an-app-service-web-app-or-api-app"></a>Как установить собственные модули Python в веб-приложении службы приложений или приложении API?
 
-Некоторые пакеты невозможно установить с помощью pip в Azure. Эти пакеты могут быть недоступны в индексе пакетов Python, или требуется компилятор (компилятор недоступен на компьютере, на котором выполняется веб-приложение в службе приложений). Сведения об установке собственных модулей в веб-приложениях службы приложений или приложениях API см. в [этой записи блога](https://blogs.msdn.microsoft.com/azureossds/2015/06/29/install-native-python-modules-on-azure-web-apps-api-apps/).
+Некоторые пакеты невозможно установить с помощью pip в Azure. Эти пакеты могут быть недоступны в индексе пакетов Python, или требуется компилятор (компилятор недоступен на компьютере, на котором выполняется веб-приложение в службе приложений). Сведения об установке собственных модулей в веб-приложениях службы приложений или приложениях API см. в [этой записи блога](/archive/blogs/azureossds/install-native-python-modules-on-azure-web-apps-api-apps).
 
 ## <a name="how-do-i-deploy-a-django-app-to-app-service-by-using-git-and-the-new-version-of-python"></a>Как развернуть приложение Django в службу приложений с помощью Git и новой версии Python?
 
-Сведения об установке Django см. в [этой записи блога](https://blogs.msdn.microsoft.com/azureossds/2016/08/25/deploying-django-app-to-azure-app-services-using-git-and-new-version-of-python/).
+Сведения об установке Django см. в [этой записи блога](/archive/blogs/azureossds/deploying-django-app-to-azure-app-services-using-git-and-new-version-of-python).
 
 ## <a name="where-are-the-tomcat-log-files-located"></a>Где находятся файлы журналов Tomcat?
 
@@ -183,7 +183,7 @@ The process cannot access the file because it is being used by another process.
 
 WordPress Buddy+ — это расширение сайта Azure, с помощью которого можно обновить URL-адрес перенаправления непосредственно в базе данных. Дополнительные сведения об использовании WordPress Buddy+ см. в записи блога [WordPress tools and MySQL migration with WordPress Buddy+](https://sharepointforum.org/threads/wordpress-tools-and-mysql-migration-with-wordpress-buddy.82929/) (Средства WordPress и перенос базы данных MySQL с помощью WordPress Buddy+).
 
-Кроме того, если вы предпочитаете вручную обновить URL-адрес перенаправления с помощью SQL-запросов или PHPMyAdmin, см. запись блога [WordPress: Redirecting to wrong URL](https://blogs.msdn.microsoft.com/azureossds/2016/07/12/wordpress-redirecting-to-wrong-url/) (WordPress: перенаправление на неправильный URL-адрес).
+Кроме того, если вы предпочитаете вручную обновить URL-адрес перенаправления с помощью SQL-запросов или PHPMyAdmin, см. запись блога [WordPress: Redirecting to wrong URL](/archive/blogs/azureossds/wordpress-redirecting-to-wrong-url) (WordPress: перенаправление на неправильный URL-адрес).
 
 ## <a name="how-do-i-change-my-wordpress-sign-in-password"></a>Как изменить пароль для входа в WordPress?
 
@@ -197,12 +197,12 @@ WordPress Buddy+ — это расширение сайта Azure, с помо�
 
 Базу данных MySQL, подключенную к веб-сайту WordPress, можно перенести несколькими способами:
 
-* с помощью [командной строки или PHPMyAdmin](https://blogs.msdn.microsoft.com/azureossds/2016/03/02/migrating-data-between-mysql-databases-using-kudu-console-azure-app-service/) (для разработчиков);
+* с помощью [командной строки или PHPMyAdmin](/archive/blogs/azureossds/migrating-data-between-mysql-databases-using-kudu-console-azure-app-service) (для разработчиков);
 * с помощью [WordPress Buddy+](https://sharepointforum.org/threads/wordpress-tools-and-mysql-migration-with-wordpress-buddy.82929/) (остальные пользователи).
 
 ## <a name="how-do-i-help-make-wordpress-more-secure"></a>Как повысить уровень защиты WordPress?
 
-Рекомендации по обеспечению безопасности WordPress см. в [этой записи блога](https://blogs.msdn.microsoft.com/azureossds/2016/12/26/best-practices-for-wordpress-security-on-azure/).
+Рекомендации по обеспечению безопасности WordPress см. в [этой записи блога](/archive/blogs/azureossds/best-practices-for-wordpress-security-on-azure).
 
 ## <a name="i-am-trying-to-use-phpmyadmin-and-i-see-the-message-access-denied-how-do-i-resolve-this"></a>При использовании PHPMyAdmin отображается ошибка "Доступ запрещен". Как решить эту проблему?
 

@@ -7,12 +7,12 @@ ms.topic: article
 ms.date: 07/01/2016
 ms.author: dariac
 ms.custom: seodec18
-ms.openlocfilehash: ded812d5d7a0440466e7284b56c90965ea00406e
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 0a25ae41a5f4ed73148f629799ca4865d756a769
+ms.sourcegitcommit: 648c8d250106a5fca9076a46581f3105c23d7265
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "75768492"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88962457"
 ---
 # <a name="best-practices-for-azure-app-service"></a>Рекомендации по использованию Службы приложений Azure
 В этой статье собраны рекомендации по использованию [службы приложений Azure](https://go.microsoft.com/fwlink/?LinkId=529714). 
@@ -66,8 +66,8 @@ pm2 start /home/site/wwwroot/app.js --no-daemon -i 4
 Конфигурация по умолчанию службы приложений Azure для приложений Node.js предназначена для наиболее распространенных из них. Если в конфигурации для приложения Node.js целесообразно использовать персонализированные настройки, чтобы повысить производительность или оптимизировать использование ресурсов ЦП, памяти и сети, ознакомьтесь со статьей [Рекомендации и руководство по устранению неполадок приложений Node в веб-приложениях Azure](app-service-web-nodejs-best-practices-and-troubleshoot-guide.md). В этой статье описаны параметры IISNode, которые может потребоваться настроить для приложения Node.js. В ней также рассмотрены различные сценарии и проблемы, которые могут возникнуть при работе приложения, и показано, как устранить эти проблемы.
 
 
-## <a name="next-steps"></a>Следующие шаги
-Дополнительные сведения о рекомендуемых методиках см. в статье [Диагностика службы приложений](https://docs.microsoft.com/azure/app-service/overview-diagnostics) .
+## <a name="next-steps"></a>Next Steps
+Дополнительные сведения о рекомендуемых методиках см. в статье [Диагностика службы приложений](./overview-diagnostics.md) .
 
 - Перейдите к веб-приложению в [портал Azure](https://portal.azure.com).
 - В области навигации слева щелкните **Диагностика и устранение проблем** , после чего откроется окно Диагностика службы приложений.

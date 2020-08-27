@@ -7,12 +7,12 @@ ms.assetid: b8783c10-3a4a-4dd6-af8c-856baafbdde5
 ms.topic: article
 ms.date: 08/03/2016
 ms.custom: seodec18
-ms.openlocfilehash: 2ef4862b629f5d192049c2cb9236a3da2b411960
-ms.sourcegitcommit: 1692e86772217fcd36d34914e4fb4868d145687b
+ms.openlocfilehash: a9d3de5d4a88c782ad541ceb4916ec90a3bdd7b5
+ms.sourcegitcommit: 648c8d250106a5fca9076a46581f3105c23d7265
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/29/2020
-ms.locfileid: "84170772"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88958258"
 ---
 # <a name="troubleshoot-slow-app-performance-issues-in-azure-app-service"></a>Устранение причин низкой производительности приложения в Службе приложений Azure
 Эта статья поможет устранить причины снижения производительности приложения, размещенного в [Службе приложений Azure](https://go.microsoft.com/fwlink/?LinkId=529714).
@@ -43,7 +43,7 @@ ms.locfileid: "84170772"
 
 ### <a name="1-observe-and-monitor-application-behavior"></a>1. Наблюдение за поведением приложения
 #### <a name="track-service-health"></a>Мониторинг работоспособности службы
-Microsoft Azure информирует о каждом случае прерывания работы или снижения производительности службы. За работоспособностью службы можно следить на [портале Azure](https://portal.azure.com/). Дополнительные сведения см. в статье [Получение информации о работоспособности службы](../monitoring-and-diagnostics/insights-service-health.md).
+Microsoft Azure информирует о каждом случае прерывания работы или снижения производительности службы. За работоспособностью службы можно следить на [портале Azure](https://portal.azure.com/). Дополнительные сведения см. в статье [Получение информации о работоспособности службы](../service-health/service-notifications.md).
 
 #### <a name="monitor-your-app"></a>Отслеживание работы приложения
 Этот инструмент позволяет определить наличие проблем с приложением. В колонке вашего приложения щелкните на плитку **Запросы и ошибки**. Колонка **Метрика** содержит все метрики, которые вы можете добавить.
@@ -61,7 +61,7 @@ Microsoft Azure информирует о каждом случае прерыв
 Дополнительные сведения см. в разделе:
 
 * [Мониторинг приложений в Службе приложений Azure](web-sites-monitor.md)
-* [Создание оповещений для служб Azure с помощью портала Azure](../monitoring-and-diagnostics/insights-receive-alert-notifications.md)
+* [Создание оповещений для служб Azure с помощью портала Azure](../azure-monitor/platform/alerts-overview.md)
 
 #### <a name="monitor-web-endpoint-status"></a>Мониторинг состояния конечной веб-точки
 Если вы запускаете приложение в ценовой категории **Стандартный**, то Служба приложений позволяет отслеживать две конечные точки из трех географических расположений.
@@ -161,4 +161,4 @@ Application Insights Profiler предоставляет статистику п
 
  ![Перезапуск приложения для устранения проблем с производительностью](./media/app-service-web-troubleshoot-performance-degradation/2-restart.png)
 
-Вы также можете управлять приложением с помощью Azure PowerShell. Дополнительные сведения см. в статье [Использование Azure PowerShell с диспетчером ресурсов Azure](../powershell-azure-resource-manager.md).
+Вы также можете управлять приложением с помощью Azure PowerShell. Дополнительные сведения см. в статье [Использование Azure PowerShell с диспетчером ресурсов Azure](../azure-resource-manager/management/manage-resources-powershell.md).

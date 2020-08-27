@@ -6,18 +6,18 @@ ms.assetid: ff00902b-9858-4bee-ab95-d3406018c688
 ms.topic: article
 ms.date: 07/25/2018
 ms.custom: seodec18
-ms.openlocfilehash: d9ef246079fc95b79a2dc7a3d33eba79da70c55a
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 4db7c6bf29d0874b5441a8a0eb90f7d1ada33d9c
+ms.sourcegitcommit: 648c8d250106a5fca9076a46581f3105c23d7265
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87050380"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88962440"
 ---
 # <a name="configure-premiumv2-tier-for-azure-app-service"></a>Настройка ценовой категории Премиум V2 для службы приложений Azure
 
 Новая ценовая категория **Премиум V2** предоставляет более быстрые процессоры, хранилище на основе твердотельных накопителей и удвоенное соотношение "память-ядро" по сравнению с имеющимися ценовыми категориями. В дополнение к более высокой производительности вы можете сэкономить свои деньги, запуская приложения на меньшем числе экземпляров. В этой статье показано, как создать приложение с категорией **Премиум V2** либо масштабировать приложение до категории **Премиум V2**.
 
-## <a name="prerequisites"></a>Обязательные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы масштабировать приложение до категории **Премиум V2**, вам требуется приложение службы приложений Azure, работающее с категорией ниже **Премиум V2**. Кроме того, это приложение должно работать в развертывании службы приложений, поддерживающем категорию "Премиум V2".
 
@@ -116,4 +116,4 @@ New-AzAppServicePlan -ResourceGroupName <resource_group_name> `
 ## <a name="more-resources"></a>Дополнительные ресурсы
 
 [Увеличение масштаба приложения в Azure](manage-scale-up.md)  
-[Масштабирование числа экземпляров вручную или автоматически](../monitoring-and-diagnostics/insights-how-to-scale.md)
+[Масштабирование числа экземпляров вручную или автоматически](../azure-monitor/platform/autoscale-get-started.md)

@@ -7,12 +7,12 @@ ms.topic: article
 ms.date: 10/18/2019
 ms.author: jennile
 ms.custom: seodec18
-ms.openlocfilehash: df8f68e47776f46ae2d1331f85bd76d6cfe17b80
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: d58341979b0bbe0699a5ca293b20394c43cde1d1
+ms.sourcegitcommit: 648c8d250106a5fca9076a46581f3105c23d7265
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "81869949"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88962814"
 ---
 # <a name="azure-app-service-diagnostics-overview"></a>Общие сведения о диагностике службы приложений Azure
 
@@ -20,7 +20,7 @@ ms.locfileid: "81869949"
 
 Хотя эта возможность наиболее полезна при возникновении проблем с приложением в течение последних 24 часов, все диагностические графы всегда доступны для анализа.
 
-Диагностика службы приложений работает не только для приложений Windows, но и для приложений на [Linux с контейнерами](https://docs.microsoft.com/azure/app-service/containers/app-service-linux-intro), в [среде службы приложений](https://docs.microsoft.com/azure/app-service/environment/intro) и в службе [Функции Azure](https://docs.microsoft.com/azure/azure-functions/functions-overview).
+Диагностика службы приложений работает не только для приложений Windows, но и для приложений на [Linux с контейнерами](./overview.md#app-service-on-linux), в [среде службы приложений](./environment/intro.md) и в службе [Функции Azure](../azure-functions/functions-overview.md).
 
 ## <a name="open-app-service-diagnostics"></a>Доступ к диагностике службы приложений
 
@@ -71,7 +71,7 @@ ms.locfileid: "81869949"
 
 ### <a name="investigate-application-code-issues-only-for-windows-app"></a>Исследование проблем с кодом приложения (только для приложения Windows)
 
-Многие проблемы приложений связаны с ошибками в коде приложения, поэтому диагностика службы приложений в интеграции [Application Insights](https://docs.microsoft.com/azure/azure-monitor/app/app-insights-overview) позволяет проводить анализ исключений и зависимостей для поиска проблем, имеющих отношение к выбранному времени простоя. Application Insights необходимо включить отдельно.
+Многие проблемы приложений связаны с ошибками в коде приложения, поэтому диагностика службы приложений в интеграции [Application Insights](../azure-monitor/app/app-insights-overview.md) позволяет проводить анализ исключений и зависимостей для поиска проблем, имеющих отношение к выбранному времени простоя. Application Insights необходимо включить отдельно.
 
 ![Application Insights](./media/app-service-diagnostics/application-insights-7.png)
 

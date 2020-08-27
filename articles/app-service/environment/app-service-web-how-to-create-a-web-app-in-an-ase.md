@@ -7,12 +7,12 @@ ms.topic: article
 ms.date: 07/11/2017
 ms.author: ccompy
 ms.custom: seodec18
-ms.openlocfilehash: 9359fe07818b3c5fbc08082cdf1f96195a7836ab
-ms.sourcegitcommit: 2ffa5bae1545c660d6f3b62f31c4efa69c1e957f
+ms.openlocfilehash: d0ac8e0cf187d1a6a329f2c7332c9ec37018d4cf
+ms.sourcegitcommit: 648c8d250106a5fca9076a46581f3105c23d7265
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/11/2020
-ms.locfileid: "88080615"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88962525"
 ---
 # <a name="create-a-web-app-in-an-app-service-environment-v1"></a>Создание веб-приложения в среде служб приложений версии 1
 
@@ -28,7 +28,7 @@ ms.locfileid: "88080615"
 > 
 > 
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 Для прохождения этого учебного курса необходимо, чтобы вы создали среду службы приложений. Если вы еще не сделали это, ознакомьтесь со статьей [Создание среды службы приложений](app-service-web-how-to-create-an-app-service-environment.md). 
 
 ## <a name="create-a-web-app"></a>Создание веб-приложения
@@ -57,7 +57,7 @@ ms.locfileid: "88080615"
     Если среда ASE использует внутренний виртуальный IP-адрес, то URL-адресом приложения в этой ASE будет [*имя_сайта*].[*поддомен_указанный_при_создании_ASE*].   
     После выбора плана службы приложений во время создания ASE вы увидите, что поддомен под элементом **Имя** изменился.
 
-## <a name="create-an-app-service-plan"></a><a name="createplan"></a>Создание плана службы приложений
+## <a name="create-an-app-service-plan"></a><a name="createplan"></a> Создание плана службы приложений
 При создании в среде ASE плана ASP выбранные рабочие роли будут отличаться, так как в среде ASE нет общих рабочих ролей.  Рабочие роли, которые необходимо использовать, — это те, которые были выделены ASE администратором.  Это означает, что для создания нового плана вам потребуется больше рабочих ролей, выделенных для рабочего пула ASE, чем общее число экземпляров по всем планам, которые уже находятся в этом рабочем пуле.  Если в рабочем пуле среды ASE недостаточно рабочих ролей для создания плана ASP, обратитесь к администратору среды ASE, чтобы их добавить.
 
 Еще одно отличие от планов ASP, размещаемых в среде ASE, заключается в отсутствии выбора ценовой категории.  При наличии среды ASE вы оплачиваете вычислительные ресурсы, используемые системой, и не платите дополнительно за использование планов ASP в этой среде.  Обычно при создании плана ASP выбирается план ценообразования, который определяет политику выставления счетов.  Среда службы приложений является по сути закрытым расположением, где можно создавать содержимое.  Вы платите за среду, а не за размещение содержимого.
@@ -105,4 +105,4 @@ ms.locfileid: "88080615"
 [HowtoScale]: app-service-web-scale-a-web-app-in-an-app-service-environment.md
 [HowtoConfigureASE]: app-service-web-configure-an-app-service-environment.md
 [ResourceGroups]: ../../azure-resource-manager/management/overview.md
-[AzurePowershell]: https://azure.microsoft.com/documentation/articles/powershell-install-configure/
+[AzurePowershell]: /powershell/azure/?view=azps-3.8.0

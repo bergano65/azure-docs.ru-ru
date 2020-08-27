@@ -7,12 +7,12 @@ ms.topic: article
 ms.date: 06/08/2020
 ms.author: ccompy
 ms.custom: seodec18, fasttrack-edit
-ms.openlocfilehash: d55d1c0d72f0122472813fc6e79ba021e8b86e89
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 8c8b71e4be11a886da3e0889add0a3cdc19a56c3
+ms.sourcegitcommit: 648c8d250106a5fca9076a46581f3105c23d7265
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85831256"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88962423"
 ---
 # <a name="azure-app-service-hybrid-connections"></a>Гибридные подключения к службе приложений Azure
 
@@ -94,8 +94,8 @@ ms.locfileid: "85831256"
 
 | Ценовой план | Количество гибридных подключений в плане |
 |----|----|
-| Basic | 5 на план |
-| Стандартный | 25 на план |
+| Базовый | 5 на план |
+| Standard | 25 на план |
 | Категории премиум v2 | 200 на приложение |
 | Изолированные | 200 на приложение |
 
@@ -134,7 +134,7 @@ ms.locfileid: "85831256"
 1. Щелкните гибридные подключения, которые HCM должен транслировать.
 ![Снимок экрана гибридных подключений][9]
 
-1. Нажмите кнопку **Сохранить**.
+1. Выберите **Сохранить**.
 
 Теперь вы увидите добавленные гибридные подключения. Можно также выбрать настроенное гибридное подключение, чтобы просмотреть сведения о нем.
 
@@ -160,7 +160,7 @@ ms.locfileid: "85831256"
 
 ![Добавление гибридного подключения вручную][11]
 
-### <a name="upgrade"></a>Upgrade ###
+### <a name="upgrade"></a>Обновление ###
 
 Для Диспетчера гибридных подключений выпускаются периодические обновления, предназначенные для устранения проблем или предоставления улучшений. В случае выхода обновлений в пользовательском интерфейсе HCM будет отображаться всплывающее окно. При установке обновления будут применены изменения и HCM перезапустится. 
 
@@ -225,8 +225,8 @@ Commands:
 [12]: ./media/app-service-hybrid-connections/hybridconn-bt.png
 
 <!--Links-->
-[HCService]: https://docs.microsoft.com/azure/service-bus-relay/relay-hybrid-connections-protocol/
+[HCService]: /azure/service-bus-relay/relay-hybrid-connections-protocol/
 [portal]: https://portal.azure.com/
-[oldhc]: https://docs.microsoft.com/azure/biztalk-services/integration-hybrid-connection-overview/
+[oldhc]: /azure/biztalk-services/integration-hybrid-connection-overview/
 [sbpricing]: https://azure.microsoft.com/pricing/details/service-bus/
 [armclient]: https://github.com/projectkudu/ARMClient/

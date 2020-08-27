@@ -6,12 +6,12 @@ ms.custom: devx-track-csharp
 ms.topic: article
 ms.date: 06/02/2020
 zone_pivot_groups: app-service-platform-windows-linux
-ms.openlocfilehash: d6e85bad7705647164fb1010f6c782729e20596b
-ms.sourcegitcommit: 4913da04fd0f3cf7710ec08d0c1867b62c2effe7
+ms.openlocfilehash: 3456adc2b143f1f51115183fe4873938d067d267
+ms.sourcegitcommit: 648c8d250106a5fca9076a46581f3105c23d7265
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88211910"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88961675"
 ---
 # <a name="configure-an-aspnet-core-app-for-azure-app-service"></a>Настройка приложения ASP.NET Core для службы приложений Azure
 
@@ -56,7 +56,7 @@ az webapp list-runtimes --linux | grep DOTNETCORE
 
 ::: zone pivot="platform-windows"  
 
-Задайте целевую платформу в файле проекта для проекта ASP.NET Core. Дополнительные сведения см. в статье [Выбор версии .NET Core для использования](https://docs.microsoft.com/dotnet/core/versions/selection) в документации по .NET Core.
+Задайте целевую платформу в файле проекта для проекта ASP.NET Core. Дополнительные сведения см. в статье [Выбор версии .NET Core для использования](/dotnet/core/versions/selection) в документации по .NET Core.
 
 ::: zone-end
 
@@ -128,7 +128,7 @@ namespace SomeNamespace
 Если вы настроили параметр приложения с тем же именем в службе приложений и в *appsettings.js*, например, значение службы приложений имеет приоритет над *appsettings.js* значением. Локальная *appsettings.jsпо* значению позволяет выполнять отладку приложения локально, но значение службы приложений позволяет запускать приложение в продукте с параметрами рабочей среды. Строки подключения работают таким же образом. Таким образом вы сможете защитить секреты приложения за пределами репозитория кода и получить доступ к соответствующим значениям без изменения кода.
 
 > [!NOTE]
-> Обратите внимание, что [иерархические данные конфигурации](https://docs.microsoft.com/aspnet/core/fundamentals/configuration/#hierarchical-configuration-data) в *appsettings.js* , доступ к которым осуществляется с помощью `:` стандартного разделителя .NET Core. Чтобы переопределить конкретный иерархический параметр конфигурации в службе приложений, задайте имя параметра приложения с тем же форматом с разделителями в ключе. в [Cloud Shell](https://shell.azure.com)можно выполнить следующий пример:
+> Обратите внимание, что [иерархические данные конфигурации](/aspnet/core/fundamentals/configuration/#hierarchical-configuration-data) в *appsettings.js* , доступ к которым осуществляется с помощью `:` стандартного разделителя .NET Core. Чтобы переопределить конкретный иерархический параметр конфигурации в службе приложений, задайте имя параметра приложения с тем же форматом с разделителями в ключе. в [Cloud Shell](https://shell.azure.com)можно выполнить следующий пример:
 
 ```azurecli-interactive
 az webapp config appsettings set --name <app-name> --resource-group <resource-group-name> --settings My:Hierarchical:Config:Data="some value"
@@ -144,7 +144,7 @@ az webapp config appsettings set --resource-group <resource-group-name> --name <
 
 ## <a name="access-diagnostic-logs"></a>Доступ к журналам диагностики
 
-ASP.NET Core предоставляет [встроенный поставщик ведения журнала для службы приложений](https://docs.microsoft.com/aspnet/core/fundamentals/logging/#azure-app-service). В *Program.CS* проекта добавьте поставщик в приложение с помощью `ConfigureLogging` метода расширения, как показано в следующем примере:
+ASP.NET Core предоставляет [встроенный поставщик ведения журнала для службы приложений](/aspnet/core/fundamentals/logging/#azure-app-service). В *Program.CS* проекта добавьте поставщик в приложение с помощью `ConfigureLogging` метода расширения, как показано в следующем примере:
 
 ```csharp
 public static IHostBuilder CreateHostBuilder(string[] args) =>
@@ -159,11 +159,11 @@ public static IHostBuilder CreateHostBuilder(string[] args) =>
         });
 ```
 
-Затем можно настроить и создать журналы с помощью [стандартного шаблона .NET Core](https://docs.microsoft.com/aspnet/core/fundamentals/logging).
+Затем можно настроить и создать журналы с помощью [стандартного шаблона .NET Core](/aspnet/core/fundamentals/logging).
 
 [!INCLUDE [Access diagnostic logs](../../includes/app-service-web-logs-access-no-h.md)]
 
-Дополнительные сведения об устранении неполадок ASP.NET Core приложений в службе приложений см. в статье [Устранение неполадок ASP.NET Core в службе приложений Azure и службах IIS](https://docs.microsoft.com/aspnet/core/test/troubleshoot-azure-iis) .
+Дополнительные сведения об устранении неполадок ASP.NET Core приложений в службе приложений см. в статье [Устранение неполадок ASP.NET Core в службе приложений Azure и службах IIS](/aspnet/core/test/troubleshoot-azure-iis) .
 
 ## <a name="get-detailed-exceptions-page"></a>Страница «Получение подробных сведений об исключениях»
 
@@ -177,9 +177,9 @@ az webapp config appsettings set --name <app-name> --resource-group <resource-gr
 
 В Службе приложений [завершение SSL-запросов](https://wikipedia.org/wiki/TLS_termination_proxy) происходит в подсистеме балансировки нагрузки сети, поэтому все HTTPS-запросы достигают вашего приложения в виде незашифрованных HTTP-запросов. Если логика приложения должна определить, зашифрованы ли запросы пользователя, настройте по промежуточного слоя перенаправляемых заголовков в *Startup.CS*:
 
-- Настройте ПО промежуточного слоя с помощью [ForwardedHeadersOptions](https://docs.microsoft.com/dotnet/api/microsoft.aspnetcore.builder.forwardedheadersoptions), чтобы заголовки `X-Forwarded-For` и `X-Forwarded-Proto` перенаправлялись в `Startup.ConfigureServices`.
+- Настройте ПО промежуточного слоя с помощью [ForwardedHeadersOptions](/dotnet/api/microsoft.aspnetcore.builder.forwardedheadersoptions), чтобы заголовки `X-Forwarded-For` и `X-Forwarded-Proto` перенаправлялись в `Startup.ConfigureServices`.
 - Добавьте в известные сети диапазоны частных IP-адресов, чтобы по промежуточного слоя можно было доверять подсистеме балансировки нагрузки службы приложений.
-- Вызовите метод [усефорвардедхеадерс](https://docs.microsoft.com/dotnet/api/microsoft.aspnetcore.builder.forwardedheadersextensions.useforwardedheaders) в `Startup.Configure` перед вызовом другого по промежуточного слоя.
+- Вызовите метод [усефорвардедхеадерс](/dotnet/api/microsoft.aspnetcore.builder.forwardedheadersextensions.useforwardedheaders) в `Startup.Configure` перед вызовом другого по промежуточного слоя.
 
 Поместив все три элемента вместе, код будет выглядеть следующим образом:
 
@@ -208,7 +208,7 @@ public void Configure(IApplicationBuilder app, IHostingEnvironment env)
 }
 ```
 
-Дополнительные сведения см. в разделе [Настройка ASP.NET Core для работы с прокси-серверами и подсистемами балансировки нагрузки](https://docs.microsoft.com/aspnet/core/host-and-deploy/proxy-load-balancer).
+Дополнительные сведения см. в разделе [Настройка ASP.NET Core для работы с прокси-серверами и подсистемами балансировки нагрузки](/aspnet/core/host-and-deploy/proxy-load-balancer).
 
 ::: zone pivot="platform-linux"
 
@@ -231,4 +231,3 @@ public void Configure(IApplicationBuilder app, IHostingEnvironment env)
 > [Служба приложений под управлением Linux: вопросы и ответы](faq-app-service-linux.md)
 
 ::: zone-end
-
