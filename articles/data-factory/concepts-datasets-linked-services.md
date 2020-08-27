@@ -12,19 +12,19 @@ ms.workload: data-services
 ms.topic: conceptual
 ms.custom: seo-lt-2019
 ms.date: 08/24/2020
-ms.openlocfilehash: 621d39a684495edadf6c3134635ade6b86a4ab77
-ms.sourcegitcommit: c5021f2095e25750eb34fd0b866adf5d81d56c3a
+ms.openlocfilehash: 747d780b8f679adf66810bdcdf6e9b263e8d241c
+ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88798233"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88923761"
 ---
 # <a name="datasets-in-azure-data-factory"></a>Наборы данных в фабрике данных Azure
 > [!div class="op_single_selector" title1="Выберите используемую версию службы "Фабрика данных":"]
 > * [Версия 1](v1/data-factory-create-datasets.md)
 > * [Текущая версия](concepts-datasets-linked-services.md)
 
-[!INCLUDE[appliesto-adf-xxx-md](includes/appliesto-adf-xxx-md.md)]
+[!INCLUDE[appliesto-adf-asa-md](includes/appliesto-adf-asa-md.md)]
 
 
 В этой статье описывается, какие бывают наборы данных, каким образом они определяются в формате JSON, а также как они используются в конвейерах фабрики данных Azure.

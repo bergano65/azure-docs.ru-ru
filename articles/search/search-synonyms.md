@@ -7,13 +7,13 @@ author: brjohnstmsft
 ms.author: brjohnst
 ms.service: cognitive-search
 ms.topic: conceptual
-ms.date: 07/12/2020
-ms.openlocfilehash: 96ad10fcca260223d92203a80f396de816238efc
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.date: 08/26/2020
+ms.openlocfilehash: aad953483749d676844221f7e519f50c50b63ad4
+ms.sourcegitcommit: e69bb334ea7e81d49530ebd6c2d3a3a8fa9775c9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86529572"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88948646"
 ---
 # <a name="synonyms-in-azure-cognitive-search"></a>Синонимы в Azure Когнитивный поиск
 
@@ -23,7 +23,7 @@ Synonyms представляет собой поисковые системы, 
 
 ## <a name="create-synonyms"></a>Создание синонимов
 
-На портале не поддерживается создание синонимов, но можно использовать REST API или пакет SDK для .NET. Чтобы начать работу с ОСТАВШЕЙся, мы рекомендуем [использовать POST](search-get-started-postman.md) и формулировку запросов с помощью этого API: [Создание карт синонимов](https://docs.microsoft.com/rest/api/searchservice/create-synonym-map). Для разработчиков на C# вы можете приступить к работе с [добавлением синонимов в функции поиска в Azure с помощью c#](search-synonyms-tutorial-sdk.md).
+На портале не поддерживается создание синонимов, но можно использовать REST API или пакет SDK для .NET. Чтобы начать работу с ОСТАВШЕЙся, мы рекомендуем [использовать POST](search-get-started-postman.md) и формулировку запросов с помощью этого API: [Создание карт синонимов](/rest/api/searchservice/create-synonym-map). Для разработчиков на C# вы можете приступить к работе с [добавлением синонимов в функции поиска в Azure с помощью c#](search-synonyms-tutorial-sdk.md).
 
 При необходимости, если вы используете [управляемые клиентом ключи](search-security-manage-encryption-keys.md) для шифрования на стороне службы, вы можете применить эту защиту к содержимому схемы синонимов.
 
@@ -92,6 +92,21 @@ USA, United States, United States of America
 
 ```
 Washington, Wash., WA => WA
+```
+
+Если необходимо определить синонимы, содержащие запятые, можно отформатировать их с помощью обратной косой черты, как в следующем примере:
+
+```
+WA\, USA, WA, Washington
+```
+
+Поскольку обратная косая черта сама по себе является специальным символом в других языках, например JSON и C#, вам, вероятно, потребуется дважды его escape-последовательность. Например, формат JSON, отправленный в REST API для приведенной выше карте синонимов, будет выглядеть следующим образом:
+
+```json
+    {
+       "format":"solr",
+       "synonyms": "WA\\, USA, WA, Washington"
+    }
 ```
 
 #### <a name="list-synonym-maps-under-your-service"></a>Вывод карт синонимов в службе.
@@ -170,7 +185,7 @@ Washington, Wash., WA => WA
 
 Если у вас есть индекс в среде разработки (не в рабочей среде), поэкспериментируйте с небольшим словарем, чтобы узнать, как добавление синонимов изменяет результаты поиска, включая влияние на профили повышения, выделение совпадений и предложения.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 > [!div class="nextstepaction"]
-> [Создание схемы синонимов](https://docs.microsoft.com/rest/api/searchservice/create-synonym-map)
+> [Создание схемы синонимов](/rest/api/searchservice/create-synonym-map)

@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: dawoo
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 46a00d55c58992be1009da1de5441ebe4e589a70
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 904ea039526b9434501b60ed6ccf762f45625b26
+ms.sourcegitcommit: e69bb334ea7e81d49530ebd6c2d3a3a8fa9775c9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "83994975"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88948153"
 ---
 # <a name="configure-a-conditional-access-policy-in-report-only-mode"></a>Настройка политики условного доступа в режиме «только отчет»
 
@@ -51,8 +51,8 @@ ms.locfileid: "83994975"
 
 Чтобы просмотреть статистическое влияние политик условного доступа с помощью новой книги по условному доступу, необходимо интегрировать Azure Monitor с Azure AD и экспортировать журналы входа. Для настройки этой интеграции необходимо выполнить два действия. 
 
-1. [Подпишитесь на Azure Monitorную подписку и создайте рабочую область](/azure/azure-monitor/learn/quick-create-workspace).
-1. [Экспортируйте журналы входа из Azure AD в Azure Monitor](/azure/active-directory/reports-monitoring/howto-integrate-activity-logs-with-log-analytics).
+1. [Подпишитесь на Azure Monitorную подписку и создайте рабочую область](../../azure-monitor/learn/quick-create-workspace.md).
+1. [Экспортируйте журналы входа из Azure AD в Azure Monitor](../reports-monitoring/howto-integrate-activity-logs-with-log-analytics.md).
 
 Дополнительные сведения о ценах на Azure Monitor можно найти на [странице цен на Azure Monitor](https://azure.microsoft.com/pricing/details/monitor/). Ресурсы для оценки затрат, установки ежедневного ограничения или настройки срока хранения данных можно найти в статье [Управление использованием и затратами с помощью журналов Azure Monitor](../../azure-monitor/platform/manage-cost-storage.md#estimating-the-costs-to-manage-your-environment).
 

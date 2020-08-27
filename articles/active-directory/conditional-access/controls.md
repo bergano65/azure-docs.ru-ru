@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: inbarc
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 147c6016c56d45fadca4f4b8e583bce54006ef07
-ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
+ms.openlocfilehash: 6eb4efd26502c20a33cb61ab1c9d58f2757bbd70
+ms.sourcegitcommit: e69bb334ea7e81d49530ebd6c2d3a3a8fa9775c9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88922121"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88948306"
 ---
 # <a name="custom-controls-preview"></a>Настраиваемые элементы управления (предварительная версия)
 
@@ -53,7 +53,7 @@ ms.locfileid: "88922121"
 
 ## <a name="known-limitations"></a>Известные ограничения
 
-Пользовательские элементы управления нельзя использовать с автоматизацией защиты идентификации, требующей многофакторную идентификацию Azure, самостоятельный сброс пароля Azure AD (SSPR), для повышения роли в диспетчере привилегированных удостоверений (PIM) или в рамках регистрации устройств Intune.
+Пользовательские элементы управления нельзя использовать с автоматизацией защиты идентификации, требующей многофакторной идентификации Azure, самостоятельного сброса пароля (SSPR) Azure AD, удовлетворяющей требованиям многофакторной проверки подлинности, для повышения роли в диспетчере привилегированных удостоверений (PIM) в рамках регистрации устройств Intune, а также при присоединении устройств к Azure AD.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

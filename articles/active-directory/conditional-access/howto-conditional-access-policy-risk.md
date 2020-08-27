@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: calebb, rogoya
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: ce687ae1f47b20bb5fff3827e7bcbd5d7edf2d83
-ms.sourcegitcommit: 0100d26b1cac3e55016724c30d59408ee052a9ab
+ms.openlocfilehash: 2564e3f246d23028d6c73832a25f37110e7670c8
+ms.sourcegitcommit: e69bb334ea7e81d49530ebd6c2d3a3a8fa9775c9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "86024367"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88948102"
 ---
 # <a name="conditional-access-sign-in-risk-based-conditional-access"></a>Условный доступ: условный доступ на основе риска входа
 
@@ -64,10 +64,10 @@ ms.locfileid: "86024367"
 
 [Распространенные политики условного доступа](concept-conditional-access-policy-common.md)
 
-[Условный доступ на основе рисков пользователя](howto-conditional-access-policy-risk-user.md)
+[Условный доступ на основе рисков пользователей](howto-conditional-access-policy-risk-user.md)
 
 [Определение влияния условного доступа в режиме "только отчет"](howto-conditional-access-report-only.md)
 
 [Моделирование поведения входа с помощью средства What If условного доступа](troubleshoot-conditional-access-what-if.md)
 
-[Что такое Защита идентификации Azure Active Directory?](../identity-protection/overview.md)
+[Что такое Защита идентификации Azure Active Directory?](../identity-protection/overview-identity-protection.md)

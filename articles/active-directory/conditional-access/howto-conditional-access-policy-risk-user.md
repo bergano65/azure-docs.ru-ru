@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: calebb, rogoya
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 916ff4a5e6afd68106d70f386436723c24574df1
-ms.sourcegitcommit: d661149f8db075800242bef070ea30f82448981e
+ms.openlocfilehash: c890c8e9af7310338e8470c4d56b46d1e259c168
+ms.sourcegitcommit: e69bb334ea7e81d49530ebd6c2d3a3a8fa9775c9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/19/2020
-ms.locfileid: "88605586"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88948069"
 ---
 # <a name="conditional-access-user-risk-based-conditional-access"></a>Условный доступ: условный доступ на основе рисков для пользователей
 
@@ -29,7 +29,7 @@ ms.locfileid: "88605586"
 1. Войдите на **портал Azure** с учетными данными глобального администратора, администратора безопасности или администратора условного доступа.
 1. Выберите **Azure Active Directory** > **Безопасность** > **Условный доступ**.
 1. Выберите **Новая политика**.
-1. Присвойте политике имя. Мы рекомендуем организациям присваивать политикам понятные имена. Для получения дополнительных сведений [Задайте стандарты именования для политик](https://docs.microsoft.com/azure/active-directory/conditional-access/plan-conditional-access#set-naming-standards-for-your-policies).
+1. Присвойте политике имя. Мы рекомендуем организациям присваивать политикам понятные имена. Для получения дополнительных сведений [Задайте стандарты именования для политик](./plan-conditional-access.md#set-naming-standards-for-your-policies).
 1. В разделе **Назначения** выберите **Пользователи и группы**.
    1. В разделе **Включить** выберите **Все пользователи**.
    1. В разделе **Исключить** выберите **Пользователи и группы**, а затем выберите учетные записи для аварийного доступа или для обхода стандартной системы контроля доступа в вашей организации. 
@@ -66,4 +66,4 @@ ms.locfileid: "88605586"
 
 [Моделирование поведения входа с помощью средства What If условного доступа](troubleshoot-conditional-access-what-if.md)
 
-[Что такое Защита идентификации Azure Active Directory?](../identity-protection/overview.md)
+[Что такое Защита идентификации Azure Active Directory?](../identity-protection/overview-identity-protection.md)

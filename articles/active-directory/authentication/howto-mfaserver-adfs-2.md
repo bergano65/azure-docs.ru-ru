@@ -11,12 +11,12 @@ author: iainfoulds
 manager: daveba
 ms.reviewer: michmcla
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 070f9336c3e0ff00f35c4a17460c5c0a60a54031
-ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
+ms.openlocfilehash: d5bcb63a325ca6bbf464faf9c5f9934879ccf9a3
+ms.sourcegitcommit: e69bb334ea7e81d49530ebd6c2d3a3a8fa9775c9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88919698"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88949666"
 ---
 # <a name="configure-azure-multi-factor-authentication-server-to-work-with-ad-fs-20"></a>Настройка сервера Многофакторной идентификации Azure для работы с AD FS 2.0
 
@@ -28,6 +28,8 @@ ms.locfileid: "88919698"
 > По состоянию на 2019 1 июля корпорация Майкрософт больше не предлагает сервер MFA для новых развертываний. Новые клиенты, которым требуется требовать многофакторную проверку подлинности (MFA) во время входа в систему, должны использовать службу многофакторной идентификации Azure на основе облака.
 >
 > Чтобы приступить к работе с MFA в облаке, см. раздел [учебник. Защита событий входа пользователя с помощью многофакторной идентификации Azure](tutorial-enable-azure-mfa.md).
+>
+> Если вы используете службу MFA на основе облака, см. статью [Защита облачных ресурсов с помощью многофакторной идентификации Azure и AD FS](howto-mfa-adfs.md).
 >
 > Существующие клиенты, которые активировали сервер MFA до 1 июля 2019, могут скачать последнюю версию, будущие обновления и создать учетные данные активации обычным образом.
 

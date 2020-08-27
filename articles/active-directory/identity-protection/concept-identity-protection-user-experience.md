@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: sahandle
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: cc10fb4f9894a355c9eed024ae9f87747214999b
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 7d3315a8d6bca9406461d0082ed85bbefc9459f4
+ms.sourcegitcommit: e69bb334ea7e81d49530ebd6c2d3a3a8fa9775c9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "72887004"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88950210"
 ---
 # <a name="user-experiences-with-azure-ad-identity-protection"></a>Взаимодействие с пользователем с защита идентификации Azure AD
 
@@ -29,7 +29,7 @@ ms.locfileid: "72887004"
 
 ## <a name="multi-factor-authentication-registration"></a>Регистрация с многофакторной проверкой подлинности
 
-При включении политики защиты идентификации, которая требует регистрации многофакторной проверки подлинности и нацеленности на всех пользователей, будет обеспечена возможность использования Azure MFA для самостоятельного устранения неполадок в будущем. Настройка этой политики дает пользователям 14-дневный период времени, в течение которого они могут зарегистрироваться и завершить регистрацию. Опыт работы с пользователями описан ниже. Дополнительные сведения см. в документации для конечных пользователей в статье [Обзор двухфакторной проверки и рабочей или учебной учетной записи](../user-help/user-help-two-step-verification-overview.md).
+При включении политики защиты идентификации, которая требует регистрации многофакторной проверки подлинности и нацеленности на всех пользователей, будет обеспечена возможность использования Azure MFA для самостоятельного устранения неполадок в будущем. Настройка этой политики дает пользователям 14-дневный период времени, в течение которого они могут зарегистрироваться и завершить регистрацию. Опыт работы с пользователями описан ниже. Дополнительные сведения см. в документации для конечных пользователей в статье [Обзор двухфакторной проверки и рабочей или учебной учетной записи](../user-help/multi-factor-authentication-end-user-first-time.md).
 
 ### <a name="registration-interrupt"></a>Прерывание регистрации
 
@@ -80,8 +80,8 @@ ms.locfileid: "72887004"
 
 ИТ-специалисты могут следовать инструкциям в разделе [разблокирование пользователей](howto-identity-protection-remediate-unblock.md#unblocking-based-on-user-risk) , чтобы пользователи могли снова войти в систему.
 
-## <a name="see-also"></a>См. также раздел
+## <a name="see-also"></a>См. также
 
 - [Устранение рисков и разблокирование пользователей](howto-identity-protection-remediate-unblock.md)
 
-- [Защита идентификации Azure Active Directory](../active-directory-identityprotection.md) 
+- [Защита идентификации Azure Active Directory](./overview-identity-protection.md)

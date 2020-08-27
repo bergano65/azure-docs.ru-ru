@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: calebb
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 907ad8705742e4b2e38b13c3c675ebd333bd27d2
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 36ab632010ec2bbbc19ac71cbeccab2ff6b3565f
+ms.sourcegitcommit: e69bb334ea7e81d49530ebd6c2d3a3a8fa9775c9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "80295325"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88948391"
 ---
 # <a name="building-a-conditional-access-policy"></a>Создание политики условного доступа
 
@@ -44,7 +44,7 @@ ms.locfileid: "80295325"
 
 #### <a name="sign-in-risk"></a>Риск при входе
 
-Для организаций с [Защита идентификации Azure AD](../identity-protection/overview.md), созданные определения рисков могут влиять на политики условного доступа.
+Для организаций с [Защита идентификации Azure AD](../identity-protection/overview-identity-protection.md), созданные определения рисков могут влиять на политики условного доступа.
 
 #### <a name="device-platforms"></a>Платформы устройств
 
@@ -115,7 +115,7 @@ ms.locfileid: "80295325"
 Для принудительного применения политика условного доступа должна содержать как минимум следующее:
 
 - **Имя** политики.
-- **Задания**
+- **Назначения**
    - **Пользователи и (или) группы** , к которым применяется политика.
    - **Облачные приложения или действия** , к которым применяется политика.
 - **Элементы управления доступом**
@@ -125,7 +125,7 @@ ms.locfileid: "80295325"
 
 В статье [Общие политики условного доступа](concept-conditional-access-policy-common.md) входят некоторые политики, которые мы будем использовать для большинства организаций.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 [Моделирование поведения входа с помощью средства What If условного доступа](troubleshoot-conditional-access-what-if.md)
 

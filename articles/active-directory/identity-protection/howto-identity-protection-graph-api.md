@@ -11,16 +11,16 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: sahandle
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 81c3715995d0d53cd72acf7277f46a279fa4cfb2
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 86d88f841f76b367e83f0ae6b81e604e1b7f3e4b
+ms.sourcegitcommit: e69bb334ea7e81d49530ebd6c2d3a3a8fa9775c9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87019664"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88950125"
 ---
 # <a name="get-started-with-azure-active-directory-identity-protection-and-microsoft-graph"></a>Начало работы с защитой идентификации Azure Active Directory и Microsoft Graph
 
-Microsoft Graph — это конечная точка Unified API (Майкрософт) и источник интерфейсов API [защиты идентификации Azure Active Directory](../active-directory-identityprotection.md). Существует три интерфейса API, которые предоставляют сведения о рискованных пользователях и входах. Первый интерфейс API, **рискдетектион**, позволяет запрашивать Microsoft Graph для получения списка обнаруженных рисков, связанных с входом пользователя и входа, и связанных сведений об обнаружении. Второй API, **riskyUsers**, позволяет запрашивать у Microsoft Graph информацию о пользователях, которых служба "Защита идентификации" определила как выполняющих рискованные действия. Третий API, **signIn**, позволяет запрашивать у Microsoft Graph информацию о входах в Azure AD со специфическими свойствами, связанными с состоянием, подробностями и уровнем риска. 
+Microsoft Graph — это конечная точка Unified API (Майкрософт) и источник интерфейсов API [защиты идентификации Azure Active Directory](./overview-identity-protection.md). Существует три интерфейса API, которые предоставляют сведения о рискованных пользователях и входах. Первый интерфейс API, **рискдетектион**, позволяет запрашивать Microsoft Graph для получения списка обнаруженных рисков, связанных с входом пользователя и входа, и связанных сведений об обнаружении. Второй API, **riskyUsers**, позволяет запрашивать у Microsoft Graph информацию о пользователях, которых служба "Защита идентификации" определила как выполняющих рискованные действия. Третий API, **signIn**, позволяет запрашивать у Microsoft Graph информацию о входах в Azure AD со специфическими свойствами, связанными с состоянием, подробностями и уровнем риска. 
 
 Эта статья знакомит вас с подключением к Microsoft Graph и запросами к этим API-интерфейсам. Дополнительные сведения, полную документацию и доступ к Graph Explorer можно получить на [сайте Microsoft Graph](https://graph.microsoft.io/) или по следующим ссылкам на документацию по API-интерфейсам:
 
@@ -158,7 +158,7 @@ GET https://graph.microsoft.com/v1.0/identityProtection/riskDetections?$filter=d
 GET https://graph.microsoft.com/v1.0/identityProtection/riskyUsers?$filter=riskDetail eq 'userPassedMFADrivenByRiskBasedPolicy'
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Поздравляем, вы только что выполнили первый вызов Microsoft Graph.  
 Теперь вы можете запросить обнаружение рисков удостоверений и использовать данные, но вы увидите их по своему усмотрению.
@@ -167,8 +167,8 @@ GET https://graph.microsoft.com/v1.0/identityProtection/riskyUsers?$filter=riskD
 
 Связанные сведения:
 
-- [Защита идентификации Azure Active Directory](../active-directory-identityprotection.md)
-- [Типы обнаружений рисков, обнаруживаемые Защита идентификации Azure Active Directory](../reports-monitoring/concept-risk-events.md)
+- [Защита идентификации Azure Active Directory](./overview-identity-protection.md)
+- [Типы обнаружений рисков, обнаруживаемые Защита идентификации Azure Active Directory](./overview-identity-protection.md)
 - [Microsoft Graph](https://developer.microsoft.com/graph/)
 - [Overview of Microsoft Graph (Обзор Microsoft Graph)](https://developer.microsoft.com/graph/docs)
-- [Azure AD Identity Protection Service Root (Корень службы защиты идентификации Azure AD)](https://docs.microsoft.com/graph/api/resources/identityprotectionroot?view=graph-rest-1.0)
+- [Azure AD Identity Protection Service Root (Корень службы защиты идентификации Azure AD)](/graph/api/resources/identityprotectionroot?view=graph-rest-1.0)

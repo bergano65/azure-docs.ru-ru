@@ -9,12 +9,12 @@ ms.devlang: rest-api
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 07/11/2020
-ms.openlocfilehash: a57232853284dad6f363797c009b1c38738d5b37
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.openlocfilehash: 26be48e7968345863799191539bd668ea6d9a4a2
+ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86519785"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88929573"
 ---
 # <a name="how-to-index-tables-from-azure-table-storage-with-azure-cognitive-search"></a>Как индексировать таблицы из хранилища таблиц Azure с помощью Azure Когнитивный поиск
 
@@ -25,8 +25,8 @@ ms.locfileid: "86519785"
 Вы можете настроить индексатор хранилища таблиц Azure с помощью следующих ресурсов:
 
 * [Портал Azure](https://ms.portal.azure.com)
-* [REST API](https://docs.microsoft.com/rest/api/searchservice/Indexer-operations) когнитивный Поиск Azure
-* [Пакет SDK](https://docs.microsoft.com/dotnet/api/overview/azure/search) Azure когнитивный Поиск для .NET
+* [REST API](/rest/api/searchservice/Indexer-operations) когнитивный Поиск Azure
+* [Пакет SDK](/dotnet/api/overview/azure/search) Azure когнитивный Поиск для .NET
 
 Здесь демонстрируется процесс работы с использованием REST API. 
 
@@ -62,7 +62,7 @@ ms.locfileid: "86519785"
     }   
 ```
 
-Дополнительные сведения об API создания источника данных см. в статье [Создание источника данных](https://docs.microsoft.com/rest/api/searchservice/create-data-source).
+Дополнительные сведения об API создания источника данных см. в статье [Создание источника данных](/rest/api/searchservice/create-data-source).
 
 <a name="Credentials"></a>
 #### <a name="ways-to-specify-credentials"></a>Способы для указания учетных данных ####
@@ -73,7 +73,7 @@ ms.locfileid: "86519785"
 - **Строка подключения для подписанного URL-имени учетной записи хранения**. `TableEndpoint=https://<your account>.table.core.windows.net/;SharedAccessSignature=?sv=2016-05-31&sig=<the signature>&spr=https&se=<the validity end time>&srt=co&ss=t&sp=rl` подписанный URL-доступ должен иметь разрешения на список и чтение для контейнеров (в данном случае таблиц) и объектов (строк таблицы).
 -  **Подписанный URL-доступ к таблице**. `ContainerSharedAccessUri=https://<your storage account>.table.core.windows.net/<table name>?tn=<table name>&sv=2016-05-31&sig=<the signature>&se=<the validity end time>&sp=r` подпись общего доступа должна иметь разрешения на запрос (чтение) для таблицы.
 
-Дополнительные сведения о подписанных URL-адресах хранения см. в разделе [Использование подписанных URL-адресов](../storage/common/storage-dotnet-shared-access-signature-part-1.md).
+Дополнительные сведения о подписанных URL-адресах хранения см. в разделе [Использование подписанных URL-адресов](../storage/common/storage-sas-overview.md).
 
 > [!NOTE]
 > Если используются учетные данные на основе подписанного URL-адреса, нужно периодически обновлять учетные данные источника данных с помощью продленных подписей, чтобы не истек их срок действия. Если срок действия учетных данных на основе подписанного URL-адреса истек, индексатор выдает сообщение об ошибке "Credentials provided in the connection string are invalid or have expired" (Учетные данные, указанные в строке подключения, недействительны или устарели).  
@@ -97,7 +97,7 @@ ms.locfileid: "86519785"
     }
 ```
 
-Дополнительные сведения о создании индексов см. в статье [Создание индекса](https://docs.microsoft.com/rest/api/searchservice/create-index).
+Дополнительные сведения о создании индексов см. в статье [Создание индекса](/rest/api/searchservice/create-index).
 
 ### <a name="step-3-create-an-indexer"></a>Шаг 3. Создание индексатора
 Индексатор соединяет источник данных с целевым индексом поиска и предоставляет расписание для автоматизации обновления данных. 
@@ -119,7 +119,7 @@ ms.locfileid: "86519785"
 
 Этот индексатор выполняется каждые два часа. (Для интервала расписания задано значение "PT2H".) Чтобы запустить индексатор каждые 30 минут, задайте для интервала значение "PT30M". Самый короткий интервал, который можно задать, составляет пять минут. Расписание является необязательным. Если оно не указано, то индексатор выполняется только один раз при его создании. Однако индексатор можно запустить по запросу в любое время.   
 
-Дополнительные сведения об API создания индексатора см. в статье [Создание индексатора](https://docs.microsoft.com/rest/api/searchservice/create-indexer).
+Дополнительные сведения об API создания индексатора см. в статье [Создание индексатора](/rest/api/searchservice/create-indexer).
 
 Дополнительные сведения об определении расписаний индексаторов для Когнитивного поиска Azure см. [здесь](search-howto-schedule-indexers.md).
 
@@ -170,7 +170,7 @@ ms.locfileid: "86519785"
 
 - Если данные секционированы по времени (например, секции могут создаваться каждый день или каждую неделю), рекомендуется следующий метод. 
     - Используйте запрос в таком формате: `(PartitionKey ge <TimeStamp>) and (other filters)`. 
-    - Отслеживайте работу индексатора с помощью [API получения сведений о состоянии индексатора](https://docs.microsoft.com/rest/api/searchservice/get-indexer-status) и периодически обновляйте условие `<TimeStamp>` запроса, основываясь на значении последнего успешного верхнего предела. 
+    - Отслеживайте работу индексатора с помощью [API получения сведений о состоянии индексатора](/rest/api/searchservice/get-indexer-status) и периодически обновляйте условие `<TimeStamp>` запроса, основываясь на значении последнего успешного верхнего предела. 
     - В этом методе, если необходимо запустить полное повторное индексирование, следует сбросить запрос источника данных помимо сброса собственно индексатора. 
 
 

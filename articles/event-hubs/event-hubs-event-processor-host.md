@@ -3,22 +3,20 @@ title: Получение событий от Центров событий Azur
 description: В этой статье описывается узел обработчика событий в Центрах событий Azure, который упрощает управление параллельными контрольными точками, арендой и чтением событий.
 ms.topic: conceptual
 ms.date: 06/23/2020
-ms.openlocfilehash: 41778425a0ec6ba1732c8e604dead2deb7c97f12
-ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
+ms.openlocfilehash: 7c6d08c385174597ce80e3ddfd6204db6b0b14a5
+ms.sourcegitcommit: e69bb334ea7e81d49530ebd6c2d3a3a8fa9775c9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88936186"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88949088"
 ---
 # <a name="event-processor-host"></a>Узел обработчика событий
 > [!NOTE]
-> Эта статья относится к старой версии пакета SDK для концентраторов событий Azure. Сведения о переносе кода в более новую версию пакета SDK см. в этих руководствах по миграции. 
+> Эта статья относится к старой версии пакета SDK для концентраторов событий Azure. Сведения о текущей версии пакета SDK см. в разделе [Балансировка нагрузки секций между несколькими экземплярами приложения](event-processor-balance-partition-load.md). Сведения о переносе кода в более новую версию пакета SDK см. в этих руководствах по миграции. 
 > - [.NET](https://github.com/Azure/azure-sdk-for-net/blob/master/sdk/eventhub/Azure.Messaging.EventHubs/MigrationGuide.md)
 > - [Java](https://github.com/Azure/azure-sdk-for-java/blob/master/sdk/eventhubs/azure-messaging-eventhubs/migration-guide.md)
 > - [Python](https://github.com/Azure/azure-sdk-for-python/blob/master/sdk/eventhub/azure-eventhub/migration_guide.md)
 > - [Сценарий Java](https://github.com/Azure/azure-sdk-for-js/blob/master/sdk/eventhub/event-hubs/migrationguide.md)
->
-> См. также [раздел балансировка нагрузки секций между несколькими экземплярами приложения](event-processor-balance-partition-load.md).
 
 Центры событий Azure — это эффективная служба обработки данных телеметрии, которая может использоваться для потоковой передачи миллионов событий без лишних затрат. В этой статье описывается, как использовать получаемые события с помощью *Узла обработчика событий* (EPH). Этот интеллектуальный потребительский агент упрощает управление контрольными точками, сданными ресурсами и параллельными модулями чтения.  
 
@@ -187,7 +185,7 @@ public class SimpleEventProcessor : IEventProcessor
 > Мы рекомендуем использовать разные группы потребителей для приложений, использующих эпохи, и для тех, которые не используют эпохи во избежание ошибок. 
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Теперь, когда вы знакомы с узлом обработчика событий, см. следующие статьи, чтобы узнать больше о Центрах событий:
 

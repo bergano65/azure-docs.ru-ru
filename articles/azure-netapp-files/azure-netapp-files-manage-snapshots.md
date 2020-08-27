@@ -12,14 +12,14 @@ ms.workload: storage
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: how-to
-ms.date: 07/24/2020
+ms.date: 08/26/2020
 ms.author: b-juche
-ms.openlocfilehash: 85990aee5143c9ccc0362a00597a748763977204
-ms.sourcegitcommit: 2ffa5bae1545c660d6f3b62f31c4efa69c1e957f
+ms.openlocfilehash: d70558efb1ea54f069981062e5379d995dbeddd2
+ms.sourcegitcommit: e69bb334ea7e81d49530ebd6c2d3a3a8fa9775c9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/11/2020
-ms.locfileid: "88080221"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88950346"
 ---
 # <a name="manage-snapshots-by-using-azure-netapp-files"></a>Управление моментальными снимками с помощью Azure NetApp Files
 
@@ -65,6 +65,7 @@ Azure NetApp Files поддерживает создание моменталь�
     ```azurepowershell-interactive
     Get-AzProviderFeature -ProviderNamespace Microsoft.NetApp -FeatureName ANFSnapshotPolicy
     ```
+Вы также можете использовать Azure CLI команды [`az feature register`](https://docs.microsoft.com/cli/azure/feature?view=azure-cli-latest#az-feature-register) , [`az feature show`](https://docs.microsoft.com/cli/azure/feature?view=azure-cli-latest#az-feature-show) чтобы зарегистрировать эту функцию и отобразить состояние регистрации. 
 
 ### <a name="create-a-snapshot-policy"></a>Создание политики моментальных снимков 
 
@@ -150,7 +151,7 @@ Azure NetApp Files поддерживает создание моменталь�
     ![Восстановление моментального снимка в новый том](../media/azure-netapp-files/azure-netapp-files-snapshot-restore-to-new-volume.png)
 
 3. В окне Создание тома введите сведения для нового тома:  
-    * **Безымян**   
+    * **Название**   
         Укажите имя создаваемого тома.  
         
         Имя должно быть уникальным в пределах группы ресурсов. Длина имени должна быть не менее трех знаков.  Имя может состоять из любых алфавитно-цифровых символов.

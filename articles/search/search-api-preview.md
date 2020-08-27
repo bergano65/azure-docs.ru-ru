@@ -8,12 +8,12 @@ ms.author: heidist
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 07/09/2020
-ms.openlocfilehash: efcc4aebf16fccc70af7c77f0e8481d24f13b9cd
-ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
+ms.openlocfilehash: 0e83f63e3c39f2aa20cd46f098185aba523e2478
+ms.sourcegitcommit: e69bb334ea7e81d49530ebd6c2d3a3a8fa9775c9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88935268"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88950482"
 ---
 # <a name="preview-features-in-azure-cognitive-search"></a>Предварительные версии функций в Azure Когнитивный поиск
 
@@ -35,7 +35,7 @@ ms.locfileid: "88935268"
 |  [**Индексатор Azure Data Lake Storage 2-го поколения**](search-howto-index-azure-data-lake-storage.md) | Источник данных индексатора | Индексирование содержимого и метаданных из Data Lake Storage 2-го поколения.| [Регистрация](https://aka.ms/azure-cognitive-search/indexer-preview) необходима, чтобы можно было включить поддержку для вашей подписки на серверной части. Получите доступ к этому источнику данных с помощью инструкции [Create Data Source (остальное)](/rest/api/searchservice/create-data-source) с API-Version = 2020-06 -30-Preview или API-Version = 2019-05 -06-Preview. |
 | [**moreLikeThis**](search-more-like-this.md) | Запрос | Поиск документов, относящихся к определенному документу. Эта компонент был доступен в более ранних предварительных версиях. | Добавьте этот параметр запроса в [поисковых документах (RESTful)](/rest/api/searchservice/search-documents) при вызовах API-Version = 2020-06 -30-preview, 2019-05-06-preview, 2016-09-01-preview или 2017-11-11-Preview. |
 
-## <a name="calling-preview-rest-apis"></a>Вызов интерфейсов API для предварительной версии
+## <a name="how-to-call-a-preview-rest-api"></a>Как вызвать предварительную версию REST API
 
 Когнитивный поиск Azure всегда предварительно выпускают экспериментальные функции с помощью REST API, а затем — предварительные версии пакета SDK для .NET.
 
@@ -47,17 +47,19 @@ ms.locfileid: "88935268"
 
 + Для операций управления [**`2019-10-01-Preview`**](/rest/api/searchmanagement/index-2019-10-01-preview) — это текущая Предварительная версия.
 
-Более старые предварительные версии по-прежнему работают, но со временем устаревают. Если код вызывает `api-version=2019-05-06-Preview` или `api-version=2016-09-01-Preview` или `api-version=2017-11-11-Preview` , эти вызовы по-прежнему являются действительными. Однако только в последнюю версию предварительного просмотра будут добавлены усовершенствования. 
+Более старые предварительные версии по-прежнему работают, но со временем устаревают. Если код вызывает `api-version=2019-05-06-Preview` или `api-version=2016-09-01-Preview` или `api-version=2017-11-11-Preview` , эти вызовы по-прежнему являются действительными. Однако только в последнюю версию предварительного просмотра будут добавлены усовершенствования.
 
 Следующий пример синтаксиса демонстрирует вызов предварительной версии API.
 
 ```HTTP
-GET https://[service name].search.windows.net/indexes/[index name]/docs?search=*&api-version=2020-06-30-Preview
+POST https://[service name].search.windows.net/indexes/hotels-idx/docs/search?api-version=2020-06-30-Preview  
+  Content-Type: application/json  
+  api-key: [admin key]
 ```
 
 Служба Когнитивный поиск Azure доступна в нескольких версиях. Дополнительные сведения см. в разделе [Версии API](search-api-versions.md).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Ознакомьтесь с справочной документацией по API поиска по поиску в ОСТАВШЕЙся версии. При возникновении проблем попросите помощь по [Stack overflow](https://stackoverflow.com/) или [обратитесь в службу поддержки](https://azure.microsoft.com/support/community/?product=search).
 

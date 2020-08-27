@@ -11,12 +11,12 @@ author: BarbaraSelden
 manager: daveba
 ms.reviewer: joflore
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 83cc75c1d69ee7232edf0c21643d25027b97f088
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 8f0cb99fd7f2ce842f76cbe1df2f598f2188ca41
+ms.sourcegitcommit: e69bb334ea7e81d49530ebd6c2d3a3a8fa9775c9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85339721"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88948901"
 ---
 # <a name="plan-a-conditional-access-deployment"></a>Планирование развертывания условного доступа
 
@@ -305,7 +305,7 @@ Azure Active Directory позволяет создавать [именованн
 * [Реагирование на потенциально скомпрометированные учетные записи](#respond-to-potentially-compromised-accounts)
 * [Требование доступа с управляемых устройств](#require-managed-devices)
 * [Требовать утвержденные клиентские приложения](#require-approved-client-apps)
-* [Блокировать доступ](#block-access)
+* [Блокировка доступа](#block-access)
 
 ### <a name="require-mfa"></a>Требовать многофакторную идентификацию
 
@@ -313,7 +313,7 @@ Azure Active Directory позволяет создавать [именованн
 
 * [вход с правами администратора](howto-conditional-access-policy-admin-mfa.md);
 
-* [доступ к конкретным приложениям](app-based-mfa.md);
+* [доступ к конкретным приложениям](../authentication/tutorial-enable-azure-mfa.md);
 
 * [все пользователи](howto-conditional-access-policy-all-users-mfa.md);
 
@@ -384,18 +384,18 @@ Azure Active Directory позволяет создавать [именованн
 | - | - | - |
 | [Требовать MFA для доступа не с рабочего места](untrusted-networks.md)| Авторизованный пользователь входит в приложение, находясь в надежном расположении (на рабочем месте).| Пользователю не нужно выполнять MFA. |
 | [Требовать MFA для доступа не с рабочего места](untrusted-networks.md)| Авторизованный пользователь входит в приложение, находясь в ненадежном расположении (не на рабочем месте).| Пользователю предлагается выполнить MFA и он может успешно войти |
-| [Требовать MFA для администраторов](howto-baseline-protect-administrators.md)| Глобальный администратор входит в приложение.| Администратору предлагается выполнить MFA |
-| [Вход, представляющий риск](https://docs.microsoft.com/azure/active-directory/identity-protection/howto-sign-in-risk-policy)| Пользователь входит в приложение с помощью неутвержденного браузера| Администратору предлагается выполнить MFA |
+| [Требовать MFA для администраторов](../fundamentals/concept-fundamentals-security-defaults.md)| Глобальный администратор входит в приложение.| Администратору предлагается выполнить MFA |
+| [Вход, представляющий риск](../identity-protection/howto-identity-protection-configure-risk-policies.md)| Пользователь входит в приложение с помощью неутвержденного браузера| Администратору предлагается выполнить MFA |
 | [Управление устройствами](require-managed-devices.md)| Авторизованный пользователь пытается войти с авторизованного устройства| Предоставляется доступ |
 | [Управление устройствами](require-managed-devices.md)| Авторизованный пользователь пытается войти с неавторизованного устройства| Доступ блокируется |
-| [Изменение пароля для пользователей с высоким уровнем риска](https://docs.microsoft.com/azure/active-directory/identity-protection/howto-user-risk-policy)| Авторизованный пользователь пытается войти с использованием скомпрометированных учетных данных (высокий риск входа)| В соответствии с политикой пользователю предлагается изменить пароль, иначе доступ блокируется |
+| [Изменение пароля для пользователей с высоким уровнем риска](../identity-protection/howto-identity-protection-configure-risk-policies.md)| Авторизованный пользователь пытается войти с использованием скомпрометированных учетных данных (высокий риск входа)| В соответствии с политикой пользователю предлагается изменить пароль, иначе доступ блокируется |
 
 
 ### <a name="configure-the-test-policy"></a>Настройка тестовой политики
 
 На [портале Azure](https://portal.azure.com/) можно настроить политики условного доступа, выбрав "Azure Active Directory" > "Безопасность" > "Условный доступ".
 
-Если вы хотите узнать больше о создании политик условного доступа, ознакомьтесь со следующим примером: [Политика условного доступа для запроса MFA при входе пользователя на портал Azure](https://docs.microsoft.com/azure/active-directory/authentication/tutorial-enable-azure-mfa?toc=/azure/active-directory/conditional-access/toc.json&bc=/azure/active-directory/conditional-access/breadcrumb/toc.json). Это краткое руководство поможет вам:
+Если вы хотите узнать больше о создании политик условного доступа, ознакомьтесь со следующим примером: [Политика условного доступа для запроса MFA при входе пользователя на портал Azure](../authentication/tutorial-enable-azure-mfa.md?bc=%2fazure%2factive-directory%2fconditional-access%2fbreadcrumb%2ftoc.json&toc=%2fazure%2factive-directory%2fconditional-access%2ftoc.json). Это краткое руководство поможет вам:
 
 * ознакомиться с пользовательским интерфейсом;
 
@@ -442,7 +442,7 @@ Azure Active Directory позволяет создавать [именованн
 > [!NOTE]
 >  Этот вариант следует применять ограниченно и только к тем пользователям, которым вы доверяете. Пользователь или группа должны быть добавлены обратно в политику, как только это станет возможным.
 
-* **Удалите политику.** Если политика больше не требуется, [удалите](https://docs.microsoft.com/azure/active-directory/authentication/tutorial-enable-azure-mfa?toc=/azure/active-directory/conditional-access/toc.json&bc=/azure/active-directory/conditional-access/breadcrumb/toc.json) ее.
+* **Удалите политику.** Если политика больше не требуется, [удалите](../authentication/tutorial-enable-azure-mfa.md?bc=%2fazure%2factive-directory%2fconditional-access%2fbreadcrumb%2ftoc.json&toc=%2fazure%2factive-directory%2fconditional-access%2ftoc.json) ее.
 
 ## <a name="manage-access-to-cloud-apps"></a>Управление доступом к облачным приложениям
 
@@ -501,4 +501,4 @@ Azure Active Directory позволяет создавать [именованн
 
 [Узнайте больше о поставщиках удостоверений](../identity-protection/overview-identity-protection.md).
 
-[Управление политиками условного доступа с помощью API Microsoft Graph](https://docs.microsoft.com/graph/api/resources/conditionalaccesspolicy?view=graph-rest-beta.md)
+[Управление политиками условного доступа с помощью API Microsoft Graph](/graph/api/resources/conditionalaccesspolicy?view=graph-rest-beta.md)

@@ -7,12 +7,12 @@ ms.date: 07/16/2020
 ms.topic: conceptual
 ms.service: iot-pnp
 services: iot-pnp
-ms.openlocfilehash: 9e6d13fedbfa495448164c1354868e12992dd71c
-ms.sourcegitcommit: b33c9ad17598d7e4d66fe11d511daa78b4b8b330
+ms.openlocfilehash: f1860f9645a50789803d509a6a1ea98bc0ea1a9e
+ms.sourcegitcommit: e69bb334ea7e81d49530ebd6c2d3a3a8fa9775c9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88856041"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88950142"
 ---
 # <a name="iot-plug-and-play-preview-developer-guide"></a>Предварительная версия для разработчиков IoT Plug and Play
 
@@ -57,7 +57,7 @@ DeviceClient.CreateFromConnectionString(
 
 ## <a name="dps-payload"></a>Полезные данные DP
 
-Устройства, использующие [службу подготовки устройств (DPS)](/iot-dps/) , могут включать в себя `modelId` для использования в процессе подготовки с помощью следующих полезных данных JSON.
+Устройства, использующие [службу подготовки устройств (DPS)](../iot-dps/about-iot-dps.md) , могут включать в себя `modelId` для использования в процессе подготовки с помощью следующих полезных данных JSON.
 
 ```json
 {
@@ -423,7 +423,7 @@ POST /digitalTwins/t-123/components/Thermostat/commands/restart
 /digitalTwins/{device-id}/components/{component-name}/commands/{command-name}
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Теперь, когда вы узнали о моделировании устройств, ниже приведены некоторые дополнительные ресурсы.
 

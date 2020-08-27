@@ -4,14 +4,14 @@ description: Список типов ресурсов Azure, которые мо
 author: rayne-wiselman
 ms.service: azure-resource-manager
 ms.topic: reference
-ms.date: 07/21/2020
+ms.date: 08/25/2020
 ms.author: raynew
-ms.openlocfilehash: 70f981f2763dd36f0f417faec6c81e168e9856e7
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 8c18a4d2fa6e5bdb211b77d4d7bb28af7e5b1c1a
+ms.sourcegitcommit: e69bb334ea7e81d49530ebd6c2d3a3a8fa9775c9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87040966"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88948119"
 ---
 # <a name="support-for-moving-azure-resources-across-regions"></a>Поддержка перемещения ресурсов Azure в разных регионах
 
@@ -121,6 +121,7 @@ ms.locfileid: "87040966"
 > - [Microsoft.RecoveryServices](#microsoftrecoveryservices)
 > - [Microsoft.Relay](#microsoftrelay)
 > - [Microsoft.ResourceGraph](#microsoftresourcegraph)
+> - [Microsoft.Resources](#microsoftresources)
 > - [Microsoft.SaaS](#microsoftsaas)
 > - [Microsoft.Scheduler](#microsoftscheduler)
 > - [Microsoft.Search](#microsoftsearch)
@@ -157,22 +158,22 @@ ms.locfileid: "87040966"
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Перемещение региона | 
 > | ------------- | ----------- | 
-> | domainservices | Нет | 
-> | DomainServices/репликасетс | Нет | 
+> | domainservices | нет | 
+> | DomainServices/репликасетс | нет | 
 
 ## <a name="microsoftaadiam"></a>microsoft.aadiam
 
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Перемещение региона | 
 > | ------------- | ----------- |
-> | tenants | Нет |
+> | tenants | нет |
 
 ## <a name="microsoftalertsmanagement"></a>Microsoft.AlertsManagement
 
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Перемещение региона | 
 > | ------------- | ----------- |
-> | actionrules | Нет | 
+> | actionrules | нет | 
 
 ## <a name="microsoftanalysisservices"></a>Microsoft.AnalysisServices
 
@@ -201,8 +202,8 @@ ms.locfileid: "87040966"
 > | Тип ресурса | Перемещение региона | 
 > | ------------- | ----------- |
 > | apiapps | Да (с использованием шаблона)<br/><br/> [Перемещение приложения службы приложений в другой регион](../../app-service/manage-move-across-regions.md) | 
-> | appidentities | Нет | 
-> | gateways | Нет | 
+> | appidentities | нет | 
+> | gateways | нет | 
 
 
 ## <a name="microsoftauthorization"></a>Microsoft.Authorization
@@ -218,8 +219,8 @@ ms.locfileid: "87040966"
 > | Тип ресурса | Перемещение региона | 
 > | ------------- | ----------- |
 > | automationaccounts | Да (с использованием шаблона) <br/><br/> [Использование георепликации](../../automation/automation-managing-data.md#geo-replication-in-azure-automation) |  
-> | automationaccounts / configurations | Нет | 
-> | automationaccounts / runbooks | Нет | 
+> | automationaccounts / configurations | нет | 
+> | automationaccounts / runbooks | нет | 
 
 
 
@@ -235,14 +236,14 @@ ms.locfileid: "87040966"
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Перемещение региона | 
 > | ------------- | ----------- |
-> | sqlserverregistrations | Нет |
+> | sqlserverregistrations | нет |
 
 ## <a name="microsoftazurestack"></a>Microsoft.AzureStack
 
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Перемещение региона | 
 > | ------------- | ----------- |
-> | registrations | Нет | 
+> | registrations | нет | 
 
 ## <a name="microsoftbatch"></a>Microsoft.Batch
 
@@ -256,53 +257,53 @@ ms.locfileid: "87040966"
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Перемещение региона | 
 > | ------------- | ----------- |
-> | clusters | Нет <br/><br/> Служба Azure Batch AI [прекращена](/previous-versions/azure/batch-ai/overview-what-happened-batch-ai).
-> | fileservers | Нет | 
-> | jobs | Нет | 
-> | workspaces | Нет | 
+> | clusters | нет <br/><br/> Служба Azure Batch AI [прекращена](/previous-versions/azure/batch-ai/overview-what-happened-batch-ai).
+> | fileservers | нет | 
+> | jobs | нет | 
+> | workspaces | нет | 
 
 ## <a name="microsoftbingmaps"></a>Microsoft.BingMaps
 
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Перемещение региона | 
 > | ------------- | ----------- |
-> | mapapis | Нет | 
+> | mapapis | нет | 
 
 ## <a name="microsoftbiztalkservices"></a>Microsoft.BizTalkServices
 
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Перемещение региона | 
 > | ------------- | ----------- |
-> | biztalk | Нет | 
+> | biztalk | нет | 
 
 ## <a name="microsoftblockchain"></a>Microsoft.Blockchain
 
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Перемещение региона | 
 > | ------------- | ----------- |
-> | blockchainmembers | Нет <br/><br/> Сеть блокчейн не может иметь узлы в разных регионах. 
-> | watchers | Нет | 
+> | blockchainmembers | нет <br/><br/> Сеть блокчейн не может иметь узлы в разных регионах. 
+> | watchers | нет | 
 
 ## <a name="microsoftblueprint"></a>Microsoft.Blueprint
 
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Перемещение региона | 
 > | ------------- | ----------- |
-> | blueprintassignments | Нет | 
+> | blueprintassignments | нет | 
 
 ## <a name="microsoftbotservice"></a>Microsoft.BotService
 
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Перемещение региона | 
 > | ------------- | ----------- |
-> | botservices | Нет | 
+> | botservices | нет | 
 
 ## <a name="microsoftcache"></a>Microsoft.Cache
 
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Перемещение региона | 
 > | ------------- | ----------- |
-> | redis | Нет | 
+> | redis | нет | 
 
 
 ## <a name="microsoftcdn"></a>Microsoft.Cdn
@@ -310,16 +311,16 @@ ms.locfileid: "87040966"
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Перемещение региона | 
 > | ------------- | ----------- |
-> | cdnwebapplicationfirewallpolicies | Нет |
+> | cdnwebapplicationfirewallpolicies | нет |
 > | профили | Нет | 
-> | profiles / endpoints | Нет | 
+> | profiles / endpoints | нет | 
 
 ## <a name="microsoftcertificateregistration"></a>Microsoft.CertificateRegistration
 
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Перемещение региона | 
 > | ------------- | ----------- |
-> | certificateorders | Нет | 
+> | certificateorders | нет | 
 
 
 ## <a name="microsoftclassiccompute"></a>Microsoft.ClassicCompute
@@ -339,7 +340,7 @@ ms.locfileid: "87040966"
 > | ------------- | ----------- |
 > | networksecuritygroups | Для классических служб не планируется никакой работы.
 > | reservedips | нет | 
-> | virtualnetworks | Нет | 
+> | virtualnetworks | нет | 
 
 ## <a name="microsoftclassicstorage"></a>Microsoft.ClassicStorage
 
@@ -354,7 +355,7 @@ ms.locfileid: "87040966"
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Перемещение региона | 
 > | ------------- | ----------- |
-> | accounts | Нет | 
+> | accounts | нет | 
 > | Когнитивный поиск | Поддерживается с ручными действиями.<br/><br/> Дополнительные сведения о [перемещении службы когнитивный Поиск Azure в другой регион](../../search/search-howto-move-across-regions.md)
 
 ## <a name="microsoftcompute"></a>Microsoft.Compute;
@@ -362,48 +363,48 @@ ms.locfileid: "87040966"
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Перемещение региона | 
 > | ------------- | ----------- |
-> | availabilitysets | Нет | 
-> | diskencryptionsets | Нет | 
-> | disks | Нет | 
-> | galleries | Нет | 
-> | galleries / images | Нет | 
-> | galleries / images / versions | Нет | 
-> | hostgroups | Нет | 
-> | hostgroups / hosts | Нет | 
-> | images | Нет | 
+> | availabilitysets | нет | 
+> | diskencryptionsets | нет | 
+> | disks | нет | 
+> | galleries | нет | 
+> | galleries / images | нет | 
+> | galleries / images / versions | нет | 
+> | hostgroups | нет | 
+> | hostgroups / hosts | нет | 
+> | images | нет | 
 > | proximityplacementgroups | Нет | 
-> | restorepointcollections | Нет | 
-> | sharedvmimages | Нет | 
-> | sharedvmimages / versions | Нет | 
-> | snapshots | Нет | 
+> | restorepointcollections | нет | 
+> | sharedvmimages | нет | 
+> | sharedvmimages / versions | нет | 
+> | snapshots | нет | 
 > | virtualmachines | Да | 
-> | virtualmachines / extensions | Нет | 
-> | virtualmachinescalesets | Нет | 
+> | virtualmachines / extensions | нет | 
+> | virtualmachinescalesets | нет | 
 
 ## <a name="microsoftcontainer"></a>Microsoft.Container
 
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Перемещение региона | 
 > | ------------- | ----------- |
-> | containergroups | Нет | 
+> | containergroups | нет | 
 
 ## <a name="microsoftcontainerinstance"></a>Microsoft.ContainerInstance
 
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Перемещение региона | 
 > | ------------- | ----------- |
-> | containergroups | Нет | 
+> | containergroups | нет | 
 
 ## <a name="microsoftcontainerregistry"></a>Microsoft.ContainerRegistry
 
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Перемещение региона | 
 > | ------------- | ----------- |
-> | registries | Нет |  
-> | registries / buildtasks | Нет |  
-> | registries / replications | Нет | 
-> | registries / tasks | Нет |  
-> | registries / webhooks | Нет | 
+> | registries | нет |  
+> | registries / buildtasks | нет |  
+> | registries / replications | нет | 
+> | registries / tasks | нет |  
+> | registries / webhooks | нет | 
 
 ## <a name="microsoftcontainerservice"></a>Microsoft.ContainerService
 
@@ -411,29 +412,29 @@ ms.locfileid: "87040966"
 > | Тип ресурса | Перемещение региона | 
 > | ------------- | ----------- |
 > | containerservices | Нет.<br/><br/> Служба [прекращена](https://azure.microsoft.com/updates/azure-container-service-will-retire-on-january-31-2020/).
-> | managedclusters | Нет | 
-> | openshiftmanagedclusters | Нет | 
+> | managedclusters | нет | 
+> | openshiftmanagedclusters | нет | 
 
 ## <a name="microsoftcontentmoderator"></a>Microsoft.ContentModerator
 
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Перемещение региона | 
 > | ------------- | ----------- |
-> | веб-масштабированием; | Нет | 
+> | веб-масштабированием; | нет | 
 
 ## <a name="microsoftcortanaanalytics"></a>Microsoft.CortanaAnalytics
 
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Перемещение региона | 
 > | ------------- | ----------- |
-> | accounts | Нет | 
+> | accounts | нет | 
 
 ## <a name="microsoftcostmanagement"></a>Microsoft.CostManagement
 
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Перемещение региона | 
 > | ------------- | ----------- |
-> | соединители | Нет |  
+> | соединители | нет |  
 
 ## <a name="microsoftcustomerinsights"></a>Microsoft.CustomerInsights
 
@@ -454,89 +455,89 @@ ms.locfileid: "87040966"
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Перемещение региона | 
 > | ------------- | ----------- |
-> | jobs | Нет | 
+> | jobs | нет | 
 
 ## <a name="microsoftdataboxedge"></a>Microsoft.DataBoxEdge
 
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Перемещение региона | 
 > | ------------- | ----------- |
-> | databoxedgedevices | Нет | 
+> | databoxedgedevices | нет | 
 
 ## <a name="microsoftdatabricks"></a>Microsoft.Databricks
 
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Перемещение региона | 
 > | ------------- | ----------- |
-> | workspaces | Нет | 
+> | workspaces | нет | 
 
 ## <a name="microsoftdatacatalog"></a>Microsoft.DataCatalog
 
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Перемещение региона | 
 > | ------------- | ----------- |
-> | catalogs | Нет | 
-> | datacatalogs | Нет | 
+> | catalogs | нет | 
+> | datacatalogs | нет | 
 
 ## <a name="microsoftdataconnect"></a>Microsoft.DataConnect
 
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Перемещение региона | 
 > | ------------- | ----------- |
-> | connectionmanagers | Нет | 
+> | connectionmanagers | нет | 
 
 ## <a name="microsoftdataexchange"></a>Microsoft.DataExchange
 
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Перемещение региона | 
 > | ------------- | ----------- |
-> | Пакеты | Нет | 
-> | Планы | Нет | 
+> | Пакеты | нет | 
+> | Планы | нет | 
 
 ## <a name="microsoftdatafactory"></a>Microsoft.DataFactory
 
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Перемещение региона | 
 > | ------------- | ----------- |
-> | datafactories | Нет | 
-> | factories | Нет |  
+> | datafactories | нет | 
+> | factories | нет |  
 
 ## <a name="microsoftdatalake"></a>Microsoft.DataLake
 
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Перемещение региона | 
 > | ------------- | ----------- |
-> | datalakeaccounts | Нет | 
+> | datalakeaccounts | нет | 
 
 ## <a name="microsoftdatalakeanalytics"></a>Microsoft.DataLakeAnalytics
 
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Перемещение региона | 
 > | ------------- | ----------- |
-> | accounts | Нет | 
+> | accounts | нет | 
 
 ## <a name="microsoftdatalakestore"></a>Microsoft.DataLakeStore
 
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Перемещение региона | 
 > | ------------- | ----------- |
-> | accounts | Нет | 
+> | accounts | нет | 
 
 ## <a name="microsoftdatamigration"></a>Microsoft.DataMigration
 
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Перемещение региона | 
 > | ------------- | ----------- |
-> | services; | Нет | 
-> | services / projects | Нет | 
-> | slots | Нет | 
+> | services; | нет | 
+> | services / projects | нет | 
+> | slots | нет | 
 
 ## <a name="microsoftdatashare"></a>Microsoft.DataShare
 
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Перемещение региона | 
 > | ------------- | ----------- |
-> | accounts | Нет | 
+> | accounts | нет | 
 
 ## <a name="microsoftdbformariadb"></a>Microsoft.DBforMariaDB
 
@@ -557,7 +558,7 @@ ms.locfileid: "87040966"
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Перемещение региона | 
 > | ------------- | ----------- |
-> | servergroups | Нет | 
+> | servergroups | нет | 
 > | servers | Для перемещения существующего сервера можно использовать реплику чтения между регионами. Дополнительные [сведения](../../postgresql/howto-move-regions-portal.md).
 > | serversv2 | Нет | 
 
@@ -596,48 +597,48 @@ ms.locfileid: "87040966"
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Перемещение региона | 
 > | ------------- | ----------- |
-> | labcenters | Нет | 
-> | labs | Нет | 
+> | labcenters | нет | 
+> | labs | нет | 
 > | labs / environments | Нет |  
 > | labs / servicerunners | Нет | 
-> | labs / virtualmachines | Нет |  
-> | schedules | Нет |  
+> | labs / virtualmachines | нет |  
+> | schedules | нет |  
 
 ## <a name="microsoftdocumentdb"></a>Microsoft.DocumentDB
 
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Перемещение региона | 
 > | ------------- | ----------- |
-> | databaseaccounts | Нет | 
+> | databaseaccounts | нет | 
 
 ## <a name="microsoftdomainregistration"></a>Microsoft.DomainRegistration
 
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Перемещение региона | 
 > | ------------- | ----------- |
-> | domains | Нет | 
+> | domains | нет | 
 
 ## <a name="microsoftenterpriseknowledgegraph"></a>Microsoft.EnterpriseKnowledgeGraph
 
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Перемещение региона | 
 > | ------------- | ----------- |
-> | services; | Нет |  
+> | services; | нет |  
 
 ## <a name="microsofteventgrid"></a>Microsoft.EventGrid
 
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Перемещение региона | 
 > | ------------- | ----------- |
-> | domains | Нет |  
-> | topics | Нет | 
+> | domains | нет |  
+> | topics | нет | 
 
 ## <a name="microsofteventhub"></a>Microsoft.EventHub
 
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Перемещение региона | 
 > | ------------- | ----------- |
-> | clusters | Нет |  
+> | clusters | нет |  
 > | пространства имен | Да (с шаблоном)<br/><br/> [Перемещение пространства имен концентратора событий в другой регион](../../event-hubs/move-across-regions.md) | 
 
 ## <a name="microsoftgenomics"></a>Microsoft.Genomics
@@ -645,7 +646,7 @@ ms.locfileid: "87040966"
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Перемещение региона | 
 > | ------------- | ----------- |
-> | accounts | Нет | 
+> | accounts | нет | 
 
 ## <a name="microsofthanaonazure"></a>Microsoft.HanaOnAzure
 
@@ -653,14 +654,14 @@ ms.locfileid: "87040966"
 > | Тип ресурса | Перемещение региона | 
 > | ------------- | ----------- |
 > | hanainstances | нет | 
-> | sapmonitors | Нет |  
+> | sapmonitors | нет |  
 
 ## <a name="microsofthdinsight"></a>Microsoft.HDInsight
 
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Перемещение региона | 
 > | ------------- | ----------- |
-> | clusters | Нет | 
+> | clusters | нет | 
 
 ## <a name="microsofthealthcareapis"></a>Microsoft.HealthcareApis
 
@@ -674,38 +675,38 @@ ms.locfileid: "87040966"
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Перемещение региона | 
 > | ------------- | ----------- |
-> | machines | Нет | 
+> | machines | нет | 
 
 ## <a name="microsofthybriddata"></a>Microsoft.HybridData
 
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Перемещение региона | 
 > | ------------- | ----------- |
-> | datamanagers |  Нет | 
+> | datamanagers |  нет | 
 
 ## <a name="microsoftimportexport"></a>Microsoft.ImportExport
 
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Перемещение региона | 
 > | ------------- | ----------- |
-> | jobs |  Нет | 
+> | jobs |  нет | 
 
 ## <a name="microsoftinsights"></a>microsoft.insights
 
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Перемещение региона | 
 > | ------------- | ----------- |
-> | accounts | Нет | 
+> | accounts | нет | 
 > | actiongroups |  Нет | 
-> | activitylogalerts | Нет | 
+> | activitylogalerts | нет | 
 > | alertrules |  нет | 
-> | autoscalesettings |  Нет | 
-> | components |  Нет |  
-> | guestdiagnosticsettings | Нет | 
-> | metricalerts | Нет | 
-> | notificationgroups | Нет | 
-> | notificationrules | Нет | 
-> | scheduledqueryrules |  Нет | 
+> | autoscalesettings |  нет | 
+> | components |  нет |  
+> | guestdiagnosticsettings | нет | 
+> | metricalerts | нет | 
+> | notificationgroups | нет | 
+> | notificationrules | нет | 
+> | scheduledqueryrules |  нет | 
 > | webtests |  Нет | 
 > | workbooks |  Нет |  
 
@@ -730,16 +731,16 @@ ms.locfileid: "87040966"
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Перемещение региона | 
 > | ------------- | ----------- |
-> | checknameavailability |  Нет |  
-> | graph |  Нет | 
+> | checknameavailability |  нет |  
+> | graph |  нет | 
 
 ## <a name="microsoftkeyvault"></a>Microsoft.KeyVault
 
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Перемещение региона | 
 > | ------------- | ----------- |
-> | hsmpools | Нет | 
-> | vaults |  Нет | 
+> | hsmpools | нет | 
+> | vaults |  нет | 
 
 
 ## <a name="microsoftkusto"></a>Microsoft.Kusto
@@ -747,21 +748,21 @@ ms.locfileid: "87040966"
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Перемещение региона | 
 > | ------------- | ----------- |
-> | clusters |  Нет |  
+> | clusters |  нет |  
 
 ## <a name="microsoftlabservices"></a>Microsoft.LabServices
 
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Перемещение региона | 
 > | ------------- | ----------- |
-> | labaccounts | Нет | 
+> | labaccounts | нет | 
 
 ## <a name="microsoftlocationbasedservices"></a>Microsoft.LocationBasedServices
 
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Перемещение региона | 
 > | ------------- | ----------- |
-> | accounts | Нет | 
+> | accounts | нет | 
 
 ## <a name="microsoftlocationservices"></a>Microsoft.LocationServices
 
@@ -775,9 +776,9 @@ ms.locfileid: "87040966"
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Перемещение региона | 
 > | ------------- | ----------- |
-> | hostingenvironments | Нет | 
+> | hostingenvironments | нет | 
 > | integrationaccounts |  Нет |  
-> | integrationserviceenvironments | Нет | 
+> | integrationserviceenvironments | нет | 
 > | isolatedenvironments | нет | 
 > | workflows |  Нет |  
 
@@ -786,56 +787,56 @@ ms.locfileid: "87040966"
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Перемещение региона | 
 > | ------------- | ----------- |
-> | commitmentplans |  Нет | 
-> | webservices |  Нет | 
-> | workspaces |  Нет | 
+> | commitmentplans |  нет | 
+> | webservices |  нет | 
+> | workspaces |  нет | 
 
 ## <a name="microsoftmachinelearningcompute"></a>Microsoft.MachineLearningCompute
 
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Перемещение региона | 
 > | ------------- | ----------- |
-> | operationalizationclusters |  Нет | 
+> | operationalizationclusters |  нет | 
 
 ## <a name="microsoftmachinelearningexperimentation"></a>Microsoft.MachineLearningExperimentation
 
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Перемещение региона | 
 > | ------------- | ----------- |
-> | accounts | Нет | 
-> | accounts / workspaces | Нет | 
-> | accounts / workspaces / projects | Нет | 
-> | teamaccounts | Нет | 
-> | teamaccounts / workspaces | Нет | 
-> | teamaccounts / workspaces / projects | Нет | 
+> | accounts | нет | 
+> | accounts / workspaces | нет | 
+> | accounts / workspaces / projects | нет | 
+> | teamaccounts | нет | 
+> | teamaccounts / workspaces | нет | 
+> | teamaccounts / workspaces / projects | нет | 
 
 ## <a name="microsoftmachinelearningmodelmanagement"></a>Microsoft.MachineLearningModelManagement
 
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Перемещение региона | 
 > | ------------- | ----------- |
-> | accounts | Нет | 
+> | accounts | нет | 
 
 ## <a name="microsoftmachinelearningoperationalization"></a>Microsoft.MachineLearningOperationalization
 
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Перемещение региона | 
 > | ------------- | ----------- |
-> | hostingaccounts | Нет | 
+> | hostingaccounts | нет | 
 
 ## <a name="microsoftmachinelearningservices"></a>Microsoft.MachineLearningServices
 
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Перемещение региона | 
 > | ------------- | ----------- |
-> | workspaces | Нет | 
+> | workspaces | нет | 
 
 ## <a name="microsoftmanagedidentity"></a>Microsoft.ManagedIdentity
 
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Перемещение региона | 
 > | ------------- | ----------- |
-> | userassignedidentities | Нет | 
+> | userassignedidentities | нет | 
 
 ## <a name="microsoftmaps"></a>Microsoft.Maps
 
@@ -856,35 +857,35 @@ ms.locfileid: "87040966"
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Перемещение региона | 
 > | ------------- | ----------- |
-> | mediaservices |  Нет | 
-> | mediaservices / liveevents |  Нет | 
-> | mediaservices / streamingendpoints |  Нет | 
+> | mediaservices |  нет | 
+> | mediaservices / liveevents |  нет | 
+> | mediaservices / streamingendpoints |  нет | 
 
 ## <a name="microsoftmicroservices4spring"></a>Microsoft.Microservices4Spring
 
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Перемещение региона | 
 > | ------------- | ----------- |
-> | appclusters | Нет | 
+> | appclusters | нет | 
 
 ## <a name="microsoftmigrate"></a>Microsoft.Migrate
 
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Перемещение региона | 
 > | ------------- | ----------- |
-> | assessmentprojects | Нет | 
-> | migrateprojects | Нет | 
-> | projects | Нет | 
+> | assessmentprojects | нет | 
+> | migrateprojects | нет | 
+> | projects | нет | 
 
 ## <a name="microsoftnetapp"></a>Microsoft.NetApp
 
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Перемещение региона | 
 > | ------------- | ----------- |
-> | netappaccounts | Нет | 
-> | netappaccounts / capacitypools | Нет | 
-> | netappaccounts / capacitypools / volumes | Нет | 
-> | netappaccounts / capacitypools / volumes / mounttargets | Нет | 
+> | netappaccounts | нет | 
+> | netappaccounts / capacitypools | нет | 
+> | netappaccounts / capacitypools / volumes | нет | 
+> | netappaccounts / capacitypools / volumes / mounttargets | нет | 
 > | netappaccounts / capacitypools / volumes / snapshots | нет | 
 
 ## <a name="microsoftnetwork"></a>Microsoft.Network.
@@ -892,48 +893,48 @@ ms.locfileid: "87040966"
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Перемещение региона | 
 > | ------------- | ----------- |
-> | applicationgateways | Нет | 
-> | applicationgatewaywebapplicationfirewallpolicies | Нет | 
-> | applicationsecuritygroups |  Нет |  
-> | azurefirewalls |  Нет |  
-> | bastionhosts | Нет | 
+> | applicationgateways | нет | 
+> | applicationgatewaywebapplicationfirewallpolicies | нет | 
+> | applicationsecuritygroups |  нет |  
+> | azurefirewalls |  нет |  
+> | bastionhosts | нет | 
 > | connections |  Нет | 
 > | ddoscustompolicies |  Нет | 
-> | ddosprotectionplans | Нет | 
-> | dnszones |  Нет | 
-> | expressroutecircuits | Нет | 
-> | expressroutecrossconnections | Нет | 
-> | expressroutegateways | Нет | 
-> | expressrouteports | Нет | 
-> | frontdoors | Нет | 
-> | frontdoorwebapplicationfirewallpolicies | Нет | 
+> | ddosprotectionplans | нет | 
+> | dnszones |  нет | 
+> | expressroutecircuits | нет | 
+> | expressroutecrossconnections | нет | 
+> | expressroutegateways | нет | 
+> | expressrouteports | нет | 
+> | frontdoors | нет | 
+> | frontdoorwebapplicationfirewallpolicies | нет | 
 > | loadbalancers | Да <br/><br/> Можно экспортировать существующую конфигурацию в качестве шаблона и развернуть шаблон в новом регионе. Узнайте, как переместить [внешнюю](../..//load-balancer/move-across-regions-external-load-balancer-portal.md) или [внутреннюю](../../load-balancer/move-across-regions-internal-load-balancer-portal.md) подсистему балансировки нагрузки. |
-> | localnetworkgateways |  Нет | 
-> | natgateways |  Нет | 
+> | localnetworkgateways |  нет | 
+> | natgateways |  нет | 
 > | networkintentpolicies |  Нет | 
 > | networkinterfaces | Да | 
-> | networkprofiles | Нет | 
+> | networkprofiles | нет | 
 > | networksecuritygroups | Да | 
-> | networkwatchers |  Нет |  
+> | networkwatchers |  нет |  
 > | networkwatchers / connectionmonitors |  Нет | 
-> | нетворкватчерс/lenses |  Нет | 
-> | networkwatchers / pingmeshes |  Нет | 
-> | p2svpngateways | Нет | 
-> | privatednszones |  Нет |  
-> | privatednszones / virtualnetworklinks |  Нет |  
+> | нетворкватчерс/lenses |  нет | 
+> | networkwatchers / pingmeshes |  нет | 
+> | p2svpngateways | нет | 
+> | privatednszones |  нет |  
+> | privatednszones / virtualnetworklinks |  нет |  
 > | privateendpoints | Нет | 
-> | privatelinkservices | Нет | 
+> | privatelinkservices | нет | 
 > | publicipaddresses | Да<br/><br/> Можно экспортировать существующую конфигурацию общедоступного IP-адреса в качестве шаблона и развернуть шаблон в новом регионе. Дополнительные [сведения](../../virtual-network/move-across-regions-publicip-portal.md) о перемещении общедоступного IP-адреса. |
 > | publicipprefixes | Нет | 
-> | routefilters | Нет | 
+> | routefilters | нет | 
 > | routetables |  Нет | 
-> | serviceendpointpolicies |  Нет | 
-> | trafficmanagerprofiles |  Нет | 
-> | virtualhubs | Нет | 
-> | virtualnetworkgateways |  Нет |  
-> | virtualnetworks |  Нет | 
-> | virtualnetworktaps | Нет | 
-> | virtualwans | Нет | 
+> | serviceendpointpolicies |  нет | 
+> | trafficmanagerprofiles |  нет | 
+> | virtualhubs | нет | 
+> | virtualnetworkgateways |  нет |  
+> | virtualnetworks |  нет | 
+> | virtualnetworktaps | нет | 
+> | virtualwans | нет | 
 > | vpngateways (Virtual WAN) | нет | 
 > | vpnsites (Virtual WAN) | нет | 
 > | webapplicationfirewallpolicies |  Нет | 
@@ -952,7 +953,7 @@ ms.locfileid: "87040966"
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Перемещение региона | 
 > | ------------- | ----------- |
-> | workspaces |  Нет | 
+> | workspaces |  нет | 
 
 
 
@@ -961,29 +962,29 @@ ms.locfileid: "87040966"
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Перемещение региона | 
 > | ------------- | ----------- |
-> | managementconfigurations |  Нет | 
-> | узел "Представления" |  Нет | 
+> | managementconfigurations |  нет | 
+> | узел "Представления" |  нет | 
 
 ## <a name="microsoftpeering"></a>Microsoft.Peering
 
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Перемещение региона | 
 > | ------------- | ----------- |
-> | peerings | Нет | 
+> | peerings | нет | 
 
 ## <a name="microsoftportal"></a>Microsoft.Portal
 
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Перемещение региона | 
 > | ------------- | ----------- |
-> | dashboards | Нет | 
+> | dashboards | нет | 
 
 ## <a name="microsoftportalsdk"></a>Microsoft.PortalSdk
 
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Перемещение региона | 
 > | ------------- | ----------- |
-> | rootresources | Нет | 
+> | rootresources | нет | 
 
 ## <a name="microsoftpowerbi"></a>Microsoft.PowerBI
 
@@ -997,14 +998,14 @@ ms.locfileid: "87040966"
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Перемещение региона | 
 > | ------------- | ----------- |
-> | capacities |  Нет | 
+> | capacities |  нет | 
 
 ## <a name="microsoftprojectoxford"></a>Microsoft.ProjectOxford
 
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Перемещение региона | 
 > | ------------- | ----------- |
-> | accounts | Нет | 
+> | accounts | нет | 
 
 ## <a name="microsoftrecoveryservices"></a>Microsoft.RecoveryServices
 
@@ -1019,21 +1020,29 @@ ms.locfileid: "87040966"
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Перемещение региона | 
 > | ------------- | ----------- |
-> | пространства имен |  Нет | 
+> | пространства имен |  нет | 
 
 ## <a name="microsoftresourcegraph"></a>Microsoft.ResourceGraph
 
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Перемещение региона | 
 > | ------------- | ----------- |
-> | Запросы |  Нет |  
+> | Запросы |  нет |  
+
+## <a name="microsoftresources"></a>Microsoft.Resources
+
+> [!div class="mx-tableFixed"]
+> | Тип ресурса | Перемещение региона |
+> | ------------- | ----------- |
+> | deploymentScripts |  Да<br/><br/>[Перемещение ресурсов Microsoft. Resources в новый регион](microsoft-resources-move-regions.md) |
+> | темплатеспекс |  Да<br/><br/>[Перемещение ресурсов Microsoft. Resources в новый регион](microsoft-resources-move-regions.md) |  
 
 ## <a name="microsoftsaas"></a>Microsoft.SaaS
 
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Перемещение региона | 
 > | ------------- | ----------- |
-> | веб-масштабированием; |  Нет | 
+> | веб-масштабированием; |  нет | 
 
 ## <a name="microsoftscheduler"></a>Microsoft.Scheduler
 
@@ -1041,7 +1050,7 @@ ms.locfileid: "87040966"
 > | Тип ресурса | Перемещение региона | 
 > | ------------- | ----------- |
 > | flows |  Нет |  
-> | jobcollections |  Нет | 
+> | jobcollections |  нет | 
 
 ## <a name="microsoftsearch"></a>Microsoft.Search
 
@@ -1057,14 +1066,14 @@ ms.locfileid: "87040966"
 > | Тип ресурса | Перемещение региона | 
 > | ------------- | ----------- |
 > | iotsecuritysolutions |  Нет | 
-> | плайбукконфигуратионс | Нет | 
+> | плайбукконфигуратионс | нет | 
 
 ## <a name="microsoftservermanagement"></a>Microsoft.ServerManagement
 
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Перемещение региона | 
 > | ------------- | ----------- |
-> | gateways | Нет | 
+> | gateways | нет | 
 > | Узлы | нет | 
 
 ## <a name="microsoftservicebus"></a>Microsoft.ServiceBus
@@ -1079,34 +1088,34 @@ ms.locfileid: "87040966"
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Перемещение региона | 
 > | ------------- | ----------- |
-> | веб-масштабированием; | Нет | 
-> | clusters |  Нет | 
-> | clusters / applications | Нет | 
-> | containergroups | Нет | 
-> | containergroupsets | Нет | 
-> | edgeclusters | Нет | 
-> | networks | Нет | 
-> | secretstores | Нет | 
-> | volumes. | Нет | 
+> | веб-масштабированием; | нет | 
+> | clusters |  нет | 
+> | clusters / applications | нет | 
+> | containergroups | нет | 
+> | containergroupsets | нет | 
+> | edgeclusters | нет | 
+> | networks | нет | 
+> | secretstores | нет | 
+> | volumes. | нет | 
 
 ## <a name="microsoftservicefabricmesh"></a>Microsoft.ServiceFabricMesh
 
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Перемещение региона | 
 > | ------------- | ----------- |
-> | веб-масштабированием; |  Нет | 
-> | containergroups | Нет | 
-> | gateways |  Нет | 
-> | networks |  Нет | 
-> | секретные коды |  Нет | 
-> | volumes. |  Нет |  
+> | веб-масштабированием; |  нет | 
+> | containergroups | нет | 
+> | gateways |  нет | 
+> | networks |  нет | 
+> | секретные коды |  нет | 
+> | volumes. |  нет |  
 
 ## <a name="microsoftsignalrservice"></a>Microsoft.SignalRService
 
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Перемещение региона | 
 > | ------------- | ----------- |
-> | signalr |  Нет |  
+> | signalr |  нет |  
 
 ## <a name="microsoftsolutions"></a>Microsoft.Solutions
 
@@ -1115,16 +1124,16 @@ ms.locfileid: "87040966"
 > | ------------- | ----------- |
 > | appliancedefinitions | Нет | 
 > | appliances | Нет | 
-> | applicationdefinitions | Нет | 
-> | веб-масштабированием; | Нет | 
-> | jitrequests | Нет | 
+> | applicationdefinitions | нет | 
+> | веб-масштабированием; | нет | 
+> | jitrequests | нет | 
 
 ## <a name="microsoftsql"></a>Microsoft.Sql
 
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Перемещение региона | 
 > | ------------- | ----------- |
-> | instancepools | Нет | 
+> | instancepools | нет | 
 > | managedinstances | Да | 
 > | managedinstances / databases | Да | 
 > | servers | Да | 
@@ -1137,7 +1146,7 @@ ms.locfileid: "87040966"
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Перемещение региона | 
 > | ------------- | ----------- |
-> | sqlvirtualmachinegroups |  Нет |  
+> | sqlvirtualmachinegroups |  нет |  
 > | sqlvirtualmachines |  Нет |  
 
 ## <a name="microsoftsqlvm"></a>Microsoft.SqlVM
@@ -1145,7 +1154,7 @@ ms.locfileid: "87040966"
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Перемещение региона | 
 > | ------------- | ----------- |
-> | dwvm | Нет | 
+> | dwvm | нет | 
 
 ## <a name="microsoftstorage"></a>Microsoft.Storage;
 
@@ -1159,7 +1168,7 @@ ms.locfileid: "87040966"
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Перемещение региона | 
 > | ------------- | ----------- |
-> | caches | Нет | 
+> | caches | нет | 
 
 ## <a name="microsoftstoragesync"></a>Microsoft.StorageSync
 
@@ -1180,14 +1189,14 @@ ms.locfileid: "87040966"
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Перемещение региона | 
 > | ------------- | ----------- |
-> | storagesyncservices | Нет | 
+> | storagesyncservices | нет | 
 
 ## <a name="microsoftstorsimple"></a>Microsoft.StorSimple
 
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Перемещение региона | 
 > | ------------- | ----------- |
-> | managers | Нет | 
+> | managers | нет | 
 
 ## <a name="microsoftstreamanalytics"></a>Microsoft.StreamAnalytics
 
@@ -1202,51 +1211,51 @@ ms.locfileid: "87040966"
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Перемещение региона | 
 > | ------------- | ----------- |
-> | environments | Нет | 
-> | environments / eventsources | Нет | 
-> | instances | Нет | 
-> | instances / environments | Нет | 
-> | instances / environments / eventsources | Нет | 
+> | environments | нет | 
+> | environments / eventsources | нет | 
+> | instances | нет | 
+> | instances / environments | нет | 
+> | instances / environments / eventsources | нет | 
 
 ## <a name="microsoftterraformoss"></a>Microsoft.TerraformOSS
 
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Перемещение региона | 
 > | ------------- | ----------- |
-> | providerregistrations | Нет | 
-> | ресурсов | Нет | 
+> | providerregistrations | нет | 
+> | ресурсов | нет | 
 
 ## <a name="microsofttimeseriesinsights"></a>Microsoft.TimeSeriesInsights
 
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Перемещение региона | 
 > | ------------- | ----------- |
-> | environments |  Нет | 
-> | environments / eventsources |  Нет |  
-> | environments / referencedatasets |  Нет | 
+> | environments |  нет | 
+> | environments / eventsources |  нет |  
+> | environments / referencedatasets |  нет | 
 
 ## <a name="microsofttoken"></a>Microsoft.Token
 
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Перемещение региона | 
 > | ------------- | ----------- |
-> | stores | Нет | 
+> | stores | нет | 
 
 ## <a name="microsoftvirtualmachineimages"></a>Microsoft.VirtualMachineImages
 
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Перемещение региона | 
 > | ------------- | ----------- |
-> | imagetemplates | Нет | 
+> | imagetemplates | нет | 
 
 ## <a name="microsoftvisualstudio"></a>microsoft.visualstudio
 
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Перемещение региона | 
 > | ------------- | ----------- |
-> | account |  Нет | 
-> | account / extension |  Нет | 
-> | account / project |  Нет | 
+> | account |  нет | 
+> | account / extension |  нет | 
+> | account / project |  нет | 
 
 
 
@@ -1255,22 +1264,22 @@ ms.locfileid: "87040966"
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Перемещение региона | 
 > | ------------- | ----------- |
-> | dedicatedcloudnodes | Нет | 
-> | dedicatedcloudservices | Нет | 
-> | virtualmachines | Нет | 
+> | dedicatedcloudnodes | нет | 
+> | dedicatedcloudservices | нет | 
+> | virtualmachines | нет | 
 
 ## <a name="microsoftweb"></a>Microsoft.Web
 
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Перемещение региона | 
 > | ------------- | ----------- |
-> | certificates | Нет | 
-> | connectiongateways |  Нет |  
+> | certificates | нет | 
+> | connectiongateways |  нет |  
 > | connections |  Нет |  
-> | customapis |  Нет | 
-> | hostingenvironments | Нет | 
-> | serverfarms |  Нет |  
-> | sites |  Нет | 
+> | customapis |  нет | 
+> | hostingenvironments | нет | 
+> | serverfarms |  нет |  
+> | sites |  нет | 
 > | sites / premieraddons |  Нет |  
 > | sites / slots |  нет |  
 
@@ -1287,8 +1296,8 @@ ms.locfileid: "87040966"
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Перемещение региона | 
 > | ------------- | ----------- |
-> | applicationgroups | Нет | 
-> | hostpools | Нет | 
+> | applicationgroups | нет | 
+> | hostpools | нет | 
 > | workspaces | нет | 
 
 ## <a name="third-party-services"></a>Сторонние службы

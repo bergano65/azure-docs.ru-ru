@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: calebb
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: defb959a56446da337c4c7c16ee118ceecd3e674
-ms.sourcegitcommit: 7fe8df79526a0067be4651ce6fa96fa9d4f21355
+ms.openlocfilehash: b8b1440f34feb1cda2661178e520590cb9ec54f1
+ms.sourcegitcommit: e69bb334ea7e81d49530ebd6c2d3a3a8fa9775c9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87846315"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88948408"
 ---
 # <a name="conditional-access-cloud-apps-or-actions"></a>Условный доступ. Облачные приложения или действия
 
@@ -115,7 +115,7 @@ Office 365 предоставляет облачные службы для по�
 
 - Приложения, опубликованные через [прокси приложения Azure AD](../manage-apps/what-is-application-proxy.md).
 - [Приложения, добавленные из коллекции.](../manage-apps/add-application-portal.md)
-- [Пользовательские приложения, не включенные в коллекцию.](../manage-apps/add-non-gallery-app.md)
+- [Пользовательские приложения, не включенные в коллекцию.](../manage-apps/view-applications-portal.md)
 - [Устаревшие приложения, опубликованные через контроллеры и сети доставки приложений.](../manage-apps/secure-hybrid-access.md)
 - Приложения, использующие [единый вход на основе пароля](../manage-apps/configure-password-single-sign-on-non-gallery-applications.md)
 

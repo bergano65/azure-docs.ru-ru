@@ -5,12 +5,12 @@ ms.assetid: d20743e3-aab6-442c-a836-9bcea09bfd32
 ms.topic: conceptual
 ms.date: 04/03/2019
 ms.custom: fasttrack-edit
-ms.openlocfilehash: e56c76583f601c2e13ab4a35c1fef2996d2e3e67
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.openlocfilehash: 33f6f87f38000fd7874f0ab19d4eea2e71a9e2e8
+ms.sourcegitcommit: e69bb334ea7e81d49530ebd6c2d3a3a8fa9775c9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86506236"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88949717"
 ---
 # <a name="automate-resource-deployment-for-your-function-app-in-azure-functions"></a>Автоматизация развертывания ресурсов приложения-функции для службы "Функции Azure"
 
@@ -66,11 +66,11 @@ ms.locfileid: "86506236"
 "appSettings": [
     {
         "name": "AzureWebJobsStorage",
-        "value": "[concat('DefaultEndpointsProtocol=https;AccountName=', variables('storageAccountName'), ';AccountKey=', listKeys(variables('storageAccountid'),'2015-05-01-preview').key1)]"
+        "value": "[concat('DefaultEndpointsProtocol=https;AccountName=', variables('storageAccountName'), ';AccountKey=', listKeys(variables('storageAccountid'),'2015-05-01-preview').keys[0].value)]"
     },
     {
         "name": "AzureWebJobsDashboard",
-        "value": "[concat('DefaultEndpointsProtocol=https;AccountName=', variables('storageAccountName'), ';AccountKey=', listKeys(variables('storageAccountid'),'2015-05-01-preview').key1)]"
+        "value": "[concat('DefaultEndpointsProtocol=https;AccountName=', variables('storageAccountName'), ';AccountKey=', listKeys(variables('storageAccountid'),'2015-05-01-preview').keys[0].value)]"
     }
 ]
 ```
@@ -133,7 +133,7 @@ ms.locfileid: "86506236"
 ```
 
 > [!IMPORTANT]
-> Если вы явно определяете план размещения, в массиве dependsOn потребуется дополнительный элемент:`"[resourceId('Microsoft.Web/serverfarms', variables('hostingPlanName'))]"`
+> Если вы явно определяете план размещения, в массиве dependsOn потребуется дополнительный элемент: `"[resourceId('Microsoft.Web/serverfarms', variables('hostingPlanName'))]"`
 
 Приложение-функция должно включать следующие параметры приложения:
 
@@ -152,7 +152,7 @@ ms.locfileid: "86506236"
         "appSettings": [
             {
                 "name": "AzureWebJobsStorage",
-                "value": "[concat('DefaultEndpointsProtocol=https;AccountName=', variables('storageAccountName'), ';AccountKey=', listKeys(variables('storageAccountid'),'2015-05-01-preview').key1)]"
+                "value": "[concat('DefaultEndpointsProtocol=https;AccountName=', variables('storageAccountName'), ';AccountKey=', listKeys(variables('storageAccountid'),'2015-05-01-preview').keys[0].value)]"
             },
             {
                 "name": "FUNCTIONS_WORKER_RUNTIME",
@@ -231,11 +231,11 @@ ms.locfileid: "86506236"
             "appSettings": [
                 {
                     "name": "AzureWebJobsStorage",
-                    "value": "[concat('DefaultEndpointsProtocol=https;AccountName=', variables('storageAccountName'), ';AccountKey=', listKeys(variables('storageAccountid'),'2015-05-01-preview').key1)]"
+                    "value": "[concat('DefaultEndpointsProtocol=https;AccountName=', variables('storageAccountName'), ';AccountKey=', listKeys(variables('storageAccountid'),'2015-05-01-preview').keys[0].value)]"
                 },
                 {
                     "name": "WEBSITE_CONTENTAZUREFILECONNECTIONSTRING",
-                    "value": "[concat('DefaultEndpointsProtocol=https;AccountName=', variables('storageAccountName'), ';AccountKey=', listKeys(variables('storageAccountid'),'2015-05-01-preview').key1)]"
+                    "value": "[concat('DefaultEndpointsProtocol=https;AccountName=', variables('storageAccountName'), ';AccountKey=', listKeys(variables('storageAccountid'),'2015-05-01-preview').keys[0].value)]"
                 },
                 {
                     "name": "WEBSITE_CONTENTSHARE",
@@ -278,7 +278,7 @@ ms.locfileid: "86506236"
             "appSettings": [
                 {
                     "name": "AzureWebJobsStorage",
-                    "value": "[concat('DefaultEndpointsProtocol=https;AccountName=', variables('storageAccountName'), ';AccountKey=', listKeys(variables('storageAccountName'),'2015-05-01-preview').key1)]"
+                    "value": "[concat('DefaultEndpointsProtocol=https;AccountName=', variables('storageAccountName'), ';AccountKey=', listKeys(variables('storageAccountName'),'2015-05-01-preview').keys[0].value)]"
                 },
                 {
                     "name": "FUNCTIONS_WORKER_RUNTIME",
@@ -353,11 +353,11 @@ ms.locfileid: "86506236"
             "appSettings": [
                 {
                     "name": "AzureWebJobsStorage",
-                    "value": "[concat('DefaultEndpointsProtocol=https;AccountName=', variables('storageAccountName'), ';AccountKey=', listKeys(variables('storageAccountid'),'2015-05-01-preview').key1)]"
+                    "value": "[concat('DefaultEndpointsProtocol=https;AccountName=', variables('storageAccountName'), ';AccountKey=', listKeys(variables('storageAccountid'),'2015-05-01-preview').keys[0].value)]"
                 },
                 {
                     "name": "WEBSITE_CONTENTAZUREFILECONNECTIONSTRING",
-                    "value": "[concat('DefaultEndpointsProtocol=https;AccountName=', variables('storageAccountName'), ';AccountKey=', listKeys(variables('storageAccountid'),'2015-05-01-preview').key1)]"
+                    "value": "[concat('DefaultEndpointsProtocol=https;AccountName=', variables('storageAccountName'), ';AccountKey=', listKeys(variables('storageAccountid'),'2015-05-01-preview').keys[0].value)]"
                 },
                 {
                     "name": "WEBSITE_CONTENTSHARE",
@@ -450,7 +450,7 @@ ms.locfileid: "86506236"
             "appSettings": [
                 {
                     "name": "AzureWebJobsStorage",
-                    "value": "[concat('DefaultEndpointsProtocol=https;AccountName=', variables('storageAccountName'), ';AccountKey=', listKeys(variables('storageAccountid'),'2015-05-01-preview').key1)]"
+                    "value": "[concat('DefaultEndpointsProtocol=https;AccountName=', variables('storageAccountName'), ';AccountKey=', listKeys(variables('storageAccountid'),'2015-05-01-preview').keys[0].value)]"
                 },
                 {
                     "name": "FUNCTIONS_WORKER_RUNTIME",
@@ -495,7 +495,7 @@ ms.locfileid: "86506236"
             "appSettings": [
                 {
                     "name": "AzureWebJobsStorage",
-                    "value": "[concat('DefaultEndpointsProtocol=https;AccountName=', variables('storageAccountName'), ';AccountKey=', listKeys(variables('storageAccountid'),'2015-05-01-preview').key1)]"
+                    "value": "[concat('DefaultEndpointsProtocol=https;AccountName=', variables('storageAccountName'), ';AccountKey=', listKeys(variables('storageAccountid'),'2015-05-01-preview').keys[0].value)]"
                 },
                 {
                     "name": "FUNCTIONS_WORKER_RUNTIME",
@@ -535,7 +535,7 @@ ms.locfileid: "86506236"
             "appSettings": [
                 {
                     "name": "AzureWebJobsStorage",
-                    "value": "[concat('DefaultEndpointsProtocol=https;AccountName=', variables('storageAccountName'), ';AccountKey=', listKeys(variables('storageAccountid'),'2015-05-01-preview').key1)]"
+                    "value": "[concat('DefaultEndpointsProtocol=https;AccountName=', variables('storageAccountName'), ';AccountKey=', listKeys(variables('storageAccountid'),'2015-05-01-preview').keys[0].value)]"
                 },
                 {
                     "name": "FUNCTIONS_WORKER_RUNTIME",
@@ -617,8 +617,8 @@ ms.locfileid: "86506236"
           "[resourceId('Microsoft.Storage/storageAccounts', variables('storageAccountName'))]"
         ],
         "properties": {
-          "AzureWebJobsStorage": "[concat('DefaultEndpointsProtocol=https;AccountName=', variables('storageAccountName'), ';AccountKey=', listKeys(variables('storageAccountid'),'2015-05-01-preview').key1)]",
-          "AzureWebJobsDashboard": "[concat('DefaultEndpointsProtocol=https;AccountName=', variables('storageAccountName'), ';AccountKey=', listKeys(variables('storageAccountid'),'2015-05-01-preview').key1)]",
+          "AzureWebJobsStorage": "[concat('DefaultEndpointsProtocol=https;AccountName=', variables('storageAccountName'), ';AccountKey=', listKeys(variables('storageAccountid'),'2015-05-01-preview').keys[0].value)]",
+          "AzureWebJobsDashboard": "[concat('DefaultEndpointsProtocol=https;AccountName=', variables('storageAccountName'), ';AccountKey=', listKeys(variables('storageAccountid'),'2015-05-01-preview').keys[0].value)]",
           "FUNCTIONS_EXTENSION_VERSION": "~2",
           "FUNCTIONS_WORKER_RUNTIME": "dotnet",
           "Project": "src"
@@ -689,7 +689,7 @@ New-AzResourceGroupDeployment -ResourceGroupName "MyResourceGroup" -TemplateFile
 
 Чтобы протестировать это развертывание, можно использовать [шаблон, аналогичный этому](https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/101-function-app-create-dynamic/azuredeploy.json) , который создает приложение-функцию в Windows в плане потребления. Замените `<function-app-name>` уникальным именем для приложения-функции.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Дополнительные сведения о разработке и настройке Функций Azure:
 

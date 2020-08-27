@@ -11,12 +11,12 @@ ms.reviewer: ''
 ms.topic: conceptual
 ms.custom: seo-lt-2019
 ms.date: 04/30/2020
-ms.openlocfilehash: d171edb23b482ad1871990dcffd979d2125c4406
-ms.sourcegitcommit: d8b8768d62672e9c287a04f2578383d0eb857950
+ms.openlocfilehash: 66cc7b0d4f205a93c41f49ecaadac495a98b6da6
+ms.sourcegitcommit: e69bb334ea7e81d49530ebd6c2d3a3a8fa9775c9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/11/2020
-ms.locfileid: "88067415"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88949139"
 ---
 # <a name="source-control-in-azure-data-factory"></a>Система управления версиями в Фабрике данных Azure
 [!INCLUDE[appliesto-adf-xxx-md](includes/appliesto-adf-xxx-md.md)]
@@ -46,7 +46,7 @@ ms.locfileid: "88067415"
 -   **Повышенная производительность.** Средняя фабрика с интеграцией Git загружается в 10 раз быстрее, чем та, в которой разработка основана на службе фабрики данных. Это улучшение производительности связано с тем, что ресурсы загружаются с помощью Git.
 
 > [!NOTE]
-> Если в службе "Фабрика данных Azure" настраивается использование репозитория Git, непосредственная разработка в интерфейсе этой службы отключается. Изменения можно вносить непосредственно в службу с помощью PowerShell или пакета SDK.
+> Если в службе "Фабрика данных Azure" настраивается использование репозитория Git, непосредственная разработка в интерфейсе этой службы отключается. Изменения, внесенные с помощью PowerShell или пакета SDK, публикуются непосредственно в службе фабрики данных и не заносятся в Git.
 
 ## <a name="author-with-azure-repos-git-integration"></a>Разработка с помощью интеграции Git Azure Repos
 

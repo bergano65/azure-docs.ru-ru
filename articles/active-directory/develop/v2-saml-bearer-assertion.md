@@ -2,7 +2,7 @@
 title: Платформа удостоверений Майкрософт и поток утверждения носителя SAML | Azure
 description: Узнайте, как извлечь данные из Microsoft Graph без запроса учетных данных у пользователя с помощью потока утверждения носителя SAML.
 services: active-directory
-author: umeshbarapatre
+author: kenwith
 manager: CelesteDG
 ms.service: active-directory
 ms.subservice: develop
@@ -11,13 +11,12 @@ ms.topic: conceptual
 ms.date: 08/05/2019
 ms.author: kenwith
 ms.reviewer: paulgarn
-ms.custom: aaddev
-ms.openlocfilehash: e0db5bec00ce864536b3559eda160acdada5e157
-ms.sourcegitcommit: b8702065338fc1ed81bfed082650b5b58234a702
+ms.openlocfilehash: 46f3ef775f3b17e0ebc93fc4145a5b8037b901e5
+ms.sourcegitcommit: e69bb334ea7e81d49530ebd6c2d3a3a8fa9775c9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/11/2020
-ms.locfileid: "88114699"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88949360"
 ---
 # <a name="microsoft-identity-platform-and-oauth-20-saml-bearer-assertion-flow"></a>Платформа удостоверений Майкрософт и поток утверждения носителя OAuth 2.0 SAML
 Поток утверждения носителя OAuth 2.0 SAML позволяет запросить маркер доступа OAuth с помощью утверждения SAML, когда клиенту необходимо использовать существующее отношение доверия. Подпись, применяемая к утверждению SAML, обеспечивает проверку подлинности авторизованного приложения. Утверждение SAML — это маркер безопасности XML, выданный поставщиком удостоверений и используемый поставщиком услуг. Поставщик услуг использует его содержимое для идентификации субъекта утверждения в целях безопасности.

@@ -8,12 +8,12 @@ ms.date: 4/22/2020
 ms.topic: how-to
 ms.service: digital-twins
 ms.custom: devx-track-javascript
-ms.openlocfilehash: 00219dbebb8e84c21b9e5b84cf71309c63fc518e
-ms.sourcegitcommit: b33c9ad17598d7e4d66fe11d511daa78b4b8b330
+ms.openlocfilehash: c211c0e5ef0b39f778db7c922fafc735e2411068
+ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88855965"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88930049"
 ---
 # <a name="write-client-app-authentication-code"></a>Запись кода проверки подлинности клиентского приложения
 
@@ -25,7 +25,7 @@ ms.locfileid: "88855965"
 
 Дополнительные сведения об API и пакетах SDK для Azure Digital двойников см. в статье [*Использование интерфейсов API и пакетов SDK для цифровых двойников Azure*](how-to-use-apis-sdks.md).
 
-## <a name="prerequisites"></a>Обязательные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Сначала выполните действия по настройке, описанные в разделе [*инструкции. Настройка экземпляра и аутентификации*](how-to-set-up-instance-scripted.md). Это обеспечит наличие экземпляра Azure Digital двойников, у пользователя есть разрешения на доступ, и вы настроили разрешения для клиентских приложений. После выполнения всех этих настроек вы сможете писать код клиентского приложения.
 
@@ -35,7 +35,7 @@ ms.locfileid: "88855965"
 
 Во-первых, включите в проект следующие пакеты, чтобы использовать пакет SDK для .NET и средства проверки подлинности для этого руководства:
 * `Azure.DigitalTwins.Core` (версия `1.0.0-preview.2` )
-* `Azure.Identity` (версия `1.1.1` )
+* `Azure.Identity`
 
 В зависимости от выбранных вами средств можно включить пакеты с помощью диспетчера пакетов Visual Studio или `dotnet` средства командной строки. 
 
@@ -104,7 +104,7 @@ client = new DigitalTwinsClient(new Uri(adtInstanceUrl), cred, opts);
 
 В этом разделе объясняется, как выполнить проверку подлинности в этом случае.
 
-### <a name="prerequisites"></a>Обязательные условия
+### <a name="prerequisites"></a>Предварительные требования
 
 Во-первых, необходимо выполнить действия по созданию настраиваемого пакета SDK с помощью функции автозаполнения, выполнив действия, описанные в разделе [*инструкции. Создание настраиваемых пакетов SDK для Azure Digital двойников с*](how-to-create-custom-sdks.md)назначением.
 

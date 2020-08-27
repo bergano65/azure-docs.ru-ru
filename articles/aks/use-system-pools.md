@@ -5,12 +5,13 @@ services: container-service
 ms.topic: article
 ms.date: 06/18/2020
 ms.author: mlearned
-ms.openlocfilehash: 8c808bda624cca3bd7bd28c6adfbdfb52fa2c068
-ms.sourcegitcommit: 97a0d868b9d36072ec5e872b3c77fa33b9ce7194
+ms.custom: fasttrack-edit
+ms.openlocfilehash: e068984e02a468169f286ab5b783e531a54bd6ed
+ms.sourcegitcommit: e69bb334ea7e81d49530ebd6c2d3a3a8fa9775c9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/04/2020
-ms.locfileid: "87562826"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88949785"
 ---
 # <a name="manage-system-node-pools-in-azure-kubernetes-service-aks"></a>Управление пулами системных узлов в службе Kubernetes Azure (AKS)
 
@@ -19,7 +20,7 @@ ms.locfileid: "87562826"
 > [!Important]
 > При запуске одного пула системных узлов для кластера AKS в рабочей среде мы рекомендуем использовать по крайней мере три узла для пула узлов.
 
-## <a name="before-you-begin"></a>Перед началом
+## <a name="before-you-begin"></a>Подготовка к работе
 
 * Необходимо установить или настроить Azure CLI версии 2.3.1 или более поздней. Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI 2.0][install-azure-cli].
 
@@ -89,7 +90,7 @@ az aks nodepool add \
     --name systempool \
     --node-count 3 \
     --node-taints CriticalAddonsOnly=true:NoSchedule \
-    --mode system
+    --mode System
 ```
 ## <a name="show-details-for-your-node-pool"></a>Отображение сведений о пуле узлов
 
@@ -178,7 +179,7 @@ az group delete --name myResourceGroup --yes --no-wait
 
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 В этой статье вы узнали, как создавать пулы узлов системы в кластере AKS и управлять ими. Дополнительные сведения об использовании нескольких пулов узлов см. в статье [Использование пулов с несколькими][use-multiple-node-pools]узлами.
 
