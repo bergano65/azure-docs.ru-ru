@@ -3,12 +3,12 @@ title: Шифрование данных резервных копий с пом
 description: Узнайте, как Azure Backup позволяет шифровать данные резервных копий с помощью ключей, управляемых клиентом (CMK).
 ms.topic: conceptual
 ms.date: 07/08/2020
-ms.openlocfilehash: 9e299095709e07d3c73c8e8c847042cc51f549dd
-ms.sourcegitcommit: ac7ae29773faaa6b1f7836868565517cd48561b2
+ms.openlocfilehash: 55b994d287e4e2d3971b43359936815822bc18a4
+ms.sourcegitcommit: c6b9a46404120ae44c9f3468df14403bcd6686c1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88827347"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88892649"
 ---
 # <a name="encryption-of-backup-data-using-customer-managed-keys"></a>Шифрование данных резервных копий с помощью управляемых клиентом ключей
 
@@ -258,6 +258,6 @@ Azure Backup использует управляемое системой удо
 
 Использование шифрования CMK для резервного копирования не влечет за собой никаких дополнительных затрат. Однако вы можете продолжать взимать затраты на использование Azure Key Vault, где хранится ваш ключ.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - [Общие сведения о средствах безопасности в Azure Backup](security-overview.md)

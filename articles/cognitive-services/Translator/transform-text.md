@@ -10,12 +10,13 @@ ms.subservice: translator-text
 ms.topic: conceptual
 ms.date: 12/14/2017
 ms.author: swmachan
-ms.openlocfilehash: ba8cf9a25a12ecc261845477c4e32a86f585906e
-ms.sourcegitcommit: bb0afd0df5563cc53f76a642fd8fc709e366568b
+ms.custom: devx-track-csharp
+ms.openlocfilehash: 16f639a2a263aee286cec8bb0827fa506b50e3df
+ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83592208"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88921126"
 ---
 # <a name="how-to-use-the-transformtext-method"></a>Использование метода TransformText
 
@@ -28,10 +29,10 @@ ms.locfileid: "83592208"
 
 ## <a name="parameters"></a>Параметры
 
-| Параметр | Описание |
+| Параметр | Description |
 |:---|:---|
 | Заголовок авторизации | **Обязательный**. Заголовок HTTP, используемый для идентификации приложения. Используйте ключ "Authorization" и значение "Bearer" + " " + маркер доступа. Дополнительные сведения см. здесь.|
-| Язык | **Обязательный**. Строка, представляющая код языка. Этот параметр поддерживает только английский язык с именем **en**.|
+| язык | **Обязательный**. Строка, представляющая код языка. Этот параметр поддерживает только английский язык с именем **en**.|
 | категория | **Необязательный**. Строка, содержащая категорию (домен) перевода. Этот параметр поддерживает только параметр по умолчанию **General**.|
 | sentence | **Обязательный**. Предложение, которое нужно исправить. |
 

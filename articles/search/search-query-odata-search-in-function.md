@@ -19,12 +19,12 @@ translation.priority.mt:
 - ru-ru
 - zh-cn
 - zh-tw
-ms.openlocfilehash: 1748a334c024401d845145947ecd55519f61e5e3
-ms.sourcegitcommit: 3541c9cae8a12bdf457f1383e3557eb85a9b3187
+ms.openlocfilehash: 9ad6f89392846564631b70f0acfb5658a050be80
+ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/09/2020
-ms.locfileid: "86206923"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88922826"
 ---
 # <a name="odata-searchin-function-in-azure-cognitive-search"></a>`search.in`Функция OData в Azure когнитивный Поиск
 
@@ -74,7 +74,7 @@ search_in_call ::=
 
 Параметры определены в следующей таблице.
 
-| Имя параметра | Тип | Описание |
+| Имя параметра | Тип | Description |
 | --- | --- | --- |
 | `variable` | `Edm.String` | Ссылка на строковое поле (или переменная диапазона для поля коллекции строк в случае, когда `search.in` используется в `any` `all` выражении или). |
 | `valueList` | `Edm.String` | Строка, содержащая список значений с разделителями для сопоставления с `variable` параметром. Если `delimiters` параметр не указан, разделителями по умолчанию являются пробел и запятая. |
@@ -82,7 +82,7 @@ search_in_call ::=
 
 <a name="bkmk_performance"></a>
 
-### <a name="performance-of-searchin"></a>Производительность`search.in`
+### <a name="performance-of-searchin"></a>Производительность `search.in`
 
 При использовании `search.in` время отклика будет менее секунды, если второй параметр содержит список из сотен или тысяч значений. Нет явного ограничения на количество элементов, которые можно передать `search.in` , хотя по-прежнему ограничивается максимальным размером запроса. Однако задержка растет по мере увеличения количества значений.
 
@@ -123,4 +123,4 @@ search_in_call ::=
 - [Фильтры в Когнитивный поиск Azure](search-filters.md)
 - [Общие сведения о языке выражений OData для Azure Когнитивный поиск](query-odata-filter-orderby-syntax.md)
 - [Справочник по синтаксису выражений OData для Azure Когнитивный поиск](search-query-odata-syntax-reference.md)
-- [Поиск документов &#40;Azure Когнитивный поиск REST API&#41;](https://docs.microsoft.com/rest/api/searchservice/Search-Documents)
+- [Поиск документов &#40;Azure Когнитивный поиск REST API&#41;](/rest/api/searchservice/Search-Documents)

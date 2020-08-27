@@ -6,12 +6,12 @@ ms.author: manishku
 ms.service: postgresql
 ms.topic: conceptual
 ms.date: 6/30/2020
-ms.openlocfilehash: 8468d733756ef92ffc9078e945dc46d23e1ab54a
-ms.sourcegitcommit: d8b8768d62672e9c287a04f2578383d0eb857950
+ms.openlocfilehash: d54bef277d80a178c45ce918290d46c11387b7d1
+ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/11/2020
-ms.locfileid: "88067500"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88918100"
 ---
 # <a name="azure-database-for-postgresql-infrastructure-double-encryption"></a>Двойное шифрование базы данных Azure для инфраструктуры PostgreSQL
 
@@ -62,6 +62,12 @@ ms.locfileid: "88067500"
 Для базы данных Azure для PostgreSQL поддержка двойного шифрования инфраструктуры с помощью управляемого службой ключа имеет следующие ограничения.
 
 * Поддержка этой функции ограничена **общего назначения** и **оптимизированными для памяти** ценовыми категориями.
+* Вы можете создать базу данных Azure для PostgreSQL с включенным двойным шифрованием инфраструктуры в следующих регионах:
+
+   * Восточная часть США
+   * Центрально-южная часть США
+   * Западная часть США 2
+   
 * Эта функция поддерживается только в регионах и серверах, поддерживающих хранилище объемом до 16 ТБ. Список регионов Azure, поддерживающих хранилище объемом до 16 ТБ, см. в [документации по хранилищу](concepts-pricing-tiers.md#storage).
 
     > [!NOTE]

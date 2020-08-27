@@ -8,22 +8,22 @@ ms.author: heidist
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 11/04/2019
-ms.openlocfilehash: 6232ba859c985929c9df0fb5020fb932611bbb40
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: f27822ee6be26f955e4db52548da7fa2a22236c2
+ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85079434"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88922758"
 ---
 # <a name="example-add-synonyms-for-azure-cognitive-search-in-c"></a>Пример. Добавление синонимов для Когнитивный поиск Azure в C #
 
 Синонимы позволяют расширить запрос с помощью сопоставления семантически эквивалентных терминов с входными терминами. Например, вы можете сопоставить термин "машина" с документами, в которых встречается слово "автомобиль" или "транспортное средство". 
 
-В Когнитивный поиск Azure синонимы определяются в сопоставлении *синонимов*с помощью *правил сопоставления* , связывающих эквивалентные термины. В этом примере рассматриваются основные шаги по добавлению и использованию синонимов с существующим индексом. Вы научитесь:
+В Когнитивный поиск Azure синонимы определяются в сопоставлении *синонимов*с помощью *правил сопоставления* , связывающих эквивалентные термины. В этом примере рассматриваются основные шаги по добавлению и использованию синонимов с существующим индексом. Вы узнаете, как выполнять следующие задачи:
 
 > [!div class="checklist"]
-> * Создайте карту синонимов с помощью класса [SynonymMap](https://docs.microsoft.com/dotnet/api/microsoft.azure.search.models.synonymmap?view=azure-dotnet) . 
-> * Задайте свойство [SynonymMaps](https://docs.microsoft.com/dotnet/api/microsoft.azure.search.models.field.synonymmaps?view=azure-dotnet) для полей, которые должны поддерживать расширение запросов через синонимы.
+> * Создайте карту синонимов с помощью класса  [SynonymMap](/dotnet/api/microsoft.azure.search.models.synonymmap?view=azure-dotnet) . 
+> * Задайте свойство [SynonymMaps](/dotnet/api/microsoft.azure.search.models.field.synonymmaps?view=azure-dotnet) для полей, которые должны поддерживать расширение запросов через синонимы.
 
 Вы можете запросить поле с поддержкой синонимов как обычно. Для доступа к синонимам не требуется дополнительный синтаксис запроса.
 
@@ -32,14 +32,14 @@ ms.locfileid: "85079434"
 > [!NOTE]
 > Синонимы можно создавать программно, но не на портале. Если вы считаете, что нам следует добавить поддержку синонимов на портале Azure, оставьте свой отзыв на [UserVoice](https://feedback.azure.com/forums/263029-azure-search).
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Ниже приведены предварительные требования, описанные в этом руководстве.
 
 * [Visual Studio](https://www.visualstudio.com/downloads/)
 * [Служба Когнитивный поиск Azure](search-create-service-portal.md)
-* [Библиотека Microsoft.Azure.Search .NET](https://docs.microsoft.com/dotnet/api/overview/azure/search)
-* [Использование Когнитивный поиск Azure из приложения .NET](https://docs.microsoft.com/azure/search/search-howto-dotnet-sdk)
+* [Библиотека Microsoft.Azure.Search .NET](/dotnet/api/overview/azure/search)
+* [Использование Когнитивный поиск Azure из приложения .NET](./search-howto-dotnet-sdk.md)
 
 ## <a name="overview"></a>Обзор
 
@@ -77,7 +77,7 @@ ms.locfileid: "85079434"
       Console.ReadKey();
   }
 ```
-Инструкции по созданию и заполнению примера индекса см. в статье [использование когнитивный Поиск Azure из приложения .NET](https://docs.microsoft.com/azure/search/search-howto-dotnet-sdk).
+Инструкции по созданию и заполнению примера индекса см. в статье [использование когнитивный Поиск Azure из приложения .NET](./search-howto-dotnet-sdk.md).
 
 ## <a name="before-queries"></a>Запросы "до"
 
@@ -171,9 +171,9 @@ Name: Roach Motel       Category: Budget        Tags: [motel, budget]
 
 Самый быстрый способ очистки после примера заключается в удалении группы ресурсов, содержащей службу Когнитивный поиск Azure. Теперь можно удалить группу ресурсов вместе со всем ее содержимым без возможности восстановления. На портале имя группы ресурсов находится на странице "Обзор" службы "Когнитивный поиск Azure".
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
-В этом примере демонстрируется функция синонимов в коде C# для создания и публикации правил сопоставления, а затем вызывается сопоставление синонимов для запроса. См. дополнительные сведения о [пакете SDK для .NET ](https://docs.microsoft.com/dotnet/api/microsoft.azure.search) и [REST API](https://docs.microsoft.com/rest/api/searchservice/).
+В этом примере демонстрируется функция синонимов в коде C# для создания и публикации правил сопоставления, а затем вызывается сопоставление синонимов для запроса. См. дополнительные сведения о [пакете SDK для .NET ](/dotnet/api/microsoft.azure.search) и [REST API](/rest/api/searchservice/).
 
 > [!div class="nextstepaction"]
 > [Использование синонимов в Azure Когнитивный поиск](search-synonyms.md)
