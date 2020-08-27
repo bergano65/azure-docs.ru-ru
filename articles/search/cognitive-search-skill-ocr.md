@@ -8,16 +8,16 @@ ms.author: luisca
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 06/17/2020
-ms.openlocfilehash: a6902d1420090b81c933f07f7e929aa86c052404
-ms.sourcegitcommit: 98854e3bd1ab04ce42816cae1892ed0caeedf461
+ms.openlocfilehash: 56e3c1e48df51cd24d70517ee23d47ef27d378d7
+ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "88009245"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88935336"
 ---
 # <a name="ocr-cognitive-skill"></a>Когнитивный навык распознавания текста
 
-Уровень опыта **распознавания текста (OCR)** распознает печатный и рукописный текст в файлах изображений. Этот навык использует модели машинного обучения, предоставляемые [компьютерное зрение](https://docs.microsoft.com/azure/cognitive-services/computer-vision/home) API [v 3.0](https://westcentralus.dev.cognitive.microsoft.com/docs/services/computer-vision-v3-ga/operations/5d986960601faab4bf452005) в Cognitive Services. Навык **OCR** сопоставляет следующие функциональные возможности службы.
+Уровень опыта **распознавания текста (OCR)** распознает печатный и рукописный текст в файлах изображений. Этот навык использует модели машинного обучения, предоставляемые [компьютерное зрение](../cognitive-services/computer-vision/home.md) API [v 3.0](https://westcentralus.dev.cognitive.microsoft.com/docs/services/computer-vision-v3-ga/operations/5d986960601faab4bf452005) в Cognitive Services. Навык **OCR** сопоставляет следующие функциональные возможности службы.
 
 + Для английского, испанского, немецкого, французского, итальянского, португальского и нидерландского языка используется новый API для [чтения](../cognitive-services/computer-vision/concept-recognizing-text.md#read-api) .
 + Для всех других языков используется API [OCR](../cognitive-services/computer-vision/concept-recognizing-text.md#ocr-api) .
@@ -51,13 +51,13 @@ ms.locfileid: "88009245"
 
 ## <a name="skill-inputs"></a>Входные данные навыков
 
-| Ввод имени      | Описание                                          |
+| Ввод имени      | Description                                          |
 |---------------|------------------------------------------------------|
 | `image`         | Сложный тип. Сейчас работает только с полем /document/normalized_images, созданным индексатором большого двоичного объекта Azure, если для ```imageAction``` установлено значение, отличное от ```none```. Дополнительные сведения см. в [этом примере](#sample-output).|
 
 
 ## <a name="skill-outputs"></a>Выходные данные навыка
-| Имя вывода     | Описание                   |
+| Имя вывода     | Description                   |
 |---------------|-------------------------------|
 | `text`            | Обычный текст, извлеченный из изображения.   |
 | `layoutText`    | Сложный тип, описывающий извлеченный текст и расположение, где найден указанный текст.|
@@ -212,4 +212,4 @@ ms.locfileid: "88009245"
 + [Встроенные навыки](cognitive-search-predefined-skills.md)
 + [Text Merge cognitive skill](cognitive-search-skill-textmerger.md) (Когнитивный навык слияния текста)
 + [Определение набора навыков](cognitive-search-defining-skillset.md)
-+ [Создание индексатора — REST](https://docs.microsoft.com/rest/api/searchservice/create-indexer)
++ [Создание индексатора — REST](/rest/api/searchservice/create-indexer)

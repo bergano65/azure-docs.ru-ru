@@ -19,14 +19,14 @@ translation.priority.mt:
 - ru-ru
 - zh-cn
 - zh-tw
-ms.openlocfilehash: 741bf9e2aba6f893f670e86fb8bf5cd6c8b9d803
-ms.sourcegitcommit: 3541c9cae8a12bdf457f1383e3557eb85a9b3187
+ms.openlocfilehash: 27d5427d34de591f9cfeab2310d79a2fde217624
+ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/09/2020
-ms.locfileid: "86201995"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88917879"
 ---
-# <a name="odata-logical-operators-in-azure-cognitive-search---and-or-not"></a>Логические операторы OData в Azure Когнитивный поиск — `and` , `or` ,`not`
+# <a name="odata-logical-operators-in-azure-cognitive-search---and-or-not"></a>Логические операторы OData в Azure Когнитивный поиск — `and` , `or` , `not`
 
 [Выражения фильтра OData](query-odata-filter-orderby-syntax.md) в когнитивный Поиск Azure — это логические выражения, которые возвращают `true` или `false` . Сложный фильтр можно написать, написав ряд [простых фильтров](search-query-odata-comparison-operators.md) и создав их с помощью логических операторов из последовательности [логических](https://en.wikipedia.org/wiki/Boolean_algebra)операций:
 
@@ -58,21 +58,21 @@ logical_expression ::=
 
 Существует две формы логических выражений: binary ( `and` / `or` ), где есть два подвыражения, и унарный ( `not` ), где имеется только один. Подвыражения могут быть логическими выражениями любого типа:
 
-- Поля или переменные диапазона типа`Edm.Boolean`
-- Функции, возвращающие значения типа `Edm.Boolean` , такие как `geo.intersects` или`search.ismatch`
-- [Выражения сравнения](search-query-odata-comparison-operators.md), такие как`rating gt 4`
-- [Выражения коллекций](search-query-odata-collection-operators.md), такие как`Rooms/any(room: room/Type eq 'Deluxe Room')`
+- Поля или переменные диапазона типа `Edm.Boolean`
+- Функции, возвращающие значения типа `Edm.Boolean` , такие как `geo.intersects` или `search.ismatch`
+- [Выражения сравнения](search-query-odata-comparison-operators.md), такие как `rating gt 4`
+- [Выражения коллекций](search-query-odata-collection-operators.md), такие как `Rooms/any(room: room/Type eq 'Deluxe Room')`
 - Логические литералы `true` или `false` .
 - Другие логические выражения, созданные с помощью `and` , `or` и `not` .
 
 > [!IMPORTANT]
 > Существуют ситуации, когда не все виды вложенных выражений можно использовать с `and` / `or` , особенно внутри лямбда-выражений. Дополнительные сведения см. [в разделе операторы коллекции OData в когнитивный Поиск Azure](search-query-odata-collection-operators.md#limitations) .
 
-### <a name="logical-operators-and-null"></a>Логические операторы и`null`
+### <a name="logical-operators-and-null"></a>Логические операторы и `null`
 
 Большинство логических выражений, таких как функции и сравнения, не могут формировать `null` значения, а логические операторы не могут применяться к `null` литералу напрямую (например, `x and null` не допускается). Однако логические поля могут быть `null` , поэтому необходимо знать, как `and` `or` работают операторы, и при `not` наличии значения NULL. Это приводится в следующей таблице, где `b` — поле типа `Edm.Boolean` :
 
-| Выражение | Результат `b` , если имеет значение`null` |
+| Выражение | Результат `b` , если имеет значение `null` |
 | --- | --- |
 | `b` | `false` |
 | `not b` | `true` |
@@ -120,4 +120,4 @@ logical_expression ::=
 - [Фильтры в Когнитивный поиск Azure](search-filters.md)
 - [Общие сведения о языке выражений OData для Azure Когнитивный поиск](query-odata-filter-orderby-syntax.md)
 - [Справочник по синтаксису выражений OData для Azure Когнитивный поиск](search-query-odata-syntax-reference.md)
-- [Поиск документов &#40;Azure Когнитивный поиск REST API&#41;](https://docs.microsoft.com/rest/api/searchservice/Search-Documents)
+- [Поиск документов &#40;Azure Когнитивный поиск REST API&#41;](/rest/api/searchservice/Search-Documents)

@@ -19,14 +19,14 @@ translation.priority.mt:
 - ru-ru
 - zh-cn
 - zh-tw
-ms.openlocfilehash: 47e7e09bae082141efd872d3a90ecc30a3be04e5
-ms.sourcegitcommit: 5cace04239f5efef4c1eed78144191a8b7d7fee8
+ms.openlocfilehash: 4c1243d5d9122539466e94b6bbfdd5ced588e69a
+ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86146055"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88934911"
 ---
-# <a name="odata-collection-operators-in-azure-cognitive-search---any-and-all"></a>Операторы коллекции OData в Azure Когнитивный поиск `any` и`all`
+# <a name="odata-collection-operators-in-azure-cognitive-search---any-and-all"></a>Операторы коллекции OData в Azure Когнитивный поиск `any` и `all`
 
 При написании [выражения фильтра OData](query-odata-filter-orderby-syntax.md) для использования с Azure когнитивный поиск часто бывает полезно выполнить фильтрацию по полям коллекции. Это можно сделать с помощью `any` операторов и `all` .
 
@@ -102,9 +102,9 @@ rooms/all(room: room/amenities/any(a: a eq 'tv') and room/baseRate lt 100.0)
 
 Дополнительные сведения об этих ограничениях, а также примеры см. [в разделе Устранение неполадок фильтров сбора в Azure когнитивный Поиск](search-query-troubleshoot-collection-filters.md). Более подробные сведения о том, почему эти ограничения существуют, см. в разделе [Основные сведения о фильтрах коллекций в когнитивный Поиск Azure](search-query-understand-collection-filters.md).
 
-## <a name="next-steps"></a>Следующие шаги  
+## <a name="next-steps"></a>Дальнейшие действия  
 
 - [Фильтры в Когнитивный поиск Azure](search-filters.md)
 - [Общие сведения о языке выражений OData для Azure Когнитивный поиск](query-odata-filter-orderby-syntax.md)
 - [Справочник по синтаксису выражений OData для Azure Когнитивный поиск](search-query-odata-syntax-reference.md)
-- [Поиск документов &#40;Azure Когнитивный поиск REST API&#41;](https://docs.microsoft.com/rest/api/searchservice/Search-Documents)
+- [Поиск документов &#40;Azure Когнитивный поиск REST API&#41;](/rest/api/searchservice/Search-Documents)

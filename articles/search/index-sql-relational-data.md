@@ -8,12 +8,12 @@ ms.author: heidist
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 11/04/2019
-ms.openlocfilehash: 2ebeb7f6fee77c43c9da97b922fc215d75196145
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 6c70b42e7d0f647a3b2b60d29b5098a791e4975f
+ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "82117575"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88924526"
 ---
 # <a name="how-to-model-relational-sql-data-for-import-and-indexing-in-azure-cognitive-search"></a>Моделирование реляционных данных SQL для импорта и индексирования в Azure Когнитивный поиск
 
@@ -107,7 +107,7 @@ ON Rooms$.HotelID = Hotels$.HotelID
 Теперь этот набор строк готов к импорту в Когнитивный поиск Azure.
 
 > [!NOTE]
-> При таком подходе предполагается, что размер внедренного JSON ограничен [максимальным размером столбца SQL Server](https://docs.microsoft.com/sql/sql-server/maximum-capacity-specifications-for-sql-server). 
+> При таком подходе предполагается, что размер внедренного JSON ограничен [максимальным размером столбца SQL Server](/sql/sql-server/maximum-capacity-specifications-for-sql-server). 
 
  ## <a name="use-a-complex-collection-for-the-many-side-of-a-one-to-many-relationship"></a>Использование комплексной коллекции для связи «многие» отношения «один ко многим»
 

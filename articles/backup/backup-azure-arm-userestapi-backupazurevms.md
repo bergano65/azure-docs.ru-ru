@@ -4,12 +4,12 @@ description: Из этой статьи вы узнаете, как настра
 ms.topic: conceptual
 ms.date: 08/03/2018
 ms.assetid: b80b3a41-87bf-49ca-8ef2-68e43c04c1a3
-ms.openlocfilehash: a0ad08e9fd750166f8df82a1b3a36cecd8f12f27
-ms.sourcegitcommit: ac7ae29773faaa6b1f7836868565517cd48561b2
+ms.openlocfilehash: db5e6cc460d320971a4005889dc2c9aa9925a18d
+ms.sourcegitcommit: c6b9a46404120ae44c9f3468df14403bcd6686c1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88826418"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88890337"
 ---
 # <a name="back-up-an-azure-vm-using-azure-backup-via-rest-api"></a>Резервное копирование виртуальных машин Azure с помощью службы Azure Backup и REST API
 
@@ -23,7 +23,7 @@ ms.locfileid: "88826418"
 
 ### <a name="discover-unprotected-azure-vms"></a>Обнаружение незащищенных виртуальных машин Azure
 
-Во-первых, для хранилища нужно обеспечить возможность идентификации виртуальной машины Azure. Это можно сделать с помощью [операции обновления](/rest/api/backup/protectioncontainers/refresh). Это асинхронная операция *POST*, которая предоставляет хранилищу самый последний список всех незащищенных виртуальных машин в текущей подписке для кэширования. После кэширования виртуальной машины Службы восстановления получат доступ к виртуальной машине для включения защиты.
+Во-первых, для хранилища нужно обеспечить возможность идентификации виртуальной машины Azure. Это можно сделать с помощью [операции обновления](/rest/api/backup/protectioncontainers/refresh). Это асинхронная операция *POST*  , которая гарантирует, что хранилище получает последний список всех незащищенных виртуальных машин в текущей подписке и кэширует их. После кэширования виртуальной машины Службы восстановления получат доступ к виртуальной машине для включения защиты.
 
 ```http
 POST https://management.azure.com/Subscriptions/{subscriptionId}/resourceGroups/{vaultresourceGroupname}/providers/Microsoft.RecoveryServices/vaults/{vaultName}/backupFabrics/{fabricName}/refreshContainers?api-version=2016-12-01
@@ -466,7 +466,7 @@ DELETE https://management.azure.com//Subscriptions/00000000-0000-0000-0000-00000
 
 Ответ будет в том же формате, что и при [активации резервного копирования по запросу](#example-responses-for-on-demand-backup). Итоговое задание должно отслеживаться, как описано в [документации по мониторингу заданий для REST API](backup-azure-arm-userestapi-managejobs.md#tracking-the-job).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 [Восстановление данных из резервной копии виртуальной машины Azure](backup-azure-arm-userestapi-restoreazurevms.md)
 

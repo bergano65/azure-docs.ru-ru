@@ -2,24 +2,24 @@
 title: Развертывание спецификации шаблона в качестве связанного шаблона
 description: Узнайте, как развернуть существующую спецификацию шаблона в связанном развертывании.
 ms.topic: conceptual
-ms.date: 07/20/2020
-ms.openlocfilehash: 5d4824ea432d804418fda2cdc90d49154d496722
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.date: 08/26/2020
+ms.openlocfilehash: dacf2fba3ff78f3ff92741b49edad8fdf5bffe29
+ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87097732"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88918389"
 ---
 # <a name="tutorial-deploy-a-template-spec-as-a-linked-template-preview"></a>Руководство. Развертывание спецификации шаблона в качестве связанного шаблона (Предварительная версия)
 
-Узнайте, как развернуть существующую [спецификацию шаблона](template-specs.md) с помощью [связанного развертывания](linked-templates.md#linked-template). Спецификации шаблонов можно использовать для совместного использования шаблонов ARM с другими пользователями в Организации. После создания спецификации шаблона можно развернуть спецификацию шаблона с помощью Azure PowerShell. Вы также можете развернуть спецификацию шаблона как часть решения с помощью связанного шаблона.
+Узнайте, как развернуть существующую [спецификацию шаблона](template-specs.md) с помощью [связанного развертывания](linked-templates.md#linked-template). Спецификации шаблонов можно использовать для совместного использования шаблонов ARM с другими пользователями в Организации. После создания спецификации шаблона можно развернуть спецификацию шаблона с помощью Azure PowerShell или Azure CLI. Вы также можете развернуть спецификацию шаблона как часть решения с помощью связанного шаблона.
 
 ## <a name="prerequisites"></a>Предварительные требования
 
 Учетная запись Azure с активной подпиской. [Создайте учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) бесплатно.
 
 > [!NOTE]
-> Спецификации шаблонов в настоящее время находятся на этапе предварительной версии. Чтобы использовать его, необходимо [зарегистрироваться для использования предварительной версии](https://aka.ms/templateSpecOnboarding).
+> Сейчас спецификации шаблонов доступны в предварительной версии. Чтобы использовать его, необходимо [зарегистрироваться для использования предварительной версии](https://aka.ms/templateSpecOnboarding).
 
 ## <a name="create-a-template-spec"></a>Создание спецификации шаблона
 
@@ -117,9 +117,22 @@ ms.locfileid: "87097732"
 
 Идентификатор спецификации шаблона создается с помощью [`resourceID()`](template-functions-resource.md#resourceid) функции. Аргумент группы ресурсов в функции resourceID () является необязательным, если Темплатеспек находится в той же группе ресурсов текущего развертывания.  Можно также напрямую передать идентификатор ресурса в качестве параметра. Чтобы получить идентификатор, используйте:
 
+# <a name="powershell"></a>[PowerShell](#tab/azure-powershell)
+
 ```azurepowershell-interactive
 $id = (Get-AzTemplateSpec -ResourceGroupName $resourceGroupName -Name $templateSpecName -Version $templateSpecVersion).Version.Id
 ```
+
+# <a name="cli"></a>[CLI](#tab/azure-cli)
+
+```azurecli-interactive
+id = $(az template-specs show --name $templateSpecName --resource-group $resourceGroupName --version $templateSpecVersion --query "id")
+```
+
+> [!NOTE]
+> Существует известная ошибка при получении идентификатора спецификации шаблона, а затем ее присвоение переменной в Windows PowerShell.
+
+---
 
 Для передачи параметров в спецификацию шаблона используется следующий синтаксис:
 
@@ -138,6 +151,8 @@ $id = (Get-AzTemplateSpec -ResourceGroupName $resourceGroupName -Name $templateS
 
 При развертывании связанного шаблона он развертывает как веб-приложение, так и учетную запись хранения. Развертывание аналогично развертыванию других шаблонов ARM.
 
+# <a name="powershell"></a>[PowerShell](#tab/azure-powershell)
+
 ```azurepowershell
 New-AzResourceGroup `
   -Name webRG `
@@ -148,6 +163,21 @@ New-AzResourceGroupDeployment `
   -TemplateFile "c:\Templates\deployTS\azuredeploy.json"
 ```
 
+# <a name="cli"></a>[CLI](#tab/azure-cli)
+
+```azurecli
+az group create \
+  --name webRG \
+  --location westus2
+
+az deployment group create \
+  --resource-group webRG \
+  --template-file "c:\Templates\deployTS\azuredeploy.json"
+
+```
+
+---
+
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Дополнительные сведения о создании спецификации шаблона, включающей связанные шаблоны, см. в разделе [Создание спецификации шаблона для связанного шаблона](template-specs-create-linked.md).
+Дополнительные сведения о создании спецификации шаблона, включающей связанные шаблоны, см. в статье [Создание спецификации для связанного шаблона](template-specs-create-linked.md).

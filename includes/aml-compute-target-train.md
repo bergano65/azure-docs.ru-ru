@@ -9,12 +9,12 @@ manager: cgronlund
 ms.custom: include file
 ms.topic: include
 ms.date: 12/04/2019
-ms.openlocfilehash: 6ddff84de6b8ffd5bc8f7c7dcaa7cb4df3d71f81
-ms.sourcegitcommit: d18a59b2efff67934650f6ad3a2e1fe9f8269f21
+ms.openlocfilehash: 9a04bca11c6fca480ea1c9fd3d4a51956c1830de
+ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/20/2020
-ms.locfileid: "88703192"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88933122"
 ---
 **Целевые объекты вычислений могут использоваться повторно для разных заданий обучения**. Например, после присоединения удаленной виртуальной машины к рабочей области ее можно повторно использовать для нескольких заданий.  В конвейерах машинного обучения используйте правильный [шаг конвейера](https://docs.microsoft.com/python/api/azureml-pipeline-steps/azureml.pipeline.steps?view=azure-ml-py) для каждого целевого объекта вычислений.
 
@@ -24,7 +24,7 @@ ms.locfileid: "88703192"
 |[Вычислительный кластер Машинного обучения Azure](../articles/machine-learning/how-to-set-up-training-targets.md#amlcompute)| да + <br/>настройка&nbsp;гиперпараметров | да | да |
 |[Вычислительная операция Машинного обучения Azure](../articles/machine-learning/how-to-set-up-training-targets.md#instance) | да + <br/>Настройка гиперпараметров | да |  |
 |[Удаленная виртуальная машина](../articles/machine-learning/how-to-set-up-training-targets.md#vm) | да + <br/>Настройка гиперпараметров | да | &nbsp; |
-|[Azure&nbsp;Databricks](../articles/machine-learning/how-to-create-your-first-pipeline.md#databricks)| да (только в локальном режиме SDK) | да | &nbsp; |
-|[Azure Data Lake Analytics](../articles/machine-learning/how-to-create-your-first-pipeline.md#adla) | &nbsp; | да | &nbsp; |
+|[Azure&nbsp;Databricks](../articles/machine-learning/how-to-set-up-training-targets.md#databricks)| да (только в локальном режиме SDK) | да | &nbsp; |
+|[Azure Data Lake Analytics](../articles/machine-learning/how-to-set-up-training-targets.md#adla) | &nbsp; | да | &nbsp; |
 |[Azure HDInsight](../articles/machine-learning/how-to-set-up-training-targets.md#hdinsight) | &nbsp; | да | &nbsp; |
 |[Пакетная служба Azure](../articles/machine-learning/how-to-set-up-training-targets.md#azbatch) | &nbsp; | да | &nbsp; |

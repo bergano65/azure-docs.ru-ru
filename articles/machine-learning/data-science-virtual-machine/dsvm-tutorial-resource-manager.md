@@ -10,18 +10,18 @@ ms.date: 06/10/2020
 ms.service: machine-learning
 ms.subservice: data-science-vm
 ms.topic: quickstart
-ms.openlocfilehash: 675ddf073393afde6ac8d08a65b40da11d90d3ea
-ms.sourcegitcommit: 0100d26b1cac3e55016724c30d59408ee052a9ab
+ms.openlocfilehash: 9b89c0a4135bf595991439dd47e57a870ea2b0d1
+ms.sourcegitcommit: b33c9ad17598d7e4d66fe11d511daa78b4b8b330
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "86026667"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88855065"
 ---
 # <a name="quickstart-create-an-ubuntu-data-science-virtual-machine-using-an-arm-template"></a>Краткое руководство. Создание виртуальной машины для анализа данных на платформе Ubuntu с помощью шаблона ARM
 
 [!INCLUDE [applies-to-skus](../../../includes/aml-applies-to-basic-enterprise-sku.md)]
 
-В этом кратком руководстве показано, как создать виртуальную машину Ubuntu 18.04 для обработки и анализа данных с помощью шаблона Azure Resource Manager (ARM). Виртуальные машины для обработки и анализа данных — это облачные виртуальные машины, предварительно загруженные с помощью набора платформ и средств для обработки и анализа данных и машинного обучения. При развертывании на основе ресурсов вычислений на платформе GPU все средства и библиотеки настраиваются на использование GPU. 
+В этом кратком руководстве показано, как создать виртуальную машину Ubuntu 18.04 для обработки и анализа данных с помощью шаблона Azure Resource Manager (ARM). Виртуальные машины для обработки и анализа данных — это облачные виртуальные машины, предварительно загруженные с помощью набора платформ и средств для обработки и анализа данных и машинного обучения. При развертывании на основе ресурсов вычислений на платформе GPU все средства и библиотеки настраиваются на использование GPU.
 
 [!INCLUDE [About Azure Resource Manager](../../../includes/resource-manager-quickstart-introduction.md)]
 
@@ -37,12 +37,17 @@ ms.locfileid: "86026667"
 
 ## <a name="review-the-template"></a>Изучение шаблона
 
-Шаблон, используемый в этом кратком руководстве, взят из [шаблонов быстрого запуска Azure](https://azure.microsoft.com/resources/templates/101-vm-ubuntu-DSVM-GPU-or-CPU/). Полный шаблон для этой статьи слишком длинный, чтобы его можно было здесь отобразить. Вы можете просмотреть полный шаблон в файле [azuredeploy.json](https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/101-vm-ubuntu-DSVM-GPU-or-CPU/azuredeploy.json). Ниже показана часть, определяющая особенности DSVM.
+Шаблон, используемый в этом кратком руководстве, взят из [шаблонов быстрого запуска Azure](https://azure.microsoft.com/resources/templates/101-vm-ubuntu-DSVM-GPU-or-CPU/).
 
-:::code language="json" source="~/quickstart-templates/101-vm-ubuntu-DSVM-GPU-or-CPU/azuredeploy.json" range="235-276":::
+:::code language="json" source="~/quickstart-templates/101-vm-ubuntu-DSVM-GPU-or-CPU/azuredeploy.json":::
 
 В шаблоне определены следующие ресурсы:
 
+* [Microsoft.Network/networkInterfaces](/azure/templates/microsoft.network/networkinterfaces)
+* [Microsoft.Network/networkSecurityGroups;](/azure/templates/microsoft.network/networksecuritygroups)
+* [Microsoft.Network/virtualNetworks](/azure/templates/microsoft.network/virtualnetworks)
+* [Microsoft.Network/publicIPAddresses](/azure/templates/microsoft.network/publicipaddresses)
+* [Microsoft.Storage/storageAccounts](/azure/templates/microsoft.storage/storageaccounts)
 * [Microsoft.Compute/virtualMachines](/azure/templates/microsoft.compute/virtualmachines): Создайте виртуальную машину на основе облака. В этом шаблоне виртуальная машина настроена как виртуальная машина для обработки и анализа данных под управлением Ubuntu 18.04.
 
 ## <a name="deploy-the-template"></a>Развертывание шаблона
@@ -74,7 +79,7 @@ read
 
 Чтобы просмотреть виртуальную машину для обработки и анализа данных:
 
-1. Перейдите к https://portal.azure.com.
+1. Перейдите на [портал Azure](https://portal.azure.com).
 1. Войдите.
 1. Выберите группу ресурсов, созданную ранее.
 

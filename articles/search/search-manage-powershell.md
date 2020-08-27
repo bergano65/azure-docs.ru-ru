@@ -9,22 +9,22 @@ ms.service: cognitive-search
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 02/11/2020
-ms.openlocfilehash: 0ce6a754ce09e227332309878bdddd3d8c1733be
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 9f189d1889f3ca3a3aa3234432452b1b3d696c04
+ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87021908"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88935098"
 ---
 # <a name="manage-your-azure-cognitive-search-service-with-powershell"></a>Управление службой Когнитивный поиск Azure с помощью PowerShell
 > [!div class="op_single_selector"]
 > * [Портал](search-manage.md)
 > * [PowerShell](search-manage-powershell.md)
-> * [REST API](https://docs.microsoft.com/rest/api/searchmanagement/)
-> * [Пакет SDK для .NET](https://docs.microsoft.com/dotnet/api/microsoft.azure.management.search)
+> * [REST API](/rest/api/searchmanagement/)
+> * [Пакет SDK для .NET](/dotnet/api/microsoft.azure.management.search)
 > * [Языке](https://pypi.python.org/pypi/azure-mgmt-search/0.1.0)> 
 
-Вы можете запускать командлеты и скрипты PowerShell в Windows, Linux или в [Azure Cloud Shell](https://docs.microsoft.com/azure/cloud-shell/overview) для создания и настройки когнитивный Поиск Azure. Модуль **AZ. Search** расширяет [Azure PowerShell](https://docs.microsoft.com/powershell/) с полным контролем четности к [API-интерфейсам управления поиском](https://docs.microsoft.com/rest/api/searchmanagement) и позволяет выполнять следующие задачи:
+Вы можете запускать командлеты и скрипты PowerShell в Windows, Linux или в [Azure Cloud Shell](../cloud-shell/overview.md) для создания и настройки когнитивный Поиск Azure. Модуль **AZ. Search** расширяет [Azure PowerShell](/powershell/) с полным контролем четности к [API-интерфейсам управления поиском](/rest/api/searchmanagement) и позволяет выполнять следующие задачи:
 
 > [!div class="checklist"]
 > * [Перечисление служб поиска в подписке](#list-search-services)
@@ -36,7 +36,7 @@ ms.locfileid: "87021908"
 
 Иногда вопросы задаются *не* в приведенном выше списке. В настоящее время нельзя использовать модуль **AZ. Search** или REST API управления для изменения имени сервера, региона или уровня. Выделенные ресурсы выделяются при создании службы. Таким образом, для изменения базового оборудования (расположения или типа узла) требуется новая служба. Аналогично, отсутствуют средства или интерфейсы API для передачи содержимого, например индекса, из одной службы в другую.
 
-В рамках службы создание и управление содержимым осуществляется с помощью [Служба поиска REST API](https://docs.microsoft.com/rest/api/searchservice/) или [пакета SDK для .NET](https://docs.microsoft.com/dotnet/api/?term=microsoft.azure.search). Хотя для содержимого нет выделенных команд PowerShell, можно написать сценарий PowerShell, который вызывает API-интерфейсы RESTFUL или .NET для создания и загрузки индексов.
+В рамках службы создание и управление содержимым осуществляется с помощью [Служба поиска REST API](/rest/api/searchservice/) или [пакета SDK для .NET](/dotnet/api/?term=microsoft.azure.search). Хотя для содержимого нет выделенных команд PowerShell, можно написать сценарий PowerShell, который вызывает API-интерфейсы RESTFUL или .NET для создания и загрузки индексов.
 
 <a name="check-versions-and-load"></a>
 
@@ -90,7 +90,7 @@ Select-AzSubscription -SubscriptionName ContosoSubscription
 
 ## <a name="list-services-in-a-subscription"></a>Перечисление служб в подписке
 
-Следующие команды относятся к [**AZ. Resources**](https://docs.microsoft.com/powershell/module/az.resources/?view=azps-1.4.0#resources)и возвращают сведения о существующих ресурсах и службах, уже подготовленных в вашей подписке. Если вы не уверены, сколько служб поиска уже создано, эти команды возвращают эту информацию, экономя на портале.
+Следующие команды относятся к [**AZ. Resources**](/powershell/module/az.resources/?view=azps-1.4.0#resources)и возвращают сведения о существующих ресурсах и службах, уже подготовленных в вашей подписке. Если вы не уверены, сколько служб поиска уже создано, эти команды возвращают эту информацию, экономя на портале.
 
 Первая команда возвращает все службы поиска.
 
@@ -116,7 +116,7 @@ ResourceId        : /subscriptions/<alpha-numeric-subscription-ID>/resourceGroup
 
 ## <a name="import-azsearch"></a>Импорт AZ. Search
 
-Команды из [**AZ. Search**](https://docs.microsoft.com/powershell/module/az.search/?view=azps-1.4.0#search) недоступны, пока не будет загружен модуль.
+Команды из [**AZ. Search**](/powershell/module/az.search/?view=azps-1.4.0#search) недоступны, пока не будет загружен модуль.
 
 ```azurepowershell-interactive
 Install-Module -Name Az.Search
@@ -148,7 +148,7 @@ Cmdlet          Set-AzSearchService                 0.7.1      Az.Search
 
 ## <a name="get-search-service-information"></a>Получение сведений о службе поиска
 
-После команды **AZ. Search** импортируется, и вы узнаете о группе ресурсов, содержащей службу поиска, выполните командлет [Get-азсеарчсервице](https://docs.microsoft.com/powershell/module/az.search/get-azsearchservice?view=azps-1.4.0) , чтобы получить определение службы, включая имя, регион, уровень, реплику и число разделов.
+После команды **AZ. Search** импортируется, и вы узнаете о группе ресурсов, содержащей службу поиска, выполните командлет [Get-азсеарчсервице](/powershell/module/az.search/get-azsearchservice?view=azps-1.4.0) , чтобы получить определение службы, включая имя, регион, уровень, реплику и число разделов.
 
 ```azurepowershell-interactive
 Get-AzSearchService -ResourceGroupName <resource-group-name>
@@ -170,7 +170,7 @@ ResourceId        : /subscriptions/<alphanumeric-subscription-ID>/resourceGroups
 
 ## <a name="create-or-delete-a-service"></a>Создание или удаление службы
 
-[**New-азсеарчсервице**](https://docs.microsoft.com/powershell/module/az.search/new-azsearchadminkey?view=azps-1.4.0) используется для [создания новой службы поиска](search-create-service-portal.md).
+[**New-азсеарчсервице**](/powershell/module/az.search/new-azsearchadminkey?view=azps-1.4.0) используется для [создания новой службы поиска](search-create-service-portal.md).
 
 ```azurepowershell-interactive
 New-AzSearchService -ResourceGroupName "demo-westus" -Name "my-demo-searchapp" -Sku "Standard" -Location "West US" -PartitionCount 3 -ReplicaCount 3
@@ -191,7 +191,7 @@ Tags
 
 ## <a name="regenerate-admin-keys"></a>Повторное создание ключей администратора
 
-[**New-азсеарчадминкэй**](https://docs.microsoft.com/powershell/module/az.search/new-azsearchadminkey?view=azps-1.4.0) используется для отката [ключей API](search-security-api-keys.md)администратора. Для каждой службы создаются два ключа администратора для доступа с проверкой подлинности. Для каждого запроса требуются ключи. Оба ключа администратора функционально эквивалентны, они предоставляют полный доступ для записи службе поиска с возможностью получения любых сведений, а также создания и удаления любого объекта. Существует два ключа, которые можно использовать при замене другого. 
+[**New-азсеарчадминкэй**](/powershell/module/az.search/new-azsearchadminkey?view=azps-1.4.0) используется для отката [ключей API](search-security-api-keys.md)администратора. Для каждой службы создаются два ключа администратора для доступа с проверкой подлинности. Для каждого запроса требуются ключи. Оба ключа администратора функционально эквивалентны, они предоставляют полный доступ для записи службе поиска с возможностью получения любых сведений, а также создания и удаления любого объекта. Существует два ключа, которые можно использовать при замене другого. 
 
 Его можно создать только по одному, указанному в качестве `primary` `secondary` ключа или. При использовании непрерывной службы не забудьте обновить весь код клиента для использования вторичного ключа при последовательном переходе по первичному ключу. Старайтесь не менять ключи, пока операции находятся в полете.
 
@@ -213,7 +213,7 @@ Primary                    Secondary
 
 ## <a name="create-or-delete-query-keys"></a>Создание или удаление ключей запроса
 
-[**New-азсеарчкуерикэй**](https://docs.microsoft.com/powershell/module/az.search/new-azsearchquerykey?view=azps-1.4.0) используется для создания [ключей API](search-security-api-keys.md) запросов для доступа только для чтения из клиентских приложений к индексу Azure когнитивный Поиск. Ключи запроса используются для проверки подлинности определенного индекса с целью получения результатов поиска. Ключи запроса не предоставляют доступ только для чтения к другим элементам службы, таким как индекс, источник данных или индексатор.
+[**New-азсеарчкуерикэй**](/powershell/module/az.search/new-azsearchquerykey?view=azps-1.4.0) используется для создания [ключей API](search-security-api-keys.md) запросов для доступа только для чтения из клиентских приложений к индексу Azure когнитивный Поиск. Ключи запроса используются для проверки подлинности определенного индекса с целью получения результатов поиска. Ключи запроса не предоставляют доступ только для чтения к другим элементам службы, таким как индекс, источник данных или индексатор.
 
 Вы не можете предоставить ключ для использования Когнитивный поиск Azure. Ключи API создаются службой.
 
@@ -223,7 +223,7 @@ New-AzSearchQueryKey -ResourceGroupName <resource-group-name> -ServiceName <sear
 
 ## <a name="scale-replicas-and-partitions"></a>Масштабирование реплик и секций
 
-[**Set-азсеарчсервице**](https://docs.microsoft.com/powershell/module/az.search/set-azsearchservice?view=azps-1.4.0) используется для [увеличения или уменьшения количества реплик и секций](search-capacity-planning.md) , чтобы перенастроить оплачиваемые ресурсы в службе. При увеличении количества реплик или секций добавляется к счету, у которого есть фиксированная и переменная плата. При наличии временной потребности в дополнительной вычислительной мощности можно увеличить реплики и секции для обработки рабочей нагрузки. В области мониторинг на странице Обзор портала находятся плитки о задержке запросов, запросах в секунду и регулированиях, указывающих, достаточно ли текущих мощностей.
+[**Set-азсеарчсервице**](/powershell/module/az.search/set-azsearchservice?view=azps-1.4.0) используется для [увеличения или уменьшения количества реплик и секций](search-capacity-planning.md) , чтобы перенастроить оплачиваемые ресурсы в службе. При увеличении количества реплик или секций добавляется к счету, у которого есть фиксированная и переменная плата. При наличии временной потребности в дополнительной вычислительной мощности можно увеличить реплики и секции для обработки рабочей нагрузки. В области мониторинг на странице Обзор портала находятся плитки о задержке запросов, запросах в секунду и регулированиях, указывающих, достаточно ли текущих мощностей.
 
 Добавление или удаление перебора может занять некоторое время. Корректировки производительности выполняются в фоновом режиме, что позволяет продолжать работу существующих рабочих нагрузок. Дополнительная емкость используется для входящих запросов, как только она будет готова, без необходимости дополнительной настройки. 
 

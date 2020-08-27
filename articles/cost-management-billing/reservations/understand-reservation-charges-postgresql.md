@@ -4,14 +4,15 @@ description: Узнайте, как применяется скидка на р�
 author: kummanish
 ms.author: manishku
 ms.service: cost-management-billing
+ms.subservice: reservations
 ms.topic: conceptual
 ms.date: 02/13/2020
-ms.openlocfilehash: e01b35bc540045bc272484159380f8a11e5a6c48
-ms.sourcegitcommit: eaec2e7482fc05f0cac8597665bfceb94f7e390f
+ms.openlocfilehash: 51b2f4964c01efbfc82008134d47f09648a772ff
+ms.sourcegitcommit: 56cbd6d97cb52e61ceb6d3894abe1977713354d9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "82509403"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88681980"
 ---
 # <a name="how-a-reservation-discount-is-applied-to-azure-database-for-postgresql-single-server"></a>Как скидка на резервирование применяется к отдельному серверу Базы данных Azure для PostgreSQL
 

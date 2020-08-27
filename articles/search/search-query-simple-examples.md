@@ -8,18 +8,18 @@ ms.author: heidist
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 11/04/2019
-ms.openlocfilehash: 3ea1c42234267bdbc5f8a7d35f0fd73bbb59b33c
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: afc9f8e29cf27734787da9cab3e3456e5414d9ac
+ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85553415"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88918032"
 ---
 # <a name="create-a-simple-query-in-azure-cognitive-search"></a>Создание простого запроса в Azure Когнитивный поиск
 
 В Когнитивный поиск Azure [простой синтаксис запроса](query-simple-syntax.md) вызывает средство синтаксического анализа запросов по умолчанию для выполнения запросов полнотекстового поиска по индексу. Это средство синтаксического анализа работает быстро и обрабатывает распространенные сценарии, включая полнотекстовый поиск, фильтрованный и аспектный Поиск, а также географический поиск. 
 
-В этой статье мы будем использовать примеры для иллюстрации простого синтаксиса, заполняя `search=` параметр операции [поиска документов](https://docs.microsoft.com/rest/api/searchservice/search-documents) .
+В этой статье мы будем использовать примеры для иллюстрации простого синтаксиса, заполняя `search=` параметр операции [поиска документов](/rest/api/searchservice/search-documents) .
 
 Альтернативный синтаксис запросов — это [полная Lucene](query-lucene-syntax.md), поддерживающая более сложные структуры запросов, например поиск нечетких и подстановочных знаков, для обработки которых может потребоваться дополнительное время. Дополнительные сведения и примеры, демонстрирующие полный синтаксис, см. [в разделе Использование полного синтаксиса Lucene](search-query-lucene-examples.md).
 
@@ -47,9 +47,9 @@ ms.locfileid: "85553415"
 
 URL-адрес содержит следующие элементы.
 
-+ **`https://azs-playground.search.windows.net/`**— это служба поиска "песочницы", поддерживаемая командой разработчиков Когнитивный поиск Azure. 
++ **`https://azs-playground.search.windows.net/`** — это служба поиска "песочницы", поддерживаемая командой разработчиков Когнитивный поиск Azure. 
 + **`indexes/nycjobs/`** Индекс заданий Нью в коллекции индексов этой службы. Имя службы и индекс должны быть указаны в запросе.
-+ **`docs`**— Это коллекция Documents, содержащая все содержимое, доступное для поиска. Значение api-key в заголовке запроса подходит только для операций чтения, нацеленных на эту коллекцию документов.
++ **`docs`** — Это коллекция Documents, содержащая все содержимое, доступное для поиска. Значение api-key в заголовке запроса подходит только для операций чтения, нацеленных на эту коллекцию документов.
 + **`api-version=2020-06-30`** Задает версию API, которая является обязательным параметром при каждом запросе.
 + **`search=*`** Строка запроса, которая в исходном запросе имеет значение null, возвращает первые 50 результатов (по умолчанию).
 
@@ -103,7 +103,7 @@ https://azs-playground.search.windows.net/indexes/nycjobs/docs?api-version=2020-
 
 ## <a name="example-2-look-up-by-id"></a>Пример 2. Поиск по идентификатору
 
-Это немного нетипичный пример. Однако при оценке поведения при поиске может потребоваться проверить все содержимое конкретного документа, чтобы понять, почему он был включен в результаты или исключен из них. Чтобы вернуть весь документ, используйте [операцию поиска](https://docs.microsoft.com/rest/api/searchservice/lookup-document) для передачи идентификатора документа.
+Это немного нетипичный пример. Однако при оценке поведения при поиске может потребоваться проверить все содержимое конкретного документа, чтобы понять, почему он был включен в результаты или исключен из них. Чтобы вернуть весь документ, используйте [операцию поиска](/rest/api/searchservice/lookup-document) для передачи идентификатора документа.
 
 Все документы имеют уникальный идентификатор. Чтобы проверить синтаксис запроса поиска, сначала получите список идентификаторов документов, чтобы найти в нем нужный идентификатор. В индексе вакансий в Нью-Йорке идентификаторы хранятся в поле `id`.
 
@@ -119,7 +119,7 @@ https://azs-playground.search.windows.net/indexes/nycjobs/docs/9E1E3AF9-0660-4E0
 
 ## <a name="example-3-filter-queries"></a>Пример 3. Фильтрация запросов
 
-[Синтаксис фильтра](https://docs.microsoft.com/azure/search/search-query-odata-filter) — это выражение OData, которое можно использовать с параметром **search** или само по себе. Автономный фильтр без параметра поиска полезен, когда выражение фильтра может полностью определить интересующие документы. Без строки запроса не выполняется лексический или лингвистический анализ (все оценки имеют значение 1), нет оценки и рейтинга. Обратите внимание, что строка поиска пуста.
+[Синтаксис фильтра](./search-query-odata-filter.md) — это выражение OData, которое можно использовать с параметром **search** или само по себе. Автономный фильтр без параметра поиска полезен, когда выражение фильтра может полностью определить интересующие документы. Без строки запроса не выполняется лексический или лингвистический анализ (все оценки имеют значение 1), нет оценки и рейтинга. Обратите внимание, что строка поиска пуста.
 
 ```http
 POST /indexes/nycjobs/docs/search?api-version=2020-06-30
@@ -147,7 +147,7 @@ https://azs-playground.search.windows.net/indexes/nycjobs/docs?api-version=2020-
 https://azs-playground.search.windows.net/indexes/nycjobs/docs?api-version=2020-06-30&$count=true&$select=job_id,business_title,agency&search=&$filter=search.ismatch('plan*', 'business_title', 'full', 'any')
 ```
 
-Дополнительные сведения о функции см. в [описании search.ismatch в разделе с примерами фильтров](https://docs.microsoft.com/azure/search/search-query-odata-full-text-search-functions#examples).
+Дополнительные сведения о функции см. в [описании search.ismatch в разделе с примерами фильтров](./search-query-odata-full-text-search-functions.md#examples).
 
 ## <a name="example-4-range-filters"></a>Пример 4. Фильтры диапазонов
 
@@ -198,7 +198,7 @@ https://azs-playground.search.windows.net/indexes/nycjobs/docs?api-version=2020-
 
 ## <a name="example-5-geo-search"></a>Пример 5. Геопространственный поиск
 
-Индекс выборки включает в себя поле geo_location с координатами широты и долготы. В этом примере используется [функция geo.distance](https://docs.microsoft.com/azure/search/search-query-odata-geo-spatial-functions#examples), которая фильтрует документы в пределах окружности начальной точки до произвольного расстояния (в километрах), которое вы предоставляете. Вы можете отрегулировать последнее значение в запросе (4), чтобы уменьшить или увеличить площадь поверхности запроса.
+Индекс выборки включает в себя поле geo_location с координатами широты и долготы. В этом примере используется [функция geo.distance](./search-query-odata-geo-spatial-functions.md#examples), которая фильтрует документы в пределах окружности начальной точки до произвольного расстояния (в километрах), которое вы предоставляете. Вы можете отрегулировать последнее значение в запросе (4), чтобы уменьшить или увеличить площадь поверхности запроса.
 
 Следующий пример приведен в формате POST для удобства чтения:
 
@@ -223,7 +223,7 @@ https://azs-playground.search.windows.net/indexes/nycjobs/docs?api-version=2020-
 
 Запросы терминов позволяют искать одиночные термины или наборы терминов, которые оцениваются независимо друг от друга. Запросы фраз заключаются кавычки и проверяются как буквальная строка. Точностью соответствия управляют операторы и параметр searchMode.
 
-Пример 1. **`&search=fire`** возвращает 150 результатов, где все совпадения содержат слово Fire где-нибудь в документе.
+Пример 1. **`&search=fire`**  возвращает 150 результатов, где все совпадения содержат слово Fire где-нибудь в документе.
 
 ```http
 https://azs-playground.search.windows.net/indexes/nycjobs/docs?api-version=2020-06-30&$count=true&search=fire
@@ -285,16 +285,16 @@ https://azs-playground.search.windows.net/indexes/nycjobs/docs?api-version=2020-
 https://azs-playground.search.windows.net/indexes/nycjobs/docs?api-version=2020-06-30&$count=true&$select=job_id,agency,business_title,civil_service_title,work_location,job_description&search="fire department"&$orderby=civil_service_title&$top=5&$skip=5
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 Попробуйте указать запросы в коде. Чтобы узнать о том, как настроить поисковые запросы для .NET и REST API, используя простой синтаксис по умолчанию, воспользуйтесь приведенными ссылками.
 
-* [Запрос индекса с помощью пакета SDK для .NET](search-query-dotnet.md)
-* [Запрос индекса с помощью REST API](search-create-index-rest-api.md)
+* [Запрос индекса с помощью пакета SDK для .NET](./search-get-started-dotnet.md)
+* [Запрос индекса с помощью REST API](./search-get-started-powershell.md)
 
 Дополнительные справочные материалы по синтаксису, архитектуре запросов и примеры можно найти по следующим ссылкам:
 
 + [Примеры синтаксиса запросов Lucene для создания расширенных запросов](search-query-lucene-examples.md)
 + [How full text search works in Azure Cognitive Search](search-lucene-query-architecture.md) (Как выполняется полнотекстовый поиск в Когнитивном поиске Azure)
-+ [Простой синтаксис запросов](https://docs.microsoft.com/rest/api/searchservice/simple-query-syntax-in-azure-search)
-+ [Полный запрос Lucene](https://docs.microsoft.com/rest/api/searchservice/lucene-query-syntax-in-azure-search)
-+ [Фильтры и синтаксис Orderby](https://docs.microsoft.com/rest/api/searchservice/odata-expression-syntax-for-azure-search)
++ [Простой синтаксис запросов](/rest/api/searchservice/simple-query-syntax-in-azure-search)
++ [Полный запрос Lucene](/rest/api/searchservice/lucene-query-syntax-in-azure-search)
++ [Фильтры и синтаксис Orderby](/rest/api/searchservice/odata-expression-syntax-for-azure-search)
