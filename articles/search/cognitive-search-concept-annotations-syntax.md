@@ -8,12 +8,12 @@ ms.author: luisca
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 11/04/2019
-ms.openlocfilehash: e27f61239c0631fb248217777a311b13ee48a3f9
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 03431d861ca6d469b894e45c36fe2a3d7904c3a2
+ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "74113865"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88935540"
 ---
 # <a name="how-to-reference-annotations-in-an-azure-cognitive-search-skillset"></a>Как ссылаться на аннотации в наборе навыков Когнитивный поиск Azure
 
@@ -25,7 +25,7 @@ ms.locfileid: "74113865"
 
 Перед рассмотрением синтаксиса давайте обсудим несколько важных концепций, чтобы лучше понимать примеры, приведенные далее в этой статье.
 
-| Термин | Описание |
+| Термин | Description |
 |------|-------------|
 | Обогащенный документ | Обогащенный документ — это внутренняя структура, которая создается и используется конвейером для хранения всех аннотаций, связанных с документом. Обогащенный документ можно представить в виде дерева аннотаций. Как правило, аннотация, созданная из предыдущей аннотации, становится дочерней для нее.<p/>Обогащенные документы существуют только при выполнении набора навыков. Когда произойдет сопоставление содержимого с индексом поиска, обогащенный документ больше не будет нужен. Несмотря на то, что вы не взаимодействуете с обогащенными документами напрямую, полезно иметь когнитивную модель документов при создании набора навыков. |
 | Контекст обогащения | Контекст, в котором происходит обогащение, в рамках которого обогащается элемент. По умолчанию контекст обогащения находится на уровне `"/document"` с отдельными документами. При запуске навыка его выходные данные становятся [свойствами определенного контекста](#example-2).|
@@ -123,5 +123,5 @@ ms.locfileid: "74113865"
 ## <a name="see-also"></a>См. также
 + [How to add a custom skill to a cognitive search pipeline](cognitive-search-custom-skill-interface.md) (Как добавить пользовательский навык в конвейер когнитивного поиска)
 + [Определение набора навыков](cognitive-search-defining-skillset.md)
-+ [Создание набора навыков (REST)](https://docs.microsoft.com/rest/api/searchservice/create-skillset)
++ [Создание набора навыков (REST)](/rest/api/searchservice/create-skillset)
 + [How to map enriched fields to an index](cognitive-search-output-field-mapping.md) (Как сопоставить обогащенные поля с индексом)

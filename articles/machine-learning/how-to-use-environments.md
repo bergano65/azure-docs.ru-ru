@@ -11,12 +11,12 @@ ms.subservice: core
 ms.date: 07/23/2020
 ms.topic: conceptual
 ms.custom: how-to, devx-track-python
-ms.openlocfilehash: 1994407de579e8fd7bc6dfc2ecc9f021d1bf0ec5
-ms.sourcegitcommit: b33c9ad17598d7e4d66fe11d511daa78b4b8b330
+ms.openlocfilehash: 3368a42248e084476eb27318abbcd1ca9fbfdacf
+ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88853244"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88927550"
 ---
 # <a name="create--use-software-environments-in-azure-machine-learning"></a>Создание & использование программных сред в Машинное обучение Azure
 [!INCLUDE [applies-to-skus](../../includes/aml-applies-to-basic-enterprise-sku.md)]
@@ -34,7 +34,7 @@ ms.locfileid: "88853244"
 
 Общий обзор работы сред в Машинное обучение Azure см. в разделе [что такое среды машинного обучения?](concept-environments.md) Сведения о настройке сред разработки см. [здесь](how-to-configure-environment.md).
 
-## <a name="prerequisites"></a>Обязательные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 * [Пакет SDK для машинное обучение Azure для Python](https://docs.microsoft.com/python/api/overview/azure/ml/install?view=azure-ml-py)
 * [Рабочая область машинное обучение Azure](how-to-manage-workspace.md)
@@ -242,7 +242,11 @@ build = env.build(workspace=ws)
 build.wait_for_completion(show_output=True)
 ```
 
-Сначала рекомендуется создавать образы локально с помощью [`build_local()`](https://docs.microsoft.com/python/api/azureml-core/azureml.core.environment.environment?view=azure-ml-py#build-local-workspace--platform-none----kwargs-) метода. И установка необязательного параметра `pushImageToWorkspaceAcr = True` приведет к передаче полученного образа в реестр контейнеров рабочей области машинного обучения Azure. 
+Сначала рекомендуется создавать образы локально с помощью [`build_local()`](https://docs.microsoft.com/python/api/azureml-core/azureml.core.environment.environment?view=azure-ml-py#build-local-workspace--platform-none----kwargs-) метода. Чтобы создать образ DOCKER, задайте необязательный параметр `useDocker=True` . Чтобы отправить полученный образ в реестр контейнеров рабочей области AzureML, установите `pushImageToWorkspaceAcr=True` .
+
+```python
+build = env.build_local(workspace=ws, useDocker=True, pushImageToWorkspaceAcr=True)
+```
 
 > [!WARNING]
 >  Изменение порядка зависимостей или каналов в среде приведет к созданию новой среды и потребует создания новой сборки образа. Кроме того, при наличии `build()` новых версий вызов метода для существующего образа приведет к обновлению его зависимостей. 

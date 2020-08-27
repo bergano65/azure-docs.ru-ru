@@ -2,14 +2,15 @@
 title: Snapshot Debugger Application Insights Azure для приложений .NET
 description: Отладочные моментальные снимки автоматически собираются при порождении исключений в рабочих приложениях .NET
 ms.topic: conceptual
+ms.custom: devx-track-dotnet
 ms.date: 10/23/2019
 ms.reviewer: cweining
-ms.openlocfilehash: 58fbb0cee5e4f06c20d31b4b5011582957f6f6c3
-ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
+ms.openlocfilehash: ab142b4e0a2d5486727ffc71fc94ae4944513052
+ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87325650"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88935812"
 ---
 # <a name="debug-snapshots-on-exceptions-in-net-apps"></a>Отладочные моментальные снимки для исключений в приложениях .NET
 При возникновении исключения, можно автоматически собирать отладочный моментальный снимок из работающего веб-приложения. Моментальный снимок отображает состояние исходного кода и переменных в момент порождения этого исключения. Snapshot Debugger в [Azure Application Insights](./app-insights-overview.md) отслеживает данные телеметрии исключений из веб-приложения. Он собирает моментальные снимки для наиболее частых исключений, чтобы предоставить вам необходимые сведения для диагностики проблем в рабочей среде. Включите в приложение [пакет NuGet сборщика моментальных снимков](https://www.nuget.org/packages/Microsoft.ApplicationInsights.SnapshotCollector) и при необходимости настройте параметры коллекции в [ApplicationInsights.config](./configuration-with-applicationinsights-config.md). Моментальные снимки отображаются на [исключениях](./asp-net-exceptions.md) на портале Application Insights.
@@ -46,7 +47,7 @@ ms.locfileid: "87325650"
 Владельцам подписки следует назначить роль `Application Insights Snapshot Debugger` пользователям, которые будут проверять моментальные снимки. Владельцы подписок могут назначить эту роль отдельным пользователям или группам для целевого ресурса Application Insights или его группы ресурсов или подписки.
 
 1. Перейдите к ресурсу Application Insights на портале Azure.
-1. Выберите **Управление доступом (IAM)**.
+1. Щелкните **Управление доступом (IAM)** .
 1. Нажмите кнопку **+ добавить назначение роли** .
 1. В раскрывающемся списке **Роли** выберите **Отладчик моментальных снимков Application Insights**.
 1. Выполните поиск и введите имя пользователя, который будет добавлен.

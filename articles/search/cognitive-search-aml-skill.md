@@ -8,19 +8,19 @@ ms.author: magottei
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 06/12/2020
-ms.openlocfilehash: 598a8383350cae98d61b8ab74f7687161d3d33e8
-ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
+ms.openlocfilehash: 6a3916a41635a1c76bddbb092294f6d362fc6050
+ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2020
-ms.locfileid: "86245301"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88924717"
 ---
 # <a name="aml-skill-in-an-azure-cognitive-search-enrichment-pipeline"></a>Навык AML в конвейере Когнитивный поиск обогащения Azure
 
 > [!IMPORTANT] 
-> Этот навык в настоящее время доступен в общедоступной предварительной версии. Для предварительной версии функции соглашение об уровне обслуживания не предусмотрено. Мы не рекомендуем использовать ее в рабочей среде. Дополнительные сведения см. в статье [Дополнительные условия использования предварительных выпусков Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/). В настоящее время поддержка пакета SDK для .NET отсутствует.
+> Этот навык сейчас находится на этапе общедоступной предварительной версии. Для предварительной версии функции соглашение об уровне обслуживания не предусмотрено. Мы не рекомендуем использовать ее в рабочей среде. Дополнительные сведения см. в статье [Дополнительные условия использования предварительных выпусков Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/). Пакет SDK для .NET сейчас не поддерживается.
 
-Навык **AML** позволяет расширить возможности искусственного интеллекта с помощью настраиваемой модели [машинное обучение Azure](https://docs.microsoft.com/azure/machine-learning/overview-what-is-azure-ml) (AML). После того как модель AML будет [обучена и развернута](https://docs.microsoft.com/azure/machine-learning/concept-azure-machine-learning-architecture#workflow), навык **AML** интегрирует его в обогащение искусственного интеллекта.
+Навык **AML** позволяет расширить возможности искусственного интеллекта с помощью настраиваемой модели [машинное обучение Azure](../machine-learning/overview-what-is-azure-ml.md) (AML). После того как модель AML будет [обучена и развернута](../machine-learning/concept-azure-machine-learning-architecture.md#workspace), навык **AML** интегрирует его в обогащение искусственного интеллекта.
 
 Как и в случае со встроенными навыками, навык **AML** имеет входные и выходные данные. Входные данные отправляются в развернутую службу AML в виде объекта JSON, который выводит полезные данные JSON в качестве ответа, а также код состояния успеха. Ожидается, что ответ будет иметь выходные данные, заданные навыком **AML** . Любой другой ответ считается ошибкой, и никакие обогащения не выполняются.
 
@@ -29,11 +29,11 @@ ms.locfileid: "86245301"
 > * `503 Service Unavailable`
 > * `429 Too Many Requests`
 
-## <a name="prerequisites"></a>Обязательные условия
+## <a name="prerequisites"></a>Предварительные требования
 
-* [Рабочая область AML](https://docs.microsoft.com/azure/machine-learning/concept-workspace)
-* [Целевой объект вычислений AML службы Azure Kubernetes](https://docs.microsoft.com/azure/machine-learning/concept-compute-target) в этой рабочей области с [развернутой моделью](https://docs.microsoft.com/azure/machine-learning/how-to-deploy-azure-kubernetes-service)
-  * В [целевом объекте вычислений должен быть включен протокол SSL](https://docs.microsoft.com/azure/machine-learning/how-to-secure-web-service#deploy-on-aks-and-field-programmable-gate-array-fpga). Когнитивный поиск Azure разрешает доступ только к конечным точкам **HTTPS**
+* [Рабочая область AML](../machine-learning/concept-workspace.md)
+* [Целевой объект вычислений AML службы Azure Kubernetes](../machine-learning/concept-compute-target.md) в этой рабочей области с [развернутой моделью](../machine-learning/how-to-deploy-azure-kubernetes-service.md)
+  * В [целевом объекте вычислений должен быть включен протокол SSL](../machine-learning/how-to-secure-web-service.md#deploy-on-aks-and-field-programmable-gate-array-fpga). Когнитивный поиск Azure разрешает доступ только к конечным точкам **HTTPS**
   * Самозаверяющие сертификаты использовать нельзя.
 
 ## <a name="odatatype"></a>@odata.type  
@@ -45,8 +45,8 @@ Microsoft. Skills. Custom. Амлскилл
 
 | Имя параметра | Описание |
 |--------------------|-------------|
-| `uri` | (Требуется для [без проверки подлинности или проверки подлинности ключа](#WhatSkillParametersToUse)) [URI оценки службы AML](https://docs.microsoft.com/azure/machine-learning/how-to-consume-web-service) , в которую будут отправлены полезные данные _JSON_ . Допускается только схема URI **HTTPS** . |
-| `key` | (Требуется для [проверки подлинности с помощью ключа](#WhatSkillParametersToUse)) [Ключ для службы AML](https://docs.microsoft.com/azure/machine-learning/how-to-consume-web-service#authentication-with-keys). |
+| `uri` | (Требуется для [без проверки подлинности или проверки подлинности ключа](#WhatSkillParametersToUse)) [URI оценки службы AML](../machine-learning/how-to-consume-web-service.md) , в которую будут отправлены полезные данные _JSON_ . Допускается только схема URI **HTTPS** . |
+| `key` | (Требуется для [проверки подлинности с помощью ключа](#WhatSkillParametersToUse)) [Ключ для службы AML](../machine-learning/how-to-consume-web-service.md#authentication-with-keys). |
 | `resourceId` | (Требуется для [проверки подлинности маркера](#WhatSkillParametersToUse)). Azure Resource Manager идентификатор ресурса службы AML. Он должен быть в формате "подписки/{GUID}/resourceGroups/{ресурс-группа-имя}/Microsoft. Мачинелеарнингсервицес/рабочие области/{Workspace-Name}/Services/{service_name}. |
 | `region` | (Необязательно для [проверки подлинности маркера](#WhatSkillParametersToUse)). [Регион](https://azure.microsoft.com/global-infrastructure/regions/) , в котором развернута служба AML. |
 | `timeout` | (Необязательно.) Если указано, означает время ожидания вызова API HTTP-клиента. Значение должно быть отформатировано как значение dayTimeDuration XSD (ограниченное подмножество значения [продолжительности ISO 8601](https://www.w3.org/TR/xmlschema11-2/#dayTimeDuration) ). Например, `PT60S` для 60 секунд. Если не задано, выбирается значение по умолчанию — 30 секунд. Время ожидания может быть не более 230 секунд и не менее 1 секунды. |
@@ -58,9 +58,9 @@ Microsoft. Skills. Custom. Амлскилл
 
 Требуемые параметры навыков AML зависят от того, какая проверка подлинности использует служба AML, если таковая имеется. Службы AML предоставляют три варианта проверки подлинности:
 
-* [Проверка подлинности на основе ключей](https://docs.microsoft.com/azure/machine-learning/concept-enterprise-security#authentication-for-web-service-deployment). Для проверки подлинности запросов оценки от навыков AML предоставляется статический ключ
+* [Проверка подлинности на основе ключей](../machine-learning/concept-enterprise-security.md#authentication-for-web-service-deployment). Для проверки подлинности запросов оценки от навыков AML предоставляется статический ключ
   * Использование _URI_ и параметров _ключа_
-* [Проверка подлинности на основе маркеров](https://docs.microsoft.com/azure/machine-learning/concept-enterprise-security#authentication). Служба AML [развертывается с использованием проверки подлинности на основе маркеров](https://docs.microsoft.com/azure/machine-learning/how-to-deploy-azure-kubernetes-service#authentication-with-tokens). [Управляемому удостоверению](https://docs.microsoft.com/azure/active-directory/managed-identities-azure-resources/overview) службы когнитивный Поиск Azure предоставляется [роль читателя](https://docs.microsoft.com/azure/machine-learning/how-to-assign-roles) в рабочей области службы AML. Затем навык AML использует управляемое удостоверение службы Когнитивный поиск Azure для проверки подлинности в службе AML, не требующей статических ключей.
+* [Проверка подлинности на основе маркеров](../machine-learning/concept-enterprise-security.md#authentication). Служба AML [развертывается с использованием проверки подлинности на основе маркеров](../machine-learning/how-to-deploy-azure-kubernetes-service.md#authentication-with-tokens). [Управляемому удостоверению](../active-directory/managed-identities-azure-resources/overview.md) службы когнитивный Поиск Azure предоставляется [роль читателя](../machine-learning/how-to-assign-roles.md) в рабочей области службы AML. Затем навык AML использует управляемое удостоверение службы Когнитивный поиск Azure для проверки подлинности в службе AML, не требующей статических ключей.
   * Используйте параметр _resourceId_ .
   * Если служба Когнитивный поиск Azure находится в другом регионе в рабочей области AML, используйте параметр _Region_ , чтобы задать регион, в котором развернута служба AML.
 * Без поверки подлинности. Для использования службы AML не требуется проверка подлинности
@@ -171,4 +171,4 @@ Microsoft. Skills. Custom. Амлскилл
 ## <a name="see-also"></a>См. также
 
 + [Определение набора навыков](cognitive-search-defining-skillset.md)
-+ [Устранение неполадок службы AML](https://docs.microsoft.com/azure/machine-learning/how-to-troubleshoot-deployment)
++ [Устранение неполадок службы AML](../machine-learning/how-to-troubleshoot-deployment.md)

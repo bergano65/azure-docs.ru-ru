@@ -9,12 +9,12 @@ ms.service: cognitive-search
 ms.devlang: dotnet
 ms.topic: conceptual
 ms.date: 11/04/2019
-ms.openlocfilehash: 10e6d0a183afdda2bf89014bb72f58d03a3013ec
-ms.sourcegitcommit: 1e6c13dc1917f85983772812a3c62c265150d1e7
+ms.openlocfilehash: 3b3d88c9e605889846808bb53063b06a3e980049
+ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/09/2020
-ms.locfileid: "86171896"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88929760"
 ---
 # <a name="upgrade-to-azure-search-net-sdk-version-3"></a>Обновление до пакета SDK .NET для поиска Azure версии 3
 
@@ -25,7 +25,7 @@ Indexer execution result errors no longer have status
 the data source API will no longer return in the response of any REST operation, the connection string specified by the user.
 --->
 
-Если вы используете версию 2.0-preview [пакета SDK службы поиска Azure для .NET](https://docs.microsoft.com/dotnet/api/overview/azure/search) или более раннюю, то эта статья поможет вам обновить приложение для использования версии 3.
+Если вы используете версию 2.0-preview [пакета SDK службы поиска Azure для .NET](/dotnet/api/overview/azure/search) или более раннюю, то эта статья поможет вам обновить приложение для использования версии 3.
 
 Более общее пошаговое руководство по пакету SDK, включая примеры, см. в разделе [Использование службы поиска Azure в приложении .NET](search-howto-dotnet-sdk.md).
 

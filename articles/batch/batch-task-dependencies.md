@@ -3,13 +3,13 @@ title: Создание зависимостей задач для выполн�
 description: Создание задач, которые зависят от выполнения других задач, для обработки по модели MapReduce и аналогичных рабочих нагрузок больших данных в пакетной службе Azure.
 ms.topic: how-to
 ms.date: 05/22/2017
-ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 4aad67b4537befd251798aac7601bc4efcc276f2
-ms.sourcegitcommit: 845a55e6c391c79d2c1585ac1625ea7dc953ea89
+ms.custom: H1Hack27Feb2017, devx-track-csharp
+ms.openlocfilehash: 05b1bb289c215208be448d8ca7de144c82b313b8
+ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/05/2020
-ms.locfileid: "85965235"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88936985"
 ---
 # <a name="create-task-dependencies-to-run-tasks-that-depend-on-other-tasks"></a>Создание зависимостей для выполнения задач, которые зависят от других задач
 

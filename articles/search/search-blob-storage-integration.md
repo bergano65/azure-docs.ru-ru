@@ -8,12 +8,12 @@ ms.author: heidist
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 11/04/2019
-ms.openlocfilehash: fd405513f8bdef09e6d3ab996fc2c04bd397db13
-ms.sourcegitcommit: fdec8e8bdbddcce5b7a0c4ffc6842154220c8b90
+ms.openlocfilehash: 72d00b70cf3568466715668aa441ee295614c740
+ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83659437"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88935251"
 ---
 # <a name="add-full-text-search-to-azure-blob-data-using-azure-cognitive-search"></a>Добавление возможности полнотекстового поиска в данные BLOB-объектов Azure с помощью Когнитивного поиска Azure
 
@@ -75,5 +75,5 @@ BLOB-объекты в службе хранилища Azure индексиру�
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-+ [Передача, скачивание и составление списка больших двоичных объектов с помощью портала Azure (хранилище BLOB-объектов)](https://docs.microsoft.com/azure/storage/blobs/storage-quickstart-blobs-portal)
-+ [Настройка индексатора больших двоичных объектов (Когнитивный поиск Azure)](search-howto-indexing-azure-blob-storage.md) 
++ [Передача, скачивание и составление списка больших двоичных объектов с помощью портала Azure (хранилище BLOB-объектов)](../storage/blobs/storage-quickstart-blobs-portal.md)
++ [Настройка индексатора больших двоичных объектов (Когнитивный поиск Azure)](search-howto-indexing-azure-blob-storage.md)

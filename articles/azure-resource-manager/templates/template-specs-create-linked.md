@@ -2,13 +2,13 @@
 title: Создание спецификации шаблона со связанными шаблонами
 description: Узнайте, как создать спецификацию шаблона со связанными шаблонами.
 ms.topic: conceptual
-ms.date: 07/22/2020
-ms.openlocfilehash: b952baa465092fef19ad2feb11a43328a6177d1c
-ms.sourcegitcommit: 5b8fb60a5ded05c5b7281094d18cf8ae15cb1d55
+ms.date: 08/26/2020
+ms.openlocfilehash: 49a26bf61c3c66f41761afe293471575e76c4eb9
+ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87387869"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88936373"
 ---
 # <a name="tutorial-create-a-template-spec-with-linked-templates-preview"></a>Учебник. Создание спецификации шаблона со связанными шаблонами (Предварительная версия)
 
@@ -19,7 +19,7 @@ ms.locfileid: "87387869"
 Учетная запись Azure с активной подпиской. [Создайте учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) бесплатно.
 
 > [!NOTE]
-> Спецификации шаблонов в настоящее время находятся на этапе предварительной версии. Чтобы использовать его, необходимо [зарегистрироваться для использования предварительной версии](https://aka.ms/templateSpecOnboarding).
+> Сейчас спецификации шаблонов доступны в предварительной версии. Чтобы использовать его, необходимо [зарегистрироваться для использования предварительной версии](https://aka.ms/templateSpecOnboarding).
 
 ## <a name="create-linked-templates"></a>Создание связанных шаблонов
 
@@ -160,9 +160,11 @@ ms.locfileid: "87387869"
 
 1. Сохраните шаблон как **linkedTemplate.js** в папке **артефакты** .
 
-## <a name="create-template-spec"></a>Создать спецификацию шаблона
+## <a name="create-template-spec"></a>Создание спецификации шаблона
 
 Спецификации шаблонов хранятся в группах ресурсов.  Создайте группу ресурсов, а затем создайте шаблон спецификации со следующим скриптом. Название спецификации шаблона — «имя- **Спецификация**».
+
+# <a name="powershell"></a>[PowerShell](#tab/azure-powershell)
 
 ```azurepowershell
 New-AzResourceGroup `
@@ -170,22 +172,51 @@ New-AzResourceGroup `
   -Location westus2
 
 New-AzTemplateSpec `
-  -ResourceGroupName templateSpecRG `
   -Name webSpec `
   -Version "1.0.0.0" `
+  -ResourceGroupName templateSpecRG `
   -Location westus2 `
   -TemplateJsonFile "c:\Templates\linkedTS\azuredeploy.json"
 ```
 
+# <a name="cli"></a>[CLI](#tab/azure-cli)
+
+```azurecli
+az group create \
+  --name templateSpecRG \
+  --location westus2
+
+az template-specs create \
+  --name webSpec \
+  --version "1.0.0.0" \
+  --resource-group templateSpecRG \
+  --location "westus2" \
+  --template-file "c:\Templates\linkedTS\azuredeploy.json"
+```
+
+---
+
 По завершении можно просмотреть спецификацию шаблона из портал Azure или с помощью следующего командлета:
+
+# <a name="powershell"></a>[PowerShell](#tab/azure-powershell)
 
 ```azurepowershell-interactive
 Get-AzTemplateSpec -ResourceGroupName templatespecRG -Name webSpec
 ```
 
+# <a name="cli"></a>[CLI](#tab/azure-cli)
+
+```azurecli
+az template-specs show --name webSpec --resource-group templateSpecRG --version "1.0.0.0"
+```
+
+---
+
 ## <a name="deploy-template-spec"></a>Развертывание спецификации шаблона
 
-Теперь можно развернуть спецификацию шаблона. Развертывание спецификации шаблона выполняется так же, как и при развертывании содержащего его шаблона, за исключением того, что вы передаете идентификатор ресурса спецификации шаблона. Вы используете те же команды развертывания и при необходимости передайте значения параметров для спецификации шаблона.
+Теперь можно развернуть спецификацию шаблона. Развертывание спецификации шаблона аналогично развертыванию шаблона, содержащегося в ней, за исключением того, что вы передаете ИД ресурса спецификации шаблона. Вы используете те же команды развертывания и при необходимости передаете значения параметров для спецификации шаблона.
+
+# <a name="powershell"></a>[PowerShell](#tab/azure-powershell)
 
 ```azurepowershell
 New-AzResourceGroup `
@@ -198,6 +229,25 @@ New-AzResourceGroupDeployment `
   -TemplateSpecId $id `
   -ResourceGroupName webRG
 ```
+
+# <a name="cli"></a>[CLI](#tab/azure-cli)
+
+```azurecli
+az group create \
+  --name webRG \
+  --location westus2
+
+id = $(az template-specs show --name webSpec --resource-group templateSpecRG --version "1.0.0.0" --query "id")
+
+az deployment group create \
+  --resource-group webRG \
+  --template-spec $id
+```
+
+> [!NOTE]
+> Существует известная ошибка при получении идентификатора спецификации шаблона, а затем ее присвоение переменной в Windows PowerShell.
+
+---
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

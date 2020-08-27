@@ -8,16 +8,16 @@ ms.author: luisca
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 11/04/2019
-ms.openlocfilehash: 529e79abbd7fa8f9733254d207af570237044305
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 145d8265412c4efcaa2afad97feb23528a36191d
+ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85080820"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88936067"
 ---
 #   <a name="key-phrase-extraction-cognitive-skill"></a>Когнитивный навык извлечения ключевой фразы
 
-Навык **Извлечение ключевой фразы** оценивает неструктурированный текст и для каждой записи возвращает список ключевых фраз. Этот навык использует модели машинного обучения, предоставляемые функцией [Анализ текста](https://docs.microsoft.com/azure/cognitive-services/text-analytics/overview) в Cognitive Services.
+Навык **Извлечение ключевой фразы** оценивает неструктурированный текст и для каждой записи возвращает список ключевых фраз. Этот навык использует модели машинного обучения, предоставляемые функцией [Анализ текста](../cognitive-services/text-analytics/overview.md) в Cognitive Services.
 
 Эта возможность полезна, если необходимо быстро определить основные тезисы в записи. Например, для данного входного текста "Еда была вкусной и были замечательные сотрудники", служба вернет "еда" и "замечательные сотрудники".
 
@@ -31,7 +31,7 @@ ms.locfileid: "85080820"
 Microsoft.Skills.Text.KeyPhraseExtractionSkill 
 
 ## <a name="data-limits"></a>Ограничения данных
-Максимальный размер записи — 50 000 знаков, как определено в [`String.Length`](https://docs.microsoft.com/dotnet/api/system.string.length). Если вам нужно разбить данные перед отправкой для извлечения ключевой фразы, можно воспользоваться [навыком разделения текста](cognitive-search-skill-textsplit.md).
+Максимальный размер записи — 50 000 знаков, как определено в [`String.Length`](/dotnet/api/system.string.length). Если вам нужно разбить данные перед отправкой для извлечения ключевой фразы, можно воспользоваться [навыком разделения текста](cognitive-search-skill-textsplit.md).
 
 ## <a name="skill-parameters"></a>Параметры навыков
 
@@ -39,7 +39,7 @@ Microsoft.Skills.Text.KeyPhraseExtractionSkill
 
 | Входные данные                | Описание |
 |---------------------|-------------|
-| `defaultLanguageCode` | (Необязательно.) Код языка применяется к документам, в которых не указан язык явным образом.  Если код языка по умолчанию не указан, английский (en) используется как язык по умолчанию. <br/> Ознакомьтесь с [полным списком поддерживаемых языков](https://docs.microsoft.com/azure/cognitive-services/text-analytics/text-analytics-supported-languages). |
+| `defaultLanguageCode` | (Необязательно.) Код языка применяется к документам, в которых не указан язык явным образом.  Если код языка по умолчанию не указан, английский (en) используется как язык по умолчанию. <br/> Ознакомьтесь с [полным списком поддерживаемых языков](../cognitive-services/text-analytics/language-support.md). |
 | `maxKeyPhraseCount`   | (Необязательно.) Максимальное количество ключевых фраз для создания. |
 
 ## <a name="skill-inputs"></a>Входные данные навыков
@@ -47,11 +47,11 @@ Microsoft.Skills.Text.KeyPhraseExtractionSkill
 | Входные данные  | Описание |
 |--------------------|-------------|
 | `text` | Анализируемый текст.|
-| `languageCode`    |  Строка, указывающая язык записей. Если этот параметр не указан, для анализа записей будет использоваться код языка по умолчанию. <br/>Ознакомьтесь с [полным списком поддерживаемых языков](https://docs.microsoft.com/azure/cognitive-services/text-analytics/text-analytics-supported-languages).|
+| `languageCode`    |  Строка, указывающая язык записей. Если этот параметр не указан, для анализа записей будет использоваться код языка по умолчанию. <br/>Ознакомьтесь с [полным списком поддерживаемых языков](../cognitive-services/text-analytics/language-support.md).|
 
 ## <a name="skill-outputs"></a>Выходные данные навыка
 
-| Выходные данные     | Описание: |
+| Выходные данные     | Описание |
 |--------------------|-------------|
 | `keyPhrases` | Список ключевых фраз, извлеченных из вводимого текста. Ключевые фразы возвращаются в порядке важности. |
 

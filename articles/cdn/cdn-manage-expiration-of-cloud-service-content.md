@@ -11,15 +11,16 @@ ms.service: azure-cdn
 ms.workload: media
 ms.tgt_pltfrm: na
 ms.devlang: dotnet
+ms.custom: devx-track-csharp
 ms.topic: how-to
 ms.date: 02/15/2018
 ms.author: allensu
-ms.openlocfilehash: 21ff3e456a587a7d676de379987c86f154878c61
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 562d5010458fc938d9d62fed5d0d2c8284f2055d
+ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84887633"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88936951"
 ---
 # <a name="manage-expiration-of-web-content-in-azure-cdn"></a>Управление сроком действия веб-содержимого в Azure CDN
 > [!div class="op_single_selector"]
@@ -66,7 +67,7 @@ ms.locfileid: "84887633"
 
    Это глобальное правило кэширования задает значение длительности кэширования в один час и влияет на все запросы к конечной точке. Оно переопределяет все заголовки HTTP `Cache-Control` или `Expires`, отправленные с сервера-источника, указанного конечной точкой.   
 
-1. Нажмите кнопку **Сохранить**.
+1. Нажмите **Сохранить**.
 
 **Чтобы установить файлы заголовков Cache-Control веб-сервера, используя настраиваемые правила кэширования, сделайте следующее:**
 
@@ -80,7 +81,7 @@ ms.locfileid: "84887633"
 
     Первое настраиваемое правило кэширования задает длительность кэширования четыре часа для всех файлов в папке `/webfolder1` на сервере-источнике, указанном конечной точкой. Второе правило переопределяет первое правило только для файла `file1.txt` и задает для него длительность кэширования два часа.
 
-1. Нажмите кнопку **Сохранить**.
+1. Нажмите **Сохранить**.
 
 
 ## <a name="setting-cache-control-headers-by-using-configuration-files"></a>Определение заголовков Cache-Control с помощью файлов конфигурации
@@ -130,7 +131,7 @@ Response.Cache.SetLastModified(DateTime.Now);
 ## <a name="testing-the-cache-control-header"></a>Проверка заголовка Cache-Control
 Вы легко можете проверить установленный для веб-содержимого срок жизни. Используя встроенные в браузер [средства разработчика](https://developer.microsoft.com/microsoft-edge/platform/documentation/f12-devtools-guide/), убедитесь, что ваше веб-содержимое содержит заголовок ответа `Cache-Control`. Для просмотра заголовков ответа можно использовать и другие средства, например **wget**, [Postman](https://www.getpostman.com/) или [Fiddler](https://www.telerik.com/fiddler).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Next Steps
 * [Сведения об элементе **clientCache**](https://www.iis.net/ConfigReference/system.webServer/staticContent/clientCache).
 * [Документация по свойству **HttpResponse.Cache**](/dotnet/api/system.web.httpresponse.cache#System_Web_HttpResponse_Cache). 
 * [Ознакомьтесь с документацией по **классу HttpCachePolicy**](/dotnet/api/system.web.httpcachepolicy)  

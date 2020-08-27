@@ -8,12 +8,12 @@ ms.author: heidist
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 06/04/2020
-ms.openlocfilehash: 443112628edddf9c60cd6469f046b1a9e066dc82
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.openlocfilehash: 8562fd1afaa01e362bd6d95fd4dcf90cf3145c5a
+ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86496423"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88928529"
 ---
 # <a name="security-filters-for-trimming-results-in-azure-cognitive-search"></a>Фильтры безопасности для усечения результатов в Azure Когнитивный поиск
 
@@ -109,13 +109,13 @@ api-key: [admin key]
 }
 ```
 
-Полные сведения о добавлении или обновлении документов см. в статье [об изменении документов](https://docs.microsoft.com/rest/api/searchservice/addupdate-or-delete-documents).
+Полные сведения о добавлении или обновлении документов см. в статье [об изменении документов](/rest/api/searchservice/addupdate-or-delete-documents).
    
 ## <a name="apply-the-security-filter"></a>Применение фильтра безопасности
 
 Чтобы сократить количество документов на основе доступа по `group_ids`, выполните поисковой запрос с использованием фильтра `group_ids/any(g:search.in(g, 'group_id1, group_id2,...'))` (где "group_id1 group_id2,..." — это группы, к которым принадлежит инициатор запроса).
 Этот фильтр соответствует всем документам, для которых поле `group_ids` содержит один из заданных идентификаторов.
-Подробные сведения о поиске документов с помощью Когнитивный поиск Azure можно [найти в документах поиска](https://docs.microsoft.com/rest/api/searchservice/search-documents).
+Подробные сведения о поиске документов с помощью Когнитивный поиск Azure можно [найти в документах поиска](/rest/api/searchservice/search-documents).
 Обратите внимание, что в этом примере показано, как осуществлять поиск документов с помощью запроса POST.
 
 Выполните запрос HTTP POST:
@@ -156,7 +156,7 @@ api-key: [admin or query key]
 
 Вот как можно фильтровать результаты на основе удостоверения пользователя и функции Когнитивный поиск Azure `search.in()` . Эту функцию можно использовать для передачи идентификаторов принципов запрашивающего пользователя для сопоставления с идентификаторами участников, связанными с каждым целевым документом. Во время обработки поискового запроса функция `search.in` отфильтровывает результаты поиска, отклоняя файлы, для которых ни один из субъектов-пользователей не имеет доступа на чтение. Идентификаторы субъектов могут представлять группы безопасности, роли или даже удостоверение пользователя.
  
-## <a name="see-also"></a>См. также раздел
+## <a name="see-also"></a>См. также
 
 + [Active Directory управления доступом на основе удостоверений с помощью фильтров Когнитивный поиск Azure](search-security-trimming-for-azure-search-with-aad.md)
 + [Фильтры в Когнитивный поиск Azure](search-filters.md)

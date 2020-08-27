@@ -8,12 +8,12 @@ ms.author: luisca
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 11/04/2019
-ms.openlocfilehash: 5f3587e4398be28cbaa2372be720258196bb48ff
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 85f3b9862bd8155c1a4b11860dc82d92a2f9e810
+ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "72792020"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88936101"
 ---
 # <a name="deprecated-cognitive-skills-in-azure-cognitive-search"></a>Нерекомендуемые профессиональные навыки в Azure Когнитивный поиск
 
@@ -38,7 +38,7 @@ ms.locfileid: "72792020"
 
 Теперь следует использовать тип [Microsoft.Skills.Text.EntityRecognitionSkill](cognitive-search-skill-entity-recognition.md). Он предоставляет большинство функций NamedEntityRecognitionSkill более высокого качества. Он также содержит более полные сведения в составных полях выходных данных.
 
-Для перехода на [навык распознавания сущностей](cognitive-search-skill-entity-recognition.md) необходимо внести одно или несколько следующих изменений в определение навыка. Вы можете обновить определение навыков с помощью [API обновления набора навыков](https://docs.microsoft.com/rest/api/searchservice/update-skillset).
+Для перехода на [навык распознавания сущностей](cognitive-search-skill-entity-recognition.md) необходимо внести одно или несколько следующих изменений в определение навыка. Вы можете обновить определение навыков с помощью [API обновления набора навыков](/rest/api/searchservice/update-skillset).
 
 > [!NOTE]
 > Сейчас оценка достоверности не поддерживается в качестве концепции. Параметр `minimumPrecision` содержится в `EntityRecognitionSkill` для использования в будущем, а также для обеспечения обратной совместимости.

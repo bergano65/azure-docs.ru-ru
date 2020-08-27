@@ -128,5 +128,5 @@ Invoke-WebRequest -CertificateThumbprint <ClusterCertThumbprint> -Method POST -U
    </EnvironmentVariables>
    ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 Дополнительные сведения о [безопасности приложений и служб](service-fabric-application-and-service-security.md).
