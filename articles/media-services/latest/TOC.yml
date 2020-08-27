@@ -56,6 +56,8 @@
           href: stream-files-dotnet-quickstart.md
         - name: Использование Node.js
           href: stream-files-nodejs-quickstart.md
+    - name: Хранение событий AMS в Azure Log Analytics
+      href: tutorial-events-log-analytics.md
     - name: Кодирование отправленного файла и потоковая передача видео
       displayName: 'encode, encoding, job, transform'
       href: stream-files-tutorial-with-api.md

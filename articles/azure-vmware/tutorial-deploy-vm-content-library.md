@@ -1,16 +1,16 @@
 ---
-title: Руководство по созданию библиотеки содержимого для развертывания виртуальных машин в решении Azure VMware (AVS)
-description: В этом учебнике по решению Azure VMware (AVS) показано, как создать библиотеку содержимого для развертывания виртуальной машины в частном облаке AVS.
+title: Руководство по созданию библиотеки содержимого для развертывания виртуальных машин в Решении Azure VMware
+description: В этом руководстве по Решению Azure VMware показано, как создать библиотеку содержимого для развертывания виртуальной машины в частном облаке Решения Azure VMware.
 ms.topic: tutorial
 ms.date: 07/16/2020
-ms.openlocfilehash: d86f9cb92dcb8a852b9b178a5e160da0d1a3a692
-ms.sourcegitcommit: cd0a1ae644b95dbd3aac4be295eb4ef811be9aaa
+ms.openlocfilehash: 3abaafac0dbd6f3537d2ca30a093627230780eb5
+ms.sourcegitcommit: 62717591c3ab871365a783b7221851758f4ec9a4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/19/2020
-ms.locfileid: "88612798"
+ms.lasthandoff: 08/22/2020
+ms.locfileid: "88750553"
 ---
-# <a name="tutorial-create-a-content-library-to-deploy-vms-in-azure-vmware-solution-avs"></a>Руководство по созданию библиотеки содержимого для развертывания виртуальных машин в решении Azure VMware (AVS)
+# <a name="tutorial-create-a-content-library-to-deploy-vms-in-azure-vmware-solution"></a>Руководство по созданию библиотеки содержимого для развертывания виртуальных машин в Решении Azure VMware
 
 Библиотека содержимого хранит содержимое и управляет им в виде элементов библиотеки. Каждый элемент библиотеки состоит из одного или нескольких файлов, которые используются для развертывания виртуальных машин. 
  
@@ -22,7 +22,7 @@ ms.locfileid: "88612798"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Для работы с этим руководством вам потребуются сегмент логического коммутатора NSX-T и управляемая служба DHCP.  Дополнительные сведения см. в статье [Как управлять DHCP в предварительной версии решения Azure VMware (AVS)](manage-dhcp.md).
+Для работы с этим руководством вам потребуются сегмент логического коммутатора NSX-T и управляемая служба DHCP.  Дополнительные сведения см. в статье [Как управлять DHCP в предварительной версии Решения Azure VMware](manage-dhcp.md).
 
 ## <a name="create-a-content-library"></a>Создание библиотеки содержимого
 

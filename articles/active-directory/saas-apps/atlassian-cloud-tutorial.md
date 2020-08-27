@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 08/04/2020
 ms.author: jeedes
-ms.openlocfilehash: ca75aea393e4850eb302cb03914296d7c1eaa951
-ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
+ms.openlocfilehash: bdd0530aa580f8f1a1cfdffb81d070827a714115
+ms.sourcegitcommit: 56cbd6d97cb52e61ceb6d3894abe1977713354d9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88517658"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88686077"
 ---
 # <a name="tutorial-integrate-atlassian-cloud-with-azure-active-directory"></a>Руководство по Интеграция Atlassian Cloud с Azure Active Directory
 
@@ -45,7 +45,7 @@ ms.locfileid: "88517658"
 
 * Atlassian Cloud поддерживает единый вход, инициированный **поставщиком услуг и поставщиком удостоверений**.
 * Atlassian Cloud поддерживает [автоматическую подготовку пользователей и ее отмену](atlassian-cloud-provisioning-tutorial.md).
-* После настройки Atlassian Cloud вы сможете применить функцию управления сеансом, которая в реальном времени защищает конфиденциальные данные вашей организации от хищения и несанкционированного доступа. Управление сеансом является расширением функции условного доступа. [Узнайте, как применять управление сеансами с помощью Microsoft Cloud App Security](https://docs.microsoft.com/cloud-app-security/proxy-deployment-any-app).
+* После настройки Atlassian Cloud вы сможете применить функцию управления сеансом, которая в режиме реального времени защищает конфиденциальные данные вашей организации от хищения и несанкционированного доступа. Управление сеансом является расширением функции условного доступа. [Узнайте, как применять управление сеансами с помощью Microsoft Cloud App Security](https://docs.microsoft.com/cloud-app-security/proxy-deployment-any-app).
 
 ## <a name="adding-atlassian-cloud-from-the-gallery"></a>Добавление Atlassian Cloud из коллекции
 
@@ -179,7 +179,7 @@ ms.locfileid: "88517658"
       
    1. Сопоставление атрибутов для клиента Azure AD без лицензии Office 365 
 
-      а. Щелкните утверждение **http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress** .
+      а. Щелкните утверждение `http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress` .
 
       ![Изображение](./media/atlassian-cloud-tutorial/email-address.png)
          

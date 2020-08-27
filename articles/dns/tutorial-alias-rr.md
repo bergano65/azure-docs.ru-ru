@@ -9,10 +9,10 @@ ms.topic: tutorial
 ms.date: 9/25/2018
 ms.author: rohink
 ms.openlocfilehash: 2b122a34cfd382a58f7680743d3a1cb1ae598fd1
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.sourcegitcommit: c5021f2095e25750eb34fd0b866adf5d81d56c3a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
+ms.lasthandoff: 08/25/2020
 ms.locfileid: "76939251"
 ---
 # <a name="tutorial-create-an-alias-record-to-refer-to-a-zone-resource-record"></a>Руководство по Создание записи псевдонима для ссылки на запись ресурса в зоне
@@ -58,7 +58,7 @@ ms.locfileid: "76939251"
 ## <a name="test-the-alias-record"></a>Тестирование записи псевдонима
 
 1. Запустите предпочитаемый инструмент nslookup. Один из вариантов — перейдите к [https://network-tools.com/nslook](https://network-tools.com/nslook).
-2. Задайте тип запроса для записей A и найдите **test.\<ваше доменное имя\>** . Ответ: **10.10.10.10**.
+2. Задайте тип запроса для записей A и найдите **test.\<your domain name\>** . Ответ: **10.10.10.10**.
 3. На портале Azure измените запись для **server** A на **10.11.11.11**.
 4. Подождите несколько минут, а затем снова используйте nslookup для записи **test**. Ответ: **10.11.11.11**.
 

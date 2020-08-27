@@ -4,12 +4,12 @@ description: В этом руководстве вы узнаете, как со
 ms.date: 07/26/2020
 ms.topic: tutorial
 ms.custom: mvc
-ms.openlocfilehash: ed91105488b812131d3a908c509998c955cec299
-ms.sourcegitcommit: 64ad2c8effa70506591b88abaa8836d64621e166
+ms.openlocfilehash: 76c09cc02a3545d975de5d6d49b396b12f8abb44
+ms.sourcegitcommit: afa1411c3fb2084cccc4262860aab4f0b5c994ef
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88263424"
+ms.lasthandoff: 08/23/2020
+ms.locfileid: "88757512"
 ---
 # <a name="use-azure-portal-to-back-up-multiple-virtual-machines"></a>Архивация нескольких виртуальных машин с помощью портала Azure
 
@@ -136,7 +136,7 @@ ms.locfileid: "88263424"
 
 1. В контекстном меню выберите **Моментальная архивация**.
 
-    ![Контекстное меню](./media/tutorial-backup-vm-at-scale/context-menu.png)
+    ![Контекстное меню: выбор моментальной архивации](./media/tutorial-backup-vm-at-scale/context-menu.png)
 
     Откроется меню "Моментальная архивация".
 
@@ -166,7 +166,7 @@ ms.locfileid: "88263424"
 
 1. В меню **Backup Items** (Элементы резервного копирования) нажмите кнопку с многоточием, чтобы открыть контекстное меню.
 
-    ![Контекстное меню](./media/tutorial-backup-vm-at-scale/context-menu-to-delete-vm.png)
+    ![Открытие контекстного меню из меню элементов резервного копирования](./media/tutorial-backup-vm-at-scale/context-menu-to-delete-vm.png)
 
 1. В контекстном меню выберите **Остановить архивацию**, чтобы открыть соответствующее меню.
 

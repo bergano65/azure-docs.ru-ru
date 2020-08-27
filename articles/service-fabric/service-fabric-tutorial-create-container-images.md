@@ -7,10 +7,10 @@ ms.date: 07/22/2019
 ms.author: suhuruli
 ms.custom: mvc
 ms.openlocfilehash: fe06da759a1ad42ef5cef888f98c440cdfb9569c
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.sourcegitcommit: c5021f2095e25750eb34fd0b866adf5d81d56c3a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
+ms.lasthandoff: 08/25/2020
 ms.locfileid: "78252791"
 ---
 # <a name="tutorial-create-container-images-on-a-linux-service-fabric-cluster"></a>Руководство. Создание образов контейнеров в кластере Service Fabric в Linux
@@ -98,7 +98,7 @@ az account set --subscription <subscription_id>
 az group create --name <myResourceGroup> --location westus
 ```
 
-Создайте реестр контейнеров Azure с помощью команды**az acr create**. Замените \<acrName > именем реестра контейнеров, который нужно создать в подписке. Это имя может включать только буквы и цифры и должно быть уникальным.
+Создайте реестр контейнеров Azure с помощью команды**az acr create**. Замените \<acrName> именем реестра контейнеров, который нужно создать в подписке. Это имя может включать только буквы и цифры и должно быть уникальным.
 
 ```azurecli
 az acr create --resource-group <myResourceGroup> --name <acrName> --sku Basic --admin-enabled true

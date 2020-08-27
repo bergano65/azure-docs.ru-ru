@@ -43,7 +43,7 @@
           href: plan-an-application-integration.md
         - name: 'Планирование использования приложений, не указанных в коллекции'
           href: non-gallery-apps.md
-        - name: Планирование развертывания панели доступа
+        - name: Планирование развертывания "Мои приложения"
           href: access-panel-deployment-plan.md
         - name: Рекомендации для разработчиков
           href: developer-guidance-for-integrating-applications.md

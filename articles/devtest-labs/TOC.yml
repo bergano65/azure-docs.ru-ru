@@ -8,7 +8,7 @@
       href: lab-services-overview.md
 - name: Краткое руководство
   items:
-    - name: Создание лаборатории с помощью шаблона ARM
+    - name: Создание лаборатории с помощью шаблона Resource Manager
       displayName: Resource Manager
       href: create-lab-windows-vm-template.md
 - name: Учебники
@@ -75,6 +75,8 @@
       items:
         - name: Создание лаборатории
           href: devtest-lab-create-lab.md
+        - name: 'Создание лаборатории, изолированной от сети'
+          href: network-isolation.md
         - name: Создание или изменение лабораторий с помощью шаблона Resource Manager
           href: devtest-lab-use-arm-and-powershell-for-lab-resources.md
         - name: Определение группы ресурсов для виртуальных машин лаборатории

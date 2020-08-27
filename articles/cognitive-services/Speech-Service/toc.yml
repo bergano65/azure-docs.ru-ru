@@ -520,17 +520,11 @@
           href: speech-container-faq.md
 - name: Пакет SDK для службы "Речь"
   items:
-    - name: Обзор
-      items:
-        - name: Сведения о пакете SDK службы "Речь"
-          href: speech-sdk.md
-        - name: Доступность сценариев
-          href: scenario-availability.md
-    - name: Краткое руководство
-      items:
-        - name: Настройка пакета SDK службы "Речь"
-          displayName: 'install the speech sdk, install the speech sdk java, install the speech sdk C#, install the speech sdk python, install the speech sdk C++, setup speech sdk, install, install C#, install C++, install Python, install Java, install Javascript'
-          href: quickstarts/setup-platform.md
+    - name: Основные сведения о пакете SDK службы "Речь"
+      href: speech-sdk.md
+    - name: Настройка пакета SDK службы "Речь"
+      displayName: 'install the speech sdk, install the speech sdk java, install the speech sdk C#, install the speech sdk python, install the speech sdk C++, setup speech sdk, install, install C#, install C++, install Python, install Java, install Javascript'
+      href: quickstarts/setup-platform.md
     - name: Практические руководства
       items:
         - name: Включение ведения журналов

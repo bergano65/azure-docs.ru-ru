@@ -4,12 +4,12 @@ description: Из этого руководства вы узнаете, как 
 ms.topic: tutorial
 ms.date: 12/4/2019
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: 282f0ee61ffae455d6d3e49ea445d5ddc2fe56ac
-ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
+ms.openlocfilehash: a1dbf0593c7c9b65c4e285b7162411de6c01bbbf
+ms.sourcegitcommit: e2b36c60a53904ecf3b99b3f1d36be00fbde24fb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/31/2020
-ms.locfileid: "87500833"
+ms.lasthandoff: 08/24/2020
+ms.locfileid: "88762289"
 ---
 # <a name="tutorial-restore-sap-hana-databases-in-an-azure-vm-using-azure-cli"></a>Руководство по Восстановление баз данных SAP HANA на виртуальных машинах Azure с помощью Azure CLI
 
@@ -89,7 +89,7 @@ DefaultRangeRecoveryPoint                                    AzureWorkload      
 Используя указанные выше имя точки восстановления и режим восстановления, создайте объект конфигурации восстановления, используя командлет [az backup recoveryconfig show](/cli/azure/backup/recoveryconfig?view=azure-cli-latest#az-backup-recoveryconfig-show). Давайте узнаем, что означают остальные параметры в этом командлете.
 
 * **--target-item-name** содержит имя, которое будет использоваться для восстанавливаемой базы данных. В нашем примере используется имя *restored_database*.
-* **--target-server-name** обозначает имя сервера SAP HANA, который зарегистрирован в хранилище служб восстановления и размещается в том же регионе, что и восстанавливаемая база данных. В нашем примере мы восстановим базу данных на том же сервере SAP HANA, который был защищен резервным копированием, с именем *hxehost*.
+* **--target-server-name** обозначает имя сервера SAP HANA, который зарегистрирован в хранилище Служб восстановления и размещается в том же регионе, что и восстанавливаемая база данных. В нашем примере мы восстановим базу данных на том же сервере SAP HANA, который был защищен резервным копированием, с именем *hxehost*.
 * **--target-server-type** должен иметь значение **SapHanaDatabase** для восстановления баз данных SAP HANA.
 
 ```azurecli-interactive
@@ -181,7 +181,7 @@ Name                                  Resource
 
 Используя указанные выше имя точки восстановления и режим восстановления, создайте объект конфигурации восстановления, выполнив командлет [az backup recoveryconfig show](/cli/azure/backup/recoveryconfig?view=azure-cli-latest#az-backup-recoveryconfig-show). Давайте узнаем, что означают остальные параметры в этом командлете.
 
-* **--target-container-name.** Это имя сервера SAP HANA, который зарегистрирован в хранилище служб восстановления и размещается в том же регионе, что и восстанавливаемая база данных. В этом руководстве показано, как восстановить базу данных в виде файлов на том же защищенном сервере SAP HANA с именем *hxehost*.
+* **--target-container-name.** Это имя сервера SAP HANA, который зарегистрирован в хранилище Служб восстановления и размещается в том же регионе, что и восстанавливаемая база данных. В этом руководстве показано, как восстановить базу данных в виде файлов на том же защищенном сервере SAP HANA с именем *hxehost*.
 * **--rp-name.** Для восстановления до точки во времени точке восстановления будет присвоено имя **DefaultRangeRecoveryPoint**.
 
 ```azurecli-interactive

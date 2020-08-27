@@ -1,18 +1,18 @@
 ---
 title: Настройка пиринга между локальной средой и частным облаком
-description: В этом руководстве по Решению Azure VMware (AVS) рассказывается о том, как создать в AVS пиринг ExpressRoute Global Reach с частным облаком.
+description: В этом руководстве по Решению Azure VMware показано, как создать в Решении Azure VMware пиринг ExpressRoute Global Reach с частным облаком.
 ms.topic: tutorial
 ms.date: 07/16/2020
-ms.openlocfilehash: a9a002eab3219a0db74062570d31595bfcc0d6a3
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: db3f5988cb8c07d9b6e80f500ac6aff8f96dfded
+ms.sourcegitcommit: 62717591c3ab871365a783b7221851758f4ec9a4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87093995"
+ms.lasthandoff: 08/22/2020
+ms.locfileid: "88750448"
 ---
 # <a name="tutorial-peer-on-premises-environments-to-a-private-cloud"></a>Руководство по Настройка пиринга между локальной средой и частным облаком
 
-ExpressRoute Global Reach подключает локальную среду к частным облакам. Подключение ExpressRoute Global Reach устанавливается между локальными средами и каналом ExpressRoute частного облака с имеющимся подключением ExpressRoute.  ExpressRoute Global Reach можно настроить с помощью Azure CLI и PowerShell в соответствии с имеющимися инструкциями. Мы дополнили описание [команд CLI](../expressroute/expressroute-howto-set-global-reach-cli.md) подробными сведениями и примерами, которые помогут вам настроить пиринг ExpressRoute Global Reach между локальными средами и частным облаком Решения Azure VMware (AVS).   
+ExpressRoute Global Reach подключает локальную среду к частным облакам. Подключение ExpressRoute Global Reach устанавливается между локальными средами и каналом ExpressRoute частного облака с имеющимся подключением ExpressRoute.  ExpressRoute Global Reach можно настроить с помощью Azure CLI и PowerShell в соответствии с предлагаемыми инструкциями. Мы дополнили описание [команд CLI](../expressroute/expressroute-howto-set-global-reach-cli.md) подробными сведениями и примерами, которые помогут вам настроить пиринг ExpressRoute Global Reach между локальными средами и частным облаком Решения Azure VMware.   
 
 Перед включением подключения между двумя каналами ExpressRoute с помощью ExpressRoute Global Reach ознакомьтесь с документацией по [включению подключения в разных подписках Azure](../expressroute/expressroute-howto-set-global-reach-cli.md#enable-connectivity-between-expressroute-circuits-in-different-azure-subscriptions).  Для канала ExpressRoute, используемого при [настройке сети между частным облаком и Azure](tutorial-configure-networking.md), необходимо создать ключи авторизации и использовать их при пиринге со шлюзами ExpressRoute или другими каналами ExpressRoute с помощью Global Reach. Вы уже использовали один ключ авторизации из канала ExpressRoute, поэтому для пиринга с каналом ExpressRoute локальной среды вам необходимо будет создать другой.
 
@@ -33,11 +33,11 @@ ExpressRoute Global Reach подключает локальную среду к 
 - отдельный работоспособный канал ExpressRoute, используемый для подключения локальных сред к Azure (с точки зрения процедур пиринга это _канал 1_);
 - [блок неперекрывающихся сетевых адресов](../expressroute/expressroute-routing.md#ip-addresses-used-for-peerings) /29 для пиринга ExpressRoute Global Reach.
 
-## <a name="create-an-expressroute-authorization-key-in-the-avs-private-cloud"></a>Создание ключа авторизации ExpressRoute в частном облаке AVS
+## <a name="create-an-expressroute-authorization-key-in-the-azure-vmware-solution-private-cloud"></a>Создание ключа авторизации ExpressRoute в частном облаке Решения Azure VMware
 
 1. В частном облаке в разделе **Обзор**в разделе "Управление" выберите **Подключение > ExpressRoute > Request an authorization key** (Запрос ключа авторизации).
 
-   :::image type="content" source="media/expressroute-global-reach/start-request-auth-key.png" alt-text="Выбор элементов "Подключение > ExpressRoute > Request an authorization key (Запрос ключа авторизации)" для отправки нового запроса":::
+   :::image type="content" source="media/expressroute-global-reach/start-request-auth-key.png" alt-text="Выберите "Подключение" > "ExpressRoute" > "Запросить ключ авторизации" для отправки нового запроса.":::
 
 2. Введите имя ключа авторизации и нажмите **Создать**. 
 

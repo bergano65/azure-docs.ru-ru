@@ -59,6 +59,8 @@
       href: ../../postgresql/postgresql-hyperscale-security-baseline.md
     - name: Базовые средства безопасности Azure Databricks
       href: ../../azure-databricks/security-baseline.md
+    - name: Базовая защита Azure DNS
+      href: ../../dns/security-baseline.md
     - name: Базовые средства безопасности Брандмауэра Azure
       href: ../../firewall/security-baseline.md
     - name: Базовые средства безопасности Функций Azure

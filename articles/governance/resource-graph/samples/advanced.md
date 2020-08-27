@@ -1,14 +1,14 @@
 ---
 title: Примеры расширенных запросов
 description: С помощью Azure Resource Graph можно выполнять расширенные запросы, такие как работа со столбцами, вывод списка используемых тегов и сопоставление ресурсов с регулярными выражениями.
-ms.date: 07/14/2020
+ms.date: 08/13/2020
 ms.topic: sample
-ms.openlocfilehash: 3277d904ebf955c9f924e60dbf6df12eac138a15
-ms.sourcegitcommit: 3d56d25d9cf9d3d42600db3e9364a5730e80fa4a
+ms.openlocfilehash: ba00144a53afd041abe2513862d8a05a51e78809
+ms.sourcegitcommit: c5021f2095e25750eb34fd0b866adf5d81d56c3a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87534793"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88795683"
 ---
 # <a name="advanced-resource-graph-query-samples"></a>Примеры расширенных запросов к Resource Graph
 
@@ -29,6 +29,7 @@ ms.locfileid: "87534793"
 - [Поиск учетных записей хранения с указанным тегом в группе ресурсов](#join-findstoragetag)
 - [Объединение результатов из двух запросов в один результат](#unionresults)
 - [Включение имен клиентов и подписок с DisplayNames](#displaynames)
+- [Суммирование виртуальных машин по расширенному свойству состояния питания](#vm-powerstate)
 
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free), прежде чем начинать работу.
 
@@ -525,9 +526,42 @@ Search-AzGraph -Query "ResourceContainers | where type=='microsoft.resources/sub
 
 ---
 
+## <a name="summarize-virtual-machine-by-the-power-states-extended-property"></a><a name="vm-powerstate"></a>Суммирование виртуальных машин по расширенному свойству состояния питания
+
+Этот запрос использует [расширенные свойства](../concepts/query-language.md#extended-properties) на виртуальных машинах для суммирования по состоянию питания.
+
+
+```kusto
+Resources
+| where type == 'microsoft.compute/virtualmachines'
+| summarize count() by tostring(properties.extended.instanceView.powerState.code)
+```
+
+# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
+
+```azurecli-interactive
+az graph query -q "Resources | where type == 'microsoft.compute/virtualmachines' | summarize count() by tostring(properties.extended.instanceView.powerState.code)"
+```
+
+# <a name="azure-powershell"></a>[Azure PowerShell](#tab/azure-powershell)
+
+```azurepowershell-interactive
+Search-AzGraph -Query "Resources | where type == 'microsoft.compute/virtualmachines' | summarize count() by tostring(properties.extended.instanceView.powerState.code)"
+```
+
+# <a name="portal"></a>[Портал](#tab/azure-portal)
+
+:::image type="icon" source="../media/resource-graph-small.png"::: Попробуйте выполнить следующий запрос в обозревателе Azure Resource Graph:
+
+- Портал Azure: <a href="https://portal.azure.com/?feature.customportal=false#blade/HubsExtension/ArgQueryBlade/query/Resources%20%7C%20where%20type%20%3D%3D%20%27microsoft.compute%2Fvirtualmachines%27%20%7C%20summarize%20count%28%29%20by%20tostring%28properties.extended.instanceView.powerState.code%29" target="_blank">portal.azure.com<span class="docon docon-navigate-external x-hidden-focus"></span></a>
+- Портал Azure для государственных организаций: <a href="https://portal.azure.us/?feature.customportal=false#blade/HubsExtension/ArgQueryBlade/query/Resources%20%7C%20where%20type%20%3D%3D%20%27microsoft.compute%2Fvirtualmachines%27%20%7C%20summarize%20count%28%29%20by%20tostring%28properties.extended.instanceView.powerState.code%29" target="_blank">portal.azure.us<span class="docon docon-navigate-external x-hidden-focus"></span></a>
+- Портал Azure для Китая (21Vianet): <a href="https://portal.azure.cn/?feature.customportal=false#blade/HubsExtension/ArgQueryBlade/query/Resources%20%7C%20where%20type%20%3D%3D%20%27microsoft.compute%2Fvirtualmachines%27%20%7C%20summarize%20count%28%29%20by%20tostring%28properties.extended.instanceView.powerState.code%29" target="_blank">portal.azure.cn<span class="docon docon-navigate-external x-hidden-focus"></span></a>
+
+---
+
 ## <a name="include-the-tenant-and-subscription-names-with-displaynames"></a><a name="displaynames"></a>Включение имен клиентов и подписок с DisplayNames
 
-В этом запросе используется новый параметр **Include** со значением _DisplayNames_ для включения **subscriptionDisplayName** и **tenantDisplayName** в результаты. Этот параметр доступен только в Azure CLI и Azure PowerShell.
+В этом запросе используется параметр **Include** со значением _DisplayNames_ для включения **subscriptionDisplayName** и **tenantDisplayName** в результаты. Этот параметр доступен только в Azure CLI и Azure PowerShell.
 
 ```azurecli-interactive
 az graph query -q "limit 1" --include displayNames

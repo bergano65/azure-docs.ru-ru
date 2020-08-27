@@ -8,5 +8,5 @@
   href: configure-model-conversion.md
 - name: Переопределение материалов во время преобразования модели
   href: override-materials.md
-- name: Получение сведений о преобразованной модели
+- name: Получение сведений о преобразованиях
   href: get-information.md

@@ -8,10 +8,10 @@ ms.topic: tutorial
 ms.custom: mvc
 ms.date: 01/27/2020
 ms.openlocfilehash: 837174b3ccc08a74583587cb9efd34f8f720aec5
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.sourcegitcommit: c5021f2095e25750eb34fd0b866adf5d81d56c3a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
+ms.lasthandoff: 08/25/2020
 ms.locfileid: "77589459"
 ---
 # <a name="tutorial-run-azure-functions-from-azure-stream-analytics-jobs"></a>Руководство по Запуск решения "Функции Azure" из заданий Azure Stream Analytics 
@@ -52,7 +52,7 @@ Stream Analytics вызывает службу "Функции" с помощь�
 
 1. Сведения см. в разделе [Создание приложения-функции](../azure-functions/functions-create-first-azure-function.md#create-a-function-app) документации по службе "Функции". В этом разделе описано, как создать приложение-функцию и [функцию, активируемую с помощью HTTP, в службе "Функции Azure"](../azure-functions/functions-create-first-azure-function.md#create-function) с помощью языка CSharp.  
 
-2. Перейдите к функции **run.csx**. Обновите ее, используя следующий код. Замените **"\< свою строку подключения к кэшу Azure для Redis\>"** основной строкой подключения кэша Azure для Redis, извлеченной в предыдущем разделе. 
+2. Перейдите к функции **run.csx**. Обновите ее, используя следующий код. Замените **"\<your Azure Cache for Redis connection string goes here\>"** основной строкой подключения кэша Azure для Redis, полученной ранее. 
 
     ```csharp
     using System;

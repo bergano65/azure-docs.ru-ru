@@ -11,12 +11,12 @@ ms.author: tracych
 author: tracychms
 ms.date: 08/14/2020
 ms.custom: Build2020, devx-track-python
-ms.openlocfilehash: dddb332498f41437eba77d75c38218c58b8c8379
-ms.sourcegitcommit: 54d8052c09e847a6565ec978f352769e8955aead
+ms.openlocfilehash: 04d1e531f3041ef0a6231607cc795c67168ebf2e
+ms.sourcegitcommit: 271601d3eeeb9422e36353d32d57bd6e331f4d7b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88507120"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88651205"
 ---
 # <a name="run-batch-inference-on-large-amounts-of-data-by-using-azure-machine-learning"></a>Выполнение пакетного вывода больших объемов данных с помощью Машинного обучения Azure
 [!INCLUDE [applies-to-skus](../../includes/aml-applies-to-basic-enterprise-sku.md)]
@@ -202,7 +202,7 @@ model = Model.register(model_path="models/",
 ## <a name="write-your-inference-script"></a>Создание пользовательского скрипта вывода
 
 >[!Warning]
->Следующий пример кода приведен в качестве примера, который включен в [пример записной книжки](https://aka.ms/batch-inference-notebooks). Вам следует создать собственный скрипт для своего сценария.
+>Следующий пример кода приведен в качестве примера, который включен в [пример записной книжки](https://github.com/Azure/MachineLearningNotebooks/tree/master/how-to-use-azureml/machine-learning-pipelines/parallel-run). Вам следует создать собственный скрипт для своего сценария.
 
 Этот скрипт *должен* содержать две функции.
 - `init()`: Эта функция применяется для всех затратных или повторяющихся операций подготовки к последующему выводу. Например, в ней можно загружать модель в глобальный объект. Эта функция будет вызываться только один раз в начале процесса.
@@ -214,7 +214,7 @@ model = Model.register(model_path="models/",
 %%writefile digit_identification.py
 # Snippets from a sample script.
 # Refer to the accompanying digit_identification.py
-# (https://aka.ms/batch-inference-notebooks)
+# (https://github.com/Azure/MachineLearningNotebooks/tree/master/how-to-use-azureml/machine-learning-pipelines/parallel-run)
 # for the implementation script.
 
 import os
@@ -351,7 +351,7 @@ parallelrun_step = ParallelRunStep(
     allow_reuse=True
 )
 ```
-### <a name="create-and-run-the-pipeline"></a>создание и запуск конвейера
+### <a name="create-and-run-the-pipeline"></a>Создание и запуск конвейера
 
 Теперь запустите конвейер. Сначала создайте объект [`Pipeline`](https://docs.microsoft.com/python/api/azureml-pipeline-core/azureml.pipeline.core.pipeline%28class%29?view=azure-ml-py), используя ссылку на вашу рабочую область и созданный шаг конвейера. Параметр `steps` является массивом шагов. В этом случае для пакетного вывода выполняется только один шаг. Чтобы создать конвейеры с несколькими шагами, разместите шаги по порядку в этом массиве.
 
@@ -421,7 +421,7 @@ df.head(10)
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Чтобы наблюдать весь процесс, воспользуйтесь [записной книжкой пакетного вывода](https://aka.ms/batch-inference-notebooks). 
+Чтобы наблюдать весь процесс, воспользуйтесь [записной книжкой пакетного вывода](https://github.com/Azure/MachineLearningNotebooks/tree/master/how-to-use-azureml/machine-learning-pipelines/parallel-run). 
 
 См. инструкции по [отладке и устранению неполадок с ParallelRunStep](how-to-debug-parallel-run-step.md).
 

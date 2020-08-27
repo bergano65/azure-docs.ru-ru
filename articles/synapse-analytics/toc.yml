@@ -34,8 +34,10 @@
       href: release-notes.md
 - name: Краткие руководства
   items:
-    - name: Создание рабочей области Synapse
+    - name: Создание рабочей области Synapse с помощью портала Azure
       href: quickstart-create-workspace.md
+    - name: Создание рабочей области Synapse с помощью Azure CLI
+      href: quickstart-create-workspace-cli.md
     - name: Использование Synapse Studio
       href: quickstart-synapse-studio.md
     - name: "Связывание рабочей области Power\_BI"

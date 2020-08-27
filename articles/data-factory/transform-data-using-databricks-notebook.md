@@ -12,10 +12,10 @@ ms.reviewer: douglasl
 ms.custom: seo-lt-2019
 ms.date: 03/12/2018
 ms.openlocfilehash: e63180a3c4b8de06ab9e26afc8fff322188291cc
-ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
+ms.sourcegitcommit: c5021f2095e25750eb34fd0b866adf5d81d56c3a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
+ms.lasthandoff: 08/25/2020
 ms.locfileid: "81418989"
 ---
 # <a name="run-a-databricks-notebook-with-the-databricks-notebook-activity-in-azure-data-factory"></a>Запуск записной книжки Databricks с помощью действия Databricks Notebook в фабрике данных Azure

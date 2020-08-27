@@ -7,12 +7,12 @@ ms.devlang: nodejs
 ms.topic: tutorial
 ms.date: 08/13/2020
 ms.custom: mvc, seodec18
-ms.openlocfilehash: c301876a57b3be4a112c7df2706bf17389a5af44
-ms.sourcegitcommit: 9ce0350a74a3d32f4a9459b414616ca1401b415a
+ms.openlocfilehash: 1496f46eb29831dfb858f061ccc00c9e3dbc2e75
+ms.sourcegitcommit: 9c3cfbe2bee467d0e6966c2bfdeddbe039cad029
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/13/2020
-ms.locfileid: "88190078"
+ms.lasthandoff: 08/24/2020
+ms.locfileid: "88782317"
 ---
 # <a name="tutorial-map-an-existing-custom-dns-name-to-azure-app-service"></a>Руководство по Сопоставление существующего настраиваемого DNS-имени со Службой приложений Azure
 
@@ -277,7 +277,7 @@ ms.locfileid: "88190078"
 
 #### <a name="enable-the-cname-record-mapping-in-the-app"></a>Включение сопоставления записи CNAME в приложении
 
-Теперь вы можете добавить любой дочерний домен, соответствующий имени с подстановочными знаками в приложении (например, как `sub1.contoso.com`, так и `sub2.contoso.com` соответствует `*.contoso.com`).
+Теперь вы можете добавить любой дочерний домен, соответствующий имени с подстановочными знаками в приложении (например, `sub1.contoso.com`, `sub2.contoso.com` или `*.contoso.com`, каждый из которых соответствует `*.contoso.com`).
 
 В левой области навигации страницы приложения на портале Azure выберите **Личные домены**.
 

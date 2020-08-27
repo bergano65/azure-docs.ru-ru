@@ -739,6 +739,8 @@
               href: data-lake-storage-explorer.md
             - name: Интерфейс командной строки файловой системы Hadoop
               href: data-lake-storage-use-hdfs-data-lake-storage.md
+            - name: Рекурсивная настройка ACL
+              href: recursive-access-control-lists.md
         - name: Запрос
           items:
             - name: Фильтрация данных с использованием ускорения запросов

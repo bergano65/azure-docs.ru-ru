@@ -10,10 +10,10 @@ ms.service: iot-edge
 services: iot-edge
 ms.custom: amqp
 ms.openlocfilehash: 353ed321ce3b6161b28bf67d852a81f809880603
-ms.sourcegitcommit: ffc6e4f37233a82fcb14deca0c47f67a7d79ce5c
+ms.sourcegitcommit: c5021f2095e25750eb34fd0b866adf5d81d56c3a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/21/2020
+ms.lasthandoff: 08/25/2020
 ms.locfileid: "81733014"
 ---
 # <a name="tutorial-configure-an-iot-edge-device"></a>Руководство по Настройка устройства IoT Edge
@@ -80,7 +80,7 @@ ms.locfileid: "81733014"
 
     ![Копирование имени Key Vault](media/tutorial-machine-learning-edge-05-configure-edge-device/find-key-vault-name.png)
 
-3. На компьютере для разработки передайте сертификаты в Key Vault. Замените строки **\<subscriptionId\>** и **\<keyvaultname\>** реальными значениями идентификатора подписки и имени хранилища.
+3. На компьютере для разработки передайте сертификаты в Key Vault. Замените **\<subscriptionId\>** и **\<keyvaultname\>** сведениями о ресурсах.
 
     ```powershell
     c:\source\IoTEdgeAndMlSample\CreateCertificates\upload-keyvaultcerts.ps1 -SubscriptionId <subscriptionId> -KeyVaultName <keyvaultname>

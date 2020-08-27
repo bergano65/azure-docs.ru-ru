@@ -8,12 +8,12 @@ ms.topic: tutorial
 ms.author: nandab
 author: KishorIoT
 ms.date: 07/31/2020
-ms.openlocfilehash: 30e123b24a5d2c9e45df6ee6dc6debfb88b920f3
-ms.sourcegitcommit: bfeae16fa5db56c1ec1fe75e0597d8194522b396
+ms.openlocfilehash: 76e72e8fd134c65cc9334e635375cc25e9b09a75
+ms.sourcegitcommit: 6fc156ceedd0fbbb2eec1e9f5e3c6d0915f65b8e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/10/2020
-ms.locfileid: "88038089"
+ms.lasthandoff: 08/21/2020
+ms.locfileid: "88719076"
 ---
 # <a name="tutorial-monitor-and-manage-a-video-analytics---object-and-motion-detection-application"></a>Руководство по мониторингу и управлению видео с помощью приложения "Видеоаналитика — распознавание объектов и движения"
 
@@ -155,22 +155,22 @@ docker run -it --rm -e amsAadClientId="<FROM_AZURE_PORTAL>" -e amsAadSecret="<FR
 |amsResourceGroup| ResourceGroup |
 |amsAccountName| AccountName|
 
-Перейдите к **панели мониторинга** в своем приложении. Затем щелкните одну из захваченных гиперссылок обнаружения объектов на плитке **Inference Event Video** (Видео событий вывода). Видеоконтент появится на странице, которую отображает локальный видеопроигрыватель:
+Перейдите к устройству **camera-003** и выберите вкладку **Dashboard** (Панель мониторинга). Затем щелкните одну из захваченных гиперссылок обнаружения объектов на плитке **Inference Event Video** (Видео событий вывода). Видеоконтент появится на странице, которую отображает локальный видеопроигрыватель:
 
 :::image type="content" source="media/tutorial-video-analytics-manage/video-snippet.png" alt-text="Фрагмент видео":::
 
-## <a name="change-the-simulated-devices-in-application-dashboard"></a>Изменение имитированных устройств на панели мониторинга приложения
+## <a name="change-the-simulated-devices-in-application-dashboards"></a>Изменение имитированных устройств на панелях мониторинга приложения
 
 Панели мониторинга приложений первоначально заполняются данными телеметрии и свойствами, созданными на основе имитированных устройств IoT Central. Чтобы настроить плитки для получения телеметрии от реальных камер или симулятора Live555, выполните следующие действия.
 
-1. Перейдите на панель мониторинга **Real Camera Monitor** (Мониторинг реальной камеры).
+1. Перейдите к панели мониторинга приложений **(Sample) Real Camera Monitor** (Мониторинг реальной камеры (пример)).
 1. Выберите команду **Изменить**.
+1. Выберите плитку **Note** (Примечание) и удалите ее.
+1. Измените заголовок панели мониторинга на *Real Camera Monitor* (Мониторинг реальной камеры).
 1. На плитке **Inference Count** (Счетчик вывода) щелкните значок настройки.
 1. В разделе **Configure Chart** (Настройка диаграммы) выберите одну или несколько реальных камер из группы устройств **LVA Edge Object Detector** (Детектор объектов LVA Edge).
 1. Выберите поле телеметрии `AI Inference Interface/Inference Count`.
 1. Выберите **Обновить**.
-
-   
 
 1. Повторите эти шаги для следующих плиток.
     1. Для круговой диаграммы **Detection** (Обнаружение) используется тип телеметрии `AI Inference Interface/Inference/entity/tag/value`.

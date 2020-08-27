@@ -1,18 +1,18 @@
 ---
 title: Сценарий PowerShell. Поиск хранилища для учетной записи хранения
-description: Сведения об использовании сценария Azure PowerShell для поиска хранилища служб восстановления, в котором зарегистрирована учетная запись хранения.
+description: Узнайте, как с помощью скрипта Azure PowerShell найти хранилище Служб восстановления, в котором зарегистрирована учетная запись хранения.
 ms.topic: sample
 ms.date: 1/28/2020
-ms.openlocfilehash: b343b2f93ed439188c5c0238bf108064f6e132c1
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.openlocfilehash: 1e12f1472b8141d06a1b3c1c9049e057f100d0e4
+ms.sourcegitcommit: afa1411c3fb2084cccc4262860aab4f0b5c994ef
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86513257"
+ms.lasthandoff: 08/23/2020
+ms.locfileid: "88757529"
 ---
-# <a name="powershell-script-to-find-the-recovery-services-vault-where-a-storage-account-is-registered"></a>Сценарий Powershell для поиска хранилища Служб восстановления, в котором зарегистрирована учетная запись хранения.
+# <a name="powershell-script-to-find-the-recovery-services-vault-where-a-storage-account-is-registered"></a>Скрипт PowerShell для поиска хранилища Служб восстановления, в котором зарегистрирована учетная запись хранения
 
-Сценарий позволяет найти хранилище служб восстановления, в котором зарегистрирована учетная запись хранения.
+Скрипт позволяет найти хранилище Служб восстановления, в котором зарегистрирована учетная запись хранения.
 
 ## <a name="sample-script"></a>Пример скрипта
 
@@ -56,7 +56,7 @@ if(!$found)
     * **-StorageAccountName** — имя учетной записи хранения;
     * **-SubscriptionID** — идентификатор подписки, в которой содержится учетная запись хранения.
 
-В следующем примере предпринимается попытка найти хранилище служб восстановления, в котором зарегистрирована учетная запись хранения *afsaccount*:
+В следующем примере выполняется поиск хранилища Служб восстановления, в котором зарегистрирована учетная запись хранения *afsaccount*:
 
 ```powershell
 .\FindRegisteredStorageAccount.ps1 -ResourceGroupName AzureFiles -StorageAccountName afsaccount -SubscriptionId ef4ad5a7-c2c0-4304-af80-af49f49af3d1
@@ -64,7 +64,7 @@ if(!$found)
 
 ## <a name="output"></a>Выходные данные
 
-В выходных данных отобразится полный путь к хранилищу служб восстановления, в котором зарегистрирована учетная запись хранения. Пример выходных данных:
+В выходных данных отобразится полный путь к хранилищу Служб восстановления, в котором зарегистрирована учетная запись хранения. Пример выходных данных:
 
 ```output
 Found Storage account afsaccount registered in vault: /subscriptions/ ef4ad5a7-c2c0-4304-af80-af49f49af3d1/resourceGroups/azurefiles/providers/Microsoft.RecoveryServices/vaults/azurefilesvault123

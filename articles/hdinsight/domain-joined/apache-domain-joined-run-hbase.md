@@ -8,10 +8,10 @@ ms.reviewer: jasonh
 ms.topic: tutorial
 ms.date: 09/04/2019
 ms.openlocfilehash: 89e9faeb3c67d0fd0c57adea3a3f69ec5438e3a0
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.sourcegitcommit: c5021f2095e25750eb34fd0b866adf5d81d56c3a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
+ms.lasthandoff: 08/25/2020
 ms.locfileid: "73044645"
 ---
 # <a name="tutorial-configure-apache-hbase-policies-in-hdinsight-with-enterprise-security-package"></a>Руководство по настройке политик Apache HBase в HDInsight с Корпоративным пакетом безопасности
@@ -95,7 +95,7 @@ ms.locfileid: "73044645"
 
 Создайте политику Ranger для пользователей **sales_user1** и **marketing_user1**.
 
-1. Откройте **пользовательский интерфейс администратора Ranger**. Щелкните **\<Имя_кластера>_hbase** в разделе **HBase**.
+1. Откройте **пользовательский интерфейс администратора Ranger**. В разделе **HBase** выберите **\<ClusterName>_hbase**.
 
    ![Пользовательский интерфейс администратора Apache Ranger для HDInsight](./media/apache-domain-joined-run-hbase/apache-ranger-admin-login.png)
 

@@ -46,6 +46,8 @@
       href: dns-settings.md
     - name: 'Развертывание нескольких общедоступных IP-адресов: PowerShell'
       href: multiple-public-ip-powershell.md
+    - name: Определение иерархии правил
+      href: rule-hierarchy.md
 - name: Справочник
   items:
     - name: Azure CLI
