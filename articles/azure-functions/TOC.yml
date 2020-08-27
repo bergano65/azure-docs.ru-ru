@@ -175,6 +175,7 @@
               href: functions-develop-vs.md
             - name: Разработка основных инструментов
               href: functions-run-local.md
+              displayName: 'local, runtime'
         - name: Создание функций
           items:
             - name: Триггер HTTP

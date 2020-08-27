@@ -8,12 +8,12 @@ ms.date: 05/29/2020
 ms.author: rogarana
 ms.subservice: files
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: 538cbfea2480573c190a1dd0ee0480e21aecefe2
-ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
+ms.openlocfilehash: 85c6d58d78f095f2f221476a91ecae8da0213963
+ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/31/2020
-ms.locfileid: "87502092"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88928604"
 ---
 # <a name="enable-and-create-large-file-shares"></a>Включение и создание больших файловых ресурсов
 
@@ -23,7 +23,7 @@ ms.locfileid: "87502092"
 
 - Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/), прежде чем начинать работу.
 - Если вы хотите использовать Azure CLI, [установите последнюю версию](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest).
-- Если вы хотите использовать Azure PowerShell, [установите последнюю версию](https://docs.microsoft.com/powershell/azure/install-az-ps?view=azps-3.0.0).
+- Если вы планируете использовать модуль Azure PowerShell, [установите последнюю версию](https://docs.microsoft.com/powershell/azure/install-az-ps?view=azps-4.6.0).
 
 ## <a name="restrictions"></a>Ограничения
 
@@ -61,7 +61,7 @@ ms.locfileid: "87502092"
 
     ![Снимок экрана с переключателем "включено" в новой учетной записи хранения в портал Azure](media/storage-files-how-to-create-large-file-share/large-file-shares-advanced-enable.png)
 
-1. Щелкните **Создать**.
+1. Нажмите кнопку **Создать**.
 
 # <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
 

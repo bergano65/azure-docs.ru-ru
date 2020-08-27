@@ -5,15 +5,15 @@ author: hrasheed-msft
 ms.author: hrasheed
 ms.reviewer: jasonh
 ms.service: hdinsight
-ms.custom: hdinsightactive,mvc,seoapr2020
+ms.custom: contperfq1
 ms.topic: overview
-ms.date: 04/17/2020
-ms.openlocfilehash: e933d48a60a01bdbf00205a389778b9a3befeede
-ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
+ms.date: 08/21/2020
+ms.openlocfilehash: 2cbe0b520156e77308f61a725937ac415cb80473
+ms.sourcegitcommit: afa1411c3fb2084cccc4262860aab4f0b5c994ef
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "82188231"
+ms.lasthandoff: 08/23/2020
+ms.locfileid: "88756951"
 ---
 # <a name="what-is-apache-spark-in-azure-hdinsight"></a>Apache Spark в Azure HDInsight
 
@@ -108,3 +108,4 @@ Apache Spark в HDInsight хранит данные в службе хранил
 В этой обзорной статье вы получили некоторые основные сведения об Apache Spark в Azure HDInsight. Узнайте, как создать кластер Spark в HDInsight и выполнить некоторые запросы Spark SQL:
 
 * [Создание кластеров под управлением Linux в HDInsight с помощью портала Azure](./apache-spark-jupyter-spark-sql-use-portal.md)
+* [Оптимизация заданий Spark для повышения производительности](apache-spark-perf.md)

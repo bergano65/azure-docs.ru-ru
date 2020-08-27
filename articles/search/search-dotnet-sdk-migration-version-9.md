@@ -9,16 +9,16 @@ ms.service: cognitive-search
 ms.devlang: dotnet
 ms.topic: conceptual
 ms.date: 11/04/2019
-ms.openlocfilehash: 6268bf94350699518d8d578e3a1d5a56a52ad785
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: db2017a3bb1a8910049527796f422227b741b960
+ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85562354"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88923200"
 ---
 # <a name="upgrade-to-azure-search-net-sdk-version-9"></a>Обновление до пакета SDK .NET версии 9 для службы поиска Azure
 
-Если вы используете версию 7,0 (Предварительная версия) или более раннюю версию [пакета SDK для .NET службы поиска Azure](https://docs.microsoft.com/dotnet/api/overview/azure/search), эта статья поможет вам обновить приложение для использования версии 9.
+Если вы используете версию 7,0 (Предварительная версия) или более раннюю версию [пакета SDK для .NET службы поиска Azure](/dotnet/api/overview/azure/search), эта статья поможет вам обновить приложение для использования версии 9.
 
 > [!NOTE]
 > Если вы хотите использовать версию 8,0-Preview для анализа функций, которые не доступны в общедоступной версии, можно также выполнить инструкции, приведенные в этой статье, чтобы выполнить обновление до версии 8,0-Preview с предыдущих версий.
@@ -106,12 +106,12 @@ ms.locfileid: "85562354"
 
 В версии 7,0-Preview и более ранних версиях различные классы, инкапсулирующие группы документов, были структурированы в параллельных иерархиях классов:
 
-  -  `DocumentSearchResult`и `DocumentSearchResult<T>` наследуются от`DocumentSearchResultBase`
-  -  `DocumentSuggestResult`и `DocumentSuggestResult<T>` наследуются от`DocumentSuggestResultBase`
-  -  `IndexAction`и `IndexAction<T>` наследуются от`IndexActionBase`
-  -  `IndexBatch`и `IndexBatch<T>` наследуются от`IndexBatchBase`
-  -  `SearchResult`и `SearchResult<T>` наследуются от`SearchResultBase`
-  -  `SuggestResult`и `SuggestResult<T>` наследуются от`SuggestResultBase`
+  -  `DocumentSearchResult` и `DocumentSearchResult<T>` наследуются от `DocumentSearchResultBase`
+  -  `DocumentSuggestResult` и `DocumentSuggestResult<T>` наследуются от `DocumentSuggestResultBase`
+  -  `IndexAction` и `IndexAction<T>` наследуются от `IndexActionBase`
+  -  `IndexBatch` и `IndexBatch<T>` наследуются от `IndexBatchBase`
+  -  `SearchResult` и `SearchResult<T>` наследуются от `SearchResultBase`
+  -  `SuggestResult` и `SuggestResult<T>` наследуются от `SuggestResultBase`
 
 Производные типы без параметра универсального типа предназначены для использования в сценариях с динамическим вводом и предполагают использование `Document` типа.
 
@@ -151,7 +151,7 @@ var index = new Index()
 
 ### <a name="removed-facetresults-and-hithighlights"></a>Удалены Фацетресултс и Хисигхлигхтс
 
-`FacetResults`Классы и были `HitHighlights` удалены. Результаты аспекта теперь вводятся как `IDictionary<string, IList<FacetResult>>` `IDictionary<string, IList<string>>` . Чтобы быстро устранить ошибки сборки, появившиеся в этом изменении, необходимо добавить `using` псевдонимы в верхней части каждого файла, использующего удаленные типы. Пример:
+`FacetResults`Классы и были `HitHighlights` удалены. Результаты аспекта теперь вводятся как `IDictionary<string, IList<FacetResult>>` `IDictionary<string, IList<string>>` . Чтобы быстро устранить ошибки сборки, появившиеся в этом изменении, необходимо добавить `using` псевдонимы в верхней части каждого файла, использующего удаленные типы. Например:
 
 ```csharp
 using FacetResults = System.Collections.Generic.IDictionary<string, System.Collections.Generic.IList<Models.FacetResult>>;

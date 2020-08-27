@@ -10,12 +10,13 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 08/20/2020
 ms.author: wolfma
-ms.openlocfilehash: b30a314977755b94bdcfdf7526d1b9ae61fcf100
-ms.sourcegitcommit: 56cbd6d97cb52e61ceb6d3894abe1977713354d9
+ms.custom: devx-track-csharp
+ms.openlocfilehash: 5be3b4ce5d89a15009f2b9b31183400890dbefb5
+ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/20/2020
-ms.locfileid: "88689751"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88918950"
 ---
 # <a name="how-to-use-batch-transcription"></a>Использование записи пакетов
 
@@ -62,7 +63,7 @@ API-интерфейс для транскрипции пакетов подде
 Для звуковых потоков стереозвука левый и правый каналы разбиваются во время транскрипции. Файл результатов JSON создается для каждого канала.
 Чтобы создать упорядоченную конечную запись, используйте метки времени, созданные для каждого utterance.
 
-### <a name="configuration"></a>Параметр Configuration
+### <a name="configuration"></a>Конфигурация
 
 Параметры конфигурации предоставляются в виде JSON (один или несколько отдельных файлов):
 

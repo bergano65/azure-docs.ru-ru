@@ -9,12 +9,12 @@ ms.subservice: linux
 ms.date: 03/27/2020
 ms.reviewer: mimckitt
 ms.custom: mimckitt, subject-armqs
-ms.openlocfilehash: bb23a47b702237cad55ded2fa46400eba0997264
-ms.sourcegitcommit: 124f7f699b6a43314e63af0101cd788db995d1cb
+ms.openlocfilehash: f6ab030b7f807a884b5d05487724fc9c66a6de87
+ms.sourcegitcommit: 271601d3eeeb9422e36353d32d57bd6e331f4d7b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86082851"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88648638"
 ---
 # <a name="quickstart-create-a-linux-virtual-machine-scale-set-with-an-arm-template"></a>Краткое руководство. Создание масштабируемого набора виртуальных машин Linux с помощью шаблона ARM
 
@@ -36,7 +36,7 @@ ms.locfileid: "86082851"
 
 Шаблон, используемый в этом кратком руководстве, взят из [шаблонов быстрого запуска Azure](https://azure.microsoft.com/resources/templates/201-vmss-bottle-autoscale/).
 
-:::code language="json" source="~/quickstart-templates/201-vmss-bottle-autoscale/azuredeploy.json" range="1-330" highlight="176-264":::
+:::code language="json" source="~/quickstart-templates/201-vmss-bottle-autoscale/azuredeploy.json":::
 
 В шаблоне определены следующие ресурсы:
 
@@ -48,7 +48,7 @@ ms.locfileid: "86082851"
 
 ### <a name="define-a-scale-set"></a>Определение масштабируемого набора
 
-Выделенная часть — это определение ресурса масштабируемого набора. Чтобы создать масштабируемый набор с помощью шаблона, определите необходимые ресурсы. Ниже перечислены основные элементы и типы ресурсов для масштабируемого набора виртуальных машин.
+Чтобы создать масштабируемый набор с помощью шаблона, определите необходимые ресурсы. Ниже перечислены основные элементы и типы ресурсов для масштабируемого набора виртуальных машин.
 
 | Свойство                     | Описание свойства                                  | Пример значения в шаблоне                    |
 |------------------------------|----------------------------------------------------------|-------------------------------------------|

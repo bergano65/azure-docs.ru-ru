@@ -9,12 +9,12 @@ ms.devlang: rest-api
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 05/18/2020
-ms.openlocfilehash: dacfeeff06d58a084d4313ca50b51f262cf61381
-ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
+ms.openlocfilehash: 30305607ea291587f7751b7e8048924f995251e9
+ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88553086"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88917981"
 ---
 # <a name="set-up-a-connection-to-an-azure-storage-account-using-a-managed-identity-preview"></a>Настройка подключения к учетной записи хранения Azure с использованием управляемого удостоверения (предварительная версия)
 
@@ -68,7 +68,7 @@ ms.locfileid: "88553086"
 
 ### <a name="3---create-the-data-source"></a>3\. Создание источника данных
 
-[REST API](https://docs.microsoft.com/rest/api/searchservice/create-data-source), портал Azure и [пакет SDK для .NET](https://docs.microsoft.com/dotnet/api/microsoft.azure.search.models.datasource?view=azure-dotnet) поддерживают строку подключения управляемого удостоверения. Ниже приведен пример создания источника данных для индексации данных из учетной записи хранения с помощью [REST API](https://docs.microsoft.com/rest/api/searchservice/create-data-source) и строки подключения управляемой идентификации. Формат строки подключения управляемого удостоверения одинаков для REST API, пакета SDK для .NET и портал Azure.
+[REST API](/rest/api/searchservice/create-data-source), портал Azure и [пакет SDK для .NET](/dotnet/api/microsoft.azure.search.models.datasource?view=azure-dotnet) поддерживают строку подключения управляемого удостоверения. Ниже приведен пример создания источника данных для индексации данных из учетной записи хранения с помощью [REST API](/rest/api/searchservice/create-data-source) и строки подключения управляемой идентификации. Формат строки подключения управляемого удостоверения одинаков для REST API, пакета SDK для .NET и портал Azure.
 
 Если индексация выполняется по учетной записи хранения, источник данных должен иметь следующие обязательные свойства:
 
@@ -83,7 +83,7 @@ ms.locfileid: "88553086"
         * *ResourceId=/subscriptions/**идентификатор_подписки**/resourceGroups/**имя_группы_ресурсов**/providers/Microsoft.Storage/storageAccounts/**имя_учетной_записи_хранения**/;* .
 * Свойство **container** определяет контейнер или таблицу в учетной записи хранения. По умолчанию все большие двоичные объекты в контейнере доступны для извлечения. Если требуется индексирование больших двоичных объектов из определенного виртуального каталога, можно указать этот каталог с помощью дополнительного параметра **query**.
 
-Пример для создания большого двоичного объекта в качестве источника данных с помощью [REST API](https://docs.microsoft.com/rest/api/searchservice/create-data-source):
+Пример для создания большого двоичного объекта в качестве источника данных с помощью [REST API](/rest/api/searchservice/create-data-source):
 
 ```
 POST https://[service name].search.windows.net/datasources?api-version=2020-06-30
@@ -118,7 +118,7 @@ api-key: [admin key]
     }
 ```
 
-Дополнительные сведения о создании индексов см. в статье [Create Index](https://docs.microsoft.com/rest/api/searchservice/create-index) (Создание индекса).
+Дополнительные сведения о создании индексов см. в статье [Create Index](/rest/api/searchservice/create-index) (Создание индекса).
 
 ### <a name="5---create-the-indexer"></a>5\. Создание индексатора
 
@@ -143,7 +143,7 @@ api-key: [admin key]
 
 Этот индексатор будет выполняться каждые два часа (интервал расписания имеет значение "PT2H"). Чтобы запускать индексатор каждые 30 минут, задайте интервал "PT30M". Самый короткий интервал, который можно задать, составляет 5 минут. Расписание является необязательным. Если оно не указано, то индексатор выполняется только один раз при его создании. Однако индексатор можно запустить по запросу в любое время.   
 
-Дополнительные сведения об API создания индексатора см. в разделе [Создание индексатора](https://docs.microsoft.com/rest/api/searchservice/create-indexer).
+Дополнительные сведения об API создания индексатора см. в разделе [Создание индексатора](/rest/api/searchservice/create-indexer).
 
 Дополнительные сведения об определении расписаний индексаторов для Когнитивного поиска Azure см. [здесь](search-howto-schedule-indexers.md).
 

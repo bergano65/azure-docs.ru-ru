@@ -10,12 +10,12 @@ ms.author: aashishb
 author: aashishb
 ms.reviewer: larryfr
 ms.date: 05/19/2020
-ms.openlocfilehash: 723c30856593044c91220b4e3ab267ab140c5ffd
-ms.sourcegitcommit: f353fe5acd9698aa31631f38dd32790d889b4dbb
+ms.openlocfilehash: ed95cf0b98edd8a6775c980876a6092c00e3a68d
+ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87366933"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88918593"
 ---
 # <a name="enterprise-security-for-azure-machine-learning"></a>Корпоративная безопасность для Машинного обучения Azure
 
@@ -119,19 +119,14 @@ ms.locfileid: "87366933"
 ### <a name="encryption-at-rest"></a>Шифрование при хранении
 
 > [!IMPORTANT]
-> Если рабочая область будет содержать конфиденциальные данные, рекомендуем при ее создании установить [флаг hbi_workspace](https://docs.microsoft.com/python/api/azureml-core/azureml.core.workspace(class)?view=azure-ml-py#create-name--auth-none--subscription-id-none--resource-group-none--location-none--create-resource-group-true--sku--basic---friendly-name-none--storage-account-none--key-vault-none--app-insights-none--container-registry-none--cmk-keyvault-none--resource-cmk-uri-none--hbi-workspace-false--default-cpu-compute-target-none--default-gpu-compute-target-none--exist-ok-false--show-output-true-). 
+> Если рабочая область будет содержать конфиденциальные данные, рекомендуем при ее создании установить [флаг hbi_workspace](https://docs.microsoft.com/python/api/azureml-core/azureml.core.workspace(class)?view=azure-ml-py#create-name--auth-none--subscription-id-none--resource-group-none--location-none--create-resource-group-true--sku--basic---friendly-name-none--storage-account-none--key-vault-none--app-insights-none--container-registry-none--cmk-keyvault-none--resource-cmk-uri-none--hbi-workspace-false--default-cpu-compute-target-none--default-gpu-compute-target-none--exist-ok-false--show-output-true-). `hbi_workspace`Флаг можно задать только при создании рабочей области. Его нельзя изменить для существующей рабочей области.
 
-Этот `hbi_workspace` флаг управляет объемом данных, собираемых корпорацией Майкрософт в целях диагностики, и обеспечивает дополнительное шифрование в средах, управляемых корпорацией Майкрософт. Кроме того, он включает следующие действия:
+Этот `hbi_workspace` флаг управляет объемом [данных, собираемых корпорацией Майкрософт в целях диагностики](#microsoft-collected-data) , и обеспечивает [дополнительное шифрование в средах, управляемых корпорацией Майкрософт](../security/fundamentals/encryption-atrest.md). Кроме того, он включает следующие действия:
 
 * Запускает шифрование локального рабочего диска в кластере Машинное обучение Azure COMPUTE, если вы не создали предыдущие кластеры в этой подписке. В противном случае необходимо создать запрос в службу поддержки, чтобы включить шифрование временных дисков для вычислительных кластеров. 
 * Очищает локальный временный диск между запусками.
 * Безопасно передает учетные данные для учетной записи хранения, реестра контейнеров и учетной записи SSH из уровня выполнения в вычислительные кластеры с помощью хранилища ключей.
 * Включает IP-фильтрацию для того, чтобы базовые пулы пакетов невозможно было вызывать из внешних служб, отличных от AzureMachineLearningService.
-
-> [!WARNING]
-> `hbi_workspace`Флаг можно задать только при создании рабочей области. Его нельзя изменить для существующей рабочей области.
-
-Дополнительные сведения о действии шифрования неактивных данных см. в [этой статье](https://docs.microsoft.com/azure/security/fundamentals/encryption-atrest).
 
 #### <a name="azure-blob-storage"></a>Хранилище BLOB-объектов Azure
 
