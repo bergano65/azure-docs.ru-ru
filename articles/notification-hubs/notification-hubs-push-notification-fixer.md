@@ -16,12 +16,13 @@ ms.date: 02/25/2020
 ms.author: sethm
 ms.reviewer: jowargo
 ms.lastreviewed: 04/04/2019
-ms.openlocfilehash: 3bad65dbecd6e4a7d9bcb7fbdee6faafc31ead86
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.custom: devx-track-csharp
+ms.openlocfilehash: b5139f75084eb0646db2fc8b05b04aaf3ddb2a12
+ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87078019"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89010789"
 ---
 # <a name="diagnose-dropped-notifications-in-azure-notification-hubs"></a>Диагностика удаленных уведомлений в центрах уведомлений Azure
 
@@ -128,7 +129,7 @@ ms.locfileid: "87078019"
 
 Проверьте учетные данные на соответствующем портале разработчика службы push-уведомлений (APNs, FCM, служба уведомлений Windows и т. д.). Дополнительные сведения см. [в статье учебник. Отправка уведомлений в универсальная платформа Windows приложения с помощью центров уведомлений Azure](./notification-hubs-windows-store-dotnet-get-started-wns-push-notification.md).
 
-#### <a name="azure-portal"></a>портал Azure;
+#### <a name="azure-portal"></a>Портал Azure
 
 Чтобы проверить и сопоставить учетные данные с данными, полученными на портале разработчика службы push-уведомлений, перейдите на вкладку **политики доступа** в портал Azure.
 
@@ -171,7 +172,7 @@ ms.locfileid: "87078019"
 
 ### <a name="verify-message-notifications"></a>Проверка уведомлений о сообщениях
 
-#### <a name="azure-portal"></a>портал Azure;
+#### <a name="azure-portal"></a>Портал Azure
 
 Чтобы отправить тестовые уведомления клиентам, не запуская серверную часть службы, в разделе **Поддержка и устранение неполадок** выберите **Тестовая отправка**.
 
@@ -199,7 +200,7 @@ ms.locfileid: "87078019"
 
 Информацию об ошибках службы push-уведомлений можно получить с помощью свойства [EnableTestSend]. Оно автоматически включается при отправке тестового сообщения с портала или клиентского приложения Visual Studio Это свойство можно использовать для просмотра подробных сведений об отладке, а также через API. Сейчас его можно использовать в пакете SDK для .NET. В конечном итоге он будет добавлен во все клиентские пакеты SDK.
 
-Чтобы использовать свойство `EnableTestSend` с вызовом REST, добавьте параметр строки запроса с именем *test* в конце вызова отправки. Например.
+Чтобы использовать свойство `EnableTestSend` с вызовом REST, добавьте параметр строки запроса с именем *test* в конце вызова отправки. Пример:
 
 ```text
 https://mynamespace.servicebus.windows.net/mynotificationhub/messages?api-version=2013-10&test
@@ -248,7 +249,7 @@ The Token obtained from the Token Provider is wrong
 
 ### <a name="review-telemetry"></a>Просмотр телеметрии
 
-#### <a name="azure-portal"></a>портал Azure;
+#### <a name="azure-portal"></a>Портал Azure
 
 На портале вы можете получить краткий обзор всех операций, выполняемых в Центре уведомлений.
 

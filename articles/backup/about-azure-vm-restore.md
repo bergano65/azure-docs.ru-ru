@@ -3,12 +3,12 @@ title: О процессе восстановления виртуальной �
 description: Узнайте, как служба Azure Backup восстанавливает виртуальные машины Azure.
 ms.topic: conceptual
 ms.date: 05/20/2020
-ms.openlocfilehash: fb3f6bf729047dc6fe1c13c5ead1191188e30e5c
-ms.sourcegitcommit: f1b18ade73082f12fa8f62f913255a7d3a7e42d6
+ms.openlocfilehash: 5458d02e241860a98d1ab5f64df141132813f8dd
+ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/24/2020
-ms.locfileid: "88761395"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89011962"
 ---
 # <a name="about-azure-vm-restore"></a>Сведения о восстановлении виртуальных машин Azure
 

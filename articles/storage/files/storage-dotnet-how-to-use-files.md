@@ -8,12 +8,13 @@ ms.topic: how-to
 ms.date: 10/7/2019
 ms.author: rogarana
 ms.subservice: files
-ms.openlocfilehash: 7ef9d87db1981c7721c2398e858404c2527dd274
-ms.sourcegitcommit: d661149f8db075800242bef070ea30f82448981e
+ms.custom: devx-track-csharp
+ms.openlocfilehash: c5c51bb052948c58d4849c556d0756240d6968ca
+ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/19/2020
-ms.locfileid: "88605777"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89011537"
 ---
 # <a name="develop-for-azure-files-with-net"></a>Разработка для службы файлов Azure с помощью .NET
 
@@ -70,7 +71,7 @@ API | Назначение | Примечания
 
   Этот пакет предоставляет класс для синтаксического анализа строки подключения в файле конфигурации независимо от того, где выполняется приложение.
 
-Вы можете использовать NuGet для установки обоих пакетов. Выполните следующие действия.
+Вы можете использовать NuGet для установки обоих пакетов. Выполните следующие действия:
 
 1. В **Обозреватель решений**щелкните правой кнопкой мыши проект и выберите **Управление пакетами NuGet**.
 1. В разделе **Диспетчер пакетов NuGet** выберите **Обзор**. Затем найдите и выберите **Microsoft. Azure. Storage. BLOB**, а затем нажмите кнопку **установить**.

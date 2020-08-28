@@ -8,12 +8,12 @@ ms.author: nibaccam
 author: nibaccam
 ms.date: 08/05/2020
 ms.custom: how-to, tracking-python
-ms.openlocfilehash: 96eeafd7e434e2c3a42311999fcd4979531df2aa
-ms.sourcegitcommit: 02ca0f340a44b7e18acca1351c8e81f3cca4a370
+ms.openlocfilehash: 00718e15b069e9be25abdaf0e4460eae20c6afd0
+ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/19/2020
-ms.locfileid: "88584885"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88998081"
 ---
 # <a name="create-azure-machine-learning-datasets-from-azure-open-datasets"></a>Создание наборов данных Машинное обучение Azure из открытых наборов данных Azure
 [!INCLUDE [aml-applies-to-basic-enterprise-sku](../../includes/aml-applies-to-basic-enterprise-sku.md)]
@@ -27,7 +27,7 @@ ms.locfileid: "88584885"
 
 Чтобы узнать, где находятся наборы данных в общем рабочем процессе доступа к данным Машинное обучение Azure, ознакомьтесь со статьей [безопасный доступ к](../machine-learning/concept-data.md#data-workflow) данным.
 
-Открытые наборы данных Azure — это проверенные общедоступные наборы данных, которые можно использовать для добавления функций для конкретных сценариев, чтобы расширить возможности прогнозных решений и повысить их точность. Сведения об общедоступных доменах, которые могут помочь в обучении моделей машинного обучения, см. в разделе [Открытие каталога наборов](https://azure.microsoft.com/services/op[en-datasets/catalog/) данных.
+Открытые наборы данных Azure — это проверенные общедоступные наборы данных, которые можно использовать для добавления функций для конкретных сценариев, чтобы расширить возможности прогнозных решений и повысить их точность. Сведения об общедоступных доменах, которые могут помочь в обучении моделей машинного обучения, см. в разделе [Открытие каталога наборов](https://azure.microsoft.com/en-in/services/open-datasets/catalog/) данных.
 
 * [сводка](https://azure.microsoft.com/services/open-datasets/catalog/noaa-integrated-surface-data/)
 * [писью](https://azure.microsoft.com/services/open-datasets/catalog/us-decennial-census-zip/)
@@ -38,7 +38,7 @@ ms.locfileid: "88584885"
 Открытые наборы данных находятся в облаке на Microsoft Azure и включены в [пакет SDK для машинное обучение Azure Python](#create-datasets-with-the-sdk) и в [машинное обучение Azure Studio](#create-datasets-with-the-studio).
 
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Обязательные условия
 
 Для этой статьи требуется:
 
@@ -111,7 +111,7 @@ titanic_ds = titanic_ds.register(workspace=workspace,
 
     ![Выбор набора данных](./media/how-to-create-dataset-from-open-dataset/open-datasets-2.png)
 
-1. Выберите имя, под которым будет зарегистрирован набор данных, и при необходимости отфильтруйте данные с помощью доступных фильтров. В этом случае для набора данных " **общедоступные праздники** " вы фильтруете период времени в один год и код страны только в США. Подробные сведения о данных, такие как, описания полей и диапазоны дат, см. в [каталоге открытых наборов данных Azure](https://azure.microsoft.com/services/op[en-datasets/catalog/) . Нажмите кнопку **создания**.
+1. Выберите имя, под которым будет зарегистрирован набор данных, и при необходимости отфильтруйте данные с помощью доступных фильтров. В этом случае для набора данных " **общедоступные праздники** " вы фильтруете период времени в один год и код страны только в США. Подробные сведения о данных, такие как, описания полей и диапазоны дат, см. в [каталоге открытых наборов данных Azure](https://azure.microsoft.com/services/op[en-datasets/catalog/) . Нажмите кнопку **Создать**.
 
     ![Установка параметров набора данных и создание набора данных](./media/how-to-create-dataset-from-open-dataset/open-datasets-3.png)
 

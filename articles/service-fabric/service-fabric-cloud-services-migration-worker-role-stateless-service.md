@@ -5,12 +5,13 @@ author: vturecek
 ms.topic: conceptual
 ms.date: 11/02/2017
 ms.author: vturecek
-ms.openlocfilehash: caf067f793ca2086bc068907e86a82266627d128
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.custom: devx-track-csharp
+ms.openlocfilehash: 24a411403fc139a7e7fa6644690c57a3b2729bf5
+ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "75463339"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89002289"
 ---
 # <a name="guide-to-converting-web-and-worker-roles-to-service-fabric-stateless-services"></a>Руководство по преобразованию рабочих ролей и веб-ролей в службы без отслеживания состояния Service Fabric
 В этой статье описано, как переносить рабочие роли и веб-роли облачных служб в службы без отслеживания состояния Service Fabric. Это самый простой способ переноса из облачных служб в службы Service Fabric при работе с приложениями, общая архитектура которых почти не изменяется.
@@ -243,7 +244,7 @@ private void CodePackageActivationContext_ConfigurationPackageModifiedEvent(obje
 ## <a name="a-note-about-development-environment"></a>Примечание о среде разработки
 Облачные службы и платформа Service Fabric интегрированы с шаблонами проектов в Visual Studio и поддерживают (локально и в Azure) отладку, настройку и развертывание. Кроме того, облачные службы и платформа Service Fabric дают возможность пользоваться локальной средой выполнения разработки. Различие заключается в том, что среда выполнения разработки облачных служб эмулирует среду Azure, в которой она запущена, тогда как платформа Service Fabric использует не эмулятор, а полноценную среду Service Fabric. Среда Service Fabric, в которой вы работаете на компьютере локальной разработки, — это та же среда, которая используется как рабочая.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 Чтобы узнать, как эффективно пользоваться всеми функциями Service Fabric, ознакомьтесь с дополнительными сведениями о службах Reliable Services платформы Service Fabric и фундаментальных различиях между облачными службами и архитектурой приложений Service Fabric.
 
 * [Начало работы со службами Reliable Services в Service Fabric](service-fabric-reliable-services-quick-start.md)

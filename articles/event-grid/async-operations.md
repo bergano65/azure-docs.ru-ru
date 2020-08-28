@@ -3,12 +3,13 @@ title: Состояние асинхронных операций в сетке 
 description: Описывает, как отслеживанию асинхронных операций в службе "Сетка событий" в Azure. Приводятся значения для получения состояния длительной операции.
 ms.topic: conceptual
 ms.date: 07/07/2020
-ms.openlocfilehash: 621490a9f56e88baaf343c1c2a072ab84aa7d3ef
-ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
+ms.custom: devx-track-csharp
+ms.openlocfilehash: baae7b097a0b696d405c0e7ea3d3bdeb326f23b1
+ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86103336"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89011690"
 ---
 # <a name="track-event-grid-asynchronous-azure-operations"></a>Мониторинг асинхронных операций Azure в службе "Сетка событий"
 Некоторые операции REST выполняются в Azure асинхронно, поскольку не могут быть быстро завершены. Из этой статьи вы узнаете, как отслеживать состояние асинхронных операций, используя возвращаемые в ответе значения.  
@@ -71,7 +72,7 @@ response.Headers.GetValues("Azure-AsyncOperation").GetValue(0)
 
 Операции, которые создают, обновляют или удаляют ресурсы (PUT, PATCH, DELETE), обычно возвращают значение `provisioningState`. После завершения операции возвращается одно из следующих трех значений: 
 
-* Успешно
+* Выполнено
 * Ошибка
 * Отменено
 

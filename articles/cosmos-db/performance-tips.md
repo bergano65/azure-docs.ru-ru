@@ -6,12 +6,13 @@ ms.service: cosmos-db
 ms.topic: how-to
 ms.date: 06/26/2020
 ms.author: sngun
-ms.openlocfilehash: bc73292d7ed01468fc31e5a6203a4ba53a6425a2
-ms.sourcegitcommit: 54d8052c09e847a6565ec978f352769e8955aead
+ms.custom: devx-track-dotnet
+ms.openlocfilehash: bdf512c66958338992c5959f8e00b4589850ff33
+ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88505773"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89008375"
 ---
 # <a name="performance-tips-for-azure-cosmos-db-and-net-sdk-v2"></a>Советы по повышению производительности для Azure Cosmos DB и .NET SDK v2
 
@@ -202,7 +203,7 @@ readDocument.RequestDiagnosticsString
 > [!NOTE] 
 > `maxItemCount`Свойство не должно использоваться только для разбиения на страницы. Его основное использование — повышение производительности запросов за счет уменьшения максимального числа элементов, возвращаемых на одной странице.  
 
-Размер страницы также можно задать с помощью доступных пакетов SDK для Azure Cosmos DB. Свойство [макситемкаунт](/dotnet/api/microsoft.azure.documents.client.feedoptions.maxitemcount?view=azure-dotnet) в `FeedOptions` позволяет задать максимальное число элементов, возвращаемых операцией перечисления. Если параметр `maxItemCount` имеет значение-1, пакет SDK автоматически находит оптимальное значение в зависимости от размера документа. Например:
+Размер страницы также можно задать с помощью доступных пакетов SDK для Azure Cosmos DB. Свойство [макситемкаунт](/dotnet/api/microsoft.azure.documents.client.feedoptions.maxitemcount?view=azure-dotnet) в `FeedOptions` позволяет задать максимальное число элементов, возвращаемых операцией перечисления. Если параметр `maxItemCount` имеет значение-1, пакет SDK автоматически находит оптимальное значение в зависимости от размера документа. Пример:
     
 ```csharp
 IQueryable<dynamic> authorResults = client.CreateDocumentQuery(documentCollection.SelfLink, "SELECT p.Author FROM Pages p WHERE p.Title = 'About Seattle'", new FeedOptions { MaxItemCount = 1000 });

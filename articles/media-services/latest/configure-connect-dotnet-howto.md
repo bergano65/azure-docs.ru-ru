@@ -13,13 +13,13 @@ ms.devlang: na
 ms.topic: article
 ms.date: 09/18/2019
 ms.author: juliako
-ms.custom: has-adal-ref
-ms.openlocfilehash: 30c91b71b952bb68761015325a00ff6926c62dfe
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.custom: has-adal-ref, devx-track-csharp
+ms.openlocfilehash: 933342c8917b3219ec858bfc3edc4013863d2c6a
+ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87001321"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89008120"
 ---
 # <a name="connect-to-media-services-v3-api---net"></a>Подключение к API служб мультимедиа v3 — .NET
 
@@ -33,9 +33,9 @@ ms.locfileid: "87001321"
 > [!IMPORTANT]
 > Проверьте [соглашения об именовании](media-services-apis-overview.md#naming-conventions).
 
-## <a name="create-a-console-application"></a>Создание консольного приложения
+## <a name="create-a-console-application"></a>Создание консольного приложение
 
-1. Запустите среду Visual Studio. 
+1. Запустите Visual Studio. 
 1. В меню **файл** выберите пункт **создать**  >  **проект**. 
 1. Создайте консольное приложение **.NET Core** .
 
@@ -146,7 +146,7 @@ namespace ConsoleApp1
 
 Чтобы начать использование API Служб мультимедиа с .NET, создайте объект **AzureMediaServicesClient**. Чтобы создать объект, введите учетные данные, необходимые клиенту для подключения к Azure с помощью Azure AD. В приведенном ниже коде функция Жеткредентиалсасинк создает объект Сервицеклиенткредентиалс на основе учетных данных, указанных в локальном файле конфигурации.
 
-1. Откройте среду `Program.cs`.
+1. Откройте `Program.cs`.
 1. Вставьте следующий код:
 
 ```csharp
@@ -241,7 +241,7 @@ namespace ConsoleApp1
 - [Создание фильтров с помощью Служб мультимедиа для .NET](filters-dynamic-manifest-dotnet-howto.md)
 - [Дополнительные примеры видео по запросу с использованием Функций Azure версии 2 и Cлужб мультимедиа версии 3](https://aka.ms/ams3functions)
 
-## <a name="see-also"></a>См. также статью
+## <a name="see-also"></a>См. также
 
 * [Справочник по .NET](/dotnet/api/overview/azure/mediaservices/management?view=azure-dotnet)
 * Дополнительные примеры кода см. в репозитории [примеров пакета SDK для .NET](https://github.com/Azure-Samples/media-services-v3-dotnet) .

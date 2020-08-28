@@ -4,12 +4,13 @@ description: Написание консольного приложения C# .
 ms.topic: conceptual
 ms.tgt_pltfrm: dotnet
 ms.date: 06/23/2020
-ms.openlocfilehash: 7b2b8382c11f447237a8f49ee5be1f4989e3f906
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.custom: devx-track-csharp
+ms.openlocfilehash: bc7435fb46d5783cb487038a10709a9e40b0d136
+ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85337518"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89021652"
 ---
 # <a name="get-started-with-service-bus-topics"></a>Начало работы с разделами служебной шины
 
@@ -20,7 +21,7 @@ ms.locfileid: "85337518"
 1. Написание консольного приложения .NET Core для отправки набора сообщений в раздел.
 2. Написание консольного приложения .NET Core для получения этих сообщений из подписки.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Обязательные условия
 
 1. Подписка Azure. Для работы с этим учебником требуется учетная запись Azure. Вы можете активировать [преимущества подписчика Visual Studio или MSDN](https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/?WT.mc_id=A85619ABF) или зарегистрироваться для получения [бесплатной учетной записи](https://azure.microsoft.com/free/?WT.mc_id=A85619ABF).
 2. Выполните действия, описанные в [кратком руководстве: использование портал Azure для создания раздела служебной шины и подписок на раздел](service-bus-quickstart-topics-subscriptions-portal.md) для выполнения следующих задач.
@@ -35,7 +36,7 @@ ms.locfileid: "85337518"
 
 Для отправки сообщений в раздел создайте консольное приложение C# с помощью Visual Studio.
 
-### <a name="create-a-console-application"></a>Создание консольного приложения
+### <a name="create-a-console-application"></a>Создание консольного приложение
 
 Откройте Visual Studio и создайте проект **Консольное приложение (.NET Core)**.
 

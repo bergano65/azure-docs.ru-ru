@@ -3,12 +3,13 @@ title: Разработка модульных тестов для служб с
 description: Дополнительные сведения о модульном тестировании в Azure Service Fabric для служб с отслеживанием состояния и особенностях, которые следует учитывать при разработке.
 ms.topic: conceptual
 ms.date: 09/04/2018
-ms.openlocfilehash: 9c657bd8295d01a4e0fa4e44e969b33946684bfa
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.custom: devx-track-csharp
+ms.openlocfilehash: 287c0544daa3c44d91fd336b502c496b9b4bb266
+ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "75639842"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89011401"
 ---
 # <a name="create-unit-tests-for-stateful-services"></a>Создание модульных тестов для служб с отслеживанием состояния
 Модульное тестирование служб с отслеживанием состояния в Service Fabric помогает выявить некоторые распространенные ошибки, которые необязательно будут обнаружены обычным приложением или модульным тестированием домена. При разработке модульных тестов для служб с отслеживанием состояния существуют некоторые особенности, которые следует иметь в виду.
@@ -127,5 +128,5 @@ public async Task TestServiceState_InMemoryState_PromoteActiveSecondary()
 }
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 Дополнительные сведения о тестировании см. в статьях [Сценарии тестирования платформы Service Fabric: обмен данными между службами](service-fabric-testability-scenarios-service-communication.md) и [Вызов контролируемого хаоса в кластерах Service Fabric](service-fabric-controlled-chaos.md).

@@ -7,12 +7,13 @@ ms.date: 07/15/2020
 ms.service: storage
 ms.subservice: common
 ms.topic: how-to
-ms.openlocfilehash: c850fccf5a86df4c35ce4db53b5b40d5e8588210
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.custom: devx-track-csharp
+ms.openlocfilehash: 35a93669bf301b3be1d560a0777751c12f3c9d14
+ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87089419"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89001915"
 ---
 # <a name="use-the-azurite-emulator-for-local-azure-storage-development"></a>Использование эмулятора Азурите для разработки локальных хранилищ Azure
 
@@ -270,7 +271,7 @@ azurite --debug path/debug.log
 azurite -L
 azurite --loose
 ```
-### <a name="version"></a>Version
+### <a name="version"></a>Версия
 
 **Необязательно** . Отображение установленного номера версии азурите с помощью параметра `-v` или `--version` .
 
@@ -329,8 +330,8 @@ azurite --skipApiVersionCheck
 
 Азурите принимает одну и ту же известную учетную запись и ключ, используемые устаревшим эмулятором хранения Azure.
 
-- Имя учетной записи:`devstoreaccount1`
-- Ключ учетной записи:`Eby8vdM02xNOcqFlqUwJPLlmEtlCDXJ1OUzFT50uSRZ6IFsuFq2UVErCz4I6tq/K1SZFPTOtr/KBHBeksoGMGw==`
+- Имя учетной записи: `devstoreaccount1`
+- Ключ учетной записи: `Eby8vdM02xNOcqFlqUwJPLlmEtlCDXJ1OUzFT50uSRZ6IFsuFq2UVErCz4I6tq/K1SZFPTOtr/KBHBeksoGMGw==`
 
 ### <a name="custom-storage-accounts-and-keys"></a>Пользовательские учетные записи хранения и ключи
 
@@ -498,7 +499,7 @@ var client = new QueueClient(
 1. Выберите **Локальный подключенный &**
 1. Щелкните правой кнопкой мыши **учетные записи хранения** и выберите **подключиться к службе хранилища Azure**.
 1. Выберите **использовать строку подключения**
-1. Выберите **Далее**.
+1. Нажмите **Далее**.
 1. Введите значение в поле **Отображаемое имя** .
 1. Введите [строку подключения HTTPS](#https-connection-strings) из предыдущего раздела этого документа
 1. Щелкните **Далее**.
@@ -508,12 +509,12 @@ var client = new QueueClient(
 
 При инициализации Азурите в расположении рабочей области могут быть созданы следующие файлы и папки.
 
-- `__blobstorage__`— Каталог, содержащий сохраняемые двоичные данные службы BLOB-объектов Азурите
-- `__queuestorage__`— Каталог, содержащий сохраняемые двоичные данные службы очередей Азурите
-- `__azurite_db_blob__.json`— Файл метаданных службы BLOB-объектов азурите
-- `__azurite_db_blob_extent__.json`— Файл метаданных экстента службы BLOB-объектов азурите
-- `__azurite_db_queue__.json`-Файл метаданных службы очереди азурите
-- `__azurite_db_queue_extent__.json`-Файл метаданных экстента службы очередей азурите
+- `__blobstorage__` — Каталог, содержащий сохраняемые двоичные данные службы BLOB-объектов Азурите
+- `__queuestorage__` — Каталог, содержащий сохраняемые двоичные данные службы очередей Азурите
+- `__azurite_db_blob__.json` — Файл метаданных службы BLOB-объектов азурите
+- `__azurite_db_blob_extent__.json` — Файл метаданных экстента службы BLOB-объектов азурите
+- `__azurite_db_queue__.json` -Файл метаданных службы очереди азурите
+- `__azurite_db_queue_extent__.json` -Файл метаданных экстента службы очередей азурите
 
 Чтобы очистить Азурите, удалите файлы и папки и перезапустите эмулятор.
 

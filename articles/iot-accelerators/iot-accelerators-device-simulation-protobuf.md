@@ -6,17 +6,15 @@ manager: timlt
 ms.service: iot-accelerators
 services: iot-accelerators
 ms.topic: conceptual
-ms.custom:
-- mvc
-- amqp
+ms.custom: mvc, amqp, devx-track-csharp
 ms.date: 11/06/2018
 ms.author: dobett
-ms.openlocfilehash: c49745b30d2c4acc115a72af095f3e941dc4d509
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: c9c8aa86aa8a374a33750e306529ef212c9a8bfc
+ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "81683991"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89012336"
 ---
 # <a name="serialize-telemetry-using-protocol-buffers"></a>Сериализация данных телеметрии с помощью буферов протокола
 
@@ -34,7 +32,7 @@ ms.locfileid: "81683991"
 1. формировать классы Protobuf.
 1. Локальное тестирование
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Обязательные условия
 
 Выполните следующие шаги для изучения данного руководства:
 
@@ -277,6 +275,6 @@ az iot hub monitor-events --hub-name device-simulation-test
 
 Многие функции Центра Интернета вещей изначально не поддерживают Protobuf или другие двоичные форматы. Например, нельзя настроить маршрутизацию в зависимости от полезных данных сообщения, так как Центр Интернета вещей не может обработать их. Однако данные можно маршрутизировать на основе заголовков сообщений.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Теперь вы узнали, как настроить имитацию устройства для использования Protobuf и отправки данных телеметрии. Теперь ознакомьтесь с тем, как [развернуть пользовательский образ в облако](iot-accelerators-device-simulation-deploy-image.md).
