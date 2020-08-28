@@ -6,9 +6,9 @@
     - name: Что такое служба "Машинное обучение Microsoft Azure"?
       displayName: 'AML, services, overview, introduction'
       href: overview-what-is-azure-ml.md
-    - name: Сравнение службы "Машинное обучение Azure" и Студии машинного обучения (классической)
-      displayName: 'AML, Studio, designer'
-      href: compare-azure-ml-to-studio-classic.md
+    - name: Что такое студия Машинного обучения Azure
+      displayName: 'AML, studio, designer'
+      href: overview-what-is-machine-learning-studio.md
     - name: Архитектура и термины
       displayName: 'architecture, concepts, definitions, glossary'
       href: concept-azure-machine-learning-architecture.md

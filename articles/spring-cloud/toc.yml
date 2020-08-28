@@ -10,14 +10,21 @@
 - name: Краткие руководства
   expanded: true
   items:
-    - name: "Запуск приложения Spring Cloud\_— портал"
-      href: spring-cloud-quickstart-launch-app-portal.md
-    - name: "Запуск приложения Spring Cloud\_— Azure CLI"
-      href: spring-cloud-quickstart-launch-app-cli.md
-    - name: "Запуск приложения Spring Cloud\_— источник"
-      href: spring-cloud-launch-from-source.md
-    - name: "Запуск приложения Spring Cloud\_— Maven"
-      href: spring-cloud-quickstart-launch-app-maven.md
+    - name: Запуск первого приложения
+      href: spring-cloud-quickstart.md
+    - name: Создание и запуск микрослужб
+      expanded: true
+      items:
+        - name: Общие сведения о примерах приложений
+          href: spring-cloud-quickstart-sample-app-introduction.md
+        - name: Подготовка службы Azure Spring Cloud
+          href: spring-cloud-quickstart-provision-service-instance.md
+        - name: Настройка сервера конфигурации
+          href: spring-cloud-quickstart-setup-config-server.md
+        - name: Сборка и развертывание приложений
+          href: spring-cloud-quickstart-deploy-apps.md
+        - name: 'Использование журналов, метрик и трассировки'
+          href: spring-cloud-quickstart-logs-metrics-tracing.md
 - name: Учебники
   items:
     - name: Масштабирование приложения вручную

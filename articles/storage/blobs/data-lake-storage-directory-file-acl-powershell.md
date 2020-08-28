@@ -9,12 +9,12 @@ ms.topic: how-to
 ms.date: 08/26/2020
 ms.author: normesta
 ms.reviewer: prishet
-ms.openlocfilehash: 01706b3f6850d49240b9c84997cbbec528045200
-ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
+ms.openlocfilehash: e80db84789ab5c8b0f07bc6a76ae99f8db3c8b80
+ms.sourcegitcommit: 8a7b82de18d8cba5c2cec078bc921da783a4710e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88923880"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89051038"
 ---
 # <a name="use-powershell-to-manage-directories-files-and-acls-in-azure-data-lake-storage-gen2"></a>Использование PowerShell для управления каталогами, файлами и списками ACL в Azure Data Lake Storage 2-го поколения
 
@@ -125,6 +125,8 @@ $dir.Owner
 $dir.Properties
 $dir.Properties.Metadata
 ```
+> [!NOTE]
+> Чтобы получить корневой каталог контейнера, опустите `-Path` параметр.
 
 ## <a name="rename-or-move-a-directory"></a>Переименование или перемещение каталога
 
@@ -202,7 +204,8 @@ $properties.Group
 $properties.Owner
 ```
 
-Чтобы получить список содержимого контейнера, опустите `-Path` параметр команды.
+> [!NOTE]
+> Чтобы получить список содержимого корневого каталога контейнера, не указывайте `-Path` параметр.
 
 ## <a name="upload-a-file-to-a-directory"></a>Отправка файла в каталог
 
@@ -227,6 +230,9 @@ $file1.Properties
 $file1.Properties.Metadata
 
 ```
+
+> [!NOTE]
+> Чтобы передать файл в корневой каталог контейнера, опустите `-Path` параметр.
 
 ## <a name="show-file-properties"></a>Отображение свойств файла
 

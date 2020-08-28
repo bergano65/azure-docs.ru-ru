@@ -4,14 +4,17 @@ description: Узнайте, как импортировать файлы сер
 ms.topic: conceptual
 ms.date: 2/23/2018
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 949cc642572bfbf6ebe297d3ffba16939561ac8a
-ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
+ms.openlocfilehash: 426aa2ebbfb87fe2c80e0d1aff3eeecbe0e2472d
+ms.sourcegitcommit: 8a7b82de18d8cba5c2cec078bc921da783a4710e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89012727"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89050749"
 ---
 # <a name="import-a-certificate-file-into-a-container-running-on-service-fabric"></a>Импорт файла сертификата в контейнер под управлением Service Fabric
+
+> [!NOTE]
+> Для кластеров Service Fabric, работающих в Azure, рекомендуется использовать [управляемое удостоверение приложения Service Fabric](https://docs.microsoft.com/azure/service-fabric/concepts-managed-identity) для инициализации сертификатов приложений в контейнере. Управляемое удостоверение обеспечивает изоляцию секретов и сертификатов на уровне обслуживания и позволяет подготовить сертификат приложения в рамках рабочего процесса приложения, а не рабочего процесса инфраструктуры. Механизм Цертификатереф будет нерекомендуемым в будущем выпуске.
 
 Службы контейнеров можно защитить с помощью сертификата. Service Fabric предоставляет для служб в контейнере механизм, который обеспечивает доступ к сертификату, установленному на узлах кластера Windows или Linux (версии 5.7 или выше). Этот сертификат необходимо установить в хранилище сертификатов LocalMachine на всех узлах кластера. Необходимо, чтобы закрытый ключ, соответствующий сертификату, был доступным и экспортируемым в Windows. Сведения о сертификате указываются в манифесте приложения после тега `ContainerHostPolicies`, как показано в следующем фрагменте кода:
 
@@ -30,6 +33,8 @@ ms.locfileid: "89012727"
 
 * Certificates_ServicePackageName_CodePackageName_CertName_PEM;
 * Certificates_ServicePackageName_CodePackageName_CertName_PrivateKey.
+
+Обратите внимание, что `PEM` `PrivateKey` файл и содержит сертификат и незашифрованный закрытый ключ.
 
 Кроме того, если у вас уже есть сертификаты в требуемом формате и вам нужно обращаться к ним внутри контейнера, можно создать пакет данных внутри пакета приложения и указать в манифесте приложения следующее:
 

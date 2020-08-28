@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 01/09/2020
 ms.author: allensu
-ms.openlocfilehash: 38db681655a839983ebf38e94ec28eb05ed65d1f
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 317f6a73812b0e4284564ca9b5593e09e22edf12
+ms.sourcegitcommit: 8a7b82de18d8cba5c2cec078bc921da783a4710e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84808575"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89048743"
 ---
 # <a name="configure-tcp-idle-timeout-settings-for-azure-load-balancer"></a>Настройка параметров времени ожидания простоя TCP для Azure Load Balancer
 
@@ -69,6 +69,6 @@ $lb | Set-AzLoadBalancerRuleConfig -Name myLBrule -IdleTimeoutInMinutes 15
 
 [Обзор внутренней подсистемы балансировки нагрузки](load-balancer-internal-overview.md)
 
-[Приступая к настройке балансировщика нагрузки для Интернета](quickstart-create-standard-load-balancer-powershell.md)
+[Приступая к настройке балансировщика нагрузки для Интернета](quickstart-load-balancer-standard-public-powershell.md)
 
 [Настройка режима распределения подсистемы балансировки нагрузки](load-balancer-distribution-mode.md)

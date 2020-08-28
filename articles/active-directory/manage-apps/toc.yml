@@ -246,7 +246,7 @@
               href: application-types.md
             - name: Непредусмотренное назначение пользователю
               href: ways-users-get-assigned-to-applications.md
-        - name: Устранение неполадок панели доступа
+        - name: Устранение неполадок в разделе "Мои приложения"
           items:
             - name: Управление расширением браузера
               href: manage-access-panel-browser-extension.md
@@ -256,8 +256,6 @@
               href: access-panel-troubleshoot-unexpected-application.md
             - name: Не удается войти
               href: access-panel-troubleshoot-web-sign-in-problem.md
-            - name: Ошибка при установке расширения браузера
-              href: access-panel-extension-problem-installing.md
             - name: Ошибка при использовании самостоятельного доступа к приложению
               href: access-panel-troubleshoot-self-service-access.md
         - name: Устранение неполадок с локальными приложениями

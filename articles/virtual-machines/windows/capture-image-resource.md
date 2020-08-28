@@ -9,12 +9,12 @@ ms.topic: how-to
 ms.date: 09/27/2018
 ms.author: cynthn
 ms.custom: legacy
-ms.openlocfilehash: e579223691ed7593d04c3b67004a6dd511f72c78
-ms.sourcegitcommit: 3bf69c5a5be48c2c7a979373895b4fae3f746757
+ms.openlocfilehash: 751fa9f9fe2ba17a982b71a6332be302804f0dcc
+ms.sourcegitcommit: 8a7b82de18d8cba5c2cec078bc921da783a4710e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88236613"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89047298"
 ---
 # <a name="create-a-managed-image-of-a-generalized-vm-in-azure"></a>Создание управляемого образа универсальной виртуальной машины в Azure
 
@@ -26,10 +26,12 @@ ms.locfileid: "88236613"
 
 Sysprep удаляет все сведения о вашей учетной записи и безопасности, а затем подготавливает машину к использованию в качестве образа. Дополнительные сведения о Sysprep приведены в [обзоре Sysprep](/windows-hardware/manufacture/desktop/sysprep--system-preparation--overview).
 
-Убедитесь, что Sysprep поддерживает роли сервера, запущенные на компьютере. Дополнительные сведения см. в статье [Поддержка ролей сервера в Sysprep](/windows-hardware/manufacture/desktop/sysprep-support-for-server-roles) и [Неподдерживаемые сценарии](/windows-hardware/manufacture/desktop/sysprep--system-preparation--overview#unsupported-scenarios). Программа Sysprep требует, чтобы диски были полностью расшифрованы перед выполнением. Если вы включили шифрование на виртуальной машине, отключите шифрование перед запуском Sysprep.
+Убедитесь, что Sysprep поддерживает роли сервера, запущенные на компьютере. Дополнительные сведения см. в статье [Поддержка ролей сервера в Sysprep](/windows-hardware/manufacture/desktop/sysprep-support-for-server-roles) и [Неподдерживаемые сценарии](/windows-hardware/manufacture/desktop/sysprep--system-preparation--overview#unsupported-scenarios). 
 
 > [!IMPORTANT]
 > После применения Sysprep на виртуальной машине она считается *универсальной*, что препятствует ее перезапуску. Процесс обобщения виртуальной машины необратим. Если необходимо сохранить исходную виртуальную машину в рабочем состоянии, нужно создать [копию виртуальной машины](create-vm-specialized.md#option-3-copy-an-existing-azure-vm) и обобщить эту копию. 
+>
+>Программа Sysprep требует, чтобы диски были полностью расшифрованы. Если вы включили шифрование на виртуальной машине, отключите шифрование перед запуском Sysprep.
 >
 > Если вы хотите запустить Sysprep перед отправкой виртуального жесткого диска в Azure в первый раз, [подготовьте виртуальную машину](prepare-for-upload-vhd-image.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json).  
 > 
