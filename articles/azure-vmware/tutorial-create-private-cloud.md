@@ -64,7 +64,7 @@ az provider register -n Microsoft.AVS --subscription <your subscription ID>
    | **Пароль диспетчера NSX-T** | Введите пароль администратора NSX-T. |
    | **Блок адресов** | Введите блок IP-адресов для сети CIDR частного облака, например 10.175.0.0/22. |
 
-   :::image type="content" source="./media/tutorial-create-private-cloud/create-private-cloud.png" alt-text="На вкладке "Основные сведения" введите значения для полей." border="true":::
+   :::image type="content" source="./media/tutorial-create-private-cloud/create-private-cloud.png" alt-text="На вкладке Основные сведения введите значения для полей." border="true":::
 
 1. Завершив этот процесс, щелкните элемент **Просмотр и создание**. На следующем экране проверьте правильность введенных данных. Если вся информация указана правильно, щелкните команду **Создать**.
 
