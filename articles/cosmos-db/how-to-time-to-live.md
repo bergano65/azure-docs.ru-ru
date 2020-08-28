@@ -6,13 +6,13 @@ ms.service: cosmos-db
 ms.topic: how-to
 ms.date: 03/27/2020
 ms.author: anfeldma
-ms.custom: devx-track-javascript, devx-track-azurecli
-ms.openlocfilehash: 029c2ffa548c8c99030f630a90eb07ac8ba063a0
-ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
+ms.custom: devx-track-javascript, devx-track-azurecli, devx-track-csharp
+ms.openlocfilehash: 75299ab83543b0f28f4cf8f02e41b692c32d19ed
+ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/31/2020
-ms.locfileid: "87497007"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88997274"
 ---
 # <a name="configure-time-to-live-in-azure-cosmos-db"></a>Настройка срока жизни в Azure Cosmos DB
 
@@ -22,7 +22,7 @@ ms.locfileid: "87497007"
 
 Следуйте инструкциям ниже, чтобы включить в контейнере неограниченный срок жизни. Включите этот параметр, чтобы срок жизни можно было переопределить на уровне элемента. Вы также можете задать значение срока жизни, введя ненулевое значение, обозначающее период в секундах.
 
-1. Войдите на [портал Microsoft Azure](https://portal.azure.com/).
+1. Войдите на [портал Azure](https://portal.azure.com/).
 
 2. Создайте новую учетную запись Azure Cosmos или выберите имеющуюся.
 
@@ -50,7 +50,7 @@ ms.locfileid: "87497007"
 
 ## <a name="enable-time-to-live-on-a-container-using-sdk"></a>Включение срока жизни для контейнера с помощью пакета SDK
 
-### <a name="net-sdk"></a><a id="dotnet-enable-noexpiry"></a>ПАКЕТ SDK ДЛЯ .NET
+### <a name="net-sdk"></a><a id="dotnet-enable-noexpiry"></a> ПАКЕТ SDK ДЛЯ .NET
 
 # <a name="net-sdk-v2"></a>[Пакет SDK для .NET версии 2](#tab/dotnetv2)
 
@@ -83,7 +83,7 @@ await client.GetDatabase("database").CreateContainerAsync(new ContainerPropertie
 ```
 ---
 
-### <a name="java-sdk"></a><a id="java-enable-noexpiry"></a>Пакет SDK для Java
+### <a name="java-sdk"></a><a id="java-enable-noexpiry"></a> Пакет SDK для Java
 
 # <a name="java-sdk-v4"></a>[Пакет SDK для Java v4](#tab/javav4)
 
@@ -116,7 +116,7 @@ container = database.createContainerIfNotExists(containerProperties, 400).block(
 
 Чтобы задать срок жизни в контейнере, необходимо ввести ненулевое положительное число, указывающее период времени в секундах. Исходя из настроенного значения срока жизни, все элементы в контейнере после последнего изменения метки времени элемента `_ts` удаляются.
 
-### <a name="net-sdk"></a><a id="dotnet-enable-withexpiry"></a>ПАКЕТ SDK ДЛЯ .NET
+### <a name="net-sdk"></a><a id="dotnet-enable-withexpiry"></a> ПАКЕТ SDK ДЛЯ .NET
 
 # <a name="net-sdk-v2"></a>[Пакет SDK для .NET версии 2](#tab/dotnetv2)
 
@@ -149,7 +149,7 @@ await client.GetDatabase("database").CreateContainerAsync(new ContainerPropertie
 ```
 ---
 
-### <a name="java-sdk"></a><a id="java-enable-defaultexpiry"></a>Пакет SDK для Java
+### <a name="java-sdk"></a><a id="java-enable-defaultexpiry"></a> Пакет SDK для Java
 
 # <a name="java-sdk-v4"></a>[Пакет SDK для Java v4](#tab/javav4)
 
@@ -206,7 +206,7 @@ async function createcontainerWithTTL(db: Database, containerDefinition: Contain
 
 Следуйте инструкциям ниже, чтобы включить в элементе срок жизни.
 
-1. Войдите на [портал Microsoft Azure](https://portal.azure.com/).
+1. Войдите на [портал Azure](https://portal.azure.com/).
 
 2. Создайте новую учетную запись Azure Cosmos или выберите имеющуюся.
 
@@ -269,7 +269,7 @@ const itemDefinition = {
         };
 ```
 
-### <a name="java-sdk"></a><a id="java-set-ttl-item"></a>Пакет SDK для Java
+### <a name="java-sdk"></a><a id="java-set-ttl-item"></a> Пакет SDK для Java
 
 # <a name="java-sdk-v4"></a>[Пакет SDK для Java v4](#tab/javav4)
 
@@ -350,7 +350,7 @@ SalesOrder salesOrder = new SalesOrder(
 
 Вы можете сбросить срок жизни в элементе, выполнив операции записи или обновления в элементе. Операция записи или обновления установит для `_ts` текущий момент времени, и срок жизни для элемента начнет истекать заново. Если вы хотите изменить срок жизни элемента, это поле можно обновить так же, как любое другое.
 
-### <a name="net-sdk"></a><a id="dotnet-extend-ttl-item"></a>ПАКЕТ SDK ДЛЯ .NET
+### <a name="net-sdk"></a><a id="dotnet-extend-ttl-item"></a> ПАКЕТ SDK ДЛЯ .NET
 
 # <a name="net-sdk-v2"></a>[Пакет SDK для .NET версии 2](#tab/dotnetv2)
 
@@ -382,7 +382,7 @@ await client.GetContainer("database", "container").ReplaceItemAsync(itemResponse
 ```
 ---
 
-### <a name="java-sdk"></a><a id="java-enable-modifyitemexpiry"></a>Пакет SDK для Java
+### <a name="java-sdk"></a><a id="java-enable-modifyitemexpiry"></a> Пакет SDK для Java
 
 # <a name="java-sdk-v4"></a>[Пакет SDK для Java v4](#tab/javav4)
 
@@ -424,7 +424,7 @@ container.getItem("SO05", new PartitionKey("CO18009186470")).read()
 
 Если для элемента был установлен срок жизни, но вы больше не хотите, чтобы он истек, то вы можете получить элемент, удалить поле срока жизни и заменить элемент на сервере. Когда поле срока жизни удаляется из элемента, к элементу применяется значение срока жизни по умолчанию, назначенное для контейнера. Установите значение срока жизни, равное -1, чтобы предотвратить истечение срока действия элемента и не наследовать значение срока жизни из контейнера.
 
-### <a name="net-sdk"></a><a id="dotnet-turn-off-ttl-item"></a>ПАКЕТ SDK ДЛЯ .NET
+### <a name="net-sdk"></a><a id="dotnet-turn-off-ttl-item"></a> ПАКЕТ SDK ДЛЯ .NET
 
 # <a name="net-sdk-v2"></a>[Пакет SDK для .NET версии 2](#tab/dotnetv2)
 
@@ -457,7 +457,7 @@ await client.GetContainer("database", "container").ReplaceItemAsync(itemResponse
 ```
 ---
 
-### <a name="java-sdk"></a><a id="java-enable-itemdefaultexpiry"></a>Пакет SDK для Java
+### <a name="java-sdk"></a><a id="java-enable-itemdefaultexpiry"></a> Пакет SDK для Java
 
 # <a name="java-sdk-v4"></a>[Пакет SDK для Java v4](#tab/javav4)
 
@@ -499,7 +499,7 @@ container.getItem("SO05", new PartitionKey("CO18009186470")).read()
 
 Чтобы отключить срок жизни в контейнере и остановить фоновый процесс проверки на наличие просроченных элементов, нужно удалить свойство `DefaultTimeToLive` контейнера. Удаление этого свойства и выбор значения -1 имеют разный эффект. Если задано значение -1, срок действия новых элементов, добавляемых в контейнер, не будет истекать, однако это значение можно переопределить для определенных элементов в контейнере. При удалении свойства срока жизни из контейнера элементы будут устаревать, даже если их значение явно переопределило предыдущее значение срока жизни по умолчанию.
 
-### <a name="net-sdk"></a><a id="dotnet-disable-ttl"></a>ПАКЕТ SDK ДЛЯ .NET
+### <a name="net-sdk"></a><a id="dotnet-disable-ttl"></a> ПАКЕТ SDK ДЛЯ .NET
 
 # <a name="net-sdk-v2"></a>[Пакет SDK для .NET версии 2](#tab/dotnetv2)
 
@@ -526,7 +526,7 @@ await client.GetContainer("database", "container").ReplaceContainerAsync(contain
 ```
 ---
 
-### <a name="java-sdk"></a><a id="java-enable-disableexpiry"></a>Пакет SDK для Java
+### <a name="java-sdk"></a><a id="java-enable-disableexpiry"></a> Пакет SDK для Java
 
 # <a name="java-sdk-v4"></a>[Пакет SDK для Java v4](#tab/javav4)
 

@@ -12,13 +12,13 @@ ms.workload: ''
 ms.topic: article
 ms.date: 01/21/2020
 ms.author: juliako
-ms.custom: seodec18
-ms.openlocfilehash: a9f9463cd1cac49e36ea52cafaf4d07f4e709ca7
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.custom: seodec18, devx-track-csharp
+ms.openlocfilehash: 4fbd587b99875690a8c95952ce6b11d41e402726
+ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87053259"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89009888"
 ---
 # <a name="filtering-ordering-and-paging-of-media-services-entities"></a>Фильтрация, упорядочение и разбиение на страницы объектов служб мультимедиа
 
@@ -45,7 +45,7 @@ ms.locfileid: "87053259"
 - `ge`: Проверка того, что поле *больше или равно* значению константы.
 - `le`: Проверка того, что поле *меньше или равно* значению константы.
 
-## <a name="filter"></a>Фильтр
+## <a name="filter"></a>Filter
 
 Используйте `$filter` для предоставления параметра фильтра OData, чтобы найти только интересующие вас объекты.
 
@@ -64,13 +64,13 @@ var firstPage = await MediaServicesArmClient.Assets.ListAsync(CustomerResourceGr
 
 ## <a name="order-by"></a>Упорядочить по
 
-Используйте `$orderby` для сортировки возвращаемых объектов по указанному параметру. Например.  
+Используйте `$orderby` для сортировки возвращаемых объектов по указанному параметру. Пример:  
 
 ```
 GET https://management.azure.com/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/mediaresources/providers/Microsoft.Media/mediaServices/amstestaccount/assets?api-version=2018-07-01$orderby=properties/created%20gt%202018-05-11T17:39:08.387Z
 ```
 
-Чтобы отсортировать результаты по возрастанию или по убыванию, добавьте либо `asc` `desc` к имени поля, разделенному пробелом. Например, так: `$orderby properties/created desc`.
+Чтобы отсортировать результаты по возрастанию или по убыванию, добавьте либо `asc` `desc` к имени поля, разделенному пробелом. Например: `$orderby properties/created desc`.
 
 ## <a name="skip-token"></a>Пропустить токен
 
@@ -156,7 +156,7 @@ client.Jobs.List(config.ResourceGroup, config.AccountName, VideoAnalyzerTransfor
 
 В следующей таблице показано, как можно применить параметры фильтрации и упорядочивания к разным сущностям.
 
-|Имя сущности|Имя свойства|Фильтр|Порядок|
+|Имя сущности|Имя свойства|Filter|Порядок|
 |---|---|---|---|
 |[Ресурсы](/rest/api/media/assets/)|name|`eq`, `gt`, `lt`, `ge`, `le`|`asc` и `desc`|
 ||properties.alternateId |`eq`||

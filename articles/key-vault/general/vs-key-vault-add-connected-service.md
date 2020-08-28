@@ -5,16 +5,16 @@ services: key-vault
 author: ghogen
 manager: jillfra
 ms.service: key-vault
-ms.custom: vs-azure
+ms.custom: vs-azure, devx-track-csharp
 ms.topic: how-to
 ms.date: 08/07/2019
 ms.author: ghogen
-ms.openlocfilehash: 52c9584ca94117db58a5427c46269d7f2612861a
-ms.sourcegitcommit: 02ca0f340a44b7e18acca1351c8e81f3cca4a370
+ms.openlocfilehash: 3d39ad2016da1525658944f4f13185e9df9855af
+ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/19/2020
-ms.locfileid: "88588489"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89007100"
 ---
 # <a name="add-key-vault-to-your-web-application-by-using-visual-studio-connected-services"></a>Добавление хранилища ключей в веб-приложение с помощью функции "Подключенные службы" в Visual Studio
 
@@ -22,7 +22,7 @@ ms.locfileid: "88588489"
 
 Подробные сведения об изменениях, вносимых функцией "Подключенные службы" в проект для поддержки Key Vault, можно получить из раздела [Что произошло с моим проектом ASP.NET при добавлении подключенной службы Key Vault в Visual Studio?](#how-your-aspnet-framework-project-is-modified) или [Что произошло с моим проектом ASP.NET Core при добавлении подключенной службы Key Vault в Visual Studio?](#how-your-aspnet-core-project-is-modified)
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Обязательные условия
 
 - **Подписка Azure**. Если у вас нет подписки, зарегистрируйтесь, чтобы получить [бесплатную учетную запись](https://azure.microsoft.com/pricing/free-trial/).
 - **Visual Studio 2019 версии 16,3** или более поздней, [скачайте ее сейчас](https://aka.ms/vsdownload?utm_source=mscom&utm_campaign=msdocs).

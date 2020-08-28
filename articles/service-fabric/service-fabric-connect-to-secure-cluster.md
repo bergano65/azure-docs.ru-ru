@@ -3,12 +3,13 @@ title: Безопасное подключение к кластеру Azure Ser
 description: Сведения о способах проверки подлинности клиентского доступа к кластеру Service Fabric, а также об обеспечении безопасного обмена данными между клиентами и кластером.
 ms.topic: conceptual
 ms.date: 01/29/2019
-ms.openlocfilehash: 89d3598b283a91645f0db648be81c73dffde8b46
-ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
+ms.custom: devx-track-csharp
+ms.openlocfilehash: 2ce0325f7aebac92eb1e7deadd6f6875b75b3755
+ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2020
-ms.locfileid: "86259253"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89008817"
 ---
 # <a name="connect-to-a-secure-cluster"></a>Безопасное подключение к кластеру
 
@@ -30,7 +31,7 @@ openssl pkcs12 -in your-cert-file.pfx -out your-cert-file.pem -nodes -passin pas
 
 Если PFX-файл не защищен паролем, укажите -passin pass: в качестве последнего параметра.
 
-Чтобы указать сертификат клиента как PEM-файл, укажите путь к файлу в аргументе `--pem`. Например:
+Чтобы указать сертификат клиента как PEM-файл, укажите путь к файлу в аргументе `--pem`. Пример:
 
 ```shell
 sfctl cluster select --endpoint https://testsecurecluster.com:19080 --pem ./client.pem
@@ -44,7 +45,7 @@ sfctl cluster select --endpoint https://testsecurecluster.com:19080 --pem ./clie
 sfctl cluster select --endpoint https://testsecurecluster.com:19080 --cert ./client.crt --key ./keyfile.key
 ```
 
-Иногда сертификаты, используемые для защиты тестового кластера и кластера для разработки не проходят проверку сертификата. Чтобы не выполнять проверку сертификата, укажите параметр `--no-verify`. Например:
+Иногда сертификаты, используемые для защиты тестового кластера и кластера для разработки не проходят проверку сертификата. Чтобы не выполнять проверку сертификата, укажите параметр `--no-verify`. Пример:
 
 > [!WARNING]
 > При подключении к производственным кластерам Service Fabric не используйте параметр `no-verify`.
@@ -53,7 +54,7 @@ sfctl cluster select --endpoint https://testsecurecluster.com:19080 --cert ./cli
 sfctl cluster select --endpoint https://testsecurecluster.com:19080 --pem ./client.pem --no-verify
 ```
 
-Кроме того, вы можете указать пути к каталогам доверенных сертификатов ЦС или отдельных сертификатов. Чтобы указать эти пути, используйте аргумент `--ca`. Например:
+Кроме того, вы можете указать пути к каталогам доверенных сертификатов ЦС или отдельных сертификатов. Чтобы указать эти пути, используйте аргумент `--ca`. Пример:
 
 ```shell
 sfctl cluster select --endpoint https://testsecurecluster.com:19080 --pem ./client.pem --ca ./trusted_ca

@@ -4,18 +4,18 @@ description: Найдите ответы на часто задаваемые в
 ms.reviewer: vijayts
 ms.topic: conceptual
 ms.date: 04/23/2019
-ms.openlocfilehash: d69a2aff900dc3185aafbcb2d655a29d2fff06e3
-ms.sourcegitcommit: c6b9a46404120ae44c9f3468df14403bcd6686c1
+ms.openlocfilehash: 991a00aca3b32ee743be3cdc2bc6a35de064cb25
+ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88890562"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89006148"
 ---
 # <a name="faq-about-sql-server-databases-that-are-running-on-an-azure-vm-backup"></a>Часто задаваемые вопросы о SQL Server базах данных, работающих в резервной копии виртуальной машины Azure
 
 В этой статье содержатся ответы на часто задаваемые вопросы о резервном копировании SQL Server баз данных, работающих на виртуальных машинах Azure, и использовании службы [Azure Backup](backup-overview.md) .
 
-## <a name="can-i-use-azure-backup-for-iaas-vm-as-well-as-sql-server-on-the-same-machine"></a>Можно ли использовать службу архивации Azure для виртуальной машины IaaS, а также SQL Server на одном компьютере?
+## <a name="can-i-use-azure-backup-for-iaas-vm-as-well-as-sql-server-on-the-same-machine"></a>Можно ли использовать Azure Backup для виртуальной машины IaaS и SQL Server на том же компьютере?
 
 Да, резервное копирование виртуальных машин и резервное копирование SQL можно выполнять на одной виртуальной машине. В этом случае мы внутренним образом активируем полную резервную копию только для копирования на виртуальной машине, чтобы не усекать журналы.
 
@@ -102,6 +102,6 @@ ms.locfileid: "88890562"
 
   ![Обнаружение вновь добавленной базы данных вручную](./media/backup-azure-sql-database/view-newly-added-database.png)
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Узнайте, как [создать резервную копию базы данных SQL Server](backup-azure-sql-database.md) , которая работает на виртуальной машине Azure.

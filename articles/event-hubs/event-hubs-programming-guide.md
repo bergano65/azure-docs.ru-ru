@@ -3,12 +3,13 @@ title: Руководством по программированию для .NE
 description: В этой статье приводятся сведения о том, как писать код для службы "Центры событий Azure" с помощью пакета Azure SDK для .NET.
 ms.topic: article
 ms.date: 06/23/2020
-ms.openlocfilehash: 5be30d7786fa094a55badb7b38ff2116a6013b6a
-ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
+ms.custom: devx-track-csharp
+ms.openlocfilehash: 17bec931f79a6dbb3d98270ab0ff6e2d1d4c6541
+ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88934027"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89013917"
 ---
 # <a name="net-programming-guide-for-azure-event-hubs-legacy-microsoftazureeventhubs-package"></a>Руководством по программированию .NET для концентраторов событий Azure (устаревший пакет Microsoft. Azure. EventHubs)
 В данной статье обсуждаются некоторые распространенные сценарии написания кодов с помощью Центров событий Azure. Предполагается, что вы уже имеете представление о Центрах событий. Общие сведения о Центрах событий см. в статье [Общие сведения о Центрах событий Azure](./event-hubs-about.md).
@@ -56,7 +57,7 @@ eventHubClient = EventHubClient.CreateFromConnectionString(connectionStringBuild
 
 ## <a name="event-serialization"></a>Сериализация событий
 
-Класс [EventData][] имеет [два перегруженных конструктора](/dotnet/api/microsoft.azure.eventhubs.eventdata.-ctor), которые принимают различные параметры, байты или массив байтов, которые представляют полезные данные событий. При использовании JSON совместно с [EventData][]можно применить метод **Encoding.UTF8.GetBytes()** для получения массива байтов для строки в кодировке JSON. Например:
+Класс [EventData][] имеет [два перегруженных конструктора](/dotnet/api/microsoft.azure.eventhubs.eventdata.-ctor), которые принимают различные параметры, байты или массив байтов, которые представляют полезные данные событий. При использовании JSON совместно с [EventData][]можно применить метод **Encoding.UTF8.GetBytes()** для получения массива байтов для строки в кодировке JSON. Пример:
 
 ```csharp
 for (var i = 0; i < numMessagesToSend; i++)
@@ -108,7 +109,7 @@ for (var i = 0; i < numMessagesToSend; i++)
 * [ProcessEventsAsync](/dotnet/api/microsoft.azure.eventhubs.processor.ieventprocessor.processeventsasync)
 * [ProcessErrorAsync](/dotnet/api/microsoft.azure.eventhubs.processor.ieventprocessor.processerrorasync);
 
-Чтобы начать обработку событий, создайте экземпляр [EventProcessorHost][], указав соответствующие параметры для концентратора событий. Например:
+Чтобы начать обработку событий, создайте экземпляр [EventProcessorHost][], указав соответствующие параметры для концентратора событий. Пример:
 
 > [!NOTE]
 > EventProcessorHost и связанные с ним классы предоставляются в пакете **Microsoft. Azure. EventHubs. Processor** . Добавьте пакет в проект Visual Studio, следуя инструкциям в [этой статье](event-hubs-dotnet-framework-getstarted-send.md#add-the-event-hubs-nuget-package) или выполнив следующую команду в окне [консоли диспетчера пакетов](https://docs.nuget.org/docs/start-here/using-the-package-manager-console) : `Install-Package Microsoft.Azure.EventHubs.Processor` .

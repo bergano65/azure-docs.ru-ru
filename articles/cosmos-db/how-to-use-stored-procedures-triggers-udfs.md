@@ -6,13 +6,13 @@ ms.service: cosmos-db
 ms.topic: how-to
 ms.date: 06/16/2020
 ms.author: tisande
-ms.custom: devx-track-python, devx-track-javascript
-ms.openlocfilehash: 856c68d04b5eefb9cdca35947f693ffc5226ff87
-ms.sourcegitcommit: e69bb334ea7e81d49530ebd6c2d3a3a8fa9775c9
+ms.custom: devx-track-python, devx-track-javascript, devx-track-csharp
+ms.openlocfilehash: e21d74ca250061ec67d0d27477591da953a37cfa
+ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 08/27/2020
-ms.locfileid: "88950431"
+ms.locfileid: "88997121"
 ---
 # <a name="how-to-register-and-use-stored-procedures-triggers-and-user-defined-functions-in-azure-cosmos-db"></a>Как зарегистрировать и использовать хранимые процедуры, триггеры и определяемые пользователем функции в Azure Cosmos DB
 
@@ -707,7 +707,7 @@ results = list(container.query_items(
     'query': 'SELECT * FROM Incomes t WHERE udf.Tax(t.income) > 20000'))
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о том, как записать или использовать хранимые процедуры, триггеры и определяемые пользователем функции в Azure Cosmos DB, см. в статьях ниже:
 

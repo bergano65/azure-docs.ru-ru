@@ -9,12 +9,13 @@ ms.service: cognitive-search
 ms.devlang: dotnet
 ms.topic: conceptual
 ms.date: 11/04/2019
-ms.openlocfilehash: db2017a3bb1a8910049527796f422227b741b960
-ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
+ms.custom: devx-track-csharp
+ms.openlocfilehash: 7726877efcb72caf5bb4c92e2e1c65e5df68f270
+ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88923200"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89002714"
 ---
 # <a name="upgrade-to-azure-search-net-sdk-version-9"></a>Обновление до пакета SDK .NET версии 9 для службы поиска Azure
 
@@ -151,7 +152,7 @@ var index = new Index()
 
 ### <a name="removed-facetresults-and-hithighlights"></a>Удалены Фацетресултс и Хисигхлигхтс
 
-`FacetResults`Классы и были `HitHighlights` удалены. Результаты аспекта теперь вводятся как `IDictionary<string, IList<FacetResult>>` `IDictionary<string, IList<string>>` . Чтобы быстро устранить ошибки сборки, появившиеся в этом изменении, необходимо добавить `using` псевдонимы в верхней части каждого файла, использующего удаленные типы. Например:
+`FacetResults`Классы и были `HitHighlights` удалены. Результаты аспекта теперь вводятся как `IDictionary<string, IList<FacetResult>>` `IDictionary<string, IList<string>>` . Чтобы быстро устранить ошибки сборки, появившиеся в этом изменении, необходимо добавить `using` псевдонимы в верхней части каждого файла, использующего удаленные типы. Пример:
 
 ```csharp
 using FacetResults = System.Collections.Generic.IDictionary<string, System.Collections.Generic.IList<Models.FacetResult>>;

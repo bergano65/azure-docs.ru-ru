@@ -13,12 +13,13 @@ ms.devlang: na
 ms.topic: article
 ms.date: 03/18/2019
 ms.author: juliako
-ms.openlocfilehash: ae1371a8f025fd5e5722d483323fbe937538eb15
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.custom: devx-track-csharp
+ms.openlocfilehash: 91ef9d8bf75874f07c6a4a9c5763ff77b97b0180
+ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "78939225"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89008970"
 ---
 # <a name="implement-failover-streaming-with-media-services-v2"></a>Реализация потоковой передачи отработки отказа с помощью служб мультимедиа v2
 
@@ -50,7 +51,7 @@ ms.locfileid: "78939225"
 * Зашифрованные ресурсы хранилища (AssetCreationOptions.StorageEncrypted) нельзя использовать для репликации (потому что ключ шифрования в учетных записях служб мультимедиа будет разным). 
 * Чтобы воспользоваться преимуществами динамической упаковки, убедитесь, что конечная точка потоковой передачи, из которой нужно передавать содержимое потоком, находится в состоянии **Выполняется**.
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Обязательные условия
 
 * Две учетные записи служб мультимедиа в новой или существующей подписке Azure. См. статью [Создание учетной записи служб мультимедиа](media-services-portal-create-account.md).
 * Операционные системы: Windows 7, Windows 2008 R2 или Windows 8.
@@ -756,7 +757,7 @@ using System.Runtime.Serialization.Json;
 
 [Использование веб-перехватчиков Azure для мониторинга уведомлений о заданиях служб мультимедиа](media-services-dotnet-check-job-progress-with-webhooks.md)
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Теперь для маршрутизации запросов между двумя центрами обработки данных и отработки отказов в случае проблем подключения можно использовать диспетчер трафика.
 

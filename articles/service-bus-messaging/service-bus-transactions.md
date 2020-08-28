@@ -3,12 +3,13 @@ title: Общие сведения об обработке транзакций 
 description: В этой статье приводятся общие сведения об обработке транзакций и функции отправки через служебную шину Azure.
 ms.topic: article
 ms.date: 06/23/2020
-ms.openlocfilehash: 90ee3e4f7cd6465d6297406d1d28d4ea34f88ac4
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.custom: devx-track-csharp
+ms.openlocfilehash: f51e570775fbce8a316d98b5198fa906173dc755
+ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85340514"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88999960"
 ---
 # <a name="overview-of-service-bus-transaction-processing"></a>Обзор обработки транзакций в служебной шине
 
@@ -27,7 +28,7 @@ ms.locfileid: "85340514"
 Далее приведены операции, которые могут выполняться в области транзакций.
 
 * ** [QueueClient](/dotnet/api/microsoft.azure.servicebus.queueclient), [MessageSender](/dotnet/api/microsoft.azure.servicebus.core.messagesender), [TopicClient](/dotnet/api/microsoft.azure.servicebus.topicclient)**: `Send` , `SendAsync` , `SendBatch` ,`SendBatchAsync`
-* **[BrokeredMessage](/dotnet/api/microsoft.servicebus.messaging.brokeredmessage)**: `Complete` , `CompleteAsync` , `Abandon` , `AbandonAsync` , `Deadletter` , `DeadletterAsync` , `Defer` , `DeferAsync` , `RenewLock` ,`RenewLockAsync` 
+* **[BrokeredMessage](/dotnet/api/microsoft.servicebus.messaging.brokeredmessage)**: `Complete` , `CompleteAsync` , `Abandon` , `AbandonAsync` , `Deadletter` , `DeadletterAsync` , `Defer` , `DeferAsync` , `RenewLock` , `RenewLockAsync` 
 
 Операции получения не указаны, так как предполагается, что приложение получает сообщения с помощью режима [ReceiveMode.PeekLock](/dotnet/api/microsoft.azure.servicebus.receivemode), внутри некоторого цикла получения или с помощью с обратного вызова [OnMessage](/dotnet/api/microsoft.servicebus.messaging.queueclient.onmessage) и только затем открывает область транзакций для обработки сообщения.
 

@@ -7,12 +7,13 @@ ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: how-to
 ms.date: 01/14/2020
-ms.openlocfilehash: d16082ed9c7a78cfd02afc1e89ec002a5743d675
-ms.sourcegitcommit: 124f7f699b6a43314e63af0101cd788db995d1cb
+ms.custom: devx-track-csharp
+ms.openlocfilehash: cb1c2d8daa74d1224ad07ef7a2fb5a74f4773338
+ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86085758"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89000317"
 ---
 # <a name="process-events-from-azure-event-hubs-with-apache-storm-on-hdinsight-c"></a>Обработка событий из Центров событий Azure с помощью Apache Storm в HDInsight (C#)
 
@@ -96,7 +97,7 @@ topologyBuilder.SetJavaBolt(
 
 Вы можете скачать полную версию проекта, созданного в этой статье, из [GitHub](https://github.com/Azure-Samples/hdinsight-dotnet-java-storm-eventhub). Однако вам по-прежнему необходимо предоставить параметры конфигурации, выполнив действия, описанные в этой статье.
 
-### <a name="prerequisites"></a>Предварительные условия
+### <a name="prerequisites"></a>Обязательные условия
 
 * Кластер Apache Storm в HDInsight. Ознакомьтесь со статьей [Create Linux-based clusters in HDInsight by using the Azure portal](../hdinsight-hadoop-create-linux-clusters-portal.md) (Создание кластеров под управлением Linux в HDInsight с помощью портала Azure) и выберите **Storm** для параметра **Тип кластера**.
 
@@ -123,7 +124,7 @@ topologyBuilder.SetJavaBolt(
 
 1. Создав **концентратор событий**, просмотрите его параметры на портале Azure и щелкните **Политики общего доступа**. Выберите **+ Добавить** , чтобы создать следующие политики:
 
-   | name | Разрешения |
+   | Имя | Разрешения |
    | --- | --- |
    | writer |Send |
    | reader |Прослушивание |
@@ -140,7 +141,7 @@ topologyBuilder.SetJavaBolt(
 
 3. Откройте **EventHubExample. sln**. В проекте **EventHubWriter** откройте файл **App.config**. Используйте сведения из концентратора событий, настроенного ранее, чтобы указать значения следующих ключей:
 
-   | Key | Значение |
+   | Клавиши | Значение |
    | --- | --- |
    | EventHubPolicyName |writer (если для политики с разрешением на *отправку* указано другое имя, используйте его). |
    | EventHubPolicyKey |Ключ для политики writer. |
@@ -156,7 +157,7 @@ topologyBuilder.SetJavaBolt(
 
 2. Для **EventHubReader** откройте файл **App.config**. Используйте сведения из концентратора событий, настроенного ранее, чтобы указать значения следующих ключей:
 
-   | Key | Значение |
+   | Клавиши | Значение |
    | --- | --- |
    | EventHubPolicyName |reader (если для политики с разрешением на *прослушивание* указано другое имя, используйте его). |
    | EventHubPolicyKey |Ключ для политики reader. |
@@ -208,7 +209,7 @@ topologyBuilder.SetJavaBolt(
 
 [!INCLUDE [delete-cluster-warning](../../../includes/hdinsight-delete-cluster-warning.md)]
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 В этом документе вы узнали, как использовать концентраторы событий Java spout и молния из топологии C# для работы с данными в концентраторах событий Azure. Дополнительные сведения о создании топологий C# см. в следующих статьях:
 

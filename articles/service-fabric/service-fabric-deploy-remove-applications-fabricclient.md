@@ -3,12 +3,13 @@ title: Развертывание Service Fabric Azure с помощью FabricC
 description: Используйте API-интерфейсы FabricClient для развертывания и удаления приложений в Service Fabric.
 ms.topic: conceptual
 ms.date: 01/19/2018
-ms.openlocfilehash: 25b874d1be8ab50d8076ff8fe9423c8cc0187512
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.custom: devx-track-csharp
+ms.openlocfilehash: 565e6b8f23f159a5c231295694830917217a3d19
+ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "75376976"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89009307"
 ---
 # <a name="deploy-and-remove-applications-using-fabricclient"></a>Развертывание и удаление приложений с помощью FabricClient
 > [!div class="op_single_selector"]
@@ -122,7 +123,7 @@ Import-Module "$ENV:ProgramFiles\Microsoft SDKs\Service Fabric\Tools\PSModule\Se
 
 ### <a name="deploy-large-application-package"></a>Развертывание пакета приложения большего размера
 Проблема. Время ожидания API [CopyApplicationPackage](/dotnet/api/system.fabric.fabricclient.applicationmanagementclient.copyapplicationpackage) истекает для пакета большого приложения (несколько ГБ).
-Попробуйте выполнить следующее.
+Попробуйте следующее:
 - Задайте больше времени ожидания для метода [CopyApplicationPackage](/dotnet/api/system.fabric.fabricclient.applicationmanagementclient.copyapplicationpackage) с помощью параметра `timeout`. По умолчанию время ожидания составляет 30 минут.
 - Проверьте сетевое подключение между исходным компьютером и кластером. Если подключение медленное, рассмотрите возможность использовать машину с лучшим сетевым соединением.
 Возможно, клиентский компьютер находится не в одном регионе с кластером, тогда перейдите на компьютер, который находится с ним в одном регионе или в регионе поблизости.
@@ -135,7 +136,7 @@ Import-Module "$ENV:ProgramFiles\Microsoft SDKs\Service Fabric\Tools\PSModule\Se
 
 ### <a name="deploy-application-package-with-many-files"></a>Развертывание пакета приложения с несколькими файлами
 Проблема. Время ожидания метода [ProvisionApplicationAsync](/dotnet/api/system.fabric.fabricclient.applicationmanagementclient.provisionapplicationasync) для пакета приложения со множеством (несколько тысяч) файлов истекло.
-Попробуйте выполнить следующее.
+Попробуйте следующее:
 - [Выполните сжатие пакета](service-fabric-package-apps.md#compress-a-package) перед копированием в хранилище образов. Сжатие уменьшает количество файлов.
 - Задайте больше времени ожидания для метода [ProvisionApplicationAsync](/dotnet/api/system.fabric.fabricclient.applicationmanagementclient.provisionapplicationasync) с помощью параметра `timeout`.
 
@@ -320,7 +321,7 @@ static void Main(string[] args)
 
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 [Обновление приложения Service Fabric](service-fabric-application-upgrade.md)
 
 [Общие сведения о работоспособности Service Fabric](service-fabric-health-introduction.md)

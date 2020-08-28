@@ -3,13 +3,13 @@ title: Использование службы "Сетка событий Azure"
 description: В этой статье описана установка схемы CloudEvents для событий в службе "Сетка событий Azure". Служба поддерживает события в реализации в JSON CloudEvents.
 ms.topic: conceptual
 ms.date: 07/07/2020
-ms.custom: devx-track-javascript
-ms.openlocfilehash: 0064fcc8da2a2aee8b4e413e697d2d8219fd09cc
-ms.sourcegitcommit: e71da24cc108efc2c194007f976f74dd596ab013
+ms.custom: devx-track-javascript, devx-track-csharp
+ms.openlocfilehash: 9c58811cc13a9eb37104abbe9901cb94dda25a9e
+ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87419892"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89008783"
 ---
 # <a name="use-cloudevents-v10-schema-with-event-grid"></a>Использование схемы CloudEvents версии 1.0 со службой "Сетка событий"
 В дополнение к [схеме событий по умолчанию](event-schema.md), служба "Сетка событий Azure" поддерживает события в [реализации JSON схемы CloudEvents версии 1.0](https://github.com/cloudevents/spec/blob/v1.0/json-format.md) и [привязку протокола HTTP](https://github.com/cloudevents/spec/blob/v1.0/http-protocol-binding.md). [CloudEvents](https://cloudevents.io/) — [открытая спецификация](https://github.com/cloudevents/spec/blob/v1.0/spec.md) для описания данных о событиях.

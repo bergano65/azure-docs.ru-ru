@@ -13,12 +13,12 @@ ms.workload: iaas-sql-server
 ms.date: 11/13/2019
 ms.author: mathoma
 ms.reviewer: jroth
-ms.openlocfilehash: f02f31e0fc8943682af77ca6f506d15f36e88146
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 208b900de20a89a9ecc819ef1254c08fcc628f82
+ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84668907"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89010228"
 ---
 # <a name="change-the-license-model-for-a-sql-virtual-machine-in-azure"></a>Изменение модели лицензирования для виртуальной машины SQL в Azure
 [!INCLUDE[appliesto-sqlvm](../../includes/appliesto-sqlvm.md)]
@@ -156,7 +156,9 @@ Update-AzSqlVM -ResourceGroupName <resource_group_name> -Name <VM_name> -License
 
 ## <a name="known-errors"></a>Известные ошибки
 
-### <a name="the-resource-microsoftsqlvirtualmachinesqlvirtualmachinesresource-group-under-resource-group-resource-group-was-not-found"></a>Ресурс Microsoft.SqlVirtualMachine/SqlVirtualMachines/\<resource-group> в группе ресурсов \<resource-group> не найден
+Ознакомьтесь с типичными ошибками и их разрешениями. 
+
+**Ресурс "Microsoft. Склвиртуалмачине/Склвиртуалмачинес/ \<resource-group> " в группе ресурсов " \<resource-group> " не найден.**
 
 Эта ошибка возникает при попытке изменить модель лицензирования для виртуальной машины SQL Server, которая не зарегистрирована в поставщике ресурсов виртуальных машин SQL:
 
@@ -165,7 +167,7 @@ Update-AzSqlVM -ResourceGroupName <resource_group_name> -Name <VM_name> -License
 Вам необходимо зарегистрировать подписку в поставщике ресурсов, а затем и [виртуальную машину SQL Server](sql-vm-resource-provider-register.md). 
 
 
-### <a name="the-virtual-machine-vmname-has-more-than-one-nic-associated"></a>С виртуальной машиной \<vmname\> связано несколько сетевых карт
+**С виртуальной машиной " \<vmname\> " связана более одной сетевой карты**
 
 Такая ошибка возникает на виртуальных машинах с несколькими сетевыми картами. Удалите одну из сетевых карт, прежде чем изменить модель лицензирования. После изменения модели лицензирования вы можете обратно добавить сетевую карту для виртуальной машины, но при этом на портале Azure не будут поддерживаться такие операции, как автоматическое резервное копирование и установка исправлений. 
 
@@ -176,7 +178,7 @@ Update-AzSqlVM -ResourceGroupName <resource_group_name> -Name <VM_name> -License
 
 * [Обзор SQL Server на виртуальных машинах Windows](sql-server-on-azure-vm-iaas-what-is-overview.md).
 * [Вопросы и ответы об SQL Server на виртуальных машинах Windows](frequently-asked-questions-faq.md)
-* [Руководство по ценам для виртуальных машин SQL Server в Azure](pricing-guidance.md)
-* [Заметки о выпуске SQL Server на виртуальных машинах Windows](../../database/doc-changes-updates-release-notes.md)
+* [Руководство по ценам для виртуальных машин SQL Server в Azure](pricing-guidance.md)
+* [Заметки о выпуске SQL Server на виртуальных машинах Windows](../../database/doc-changes-updates-release-notes.md)
 
 

@@ -16,12 +16,12 @@ ms.topic: how-to
 ms.date: 07/18/2017
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c709fca3fbddb6fc16699052c5f01d1255c79dd8
-ms.sourcegitcommit: 8def3249f2c216d7b9d96b154eb096640221b6b9
+ms.openlocfilehash: cf27778d1365ef3779a996f37fff09bb7a1efbec
+ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87542099"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88999807"
 ---
 # <a name="azure-ad-connect-health-agent-installation"></a>Установка агента Azure AD Connect Health
 
@@ -41,7 +41,7 @@ ms.locfileid: "87542099"
 | Проверка TLS для исходящего трафика фильтруется или отключается. | Выполнение этапа регистрации агента или операции передачи данных может завершиться ошибкой, если для исходящего трафика на сетевом уровне имеется проверка TLS или прерывание. Подробнее о [настройке проверки TLS](https://technet.microsoft.com/library/ee796230.aspx) |
 | Порты брандмауэра на сервере с агентом |Агент требует открытия следующих портов брандмауэра для обмена данными с конечными точками службы Azure AD Health.<br /><br /><li>TCP-порт 443</li><li>TCP-порт 5671</li> <br />Обратите внимание на то, что для последней версии агента больше не нужен порт 5671. Для обновления до последней версии требуется только порт 443. Ознакомьтесь с дополнительными сведениями о [включении портов брандмауэра](https://technet.microsoft.com/library/ms345310(v=sql.100).aspx). |
 | Внесите следующие веб-сайты в список разрешенных, если включена политика усиленной безопасности IE |Если на сервере, на котором будет установлен агент, включена конфигурация усиленной безопасности, потребуется открыть доступ для следующих веб-сайтов:<br /><br /><li>https:\//login.microsoftonline.com</li><li>https:\//secure.aadcdn.microsoftonline-p.com</li><li>https:\//login.windows.net</li><li>HTTPS: \/ /aadcdn.msftauth.NET</li><li>Сервер федерации вашей организации должен быть доверенным для Azure Active Directory. Например: https:\//sts.contoso.com.</li> Дополнительные сведения о [настройке IE см. в](https://support.microsoft.com/help/815141/internet-explorer-enhanced-security-configuration-changes-the-browsing)этой статье. Если у вас есть прокси-сервер в вашей сети, см. Примечание ниже.|
-| Установлена служба PowerShell 4.0 или более поздней версии | <li>Windows Server 2008 R2 поставляется вместе с PowerShell версии 2.0, что недостаточно для агента. Обновите PowerShell, как описано ниже в разделе [Установка агента на серверах Windows Server 2008 R2](#agent-installation-on-windows-server-2008-r2-servers).</li><li>Windows Server 2012 поставляется вместе с PowerShell версии 3.0, что недостаточно для агента.  [Обновите](https://www.microsoft.com/download/details.aspx?id=40855) Windows Management Framework.</li><li>Windows Server 2012 R2 и более поздней версии поставляется с последней версией PowerShell.</li>|
+| Установлена служба PowerShell 4.0 или более поздней версии | <li>Windows Server 2008 R2 поставляется вместе с PowerShell версии 2.0, что недостаточно для агента. Обновите PowerShell, как описано ниже в разделе [Установка агента на серверах Windows Server 2008 R2](#agent-installation-on-windows-server-2008-r2-servers).</li><li>Windows Server 2012 поставляется вместе с PowerShell версии 3.0, что недостаточно для агента.</li><li>Windows Server 2012 R2 и более поздней версии поставляется с последней версией PowerShell.</li>|
 |Отключение FIPS|FIPS не поддерживается агентами Azure Active Directory Connect Health.|
 
 
@@ -116,7 +116,6 @@ ms.locfileid: "87542099"
 3. Установите Windows PowerShell 4.0 на каждом из серверов перед установкой агента AD Health. Чтобы установить Windows PowerShell 4.0, выполните следующие действия.
    * Загрузите автономный установщик по ссылке и установите [Microsoft .NET Framework 4.5](https://www.microsoft.com/download/details.aspx?id=40779) .
    * Установите интегрированную среду сценариев PowerShell (из компонентов Windows).
-   * Установите [Windows Management Framework 4.0](https://www.microsoft.com/download/details.aspx?id=40855)
    * Установите на сервере Internet Explorer версии 10 или более поздней версии. (Это необходимо службе работоспособности для аутентификации пользователя с учетными данными администратора Azure.)
 4. Дополнительные сведения об установке Windows PowerShell 4.0 на Windows Server 2008 R2 см. в вики-статье [здесь](https://social.technet.microsoft.com/wiki/contents/articles/20623.step-by-step-upgrading-the-powershell-version-4-on-2008-r2.aspx).
 
@@ -140,7 +139,7 @@ ms.locfileid: "87542099"
 7. В области **Действия** щелкните ссылку **Изменить свойства службы федерации**.
 8. В диалоговом окне **Свойства службы федерации** перейдите на вкладку **События**.
 9. Установите флажки **Успешные события аудита** и **Неудачные события аудита**.
-10. Нажмите кнопку **ОК**.
+10. Нажмите кнопку **OK**.
 
 #### <a name="to-enable-auditing-for-ad-fs-on-windows-server-2012-r2"></a>Включение аудита для AD FS на Windows Server 2012 R2
 
@@ -319,7 +318,7 @@ Register-AzureADConnectHealthADDSAgent -Credential $myCreds
 Доступны следующие варианты настройки агента Azure AD Connect Health для использования HTTP-прокси.
 
 > [!NOTE]
-> Необходимо перезапустить все службы агента Azure AD Connect Health, чтобы обновить параметры прокси-сервера. Выполните следующую команду.<br />
+> Необходимо перезапустить все службы агента Azure AD Connect Health, чтобы обновить параметры прокси-сервера. Выполните следующую команду:<br />
 > Restart-Service Азуреадконнексеалс *
 >
 >
@@ -384,7 +383,7 @@ Test-AzureADConnectHealthConnectivity -Role ADFS
 Параметр role в настоящее время принимает следующие значения:
 
 * ADFS
-* Sync
+* Синхронизация
 * ADDS
 
 > [!NOTE]

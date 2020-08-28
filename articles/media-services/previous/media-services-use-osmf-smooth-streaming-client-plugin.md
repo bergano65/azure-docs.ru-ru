@@ -14,15 +14,16 @@ ms.devlang: na
 ms.topic: article
 ms.date: 03/20/2019
 ms.author: juliako
-ms.openlocfilehash: 63b534f67aa5cf39f7549a467be28ec1212897d2
-ms.sourcegitcommit: 1e6c13dc1917f85983772812a3c62c265150d1e7
+ms.custom: devx-track-csharp
+ms.openlocfilehash: a0a2f5fbc2139a8340ee763efc51c36a01dd24d0
+ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/09/2020
-ms.locfileid: "86172015"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88999588"
 ---
 # <a name="how-to-use-the-microsoft-smooth-streaming-plugin-for-the-adobe-open-source-media-framework"></a>Использование подключаемого модуля Smooth Streaming Майкрософт для платформы Adobe Open Source Media Framework  
-## <a name="overview"></a>Общие сведения
+## <a name="overview"></a>Обзор
 Подключаемый модуль Smooth Streaming для платформы Open Source Media Framework 2.0 (SS для OSMF) расширяет возможности OSMF по умолчанию и добавляет возможности воспроизведения контента Smooth Streaming для новых и существующих проигрывателей OSMF. Подключаемый модуль также добавляет возможность воспроизведения Smooth Streaming в SMP.
 
 SS для OSMF включает в себя две версии подключаемого модуля:

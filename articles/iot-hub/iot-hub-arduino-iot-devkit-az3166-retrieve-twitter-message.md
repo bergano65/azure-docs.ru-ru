@@ -9,12 +9,13 @@ ms.topic: conceptual
 ms.tgt_pltfrm: arduino
 ms.date: 03/07/2018
 ms.author: liydu
-ms.openlocfilehash: 464e2c14fa238160ca198b9f1c8a9808e70933f9
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.custom: devx-track-csharp
+ms.openlocfilehash: f0aa71b34818cf373d1bb58531ee5c68c8d3d5ec
+ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85560967"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89004329"
 ---
 # <a name="shake-shake-for-a-tweet----retrieve-a-twitter-message-with-azure-functions"></a>Shake, Shake: получение сообщений из Twitter с помощью решения "Функции Azure"
 
@@ -100,7 +101,7 @@ static const char* iot_event = "{\"topic\":\"iot\"}";
 
 3. На экране появится идентификатор DevKit и надпись "Configuration" (Настройка).
 
-### <a name="macos"></a>macOS
+### <a name="macos"></a>MacOS
 
 1. Переведите DevKit в режим настройки:
 
@@ -116,7 +117,7 @@ static const char* iot_event = "{\"topic\":\"iot\"}";
 
    ![device-upload](media/iot-hub-arduino-iot-devkit-az3166-retrieve-twitter-message/device-upload.png)
 
-2. Плата DevKit перезагрузится и начнет выполнение кода.
+2. DevKit перезагрузится и начнет выполнение кода.
 
 Может появиться сообщение об ошибке "Error: AZ3166: Unknown package" (Ошибка AZ3166: неизвестный пакет). Такая ошибка возникает, если индекс пакета платы неправильно обновлен. Действия по устранению проблемы см. в разделе об ошибке, связанной с [неизвестным пакетом, в часто задаваемых вопросах по IoT DevKit](https://microsoft.github.io/azure-iot-developer-kit/docs/faq/#development).
 

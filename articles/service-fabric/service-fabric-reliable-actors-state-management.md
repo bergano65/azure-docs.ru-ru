@@ -5,12 +5,13 @@ author: vturecek
 ms.topic: conceptual
 ms.date: 11/02/2017
 ms.author: vturecek
-ms.openlocfilehash: 9962d4333e458243670d1005ad2ccfbc0bb7c92a
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.custom: devx-track-csharp
+ms.openlocfilehash: 92abfa9937c1ac3f7d4ba68e9228b29e0211e1af
+ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "75348918"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89007797"
 ---
 # <a name="reliable-actors-state-management"></a>Управление состоянием субъектов Reliable Actors
 Субъекты Reliable Actors — это однопотоковые объекты для инкапсуляции логики и состояния. Так как субъекты выполняются в службах Reliable Services, они могут поддерживать состояние, используя те же механизмы сохранения и репликации. При этом субъекты не теряют свое состояние после сбоев, повторной активации после сборки мусора или перемещения между узлами в кластере из-за балансировки ресурсов или обновления.
@@ -116,7 +117,7 @@ class MyActorImpl extends FabricActor implements MyActor
  
 Если размер файла базы данных службы субъектов увеличился и стал больше ожидаемого размера, убедитесь, что соблюдены предыдущие инструкции. Если все условия инструкций соблюдены, однако возникают проблемы с размером файла базы данных, следует [открыть запрос в службу поддержки](service-fabric-support.md), чтобы получить помощь от группы разработчиков продукта.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Состояние, которое хранится в Reliable Actors, должно быть сериализовано перед записью на диск и реплицировано для обеспечения высокого уровня доступности. Узнайте больше о [сериализации типа субъекта](service-fabric-reliable-actors-notes-on-actor-type-serialization.md).
 

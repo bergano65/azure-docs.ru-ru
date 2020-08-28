@@ -3,12 +3,12 @@ title: Устранение ошибок резервного копирован
 description: Здесь описано, как устранить распространенные ошибки, которые могут возникнуть при использовании Azure Backup для резервного копирования баз данных SAP HANA.
 ms.topic: troubleshooting
 ms.date: 11/7/2019
-ms.openlocfilehash: 6216c39231ad17a55f0d428fe5e1f85e64cef403
-ms.sourcegitcommit: ac7ae29773faaa6b1f7836868565517cd48561b2
+ms.openlocfilehash: 4958a5e93e27c34772c7c3285470abbc31f5b089
+ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88826996"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89004176"
 ---
 # <a name="troubleshoot-backup-of-sap-hana-databases-on-azure"></a>Устранение ошибок резервного копирования баз данных SAP HANA в Azure
 
@@ -22,7 +22,7 @@ ms.locfileid: "88826996"
 
 ### <a name="usererrorhanainternalrolenotpresent"></a>UserErrorHANAInternalRoleNotPresent
 
-| **Сообщение об ошибке**      | <span style="font-weight:normal">Azure backup does not have required role privileges to carry out backup</span> (Служба Azure Backup не имеет необходимых привилегий роли для выполнения резервного копирования)    |
+| **Сообщение об ошибке**      | <span style="font-weight:normal">Azure Backup не имеет необходимых привилегий роли для выполнения резервного копирования</span>    |
 | ---------------------- | ------------------------------------------------------------ |
 | **Возможные причины**    | Возможно, роль была перезаписана.                          |
 | **Рекомендуемое действие** | Чтобы устранить эту проблему, запустите скрипт из области **Discover DB** (Обнаружение БД) или скачайте его [здесь](https://aka.ms/scriptforpermsonhana). Кроме того, можно добавить роль SAP_INTERNAL_HANA_SUPPORT для пользователя, выполняющего резервное копирование рабочей нагрузки (AZUREWLBACKUPHANAUSER). |
@@ -31,7 +31,7 @@ ms.locfileid: "88826996"
 
 | Сообщение об ошибке      | <span style="font-weight:normal">Не удалось подключиться к системе HANA</span>                        |
 | ------------------ | ------------------------------------------------------------ |
-| **Возможные причины**    | Возможно, экземпляр SAP HANA не работает.<br/>Не заданы необходимые разрешения для службы Azure Backup, позволяющие взаимодействовать с базой данных HANA. |
+| **Возможные причины**    | Возможно, экземпляр SAP HANA не работает.<br/>Не заданы необходимые разрешения для Azure Backup для взаимодействия с базой данных HANA. |
 | **Рекомендуемое действие** | Проверьте, работает ли база данных SAP HANA. Если база данных работает, проверьте, заданы ли все необходимые разрешения. Если заданы не все разрешения, выполните [скрипт предварительной регистрации](https://aka.ms/scriptforpermsonhana), чтобы добавить недостающие разрешения. |
 
 ### <a name="usererrorhanainstancenameinvalid"></a>UserErrorHanaInstanceNameInvalid
@@ -45,14 +45,14 @@ ms.locfileid: "88826996"
 
 | Сообщение об ошибке      | <span style="font-weight:normal">Указанная операция SAP HANA не поддерживается</span>              |
 | ------------------ | ------------------------------------------------------------ |
-| **Возможные причины**    | Служба Azure Backup для SAP HANA не поддерживает добавочное резервное копирование и действия, выполняемые на собственных клиентах SAP HANA (Studio, Cockpit или DBA Cockpit). |
+| **Возможные причины**    | Azure Backup для SAP HANA не поддерживает добавочное резервное копирование и действия, выполняемые на SAP HANA собственных клиентах (панель «Studio/панель» или «DBA») |
 | **Рекомендуемое действие** | Дополнительные сведения см. [здесь](./sap-hana-backup-support-matrix.md#scenario-support). |
 
 ### <a name="usererrorhanapodoesnotsupportbackuptype"></a>UserErrorHANAPODoesNotSupportBackupType
 
 | Сообщение об ошибке      | <span style="font-weight:normal">This SAP HANA database doesn't support the requested backup type</span> (Эта база данных SAP HANA не поддерживает запрошенный тип резервного копирования)  |
 | ------------------ | ------------------------------------------------------------ |
-| **Возможные причины**    | Служба Azure Backup не поддерживает добавочное резервное копирование и резервное копирование с помощью моментальных снимков. |
+| **Возможные причины**    | Azure Backup не поддерживает добавочное резервное копирование и резервное копирование с помощью моментальных снимков |
 | **Рекомендуемое действие** | Дополнительные сведения см. [здесь](./sap-hana-backup-support-matrix.md#scenario-support). |
 
 ### <a name="usererrorhanalsnvalidationfailure"></a>UserErrorHANALSNValidationFailure
@@ -73,7 +73,7 @@ ms.locfileid: "88826996"
 
 | Сообщение об ошибке      | <span style="font-weight:normal">Обнаружена недопустимая конфигурация Backint</span>                       |
 | ------------------ | ------------------------------------------------------------ |
-| **Возможные причины**    | Для службы Azure Backup неправильно указаны параметры резервного копирования. |
+| **Возможные причины**    | Параметры резервного копирования неправильно указаны для Azure Backup |
 | **Рекомендуемое действие** | Проверьте, установлены ли следующие параметры (backint):<br/>\* [catalog_backup_using_backint:true];<br/>\* [enable_accumulated_catalog_backup:false];<br/>\* [parallel_data_backup_backint_channels:1];<br/>\* [log_backup_timeout_s:900)];<br/>\* [backint_response_timeout:7200].<br/>Если в узле (HOST) имеются параметры на основе backint, удалите их. Если параметры отсутствуют на уровне узла, но были изменены вручную на уровне базы данных, верните для них подходящие значения, как описано выше. Также можно [отключить защиту и сохранить данные резервной копии](./sap-hana-db-manage.md#stop-protection-for-an-sap-hana-database) на портале Azure, а затем **возобновить резервное копирование**. |
 
 ### <a name="usererrorincompatiblesrctargetsystemsforrestore"></a>UserErrorIncompatibleSrcTargetSystemsForRestore

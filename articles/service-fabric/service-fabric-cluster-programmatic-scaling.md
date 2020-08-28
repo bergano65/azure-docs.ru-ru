@@ -5,12 +5,13 @@ author: mjrousos
 ms.topic: conceptual
 ms.date: 01/23/2018
 ms.author: mikerou
-ms.openlocfilehash: 19f773fa781c51f64412039201842a7af4c29052
-ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
+ms.custom: devx-track-csharp
+ms.openlocfilehash: bd47e5e39684bd4b684cd1e12dd9a3d420640ee2
+ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2020
-ms.locfileid: "86261125"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89005842"
 ---
 # <a name="scale-a-service-fabric-cluster-programmatically"></a>Программное масштабирование кластера Service Fabric 
 
@@ -59,7 +60,7 @@ var newCapacity = (int)Math.Min(MaximumNodeCount, scaleSet.Capacity + 1);
 scaleSet.Update().WithCapacity(newCapacity).Apply(); 
 ``` 
 
-Кроме того, размер масштабируемого набора виртуальных машин можно изменить с помощью командлетов PowerShell. [`Get-AzVmss`](/powershell/module/az.compute/get-azvmss)может получить объект масштабируемого набора виртуальных машин. Текущая емкость указывается в свойстве `.sku.capacity`. После изменения емкости до требуемого значения масштабируемый набор виртуальных машин в Azure можно обновить с помощью [`Update-AzVmss`](/powershell/module/az.compute/update-azvmss) команды.
+Кроме того, размер масштабируемого набора виртуальных машин можно изменить с помощью командлетов PowerShell. [`Get-AzVmss`](/powershell/module/az.compute/get-azvmss) может получить объект масштабируемого набора виртуальных машин. Текущая емкость указывается в свойстве `.sku.capacity`. После изменения емкости до требуемого значения масштабируемый набор виртуальных машин в Azure можно обновить с помощью [`Update-AzVmss`](/powershell/module/az.compute/update-azvmss) команды.
 
 Как и при добавлении узла вручную, добавления экземпляра масштабируемого набора должно быть достаточно для запуска нового узла Service Fabric, так как шаблон масштабируемого набора включает расширения для автоматического присоединения новых экземпляров к кластеру Service Fabric. 
 

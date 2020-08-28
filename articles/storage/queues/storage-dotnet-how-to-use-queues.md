@@ -8,12 +8,13 @@ ms.service: storage
 ms.subservice: queues
 ms.topic: how-to
 ms.reviewer: dineshm
-ms.openlocfilehash: 5b8b127391401b956088ddb099d1853700e6f120
-ms.sourcegitcommit: 927dd0e3d44d48b413b446384214f4661f33db04
+ms.custom: devx-track-csharp
+ms.openlocfilehash: e8dadc999f3bd26671b5a8ee4da26f051a822a26
+ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88871315"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89001116"
 ---
 # <a name="get-started-with-azure-queue-storage-using-net"></a>Приступая к работе с хранилищем очередей Azure с помощью .NET
 
@@ -29,7 +30,7 @@ ms.locfileid: "88871315"
 
 **Предполагаемое время выполнения:** 45 минут.
 
-### <a name="prerequisites"></a>Предварительные условия
+### <a name="prerequisites"></a>Обязательные условия
 
 - [Microsoft Visual Studio](https://www.visualstudio.com/downloads/)
 - [Общая клиентская библиотека службы хранилища Azure для .NET](https://www.nuget.org/packages/Microsoft.Azure.Storage.Common/)
@@ -491,7 +492,7 @@ queue.Delete();
 
 ---
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Вы изучили основные сведения о хранилище очередей. Дополнительные сведения о более сложных задачах по использованию хранилища можно найти по следующим ссылкам.
 

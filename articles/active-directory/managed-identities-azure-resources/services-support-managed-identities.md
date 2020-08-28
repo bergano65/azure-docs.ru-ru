@@ -2,21 +2,21 @@
 title: Службы Azure с поддержкой управляемых удостоверений в Azure AD
 description: Список служб, которые поддерживают управляемые удостоверения для ресурсов Azure и аутентификацию Azure AD.
 services: active-directory
-author: MarkusVi
-ms.author: markvi
+author: barclayn
+ms.author: barclayn
 ms.date: 07/09/2020
 ms.topic: conceptual
 ms.service: active-directory
 ms.subservice: msi
-manager: markvi
+manager: daveba
 ms.collection: M365-identity-device-management
 ms.custom: references_regions
-ms.openlocfilehash: 13521017076c609c2fadb4362d5cccdf12d94098
-ms.sourcegitcommit: dea88d5e28bd4bbd55f5303d7d58785fad5a341d
+ms.openlocfilehash: 1d9bd6ccc0f92ab28088e886c5bd17d79bc6cea3
+ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87873591"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89007633"
 ---
 # <a name="services-that-support-managed-identities-for-azure-resources"></a>Службы с поддержкой управляемых удостоверений для ресурсов Azure
 
@@ -185,7 +185,7 @@ ms.locfileid: "87873591"
 
 Тип управляемого удостоверения | Все общедоступные версии<br>Глобальные регионы Azure | Azure для государственных организаций | Azure для Германии | Azure China 21Vianet |
 | --- | --- | --- | --- | --- |
-| Назначено системой | Доступно в регионе, где доступна служба импорта и экспорта Azure | Preview (Предварительный просмотр) | Доступно | Доступно |
+| Назначено системой | Доступно в регионе, где доступна служба импорта и экспорта Azure | Предварительный просмотр | Доступно | Доступно |
 | Назначено пользователем | Недоступно | Недоступно | Недоступно | Недоступно |
 
 ### <a name="azure-kubernetes-service-aks"></a>Служба Azure Kubernetes (AKS)

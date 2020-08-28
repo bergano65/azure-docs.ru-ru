@@ -5,16 +5,21 @@ author: florianborn71
 ms.author: flborn
 ms.date: 02/12/2010
 ms.topic: how-to
-ms.openlocfilehash: 699344f9343c17d449fa48e05b2c3474b524d695
-ms.sourcegitcommit: c6b9a46404120ae44c9f3468df14403bcd6686c1
+ms.custom: devx-track-csharp
+ms.openlocfilehash: 0488f467a036957bf2341aab63919a105f383bdf
+ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88891476"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89003530"
 ---
 # <a name="use-the-azure-frontend-apis-for-authentication"></a>Использование внешних API Azure для проверки подлинности
 
-В этой статье мы рассмотрим, как использовать API C# для проверки подлинности.
+В этом разделе мы рассмотрим, как использовать API для проверки подлинности и управления сеансами.
+
+> [!CAUTION]
+Функции, описанные в этой главе, выдают внутренним функциям вызовы RESTFUL на сервере. Как и для всех вызовов RESTFUL, отправка этих команд слишком часто приведет к тому, что сервер будет регулировать и возвращать ошибку в конечном итоге. `SessionGeneralContext.HttpResponseCode`В данном случае значение элемента равно 429 ("слишком много запросов"). В качестве правила "бегунок" **между последовательными вызовами**должна быть задержка в 5-10 секунд.
+
 
 ## <a name="azurefrontendaccountinfo"></a>AzureFrontendAccountInfo
 

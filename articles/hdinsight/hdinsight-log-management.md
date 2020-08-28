@@ -8,12 +8,12 @@ ms.service: hdinsight
 ms.topic: how-to
 ms.custom: hdinsightactive
 ms.date: 02/05/2020
-ms.openlocfilehash: 14634fac5d4501572a54f80f01a37e440d69d09b
-ms.sourcegitcommit: 124f7f699b6a43314e63af0101cd788db995d1cb
+ms.openlocfilehash: e279f0ba5186ae4e4ad4b403ad823a59ee085170
+ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86075541"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88997563"
 ---
 # <a name="manage-logs-for-an-hdinsight-cluster"></a>Управление журналами для кластера HDInsight
 
@@ -67,7 +67,7 @@ az hdinsight show --resource-group <ResourceGroup> --name <ClusterName>
 
 * Подумайте, как вы можете получать журналы из кластера или из нескольких кластеров для таких целей, как аудит, мониторинг, планирование и оповещение. Вы можете использовать пользовательское решение для доступа к файлам журнала и их загрузке на регулярной основе, а также комбинировать и анализировать их для отображения панели мониторинга. Вы также можете добавить дополнительные возможности для оповещения о безопасности или обнаружении сбоев. Вы можете создавать эти программы с помощью PowerShell, SDK HDInsight или кода, который обращается к классической модели развертывания Azure.
 
-* Подумайте, будет ли решение для мониторинга или служба полезной. Microsoft System Center предоставляет [пакет управления HDInsight](https://www.microsoft.com/download/details.aspx?id=42521). Вы также можете использовать сторонние средства, такие как Apache Chukwa и Ganglia, для сбора и централизации журналов. Многие компании предлагают службы для мониторинга решений для обработки больших данных на основе Hadoop, например: Center, Compuware APM, Сематекст SPM и Зеттасет Orchestrator.
+* Подумайте, будет ли решение для мониторинга или служба полезной. Microsoft System Center предоставляет [пакет управления HDInsight](https://systemcenter.wiki/?Get_ManagementPackBundle=Microsoft.HDInsight.mpb&FileMD5=10C7D975C6096FFAA22C84626D211259). Вы также можете использовать сторонние средства, такие как Apache Chukwa и Ganglia, для сбора и централизации журналов. Многие компании предлагают службы для мониторинга решений для обработки больших данных на основе Hadoop, например: Center, Compuware APM, Сематекст SPM и Зеттасет Orchestrator.
 
 ## <a name="step-2-manage-cluster-service-versions-and-view-logs"></a>Шаг 2. Управление версиями службы кластеров и просмотр журналов
 
@@ -184,7 +184,7 @@ yarn logs -applicationId <applicationId> -appOwner <user-who-started-the-applica
 
 Чтобы собирать журналы со всех узлов в централизованном месте, можно создать поток данных, такой как получение всех записей журнала в Solr.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Monitoring and logging](https://msdn.microsoft.com/library/dn749790.aspx) (Мониторинг и ведение журнала)
 * [Доступ к журналам приложений Apache Hadoop YARN в HDInsight под управлением Linux](hdinsight-hadoop-access-yarn-app-logs-linux.md)

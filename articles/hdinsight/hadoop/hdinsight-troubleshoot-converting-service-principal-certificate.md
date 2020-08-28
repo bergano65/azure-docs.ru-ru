@@ -7,26 +7,27 @@ author: hrasheed-msft
 ms.author: hrasheed
 ms.reviewer: jasonh
 ms.date: 07/31/2019
-ms.openlocfilehash: d6119e4f8c651ba482a24f46b44ff15f870858ad
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.custom: devx-track-csharp
+ms.openlocfilehash: 7f4974d9e9a2ff3b63b36e45d406a016078bb290
+ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "75894172"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89008171"
 ---
 # <a name="converting-service-principal-certificate-contents-to-base-64-encoded-string-format-in-hdinsight"></a>Преобразование содержимого сертификата субъекта-службы в формат строки с кодировкой Base 64 в HDInsight
 
 В этой статье описываются действия по устранению неполадок и возможные способы решения проблем при взаимодействии с кластерами Azure HDInsight.
 
-## <a name="issue"></a>Проблемы
+## <a name="issue"></a>Проблема
 
 Появится сообщение об ошибке, сообщающее, что входные данные не являются допустимой строкой Base-64, так как она содержит небазовый символ 64, больше двух символов заполнения или символ, не являющийся пробелом, между символами заполнения.
 
-## <a name="cause"></a>Причина:
+## <a name="cause"></a>Причина
 
 При использовании PowerShell или развертывания шаблона Azure для создания кластеров с Data Lake в качестве основного или дополнительного хранилища, содержимое сертификата субъекта-службы, предоставленное для доступа к учетной записи хранения Data Lake, имеет формат Base-64. Неправильное преобразование содержимого PFX-сертификата в строку в кодировке Base 64 может привести к этой ошибке.
 
-## <a name="resolution"></a>Решение
+## <a name="resolution"></a>Разрешение
 
 Получив сертификат субъекта-службы в формате PFX [(см. пример шагов](https://github.com/Azure/azure-quickstart-templates/tree/master/201-hdinsight-datalake-store-azure-storage) по созданию субъекта-службы), используйте следующую команду PowerShell или фрагмент кода C# для преобразования содержимого сертификата в формат base-64.
 

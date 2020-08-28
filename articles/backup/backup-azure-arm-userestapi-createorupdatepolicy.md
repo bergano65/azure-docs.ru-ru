@@ -4,16 +4,16 @@ description: В этой статье вы узнаете, как создава
 ms.topic: conceptual
 ms.date: 08/21/2018
 ms.assetid: 5ffc4115-0ae5-4b85-a18c-8a942f6d4870
-ms.openlocfilehash: 6a045ff1653c58a3a583b6c64941fff26f480861
-ms.sourcegitcommit: ac7ae29773faaa6b1f7836868565517cd48561b2
+ms.openlocfilehash: 4678c6aaa03d511da35d5efee2b1e75d08546781
+ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88826398"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89006267"
 ---
 # <a name="create-azure-recovery-services-backup-policies-using-rest-api"></a>Создание политик резервного копирования Служб восстановления Azure с помощью REST API
 
-Шаги по созданию политики резервного копирования для хранилища Служб восстановления Azure описаны в [документе о политике REST API](/rest/api/backup/protectionpolicies/createorupdate). Мы используем этот документ в качестве ссылки для создания политики для резервной копии виртуальной машины Azure.
+Шаги по созданию политики резервного копирования для хранилища Служб восстановления Azure описаны в [документе о политике REST API](/rest/api/backup/protectionpolicies/createorupdate). Давайте будем использовать этот документ в качестве справочной документации по созданию политики для резервного копирования виртуальных машин Azure.
 
 ## <a name="create-or-update-a-policy"></a>Создание или обновление политики
 
@@ -31,7 +31,7 @@ PUT https://management.azure.com/Subscriptions/{subscriptionId}/resourceGroups/{
 
 |Имя  |Обязательно  |Тип  |Описание  |
 |---------|---------|---------|---------|
-|properties     |   True      |  ProtectionPolicy:[AzureIaaSVMProtectionPolicy](/rest/api/backup/protectionpolicies/createorupdate#azureiaasvmprotectionpolicy)      | Свойства ProtectionPolicyResource        |
+|properties     |   Верно      |  ProtectionPolicy:[AzureIaaSVMProtectionPolicy](/rest/api/backup/protectionpolicies/createorupdate#azureiaasvmprotectionpolicy)      | Свойства ProtectionPolicyResource        |
 |tags     |         | Объект        |  Теги ресурсов       |
 
 Полный список определений в тексте запроса см. в [документе REST API о политике резервного копирования](/rest/api/backup/protectionpolicies/createorupdate).
@@ -137,7 +137,7 @@ PUT https://management.azure.com/Subscriptions/{subscriptionId}/resourceGroups/{
 
 Он возвращает два ответа: 202 (принято) при создании другой операции, а затем 200 (ОК) после завершения этой операции.
 
-|Имя  |Тип  |Описание  |
+|Имя  |Type  |Описание  |
 |---------|---------|---------|
 |200 ОК     |    [ProtectionPolicyResource](/rest/api/backup/protectionpolicies/createorupdate#protectionpolicyresource)     |  ОК       |
 |202 — принято     |         |     Принято    |

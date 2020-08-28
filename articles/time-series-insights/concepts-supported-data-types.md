@@ -9,25 +9,34 @@ ms.service: time-series-insights
 services: time-series-insights
 ms.topic: conceptual
 ms.date: 08/12/2020
-ms.openlocfilehash: e6fd405d1969a2f40a5f0c3466a57fbec60723e9
-ms.sourcegitcommit: a2a7746c858eec0f7e93b50a1758a6278504977e
+ms.openlocfilehash: 254732630dcf28b90413a1269a34d3aa388cb06c
+ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/12/2020
-ms.locfileid: "88141165"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88997869"
 ---
 # <a name="supported-data-types"></a>Поддерживаемые типы данных
 
 В следующей таблице перечислены типы данных, поддерживаемые службой "аналитика временных рядов Azure" Gen2
 
-| Тип данных | Описание | Пример | Имя столбца свойств в Parquet
-|---|---|---|---|
-| **bool**; | Тип данных, имеющий одно из двух состояний: `true` или `false`. | `"isQuestionable" : true` | isQuestionable_bool
-| **datetime** | Представляет текущее время, обычно выраженное как дата и время суток. Выражено в формате [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html). Свойства DateTime всегда хранятся в формате UTC. Смещения часового пояса, если они правильно отформатированы, будут применены, а затем получится значение, хранящееся в формате UTC. Дополнительные сведения о свойстве timestamp среды и смещениях DateTime см. в [этом](concepts-streaming-ingestion-event-sources.md#event-source-timestamp) разделе. | `"eventProcessedLocalTime": "2020-03-20T09:03:32.8301668Z"` | eventProcessedLocalTime_datetime
-| **double** | 64-разрядное число двойной точности  | `"value": 31.0482941` | value_double
-| **long** | 64-разрядное целое число со знаком  | `"value" : 31` | value_long
-| **строка** | Текстовые значения должны состоять из допустимых UTF-8. Значения NULL и пустые строки считаются одинаковыми. |  `"site": "DIM_MLGGG"` | site_string
-| **dynamic** | Сложный (не являющийся примитивом) тип, состоящий из массива или контейнера свойств (Dictionary). Сейчас только переведенные массивы JSON примитивов или массивов объектов, не содержащих идентификатор TS или свойство timestamp, будут храниться как динамические. Ознакомьтесь с этой [статьей](./concepts-json-flattening-escaping-rules.md) , чтобы понять, как объекты будут сведены, а массивы можно будет отменить. Свойства полезных данных, хранящиеся в этом типе, доступны через обозреватель Gen2 временных рядов Azure и `GetEvents`   API запросов. |  `"values": "[197, 194, 189, 188]"` | values_dynamic
+| Тип данных | Описание | Пример | [Синтаксис выражений временных рядов](https://docs.microsoft.com/rest/api/time-series-insights/reference-time-series-expression-syntax) | Имя столбца свойств в Parquet
+|---|---|---|---|---|
+| **bool**; | Тип данных, имеющий одно из двух состояний: `true` или `false`. | `"isQuestionable" : true` | `$event.isQuestionable.Bool` или `$event['isQuestionable'].Bool` | `isQuestionable_bool`
+| **datetime** | Представляет текущее время, обычно выраженное как дата и время суток. Выражено в формате [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html). Свойства DateTime всегда хранятся в формате UTC. Смещения часового пояса, если они правильно отформатированы, будут применены, а затем получится значение, хранящееся в формате UTC. Дополнительные сведения о свойстве timestamp среды и смещениях DateTime см. в [этом](concepts-streaming-ingestion-event-sources.md#event-source-timestamp) разделе. | `"eventProcessedLocalTime": "2020-03-20T09:03:32.8301668Z"` |  Если "Евентпроцесседлокалтиме" является меткой времени источника события: `$event.$ts` . Если это другое свойство JSON: `$event.eventProcessedLocalTime.DateTime` или `$event['eventProcessedLocalTime'].DateTime` | `eventProcessedLocalTime_datetime`
+| **double** | 64-разрядное число двойной точности  | `"value": 31.0482941` | `$event.value.Double` или `$event['value'].Double` |  `value_double`
+| **long** | 64-разрядное целое число со знаком  | `"value" : 31` | `$event.value.Long` или `$event['value'].Long` |  `value_long`
+| **string** | Текстовые значения должны состоять из допустимых UTF-8. Значения NULL и пустые строки считаются одинаковыми. |  `"site": "DIM_MLGGG"`| `$event.site.String` или `$event['site'].String`| `site_string`
+| **dynamic** | Сложный (не являющийся примитивом) тип, состоящий из массива или контейнера свойств (Dictionary). Сейчас только переведенные массивы JSON примитивов или массивов объектов, не содержащих идентификатор TS или свойство timestamp, будут храниться как динамические. Ознакомьтесь с этой [статьей](./concepts-json-flattening-escaping-rules.md) , чтобы понять, как объекты будут сведены, а массивы можно будет отменить. Свойства полезных данных, хранящиеся в этом типе, доступны только при выборе `Explore Events` в ОБОЗРЕВАТЕЛЕ TSI для просмотра необработанных событий или через [`GetEvents`](https://docs.microsoft.com/rest/api/time-series-insights/dataaccessgen2/query/execute#getevents)   API запросов для синтаксического анализа на стороне клиента. |  `"values": "[197, 194, 189, 188]"` | Ссылки на динамические типы в выражении временных рядов пока не поддерживаются | `values_dynamic`
+
+> [!NOTE]
+> 64 разрядов поддерживаются, но максимальное число, которое обозреватель службы "аналитика временных рядов Azure" может безопасно выразить, равно 9 007 199 254 740 991 (2 ^ 53-1) из-за ограничений JavaScript. При работе с числами в модели данных выше можно уменьшить размер, создав [переменную модели временных рядов](/concepts-variables#numeric-variables) и [преобразуя](https://docs.microsoft.com/rest/api/time-series-insights/reference-time-series-expression-syntax#conversion-functions) значение.
+
+> [!NOTE]
+> Тип **строки** не допускает значения NULL:
+>   * [Выражение временного ряда](https://docs.microsoft.com/rest/api/time-series-insights/reference-time-series-expression-syntax) , выраженное в [запросе временных рядов](https://docs.microsoft.com/rest/api/time-series-insights/reference-query-apis) , которое сравнивает значение пустой строки (**""**) со **значением NULL** , будет вести себя так: `$event.siteid.String = NULL` эквивалентно `$event.siteid.String = ''` .
+>   * API может возвращать значения **null** , даже если исходные события содержат пустые строки.
+>   * Не задавайте зависимости от значений **null** в **строковых** столбцах для сравнения или вычисления, обрабатывают их так же, как пустые строки.
 
 ## <a name="sending-mixed-data-types"></a>Отправка смешанных типов данных
 

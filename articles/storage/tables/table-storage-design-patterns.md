@@ -8,12 +8,13 @@ ms.topic: article
 ms.date: 04/08/2019
 ms.author: tamram
 ms.subservice: tables
-ms.openlocfilehash: 8a50aa02a2ba7187c8221c046fcabb7f4a6473fa
-ms.sourcegitcommit: ac7ae29773faaa6b1f7836868565517cd48561b2
+ms.custom: devx-track-csharp
+ms.openlocfilehash: b200782d10ae3637fcade63feab1e638d40acddb
+ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88826690"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89006352"
 ---
 # <a name="table-design-patterns"></a>Шаблоны для разработки таблиц
 В этой статье приводится описание некоторых шаблонов, которые подходят для использования с решениями для службы таблиц. Кроме того, вы увидите практическое решение ряда проблем и сможете выбрать компромиссный вариант из предлагаемых в других статьях о разработке для хранилища таблиц. На следующей схеме показаны связи между различными шаблонами.  

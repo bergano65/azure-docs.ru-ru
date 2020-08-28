@@ -13,12 +13,13 @@ ms.devlang: ne
 ms.topic: article
 ms.date: 08/11/2020
 ms.author: juliako
-ms.openlocfilehash: 0d8a60d6c4b3fb66b46742fbd99e3a73a63fff45
-ms.sourcegitcommit: 1aef4235aec3fd326ded18df7fdb750883809ae8
+ms.custom: devx-track-csharp
+ms.openlocfilehash: 96fd2fbc087fda422271aef0dfac34f066f09b11
+ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/12/2020
-ms.locfileid: "88136088"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89009667"
 ---
 # <a name="create-filters-with-media-services-net-sdk"></a>Создание фильтров с помощью пакета SDK Служб мультимедиа для .NET
 
@@ -31,7 +32,7 @@ ms.locfileid: "88136088"
 > [!NOTE]
 > Обязательно ознакомьтесь с [пресентатионтимеранже](filters-concept.md#presentationtimerange).
 
-## <a name="prerequisites"></a>Предварительные условия 
+## <a name="prerequisites"></a>Обязательные условия 
 
 - См. дополнительные сведения о [фильтрах и динамических манифестах](filters-dynamic-manifest-overview.md).
 - [Создание учетной записи Служб мультимедиа](./create-account-howto.md). Обязательно запомните имя группы ресурсов и имя учетной записи Служб мультимедиа. 
@@ -116,6 +117,6 @@ StreamingLocator locator = await client.StreamingLocators.CreateAsync(
 |MPEG DASH|`https://amsv3account-usw22.streaming.media.azure.net/fecebb23-46f6-490d-8b70-203e86b0df58/bigbuckbunny.ism/manifest(format=mpd-time-csf,filter=myAssetFilter)`|
 |Smooth Streaming|`https://amsv3account-usw22.streaming.media.azure.net/fecebb23-46f6-490d-8b70-203e86b0df58/bigbuckbunny.ism/manifest(filter=myAssetFilter)`|
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Потоковая передача видео](stream-files-tutorial-with-api.md) 

@@ -7,12 +7,13 @@ ms.topic: how-to
 ms.date: 03/20/2020
 ms.author: justipat
 ms.reviewer: sngun
-ms.openlocfilehash: acb74d806f1ad361d3772438eec7fb788a843b02
-ms.sourcegitcommit: c293217e2d829b752771dab52b96529a5442a190
+ms.custom: devx-track-csharp
+ms.openlocfilehash: 25ec74f3638ce857e4472d73a51e45f24c4df5ec
+ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/15/2020
-ms.locfileid: "88243723"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88997733"
 ---
 # <a name="use-system-assigned-managed-identities-to-access-azure-cosmos-db-data"></a>Использование управляемых системой удостоверений для доступа к данным Azure Cosmos DB
 
@@ -90,10 +91,10 @@ az role assignment create --assignee $principalId --role "DocumentDB Account Con
 
 Теперь у нас есть приложение-функция, которое имеет назначенное системой управляемое удостоверение с ролью **участника учетной записи DocumentDB** в Azure Cosmos DB разрешений. Следующий код приложения-функции получит ключи Azure Cosmos DB, создать объект Космосклиент, получить температуру акуариум, а затем сохранить его в Azure Cosmos DB.
 
-В этом примере для доступа к ключам учетной записи Azure Cosmos DB используется [API списка ключей](/rest/api/cosmos-db-resource-provider/DatabaseAccounts/ListKeys) .
+В этом примере для доступа к ключам учетной записи Azure Cosmos DB используется [API списка ключей](/rest/api/cosmos-db-resource-provider/2020-04-01/databaseaccounts/listkeys) .
 
 > [!IMPORTANT] 
-> Если вы хотите [назначить роль читателя учетной записи Cosmos DB](#grant-access-to-your-azure-cosmos-account) , вам потребуется использовать [интерфейс API списка ключей только для чтения](/rest/api/cosmos-db-resource-provider/DatabaseAccounts/ListReadOnlyKeys). Это приведет к заполнению только тех ключей, которые доступны только для чтения.
+> Если вы хотите [назначить роль читателя учетной записи Cosmos DB](#grant-access-to-your-azure-cosmos-account) , вам потребуется использовать [интерфейс API списка ключей только для чтения](/rest/api/cosmos-db-resource-provider/2020-04-01/databaseaccounts/listreadonlykeys). Это приведет к заполнению только тех ключей, которые доступны только для чтения.
 
 API списка ключей возвращает `DatabaseAccountListKeysResult` объект. Этот тип не определен в библиотеках C#. В следующем коде показана реализация этого класса:  
 
@@ -213,7 +214,7 @@ namespace Monitor
 
 Теперь вы готовы к [развертыванию приложения функции](../azure-functions/functions-create-first-function-vs-code.md).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Проверка подлинности на основе сертификатов с помощью Azure Cosmos DB и Azure Active Directory](certificate-based-authentication.md)
 * [Защита ключей Azure Cosmos DB с помощью Azure Key Vault](access-secrets-from-keyvault.md)
