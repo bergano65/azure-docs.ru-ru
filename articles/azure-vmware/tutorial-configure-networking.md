@@ -48,7 +48,7 @@ ms.locfileid: "88750504"
 
 1. Выберите **Review + create** (Просмотреть и создать).
 
-   :::image type="content" source="./media/tutorial-configure-networking/create-virtual-network.png" alt-text="Выберите "Просмотр и создание"." border="true":::
+   :::image type="content" source="./media/tutorial-configure-networking/create-virtual-network.png" alt-text="Выберите Просмотр и создание." border="true":::
 
 1. Проверьте введенные сведения и щелкните **Создать**. Когда развертывание завершится, вы увидите новую виртуальную сеть в группе ресурсов.
 
@@ -76,7 +76,7 @@ ms.locfileid: "88750504"
    | **Диапазон адресов подсети шлюза** | Это значение подставляется, когда вы выбираете виртуальную сеть. Не изменяйте значение по умолчанию. |
    | **Общедоступный IP-адрес** | Выберите **Создать**. |
 
-   :::image type="content" source="./media/tutorial-configure-networking/create-virtual-network-gateway.png" alt-text="На вкладке "Основные сведения" на странице "Создание шлюза виртуальной сети" укажите значения в полях, а затем выберите "Просмотр и создание"." border="true":::
+   :::image type="content" source="./media/tutorial-configure-networking/create-virtual-network-gateway.png" alt-text="На вкладке Основные сведения на странице Создание шлюза виртуальной сети укажите значения в полях, а затем выберите Просмотр и создание." border="true":::
 
 1. Проверьте правильность введенных данных и нажмите кнопку **Создать**, чтобы запустить развертывание шлюза виртуальной сети. 
 1. Когда развертывание завершится, перейдите к следующему разделу, чтобы подключить канал ExpressRoute к шлюзу виртуальной сети, содержащей частное облако Решения Azure VMware.
@@ -89,7 +89,7 @@ ms.locfileid: "88750504"
 
 1. Скопируйте ключ авторизации. Если ключ авторизации отсутствует, его необходимо создать, выбрав **+ Запросить ключ авторизации**.
 
-   :::image type="content" source="./media/tutorial-configure-networking/request-auth-key.png" alt-text="Скопируйте ключ авторизации. Если ключ авторизации отсутствует, его необходимо создать, выбрав "+ Запросить ключ авторизации"" border="true":::.
+   :::image type="content" source="./media/tutorial-configure-networking/request-auth-key.png" alt-text="Скопируйте ключ авторизации. Если ключ авторизации отсутствует, его необходимо создать, выбрав + Запросить ключ авторизации" border="true":::
 
 1. Перейдите к шлюзу виртуальной сети, который вы создали на предыдущем шаге, и в разделе **Параметры** выберите **Подключения**. На странице **Подключения** выберите **+ Добавить**.
 
@@ -104,7 +104,7 @@ ms.locfileid: "88750504"
    | **Ключ авторизации**  | Скопируйте и вставьте сюда ключ авторизации, полученный на вкладке ExpressRoute для группы ресурсов. |
    | **URI одноранговой цепи**  | Скопируйте и вставьте сюда идентификатор ExpressRoute, полученный на вкладке ExpressRoute для группы ресурсов.  |
 
-   :::image type="content" source="./media/tutorial-configure-networking/add-connection.png" alt-text="На странице "Добавление подключения" укажите значения в полях и нажмите кнопку "OК"." border="true":::
+   :::image type="content" source="./media/tutorial-configure-networking/add-connection.png" alt-text="На странице Добавление подключения укажите значения в полях и нажмите кнопку OК." border="true":::
 
 В результате создается подключение между каналом ExpressRoute и виртуальной сетью.
 
@@ -116,7 +116,7 @@ ms.locfileid: "88750504"
 
 Перейдите к частному облаку Решения Azure VMware и в разделе **Управление** выберите **Идентификатор**. Здесь вы найдете нужную информацию.
 
-:::image type="content" source="./media/tutorial-configure-networking/locate-urls.png" alt-text="Перейдите к частному облаку Решения Azure VMware и в разделе "Управление" выберите "Идентификатор". Здесь вы найдете нужную информацию." border="true":::
+:::image type="content" source="./media/tutorial-configure-networking/locate-urls.png" alt-text="Перейдите к частному облаку Решения Azure VMware и в разделе Управление выберите Идентификатор. Здесь вы найдете нужную информацию." border="true":::
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
