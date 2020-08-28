@@ -329,6 +329,28 @@
       items:
         - name: Правила сбора данных
           href: platform/data-collection-rule-overview.md
+        - name: Источники данных в агенте
+          items:
+            - name: Обзор
+              href: platform/agent-data-sources.md
+            - name: События Windows
+              href: platform/data-sources-windows-events.md
+            - name: Настраиваемые данные JSON
+              href: platform/data-sources-json.md
+            - name: Сбор данных о производительности из CollectD
+              href: platform/data-sources-collectd.md
+            - name: Системный журнал
+              href: platform/data-sources-syslog.md
+            - name: Счетчики производительности
+              href: platform/data-sources-performance-counters.md
+            - name: Производительность приложений Linux
+              href: platform/data-sources-linux-applications.md
+            - name: Журналы IIS
+              href: platform/data-sources-iis-logs.md
+            - name: Пользовательские журналы
+              href: platform/data-sources-custom-logs.md
+            - name: Пользовательские поля
+              href: platform/custom-fields.md
         - name: Настраиваемые метрики
           items:
             - name: Настраиваемые метрики
@@ -361,6 +383,24 @@
             - name: Сбор данных
               displayname: 'data collection rule,Azure Monitor agent'
               href: platform/data-collection-rule-azure-monitor-agent.md
+        - name: Агент Log Analytics
+          items:
+            - name: Обзор
+              href: platform/log-analytics-agent.md
+            - name: Агенты Windows
+              href: platform/agent-windows.md
+            - name: Агенты Linux
+              href: platform/agent-linux.md
+            - name: Расширение виртуальной машины для Windows
+              href: ../virtual-machines/extensions/oms-windows.md?toc=/azure/azure-monitor/toc.json
+            - name: Расширение виртуальной машины для Linux
+              href: ../virtual-machines/extensions/oms-linux.md?toc=/azure/azure-monitor/toc.json
+            - name: Шлюз службы анализа журналов
+              href: platform/gateway.md
+            - name: Управление агентами
+              href: platform/agent-manage.md
+            - name: Работоспособность агентов
+              href: insights/solution-agenthealth.md
         - name: Расширение службы "Диагностика Azure"
           items:
             - name: Обзор
@@ -403,47 +443,7 @@
                   href: ../virtual-machines/extensions/diagnostics-linux.md?toc=/azure/azure-monitor/toc.json
                 - name: Сбор метрик с помощью Telegraf
                   href: platform/collect-custom-metrics-linux-telegraf.md
-        - name: Агент Log Analytics
-          items:
-            - name: Обзор
-              href: platform/log-analytics-agent.md
-            - name: Агенты Windows
-              href: platform/agent-windows.md
-            - name: Агенты Linux
-              href: platform/agent-linux.md
-            - name: Расширение виртуальной машины для Windows
-              href: ../virtual-machines/extensions/oms-windows.md?toc=/azure/azure-monitor/toc.json
-            - name: Расширение виртуальной машины для Linux
-              href: ../virtual-machines/extensions/oms-linux.md?toc=/azure/azure-monitor/toc.json
-            - name: Шлюз службы анализа журналов
-              href: platform/gateway.md
-            - name: Управление агентами
-              href: platform/agent-manage.md
-            - name: Работоспособность агентов
-              href: insights/solution-agenthealth.md
-            - name: Источники данных
-              items:
-                - name: Обзор
-                  href: platform/agent-data-sources.md
-                - name: События Windows
-                  href: platform/data-sources-windows-events.md
-                - name: Настраиваемые данные JSON
-                  href: platform/data-sources-json.md
-                - name: Сбор данных о производительности из CollectD
-                  href: platform/data-sources-collectd.md
-                - name: Системный журнал
-                  href: platform/data-sources-syslog.md
-                - name: Счетчики производительности
-                  href: platform/data-sources-performance-counters.md
-                - name: Производительность приложений Linux
-                  href: platform/data-sources-linux-applications.md
-                - name: Журналы IIS
-                  href: platform/data-sources-iis-logs.md
-                - name: Пользовательские журналы
-                  href: platform/data-sources-custom-logs.md
-                - name: Пользовательские поля
-                  href: platform/custom-fields.md
-        - name: Диагностика
+        - name: Устранение неполадок
           items:
             - name: Расширение службы анализа журналов для виртуальной машины
               displayname: 'troubleshoot, troubleshooting'
