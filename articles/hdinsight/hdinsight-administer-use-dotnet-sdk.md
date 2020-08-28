@@ -4,16 +4,16 @@ description: Узнайте, как осуществлять управлени�
 ms.reviewer: jasonh
 author: hrasheed-msft
 ms.service: hdinsight
-ms.custom: hdinsightactive
+ms.custom: hdinsightactive, devx-track-csharp
 ms.topic: conceptual
 ms.date: 05/14/2018
 ms.author: hrasheed
-ms.openlocfilehash: 36a77d49b507d3d0158d1b4b492d0141350de50f
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: dd0d7a3a05c108f0d7e95719356079633a0e2276
+ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "80240643"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89016093"
 ---
 # <a name="manage-apache-hadoop-clusters-in-hdinsight-by-using-net-sdk"></a>Управление кластерами Apache Hadoop в HDInsight с помощью пакета SDK для .NET
 
@@ -21,7 +21,7 @@ ms.locfileid: "80240643"
 
 Научитесь управлять кластерами HDInsight с помощью [пакета SDK для HDInsight.NET](https://docs.microsoft.com/dotnet/api/overview/azure/hdinsight).
 
-**Предварительные условия**
+**Предварительные требования**
 
 Перед началом работы с этой статьей необходимо иметь следующее:
 

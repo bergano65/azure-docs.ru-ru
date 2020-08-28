@@ -7,12 +7,13 @@ ms.author: vkukke
 ms.reviewer: spelluru
 ms.date: 07/08/2020
 ms.topic: article
-ms.openlocfilehash: ff49e9baf83d52ba7c40d0c0a9efbd72cee66cd9
-ms.sourcegitcommit: 1e6c13dc1917f85983772812a3c62c265150d1e7
+ms.custom: devx-track-csharp
+ms.openlocfilehash: 12bcb54f4bfdf17209324febeba380ff7789fc0f
+ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/09/2020
-ms.locfileid: "86171505"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88998991"
 ---
 # <a name="tutorial-publish-subscribe-to-events-in-cloud"></a>Учебник. Публикация, подписка на события в облаке
 
@@ -86,7 +87,7 @@ public static async Task<IActionResult> Run(HttpRequest req, ILogger log)
     curl -k -H "Content-Type: application/json" -X GET -g https://<your-edge-device-public-ip-here>:4438/topics/sampleTopic2?api-version=2019-01-01-preview
     ```
 
-   Пример результатов выполнения:
+   Образец вывода:
 
    ```json
         [
@@ -136,7 +137,7 @@ public static async Task<IActionResult> Run(HttpRequest req, ILogger log)
     curl -k -H "Content-Type: application/json" -X GET -g https://<your-edge-device-public-ip-here>:4438/topics/sampleTopic2/eventSubscriptions/sampleSubscription2?api-version=2019-01-01-preview
     ```
 
-    Пример результатов выполнения:
+    Образец вывода:
 
    ```json
         {

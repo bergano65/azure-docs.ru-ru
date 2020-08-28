@@ -9,12 +9,13 @@ services: iot-hub
 ms.devlang: csharp
 ms.topic: conceptual
 ms.date: 08/08/2017
-ms.openlocfilehash: 02e814a9da320d688fe57edf3a3fe0640b8f5a47
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.custom: devx-track-csharp
+ms.openlocfilehash: dcec1e40e9095c27abb1470e3739f65035a96834
+ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "75976737"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89007185"
 ---
 # <a name="create-an-iot-hub-using-azure-resource-manager-template-net"></a>Создание Центра Интернета вещей с помощью шаблона Azure Resource Manager (.NET)
 
@@ -23,7 +24,7 @@ ms.locfileid: "75976737"
 Диспетчер ресурсов Azure можно использовать для создания Центров Интернета вещей Azure программным способом и управления ими. В этом учебнике показано, как использовать шаблон Azure Resource Manager для создания Центра Интернета вещей из программы на C#.
 
 > [!NOTE]
-> В Azure предусмотрены две различные модели развертывания для создания ресурсов и работы с ними: [Azure Resource Manager и Classic](../azure-resource-manager/management/deployment-models.md).  В этой статье описывается использование модели развертывания на основе Azure Resource Manager.
+> В Azure предусмотрены две различные модели развертывания для создания ресурсов и работы с ними:  [Azure Resource Manager и Classic](../azure-resource-manager/management/deployment-models.md).  В этой статье описывается использование модели развертывания на основе Azure Resource Manager.
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
@@ -200,7 +201,7 @@ ms.locfileid: "75976737"
 > [!NOTE]
 > В этом примере приложения добавляется стандартный Центр Интернета вещей S1, который подлежит оплате. Центр Интернета вещей можно удалить с помощью [портал Azure][lnk-azure-portal] или с помощью командлета PowerShell **Remove-азресаурце** по завершении работы.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 После развертывания Центра Интернета вещей с использованием шаблона Azure Resource Manager и программы на C# вас могут заинтересовать следующие статьи:
 
 * Ознакомьтесь с возможностями [REST API поставщика ресурсов Центра Интернета вещей][lnk-rest-api].

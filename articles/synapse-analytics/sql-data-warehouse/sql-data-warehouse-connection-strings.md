@@ -10,13 +10,13 @@ ms.subservice: sql-dw
 ms.date: 04/17/2018
 ms.author: xiaoyul
 ms.reviewer: igorstan
-ms.custom: seo-lt-2019
-ms.openlocfilehash: 7c27c9e522964ca4f6374e83a9fb6b992f0fb2c1
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.custom: seo-lt-2019, devx-track-csharp
+ms.openlocfilehash: 637078cf67a2880e452ff02be63f3908bd601158
+ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85213522"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89016297"
 ---
 # <a name="connection-strings-for-synapse-sql-pool"></a>Строки подключения для пула SQL синапсе
 
@@ -51,6 +51,6 @@ jdbc:sqlserver://yourserver.database.windows.net:1433;database=yourdatabase;user
 > [!NOTE]
 > Попробуйте установить время ожидания подключения в 300 секунд, чтобы короткие периоды недоступности были допустимы.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Чтобы начать запрос к пулу SQL с помощью Visual Studio и других приложений, см. статью создание [запросов с помощью Visual Studio](sql-data-warehouse-query-visual-studio.md).
