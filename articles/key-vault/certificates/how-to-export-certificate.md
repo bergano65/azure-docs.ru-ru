@@ -10,12 +10,12 @@ ms.topic: how-to
 ms.custom: mvc, devx-track-azurecli
 ms.date: 08/11/2020
 ms.author: sebansal
-ms.openlocfilehash: ee05d331e953aa39855033d0987cb85cbfddb744
-ms.sourcegitcommit: ac7ae29773faaa6b1f7836868565517cd48561b2
+ms.openlocfilehash: 408b507ff23a2a20c5ed6d2fc32fd5dbf5dbab5d
+ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88827517"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88930899"
 ---
 # <a name="export-certificates-from-azure-key-vault"></a>Экспорт сертификатов из Azure Key Vault
 
@@ -36,10 +36,7 @@ Azure Key Vault позволяет легко подготавливать и р
 - **Доступный для экспорта:** политика, используемая для создания сертификата, указывает, что ключ доступен для экспорта.
 - **Недоступный для экспорта:** политика, используемая для создания сертификата, указывает, что ключ недоступен для экспорта. В таком случае закрытый ключ не является частью значения при его получении в виде секрета.
 
-Key Vault поддерживает два типа ключей:
-
-- **RSA**. Доступный для экспорта
-- **HSM RSA**. Недоступный для экспорта
+Поддерживаемые типы ключей: RSA, RSA-HSM, EC, EC-HSM и т. д. (см. [здесь](https://docs.microsoft.com/rest/api/keyvault/createcertificate/createcertificate#jsonwebkeytype)) Для экспорта доступны только RSA и EC. Ключи HSM нельзя экспортировать.
 
 Дополнительные сведения см. в разделе [О сертификатах Azure Key Vault](https://docs.microsoft.com/azure/key-vault/certificates/about-certificates#exportable-or-non-exportable-key).
 

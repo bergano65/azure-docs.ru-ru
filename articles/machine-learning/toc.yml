@@ -436,6 +436,8 @@
           href: how-to-create-your-first-pipeline.md
         - name: Перемещение данных в этапы конвейера машинного обучения и между ними (Python)
           href: how-to-move-data-in-out-of-pipelines.md
+        - name: Развертывание конвейеров ML (Python)
+          href: how-to-deploy-pipelines.md
         - name: Планирование конвейера (Python)
           href: how-to-schedule-pipelines.md
         - name: Активация конвейера

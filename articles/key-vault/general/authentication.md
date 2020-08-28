@@ -7,12 +7,12 @@ ms.date: 06/08/2020
 ms.service: key-vault
 ms.subservice: general
 ms.topic: how-to
-ms.openlocfilehash: 7645600a476a1c2294ddd4a24fe01e2ffe51d5ac
-ms.sourcegitcommit: 02ca0f340a44b7e18acca1351c8e81f3cca4a370
+ms.openlocfilehash: 6336a0d4d8aa9c781befed0470d9a190af5aa9eb
+ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/19/2020
-ms.locfileid: "88589989"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88930865"
 ---
 # <a name="authenticate-to-azure-key-vault"></a>Проверка подлинности в Azure Key Vault
 
@@ -112,14 +112,9 @@ Azure Key Vault — это решение для управления секр�
 1. Создание сертификата
 
     * Вариант 1. Создание сертификата с помощью [OpenSSL](https://www.openssl.org/) (только для тестирования, не используйте самозаверяющие сертификаты в рабочей среде)
-
-    ```console
-    openssl req -x509 -newkey rsa:4096 -keyout key.pem -out cert.pem -days 365
-    ```
-
     * Вариант 2. Создание сертификата в хранилище ключей. [Создайте сертификат в Azure Key Vault](https://docs.microsoft.com/azure/key-vault/certificates/certificate-scenarios#creating-your-first-key-vault-certificate).
 
-1. Скачайте сертификат в формате PEM.
+1. Скачивание сертификата в формате PEM/PFX
 1. Выполните вход на портал Azure и перейдите к разделу Azure Active Directory.
 1. Щелкните "Регистрация приложений".
 1. Выберите субъект-службу, созданный в части 1.

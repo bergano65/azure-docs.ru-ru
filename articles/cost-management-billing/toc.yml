@@ -172,6 +172,10 @@
               href: manage/pay-by-invoice.md
             - name: Создание дополнительных подписок
               href: manage/create-subscription.md
+            - name: Создание подписок программными средствами
+              href: manage/programmatically-create-subscription.md
+            - name: Предоставление доступа для создания подписок EA
+              href: manage/grant-access-to-create-subscription.md
             - name: Экспорт сведений о подписке
               href: manage/export-subscriptions.md
             - name: Изменение кредитной карты

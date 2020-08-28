@@ -6,6 +6,10 @@
       href: overview.md
     - name: Отличия от предыдущего выпуска
       href: overview-differences.md
+- name: Краткое руководство
+  items:
+    - name: Изучение примера сценария
+      href: quickstart-adt-explorer.md
 - name: Учебники
   items:
     - name: Написание кода для клиентского приложения
@@ -76,6 +80,8 @@
       items:
         - name: Прием данных телеметрии из Центра Интернета вещей
           href: how-to-ingest-iot-hub-data.md
+        - name: Интеграция с Logic Apps
+          href: how-to-integrate-logic-apps.md
     - name: Выходные данные подключения
       items:
         - name: Управление конечными точками и маршрутами
@@ -88,8 +94,6 @@
           href: how-to-integrate-maps.md
         - name: Интеграция со службой "Аналитика временных рядов Azure"
           href: how-to-integrate-time-series-insights.md
-        - name: Интеграция с Logic Apps
-          href: how-to-integrate-logic-apps.md
     - name: Диагностика
       items:
         - name: Просмотр метрик в Azure Monitor
