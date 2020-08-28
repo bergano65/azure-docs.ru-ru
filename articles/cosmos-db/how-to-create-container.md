@@ -6,13 +6,13 @@ ms.service: cosmos-db
 ms.topic: how-to
 ms.date: 07/29/2020
 ms.author: mjbrown
-ms.custom: devx-track-azurecli
-ms.openlocfilehash: 6e62e307b6c5f5de939505eae8850f0117782a69
-ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
+ms.custom: devx-track-azurecli, devx-track-csharp
+ms.openlocfilehash: 2362326bccd90af997aa9237ec5f14e39ae62c85
+ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/31/2020
-ms.locfileid: "87498367"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89020003"
 ---
 # <a name="create-an-azure-cosmos-container"></a>Создание контейнера Azure Cosmos
 
@@ -25,7 +25,7 @@ ms.locfileid: "87498367"
 
 ### <a name="sql-api"></a><a id="portal-sql"></a>API SQL
 
-1. Войдите на [портал Microsoft Azure](https://portal.azure.com/).
+1. Войдите на [портал Azure](https://portal.azure.com/).
 
 1. [Создайте новую учетную запись Azure Cosmos](create-sql-api-dotnet.md#create-account) или выберите существующую.
 
@@ -35,13 +35,13 @@ ms.locfileid: "87498367"
    * Введите идентификатор контейнера.
    * Введите ключ секции.
    * Укажите подготавливаемую пропускную способность (например, 1000 ЕЗ/с).
-   * Выберите **ОК**.
+   * Щелкните **ОК**.
 
     :::image type="content" source="./media/how-to-create-container/partitioned-collection-create-sql.png" alt-text="Снимок экрана панели обозреватель данных с выделенным новым контейнером":::
 
 ### <a name="azure-cosmos-db-api-for-mongodb"></a><a id="portal-mongodb"></a>API Azure Cosmos DB для MongoDB
 
-1. Войдите на [портал Microsoft Azure](https://portal.azure.com/).
+1. Войдите на [портал Azure](https://portal.azure.com/).
 
 1. [Создайте новую учетную запись Azure Cosmos](create-mongodb-dotnet.md#create-a-database-account)или выберите существующую.
 
@@ -51,13 +51,13 @@ ms.locfileid: "87498367"
    * Введите идентификатор контейнера.
    * Введите ключ сегмента.
    * Укажите подготавливаемую пропускную способность (например, 1000 ЕЗ/с).
-   * Выберите **ОК**.
+   * Щелкните **ОК**.
 
     :::image type="content" source="./media/how-to-create-container/partitioned-collection-create-mongodb.png" alt-text="Снимок экрана: Azure Cosmos DB API для MongoDB, диалоговое окно "Добавление контейнера"":::
 
 ### <a name="cassandra-api"></a><a id="portal-cassandra"></a>API Cassandra
 
-1. Войдите на [портал Microsoft Azure](https://portal.azure.com/).
+1. Войдите на [портал Azure](https://portal.azure.com/).
 
 1. [Создайте новую учетную запись Azure Cosmos](create-cassandra-dotnet.md#create-a-database-account)или выберите существующую.
 
@@ -67,7 +67,7 @@ ms.locfileid: "87498367"
    * Введите имя таблицы.
    * Укажите свойства и первичный ключ.
    * Укажите подготавливаемую пропускную способность (например, 1000 ЕЗ/с).
-   * Выберите **ОК**.
+   * Щелкните **ОК**.
 
     :::image type="content" source="./media/how-to-create-container/partitioned-collection-create-cassandra.png" alt-text="Снимок экрана API Cassandra, диалоговое окно добавления таблицы":::
 
@@ -76,7 +76,7 @@ ms.locfileid: "87498367"
 
 ### <a name="gremlin-api"></a><a id="portal-gremlin"></a>API Gremlin
 
-1. Войдите на [портал Microsoft Azure](https://portal.azure.com/).
+1. Войдите на [портал Azure](https://portal.azure.com/).
 
 1. [Создайте новую учетную запись Azure Cosmos](create-graph-dotnet.md#create-a-database-account)или выберите существующую.
 
@@ -87,13 +87,13 @@ ms.locfileid: "87498367"
    * Выберите емкость **Без ограничений**.
    * Введите ключ секции для вершин.
    * Укажите подготавливаемую пропускную способность (например, 1000 ЕЗ/с).
-   * Выберите **ОК**.
+   * Щелкните **ОК**.
 
     :::image type="content" source="./media/how-to-create-container/partitioned-collection-create-gremlin.png" alt-text="Снимок экрана API Gremlin, диалоговое окно добавления графа":::
 
 ### <a name="table-api"></a><a id="portal-table"></a>API таблиц
 
-1. Войдите на [портал Microsoft Azure](https://portal.azure.com/).
+1. Войдите на [портал Azure](https://portal.azure.com/).
 
 1. [Создайте новую учетную запись Azure Cosmos](create-table-dotnet.md#create-a-database-account)или выберите существующую.
 
@@ -101,7 +101,7 @@ ms.locfileid: "87498367"
 
    * Укажите идентификатор таблицы.
    * Укажите подготавливаемую пропускную способность (например, 1000 ЕЗ/с).
-   * Выберите **ОК**.
+   * Щелкните **ОК**.
 
     :::image type="content" source="./media/how-to-create-container/partitioned-collection-create-table.png" alt-text="Снимок экрана API таблиц, диалоговое окно добавления таблицы":::
 

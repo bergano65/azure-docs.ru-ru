@@ -3,12 +3,12 @@ title: Устранение неполадок агента Azure Backup
 description: Из этой статьи вы узнаете, как устранить неполадки установки и регистрации агента Azure Backup.
 ms.topic: troubleshooting
 ms.date: 07/15/2019
-ms.openlocfilehash: 64996737a18add8ca1bee25e32929f1d602f9018
-ms.sourcegitcommit: e2b36c60a53904ecf3b99b3f1d36be00fbde24fb
+ms.openlocfilehash: 86f9dfd8554e2560ea16a85c3551dba3f7dc01f1
+ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/24/2020
-ms.locfileid: "88763513"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89019629"
 ---
 # <a name="troubleshoot-the-microsoft-azure-recovery-services-mars-agent"></a>Устранение неполадок агента Службы восстановления Microsoft Azure (MARS)
 
@@ -222,7 +222,7 @@ Set-ExecutionPolicy Unrestricted
 
 Операция резервного копирования может завершиться ошибкой, если папка кэша (также называемая временной папкой) неправильно настроена, отсутствуют необходимые компоненты или доступ ограничен.
 
-### <a name="prerequisites"></a>Предварительные требования
+### <a name="prerequisites"></a>Обязательные условия
 
 Для выполнения операций агента MARS с целью успешности папки кэша необходимо соблюдать следующие требования.
 

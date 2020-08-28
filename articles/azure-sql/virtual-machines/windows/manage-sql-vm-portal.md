@@ -12,24 +12,24 @@ ms.workload: iaas-sql-server
 ms.date: 05/13/2019
 ms.author: mathoma
 ms.reviewer: jroth
-ms.openlocfilehash: 8def7c52f2b1005419a29d35ef122b48f34fdee4
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 04f502183b8240515ee136ce27d99bd4b5d6277c
+ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84669007"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89010177"
 ---
 # <a name="manage-sql-server-vms-in-azure-by-using-the-azure-portal"></a>Управление виртуальными машинами SQL Server в Azure с помощью портала Azure
 [!INCLUDE[appliesto-sqlvm](../../includes/appliesto-sqlvm.md)]
 
-В [портал Azure](https://portal.azure.com)ресурс **виртуальных машин SQL** — это независимая служба управления. В ней можно одновременно просматривать все виртуальные машины SQL Server и изменять параметры для SQL Server: 
+В [портал Azure](https://portal.azure.com)ресурс [**виртуальных машин SQL**](https://portal.azure.com/#blade/HubsExtension/BrowseResource/resourceType/Microsoft.SqlVirtualMachine%2FSqlVirtualMachines) — это независимая служба управления для управления SQL Server на виртуальных машинах Azure. В ней можно одновременно просматривать все виртуальные машины SQL Server и изменять параметры для SQL Server: 
 
 ![Ресурс "Виртуальные машины SQL"](./media/manage-sql-vm-portal/sql-vm-manage.png)
 
 
 ## <a name="remarks"></a>Remarks
 
-- Для просмотра виртуальных машин SQL Server и управления ими в Azure рекомендуем использовать ресурс **Виртуальные машины SQL**. Однако в настоящее время ресурс **Виртуальные машины SQL** не применяется для управления виртуальными машинами SQL Server, [поддержка которых прекращена](sql-server-2008-extend-end-of-support.md). Настроить параметры таких виртуальных машин можно на устаревшей вкладке [Конфигурация SQL Server](#access-the-sql-server-configuration-tab). 
+- Мы рекомендуем использовать ресурс " [**виртуальные машины SQL**](https://portal.azure.com/#blade/HubsExtension/BrowseResource/resourceType/Microsoft.SqlVirtualMachine%2FSqlVirtualMachines) " для просмотра SQL Server виртуальных машин в Azure и управления ими. Однако в настоящее время ресурс **Виртуальные машины SQL** не применяется для управления виртуальными машинами SQL Server, [поддержка которых прекращена](sql-server-2008-extend-end-of-support.md). Настроить параметры таких виртуальных машин можно на устаревшей вкладке [Конфигурация SQL Server](#access-the-sql-server-configuration-tab). 
 - Ресурс **Виртуальные машины SQL** доступен только для виртуальных машин SQL Server, [зарегистрированных в поставщике ресурсов для виртуальных машин SQL](sql-vm-resource-provider-register.md). 
 
 
@@ -51,7 +51,7 @@ ms.locfileid: "84669007"
    При выборе виртуальной машины SQL Server откроется ресурс **Виртуальные машины SQL**: 
 
 
-   ![Ресурс "Виртуальные машины SQL"](./media/manage-sql-vm-portal/sql-vm-resource.png)
+   ![Просмотр ресурса виртуальных машин SQL](./media/manage-sql-vm-portal/sql-vm-resource.png)
 
 > [!TIP]
 > Ресурс **Виртуальные машины SQL** предназначен для настройки параметров SQL Server. Чтобы открыть параметры, относящиеся к самой виртуальной машине, а не к SQL Server, выберите ее имя в поле **Виртуальная машина**. 

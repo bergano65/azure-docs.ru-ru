@@ -14,12 +14,13 @@ ms.devlang: dotnet
 ms.topic: article
 ms.date: 03/18/2019
 ms.author: juliako
-ms.openlocfilehash: ab3c40ee408498453bb137c63c440d980b0b7255
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.custom: devx-track-csharp
+ms.openlocfilehash: ddce8f348fa802dd5a8e37f52c69af02752339f4
+ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "74974518"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89019357"
 ---
 # <a name="configure-asset-delivery-policies-with-net-sdk"></a>Настройка политик доставки ресурсов-контейнеров с помощью пакета SDK для .NET
 [!INCLUDE [media-services-selector-asset-delivery-policy](../../../includes/media-services-selector-asset-delivery-policy.md)]
@@ -54,7 +55,7 @@ MPEG DASH
 
 {имя конечной точки потоковой передачи - имя учетной записи служб мультимедиа}.streaming.mediaservices.windows.net/{идентификатор указателя}/{имя файла}.ism/Manifest(format=mpd-time-csf)
 
-## <a name="considerations"></a>Особенности
+## <a name="considerations"></a>Рекомендации
 * Перед удалением AssetDeliveryPolicy следует удалить все указатели потоковой передачи, связанные с этим ресурсом. При необходимости позже можно будет создать новые указатели потоковой передачи, указав новый ресурс AssetDeliveryPolicy.
 * Если политика доставки ресурсов-контейнеров не задана, создать указатель потоковой передачи в зашифрованном ресурсе-контейнере хранилища.  Если ресурс-контейнер хранилища не зашифрован, система позволит создать указатель и выполнить потоковую передачу ресурса-контейнера в незашифрованном виде без политики доставки ресурса-контейнера.
 * С одним ресурсом-контейнером можно связать несколько политик доставки ресурсов-контейнеров, но можно указать только один способ обработки заданного протокола доставки ресурса-контейнера (AssetDeliveryProtocol).  То есть при попытке связать две политики доставки, определяющие протокол AssetDeliveryProtocol.SmoothStreaming, появится ошибка, поскольку система не знает, какую из них необходимо применить, когда клиент выполняет запрос Smooth Streaming.

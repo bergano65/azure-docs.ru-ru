@@ -14,12 +14,13 @@ ms.devlang: na
 ms.topic: article
 ms.date: 03/18/2019
 ms.author: juliako
-ms.openlocfilehash: 21fcc6ae09718ffbb22e1d438926586dd3cde71d
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.custom: devx-track-csharp
+ms.openlocfilehash: f22d2022ae095ea7178859b1c036f78e39c10152
+ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "61465666"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89019459"
 ---
 # <a name="how-to-deliver-an-asset-by-download"></a>Пошаговое руководство. Доставка ресурса по скачиванию  
 В этой статье рассматриваются возможности доставки файлов мультимедиа, переданных в Службы мультимедиа. Для доставки контента служб мультимедиа можно использовать различные сценарии. После кодирования скачайте созданные файлы мультимедиа или получите к ним доступ с помощью указателя потоковой передачи. Для повышения производительности и масштабируемости можно также доставлять контент с помощью сети доставки содержимого (CDN).

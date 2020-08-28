@@ -6,13 +6,13 @@ ms.service: cosmos-db
 ms.topic: how-to
 ms.date: 06/10/2020
 ms.author: anfeldma
-ms.custom: devx-track-javascript
-ms.openlocfilehash: 48f728e697e3ca92eee0469c8368e966479fe7fb
-ms.sourcegitcommit: e71da24cc108efc2c194007f976f74dd596ab013
+ms.custom: devx-track-javascript, devx-track-csharp
+ms.openlocfilehash: 85c99892a225de933da337e748ebde3370b6f7a3
+ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87422238"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89019612"
 ---
 # <a name="manage-consistency-levels-in-azure-cosmos-db"></a>Управление уровнями согласованности в Azure Cosmos DB
 
@@ -109,7 +109,7 @@ var response = await client.GetContainer(databaseName, containerName)
 
 --- 
 
-### <a name="java-v2-sdks"></a><a id="override-default-consistency-javav2"></a>Пакеты SDK для Java v2
+### <a name="java-v2-sdks"></a><a id="override-default-consistency-javav2"></a> Пакеты SDK для Java v2
 
 # <a name="async"></a>[Асинхронный режим](#tab/api-async)
 
@@ -279,7 +279,7 @@ item = client.ReadItem(doc_link, options)
 
 ## <a name="monitor-probabilistically-bounded-staleness-pbs-metric"></a>Мониторинг метрики вероятностного ограниченного устаревания (PBS)
 
-Насколько итоговая согласованность является итоговой? В среднем мы можем предложить границы устаревания с учетом журнала версий и времени. Метрика [**Probabilistically Bounded Staleness (PBS)**](https://pbs.cs.berkeley.edu/) (Вероятностное ограниченное устаревание) пытается количественно оценить вероятность устаревания и отображает полученные результаты. Чтобы просмотреть метрику PBS, перейдите к учетной записи Azure Cosmos DB на портале Azure. Откройте панель **метрики** и перейдите на вкладку **согласованность** . Просмотрите граф с именем **вероятность строго согласованных операций чтения на основе рабочей нагрузки (см. PBS)**.
+Насколько итоговая согласованность является итоговой? В среднем мы можем предложить границы устаревания с учетом журнала версий и времени. Метрика [**Probabilistically Bounded Staleness (PBS)**](https://pbs.cs.berkeley.edu/) (Вероятностное ограниченное устаревание) пытается количественно оценить вероятность устаревания и отображает полученные результаты. Чтобы просмотреть метрику PBS, перейдите к учетной записи Azure Cosmos DB на портале Azure. Откройте панель **метрики** и перейдите на вкладку **согласованность** . Взгляните на граф с именем **вероятность строго стабильного чтения на основе рабочей нагрузки (см. PBS)**.
 
 :::image type="content" source="./media/how-to-manage-consistency/pbs-metric.png" alt-text="График PBS на портале Azure":::
 

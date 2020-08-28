@@ -14,12 +14,13 @@ ms.devlang: dotnet
 ms.topic: article
 ms.date: 03/18/2019
 ms.author: juliako
-ms.openlocfilehash: 533990ef0ea88be7f1f06021d7aa398e89f6390b
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.custom: devx-track-csharp
+ms.openlocfilehash: f4f69904954286f15d2fda13ddd26ee64c81776f
+ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87060330"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89019391"
 ---
 # <a name="use-azure-queue-storage-to-monitor-media-services-job-notifications-with-net"></a>Использование хранилища очередей Azure для наблюдения за уведомлениями о заданиях служб мультимедиа с использованием .NET 
 
@@ -64,7 +65,7 @@ ms.locfileid: "87060330"
 > [!NOTE]
 > Рекомендуемый способ наблюдения за состоянием задания — ожидание передачи уведомлений, как показано в следующем примере:
 >
-> Кроме того, можно проверить состояние задания с помощью свойства **IJob.State** .  Сообщение уведомления о завершении задания может быть получено, прежде чем в **IJob** будет установлено состояние **завершено**. Свойство **IJob. State** отражает точное состояние с небольшой задержкой.
+> Кроме того, можно проверить состояние задания с помощью свойства **IJob.State** .  Сообщение уведомления о завершении задания может быть получено, прежде чем в **IJob** будет установлено состояние **завершено**. Свойство **IJob. State**  отражает точное состояние с небольшой задержкой.
 >
 >
 
@@ -374,7 +375,7 @@ job with Id: nb:jid:UUID:526291de-f166-be47-b62a-11ffe6d4be54 reached expected
 State: Finished
 ```
 
-## <a name="next-step"></a>Дальнейшие действия
+## <a name="next-step"></a>Следующий шаг
 Просмотрите схемы обучения работе со службами мультимедиа.
 
 [!INCLUDE [media-services-learning-paths-include](../../../includes/media-services-learning-paths-include.md)]

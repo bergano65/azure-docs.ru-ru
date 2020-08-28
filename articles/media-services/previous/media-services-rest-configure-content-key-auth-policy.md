@@ -14,12 +14,13 @@ ms.devlang: na
 ms.topic: article
 ms.date: 03/20/2019
 ms.author: juliako
-ms.openlocfilehash: 71e336ffac557c33aa803cf0e9c123c3bae9427d
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.custom: devx-track-csharp
+ms.openlocfilehash: 43a63a47b5973820bd0cc5376ec0f0e9e54a245d
+ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87000607"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89010213"
 ---
 # <a name="dynamic-encryption-configure-a-content-key-authorization-policy"></a>Динамическое шифрование: настройка политики для авторизации ключа содержимого  
 [!INCLUDE [media-services-selector-content-key-auth-policy](../../../includes/media-services-selector-content-key-auth-policy.md)]
@@ -35,7 +36,7 @@ ms.locfileid: "87000607"
 
 Службы мультимедиа не предоставляют службу маркеров безопасности. Можно создать настраиваемую службу STS или использовать для выдачи маркеров Azure Active Directory (Azure AD). Чтобы создать маркер, подписанный указанным ключом, и получить утверждения, указанные в конфигурации ограничения по маркерам, должна быть настроена служба маркеров безопасности (как описано в этой статье). Если маркер является допустимым и утверждения маркера соответствуют утверждениям, настроенным для ключа содержимого, служба доставки ключей для служб мультимедиа возвращает клиенту ключ шифрования.
 
-См. сведения в следующих статьях:
+Дополнительные сведения см. в следующих статьях:
 - [JWT token Authentication in Azure Media Services and Dynamic Encryption](http://www.gtrifonov.com/2015/01/03/jwt-token-authentication-in-azure-media-services-and-dynamic-encryption/) (Аутентификация токена JWT в службах мультимедиа Azure и динамическое шифрование)
 - [Integrate Azure Media Services OWIN MVC based app with Azure Active Directory and restrict content key delivery based on JWT claims](http://www.gtrifonov.com/2015/01/24/mvc-owin-azure-media-services-ad-integration/) (Интеграция приложения на основе OWIN MVC служб мультимедиа Azure с Azure Active Directory и ограничение доставки ключей содержимого на основе утверждений JWT)
 

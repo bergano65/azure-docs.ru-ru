@@ -6,12 +6,12 @@ ms.service: cache
 ms.topic: conceptual
 ms.date: 07/13/2017
 ms.author: yegu
-ms.openlocfilehash: c51e67dcc3536a3083179451743b1c97cf618dae
-ms.sourcegitcommit: 98854e3bd1ab04ce42816cae1892ed0caeedf461
+ms.openlocfilehash: 327505dfbaf5f6f35b065f4f3941053c5114aa33
+ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "88004873"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89019221"
 ---
 # <a name="manage-azure-cache-for-redis-with-azure-powershell"></a>Управление кэшем Azure для Redis с использованием Azure PowerShell
 > [!div class="op_single_selector"]
@@ -57,7 +57,7 @@ ms.locfileid: "88004873"
 
 Чтобы использовать Windows PowerShell с диспетчером ресурсов Azure, необходимо следующее:
 
-* Windows PowerShell версии 3.0 или 4.0. Чтобы найти версию Windows PowerShell, введите `$PSVersionTable` и убедитесь, что для `PSVersion` указано значение 3.0 или 4.0. Сведения об установке совместимой версии см. в разделе [Windows Management Framework 3.0](https://www.microsoft.com/download/details.aspx?id=34595) или [Windows Management Framework 4.0](https://www.microsoft.com/download/details.aspx?id=40855).
+* Windows PowerShell версии 3.0 или 4.0. Чтобы найти версию Windows PowerShell, введите `$PSVersionTable` и убедитесь, что для `PSVersion` указано значение 3.0 или 4.0. Сведения об установке совместимой версии см. в статье [Windows Management Framework 3,0](https://www.microsoft.com/download/details.aspx?id=34595).
 
 Чтобы получить подробную справку для любого командлета, встречающегося в этом учебнике, используйте командлет Get-Help.
 

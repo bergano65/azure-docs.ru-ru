@@ -8,12 +8,13 @@ ms.author: heidist
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 11/04/2019
-ms.openlocfilehash: dd00c357a422a407a3367e45531e3443577f9bec
-ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
+ms.custom: devx-track-csharp
+ms.openlocfilehash: 05be5295ae5f8c73c916a21bba7dbc98ab0c5e87
+ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88923251"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89002799"
 ---
 # <a name="how-to-implement-faceted-navigation-in-azure-cognitive-search"></a>Как реализовать фасетную навигацию в службе Когнитивный поиск Azure
 

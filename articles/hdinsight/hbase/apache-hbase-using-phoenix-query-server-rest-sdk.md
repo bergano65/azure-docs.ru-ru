@@ -6,14 +6,14 @@ ms.author: ashishth
 ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: how-to
-ms.custom: hdinsightactive
+ms.custom: hdinsightactive, devx-track-csharp
 ms.date: 01/01/2020
-ms.openlocfilehash: 93136286dc14a5c7c69fe8c17829eddabddbfacf
-ms.sourcegitcommit: 124f7f699b6a43314e63af0101cd788db995d1cb
+ms.openlocfilehash: 4ad6d16e4c6d91b44061d99ffa1c397fb0e0ec28
+ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86080063"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89019646"
 ---
 # <a name="apache-phoenix-query-server-rest-sdk"></a>Пакет REST SDK для Apache Phoenix Query Server
 
@@ -539,7 +539,7 @@ MH: 6
 FM: 5
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Apache Phoenix в HDInsight](../hdinsight-phoenix-in-hdinsight.md)
 * [Использование пакета REST SDK для Apache HBase](apache-hbase-rest-sdk.md)

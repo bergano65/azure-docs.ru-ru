@@ -14,13 +14,13 @@ ms.devlang: na
 ms.topic: article
 ms.date: 03/11/2020
 ms.author: juliako
-ms.custom: devx-track-azurecli
-ms.openlocfilehash: 6c88a1f36d4e3405b44f36864262b2ab97517933
-ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
+ms.custom: devx-track-azurecli, devx-track-csharp
+ms.openlocfilehash: d8b5f79d9c9050eeb7957ddcf28021e3c8b3dd94
+ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/31/2020
-ms.locfileid: "87500561"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89010653"
 ---
 # <a name="manage-streaming-endpoints-with--media-services-v3"></a>Управление конечными точками потоковой передачи с помощью служб мультимедиа v3
 
@@ -31,7 +31,7 @@ ms.locfileid: "87500561"
 > [!NOTE]
 > Плата взимается, только когда конечная точка потоковой передачи используется.
     
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Обязательные условия
 
 Обзор. 
 
@@ -45,7 +45,7 @@ ms.locfileid: "87500561"
 POST https://management.azure.com/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/mediaresources/providers/Microsoft.Media/mediaservices/slitestmedia10/streamingEndpoints/myStreamingEndpoint1/start?api-version=2018-07-01
 ```
 
-Для получения дополнительной информации см. 
+Дополнительные сведения см. в разделе: 
 
 * Справочная документация по [запуску StreamingEndpoint](/rest/api/media/streamingendpoints/start) .
 * Запуск конечной точки потоковой передачи является асинхронной операцией. 
@@ -55,9 +55,9 @@ POST https://management.azure.com/subscriptions/00000000-0000-0000-0000-00000000
 
 ## <a name="use-the-azure-portal"></a>Использование портала Azure 
  
-1. Войдите на [портал Microsoft Azure](https://portal.azure.com/).
+1. Войдите на [портал Azure](https://portal.azure.com/).
 1. Перейдите к учетной записи служб мультимедиа Azure.
-1. В левой области выберите **конечные точки потоковой передачи**.
+1. В левой области выберите  **конечные точки потоковой передачи**.
 1. Выберите конечную точку потоковой передачи, которую необходимо запустить, и нажмите кнопку **запустить**.
 
 ## <a name="use-the-azure-cli"></a>Использование Azure CLI

@@ -13,12 +13,13 @@ ms.devlang: dotnet
 ms.topic: article
 ms.date: 03/18/2019
 ms.author: juliako
-ms.openlocfilehash: 8e150ec037bab0010c5505c880c4cac456118b35
-ms.sourcegitcommit: bcb962e74ee5302d0b9242b1ee006f769a94cfb8
+ms.custom: devx-track-csharp
+ms.openlocfilehash: 7cdacabcc97d37c144b498ea9a05ccc9d6bffc04
+ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "86058016"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89019867"
 ---
 # <a name="redact-faces-with-azure-media-analytics"></a>Скрытие лиц с помощью аналитики мультимедиа Azure 
 ## <a name="overview"></a>Обзор
@@ -159,9 +160,9 @@ ms.locfileid: "86058016"
 
 ![Высокий](./media/media-services-face-redaction/blur3.png)
 
-#### <a name="box"></a>Box
+#### <a name="box"></a>Поле
 
-![Box](./media/media-services-face-redaction/blur4.png)
+![Поле](./media/media-services-face-redaction/blur4.png)
 
 #### <a name="black"></a>Черный
 
@@ -365,11 +366,11 @@ namespace FaceRedaction
 }
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 [!INCLUDE [media-services-learning-paths-include](../../../includes/media-services-learning-paths-include.md)]
 
-## <a name="provide-feedback"></a>Предоставление отзыва
+## <a name="provide-feedback"></a>Отзывы
 [!INCLUDE [media-services-user-voice-include](../../../includes/media-services-user-voice-include.md)]
 
 ## <a name="related-links"></a>Связанные ссылки

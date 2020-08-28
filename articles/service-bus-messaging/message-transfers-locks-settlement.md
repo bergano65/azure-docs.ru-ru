@@ -3,12 +3,13 @@ title: Передача, блокировки и сопоставление со
 description: В этой статье представлен обзор операций передачи, блокировки и сопоставления сообщений служебной шины Azure.
 ms.topic: article
 ms.date: 06/23/2020
-ms.openlocfilehash: 22be139fccdeecee846c204a8035804fb897ae5a
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.custom: devx-track-csharp
+ms.openlocfilehash: fd71edd12e478bcd5f14815c105c14482cf7e2bd
+ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85341150"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89020037"
 ---
 # <a name="message-transfers-locks-and-settlement"></a>Передача, блокировка и согласование сообщений
 
@@ -124,7 +125,7 @@ for (int i = 0; i < 100; i++)
 >
 > Когда блокировка будет потеряна, служебная шина Azure создаст Локклостексцептион, который будет отображаться в коде клиентского приложения. В этом случае клиентская логика повтора по умолчанию должна запускаться автоматически и повторить операцию.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения об обмене сообщениями через служебную шину см. в следующих статьях:
 

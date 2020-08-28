@@ -7,12 +7,12 @@ author: musa-57
 ms.manager: abhemraj
 ms.author: hamusa
 ms.date: 01/02/2020
-ms.openlocfilehash: e9b9e0b27e46c95ca4c2bc3a5c547259bada5fda
-ms.sourcegitcommit: 56cbd6d97cb52e61ceb6d3894abe1977713354d9
+ms.openlocfilehash: a6a185c61c32636dd0189bc5835f850348b196cd
+ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/20/2020
-ms.locfileid: "88685414"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89020360"
 ---
 # <a name="troubleshoot-assessmentdependency-visualization"></a>Устранение неполадок с визуализацией оценок и зависимостей
 
@@ -126,7 +126,7 @@ ms.locfileid: "88685414"
 Средство оценки серверов непрерывно ведет журнал производительности локальных компьютеров. Эти данные используются для предоставления рекомендаций по выбору номера SKU виртуальной машины и диска в Azure. [Узнайте, как](concepts-assessment-calculation.md#calculate-sizing-performance-based) собираются данные на основе производительности.
 
 ## <a name="why-is-my-assessment-showing-a-warning-that-it-was-created-with-an-invalid-combination-of-reserved-instances-vm-uptime-and-discount-"></a>Почему моя оценка отображает предупреждение о том, что она была создана с недопустимым сочетанием зарезервированных экземпляров, времени доступности и скидки виртуальной машины (%)?
-При выборе "зарезервированные экземпляры" скидка (%) и свойства "время работы виртуальной машины" неприменимы. При создании оценки с недопустимым сочетанием этих свойств кнопки "Изменить" и "повторное вычисление" отключаются. Создайте новую оценку. [Подробнее.](https://go.microsoft.com/fwlink/?linkid=2131554)
+При выборе "зарезервированные экземпляры" скидка (%) и свойства "время работы виртуальной машины" неприменимы. При создании оценки с недопустимым сочетанием этих свойств кнопки "Изменить" и "повторное вычисление" отключаются. Создайте новую оценку. [Подробнее](https://go.microsoft.com/fwlink/?linkid=2131554).
 
 ## <a name="i-do-not-see-performance-data-for-some-network-adapters-on-my-physical-servers"></a>Я не вижу данные производительности для некоторых сетевых адаптеров на моих физических серверах
 
@@ -164,7 +164,7 @@ ms.locfileid: "88685414"
 
 ## <a name="supported-operating-systems"></a>Поддерживаемые операционные системы
 
-- **MMS Agent**: Ознакомьтесь с поддерживаемыми операционными системами [Windows](../azure-monitor/platform/log-analytics-agent.md#supported-windows-operating-systems)и [Linux](../azure-monitor/platform/log-analytics-agent.md#supported-linux-operating-systems) .
+- **MMS Agent**: Ознакомьтесь с поддерживаемыми операционными системами [Windows](../azure-monitor/platform/agents-overview.md#supported-operating-systems)и [Linux](../azure-monitor/platform/agents-overview.md#supported-operating-systems) .
 - **Агент зависимостей**. Поддерживаемые операционные системы [Windows и Linux](../azure-monitor/insights/vminsights-enable-overview.md#supported-operating-systems) .
 
 ## <a name="visualize-dependencies-for--hour"></a>Визуализировать зависимости для > часа

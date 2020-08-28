@@ -3,12 +3,13 @@ title: Отправка и получение событий из концент
 description: В этой статье представлено пошаговое руководство по созданию приложения .NET Core, которое отправляет и получает события в концентраторы событий Azure, используя старый пакет Microsoft. Azure. EventHubs.
 ms.topic: conceptual
 ms.date: 06/23/2020
-ms.openlocfilehash: 9aa971b3415894fc79df6faf1075184b413fefb6
-ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
+ms.custom: devx-track-csharp
+ms.openlocfilehash: d7d33ebcabb728cf2fbf43b393de5eec6cb58af3
+ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88942237"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89010704"
 ---
 # <a name="send-events-to-or-receive-events-from-azure-event-hubs-using-net-core-microsoftazureeventhubs"></a>Отправка событий или получение событий из концентраторов событий Azure с помощью .NET Core (Microsoft. Azure. EventHubs)
 В этом кратком руководстве показано, как отправлять события и получать события из концентратора событий с помощью библиотеки **Microsoft. Azure. EventHubs** .NET Core.

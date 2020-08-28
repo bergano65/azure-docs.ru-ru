@@ -3,12 +3,13 @@ title: Проверка подлинности клиентов Публикац
 description: В этой статье описываются различные способы проверки подлинности клиентов при публикации событий в пользовательских разделах сетки событий.
 ms.topic: conceptual
 ms.date: 07/07/2020
-ms.openlocfilehash: 8b08c46fdeadccfad0471ddfa4f9ba2762a951a0
-ms.sourcegitcommit: 2ff0d073607bc746ffc638a84bb026d1705e543e
+ms.custom: devx-track-csharp
+ms.openlocfilehash: e934ce0d8f5e31dc8dd7592a2e553cd278af2b10
+ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87837403"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89019119"
 ---
 # <a name="authenticate-publishing-clients-azure-event-grid"></a>Проверка подлинности клиентов публикации (сетка событий Azure)
 Эта статья содержит сведения о проверке подлинности клиентов, публикующих события в разделах или доменах службы "Сетка событий Azure" с помощью **ключа доступа** или токена **подписанного URL-адрес (SAS)** . Рекомендуется использовать маркер SAS, но ключ проверки подлинности обеспечивает простое программирование и совместим с множеством существующих издателей веб-перехватчиков.  

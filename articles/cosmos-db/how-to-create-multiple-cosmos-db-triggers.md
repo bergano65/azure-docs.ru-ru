@@ -6,12 +6,13 @@ ms.service: cosmos-db
 ms.topic: how-to
 ms.date: 07/17/2019
 ms.author: maquaran
-ms.openlocfilehash: 695513bb572f5931ee1f0fa54a330cfa0574fc21
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.custom: devx-track-csharp
+ms.openlocfilehash: dce10fb85ac181bb06aef0058768bef659462a5a
+ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85261602"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89019986"
 ---
 # <a name="create-multiple-azure-functions-triggers-for-cosmos-db"></a>Создание несколько активаций функций Azure для Cosmos DB
 
@@ -106,7 +107,7 @@ public static void MaterializedViews([CosmosDBTrigger(
 > [!NOTE]
 > Всегда отслеживайте использование единиц запросов, подготовленных на общем контейнере аренды. Каждый триггер, использующий этот контейнер, увеличит среднюю нагрузку на пропускную способность, поэтому при увеличении числа использующих ее функций Azure может потребоваться увеличить подготовленную пропускную способность.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * См. полную конфигурацию [активации функций Azure для Cosmos DB](../azure-functions/functions-bindings-cosmosdb-v2-trigger.md#configuration).
 * Ознакомьтесь с расширенным [списком примеров](../azure-functions/functions-bindings-cosmosdb-v2-trigger.md) для всех языков.

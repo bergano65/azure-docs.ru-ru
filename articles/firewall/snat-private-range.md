@@ -5,14 +5,14 @@ services: firewall
 author: vhorne
 ms.service: firewall
 ms.topic: how-to
-ms.date: 06/09/2020
+ms.date: 08/27/2020
 ms.author: victorh
-ms.openlocfilehash: be2bf0f9590a23f9def44a1800338c80f69a782c
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 25c2096de4c3643a4e6a3ba7bdad1e69ae93a179
+ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85610529"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89019085"
 ---
 # <a name="azure-firewall-snat-private-ip-address-ranges"></a>Диапазоны частных IP-адресов SNAT в брандмауэре Azure
 
@@ -23,6 +23,9 @@ ms.locfileid: "85610529"
 Если для частных сетей в организации используются общедоступные IP-адреса, брандмауэр Azure использует SNAT трафика для одного из своих частных IP-адресов AzureFirewallSubnet. Однако вы можете настроить брандмауэр Azure так, чтобы он **не** был ограничен диапазоном общедоступных IP-адресов.
 
 Чтобы настроить в брандмауэре Azure параметр "никогда не использовать SNAT" независимо от IP-адреса назначения, используйте **0.0.0.0/0** в качестве диапазона частных IP-адресов. В этой конфигурации брандмауэр Azure не может маршрутизировать трафик напрямую в Интернет. Чтобы настроить в брандмауэре значение Always SNAT независимо от адреса назначения, используйте адрес **255.255.255.255/32** в качестве диапазона частных IP-адресов.
+
+> [!IMPORTANT]
+> Если вы хотите указать собственные диапазоны частных IP-адресов и сохранить диапазоны адресов IANA RFC 1918 по умолчанию, убедитесь, что пользовательский список по-прежнему содержит диапазон IANA RFC 1918. 
 
 ## <a name="configure-snat-private-ip-address-ranges---azure-powershell"></a>Настройка диапазонов частных IP-адресов SNAT — Azure PowerShell
 
@@ -73,6 +76,6 @@ Set-AzFirewall -AzureFirewall $azfw
 1. По умолчанию **ианаприватеранжес** настроен.
 2. Измените диапазоны частных IP-адресов для своей среды и нажмите кнопку **сохранить**.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Дополнительные сведения о [принудительном туннелировании в брандмауэре Azure](forced-tunneling.md).

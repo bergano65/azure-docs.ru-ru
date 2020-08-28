@@ -6,13 +6,13 @@ ms.service: cosmos-db
 ms.topic: how-to
 ms.date: 12/02/2019
 ms.author: thweiss
-ms.custom: devx-track-python, devx-track-javascript
-ms.openlocfilehash: 8a87f9c9b2db2c6118134d76cefc7c2813f5a864
-ms.sourcegitcommit: dea88d5e28bd4bbd55f5303d7d58785fad5a341d
+ms.custom: devx-track-python, devx-track-javascript, devx-track-csharp
+ms.openlocfilehash: 413664b790423fb5eafb58e2baaee46e10c6a929
+ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87876671"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89019969"
 ---
 # <a name="define-unique-keys-for-an-azure-cosmos-container"></a>Определение уникальных ключей для контейнера Azure Cosmos
 
@@ -149,7 +149,7 @@ client.CreateContainer('dbs/' + config['DATABASE'], {
 })
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Дополнительные сведения о [секционировании](partition-data.md)
 - [Как работает индексация](index-overview.md)

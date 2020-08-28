@@ -8,12 +8,13 @@ ms.topic: conceptual
 ms.service: iot-dps
 services: iot-dps
 manager: philmea
-ms.openlocfilehash: c0a8680dc5c06bd1527b2cca732b58f484101a96
-ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
+ms.custom: devx-track-csharp
+ms.openlocfilehash: ba4f67f924455b911d76426231cc71b661faf4a0
+ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87286501"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89020343"
 ---
 # <a name="symmetric-key-attestation"></a>Аттестация симметричных ключей
 
@@ -110,7 +111,7 @@ String deviceKey = Utils.ComputeDerivedSymmetricKey(Convert.FromBase64String(mas
 
 Если ключи устройств не установлены на этапе производства, для безопасного хранения удостоверения устройства необходимо использовать [аппаратный модуль безопасности (HSM)](concepts-security.md#hardware-security-module).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Изучив все сведения об аттестации симметричных ключей, вы можете приступить к работе со следующими статьями:
 

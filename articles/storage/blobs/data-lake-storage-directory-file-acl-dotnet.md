@@ -8,12 +8,13 @@ ms.author: normesta
 ms.topic: how-to
 ms.subservice: data-lake-storage-gen2
 ms.reviewer: prishet
-ms.openlocfilehash: 79d9adb4527be27ca5a502622b343fb430602020
-ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
+ms.custom: devx-track-csharp
+ms.openlocfilehash: 6533809be614210a88bfa605e24209d094bb679d
+ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88923914"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89019306"
 ---
 # <a name="use-net-to-manage-directories-files-and-acls-in-azure-data-lake-storage-gen2"></a>Использование .NET для управления каталогами, файлами и списками ACL в Azure Data Lake Storage 2-го поколения
 
@@ -21,7 +22,7 @@ ms.locfileid: "88923914"
 
 [Пакет (NuGet)](https://www.nuget.org/packages/Azure.Storage.Files.DataLake)  |  [Примеры](https://github.com/Azure/azure-sdk-for-net/tree/master/sdk/storage/Azure.Storage.Files.DataLake)  |  [Справочник](https://docs.microsoft.com/dotnet/api/azure.storage.files.datalake)  |  по API Сопоставление Gen1 с [Gen2](https://github.com/Azure/azure-sdk-for-net/tree/master/sdk/storage/Azure.Storage.Files.DataLake/GEN1_GEN2_MAPPING.md)  |  [Отправить отзыв](https://github.com/Azure/azure-sdk-for-net/issues)
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Обязательные условия
 
 > [!div class="checklist"]
 > * Подписка Azure. См. страницу [бесплатной пробной версии Azure](https://azure.microsoft.com/pricing/free-trial/).
