@@ -37,11 +37,11 @@ ExpressRoute Global Reach подключает локальную среду к 
 
 1. В частном облаке в разделе **Обзор**в разделе "Управление" выберите **Подключение > ExpressRoute > Request an authorization key** (Запрос ключа авторизации).
 
-   :::image type="content" source="media/expressroute-global-reach/start-request-auth-key.png" alt-text="Выберите "Подключение" > "ExpressRoute" > "Запросить ключ авторизации" для отправки нового запроса.":::
+   :::image type="content" source="media/expressroute-global-reach/start-request-auth-key.png" alt-text="Выберите Подключение > ExpressRoute > Запросить ключ авторизации для отправки нового запроса.":::
 
 2. Введите имя ключа авторизации и нажмите **Создать**. 
 
-   :::image type="content" source="media/expressroute-global-reach/create-global-reach-auth-key.png" alt-text="Нажатие кнопки "Создать" для создания нового ключа авторизации":::
+   :::image type="content" source="media/expressroute-global-reach/create-global-reach-auth-key.png" alt-text="Нажатие кнопки Создать для создания нового ключа авторизации":::
 
    После создания новый ключ появится в списке ключей авторизации для частного облака. 
 
