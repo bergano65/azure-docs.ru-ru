@@ -8,12 +8,12 @@ ms.custom: hdinsightactive
 ms.topic: how-to
 ms.date: 06/17/2019
 ms.author: hrasheed
-ms.openlocfilehash: fd0d425f00e001071f5c9021068ca2f038371a36
-ms.sourcegitcommit: 4913da04fd0f3cf7710ec08d0c1867b62c2effe7
+ms.openlocfilehash: e0d1f9ad99e1b64560321312a22f61f5a2ef3dea
+ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88212825"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89016042"
 ---
 # <a name="install-third-party-apache-hadoop-applications-on-azure-hdinsight"></a>Установка сторонних приложений Apache Hadoop в Azure HDInsight
 
@@ -29,7 +29,7 @@ ms.locfileid: "88212825"
 |[CDAP для HDInsight](https://azuremarketplace.microsoft.com/marketplace/apps/cask.cdap-for-hdinsight) |HBase |CDAP — это первая единая платформа интеграции для больших данных, которая ускоряет окупаемость вложений в Hadoop и позволяет ИТ-отделам предоставлять данные самообслуживания. Расширяемое решение CDAP с открытым исходным кодом устраняет барьеры для инноваций. Требования 4 узла регионов, минимум D3 версии 2. |
 |[Datameer](https://azuremarketplace.microsoft.com/marketplace/apps/datameer.datameer) |Hadoop |Datameer — это масштабируемая платформа самообслуживания для подготовки, изучения и управления данными для аналитики, которая ускоряет превращение сложных данных из нескольких источников в ценные сведения, готовые к использованию, быстрее и эффективнее предоставляя аналитические данные на корпоративном уровне. |
 |[Dataiku DSS в HDInsight](https://azuremarketplace.microsoft.com/marketplace/apps/dataiku.dss-on-hdi) |Hadoop, Spark |Dataiku DSS представляет собой корпоративную платформу для обработки и анализа данных, которая позволяет специалистам по обработке и анализу данных совместно создавать и запускать новые продукты и службы данных, преобразуя необработанные данные в информативные прогнозы. |
-|[Приложение WANdisco Fusion HDI](https://azuremarketplace.microsoft.com/marketplace/apps/wandisco.fusion-hdi-app) |Hadoop, Spark, HBase, Storm, Kafka |Обеспечение согласованности данных в распределенной среде — задача по выполнению массовых операций с данными. WANdisco Fusion, программная платформа корпоративного класса, решает эту проблему, обеспечивая согласованность неструктурированных данных в любой среде. |
+|[Приложение WANdisco Fusion HDI](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/wandisco.wandisco-liveanalytics) |Hadoop, Spark, HBase, Storm, Kafka |Обеспечение согласованности данных в распределенной среде — задача по выполнению массовых операций с данными. WANdisco Fusion, программная платформа корпоративного класса, решает эту проблему, обеспечивая согласованность неструктурированных данных в любой среде. |
 |[H2O SparklingWater для HDInsight](https://azuremarketplace.microsoft.com/marketplace/apps/h2o-ai.h2o-sparklingwater) |Spark |H2O Sparkling Water поддерживает следующие распределенные алгоритмы: GLM, Naïve Bayes, распределенный случайный лес, компьютер градиентного усиления, глубокие нейронные сети, глубокое обучение, метод K-средних, помощник по совместимости программ, обобщенные модели низкорангового представления, обнаружение аномалий, автокодировщики. |
 |[Striim для интеграции данных с HDInsight в режиме реального времени](https://azuremarketplace.microsoft.com/marketplace/apps/striim.striimbyol) |Hadoop, HBase, Storm, Spark, Kafka |Striim — это комплексная платформа для интеграции и аналитики потоковой передачи данных, обеспечивающая непрерывный прием, обработку и анализ разрозненных потоков данных. |
 |[Jumbune Enterprise-Accelerating BigData Analytics](https://azuremarketplace.microsoft.com/marketplace/apps/impetus-infotech-india-pvt-ltd.impetus_jumbune) |Hadoop, Spark |Jumbune помогает предприятиям в следующем. 1. Повышение производительности рабочей нагрузки Hive, Java, Scala на основе ядра Tez, MapReduce и Spark. 2. Упреждающий мониторинг кластера Hadoop. 3. Организация управления качеством данных в распределенной файловой системе. |

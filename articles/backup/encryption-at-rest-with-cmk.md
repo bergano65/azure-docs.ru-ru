@@ -3,12 +3,12 @@ title: Шифрование данных резервных копий с пом
 description: Узнайте, как Azure Backup позволяет шифровать данные резервных копий с помощью ключей, управляемых клиентом (CMK).
 ms.topic: conceptual
 ms.date: 07/08/2020
-ms.openlocfilehash: 55b994d287e4e2d3971b43359936815822bc18a4
-ms.sourcegitcommit: c6b9a46404120ae44c9f3468df14403bcd6686c1
+ms.openlocfilehash: 989b06b62f2db8df5504107eee8ed26710d13a57
+ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88892649"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89022417"
 ---
 # <a name="encryption-of-backup-data-using-customer-managed-keys"></a>Шифрование данных резервных копий с помощью управляемых клиентом ключей
 
@@ -242,7 +242,7 @@ Azure Backup использует управляемое системой удо
 
 Нет, хранилище не должно иметь никаких попыток защиты элементов в прошлом.
 
-### <a name="i-have-a-vault-that-is-using-cmk-encryption-can-i-later-revert-to-encryption-using-platform-managed-keys-even-if-i-have-backup-items-protected-to-the-vault"></a>У меня есть хранилище, которое использует шифрование CMK. Можно ли позже вернуться к шифрованию с помощью ключей, управляемых платформой, даже если у меня есть элементы резервного копирования, защищенные в хранилище?
+### <a name="i-have-a-vault-thats-using-cmk-encryption-can-i-later-revert-to-encryption-using-platform-managed-keys-even-if-i-have-backup-items-protected-to-the-vault"></a>У меня есть хранилище, в котором используется шифрование CMK. Можно ли позже вернуться к шифрованию с помощью ключей, управляемых платформой, даже если у меня есть элементы резервного копирования, защищенные в хранилище?
 
 Нет, после включения шифрования CMK не может быть отменено для использования ключей, управляемых платформой. Вы можете изменить ключи, используемые в соответствии с вашими требованиями.
 
@@ -258,6 +258,6 @@ Azure Backup использует управляемое системой удо
 
 Использование шифрования CMK для резервного копирования не влечет за собой никаких дополнительных затрат. Однако вы можете продолжать взимать затраты на использование Azure Key Vault, где хранится ваш ключ.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Общие сведения о средствах безопасности в Azure Backup](security-overview.md)

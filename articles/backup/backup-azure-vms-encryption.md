@@ -3,12 +3,12 @@ title: Резервное копирование и восстановление
 description: В этой статье описывается, как выполнять резервное копирование и восстановление зашифрованных виртуальных машин Azure с помощью службы Azure Backup.
 ms.topic: conceptual
 ms.date: 08/18/2020
-ms.openlocfilehash: 74658f695387a776fe12cef97887075ae0bc161d
-ms.sourcegitcommit: cd0a1ae644b95dbd3aac4be295eb4ef811be9aaa
+ms.openlocfilehash: 6ce0068203c91d9d2031ce2f8735cccf94172dd8
+ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/19/2020
-ms.locfileid: "88611302"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89014920"
 ---
 # <a name="back-up-and-restore-encrypted-azure-virtual-machines"></a>Резервное копирование и восстановление зашифрованных виртуальных машин Azure
 
@@ -129,7 +129,7 @@ Azure Backup требуется доступ только для чтения д
     - Необходимые разрешения автоматически заполняются в раскрывающихся списках **Разрешения ключей** и **Разрешения секретов**.
     - Если виртуальная машина шифруется **только**с помощью BEK, отмените выбор **разрешений для ключевых** , так как вам нужны только разрешения для секретов.
 
-    ![Выбор службы Azure Backup](./media/backup-azure-vms-encryption/select-backup-template.png)
+    ![Выбор Azure Backup](./media/backup-azure-vms-encryption/select-backup-template.png)
 
 1. Выберите **Добавить**. **Служба управления архивацией** добавляется в **политики доступа**.
 
@@ -145,8 +145,8 @@ Azure Backup требуется доступ только для чтения д
 
 1. [Восстановите диск виртуальной машины](backup-azure-arm-restore-vms.md#restore-disks).
 2. Повторно создайте экземпляр виртуальной машины, выполнив одно из следующих действий.
-    1. Используйте шаблон, созданный во время операции восстановления, чтобы настроить параметры виртуальной машины и активировать развертывание виртуальной машины. [Подробнее.](backup-azure-arm-restore-vms.md#use-templates-to-customize-a-restored-vm)
-    2. Создайте новую виртуальную машину на основе восстановленных дисков с помощью PowerShell. [Подробнее.](backup-azure-vms-automation.md#create-a-vm-from-restored-disks)
+    1. Используйте шаблон, созданный во время операции восстановления, чтобы настроить параметры виртуальной машины и активировать развертывание виртуальной машины. [Подробнее](backup-azure-arm-restore-vms.md#use-templates-to-customize-a-restored-vm).
+    2. Создайте новую виртуальную машину на основе восстановленных дисков с помощью PowerShell. [Подробнее](backup-azure-vms-automation.md#create-a-vm-from-restored-disks).
 3. Для виртуальных машин Linux переустановите расширение ADE, чтобы диски данных были открыты и подключены.
 
 ## <a name="next-steps"></a>Дальнейшие действия

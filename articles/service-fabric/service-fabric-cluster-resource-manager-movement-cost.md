@@ -5,12 +5,13 @@ author: masnider
 ms.topic: conceptual
 ms.date: 08/18/2017
 ms.author: masnider
-ms.openlocfilehash: af3e01d0d5a605c052be24eed8e14ee3449e2c79
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.custom: devx-track-csharp
+ms.openlocfilehash: 0fdcfb02851d56ed996ae4bf32671ab545782733
+ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "75563349"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89005349"
 ---
 # <a name="service-movement-cost"></a>Затраты на перемещение служб
 Фактором, который диспетчер кластерных ресурсов Service Fabric принимает во внимание при попытке определить, какие изменения вносить в кластер, являются общие затраты на эти изменения. Понятие "затраты" соотносится со степенью улучшения кластера. Затраты учитываются при перемещении служб для балансировки, дефрагментации и выполнения других требований. Цель — выполнить требования с наименьшим вмешательством или затратами.
@@ -118,7 +119,7 @@ ClusterManifest.xml:
 ]
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 - С помощью метрик диспетчер кластерных ресурсов Service Fabric управляет потреблением и емкостью в кластере. Чтобы узнать больше о метрик и их настройке, ознакомьтесь с разделом [Управление потреблением ресурсов и нагрузкой в Service Fabric с помощью метрик](service-fabric-cluster-resource-manager-metrics.md).
 - Чтобы узнать, как диспетчер кластерных ресурсов управляет нагрузкой кластера и балансирует ее, ознакомьтесь со статьей [Балансировка кластера Service Fabric](service-fabric-cluster-resource-manager-balancing.md).
 

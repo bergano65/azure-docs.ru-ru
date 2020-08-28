@@ -3,12 +3,13 @@ title: Управление доступом к служебной шине Azur
 description: Обзор управления доступом к служебной шине с помощью подписанных URL-адресов, а также сведения об авторизации SAS в служебной шине Azure.
 ms.topic: article
 ms.date: 07/30/2020
-ms.openlocfilehash: 8e48858fd76bcf4667cfff1237f49597a477b3e8
-ms.sourcegitcommit: d8b8768d62672e9c287a04f2578383d0eb857950
+ms.custom: devx-track-csharp
+ms.openlocfilehash: fb90b2ae290752753b58b5e96c6c8a8b23f4c168
+ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/11/2020
-ms.locfileid: "88066191"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89012081"
 ---
 # <a name="service-bus-access-control-with-shared-access-signatures"></a>Управление доступом к служебной шине с помощью подписанных URL-адресов
 
@@ -67,9 +68,9 @@ ms.locfileid: "88066191"
 SharedAccessSignature sig=<signature-string>&se=<expiry>&skn=<keyName>&sr=<URL-encoded-resourceURI>
 ```
 
-* **`se`**— Срок действия маркера истекает мгновенно. Количество секунд с начала эпохи UNIX (`00:00:00 UTC` 1 января 1970 года) до истечения срока действия маркера.
-* **`skn`**— Имя правила авторизации.
-* **`sr`**— URI ресурса, к которому осуществляется доступ.
+* **`se`** — Срок действия маркера истекает мгновенно. Количество секунд с начала эпохи UNIX (`00:00:00 UTC` 1 января 1970 года) до истечения срока действия маркера.
+* **`skn`** — Имя правила авторизации.
+* **`sr`** — URI ресурса, к которому осуществляется доступ.
 * **`sig`** Образец.
 
 `signature-string`— Это хэш SHA-256, вычисленный на основе URI ресурса (**область** , как описано в предыдущем разделе), и строковое представление срока действия маркера, разделенного LF.
@@ -293,7 +294,7 @@ private bool PutCbsToken(Connection connection, string sasToken)
 | Назначение сообщению статуса недоставленного |Прослушивание |../myTopic/Subscriptions/mySubscription |
 | Получение состояния, связанного с сеансом раздела |Прослушивание |../myTopic/Subscriptions/mySubscription |
 | Назначение состояния, связанного с сеансом раздела |Прослушивание |../myTopic/Subscriptions/mySubscription |
-| **Правила** | | |
+| **Правил** | | |
 | Создание правила |Управление |../myTopic/Subscriptions/mySubscription |
 | Удаление правила |Управление |../myTopic/Subscriptions/mySubscription |
 | Перечисление правил |Управление или прослушивание |../myTopic/Subscriptions/mySubscription/Rules

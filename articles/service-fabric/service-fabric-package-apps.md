@@ -3,12 +3,13 @@ title: Упаковка приложения Service Fabric Azure
 description: Узнайте, как упаковать приложение Service Fabric Azure и как подготовиться к развертыванию в кластере.
 ms.topic: conceptual
 ms.date: 2/23/2018
-ms.openlocfilehash: c00e46915c7bf147d224911ef4988d9fedd691c7
-ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
+ms.custom: devx-track-csharp
+ms.openlocfilehash: 11a3fdd5dbaef53af321342952f786ed8119689c
+ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2020
-ms.locfileid: "86260977"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89012404"
 ---
 # <a name="package-an-application"></a>Создание пакета приложения
 
@@ -43,7 +44,7 @@ D:\TEMP\MYAPPLICATIONTYPE
 
 ## <a name="use-setupentrypoint"></a>Использование SetupEntryPoint
 
-Типичные сценарии использования **SetupEntryPoint** относятся к ситуации, когда необходимо запустить исполняемый файл перед запуском службы или выполнить операцию с повышенными привилегиями. Например:
+Типичные сценарии использования **SetupEntryPoint** относятся к ситуации, когда необходимо запустить исполняемый файл перед запуском службы или выполнить операцию с повышенными привилегиями. Пример:
 
 * Настройка и инициализация переменных среды, необходимых исполняемому файлу службы. Это касается не только исполняемых файлов, написанных с использованием моделей программирования Service Fabric. Например, npm.exe нужны определенные переменные среды, настроенные для развертывания приложения node.js.
 * Настройка контроля доступа посредством установки сертификатов безопасности.
@@ -52,7 +53,7 @@ D:\TEMP\MYAPPLICATIONTYPE
 
 <a id="Package-App"></a>
 
-## <a name="configure"></a>Настройка
+## <a name="configure"></a>Configure
 
 ### <a name="build-a-package-by-using-visual-studio"></a>Создание пакета с помощью Visual Studio
 

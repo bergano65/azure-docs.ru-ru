@@ -6,12 +6,13 @@ ms.author: mjbrown
 ms.service: cosmos-db
 ms.topic: conceptual
 ms.date: 02/07/2020
-ms.openlocfilehash: 548faa6c702c599ed766c7f03123dd02fb43684d
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.custom: devx-track-csharp
+ms.openlocfilehash: e1359fd2a59b49f10bb3b2daa4bcbadae921e188
+ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85610733"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89012455"
 ---
 # <a name="optimize-provisioned-throughput-cost-in-azure-cosmos-db"></a>Оптимизируйте стоимость подготовленной пропускной способности в базе данных Azure Cosmos DB
 
@@ -173,7 +174,7 @@ connectionPolicy.RetryOptions.MaxRetryWaitTimeInSeconds = 60;
 
 10. Благодаря зарезервированной емкости Azure Cosmos DB можно получить значительные скидки (до 65 %) на три года. Модель зарезервированной емкости Azure Cosmos DB предусматривает авансовую оплату за единицы запроса, которые потребуются со временем. Скидки распределяются по уровням таким образом, что чем больше единиц запроса используется за продолжительный период времени, тем больше скидка. Эти скидки вступают в силу немедленно. За любые потребленные ЕЗ сверх подготовленных значений плата взимается на основе тарифов на незарезервированную емкость. Подробные сведения см. в статье [Предоплата ресурсов Azure Cosmos DB с резервной мощностью](cosmos-db-reserved-capacity.md). Рекомендуем приобрести зарезервированную емкость для дополнительного уменьшения затрат на подготовленную пропускную способность.  
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Теперь вы можете перейти к изучению оптимизации затрат в Azure Cosmos DB в следующих статьях:
 

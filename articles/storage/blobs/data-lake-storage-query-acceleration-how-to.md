@@ -8,12 +8,13 @@ ms.topic: how-to
 ms.date: 04/21/2020
 ms.author: normesta
 ms.reviewer: jamsbak
-ms.openlocfilehash: cc9235f07c0829abfb8be42e83d05d8428bc1806
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.custom: devx-track-csharp
+ms.openlocfilehash: 6de6661e5c970c7c3cbfc944b8539060b8844a36
+ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84465870"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89005230"
 ---
 # <a name="filter-data-by-using-azure-data-lake-storage-query-acceleration-preview"></a>Фильтрация данных с помощью ускорения запросов Azure Data Lake Storage (Предварительная версия)
 
@@ -24,7 +25,7 @@ ms.locfileid: "84465870"
 > [!NOTE]
 > Функция ускорения запросов доступна в общедоступной предварительной версии и доступна в центральных регионах для Канады и Франции. Чтобы просмотреть ограничения, см. статью [Известные проблемы](data-lake-storage-known-issues.md) . Чтобы зарегистрироваться в предварительной версии, см. [эту форму](https://aka.ms/adls/qa-preview-signup).  
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Обязательные условия
 
 ### <a name="net"></a>[.NET](#tab/dotnet)
 
@@ -40,7 +41,7 @@ ms.locfileid: "84465870"
 
 - Учетная запись хранения **общего назначения версии 2** . см. раздел [Создание учетной записи хранения](../common/storage-quickstart-create-account.md).
 
-- [Пакет средств разработки Java (JDK)](/java/azure/jdk/?view=azure-java-stable) версии 8 или более поздней.
+- [комплект SDK для Java (JDK)](/java/azure/jdk/?view=azure-java-stable) версии 8 или более поздней версии.
 
 - [Apache Maven](https://maven.apache.org/download.cgi). 
 
@@ -365,7 +366,7 @@ static void QueryMysteryBooks(BlobClient blobClient)
 
 ---
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Форма регистрации ускорения запросов](https://aka.ms/adls/qa-preview-signup)    
 - [Ускорение запросов Azure Data Lake Storage (Предварительная версия)](data-lake-storage-query-acceleration.md)

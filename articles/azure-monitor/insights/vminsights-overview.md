@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 07/22/2020
-ms.openlocfilehash: f9ad39b88ad2212ea2cdceb40e61fbc0a2d1a764
-ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
+ms.openlocfilehash: 5c3cb13d0b2da9370f402083d82397679f2c9343
+ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87320499"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89022502"
 ---
 # <a name="what-is-azure-monitor-for-vms"></a>Общие сведения об Azure Monitor для виртуальных машин
 
@@ -26,10 +26,6 @@ Azure Monitor для виртуальных машин поддерживает 
 - Виртуальные машины, размещенные в другой облачной среде
   
 
-
->[!NOTE]
->Недавно мы [объявили об изменениях](https://azure.microsoft.com/updates/updates-to-azure-monitor-for-virtual-machines-preview-before-general-availability-release/
-) , внесенных в функцию работоспособности, на основе отзывов наших клиентов, полученных от общедоступной предварительной версии. Учитывая количество изменений, которые мы будем вносить, мы перейдем к предложению функции работоспособности для новых клиентов. Существующие клиенты могут продолжать использовать функцию работоспособности. Дополнительные сведения см. в статье [часто задаваемые вопросы о доступности](vminsights-ga-release-faq.md).  
 
 
 Azure Monitor для виртуальных машин сохраняет свои данные в журналах Azure Monitor, что позволяет ему обеспечивать эффективную статистическую обработку и фильтрацию и анализировать тенденции данных с течением времени. Вы можете просмотреть эти данные на одной ВИРТУАЛЬНОЙ машине непосредственно из виртуальной машины или использовать Azure Monitor для предоставления агрегированного представления нескольких виртуальных машин.
