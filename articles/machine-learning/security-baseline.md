@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 08/19/2020
 ms.author: mbaldwin
 ms.custom: security-benchmark
-ms.openlocfilehash: 9d288c8d3f521467c8d15e027e2530ff879b37af
-ms.sourcegitcommit: 628be49d29421a638c8a479452d78ba1c9f7c8e4
+ms.openlocfilehash: 203ca95368d313055d7c715a3a3becbc1061582c
+ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/20/2020
-ms.locfileid: "88642913"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89015090"
 ---
 # <a name="azure-security-baseline-for-azure-machine-learning"></a>Базовый план безопасности Azure для Машинное обучение Azure
 
@@ -270,9 +270,9 @@ ms.locfileid: "88642913"
 
 Машинное обучение Azure поддерживает различные ресурсы вычислений и даже собственные ресурсы вычислений. Для ресурсов вычислений, принадлежащих вашей организации, включите сбор событий антивредоносной программы для антивредоносного по Майкрософт для облачных служб и виртуальных машин Azure.
 
-- [Настройка антивредоносного по Майкрософт для виртуальной машины](https://docs.microsoft.com/powershell/module/servicemanagement/azure/set-azurevmmicrosoftantimalwareextension?view=azuresmps-4.0.0)
+- [Настройка антивредоносного по Майкрософт для виртуальной машины](/powershell/module/servicemanagement/azure.service/set-azurevmmicrosoftantimalwareextension)
 
-- [Настройка расширения антивредоносной программы Майкрософт для облачных служб](https://docs.microsoft.com/powershell/module/servicemanagement/azure/set-azureserviceantimalwareextension?view=azuresmps-4.0.0)
+- [Настройка расширения антивредоносной программы Майкрософт для облачных служб](/powershell/module/servicemanagement/azure.service/set-azureserviceantimalwareextension?view=azuresmps-4.0.0)
 
 - [Знакомство с антивредоносным по Майкрософт](../security/fundamentals/antimalware.md)
 

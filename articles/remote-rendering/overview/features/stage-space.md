@@ -5,12 +5,13 @@ author: christophermanthei
 ms.author: chmant
 ms.date: 03/07/2020
 ms.topic: article
-ms.openlocfilehash: ac0aa821875acb300e31e31ef3afe6492524cb7b
-ms.sourcegitcommit: c6b9a46404120ae44c9f3468df14403bcd6686c1
+ms.custom: devx-track-csharp
+ms.openlocfilehash: 5809494fb8b619569316a24816a2e5d943dee6b4
+ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88892700"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89013135"
 ---
 # <a name="stage-space"></a>Промежуточное пространство
 
@@ -57,7 +58,7 @@ void ChangeStageSpace(ApiHandle<AzureSession> session)
 
 Интеграция Unity предоставляет скрипт с именем **стажеспаце** , который можно добавить к родительскому GameObjectу камеры. После этого скрипт позаботится о настройке источника пространства этапа.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Графическая привязка](../../concepts/graphics-bindings.md)
 * [Перепроецирование на позднем этапе](late-stage-reprojection.md)

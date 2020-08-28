@@ -5,12 +5,13 @@ author: masnider
 ms.topic: conceptual
 ms.date: 08/18/2017
 ms.author: masnider
-ms.openlocfilehash: 9aea157d03f344e07a81f0588d3e0127f17ca75d
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.custom: devx-track-csharp
+ms.openlocfilehash: e27c6661c34ab6d177feec11f8e9ec891987ab48
+ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "75834396"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89005757"
 ---
 # <a name="placement-policies-for-service-fabric-services"></a>Политики размещения для служб Service Fabric
 Политики размещения — это дополнительные правила, с помощью которых можно управлять размещением служб в некоторых специальных, менее распространенных сценариях. Вот несколько примеров.
@@ -122,7 +123,7 @@ New-ServiceFabricService -ApplicationName $applicationName -ServiceName $service
 
 Можно ли использовать эти конфигурации для служб в кластере, который не распределен между разными географическими регионами? Можно, но не нужно. Конфигураций с обязательными, недопустимыми и предпочтительными доменами следует избегать, если только без них невозможно обойтись. Не имеет смысла пытаться принудительно запускать определенную рабочую нагрузку в одной стойке или использовать какой-либо сегмент локального кластера вместо другого. Разные аппаратные конфигурации следует распределить между доменами сбоя и обрабатывать с использованием обычных ограничений размещения и свойств узлов.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 - Дополнительные сведения о настройке служб см. в разделе [Настройка параметров Cluster Resource Manager для служб Service Fabric](service-fabric-cluster-resource-manager-configure-services.md).
 
 [Image1]:./media/service-fabric-cluster-resource-manager-advanced-placement-rules-placement-policies/cluster-invalid-placement-domain.png

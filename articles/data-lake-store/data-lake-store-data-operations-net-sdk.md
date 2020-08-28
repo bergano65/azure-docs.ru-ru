@@ -6,12 +6,13 @@ ms.service: data-lake-store
 ms.topic: how-to
 ms.date: 01/03/2020
 ms.author: twooley
-ms.openlocfilehash: eb950f6029511cf834791c161e6a730bcadcabcc
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.custom: devx-track-dotnet
+ms.openlocfilehash: 1044af94df43e61ae8c0032041bc80a356331f1a
+ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85515660"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89022468"
 ---
 # <a name="filesystem-operations-on-data-lake-storage-gen1-using-the-net-sdk"></a>Операции файловой системы на Data Lake Storage 1-го поколения с помощью пакета SDK для .NET
 
@@ -27,7 +28,7 @@ ms.locfileid: "85515660"
 
 Инструкции по выполнению операций управления учетными записями в Data Lake Storage 1-го поколения с помощью пакета SDK для .NET см. в разделе [операции управления учетными записями в Data Lake Storage 1-го поколения с помощью пакета SDK для .NET](data-lake-store-get-started-net-sdk.md).
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Обязательные условия
 
 * **Visual Studio 2013 или более поздней версии**. В инструкциях этой статьи используется Visual Studio 2019.
 
@@ -48,8 +49,8 @@ ms.locfileid: "85515660"
    1. На вкладке **Диспетчер пакетов NuGet** убедитесь, что для параметра **источник пакета** задано значение **NuGet.org**. Кроме того, убедитесь, что установлен флажок **включить предварительные выпуски** .
    1. Найдите и установите следующие пакеты NuGet:
 
-      * `Microsoft.Azure.DataLake.Store`— В этой статье используется версия 1.0.0.
-      * `Microsoft.Rest.ClientRuntime.Azure.Authentication`— В этой статье используется v 2.3.1.
+      * `Microsoft.Azure.DataLake.Store` — В этой статье используется версия 1.0.0.
+      * `Microsoft.Rest.ClientRuntime.Azure.Authentication` — В этой статье используется v 2.3.1.
 
       Закройте **Диспетчер пакетов NuGet**.
 
@@ -203,6 +204,6 @@ client.DeleteRecursive("/Test");
 * [Операции управления учетными записями в Data Lake Storage 1-го поколения c использованием пакета SDK для .NET](data-lake-store-get-started-net-sdk.md)
 * [Библиотеки Azure Data Lake Store для .NET](https://docs.microsoft.com/dotnet/api/overview/azure/data-lake-store?view=azure-dotnet)
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Защита данных в Data Lake Storage Gen1](data-lake-store-secure-data.md)

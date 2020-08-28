@@ -3,12 +3,13 @@ title: Разделение служб Service Fabric
 description: Описывается процесс секционирования служб с отслеживанием состояния Service Fabric. Секции позволяют хранить данные на локальных компьютерах, что дает возможность одновременно масштабировать данные и вычислительные ресурсы.
 ms.topic: conceptual
 ms.date: 06/30/2017
-ms.openlocfilehash: e395fc31550dfdbedf963db0d648191453d016b2
-ms.sourcegitcommit: e132633b9c3a53b3ead101ea2711570e60d67b83
+ms.custom: devx-track-csharp
+ms.openlocfilehash: d33e7b5ee293cf9dfb49e509bec2e1950033a956
+ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "86045422"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89005434"
 ---
 # <a name="partition-service-fabric-reliable-services"></a>Секционирование служб Reliable Services в Service Fabric
 В этой статье рассматриваются основные понятия, связанные с секционированием служб Reliable Services в инфраструктуре Azure Service Fabric. Исходный код, который используется в этой статье, можно найти на [GitHub](https://github.com/Azure-Samples/service-fabric-dotnet-getting-started/tree/classic/Services/AlphabetPartitions).
@@ -349,7 +350,7 @@ Service Fabric упрощает процесс разработки масшта
 
 Весь исходный код этого примера доступен на [GitHub](https://github.com/Azure-Samples/service-fabric-dotnet-getting-started/tree/classic/Services/AlphabetPartitions).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 Сведения о понятиях, принятых для структуры служб, см. в следующих статьях:
 
 * [Доступность служб структуры служб](service-fabric-availability-services.md)

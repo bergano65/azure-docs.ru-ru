@@ -6,12 +6,12 @@ author: jnoller
 ms.topic: article
 ms.date: 01/24/2020
 ms.author: jenoller
-ms.openlocfilehash: be80c0d5999ed06bcc505ec5737e7e416d28b981
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: c51b5c4d9cd7362aeda0a0998d8031d0ba358ce1
+ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87050678"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89012353"
 ---
 # <a name="support-policies-for-azure-kubernetes-service"></a>Политики поддержки для службы Azure Kubernetes
 
@@ -20,7 +20,7 @@ ms.locfileid: "87050678"
 ## <a name="service-updates-and-releases"></a>Обновления и выпуски службы
 
 * Сведения о выпусках см. в [заметках о выпуске AKS](https://github.com/Azure/AKS/releases).
-* Сведения о функциях в предварительной версии см. в разделе [Функции предварительной версии AKS и связанные проекты](https://github.com/Azure/AKS/blob/master/previews.md).
+* Сведения о функциях в предварительной версии см. в разделе [Функции предварительной версии AKS и связанные проекты](https://awesomeopensource.com/projects/aks?categoryPage=11).
 
 ## <a name="managed-features-in-aks"></a>Управляемые функции в AKS
 
@@ -149,7 +149,7 @@ AKS поддерживает только стабильные функции в
 В двух случаях возможно развертывание альфа и бета-версий компонентов, прежде чем будут выпущены их общедоступные версии.
 
 * Клиенты обратились к группе по продуктам, группе поддержки или группе разработчиков AKS с просьбой дать возможность ознакомиться с этими новыми функциями.
-* Эти функции были [включены с помощью флага компонента](https://github.com/Azure/AKS/blob/master/previews.md). Клиенты должны явно дать согласие на использование этих функций.
+* Эти функции были [включены с помощью флага компонента](https://awesomeopensource.com/projects/aks?categoryPage=11). Клиенты должны явно дать согласие на использование этих функций.
 
 ## <a name="preview-features-or-feature-flags"></a>Предварительные версии компонентов или флаги компонентов
 

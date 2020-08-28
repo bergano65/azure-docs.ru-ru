@@ -5,12 +5,12 @@ author: florianborn71
 ms.author: flborn
 ms.date: 02/11/2020
 ms.topic: article
-ms.openlocfilehash: 4e65655f1809c6badc50e39a2a5e932516ef99d2
-ms.sourcegitcommit: 54d8052c09e847a6565ec978f352769e8955aead
+ms.openlocfilehash: c27c5fae45f7cde57f2db12c05107d2b77b90a2c
+ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88509847"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89012387"
 ---
 # <a name="use-the-session-management-rest-api"></a>Использование REST API управления сеансами
 
@@ -79,7 +79,7 @@ $token = $response.AccessToken;
 
 | Код состояния | полезные данные JSON | Комментарии |
 |-----------|:-----------|:-----------|
-| 202 | -sessionId: GUID | Успешно |
+| 202 | -sessionId: GUID | Успех |
 
 ### <a name="example-script-create-a-session"></a>Пример сценария. Создание сеанса
 
@@ -117,7 +117,14 @@ RawContentLength  : 52
 $sessionId = "d31bddca-dab7-498e-9bc9-7594bc12862f"
 ```
 
-## <a name="update-a-session"></a>Обновление сеанса
+## <a name="modify-and-query-session-properties"></a>Изменение и запрос свойств сеанса
+
+Существует несколько команд для запроса или изменения параметров существующих сеансов.
+
+> [!CAUTION]
+Как и для всех вызовов RESTFUL, отправка этих команд слишком часто приведет к тому, что сервер будет регулировать и возвращать ошибку в конечном итоге. Код состояния в данном случае — 429 ("слишком много запросов"). В качестве правила "бегунок" **между последовательными вызовами**должна быть задержка в 5-10 секунд.
+
+### <a name="update-session-parameters"></a>Обновить параметры сеанса
 
 Эта команда обновляет параметры сеанса. В настоящее время можно продлить время аренды сеанса.
 
@@ -138,7 +145,7 @@ $sessionId = "d31bddca-dab7-498e-9bc9-7594bc12862f"
 |-----------|:-----------|:-----------|
 | 200 | | Успешно |
 
-### <a name="example-script-update-a-session"></a>Пример скрипта. обновление сеанса
+#### <a name="example-script-update-a-session"></a>Пример скрипта. обновление сеанса
 
 ```PowerShell
 Invoke-WebRequest -Uri "$endPoint/v1/accounts/$accountId/sessions/$sessionId" -Method Patch -ContentType "application/json" -Body "{ 'maxLeaseTime': '5:0:0' }" -Headers @{ Authorization = "Bearer $token" }
@@ -160,7 +167,7 @@ Headers           : {[MS-CV, Fe+yXCJumky82wuoedzDTA.0], [Content-Length, 0], [Da
 RawContentLength  : 0
 ```
 
-## <a name="get-active-sessions"></a>Получение активных сеансов
+### <a name="get-active-sessions"></a>Получение активных сеансов
 
 Эта команда возвращает список активных сеансов.
 
@@ -174,7 +181,7 @@ RawContentLength  : 0
 |-----------|:-----------|:-----------|
 | 200 | -Sessions: массив свойств сеанса | Описание свойств сеанса см. в разделе "получение свойств сеанса". |
 
-### <a name="example-script-query-active-sessions"></a>Пример скрипта: запрос активных сеансов
+#### <a name="example-script-query-active-sessions"></a>Пример скрипта: запрос активных сеансов
 
 ```PowerShell
 Invoke-WebRequest -Uri "$endPoint/v1/accounts/$accountId/sessions" -Method Get -Headers @{ Authorization = "Bearer $token" }
@@ -203,7 +210,7 @@ ParsedHtml        : mshtml.HTMLDocumentClass
 RawContentLength  : 2
 ```
 
-## <a name="get-sessions-properties"></a>Получение свойств сеансов
+### <a name="get-sessions-properties"></a>Получение свойств сеансов
 
 Эта команда возвращает сведения о сеансе, например имя узла виртуальной машины.
 
@@ -217,7 +224,7 @@ RawContentLength  : 2
 |-----------|:-----------|:-----------|
 | 200 | -Message: строка<br/>-Сессионелапседтиме: TimeSpan<br/>-Сессионхостнаме: строка<br/>-sessionId: строка<br/>-Сессионмакслеасетиме: TimeSpan<br/>-Сессионсизе: Enum<br/>-Сессионстатус: Enum | Enum Сессионстатус {Start, Ready, остановка, остановлена, срок действия истек, ошибка}<br/>Если состояние — "ошибка" или "срок действия истек", сообщение будет содержать дополнительные сведения |
 
-### <a name="example-script-get-session-properties"></a>Пример скрипта. получение свойств сеанса
+#### <a name="example-script-get-session-properties"></a>Пример скрипта. получение свойств сеанса
 
 ```PowerShell
 Invoke-WebRequest -Uri "$endPoint/v1/accounts/$accountId/sessions/$sessionId/properties" -Method Get -Headers @{ Authorization = "Bearer $token" }
@@ -258,7 +265,7 @@ RawContentLength  : 60
 
 | Код состояния | полезные данные JSON | Комментарии |
 |-----------|:-----------|:-----------|
-| 204 | | Успешно |
+| 204 | | Успех |
 
 ### <a name="example-script-stop-a-session"></a>Пример скрипта. Завершение сеанса
 

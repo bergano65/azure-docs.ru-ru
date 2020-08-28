@@ -4,16 +4,16 @@ description: Из этой статьи вы узнаете, как управл
 ms.topic: conceptual
 ms.date: 08/21/2018
 ms.assetid: e54750b4-4518-4262-8f23-ca2f0c7c0439
-ms.openlocfilehash: c4aa88399bfbdd7814864170d9861a7b7d14dc58
-ms.sourcegitcommit: afa1411c3fb2084cccc4262860aab4f0b5c994ef
+ms.openlocfilehash: d0baac97b7a1bfb5ac55ee8cacc40dc8f13994a5
+ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/23/2020
-ms.locfileid: "88757257"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89012608"
 ---
 # <a name="create-azure-recovery-services-vault-using-rest-api"></a>Создание хранилища служб восстановления Azure с помощью REST API
 
-Инструкции по созданию хранилища служб восстановления Azure с помощью REST API приведены в документации по [созданию REST API в хранилище](/rest/api/recoveryservices/vaults/createorupdate) . Этот документ содержит справочные сведения по созданию хранилища с именем "testVault" в регионе "Западная часть США".
+Инструкции по созданию хранилища служб восстановления Azure с помощью REST API приведены в документации по [созданию REST API в хранилище](/rest/api/recoveryservices/vaults/createorupdate) . Давайте будем использовать этот документ в качестве справочной документации по созданию хранилища "Testvault задано" в "западной части США".
 
 Для создания или обновления хранилища Служб восстановления Azure используйте следующую операцию *PUT*.
 
@@ -41,7 +41,7 @@ PUT https://management.azure.com/subscriptions/{subscriptionId}/resourceGroups/{
 |Имя  |Обязательно  |Тип  |Описание  |
 |---------|---------|---------|---------|
 |eTag     |         |   Строка      |  Необязательный eTag       |
-|location     |  true       |Строка         |   Расположение ресурса      |
+|location     |  Да       |Строка         |   Расположение ресурса      |
 |properties     |         | [VaultProperties](/rest/api/recoveryservices/vaults/createorupdate#vaultproperties)        |  Свойства хранилища       |
 |sku     |         |  [SKU](/rest/api/recoveryservices/vaults/createorupdate#sku)       |    В этом столбце указан уникальный системный идентификатор для каждого ресурса Azure.     |
 |tags     |         | Объект        |     Теги ресурсов    |
@@ -66,9 +66,9 @@ PUT https://management.azure.com/subscriptions/{subscriptionId}/resourceGroups/{
 
 Есть два успешных ответа для операции по созданию или обновлению хранилища Служб восстановления:
 
-|Имя  |Тип  |Описание  |
+|Имя  |Type  |Описание  |
 |---------|---------|---------|
-|200 ОК     |   [Хранилище](/rest/api/recoveryservices/vaults/createorupdate#vault)      | OK        |
+|200 ОК     |   [Хранилище](/rest/api/recoveryservices/vaults/createorupdate#vault)      | ОК        |
 |201 Создано     | [Хранилище](/rest/api/recoveryservices/vaults/createorupdate#vault)        |   Создание      |
 
 Дополнительные сведения об ответах REST API можно узнать в разделе [Process the response message](/rest/api/azure/#process-the-response-message) (Обработка ответного сообщения).

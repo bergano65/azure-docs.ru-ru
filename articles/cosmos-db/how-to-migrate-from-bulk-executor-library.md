@@ -6,12 +6,13 @@ ms.service: cosmos-db
 ms.topic: how-to
 ms.date: 04/24/2020
 ms.author: maquaran
-ms.openlocfilehash: 1f204b6d73f121b8f05c807d6be47c36c006f607
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.custom: devx-track-dotnet
+ms.openlocfilehash: 8f573a3e851fe428c66066e36a913d6580cabd51
+ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85261432"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89022485"
 ---
 # <a name="migrate-from-the-bulk-executor-library-to-the-bulk-support-in-azure-cosmos-db-net-v3-sdk"></a>Миграция из библиотеки NET выполнителя в пакетную поддержку в Azure Cosmos DB пакете SDK для .NET v3
 
@@ -87,13 +88,13 @@ ms.locfileid: "85261432"
 > [!NOTE]
 > В тех случаях, когда подготовленные единицы запроса значительно ниже, чем ожидалось, в зависимости от объема данных, может потребоваться задать для них высокие значения. Эта операция требует больше времени, но она имеет более высокую шансы на полное успешное завершение из-за более высоких повторных попыток.
 
-## <a name="performance-improvements"></a>Улучшения производительности
+## <a name="performance-improvements"></a>Усовершенствования в области производительности
 
 Как и в случае с другими операциями с пакетом SDK для .NET, использование интерфейсов API потока приводит к повышению производительности и позволяет избежать ненужной сериализации. 
 
 Использование API-интерфейсов потока возможно только в том случае, если характер используемых данных соответствует потоку байтов (например, потокам файлов). В таких случаях использование `CreateItemStreamAsync` `ReplaceItemStreamAsync` методов, или `DeleteItemStreamAsync` и работы с `ResponseMessage` (а не `ItemResponse` ) увеличивает пропускную способность, которую можно достичь.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Дополнительные сведения о выпусках пакета SDK для .NET см. в статье [Azure Cosmos DB SDK](sql-api-sdk-dotnet.md) .
 * Получите полный [Исходный код миграции](https://github.com/Azure/azure-cosmos-dotnet-v3/tree/master/Microsoft.Azure.Cosmos.Samples/Usage/BulkExecutorMigration) с сайта GitHub.

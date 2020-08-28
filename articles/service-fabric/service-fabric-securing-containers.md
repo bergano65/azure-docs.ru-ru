@@ -3,12 +3,13 @@ title: Импорт сертификатов в контейнер
 description: Узнайте, как импортировать файлы сертификатов в службу контейнеров Service Fabric.
 ms.topic: conceptual
 ms.date: 2/23/2018
-ms.openlocfilehash: da4babd8f9d1a25a8514d0c6f1526b43a9723854
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.custom: devx-track-csharp
+ms.openlocfilehash: 949cc642572bfbf6ebe297d3ffba16939561ac8a
+ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "75614117"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89012727"
 ---
 # <a name="import-a-certificate-file-into-a-container-running-on-service-fabric"></a>Импорт файла сертификата в контейнер под управлением Service Fabric
 

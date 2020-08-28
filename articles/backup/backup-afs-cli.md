@@ -3,12 +3,12 @@ title: Резервное копирование файловых ресурсо
 description: Узнайте, как использовать Azure CLI для резервного копирования файловых ресурсов Azure в хранилище служб восстановления.
 ms.topic: conceptual
 ms.date: 01/14/2020
-ms.openlocfilehash: 9afd1e866c85770a8797493c3f89e531e2ef72fc
-ms.sourcegitcommit: e2b36c60a53904ecf3b99b3f1d36be00fbde24fb
+ms.openlocfilehash: 54852112591b5f5eec1ecbac34b836b4cb0f4f1f
+ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/24/2020
-ms.locfileid: "88763259"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89012030"
 ---
 # <a name="back-up-azure-file-shares-with-cli"></a>Резервное копирование файловых ресурсов Azure с помощью интерфейса командной строки
 
