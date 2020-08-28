@@ -7,16 +7,16 @@ ms.date: 12/02/2019
 ms.topic: how-to
 ms.service: iot-central
 services: iot-central
-ms.custom: mvc
+ms.custom: mvc, devx-track-csharp
 manager: philmea
-ms.openlocfilehash: 0e161cf83662df671b8cfb100ddc12c3b3e7359f
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 572b5328a433839dafbfe23eb7207dfaeb9ea309
+ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "80158152"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89017861"
 ---
-# <a name="extend-azure-iot-central-with-custom-rules-using-stream-analytics-azure-functions-and-sendgrid"></a>Расширьте IoT Central Azure с помощью настраиваемых правил, используя Stream Analytics, функции Azure и SendGrid
+# <a name="extend-azure-iot-central-with-custom-rules-using-stream-analytics-azure-functions-and-sendgrid"></a>Расширение возможностей Azure IoT Central с помощью настраиваемых правил с использованием Stream Analytics, Функций Azure и SendGrid
 
 
 
@@ -30,7 +30,7 @@ ms.locfileid: "80158152"
 * Создание Stream Analytics запроса, который определяет, когда устройство остановило отправку данных.
 * Отправка уведомления по электронной почте с помощью функций Azure и SendGrid Services.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Обязательные условия
 
 Чтобы выполнить действия, описанные в этом руководстве, вам потребуется активная подписка Azure.
 
@@ -42,12 +42,12 @@ ms.locfileid: "80158152"
 
 | Параметр | Значение |
 | ------- | ----- |
-| Ценовой план | Стандартный |
+| Ценовой план | Standard |
 | Шаблон приложения | Аналитика в магазине — мониторинг условий |
 | имя приложения; | Примите значение по умолчанию или выберите собственное имя. |
 | URL-адрес | Примите значение по умолчанию или выберите собственный уникальный префикс URL-адреса. |
 | Каталог | Клиент Azure Active Directory |
-| Подписка Azure. | Ваша подписка Azure. |
+| Подписка Azure | Ваша подписка Azure. |
 | Регион | Ближайший регион |
 
 В примерах и снимках экрана в этой статье используется **США** регион. Выберите расположение, близкое к вам, и убедитесь, что вы создали все ресурсы в том же регионе.
@@ -65,7 +65,7 @@ ms.locfileid: "80158152"
 | Параметр | Значение |
 | ------- | ----- |
 | Имя    | Выберите имя пространства имен |
-| Ценовая категория | Basic |
+| Ценовая категория | Базовый |
 | Подписка | Ваша подписка |
 | Группа ресурсов | детектстоппеддевицес |
 | Расположение | Восточная часть США |
@@ -73,7 +73,7 @@ ms.locfileid: "80158152"
 
 ### <a name="stream-analytics-job"></a>Задание Stream Analytics
 
-Используйте [портал Azure, чтобы создать задание Stream Analytics](https://portal.azure.com/#create/Microsoft.StreamAnalyticsJob) со следующими параметрами:
+Используйте [портал Azure, чтобы создать задание Stream Analytics](https://portal.azure.com/#create/Microsoft.StreamAnalyticsJob)  со следующими параметрами:
 
 | Параметр | Значение |
 | ------- | ----- |
@@ -90,14 +90,14 @@ ms.locfileid: "80158152"
 
 | Параметр | Значение |
 | ------- | ----- |
-| Имя приложения.    | Выберите имя приложения функции |
+| Имя приложения    | Выберите имя приложения функции |
 | Подписка | Ваша подписка |
 | Группа ресурсов | детектстоппеддевицес |
-| Операционная система | Windows |
+| ОС | Windows |
 | План размещения | План потребления |
 | Расположение | Восточная часть США |
 | Стек времени выполнения | .NET |
-| Память | Создание |
+| Память | Create new |
 
 ### <a name="sendgrid-account"></a>Учетная запись SendGrid
 
@@ -259,7 +259,7 @@ test-device-3    2019-05-02T14:24:28.919Z
     | Псевдоним выходных данных | емаилнотификатион |
     | Подписка | Ваша подписка |
     | Приложение-функция | Приложение функции |
-    | Функция  | HttpTrigger1 |
+    | Компонент  | HttpTrigger1 |
 
 1. В разделе **топология заданий**выберите **запрос** и замените существующий запрос на следующий SQL:
 
@@ -302,7 +302,7 @@ test-device-3    2019-05-02T14:24:28.919Z
         RightSide.deviceid2 is NULL
     ```
 
-1. Щелкните **Сохранить**.
+1. Выберите **Сохранить**.
 1. Чтобы запустить задание Stream Analytics, выберите **Обзор**, затем **запустите**, **а затем** **запустите**:
 
     ![Stream Analytics](media/howto-create-custom-rules/stream-analytics.png)

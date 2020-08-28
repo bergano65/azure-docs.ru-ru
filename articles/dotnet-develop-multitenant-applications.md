@@ -14,12 +14,13 @@ ms.devlang: dotnet
 ms.topic: article
 ms.date: 06/05/2015
 ms.author: wpickett
-ms.openlocfilehash: d1441ede9f448b3e6ffb0726c2ee92f192369e9a
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.custom: devx-track-dotnet
+ms.openlocfilehash: ad77278d593e4b2165708e0c9110a9ffff19a255
+ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "81481840"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89017708"
 ---
 # <a name="multitenant-applications-in-azure"></a>Мультитенантные приложения Azure
 Многоклиентское приложение — это общий ресурс, позволяющий пользователям в разных клиентах просматривать приложение, как если бы оно было собственным. Типичным сценарием, который вызывается для приложения с несколькими клиентами, является одно, в котором всем пользователям приложения из разных клиентов может потребоваться настроить пользовательский интерфейс, но в противном случае предъявляются те же базовые бизнес-требования. Примерами крупных мультитенатных приложений являются Office 365, Outlook.com и visualstudio.com.

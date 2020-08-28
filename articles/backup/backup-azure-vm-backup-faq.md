@@ -4,12 +4,12 @@ description: В этой статье вы найдете ответы на ча
 ms.reviewer: sogup
 ms.topic: conceptual
 ms.date: 09/17/2019
-ms.openlocfilehash: b29f1a11f6600f013fdf1d5aa71883ab44dfe635
-ms.sourcegitcommit: f1b18ade73082f12fa8f62f913255a7d3a7e42d6
+ms.openlocfilehash: ec79fc7c09f2bc1aeb2c07016365e831932fa1ff
+ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/24/2020
-ms.locfileid: "88761514"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89018116"
 ---
 # <a name="frequently-asked-questions-back-up-azure-vms"></a>Часто задаваемые вопросы. Резервное копирование виртуальных машин Azure
 
@@ -71,7 +71,7 @@ ms.locfileid: "88761514"
 
 Удалите блокировку и очистите коллекцию точек восстановления от этой группы ресурсов, чтобы сделать будущие резервные копии успешной. [Выполните следующие действия](backup-azure-troubleshoot-vm-backup-fails-snapshot-timeout.md#clean-up-restore-point-collection-from-azure-portal) , чтобы удалить коллекцию точек восстановления.
 
-### <a name="does-azure-backup-support-standard-ssd-managed-disks"></a>Поддерживает ли служба архивации Azure стандартные диски, управляемые SSD?
+### <a name="does-azure-backup-support-standard-ssd-managed-disks"></a>Поддерживает ли Azure Backup стандартные диски, управляемые SSD?
 
 Да, Azure Backup поддерживает [стандартные управляемые диски SSD](https://azure.microsoft.com/blog/announcing-general-availability-of-standard-ssd-disks-for-azure-virtual-machine-workloads/).
 

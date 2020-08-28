@@ -3,12 +3,12 @@ title: Автономная архивация с Azure Data Box для DPM и M
 description: Вы можете использовать Azure Data Box для заполнения начальных резервных копий данных в автономном режиме из DPM и MABS.
 ms.topic: conceptual
 ms.date: 08/12/2020
-ms.openlocfilehash: 33515cdd943f3816328bfd77d831288c5ee0a608
-ms.sourcegitcommit: c6b9a46404120ae44c9f3468df14403bcd6686c1
+ms.openlocfilehash: 5a8fbf3869794b6a5ef78e78177f130e4e009795
+ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88890031"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89017606"
 ---
 # <a name="offline-seeding-using-azure-data-box-for-dpm-and-mabs-preview"></a>Автономное заполнение с помощью Azure Data Box для DPM и MABS (Предварительная версия)
 
@@ -149,7 +149,7 @@ ms.locfileid: "88890031"
           — Azure.Storage       *4.6.1*.<br>
      >  - Приложение Azure AD регистрируется как *AzureOfflineBackup_\<object GUID of the user>* .
 
-13. Выберите верный заказ Data Box, для которого был распакован, подключен и разблокирован диск Data Box. Щелкните **Далее**.
+13. Выберите верный заказ Data Box, для которого был распакован, подключен и разблокирован диск Data Box. Нажмите **Далее**.
 
     ![Выбор Data Box](./media/offline-backup-azure-data-box-dpm-mabs/select-databox.png)
 
@@ -165,7 +165,7 @@ ms.locfileid: "88890031"
     > Например, если путь к диску — `\\mydomain\myserver\disk1\` и *disk1* содержит каталог с именем *PageBlob*, то путь, который должен быть указан в мастере сервера DPM/MABS, — это `\\mydomain\myserver\disk1\` .
     > Если [настраивается устройство Azure Data Box 100 ТБ](https://docs.microsoft.com/azure/backup/offline-backup-azure-data-box#setup-azure-data-box), укажите следующий сетевой путь к устройству `\\<DeviceIPAddress>\<StorageAccountName>_PageBlob`.
 
-15. Щелкните **Далее**. На странице **Сводка** проверьте параметры и нажмите кнопку **создать группу**.
+15. Нажмите **Далее**. На странице **Сводка** проверьте параметры и нажмите кнопку **создать группу**.
 
     ![Обнаружение Data Box](./media/offline-backup-azure-data-box-dpm-mabs/detect-databox.png)
 
@@ -203,7 +203,7 @@ ms.locfileid: "88890031"
 
 ## <a name="troubleshooting"></a>Устранение неполадок
 
-Агент Microsoft Azure Backup (MAB) на сервере DPM создает приложение Azure AD на вашем арендаторе. Для этого приложения требуется сертификат проверки подлинности, который создается и отправляется в процессе настройки политики автономного заполнения.
+Агент Microsoft Azure Backup (MAB) на сервере DPM создает приложение Azure AD на вашем арендаторе. Для этого приложения требуется сертификат для проверки подлинности, который создается и передается при настройке политики заполнения в автономном режиме.
 
 Для создания и отправки сертификата в приложение Azure AD используется Azure PowerShell.
 

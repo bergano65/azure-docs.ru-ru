@@ -8,12 +8,13 @@ ms.topic: article
 ms.service: storage
 ms.subservice: blobs
 ms.reviewer: sadodd
-ms.openlocfilehash: baed9ef099ed818fa0967c7a3e7ab61fb4921f75
-ms.sourcegitcommit: 6fc156ceedd0fbbb2eec1e9f5e3c6d0915f65b8e
+ms.custom: devx-track-csharp
+ms.openlocfilehash: cc70204a56c3a853c6c6c7f0e1573c71854c0f19
+ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/21/2020
-ms.locfileid: "88719314"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89018966"
 ---
 # <a name="process-change-feed-in-azure-blob-storage-preview"></a>Обработка канала изменений в хранилище BLOB-объектов Azure (Предварительная версия)
 
@@ -216,6 +217,6 @@ public async Task<List<BlobChangeFeedEvent>> ChangeFeedBetweenDatesAsync(string 
 
 Предоставленное время начала округляется вниз до ближайшего часа, а время окончания округляется до ближайшего часа. Возможно, пользователи увидят события, произошедшие до времени начала и после времени окончания. Также возможно, что некоторые события, происходящие между временем начала и окончания, не будут отображаться. Это связано с тем, что события могут записываться в течение часа, предшествующего времени начала, или в течение часа после времени окончания.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о журналах веб-канала изменений. См. [веб-канал изменений в хранилище BLOB-объектов Azure (Предварительная версия)](storage-blob-change-feed.md)

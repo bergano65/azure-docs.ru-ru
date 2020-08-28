@@ -7,18 +7,18 @@ manager: jillfra
 ms.assetid: da587aac-5e64-4e9a-8405-44cc1924881d
 ms.prod: visual-studio-dev15
 ms.technology: vs-azure
-ms.custom: vs-azure
+ms.custom: vs-azure, devx-track-csharp
 ms.workload: azure-vs
 ms.topic: conceptual
 ms.date: 12/02/2016
 ms.author: ghogen
 ROBOTS: NOINDEX,NOFOLLOW
-ms.openlocfilehash: 8410d082369c5eb5bc7212c50a5546e9b74c5b95
-ms.sourcegitcommit: e995f770a0182a93c4e664e60c025e5ba66d6a45
+ms.openlocfilehash: 9f0a3c3a96a73bd71a9b0c769a3ceff85ae428f1
+ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86131532"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89017623"
 ---
 # <a name="getting-started-with-azure-queue-storage-and-visual-studio-connected-services-cloud-services-projects"></a>Приступая к работе с подключенными службами хранилища очередей Azure и Visual Studio (проекты облачных служб)
 [!INCLUDE [storage-try-azure-tools-queues](../../includes/storage-try-azure-tools-queues.md)]
@@ -122,7 +122,7 @@ await messageQueue.DeleteMessage(retrievedMessage);
 * Можно получить пакет сообщений (до 32 сообщений).
 * Можно задать более длительное или короткое время ожидания невидимости, чтобы предоставить коду больше или меньше времени на полную обработку каждого сообщения. В следующем примере кода для получения 20 сообщений в одном вызове используется метод « **Messages** ». Затем он обрабатывает каждое сообщение с помощью цикла **foreach** . Он также задает время ожидания невидимости 5 минут для каждого сообщения. Обратите внимание, что 5 минут начинается для всех сообщений одновременно, поэтому через 5 минут после вызова методов передачи сообщений все сообщения, которые не были **удалены, снова**станут видимыми.
 
-Ниже приведен пример:
+Пример:
 
 ```csharp
 foreach (CloudQueueMessage message in messageQueue.GetMessages(20, TimeSpan.FromMinutes(5)))

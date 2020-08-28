@@ -5,12 +5,13 @@ author: srrengar
 ms.topic: conceptual
 ms.date: 2/25/2019
 ms.author: srrengar
-ms.openlocfilehash: cde24657cc8ed78b91e72df16d51df4077a6e030
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.custom: devx-track-csharp
+ms.openlocfilehash: a80eea5a50aa7b1e441049eeb2cae381994cd3ec
+ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "75463093"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89018660"
 ---
 # <a name="event-aggregation-and-collection-using-eventflow"></a>Агрегирование и сбор событий с помощью EventFlow
 
@@ -24,7 +25,7 @@ ms.locfileid: "75463093"
 
 Появится список различных пакетов, которые помечены как "Входные данные" и "Выходные данные". EventFlow поддерживает различные регистраторы и анализаторы журналов. Служба, в которой размещается EventFlow, должна содержать соответствующие пакеты в зависимости от источника и назначения журналов приложений. Помимо основного пакета ServiceFabric, также требуется настроить по крайней мере один ввод и один вывод. Например, можно добавить следующие пакеты для отправки событий EventSource в Application Insights:
 
-* `Microsoft.Diagnostics.EventFlow.Inputs.EventSource`сбор данных из класса EventSource службы и из стандартных классов EventSource, таких как *Microsoft-ServiceFabric-Services* и *Microsoft-ServiceFabric-* actors.
+* `Microsoft.Diagnostics.EventFlow.Inputs.EventSource` сбор данных из класса EventSource службы и из стандартных классов EventSource, таких как *Microsoft-ServiceFabric-Services* и *Microsoft-ServiceFabric-* actors.
 * `Microsoft.Diagnostics.EventFlow.Outputs.ApplicationInsights` (мы собираемся отправлять журналы в ресурс Azure Application Insights)
 * `Microsoft.Diagnostics.EventFlow.ServiceFabric` (позволяет инициализировать конвейер EventFlow из конфигурации службы Service Fabric и сообщать о всех проблемах отправки диагностических данных в виде отчетов о работоспособности Service Fabric)
 
@@ -145,7 +146,7 @@ servicefabric:/<section-name>/<setting-name>
 
 Запустите службу и просмотрите окно выходных данных отладки в Visual Studio. После запуска службы вы должны увидеть подтверждение того, что она отправляет записи в настроенное расположение вывода. Перейдите в платформу анализа и визуализации событий и убедитесь в том, что журналы начали отображаться (это может занять несколько минут).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Анализ событий и визуализация с помощью Application Insights](service-fabric-diagnostics-event-analysis-appinsights.md)
 * [Анализ событий и визуализация с помощью журналов Azure Monitor](service-fabric-diagnostics-event-analysis-oms.md)

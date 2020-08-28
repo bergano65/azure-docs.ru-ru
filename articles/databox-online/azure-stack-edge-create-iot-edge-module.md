@@ -8,12 +8,13 @@ ms.subservice: edge
 ms.topic: how-to
 ms.date: 08/06/2019
 ms.author: alkohli
-ms.openlocfilehash: 7c12beaf30651a6cb1048a75b0f7cb353b45173a
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.custom: devx-track-csharp
+ms.openlocfilehash: d8cea74ec24efa7562caab5074d87d436cddaffb
+ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84339898"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89018490"
 ---
 # <a name="develop-a-c-iot-edge-module-to-move-files-on-azure-stack-edge"></a>Разработка модуля IoT Edge C# для перемещения файлов на Azure Stack границе
 
@@ -41,7 +42,7 @@ ms.locfileid: "84339898"
 
 Как только файл попадает в общий облачный ресурс, он автоматически загружается в учетную запись хранения Azure.
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Обязательные условия
 
 Перед началом работы убедитесь, что у вас есть следующие ресурсы:
 
@@ -76,7 +77,7 @@ ms.locfileid: "84339898"
 
       ![Создание реестра контейнеров](./media/azure-stack-edge-create-iot-edge-module/create-container-registry-1.png)
  
-4. Выберите **Создать**.
+4. Нажмите кнопку **Создать**.
 5. После создания реестра контейнеров просмотрите его и выберите **Ключи доступа**.
 
     ![Получение ключей доступа](./media/azure-stack-edge-create-iot-edge-module/get-access-keys-1.png)
@@ -275,6 +276,6 @@ ms.locfileid: "84339898"
 
 4. Полный адрес образа контейнера с тегом можно увидеть в окне интегрированного терминала VS Code. Адрес образа создается на основе информации, сохраненной в файле module.json в формате `<repository>:<version>-<platform>`. Для этой статьи адрес должен выглядеть так: `mycontreg2.azurecr.io/filecopymodule:0.0.1-amd64`.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Чтобы развернуть и запустить этот модуль на Azure Stack пограничных устройств, см. действия в разделе [Добавление модуля](azure-stack-edge-deploy-configure-compute.md#add-a-module).

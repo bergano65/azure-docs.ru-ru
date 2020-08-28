@@ -4,19 +4,19 @@ description: Использование управления доступом н
 ms.reviewer: utraghuv
 ms.topic: conceptual
 ms.date: 06/24/2019
-ms.openlocfilehash: 408e25b865c6d244118e505121492ccf22d19b64
-ms.sourcegitcommit: 3d56d25d9cf9d3d42600db3e9364a5730e80fa4a
+ms.openlocfilehash: 1a4bb617511f5d5ccf882ccb11e7d88eb7a848ea
+ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87533467"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89017810"
 ---
 # <a name="use-role-based-access-control-to-manage-azure-backup-recovery-points"></a>Использование управления доступом на основе ролей для управления точками восстановления службы архивации Azure
 
 Управление доступом на основе ролей в Azure (Azure RBAC) обеспечивает детальное управление доступом для Azure. С помощью RBAC вы можете распределить обязанности внутри команды и предоставить пользователям доступ на уровне, который им необходим для выполнения поставленных задач.
 
 > [!IMPORTANT]
-> Роли, предоставляемые Azure Backup, ограничены действиями, которые могут быть выполнены в портал Azure или с помощью REST API или командлетов PowerShell или хранилища служб восстановления. Эти роли не управляют действиями, выполняемыми в пользовательском интерфейсе клиента агента службы Azure Backup, System Center Data Protection Manager или Azure Backup Server.
+> Роли, предоставляемые Azure Backup, ограничены действиями, которые могут быть выполнены в портал Azure или с помощью REST API или командлетов PowerShell или хранилища служб восстановления. Действия, выполняемые в пользовательском интерфейсе клиента агента Azure Backup или в пользовательском интерфейсе пользователя System Center Data Protection Manager или пользовательском интерфейсе Azure Backup Server, не контролируют эти роли.
 
 Azure Backup предоставляет три встроенных роли для управления операциями управления резервным копированием. Дополнительные сведения о [встроенных ролях Azure](../role-based-access-control/built-in-roles.md)
 

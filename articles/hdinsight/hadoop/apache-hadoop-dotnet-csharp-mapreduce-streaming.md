@@ -6,14 +6,14 @@ ms.author: hrasheed
 ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: how-to
-ms.custom: hdinsightactive,seoapr2020
+ms.custom: hdinsightactive, seoapr2020, devx-track-csharp
 ms.date: 04/28/2020
-ms.openlocfilehash: 0a20a120f72c70cb50cae37cece54d5efad31f47
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 58f807a5a036f14af9baede604debe9d577cdbf6
+ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87074804"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89000691"
 ---
 # <a name="use-c-with-mapreduce-streaming-on-apache-hadoop-in-hdinsight"></a>Использование C# для потоковой передачи MapReduce в Apache Hadoop в HDInsight
 
@@ -88,7 +88,7 @@ namespace mapper
 }
 ```
 
-После создания приложения создайте его для создания файла *mapper.exe/бин/дебуг/* в каталоге проекта.
+После создания приложения создайте его для создания файла *mapper.exe/бин/дебуг/ * в каталоге проекта.
 
 ## <a name="create-the-reducer"></a>Создание модуля редукции
 
@@ -141,7 +141,7 @@ namespace reducer
 }
 ```
 
-После создания приложения создайте его для создания файла *reducer.exe/бин/дебуг/* в каталоге проекта.
+После создания приложения создайте его для создания файла *reducer.exe/бин/дебуг/ * в каталоге проекта.
 
 ## <a name="upload-to-storage"></a>Отправка в хранилище
 

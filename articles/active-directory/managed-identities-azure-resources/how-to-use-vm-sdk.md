@@ -3,7 +3,7 @@ title: Использование управляемых удостоверен�
 description: Примеры кода для использования пакетов SDK для Azure с виртуальной машиной Azure, для которой включены управляемые удостоверения для ресурсов Azure.
 services: active-directory
 documentationcenter: ''
-author: MarkusVi
+author: barclayn
 manager: daveba
 editor: ''
 ms.service: active-directory
@@ -13,21 +13,21 @@ ms.topic: how-to
 ms.tgt_pltfrm: na
 ms.workload: identity
 ms.date: 12/01/2017
-ms.author: markvi
+ms.author: barclayn
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 8edcf144aceb96092bd92690533e1bdd03450896
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: ecfb2fa5f45a23d387741d4865aa9707df960e86
+ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85608438"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89018422"
 ---
 # <a name="how-to-use-managed-identities-for-azure-resources-on-an-azure-vm-with-azure-sdks"></a>Как использовать управляемые удостоверения для ресурсов Azure на виртуальной машине Azure с пакетами SDK для Azure 
 
 [!INCLUDE [preview-notice](../../../includes/active-directory-msi-preview-notice.md)]  
 В этой статье приведен список примеров для пакета SDK, в которых демонстрируется использование поддержки пакета SDK Azure для управляемых удостоверений для ресурсов Azure.
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Обязательные условия
 
 [!INCLUDE [msi-qs-configure-prereqs](../../../includes/active-directory-msi-qs-configure-prereqs.md)]
 
@@ -44,7 +44,7 @@ ms.locfileid: "85608438"
 | Python          | [Использование управляемых удостоверений для ресурсов Azure для аутентификации из виртуальной машины](https://azure.microsoft.com/resources/samples/resource-manager-python-manage-resources-with-msi/) |
 | Ruby            | [Управление ресурсами из виртуальной машины, на которой включены управляемые удостоверения для ресурсов Azure](https://github.com/Azure-Samples/resources-ruby-manage-resources-with-msi/) |
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - В разделе [Пакеты SDK](https://azure.microsoft.com/downloads/) приведен полный список ресурсов для пакета Azure SDK, включая файлы для скачивания библиотеки, документацию и многое другое.
 - Чтобы включить управляемые удостоверения для ресурсов Azure на виртуальной машине Azure, ознакомьтесь с разделом [Настройка управляемых удостоверений для ресурсов Azure на виртуальной машине с помощью портала Azure](qs-configure-portal-windows-vm.md).

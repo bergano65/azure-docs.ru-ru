@@ -10,12 +10,12 @@ ms.author: laobri
 ms.date: 08/28/2020
 ms.topic: conceptual
 ms.custom: troubleshooting, devx-track-python
-ms.openlocfilehash: a036cb4212b0237bea1c8509532dc78d469acb17
-ms.sourcegitcommit: e69bb334ea7e81d49530ebd6c2d3a3a8fa9775c9
+ms.openlocfilehash: 0f051e5b5711cec9fd8e72ec2b84c18f80430a0a
+ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 08/27/2020
-ms.locfileid: "88950159"
+ms.locfileid: "89018065"
 ---
 # <a name="debug-and-troubleshoot-machine-learning-pipelines"></a>Отладка и устранение неполадок в конвейерах машинного обучения
 [!INCLUDE [applies-to-skus](../../includes/aml-applies-to-basic-enterprise-sku.md)]
@@ -130,6 +130,8 @@ logger.error("I am an OpenCensus error statement with custom dimensions", {'step
 > [!TIP]
 > Запуски для *опубликованных конвейеров* можно найти на вкладке " **конечные точки** " в рабочей области. Запуски для *неопубликованных конвейеров* можно найти в **экспериментах** или **конвейерах**.
 
+Дополнительные сведения о ведении журналов и трассировки из `ParallelRunStep` см. в разделе [Отладка и устранение неполадок параллелрунстеп](how-to-debug-parallel-run-step.md).
+
 ## <a name="logging-in-azure-machine-learning-designer-preview"></a>Ведение журнала в Машинное обучение Azure конструкторе (Предварительная версия)
 
 Для конвейеров, созданных в конструкторе, файл **70_driver_log** можно найти либо на странице Создание, либо на странице сведения о выполнении конвейера.
@@ -170,7 +172,7 @@ logger.error("I am an OpenCensus error statement with custom dimensions", {'step
 
 В некоторых случаях может потребоваться интерактивно отлаживать код Python, используемый в конвейере машинного обучения. С помощью Visual Studio Code (VS Code) и дебугпи можно присоединяться к коду, как он выполняется в среде обучения. Дополнительные сведения см. в [разделе Интерактивная Отладка в VS Code Guide](how-to-debug-visual-studio-code.md#debug-and-troubleshoot-machine-learning-pipelines).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Обратитесь к Справочнику по пакету SDK, чтобы получить справку по пакету [azureml-конвейеры-Core](https://docs.microsoft.com/python/api/azureml-pipeline-core/?view=azure-ml-py) и пакету [azureml-конвейеры-этапов](https://docs.microsoft.com/python/api/azureml-pipeline-steps/?view=azure-ml-py) .
 

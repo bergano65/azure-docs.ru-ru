@@ -5,12 +5,13 @@ author: jakrams
 ms.author: jakras
 ms.date: 02/27/2020
 ms.topic: how-to
-ms.openlocfilehash: f3400d82a6aa184daabfa2ebbe6b775b8e4c1562
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.custom: devx-track-csharp
+ms.openlocfilehash: 4a0be44d8709726e159e17e703566c6c576bc18f
+ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85565462"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89018983"
 ---
 # <a name="set-up-remote-rendering-for-unity"></a>Настройка Удаленной отрисовки для Unity
 
@@ -66,17 +67,17 @@ RemoteManagerStatic.ShutdownRemoteRendering();
 
 ### <a name="session-state-events"></a>События состояния сеанса
 
-`RemoteManagerUnity.OnSessionUpdate`выдает события при изменении состояния сеанса. подробные сведения см. в документации по коду.
+`RemoteManagerUnity.OnSessionUpdate` выдает события при изменении состояния сеанса. подробные сведения см. в документации по коду.
 
 ### <a name="arrserviceunity"></a>аррсервицеунити
 
-`ARRServiceUnity`— Это необязательный компонент для упрощения установки и управления сеансами. Он содержит параметры для автоматической прекращения сеанса при выходе или выходе из режима воспроизведения приложения, а также при необходимости автоматически обновлять аренду сеанса. Он кэширует такие данные, как свойства сеанса (см. его `LastProperties` переменную), и предоставляет события для изменений состояния сеанса и ошибок сеанса.
+`ARRServiceUnity` — Это необязательный компонент для упрощения установки и управления сеансами. Он содержит параметры для автоматической прекращения сеанса при выходе или выходе из режима воспроизведения приложения, а также при необходимости автоматически обновлять аренду сеанса. Он кэширует такие данные, как свойства сеанса (см. его `LastProperties` переменную), и предоставляет события для изменений состояния сеанса и ошибок сеанса.
 
 В каждый момент времени не может быть более одного экземпляра `ARRServiceUnity` . Он предназначен для быстрого начала работы путем реализации некоторых распространенных функциональных возможностей. Однако для более крупного приложения может быть предпочтительным выполнить эти действия самостоятельно.
 
 Пример настройки и использования `ARRServiceUnity` см. в разделе Обзор [моделей с удаленным](../../tutorials/unity/view-remote-models/view-remote-models.md)просмотром.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Установка пакета Удаленной отрисовки для Unity](install-remote-rendering-unity-package.md)
-* [Учебник. Просмотр удаленных моделей](../../tutorials/unity/view-remote-models/view-remote-models.md)
+* [Руководство. Просмотр модели удаленной отрисовки](../../tutorials/unity/view-remote-models/view-remote-models.md)
