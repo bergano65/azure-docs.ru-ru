@@ -7,12 +7,12 @@ ms.author: baanders
 ms.date: 8/4/2020
 ms.topic: troubleshooting
 ms.service: digital-twins
-ms.openlocfilehash: dafea083e68b2afe6b6bcf45b4cff8779f817049
-ms.sourcegitcommit: 62717591c3ab871365a783b7221851758f4ec9a4
+ms.openlocfilehash: ecd402c30fee63ad594fff5e4fdc3b1610fe7e4e
+ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/22/2020
-ms.locfileid: "88749017"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89003887"
 ---
 # <a name="troubleshooting-azure-digital-twins-metrics"></a>Устранение неполадок в Azure Digital двойников: метрики
 
@@ -24,17 +24,17 @@ ms.locfileid: "88749017"
 
 1. Создайте экземпляр Digital двойников для Azure. Инструкции по настройке экземпляра Digital двойников для Azure см. в разделе [*как настроить экземпляр и проверку подлинности*](how-to-set-up-instance-scripted.md).
 
-2. Найдите свой экземпляр Azure Digital двойников в [портал Azure](https:/portal.azure.com) (для него можно открыть страницу, введя его имя в строке поиска портала). 
+2. Найдите свой экземпляр Azure Digital двойников в [портал Azure](https://portal.azure.com) (для него можно открыть страницу, введя его имя в строке поиска портала). 
 
     В меню экземпляра выберите **метрики**.
    
-    :::image type="content" source="media/troubleshoot-metrics/azure-digital-twins-metrics.png" alt-text="Снимок экрана со страницей метрики для Azure Digital двойников":::
+    :::image type="content" source="media/troubleshoot-metrics/azure-digital-twins-metrics.png" alt-text="Снимок экрана со страницей "метрики" для Azure Digital двойников":::
 
     На этой странице отображаются метрики для вашего экземпляра Azure Digital двойников. Вы также можете создать настраиваемые представления метрик, выбрав из списка нужные сведения.
     
 3. Вы можете отправить данные метрик в конечную точку концентраторов событий или учетную запись хранения Azure, выбрав **параметры диагностики** в меню, а затем **добавив параметр диагностики**.
 
-    :::image type="content" source="media/troubleshoot-diagnostics/diagnostic-settings.png" alt-text="Снимок экрана со страницей параметров диагностики и кнопкой Добавить":::
+    :::image type="content" source="media/troubleshoot-diagnostics/diagnostic-settings.png" alt-text="Снимок экрана со страницей параметров диагностики и кнопкой "Добавить"":::
 
     Дополнительные сведения об этом процессе см. в разделе [*Устранение неполадок: Настройка диагностики*](troubleshoot-diagnostics.md).
 

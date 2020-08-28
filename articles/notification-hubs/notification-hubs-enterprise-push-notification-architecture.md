@@ -16,12 +16,13 @@ ms.date: 01/04/2019
 ms.author: sethm
 ms.reviewer: jowargo
 ms.lastreviewed: 01/04/2019
-ms.openlocfilehash: 36d74a8819285c5eb5fb0367a2b32ae299ae6c8e
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.custom: devx-track-csharp
+ms.openlocfilehash: 018315b7ed468e24fb922337848d14703ffdcd4d
+ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87084319"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89003632"
 ---
 # <a name="enterprise-push-architectural-guidance"></a>Руководство по архитектуре push-уведомлений
 
@@ -89,7 +90,7 @@ ms.locfileid: "87084319"
     }
     ```
 
-    c. `CreateTopic` используется для создания раздела служебной шины.
+    В. `CreateTopic` используется для создания раздела служебной шины.
 
     ```csharp
     public static void CreateTopic(string connectionString)
@@ -106,7 +107,7 @@ ms.locfileid: "87084319"
     }
     ```
 
-    d. `SendMessage` используется для отправки сообщений в этот раздел служебной шины. Данный код просто периодически отправляет набор случайных сообщений в этот раздел. Как правило, эту функцию выполняет серверная система, которая отправляет сообщения при наступлении события.
+    Г. `SendMessage` используется для отправки сообщений в этот раздел служебной шины. Данный код просто периодически отправляет набор случайных сообщений в этот раздел. Как правило, эту функцию выполняет серверная система, которая отправляет сообщения при наступлении события.
 
     ```csharp
     public static void SendMessage(string connectionString)
@@ -158,7 +159,7 @@ ms.locfileid: "87084319"
     }
     ```
 
-    c. `CreateSubscription` используется для создания подписки служебной шины для раздела, в который серверная система отправляет сообщения. В зависимости от бизнес-сценария этот компонент создает одну или несколько подписок на соответствующие разделы (например, одни будут получать сообщения из системы "Отдел кадров", другие — из системы "Финансы" и т. д.)
+    В. `CreateSubscription` используется для создания подписки служебной шины для раздела, в который серверная система отправляет сообщения. В зависимости от бизнес-сценария этот компонент создает одну или несколько подписок на соответствующие разделы (например, одни будут получать сообщения из системы "Отдел кадров", другие — из системы "Финансы" и т. д.)
 
     ```csharp
     static void CreateSubscription(string connectionString)
@@ -174,7 +175,7 @@ ms.locfileid: "87084319"
     }
     ```
 
-    d. `ReceiveMessageAndSendNotification` используется для чтения сообщения из раздела с использованием подписки. Если операция считывания выполнена успешно, создается уведомление (в этом примере сценария — собственное всплывающее уведомление Windows), которое необходимо отправить в мобильное приложение с помощью Центров уведомлений Azure.
+    Г. `ReceiveMessageAndSendNotification` используется для чтения сообщения из раздела с использованием подписки. Если операция считывания выполнена успешно, создается уведомление (в этом примере сценария — собственное всплывающее уведомление Windows), которое необходимо отправить в мобильное приложение с помощью Центров уведомлений Azure.
 
     ```csharp
     static void ReceiveMessageAndSendNotification(string connectionString)
@@ -226,7 +227,7 @@ ms.locfileid: "87084319"
     }
     ```
 
-    д) Чтобы опубликовать это приложение в виде **веб-задания**, щелкните правой кнопкой мыши решение в Visual Studio и выберите **Publish as WebJob** (Опубликовать как веб-задание).
+    Д. Чтобы опубликовать это приложение в виде **веб-задания**, щелкните правой кнопкой мыши решение в Visual Studio и выберите **Publish as WebJob** (Опубликовать как веб-задание).
 
     ![Снимок экрана параметров щелчка правой кнопкой мыши, отображаемых с помощью команды "опубликовать как веб-задание Azure", описанной в Red.][2]
 
@@ -246,7 +247,7 @@ ms.locfileid: "87084319"
 
     Б. Убедитесь, что в приложении включено получение всплывающих уведомлений.
 
-    c. Убедитесь, что при запуске приложения вызывается следующий код регистрации Центров уведомлений (после замены значений `HubName` и `DefaultListenSharedAccessSignature`).
+    В. Убедитесь, что при запуске приложения вызывается следующий код регистрации Центров уведомлений (после замены значений `HubName` и `DefaultListenSharedAccessSignature`).
 
     ```csharp
     private async void InitNotificationsAsync()
@@ -289,7 +290,7 @@ ms.locfileid: "87084319"
 <!-- Links -->
 [коллекции примеров центра уведомлений]: https://github.com/Azure/azure-notificationhubs-samples
 [Мобильная служба Azure]: https://azure.microsoft.com/documentation/services/mobile-services/
-[служебной шине Azure]: ../service-bus-messaging/service-bus-messaging-overview.md
+[Служебная шина Azure]: ../service-bus-messaging/service-bus-messaging-overview.md
 [Использование разделов и подписок Service Bus]: ../service-bus-messaging/service-bus-dotnet-how-to-use-topics-subscriptions.md
 [веб-задания Azure]: ../app-service/webjobs-create.md
 [Учебник по центрам уведомлений для Windows Universal]: ./notification-hubs-windows-store-dotnet-get-started-wns-push-notification.md

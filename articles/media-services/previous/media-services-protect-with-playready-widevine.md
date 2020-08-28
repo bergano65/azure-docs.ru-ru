@@ -14,12 +14,13 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 03/20/2019
 ms.author: juliako
-ms.openlocfilehash: 5f7a9f87c73e4c5aa5f905def18534b04688a0a2
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.custom: devx-track-csharp
+ms.openlocfilehash: 7ef020298b66ce3b66f27bdd482ef7fc04a2504c
+ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87000539"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89021210"
 ---
 # <a name="use-playready-andor-widevine-dynamic-common-encryption"></a>Использование общего динамического шифрования PlayReady и (или) Widevine DRM
 
@@ -613,10 +614,10 @@ namespace DynamicEncryptionWithDRM
 
 [!INCLUDE [media-services-learning-paths-include](../../../includes/media-services-learning-paths-include.md)]
 
-## <a name="provide-feedback"></a>Предоставление отзыва
+## <a name="provide-feedback"></a>Отзывы
 [!INCLUDE [media-services-user-voice-include](../../../includes/media-services-user-voice-include.md)]
 
-## <a name="see-also"></a>См. также статью
+## <a name="see-also"></a>См. также
 
 * [Использование CENC с несколькими подсистемами DRM и контролем доступа](media-services-cenc-with-multidrm-access-control.md)
 * [Настройка упаковки Widevine с использованием служб мультимедиа](https://mingfeiy.com/how-to-configure-widevine-packaging-with-azure-media-services)

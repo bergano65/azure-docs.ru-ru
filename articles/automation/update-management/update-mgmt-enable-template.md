@@ -7,12 +7,12 @@ ms.topic: conceptual
 author: mgoedtel
 ms.author: magoedte
 ms.date: 06/10/2020
-ms.openlocfilehash: 37f4b7208d7c8fafcd3aa1d25106a2cd5e4949c6
-ms.sourcegitcommit: cee72954f4467096b01ba287d30074751bcb7ff4
+ms.openlocfilehash: c4b29db8bbcb741116fcd425b4489973228066e6
+ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/30/2020
-ms.locfileid: "87450604"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89021601"
 ---
 # <a name="enable-update-management-using-azure-resource-manager-template"></a>Включение Управления обновлениями с помощью шаблона Azure Resource Manager
 
@@ -33,7 +33,7 @@ ms.locfileid: "87450604"
 
 | Ресурс | Тип ресурса | Версия API |
 |:---|:---|:---|
-| Рабочая область | workspaces | 2020-03-01 — предварительная версия |
+| Рабочая область | workspaces | 2020-03-01-preview |
 | Учетная запись службы автоматизации | служба автоматизации | 2018-06-30 |
 | Решение | solutions | 2015-11-01-preview |
 
@@ -48,7 +48,7 @@ ms.locfileid: "87450604"
 * имя рабочей области;
 * Регион, в котором создается рабочая область.
 * , Чтобы включить разрешения для ресурсов или рабочих областей.
-* Имя учетной записи службы автоматизации.
+* имя учетной записи службы автоматизации;
 * Регион, в котором создается учетная запись.
 
 Шаблон в формате JSON указывает значения по умолчанию для других параметров, которые в вашей среде скорее всего будут использоваться в стандартной конфигурации. Шаблон можно сохранить в учетной записи хранения Azure для совместного использования в пределах организации. Дополнительную информацию о работе с шаблонами см. в руководстве [Развертывание ресурсов с помощью шаблонов ARM и Azure CLI](../../azure-resource-manager/templates/deploy-cli.md).
@@ -150,7 +150,7 @@ ms.locfileid: "87450604"
             "location": "[parameters('location')]",
             "properties": {
                 "sku": {
-                    "name": "[parameters('sku')]",
+                    "name": "[parameters('sku')]"
                 },
                 "retentionInDays": "[parameters('dataRetention')]",
                 "features": {
@@ -192,7 +192,7 @@ ms.locfileid: "87450604"
                 "sku": {
                     "name": "Basic"
                 }
-            },
+            }
         },
         {
             "apiVersion": "2020-03-01-preview",

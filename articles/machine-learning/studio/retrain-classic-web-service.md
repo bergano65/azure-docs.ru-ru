@@ -7,23 +7,23 @@ ms.subservice: studio
 ms.topic: how-to
 author: peterclu
 ms.author: peterlu
-ms.custom: seodec18, previous-ms.author=yahajiza, previous-author=YasinMSFT
+ms.custom: seodec18, previous-ms.author=yahajiza, previous-author=YasinMSFT, devx-track-csharp
 ms.date: 02/14/2019
-ms.openlocfilehash: aa11d17aaba28819c4c5ecfb259eea2d8d12ce7d
-ms.sourcegitcommit: 0b8320ae0d3455344ec8855b5c2d0ab3faa974a3
+ms.openlocfilehash: dfc959984147d89ca5bfe68ed103a89b22f75501
+ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/30/2020
-ms.locfileid: "87431890"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89020694"
 ---
 # <a name="retrain-and-deploy-a-classic-studio-classic-web-service"></a>Повторное обучение и развертывание классической веб-службы (классическая модель)
 
-**применимо к:** ![ Да ](../../../includes/media/aml-applies-to-skus/yes.png) машинное обучение Studio (классическая модель) ![ нет](../../../includes/media/aml-applies-to-skus/no.png)[машинное обучение Azure](../compare-azure-ml-to-studio-classic.md)  
+**ПРИМЕНИМО К:** ![да](../../../includes/media/aml-applies-to-skus/yes.png)Студия машинного обучения (классическая) ![нет](../../../includes/media/aml-applies-to-skus/no.png)[Машинное обучение Azure](../compare-azure-ml-to-studio-classic.md)
 
 
 Повторное обучение моделей машинного обучения является одним из способов обеспечения точности и основывается на самых актуальных доступных данных. В этой статье показано, как переучить классическую веб-службу Studio (классической). Инструкции по переучению новой веб-службы Studio (классической) см [. в этой статье.](retrain-machine-learning-model.md)
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Обязательные условия
 
 В этой статье предполагается, что у вас уже есть повторно обученный и прогнозный эксперимент. Эти шаги описаны в статье [Переобучение модели Студии машинного обучения Azure](/azure/machine-learning/studio/retrain-machine-learning-model). Однако вместо развертывания вашей модели машинного обучения в качестве новой классической веб-службы вы развернете свой прогнозный эксперимент.
      

@@ -7,18 +7,18 @@ ms.subservice: studio
 ms.topic: how-to
 author: likebupt
 ms.author: keli19
-ms.custom: seodec18
+ms.custom: seodec18, devx-track-csharp
 ms.date: 02/14/2019
-ms.openlocfilehash: 9acb9db0024ea1601f82b96376f084536fbbeabb
-ms.sourcegitcommit: 0b8320ae0d3455344ec8855b5c2d0ab3faa974a3
+ms.openlocfilehash: 7ce7697b92df9c6bef61bbf9eccb9f4252ce957f
+ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/30/2020
-ms.locfileid: "87431870"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89020700"
 ---
 # <a name="retrain-and-deploy-a-machine-learning-model"></a>Повторное обучение и развертывание модели машинного обучения
 
-**применимо к:** ![ Да ](../../../includes/media/aml-applies-to-skus/yes.png) машинное обучение Studio (классическая модель) ![ нет](../../../includes/media/aml-applies-to-skus/no.png)[машинное обучение Azure](../compare-azure-ml-to-studio-classic.md)  
+**ПРИМЕНИМО К:** ![да](../../../includes/media/aml-applies-to-skus/yes.png)Студия машинного обучения (классическая) ![нет](../../../includes/media/aml-applies-to-skus/no.png)[Машинное обучение Azure](../compare-azure-ml-to-studio-classic.md)
 
 
 Повторное обучение — один из способов поддерживать точность моделей машинного обучения и учитывать самые актуальные доступные данные. В этой статье показано, как переучить и развернуть модель машинного обучения в качестве новой веб-службы в Studio (классической). Если вас интересует повторное обучение для классической веб-службы, [изучите это практическое руководство.](retrain-classic-web-service.md)
@@ -53,7 +53,7 @@ ms.locfileid: "87431870"
 1. В нижней части холста эксперимента щелкните **Set Up Web Service** (Настроить веб-службу).
 1. Выберите **Deploy Web Service [New]** (Развернуть веб-службу (новую)). Портал веб-служб Машинного обучения Azure откроется на странице **Deploy Web service** (Развертывание веб-службы).
 1. Введите имя веб-службы и выберите план платежей.
-1. Выберите **Развернуть**.
+1. Щелкните **Развернуть**.
 
 ## <a name="retrain-the-model"></a>Повторное обучение модели
 

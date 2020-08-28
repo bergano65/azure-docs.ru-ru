@@ -3,12 +3,12 @@ title: Модель данных для журналов Azure Monitor
 description: В этой статье представлены сведения о модели данных Log Analytics в Azure Monitor для данных Azure Backup.
 ms.topic: conceptual
 ms.date: 02/26/2019
-ms.openlocfilehash: 7822f88c9ea3e0cd83b7e600d63984a8a51becb1
-ms.sourcegitcommit: c6b9a46404120ae44c9f3468df14403bcd6686c1
+ms.openlocfilehash: 1fcb4eb0c584f792132f19c8c4d66289342aa36e
+ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88890269"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89020955"
 ---
 # <a name="log-analytics-data-model-for-azure-backup-data"></a>Модель данных Log Analytics для данных Azure Backup
 
@@ -472,7 +472,7 @@ ms.locfileid: "88890269"
 
 Поскольку схема v1 находится в пути устаревания, рекомендуется использовать только схему v2 во всех пользовательских запросах Azure Backup диагностических данных. Ниже приведен пример обновления запросов для удаления зависимости от схемы v1.
 
-1. Определяет, использует ли запрос любое поле, применимое только к схеме v1. Предположим, что у вас есть запрос на перечисление всех элементов резервных копий и связанных с ними защищенных серверов следующим образом:
+1. Определяет, использует ли запрос любое поле, применимое только к схеме версии 1. Предположим, что у вас есть запрос на перечисление всех элементов резервных копий и связанных с ними защищенных серверов следующим образом:
 
     ````Kusto
     AzureDiagnostics

@@ -10,18 +10,19 @@ ms.date: 10/01/2019
 ms.author: tamram
 ms.reviewer: ozge
 ms.subservice: common
-ms.openlocfilehash: 29bec00916f4cc3683dae5b6d3065e02a3cbe10f
-ms.sourcegitcommit: 5b6acff3d1d0603904929cc529ecbcfcde90d88b
+ms.custom: devx-track-csharp
+ms.openlocfilehash: f569fdac19c4f765828d24f4d6615fdd7bafef8a
+ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/21/2020
-ms.locfileid: "88724172"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89010908"
 ---
 # <a name="call-rest-api-operations-with-shared-key-authorization"></a>Вызов REST API операций с авторизацией общего ключа
 
 В этой статье показано, как вызывать интерфейсы API службы хранилища Azure, в том числе как сформировать заголовок авторизации. Она написана с точки зрения разработчика, который ничего не знает о других частях и не имеет представления о том, как выполнить вызов RESTFUL. После того как вы узнаете, как вызвать операцию RESTFUL, можно использовать эти знания для использования любых других операций службы хранилища Azure.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Обязательные условия
 
 Пример приложения перечисляет контейнеры больших двоичных объектов для учетной записи хранения. Чтобы выполнить код, описанный в этой статье, необходимо следующее.
 

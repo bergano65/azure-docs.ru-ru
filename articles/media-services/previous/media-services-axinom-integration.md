@@ -15,12 +15,13 @@ ms.topic: article
 ms.date: 03/14/2019
 ms.author: willzhan
 ms.reviewer: Mingfeiy;rajputam;Juliako
-ms.openlocfilehash: 147fecdd9777e06ce078e4ed1531d6d0a0da749c
-ms.sourcegitcommit: 845a55e6c391c79d2c1585ac1625ea7dc953ea89
+ms.custom: devx-track-csharp
+ms.openlocfilehash: c2dc90b84446917c4f06de707047b92e52cf7bc8
+ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/05/2020
-ms.locfileid: "85954627"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89020989"
 ---
 # <a name="using-axinom-to-deliver-widevine-licenses-to-azure-media-services"></a>Использование Axinom для доставки лицензий Widevine в службы мультимедиа Azure 
 > [!div class="op_single_selector"]
@@ -54,7 +55,7 @@ ms.locfileid: "85954627"
 
 В разделе [Создание маркеров JWT](media-services-axinom-integration.md#jwt-token-generation) объясняется, почему Azure Active Directory нельзя использовать в качестве службы маркеров безопасности для сервера лицензирования Widevine Axinom.
 
-### <a name="considerations"></a>Особенности
+### <a name="considerations"></a>Рекомендации
 1. Чтобы создать ключ содержимого для настройки службы доставки ключей, необходимо использовать заданное начальное значение Axinom (8888000000000000000000000000000000000000) и созданный или выбранный идентификатор ключа. Сервер лицензирования Axinom выдает все лицензии, содержащие ключи содержимого на основе одного начального значения, которое является допустимым как для тестирования, так и для рабочих задач.
 2. URL-адрес для получения лицензии Widevine для тестирования: [https://drm-widevine-licensing.axtest.net/AcquireLicense](https://drm-widevine-licensing.axtest.net/AcquireLicense) . Допускается использование HTTP и HTTPS.
 
@@ -142,7 +143,7 @@ namespace OpenIdConnectWeb.Utils
 <add key="ax:keyseed" value="8888000000000000000000000000000000000000" />
 ```
 
-### <a name="considerations"></a>Особенности
+### <a name="considerations"></a>Рекомендации
 1. Хотя служба доставки лицензий AMS PlayReady требует наличия перед маркером проверки подлинности префикса Bearer=, сервер лицензирования Axinom Widevine не использует его.
 2. В качестве ключа подписи используется ключ обмена данными Axinom. Этот ключ представляет собой шестнадцатеричную строку, однако при кодировании его следует рассматривать как последовательность байтов, а не как строку. Это возможно при использовании метода ConvertHexStringToByteArray.
 

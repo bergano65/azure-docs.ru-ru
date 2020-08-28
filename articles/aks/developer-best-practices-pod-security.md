@@ -5,12 +5,12 @@ services: container-service
 ms.topic: conceptual
 ms.date: 07/28/2020
 ms.author: zarhoads
-ms.openlocfilehash: b09fb7cb5e631d3405adf39d5c92a72288249aff
-ms.sourcegitcommit: c6b9a46404120ae44c9f3468df14403bcd6686c1
+ms.openlocfilehash: fab4943cad1a87bda70a4c4332ab6135ed99bf1b
+ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88893151"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89022281"
 ---
 # <a name="best-practices-for-pod-security-in-azure-kubernetes-service-aks"></a>Рекомендации по защите групп pod в Службе контейнеров Azure (AKS)
 
@@ -115,7 +115,7 @@ Azure Key Vault с драйвером Secrets Store CSI можно исполь�
 [aks-keyvault-csi-driver]: https://github.com/Azure/secrets-store-csi-driver-provider-azure#usage
 [linux-capabilities]: http://man7.org/linux/man-pages/man7/capabilities.7.html
 [selinux-labels]: https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.18/#selinuxoptions-v1-core
-[aks-associated-projects]: https://github.com/Azure/AKS/blob/master/previews.md#associated-projects
+[aks-associated-projects]: https://awesomeopensource.com/projects/aks?categoryPage=11
 
 <!-- INTERNAL LINKS -->
 [best-practices-cluster-security]: operator-best-practices-cluster-security.md

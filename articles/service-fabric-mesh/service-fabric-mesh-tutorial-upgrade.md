@@ -5,13 +5,13 @@ author: dkkapur
 ms.topic: conceptual
 ms.date: 11/29/2018
 ms.author: dekapur
-ms.custom: mvc, devcenter
-ms.openlocfilehash: 7cdb8868f760ef0f35ab90c06b411110f871738c
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.custom: mvc, devcenter, devx-track-csharp
+ms.openlocfilehash: 876359b45daa280a1f5701f2490ce505327f309b
+ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "75351716"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89011010"
 ---
 # <a name="tutorial-learn-how-to-upgrade-a-service-fabric-application-using-visual-studio"></a>Руководство. Узнайте, как обновить приложение Service Fabric с помощью Visual Studio
 
@@ -151,7 +151,7 @@ The application was deployed successfully and it can be accessed at http://10.00
 
 Откройте веб-браузер и перейдите к URL-адресу, чтобы увидеть работу сайта в Azure. Теперь вы видите веб-страницу, содержащую столбец категории.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 В этой части руководства было показано следующее.
 > [!div class="checklist"]

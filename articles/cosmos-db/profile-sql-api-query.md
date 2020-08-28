@@ -7,12 +7,13 @@ ms.subservice: cosmosdb-sql
 ms.topic: how-to
 ms.date: 05/17/2019
 ms.author: girobins
-ms.openlocfilehash: 8bec102064d6269964cb917d745af206acf948ad
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.custom: devx-track-csharp
+ms.openlocfilehash: 71ebc90834083def5b82e16dc387a6e61943206d
+ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85262554"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89021754"
 ---
 # <a name="get-sql-query-execution-metrics-and-analyze-query-performance-using-net-sdk"></a>Получение метрик выполнения запросов SQL и анализ производительности запросов с помощью пакета SDK для .NET
 
@@ -233,14 +234,14 @@ WHERE c.description = "BABYFOOD, DESSERT, FRUIT DESSERT, WITHOUT ASCORBIC ACID, 
 
 Дополнительные сведения о настройке производительности запросов см. в статье [Настройка производительности запросов](https://docs.microsoft.com/azure/cosmos-db/documentdb-sql-query-metrics) .
 
-## <a name="references"></a><a id="References"></a>Ссылки
+## <a name="references"></a><a id="References"></a>Ссылки (на английском языке)
 
 - [DocumentDB SQL Syntax](https://go.microsoft.com/fwlink/p/?LinkID=510612) (Синтаксис SQL в DocumentDB)
 - [ANSI SQL 2011](https://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=53681)
 - [JSON](https://json.org/)
 - [LINQ](/previous-versions/dotnet/articles/bb308959(v=msdn.10)) 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Настройка производительности запросов](sql-api-query-metrics.md)
 - [Общие сведения об индексировании](index-overview.md)

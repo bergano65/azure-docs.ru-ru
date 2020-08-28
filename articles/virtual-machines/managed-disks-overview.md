@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 04/24/2020
 ms.author: rogarana
 ms.subservice: disks
-ms.openlocfilehash: 72f68b35d171503bb07fc5e6f58a858ceea4c6cf
-ms.sourcegitcommit: 62717591c3ab871365a783b7221851758f4ec9a4
+ms.openlocfilehash: c7bef7fac23ab054810d7d27f99b773f6910f344
+ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/22/2020
-ms.locfileid: "88749687"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89021449"
 ---
 # <a name="introduction-to-azure-managed-disks"></a>Общие сведения об управляемых дисках Azure
 
@@ -91,7 +91,7 @@ ms.locfileid: "88749687"
 
 У каждой виртуальной машины есть один подключенный диск операционной системы. На этот диск предварительно установлена операционная система которая была выбран при создании виртуальной машины. Этот диск содержит загрузочный том.
 
-Максимальная емкость этого диска составляет 2048 ГиБ.
+Максимальная емкость этого диска — 4 095 гиб.
 
 ### <a name="temporary-disk"></a>Временный диск
 

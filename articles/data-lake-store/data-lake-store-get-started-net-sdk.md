@@ -6,12 +6,13 @@ ms.service: data-lake-store
 ms.topic: how-to
 ms.date: 05/29/2018
 ms.author: twooley
-ms.openlocfilehash: 379f0c5418c2e15786b16cf1e4f67487432fa905
-ms.sourcegitcommit: 93462ccb4dd178ec81115f50455fbad2fa1d79ce
+ms.custom: devx-track-csharp
+ms.openlocfilehash: ffd00ace0445b1b8cc13881834d7759aa217c4c6
+ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/06/2020
-ms.locfileid: "85985936"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89020972"
 ---
 # <a name="account-management-operations-on-azure-data-lake-storage-gen1-using-net-sdk"></a>Операции управления учетными записями в Azure Data Lake Storage 1-го поколения c использованием .NET SDK
 > [!div class="op_single_selector"]
@@ -25,7 +26,7 @@ ms.locfileid: "85985936"
 
 Дополнительные сведения о том, как выполнять операции управления данными в Data Lake Storage 1-го поколения с помощью .NET SDK, см. в статье [Операции файловой системы в Data Lake Storage 1-го поколения с использованием пакета SDK для .NET SDK](data-lake-store-data-operations-net-sdk.md).
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Обязательные условия
 * **Visual Studio 2013 или более поздней версии**. В приведенных ниже инструкциях используется Visual Studio 2019.
 
 * **Подписка Azure**. См. страницу [бесплатной пробной версии Azure](https://azure.microsoft.com/pricing/free-trial/).
@@ -145,5 +146,5 @@ _adlsClient.Account.Delete(_resourceGroupName, _adlsAccountName);
 * [Операции файловой системы в Data Lake Storage 1-го поколения c использованием SDK для .NET](data-lake-store-data-operations-net-sdk.md)
 * [Библиотеки Azure Data Lake Store для .NET](https://docs.microsoft.com/dotnet/api/overview/azure/data-lake-store?view=azure-dotnet)
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 * [Защита данных в Data Lake Storage Gen1](data-lake-store-secure-data.md)

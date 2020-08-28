@@ -5,12 +5,13 @@ author: vturecek
 ms.topic: conceptual
 ms.date: 09/20/2017
 ms.author: vturecek
-ms.openlocfilehash: a3f19d1240c2dcf1e62d5723c40b4f7c8b2154f0
-ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
+ms.custom: devx-track-csharp
+ms.openlocfilehash: 246b1456c05605c4015c19e1a139e9ad65f6eaba
+ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2020
-ms.locfileid: "86253292"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89022162"
 ---
 # <a name="service-remoting-in-c-with-reliable-services"></a>Удаленное взаимодействие в Reliable Services с помощью C#
 
@@ -268,7 +269,7 @@ string message = await helloWorldClient.HelloWorldAsync();
 
 ### <a name="use-explicit-remoting-classes-to-create-a-listenerclient-factory-for-the-v2-interface-compatible-version"></a>Использование явных классов удаленного взаимодействия для создания прослушивателя и фабрики клиента для версии 2 (с совместимым интерфейсом)
 
-Выполните следующие действия.
+Выполните следующие действия:
 
 1. Добавьте в манифест службы ресурс конечной точки с именем ServiceEndpointV2_1.
 
@@ -357,7 +358,7 @@ string message = await helloWorldClient.HelloWorldAsync();
 ### <a name="use-custom-serialization-with-a-remoting-wrapped-message"></a>Использование настраиваемой сериализации с упакованным сообщением удаленного взаимодействия
 
 В упакованном сообщении удаленного взаимодействия мы создаем отдельный упакованный объект, в поле которого хранятся все параметры.
-Выполните следующие действия.
+Выполните следующие действия:
 
 1. Реализуйте интерфейс `IServiceRemotingMessageSerializationProvider`, чтобы обеспечить пользовательскую сериализацию.
     В этом фрагменте кода показан пример такой реализации.

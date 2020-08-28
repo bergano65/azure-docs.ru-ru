@@ -14,12 +14,13 @@ ms.devlang: na
 ms.topic: article
 ms.date: 03/14/2019
 ms.author: juliako
-ms.openlocfilehash: 44f10bd49a768004fc63a3287799e6b79dd5bae1
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.custom: devx-track-csharp
+ms.openlocfilehash: 2a1a506e7e4c4a90ed39f4371b48e47b632918c8
+ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87071897"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89021511"
 ---
 # <a name="how-to-build-a-smooth-streaming-windows-store-application"></a>Создание приложения для магазина Windows с бесперебойной потоковой передачей  
 
@@ -75,7 +76,7 @@ ms.locfileid: "87071897"
     | Имя решения |SSPlayer |
     | Создать каталог для решения |(выбрано) |
 
-1. Нажмите кнопку **ОК**.
+1. Нажмите кнопку **OK**.
 
 ### <a name="to-add-a-reference-to-the-smooth-streaming-client-sdk"></a>Добавление ссылки на пакет SDK клиента Smooth Streaming
 
@@ -87,7 +88,7 @@ ms.locfileid: "87071897"
     | Ссылочная группа |Windows/Расширения |
     | Справочник |Выберите клиентский пакет SDK бесперебойной потоковой передачи Microsoft для Windows 8 и пакет среды выполнения Microsoft Visual C++ |
 
-1. Нажмите кнопку **ОК**. 
+1. Нажмите кнопку **OK**. 
 
 После добавления ссылок необходимо выбрать целевую платформу (x64 x86), добавление ссылок будет действовать не для всех конфигураций платформы ЦП.  Для таких добавленных ссылок в обозревателе решений будет выведен желтый значок предупреждения.
 
@@ -516,7 +517,7 @@ ms.locfileid: "87071897"
    ```
 
    > [!NOTE]
-   > CoreDispatcher используется для внесения изменений в поток пользовательского интерфейса из других потоков. В случае узкого места в потоке Dispatcher разработчик может использовать Dispatcher, предоставляемый элементом пользовательского интерфейса, который предполагается обновить.  Например.
+   > CoreDispatcher используется для внесения изменений в поток пользовательского интерфейса из других потоков. В случае узкого места в потоке Dispatcher разработчик может использовать Dispatcher, предоставляемый элементом пользовательского интерфейса, который предполагается обновить.  Пример:
 
    ```csharp
          await sliderProgress.Dispatcher.RunAsync(CoreDispatcherPriority.Normal, () => { TimeSpan 

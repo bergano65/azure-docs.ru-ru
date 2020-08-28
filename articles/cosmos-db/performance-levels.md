@@ -6,12 +6,13 @@ ms.service: cosmos-db
 ms.topic: conceptual
 ms.date: 06/04/2018
 ms.author: sngun
-ms.openlocfilehash: dace7fb291cef24ad8b48a0791b2fadca22fa71b
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.custom: devx-track-csharp
+ms.openlocfilehash: ce81ce9afa45c93010c457bc292bba037607f96f
+ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85556057"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89020887"
 ---
 # <a name="retiring-the-s1-s2-and-s3-performance-levels"></a>Прекращение использования уровней производительности S1, S2 и S3
 
@@ -128,7 +129,7 @@ ms.locfileid: "85556057"
 
 Для пользователей подписки EA цена не будет изменяться до истечения действующего контракта.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 Дополнительные сведения о ценах и управлении данными с помощью Azure Cosmos DB см. в следующих статьях.
 
 1.  [Секционирование, ключи секции и масштабирование в Cosmos DB](sql-api-partition-data.md). Узнайте, чем отличаются односекционные и секционированные контейнеры. В статье также содержатся советы по реализации стратегии секционирования для удобства масштабирования.

@@ -13,13 +13,13 @@ ms.devlang: na
 ms.topic: article
 ms.date: 03/18/2019
 ms.author: juliako
-ms.custom: has-adal-ref
-ms.openlocfilehash: c1bf77881f672bf3bd2b2dccf91c30855c520052
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.custom: has-adal-ref, devx-track-csharp
+ms.openlocfilehash: 4c83ab0a2958fc437f7b6df1502e34e62254d35c
+ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87042900"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89020649"
 ---
 # <a name="use-azure-ad-authentication-to-access-azure-media-services-api-with-net"></a>Использование аутентификации Azure AD для доступа к API служб мультимедиа Azure с помощью .NET
 
@@ -63,7 +63,7 @@ ms.locfileid: "87042900"
 
     Чтобы добавить ссылки с помощью пакета NuGet, сделайте следующее: в **обозревателе решений** щелкните правой кнопкой мыши имя проекта и выберите **Управление пакетами NuGet**. Затем найдите **windowsazure.mediaservices** и щелкните **Установить**.
 
-    или
+    -или-
 
     В **консоли диспетчера пакетов** Visual Studio выполните приведенную ниже команду.
 

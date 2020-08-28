@@ -9,13 +9,13 @@ services: iot-hub
 ms.devlang: csharp
 ms.topic: conceptual
 ms.date: 08/20/2019
-ms.custom: amqp
-ms.openlocfilehash: a3258de2ed7269ab50e6feca3c421d55de5a9d91
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.custom: amqp, devx-track-csharp
+ms.openlocfilehash: a10c8b21da1e4dc08a186ccb6ba6528b7a655943
+ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "81759782"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89022077"
 ---
 # <a name="get-started-with-iot-hub-module-identity-and-module-twin-using-the-portal-and-net-device"></a>Начало работы с удостоверением модуля Центра Интернета вещей и двойником модуля с использованием портала и устройства .NET
 
@@ -93,9 +93,9 @@ ms.locfileid: "81759782"
 
 ### <a name="get-your-module-connection-string"></a>Получение строки подключения модуля
 
-Вам потребуется строка подключения модуля для консольного приложения. Выполните следующие действия.
+Вам потребуется строка подключения модуля для консольного приложения. Выполните указанные ниже действия:
 
-1. Войдите на [портал Azure](https://portal.azure.com/).
+1. Войдите на [портал Microsoft Azure](https://portal.azure.com/).
 
 1. Перейдите в центр Интернета вещей и выберите **устройства IOT**. Откройте **myFirstDevice** , и вы увидите, что **мифирстмодуле** был успешно создан.
 
@@ -184,7 +184,7 @@ ms.locfileid: "81759782"
 
 В этом примере кода показано, как извлечь двойник модуля и обновить сообщаемые свойства с помощью протокола AMQP. В общедоступной предварительной версии для операций двойника модуля поддерживается только протокол AMQP.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Чтобы продолжить знакомство с Центром Интернета вещей и изучить другие сценарии Интернета вещей, см. следующие ресурсы:
 

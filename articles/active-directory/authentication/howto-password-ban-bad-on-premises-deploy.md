@@ -11,12 +11,12 @@ author: iainfoulds
 manager: daveba
 ms.reviewer: jsimmons
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 759a5fa2be5a3df50160d2fd0ac4231c9f49329b
-ms.sourcegitcommit: 6fc156ceedd0fbbb2eec1e9f5e3c6d0915f65b8e
+ms.openlocfilehash: b773fb887d3663a2af2e340912e378c7fccaba4a
+ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/21/2020
-ms.locfileid: "88718957"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89003547"
 ---
 # <a name="plan-and-deploy-on-premises-azure-active-directory-password-protection"></a>Планирование и развертывание локальной Azure Active Directory защита паролем
 
@@ -49,6 +49,8 @@ ms.locfileid: "88718957"
 * [Сбой понижения роли контроллера домена из-за ненадежного пароля локального администратора](howto-password-ban-bad-on-premises-troubleshoot.md#domain-controller-demotion-fails-due-to-a-weak-local-administrator-password)
 
 После того как компонент будет запущен в режиме аудита в течение разумного периода времени, можно переключить конфигурацию с режима *аудита* на *принудительное* требование более безопасных паролей. В это время рекомендуется дополнительный мониторинг.
+
+Важно отметить, что защита паролей Azure AD может только проверять пароли во время операций изменения или настройки пароля. Пароли, которые были приняты и сохранены в Active Directory до развертывания защиты паролей Azure AD, никогда не проверяются и продолжат работать как есть. Со временем все пользователи и учетные записи будут в конечном итоге начать использовать проверенные пароли с защитой паролем Azure AD, так как срок их действия истекает обычно. Учетные записи, настроенные с параметром "срок действия пароля не ограничен", исключаются из этого.
 
 ### <a name="multiple-forest-considerations"></a>Рекомендации по нескольким лесам
 

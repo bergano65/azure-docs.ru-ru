@@ -10,12 +10,13 @@ ms.date: 05/15/2019
 ms.author: asrastog
 ms.custom:
 - 'Role: Cloud Development'
-ms.openlocfilehash: a8c53dd2755f239763ff572e34dbdf7f73caa8a4
-ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
+- devx-track-csharp
+ms.openlocfilehash: a451e13b39aea27b4f1e23f9faa30f4b11c1cff1
+ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87327724"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89021244"
 ---
 # <a name="use-iot-hub-message-routing-to-send-device-to-cloud-messages-to-different-endpoints"></a>Использование маршрутизации сообщений центра Интернета вещей для отправки сообщений с устройства в облако в разные конечные точки
 
@@ -37,7 +38,6 @@ ms.locfileid: "87327724"
 
 Каждое сообщение направляется всем конечным точкам, которым соответствуют запросы маршрутизации. Иными словами, сообщение может маршрутизироваться к нескольким конечным точкам.
 
-
 Если в пользовательской конечной точке есть конфигурации брандмауэра, рассмотрите возможность использования исключения доверенной первой стороны Майкрософт, чтобы предоставить центру Интернета вещей доступ к определенной конечной точке — [службе хранилища Azure](./virtual-network-support.md#egress-connectivity-to-storage-account-endpoints-for-routing), [концентраторам событий Azure](./virtual-network-support.md#egress-connectivity-to-event-hubs-endpoints-for-routing) и [служебной шине Azure](./virtual-network-support.md#egress-connectivity-to-service-bus-endpoints-for-routing). Это можно найти в выбранных регионах для центров Интернета вещей с [управляемым удостоверением службы](./virtual-network-support.md).
 
 В настоящее время центр Интернета вещей поддерживает следующие конечные точки:
@@ -47,19 +47,23 @@ ms.locfileid: "87327724"
  - Очереди и разделы служебной шины
  - Центры событий
 
-### <a name="built-in-endpoint"></a>Встроенная конечная точка
+## <a name="built-in-endpoint-as-a-routing-endpoint"></a>Встроенная конечная точка в качестве конечной точки маршрутизации
 
 Вы можете использовать стандартную [интеграцию Центров событий и пакеты SDK](iot-hub-devguide-messages-read-builtin.md), чтобы отправлять сообщения с устройства в облако из встроенной конечной точки (**messages/events**). После создания маршрута данные перестают передаваться во встроенную конечную точку, если только маршрут не создан для этой конечной точки.
 
-### <a name="azure-storage"></a>Хранилище Azure
+## <a name="azure-storage-as-a-routing-endpoint"></a>Служба хранилища Azure в качестве конечной точки маршрутизации
 
 Существует два центра Интернета вещей служб хранилища, которые могут маршрутизировать сообщения в [хранилище BLOB-объектов Azure](../storage/blobs/storage-blobs-introduction.md) и учетные записи [Azure Data Lake Storage 2-го поколения](../storage/blobs/data-lake-storage-introduction.md) (ADLS 2-го поколения). Учетные записи Azure Data Lake Storage являются иерархическими учетными записями хранения с поддержкой [пространств имен](../storage/blobs/data-lake-storage-namespace.md), созданными на основе хранилища BLOB-объектов. Оба они используют большие двоичные объекты для хранения.
 
-Центр Интернета вещей поддерживает запись данных в службу хранилища Azure в формате [Apache Avro](https://avro.apache.org/) , а также в формате JSON. По умолчанию используется AVRO. Формат кодирования можно задать только при настройке конечной точки хранилища BLOB-объектов. Формат не может быть изменен для существующей конечной точки. При использовании кодировки JSON необходимо задать для contentType значение **Application/JSON** , а ContentEncoding **— UTF-8** в [свойствах системы](iot-hub-devguide-routing-query-syntax.md#system-properties)сообщений. Оба этих значения не учитывают регистр. Если кодировка содержимого не задана, центр Интернета вещей будет записывать сообщения в формате Base 64. Формат кодирования можно выбрать с помощью REST API создания или обновления центра Интернета вещей, в частности [раутингсторажеконтаинерпропертиес](https://docs.microsoft.com/rest/api/iothub/iothubresource/createorupdate#routingstoragecontainerproperties), портал Azure, [Azure CLI](https://docs.microsoft.com/cli/azure/iot/hub/routing-endpoint?view=azure-cli-latest)или [Azure PowerShell](https://docs.microsoft.com/powershell/module/az.iothub/add-aziothubroutingendpoint). На следующей схеме показано, как выбрать формат кодировки в портал Azure.
+Центр Интернета вещей поддерживает запись данных в службу хранилища Azure в формате [Apache Avro](https://avro.apache.org/) , а также в формате JSON. По умолчанию используется AVRO. При использовании кодировки JSON необходимо задать для contentType значение **Application/JSON** , а ContentEncoding **— UTF-8** в [свойствах системы](iot-hub-devguide-routing-query-syntax.md#system-properties)сообщений. Оба этих значения не учитывают регистр. Если кодировка содержимого не задана, центр Интернета вещей будет записывать сообщения в формате Base 64.
+
+Формат кодирования можно задать только при настройке конечной точки хранилища BLOB-объектов. его нельзя изменить для существующей конечной точки. Чтобы переключить форматы кодирования для существующей конечной точки, необходимо удалить и повторно создать настраиваемую конечную точку с нужным форматом. Одной из полезных стратегий может быть создание новой пользовательской конечной точки с требуемым форматом кодирования и Добавление параллельного маршрута к этой конечной точке. Таким образом можно проверить данные перед удалением существующей конечной точки.
+
+Формат кодирования можно выбрать с помощью REST API создания или обновления центра Интернета вещей, в частности [раутингсторажеконтаинерпропертиес](https://docs.microsoft.com/rest/api/iothub/iothubresource/createorupdate#routingstoragecontainerproperties), портал Azure, [Azure CLI](https://docs.microsoft.com/cli/azure/iot/hub/routing-endpoint?view=azure-cli-latest)или [Azure PowerShell](https://docs.microsoft.com/powershell/module/az.iothub/add-aziothubroutingendpoint). На следующем рисунке показано, как выбрать формат кодировки в портал Azure.
 
 ![Кодирование конечной точки хранилища BLOB-объектов](./media/iot-hub-devguide-messages-d2c/blobencoding.png)
 
-Центр Интернета вещей пакетно передает сообщения и записывает данные в хранилище каждый раз, когда пакет достигнет определенного размера или прошло определенное время. По умолчанию Центр Интернета вещей использует следующее соглашение об именовании файлов: 
+Центр Интернета вещей пакетно передает сообщения и записывает данные в хранилище каждый раз, когда пакет достигнет определенного размера или прошло определенное время. По умолчанию Центр Интернета вещей использует следующее соглашение об именовании файлов:
 
 ```
 {iothub}/{partition}/{YYYY}/{MM}/{DD}/{HH}/{mm}
@@ -89,12 +93,11 @@ public void ListBlobsInContainer(string containerName, string iothub)
 
 ![Выберите хранилище Azure Date Lake Gen2](./media/iot-hub-devguide-messages-d2c/selectadls2storage.png)
 
-
-### <a name="service-bus-queues-and-service-bus-topics"></a>Очереди и разделы служебной шины
+## <a name="service-bus-queues-and-service-bus-topics-as-a-routing-endpoint"></a>Очереди служебной шины и разделы служебной шины в качестве конечной точки маршрутизации
 
 Для очередей и разделов служебной шины, которые используются как конечные точки Центра Интернета вещей, **сеансы** или **поиск повторяющихся данных** должны быть выключены. Если одна из этих возможностей включена, на портале Azure конечная точка будет отображаться как **недоступная**.
 
-### <a name="event-hubs"></a>Центры событий
+## <a name="event-hubs-as-a-routing-endpoint"></a>Концентраторы событий в качестве конечной точки маршрутизации
 
 Помимо конечной точки, совместимой со встроенными Центрами событий, вы также можете направлять данные в пользовательские конечные точки типа Центров событий. 
 

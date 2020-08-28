@@ -15,12 +15,13 @@ ms.topic: article
 ms.date: 11/13/2019
 ms.author: juliako
 ms.reviewer: milanga; johndeu
-ms.openlocfilehash: d9efb1e9256bccd04a76b4f63edaaf7c2c6ac708
-ms.sourcegitcommit: 845a55e6c391c79d2c1585ac1625ea7dc953ea89
+ms.custom: devx-track-csharp
+ms.openlocfilehash: 45a23f55f87f086e4f5be8058a68ada1513f8975
+ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/05/2020
-ms.locfileid: "85955222"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89021006"
 ---
 # <a name="media-analytics-on-the-media-services-platform"></a>Медиа-аналитика на платформе служб мультимедиа 
 
@@ -141,17 +142,17 @@ Host: media.windows.net
 ## <a name="demos"></a>Демонстрационные материалы
 Просмотрите [ролики о медиа-аналитике Azure](https://azuremedialabs.azurewebsites.net/demos/Analytics.html).
 
-## <a name="provide-feedback"></a>Предоставление отзыва
+## <a name="provide-feedback"></a>Отзывы
 [!INCLUDE [media-services-user-voice-include](../../../includes/media-services-user-voice-include.md)]
 
-## <a name="related-articles"></a>Похожие статьи
+## <a name="related-articles"></a>Связанные статьи
 Ознакомьтесь с разделом [Общие сведения об аналитике служб мультимедиа](https://azure.microsoft.com/blog/introducing-azure-media-analytics/).
 
 <!-- Images -->
 
 [overview]: ./media/media-services-video-on-demand-workflow/media-services-video-on-demand.png
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 Просмотрите схемы обучения работе со службами мультимедиа.
 
 [!INCLUDE [media-services-learning-paths-include](../../../includes/media-services-learning-paths-include.md)]

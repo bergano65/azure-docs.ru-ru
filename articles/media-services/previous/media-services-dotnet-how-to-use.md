@@ -14,12 +14,13 @@ ms.devlang: dotnet
 ms.topic: article
 ms.date: 03/18/2019
 ms.author: juliako
-ms.openlocfilehash: 3e4d56698ed14ec260838f3ecbec91d58945e4ca
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.custom: devx-track-csharp
+ms.openlocfilehash: 706e4762fa81ad4f290ded89387fc3ea9ab5bb1c
+ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87042936"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89020581"
 ---
 # <a name="media-services-development-with-net"></a>Разработка служб мультимедиа с помощью .NET 
 
@@ -44,7 +45,7 @@ ms.locfileid: "87042936"
 Кроме того, вы можете получить на GitHub актуальный код для пакета SDK служб мультимедиа для .NET ([github.com/Azure/azure-sdk-for-media-services](https://github.com/Azure/azure-sdk-for-media-services) и [github.com/Azure/azure-sdk-for-media-services-extensions](https://github.com/Azure/azure-sdk-for-media-services-extensions)), создать решение и добавить ссылки на клиентский проект. Все необходимые зависимости скачиваются и извлекаются автоматически.
 
 1. Создайте в Visual Studio консольное приложение C#. Введите **имя**, **Расположение**и **имя решения**, а затем нажмите кнопку ОК.
-2. Постройте решение.
+2. Создайте решение.
 3. Используйте пакет **NuGet**, чтобы установить и добавить **расширения пакета SDK служб мультимедиа Azure для .NET** (**windowsazure.mediaservices.extensions**). При установке этого пакета также устанавливается **пакет SDK служб мультимедиа для .NET** и добавляются все остальные необходимые зависимости.
    
     Убедитесь, что у вас установлена новейшая версия NuGet. Дополнительную информацию и инструкции по установке см. на сайте [NuGet](https://nuget.codeplex.com/).
