@@ -53,7 +53,7 @@ ms.locfileid: "89020003"
    * Укажите подготавливаемую пропускную способность (например, 1000 ЕЗ/с).
    * Щелкните **ОК**.
 
-    :::image type="content" source="./media/how-to-create-container/partitioned-collection-create-mongodb.png" alt-text="Снимок экрана: Azure Cosmos DB API для MongoDB, диалоговое окно "Добавление контейнера"":::
+    :::image type="content" source="./media/how-to-create-container/partitioned-collection-create-mongodb.png" alt-text="Снимок экрана: Azure Cosmos DB API для MongoDB, диалоговое окно Добавление контейнера":::
 
 ### <a name="cassandra-api"></a><a id="portal-cassandra"></a>API Cassandra
 
