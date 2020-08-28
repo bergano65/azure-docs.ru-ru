@@ -8,16 +8,18 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: ink-recognizer
 ms.topic: conceptual
-ms.date: 05/02/2019
+ms.date: 08/24/2020
 ms.author: aahi
-ms.openlocfilehash: 7e5c1c74a3659be855b3f846c16672d0d73b9de4
-ms.sourcegitcommit: 69156ae3c1e22cc570dda7f7234145c8226cc162
+ms.openlocfilehash: b4acd431656eb008702f62dc1ecf12bda62dae17
+ms.sourcegitcommit: 8a7b82de18d8cba5c2cec078bc921da783a4710e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/03/2020
-ms.locfileid: "84309702"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89051089"
 ---
 # <a name="language-and-region-support-for-the-ink-recognizer-api"></a>Поддержка языков и регионов для API распознавателя рукописного ввода
+
+[!INCLUDE [ink-recognizer-deprecation](includes/deprecation-note.md)]
 
 В этой статье объясняется, какие языки поддерживаются для API распознавателя рукописного ввода. Цифровая рукописная запись, написанная на следующих языках, может интерпретироваться и обрабатываться API.
 
@@ -80,7 +82,7 @@ ms.locfileid: "84309702"
 | Словацкий                                     |     `sk-SK`     |
 | Словенский                                  |     `sl-SI`     |
 | Испанский (Аргентина)                        |     `es-AR`     |
-| Испанский (Испания)                            |     `es-ES`     |
+| испанский (Испания)                            |     `es-ES`     |
 | Испанский (Мексика)                           |     `es-MX`     |
 | Шведский (Швеция)                           |     `sv-SE`     |
 | Турецкий                                    |     `tr-TR`     |
@@ -89,7 +91,7 @@ ms.locfileid: "84309702"
 | Коса                                      |     `xh-ZA`     |
 | Зулу                                       |     `zu-ZA`     |
 
-## <a name="see-also"></a>См. также раздел
+## <a name="see-also"></a>См. также
 
 * [Что такое API Распознавателя рукописного текста?](overview.md)
 * [Отправка цифровых рукописных штрихов в API распознавателя рукописного ввода](concepts/send-ink-data.md)

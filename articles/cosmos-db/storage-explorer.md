@@ -7,12 +7,12 @@ ms.topic: how-to
 ms.date: 08/24/2020
 ms.author: dech
 ms.custom: seodec18, has-adal-ref
-ms.openlocfilehash: b892e4c5078b50bb865a715ddf12aebc1eb05f57
-ms.sourcegitcommit: c5021f2095e25750eb34fd0b866adf5d81d56c3a
+ms.openlocfilehash: d1948ae186662c7f60f4d49c19a4d48b424a38f7
+ms.sourcegitcommit: 8a7b82de18d8cba5c2cec078bc921da783a4710e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88799117"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89047485"
 ---
 # <a name="work-with-data-using-azure-storage-explorer"></a>Работа с данными с помощью Обозревателя службы хранилища Azure
 
@@ -95,7 +95,7 @@ ms.locfileid: "88799117"
 
 * Щелкнув правой кнопкой мыши учетную запись Azure Cosmos DB или базу данных и выбрав **Открыть на портале**, вы сможете управлять этим ресурсом в браузере на портале Azure.
 
-     :::image type="content" source="./media/storage-explorer/open-in-portal.png" alt-text="Открытие ресурса на портале":::
+  :::image type="content" source="./media/storage-explorer/open-in-portal.png" alt-text="Открытие ресурса на портале":::
 
 * Вы также можете добавить на панель **быстрого доступа** учетную запись Azure Cosmos DB, базу данных или коллекцию.
 * С помощью функции **Найти здесь** вы сможете выполнять поиск по ключевым словам по выбранному пути.
@@ -106,25 +106,25 @@ ms.locfileid: "88799117"
 
 #### <a name="create-a-database"></a>Создание базы данных
 
--   Щелкните правой кнопкой мыши учетную запись Azure Cosmos DB, выберите **Создать базу данных**, введите имя базы данных и нажмите клавишу **ВВОД**.
+- Щелкните правой кнопкой мыши учетную запись Azure Cosmos DB, выберите **Создать базу данных**, введите имя базы данных и нажмите клавишу **ВВОД**.
 
-    :::image type="content" source="./media/storage-explorer/create-database.png" alt-text="Создание базы данных в учетной записи Azure Cosmos":::
+  :::image type="content" source="./media/storage-explorer/create-database.png" alt-text="Создание базы данных в учетной записи Azure Cosmos":::
 
 #### <a name="delete-a-database"></a>удаление базы данных.
 
 - Щелкните правой кнопкой мыши базу данных, выберите **Удалить базу данных**и во всплывающем окне выберите **Да** . После удаления узла базы данных учетная запись Azure Cosmos DB будет обновлена автоматически.
 
-    :::image type="content" source="./media/storage-explorer/delete-database1.png" alt-text="Удаление первой базы данных":::
+  :::image type="content" source="./media/storage-explorer/delete-database1.png" alt-text="Удаление первой базы данных":::
 
-    :::image type="content" source="./media/storage-explorer/delete-database2.png" alt-text="Удаление второй базы данных":::
+  :::image type="content" source="./media/storage-explorer/delete-database2.png" alt-text="Удаление второй базы данных":::
 
 #### <a name="create-a-collection"></a>Создание коллекции
 
 1. Щелкните правой кнопкой мыши базу данных, выберите пункт **создать коллекцию**, а затем укажите следующие сведения, такие как **идентификатор коллекции**, **емкость хранилища**и т. д. Нажмите кнопку **ОК** для завершения.
 
-    :::image type="content" source="./media/storage-explorer/create-collection.png" alt-text="Создать первую коллекцию в базе данных":::
+   :::image type="content" source="./media/storage-explorer/create-collection.png" alt-text="Создать первую коллекцию в базе данных":::
 
-    :::image type="content" source="./media/storage-explorer/create-collection2.png" alt-text="Создать вторую коллекцию в базе данных":::
+   :::image type="content" source="./media/storage-explorer/create-collection2.png" alt-text="Создать вторую коллекцию в базе данных":::
 
 2. Выберите **без ограничений** , чтобы иметь возможность указать ключ секции, а затем нажмите кнопку **ОК** для завершения.
 
@@ -146,7 +146,7 @@ ms.locfileid: "88799117"
 
 - Чтобы создать новый документ **, откройте документ** в левом окне, выберите **создать документ**, измените содержимое на правой панели, а затем выберите **сохранить**. Можно также обновить существующий документ, а затем нажать кнопку **сохранить**. Чтобы отменить изменения, нажмите кнопку **Отменить**.
 
-    :::image type="content" source="./media/storage-explorer/document.png" alt-text="Создание нового документа":::
+  :::image type="content" source="./media/storage-explorer/document.png" alt-text="Создание нового документа":::
 
 #### <a name="delete-a-document"></a>Удаление документа
 
@@ -156,7 +156,7 @@ ms.locfileid: "88799117"
 
 - Измените фильтр документов, введя SQL- [запрос](how-to-sql-query.md) , а затем нажмите кнопку **Применить**.
 
-    :::image type="content" source="./media/storage-explorer/document-filter.png" alt-text="Запрос конкретных документов":::
+  :::image type="content" source="./media/storage-explorer/document-filter.png" alt-text="Запрос конкретных документов":::
 
 ### <a name="graph-management"></a>Управление графом
 
@@ -165,7 +165,7 @@ ms.locfileid: "88799117"
 1. Чтобы создать новую вершину, откройте **диаграмму** в левом окне, выберите **создать вершину**, измените содержимое и нажмите кнопку **ОК**.
 2. Чтобы изменить существующую вершину, щелкните значок пера в правой области.
 
-    :::image type="content" source="./media/storage-explorer/vertex.png" alt-text="Изменение вершины графа":::
+   :::image type="content" source="./media/storage-explorer/vertex.png" alt-text="Изменение вершины графа":::
 
 #### <a name="delete-a-graph"></a>Удаление графа
 
@@ -175,7 +175,7 @@ ms.locfileid: "88799117"
 
 - Измените фильтр графа, введя [запрос Gremlin](gremlin-support.md) , а затем нажмите кнопку **Применить фильтр**.
 
-    :::image type="content" source="./media/storage-explorer/graph-filter.png" alt-text="Выполнение запроса Graph":::
+   :::image type="content" source="./media/storage-explorer/graph-filter.png" alt-text="Выполнение запроса Graph":::
 
 ### <a name="table-management"></a>Управление таблицами
 
@@ -184,33 +184,34 @@ ms.locfileid: "88799117"
 1. Чтобы создать новую таблицу, откройте **сущность** в левом окне, выберите **Добавить**, измените содержимое в диалоговом окне **Добавление сущности** , добавить свойство, нажав кнопку **Добавить свойство**, а затем выберите **Вставить**.
 2. Чтобы изменить таблицу, выберите **изменить**, измените содержимое, а затем щелкните **Обновить**.
 
-    :::image type="content" source="./media/storage-explorer/table.png" alt-text="Создание и изменение таблицы":::
+   :::image type="content" source="./media/storage-explorer/table.png" alt-text="Создание и изменение таблицы":::
 
 #### <a name="import-and-export-table"></a>Импорт и экспорт таблицы
 
 1. Чтобы выполнить импорт, нажмите кнопку **Импорт** и выберите существующую таблицу.
 2. Чтобы выполнить экспорт, нажмите кнопку **Экспорт** и выберите назначение.
 
-    :::image type="content" source="./media/storage-explorer/table-import-export.png" alt-text="Импорт или экспорт таблицы":::
+   :::image type="content" source="./media/storage-explorer/table-import-export.png" alt-text="Импорт или экспорт таблицы":::
 
 #### <a name="delete-entities"></a>Удаление сущностей
 
 - Выберите сущности и нажмите кнопку **Удалить**.
 
-    :::image type="content" source="./media/storage-explorer/table-delete.png" alt-text="Удаление таблицы":::
+  :::image type="content" source="./media/storage-explorer/table-delete.png" alt-text="Удаление таблицы":::
 
 #### <a name="query-table"></a>Запрос к таблице
 
 - Нажмите кнопку **запроса** , условие входного запроса, а затем нажмите кнопку **выполнить запрос** . Закройте панель запросов, нажав кнопку **Закрыть запрос**.
 
-    :::image type="content" source="./media/storage-explorer/table-query.png" alt-text="Запрос данных из таблицы":::
+  :::image type="content" source="./media/storage-explorer/table-query.png" alt-text="Запрос данных из таблицы":::
 
 ### <a name="manage-stored-procedures-triggers-and-udfs"></a>Управление хранимыми процедурами, триггерами и определяемыми пользователем функциями
 
 * Чтобы создать хранимую процедуру, в левом дереве щелкните правой кнопкой мыши **хранимая процедура**, выберите команду **создать хранимую процедуру**, введите имя в поле слева, введите скрипты хранимой процедуры в правом окне, а затем выберите **создать**.
 * Можно также изменить существующие хранимые процедуры, дважды щелкнув, установив обновление, а затем выбрав **Обновить** для сохранения, или выберите **отменить** , чтобы отменить изменения.
 
-    :::image type="content" source="./media/storage-explorer/stored-procedure.png" alt-text="Создание хранимых процедур и управление ими":::
+  :::image type="content" source="./media/storage-explorer/stored-procedure.png" alt-text="Создание хранимых процедур и управление ими":::
+
 * Операции для **триггеров** и **определяемых пользователем функций** похожи на **хранимые процедуры**.
 
 ## <a name="troubleshooting"></a>Устранение неполадок
@@ -299,7 +300,7 @@ ms.locfileid: "88799117"
 
 Если после присоединения учетной записи Azure Cosmos DB в узле "Local and Attached" (Локальные и присоединенные) отображается приведенная ниже ошибка, проверьте, используется ли правильная строка подключения.
 
-:::image type="content" source="./media/storage-explorer/attached-error.png" alt-text="Ошибка при подключении Azure Cosmos DB в узле Local and Attached (Локальные и присоединенные)":::
+:::image type="content" source="./media/storage-explorer/attached-error.png" alt-text="Ошибка при подключении Azure Cosmos DB в узле "Local and Attached" (Локальные и присоединенные)":::
 
 ### <a name="expand-azure-cosmos-db-node-error"></a>Ошибка развертывания узла Azure Cosmos DB
 

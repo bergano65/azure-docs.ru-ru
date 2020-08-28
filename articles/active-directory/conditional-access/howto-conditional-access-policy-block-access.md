@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: calebb,
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b3ee7287f2a5cf9491ae91d434caf2f653c853a3
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 4d05aaa7a6bd48c92e863d38dcee9f0bf925bafa
+ms.sourcegitcommit: 8a7b82de18d8cba5c2cec078bc921da783a4710e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "83995315"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89049270"
 ---
 # <a name="conditional-access-block-access"></a>Условный доступ: Блокировка доступа
 
@@ -38,7 +38,7 @@ ms.locfileid: "83995315"
 
 ## <a name="create-a-conditional-access-policy"></a>Создание политики условного доступа
 
-Следующие шаги помогут создать политики условного доступа, чтобы заблокировать доступ ко всем приложениям, кроме [Office 365](concept-conditional-access-cloud-apps.md#office-365-preview) , если пользователи не находятся в доверенной сети. Эти политики помещаются в [режим «только отчет»](howto-conditional-access-report-only.md) для запуска, чтобы администраторы могли определить воздействие, которое они будут иметь на существующих пользователях. Когда администраторы имеют опыт работы с политиками по мере их применения, они могут переключаться **на.**
+Следующие шаги помогут создать политики условного доступа, чтобы заблокировать доступ ко всем приложениям, кроме [Office 365](concept-conditional-access-cloud-apps.md#office-365-preview) , если пользователи не находятся в доверенной сети. Эти политики помещаются в [режим «только отчет»](howto-conditional-access-insights-reporting.md) для запуска, чтобы администраторы могли определить воздействие, которое они будут иметь на существующих пользователях. Когда администраторы имеют опыт работы с политиками по мере их применения, они могут переключаться **на.**
 
 Первая политика блокирует доступ ко всем приложениям, кроме приложений Office 365, если они не находятся в надежном расположении.
 
@@ -84,6 +84,6 @@ ms.locfileid: "83995315"
 
 [Распространенные политики условного доступа](concept-conditional-access-policy-common.md)
 
-[Определение влияния условного доступа в режиме "только отчет"](howto-conditional-access-report-only.md)
+[Определение влияния условного доступа в режиме "только отчет"](howto-conditional-access-insights-reporting.md)
 
 [Моделирование поведения входа с помощью средства What If условного доступа](troubleshoot-conditional-access-what-if.md)

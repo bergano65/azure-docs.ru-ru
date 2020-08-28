@@ -134,6 +134,8 @@
           href: batch-sig-images.md
         - name: Создание пула с использованием ресурса управляемого образа
           href: batch-custom-images.md
+        - name: Создание пула с включенным шифрованием дисков
+          href: disk-encryption.md
         - name: Создание пула в виртуальной сети
           href: batch-virtual-network.md
         - name: Создание пула с общедоступными IP-адресами

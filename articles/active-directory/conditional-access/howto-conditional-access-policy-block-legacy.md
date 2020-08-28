@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: calebb, rogoya
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b7a4693dabc62ec03897ccc46398bdff77118fe4
-ms.sourcegitcommit: bfeae16fa5db56c1ec1fe75e0597d8194522b396
+ms.openlocfilehash: 0eaa2f2bc0ee26a4f543ea0938db6c226a9a6575
+ms.sourcegitcommit: 8a7b82de18d8cba5c2cec078bc921da783a4710e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/10/2020
-ms.locfileid: "88032090"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89049253"
 ---
 # <a name="conditional-access-block-legacy-authentication"></a>Условный доступ: Блокировка устаревших методов проверки подлинности
 
@@ -24,7 +24,7 @@ ms.locfileid: "88032090"
 
 ## <a name="create-a-conditional-access-policy"></a>Создание политики условного доступа
 
-Выполните следующие действия, чтобы создать политику условного доступа для блокировки устаревших запросов проверки подлинности. Эта политика помещается в [режим "Только отчет"](howto-conditional-access-report-only.md), чтобы администраторы могли определить влияние на существующих пользователей. Когда администраторы проверят действие политики, они могут **включить** ее или выполнить промежуточное развертывание, добавляя определенные группы и исключая другие.
+Выполните следующие действия, чтобы создать политику условного доступа для блокировки устаревших запросов проверки подлинности. Эта политика помещается в [режим "Только отчет"](howto-conditional-access-insights-reporting.md), чтобы администраторы могли определить влияние на существующих пользователей. Когда администраторы проверят действие политики, они могут **включить** ее или выполнить промежуточное развертывание, добавляя определенные группы и исключая другие.
 
 1. Войдите на **портал Azure** в качестве глобального администратора, администратора безопасности или администратора условного доступа.
 1. Выберите **Azure Active Directory** > **Безопасность** > **Условный доступ**.
@@ -48,7 +48,7 @@ ms.locfileid: "88032090"
 
 [Распространенные политики условного доступа](concept-conditional-access-policy-common.md)
 
-[Определение влияния условного доступа в режиме "только отчет"](howto-conditional-access-report-only.md)
+[Определение влияния условного доступа в режиме "только отчет"](howto-conditional-access-insights-reporting.md)
 
 [Моделирование поведения входа с помощью средства What If условного доступа](troubleshoot-conditional-access-what-if.md)
 

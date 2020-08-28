@@ -8,15 +8,15 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: speech-service
 ms.topic: conceptual
-ms.date: 08/20/2020
+ms.date: 08/28/2020
 ms.author: wolfma
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 5be3b4ce5d89a15009f2b9b31183400890dbefb5
-ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
+ms.openlocfilehash: 3b9a491f7546fbaa8722498b164bfa56353dfcfc
+ms.sourcegitcommit: 8a7b82de18d8cba5c2cec078bc921da783a4710e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88918950"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89050188"
 ---
 # <a name="how-to-use-batch-transcription"></a>Использование записи пакетов
 
@@ -170,7 +170,7 @@ API-интерфейс для транскрипции пакетов подде
       `destinationContainerUrl`
    :::column-end:::
    :::column span="2":::
-      Необязательный URL-адрес со [службой SAS](../../storage/common/storage-sas-overview.md) для записываемого контейнера в Azure. Результат сохраняется в этом контейнере. Если этот параметр не указан, корпорация Майкрософт сохраняет результаты в контейнере хранилища, который управляется корпорацией Майкрософт. При удалении транскрипции путем вызова функции [удаления](https://westus.dev.cognitive.microsoft.com/docs/services/speech-to-text-api-v3-0/operations/DeleteTranscription)записей результирующие данные также будут удалены.
+      Необязательный URL-адрес с [нерегламентированным SAS службы](../../storage/common/storage-sas-overview.md) для записываемого контейнера в Azure. Результат сохраняется в этом контейнере. SAS с хранимой политикой доступа **не** поддерживается. Если этот параметр не указан, корпорация Майкрософт сохраняет результаты в контейнере хранилища, который управляется корпорацией Майкрософт. При удалении транскрипции путем вызова функции [удаления](https://westus.dev.cognitive.microsoft.com/docs/services/speech-to-text-api-v3-0/operations/DeleteTranscription)записей результирующие данные также будут удалены.
 :::row-end:::
 
 ### <a name="storage"></a>Память

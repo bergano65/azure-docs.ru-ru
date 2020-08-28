@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: calebb, rogoya
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 7ee4c7776dbddf089d290d760d6c0689ba9c0102
-ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
+ms.openlocfilehash: 717e81a1385b04d3152beac39105c56754c55c40
+ms.sourcegitcommit: 8a7b82de18d8cba5c2cec078bc921da783a4710e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87283033"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89049287"
 ---
 # <a name="conditional-access-require-mfa-for-azure-management"></a>Условный доступ: Запрос на MFA для управления Azure
 
@@ -59,6 +59,6 @@ ms.locfileid: "87283033"
 
 [Распространенные политики условного доступа](concept-conditional-access-policy-common.md)
 
-[Определение влияния условного доступа в режиме "только отчет"](howto-conditional-access-report-only.md)
+[Определение влияния условного доступа в режиме "только отчет"](howto-conditional-access-insights-reporting.md)
 
 [Моделирование поведения входа с помощью средства What If условного доступа](troubleshoot-conditional-access-what-if.md)

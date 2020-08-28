@@ -10,13 +10,13 @@ ms.service: data-factory
 ms.workload: data-services
 ms.topic: conceptual
 ms.custom: seo-lt-2019
-ms.date: 08/25/2020
-ms.openlocfilehash: 4890013fe584c49caa9e358c924911255a7f5d33
-ms.sourcegitcommit: d39f2cd3e0b917b351046112ef1b8dc240a47a4f
+ms.date: 08/28/2020
+ms.openlocfilehash: cd14a183ae1434af83c96b7f8d6575186412b534
+ms.sourcegitcommit: 8a7b82de18d8cba5c2cec078bc921da783a4710e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88815969"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89051225"
 ---
 # <a name="copy-and-transform-data-in-azure-synapse-analytics-formerly-azure-sql-data-warehouse-by-using-azure-data-factory"></a>Копирование и преобразование данных в Azure Synapse Analytics (ранее — хранилище данных SQL Azure) с помощью Фабрики данных Azure
 
@@ -504,7 +504,7 @@ PolyBase хранилища данных SQL напрямую поддержив
 
 3. Если источником является папка, параметр `recursive` в действии копирования должен иметь значение true.
 
-4. Параметры `wildcardFolderPath`, `wildcardFilename`, `modifiedDateTimeStart`, `modifiedDateTimeEnd` и `additionalColumns` не указываются.
+4. `wildcardFolderPath` , `wildcardFilename` , `modifiedDateTimeStart` , `modifiedDateTimeEnd` , `prefix` `enablePartitionDiscovery` и `additionalColumns` не указаны.
 
 >[!NOTE]
 >Обратите внимание, что если источником является папка, то PolyBase извлекает файлы из этой папки и всех вложенных в нее папок, но не извлекает данные из файлов, имена которых начинаются с подчеркивания (_) или точки (.) (см. [описание аргумента LOCATION здесь](https://docs.microsoft.com/sql/t-sql/statements/create-external-table-transact-sql?view=azure-sqldw-latest#arguments-2)).
@@ -684,7 +684,7 @@ All columns of the table must be specified in the INSERT BULK statement.
 
 3. Если источником является папка, параметр `recursive` в действии копирования должен иметь значение true, а в параметре `wildcardFilename` должен быть задан подстановочный знак `*`. 
 
-4. Параметры `wildcardFolderPath`, `wildcardFilename` (отличный от `*`), `modifiedDateTimeStart`, `modifiedDateTimeEnd` и `additionalColumns` не указываются.
+4. `wildcardFolderPath` , `wildcardFilename` (кроме `*` ), `modifiedDateTimeStart` ,, `modifiedDateTimeEnd` и `prefix` `enablePartitionDiscovery` `additionalColumns` не указаны.
 
 В разделе `allowCopyCommand` действия копирования поддерживаются следующие параметры инструкции COPY.
 

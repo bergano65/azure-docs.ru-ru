@@ -12,12 +12,12 @@ ms.reviewer: jrasnick
 manager: craigg
 ms.custom: seo-lt-2019
 tags: azure-synapse
-ms.openlocfilehash: 9b3f2f8a6a8a1e4f287af45f994c0f0b1d479811
-ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
+ms.openlocfilehash: 01b6a72dfe3180324919fd712412ae88578c641b
+ms.sourcegitcommit: 8a7b82de18d8cba5c2cec078bc921da783a4710e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89001014"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89047458"
 ---
 # <a name="azure-synapse-analytics-release-notes"></a>Заметки о выпуске Azure Synapse Analytics
 
@@ -45,7 +45,7 @@ ms.locfileid: "89001014"
 | Улучшения службы | Сведения |
 | --- | --- |
 |**Управление рабочей нагрузкой — интерфейс портала**|Пользователи могут настраивать параметры управления рабочей нагрузкой и управлять ими с помощью портала Azure. Вы можете настраивать важные [группы рабочей нагрузки](/azure/synapse-analytics/sql-data-warehouse/quickstart-configure-workload-isolation-portal) и [классификаторы рабочей нагрузки](/azure/synapse-analytics/sql-data-warehouse/quickstart-create-a-workload-classifier-portal).|
-|**Улучшено представление каталога сопоставления таблиц**|Новое представление каталога [sys. pdw_permanent_table_mappings](https://docs.microsoft.com/sql/relational-databases/system-catalog-views/sys-pdw-permanent-table-mappings-transact-sql?view=sqlallproducts-allversions) сопоставляет **object_ids** постоянных пользовательских таблиц с их физическими именами таблиц. Это представление обеспечивает оптимизированную производительность по сравнению с текущим [sys. pdw_table_mappings](/sql/relational-databases/system-catalog-views/sys-pdw-table-mappings-transact-sql?view=sqlallproducts-allversions).|
+|**Улучшено представление каталога сопоставления таблиц**|Новое представление каталога [sys. pdw_permanent_table_mappings](https://docs.microsoft.com/sql/relational-databases/system-catalog-views/sys-pdw-permanent-table-mappings-transact-sql?view=sqlallproducts-allversions) сопоставляет **object_ids** постоянных пользовательских таблиц с их физическими именами таблиц.|
 
 ## <a name="july-2020"></a>Июль 2020 г.
 

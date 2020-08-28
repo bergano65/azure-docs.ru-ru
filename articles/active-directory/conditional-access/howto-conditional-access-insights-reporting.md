@@ -5,18 +5,18 @@ services: active-directory
 ms.service: active-directory
 ms.subservice: conditional-access
 ms.topic: conceptual
-ms.date: 05/01/2020
+ms.date: 08/27/2020
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: dawoo
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 678c32703501c4d0b66321cfc3518631ffa28c0c
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 3c2364eae0d04da8f8e6fe38ae80db7adb8666ce
+ms.sourcegitcommit: 8a7b82de18d8cba5c2cec078bc921da783a4710e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85253279"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89049423"
 ---
 # <a name="conditional-access-insights-and-reporting"></a>Аналитика и отчеты условного доступа
 
@@ -97,6 +97,22 @@ ms.locfileid: "85253279"
 
 Вы также можете исследовать операции входа конкретного пользователя, выполнив поиск в нижней части панели мониторинга. В запросе слева отображаются наиболее часто выполнявшие вход пользователи. При выборе пользователя запрос справа будет отфильтрован.  
 
+> [!NOTE]
+> При скачивании журналов входа выберите формат JSON, чтобы включить в отчет условный доступ только результирующие данные.
+
+## <a name="configure-a-conditional-access-policy-in-report-only-mode"></a>Настройка политики условного доступа в режиме «только отчет»
+
+Настройка политики условного доступа в режиме «только отчет».
+
+1. Войдите в **портал Azure** в качестве администратора условного доступа, администратора безопасности или глобального администратора.
+1. Выберите **Azure Active Directory** > **Безопасность** > **Условный доступ**.
+1. Выберите существующую политику или создайте новую.
+1. В разделе **включить политику** установите переключатель в режим **только для отчетов** .
+1. Нажмите кнопку **Сохранить**.
+
+> [!TIP]
+> При изменении параметра **включить политику** для существующей политики из **в в** отчет отключается **только** существующее применение политики. 
+
 ## <a name="troubleshooting"></a>Устранение неполадок
 
 ### <a name="why-are-queries-failing-due-to-a-permissions-error"></a>Почему происходит сбой запросов из-за ошибки в разрешениях?
@@ -111,6 +127,10 @@ ms.locfileid: "85253279"
 ![Устранение неполадок при сбое запросов](./media/howto-conditional-access-insights-reporting/query-troubleshoot-sign-in-logs.png)
 
 Дополнительные сведения о потоковой передаче журналов входа Azure AD в Log Analytics рабочей области см. в статье [Интеграция журналов Azure AD с Azure Monitor журналами](../reports-monitoring/howto-integrate-activity-logs-with-log-analytics.md).
+
+### <a name="why-are-the-queries-in-the-workbook-failing"></a>Почему происходит сбой запросов в книге?
+
+Клиенты заметили, что запросы иногда завершаются ошибкой, если с книгой связано неправильное или несколько рабочих областей. Чтобы устранить эту проблему, щелкните **изменить** в верхней части книги, а затем выберите параметры. Выберите и удалите рабочие области, не связанные с книгой. С каждой книгой должна быть связана только одна рабочая область.
 
 ### <a name="why-is-the-conditional-access-policies-parameter-is-empty"></a>Почему параметр политик условного доступа пуст?
 
@@ -134,4 +154,8 @@ ms.locfileid: "85253279"
  
 ## <a name="next-steps"></a>Дальнейшие действия
 
-[Режим условного доступа "Только отчет"](concept-conditional-access-report-only.md)
+- [Режим условного доступа "Только отчет"](concept-conditional-access-report-only.md)
+
+- Дополнительные сведения о книгах Azure AD см. в статье [использование Azure Monitor книг для Azure Active Directory отчетов](../reports-monitoring/howto-use-azure-monitor-workbooks.md).
+
+- [Распространенные политики условного доступа](concept-conditional-access-policy-common.md)

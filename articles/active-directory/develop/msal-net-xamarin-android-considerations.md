@@ -1,5 +1,5 @@
 ---
-title: Замечания по Xamarin Android (MSAL.NET) | Службы
+title: Настройка кода и устранение неполадок в Xamarin Android (MSAL.NET) | Службы
 titleSuffix: Microsoft identity platform
 description: Сведения о вопросах использования Xamarin Android с библиотекой проверки подлинности Майкрософт для .NET (MSAL.NET).
 services: active-directory
@@ -9,23 +9,24 @@ ms.service: active-directory
 ms.subservice: develop
 ms.topic: conceptual
 ms.workload: identity
-ms.date: 04/24/2019
+ms.date: 08/28/2020
 ms.author: marsma
 ms.reviewer: saeeda
 ms.custom: devx-track-csharp, aaddev
-ms.openlocfilehash: 601a501114d754dc82991a3c19b977c0c63c5bc0
-ms.sourcegitcommit: c28fc1ec7d90f7e8b2e8775f5a250dd14a1622a6
+ms.openlocfilehash: 256bee26ec6aef464d9ee838ffca4d8c1ecbbb4e
+ms.sourcegitcommit: 8a7b82de18d8cba5c2cec078bc921da783a4710e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/13/2020
-ms.locfileid: "88165742"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89047792"
 ---
-# <a name="considerations-for-using-xamarin-android-with-msalnet"></a>Рекомендации по использованию Xamarin Android с MSAL.NET
-В этой статье рассматриваются вопросы, которые следует учитывать при использовании Xamarin Android с библиотекой проверки подлинности Майкрософт для .NET (MSAL.NET).
+# <a name="configuration-requirements-and-troubleshooting-tips-for-xamarin-android-with-msalnet"></a>Требования к конфигурации и советы по устранению неполадок для Xamarin Android с MSAL.NET
+
+Существует несколько изменений конфигурации, которые необходимо внести в код при использовании Xamarin Android с библиотекой проверки подлинности Майкрософт для .NET (MSAL.NET). В следующих разделах описываются необходимые изменения, а затем раздел " [Устранение неполадок](#troubleshooting) ", который поможет избежать некоторых наиболее распространенных проблем.
 
 ## <a name="set-the-parent-activity"></a>Задание родительского действия
 
-В Xamarin Android задайте родительское действие, чтобы токен возвращался после взаимодействия. Приведем пример кода:
+В Xamarin Android задайте родительское действие, чтобы токен возвращался после взаимодействия:
 
 ```csharp
 var authResult = AcquireTokenInteractive(scopes)
@@ -33,7 +34,7 @@ var authResult = AcquireTokenInteractive(scopes)
  .ExecuteAsync();
 ```
 
-В MSAL 4,2 и более поздних версиях эту функцию можно также установить на уровне `PublicClientApplication` . Для этого используйте обратный вызов:
+В MSAL.NET 4,2 и более поздних версиях эту функцию можно также установить на уровне [публикклиентаппликатион][PublicClientApplication]. Для этого используйте обратный вызов:
 
 ```csharp
 // Requires MSAL.NET 4.2 or later
@@ -43,7 +44,7 @@ var pca = PublicClientApplicationBuilder
   .Build();
 ```
 
-При использовании [куррентактивитиплугин](https://github.com/jamesmontemagno/CurrentActivityPlugin) `PublicClientApplication` код построителя будет выглядеть так, как показано в следующем примере.
+Если вы используете [куррентактивитиплугин](https://github.com/jamesmontemagno/CurrentActivityPlugin), [`PublicClientApplication`][PublicClientApplication] код построителя должен выглядеть примерно так:
 
 ```csharp
 // Requires MSAL.NET 4.2 or later
@@ -53,30 +54,32 @@ var pca = PublicClientApplicationBuilder
   .Build();
 ```
 
-## <a name="ensure-that-control-returns-to-msal"></a>Убедитесь, что управление возвращается к MSAL. 
-После завершения интерактивной части потока проверки подлинности убедитесь, что элемент управления возвращается к MSAL. В Android Переопределите `OnActivityResult` метод `Activity` . Затем вызовите `SetAuthenticationContinuationEventArgs` метод `AuthenticationContinuationHelper` класса MSAL. 
+## <a name="ensure-that-control-returns-to-msal"></a>Убедитесь, что управление возвращается к MSAL.
 
-Пример:
+После завершения интерактивной части потока проверки подлинности верните управление в MSAL, переопределив [`Activity`][Activity] .[`OnActivityResult()`][OnActivityResult] метод.
+
+В переопределении вызовите MSAL. NET `AuthenticationContinuationHelper` .`SetAuthenticationContinuationEventArgs()` метод, возвращающий управление MSAL в конце интерактивной части потока проверки подлинности.
 
 ```csharp
-protected override void OnActivityResult(int requestCode, 
-                                         Result resultCode, Intent data)
+protected override void OnActivityResult(int requestCode,
+                                         Result resultCode,
+                                         Intent data)
 {
- base.OnActivityResult(requestCode, resultCode, data);
- AuthenticationContinuationHelper.SetAuthenticationContinuationEventArgs(requestCode,
-                                                                         resultCode,
-                                                                         data);
+    base.OnActivityResult(requestCode, resultCode, data);
+
+    // Return control to MSAL
+    AuthenticationContinuationHelper.SetAuthenticationContinuationEventArgs(requestCode,
+                                                                            resultCode,
+                                                                            data);
 }
-
 ```
-
-Эта строка гарантирует, что элемент управления вернется в MSAL в конце интерактивной части потока проверки подлинности.
 
 ## <a name="update-the-android-manifest"></a>Обновление манифеста Android
+
 Файл *AndroidManifest.xml* должен содержать следующие значения:
 
-<!--Intent filter to capture System Browser or Authenticator calling back to our app after sign-in-->
-```
+```XML
+  <!--Intent filter to capture System Browser or Authenticator calling back to our app after sign-in-->
   <activity
         android:name="com.microsoft.identity.client.BrowserTabActivity">
      <intent-filter>
@@ -87,12 +90,12 @@ protected override void OnActivityResult(int requestCode,
                 android:host="Enter_the_Package_Name"
                 android:path="/Enter_the_Signature_Hash" />
      </intent-filter>
- </activity>
+  </activity>
 ```
 
 Замените имя пакета, зарегистрированное в портал Azure, на `android:host=` значение. Замените хэш ключа, зарегистрированный в портал Azure, на `android:path=` значение. Хэш подписи *не* должен быть закодирован в URL-адресе. Убедитесь, что в начале хэша подписи отображается начальная косая черта ( `/` ).
 
-Кроме того, можно [создать действие в коде](/xamarin/android/platform/android-manifest#the-basics) , а не вручную изменять *AndroidManifest.xml*. Чтобы создать действие в коде, сначала создайте класс, включающий `Activity` атрибут и `IntentFilter` атрибут. 
+Кроме того, можно [создать действие в коде](/xamarin/android/platform/android-manifest#the-basics) , а не вручную изменять *AndroidManifest.xml*. Чтобы создать действие в коде, сначала создайте класс, включающий `Activity` атрибут и `IntentFilter` атрибут.
 
 Ниже приведен пример класса, представляющего значения XML-файла:
 
@@ -107,13 +110,13 @@ protected override void OnActivityResult(int requestCode,
   }
 ```
 
-### <a name="xamarinforms-43x-manifest"></a>Манифест Xamarin. Forms 4.3. X
+### <a name="xamarinforms-43x-manifest"></a>Манифест Xamarin. Forms 4.3. x
 
 Xamarin. Forms 4.3. x создает код, который присваивает `package` атрибуту значение `com.companyname.{appName}` в *AndroidManifest.xml*. Если используется `DataScheme` как `msal{client_id}` , может потребоваться изменить значение в соответствии со значением `MainActivity.cs` пространства имен.
 
 ## <a name="use-the-embedded-web-view-optional"></a>Использовать внедренное веб-представление (необязательно)
 
-По умолчанию MSAL.NET использует системный веб-браузер. Этот браузер позволяет получить единый вход (SSO) с помощью веб-приложений и других приложений. В некоторых редких случаях может потребоваться, чтобы система использовала встроенное веб-представление. 
+По умолчанию MSAL.NET использует системный веб-браузер. Этот браузер позволяет получить единый вход (SSO) с помощью веб-приложений и других приложений. В некоторых редких случаях может потребоваться, чтобы система использовала встроенное веб-представление.
 
 В этом примере кода показано, как настроить встроенное веб-представление.
 
@@ -128,24 +131,21 @@ var authResult = AcquireTokenInteractive(scopes)
 
 Дополнительные сведения см. в статье [Использование веб-браузеров для MSAL.NET и в](msal-net-web-browsers.md) [браузере Xamarin Android System](msal-net-system-browser-android-considerations.md).
 
+## <a name="troubleshooting"></a>Устранение неполадок
 
-## <a name="troubleshoot"></a>Диагностика
-Вы можете создать новое приложение Xamarin. Forms и добавить ссылку на пакет NuGet MSAL.NET.
-Но при обновлении существующего приложения Xamarin. Forms до MSAL.NET предварительной версии 1.1.2 или более поздней может возникнуть проблема сборки.
+### <a name="general-tips"></a>Общие советы
 
-Чтобы устранить неполадки при сборке, выполните следующие действия.
-
-- Обновите существующий пакет NuGet MSAL.NET до версии MSAL.NET с версией 1.1.2 или более поздней.
-- Убедитесь, что Xamarin. Forms автоматически обновлен до версии 2.5.0.122203. При необходимости обновите Xamarin. Forms до этой версии.
-- Убедитесь, что Xamarin. Android. support. v4 автоматически обновлен до версии 25.4.0.2. При необходимости обновите версию до 25.4.0.2.
-- Убедитесь, что все пакеты Xamarin. Android. support имеют версию 25.4.0.2.
+- Обновите существующий пакет NuGet MSAL.NET до [последней версии MSAL.NET](https://www.nuget.org/packages/Microsoft.Identity.Client/).
+- Убедитесь, что Xamarin. Forms находится в последней версии.
+- Убедитесь, что Xamarin. Android. support. v4 находится в последней версии.
+- Убедитесь, что все пакеты Xamarin. Android. support предназначены для последней версии.
 - Очистите или перестройте приложение.
-- В Visual Studio попробуйте установить максимальное число параллельных сборок проекта равным 1. Для этого выберите **Параметры**  >  **проекты и решения**  >  **Создание и запуск**  >  **максимального числа параллельных сборок проектов**.
+- В Visual Studio попробуйте установить максимальное число параллельных сборок проекта равным **1**. Для этого выберите **Параметры**  >  **проекты и решения**  >  **Создание и запуск**  >  **максимального числа параллельных сборок проектов**.
 - Если вы создаете из командной строки и используете команду `/m` , попробуйте удалить этот элемент из команды.
 
 ### <a name="error-the-name-authenticationcontinuationhelper-doesnt-exist-in-the-current-context"></a>Ошибка: имя Аусентикатионконтинуатионхелпер не существует в текущем контексте
 
-Если ошибка указывает, что `AuthenticationContinuationHelper` не существует в текущем контексте, возможно, Visual Studio неправильно обновил файл Android. csproj *. Иногда *\<HintPath>* путь к файлу неправильно содержит *netstandard13* вместо *monoandroid90*.
+Если ошибка указывает, что `AuthenticationContinuationHelper` не существует в текущем контексте, возможно, Visual Studio неправильно обновил файл *Android. csproj \* * . Иногда путь к файлу в `<HintPath>` элементе неправильно содержит `netstandard13` вместо `monoandroid90` .
 
 Этот пример содержит правильный путь к файлу:
 
@@ -160,6 +160,11 @@ var authResult = AcquireTokenInteractive(scopes)
 
 Дополнительные сведения см. в примере [мобильного приложения Xamarin, использующего платформу Microsoft Identity](https://github.com/azure-samples/active-directory-xamarin-native-v2#android-specific-considerations). В следующей таблице перечислены соответствующие сведения в файле сведений.
 
-| Образец | Платформа | Описание |
+| Пример | Платформа | Описание |
 | ------ | -------- | ----------- |
-|[https://github.com/Azure-Samples/active-directory-xamarin-native-v2](https://github.com/azure-samples/active-directory-xamarin-native-v2) | Xamarin. iOS, Android, UWP | Простое приложение Xamarin. Forms, которое показывает, как использовать MSAL для проверки подлинности личных учетных записей Майкрософт и Azure AD через конечную точку Azure AD 2,0. В приложении также показано, как получить доступ к Microsoft Graph и показать получившийся маркер. <br>![Топология](media/msal-net-xamarin-android-considerations/topology.png) |
+|[https://github.com/Azure-Samples/active-directory-xamarin-native-v2](https://github.com/azure-samples/active-directory-xamarin-native-v2) | Xamarin. iOS, Android, UWP | Простое приложение Xamarin. Forms, которое показывает, как использовать MSAL для проверки подлинности личных учетных записей Майкрософт и Azure AD через конечную точку Azure AD 2,0. В приложении также показано, как получить доступ к Microsoft Graph и показать получившийся маркер. <br>![Схема потока проверки подлинности](media/msal-net-xamarin-android-considerations/topology.png) |
+
+<!-- REF LINKS -->
+[PublicClientApplication]: /dotnet/api/microsoft.identity.client.publicclientapplication
+[OnActivityResult]: /dotnet/api/android.app.activity.onactivityresult
+[Activity]: /dotnet/api/android.app.activity

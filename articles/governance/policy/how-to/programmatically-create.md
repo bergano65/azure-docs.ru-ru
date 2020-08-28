@@ -3,12 +3,12 @@ title: Программное создание политик
 description: В статье описано, как программно создавать политики для службы "Политика Azure" и управлять ими с помощью Azure CLI, Azure PowerShell и REST API.
 ms.date: 08/17/2020
 ms.topic: how-to
-ms.openlocfilehash: 7a72986d8ffe64953e68ff166de9a02a15fb9c86
-ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
+ms.openlocfilehash: 9b0c2e50536a847555dfa5cc6b9c823cfc1a4cfa
+ms.sourcegitcommit: 8a7b82de18d8cba5c2cec078bc921da783a4710e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88548317"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89047061"
 ---
 # <a name="programmatically-create-policies"></a>Программное создание политик
 
@@ -235,7 +235,7 @@ az policy definition show --name 'Audit Storage Accounts with Open Public Networ
 "/subscription/<subscriptionId>/providers/Microsoft.Authorization/policyDefinitions/Audit Storage Accounts Open to Public Networks"
 ```
 
-Дополнительные сведения об управлении политиками ресурсов с помощью Azure CLI см. в [этой статье](/cli/azure/policy?view=azure-cli-latest).
+Дополнительные сведения об управлении политиками ресурсов с помощью Azure CLI см. в [этой статье](/cli/azure/policy).
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
@@ -243,6 +243,6 @@ az policy definition show --name 'Audit Storage Accounts with Open Public Networ
 
 - [Ресурсы REST API Azure](/rest/api/resources/)
 - [Модули Azure PowerShell](/powershell/module/az.resources/#policies).
-- [Команды Azure CLI для роботы с политикой](/cli/azure/policy?view=azure-cli-latest)
+- [Команды Azure CLI для роботы с политикой](/cli/azure/policy)
 - [Справочник по REST API для поставщика ресурсов Azure Policy Insights](/rest/api/policy-insights)
 - [Организация ресурсов с помощью групп управления Azure.](../../management-groups/overview.md)

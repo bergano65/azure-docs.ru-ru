@@ -3,12 +3,12 @@ title: Создание групп управления для Организа�
 description: Узнайте, как создавать группы управления Azure для управления множеством ресурсов с помощью портала, Azure PowerShell и Azure CLI.
 ms.date: 08/10/2020
 ms.topic: conceptual
-ms.openlocfilehash: 0739eafdf4cf41195b189a8496c331ab470bbec0
-ms.sourcegitcommit: 269da970ef8d6fab1e0a5c1a781e4e550ffd2c55
+ms.openlocfilehash: 9504679062c9facad60023759b474be1675cb6a8
+ms.sourcegitcommit: 8a7b82de18d8cba5c2cec078bc921da783a4710e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/10/2020
-ms.locfileid: "88056641"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89048556"
 ---
 # <a name="create-management-groups-for-resource-organization-and-management"></a>Создание групп управления для упорядочения ресурсов и управления ими
 
@@ -43,7 +43,7 @@ ms.locfileid: "88056641"
 
    :::image type="content" source="./media/create_context_menu.png" alt-text="Область параметров для создания новой группы управления" border="false":::
 
-1. Щелкните **Сохранить**.
+1. Выберите **Сохранить**.
 
 ### <a name="create-in-powershell"></a>Создание в PowerShell
 
@@ -70,7 +70,7 @@ New-AzManagementGroup -GroupName 'ContosoSubGroup' -ParentId $parentGroup.id
 
 ### <a name="create-in-azure-cli"></a>Создание в Azure CLI
 
-Для Azure CLI используйте команду [AZ Account Management-Group Create](/cli/azure/account/management-group?view=azure-cli-latest#az-account-management-group-create) , чтобы создать новую группу управления.
+Для Azure CLI используйте команду [AZ Account Management-Group Create](/cli/azure/account/management-group#az-account-management-group-create) , чтобы создать новую группу управления.
 
 ```azurecli-interactive
 az account management-group create --name Contoso

@@ -347,6 +347,8 @@
                   href: ../common/storage-configure-connection-string.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
                 - name: Использование REST API службы хранилища Azure
                   href: ../common/storage-rest-api-auth.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
+                - name: Запрет авторизации с помощью общего ключа
+                  href: ../common/shared-key-authorization-prevent.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
             - name: Делегирование доступа с помощью подписанных URL-адресов (SAS)
               items:
                 - name: Создание SAS для делегирования пользователя

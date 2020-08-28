@@ -11,12 +11,12 @@ author: BarbaraSelden
 manager: daveba
 ms.reviewer: joflore
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 8f0cb99fd7f2ce842f76cbe1df2f598f2188ca41
-ms.sourcegitcommit: e69bb334ea7e81d49530ebd6c2d3a3a8fa9775c9
+ms.openlocfilehash: 14612247d241aed420a76ff40e19d04164cbe150
+ms.sourcegitcommit: 8a7b82de18d8cba5c2cec078bc921da783a4710e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "88948901"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89049933"
 ---
 # <a name="plan-a-conditional-access-deployment"></a>Планирование развертывания условного доступа
 
@@ -242,7 +242,7 @@ ms.locfileid: "88948901"
 
 Режим [Только отчет](concept-conditional-access-report-only.md) позволяет администраторам оценить влияние политик условного доступа, прежде чем включить их в своей среде.
 
-Узнайте, как [настроить режим "Только отчет" для политики условного доступа](howto-conditional-access-report-only.md).
+Узнайте, как [настроить режим "Только отчет" для политики условного доступа](howto-conditional-access-insights-reporting.md).
 
 ### <a name="plan-for-disruption"></a>Планирование нарушений
 

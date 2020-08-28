@@ -3,12 +3,12 @@ title: Создание политик для свойств массива ре
 description: Узнайте, как работать с параметрами массива и выражениями языка массива, оценивать псевдоним [*] и добавлять элементы с помощью правил определения Политики Azure.
 ms.date: 08/17/2020
 ms.topic: how-to
-ms.openlocfilehash: f3ba5179ca7acc60042d23e88d42a504d4d05f08
-ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
+ms.openlocfilehash: 5b9392a943e264ae5eca989ee87eb9ff09b36972
+ms.sourcegitcommit: 8a7b82de18d8cba5c2cec078bc921da783a4710e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88544593"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89048488"
 ---
 # <a name="author-policies-for-array-properties-on-azure-resources"></a>Создание политик для свойств массива ресурсов Azure
 
@@ -95,7 +95,7 @@ ms.locfileid: "88544593"
 
 Чтобы использовать эту строку с каждым пакетом SDK, выполните следующие команды:
 
-- Azure CLI: команда [az policy assignment create](/cli/azure/policy/assignment?view=azure-cli-latest#az-policy-assignment-create) с параметром **params**;
+- Azure CLI: команда [az policy assignment create](/cli/azure/policy/assignment#az-policy-assignment-create) с параметром **params**;
 - Azure PowerShell: командлет [New-AzPolicyAssignment](/powershell/module/az.resources/New-Azpolicyassignment) с параметром **PolicyParameter**;
 - REST API: операция _PUT_ [create](/rest/api/resources/policyassignments/create) в тексте запроса в качестве значения свойства **properties.parameters**.
 

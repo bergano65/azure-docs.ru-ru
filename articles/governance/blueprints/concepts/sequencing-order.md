@@ -1,14 +1,14 @@
 ---
 title: Сведения о порядке последовательности развертывания
 description: Узнайте о порядке по умолчанию, в котором развертываются артефакты схемы во время назначения схемы и настройки порядка развертывания.
-ms.date: 05/06/2020
+ms.date: 08/27/2020
 ms.topic: conceptual
-ms.openlocfilehash: d4a3b07e158aa7e4514ea9543bf44ad57e379d24
-ms.sourcegitcommit: f684589322633f1a0fafb627a03498b148b0d521
+ms.openlocfilehash: 8305e5d44caef0f35e5b4beb4b70be9736272fa7
+ms.sourcegitcommit: 8a7b82de18d8cba5c2cec078bc921da783a4710e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/06/2020
-ms.locfileid: "85970626"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89051480"
 ---
 # <a name="understand-the-deployment-sequence-in-azure-blueprints"></a>Сведения о последовательности развертывания в Azure Blueprint
 
@@ -141,8 +141,8 @@ ms.locfileid: "85970626"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- Ознакомьтесь со сведениями о [жизненном цикле схем](lifecycle.md).
-- Узнайте, как использовать [статические и динамические параметры](parameters.md).
-- Узнайте, как применять [блокировку ресурсов схемы](resource-locking.md).
+- Ознакомьтесь со сведениями о [жизненном цикле схем](./lifecycle.md).
+- Узнайте, как использовать [статические и динамические параметры](./parameters.md).
+- Узнайте, как применять [блокировку ресурсов схемы](./resource-locking.md).
 - Узнайте, как [обновлять существующие назначения](../how-to/update-existing-assignments.md).
 - Устраняйте проблемы, возникающие во время назначения схемы, с помощью [общих инструкций по устранению неполадок](../troubleshoot/general.md).

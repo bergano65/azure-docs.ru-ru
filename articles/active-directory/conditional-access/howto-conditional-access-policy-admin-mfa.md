@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: calebb, rogoya
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: cc38e576f53c3623bacc374a00adcb4cced01517
-ms.sourcegitcommit: 1b2d1755b2bf85f97b27e8fbec2ffc2fcd345120
+ms.openlocfilehash: 45263ca0448042aa972ee53093b51dd47bd51190
+ms.sourcegitcommit: 8a7b82de18d8cba5c2cec078bc921da783a4710e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/04/2020
-ms.locfileid: "87552889"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89049355"
 ---
 # <a name="conditional-access-require-mfa-for-administrators"></a>Условный доступ: требовать MFA для администраторов
 
@@ -27,7 +27,7 @@ ms.locfileid: "87552889"
 * Администратор выставления счетов
 * Администратор условного доступа
 * администратор Exchange;
-* Глобальный администратор.
+* Глобальный администратор
 * Администратор службы технической поддержки (пароль)
 * Администратор паролей
 * администратор безопасности;
@@ -59,7 +59,7 @@ ms.locfileid: "87552889"
       * Администратор выставления счетов
       * Администратор условного доступа
       * администратор Exchange;
-      * Глобальный администратор.
+      * Глобальный администратор
       * администратор службы технической поддержки;
       * Администратор паролей
       * администратор безопасности;
@@ -81,6 +81,6 @@ ms.locfileid: "87552889"
 
 [Распространенные политики условного доступа](concept-conditional-access-policy-common.md)
 
-[Определение влияния условного доступа в режиме "только отчет"](howto-conditional-access-report-only.md)
+[Определение влияния условного доступа в режиме "только отчет"](howto-conditional-access-insights-reporting.md)
 
 [Моделирование поведения входа с помощью средства What If условного доступа](troubleshoot-conditional-access-what-if.md)

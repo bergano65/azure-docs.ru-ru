@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: calebb, rogoya
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c60c0324b04bca0a8115f4ac884704012e8e1d8c
-ms.sourcegitcommit: 25bb515efe62bfb8a8377293b56c3163f46122bf
+ms.openlocfilehash: c98269f9851272e8caa9b26ae0c57ed13e9a99f2
+ms.sourcegitcommit: 8a7b82de18d8cba5c2cec078bc921da783a4710e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87986854"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89049134"
 ---
 # <a name="conditional-access-require-compliant-devices"></a>Условный доступ: требовать соответствующие требованиям устройства
 
@@ -61,7 +61,7 @@ ms.locfileid: "87986854"
 
 [Распространенные политики условного доступа](concept-conditional-access-policy-common.md)
 
-[Определение влияния условного доступа в режиме "только отчет"](howto-conditional-access-report-only.md)
+[Определение влияния условного доступа в режиме "только отчет"](howto-conditional-access-insights-reporting.md)
 
 [Моделирование поведения входа с помощью средства What If условного доступа](troubleshoot-conditional-access-what-if.md)
 
