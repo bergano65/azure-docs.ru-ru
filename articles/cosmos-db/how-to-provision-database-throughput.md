@@ -33,7 +33,7 @@ ms.locfileid: "88997376"
    * Укажите пропускную способность (например, 1000 ЕЗ/с).
    * Щелкните **ОК**.
 
-    :::image type="content" source="./media/how-to-provision-database-throughput/provision-database-throughput-portal-all-api.png" alt-text="Снимок экрана: диалоговое окно "Новая база данных"":::
+    :::image type="content" source="./media/how-to-provision-database-throughput/provision-database-throughput-portal-all-api.png" alt-text="Снимок экрана: диалоговое окно Новая база данных":::
 
 ## <a name="provision-throughput-using-azure-cli-or-powershell"></a>Подготовка пропускной способности с помощью портала Azure CLI или PowerShell
 
