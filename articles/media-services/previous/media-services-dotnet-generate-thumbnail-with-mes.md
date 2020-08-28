@@ -14,12 +14,13 @@ ms.devlang: na
 ms.topic: article
 ms.date: 03/18/2019
 ms.author: juliako
-ms.openlocfilehash: 2f7ba4c1e4fdfad33a74fcb159fbb9efca3b5271
-ms.sourcegitcommit: 2ff0d073607bc746ffc638a84bb026d1705e543e
+ms.custom: devx-track-csharp
+ms.openlocfilehash: 22a79f75fa795226e45e54947f410db4c2a57a7c
+ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87836451"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89020666"
 ---
 # <a name="how-to-generate-thumbnails-using-media-encoder-standard-with-net"></a>Создание эскизов с помощью Media Encoder Standard c использованием .NET 
 
@@ -574,5 +575,5 @@ namespace EncodeAndGenerateThumbnails
 ## <a name="provide-feedback"></a>Отзывы
 [!INCLUDE [media-services-user-voice-include](../../../includes/media-services-user-voice-include.md)]
 
-## <a name="see-also"></a>См. также:
+## <a name="see-also"></a>См. также
 [Обзор кодирования с помощью служб мультимедиа](media-services-encode-asset.md)

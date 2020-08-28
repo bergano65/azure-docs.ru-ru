@@ -5,12 +5,13 @@ author: motanv
 ms.topic: conceptual
 ms.date: 06/07/2017
 ms.author: motanv
-ms.openlocfilehash: 14b2b5bd2577a10ad77a715fb5d20e10da84cf1d
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.custom: devx-track-csharp
+ms.openlocfilehash: 8b1d4ae42fa033c03bd82ae5cee5794d98c23c65
+ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86518985"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89022179"
 ---
 # <a name="testability-actions"></a>Действия, доступные благодаря Testability
 Для моделирования ненадежной инфраструктуры платформа Azure Service Fabric предоставляет разработчику несколько способов имитации различных реалистичных ошибок и переходов. Такие действия доступны благодаря компоненту Testability. Эти действия представляют из себя интерфейсы API низкого уровня, которые вызывают определенную ошибку, смену состояния или проверку. Сочетая эти действия, вы можете создать комплексные сценарии тестирования своих служб.

@@ -8,12 +8,12 @@ ms.service: storage
 ms.subservice: blobs
 ms.topic: conceptual
 ms.reviewer: clausjor
-ms.openlocfilehash: a46597087a3eee03f7c5b8d1c9746f968ea1980d
-ms.sourcegitcommit: 7fe8df79526a0067be4651ce6fa96fa9d4f21355
+ms.openlocfilehash: df81a383dc84ebc70beedded03e9fd1d6bccabdf
+ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87849732"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89009616"
 ---
 # <a name="azure-blob-storage-hot-cool-and-archive-access-tiers"></a>Хранилище BLOB-объектов Azure: горячий, холодный и архивный уровни доступа
 
@@ -68,6 +68,9 @@ ms.locfileid: "87849732"
 - Долгосрочное резервное копирование, вторичное резервное копирование и архивные наборы данных
 - Исходные (необработанные) данные, которые необходимо сохранить даже после их окончательной обработки
 - Данные соответствия требованиям и архивные данные, которые нужно хранить в течение длительного времени и которые вряд ли когда-либо будут использовать
+
+> [!NOTE]
+> Сейчас уровень архива не поддерживается для учетных записей ZRS, ГЗРС или RA-ГЗРС.
 
 ## <a name="account-level-tiering"></a>Распределение по уровням учетной записи
 
@@ -274,7 +277,7 @@ $blob.ICloudBlob.SetStandardBlobTier("Archive")
 
 Хранение данных и другие ограничения задаются на уровне учетной записи, а не на уровне доступа. Вы можете использовать все ограничения на одном уровне или на всех трех уровнях. Дополнительные сведения см. в разделе [целевые показатели масштабируемости и производительности для учетных записей хранения](../common/scalability-targets-standard-account.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json)уровня "Стандартный".
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Оцените горячие, интересные и архивные учетные записи в GPv2 и хранилище BLOB-объектов
 

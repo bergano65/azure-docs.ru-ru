@@ -8,12 +8,13 @@ ms.author: anfeldma
 ms.subservice: cosmosdb-sql
 ms.topic: troubleshooting
 ms.reviewer: sngun
-ms.openlocfilehash: 1dd6bdc66146eb7dfe155e7d1091eee5cca450a0
-ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
+ms.custom: devx-track-dotnet
+ms.openlocfilehash: bc5af781b86ef559abaf33b0cb027ef14adb4262
+ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87290919"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89021907"
 ---
 # <a name="diagnose-and-troubleshoot-issues-when-using-azure-cosmos-db-net-sdk"></a>Diagnose and troubleshoot issues when using Azure Cosmos DB .NET SDK (Диагностика и устранение неполадок при использовании пакета SDK Azure Cosmos DB для .NET)
 
@@ -51,9 +52,9 @@ ms.locfileid: "87290919"
 ### <a name="check-the-portal-metrics"></a>Проверка метрик портала
 Проверка [метрик портала](monitor-accounts.md) поможет определить, является ли это проблемой на стороне клиента, или возникли проблемы со службой. Например, если метрики содержат высокую частоту запросов с ограниченным количеством записей (код состояния HTTP 429), то есть запрос регулируется, а затем проверяется [слишком большое значение частоты запросов](troubleshoot-request-rate-too-large.md) . 
 
-## <a name="common-error-status-codes"></a>Коды распространенных состояний ошибок<a id="error-codes"></a>
+## <a name="common-error-status-codes"></a>Коды распространенных состояний ошибок <a id="error-codes"></a>
 
-| Код состояния | Описание: | 
+| Код состояния | Описание | 
 |----------|-------------|
 | 400 | Недопустимый запрос (зависит от сообщения об ошибке)| 
 | 401 | [Не санкционировано](troubleshoot-unauthorized.md) | 
@@ -103,7 +104,7 @@ ResponseTime: 2020-03-09T22:44:49.9279906Z, StoreResult: StorePhysicalAddress: r
 * Если серверный запрос возвращается быстро и тратит большое время на клиент, Проверьте нагрузку на компьютер. Скорее всего, недостаточно ресурсов, и пакет SDK ожидает, пока ресурсы будут доступны для обработки ответа.
 * Если запрос серверной части замедлится, попробуйте [оптимизировать запрос](optimize-cost-queries.md) и просмотреть текущую [политику индексирования](index-overview.md) . 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Сведения о рекомендациях по производительности для [.NET v3](performance-tips-dotnet-sdk-v3-sql.md) и [.NET v2](performance-tips.md)
 * Узнайте о [пакетах средств разработки Java на основе Reactor](https://github.com/Azure-Samples/azure-cosmos-java-sql-api-samples/blob/master/reactor-pattern-guide.md).

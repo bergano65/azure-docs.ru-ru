@@ -5,12 +5,12 @@ services: automation
 ms.date: 06/30/2020
 ms.topic: conceptual
 ms.service: automation
-ms.openlocfilehash: cb598f9a9b8d078c86e9911fa64d872788f47b4b
-ms.sourcegitcommit: cee72954f4467096b01ba287d30074751bcb7ff4
+ms.openlocfilehash: b0b1e31a8c10ba372473c36e35c19044ef02898a
+ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/30/2020
-ms.locfileid: "87447685"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89003360"
 ---
 # <a name="troubleshoot-update-management-issues"></a>Устранение неполадок с Управлением обновлениями
 
@@ -103,7 +103,7 @@ Error details: Failed to enable the Update solution
 
 1. Запустите средство устранения неполадок для [Windows](update-agent-issues.md#troubleshoot-offline) или [Linux](update-agent-issues-linux.md#troubleshoot-offline) в зависимости от операционной системы.
 
-2. Убедитесь, что компьютер отправляет отчеты в правильную рабочую область. Инструкции по проверке этого аспекта см. в разделе [Проверка подключения агента к Log Analytics](../../azure-monitor/platform/agent-windows.md#verify-agent-connectivity-to-log-analytics). Также убедитесь, что эта рабочая область связана с учетной записью службы автоматизации Azure. Для подтверждения перейдите на страницу учетной записи службы автоматизации и в разделе **Связанные ресурсы** выберите **Связанная рабочая область**.
+2. Убедитесь, что компьютер отправляет отчеты в правильную рабочую область. Инструкции по проверке этого аспекта см. в разделе [Проверка подключения агента к Azure Monitor](../../azure-monitor/platform/agent-windows.md#verify-agent-connectivity-to-azure-monitor). Также убедитесь, что эта рабочая область связана с учетной записью службы автоматизации Azure. Для подтверждения перейдите на страницу учетной записи службы автоматизации и в разделе **Связанные ресурсы** выберите **Связанная рабочая область**.
 
 3. Убедитесь, что компьютеры отображаются в рабочей области Log Analytics, связанной с вашей учетной записью службы автоматизации. Выполните следующий запрос в рабочей области Log Analytics.
 

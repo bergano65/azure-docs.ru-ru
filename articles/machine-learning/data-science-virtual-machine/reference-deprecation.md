@@ -8,12 +8,12 @@ ms.subservice: data-science-vm
 ms.author: laobri
 ms.date: 07/17/2020
 ms.topic: reference
-ms.openlocfilehash: ac56e2e69cf62c8afae73e0a7616e7e7f80c0493
-ms.sourcegitcommit: d39f2cd3e0b917b351046112ef1b8dc240a47a4f
+ms.openlocfilehash: d5f541dec14eebc944e4eac11dbe569b38cb277e
+ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88816326"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89001626"
 ---
 # <a name="reference-retirements-of-dsvm-images"></a>Справочник: прекращение использования DSVMных образов
 
@@ -50,18 +50,3 @@ ms.locfileid: "88816326"
 >
 > Шаблоны ARM, которые не были обновлены с помощью новых сведений об образе DSVM, не будут развернуты после даты выбытия.
 
-## <a name="mitigating-upcoming-retirements"></a>Устранение предстоящих отбытия
-
-В этом разделе рассматривается устранение рисков для будущих выпусков.
-
-### <a name="upgrade-windows-2016-dsvm"></a>Обновление Windows 2016 DSVM
-
-Чтобы перенести диск данных из существующего Windows 2016 DSVM в DSVM Windows 2019, выполните следующие действия.
-
-1. Создайте новый DSVM Windows 2019, следуя приведенным [здесь](./provision-vm.md#create-your-dsvm)инструкциям.
-1. Используйте [эти инструкции](../../virtual-machines/windows/detach-disk.md)для отключения существующих дисков данных из образа Windows 2016.
-1. Присоедините диск из предыдущего шага к образу Windows 2019 с помощью [этих инструкций](../../virtual-machines/windows/attach-disk-ps.md#attach-an-existing-data-disk-to-a-vm).
-
-### <a name="upgrade-ubuntu-1604-dsvm"></a>Обновление Ubuntu 16,04 DSVM
-
-Рекомендуется обновить имеющийся Ubuntu 16,04 Dsvm до [версии ubuntu 18,04 DSVM](./dsvm-ubuntu-intro.md).

@@ -3,12 +3,12 @@ title: Настройка анализа зависимостей на осно�
 description: В этой статье описывается, как настроить анализ зависимостей на основе агента в службе "Миграция серверов Azure".
 ms.topic: how-to
 ms.date: 6/09/2020
-ms.openlocfilehash: c41f8eb82cf912fc566975f833fc73589f17be98
-ms.sourcegitcommit: 2ff0d073607bc746ffc638a84bb026d1705e543e
+ms.openlocfilehash: c5c019ec995f59b61fb96917bed50bd8ba3f61d4
+ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87829923"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89022383"
 ---
 # <a name="set-up-dependency-visualization"></a>Настройка визуализации зависимостей
 
@@ -82,9 +82,9 @@ ms.locfileid: "87829923"
 5. Щелкните **Добавить**, чтобы добавить новую рабочую область Log Analytics. Вставьте идентификатор и ключ рабочей области, скопированные на портале. Щелкните **Далее**.
 
 Агент можно установить из командной строки или с помощью автоматизированного метода, такого как Configuration Manager или [Intigua](https://www.intigua.com/intigua-for-azure-migration).
-- Дополнительные сведения об использовании этих методов для установки агента MMA см. в разделе [Установка и настройка агента](../azure-monitor/platform/log-analytics-agent.md#installation-and-configuration).
+- Дополнительные сведения об использовании этих методов для установки агента MMA см. в разделе [Установка и настройка агента](../azure-monitor/platform/log-analytics-agent.md#installation-options).
 - Кроме того, агент MMA можно установить с помощью этого [скрипта](https://go.microsoft.com/fwlink/?linkid=2104394).
-- Дополнительные [сведения](../azure-monitor/platform/log-analytics-agent.md#supported-windows-operating-systems) о операционных системах Windows, поддерживаемых MMA.
+- Дополнительные [сведения](../azure-monitor/platform/agents-overview.md#supported-operating-systems) о операционных системах Windows, поддерживаемых MMA.
 
 ### <a name="install-mma-on-a-linux-machine"></a>Установка MMA на компьютере Linux
 
@@ -95,7 +95,7 @@ ms.locfileid: "87829923"
 
     ```sudo sh ./omsagent-<version>.universal.x64.sh --install -w <workspace id> -s <workspace key>```
 
-[Дополнительные сведения](../azure-monitor/platform/log-analytics-agent.md#supported-linux-operating-systems) о списке операционных систем Linux, поддерживаемых MMA. 
+[Дополнительные сведения](../azure-monitor/platform/agents-overview.md#supported-operating-systems) о списке операционных систем Linux, поддерживаемых MMA. 
 
 ## <a name="install-the-dependency-agent"></a>Установка агента зависимостей
 
@@ -147,7 +147,7 @@ ms.locfileid: "87829923"
 Вы можете запрашивать данные зависимостей, захваченные Сопоставление служб в рабочей области Log Analytics, связанной с проектом службы "миграция Azure". Log Analytics используется для записи и выполнения запросов Azure Monitor журналов.
 
 - [Узнайте, как](../azure-monitor/insights/service-map.md#log-analytics-records) искать данные Сопоставление служб в log Analytics.
-- [Общие сведения о](../azure-monitor/log-query/get-started-queries.md) написании запросов журналов в [log Analytics](../azure-monitor/log-query/get-started-portal.md).
+- [Общие сведения о](../azure-monitor/log-query/get-started-queries.md)  написании запросов журналов в [log Analytics](../azure-monitor/log-query/get-started-portal.md).
 
 Выполните запрос для данных зависимостей следующим образом:
 
@@ -205,6 +205,6 @@ VMConnection
 | summarize sum(BytesSent), sum(BytesReceived) by Computer, Direction, SourceIp, DestinationIp, DestinationPort
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Создание оценки](how-to-create-assessment.md) для группы.
