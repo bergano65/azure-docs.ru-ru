@@ -1,20 +1,20 @@
 ---
-title: Краткое руководство. Общий доступ за пределами организации в Azure Data Share
-description: Краткое руководство по совместному использованию данных клиентами и партнерами с помощью Azure Data Share и шаблона Resource Manager
+title: Совместное использование данных за пределами организации с помощью шаблонов Resource Manager и Azure Data Share — краткое руководство
+description: Научитесь совестному использованию данных с клиентами и партнерами с помощью Azure Data Share и шаблона Resource Manager.
 author: mumian
 ms.author: jgao
 ms.service: data-share
 ms.topic: quickstart
 ms.custom: subject-armqs
-ms.date: 08/17/2020
-ms.openlocfilehash: 62c800e8da3ab4f99b0933e286debcb05c5c3e22
-ms.sourcegitcommit: 37afde27ac137ab2e675b2b0492559287822fded
+ms.date: 08/19/2020
+ms.openlocfilehash: 76ef44d438b9af7ada6c1c464705a22ee10f4c58
+ms.sourcegitcommit: 271601d3eeeb9422e36353d32d57bd6e331f4d7b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88575649"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88654112"
 ---
-# <a name="tutorial-share-data-using-azure-data-share-and-resource-manager-templates"></a>Руководство по совместному использованию данных с помощью Azure Data Share и шаблонов Resource Manager
+# <a name="quickstart-share-data-using-azure-data-share-and-resource-manager-templates"></a>Краткое руководство. совместному использованию данных с помощью Azure Data Share и шаблонов Resource Manager
 
 Узнайте, как настроить новый Azure Data Share из учетной записи хранения Azure с помощью шаблона Azure Resource Manager и начать предоставлять свои данные клиентам и партнерам за пределами вашей организации Azure. См. список поддерживаемых источников данных в [Azure Data Share](./supported-data-stores.md).
 
@@ -101,4 +101,4 @@ Write-Host "Press [ENTER] to continue..."
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Из этого учебника вы узнали, как создать Azure Data Share и пригласить получателей. Дополнительные сведения о том, как потребитель данных может получить и принять общий ресурс данных, см. на [этой странице](subscribe-to-data-share.md).
+Из этого краткого руководства вы узнали, как создать Azure Data Share и пригласить получателей. Дополнительные сведения о том, как потребитель данных может получить и принять общий ресурс данных, см. на [этой странице](subscribe-to-data-share.md).

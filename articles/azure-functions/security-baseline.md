@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 05/04/2020
 ms.author: mbaldwin
 ms.custom: security-benchmark
-ms.openlocfilehash: 32905383b046148893492640fe42fc721d1944dd
-ms.sourcegitcommit: 85eb6e79599a78573db2082fe6f3beee497ad316
+ms.openlocfilehash: 4d4f6ff7819ef3cd0cf8e6a4c504a9b89dd5fda9
+ms.sourcegitcommit: 656c0c38cf550327a9ee10cc936029378bc7b5a2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87810247"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89070672"
 ---
 # <a name="azure-security-baseline-for-azure-functions"></a>Базовый план безопасности Azure для функций Azure
 
@@ -179,7 +179,7 @@ ms.locfileid: "87810247"
 - Приложение-функция должно быть доступно только по HTTPS
 - В вашем приложении-функции необходимо использовать последнюю версию TLS
 
-Вы также можете использовать Azure Blueprints для упрощения крупномасштабных развертываний Azure с помощью упаковки ключевых артефактов среды, таких как шаблоны Azure Resource Manager, элементы управления доступом на основе ролей (RBAC) и политики, в единое определение схемы. Вы можете легко применять схему к новым подпискам и средам, а также точно управлять настройкой с помощью версионирования.
+Вы также можете использовать схемы Azure для упрощения крупномасштабных развертываний Azure с помощью ключевых артефактов среды пакетов, таких как шаблоны Azure Resource Manager, управление доступом на основе ролей Azure (Azure RBAC) и политики в одном определении схемы. Вы можете легко применять схему к новым подпискам и средам, а также точно управлять настройкой с помощью версионирования.
 
 - [Настройка Политики Azure и управление ею](../governance/policy/tutorials/create-and-manage.md)
 
@@ -595,9 +595,9 @@ ms.locfileid: "87810247"
 
 ### <a name="46-use-azure-rbac-to-control-access-to-resources"></a>4.6. Контроль доступа к ресурсам с помощью RBAC
 
-**Руководство**. Использование управления доступом на основе ролей Azure Active Directory (AD) для управления доступом к плоскости управления функциями Azure (портал Azure). 
+**Руководство**. Использование управления доступом на основе ролей Azure (Azure RBAC) для управления доступом к плоскости управления функциями azure (портал Azure). 
 
-- [Настройка RBAC в Azure](../role-based-access-control/role-assignments-portal.md)
+- [Настройка Azure RBAC](../role-based-access-control/role-assignments-portal.md)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -896,7 +896,7 @@ ms.locfileid: "87810247"
 
 **Руководство**. безопасное хранение шаблонов ARM и пользовательских определений политик Azure в системе управления версиями.
 
-- [Что такое "Инфраструктура как код"](/azure/devops/learn/what-is-infrastructure-as-code)
+- [Что такое инфраструктура как код](/azure/devops/learn/what-is-infrastructure-as-code)
 
 - [Разработка политики как рабочих процессов кода](../governance/policy/concepts/policy-as-code.md)
 

@@ -11,32 +11,22 @@ author: lobrien
 ms.author: laobri
 ms.topic: conceptual
 ms.date: 07/17/2020
-ms.openlocfilehash: 0c189efa4fc9c981a486ebd174ad80b348c6bc9a
-ms.sourcegitcommit: d39f2cd3e0b917b351046112ef1b8dc240a47a4f
+ms.openlocfilehash: 29f1949cbe9998ac569b0389986023a72e7845b1
+ms.sourcegitcommit: 656c0c38cf550327a9ee10cc936029378bc7b5a2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88815544"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89070922"
 ---
 # <a name="deep-learning-and-ai-frameworks-for-the-azure-data-science-vm"></a>Платформы глубокого обучения и искусственного интеллекта для виртуальной машины Azure для обработки и анализа данных
 Платформы глубокого обучения в DSVM перечислены ниже.
-
-> [!NOTE]
-> Следующие образы виртуальных машин являются устаревшими:
->
-> * Образ Windows Server 2016 DSVM
-> * Образ Ubuntu 16,04 DSVM 
->
-> Эти образы виртуальных машин доступны только существующим клиентам, использующим развертывания ARM. Эти образы будут продолжать получать критические исправления безопасности до даты выхода из эксплуатации, но не будут обновлены с использованием новейших средств обработки и анализа данных.
-> 
-> Обратитесь к [странице устаревших образов DSVM](./reference-deprecation.md).
 
 ## <a name="caffe"></a>[Caffe](https://github.com/BVLC/caffe)
 
 | Категория | Значение |
 | ------------- | ------------- |
 | Поддерживаемые версии | |
-| Поддерживаемые выпуски DSVM      | Ubuntu 16,04 (не рекомендуется)    |
+| Поддерживаемые выпуски DSVM      | Ubuntu 16.04    |
 | Настройка и установка на DSVM  | Caffe устанавливается в `/opt/caffe`.   Примеры приведены в `/opt/caffe/examples` .|
 | Как запустить      | Используйте X2Go для входа в виртуальную машину, а затем запустите новый терминал и введите следующее:<br/>`cd /opt/caffe/examples`<br/>`source activate root`<br/>`jupyter notebook`<br/><br/>Откроется новое окно браузера с примерами записных книжек. Двоичные файлы устанавливаются в каталог /opt/caffe/build/install/bin.<br/><br/>Для установленной версии Caffe требуется Python 2,7 и не будет работать с Python 3,5, которая активируется по умолчанию. Чтобы переключиться на Python 2,7, выполните команду, `source activate root` чтобы переключиться в среду Anaconda.|    
 
@@ -45,7 +35,7 @@ ms.locfileid: "88815544"
 | Категория | Значение |
 | ------------- | ------------- |
 | Поддерживаемые версии | |
-| Поддерживаемые выпуски DSVM      | Ubuntu 16,04 (не рекомендуется)     |
+| Поддерживаемые выпуски DSVM      | Ubuntu 16.04     |
 | Настройка и установка на DSVM  | Caffe2 устанавливается в среде [Python 2,7 (root) conda. |
 | Как запустить      | Терминал: запустите Python и импортируйте Caffe2. <br/> * JupyterHub: [подключитесь к JupyterHub](dsvm-ubuntu-intro.md#how-to-access-the-ubuntu-data-science-virtual-machine), а затем перейдите в каталог Caffe2, чтобы найти примеры записных книжек. Для некоторых записных книжек требуется корневой каталог Caffe2, чтобы их можно было задать в коде Python. Введите /opt/caffe2. |
 
@@ -54,7 +44,7 @@ ms.locfileid: "88815544"
 | Категория | Значение |
 | ------------- | ------------- |
 | Поддерживаемые версии | 5,2 |
-| Поддерживаемые выпуски DSVM      | Ubuntu 16,04 (не рекомендуется)    |
+| Поддерживаемые выпуски DSVM      | Ubuntu 16.04    |
 | Настройка и установка на DSVM  | Chainer устанавливается с Python 3.5. |
 | Как запустить      | Терминал: активируйте среду Python 3,5, запустите `python` , а затем `import chainer` . <br/> * JupyterHub: [подключитесь к JupyterHub](dsvm-ubuntu-intro.md#how-to-access-the-ubuntu-data-science-virtual-machine), а затем перейдите в каталог Chain, чтобы найти примеры записных книжек.| 
 
@@ -63,7 +53,7 @@ ms.locfileid: "88815544"
 | Категория | Значение |
 | ------------- | ------------- |
 | Поддерживаемые версии | 10.0.130|
-| Поддерживаемые выпуски DSVM      | Windows Server 2019<br>Ubuntu 18.04<br> Windows 2016 (не рекомендуется)<br> Ubuntu 16,04 (не рекомендуется)  |
+| Поддерживаемые выпуски DSVM      | Windows Server 2019<br>Ubuntu 18.04<br> Windows 2016<br> Ubuntu 16.04  |
 | Настройка и установка на DSVM  |_nvidia-smi_ можно найти в системном пути.  |
 | Как запустить      | Откройте командную строку (в Windows) или терминал (в Linux), а затем запустите _NVIDIA-SMI_. |
 
@@ -73,7 +63,7 @@ ms.locfileid: "88815544"
 | Категория | Значение |
 | ------------- | ------------- |
 | Поддерживаемые версии | 0.16.1|
-| Поддерживаемые выпуски DSVM      | Ubuntu 18.04<br> Ubuntu 16,04 (не рекомендуется)   |
+| Поддерживаемые выпуски DSVM      | Ubuntu 18.04<br> Ubuntu 16.04   |
 | Настройка и установка на DSVM  | Хоровод устанавливается в Python 3,5 |
 | Как запустить      | Активируйте нужную среду в терминале, а затем запустите Python. |
 
@@ -82,7 +72,7 @@ ms.locfileid: "88815544"
 | Категория | Значение |
 | ------------- | ------------- |
 | Поддерживаемые версии | 2.2.4 |
-| Поддерживаемые выпуски DSVM      | Windows Server 2019<br>Ubuntu 18.04<br> Windows 2016 (не рекомендуется)<br> Ubuntu 16,04 (не рекомендуется)   |
+| Поддерживаемые выпуски DSVM      | Windows Server 2019<br>Ubuntu 18.04<br> Windows 2016 <br> Ubuntu 16.04   |
 | Настройка и установка на DSVM  | Keras устанавливается в Python 3,6 в Windows и в Python 3,5 в Linux |
 | Как запустить      | Активируйте нужную среду в терминале, а затем запустите Python. |
 
@@ -91,7 +81,7 @@ ms.locfileid: "88815544"
 | Категория | Значение |
 | ------------- | ------------- |
 | Поддерживаемые версии | 2.5.1 |
-| Поддерживаемые выпуски DSVM      | Windows 2016 (не рекомендуется)<br> Ubuntu 16,04 (не рекомендуется)   |
+| Поддерживаемые выпуски DSVM      | Windows 2016 <br> Ubuntu 16.04   |
 | Настройка и установка на DSVM  | CNTK устанавливается в Python 3,6 в [Windows 2016](dsvm-tools-languages.md#python-windows-server-2016-edition) и в Python 3,5 в [Linux](./dsvm-tools-languages.md#python-linux-edition)) |
 | Как запустить      | Терминал: активируйте правильную среду и запустите Python. <br/>Jupyter: подключитесь к [Jupyter](provision-vm.md) или [JupyterHub](dsvm-ubuntu-intro.md#how-to-access-the-ubuntu-data-science-virtual-machine), а затем откройте каталог CNTK для примеров. |
 
@@ -99,7 +89,7 @@ ms.locfileid: "88815544"
 | Категория | Значение |
 | ------------- | ------------- |
 | Поддерживаемые версии | 1.3.0 |
-| Поддерживаемые выпуски DSVM      | Windows 2016 (не рекомендуется)<br> Ubuntu 16,04 (не рекомендуется)   |
+| Поддерживаемые выпуски DSVM      | Windows 2016 <br> Ubuntu 16.04    |
 | Настройка и установка на DSVM  | MXNet устанавливается в `C:\dsvm\tools\mxnet` в Windows и `/dsvm/tools/mxnet` Ubuntu. Привязки Python устанавливаются в Python 3,6 в [Windows 2016](dsvm-tools-languages.md#python-windows-server-2016-edition) и в Python 3,5 в [Linux](./dsvm-tools-languages.md#python-linux-edition)) привязки R также входят в DSVM Ubuntu. |
 | Как запустить      | Терминал: активируйте правильную среду conda, а затем запустите `import mxnet` . <br/>Jupyter: подключитесь к [Jupyter](provision-vm.md#access-the-dsvm) или [JupyterHub](dsvm-ubuntu-intro.md#how-to-access-the-ubuntu-data-science-virtual-machine), а затем откройте `mxnet` каталог для примеров. |
 
@@ -108,7 +98,7 @@ ms.locfileid: "88815544"
 | Категория | Значение |
 | ------------- | ------------- |
 | Поддерживаемые версии | 1.0.1 |
-| Поддерживаемые выпуски DSVM      | Windows 2016 (не рекомендуется)<br> Ubuntu 16,04 (не рекомендуется)   |
+| Поддерживаемые выпуски DSVM      | Windows 2016 <br> Ubuntu 16.04    |
 | Настройка и установка на DSVM  | MXNet Model Server устанавливается в Python 3,6 в [Windows 2016](dsvm-tools-languages.md#python-windows-server-2016-edition) и в Python 3,5 в [Linux](./dsvm-tools-languages.md#python-linux-edition)). |
 | Как запустить      | Терминал: выполните `sudo systemctl stop jupyterhub` , чтобы сначала запустить службу JupyterHub, так как оба прослушивают один и тот же порт. Затем активируйте правильную среду conda и запустите `mxnet-model-server --start --models squeezenet=https://s3.amazonaws.com/model-server/model_archive_1.0/squeezenet_v1.1.mar` |
 
@@ -117,7 +107,7 @@ ms.locfileid: "88815544"
 | Категория | Значение |
 | ------------- | ------------- |
 | Поддерживаемые версии |  |
-| Поддерживаемые выпуски DSVM      | Windows Server 2019<br>Ubuntu 18.04<br> Windows 2016 (не рекомендуется)<br> Ubuntu 16,04 (не рекомендуется)   |
+| Поддерживаемые выпуски DSVM      | Windows Server 2019<br>Ubuntu 18.04<br> Windows 2016<br> Ubuntu 16.04   |
 | Для чего она нужна? | Средство NVIDIA для выполнения запросов активности GPU |
 | Настройка и установка на DSVM  | `nvidia-smi` находится в системном пути. |
 | Как запустить      | На виртуальной машине **с графическим процессором**откройте командную строку (в Windows) или терминал (в Linux) и запустите `nvidia-smi` . |
@@ -127,7 +117,7 @@ ms.locfileid: "88815544"
 | Категория | Значение |
 | ------------- | ------------- |
 | Поддерживаемые версии | 1.2.0 (Ubuntu 16,04), 1.4.0 (Ubuntu 18,04, Windows 2019) |
-| Поддерживаемые выпуски DSVM      | Windows Server 2019<br>Ubuntu 18.04<br> Ubuntu 16,04 (не рекомендуется) |
+| Поддерживаемые выпуски DSVM      | Windows Server 2019<br>Ubuntu 18.04<br> Ubuntu 16.04 |
 | Настройка и установка на DSVM  | Устанавливается в [Python 3,5](dsvm-tools-languages.md#python-linux-edition). Включены образцы записных книжек Jupyter, а примеры находятся в папке/dsvm/Samples/pytorch. |
 | Как запустить      | Терминал: активируйте правильную среду, а затем запустите Python.<br/>* [JupyterHub](dsvm-ubuntu-intro.md#how-to-access-the-ubuntu-data-science-virtual-machine): Connect, а затем откройте каталог PyTorch для примеров.  |
 
@@ -136,7 +126,7 @@ ms.locfileid: "88815544"
 | Категория | Значение |
 | ------------- | ------------- |
 | Поддерживаемые версии | 1.13 |
-| Поддерживаемые выпуски DSVM      | Windows Server 2019<br>Ubuntu 18.04<br> Windows 2016 (не рекомендуется)<br> Ubuntu 16,04 (не рекомендуется) |
+| Поддерживаемые выпуски DSVM      | Windows Server 2019<br>Ubuntu 18.04<br> Windows 2016 <br> Ubuntu 16.04 |
 | Настройка и установка на DSVM  | Устанавливается в Python 3,5 в [Linux](dsvm-tools-languages.md#python-linux-edition) и Python 3,6 в [Windows 2016](dsvm-tools-languages.md#python-windows-server-2016-edition) |
 | Как запустить      | Терминал: активируйте правильную среду, а затем запустите Python. <br/> * Jupyter: подключитесь к [Jupyter](provision-vm.md) или [JupyterHub](dsvm-ubuntu-intro.md#how-to-access-the-ubuntu-data-science-virtual-machine), а затем откройте каталог TensorFlow для примеров.   |
 
@@ -145,7 +135,7 @@ ms.locfileid: "88815544"
 | Категория | Значение |
 | ------------- | ------------- |
 | Поддерживаемые версии | 1.12 |
-| Поддерживаемые выпуски DSVM      | Ubuntu 16,04 (не рекомендуется) |
+| Поддерживаемые выпуски DSVM      | Ubuntu 16.04 |
 | Настройка и установка на DSVM  | tensorflow_model_server доступен в терминале. |
 | Как запустить      |  Примеры можно найти в [Интернете](https://www.tensorflow.org/serving/).   |
 
@@ -155,6 +145,6 @@ ms.locfileid: "88815544"
 | Категория | Значение |
 | ------------- | ------------- |
 | Поддерживаемые версии | 1.0.3 |
-| Поддерживаемые выпуски DSVM      | Ubuntu 16,04 (не рекомендуется) |
+| Поддерживаемые выпуски DSVM      | Ubuntu 16.04 |
 | Настройка и установка на DSVM  |Theano устанавливается в среде Python 2,7 (_root_) и в окружении Python 3,5 (_PY35_). |
 | Как запустить      |  Терминал: активируйте нужную версию Python (root или PY35), запустите Python, а затем импортируйте Theano.<br/>* Jupyter: выберите ядро Python 2,7 или 3,5, а затем импортируйте Theano.  <br/>Чтобы обойти недавную ошибку математической библиотеки ядра (MKL), необходимо сначала установить MKL потоковый уровень следующим образом:<br/><br/>`export MKL_THREADING_LAYER=GNU`  |

@@ -15,12 +15,12 @@ ms.date: 03/02/2019
 ms.author: kenwith
 ms.reviewer: arvinh
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 6b81e792d3b3bf491b281e09c00f48a7ad56fa47
-ms.sourcegitcommit: bc943dc048d9ab98caf4706b022eb5c6421ec459
+ms.openlocfilehash: 8ce3819ff1f9b0c61f7738f90ff17c2798fe888b
+ms.sourcegitcommit: 628be49d29421a638c8a479452d78ba1c9f7c8e4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/14/2020
-ms.locfileid: "84763641"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88642118"
 ---
 # <a name="centralize-application-management-with-azure-ad"></a>Централизованное управление приложениями с помощью Azure Active Directory
 
@@ -43,7 +43,7 @@ ms.locfileid: "84763641"
 |Компонент  | Описание | Рекомендация |
 |---------|---------|---------|
 |Единый вход|Федеративный единый вход на основе надежных отраслевых стандартов.|Если приложение поддерживает [SAML/OIDC](https://docs.microsoft.com/azure/active-directory/manage-apps/isv-choose-multi-tenant-federation), обязательно используйте их для включения единого входа.|
-|Панель доступа|Предоставляет пользователям простой центр для обнаружения приложений и доступа к ним. Повысьте продуктивность сотрудников, предоставив им возможности самообслуживания. Разрешите им, например, запрашивать доступ к приложениям и группам или управлять доступом к ресурсам от лица других пользователей.| После интеграции приложений с Azure AD для единого входа разверните [панель доступа](https://docs.microsoft.com/azure/active-directory/manage-apps/access-panel-deployment-plan) в вашей организации.|
+|Мои приложения|Предоставляет пользователям простой центр для обнаружения приложений и доступа к ним. Повысьте продуктивность сотрудников, предоставив им возможности самообслуживания. Разрешите им, например, запрашивать доступ к приложениям и группам или управлять доступом к ресурсам от лица других пользователей.| После интеграции приложений с Azure AD для единого входа разверните [Мои приложения](https://docs.microsoft.com/azure/active-directory/manage-apps/access-panel-deployment-plan) в вашей организации.|
 
 ## <a name="scenario-2-automate-provisioning-and-deprovisioning"></a>Сценарий 2. Автоматическая подготовка и ее отзыв 
 

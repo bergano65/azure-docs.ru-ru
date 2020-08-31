@@ -16,12 +16,12 @@ ms.date: 06/09/2020
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 118abaef1fd1458057a7dbe28d5cd74ded55fe28
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: ac36650e285c371457b89f7a362b51fa74d7d47c
+ms.sourcegitcommit: 656c0c38cf550327a9ee10cc936029378bc7b5a2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85358299"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89071437"
 ---
 # <a name="azure-active-directory-pass-through-authentication-frequently-asked-questions"></a>Сквозная проверка подлинности Azure Active: ответы на часто задаваемые вопросы
 
@@ -113,7 +113,7 @@ ms.locfileid: "85358299"
 
 Если агент сквозной аутентификации выполняется, он остается активным и постоянно обрабатывает запросы на вход пользователей. Если вы хотите удалить агент аутентификации, выберите **Панель управления > Программы > Программы и компоненты** и удалите программы **Microsoft Azure AD Connect Authentication Agent** и **Microsoft Azure AD Connect Agent Updater**.
 
-Если открыть колонку "Сквозная проверка подлинности" в [центре администрирования Azure Active Directory](https://aad.portal.azure.com) после завершения предыдущего шага, то вы увидите, что агент аутентификации **неактивен**. Это _ожидаемое_. Агент аутентификации будет автоматически удален из списка через несколько дней.
+Если открыть колонку "Сквозная проверка подлинности" в [центре администрирования Azure Active Directory](https://aad.portal.azure.com) после завершения предыдущего шага, то вы увидите, что агент аутентификации **неактивен**. Это _ожидаемое_. Агент аутентификации автоматически удаляется из списка через 10 дней.
 
 ## <a name="i-already-use-ad-fs-to-sign-in-to-azure-ad-how-do-i-switch-it-to-pass-through-authentication"></a>Я уже использую AD FS для входа в Azure AD. Как изменить этот метод на сквозную проверку подлинности?
 
@@ -174,7 +174,7 @@ ms.locfileid: "85358299"
 
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 - [Текущие ограничения](how-to-connect-pta-current-limitations.md). Сведения о том, какие сценарии поддерживаются, а какие нет.
 - [Краткое руководство по сквозной аутентификации Azure Active Directory](how-to-connect-pta-quick-start.md). Настройка и подготовка к работе сквозной аутентификации Azure Active Directory.
 - [Migrate from AD FS to Pass-through Authentication](https://github.com/Identity-Deployment-Guides/Identity-Deployment-Guides/blob/master/Authentication/Migrating%20from%20Federated%20Authentication%20to%20Pass-through%20Authentication.docx?raw=true) (Переход с AD FS на сквозную проверку подлинности). Подробное руководство по переходу с AD FS (или других технологии федерации) на сквозную проверку подлинности.

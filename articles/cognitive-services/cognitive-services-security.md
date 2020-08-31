@@ -7,15 +7,15 @@ author: erhopf
 manager: nitinme
 ms.service: cognitive-services
 ms.topic: conceptual
-ms.date: 07/10/2020
+ms.date: 08/28/2020
 ms.author: erhopf
 ms.custom: devx-track-python, devx-track-javascript, devx-track-csharp
-ms.openlocfilehash: b6c7f6d8cd4638dd2b7a1f6cc23b192ed6803b41
-ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
+ms.openlocfilehash: d74a2c45c1d2b2b03c35e7235994980a64cba979
+ms.sourcegitcommit: 656c0c38cf550327a9ee10cc936029378bc7b5a2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88921143"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89072117"
 ---
 # <a name="azure-cognitive-services-security"></a>Безопасность Cognitive Services Azure
 
@@ -31,7 +31,7 @@ ms.locfileid: "88921143"
 
 Для пользователей .NET рассмотрите рекомендации по <a href="https://docs.microsoft.com/dotnet/framework/network-programming/tls" target="_blank">обеспечению безопасности <span class="docon docon-navigate-external x-hidden-focus"></span> транспортного уровня </a>.
 
-## <a name="authentication"></a>Проверка подлинности
+## <a name="authentication"></a>Аутентификация
 
 При обсуждении проверки подлинности существует несколько распространенных заблуждений. Проверка подлинности и авторизация часто путают друг с другом. Удостоверение является также основным компонентом в системе безопасности. Удостоверение — это коллекция сведений об <a href="https://en.wikipedia.org/wiki/Principal_(computer_security)" target="_blank">участнике <span class="docon docon-navigate-external x-hidden-focus"></span> </a>. Поставщики удостоверений (IdP) предоставляют удостоверения для служб проверки подлинности. Проверка подлинности — это процедура проверки удостоверения пользователя. Авторизация — это спецификация прав доступа и привилегий на ресурсы для заданного удостоверения. Некоторые из Cognitive Services предложений включают управление доступом на основе ролей (RBAC). RBAC можно использовать для упрощения некоторых формальностей, участвующих в управлении участниками вручную. Дополнительные сведения см. в статье [Управление доступом на основе ролей для ресурсов Azure](../role-based-access-control/overview.md).
 
@@ -113,7 +113,7 @@ echo "${ENVIRONMENT_VARIABLE_KEY}"
 
 # <a name="c"></a>[C#](#tab/csharp)
 
-Дополнительные сведения см. в <a href="https://docs.microsoft.com/dotnet/api/system.environment.getenvironmentvariable" target="_blank"> `Environment.GetEnvironmentVariable` <span class="docon docon-navigate-external x-hidden-focus"></span> </a>разделе.
+Дополнительные сведения см. на веб-сайте <a href="https://docs.microsoft.com/dotnet/api/system.environment.getenvironmentvariable" target="_blank">`Environment.GetEnvironmentVariable` <span class="docon docon-navigate-external x-hidden-focus"></span></a>.
 
 ```csharp
 using static System.Environment;
@@ -132,7 +132,7 @@ class Program
 
 # <a name="c"></a>[C++](#tab/cpp)
 
-Дополнительные сведения см. в <a href="https://docs.microsoft.com/cpp/c-runtime-library/reference/getenv-wgetenv" target="_blank"> `getenv` <span class="docon docon-navigate-external x-hidden-focus"></span> </a>разделе.
+Дополнительные сведения см. на веб-сайте <a href="https://docs.microsoft.com/cpp/c-runtime-library/reference/getenv-wgetenv" target="_blank">`getenv` <span class="docon docon-navigate-external x-hidden-focus"></span></a>.
 
 ```cpp
 #include <stdlib.h>
@@ -147,7 +147,7 @@ int main()
 
 # <a name="java"></a>[Java](#tab/java)
 
-Дополнительные сведения см. в <a href="https://docs.oracle.com/javase/7/docs/api/java/lang/System.html#getenv(java.lang.String)" target="_blank"> `System.getenv` <span class="docon docon-navigate-external x-hidden-focus"></span> </a>разделе.
+Дополнительные сведения см. на веб-сайте <a href="https://docs.oracle.com/javase/7/docs/api/java/lang/System.html#getenv(java.lang.String)" target="_blank">`System.getenv` <span class="docon docon-navigate-external x-hidden-focus"></span></a>.
 
 ```java
 import java.lang.*;
@@ -164,7 +164,7 @@ public class Program {
 
 # <a name="nodejs"></a>[Node.js](#tab/node-js)
 
-Дополнительные сведения см. в <a href="https://nodejs.org/api/process.html#process_process_env" target="_blank"> `process.env` <span class="docon docon-navigate-external x-hidden-focus"></span> </a>разделе.
+Дополнительные сведения см. на веб-сайте <a href="https://nodejs.org/api/process.html#process_process_env" target="_blank">`process.env` <span class="docon docon-navigate-external x-hidden-focus"></span></a>.
 
 ```javascript
 // Get the named env var, and assign it to the value variable
@@ -174,7 +174,7 @@ const value =
 
 # <a name="python"></a>[Python](#tab/python)
 
-Дополнительные сведения см. в <a href="https://docs.python.org/2/library/os.html#os.environ" target="_blank"> `os.environ` <span class="docon docon-navigate-external x-hidden-focus"></span> </a>разделе.
+Дополнительные сведения см. на веб-сайте <a href="https://docs.python.org/2/library/os.html#os.environ" target="_blank">`os.environ` <span class="docon docon-navigate-external x-hidden-focus"></span></a>.
 
 ```python
 import os
@@ -185,7 +185,7 @@ value = os.environ['ENVIRONMENT_VARIABLE_KEY']
 
 # <a name="objective-c"></a>[Objective-C](#tab/objective-c)
 
-Дополнительные сведения см. в <a href="https://developer.apple.com/documentation/foundation/nsprocessinfo/1417911-environment?language=objc" target="_blank"> `environment` <span class="docon docon-navigate-external x-hidden-focus"></span> </a>разделе.
+Дополнительные сведения см. на веб-сайте <a href="https://developer.apple.com/documentation/foundation/nsprocessinfo/1417911-environment?language=objc" target="_blank">`environment` <span class="docon docon-navigate-external x-hidden-focus"></span></a>.
 
 ```objectivec
 // Get the named env var, and assign it to the value variable

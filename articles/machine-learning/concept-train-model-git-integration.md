@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.author: jordane
 author: jpe316
 ms.date: 03/05/2020
-ms.openlocfilehash: 7cc2e346a35cd1cdf1278b527dc451a903d60f89
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 154d28e4df9bad68f3c5e93208ccf62ba2721663
+ms.sourcegitcommit: d7352c07708180a9293e8a0e7020b9dd3dd153ce
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "78402823"
+ms.lasthandoff: 08/30/2020
+ms.locfileid: "89144827"
 ---
 # <a name="git-integration-for-azure-machine-learning"></a>Интеграция с Git для Машинное обучение Azure
 
@@ -41,7 +41,7 @@ ms.locfileid: "78402823"
 
 При отправке обучающего запуска из пакета SDK для Python или Машинное обучение CLI файлы, необходимые для обучения модели, отправляются в рабочую область. Если `git` команда доступна в среде разработки, процесс отправки использует его для проверки того, хранятся ли файлы в репозитории Git. Если да, то сведения из репозитория Git также передаются в ходе обучающего запуска. Эти сведения хранятся в следующих свойствах для обучающего запуска:
 
-| Свойство. | Команда git, используемая для получения значения | Описание: |
+| Property (Свойство) | Команда git, используемая для получения значения | Описание |
 | ----- | ----- | ----- |
 | `azureml.git.repository_uri` | `git ls-remote --get-url` | Универсальный код ресурса (URI), из которого был клонирован репозиторий. |
 | `mlflow.source.git.repoURL` | `git ls-remote --get-url` | Универсальный код ресурса (URI), из которого был клонирован репозиторий. |
@@ -114,6 +114,6 @@ az ml run list -e train-on-amlcompute --last 1 -w myworkspace -g myresourcegroup
 
 Дополнительные сведения см. в справочной документации по [AZ ML по запуску](https://docs.microsoft.com/cli/azure/ext/azure-cli-ml/ml/run?view=azure-cli-latest) .
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
-* [Настройка и использование целевых объектов вычислений для обучения моделей](how-to-set-up-training-targets.md)
+* [Использование целевых объектов вычислений для обучения моделей](how-to-set-up-training-targets.md)

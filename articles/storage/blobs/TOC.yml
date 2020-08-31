@@ -570,6 +570,8 @@
               href: ../common/storage-explorer-troubleshooting.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
             - name: Обеспечение безопасности в Обозревателе службы хранилища
               href: ../common/storage-explorer-security.md
+            - name: Управление версиями BLOB-объектов Обозревателя службы хранилища
+              href: ../common/storage-explorer-blob-versioning.md
             - name: Жизненный цикл и политика поддержки Обозревателя службы хранилища
               href: ../common/storage-explorer-support-policy-lifecycle.md
             - name: Специальные возможности Обозревателя службы хранилища
@@ -850,6 +852,8 @@
               href: ../common/storage-explorer-troubleshooting.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
             - name: Обеспечение безопасности в Обозревателе службы хранилища
               href: ../common/storage-explorer-security.md
+            - name: Управление версиями BLOB-объектов Обозревателя службы хранилища
+              href: ../common/storage-explorer-blob-versioning.md
             - name: Жизненный цикл и политика поддержки Обозревателя службы хранилища
               href: ../common/storage-explorer-support-policy-lifecycle.md
             - name: Специальные возможности Обозревателя службы хранилища

@@ -7,16 +7,20 @@ ms.topic: how-to
 ms.date: 03/22/2019
 ms.author: cynthn
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 6d0d3e6836e2f87c503ac5154a54aeb0dd1c0e26
-ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
+ms.openlocfilehash: ddd8166dd29d2210fecdd72d5be446df47a6c5df
+ms.sourcegitcommit: 656c0c38cf550327a9ee10cc936029378bc7b5a2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87266305"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89072304"
 ---
 # <a name="create-a-windows-virtual-machine-from-a-resource-manager-template"></a>Создание виртуальной машины Windows с использованием шаблона Resource Manager
 
 Узнайте, как создать виртуальную машину Windows с помощью шаблона Azure Resource Manager и Azure PowerShell из Azure Cloud Shell. Шаблон, используемый в этой статье, развертывает одну виртуальную машину под Windows Server в новой виртуальной сети с одной подсетью. Сведения о создании виртуальной машины Linux см. [в статье Создание виртуальной машины Linux с помощью шаблонов Azure Resource Manager](../linux/create-ssh-secured-vm-from-template.md).
+
+Альтернативой является развертывание шаблона из портал Azure. Чтобы открыть шаблон на портале, нажмите кнопку **развернуть в Azure** .
+
+[![Развертывание в Azure](../../media/template-deployments/deploy-to-azure.svg)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-quickstart-templates%2Fmaster%2F101-vm-simple-windows%2Fazuredeploy.json)
 
 ## <a name="create-a-virtual-machine"></a>Создание виртуальной машины
 

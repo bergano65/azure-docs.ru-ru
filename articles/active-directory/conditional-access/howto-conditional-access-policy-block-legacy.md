@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: calebb, rogoya
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 0eaa2f2bc0ee26a4f543ea0938db6c226a9a6575
-ms.sourcegitcommit: 8a7b82de18d8cba5c2cec078bc921da783a4710e
+ms.openlocfilehash: 4c10f0ab4ff7fd8461ef81da67e50f7e5e174104
+ms.sourcegitcommit: 656c0c38cf550327a9ee10cc936029378bc7b5a2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 08/28/2020
-ms.locfileid: "89049253"
+ms.locfileid: "89068632"
 ---
 # <a name="conditional-access-block-legacy-authentication"></a>Условный доступ: Блокировка устаревших методов проверки подлинности
 
@@ -37,7 +37,7 @@ ms.locfileid: "89049253"
 1. В разделе **Облачные приложения или действия** выберите **Все облачные приложения**.
    1. Нажмите кнопку **Готово**.
 1. В разделе **условия**  >  **клиентские приложения**задайте для параметра **настроить** значение **Да**.
-   1. Проверьте только списки **клиентов Exchange ActiveSync** и **других клиентов**.
+   1. Проверьте только списки **клиентов Exchange ActiveSync** и **других клиентов**. Чтобы развернуть политику условного доступа Exchange ActiveSync в Azure, у пользователя должны быть права глобального администратора.
    1. Нажмите кнопку **Готово**.
 1. В разделе **Управление доступом** > **Предоставить разрешение** выберите **Блокировать доступ**.
    1. Щелкните **Выбрать**.

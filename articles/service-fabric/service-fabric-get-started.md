@@ -4,13 +4,13 @@ description: Установите среду выполнения, пакет SD
 author: peterpogorski
 ms.topic: conceptual
 ms.date: 06/16/2020
-ms.custom: sfrev
-ms.openlocfilehash: 005a04833b95e893758fda768113801c5a4f6f66
-ms.sourcegitcommit: 4913da04fd0f3cf7710ec08d0c1867b62c2effe7
+ms.custom: sfrev, devx-track-azurepowershell
+ms.openlocfilehash: 57e5fe236e117932c3cbc2fcf2479f89aaa261d9
+ms.sourcegitcommit: 656c0c38cf550327a9ee10cc936029378bc7b5a2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88207466"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89069075"
 ---
 # <a name="prepare-your-development-environment-on-windows"></a>Настройка среды разработки для Windows
 
@@ -88,7 +88,7 @@ Set-ExecutionPolicy -ExecutionPolicy Unrestricted -Force -Scope CurrentUser
 
 [Service Fabric — это оркестратор контейнеров](service-fabric-containers-overview.md) для развертывания микрослужб в кластере компьютеров. Для запуска приложений контейнера Windows на локальном кластере разработки необходимо сначала установить Docker для Windows. Скачайте [Docker CE для Windows (стабильная версия)](https://store.docker.com/editions/community/docker-ce-desktop-windows?tab=description). После установки и запуска Docker щелкните правой кнопкой мыши значок в области уведомлений и выберите **Switch to Windows containers** (Переключиться на контейнеры Windows). Это необходимо для запуска образов Docker на базе Windows.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Среда разработки настроена, и вы готовы к созданию и запуску собственных приложений.
 

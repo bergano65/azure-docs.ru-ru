@@ -12,12 +12,12 @@ ms.date: 05/19/2020
 ms.author: ryanwi
 ms.custom: aaddev
 ms.reviewer: jesakowi
-ms.openlocfilehash: f611eefc50fede2ef4d738cd5abfd6afcc08b9ff
-ms.sourcegitcommit: b8702065338fc1ed81bfed082650b5b58234a702
+ms.openlocfilehash: 286f813c825bcc05ce8e9fa43df5dc0299625277
+ms.sourcegitcommit: 656c0c38cf550327a9ee10cc936029378bc7b5a2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/11/2020
-ms.locfileid: "88120785"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89068479"
 ---
 # <a name="publisher-verification-preview"></a>Проверка издателя (предварительная версия)
 
@@ -42,13 +42,13 @@ ms.locfileid: "88120785"
 
 -  Идентификатор MPN для допустимой учетной записи [Microsoft Partner Network](https://partner.microsoft.com/membership), которая завершила процесс [проверки](/partner-center/verification-responses). Эта учетная запись MPN должна быть [глобальной учетной записью партнера (PGA)](/partner-center/account-structure#the-top-level-is-the-partner-global-account-pga) для вашей организации. 
 
--  Клиент Azure AD с [пользовательским доменом](../fundamentals/add-custom-domain.md), проверенным DNS. Этот домен должен соответствовать домену адреса электронной почты, используемого в процессе проверки на предыдущем шаге. 
+-  Приложение, зарегистрированное в клиенте Azure AD с настроенным [доменом издателя](howto-configure-publisher-domain.md) .
 
--  Приложение, зарегистрированное в клиенте Azure AD, с [доменом издателя](howto-configure-publisher-domain.md), настроенным с помощью того же домена, который использовался ранее. 
+-  Домен адреса электронной почты, используемый во время проверки учетной записи MPN, должен соответствовать домену издателя, настроенному в приложении, или [пользовательскому домену](../fundamentals/add-custom-domain.md) , ПРОВЕРЕНному DNS, добавленному в клиент Azure AD. 
 
 -  Пользователь, выполняющий проверку, должен иметь разрешение на внесение изменений как в регистрацию приложения в Azure AD, так и в учетную запись MPN в Центре партнеров. 
 
-    -  В Azure AD этот пользователь должен быть владельцем приложения или иметь одну из следующих [ролей](../users-groups-roles/directory-assign-admin-roles.md): Администратор приложения, администратор облачного приложения, глобальный администратор. 
+    -  В Azure AD этот пользователь должен быть членом одной из следующих [ролей](../users-groups-roles/directory-assign-admin-roles.md): администратор приложения, администратор облачных приложений или глобальный администратор. 
 
     -  В Центре партнеров этот пользователь должен иметь следующие [роли](/partner-center/permissions-overview): Администратор MPN, администратор учетных записей или глобальный администратор (это общая роль, приобретенная в Azure AD).
     

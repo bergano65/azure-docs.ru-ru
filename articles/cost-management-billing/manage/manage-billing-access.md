@@ -1,20 +1,21 @@
 ---
 title: Управление доступом к сведениям о выставлении счетов в Azure
-description: Узнайте, как предоставить доступ членами вашей команды к сведениям о выставлении счетов в Azure
+description: Узнайте, как предоставить доступ членами вашей команды к сведениям о выставлении счетов в Azure.
 author: vikramdesai01
 ms.reviewer: amberb
 tags: billing
 ms.service: cost-management-billing
+ms.subservice: billing
 ms.topic: how-to
-ms.date: 07/24/2020
+ms.date: 08/20/2020
 ms.author: banders
 ms.custom: seodec18
-ms.openlocfilehash: 74c00678ca901d163d951e02167c89896c43e7b3
-ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
+ms.openlocfilehash: f42c185046e6ce78edd234923da1a3390ed08608
+ms.sourcegitcommit: 56cbd6d97cb52e61ceb6d3894abe1977713354d9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87281775"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88690856"
 ---
 # <a name="manage-access-to-billing-information-for-azure"></a>Управление доступом к данным для выставления счетов в Azure
 

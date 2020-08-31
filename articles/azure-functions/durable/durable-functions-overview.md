@@ -6,12 +6,12 @@ ms.topic: overview
 ms.date: 03/12/2020
 ms.author: cgillum
 ms.reviewer: azfuncdf
-ms.openlocfilehash: adf58b667d17393fc905fbf31261530fce88d9f8
-ms.sourcegitcommit: 2bab7c1cd1792ec389a488c6190e4d90f8ca503b
+ms.openlocfilehash: d1c4f62f19a36867ebc85a98b0cd38bbbf8ce757
+ms.sourcegitcommit: d18a59b2efff67934650f6ad3a2e1fe9f8269f21
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88272354"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88660688"
 ---
 # <a name="what-are-durable-functions"></a>Что такое Устойчивые функции?
 
@@ -704,8 +704,9 @@ module.exports = async function (context) {
 * [Создание устойчивой функции на C#](durable-functions-create-first-csharp.md)
 * [Создание устойчивой функции с помощью JavaScript](quickstart-js-vscode.md)
 * [Использование Python с Visual Studio Code](quickstart-python-vscode.md)
+* [Создание устойчивой функции в PowerShell](quickstart-powershell-vscode.md)
 
-В обоих кратких руководствах вы локально создаете и тестируете устойчивую функцию "Hello world". Затем вы опубликуете код функции в Azure. Функция, которую вы создаете, организовывает и объединяет в цепочку вызовы других функций.
+В этих кратких руководствах показано, как локально создать и протестировать устойчивую функцию "Hello world". Затем вы опубликуете код функции в Azure. Функция, которую вы создаете, организовывает и объединяет в цепочку вызовы других функций.
 
 ## <a name="learn-more"></a>Дополнительные сведения
 

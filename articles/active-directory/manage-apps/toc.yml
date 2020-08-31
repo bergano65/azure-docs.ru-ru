@@ -212,16 +212,10 @@
               href: application-sign-in-unexpected-user-consent-prompt.md
             - name: Ошибка при предоставлении согласия пользователем
               href: application-sign-in-unexpected-user-consent-error.md
-            - name: Проблемы при входе с пользовательского портала
-              href: application-sign-in-other-problem-deeplink.md
-            - name: Проблемы при входе с панели доступа
+            - name: Проблемы со входом из раздела "Мои приложения"
               href: application-sign-in-other-problem-access-panel.md
             - name: Ошибка на странице входа в приложение
               href: application-sign-in-problem-application-error.md
-            - name: "Проблема при едином входе с помощью пароля\_— приложение не из коллекции"
-              href: application-sign-in-problem-password-sso-non-gallery.md
-            - name: "Проблема при едином входе с помощью пароля\_— приложение из коллекции"
-              href: application-sign-in-problem-password-sso-gallery.md
             - name: Проблема при входе в приложение Майкрософт
               href: application-sign-in-problem-first-party-microsoft.md
             - name: Проблема при федеративном едином входе в приложение не из коллекции
@@ -232,14 +226,12 @@
               href: application-sign-in-problem-custom-dev.md
         - name: Устранение неполадок при выполнении единого входа
           items:
+            - name: Устранение неполадок с единым входом на основе пароля
+              href: troubleshoot-password-based-sso.md
             - name: 'Настройка федеративного единого входа в приложения из коллекции: распространенные проблемы'
               href: configure-federated-single-sign-on-gallery-applications-problems.md
             - name: 'Настройка федеративного единого входа в приложения не из коллекции: распространенные проблемы'
               href: configure-federated-single-sign-on-non-gallery-applications-problems.md
-            - name: 'Настройка входа по паролю для приложений из коллекции: распространенные проблемы'
-              href: configure-password-single-sign-on-gallery-applications-problems.md
-            - name: 'Настройка входа по паролю для приложений не из коллекции: распространенные проблемы'
-              href: configure-password-single-sign-on-non-gallery-applications-problems.md
         - name: Устранение неполадок в списке приложений и назначениях
           items:
             - name: Управление списком приложений для вашего клиента
@@ -248,16 +240,10 @@
               href: ways-users-get-assigned-to-applications.md
         - name: Устранение неполадок в разделе "Мои приложения"
           items:
-            - name: Управление расширением браузера
-              href: manage-access-panel-browser-extension.md
             - name: Приложение не отображается
               href: access-panel-troubleshoot-application-not-appearing.md
             - name: Непредусмотренное отображение приложения
               href: access-panel-troubleshoot-unexpected-application.md
-            - name: Не удается войти
-              href: access-panel-troubleshoot-web-sign-in-problem.md
-            - name: Ошибка при использовании самостоятельного доступа к приложению
-              href: access-panel-troubleshoot-self-service-access.md
         - name: Устранение неполадок с локальными приложениями
           items:
             - name: Устранение неполадок с прокси приложения

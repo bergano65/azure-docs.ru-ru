@@ -10,12 +10,12 @@ ms.topic: quickstart
 ms.workload: identity
 ms.date: 10/29/2019
 ms.author: kenwith
-ms.openlocfilehash: beb5c7262a5475f5c1535e120fcebe4c70838c7e
-ms.sourcegitcommit: 1aef4235aec3fd326ded18df7fdb750883809ae8
+ms.openlocfilehash: 1873cd14883e8b1a5174b8761e4a0bc9ba1ef872
+ms.sourcegitcommit: 628be49d29421a638c8a479452d78ba1c9f7c8e4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/12/2020
-ms.locfileid: "88135493"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88641863"
 ---
 # <a name="quickstart-configure-properties-for-an-application-in-your-azure-active-directory-azure-ad-tenant"></a>Краткое руководство. Настройка свойств приложения в арендаторе Azure Active Directory (Azure AD)
 
@@ -47,7 +47,7 @@ ms.locfileid: "88135493"
 3. Уделите немного времени, чтобы узнать, какие параметры можно настроить:
     - Параметр **Включен ли вход для пользователей?** определяет, могут ли пользователи, назначенные приложению, выполнять вход в приложение.
     - Параметр **Требуется назначение пользователей?** определяет, могут ли пользователи, не назначенные приложению, выполнять вход.
-    - Параметр **Видно пользователям?** определяет, могут ли пользователи, назначенные приложению, видеть его на [панели доступа](https://myapps.microsoft.com) и в средстве запуска Office 365 (см. меню в виде вафли слева в верхнем углу окна веб-сайта Office 365 или Microsoft 365).
+    - Параметр **Видно пользователям?** определяет, могут ли пользователи, назначенные приложению, видеть его в разделе [Мои приложения](https://myapps.microsoft.com) и в средстве запуска Office 365 (см. меню в виде вафли слева в верхнем углу окна веб-сайта Office 365 или Microsoft 365).
     
     > [!TIP]
     > Назначение пользователей выполняется в разделе **Пользователи и группы** области навигации.
