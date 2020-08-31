@@ -8,12 +8,12 @@ author: gvashishtha
 ms.author: gopalv
 ms.topic: quickstart
 ms.date: 12/31/2019
-ms.openlocfilehash: afcb676f68e7be9d3ebef11ea2c6876a86bbd062
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: a955f035933955b88200e49e343f7dd0c257c89b
+ms.sourcegitcommit: d39f2cd3e0b917b351046112ef1b8dc240a47a4f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "80281788"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88816360"
 ---
 # <a name="quickstart-set-up-the-data-science-virtual-machine-for-windows"></a>Краткое руководство. Настройка виртуальной машины для обработки и анализа данных для Windows
 
@@ -69,6 +69,5 @@ ms.locfileid: "80281788"
 
 * Изучите средства в DSVM, открыв меню **Пуск**.
 * Дополнительные сведения о Машинном обучении Azure см. в [этой статье](../overview-what-is-azure-ml.md) и [учебниках](../index.yml).
-* Ознакомьтесь со статьей [10 задач, которые можно выполнить на виртуальной машине для обработки и анализа данных](https://aka.ms/dsvmtenthings).
-* В [коллекции решений ИИ Azure](https://gallery.cortanaintelligence.com) можно найти примеры для машинного обучения и анализа данных, в которых используется служба "Машинное обучение Azure" и связанные с ней службы данных Azure. Мы также добавили значок на рабочий стол и элемент в меню **Пуск** для этой коллекции на виртуальной машине.
+* Прочтите статью [Обработка и анализ данных с помощью специальной виртуальной машины Windows](./vm-do-ten-things.md).
 

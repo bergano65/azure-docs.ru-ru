@@ -4,12 +4,12 @@ description: Обзор службы Azure Backup и ее роль в страт
 ms.topic: overview
 ms.date: 04/24/2019
 ms.custom: mvc
-ms.openlocfilehash: 70fcbc432c3a3584047fe5ac39f217981a73df71
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.openlocfilehash: da4f9b4814e93a964105a7ed3ea4addaecd43864
+ms.sourcegitcommit: cd0a1ae644b95dbd3aac4be295eb4ef811be9aaa
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86513529"
+ms.lasthandoff: 08/19/2020
+ms.locfileid: "88611234"
 ---
 # <a name="what-is-the-azure-backup-service"></a>Часто задаваемые вопросы о службе Azure Backup
 
@@ -19,7 +19,7 @@ ms.locfileid: "86513529"
 
 ## <a name="what-can-i-back-up"></a>Ограничения, связанные с резервным копированием
 
-- **Локальное** — резервное копирование файлов, папок, состояния системы с помощью [агента Службы восстановления Microsoft Azure](backup-support-matrix-mars-agent.md). Или используйте агент DPM или Azure Backup Server (MABS) для защиты локальных виртуальных машин ([Hyper-V](back-up-hyper-v-virtual-machines-mabs.md) и [VMWare](backup-azure-backup-server-vmware.md)) и других [локальных рабочих нагрузок](backup-mabs-protection-matrix.md)
+- **Локальное** — резервное копирование файлов, папок, состояния системы с помощью [агента Службы восстановления Microsoft Azure](backup-support-matrix-mars-agent.md). Вы также можете использовать агент DPM или Azure Backup Server (MABS) для защиты локальных виртуальных машин ([Hyper-V](back-up-hyper-v-virtual-machines-mabs.md) и [VMware](backup-azure-backup-server-vmware.md)) и других [локальных рабочих нагрузок](backup-mabs-protection-matrix.md).
 - **Виртуальные машины Azure** - [Резервное копирование всех виртуальных машин Windows и Linux](backup-azure-vms-introduction.md) (с помощью расширений резервного копирования) или резервное копирование файлов, папок и состояния системы с помощью [агента MARS](backup-azure-manage-mars.md).
 - **Общие папки Azure** - [Резервное копирование общих папок Azure в учетной записи хранения](backup-afs.md)
 - **SQL Server в виртуальной машине Azure** -  [Резервное копирование баз данных SQL Server, работающих в виртуальных машинах Azure](backup-azure-sql-database.md).

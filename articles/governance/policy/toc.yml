@@ -167,7 +167,11 @@
           displayName: 'monitor, insights, log analytics, builtin'
           href: ../../azure-monitor/insights/vminsights-enable-policy.md?bc=%2fazure%2fgovernance%2fpolicy%2fbreadcrumb%2ftoc.json&toc=%2fazure%2fgovernance%2fpolicy%2ftoc.json
 - name: Диагностика
-  href: ./troubleshoot/general.md
+  items:
+    - name: Распространенные проблемы
+      href: ./troubleshoot/general.md
+    - name: Известные проблемы
+      href: 'https://github.com/azure/azure-policy#known-issues'
 - name: Справочник
   items:
     - name: Azure CLI
@@ -189,9 +193,9 @@
     - name: Azure SDK для Java
       items:
         - name: Назначения
-          href: /java/api/com.microsoft.azure.management.resources.policyassignment?view=azure-java-stable
+          href: /java/api/com.microsoft.azure.management.resources.policyassignment
         - name: Определения политик
-          href: /java/api/com.microsoft.azure.management.resources.PolicyDefinitions?view=azure-java-stable
+          href: /java/api/com.microsoft.azure.management.resources.PolicyDefinitions
     - name: Пакет Azure SDK для JavaScript
       items:
         - name: Политика
@@ -234,31 +238,45 @@
           href: /azure/templates/microsoft.authorization/policysetdefinitions
 - name: Ресурсы
   items:
-    - name: Известные проблемы
-      href: 'https://github.com/azure/azure-policy#known-issues'
     - name: 'GitHub: примеры для Политики Azure'
       href: 'https://github.com/Azure/azure-policy'
-    - name: "GitHub\_— репозиторий политики сообщества"
-      href: 'https://github.com/Azure/Community-Policy'
-    - name: Раздел вопросов и ответов о Политике Azure на сайте Майкрософт
-      href: /answers/topics/azure-policy.html
-    - name: 'Канал на YouTube, посвященный системе управления'
-      href: 'https://www.youtube.com/channel/UCZZ3-oMrVI5ssheMzaWC4uQ'
-    - name: Видео по гостевой конфигурации
+    - name: Средства сообщества
       items:
-        - name: Приступая к работе
-          href: 'https://www.youtube.com/watch?v=mjJw9_EIyHo'
-        - name: Основные сведения об инициативах
-          href: 'https://www.youtube.com/watch?v=4JZH3kuG8bI'
-        - name: Назначение политики
-          href: 'https://www.youtube.com/watch?v=fbZBaxcjA-Y'
-        - name: Задача исправления
-          href: 'https://www.youtube.com/watch?v=URE4DUYMgmg'
-    - name: "Видео: Ignite\_2019"
-      href: 'https://myignite.techcommunity.microsoft.com/sessions/81584?source=sessions'
+        - name: "GitHub\_— репозиторий политики сообщества"
+          href: 'https://github.com/Azure/Community-Policy'
+        - name: Использование GitHub Actions для проверки соответствия Политики Azure
+          href: 'https://github.com/marketplace/actions/azure-policy-compliance-scan'
+        - name: Панель мониторинга Системы управления Azure CCO
+          href: 'https://github.com/Azure/ccodashboard/blob/master/README.md#cco-azure-governance-dashboard-report-pages'
+        - name: AzAdvertizer
+          href: 'https://www.azadvertizer.net/'
+        - name: Визуализатор Системы управления Azure
+          href: 'https://github.com/julianhayward/azure-mg-sub-governance-reporting'
+    - name: Отзывы и поддержка
+      items:
+        - name: Раздел вопросов и ответов о Политике Azure на сайте Майкрософт
+          href: /answers/topics/azure-policy.html
+        - name: Запрос в службу поддержки Azure
+          href: 'https://azure.microsoft.com/support/create-ticket/'
+        - name: UserVoice
+          href: 'https://feedback.azure.com/forums/915958-azure-governance?category_id=345055'
+    - name: Видео
+      items:
+        - name: 'Канал на YouTube, посвященный системе управления'
+          href: 'https://www.youtube.com/channel/UCZZ3-oMrVI5ssheMzaWC4uQ'
+        - name: "Видео: Ignite\_2019"
+          href: 'https://myignite.techcommunity.microsoft.com/sessions/81584?source=sessions'
+        - name: Видео по гостевой конфигурации
+          items:
+            - name: Приступая к работе
+              href: 'https://www.youtube.com/watch?v=mjJw9_EIyHo'
+            - name: Основные сведения об инициативах
+              href: 'https://www.youtube.com/watch?v=4JZH3kuG8bI'
+            - name: Назначение политики
+              href: 'https://www.youtube.com/watch?v=fbZBaxcjA-Y'
+            - name: Задача исправления
+              href: 'https://www.youtube.com/watch?v=URE4DUYMgmg'
     - name: Стратегия развития Azure
       href: 'https://azure.microsoft.com/roadmap/'
     - name: Калькулятор цен
       href: 'https://azure.microsoft.com/pricing/calculator/'
-    - name: UserVoice
-      href: 'https://feedback.azure.com/forums/915958-azure-governance?category_id=345055'

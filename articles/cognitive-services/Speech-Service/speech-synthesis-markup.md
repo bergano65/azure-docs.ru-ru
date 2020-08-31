@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.date: 03/23/2020
 ms.author: trbye
 ms.custom: devx-track-javascript, devx-track-csharp
-ms.openlocfilehash: 069e0f2d14dafe0de208ac69d2d652361a11ee34
-ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
+ms.openlocfilehash: d924c019d5ee231f3c9d66a56c4d98857bc89abc
+ms.sourcegitcommit: 420c30c760caf5742ba2e71f18cfd7649d1ead8a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89012438"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89055555"
 ---
 # <a name="improve-synthesis-with-speech-synthesis-markup-language-ssml"></a>Улучшение синтеза с помощью языка разметки речи (SSML)
 
@@ -56,7 +56,7 @@ ms.locfileid: "89012438"
 
 **Атрибуты**
 
-| Атрибут | Описание | Обязательный или необязательный |
+| attribute | Описание | Обязательный или необязательный |
 |-----------|-------------|---------------------|
 | `version` | Указывает версию спецификации SSML, используемую для интерпретации разметки документа. Текущая версия — 1,0. | Обязательно |
 | `xml:lang` | Указывает язык корневого документа. Значение может содержать символы в нижнем регистре, двухбуквенный код языка (например, `en` ), языковой код и страну или регион в верхнем регистре (например, `en-US` ). | Обязательно |
@@ -76,7 +76,7 @@ ms.locfileid: "89012438"
 
 **Атрибуты**
 
-| Атрибут | Описание | Обязательный или необязательный |
+| attribute | Описание | Обязательный или необязательный |
 |-----------|-------------|---------------------|
 | `name` | Определяет голос, используемый для вывода текста в речь. Полный список поддерживаемых голосов см. в разделе [Поддержка языков](language-support.md#text-to-speech). | Обязательный |
 
@@ -99,7 +99,7 @@ ms.locfileid: "89012438"
 
 **Атрибуты**
 
-| Атрибут | Описание | Обязательный или необязательный |
+| attribute | Описание | Обязательный или необязательный |
 |-----------|-------------|---------------------|
 | `name` | Определяет голос, используемый для вывода текста в речь. Полный список поддерживаемых голосов см. в разделе [Поддержка языков](language-support.md#text-to-speech). | Обязательно |
 
@@ -112,7 +112,7 @@ ms.locfileid: "89012438"
 
 # <a name="c"></a>[C#](#tab/csharp)
 
-Дополнительные сведения см. в <a href="https://docs.microsoft.com/dotnet/api/microsoft.cognitiveservices.speech.speechconfig.setproperty?view=azure-dotnet" target="_blank"> `SetProperty` <span class="docon docon-navigate-external x-hidden-focus"></span> </a>разделе.
+Дополнительные сведения см. на веб-сайте <a href="https://docs.microsoft.com/dotnet/api/microsoft.cognitiveservices.speech.speechconfig.setproperty?view=azure-dotnet" target="_blank"> `SetProperty` <span class="docon docon-navigate-external x-hidden-focus"></span></a>.
 
 ```csharp
 speechConfig.SetProperty(
@@ -121,7 +121,7 @@ speechConfig.SetProperty(
 
 # <a name="c"></a>[C++](#tab/cpp)
 
-Дополнительные сведения см. в <a href="https://docs.microsoft.com/cpp/cognitive-services/speech/speechconfig#setproperty" target="_blank"> `SetProperty` <span class="docon docon-navigate-external x-hidden-focus"></span> </a>разделе.
+Дополнительные сведения см. на веб-сайте <a href="https://docs.microsoft.com/cpp/cognitive-services/speech/speechconfig#setproperty" target="_blank"> `SetProperty` <span class="docon docon-navigate-external x-hidden-focus"></span></a>.
 
 ```cpp
 speechConfig->SetProperty(
@@ -130,7 +130,7 @@ speechConfig->SetProperty(
 
 # <a name="java"></a>[Java](#tab/java)
 
-Дополнительные сведения см. в <a href="https://docs.microsoft.com/java/api/com.microsoft.cognitiveservices.speech.speechconfig.setproperty?view=azure-java-stable#com_microsoft_cognitiveservices_speech_SpeechConfig_setProperty_String_String_" target="_blank"> `setProperty` <span class="docon docon-navigate-external x-hidden-focus"></span> </a>разделе.
+Дополнительные сведения см. на веб-сайте <a href="https://docs.microsoft.com/java/api/com.microsoft.cognitiveservices.speech.speechconfig.setproperty?view=azure-java-stable#com_microsoft_cognitiveservices_speech_SpeechConfig_setProperty_String_String_" target="_blank"> `setProperty` <span class="docon docon-navigate-external x-hidden-focus"></span></a>.
 
 ```java
 speechConfig.setProperty(
@@ -139,7 +139,7 @@ speechConfig.setProperty(
 
 # <a name="python"></a>[Python](#tab/python)
 
-Дополнительные сведения см. в <a href="https://docs.microsoft.com/python/api/azure-cognitiveservices-speech/azure.cognitiveservices.speech.speechconfig?view=azure-python#set-property-by-name-property-name--str--value--str-" target="_blank"> `set_property_by_name` <span class="docon docon-navigate-external x-hidden-focus"></span> </a>разделе.
+Дополнительные сведения см. на веб-сайте <a href="https://docs.microsoft.com/python/api/azure-cognitiveservices-speech/azure.cognitiveservices.speech.speechconfig?view=azure-python#set-property-by-name-property-name--str--value--str-" target="_blank"> `set_property_by_name` <span class="docon docon-navigate-external x-hidden-focus"></span></a>.
 
 ```python
 speech_config.set_property_by_name(
@@ -148,7 +148,7 @@ speech_config.set_property_by_name(
 
 # <a name="javascript"></a>[JavaScript](#tab/javascript)
 
-Дополнительные сведения см. в <a href="https://docs.microsoft.com/javascript/api/microsoft-cognitiveservices-speech-sdk/speechconfig?view=azure-node-latest#setproperty-string--string-" target="_blank"> `setProperty` <span class="docon docon-navigate-external x-hidden-focus"></span> </a>разделе.
+Дополнительные сведения см. на веб-сайте <a href="https://docs.microsoft.com/javascript/api/microsoft-cognitiveservices-speech-sdk/speechconfig?view=azure-node-latest#setproperty-string--string-" target="_blank"> `setProperty` <span class="docon docon-navigate-external x-hidden-focus"></span></a>.
 
 ```javascript
 speechConfig.setProperty(
@@ -157,7 +157,7 @@ speechConfig.setProperty(
 
 # <a name="objective-c"></a>[Objective-C](#tab/objectivec)
 
-Дополнительные сведения см. в <a href="https://docs.microsoft.com/objectivec/cognitive-services/speech/spxspeechconfiguration#setpropertytobyname" target="_blank"> `setPropertyTo` <span class="docon docon-navigate-external x-hidden-focus"></span> </a>разделе.
+Дополнительные сведения см. на веб-сайте <a href="https://docs.microsoft.com/objectivec/cognitive-services/speech/spxspeechconfiguration#setpropertytobyname" target="_blank"> `setPropertyTo` <span class="docon docon-navigate-external x-hidden-focus"></span></a>.
 
 ```objectivec
 [speechConfig setPropertyTo:@"false" byName:@"SpeechServiceResponse_Synthesis_WordBoundaryEnabled"];
@@ -165,7 +165,7 @@ speechConfig.setProperty(
 
 # <a name="swift"></a>[Swift](#tab/swift)
 
-Дополнительные сведения см. в <a href="https://docs.microsoft.com/objectivec/cognitive-services/speech/spxspeechconfiguration#setpropertytobyname" target="_blank"> `setPropertyTo` <span class="docon docon-navigate-external x-hidden-focus"></span> </a>разделе.
+Дополнительные сведения см. на веб-сайте <a href="https://docs.microsoft.com/objectivec/cognitive-services/speech/spxspeechconfiguration#setpropertytobyname" target="_blank"> `setPropertyTo` <span class="docon docon-navigate-external x-hidden-focus"></span></a>.
 
 ```swift
 speechConfig!.setPropertyTo(
@@ -213,7 +213,7 @@ speechConfig!.setPropertyTo(
 
 **Атрибуты**
 
-| Атрибут | Описание | Обязательный или необязательный |
+| attribute | Описание | Обязательный или необязательный |
 |-----------|-------------|---------------------|
 | `style` | Задает стиль речи. В настоящее время стиль речи зависит от голоса. | Требуется при настройке стиля речи для нейронной речи. Если используется `mstts:express-as` , необходимо указать стиль. Если указано недопустимое значение, этот элемент будет проигнорирован. |
 | `styledegree` | Задает интенсивность стиля речи. **Допустимые значения**: от 0,01 до 2 включительно. Значение по умолчанию — 1, то есть Стандартная интенсивность стиля. Минимальная единица — 0,01, что приводит к слегка тенденциям в отношении целевого стиля. Значение 2 приводит к удвоению интенсивности стиля по умолчанию.  | Необязательно (в настоящее время `styledegree` поддерживается только ксиаоксиаонеурал).|
@@ -238,7 +238,8 @@ speechConfig!.setPropertyTo(
 |                         | `style="angry"`           | Выражает злость и раздражен тон с более низким шагом, более высокой интенсивностью и более высокой вокал энергии. Докладчик находится в состоянии ирате, недоступен и является несвязанным.       |
 |                         | `style="fearful"`         | Выражает страх и нервной тон с более высоким шагом, более высокой вокал энергии и скоростью. Докладчик находится в состоянии «проунеасинесс».                          |
 |                         | `style="disgruntled"`     | Выражает дисдаинфул и выражающий тон. Речь об этом распознавания эмоцийе показывает неоправдание и невозможность.              |
-|                         | `style="serious"`         | Выражает в выражении четкий и командный тон. Динамики часто стиффер и значительно менее ослаблены с учетом ритмичности.          | |                         | `style="affectionate"`    | Выражает горячий и аффектионатеный тон с более высоким и вокал энергию. Докладчик находится в состоянии, привлечения внимание прослушивателю. «Личные» докладчика часто подкупающих по своей природе.          |     
+|                         | `style="serious"`         | Выражает в выражении четкий и командный тон. Динамики часто стиффер и значительно менее ослаблены с учетом ритмичности.          |
+|                         | `style="affectionate"`    | Выражает горячий и аффектионатеный тон с более высоким и вокал энергию. Докладчик находится в состоянии, привлечения внимание прослушивателю. «Личные» докладчика часто подкупающих по своей природе.          |     
 |                         | `style="gentle"`          | Выражает умеренный, вежливо и приятныйный тон, с меньшим шагом и вокал энергию.         |   
 |                         | `style="lyrical"`         | Выражает эмоции в мелодик и драгоценностям способом         |   
 | `zh-CN-YunyangNeural`   | `style="customerservice"` | Выражает понятный и полезный тон поддержки клиентов  | 
@@ -286,7 +287,7 @@ speechConfig!.setPropertyTo(
 
 **Атрибуты**
 
-| Атрибут | Описание | Обязательный или необязательный |
+| attribute | Описание | Обязательный или необязательный |
 |-----------|-------------|---------------------|
 | `strength` | Задает относительную продолжительность паузы, используя одно из следующих значений:<ul><li>нет</li><li>x-слабый</li><li>безопасные</li><li>Средний (по умолчанию)</li><li>надежный</li><li>строгость x</li></ul> | Необязательно |
 | `time` | Задает абсолютную длительность паузы в секундах или миллисекундах. Примеры допустимых значений — `2s` и. `500` | Необязательно |
@@ -356,7 +357,7 @@ speechConfig!.setPropertyTo(
 
 **Атрибуты**
 
-| Атрибут | Описание | Обязательный или необязательный |
+| attribute | Описание | Обязательный или необязательный |
 |-----------|-------------|---------------------|
 | `alphabet` | Указывает фонетический алфавит, используемый при создании транскрипции строки в `ph` атрибуте. Строка, указывающая букву алфавита, должна быть указана в строчных буквах. Ниже приведены возможные алфавиты, которые можно указать.<ul><li>`ipa`&ndash; <a href="https://en.wikipedia.org/wiki/International_Phonetic_Alphabet" target="_blank">Международный фонетический <span class="docon docon-navigate-external x-hidden-focus"></span> алфавит</a></li><li>`sapi`&ndash; [Фонетический алфавит речевой службы](speech-ssml-phonetic-sets.md)</li><li>`ups`&ndash; <a href="https://documentation.help/Microsoft-Speech-Platform-SDK-11/17509a49-cae7-41f5-b61d-07beaae872ea.htm" target="_blank">Универсальный набор телефонов</a></li></ul><br>Алфавит применяется только к `phoneme` элементу в элементе.. | Необязательно |
 | `ph` | Строка, содержащая телефоны, задающих произношение слова в `phoneme` элементе. Если указанная строка содержит нераспознаваемые телефоны, служба преобразования текста в речь (TTS) отклоняет весь документ SSML и не выдает ни одного из речевых выходных данных, указанных в документе. | Требуется при использовании фонемы. |
@@ -402,7 +403,7 @@ speechConfig!.setPropertyTo(
 
 **Атрибуты**
 
-| Атрибут | Описание                               | Обязательный или необязательный |
+| attribute | Описание                               | Обязательный или необязательный |
 |-----------|-------------------------------------------|---------------------|
 | `uri`     | Адрес внешнего документа областей. | Обязательный.           |
 
@@ -517,7 +518,7 @@ speechConfig!.setPropertyTo(
 
 **Атрибуты**
 
-| Атрибут | Описание | Обязательный или необязательный |
+| attribute | Описание | Обязательный или необязательный |
 |-----------|-------------|---------------------|
 | `pitch` | Указывает шаг по базовому плану для текста. Вы можете выразить тон следующим образом:<ul><li>Абсолютное значение, выраженное в виде числа, за которым следует "Гц" (герц). Например, 600 Гц.</li><li>Относительное значение, выраженное в виде числа, начинающегося с "+" или "-" и заканчивающееся на "Гц" или "St", которое указывает величину изменения высоты. Например: + 80 Гц или-2st. "St" означает, что единица изменения — полтона, то есть половина тона (половина шага) на стандартной диатоник шкале.</li><li>Значение константы:<ul><li>x-низкий</li><li>low</li><li>средняя</li><li>high</li><li>x-высокий</li><li>default</li></ul></li></ul>. | Необязательно |
 | `contour` |Профиль теперь поддерживает как нейронные, так и стандартные голоса. Контур представляет изменения по шагам. Эти изменения представлены в виде массива целевых объектов в определенные позиции времени в выходных данных речи. Каждый целевой объект определяется набором пар параметров. Пример: <br/><br/>`<prosody contour="(0%,+20Hz) (10%,-2st) (40%,+10Hz)">`<br/><br/>Первое значение в каждом наборе параметров указывает расположение изменения высоты в процентах от длительности текста. Второе значение задает величину, которую нужно увеличить или уменьшить, используя относительное значение или значение перечисления для высоты (см `pitch` .). | Необязательно |
@@ -600,7 +601,7 @@ speechConfig!.setPropertyTo(
 
 **Атрибуты**
 
-| Атрибут | Описание | Обязательный или необязательный |
+| attribute | Описание | Обязательный или необязательный |
 |-----------|-------------|---------------------|
 | `interpret-as` | Указывает тип содержимого текста элемента. Список типов см. в таблице ниже. | Обязательно |
 | `format` | Предоставляет дополнительные сведения о точном форматировании текста элемента для типов содержимого, которые могут иметь неоднозначные форматы. SSML определяет форматы для типов содержимого, которые их используют (см. таблицу ниже). | Необязательно |
@@ -662,7 +663,7 @@ speechConfig!.setPropertyTo(
 
 **Атрибуты**
 
-| Атрибут | Описание                                   | Обязательный или необязательный                                        |
+| attribute | Описание                                   | Обязательный или необязательный                                        |
 |-----------|-----------------------------------------------|------------------------------------------------------------|
 | `src`     | Указывает расположение или URL-адрес звукового файла. | Требуется при использовании элемента audio в документе SSML. |
 
@@ -698,10 +699,10 @@ speechConfig!.setPropertyTo(
 
 **Атрибуты**
 
-| Атрибут | Описание | Обязательный или необязательный |
+| attribute | Описание | Обязательный или необязательный |
 |-----------|-------------|---------------------|
 | `src` | Указывает расположение или URL-адрес фонового звукового файла. | Требуется при использовании фонового звука в документе SSML. |
-| `volume` | Указывает громкость фонового звукового файла. **Допустимые значения**: `0` в `100` включительно. Значение по умолчанию — `1`. | Необязательно |
+| `volume` | Указывает громкость фонового звукового файла. **Допустимые значения**: `0` в `100` включительно. Значение по умолчанию — `1`. | Необязательно |
 | `fadein` | Задает время, в течение которого фоновый звук постепенно передается в миллисекундах. Значение по умолчанию — `0` , что эквивалентно отсутствию появления. **Допустимые значения**: `0` в `10000` включительно.  | Необязательно |
 | `fadeout` | Указывает длительность фонового исчезновения в миллисекундах. Значение по умолчанию — `0` , что эквивалентно значению без затухания. **Допустимые значения**: `0` в `10000` включительно.  | Необязательно |
 

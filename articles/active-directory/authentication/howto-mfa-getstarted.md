@@ -11,12 +11,12 @@ author: iainfoulds
 manager: daveba
 ms.reviewer: michmcla
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 4fc459e63dd48adb49ab916c368b68cc3a1ccbaf
-ms.sourcegitcommit: 6fc156ceedd0fbbb2eec1e9f5e3c6d0915f65b8e
+ms.openlocfilehash: da9a0fe30721a2f55db2c4771f54716868f9972f
+ms.sourcegitcommit: 420c30c760caf5742ba2e71f18cfd7649d1ead8a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/21/2020
-ms.locfileid: "88717036"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89055079"
 ---
 # <a name="plan-an-azure-multi-factor-authentication-deployment"></a>Планирование развертывания Многофакторной идентификации Azure
 
@@ -110,7 +110,7 @@ ms.locfileid: "88717036"
 Администраторы могут выбрать [методы проверки подлинности](../authentication/concept-authentication-methods.md), которые они хотят сделать доступными для пользователей. Важно обеспечить несколько методов проверки подлинности, чтобы пользователи имели доступ к резервному методу, если основной метод проверки подлинности окажется недоступен. Администраторы могут включить следующие методы:
 
 > [!TIP]
-> Корпорация Майкрософт рекомендует использовать мобильное приложение в качестве основного метода многофакторной идентификации Azure для обеспечения лучшей безопасности и удобства работы пользователей.
+> Корпорация Майкрософт рекомендует использовать Microsoft Authenticator (мобильное приложение) в качестве основного метода многофакторной идентификации Azure для более безопасного и улучшенного взаимодействия с пользователем. Приложение Microsoft Authenticator также [соответствует](https://azure.microsoft.com/resources/microsoft-nist/) стандартам стандартов и технологий проверки подлинности в национальной институте. 
 
 ### <a name="notification-through-mobile-app"></a>Уведомление в мобильном приложении
 

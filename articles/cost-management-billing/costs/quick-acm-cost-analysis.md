@@ -3,17 +3,18 @@ title: 'Краткое руководство: изучение затрат Azu
 description: В этом кратком руководстве вы сможете использовать службу анализа затрат, чтобы изучить и проанализировать затраты организации на службы Azure.
 author: bandersmsft
 ms.author: banders
-ms.date: 06/08/2020
+ms.date: 08/20/2020
 ms.topic: quickstart
 ms.service: cost-management-billing
+ms.subservice: cost-management
 ms.reviewer: micflan
 ms.custom: seodec18
-ms.openlocfilehash: 72c0b55e1ffc300b42181075247ed3efafe2793a
-ms.sourcegitcommit: 964af22b530263bb17fff94fd859321d37745d13
+ms.openlocfilehash: 8ca9eaeeb8d484c9aeae6646e6f4814afbaed577
+ms.sourcegitcommit: 6fc156ceedd0fbbb2eec1e9f5e3c6d0915f65b8e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84560582"
+ms.lasthandoff: 08/21/2020
+ms.locfileid: "88718532"
 ---
 # <a name="quickstart-explore-and-analyze-costs-with-cost-analysis"></a>Краткое руководство. Изучение и анализ затрат с помощью функции анализа затрат
 
@@ -161,6 +162,10 @@ ms.locfileid: "84560582"
 
 Если вам потребуется полный неагрегированный набор данных, скачайте его из учетной записи выставления счетов. Затем в списке служб на левой панели навигации портала перейдите в область **Управление затратами + выставление счетов**. При наличии выберите учетную запись выставления счетов. Перейдите в раздел **Использование+расходы**, а затем щелкните значок **Скачать** для нужного периода выставления счетов.
 
+## <a name="clean-up-resources"></a>Очистка ресурсов
+
+- Если вы закрепили представление для анализа затрат, которое вам больше не нужно, перейдите на ту панель мониторинга, где оно закреплено, и удалите его.
+- Если вы загрузили файлы данных об использовании, которые вам больше не нужны, удалите их.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

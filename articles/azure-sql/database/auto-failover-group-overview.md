@@ -11,13 +11,13 @@ ms.topic: conceptual
 author: anosov1960
 ms.author: sashan
 ms.reviewer: mathoma, carlrab
-ms.date: 07/09/2020
-ms.openlocfilehash: 5a7f13982de000478b14eb75d7341ed2e99c1274
-ms.sourcegitcommit: c293217e2d829b752771dab52b96529a5442a190
+ms.date: 08/28/2020
+ms.openlocfilehash: 68fa972d45ab0db6e5274142f550c2bd829e7917
+ms.sourcegitcommit: 420c30c760caf5742ba2e71f18cfd7649d1ead8a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/15/2020
-ms.locfileid: "88245576"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89055589"
 ---
 # <a name="use-auto-failover-groups-to-enable-transparent-and-coordinated-failover-of-multiple-databases"></a>Использование групп автоматической отработки отказа для включения прозрачной и согласованной отработки отказа в нескольких базах данных
 [!INCLUDE[appliesto-sqldb-sqlmi](../includes/appliesto-sqldb-sqlmi.md)]
@@ -257,7 +257,7 @@ ms.locfileid: "88245576"
 
 ### <a name="using-read-only-listener-to-connect-to-the-secondary-instance"></a>Использование прослушивателя только для чтения для подключения к экземпляру-получателю
 
-Если вы используете логически изолированную рабочую нагрузку в режиме только для чтения, устойчивую к некоторым задержкам в обновлении данных, в приложении можно использовать базу данных-получатель. Для прямого подключения к георепликации получателя используйте `server.secondary.zone_id.database.windows.net` в качестве URL-сервера.
+Если вы используете логически изолированную рабочую нагрузку в режиме только для чтения, устойчивую к некоторым задержкам в обновлении данных, в приложении можно использовать базу данных-получатель. Для прямого подключения к георепликации получателя используйте `<fog-name>.zone_id.secondary.database.windows.net` в качестве URL-сервера.
 
 > [!NOTE]
 > В некоторых уровнях служб база данных SQL поддерживает использование [реплик только для чтения](read-scale-out.md) для балансировки нагрузки рабочих нагрузок запросов только для чтения с использованием емкости одной реплики только для чтения и использования `ApplicationIntent=ReadOnly` параметра в строке подключения. После настройки георепликации получателя вы можете использовать эту возможность для соединения с репликой только для чтения либо в основном расположении, либо в геореплицированном расположении.
@@ -415,7 +415,7 @@ CREATE LOGIN foo WITH PASSWORD = '<enterStrongPasswordHere>', SID = <login_sid>;
 
 # <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
 
-| Команда | Описание |
+| Get-Help | Описание |
 | --- | --- |
 | [az sql failover-group create](/cli/azure/sql/failover-group#az-sql-failover-group-create) |Создает группу отработки отказа и регистрирует ее на основном сервере и сервере-получателе.|
 | [AZ SQL Failover — групповое удаление](/cli/azure/sql/failover-group#az-sql-failover-group-delete) | Удаляет группу отработки отказа с сервера |
@@ -453,7 +453,7 @@ CREATE LOGIN foo WITH PASSWORD = '<enterStrongPasswordHere>', SID = <login_sid>;
 
 # <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
 
-| Команда | Описание |
+| Get-Help | Описание |
 | --- | --- |
 | [az sql failover-group create](/cli/azure/sql/failover-group#az-sql-failover-group-create) |Создает группу отработки отказа и регистрирует ее на основном сервере и сервере-получателе.|
 | [AZ SQL Failover — групповое удаление](/cli/azure/sql/failover-group#az-sql-failover-group-delete) | Удаляет группу отработки отказа с сервера |
@@ -474,7 +474,7 @@ CREATE LOGIN foo WITH PASSWORD = '<enterStrongPasswordHere>', SID = <login_sid>;
 
 ---
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Подробные руководства см. в разделе
   - [Добавление базы данных SQL в группу отработки отказа](failover-group-add-single-database-tutorial.md)

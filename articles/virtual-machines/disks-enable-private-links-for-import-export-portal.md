@@ -4,18 +4,18 @@ description: Включите Приватный канал (в настояще
 author: roygara
 ms.service: virtual-machines
 ms.topic: overview
-ms.date: 08/11/2020
+ms.date: 08/24/2020
 ms.author: rogarana
 ms.subservice: disks
 ms.custom: references_regions
-ms.openlocfilehash: 83f204a35e48962e525ad7d64c018eef301f9933
-ms.sourcegitcommit: 1aef4235aec3fd326ded18df7fdb750883809ae8
+ms.openlocfilehash: ab861b3ed265da9060e2367bdfdeeeee7047c584
+ms.sourcegitcommit: d39f2cd3e0b917b351046112ef1b8dc240a47a4f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/12/2020
-ms.locfileid: "88135850"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88815867"
 ---
-# <a name="azure-portal---restrict-importexport-access-for-managed-disks-with-private-links"></a>Ограничение доступа на импорт и экспорт управляемых дисков с помощью Приватного канала — портал Azure
+# <a name="use-the-azure-portal-to-restrict-importexport-access-for-managed-disks-with-private-links"></a>Использование портала Azure для ограничения доступа на импорт и экспорт управляемых дисков с помощью Приватного канала
 
 Поддержка Приватных каналов для управляемых дисков сейчас доступна в предварительной версии. Они позволяют ограничить экспорт и импорт управляемых дисков только вашей виртуальной сетью Azure. Вы можете создать URI SAS с ограниченным сроком действия для неподключенных управляемых дисков и моментальных снимков, чтобы экспортировать данные в другой регион для расширения охвата, аварийного восстановления или считывания данных для криминалистического анализа. Вы также можете использовать URI SAS для непосредственной отправки виртуального жесткого диска из локальной среды на пустой диск. Сетевой трафик между клиентами в виртуальной сети и управляемыми дисками проходит через виртуальную сеть и приватный канал в магистральной сети Майкрософт, что позволяет избежать рисков, связанных с использованием общедоступного Интернета.
 
@@ -100,5 +100,5 @@ ms.locfileid: "88135850"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- [Вопросы и ответы о Приватных каналах](linux/faq-for-disks.md#private-links-for-securely-exporting-and-importing-managed-disks)
+- [Вопросы и ответы о Приватных каналах](./faq-for-disks.md#private-links-for-securely-exporting-and-importing-managed-disks)
 - [Экспорт или копирование управляемых моментальных снимков в виде VHD в учетную запись хранения в другом регионе с помощью PowerShell](scripts/virtual-machines-windows-powershell-sample-copy-snapshot-to-storage-account.md)

@@ -9,16 +9,16 @@ ms.subservice: sql
 ms.date: 05/20/2020
 ms.author: v-stazar
 ms.reviewer: jrasnick, carlrab
-ms.openlocfilehash: 6beda409f03938f471f089bceebaa97c6d02ae7e
-ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
+ms.openlocfilehash: 04a308805dd69c4d9245d287a391f1e7fa7d50f2
+ms.sourcegitcommit: 420c30c760caf5742ba2e71f18cfd7649d1ead8a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/31/2020
-ms.locfileid: "87496225"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89055572"
 ---
 # <a name="use-file-metadata-in-queries"></a>Использование метаданных файла в запросах
 
-Служба запросов SQL по запросу умеет работать с несколькими файлами и папками, как описано в [этой статье](query-folders-multiple-csv-files.md). Здесь вы узнаете, как использовать в запросах метаданные с именами файлов и папок.
+SQL по запросу может обращаться к нескольким файлам и папкам, как описано в статье о [папках запросов и нескольких файлах](query-folders-multiple-csv-files.md) . Здесь вы узнаете, как использовать в запросах метаданные с именами файлов и папок.
 
 Иногда бывает нужно узнать, какой исходный файл или папка соотносятся с определенной строкой результирующего набора.
 

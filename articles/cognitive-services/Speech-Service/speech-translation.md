@@ -8,15 +8,15 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: speech-service
 ms.topic: conceptual
-ms.date: 03/11/2020
+ms.date: 08/27/2020
 ms.author: erhopf
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 670d7f160285283bd44371b893c63904b2685926
-ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
+ms.openlocfilehash: cef6ff109607455881970aeb95eaf0859f6f4f05
+ms.sourcegitcommit: 420c30c760caf5742ba2e71f18cfd7649d1ead8a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88934503"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89055538"
 ---
 # <a name="what-is-speech-translation"></a>Что такое перевод речи?
 
@@ -30,25 +30,14 @@ ms.locfileid: "88934503"
 
 ## <a name="core-features"></a>Основные компоненты
 
-Ниже приведены функции, доступные через пакет SDK для распознавания речи и интерфейсы API-интерфейсов.
+* Преобразование речи в текст с результатами распознавания.
+* Преобразование речи в речь.
+* Поддержка перевода на несколько целевых языков.
+* Промежуточные результаты распознавания и перевода.
 
-| Вариант использования | SDK | REST |
-|----------|-----|------|
-| Преобразование речи в текст с результатами распознавания. | Да | Нет |
-| Преобразование речи в речь. | Да | Нет |
-| Промежуточные результаты распознавания и перевода. | Да | Нет |
+## <a name="get-started"></a>Начало работы 
 
-## <a name="get-started-with-speech-translation"></a>Начало работы с переводом речи
-
-Мы предлагаем краткие руководства, предназначенные для выполнения кода менее чем через 10 минут. В этой таблице содержится список кратких руководств по языку для перевода речи.
-
-| Краткое руководство | Платформа | Справочник по API |
-|------------|----------|---------------|
-| [C#, .NET Core](~/articles/cognitive-services/Speech-Service/quickstarts/translate-speech-to-text.md?pivots=programming-language-csharp&tabs=dotnetcore) | Windows | [Обзор](https://aka.ms/csspeech/csharpref) |
-| [C#, .NET Framework](~/articles/cognitive-services/Speech-Service/quickstarts/translate-speech-to-text.md?pivots=programming-language-csharp&tabs=dotnet) | Windows | [Обзор](https://aka.ms/csspeech/csharpref) |
-| [C#, UWP](~/articles/cognitive-services/Speech-Service/quickstarts/translate-speech-to-text.md?pivots=programming-language-csharp&tabs=uwp) | Windows | [Обзор](https://aka.ms/csspeech/csharpref) |
-| [C++](~/articles/cognitive-services/Speech-Service/quickstarts/translate-speech-to-text.md?pivots=programming-language-cpp&tabs=windows) | Windows | [Обзор](https://aka.ms/csspeech/cppref)|
-| [Java](~/articles/cognitive-services/Speech-Service/quickstarts/translate-speech-to-text.md?pivots=programming-language-java&tabs=jre) | Windows, Linux, macOS | [Обзор](https://aka.ms/csspeech/javaref) |
+Чтобы начать работу с переводом речи, ознакомьтесь с [кратким](get-started-speech-translation.md) руководством. Служба перевода речи доступна через [речевой пакет SDK](speech-sdk.md) и [РЕЧЕВОЙ интерфейс командной строки](spx-overview.md).
 
 ## <a name="sample-code"></a>Образец кода
 
@@ -72,5 +61,6 @@ ms.locfileid: "88934503"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
+* Завершение [краткого руководства](get-started-speech-translation.md) по переводу речи
 * [Try the Speech service for free](get-started.md) (Бесплатное использование службы "Речь")
 * [Получение пакета SDK для службы "Речь"](speech-sdk.md)

@@ -1,6 +1,6 @@
 ---
 title: Общие сведения о создании образов Linux для Azure
-description: Общие сведения о том, как применять свои образы виртуальных машин Linux или создать новые образы для использования в Azure.
+description: Как применять свои образы виртуальных машин Linux или создать новые образы для использования в Azure.
 author: danielsollondon
 ms.service: virtual-machines-linux
 ms.subservice: imaging
@@ -9,12 +9,12 @@ ms.workload: infrastructure
 ms.date: 06/22/2020
 ms.author: danis
 ms.reviewer: cynthn
-ms.openlocfilehash: aa372d4e1b377ecdcbeb49b47f0f9a3a217ee7ad
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.openlocfilehash: 220aa4e0d545eedcd1eb0e6f5a6555b17a361da2
+ms.sourcegitcommit: d39f2cd3e0b917b351046112ef1b8dc240a47a4f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86502186"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88815306"
 ---
 # <a name="bringing-and-creating-linux-images-in-azure"></a>Применение и создание образов Linux в Azure
 
@@ -25,7 +25,7 @@ ms.locfileid: "86502186"
 ## <a name="difference-between-managed-disks-and-images"></a>Разница между управляемыми дисками и образами
 
 
-Azure позволяет подключать к платформе виртуальные жесткие диски и использовать их в качестве [управляемых дисков](../windows/faq-for-disks.md#managed-disks) или источника для образа. 
+Azure позволяет подключать к платформе виртуальные жесткие диски и использовать их в качестве [управляемых дисков](../faq-for-disks.md#managed-disks) или источника для образа. 
 
 Управляемые диски Azure — это отдельные виртуальные жесткие диски. Вы можете взять существующий виртуальный жесткий диск и создать на его основе новый управляемый диск или же создать пустой управляемый диск с нуля. Чтобы создать виртуальные машины на основе управляемых дисков, присоедините нужный диск к виртуальной машине. При этом каждый виртуальный жесткий диск можно использовать только с одной виртуальной машиной. Вы не можете изменять свойства ОС, Azure просто попробует включить и запустить виртуальную машину с использованием выбранного диска. 
 

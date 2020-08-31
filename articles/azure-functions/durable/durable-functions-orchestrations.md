@@ -5,12 +5,12 @@ author: cgillum
 ms.topic: overview
 ms.date: 09/08/2019
 ms.author: azfuncdf
-ms.openlocfilehash: 1b349b1e3c4a2fac4cd260dbe83469a776951ab0
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 5eec15871279f3ca38c726fcd1ef1b21d0d38699
+ms.sourcegitcommit: 62717591c3ab871365a783b7221851758f4ec9a4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87033648"
+ms.lasthandoff: 08/22/2020
+ms.locfileid: "88750191"
 ---
 # <a name="durable-orchestrations"></a>Устойчивые оркестрации
 
@@ -51,7 +51,7 @@ ms.locfileid: "87033648"
 > Чтобы шаблон воспроизведения работал правильно и надежно, код функции оркестратора должен быть *детерминированным*. Дополнительные сведения об ограничениях кода для функций оркестратора см. в статье [Orchestrator function code constraints](durable-functions-code-constraints.md) (Ограничения кода для функций оркестратора).
 
 > [!NOTE]
-> Если функция оркестратора отправляет сообщения журнала, поведение при воспроизведении может привести к отправке дублированных сообщений журнала. Ознакомьтесь с разделом [Ведение журнала](durable-functions-diagnostics.md#logging), чтобы узнать больше о том, почему происходит такое поведение и как его устранить.
+> Если функция оркестратора отправляет сообщения журнала, поведение при воспроизведении может привести к отправке дублированных сообщений журнала. Ознакомьтесь с разделом [Ведение журнала](durable-functions-diagnostics.md#app-logging), чтобы узнать больше о том, почему происходит такое поведение и как его устранить.
 
 ## <a name="orchestration-history"></a>Журнал оркестраций
 

@@ -6,12 +6,12 @@ ms.author: lahugh
 ms.service: container-service
 ms.topic: conceptual
 ms.date: 08/17/2020
-ms.openlocfilehash: 154558a2aa679dddad395225088ea891ecea8ebc
-ms.sourcegitcommit: 271601d3eeeb9422e36353d32d57bd6e331f4d7b
+ms.openlocfilehash: 744e62f8a2207cff400a96069fc6ea82866f6e2d
+ms.sourcegitcommit: 420c30c760caf5742ba2e71f18cfd7649d1ead8a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/20/2020
-ms.locfileid: "88654282"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89055691"
 ---
 # <a name="azure-kubernetes-service-aks-node-image-upgrade"></a>Обновление образа узла службы Azure Kubernetes Service (AKS)
 
@@ -20,6 +20,10 @@ AKS поддерживает обновление образов на узле, 
 Если вы заинтересованы в изучении последних образов, предоставляемых AKS, см. Дополнительные сведения в [заметках о выпуске AKS](https://github.com/Azure/AKS/releases) .
 
 Сведения об обновлении версии Kubernetes для кластера см. в статье [Обновление кластера AKS][upgrade-cluster].
+
+## <a name="limitations"></a>Ограничения
+
+* Кластер AKS должен использовать масштабируемые наборы виртуальных машин для узлов.
 
 ## <a name="install-the-aks-cli-extension"></a>Установка расширения CLI AKS
 

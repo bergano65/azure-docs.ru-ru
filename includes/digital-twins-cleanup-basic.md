@@ -1,0 +1,32 @@
+---
+author: baanders
+description: Содержит файл для удаления основного экземпляра Azure Digital Twins и регистрации приложения.
+ms.service: digital-twins
+ms.topic: include
+ms.date: 8/13/2020
+ms.author: baanders
+ms.openlocfilehash: 45d6a806e94ceca9574b0ed5f73c2b87ef438438
+ms.sourcegitcommit: c6b9a46404120ae44c9f3468df14403bcd6686c1
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88891507"
+---
+Если ресурсы, созданные для этого учебника, вам больше не нужны, можете удалить их.
+
+В [Azure Cloud Shell](https://shell.azure.com) можно удалить все ресурсы Azure в группе ресурсов с помощью команды [az group delete](https://docs.microsoft.com/cli/azure/group?view=azure-cli-latest#az-group-delete). При этом удаляется группа ресурсов и экземпляр Azure Digital Twins.
+
+> [!IMPORTANT]
+> Удаление группы ресурсов — процесс необратимый. Группа ресурсов и все содержащиеся в ней ресурсы удаляются без возможности восстановления. Будьте внимательны, чтобы случайно не удалить не ту группу ресурсов или не те ресурсы. 
+
+Откройте Azure Cloud Shell и выполните следующую команду, чтобы удалить группу ресурсов и все ее содержимое.
+
+```azurecli-interactive
+az group delete --name <your-resource-group>
+```
+
+Затем удалите регистрацию приложения Azure Active Directory, которую вы создали для своего клиентского приложения, с помощью следующей команды:
+
+```azurecli-interactive
+az ad app delete --id <your-application-ID>
+```

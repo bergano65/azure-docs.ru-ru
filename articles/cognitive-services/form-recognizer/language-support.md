@@ -10,15 +10,27 @@ ms.subservice: immersive-reader
 ms.topic: overview
 ms.date: 04/13/2020
 ms.author: erhopf
-ms.openlocfilehash: 6223a45c9bc61d7349ec62fa8aa37f907b2cf3b7
-ms.sourcegitcommit: 31ef5e4d21aa889756fa72b857ca173db727f2c3
+ms.openlocfilehash: 182cf54f58b4fbb8b80fb4ff9d7c1a9c1e353470
+ms.sourcegitcommit: 5b6acff3d1d0603904929cc529ecbcfcde90d88b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "81538377"
+ms.lasthandoff: 08/21/2020
+ms.locfileid: "88723917"
 ---
 # <a name="language-support-for-form-recognizer"></a>Поддержка языков в Распознавателе документов
 
 В этой статье перечислены языки, поддерживаемые службой Распознавателя документов (предварительная версия).
 
-* Английский
+
+|Язык| Код языка | Распознаватель документов версии 2.0 | Распознаватель документов общедоступной предварительной версии 2.1*|
+|:-----|:----:|:-----:|:---:|:---:|
+|Китайский (упрощенное письмо) | `zh-Hans`| | ✔ |
+|Нидерландский | `nl` | |✔ |
+|Английский | `en` |✔ |
+|Французский | `fr` | |✔ |
+|Немецкий | `de` | |✔ |
+|Итальянский | `it` | |✔ |
+|Португальский | `pt` | |✔ |
+|Испанский | `es` | |✔ |
+
+* Распознаватель документов общедоступной предварительной версии 2.1 поддерживает эти языки для операций `Analyze Layout` и `Train Custom Model` (_обучения с помощью меток_ и _обучения без помощи меток_). Операции `Analyze Receipt` и `Analyze Business Card` поддерживаются только на английском языке.

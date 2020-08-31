@@ -33,8 +33,6 @@
           href: concept-conditional-access-grant.md
         - name: Сеанс
           href: concept-conditional-access-session.md
-    - name: Аналитические сведения и отчеты
-      href: howto-conditional-access-insights-reporting.md
     - name: Режим "Только отчет"
       href: concept-conditional-access-report-only.md
     - name: Зависимости служб
@@ -78,6 +76,8 @@
           href: howto-conditional-access-policy-block-access.md
     - name: Блокировка устаревших методов проверки подлинности
       href: block-legacy-authentication.md
+    - name: Настройка режима "Только отчет"
+      href: howto-conditional-access-insights-reporting.md
     - name: Требование доступа из утвержденных клиентских приложений
       href: app-based-conditional-access.md
     - name: Требование политики защиты приложений
@@ -88,12 +88,8 @@
       href: untrusted-networks.md
     - name: Обязательное применение условий использования
       href: terms-of-use.md
-    - name: Настройка режима "Только отчет"
-      href: howto-conditional-access-report-only.md
     - name: Элементы управления сохраняемости браузера и частотой входов
       href: howto-conditional-access-session-lifetime.md
-    - name: Перенос классических политик
-      href: policy-migration-mfa.md
     - name: Устранение неполадок
       items:
         - name: Устранение проблем со входом
@@ -102,6 +98,8 @@
           href: troubleshoot-conditional-access-what-if.md
         - name: ВОПРОСЫ И ОТВЕТЫ
           href: faqs.md
+    - name: Перенос классических политик
+      href: policy-migration-mfa.md
 - name: Справочник
   items:
     - name: API-интерфейсы Graph (бета-версия)

@@ -10,12 +10,12 @@ ms.topic: quickstart
 ms.date: 05/27/2020
 ms.author: pafarley
 ms.custom: devx-track-python
-ms.openlocfilehash: a863d8ccc157272ab736201615fb079eaf7f5dbc
-ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
+ms.openlocfilehash: a93ec3157900a83e799f845e868546cbf5ef6ca9
+ms.sourcegitcommit: ac7ae29773faaa6b1f7836868565517cd48561b2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88522833"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88823869"
 ---
 # <a name="quickstart-extract-receipt-data-using-the-form-recognizer-rest-api-with-python"></a>Краткое руководство. Извлечение данных квитанции с помощью REST API Распознавателя документов и Python
 
@@ -27,10 +27,10 @@ ms.locfileid: "88522833"
 
 Для работы с этим кратким руководством требуется следующее:
 - Среда [Python](https://www.python.org/downloads/), если вы хотите выполнить этот пример кода локально.
-- URL-адрес изображения квитанции. Вы можете использовать [пример изображения](https://raw.githubusercontent.com/Azure-Samples/cognitive-services-REST-api-samples/master/curl/form-recognizer/contoso-allinone.jpg) при изучении этого краткого руководства.
+- Изображение квитанции Вы можете использовать [пример изображения](https://raw.githubusercontent.com/Azure-Samples/cognitive-services-REST-api-samples/master/curl/form-recognizer/contoso-allinone.jpg) при изучении этого краткого руководства.
 
 > [!NOTE]
-> В этом кратком руководстве используются квитанции на удаленных носителях, доступ к которым осуществляется по URL-адресу. Если вы хотите использовать локальные файлы, ознакомьтесь со [справочной документацией](https://westus2.dev.cognitive.microsoft.com/docs/services/form-recognizer-api-v2/operations/AnalyzeReceiptAsync).
+> В этом кратком руководстве предполагается использование локального файла. Сведения о получении изображения по URL-адресу см. в [справочной документации](https://westus2.dev.cognitive.microsoft.com/docs/services/form-recognizer-api-v2/operations/AnalyzeReceiptAsync).
 
 ## <a name="create-a-form-recognizer-resource"></a>Создание ресурса Распознавателя документов
 
@@ -41,10 +41,12 @@ ms.locfileid: "88522833"
 Для начала анализа квитанции запустите API **[анализа](https://westus2.dev.cognitive.microsoft.com/docs/services/form-recognizer-api-v2/operations/AnalyzeReceiptAsync)** , используя приведенный ниже сценарий Python. Перед выполнением сценария внесите следующие изменения:
 
 1. Замените `<Endpoint>` конечной точкой, полученной из подписки Распознавателя документов.
-1. Замените `<your receipt URL>` на URL-адрес изображения квитанции.
+1. Замените `<path to your receipt>` на путь к документу локальной формы.
 1. Замените `<subscription key>` ключом подписки, скопированным на предыдущем шаге.
 
-    ```python
+# <a name="v20"></a>[Версия 2.0](#tab/v2-0)
+
+```python
     ########### Python Form Recognizer Async Receipt #############
 
     import json
@@ -80,7 +82,54 @@ ms.locfileid: "88522833"
     except Exception as e:
         print("POST analyze failed:\n%s" % str(e))
         quit()
-    ```
+```
+    
+# <a name="v21-preview1"></a>[Версия 2.1 (предварительная версия 1)](#tab/v2-1)    
+```python
+    ########### Python Form Recognizer Async Receipt #############
+
+    import json
+    import time
+    from requests import get, post
+    
+    # Endpoint URL
+    endpoint = r"<Endpoint>"
+    apim_key = "<subscription key>"
+    post_url = endpoint + "/formrecognizer/v2.1-preview.1/prebuilt/receipt/analyze"
+    source = r"<path to your receipt>"
+    
+    headers = {
+        # Request headers
+        'Content-Type': '<file type>',
+        'Ocp-Apim-Subscription-Key': apim_key,
+    }
+    
+    params = {
+        "includeTextDetails": True
+        "locale": "en-US"
+    }
+    
+    with open(source, "rb") as f:
+        data_bytes = f.read()
+    
+    try:
+        resp = post(url = post_url, data = data_bytes, headers = headers, params = params)
+        if resp.status_code != 202:
+            print("POST analyze failed:\n%s" % resp.text)
+            quit()
+        print("POST analyze succeeded:\n%s" % resp.headers)
+        get_url = resp.headers["operation-location"]
+    except Exception as e:
+        print("POST analyze failed:\n%s" % str(e))
+        quit()
+```
+
+> [!NOTE]
+> **Языковой ввод** 
+>
+> В анализаторе квитанций версии 2.1 предусмотрена возможность указать язык чека: английский (Австралия), английский (Канада), английский (Великобритания), английский (Индия) и английский (США). 
+
+---
 
 1. Сохраните код как файл с расширением .py. Например, *form-recognizer-receipts.py*.
 1. Откройте окно командной строки.
@@ -88,9 +137,15 @@ ms.locfileid: "88522833"
 
 Вы получите ответ, включающий заголовок `202 (Success)`**Operation-Location**, который сценарий выведет в окно консоли. Этот заголовок содержит идентификатор операции, который можно использовать для запроса состояния асинхронной операции и получения результатов. В следующем примере значения строка после `operations/` является идентификатором операции.
 
+# <a name="v20"></a>[Версия 2.0](#tab/v2-0)    
 ```console
 https://cognitiveservice/formrecognizer/v2.0/prebuilt/receipt/operations/54f0b076-4e38-43e5-81bd-b85b8835fdfb
 ```
+# <a name="v21-preview1"></a>[Версия 2.1 (предварительная версия 1)](#tab/v2-1)    
+```console
+https://cognitiveservice/formrecognizer/v2.1-preview.1/prebuilt/receipt/operations/54f0b076-4e38-43e5-81bd-b85b8835fdfb
+```
+---
 
 ## <a name="get-the-receipt-results"></a>Получение результатов анализа данных квитанции
 
@@ -128,13 +183,13 @@ while n_try < n_tries:
 
 ### <a name="examine-the-response"></a>Изучите ответ.
 
-Сценарий выведет ответы в консоль до завершения **анализа квитанции**. Затем извлеченные текстовые данные будут выведены в формате JSON. Поле `"recognitionResults"` содержит каждую строку текста, извлеченного из квитанции, а поле`"understandingResults"` содержит сведения пары "ключ — значение" для самых подходящих элементов квитанции.
+Сценарий выведет ответы в консоль до завершения **анализа квитанции**. Затем извлеченные текстовые данные будут выведены в формате JSON. Поле `"readResults"` содержит каждую строку текста, извлеченного из квитанции, а поле`"documentResults"` содержит сведения пары "ключ — значение" для самых подходящих элементов квитанции.
 
 Ознакомьтесь со следующим изображением квитанции и его соответствующими выходными данными в формате JSON. Выходные данные сокращены для удобства чтения.
 
 ![Квитанция из магазина Contoso](../media/contoso-allinone.jpg)
 
-Узел `"recognitionResults"` содержит весь распознанный текст. Текст упорядочивается по страницам, затем по строкам, а затем по отдельным словам. Узел `"understandingResults"` содержит обнаруженные моделью значения, зависящие от квитанции. Здесь вы найдете полезные пары "ключ — значение", такие как налог, итог, адрес продавца и т. д.
+Узел `"readResults"` содержит весь распознанный текст. Текст упорядочивается по страницам, затем по строкам, а затем по отдельным словам. Узел `"documentResults"` содержит обнаруженные моделью значения, зависящие от квитанции. Здесь вы найдете полезные пары "ключ — значение", такие как налог, итог, адрес продавца и т. д.
 
 ```json
 { 

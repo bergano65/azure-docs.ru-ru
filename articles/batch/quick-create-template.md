@@ -4,12 +4,12 @@ description: Быстро научитесь выполнять пакетное
 ms.topic: quickstart
 ms.date: 08/17/2020
 ms.custom: subject-armqs
-ms.openlocfilehash: c59e8891678d9fc1af7c4fe78e4ee2d267ec99b4
-ms.sourcegitcommit: 54d8052c09e847a6565ec978f352769e8955aead
+ms.openlocfilehash: 606862b31ba4921e39e693735507fca39282091c
+ms.sourcegitcommit: 628be49d29421a638c8a479452d78ba1c9f7c8e4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88511394"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88642407"
 ---
 # <a name="quickstart-create-a-batch-account-by-using-arm-template"></a>Краткое руководство. Создание учетной записи пакетной службы с помощью шаблона ARM
 
@@ -31,7 +31,7 @@ ms.locfileid: "88511394"
 
 Шаблон, используемый в этом кратком руководстве, взят из [шаблонов быстрого запуска Azure](https://azure.microsoft.com/resources/templates/101-batchaccount-with-storage/).
 
-:::code language="json" source="~/quickstart-templates/101-batchaccount-with-storage/azuredeploy.json" range="1-80" highlight="36-69":::
+:::code language="json" source="~/quickstart-templates/101-batchaccount-with-storage/azuredeploy.json":::
 
 В шаблоне определено два ресурса Azure:
 
@@ -54,7 +54,7 @@ ms.locfileid: "88511394"
    - **Имя учетной записи пакетной службы**. Оставьте значение по умолчанию.
    - **Ценовая категория учетной записи**. Выберите тип учетной записи хранения. Например, **Standard_LRS**.
    - **Расположение.** Сохраните значение по умолчанию, чтобы ресурсы создавались в том же расположении, что и группа ресурсов.
-   - "Я принимаю указанные выше условия". **Выбрать**.
+   - Я принимаю указанные выше условия. **Выбрать**.
 
 1. Щелкните **Приобрести**.
 

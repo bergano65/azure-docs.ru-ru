@@ -3,7 +3,7 @@
 - name: Обзор
   items:
     - name: Сведения об Azure Arc
-      href: arc-overview.md
+      href: overview.md
 - name: "Серверы с поддержкой Arc\_>"
   href: ./servers/overview.md
 - name: "Kubernetes с поддержкой Arc\_>"

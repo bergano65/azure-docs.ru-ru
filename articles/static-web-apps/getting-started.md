@@ -1,22 +1,22 @@
 ---
-title: Краткое руководство. Создание первого статического веб-приложения с помощью Статических веб-приложений Azure
-description: Узнайте, как создать экземпляр приложения службы "Статические веб-приложения Azure" с использованием предпочтительной внешней платформы.
+title: Краткое руководство. Создание первого статического веб-приложения с помощью службы "Статические веб-приложения Azure"
+description: Узнайте, как создать веб-сайт в службе "Статические веб-приложения Azure".
 services: static-web-apps
 author: craigshoemaker
 ms.service: static-web-apps
 ms.topic: quickstart
-ms.date: 05/08/2020
+ms.date: 08/13/2020
 ms.author: cshoe
-ms.openlocfilehash: bbc06b657525880f22bd5fb38e902f906d438c9c
-ms.sourcegitcommit: 37afde27ac137ab2e675b2b0492559287822fded
+ms.openlocfilehash: db3836e6171d187539b8615efcb5ab782c368020
+ms.sourcegitcommit: 62717591c3ab871365a783b7221851758f4ec9a4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88565916"
+ms.lasthandoff: 08/22/2020
+ms.locfileid: "88752398"
 ---
 # <a name="quickstart-building-your-first-static-web-app"></a>Краткое руководство. Создание первого статического веб-приложения
 
-Служба "Статические веб-приложения Azure" публикует веб-сайты в рабочей среде, создавая приложения из репозитория GitHub. В этом кратком руководстве рассказывается о том, как создать веб-приложение с использованием предпочтительной внешней платформы из репозитория GitHub.
+Служба "Статические веб-приложения Azure" публикует веб-сайты в рабочей среде, создавая приложения из репозитория GitHub. В этом кратком руководстве рассказывается о том, как развернуть веб-приложение в службе "Статические веб-приложения Azure" с помощью расширения Visual Studio Code.
 
 Если у вас еще нет подписки Azure, создайте [бесплатную пробную учетную запись](https://azure.microsoft.com/free).
 
@@ -24,153 +24,97 @@ ms.locfileid: "88565916"
 
 - [GitHub](https://github.com) .
 - Учетная запись [Azure](https://portal.azure.com)
+- [Visual Studio Code](https://code.visualstudio.com)
+- [Расширение "Статические веб-приложения"](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-azurestaticwebapps) для Visual Studio Code
 
-## <a name="create-a-repository"></a>Создание репозитория
+[!INCLUDE [create repository from template](../../includes/static-web-apps-get-started-create-repo.md)]
 
-В этой статье предполагается, что для простоты создания нового репозитория используются шаблоны репозиториев GitHub. Шаблоны предполагают создание начальных приложений с использованием различных внешних платформ.
+[!INCLUDE [clone the repository](../../includes/static-web-apps-get-started-clone-repo.md)]
 
-# <a name="angular"></a>[Angular](#tab/angular)
-
-- Чтобы создать репозиторий, войдите в учетную запись GitHub и перейдите в следующее расположение:
-  - https://github.com/staticwebdev/angular-basic/generate
-- Присвойте репозиторию имя **my-first-static-web-app**
-
-# <a name="react"></a>[React](#tab/react)
-
-- Чтобы создать репозиторий, войдите в учетную запись GitHub и перейдите в следующее расположение:
-  - https://github.com/staticwebdev/react-basic/generate
-- Присвойте репозиторию имя **my-first-static-web-app**
-
-# <a name="vue"></a>[Vue](#tab/vue)
-
-- Чтобы создать репозиторий, войдите в учетную запись GitHub и перейдите в следующее расположение:
-  - https://github.com/staticwebdev/vue-basic/generate
-- Присвойте репозиторию имя **my-first-static-web-app**
-
-# <a name="no-framework"></a>[Без платформы](#tab/vanilla-javascript)
-
-- Чтобы создать репозиторий, войдите в учетную запись GitHub и перейдите в следующее расположение:
-  - https://github.com/staticwebdev/vanilla-basic/generate
-- Присвойте репозиторию имя **my-first-static-web-app**
-
-> [!NOTE]
-> Для создания веб-приложения Статическим веб-приложениям Azure требуется по крайней мере один HTML-файл. Репозиторий, созданный на этом шаге, включает один файл _index.html_.
-
----
-
-Нажмите кнопку **Create repository from template** (Создать репозиторий из шаблона).
-
-:::image type="content" source="media/getting-started/create-template.png" alt-text="Создание репозитория из шаблона":::
+Затем откройте Visual Studio Code и последовательно выберите **Файл > Открыть папку**, чтобы открыть репозиторий, который вы только что клонировали на компьютер в редакторе.
 
 ## <a name="create-a-static-web-app"></a>Создание статического веб-приложения
 
-Теперь, когда репозиторий создан, можно создать статическое веб-приложение на портале Azure.
+1. В Visual Studio Code на панели действий выберите логотип Azure, чтобы открыть окно расширений Azure.
 
-- Перейдите на [портал Azure](https://portal.azure.com).
-- Щелкните **Создать ресурс**.
-- Найдите **Статические веб-приложения**.
-- Щелкните **Статические веб-приложения (предварительная версия)** .
-- Нажмите кнопку **Создать**.
+    :::image type="content" source="media/getting-started/extension-azure-logo.png" alt-text="Логотип Azure":::
 
-### <a name="basics"></a>Основы
+    > [!NOTE]
+    > Необходимо войти в Azure и на GitHub. Если вы еще не вошли в Azure и на GitHub из Visual Studio Code, расширение предложит вам сделать это в процессе создания.
 
-Для начала настройте новое приложение и свяжите его с репозиторием GitHub.
+1. Наведите указатель мыши на надпись _Статические веб-приложения_ и выберите **знак плюс**.
 
-:::image type="content" source="media/getting-started/basics-tab.png" alt-text="Вкладка Основные сведения":::
+    :::image type="content" source="media/getting-started/extension-create-button.png" alt-text="Имя приложения":::
 
-- Выберите _подписку Azure_.
-- Выберите или создайте _группу ресурсов_.
-- Назовите приложение **my-first-static-web-app**.
-  - Допустимые символы: `a-z` (без учета регистра), `0-9`и `-`.
-- Выберите ближайший к вам _регион_.
-- Выберите **Бесплатный** в поле _Номер SKU_.
-- Нажмите кнопку **Войти по учетным данным GitHub** и выполните проверку подлинности с помощью GitHub.
+1. В верхней части редактора откроется палитра команд и будет предложено присвоить имя приложению.
 
-После входа с помощью GitHub введите сведения о репозитории.
+    Введите **my-first-static-web-app** и нажмите клавишу **ВВОД**.
 
-:::image type="content" source="media/getting-started/repository-details.png" alt-text="Сведения о репозитории":::
+    :::image type="content" source="media/getting-started/extension-create-app.png" alt-text="Создание Статического веб-приложения":::
 
-- Выберите предпочитаемую _организацию_.
-- Выберите **my-first-web-static-app** из раскрывающегося списка _Репозиторий_.
-- Выберите **master** в раскрывающемся списке _Ветвь_.
-- Нажмите кнопку **Next: Build >** (Далее: сборка >) для изменения конфигурации сборки.
+1. Выберите ветвь **master** и нажмите клавишу **ВВОД**.
 
-:::image type="content" source="media/getting-started/next-build-button.png" alt-text="Кнопка следующей сборки":::
+    :::image type="content" source="media/getting-started/extension-branch.png" alt-text="Имя ветви":::
 
-> [!NOTE]
->  Если вы не видите какие-либо репозитории, вам может потребоваться авторизовать Статические веб-приложения Azure на сайте GitHub. Перейдите на [домашнюю страницу GitHub](https://github.com) и щелкните на значок своей учетной записи, чтобы открыть раскрывающееся меню. Выберите **Settings** (Параметры), **Applications (Приложения) > Authorized OAuth Apps (Авторизованные приложения OAuth) > Azure Static Web Apps (Статические веб-приложения Azure)** , **Grant** (Предоставить). Чтобы предоставить разрешения для репозиториев организации, необходимо быть владельцем организации.
+1. Выберите **/** в качестве расположения кода приложения и нажмите клавишу **ВВОД**.
 
-### <a name="build"></a>Сборка
+    :::image type="content" source="media/getting-started/extension-app-location.png" alt-text="Расположение кода приложения":::
 
-Затем добавьте сведения о конфигурации, относящиеся к предпочитаемой внешней платформе.
+1. Расширение выполнит поиск расположение API в приложении. В этой статье не описывается реализация API.
 
-# <a name="angular"></a>[Angular](#tab/angular)
+    Выберите **Пропустить** и нажмите клавишу **ВВОД**.
 
-- Введите **/** в поле _App location_ (Расположение приложения).
-- Удалите значение по умолчанию из поля _API location_ (Расположение API).
-- Введите **dist/angular-basic** в поле _App artifact location_ (Расположение артефакта приложения).
+    :::image type="content" source="media/getting-started/extension-api-location.png" alt-text="Расположение API":::
 
-# <a name="react"></a>[React](#tab/react)
+1. Выберите расположение, в котором в приложении будут создаваться файлы для рабочей среды.
 
-- Введите **/** в поле _App location_ (Расположение приложения).
-- Удалите значение по умолчанию из поля _API location_ (Расположение API).
-- Введите **build** в поле _App artifact location_ (Расположение артефакта приложения).
+    # <a name="no-framework"></a>[Без платформы](#tab/vanilla-javascript)
 
-# <a name="vue"></a>[Vue](#tab/vue)
+    Снимите флажок и нажмите клавишу **ВВОД**.
 
-- Введите **/** в поле _App location_ (Расположение приложения).
-- Удалите значение по умолчанию из поля _API location_ (Расположение API).
-- Введите **dist** в поле _App artifact location_ (Расположения артефакта приложения).
+    :::image type="content" source="media/getting-started/extension-artifact-no-framework.png" alt-text="Путь к файлам приложения":::
 
-# <a name="no-framework"></a>[Без платформы](#tab/vanilla-javascript)
+    # <a name="angular"></a>[Angular](#tab/angular)
 
-- Введите **/** в поле _App location_ (Расположение приложения).
-- Удалите значение по умолчанию из поля _API location_ (Расположение API).
-- Удалите значение по умолчанию из поля _App artifact location_ (Расположения артефакта приложения).
+    Введите **dist/angular-basic** и нажмите клавишу **ВВОД**.
 
----
+    :::image type="content" source="media/getting-started/extension-artifact-angular.png" alt-text="Путь к файлам приложения Angular":::
 
-Нажмите кнопку **Просмотр и создание**.
+    # <a name="react"></a>[React](#tab/react)
 
-:::image type="content" source="media/getting-started/review-create.png" alt-text="Кнопка Просмотр и создание":::
+    Введите **build** и нажмите клавишу **ВВОД**.
 
-Чтобы изменить эти значения после создания приложения, поправьте [файл рабочего процесса](github-actions-workflow.md).
+    :::image type="content" source="media/getting-started/extension-artifact-react.png" alt-text="Путь к файлам приложения React":::
 
-### <a name="review--create"></a>Отзыв и создание
+    # <a name="vue"></a>[Vue](#tab/vue)
 
-После проверки запроса можно продолжить создание приложения.
+    Введите **dist** и нажмите клавишу **ВВОД**.
 
-Нажмите кнопку **Создать**.
+    :::image type="content" source="media/getting-started/extension-artifact-vue.png" alt-text="Путь к файлам приложения Vue":::
 
-:::image type="content" source="media/getting-started/create-button.png" alt-text="Кнопка Создать":::
+    ---
 
-После создания ресурса нажмите кнопку **Перейти к ресурсу**.
+1. Выберите ближайшее расположение и нажмите клавишу **ВВОД**.
 
-:::image type="content" source="media/getting-started/resource-button.png" alt-text="Кнопка Перейти к ресурсу":::
+    :::image type="content" source="media/getting-started/extension-location.png" alt-text="Расположение ресурса":::
 
-## <a name="view-the-website"></a>Просмотр веб-сайта
+1. После создания приложения в Visual Studio Code отобразится уведомление с подтверждением.
 
-При развертывании статического приложения следует учитывать два фактора. Первый — подготовка базовых ресурсов Azure, из которых состоит приложение. Второй — рабочий процесс GitHub Actions, который создает и публикует приложение.
+    :::image type="content" source="media/getting-started/extension-confirmation.png" alt-text="Подтверждение создания":::
 
-Прежде чем можно будет переходить к новому статическому сайту, сначала необходимо завершить сборку развертывания.
+1. В окне обозревателя Visual Studio Code вернитесь в раздел _Статические веб-приложения_, щелкните правой кнопкой мыши **Рабочая среда** и выберите **Открыть на портале**, чтобы просмотреть приложение на портале Azure.
 
-В окне обзора службы "Статические веб-приложения" отображается ряд ссылок, которые помогут вам взаимодействовать с веб-приложением.
+    :::image type="content" source="media/getting-started/extension-open-in-portal.png" alt-text="Пункт "Открыть портал"":::
 
-:::image type="content" source="media/getting-started/overview-window.png" alt-text="Окно обзора":::
-
-1. Если щелкнуть баннер с текстом "Click here to check the status of your GitHub Actions runs" (Щелкните здесь, чтобы проверить состояние выполняемых действий GitHub), отобразятся действия GitHub, выполняемым для вашего репозитория. Убедившись, что задание развертывания завершено, можно переходить к веб-сайту по созданному URL-адресу.
-
-2. Когда рабочий процесс GitHub Actions завершится, щелкните ссылку на _URL-адрес_ , чтобы открыть веб-сайт на новой вкладке.
+[!INCLUDE [view website](../../includes/static-web-apps-get-started-view-website.md)]
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 
-Если вы не собираетесь использовать это приложение в дальнейшем, вы можете удалить экземпляр службы "Статические веб-приложения Azure", выполнив следующие действия:
+Если вы не собираетесь использовать это приложение в дальнейшем, вы можете удалить экземпляр службы "Статические веб-приложения Azure" с помощью расширения.
 
-1. Откройте [портал Azure](https://portal.azure.com).
-1. Выполните поиск **my-first-web-static-app** с помощью верхней строки поиска.
-1. Щелкните имя приложения.
-1. Нажмите кнопку **Удалить**.
-1. Нажмите кнопку **Да**, чтобы подтвердить действие удаления.
+В окне обозревателя Visual Studio Code вернитесь в раздел _Статические веб-приложения_, щелкните правой кнопкой мыши **my-first-static-web-app** и выберите **Удалить**.
+
+:::image type="content" source="media/getting-started/extension-delete.png" alt-text="Удаление приложения":::
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

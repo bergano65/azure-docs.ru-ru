@@ -5,14 +5,14 @@ services: expressroute
 author: mialdrid
 ms.service: expressroute
 ms.topic: overview
-ms.date: 09/18/2019
+ms.date: 08/25/2020
 ms.author: mialdrid
-ms.openlocfilehash: 2fda31b97314347f52b0cd1bbe9e1b54d01af807
-ms.sourcegitcommit: d661149f8db075800242bef070ea30f82448981e
+ms.openlocfilehash: 6621a9778025d67046722b7cd60e32a62b574ee5
+ms.sourcegitcommit: b33c9ad17598d7e4d66fe11d511daa78b4b8b330
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/19/2020
-ms.locfileid: "88607112"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88852943"
 ---
 # <a name="what-is-azure-expressroute"></a>Что такое Azure ExpressRoute?
 ExpressRoute позволяет переносить локальные сети в Microsoft Cloud по частному подключению, которое обеспечивается поставщиком услуг подключения. ExpressRoute позволяет устанавливать подключения к облачным службам Майкрософт, таким как Microsoft Azure и Office 365.
@@ -111,6 +111,10 @@ ExpressRoute Direct дает пользователям возможность �
 
 ## <a name="faq"></a>ВОПРОСЫ И ОТВЕТЫ
 Ответы на часто задаваемые вопросы об ExpressRoute см. в [этой статье](expressroute-faqs.md).
+
+## <a name="whats-new"></a><a name="new"></a>Новые возможности
+
+Подпишитесь на RSS-канал и просматривайте последние обновления для ExpressRoute на странице [Обновления Azure](https://azure.microsoft.com/updates/?category=networking&query=ExpressRoute).
 
 ## <a name="next-steps"></a>Дальнейшие действия
 * Узнайте о [моделях подключения ExpressRoute](expressroute-connectivity-models.md).

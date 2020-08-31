@@ -1,14 +1,16 @@
 ---
 title: Что такое служба "Распознавание речи" (LUIS)?
-description: Распознавание речи (LUIS) — это облачная служба API, которая применяет пользовательскую аналитику машинного обучения к тексту пользователя в разговорном стиле и на естественном языке, чтобы предсказать общий смысл и извлечь соответствующую подробную информацию.
+description: Распознавание речи (LUIS) — облачная служба API, использующая машинное обучение разговорному естественному языку для прогнозирования смысла и извлечения информации.
+keywords: Azure, искусственный интеллект, ИИ, обработка естественного языка, NLP, распознавание естественного языка, NLU, общение с ИИ, общающийся ИИ, чат-бот ИИ, создатель чат-бота, LUIS, ИИ NLP, ИИ LUIS, Azure LUIS, общие сведения о естественном языке
 ms.topic: overview
-ms.date: 05/05/2020
-ms.openlocfilehash: 231a6580a6776b82173865744e9e8757c2fa08f1
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.date: 08/07/2020
+ms.custom: cog-serv-seo-aug-2020
+ms.openlocfilehash: 22fe99e1552a9612adfbc455d60852f1591a1a54
+ms.sourcegitcommit: 62717591c3ab871365a783b7221851758f4ec9a4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86538043"
+ms.lasthandoff: 08/22/2020
+ms.locfileid: "88752154"
 ---
 # <a name="what-is-language-understanding-luis"></a>Что такое служба "Распознавание речи" (LUIS)?
 
@@ -40,7 +42,9 @@ ms.locfileid: "86538043"
 <a name="Key-LUIS-concepts"></a>
 <a name="what-is-a-luis-model"></a>
 
-## <a name="natural-language-processing"></a>Обработка естественного языка
+## <a name="natural-language-understanding-nlu"></a>Распознавание естественного языка (NLU)
+
+[LUIS предоставляет искусственный интеллект (ИИ)](artificial-intelligence.md) в форме NLU, подмножества обработки естественного языка (NLP).
 
 Ваше приложение LUIS содержит разработанную для домена модель естественного языка. Вы можете запустить приложение LUIS с моделью предварительно созданного домена, создать собственную модель или объединить части готового домена с собственными пользовательскими данными.
 
@@ -48,10 +52,11 @@ ms.locfileid: "86538043"
 
 * **Настраиваемая модель** LUIS предоставляет несколько способов определения собственных пользовательских моделей, в том числе намерений и сущностей. Сущности включают в себя сущности, полученные средствами машинного обучения, конкретные или литеральные сущности, а также сочетание сущностей машинного обучения и литеральных сущностей.
 
-## <a name="build-the-luis-model"></a>Создание модели LUIS
-Создайте модель с помощью API [разработки](https://go.microsoft.com/fwlink/?linkid=2092087) или [портала LUIS](https://www.luis.ai).
+Ознакомьтесь с дополнительными сведениями об [NLP](artificial-intelligence.md) и области NLU, относящейся к LUIS.
 
-Модель LUIS начинается с категорий намерений пользователя, называемых **[намерениями](luis-concept-intent.md)** . Каждое намерение должно иметь примеры пользовательских **[фраз](luis-concept-utterance.md)** . Каждая фраза может предоставить набор данных, которые требуется извлечь.
+## <a name="step-1-design-and-build-your-model"></a>Шаг 1. Разработка и построение модели
+
+Для разработки модели используются категории стремлений пользователей, которые называются **[намерениями](luis-concept-intent.md)** . Каждое намерение должно иметь примеры пользовательских **[фраз](luis-concept-utterance.md)** . Каждая фраза может предоставить данные, которые требуется извлечь с помощью [сущностей машинного обучения](luis-concept-entity-types.md#effective-machine-learned-entities).
 
 |Пример фразы пользователя|Блокировка с намерением|Извлеченные данные|
 |-----------|-----------|-----------|
@@ -59,9 +64,11 @@ ms.locfileid: "86538043"
 |`When does your store open?`|StoreHoursAndLocation|открыт|
 |`Schedule a meeting at 1pm with Bob in Distribution`|ScheduleMeeting|13:00, Боб|
 
-## <a name="query-prediction-endpoint"></a>Запрос конечной точки прогнозирования
+Создайте модель с помощью API [разработки](https://go.microsoft.com/fwlink/?linkid=2092087), [**портала LUIS**](https://www.luis.ai) или обоих этих средств. Узнайте больше о том, как выполнить сборку с помощью [портала](get-started-portal-build-app.md) и [клиентских библиотек пакета SDK](quickstart-sdk.md).
 
-После обучения приложения и его публикации в конечной точке клиентское приложение отправляет фразы в API [конечной точки](https://go.microsoft.com/fwlink/?linkid=2092356) прогнозирования. API применяет модель к речевым фрагментам для анализа и возвращает результаты прогнозирования в формате JSON.
+## <a name="step-2-get-the-query-prediction"></a>Шаг 2. Получение прогноза запросов
+
+После обучения модели и ее публикации в конечной точке клиентское приложение (например, чат-бот) отправляет речевые фрагменты в API [конечной точки](https://go.microsoft.com/fwlink/?linkid=2092356) прогнозирования. API применяет модель к речевым фрагментам для анализа и возвращает результаты прогнозирования в формате JSON.
 
 Ответ конечной точки JSON содержит по крайней мере фразу в запросе и намерение с высшим показателем. Он также позволяет извлекать данные, такие как сущность **типа контакта** и общая тональность.
 
@@ -69,7 +76,6 @@ ms.locfileid: "86538043"
 {
     "query": "I want to call my HR rep",
     "prediction": {
-        "normalizedQuery": "i want to call my hr rep",
         "topIntent": "HRContact",
         "intents": {
             "HRContact": {
@@ -82,49 +88,52 @@ ms.locfileid: "86538043"
             ]
         },
         "sentiment": {
-            "label": "negative",
-            "score": 0.103343368
+            "label": "neutral",
+            "score": 0.5
         }
     }
 }
 ```
 
-## <a name="improve-model-prediction"></a>Повышение точности прогнозирования модели
+## <a name="step-3-improve-model-prediction"></a>Шаг 3. Повышение точности прогнозирования модели
 
-Когда ваше приложение LUIS опубликовано и получает реальные фразы пользователей, LUIS ведет [активное обучение](luis-concept-review-endpoint-utterances.md) конечных точек фразам для повышения точности прогнозов.
+Когда ваше приложение LUIS опубликовано и получает реальные фразы пользователей, LUIS ведет [активное обучение](luis-concept-review-endpoint-utterances.md) конечных точек фразам для повышения точности прогнозов. Проверяйте эти предложения в рамках регулярного обслуживания в жизненном цикле разработки.
 
 <a name="using-luis"></a>
 
-## <a name="development-lifecycle"></a>Жизненный цикл разработки
+## <a name="development-lifecycle-and-tools"></a>Жизненный цикл средства разработки
 LUIS предоставляет инструменты, функцию управления версиями и средства совместной работы с другими авторами LUIS для интеграции в [полный жизненный цикл разработки](luis-concept-app-iteration.md).
 
-## <a name="implementing-luis"></a>Реализация LUIS
-Так как служба распознавания речи LUIS представляет собой REST API, это решение можно использовать с любым продуктом, службой или платформой, поддерживающими HTTP-запросы. Следующий список содержит основные продукты и службы корпорации Майкрософт, используемые с LUIS.
-
-Основное применение клиента для LUIS:
-* [Бот веб-приложения](https://docs.microsoft.com/azure/bot-service/?view=azure-bot-service-4.0). Быстро создает чат-бот с поддержкой LUIS для общения с пользователем с помощью ввода текста. Для эффективной работы с ботом используется [Bot Framework][bot-framework] версии [4.x](https://github.com/Microsoft/botbuilder-dotnet).
+Так как служба распознавания речи LUIS представляет собой REST API, это решение можно использовать с любым продуктом, службой или платформой, поддерживающими HTTP-запросы. LUIS также предоставляет клиентские библиотеки (пакеты SDK) для нескольких основных языков программирования. Узнайте больше о предоставленных [ресурсах для разработчиков](developer-reference-resource.md).
 
 Средства быстрого и простого использования LUIS с ботом:
 * [LUIS CLI.](https://github.com/Microsoft/botbuilder-tools/tree/master/packages/LUIS) Пакет NPM предоставляет средства разработки и прогнозирования как с помощью автономной программы командной строки, так и путем импорта.
 * [LUISGen.](https://github.com/Microsoft/botbuilder-tools/tree/master/packages/LUISGen) LUISGen — это средство для создания строго типизированного исходного кода C# и TypeScript из экспортированной модели LUIS.
 * [Диспетчеризация](https://aka.ms/dispatch-tool). Позволяет использовать несколько приложений LUIS и QnA Maker из родительского приложения с помощью модели диспетчера.
 * [LUDown.](https://github.com/Microsoft/botbuilder-tools/tree/master/packages/Ludown) Это программа командной строки, которая помогает управлять языковыми моделями для вашего бота.
-* [Bot Framework Composer](https://github.com/microsoft/BotFramework-Composer) — это интегрированный инструмент для разработчиков и междисциплинарных команд, предназначенный для разработки ботов и сред взаимодействия на платформе Microsoft Bot Framework.
+
+## <a name="integrate-with-a-bot"></a>Интеграция с ботом
+
+Для создания и развертывания чат-бота воспользуйтесь [службой Azure Bot](https://docs.microsoft.com/azure/bot-service/?view=azure-bot-service-4.0) с [Microsoft Bot Framework](https://dev.botframework.com/). Для проектирования и разработки используйте средство с графическим интерфейсом [Composer](https://docs.microsoft.com/composer/) или [рабочие примеры ботов](https://github.com/microsoft/BotBuilder-Samples), предназначенные для основных сценариев использования ботов.
+
+## <a name="integrate-with-other-cognitive-services"></a>Интеграция с другими службами Cognitive Services
 
 Другие службы Cognitive Services, используемые в LUIS:
 * [QnA Maker][qnamaker] позволяет объединять несколько типов текста в базу знаний вопросов и ответов.
 * [Служба "Речь"](../Speech-Service/overview.md) преобразует запросы на разговорном языке в текст.
-* [Средство для обучения ведению диалога](https://docs.microsoft.com/azure/cognitive-services/labs/conversation-learner/overview). Позволяет создавать диалоги с чат-ботом быстрее с помощью LUIS.
 
-Примеры использования LUIS:
-* Репозиторий GitHub с примерами использования [искусственного интеллекта для общения](https://github.com/Microsoft/AI).
-* [Bot Framework — примеры ботов](https://github.com/microsoft/BotBuilder-Samples)
+Служба LUIS предоставляет функциональные возможности Анализа текста в составе имеющихся ресурсов LUIS, в том числе [анализ тональности](luis-how-to-publish-app.md#configuring-publish-settings) и [извлечение ключевых фраз](luis-reference-prebuilt-keyphrase.md) с помощью предварительно созданной сущности keyPhrase.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="learn-with-the-quickstarts"></a>Изучение по кратким руководствам
 
-* [Новые возможности](whats-new.md)
-* Создайте приложение LUIS с [предварительно созданным](luis-get-started-create-app.md) или [пользовательским](luis-quickstart-intents-only.md) доменом.
-* [Отправьте запрос к конечной точке прогнозирования](luis-get-started-get-intent-from-browser.md) общедоступного приложения Интернета вещей.
+Узнайте о LUIS из практичных кратких руководств, воспользовавшись [порталом](get-started-portal-build-app.md) и [клиентскими библиотеками SDK](quickstart-sdk.md).
+
+
+## <a name="next-steps"></a>Дальнейшие шаги
+
+* Узнайте, [что нового](whats-new.md) в службах и документации.
+* [Спланируйте приложение](luis-how-plan-your-app.md) с использованием [намерений](luis-concept-intent.md) и [сущностей](luis-concept-entity-types.md).
+* [Запросите конечную точку прогнозирования](luis-get-started-get-intent-from-browser.md).
 * [Ресурсы для разработчиков](developer-reference-resource.md) по LUIS.
 
 [bot-framework]: https://docs.microsoft.com/bot-framework/

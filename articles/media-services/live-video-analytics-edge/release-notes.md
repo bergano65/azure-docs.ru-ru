@@ -2,13 +2,13 @@
 title: Заметки о выпуске Live Video Analytics в IoT Edge. Azure
 description: В этом разделе содержатся заметки о выпуске Live Video Analytics на IoT Edge выпусках, улучшениях, исправлениях ошибок и известных проблемах.
 ms.topic: conceptual
-ms.date: 04/27/2020
-ms.openlocfilehash: bad21297c5174c107a8eb03da0e2ed57ee7355d3
-ms.sourcegitcommit: 62717591c3ab871365a783b7221851758f4ec9a4
+ms.date: 08/19/2020
+ms.openlocfilehash: 23c2362d46a0b9bfe2fc2fbe31e00d0a42f80cfa
+ms.sourcegitcommit: 420c30c760caf5742ba2e71f18cfd7649d1ead8a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/22/2020
-ms.locfileid: "88750215"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89055453"
 ---
 # <a name="live-video-analytics-on-iot-edge-release-notes"></a>Заметки о выпуске Live Video Analytics в IoT Edge
 
@@ -32,7 +32,7 @@ mcr.microsoft.com/media/live-video-analytics:1.0.3
 > [!NOTE]
 > В кратком руководстве и учебниках в манифестах развертывания используется тег 1 (Live-Video-Analytics: 1). Поэтому простое повторное развертывание таких манифестов должно обновить модуль на пограничном > устройствах.
 
-## <a name="new-features"></a>новые функции; 
+## <a name="new-features"></a>Новые функции 
 
 * Теперь вы можете получить высокую производительность передачи содержимого данных между интерактивной аналитикой видео на IoT Edge и пользовательским расширением с помощью gRPC Framework. Чтобы приступить к [работе, см](analyze-live-video-use-your-grpc-model-quickstart.md) . раздел.
 * Обновлено Расширенное региональное развертывание для аналитики в реальном времени и только облачная служба.  
@@ -55,7 +55,7 @@ mcr.microsoft.com/media/live-video-analytics:1.0.2
 > [!NOTE]
 > В кратком руководстве и учебниках в манифестах развертывания используется тег 1 (Live-Video-Analytics: 1). Поэтому простое повторное развертывание таких манифестов должно обновить модуль на пограничном > устройствах.
 
-### <a name="new-features"></a>новые функции;
+### <a name="new-features"></a>Новые функции
 * Теперь можно создавать топологии графов, которые имеют узел приемника ресурса, а также узел приемника файлов, расположенный на узле процессора сигнального шлюза. См. пример в [этом](https://github.com/Azure/live-video-analytics/tree/master/MediaGraph/topologies/evr-motion-assets-files) разделе.
 
 ### <a name="bug-fixes"></a>Исправления ошибок

@@ -7,12 +7,12 @@ ms.author: baanders
 ms.date: 3/26/2020
 ms.topic: conceptual
 ms.service: digital-twins
-ms.openlocfilehash: e7be96fcab0807ac8c6500c3b360f9380b4d2b28
-ms.sourcegitcommit: ac7ae29773faaa6b1f7836868565517cd48561b2
+ms.openlocfilehash: e6236d9ed5ed75b6b5e10914e668de545c48fc2c
+ms.sourcegitcommit: 420c30c760caf5742ba2e71f18cfd7649d1ead8a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88824956"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89055640"
 ---
 # <a name="query-the-azure-digital-twins-twin-graph"></a>Запрос к графу Azure Digital двойников двойника
 
@@ -24,9 +24,21 @@ ms.locfileid: "88824956"
 
 ## <a name="query-syntax"></a>Синтаксис запросов
 
-В этом разделе содержатся образцы запросов, иллюстрирующие структуру языка запросов и выполняющие возможные операции с запросами.
+В этом разделе содержатся примеры запросов, иллюстрирующие структуру языка запросов и выполняющие возможные операции с [цифровыми двойников](concepts-twins-graph.md).
 
-Получение [цифровых двойников](concepts-twins-graph.md) по свойствам (включая идентификатор и метаданные):
+### <a name="select-top-items"></a>Выбрать верхние элементы
+
+С помощью предложения можно выбрать несколько "верхних" элементов в запросе `Select TOP` .
+
+```sql
+SELECT TOP (5)
+FROM DIGITALTWINS
+WHERE ...
+```
+
+### <a name="query-by-property"></a>Запрос по свойству
+
+Получение цифровых двойников по **свойствам** (включая идентификатор и метаданные):
 ```sql
 SELECT  * 
 FROM DigitalTwins T  
@@ -38,24 +50,29 @@ AND T.Temperature = 70
 > [!TIP]
 > Идентификатор цифрового двойника запрашивается с помощью поля метаданных `$dtId` .
 
-Можно также получить двойников по их свойствам *тегов* , как описано в разделе [Добавление тегов в цифровые двойников](how-to-use-tags.md):
+Вы также можете получить двойников в зависимости от **того, определено ли определенное свойство**. Ниже приведен запрос, который получает двойников с определенным свойством *Location* :
+
+```sql
+SELECT *
+FROM DIGITALTWINS WHERE IS_DEFINED(Location)
+```
+
+Это может помочь получить двойников по их свойствам *тегов* , как описано в разделе [Добавление тегов в Digital двойников](how-to-use-tags.md). Ниже приведен запрос, который получает все двойников, помеченные *красным цветом*:
+
 ```sql
 select * from digitaltwins where is_defined(tags.red) 
 ```
 
-### <a name="select-top-items"></a>Выбрать верхние элементы
-
-С помощью предложения можно выбрать несколько "верхних" элементов в запросе `Select TOP` .
+Можно также получить двойников на основе **типа свойства**. Ниже приведен запрос, который получает двойников, свойство *температуры* которого является числом:
 
 ```sql
-SELECT TOP (5)
-FROM DIGITALTWINS
-WHERE property = 42
+SELECT * FROM DIGITALTWINS T
+WHERE IS_NUMBER(T.Temperature)
 ```
 
 ### <a name="query-by-model"></a>Запрос по модели
 
-`IS_OF_MODEL`Оператор можно использовать для фильтрации на основе [модели](concepts-models.md)двойника. Он поддерживает наследование и имеет несколько параметров перегрузки.
+`IS_OF_MODEL`Оператор можно использовать для фильтрации на основе [**модели**](concepts-models.md)двойника. Он поддерживает наследование и имеет несколько параметров перегрузки.
 
 Простейший способ использования `IS_OF_MODEL` принимает только `twinTypeName` параметр: `IS_OF_MODEL(twinTypeName)` .
 Ниже приведен пример запроса, который передает значение в этом параметре:
@@ -87,7 +104,7 @@ SELECT ROOM FROM DIGITALTWINS DT WHERE IS_OF_MODEL(DT, 'dtmi:sample:thing;1', ex
 
 ### <a name="query-based-on-relationships"></a>Запрос на основе связей
 
-При выполнении запросов на основе отношений Digital двойников, язык запросов Azure Digital двойников имеет специальный синтаксис.
+При выполнении запросов на основе **отношений**Digital двойников язык запросов Azure Digital двойников имеет специальный синтаксис.
 
 Связи извлекаются в область запроса в `FROM` предложении. Важное отличие от "классических" языков SQL-типов заключается в том, что каждое выражение в этом `FROM` предложении не является таблицей; вместо этого `FROM` предложение выражает прохождение межсущностного отношения и записывается с помощью версии Azure Digital двойников `JOIN` . 
 
@@ -117,7 +134,8 @@ WHERE T.$dtId = 'ABC'
 
 #### <a name="query-the-properties-of-a-relationship"></a>Запрос свойств связи
 
-Аналогично тому, как цифровые двойников имеют свойства, описанные в ДТДЛ, связи могут также иметь свойства. Язык запросов Azure Digital двойников позволяет фильтровать и проекцию связей путем назначения псевдонима связи в `JOIN` предложении. 
+Аналогично тому, как цифровые двойников имеют свойства, описанные в ДТДЛ, связи могут также иметь свойства. Вы можете запросить двойников **в зависимости от свойств их отношений**.
+Язык запросов Azure Digital двойников позволяет фильтровать и проекцию связей путем назначения псевдонима связи в `JOIN` предложении. 
 
 В качестве примера рассмотрим *сервицедби* связь со свойством *репортедкондитион* . В следующем запросе этой связи присваивается псевдоним "R" для ссылки на его свойство.
 
@@ -142,10 +160,20 @@ SELECT LightBulb
 FROM DIGITALTWINS Room 
 JOIN LightPanel RELATED Room.contains 
 JOIN LightBulb RELATED LightPanel.contains 
-WHERE IS_OF_MODEL(LightPanel, ‘dtmi:contoso:com:lightpanel;1’) 
-AND IS_OF_MODEL(LightBulb, ‘dtmi:contoso:com:lightbulb ;1’) 
-AND Room.$dtId IN [‘room1’, ‘room2’] 
+WHERE IS_OF_MODEL(LightPanel, 'dtmi:contoso:com:lightpanel;1') 
+AND IS_OF_MODEL(LightBulb, 'dtmi:contoso:com:lightbulb ;1') 
+AND Room.$dtId IN ['room1', 'room2'] 
 ```
+
+### <a name="other-compound-query-examples"></a>Другие примеры составных запросов
+
+Любой из приведенных выше типов запросов можно **объединить** с помощью сочетаний операторов, чтобы включить более подробные сведения в один запрос. Ниже приведены некоторые дополнительные примеры составных запросов, которые одновременно запрашивают более одного типа дескриптора двойника.
+
+| Описание | Запрос |
+| --- | --- |
+| На устройствах, которые имеют *место 123* , возвращаются устройства MxChip, обслуживающие роль оператора. | `SELECT device`<br>`FROM DigitalTwins space`<br>`JOIN device RELATED space.has`<br>`WHERE space.$dtid = 'Room 123'`<br>`AND device.$metadata.model = 'dtmi:contosocom:DigitalTwins:MxChip:3'`<br>`AND has.role = 'Operator'` |
+| Получить двойников, имеющую связь с именем, которая *содержит* другой ДВОЙНИКА с идентификатором *id1* | `SELECT Room`<br>`FROM DIGITIALTWINS Room`<br>`JOIN Thermostat ON Room.Contains`<br>`WHERE Thermostat.$dtId = 'id1'` |
+| Получение всех комнат этой модели комнаты, содержащихся в *floor11* | `SELECT Room`<br>`FROM DIGITALTWINS Floor`<br>`JOIN Room RELATED Floor.Contains`<br>`WHERE Floor.$dtId = 'floor11'`<br>`AND IS_OF_MODEL(Room, 'dtmi:contosocom:DigitalTwins:Room;1')` |
 
 ## <a name="run-queries-with-an-api-call"></a>Выполнение запросов с помощью вызова API
 

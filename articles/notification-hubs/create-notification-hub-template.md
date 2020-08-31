@@ -10,14 +10,14 @@ ms.author: sethm
 ms.date: 08/04/2020
 ms.reviewer: thsomasu
 ms.lastreviewed: 05/15/2020
-ms.openlocfilehash: b9fe363da0fa5e451aaee83e895d539a0741a174
-ms.sourcegitcommit: 2ff0d073607bc746ffc638a84bb026d1705e543e
+ms.openlocfilehash: 2165351bee4ee260e768c10b23e26bf095779cad
+ms.sourcegitcommit: 56cbd6d97cb52e61ceb6d3894abe1977713354d9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87830739"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88684649"
 ---
-# <a name="quickstart-create-a-notification-hub-using-an-arm-template"></a>Краткое руководство по созданию концентратора уведомлений с помощью шаблона ARM
+# <a name="quickstart-create-a-notification-hub-using-an-arm-template"></a>Краткое руководство. Создание концентратора уведомлений с помощью шаблона Resource Manager
 
 Центры уведомлений Azure обеспечивают простой в использовании и масштабируемый механизм отправки push-уведомлений, который позволяет отправлять уведомления на любую платформу (iOS, Android, Windows, Kindle и т. д.) c любой серверной части (облачной или локальной). Дополнительные сведения о службе см. в статье [Что такое Центры уведомлений Azure?](notification-hubs-push-notification-overview.md).
 
@@ -37,7 +37,7 @@ ms.locfileid: "87830739"
 
 Шаблон, используемый в этом кратком руководстве, взят из [шаблонов быстрого запуска Azure](https://azure.microsoft.com/resources/templates/101-notification-hub/).
 
-:::code language="json" source="~/quickstart-templates/101-notification-hub/azuredeploy.json" range="1-45" highlight="22-40":::
+:::code language="json" source="~/quickstart-templates/101-notification-hub/azuredeploy.json":::
 
 * [Справочник по шаблонам пространства имен Microsoft.NotificationHubs](/azure/templates/microsoft.notificationhubs/namespaces).
 * [Справочник по шаблонам Microsoft.NotificationHubs namespaces/notificationHubs](/azure/templates/microsoft.notificationhubs/namespaces/notificationhubs).

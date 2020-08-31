@@ -8,12 +8,12 @@ ms.author: rgarcia
 ms.date: 05/18/2020
 ms.topic: overview
 ms.service: azure-spatial-anchors
-ms.openlocfilehash: 9f6f428a930f03259986373ca70a95d5df1f7dc3
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 9457836a3048ff08b228bf9d5b84400af15d6cc5
+ms.sourcegitcommit: b33c9ad17598d7e4d66fe11d511daa78b4b8b330
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87091493"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88854951"
 ---
 # <a name="frequently-asked-questions-about-azure-spatial-anchors"></a>Часто задаваемые вопросы о службе "Пространственные привязки Azure"
 
@@ -51,7 +51,7 @@ ms.locfileid: "87091493"
 
 **Вопрос. Как служба "Пространственные привязки Azure" хранит данные?**
 
-**Ответ.** Все данные хранятся в зашифрованном виде с использованием ключа шифрования данных, управляемого Майкрософт.
+**Ответ.** Все данные хранятся в зашифрованном виде с управляемым ключем шифрования данных Майкрософт, причем все данные хранятся в регионах каждого из ресурсов.
 
 **Вопрос. Какие сведения о среде передаются и хранятся в службе при использовании службы "Пространственные привязки Azure"? Передаются ли и сохраняются ли изображения этой среды?**
 

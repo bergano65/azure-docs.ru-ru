@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 03/23/2020
 ms.author: mbaldwin
 ms.custom: security-benchmark
-ms.openlocfilehash: 475933bcc9219808087671d49778cc3696d8c815
-ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
+ms.openlocfilehash: 46aae2acb1f35eb22259e1e648fb869c23f26c9c
+ms.sourcegitcommit: 656c0c38cf550327a9ee10cc936029378bc7b5a2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/31/2020
-ms.locfileid: "87500799"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89067677"
 ---
 # <a name="azure-security-baseline-for-azure-database-for-postgresql-single-server"></a>Базовая конфигурация безопасности для базы данных Azure для PostgreSQL (отдельный сервер)
 
@@ -40,7 +40,7 @@ ms.locfileid: "87500799"
 
 Настройка правил брандмауэра сервера базы данных Azure для PostgreSQL: https://docs.microsoft.com/azure/postgresql/howto-manage-firewall-using-portal
 
-**Мониторинг Центра безопасности Azure**: Да
+**Мониторинг центра безопасности Azure**: Да
 
 **Ответственность**: Customer
 
@@ -50,7 +50,7 @@ ms.locfileid: "87500799"
 
 Настройте приватный канал для базы данных Azure для PostgreSQL: https://docs.microsoft.com/azure/postgresql/howto-configure-privatelink-portal
 
-Включение журналов потоков NSG: https://docs.microsoft.com/azure/network-watcher/network-watcher-nsg-flow-logging-portal
+Как включить журналы потоков NSG: https://docs.microsoft.com/azure/network-watcher/network-watcher-nsg-flow-logging-portal
 
 Включение и использование Аналитики трафика: https://docs.microsoft.com/azure/network-watcher/traffic-analytics
 
@@ -60,7 +60,7 @@ ms.locfileid: "87500799"
 
 ### <a name="13-protect-critical-web-applications"></a>1.3. Защита критических веб-приложений
 
-**Руководство**. Неприменимо; эта рекомендация предназначена для веб-приложений, работающих в службе приложений Azure или в ресурсах вычислений.
+**Рекомендации**. Неприменимо. Эта рекомендация предназначена для веб-приложений, работающих в службе приложений Azure или в ресурсах вычислений.
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -120,7 +120,7 @@ ms.locfileid: "87500799"
 
 Общие сведения об использовании тегов службы для базы данных Azure для PostgreSQL: https://docs.microsoft.com/azure/postgresql/concepts-data-access-and-security-vnet#terminology-and-description
 
-**Мониторинг Центра безопасности Azure**. Неприменимо
+**Мониторинг центра безопасности Azure**: Неприменимо
 
 **Ответственность**: Customer
 
@@ -138,9 +138,9 @@ ms.locfileid: "87500799"
 
 Создание схемы Azure: https://docs.microsoft.com/azure/governance/blueprints/create-blueprint-portal
 
-**Мониторинг Центра безопасности Azure**. Неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
-**Ответственность**. Customer
+**Ответственность**: Customer
 
 ### <a name="110-document-traffic-configuration-rules"></a>1.10: Документация по правилам конфигурации трафика
 
@@ -164,7 +164,7 @@ ms.locfileid: "87500799"
 
 Создание оповещений в службе Azure Monitor: https://docs.microsoft.com/azure/azure-monitor/platform/alerts-activity-log
 
-**Мониторинг центра безопасности Azure**: Неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
 **Ответственность**: Customer
 
@@ -177,7 +177,7 @@ ms.locfileid: "87500799"
 **Руководство**: Корпорация Майкрософт поддерживает источники времени для ресурсов Azure, например базу данных Azure для PostgreSQL для меток времени в журналах.
 
 
-**Мониторинг Центра безопасности Azure**. Неприменимо
+**Мониторинг центра безопасности Azure**: Неприменимо
 
 **Ответственность**: Microsoft
 
@@ -189,9 +189,9 @@ ms.locfileid: "87500799"
 
 Настройка и предоставление доступа к Журналам аудита для базы данных Azure для PostgreSQL: https://docs.microsoft.com/azure/postgresql/concepts-audit
 
-Подключение Azure Sentinel: https://docs.microsoft.com/azure/sentinel/quickstart-onboard
+Подключение к Azure Sentinel: https://docs.microsoft.com/azure/sentinel/quickstart-onboard
 
-**Мониторинг Центра безопасности Azure**: в настоящее время недоступен.
+**Мониторинг центра безопасности Azure**: Сейчас это недоступно
 
 **Ответственность**: Customer
 
@@ -228,7 +228,7 @@ ms.locfileid: "87500799"
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
-**Ответственность**. Customer
+**Ответственность**: Customer
 
 ### <a name="26-monitor-and-review-logs"></a>2.6: Мониторинг и просмотр журналов
 
@@ -242,7 +242,7 @@ ms.locfileid: "87500799"
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
-**Ответственность**. Customer
+**Ответственность**: Customer
 
 ### <a name="27-enable-alerts-for-anomalous-activity"></a>2.7: Включение оповещений об аномальных действиях
 
@@ -268,7 +268,7 @@ ms.locfileid: "87500799"
 
 **Руководство**: Неприменимо; база данных Azure для PostgreSQL не обрабатывает и не создает журналы, связанные с защитой от вредоносных программ.
 
-**Мониторинг Центра безопасности Azure**: Неприменимо
+**Мониторинг центра безопасности Azure**: Неприменимо
 
 **Ответственность**: Неприменимо
 
@@ -276,9 +276,9 @@ ms.locfileid: "87500799"
 
 **Руководство**: Неприменимо; база данных Azure для PostgreSQL не обрабатывает и не создает журналы, связанные с DNS.
 
-**Мониторинг Центра безопасности Azure**: Неприменимо
+**Мониторинг центра безопасности Azure**: Неприменимо
 
-**Ответственность**. Неприменимо
+**Ответственность**: Неприменимо
 
 ### <a name="210-enable-command-line-audit-logging"></a>2.10. Включение ведения журнала аудита для командной строки
 
@@ -320,7 +320,7 @@ ms.locfileid: "87500799"
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
-**Ответственность**. Customer
+**Ответственность**: Customer
 
 ### <a name="33-use-dedicated-administrative-accounts"></a>3.3: Применение выделенных административных учетных записей
 
@@ -333,7 +333,7 @@ ms.locfileid: "87500799"
 
 **Мониторинг центра безопасности Azure**: Неприменимо
 
-**Ответственность**. Customer
+**Ответственность**: Customer
 
 ### <a name="34-use-single-sign-on-sso-with-azure-active-directory"></a>3.4: Использование единого входа с Azure Active Directory
 
@@ -349,13 +349,13 @@ ms.locfileid: "87500799"
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
-**Ответственность**. Customer
+**Ответственность**: Customer
 
 ### <a name="35-use-multi-factor-authentication-for-all-azure-active-directory-based-access"></a>3.5. Использование многофакторной проверки подлинности для любого доступа на основе Azure Active Directory
 
 **Рекомендации**. Включите многофакторную идентификацию (MFA) в Azure Active Directory и следуйте рекомендациям по управлению идентификацией и доступом в Центре безопасности Azure. При использовании маркеров Azure AD для входа в базу данных возможна многофакторная проверка подлинности для входа в базу данных.
 
-Включение MFA в Azure: https://docs.microsoft.com/azure/active-directory/authentication/howto-mfa-getstarted
+Как включить MFA в Azure: https://docs.microsoft.com/azure/active-directory/authentication/howto-mfa-getstarted
 
 Используйте Azure Active Directory для проверки подлинности в базе данных Azure для PostgreSQL: https://docs.microsoft.com/azure/postgresql/howto-configure-sign-in-aad-authentication
 
@@ -375,7 +375,7 @@ ms.locfileid: "87500799"
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
-**Ответственность**. Customer
+**Ответственность**: Customer
 
 ### <a name="37-log-and-alert-on-suspicious-activity-from-administrative-accounts"></a>3.7: Ведение журнала и создание оповещений по подозрительным действиям учетных записей администраторов
 
@@ -403,7 +403,7 @@ ms.locfileid: "87500799"
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
-**Ответственность**. Customer
+**Ответственность**: Customer
 
 ### <a name="39-use-azure-active-directory"></a>3.9. Использование Azure Active Directory
 
@@ -417,7 +417,7 @@ ms.locfileid: "87500799"
 
 **Мониторинг центра безопасности Azure**: Неприменимо
 
-**Ответственность**. Customer
+**Ответственность**: Customer
 
 ### <a name="310-regularly-review-and-reconcile-user-access"></a>3.10: Регулярная проверка и согласование доступа пользователей
 
@@ -443,7 +443,7 @@ ms.locfileid: "87500799"
 
 Как интегрировать журналы действий Azure в Azure Monitor: https://docs.microsoft.com/azure/active-directory/reports-monitoring/howto-integrate-activity-logs-with-log-analytics
 
-**Мониторинг Центра безопасности Azure**: в настоящее время недоступен.
+**Мониторинг центра безопасности Azure**: Сейчас это недоступно
 
 **Ответственность**: Customer
 
@@ -489,7 +489,7 @@ ms.locfileid: "87500799"
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
-**Ответственность**. Customer
+**Ответственность**: Customer
 
 ### <a name="42-isolate-systems-storing-or-processing-sensitive-information"></a>4.2. Изолирование систем, хранящих или обрабатывающих конфиденциальные данные
 
@@ -519,7 +519,7 @@ ms.locfileid: "87500799"
 
 Общие сведения о защите данных клиентов в Azure: https://docs.microsoft.com/azure/security/fundamentals/protection-customer-data
 
-**Мониторинг Центра безопасности Azure**: Да
+**Мониторинг центра безопасности Azure**: Да
 
 **Ответственность**: Совмещаемая блокировка
 
@@ -549,25 +549,25 @@ ms.locfileid: "87500799"
 
 ### <a name="46-use-azure-rbac-to-control-access-to-resources"></a>4.6. Контроль доступа к ресурсам с помощью RBAC
 
-**Руководство**. Использование управления доступом на основе ролей Azure (Azure RBAC) для управления доступом к базе данных Azure для управления PostgreSQL (например, портал Azure). Для доступа к уровню данных (в самой базе данных) используйте SQL-запросы для создания пользователей и настройки разрешений пользователей. RBAC не влияет на разрешения пользователей в базе данных.
+**Руководство**. Использование управления доступом на основе ролей Azure (Azure RBAC) для управления доступом к базе данных Azure для управления PostgreSQL (например, портал Azure). Для доступа к уровню данных (в самой базе данных) используйте SQL-запросы для создания пользователей и настройки разрешений пользователей. Azure RBAC не влияет на разрешения пользователей в базе данных.
 
-Как настроить RBAC в Azure: https://docs.microsoft.com/azure/role-based-access-control/role-assignments-portal
+Как настроить Azure RBAC: https://docs.microsoft.com/azure/role-based-access-control/role-assignments-portal
 
 Настройка и предоставление прав пользователей с помощью SQL для базы данных Azure для PostgreSQL: https://docs.microsoft.com/azure/postgresql/howto-create-users
 
-**Мониторинг Центра безопасности Azure**: Неприменимо
+**Мониторинг центра безопасности Azure**: Неприменимо
 
 **Ответственность**: Customer
 
 ### <a name="47-use-host-based-data-loss-prevention-to-enforce-access-control"></a>4.7. Использование защиты от потери данных на основе узла для обеспечения контроля доступа
 
-**Рекомендации**. Неприменимо. Эта рекомендация предназначена для вычислительных ресурсов.
+**Руководство**: Неприменимо; эта рекомендация предназначена для вычислительных ресурсов.
 
 Корпорация Майкрософт управляет базовой инфраструктурой базы данных Azure для PostgreSQL и реализовала надежные элементы управления для предотвращения потери или раскрытия данных клиента.
 
 Общие сведения о защите данных клиентов в Azure: https://docs.microsoft.com/azure/security/fundamentals/protection-customer-data
 
-**Мониторинг Центра безопасности Azure**. Неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
 **Ответственность**: Microsoft
 
@@ -608,7 +608,7 @@ AskAzureDBforPostgreSQL@service.microsoft.com.
 
 Покрытие компонентов для служб Azure PaaS в центре безопасности Azure: https://docs.microsoft.com/azure/security-center/features-paas
 
-**Мониторинг Центра безопасности Azure**: в настоящее время недоступен.
+**Мониторинг центра безопасности Azure**: Сейчас это недоступно
 
 **Ответственность**: Customer
 
@@ -640,7 +640,7 @@ AskAzureDBforPostgreSQL@service.microsoft.com.
 
 **Руководство**: Корпорация Майкрософт управляет уязвимостью в базовых системах, поддерживающих базу данных Azure для PostgreSQL.
 
-**Мониторинг Центра безопасности Azure**. Неприменимо
+**Мониторинг центра безопасности Azure**: Неприменимо
 
 **Ответственность**: Microsoft
 
@@ -666,7 +666,7 @@ AskAzureDBforPostgreSQL@service.microsoft.com.
 
 **Руководство**: Примените теги к базе данных Azure для экземпляров PostgreSQL и другим связанным ресурсам, предоставив метаданные для логической организации их в таксономию.
 
-Создание и использование тегов: https://docs.microsoft.com/azure/azure-resource-manager/resource-group-using-tags
+Как создавать и использовать теги: https://docs.microsoft.com/azure/azure-resource-manager/resource-group-using-tags
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -708,7 +708,7 @@ AskAzureDBforPostgreSQL@service.microsoft.com.
 
 Создание запросов с помощью Azure Graph: https://docs.microsoft.com/azure/governance/resource-graph/first-query-portal
 
-**Мониторинг Центра безопасности Azure**. Неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
 **Ответственность**: Customer
 
@@ -748,7 +748,7 @@ AskAzureDBforPostgreSQL@service.microsoft.com.
 
 Отказ от определенного типа ресурса с помощью Политики Azure: https://docs.microsoft.com/azure/governance/policy/samples/not-allowed-resource-types
 
-**Мониторинг Центра безопасности Azure**. Неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
 **Ответственность**: Customer
 
@@ -766,7 +766,7 @@ AskAzureDBforPostgreSQL@service.microsoft.com.
 
 Как настроить условный доступ для блокировки доступа к Azure Resource Manager: https://docs.microsoft.com/azure/role-based-access-control/conditional-access-azure-management
 
-**Мониторинг Центра безопасности Azure**. Неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
 **Ответственность**: Customer
 
@@ -776,7 +776,7 @@ AskAzureDBforPostgreSQL@service.microsoft.com.
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
-**Ответственность**. Неприменимо
+**Ответственность**: Неприменимо
 
 ### <a name="613-physically-or-logically-segregate-high-risk-applications"></a>6.13. Физическое или логическое разделение приложений с высоким риском
 
@@ -802,7 +802,7 @@ AskAzureDBforPostgreSQL@service.microsoft.com.
 
 Настройка Политики SQL Azure и управление ею: https://docs.microsoft.com/azure/governance/policy/tutorials/create-and-manage
 
-**Мониторинг Центра безопасности Azure**. Неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
 **Ответственность**: Customer
 
@@ -842,7 +842,7 @@ AskAzureDBforPostgreSQL@service.microsoft.com.
 
 Документация по Azure Repos: https://docs.microsoft.com/azure/devops/repos/index?view=azure-devops
 
-**Мониторинг центра безопасности Azure**: Неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
 **Ответственность**: Customer
 
@@ -860,7 +860,7 @@ AskAzureDBforPostgreSQL@service.microsoft.com.
 
 Настройка Политики SQL Azure и управление ею: https://docs.microsoft.com/azure/governance/policy/tutorials/create-and-manage
 
-**Мониторинг Центра безопасности Azure**. Неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
 **Ответственность**: Customer
 
@@ -878,7 +878,7 @@ AskAzureDBforPostgreSQL@service.microsoft.com.
 
 Как настроить политику SQL Azure и управлять ею: https://docs.microsoft.com/azure/governance/policy/tutorials/create-and-manage
 
-**Мониторинг Центра безопасности Azure**. Неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
 **Ответственность**: Customer
 
@@ -916,7 +916,7 @@ AskAzureDBforPostgreSQL@service.microsoft.com.
 
 Интеграция с управляемыми удостоверениями Azure: https://docs.microsoft.com/azure/azure-app-configuration/howto-integrate-azure-managed-service-identity
 
-**Мониторинг Центра безопасности Azure**: Да
+**Мониторинг центра безопасности Azure**: Да
 
 **Ответственность**: Customer
 
@@ -936,12 +936,12 @@ AskAzureDBforPostgreSQL@service.microsoft.com.
 
 ### <a name="81-use-centrally-managed-anti-malware-software"></a>8.1. Использование централизованно управляемого программного обеспечения для защиты от вредоносных программ
 
-**Руководство**. Неприменимо; эта рекомендация предназначена для вычислительных ресурсов.
+**Руководство**: Неприменимо; эта рекомендация предназначена для вычислительных ресурсов.
 
 Защита от вредоносных программ Майкрософт включена на базовом узле, поддерживающем службы Azure (например, служба приложений Azure), но не выполняется в содержимом клиента.
 
 
-**Мониторинг Центра безопасности Azure**: Неприменимо
+**Мониторинг центра безопасности Azure**: Неприменимо
 
 **Ответственность**: Microsoft
 
@@ -951,7 +951,7 @@ AskAzureDBforPostgreSQL@service.microsoft.com.
 
 Предварительно сканируйте любое содержимое, отправляемое в невычислительные ресурсы Azure, например служба приложений, хранилище Data Lake, хранилище BLOB-объектов, база данных Azure для PostgreSQL и т. д. Корпорация Майкрософт не может получить доступ к данным в этих экземплярах.
 
-**Мониторинг Центра безопасности Azure**: Неприменимо
+**Мониторинг центра безопасности Azure**: Неприменимо
 
 **Ответственность**: Совмещаемая блокировка
 
@@ -977,7 +977,7 @@ AskAzureDBforPostgreSQL@service.microsoft.com.
 
 Сведения о начальной конфигурации базы данных Azure для PostgreSQL: https://docs.microsoft.com/azure/postgresql/tutorial-design-database-using-azure-portal
 
-**Мониторинг Центра безопасности Azure**: Неприменимо
+**Мониторинг центра безопасности Azure**: Неприменимо
 
 **Ответственность**: Совмещаемая блокировка
 
@@ -1045,7 +1045,7 @@ AskAzureDBforPostgreSQL@service.microsoft.com.
 
 Кроме того, четко помечайте подписки (для устар. производственной, непроизводственной) и создайте систему именования, чтобы четко определить и классифицировать ресурсы Azure.
 
-**Мониторинг Центра безопасности Azure**. Неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
 **Ответственность**: Customer
 

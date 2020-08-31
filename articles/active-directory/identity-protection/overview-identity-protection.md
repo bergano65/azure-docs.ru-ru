@@ -5,19 +5,19 @@ services: active-directory
 ms.service: active-directory
 ms.subservice: identity-protection
 ms.topic: overview
-ms.date: 08/15/2020
+ms.date: 08/24/2020
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: sahandle
 ms.custom: contperfq1
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 39c9522362ca6710fae5dee5d831e63cc36a3950
-ms.sourcegitcommit: 54d8052c09e847a6565ec978f352769e8955aead
+ms.openlocfilehash: 0f6ec9c1fb5ae359ca88b48dea97c6a00c0f2b40
+ms.sourcegitcommit: d39f2cd3e0b917b351046112ef1b8dc240a47a4f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88509116"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88815187"
 ---
 # <a name="what-is-identity-protection"></a>Общие сведения о защите идентификации
 
@@ -52,9 +52,10 @@ ms.locfileid: "88509116"
 | Необычный переход | Вход из необычного местоположения (на основе недавних входов пользователя). |
 | Анонимный IP-адрес | Вход с анонимного IP-адреса (например, Tor Browser, анонимайзеры VPN). |
 | Неизвестные свойства входа | Вход с использованием свойств, в последнее время не наблюдавшихся у пользователя. |
-| IP-адрес, который помечен как вредоносный | Вход с вредоносного IP-адреса |
+| IP-адрес, который помечен как вредоносный | Вход с вредоносного IP-адреса. |
 | Утечка учетных данных | Это обнаружение риска означает, что произошла утечка допустимых учетных данных пользователя. |
-| Аналитика угроз Azure AD | Источниками внутренней и внешней аналитики угроз Майкрософт обнаружено известный шаблон атак |
+| Распыление пароля | Свидетельствует о том, что несколько имен пользователей подвергаются атакам с использованием общих паролей в едином режиме принудительного подбора. |
+| Аналитика угроз Azure AD | Источниками внутренней и внешней аналитики угроз Майкрософт обнаружено известный шаблон атак. |
 
 Дополнительные сведения об этих рисках и их вычислении можно найти в статье [Что такое риск](concept-identity-protection-risks.md).
 

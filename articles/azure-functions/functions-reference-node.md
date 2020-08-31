@@ -5,12 +5,12 @@ ms.assetid: 45dedd78-3ff9-411f-bb4b-16d29a11384c
 ms.topic: conceptual
 ms.date: 07/17/2020
 ms.custom: devx-track-javascript
-ms.openlocfilehash: ff3e5431481cba0d2d806d60ba5d7a291d1b2b69
-ms.sourcegitcommit: 85eb6e79599a78573db2082fe6f3beee497ad316
+ms.openlocfilehash: 6ff56ba6dc85901c8cdc7a9b06fbc261feb8792d
+ms.sourcegitcommit: 420c30c760caf5742ba2e71f18cfd7649d1ead8a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87810122"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89055334"
 ---
 # <a name="azure-functions-javascript-developer-guide"></a>Руководство разработчика JavaScript для Функций Azure
 
@@ -20,7 +20,7 @@ ms.locfileid: "87810122"
 
 | Начало работы | Основные понятия| Направляемое обучение |
 | -- | -- | -- | 
-| <ul><li>[ФункцияNode.js с использованием Visual Studio Code](./functions-create-first-function-vs-code.md?pivots=programming-language-javascript)</li><li>[Node.js функции с помощью терминала/командной строки](./functions-create-first-azure-function-azure-cli.md?pivots=programming-language-javascript)</li></ul> | <ul><li>[Руководство для разработчиков](functions-reference.md)</li><li>[Сравнение вариантов размещения](functions-scale.md)</li><li>[Функции TypeScript](#typescript)</li><li>[&nbsp;Вопросы производительности](functions-best-practices.md)</li></ul> | <ul><li>[Создание бессерверных приложений.](/learn/paths/create-serverless-applications/)</li><li>[Рефакторинг интерфейсов API Node.js и Express для бессерверных интерфейсов API](/learn/modules/shift-nodejs-express-apis-serverless/)</li></ul> |
+| <ul><li>[ ФункцияNode.js с использованием Visual Studio Code](./functions-create-first-function-vs-code.md?pivots=programming-language-javascript)</li><li>[Node.js функции с помощью терминала/командной строки](./functions-create-first-azure-function-azure-cli.md?pivots=programming-language-javascript)</li></ul> | <ul><li>[Руководство для разработчиков](functions-reference.md)</li><li>[Сравнение вариантов размещения](functions-scale.md)</li><li>[Функции TypeScript](#typescript)</li><li>[&nbsp;Вопросы производительности](functions-best-practices.md)</li></ul> | <ul><li>[Создание бессерверных приложений.](/learn/paths/create-serverless-applications/)</li><li>[Рефакторинг интерфейсов API Node.js и Express для бессерверных интерфейсов API](/learn/modules/shift-nodejs-express-apis-serverless/)</li></ul> |
 
 ## <a name="javascript-function-basics"></a>Основы функций JavaScript
 
@@ -183,15 +183,38 @@ module.exports = async function (context, req) {
 Параметры для `dataType` — это `binary`, `stream` и `string`.
 
 ## <a name="context-object"></a>Объект context
-Среда выполнения использует объект `context` для передачи данных в функцию и из нее, а также для взаимодействия со средой выполнения. Объект контекста может использоваться для чтения и настройки данных из привязок, записи журналов и применения обратного вызова `context.done`, если экспортированная функция является синхронной.
 
-Объект `context` всегда является первым параметром функции. Он должен быть включен, так как содержит важные методы, такие как `context.done` и `context.log`. Для этого объекта можно указать любое имя (например, `ctx` или `c`).
+Среда выполнения использует `context` объект для передачи данных в функцию и в среду выполнения. Используется для чтения и настройки данных из привязок, а также для записи в журналы `context` объект всегда является первым параметром, передаваемым функции.
+
+Для функций, иссвященных синхронному коду, объект контекста включает `done` обратный вызов, который вызывается при завершении обработки функции. Явный вызов `done` не требуется при написании асинхронного кода; `done` обратный вызов вызывается неявно.
 
 ```javascript
-// You must include a context, but other arguments are optional
-module.exports = function(ctx) {
-    // function logic goes here :)
-    ctx.done();
+module.exports = (context) => {
+
+    // function logic goes here
+
+    context.log("The function has executed.");
+
+    context.done();
+};
+```
+
+Контекст, переданный в функцию, предоставляет `executionContext` свойство, которое является объектом со следующими свойствами:
+
+| Имя свойства  | Тип  | Описание |
+|---------|---------|---------|
+| `invocationId` | Строка | Предоставляет уникальный идентификатор для конкретного вызова функции. |
+| `functionName` | Строка | Предоставляет имя выполняемой функции. |
+| `functionDirectory` | Строка | Предоставляет каталог приложения функций. |
+
+В следующем примере показано, как вернуть `invocationId` .
+
+```javascript
+module.exports = (context, req) => {
+    context.res = {
+        body: context.executionContext.invocationId
+    };
+    context.done();
 };
 ```
 
@@ -201,7 +224,7 @@ module.exports = function(ctx) {
 context.bindings
 ```
 
-Возвращает именованный объект, используемый для чтения или назначения данных привязки. Доступ к данным входных и триггеров можно получить, читая свойства в `context.bindings` . Данные выходной привязки могут быть назначены путем добавления данных в`context.bindings`
+Возвращает именованный объект, используемый для чтения или назначения данных привязки. Доступ к данным входных и триггеров можно получить, читая свойства в `context.bindings` . Данные выходной привязки могут быть назначены путем добавления данных в `context.bindings`
 
 Например, следующие определения привязки в function.json позволяют вам получить доступ к содержимому очереди из `context.bindings.myInput` и назначить выходные данные очереди, используя `context.bindings.myOutput`.
 
@@ -647,7 +670,7 @@ func azure functionapp publish <APP_NAME>
 
 При использовании зависящего от службы клиента в приложении "функции Azure" не создавайте новый клиент при каждом вызове функции. Вместо этого создайте в глобальной области один статический клиент. Дополнительные сведения см. [в статье Управление подключениями в функциях Azure](manage-connections.md).
 
-### <a name="use-async-and-await"></a>Используйте `async` и`await`
+### <a name="use-async-and-await"></a>Используйте `async` и `await`
 
 При написании функций Azure в JavaScript следует писать код с помощью `async` `await` ключевых слов и. Написание кода с помощью `async` и `await` вместо обратных вызовов или `.then` и `.catch` с помощью обещания помогает избежать двух распространенных проблем:
  - Создание неперехваченных исключений, которые приводили [к сбою Node.js процесса](https://nodejs.org/api/process.html#process_warning_using_uncaughtexception_correctly), потенциально влияя на выполнение других функций.

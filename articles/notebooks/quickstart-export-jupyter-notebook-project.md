@@ -3,12 +3,12 @@ title: Экспорт проекта Jupyter Notebook из Записных кн
 description: Быстрый экспорт проекта Jupyter Notebook.
 ms.topic: quickstart
 ms.date: 06/29/2020
-ms.openlocfilehash: ad37db7e9bdb1251a3e62bd567960979f556b489
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: a2e76f2c1956df4d0de59cfb429dc1c9dce85a62
+ms.sourcegitcommit: c6b9a46404120ae44c9f3468df14403bcd6686c1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85832038"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88892105"
 ---
 # <a name="quickstart-export-a-jupyter-notebook-project-in-azure-notebooks-preview"></a>Краткое руководство. Экспорт проекта Jupyter Notebook в Записные книжки Azure (предварительная версия)
 
@@ -17,6 +17,7 @@ ms.locfileid: "85832038"
 В этом кратком руководстве показано, как скачать проект Записных книжек Azure для использования в других решениях Jupyter Notebook. 
 
 ## <a name="prerequisites"></a>Предварительные требования
+
 Существующий проект Записных книжек Azure.
 
 ## <a name="export-an-azure-notebooks-project"></a>Экспорт проекта Записных книжек Azure
@@ -49,7 +50,7 @@ ms.locfileid: "85832038"
 
 ## <a name="use-notebooks-in-visual-studio-code"></a>Использование Записных книжек в Visual Studio Code
 
-[VS Code](https://code.visualstudio.com/) — это бесплатный редактор кода, который можно использовать локально или можно подключать к удаленным вычислительным ресурсам. В сочетании с расширением Python он предлагает полную среду для разработки на Python, включая полнофункциональный нативный интерфейс для работы с записными книжками Jupyter. 
+[VS Code](https://code.visualstudio.com/) — это бесплатный редактор кода, который можно использовать локально или можно подключать к удаленным вычислительным ресурсам. В сочетании с расширением Python он предлагает полную среду для разработки на Python, включая полнофункциональный нативный интерфейс для работы с Jupyter Notebook. 
 
 ![Поддержка Jupyter Notebook в VS Code](media/vs-code-jupyter-notebook.png)
 

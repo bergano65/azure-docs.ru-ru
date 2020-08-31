@@ -9,12 +9,12 @@ ms.service: iot-pnp
 services: iot-pnp
 manager: eliotgra
 ms.custom: references_regions
-ms.openlocfilehash: 7f889d6730012a11ebf82a78583ef420b7621075
-ms.sourcegitcommit: 46f8457ccb224eb000799ec81ed5b3ea93a6f06f
+ms.openlocfilehash: 32a873af3d287c3bd1e83de6db8e17ebc1d2958b
+ms.sourcegitcommit: b33c9ad17598d7e4d66fe11d511daa78b4b8b330
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87337659"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88855627"
 ---
 # <a name="what-is-iot-plug-and-play-preview"></a>Что представляет собой предварительная версия IoT Plug and Play?
 
@@ -61,6 +61,10 @@ IoT Plug and Play (предварительная версия) позволяе
 
 > [!Important]
 > Устройства IoT Plug and Play должны использовать MQTT или MQTT через WebSocket. Другие протоколы, такие как AMQP или HTTP, нельзя использовать для реализации устройств IoT Plug and Play.
+
+## <a name="device-certification"></a>Сертификация устройства
+
+[Программа сертификации устройств IoT Plug and Play](howto-certify-device.md) проверяет, соответствует ли устройство требованиям сертификации IoT Plug and Play. Вы можете добавить сертифицированное устройство в общедоступный [каталог сертифицированных устройств Azure IoT](https://aka.ms/devicecatalog).
 
 ## <a name="regional-availability"></a>Доступность по регионам
 

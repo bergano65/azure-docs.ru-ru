@@ -10,12 +10,12 @@ ms.topic: include
 ms.date: 01/22/2020
 ms.author: pafarley
 ms.custom: devx-track-javascript
-ms.openlocfilehash: 861e6528b52af39a56cc6b936eae0d68df2eecf5
-ms.sourcegitcommit: 2ff0d073607bc746ffc638a84bb026d1705e543e
+ms.openlocfilehash: 4d025057cf8992e1dc54a0fd4a07814c7cbb13d3
+ms.sourcegitcommit: 5b6acff3d1d0603904929cc529ecbcfcde90d88b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87841858"
+ms.lasthandoff: 08/21/2020
+ms.locfileid: "88748898"
 ---
 <a name="HOLTop"></a>
 
@@ -208,9 +208,9 @@ npm install @azure/cognitiveservices-computervision
 
 [!code-javascript[](~/cognitive-services-quickstart-code/javascript/ComputerVision/ComputerVisionQuickstart.js?name=snippet_imagetype_describe)]
 
-## <a name="read-printed-and-handwritten-text"></a>Чтение печатного и рукописного текста
+## <a name="extract-text-ocr-with-read"></a>Извлечение текста (OCR) с помощью операции чтения
 
-Компьютерное зрение может считывать видимый текст в образе и преобразовывать его в поток символов.
+Компьютерное зрение может извлекать видимый текст в образе и преобразовывать его в поток символов. В этом примере используются операции чтения.
 
 > [!NOTE]
 > Кроме того, вы можете прочитать текст из локального образа. См. пример кода на [GitHub](https://github.com/Azure-Samples/cognitive-services-quickstart-code/blob/master/javascript/ComputerVision/ComputerVisionQuickstart.js) для сценариев, включающих локальные образы.
@@ -221,17 +221,17 @@ npm install @azure/cognitiveservices-computervision
 
 [!code-javascript[](~/cognitive-services-quickstart-code/javascript/ComputerVision/ComputerVisionQuickstart.js?name=snippet_read_images)]
 
-### <a name="call-the-recognize-api"></a>Вызов API распознавания
+### <a name="call-the-read-api"></a>Вызов API чтения
 
-Добавьте приведенный ниже код, который вызывает функцию `recognizeText` для заданных изображений.
+Добавьте приведенный ниже код, который вызывает функции `readTextFromURL` и `readTextFromFile` для заданных изображений.
 
 [!code-javascript[](~/cognitive-services-quickstart-code/javascript/ComputerVision/ComputerVisionQuickstart.js?name=snippet_read_call)]
 
-Определите функцию `recognizeText`. При этом для клиентского объекта вызывается метод **recognizeText**, который возвращает идентификатор операции и запускает асинхронный процесс чтения содержимого образа. Потом он использует идентификатор операции, чтобы проверить операцию с интервалами в одну секунду, пока не будут возвращены результаты. Затем он возвращает извлеченные результаты.
+Определите функции `readTextFromURL` и `readTextFromFile`. При этом для клиентского объекта вызывается операция **read** и метод **readInStream**, который возвращает идентификатор операции и запускает асинхронный процесс чтения содержимого изображения. Затем он использует идентификатор операции, чтобы проверять состояние операции, пока не будут возвращены результаты. Затем они возвращают извлеченные результаты.
 
 [!code-javascript[](~/cognitive-services-quickstart-code/javascript/ComputerVision/ComputerVisionQuickstart.js?name=snippet_read_helper)]
 
-После определите вспомогательную функцию `printRecText`, которая выводит результаты операции распознавания на консоль.
+После определите вспомогательную функцию `printRecText`, которая выводит результаты операций чтения в консоль.
 
 [!code-javascript[](~/cognitive-services-quickstart-code/javascript/ComputerVision/ComputerVisionQuickstart.js?name=snippet_read_print)]
 
