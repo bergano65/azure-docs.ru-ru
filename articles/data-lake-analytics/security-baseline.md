@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 07/22/2020
 ms.author: mbaldwin
 ms.custom: security-benchmark
-ms.openlocfilehash: 33084d72e26f2926751def686c0a4c1d0485a5c2
-ms.sourcegitcommit: 98854e3bd1ab04ce42816cae1892ed0caeedf461
+ms.openlocfilehash: 383e135cad867ed8f345b39a6cace6fbbca8bfa0
+ms.sourcegitcommit: 656c0c38cf550327a9ee10cc936029378bc7b5a2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "88005122"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89076384"
 ---
 # <a name="azure-security-baseline-for-data-lake-analytics"></a>Базовый план безопасности Azure для Data Lake Analytics
 
@@ -334,7 +334,7 @@ ms.locfileid: "88005122"
 
 ### <a name="39-use-azure-active-directory"></a>3.9. Использование Azure Active Directory
 
-**Руководство**. Использование Azure Active Directory (Azure AD) в качестве централизованной системы проверки подлинности и авторизации. Azure AD предоставляет управление доступом на основе ролей (RBAC) для точного управления доступом клиента к ресурсам Data Lake Analytics.
+**Руководство**. Использование Azure Active Directory (Azure AD) в качестве централизованной системы проверки подлинности и авторизации. Управление доступом на основе ролей в Azure (Azure RBAC) обеспечивает точный контроль доступа клиента к ресурсам Data Lake Analytics.
 
 * [Создание и настройка экземпляра Azure AD](https://docs.microsoft.com/azure/active-directory/fundamentals/active-directory-access-create-new-tenant)
 
@@ -404,7 +404,7 @@ ms.locfileid: "88005122"
 
 ### <a name="42-isolate-systems-storing-or-processing-sensitive-information"></a>4.2. Изолирование систем, хранящих или обрабатывающих конфиденциальные данные
 
-**Руководство**. Реализация изоляции с помощью отдельных подписок, групп управления для отдельных доменов безопасности, таких как среда, чувствительность данных. Вы можете ограничить Data Lake Analytics, чтобы управлять уровнем доступа к ресурсам Data Lake Analytics, которые требуются приложениям и корпоративным средам. Когда правила брандмауэра настроены, доступ к ресурсам Data Lake Analytics могут получить только приложения, запрашивающие данные через указанный набор сетей. Вы можете управлять доступом к Azure Data Lake Analytics через Azure AD RBAC.
+**Руководство**. Реализация изоляции с помощью отдельных подписок, групп управления для отдельных доменов безопасности, таких как среда, чувствительность данных. Вы можете ограничить Data Lake Analytics, чтобы управлять уровнем доступа к ресурсам Data Lake Analytics, которые требуются приложениям и корпоративным средам. Когда правила брандмауэра настроены, доступ к ресурсам Data Lake Analytics могут получить только приложения, запрашивающие данные через указанный набор сетей. Вы можете управлять доступом к Azure Data Lake Analytics через Azure RBAC.
 
 * [Создание дополнительных подписок Azure](https://docs.microsoft.com/azure/billing/billing-create-subscription)
 
@@ -456,11 +456,11 @@ ms.locfileid: "88005122"
 
 **Ответственность**: Customer
 
-### <a name="46-use-role-based-access-control-to-control-access-to-resources"></a>4,6. Использование управления доступом на основе ролей для управления доступом к ресурсам
+### <a name="46-use-azure-rbac-to-control-access-to-resources"></a>4.6. Контроль доступа к ресурсам с помощью RBAC
 
-**Руководство**. Использование управления доступом на основе РОЛЕЙ (RBAC) для управления взаимодействием пользователей со службой.
+**Руководство**. Использование управления доступом на основе ролей Azure (Azure RBAC) для управления взаимодействием пользователей со службой.
 
-* [Управление управлением доступом на основе ролей](https://docs.microsoft.com/azure/data-lake-analytics/data-lake-analytics-manage-use-portal#manage-role-based-access-control)
+* [Управление Azure RBAC](https://docs.microsoft.com/azure/data-lake-analytics/data-lake-analytics-manage-use-portal#manage-role-based-access-control)
 
 **Мониторинг Центра безопасности Azure**: в настоящее время недоступен.
 

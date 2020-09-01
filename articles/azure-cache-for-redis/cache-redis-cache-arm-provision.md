@@ -1,142 +1,84 @@
 ---
-title: Развертывание кэша Azure для Redis с помощью Azure Resource Manager
+title: Развертывание кэша Azure для Redis с помощью шаблона Azure Resource Manager
 description: Узнайте, как использовать шаблон Azure Resource Manager для развертывания ресурса кэша Azure для Redis. Для распространенных сценариев предусмотрены шаблоны.
 author: yegu-ms
 ms.author: yegu
 ms.service: cache
 ms.topic: conceptual
-ms.date: 01/23/2017
-ms.openlocfilehash: 2d00a6b7753a61bb2527a56231b2fe054736f1b0
-ms.sourcegitcommit: 98854e3bd1ab04ce42816cae1892ed0caeedf461
+ms.custom: subject-armqs
+ms.date: 08/18/2020
+ms.openlocfilehash: 3c2d13794f2fc3af4541032d1f94967681c0deee
+ms.sourcegitcommit: 656c0c38cf550327a9ee10cc936029378bc7b5a2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "88008582"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89078424"
 ---
-# <a name="create-an-azure-cache-for-redis-using-a-template"></a>Создание экземпляра кэша Redis для Azure с помощью шаблона
+# <a name="create-an-azure-cache-for-redis-using-a-resource-manager-template"></a>Создание кэша Azure для Redis с помощью шаблона диспетчер ресурсов
 
-[!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
+Узнайте, как создать шаблон Azure Resource Manager, который развертывает кэш Azure для Redis. Кэш можно использовать с существующей учетной записи хранения для размещения данных диагностики. Вы узнаете, как определить развертываемые ресурсы и параметры, указываемые при развертывании. Этот шаблон можно использовать для собственных развертываний или настроить его в соответствии с вашими требованиями. В настоящее время параметры диагностики являются общими для всех кэшей в одном регионе подписки. Обновление одного кэша в регионе влияет на все кэши в нем.
 
-В этом разделе описано, как создать шаблон Azure Resource Manager, который развертывает кэш Redis для Azure. Кэш можно использовать с существующей учетной записи хранения для размещения данных диагностики. Вы узнаете, как определить развертываемые ресурсы и параметры, указываемые при развертывании. Этот шаблон можно использовать для собственных развертываний или настроить его в соответствии с вашими требованиями.
+[!INCLUDE [About Azure Resource Manager](../../includes/resource-manager-quickstart-introduction.md)]
 
-В настоящее время параметры диагностики являются общими для всех кэшей в одном регионе подписки. Обновление одного кэша в регионе влияет на все кэши в нем.
+Если среда соответствует предварительным требованиям и вы знакомы с использованием шаблонов ARM, нажмите кнопку **Развертывание в Azure**. Шаблон откроется на портале Azure.
 
-Дополнительные сведения о создании шаблонов см. в статье [Создание шаблонов Azure Resource Manager](../azure-resource-manager/templates/template-syntax.md). Сведения о синтаксисе JSON и свойствах для типов ресурсов кэша см. в справочнике по [типам ресурсов Microsoft.Cache](/azure/templates/microsoft.cache/allversions).
+[![Развертывание в Azure](../media/template-deployments/deploy-to-azure.svg)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-quickstart-templates%2Fmaster%2F101-redis-cache%2Fazuredeploy.json)
 
-См. [полный шаблон кэша Redis для Azure](https://github.com/Azure/azure-quickstart-templates/blob/master/101-redis-cache/azuredeploy.json).
+## <a name="prerequisites"></a>Предварительные требования
 
-> [!NOTE]
-> Доступны шаблоны Resource Manager для нового [уровня "Премиум"](cache-overview.md#service-tiers) . 
-> 
-> * [Создание кэша Azure для Redis уровня "Премиум" с кластеризацией](https://azure.microsoft.com/resources/templates/201-redis-premium-cluster-diagnostics/)
-> * [Создание кэша Redis для Azure уровня "Премиум" с сохранением данных](https://azure.microsoft.com/resources/templates/201-redis-premium-persistence/)
-> * [Создание кэша Premium Redis, развернутого в виртуальной сети](https://azure.microsoft.com/resources/templates/201-redis-premium-vnet/)
-> 
-> Чтобы узнать о новых шаблонах, обратитесь к статье [Шаблоны быстрого запуска Azure](https://azure.microsoft.com/documentation/templates/) и выполните поиск по критерию `Azure Cache for Redis`.
-> 
-> 
+* **Подписка Azure**: Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/), прежде чем начинать работу.
+* **Учетная запись хранения**. чтобы создать ее, см. статью [Создание учетной записи хранения Azure](/storage/common/storage-account-create?toc=%2Fazure%2Fstorage%2Fblobs%2Ftoc.json&tabs=template). Учетная запись хранения используется для диагностических данных.
 
-## <a name="what-you-will-deploy"></a>Что именно развертывается
-С помощью этого шаблона вы развернете кэш Redis для Azure, который использует существующую учетную запись хранения для диагностических данных.
+## <a name="review-the-template"></a>Изучение шаблона
 
-Чтобы выполнить развертывание автоматически, нажмите следующую кнопку.
+Шаблон, используемый в этом кратком руководстве, взят из [шаблонов быстрого запуска Azure](https://azure.microsoft.com/resources/templates/101-redis-cache/).
 
-[![Развернуть в Azure](./media/cache-redis-cache-arm-provision/deploybutton.png)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-quickstart-templates%2Fmaster%2F101-redis-cache%2Fazuredeploy.json)
+:::code language="json" source="~/quickstart-templates/101-redis-cache/azuredeploy.json":::
 
-## <a name="parameters"></a>Параметры
-С помощью диспетчера ресурсов Azure можно определить параметры значений, которые должны указываться на этапе развертывания шаблона. В шаблоне есть раздел "Параметры", содержащий все значения параметров.
-Для этих значений необходимо определить параметры, которые будут зависеть от развертываемого проекта либо от среды, в которой выполняется развертывание. Не определяйте параметры для значений, которые не меняются. Значение каждого параметра в шаблоне определяет развертываемые ресурсы. 
+В шаблоне определены следующие ресурсы:
 
-[!INCLUDE [app-service-web-deploy-redis-parameters](../../includes/cache-deploy-parameters.md)]
+* [Microsoft.Cache/Redis;](/azure/templates/microsoft.cache/redis)
+* [Microsoft. Insights/DiagnosticSettings](/azure/templates/diagnosticsettings)
 
-### <a name="rediscachelocation"></a>redisCacheLocation
-Расположение кэша Redis для Azure. Для наилучшей производительности используйте то же расположение, где находится приложение, которое будет пользоваться кэшем.
+Также доступны шаблоны диспетчер ресурсов для нового [уровня "Премиум](cache-overview.md#service-tiers) ".
 
-```json
-  "redisCacheLocation": {
-    "type": "string"
-  }
+* [Создание кэша Azure для Redis уровня "Премиум" с кластеризацией](https://azure.microsoft.com/resources/templates/201-redis-premium-cluster-diagnostics/)
+* [Создание кэша Redis для Azure уровня "Премиум" с сохранением данных](https://azure.microsoft.com/resources/templates/201-redis-premium-persistence/)
+* [Создание кэша Premium Redis, развернутого в виртуальной сети](https://azure.microsoft.com/resources/templates/201-redis-premium-vnet/)
+
+Чтобы узнать о новых шаблонах, обратитесь к статье [Шаблоны быстрого запуска Azure](https://azure.microsoft.com/documentation/templates/) и выполните поиск по критерию `Azure Cache for Redis`.
+
+## <a name="deploy-the-template"></a>Развертывание шаблона
+
+1. Выберите следующее изображение, чтобы войти на портал Azure и открыть шаблон.
+
+    [![Развертывание в Azure](../media/template-deployments/deploy-to-azure.svg)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-quickstart-templates%2Fmaster%2F101-redis-cache%2Fazuredeploy.json)
+1. Введите или выберите следующие значения.
+
+    * **Подписка**. Выберите подписку Azure, используемую для создания общего ресурса данных и других ресурсов.
+    * **Группа ресурсов**. Выберите **Создать**, чтобы создать новую группу ресурсов или выберите имеющуюся.
+    * **Расположение**. Выберите расположение группы ресурсов. Учетная запись хранения и кэш Redis должны находиться в одном регионе. По умолчанию кэш Redis использует то же расположение, что и группа ресурсов. Поэтому укажите то же расположение, что и у учетной записи хранения.
+    * **Имя кэша Redis**: введите имя для кэша Redis.
+    * **Существующая учетная запись хранения диагностики**: введите идентификатор ресурса для учетной записи хранения. Синтаксис: **/Subscriptions/ &lt; SUBSCRIPTION ID>/RESOURCEGROUPS/ &lt; имя группы ресурсов>/провидерс/Микрософт.стораже/сторажеаккаунтс/ &lt; имя учетной записи хранения>**.
+
+    Для остальных параметров используйте значение по умолчанию.
+1. Установите флажок **Я принимаю указанные выше условия** и нажмите кнопку **Приобрести**.
+
+## <a name="review-deployed-resources"></a>Просмотр развернутых ресурсов
+
+1. Войдите на [портал Azure](https://portal.azure.com).
+1. Откройте созданный кэш Redis.
+
+## <a name="clean-up-resources"></a>Очистка ресурсов
+
+Удалите ненужную группу ресурсов. Ресурсы в ней будут также удалены.
+
+```azurepowershell-interactive
+$resourceGroupName = Read-Host -Prompt "Enter the resource group name"
+Remove-AzResourceGroup -Name $resourceGroupName
+Write-Host "Press [ENTER] to continue..."
 ```
 
-### <a name="existingdiagnosticsstorageaccountname"></a>existingDiagnosticsStorageAccountName
-Имя существующей учетной записи хранения, которую вы хотите использовать для диагностики. 
+## <a name="next-steps"></a>Дальнейшие действия
 
-```json
-  "existingDiagnosticsStorageAccountName": {
-    "type": "string"
-  }
-```
-
-### <a name="enablenonsslport"></a>enableNonSslPort
-Логическое значение, указывающее, следует ли разрешить доступ к портам, отличным от SSL.
-
-```json
-  "enableNonSslPort": {
-    "type": "bool"
-  }
-```
-
-### <a name="diagnosticsstatus"></a>diagnosticsStatus
-Значение, указывающее, включена ли диагностика. Используйте значение ON или OFF.
-
-```json
-  "diagnosticsStatus": {
-    "type": "string",
-    "defaultValue": "ON",
-    "allowedValues": [
-          "ON",
-          "OFF"
-      ]
-  }
-```
-
-## <a name="resources-to-deploy"></a>Развертываемые ресурсы
-### <a name="azure-cache-for-redis"></a>Кэш Redis для Azure
-Создает кэш Redis для Azure.
-
-```json
-  {
-    "apiVersion": "2015-08-01",
-    "name": "[parameters('redisCacheName')]",
-    "type": "Microsoft.Cache/Redis",
-    "location": "[parameters('redisCacheLocation')]",
-    "properties": {
-      "enableNonSslPort": "[parameters('enableNonSslPort')]",
-      "sku": {
-        "capacity": "[parameters('redisCacheCapacity')]",
-        "family": "[parameters('redisCacheFamily')]",
-        "name": "[parameters('redisCacheSKU')]"
-      }
-    },
-    "resources": [
-      {
-        "apiVersion": "2017-05-01-preview",
-        "type": "Microsoft.Cache/redis/providers/diagnosticsettings",
-        "name": "[concat(parameters('redisCacheName'), '/Microsoft.Insights/service')]",
-        "location": "[parameters('redisCacheLocation')]",
-        "dependsOn": [
-          "[concat('Microsoft.Cache/Redis/', parameters('redisCacheName'))]"
-        ],
-        "properties": {
-          "status": "[parameters('diagnosticsStatus')]",
-          "storageAccountName": "[parameters('existingDiagnosticsStorageAccountName')]"
-        }
-      }
-    ]
-  }
-```
-
-## <a name="commands-to-run-deployment"></a>Команды для выполнения развертывания
-[!INCLUDE [app-service-deploy-commands](../../includes/app-service-deploy-commands.md)]
-
-### <a name="powershell"></a>PowerShell
-
-```azurepowershell
-    New-AzResourceGroupDeployment -TemplateUri https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/101-redis-cache/azuredeploy.json -ResourceGroupName ExampleDeployGroup -redisCacheName ExampleCache
-```
-
-### <a name="azure-cli"></a>Azure CLI
-
-```azurecli
-    azure group deployment create --template-uri https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/101-redis-cache/azuredeploy.json -g ExampleDeployGroup
-```
+В этом руководстве вы узнаете, как создать шаблон Azure Resource Manager, который развертывает кэш Azure для Redis. Чтобы узнать, как создать шаблон Azure Resource Manager, который развертывает веб-приложение Azure с кэшем Azure для Redis, см. статью [Создание веб-приложения и кэша Azure для Redis с помощью шаблона](./cache-web-app-arm-with-redis-cache-provision.md).

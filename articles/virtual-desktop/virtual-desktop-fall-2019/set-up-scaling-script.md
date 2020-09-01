@@ -6,12 +6,12 @@ ms.topic: how-to
 ms.date: 03/30/2020
 ms.author: helohr
 manager: lizross
-ms.openlocfilehash: f4092b9d5ee7453533561f5921781fee4d1823eb
-ms.sourcegitcommit: 98854e3bd1ab04ce42816cae1892ed0caeedf461
+ms.openlocfilehash: fd14af6c95654708f339f4a68cd333d0e3162553
+ms.sourcegitcommit: 656c0c38cf550327a9ee10cc936029378bc7b5a2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "88005590"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89078186"
 ---
 # <a name="scale-windows-virtual-desktop-classic-session-hosts-using-azure-automation"></a>Масштабирование узлов виртуальных рабочих столов Windows (классические) с помощью службы автоматизации Azure
 
@@ -21,10 +21,6 @@ ms.locfileid: "88005590"
 Вы можете сократить общие затраты на развертывание Виртуального рабочего стола Windows путем масштабирования виртуальных машин. Это означает завершение работы и освобождение виртуальных машин узла сеансов в часы непиковой нагрузки и их включение и повторное выделение в часы пиковой нагрузки.
 
 В этой статье вы узнаете о средстве масштабирования, созданном с помощью учетной записи службы автоматизации Azure, и приложения логики Azure, которое автоматически масштабирует виртуальные машины узла сеансов в среде виртуальных рабочих столов Windows. Чтобы узнать, как использовать средство масштабирования, перейдите к разделу [Предварительные требования](#prerequisites).
-
-## <a name="report-issues"></a>Сообщение о проблемах
-
-Отчеты о проблемах для инструмента масштабирования в настоящее время обрабатываются на GitHub, а не службой поддержки Майкрософт. Если у вас возникли проблемы с масштабированием, получите необходимые сведения, как описано в разделе " [проблемы с отчетами](#reporting-issues) ", и откройте ошибку GitHub с меткой "4A-ВВД-Scaling-logicapps" на [странице GitHub RDS](https://github.com/Azure/RDS-Templates/issues?q=is%3Aissue+is%3Aopen+label%3A4a-WVD-scaling-logicapps).
 
 ## <a name="how-the-scaling-tool-works"></a>Принцип работы средства масштабирования
 
@@ -362,3 +358,7 @@ New-RdsRoleAssignment -RoleDefinitionName "RDS Contributor" -ApplicationId "<app
     | where logmessage_s contains "ERROR:" or logmessage_s contains "WARN:"
     | project TimeStampUTC = TimeGenerated, TimeStampLocal = TimeStamp_s, HostPool = hostpoolName_s, LineNumAndMessage = logmessage_s, AADTenantId = TenantId
     ```
+
+## <a name="report-issues"></a>Сообщить о проблеме
+
+Отчеты о проблемах для инструмента масштабирования в настоящее время обрабатываются служба поддержки Майкрософт. При создании отчета о проблемах обязательно следуйте инструкциям, приведенным в разделе [отчеты о проблемах](#reporting-issues). Если у вас есть отзывы о средстве или требуется запросить новые функции, откройте ошибку GitHub с меткой "4-ВВД-Scaling-Tool" на [странице GitHub RDS](https://github.com/Azure/RDS-Templates/issues?q=is%3Aissue+is%3Aopen+label%3A4-WVD-scaling-tool).

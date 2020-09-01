@@ -9,13 +9,13 @@ ms.topic: how-to
 ms.date: 07/16/2020
 ms.author: tamram
 ms.subservice: blobs
-ms.custom: devx-track-azurecli
-ms.openlocfilehash: dd85504ac2321310288efe5d0a1ef7dfcde60f21
-ms.sourcegitcommit: 37afde27ac137ab2e675b2b0492559287822fded
+ms.custom: devx-track-azurecli, devx-track-azurepowershell
+ms.openlocfilehash: 9964a10b85d9f388a4498766c6e81ee52498aa37
+ms.sourcegitcommit: 656c0c38cf550327a9ee10cc936029378bc7b5a2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88566069"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89076180"
 ---
 # <a name="configure-object-replication-for-block-blobs-preview"></a>Настройка репликации объектов для блочных BLOB-объектов (предварительная версия)
 
@@ -24,6 +24,8 @@ ms.locfileid: "88566069"
 При настройке репликации объектов создается политика репликации, указывающая исходную учетную запись хранения и целевую учетную запись. Политика репликации включает одно или несколько правил, задающих исходный и целевой контейнеры, и указывает, какие блочные BLOB-объекты в исходном контейнере будут реплицированы.
 
 В этой статье описано, как настроить репликацию объектов для учетной записи хранения с помощью портала Azure, PowerShell или Azure CLI. Для настройки репликации объектов можно также использовать одну из клиентских библиотек поставщика ресурсов службы хранилища Azure.
+
+[!INCLUDE [storage-data-lake-gen2-support](../../../includes/storage-data-lake-gen2-support.md)]
 
 ## <a name="create-a-replication-policy-and-rules"></a>Создание правил и политики репликации
 

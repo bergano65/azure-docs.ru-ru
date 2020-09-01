@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.author: tamram
 ms.reviewer: ozgun
 ms.subservice: common
-ms.openlocfilehash: 1a5ed324ae109a151bf21050993bff02434410df
-ms.sourcegitcommit: d39f2cd3e0b917b351046112ef1b8dc240a47a4f
+ms.openlocfilehash: e949c3db6d8c0cafab8556dbfde367e6e49273e9
+ms.sourcegitcommit: 656c0c38cf550327a9ee10cc936029378bc7b5a2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88814456"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89078203"
 ---
 # <a name="azure-storage-encryption-for-data-at-rest"></a>Шифрование службы хранилища Azure для неактивных данных
 
@@ -46,7 +46,7 @@ ms.locfileid: "88814456"
 | Параметр управления ключами | Ключи, управляемые Майкрософт | Ключи, управляемые клиентом | Ключи, предоставляемые клиентом |
 |--|--|--|--|
 | Операции шифрования и расшифровки | Azure | Azure | Azure |
-| Поддерживаемые службы хранилища Azure | Все | Хранилище BLOB-объектов, файлы Azure<sup>1, 2</sup> | Хранилище BLOB-объектов |
+| Поддерживаемые службы хранилища Azure | All | Хранилище BLOB-объектов, файлы Azure<sup>1, 2</sup> | Хранилище BLOB-объектов |
 | Хранилище ключей | Хранилище ключей (Майкрософт) | Azure Key Vault | Собственное хранилище ключей клиента |
 | Ответственность за смену ключей | Microsoft | Клиент | Клиент |
 | Управление ключами | пиринг Майкрософт. | Клиент | Клиент |
@@ -69,6 +69,8 @@ ms.locfileid: "88814456"
 
 > [!NOTE]
 > Области шифрования не поддерживаются с учетными записями геоизбыточного хранилища с доступом на чтение (RA-GRS) и доступом на чтение геоизбыточных зон (RA-ГЗРС) во время действия предварительной версии.
+
+[!INCLUDE [storage-data-lake-gen2-support](../../../includes/storage-data-lake-gen2-support.md)]
 
 > [!IMPORTANT]
 > Предварительная версия областей шифрования предназначена только для использования в рабочей среде. Соглашения об уровне обслуживания (SLA) для рабочих сред сейчас недоступны.

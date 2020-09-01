@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 07/07/2020
 ms.author: mbaldwin
 ms.custom: security-benchmark
-ms.openlocfilehash: d2ef76a054642807f0d72a758ae084a19557caf8
-ms.sourcegitcommit: 98854e3bd1ab04ce42816cae1892ed0caeedf461
+ms.openlocfilehash: b67397db3cc6de2a0e6658795ddf87ad355ad422
+ms.sourcegitcommit: 656c0c38cf550327a9ee10cc936029378bc7b5a2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "88009007"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89078373"
 ---
 # <a name="azure-resource-graph-security-baseline-for-azure-security-benchmark"></a>Базовый план безопасности графа ресурсов Azure для производительности системы безопасности Azure
 
@@ -41,13 +41,13 @@ ms.locfileid: "88009007"
 
 *Дополнительные сведения см. в статье [Управление безопасностью: защита данных](../../../security/benchmarks/security-control-data-protection.md).*
 
-### <a name="46-use-role-based-access-control-to-control-access-to-resources"></a>4,6. Использование управления доступом на основе ролей для управления доступом к ресурсам
+### <a name="46-use-azure-rbac-to-control-access-to-resources"></a>4.6. Контроль доступа к ресурсам с помощью RBAC
 
-**Руководство**. Использование управления доступом на основе РОЛЕЙ (RBAC) для управления доступом к данным и ресурсам. Чтобы использовать граф ресурсов Azure, необходимо иметь соответствующий доступ к ресурсам, к которым необходимо выполнить запрос. Этот доступ должен быть ограничен только чтением и предоставлен только требуемому персоналу.
+**Руководство**. Использование управления доступом на основе ролей Azure (Azure RBAC) для управления доступом к данным и ресурсам. Чтобы использовать граф ресурсов Azure, необходимо иметь соответствующий доступ к ресурсам, к которым необходимо выполнить запрос. Этот доступ должен быть ограничен только чтением и предоставлен только требуемому персоналу.
 
 * [Разрешения в Azure Resource Graph](../overview.md#permissions-in-azure-resource-graph)
 
-* [Настройка RBAC в Azure](../../../role-based-access-control/role-assignments-rest.md)
+* [Настройка Azure RBAC](../../../role-based-access-control/role-assignments-rest.md)
 
 
 **Мониторинг Центра безопасности Azure**: в настоящее время недоступен.

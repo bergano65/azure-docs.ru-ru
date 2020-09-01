@@ -3,12 +3,13 @@ title: Ресурсы, роли и контроль доступа в Azure Appl
 description: Владельцы, участники и читатели Insights вашей организации.
 ms.topic: conceptual
 ms.date: 02/14/2019
-ms.openlocfilehash: 3d69ad7eeb7c8dd32c2e3cb286f9596bed7fe042
-ms.sourcegitcommit: 4f1c7df04a03856a756856a75e033d90757bb635
+ms.custom: devx-track-azurepowershell
+ms.openlocfilehash: cd1e69ecd121380353ad6400d473d572b7b7bb3e
+ms.sourcegitcommit: 656c0c38cf550327a9ee10cc936029378bc7b5a2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87926507"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89076690"
 ---
 # <a name="resources-roles-and-access-control-in-application-insights"></a>Ресурсы, роли и контроль доступа в Application Insights
 
@@ -101,7 +102,7 @@ ms.locfileid: "87926507"
 
 ## <a name="related-content"></a>См. также
 
-* [Управление доступом на основе ролей в Azure (Azure RBAC)](../../role-based-access-control/role-assignments-portal.md)
+* [Управление доступом Azure на основе ролей (Azure RBAC)](../../role-based-access-control/role-assignments-portal.md)
 
 ## <a name="powershell-query-to-determine-role-membership"></a>Запрос PowerShell для определения членства в роли
 

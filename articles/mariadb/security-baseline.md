@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 03/23/2020
 ms.author: mbaldwin
 ms.custom: security-benchmark
-ms.openlocfilehash: fd195fee513b2eed9049c7841f791d73a41b876b
-ms.sourcegitcommit: f353fe5acd9698aa31631f38dd32790d889b4dbb
+ms.openlocfilehash: 69930342a69613c3863443c993d80e02e1981a98
+ms.sourcegitcommit: 656c0c38cf550327a9ee10cc936029378bc7b5a2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87366839"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89077251"
 ---
 # <a name="azure-security-baseline-for-azure-database-for-mariadb"></a>Базовый план безопасности Azure для базы данных Azure для MariaDB
 
@@ -34,11 +34,11 @@ ms.locfileid: "87366839"
 
 Вы также можете защитить базу данных Azure для MariaDB с помощью правил брандмауэра. Брандмауэр сервера запрещает любой доступ к серверу базы данных, пока вы не укажете компьютеры, у которых есть разрешение на доступ. Для настройки брандмауэра можно создать правила брандмауэра, которые указывают диапазон допустимых IP-адресов. Правила брандмауэра можно создавать на уровне сервера.
 
-Как настроить частный канал для базы данных Azure для MariaDB:https://docs.microsoft.com/azure/mariadb/howto-configure-privatelink-portal
+Как настроить частный канал для базы данных Azure для MariaDB: https://docs.microsoft.com/azure/mariadb/howto-configure-privatelink-portal
 
-Как создать конечные точки службы виртуальной сети и правила виртуальной сети для сервера базы данных Azure для MariaDB и управлять ими:https://docs.microsoft.com/azure/mariadb/howto-manage-vnet-portal
+Как создать конечные точки службы виртуальной сети и правила виртуальной сети для сервера базы данных Azure для MariaDB и управлять ими: https://docs.microsoft.com/azure/mariadb/howto-manage-vnet-portal
 
-Как настроить правила брандмауэра базы данных Azure для MariaDB:https://docs.microsoft.com/azure/mariadb/concepts-firewall-rules
+Как настроить правила брандмауэра базы данных Azure для MariaDB: https://docs.microsoft.com/azure/mariadb/concepts-firewall-rules
 
 **Мониторинг Центра безопасности Azure**: Да
 
@@ -48,9 +48,9 @@ ms.locfileid: "87366839"
 
 **Руководство**. Если база данных Azure для сервера MariaDB защищена частной конечной точкой, можно развернуть виртуальные машины в той же виртуальной сети. Чтобы снизить риск утечки данных, можно использовать группу безопасности сети (NSG). Включите журналы потоков NSG и отправьте журналы в учетную запись хранения для аудита трафика. Вы также можете отправить журналы потоков NSG в рабочую область Log Analytics и использовать аналитику трафика для получения ценных сведений о потоке трафика в облаке Azure. Некоторые преимущества Аналитики трафика — это возможность визуализировать сетевые активности и определять горячие участки, выявлять угрозы безопасности, анализировать шаблоны потоков трафика и выявлять некорректные сетевые настройки.
 
-Как настроить частный канал для базы данных Azure для MariaDB:https://docs.microsoft.com/azure/mariadb/howto-configure-privatelink-portal
+Как настроить частный канал для базы данных Azure для MariaDB: https://docs.microsoft.com/azure/mariadb/howto-configure-privatelink-portal
 
-Включение журналов потоков NSG: https://docs.microsoft.com/azure/network-watcher/network-watcher-nsg-flow-logging-portal Включение и использование аналитика трафика:https://docs.microsoft.com/azure/network-watcher/traffic-analytics
+Включение журналов потоков NSG: https://docs.microsoft.com/azure/network-watcher/network-watcher-nsg-flow-logging-portal Включение и использование аналитика трафика: https://docs.microsoft.com/azure/network-watcher/traffic-analytics
 
 
 
@@ -60,7 +60,7 @@ ms.locfileid: "87366839"
 
 ### <a name="13-protect-critical-web-applications"></a>1.3. Защита критических веб-приложений
 
-**Руководство**. Неприменимо; эта рекомендация предназначена для веб-приложений, работающих в службе приложений Azure или в ресурсах вычислений.
+**Рекомендации**. Неприменимо. Эта рекомендация предназначена для веб-приложений, работающих в службе приложений Azure или в ресурсах вычислений.
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -72,7 +72,7 @@ ms.locfileid: "87366839"
 
 Включите стандарт защиты от атак DDoS в виртуальных сетях, связанных с экземплярами базы данных Azure для MariaDB, чтобы защититься от атак от атак DDoS. Используйте интегрированную аналитику угроз Центра безопасности Azure, чтобы запретить обмен данными с известными вредоносными или неиспользуемыми IP-адресами Интернета.
 
-Как настроить расширенную защиту от угроз для базы данных Azure для MariaDB:https://docs.microsoft.com/azure/mariadb/howto-database-threat-protection-portal
+Как настроить расширенную защиту от угроз для базы данных Azure для MariaDB: https://docs.microsoft.com/azure/mariadb/howto-database-threat-protection-portal
 
 Настройка защиты от атак DDoS: https://docs.microsoft.com/azure/virtual-network/manage-ddos-protection
 
@@ -86,7 +86,7 @@ ms.locfileid: "87366839"
 
 **Руководство**. Если база данных Azure для сервера MariaDB защищена частной конечной точкой, можно развернуть виртуальные машины в той же виртуальной сети. Чтобы снизить риск утечки данных, можно настроить группу безопасности сети (NSG). Включите журналы потоков NSG и отправьте журналы в учетную запись хранения для аудита трафика. Вы также можете отправить журналы потоков NSG в рабочую область Log Analytics и использовать аналитику трафика для получения ценных сведений о потоке трафика в облаке Azure. Некоторые преимущества Аналитики трафика — это возможность визуализировать сетевые активности и определять горячие участки, выявлять угрозы безопасности, анализировать шаблоны потоков трафика и выявлять некорректные сетевые настройки.
 
-Включение журналов потоков NSG: https://docs.microsoft.com/azure/network-watcher/network-watcher-nsg-flow-logging-portal Включение и использование аналитика трафика:https://docs.microsoft.com/azure/network-watcher/traffic-analytics
+Включение журналов потоков NSG: https://docs.microsoft.com/azure/network-watcher/network-watcher-nsg-flow-logging-portal Включение и использование аналитика трафика: https://docs.microsoft.com/azure/network-watcher/traffic-analytics
 
 
 
@@ -97,7 +97,7 @@ ms.locfileid: "87366839"
 ### <a name="16-deploy-network-based-intrusion-detectionintrusion-prevention-systems-idsips"></a>1.6. Развертывание сетевых систем обнаружения и предотвращения вторжений (IDS/IPS)
 
 **Руководство**. Использование Advanced Threat Protection для базы данных Azure для MariaDB. Расширенная защита от угроз позволяет выявить подозрительную активность, указывающую на необычные и потенциально опасные попытки получить доступ к базам данных или воспользоваться ими.
-Как настроить расширенную защиту от угроз для базы данных Azure для MariaDB:https://docs.microsoft.com/azure/mariadb/howto-database-threat-protection-portal
+Как настроить расширенную защиту от угроз для базы данных Azure для MariaDB: https://docs.microsoft.com/azure/mariadb/howto-database-threat-protection-portal
 
 
 **Мониторинг Центра безопасности Azure**: Да
@@ -118,11 +118,11 @@ ms.locfileid: "87366839"
 **Руководство**. для ресурсов, которым требуется доступ к базе данных Azure для экземпляров MariaDB, используйте теги службы виртуальной сети для определения элементов управления доступом к сети в группах безопасности сети или брандмауэре Azure. Теги служб можно использовать вместо определенных IP-адресов при создании правил безопасности. Указав имя тега службы (например, SQL.WestUs) в соответствующем исходном поле или поле назначения правила, можно разрешить или запретить трафик для соответствующей службы. Корпорация Майкрософт управляет префиксами адресов, входящих в тег службы, и автоматически обновляет этот тег при изменении адресов.
 Примечание. база данных Azure для MariaDB использует тег службы Microsoft. SQL.
 
-Дополнительные сведения об использовании тегов службы см. в статье https://docs.microsoft.com/azure/virtual-network/service-tags-overview Использование тегов службы для базы данных Azure для MariaDB:https://docs.microsoft.com/azure/mariadb/concepts-data-access-security-vnet#terminology-and-description
+Дополнительные сведения об использовании тегов службы см. в статье https://docs.microsoft.com/azure/virtual-network/service-tags-overview Использование тегов службы для базы данных Azure для MariaDB: https://docs.microsoft.com/azure/mariadb/concepts-data-access-security-vnet#terminology-and-description
 
 
 
-**Мониторинг Центра безопасности Azure**. Неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
 **Ответственность**: Customer
 
@@ -143,7 +143,7 @@ ms.locfileid: "87366839"
 Создание схемы Azure: https://docs.microsoft.com/azure/governance/blueprints/create-blueprint-portal
 
 
-**Мониторинг центра безопасности Azure**: Неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
 **Ответственность**: Customer
 
@@ -159,16 +159,16 @@ ms.locfileid: "87366839"
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
-**Ответственность**. Customer
+**Ответственность**: Customer
 
 ### <a name="111-use-automated-tools-to-monitor-network-resource-configurations-and-detect-changes"></a>1.11. Использование автоматизированных средств для мониторинга конфигураций сетевых ресурсов и обнаружения изменений
 
 **Руководство**. Использование журнала действий Azure для мониторинга конфигураций сетевых ресурсов и обнаружения изменений сетевых ресурсов, связанных с экземплярами базы данных Azure для MariaDB. Создавайте оповещения в Azure Monitor, которые будут запускаться при изменении критических сетевых ресурсов.
-Просмотр и получение событий журнала действий Azure: https://docs.microsoft.com/azure/azure-monitor/platform/activity-log-view Создание оповещений в Azure Monitor:https://docs.microsoft.com/azure/azure-monitor/platform/alerts-activity-log
+Просмотр и получение событий журнала действий Azure: https://docs.microsoft.com/azure/azure-monitor/platform/activity-log-view Создание оповещений в Azure Monitor: https://docs.microsoft.com/azure/azure-monitor/platform/alerts-activity-log
 
 
 
-**Мониторинг Центра безопасности Azure**. Неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
 **Ответственность**: Customer
 
@@ -181,16 +181,16 @@ ms.locfileid: "87366839"
 **Руководство**. Корпорация Майкрософт поддерживает источник времени, используемый для ресурсов Azure, например базу данных Azure для MariaDB для меток времени в журналах.
 
 
-**Мониторинг Центра безопасности Azure**. Неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
 **Ответственность**: Microsoft
 
 ### <a name="22-configure-central-security-log-management"></a>2.2. Настройка централизованного управления журналами безопасности
 
 **Руководство**. Включение параметров диагностики и журналов сервера и прием журналов для агрегирования данных безопасности, создаваемых экземплярами базы данных Azure для MariaDB. В Azure Monitor используйте рабочие области Log Analytics для запроса и выполнения анализа, а учетные записи хранения Azure — для долгосрочного и архивного хранения. Кроме того, вы можете включить и подключить данные к Azure Sentinel или сторонним SIEM.
-Как настроить и получить доступ к журналам сервера для базы данных Azure для MariaDB:https://docs.microsoft.com/azure/mariadb/concepts-server-logs
+Как настроить и получить доступ к журналам сервера для базы данных Azure для MariaDB: https://docs.microsoft.com/azure/mariadb/concepts-server-logs
 
-Как настроить и получить доступ к журналам аудита для базы данных Azure для MariaDB: https://docs.microsoft.com/azure/mariadb/howto-configure-audit-logs-portal как подключить метку Azure:https://docs.microsoft.com/azure/sentinel/quickstart-onboard
+Как настроить и получить доступ к журналам аудита для базы данных Azure для MariaDB: https://docs.microsoft.com/azure/mariadb/howto-configure-audit-logs-portal как подключить метку Azure: https://docs.microsoft.com/azure/sentinel/quickstart-onboard
 
 
 
@@ -202,7 +202,7 @@ ms.locfileid: "87366839"
 
 **Руководство**. Включение параметров диагностики в базе данных Azure для экземпляров MariaDB для доступа к журналам аудита, безопасности и диагностики. Убедитесь, что вы специально включили журнал аудита MariaDB. Автоматически доступны журналы действий, включающие источник событий, дату, пользователя, метку времени, исходные адреса, адреса назначения и другие полезные элементы. Вы также можете включить параметры диагностики журнала действий Azure и отправить журналы в ту же рабочую область Log Analytics или учетную запись хранения.
 
-Как настроить и получить доступ к журналам сервера для базы данных Azure для MariaDB: https://docs.microsoft.com/azure/mariadb/concepts-server-logs Настройка и доступ к журналам аудита для базы данных Azure для MariaDB. https://docs.microsoft.com/azure/mariadb/howto-configure-audit-logs-portal Настройка параметров диагностики для журнала действий Azure:https://docs.microsoft.com/azure/azure-monitor/platform/diagnostic-settings-legacy
+Как настроить и получить доступ к журналам сервера для базы данных Azure для MariaDB: https://docs.microsoft.com/azure/mariadb/concepts-server-logs Настройка и доступ к журналам аудита для базы данных Azure для MariaDB. https://docs.microsoft.com/azure/mariadb/howto-configure-audit-logs-portal Настройка параметров диагностики для журнала действий Azure: https://docs.microsoft.com/azure/azure-monitor/platform/diagnostic-settings-legacy
 
 
 
@@ -222,13 +222,13 @@ ms.locfileid: "87366839"
 ### <a name="25-configure-security-log-storage-retention"></a>2.5. Настройка хранения журнала безопасности
 
 **Руководство**. в Azure Monitor для рабочей области log Analytics, используемой для хранения журналов базы данных Azure для MariaDB, задайте срок хранения согласно нормативным требованиям Организации. Используйте учетные записи хранения Azure для долгосрочного и архивного хранения.
-Как задать параметры хранения журнала для рабочих областей Log Analytics: https://docs.microsoft.com/azure/azure-monitor/platform/manage-cost-storage#change-the-data-retention-period хранение журналов ресурсов в учетной записи хранения Azure.https://docs.microsoft.com/azure/azure-monitor/platform/resource-logs-collect-storage
+Как задать параметры хранения журнала для рабочих областей Log Analytics: https://docs.microsoft.com/azure/azure-monitor/platform/manage-cost-storage#change-the-data-retention-period хранение журналов ресурсов в учетной записи хранения Azure. https://docs.microsoft.com/azure/azure-monitor/platform/resource-logs-collect-storage
 
 
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
-**Ответственность**. Customer
+**Ответственность**: Customer
 
 ### <a name="26-monitor-and-review-logs"></a>2.6. Мониторинг и просмотр журналов
 
@@ -236,13 +236,13 @@ ms.locfileid: "87366839"
 
 Подключение Azure Sentinel: https://docs.microsoft.com/azure/sentinel/quickstart-onboard
 
-Дополнительные сведения о рабочей области Log Analytics:https://docs.microsoft.com/azure/azure-monitor/log-query/get-started-portal
+Дополнительные сведения о рабочей области Log Analytics: https://docs.microsoft.com/azure/azure-monitor/log-query/get-started-portal
 
 Выполнение пользовательских запросов в Azure Monitor: https://docs.microsoft.com/azure/azure-monitor/log-query/get-started-queries
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
-**Ответственность**. Customer
+**Ответственность**: Customer
 
 ### <a name="27-enable-alerts-for-anomalous-activity"></a>2.7. Включение оповещений об аномальных действиях
 
@@ -250,11 +250,11 @@ ms.locfileid: "87366839"
 
 Кроме того, вы можете включить журналы сервера и параметры диагностики для MariaDB и отправить журналы в рабочую область Log Analytics. Подключите рабочую область Log Analytics к Azure Sentinel, так как она предоставляет решение для оркестрации событий безопасности и автоматического реагирования (SOAR). Это позволяет создавать и использовать сборники схем (автоматизированные решения) для устранения проблем безопасности.
 
-Включение расширенной защиты от угроз для MariaDB:https://docs.microsoft.com/azure/mariadb/howto-database-threat-protection-portal
+Включение расширенной защиты от угроз для MariaDB: https://docs.microsoft.com/azure/mariadb/howto-database-threat-protection-portal
 
-Как настроить и получить доступ к журналам сервера для Маридб:https://docs.microsoft.com/azure/mariadb/concepts-server-logs
+Как настроить и получить доступ к журналам сервера для Маридб: https://docs.microsoft.com/azure/mariadb/concepts-server-logs
 
-Как настроить и получить доступ к журналам аудита для MariaDB:https://docs.microsoft.com/azure/mariadb/howto-configure-audit-logs-portal
+Как настроить и получить доступ к журналам аудита для MariaDB: https://docs.microsoft.com/azure/mariadb/howto-configure-audit-logs-portal
 
 Подключение Azure Sentinel: https://docs.microsoft.com/azure/sentinel/quickstart-onboard
 
@@ -276,7 +276,7 @@ ms.locfileid: "87366839"
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
-**Ответственность**. Неприменимо
+**Ответственность**: Неприменимо
 
 ### <a name="210-enable-command-line-audit-logging"></a>2.10. Включение ведения журнала аудита для командной строки
 
@@ -294,9 +294,9 @@ ms.locfileid: "87366839"
 
 **Руководство**. поддержание инвентаризации учетных записей пользователей, имеющих административный доступ к плоскости управления (портал Azure и Azure Resource Manager) экземпляров MariaDB. Кроме того, необходимо поддерживать инвентаризацию учетных записей администраторов, имеющих доступ к плоскости данных экземпляров MariaDB. (При создании сервера MariaDB вы предоставляете учетные данные для пользователя с правами администратора. Этот администратор может использовать для создания дополнительных пользователей MariaDB.)
 
-Общие сведения об управлении доступом для MariaDB:https://docs.microsoft.com/azure/mariadb/concepts-security#access-management
+Общие сведения об управлении доступом для MariaDB: https://docs.microsoft.com/azure/mariadb/concepts-security#access-management
 
-Общие сведения о встроенных ролях Azure для подписок Azure.https://docs.microsoft.com/azure/role-based-access-control/built-in-roles
+Общие сведения о встроенных ролях Azure для подписок Azure. https://docs.microsoft.com/azure/role-based-access-control/built-in-roles
 
 
 **Мониторинг Центра безопасности Azure**: Да
@@ -309,12 +309,12 @@ ms.locfileid: "87366839"
 
 После создания самого ресурса MariaDB Azure принудительно создает для пользователя с правами администратора надежный пароль. Однако после создания экземпляра MariaDB можно использовать учетную запись первого администратора сервера, созданную для создания дополнительных пользователей и предоставления административного доступа к ним. При создании этих учетных записей убедитесь, что для каждой учетной записи настроен отличающийся надежный пароль.
 
-Как создать дополнительные учетные записи для MariaDB:https://docs.microsoft.com/azure/mariadb/howto-create-users
+Как создать дополнительные учетные записи для MariaDB: https://docs.microsoft.com/azure/mariadb/howto-create-users
 
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
-**Ответственность**. Customer
+**Ответственность**: Customer
 
 ### <a name="33-use-dedicated-administrative-accounts"></a>3.3. Применение выделенных административных учетных записей
 
@@ -324,13 +324,13 @@ ms.locfileid: "87366839"
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
-**Ответственность**. Customer
+**Ответственность**: Customer
 
 ### <a name="34-use-single-sign-on-sso-with-azure-active-directory"></a>3.4. Использование единого входа с Azure Active Directory
 
 **Руководство**. доступ к плоскости данных к MariaDB осуществляется с помощью удостоверений, хранящихся в базе данных, и не поддерживает единый вход. Доступ к плоскости управления для MariaDB можно получить с помощью REST API и поддерживает единый вход. Чтобы выполнить проверку подлинности, установите JSON Web Token, полученный из Azure Active Directory (AAD), в качестве заголовка авторизации.
 
-Общие сведения о базе данных Azure для MariaDB REST API:https://docs.microsoft.com/rest/api/mariadb/
+Общие сведения о базе данных Azure для MariaDB REST API: https://docs.microsoft.com/rest/api/mariadb/
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -356,9 +356,9 @@ ms.locfileid: "87366839"
 
 Включение MFA в Azure: https://docs.microsoft.com/azure/active-directory/authentication/howto-mfa-getstarted
 
-**Мониторинг центра безопасности Azure**: Неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
-**Ответственность**. Customer
+**Ответственность**: Customer
 
 ### <a name="37-log-and-alert-on-suspicious-activity-from-administrative-accounts"></a>3.7. Ведение журнала и создание оповещений по подозрительным действиям учетных записей администраторов
 
@@ -366,13 +366,13 @@ ms.locfileid: "87366839"
 
 Кроме того, вы можете использовать управление привилегированными пользователями (PIM) в Azure AD для создания журналов и оповещений при возникновении подозрительных или небезопасных действий в окружении. Используйте обнаружение рисков Azure AD для просмотра предупреждений и отчетов об опасном поведении пользователя.
 
-Как настроить расширенную защиту от угроз для MariaDB:https://docs.microsoft.com/azure/mariadb/howto-database-threat-protection-portal
+Как настроить расширенную защиту от угроз для MariaDB: https://docs.microsoft.com/azure/mariadb/howto-database-threat-protection-portal
 
 Развертывание Azure AD Privileged Identity Management (PIM): https://docs.microsoft.com/azure/active-directory/privileged-identity-management/pim-deployment-plan
 
 Общие сведения об обнаружении рисков Azure AD: https://docs.microsoft.com/azure/active-directory/reports-monitoring/concept-risk-events
 
-**Мониторинг центра безопасности Azure**: Да
+**Мониторинг Центра безопасности Azure**: Да
 
 **Ответственность**: Customer
 
@@ -384,7 +384,7 @@ ms.locfileid: "87366839"
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
-**Ответственность**. Customer
+**Ответственность**: Customer
 
 ### <a name="39-use-azure-active-directory"></a>3.9. Использование Azure Active Directory
 
@@ -392,7 +392,7 @@ ms.locfileid: "87366839"
 
 Аутентификацию Azure AD нельзя использовать для прямого доступа к плоскости данных MariaDB. Однако учетные данные Azure AD могут использоваться для администрирования на уровне плоскости управления (например, портал Azure) для управления учетными записями администратора MariaDB.
 
-Обновление пароля администратора для MariaDB:https://docs.microsoft.com/azure/mariadb/howto-create-manage-server-portal#update-admin-password
+Обновление пароля администратора для MariaDB: https://docs.microsoft.com/azure/mariadb/howto-create-manage-server-portal#update-admin-password
 
 **Мониторинг Центра безопасности Azure**: Да
 
@@ -414,13 +414,13 @@ ms.locfileid: "87366839"
 
 **Руководство**. Включение параметров диагностики для MariaDB и Azure Active Directory, отправка всех журналов в рабочую область log Analytics. Настройте необходимые оповещения (например, неудачные попытки проверки подлинности) в Log Analytics рабочей области.
 
-Как настроить и получить доступ к журналам сервера для MariaDB:https://docs.microsoft.com/azure/mariadb/concepts-server-logs
+Как настроить и получить доступ к журналам сервера для MariaDB: https://docs.microsoft.com/azure/mariadb/concepts-server-logs
 
-Как настроить и получить доступ к журналам аудита для MariaDB:https://docs.microsoft.com/azure/mariadb/howto-configure-audit-logs-portal
+Как настроить и получить доступ к журналам аудита для MariaDB: https://docs.microsoft.com/azure/mariadb/howto-configure-audit-logs-portal
 
 Интеграция журналов действий Azure в Azure Monitor: https://docs.microsoft.com/azure/active-directory/reports-monitoring/howto-integrate-activity-logs-with-log-analytics
 
-**Мониторинг центра безопасности Azure**: Недоступно
+**Мониторинг Центра безопасности Azure**: Недоступно
 
 **Ответственность**: Customer
 
@@ -430,15 +430,15 @@ ms.locfileid: "87366839"
 
 Используйте защиту идентификации Azure Active Directory и функции обнаружения подозрительных операций, чтобы настроить автоматическое реагирование для обнаружения подозрительных действий. Вы можете включить автоматические ответы с помощью Azure Sentinel, чтобы оперативно реагировать на угрозы.
 
-Включение расширенной защиты от угроз для MariaDB:https://docs.microsoft.com/azure/mariadb/howto-database-threat-protection-portal
+Включение расширенной защиты от угроз для MariaDB: https://docs.microsoft.com/azure/mariadb/howto-database-threat-protection-portal
 
-Настройка и включение политик риска для защиты идентификации.https://docs.microsoft.com/azure/active-directory/identity-protection/howto-identity-protection-configure-risk-policies
+Настройка и включение политик риска для защиты идентификации. https://docs.microsoft.com/azure/active-directory/identity-protection/howto-identity-protection-configure-risk-policies
 
 Просмотр рискованных входов в Azure AD: https://docs.microsoft.com/azure/active-directory/reports-monitoring/concept-risky-sign-ins
 
 Подключение Azure Sentinel: https://docs.microsoft.com/azure/sentinel/quickstart-onboard
 
-**Мониторинг центра безопасности Azure**: Недоступно
+**Мониторинг Центра безопасности Azure**: Недоступно
 
 **Ответственность**: Customer
 
@@ -464,7 +464,7 @@ ms.locfileid: "87366839"
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
-**Ответственность**. Customer
+**Ответственность**: Customer
 
 ### <a name="42-isolate-systems-storing-or-processing-sensitive-information"></a>4.2. Изолирование систем, хранящих или обрабатывающих конфиденциальные данные
 
@@ -474,13 +474,13 @@ ms.locfileid: "87366839"
 
 Создание групп управления: https://docs.microsoft.com/azure/governance/management-groups/create
 
-Как настроить частный канал для базы данных Azure для MariaDB:https://docs.microsoft.com/azure/mariadb/concepts-data-access-security-private-link
+Как настроить частный канал для базы данных Azure для MariaDB: https://docs.microsoft.com/azure/mariadb/concepts-data-access-security-private-link
 
-Как настроить конечные точки службы для базы данных Azure для MariaDB:https://docs.microsoft.com/azure/mariadb/howto-manage-vnet-portal
+Как настроить конечные точки службы для базы данных Azure для MariaDB: https://docs.microsoft.com/azure/mariadb/howto-manage-vnet-portal
 
-Как настроить правила брандмауэра для базы данных Azure для MariaDB:https://docs.microsoft.com/azure/mariadb/concepts-firewall-rules
+Как настроить правила брандмауэра для базы данных Azure для MariaDB: https://docs.microsoft.com/azure/mariadb/concepts-firewall-rules
 
-**Мониторинг центра безопасности Azure**: Недоступно
+**Мониторинг Центра безопасности Azure**: Недоступно
 
 **Ответственность**: Customer
 
@@ -490,7 +490,7 @@ ms.locfileid: "87366839"
 
 Корпорация Майкрософт управляет базовой инфраструктурой для MariaDB и реализовала четкие элементы управления для предотвращения потери или раскрытия данных клиента.
 
-Как устранить утечка данных для базы данных Azure для MariaDB:https://docs.microsoft.com/azure/mariadb/concepts-data-access-security-private-link
+Как устранить утечка данных для базы данных Azure для MariaDB: https://docs.microsoft.com/azure/mariadb/concepts-data-access-security-private-link
 
 Общие сведения о защите данных клиентов в Azure: https://docs.microsoft.com/azure/security/fundamentals/protection-customer-data
 
@@ -502,7 +502,7 @@ ms.locfileid: "87366839"
 
 **Руководство**. база данных Azure для MariaDB поддерживает подключение сервера базы данных Azure для MariaDB к клиентским приложениям с помощью протокола TLS, ранее известного как SSL (SSL). Принудительное использование SSL-соединений между сервером базы данных и клиентскими приложениями помогает обеспечить защиту от атак "злоумышленник в середине" за счет шифрования потока данных между сервером и приложением. В портал Azure убедитесь, что для всех экземпляров MariaDB включен параметр "принудительное подключение SSL".
 
-Настройка шифрования при передаче для MariaDB:https://docs.microsoft.com/azure/mariadb/howto-configure-ssl
+Настройка шифрования при передаче для MariaDB: https://docs.microsoft.com/azure/mariadb/howto-configure-ssl
 
 **Мониторинг Центра безопасности Azure**: Недоступно
 
@@ -522,13 +522,13 @@ ms.locfileid: "87366839"
 
 ### <a name="46-use-azure-rbac-to-control-access-to-resources"></a>4.6. Контроль доступа к ресурсам с помощью RBAC
 
-**Руководство**. Использование RBAC Azure AD для управления доступом к базе данных Azure для MariaDB Management плоскость (портал Azure и Azure Resource Manager). Для доступа к уровню данных (в самой базе данных) используйте SQL-запросы для создания пользователей и настройки разрешений пользователей.
+**Руководство**. Использование управления доступом на основе ролей Azure (Azure RBAC) для управления доступом к базе данных Azure для MariaDB Management плоскость (портал Azure и Azure Resource Manager). Для доступа к уровню данных (в самой базе данных) используйте SQL-запросы для создания пользователей и настройки разрешений пользователей.
 
-Настройка RBAC в Azure: https://docs.microsoft.com/azure/role-based-access-control/role-assignments-portal
+Как настроить Azure RBAC: https://docs.microsoft.com/azure/role-based-access-control/role-assignments-portal
 
-Как настроить доступ пользователей с помощью SQL для MariaDB:https://docs.microsoft.com/azure/mariadb/howto-create-users
+Как настроить доступ пользователей с помощью SQL для MariaDB: https://docs.microsoft.com/azure/mariadb/howto-create-users
 
-**Мониторинг Центра безопасности Azure**. Неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
 **Ответственность**: Customer
 
@@ -540,7 +540,7 @@ ms.locfileid: "87366839"
 
 Общие сведения о защите данных клиентов в Azure: https://docs.microsoft.com/azure/security/fundamentals/protection-customer-data
 
-**Мониторинг Центра безопасности Azure**. Неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
 **Ответственность**: Microsoft
 
@@ -548,9 +548,9 @@ ms.locfileid: "87366839"
 
 **Руководство**. Служба базы данных Azure для MariaDB использует проверенный криптографический модуль FIPS 140-2 для шифрования неактивных данных. Данные, включая резервные копии, шифруются на диске (за исключением временных файлов, создаваемых при выполнении запросов). Служба использует 256-разрядный шифр AES, включенный в шифрование службы хранилища Azure. Ключами управляет система. Шифрование хранилища всегда включено, и его нельзя отключить.
 
-Общие сведения о шифровании неактивных компонентов для MariaDB:https://docs.microsoft.com/azure/mariadb/concepts-security
+Общие сведения о шифровании неактивных компонентов для MariaDB: https://docs.microsoft.com/azure/mariadb/concepts-security
 
-**Мониторинг Центра безопасности Azure**. Неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
 **Ответственность**: Microsoft
 
@@ -664,7 +664,7 @@ ms.locfileid: "87366839"
 
 ### <a name="65-monitor-for-unapproved-azure-resources"></a>6.5. Отслеживание неутвержденных ресурсов Azure
 
-**Руководство**. Используйте Политику Azure, чтобы ограничить тип ресурсов, которые могут быть созданы в подписках клиентов, используя следующие встроенные определения политик.
+**Рекомендации**. Используйте политику Azure, чтобы ограничить тип ресурсов, которые могут быть созданы в подписках клиентов, используя следующие встроенные определения политик:
 
 - Недопустимые типы ресурсов
 
@@ -743,7 +743,7 @@ ms.locfileid: "87366839"
 
 
 
-**Мониторинг Центра безопасности Azure**. Неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
 **Ответственность**: Customer
 
@@ -753,7 +753,7 @@ ms.locfileid: "87366839"
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
-**Ответственность**. Неприменимо
+**Ответственность**: Неприменимо
 
 ### <a name="613-physically-or-logically-segregate-high-risk-applications"></a>6.13. Физическое или логическое разделение приложений с высоким риском
 
@@ -802,7 +802,7 @@ ms.locfileid: "87366839"
 
 
 
-**Мониторинг Центра безопасности Azure**. Неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
 **Ответственность**: Customer
 
@@ -822,7 +822,7 @@ ms.locfileid: "87366839"
 
 Документация по Azure Repos: https://docs.microsoft.com/azure/devops/repos/index?view=azure-devops
 
-**Мониторинг Центра безопасности Azure**. Неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
 **Ответственность**: Customer
 
@@ -842,7 +842,7 @@ ms.locfileid: "87366839"
 
 
 
-**Мониторинг Центра безопасности Azure**. Неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
 **Ответственность**: Customer
 
@@ -862,9 +862,9 @@ ms.locfileid: "87366839"
 
 
 
-**Мониторинг Центра безопасности Azure**. Неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
-**Ответственность**. Customer
+**Ответственность**: Customer
 
 ### <a name="710-implement-automated-configuration-monitoring-for-operating-systems"></a>7.10. Реализация автоматизированного мониторинга конфигурации для операционных систем
 
@@ -925,7 +925,7 @@ ms.locfileid: "87366839"
 Защита от вредоносных программ Майкрософт включена на базовом узле, поддерживающем службы Azure (например, служба приложений Azure), но не выполняется в содержимом клиента.
 
 
-**Мониторинг Центра безопасности Azure**: Неприменимо
+**Мониторинг центра безопасности Azure**: Неприменимо
 
 **Ответственность**: Неприменимо
 
@@ -958,9 +958,9 @@ ms.locfileid: "87366839"
 
 **Руководство**. база данных Azure для MariaDB принимает полные, разностные резервные копии и журналы транзакций.  В службе "База данных Azure для MariaDB" для сервера автоматически создаются резервные копии, которые сохраняются в локально избыточном или геоизбыточном хранилище, настроенном пользователем. Резервные копии можно использовать для восстановления сервера до точки во времени. Резервное копирование и восстановление данных являются важной частью любой стратегии непрерывности бизнес-процессов. Таким образом данные защищаются от случайного повреждения или удаления.  По умолчанию срок хранения резервных копий составляет 7 дней. При необходимости вы увеличить его вплоть до 35 дней. Все резервные копии шифруются с помощью 256-битового шифрования AES.
 
-Общие сведения о резервных копиях для MariaDB:https://docs.microsoft.com/azure/mariadb/concepts-backup
+Общие сведения о резервных копиях для MariaDB:  https://docs.microsoft.com/azure/mariadb/concepts-backup
 
-Изучите начальную конфигурацию MariaDB:https://docs.microsoft.com/azure/mariadb/tutorial-design-database-using-portal
+Изучите начальную конфигурацию MariaDB: https://docs.microsoft.com/azure/mariadb/tutorial-design-database-using-portal
 
 
 
@@ -974,7 +974,7 @@ ms.locfileid: "87366839"
 
 При использовании Key Vault для шифрования данных на стороне клиента для данных, хранящихся на сервере MariaDB, обеспечьте регулярное автоматическое резервное копирование ключей.
 
-Общие сведения о резервных копиях для MariaDB:https://docs.microsoft.com/azure/mariadb/concepts-backup
+Общие сведения о резервных копиях для MariaDB:  https://docs.microsoft.com/azure/mariadb/concepts-backup
 
 Резервное копирование ключей Key Vault: https://docs.microsoft.com/powershell/module/azurerm.keyvault/backup-azurekeyvaultkey
 
@@ -989,7 +989,7 @@ ms.locfileid: "87366839"
 
 Предполагаемое время восстановления будет зависеть от нескольких факторов, включая размер базы данных, размер журнала транзакций, пропускную способность сети и общее количество баз данных, восстанавливаемых в том же регионе и в то же время. Обычно время восстановления составляет менее 12 часов.
 
-Общие сведения о резервном копировании и восстановлении в базе данных Azure для MariaDB:https://docs.microsoft.com/azure/mariadb/concepts-backup#restore
+Общие сведения о резервном копировании и восстановлении в базе данных Azure для MariaDB:  https://docs.microsoft.com/azure/mariadb/concepts-backup#restore
 
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
@@ -1000,10 +1000,10 @@ ms.locfileid: "87366839"
 
 **Руководство**. база данных Azure для MariaDB принимает полные, разностные резервные копии и журналы транзакций. При помощи этих резервных копий вы можете восстановить сервер до любой точки во времени в пределах заданного срока хранения резервных копий. По умолчанию срок хранения резервных копий составляет 7 дней. При необходимости вы увеличить его вплоть до 35 дней. Все резервные копии шифруются с помощью 256-битового шифрования AES.
 
-Общие сведения о резервном копировании и восстановлении в базе данных Azure для MariaDB:https://docs.microsoft.com/azure/mariadb/concepts-backup
+Общие сведения о резервном копировании и восстановлении в базе данных Azure для MariaDB:  https://docs.microsoft.com/azure/mariadb/concepts-backup
 
 
-**Мониторинг Центра безопасности Azure**. Да
+**Мониторинг Центра безопасности Azure**: Да
 
 **Ответственность**: Customer
 
@@ -1029,11 +1029,11 @@ ms.locfileid: "87366839"
 
 Кроме того, четко помечайте подписки тегами (например, рабочие, нерабочие) и создайте систему именования, чтобы четко определить и классифицировать ресурсы Azure, особенно обрабатывающие конфиденциальные данные.  Вы несете ответственность за назначение приоритета оповещениям, требующим действий по исправлению, в зависимости от важности ресурсов Azure и среды, в которой произошел инцидент.
 
-- Оповещения системы безопасности в центре безопасности Azure:https://docs.microsoft.com/azure/security-center/security-center-alerts-overview
+- Оповещения системы безопасности в центре безопасности Azure: https://docs.microsoft.com/azure/security-center/security-center-alerts-overview
 
-- Используйте теги для Организации ресурсов Azure:https://docs.microsoft.com/azure/azure-resource-manager/resource-group-using-tags
+- Используйте теги для Организации ресурсов Azure: https://docs.microsoft.com/azure/azure-resource-manager/resource-group-using-tags
 
-**Мониторинг Центра безопасности Azure**. Да
+**Мониторинг Центра безопасности Azure**: Да
 
 **Ответственность**: Customer
 
@@ -1066,7 +1066,7 @@ ms.locfileid: "87366839"
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
-**Ответственность**. Customer
+**Ответственность**: Customer
 
 ### <a name="106-automate-the-response-to-security-alerts"></a>10.6. Автоматизация реагирования на оповещения системы безопасности
 
@@ -1089,10 +1089,10 @@ ms.locfileid: "87366839"
 
 https://www.microsoft.com/msrc/pentest-rules-of-engagement?rtc=1
 
-Дополнительные сведения о стратегии корпорации Майкрософт и ее выполнении, а также о тестировании на основе уязвимости для облачной инфраструктуры, служб и приложений Майкрософт см. здесь:https://gallery.technet.microsoft.com/Cloud-Red-Teaming-b837392e
+Дополнительные сведения о стратегии корпорации Майкрософт и ее выполнении, а также о тестировании на основе уязвимости для облачной инфраструктуры, служб и приложений Майкрософт см. здесь:  https://gallery.technet.microsoft.com/Cloud-Red-Teaming-b837392e
 
 
-**Мониторинг Центра безопасности Azure**. Неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
 **Ответственность**: Совмещаемая блокировка
 

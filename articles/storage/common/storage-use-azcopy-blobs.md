@@ -8,12 +8,12 @@ ms.date: 07/27/2020
 ms.author: normesta
 ms.subservice: common
 ms.reviewer: dineshm
-ms.openlocfilehash: f4bf3974cd561626c280dc65aa5fc78d0c9a159b
-ms.sourcegitcommit: 269da970ef8d6fab1e0a5c1a781e4e550ffd2c55
+ms.openlocfilehash: 7ff8f3d18564140b4654b1591eec5c0e1f40b7cf
+ms.sourcegitcommit: 656c0c38cf550327a9ee10cc936029378bc7b5a2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/10/2020
-ms.locfileid: "88056505"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89077914"
 ---
 # <a name="transfer-data-with-azcopy-and-blob-storage"></a>Перенос данных с помощью AzCopy и хранилища BLOB-объектов
 
@@ -255,6 +255,28 @@ AzCopy — это служебная программа командной ст�
 | **Пример** (иерархическое пространство имен) | `azcopy copy 'https://mystorageaccount.dfs.core.windows.net/mycontainer/FileDirectory/*' 'C:\myDirectory'  --include-after '2020-08-19T15:04:00Z'` |
 
 Подробные справочные сведения см. в документации по [azcopy Copy](storage-ref-azcopy-copy.md) .
+
+#### <a name="download-previous-versions-of-a-blob"></a>Скачивание предыдущих версий большого двоичного объекта
+
+Если вы включили [Управление версиями BLOB-объектов](../blobs/versioning-enable.md), вы можете скачать одну или несколько предыдущих версий большого двоичного объекта. 
+
+Сначала создайте текстовый файл, содержащий список [идентификаторов версий](../blobs/versioning-overview.md). Каждый идентификатор версии должен находиться в отдельной строке. Пример: 
+
+```
+2020-08-17T05:50:34.2199403Z
+2020-08-17T05:50:34.5041365Z
+2020-08-17T05:50:36.7607103Z
+```
+
+Затем используйте команду [azcopy Copy](storage-ref-azcopy-copy.md) с `--list-of-versions` параметром. Укажите расположение текстового файла, содержащего список версий (например: `D:\\list-of-versions.txt` ).  
+
+|    |     |
+|--------|-----------|
+| **Синтаксис** | `azcopy copy 'https://<storage-account-name>.<blob or dfs>.core.windows.net/<container-name>/<blob-path>' '<local-directory-path>' --list-of-versions '<list-of-versions-file>'`|
+| **Пример** | `azcopy copy 'https://mystorageaccount.blob.core.windows.net/mycontainer/myTextFile.txt' 'C:\myDirectory\myTextFile.txt' --list-of-versions 'D:\\list-of-versions.txt'` |
+| **Пример** (иерархическое пространство имен) | `azcopy copy 'https://mystorageaccount.dfs.core.windows.net/mycontainer/myTextFile.txt' 'C:\myDirectory\myTextFile.txt' --list-of-versions 'D:\\list-of-versions.txt'` |
+
+Имя каждого скачанного файла начинается с идентификатора версии, за которым следует имя большого двоичного объекта. 
 
 ## <a name="copy-blobs-between-storage-accounts"></a>Копирование больших двоичных объектов между учетными записями хранения
 

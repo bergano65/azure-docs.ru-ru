@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 08/05/2020
 ms.author: mbaldwin
 ms.custom: security-benchmark
-ms.openlocfilehash: daff4d1e43f5cc27e52e8bf26f48f30147800ae8
-ms.sourcegitcommit: 2ff0d073607bc746ffc638a84bb026d1705e543e
+ms.openlocfilehash: 63c476e7ad8c7bab38ad4adfb6197b845106458c
+ms.sourcegitcommit: 656c0c38cf550327a9ee10cc936029378bc7b5a2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87839910"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89077982"
 ---
 # <a name="azure-security-baseline-for-azure-ddos-protection-standard"></a>Базовый план безопасности Azure для Azure от атак DDoS Protection Standard
 
@@ -262,11 +262,11 @@ ms.locfileid: "87839910"
 
 **Ответственность**: Customer
 
-### <a name="46-use-role-based-access-control-to-control-access-to-resources"></a>4,6. Использование управления доступом на основе ролей для управления доступом к ресурсам
+### <a name="46-use-azure-rbac-to-control-access-to-resources"></a>4.6. Контроль доступа к ресурсам с помощью RBAC
 
 **Руководство**. для работы с планами защиты Azure от атак DDoS ваша учетная запись должна быть назначена роли "участник сети" или настраиваемой роли, которой назначены определенные действия.
 
-- [Управление доступом на основе ролей в Azure от атак DDoS Protection](../../virtual-network/manage-ddos-protection.md)
+- [Управление доступом на основе ролей Azure (Azure RBAC) в Azure от атак DDoS Protection](../../virtual-network/manage-ddos-protection.md)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 

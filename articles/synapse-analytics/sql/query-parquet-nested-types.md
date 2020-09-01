@@ -1,6 +1,6 @@
 ---
 title: Запрос вложенных типов Parquet с помощью SQL по запросу (предварительная версия)
-description: В этой статье описано, как запросить вложенные типы Parquet.
+description: В этой статье вы узнаете, как запросить вложенные типы Parquet с помощью SQL по запросу (Предварительная версия).
 services: synapse-analytics
 author: azaricstefan
 ms.service: synapse-analytics
@@ -9,24 +9,24 @@ ms.subservice: sql
 ms.date: 05/20/2020
 ms.author: v-stazar
 ms.reviewer: jrasnick, carlrab
-ms.openlocfilehash: fb56c4da77ddeb87ebc3724a3b138994e4da98e7
-ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
+ms.openlocfilehash: f58adf124634ce1b4326f0026718688f0eb1dc7b
+ms.sourcegitcommit: 656c0c38cf550327a9ee10cc936029378bc7b5a2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/31/2020
-ms.locfileid: "87489696"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89076741"
 ---
-# <a name="query-nested-types-in-parquet-and-json-files-using-sql-on-demand-preview-in-azure-synapse-analytics"></a>Запрос вложенных типов в файлах Parquet и JSON с помощью SQL по запросу (Предварительная версия) в Azure синапсе Analytics
+# <a name="query-nested-types-in-parquet-and-json-files-by-using-sql-on-demand-preview-in-azure-synapse-analytics"></a>Запрос вложенных типов в файлах Parquet и JSON с помощью SQL по запросу (Предварительная версия) в Azure синапсе Analytics
 
-В этой статье вы узнаете, как написать запрос с помощью SQL по запросу (предварительная версия) в Azure Synapse Analytics. Этот запрос будет считывать вложенные типы Parquet.
+В этой статье вы узнаете, как написать запрос с помощью SQL по запросу (Предварительная версия) в Azure синапсе Analytics. Запрос будет считывать вложенные типы Parquet.
 Вложенные типы являются сложными структурами, представляющими объекты или массивы. Вложенные типы могут храниться в: 
-- [Parquet](query-parquet-files.md) , где можно иметь несколько сложных столбцов, содержащих массивы и объекты.
-- Иерархические [файлы JSON](query-json-files.md) , в которых можно читать СЛОЖНЫЕ документы JSON в виде одного столбца.
-- Коллекция CosmosDB, в которой каждый документ может содержать сложные вложенные свойства (в настоящее время в общедоступной предварительной версии).
+- [Parquet](query-parquet-files.md), где можно иметь несколько сложных столбцов, содержащих массивы и объекты.
+- Иерархические [JSON-файлы](query-json-files.md), в которых можно читать СЛОЖНЫЕ документы JSON в виде одного столбца.
+- Azure Cosmos DB коллекции (в настоящее время находится в общедоступной предварительной версии), где каждый документ может содержать сложные вложенные свойства.
 
-Синапсе SQL по запросу форматирует все вложенные типы как объекты JSON и массивы, поэтому вы можете [извлекать или изменять сложные объекты с помощью функций JSON](https://docs.microsoft.com/sql/relational-databases/json/validate-query-and-change-json-data-with-built-in-functions-sql-server) или [анализировать данные JSON с помощью функции OPENJSON](https://docs.microsoft.com/sql/relational-databases/json/convert-json-data-to-rows-and-columns-with-openjson-sql-server). 
+Azure синапсе SQL по запросу форматирует все вложенные типы как объекты JSON и массивы. Таким образом, можно [извлекать или изменять сложные объекты с помощью функций JSON](https://docs.microsoft.com/sql/relational-databases/json/validate-query-and-change-json-data-with-built-in-functions-sql-server) или [анализировать данные JSON с помощью функции OPENJSON](https://docs.microsoft.com/sql/relational-databases/json/convert-json-data-to-rows-and-columns-with-openjson-sql-server). 
 
-Ниже приведен один пример запроса, который извлекает скалярные значения и из [ковид-19 Open Research DataSet](https://azure.microsoft.com/services/open-datasets/catalog/covid-19-open-research/) JSON file с вложенными объектами. 
+Ниже приведен пример запроса, который извлекает скалярные значения и из [ковид-19 Open Research DataSet](https://azure.microsoft.com/services/open-datasets/catalog/covid-19-open-research/) JSON, который содержит вложенные объекты: 
 
 ```sql
 SELECT
@@ -42,18 +42,18 @@ FROM
     WITH ( doc varchar(MAX) ) AS docs;
 ```
 
-`JSON_VALUE`функция возвращает скалярное значение из поля по указанному пути. `JSON_QUERY`функция возвращает объект, отформатированный в формате JSON, из поля по указанному пути.
+`JSON_VALUE`Функция возвращает скалярное значение из поля по указанному пути. `JSON_QUERY`Функция возвращает объект, отформатированный в формате JSON, из поля по указанному пути.
 
 > [!IMPORTANT]
-> В этом примере используется файл из [ковид-19 Open Research DataSet](https://azure.microsoft.com/services/open-datasets/catalog/covid-19-open-research/). См. раздел лицензия этого и структура данных на этой странице.
+> В этом примере используется файл из набора данных КОВИД-19 Open Research. [Ознакомьтесь с лицензиями и структурой данных здесь](https://azure.microsoft.com/services/open-datasets/catalog/covid-19-open-research/).
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Сначала нужно **создать базу данных**, у которой источник данных имеет ссылку. Затем инициализируйте объекты, выполнив [сценарий настройки](https://github.com/Azure-Samples/Synapse/blob/master/SQL/Samples/LdwSample/SampleDB.sql) для этой базы данных. Этот сценарий настройки создает источники данных, учетные данные области базы данных и форматы внешних файлов, которые используются в этих примерах.
+Первым шагом является создание базы данных, в которой будет создан источник данных. Затем вы инициализируйте объекты, запустив [сценарий установки](https://github.com/Azure-Samples/Synapse/blob/master/SQL/Samples/LdwSample/SampleDB.sql) в базе данных. Сценарий установки создаст источники данных, учетные данные области базы данных и форматы внешних файлов, используемые в примерах.
 
 ## <a name="project-nested-or-repeated-data"></a>Вложенные или повторяющиеся данные в проекте
 
-Файл PARQUET может иметь несколько столбцов со сложными типами. Значения из этих столбцов форматируются в виде текста JSON и возвращаются в виде столбца VARCHAR. Следующий запрос считывает файл *структексампле. Parquet* и показывает, как считывать значения вложенных столбцов: 
+Файл Parquet может иметь несколько столбцов со сложными типами. Значения из этих столбцов форматируются в виде текста JSON и возвращаются в виде столбцов типа VARCHAR. Следующий запрос считывает файл Структексампле. Parquet и показывает, как считывать значения вложенных столбцов: 
 
 ```sql
 SELECT
@@ -73,14 +73,14 @@ FROM
     ) AS [r];
 ```
 
-Этот запрос возвращает следующий результат, в котором содержимое каждого вложенного объекта возвращается в виде текста JSON:
+Этот запрос возвращает следующий результат. Содержимое каждого вложенного объекта возвращается в виде текста JSON.
 
 | датеструкт    | тиместрукт    | тиместампструкт   | деЦималструкт | флоатструкт |
 | --- | --- | --- | --- | --- |
 |{"Date": "2009-04-25"}| {"Time": "20:51:54.3598000"}|    {"Timestamp": "5501-04-08 12:13:57.4821000"}|    {"Decimal": 11143412.25350}| {"Float": 0,5}|
 |{"Date": "1916-04-29"}| {"Time": "00:16:04.6778000"}|    {"Timestamp": "1990-06-30 20:50:52.6828000"}|    {"Decimal": 1963545.62800}|  {"Float":-2,125}|
 
-Приведенный ниже запрос считывает файл *justSimpleArray.parquet*. Он проецирует все столбцы из файла Parquet, включая вложенные или повторяющиеся данные.
+Приведенный ниже запрос считывает файл justSimpleArray.parquet. Он проецирует все столбцы из файла Parquet, включая вложенные и повторяющиеся данные.
 
 ```sql
 SELECT
@@ -102,7 +102,7 @@ FROM
 
 ## <a name="read-properties-from-nested-object-columns"></a>Чтение свойств из столбцов вложенных объектов
 
-`JSON_VALUE`функция позволяет возвращать значения из столбца, отформатированного в виде текста JSON:
+`JSON_VALUE`Функция позволяет возвращать значения из столбцов, отформатированных в виде текста JSON:
 
 ```sql
 SELECT
@@ -121,11 +121,11 @@ FROM
 | --- | --- | --- | --- |
 | Дополнительная информация — епидемиоло... | Жюльен   | -Рис. S1: Филожени из... | `{    "paper_id": "000b7d1517ceebb34e1e3e817695b6de03e2fa78",    "metadata": {        "title": "Supplementary Information An eco-epidemiological study of Morbilli-related paramyxovirus infection in Madagascar bats reveals host-switching as the dominant macro-evolutionary mechanism",        "authors": [            {                "first": "Julien"` |
 
-В отличие от файлов JSON, которые в большинстве случаев возвращают один столбец, содержащий сложный объект JSON. Файлы PARQUET могут иметь несколько сложностей. Можно считывать свойства вложенного столбца с помощью `JSON_VALUE` функции для каждого столбца. `OPENROWSET`позволяет непосредственно указывать пути вложенных свойств в `WITH` предложении. Пути можно задать в качестве имени столбца или можно добавить [выражение пути JSON](https://docs.microsoft.com/sql/relational-databases/json/json-path-expressions-sql-server) после типа столбца.
+В отличие от JSON-файлов, которые в большинстве случаев возвращают один столбец, содержащий сложный объект JSON, Parquet-файлы могут иметь несколько сложных столбцов. Свойства вложенных столбцов можно считывать с помощью `JSON_VALUE` функции для каждого столбца. `OPENROWSET` позволяет непосредственно указывать пути вложенных свойств в `WITH` предложении. Можно задать пути в качестве имени столбца или добавить [выражение пути JSON](https://docs.microsoft.com/sql/relational-databases/json/json-path-expressions-sql-server) после типа столбца.
 
-Следующий запрос считывает файл *структексампле. Parquet* и показывает, как Surface Elements вложенного столбца. Существует два способа ссылки на вложенное значение:
-- Указание выражения пути вложенного значения после спецификации типа.
-- Форматирование имени столбца как вложенного пути с помощью Do "." для ссылки на поля.
+Следующий запрос считывает файл Структексампле. Parquet и показывает, как Surface Elements вложенного столбца. Существует два способа ссылки на вложенное значение:
+- Путем указания выражения пути вложенного значения после спецификации типа.
+- Путем форматирования имени столбца как вложенного пути с помощью команды "." для ссылки на поля.
 
 ```sql
 SELECT
@@ -147,7 +147,7 @@ FROM
 
 ## <a name="access-elements-from-repeated-columns"></a>Доступ к элементам из повторяющихся столбцов
 
-Следующий запрос считывает файл *justSimpleArray.parquet* и использует [JSON_VALUE](/sql/t-sql/functions/json-value-transact-sql?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest) для получения **скалярного** элемента из повторяющегося столбца, такого как массив или карта.
+Следующий запрос считывает файл Жустсимплеаррай. Parquet и использует [JSON_VALUE](/sql/t-sql/functions/json-value-transact-sql?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest) для получения скалярного элемента из повторяющегося столбца, например массива или Map:
 
 ```sql
 SELECT
@@ -163,7 +163,7 @@ FROM
     ) AS [r];
 ```
 
-Результат показан в следующей таблице:
+Ниже приведен результат:
 
 |симплеаррай    | фирстелемент  | секонделемент | сирделемент |
 | --- | --- | --- | --- |
@@ -172,7 +172,7 @@ FROM
 
 ## <a name="access-sub-objects-from-complex-columns"></a>Доступ к подобъектам из сложных столбцов
 
-Следующий запрос считывает файл *mapExample.parquet* и использует [JSON_QUERY](/sql/t-sql/functions/json-query-transact-sql?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest) для получения **нескалярного** элемента из повторяющегося столбца, такого как массив или карта.
+Следующий запрос считывает файл Мапексампле. Parquet и использует [JSON_QUERY](/sql/t-sql/functions/json-query-transact-sql?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest) для получения нескалярного элемента из повторяющегося столбца, например массива или Map:
 
 ```sql
 SELECT
@@ -186,7 +186,7 @@ FROM
     ) AS [r];
 ```
 
-Также можно явно ссылаться на столбцы, которые требуется вернуть в `WITH` предложение:
+Также можно явно ссылаться на столбцы, возвращаемые в `WITH` предложении:
 
 ```sql
 SELECT DocId,
@@ -201,11 +201,11 @@ FROM
     WITH (DocId bigint, MapOfPersons VARCHAR(max)) AS [r];
 ```
 
-Структура `MapOfPersons` возвращается в виде `VARCHAR` столбца и отформатирована как строка JSON.
+Структура `MapOfPersons` возвращается в виде СТОЛБЦА varchar и форматируется как строка JSON.
 
 ## <a name="project-values-from-repeated-columns"></a>Значения проекта из повторяющихся столбцов
 
-Если имеется массив скалярных значений (например `[1,2,3]` ,) в некоторых столбцах, их можно легко развернуть и соединить с главной строкой, используя следующий скрипт:
+Если имеется массив скалярных значений (например `[1,2,3]` ,) в некоторых столбцах, их можно легко развернуть и соединить с главной строкой с помощью этого скрипта:
 
 ```sql
 SELECT

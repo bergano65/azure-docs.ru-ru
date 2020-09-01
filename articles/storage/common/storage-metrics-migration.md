@@ -9,16 +9,16 @@ ms.author: normesta
 ms.reviewer: fryu
 ms.subservice: common
 ms.custom: monitoring
-ms.openlocfilehash: a1f977cef614a52853407c0d0665399f1a249c53
-ms.sourcegitcommit: e71da24cc108efc2c194007f976f74dd596ab013
+ms.openlocfilehash: c8eae70b88aa454e5d712b3c5b7930b12d169912
+ms.sourcegitcommit: 656c0c38cf550327a9ee10cc936029378bc7b5a2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87422068"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89078254"
 ---
 # <a name="transition-to-metrics-in-azure-monitor"></a>Переход к метрикам в Azure Monitor
 
-Служба хранилища Azure теперь интегрирует метрики в Azure Monitorную платформу. Эта статья поможет вам выполнить переход.
+С **31 августа 2023** аналитика службы хранилища метрики, также называемые *классическими метриками* , будут прекращены. Если вы используете классические метрики, обязательно переходите к метрикам в Azure Monitor до этой даты. Эта статья поможет вам выполнить переход.
 
 ## <a name="steps-to-complete-the-transition"></a>Шаги для завершения перехода
 
@@ -63,8 +63,8 @@ ms.locfileid: "87422068"
 
 | Классическая метрика | Метрика в Azure Monitor |
 | ------------------- | ----------------- |
-| `Capacity`            | `BlobCapacity`с измерением, `BlobType` равным `BlockBlob` или`PageBlob` |
-| `ObjectCount`        | `BlobCount`с измерением, `BlobType` равным `BlockBlob` или`PageBlob` |
+| `Capacity`            | `BlobCapacity` с измерением, `BlobType` равным `BlockBlob` или `PageBlob` |
+| `ObjectCount`        | `BlobCount` с измерением, `BlobType` равным `BlockBlob` или `PageBlob` |
 | `ContainerCount`      | `ContainerCount` |
 
 > [!NOTE]
@@ -74,40 +74,40 @@ ms.locfileid: "87422068"
 
 | Классическая метрика | Метрика в Azure Monitor |
 | ------------------- | ----------------- |
-| `AnonymousAuthorizationError` | Транзакции с измерением, `ResponseType` равным `AuthorizationError` , и измерением, `Authentication` равным`Anonymous` |
-| `AnonymousClientOtherError` | Транзакции с измерением, `ResponseType` равным `ClientOtherError` , и измерением, `Authentication` равным`Anonymous` |
-| `AnonymousClientTimeoutError` | Транзакции с измерением, `ResponseType` равным `ClientTimeoutError` , и измерением, `Authentication` равным`Anonymous` |
-| `AnonymousNetworkError` | Транзакции с измерением, `ResponseType` равным `NetworkError` , и измерением, `Authentication` равным`Anonymous` |
-| `AnonymousServerOtherError` | Транзакции с измерением, `ResponseType` равным `ServerOtherError` , и измерением, `Authentication` равным`Anonymous` |
-| `AnonymousServerTimeoutError` | Транзакции с измерением, `ResponseType` равным `ServerTimeoutError` , и измерением, `Authentication` равным`Anonymous` |
-| `AnonymousSuccess` | Транзакции с измерением, `ResponseType` равным `Success` , и измерением, `Authentication` равным`Anonymous` |
-| `AnonymousThrottlingError` | Транзакции с измерением, `ResponseType` равным `ClientThrottlingError` или `ServerBusyError` , и измерением, `Authentication` равным`Anonymous` |
-| `AuthorizationError` | Транзакции с измерением, `ResponseType` равным`AuthorizationError` |
+| `AnonymousAuthorizationError` | Транзакции с измерением, `ResponseType` равным `AuthorizationError` , и измерением, `Authentication` равным `Anonymous` |
+| `AnonymousClientOtherError` | Транзакции с измерением, `ResponseType` равным `ClientOtherError` , и измерением, `Authentication` равным `Anonymous` |
+| `AnonymousClientTimeoutError` | Транзакции с измерением, `ResponseType` равным `ClientTimeoutError` , и измерением, `Authentication` равным `Anonymous` |
+| `AnonymousNetworkError` | Транзакции с измерением, `ResponseType` равным `NetworkError` , и измерением, `Authentication` равным `Anonymous` |
+| `AnonymousServerOtherError` | Транзакции с измерением, `ResponseType` равным `ServerOtherError` , и измерением, `Authentication` равным `Anonymous` |
+| `AnonymousServerTimeoutError` | Транзакции с измерением, `ResponseType` равным `ServerTimeoutError` , и измерением, `Authentication` равным `Anonymous` |
+| `AnonymousSuccess` | Транзакции с измерением, `ResponseType` равным `Success` , и измерением, `Authentication` равным `Anonymous` |
+| `AnonymousThrottlingError` | Транзакции с измерением, `ResponseType` равным `ClientThrottlingError` или `ServerBusyError` , и измерением, `Authentication` равным `Anonymous` |
+| `AuthorizationError` | Транзакции с измерением, `ResponseType` равным `AuthorizationError` |
 | `Availability` | `Availability` |
 | `AverageE2ELatency` | `SuccessE2ELatency` |
 | `AverageServerLatency` | `SuccessServerLatency` |
-| `ClientOtherError` | Транзакции с измерением, `ResponseType` равным`ClientOtherError` |
-| `ClientTimeoutError` | Транзакции с измерением, `ResponseType` равным`ClientTimeoutError` |
-| `NetworkError` | Транзакции с измерением, `ResponseType` равным`NetworkError` |
-| `PercentAuthorizationError` | Транзакции с измерением, `ResponseType` равным`AuthorizationError` |
-| `PercentClientOtherError` | Транзакции с измерением, `ResponseType` равным`ClientOtherError` |
-| `PercentNetworkError` | Транзакции с измерением, `ResponseType` равным`NetworkError` |
-| `PercentServerOtherError` | Транзакции с измерением, `ResponseType` равным`ServerOtherError` |
-| `PercentSuccess` | Транзакции с измерением, `ResponseType` равным`Success` |
-| `PercentThrottlingError` | Транзакции с измерением, `ResponseType` равным `ClientThrottlingError` или`ServerBusyError` |
-| `PercentTimeoutError` | Транзакции с измерением, `ResponseType` равным `ServerTimeoutError` или `ResponseType` равным`ClientTimeoutError` |
-| `SASAuthorizationError` | Транзакции с измерением, `ResponseType` равным `AuthorizationError` , и измерением, `Authentication` равным`SAS` |
-| `SASClientOtherError` | Транзакции с измерением, `ResponseType` равным `ClientOtherError` , и измерением, `Authentication` равным`SAS` |
-| `SASClientTimeoutError` | Транзакции с измерением, `ResponseType` равным `ClientTimeoutError` , и измерением, `Authentication` равным`SAS` |
-| `SASNetworkError` | Транзакции с измерением, `ResponseType` равным `NetworkError` , и измерением, `Authentication` равным`SAS` |
-| `SASServerOtherError` | Транзакции с измерением, `ResponseType` равным `ServerOtherError` , и измерением, `Authentication` равным`SAS` |
-| `SASServerTimeoutError` | Транзакции с измерением, `ResponseType` равным `ServerTimeoutError` , и измерением, `Authentication` равным`SAS` |
-| `SASSuccess` | Транзакции с измерением, `ResponseType` равным `Success` , и измерением, `Authentication` равным`SAS` |
-| `SASThrottlingError` | Транзакции с измерением, `ResponseType` равным `ClientThrottlingError` или `ServerBusyError` , и измерением, `Authentication` равным`SAS` |
-| `ServerOtherError` | Транзакции с измерением, `ResponseType` равным`ServerOtherError` |
-| `ServerTimeoutError` | Транзакции с измерением, `ResponseType` равным`ServerTimeoutError` |
-| `Success` | Транзакции с измерением, `ResponseType` равным`Success` |
-| `ThrottlingError` | `Transactions`с измерением, `ResponseType` равным `ClientThrottlingError` или`ServerBusyError`|
+| `ClientOtherError` | Транзакции с измерением, `ResponseType` равным `ClientOtherError` |
+| `ClientTimeoutError` | Транзакции с измерением, `ResponseType` равным `ClientTimeoutError` |
+| `NetworkError` | Транзакции с измерением, `ResponseType` равным `NetworkError` |
+| `PercentAuthorizationError` | Транзакции с измерением, `ResponseType` равным `AuthorizationError` |
+| `PercentClientOtherError` | Транзакции с измерением, `ResponseType` равным `ClientOtherError` |
+| `PercentNetworkError` | Транзакции с измерением, `ResponseType` равным `NetworkError` |
+| `PercentServerOtherError` | Транзакции с измерением, `ResponseType` равным `ServerOtherError` |
+| `PercentSuccess` | Транзакции с измерением, `ResponseType` равным `Success` |
+| `PercentThrottlingError` | Транзакции с измерением, `ResponseType` равным `ClientThrottlingError` или `ServerBusyError` |
+| `PercentTimeoutError` | Транзакции с измерением, `ResponseType` равным `ServerTimeoutError` или `ResponseType` равным `ClientTimeoutError` |
+| `SASAuthorizationError` | Транзакции с измерением, `ResponseType` равным `AuthorizationError` , и измерением, `Authentication` равным `SAS` |
+| `SASClientOtherError` | Транзакции с измерением, `ResponseType` равным `ClientOtherError` , и измерением, `Authentication` равным `SAS` |
+| `SASClientTimeoutError` | Транзакции с измерением, `ResponseType` равным `ClientTimeoutError` , и измерением, `Authentication` равным `SAS` |
+| `SASNetworkError` | Транзакции с измерением, `ResponseType` равным `NetworkError` , и измерением, `Authentication` равным `SAS` |
+| `SASServerOtherError` | Транзакции с измерением, `ResponseType` равным `ServerOtherError` , и измерением, `Authentication` равным `SAS` |
+| `SASServerTimeoutError` | Транзакции с измерением, `ResponseType` равным `ServerTimeoutError` , и измерением, `Authentication` равным `SAS` |
+| `SASSuccess` | Транзакции с измерением, `ResponseType` равным `Success` , и измерением, `Authentication` равным `SAS` |
+| `SASThrottlingError` | Транзакции с измерением, `ResponseType` равным `ClientThrottlingError` или `ServerBusyError` , и измерением, `Authentication` равным `SAS` |
+| `ServerOtherError` | Транзакции с измерением, `ResponseType` равным `ServerOtherError` |
+| `ServerTimeoutError` | Транзакции с измерением, `ResponseType` равным `ServerTimeoutError` |
+| `Success` | Транзакции с измерением, `ResponseType` равным `Success` |
+| `ThrottlingError` | `Transactions` с измерением, `ResponseType` равным `ClientThrottlingError` или `ServerBusyError`|
 | `TotalBillableRequests` | `Transactions` |
 | `TotalEgress` | `Egress` |
 | `TotalIngress` | `Ingress` |

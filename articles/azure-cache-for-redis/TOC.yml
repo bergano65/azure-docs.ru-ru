@@ -94,9 +94,11 @@
           href: cache-how-to-manage-redis-cache-powershell.md
         - name: Развертывание и управление с помощью Azure CLI
           href: cli-samples.md
-        - name: Подготовка кэша Redis для Azure к работе
+        - name: "Создание Redis Cache\_— шаблон ARM"
+          displayName: Resource Manager
           href: cache-redis-cache-arm-provision.md
-        - name: Подготовка веб-приложения к работе с помощью кэша Redis для Azure
+        - name: "Создание веб-приложения с Redis Cache\_— шаблон ARM"
+          displayName: Resource Manager
           href: cache-web-app-arm-with-redis-cache-provision.md
     - name: Управление
       items:

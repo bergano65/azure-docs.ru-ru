@@ -9,15 +9,15 @@ manager: craigg
 ms.reviewer: craigg
 ms.service: dms
 ms.workload: data-services
-ms.custom: seo-lt-2019,fasttrack-edit
+ms.custom: seo-lt-2019,fasttrack-edit, devx-track-azurepowershell
 ms.topic: article
 ms.date: 02/20/2020
-ms.openlocfilehash: eb8ec09646fa3f3c226edbe957e19d079fd2607c
-ms.sourcegitcommit: 5cace04239f5efef4c1eed78144191a8b7d7fee8
+ms.openlocfilehash: 37d61a5c199b59a13b54344f5ffaf69d7b369a1b
+ms.sourcegitcommit: 656c0c38cf550327a9ee10cc936029378bc7b5a2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86147430"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89078067"
 ---
 # <a name="migrate-sql-server-to-sql-managed-instance-with-powershell--azure-database-migration-service"></a>Миграция SQL Server в Управляемый экземпляр SQL с помощью & PowerShell Azure Database Migration Service
 
@@ -35,7 +35,7 @@ ms.locfileid: "86147430"
 
 Эта статья содержит подробные сведения о том, как выполнять оперативную и автономную миграцию.
 
-## <a name="prerequisites"></a>Обязательные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Для выполнения этих действий вам потребуется следующее:
 
@@ -78,7 +78,7 @@ New-AzResourceGroup -ResourceGroupName myResourceGroup -Location EastUS
 
 * *Имя группы ресурсов Azure*. Вы можете использовать [`New-AzResourceGroup`](https://docs.microsoft.com/powershell/module/az.resources/new-azresourcegroup) команду, чтобы создать группу ресурсов Azure, как показано выше, и указать ее имя в качестве параметра.
 * *Имя службы*. Строка, соответствующая нужному уникальному имени службы для Azure Database Migration Service.
-* *Расположение.* Указывает расположение службы. Укажите расположение центра обработки данных Azure, например "Западная часть США" или "Юго-Восточная Азия".
+* *Расположение*. Указывает расположение службы. Укажите расположение центра обработки данных Azure, например "Западная часть США" или "Юго-Восточная Азия".
 * *Номер SKU*. Этот параметр соответствует имени SKU DMS. В настоящее время поддерживаются имена SKU *Basic_1vCore*, *Basic_2vCores*, *GeneralPurpose_4vCores*.
 * *VirtualSubnetId.* [`New-AzVirtualNetworkSubnetConfig`](https://docs.microsoft.com//powershell/module/az.network/new-azvirtualnetworksubnetconfig)Для создания подсети можно использовать командлет.
 
@@ -295,7 +295,7 @@ $blobSasUri="https://mystorage.blob.core.windows.net/test?st=2018-07-13T18%3A10%
 * *SelectedDatabase.* Объект Аздатамигратионселектеддб, представляющий сопоставление исходного и целевого базы данных.
 * *BackupFileShare.* Объект FileShare, представляющий локальную сетевую папку, в которую Azure Database Migration Service может поместить резервные копии базы данных-источника.
 * *BackupBlobSasUri.* URI SAS, который позволяет Azure Database Migration Service обращаться к контейнеру учетной записи хранения для отправки файлов резервных копий. Узнайте, как получить URI SAS для контейнера больших двоичных объектов.
-* *SelectedLogins.* Список выбранных для переноса имен для входа.
+* *Значение selectedlogins*. Список выбранных для переноса имен для входа.
 * *SelectedAgentJobs.* Список выбранных заданий агента для переноса.
 
 ##### <a name="additional-parameters"></a>Дополнительные параметры
@@ -304,7 +304,7 @@ $blobSasUri="https://mystorage.blob.core.windows.net/test?st=2018-07-13T18%3A10%
 
 * **Автономные миграции**. Для автономных миграций `New-AzDataMigrationTask` командлет также ожидает следующие параметры:
 
-  * *SelectedLogins.* Список выбранных для переноса имен для входа.
+  * *Значение selectedlogins*. Список выбранных для переноса имен для входа.
   * *SelectedAgentJobs.* Список выбранных заданий агента для переноса.
 
 * **Оперативная миграция**. Для оперативной миграции `New-AzDataMigrationTask` командлет также ожидает следующие параметры.
