@@ -15,12 +15,12 @@ ms.workload: identity
 ms.date: 09/14/2017
 ms.author: barclayn
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d8126f6314044fc2ee816e9150e9595719d63eff
-ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
+ms.openlocfilehash: ee28addd5f6ac0faaf03d29d712c4e750ed6e293
+ms.sourcegitcommit: 3fb5e772f8f4068cc6d91d9cde253065a7f265d6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89009208"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89177488"
 ---
 # <a name="assign-a-managed-identity-access-to-a-resource-by-using-the-azure-portal"></a>Назначение доступа на основе управляемого удостоверения для ресурса с помощью портала Azure
 
@@ -33,7 +33,7 @@ ms.locfileid: "89009208"
 - Если вы не работали с управляемыми удостоверениями для ресурсов Azure, изучите [общие сведения](overview.md). **Обратите внимание на [различие между управляемыми удостоверениями, назначаемыми системой и назначаемыми пользователями](overview.md#managed-identity-types)**.
 - Если у вас нет учетной записи Azure, [зарегистрируйтесь для получения бесплатной пробной учетной записи](https://azure.microsoft.com/free/), прежде чем продолжать.
 
-## <a name="use-rbac-to-assign-a-managed-identity-access-to-another-resource"></a>Назначение управляемому удостоверению прав доступа к другому ресурсу с помощью RBAC
+## <a name="use-azure-rbac-to-assign-a-managed-identity-access-to-another-resource"></a>Назначение управляемому удостоверению доступа к другому ресурсу с помощью Azure RBAC
 
 После включения управляемого удостоверения в ресурсе Azure, например в ВИРТУАЛЬНОЙ машине [Azure](qs-configure-portal-windows-vm.md) или в [масштабируемом наборе виртуальных машин Azure](qs-configure-portal-windows-vmss.md), выполните следующие действия.
 

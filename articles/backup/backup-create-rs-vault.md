@@ -4,12 +4,12 @@ description: В этой статье вы узнаете, как создава
 ms.topic: conceptual
 ms.date: 05/30/2019
 ms.custom: references_regions
-ms.openlocfilehash: 7f7b024c30706f3823d500729b428bebdabf25ec
-ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
+ms.openlocfilehash: 81c6fd47ccea2ea17a20535df04931727c23be6f
+ms.sourcegitcommit: 3fb5e772f8f4068cc6d91d9cde253065a7f265d6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89014802"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89177199"
 ---
 # <a name="create-and-configure-a-recovery-services-vault"></a>Создание и Настройка хранилища служб восстановления
 

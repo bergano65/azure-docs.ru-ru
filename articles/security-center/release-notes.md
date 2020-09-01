@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 08/12/2020
 ms.author: memildin
-ms.openlocfilehash: c7df035aec199953bdf9a6bd56262af70a5a77e7
-ms.sourcegitcommit: 5b6acff3d1d0603904929cc529ecbcfcde90d88b
+ms.openlocfilehash: 0c0e286ac9f94768541bb40b9ccca01e0469e0c8
+ms.sourcegitcommit: 3fb5e772f8f4068cc6d91d9cde253065a7f265d6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/21/2020
-ms.locfileid: "88723968"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89177250"
 ---
 # <a name="whats-new-in-azure-security-center"></a>Новые возможности в Центре безопасности Azure
 
@@ -107,7 +107,7 @@ ms.locfileid: "88723968"
 ||||
 
 
-|Policy (Политика)|Область|
+|Политика|Область|
 |----|:----|
 |**На виртуальных машинах должна быть включена оценка уязвимостей**<br>Идентификатор политики: 501541f7-f7e7-4cd6-868c-4190fdad3ac9|Встроено|
 |**Уязвимости следует устранять с помощью решения для оценки уязвимостей**<br>Идентификатор политики: 760a85ff-6162-42b3-8d70-698e268f648c|BYOL|
@@ -122,7 +122,7 @@ ms.locfileid: "88723968"
 |**Исправление уязвимостей на виртуальных машинах**<br>Ключ: 1195afff-c881-495e-9bc5-1486211ae03f|Встроенные + BYOL|
 ||||
 
-|Policy (Политика)|Область|
+|Политика|Область|
 |----|:----|
 |[**Оценка уязвимостей должна быть включена на виртуальных машинах**](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2fproviders%2fMicrosoft.Authorization%2fpolicyDefinitions%2f501541f7-f7e7-4cd6-868c-4190fdad3ac9)<br>Идентификатор политики: 501541f7-f7e7-4cd6-868c-4190fdad3ac9 |Встроенные + BYOL|
 ||||
@@ -159,11 +159,11 @@ ms.locfileid: "88723968"
 
 В этом обновлении проверка была удалена, и теперь можно развернуть средства оценки уязвимостей на пользовательских компьютерах с Windows и Linux. Пользовательские образы — это изменения, внесенные в параметры по умолчанию для Marketplace.
 
-Несмотря на то, что теперь можно развернуть встроенное расширение оценки уязвимостей (на платформе Qualys) на многих других компьютерах, поддержка доступна только в том случае, если вы используете операционную систему, указанную в подсистеме [развертывания встроенного средства проверки уязвимостей Qualys](built-in-vulnerability-assessment.md#deploying-the-qualys-built-in-vulnerability-scanner).
+Несмотря на то, что теперь можно развернуть встроенное расширение оценки уязвимостей (на платформе Qualys) на многих других компьютерах, поддержка доступна только в том случае, если вы используете ОС в списке [развертывание встроенного средства проверки уязвимостей на виртуальные машины уровня Standard](deploy-vulnerability-assessment-vm.md#deploy-the-integrated-vulnerability-scanner-to-standard-tier-vms) .
 
-Дополнительные сведения об [интегрированном сканере уязвимостей для виртуальных машин (только для уровня "Стандартный")](built-in-vulnerability-assessment.md).
+Дополнительные сведения об [интегрированном сканере уязвимостей для виртуальных машин (только для уровня "Стандартный")](deploy-vulnerability-assessment-vm.md#overview-of-the-integrated-vulnerability-scanner).
 
-Узнайте больше о том, как использовать собственное решение для оценки уязвимостей от Qualys или Rapid7 при [развертывании решения для поиска уязвимостей партнеров](partner-vulnerability-assessment.md).
+Узнайте больше о том, как использовать собственное решение для оценки уязвимостей от Qualys или Rapid7 при [развертывании решения для поиска уязвимостей партнеров](deploy-vulnerability-assessment-vm.md).
 
 
 ### <a name="threat-protection-for-azure-storage-expanded-to-include-azure-files-and-azure-data-lake-storage-gen2-preview"></a>Расширение защиты от угроз для службы хранилища Azure для включения файлов и Azure Data Lake Storage 2-го поколения Azure (Предварительная версия)
@@ -326,7 +326,7 @@ ms.locfileid: "88723968"
 Политики можно найти в политике Azure:
 
 
-|Цель  |Policy (Политика)  |Идентификатор политики  |
+|Цель  |Политика  |Идентификатор политики  |
 |---------|---------|---------|
 |Непрерывный экспорт в концентратор событий|[Развертывание экспортированных данных в концентраторе событий для оповещений и рекомендаций Центра безопасности Azure](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2fproviders%2fMicrosoft.Authorization%2fpolicyDefinitions%2fcdfcce10-4578-4ecd-9703-530938e4abcb)|cdfcce10-4578-4ecd-9703-530938e4abcb|
 |Непрерывный экспорт в рабочую область Log Analytics|[Развертывание экспортированных данных в рабочей области Log Analytics для оповещений и рекомендаций Центра безопасности Azure](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2fproviders%2fMicrosoft.Authorization%2fpolicyDefinitions%2fffb6f416-7bd2-4488-8828-56585fef2be9)|ffb6f416-7bd2-4488-8828-56585fef2be9|
@@ -359,7 +359,7 @@ ms.locfileid: "88723968"
 Политики можно найти в политике Azure:
 
 
-| Policy (Политика)                                                                                                                                                                                                                                                                | Идентификатор политики                            |
+| Политика                                                                                                                                                                                                                                                                | Идентификатор политики                            |
 |-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------|
 | [На серверах Базы данных SQL Azure должна быть включена Расширенная защита данных](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2fproviders%2fMicrosoft.Authorization%2fpolicyDefinitions%2f7fe3b40f-802b-4cdd-8bd4-fd799c948cc2)     | 7fe3b40f-802b-4cdd-8bd4-fd799c948cc2 |
 | [Для серверов SQL на компьютерах должна быть включена Расширенная защита данных](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2fproviders%2fMicrosoft.Authorization%2fpolicyDefinitions%2f6581d072-105e-4418-827f-bd446d56421b) | 6581d072-105e-4418-827f-bd446d56421b |
@@ -415,7 +415,7 @@ ms.locfileid: "88723968"
 
 "Включение встроенного решения для оценки уязвимостей на виртуальных машинах (на платформе Qualys)"
 
-См. дополнительные сведения об [интегрированной оценке уязвимостей для виртуальных машин в Центре безопасности](built-in-vulnerability-assessment.md).
+См. дополнительные сведения об [интегрированной оценке уязвимостей для виртуальных машин в Центре безопасности](deploy-vulnerability-assessment-vm.md#overview-of-the-integrated-vulnerability-scanner).
 
 
 

@@ -35,8 +35,6 @@
           href: identity-secure-score.md
         - name: Защита удаленных сотрудников
           href: concept-secure-remote-workers.md
-        - name: Непрерывная оценка доступа
-          href: concept-fundamentals-continuous-access-evaluation.md
     - name: Группы и пользователи
       items:
         - name: Управление группами и доступом

@@ -6,12 +6,12 @@ ms.topic: conceptual
 ms.date: 04/22/2019
 ms.author: tyleonha
 ms.reviewer: glenga
-ms.openlocfilehash: 6be397631621c727bb8979df2ee8eec3aca43096
-ms.sourcegitcommit: c5021f2095e25750eb34fd0b866adf5d81d56c3a
+ms.openlocfilehash: 0c37c8f108e9bcbb827c05242d8863994dfc64cf
+ms.sourcegitcommit: 3fb5e772f8f4068cc6d91d9cde253065a7f265d6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88799372"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89177097"
 ---
 # <a name="debug-powershell-azure-functions-locally"></a>Локальная отладка функций Azure PowerShell
 
@@ -65,6 +65,9 @@ Push-OutputBinding -Name Response -Value ([HttpResponseContext]@{
 ## <a name="set-the-attach-point"></a>Установка точки подключения
 
 Для отладки любой функции PowerShell необходимо, чтобы функция была приостановлена, чтобы присоединить отладчик. `Wait-Debugger`Командлет останавливает выполнение и ожидает отладчика.
+
+>[!NOTE]
+>При использовании PowerShell 7 не нужно добавлять `Wait-Debugger` вызов в код.
 
 Все, что нужно сделать, — это добавить вызов `Wait-Debugger` командлета прямо над `if` инструкцией следующим образом:
 
@@ -247,7 +250,7 @@ At /Path/To/PSFunctionApp/HttpTriggerFunction/run.ps1:13 char:1
 
 При возникновении трудностей во время отладки необходимо проверить следующее:
 
-| Проверить | Действие |
+| службы "Функции Azure" | Действие |
 |------|------|
 | Запустите `func --version` из терминала. Если появляется сообщение об ошибке, которое `func` не удается найти, то основные средства (func.exe) могут отсутствовать в локальной `path` переменной.| [Переустановите основные инструменты](functions-run-local.md#v2).|  
 | В Visual Studio Code терминалу по умолчанию необходим доступ к func.exe. Убедитесь, что вы не используете терминал по умолчанию, на котором не установлены основные средства, например подсистема Windows для Linux (WSL).  | Задайте оболочку по умолчанию в Visual Studio Code либо PowerShell 7 (рекомендуется), либо Windows PowerShell 5,1.|

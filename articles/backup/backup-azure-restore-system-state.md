@@ -3,12 +3,12 @@ title: восстановление состояния системы в Windows
 description: Пошаговое описание восстановления состояния системы Windows Server из резервной копии в Azure.
 ms.topic: conceptual
 ms.date: 06/30/2020
-ms.openlocfilehash: 9237d3d087da7f9e72813baa0056cd6b70f2c914
-ms.sourcegitcommit: c6b9a46404120ae44c9f3468df14403bcd6686c1
+ms.openlocfilehash: d3fb88ddbb02327db4388de18d2645519e13d2ec
+ms.sourcegitcommit: 3fb5e772f8f4068cc6d91d9cde253065a7f265d6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88892547"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89178592"
 ---
 # <a name="restore-system-state-to-windows-server"></a>Восстановление состояния системы в Windows Server
 
@@ -112,7 +112,7 @@ ms.locfileid: "88892547"
 
 ## <a name="apply-restored-system-state-on-a-windows-server"></a>Применение восстановленного состояния системы в Windows Server
 
-После восстановления состояния системы в виде файлов с помощью агента служб восстановления Azure используйте служебную программу системы архивации данных Windows Server, чтобы применить восстановленное состояние системы к Windows Server. Служебная программа системы архивации данных Windows Server уже доступна на сервере. На следующих шагах описывается, как применить восстановленное состояние системы.
+После восстановления состояния системы в виде файлов с помощью агента служб восстановления Azure используйте служебную программу cистема архивации данных Windows Server для применения восстановленного состояния системы к Windows Server. Служебная программа системы архивации данных Windows Server уже доступна на сервере. На следующих шагах описывается, как применить восстановленное состояние системы.
 
 1. Откройте оснастку cистема архивации данных Windows Server. Если вы не знаете, куда была установлена оснастка, найдите на компьютере или сервере **систему архивации данных Windows Server**.
 

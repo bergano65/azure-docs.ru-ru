@@ -15,12 +15,12 @@ ms.topic: how-to
 ms.date: 07/18/2017
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 9e72e3cb3ccc6273a9b698475c5e5aa0bb87b8b7
-ms.sourcegitcommit: 2ff0d073607bc746ffc638a84bb026d1705e543e
+ms.openlocfilehash: bdcf5ded2f2cf49048b70dedb11f25e67766e938
+ms.sourcegitcommit: 3fb5e772f8f4068cc6d91d9cde253065a7f265d6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87828801"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89177624"
 ---
 # <a name="azure-active-directory-connect-health-operations"></a>Операции Azure Active Directory Connect Health
 В этой статье описаны различные операции, которые можно выполнить с помощью Azure Active Directory (Azure AD) Connect Health.
@@ -103,8 +103,8 @@ Azure AD Connect Health для доменных служб Azure Active Director
    <br><br>
 
 [//]: # (Начало раздела RBAC)
-## <a name="manage-access-with-role-based-access-control"></a>Использование управления доступом на основе ролей
-[Управление доступом на основе ролей Azure (Azure RBAC)](../../role-based-access-control/role-assignments-portal.md) для Azure AD Connect Health предоставляет доступ пользователям и группам, отличным от глобальных администраторов. за счет назначения им соответствующих ролей. Такой подход предоставляет механизм ограничения числа глобальных администраторов в каталоге.
+## <a name="manage-access-with-azure-rbac"></a>Управление доступом с помощью Azure RBAC
+[Управление доступом на основе ролей Azure (Azure RBAC)](../../role-based-access-control/role-assignments-portal.md) для Azure AD Connect Health предоставляет доступ пользователям и группам, отличным от глобальных администраторов. Azure RBAC назначает роли предполагаемым пользователям и группам, а также предоставляет механизм для ограничения глобальных администраторов в каталоге.
 
 ### <a name="roles"></a>Роли
 Azure AD Connect Health поддерживает следующие встроенные роли:
@@ -133,14 +133,14 @@ Azure AD Connect Health поддерживает управление досту
 #### <a name="step-2-add-users-and-groups-and-assign-roles"></a>Шаг 2. Добавление пользователей и групп, а также назначение ролей
 1. В разделе **Настройка** щелкните **Пользователи**.<br>
    ![Снимок экрана боковой панели ресурсов Azure AD Connect Health](./media/how-to-connect-health-operations/startRBAC.png)
-2. Щелкните **Добавить**.
+2. Выберите **Добавить**.
 3. В области **Выбор роли** выберите роль (например, **Владелец**).<br>
-   ![Снимок экрана окна "Пользователи" компонента управления доступом на основе ролей в Azure AD Connect Health](./media/how-to-connect-health-operations/RBAC_add.png)
+   ![Снимок экрана Azure AD Connect Health и меню настройки Azure RBAC](./media/how-to-connect-health-operations/RBAC_add.png)
 4. Введите имя или идентификатор целевого пользователя или целевой группы. Одновременно можно выбрать сразу несколько пользователей или групп. Нажмите кнопку **Выбрать**.
-   ![Снимок экрана окна "Пользователи" компонента управления доступом на основе ролей в Azure AD Connect Health](./media/how-to-connect-health-operations/RBAC_select_users.png)
+   ![Снимок экрана Azure AD Connect Health и списка ролей RBAC Azure](./media/how-to-connect-health-operations/RBAC_select_users.png)
 5. Щелкните **ОК**.<br>
 6. После назначения ролей пользователи и группы отобразятся в списке.<br>
-   ![Снимок экрана окна "Пользователи" компонента управления доступом на основе ролей в Azure AD Connect Health с выделенными новыми пользователями](./media/how-to-connect-health-operations/RBAC_user_list.png)
+   ![Снимок экрана с выделенными Azure AD Connect Health и Azure RBAC и новыми пользователями](./media/how-to-connect-health-operations/RBAC_user_list.png)
 
 Теперь указанные пользователи и группы имеют доступ в соответствии с назначенными им ролями.
 
@@ -153,7 +153,7 @@ Azure AD Connect Health поддерживает управление досту
 #### <a name="step-3-share-the-blade-location-with-users-or-groups"></a>Шаг 3. Общий доступ к расположению колонки для пользователей или групп
 1. После назначения разрешений пользователь может получить доступ к Azure AD Connect Health, перейдя по [этому адресу](https://aka.ms/aadconnecthealth).
 2. В этой колонке пользователь может закрепить ее или различные элементы на панели мониторинга. Для этого нужно просто щелкнуть значок **Закрепить колонку на панели мониторинга**.<br>
-   ![Снимок экрана колонки закрепления компонента управления доступом на основе ролей в Azure AD Connect Health с выделенным значком "Закрепить колонку на панели мониторинга"](./media/how-to-connect-health-operations/RBAC_pin_blade.png)
+   ![Снимок экрана: колонка "Azure AD Connect Health" и "Булавка Azure RBAC" с выделенным значком закрепления](./media/how-to-connect-health-operations/RBAC_pin_blade.png)
 
 > [!NOTE]
 > Пользователь с ролью "Читатель" не получает расширения Azure AD Connect Health из Azure Marketplace, так как он не может выполнить необходимую операцию create. Однако этот пользователь по-прежнему может перейти к колонке, воспользовавшись приведенной выше ссылкой. Для дальнейшего использования колонки пользователь может закрепить ее на панели мониторинга.
@@ -161,8 +161,8 @@ Azure AD Connect Health поддерживает управление досту
 >
 
 ### <a name="remove-users-or-groups"></a>Удаление пользователей или групп
-Вы можете удалить пользователя или группу, добавленных в компонент управления доступом на основе ролей Azure AD Connect Health. Для этого просто щелкните пользователя или группу правой кнопкой мыши и выберите команду **Удалить**.<br>
-![Снимок экрана окна "Пользователи" компонента управления доступом на основе ролей в Azure AD Connect Health с выделенной командой "Удалить"](./media/how-to-connect-health-operations/RBAC_remove.png)
+Вы можете удалить пользователя или группу, добавленные в Azure AD Connect Health и Azure RBAC. Для этого просто щелкните пользователя или группу правой кнопкой мыши и выберите команду **Удалить**.<br>
+![Снимок экрана Azure AD Connect Health и Azure RBAC с выделенным удалением](./media/how-to-connect-health-operations/RBAC_remove.png)
 
 [//]: # (Конец раздела RBAC)
 

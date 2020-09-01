@@ -12,12 +12,12 @@ ms.date: 06/26/2020
 ms.author: ryanwi
 ms.reviewer: tomfitz
 ms.custom: aaddev, seoapril2019, identityplatformtop40
-ms.openlocfilehash: c8f9bc283d88121ad4b6144b8ac9463510349212
-ms.sourcegitcommit: b8702065338fc1ed81bfed082650b5b58234a702
+ms.openlocfilehash: 3b060d7caff425414cc7f4e8bbea5d9a29572094
+ms.sourcegitcommit: 3fb5e772f8f4068cc6d91d9cde253065a7f265d6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/11/2020
-ms.locfileid: "88117232"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89178949"
 ---
 # <a name="how-to-use-the-portal-to-create-an-azure-ad-application-and-service-principal-that-can-access-resources"></a>Практическое руководство. Создание приложения Azure Active Directory и субъекта-службы с доступом к ресурсам с помощью портала
 
@@ -87,7 +87,7 @@ ms.locfileid: "88117232"
 
 ## <a name="assign-a-role-to-the-application"></a>Назначение роли приложению
 
-Чтобы получить доступ к ресурсам в подписке, необходимо назначить приложению роль. Укажите, какая роль предоставляет приложению необходимые разрешения. Дополнительные сведения о доступных ролях см. в статье [RBAC: встроенные роли](../../role-based-access-control/built-in-roles.md).
+Чтобы получить доступ к ресурсам в подписке, необходимо назначить приложению роль. Укажите, какая роль предоставляет приложению необходимые разрешения. Дополнительные сведения о доступных ролях см. в статье [встроенные роли Azure](../../role-based-access-control/built-in-roles.md).
 
 Вы можете задать область действия на уровне подписки, группы ресурсов или ресурса. Разрешения наследуют более низкие уровни области действия. Например, Добавление приложения в роль *читатель* для группы ресурсов означает, что она может читать группу ресурсов и все содержащиеся в ней ресурсы.
 
@@ -159,7 +159,7 @@ $cert=New-SelfSignedCertificate -Subject "CN=DaemonConsoleCert" -CertStoreLocati
 
     ![Выберите отправить сертификат и выберите тот, который вы хотите добавить.](./media/howto-create-service-principal-portal/upload-cert.png)
 
-1. Нажмите **Добавить**.
+1. Выберите **Добавить**.
 
 После регистрации сертификата в приложении на портале регистрации приложений необходимо включить код клиентского приложения для использования сертификата.
 

@@ -12,12 +12,12 @@ ms.date: 04/24/2020
 ms.author: ryanwi
 ms.custom: aaddev
 ms.reviewer: jmprieur, saeeda, jesakowi, nacanuma
-ms.openlocfilehash: 298c5b96951ed616b324535cf3fe2585180789a1
-ms.sourcegitcommit: b8702065338fc1ed81bfed082650b5b58234a702
+ms.openlocfilehash: 781aa48442d80e55128314dd1e271532162df32c
+ms.sourcegitcommit: 3fb5e772f8f4068cc6d91d9cde253065a7f265d6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/11/2020
-ms.locfileid: "88117249"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89178830"
 ---
 # <a name="microsoft-identity-platform-developer-glossary"></a>Глоссарий разработчика платформы удостоверений Майкрософт
 
@@ -164,7 +164,7 @@ ms.locfileid: "88117249"
 
 Роли — это определяемые ресурсом строки (например, "Утверждающий затраты", "Только чтение" или Directory.ReadWrite.All), которыми можно управлять на [портале Azure][AZURE-portal], используя [манифест приложения](#application-manifest) ресурса. Эти строки хранятся в [свойстве appRoles][Graph-Sp-Resource] ресурса. С помощью портала Azure можно также назначать пользователям роль "пользователь" и настраивать [разрешения приложений](#permissions) клиента для доступа к роли "приложение".
 
-Подробное описание ролей приложений, предоставляемых Microsoft Graph API, см. в разделе [API Graph области разрешений][Graph-Perm-Scopes]. Пример пошаговой реализации см. в статье [Управление доступом с помощью RBAC и портала Azure][AAD-RBAC].
+Подробное описание ролей приложений, предоставляемых Microsoft Graph API, см. в разделе [API Graph области разрешений][Graph-Perm-Scopes]. Пример пошаговой реализации см. [в разделе Добавление или удаление назначений ролей Azure с помощью портал Azure][AAD-RBAC].
 
 ## <a name="scopes"></a>Области
 

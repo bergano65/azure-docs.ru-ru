@@ -12,12 +12,12 @@ ms.date: 09/08/2019
 ms.author: jmprieur
 ms.reviewer: saeeda
 ms.custom: devx-track-csharp, aaddev
-ms.openlocfilehash: ed29752e0b5f2ee9acf0382ef96e1b685f9cc886
-ms.sourcegitcommit: 656c0c38cf550327a9ee10cc936029378bc7b5a2
+ms.openlocfilehash: b4eff5910ff5230902d497b55b2afbe6d605365a
+ms.sourcegitcommit: 3fb5e772f8f4068cc6d91d9cde253065a7f265d6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89068513"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89177437"
 ---
 # <a name="migrate-ios-applications-that-use-microsoft-authenticator-from-adalnet-to-msalnet"></a>Перенос приложений iOS, использующих Microsoft Authenticator из ADAL.NET в MSAL.NET
 
@@ -225,20 +225,33 @@ ADAL.NET и MSAL.NET добавляют дополнительные требо�
 
 `"<app-scheme>://<your.bundle.id>"`
 
-Пример.
+Пример
 
 `mytestiosapp://com.mycompany.myapp`
 </td><td>
 
 `$"msauth.{BundleId}://auth"`
 
-Пример.
+Пример
 
 `public static string redirectUriOnIos = "msauth.com.yourcompany.XForms://auth"; `
 
 </table>
 
 Дополнительные сведения о регистрации URI перенаправления в портал Azure см. в разделе [Шаг 7. Добавление URI перенаправления в регистрацию приложения](msal-net-use-brokers-with-xamarin-apps.md#step-7-add-a-redirect-uri-to-your-app-registration).
+
+### <a name="step-7-set-the-entitlementsplist"></a>**Шаг 7. Настройка прав. plist**
+
+Включите доступ к цепочке ключей в файле прав *. plist* :
+
+```xml
+ <key>keychain-access-groups</key>
+    <array>
+      <string>$(AppIdentifierPrefix)com.microsoft.adalcache</string>
+    </array>
+```
+
+Дополнительные сведения о включении доступа к цепочке ключей см. в разделе [Включение доступа к цепочке ключей](msal-net-xamarin-ios-considerations.md#enable-keychain-access).
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
