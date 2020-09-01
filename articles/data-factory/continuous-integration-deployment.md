@@ -10,13 +10,13 @@ ms.author: daperlov
 ms.reviewer: maghan
 manager: jroth
 ms.topic: conceptual
-ms.date: 04/30/2020
-ms.openlocfilehash: f44c3ac51bfc509df0b8f2b82c2d6259bba0aa3c
-ms.sourcegitcommit: 8a7b82de18d8cba5c2cec078bc921da783a4710e
+ms.date: 08/31/2020
+ms.openlocfilehash: 582a9eb4c98e89602e35e2ee424a00adc54a88e3
+ms.sourcegitcommit: d68c72e120bdd610bb6304dad503d3ea89a1f0f7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89047716"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89229554"
 ---
 # <a name="continuous-integration-and-delivery-in-azure-data-factory"></a>Непрерывные интеграция и поставка в Фабрике данных Azure
 
@@ -335,6 +335,16 @@ ms.locfileid: "89047716"
 
 ```json
 {
+    "Microsoft.DataFactory/factories": {
+        "properties": {
+            "globalParameters": {
+                "*": {
+                    "value": "="
+                }
+            }
+        },
+        "location": "="
+    },
     "Microsoft.DataFactory/factories/pipelines": {
     },
     "Microsoft.DataFactory/factories/dataflows": {
@@ -390,7 +400,6 @@ ms.locfileid: "89047716"
             "typeProperties": {
                 "scope": "="
             }
-
         }
     },
     "Microsoft.DataFactory/factories/linkedServices": {
@@ -427,7 +436,8 @@ ms.locfileid: "89047716"
                     "aadResourceId": "=",
                     "sasUri": "|:-sasUri:secureString",
                     "sasToken": "|",
-                    "connectionString": "|:-connectionString:secureString"
+                    "connectionString": "|:-connectionString:secureString",
+                    "hostKeyFingerprint": "="
                 }
             }
         },
@@ -450,8 +460,8 @@ ms.locfileid: "89047716"
                     "fileName": "="
                 }
             }
-        }}
-}
+        }
+    }
 ```
 
 ### <a name="example-parameterizing-an-existing-azure-databricks-interactive-cluster-id"></a>Пример. Параметризация существующего идентификатора интерактивного кластера Azure Databricks
@@ -460,6 +470,16 @@ ms.locfileid: "89047716"
 
 ```json
 {
+    "Microsoft.DataFactory/factories": {
+        "properties": {
+            "globalParameters": {
+                "*": {
+                    "value": "="
+                }
+            }
+        },
+        "location": "="
+    },
     "Microsoft.DataFactory/factories/pipelines": {
     },
     "Microsoft.DataFactory/factories/dataflows": {

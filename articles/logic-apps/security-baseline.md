@@ -6,13 +6,13 @@ ms.service: security
 ms.topic: conceptual
 ms.date: 06/22/2020
 ms.author: mbaldwin
-ms.custom: security-benchmark
-ms.openlocfilehash: 2e3b6845b66978b4892303549dabca4034a870b2
-ms.sourcegitcommit: 656c0c38cf550327a9ee10cc936029378bc7b5a2
+ms.custom: subject-security-benchmark
+ms.openlocfilehash: 263f018155aa6effada3d509c907d825b65a8d45
+ms.sourcegitcommit: d68c72e120bdd610bb6304dad503d3ea89a1f0f7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89079648"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89228398"
 ---
 # <a name="azure-security-baseline-for-logic-apps"></a>Базовый план безопасности Azure для Logic Apps
 
@@ -94,9 +94,9 @@ ms.locfileid: "89079648"
 
 Используйте адаптивную защиту сети в центре безопасности Azure, чтобы рекомендовать NSG конфигурации, ограничивающие порты и исходные IP-адреса на основе фактического трафика и аналитики угроз.
 
-* [Как защитить входящие вызовы на Logic Apps](./logic-apps-securing-a-logic-app.md#access-to-request-based-triggers)
+* [Как защитить входящие вызовы на Logic Apps](logic-apps-securing-a-logic-app.md#access-for-inbound-calls-to-request-based-triggers)
 
-* [Ограничение входящих IP-адресов](./logic-apps-securing-a-logic-app.md#restrict-inbound-ip-addresses)
+* [Ограничение входящих IP-адресов](logic-apps-securing-a-logic-app.md#restrict-inbound-ip-addresses)
 
 * [Настройка защиты от атак DDoS](../virtual-network/manage-ddos-protection.md)
 
@@ -368,7 +368,7 @@ ms.locfileid: "89079648"
 
 * [Как получить членов роли каталога в Azure AD с помощью PowerShell](/powershell/module/azuread/get-azureaddirectoryrolemember?view=azureadps-2.0)
 
-* [Защита доступа и данных в Azure Logic Apps с помощью SAS](./logic-apps-securing-a-logic-app.md#access-to-request-based-triggers)
+* [Защита доступа и данных в Azure Logic Apps с помощью SAS](logic-apps-securing-a-logic-app.md#access-for-inbound-calls-to-request-based-triggers)
 
 **Мониторинг Центра безопасности Azure**. Недоступно
 
@@ -382,7 +382,7 @@ ms.locfileid: "89079648"
 
 При использовании инфраструктуры в качестве кода старайтесь не хранить пароли в коде и вместо этого использовать Azure Key Vault для хранения и извлечения учетных данных.
 
-* [Защита данных и доступ к ним в Logic Apps](./logic-apps-securing-a-logic-app.md)
+* [Защита данных и доступ к ним в Logic Apps](logic-apps-securing-a-logic-app.md)
 
 * [Как задать и получить секрет из Azure Key Vault](../key-vault/secrets/quick-create-portal.md)
 
@@ -473,7 +473,7 @@ ms.locfileid: "89079648"
 
 * [Настройка именованных расположений в Azure](../active-directory/reports-monitoring/quickstart-configure-named-locations.md)
 
-* [Узнайте, как ограничить входящие IP-адреса в Logic Apps](./logic-apps-securing-a-logic-app.md#restrict-inbound-ip-addresses)
+* [Узнайте, как ограничить входящие IP-адреса в Logic Apps](logic-apps-securing-a-logic-app.md#restrict-inbound-ip-addresses)
 
 **Мониторинг Центра безопасности Azure**. Недоступно
 
@@ -611,11 +611,11 @@ Azure Logic Apps поддерживает управляемые удостов�
 
 Следуйте рекомендациям центра безопасности Azure для шифрования неактивных данных и шифрования при передаче, где это применимо.
 
-* [Безопасный доступ и данные в Azure Logic Apps](./logic-apps-securing-a-logic-app.md)
+* [Безопасный доступ и данные в Azure Logic Apps](logic-apps-securing-a-logic-app.md)
 
-* [Получение входящих HTTP-запросов и ответ на них в Azure Logic Apps](../connectors/connectors-native-reqres.md#tls-support)
+* [Получение входящих HTTP-запросов и ответ на них в Azure Logic Apps](logic-apps-securing-a-logic-app.md#access-for-inbound-calls-to-request-based-triggers)
 
-* [Вызов конечных точек службы по HTTP или HTTPS из Azure Logic Apps](../connectors/connectors-native-http.md#tls-support)
+* [Вызов конечных точек службы по HTTP или HTTPS из Azure Logic Apps](logic-apps-securing-a-logic-app.md#access-for-inbound-calls-to-request-based-triggers)
 
 * [Общие сведения о шифровании при передаче с помощью Azure](../security/fundamentals/encryption-overview.md#encryption-of-data-in-transit)
 
@@ -633,7 +633,7 @@ Azure Logic Apps поддерживает управляемые удостов�
 
 Майкрософт управляет базовой инфраструктурой для Azure Logic Apps и реализует четкие элементы управления для предотвращения потери или раскрытия данных клиента.
 
-* [Безопасный доступ для выполнения данных журнала](./logic-apps-securing-a-logic-app.md#access-to-run-history-data)
+* [Безопасный доступ для выполнения данных журнала](logic-apps-securing-a-logic-app.md#access-to-run-history-data)
 
 * [Общие сведения о защите данных клиентов в Azure](../security/fundamentals/protection-customer-data.md)
 
@@ -649,7 +649,7 @@ Azure Logic Apps поддерживает управляемые удостов�
 
 Чтобы запретить другим пользователям изменять или удалять приложение логики, можно использовать блокировку ресурсов Azure. Эта позволяет предотвратить изменение или удаление рабочих ресурсов.
 
-* [Безопасный доступ к операциям Azure Logic Apps](./logic-apps-securing-a-logic-app.md#access-to-logic-app-operations)
+* [Безопасный доступ к операциям Azure Logic Apps](logic-apps-securing-a-logic-app.md#access-to-logic-app-operations)
 
 **Мониторинг Центра безопасности Azure**. Недоступно
 
@@ -885,7 +885,7 @@ Logic Apps, необходимые для бизнес-операций, но к
 
 * [Создание групп управления](../governance/management-groups/create.md)
 
-* [Как защитить доступ к Logic Apps через Azure RBAC](./logic-apps-securing-a-logic-app.md#access-to-logic-app-operations)
+* [Как защитить доступ к Logic Apps через Azure RBAC](logic-apps-securing-a-logic-app.md#access-to-logic-app-operations)
 
 **Мониторинг Центра безопасности Azure**. Недоступно
 
@@ -911,9 +911,9 @@ Logic Apps, необходимые для бизнес-операций, но к
 
 * [Экспорт одного и нескольких ресурсов в шаблон в портал Azure](../azure-resource-manager/templates/export-template-portal.md)
 
-* [Развертывание шаблонов Azure Resource Manager для Azure Logic Apps](./logic-apps-deploy-azure-resource-manager-templates.md)
+* [Развертывание шаблонов Azure Resource Manager для Azure Logic Apps](logic-apps-deploy-azure-resource-manager-templates.md)
 
-* [Общие сведения о параметрах безопасного действия](./logic-apps-securing-a-logic-app.md#secure-action-parameters)
+* [Общие сведения о параметрах безопасного действия](logic-apps-securing-a-logic-app.md#secure-action-parameters)
 
 * [Рекомендации по безопасности параметров](../azure-resource-manager/templates/template-best-practices.md#security-recommendations-for-parameters)
 
@@ -947,11 +947,11 @@ Logic Apps, необходимые для бизнес-операций, но к
 
 * [Экспорт одного и нескольких ресурсов в шаблон в портал Azure](../azure-resource-manager/templates/export-template-portal.md)
 
-* [Развертывание шаблонов Azure Resource Manager для Azure Logic Apps](./logic-apps-deploy-azure-resource-manager-templates.md)
+* [Развертывание шаблонов Azure Resource Manager для Azure Logic Apps](logic-apps-deploy-azure-resource-manager-templates.md)
 
-* [Безопасный доступ к входным и выходным данным журнала выполнения](./logic-apps-securing-a-logic-app.md#obfuscate)
+* [Безопасный доступ к входным и выходным данным журнала выполнения](logic-apps-securing-a-logic-app.md#obfuscate)
 
-* [Безопасный доступ к входным параметрам](./logic-apps-securing-a-logic-app.md#secure-action-parameters)
+* [Безопасный доступ к входным параметрам](logic-apps-securing-a-logic-app.md#secure-action-parameters)
 
 * [Рекомендации по безопасности параметров](../azure-resource-manager/templates/template-best-practices.md#security-recommendations-for-parameters)
 
@@ -1033,11 +1033,11 @@ Logic Apps, необходимые для бизнес-операций, но к
 
 При создании среды службы интеграции (ISE) для размещения приложений логики и необходимости более эффективного управления ключами шифрования, используемыми службой хранилища Azure, можно настроить, использовать и управлять собственным ключом с помощью Azure Key Vault. Эта возможность также называется "создание собственных ключей" (BYOK), а ключ называется "ключом, управляемым клиентом".
 
-* [Защита входных и выходных данных в журнале выполнения в Azure Logic Apps](./logic-apps-securing-a-logic-app.md#obfuscate)
+* [Защита входных и выходных данных в журнале выполнения в Azure Logic Apps](logic-apps-securing-a-logic-app.md#obfuscate)
 
 * [Рекомендации по безопасности параметров](../azure-resource-manager/templates/template-best-practices.md#security-recommendations-for-parameters)
 
-* [Безопасный доступ к входным параметрам в Azure Logic Apps](./logic-apps-securing-a-logic-app.md#access-to-parameter-inputs)
+* [Безопасный доступ к входным параметрам в Azure Logic Apps](logic-apps-securing-a-logic-app.md#access-to-parameter-inputs)
 
 * [Передача безопасных значений параметров во время развертывания с помощью Azure Key Vault](../azure-resource-manager/templates/key-vault-parameter.md)
 
@@ -1069,11 +1069,11 @@ Logic Apps, необходимые для бизнес-операций, но к
 
 Также можно реализовать средство проверки учетных данных для обнаружения учетных данных в коде. Сканер учетных данных также рекомендует перемещать обнаруженные учетные данные в более безопасные расположения, такие как Azure Key Vault.
 
-* [Защита входных и выходных данных в журнале выполнения в Azure Logic Apps](./logic-apps-securing-a-logic-app.md#obfuscate)
+* [Защита входных и выходных данных в журнале выполнения в Azure Logic Apps](logic-apps-securing-a-logic-app.md#obfuscate)
 
 * [Рекомендации по безопасности параметров](../azure-resource-manager/templates/template-best-practices.md#security-recommendations-for-parameters)
 
-* [Безопасный доступ к входным параметрам в Azure Logic Apps](./logic-apps-securing-a-logic-app.md#access-to-parameter-inputs)
+* [Безопасный доступ к входным параметрам в Azure Logic Apps](logic-apps-securing-a-logic-app.md#access-to-parameter-inputs)
 
 * [Передача безопасных значений параметров во время развертывания с помощью Azure Key Vault](../azure-resource-manager/templates/key-vault-parameter.md)
 
@@ -1133,7 +1133,7 @@ Logic Apps, необходимые для бизнес-операций, но к
 
 * [Дополнительные сведения о непрерывности бизнес-процессов и аварийном восстановлении для Azure Logic Apps](./business-continuity-disaster-recovery-guidance.md)
 
-* [Автоматизация развертывания для Azure Logic Apps с помощью шаблонов Azure Resource Manager](./logic-apps-azure-resource-manager-templates-overview.md)
+* [Автоматизация развертывания для Azure Logic Apps с помощью шаблонов Azure Resource Manager](logic-apps-azure-resource-manager-templates-overview.md)
 
 **Мониторинг Центра безопасности Azure**. Недоступно
 
@@ -1151,9 +1151,9 @@ Logic Apps, необходимые для бизнес-операций, но к
 
 * [Дополнительные сведения о непрерывности бизнес-процессов и аварийном восстановлении для Azure Logic Apps](./business-continuity-disaster-recovery-guidance.md)
 
-* [Автоматизация развертывания для Azure Logic Apps с помощью шаблонов Azure Resource Manager](./logic-apps-azure-resource-manager-templates-overview.md)
+* [Автоматизация развертывания для Azure Logic Apps с помощью шаблонов Azure Resource Manager](logic-apps-azure-resource-manager-templates-overview.md)
 
-* [Защита доступа и данных в Azure Logic Apps с помощью SAS](./logic-apps-securing-a-logic-app.md#access-to-request-based-triggers)
+* [Защита доступа и данных в Azure Logic Apps с помощью SAS](logic-apps-securing-a-logic-app.md#access-for-inbound-calls-to-request-based-triggers)
 
 * [Резервное копирование ключей Key Vault](/powershell/module/azurerm.keyvault/backup-azurekeyvaultkey)
 

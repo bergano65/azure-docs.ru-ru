@@ -8,17 +8,17 @@ ms.service: active-directory
 ms.workload: identity
 ms.subservice: fundamentals
 ms.topic: how-to
-ms.date: 06/15/2020
+ms.date: 08/31/2020
 ms.author: ajburnle
 ms.reviewer: jeffsta
 ms.custom: it-pro, seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 77ba802d5e337851b3b5141695e5b2f0c6456719
-ms.sourcegitcommit: 4e5560887b8f10539d7564eedaff4316adb27e2c
+ms.openlocfilehash: e28da81400a97216836cfd9eccf0d4859ce0762f
+ms.sourcegitcommit: d68c72e120bdd610bb6304dad503d3ea89a1f0f7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87902360"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89228228"
 ---
 # <a name="assign-administrator-and-non-administrator-roles-to-users-with-azure-active-directory"></a>Назначение ролей администратора и других ролей пользователям с помощью Azure Active Directory
 
@@ -31,7 +31,7 @@ ms.locfileid: "87902360"
 Распространенным способом назначения ролей Azure AD для пользователя является страница « **назначенные роли** » для пользователя. Кроме того, можно настроить право на повышение прав пользователя в роли с помощью управление привилегированными пользователями (PIM). Дополнительные сведения об использовании PIM см. в разделе [Управление привилегированными пользователями](https://docs.microsoft.com/azure/active-directory/privileged-identity-management).
 
 > [!Note]
-> Если у вас есть план лицензирования Azure AD Premium P2 и уже используется PIM, все задачи управления ролями выполняются в [Управление привилегированными пользователями](../users-groups-roles/directory-manage-roles-portal.md).
+> Если у вас есть план лицензирования Azure AD Premium P2 и уже используется PIM, все задачи управления ролями выполняются в [Управление привилегированными пользователями](../users-groups-roles/directory-manage-roles-portal.md). В настоящее время эта функция ограничена одновременной назначением одной роли. Сейчас нельзя выбрать несколько ролей и назначить их пользователю одновременно.
 >
 > ![Роли Azure AD, управляемые в PIM для пользователей, которые уже используют PIM и имеют лицензию Premium P2](./media/active-directory-users-assign-role-azure-portal/pim-manages-roles-for-p2.png)
 
@@ -73,7 +73,7 @@ ms.locfileid: "87902360"
 
     Роль администратора приложения удаляется из (Alain Чарон и больше не отображается на странице **(Alain Чарон-административные роли** .
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Добавление или удаление пользователей](add-users-azure-active-directory.md)
 

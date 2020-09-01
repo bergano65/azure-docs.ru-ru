@@ -10,12 +10,12 @@ ms.date: 07/16/2020
 ms.author: tamram
 ms.subservice: blobs
 ms.custom: devx-track-azurecli, devx-track-azurepowershell
-ms.openlocfilehash: 9964a10b85d9f388a4498766c6e81ee52498aa37
-ms.sourcegitcommit: 656c0c38cf550327a9ee10cc936029378bc7b5a2
+ms.openlocfilehash: c28e869bff1d0e921a1e5a952dbfcb21ee97d16b
+ms.sourcegitcommit: d68c72e120bdd610bb6304dad503d3ea89a1f0f7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89076180"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89228330"
 ---
 # <a name="configure-object-replication-for-block-blobs-preview"></a>Настройка репликации объектов для блочных BLOB-объектов (предварительная версия)
 
@@ -36,7 +36,7 @@ ms.locfileid: "89076180"
 Прежде чем начать, убедитесь, что зарегистрированы следующие предварительные версии компонентов:
 
 - [Репликация объектов (предварительная версия)](object-replication-overview.md)
-- [Управление версиями BLOB-объектов (предварительная версия)](versioning-overview.md)
+- [Управление версиями BLOB-объектов](versioning-overview.md)
 - [Поддержка канала изменений в хранилище BLOB-объектов Azure (предварительная версия)](storage-blob-change-feed.md)
 
 # <a name="azure-portal"></a>[Портал Azure](#tab/portal)

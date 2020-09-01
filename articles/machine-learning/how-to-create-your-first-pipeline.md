@@ -11,12 +11,12 @@ author: NilsPohlmann
 ms.date: 8/14/2020
 ms.topic: conceptual
 ms.custom: how-to, devx-track-python, contperfq1
-ms.openlocfilehash: 3c7bb19f93bc5b6d345930eb1928ca620e391bb0
-ms.sourcegitcommit: d7352c07708180a9293e8a0e7020b9dd3dd153ce
+ms.openlocfilehash: 0d917ea686c2003bf46b6fca872ef67fb0363107
+ms.sourcegitcommit: d68c72e120bdd610bb6304dad503d3ea89a1f0f7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/30/2020
-ms.locfileid: "89144079"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89228925"
 ---
 # <a name="create-and-run-machine-learning-pipelines-with-azure-machine-learning-sdk"></a>Создание и запуск конвейеров машинного обучения с помощью пакета SDK для Машинное обучение Azure
 
@@ -56,10 +56,8 @@ ws = Workspace.from_config()
 * Настройте `Dataset` объект так, чтобы он указывал на постоянные данные, которые находятся в или доступны в хранилище данных. Настройте `PipelineData` объект для временных данных, передаваемых между этапами конвейера. 
 
     > [!TIP]
-    > Улучшенный интерфейс передачи временных данных между этапами конвейера доступен в общедоступном классе предварительной версии  `OutputFileDatasetConfig` .  Этот класс является экспериментальной функцией предварительной версии и может измениться в любое время.
-    > 
-    >Дополнительные сведения о экспериментальных функциях см https://aka.ms/azuremlexperimental . в разделе.
-    
+    > Улучшенный интерфейс передачи временных данных между этапами конвейера доступен в общедоступном классе предварительной версии  [`OutputFileDatasetConfig`](https://docs.microsoft.com/python/api/azureml-core/azureml.data.outputfiledatasetconfig?view=azure-ml-py) .  Этот класс является [экспериментальной](https://docs.microsoft.com/python/api/overview/azure/ml/?view=azure-ml-py#stable-vs-experimental) функцией предварительной версии и может измениться в любое время.
+
 * Настройте [целевые объекты вычислений](concept-azure-machine-learning-architecture.md#compute-targets) для выполнения шагов вашего конвейера.
 
 ### <a name="set-up-a-datastore"></a>Настройка хранилища данных

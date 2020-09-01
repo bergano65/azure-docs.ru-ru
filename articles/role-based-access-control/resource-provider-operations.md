@@ -7,14 +7,14 @@ ms.topic: reference
 ms.workload: identity
 author: rolyon
 ms.author: rolyon
-ms.date: 08/16/2020
+ms.date: 08/31/2020
 ms.custom: generated
-ms.openlocfilehash: 5809a2325b825bde74c7a8859c3a96f94c05b170
-ms.sourcegitcommit: 2bab7c1cd1792ec389a488c6190e4d90f8ca503b
+ms.openlocfilehash: 685fdf8180f54c87fe6677268bd289ee00912c96
+ms.sourcegitcommit: d68c72e120bdd610bb6304dad503d3ea89a1f0f7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88272049"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89227769"
 ---
 # <a name="azure-resource-provider-operations"></a>Операции с поставщиками ресурсов Azure
 
@@ -22,7 +22,7 @@ ms.locfileid: "88272049"
 
 Щелкните имя поставщика ресурсов в следующей таблице, чтобы просмотреть список операций.
 
-## <a name="all"></a>Все
+## <a name="all"></a>All
 
 | Общие сведения |
 | --- |
@@ -32,7 +32,7 @@ ms.locfileid: "88272049"
 | [Microsoft.MarketplaceOrdering](#microsoftmarketplaceordering) |
 | [Microsoft.ResourceHealth](#microsoftresourcehealth) |
 | [Microsoft. support](#microsoftsupport) |
-| **Среда выполнения приложений** |
+| **Службы вычислений** |
 | [Microsoft.ClassicCompute](#microsoftclassiccompute) |
 | [Microsoft.Compute](#microsoftcompute) |
 | [Microsoft.ServiceFabric](#microsoftservicefabric) |
@@ -40,7 +40,7 @@ ms.locfileid: "88272049"
 | [Microsoft.Cdn](#microsoftcdn) |
 | [Microsoft.ClassicNetwork](#microsoftclassicnetwork) |
 | [Microsoft.Network](#microsoftnetwork) |
-| **Память** |
+| **Хранилище** |
 | [Microsoft.ClassicStorage](#microsoftclassicstorage) |
 | [Microsoft.DataBox](#microsoftdatabox) |
 | [Microsoft.ImportExport](#microsoftimportexport) |
@@ -106,7 +106,7 @@ ms.locfileid: "88272049"
 | [Microsoft.Logic](#microsoftlogic) |
 | [Microsoft.Relay](#microsoftrelay) |
 | [Microsoft.ServiceBus](#microsoftservicebus) |
-| **Удостоверение** |
+| **Идентификация** |
 | [Microsoft.AAD](#microsoftaad) |
 | [microsoft.aadiam](#microsoftaadiam) |
 | [Microsoft.ADHybridHealthService](#microsoftadhybridhealthservice) |
@@ -797,6 +797,7 @@ ms.locfileid: "88272049"
 > | Microsoft. Network/Аппликатионгатевайс/Приватиндпоинтконнектионс/чтение | Получение подключений Приватиндпоинт шлюза приложений |
 > | Microsoft. Network/Аппликатионгатевайс/Приватиндпоинтконнектионс/запись | Обновляет подключение Приватиндпоинт шлюза приложений |
 > | Microsoft. Network/Аппликатионгатевайс/Приватиндпоинтконнектионс/удаление | Удаляет подключение Приватиндпоинт шлюза приложений. |
+> | Microsoft. Network/Аппликатионгатевайс/Привателинкконфигуратионс/чтение | Возвращает конфигурации частной связи шлюза приложений |
 > | Microsoft. Network/Аппликатионгатевайс/Привателинкресаурцес/чтение | Получение ресурсов ApplicationGateway Привателинк |
 > | Microsoft. Network/АппликатионгатевайвебаппликатионфиреваллполиЦиес/чтение | Возвращает политику WAF шлюза приложений. |
 > | Microsoft. Network/АппликатионгатевайвебаппликатионфиреваллполиЦиес/запись | Создает политику WAF для шлюза приложений или обновляет политику WAF шлюза приложений. |
@@ -880,6 +881,9 @@ ms.locfileid: "88272049"
 > | Microsoft.Network/dnszones/TXT/read | Получение набора записей типа "TXT" в формате JSON. Набор записей содержит список записей, а также срок жизни, теги и ETag. |
 > | Microsoft.Network/dnszones/TXT/write | Создание или обновление набора записей типа TXT в зоне DNS. Указанные записи заменят текущие записи в наборе записей. |
 > | Microsoft.Network/dnszones/TXT/delete | Удаление набора записей с заданным именем и типа "TXT" из зоны DNS. |
+> | Microsoft. Network/Дскпконфигуратион/запись | Операция размещения конфигурации DSCP |
+> | Microsoft. Network/Дскпконфигуратион/чтение | Операция размещения конфигурации DSCP |
+> | Microsoft. Network/Дскпконфигуратион/соединение/действие | Присоединяет конфигурацию DSCP |
 > | Microsoft.Network/expressRouteCircuits/read | Возвращает канал ExpressRoute. |
 > | Microsoft.Network/expressRouteCircuits/write | Создает новый канал ExpressRoute или обновляет существующий. |
 > | Microsoft.Network/expressRouteCircuits/join/action | Присоединяет канал Express Route. Не предусматривает отправку оповещений. |
@@ -916,6 +920,7 @@ ms.locfileid: "88272049"
 > | Microsoft.Network/expressRoutePorts/write | Создает или обновляет ExpressRoutePorts |
 > | Microsoft.Network/expressRoutePorts/join/action | Соединяет порты Express Route. Не предусматривает отправку оповещений. |
 > | Microsoft.Network/expressRoutePorts/delete | Удаляет ExpressRoutePorts |
+> | Microsoft. Network/Експрессраутепортс/женерателоа/действие | Создает определения гарантии для Експрессраутепортс |
 > | Microsoft.Network/expressRoutePorts/links/read | Получает канал ExpressRoute. |
 > | Microsoft.Network/expressRoutePortsLocations/read | Получает порты расположений ExpressRoute. |
 > | Microsoft.Network/expressRouteServiceProviders/read | Возвращает поставщики службы ExpressRoute. |
@@ -2041,6 +2046,10 @@ ms.locfileid: "88272049"
 > | Microsoft. Search/Сеарчсервицес/Приватиндпоинтконнектионпроксиес/запись | Создает прокси-сервер подключения частной конечной точки с указанными параметрами или обновляет свойства или теги для указанного прокси-сервера подключения частной конечной точки. |
 > | Microsoft. Search/Сеарчсервицес/Приватиндпоинтконнектионпроксиес/чтение | Возвращает список прокси-серверов подключения частной конечной точки или получает свойства для указанного прокси подключения частной конечной точки. |
 > | Microsoft. Search, Сеарчсервицес/Приватиндпоинтконнектионпроксиес/Delete | Удаляет существующий прокси-сервер подключения частной конечной точки. |
+> | Microsoft. Search/Сеарчсервицес/Шаредпривателинкресаурцес/запись | Создает новый общий ресурс частной ссылки с указанными параметрами или обновляет свойства для указанного общего ресурса частной ссылки. |
+> | Microsoft. Search/Сеарчсервицес/Шаредпривателинкресаурцес/чтение | Возвращает список общих ресурсов частной ссылки или получает свойства для указанного общего ресурса частной ссылки. |
+> | Microsoft. Search, Сеарчсервицес/Шаредпривателинкресаурцес/Delete | Удаляет существующий ресурс общей частной ссылки |
+> | Microsoft. Search, Сеарчсервицес/Шаредпривателинкресаурцес/Оператионстатусес/Read | Получение сведений о длительно работающей операции общего ресурса частной связи |
 
 ### <a name="microsoftsignalrservice"></a>Microsoft.SignalRService
 
@@ -2075,9 +2084,18 @@ ms.locfileid: "88272049"
 > | Microsoft. Сигналрсервице/SignalR/Приватиндпоинтконнектионс/Read | Чтение подключения к частной конечной точке |
 > | Microsoft. Сигналрсервице/SignalR/Привателинкресаурцес/Read | Список всех ресурсов закрытой ссылки SignalR |
 > | **DataAction** | **Описание** |
-> | Microsoft. Сигналрсервице/SignalR/serverConnection/запись | Запустите соединение с сервером. |
+> | Microsoft. Сигналрсервице/SignalR/serverConnection/действие | Запустите соединение с сервером. |
+> | Microsoft. Сигналрсервице/SignalR/Клиентконнектион/действие | Добавить или удалить клиентские подключения из групп или закрыть клиентское соединение. |
+> | Microsoft. Сигналрсервице/SignalR/пользователь/действие | Добавление и удаление пользователей из групп. |
+> | Microsoft. Сигналрсервице/SignalR/Клиентконнектион/Read | Проверьте наличие подключения. |
+> | Microsoft. Сигналрсервице/SignalR/Клиентконнектион/запись | Отправка сообщений непосредственно в клиентское соединение. |
+> | Microsoft. Сигналрсервице/SignalR/группа/чтение | Проверьте существование группы. |
+> | Microsoft. Сигналрсервице/SignalR/группа/запись | Широковещательные сообщения для клиентских подключений в группе или некоторых группах. |
+> | Microsoft. Сигналрсервице/SignalR/Hub/запись | Рассылка сообщений всем клиентским подключениям, подключенным к этому концентратору. |
 > | Microsoft. Сигналрсервице/SignalR/Service/accessKey/действие | Получите временный AccessKey для подписывания Клиенттокенс. |
 > | Microsoft. Сигналрсервице/SignalR/Service/Клиенттокен/Action | Получите Клиенттокен для запуска клиентского подключения. |
+> | Microsoft. Сигналрсервице/SignalR/пользователь/чтение | Проверьте существование пользователя и его принадлежность к группе. |
+> | Microsoft. Сигналрсервице/SignalR/пользователь/запись | Отправка сообщений пользователю, у которого может быть несколько клиентских подключений. |
 
 ### <a name="microsoftweb"></a>microsoft.web
 
@@ -4386,6 +4404,12 @@ ms.locfileid: "88272049"
 > | Microsoft. EventHub/пространства имен/Приватиндпоинтконнектионпроксиес/чтение | Получение прокси-сервера подключения к частной конечной точке |
 > | Microsoft. EventHub/пространства имен/Приватиндпоинтконнектионпроксиес/запись | Создание прокси-сервера подключения к частной конечной точке |
 > | Microsoft. EventHub/пространства имен, Приватиндпоинтконнектионпроксиес/удаление | Удаление прокси-сервера подключения частной конечной точки |
+> | Microsoft. EventHub/пространства имен/Приватиндпоинтконнектионпроксиес/значение operationstatus/Read | Получение состояния асинхронной операции закрытой конечной точки |
+> | Microsoft. EventHub/пространства имен/Приватиндпоинтконнектионс/чтение | Получение подключения к частной конечной точке |
+> | Microsoft. EventHub/пространства имен/Приватиндпоинтконнектионс/запись | Создание или обновление подключения к частной конечной точке |
+> | Microsoft. EventHub/пространства имен, Приватиндпоинтконнектионс/удаление | Удаляет подключение к частной конечной точке |
+> | Microsoft. EventHub/пространства имен/Приватиндпоинтконнектионс/значение operationstatus/Read | Получение состояния асинхронной операции закрытой конечной точки |
+> | Microsoft. EventHub/пространства имен/Привателинкресаурцес/чтение | Возвращает типы ресурсов, поддерживающих подключения к частным конечным точкам. |
 > | Microsoft.EventHub/namespaces/providers/Microsoft.Insights/diagnosticSettings/read | Возвращает список описаний параметров диагностики пространства имен. |
 > | Microsoft.EventHub/namespaces/providers/Microsoft.Insights/diagnosticSettings/write | Возвращает список описаний параметров диагностики пространства имен. |
 > | Microsoft.EventHub/namespaces/providers/Microsoft.Insights/logDefinitions/read | Возвращает список описаний ресурсов журналов пространства имен. |
@@ -5082,6 +5106,15 @@ ms.locfileid: "88272049"
 > | Microsoft. Мачинелеарнингсервицес/рабочие области/эксперименты/запуски/чтение | Получение выполняется в Службы машинного обучения рабочих областях |
 > | Microsoft. Мачинелеарнингсервицес/рабочие области/эксперименты/запуски/запись | Создает или обновляет запуски в Службы машинного обучения рабочих областях |
 > | Microsoft. Мачинелеарнингсервицес/рабочие области/компоненты/чтение | Получение всех включенных компонентов для Службы машинного обучения рабочей области |
+> | Microsoft. Мачинелеарнингсервицес/рабочие области/Инференцеендпоинтс/чтение | Получает конечные точки вывода в Службы машинного обучения рабочих областях |
+> | Microsoft. Мачинелеарнингсервицес/рабочие области/Инференцеендпоинтс/запись | Создает или обновляет конечную точку вывода в Службы машинного обучения рабочих областях |
+> | Microsoft. Мачинелеарнингсервицес/рабочие области/Инференцеендпоинтс/удаление | Удаляет конечную точку вывода в Службы машинного обучения рабочих областях |
+> | Microsoft. Мачинелеарнингсервицес/рабочие области/Инференцеендпоинтс/Чеккнамеаваилабилити/чтение | Проверяет имя конечной точки вывода в Службы машинного обучения рабочих областях |
+> | Microsoft. Мачинелеарнингсервицес/workspaces/Инференцеендпоинтс/развертывания/чтение | Получает развертывания в конечной точке вывода в Службы машинного обучения рабочих областях |
+> | Microsoft. Мачинелеарнингсервицес/workspaces/Инференцеендпоинтс/развертывания/запись | Создает или обновляет развертывание в конечной точке вывода в Службы машинного обучения рабочих областях |
+> | Microsoft. Мачинелеарнингсервицес/workspaces/Инференцеендпоинтс/развертывания/удаление | Удаляет развертывание в конечной точке вывода в Службы машинного обучения рабочих областях |
+> | Microsoft. Мачинелеарнингсервицес/workspaces/Инференцеендпоинтс/развертывания/Чеккнамеаваилабилити/чтение | Проверяет имя развертывания в конечной точке вывода в Службы машинного обучения рабочих областях |
+> | Microsoft. Мачинелеарнингсервицес/workspaces/Инференцеендпоинтс/развертывания/SKU/чтение | Возвращает параметры масштабируемого SKU для развертывания в конечной точке вывода в Службы машинного обучения рабочих областях |
 > | Microsoft. Мачинелеарнингсервицес/рабочие области/метки, экспорт/действие | Экспорт меток проектов с метками в Службы машинного обучения рабочих областях |
 > | Microsoft. Мачинелеарнингсервицес/рабочие области/Метки/Метки/чтение | Получает метки проектов с метками в Службы машинного обучения рабочих областях |
 > | Microsoft. Мачинелеарнингсервицес/рабочие области/Метки/Метки/запись | Создает метки проектов с метками в Службы машинного обучения рабочих областях |
@@ -5307,6 +5340,9 @@ ms.locfileid: "88272049"
 > | Microsoft.NotificationHubs/Namespaces/authorizationRules/delete | Удаляет правило авторизации для пространства имен. Невозможно удалить правило авторизации пространства имен по умолчанию.  |
 > | Microsoft.NotificationHubs/Namespaces/authorizationRules/listkeys/action | Возвращает строку подключения к пространству имен. |
 > | Microsoft.NotificationHubs/Namespaces/authorizationRules/regenerateKeys/action | Правило авторизации пространства имен повторно создает первичный или вторичный ключ. Укажите ключ, который должен быть создан повторно. |
+> | Microsoft. NotificationHubs/пространства имен/diagnosticSettings/чтение | Возвращает список описаний параметров диагностики пространства имен. |
+> | Microsoft. NotificationHubs/пространства имен/diagnosticSettings/запись | Возвращает список описаний параметров диагностики пространства имен. |
+> | Microsoft. NotificationHubs/пространства имен/Логдефинитионс/чтение | Возвращает список описаний ресурсов журналов пространства имен. |
 > | Microsoft.NotificationHubs/Namespaces/NotificationHubs/write | Создает центр уведомлений и обновляет его свойства. К этим свойствам в основном относятся учетные данные PNS. Правила авторизации и срок жизни. |
 > | Microsoft.NotificationHubs/Namespaces/NotificationHubs/read | Возвращает список описаний ресурсов центра уведомлений. |
 > | Microsoft.NotificationHubs/Namespaces/NotificationHubs/Delete | Удаляет ресурс центра уведомлений. |
@@ -6006,6 +6042,12 @@ ms.locfileid: "88272049"
 > | Microsoft. Relay/пространства имен/Приватиндпоинтконнектионпроксиес/чтение | Получение прокси-сервера подключения к частной конечной точке |
 > | Microsoft. Relay/пространства имен/Приватиндпоинтконнектионпроксиес/запись | Создание прокси-сервера подключения к частной конечной точке |
 > | Microsoft. Relay/пространства имен/Приватиндпоинтконнектионпроксиес/Delete | Удаление прокси-сервера подключения частной конечной точки |
+> | Microsoft. Relay/пространства имен/Приватиндпоинтконнектионпроксиес/значение operationstatus/Read | Получение состояния асинхронной операции закрытой конечной точки |
+> | Microsoft. Relay/пространства имен/Приватиндпоинтконнектионс/чтение | Получение подключения к частной конечной точке |
+> | Microsoft. Relay/пространства имен/Приватиндпоинтконнектионс/запись | Создание или обновление подключения к частной конечной точке |
+> | Microsoft. Relay/пространства имен/Приватиндпоинтконнектионс/Delete | Удаляет подключение к частной конечной точке |
+> | Microsoft. Relay/пространства имен/Приватиндпоинтконнектионс/значение operationstatus/Read | Получение состояния асинхронной операции закрытой конечной точки |
+> | Microsoft. Relay/пространства имен/Привателинкресаурцес/чтение | Возвращает типы ресурсов, поддерживающих подключения к частным конечным точкам. |
 > | Microsoft. Relay/пространства имен/поставщики/Microsoft. Insights/diagnosticSettings/чтение | Возвращает список описаний параметров диагностики пространства имен. |
 > | Microsoft. Relay/пространства имен/поставщики/Microsoft. Insights/diagnosticSettings/запись | Возвращает список описаний параметров диагностики пространства имен. |
 > | Microsoft. Relay/пространства имен/поставщики/Microsoft. Insights/Логдефинитионс/чтение | Возвращает список описаний ресурсов журналов пространства имен. |
@@ -6077,6 +6119,12 @@ ms.locfileid: "88272049"
 > | Microsoft. ServiceBus/пространства имен/Приватиндпоинтконнектионпроксиес/чтение | Получение прокси-сервера подключения к частной конечной точке |
 > | Microsoft. ServiceBus/пространства имен/Приватиндпоинтконнектионпроксиес/запись | Создание прокси-сервера подключения к частной конечной точке |
 > | Microsoft. ServiceBus/пространства имен/Приватиндпоинтконнектионпроксиес/Delete | Удаление прокси-сервера подключения частной конечной точки |
+> | Microsoft. ServiceBus/пространства имен/Приватиндпоинтконнектионпроксиес/значение operationstatus/Read | Получение состояния асинхронной операции закрытой конечной точки |
+> | Microsoft. ServiceBus/пространства имен/Приватиндпоинтконнектионс/чтение | Получение подключения к частной конечной точке |
+> | Microsoft. ServiceBus/пространства имен/Приватиндпоинтконнектионс/запись | Создание или обновление подключения к частной конечной точке |
+> | Microsoft. ServiceBus/пространства имен/Приватиндпоинтконнектионс/Delete | Удаляет подключение к частной конечной точке |
+> | Microsoft. ServiceBus/пространства имен/Приватиндпоинтконнектионс/значение operationstatus/Read | Получение состояния асинхронной операции закрытой конечной точки |
+> | Microsoft. ServiceBus/пространства имен/Привателинкресаурцес/чтение | Возвращает типы ресурсов, поддерживающих подключения к частным конечным точкам. |
 > | Microsoft.ServiceBus/namespaces/providers/Microsoft.Insights/diagnosticSettings/read | Возвращает список описаний параметров диагностики пространства имен. |
 > | Microsoft.ServiceBus/namespaces/providers/Microsoft.Insights/diagnosticSettings/write | Возвращает список описаний параметров диагностики пространства имен. |
 > | Microsoft.ServiceBus/namespaces/providers/Microsoft.Insights/logDefinitions/read | Возвращает список описаний ресурсов журналов пространства имен. |
@@ -6511,6 +6559,9 @@ ms.locfileid: "88272049"
 > | Microsoft. Секуритинсигхтс/среатинтеллиженце/метрики/действие | Сбор метрик анализа угроз |
 > | Microsoft. Секуритинсигхтс/среатинтеллиженце/Булкделете/Action | Групповое удаление аналитики угроз |
 > | Microsoft. Секуритинсигхтс/среатинтеллиженце/Булктаг/Action | Аналитика больших тегов с анализом угроз |
+> | Microsoft. Секуритинсигхтс/Ватчлистс/Read | Возвращает Ватчлистс |
+> | Microsoft. Секуритинсигхтс/Ватчлистс/запись | Создание Ватчлистс |
+> | Microsoft. Секуритинсигхтс/Ватчлистс/Delete | Удаляет Ватчлистс |
 
 ## <a name="devops"></a>DevOps
 
@@ -7213,14 +7264,85 @@ ms.locfileid: "88272049"
 > | Microsoft.Insights/LogProfiles/Delete | Удаление профиля журнала действий. |
 > | Microsoft.Insights/LogProfiles/Read | Чтение профиля журнала действий. |
 > | Microsoft.Insights/Logs/Read | Чтение данных из всех журналов. |
+> | Microsoft. Insights/журналы/Ааддомаинсервицесаккаунтлогон/Read | Чтение данных из таблицы Ааддомаинсервицесаккаунтлогон |
+> | Microsoft. Insights/журналы/Ааддомаинсервицесаккаунтманажемент/Read | Чтение данных из таблицы Ааддомаинсервицесаккаунтманажемент |
+> | Microsoft. Insights/журналы/Ааддомаинсервицесдиректорисервицеакцесс/Read | Чтение данных из таблицы Ааддомаинсервицесдиректорисервицеакцесс |
+> | Microsoft. Insights/журналы/Ааддомаинсервицеслогонлогофф/Read | Чтение данных из таблицы Ааддомаинсервицеслогонлогофф |
+> | Microsoft. Insights/журналы/Ааддомаинсервицесполицичанже/Read | Чтение данных из таблицы Ааддомаинсервицесполицичанже |
+> | Microsoft. Insights/журналы/Ааддомаинсервицеспривилежеусе/Read | Чтение данных из таблицы Ааддомаинсервицеспривилежеусе |
+> | Microsoft. Insights/журналы/Ааддомаинсервицессистемсекурити/Read | Чтение данных из таблицы Ааддомаинсервицессистемсекурити |
+> | Microsoft. Insights/журналы/Аадманажедидентитисигнинлогс/Read | Чтение данных из таблицы Аадманажедидентитисигнинлогс |
+> | Microsoft. Insights/журналы/Ааднонинтерактивеусерсигнинлогс/Read | Чтение данных из таблицы Ааднонинтерактивеусерсигнинлогс |
+> | Microsoft. Insights/журналы/АадсервицепринЦипалсигнинлогс/Read | Чтение данных из таблицы АадсервицепринЦипалсигнинлогс |
 > | Microsoft.Insights/Logs/ADAssessmentRecommendation/Read | Чтение данных из таблицы ADAssessmentRecommendation. |
+> | Microsoft. Insights/журналы/Аддоназуребаккупалертс/Read | Чтение данных из таблицы Аддоназуребаккупалертс |
+> | Microsoft. Insights/журналы/Аддоназуребаккупжобс/Read | Чтение данных из таблицы Аддоназуребаккупжобс |
+> | Microsoft. Insights/журналы/Аддоназуребаккупполици/Read | Чтение данных из таблицы Аддоназуребаккупполици |
+> | Microsoft. Insights/журналы/Аддоназуребаккуппротектединстанце/Read | Чтение данных из таблицы Аддоназуребаккуппротектединстанце |
+> | Microsoft. Insights/журналы/Аддоназуребаккупстораже/Read | Чтение данных из таблицы Аддоназуребаккупстораже |
+> | Microsoft. Insights/журналы/Адфактивитирун/Read | Чтение данных из таблицы Адфактивитирун |
+> | Microsoft. Insights/журналы/Адфпипелинерун/Read | Чтение данных из таблицы Адфпипелинерун |
+> | Microsoft. Insights/журналы/Адфссисинтегратионрунтимелогс/Read | Чтение данных из таблицы Адфссисинтегратионрунтимелогс |
+> | Microsoft. Insights/журналы/Адфссиспаккажеевентмессажеконтекст/Read | Чтение данных из таблицы Адфссиспаккажеевентмессажеконтекст |
+> | Microsoft. Insights/журналы/Адфссиспаккажеевентмессажес/Read | Чтение данных из таблицы Адфссиспаккажеевентмессажес |
+> | Microsoft. Insights/журналы/Адфссиспаккажеексекутаблестатистикс/Read | Чтение данных из таблицы Адфссиспаккажеексекутаблестатистикс |
+> | Microsoft. Insights/журналы/Адфссиспаккажеексекутионкомпонентфасес/Read | Чтение данных из таблицы Адфссиспаккажеексекутионкомпонентфасес |
+> | Microsoft. Insights/журналы/Адфссиспаккажеексекутиондатастатистикс/Read | Чтение данных из таблицы Адфссиспаккажеексекутиондатастатистикс |
+> | Microsoft. Insights/журналы/Адфтригжеррун/Read | Чтение данных из таблицы Адфтригжеррун |
 > | Microsoft.Insights/Logs/ADReplicationResult/Read | Чтение данных из таблицы ADReplicationResult. |
 > | Microsoft.Insights/Logs/ADSecurityAssessmentRecommendation/Read | Чтение данных из таблицы ADSecurityAssessmentRecommendation. |
+> | Microsoft. Insights/журналы/Адтдигиталтвинсоператион/Read | Чтение данных из таблицы Адтдигиталтвинсоператион |
+> | Microsoft. Insights/журналы/Адтевентраутесоператион/Read | Чтение данных из таблицы Адтевентраутесоператион |
+> | Microsoft. Insights/журналы/Адтмоделсоператион/Read | Чтение данных из таблицы Адтмоделсоператион |
+> | Microsoft. Insights/журналы/Адткуерйоператион/Read | Чтение данных из таблицы Адткуерйоператион |
+> | Microsoft. Insights/журналы/Аегделиверифаилурелогс/Read | Чтение данных из таблицы Аегделиверифаилурелогс |
+> | Microsoft. Insights/журналы/Аегпублишфаилурелогс/Read | Чтение данных из таблицы Аегпублишфаилурелогс |
 > | Microsoft.Insights/Logs/Alert/Read | Чтение данных из таблицы Alert. |
 > | Microsoft.Insights/Logs/AlertHistory/Read | Чтение данных из таблицы AlertHistory. |
+> | Microsoft. Insights/журналы/Амлкомпутеклустеревент/Read | Чтение данных из таблицы Амлкомпутеклустеревент |
+> | Microsoft. Insights/журналы/Амлкомпутеклустернодивент/Read | Чтение данных из таблицы Амлкомпутеклустернодивент |
+> | Microsoft. Insights/журналы/Амлкомпутекпугпуутилизатион/Read | Чтение данных из таблицы Амлкомпутекпугпуутилизатион |
+> | Microsoft. Insights/журналы/Амлкомпутежобевент/Read | Чтение данных из таблицы Амлкомпутежобевент |
+> | Microsoft. Insights/журналы/Амлрунстатусчанжедевент/Read | Чтение данных из таблицы Амлрунстатусчанжедевент |
+> | Microsoft. Insights/журналы/Апиманажементгатевайлогс/Read | Чтение данных из таблицы Апиманажементгатевайлогс |
+> | Microsoft. Insights/журналы/Аппаваилабилитиресултс/Read | Чтение данных из таблицы Аппаваилабилитиресултс |
+> | Microsoft. Insights/журналы/Аппбровсертимингс/Read | Чтение данных из таблицы Аппбровсертимингс |
+> | Microsoft. Insights/журналы/Аппцентереррор/Read | Чтение данных из таблицы AppCenterError |
+> | Microsoft. Insights/журналы/АппдепенденЦиес/Read | Чтение данных из таблицы АппдепенденЦиес |
+> | Microsoft. Insights/журналы/Аппевентс/Read | Чтение данных из таблицы Аппевентс |
+> | Microsoft. Insights/журналы/Аппексцептионс/Read | Чтение данных из таблицы Аппексцептионс |
 > | Microsoft.Insights/Logs/ApplicationInsights/Read | Чтение данных из таблицы ApplicationInsights. |
+> | Microsoft. Insights/журналы/Аппметрикс/Read | Чтение данных из таблицы Аппметрикс |
+> | Microsoft. Insights/журналы/Апппажевиевс/Read | Чтение данных из таблицы Апппажевиевс |
+> | Microsoft. Insights/журналы/Аппперформанцекаунтерс/Read | Чтение данных из таблицы Аппперформанцекаунтерс |
+> | Microsoft. Insights/журналы/Аппплатформлогсфорспринг/Read | Чтение данных из таблицы Аппплатформлогсфорспринг |
+> | Microsoft. Insights/журналы/Аппплатформсистемлогс/Read | Чтение данных из таблицы Аппплатформсистемлогс |
+> | Microsoft. Insights/журналы/Аппрекуестс/Read | Чтение данных из таблицы Аппрекуестс |
+> | Microsoft. Insights/журналы/Аппсервицеантивируссканлогс/Read | Чтение данных из таблицы Аппсервицеантивируссканлогс |
+> | Microsoft. Insights/журналы/Аппсервицеапплогс/Read | Чтение данных из таблицы Аппсервицеапплогс |
+> | Microsoft. Insights/журналы/Аппсервицеаудитлогс/Read | Чтение данных из таблицы Аппсервицеаудитлогс |
+> | Microsoft. Insights/журналы/Аппсервицеконсолелогс/Read | Чтение данных из таблицы Аппсервицеконсолелогс |
+> | Microsoft. Insights/журналы/Аппсервицеенвиронментплатформлогс/Read | Чтение данных из таблицы Аппсервицеенвиронментплатформлогс |
+> | Microsoft. Insights/журналы/Аппсервицефилеаудитлогс/Read | Чтение данных из таблицы Аппсервицефилеаудитлогс |
+> | Microsoft. Insights/журналы/Аппсервицехттплогс/Read | Чтение данных из таблицы Аппсервицехттплогс |
+> | Microsoft. Insights/журналы/Аппсервицеплатформлогс/Read | Чтение данных из таблицы Аппсервицеплатформлогс |
+> | Microsoft. Insights/журналы/Аппсистемевентс/Read | Чтение данных из таблицы Аппсистемевентс |
+> | Microsoft. Insights/журналы/Апптрацес/Read | Чтение данных из таблицы Апптрацес |
+> | Microsoft. Insights/журналы/AuditLogs/Read | Чтение данных из таблицы AuditLogs |
+> | Microsoft. Insights/журналы/Аутоскаливалуатионслог/Read | Чтение данных из таблицы Аутоскаливалуатионслог |
+> | Microsoft. Insights/журналы/Аутоскалескалеактионслог/Read | Чтение данных из таблицы Аутоскалескалеактионслог |
+> | Microsoft. Insights/журналы/Авсклаудтраил/Read | Чтение данных из таблицы Авсклаудтраил |
 > | Microsoft.Insights/Logs/AzureActivity/Read | Чтение данных из таблицы AzureActivity. |
+> | Microsoft. Insights/журналы/Азуреассессментрекоммендатион/Read | Чтение данных из таблицы Азуреассессментрекоммендатион |
+> | Microsoft. Insights/журналы/Азуредевопсаудитинг/Read | Чтение данных из таблицы Азуредевопсаудитинг |
+> | Microsoft. Insights/журналы/AzureDiagnostics/Read | Чтение данных из таблицы AzureDiagnostics |
 > | Microsoft.Insights/Logs/AzureMetrics/Read | Чтение данных из таблицы AzureMetrics. |
+> | Microsoft. Insights/журналы/Баиклустеревент/Read | Чтение данных из таблицы Баиклустеревент |
+> | Microsoft. Insights/журналы/Баиклустернодивент/Read | Чтение данных из таблицы Баиклустернодивент |
+> | Microsoft. Insights/журналы/Баижобевент/Read | Чтение данных из таблицы Баижобевент |
+> | Microsoft. Insights/журналы/Бехавиораналитикс/Read | Чтение данных из таблицы Бехавиораналитикс |
+> | Microsoft. Insights/журналы/Блоккчаинаппликатионлог/Read | Чтение данных из таблицы Блоккчаинаппликатионлог |
+> | Microsoft. Insights/журналы/Блоккчаинпроксилог/Read | Чтение данных из таблицы Блоккчаинпроксилог |
 > | Microsoft.Insights/Logs/BoundPort/Read | Чтение данных из таблицы BoundPort. |
 > | Microsoft.Insights/Logs/CommonSecurityLog/Read | Чтение данных из таблицы CommonSecurityLog. |
 > | Microsoft.Insights/Logs/ComputerGroup/Read | Чтение данных из таблицы ComputerGroup. |
@@ -7229,7 +7351,22 @@ ms.locfileid: "88272049"
 > | Microsoft.Insights/Logs/ContainerImageInventory/Read | Чтение данных из таблицы ContainerImageInventory. |
 > | Microsoft.Insights/Logs/ContainerInventory/Read | Чтение данных из таблицы ContainerInventory. |
 > | Microsoft.Insights/Logs/ContainerLog/Read | Чтение данных из таблицы ContainerLog. |
+> | Microsoft. Insights/журналы/Контаинернодеинвентори/Read | Чтение данных из таблицы Контаинернодеинвентори |
+> | Microsoft. Insights/журналы/Контаинеррегистрилогиневентс/Read | Чтение данных из таблицы Контаинеррегистрилогиневентс |
+> | Microsoft. Insights/журналы/Контаинеррегистрирепоситоревентс/Read | Чтение данных из таблицы Контаинеррегистрирепоситоревентс |
 > | Microsoft.Insights/Logs/ContainerServiceLog/Read | Чтение данных из таблицы ContainerServiceLog. |
+> | Microsoft. Insights/журналы/Кореазуребаккуп/Read | Чтение данных из таблицы Кореазуребаккуп |
+> | Microsoft. Insights/журналы/Датабрикксаккаунтс/Read | Чтение данных из таблицы Датабрикксаккаунтс |
+> | Microsoft. Insights/журналы/Датабрикксклустерс/Read | Чтение данных из таблицы Датабрикксклустерс |
+> | Microsoft. Insights/журналы/Датабрикксдбфс/Read | Чтение данных из таблицы Датабрикксдбфс |
+> | Microsoft. Insights/журналы/Датабрикксинстанцепулс/Read | Чтение данных из таблицы Датабрикксинстанцепулс |
+> | Microsoft. Insights/журналы/Датабрикксжобс/Read | Чтение данных из таблицы Датабрикксжобс |
+> | Microsoft. Insights/журналы/Датабриккснотебук/Read | Чтение данных из таблицы Датабриккснотебук |
+> | Microsoft. Insights/журналы/Датабриккссекретс/Read | Чтение данных из таблицы Датабриккссекретс |
+> | Microsoft. Insights/журналы/Датабриккссклпермиссионс/Read | Чтение данных из таблицы Датабриккссклпермиссионс |
+> | Microsoft. Insights/журналы/Датабриккссш/Read | Чтение данных из таблицы Датабриккссш |
+> | Microsoft. Insights/журналы/Датабриккстаблес/Read | Чтение данных из таблицы Датабриккстаблес |
+> | Microsoft. Insights/журналы/Датабрикксворкспаце/Read | Чтение данных из таблицы Датабрикксворкспаце |
 > | Microsoft.Insights/Logs/DeviceAppCrash/Read | Чтение данных из таблицы DeviceAppCrash. |
 > | Microsoft.Insights/Logs/DeviceAppLaunch/Read | Чтение данных из таблицы DeviceAppLaunch. |
 > | Microsoft.Insights/Logs/DeviceCalendar/Read | Чтение данных из таблицы DeviceCalendar. |
@@ -7244,6 +7381,7 @@ ms.locfileid: "88272049"
 > | Microsoft.Insights/Logs/DeviceSleepState/Read | Чтение данных из таблицы DeviceSleepState. |
 > | Microsoft.Insights/Logs/DHAppFailure/Read | Чтение данных из таблицы DHAppFailure. |
 > | Microsoft.Insights/Logs/DHAppReliability/Read | Чтение данных из таблицы DHAppReliability. |
+> | Microsoft. Insights/журналы/Дхкпактивити/Read | Чтение данных из таблицы Дхкпактивити |
 > | Microsoft.Insights/Logs/DHDriverReliability/Read | Чтение данных из таблицы DHDriverReliability. |
 > | Microsoft.Insights/Logs/DHLogonFailures/Read | Чтение данных из таблицы DHLogonFailures. |
 > | Microsoft.Insights/Logs/DHLogonMetrics/Read | Чтение данных из таблицы DHLogonMetrics. |
@@ -7252,15 +7390,28 @@ ms.locfileid: "88272049"
 > | Microsoft.Insights/Logs/DHWipAppLearning/Read | Чтение данных из таблицы DHWipAppLearning. |
 > | Microsoft.Insights/Logs/DnsEvents/Read | Чтение данных из таблицы DnsEvents. |
 > | Microsoft.Insights/Logs/DnsInventory/Read | Чтение данных из таблицы DnsInventory. |
+> | Microsoft. Insights/журналы/Dynamics365Activity/Read | Чтение данных из таблицы Dynamics365Activity |
 > | Microsoft.Insights/Logs/ETWEvent/Read | Чтение данных из таблицы ETWEvent. |
 > | Microsoft.Insights/Logs/Event/Read | Чтение данных из таблицы Event. |
 > | Microsoft.Insights/Logs/ExchangeAssessmentRecommendation/Read | Чтение данных из таблицы ExchangeAssessmentRecommendation. |
 > | Microsoft.Insights/Logs/ExchangeOnlineAssessmentRecommendation/Read | Чтение данных из таблицы ExchangeOnlineAssessmentRecommendation. |
+> | Microsoft. Insights/журналы/Фаилединжестион/Read | Чтение данных из таблицы Фаилединжестион |
+> | Microsoft. Insights/журналы/Функтионапплогс/Read | Чтение данных из таблицы Функтионапплогс |
 > | Microsoft.Insights/Logs/Heartbeat/Read | Чтение данных из таблицы Heartbeat. |
+> | Microsoft. Insights/журналы/Хунтингбукмарк/Read | Чтение данных из таблицы Хунтингбукмарк |
 > | Microsoft.Insights/Logs/IISAssessmentRecommendation/Read | Чтение данных из таблицы IISAssessmentRecommendation. |
 > | Microsoft.Insights/Logs/InboundConnection/Read | Чтение данных из таблицы InboundConnection. |
+> | Microsoft. Insights/журналы/Инсигхтсметрикс/Read | Чтение данных из таблицы Инсигхтсметрикс |
+> | Microsoft. Insights/журналы/Интунеаудитлогс/Read | Чтение данных из таблицы IntuneAuditLogs. |
+> | Microsoft. Insights/журналы/Интунедевицекомплианцеорг/Read | Чтение данных из таблицы Интунедевицекомплианцеорг |
+> | Microsoft. Insights/журналы/Интунеоператионаллогс/Read | Чтение данных из таблицы IntuneOperationalLogs. |
+> | Microsoft. Insights/журналы/ИосубдистрибутедтраЦинг/Read | Чтение данных из таблицы ИосубдистрибутедтраЦинг |
+> | Microsoft. Insights/журналы/Кубивентс/Read | Чтение данных из таблицы KubeEvents |
+> | Microsoft. Insights/журналы/Кубехеалс/Read | Чтение данных из таблицы Кубехеалс |
+> | Microsoft. Insights/журналы/Кубемонажентевентс/Read | Чтение данных из таблицы Кубемонажентевентс |
 > | Microsoft.Insights/Logs/KubeNodeInventory/Read | Чтение данных из таблицы KubeNodeInventory. |
 > | Microsoft.Insights/Logs/KubePodInventory/Read | Чтение данных из таблицы KubePodInventory. |
+> | Microsoft. Insights/журналы/Кубесервицес/Read | Чтение данных из таблицы KubeServices |
 > | Microsoft.Insights/Logs/LinuxAuditLog/Read | Чтение данных из таблицы LinuxAuditLog. |
 > | Microsoft.Insights/Logs/MAApplication/Read | Чтение данных из таблицы MAApplication. |
 > | Microsoft.Insights/Logs/MAApplicationHealth/Read | Чтение данных из таблицы MAApplicationHealth. |
@@ -7271,6 +7422,8 @@ ms.locfileid: "88272049"
 > | Microsoft.Insights/Logs/MAApplicationReadiness/Read | Чтение данных из таблицы MAApplicationReadiness. |
 > | Microsoft.Insights/Logs/MADeploymentPlan/Read | Чтение данных из таблицы MADeploymentPlan. |
 > | Microsoft.Insights/Logs/MADevice/Read | Чтение данных из таблицы MADevice. |
+> | Microsoft. Insights/журналы/Мадевиценотенроллед/Read | Считывание данных из таблицы MADeviceNotEnrolled |
+> | Microsoft. Insights/журналы/Мадевиценрт/Read | Чтение данных из таблицы Мадевиценрт |
 > | Microsoft.Insights/Logs/MADevicePnPHealth/Read | Считывает данные из таблицы MADevicePnPHealth. |
 > | Microsoft.Insights/Logs/MADevicePnPHealthAlternativeVersions/Read | Считывает данные из таблицы MADevicePnPHealthAlternativeVersions. |
 > | Microsoft.Insights/Logs/MADevicePnPHealthIssues/Read | Считывает данные из таблицы MADevicePnPHealthIssues. |
@@ -7278,19 +7431,27 @@ ms.locfileid: "88272049"
 > | Microsoft.Insights/Logs/MADriverInstanceReadiness/Read | Считывает данные из таблицы MADriverInstanceReadiness. |
 > | Microsoft.Insights/Logs/MADriverReadiness/Read | Чтение данных из таблицы MADriverReadiness. |
 > | Microsoft.Insights/Logs/MAOfficeAddin/Read | Чтение данных из таблицы MAOfficeAddin. |
+> | Microsoft. Insights/журналы/Маоффицеаддинентитихеалс/Read | Чтение данных из таблицы Маоффицеаддинентитихеалс |
 > | Microsoft.Insights/Logs/MAOfficeAddinHealth/Read | Чтение данных из таблицы MAOfficeAddinHealth. |
+> | Microsoft. Insights/журналы/Маоффицеаддинхеалсевентнрт/Read | Чтение данных из таблицы Маоффицеаддинхеалсевентнрт |
 > | Microsoft.Insights/Logs/MAOfficeAddinHealthIssues/Read | Считывает данные из таблицы MAOfficeAddinHealthIssues. |
 > | Microsoft.Insights/Logs/MAOfficeAddinInstance/Read | Чтение данных из таблицы MAOfficeAddinInstance. |
 > | Microsoft.Insights/Logs/MAOfficeAddinInstanceReadiness/Read | Считывает данные из таблицы MAOfficeAddinInstanceReadiness. |
 > | Microsoft.Insights/Logs/MAOfficeAddinReadiness/Read | Чтение данных из таблицы MAOfficeAddinReadiness. |
 > | Microsoft.Insights/Logs/MAOfficeApp/Read | Чтение данных из таблицы MAOfficeApp. |
+> | Microsoft. Insights/журналы/Маоффицеаппкрашеснрт/Read | Чтение данных из таблицы Маоффицеаппкрашеснрт |
 > | Microsoft.Insights/Logs/MAOfficeAppHealth/Read | Чтение данных из таблицы MAOfficeAppHealth. |
 > | Microsoft.Insights/Logs/MAOfficeAppInstance/Read | Чтение данных из таблицы MAOfficeAppInstance. |
+> | Microsoft. Insights/журналы/Маоффицеаппинстанцехеалс/Read | Чтение данных из таблицы Маоффицеаппинстанцехеалс |
 > | Microsoft.Insights/Logs/MAOfficeAppReadiness/Read | Чтение данных из таблицы MAOfficeAppReadiness. |
+> | Microsoft. Insights/журналы/Маоффицеаппсессионснрт/Read | Чтение данных из таблицы Маоффицеаппсессионснрт |
 > | Microsoft.Insights/Logs/MAOfficeBuildInfo/Read | Чтение данных из таблицы MAOfficeBuildInfo. |
 > | Microsoft.Insights/Logs/MAOfficeCurrencyAssessment/Read | Чтение данных из таблицы MAOfficeCurrencyAssessment. |
 > | Microsoft.Insights/Logs/MAOfficeCurrencyAssessmentDailyCounts/Read | Чтение данных из таблицы MAOfficeCurrencyAssessmentDailyCounts. |
 > | Microsoft.Insights/Logs/MAOfficeDeploymentStatus/Read | Чтение данных из таблицы MAOfficeDeploymentStatus. |
+> | Microsoft. Insights/журналы/Маоффицедеплойментстатуснрт/Read | Чтение данных из таблицы Маоффицедеплойментстатуснрт |
+> | Microsoft. Insights/журналы/Маоффицемакроеррорнрт/Read | Чтение данных из таблицы Маоффицемакроеррорнрт |
+> | Microsoft. Insights/журналы/Маоффицемакроглобалхеалс/Read | Чтение данных из таблицы Маоффицемакроглобалхеалс |
 > | Microsoft.Insights/Logs/MAOfficeMacroHealth/Read | Считывает данные из таблицы MAOfficeMacroHealth. |
 > | Microsoft.Insights/Logs/MAOfficeMacroHealthIssues/Read | Считывает данные из таблицы MAOfficeMacroHealthIssues. |
 > | Microsoft.Insights/Logs/MAOfficeMacroIssueInstanceReadiness/Read | Считывает данные из таблицы MAOfficeMacroIssueInstanceReadiness. |
@@ -7303,7 +7464,16 @@ ms.locfileid: "88272049"
 > | Microsoft.Insights/Logs/MAWindowsCurrencyAssessment/Read | Чтение данных из таблицы MAWindowsCurrencyAssessment. |
 > | Microsoft.Insights/Logs/MAWindowsCurrencyAssessmentDailyCounts/Read | Чтение данных из таблицы MAWindowsCurrencyAssessmentDailyCounts. |
 > | Microsoft.Insights/Logs/MAWindowsDeploymentStatus/Read | Чтение данных из таблицы MAWindowsDeploymentStatus. |
+> | Microsoft. Insights/журналы/Мавиндовсдеплойментстатуснрт/Read | Чтение данных из таблицы Мавиндовсдеплойментстатуснрт |
 > | Microsoft.Insights/Logs/MAWindowsSysReqInstanceReadiness/Read | Считывает данные из таблицы MAWindowsSysReqInstanceReadiness. |
+> | Microsoft. Insights/журналы/Мкасшадовитрепортинг/Read | Чтение данных из таблицы Мкасшадовитрепортинг |
+> | Microsoft. Insights/журналы/Микрософтазуребастионаудитлогс/Read | Чтение данных из таблицы Микрософтазуребастионаудитлогс |
+> | Microsoft. Insights/журналы/Микрософтдаташаререцеиведснапшотлог/Read | Чтение данных из таблицы Микрософтдаташаререцеиведснапшотлог |
+> | Microsoft. Insights/журналы/Микрософтдаташаресентснапшотлог/Read | Чтение данных из таблицы Микрософтдаташаресентснапшотлог |
+> | Microsoft. Insights/журналы/Микрософтдаташарешарелог/Read | Чтение данных из таблицы Микрософтдаташарешарелог |
+> | Microsoft. Insights/журналы/Микрософтдинамикстелеметриперформанцелогс/Read | Чтение данных из таблицы Микрософтдинамикстелеметриперформанцелогс |
+> | Microsoft. Insights/журналы/Микрософтдинамикстелеметрисистемметрикслогс/Read | Чтение данных из таблицы Микрософтдинамикстелеметрисистемметрикслогс |
+> | Microsoft. Insights/журналы/Микрософсеалскареаписаудитлогс/Read | Чтение данных из таблицы Микрософсеалскареаписаудитлогс |
 > | Microsoft.Insights/Logs/NetworkMonitoring/Read | Чтение данных из таблицы NetworkMonitoring. |
 > | Microsoft.Insights/Logs/OfficeActivity/Read | Чтение данных из таблицы OfficeActivity. |
 > | Microsoft.Insights/Logs/Operation/Read | Чтение данных из таблицы Operation. |
@@ -7319,18 +7489,33 @@ ms.locfileid: "88272049"
 > | Microsoft.Insights/Logs/SecurityBaselineSummary/Read | Чтение данных из таблицы SecurityBaselineSummary. |
 > | Microsoft.Insights/Logs/SecurityDetection/Read | Чтение данных из таблицы SecurityDetection. |
 > | Microsoft.Insights/Logs/SecurityEvent/Read | Чтение данных из таблицы SecurityEvent. |
+> | Microsoft. Insights/журналы/СекуритинЦидент/Read | Чтение данных из таблицы СекуритинЦидент |
+> | Microsoft. Insights/журналы/Секуритиотравевент/Read | Чтение данных из таблицы Секуритиотравевент |
+> | Microsoft. Insights/журналы/Секуритинестедрекоммендатион/Read | Чтение данных из таблицы Секуритинестедрекоммендатион |
+> | Microsoft. Insights/журналы/Секуритирекоммендатион/Read | Чтение данных из таблицы Секуритирекоммендатион |
 > | Microsoft.Insights/Logs/ServiceFabricOperationalEvent/Read | Чтение данных из таблицы ServiceFabricOperationalEvent. |
 > | Microsoft.Insights/Logs/ServiceFabricReliableActorEvent/Read | Чтение данных из таблицы ServiceFabricReliableActorEvent. |
 > | Microsoft.Insights/Logs/ServiceFabricReliableServiceEvent/Read | Чтение данных из таблицы ServiceFabricReliableServiceEvent. |
 > | Microsoft.Insights/Logs/SfBAssessmentRecommendation/Read | Чтение данных из таблицы SfBAssessmentRecommendation. |
 > | Microsoft.Insights/Logs/SfBOnlineAssessmentRecommendation/Read | Чтение данных из таблицы SfBOnlineAssessmentRecommendation. |
 > | Microsoft.Insights/Logs/SharePointOnlineAssessmentRecommendation/Read | Чтение данных из таблицы SharePointOnlineAssessmentRecommendation. |
+> | Microsoft. Insights/журналы/Сигналрсервицедиагностиклогс/Read | Чтение данных из таблицы Сигналрсервицедиагностиклогс |
+> | Microsoft. Insights/журналы/Сигнинлогс/Read | Чтение данных из таблицы SigninLogs |
 > | Microsoft.Insights/Logs/SPAssessmentRecommendation/Read | Чтение данных из таблицы SPAssessmentRecommendation. |
 > | Microsoft.Insights/Logs/SQLAssessmentRecommendation/Read | Чтение данных из таблицы SQLAssessmentRecommendation. |
+> | Microsoft. Insights/журналы/Склдатаклассификатион/Read | Чтение данных из таблицы Склдатаклассификатион |
 > | Microsoft.Insights/Logs/SQLQueryPerformance/Read | Чтение данных из таблицы SQLQueryPerformance. |
+> | Microsoft. Insights/журналы/Склвулнерабилитяссессментресулт/Read | Чтение данных из таблицы Склвулнерабилитяссессментресулт |
+> | Microsoft. Insights/журналы/Сторажеблоблогс/Read | Чтение данных из таблицы Сторажеблоблогс |
+> | Microsoft. Insights/журналы/Сторажефилелогс/Read | Чтение данных из таблицы Сторажефилелогс |
+> | Microsoft. Insights/журналы/Сторажекуеуелогс/Read | Чтение данных из таблицы Сторажекуеуелогс |
+> | Microsoft. Insights/журналы/Сторажетаблелогс/Read | Чтение данных из таблицы Сторажетаблелогс |
+> | Microsoft. Insights/журналы/Сукцеедединжестион/Read | Чтение данных из таблицы Сукцеедединжестион |
 > | Microsoft.Insights/Logs/Syslog/Read | Чтение данных из таблицы Syslog. |
 > | Microsoft.Insights/Logs/SysmonEvent/Read | Чтение данных из таблицы SysmonEvent. |
 > | Microsoft. Insights/журналы/таблицы. пользовательский/чтение | Чтение данных из любого пользовательского журнала. |
+> | Microsoft. Insights/журналы/Среатинтеллиженцеиндикатор/Read | Чтение данных из таблицы Среатинтеллиженцеиндикатор |
+> | Microsoft. Insights/журналы/Тсиингресс/Read | Чтение данных из таблицы Тсиингресс |
 > | Microsoft.Insights/Logs/UAApp/Read | Чтение данных из таблицы UAApp. |
 > | Microsoft.Insights/Logs/UAComputer/Read | Чтение данных из таблицы UAComputer. |
 > | Microsoft.Insights/Logs/UAComputerRank/Read | Чтение данных из таблицы UAComputerRank. |
@@ -7347,6 +7532,12 @@ ms.locfileid: "88272049"
 > | Microsoft.Insights/Logs/UpdateRunProgress/Read | Чтение данных из таблицы UpdateRunProgress. |
 > | Microsoft.Insights/Logs/UpdateSummary/Read | Чтение данных из таблицы UpdateSummary. |
 > | Microsoft.Insights/Logs/Usage/Read | Чтение данных из таблицы Usage. |
+> | Microsoft. Insights/журналы/Усеракцессаналитикс/Read | Чтение данных из таблицы Усеракцессаналитикс |
+> | Microsoft. Insights/журналы/Усерпираналитикс/Read | Чтение данных из таблицы Усерпираналитикс |
+> | Microsoft. Insights/журналы/Вмбаундпорт/Read | Считывает данные из таблицы VMBoundPort. |
+> | Microsoft. Insights/журналы/Вмкомпутер/Read | Чтение данных из таблицы Вмкомпутер |
+> | Microsoft. Insights/журналы/Вмконнектион/Read | Считывает данные из таблицы VMConnection. |
+> | Microsoft. Insights/журналы/Вмпроцесс/Read | Чтение данных из таблицы Вмпроцесс |
 > | Microsoft.Insights/Logs/W3CIISLog/Read | Чтение данных из таблицы W3CIISLog. |
 > | Microsoft.Insights/Logs/WaaSDeploymentStatus/Read | Чтение данных из таблицы WaaSDeploymentStatus. |
 > | Microsoft.Insights/Logs/WaaSInsiderStatus/Read | Чтение данных из таблицы WaaSInsiderStatus. |
@@ -7354,11 +7545,19 @@ ms.locfileid: "88272049"
 > | Microsoft.Insights/Logs/WDAVStatus/Read | Чтение данных из таблицы WDAVStatus. |
 > | Microsoft.Insights/Logs/WDAVThreat/Read | Чтение данных из таблицы WDAVThreat. |
 > | Microsoft.Insights/Logs/WindowsClientAssessmentRecommendation/Read | Чтение данных из таблицы WindowsClientAssessmentRecommendation. |
+> | Microsoft. Insights/журналы/Виндовсевент/Read | Чтение данных из таблицы WindowsEvent |
 > | Microsoft.Insights/Logs/WindowsFirewall/Read | Чтение данных из таблицы WindowsFirewall. |
 > | Microsoft.Insights/Logs/WindowsServerAssessmentRecommendation/Read | Чтение данных из таблицы WindowsServerAssessmentRecommendation. |
 > | Microsoft.Insights/Logs/WireData/Read | Чтение данных из таблицы WireData. |
+> | Microsoft. Insights/журналы/Ворклоадмониторингперф/Read | Чтение данных из таблицы WorkloadMonitoringPerf. |
 > | Microsoft.Insights/Logs/WUDOAggregatedStatus/Read | Чтение данных из таблицы WUDOAggregatedStatus. |
 > | Microsoft.Insights/Logs/WUDOStatus/Read | Чтение данных из таблицы WUDOStatus. |
+> | Microsoft. Insights/журналы/Ввдчеккпоинтс/Read | Чтение данных из таблицы Ввдчеккпоинтс |
+> | Microsoft. Insights/журналы/Ввдконнектионс/Read | Чтение данных из таблицы Ввдконнектионс |
+> | Microsoft. Insights/журналы/Ввдеррорс/Read | Чтение данных из таблицы Ввдеррорс |
+> | Microsoft. Insights/журналы/Ввдфидс/Read | Чтение данных из таблицы Ввдфидс |
+> | Microsoft. Insights/журналы/Ввдхострегистратионс/Read | Чтение данных из таблицы Ввдхострегистратионс |
+> | Microsoft. Insights/журналы/Ввдманажемент/Read | Чтение данных из таблицы Ввдманажемент |
 > | Microsoft.Insights/MetricAlerts/Write | Создание или изменение оповещения метрики. |
 > | Microsoft.Insights/MetricAlerts/Delete | Удаление оповещения метрики. |
 > | Microsoft.Insights/MetricAlerts/Read | Чтение оповещения метрики. |
@@ -7576,9 +7775,18 @@ ms.locfileid: "88272049"
 > | Microsoft.OperationalInsights/workspaces/query/DeviceCleanup/read | Чтение данных из таблицы DeviceCleanup. |
 > | Microsoft.OperationalInsights/workspaces/query/DeviceConnectSession/read | Чтение данных из таблицы DeviceConnectSession. |
 > | Microsoft.OperationalInsights/workspaces/query/DeviceEtw/read | Чтение данных из таблицы DeviceEtw. |
+> | Microsoft. OperationalInsights/рабочие области/запрос/Девицеевентс/чтение | Чтение данных из таблицы Девицеевентс |
+> | Microsoft. OperationalInsights/рабочие области/запрос/Девицефиливентс/чтение | Чтение данных из таблицы Девицефиливентс |
 > | Microsoft.OperationalInsights/workspaces/query/DeviceHardwareHealth/read | Чтение данных из таблицы DeviceHardwareHealth. |
 > | Microsoft.OperationalInsights/workspaces/query/DeviceHealth/read | Чтение данных из таблицы DeviceHealth. |
 > | Microsoft.OperationalInsights/workspaces/query/DeviceHeartbeat/read | Чтение данных из таблицы DeviceHeartbeat. |
+> | Microsoft. OperationalInsights/рабочие области/запрос/Девицеимажелоадевентс/чтение | Чтение данных из таблицы Девицеимажелоадевентс |
+> | Microsoft. OperationalInsights/рабочие области/запрос/DeviceInfo/чтение | Чтение данных из таблицы DeviceInfo |
+> | Microsoft. OperationalInsights/рабочие области/запрос/Девицелогоневентс/чтение | Чтение данных из таблицы Девицелогоневентс |
+> | Microsoft. OperationalInsights/рабочие области/запрос/Девиценетворкевентс/чтение | Чтение данных из таблицы Девиценетворкевентс |
+> | Microsoft. OperationalInsights/рабочие области/запрос/Девиценетворкинфо/чтение | Чтение данных из таблицы Девиценетворкинфо |
+> | Microsoft. OperationalInsights/рабочие области/запрос/Девицепроцессевентс/чтение | Чтение данных из таблицы Девицепроцессевентс |
+> | Microsoft. OperationalInsights/рабочие области/запрос/Девицерегистревентс/чтение | Чтение данных из таблицы Девицерегистревентс |
 > | Microsoft.OperationalInsights/workspaces/query/DeviceSkypeHeartbeat/read | Чтение данных из таблицы DeviceSkypeHeartbeat. |
 > | Microsoft.OperationalInsights/workspaces/query/DeviceSkypeSignIn/read | Чтение данных из таблицы DeviceSkypeSignIn. |
 > | Microsoft.OperationalInsights/workspaces/query/DeviceSleepState/read | Чтение данных из таблицы DeviceSleepState. |
@@ -7629,6 +7837,7 @@ ms.locfileid: "88272049"
 > | Microsoft. OperationalInsights/рабочие области/запрос/Хдинсигхтстормлогс/чтение | Чтение данных из таблицы Хдинсигхтстормлогс |
 > | Microsoft. OperationalInsights/рабочие области/запрос/Хдинсигхтстормметрикс/чтение | Чтение данных из таблицы Хдинсигхтстормметрикс |
 > | Microsoft. OperationalInsights/рабочие области/запрос/Хдинсигхтстормтопологиметрикс/чтение | Чтение данных из таблицы Хдинсигхтстормтопологиметрикс |
+> | Microsoft. OperationalInsights/рабочие области/запрос/Хеалсстатечанжеевент/чтение | Чтение данных из таблицы Хеалсстатечанжеевент |
 > | Microsoft.OperationalInsights/workspaces/query/Heartbeat/read | Чтение данных из таблицы Heartbeat. |
 > | Microsoft. OperationalInsights/рабочие области/запрос/Хунтингбукмарк/чтение | Чтение данных из таблицы Хунтингбукмарк |
 > | Microsoft.OperationalInsights/workspaces/query/IISAssessmentRecommendation/read | Чтение данных из таблицы IISAssessmentRecommendation. |
@@ -7712,6 +7921,8 @@ ms.locfileid: "88272049"
 > | Microsoft.OperationalInsights/workspaces/query/Operation/read | Чтение данных из таблицы Operation. |
 > | Microsoft.OperationalInsights/workspaces/query/OutboundConnection/read | Чтение данных из таблицы OutboundConnection. |
 > | Microsoft.OperationalInsights/workspaces/query/Perf/read | Чтение данных из таблицы Perf. |
+> | Microsoft. OperationalInsights/рабочие области/запрос/Повербидатасетстенантпревиев/чтение | Чтение данных из таблицы Повербидатасетстенантпревиев |
+> | Microsoft. OperationalInsights/рабочие области/запрос/Повербидатасетсворкспацепревиев/чтение | Чтение данных из таблицы Повербидатасетсворкспацепревиев |
 > | Microsoft.OperationalInsights/workspaces/query/ProtectionStatus/read | Чтение данных из таблицы ProtectionStatus. |
 > | Microsoft. OperationalInsights/рабочие области, запрос/запросы на чтение | Чтение данных из таблицы запросов |
 > | Microsoft.OperationalInsights/workspaces/query/SCCMAssessmentRecommendation/read | Чтение данных из таблицы SCCMAssessmentRecommendation. |
@@ -7919,9 +8130,6 @@ ms.locfileid: "88272049"
 > | Microsoft.Authorization/policyDefinitions/read | Возвращает сведения об определении политики. |
 > | Microsoft.Authorization/policyDefinitions/write | Создает определение настраиваемой политики. |
 > | Microsoft.Authorization/policyDefinitions/delete | Удаляет определение политики. |
-> | Microsoft. Authorization/Полициексемптионс/чтение | Получение сведений об исключении политики. |
-> | Microsoft. Authorization/Полициексемптионс/запись | Создание исключения политики в указанной области. |
-> | Microsoft. Authorization/Полициексемптионс/удаление | Удаляет исключение политики в указанной области. |
 > | Microsoft.Authorization/policySetDefinitions/read | Получение сведений об определении набора политик. |
 > | Microsoft.Authorization/policySetDefinitions/write | Создание пользовательского определения набора политик. |
 > | Microsoft.Authorization/policySetDefinitions/delete | Удаление определения набора политик. |
@@ -9076,12 +9284,14 @@ ms.locfileid: "88272049"
 > [!div class="mx-tableFixed"]
 > | Действие | Описание |
 > | --- | --- |
-> | Microsoft.Subscription/CreateSubscription/action | Создание подписки Azure. |
-> | Microsoft.Subscription/register/action | Регистрирует подписку в поставщике ресурсов Microsoft.Subscription. |
 > | Microsoft. Subscription/отмена/действие | Отменяет подписку |
 > | Microsoft. Subscription/Rename/Action | Переименовывает подписку |
-> | Microsoft.Subscription/SubscriptionDefinitions/read | Получение определения подписки Azure в группе управления. |
-> | Microsoft.Subscription/SubscriptionDefinitions/write | Создание определения подписки Azure. |
+> | Microsoft. Subscription/включение/действие | Включает подписку. |
+> | Microsoft.Subscription/CreateSubscription/action | Создание подписки Azure. |
+> | Microsoft.Subscription/register/action | Регистрирует подписку в поставщике ресурсов Microsoft.Subscription. |
+> | Microsoft. Subscription/Упдатетенант/действие | Обновление клиента подписки |
+> | Microsoft. Subscription/псевдонимы/запись | Создать псевдоним подписки |
+> | Microsoft. Subscription, подписки/запись | Создать или обновить подписку |
 
 ## <a name="intune"></a>Intune
 
@@ -9097,7 +9307,7 @@ ms.locfileid: "88272049"
 > | Microsoft.Intune/diagnosticsettings/delete | Удаление параметра диагностики. |
 > | Microsoft.Intune/diagnosticsettingscategories/read | Чтение категорий параметра диагностики. |
 
-## <a name="other"></a>Другой
+## <a name="other"></a>Другое
 
 ### <a name="microsoftbingmaps"></a>Microsoft.BingMaps
 

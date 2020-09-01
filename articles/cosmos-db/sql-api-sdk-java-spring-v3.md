@@ -9,12 +9,12 @@ ms.topic: reference
 ms.date: 08/18/2020
 ms.author: anfeldma
 ms.custom: devx-track-java
-ms.openlocfilehash: 04a50d37606754ff4540d1056e378d46388e2592
-ms.sourcegitcommit: 02ca0f340a44b7e18acca1351c8e81f3cca4a370
+ms.openlocfilehash: e67e6911eeac29036dee2b68c19395b34e1d11da
+ms.sourcegitcommit: d68c72e120bdd610bb6304dad503d3ea89a1f0f7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/19/2020
-ms.locfileid: "88590724"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89228041"
 ---
 # <a name="spring-data-azure-cosmos-db-v3-for-core-sql-api-release-notes-and-resources"></a>Пружинные данные Azure Cosmos DB v3 для API Core (SQL): заметки о выпуске и ресурсы
 > [!div class="op_single_selector"]
@@ -89,7 +89,7 @@ ms.locfileid: "88590724"
 
 # <a name="connect"></a>[Подключить](#tab/connect)
 
-### <a name="connect"></a>Подключение
+### <a name="connect"></a>Подключить
 
 Укажите учетную запись Azure Cosmos DB и сведения о контейнере. Пружинные данные Azure Cosmos DB автоматически создают клиент и подключаются к контейнеру.
 
@@ -122,7 +122,7 @@ cosmos.queryMetricsEnabled=true
 
 ## <a name="helpful-content"></a>Полезное содержимое
 
-| Содержимое | Платформа данных пружины v 2.2 | Пружина Data Framework v 2.3 |
+| Content | Платформа данных пружины v 2.2 | Пружина Data Framework v 2.3 |
 |---|---|
 | **Скачивание пакета SDK** | [Maven](https://mvnrepository.com/artifact/com.azure/azure-spring-data-2-2-cosmos) | [Maven](https://mvnrepository.com/artifact/com.azure/azure-spring-data-2-3-cosmos) |
 |**Участие в разработке пакета SDK** | [Репозиторий с пружинными данными Azure Cosmos DB на GitHub](https://github.com/Azure/azure-sdk-for-java/tree/master/sdk/cosmos/azure-spring-data-2-2-cosmos) | [Репозиторий с пружинными данными Azure Cosmos DB на GitHub](https://github.com/Azure/azure-sdk-for-java/tree/master/sdk/cosmos/azure-spring-data-2-3-cosmos) | 
@@ -130,8 +130,10 @@ cosmos.queryMetricsEnabled=true
 
 ## <a name="release-history"></a>История выпусков
 
+### <a name="300-beta2-unreleased"></a>3.0.0-Beta. 2 (не выпущено)
+
 ### <a name="300-beta1-2020-08-17"></a>3.0.0-Beta. 1 (2020-08-17)
-#### <a name="new-features"></a>новые функции;
+#### <a name="new-features"></a>Новые функции
 * Идентификатор группы изменен на `com.azure` .
 * Идентификатор артефакта изменен на `azure-spring-data-2-3-cosmos` .
 * Обновлена зависимость пакета SDK для Azure-Cosmos `4.3.2-beta.2` .

@@ -6,12 +6,12 @@ ms.service: data-lake-store
 ms.topic: how-to
 ms.date: 05/29/2018
 ms.author: twooley
-ms.openlocfilehash: e3e54b037485a85d836e7e7e67c9af2d9d140986
-ms.sourcegitcommit: 9b5c20fb5e904684dc6dd9059d62429b52cb39bc
+ms.openlocfilehash: fd49ddcb59e0d0f3a706f566cf0c011116b1501a
+ms.sourcegitcommit: d68c72e120bdd610bb6304dad503d3ea89a1f0f7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85856813"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89229231"
 ---
 # <a name="create-hdinsight-clusters-with-azure-data-lake-storage-gen1-by-using-the-azure-portal"></a>Создание кластеров HDInsight, использующих Azure Data Lake Storage 1-го поколения, с помощью портала Azure
 
@@ -25,7 +25,7 @@ ms.locfileid: "85856813"
 
 Узнайте, как использовать портал Azure для создания кластера HDInsight с учетной записью Azure Data Lake Storage 1-го поколения в качестве хранилища по умолчанию или дополнительного хранилища. Несмотря на то, что дополнительное хранилище является необязательным для кластера HDInsight, рекомендуется хранить бизнес-данные в дополнительных учетных записях хранения.
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Прежде чем начать, убедитесь, что выполнены следующие требования:
 
@@ -85,18 +85,11 @@ ms.locfileid: "85856813"
 На портале Azure можно использовать существующий субъект-службу или создать новый.
 
 Чтобы создать субъект-службу из портал Azure:
-
-1. В колонке хранилища выберите **Data Lake Store доступ** .
-1. В колонке **Data Lake Storage 1-го поколения доступ** выберите **создать**.
-1. Выберите **субъект-служба**, а затем следуйте инструкциям по созданию участника службы.
-1. Скачайте сертификат, если его потребуется использовать в будущем. Скачать сертификат удобно, если вы холите использовать этот же субъект-службу для создания дополнительных кластеров HDInsight.
-
-    ![Добавление субъекта-службы в кластер HDInsight](./media/data-lake-store-hdinsight-hadoop-use-portal/hdi.adl.2.png "Добавление субъекта-службы в кластер HDInsight")
-
-1. Выберите **доступ** , чтобы настроить доступ к папке.  См. раздел [Настройка разрешений для файлов](#configure-file-permissions).
+1. См. раздел [Создание субъекта-службы и сертификатов](https://docs.microsoft.com/azure/active-directory/develop/howto-create-service-principal-portal) с помощью Azure Active Directory.
 
 Чтобы использовать существующий субъект-службу из портал Azure:
 
+1. Субъект-служба должен иметь разрешения владельца учетной записи хранения. См. раздел [Настройка разрешений для субъекта-службы в качестве владельца учетной записи хранения](#configure-serviceprincipal-permissions) .
 1. Выберите **Data Lake Store доступ**.
 1. В колонке **Data Lake Storage 1-го поколения доступ** выберите **использовать существующий**.
 1. Выберите **субъект-служба**, а затем выберите субъект службы.
@@ -105,6 +98,10 @@ ms.locfileid: "85856813"
     ![Добавление субъекта-службы в кластер HDInsight](./media/data-lake-store-hdinsight-hadoop-use-portal/hdi.adl.5.png "Добавление субъекта-службы в кластер HDInsight")
 
 1. Выберите **доступ** , чтобы настроить доступ к папке.  См. раздел [Настройка разрешений для файлов](#configure-file-permissions).
+
+### <a name="set-up-permissions-for-the-service-principal-to-be-owner-on-the-storage-account"></a><a name="configure-serviceprincipal-permissions"></a>Настройка разрешений для субъекта-службы в качестве владельца учетной записи хранения
+1. В колонке управления доступом (IAM) учетной записи хранения щелкните Добавить назначение роли. 
+2. В колонке Добавление назначения роли выберите роль "владелец" и выберите имя субъекта-службы и нажмите кнопку Сохранить.
 
 ### <a name="configure-file-permissions"></a><a name="configure-file-permissions"></a>Настройка разрешений для файлов
 

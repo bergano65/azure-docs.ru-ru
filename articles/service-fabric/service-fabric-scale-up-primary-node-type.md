@@ -4,12 +4,12 @@ description: Узнайте, как масштабировать кластер 
 ms.topic: article
 ms.date: 08/06/2020
 ms.author: pepogors
-ms.openlocfilehash: b34f3f77dab6c4dcd8b7653f552c32a669d257c9
-ms.sourcegitcommit: b33c9ad17598d7e4d66fe11d511daa78b4b8b330
+ms.openlocfilehash: a18a40cc9e467b089ea9d6be3d0ca81a21d2c474
+ms.sourcegitcommit: d68c72e120bdd610bb6304dad503d3ea89a1f0f7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88854621"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89228721"
 ---
 # <a name="scale-up-a-service-fabric-cluster-primary-node-type-by-adding-a-node-type"></a>Увеличение масштаба типа первичного узла кластера Service Fabric путем добавления типа узла
 В этой статье описывается, как масштабировать тип первичного узла кластера Service Fabric путем добавления дополнительного типа узла в кластер. Кластер Service Fabric — это подключенный к сети набор виртуальных машин или физических компьютеров, в котором вы развертываете микрослужбы и управляете ими. Компьютер или виртуальная машина, которая входит в состав кластера. Масштабируемые наборы виртуальных машин относятся к вычислительным ресурсам Azure. Их можно использовать для развертывания коллекции виртуальных машин и управления ею как набором. Каждый тип узла, определенный в кластере Azure, [настроен как отдельный масштабируемый набор](service-fabric-cluster-nodetypes.md). Затем каждым типом узла можно управлять отдельно.
@@ -99,7 +99,7 @@ New-AzResourceGroupDeployment `
     "[concat('Microsoft.Network/publicIPAddresses/',concat(variables('lbIPName'),'-',variables('vmNodeType1Name')))]"
 ]
 ```
-4. Создайте новый масштабируемый набор виртуальных машин, использующий новый номер SKU виртуальной машины и SKU ОС, до которого нужно масштабировать. 
+4. Создайте новый масштабируемый набор виртуальных машин, использующий новый номер SKU виртуальной машины и номер SKU ОС, до которого вы хотите увеличить масштаб. 
 
 Тип узла ref 
 ```json
@@ -124,6 +124,134 @@ SKU ОС
     "version": "[parameters('vmImageVersion1')]"
 }
 ```
+
+В следующем фрагменте кода приведен пример нового ресурса масштабируемого набора виртуальных машин, который используется для создания нового типа узла для кластера Service Fabric. Необходимо включить все дополнительные расширения, необходимые для рабочей нагрузки. 
+
+```json
+    {
+      "apiVersion": "[variables('vmssApiVersion')]",
+      "type": "Microsoft.Compute/virtualMachineScaleSets",
+      "name": "[variables('vmNodeType1Name')]",
+      "location": "[variables('computeLocation')]",
+      "dependsOn": [
+        "[concat('Microsoft.Network/virtualNetworks/', variables('virtualNetworkName'))]",
+        "[concat('Microsoft.Network/loadBalancers/', concat('LB','-', parameters('clusterName'),'-',variables('vmNodeType1Name')))]",
+        "[concat('Microsoft.Storage/storageAccounts/', variables('supportLogStorageAccountName'))]",
+        "[concat('Microsoft.Storage/storageAccounts/', variables('applicationDiagnosticsStorageAccountName'))]"
+      ],
+      "properties": {
+        "overprovision": "[variables('overProvision')]",
+        "upgradePolicy": {
+          "mode": "Automatic"
+        },
+        "virtualMachineProfile": {
+          "extensionProfile": {
+            "extensions": [
+              {
+                "name": "[concat('ServiceFabricNodeVmExt_',variables('vmNodeType1Name'))]",
+                "properties": {
+                  "type": "ServiceFabricNode",
+                  "autoUpgradeMinorVersion": true,
+                  "protectedSettings": {
+                    "StorageAccountKey1": "[listKeys(resourceId('Microsoft.Storage/storageAccounts', variables('supportLogStorageAccountName')),'2015-05-01-preview').key1]",
+                    "StorageAccountKey2": "[listKeys(resourceId('Microsoft.Storage/storageAccounts', variables('supportLogStorageAccountName')),'2015-05-01-preview').key2]"
+                  },
+                  "publisher": "Microsoft.Azure.ServiceFabric",
+                  "settings": {
+                    "clusterEndpoint": "[reference(parameters('clusterName')).clusterEndpoint]",
+                    "nodeTypeRef": "[variables('vmNodeType1Name')]",
+                    "dataPath": "D:\\SvcFab",
+                    "durabilityLevel": "Bronze",
+                    "enableParallelJobs": true,
+                    "nicPrefixOverride": "[variables('subnet1Prefix')]",
+                    "certificate": {
+                      "thumbprint": "[parameters('certificateThumbprint')]",
+                      "x509StoreName": "[parameters('certificateStoreValue')]"
+                    }
+                  },
+                  "typeHandlerVersion": "1.0"
+                }
+              }
+            ]
+          },
+          "networkProfile": {
+            "networkInterfaceConfigurations": [
+              {
+                "name": "[concat(variables('nicName'), '-1')]",
+                "properties": {
+                  "ipConfigurations": [
+                    {
+                      "name": "[concat(variables('nicName'),'-',1)]",
+                      "properties": {
+                        "loadBalancerBackendAddressPools": [
+                          {
+                            "id": "[variables('lbPoolID1')]"
+                          }
+                        ],
+                        "loadBalancerInboundNatPools": [
+                          {
+                            "id": "[variables('lbNatPoolID1')]"
+                          }
+                        ],
+                        "subnet": {
+                          "id": "[variables('subnet1Ref')]"
+                        }
+                      }
+                    }
+                  ],
+                  "primary": true
+                }
+              }
+            ]
+          },
+          "osProfile": {
+            "adminPassword": "[parameters('adminPassword')]",
+            "adminUsername": "[parameters('adminUsername')]",
+            "computernamePrefix": "[variables('vmNodeType1Name')]",
+            "secrets": [
+              {
+                "sourceVault": {
+                  "id": "[parameters('sourceVaultValue')]"
+                },
+                "vaultCertificates": [
+                  {
+                    "certificateStore": "[parameters('certificateStoreValue')]",
+                    "certificateUrl": "[parameters('certificateUrlValue')]"
+                  }
+                ]
+              }
+            ]
+          },
+          "storageProfile": {
+            "imageReference": {
+              "publisher": "[parameters('vmImagePublisher1')]",
+              "offer": "[parameters('vmImageOffer1')]",
+              "sku": "[parameters('vmImageSku1')]",
+              "version": "[parameters('vmImageVersion1')]"
+            },
+            "osDisk": {
+              "caching": "ReadOnly",
+              "createOption": "FromImage",
+              "managedDisk": {
+                "storageAccountType": "[parameters('storageAccountType')]"
+              }
+            }
+          }
+        }
+      },
+      "sku": {
+        "name": "[parameters('vmNodeType1Size')]",
+        "capacity": "[parameters('nt1InstanceCount')]",
+        "tier": "Standard"
+      },
+      "tags": {
+        "resourceType": "Service Fabric",
+        "clusterName": "[parameters('clusterName')]"
+      }
+    },
+
+```
+
 5. Добавьте новый тип узла в кластер, который ссылается на масштабируемый набор виртуальных машин, созданный ранее. Свойству **"свойство" на данном** типе узла должно быть присвоено значение true. 
 ```json
 "name": "[variables('vmNodeType1Name')]",
@@ -339,7 +467,7 @@ foreach($node in $nodes)
 ```
 10. Удалите все другие ресурсы, связанные с исходным типом узла, из шаблона ARM. См. раздел [Service Fabric — новый кластер типов узлов](https://github.com/Azure-Samples/service-fabric-cluster-templates/blob/master/Primary-NodeType-Scaling-Sample/AzureDeploy-4.json) для шаблона со всеми удаленными исходными ресурсами.
 
-11. Разверните измененный шаблон Azure Resource Manager. * * Этот шаг займет некоторое время, обычно не более двух часов. Это обновление изменит параметры на Инфраструктуресервице, поэтому требуется перезагрузка узла. В этом случае Форцерестарт игнорируется. Параметр upgradeReplicaSetCheckTimeout указывает максимальное время, которое Service Fabric ожидает, когда Секция находится в надежном состоянии, если она еще не находится в надежном состоянии. После проверки безопасности для всех секций на узле Service Fabric переходит к обновлению на этом узле. Значение параметра upgradeTimeout может быть сокращено до 6 часов, но для максимальной безопасности следует использовать 12 часов.
+11. Разверните измененный шаблон Azure Resource Manager. * * Этот шаг займет некоторое время, обычно не более двух часов. Это обновление изменит параметры на Инфраструктуресервице; Поэтому требуется перезагрузка узла. В этом случае Форцерестарт игнорируется. Параметр upgradeReplicaSetCheckTimeout указывает максимальное время, которое Service Fabric ожидает, когда Секция находится в надежном состоянии, если она еще не находится в надежном состоянии. После проверки безопасности для всех секций на узле Service Fabric переходит к обновлению на этом узле. Значение параметра upgradeTimeout может быть сокращено до 6 часов, но для максимальной безопасности следует использовать 12 часов.
 Затем убедитесь, что ресурс Service Fabric на портале отображается как готовый. 
 
 ```powershell

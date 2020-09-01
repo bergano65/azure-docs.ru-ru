@@ -17,12 +17,12 @@ ms.date: 03/24/2020
 ms.author: markvi
 ms.reviewer: dhanyahk
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 6440e71eade32bfea4ed19448fd2f2007b519cc8
-ms.sourcegitcommit: d39f2cd3e0b917b351046112ef1b8dc240a47a4f
+ms.openlocfilehash: e84fb04d967311fede3be7f20b45f01fb442e69e
+ms.sourcegitcommit: d68c72e120bdd610bb6304dad503d3ea89a1f0f7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88816088"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89228772"
 ---
 # <a name="sign-in-activity-reports-in-the-azure-active-directory-portal"></a>Отчеты о действиях входа на портале Azure Active Directory
 
@@ -32,8 +32,8 @@ ms.locfileid: "88816088"
     - **События входа**. Информация об использовании управляемых приложений и действиях входа пользователей.
     - **Журналы аудита**  -  [Журналы аудита](concept-audit-logs.md) предоставляют сведения о действиях пользователей и управления группами, управляемых приложениях и действиях с каталогами.
 - **Безопасность** 
-    - **Рискованные входы** . [рискованный вход](concept-risky-sign-ins.md) — это индикатор попытки входа, которая не является законным владельцем учетной записи пользователя.
-    - **Пользователи, помеченные для риска** — [рискованный пользователь](concept-user-at-risk.md) является индикатором для учетной записи пользователя, которая могла быть скомпрометирована.
+    - **Рискованные входы** . [рискованный вход](../identity-protection/overview-identity-protection.md) — это индикатор попытки входа, которая не является законным владельцем учетной записи пользователя.
+    - **Пользователи, помеченные для риска** — [рискованный пользователь](../identity-protection/overview-identity-protection.md) является индикатором для учетной записи пользователя, которая могла быть скомпрометирована.
 
 В этой статье приводятся общие сведения о отчете о входе в систему.
 
@@ -142,18 +142,18 @@ ms.locfileid: "88816088"
 ![Фильтр клиентского приложения](./media/concept-sign-ins/client-app-filter.png)
 
 
-|Имя|Современная проверка подлинности|Описание|
+|name|Современная проверка подлинности|Описание|
 |---|:-:|---|
 |SMTP с проверкой подлинности| |Используется клиентом POP и IMAP для отправки сообщений электронной почты.|
 |Ошибоч| |Используется клиентами Outlook и EAS для поиска почтовых ящиков в Exchange Online и подключения к ним.|
 |Exchange ActiveSync| |Этот фильтр показывает все попытки входа в систему, в которых была предпринята попытка использования протокола EAS.|
-|Браузер|![Проверить](./media/concept-sign-ins/check.png)|Отображение всех попыток входа пользователей с помощью веб-браузеров|
+|Браузер|![службы "Функции Azure"](./media/concept-sign-ins/check.png)|Отображение всех попыток входа пользователей с помощью веб-браузеров|
 |Exchange ActiveSync| | Отображение всех попыток входа пользователей с клиентскими приложениями с помощью Exchange Актицесинк для подключения к Exchange Online|
-|Exchange Online PowerShell| |Используется для подключения к Exchange Online с помощью удаленной PowerShell. Если вы блокируете обычную проверку подлинности для Exchange Online PowerShell, для подключения необходимо использовать модуль Exchange Online PowerShell. Инструкции см. в статье [Подключение к PowerShell Exchange Online с помощью многофакторной проверки подлинности](https://docs.microsoft.com/powershell/exchange/exchange-online/connect-to-exchange-online-powershell/mfa-connect-to-exchange-online-powershell).|
+|Exchange Online PowerShell| |Используется для подключения к Exchange Online с помощью удаленной PowerShell. Если вы блокируете обычную проверку подлинности для Exchange Online PowerShell, для подключения необходимо использовать модуль Exchange Online PowerShell. Инструкции см. в статье [Подключение к PowerShell Exchange Online с помощью многофакторной проверки подлинности](/powershell/exchange/exchange-online/connect-to-exchange-online-powershell/mfa-connect-to-exchange-online-powershell).|
 |Веб-службы Exchange| |Программный интерфейс, используемый Outlook, Outlook для Mac и сторонние приложения.|
 |IMAP4| |Устаревший почтовый клиент, использующий IMAP для получения электронной почты.|
 |MAPI через HTTP| |Используется в Outlook 2010 и более поздних версиях.|
-|Мобильные приложения и настольные клиенты|![Проверить](./media/concept-sign-ins/check.png)|Показывает все попытки входа пользователей с помощью мобильных приложений и настольных клиентов.|
+|Мобильные приложения и настольные клиенты|![службы "Функции Azure"](./media/concept-sign-ins/check.png)|Показывает все попытки входа пользователей с помощью мобильных приложений и настольных клиентов.|
 |Автономная адресная книга| |Копия коллекций списков адресов, которые загружаются и используются в Outlook.|
 |Мобильный Outlook (RPC через HTTP)| |Используется в Outlook 2016 и более ранних версиях.|
 |Служба Outlook| |Используется приложением "почта и календарь" для Windows 10.|
@@ -271,13 +271,12 @@ Azure AD и портал Azure предоставляют дополнитель
 
 ## <a name="office-365-activity-logs"></a>Журналы действий Office 365
 
-Журналы действий Office 365 можно просмотреть в [центре администрирования Microsoft 365](https://docs.microsoft.com/office365/admin/admin-overview/about-the-admin-center). Рассмотрим тот момент, когда действия Office 365 и журналы действий Azure AD совместно используют значительное количество ресурсов каталога. Полный обзор журналов действий Office 365 предоставляется только в центре администрирования Microsoft 365. 
+Журналы действий Office 365 можно просмотреть в [центре администрирования Microsoft 365](/office365/admin/admin-overview/about-the-admin-center). Рассмотрим тот момент, когда действия Office 365 и журналы действий Azure AD совместно используют значительное количество ресурсов каталога. Полный обзор журналов действий Office 365 предоставляется только в центре администрирования Microsoft 365. 
 
-Вы также можете получить доступ к журналам действий Office 365 программным путем с помощью [API-интерфейсов управления office 365](https://docs.microsoft.com/office/office-365-management-api/office-365-management-apis-overview).
+Вы также можете получить доступ к журналам действий Office 365 программным путем с помощью [API-интерфейсов управления office 365](/office/office-365-management-api/office-365-management-apis-overview).
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
 * [Коды ошибок в отчете о действиях входа](reference-sign-ins-error-codes.md)
 * [Политики хранения отчетов Azure Active Directory](reference-reports-data-retention.md)
 * [Задержки в отчетах Azure Active Directory](reference-reports-latencies.md)
-

@@ -9,12 +9,12 @@ ms.subservice: management
 ms.date: 06/26/2020
 ms.reviewer: jushiman
 ms.custom: avverma
-ms.openlocfilehash: f6de05e0ad5e4294b801a8b349663d92db448de6
-ms.sourcegitcommit: e71da24cc108efc2c194007f976f74dd596ab013
+ms.openlocfilehash: b5f3305fc5d2595c8b7b08d78ff20edea01c195e
+ms.sourcegitcommit: d68c72e120bdd610bb6304dad503d3ea89a1f0f7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87424296"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89229843"
 ---
 # <a name="azure-virtual-machine-scale-set-automatic-os-image-upgrades"></a>Автоматические обновления образа ОС масштабируемого набора виртуальных машин Azure
 
@@ -54,7 +54,7 @@ ms.locfileid: "87424296"
 |-------------------------|---------------|--------------------|
 | Canonical               | UbuntuServer  | 16.04-LTS          |
 | Canonical               | UbuntuServer  | 18.04-LTS          |
-| Rogue Wave (OpenLogic)  | CentOS        | 7,5 %                |
+| Rogue Wave (OpenLogic)  | CentOS        | 7.5                |
 | CoreOS                  | CoreOS        | объем стабилен             |
 | Корпорация Майкрософт   | WindowsServer | 2012-R2-Datacenter |
 | Корпорация Майкрософт   | WindowsServer | 2016-Datacenter    |
@@ -128,7 +128,7 @@ Update-AzVmss -ResourceGroupName "myResourceGroup" -VMScaleSetName "myScaleSet" 
 ```
 
 ### <a name="azure-cli-20"></a>Azure CLI 2.0
-Используется `[az vmss update](/cli/azure/vmss#az-vmss-update)` для настройки автоматического обновления образа ОС для масштабируемого набора. Использование Azure CLI 2.0.47 или более поздней версии В следующем примере выполняется настройка автоматического обновления для масштабируемого набора с именем *myScaleSet* в группе ресурсов с именем *myResourceGroup*:
+Чтобы настроить автоматическое обновление образа ОС для масштабируемого набора, используйте команду [AZ vmss Update](/cli/azure/vmss#az-vmss-update) . Использование Azure CLI 2.0.47 или более поздней версии В следующем примере выполняется настройка автоматического обновления для масштабируемого набора с именем *myScaleSet* в группе ресурсов с именем *myResourceGroup*:
 
 ```azurecli-interactive
 az vmss update --name myScaleSet --resource-group myResourceGroup --set UpgradePolicy.AutomaticOSUpgradePolicy.EnableAutomaticOSUpgrade=true

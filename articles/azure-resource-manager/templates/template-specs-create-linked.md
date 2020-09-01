@@ -2,13 +2,13 @@
 title: Создание спецификации шаблона со связанными шаблонами
 description: Узнайте, как создать спецификацию шаблона со связанными шаблонами.
 ms.topic: conceptual
-ms.date: 08/27/2020
-ms.openlocfilehash: a70d4be2810b8d5a19fa9d806444cac1674e1a05
-ms.sourcegitcommit: 648c8d250106a5fca9076a46581f3105c23d7265
+ms.date: 08/31/2020
+ms.openlocfilehash: f1808be73981c3ab4d53fd2a651822b93b5fb790
+ms.sourcegitcommit: d68c72e120bdd610bb6304dad503d3ea89a1f0f7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "88959227"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89228007"
 ---
 # <a name="tutorial-create-a-template-spec-with-linked-templates-preview"></a>Учебник. Создание спецификации шаблона со связанными шаблонами (Предварительная версия)
 
@@ -186,7 +186,7 @@ az group create \
   --name templateSpecRG \
   --location westus2
 
-az template-specs create \
+az ts create \
   --name webSpec \
   --version "1.0.0.0" \
   --resource-group templateSpecRG \
@@ -207,7 +207,7 @@ Get-AzTemplateSpec -ResourceGroupName templatespecRG -Name webSpec
 # <a name="cli"></a>[CLI](#tab/azure-cli)
 
 ```azurecli
-az template-specs show --name webSpec --resource-group templateSpecRG --version "1.0.0.0"
+az ts show --name webSpec --resource-group templateSpecRG --version "1.0.0.0"
 ```
 
 ---
@@ -249,6 +249,6 @@ az deployment group create \
 
 ---
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о развертывании шаблона спецификации в качестве связанного шаблона см. в разделе [учебник. Развертывание шаблона спецификации в качестве связанного шаблона](template-specs-deploy-linked-template.md).

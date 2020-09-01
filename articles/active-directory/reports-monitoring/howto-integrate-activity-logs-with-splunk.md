@@ -17,12 +17,12 @@ ms.date: 03/10/2020
 ms.author: markvi
 ms.reviewer: dhanyahk
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a17f0a0c9c6a6c8bd466114e98b2b8c6ee5e9f8c
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 61cae487c588c7649de638d9ea6d3111bfbe9e1a
+ms.sourcegitcommit: d68c72e120bdd610bb6304dad503d3ea89a1f0f7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85608166"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89229690"
 ---
 # <a name="how-to-integrate-azure-active-directory-logs-with-splunk-using-azure-monitor"></a>Инструкции. Интеграция журналов Azure Active Directory с Splunk с помощью Azure Monitor
 
@@ -30,9 +30,9 @@ ms.locfileid: "85608166"
 
 ## <a name="prerequisites"></a>Предварительные условия
 
-Для использования этой функции необходимо иметь следующее.
+Чтобы использовать эту функцию, вам понадобится следующее.
 
-- Концентратор событий Azure, содержащий журналы действий Azure AD. Узнайте, как [настроить потоковую передачу журналов действий в концентратор событий](quickstart-azure-monitor-stream-logs-to-event-hub.md). 
+- Концентратор событий Azure, содержащий журналы действий Azure AD. Узнайте, как [настроить потоковую передачу журналов действий в концентратор событий](./tutorial-azure-monitor-stream-logs-to-event-hub.md). 
 
 -  [Microsoft Azure добавить в для Splunk](https://splunkbase.splunk.com/app/3757/). 
 
@@ -54,7 +54,7 @@ ms.locfileid: "85608166"
 > Если вам не удается установить надстройку в экземпляре Splunk (например, если вы используете прокси-сервер или работаете со Splunk Cloud), можно передать эти события в сборщик событий HTTP Splunk с помощью этой [функции Azure](https://github.com/Microsoft/AzureFunctionforSplunkVS), активируемой при поступлении новых сообщений в концентратор событий. 
 >
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Анализ схемы журналов аудита в Azure Monitor](reference-azure-monitor-audit-log-schema.md)
 * [Анализ схемы журналов входа в Azure Monitor](reference-azure-monitor-sign-ins-log-schema.md)

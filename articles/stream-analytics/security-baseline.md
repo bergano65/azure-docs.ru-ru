@@ -6,13 +6,13 @@ ms.service: security
 ms.topic: conceptual
 ms.date: 06/05/2020
 ms.author: mbaldwin
-ms.custom: security-benchmark
-ms.openlocfilehash: 03b1d43eeaffe4449d85d384e669ba0950442ab9
-ms.sourcegitcommit: 98854e3bd1ab04ce42816cae1892ed0caeedf461
+ms.custom: subject-security-benchmark
+ms.openlocfilehash: 72a2b24ad8e05943f975f0819d8b2a872b0ab829
+ms.sourcegitcommit: d68c72e120bdd610bb6304dad503d3ea89a1f0f7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "88003371"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89229010"
 ---
 # <a name="azure-security-baseline-for-stream-analytics"></a>Базовый план безопасности Azure для Stream Analytics
 
@@ -860,7 +860,7 @@ ms.locfileid: "88003371"
 
 * [Управление жизненным циклом хранилища BLOB-объектов Azure (предварительная версия)](https://docs.microsoft.com/azure/storage/blobs/storage-lifecycle-management-concepts)
 
-Обратимое удаление для больших двоичных объектов службы хранилища Azure:https://docs.microsoft.com/azure/storage/blobs/storage-blob-soft-delete?tabs=azure-portal
+Обратимое удаление для больших двоичных объектов службы хранилища Azure: https://docs.microsoft.com/azure/storage/blobs/storage-blob-soft-delete?tabs=azure-portal
 
 **Мониторинг Центра безопасности Azure**: в настоящее время недоступен.
 

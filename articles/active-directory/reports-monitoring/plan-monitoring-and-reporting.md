@@ -12,12 +12,12 @@ ms.date: 11/13/2018
 ms.author: baselden
 ms.reviewer: plenzke
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 870027637d9c45d0d5150db12046e454146ff169
-ms.sourcegitcommit: 2ff0d073607bc746ffc638a84bb026d1705e543e
+ms.openlocfilehash: 20b83291dc37c6248761214654f99d3ce214b551
+ms.sourcegitcommit: d68c72e120bdd610bb6304dad503d3ea89a1f0f7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87829638"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89229758"
 ---
 # <a name="plan-an-azure-active-directory-reporting-and-monitoring-deployment"></a>Планирование развертывания Azure Active Directory отчетов и мониторинга
 
@@ -47,9 +47,9 @@ ms.locfileid: "87829638"
 * концентратор событий Azure, который можно интегрировать с существующими средствами SIEM, такими как Splunk, Sumologic или QRadar.
 
 > [!NOTE]
-Недавно мы начали использовать термин Azure Monitor журналов вместо Log Analytics. Данные журнала по-прежнему хранятся в рабочей области Log Analytics, собираются и анализируются той же службой Log Analytics. Целью обновления терминологии является лучшее отражение роли [журналов в Azure Monitor](https://docs.microsoft.com/azure/azure-monitor/platform/data-collection). Дополнительные сведения см. в статье [Изменения фирменной символики Azure Monitor](https://docs.microsoft.com/azure/azure-monitor/azure-monitor-rebrand).
+Недавно мы начали использовать термин Azure Monitor журналов вместо Log Analytics. Данные журнала по-прежнему хранятся в рабочей области Log Analytics, собираются и анализируются той же службой Log Analytics. Целью обновления терминологии является лучшее отражение роли [журналов в Azure Monitor](../../azure-monitor/platform/data-platform.md). Дополнительные сведения см. в статье [Изменения фирменной символики Azure Monitor](../../azure-monitor/terminology.md).
 
-Дополнительные [сведения о политиках хранения отчетов](https://docs.microsoft.com/azure/active-directory/reports-monitoring/reference-reports-data-retention).
+Дополнительные [сведения о политиках хранения отчетов](./reference-reports-data-retention.md).
 
 ### <a name="licensing-and-prerequisites-for-azure-ad-reporting-and-monitoring"></a>Лицензирование и предварительные требования для отчетов и мониторинга Azure AD
 
@@ -61,7 +61,7 @@ ms.locfileid: "87829638"
 
 В зависимости от конечного назначения данных журнала необходимо иметь одно из следующих значений:
 
-* Учетная запись хранения Azure, для которой имеется разрешение ListKeys. Рекомендуется использовать общую учетную запись хранения вместо учетной записи хранилища BLOB-объектов. Информацию о ценах на хранение можно узнать на странице [Калькулятор цен](https://azure.microsoft.com/pricing/calculator/?service=storage).
+* Учетная запись хранения Azure, для которой имеется разрешение ListKeys. Рекомендуется использовать общую учетную запись хранения вместо учетной записи хранилища BLOB-объектов. Информацию о ценах на хранилище см. [здесь](https://azure.microsoft.com/pricing/calculator/?service=storage).
 
 * Пространство имен концентраторов событий Azure для интеграции со сторонними решениями SIEM.
 
@@ -102,7 +102,7 @@ ms.locfileid: "87829638"
 |Область |Описание |
 |-|-|
 |Сохранение| **Срок хранения журнала более 30 дней**. Из-за юридических или бизнес-требований необходимо хранить журналы аудита и журналы входа Azure AD дольше 30 дней. |
-|Аналитика| **Журналы должны иметь возможность поиска**. Сохраненные журналы должны поддерживать поиск с помощью аналитических средств. |
+|Analytics| **Журналы должны иметь возможность поиска**. Сохраненные журналы должны поддерживать поиск с помощью аналитических средств. |
 | Operational Insights| **Аналитика для различных команд**. Необходимо предоставить доступ различным пользователям для получения оперативной аналитики, такой как использование приложения, ошибки входа, использование самообслуживания, тенденции и т. д. |
 | Аналитика безопасности| **Аналитика для различных команд**. Необходимо предоставить доступ различным пользователям для получения оперативной аналитики, такой как использование приложения, ошибки входа, использование самостоятельной службы, тенденции и т. д. |
 | Интеграция в SIEM Systems      | **Интеграция SIEM**. Необходимо интегрировать и выполнять потоковую передачу журналов входа и журналов аудита Azure AD в существующие системы SIEM. |
@@ -115,25 +115,25 @@ ms.locfileid: "87829638"
 
 #### <a name="archive-logs-in-a-storage-account"></a>Архивация журналов в учетной записи хранения
 
-При маршрутизации журналов в учетную запись хранения Azure их можно хранить дольше, чем срок хранения по умолчанию, указанный в [политиках хранения](https://docs.microsoft.com/azure/active-directory/reports-monitoring/reference-reports-data-retention). Используйте этот метод, если вам нужно архивировать журналы, но не нужно интегрировать их с SIEM системой и не требовать оперативных запросов и анализа. Вы по-прежнему можете выполнять поиск по запросу.
+При маршрутизации журналов в учетную запись хранения Azure их можно хранить дольше, чем срок хранения по умолчанию, указанный в [политиках хранения](./reference-reports-data-retention.md). Используйте этот метод, если вам нужно архивировать журналы, но не нужно интегрировать их с SIEM системой и не требовать оперативных запросов и анализа. Вы по-прежнему можете выполнять поиск по запросу.
 
-См. сведения о том, как [направлять данные в учетную запись хранения](https://docs.microsoft.com/azure/active-directory/reports-monitoring/quickstart-azure-monitor-route-logs-to-storage-account).
+См. сведения о том, как [направлять данные в учетную запись хранения](./quickstart-azure-monitor-route-logs-to-storage-account.md).
 
 #### <a name="send-logs-to-azure-monitor-logs"></a>Отправка данных в журналы Azure Monitor
 
-[Журналы Azure Monitor](https://docs.microsoft.com/azure/log-analytics/log-analytics-overview) объединяют данные мониторинга из разных источников. Он также предоставляет язык запросов и модуль аналитики, позволяющие получить представление о работе приложений и использовании ресурсов. Отправляя журналы действий Azure AD в журналы Azure Monitor, можно быстро получать, отслеживать и оповещать собранные данные. Используйте этот метод, если у вас нет решения SIEM, которое планируется отправить данные напрямую, но требуется выполнить запросы и анализ. После того как данные находятся в журналах Azure Monitor, их можно отправить в концентратор событий и из SIEM, если хотите.
+[Журналы Azure Monitor](../../azure-monitor/log-query/log-query-overview.md) объединяют данные мониторинга из разных источников. Он также предоставляет язык запросов и модуль аналитики, позволяющие получить представление о работе приложений и использовании ресурсов. Отправляя журналы действий Azure AD в журналы Azure Monitor, можно быстро получать, отслеживать и оповещать собранные данные. Используйте этот метод, если у вас нет решения SIEM, которое планируется отправить данные напрямую, но требуется выполнить запросы и анализ. После того как данные находятся в журналах Azure Monitor, их можно отправить в концентратор событий и из SIEM, если хотите.
 
-См. дополнительные сведения об [отправке данных в журналы Azure Monitor](https://docs.microsoft.com/azure/active-directory/reports-monitoring/howto-integrate-activity-logs-with-log-analytics).
+См. дополнительные сведения об [отправке данных в журналы Azure Monitor](./howto-integrate-activity-logs-with-log-analytics.md).
 
 Вы также можете установить предварительно созданные представления для журналов действий Azure AD, чтобы отслеживать распространенные сценарии, включающие события входа и аудита.
 
-См. сведения об [установке и использовании предоставлений анализа журналов для журналов действий Azure AD](https://docs.microsoft.com/azure/active-directory/reports-monitoring/howto-install-use-log-analytics-views).
+См. сведения об [установке и использовании предоставлений анализа журналов для журналов действий Azure AD](./howto-install-use-log-analytics-views.md).
 
 #### <a name="stream-logs-to-your-azure-event-hub"></a>Потоковая передача журналов в концентратор событий Azure
 
 Журналы маршрутизации в концентратор событий Azure обеспечивают интеграцию со сторонними инструментами SIEM. Такая интеграция позволяет объединить данные из журнала действий Azure AD с другими данными, управляемыми средствами SIEM, что позволяет получать более подробные аналитические сведения о среде. 
 
-См. сведения о том, как [осуществлять потоковую передачу журналов в концентратор событий](https://docs.microsoft.com//azure/active-directory/reports-monitoring/tutorial-azure-monitor-stream-logs-to-event-hub).
+См. сведения о том, как [осуществлять потоковую передачу журналов в концентратор событий](//azure/active-directory/reports-monitoring/tutorial-azure-monitor-stream-logs-to-event-hub).
 
 ## <a name="plan-operations-and-security-for-azure-ad-reporting-and-monitoring"></a>Планирование операций и безопасности для отчетов и мониторинга Azure AD
 
@@ -151,9 +151,9 @@ ms.locfileid: "87829638"
 
 * Читатель отчетов
 
-Дополнительные сведения об [административных ролях Azure AD](https://docs.microsoft.com/azure/active-directory/active-directory-assign-admin-roles-azure-portal).
+Дополнительные сведения об [административных ролях Azure AD](../users-groups-roles/directory-assign-admin-roles.md).
 
-*Всегда применяйте концепцию наименьших привилегий, чтобы снизить риск компрометации учетной записи*. Рассмотрите возможность реализации [Управление привилегированными пользователями](https://docs.microsoft.com/azure/active-directory/privileged-identity-management/pim-configure) для дальнейшей защиты Организации.
+*Всегда применяйте концепцию наименьших привилегий, чтобы снизить риск компрометации учетной записи*. Рассмотрите возможность реализации [Управление привилегированными пользователями](../privileged-identity-management/pim-configure.md) для дальнейшей защиты Организации.
 
 ##  
 
@@ -163,27 +163,27 @@ ms.locfileid: "87829638"
 
 ### <a name="consume-and-archive-azure-ad-logs"></a>Использование и архивация журналов Azure AD
 
-[Поиск отчетов о действиях на портале Azure](https://docs.microsoft.com/azure/active-directory/reports-monitoring/howto-find-activity-reports)
+[Поиск отчетов о действиях на портале Azure](./howto-find-activity-reports.md)
 
-[Архивация журналов Azure AD в учетную запись хранения Azure](https://docs.microsoft.com/azure/active-directory/reports-monitoring/quickstart-azure-monitor-route-logs-to-storage-account)
+[Архивация журналов Azure AD в учетную запись хранения Azure](./quickstart-azure-monitor-route-logs-to-storage-account.md)
 
 ### <a name="implement-monitoring-and-analytics"></a>Реализация мониторинга и аналитики
 
-[Отправка журналов в Azure Monitor](https://docs.microsoft.com/azure/active-directory/reports-monitoring/howto-integrate-activity-logs-with-log-analytics)
+[Отправка журналов в Azure Monitor](./howto-integrate-activity-logs-with-log-analytics.md)
 
-[Установка и использование представлений Log Analytics для Azure Active Directory](https://docs.microsoft.com/azure/active-directory/reports-monitoring/howto-install-use-log-analytics-views)
+[Установка и использование представлений Log Analytics для Azure Active Directory](./howto-install-use-log-analytics-views.md)
 
-[Анализ журналов действий Azure AD с помощью журналов Azure Monitor](https://docs.microsoft.com/azure/active-directory/reports-monitoring/howto-analyze-activity-logs-log-analytics)
+[Анализ журналов действий Azure AD с помощью журналов Azure Monitor](./howto-analyze-activity-logs-log-analytics.md)
 
-* [Анализ схемы журналов аудита в Azure Monitor](https://docs.microsoft.com/azure/active-directory/reports-monitoring/reference-azure-monitor-audit-log-schema)
+* [Анализ схемы журналов аудита в Azure Monitor](./reference-azure-monitor-audit-log-schema.md)
 
-* [Анализ схемы журналов входа в Azure Monitor](https://docs.microsoft.com/azure/active-directory/reports-monitoring/reference-azure-monitor-sign-ins-log-schema)
+* [Анализ схемы журналов входа в Azure Monitor](./reference-azure-monitor-sign-ins-log-schema.md)
 
- * [Потоковая передача журналов Azure AD в концентратор событий Azure](https://docs.microsoft.com/azure/active-directory/reports-monitoring/tutorial-azure-monitor-stream-logs-to-event-hub)
+ * [Потоковая передача журналов Azure AD в концентратор событий Azure](./tutorial-azure-monitor-stream-logs-to-event-hub.md)
 
-* [Integrate Azure AD logs with Splunk by using Azure Monitor (preview)](https://docs.microsoft.com/azure/active-directory/reports-monitoring/tutorial-integrate-activity-logs-with-splunk) (Интеграция журналов Azure AD со Splunk с помощью Azure Monitor (предварительная версия))
+* [Integrate Azure AD logs with Splunk by using Azure Monitor (preview)](./howto-integrate-activity-logs-with-splunk.md) (Интеграция журналов Azure AD со Splunk с помощью Azure Monitor (предварительная версия))
 
-* [Интеграция журналов Azure AD с SumoLogic с помощью Azure Monitor](https://docs.microsoft.com/azure/active-directory/reports-monitoring/howto-integrate-activity-logs-with-sumologic)
+* [Интеграция журналов Azure AD с SumoLogic с помощью Azure Monitor](./howto-integrate-activity-logs-with-sumologic.md)
 
  
 
@@ -191,6 +191,6 @@ ms.locfileid: "87829638"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Попробуйте реализовать [Управление привилегированными пользователями](https://docs.microsoft.com/azure/active-directory/privileged-identity-management/pim-configure) 
+Попробуйте реализовать [Управление привилегированными пользователями](../privileged-identity-management/pim-configure.md) 
 
-Рассмотрите возможность реализации [управления доступом на основе ролей Azure (Azure RBAC)](https://docs.microsoft.com/azure/role-based-access-control/overview)
+Рассмотрите возможность реализации [управления доступом на основе ролей Azure (Azure RBAC)](../../role-based-access-control/overview.md)

@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 08/25/2020
 ms.author: normesta
 ms.reviewer: stewu
-ms.openlocfilehash: 55a4f06b93aafbd1e94a3bf6573ba39dc25022b5
-ms.sourcegitcommit: 656c0c38cf550327a9ee10cc936029378bc7b5a2
+ms.openlocfilehash: f84298c2c43afbb9e0379516be1e83002a7e3926
+ms.sourcegitcommit: d68c72e120bdd610bb6304dad503d3ea89a1f0f7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89077013"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89228687"
 ---
 # <a name="blob-storage-features-available-in-azure-data-lake-storage-gen2"></a>Функции хранилища BLOB-объектов, доступные в Azure Data Lake Storage 2-го поколения
 
@@ -45,7 +45,6 @@ ms.locfileid: "89077013"
 |Моментальные снимки|Preview (Предварительный просмотр)|Еще не поддерживается|[Моментальные снимки BLOB-объектов](snapshots-overview.md)|
 |Статические веб-сайты|Preview (Предварительный просмотр)|Еще не поддерживается|[Размещение статических веб-сайтов в службе хранилища Azure](storage-blob-static-website.md)|
 |Неизменяемое хранилище|Preview (Предварительный просмотр)|Еще не поддерживается|[Хранение критически важных для бизнеса данных большого двоичного объекта с помощью неизменяемого хранилища](storage-blob-immutable-storage.md)|
-|Политики управления жизненным циклом|Preview (Предварительный просмотр)|Еще не поддерживается|[Управление жизненным циклом хранилища BLOB-объектов Azure (предварительная версия)](storage-lifecycle-management-concepts.md)|
 |Обратимое удаление контейнера|Preview (Предварительный просмотр)|Preview (Предварительный просмотр)|[Обратимое удаление для контейнеров (Предварительная версия)](soft-delete-container-overview.md)|
 |Обратимое удаление BLOB-объекта|Еще не поддерживается|Еще не поддерживается|[Обратимое удаление для больших двоичных объектов](storage-blob-soft-delete.md)|
 |Blobfuse|Preview (Предварительный просмотр)|Еще не поддерживается|[Как подключить хранилище BLOB-объектов в качестве файловой системы с использованием blobfuse](storage-how-to-mount-container-linux.md)|
