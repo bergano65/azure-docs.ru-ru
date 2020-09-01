@@ -3,23 +3,25 @@ title: Предустановка для кодировки с учетом со
 description: В этой статье рассматривается кодировка с учетом содержимого в Cлужбы мультимедиа Microsoft Azure v3.
 services: media-services
 documentationcenter: ''
-author: Juliako
+author: IngridAtMicrosoft
 manager: femila
 editor: ''
 ms.service: media-services
 ms.workload: ''
 ms.topic: article
-ms.date: 04/29/2020
-ms.author: juliako
+ms.date: 08/31/2020
+ms.author: inhenkel
 ms.custom: devx-track-csharp
-ms.openlocfilehash: c29909d70b0fd55e4b680c79928cdc5d05b494fa
-ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
+ms.openlocfilehash: 853381dbccea5374806fbeadb1d29632f0525fdb
+ms.sourcegitcommit: bcda98171d6e81795e723e525f81e6235f044e52
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89003734"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89265615"
 ---
 # <a name="use-the-content-aware-encoding-preset-to-find-the-optimal-bitrate-value-for-a-given-resolution"></a>Используйте предустановку кодирования с поддержкой содержимого, чтобы найти оптимальное значение скорости для заданного разрешения.
+
+[!INCLUDE [media services api v3 logo](./includes/v3-hr.md)]
 
 Чтобы подготовить содержимое для доставки с помощью [потоковой передачи с адаптивной скоростью](https://en.wikipedia.org/wiki/Adaptive_bitrate_streaming), видео необходимо закодировать на несколько битовых ставок (от высокого до низкого). Это обеспечивает плавное ухудшение качества, так как скорость понижается, так что это разрешение видео. Такая многобитная кодировка позволяет использовать так называемую последовательность кодирования, а также таблицу разрешений и скорость, которые см. в разделе [встроенные предустановки кодирования](/rest/api/media/transforms/createorupdate#encodernamedpreset)служб мультимедиа.
 

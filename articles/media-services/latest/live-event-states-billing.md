@@ -3,7 +3,7 @@ title: Состояния LiveEvent и выставление счетов в С
 description: В этой статье представлены общие сведения о состояниях компонента LiveEvent и выставлении счетов за его использование.
 services: media-services
 documentationcenter: ''
-author: Juliako
+author: IngridAtMicrosoft
 manager: femila
 editor: ''
 ms.service: media-services
@@ -11,16 +11,18 @@ ms.workload: media
 ms.tgt_pltfrm: na
 ms.devlang: ne
 ms.topic: article
-ms.date: 10/24/2019
-ms.author: juliako
-ms.openlocfilehash: dd63152776e0268b8f9e3e0ce116fea897cdf4e2
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.date: 08/31/2020
+ms.author: inhenkel
+ms.openlocfilehash: 37098b8268d5a451935c925114fb762c574fa55c
+ms.sourcegitcommit: bcda98171d6e81795e723e525f81e6235f044e52
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87000879"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89265313"
 ---
 # <a name="live-event-states-and-billing"></a>Состояния события потоковой трансляции и выставление счетов
+
+[!INCLUDE [media services api v3 logo](./includes/v3-hr.md)]
 
 В Службах мультимедиа Azure начисление платы за использование события потоковой трансляции начинается, как только оно переходит в состояние **Выполняется**. Плата будет взиматься, даже если нет видео, передаваемых через службу. Чтобы остановить начисление платы за использование события потоковой трансляции, его нужно остановить. Счет на запись в реальном времени выставляется так же, как в интерактивном событии.
 

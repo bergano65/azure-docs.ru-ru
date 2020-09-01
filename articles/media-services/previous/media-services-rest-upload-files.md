@@ -13,14 +13,17 @@ ms.devlang: na
 ms.topic: article
 ms.date: 03/20/2019
 ms.author: juliako
-ms.openlocfilehash: c3d776362b0447b148c0b2bdedba1287fa56058b
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 68968cdbc512df527b70d0a314c90ce45ebaf7e2
+ms.sourcegitcommit: bcda98171d6e81795e723e525f81e6235f044e52
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87000199"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89264187"
 ---
-# <a name="upload-files-into-a-media-services-account-using-rest"></a>Передача файлов в учетную запись служб мультимедиа с помощью REST  
+# <a name="upload-files-into-a-media-services-account-using-rest"></a>Передача файлов в учетную запись служб мультимедиа с помощью REST
+
+[!INCLUDE [media services api v2 logo](./includes/v2-hr.md)]
+
 > [!div class="op_single_selector"]
 > * [.NET](media-services-dotnet-upload-files.md)
 > * [REST](media-services-rest-upload-files.md)
@@ -173,7 +176,7 @@ ms.locfileid: "87000199"
 
 ### <a name="overview"></a>Обзор
 
-Теперь у вас есть URL-адрес отправки и вы можете создать код, который напрямую вызывает API-интерфейсы больших двоичных объектов Azure и отправляет файл в контейнер SAS. См. сведения в следующих статьях:
+Теперь у вас есть URL-адрес отправки и вы можете создать код, который напрямую вызывает API-интерфейсы больших двоичных объектов Azure и отправляет файл в контейнер SAS. Дополнительные сведения см. в следующих статьях:
 
 - [Использование REST API службы хранилища Azure](../../storage/common/storage-rest-api-auth.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json)
 - [РАЗМЕСТИТЬ BLOB-объект](/rest/api/storageservices/put-blob)

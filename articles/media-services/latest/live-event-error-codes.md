@@ -11,22 +11,24 @@ ms.workload: media
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 05/4/2020
+ms.date: 08/31/2020
 ms.author: inhenkel
-ms.openlocfilehash: 8f86c157652f6219afdf1df1da9b8ad385f059aa
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: d6dfaa3491a9d15a3cc54b82d5c116ee2442f70c
+ms.sourcegitcommit: bcda98171d6e81795e723e525f81e6235f044e52
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87000957"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89265377"
 ---
 # <a name="media-services-live-event-error-codes"></a>Коды ошибок динамических событий служб мультимедиа
+
+[!INCLUDE [media services api v3 logo](./includes/v3-hr.md)]
 
 В таблицах этого раздела перечислены коды [динамических событий](live-events-outputs-concept.md) .
 
 ## <a name="liveeventconnectionrejected"></a>LiveEventConnectionRejected;
 
-При оформлении подписки на события [сетки событий](../../event-grid/index.yml) для события в реальном времени может появиться одна из следующих ошибок события [лививентконнектионрежектед](media-services-event-schemas.md#liveeventconnectionrejected) .
+При оформлении подписки на события [сетки событий](../../event-grid/index.yml) для события в реальном времени может появиться одна из следующих ошибок события [лививентконнектионрежектед](media-services-event-schemas.md#liveeventconnectionrejected)  .
 
 | Код результата | Описание |
 | ----------- | ----------- |
@@ -54,7 +56,7 @@ ms.locfileid: "87000957"
 |Неизвестные коды ошибок|Эти коды ошибок могут варьироваться от ошибки памяти до дублирования записей в карте хэшей.|
 
 
-## <a name="see-also"></a>См. также статью
+## <a name="see-also"></a>См. также
 
 [Коды ошибок конечной точки потоковой передачи (исходного кода)](streaming-endpoint-error-codes.md)
 

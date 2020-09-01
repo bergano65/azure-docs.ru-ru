@@ -15,14 +15,16 @@ ms.topic: article
 ms.date: 03/14/2019
 ms.author: juliako
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 32b3207fc86f9aab7194d63a0e57eea459fd7eac
-ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
+ms.openlocfilehash: 4288e2e955f8205f3b6551c83a5c883eecf02501
+ms.sourcegitcommit: bcda98171d6e81795e723e525f81e6235f044e52
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89018031"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89264816"
 ---
-# <a name="perform-advanced-encoding-by-customizing-mes-presets"></a>Настройка предустановок MES для расширенного кодирования 
+# <a name="perform-advanced-encoding-by-customizing-mes-presets"></a>Настройка предустановок MES для расширенного кодирования
+
+[!INCLUDE [media services api v2 logo](./includes/v2-hr.md)]
 
 ## <a name="overview"></a>Обзор
 
@@ -51,7 +53,7 @@ ms.locfileid: "89018031"
 <Height>100%</Height>
 ```
 
-## <a name="generate-thumbnails"></a><a id="thumbnails"></a>Создание эскизов
+## <a name="generate-thumbnails"></a>Создание эскизов
 
 В этом разделе показано, как настроить предустановку, которая создает эскизы. Предустановка, определенная ниже, содержит сведения о том, как должен кодироваться файл, а также сведения, необходимые для создания эскизов. Вы можете использовать любую из предустановок Media Encoder Standard (MES), которые приведены в [этом](media-services-mes-presets-overview.md) разделе, и добавить в нее код для создания эскизов.  
 
@@ -64,7 +66,7 @@ ms.locfileid: "89018031"
 
 Обязательно изучите раздел [Рекомендации](#considerations) .
 
-### <a name="json-preset"></a><a id="json"></a>Предустановка JSON
+### <a name="json-preset"></a>Предустановка JSON
 
 ```json
 {
@@ -166,7 +168,7 @@ ms.locfileid: "89018031"
 }
 ```
 
-### <a name="xml-preset"></a><a id="xml"></a>Предустановка XML
+### <a name="xml-preset"></a>Предустановка XML
 
 ```xml
 <?xml version="1.0" encoding="utf-16"?>

@@ -3,23 +3,25 @@ title: Квоты и ограничения в службах мультимед
 description: В этом разделе описываются квоты и ограничения в Cлужбы мультимедиа Microsoft Azure.
 services: media-services
 documentationcenter: ''
-author: Juliako
+author: IngridAtMicrosoft
 manager: femila
 editor: ''
 ms.service: media-services
 ms.workload: ''
 ms.topic: article
-ms.date: 04/01/2020
-ms.author: juliako
-ms.openlocfilehash: c2845cd0fad8375db67d1aa86333f144222dc0aa
-ms.sourcegitcommit: cee72954f4467096b01ba287d30074751bcb7ff4
+ms.date: 08/31/2020
+ms.author: inhenkel
+ms.openlocfilehash: b1836b1d0dc69a2a0b186a54974895eb0d8cd91a
+ms.sourcegitcommit: bcda98171d6e81795e723e525f81e6235f044e52
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/30/2020
-ms.locfileid: "87446322"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89265496"
 ---
 <!-- If you update limits in this topic, make sure to also update https://docs.microsoft.com/azure/azure-resource-manager/management/azure-subscription-service-limits#media-services-limits -->
 # <a name="azure-media-services-quotas-and-limits"></a>Квоты и ограничения служб мультимедиа Azure
+
+[!INCLUDE [media services api v3 logo](./includes/v3-hr.md)]
 
 В этой статье перечислены некоторые наиболее распространенные ограничения Cлужбы мультимедиа Microsoft Azure, которые иногда называются квотами.
 
@@ -42,7 +44,7 @@ ms.locfileid: "87446322"
 
 | Ресурс | Ограничение по умолчанию | 
 | --- | --- | 
-| Размер файла| В некоторых ситуациях применяется ограничение на максимальный размер файла, который могут обработать службы мультимедиа. <sup>одного</sup> |
+| Размер файла| В некоторых ситуациях применяется ограничение на максимальный размер файла, который могут обработать службы мультимедиа. <sup>(1)</sup> |
 | [Учетные записи хранения](storage-account-concept.md) | 100<sup>(2)</sup> (фиксированный) |
 
 <sup>1</sup> Максимальный размер, поддерживаемый для одного большого двоичного объекта, сейчас составляет до 5 ТБ в хранилище BLOB-объектов Azure. Дополнительные ограничения применяются в службах мультимедиа на основе размеров виртуальных машин, используемых службой. Ограничение размера применяется к отправляемым файлам, а также к файлам, которые создаются в результате обработки служб мультимедиа (кодирования или анализа). Если размер исходного файла превышает 260 ГБ, скорее всего, задание завершится ошибкой. 

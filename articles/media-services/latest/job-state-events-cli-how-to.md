@@ -3,23 +3,25 @@ title: Мониторинг событий Служб мультимедиа Azu
 description: В этой статье показано, как подписаться на Сетку событий для отслеживания событий Служб мультимедиа Azure.
 services: media-services
 documentationcenter: ''
-author: Juliako
+author: IngridAtMicrosoft
 manager: femila
 editor: ''
 ms.service: media-services
 ms.workload: ''
 ms.topic: article
-ms.date: 11/09/2018
-ms.author: juliako
+ms.date: 08/31/2020
+ms.author: inhenkel
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: a5292318d2e5432ec7c0a2df7306011c3dea5147
-ms.sourcegitcommit: 8def3249f2c216d7b9d96b154eb096640221b6b9
+ms.openlocfilehash: 6aac37b354275539bfc5374a170c348b8ce993b0
+ms.sourcegitcommit: bcda98171d6e81795e723e525f81e6235f044e52
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87542133"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89265530"
 ---
 # <a name="create-and-monitor-media-services-events-with-event-grid-using-the-azure-cli"></a>Создание и мониторинг событий Служб мультимедиа Azure с помощью Сетки событий и Azure CLI
+
+[!INCLUDE [media services api v3 logo](./includes/v3-hr.md)]
 
 "Сетка событий Azure" — это служба обработки событий для облака. Эта служба использует [подписки на события](../../event-grid/concepts.md#event-subscriptions) для маршрутизации сообщений о событиях подписчикам. События Служб мультимедиа содержат все сведения, необходимые для реагирования на изменения в данных. Событие Служб мультимедиа можно определить, так как свойство eventType начинается с Microsoft.Media. Дополнительные сведения см. в статье [Схемы службы "Сетка событий Azure" для событий Служб мультимедиа](media-services-event-schemas.md).
 
@@ -42,7 +44,7 @@ ms.locfileid: "87542133"
 
 1. Выберите **Развернуть в Azure**, чтобы развернуть решение в своей подписке. На портале Azure укажите значения остальных параметров.
 
-   [![Изображение, показывающее кнопку "развернуть в Azure".](https://azuredeploy.net/deploybutton.png)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure-Samples%2Fazure-event-grid-viewer%2Fmaster%2Fazuredeploy.json)
+   [![Изображение с кнопкой "Развернуть в Azure".](https://azuredeploy.net/deploybutton.png)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure-Samples%2Fazure-event-grid-viewer%2Fmaster%2Fazuredeploy.json)
 
 1. Завершение развертывания может занять несколько минут. Когда развертывание успешно завершится, откройте веб-приложение и убедитесь, что оно работает. Откройте браузер и перейдите по адресу `https://<your-site-name>.azurewebsites.net`.
 
@@ -107,6 +109,6 @@ az account set --subscription mySubscriptionId
 
 ![Просмотр события подписки](./media/monitor-events-portal/view-subscription-event.png)
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Отправка, кодирование и потоковая передача](stream-files-tutorial-with-api.md)

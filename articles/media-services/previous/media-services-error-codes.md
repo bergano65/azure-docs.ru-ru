@@ -14,14 +14,17 @@ ms.devlang: na
 ms.topic: article
 ms.date: 03/18/2019
 ms.author: juliako
-ms.openlocfilehash: 6911b16c3fdf5bb94d42a40198943c3b1baa00da
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: c30808a46b5cecfaf2e761b3f7a611020cd2cdfb
+ms.sourcegitcommit: bcda98171d6e81795e723e525f81e6235f044e52
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87042825"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89263683"
 ---
 # <a name="azure-media-services-error-codes"></a>Коды ошибок служб мультимедиа Azure
+
+[!INCLUDE [media services api v2 logo](./includes/v2-hr.md)]
+
 При использовании служб мультимедиа Microsoft Azure могут отображаться коды ошибок HTTP из службы в зависимости от возникших проблем, например истек срок действия маркеров проверки подлинности или действия не поддерживаются в службах мультимедиа. Ниже приведен список **кодов ошибок HTTP**, которые могут возвращать службы мультимедиа, и возможные причины возникновения.  
 
 ## <a name="400-bad-request"></a>400 — недопустимый запрос
@@ -48,7 +51,7 @@ ms.locfileid: "87042825"
 
 * Отсутствует заголовок проверки подлинности.
 * Недопустимое значение в заголовке проверки подлинности.
-  * Истек срок действия маркера. 
+  * Срок действия токена истек. 
   * Маркер содержит недопустимую подпись.
 
 ## <a name="403-forbidden"></a>403. Запрещено

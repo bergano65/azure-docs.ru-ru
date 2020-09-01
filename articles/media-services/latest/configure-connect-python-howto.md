@@ -3,7 +3,7 @@ title: Подключение к API-интерфейсу служб мульт�
 description: В этой статье показано, как подключиться к API служб мультимедиа v3 с помощью Python.
 services: media-services
 documentationcenter: ''
-author: Juliako
+author: IngridAtMicrosoft
 manager: femila
 editor: ''
 ms.service: media-services
@@ -11,21 +11,23 @@ ms.workload: media
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 04/15/2019
-ms.author: juliako
+ms.date: 08/31/2020
+ms.author: inhenkel
 ms.custom: devx-track-python
-ms.openlocfilehash: 834d87f607ca65a9d9e0ebee12d2772f5baf7949
-ms.sourcegitcommit: 7fe8df79526a0067be4651ce6fa96fa9d4f21355
+ms.openlocfilehash: 42fea1a4363684667ccb41f0406bb66ef00d5485
+ms.sourcegitcommit: bcda98171d6e81795e723e525f81e6235f044e52
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87849647"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89265581"
 ---
 # <a name="connect-to-media-services-v3-api---python"></a>Подключение к API служб мультимедиа v3 — Python
 
+[!INCLUDE [media services api v3 logo](./includes/v3-hr.md)]
+
 В этой статье показано, как подключиться к пакету SDK для служб мультимедиа Azure v3 для Python с помощью метода входа субъекта-службы.
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 - Скачать Python из [Python.org](https://www.python.org/downloads/)
 - Обязательно задайте `PATH` переменную среды.
@@ -102,7 +104,7 @@ pip3 install azure-mgmt-media==1.1.1
 
 1. Запуск файла
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Воспользуйтесь [пакетом SDK для Python](https://aka.ms/ams-v3-python-sdk).
 - Ознакомьтесь со справочной документации по [Python](https://aka.ms/ams-v3-python-ref) Служб мультимедиа.

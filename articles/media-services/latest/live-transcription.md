@@ -12,16 +12,18 @@ ms.workload: media
 ms.tgt_pltfrm: na
 ms.devlang: ne
 ms.topic: article
-ms.date: 06/12/2019
+ms.date: 08/31/2020
 ms.author: inhenkel
-ms.openlocfilehash: da80dacadbef560bb597a235fee59924d3887e19
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 698aa849a82e7c9f9a630ca7040f9d449b3765b3
+ms.sourcegitcommit: bcda98171d6e81795e723e525f81e6235f044e52
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84765018"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89264969"
 ---
 # <a name="live-transcription-preview"></a>Динамическая транскрипция (Предварительная версия)
+
+[!INCLUDE [media services api v3 logo](./includes/v3-hr.md)]
 
 Служба мультимедиа Azure доставляет видео, аудио и текст в разные протоколы. Когда вы публикуете динамический поток с помощью MPEG-ТИРЕ или HLS/КМАФ, а также видео и аудио, наша служба доставляет текст расшифрованной в ИМСК 1.1, совместимом с TTML. Доставка упаковывается в фрагменты MPEG-4, часть 30 (ISO/IEC 14496-30). Если используется доставка через HLS/TS, то текст доставляется как фрагментированный ВТТ.
 
@@ -33,14 +35,14 @@ ms.locfileid: "84765018"
 
 Динамическая транскрипция доступна в следующих регионах:
 
-- Юго-Восточная Азия
+- Southeast Asia
 - Западная Европа
 - Северная Европа
 - Восточная часть США
 - Центральная часть США
 - Центрально-южная часть США
 - западная часть США 2
-- Южная Бразилия
+- Brazil South
 
 Это список доступных языков, которые можно расшифрованной, использовать код языка в API.
 
@@ -135,7 +137,7 @@ PUT https://management.azure.com/subscriptions/:subscriptionId/resourceGroups/:r
 
 Это пример вызова для включения Live транскрипций.
 
-ЗАЩИТЫ```https://management.azure.com/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.Media/mediaServices/:accountName/liveEvents/:liveEventName?api-version=2019-05-01-preview```
+ЗАЩИТЫ ```https://management.azure.com/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.Media/mediaServices/:accountName/liveEvents/:liveEventName?api-version=2019-05-01-preview```
 
 ```
 {

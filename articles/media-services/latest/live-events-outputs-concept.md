@@ -4,7 +4,7 @@ titleSuffix: Azure Media Services
 description: В этом разделе приводятся общие сведения о динамических событиях и динамических выходах в службах мультимедиа Azure v3.
 services: media-services
 documentationcenter: ''
-author: Juliako
+author: IngridAtMicrosoft
 manager: femila
 editor: ''
 ms.service: media-services
@@ -12,16 +12,18 @@ ms.workload: media
 ms.tgt_pltfrm: na
 ms.devlang: ne
 ms.topic: article
-ms.date: 04/08/2020
-ms.author: juliako
-ms.openlocfilehash: c41538acdb8ed94ee4995ad8d5f5e4cebb2e14d6
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.date: 08/31/2020
+ms.author: inhenkel
+ms.openlocfilehash: da91e37c47db6d944aa6974123dd80ec982453e4
+ms.sourcegitcommit: bcda98171d6e81795e723e525f81e6235f044e52
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87043441"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89265190"
 ---
 # <a name="live-events-and-live-outputs-in-media-services"></a>Динамические события и динамические выходные данные в службах мультимедиа
+
+[!INCLUDE [media services api v3 logo](./includes/v3-hr.md)]
 
 Службы мультимедиа Azure позволяют предоставлять клиентам интерактивные мероприятия в облаке Azure. Чтобы настроить события динамической потоковой передачи в службах мультимедиа v3, необходимо ознакомиться с основными понятиями, обсуждаемыми в этой статье.
 
@@ -69,7 +71,7 @@ ms.locfileid: "87043441"
 
 ## <a name="creating-live-events"></a>Создание событий Live
 
-### <a name="options"></a>Варианты
+### <a name="options"></a>Элемент Options
 
 При создании события потоковой трансляции можно указать следующие параметры.
 
@@ -122,7 +124,7 @@ ms.locfileid: "87043441"
 
     Используйте следующие интерфейсы API, чтобы включить URL-адрес именного и задать для маркера доступа допустимый идентификатор GUID (например, `"accessToken": "1fce2e4b-fb15-4718-8adc-68c6eb4c26a7"` ).  
 
-    |Language|Включить URL-адрес именного|Задание маркера доступа.|
+    |Язык|Включить URL-адрес именного|Задание маркера доступа.|
     |---|---|---|
     |REST|[Properties. Ванитюрл](/rest/api/media/liveevents/create#liveevent)|[Лививентинпут. accessToken](/rest/api/media/liveevents/create#liveeventinput)|
     |CLI|[--именного — URL-адрес](/cli/azure/ams/live-event?view=azure-cli-latest#az-ams-live-event-create)|[--Access — токен](/cli/azure/ams/live-event?view=azure-cli-latest#optional-parameters)|

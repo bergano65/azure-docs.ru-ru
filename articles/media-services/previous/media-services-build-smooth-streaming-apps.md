@@ -15,14 +15,16 @@ ms.topic: article
 ms.date: 03/14/2019
 ms.author: juliako
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 2a1a506e7e4c4a90ed39f4371b48e47b632918c8
-ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
+ms.openlocfilehash: 9b616b03698e83d256a7b81e4548edbf21dba058
+ms.sourcegitcommit: bcda98171d6e81795e723e525f81e6235f044e52
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89021511"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89264646"
 ---
-# <a name="how-to-build-a-smooth-streaming-windows-store-application"></a>Создание приложения для магазина Windows с бесперебойной потоковой передачей  
+# <a name="how-to-build-a-smooth-streaming-windows-store-application"></a>Создание приложения для магазина Windows с бесперебойной потоковой передачей
+
+[!INCLUDE [media services api v2 logo](./includes/v2-hr.md)]  
 
 Клиентский пакет SDK для бесперебойной потоковой передачи для Windows 8 позволяет разработчикам создавать приложения для магазина Windows, способные воспроизводить контент по требованию и в режиме реального времени с бесперебойной потоковой передачей. Помимо основных функций воспроизведения контента с бесперебойной потоковой передачей этот пакет SDK также предоставляет богатые возможности, такие как защита Microsoft PlayReady, ограничение уровня качества, Live DVR, переключение потока аудио, прослушивание событий ошибок и обновления состояния (например, изменения уровня качества) и т. д. Дополнительные сведения о поддерживаемых возможностях см. в [заметках к выпуску](https://www.iis.net/learn/media/smooth-streaming/smooth-streaming-client-sdk-for-windows-8-release-notes). Дополнительные сведения см. на странице, посвященной [Player Framework для Windows 8](https://playerframework.codeplex.com/). 
 
@@ -76,7 +78,7 @@ ms.locfileid: "89021511"
     | Имя решения |SSPlayer |
     | Создать каталог для решения |(выбрано) |
 
-1. Нажмите кнопку **OK**.
+1. Нажмите кнопку **ОК**.
 
 ### <a name="to-add-a-reference-to-the-smooth-streaming-client-sdk"></a>Добавление ссылки на пакет SDK клиента Smooth Streaming
 
@@ -88,7 +90,7 @@ ms.locfileid: "89021511"
     | Ссылочная группа |Windows/Расширения |
     | Справочник |Выберите клиентский пакет SDK бесперебойной потоковой передачи Microsoft для Windows 8 и пакет среды выполнения Microsoft Visual C++ |
 
-1. Нажмите кнопку **OK**. 
+1. Нажмите кнопку **ОК**. 
 
 После добавления ссылок необходимо выбрать целевую платформу (x64 x86), добавление ссылок будет действовать не для всех конфигураций платформы ЦП.  Для таких добавленных ссылок в обозревателе решений будет выведен желтый значок предупреждения.
 
