@@ -4,12 +4,12 @@ description: Пакеты приложений пакетной службы Azu
 ms.topic: how-to
 ms.date: 04/26/2019
 ms.custom: H1Hack27Feb2017, devx-track-csharp
-ms.openlocfilehash: 8d0ab6227e232728818afbbc58ca6521d9a417df
-ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
+ms.openlocfilehash: d847dd926d157e455a6ef4e0c58c9dd204a1ecc7
+ms.sourcegitcommit: d7352c07708180a9293e8a0e7020b9dd3dd153ce
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88922010"
+ms.lasthandoff: 08/30/2020
+ms.locfileid: "89146476"
 ---
 # <a name="deploy-applications-to-compute-nodes-with-batch-application-packages"></a>Развертывание приложений на вычислительных узлах с помощью пакетов приложений пакетной службы
 
@@ -334,8 +334,8 @@ foreach (ApplicationSummary app in applications)
 * [REST API пакетной службы][api_rest] также поддерживает работу с пакетами приложения. В качестве примера изучите элемент [applicationPackageReferences][rest_add_pool_with_packages] в статье [Добавление учетной записи пула][rest_add_pool]. Сведения, описанные в этой статье, помогут вам определить пакеты для установки с помощью REST API. Дополнительные сведения о получении сведений о приложении с помощью REST API пакетной службы см. в статье [Приложения][rest_applications].
 * Узнайте больше о программном [управлении квотами и учетными записями пакетной службы Azure с помощью библиотеки .NET для управления пакетной службой](batch-management-dotnet.md). С помощью [библиотеки .NET для управления пакетной службой][api_net_mgmt] можно включить функции создания и удаления учетной записи для пакетной службы или приложения.
 
-[api_net]: /dotnet/api/overview/azure/batch/client?view=azure-dotnet
-[api_net_mgmt]: /dotnet/api/overview/azure/batch/management?view=azure-dotnet
+[api_net]: /dotnet/api/overview/azure/batch/client
+[api_net_mgmt]: /dotnet/api/overview/azure/batch/management
 [api_rest]: /rest/api/batchservice/
 [batch_mgmt_nuget]: https://www.nuget.org/packages/Microsoft.Azure.Management.Batch/
 [github_samples]: https://github.com/Azure/azure-batch-samples

@@ -1,23 +1,23 @@
 ---
-title: Установка Azure Resource Manager пароля на Azure Stack пограничном устройстве
-description: В этой статье описывается, как подключиться к Azure Resource Manager, работающей на Azure Stack границе, с помощью Azure PowerShell.
+title: Установка Azure Resource Manager пароля на устройстве GPU Azure Stack
+description: В этой статье описывается, как подключиться к Azure Resource Manager, работающей на графическом процессоре Azure Stack ребра, с помощью Azure PowerShell.
 services: databox
 author: alkohli
 ms.service: databox
 ms.subservice: edge
 ms.topic: article
-ms.date: 02/24/2020
+ms.date: 08/28/2020
 ms.author: alkohli
-ms.openlocfilehash: d56f12c746383576a32e2c0ade542bc8aedff22d
-ms.sourcegitcommit: 656c0c38cf550327a9ee10cc936029378bc7b5a2
+ms.openlocfilehash: d64db4ab8da1f5f0f4c2dc69b2bc6d4da66c8e91
+ms.sourcegitcommit: d7352c07708180a9293e8a0e7020b9dd3dd153ce
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89086614"
+ms.lasthandoff: 08/30/2020
+ms.locfileid: "89146289"
 ---
 # <a name="set-azure-resource-manager-password"></a>Задать Azure Resource Manager пароль
 
-[!INCLUDE [applies-to-skus](../../includes/azure-stack-edge-applies-to-all-sku.md)]
+<!--[!INCLUDE [applies-to-skus](../../includes/azure-stack-edge-applies-to-all-sku.md)]-->
 
 В этой статье описывается, как задать пароль Azure Resource Manager. Этот пароль необходимо задать при подключении к локальным API-интерфейсам устройства через Azure Resource Manager.
 

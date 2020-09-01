@@ -4,12 +4,12 @@ description: Обозреватель графа ресурсов Azure в по�
 ms.date: 08/25/2020
 ms.topic: reference
 ms.custom: accessibility
-ms.openlocfilehash: f5995498f2b95828a7c03dbcd5669491e62de2e7
-ms.sourcegitcommit: ac7ae29773faaa6b1f7836868565517cd48561b2
+ms.openlocfilehash: 02471a6efc4ac4d002ca641b792c1c721ffeb3f7
+ms.sourcegitcommit: d7352c07708180a9293e8a0e7020b9dd3dd153ce
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88848910"
+ms.lasthandoff: 08/30/2020
+ms.locfileid: "89146442"
 ---
 # <a name="keyboard-shortcuts-for-azure-resource-graph-explorer"></a>Сочетания клавиш для обозревателя графа ресурсов Azure
 
@@ -22,7 +22,6 @@ ms.locfileid: "88848910"
 |Добавление и удаление комментариев |<kbd>КОМБИНАЦИ</kbd>+<kbd>/</kbd> | <kbd>Процессор</kbd>+<kbd>/</kbd> |
 |Уменьшить отступ |<kbd>CTRL</kbd> + <kbd>[</kbd> |<kbd>Команда cmd</kbd> + <kbd>[</kbd> |
 |Увеличить отступ |<kbd>CTRL</kbd> + <kbd>]</kbd> |<kbd>Команда cmd</kbd> + <kbd>]</kbd> |
-|Выбрать все |<kbd>CTRL</kbd> + <kbd>Объект</kbd> |<kbd>Команда cmd</kbd> + <kbd>Объект</kbd> |
 |Переместить строку вниз |<kbd>ALT</kbd> + <kbd>↓</kbd> |<kbd>Параметр</kbd> + <kbd>↓</kbd> |
 |Переместить строку вверх |<kbd>ALT</kbd> + <kbd>↑</kbd> |<kbd>Параметр</kbd> + <kbd>↑</kbd> |
 |Заменить |<kbd>CTRL</kbd> + <kbd>F</kbd> |<kbd>Команда cmd</kbd> + <kbd>ALT</kbd> + <kbd>F</kbd> |

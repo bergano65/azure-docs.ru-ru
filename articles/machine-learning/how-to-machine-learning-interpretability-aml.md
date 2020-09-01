@@ -11,12 +11,12 @@ ms.reviewer: Luis.Quintanilla
 ms.date: 07/09/2020
 ms.topic: conceptual
 ms.custom: how-to, devx-track-python
-ms.openlocfilehash: 8682342d23c37d527528de0b525dbdd49a52676e
-ms.sourcegitcommit: 7fe8df79526a0067be4651ce6fa96fa9d4f21355
+ms.openlocfilehash: 8a0853d4a863f6b7677f665513bdac9ca8e6b673
+ms.sourcegitcommit: d7352c07708180a9293e8a0e7020b9dd3dd153ce
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87853404"
+ms.lasthandoff: 08/30/2020
+ms.locfileid: "89144113"
 ---
 # <a name="use-the-interpretability-package-to-explain-ml-models--predictions-in-python-preview"></a>Использование пакета интерпретации для объяснения моделей машинного обучения & прогнозах в Python (Предварительная версия)
 
@@ -73,8 +73,8 @@ ms.locfileid: "87853404"
    * Чтобы сделать объяснения и визуализации более информативными, вы можете передать имена функций и имена выходных классов при выполнении классификации.
 
    В следующих блоках кода показано, как создать экземпляр объекта объяснения с помощью `TabularExplainer` , `MimicExplainer` и `PFIExplainer` локально.
-   * `TabularExplainer`вызывает один из трех объяснений ШАП ниже ( `TreeExplainer` , `DeepExplainer` или `KernelExplainer` ).
-   * `TabularExplainer`автоматически выбирает наиболее подходящий вариант для вашего варианта использования, но можно напрямую вызвать каждый из трех базовых методов объяснения.
+   * `TabularExplainer` вызывает один из трех объяснений ШАП ниже ( `TreeExplainer` , `DeepExplainer` или `KernelExplainer` ).
+   * `TabularExplainer` автоматически выбирает наиболее подходящий вариант для вашего варианта использования, но можно напрямую вызвать каждый из трех базовых методов объяснения.
 
     ```python
     from interpret.ext.blackbox import TabularExplainer
@@ -86,7 +86,7 @@ ms.locfileid: "87853404"
                                  classes=classes)
     ```
 
-    or
+    или
 
     ```python
 
@@ -112,7 +112,7 @@ ms.locfileid: "87853404"
                                classes=classes)
     ```
 
-    or
+    или
 
     ```python
     from interpret.ext.blackbox import PFIExplainer
@@ -147,7 +147,7 @@ global_explanation.get_feature_importance_dict()
 ### <a name="explain-an-individual-prediction-local-explanation"></a>Объясните отдельный прогноз (локальное объяснение)
 Получите значения важности отдельных компонентов для различных точек данных, вызвав объяснения для отдельного экземпляра или группы экземпляров.
 > [!NOTE]
-> `PFIExplainer`не поддерживает локальные объяснения.
+> `PFIExplainer` не поддерживает локальные объяснения.
 
 ```python
 # get explanation for the first data point in the test set
@@ -275,7 +275,7 @@ tabular_explainer = TabularExplainer(clf.steps[-1][1],
     #client.upload_model_explanation(global_explanation, top_k=2, comment='global explanation: Only top 2 features')
     ```
 
-1. Настройте Машинное обучение Azure вычислений в качестве целевого объекта вычислений и отправьте обучающий запуск. Инструкции см. в разделе [Настройка целевых объектов вычислений для обучения модели](how-to-set-up-training-targets.md#amlcompute) . Вы также можете найти [примеры записных книжек](https://github.com/Azure/MachineLearningNotebooks/tree/master/how-to-use-azureml/explain-model/azure-integration/remote-explanation) .
+1. Настройте Машинное обучение Azure вычислений в качестве целевого объекта вычислений и отправьте обучающий запуск. Инструкции см. [в статье Создание целевых объектов вычислений с помощью пакета SDK для Python](how-to-create-attach-compute-sdk.md#amlcompute) . Вы также можете найти [примеры записных книжек](https://github.com/Azure/MachineLearningNotebooks/tree/master/how-to-use-azureml/explain-model/azure-integration/remote-explanation) .
 
 1. Скачайте пояснение в локальной записной книжке Jupyter.
 
@@ -304,7 +304,7 @@ tabular_explainer = TabularExplainer(clf.steps[-1][1],
 
 На следующих диаграммах представлено общее представление обученной модели, а также ее прогнозов и объяснений.
 
-|Графическое представления|Описание:|
+|Графическое представления|Описание|
 |----|-----------|
 |Исследование данных| Отображает общие сведения о наборе данных вместе со значениями прогноза.|
 |Глобальная важность|Выполняет статистическую обработку значений важности для отдельных точек данных, чтобы отобразить общие основные функции K (с возможностью настройки K) для модели. Помогает понять общее поведение базовой модели.|
@@ -318,7 +318,7 @@ tabular_explainer = TabularExplainer(clf.steps[-1][1],
 
 Можно загрузить график важности отдельных компонентов для любой точки данных, щелкнув любую из отдельных точек данных в любой из общих графиков.
 
-|Графическое представления|Описание:|
+|Графическое представления|Описание|
 |----|-----------|
 |Локальная важность|Показывает первые K (с возможностью настройки K) важные функции для отдельного прогноза. Помогает проиллюстрировать локальное поведение базовой модели на определенной точке данных.|
 |Исследование пертурбатион (анализ гипотетических)|Позволяет изменять значения компонентов выбранной точки данных и отслеживать итоговые изменения в прогнозируемом значении.|
@@ -567,7 +567,7 @@ ExplanationDashboard(global_explanation, model, dataset=x_test)
 
    Для удаления развернутой веб-службы используйте `service.delete()`.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Дополнительные сведения о интерпретируемости модели](how-to-machine-learning-interpretability.md)
 

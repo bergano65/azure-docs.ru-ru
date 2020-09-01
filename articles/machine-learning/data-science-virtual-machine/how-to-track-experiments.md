@@ -1,7 +1,7 @@
 ---
 title: Отслеживание экспериментов и развертывание моделей
 titleSuffix: Azure Data Science Virtual Machine
-description: Узнайте, как относить эксперименты из DSVM с помощью службы машинного обучения Azure и (или) Млфлов.
+description: Узнайте, как относить эксперименты из DSVM с помощью Машинное обучение Azure и Млфлов.
 services: machine-learning
 ms.service: machine-learning
 ms.subservice: data-science-vm
@@ -9,14 +9,14 @@ author: samkemp
 ms.author: samkemp
 ms.topic: conceptual
 ms.date: 07/17/2020
-ms.openlocfilehash: 687cd6570a9518be6f398a40fcd2d0e10a9634f2
-ms.sourcegitcommit: d39f2cd3e0b917b351046112ef1b8dc240a47a4f
+ms.openlocfilehash: 943e8bd9f272f3dc8cefbfbccd326cf520497bb2
+ms.sourcegitcommit: d7352c07708180a9293e8a0e7020b9dd3dd153ce
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88817964"
+ms.lasthandoff: 08/30/2020
+ms.locfileid: "89146901"
 ---
-# <a name="track-experiments-and-deploy-models-in-azureml"></a>Трассировка экспериментов и развертывание моделей в AzureML
+# <a name="track-experiments-and-deploy-models-in-azure-machine-learning"></a>Отслеживание экспериментов и развертывание моделей в Машинное обучение Azure
 
 Чтобы улучшить процесс создания модели, отслеживайте эксперименты с машинным обучением Azure и метрики выполнения. Из этой статьи вы узнаете, как добавить код ведения журнала в сценарий обучения с помощью API [млфлов](https://mlflow.org/) и отвести эксперимент в машинное обучение Azure.
 
@@ -202,6 +202,6 @@ print(output)
 
 Необходимо удалить вычисление, созданное на шаге 1, чтобы не вычислять непрерывные затраты на вычисления. В меню слева в Машинное обучение Azure Studio выберите вычисления > кластеры вывода > выберите вычисления > удалить.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Next Steps
 
 * Дополнительные сведения о [развертывании моделей в AzureML](https://docs.microsoft.com/azure/machine-learning/how-to-deploy-and-where)

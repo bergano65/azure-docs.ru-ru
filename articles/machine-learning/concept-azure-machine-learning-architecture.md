@@ -10,12 +10,12 @@ ms.author: sgilley
 author: sdgilley
 ms.date: 08/20/2020
 ms.custom: seoapril2019, seodec18
-ms.openlocfilehash: b90cda409096f940d6c2b1c64517731e81c41fbe
-ms.sourcegitcommit: 656c0c38cf550327a9ee10cc936029378bc7b5a2
+ms.openlocfilehash: c3abd6a57eac851a5440ecdef6185cb310305434
+ms.sourcegitcommit: d7352c07708180a9293e8a0e7020b9dd3dd153ce
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89069172"
+ms.lasthandoff: 08/30/2020
+ms.locfileid: "89146782"
 ---
 # <a name="how-azure-machine-learning-works-architecture-and-concepts"></a>Машинное обучение Azure: архитектура и основные понятия
 
@@ -106,7 +106,7 @@ ms.locfileid: "89069172"
 
 Конфигурацию запуска можно сохранить в файл внутри каталога, содержащего сценарий обучения.   Либо он может быть создан как объект в памяти и использован для отправки выполнения.
 
-Пример конфигураций запуска см. в статье [Настройка целевых объектов вычислений для обучения моделей](how-to-set-up-training-targets.md).
+Примеры конфигурации запуска см. [в разделе Использование целевого объекта вычислений для обучения модели](how-to-set-up-training-targets.md).
 
 ### <a name="estimators"></a>Оценщики
 

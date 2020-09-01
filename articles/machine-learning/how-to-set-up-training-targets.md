@@ -1,676 +1,65 @@
 ---
-title: Использование целевых объектов вычислений для обучения моделей
+title: Отправка обучающего выполнения в целевой объект вычислений
 titleSuffix: Azure Machine Learning
-description: Настройте среды обучения (целевые объекты вычислений) для обучения моделей машинного обучения. Вы можете с легкостью переключаться между средами обучения. Начните обучение на локальном компьютере. Если вам потребуется горизонтально увеличить масштаб, переключитесь на облачный целевой объект вычислений.
+description: Обучение модели машинного обучения в различных средах обучения (целевые объекты вычислений). Вы можете с легкостью переключаться между средами обучения. Начните обучение на локальном компьютере. Если вам потребуется горизонтально увеличить масштаб, переключитесь на облачный целевой объект вычислений.
 services: machine-learning
 author: sdgilley
 ms.author: sgilley
 ms.reviewer: sgilley
 ms.service: machine-learning
 ms.subservice: core
-ms.date: 07/08/2020
+ms.date: 08/28/2020
 ms.topic: conceptual
-ms.custom: how-to, devx-track-python
-ms.openlocfilehash: e83faee7d72026dafc50b21d0a0773e663e5a03a
-ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
+ms.custom: how-to, devx-track-python, contperfq1
+ms.openlocfilehash: ca76ec5bef1d908ca3cea6ce0f58b1205c1676ca
+ms.sourcegitcommit: d7352c07708180a9293e8a0e7020b9dd3dd153ce
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88933123"
+ms.lasthandoff: 08/30/2020
+ms.locfileid: "89144096"
 ---
-# <a name="set-up-and-use-compute-targets-for-model-training"></a>Настройка и использование целевых объектов вычислений для обучения моделей 
+# <a name="submit-a-training-run-to-a-compute-target"></a>Отправка обучающего выполнения в целевой объект вычислений
+
 [!INCLUDE [applies-to-skus](../../includes/aml-applies-to-basic-enterprise-sku.md)]
 
-С помощью решения "Машинное обучение Azure" вы можете обучать модель, используя разные вычислительные ресурсы или среды, которые вместе называются [__целевыми объектами вычислений__](concept-azure-machine-learning-architecture.md#compute-targets). Они могут быть локальными или облачными. Например, это может быть Вычислительная среда Машинного обучения Azure, Azure HDInsight или удаленная виртуальная машина.  Можно также создать целевые объекты вычислений для развертывания моделей, как описано в статье [Развертывание моделей с помощью Службы машинного обучения Azure](how-to-deploy-and-where.md).
+Из этой статьи вы узнаете, как использовать различные среды обучения ([целевые объекты вычислений](concept-compute-target.md)) для обучения модели машинного обучения.
 
-Для создания целевых объектов вычислений и управления ими можно использовать пакет SDK Студию машинного обучения Azure, Azure CLI или расширение VS Code для Машинного обучения Azure. Если у вас есть целевые объекты вычислений, созданные другой службой (например, кластером HDInsight), вы можете подключить их к своей рабочей области Машинного обучения Azure.
- 
-В этой статье вы узнаете об использовании разных целевых объектов вычисления для обучения моделей.  Шаги для всех вычислительных целей выполняются в том же рабочем процессе.
-1. __Создание__ целевого объекта вычислений, если такого еще нет.
-2. __Присоединение__ целевого объекта вычислений в рабочую область.
-3. __Настройка__ целевого объекта вычислений так, чтобы он содержал необходимые сценарии зависимости среды и пакет Python.
+При обучении этот учебный сценарий обычно запускают на локальном компьютере, а затем запускают в другом целевом объекте вычислений. С помощью Машинное обучение Azure сценарий можно выполнять в различных целевых объектах вычислений, не меняя сценарий обучения.
 
+Все, что нужно сделать, — это определить среду для каждого целевого объекта вычислений в **конфигурации запуска сценария**.  Затем, если вы хотите запустить обучающий эксперимент на другом целевом объекте вычислений, укажите конфигурацию запуска для этого вычисления.
 
->[!NOTE]
-> Код в этой статье протестирован с помощью пакета SDK для Машинного обучения Azure версии 1.0.74.
+## <a name="prerequisites"></a>Предварительные требования
 
-## <a name="compute-targets-for-training"></a>Целевые объекты вычислений для обучения
+* Если у вас еще нет подписки Azure, создайте бесплатную учетную запись, прежде чем начинать работу. Опробуйте [бесплатную или платную версию машинное обучение Azure](https://aka.ms/AMLFree) уже сегодня
+* [Пакет SDK для машинное обучение Azure для Python](https://docs.microsoft.com/python/api/overview/azure/ml/install?view=azure-ml-py)
+* [Рабочая область машинное обучение Azure](how-to-manage-workspace.md)`ws`
+* Целевой объект вычислений, `my_compute_target` .  Создать целевой объект вычислений с помощью:
+  * [Пакет SDK для Python](how-to-create-attach-compute-sdk.md) 
+  * [Машинное обучение Azure Studio](how-to-create-attach-compute-studio.md)
 
-Машинное обучение Azure по-разному поддерживает разные целевые объекты вычислений. Жизненный цикл разработки обычной модели начинается с разработки и экспериментов с небольшим объемом данных. На этом этапе мы рекомендуем использовать локальную среду. Например, ваш локальный компьютер или облачную виртуальную машину. По мере перехода к обучению на больших наборах данных или при выполнении распределенного обучения мы рекомендуем использовать Вычислительную среду Машинного обучения Azure, чтобы создать одно- или многоузловой кластер, который автоматически масштабируется при каждой отправке запроса на запуск. Можно также подключить собственный вычислительный ресурс, хотя не все сценарии могут поддерживаться. Подробнее об этом рассказывается ниже.
+## <a name="whats-a-script-run-configuration"></a><a name="whats-a-run-configuration"></a>Что такое конфигурация запуска сценария?
 
-[!INCLUDE [aml-compute-target-train](../../includes/aml-compute-target-train.md)]
-
-
-> [!NOTE]
-> Машинное обучение Azure COMPUTE Clusters можно создать как постоянный ресурс или динамически создать при запросе запуска. Созданные при запуске целевые объекты вычислений будут удалены после завершения обучающего запуска, поэтому объекты вычислений, созданные таким способом, невозможно использовать повторно.
-
-## <a name="whats-a-run-configuration"></a>Что являет собой конфигурация запуска?
-
-При обучении этот учебный сценарий обычно запускают на локальном компьютере, а затем запускают в другом целевом объекте вычислений. Машинное обучение Azure позволяет запускать сценарий для различных целевых объектов вычислений без необходимости изменения сценария.
-
-Вам нужно лишь определить среду для каждого целевого объекта вычислений с помощью **конфигурации запуска**.  Затем, если вы хотите запустить обучающий эксперимент на другом целевом объекте вычислений, укажите конфигурацию запуска для этого вычисления. Дополнительные сведения о том, как задать среду и привязать ее к конфигурации запуска см. в статье [Создание сред для обучения и развертывания и управление ими](how-to-use-environments.md).
-
-Дополнительные сведения об [отправке экспериментов](#submit) см. в конце этой статьи.
-
-## <a name="whats-an-estimator"></a>Что такое оценщик?
-
-Чтобы облегчить обучение модели с использованием популярных платформ, в пакете SDK Машинного обучения Azure для Python предоставляется альтернативная высокоуровневая абстракция — класс оценщика.  Этот класс позволяет легко создавать конфигурации запуска. Вы можете создать и использовать универсальный [оценщик](https://docs.microsoft.com/python/api/azureml-train-core/azureml.train.estimator?view=azure-ml-py) для отправки сценариев обучения, использующих любую выбранную платформу обучения (например, scikit-learn). Мы рекомендуем использовать для обучения оценщик, так как он автоматически конструирует внедренные объекты, например среду или объекты RunConfiguration. Если вы хотите получить более полный контроль над созданием этих объектов и указать, какие пакеты следует установить для запуска эксперимента, выполните [эти шаги](#amlcompute), чтобы отправить обучающие эксперименты, используя объект RunConfiguration в Вычислительной среде Машинного обучения.
-
-Машинное обучение Azure предоставляет специальные оценщики для [PyTorch](https://docs.microsoft.com/python/api/azureml-train-core/azureml.train.dnn.pytorch?view=azure-ml-py), [TensorFlow](https://docs.microsoft.com/python/api/azureml-train-core/azureml.train.dnn.tensorflow?view=azure-ml-py), [Chainer](https://docs.microsoft.com/python/api/azureml-train-core/azureml.train.dnn.chainer?view=azure-ml-py) и [Ray RLlib](how-to-use-reinforcement-learning.md).
-
-Дополнительные сведения см. в статье [Обучение моделей Машинного обучения с использованием оценщиков](how-to-train-ml-models.md).
-
-## <a name="whats-an-ml-pipeline"></a>Что такое конвейер Машинного обучения?
-
-С помощью конвейеров Машинного обучения можно оптимизировать рабочий процесс. Конвейеры обеспечивают простоту, скорость, мобильность и возможность повторного использования. При создании конвейеров с помощью Машинного обучения Azure можно сосредоточиться на том, в чем вы являетесь специалистом, — машинном обучении, не отвлекаясь на инфраструктуру и автоматизацию.
-
-Конвейеры Машинного обучения состоят из нескольких **шагов** , которые являются в них отдельными вычислительными единицами. Каждый шаг может выполняться независимо и использовать изолированные вычислительные ресурсы. Такой подход позволяет нескольким специалистам по обработке данных работать с одним и тем же конвейером без избыточного потребления вычислительных ресурсов, а также упрощает использование различных типов вычислений и размеров для каждого шага.
-
-> [!TIP]
-> При обучении моделей конвейеры Машинного обучения могут использовать конфигурацию запуска или оценщики.
-
-Хотя конвейеры Машинного обучения могут обучать модели, они также могут подготавливать данные перед обучением и развертывать модели после его завершения. Одним из основных вариантов использования конвейеров является пакетная оценка. Дополнительные сведения см. в статье [Конвейеры: оптимизация рабочих процессов машинного обучения](concept-ml-pipelines.md).
-
-## <a name="set-up-in-python"></a>Настройка в Python
-
-Чтобы настроить эти целевые объекты вычислений, используйте следующие разделы.
-
-* [Локальный компьютер](#local)
-* [Вычислительный кластер Машинного обучения Azure](#amlcompute)
-* [Вычислительная операция Машинного обучения Azure](#instance)
-* [Удаленные виртуальные машины](#vm)
-* [Azure HDInsight](#hdinsight)
-
-
-### <a name="local-computer"></a><a id="local"></a>Локальный компьютер
-
-1. **Создание и присоединение**. Нет необходимости создавать или присоединять целевой объект вычислений, чтобы использовать локальный компьютер в качестве среды обучения.  
-
-1. **Настройка**.  При использовании локального компьютера в качестве целевого объекта вычислений обучающий код запускается в вашей [среде разработки](how-to-configure-environment.md).  Если эта среда уже содержит пакеты Python, необходимо использовать среду, управляемую пользователем.
-
- [!code-python[](~/aml-sdk-samples/ignore/doc-qa/how-to-set-up-training-targets/local.py?name=run_local)]
-
-Теперь, после подключения вычислительной среды и настройки запуска, следующий шаг — [отправить запрос на запуск обучения](#submit).
-
-### <a name="azure-machine-learning-compute-cluster"></a><a id="amlcompute"></a>Кластер Машинное обучение Azure COMPUTE
-
-Кластер Машинное обучение Azure COMPUTE — это управляемая инфраструктура вычислений, которая позволяет легко создавать одно или несколько вычислений. Она создается в регионе вашей рабочей области и является ресурсом, который можно использовать совместно с другими пользователями в этой рабочей области. Вычислительная среда автоматически масштабируется при отправке задания, а также может быть размещена в виртуальной сети Azure. Она выполняется в контейнерной среде, упаковывая зависимости вашей модели в [контейнер Docker](https://www.docker.com/why-docker).
-
-Вычислительную среду Машинного обучения Azure можно использовать для распространения процесса обучения в кластере вычислительных узлов на основе ЦП или GPU, размещенном в облаке. Дополнительные сведения о размерах виртуальных машин, которые содержат GPU, см. в статье [Размеры виртуальных машин, оптимизированных для GPU](https://docs.microsoft.com/azure/virtual-machines/linux/sizes-gpu). 
-
-Вычислительная среда Машинного обучения Azure имеет ограничения по умолчанию, такие как количество ядер, которые могут быть выделены. Дополнительные сведения см. в статье [Управление квотами для ресурсов Azure и их запрашивание](how-to-manage-quotas.md).
-
-
-> [!TIP]
-> Кластеры обычно масштабируются до 100 узлов при наличии достаточной квоты для требуемого числа ядер. По умолчанию кластеры настроены с поддержкой взаимодействия между их узлами, например для поддержки заданий MPI. Однако вы можете масштабировать кластеры до тысяч узлов, просто [вызывая запрос в службу поддержки](https://portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade/newsupportrequest)и запрашивая разрешение на получение списка подписки, рабочей области или конкретного кластера для отключения взаимодействия между узлами. 
-
-Вычислительную среду Машинного обучения Azure можно многократно использовать при различных запусках. Результаты вычислений могут использоваться совместно с другими пользователями в рабочей области. Они сохраняются для последующих запусков, а число узлов в них автоматически масштабируется в зависимости от числа отправленных запросов на запуск и заданного для кластера значения max_nodes. С помощью параметра min_nodes можно контролировать минимально доступное количество узлов.
-
-[!INCLUDE [min-nodes-note](../../includes/machine-learning-min-nodes.md)]
-
-1. **Создание и присоединение**. Чтобы создать постоянный ресурс Вычислительной среды машинного обучения Azure в Python, необходимо указать свойства **vm_size** и **max_nodes**. Затем Машинное обучение Azure использует интеллектуальные значения по умолчанию для остальных свойств. Когда вычислительная среда не используется, она автоматически масштабируется до нуля узлов.   Выделенные виртуальные машины создаются для выполнения заданий по мере необходимости.
-    
-    * **vm_size**. Семейство виртуальных машин узлов, создаваемых Вычислительной средой Машинного обучения Azure.
-    * **max_nodes**. Максимальное количество узлов для автомасштабирования при запуске задания в Вычислительной среде Машинного обучения Azure.
-    
-   [!code-python[](~/aml-sdk-samples/ignore/doc-qa/how-to-set-up-training-targets/amlcompute2.py?name=cpu_cluster)]
-
-   При создании Вычислительной среды машинного обучения Azure вы можете также настроить несколько дополнительных свойств. Эти свойства позволяют создать постоянный кластер фиксированного размера, который может размещаться в существующей виртуальной сети Azure в вашей подписке.  Дополнительные сведения см. в разделе о [классе AmlCompute](https://docs.microsoft.com/python/api/azureml-core/azureml.core.compute.amlcompute.amlcompute?view=azure-ml-py
-    ).
-
-    Или вы можете создать и присоединить постоянный ресурс Вычислительной среды Машинного обучения в [Студии машинного обучения Azure](#portal-create).
-
-   
-1. **Настройка**. Создайте конфигурацию запуска для постоянного целевого объекта вычислений.
-
-   [!code-python[](~/aml-sdk-samples/ignore/doc-qa/how-to-set-up-training-targets/amlcompute2.py?name=run_amlcompute)]
-
-Теперь, после подключения вычислительной среды и настройки запуска, следующий шаг — [отправить запрос на запуск обучения](#submit).
-
- ### <a name="lower-your-compute-cluster-cost"></a><a id="low-pri-vm"></a> Снижение стоимости вычислений в кластере
-
-Вы также можете использовать [виртуальные машины с низким приоритетом](concept-plan-manage-cost.md#low-pri-vm) для выполнения некоторых или всех рабочих нагрузок. Эти виртуальные машины не обеспечены гарантиями доступности и могут быть замещены при использовании. Замещенное задание перезапускается, а не возобновляется. 
-
-Используйте любой из этих способов, чтобы указать виртуальную машину с низким приоритетом:
-    
-* В студии при создании виртуальной машины выберите **низкий приоритет** .
-    
-* В пакете SDK для Python задайте `vm_priority` атрибут в конфигурации подготовки.  
-    
-    ```python
-    compute_config = AmlCompute.provisioning_configuration(vm_size='STANDARD_D2_V2',
-                                                                vm_priority='lowpriority',
-                                                                max_nodes=4)
-    ```
-    
-* С помощью интерфейса командной строки установите `vm-priority` :
-    
-    ```azurecli-interactive
-    az ml computetarget create amlcompute --name lowpriocluster --vm-size Standard_NC6 --max-nodes 5 --vm-priority lowpriority
-    ```
-
- ### <a name="set-up-managed-identity"></a><a id="managed-identity"></a> Настройка управляемого удостоверения
-
- Машинное обучение Azure COMPUTE Clusters также поддерживает [управляемые удостоверения](https://docs.microsoft.com/azure/active-directory/managed-identities-azure-resources/overview) для проверки подлинности доступа к ресурсам Azure без включения учетных данных в код. Существует два типа управляемых удостоверений.
-
-* **Управляемое системой удостоверение** включается непосредственно в кластере машинное обучение Azure COMPUTE. Жизненный цикл удостоверения, назначенного системой, напрямую привязан к кластеру вычислений. Если кластер будет удален, Azure автоматически очистит учетные данные и удостоверение в Azure AD.
-* **Назначаемое пользователем управляемое удостоверение** — это автономный ресурс Azure, предоставляемый через службу управляемых удостоверений Azure. Назначаемое пользователем управляемое удостоверение можно назначить нескольким ресурсам, и оно будет сохранено до тех пор, пока вы хотите.
-
-Используйте любой из этих способов, чтобы указать управляемое удостоверение для кластера вычислений.
-    
-* В студии при создании кластерного кластера или при изменении сведений о кластере вычислений переключитесь на **назначение управляемого удостоверения** и укажите назначенное системой удостоверение или удостоверение, назначенное пользователем.
-    
-* В пакете SDK для Python задайте `identity_type` атрибут в конфигурации подготовки.  
-    
-    ```python
-    # configure cluster with a system-assigned managed identity
-    compute_config = AmlCompute.provisioning_configuration(vm_size='STANDARD_D2_V2',
-                                                            max_nodes=5,
-                                                            identity_type="SystemAssigned",
-                                                            )
-
-    # configure cluster with a user-assigned managed identity
-    compute_config = AmlCompute.provisioning_configuration(vm_size='STANDARD_D2_V2',
-                                                            max_nodes=5,
-                                                            identity_type="UserAssigned",
-                                                            identity_id=['/subscriptions/<subcription_id>/resourcegroups/<resource_group>/providers/Microsoft.ManagedIdentity/userAssignedIdentities/<user_assigned_identity>'])
-
-    cpu_cluster_name = "cpu-cluster"
-    cpu_cluster = ComputeTarget.create(ws, cpu_cluster_name, compute_config)
-    ```
-
-* В пакете SDK для Python задайте `identity_type` и `identity_id` (если создает назначаемое пользователем управляемое удостоверение) в конфигурации подготовки.  
-    
-    ```python
-    # add a system-assigned managed identity
-    cpu_cluster.add_identity(identity_type="SystemAssigned")
-
-    # add a user-assigned managed identity
-    cpu_cluster.add_identity(identity_type="UserAssigned", 
-                                identity_id=['/subscriptions/<subcription_id>/resourcegroups/<resource_group>/providers/Microsoft.ManagedIdentity/userAssignedIdentities/<user_assigned_identity>'])
-    ```
-    
-* С помощью интерфейса командной строки задайте `assign-identity` атрибут во время создания кластера:
-    
-    ```azurecli
-    # create a cluster with a user-assigned managed identity
-    az ml computetarget create amlcompute --name cpu-cluster --vm-size Standard_NC6 --max-nodes 5 --assign-identity '/subscriptions/<subcription_id>/resourcegroups/<resource_group>/providers/Microsoft.ManagedIdentity/userAssignedIdentities/<user_assigned_identity>'
-
-    # create a cluster with a system-managed identity
-    az ml computetarget create amlcompute --name cpu-cluster --vm-size Standard_NC6 --max-nodes 5 --assign-identity '[system]'
-
-* Using the CLI, execute the following commands to assign a managed identity on an existing cluster:
-    
-    ```azurecli
-    # add a user-assigned managed identity
-    az ml computetarget amlcompute identity assign --name cpu-cluster '/subscriptions/<subcription_id>/resourcegroups/<resource_group>/providers/Microsoft.ManagedIdentity/userAssignedIdentities/<user_assigned_identity>'
-
-    # add a system-assigned managed identity
-    az ml computetarget amlcompute identity assign --name cpu-cluster '[system]'
-
-> [!NOTE]
-> Azure Machine Learning compute clusters support only **one system-assigned identity** or **multiple user-assigned identities**, not both concurrently.
-> 
-> Additionally, you can assign only one managed identity from the studio.
-
-#### Managed identity usage
-
-AML defines the **default managed identity** as the system-assigned managed identity or the first user-assigned managed identity.
-
-During a run there are two applications of an identity:
-1. The system uses an identity to setup the user's storage mounts, container registry, and datastores.
-    * In this case, the system will use the default managed identity.
-
-1. The user applies an identity to access resources from within the code for a submitted run
-    
-    * In this case, the user must provide the *client_id* corresponding to the managed identity they want to use to retrieve a credential. 
-    * Alternatively, AML exposes the user-assigned identity's client ID through the *DEFAULT_IDENTITY_CLIENT_ID* environment variable.
-    
-    For example, to retrieve a token for a datastore with the default managed identity:
-    
-    ```python
-    client_id = os.environ.get('DEFAULT_IDENTITY_CLIENT_ID')
-    credential = ManagedIdentityCredential(client_id=client_id)
-    token = credential.get_token('https://storage.azure.com/')
-
-
-
-### <a id="instance"></a>Azure Machine Learning compute instance
-
-[Azure Machine Learning compute instance](concept-compute-instance.md) is a managed-compute infrastructure that allows you to easily create a single VM. The compute is created within your workspace region, but unlike a compute cluster, an instance cannot be shared with other users in your workspace. Also the instance does not automatically scale down.  You must stop the resource to prevent ongoing charges.
-
-A compute instance can run multiple jobs in parallel and has a job queue. 
-
-Compute instances can run jobs securely in a [virtual network environment](how-to-enable-virtual-network.md#compute-instance), without requiring enterprises to open up SSH ports. The job executes in a containerized environment and packages your model dependencies in a Docker container. 
-
-1. **Create and attach**: 
-    
-    ```python
-    import datetime
-    import time
-    
-    from azureml.core.compute import ComputeTarget, ComputeInstance
-    from azureml.core.compute_target import ComputeTargetException
-    
-    # Choose a name for your instance
-    # Compute instance name should be unique across the azure region
-    compute_name = "ci{}".format(ws._workspace_id)[:10]
-    
-    # Verify that instance does not exist already
-    try:
-        instance = ComputeInstance(workspace=ws, name=compute_name)
-        print('Found existing instance, use it.')
-    except ComputeTargetException:
-        compute_config = ComputeInstance.provisioning_configuration(
-            vm_size='STANDARD_D3_V2',
-            ssh_public_access=False,
-            # vnet_resourcegroup_name='<my-resource-group>',
-            # vnet_name='<my-vnet-name>',
-            # subnet_name='default',
-            # admin_user_ssh_public_key='<my-sshkey>'
-        )
-        instance = ComputeInstance.create(ws, compute_name, compute_config)
-        instance.wait_for_completion(show_output=True)
-    ```
-
-1. **Настройка**: создание конфигурации запуска.
-    
-    ```python
-    
-    from azureml.core import ScriptRunConfig
-    from azureml.core.runconfig import DEFAULT_CPU_IMAGE
-    
-    src = ScriptRunConfig(source_directory='', script='train.py')
-    
-    # Set compute target to the one created in previous step
-    src.run_config.target = instance
-    
-    # Set environment
-    src.run_config.environment = myenv
-     
-    run = experiment.submit(config=src)
-    ```
-
-Теперь, когда вы присоединяете вычисление и настроили выполнение, следующим шагом является [Отправка обучающего запуска](#submit) .
-
-
-### <a name="remote-virtual-machines"></a><a id="vm"></a>Удаленные виртуальные машины
-
-Машинное обучение Azure также поддерживает использование собственных вычислительных ресурсов и подключение их к рабочей области. К такому типу ресурсов относится произвольная удаленная виртуальная машина, если она доступна из Машинного обучения Azure. Ресурсом может быть виртуальная машина Azure, удаленный или локальный сервер в вашей организации. В частности, указав IP-адрес и учетные данные (имя пользователя и пароль или ключ SSH), можно использовать любую доступную виртуальную машину для удаленного запуска.
-
-Можно использовать системную среду Conda, существующую среду Python или контейнер Docker. Для выполнения контейнера Docker на виртуальной машине должен быть запущен модуль Docker. Эта функция особенно удобна в случаях, когда необходима более гибкая облачная среда разработки и проведения экспериментов, чем локальный компьютер.
-
-Используйте виртуальную машину Azure для обработки и анализа данных (DSVM) в качестве выбранной виртуальной машины Azure для этого сценария. Эта виртуальная машина является предварительно настроенной обработкой и анализом данных и средой разработки искусственного интеллекта в Azure. Виртуальная машина предлагает выбор средств и платформ для разработки машинного обучения в течение всего жизненного цикла. Дополнительных сведения об использовании DSVM со Службой машинного обучения Azure см. в статье [Настройка среды разработки для Машинного обучения Azure](https://docs.microsoft.com/azure/machine-learning/how-to-configure-environment#dsvm).
-
-1. **Создание**. Создайте DSVM перед ее использованием для обучения модели. Подробные сведения о создании этого ресурса см. в разделе [Подготовка виртуальной машины Linux (Ubuntu) для обработки и анализа данных](https://docs.microsoft.com/azure/machine-learning/data-science-virtual-machine/dsvm-ubuntu-intro).
-
-    > [!WARNING]
-    > Машинное обучение Azure поддерживает только виртуальные машины под управлением **Ubuntu**. Поэтому создаваемая виртуальная или существующая виртуальная машина, которую вы выбираете, должна работать под управлением Ubuntu.
-    > 
-    > Для Машинное обучение Azure также требуется, чтобы виртуальная машина соимела __общедоступный IP-адрес__.
-
-1. **Присоединение**. Чтобы присоединить имеющуюся виртуальную машину как целевой объект вычислений, необходимо указать для нее ИД ресурса, имя входа и пароль. Идентификатор ресурса виртуальной машины можно создать с помощью идентификатора подписки, имени группы ресурсов и имени виртуальной машины, используя следующий строковый формат: `/subscriptions/<subscription_id>/resourceGroups/<resource_group>/providers/Microsoft.Compute/virtualMachines/<vm_name>`
-
- 
-   ```python
-   from azureml.core.compute import RemoteCompute, ComputeTarget
-
-   # Create the compute config 
-   compute_target_name = "attach-dsvm"
-   
-   attach_config = RemoteCompute.attach_configuration(resource_id='<resource_id>',
-                                                   ssh_port=22,
-                                                   username='<username>',
-                                                   password="<password>")
-
-   # Attach the compute
-   compute = ComputeTarget.attach(ws, compute_target_name, attach_config)
-
-   compute.wait_for_completion(show_output=True)
-   ```
-
-   Кроме того, можно присоединить DSVM к рабочей области, [используя Студию машинного обучения Azure](#portal-reuse).
-
-1. **Настройка**. Создайте конфигурацию запуска для целевого объекта вычислений DSVM. Для создания и настройки среды обучения на DSVM используются Docker и Conda.
-
-   [!code-python[](~/aml-sdk-samples/ignore/doc-qa/how-to-set-up-training-targets/dsvm.py?name=run_dsvm)]
-
-
-Теперь, после подключения вычислительной среды и настройки запуска, следующий шаг — [отправить запрос на запуск обучения](#submit).
-
-### <a name="azure-hdinsight"></a><a id="hdinsight"></a>Azure HDInsight 
-
-Azure HDInsight — это популярная платформа для анализа больших данных. Она предоставляет Apache Spark, который можно использовать для обучения модели.
-
-1. **Создание**.  Прежде чем использовать кластер HDInsight для обучения модели, создайте его. Инструкции по созданию Spark в кластере HDInsight см. в статье [Краткое руководство. Создание кластера Apache Spark в HDInsight с помощью шаблона](https://docs.microsoft.com/azure/hdinsight/spark/apache-spark-jupyter-spark-sql). 
-
-    > [!WARNING]
-    > Для Машинное обучение Azure требуется, чтобы кластер HDInsight имел __общедоступный IP-адрес__.
-
-    При создании кластера необходимо указать имя пользователя SSH и пароль. Запишите эти значения — они вам потребуются при использовании HDInsight в качестве целевого объекта вычислений.
-    
-    После создания кластера подключитесь к нему с помощью имени узла \<clustername> -SSH.azurehdinsight.NET, где \<clustername> — это имя, указанное для кластера. 
-
-1. **Присоединение**. Чтобы присоединить кластер HDInsight в качестве целевого объекта вычислений, необходимо указать ИД ресурса, имя пользователя и пароль для кластера HDInsight. Идентификатор ресурса кластера HDInsight можно создать с помощью идентификатора подписки, имени группы ресурсов и имени кластера HDInsight, используя следующий строковый формат: `/subscriptions/<subscription_id>/resourceGroups/<resource_group>/providers/Microsoft.HDInsight/clusters/<cluster_name>`
-
-    ```python
-   from azureml.core.compute import ComputeTarget, HDInsightCompute
-   from azureml.exceptions import ComputeTargetException
-
-   try:
-    # if you want to connect using SSH key instead of username/password you can provide parameters private_key_file and private_key_passphrase
-
-    attach_config = HDInsightCompute.attach_configuration(resource_id='<resource_id>',
-                                                          ssh_port=22, 
-                                                          username='<ssh-username>', 
-                                                          password='<ssh-pwd>')
-    hdi_compute = ComputeTarget.attach(workspace=ws, 
-                                       name='myhdi', 
-                                       attach_configuration=attach_config)
-
-   except ComputeTargetException as e:
-    print("Caught = {}".format(e.message))
-
-   hdi_compute.wait_for_completion(show_output=True)
-   ```
-
-   Кроме того, можно присоединить кластер HDInsight к рабочей области, [используя Студию машинного обучения Azure](#portal-reuse).
-
-1. **Настройка**. Создайте конфигурацию запуска для целевого объекта вычислений HDI. 
-
-   [!code-python[](~/aml-sdk-samples/ignore/doc-qa/how-to-set-up-training-targets/hdi.py?name=run_hdi)]
-
-
-Теперь, после подключения вычислительной среды и настройки запуска, следующий шаг — [отправить запрос на запуск обучения](#submit).
-
-
-### <a name="azure-batch"></a><a id="azbatch"></a>Пакетная служба Azure 
-
-Пакетная служба Azure используется для эффективного запуска приложений для крупномасштабных параллельных и высокопроизводительных вычислений (HPC) в облаке. В конвейере Машинного обучения Azure для отправки заданий в пул виртуальных машин пакетной службы Azure можно использовать AzureBatchStep.
-
-Чтобы присоединить пакетную службу Azure в качестве целевого объекта вычислений, используйте пакет SDK Машинного обучения Azure и укажите следующие сведения.
-
--    **Azure Batch compute name** (Имя пакетного вычисления пакетной службы Azure). Понятное имя, используемое для вычислений в рабочей области.
--    **Имя учетной записи для пакетной службы Azure**. Имя учетной записи пакетной службы Azure.
--    **Группа ресурсов**. Группа ресурсов, в которой содержится учетная запись пакетной службы Azure.
-
-Следующий код демонстрирует, как присоединить пакетную службу в качестве целевого объекта вычислений.
-
-```python
-from azureml.core.compute import ComputeTarget, BatchCompute
-from azureml.exceptions import ComputeTargetException
-
-# Name to associate with new compute in workspace
-batch_compute_name = 'mybatchcompute'
-
-# Batch account details needed to attach as compute to workspace
-batch_account_name = "<batch_account_name>"  # Name of the Batch account
-# Name of the resource group which contains this account
-batch_resource_group = "<batch_resource_group>"
-
-try:
-    # check if the compute is already attached
-    batch_compute = BatchCompute(ws, batch_compute_name)
-except ComputeTargetException:
-    print('Attaching Batch compute...')
-    provisioning_config = BatchCompute.attach_configuration(
-        resource_group=batch_resource_group, account_name=batch_account_name)
-    batch_compute = ComputeTarget.attach(
-        ws, batch_compute_name, provisioning_config)
-    batch_compute.wait_for_completion()
-    print("Provisioning state:{}".format(batch_compute.provisioning_state))
-    print("Provisioning errors:{}".format(batch_compute.provisioning_errors))
-
-print("Using Batch compute:{}".format(batch_compute.cluster_resource_id))
-```
-
-### <a name="azure-databricks"></a><a id="databricks"></a>Azure Databricks
-
-Azure Databricks — это среда, которая лежит в основе Apache Spark в облаке Azure. Ее можно использовать как целевой объект вычислений с помощью конвейера Машинного обучения Azure.
-
-Прежде чем ее использовать, создайте рабочую область Azure Databricks. Чтобы создать ресурс рабочей области, см. статью [Запуск задания Spark в Azure Databricks](https://docs.microsoft.com/azure/azure-databricks/quickstart-create-databricks-workspace-portal) документе.
-
-Введите следующие данные, чтобы вложить Azure Databricks в качестве целевого объекта вычислений.
-
-* __Имя для вычислений для кирпичей__. имя, которое вы хотите назначить этому ресурсу вычислений.
-* __Имя рабочей области кирпичей__данных: имя рабочей области Azure Databricks.
-* __Маркер доступа к модулям__. маркер доступа используется для проверки подлинности в Azure Databricks. Чтобы создать маркер доступа, см. документ [Проверка подлинности](https://docs.azuredatabricks.net/dev-tools/api/latest/authentication.html).
-
-В следующем примере кода показано, как присоединить Azure Databricks в качестве целевого объекта вычислений с Машинное обучение Azureным пакетом SDK (__Рабочая область "кирпичы" должна находиться в той же подписке, что и Рабочая область AML__):
-
-```python
-import os
-from azureml.core.compute import ComputeTarget, DatabricksCompute
-from azureml.exceptions import ComputeTargetException
-
-databricks_compute_name = os.environ.get(
-    "AML_DATABRICKS_COMPUTE_NAME", "<databricks_compute_name>")
-databricks_workspace_name = os.environ.get(
-    "AML_DATABRICKS_WORKSPACE", "<databricks_workspace_name>")
-databricks_resource_group = os.environ.get(
-    "AML_DATABRICKS_RESOURCE_GROUP", "<databricks_resource_group>")
-databricks_access_token = os.environ.get(
-    "AML_DATABRICKS_ACCESS_TOKEN", "<databricks_access_token>")
-
-try:
-    databricks_compute = ComputeTarget(
-        workspace=ws, name=databricks_compute_name)
-    print('Compute target already exists')
-except ComputeTargetException:
-    print('compute not found')
-    print('databricks_compute_name {}'.format(databricks_compute_name))
-    print('databricks_workspace_name {}'.format(databricks_workspace_name))
-    print('databricks_access_token {}'.format(databricks_access_token))
-
-    # Create attach config
-    attach_config = DatabricksCompute.attach_configuration(resource_group=databricks_resource_group,
-                                                           workspace_name=databricks_workspace_name,
-                                                           access_token=databricks_access_token)
-    databricks_compute = ComputeTarget.attach(
-        ws,
-        databricks_compute_name,
-        attach_config
-    )
-
-    databricks_compute.wait_for_completion(True)
-```
-
-Более подробный пример см. в [примере записной книжки](https://aka.ms/pl-databricks) на сайте GitHub.
-
-### <a name="azure-data-lake-analytics"></a><a id="adla"></a>Аналитика озера данных Azure
-
-Azure Data Lake Analytics — это платформа аналитики больших данных в облаке Azure. Ее можно использовать как целевой объект вычислений с помощью конвейера Машинного обучения Azure.
-
-Прежде чем ее использовать, создайте учетную запись Azure Data Lake Analytics. Чтобы создать этот ресурс, см. статью [Начало работы с Azure Data Lake Analytics с помощью портала Azure](https://docs.microsoft.com/azure/data-lake-analytics/data-lake-analytics-get-started-portal).
-
-Чтобы вложить Azure Data Lake Analytics в качестве целевого объекта вычислений, используйте пакет SDK машинного обучения Azure и укажите следующие сведения.
-
-* __Имя вычисления__. Имя, которое вы хотите назначить как вычислительный ресурс.
-* __Группа ресурсов__. Группа ресурсов, содержащая учетную запись Data Lake Analytics.
-* __Имя учетной записи__. имя учетной записи Data Lake Analytics.
-
-Следующий код демонстрирует, как вложить Data Lake Analytics в качестве целевого объекта вычислений.
-
-```python
-import os
-from azureml.core.compute import ComputeTarget, AdlaCompute
-from azureml.exceptions import ComputeTargetException
-
-
-adla_compute_name = os.environ.get(
-    "AML_ADLA_COMPUTE_NAME", "<adla_compute_name>")
-adla_resource_group = os.environ.get(
-    "AML_ADLA_RESOURCE_GROUP", "<adla_resource_group>")
-adla_account_name = os.environ.get(
-    "AML_ADLA_ACCOUNT_NAME", "<adla_account_name>")
-
-try:
-    adla_compute = ComputeTarget(workspace=ws, name=adla_compute_name)
-    print('Compute target already exists')
-except ComputeTargetException:
-    print('compute not found')
-    print('adla_compute_name {}'.format(adla_compute_name))
-    print('adla_resource_id {}'.format(adla_resource_group))
-    print('adla_account_name {}'.format(adla_account_name))
-    # create attach config
-    attach_config = AdlaCompute.attach_configuration(resource_group=adla_resource_group,
-                                                     account_name=adla_account_name)
-    # Attach ADLA
-    adla_compute = ComputeTarget.attach(
-        ws,
-        adla_compute_name,
-        attach_config
-    )
-
-    adla_compute.wait_for_completion(True)
-```
-
-Более подробный пример см. в [примере записной книжки](https://aka.ms/pl-adla) на сайте GitHub.
-
-> [!TIP]
-> Конвейеры машинного обучения Azure работают только с хранимыми данными в хранилище данных учетной записи Data Lake Analytics по умолчанию. Если данные, с которыми необходимо работать, находятся в хранилище, отличном от хранилища по умолчанию, можно использовать [`DataTransferStep`](https://docs.microsoft.com/python/api/azureml-pipeline-steps/azureml.pipeline.steps.data_transfer_step.datatransferstep?view=azure-ml-py) для копирования данных перед обучением.
-
-## <a name="set-up-in-azure-machine-learning-studio"></a>Настройка в Студии машинного обучения Azure
-
-Вы можете получить доступ к целевым объектам вычислений, связанным с вашей рабочей областью, в Студии машинного обучения Azure.  С помощью Студии можно выполнять следующие задачи.
-
-* [Просмотр целевых объектов вычислений](#portal-view), которые присоединены к рабочей области.
-* [Создание целевого объекта вычислений](#portal-create) в рабочей области.
-* [Присоединение целевого объекта вычислений](#portal-reuse), созданного за пределами рабочей области
-
-
-После того как целевой объект будет создан и присоединен к рабочему пространству, вы будете использовать его в конфигурации запуска с объектом `ComputeTarget`. 
-
-```python
-from azureml.core.compute import ComputeTarget
-myvm = ComputeTarget(workspace=ws, name='my-vm-name')
-```
-
-### <a name="view-compute-targets"></a><a id="portal-view"></a>Просмотр целевых объектов вычислений
-
-
-Чтобы просмотреть целевые объекты вычислений для своей рабочей области, сделайте следующее:
-
-1. Перейдите в [Студию машинного обучения Azure](https://ml.azure.com).
- 
-1. В разделе __Приложения__ выберите __Вычисления__.
-
-    [![Просмотр вкладки вычислений](./media/how-to-set-up-training-targets/azure-machine-learning-service-workspace.png)](./media/how-to-set-up-training-targets/azure-machine-learning-service-workspace-expanded.png)
-
-### <a name="create-a-compute-target"></a><a id="portal-create"></a>Создание целевого объекта вычислений
-
-Выполните указанные выше шаги, чтобы просмотреть список целевых объектов вычислений. Затем выполните следующие действия, чтобы создать целевой объект вычислений. 
-
-1. Щелкните значок плюса (+), чтобы добавить целевой объект вычислений.
-
-    ![Добавление целевого объекта вычислений](./media/how-to-set-up-training-targets/add-compute-target.png) 
-
-1. Введите имя для целевого объекта вычислений. 
-
-1. Выберите **Вычислительная среда Машинного обучения** в качестве типа вычислительной среды для среды __обучения__. 
-
-    >[!NOTE]
-    >Вычислительная среда Машинного обучения Azure — это единственный ресурс управляемых вычислений, который вы можете создать в Студии машинного обучения Azure.  После создания все вычислительные ресурсы можно присоединить.
-
-1. Заполните форму. Введите значения для обязательных свойств, в частности, укажите **семейство виртуальных машин** и **максимальное количество узлов**, до которого можно развернуть вычислительный объект.  
-
-1. Нажмите кнопку __создания__.
-
-
-1. Чтобы увидеть состояние операции создания, выберите целевой объект вычислений из списка.
-
-    ![Выбор целевого объекта вычислений, чтобы просмотреть состояние операции создания](./media/how-to-set-up-training-targets/View_list.png)
-
-1. Ниже приведены сведения о выбранном целевом объекте вычислений. 
-
-    ![Просмотр сведений о целевом объекте вычислений](./media/how-to-set-up-training-targets/compute-target-details.png) 
-
-### <a name="attach-compute-targets"></a><a id="portal-reuse"></a>Присоединение целевых объектов вычислений
-
-Чтобы использовать целевые объекты вычислений, созданные за пределами рабочей области Машинного обучения Azure, необходимо их присоединить. Присоединение целевого объекта вычислений сделает его доступным для рабочей области.
-
-Выполните описанные ранее шаги, чтобы просмотреть список целевых объектов вычислений. Выполните следующие действия, чтобы присоединить целевой объект вычислений. 
-
-1. Щелкните значок плюса (+), чтобы добавить целевой объект вычислений. 
-1. Введите имя для целевого объекта вычислений. 
-1. Выберите тип вычислительной среды, который нужно подключить для __обучения__.
-
-    > [!IMPORTANT]
-    > Не все типы вычислительных сред можно присоединить из Студии машинного обучения Azure. Типы вычислительных сред, которые в настоящее время можно подключить для обучения:
-    >
-    > * Удаленная виртуальная машина.
-    > * Azure Databricks (для использования в конвейерах машинного обучения).
-    > * Azure Data Lake Analytics (для использования в конвейерах машинного обучения).
-    > * Azure HDInsight
-
-1. Заполните форму и укажите значения для обязательных свойств.
-
-    > [!NOTE]
-    > Корпорация Майкрософт рекомендует использовать ключи SSH, так как они безопаснее, чем пароли. Пароли подвержены атакам методом подбора. Ключи SSH задействуют криптографические подписи. Сведения о создании ключей SSH для использования на Виртуальных машинах Azure см. в следующих документах:
-    >
-    > * [Создание и использование ключей SSH в Linux или macOS](https://docs.microsoft.com/azure/virtual-machines/linux/mac-create-ssh-keys)
-    > * [Создание и использование ключей SSH в Windows](https://docs.microsoft.com/azure/virtual-machines/linux/ssh-from-windows)
-
-1. Выберите __Подключить__. 
-1. Чтобы просмотреть состояние операции подключения, выберите целевой объект вычислений из списка.
-
-## <a name="set-up-with-cli"></a>Настройка с помощью интерфейса командной строки
-
-Чтобы получить доступ к целевым объектам вычислений, которые связаны с вашей рабочей областью, используйте [расширение CLI](reference-azure-machine-learning-cli.md) для Машинного обучения Azure.  Вы можете использовать Azure CLI для таких целей.
-
-* Создание управляемого целевого объекта вычислений.
-* Обновление управляемого целевого объекта вычислений.
-* Присоединение управляемого целевого объекта вычислений.
-
-Дополнительные сведения см. в разделе [Управление ресурсами](reference-azure-machine-learning-cli.md#resource-management).
-
-## <a name="set-up-with-vs-code"></a>Настройка с помощью VS Code
-
-Чтобы получить доступ к целевым объектам вычислений, которые связаны с вашей рабочей областью, а также создать их и управлять ими, можно использовать [расширение VS Code](how-to-manage-resources-vscode.md#compute-clusters) для Машинного обучения Azure.
-
-## <a name="submit-training-run-using-azure-machine-learning-sdk"></a><a id="submit"></a>Отправка запроса на запуск выполнения обучения с помощью пакета SDK для Машинного обучения Azure
-
-После создания конфигурации запуска, используйте ее для выполнения эксперимента.  Шаблон кода для отправки запуска на выполнение обучения одинаковый для всех типов целевых объектов вычислений.
-
-1. Создание эксперимента для запуска
-1. Выполните прогон.
-1. Дождитесь завершения прогона.
-
-> [!IMPORTANT]
-> При отправке запроса на запуск выполнения обучения создается моментальный снимок каталога, содержащего сценарии обучения, и отправляется на целевой объект вычислений. Он также хранится в составе эксперимента в рабочей области. Если изменить файлы и отправить запрос на запуск выполнения снова, будут переданы только измененные файлы.
->
-> [!INCLUDE [amlinclude-info](../../includes/machine-learning-amlignore-gitignore.md)]
-> 
-> Дополнительные сведения см. в разделе о [моментальных снимках](concept-azure-machine-learning-architecture.md#snapshots).
-
-### <a name="create-an-experiment"></a>Создание эксперимента
-
-Сначала создайте эксперимент в рабочей области.
-
-[!code-python[](~/aml-sdk-samples/ignore/doc-qa/how-to-set-up-training-targets/local.py?name=experiment)]
-
-### <a name="submit-the-experiment"></a>Отправка эксперимента
-
-Отправка эксперимента с помощью объекта `ScriptRunConfig`.  Этот объект включает в себя следующее.
+Вы отправляете обучающий эксперимент с помощью объекта [скриптрунконфиг](https://docs.microsoft.com/python/api/azureml-core/azureml.core.scriptrunconfig?view=azure-ml-py) .  Этот объект включает в себя следующее.
 
 * **source_directory**: исходный каталог, который содержит сценарий обучения.
 * **script**: определение сценария обучения.
-* **run_config**: конфигурация запуска, которая, в свою очередь, определяет, где будет проходить обучение.
+* **run_config**: [Конфигурация запуска](https://docs.microsoft.com/python/api/azureml-core/azureml.core.runconfiguration?view=azure-ml-py), которая, в свою очередь, определяет, где будет выполняться обучение. В `run_config` задается целевой объект вычислений и среда, используемая при запуске сценария обучения.  
 
-Например, чтобы использовать [локальную конфигурацию](#local) целевого объекта, выполните следующее.
+## <a name="whats-an-environment"></a>Что такое среда?
 
-[!code-python[](~/aml-sdk-samples/ignore/doc-qa/how-to-set-up-training-targets/local.py?name=local_submit)]
+Машинное обучение Azure [средах](concept-environments.md) — это инкапсуляция среды, в которой выполняется обучение машинного обучения. Они указывают пакеты Python, переменные среды и параметры программного обеспечения для сценариев обучения и оценки. Они также указывают время выполнения (Python, Spark или DOCKER).  
 
-Переключите тот же эксперимент для запуска в другом целевом объекте вычислений, используя другую конфигурацию запуска, такую ​​как [amlcompute target](#amlcompute).
+Среды указываются в  `run_config` объекте внутри `ScriptRunConfig` .
 
-[!code-python[](~/aml-sdk-samples/ignore/doc-qa/how-to-set-up-training-targets/amlcompute2.py?name=amlcompute_submit)]
+## <a name="train-your-model"></a><a id="submit"></a>Обучение модели
 
-> [!TIP]
-> В этом примере для обучения по умолчанию используется только один узел целевого объекта вычислений. Чтобы использовать несколько узлов, задайте в качестве значения `node_count` конфигурации запуска их число. Например, следующий код задает в качестве количества узлов, используемых для обучения, число четыре.
->
-> ```python
-> src.run_config.node_count = 4
-> ```
+Шаблон кода для отправки запуска на выполнение обучения одинаковый для всех типов целевых объектов вычислений.
+
+1. Создание эксперимента для запуска
+1. Создание среды, в которой будет выполняться скрипт
+1. Создание конфигурации запуска сценария, которая ссылается на целевой объект вычислений и среду
+1. Выполнение прогона
+1. Дождитесь завершения выполнения
 
 Также вы можете:
 
@@ -678,86 +67,88 @@ myvm = ComputeTarget(workspace=ws, name='my-vm-name')
 * Отправьте запрос на запуск HyperDrive для [настройки гиперпараметров](how-to-tune-hyperparameters.md).
 * Отправьте эксперимент с помощью расширения [VS Code](tutorial-train-deploy-image-classification-model-vscode.md#train-the-model).
 
-Дополнительные сведения см. в документации по [ScriptRunConfig](https://docs.microsoft.com/python/api/azureml-core/azureml.core.scriptrunconfig?view=azure-ml-py) и [RunConfiguration](https://docs.microsoft.com/python/api/azureml-core/azureml.core.runconfiguration?view=azure-ml-py).
+## <a name="create-an-experiment"></a>Создание эксперимента
 
-## <a name="create-run-configuration-and-submit-run-using-azure-machine-learning-cli"></a>Создание конфигурации запуска и отправка запроса на запуск выполнения с помощью CLI Машинного обучения Azure
+Создайте эксперимент в рабочей области.
 
-[Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest) и [расширение CLI Машинного обучения](reference-azure-machine-learning-cli.md) можно использовать для создания конфигураций запуска и отправки запросов на запуск для различных целевых объектов вычислений. В следующих примерах предполагается, что у вас уже есть рабочая область машинного обучения Azure и вы вошли в Azure с помощью команды `az login` интерфейса командной строки. 
+```python
+from azureml.core import Experiment
 
-[!INCLUDE [select-subscription](../../includes/machine-learning-cli-subscription.md)] 
+experiment_name = 'my_experiment'
 
-### <a name="create-run-configuration"></a>Создание конфигурации запуска
-
-Самый простой способ создать конфигурацию запуска — перейти к папке, содержащей скрипты Python машинного обучения, и воспользоваться командой CLI.
-
-```azurecli
-az ml folder attach
+experiment = Experiment(workspace=ws, name=experiment_name)
 ```
 
-Эта команда создает вложенную папку `.azureml`, содержащую файлы шаблонов конфигурации запуска для различных целевых объектов вычислений. Вы можете скопировать и изменить эти файлы, чтобы настроить конфигурацию, например добавить пакеты Python или изменить параметры Docker.  
+## <a name="create-an-environment"></a>Создание среды
 
-### <a name="structure-of-run-configuration-file"></a>Структура файла конфигурации запуска
+Проверенные среды содержат коллекции пакетов Python и доступны в рабочей области по умолчанию. Эти среды поддерживаются кэшированными образами DOCKER, что сокращает затраты на подготовку к запуску. Для удаленного целевого объекта вычислений можно использовать одну из распространенных проверенных сред, чтобы начать с:
 
-Для файла конфигурации запуска используется формат YAML со следующими разделами:
- * выполняемый скрипт и его аргументы;
- * имя целевого объекта вычислений: local или имя вычисления в рабочей области;
- * параметры для выполнения запуска: платформа, коммуникатор для распределенных запусков, максимальная длительность и количество вычислительных узлов;
- * раздел "Среда" (дополнительные сведения о полях в этом разделе см. в статье [Создание сред для обучения и развертывания и управление ими](how-to-use-environments.md));
-   * Чтобы указать пакеты Python, которые нужно установить для запуска, создайте [файл среды conda](https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html#create-env-file-manually) и задайте значение поля __condaDependenciesFile__.
- * сведения журнала выполнения, позволяющие указать папку файла журнала, а также включить или отключить сбор выходных данных и моментальные снимки журнала выполнения;
- * сведения о конфигурации, касающиеся выбранной платформы;
- * сведения о ссылках на данные и хранилище данных;
- * сведения о конфигурации, касающиеся Вычислительной среды Машинного обучения и необходимые для создания нового кластера.
+```python
+from azureml.core import Workspace, Environment
 
-Полную схему runconfig см. в примере [JSON-файла](https://github.com/microsoft/MLOps/blob/b4bdcf8c369d188e83f40be8b748b49821f71cf2/infra-as-code/runconfigschema.json).
-
-### <a name="create-an-experiment"></a>Создание эксперимента
-
-Сначала создайте эксперимент для запусков.
-
-```azurecli
-az ml experiment create -n <experiment>
+ws = Workspace.from_config()
+my_environment = Environment.get(workspace=ws, name="AzureML-Minimal")
 ```
 
-### <a name="script-run"></a>Запуск скрипта
+Дополнительные сведения и сведения о средах см. [в разделе создание & использование программных сред в машинное обучение Azure](how-to-use-environments.md).
+  
+### <a name="local-compute-target"></a>Локальный целевой объект вычислений
 
-Чтобы отправить запрос на запуск скрипта, воспользуйтесь следующей командой.
+Если целевым объектом вычислений является **локальный компьютер**, вы несете ответственность за обеспечение доступности всех необходимых пакетов в среде Python, в которой выполняется сценарий.  Используйте `python.user_managed_dependencies` для использования текущей среды Python (или Python по указанному пути).
 
-```azurecli
-az ml run submit-script -e <experiment> -c <runconfig> my_train.py
+```python
+from azureml.core import Environment
+
+# Editing a run configuration property on-fly.
+my_environment = Environment("user-managed-env")
+
+my_environment.python.user_managed_dependencies = True
+
+# You can choose a specific Python environment by pointing to a Python path 
+#my_environment.python.interpreter_path = '/home/johndoe/miniconda3/envs/myenv/bin/python'
 ```
 
-### <a name="hyperdrive-run"></a>Запуск HyperDrive
+## <a name="create-script-run-configuration"></a>Создать конфигурацию запуска скрипта
 
-Используя HyperDrive с Azure CLI, можно запускать выполнение для настройки параметров. Сначала создайте файл конфигурации HyperDrive в следующем формате. Дополнительные сведения о параметрах настройки гиперпараметров см. в статье [Настройка гиперпараметров модели](how-to-tune-hyperparameters.md).
+Теперь, когда у вас есть целевой объект вычислений ( `compute_target` ) и среда ( `my_environment` ), создайте конфигурацию запуска сценария, которая запускает сценарий обучения ( `train.py` ), расположенный в `project_folder` каталоге:
 
-```yml
-# hdconfig.yml
-sampling: 
-    type: random # Supported options: Random, Grid, Bayesian
-    parameter_space: # specify a name|expression|values tuple for each parameter.
-    - name: --penalty # The name of a script parameter to generate values for.
-      expression: choice # supported options: choice, randint, uniform, quniform, loguniform, qloguniform, normal, qnormal, lognormal, qlognormal
-      values: [0.5, 1, 1.5] # The list of values, the number of values is dependent on the expression specified.
-policy: 
-    type: BanditPolicy # Supported options: BanditPolicy, MedianStoppingPolicy, TruncationSelectionPolicy, NoTerminationPolicy
-    evaluation_interval: 1 # Policy properties are policy specific. See the above link for policy specific parameter details.
-    slack_factor: 0.2
-primary_metric_name: Accuracy # The metric used when evaluating the policy
-primary_metric_goal: Maximize # Maximize|Minimize
-max_total_runs: 8 # The maximum number of runs to generate
-max_concurrent_runs: 2 # The number of runs that can run concurrently.
-max_duration_minutes: 100 # The maximum length of time to run the experiment before cancelling.
+```python
+from azureml.core import ScriptRunConfig
+
+script_run_config = ScriptRunConfig(source_directory=project_folder, script='train.py')
+
+# Set compute target
+script_run_config.run_config.target = my_compute_target
+
+# Set environment.   If you don't do this, a default environment will be created.
+script_run_config.run_config.environment = my_environment
 ```
 
-Добавьте этот файл вместе с файлами конфигурации запуска. Затем отправьте запрос на запуск HyperDrive с помощью следующей команды.
-```azurecli
-az ml run submit-hyperdrive -e <experiment> -c <runconfig> --hyperdrive-configuration-name <hdconfig> my_train.py
+Также может потребоваться задать платформу для запуска.
+
+* Для кластера HDI:
+    ```python
+    src.run_config.framework = "pyspark"
+    ```
+
+* Для удаленной виртуальной машины:
+    ```python
+    src.run_config.framework = "python"
+    ```
+
+## <a name="submit-the-experiment"></a>Отправка эксперимента
+
+```python
+run = experiment.submit(config=script_run_config)
 ```
 
-Запишите данные раздела *arguments* в схеме runconfig и *пространство параметров* в файле конфигурации HyperDrive. Они содержат аргументы командной строки, передаваемые в скрипт обучения. Значение в схеме runconfig остается неизменным для каждой итерации, в то время как диапазон в файле конфигурации HyperDrive меняется. Не указывайте один и тот же аргумент в обоих файлах.
+> [!IMPORTANT]
+> При отправке запроса на запуск выполнения обучения создается моментальный снимок каталога, содержащего сценарии обучения, и отправляется на целевой объект вычислений. Он также хранится в составе эксперимента в рабочей области. Если изменить файлы и отправить запрос на запуск выполнения снова, будут переданы только измененные файлы.
+>
+> [!INCLUDE [amlinclude-info](../../includes/machine-learning-amlignore-gitignore.md)]
+> 
+> Дополнительные сведения о моментальных снимках см. в разделе [моментальные снимки](concept-azure-machine-learning-architecture.md#snapshots).
 
-Дополнительные сведения по этим командам интерфейса командной строки ```az ml``` см. в [справочной документации](reference-azure-machine-learning-cli.md).
 
 <a id="gitintegration"></a>
 

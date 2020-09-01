@@ -41,6 +41,8 @@
       href: location-condition.md
     - name: Средство "Что если"
       href: what-if-tool.md
+    - name: Непрерывная оценка доступа
+      href: concept-continuous-access-evaluation.md
     - name: Пользовательские элементы управления
       href: controls.md
     - name: Перенос классической политики

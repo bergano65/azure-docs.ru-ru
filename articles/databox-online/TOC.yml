@@ -154,7 +154,7 @@
         - name: Диагностика
           items:
             - name: Проблемы с устройством
-              href: azure-stack-edge-troubleshoot.md
+              href: azure-stack-edge-gpu-troubleshoot.md
             - name: Проблемы с заказом
               href: azure-stack-edge-troubleshoot-ordering.md
             - name: Обращение в службу поддержки Майкрософт

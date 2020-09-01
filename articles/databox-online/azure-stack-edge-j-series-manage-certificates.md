@@ -1,19 +1,19 @@
 ---
-title: Использование сертификатов с Azure Stack ребром | Документация Майкрософт
-description: Описывает использование сертификатов с Azure Stack пограничным устройством, включая причины использования, типы и способ отправки сертификатов на устройство.
+title: Использование сертификатов с Azure Stackным графическим процессором | Документация Майкрософт
+description: Описывает использование сертификатов с Azure Stackным графическим процессором, включая причины использования, типы и способ отправки сертификатов на устройство.
 services: Azure Stack Edge
 author: alkohli
 ms.service: databox
 ms.subservice: edge
 ms.topic: article
-ms.date: 02/11/2020
+ms.date: 08/28/2020
 ms.author: alkohli
-ms.openlocfilehash: e257ecbcc608dfc6ecb9aedae69eeef083395836
-ms.sourcegitcommit: 656c0c38cf550327a9ee10cc936029378bc7b5a2
+ms.openlocfilehash: 7742d036857525ce6be64a53234f7aa717d4bdca
+ms.sourcegitcommit: d7352c07708180a9293e8a0e7020b9dd3dd153ce
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89086350"
+ms.lasthandoff: 08/30/2020
+ms.locfileid: "89147088"
 ---
 # <a name="use-certificates-with-azure-stack-edge-series"></a>Использование сертификатов с серийными краями Azure Stack 
 

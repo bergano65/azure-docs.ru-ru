@@ -4,12 +4,12 @@ description: Сведения об API-интерфейсах и средств�
 ms.topic: conceptual
 ms.date: 05/22/2020
 ms.custom: seodec18
-ms.openlocfilehash: c7484e59391be8f4853c2394bff20c6d9676dec9
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 502eb08631223215933b75dca882c12c02d17bd9
+ms.sourcegitcommit: d7352c07708180a9293e8a0e7020b9dd3dd153ce
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87032198"
+ms.lasthandoff: 08/30/2020
+ms.locfileid: "89146408"
 ---
 # <a name="overview-of-batch-apis-and-tools"></a>Общие сведения об API-интерфейсах и средствах пакетной службы
 
@@ -44,10 +44,10 @@ ms.locfileid: "87032198"
 | API | Справочник по API | Скачивание | Учебник | Примеры кода | Дополнительные сведения |
 | --- | --- | --- | --- | --- | --- |
 | **Пакетная служба (REST)** |[REST API Azure — документация](/rest/api/batchservice/) |Недоступно |- |- | [Поддерживаемые версии](/rest/api/batchservice/batch-service-rest-api-versioning) |
-| **Пакетная служба (.NET)** |[Пакет Azure SDK для .NET — документация](/dotnet/api/overview/azure/batch?view=azure-dotnet) |[NuGet](https://www.nuget.org/packages/Microsoft.Azure.Batch/) |[Руководство](tutorial-parallel-dotnet.md) |[GitHub](https://github.com/Azure-Samples/azure-batch-samples/tree/master/CSharp) | [Заметки о выпуске](https://aka.ms/batch-net-dataplane-changelog) |
-| **Пакетная служба Python** |[Пакет Azure SDK для Python — документация](/python/api/overview/azure/batch/client?view=azure-python) |[PyPI](https://pypi.org/project/azure-batch/) |[Руководство](tutorial-parallel-python.md)|[GitHub](https://github.com/Azure-Samples/azure-batch-samples/tree/master/Python/Batch) | [Файл сведений](https://github.com/Azure/azure-sdk-for-python/blob/master/sdk/batch/azure-batch/README.md) |
-| **Node.js для пакетной службы** |[Пакет Azure SDK для JavaScript — документация](/javascript/api/overview/azure/batch/client?view=azure-node-latest) |[npm](https://www.npmjs.com/package/azure-batch) |[Руководство](batch-nodejs-get-started.md) |- | [Файл сведений](https://github.com/Azure/azure-sdk-for-node/tree/master/lib/services/batch) |
-| **Java для пакетной службы** |[Пакет Azure SDK для Java — документация](/java/api/overview/azure/batch?view=azure-java-stable) |[Maven](https://search.maven.org/search?q=a:azure-batch) |- |[GitHub](https://github.com/Azure-Samples/azure-batch-samples/tree/master/Java) | [Файл сведений](https://github.com/Azure/azure-batch-sdk-for-java)|
+| **Пакетная служба (.NET)** |[Пакет Azure SDK для .NET — документация](/dotnet/api/overview/azure/batch) |[NuGet](https://www.nuget.org/packages/Microsoft.Azure.Batch/) |[Руководство](tutorial-parallel-dotnet.md) |[GitHub](https://github.com/Azure-Samples/azure-batch-samples/tree/master/CSharp) | [Заметки о выпуске](https://aka.ms/batch-net-dataplane-changelog) |
+| **Пакетная служба Python** |[Пакет Azure SDK для Python — документация](/python/api/overview/azure/batch/client) |[PyPI](https://pypi.org/project/azure-batch/) |[Руководство](tutorial-parallel-python.md)|[GitHub](https://github.com/Azure-Samples/azure-batch-samples/tree/master/Python/Batch) | [Файл сведений](https://github.com/Azure/azure-sdk-for-python/blob/master/sdk/batch/azure-batch/README.md) |
+| **Node.js для пакетной службы** |[Пакет Azure SDK для JavaScript — документация](/javascript/api/overview/azure/batch/client) |[npm](https://www.npmjs.com/package/azure-batch) |[Руководство](batch-nodejs-get-started.md) |- | [Файл сведений](https://github.com/Azure/azure-sdk-for-node/tree/master/lib/services/batch) |
+| **Java для пакетной службы** |[Пакет Azure SDK для Java — документация](/java/api/overview/azure/batch) |[Maven](https://search.maven.org/search?q=a:azure-batch) |- |[GitHub](https://github.com/Azure-Samples/azure-batch-samples/tree/master/Java) | [Файл сведений](https://github.com/Azure/azure-batch-sdk-for-java)|
 
 ## <a name="batch-management-apis"></a>API-интерфейсы для управления пакетной службой
 
@@ -56,10 +56,10 @@ API-интерфейсы Azure Resource Manager для пакетной служ
 | API | Справочник по API | Скачивание | Учебник | Примеры кода |
 | --- | --- | --- | --- | --- |
 | **REST для управления пакетной службой** |[REST API Azure — документация](/rest/api/batchmanagement/) |- |- |[GitHub](https://github.com/Azure-Samples/batch-dotnet-manage-batch-accounts) |
-| **Библиотека .NET для управления пакетной службой** |[Пакет Azure SDK для .NET — документация](/dotnet/api/overview/azure/batch/management?view=azure-dotnet) |[NuGet](https://www.nuget.org/packages/Microsoft.Azure.Management.Batch/) | [Руководство](batch-management-dotnet.md) |[GitHub](https://github.com/Azure-Samples/azure-batch-samples/tree/master/CSharp) |
-| **Python для управления пакетной службой** |[Пакет Azure SDK для Python — документация](/python/api/overview/azure/batch/management?view=azure-python) |[PyPI](https://pypi.org/project/azure-mgmt-batch/) |- |- |
-| **Node.js для управления пакетной службой** |[Пакет Azure SDK для JavaScript — документация](/javascript/api/overview/azure/batch/management?view=azure-node-latest) |[npm](https://www.npmjs.com/package/azure-arm-batch) |- |- | 
-| **Java для управления пакетной службой** |[Пакет Azure SDK для Java — документация](/java/api/overview/azure/batch/management?view=azure-java-stable) |[Maven](https://search.maven.org/search?q=a:azure-batch) |- |- |
+| **Библиотека .NET для управления пакетной службой** |[Пакет Azure SDK для .NET — документация](/dotnet/api/overview/azure/batch/management) |[NuGet](https://www.nuget.org/packages/Microsoft.Azure.Management.Batch/) | [Руководство](batch-management-dotnet.md) |[GitHub](https://github.com/Azure-Samples/azure-batch-samples/tree/master/CSharp) |
+| **Python для управления пакетной службой** |[Пакет Azure SDK для Python — документация](/python/api/overview/azure/batch/management) |[PyPI](https://pypi.org/project/azure-mgmt-batch/) |- |- |
+| **Node.js для управления пакетной службой** |[Пакет Azure SDK для JavaScript — документация](/javascript/api/overview/azure/batch/management) |[npm](https://www.npmjs.com/package/azure-arm-batch) |- |- | 
+| **Java для управления пакетной службой** |[Пакет Azure SDK для Java — документация](/java/api/overview/azure/batch/management) |[Maven](https://search.maven.org/search?q=a:azure-batch) |- |- |
 
 ## <a name="batch-command-line-tools"></a>Программы командной строки пакетной службы
 

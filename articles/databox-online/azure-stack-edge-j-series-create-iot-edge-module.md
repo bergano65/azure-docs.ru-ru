@@ -1,19 +1,19 @@
 ---
-title: Модуль IoT Edge C# для Azure Stack ребра | Документация Майкрософт
-description: Узнайте, как разработать модуль IoT Edge C#, который можно развернуть на Azure Stackном крае.
+title: Модуль IoT Edge C# для Azure Stackного ребра с помощью GPU | Документация Майкрософт
+description: Узнайте, как разработать модуль IoT Edge C#, который может быть развернут на устройстве Azure Stackного GPU.
 services: databox
 author: alkohli
 ms.service: databox
 ms.subservice: edge
 ms.topic: article
-ms.date: 02/11/2020
+ms.date: 08/28/2020
 ms.author: alkohli
-ms.openlocfilehash: a6fb02033d7f242649907eaed8bf01aa23b3cbbe
-ms.sourcegitcommit: 656c0c38cf550327a9ee10cc936029378bc7b5a2
+ms.openlocfilehash: cef6524bd228d5fed342cabfb2959e5d8ab8954e
+ms.sourcegitcommit: d7352c07708180a9293e8a0e7020b9dd3dd153ce
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89084990"
+ms.lasthandoff: 08/30/2020
+ms.locfileid: "89146238"
 ---
 # <a name="develop-a-c-iot-edge-module-to-move-files-on-azure-stack-edge"></a>Разработка модуля IoT Edge C# для перемещения файлов на Azure Stack границе
 

@@ -6,12 +6,12 @@ ms.topic: article
 ms.date: 07/08/2020
 author: palma21
 ms.author: jpalma
-ms.openlocfilehash: 273c41a523de8b2776982e5229c5a8b618b82c19
-ms.sourcegitcommit: 5f7b75e32222fe20ac68a053d141a0adbd16b347
+ms.openlocfilehash: 45c60069c27a2bb9b34cc53eb394bd44a04bd0ba
+ms.sourcegitcommit: d7352c07708180a9293e8a0e7020b9dd3dd153ce
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/31/2020
-ms.locfileid: "87475198"
+ms.lasthandoff: 08/30/2020
+ms.locfileid: "89144623"
 ---
 # <a name="supported-kubernetes-versions-in-azure-kubernetes-service-aks"></a>Поддерживаемые версии Kubernetes в Службе Azure Kubernetes (AKS)
 
@@ -135,14 +135,14 @@ az aks get-versions --location eastus --output table
 
 |  Версия K8s | Вышестоящий выпуск  | Предварительная версия AKS  | AKS ДЖ  | Завершение срока службы |
 |--------------|-------------------|--------------|---------|-------------|
-| 1,17  | Dec-09-19  | 19 января   | 20 июля  | 1,20 ДЖ | 
-| 1,18  | Мар-23-20  | 20 мая   | 20 августа  | 1,21 ДЖ | 
-| 1,19  | Авг-04-20  | 20 августа   | 20 ноя  | 1,22 ДЖ | 
-| 1,20  | * Ноя 20    | * Дек 20   | * 21 января  | 1,23 ДЖ | 
+| 1,17  | Dec-09-19  | Янв 2019   | Июл 2020  | 1,20 ДЖ | 
+| 1,18  | Мар-23-20  | Май 2020 г.   | Авг 2020  | 1,21 ДЖ | 
+| 1,19  | Авг-04-20  | Авг 2020   | 2020 ноября  | 1,22 ДЖ | 
+| 1,20  | * Ноя 2020    | * Dec 2020   | * Янв 2021  | 1,23 ДЖ | 
 
-\*Подтверждение ожидающей вышестоящей даты выпуска.
+\* Подтверждение ожидающей вышестоящей даты выпуска.
 
-## <a name="faq"></a>Вопросы и ответы
+## <a name="faq"></a>ВОПРОСЫ И ОТВЕТЫ
 
 **Что происходит, когда пользователь обновляет кластер Kubernetes с неподдерживаемой дополнительной версией?**
 

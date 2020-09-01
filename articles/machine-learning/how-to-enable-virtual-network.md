@@ -11,12 +11,12 @@ author: aashishb
 ms.date: 07/07/2020
 ms.topic: conceptual
 ms.custom: how-to, contperfq4, tracking-python
-ms.openlocfilehash: 0a7a5f21ee868da2b9c3a6c7dc8bb5968531d0d0
-ms.sourcegitcommit: ac7ae29773faaa6b1f7836868565517cd48561b2
+ms.openlocfilehash: 343063c74912b234268757c36384ea876c068c21
+ms.sourcegitcommit: d7352c07708180a9293e8a0e7020b9dd3dd153ce
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88824208"
+ms.lasthandoff: 08/30/2020
+ms.locfileid: "89146830"
 ---
 # <a name="network-isolation-during-training--inference-with-private-virtual-networks"></a>Сетевая изоляция во время обучения & вывода с частными виртуальными сетями
 [!INCLUDE [applies-to-skus](../../includes/aml-applies-to-basic-enterprise-sku.md)]
@@ -234,7 +234,7 @@ blob_datastore = Datastore.register_azure_blob_container(workspace=ws,
 - Файл с разделителями
 - JSON 
 - Parquet
-- SQL
+- SQL-код
 - Файл
 
 Следующий код создает новый набор данных JSON и задает `validate=False` .
@@ -438,7 +438,7 @@ except ComputeTargetException:
     cpu_cluster.wait_for_completion(show_output=True)
 ```
 
-Когда завершится процесс создания, переходите в своем эксперименте к обучению модели с помощью кластера. Дополнительные сведения вы найдете в статье [Настройка целевых объектов вычислений для обучения моделей](how-to-set-up-training-targets.md).
+Когда завершится процесс создания, переходите в своем эксперименте к обучению модели с помощью кластера. Дополнительные сведения см. [в статье использование целевого объекта вычислений для обучения](how-to-set-up-training-targets.md).
 
 [!INCLUDE [low-pri-note](../../includes/machine-learning-low-pri-vm.md)]
 
@@ -667,7 +667,7 @@ aks_target.wait_for_completion(show_output = True)
 > * Регион рабочей области Машинное обучение Azure должен быть [включен](https://docs.microsoft.com/azure/private-link/private-link-overview#availability). 
 > * Реестр контейнеров Azure должен иметь версию Premium. Дополнительные сведения об обновлении см. в разделе [Изменение SKU](/azure/container-registry/container-registry-skus#changing-skus).
 > * Реестр контейнеров Azure должен находиться в той же виртуальной сети и подсети, что и учетная запись хранения и целевые объекты вычислений, используемые для обучения или аналитики.
-> * Рабочая область Машинного обучения Azure должна содержать [кластер вычислительных ресурсов Машинного обучения Azure](how-to-set-up-training-targets.md#amlcompute).
+> * Рабочая область Машинного обучения Azure должна содержать [кластер вычислительных ресурсов Машинного обучения Azure](how-to-create-attach-compute-sdk.md#amlcompute).
 >
 >     Если ACR находится за виртуальной сетью, Машинное обучение Azure не может использовать его напрямую для создания образов Docker. Вместо этого для построения образов используется кластер вычислений.
 
@@ -828,14 +828,15 @@ aks_target.wait_for_completion(show_output = True)
 
     Используйте правила входящего трафика по умолчанию для группы безопасности сети. Дополнительные сведения см. в описании стандартных правил безопасности в статье [о группах безопасности](https://docs.microsoft.com/azure/virtual-network/security-overview#default-security-rules).
 
+
     Если вы не хотите использовать правила для исходящего трафика по умолчанию и хотите ограничить исходящий доступ в виртуальной сети, следуйте инструкциям в разделе [Ограничение исходящих подключений из виртуальной сети](#limiting-outbound-from-vnet).
 
-1. Подключите виртуальную машину или кластер HDInsight к рабочей области Машинного обучения Azure. Дополнительные сведения вы найдете в статье [Настройка целевых объектов вычислений для обучения моделей](how-to-set-up-training-targets.md).
+1. Подключите виртуальную машину или кластер HDInsight к рабочей области Машинного обучения Azure. Дополнительные сведения см. в статье [использование целевых объектов вычислений для обучения модели](how-to-set-up-training-targets.md).
 
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-* [Настройка сред обучения](how-to-set-up-training-targets.md)
+* [Использование целевых объектов вычислений для обучения моделей](how-to-set-up-training-targets.md)
 * [Настройка частных конечных точек](how-to-configure-private-link.md)
 * [Где следует развертывать модели](how-to-deploy-and-where.md)
 * [Использование TLS для защиты веб-службы с помощью Машинного обучения Azure](how-to-secure-web-service.md).

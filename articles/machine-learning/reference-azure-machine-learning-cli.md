@@ -10,12 +10,12 @@ ms.author: jordane
 author: jpe316
 ms.date: 06/22/2020
 ms.custom: seodec18
-ms.openlocfilehash: 5a532ec11cdcd97bd1f72c40f603bce7cc4b12c1
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: f037ea30a1507d4736db7f837e5286701db030e0
+ms.sourcegitcommit: d7352c07708180a9293e8a0e7020b9dd3dd153ce
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85611770"
+ms.lasthandoff: 08/30/2020
+ms.locfileid: "89146710"
 ---
 # <a name="install--use-the-cli-extension-for-azure-machine-learning"></a>Установка и использование расширения CLI для Машинного обучения Azure
 [!INCLUDE [applies-to-skus](../../includes/aml-applies-to-basic-enterprise-sku.md)]
@@ -150,15 +150,49 @@ az extension remove -n azure-cli-ml
 
     См. дополнительные сведения о команде [az ml computetarget attach aks](https://docs.microsoft.com/cli/azure/ext/azure-cli-ml/ml/computetarget/attach?view=azure-cli-latest#ext-azure-cli-ml-az-ml-computetarget-attach-aks).
 
-+ Создайте новый целевой объект AMLcompute.
+### <a name="compute-clusters"></a>Вычислительные кластеры
+
++ Создайте новый управляемый кластер вычислений.
 
     ```azurecli-interactive
     az ml computetarget create amlcompute -n cpu --min-nodes 1 --max-nodes 1 -s STANDARD_D3_V2
     ```
 
-    См. дополнительные сведения о команде [az ml computetarget create amlcompute](https://docs.microsoft.com/cli/azure/ext/azure-cli-ml/ml/computetarget/create?view=azure-cli-latest#ext-azure-cli-ml-az-ml-computetarget-create-amlcompute).
 
-+ <a id="computeinstance"></a>Управление экземплярами вычислений.  Во всех приведенных ниже примерах имя вычислительного экземпляра — **CPU** .
+
++ Создание нового управляемого кластера вычислений с управляемым удостоверением
+
+  + Управляемое удостоверение, назначаемое пользователем
+
+    ```azurecli
+    az ml computetarget create amlcompute --name cpu-cluster --vm-size Standard_NC6 --max-nodes 5 --assign-identity '/subscriptions/<subcription_id>/resourcegroups/<resource_group>/providers/Microsoft.ManagedIdentity/userAssignedIdentities/<user_assigned_identity>'
+    ```
+
+  + Управляемое удостоверение, назначаемое системой
+
+    ```azurecli
+    az ml computetarget create amlcompute --name cpu-cluster --vm-size Standard_NC6 --max-nodes 5 --assign-identity '[system]'
+    ```
++ Добавление управляемого удостоверения в существующий кластер:
+
+    + Управляемое удостоверение, назначаемое пользователем
+        ```azurecli
+        az ml computetarget amlcompute identity assign --name cpu-cluster '/subscriptions/<subcription_id>/resourcegroups/<resource_group>/providers/Microsoft.ManagedIdentity/userAssignedIdentities/<user_assigned_identity>'
+        ```
+    + Управляемое удостоверение, назначаемое системой
+
+        ```azurecli
+        az ml computetarget amlcompute identity assign --name cpu-cluster '[system]'
+        ```
+
+См. дополнительные сведения о команде [az ml computetarget create amlcompute](https://docs.microsoft.com/cli/azure/ext/azure-cli-ml/ml/computetarget/create?view=azure-cli-latest#ext-azure-cli-ml-az-ml-computetarget-create-amlcompute).
+
+[!INCLUDE [aml-clone-in-azure-notebook](../../includes/aml-managed-identity-note.md)]
+
+<a id="computeinstance"></a>
+
+### <a name="compute-instance"></a>Вычислительная операция
+Управление экземплярами вычислений.  Во всех приведенных ниже примерах имя вычислительного экземпляра — **CPU** .
 
     + Создайте новый компутеинстанце.
 
@@ -225,6 +259,36 @@ az extension remove -n azure-cli-ml
     ```
 
     См. дополнительные сведения о команде [az ml experiment list](https://docs.microsoft.com/cli/azure/ext/azure-cli-ml/ml/experiment?view=azure-cli-latest#ext-azure-cli-ml-az-ml-experiment-list).
+
+### <a name="hyperdrive-run"></a>Запуск HyperDrive
+
+Используя HyperDrive с Azure CLI, можно запускать выполнение для настройки параметров. Сначала создайте файл конфигурации HyperDrive в следующем формате. Дополнительные сведения о параметрах настройки гиперпараметров см. в статье [Настройка гиперпараметров модели](how-to-tune-hyperparameters.md).
+
+```yml
+# hdconfig.yml
+sampling: 
+    type: random # Supported options: Random, Grid, Bayesian
+    parameter_space: # specify a name|expression|values tuple for each parameter.
+    - name: --penalty # The name of a script parameter to generate values for.
+      expression: choice # supported options: choice, randint, uniform, quniform, loguniform, qloguniform, normal, qnormal, lognormal, qlognormal
+      values: [0.5, 1, 1.5] # The list of values, the number of values is dependent on the expression specified.
+policy: 
+    type: BanditPolicy # Supported options: BanditPolicy, MedianStoppingPolicy, TruncationSelectionPolicy, NoTerminationPolicy
+    evaluation_interval: 1 # Policy properties are policy specific. See the above link for policy specific parameter details.
+    slack_factor: 0.2
+primary_metric_name: Accuracy # The metric used when evaluating the policy
+primary_metric_goal: Maximize # Maximize|Minimize
+max_total_runs: 8 # The maximum number of runs to generate
+max_concurrent_runs: 2 # The number of runs that can run concurrently.
+max_duration_minutes: 100 # The maximum length of time to run the experiment before cancelling.
+```
+
+Добавьте этот файл вместе с файлами конфигурации запуска. Затем отправьте запрос на запуск HyperDrive с помощью следующей команды.
+```azurecli
+az ml run submit-hyperdrive -e <experiment> -c <runconfig> --hyperdrive-configuration-name <hdconfig> my_train.py
+```
+
+Запишите данные раздела *arguments* в схеме runconfig и *пространство параметров* в файле конфигурации HyperDrive. Они содержат аргументы командной строки, передаваемые в скрипт обучения. Значение в схеме runconfig остается неизменным для каждой итерации, в то время как диапазон в файле конфигурации HyperDrive меняется. Не указывайте один и тот же аргумент в обоих файлах.
 
 ## <a name="dataset-management"></a>Управление наборами данных
 

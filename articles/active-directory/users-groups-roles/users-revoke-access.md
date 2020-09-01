@@ -1,6 +1,6 @@
 ---
 title: Отзыв доступа пользователей в экстренной ситуации Azure Active Directory | Документация Майкрософт
-description: Массовое добавление пользователей в центре администрирования Azure AD в Azure Active Directory
+description: Отмена доступа для пользователя в Azure Active Directory
 services: active-directory
 ms.service: active-directory
 ms.subservice: users-groups-roles
@@ -13,12 +13,12 @@ ms.reviewer: krbain
 ms.date: 07/15/2020
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 1cc4a29c9d4b5ae93df81de5b77cb6355947813d
-ms.sourcegitcommit: c5021f2095e25750eb34fd0b866adf5d81d56c3a
+ms.openlocfilehash: 76a2e4cb170ca5bee41c0ae8f3e0557eab19562e
+ms.sourcegitcommit: d7352c07708180a9293e8a0e7020b9dd3dd153ce
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88798420"
+ms.lasthandoff: 08/30/2020
+ms.locfileid: "89147139"
 ---
 # <a name="revoke-user-access-in-azure-active-directory"></a>Отозвать доступ пользователей в Azure Active Directory
 
@@ -38,7 +38,7 @@ ms.locfileid: "88798420"
 
 Затем Azure AD переоценивает политики авторизации. Если пользователь все еще является полномочным, Azure AD выдает новый маркер доступа и маркер обновления.
 
-Маркеры доступа могут представлять проблему безопасности, если доступ должен быть отозван в течение времени, меньшего времени существования маркера, что обычно занимает около часа. По этой причине корпорация Майкрософт активно работает над обеспечением [непрерывного доступа](../fundamentals/concept-fundamentals-continuous-access-evaluation.md) к приложениям Office 365, что помогает обеспечить недействительность маркеров доступа практически в реальном времени.  
+Маркеры доступа могут представлять проблему безопасности, если доступ должен быть отозван в течение времени, меньшего времени существования маркера, что обычно занимает около часа. По этой причине корпорация Майкрософт активно работает над обеспечением [непрерывного доступа](../conditional-access/concept-continuous-access-evaluation.md) к приложениям Office 365, что помогает обеспечить недействительность маркеров доступа практически в реальном времени.  
 
 ## <a name="session-tokens-cookies"></a>Токены сеансов (файлы cookie)
 

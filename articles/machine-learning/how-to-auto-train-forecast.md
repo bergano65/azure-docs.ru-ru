@@ -10,12 +10,12 @@ ms.subservice: core
 ms.topic: conceptual
 ms.custom: how-to, contperfq1
 ms.date: 08/20/2020
-ms.openlocfilehash: 3a6ecc44791602ea074ebdd1fdf4e11393e10a4b
-ms.sourcegitcommit: b33c9ad17598d7e4d66fe11d511daa78b4b8b330
+ms.openlocfilehash: 900e36ec3e508f9d3616cf0c0d19ea4ff067f775
+ms.sourcegitcommit: d7352c07708180a9293e8a0e7020b9dd3dd153ce
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88852161"
+ms.lasthandoff: 08/30/2020
+ms.locfileid: "89144793"
 ---
 # <a name="auto-train-a-time-series-forecast-model"></a>Автоматическое обучение прогнозной модели временных рядов
 [!INCLUDE [aml-applies-to-basic-enterprise-sku](../../includes/aml-applies-to-basic-enterprise-sku.md)]
@@ -32,7 +32,7 @@ ms.locfileid: "88852161"
 * настройка отдельных параметров временных рядов в объекте [`AutoMLConfig`](/python/api/azureml-train-automl-client/azureml.train.automl.automlconfig.automlconfig);
 * выполнение прогнозов с данными временных рядов.
 
-## <a name="prerequisites"></a>Обязательные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Для этой статьи требуется: 
 
@@ -248,7 +248,6 @@ automl_config = AutoMLConfig(task='forecasting',
 Сведения о включении DNN для Аутомл эксперимента, созданного в Машинное обучение Azure Studio, см. в разделе " [Параметры типа задачи" в статье "практические руководства по Studio"](how-to-use-automated-ml-for-ml-models.md#create-and-run-experiment).
 
 Автоматизированное машинное обучение предоставляет пользователям собственные модели временных рядов и глубокого обучения в рамках системы рекомендаций. 
-
 
 Модели| Описание | Преимущества
 ----|----|---

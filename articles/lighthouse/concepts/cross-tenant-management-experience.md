@@ -3,12 +3,12 @@ title: Интерфейсы управления для различных кл�
 description: Делегированное управление ресурсами Azure предоставляет интерфейсы управления для различных клиентов.
 ms.date: 08/12/2020
 ms.topic: conceptual
-ms.openlocfilehash: 0ad1c0944076f24363961da21ee347dbd7c0239c
-ms.sourcegitcommit: c28fc1ec7d90f7e8b2e8775f5a250dd14a1622a6
+ms.openlocfilehash: 41e93f2a6a9fb21720dd2348dd611160b05b65c0
+ms.sourcegitcommit: d7352c07708180a9293e8a0e7020b9dd3dd153ce
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/13/2020
-ms.locfileid: "88163515"
+ms.lasthandoff: 08/30/2020
+ms.locfileid: "89146918"
 ---
 # <a name="cross-tenant-management-experiences"></a>Интерфейсы управления для различных клиентов
 
@@ -35,7 +35,7 @@ Azure Лигхсаусе обеспечивает большую гибкост�
 
 Командлет Azure PowerShell [Get-азсубскриптион](/powershell/module/Az.Accounts/Get-AzSubscription) показывает `HomeTenantId` `ManagedByTenantIds` атрибуты и для каждой подписки, позволяя определить, относится ли возвращенная Подписка к управляемому клиенту или к вашему управляющему клиенту.
 
-Аналогичным образом Azure CLI команды, например [AZ Account List](/cli/azure/account?view=azure-cli-latest#az-account-list) , `homeTenantId` отображают `managedByTenants` атрибуты и.
+Аналогичным образом Azure CLI команды, например [AZ Account List](/cli/azure/account#az-account-list) , `homeTenantId` отображают `managedByTenants` атрибуты и.
 
 > [!TIP]
 > Если вы не видите эти значения при использовании Azure CLI, попробуйте очистить кэш, выполнив `az account clear`, а затем — `az login --identity`.

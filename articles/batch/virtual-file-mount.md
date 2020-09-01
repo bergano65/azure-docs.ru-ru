@@ -4,23 +4,23 @@ description: Узнайте, как подключить виртуальную 
 ms.topic: how-to
 ms.custom: devx-track-csharp
 ms.date: 08/13/2019
-ms.openlocfilehash: 6b42d73954bf7ccaedfec15371cc73115c51198a
-ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
+ms.openlocfilehash: df03275fdeea88df1a2f2b6e2cda55021497cdf7
+ms.sourcegitcommit: d7352c07708180a9293e8a0e7020b9dd3dd153ce
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88921636"
+ms.lasthandoff: 08/30/2020
+ms.locfileid: "89145490"
 ---
 # <a name="mount-a-virtual-file-system-on-a-batch-pool"></a>Подключение виртуальной файловой системы в пуле пакетной службы
 
 Пакетная служба Azure теперь поддерживает подключение облачного хранилища или внешней файловой системы на вычисленных узлах Windows или Linux в пулах пакетной службы. Когда вычислительный узел присоединяется к пулу, виртуальная файловая система подключается и рассматривается как локальный диск на этом узле. Вы можете подключать файловые системы, такие как Файлы Azure, хранилище BLOB-объектов Azure, сетевая файловая система (NFS), а также [кэш Avere vFXT](../avere-vfxt/avere-vfxt-overview.md) или Common Internet File System (CIFS).
 
-Из этой статьи вы узнаете, как подключить виртуальную файловую систему в пуле вычислительных узлов с помощью [библиотеки управления пакетной службой для .NET](/dotnet/api/overview/azure/batch?view=azure-dotnet).
+Из этой статьи вы узнаете, как подключить виртуальную файловую систему в пуле вычислительных узлов с помощью [библиотеки управления пакетной службой для .NET](/dotnet/api/overview/azure/batch).
 
 > [!NOTE]
 > Подключение виртуальной файловой системы поддерживается в пулах пакетов, созданных 19 августа 2019 г или позже. Пулы пакетов, созданные до 19 августа 2019 г, не поддерживают эту функцию.
 > 
-> API-интерфейсы для подключения файловых систем в вычислительном узле входят в библиотеку [.NET для пакетной службы](/dotnet/api/microsoft.azure.batch?view=azure-dotnet).
+> API-интерфейсы для подключения файловых систем в вычислительном узле входят в библиотеку [.NET для пакетной службы](/dotnet/api/microsoft.azure.batch).
 
 ## <a name="benefits-of-mounting-on-a-pool"></a>Преимущества подключения в пуле
 

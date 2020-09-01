@@ -1,19 +1,19 @@
 ---
-title: Подключение к Azure Resource Manager на устройстве Azure Stackного периметра
-description: В этой статье описывается, как подключиться к Azure Resource Manager, работающей на Azure Stack границе, с помощью Azure PowerShell.
+title: Подключение к Azure Resource Manager на устройстве с ПРОЦЕССОРом Azure Stack ребра
+description: В этой статье описывается, как подключиться к Azure Resource Manager, работающей на графическом процессоре Azure Stack ребра, с помощью Azure PowerShell.
 services: databox
 author: alkohli
 ms.service: databox
 ms.subservice: edge
 ms.topic: article
-ms.date: 08/21/2020
+ms.date: 08/28/2020
 ms.author: alkohli
-ms.openlocfilehash: bb8a90a1efa84c637cd70caee131ac6346d84814
-ms.sourcegitcommit: 656c0c38cf550327a9ee10cc936029378bc7b5a2
+ms.openlocfilehash: 8c7f571489a9e565fac8c23db4c08321be6f551d
+ms.sourcegitcommit: d7352c07708180a9293e8a0e7020b9dd3dd153ce
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89085062"
+ms.lasthandoff: 08/30/2020
+ms.locfileid: "89146204"
 ---
 # <a name="connect-to-azure-resource-manager-on-your-azure-stack-edge-device"></a>Подключение к Azure Resource Manager на устройстве Azure Stackного периметра
 

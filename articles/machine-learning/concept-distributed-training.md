@@ -9,12 +9,12 @@ ms.author: nibaccam
 ms.subservice: core
 ms.topic: conceptual
 ms.date: 03/27/2020
-ms.openlocfilehash: 52716e070437dd7a6b3b880a5a7f3a4afafe8738
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 8c2867fc5d57cf9ad6eb6bf2d90e02c61e320120
+ms.sourcegitcommit: d7352c07708180a9293e8a0e7020b9dd3dd153ce
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "82995008"
+ms.lasthandoff: 08/30/2020
+ms.locfileid: "89146663"
 ---
 # <a name="distributed-training-with-azure-machine-learning"></a>Распределенное обучение с помощью Машинное обучение Azure
 
@@ -48,9 +48,9 @@ ms.locfileid: "82995008"
 
 В случае параллелизма модели рабочие узлы должны синхронизировать общие параметры, как правило, один раз для каждого этапа перенаправления вперед или обратного распространения. Кроме того, более крупные модели не являются проблемой, так как каждый узел работает с подразделом модели для тех же обучающих данных.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
-* Узнайте, как [настроить среды для обучения](how-to-set-up-training-targets.md) с помощью пакета SDK для Python.
+* Узнайте, как [использовать целевые объекты вычислений для обучения модели](how-to-set-up-training-targets.md) с помощью пакета SDK для Python.
 * Технический пример см. в статье [сценарий эталонной архитектуры](https://docs.microsoft.com/azure/architecture/reference-architectures/ai/training-deep-learning).
 * [Обучение моделей ml с помощью TensorFlow](how-to-train-tensorflow.md).
 * [Обучение моделей ml с помощью PyTorch](how-to-train-pytorch.md). 

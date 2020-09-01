@@ -1,19 +1,19 @@
 ---
-title: Развертывание виртуальных машин на пограничном устройстве Azure Stack с помощью Azure PowerShell
+title: Развертывание виртуальных машин на Azure Stack пограничном устройстве GPU с помощью Azure PowerShell
 description: Описание создания виртуальных машин и управления ими на Azure Stack пограничном устройстве с помощью Azure PowerShell.
 services: databox
 author: alkohli
 ms.service: databox
 ms.subservice: edge
 ms.topic: article
-ms.date: 02/11/2020
+ms.date: 08/28/2020
 ms.author: alkohli
-ms.openlocfilehash: 113f81c2c4209b851f2029bad2202fbb8bbfe103
-ms.sourcegitcommit: 656c0c38cf550327a9ee10cc936029378bc7b5a2
+ms.openlocfilehash: 6e776b6dfc233ffb12d3597a0e6bc203f1674abd
+ms.sourcegitcommit: d7352c07708180a9293e8a0e7020b9dd3dd153ce
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89084902"
+ms.lasthandoff: 08/30/2020
+ms.locfileid: "89147071"
 ---
 # <a name="deploy-vms-on-your-azure-stack-edge-device-via-azure-powershell-script"></a>Развертывание виртуальных машин на пограничном устройстве Azure Stack с помощью скрипта Azure PowerShell
 
