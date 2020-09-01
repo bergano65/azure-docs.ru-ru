@@ -3,12 +3,12 @@ title: Новые возможности в Microsoft Azure Backup Server
 description: Microsoft Azure Backup Server предоставляет расширенные возможности резервного копирования для защиты виртуальных машин, файлов и папок, рабочих нагрузок и т. д.
 ms.topic: conceptual
 ms.date: 05/24/2020
-ms.openlocfilehash: fb47d2f14ca686e04cd2d9e3dec27d3ca4a30f5c
-ms.sourcegitcommit: c6b9a46404120ae44c9f3468df14403bcd6686c1
+ms.openlocfilehash: ca06e52c81b909bb19008fdccfe4b3fdeb7e6248
+ms.sourcegitcommit: 3fb5e772f8f4068cc6d91d9cde253065a7f265d6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88893193"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89182145"
 ---
 # <a name="whats-new-in-microsoft-azure-backup-server-mabs"></a>Новые возможности Microsoft Azure Backup Server (MABS)
 
@@ -123,7 +123,7 @@ MABS V3 — это полный выпуск, который можно уста
 >
 > База кода MABS такая же, как и в System Center Data Protection Manager. MABS V3 эквивалентен Data Protection Manager 1807. MABS v3 UR1 эквивалентна Data Protection Manager 2019 UR1.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Узнайте, как подготовить сервер или обеспечить защиту рабочей нагрузки:
 

@@ -7,12 +7,12 @@ ms.author: baanders
 ms.date: 7/23/2020
 ms.topic: how-to
 ms.service: digital-twins
-ms.openlocfilehash: 1f7486f1080c0fbb25b1be6ab70bb647a546ceca
-ms.sourcegitcommit: 3bf69c5a5be48c2c7a979373895b4fae3f746757
+ms.openlocfilehash: 300a11c36b11230d2bd75534f152a0a5955743ed
+ms.sourcegitcommit: 3fb5e772f8f4068cc6d91d9cde253065a7f265d6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88234998"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89181801"
 ---
 # <a name="set-up-an-azure-digital-twins-instance-and-authentication-portal"></a>Настройка экземпляра и проверки подлинности Azure Digital двойников (портал)
 
@@ -107,7 +107,7 @@ ms.locfileid: "88234998"
 На следующей странице *Регистрация приложения* Введите запрошенные значения:
 * **Имя**: отображаемое имя приложения Azure AD, связываемое с регистрацией.
 * **Поддерживаемые типы учетных записей**: выберите *учетные записи только в этом каталоге организации (только каталог по умолчанию — один клиент)* .
-* **URI перенаправления**: *URL-адрес ответа приложения Azure AD* для приложения Azure AD. Можно использовать `http://localhost` .
+* **URI перенаправления**: *URL-адрес ответа приложения Azure AD* для приложения Azure AD. Добавьте *общедоступный клиент/собственный (мобильный & Desktop)* URI для `http://localhost` .
 
 По завершении нажмите кнопку Register ( *зарегистрировать* ).
 
@@ -160,7 +160,7 @@ ms.locfileid: "88234998"
 
 [!INCLUDE [digital-twins-setup-additional-requirements.md](../../includes/digital-twins-setup-additional-requirements.md)]
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 См. раздел как подключить клиентское приложение к экземпляру, написав код проверки подлинности клиентского приложения:
 * [*Пошаговое руководство. Написание кода проверки подлинности приложения*](how-to-authenticate-client.md)

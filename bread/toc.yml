@@ -117,6 +117,9 @@
     - name: ASC для Интернета вещей
       tocHref: /azure/asc-for-iot/
       topicHref: /azure/asc-for-iot/
+    - name: Аттестация
+      tocHref: /azure/attestation/
+      topicHref: /azure/attestation/
     - name: Служба автоматизации
       tocHref: /azure/automation/
       topicHref: /azure/automation/

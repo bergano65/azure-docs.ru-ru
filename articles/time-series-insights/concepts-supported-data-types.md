@@ -8,13 +8,13 @@ ms.workload: big-data
 ms.service: time-series-insights
 services: time-series-insights
 ms.topic: conceptual
-ms.date: 08/12/2020
-ms.openlocfilehash: 254732630dcf28b90413a1269a34d3aa388cb06c
-ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
+ms.date: 08/31/2020
+ms.openlocfilehash: 4e6586453469797458bc60fc7499a45a9aad9b9b
+ms.sourcegitcommit: d68c72e120bdd610bb6304dad503d3ea89a1f0f7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "88997869"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89226749"
 ---
 # <a name="supported-data-types"></a>Поддерживаемые типы данных
 
@@ -34,9 +34,10 @@ ms.locfileid: "88997869"
 
 > [!NOTE]
 > Тип **строки** не допускает значения NULL:
->   * [Выражение временного ряда](https://docs.microsoft.com/rest/api/time-series-insights/reference-time-series-expression-syntax) , выраженное в [запросе временных рядов](https://docs.microsoft.com/rest/api/time-series-insights/reference-query-apis) , которое сравнивает значение пустой строки (**""**) со **значением NULL** , будет вести себя так: `$event.siteid.String = NULL` эквивалентно `$event.siteid.String = ''` .
->   * API может возвращать значения **null** , даже если исходные события содержат пустые строки.
->   * Не задавайте зависимости от значений **null** в **строковых** столбцах для сравнения или вычисления, обрабатывают их так же, как пустые строки.
+>
+> * [Выражение временного ряда](https://docs.microsoft.com/rest/api/time-series-insights/reference-time-series-expression-syntax) , выраженное в [запросе временных рядов](https://docs.microsoft.com/rest/api/time-series-insights/reference-query-apis) , которое сравнивает значение пустой строки (**""**) со **значением NULL** , будет вести себя так: `$event.siteid.String = NULL` эквивалентно `$event.siteid.String = ''` .
+> * API может возвращать значения **null** , даже если исходные события содержат пустые строки.
+> * Не задавайте зависимости от значений **null** в **строковых** столбцах для сравнения или вычисления, обрабатывают их так же, как пустые строки.
 
 ## <a name="sending-mixed-data-types"></a>Отправка смешанных типов данных
 

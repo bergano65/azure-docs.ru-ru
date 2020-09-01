@@ -6,12 +6,12 @@ ms.topic: how-to
 ms.date: 09/24/2019
 ms.author: helohr
 manager: lizross
-ms.openlocfilehash: 7c97009a69c937863a5776d63bab1c994a8a9160
-ms.sourcegitcommit: 98854e3bd1ab04ce42816cae1892ed0caeedf461
+ms.openlocfilehash: 2ca5a591d168e18181a29cf1c00a7d1fead54595
+ms.sourcegitcommit: d68c72e120bdd610bb6304dad503d3ea89a1f0f7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "88007613"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89226052"
 ---
 # <a name="connect-to-windows-virtual-desktop-with-the-web-client"></a>Подключение к виртуальному рабочему столу Windows с помощью веб-клиента
 
@@ -41,6 +41,8 @@ ms.locfileid: "88007613"
 
 >[!NOTE]
 >Если вы используете Windows Virtual Desktop (классическая модель) без интеграции Azure Resource Manager, подключитесь к ресурсам по адресу <https://rdweb.wvd.microsoft.com/webclient> .
+>
+> Если вы используете портал US Gov, используйте <https://rdweb.wvd.azure.us/arm/webclient/index.html> .
 
 >[!NOTE]
 >Если вы уже вошли, используя другую учетную запись Azure Active Directory, отличную от той, которую вы хотите использовать для Виртуального рабочего стола Windows, необходимо выйти из системы или использовать вкладку браузера в режиме конфиденциального просмотра.

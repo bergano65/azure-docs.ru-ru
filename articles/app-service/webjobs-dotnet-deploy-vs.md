@@ -8,12 +8,12 @@ ms.custom: devx-track-csharp, vs-azure
 ms.date: 07/30/2020
 ms.author: glenga
 ms.reviewer: david.ebbo;suwatch;pbatum;naren.soni
-ms.openlocfilehash: ed473568fbad5bad380001cd2e2faccd90994099
-ms.sourcegitcommit: 648c8d250106a5fca9076a46581f3105c23d7265
+ms.openlocfilehash: de10903be86b52b3415b57a53be81e7fd1661f63
+ms.sourcegitcommit: d68c72e120bdd610bb6304dad503d3ea89a1f0f7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "88959907"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89226035"
 ---
 # <a name="develop-and-deploy-webjobs-using-visual-studio"></a>Разработка и развертывание веб-заданий с помощью Visual Studio
 
@@ -184,9 +184,9 @@ Visual Studio добавляет следующие элементы в прое
 
 Тип веб-задания может быть *активирован* или *непрерывно*:
 
-- Активировано (по умолчанию). активируемое веб-задание запускается на основе события привязки по [расписанию](#scheduling-a-triggered-webjob)или при активации вручную (по запросу). Он выполняется на всех экземплярах, на которых выполняется веб-приложение, но при необходимости можно ограничить задание единственным экземпляром.
+- Активировано (по умолчанию). активируемое веб-задание запускается на основе события привязки по [расписанию](#scheduling-a-triggered-webjob)или при активации вручную (по запросу). Он выполняется на одном экземпляре, на котором выполняется веб-приложение.
 
-- Непрерывно. [непрерывное](#continuous-execution) веб-задание запускается сразу после создания веб-задания. Этот тип веб-задания лучше всего подходит для неограниченных или долго выполняющихся заданий. Если задание завершается, его можно перезапустить.  
+- Непрерывно. [непрерывное](#continuous-execution) веб-задание запускается сразу после создания веб-задания. Он выполняется на всех масштабируемых экземплярах веб-приложения по умолчанию, но может быть настроен для запуска в качестве одного экземпляра с помощью *параметров. job*.
 
 [!INCLUDE [webjobs-alwayson-note](../../includes/webjobs-always-on-note.md)]
 
@@ -218,10 +218,10 @@ Visual Studio добавляет следующие элементы в прое
 
 | **Параметр** | **Тип**  | **Описание** |
 | ----------- | --------- | --------------- |
-| `is_in_place` | Все | Разрешает выполнение веб-задания без предварительного копирования во временную папку. Дополнительные сведения см. в разделе [веб-задание рабочий каталог](https://github.com/projectkudu/kudu/wiki/WebJobs#webjob-working-directory). |
+| `is_in_place` | All | Разрешает выполнение веб-задания без предварительного копирования во временную папку. Дополнительные сведения см. в разделе [веб-задание рабочий каталог](https://github.com/projectkudu/kudu/wiki/WebJobs#webjob-working-directory). |
 | `is_singleton` | С задержкой | Запускать веб-задание только в одном экземпляре при масштабировании. Дополнительные сведения см. в разделе [Задание непрерывного задания как singleton](https://github.com/projectkudu/kudu/wiki/WebJobs-API#set-a-continuous-job-as-singleton). |
 | `schedule` | Активируемые | Запуск веб-задания по расписанию на основе CRON. Дополнительные сведения см. в разделе [нкронтаб Expressions](../azure-functions/functions-bindings-timer.md#ncrontab-expressions). |
-| `stopping_wait_time`| Все | Позволяет управлять поведением при завершении работы. Дополнительные сведения см. в статье о [корректном завершении работы](https://github.com/projectkudu/kudu/wiki/WebJobs#graceful-shutdown). |
+| `stopping_wait_time`| All | Позволяет управлять поведением при завершении работы. Дополнительные сведения см. в статье о [корректном завершении работы](https://github.com/projectkudu/kudu/wiki/WebJobs#graceful-shutdown). |
 
 ### <a name="continuous-execution"></a>Непрерывное выполнение
 
@@ -239,7 +239,7 @@ Visual Studio добавляет следующие элементы в прое
 
 1. Выберите **опубликовать** на вкладке **Публикация** , чтобы повторно опубликовать веб-задание с обновленными параметрами.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Подробнее о пакете SDK веб-заданий](webjobs-sdk-how-to.md)

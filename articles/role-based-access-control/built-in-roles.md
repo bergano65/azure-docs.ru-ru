@@ -7,14 +7,14 @@ ms.topic: reference
 ms.workload: identity
 author: rolyon
 ms.author: rolyon
-ms.date: 08/16/2020
+ms.date: 08/31/2020
 ms.custom: generated
-ms.openlocfilehash: 44b4134404d5af3a8dde7028ffa1b43258df7558
-ms.sourcegitcommit: 2bab7c1cd1792ec389a488c6190e4d90f8ca503b
+ms.openlocfilehash: b58316cf5a56eae46c81056a78446dc6c3d10764
+ms.sourcegitcommit: d68c72e120bdd610bb6304dad503d3ea89a1f0f7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88271997"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89226766"
 ---
 # <a name="azure-built-in-roles"></a>Встроенные роли Azure
 
@@ -24,7 +24,7 @@ ms.locfileid: "88271997"
 
 В следующей таблице приводятся краткое описание и уникальный идентификатор каждой встроенной роли. Щелкните имя роли, чтобы просмотреть список `Actions`, `NotActions`, `DataActions` и `NotDataActions` для каждой роли. Сведения о значении этих действий и о том, как они применяются в области управления и области данных, см. в статье [Общие сведения об определениях ролей Azure](role-definitions.md).
 
-## <a name="all"></a>Все
+## <a name="all"></a>All
 
 > [!div class="mx-tableFixed"]
 > | Встроенные роли | Описание | ID |
@@ -153,7 +153,15 @@ ms.locfileid: "88271997"
 > | [Участник Azure Sentinel](#azure-sentinel-contributor) | Участник Azure Sentinel | ab8e14d6-4a74-4a29-9ba8-549422addade |
 > | [Читатель Azure Sentinel](#azure-sentinel-reader) | Читатель Azure Sentinel | 8d289c81-5878-46d4-8554-54e1e3d8b5cb |
 > | [Респондент Azure Sentinel](#azure-sentinel-responder) | Респондент Azure Sentinel | 3e150937-b8fe-4cfb-8069-0eaf05ecd056 |
-> | [Участник Key Vault](#key-vault-contributor) | Позволяет управлять хранилищами ключей, но не доступом к ним. | f25e0fa2-a7c8-4377-a976-54943a77a395 |
+> | [Администратор Key Vault (Предварительная версия)](#key-vault-administrator-preview) | Выполните все операции с плоскостью данных в хранилище ключей и всех его объектах, включая сертификаты, ключи и секреты. Не может управлять ресурсами хранилища ключей или управлять назначениями ролей. Работает только для хранилищ ключей, использующих модель разрешений управления доступом на основе ролей Azure. | 00482a5a-887f-4fb3-b363-3b7fe8e74483 |
+> | [Директор Key Vault Certificates (Предварительная версия)](#key-vault-certificates-officer-preview) | Выполните любое действие с сертификатами хранилища ключей, за исключением разрешений на управление. Работает только для хранилищ ключей, использующих модель разрешений управления доступом на основе ролей Azure. | a4417e6f-fecd-4de8-b567-7b0420556985 |
+> | [Участник Key Vault](#key-vault-contributor) | Управление хранилищами ключей, но не позволяет назначать роли в Azure RBAC и не позволяет вам получать доступ к секретам, ключам или сертификатам. | f25e0fa2-a7c8-4377-a976-54943a77a395 |
+> | [Key Vaultный директор по шифрованию (Предварительная версия)](#key-vault-crypto-officer-preview) | Выполните любое действие с ключами хранилища ключей, за исключением разрешений на управление. Работает только для хранилищ ключей, использующих модель разрешений управления доступом на основе ролей Azure. | 14b46e9e-c2b7-41b4-b07b-48a6ebf60603 |
+> | [Шифрование службы шифрования Key Vault (Предварительная версия)](#key-vault-crypto-service-encryption-preview) | Чтение метаданных ключей и выполнение операций упаковки и распаковки. Работает только для хранилищ ключей, использующих модель разрешений управления доступом на основе ролей Azure. | e147488a-f6f5-4113-8e2d-b22465e65bf6 |
+> | [Пользователь Key Vault шифрования (Предварительная версия)](#key-vault-crypto-user-preview) | Выполнение криптографических операций с помощью ключей. Работает только для хранилищ ключей, использующих модель разрешений управления доступом на основе ролей Azure. | 12338af0-0e69-4776-bea7-57ae8d297424 |
+> | [Читатель Key Vault (Предварительная версия)](#key-vault-reader-preview) | Чтение метаданных хранилищ ключей и их сертификатов, ключей и секретов. Не удается считать конфиденциальные значения, такие как содержимое секрета или материал ключа. Работает только для хранилищ ключей, использующих модель разрешений управления доступом на основе ролей Azure. | 21090545-7ca7-4776-b22c-e363652d74d2 |
+> | [Директор Key Vault секреты (Предварительная версия)](#key-vault-secrets-officer-preview) | Выполните любое действие с секретами хранилища ключей, за исключением разрешений на управление. Работает только для хранилищ ключей, использующих модель разрешений управления доступом на основе ролей Azure. | b86a8fe4-44ce-4948-aee5-eccb2c155cd7 |
+> | [Key Vault секреты пользователя (Предварительная версия)](#key-vault-secrets-user-preview) | Чтение содержимого секрета. Работает только для хранилищ ключей, использующих модель разрешений управления доступом на основе ролей Azure. | 4633458b-17de-408a-b874-0445c86b69e6 |
 > | [Администратор безопасности](#security-admin) | Просмотр и обновление разрешений для Центра безопасности. Имеет те же права, что и читатель сведений о безопасности, но также может изменять политику безопасности, отклонять рекомендации и оповещения. | fb1c8493-542b-48eb-b624-b4c8fea62acd |
 > | [Участник оценки безопасности](#security-assessment-contributor) | Позволяет отправлять оценки в Центр безопасности. | 612c2aa1-cb24-443b-ac28-3ab7272de6f5 |
 > | [Диспетчер безопасности (устаревший)](#security-manager-legacy) | Это устаревшая роль. Используйте вместо нее роль администратора безопасности. | e3d13bf0-dd5a-482e-ba6b-9b8433878d10 |
@@ -6276,9 +6284,129 @@ ms.locfileid: "88271997"
 }
 ```
 
+### <a name="key-vault-administrator-preview"></a>Администратор Key Vault (Предварительная версия)
+
+Выполните все операции с плоскостью данных в хранилище ключей и всех его объектах, включая сертификаты, ключи и секреты. Не может управлять ресурсами хранилища ключей или управлять назначениями ролей. Работает только для хранилищ ключей, использующих модель разрешений управления доступом на основе ролей Azure.
+
+> [!div class="mx-tableFixed"]
+> | Действия | Описание |
+> | --- | --- |
+> | [Microsoft. Authorization](resource-provider-operations.md#microsoftauthorization)/*/Реад | Чтение ролей и назначений ролей |
+> | [Microsoft. Insights](resource-provider-operations.md#microsoftinsights)/алертрулес/* | Создание классического оповещения метрики и управление им |
+> | [Microsoft. Resources](resource-provider-operations.md#microsoftresources)/деплойментс/* | Создание развертывания и управление им |
+> | /Субскриптионс/ресаурцеграупс/Реад [Microsoft. Resources](resource-provider-operations.md#microsoftresources) | Возвращает группы ресурсов или выводит их список. |
+> | [Microsoft. support](resource-provider-operations.md#microsoftsupport)/* | Создание и обновление запроса в службу поддержки |
+> | /Чеккнамеаваилабилити/Реад [Microsoft. KeyVault](resource-provider-operations.md#microsoftkeyvault) | Проверяет, является ли имя Key Vault допустимым и неиспользуемым. |
+> | /Делетедваултс/Реад [Microsoft. KeyVault](resource-provider-operations.md#microsoftkeyvault) | Отображает свойства обратимо удаленных хранилищ Key Vault. |
+> | [Microsoft. KeyVault](resource-provider-operations.md#microsoftkeyvault)/локатионс/*/Реад |  |
+> | [Microsoft. KeyVault](resource-provider-operations.md#microsoftkeyvault)/ваултс/*/Реад |  |
+> | /Оператионс/Реад [Microsoft. KeyVault](resource-provider-operations.md#microsoftkeyvault) | Получение списка операций, доступных в поставщике ресурсов Microsoft.KeyVault. |
+> | **NotActions** |  |
+> | *Нет* |  |
+> | **Действия с данными** |  |
+> | [Microsoft. KeyVault](resource-provider-operations.md#microsoftkeyvault)/ваултс/* |  |
+> | **NotDataActions** |  |
+> | *Нет* |  |
+
+```json
+{
+  "assignableScopes": [
+    "/"
+  ],
+  "description": "Can perform any action on certificates, keys and secrets of a key vault, except manage permissions.",
+  "id": "/subscriptions/{subscriptionId}/providers/Microsoft.Authorization/roleDefinitions/00482a5a-887f-4fb3-b363-3b7fe8e74483",
+  "name": "00482a5a-887f-4fb3-b363-3b7fe8e74483",
+  "permissions": [
+    {
+      "actions": [
+        "Microsoft.Authorization/*/read",
+        "Microsoft.Insights/alertRules/*",
+        "Microsoft.Resources/deployments/*",
+        "Microsoft.Resources/subscriptions/resourceGroups/read",
+        "Microsoft.Support/*",
+        "Microsoft.KeyVault/checkNameAvailability/read",
+        "Microsoft.KeyVault/deletedVaults/read",
+        "Microsoft.KeyVault/locations/*/read",
+        "Microsoft.KeyVault/vaults/*/read",
+        "Microsoft.KeyVault/operations/read"
+      ],
+      "notActions": [],
+      "dataActions": [
+        "Microsoft.KeyVault/vaults/*"
+      ],
+      "notDataActions": []
+    }
+  ],
+  "roleName": "Key Vault Administrator (preview)",
+  "roleType": "BuiltInRole",
+  "type": "Microsoft.Authorization/roleDefinitions"
+}
+```
+
+### <a name="key-vault-certificates-officer-preview"></a>Директор Key Vault Certificates (Предварительная версия)
+
+Выполните любое действие с сертификатами хранилища ключей, за исключением разрешений на управление. Работает только для хранилищ ключей, использующих модель разрешений управления доступом на основе ролей Azure.
+
+> [!div class="mx-tableFixed"]
+> | Действия | Описание |
+> | --- | --- |
+> | [Microsoft. Authorization](resource-provider-operations.md#microsoftauthorization)/*/Реад | Чтение ролей и назначений ролей |
+> | [Microsoft. Insights](resource-provider-operations.md#microsoftinsights)/алертрулес/* | Создание классического оповещения метрики и управление им |
+> | [Microsoft. Resources](resource-provider-operations.md#microsoftresources)/деплойментс/* | Создание развертывания и управление им |
+> | /Субскриптионс/ресаурцеграупс/Реад [Microsoft. Resources](resource-provider-operations.md#microsoftresources) | Возвращает группы ресурсов или выводит их список. |
+> | [Microsoft. support](resource-provider-operations.md#microsoftsupport)/* | Создание и обновление запроса в службу поддержки |
+> | /Чеккнамеаваилабилити/Реад [Microsoft. KeyVault](resource-provider-operations.md#microsoftkeyvault) | Проверяет, является ли имя Key Vault допустимым и неиспользуемым. |
+> | /Делетедваултс/Реад [Microsoft. KeyVault](resource-provider-operations.md#microsoftkeyvault) | Отображает свойства обратимо удаленных хранилищ Key Vault. |
+> | [Microsoft. KeyVault](resource-provider-operations.md#microsoftkeyvault)/локатионс/*/Реад |  |
+> | [Microsoft. KeyVault](resource-provider-operations.md#microsoftkeyvault)/ваултс/*/Реад |  |
+> | /Оператионс/Реад [Microsoft. KeyVault](resource-provider-operations.md#microsoftkeyvault) | Получение списка операций, доступных в поставщике ресурсов Microsoft.KeyVault. |
+> | **NotActions** |  |
+> | *Нет* |  |
+> | **Действия с данными** |  |
+> | [Microsoft. KeyVault](resource-provider-operations.md#microsoftkeyvault)/ваултс/цертификатекас/* |  |
+> | [Microsoft. KeyVault](resource-provider-operations.md#microsoftkeyvault)/ваултс/цертификатес/* |  |
+> | **NotDataActions** |  |
+> | *Нет* |  |
+
+```json
+{
+  "assignableScopes": [
+    "/"
+  ],
+  "description": "Can perform any action on the certificates of a key vault, except manage permissions.",
+  "id": "/subscriptions/{subscriptionId}/providers/Microsoft.Authorization/roleDefinitions/a4417e6f-fecd-4de8-b567-7b0420556985",
+  "name": "a4417e6f-fecd-4de8-b567-7b0420556985",
+  "permissions": [
+    {
+      "actions": [
+        "Microsoft.Authorization/*/read",
+        "Microsoft.Insights/alertRules/*",
+        "Microsoft.Resources/deployments/*",
+        "Microsoft.Resources/subscriptions/resourceGroups/read",
+        "Microsoft.Support/*",
+        "Microsoft.KeyVault/checkNameAvailability/read",
+        "Microsoft.KeyVault/deletedVaults/read",
+        "Microsoft.KeyVault/locations/*/read",
+        "Microsoft.KeyVault/vaults/*/read",
+        "Microsoft.KeyVault/operations/read"
+      ],
+      "notActions": [],
+      "dataActions": [
+        "Microsoft.KeyVault/vaults/certificatecas/*",
+        "Microsoft.KeyVault/vaults/certificates/*"
+      ],
+      "notDataActions": []
+    }
+  ],
+  "roleName": "Key Vault Certificates Officer (preview)",
+  "roleType": "BuiltInRole",
+  "type": "Microsoft.Authorization/roleDefinitions"
+}
+```
+
 ### <a name="key-vault-contributor"></a>Участник Key Vault
 
-Позволяет управлять хранилищами ключей, но не доступом к ним. [Дополнительные сведения](../key-vault/general/secure-your-key-vault.md)
+Управление хранилищами ключей, но не позволяет назначать роли в Azure RBAC и не позволяет вам получать доступ к секретам, ключам или сертификатам. [Дополнительные сведения](../key-vault/general/secure-your-key-vault.md)
 
 > [!div class="mx-tableFixed"]
 > | Действия | Описание |
@@ -6324,6 +6452,324 @@ ms.locfileid: "88271997"
     }
   ],
   "roleName": "Key Vault Contributor",
+  "roleType": "BuiltInRole",
+  "type": "Microsoft.Authorization/roleDefinitions"
+}
+```
+
+### <a name="key-vault-crypto-officer-preview"></a>Key Vaultный директор по шифрованию (Предварительная версия)
+
+Выполните любое действие с ключами хранилища ключей, за исключением разрешений на управление. Работает только для хранилищ ключей, использующих модель разрешений управления доступом на основе ролей Azure.
+
+> [!div class="mx-tableFixed"]
+> | Действия | Описание |
+> | --- | --- |
+> | [Microsoft. Authorization](resource-provider-operations.md#microsoftauthorization)/*/Реад | Чтение ролей и назначений ролей |
+> | [Microsoft. Insights](resource-provider-operations.md#microsoftinsights)/алертрулес/* | Создание классического оповещения метрики и управление им |
+> | [Microsoft. Resources](resource-provider-operations.md#microsoftresources)/деплойментс/* | Создание развертывания и управление им |
+> | /Субскриптионс/ресаурцеграупс/Реад [Microsoft. Resources](resource-provider-operations.md#microsoftresources) | Возвращает группы ресурсов или выводит их список. |
+> | [Microsoft. support](resource-provider-operations.md#microsoftsupport)/* | Создание и обновление запроса в службу поддержки |
+> | /Чеккнамеаваилабилити/Реад [Microsoft. KeyVault](resource-provider-operations.md#microsoftkeyvault) | Проверяет, является ли имя Key Vault допустимым и неиспользуемым. |
+> | /Делетедваултс/Реад [Microsoft. KeyVault](resource-provider-operations.md#microsoftkeyvault) | Отображает свойства обратимо удаленных хранилищ Key Vault. |
+> | [Microsoft. KeyVault](resource-provider-operations.md#microsoftkeyvault)/локатионс/*/Реад |  |
+> | [Microsoft. KeyVault](resource-provider-operations.md#microsoftkeyvault)/ваултс/*/Реад |  |
+> | /Оператионс/Реад [Microsoft. KeyVault](resource-provider-operations.md#microsoftkeyvault) | Получение списка операций, доступных в поставщике ресурсов Microsoft.KeyVault. |
+> | **NotActions** |  |
+> | *Нет* |  |
+> | **Действия с данными** |  |
+> | [Microsoft. KeyVault](resource-provider-operations.md#microsoftkeyvault)/ваултс/Кэйс/* |  |
+> | **NotDataActions** |  |
+> | *Нет* |  |
+
+```json
+{
+  "assignableScopes": [
+    "/"
+  ],
+  "description": "Can perform any action on the keys of a key vault, except manage permissions.",
+  "id": "/subscriptions/{subscriptionId}/providers/Microsoft.Authorization/roleDefinitions/14b46e9e-c2b7-41b4-b07b-48a6ebf60603",
+  "name": "14b46e9e-c2b7-41b4-b07b-48a6ebf60603",
+  "permissions": [
+    {
+      "actions": [
+        "Microsoft.Authorization/*/read",
+        "Microsoft.Insights/alertRules/*",
+        "Microsoft.Resources/deployments/*",
+        "Microsoft.Resources/subscriptions/resourceGroups/read",
+        "Microsoft.Support/*",
+        "Microsoft.KeyVault/checkNameAvailability/read",
+        "Microsoft.KeyVault/deletedVaults/read",
+        "Microsoft.KeyVault/locations/*/read",
+        "Microsoft.KeyVault/vaults/*/read",
+        "Microsoft.KeyVault/operations/read"
+      ],
+      "notActions": [],
+      "dataActions": [
+        "Microsoft.KeyVault/vaults/keys/*"
+      ],
+      "notDataActions": []
+    }
+  ],
+  "roleName": "Key Vault Crypto Officer (preview)",
+  "roleType": "BuiltInRole",
+  "type": "Microsoft.Authorization/roleDefinitions"
+}
+```
+
+### <a name="key-vault-crypto-service-encryption-preview"></a>Шифрование службы шифрования Key Vault (Предварительная версия)
+
+Чтение метаданных ключей и выполнение операций упаковки и распаковки. Работает только для хранилищ ключей, использующих модель разрешений управления доступом на основе ролей Azure.
+
+> [!div class="mx-tableFixed"]
+> | Действия | Описание |
+> | --- | --- |
+> | *Нет* |  |
+> | **NotActions** |  |
+> | *Нет* |  |
+> | **Действия с данными** |  |
+> | /Ваултс/Кэйс/Реад [Microsoft. KeyVault](resource-provider-operations.md#microsoftkeyvault) | Вывод списка ключей в указанном хранилище или чтение свойств и общего материала ключа. Для асимметричных ключей эта операция предоставляет открытый ключ и включает возможность выполнения алгоритмов открытого ключа, таких как шифрование и проверка подписи. Закрытые ключи и симметричные ключи никогда не предоставляются. |
+> | /Ваултс/Кэйс/ВРАП/Актион [Microsoft. KeyVault](resource-provider-operations.md#microsoftkeyvault) | Заключите симметричный ключ в ключ Key Vault. Обратите внимание, что если ключ Key Vault является асимметричным, эту операцию можно выполнить с доступом на чтение. |
+> | /Ваултс/Кэйс/унврап/Актион [Microsoft. KeyVault](resource-provider-operations.md#microsoftkeyvault) | Разворачивает симметричный ключ с ключом Key Vault. |
+> | **NotDataActions** |  |
+> | *Нет* |  |
+
+```json
+{
+  "assignableScopes": [
+    "/"
+  ],
+  "description": "Can read metadata of keys and perform wrap/unwrap operations.",
+  "id": "/subscriptions/{subscriptionId}/providers/Microsoft.Authorization/roleDefinitions/e147488a-f6f5-4113-8e2d-b22465e65bf6",
+  "name": "e147488a-f6f5-4113-8e2d-b22465e65bf6",
+  "permissions": [
+    {
+      "actions": [],
+      "notActions": [],
+      "dataActions": [
+        "Microsoft.KeyVault/vaults/keys/read",
+        "Microsoft.KeyVault/vaults/keys/wrap/action",
+        "Microsoft.KeyVault/vaults/keys/unwrap/action"
+      ],
+      "notDataActions": []
+    }
+  ],
+  "roleName": "Key Vault Crypto Service Encryption (preview)",
+  "roleType": "BuiltInRole",
+  "type": "Microsoft.Authorization/roleDefinitions"
+}
+```
+
+### <a name="key-vault-crypto-user-preview"></a>Пользователь Key Vault шифрования (Предварительная версия)
+
+Выполнение криптографических операций с помощью ключей. Работает только для хранилищ ключей, использующих модель разрешений управления доступом на основе ролей Azure.
+
+> [!div class="mx-tableFixed"]
+> | Действия | Описание |
+> | --- | --- |
+> | *Нет* |  |
+> | **NotActions** |  |
+> | *Нет* |  |
+> | **Действия с данными** |  |
+> | /Ваултс/Кэйс/Реад [Microsoft. KeyVault](resource-provider-operations.md#microsoftkeyvault) | Вывод списка ключей в указанном хранилище или чтение свойств и общего материала ключа. Для асимметричных ключей эта операция предоставляет открытый ключ и включает возможность выполнения алгоритмов открытого ключа, таких как шифрование и проверка подписи. Закрытые ключи и симметричные ключи никогда не предоставляются. |
+> | /Ваултс/Кэйс/упдате/Актион [Microsoft. KeyVault](resource-provider-operations.md#microsoftkeyvault) | Обновляет указанные атрибуты, связанные с заданным ключом. |
+> | /Ваултс/Кэйс/баккуп/Актион [Microsoft. KeyVault](resource-provider-operations.md#microsoftkeyvault) | Создайте файл резервной копии ключа. Файл может использоваться для восстановления ключа в Key Vault одной подписки. Могут применяться ограничения. |
+> | /Ваултс/Кэйс/енкрипт/Актион [Microsoft. KeyVault](resource-provider-operations.md#microsoftkeyvault) | Шифрование открытого текста с помощью ключа. Обратите внимание, что если ключ является асимметричным, эта операция может быть выполнена участниками с доступом на чтение. |
+> | /Ваултс/Кэйс/декрипт/Актион [Microsoft. KeyVault](resource-provider-operations.md#microsoftkeyvault) | Расшифровка зашифрованного текста с помощью ключа. |
+> | /Ваултс/Кэйс/ВРАП/Актион [Microsoft. KeyVault](resource-provider-operations.md#microsoftkeyvault) | Заключите симметричный ключ в ключ Key Vault. Обратите внимание, что если ключ Key Vault является асимметричным, эту операцию можно выполнить с доступом на чтение. |
+> | /Ваултс/Кэйс/унврап/Актион [Microsoft. KeyVault](resource-provider-operations.md#microsoftkeyvault) | Разворачивает симметричный ключ с ключом Key Vault. |
+> | /Ваултс/Кэйс/сигн/Актион [Microsoft. KeyVault](resource-provider-operations.md#microsoftkeyvault) | Подпишите хэш с помощью ключа. |
+> | /Ваултс/Кэйс/верифи/Актион [Microsoft. KeyVault](resource-provider-operations.md#microsoftkeyvault) | Проверьте хэш. Обратите внимание, что если ключ является асимметричным, эта операция может быть выполнена участниками с доступом на чтение. |
+> | **NotDataActions** |  |
+> | *Нет* |  |
+
+```json
+{
+  "assignableScopes": [
+    "/"
+  ],
+  "description": "Can perform cryptographic operations on keys and certificates.",
+  "id": "/subscriptions/{subscriptionId}/providers/Microsoft.Authorization/roleDefinitions/12338af0-0e69-4776-bea7-57ae8d297424",
+  "name": "12338af0-0e69-4776-bea7-57ae8d297424",
+  "permissions": [
+    {
+      "actions": [],
+      "notActions": [],
+      "dataActions": [
+        "Microsoft.KeyVault/vaults/keys/read",
+        "Microsoft.KeyVault/vaults/keys/update/action",
+        "Microsoft.KeyVault/vaults/keys/backup/action",
+        "Microsoft.KeyVault/vaults/keys/encrypt/action",
+        "Microsoft.KeyVault/vaults/keys/decrypt/action",
+        "Microsoft.KeyVault/vaults/keys/wrap/action",
+        "Microsoft.KeyVault/vaults/keys/unwrap/action",
+        "Microsoft.KeyVault/vaults/keys/sign/action",
+        "Microsoft.KeyVault/vaults/keys/verify/action"
+      ],
+      "notDataActions": []
+    }
+  ],
+  "roleName": "Key Vault Crypto User (preview)",
+  "roleType": "BuiltInRole",
+  "type": "Microsoft.Authorization/roleDefinitions"
+}
+```
+
+### <a name="key-vault-reader-preview"></a>Читатель Key Vault (Предварительная версия)
+
+Чтение метаданных хранилищ ключей и их сертификатов, ключей и секретов. Не удается считать конфиденциальные значения, такие как содержимое секрета или материал ключа. Работает только для хранилищ ключей, использующих модель разрешений управления доступом на основе ролей Azure.
+
+> [!div class="mx-tableFixed"]
+> | Действия | Описание |
+> | --- | --- |
+> | [Microsoft. Authorization](resource-provider-operations.md#microsoftauthorization)/*/Реад | Чтение ролей и назначений ролей |
+> | [Microsoft. Insights](resource-provider-operations.md#microsoftinsights)/алертрулес/* | Создание классического оповещения метрики и управление им |
+> | [Microsoft. Resources](resource-provider-operations.md#microsoftresources)/деплойментс/* | Создание развертывания и управление им |
+> | /Субскриптионс/ресаурцеграупс/Реад [Microsoft. Resources](resource-provider-operations.md#microsoftresources) | Возвращает группы ресурсов или выводит их список. |
+> | [Microsoft. support](resource-provider-operations.md#microsoftsupport)/* | Создание и обновление запроса в службу поддержки |
+> | /Чеккнамеаваилабилити/Реад [Microsoft. KeyVault](resource-provider-operations.md#microsoftkeyvault) | Проверяет, является ли имя Key Vault допустимым и неиспользуемым. |
+> | /Делетедваултс/Реад [Microsoft. KeyVault](resource-provider-operations.md#microsoftkeyvault) | Отображает свойства обратимо удаленных хранилищ Key Vault. |
+> | [Microsoft. KeyVault](resource-provider-operations.md#microsoftkeyvault)/локатионс/*/Реад |  |
+> | [Microsoft. KeyVault](resource-provider-operations.md#microsoftkeyvault)/ваултс/*/Реад |  |
+> | /Оператионс/Реад [Microsoft. KeyVault](resource-provider-operations.md#microsoftkeyvault) | Получение списка операций, доступных в поставщике ресурсов Microsoft.KeyVault. |
+> | **NotActions** |  |
+> | *Нет* |  |
+> | **Действия с данными** |  |
+> | [Microsoft. KeyVault](resource-provider-operations.md#microsoftkeyvault)/ваултс/*/Реад |  |
+> | /Ваултс/Секретс/реадметадата/Актион [Microsoft. KeyVault](resource-provider-operations.md#microsoftkeyvault) | Перечисление или Просмотр свойств секрета, но не его значения. |
+> | **NotDataActions** |  |
+> | *Нет* |  |
+
+```json
+{
+  "assignableScopes": [
+    "/"
+  ],
+  "description": "Can read metadata of key vaults and its certificates, keys and secrets. Cannot read sensitive values such as secret contents or key material.",
+  "id": "/subscriptions/{subscriptionId}/providers/Microsoft.Authorization/roleDefinitions/21090545-7ca7-4776-b22c-e363652d74d2",
+  "name": "21090545-7ca7-4776-b22c-e363652d74d2",
+  "permissions": [
+    {
+      "actions": [
+        "Microsoft.Authorization/*/read",
+        "Microsoft.Insights/alertRules/*",
+        "Microsoft.Resources/deployments/*",
+        "Microsoft.Resources/subscriptions/resourceGroups/read",
+        "Microsoft.Support/*",
+        "Microsoft.KeyVault/checkNameAvailability/read",
+        "Microsoft.KeyVault/deletedVaults/read",
+        "Microsoft.KeyVault/locations/*/read",
+        "Microsoft.KeyVault/vaults/*/read",
+        "Microsoft.KeyVault/operations/read"
+      ],
+      "notActions": [],
+      "dataActions": [
+        "Microsoft.KeyVault/vaults/*/read",
+        "Microsoft.KeyVault/vaults/secrets/readMetadata/action"
+      ],
+      "notDataActions": []
+    }
+  ],
+  "roleName": "Key Vault Reader (preview)",
+  "roleType": "BuiltInRole",
+  "type": "Microsoft.Authorization/roleDefinitions"
+}
+```
+
+### <a name="key-vault-secrets-officer-preview"></a>Директор Key Vault секреты (Предварительная версия)
+
+Выполните любое действие с секретами хранилища ключей, за исключением разрешений на управление. Работает только для хранилищ ключей, использующих модель разрешений управления доступом на основе ролей Azure.
+
+> [!div class="mx-tableFixed"]
+> | Действия | Описание |
+> | --- | --- |
+> | [Microsoft. Authorization](resource-provider-operations.md#microsoftauthorization)/*/Реад | Чтение ролей и назначений ролей |
+> | [Microsoft. Insights](resource-provider-operations.md#microsoftinsights)/алертрулес/* | Создание классического оповещения метрики и управление им |
+> | [Microsoft. Resources](resource-provider-operations.md#microsoftresources)/деплойментс/* | Создание развертывания и управление им |
+> | /Субскриптионс/ресаурцеграупс/Реад [Microsoft. Resources](resource-provider-operations.md#microsoftresources) | Возвращает группы ресурсов или выводит их список. |
+> | [Microsoft. support](resource-provider-operations.md#microsoftsupport)/* | Создание и обновление запроса в службу поддержки |
+> | /Чеккнамеаваилабилити/Реад [Microsoft. KeyVault](resource-provider-operations.md#microsoftkeyvault) | Проверяет, является ли имя Key Vault допустимым и неиспользуемым. |
+> | /Делетедваултс/Реад [Microsoft. KeyVault](resource-provider-operations.md#microsoftkeyvault) | Отображает свойства обратимо удаленных хранилищ Key Vault. |
+> | [Microsoft. KeyVault](resource-provider-operations.md#microsoftkeyvault)/локатионс/*/Реад |  |
+> | [Microsoft. KeyVault](resource-provider-operations.md#microsoftkeyvault)/ваултс/*/Реад |  |
+> | /Оператионс/Реад [Microsoft. KeyVault](resource-provider-operations.md#microsoftkeyvault) | Получение списка операций, доступных в поставщике ресурсов Microsoft.KeyVault. |
+> | **NotActions** |  |
+> | *Нет* |  |
+> | **Действия с данными** |  |
+> | [Microsoft. KeyVault](resource-provider-operations.md#microsoftkeyvault)/ваултс/Секретс/* |  |
+> | **NotDataActions** |  |
+> | *Нет* |  |
+
+```json
+{
+  "assignableScopes": [
+    "/"
+  ],
+  "description": "Can perform any action on the secrets of a key vault, except manage permissions.",
+  "id": "/subscriptions/{subscriptionId}/providers/Microsoft.Authorization/roleDefinitions/b86a8fe4-44ce-4948-aee5-eccb2c155cd7",
+  "name": "b86a8fe4-44ce-4948-aee5-eccb2c155cd7",
+  "permissions": [
+    {
+      "actions": [
+        "Microsoft.Authorization/*/read",
+        "Microsoft.Insights/alertRules/*",
+        "Microsoft.Resources/deployments/*",
+        "Microsoft.Resources/subscriptions/resourceGroups/read",
+        "Microsoft.Support/*",
+        "Microsoft.KeyVault/checkNameAvailability/read",
+        "Microsoft.KeyVault/deletedVaults/read",
+        "Microsoft.KeyVault/locations/*/read",
+        "Microsoft.KeyVault/vaults/*/read",
+        "Microsoft.KeyVault/operations/read"
+      ],
+      "notActions": [],
+      "dataActions": [
+        "Microsoft.KeyVault/vaults/secrets/*"
+      ],
+      "notDataActions": []
+    }
+  ],
+  "roleName": "Key Vault Secrets Officer (preview)",
+  "roleType": "BuiltInRole",
+  "type": "Microsoft.Authorization/roleDefinitions"
+}
+```
+
+### <a name="key-vault-secrets-user-preview"></a>Key Vault секреты пользователя (Предварительная версия)
+
+Чтение содержимого секрета. Работает только для хранилищ ключей, использующих модель разрешений управления доступом на основе ролей Azure.
+
+> [!div class="mx-tableFixed"]
+> | Действия | Описание |
+> | --- | --- |
+> | *Нет* |  |
+> | **NotActions** |  |
+> | *Нет* |  |
+> | **Действия с данными** |  |
+> | /Ваултс/Секретс/жетсекрет/Актион [Microsoft. KeyVault](resource-provider-operations.md#microsoftkeyvault) | Возвращает значение секрета. |
+> | /Ваултс/Секретс/реадметадата/Актион [Microsoft. KeyVault](resource-provider-operations.md#microsoftkeyvault) | Перечисление или Просмотр свойств секрета, но не его значения. |
+> | **NotDataActions** |  |
+> | *Нет* |  |
+
+```json
+{
+  "assignableScopes": [
+    "/"
+  ],
+  "description": "Can read secret contents.",
+  "id": "/subscriptions/{subscriptionId}/providers/Microsoft.Authorization/roleDefinitions/4633458b-17de-408a-b874-0445c86b69e6",
+  "name": "4633458b-17de-408a-b874-0445c86b69e6",
+  "permissions": [
+    {
+      "actions": [],
+      "notActions": [],
+      "dataActions": [
+        "Microsoft.KeyVault/vaults/secrets/getSecret/action",
+        "Microsoft.KeyVault/vaults/secrets/readMetadata/action"
+      ],
+      "notDataActions": []
+    }
+  ],
+  "roleName": "Key Vault Secrets User (preview)",
   "roleType": "BuiltInRole",
   "type": "Microsoft.Authorization/roleDefinitions"
 }

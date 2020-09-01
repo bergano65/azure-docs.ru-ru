@@ -4,12 +4,12 @@ description: Узнайте о поддерживаемых службах и с
 ms.subservice: logs
 ms.topic: reference
 ms.date: 06/15/2020
-ms.openlocfilehash: fd2dc4030816ab0b31befe46ac60d5e96fdae917
-ms.sourcegitcommit: 9c3cfbe2bee467d0e6966c2bfdeddbe039cad029
+ms.openlocfilehash: acd661467e90b4915daa2f3eb31f34fd350dc9f5
+ms.sourcegitcommit: d68c72e120bdd610bb6304dad503d3ea89a1f0f7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/24/2020
-ms.locfileid: "88782130"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89226469"
 ---
 # <a name="common-and-service-specific-schema-for-azure-resource-logs"></a>Распространенная и зависящая от службы схема для журналов ресурсов Azure
 
@@ -23,7 +23,7 @@ ms.locfileid: "88782130"
 
 ## <a name="top-level-common-schema"></a>Общая схема верхнего уровня
 
-| Название | Обязательный/необязательный | Описание |
+| name | Обязательный/необязательный | Описание |
 |---|---|---|
 | time | Обязательно | Метка времени события (UTC). |
 | resourceId | Обязательно | Идентификатор ресурса, создавшего событие. Для служб клиента он имеет формат "/tenants/ИД_клиента/providers/имя_поставщика". |
@@ -54,17 +54,18 @@ ms.locfileid: "88782130"
 | Шлюзы приложений |[Ведение журнала для шлюза приложений](../../application-gateway/application-gateway-diagnostics.md) |
 | Служба автоматизации Azure |[Log Analytics для службы автоматизации Azure](../../automation/automation-manage-send-joblogs-log-analytics.md) |
 | Пакетная служба Azure |[Ведение журнала пакетной службы Azure](../../batch/batch-diagnostics.md) |
-| База данных Azure для MySQL | [Журналы сервера в базе данных Azure для MySQL](../../mysql/concepts-server-logs.md#diagnostic-logs) |
-| База данных Azure для PostgreSQL | [Журналы базы данных Azure для PostgreSQL](../../postgresql/concepts-server-logs.md#resource-logs) |
-| Azure Data Explorer | [Журналы обозреватель данных Azure](/azure/data-explorer/using-diagnostic-logs) |
-| Cognitive Services | [Ведение журнала для Cognitive Services Azure](../../cognitive-services/diagnostic-logging.md) |
+| Службы Cognitive Services | [Ведение журнала для Cognitive Services Azure](../../cognitive-services/diagnostic-logging.md) |
 | Реестр контейнеров | [Ведение журнала для реестра контейнеров Azure](../../container-registry/container-registry-diagnostics-audit-logs.md) |
 | Сеть доставки содержимого | [Журналы Azure для CDN](../../cdn/cdn-azure-diagnostic-logs.md) |
 | Cosmos DB | [Журнал ведения диагностики Azure Cosmos DB](../../cosmos-db/monitor-cosmos-db.md) |
 | Фабрика данных | [Мониторинг фабрик данных с помощью Azure Monitor](../../data-factory/monitor-using-azure-monitor.md) |
 | Data Lake Analytics |[Доступ к журналам для Azure Data Lake Analytics](../../data-lake-analytics/data-lake-analytics-diagnostic-logs.md) |
 | Data Lake Storage |[Доступ к журналам для Azure Data Lake Store](../../data-lake-store/data-lake-store-diagnostic-logs.md) |
+| Azure Data Explorer | [Журналы обозреватель данных Azure](/azure/data-explorer/using-diagnostic-logs) |
+| База данных Azure для MySQL | [Журналы сервера в базе данных Azure для MySQL](../../mysql/concepts-server-logs.md#diagnostic-logs) |
+| База данных Azure для PostgreSQL | [Журналы базы данных Azure для PostgreSQL](../../postgresql/concepts-server-logs.md#resource-logs) |
 | Azure Databricks | [Журнал ведения диагностики в Azure Databricks](https://github.com/MicrosoftDocs/databricks-pr/blob/live/databricks/administration-guide/account-settings/azure-diagnostic-logs.md) |
+| Digital Twins | [Настройка системы диагностики Digital двойников](../../digital-twins/troubleshoot-diagnostics.md#log-schemas)
 | Центры событий |[Журналы концентраторов событий Azure](../../event-hubs/event-hubs-diagnostic-logs.md) |
 | ExpressRoute | Схема недоступна. |
 | Брандмауэр Azure | Схема недоступна. |
@@ -86,7 +87,8 @@ ms.locfileid: "88782130"
 | Шлюзы виртуальной сети | Схема недоступна. |
 
 
-## <a name="next-steps"></a>Next Steps
+
+## <a name="next-steps"></a>Следующие шаги
 
 * [Просмотр категорий журналов ресурсов, которые можно собираются](resource-logs-categories.md)
 * [Дополнительные сведения о журналах ресурсов](./platform-logs-overview.md)

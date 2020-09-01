@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.author: sgilley
 author: sdgilley
 ms.date: 07/27/2020
-ms.openlocfilehash: ab316d7b101a05dd9b6bba2e11bfe77239619126
-ms.sourcegitcommit: d7352c07708180a9293e8a0e7020b9dd3dd153ce
+ms.openlocfilehash: 5c5326310887cd5756ae264a35aafe7e771a7863
+ms.sourcegitcommit: d68c72e120bdd610bb6304dad503d3ea89a1f0f7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/30/2020
-ms.locfileid: "89146765"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89226800"
 ---
 # <a name="what-is-an-azure-machine-learning-compute-instance"></a>Сведения о вычислительном экземпляре Машинного обучения Azure
 
@@ -80,10 +80,10 @@ ms.locfileid: "89146765"
 
 ### <a name="installing-packages"></a>Установка пакетов
 
-Пакеты можно устанавливать непосредственно в записной книжке Jupyter или Rstudio.
+Пакеты можно устанавливать непосредственно в Jupyter Notebook или RStudio.
 
 * RStudio: используйте вкладку **Packages** (Пакеты) в правом нижнем углу или вкладку **Console** (Консоль) в левом верхнем углу.  
-* Python: Добавьте код установки и выполните его в ячейке записной книжки Jupyter.
+* Python: Добавление кода установки и выполнение в Jupyter Notebookной ячейке.
 
 Кроме того, доступ к окну терминала можно получить одним из указанных ниже способов.
 

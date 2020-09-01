@@ -6,25 +6,36 @@ author: linda33wj
 ms.service: data-factory
 ms.workload: data-services
 ms.topic: conceptual
-ms.date: 07/16/2020
+ms.date: 08/31/2020
 ms.author: jingwang
 ms.reviewer: craigg
-ms.openlocfilehash: 334d5b5113dba17c5abc2b4f2520bde0d16e4c06
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: a729d470cccd4121523c767ada9077a51361c061
+ms.sourcegitcommit: 3fb5e772f8f4068cc6d91d9cde253065a7f265d6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87007455"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89181988"
 ---
 # <a name="azure-data-factory-connector-overview"></a>Обзор соединителя фабрики данных Azure
 
 [!INCLUDE[appliesto-adf-asa-md](includes/appliesto-adf-asa-md.md)]
 
-Фабрика данных Azure поддерживает следующие хранилища данных и форматы посредством копирования, потока данных, поиска, получения метаданных и удаления действий. Щелкните каждое хранилище данных, чтобы узнать о поддерживаемых возможностях и соответствующих конфигурациях.
+Фабрика данных Azure поддерживает следующие хранилища данных и форматы с помощью копирования, потока данных, поиска, получения метаданных и удаления действий. Щелкните каждое хранилище данных, чтобы узнать о поддерживаемых возможностях и соответствующих конфигурациях.
 
 ## <a name="supported-data-stores"></a>Поддерживаемые хранилища данных
 
 [!INCLUDE [Connector overview](../../includes/data-factory-v2-connector-overview.md)]
+
+## <a name="integrate-with-more-data-stores"></a>Интеграция с дополнительными хранилищами данных
+
+Фабрика данных Azure может достичь более широкого набора хранилищ данных по сравнению с упомянутым выше списком. Если необходимо переместить данные в хранилище данных, которое не входит в список встроенных соединителей фабрики данных Azure, или из него, ниже приведены некоторые расширяемые параметры.
+- Для базы данных и хранилища данных обычно можно найти соответствующий драйвер ODBC, с помощью которого можно использовать [универсальный соединитель ODBC](connector-odbc.md).
+- Для приложений SaaS:
+    - Если он предоставляет интерфейсы API RESTFUL, можно использовать [универсальный соединитель RESTful](connector-rest.md).
+    - Если в нем есть канал OData, можно использовать [универсальный соединитель OData](connector-odata.md).
+    - Если он предоставляет API SOAP, можно использовать [универсальный соединитель HTTP](connector-http.md).
+    - Если у него есть драйвер ODBC, можно использовать [универсальный соединитель ODBC](connector-odbc.md).
+- Для других пользователей проверьте, можно ли загружать данные в какие-либо хранилища данных, поддерживаемые ADF, например, BLOB-объекты Azure, файлы, FTP/SFTP и т. д., а также разрешить ADF-файл. Вы можете вызывать пользовательский механизм загрузки данных с помощью [функции Azure](control-flow-azure-function-activity.md), [настраиваемого действия](transform-data-using-dotnet-custom-activity.md), [модуля](transform-data-databricks-notebook.md)данных / [HDInsight](transform-data-using-hadoop-hive.md), [веб-действия](control-flow-web-activity.md)и т. д.
 
 ## <a name="supported-file-formats"></a>Поддерживаемые типы файлов
 

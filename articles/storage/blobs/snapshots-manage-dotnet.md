@@ -1,27 +1,27 @@
 ---
 title: Создание моментальных снимков больших двоичных объектов и управление ими в .NET
 titleSuffix: Azure Storage
-description: Узнайте, как создать моментальный снимок большого двоичного объекта, доступного только для чтения, для резервного копирования данных большого двоичного объекта в определенный момент времени.
+description: Узнайте, как использовать клиентскую библиотеку .NET для создания моментального снимка большого двоичного объекта, доступного только для чтения, для резервного копирования данных большого двоичного объекта в определенный момент времени.
 services: storage
 author: tamram
 ms.service: storage
 ms.topic: how-to
-ms.date: 04/02/2020
+ms.date: 08/27/2020
 ms.author: tamram
 ms.subservice: blobs
 ms.custom: devx-track-csharp
-ms.openlocfilehash: d50357a648d63984ae70a32e0fdd7260a86d6a6a
-ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
+ms.openlocfilehash: fb57e7260a056afe023455149f610ff492c98c12
+ms.sourcegitcommit: d68c72e120bdd610bb6304dad503d3ea89a1f0f7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89020819"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89226137"
 ---
 # <a name="create-and-manage-a-blob-snapshot-in-net"></a>Создание моментальных снимков больших двоичных объектов и управление ими в .NET
 
 Моментальный снимок — это версия BLOB-объекта только для чтения, сделанная в определенный момент времени. В этой статье показано, как создавать моментальные снимки BLOB-объектов и управлять ими с помощью [клиентской библиотеки службы хранилища Azure для .NET](/dotnet/api/overview/azure/storage?view=azure-dotnet).
 
-Дополнительные сведения о моментальных снимках BLOB-объектов в службе хранилища Azure см. [в статье Создание моментального снимка большого двоичного объекта в .NET и управление им](snapshots-overview.md)
+Дополнительные сведения о моментальных снимках BLOB-объектов в службе хранилища Azure см. в разделе [моментальные снимки BLOB-объектов](snapshots-overview.md).
 
 ## <a name="create-a-snapshot"></a>Создание моментального снимка
 
@@ -162,5 +162,5 @@ await blockBlob.DeleteIfExistsAsync(DeleteSnapshotsOption.IncludeSnapshots, null
 ## <a name="next-steps"></a>Дальнейшие действия
 
 - [Моментальные снимки BLOB-объектов](snapshots-overview.md)
-- [Версии BLOB-объектов (Предварительная версия)](versioning-overview.md)
+- [Версии BLOB-объектов](versioning-overview.md)
 - [Обратимое удаление для больших двоичных объектов](storage-blob-soft-delete.md)

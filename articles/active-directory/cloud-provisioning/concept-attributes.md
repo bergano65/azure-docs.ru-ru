@@ -15,12 +15,12 @@ ms.date: 02/18/2019
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 4ac09fb3faf55be6c07a1e0a88b6e2032c9ab8ce
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 1fff90777c63820b54a1cb37156021c894de19c8
+ms.sourcegitcommit: d68c72e120bdd610bb6304dad503d3ea89a1f0f7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "78299335"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89226936"
 ---
 # <a name="understand-the-azure-ad-schema"></a>Общие сведения о схеме Azure AD
 Объект в Azure Active Directory (Azure AD), как и любой каталог, представляет собой программную конструкцию высокого уровня данных, представляющую такие вещи, как пользователи, группы и контакты. При создании нового пользователя или контакта в Azure AD создается новый экземпляр этого объекта. Эти экземпляры можно отличить в зависимости от их свойств.
@@ -51,7 +51,7 @@ ms.locfileid: "78299335"
 * **Входные данные** (mail): "john.smith@contoso.com"
 * **Выходные данные**: John. Smith
 
-Дополнительные сведения о написании пользовательских выражений и синтаксиса см. в разделе [Написание выражений для сопоставления атрибутов в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/manage-apps/functions-for-customizing-application-data).
+Дополнительные сведения о написании пользовательских выражений и синтаксиса см. в разделе [Написание выражений для сопоставления атрибутов в Azure Active Directory](../app-provisioning/functions-for-customizing-application-data.md).
 
 В следующей таблице перечислены общие атрибуты и их синхронизация с Azure AD.
 
@@ -61,7 +61,7 @@ ms.locfileid: "78299335"
 |cn|Прямой доступ|commonName
 |countryCode|Прямой доступ|countryCode|
 |displayName|Прямой доступ|displayName|
-|givenName|Expression|givenName|
+|givenName|Выражение|givenName|
 |objectGUID|Прямой доступ|sourceAnchorBinary|  
 |userprincipalName|Прямой доступ|userPrincipalName|
 |проксядресс|Прямой доступ|ProxyAddress|
@@ -245,7 +245,7 @@ ms.locfileid: "78299335"
  
     Пример: https://graph.microsoft.com/beta/serviceprincipals/653c0018-51f4-4736-a3a3-94da5dcb6862/synchronization/jobs/AD2AADProvisioning.e9287a7367e444c88dc67a531c36d8ec/schema
 
-   Замените `{Service Principal Id}` и `{AD2ADD Provisioning Id}` значениями.
+   Замените `{Service Principal Id}` и `{AD2ADD Provisioning Id}` собственными значениями.
 
 1. Этот запрос возвращает схему.
 

@@ -7,12 +7,12 @@ ms.topic: article
 ms.date: 06/14/2020
 ms.author: jpalma
 author: palma21
-ms.openlocfilehash: 417ca42e014c0bb197d7dd834b960f25fcfdf468
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: a58b00018f6ac89f024661d8d3f50ea5249e620b
+ms.sourcegitcommit: 3fb5e772f8f4068cc6d91d9cde253065a7f265d6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87056808"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89182128"
 ---
 # <a name="use-a-public-standard-load-balancer-in-azure-kubernetes-service-aks"></a>Использование общедоступной Load Balancer (цен. категория "Стандартный") в службе Kubernetes Azure (AKS)
 
@@ -229,7 +229,7 @@ az aks update \
 > [!IMPORTANT]
 > Необходимо [рассчитать требуемую квоту и проверить требования][requirements] перед настройкой *аллокатедаутбаундпортс* , чтобы избежать проблем с подключением или масштабированием.
 
-Можно также использовать **`load-balancer-outbound-ports`** параметры при создании кластера, но необходимо также указать **`load-balancer-managed-outbound-ip-count`** , **`load-balancer-outbound-ips`** или **`load-balancer-outbound-ip-prefixes`** .  Например.
+Можно также использовать **`load-balancer-outbound-ports`** параметры при создании кластера, но необходимо также указать **`load-balancer-managed-outbound-ip-count`** , **`load-balancer-outbound-ips`** или **`load-balancer-outbound-ip-prefixes`** .  Пример:
 
 ```azurecli-interactive
 az aks create \
@@ -267,16 +267,15 @@ az aks update \
 *outboundIPs* \* 64 000 \> *nodeVMs* \* *desiredAllocatedOutboundPorts*.
  
 Например, если имеются 3 узла *nodeVMs* и 50 000 портов *desiredAllocatedOutboundPorts*, необходимо по крайней мере 3 адреса *outboundIPs*. Рекомендуется подготовить дополнительные исходящие IP-адреса. Кроме того, при вычислении емкости исходящих IP-адресов необходимо учитывать автомасштабирование кластера и возможность обновления пула узлов. Чтобы учесть автомасштабирование кластера, проверьте текущее число узлов и максимальное количество узлов и используйте большее значение. Чтобы учесть обновление, добавьте по одной дополнительной виртуальной машине узла на каждый пул узлов, который допускает обновление.
- 
+
 - Если для параметра *IdleTimeoutInMinutes* задано значение, отличное от значения по умолчанию (30 минут), определите, какой продолжительности исходящее подключение потребуется рабочим нагрузкам. Также учтите, что время ожидания по умолчанию для подсистемы балансировки нагрузки *ценовой категории "Стандартный"* , используемой за пределами AKS, составляет 4 минуты. Значение *IdleTimeoutInMinutes*, более точно соответствующее конкретной рабочей нагрузке AKS, может снизить нехватку адресов SNAT, вызванную поддержанием подключений, которые больше не используются.
 
 > [!WARNING]
 > Изменение значений для *аллокатедаутбаундпортс* и *идлетимеаутинминутес* может значительно изменить поведение исходящего правила для подсистемы балансировки нагрузки и не должно выполняться без проблем. не зная компромиссов и шаблонов подключения приложения, просмотрите [раздел Устранение неполадок SNAT ниже][troubleshoot-snat] и ознакомьтесь с [Load Balancer правилами исходящих][azure-lb-outbound-rules-overview] [подключений и исходящими подключениями в Azure][azure-lb-outbound-connections] перед обновлением этих значений, чтобы полностью понять влияние изменений.
 
-
 ## <a name="restrict-inbound-traffic-to-specific-ip-ranges"></a>Ограничить входящий трафик к определенным диапазонам IP-адресов
 
-Группа безопасности сети (NSG), связанная с виртуальной сетью подсистемы балансировки нагрузки, по умолчанию содержит правило, разрешающее весь внешний входящий трафик. Вы можете изменить это правило, чтобы разрешить только определенные диапазоны IP-адресов для передачи входящего трафика. В приведенном ниже манифесте с помощью параметра *loadBalancerSourceRanges* указан новый диапазон IP-адресов для внешнего входящего трафика.
+В приведенном ниже манифесте с помощью параметра *loadBalancerSourceRanges* указан новый диапазон IP-адресов для внешнего входящего трафика.
 
 ```yaml
 apiVersion: v1
@@ -292,6 +291,9 @@ spec:
   loadBalancerSourceRanges:
   - MY_EXTERNAL_IP_RANGE
 ```
+
+> [!NOTE]
+> Входящий внешний трафик проходит от подсистемы балансировки нагрузки к виртуальной сети для кластера AKS. Виртуальная сеть имеет группу безопасности сети (NSG), которая разрешает весь входящий трафик от балансировщика нагрузки. Этот NSG использует [тег службы][service-tags] типа балансировщика, *чтобы разрешить* трафик из балансировщика нагрузки.
 
 ## <a name="maintain-the-clients-ip-on-inbound-connections"></a>Обслуживание IP-адреса клиента при входящих подключениях
 
@@ -322,7 +324,7 @@ spec:
 | `service.beta.kubernetes.io/azure-dns-label-name`                 | Имя DNS-метки в общедоступных IP-адресах   | Укажите имя DNS-метки для **общедоступной** службы. Если задана пустая строка, запись DNS в общедоступном IP-адресе не будет использоваться.
 | `service.beta.kubernetes.io/azure-shared-securityrule`            | `true` или `false`                     | Укажите, что служба должна быть предоставлена с помощью правила безопасности Azure, которое может использоваться совместно с другой службой, характерным правилом для увеличения числа служб, которые могут быть предоставлены. Эта аннотация полагается на функцию расширенных [правил безопасности](../virtual-network/security-overview.md#augmented-security-rules) в Azure группы безопасности сети. 
 | `service.beta.kubernetes.io/azure-load-balancer-resource-group`   | Имя группы ресурсов            | Укажите группу ресурсов для общедоступных IP-адресов подсистемы балансировки нагрузки, которые находятся не в той же группе ресурсов, что и инфраструктура кластера (Группа ресурсов узла).
-| `service.beta.kubernetes.io/azure-allowed-service-tags`           | Список разрешенных тегов службы          | Укажите список разрешенных [тегов службы](../virtual-network/security-overview.md#service-tags) , разделенных запятыми.
+| `service.beta.kubernetes.io/azure-allowed-service-tags`           | Список разрешенных тегов службы          | Укажите список разрешенных [тегов службы][service-tags] , разделенных запятыми.
 | `service.beta.kubernetes.io/azure-load-balancer-tcp-idle-timeout` | Время ожидания простоя TCP в минутах          | Укажите время в минутах, в течение которого время ожидания простоя подключения TCP будет происходить в подсистеме балансировки нагрузки. По умолчанию и минимальное значение равно 4. Максимальное значение равно 30. Должно быть целым числом.
 |`service.beta.kubernetes.io/azure-load-balancer-disable-tcp-reset` | `true`                                | Отключить `enableTcpReset` для SLB
 
@@ -424,3 +426,4 @@ spec:
 [requirements]: #requirements-for-customizing-allocated-outbound-ports-and-idle-timeout
 [use-multiple-node-pools]: use-multiple-node-pools.md
 [troubleshoot-snat]: #troubleshooting-snat
+[service-tags]: ../virtual-network/security-overview.md#service-tags

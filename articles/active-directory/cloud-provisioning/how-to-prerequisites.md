@@ -11,12 +11,12 @@ ms.date: 12/06/2019
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b7eb632405ef17ef4100503f30168c1207179f48
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 7cf072ae9544cd479aeca02d9b9fcd670b8eb5fe
+ms.sourcegitcommit: d68c72e120bdd610bb6304dad503d3ea89a1f0f7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85373868"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89226902"
 ---
 # <a name="prerequisites-for-azure-ad-connect-cloud-provisioning"></a>Предварительные требования для облачной подготовки Azure AD Connect
 В этой статье описано, как выбрать и применить облачную подготовку Azure Active Directory (Azure AD) Connect в качестве решения для идентификации.
@@ -27,7 +27,7 @@ ms.locfileid: "85373868"
 Для использования облачной подготовки Azure AD Connect вам потребуются следующие ресурсы.
     
 - Учетная запись гибридного администратора удостоверений для клиента Azure AD, который не является гостевым пользователем.
-- Локальный сервер для агента подготовки с Windows 2012 R2 или более поздней версии.  Этот сервер должен быть сервером уровня 0 на основе [модели административного уровня Active Directory](https://docs.microsoft.com/windows-server/identity/securing-privileged-access/securing-privileged-access-reference-material).
+- Локальный сервер для агента подготовки с Windows 2012 R2 или более поздней версии.  Этот сервер должен быть сервером уровня 0 на основе [модели административного уровня Active Directory](/windows-server/identity/securing-privileged-access/securing-privileged-access-reference-material).
 - Конфигурации для локального брандмауэра.
 
 >[!NOTE]
@@ -37,12 +37,12 @@ ms.locfileid: "85373868"
 
 ### <a name="in-the-azure-active-directory-admin-center"></a>В центре администрирования Azure Active Directory
 
-1. Создайте облачную учетную запись администратора гибридной идентификации в клиенте Azure AD. Таким образом, вы сможете управлять конфигурацией клиента, если работа локальных служб завершится сбоем или они станут недоступными. Узнайте [, как добавить облачную учетную запись администратора гибридной идентификации](../active-directory-users-create-azure-portal.md). Выполнение этого шага очень важно, чтобы не потерять доступ к клиенту.
-1. Добавьте одно [имя личного домена](../active-directory-domains-add-azure-portal.md) (или несколько) в клиент Azure AD. Пользователи могут выполнить вход с помощью одного из этих доменных имен.
+1. Создайте облачную учетную запись администратора гибридной идентификации в клиенте Azure AD. Таким образом, вы сможете управлять конфигурацией клиента, если работа локальных служб завершится сбоем или они станут недоступными. Узнайте [, как добавить облачную учетную запись администратора гибридной идентификации](../fundamentals/add-users-azure-active-directory.md). Выполнение этого шага очень важно, чтобы не потерять доступ к клиенту.
+1. Добавьте одно [имя личного домена](../fundamentals/add-custom-domain.md) (или несколько) в клиент Azure AD. Пользователи могут выполнить вход с помощью одного из этих доменных имен.
 
 ### <a name="in-your-directory-in-active-directory"></a>В каталоге Active Directory
 
-Запустите [средство IdFix](https://docs.microsoft.com/office365/enterprise/prepare-directory-attributes-for-synch-with-idfix), чтобы подготовить атрибуты каталога для синхронизации.
+Запустите [средство IdFix](/office365/enterprise/prepare-directory-attributes-for-synch-with-idfix), чтобы подготовить атрибуты каталога для синхронизации.
 
 ### <a name="in-your-on-premises-environment"></a>В локальной среде
 
@@ -96,4 +96,3 @@ ms.locfileid: "85373868"
 
 - [Что собой представляет подготовка?](what-is-provisioning.md)
 - [Что такое облачная подготовка Azure AD Connect?](what-is-cloud-provisioning.md)
-

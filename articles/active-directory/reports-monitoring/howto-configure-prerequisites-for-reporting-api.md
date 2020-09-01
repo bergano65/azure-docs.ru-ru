@@ -17,25 +17,25 @@ ms.date: 03/04/2020
 ms.author: markvi
 ms.reviewer: dhanyahk
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c4702b12bea2e078af4d10fe9d709d16c361b3f8
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 22a8a0efe16b4ab2ea7b8a647284a3449741ac02
+ms.sourcegitcommit: d68c72e120bdd610bb6304dad503d3ea89a1f0f7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85608268"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89226970"
 ---
 # <a name="prerequisites-to-access-the-azure-active-directory-reporting-api"></a>Предварительные требования для доступа к API отчетов Azure Active Directory
 
-[API-интерфейсы отчетов Azure Active Directory (Azure AD)](https://docs.microsoft.com/azure/active-directory/reports-monitoring/concept-reporting-api) предоставляют программный доступ к данным с помощью набора API-интерфейсов на базе REST. Эти API можно вызывать из языков программирования и средств.
+[API-интерфейсы отчетов Azure Active Directory (Azure AD)](./concept-reporting-api.md) предоставляют программный доступ к данным с помощью набора API-интерфейсов на базе REST. Эти API можно вызывать из языков программирования и средств.
 
-API отчетов использует [OAuth](https://docs.microsoft.com/azure/api-management/api-management-howto-protect-backend-with-aad) для авторизации доступа к веб-API.
+API отчетов использует [OAuth](../../api-management/api-management-howto-protect-backend-with-aad.md) для авторизации доступа к веб-API.
 
 Чтобы подготовить доступ к API отчетов, сделайте следующее:
 
 1. [Назначение ролей](#assign-roles)
 2. [Требования к лицензии](#license-requirements)
 3. [Регистрация приложения](#register-an-application)
-4. [Предоставить разрешения](#grant-permissions)
+4. [Предоставление разрешений](#grant-permissions)
 5. [Сбор параметров конфигурации](#gather-configuration-settings)
 
 ## <a name="assign-roles"></a>Назначение ролей
@@ -81,13 +81,13 @@ API отчетов использует [OAuth](https://docs.microsoft.com/azure
 
     ![Регистрация приложения](./media/howto-configure-prerequisites-for-reporting-api/04.png)
 
-    а. В текстовом поле **Имя** введите `Reporting API application`.
+    a. В текстовом поле **Имя** введите `Reporting API application`.
 
     b. Для **поддерживаемого типа учетных записей**выберите **учетные записи только в этом Организации**.
 
     c. В **текстовом поле** **URL-адрес перенаправления** выберите введите `https://localhost` .
 
-    d. Выберите **Зарегистрировать**. 
+    г. Нажмите **Зарегистрировать**. 
 
 
 ## <a name="grant-permissions"></a>Предоставить разрешения 
@@ -97,7 +97,7 @@ API отчетов использует [OAuth](https://docs.microsoft.com/azure
 | API | Разрешение |
 | --- | --- |
 | Microsoft Azure Active Directory | Чтение данных каталога |
-| Microsoft Graph | Прочитать все данные журнала аудита |
+| Microsoft Graph | Прочитать все данные журнала аудита |
 
 
 ![Регистрация приложения](./media/howto-configure-prerequisites-for-reporting-api/36.png)
@@ -131,7 +131,7 @@ API отчетов использует [OAuth](https://docs.microsoft.com/azure
 
 В этом разделе показано, как получить из каталога следующие параметры:
 
-- Доменное имя
+- Имя домена
 - Идентификатор клиента
 - Секрет клиента
 
@@ -184,7 +184,7 @@ API отчетов использует [OAuth](https://docs.microsoft.com/azure
 
 5. На странице **Добавление секрета клиента** добавьте:
 
-    а. В текстовом поле **Описание** введите `Reporting API`.
+    a. В текстовом поле **Описание** введите `Reporting API`.
 
     b. Для параметра **Срок действия истекает** выберите значение **Через 2 года**.
 
@@ -225,5 +225,5 @@ API отчетов использует [OAuth](https://docs.microsoft.com/azure
 ## <a name="next-steps"></a>Дальнейшие действия
 
 * [Получение данных с помощью API отчетов Azure Active Directory с сертификатами](tutorial-access-api-with-certificates.md)
-* [Справочник по API аудита](https://developer.microsoft.com/graph/docs/api-reference/beta/resources/directoryaudit) 
-* [Справочник по API отчетов о действиях при входе](https://developer.microsoft.com/graph/docs/api-reference/beta/resources/signin)
+* [Справочник по API аудита](/graph/api/resources/directoryaudit?view=graph-rest-beta) 
+* [Справочник по API отчетов о действиях при входе](/graph/api/resources/signin?view=graph-rest-beta)

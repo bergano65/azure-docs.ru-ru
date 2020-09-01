@@ -8,12 +8,12 @@ ms.date: 12/02/2019
 ms.topic: how-to
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 77ea5a354dde7adb006c95e9548d8fcc37e2dc12
-ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
+ms.openlocfilehash: 34796a435536a48100b7434ed5267802cd2d549f
+ms.sourcegitcommit: d68c72e120bdd610bb6304dad503d3ea89a1f0f7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2020
-ms.locfileid: "86256872"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89226953"
 ---
 # <a name="cloud-provisioning-troubleshooting"></a>Устранение неполадок подготовки облака
 
@@ -22,7 +22,7 @@ ms.locfileid: "86256872"
 
 ## <a name="common-troubleshooting-areas"></a>Распространенные области устранения неполадок
 
-|Имя|Описание|
+|name|Описание|
 |-----|-----|
 |[Проблемы с агентом](#agent-problems)|Убедитесь, что агент установлен правильно и взаимодействует с Azure Active Directory (Azure AD).|
 |[Проблемы синхронизации объектов](#object-synchronization-problems)|Используйте журналы подготовки для устранения неполадок синхронизации объектов.|
@@ -120,9 +120,9 @@ ms.locfileid: "86256872"
 
 Эта проблема обычно вызвана тем, что агенту не удается выполнить сценарии регистрации PowerShell из-за локальных политик выполнения PowerShell.
 
-Чтобы устранить эту проблему, измените политики выполнения PowerShell на сервере. Необходимо, чтобы политики компьютера и пользователя были заданы как *неопределенные* или *RemoteSigned*. Если они заданы как *неограниченные*, вы увидите эту ошибку. Дополнительные сведения см. в разделе [политики выполнения PowerShell](https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_execution_policies?view=powershell-6). 
+Чтобы устранить эту проблему, измените политики выполнения PowerShell на сервере. Необходимо, чтобы политики компьютера и пользователя были заданы как *неопределенные* или *RemoteSigned*. Если они заданы как *неограниченные*, вы увидите эту ошибку. Дополнительные сведения см. в разделе [политики выполнения PowerShell](/powershell/module/microsoft.powershell.core/about/about_execution_policies?view=powershell-6). 
 
-### <a name="log-files"></a>файлы журналов.
+### <a name="log-files"></a>Файлы журнала
 
 По умолчанию агент выдает минимальные сообщения об ошибках и сведения о трассировке стека. Эти журналы трассировки можно найти в папке *К:\ПРОГРАМДАТА\МИКРОСОФТ\АЗУРЕ AD Connect подготовка Agent\Trace*.
 
@@ -195,7 +195,7 @@ ms.locfileid: "86256872"
 
   ![Перезапустить подготовку](media/how-to-troubleshoot/quarantine3.png)
 
-- Используйте Microsoft Graph, чтобы [перезапустить задание подготовки](https://docs.microsoft.com/graph/api/synchronization-synchronizationjob-restart?view=graph-rest-beta&tabs=http). Вы получите полный контроль над перезапусками. Вы можете выбрать следующие флажки:
+- Используйте Microsoft Graph, чтобы [перезапустить задание подготовки](/graph/api/synchronization-synchronizationjob-restart?tabs=http&view=graph-rest-beta). Вы получите полный контроль над перезапусками. Вы можете выбрать следующие флажки:
   - Для перезапуска счетчика депонирования, который начисляется в направлении карантина.
   - Карантин, чтобы удалить приложение из карантина.
   - Водяные знаки. 
@@ -208,6 +208,3 @@ ms.locfileid: "86256872"
 
 - [Что собой представляет подготовка?](what-is-provisioning.md)
 - [Что такое облачная подготовка Azure AD Connect?](what-is-cloud-provisioning.md)
-
-
-

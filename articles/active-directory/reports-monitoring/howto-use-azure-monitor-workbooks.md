@@ -14,12 +14,12 @@ ms.subservice: report-monitor
 ms.date: 10/30/2019
 ms.author: markvi
 ms.reviewer: dhanyahk
-ms.openlocfilehash: ec492466e107eb6f4821f0e6d2caed9daa141a35
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 510991c1afba9a5ffbfd77e855ee25d8b641bdd0
+ms.sourcegitcommit: d68c72e120bdd610bb6304dad503d3ea89a1f0f7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85608956"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89226987"
 ---
 # <a name="how-to-use-azure-monitor-workbooks-for-azure-active-directory-reports"></a>Использование книг Azure Monitor для отчетов Azure Active Directory
 
@@ -42,13 +42,13 @@ ms.locfileid: "85608956"
 
 - Получить более глубокое понимание запросов журнала входа в систему, отчетов по книге со сведениями о количестве пользователей, которым был предоставлен доступ или которым было отказано в доступе, а также сведениями о количестве пользователей, которые обошли политики условного доступа при доступе к ресурсам.
 
-- Чтобы помочь вам решить эти вопросы, Azure Active Directory предоставляет книги для мониторинга. [Книги Azure Monitor](https://docs.microsoft.com/azure/azure-monitor/platform/workbooks-overview) объединяют текст, запросы аналитики, метрики и параметры в подробные интерактивные отчеты.
+- Чтобы помочь вам решить эти вопросы, Azure Active Directory предоставляет книги для мониторинга. [Книги Azure Monitor](../../azure-monitor/platform/workbooks-overview.md) объединяют текст, запросы аналитики, метрики и параметры в подробные интерактивные отчеты.
 
 
 
 В этой статье:
 
-- Предполагается, что вы знакомы с [порядком создания интерактивных отчетов с помощью книг Azure Monitor](https://docs.microsoft.com/azure/azure-monitor/platform/workbooks-overview).
+- Предполагается, что вы знакомы с [порядком создания интерактивных отчетов с помощью книг Azure Monitor](../../azure-monitor/platform/workbooks-overview.md).
 
 - Объясняется, как использовать книги Azure Monitor для отслеживания влияния политик условного доступа, устранения неполадок при входе и определения устаревших протоколов проверки подлинности.
  
@@ -58,11 +58,11 @@ ms.locfileid: "85608956"
 
 Для использования книг Azure Monitor необходимо следующее.
 
-- Клиент Azure Active Directory с лицензией уровня "Премиум" (P1/P2). Узнайте, как [получить лицензию уровня "Премиум"](https://docs.microsoft.com/azure/active-directory/fundamentals/active-directory-get-started-premium).
+- Клиент Azure Active Directory с лицензией уровня "Премиум" (P1/P2). Узнайте, как [получить лицензию уровня "Премиум"](../fundamentals/active-directory-get-started-premium.md).
 
-- [Рабочая область Log Analytics](https://docs.microsoft.com/azure/azure-monitor/learn/quick-create-workspace).
+- [Рабочая область Log Analytics](../../azure-monitor/learn/quick-create-workspace.md).
 
-- [Доступ](https://docs.microsoft.com/azure/azure-monitor/platform/manage-access#manage-access-using-workspace-permissions) к рабочей области Log Analytics.
+- [Доступ](../../azure-monitor/platform/manage-access.md#manage-access-using-workspace-permissions) к рабочей области Log Analytics.
 - Следующие роли в Azure Active Directory (при доступе к Log Analytics через портал Azure Active Directory)
     - администратор безопасности;
     - Читатель сведений о безопасности
@@ -70,7 +70,7 @@ ms.locfileid: "85608956"
     - Глобальный администратор.
 
 ## <a name="roles"></a>Роли
-Для управления книгами требуется одна из следующих ролей, а также [доступ к базовой рабочей области Log Analytics](https://docs.microsoft.com/azure/azure-monitor/platform/manage-access#manage-access-using-azure-permissions).
+Для управления книгами требуется одна из следующих ролей, а также [доступ к базовой рабочей области Log Analytics](../../azure-monitor/platform/manage-access.md#manage-access-using-azure-permissions).
 -   Глобальный администратор.
 -   администратор безопасности;
 -   Читатель сведений о безопасности
@@ -302,4 +302,4 @@ ms.locfileid: "85608956"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-[Создание интерактивных отчетов с помощью книг Azure Monitor](https://docs.microsoft.com/azure/azure-monitor/platform/workbooks-overview).
+[Создание интерактивных отчетов с помощью книг Azure Monitor](../../azure-monitor/platform/workbooks-overview.md).

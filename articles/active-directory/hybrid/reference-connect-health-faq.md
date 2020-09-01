@@ -16,12 +16,12 @@ ms.topic: reference
 ms.date: 07/18/2017
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b4c4b1f7aed6a188c491e6f4961442fa85744b6b
-ms.sourcegitcommit: 6fc156ceedd0fbbb2eec1e9f5e3c6d0915f65b8e
+ms.openlocfilehash: 9a725831efe6b92ba522900fac67b317e42bc959
+ms.sourcegitcommit: 3fb5e772f8f4068cc6d91d9cde253065a7f265d6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/21/2020
-ms.locfileid: "88718549"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89182383"
 ---
 # <a name="azure-ad-connect-health-frequently-asked-questions"></a>Часто задаваемые вопросы об Azure AD Connect Health
 Эта статья содержит ответы на часто задаваемые вопросы о расширении Azure Active Directory (Azure AD) Connect Health. Здесь представлены сведения об использовании службы, в частности о модели выставления счетов, возможностях, ограничениях и поддержке.
@@ -37,9 +37,9 @@ ms.locfileid: "88718549"
 
 |Роль| Версия операционной системы|
 |--|--|
-|Службы федерации Active Directory (AD FS)| <ul><li> Windows Server 2012  </li> <li>Windows Server 2012 R2 </li> <li> Windows Server 2016  </li> <li> Windows Server 2019  </li> </ul>|
+|Службы федерации Active Directory (AD FS)| <ul><li> Windows Server 2012  </li> <li>Windows Server 2012 R2 </li> <li> Windows Server 2016  </li> <li> Windows Server 2019  </li> </ul>|
 |Azure AD Connect | Версия 1.0.9125 или более поздняя|
-|Доменные службы Active Directory (AD DS)| <ul><li> Windows Server 2012  </li> <li>Windows Server 2012 R2 </li> <li> Windows Server 2016  </li> <li> Windows Server 2019  </li> </ul>|
+|Доменные службы Active Directory (AD DS)| <ul><li> Windows Server 2012  </li> <li>Windows Server 2012 R2 </li> <li> Windows Server 2016  </li> <li> Windows Server 2019  </li> </ul>|
 
 Установки Windows Server Core не поддерживаются.
 
@@ -137,7 +137,7 @@ Azure AD Connect Health не поддерживается в облаке для
 
 * Агент не может подключиться к необходимым конечным точкам, так как трафик блокируется брандмауэром. Это особенно часто происходит на прокси-серверах веб-приложений. Убедитесь, что исходящие подключения к необходимым конечным точкам и портам разрешены. Дополнительные сведения см. в [разделе требования](how-to-connect-health-agent-install.md#requirements) .
 * Исходящая связь проходит проверку TLS на уровне сети. В результате сертификат, используемый агентом, заменяется проверяющим сервером или сущностью, что приводит к ошибке регистрации агента.
-* Пользователь не имеет доступа для регистрации агента. По умолчанию доступ имеют глобальные администраторы. Вы можете использовать [Управление доступом на основе ролей Azure (Azure RBAC)](how-to-connect-health-operations.md#manage-access-with-role-based-access-control) для делегирования доступа другим пользователям.
+* Пользователь не имеет доступа для регистрации агента. По умолчанию доступ имеют глобальные администраторы. Вы можете использовать [Управление доступом на основе ролей Azure (Azure RBAC)](how-to-connect-health-operations.md#manage-access-with-azure-rbac) для делегирования доступа другим пользователям.
 
 **Вопрос. я получаю предупреждение о том, что служба работоспособности данные устарели. Разделы справки устранить проблему?**
 
