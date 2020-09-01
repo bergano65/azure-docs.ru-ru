@@ -1,7 +1,7 @@
 ---
 title: Задание служб мультимедиа Azure (кодирование и анализ) коды ошибок | Документация Майкрософт
 description: В этой статье содержатся ссылки на разделы справки по кодам ошибок заданий и приводятся полезные ссылки на соответствующие статьи.
-author: Juliako
+author: IngridAtMicrosoft
 manager: femila
 editor: ''
 services: media-services
@@ -11,16 +11,18 @@ ms.workload: media
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 04/28/2019
-ms.author: juliako
-ms.openlocfilehash: ec057d86ea39afb7eabd4e8227646eaec11c5655
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.date: 08/31/2020
+ms.author: inhenkel
+ms.openlocfilehash: 6d5268e0a0c7e6606ac28aa9b62e81bb4c4bc460
+ms.sourcegitcommit: bcda98171d6e81795e723e525f81e6235f044e52
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87023013"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89269137"
 ---
 # <a name="media-services-job-error-codes"></a>Коды ошибок заданий служб мультимедиа
+
+[!INCLUDE [media services api v3 logo](./includes/v3-hr.md)]
 
 В этом разделе приведена ссылка на справочный документ по ПРОЧному описанию кодов ошибок и сообщений об ошибках [заданий](transforms-jobs-concept.md) .
 

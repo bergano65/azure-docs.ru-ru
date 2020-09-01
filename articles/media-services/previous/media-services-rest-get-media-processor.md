@@ -14,21 +14,24 @@ ms.devlang: na
 ms.topic: article
 ms.date: 03/20/2019
 ms.author: juliako
-ms.openlocfilehash: 342476504fc4757c1fa62dd754ce73ecd5f3cb7f
-ms.sourcegitcommit: 1e6c13dc1917f85983772812a3c62c265150d1e7
+ms.openlocfilehash: ba625aa048360a4c201b91b4a5a4a7ca4dd6277b
+ms.sourcegitcommit: bcda98171d6e81795e723e525f81e6235f044e52
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/09/2020
-ms.locfileid: "86169295"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89269511"
 ---
 # <a name="how-to-get-a-media-processor-instance"></a>Как получить экземпляр обработчика мультимедиа
+
+[!INCLUDE [media services api v2 logo](./includes/v2-hr.md)]
+
 > [!div class="op_single_selector"]
 > * [.NET](media-services-get-media-processor.md)
 > * [REST](media-services-rest-get-media-processor.md)
 > 
 > 
 
-## <a name="overview"></a>Общие сведения
+## <a name="overview"></a>Обзор
 Обработчик мультимедиа — это компонент, который работает со специфическими задачами обработки видео или аудио, включая кодирование, преобразование формата, шифрование или расшифровку мультимедийного содержимого. Для выполнения всех задач, отправленных в Службы мультимедиа, включая кодирование, шифрование или преобразование содержимого видео и аудио, требуется обработчик мультимедиа. 
 
 ## <a name="azure-media-processors"></a>Обработчики мультимедиа Azure 
@@ -91,6 +94,6 @@ Host: media.windows.net
 ## <a name="provide-feedback"></a>Отзывы
 [!INCLUDE [media-services-user-voice-include](../../../includes/media-services-user-voice-include.md)]
 
-## <a name="next-steps"></a>Next Steps
+## <a name="next-steps"></a>Следующие шаги
 Теперь, когда вы знаете, как получить экземпляр обработчика мультимедиа, перейдите к инструкциям по [кодированию файлов](media-services-rest-get-started.md), в котором показано, как использовать Media Encoder Standard для кодирования файлов.
 

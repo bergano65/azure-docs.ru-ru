@@ -15,14 +15,16 @@ ms.topic: article
 ms.date: 03/20/2019
 ms.author: ril
 ms.reviewer: juliako
-ms.openlocfilehash: a8db8de6ef062dcf757f3d264379677d6550ea3a
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: df35b48a4da05d068760f0b04394ea53d788000e
+ms.sourcegitcommit: bcda98171d6e81795e723e525f81e6235f044e52
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "69997677"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89269699"
 ---
 # <a name="redact-faces-with-azure-media-analytics-walkthrough"></a>Пошаговое руководство скрытия лиц с помощью аналитики мультимедиа Azure
+
+[!INCLUDE [media services api v2 logo](./includes/v2-hr.md)]
 
 ## <a name="overview"></a>Обзор
 
@@ -101,7 +103,7 @@ ms.locfileid: "69997677"
 
 4. Запустите AzureMediaRedactor.exe. 
 
-### <a name="use-the-tool"></a>Использование инструмента
+### <a name="use-the-tool"></a>Использование средства
 
 1. Обработайте видео в учетной записи служб мультимедиа Azure с помощью Redactor MP в режиме анализа. 
 2. Скачайте первоначальный видеофайл и выходные данные задания Redaction - Analyze. 
@@ -125,7 +127,7 @@ ms.locfileid: "69997677"
 
 [!INCLUDE [media-services-learning-paths-include](../../../includes/media-services-learning-paths-include.md)]
 
-## <a name="provide-feedback"></a>Предоставление отзыва
+## <a name="provide-feedback"></a>Отзывы
 [!INCLUDE [media-services-user-voice-include](../../../includes/media-services-user-voice-include.md)]
 
 ## <a name="related-links"></a>Связанные ссылки

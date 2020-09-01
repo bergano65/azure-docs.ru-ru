@@ -4,15 +4,15 @@ description: Устранение неполадок службы файлов A
 author: jeffpatt24
 ms.service: storage
 ms.topic: troubleshooting
-ms.date: 05/31/2019
+ms.date: 08/31/2019
 ms.author: jeffpatt
 ms.subservice: files
-ms.openlocfilehash: e9384dd3865b106488dc8ec303b060736f23ded7
-ms.sourcegitcommit: c5021f2095e25750eb34fd0b866adf5d81d56c3a
+ms.openlocfilehash: 3bd059e59bebe9ae1ecc8f2f00dd63f873e08944
+ms.sourcegitcommit: bcda98171d6e81795e723e525f81e6235f044e52
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88797791"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89269375"
 ---
 # <a name="troubleshoot-azure-files-problems-in-windows"></a>Устранение неполадок службы файлов Azure в Windows
 
@@ -344,14 +344,13 @@ $StorageAccountName = "<storage-account-name-here>"
 Debug-AzStorageAccountAuth -StorageAccountName $StorageAccountName -ResourceGroupName $ResourceGroupName -Verbose
 ```
 Командлет выполняет следующие проверки по порядку и предоставляет рекомендации по сбоям:
-1. CheckPort445Connectivity: Проверьте, открыт ли порт 445 для подключения SMB.
-2. Чеккдомаинжоинед: Проверка того, что компьютер клиента присоединен к домену AD
-3. Чеккадобжект: Убедитесь, что в Active Directory есть объект, который представляет учетную запись хранения и имеет правильное имя участника-службы (SPN).
-4. Чеккжеткерберостиккет: попытка получить билет Kerberos для подключения к учетной записи хранения 
-5. Чеккадобжектпассвордискоррект: Убедитесь, что пароль, настроенный для удостоверения AD, представляющего учетную запись хранения, совпадает с ключом kerb1 или kerb2 ключа учетной записи хранения.
-6. Чекксидхасаадусер: Убедитесь, что вошедший в систему пользователь AD синхронизирован с Azure AD. Если вы хотите узнать, синхронизирован ли конкретный пользователь AD с Azure AD, можно указать параметры-UserName и-domain во входных параметрах.
-7. Чеккаадусерхассид: Проверьте, есть ли у пользователя Azure AD идентификатор безопасности в AD. Эта проверка требует от пользователя ввести идентификатор объекта пользователя Azure AD с параметром-ObjectId. 
-8. Чекксторажеаккаунтдомаинжоинед. Проверьте свойства учетной записи хранения, чтобы убедиться, что проверка подлинности Active Directory включена и свойства AD учетной записи заполнены.
+1. Чеккадобжектпассвордискоррект: Убедитесь, что пароль, настроенный для удостоверения AD, представляющего учетную запись хранения, совпадает с ключом kerb1 или kerb2 учетной записи хранения. Если пароль неверный, можно выполнить команду [Update-азсторажеаккаунтадобжектпассворд](https://docs.microsoft.com/azure/storage/files/storage-files-identity-ad-ds-update-password) , чтобы сбросить пароль. 
+2. Чеккадобжект: Убедитесь, что в Active Directory есть объект, который представляет учетную запись хранения и имеет правильное имя участника-службы (SPN). Если имя субъекта-службы не настроено правильно, выполните командлет Set AD, возвращенный в командлете Debug, чтобы настроить имя SPN.
+3. Чеккдомаинжоинед: Проверка того, что компьютер клиента присоединен к домену AD. Если компьютер не присоединен к домену AD, обратитесь к этой [статье](https://docs.microsoft.com/windows-server/identity/ad-fs/deployment/join-a-computer-to-a-domain#:~:text=To%20join%20a%20computer%20to%20a%20domain&text=Navigate%20to%20System%20and%20Security,join%2C%20and%20then%20click%20OK) для участия в инструкции по присоединению к домену.
+4. CheckPort445Connectivity: Убедитесь, что для подключения SMB открыт порт 445. Если требуемый порт не открыт, обратитесь к средству устранения неполадок [AzFileDiagnostics.ps1](https://gallery.technet.microsoft.com/Troubleshooting-tool-for-a9fa1fe5) для устранения проблем с подключением к службе файлов Azure.
+5. Чекксидхасаадусер: Убедитесь, что вошедший в систему пользователь AD синхронизирован с Azure AD. Если вы хотите узнать, синхронизирован ли конкретный пользователь AD с Azure AD, можно указать параметры-UserName и-domain во входных параметрах. 
+6. Чеккжеткерберостиккет: попытка получить билет Kerberos для подключения к учетной записи хранения. Если нет допустимого маркера Kerberos, выполните командлет klist Get CIFS/Storage-Account-Name. File. Core. Windows. NET и изучите код ошибки, чтобы вызвать ошибку получения билета.
+7. Чекксторажеаккаунтдомаинжоинед: Проверка включения проверки подлинности AD и заполнение свойств учетной записи AD. Если [это](https://docs.microsoft.com/azure/storage/files/storage-files-identity-ad-ds-enable) не так, см. инструкции по включению AD DS проверки подлинности в службе файлов Azure. 
 
 ## <a name="unable-to-configure-directoryfile-level-permissions-windows-acls-with-windows-file-explorer"></a>Не удается настроить разрешения на уровне каталога или файла (списки управления доступом Windows) с помощью проводника Windows
 

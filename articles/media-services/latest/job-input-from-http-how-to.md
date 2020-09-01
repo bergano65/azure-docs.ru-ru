@@ -3,22 +3,24 @@ title: Создание входных данных задания Служб м
 description: В этом разделе показано, как создать входные данные задания служб мультимедиа Azure из URL-адреса HTTPS.
 services: media-services
 documentationcenter: ''
-author: Juliako
+author: IngridAtMicrosoft
 manager: femila
 editor: ''
 ms.service: media-services
 ms.workload: ''
 ms.topic: article
-ms.date: 02/13/2019
-ms.author: juliako
-ms.openlocfilehash: 1ff2bc6d4bb4f7b983787b287fbb27e1c33cc179
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.date: 08/31/2020
+ms.author: inhenkel
+ms.openlocfilehash: c6ab5051b436d12ca86501e4c71bbbea0a8d3107
+ms.sourcegitcommit: bcda98171d6e81795e723e525f81e6235f044e52
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87022996"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89269069"
 ---
 # <a name="create-a-job-input-from-an-https-url"></a>Создание входных данных задания из URL-адреса HTTPS
+
+[!INCLUDE [media services api v3 logo](./includes/v3-hr.md)]
 
 При отправке заданий из Служб мультимедиа версии 3 необходимо указать расположение входного видео. Это можно сделать, указав URL-адрес HTTPS как входные данные задания (как показано в этом примере). Обратите внимание, что в настоящее время AMS версии 3 не поддерживает кодирование блочной передачи по URL-адресам HTTPS. Полный пример см. в этом [репозитории GitHub](https://github.com/Azure-Samples/media-services-v3-dotnet-quickstarts/blob/master/AMSV3Quickstarts/EncodeAndStreamFiles/Program.cs).
 

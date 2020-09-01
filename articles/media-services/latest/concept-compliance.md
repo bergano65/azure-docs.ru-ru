@@ -10,16 +10,18 @@ editor: ''
 ms.service: media-services
 ms.workload: ''
 ms.topic: conceptual
-ms.date: 08/28/2020
+ms.date: 08/31/2020
 ms.author: inhenkel
-ms.openlocfilehash: af9f1f745f58e9d51ff7c5755d24b819ed9443f7
-ms.sourcegitcommit: d7352c07708180a9293e8a0e7020b9dd3dd153ce
+ms.openlocfilehash: e4c0ee0b1a049a7e82cbd1fac8e261fff5fdf375
+ms.sourcegitcommit: bcda98171d6e81795e723e525f81e6235f044e52
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/30/2020
-ms.locfileid: "89147592"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89269732"
 ---
 # <a name="media-services-regulatory-compliance"></a>Соответствие нормативным требованиям служб мультимедиа
+
+[!INCLUDE [media services api v3 logo](./includes/v3-hr.md)]
 
 Службы мультимедиа отвечают требованиям по федеральному риску США & программы управления авторизацией (FedRAMP), а также министерства обороны США от уровней влияния со сведениями от 2 до 5. Развертывая защищенные службы, в том числе Azure для государственных организаций, Office 365 США и Dynamics 365 для государственных организаций, федеральных и правительственных учреждений, можно использовать широкий набор совместимых служб.
 

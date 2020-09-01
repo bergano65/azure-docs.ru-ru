@@ -15,14 +15,17 @@ ms.topic: article
 ms.date: 03/18/2019
 ms.author: christoc
 ms.reviewer: xpouyat; juliako
-ms.openlocfilehash: 67d3591a22ba68c0ddb5c4e2b467e133ef20102b
-ms.sourcegitcommit: bcb962e74ee5302d0b9242b1ee006f769a94cfb8
+ms.openlocfilehash: 55d9d9191dc62d7397c5de944985d5653eff4e13
+ms.sourcegitcommit: bcda98171d6e81795e723e525f81e6235f044e52
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "86057472"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89269834"
 ---
 # <a name="advanced-media-encoder-premium-workflow-tutorials"></a>Руководства по расширенному рабочему процессу кодировщика мультимедиа
+
+[!INCLUDE [media services api v2 logo](./includes/v2-hr.md)]
+
 ## <a name="overview"></a>Обзор
 Этот документ содержит пошаговые инструкции, описывающие способы настройки рабочих процессов с помощью **конструктора рабочих процессов**. Файлы фактического рабочего процесса можно найти [здесь](https://github.com/Azure/azure-media-services-samples/tree/master/Encoding%20Presets/VoD/MediaEncoderPremiumWorkfows/PremiumEncoderWorkflowSamples).  
 
@@ -35,7 +38,7 @@ ms.locfileid: "86057472"
   * [Проверка потоков мультимедиа](media-services-media-encoder-premium-workflow-tutorials.md#MXF_to_MP4_streams)
   * [Добавление видеокодировщика для создания файла MP4](media-services-media-encoder-premium-workflow-tutorials.md#MXF_to_MP4_file_generation)
   * [Кодирование аудиопотока](media-services-media-encoder-premium-workflow-tutorials.md#MXF_to_MP4_audio)
-  * [Мультиплексирование потоков аудио и видео в контейнер MP4](media-services-media-encoder-premium-workflow-tutorials.md#MXF_to_MP4_audio_and_fideo)
+  * [Мультиплексирование аудио- и видеопотоков в контейнер MP4](media-services-media-encoder-premium-workflow-tutorials.md#MXF_to_MP4_audio_and_fideo)
   * [Запись файла MP4](media-services-media-encoder-premium-workflow-tutorials.md#MXF_to_MP4_writing_mp4)
   * [Создание ресурса-контейнера служб мультимедиа из выходного файла](media-services-media-encoder-premium-workflow-tutorials.md#MXF_to_MP4_asset_from_output)
   * [Локальное тестирование завершенного рабочего процесса](media-services-media-encoder-premium-workflow-tutorials.md#MXF_to_MP4_test)
@@ -462,7 +465,7 @@ ms.locfileid: "86057472"
 
 *Добавление компонента записи файлов JPG для поиска сцен*
 
-Задайте для свойства путь к выходной папке выражение:`${ROOT_outputWriteDirectory}`
+Задайте для свойства путь к выходной папке выражение: `${ROOT_outputWriteDirectory}`
 
 В поле свойства "Префикс имени файла" укажите такое выражение:
 

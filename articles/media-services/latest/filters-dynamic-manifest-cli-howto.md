@@ -3,7 +3,7 @@ title: Использование CLI для создания фильтров �
 description: В этой статье показано, как использовать интерфейс командной строки для создания фильтров с помощью служб мультимедиа Azure v3.
 services: media-services
 documentationcenter: ''
-author: juliako
+author: IngridAtMicrosoft
 manager: femila
 editor: ''
 ms.service: media-services
@@ -11,17 +11,19 @@ ms.workload: media
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 06/13/2019
-ms.author: juliako
+ms.date: 08/31/2020
+ms.author: inhenkel
 ms.custom: seodec18
-ms.openlocfilehash: 2385171a501d00f91c58f3fde9b487505ec21c60
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 024136ab6f660ecc5b6c5c7c0ecae62c83238659
+ms.sourcegitcommit: bcda98171d6e81795e723e525f81e6235f044e52
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87023217"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89269545"
 ---
-# <a name="creating-filters-with-cli"></a>Создание фильтров с помощью CLI 
+# <a name="creating-filters-with-cli"></a>Создание фильтров с помощью CLI
+
+[!INCLUDE [media services api v3 logo](./includes/v3-hr.md)]
 
 При доставке содержимого пользователям (потоковой трансляции мероприятий или видео по запросу) клиенту может потребоваться больше возможностей, чем описано в файле манифеста ресурса по умолчанию. Службы мультимедиа Azure позволяют определять фильтры учетной записи и фильтры ресурсов для содержимого. 
 
@@ -130,6 +132,6 @@ az ams streaming-locator create -a amsAccount -g resourceGroup -n streamingLocat
 
 [Потоковая передача видео](stream-files-tutorial-with-api.md) 
 
-## <a name="see-also"></a>См. также статью
+## <a name="see-also"></a>См. также
 
 [Azure CLI](/cli/azure/ams?view=azure-cli-latest)

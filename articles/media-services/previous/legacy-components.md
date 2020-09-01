@@ -13,14 +13,16 @@ ms.devlang: na
 ms.topic: article
 ms.date: 02/27/2020
 ms.author: juliako
-ms.openlocfilehash: d8d961ab58e900a6d619ec64297c783abdb7b6ce
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 1c3e50fd64c113aafd2d70cc76c7f789e080ad23
+ms.sourcegitcommit: bcda98171d6e81795e723e525f81e6235f044e52
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87091697"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89269528"
 ---
 # <a name="azure-media-services-legacy-components"></a>Устаревшие компоненты служб мультимедиа Azure
+
+[!INCLUDE [media services api v2 logo](./includes/v2-hr.md)]
 
 Со временем были внесены устойчивые улучшения и усовершенствования компонентов службы мультимедиа. В результате некоторые устаревшие компоненты были удалены. Инструкции по переносу приложения из устаревшего компонента можно найти в текущем компоненте в следующих статьях.
  
@@ -33,7 +35,7 @@ ms.locfileid: "87091697"
 
 Мы также сообщаем о прекращении использования следующих Аналитика мультимедиа обработчиков мультимедиа: 
  
-|Имя обработчика мультимедиа|Дата вывода|Дополнительные замечания|
+|Имя обработчика мультимедиа|Дата вывода|Дополнительные сведения|
 |---|---|
 |[Azure Media Indexer 2](media-services-process-content-with-indexer2.md)|1 января 2020 г.|Этот обработчик мультимедиа заменяется [индексатором видео служб мультимедиа Azure](../video-indexer/index.yml). Дополнительные сведения см. в статье [Миграция из Azure Media indexer 2 в индексатор видео служб мультимедиа Azure](migrate-indexer-v1-v2.md).|
 |[Azure Media Indexer](media-services-index-content.md)|1 марта 2023 г.|Этот обработчик мультимедиа заменяется [индексатором видео служб мультимедиа Azure](../video-indexer/index.yml). Дополнительные сведения см. в статье [Миграция с Azure Media indexer в индексатор видео служб мультимедиа Azure](migrate-indexer-v1-v2.md) .|

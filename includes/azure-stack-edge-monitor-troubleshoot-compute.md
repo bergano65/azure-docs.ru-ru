@@ -2,16 +2,51 @@
 author: alkohli
 ms.service: databox
 ms.topic: include
-ms.date: 07/26/2019
+ms.date: 08/30/2020
 ms.author: alkohli
-ms.openlocfilehash: 350d41980e3128a8747a673ebea82afbe4fab49b
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 92ccb6127e624ace9e719ffd23324b3a1b971f72
+ms.sourcegitcommit: bcda98171d6e81795e723e525f81e6235f044e52
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85313222"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89272137"
 ---
-На Azure Stack пограничном устройстве с настроенной ролью вычислений для мониторинга и устранения неполадок модулей доступны подмножество команд DOCKER. Чтобы просмотреть список доступных команд, [подключитесь к интерфейсу PowerShell](#connect-to-the-powershell-interface) и используйте `dkrdbe` функцию.
+На Azure Stack пограничном устройстве с настроенной ролью вычислений можно устранить неполадки и отслеживать устройство с помощью двух разных наборов команд.
+
+- Использование `iotedge` команд. Эти команды доступны для основных операций с устройством.
+- Использование `dkrdbe` команд. Эти команды доступны для обширного набора операций с устройством.
+
+Чтобы выполнить любой из приведенных выше команд, необходимо [подключиться к интерфейсу PowerShell](#connect-to-the-powershell-interface).
+
+### <a name="use-iotedge-commands"></a>Использование `iotedge` команд
+
+Чтобы просмотреть список доступных команд, [подключитесь к интерфейсу PowerShell](#connect-to-the-powershell-interface) и используйте `iotedge` функцию.
+
+```powershell
+[10.100.10.10]: PS>iotedge -?                                                                                                                                                                                                 Usage: iotedge COMMAND
+
+Commands:
+   check
+   list
+   logs
+   restart
+
+[10.100.10.10]: PS>
+```
+
+Следующая таблица содержит краткое описание команд, доступных для `iotedge` :
+
+|.  |Описание |
+|---------|---------|
+|`check`     | Выполнение автоматических проверок для распространенных проблем с конфигурацией и подключением       |
+|`list`     | Вывод списка модулей         |
+|`logs`     | Получение журналов модуля        |
+|`restart`     | Завершение и перезапуск модуля         |
+
+
+### <a name="use-dkrdbe-commands"></a>Использование `dkrdbe` команд
+
+Чтобы просмотреть список доступных команд, [подключитесь к интерфейсу PowerShell](#connect-to-the-powershell-interface) и используйте `dkrdbe` функцию.
 
 ```powershell
 [10.100.10.10]: PS>dkrdbe -?
@@ -37,9 +72,9 @@ Commands:
 ```
 Следующая таблица содержит краткое описание команд, доступных для `dkrdbe` :
 
-|.  |Описание: |
+|.  |Описание |
 |---------|---------|
-|`image`     | Управление образами. Чтобы удалить неиспользуемые образы, используйте:`dkrdbe image prune -a -f`       |
+|`image`     | Управление образами. Чтобы удалить неиспользуемые образы, используйте: `dkrdbe image prune -a -f`       |
 |`images`     | Вывод списка образов         |
 |`inspect`     | Возвращают сведения о низком уровне для объектов DOCKER         |
 |`login`     | Вход в реестр DOCKER         |
@@ -89,14 +124,14 @@ Options:
 ```powershell
 [10.100.10.10]: P> dkrdbe ps -a
 CONTAINER ID        IMAGE                                                COMMAND                   CREATED             STATUS              PORTS                                                                  NAMES
-d99e2f91d9a8        edgecompute.azurecr.io/filemovemodule2:0.0.1-amd64   "dotnet FileMoveModuâ&euro;¦"    2 days ago          Up 2 days                                                                                  movefile
-0a06f6d605e9        edgecompute.azurecr.io/filemovemodule2:0.0.1-amd64   "dotnet FileMoveModuâ&euro;¦"    2 days ago          Up 2 days                                                                                  filemove
-2f8a36e629db        mcr.microsoft.com/azureiotedge-hub:1.0               "/bin/sh -c 'echo \"$â&euro;¦"   2 days ago          Up 2 days           0.0.0.0:443->443/tcp, 0.0.0.0:5671->5671/tcp, 0.0.0.0:8883->8883/tcp   edgeHub
-acce59f70d60        mcr.microsoft.com/azureiotedge-agent:1.0             "/bin/sh -c 'echo \"$â&euro;¦"   2 days ago          Up 2 days                                                                                  edgeAgent
+d99e2f91d9a8        edgecompute.azurecr.io/filemovemodule2:0.0.1-amd64   "dotnet FileMoveModuâ€¦"    2 days ago          Up 2 days                                                                                  movefile
+0a06f6d605e9        edgecompute.azurecr.io/filemovemodule2:0.0.1-amd64   "dotnet FileMoveModuâ€¦"    2 days ago          Up 2 days                                                                                  filemove
+2f8a36e629db        mcr.microsoft.com/azureiotedge-hub:1.0               "/bin/sh -c 'echo \"$â€¦"   2 days ago          Up 2 days           0.0.0.0:443->443/tcp, 0.0.0.0:5671->5671/tcp, 0.0.0.0:8883->8883/tcp   edgeHub
+acce59f70d60        mcr.microsoft.com/azureiotedge-agent:1.0             "/bin/sh -c 'echo \"$â€¦"   2 days ago          Up 2 days                                                                                  edgeAgent
 [10.100.10.10]: PS>
 ```
 
-Если при создании образа контейнера или при извлечении образа возникла ошибка, выполните команду `logs edgeAgent` .  `EdgeAgent`контейнер среды выполнения IoT Edge, отвечающий за подготовку других контейнеров.
+Если при создании образа контейнера или при извлечении образа возникла ошибка, выполните команду `logs edgeAgent` .  `EdgeAgent` контейнер среды выполнения IoT Edge, отвечающий за подготовку других контейнеров.
 
 Поскольку `logs edgeAgent` выводит дампы всех журналов, хорошим способом просмотреть последние ошибки является использование параметра `--tail 20` .
 
@@ -127,10 +162,10 @@ reateOptions":"{\"HostConfig\":{\"Binds\":[\"/home/hcsshares/share4-dl460:/home/
     ```powershell
     [10.100.10.10]: P> dkrdbe ps
     CONTAINER ID        IMAGE                                                COMMAND                   CREATED             STATUS              PORTS                                                                  NAMES
-    d99e2f91d9a8        edgecompute.azurecr.io/filemovemodule2:0.0.1-amd64   "dotnet FileMoveModuâ&euro;¦"    2 days ago          Up 2 days                                                                                  movefile
-    0a06f6d605e9        edgecompute.azurecr.io/filemovemodule2:0.0.1-amd64   "dotnet FileMoveModuâ&euro;¦"    2 days ago          Up 2 days                                                                                  filemove
-    2f8a36e629db        mcr.microsoft.com/azureiotedge-hub:1.0               "/bin/sh -c 'echo \"$â&euro;¦"   2 days ago          Up 2 days           0.0.0.0:443->443/tcp, 0.0.0.0:5671->5671/tcp, 0.0.0.0:8883->8883/tcp   edgeHub
-    acce59f70d60        mcr.microsoft.com/azureiotedge-agent:1.0             "/bin/sh -c 'echo \"$â&euro;¦"   2 days ago          Up 2 days                                                                                  edgeAgent
+    d99e2f91d9a8        edgecompute.azurecr.io/filemovemodule2:0.0.1-amd64   "dotnet FileMoveModuâ€¦"    2 days ago          Up 2 days                                                                                  movefile
+    0a06f6d605e9        edgecompute.azurecr.io/filemovemodule2:0.0.1-amd64   "dotnet FileMoveModuâ€¦"    2 days ago          Up 2 days                                                                                  filemove
+    2f8a36e629db        mcr.microsoft.com/azureiotedge-hub:1.0               "/bin/sh -c 'echo \"$â€¦"   2 days ago          Up 2 days           0.0.0.0:443->443/tcp, 0.0.0.0:5671->5671/tcp, 0.0.0.0:8883->8883/tcp   edgeHub
+    acce59f70d60        mcr.microsoft.com/azureiotedge-agent:1.0             "/bin/sh -c 'echo \"$â€¦"   2 days ago          Up 2 days                                                                                  edgeAgent
     ```
 
 3. Запишите идентификатор контейнера для контейнера, для которого требуется создать журналы.

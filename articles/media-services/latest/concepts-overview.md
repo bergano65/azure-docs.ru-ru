@@ -4,23 +4,25 @@ titleSuffix: Azure Media Services
 description: Сведения о терминологии и концепциях для служб мультимедиа Azure.
 services: media-servicesgit
 documentationcenter: ''
-author: Juliako
+author: IngridAtMicrosoft
 manager: femila
 editor: ''
 ms.service: media-services
 ms.workload: ''
 ms.topic: article
-ms.date: 02/18/2020
-ms.author: juliako
+ms.date: 08/31/2020
+ms.author: inhenkel
 ms.custom: seodec18
-ms.openlocfilehash: 5f0436394d6d45e8a8e112cc59bc7be50356ce10
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 895e29608a9f0d80b8e03c3bc95c3c74005f7c4c
+ms.sourcegitcommit: bcda98171d6e81795e723e525f81e6235f044e52
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87092105"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89269715"
 ---
 # <a name="media-services-terminology-and-concepts"></a>Терминология и основные понятия служб мультимедиа
+
+[!INCLUDE [media services api v3 logo](./includes/v3-hr.md)]
 
 В этом разделе приводится краткий обзор терминологии и концепций служб мультимедиа Azure. В этой статье также приводятся ссылки на статьи с подробным описанием основных принципов и функций служб мультимедиа версии 3.
 

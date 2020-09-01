@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 12/27/2019
 ms.author: rogarana
 ms.custom: include file
-ms.openlocfilehash: cace61739e13514bb4aba1169c51ea670a167c9d
-ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
+ms.openlocfilehash: 7fd91e898c12a13e35ae8b9055ebb5a57de2a051
+ms.sourcegitcommit: bcda98171d6e81795e723e525f81e6235f044e52
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88944428"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89272168"
 ---
 В Файлах Azure доступны четыре разных уровня хранилища: "Премиум", оптимизированный для транзакций, горячий и холодный. Так вы можете выбрать нужное решение в соответствии со своими требованиями к производительности и цене.
 
@@ -30,6 +30,7 @@ ms.locfileid: "88944428"
 - Центральная Австралия 2
 - Восточная Австралия
 - Юго-Восточная часть Австралии
+- Brazil South
 - Восточная Канада
 - Центральная Канада
 - Центральная Франция
@@ -53,5 +54,7 @@ ms.locfileid: "88944428"
 - Северная часть ОАЭ;
 - южная часть Соединенного Королевства
 - западная часть Соединенного Королевства
+- Центрально-северная часть США
+- Центрально-южная часть США
 
 См. дополнительные сведения в разделе [Создание горячей или холодной общей папки](../articles/storage/files/storage-how-to-create-file-share.md#create-a-hot-or-cool-file-share). 

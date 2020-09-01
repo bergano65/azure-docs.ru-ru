@@ -14,14 +14,16 @@ ms.devlang: na
 ms.topic: article
 ms.date: 03/18/2019
 ms.author: juliako
-ms.openlocfilehash: 6c1df14ba5a9f233f42750d4e6dea68a7d6ddc0e
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 55c22a58ea76c268c40894c0ea64d43312b1ba27
+ms.sourcegitcommit: bcda98171d6e81795e723e525f81e6235f044e52
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "77564862"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89269103"
 ---
-# <a name="embedding-an-mpeg-dash-adaptive-streaming-video-in-an-html5-application-with-dashjs"></a>Встраивание адаптивного потокового видео MPEG-DASH в приложение HTML5 с помощью DASH.js  
+# <a name="embedding-an-mpeg-dash-adaptive-streaming-video-in-an-html5-application-with-dashjs"></a>Встраивание адаптивного потокового видео MPEG-DASH в приложение HTML5 с помощью DASH.js
+
+[!INCLUDE [media services api v2 logo](./includes/v2-hr.md)] 
 
 ## <a name="overview"></a>Обзор
 MPEG-DASH — это стандарт ISO для адаптивной потоковой передачи видеосодержимого, обеспечивающий значительные преимущества для разработчиков, которым требуется высококачественный адаптивный потоковый вывод видео. С MPEG-DASH поток видео автоматически сжимается до более низкой четкости, если сеть перегружена. Это снижает вероятность того, что в средстве просмотра отображается «пауза» видео, а проигрыватель загружает следующие несколько секунд для воспроизведения (то есть уменьшается вероятность буферизации). Когда нагрузка на сеть снизится, видеопроигрыватель вернется к потоку более высокого качества. Такая возможность адаптировать требуемую пропускную способность также способствует ускорению запуска видео. Это означает, что первые несколько секунд можно воспроизвести в виде быстро загружаемого сегмента низкого качества, а затем перейти к более высокому качеству, как только достаточный объем содержимого будет загружен в буфер.

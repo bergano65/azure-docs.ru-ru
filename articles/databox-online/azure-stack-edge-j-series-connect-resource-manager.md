@@ -5,15 +5,15 @@ services: databox
 author: alkohli
 ms.service: databox
 ms.subservice: edge
-ms.topic: article
+ms.topic: how-to
 ms.date: 08/28/2020
 ms.author: alkohli
-ms.openlocfilehash: 8c7f571489a9e565fac8c23db4c08321be6f551d
-ms.sourcegitcommit: d7352c07708180a9293e8a0e7020b9dd3dd153ce
+ms.openlocfilehash: cf57d81c2ef56662abbd529a5de90e03c00e091a
+ms.sourcegitcommit: bcda98171d6e81795e723e525f81e6235f044e52
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/30/2020
-ms.locfileid: "89146204"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89269817"
 ---
 # <a name="connect-to-azure-resource-manager-on-your-azure-stack-edge-device"></a>Подключение к Azure Resource Manager на устройстве Azure Stackного периметра
 
@@ -183,10 +183,10 @@ Azure Resource Manager предоставляет последовательны
 
 1. На клиенте будут установлены модули Azure PowerShell, которые будут работать с устройством.
 
-    А. Откройте сеанс PowerShell от имени администратора. Вам нужен доступ к коллекции PowerShell. 
+    а. Откройте сеанс PowerShell от имени администратора. Вам нужен доступ к коллекции PowerShell. 
 
 
-    Б. Чтобы установить необходимые модули Azure PowerShell из коллекция PowerShell, выполните следующую команду:
+    b. Чтобы установить необходимые модули Azure PowerShell из коллекция PowerShell, выполните следующую команду:
 
     ```powershell
     # Install the AzureRM.BootStrapper module. Select Yes when prompted to install NuGet.

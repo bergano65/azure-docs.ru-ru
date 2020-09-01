@@ -14,14 +14,16 @@ ms.devlang: na
 ms.topic: article
 ms.date: 03/18/2019
 ms.author: juliako
-ms.openlocfilehash: 6bcaadc8dd61899aff860ad246e30170c99ec0f6
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 4b6f843678d64bddd276f6123a432699efc89ad9
+ms.sourcegitcommit: bcda98171d6e81795e723e525f81e6235f044e52
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "61463758"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89269290"
 ---
-#  <a name="manage-speed-and-concurrency-of-your-encoding"></a>Управление скоростью и параллелизмом кодирования  
+#  <a name="manage-speed-and-concurrency-of-your-encoding"></a>Управление скоростью и параллелизмом кодирования
+
+[!INCLUDE [media services api v2 logo](./includes/v2-hr.md)] 
 
 В этой статье вкратце описывается, как можно управлять скоростью и параллелизмом кодирования заданий и задач.
 
@@ -33,7 +35,7 @@ ms.locfileid: "61463758"
 
 Дополнительные сведения и примеры масштабирования единиц кодирования см. в [этом](media-services-scale-media-processing-overview.md) разделе.
 
-## <a name="next-step"></a>Следующий шаг
+## <a name="next-step"></a>Дальнейшие действия
 
 [Масштабирование единиц кодирования](media-services-scale-media-processing-overview.md)
 
