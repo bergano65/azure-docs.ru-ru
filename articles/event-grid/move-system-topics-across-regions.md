@@ -32,10 +32,10 @@ ms.locfileid: "89086188"
 1. Войдите на [портал Azure](https://portal.azure.com).
 1. В меню слева выберите **группы ресурсов** . Затем выберите группу ресурсов, содержащую источник событий, для которого был создан системный раздел. В следующем примере это учетная запись **хранения Azure** . Группа ресурсов содержит учетную запись хранения и связанную с ней системную тему. 
 
-    :::image type="content" source="./media/move-system-topics-across-regions/resource-group-page.png" alt-text="Страница "Группа ресурсов"":::        
+    :::image type="content" source="./media/move-system-topics-across-regions/resource-group-page.png" alt-text="Страница Группа ресурсов":::        
 3. В меню слева выберите **Экспорт шаблона** в разделе **Параметры**, а затем на панели инструментов выберите **скачать** . 
 
-    :::image type="content" source="./media/move-system-topics-across-regions/export-template-menu.png" alt-text="Страница "Экспорт шаблона" учетной записи размер хранилища":::        
+    :::image type="content" source="./media/move-system-topics-across-regions/export-template-menu.png" alt-text="Страница Экспорт шаблона учетной записи размер хранилища":::        
 5. Выберите **ZIP** -файл, скачанный с портала, и распакуйте его в выбранную папку. Этот ZIP-файл содержит шаблонные и параметры JSON-файлы. 
 1. Откройте **template.js** в любом редакторе по своему усмотрению. 
 1. URL веб-перехватчика не экспортируется в шаблон. Поэтому выполните следующие действия.
