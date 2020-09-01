@@ -6,12 +6,12 @@ ms.suite: integration
 ms.reviewer: rarayudu, logicappspm
 ms.topic: conceptual
 ms.date: 05/29/2020
-ms.openlocfilehash: d33207639ebef912307a3c594ec274fd9609bd67
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 427b488fe6673bef505fccdaa7185d69437bceaf
+ms.sourcegitcommit: d68c72e120bdd610bb6304dad503d3ea89a1f0f7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84656538"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89231322"
 ---
 # <a name="create-an-integration-service-environment-ise-by-using-the-logic-apps-rest-api"></a>Создание среды службы интеграции (ISE) с помощью REST API Logic Apps 
 
@@ -22,7 +22,7 @@ ms.locfileid: "84656538"
 > [!IMPORTANT]
 > Приложения логики, встроенные триггеры и соединители, которые выполняются в среде службы интеграции, используют ценовой план, отличный от плана, рассчитанного на потребление. Сведения о ценах и выставлении счетов для сред ISE см. в статье [Модель ценообразования для Azure Logic Apps](../logic-apps/logic-apps-pricing.md#fixed-pricing). Сведения о тарифах см. на странице [цен на Logic Apps](../logic-apps/logic-apps-pricing.md).
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 * Те же [условия](../logic-apps/connect-virtual-network-vnet-isolated-environment.md#prerequisites) и [требования, необходимые для обеспечения доступа к интегрированной среде сценариев](../logic-apps/connect-virtual-network-vnet-isolated-environment.md#enable-access) , как при создании интегрированной среды сценариев в портал Azure
 
@@ -56,9 +56,9 @@ ms.locfileid: "84656538"
 
 <a name="request-body"></a>
 
-## <a name="request-body"></a>Тело запроса
+## <a name="request-body"></a>Текст запроса
 
-Ниже приведен синтаксис текста запроса, описывающий свойства, используемые при создании интегрированной среды сценариев. Чтобы создать интегрированную среду сценариев, разрешающую использование самозаверяющего сертификата, установленного в `TrustedRoot` расположении, включите `certificates` объект в раздел описания интегрированной среды сценариев `properties` . Для существующей интегрированной среды сценариев можно отправить запрос PATCH только для `certificates` объекта. Дополнительные сведения об использовании самозаверяющих сертификатов см. в разделе также " [соединитель HTTP — самозаверяющие сертификаты](../connectors/connectors-native-http.md#self-signed)".
+Ниже приведен синтаксис текста запроса, описывающий свойства, используемые при создании интегрированной среды сценариев. Чтобы создать интегрированную среду сценариев, разрешающую использование самозаверяющего сертификата, установленного в `TrustedRoot` расположении, включите `certificates` объект в раздел описания интегрированной среды сценариев `properties` . Для существующей интегрированной среды сценариев можно отправить запрос PATCH только для `certificates` объекта. Дополнительные сведения об использовании самозаверяющих сертификатов см. [в разделе безопасный доступ и доступ к данным для исходящих вызовов других служб и систем](../logic-apps/logic-apps-securing-a-logic-app.md#secure-outbound-requests).
 
 ```json
 {

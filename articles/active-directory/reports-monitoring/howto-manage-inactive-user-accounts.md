@@ -17,12 +17,12 @@ ms.date: 04/07/2020
 ms.author: markvi
 ms.reviewer: dhanyahk
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 92f6f32298dcccca4eba08fd25de0504416e5560
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 5b48a84bb69a356815cccd1e33c555eeb667699f
+ms.sourcegitcommit: d68c72e120bdd610bb6304dad503d3ea89a1f0f7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85608149"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89244727"
 ---
 # <a name="how-to-manage-inactive-user-accounts-in-azure-ad"></a>Практическое руководство. Управление неактивными учетными записями пользователей в Azure AD
 
@@ -58,7 +58,7 @@ ms.locfileid: "85608149"
 
 ### <a name="how-can-i-access-this-property"></a>Как получить доступ к этому параметру?
 
-Свойство **lastSignInDateTime** предоставляется [типом ресурса signInActivity](https://docs.microsoft.com/graph/api/resources/signinactivity?view=graph-rest-beta) в [REST API Microsoft Graph](https://docs.microsoft.com/graph/overview?view=graph-rest-beta#whats-in-microsoft-graph).   
+Свойство **lastSignInDateTime** предоставляется [типом ресурса signInActivity](/graph/api/resources/signinactivity?view=graph-rest-beta) в [REST API Microsoft Graph](/graph/overview?view=graph-rest-beta#whats-in-microsoft-graph).   
 
 ### <a name="is-the-lastsignindatetime-property-available-through-the-get-azureaduser-cmdlet"></a>Доступен ли параметр lastSignInDateTime в командлете Get-AzureAdUser?
 
@@ -91,5 +91,5 @@ ms.locfileid: "85608149"
 ## <a name="next-steps"></a>Дальнейшие действия
 
 * [Получение данных с помощью API отчетов Azure Active Directory с сертификатами](tutorial-access-api-with-certificates.md)
-* [Справочник по API аудита](https://developer.microsoft.com/graph/docs/api-reference/beta/resources/directoryaudit) 
-* [Справочник по API отчетов о действиях при входе](https://developer.microsoft.com/graph/docs/api-reference/beta/resources/signin)
+* [Справочник по API аудита](/graph/api/resources/directoryaudit?view=graph-rest-beta) 
+* [Справочник по API отчетов о действиях при входе](/graph/api/resources/signin?view=graph-rest-beta)

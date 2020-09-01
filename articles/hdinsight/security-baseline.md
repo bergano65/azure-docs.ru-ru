@@ -6,13 +6,13 @@ ms.service: security
 ms.topic: conceptual
 ms.date: 04/09/2020
 ms.author: mbaldwin
-ms.custom: security-benchmark
-ms.openlocfilehash: bbc421baddf03068ac72907aaa88a71a81d208d0
-ms.sourcegitcommit: e132633b9c3a53b3ead101ea2711570e60d67b83
+ms.custom: subject-security-benchmark
+ms.openlocfilehash: 7315ef68b3562a28ee2515077c1e7d2f23c3803f
+ms.sourcegitcommit: d68c72e120bdd610bb6304dad503d3ea89a1f0f7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "86041325"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89230438"
 ---
 # <a name="azure-security-baseline-for-hdinsight"></a>Базовый план безопасности Azure для HDInsight
 
@@ -32,13 +32,13 @@ ms.locfileid: "86041325"
 
 Чтобы снизить риск потери данных через утечка, Ограничьте исходящий сетевой трафик для кластеров Azure HDInsight с помощью брандмауэра Azure.
 
-Как развернуть Azure HDInsight в виртуальной сети и обеспечить безопасность с помощью группы безопасности сети:https://docs.microsoft.com/azure/hdinsight/hdinsight-create-virtual-network
+Как развернуть Azure HDInsight в виртуальной сети и обеспечить безопасность с помощью группы безопасности сети: https://docs.microsoft.com/azure/hdinsight/hdinsight-create-virtual-network
 
-Ограничение исходящего трафика для кластеров Azure HDInsight с помощью брандмауэра Azure:https://docs.microsoft.com/azure/hdinsight/hdinsight-restrict-outbound-traffic
+Ограничение исходящего трафика для кластеров Azure HDInsight с помощью брандмауэра Azure: https://docs.microsoft.com/azure/hdinsight/hdinsight-restrict-outbound-traffic
 
 **Мониторинг Центра безопасности Azure**: Да
 
-**Ответственность**. Customer
+**Ответственность**: Customer
 
 ### <a name="12-monitor-and-log-the-configuration-and-traffic-of-vnets-subnets-and-nics"></a>1.2. Мониторинг и запись конфигурации и трафика виртуальных сетей, подсетей и сетевых карт
 
@@ -58,7 +58,7 @@ https://docs.microsoft.com/azure/security-center/security-center-network-recomme
 
 **Мониторинг Центра безопасности Azure**: Да
 
-**Ответственность**. Customer
+**Ответственность**: Customer
 
 ### <a name="13-protect-critical-web-applications"></a>1.3. Защита критических веб-приложений
 
@@ -82,7 +82,7 @@ https://docs.microsoft.com/azure/security-center/security-center-alerts-service-
 
 **Мониторинг Центра безопасности Azure**: Да
 
-**Ответственность**. Customer
+**Ответственность**: Customer
 
 ### <a name="15-record-network-packets-and-flow-logs"></a>1.5. Запись сетевых пакетов и журналов потоков
 
@@ -98,7 +98,7 @@ https://docs.microsoft.com/azure/network-watcher/network-watcher-create
 
 **Мониторинг Центра безопасности Azure**: Да
 
-**Ответственность**. Customer
+**Ответственность**: Customer
 
 ### <a name="16-deploy-network-based-intrusion-detectionintrusion-prevention-systems-idsips"></a>1.6. Развертывание сетевых систем обнаружения и предотвращения вторжений (IDS/IPS)
 
@@ -108,11 +108,11 @@ https://docs.microsoft.com/azure/network-watcher/network-watcher-create
 
 Чтобы снизить риск потери данных через утечка, Ограничьте исходящий сетевой трафик для кластеров Azure HDInsight с помощью брандмауэра Azure.
 
-Как развернуть HDInsight в виртуальной сети и обеспечить безопасность с помощью группы безопасности сети:https://docs.microsoft.com/azure/hdinsight/hdinsight-create-virtual-network
+Как развернуть HDInsight в виртуальной сети и обеспечить безопасность с помощью группы безопасности сети: https://docs.microsoft.com/azure/hdinsight/hdinsight-create-virtual-network
 
-Общие сведения о зависимостях и использовании брандмауэра HDInsight:https://docs.microsoft.com/azure/hdinsight/hdinsight-restrict-outbound-traffic
+Общие сведения о зависимостях и использовании брандмауэра HDInsight: https://docs.microsoft.com/azure/hdinsight/hdinsight-restrict-outbound-traffic
 
-IP-адреса управления HDInsight:https://docs.microsoft.com/azure/hdinsight/hdinsight-management-ip-addresses
+IP-адреса управления HDInsight: https://docs.microsoft.com/azure/hdinsight/hdinsight-management-ip-addresses
 
 **Мониторинг Центра безопасности Azure**: в настоящее время недоступен.
 
@@ -260,7 +260,7 @@ https://docs.microsoft.com/azure/azure-monitor/platform/manage-cost-storage
 
 **Мониторинг Центра безопасности Azure**: в настоящее время недоступен.
 
-**Ответственность**: Customer
+**Ответственность**. Customer
 
 ### <a name="25-configure-security-log-storage-retention"></a>2.5. Настройка хранения журнала безопасности
 
@@ -432,7 +432,7 @@ https://docs.microsoft.com/azure/active-directory/authentication/howto-mfa-getst
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
-**Ответственность**. Customer
+**Ответственность**: Customer
 
 ### <a name="37-log-and-alert-on-suspicious-activity-from-administrative-accounts"></a>3.7. Ведение журнала и создание оповещений по подозрительным действиям учетных записей администраторов
 
@@ -446,9 +446,9 @@ https://docs.microsoft.com/azure/active-directory/reports-monitoring/concept-use
 
 https://docs.microsoft.com/azure/security-center/security-center-identity-access
 
-**Мониторинг Центра безопасности Azure**. Да
+**Мониторинг Центра безопасности Azure**: Да
 
-**Ответственность**. Customer
+**Ответственность**: Customer
 
 ### <a name="38-manage-azure-resources-from-only-approved-locations"></a>3.8. Управление ресурсами Azure только из утвержденных расположений
 
@@ -530,7 +530,7 @@ https://docs.microsoft.com/azure/active-directory/identity-protection/howto-iden
 
 
 
-**Мониторинг Центра безопасности Azure**: в настоящее время недоступен.
+**Мониторинг центра безопасности Azure**: Сейчас это недоступно
 
 **Ответственность**: Customer
 
@@ -566,9 +566,9 @@ https://docs.microsoft.com/azure/data-lake-store/data-lake-store-security-overvi
 
 https://docs.microsoft.com/azure/storage/common/storage-security-guide
 
-**Мониторинг Центра безопасности Azure**. Да
+**Мониторинг Центра безопасности Azure**: Да
 
-**Ответственность**. Customer
+**Ответственность**: Customer
 
 ### <a name="43-monitor-and-block-unauthorized-transfer-of-sensitive-information"></a>4.3. Мониторинг и блокирование несанкционированной передачи конфиденциальной информации
 
@@ -674,7 +674,7 @@ https://docs.microsoft.com/azure/sql-database/transparent-data-encryption-azure-
 
 **Мониторинг Центра безопасности Azure**: Да
 
-**Ответственность**. Совмещаемая блокировка
+**Ответственность**: Совмещаемая блокировка
 
 ### <a name="49-log-and-alert-on-changes-to-critical-azure-resources"></a>4.9. Включение в журнал и создание оповещений по изменениям критических ресурсов Azure
 
@@ -688,9 +688,9 @@ https://docs.microsoft.com/azure/storage/common/storage-monitor-storage-account
 
 https://docs.microsoft.com/azure/data-lake-analytics/data-lake-analytics-diagnostic-logs
 
-**Мониторинг Центра безопасности Azure**. Да
+**Мониторинг Центра безопасности Azure**: Да
 
-**Ответственность**. Customer
+**Ответственность**: Customer
 
 ## <a name="vulnerability-management"></a>Управление уязвимостями
 
@@ -922,7 +922,7 @@ https://docs.microsoft.com/azure/governance/resource-graph/first-query-portal
 
 **Мониторинг Центра безопасности Azure**: в настоящее время недоступен.
 
-**Ответственность**. Неприменимо
+**Ответственность**: Неприменимо
 
 ### <a name="613-physically-or-logically-segregate-high-risk-applications"></a>6.13. Физическое или логическое разделение приложений с высоким риском
 
@@ -1072,7 +1072,7 @@ https://docs.microsoft.com/azure/storage/common/storage-encryption-keys-portal
 
 **Мониторинг Центра безопасности Azure**: в настоящее время недоступен.
 
-**Ответственность**. Customer
+**Ответственность**: Customer
 
 ### <a name="712-manage-identities-securely-and-automatically"></a>7.12. Безопасное и автоматическое управление удостоверениями
 
@@ -1096,7 +1096,7 @@ https://secdevtools.azurewebsites.net/helpcredscan.html
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
-**Ответственность**. Customer
+**Ответственность**: Customer
 
 ## <a name="malware-defense"></a>Защита от вредоносных программ
 
@@ -1222,7 +1222,7 @@ https://docs.microsoft.com/azure/security-center/security-center-planning-and-op
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
-**Ответственность**. Customer
+**Ответственность**: Customer
 
 ### <a name="102-create-an-incident-scoring-and-prioritization-procedure"></a>10.2. Создание процедуры оценки инцидента и определения приоритетов
 
@@ -1238,7 +1238,7 @@ https://docs.microsoft.com/azure/security-center/security-center-planning-and-op
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
-**Ответственность**. Customer
+**Ответственность**: Customer
 
 ### <a name="104-provide-security-incident-contact-details-and-configure-alert-notifications-for-security-incidents"></a>10.4. Предоставление контактных сведений и настройка уведомлений по инцидентам безопасности
 
@@ -1290,7 +1290,7 @@ https://docs.microsoft.com/azure/security-center/workflow-automation
 
 https://www.microsoft.com/msrc/pentest-rules-of-engagement?rtc=1.
 
-Дополнительные сведения о стратегии корпорации Майкрософт и ее выполнении, а также о тестировании на основе уязвимости для управляемой облачной инфраструктуры, служб и приложений Майкрософт см. здесь:https://gallery.technet.microsoft.com/Cloud-Red-Teaming-b837392e
+Дополнительные сведения о стратегии корпорации Майкрософт и ее выполнении, а также о тестировании на основе уязвимости для управляемой облачной инфраструктуры, служб и приложений Майкрософт см. здесь: https://gallery.technet.microsoft.com/Cloud-Red-Teaming-b837392e
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 

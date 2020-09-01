@@ -17,12 +17,12 @@ ms.date: 04/18/2019
 ms.author: markvi
 ms.reviewer: dhanyahk
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d9f58b213e50a021651f35112a48d8f74ae59571
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: cc7a5e2e45cd3d76c0d8af612291ecaf9893b5b5
+ms.sourcegitcommit: d68c72e120bdd610bb6304dad503d3ea89a1f0f7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "68987958"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89231101"
 ---
 # <a name="interpret-the-azure-ad-audit-logs-schema-in-azure-monitor-preview"></a>Интерпретация схемы журналов аудита Azure AD в Azure Monitor (предварительная версия)
 
@@ -167,7 +167,7 @@ ms.locfileid: "68987958"
 
 <br>
 
-| Имя свойства | Описание: |
+| Имя свойства | Описание |
 |---------------|-------------|
 | AuditEventCategory | Тип события аудита. Может иметь значение *User Management*, *Application Management* или другого типа.|
 | Identity Type | Это может быть *Application* или *User*. |
@@ -176,8 +176,8 @@ ms.locfileid: "68987958"
 | Target Resource Name | Имя целевого ресурса. Это может быть имя приложения, имя роли, имя участника-пользователя или имя субъекта-службы. |
 | additionalTargets | Содержит список дополнительных свойств для конкретных операций. Например, для операции обновления старые значения и новые значения перечислены в разделе *таржетупдатедпропертиес*. | 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Анализ схемы журналов входа в Azure Monitor](reference-azure-monitor-sign-ins-log-schema.md)
-* [Журналы диагностики Azure](https://docs.microsoft.com/azure/monitoring-and-diagnostics/monitoring-overview-of-diagnostic-logs)
+* [Журналы диагностики Azure](../../azure-monitor/platform/platform-logs-overview.md)
 * [Часто задаваемые вопросы и известные проблемы](concept-activity-logs-azure-monitor.md#frequently-asked-questions)

@@ -14,12 +14,12 @@ ms.date: 11/13/2018
 ms.author: markvi
 ms.reviewer: dhanyahk
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 33c4eeda7f7df1a8238f54fa1afd1bc069f64e96
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: b705cf6ac6fd25c7794db7651db5bc5c5c0e790c
+ms.sourcegitcommit: d68c72e120bdd610bb6304dad503d3ea89a1f0f7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85608217"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89230625"
 ---
 # <a name="find-activity-reports-in-the-azure-portal"></a>Поиск отчетов о действиях на портале Azure
 
@@ -52,7 +52,7 @@ ms.locfileid: "85608217"
 
 К категориям относятся:
 
-- Все
+- All
 - AdministrativeUnit
 - ApplicationManagement
 - Аутентификация
@@ -73,7 +73,7 @@ ms.locfileid: "85608217"
 
 В число служб входят:
 
-- Все
+- All
 - Проверки доступа
 - "Account Provisioning" (Подготовка учетных записей). 
 - Единый вход приложения
@@ -114,12 +114,12 @@ ms.locfileid: "85608217"
 
 Отчеты о аномальных действиях содержат сведения об обнаружении рисков, связанных с безопасностью, которые Azure AD может обнаружить и сообщить о них.
 
-В следующей таблице перечислены отчеты безопасности Azure AD об аномальных действиях и соответствующие типы обнаружения рисков в портал Azure. Дополнительные сведения см. в статье об [обнаружении рисков Azure Active Directory](concept-risk-events.md).  
+В следующей таблице перечислены отчеты безопасности Azure AD об аномальных действиях и соответствующие типы обнаружения рисков в портал Azure. Дополнительные сведения см. в статье об [обнаружении рисков Azure Active Directory](../identity-protection/overview-identity-protection.md).  
 
 
 | Отчеты Azure AD об аномальных действиях |  Тип обнаружения риска для защиты идентификации|
 | :--- | :--- |
-| Пользователи с утерянными учетными данными | Утерянные учетные данные |
+| Пользователи с утерянными учетными данными | Утечка учетных данных |
 | Нестандартные действия при входе | Невозможно переместиться в нетипичные расположения |
 | Попытки входа с возможно инфицированных устройств | Попытки входа с инфицированных устройств|
 | Попытки входа из неизвестных источников | Попытки входа с анонимных IP-адресов |
@@ -136,10 +136,10 @@ ms.locfileid: "85608217"
 
 Получить доступ к отчетам об обнаруженных рисках можно в разделе " **Безопасность** " в колонке **Azure Active Directory** в [портал Azure](https://portal.azure.com). Обнаруженные обнаружения рисков отправляются в следующих отчетах:   
 
-- [Пользователи, подверженные риску](concept-user-at-risk.md)
-- [Вход, представляющий риск](concept-risky-sign-ins.md)
+- [Пользователи, подверженные риску](../identity-protection/overview-identity-protection.md)
+- [Вход, представляющий риск](../identity-protection/overview-identity-protection.md)
 
-    ![Отчеты о безопасности](./media/howto-find-activity-reports/04.png "Отчеты о безопасности")
+    ![Отчеты системы безопасности](./media/howto-find-activity-reports/04.png "Отчеты о безопасности")
 
 ## <a name="troubleshoot-issues-with-activity-reports"></a>Устранение неполадок отчетов действий
 
@@ -151,11 +151,11 @@ ms.locfileid: "85608217"
 
  ![Отчеты](./media/troubleshoot-missing-data-download/01.png)
  
-#### <a name="cause"></a>Причина:
+#### <a name="cause"></a>Причина
 
 При скачивании журналов действий в портал Azure мы ограничивают масштабирование до 250000 записей, отсортированных по последним первым. 
 
-#### <a name="resolution"></a>Решение
+#### <a name="resolution"></a>Разрешение
 
 Вы можете в любой момент использовать [интерфейсы API отчетов Azure AD](concept-reporting-api.md), чтобы извлечь до миллиона записей.
 
@@ -167,16 +167,16 @@ ms.locfileid: "85608217"
 
  ![Отчеты](./media/troubleshoot-missing-audit-data/01.png)
  
-#### <a name="cause"></a>Причина:
+#### <a name="cause"></a>Причина
 
 Действия отображаются в журналах действий спустя некоторое время. В таблице ниже приводятся наши показатели задержки для журналов действий. 
 
-| Report | Задержка (P95) | Задержка (P99) |
+| Отчет | Задержка (P95) | Задержка (P99) |
 |--------|---------------|---------------|
 | Аудит каталогов | 2 мин | 5 мин |
 | Действия при входе | 2 мин | 5 мин |
 
-#### <a name="resolution"></a>Решение
+#### <a name="resolution"></a>Разрешение
 
 Подождите от 15 минут до двух часов и проверьте, появились ли действия в журнале. Если журналы не появились даже спустя два часа, [отправьте запрос в службу поддержки](https://portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade/newsupportrequest) и мы рассмотрим вашу проблему.
 
@@ -188,16 +188,16 @@ ms.locfileid: "85608217"
 
  ![Отчеты](./media/troubleshoot-missing-audit-data/02.png)
  
-#### <a name="cause"></a>Причина:
+#### <a name="cause"></a>Причина
 
 Действия отображаются в журналах действий спустя некоторое время. В таблице ниже приводятся наши показатели задержки для журналов действий. 
 
-| Report | Задержка (P95) | Задержка (P99) |
+| Отчет | Задержка (P95) | Задержка (P99) |
 |--------|---------------|---------------|
 | Аудит каталогов | 2 мин | 5 мин |
 | Действия при входе | 2 мин | 5 мин |
 
-#### <a name="resolution"></a>Решение
+#### <a name="resolution"></a>Разрешение
 
 Подождите от 15 минут до двух часов и проверьте, появились ли действия в журнале. Если журналы не появились даже спустя два часа, [отправьте запрос в службу поддержки](https://portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade/newsupportrequest) и мы рассмотрим вашу проблему.
 
@@ -209,23 +209,23 @@ ms.locfileid: "85608217"
 
  ![Отчеты](./media/troubleshoot-missing-audit-data/03.png)
 
-#### <a name="cause"></a>Причина:
+#### <a name="cause"></a>Причина
 
 В зависимости от типа лицензии Azure Active Directory сохраняет отчеты о действиях за такие периоды времени:
 
-| Report           | Azure AD уровня "Бесплатный" | Azure AD Premium P1 | Azure AD Premium P2 |
+| Отчет           | Azure AD уровня "Бесплатный" | Azure AD Premium P1 | Azure AD Premium P2 |
 | ---              | ---           | ---                 | ---
 | Аудит каталога  | 7 дней        | 30 дней             | 30 дней             |
 | Действия при входе | Недоступно. Доступ к данным собственного входа в систему можно получить в течение 7 дней в колонке профиля пользователя | 30 дней | 30 дней             |
 
 Дополнительные сведения см. в статье [Политики хранения отчетов Azure Active Directory](reference-reports-data-retention.md).  
 
-#### <a name="resolution"></a>Решение
+#### <a name="resolution"></a>Разрешение
 
 У вас есть два варианта сохранения данных дольше чем в течение 30 дней. Вы можете использовать [API отчетов Azure AD](concept-reporting-api.md), чтобы программным способом извлекать данные и хранить их в базе данных. Кроме того, вы можете интегрировать журналы аудита в стороннюю систему SIEM, такую как Splunk или SumoLogic.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Обзор журналов аудита](concept-audit-logs.md)
 * [Отчеты о действиях входа на портале Azure Active Directory](concept-sign-ins.md)
-* [События риска Azure Active Directory](concept-risk-events.md)
+* [События риска Azure Active Directory](../identity-protection/overview-identity-protection.md)

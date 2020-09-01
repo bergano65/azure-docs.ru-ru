@@ -1,44 +1,39 @@
 ---
-title: Вызов, активация или вкладывание приложений логики
+title: Вызов, активация и вложение приложений логики с помощью триггеров запросов
 description: Настройка конечных точек HTTPS для вызова, активации или вложения рабочих процессов приложения логики в Azure Logic Apps
 services: logic-apps
 ms.workload: integration
 ms.reviewer: jonfan, logicappspm
 ms.topic: article
-ms.date: 05/28/2020
-ms.openlocfilehash: d8211127d7c886b86f97e83a61b3b3ebb055851e
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.date: 08/27/2020
+ms.openlocfilehash: 5032676848536f0b9498cf4beecf86277484a901
+ms.sourcegitcommit: d68c72e120bdd610bb6304dad503d3ea89a1f0f7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87078671"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89230812"
 ---
 # <a name="call-trigger-or-nest-logic-apps-by-using-https-endpoints-in-azure-logic-apps"></a>Вызов, активация или вложение приложений логики с помощью конечных точек HTTPS в Azure Logic Apps
 
-Чтобы приложение логики было вызываемым через URL-адрес, чтобы приложение логики получало входящие запросы от других служб, вы можете предоставить синхронную конечную точку HTTPS в качестве триггера для этого приложения логики. При настройке этой возможности можно также вложить приложение логики в другие приложения логики, которые позволяют создать шаблон вызываемых конечных точек.
-
-Чтобы настроить вызываемую конечную точку, можно использовать любой из следующих типов триггеров, которые позволяют приложениям логики получать входящие запросы:
+Чтобы приложение логики вызываемое через URL-адрес и могло получать входящие запросы от других служб, можно предоставить синхронную конечную точку HTTPS с помощью триггера на основе запроса в приложении логики. С помощью этой возможности вы можете вызвать приложение логики из других приложений логики и создать шаблон вызываемых конечных точек. Чтобы настроить вызываемую конечную точку для обработки входящих вызовов, можно использовать любой из следующих типов триггеров:
 
 * [Запрос](../connectors/connectors-native-reqres.md)
 * [HTTP Webhook](../connectors/connectors-native-webhook.md)
 * Триггеры управляемых соединителей, которые имеют [тип ApiConnectionWebhook](../logic-apps/logic-apps-workflow-actions-triggers.md#apiconnectionwebhook-trigger) и могут принимать входящие HTTPS запросы
 
-> [!NOTE]
-> В этих примерах используется триггер запроса, но можно использовать любой триггер на основе запроса HTTPS, который находится в предыдущем списке. Все принципы аналогично применяются к этим другим типам триггеров.
+В этой статье показано, как создать вызываемую конечную точку в приложении логики с помощью триггера запроса и вызвать эту конечную точку из другого приложения логики. Все принципы применяются одинаково к другим типам триггеров, которые можно использовать для получения входящих запросов.
 
-Если вы не знакомы с приложениями логики, см. статью [что такое Azure Logic Apps](../logic-apps/logic-apps-overview.md) и [Краткое руководство. Создание первого приложения логики](../logic-apps/quickstart-create-first-logic-app-workflow.md).
+Сведения о шифровании, безопасности и авторизации входящих вызовов приложения логики, таких как протокол [TLS](https://en.wikipedia.org/wiki/Transport_Layer_Security), ранее известные как SSL (SSL) или [Azure Active Directory Open authentication (Azure AD OAuth)](../active-directory/develop/index.yml), см. [в разделе безопасный доступ и доступ к данным для входящих вызовов триггеров на основе запросов](../logic-apps/logic-apps-securing-a-logic-app.md#secure-inbound-requests).
 
-## <a name="prerequisites"></a>Обязательные условия
+## <a name="prerequisites"></a>Предварительные требования
 
-* Подписка Azure. Если у вас нет ее, вы можете [зарегистрироваться для получения бесплатной учетной записи Azure](https://azure.microsoft.com/free/).
+* Учетная запись и подписка Azure. Если у вас нет ее, вы можете [зарегистрироваться для получения бесплатной учетной записи Azure](https://azure.microsoft.com/free/).
 
-* Приложение логики, в котором вы хотите использовать триггер для создания вызываемой конечной точки. Можно начать с пустого приложения логики или существующего приложения логики, в котором необходимо заменить текущий триггер. Этот пример начинается с пустого приложения логики.
+* Приложение логики, в котором вы хотите использовать триггер для создания вызываемой конечной точки. Можно начать с пустого приложения логики или существующего приложения логики, в котором можно заменить текущий триггер. Этот пример начинается с пустого приложения логики. Если вы не знакомы с приложениями логики, см. статью [что такое Azure Logic Apps](../logic-apps/logic-apps-overview.md) и [Краткое руководство. Создание первого приложения логики](../logic-apps/quickstart-create-first-logic-app-workflow.md).
 
 ## <a name="create-a-callable-endpoint"></a>Создание вызываемой конечной точки
 
 1. Войдите на [портал Azure](https://portal.azure.com). Создайте и откройте пустое приложение логики в конструкторе приложений логики.
-
-   В этом примере используется триггер запроса, но можно использовать любой триггер, который может принимать входящие HTTPS запросы. Все принципы одинаково применяются к этим триггерам. Дополнительные сведения о триггере запросов см. [в разделе Получение и реагирование на входящие вызовы HTTPS с помощью Azure Logic Apps](../connectors/connectors-native-reqres.md).
 
 1. В поле поиска выберите **встроенный**. В поле поиска введите `request` в качестве фильтра. В списке триггеры выберите **время получения HTTP-запроса**.
 
@@ -200,7 +195,7 @@ ms.locfileid: "87078671"
 
    `https://prod-07.westus.logic.azure.com:433/workflows/{logic-app-resource-ID}/triggers/manual/paths/invoke?{parameter-name=parameter-value}&api-version=2016-10-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig={shared-access-signature}`
 
-   Браузер возвращает ответ с этим текстом:`Postal Code: 123456`
+   Браузер возвращает ответ с этим текстом: `Postal Code: 123456`
 
    ![Ответ от отправки запроса на URL-адрес обратного вызова](./media/logic-apps-http-endpoint/callback-url-returned-response.png)
 
@@ -210,12 +205,12 @@ ms.locfileid: "87078671"
 
    В этом примере показан URL-адрес обратного вызова с примером имени параметра и значения `postalCode=123456` в разных позициях в URL-адресе:
 
-   * Первое расположение:`https://prod-07.westus.logic.azure.com:433/workflows/{logic-app-resource-ID}/triggers/manual/paths/invoke?postalCode=123456&api-version=2016-10-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig={shared-access-signature}`
+   * Первое расположение: `https://prod-07.westus.logic.azure.com:433/workflows/{logic-app-resource-ID}/triggers/manual/paths/invoke?postalCode=123456&api-version=2016-10-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig={shared-access-signature}`
 
-   * Второе расположение:`https://prod-07.westus.logic.azure.com:433/workflows/{logic-app-resource-ID}/triggers/manual/paths/invoke?api-version=2016-10-01&postalCode=123456&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig={shared-access-signature}`
+   * Второе расположение: `https://prod-07.westus.logic.azure.com:433/workflows/{logic-app-resource-ID}/triggers/manual/paths/invoke?api-version=2016-10-01&postalCode=123456&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig={shared-access-signature}`
 
 > [!NOTE]
-> Если вы хотите включить в URI символ hash или решетки ( **#** ), используйте вместо этого закодированную версию:`%25%23`
+> Если вы хотите включить в URI символ hash или решетки ( **#** ), используйте вместо этого закодированную версию: `%25%23`
 
 <a name="relative-path"></a>
 
@@ -257,12 +252,12 @@ ms.locfileid: "87078671"
 
 1. Чтобы протестировать вызываемую конечную точку, скопируйте обновленный URL-адрес обратного вызова из триггера запроса, вставьте URL-адрес в другое окно браузера, замените `{postalCode}` в URL-адресе на `123456` и нажмите клавишу ВВОД.
 
-   Браузер возвращает ответ с этим текстом:`Postal Code: 123456`
+   Браузер возвращает ответ с этим текстом: `Postal Code: 123456`
 
    ![Ответ от отправки запроса на URL-адрес обратного вызова](./media/logic-apps-http-endpoint/callback-url-returned-response.png)
 
 > [!NOTE]
-> Если вы хотите включить в URI символ hash или решетки ( **#** ), используйте вместо этого закодированную версию:`%25%23`
+> Если вы хотите включить в URI символ hash или решетки ( **#** ), используйте вместо этого закодированную версию: `%25%23`
 
 ## <a name="call-logic-app-through-endpoint-url"></a>Вызов приложения логики с помощью URL-адреса конечной точки
 
@@ -408,3 +403,4 @@ ms.locfileid: "87078671"
 ## <a name="next-steps"></a>Дальнейшие действия
 
 * [Получение и реагирование на входящие вызовы HTTPS с помощью Azure Logic Apps](../connectors/connectors-native-reqres.md)
+* [Безопасный доступ и данные в Azure Logic Apps — доступ для входящих вызовов триггеров на основе запросов](../logic-apps/logic-apps-securing-a-logic-app.md#secure-inbound-requests)

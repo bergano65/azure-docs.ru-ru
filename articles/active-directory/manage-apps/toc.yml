@@ -238,12 +238,6 @@
               href: application-types.md
             - name: Непредусмотренное назначение пользователю
               href: ways-users-get-assigned-to-applications.md
-        - name: Устранение неполадок в разделе "Мои приложения"
-          items:
-            - name: Приложение не отображается
-              href: access-panel-troubleshoot-application-not-appearing.md
-            - name: Непредусмотренное отображение приложения
-              href: access-panel-troubleshoot-unexpected-application.md
         - name: Устранение неполадок с локальными приложениями
           items:
             - name: Устранение неполадок с прокси приложения

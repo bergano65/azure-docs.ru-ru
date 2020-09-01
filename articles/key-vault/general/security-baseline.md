@@ -6,13 +6,13 @@ ms.service: security
 ms.topic: conceptual
 ms.date: 04/10/2020
 ms.author: mbaldwin
-ms.custom: security-benchmark
-ms.openlocfilehash: e9c4d70bcd0b991d90c68d310f94b21757fe2437
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.custom: subject-security-benchmark
+ms.openlocfilehash: d939c03aef8d155d83d20c7d8211e04fae26c228
+ms.sourcegitcommit: d68c72e120bdd610bb6304dad503d3ea89a1f0f7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85830219"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89230285"
 ---
 # <a name="azure-security-baseline-for-key-vault"></a>Базовая конфигурация системы безопасности Azure для Key Vault
 
@@ -57,7 +57,7 @@ https://docs.microsoft.com/azure/security-center/security-center-network-recomme
 
 ### <a name="13-protect-critical-web-applications"></a>1.3. Защита критических веб-приложений
 
-**Руководство**. Неприменимо; эта рекомендация предназначена для веб-приложений, работающих в службе приложений Azure или в ресурсах вычислений.
+**Рекомендации**. Неприменимо. Эта рекомендация предназначена для веб-приложений, работающих в службе приложений Azure или в ресурсах вычислений.
 
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
@@ -69,9 +69,9 @@ https://docs.microsoft.com/azure/security-center/security-center-network-recomme
 **Руководство**. Включение стандарта защиты Azure от атак DDoS в виртуальных сетях Azure, связанных с экземплярами Key Vault, для защиты от атак типа "отказ в обслуживании". Используйте интегрированную аналитику угроз Центра безопасности Azure, чтобы запретить обмен данными с известными вредоносными или неиспользуемыми IP-адресами Интернета.
 
  
-Управление Azure от атак DDoS Protection Standard с помощью портал Azure:https://docs.microsoft.com/azure/virtual-network/manage-ddos-protection
+Управление Azure от атак DDoS Protection Standard с помощью портал Azure: https://docs.microsoft.com/azure/virtual-network/manage-ddos-protection
 
-Обнаружение угроз для уровня служб Azure в центре безопасности Azure:https://docs.microsoft.com/azure/security-center/security-center-alerts-service-layer
+Обнаружение угроз для уровня служб Azure в центре безопасности Azure: https://docs.microsoft.com/azure/security-center/security-center-alerts-service-layer
 
 
 **Мониторинг Центра безопасности Azure**: Да
@@ -86,7 +86,7 @@ https://docs.microsoft.com/azure/security-center/security-center-network-recomme
 
 https://docs.microsoft.com/azure/key-vault/private-link-service
 
-Ведение журнала Azure Key Vault:https://docs.microsoft.com/azure/key-vault/key-vault-logging
+Ведение журнала Azure Key Vault: https://docs.microsoft.com/azure/key-vault/key-vault-logging
 
 
 
@@ -123,7 +123,7 @@ https://docs.microsoft.com/azure/security-center/advanced-threat-protection-key-
 
 **Руководство**. для ресурсов, которым требуется доступ к экземплярам Azure Key Vault, используйте теги службы Azure для Azure Key Vault, чтобы определить элементы управления доступом к сети для групп безопасности сети или брандмауэра Azure. Теги служб можно использовать вместо определенных IP-адресов при создании правил безопасности. Указав имя тега службы (например, ApiManagement) в соответствующем исходном поле или поле назначения правила, можно разрешить или запретить трафик для соответствующей службы. Корпорация Майкрософт управляет префиксами адресов, входящих в тег службы, и автоматически обновляет этот тег при изменении адресов.
 
-Общие сведения о тегах служб Azure:https://docs.microsoft.com/azure/virtual-network/service-tags-overview
+Общие сведения о тегах служб Azure: https://docs.microsoft.com/azure/virtual-network/service-tags-overview
 
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
@@ -196,7 +196,7 @@ https://docs.microsoft.com/azure/azure-monitor/platform/alerts-activity-log
 **Руководство**: неприменимо; Корпорация Майкрософт поддерживает источник времени, используемый для ресурсов Azure, например Azure Key Vault, для меток времени в журналах.
 
 
-**Мониторинг Центра безопасности Azure**. Неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
 **Ответственность**: Microsoft
 
@@ -243,10 +243,10 @@ https://docs.microsoft.com/azure/key-vault/key-vault-logging
 
 **Руководство**. в Azure Monitor для рабочей области log Analytics, используемой для хранения журналов Azure Key Vault, задайте срок хранения согласно нормативным требованиям Организации. Используйте учетные записи хранения Azure для долгосрочного и архивного хранения.
 
-Измените срок хранения данных:https://docs.microsoft.com/azure/azure-monitor/platform/manage-cost-storage#change-the-data-retention-period
+Измените срок хранения данных: https://docs.microsoft.com/azure/azure-monitor/platform/manage-cost-storage#change-the-data-retention-period
 
 
-**Мониторинг Центра безопасности Azure**. Неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
 **Ответственность**: Customer
 
@@ -308,7 +308,7 @@ https://docs.microsoft.com/azure/azure-monitor/learn/tutorial-response
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
-**Ответственность**. Неприменимо
+**Ответственность**: Неприменимо
 
 ### <a name="210-enable-command-line-audit-logging"></a>2.10. Включение ведения журнала аудита для командной строки
 
@@ -374,7 +374,7 @@ https://docs.microsoft.com/azure/key-vault/service-to-service-authentication
 
 
 
-**Мониторинг Центра безопасности Azure**. Неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
 **Ответственность**: Customer
 
@@ -399,13 +399,13 @@ https://docs.microsoft.com/azure/security-center/security-center-identity-access
 
 **Руководство**. Используйте рабочую станцию привилегированного доступа (привилегированным доступом) с поддержкой многофакторной идентификации Azure (MFA), настроенной для входа в систему и настройки ресурсов KEY Vault. 
 
-Рабочие станции привилегированного доступа:https://docs.microsoft.com/windows-server/identity/securing-privileged-access/privileged-access-workstations 
+Рабочие станции привилегированного доступа: https://docs.microsoft.com/windows-server/identity/securing-privileged-access/privileged-access-workstations 
 
-Планирование развертывания многофакторной идентификации Azure на основе облачных служб:https://docs.microsoft.com/azure/active-directory/authentication/howto-mfa-getstarted
+Планирование развертывания многофакторной идентификации Azure на основе облачных служб: https://docs.microsoft.com/azure/active-directory/authentication/howto-mfa-getstarted
 
 
 
-**Мониторинг Центра безопасности Azure**. Неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
 **Ответственность**: Customer
 
@@ -415,15 +415,15 @@ https://docs.microsoft.com/azure/security-center/security-center-identity-access
 
 Включите расширенную защиту от угроз (ATP) для Azure Key Vault, чтобы создать оповещения для подозрительных действий.
 
-Развертывание Azure AD Privileged Identity Management (PIM):https://docs.microsoft.com/azure/active-directory/privileged-identity-management/pim-deployment-plan
+Развертывание Azure AD Privileged Identity Management (PIM): https://docs.microsoft.com/azure/active-directory/privileged-identity-management/pim-deployment-plan
 
-Настройка расширенной защиты от угроз для Azure Key Vault (Предварительная версия):https://docs.microsoft.com/azure/security-center/advanced-threat-protection-key-vault
+Настройка расширенной защиты от угроз для Azure Key Vault (Предварительная версия): https://docs.microsoft.com/azure/security-center/advanced-threat-protection-key-vault
 
-Оповещения для Azure Key Vault (Предварительная версия):https://docs.microsoft.com/azure/security-center/alerts-reference#alerts-azurekv
+Оповещения для Azure Key Vault (Предварительная версия): https://docs.microsoft.com/azure/security-center/alerts-reference#alerts-azurekv
 
-Azure Active Directory обнаружения рисков:https://docs.microsoft.com/azure/active-directory/reports-monitoring/concept-risk-events
+Azure Active Directory обнаружения рисков: https://docs.microsoft.com/azure/active-directory/reports-monitoring/concept-risk-events
 
-Создание групп действий и управление ими в портал Azure:https://docs.microsoft.com/azure/azure-monitor/platform/action-groups
+Создание групп действий и управление ими в портал Azure: https://docs.microsoft.com/azure/azure-monitor/platform/action-groups
 
 
 
@@ -435,7 +435,7 @@ Azure Active Directory обнаружения рисков:https://docs.microsof
 
 **Руководство**. Настройка условия расположения политики условного доступа и Управление именованными расположениями. С помощью именованных расположений можно создавать логические группы диапазонов IP-адресов или стран и регионов. Вы можете ограничить доступ к конфиденциальным ресурсам, таким как Key Vault секреты, в настроенные именованные расположения.
 
-Каково условие расположения в Azure Active Directory условном доступе?https://docs.microsoft.com/azure/active-directory/reports-monitoring/quickstart-configure-named-locations
+Каково условие расположения в Azure Active Directory условном доступе? https://docs.microsoft.com/azure/active-directory/reports-monitoring/quickstart-configure-named-locations
 
 
 
@@ -479,9 +479,9 @@ https://docs.microsoft.com/azure/active-directory/governance/access-reviews-over
 
 **Руководство**. Включение параметров диагностики для Azure Key Vault и Azure Active Directory, отправка всех журналов в log Analytics рабочую область. Настройте нужные оповещения (например, попытки доступа к отключенным секретам) в Log Analytics.
 
-Интеграция журналов Azure AD с Azure Monitor журналами:https://docs.microsoft.com/azure/active-directory/reports-monitoring/howto-integrate-activity-logs-with-log-analytics
+Интеграция журналов Azure AD с Azure Monitor журналами: https://docs.microsoft.com/azure/active-directory/reports-monitoring/howto-integrate-activity-logs-with-log-analytics
 
-Миграция из старого решения Key Vault:https://docs.microsoft.com/azure/azure-monitor/insights/azure-key-vault#migrating-from-the-old-key-vault-solution
+Миграция из старого решения Key Vault: https://docs.microsoft.com/azure/azure-monitor/insights/azure-key-vault#migrating-from-the-old-key-vault-solution
 
 
 
@@ -493,11 +493,11 @@ https://docs.microsoft.com/azure/active-directory/governance/access-reviews-over
 
 **Руководство**. Использование функций защиты идентификации и обнаружения рисков Azure Active Directory для настройки автоматических ответов на обнаруженные подозрительные действия, связанные с защищенными ресурсами Azure Key Vault. Вы должны включить автоматические ответы через метку Azure, чтобы реализовать ответы на безопасность вашей организации. 
 
-Отчет о событиях входа с рисками на портале Azure Active Directory:https://docs.microsoft.com/azure/active-directory/reports-monitoring/concept-risky-sign-ins 
+Отчет о событиях входа с рисками на портале Azure Active Directory: https://docs.microsoft.com/azure/active-directory/reports-monitoring/concept-risky-sign-ins 
 
-Как настроить и включить политики риска:https://docs.microsoft.com/azure/active-directory/identity-protection/howto-identity-protection-configure-risk-policies
+Как настроить и включить политики риска: https://docs.microsoft.com/azure/active-directory/identity-protection/howto-identity-protection-configure-risk-policies
 
-Как подключить метку Azure:https://docs.microsoft.com/azure/sentinel/quickstart-onboard
+Как подключить метку Azure:  https://docs.microsoft.com/azure/sentinel/quickstart-onboard
 
 
 **Мониторинг Центра безопасности Azure**: Да
@@ -508,7 +508,7 @@ https://docs.microsoft.com/azure/active-directory/governance/access-reviews-over
 
 **Руководство**: неприменимо; Защищенное хранилище не поддерживается для Azure Key Vault.
 
-Поддерживаемые службы и сценарии в общем доступе:https://docs.microsoft.com/azure/security/fundamentals/customer-lockbox-overview#supported-services-and-scenarios-in-general-availability
+Поддерживаемые службы и сценарии в общем доступе: https://docs.microsoft.com/azure/security/fundamentals/customer-lockbox-overview#supported-services-and-scenarios-in-general-availability
 
 
 
@@ -524,13 +524,13 @@ https://docs.microsoft.com/azure/active-directory/governance/access-reviews-over
 
 **Руководство**. Использование тегов для отслеживания ресурсов Azure, в которых хранятся или обрабатываются конфиденциальные сведения о ресурсах с поддержкой Azure Key Vault. 
 
-Используйте теги для Организации ресурсов Azure:https://docs.microsoft.com/azure/azure-resource-manager/resource-group-using-tags
+Используйте теги для Организации ресурсов Azure: https://docs.microsoft.com/azure/azure-resource-manager/resource-group-using-tags
 
 
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
-**Ответственность**. Customer
+**Ответственность**: Customer
 
 ### <a name="42-isolate-systems-storing-or-processing-sensitive-information"></a>4.2. Изолирование систем, хранящих или обрабатывающих конфиденциальные данные
 
@@ -538,9 +538,9 @@ https://docs.microsoft.com/azure/active-directory/governance/access-reviews-over
 
 После того как правила брандмауэра вступают в действие, можно выполнять только Azure Key Vault операции с плоскостью данных, если запрос исходит из разрешенных подсетей или диапазонов IP-адресов. Это также относится к Azure Key Vaultному доступу в портал Azure. Хотя вы можете перейти к хранилищу ключей из портал Azure, вы не сможете перечислить ключи, секреты или сертификаты, если ваш клиентский компьютер не находится в списке разрешенных. Это также влияет на средство выбора Azure Key Vault и другие службы Azure. Вы можете просмотреть списки хранилищ ключей, но не список ключей, если правила брандмауэра не позволяют компьютеру клиента сделать это.
 
-Настройка Azure Key Vault брандмауэров и виртуальных сетей:https://docs.microsoft.com/azure/key-vault/key-vault-network-security
+Настройка Azure Key Vault брандмауэров и виртуальных сетей: https://docs.microsoft.com/azure/key-vault/key-vault-network-security
 
-Конечные точки службы виртуальной сети для Azure Key Vault:https://docs.microsoft.com/azure/key-vault/key-vault-overview-vnet-service-endpoints
+Конечные точки службы виртуальной сети для Azure Key Vault: https://docs.microsoft.com/azure/key-vault/key-vault-overview-vnet-service-endpoints
 
 
 
@@ -552,11 +552,11 @@ https://docs.microsoft.com/azure/active-directory/governance/access-reviews-over
 
 **Руководство**. все данные, хранящиеся в Azure Key Vault, считаются конфиденциальными. Используйте Azure Key Vault элементы управления доступом к плоскости данных, чтобы управлять доступом к Azure Key Vault секретам. Вы также можете использовать встроенный брандмауэр Key Vault для управления доступом на уровне сети. Чтобы отслеживать доступ к Azure Key Vault, включите Key Vault параметры диагностики и отправьте журналы в учетную запись хранения Azure или Log Analytics рабочую область.
 
-Безопасный доступ к хранилищу ключей:https://docs.microsoft.com/azure/key-vault/key-vault-secure-your-key-vault
+Безопасный доступ к хранилищу ключей: https://docs.microsoft.com/azure/key-vault/key-vault-secure-your-key-vault
 
-Настройка Azure Key Vault брандмауэров и виртуальных сетей:https://docs.microsoft.com/azure/key-vault/key-vault-network-security
+Настройка Azure Key Vault брандмауэров и виртуальных сетей: https://docs.microsoft.com/azure/key-vault/key-vault-network-security
 
-Ведение журнала Azure Key Vault:https://docs.microsoft.com/azure/key-vault/key-vault-logging
+Ведение журнала Azure Key Vault: https://docs.microsoft.com/azure/key-vault/key-vault-logging
 
 
 
@@ -568,11 +568,11 @@ https://docs.microsoft.com/azure/active-directory/governance/access-reviews-over
 
 **Руководство**. весь трафик, который Azure Key Vault для проверки подлинности, управления и доступа к плоскости данных, шифруется и проходит через HTTPS: порт 443. (Тем не менее, для списка отзыва сертификатов иногда будет использоваться трафик HTTP [порт 80]). 
 
-Доступ к Azure Key Vault за брандмауэром:https://docs.microsoft.com/azure/key-vault/key-vault-access-behind-firewall
+Доступ к Azure Key Vault за брандмауэром: https://docs.microsoft.com/azure/key-vault/key-vault-access-behind-firewall
 
 
 
-**Мониторинг Центра безопасности Azure**. Неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
 **Ответственность**. Microsoft
 
@@ -611,7 +611,7 @@ https://docs.microsoft.com/azure/key-vault/key-vault-overview
 https://docs.microsoft.com/azure/security/fundamentals/protection-customer-data
 
 
-**Мониторинг Центра безопасности Azure**. Неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
 **Ответственность**: Microsoft
 
@@ -624,7 +624,7 @@ https://docs.microsoft.com/azure/security/fundamentals/protection-customer-data
 - [Модель шифрования и таблица управления ключами](https://docs.microsoft.com/azure/security/fundamentals/encryption-atrest#encryption-model-and-key-management-table)
 
 
-**Мониторинг Центра безопасности Azure**. Неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
 **Ответственность**: Microsoft
 
@@ -651,7 +651,7 @@ https://docs.microsoft.com/azure/azure-monitor/insights/azure-key-vault
 **Руководство**. Корпорация Майкрософт выполняет Управление уязвимостью в базовых системах, поддерживающих Azure Key Vault.
 
 
-**Мониторинг Центра безопасности Azure**. Неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
 **Ответственность**: Microsoft
 
@@ -676,7 +676,7 @@ https://docs.microsoft.com/azure/azure-monitor/insights/azure-key-vault
 
 **Руководство**. Корпорация Майкрософт выполняет Управление уязвимостью в базовых системах, поддерживающих Key Vault.
 
-**Мониторинг Центра безопасности Azure**. Неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
 **Ответственность**: Microsoft
 
@@ -741,7 +741,7 @@ https://docs.microsoft.com/azure/billing/billing-create-subscription
 
 https://docs.microsoft.com/azure/governance/management-groups/create
 
-Используйте теги для Организации ресурсов Azure:https://docs.microsoft.com/azure/azure-resource-manager/resource-group-using-tags
+Используйте теги для Организации ресурсов Azure: https://docs.microsoft.com/azure/azure-resource-manager/resource-group-using-tags
 
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
@@ -766,9 +766,9 @@ https://docs.microsoft.com/azure/governance/management-groups/create
 
 Кроме того, используйте Azure Resource Graph для запроса или обнаружения ресурсов в подписках.
 
-Руководство. Создание политик для обеспечения соответствия и управление ими:https://docs.microsoft.com/azure/governance/policy/tutorials/create-and-manage
+Руководство. Создание политик для обеспечения соответствия и управление ими: https://docs.microsoft.com/azure/governance/policy/tutorials/create-and-manage
 
-Краткое руководство. Запуск первого запроса графа ресурсов с помощью Azure Resource Graph Explorer.https://docs.microsoft.com/azure/governance/resource-graph/first-query-portal
+Краткое руководство. Запуск первого запроса графа ресурсов с помощью Azure Resource Graph Explorer. https://docs.microsoft.com/azure/governance/resource-graph/first-query-portal
 
 
 
@@ -811,15 +811,15 @@ https://docs.microsoft.com/azure/governance/management-groups/create
 
 - Допустимые типы ресурсов
 
-Руководство. Создание политик для обеспечения соответствия и управление ими:https://docs.microsoft.com/azure/governance/policy/tutorials/create-and-manage
+Руководство. Создание политик для обеспечения соответствия и управление ими: https://docs.microsoft.com/azure/governance/policy/tutorials/create-and-manage
 
-Примеры политики Azure:https://docs.microsoft.com/azure/governance/policy/samples/not-allowed-resource-types
+Примеры политики Azure: https://docs.microsoft.com/azure/governance/policy/samples/not-allowed-resource-types
 
 
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
-**Ответственность**. Customer
+**Ответственность**: Customer
 
 ### <a name="610-implement-approved-application-list"></a>6.10. Реализация списка утвержденных приложений
 
@@ -850,7 +850,7 @@ https://docs.microsoft.com/azure/role-based-access-control/conditional-access-az
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
-**Ответственность**. Неприменимо
+**Ответственность**: Неприменимо
 
 ### <a name="613-physically-or-logically-segregate-high-risk-applications"></a>6.13. Физическое или логическое разделение приложений с высоким риском
 
@@ -917,7 +917,7 @@ https://docs.microsoft.com/azure/governance/policy/tutorials/create-and-manage
 https://docs.microsoft.com/azure/governance/policy/concepts/effects
 
 
-**Мониторинг Центра безопасности Azure**. Неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
 **Ответственность**: Customer
 
@@ -942,7 +942,7 @@ https://docs.microsoft.com/azure/devops/repos/git/gitworkflow?view=azure-devops
 
 https://docs.microsoft.com/azure/devops/repos/index?view=azure-devops
 
-**Мониторинг Центра безопасности Azure**. Неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
 **Ответственность**: Customer
 
@@ -963,7 +963,7 @@ https://docs.microsoft.com/azure/devops/repos/index?view=azure-devops
 
 https://docs.microsoft.com/azure/governance/policy/tutorials/create-and-manage
 
-**Мониторинг Центра безопасности Azure**. Неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
 **Ответственность**: Customer
 
@@ -1036,7 +1036,7 @@ https://docs.microsoft.com/azure/key-vault/quick-create-portal
 Проверка подлинности в Key Vault с помощью управляемого удостоверения:   
 https://docs.microsoft.com/azure/key-vault/managed-identity
 
-**Мониторинг Центра безопасности Azure**. Неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
 **Ответственность**: Customer
 
@@ -1046,7 +1046,7 @@ https://docs.microsoft.com/azure/key-vault/managed-identity
   
  Настройка сканера учетных данных: https://secdevtools.azurewebsites.net/helpcredscan.html
 
-**Мониторинг центра безопасности Azure**: Неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
 **Ответственность**: Customer
 
@@ -1069,9 +1069,9 @@ https://docs.microsoft.com/azure/key-vault/managed-identity
 
 Предварительное сканирование любого содержимого, отправляемого или отправленного в Нерасчетные ресурсы Azure, например Azure Key Vault. Корпорация Майкрософт не может получить доступ к данным в этих экземплярах.
 
-Сведения о антивредоносном по Майкрософт для облачных служб и виртуальных машин Azure:https://docs.microsoft.com/azure/security/fundamentals/antimalware
+Сведения о антивредоносном по Майкрософт для облачных служб и виртуальных машин Azure: https://docs.microsoft.com/azure/security/fundamentals/antimalware
 
-**Мониторинг Центра безопасности Azure**. Неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
 **Ответственность**: Customer
 
@@ -1102,21 +1102,21 @@ https://docs.microsoft.com/azure/key-vault/managed-identity
 
 При необходимости резервные копии Key Vault можно хранить в Azure Backup.
 
-Резервное копирование Key Vault сертификатов:https://docs.microsoft.com/powershell/module/azurerm.keyvault/backup-azurekeyvaultcertificate
+Резервное копирование Key Vault сертификатов: https://docs.microsoft.com/powershell/module/azurerm.keyvault/backup-azurekeyvaultcertificate
 
 Резервное копирование ключей Key Vault: https://docs.microsoft.com/powershell/module/azurerm.keyvault/backup-azurekeyvaultkey
 
-Резервное копирование Key Vault управляемых учетных записей хранения:https://docs.microsoft.com/powershell/module/az.keyvault/add-azkeyvaultmanagedstorageaccount
+Резервное копирование Key Vault управляемых учетных записей хранения: https://docs.microsoft.com/powershell/module/az.keyvault/add-azkeyvaultmanagedstorageaccount
 
-Резервное копирование Key Vault секретов:https://docs.microsoft.com/powershell/module/azurerm.keyvault/backup-azurekeyvaultsecret
+Резервное копирование Key Vault секретов: https://docs.microsoft.com/powershell/module/azurerm.keyvault/backup-azurekeyvaultsecret
 
-Как включить Azure Backup:https://docs.microsoft.com/azure/backup
+Как включить Azure Backup: https://docs.microsoft.com/azure/backup
 
 
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
-**Ответственность**. Customer
+**Ответственность**: Customer
 
 ### <a name="92-perform-complete-system-backups-and-backup-any-customer-managed-keys"></a>9.2. Выполнение полного резервного копирования системы и любых ключей, управляемых клиентом
 
@@ -1132,15 +1132,15 @@ https://docs.microsoft.com/azure/key-vault/managed-identity
 
 При необходимости резервные копии Key Vault можно хранить в Azure Backup.
 
-Резервное копирование Key Vault сертификатов:https://docs.microsoft.com/powershell/module/azurerm.keyvault/backup-azurekeyvaultcertificate
+Резервное копирование Key Vault сертификатов: https://docs.microsoft.com/powershell/module/azurerm.keyvault/backup-azurekeyvaultcertificate
 
 Резервное копирование ключей Key Vault: https://docs.microsoft.com/powershell/module/azurerm.keyvault/backup-azurekeyvaultkey
 
-Резервное копирование Key Vault управляемых учетных записей хранения:https://docs.microsoft.com/powershell/module/az.keyvault/add-azkeyvaultmanagedstorageaccount
+Резервное копирование Key Vault управляемых учетных записей хранения: https://docs.microsoft.com/powershell/module/az.keyvault/add-azkeyvaultmanagedstorageaccount
 
-Резервное копирование Key Vault секретов:https://docs.microsoft.com/powershell/module/azurerm.keyvault/backup-azurekeyvaultsecret
+Резервное копирование Key Vault секретов: https://docs.microsoft.com/powershell/module/azurerm.keyvault/backup-azurekeyvaultsecret
 
-Как включить Azure Backup:https://docs.microsoft.com/azure/backup
+Как включить Azure Backup: https://docs.microsoft.com/azure/backup
 
 
 
@@ -1160,18 +1160,18 @@ https://docs.microsoft.com/azure/key-vault/managed-identity
 
 - Restore-Азкэйваултсекрет
 
-Восстановление сертификатов Key Vault:https://docs.microsoft.com/powershell/module/azurerm.keyvault/restore-azurekeyvaultcertificate?view=azurermps-6.13.0
+Восстановление сертификатов Key Vault:  https://docs.microsoft.com/powershell/module/azurerm.keyvault/restore-azurekeyvaultcertificate?view=azurermps-6.13.0
 
-Восстановление Key Vault ключей:https://docs.microsoft.com/powershell/module/azurerm.keyvault/restore-azurekeyvaultkey?view=azurermps-6.13.0 
+Восстановление Key Vault ключей: https://docs.microsoft.com/powershell/module/azurerm.keyvault/restore-azurekeyvaultkey?view=azurermps-6.13.0 
 
-Как восстановить Key Vault управляемые учетные записи хранения:https://docs.microsoft.com/powershell/module/az.keyvault/backup-azkeyvaultmanagedstorageaccount
+Как восстановить Key Vault управляемые учетные записи хранения: https://docs.microsoft.com/powershell/module/az.keyvault/backup-azkeyvaultmanagedstorageaccount
 
-Восстановление секретов Key Vault:https://docs.microsoft.com/powershell/module/azurerm.keyvault/restore-azurekeyvaultsecret?view=azurermps-6.13.0
+Восстановление секретов Key Vault: https://docs.microsoft.com/powershell/module/azurerm.keyvault/restore-azurekeyvaultsecret?view=azurermps-6.13.0
 
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
-**Ответственность**. Customer
+**Ответственность**: Customer
 
 ### <a name="94-ensure-protection-of-backups-and-customer-managed-keys"></a>9.4. Обеспечение защиты резервных копий и управляемых клиентом ключей
 
@@ -1211,7 +1211,7 @@ https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-61r2.pdf
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
-**Ответственность**. Customer
+**Ответственность**: Customer
 
 ### <a name="102-create-an-incident-scoring-and-prioritization-procedure"></a>10.2. Создание процедуры оценки инцидента и определения приоритетов
 
@@ -1232,7 +1232,7 @@ https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-84.pdf
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
-**Ответственность**. Customer
+**Ответственность**: Customer
 
 ### <a name="104-provide-security-incident-contact-details-and-configure-alert-notifications-for-security-incidents"></a>10.4. Предоставление контактных сведений и настройка уведомлений по инцидентам безопасности
 

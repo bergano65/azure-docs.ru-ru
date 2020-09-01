@@ -6,12 +6,12 @@ ms.topic: how-to
 ms.date: 04/08/2020
 ms.author: helohr
 manager: lizross
-ms.openlocfilehash: 649176a363b1a721fede68c5db2a736d5304f485
-ms.sourcegitcommit: 98854e3bd1ab04ce42816cae1892ed0caeedf461
+ms.openlocfilehash: f437c43c1e9ad960910e7576db4b3ddf3f6623ec
+ms.sourcegitcommit: d68c72e120bdd610bb6304dad503d3ea89a1f0f7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "88007620"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89230880"
 ---
 # <a name="connect-to-windows-virtual-desktop-with-the-macos-client"></a>Подключение к виртуальному рабочему столу Windows с помощью клиента macOS
 
@@ -24,7 +24,7 @@ ms.locfileid: "88007620"
 
 ## <a name="install-the-client"></a>Установка клиента
 
-Чтобы приступить к работе, [Скачайте](https://apps.apple.com/app/microsoft-remote-desktop/id1295203466?mt=12)   и установите клиент на устройстве macOS.
+Чтобы приступить к работе, [Скачайте](https://apps.apple.com/app/microsoft-remote-desktop/id1295203466?mt=12) и установите клиент на устройстве macOS.
 
 ## <a name="subscribe-to-a-feed"></a>Подписка на веб-канал
 
@@ -36,7 +36,8 @@ ms.locfileid: "88007620"
 2. Введите значение параметра Feed URL (URL-адрес веб-канала). Это может быть URL-адрес или адрес электронной почты.
    - В первом случае используйте URL-адрес, предоставленный администратором. Обычно используется URL-адрес <https://rdweb.wvd.microsoft.com/api/arm/feeddiscovery>.
    - Чтобы использовать адрес электронной почты, введите свой адрес электронной почты. При этом клиент будет искать URL-адрес, связанный с вашим адресом электронной почты, если администратор настроил сервер соответствующим образом.
-3. Нажмите кнопку **Добавить**.
+   - Чтобы подключиться через портал US Gov, используйте <https://rdweb.wvd.azure.us/api/arm/feeddiscovery> .
+3. Выберите **Добавить**.
 4. При появлении запроса войдите в систему со своей учетной записью.
 
 После входа будет показан список доступных ресурсов.

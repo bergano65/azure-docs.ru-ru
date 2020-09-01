@@ -9,12 +9,12 @@ ms.topic: how-to
 ms.date: 06/11/2020
 ms.author: tamram
 ms.subservice: blobs
-ms.openlocfilehash: 6948d4d786e918e5f3e32e6bdf2f7e23940f6815
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 9a4c68454807cb26ac62799b598f146680e37c42
+ms.sourcegitcommit: d68c72e120bdd610bb6304dad503d3ea89a1f0f7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85445446"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89230183"
 ---
 # <a name="enable-and-manage-point-in-time-restore-for-block-blobs-preview"></a>Включение и Управление восстановлением на момент времени для блочных BLOB-объектов (Предварительная версия)
 
@@ -48,7 +48,7 @@ Get-Module PowerShellGet
 
 Перед включением и настройкой восстановления на момент времени включите необходимые компоненты для учетной записи хранения: обратимое удаление, веб-канал изменений и управление версиями BLOB-объектов. Дополнительные сведения о включении каждой из этих функций см. в следующих статьях:
 
-- [Включить обратимое удаление для больших двоичных объектов](soft-delete-enable.md)
+- [Включение обратимого удаления для больших двоичных объектов](soft-delete-enable.md)
 - [Включение и отключение канала изменений](storage-blob-change-feed.md#enable-and-disable-the-change-feed)
 - [Включение управления версиями BLOB-объектов и работа с ним](versioning-enable.md)
 
@@ -179,9 +179,9 @@ $job | Wait-Job
 ## <a name="known-issues"></a>Известные проблемы
 - Для подмножества восстановлений, в которых имеются добавочные большие двоичные объекты, восстановление завершится ошибкой. Сейчас не следует выполнять восстановление, если в учетной записи имеются добавочные BLOB-объекты.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Восстановление до точки во времени для блочных BLOB-объектов (Предварительная версия)](point-in-time-restore-overview.md)
 - [Обратимое удаление](soft-delete-overview.md)
 - [Веб-канал изменений (Предварительная версия)](storage-blob-change-feed.md)
-- [Управление версиями BLOB-объектов (предварительная версия)](versioning-overview.md)
+- [Управление версиями BLOB-объектов](versioning-overview.md)

@@ -6,13 +6,13 @@ ms.service: security
 ms.topic: conceptual
 ms.date: 03/16/2020
 ms.author: mbaldwin
-ms.custom: security-benchmark
-ms.openlocfilehash: 3431ad88a27da9d83b75ed3661d6129f157b9b1f
-ms.sourcegitcommit: 3d56d25d9cf9d3d42600db3e9364a5730e80fa4a
+ms.custom: subject-security-benchmark
+ms.openlocfilehash: 99985ba8540a347977b9eaf2e733a308fa777b97
+ms.sourcegitcommit: d68c72e120bdd610bb6304dad503d3ea89a1f0f7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87531512"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89231407"
 ---
 # <a name="azure-security-baseline-for-cosmos-db"></a>Базовый план безопасности Azure для Cosmos DB
 
@@ -34,13 +34,13 @@ ms.locfileid: "87531512"
 
 Вы также можете защитить данные, хранящиеся в учетной записи Azure Cosmos, с помощью IP-брандмауэров. Для фильтрации входящего трафика Azure Cosmos DB поддерживает политики управления доступом на основе IP-адресов. Вы можете задать брандмауэр IP-адресов в учетной записи Azure Cosmos с помощью портал Azure, Azure Resource Manager шаблонов или с помощью Azure CLI или Azure PowerShell.
 
-Общие сведения о частной ссылке Azure:https://docs.microsoft.com/azure/private-link/private-link-overview
+Общие сведения о частной ссылке Azure: https://docs.microsoft.com/azure/private-link/private-link-overview
 
-Как настроить закрытую конечную точку для Azure Cosmos DB:https://docs.microsoft.com/azure/cosmos-db/how-to-configure-private-endpoints 
+Как настроить закрытую конечную точку для Azure Cosmos DB:  https://docs.microsoft.com/azure/cosmos-db/how-to-configure-private-endpoints 
 
-Создание группы безопасности сети с конфигурацией безопасности:https://docs.microsoft.com/azure/virtual-network/tutorial-filter-network-traffic
+Создание группы безопасности сети с конфигурацией безопасности:  https://docs.microsoft.com/azure/virtual-network/tutorial-filter-network-traffic
 
-Настройка брандмауэра IP в Cosmos DB:https://docs.microsoft.com/azure/cosmos-db/how-to-configure-firewall
+Настройка брандмауэра IP в Cosmos DB: https://docs.microsoft.com/azure/cosmos-db/how-to-configure-firewall
 
 **Мониторинг Центра безопасности Azure**: Да
 
@@ -52,7 +52,7 @@ ms.locfileid: "87531512"
 
 При развертывании виртуальных машин в той же виртуальной сети, что и учетная запись Azure Cosmos, можно использовать группу безопасности сети (NSG), чтобы снизить риск утечка данных. Включите журналы потоков NSG и отправьте журналы в учетную запись хранения Azure для аудита трафика. Вы также можете отправить журналы потоков для группы безопасности сети в рабочую область Log Analytics и использовать аналитику трафика для получения ценных сведений о потоке трафика в облаке Azure. Некоторые преимущества Аналитики трафика — это возможность визуализировать сетевые активности и определять горячие участки, выявлять угрозы безопасности, анализировать шаблоны потоков трафика и выявлять некорректные сетевые настройки.
 
-Общие сведения о безопасности сети, предоставляемой центром безопасности Azure:https://docs.microsoft.com/azure/security-center/security-center-network-recommendations
+Общие сведения о безопасности сети, предоставляемой центром безопасности Azure: https://docs.microsoft.com/azure/security-center/security-center-network-recommendations
 
 Включение журналов потоков NSG: https://docs.microsoft.com/azure/network-watcher/network-watcher-nsg-flow-logging-portal
 
@@ -66,7 +66,7 @@ ms.locfileid: "87531512"
 
 **Руководство**. Использование функции общего доступа к ресурсам в разных источниках (CORS) для обеспечения доступа веб-приложения, работающего в одном домене, к ресурсам в другом домене. Веб-браузеры реализуют ограничение безопасности, известное как политика одного источника, которая не позволяет веб-странице вызывать API-интерфейсы в другом домене. Однако CORS обеспечивает безопасный способ, позволяющий исходному домену вызывать интерфейсы API в другом домене. При включении поддержки CORS для учетной записи Azure Cosmos только прошедшие проверку подлинности запросы оцениваются, чтобы определить, разрешены ли они в соответствии с правилами, которые вы указали.
 
-Настройка общего доступа к ресурсам между источниками:https://docs.microsoft.com/azure/cosmos-db/how-to-configure-cross-origin-resource-sharing
+Настройка общего доступа к ресурсам между источниками: https://docs.microsoft.com/azure/cosmos-db/how-to-configure-cross-origin-resource-sharing
 
 **Мониторинг Центра безопасности Azure**: Да
 
@@ -78,11 +78,11 @@ ms.locfileid: "87531512"
 
 Включите стандарт защиты от атак DDoS в виртуальных сетях, связанных с экземплярами Azure Cosmos DB, чтобы защититься от атак от атак DDoS. Используйте интегрированную аналитику угроз Центра безопасности Azure, чтобы запретить обмен данными с известными вредоносными или неиспользуемыми IP-адресами Интернета.
 
-Настройка расширенной защиты от угроз Azure Cosmos DB.https://docs.microsoft.com/azure/cosmos-db/cosmos-db-advanced-threat-protection
+Настройка расширенной защиты от угроз Azure Cosmos DB. https://docs.microsoft.com/azure/cosmos-db/cosmos-db-advanced-threat-protection
 
 Настройка защиты от атак DDoS: https://docs.microsoft.com/azure/virtual-network/manage-ddos-protection
 
-Общие сведения о центре безопасности Azure, интегрированной с системой анализа угроз.https://docs.microsoft.com/azure/security-center/security-center-alerts-service-layer
+Общие сведения о центре безопасности Azure, интегрированной с системой анализа угроз. https://docs.microsoft.com/azure/security-center/security-center-alerts-service-layer
 
 **Мониторинг Центра безопасности Azure**: Да
 
@@ -104,7 +104,7 @@ ms.locfileid: "87531512"
 
 **Руководство**. Использование Advanced Threat protection (ATP) для Azure Cosmos DB. ATP для Azure Cosmos DB предоставляет дополнительный уровень логики безопасности, который обнаруживает необычные и потенциально опасные попытки доступа или использования учетных записей Azure Cosmos. Этот уровень защиты позволяет решать угрозы и интегрировать их в централизованные системы мониторинга безопасности. 
 
-Настройка расширенной защиты от угроз Cosmos DB.https://docs.microsoft.com/azure/cosmos-db/cosmos-db-advanced-threat-protection
+Настройка расширенной защиты от угроз Cosmos DB. https://docs.microsoft.com/azure/cosmos-db/cosmos-db-advanced-threat-protection
 
 **Мониторинг Центра безопасности Azure**: Да
 
@@ -125,7 +125,7 @@ ms.locfileid: "87531512"
 
 Дополнительные сведения об использовании тегов служб: https://docs.microsoft.com/azure/virtual-network/service-tags-overview
 
-**Мониторинг Центра безопасности Azure**. Неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
 **Ответственность**: Customer
 
@@ -143,7 +143,7 @@ ms.locfileid: "87531512"
 
 Создание схемы Azure: https://docs.microsoft.com/azure/governance/blueprints/create-blueprint-portal
 
-**Мониторинг Центра безопасности Azure**. Неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
 **Ответственность**: Customer
 
@@ -153,9 +153,9 @@ ms.locfileid: "87531512"
 
 Создание и использование тегов: https://docs.microsoft.com/azure/azure-resource-manager/resource-group-using-tags
 
-**Мониторинг центра безопасности Azure**: Неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
-**Ответственность**. Customer
+**Ответственность**: Customer
 
 ### <a name="111-use-automated-tools-to-monitor-network-resource-configurations-and-detect-changes"></a>1.11. Использование автоматизированных средств для мониторинга конфигураций сетевых ресурсов и обнаружения изменений
 
@@ -167,7 +167,7 @@ ms.locfileid: "87531512"
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
-**Ответственность**. Customer
+**Ответственность**: Customer
 
 ## <a name="logging-and-monitoring"></a>Ведение журналов и мониторинг
 
@@ -186,7 +186,7 @@ ms.locfileid: "87531512"
 
 **Руководство**. прием журналов с помощью Azure Monitor для агрегирования данных безопасности, создаваемых Azure Cosmos DB. В Azure Monitor использовать рабочие области Log Analytics для запроса и выполнения анализа, а также использовать учетные записи хранения для долгосрочного и архивного хранения. Кроме того, вы можете включить и подключить данные к Azure Sentinel или сторонним системам управления информационной безопасностью и событиями безопасности (SIEM). 
 
-Как включить журналы диагностики для Azure Cosmos DB:https://docs.microsoft.com/azure/cosmos-db/logging
+Как включить журналы диагностики для Azure Cosmos DB: https://docs.microsoft.com/azure/cosmos-db/logging
 
 Подключение к Azure Sentinel: https://docs.microsoft.com/azure/sentinel/quickstart-onboard
 
@@ -198,9 +198,9 @@ ms.locfileid: "87531512"
 
 **Руководство**. Включение параметров диагностики для Azure Cosmos DB и отправка журналов в рабочую область log Analytics или в учетную запись хранения. Параметры диагностики в Azure Cosmos DB используются для получения журналов ресурсов. Эти журналы фиксируются для каждого запроса, а также называются "журналами плоскости данных". Некоторые примеры операций с плоскостью данных включают удаление, вставку и чтение. Вы также можете включить параметры диагностики журнала действий Azure и отправить их в ту же рабочую область Log Analytics.
 
-Включение параметров диагностики для Azure Cosmos DB:https://docs.microsoft.com/azure/cosmos-db/logging
+Включение параметров диагностики для Azure Cosmos DB: https://docs.microsoft.com/azure/cosmos-db/logging
 
-Как включить параметры диагностики для журнала действий Azure:https://docs.microsoft.com/azure/azure-monitor/platform/diagnostic-settings-legacy
+Как включить параметры диагностики для журнала действий Azure: https://docs.microsoft.com/azure/azure-monitor/platform/diagnostic-settings-legacy
 
 **Мониторинг Центра безопасности Azure**: в настоящее время недоступен.
 
@@ -218,17 +218,17 @@ ms.locfileid: "87531512"
 
 **Рекомендации**. в Azure Monitor задайте срок хранения журнала для рабочих областей log Analytics, связанных с экземплярами Azure Cosmos DB в соответствии с нормативными требованиями Организации.
 
-Как задать параметры хранения журнала:https://docs.microsoft.com/azure/azure-monitor/platform/manage-cost-storage#change-the-data-retention-period
+Как задать параметры хранения журнала: https://docs.microsoft.com/azure/azure-monitor/platform/manage-cost-storage#change-the-data-retention-period
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
-**Ответственность**. Customer
+**Ответственность**: Customer
 
 ### <a name="26-monitor-and-review-logs"></a>2.6. Мониторинг и просмотр журналов
 
 **Руководство**. Вы можете выполнять запросы в log Analytics рабочей области для поиска терминов, выявления тенденций, анализа закономерностей и предоставления множества других ценных сведений, основанных на собираемых журналах Azure Cosmos DB.
 
-Выполнение запросов для Azure Cosmos DB в Log Analytics рабочих областях:https://docs.microsoft.com/azure/cosmos-db/monitor-cosmos-db
+Выполнение запросов для Azure Cosmos DB в Log Analytics рабочих областях: https://docs.microsoft.com/azure/cosmos-db/monitor-cosmos-db
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -242,11 +242,11 @@ ms.locfileid: "87531512"
 
 Вы также можете подключить рабочую область Log Analytics к Azure Sentinel, так как она предоставляет решение для автоматического реагирования на согласованность безопасности (ВЗЛЕТЕЛ). Это позволяет создавать и использовать сборники схем (автоматизированные решения) для устранения проблем безопасности. Кроме того, можно создавать пользовательские оповещения журнала в рабочей области Log Analytics с помощью Azure Monitor.
 
-Список оповещений защиты от угроз для Azure Cosmos DB:https://docs.microsoft.com/azure/security-center/alerts-reference#alerts-azurecosmos
+Список оповещений защиты от угроз для Azure Cosmos DB: https://docs.microsoft.com/azure/security-center/alerts-reference#alerts-azurecosmos
 
 Подключение Azure Sentinel: https://docs.microsoft.com/azure/sentinel/quickstart-onboard
 
-Создание, просмотр и Управление оповещениями журнала с помощью Azure Monitor.https://docs.microsoft.com/azure/azure-monitor/platform/alerts-log
+Создание, просмотр и Управление оповещениями журнала с помощью Azure Monitor. https://docs.microsoft.com/azure/azure-monitor/platform/alerts-log
 
 **Мониторинг Центра безопасности Azure**: Да
 
@@ -268,7 +268,7 @@ ms.locfileid: "87531512"
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
-**Ответственность**. Неприменимо
+**Ответственность**: Неприменимо
 
 ### <a name="210-enable-command-line-audit-logging"></a>2.10. Включение ведения журнала аудита для командной строки
 
@@ -292,17 +292,17 @@ Azure Cosmos DB предоставляет встроенный RBAC для ра
 
 Кроме того, некоторые действия в Azure Cosmos DB можно контролировать с помощью Azure Active Directory и главных ключей учетной записи.  Используйте параметр учетной записи "Дисаблекэйбаседметадатавритеакцесс" для управления доступом к ключам.
 
-Общие сведения об управлении доступом на основе ролей в Azure Cosmos DB.https://docs.microsoft.com/azure/cosmos-db/role-based-access-control
+Общие сведения об управлении доступом на основе ролей в Azure Cosmos DB. https://docs.microsoft.com/azure/cosmos-db/role-based-access-control
 
-Создавайте собственные пользовательские роли с помощью действий Azure Cosmos DB (Microsoft.Docпространство имен Ументдб):https://docs.microsoft.com/azure/role-based-access-control/resource-provider-operations#microsoftdocumentdb
+Создавайте собственные пользовательские роли с помощью действий Azure Cosmos DB (Microsoft.Docпространство имен Ументдб): https://docs.microsoft.com/azure/role-based-access-control/resource-provider-operations#microsoftdocumentdb
 
-Создайте новую роль в Azure Active Directory:https://docs.microsoft.com/azure/role-based-access-control/custom-roles
+Создайте новую роль в Azure Active Directory: https://docs.microsoft.com/azure/role-based-access-control/custom-roles
 
-Как получить роль каталога в Azure Active Directory с помощью PowerShell:https://docs.microsoft.com/powershell/module/azuread/get-azureaddirectoryrole?view=azureadps-2.0
+Как получить роль каталога в Azure Active Directory с помощью PowerShell: https://docs.microsoft.com/powershell/module/azuread/get-azureaddirectoryrole?view=azureadps-2.0
 
-Как получить членов роли каталога в Azure Active Directory с помощью PowerShell:https://docs.microsoft.com/powershell/module/azuread/get-azureaddirectoryrolemember?view=azureadps-2.0
+Как получить членов роли каталога в Azure Active Directory с помощью PowerShell: https://docs.microsoft.com/powershell/module/azuread/get-azureaddirectoryrolemember?view=azureadps-2.0
 
-Ограничьте доступ пользователей только к операциям с данными:https://docs.microsoft.com/azure/cosmos-db/how-to-restrict-user-data
+Ограничьте доступ пользователей только к операциям с данными: https://docs.microsoft.com/azure/cosmos-db/how-to-restrict-user-data
 
 **Мониторинг Центра безопасности Azure**: Да
 
@@ -312,13 +312,13 @@ Azure Cosmos DB предоставляет встроенный RBAC для ра
 
 **Руководство**. понятие по умолчанию или пустые пароли не существуют по отношению к Azure AD или Azure Cosmos DB. Вместо этого Azure Cosmos DB использует два типа ключей для проверки подлинности пользователей и предоставления доступа к своим данным и ресурсам. главные ключи и маркеры ресурсов. Ключи можно создать повторно в любое время.
 
-Общие сведения о безопасном доступе к данным в Azure Cosmos DB:https://docs.microsoft.com/azure/cosmos-db/secure-access-to-data
+Общие сведения о безопасном доступе к данным в Azure Cosmos DB: https://docs.microsoft.com/azure/cosmos-db/secure-access-to-data
 
-Повторное создание ключей Azure Cosmos DB:https://docs.microsoft.com/azure/cosmos-db/manage-with-powershell#regenerate-keys
+Повторное создание ключей Azure Cosmos DB: https://docs.microsoft.com/azure/cosmos-db/manage-with-powershell#regenerate-keys
 
-Программный доступ к ключам с помощью Azure Active Directory:https://docs.microsoft.com/azure/cosmos-db/certificate-based-authentication
+Программный доступ к ключам с помощью Azure Active Directory: https://docs.microsoft.com/azure/cosmos-db/certificate-based-authentication
 
-**Мониторинг Центра безопасности Azure**. Неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
 **Ответственность**: Совмещаемая блокировка
 
@@ -330,19 +330,19 @@ Azure Cosmos DB предоставляет встроенный RBAC для ра
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
-**Ответственность**. Customer
+**Ответственность**: Customer
 
 ### <a name="34-use-single-sign-on-sso-with-azure-active-directory"></a>3.4. Использование единого входа с Azure Active Directory
 
 **Руководство**. Azure Cosmos DB использует два типа ключей для авторизации пользователей и не поддерживает единый вход (SSO) на уровне плоскости данных. Доступ к плоскости управления для Cosmos DB доступен через REST API и поддерживает единый вход. Чтобы выполнить проверку подлинности, установите JSON Web Token, полученный из Azure Active Directory (AAD), в качестве заголовка авторизации.
 
-Общие сведения о базе данных Azure для Cosmos DB REST API:https://docs.microsoft.com/rest/api/cosmos-db/
+Общие сведения о базе данных Azure для Cosmos DB REST API: https://docs.microsoft.com/rest/api/cosmos-db/
 
-Общие сведения об использовании единого входа с Azure Active Directory:https://docs.microsoft.com/azure/active-directory/manage-apps/what-is-single-sign-on
+Общие сведения об использовании единого входа с Azure Active Directory: https://docs.microsoft.com/azure/active-directory/manage-apps/what-is-single-sign-on
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
-**Ответственность**. Customer
+**Ответственность**: Customer
 
 ### <a name="35-use-multi-factor-authentication-for-all-azure-active-directory-based-access"></a>3.5. Использование многофакторной проверки подлинности для любого доступа на основе Azure Active Directory
 
@@ -352,7 +352,7 @@ Azure Cosmos DB предоставляет встроенный RBAC для ра
 
 Мониторинг идентификации и доступа в Центре безопасности Azure: https://docs.microsoft.com/azure/security-center/security-center-identity-access
 
-**Мониторинг Центра безопасности Azure**. Да
+**Мониторинг Центра безопасности Azure**: Да
 
 **Ответственность**: Customer
 
@@ -380,7 +380,7 @@ Azure Cosmos DB предоставляет встроенный RBAC для ра
 
 Общие сведения об обнаружении рисков Azure AD: https://docs.microsoft.com/azure/active-directory/reports-monitoring/concept-risk-events
 
-**Мониторинг Центра безопасности Azure**. Да
+**Мониторинг Центра безопасности Azure**: Да
 
 **Ответственность**: Customer
 
@@ -392,19 +392,19 @@ Azure Cosmos DB предоставляет встроенный RBAC для ра
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
-**Ответственность**. Customer
+**Ответственность**: Customer
 
 ### <a name="39-use-azure-active-directory"></a>3.9. Использование Azure Active Directory
 
 **Рекомендации**. Используйте Azure Active Directory как центральную систему проверки подлинности и авторизации. Azure AD защищает данные с помощью надежного шифрования для хранимых и транзитных данных. Кроме того, в Azure AD используются salt-записи, хэши и безопасное хранение учетных данных пользователей.
 
-Создание и настройка экземпляра Azure Active Directory.https://docs.microsoft.com/azure/active-directory-domain-services/tutorial-create-instance
+Создание и настройка экземпляра Azure Active Directory. https://docs.microsoft.com/azure/active-directory-domain-services/tutorial-create-instance
 
-Как настроить проверку подлинности Azure Active Directory и управлять ею с помощью Azure SQL:https://docs.microsoft.com/azure/sql-database/sql-database-aad-authentication-configure
+Как настроить проверку подлинности Azure Active Directory и управлять ею с помощью Azure SQL: https://docs.microsoft.com/azure/sql-database/sql-database-aad-authentication-configure
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
-**Ответственность**. Customer
+**Ответственность**: Customer
 
 ### <a name="310-regularly-review-and-reconcile-user-access"></a>3.10. Регулярная проверка и согласование доступа пользователей
 
@@ -422,7 +422,7 @@ Azure Cosmos DB предоставляет встроенный RBAC для ра
 
 Как интегрировать журналы действий Azure в Azure Monitor: https://docs.microsoft.com/azure/active-directory/reports-monitoring/howto-integrate-activity-logs-with-log-analytics
 
-**Мониторинг Центра безопасности Azure**: в настоящее время недоступен.
+**Мониторинг центра безопасности Azure**: Сейчас это недоступно
 
 **Ответственность**: Customer
 
@@ -432,13 +432,13 @@ Azure Cosmos DB предоставляет встроенный RBAC для ра
 
 Можно также использовать функции защита идентификации Azure AD и обнаружения рисков для настройки автоматических ответов на обнаруженные подозрительные действия, связанные с удостоверениями пользователей. Кроме того, вы можете принять журналы в Azure Sentinel для дальнейшего изучения.
 
-Просмотр Azure Active Directory рискованных входов в систему:https://docs.microsoft.com/azure/active-directory/reports-monitoring/concept-risky-sign-ins
+Просмотр Azure Active Directory рискованных входов в систему: https://docs.microsoft.com/azure/active-directory/reports-monitoring/concept-risky-sign-ins
 
-Настройка и включение политик риска для защиты идентификации.https://docs.microsoft.com/azure/active-directory/identity-protection/howto-identity-protection-configure-risk-policies
+Настройка и включение политик риска для защиты идентификации. https://docs.microsoft.com/azure/active-directory/identity-protection/howto-identity-protection-configure-risk-policies
 
 Подключение Azure Sentinel: https://docs.microsoft.com/azure/sentinel/quickstart-onboard
 
-**Мониторинг Центра безопасности Azure**. Да
+**Мониторинг Центра безопасности Azure**: Да
 
 **Ответственность**: Customer
 
@@ -464,7 +464,7 @@ Azure Cosmos DB предоставляет встроенный RBAC для ра
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
-**Ответственность**. Customer
+**Ответственность**: Customer
 
 ### <a name="42-isolate-systems-storing-or-processing-sensitive-information"></a>4.2. Изолирование систем, хранящих или обрабатывающих конфиденциальные данные
 
@@ -472,13 +472,13 @@ Azure Cosmos DB предоставляет встроенный RBAC для ра
 
 Создание дополнительных подписок Azure: https://docs.microsoft.com/azure/billing/billing-create-subscription
 
-Создание групп управления:https://docs.microsoft.com/azure/governance/management-groups/create
+Создание групп управления: https://docs.microsoft.com/azure/governance/management-groups/create
 
 Создание и использование тегов: https://docs.microsoft.com/azure/azure-resource-manager/resource-group-using-tags
 
-Как настроить закрытую конечную точку для Azure Cosmos DB:https://docs.microsoft.com/azure/cosmos-db/how-to-configure-private-endpoints
+Как настроить закрытую конечную точку для Azure Cosmos DB: https://docs.microsoft.com/azure/cosmos-db/how-to-configure-private-endpoints
 
-Создание группы безопасности сети с конфигурацией безопасности:https://docs.microsoft.com/azure/virtual-network/tutorial-filter-network-traffic
+Создание группы безопасности сети с конфигурацией безопасности: https://docs.microsoft.com/azure/virtual-network/tutorial-filter-network-traffic
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -494,7 +494,7 @@ Azure Cosmos DB предоставляет встроенный RBAC для ра
 
 Кроме того, при использовании виртуальных машин для доступа к экземплярам Azure Cosmos DB используйте частные ссылки, брандмауэры, группы безопасности сети и теги служб, чтобы снизить вероятность утечка данных. Майкрософт управляет базовой инфраструктурой для Azure Cosmos DB и реализует четкие элементы управления для предотвращения потери или раскрытия данных клиента.
 
-Настройка расширенной защиты от угроз Cosmos DB.https://docs.microsoft.com/azure/cosmos-db/cosmos-db-advanced-threat-protection
+Настройка расширенной защиты от угроз Cosmos DB. https://docs.microsoft.com/azure/cosmos-db/cosmos-db-advanced-threat-protection
 
 Общие сведения о защите данных клиентов в Azure: https://docs.microsoft.com/azure/security/fundamentals/protection-customer-data
 
@@ -506,7 +506,7 @@ Azure Cosmos DB предоставляет встроенный RBAC для ра
 
 **Руководство**. все подключения к Azure Cosmos DB поддерживают протокол HTTPS. Azure Cosmos DB также поддерживает TLS 1.2. Можно применить минимальную версию протокола TLS на стороне сервера. Для этого обратитесь к [azurecosmosdbtls@service.microsoft.com](mailto:azurecosmosdbtls@service.microsoft.com) .
 
-Общие сведения о Cosmos DB безопасности:https://docs.microsoft.com/azure/cosmos-db/database-security
+Общие сведения о Cosmos DB безопасности: https://docs.microsoft.com/azure/cosmos-db/database-security
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -530,7 +530,7 @@ Azure Cosmos DB предоставляет встроенный RBAC для ра
 
 **Руководство**. Azure Cosmos DB предоставляет встроенный контроль доступа на основе РОЛЕЙ (RBAC) для распространенных сценариев управления в Azure Cosmos DB. Пользователь, имеющий профиль в Azure Active Directory, может назначить эти роли Azure пользователям, группам, субъектам-службам или управляемым удостоверениям, чтобы предоставить или запретить доступ к ресурсам и операциям в Azure Cosmos DBных ресурсах. Назначения ролей предоставляются только для доступа к плоскости управления, включая доступ к учетным записям Azure Cosmos, базам данных, контейнерам и предложениям (пропускная способность).
 
-Реализация RBAC в Azure Cosmos DB:https://docs.microsoft.com/azure/cosmos-db/role-based-access-control
+Реализация RBAC в Azure Cosmos DB: https://docs.microsoft.com/azure/cosmos-db/role-based-access-control
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -554,13 +554,13 @@ Azure Cosmos DB предоставляет встроенный RBAC для ра
 
 По умолчанию Корпорация Майкрософт управляет ключами, которые используются для шифрования данных в учетной записи Azure Cosmos. При необходимости можно добавить второй уровень шифрования с собственными ключами.
 
-Общие сведения о шифровании неактивных с помощью Azure Cosmos DB:https://docs.microsoft.com/azure/cosmos-db/database-encryption-at-rest
+Общие сведения о шифровании неактивных с помощью Azure Cosmos DB: https://docs.microsoft.com/azure/cosmos-db/database-encryption-at-rest
 
-Основные сведения об управлении ключами для шифрования неактивных данными с помощью Azure Cosmos DB:https://docs.microsoft.com/azure/cosmos-db/cosmos-db-security-controls
+Основные сведения об управлении ключами для шифрования неактивных данными с помощью Azure Cosmos DB: https://docs.microsoft.com/azure/cosmos-db/cosmos-db-security-controls
 
-Как настроить ключи, управляемые клиентом, для учетной записи Azure Cosmos DB:https://docs.microsoft.com/azure/cosmos-db/how-to-setup-cmk
+Как настроить ключи, управляемые клиентом, для учетной записи Azure Cosmos DB: https://docs.microsoft.com/azure/cosmos-db/how-to-setup-cmk
 
-**Мониторинг Центра безопасности Azure**. Неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
 **Ответственность**. Совмещаемая блокировка
 
@@ -572,7 +572,7 @@ Azure Cosmos DB предоставляет встроенный RBAC для ра
 
 Создание оповещений для событий журнала действий Azure: https://docs.microsoft.com/azure/azure-monitor/platform/alerts-activity-log
 
-**Мониторинг центра безопасности Azure**: Неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
 **Ответственность**: Customer
 
@@ -586,7 +586,7 @@ Azure Cosmos DB предоставляет встроенный RBAC для ра
 
 Корпорация Майкрософт выполняет установку исправлений и управления уязвимостью на базовых узлах, поддерживающих экземпляры Azure Cosmos DB. Чтобы обеспечить безопасность данных клиентов в Azure, корпорация Майкрософт реализовала и поддерживает набор надежных элементов управления и возможностей защиты данных.
 
-Поддерживаемые функции, доступные в центре безопасности Azure:https://docs.microsoft.com/azure/security-center/security-center-services?tabs=features-windows
+Поддерживаемые функции, доступные в центре безопасности Azure: https://docs.microsoft.com/azure/security-center/security-center-services?tabs=features-windows
 
 **Мониторинг Центра безопасности Azure**: Да
 
@@ -642,7 +642,7 @@ Azure Cosmos DB предоставляет встроенный RBAC для ра
 
 Просмотр подписок Azure: https://docs.microsoft.com/powershell/module/az.accounts/get-azsubscription?view=azps-3.0.0
 
-Общие сведения об управлении доступом на основе ролей в Azure:https://docs.microsoft.com/azure/role-based-access-control/overview
+Общие сведения об управлении доступом на основе ролей в Azure: https://docs.microsoft.com/azure/role-based-access-control/overview
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -654,11 +654,11 @@ Azure Cosmos DB предоставляет встроенный RBAC для ра
 
 Создание и использование тегов: https://docs.microsoft.com/azure/azure-resource-manager/resource-group-using-tags
 
-Какие Azure Cosmos DB ресурсы поддерживают Теги:https://docs.microsoft.com/azure/azure-resource-manager/management/tag-support#microsoftdocumentdb
+Какие Azure Cosmos DB ресурсы поддерживают Теги: https://docs.microsoft.com/azure/azure-resource-manager/management/tag-support#microsoftdocumentdb
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
-**Ответственность**. Customer
+**Ответственность**: Customer
 
 ### <a name="63-delete-unauthorized-azure-resources"></a>6.3. Удаление неавторизованных ресурсов Azure
 
@@ -684,7 +684,7 @@ Azure Cosmos DB предоставляет встроенный RBAC для ра
 
 ### <a name="65-monitor-for-unapproved-azure-resources"></a>6.5. Отслеживание неутвержденных ресурсов Azure
 
-**Руководство**. Используйте Политику Azure, чтобы ограничить тип ресурсов, которые могут быть созданы в подписках клиентов, используя следующие встроенные определения политик.
+**Рекомендации**. Используйте политику Azure, чтобы ограничить тип ресурсов, которые могут быть созданы в подписках клиентов, используя следующие встроенные определения политик:
 
 - Недопустимые типы ресурсов
 
@@ -696,7 +696,7 @@ Azure Cosmos DB предоставляет встроенный RBAC для ра
 
 Создание запросов с помощью Azure Graph: https://docs.microsoft.com/azure/governance/resource-graph/first-query-portal
 
-**Мониторинг Центра безопасности Azure**. Неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
 **Ответственность**: Customer
 
@@ -739,7 +739,7 @@ Azure Cosmos DB предоставляет встроенный RBAC для ра
 
 Отказ от определенного типа ресурса с помощью Политики Azure: https://docs.microsoft.com/azure/governance/policy/samples/not-allowed-resource-types
 
-**Мониторинг Центра безопасности Azure**. Неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
 **Ответственность**: Customer
 
@@ -758,7 +758,7 @@ Azure Cosmos DB предоставляет встроенный RBAC для ра
 
 Настройка условного доступа для блокировки доступа к Azure Resource Manager: https://docs.microsoft.com/azure/role-based-access-control/conditional-access-azure-management
 
-**Мониторинг Центра безопасности Azure**. Неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
 **Ответственность**: Customer
 
@@ -769,7 +769,7 @@ Azure Cosmos DB предоставляет встроенный RBAC для ра
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
-**Ответственность**. Неприменимо
+**Ответственность**: Неприменимо
 
 ### <a name="613-physically-or-logically-segregate-high-risk-applications"></a>6.13. Физическое или логическое разделение приложений с высоким риском
 
@@ -796,7 +796,7 @@ Azure Cosmos DB предоставляет встроенный RBAC для ра
 
 Настройка Политики SQL Azure и управление ею: https://docs.microsoft.com/azure/governance/policy/tutorials/create-and-manage
 
-**Мониторинг Центра безопасности Azure**. Неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
 **Ответственность**: Customer
 
@@ -817,7 +817,7 @@ Azure Cosmos DB предоставляет встроенный RBAC для ра
 
 Сведения о действии Политики Azure: https://docs.microsoft.com/azure/governance/policy/concepts/effects
 
-**Мониторинг центра безопасности Azure**: Неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
 **Ответственность**: Customer
 
@@ -836,7 +836,7 @@ Azure Cosmos DB предоставляет встроенный RBAC для ра
 
 Документация по Azure Repos: https://docs.microsoft.com/azure/devops/repos/index?view=azure-devopshttps://docs.microsoft.com/azure/devops/repos/git/gitworkflow?view=azure-devops
 
-**Мониторинг Центра безопасности Azure**. Неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
 **Ответственность**: Customer
 
@@ -854,7 +854,7 @@ Azure Cosmos DB предоставляет встроенный RBAC для ра
 
 Настройка Политики SQL Azure и управление ею: https://docs.microsoft.com/azure/governance/policy/tutorials/create-and-manage
 
-**Мониторинг Центра безопасности Azure**. Неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
 **Ответственность**: Customer
 
@@ -872,7 +872,7 @@ Azure Cosmos DB предоставляет встроенный RBAC для ра
 
 Настройка Политики SQL Azure и управление ею: https://docs.microsoft.com/azure/governance/policy/tutorials/create-and-manage
 
-**Мониторинг Центра безопасности Azure**. Неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
 **Ответственность**: Customer
 
@@ -908,7 +908,7 @@ Azure Cosmos DB предоставляет встроенный RBAC для ра
 
 Интеграция с управляемыми удостоверениями Azure: https://docs.microsoft.com/azure/azure-app-configuration/howto-integrate-azure-managed-service-identity
 
-**Мониторинг Центра безопасности Azure**. Да
+**Мониторинг центра безопасности Azure**: Да
 
 **Ответственность**: Customer
 
@@ -916,7 +916,7 @@ Azure Cosmos DB предоставляет встроенный RBAC для ра
 
 **Руководство**. Реализуйте сканер учетных данных для обнаружения учетных данных в коде. Сканер учетных данных также рекомендует перемещать обнаруженные учетные данные в более безопасные расположения, такие как Azure Key Vault.
 
-Как настроить средство проверки учетных данных:https://secdevtools.azurewebsites.net/helpcredscan.html
+Как настроить средство проверки учетных данных: https://secdevtools.azurewebsites.net/helpcredscan.html
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -963,7 +963,7 @@ Azure Cosmos DB предоставляет встроенный RBAC для ра
 
 **Руководство**. Azure Cosmos DB создает моментальные снимки данных каждые четыре часа. Для обеспечения устойчивости в случае региональной аварии все резервные копии хранятся отдельно в службе хранилища, а также глобально реплицируются. В любое время сохраняются только два последних моментальных снимка. Однако при удалении контейнера или базы данных Azure Cosmos DB хранит существующие моментальные снимки в течение 30 дней. Обратитесь в службу поддержки Azure для восстановления из резервной копии.
 
-Основные сведения об автоматической архивации Azure Cosmos DB:https://docs.microsoft.com/azure/cosmos-db/online-backup-and-restore
+Основные сведения об автоматической архивации Azure Cosmos DB: https://docs.microsoft.com/azure/cosmos-db/online-backup-and-restore
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -975,9 +975,9 @@ Azure Cosmos DB предоставляет встроенный RBAC для ра
 
 При использовании Key Vault для хранения учетных данных для экземпляров Cosmos DB Обеспечьте регулярное автоматическое резервное копирование ключей.
 
-Общие сведения о Azure Cosmos DB автоматических резервных копий:https://docs.microsoft.com/azure/cosmos-db/online-backup-and-restore
+Общие сведения о Azure Cosmos DB автоматических резервных копий: https://docs.microsoft.com/azure/cosmos-db/online-backup-and-restore
 
-Восстановление данных в Azure Cosmos DB:https://docs.microsoft.com/azure/cosmos-db/how-to-backup-and-restore
+Восстановление данных в Azure Cosmos DB: https://docs.microsoft.com/azure/cosmos-db/how-to-backup-and-restore
 
 Резервное копирование ключей Key Vault: https://docs.microsoft.com/powershell/module/azurerm.keyvault/backup-azurekeyvaultkey
 
@@ -1003,7 +1003,7 @@ https://docs.microsoft.com/azure/cosmos-db/how-to-backup-and-restore
 
 https://docs.microsoft.com/powershell/module/azurerm.keyvault/restore-azurekeyvaultkey?view=azurermps-6.13.0
 
-**Мониторинг Центра безопасности Azure**. Неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
 **Ответственность**: Совмещаемая блокировка
 
@@ -1013,9 +1013,9 @@ https://docs.microsoft.com/powershell/module/azurerm.keyvault/restore-azurekeyva
 
 Включите обратимое удаление в Key Vault для защиты ключей от случайного или злонамеренного удаления.
 
-Общие сведения о шифровании данных в Azure Cosmos DB:https://docs.microsoft.com/azure/cosmos-db/database-encryption-at-rest
+Общие сведения о шифровании данных в Azure Cosmos DB: https://docs.microsoft.com/azure/cosmos-db/database-encryption-at-rest
 
-Включение обратимого удаления в Key Vault:https://docs.microsoft.com/azure/storage/blobs/storage-blob-soft-delete?tabs=azure-portal
+Включение обратимого удаления в Key Vault: https://docs.microsoft.com/azure/storage/blobs/storage-blob-soft-delete?tabs=azure-portal
 
 **Мониторинг Центра безопасности Azure**: Да
 
@@ -1029,7 +1029,7 @@ https://docs.microsoft.com/powershell/module/azurerm.keyvault/restore-azurekeyva
 
 **Руководство**. Создайте руководство по реагированию на инциденты для вашей организации. Убедитесь в том, что имеются письменные планы реагирования на инциденты, которые определяют все действия персонала, а также этапы обработки инцидентов и управления ими для проверки после инцидента.
 
-Вы также можете использовать руководство по обработке инцидентов безопасности компьютера NIST, чтобы помочь в создании собственного плана реагирования на инциденты:https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-61r2.pdf
+Вы также можете использовать руководство по обработке инцидентов безопасности компьютера NIST, чтобы помочь в создании собственного плана реагирования на инциденты: https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-61r2.pdf
 
 Настройка автоматизации рабочих процессов в Центре безопасности Azure: https://docs.microsoft.com/azure/security-center/security-center-planning-and-operations-guide
 
@@ -1040,7 +1040,7 @@ https://docs.microsoft.com/powershell/module/azurerm.keyvault/restore-azurekeyva
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
-**Ответственность**. Customer
+**Ответственность**: Customer
 
 ### <a name="102-create-an-incident-scoring-and-prioritization-procedure"></a>10.2. Создание процедуры оценки инцидента и определения приоритетов
 
@@ -1082,7 +1082,7 @@ https://docs.microsoft.com/powershell/module/azurerm.keyvault/restore-azurekeyva
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
-**Ответственность**. Customer
+**Ответственность**: Customer
 
 ### <a name="106-automate-the-response-to-security-alerts"></a>10.6. Автоматизация реагирования на оповещения системы безопасности
 
@@ -1102,7 +1102,7 @@ https://docs.microsoft.com/powershell/module/azurerm.keyvault/restore-azurekeyva
 
 **Рекомендации**. Следуйте правилам взаимодействия Майкрософт, чтобы убедиться, что тесты на проникновение не нарушают политики Майкрософт: https://www.microsoft.com/msrc/pentest-rules-of-engagement?rtc=1
 
-Дополнительные сведения о стратегии корпорации Майкрософт и ее выполнении, а также о тестировании на основе уязвимости для облачной инфраструктуры, служб и приложений Майкрософт см. здесь:https://gallery.technet.microsoft.com/Cloud-Red-Teaming-b837392e
+Дополнительные сведения о стратегии корпорации Майкрософт и ее выполнении, а также о тестировании на основе уязвимости для облачной инфраструктуры, служб и приложений Майкрософт см. здесь:  https://gallery.technet.microsoft.com/Cloud-Red-Teaming-b837392e
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 

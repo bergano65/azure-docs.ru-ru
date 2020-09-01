@@ -17,12 +17,12 @@ ms.date: 04/18/2019
 ms.author: markvi
 ms.reviewer: dhanyahk
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 08d56a13d0a2e373a725320e132df739d806f2e6
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 4ab60cb83e68a0c325ec1e2ac102870493016b57
+ms.sourcegitcommit: d68c72e120bdd610bb6304dad503d3ea89a1f0f7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85608234"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89231237"
 ---
 # <a name="analyze-azure-ad-activity-logs-with-azure-monitor-logs"></a>Анализ журналов действий Azure AD с помощью журналов Azure Monitor
 
@@ -36,9 +36,9 @@ ms.locfileid: "85608234"
 
 Для работы вам потребуется следующее:
 
-* Рабочая область Log Analytics в подписке Azure. Узнайте, как [создать рабочую область Log Analytics](https://docs.microsoft.com/azure/log-analytics/log-analytics-quick-create-workspace).
+* Рабочая область Log Analytics в подписке Azure. Узнайте, как [создать рабочую область Log Analytics](../../azure-monitor/learn/quick-create-workspace.md).
 * Сначала настройте передачу [журналов действий Azure AD в рабочую область Log Analytics](howto-integrate-activity-logs-with-log-analytics.md).
-*  [Доступ](https://docs.microsoft.com/azure/azure-monitor/platform/manage-access#manage-access-using-workspace-permissions) к рабочей области Log Analytics.
+*  [Доступ](../../azure-monitor/platform/manage-access.md#manage-access-using-workspace-permissions) к рабочей области Log Analytics.
 * Следующие роли в Azure Active Directory (при доступе к Log Analytics через портал Azure Active Directory)
     - администратор безопасности;
     - Читатель сведений о безопасности
@@ -96,7 +96,7 @@ AuditLogs
 
 3. Введите имя и описание оповещения и выберите уровень серьезности. В нашем примере мы можем задать значение**Информационный**.
 
-4. Выберите **группу действий**, которая будет получать оповещения при возникновении сигнала. Вы можете уведомлять свою команду по электронной почте или с помощью текстового сообщения, или вы можете автоматизировать действие с помощью веб-перехватчика, Функций Azure или приложений логики. Дополнительные сведения см. в статье [Создание групп действий и управление ими на портале Azure](https://docs.microsoft.com/azure/monitoring-and-diagnostics/monitoring-action-groups).
+4. Выберите **группу действий**, которая будет получать оповещения при возникновении сигнала. Вы можете уведомлять свою команду по электронной почте или с помощью текстового сообщения, или вы можете автоматизировать действие с помощью веб-перехватчика, Функций Azure или приложений логики. Дополнительные сведения см. в статье [Создание групп действий и управление ими на портале Azure](../../azure-monitor/platform/action-groups.md).
 
 5. После настройки оповещения, выберите **Создание оповещения**, чтобы включить его. 
 
@@ -113,6 +113,6 @@ AuditLogs
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-* [Начало работы с запросами журналов Azure Monitor](https://docs.microsoft.com/azure/log-analytics/query-language/get-started-queries)
-* [Создание групп действий и управление ими на портале Azure](https://docs.microsoft.com/azure/monitoring-and-diagnostics/monitoring-action-groups)
+* [Начало работы с запросами журналов Azure Monitor](../../azure-monitor/log-query/get-started-queries.md)
+* [Создание групп действий и управление ими на портале Azure](../../azure-monitor/platform/action-groups.md)
 * [Установка и использование представлений Log Analytics для Azure Active Directory](howto-install-use-log-analytics-views.md)

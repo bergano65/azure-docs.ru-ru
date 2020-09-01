@@ -11,12 +11,12 @@ ms.subservice: core
 ms.topic: conceptual
 ms.custom: troubleshooting, contperfq4
 ms.date: 08/13/2020
-ms.openlocfilehash: cd9b015c292d262430d3fd845e06e38866bc6239
-ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
+ms.openlocfilehash: 4dced0e0597e4df2fe215c9f4b85e3e8defd92c3
+ms.sourcegitcommit: d68c72e120bdd610bb6304dad503d3ea89a1f0f7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89018728"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89230387"
 ---
 # <a name="known-issues-and-troubleshooting-in-azure-machine-learning"></a>Устранение неполадок и описание известных проблем в службе "Машинное обучение Azure"
 
@@ -318,6 +318,26 @@ interactive_auth = InteractiveLoginAuthentication(tenant_id="the tenant_id in wh
 
 ## <a name="automated-machine-learning"></a>Автоматическое машинное обучение
 
+* **Недавнее обновление зависимостей аутомл до более новых версий приведет к коренным нарушениям компатибилитити**: версия 1.13.0 пакета SDK не будет загружена в старые пакеты SDK из-за несовместимости старых версий, которые мы зафиксированы в предыдущих пакетах, и более новых версий, заносимых сейчас. Вы увидите следующее сообщение об ошибке:
+  * Модуль не найден: например `No module named 'sklearn.decomposition._truncated_svd` ,
+  * Ошибки импорта: `ImportError: cannot import name 'RollingOriginValidator'` пример.
+  * Ошибки атрибутов: пример. `AttributeError: 'SimpleImputer' object has no attribute 'add_indicator`
+  
+  Чтобы обойти эту ошибку, выполните один из следующих двух шагов в зависимости от вашей обучающей версии пакета SDK для Аутомл:
+  1. Если Ваша учебная версия пакета SDK Аутомл больше, чем 1.13.0, вам потребуется `pandas == 0.25.1` и `sckit-learn==0.22.1` . Если обнаружено несовпадение версий, обновите scikit-учиться и/или Pandas, чтобы исправить версию, как показано ниже:
+  
+  ```bash
+     pip install --upgrade pandas==0.25.1
+     pip install --upgrade scikit-learn==0.22.1
+  ```
+  
+  2. Если Ваша учебная версия пакета SDK для Аутомл меньше или равна 1.12.0, вам потребуется `pandas == 0.23.4` и `sckit-learn==0.20.3` . Если обнаружено несовпадение версий, можно перейти на более раннюю версию scikit и/или Pandas, как показано ниже:
+  
+  ```bash
+    pip install --upgrade pandas==0.23.4
+    pip install --upgrade scikit-learn==0.20.3
+  ```
+ 
 * **TensorFlow**: начиная с версии 1.5.0 пакета SDK, автоматизированное машинное обучение по умолчанию не устанавливает модели TensorFlow. Чтобы установить TensorFlow и использовать его с автоматизированными экспериментами ML, установите TensorFlow = = 1.12.0 через КондадепендеЦиес. 
  
    ```python

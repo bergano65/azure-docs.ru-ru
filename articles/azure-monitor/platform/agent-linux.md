@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 08/21/2020
-ms.openlocfilehash: eb68aa1dae69134cfdab057a95de8a2393f9a32c
-ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
+ms.openlocfilehash: 997064ad030d22531277f1c412add6916eb7733f
+ms.sourcegitcommit: d68c72e120bdd610bb6304dad503d3ea89a1f0f7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "88998940"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89230472"
 ---
 # <a name="install-log-analytics-agent-on-linux-computers"></a>Установка агента Log Analytics на компьютерах Linux
 В этой статье содержатся сведения об установке агента Log Analytics на компьютерах Linux с помощью следующих методов.
@@ -51,11 +51,19 @@ ms.locfileid: "88998940"
  - Ubuntu, Debian: `apt-get install -y python2`
  - SUSE: `zypper install -y python2`
 
-Исполняемый файл python2 должен иметь псевдоним для Python с помощью следующей команды:
+Исполняемый файл python2 должен иметь псевдоним для *Python*. Ниже приведен один метод, который можно использовать для задания этого псевдонима:
 
-```
-alternatives --set python `which python2`
-```
+1. Выполните следующую команду, чтобы удалить все существующие псевдонимы.
+ 
+    ```
+    sudo update-alternatives --remove-all python
+    ```
+
+2. Выполните следующую команду, чтобы создать псевдоним.
+
+    ```
+    sudo update-alternatives --install /usr/bin/python python /usr/bin/python2 1
+    ```
 
 ## <a name="supported-linux-hardening"></a>Поддерживаемые усиление защиты Linux
 Агент OMS имеет ограниченную поддержку настройки для Linux. 
@@ -64,7 +72,8 @@ alternatives --set python `which python2`
 - Стандарт
 
 Следующие планы запланированы, но еще не поддерживаются:
-- CI-SELINUX
+- СОСТОЯНИИ
+- SELINUX
 
 Другие методы усиления защиты и настройки не поддерживаются и не планируются для агента OMS.  
 

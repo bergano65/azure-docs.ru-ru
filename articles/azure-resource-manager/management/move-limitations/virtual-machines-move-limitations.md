@@ -2,13 +2,13 @@
 title: Перемещение виртуальных машин Azure в новую подписку или группу ресурсов
 description: Используйте Azure Resource Manager, чтобы переместить виртуальные машины в новую группу ресурсов или подписку.
 ms.topic: conceptual
-ms.date: 08/26/2020
-ms.openlocfilehash: d522eb4a6496bc2cc65b4937a19b9ac5228e7f2b
-ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
+ms.date: 08/31/2020
+ms.openlocfilehash: 3878113f6874c40953bec87518a89519bdc6cb1a
+ms.sourcegitcommit: d68c72e120bdd610bb6304dad503d3ea89a1f0f7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88933245"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89230965"
 ---
 # <a name="move-guidance-for-virtual-machines"></a>Перемещение руководств для виртуальных машин
 
@@ -48,7 +48,7 @@ Disable-AzVMDiskEncryption -ResourceGroupName demoRG -VMName myVm1
 2. Чтобы переместить виртуальные машины, настроенные с помощью Azure Backup, выполните следующие действия.
 
    1. Найдите расположение виртуальной машины.
-   2. Найдите группу ресурсов со следующим шаблоном именования: `AzureBackupRG_<location of your VM>_1` . Например, *AzureBackupRG_westus2_1*
+   2. Найдите группу ресурсов со следующим шаблоном именования: `AzureBackupRG_<VM location>_1` . Например, имя имеет формат *AzureBackupRG_westus2_1*.
    3. В портал Azure установите флажок **Показывать скрытые типы**.
    4. Найдите ресурс с типом **Microsoft. COMPUTE/ресторепоинтколлектионс** , который имеет шаблон именования `AzureBackup_<name of your VM that you're trying to move>_###########` .
    5. Удалите этот ресурс. Эта операция удаляет только точки мгновенного восстановления, но не данные резервных копий в хранилище.
@@ -59,19 +59,41 @@ Disable-AzVMDiskEncryption -ResourceGroupName demoRG -VMName myVm1
 
 ### <a name="powershell"></a>PowerShell
 
-* Найдите расположение виртуальной машины.
-* Найдите группу ресурсов со схемой именования `AzureBackupRG_<location of your VM>_1`, например AzureBackupRG_westus2_1.
-* В PowerShell используйте командлет `Get-AzResource -ResourceGroupName AzureBackupRG_<location of your VM>_1`
-* Найдите ресурс с типом `Microsoft.Compute/restorePointCollections` и шаблоном именования `AzureBackup_<name of your VM that you're trying to move>_###########`.
-* Удалите этот ресурс. Эта операция удаляет только точки мгновенного восстановления, но не данные резервных копий в хранилище.
+1. Найдите расположение виртуальной машины.
+
+1. Найдите группу ресурсов с шаблоном именования `AzureBackupRG_<VM location>_1` . Например, имя может иметь значение `AzureBackupRG_westus2_1` .
+
+1. Используйте следующую команду для получения коллекции точек восстановления.
+
+   ```azurepowershell
+   $RestorePointCollection = Get-AzResource -ResourceGroupName AzureBackupRG_<VM location>_1 -ResourceType Microsoft.Compute/restorePointCollections
+   ```
+
+1. Удалите этот ресурс. Эта операция удаляет только точки мгновенного восстановления, но не данные резервных копий в хранилище.
+
+   ```azurepowershell
+   Remove-AzResource -ResourceId $RestorePointCollection.ResourceId -Force
+   ```
 
 ### <a name="azure-cli"></a>Azure CLI
 
-* Найдите расположение виртуальной машины.
-* Найдите группу ресурсов со схемой именования `AzureBackupRG_<location of your VM>_1`, например AzureBackupRG_westus2_1.
-* В CLI используйте команду `az resource list -g AzureBackupRG_<location of your VM>_1`.
-* Найдите ресурс с типом `Microsoft.Compute/restorePointCollections` и шаблоном именования `AzureBackup_<name of your VM that you're trying to move>_###########`.
-* Удалите этот ресурс. Эта операция удаляет только точки мгновенного восстановления, но не данные резервных копий в хранилище.
+1. Найдите расположение виртуальной машины.
+
+1. Найдите группу ресурсов с шаблоном именования `AzureBackupRG_<VM location>_1` . Например, имя может иметь значение `AzureBackupRG_westus2_1` .
+
+1. Используйте следующую команду, чтобы получить коллекцию точек восстановления.
+
+   ```azurecli
+   az resource list -g AzureBackupRG_<VM location>_1 --resource-type Microsoft.Compute/restorePointCollections
+   ```
+
+1. Поиск идентификатора ресурса для ресурса с помощью шаблона именования `AzureBackup_<VM name>_###########`
+
+1. Удалите этот ресурс. Эта операция удаляет только точки мгновенного восстановления, но не данные резервных копий в хранилище.
+
+   ```azurecli
+   az resource delete --ids /subscriptions/<sub-id>/resourceGroups/<resource-group>/providers/Microsoft.Compute/restorePointCollections/<name>
+   ```
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

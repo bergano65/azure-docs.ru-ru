@@ -9,12 +9,12 @@ ms.service: cognitive-services
 ms.topic: reference
 ms.date: 04/01/2020
 ms.author: aahi
-ms.openlocfilehash: e0df3de5eadfd2cc5c00c52da5c4942b42a68b2b
-ms.sourcegitcommit: 5b6acff3d1d0603904929cc529ecbcfcde90d88b
+ms.openlocfilehash: 2a57c5244630c2328320d7d99eed98c892d49897
+ms.sourcegitcommit: d68c72e120bdd610bb6304dad503d3ea89a1f0f7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/21/2020
-ms.locfileid: "88722574"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89230761"
 ---
 # <a name="azure-cognitive-services-container-image-tags"></a>Теги образа контейнера Cognitive Services Azure
 
@@ -33,7 +33,7 @@ Azure Cognitive Services предлагает множество образов 
 |-------------------------------|:------|
 | `latest`                      |       |
 
-## <a name="computer-vision"></a>Компьютерное зрение
+## <a name="computer-vision"></a>API Компьютерного зрения
 
 Образ контейнера для оптического распознавания [компьютерное зрение][cv-containers] можно найти в `containerpreview.azurecr.io` реестре контейнеров. Он находится в `microsoft` репозитории и называется `cognitive-services-read` . Полное имя образа контейнера —, `containerpreview.azurecr.io/microsoft/cognitive-services-read` .
 
@@ -120,6 +120,8 @@ Azure Cognitive Services предлагает множество образов 
 | Теги изображений            | Примечания |
 |-----------------------|:------|
 | `latest`              |       |
+| `2.3.1-amd64-preview` |       | 
+| `2.3.0-amd64-preview` |       |
 | `2.2.0-amd64-preview` |       |
 | `2.1.1-amd64-preview` |       |
 | `2.1.0-amd64-preview` |       |
@@ -135,17 +137,138 @@ Azure Cognitive Services предлагает множество образов 
 | Теги изображений            | Примечания |
 |-----------------------|:------|
 | `latest`              |       |
+| `1.6.0-amd64-preview` |       |
+| `1.5.0-amd64-preview` |       |
+| `1.4.0-amd64-preview` |       |
 | `1.3.0-amd64-preview` |       |
 
 ## <a name="speech-to-text"></a>Преобразование речи в текст
 
 Образ контейнера [для преобразования речи в текст][sp-stt] можно найти в `containerpreview.azurecr.io` реестре контейнеров. Он находится в `microsoft` репозитории и называется `cognitive-services-speech-to-text` . Полное имя образа контейнера —, `containerpreview.azurecr.io/microsoft/cognitive-services-speech-to-text` .
+Версия Виргиния-изображений для *государственных организаций США* поддерживается в версии 2.4.0, и их можно найти по `containerpreview.azurecr.io/microsoft/fairfax/cognitive-services-speech-to-text` .
 
 Этот образ контейнера имеет следующие доступные Теги:
 
 | Теги изображений                  | Примечания                                    |
 |-----------------------------|:-----------------------------------------|
 | `latest`                    | Образ контейнера с `en-US` локальным языком. |
+| `2.4.0-amd64-ar-ae-preview` | Образ контейнера с `ar-AE` локальным языком. |
+| `2.4.0-amd64-ar-eg-preview` | Образ контейнера с `ar-EG` локальным языком. |
+| `2.4.0-amd64-ar-kw-preview` | Образ контейнера с `ar-KW` локальным языком. |
+| `2.4.0-amd64-ar-qa-preview` | Образ контейнера с `ar-QA` локальным языком. |
+| `2.4.0-amd64-ar-sa-preview` | Образ контейнера с `ar-SA` локальным языком. |
+| `2.4.0-amd64-ca-es-preview` | Образ контейнера с `ca-ES` локальным языком. |
+| `2.4.0-amd64-da-dk-preview` | Образ контейнера с `da-DK` локальным языком. |
+| `2.4.0-amd64-de-de-preview` | Образ контейнера с `de-DE` локальным языком. |
+| `2.4.0-amd64-en-au-preview` | Образ контейнера с `en-AU` локальным языком. |
+| `2.4.0-amd64-en-ca-preview` | Образ контейнера с `en-CA` локальным языком. |
+| `2.4.0-amd64-en-gb-preview` | Образ контейнера с `en-GB` локальным языком. |
+| `2.4.0-amd64-en-in-preview` | Образ контейнера с `en-IN` локальным языком. |
+| `2.4.0-amd64-en-nz-preview` | Образ контейнера с `en-NZ` локальным языком. |
+| `2.4.0-amd64-en-us-preview` | Образ контейнера с `en-US` локальным языком. |
+| `2.4.0-amd64-es-es-preview` | Образ контейнера с `es-ES` локальным языком. |
+| `2.4.0-amd64-es-mx-preview` | Образ контейнера с `es-MX` локальным языком. |
+| `2.4.0-amd64-fi-fi-preview` | Образ контейнера с `fi-FI` локальным языком. |
+| `2.4.0-amd64-fr-ca-preview` | Образ контейнера с `fr-CA` локальным языком. |
+| `2.4.0-amd64-fr-fr-preview` | Образ контейнера с `fr-FR` локальным языком. |
+| `2.4.0-amd64-gu-in-preview` | Образ контейнера с `gu-IN` локальным языком. |
+| `2.4.0-amd64-hi-in-preview` | Образ контейнера с `hi-IN` локальным языком. |
+| `2.4.0-amd64-it-it-preview` | Образ контейнера с `it-IT` локальным языком. |
+| `2.4.0-amd64-ja-jp-preview` | Образ контейнера с `ja-JP` локальным языком. |
+| `2.4.0-amd64-ko-kr-preview` | Образ контейнера с `ko-KR` локальным языком. |
+| `2.4.0-amd64-mr-in-preview` | Образ контейнера с `mr-IN` локальным языком. |
+| `2.4.0-amd64-nb-no-preview` | Образ контейнера с `nb-NO` локальным языком. |
+| `2.4.0-amd64-nl-nl-preview` | Образ контейнера с `nl-NL` локальным языком. |
+| `2.4.0-amd64-pl-pl-preview` | Образ контейнера с `pl-PL` локальным языком. |
+| `2.4.0-amd64-pt-br-preview` | Образ контейнера с `pt-BR` локальным языком. |
+| `2.4.0-amd64-pt-pt-preview` | Образ контейнера с `pt-PT` локальным языком. |
+| `2.4.0-amd64-ru-ru-preview` | Образ контейнера с `ru-RU` локальным языком. |
+| `2.4.0-amd64-sv-se-preview` | Образ контейнера с `sv-SE` локальным языком. |
+| `2.4.0-amd64-ta-in-preview` | Образ контейнера с `ta-IN` локальным языком. |
+| `2.4.0-amd64-te-in-preview` | Образ контейнера с `te-IN` локальным языком. |
+| `2.4.0-amd64-th-th-preview` | Образ контейнера с `th-TH` локальным языком. |
+| `2.4.0-amd64-tr-tr-preview` | Образ контейнера с `tr-TR` локальным языком. |
+| `2.4.0-amd64-zh-cn-preview` | Образ контейнера с `zh-CN` локальным языком. |
+| `2.4.0-amd64-zh-hk-preview` | Образ контейнера с `zh-HK` локальным языком. |
+| `2.4.0-amd64-zh-tw-preview` | Образ контейнера с `zh-TW` локальным языком. |
+| `2.3.1-amd64-ar-ae-preview` | Образ контейнера с `ar-AE` локальным языком. |
+| `2.3.1-amd64-ar-eg-preview` | Образ контейнера с `ar-EG` локальным языком. |
+| `2.3.1-amd64-ar-kw-preview` | Образ контейнера с `ar-KW` локальным языком. |
+| `2.3.1-amd64-ar-qa-preview` | Образ контейнера с `ar-QA` локальным языком. |
+| `2.3.1-amd64-ar-sa-preview` | Образ контейнера с `ar-SA` локальным языком. |
+| `2.3.1-amd64-ca-es-preview` | Образ контейнера с `ca-ES` локальным языком. |
+| `2.3.1-amd64-da-dk-preview` | Образ контейнера с `da-DK` локальным языком. |
+| `2.3.1-amd64-de-de-preview` | Образ контейнера с `de-DE` локальным языком. |
+| `2.3.1-amd64-en-au-preview` | Образ контейнера с `en-AU` локальным языком. |
+| `2.3.1-amd64-en-ca-preview` | Образ контейнера с `en-CA` локальным языком. |
+| `2.3.1-amd64-en-gb-preview` | Образ контейнера с `en-GB` локальным языком. |
+| `2.3.1-amd64-en-in-preview` | Образ контейнера с `en-IN` локальным языком. |
+| `2.3.1-amd64-en-nz-preview` | Образ контейнера с `en-NZ` локальным языком. |
+| `2.3.1-amd64-en-us-preview` | Образ контейнера с `en-US` локальным языком. |
+| `2.3.1-amd64-es-es-preview` | Образ контейнера с `es-ES` локальным языком. |
+| `2.3.1-amd64-es-mx-preview` | Образ контейнера с `es-MX` локальным языком. |
+| `2.3.1-amd64-fi-fi-preview` | Образ контейнера с `fi-FI` локальным языком. |
+| `2.3.1-amd64-fr-ca-preview` | Образ контейнера с `fr-CA` локальным языком. |
+| `2.3.1-amd64-fr-fr-preview` | Образ контейнера с `fr-FR` локальным языком. |
+| `2.3.1-amd64-gu-in-preview` | Образ контейнера с `gu-IN` локальным языком. |
+| `2.3.1-amd64-hi-in-preview` | Образ контейнера с `hi-IN` локальным языком. |
+| `2.3.1-amd64-it-it-preview` | Образ контейнера с `it-IT` локальным языком. |
+| `2.3.1-amd64-ja-jp-preview` | Образ контейнера с `ja-JP` локальным языком. |
+| `2.3.1-amd64-ko-kr-preview` | Образ контейнера с `ko-KR` локальным языком. |
+| `2.3.1-amd64-mr-in-preview` | Образ контейнера с `mr-IN` локальным языком. |
+| `2.3.1-amd64-nb-no-preview` | Образ контейнера с `nb-NO` локальным языком. |
+| `2.3.1-amd64-nl-nl-preview` | Образ контейнера с `nl-NL` локальным языком. |
+| `2.3.1-amd64-pl-pl-preview` | Образ контейнера с `pl-PL` локальным языком. |
+| `2.3.1-amd64-pt-br-preview` | Образ контейнера с `pt-BR` локальным языком. |
+| `2.3.1-amd64-pt-pt-preview` | Образ контейнера с `pt-PT` локальным языком. |
+| `2.3.1-amd64-ru-ru-preview` | Образ контейнера с `ru-RU` локальным языком. |
+| `2.3.1-amd64-sv-se-preview` | Образ контейнера с `sv-SE` локальным языком. |
+| `2.3.1-amd64-ta-in-preview` | Образ контейнера с `ta-IN` локальным языком. |
+| `2.3.1-amd64-te-in-preview` | Образ контейнера с `te-IN` локальным языком. |
+| `2.3.1-amd64-th-th-preview` | Образ контейнера с `th-TH` локальным языком. |
+| `2.3.1-amd64-tr-tr-preview` | Образ контейнера с `tr-TR` локальным языком. |
+| `2.3.1-amd64-zh-cn-preview` | Образ контейнера с `zh-CN` локальным языком. |
+| `2.3.1-amd64-zh-hk-preview` | Образ контейнера с `zh-HK` локальным языком. |
+| `2.3.1-amd64-zh-tw-preview` | Образ контейнера с `zh-TW` локальным языком. |
+| `2.3.0-amd64-ar-ae-preview` | Образ контейнера с `ar-AE` локальным языком. |
+| `2.3.0-amd64-ar-eg-preview` | Образ контейнера с `ar-EG` локальным языком. |
+| `2.3.0-amd64-ar-kw-preview` | Образ контейнера с `ar-KW` локальным языком. |
+| `2.3.0-amd64-ar-qa-preview` | Образ контейнера с `ar-QA` локальным языком. |
+| `2.3.0-amd64-ar-sa-preview` | Образ контейнера с `ar-SA` локальным языком. |
+| `2.3.0-amd64-ca-es-preview` | Образ контейнера с `ca-ES` локальным языком. |
+| `2.3.0-amd64-da-dk-preview` | Образ контейнера с `da-DK` локальным языком. |
+| `2.3.0-amd64-de-de-preview` | Образ контейнера с `de-DE` локальным языком. |
+| `2.3.0-amd64-en-au-preview` | Образ контейнера с `en-AU` локальным языком. |
+| `2.3.0-amd64-en-ca-preview` | Образ контейнера с `en-CA` локальным языком. |
+| `2.3.0-amd64-en-gb-preview` | Образ контейнера с `en-GB` локальным языком. |
+| `2.3.0-amd64-en-in-preview` | Образ контейнера с `en-IN` локальным языком. |
+| `2.3.0-amd64-en-nz-preview` | Образ контейнера с `en-NZ` локальным языком. |
+| `2.3.0-amd64-en-us-preview` | Образ контейнера с `en-US` локальным языком. |
+| `2.3.0-amd64-es-es-preview` | Образ контейнера с `es-ES` локальным языком. |
+| `2.3.0-amd64-es-mx-preview` | Образ контейнера с `es-MX` локальным языком. |
+| `2.3.0-amd64-fi-fi-preview` | Образ контейнера с `fi-FI` локальным языком. |
+| `2.3.0-amd64-fr-ca-preview` | Образ контейнера с `fr-CA` локальным языком. |
+| `2.3.0-amd64-fr-fr-preview` | Образ контейнера с `fr-FR` локальным языком. |
+| `2.3.0-amd64-gu-in-preview` | Образ контейнера с `gu-IN` локальным языком. |
+| `2.3.0-amd64-hi-in-preview` | Образ контейнера с `hi-IN` локальным языком. |
+| `2.3.0-amd64-it-it-preview` | Образ контейнера с `it-IT` локальным языком. |
+| `2.3.0-amd64-ja-jp-preview` | Образ контейнера с `ja-JP` локальным языком. |
+| `2.3.0-amd64-ko-kr-preview` | Образ контейнера с `ko-KR` локальным языком. |
+| `2.3.0-amd64-mr-in-preview` | Образ контейнера с `mr-IN` локальным языком. |
+| `2.3.0-amd64-nb-no-preview` | Образ контейнера с `nb-NO` локальным языком. |
+| `2.3.0-amd64-nl-nl-preview` | Образ контейнера с `nl-NL` локальным языком. |
+| `2.3.0-amd64-pl-pl-preview` | Образ контейнера с `pl-PL` локальным языком. |
+| `2.3.0-amd64-pt-br-preview` | Образ контейнера с `pt-BR` локальным языком. |
+| `2.3.0-amd64-pt-pt-preview` | Образ контейнера с `pt-PT` локальным языком. |
+| `2.3.0-amd64-ru-ru-preview` | Образ контейнера с `ru-RU` локальным языком. |
+| `2.3.0-amd64-sv-se-preview` | Образ контейнера с `sv-SE` локальным языком. |
+| `2.3.0-amd64-ta-in-preview` | Образ контейнера с `ta-IN` локальным языком. |
+| `2.3.0-amd64-te-in-preview` | Образ контейнера с `te-IN` локальным языком. |
+| `2.3.0-amd64-th-th-preview` | Образ контейнера с `th-TH` локальным языком. |
+| `2.3.0-amd64-tr-tr-preview` | Образ контейнера с `tr-TR` локальным языком. |
+| `2.3.0-amd64-zh-cn-preview` | Образ контейнера с `zh-CN` локальным языком. |
+| `2.3.0-amd64-zh-hk-preview` | Образ контейнера с `zh-HK` локальным языком. |
+| `2.3.0-amd64-zh-tw-preview` | Образ контейнера с `zh-TW` локальным языком. |
 | `2.2.0-amd64-ar-ae-preview` | Образ контейнера с `ar-AE` локальным языком. |
 | `2.2.0-amd64-ar-eg-preview` | Образ контейнера с `ar-EG` локальным языком. |
 | `2.2.0-amd64-ar-kw-preview` | Образ контейнера с `ar-KW` локальным языком. |
@@ -467,7 +590,250 @@ Azure Cognitive Services предлагает множество образов 
 
 | Теги изображений                                  | Примечания                                                                      |
 |---------------------------------------------|:---------------------------------------------------------------------------|
-| `latest`                                    | Образ контейнера с `en-US` локальным и `en-US-JessaRUS` голосовым языком.        |
+| `latest`                                    | Образ контейнера с `en-US` локальным и `en-US-AriaRUS` голосовым языком.         |
+| `1.6.0-amd64-ar-eg-hoda-preview`            | Образ контейнера с `ar-EG` локальным и `ar-EG-Hoda` голосовым языком.            |
+| `1.6.0-amd64-ar-sa-naayf-preview`           | Образ контейнера с `ar-SA` локальным и `ar-SA-Naayf` голосовым языком.           |
+| `1.6.0-amd64-bg-bg-ivan-preview`            | Образ контейнера с `bg-BG` локальным и `bg-BG-Ivan` голосовым языком.            |
+| `1.6.0-amd64-ca-es-herenarus-preview`       | Образ контейнера с `ca-ES` локальным и `ca-ES-HerenaRUS` голосовым языком.       |
+| `1.6.0-amd64-cs-cz-jakub-preview`           | Образ контейнера с `cs-CZ` локальным и `cs-CZ-Jakub` голосовым языком.           |
+| `1.6.0-amd64-da-dk-hellerus-preview`        | Образ контейнера с `da-DK` локальным и `da-DK-HelleRUS` голосовым языком.        |
+| `1.6.0-amd64-de-at-michael-preview`         | Образ контейнера с `de-AT` локальным и `de-AT-Michael` голосовым языком.         |
+| `1.6.0-amd64-de-ch-karsten-preview`         | Образ контейнера с `de-CH` локальным и `de-CH-Karsten` голосовым языком.         |
+| `1.6.0-amd64-de-de-hedda-preview`           | Образ контейнера с `de-DE` локальным и `de-DE-Hedda` голосовым языком.           |
+| `1.6.0-amd64-de-de-heddarus-preview`        | Образ контейнера с `de-DE` локальным и `de-DE-Hedda` голосовым языком.           |
+| `1.6.0-amd64-de-de-stefan-apollo-preview`   | Образ контейнера с `de-DE` локальным и `de-DE-Stefan-Apollo` голосовым языком.   |
+| `1.6.0-amd64-el-gr-stefanos-preview`        | Образ контейнера с `el-GR` локальным и `el-GR-Stefanos` голосовым языком.        |
+| `1.6.0-amd64-en-au-catherine-preview`       | Образ контейнера с `en-AU` локальным и `en-AU-Catherine` голосовым языком.       |
+| `1.6.0-amd64-en-au-hayleyrus-preview`       | Образ контейнера с `en-AU` локальным и `en-AU-HayleyRUS` голосовым языком.       |
+| `1.6.0-amd64-en-ca-heatherrus-preview`      | Образ контейнера с `en-CA` локальным и `en-CA-HeatherRUS` голосовым языком.      |
+| `1.6.0-amd64-en-ca-linda-preview`           | Образ контейнера с `en-CA` локальным и `en-CA-Linda` голосовым языком.           |
+| `1.6.0-amd64-en-gb-george-apollo-preview`   | Образ контейнера с `en-GB` локальным и `en-GB-George-Apollo` голосовым языком.   |
+| `1.6.0-amd64-en-gb-hazelrus-preview`        | Образ контейнера с `en-GB` локальным и `en-GB-HazelRUS` голосовым языком.        |
+| `1.6.0-amd64-en-gb-susan-apollo-preview`    | Образ контейнера с `en-GB` локальным и `en-GB-Susan-Apollo` голосовым языком.    |
+| `1.6.0-amd64-en-ie-sean-preview`            | Образ контейнера с `en-IE` локальным и `en-IE-Sean` голосовым языком.            |
+| `1.6.0-amd64-en-in-heera-apollo-preview`    | Образ контейнера с `en-IN` локальным и `en-IN-Heera-Apollo` голосовым языком.    |
+| `1.6.0-amd64-en-in-priyarus-preview`        | Образ контейнера с `en-IN` локальным и `en-IN-PriyaRUS` голосовым языком.        |
+| `1.6.0-amd64-en-in-ravi-apollo-preview`     | Образ контейнера с `en-IN` локальным и `en-IN-Ravi-Apollo` голосовым языком.     |
+| `1.6.0-amd64-en-us-benjaminrus-preview`     | Образ контейнера с `en-US` локальным и `en-US-BenjaminRUS` голосовым языком.     |
+| `1.6.0-amd64-en-us-guy24krus-preview`       | Образ контейнера с `en-US` локальным и `en-US-Guy24kRUS` голосовым языком.       |
+| `1.6.0-amd64-en-us-aria24krus-preview`      | Образ контейнера с `en-US` локальным и `en-US-Aria24kRUS` голосовым языком.     |
+| `1.6.0-amd64-en-us-ariarus-preview`         | Образ контейнера с `en-US` локальным и `en-US-AriaRUS` голосовым языком.        |
+| `1.6.0-amd64-en-us-zirarus-preview`         | Образ контейнера с `en-US` локальным и `en-US-ZiraRUS` голосовым языком.         |
+| `1.6.0-amd64-es-es-helenarus-preview`       | Образ контейнера с `es-ES` локальным и `es-ES-HelenaRUS` голосовым языком.       |
+| `1.6.0-amd64-es-es-laura-apollo-preview`    | Образ контейнера с `es-ES` локальным и `es-ES-Laura-Apollo` голосовым языком.    |
+| `1.6.0-amd64-es-es-pablo-apollo-preview`    | Образ контейнера с `es-ES` локальным и `es-ES-Pablo-Apollo` голосовым языком.    |
+| `1.6.0-amd64-es-mx-hildarus-preview`        | Образ контейнера с `es-MX` локальным и `es-MX-HildaRUS` голосовым языком.        |
+| `1.6.0-amd64-es-mx-raul-apollo-preview`     | Образ контейнера с `es-MX` локальным и `es-MX-Raul-Apollo` голосовым языком.     |
+| `1.6.0-amd64-fi-fi-heidirus-preview`        | Образ контейнера с `fi-FI` локальным и `fi-FI-HeidiRUS` голосовым языком.        |
+| `1.6.0-amd64-fr-ca-caroline-preview`        | Образ контейнера с `fr-CA` локальным и `fr-CA-Caroline` голосовым языком.        |
+| `1.6.0-amd64-fr-ca-harmonierus-preview`     | Образ контейнера с `fr-CA` локальным и `fr-CA-HarmonieRUS` голосовым языком.     |
+| `1.6.0-amd64-fr-ch-guillaume-preview`       | Образ контейнера с `fr-CH` локальным и `fr-CH-Guillaume` голосовым языком.       |
+| `1.6.0-amd64-fr-fr-hortenserus-preview`     | Образ контейнера с `fr-FR` локальным и `fr-FR-HortenseRUS` голосовым языком.     |
+| `1.6.0-amd64-fr-fr-julie-apollo-preview`    | Образ контейнера с `fr-FR` локальным и `fr-FR-Julie-Apollo` голосовым языком.    |
+| `1.6.0-amd64-fr-fr-paul-apollo-preview`     | Образ контейнера с `fr-FR` локальным и `fr-FR-Paul-Apollo` голосовым языком.     |
+| `1.6.0-amd64-he-il-asaf-preview`            | Образ контейнера с `he-IL` локальным и `he-IL-Asaf` голосовым языком.            |
+| `1.6.0-amd64-hi-in-hemant-preview`          | Образ контейнера с `hi-IN` локальным и `hi-IN-Hemant` голосовым языком.          |
+| `1.6.0-amd64-hi-in-kalpana-apollo-preview`  | Образ контейнера с `hi-IN` локальным и `hi-IN-Kalpana-Apollo` голосовым языком.  |
+| `1.6.0-amd64-hi-in-kalpana-preview`         | Образ контейнера с `hi-IN` локальным и `hi-IN-Kalpana` голосовым языком.         |
+| `1.6.0-amd64-hr-hr-matej-preview`           | Образ контейнера с `hr-HR` локальным и `hr-HR-Matej` голосовым языком.           |
+| `1.6.0-amd64-hu-hu-szabolcs-preview`        | Образ контейнера с `hu-HU` локальным и `hu-HU-Szabolcs` голосовым языком.        |
+| `1.6.0-amd64-id-id-andika-preview`          | Образ контейнера с `id-ID` локальным и `id-ID-Andika` голосовым языком.          |
+| `1.6.0-amd64-it-it-cosimo-apollo-preview`   | Образ контейнера с `it-IT` локальным и `it-IT-Cosimo-Apollo` голосовым языком.   |
+| `1.6.0-amd64-it-it-luciarus-preview`        | Образ контейнера с `it-IT` локальным и `it-IT-LuciaRUS` голосовым языком.        |
+| `1.6.0-amd64-ja-jp-ayumi-apollo-preview`    | Образ контейнера с `ja-JP` локальным и `ja-JP-Ayumi-Apollo` голосовым языком.    |
+| `1.6.0-amd64-ja-jp-harukarus-preview`       | Образ контейнера с `ja-JP` локальным и `ja-JP-HarukaRUS` голосовым языком.       |
+| `1.6.0-amd64-ja-jp-ichiro-apollo-preview`   | Образ контейнера с `ja-JP` локальным и `ja-JP-Ichiro-Apollo` голосовым языком.   |
+| `1.6.0-amd64-ko-kr-heamirus-preview`        | Образ контейнера с `ko-KR` локальным и `ko-KR-HeamiRUS` голосовым языком.        |
+| `1.6.0-amd64-ms-my-rizwan-preview`          | Образ контейнера с `ms-MY` локальным и `ms-MY-Rizwan` голосовым языком.          |
+| `1.6.0-amd64-nb-no-huldarus-preview`        | Образ контейнера с `nb-NO` локальным и `nb-NO-HuldaRUS` голосовым языком.        |
+| `1.6.0-amd64-nl-nl-hannarus-preview`        | Образ контейнера с `nl-NL` локальным и `nl-NL-HannaRUS` голосовым языком.        |
+| `1.6.0-amd64-pl-pl-paulinarus-preview`      | Образ контейнера с `pl-PL` локальным и `pl-PL-PaulinaRUS` голосовым языком.      |
+| `1.6.0-amd64-pt-br-daniel-apollo-preview`   | Образ контейнера с `pt-BR` локальным и `pt-BR-Daniel-Apollo` голосовым языком.   |
+| `1.6.0-amd64-pt-br-heloisarus-preview`      | Образ контейнера с `pt-BR` локальным и `pt-BR-HeloisaRUS` голосовым языком.      |
+| `1.6.0-amd64-pt-pt-heliarus-preview`        | Образ контейнера с `pt-PT` локальным и `pt-PT-HeliaRUS` голосовым языком.        |
+| `1.6.0-amd64-ro-ro-andrei-preview`          | Образ контейнера с `ro-RO` локальным и `ro-RO-Andrei` голосовым языком.          |
+| `1.6.0-amd64-ru-ru-ekaterinarus-preview`    | Образ контейнера с `ru-RU` локальным и `ru-RU-EkaterinaRUS` голосовым языком.    |
+| `1.6.0-amd64-ru-ru-irina-apollo-preview`    | Образ контейнера с `ru-RU` локальным и `ru-RU-Irina-Apollo` голосовым языком.    |
+| `1.6.0-amd64-ru-ru-pavel-apollo-preview`    | Образ контейнера с `ru-RU` локальным и `ru-RU-Pavel-Apollo` голосовым языком.    |
+| `1.6.0-amd64-sk-sk-filip-preview`           | Образ контейнера с `sk-SK` локальным и `sk-SK-Filip` голосовым языком.           |
+| `1.6.0-amd64-sl-si-lado-preview`            | Образ контейнера с `sl-SI` локальным и `sl-SI-Lado` голосовым языком.            |
+| `1.6.0-amd64-sv-se-hedvigrus-preview`       | Образ контейнера с `sv-SE` локальным и `sv-SE-HedvigRUS` голосовым языком.       |
+| `1.6.0-amd64-ta-in-valluvar-preview`        | Образ контейнера с `ta-IN` локальным и `ta-IN-Valluvar` голосовым языком.        |
+| `1.6.0-amd64-te-in-chitra-preview`          | Образ контейнера с `te-IN` локальным и `te-IN-Chitra` голосовым языком.          |
+| `1.6.0-amd64-th-th-pattara-preview`         | Образ контейнера с `th-TH` локальным и `th-TH-Pattara` голосовым языком.         |
+| `1.6.0-amd64-tr-tr-sedarus-preview`         | Образ контейнера с `tr-TR` локальным и `tr-TR-SedaRUS` голосовым языком.         |
+| `1.6.0-amd64-vi-vn-an-preview`              | Образ контейнера с `vi-VN` локальным и `vi-VN-An` голосовым языком.              |
+| `1.6.0-amd64-zh-cn-huihuirus-preview`       | Образ контейнера с `zh-CN` локальным и `zh-CN-HuihuiRUS` голосовым языком.       |
+| `1.6.0-amd64-zh-cn-kangkang-apollo-preview` | Образ контейнера с `zh-CN` локальным и `zh-CN-Kangkang-Apollo` голосовым языком. |
+| `1.6.0-amd64-zh-cn-yaoyao-apollo-preview`   | Образ контейнера с `zh-CN` локальным и `zh-CN-Yaoyao-Apollo` голосовым языком.   |
+| `1.6.0-amd64-zh-hk-danny-apollo-preview`    | Образ контейнера с `zh-HK` локальным и `zh-HK-Danny-Apollo` голосовым языком.    |
+| `1.6.0-amd64-zh-hk-tracy-apollo-preview`    | Образ контейнера с `zh-HK` локальным и `zh-HK-Tracy-Apollo` голосовым языком.    |
+| `1.6.0-amd64-zh-hk-tracyrus-preview`        | Образ контейнера с `zh-HK` локальным и `zh-HK-TracyRUS` голосовым языком.        |
+| `1.6.0-amd64-zh-tw-hanhanrus-preview`       | Образ контейнера с `zh-TW` локальным и `zh-TW-HanHanRUS` голосовым языком.       |
+| `1.6.0-amd64-zh-tw-yating-apollo-preview`   | Образ контейнера с `zh-TW` локальным и `zh-TW-Yating-Apollo` голосовым языком.   |
+| `1.6.0-amd64-zh-tw-zhiwei-apollo-preview`   | Образ контейнера с `zh-TW` локальным и `zh-TW-Zhiwei-Apollo` голосовым языком.   |
+| `1.5.0-amd64-ar-eg-hoda-preview`            | Образ контейнера с `ar-EG` локальным и `ar-EG-Hoda` голосовым языком.            |
+| `1.5.0-amd64-ar-sa-naayf-preview`           | Образ контейнера с `ar-SA` локальным и `ar-SA-Naayf` голосовым языком.           |
+| `1.5.0-amd64-bg-bg-ivan-preview`            | Образ контейнера с `bg-BG` локальным и `bg-BG-Ivan` голосовым языком.            |
+| `1.5.0-amd64-ca-es-herenarus-preview`       | Образ контейнера с `ca-ES` локальным и `ca-ES-HerenaRUS` голосовым языком.       |
+| `1.5.0-amd64-cs-cz-jakub-preview`           | Образ контейнера с `cs-CZ` локальным и `cs-CZ-Jakub` голосовым языком.           |
+| `1.5.0-amd64-da-dk-hellerus-preview`        | Образ контейнера с `da-DK` локальным и `da-DK-HelleRUS` голосовым языком.        |
+| `1.5.0-amd64-de-at-michael-preview`         | Образ контейнера с `de-AT` локальным и `de-AT-Michael` голосовым языком.         |
+| `1.5.0-amd64-de-ch-karsten-preview`         | Образ контейнера с `de-CH` локальным и `de-CH-Karsten` голосовым языком.         |
+| `1.5.0-amd64-de-de-hedda-preview`           | Образ контейнера с `de-DE` локальным и `de-DE-Hedda` голосовым языком.           |
+| `1.5.0-amd64-de-de-heddarus-preview`        | Образ контейнера с `de-DE` локальным и `de-DE-Hedda` голосовым языком.           |
+| `1.5.0-amd64-de-de-stefan-apollo-preview`   | Образ контейнера с `de-DE` локальным и `de-DE-Stefan-Apollo` голосовым языком.   |
+| `1.5.0-amd64-el-gr-stefanos-preview`        | Образ контейнера с `el-GR` локальным и `el-GR-Stefanos` голосовым языком.        |
+| `1.5.0-amd64-en-au-catherine-preview`       | Образ контейнера с `en-AU` локальным и `en-AU-Catherine` голосовым языком.       |
+| `1.5.0-amd64-en-au-hayleyrus-preview`       | Образ контейнера с `en-AU` локальным и `en-AU-HayleyRUS` голосовым языком.       |
+| `1.5.0-amd64-en-ca-heatherrus-preview`      | Образ контейнера с `en-CA` локальным и `en-CA-HeatherRUS` голосовым языком.      |
+| `1.5.0-amd64-en-ca-linda-preview`           | Образ контейнера с `en-CA` локальным и `en-CA-Linda` голосовым языком.           |
+| `1.5.0-amd64-en-gb-george-apollo-preview`   | Образ контейнера с `en-GB` локальным и `en-GB-George-Apollo` голосовым языком.   |
+| `1.5.0-amd64-en-gb-hazelrus-preview`        | Образ контейнера с `en-GB` локальным и `en-GB-HazelRUS` голосовым языком.        |
+| `1.5.0-amd64-en-gb-susan-apollo-preview`    | Образ контейнера с `en-GB` локальным и `en-GB-Susan-Apollo` голосовым языком.    |
+| `1.5.0-amd64-en-ie-sean-preview`            | Образ контейнера с `en-IE` локальным и `en-IE-Sean` голосовым языком.            |
+| `1.5.0-amd64-en-in-heera-apollo-preview`    | Образ контейнера с `en-IN` локальным и `en-IN-Heera-Apollo` голосовым языком.    |
+| `1.5.0-amd64-en-in-priyarus-preview`        | Образ контейнера с `en-IN` локальным и `en-IN-PriyaRUS` голосовым языком.        |
+| `1.5.0-amd64-en-in-ravi-apollo-preview`     | Образ контейнера с `en-IN` локальным и `en-IN-Ravi-Apollo` голосовым языком.     |
+| `1.5.0-amd64-en-us-benjaminrus-preview`     | Образ контейнера с `en-US` локальным и `en-US-BenjaminRUS` голосовым языком.     |
+| `1.5.0-amd64-en-us-guy24krus-preview`       | Образ контейнера с `en-US` локальным и `en-US-Guy24kRUS` голосовым языком.       |
+| `1.5.0-amd64-en-us-aria24krus-preview`      | Образ контейнера с `en-US` локальным и `en-US-Aria24kRUS` голосовым языком.     |
+| `1.5.0-amd64-en-us-ariarus-preview`         | Образ контейнера с `en-US` локальным и `en-US-AriaRUS` голосовым языком.        |
+| `1.5.0-amd64-en-us-zirarus-preview`         | Образ контейнера с `en-US` локальным и `en-US-ZiraRUS` голосовым языком.         |
+| `1.5.0-amd64-es-es-helenarus-preview`       | Образ контейнера с `es-ES` локальным и `es-ES-HelenaRUS` голосовым языком.       |
+| `1.5.0-amd64-es-es-laura-apollo-preview`    | Образ контейнера с `es-ES` локальным и `es-ES-Laura-Apollo` голосовым языком.    |
+| `1.5.0-amd64-es-es-pablo-apollo-preview`    | Образ контейнера с `es-ES` локальным и `es-ES-Pablo-Apollo` голосовым языком.    |
+| `1.5.0-amd64-es-mx-hildarus-preview`        | Образ контейнера с `es-MX` локальным и `es-MX-HildaRUS` голосовым языком.        |
+| `1.5.0-amd64-es-mx-raul-apollo-preview`     | Образ контейнера с `es-MX` локальным и `es-MX-Raul-Apollo` голосовым языком.     |
+| `1.5.0-amd64-fi-fi-heidirus-preview`        | Образ контейнера с `fi-FI` локальным и `fi-FI-HeidiRUS` голосовым языком.        |
+| `1.5.0-amd64-fr-ca-caroline-preview`        | Образ контейнера с `fr-CA` локальным и `fr-CA-Caroline` голосовым языком.        |
+| `1.5.0-amd64-fr-ca-harmonierus-preview`     | Образ контейнера с `fr-CA` локальным и `fr-CA-HarmonieRUS` голосовым языком.     |
+| `1.5.0-amd64-fr-ch-guillaume-preview`       | Образ контейнера с `fr-CH` локальным и `fr-CH-Guillaume` голосовым языком.       |
+| `1.5.0-amd64-fr-fr-hortenserus-preview`     | Образ контейнера с `fr-FR` локальным и `fr-FR-HortenseRUS` голосовым языком.     |
+| `1.5.0-amd64-fr-fr-julie-apollo-preview`    | Образ контейнера с `fr-FR` локальным и `fr-FR-Julie-Apollo` голосовым языком.    |
+| `1.5.0-amd64-fr-fr-paul-apollo-preview`     | Образ контейнера с `fr-FR` локальным и `fr-FR-Paul-Apollo` голосовым языком.     |
+| `1.5.0-amd64-he-il-asaf-preview`            | Образ контейнера с `he-IL` локальным и `he-IL-Asaf` голосовым языком.            |
+| `1.5.0-amd64-hi-in-hemant-preview`          | Образ контейнера с `hi-IN` локальным и `hi-IN-Hemant` голосовым языком.          |
+| `1.5.0-amd64-hi-in-kalpana-apollo-preview`  | Образ контейнера с `hi-IN` локальным и `hi-IN-Kalpana-Apollo` голосовым языком.  |
+| `1.5.0-amd64-hi-in-kalpana-preview`         | Образ контейнера с `hi-IN` локальным и `hi-IN-Kalpana` голосовым языком.         |
+| `1.5.0-amd64-hr-hr-matej-preview`           | Образ контейнера с `hr-HR` локальным и `hr-HR-Matej` голосовым языком.           |
+| `1.5.0-amd64-hu-hu-szabolcs-preview`        | Образ контейнера с `hu-HU` локальным и `hu-HU-Szabolcs` голосовым языком.        |
+| `1.5.0-amd64-id-id-andika-preview`          | Образ контейнера с `id-ID` локальным и `id-ID-Andika` голосовым языком.          |
+| `1.5.0-amd64-it-it-cosimo-apollo-preview`   | Образ контейнера с `it-IT` локальным и `it-IT-Cosimo-Apollo` голосовым языком.   |
+| `1.5.0-amd64-it-it-luciarus-preview`        | Образ контейнера с `it-IT` локальным и `it-IT-LuciaRUS` голосовым языком.        |
+| `1.5.0-amd64-ja-jp-ayumi-apollo-preview`    | Образ контейнера с `ja-JP` локальным и `ja-JP-Ayumi-Apollo` голосовым языком.    |
+| `1.5.0-amd64-ja-jp-harukarus-preview`       | Образ контейнера с `ja-JP` локальным и `ja-JP-HarukaRUS` голосовым языком.       |
+| `1.5.0-amd64-ja-jp-ichiro-apollo-preview`   | Образ контейнера с `ja-JP` локальным и `ja-JP-Ichiro-Apollo` голосовым языком.   |
+| `1.5.0-amd64-ko-kr-heamirus-preview`        | Образ контейнера с `ko-KR` локальным и `ko-KR-HeamiRUS` голосовым языком.        |
+| `1.5.0-amd64-ms-my-rizwan-preview`          | Образ контейнера с `ms-MY` локальным и `ms-MY-Rizwan` голосовым языком.          |
+| `1.5.0-amd64-nb-no-huldarus-preview`        | Образ контейнера с `nb-NO` локальным и `nb-NO-HuldaRUS` голосовым языком.        |
+| `1.5.0-amd64-nl-nl-hannarus-preview`        | Образ контейнера с `nl-NL` локальным и `nl-NL-HannaRUS` голосовым языком.        |
+| `1.5.0-amd64-pl-pl-paulinarus-preview`      | Образ контейнера с `pl-PL` локальным и `pl-PL-PaulinaRUS` голосовым языком.      |
+| `1.5.0-amd64-pt-br-daniel-apollo-preview`   | Образ контейнера с `pt-BR` локальным и `pt-BR-Daniel-Apollo` голосовым языком.   |
+| `1.5.0-amd64-pt-br-heloisarus-preview`      | Образ контейнера с `pt-BR` локальным и `pt-BR-HeloisaRUS` голосовым языком.      |
+| `1.5.0-amd64-pt-pt-heliarus-preview`        | Образ контейнера с `pt-PT` локальным и `pt-PT-HeliaRUS` голосовым языком.        |
+| `1.5.0-amd64-ro-ro-andrei-preview`          | Образ контейнера с `ro-RO` локальным и `ro-RO-Andrei` голосовым языком.          |
+| `1.5.0-amd64-ru-ru-ekaterinarus-preview`    | Образ контейнера с `ru-RU` локальным и `ru-RU-EkaterinaRUS` голосовым языком.    |
+| `1.5.0-amd64-ru-ru-irina-apollo-preview`    | Образ контейнера с `ru-RU` локальным и `ru-RU-Irina-Apollo` голосовым языком.    |
+| `1.5.0-amd64-ru-ru-pavel-apollo-preview`    | Образ контейнера с `ru-RU` локальным и `ru-RU-Pavel-Apollo` голосовым языком.    |
+| `1.5.0-amd64-sk-sk-filip-preview`           | Образ контейнера с `sk-SK` локальным и `sk-SK-Filip` голосовым языком.           |
+| `1.5.0-amd64-sl-si-lado-preview`            | Образ контейнера с `sl-SI` локальным и `sl-SI-Lado` голосовым языком.            |
+| `1.5.0-amd64-sv-se-hedvigrus-preview`       | Образ контейнера с `sv-SE` локальным и `sv-SE-HedvigRUS` голосовым языком.       |
+| `1.5.0-amd64-ta-in-valluvar-preview`        | Образ контейнера с `ta-IN` локальным и `ta-IN-Valluvar` голосовым языком.        |
+| `1.5.0-amd64-te-in-chitra-preview`          | Образ контейнера с `te-IN` локальным и `te-IN-Chitra` голосовым языком.          |
+| `1.5.0-amd64-th-th-pattara-preview`         | Образ контейнера с `th-TH` локальным и `th-TH-Pattara` голосовым языком.         |
+| `1.5.0-amd64-tr-tr-sedarus-preview`         | Образ контейнера с `tr-TR` локальным и `tr-TR-SedaRUS` голосовым языком.         |
+| `1.5.0-amd64-vi-vn-an-preview`              | Образ контейнера с `vi-VN` локальным и `vi-VN-An` голосовым языком.              |
+| `1.5.0-amd64-zh-cn-huihuirus-preview`       | Образ контейнера с `zh-CN` локальным и `zh-CN-HuihuiRUS` голосовым языком.       |
+| `1.5.0-amd64-zh-cn-kangkang-apollo-preview` | Образ контейнера с `zh-CN` локальным и `zh-CN-Kangkang-Apollo` голосовым языком. |
+| `1.5.0-amd64-zh-cn-yaoyao-apollo-preview`   | Образ контейнера с `zh-CN` локальным и `zh-CN-Yaoyao-Apollo` голосовым языком.   |
+| `1.5.0-amd64-zh-hk-danny-apollo-preview`    | Образ контейнера с `zh-HK` локальным и `zh-HK-Danny-Apollo` голосовым языком.    |
+| `1.5.0-amd64-zh-hk-tracy-apollo-preview`    | Образ контейнера с `zh-HK` локальным и `zh-HK-Tracy-Apollo` голосовым языком.    |
+| `1.5.0-amd64-zh-hk-tracyrus-preview`        | Образ контейнера с `zh-HK` локальным и `zh-HK-TracyRUS` голосовым языком.        |
+| `1.5.0-amd64-zh-tw-hanhanrus-preview`       | Образ контейнера с `zh-TW` локальным и `zh-TW-HanHanRUS` голосовым языком.       |
+| `1.5.0-amd64-zh-tw-yating-apollo-preview`   | Образ контейнера с `zh-TW` локальным и `zh-TW-Yating-Apollo` голосовым языком.   |
+| `1.5.0-amd64-zh-tw-zhiwei-apollo-preview`   | Образ контейнера с `zh-TW` локальным и `zh-TW-Zhiwei-Apollo` голосовым языком.   |
+| `1.4.0-amd64-ar-eg-hoda-preview`            | Образ контейнера с `ar-EG` локальным и `ar-EG-Hoda` голосовым языком.            |
+| `1.4.0-amd64-ar-sa-naayf-preview`           | Образ контейнера с `ar-SA` локальным и `ar-SA-Naayf` голосовым языком.           |
+| `1.4.0-amd64-bg-bg-ivan-preview`            | Образ контейнера с `bg-BG` локальным и `bg-BG-Ivan` голосовым языком.            |
+| `1.4.0-amd64-ca-es-herenarus-preview`       | Образ контейнера с `ca-ES` локальным и `ca-ES-HerenaRUS` голосовым языком.       |
+| `1.4.0-amd64-cs-cz-jakub-preview`           | Образ контейнера с `cs-CZ` локальным и `cs-CZ-Jakub` голосовым языком.           |
+| `1.4.0-amd64-da-dk-hellerus-preview`        | Образ контейнера с `da-DK` локальным и `da-DK-HelleRUS` голосовым языком.        |
+| `1.4.0-amd64-de-at-michael-preview`         | Образ контейнера с `de-AT` локальным и `de-AT-Michael` голосовым языком.         |
+| `1.4.0-amd64-de-ch-karsten-preview`         | Образ контейнера с `de-CH` локальным и `de-CH-Karsten` голосовым языком.         |
+| `1.4.0-amd64-de-de-hedda-preview`           | Образ контейнера с `de-DE` локальным и `de-DE-Hedda` голосовым языком.           |
+| `1.4.0-amd64-de-de-heddarus-preview`        | Образ контейнера с `de-DE` локальным и `de-DE-Hedda` голосовым языком.           |
+| `1.4.0-amd64-de-de-stefan-apollo-preview`   | Образ контейнера с `de-DE` локальным и `de-DE-Stefan-Apollo` голосовым языком.   |
+| `1.4.0-amd64-el-gr-stefanos-preview`        | Образ контейнера с `el-GR` локальным и `el-GR-Stefanos` голосовым языком.        |
+| `1.4.0-amd64-en-au-catherine-preview`       | Образ контейнера с `en-AU` локальным и `en-AU-Catherine` голосовым языком.       |
+| `1.4.0-amd64-en-au-hayleyrus-preview`       | Образ контейнера с `en-AU` локальным и `en-AU-HayleyRUS` голосовым языком.       |
+| `1.4.0-amd64-en-ca-heatherrus-preview`      | Образ контейнера с `en-CA` локальным и `en-CA-HeatherRUS` голосовым языком.      |
+| `1.4.0-amd64-en-ca-linda-preview`           | Образ контейнера с `en-CA` локальным и `en-CA-Linda` голосовым языком.           |
+| `1.4.0-amd64-en-gb-george-apollo-preview`   | Образ контейнера с `en-GB` локальным и `en-GB-George-Apollo` голосовым языком.   |
+| `1.4.0-amd64-en-gb-hazelrus-preview`        | Образ контейнера с `en-GB` локальным и `en-GB-HazelRUS` голосовым языком.        |
+| `1.4.0-amd64-en-gb-susan-apollo-preview`    | Образ контейнера с `en-GB` локальным и `en-GB-Susan-Apollo` голосовым языком.    |
+| `1.4.0-amd64-en-ie-sean-preview`            | Образ контейнера с `en-IE` локальным и `en-IE-Sean` голосовым языком.            |
+| `1.4.0-amd64-en-in-heera-apollo-preview`    | Образ контейнера с `en-IN` локальным и `en-IN-Heera-Apollo` голосовым языком.    |
+| `1.4.0-amd64-en-in-priyarus-preview`        | Образ контейнера с `en-IN` локальным и `en-IN-PriyaRUS` голосовым языком.        |
+| `1.4.0-amd64-en-in-ravi-apollo-preview`     | Образ контейнера с `en-IN` локальным и `en-IN-Ravi-Apollo` голосовым языком.     |
+| `1.4.0-amd64-en-us-benjaminrus-preview`     | Образ контейнера с `en-US` локальным и `en-US-BenjaminRUS` голосовым языком.     |
+| `1.4.0-amd64-en-us-guy24krus-preview`       | Образ контейнера с `en-US` локальным и `en-US-Guy24kRUS` голосовым языком.       |
+| `1.4.0-amd64-en-us-aria24krus-preview`      | Образ контейнера с `en-US` локальным и `en-US-Aria24kRUS` голосовым языком.     |
+| `1.4.0-amd64-en-us-ariarus-preview`         | Образ контейнера с `en-US` локальным и `en-US-AriaRUS` голосовым языком.        |
+| `1.4.0-amd64-en-us-zirarus-preview`         | Образ контейнера с `en-US` локальным и `en-US-ZiraRUS` голосовым языком.         |
+| `1.4.0-amd64-es-es-helenarus-preview`       | Образ контейнера с `es-ES` локальным и `es-ES-HelenaRUS` голосовым языком.       |
+| `1.4.0-amd64-es-es-laura-apollo-preview`    | Образ контейнера с `es-ES` локальным и `es-ES-Laura-Apollo` голосовым языком.    |
+| `1.4.0-amd64-es-es-pablo-apollo-preview`    | Образ контейнера с `es-ES` локальным и `es-ES-Pablo-Apollo` голосовым языком.    |
+| `1.4.0-amd64-es-mx-hildarus-preview`        | Образ контейнера с `es-MX` локальным и `es-MX-HildaRUS` голосовым языком.        |
+| `1.4.0-amd64-es-mx-raul-apollo-preview`     | Образ контейнера с `es-MX` локальным и `es-MX-Raul-Apollo` голосовым языком.     |
+| `1.4.0-amd64-fi-fi-heidirus-preview`        | Образ контейнера с `fi-FI` локальным и `fi-FI-HeidiRUS` голосовым языком.        |
+| `1.4.0-amd64-fr-ca-caroline-preview`        | Образ контейнера с `fr-CA` локальным и `fr-CA-Caroline` голосовым языком.        |
+| `1.4.0-amd64-fr-ca-harmonierus-preview`     | Образ контейнера с `fr-CA` локальным и `fr-CA-HarmonieRUS` голосовым языком.     |
+| `1.4.0-amd64-fr-ch-guillaume-preview`       | Образ контейнера с `fr-CH` локальным и `fr-CH-Guillaume` голосовым языком.       |
+| `1.4.0-amd64-fr-fr-hortenserus-preview`     | Образ контейнера с `fr-FR` локальным и `fr-FR-HortenseRUS` голосовым языком.     |
+| `1.4.0-amd64-fr-fr-julie-apollo-preview`    | Образ контейнера с `fr-FR` локальным и `fr-FR-Julie-Apollo` голосовым языком.    |
+| `1.4.0-amd64-fr-fr-paul-apollo-preview`     | Образ контейнера с `fr-FR` локальным и `fr-FR-Paul-Apollo` голосовым языком.     |
+| `1.4.0-amd64-he-il-asaf-preview`            | Образ контейнера с `he-IL` локальным и `he-IL-Asaf` голосовым языком.            |
+| `1.4.0-amd64-hi-in-hemant-preview`          | Образ контейнера с `hi-IN` локальным и `hi-IN-Hemant` голосовым языком.          |
+| `1.4.0-amd64-hi-in-kalpana-apollo-preview`  | Образ контейнера с `hi-IN` локальным и `hi-IN-Kalpana-Apollo` голосовым языком.  |
+| `1.4.0-amd64-hi-in-kalpana-preview`         | Образ контейнера с `hi-IN` локальным и `hi-IN-Kalpana` голосовым языком.         |
+| `1.4.0-amd64-hr-hr-matej-preview`           | Образ контейнера с `hr-HR` локальным и `hr-HR-Matej` голосовым языком.           |
+| `1.4.0-amd64-hu-hu-szabolcs-preview`        | Образ контейнера с `hu-HU` локальным и `hu-HU-Szabolcs` голосовым языком.        |
+| `1.4.0-amd64-id-id-andika-preview`          | Образ контейнера с `id-ID` локальным и `id-ID-Andika` голосовым языком.          |
+| `1.4.0-amd64-it-it-cosimo-apollo-preview`   | Образ контейнера с `it-IT` локальным и `it-IT-Cosimo-Apollo` голосовым языком.   |
+| `1.4.0-amd64-it-it-luciarus-preview`        | Образ контейнера с `it-IT` локальным и `it-IT-LuciaRUS` голосовым языком.        |
+| `1.4.0-amd64-ja-jp-ayumi-apollo-preview`    | Образ контейнера с `ja-JP` локальным и `ja-JP-Ayumi-Apollo` голосовым языком.    |
+| `1.4.0-amd64-ja-jp-harukarus-preview`       | Образ контейнера с `ja-JP` локальным и `ja-JP-HarukaRUS` голосовым языком.       |
+| `1.4.0-amd64-ja-jp-ichiro-apollo-preview`   | Образ контейнера с `ja-JP` локальным и `ja-JP-Ichiro-Apollo` голосовым языком.   |
+| `1.4.0-amd64-ko-kr-heamirus-preview`        | Образ контейнера с `ko-KR` локальным и `ko-KR-HeamiRUS` голосовым языком.        |
+| `1.4.0-amd64-ms-my-rizwan-preview`          | Образ контейнера с `ms-MY` локальным и `ms-MY-Rizwan` голосовым языком.          |
+| `1.4.0-amd64-nb-no-huldarus-preview`        | Образ контейнера с `nb-NO` локальным и `nb-NO-HuldaRUS` голосовым языком.        |
+| `1.4.0-amd64-nl-nl-hannarus-preview`        | Образ контейнера с `nl-NL` локальным и `nl-NL-HannaRUS` голосовым языком.        |
+| `1.4.0-amd64-pl-pl-paulinarus-preview`      | Образ контейнера с `pl-PL` локальным и `pl-PL-PaulinaRUS` голосовым языком.      |
+| `1.4.0-amd64-pt-br-daniel-apollo-preview`   | Образ контейнера с `pt-BR` локальным и `pt-BR-Daniel-Apollo` голосовым языком.   |
+| `1.4.0-amd64-pt-br-heloisarus-preview`      | Образ контейнера с `pt-BR` локальным и `pt-BR-HeloisaRUS` голосовым языком.      |
+| `1.4.0-amd64-pt-pt-heliarus-preview`        | Образ контейнера с `pt-PT` локальным и `pt-PT-HeliaRUS` голосовым языком.        |
+| `1.4.0-amd64-ro-ro-andrei-preview`          | Образ контейнера с `ro-RO` локальным и `ro-RO-Andrei` голосовым языком.          |
+| `1.4.0-amd64-ru-ru-ekaterinarus-preview`    | Образ контейнера с `ru-RU` локальным и `ru-RU-EkaterinaRUS` голосовым языком.    |
+| `1.4.0-amd64-ru-ru-irina-apollo-preview`    | Образ контейнера с `ru-RU` локальным и `ru-RU-Irina-Apollo` голосовым языком.    |
+| `1.4.0-amd64-ru-ru-pavel-apollo-preview`    | Образ контейнера с `ru-RU` локальным и `ru-RU-Pavel-Apollo` голосовым языком.    |
+| `1.4.0-amd64-sk-sk-filip-preview`           | Образ контейнера с `sk-SK` локальным и `sk-SK-Filip` голосовым языком.           |
+| `1.4.0-amd64-sl-si-lado-preview`            | Образ контейнера с `sl-SI` локальным и `sl-SI-Lado` голосовым языком.            |
+| `1.4.0-amd64-sv-se-hedvigrus-preview`       | Образ контейнера с `sv-SE` локальным и `sv-SE-HedvigRUS` голосовым языком.       |
+| `1.4.0-amd64-ta-in-valluvar-preview`        | Образ контейнера с `ta-IN` локальным и `ta-IN-Valluvar` голосовым языком.        |
+| `1.4.0-amd64-te-in-chitra-preview`          | Образ контейнера с `te-IN` локальным и `te-IN-Chitra` голосовым языком.          |
+| `1.4.0-amd64-th-th-pattara-preview`         | Образ контейнера с `th-TH` локальным и `th-TH-Pattara` голосовым языком.         |
+| `1.4.0-amd64-tr-tr-sedarus-preview`         | Образ контейнера с `tr-TR` локальным и `tr-TR-SedaRUS` голосовым языком.         |
+| `1.4.0-amd64-vi-vn-an-preview`              | Образ контейнера с `vi-VN` локальным и `vi-VN-An` голосовым языком.              |
+| `1.4.0-amd64-zh-cn-huihuirus-preview`       | Образ контейнера с `zh-CN` локальным и `zh-CN-HuihuiRUS` голосовым языком.       |
+| `1.4.0-amd64-zh-cn-kangkang-apollo-preview` | Образ контейнера с `zh-CN` локальным и `zh-CN-Kangkang-Apollo` голосовым языком. |
+| `1.4.0-amd64-zh-cn-yaoyao-apollo-preview`   | Образ контейнера с `zh-CN` локальным и `zh-CN-Yaoyao-Apollo` голосовым языком.   |
+| `1.4.0-amd64-zh-hk-danny-apollo-preview`    | Образ контейнера с `zh-HK` локальным и `zh-HK-Danny-Apollo` голосовым языком.    |
+| `1.4.0-amd64-zh-hk-tracy-apollo-preview`    | Образ контейнера с `zh-HK` локальным и `zh-HK-Tracy-Apollo` голосовым языком.    |
+| `1.4.0-amd64-zh-hk-tracyrus-preview`        | Образ контейнера с `zh-HK` локальным и `zh-HK-TracyRUS` голосовым языком.        |
+| `1.4.0-amd64-zh-tw-hanhanrus-preview`       | Образ контейнера с `zh-TW` локальным и `zh-TW-HanHanRUS` голосовым языком.       |
+| `1.4.0-amd64-zh-tw-yating-apollo-preview`   | Образ контейнера с `zh-TW` локальным и `zh-TW-Yating-Apollo` голосовым языком.   |
+| `1.4.0-amd64-zh-tw-zhiwei-apollo-preview`   | Образ контейнера с `zh-TW` локальным и `zh-TW-Zhiwei-Apollo` голосовым языком.   |
 | `1.3.0-amd64-ar-eg-hoda-preview`            | Образ контейнера с `ar-EG` локальным и `ar-EG-Hoda` голосовым языком.            |
 | `1.3.0-amd64-ar-sa-naayf-preview`           | Образ контейнера с `ar-SA` локальным и `ar-SA-Naayf` голосовым языком.           |
 | `1.3.0-amd64-bg-bg-ivan-preview`            | Образ контейнера с `bg-BG` локальным и `bg-BG-Ivan` голосовым языком.            |
@@ -477,7 +843,6 @@ Azure Cognitive Services предлагает множество образов 
 | `1.3.0-amd64-de-at-michael-preview`         | Образ контейнера с `de-AT` локальным и `de-AT-Michael` голосовым языком.         |
 | `1.3.0-amd64-de-ch-karsten-preview`         | Образ контейнера с `de-CH` локальным и `de-CH-Karsten` голосовым языком.         |
 | `1.3.0-amd64-de-de-hedda-preview`           | Образ контейнера с `de-DE` локальным и `de-DE-Hedda` голосовым языком.           |
-| `1.3.0-amd64-de-de-heddarus-preview`        | Образ контейнера с `de-DE` локальным и `de-DE-Hedda` голосовым языком.           |
 | `1.3.0-amd64-de-de-heddarus-preview`        | Образ контейнера с `de-DE` локальным и `de-DE-HeddaRUS` голосовым языком.        |
 | `1.3.0-amd64-de-de-stefan-apollo-preview`   | Образ контейнера с `de-DE` локальным и `de-DE-Stefan-Apollo` голосовым языком.   |
 | `1.3.0-amd64-el-gr-stefanos-preview`        | Образ контейнера с `el-GR` локальным и `el-GR-Stefanos` голосовым языком.        |
@@ -511,8 +876,7 @@ Azure Cognitive Services предлагает множество образов 
 | `1.3.0-amd64-fr-fr-paul-apollo-preview`     | Образ контейнера с `fr-FR` локальным и `fr-FR-Paul-Apollo` голосовым языком.     |
 | `1.3.0-amd64-he-il-asaf-preview`            | Образ контейнера с `he-IL` локальным и `he-IL-Asaf` голосовым языком.            |
 | `1.3.0-amd64-hi-in-hemant-preview`          | Образ контейнера с `hi-IN` локальным и `hi-IN-Hemant` голосовым языком.          |
-| `1.3.0-amd64-hi-in-kalpana-apollo-preview`  | Образ контейнера с `hi-IN` локальным и `hi-IN-Kalpana-Apollo` голосовым языком.  |
-| `1.3.0-amd64-hi-in-kalpana-apollo-preview`  | Образ контейнера с `hi-IN` локальным и `hi-IN-Kalpana` голосовым языком.         |
+| `1.3.0-amd64-hi-in-kalpana-preview`         | Образ контейнера с `hi-IN` локальным и `hi-IN-Kalpana` голосовым языком.         |
 | `1.3.0-amd64-hi-in-kalpana-preview`         | Образ контейнера с `hi-IN` локальным и `hi-IN-Kalpana` голосовым языком.         |
 | `1.3.0-amd64-hr-hr-matej-preview`           | Образ контейнера с `hr-HR` локальным и `hr-HR-Matej` голосовым языком.           |
 | `1.3.0-amd64-hu-hu-szabolcs-preview`        | Образ контейнера с `hu-HU` локальным и `hu-HU-Szabolcs` голосовым языком.        |
@@ -551,7 +915,7 @@ Azure Cognitive Services предлагает множество образов 
 | `1.3.0-amd64-zh-tw-hanhanrus-preview`       | Образ контейнера с `zh-TW` локальным и `zh-TW-HanHanRUS` голосовым языком.       |
 | `1.3.0-amd64-zh-tw-yating-apollo-preview`   | Образ контейнера с `zh-TW` локальным и `zh-TW-Yating-Apollo` голосовым языком.   |
 | `1.3.0-amd64-zh-tw-zhiwei-apollo-preview`   | Образ контейнера с `zh-TW` локальным и `zh-TW-Zhiwei-Apollo` голосовым языком.   |
-| `1.2.0-amd64-de-de-heddarus-preview`        | Образ контейнера с `de-DE` локальным и `de-DE-Hedda` голосовым языком.           |
+| `1.2.0-amd64-de-de-hedda-preview`           | Образ контейнера с `de-DE` локальным и `de-DE-Hedda` голосовым языком.           |
 | `1.2.0-amd64-de-de-heddarus-preview`        | Образ контейнера с `de-DE` локальным и `de-DE-HeddaRUS` голосовым языком.        |
 | `1.2.0-amd64-de-de-stefan-apollo-preview`   | Образ контейнера с `de-DE` локальным и `de-DE-Stefan-Apollo` голосовым языком.   |
 | `1.2.0-amd64-en-au-catherine-preview`       | Образ контейнера с `en-AU` локальным и `en-AU-Catherine` голосовым языком.       |
@@ -589,7 +953,6 @@ Azure Cognitive Services предлагает множество образов 
 | `1.2.0-amd64-zh-cn-kangkang-apollo-preview` | Образ контейнера с `zh-CN` локальным и `zh-CN-Kangkang-Apollo` голосовым языком. |
 | `1.2.0-amd64-zh-cn-yaoyao-apollo-preview`   | Образ контейнера с `zh-CN` локальным и `zh-CN-Yaoyao-Apollo` голосовым языком.   |
 | `1.1.0-amd64-de-de-hedda-preview`           | Образ контейнера с `de-DE` локальным и `de-DE-Hedda` голосовым языком.           |
-| `1.1.0-amd64-de-de-heddarus-preview`        | Образ контейнера с `de-DE` локальным и `de-DE-Hedda` голосовым языком.           |
 | `1.1.0-amd64-de-de-heddarus-preview`        | Образ контейнера с `de-DE` локальным и `de-DE-HeddaRUS` голосовым языком.        |
 | `1.1.0-amd64-de-de-stefan-apollo-preview`   | Образ контейнера с `de-DE` локальным и `de-DE-Stefan-Apollo` голосовым языком.   |
 | `1.1.0-amd64-en-au-catherine-preview`       | Образ контейнера с `en-AU` локальным и `en-AU-Catherine` голосовым языком.       |

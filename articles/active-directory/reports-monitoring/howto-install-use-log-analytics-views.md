@@ -17,12 +17,12 @@ ms.date: 04/18/2019
 ms.author: markvi
 ms.reviewer: dhanyahk
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 116c0d5becaea1ca6d488bbf7c94674934d4f7c5
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 56eee39a9e99e9d6752d1b4f6eb7182043ff14d6
+ms.sourcegitcommit: d68c72e120bdd610bb6304dad503d3ea89a1f0f7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85608200"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89230591"
 ---
 # <a name="install-and-use-the-log-analytics-views-for-azure-active-directory"></a>Установка и использование представлений Log Analytics для Azure Active Directory
 
@@ -31,11 +31,11 @@ ms.locfileid: "85608200"
 * Журналы аудита. [отчет об активности журналов аудита](concept-audit-logs.md) предоставляет доступ к журналу каждой задачи, выполняемой в клиенте.
 * Журналы входа. с помощью отчета " [действия при входе](concept-sign-ins.md)" можно определить, кто выполнил задачи, зарегистрированные в журналах аудита.
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы использовать представления Log Analytics, вам потребуется следующее:
 
-* Рабочая область Log Analytics в подписке Azure. Узнайте, как [создать рабочую область Log Analytics](https://docs.microsoft.com/azure/log-analytics/log-analytics-quick-create-workspace).
+* Рабочая область Log Analytics в подписке Azure. Узнайте, как [создать рабочую область Log Analytics](../../azure-monitor/learn/quick-create-workspace.md).
 * Сначала настройте передачу [журналов действий Azure AD в рабочую область Log Analytics](howto-integrate-activity-logs-with-log-analytics.md).
 * Скачайте представления из [репозитория GitHub](https://aka.ms/AADLogAnalyticsviews) на локальный компьютер.
 
@@ -67,11 +67,11 @@ ms.locfileid: "85608200"
 
     ![Создание правила](./media/howto-install-use-log-analytics-views/create-rule.png)
 
-6. Выберите группу действий для оповещения. В принципе это может быть команда, которую вы хотите уведомлять по электронной почте или с помощью текстового сообщения, или это может быть автоматическая задача, использующая веб-перехватчики, модули runbook, функции, приложения логики или внешние решения ITSM. Узнайте, как [создавать группы действий и управлять ими в портал Azure](https://docs.microsoft.com/azure/monitoring-and-diagnostics/monitoring-action-groups).
+6. Выберите группу действий для оповещения. В принципе это может быть команда, которую вы хотите уведомлять по электронной почте или с помощью текстового сообщения, или это может быть автоматическая задача, использующая веб-перехватчики, модули runbook, функции, приложения логики или внешние решения ITSM. Узнайте, как [создавать группы действий и управлять ими в портал Azure](../../azure-monitor/platform/action-groups.md).
 
 7. Выберите **Создать правило генерации оповещений**, чтобы создать оповещение. Теперь оповещения будут отображаться каждый раз, когда произойдет ошибка входа в систему.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Анализ журналов действий с помощью журналов Azure Monitor](howto-analyze-activity-logs-log-analytics.md)
-* [Начало работы с журналами Azure Monitor на портале Azure](https://docs.microsoft.com/azure/log-analytics/query-language/get-started-analytics-portal)
+* [Начало работы с журналами Azure Monitor на портале Azure](../../azure-monitor/log-query/get-started-portal.md)

@@ -3,12 +3,12 @@ title: Поддерживаемые типы ресурсов в службе р
 description: Поддерживаемые типы ресурсов в службе работоспособности ресурсов Azure
 ms.topic: conceptual
 ms.date: 01/29/2019
-ms.openlocfilehash: 2c002ab89b1cae4db6d3337908bb401039cb2295
-ms.sourcegitcommit: cd0a1ae644b95dbd3aac4be295eb4ef811be9aaa
+ms.openlocfilehash: d797b9fb9b843f114e01820fa666e56749c7983f
+ms.sourcegitcommit: d68c72e120bdd610bb6304dad503d3ea89a1f0f7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/19/2020
-ms.locfileid: "88611948"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89230166"
 ---
 # <a name="resource-types-and-health-checks-in-azure-resource-health"></a>Типы ресурсов и проверки работоспособности в службе работоспособности ресурсов Azure
 Ниже приведен полный список проверок, выполняемых в системе работоспособности ресурсов для разных типов ресурсов.
@@ -22,6 +22,11 @@ ms.locfileid: "88611948"
 |Выполняемые проверки|
 |---|
 |<ul><li>Служба Api Management запущена и работает?</li></ul>|
+
+## <a name="microsoftappplatformspring"></a>Microsoft.AppPlatform/Spring
+|Выполняемые проверки|
+|---|
+|<ul><li>Доступен ли экземпляр облака Azure весны?</li></ul>|
 
 ## <a name="microsoftbatchbatchaccounts"></a>Microsoft.Batch/batchAccounts
 |Выполняемые проверки|
@@ -56,12 +61,17 @@ ms.locfileid: "88611948"
 ## <a name="microsoftcomputehostgroupshosts"></a>Microsoft.compute/hostgroups/hosts
 |Выполняемые проверки|
 |---|
-|<ul><li>Узел включен и работает?</li><li>Ухудшается ли работоспособность оборудования узла?</li><li>Не отменено ли выделение узла?</li><li>Не выполняла ли служба оборудования узла восстановление на другое оборудование?</li></ul>|
+|<ul><li>Работает ли узел?</li><li>Ухудшается ли работоспособность оборудования узла?</li><li>Не отменено ли выделение узла?</li><li>Не выполняла ли служба оборудования узла восстановление на другое оборудование?</li></ul>|
 
 ## <a name="microsoftcomputevirtualmachines"></a>Microsoft.compute/virtualmachines
 |Выполняемые проверки|
 |---|
 |<ul><li>Сервер, размещающий эту виртуальную машину, включен и работает?</li><li>Завершена ли загрузка ОС на узле?</li><li>Контейнер виртуальной машины подготовлен и включен?</li><li>Есть ли сетевое подключение между узлом и учетной записи хранения?</li><li>Завершена ли загрузка гостевой операционной системы?</li><li>Есть ли назначенные работы по техническому обслуживанию?</li><li>Ухудшается ли работоспособность оборудования узла и прогнозируется ли его сбой в ближайшее время?</li></ul>|
+
+## <a name="microsoftcontainerservicemanagedclusters"></a>Microsoft.ContainerService/managedClusters
+|Выполняемые проверки|
+|---|
+|<ul><li>Работает ли кластер?</li><li>Доступны ли в кластере основные службы?</li><li>Все ли узлы кластера готовы?</li><li>Является ли субъект-служба текущим и действительным?</li></ul>|
 
 ## <a name="microsoftdatafactoryfactories"></a>Microsoft.datafactory/factories
 |Выполняемые проверки|
@@ -124,10 +134,20 @@ ms.locfileid: "88611948"
 |---|
 |<ul><li>Доступны ли базовые службы в кластере HDInsight?</li><li>Может ли кластер HDInsight обращаться к ключу для шифрования BYOK в хранилище?</li></ul>|
 
+## <a name="microsoftiotcentraliotapps"></a>Microsoft. Иотцентрал/Иотаппс
+|Выполняемые проверки|
+|---|
+|<ul><li>Доступно ли IoT Central приложение?</li></ul>|
+
 ## <a name="microsoftkeyvaultvaults"></a>Microsoft.KeyVault/vaults
 |Выполняемые проверки|
 |---|
 |<ul><li>Запросы в хранилище ключей завершались сбоем из-за проблем с платформой Azure Key Vault?</li><li>Для запросов в хранилище ключей требовалось регулирование из-за слишком большого количества запросов от клиента?</li></ul>|
+
+## <a name="microsoftkustoclusters"></a>Microsoft. Kusto/кластеры
+|Выполняемые проверки|
+|---|
+|<ul><li>Работает ли кластер с низкой скоростью приема?</li><li>Кластер испытывает высокую задержку приема?</li><li>Возникает ли в кластере большое количество ошибок запросов?</li></ul>|
 
 ## <a name="microsoftmachinelearningwebservices"></a>Microsoft.MachineLearning/webServices
 |Выполняемые проверки|
@@ -164,6 +184,11 @@ ms.locfileid: "88611948"
 |---|
 |<ul><li>Доступны ли конечные точки балансировки нагрузки?</li></ul>|
 
+## <a name="microsoftnetworktrafficmanagerprofiles"></a>Microsoft. Network/trafficmanagerprofiles
+|Выполняемые проверки|
+|---|
+|<ul><li>Какие проблемы влияют на профиль диспетчера трафика?</li></ul>|
+
 ## <a name="microsoftnetworkvirtualnetworkgateways"></a>Microsoft.network/virtualNetworkGateways
 |Выполняемые проверки|
 |---|
@@ -183,11 +208,6 @@ ms.locfileid: "88611948"
 |Выполняемые проверки|
 |---|
 |<ul><li>Запущен и работает ли ресурс производительности?</li><li>Все ли рабочие нагрузки запущены и работают?</li></ul>|
-
-## <a name="microsoftpowerbiworkspacecollections"></a>Microsoft.PowerBI/workspaceCollections
-|Выполняемые проверки|
-|---|
-|<ul><li>Работает ли операционная система узла?</li><li>Доступна ли коллекция workspaceCollection из-за пределов центра обработки данных?</li><li>Доступен ли поставщик ресурсов Power BI?</li><li>Доступна ли служба Power BI для соответствующего региона?</li></ul>|
 
 ## <a name="microsoftsearchsearchservices"></a>Microsoft.search/searchServices
 |Выполняемые проверки|
