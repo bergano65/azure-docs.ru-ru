@@ -300,7 +300,7 @@ ms.locfileid: "89047485"
 
 Если после присоединения учетной записи Azure Cosmos DB в узле "Local and Attached" (Локальные и присоединенные) отображается приведенная ниже ошибка, проверьте, используется ли правильная строка подключения.
 
-:::image type="content" source="./media/storage-explorer/attached-error.png" alt-text="Ошибка при подключении Azure Cosmos DB в узле "Local and Attached" (Локальные и присоединенные)":::
+:::image type="content" source="./media/storage-explorer/attached-error.png" alt-text="Ошибка при подключении Azure Cosmos DB в узле Local and Attached (Локальные и присоединенные)":::
 
 ### <a name="expand-azure-cosmos-db-node-error"></a>Ошибка развертывания узла Azure Cosmos DB
 
