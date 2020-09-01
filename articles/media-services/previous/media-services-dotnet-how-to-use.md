@@ -15,14 +15,16 @@ ms.topic: article
 ms.date: 03/18/2019
 ms.author: juliako
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 706e4762fa81ad4f290ded89387fc3ea9ab5bb1c
-ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
+ms.openlocfilehash: 8eb45397b1941b9a6955066c22d6d9d00eeef4c3
+ms.sourcegitcommit: bcda98171d6e81795e723e525f81e6235f044e52
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89020581"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89262102"
 ---
-# <a name="media-services-development-with-net"></a>Разработка служб мультимедиа с помощью .NET 
+# <a name="media-services-development-with-net"></a>Разработка служб мультимедиа с помощью .NET
+
+[!INCLUDE [media services api v2 logo](./includes/v2-hr.md)]
 
 > [!NOTE]
 > В Cлужбы мультимедиа версии 2 больше не добавляются новые компоненты или функциональные возможности. <br/>Ознакомьтесь с новейшей версией Служб мультимедиа — [версией 3](../latest/index.yml). Также изучите руководство по [миграции из версии 2 в версию 3](../latest/migrate-from-v2-to-v3.md).
@@ -31,7 +33,7 @@ ms.locfileid: "89020581"
 
 Библиотека **пакета SDK служб мультимедиа Azure для .NET** позволяет программировать для служб мультимедиа с помощью .NET. Чтобы упростить разработку с помощью .NET, предоставляется библиотека **расширений пакета SDK служб мультимедиа Azure для .NET** . Эта библиотека содержит набор методов расширения и вспомогательные функции, упрощающие код .NET. Обе библиотеки доступны в **NuGet** и на **GitHub**.
 
-## <a name="prerequisites"></a>Обязательные условия
+## <a name="prerequisites"></a>Предварительные требования
 * Учетная запись служб мультимедиа в новой или существующей подписке Azure. См. дополнительные сведения о [создании учетной записи Служб мультимедиа Azure](media-services-portal-create-account.md).
 * Операционные системы: Windows 10, Windows 7, Windows 2008 R2 или Windows 8.
 * .NET Framework 4.5 или более поздней версии.

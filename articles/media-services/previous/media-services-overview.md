@@ -13,14 +13,16 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 04/19/2019
 ms.author: juliako
-ms.openlocfilehash: 78fa6b343a01e96c000b6c64a55d5fdf1f0284f2
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 0d896b0ce23116f1b87718f492d407ac094b9e6a
+ms.sourcegitcommit: bcda98171d6e81795e723e525f81e6235f044e52
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87084659"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89261161"
 ---
-# <a name="azure-media-services-overview"></a>Общие сведения о службах мультимедиа Azure 
+# <a name="azure-media-services-overview"></a>Общие сведения о службах мультимедиа Azure
+
+[!INCLUDE [media services api v2 logo](./includes/v2-hr.md)]
 
 > [!div class="op_single_selector" title1="Выберите версию служб мультимедиа, которую вы используете:"]
 > * [Версия 3](../latest/media-services-overview.md)
@@ -42,7 +44,7 @@ ms.locfileid: "87084659"
 
 Сведения о соответствии, конфиденциальности и безопасности в службах мультимедиа см. в [центре управления безопасностью](https://www.microsoft.com/trust-center/?rtc=1)Майкрософт. Для обязательств по конфиденциальности корпорации Майкрософт, обработки данных и рекомендаций по хранению, включая сведения об удалении данных, ознакомьтесь с заявлением корпорации Майкрософт [о конфиденциальности](https://privacy.microsoft.com/PrivacyStatement), [условиями веб-служб](https://www.microsoft.com/licensing/product-licensing/products?rtc=1) ("OST") и [дополнением к обработке данных](https://www.microsoftvolumelicensing.com/DocumentSearch.aspx?Mode=3&DocumentTypeId=67) ("DPA"). Используя службы мультимедиа, вы соглашаетесь с использованием OST, DPA и заявления о конфиденциальности.
  
-## <a name="prerequisites"></a>Обязательные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Приступить к использованию служб мультимедиа Azure можно только при наличии следующих компонентов.
 

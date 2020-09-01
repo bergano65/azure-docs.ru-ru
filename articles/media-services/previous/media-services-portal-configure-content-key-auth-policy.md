@@ -14,14 +14,17 @@ ms.devlang: na
 ms.topic: article
 ms.date: 03/19/2019
 ms.author: juliako
-ms.openlocfilehash: 2be430fc032acd94f851072f80d14a43638c8863
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 0218c24637b9b49972e93b8dd53e5970c9ab89d5
+ms.sourcegitcommit: bcda98171d6e81795e723e525f81e6235f044e52
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87084591"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89260906"
 ---
 # <a name="configure-a-content-key-authorization-policy"></a>Настройка политики авторизации ключей содержимого
+
+[!INCLUDE [media services api v2 logo](./includes/v2-hr.md)]
+
 [!INCLUDE [media-services-selector-content-key-auth-policy](../../../includes/media-services-selector-content-key-auth-policy.md)]
 
 ## <a name="overview"></a>Обзор
@@ -33,7 +36,7 @@ ms.locfileid: "87084591"
 
 Когда проигрыватель запрашивает поток, для которого настроено динамическое шифрование, Службы мультимедиа, используя настроенный ключ, выполняют динамическое шифрование содержимого с помощью AES или DRM. Чтобы расшифровать поток, проигрыватель запросит ключ у службы доставки ключей. Чтобы определить, есть ли у пользователя право на получение ключа, служба оценивает политики авторизации, заданные для ключа.
 
-Если вы планируете использовать несколько ключей содержимого или хотите задать URL-адрес службы доставки ключей или лицензий, отличный от адреса службы доставки ключей Служб мультимедиа, используйте пакет SDK для .NET или интерфейсы REST API для Служб мультимедиа. Дополнительные сведения можно найти в разделе
+Если вы планируете использовать несколько ключей содержимого или хотите задать URL-адрес службы доставки ключей или лицензий, отличный от адреса службы доставки ключей Служб мультимедиа, используйте пакет SDK для .NET или интерфейсы REST API для Служб мультимедиа. Дополнительные сведения см. на странице
 
 * [Настройка политики авторизации ключей содержимого с помощью пакета SDK Служб мультимедиа для .NET](media-services-dotnet-configure-content-key-auth-policy.md)
 * [Настройка политики авторизации ключей содержимого с помощью REST API для Служб мультимедиа](media-services-rest-configure-content-key-auth-policy.md)

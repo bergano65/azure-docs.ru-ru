@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: identity
 ms.date: 02/25/2018
 ms.author: barclayn
-ms.openlocfilehash: 67e7f8890923dec2dca369b6a57399232c0198cc
-ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
+ms.openlocfilehash: 5b298767f9814f76dd606bab29bd0b245dad6937
+ms.sourcegitcommit: bcda98171d6e81795e723e525f81e6235f044e52
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89018382"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89260192"
 ---
 # <a name="how-to-stop-using-the-virtual-machine-managed-identities-extension-and-start-using-the-azure-instance-metadata-service"></a>Как отключить использование расширения управляемых удостоверений виртуальной машины и начать использовать службу метаданных экземпляра Azure
 
@@ -35,7 +35,7 @@ ms.locfileid: "89018382"
 
 ### <a name="provision-the-extension"></a>Подготавливает расширение 
 
-Если для виртуальной машины или масштабируемого набора виртуальных машин настроено управляемое удостоверение, при необходимости вы можете выбрать подготовку управляемых удостоверений для расширения виртуальной машины ресурсов Azure с помощью `-Type` параметра командлета [Set-азвмекстенсион](https://docs.microsoft.com/powershell/module/az.compute/set-azvmextension) . Вы можете передать значение `ManagedIdentityExtensionForWindows` или `ManagedIdentityExtensionForLinux` , в зависимости от типа виртуальной машины, и присвоить ему имя с помощью `-Name` параметра. В параметре `-Settings` указан порт, используемый конечной точкой токена OAuth для получения токена:
+Если для виртуальной машины или масштабируемого набора виртуальных машин настроено управляемое удостоверение, при необходимости вы можете выбрать подготовку управляемых удостоверений для расширения виртуальной машины ресурсов Azure с помощью `-Type` параметра командлета [Set-азвмекстенсион](/powershell/module/az.compute/set-azvmextension) . Вы можете передать значение `ManagedIdentityExtensionForWindows` или `ManagedIdentityExtensionForLinux` , в зависимости от типа виртуальной машины, и присвоить ему имя с помощью `-Name` параметра. В параметре `-Settings` указан порт, используемый конечной точкой токена OAuth для получения токена:
 
 ```powershell
    $settings = @{ "port" = 50342 }
@@ -96,7 +96,7 @@ ms.locfileid: "89018382"
 Подготовка расширения виртуальной машины может завершиться ошибкой из-за сбоев уточняющего запроса DNS. В этом случае перезапустите виртуальную машину и повторите попытку. 
 
 ### <a name="remove-the-extension"></a>Удаление расширения 
-Чтобы удалить расширение, используйте `-n ManagedIdentityExtensionForWindows` или `-n ManagedIdentityExtensionForLinux` коммутатор (в зависимости от типа виртуальной машины) с помощью команды [AZ VM Extension Delete](https://docs.microsoft.com/cli/azure/vm/)или [AZ vmss Extension Delete](https://docs.microsoft.com/cli/azure/vmss) для масштабируемых наборов виртуальных машин с помощью Azure CLI или `Remove-AzVMExtension` PowerShell:
+Чтобы удалить расширение, используйте `-n ManagedIdentityExtensionForWindows` или `-n ManagedIdentityExtensionForLinux` коммутатор (в зависимости от типа виртуальной машины) с помощью команды [AZ VM Extension Delete](/cli/azure/vm/)или [AZ vmss Extension Delete](/cli/azure/vmss) для масштабируемых наборов виртуальных машин с помощью Azure CLI или `Remove-AzVMExtension` PowerShell:
 
 ```azurecli-interactive
 az vm identity --resource-group myResourceGroup --vm-name myVm -n ManagedIdentityExtensionForWindows
@@ -196,7 +196,7 @@ Set-AzVMExtension -Name <extension name>  -Type <extension Type>  -Location <loc
 
 ## <a name="azure-instance-metadata-service"></a>Служба метаданных экземпляров Azure
 
-[Служба метаданных экземпляров Azure (IMDS)](/azure/virtual-machines/windows/instance-metadata-service) — это конечная точка RESTful, которая предоставляет сведения о выполняющихся экземплярах виртуальных машин, которые можно использовать для управления виртуальными машинами и их настройки. Конечная точка доступна на хорошо известном IP-адресе, не поддерживающем маршрутизацию ( `169.254.169.254` ), доступ к которому можно получить только с помощью виртуальной машины.
+[Служба метаданных экземпляров Azure (IMDS)](../../virtual-machines/windows/instance-metadata-service.md) — это конечная точка RESTful, которая предоставляет сведения о выполняющихся экземплярах виртуальных машин, которые можно использовать для управления виртуальными машинами и их настройки. Конечная точка доступна на хорошо известном IP-адресе, не поддерживающем маршрутизацию ( `169.254.169.254` ), доступ к которому можно получить только с помощью виртуальной машины.
 
 Использование Azure IMDS для запроса маркеров имеет несколько преимуществ. 
 
@@ -209,7 +209,7 @@ Set-AzVMExtension -Name <extension name>  -Type <extension Type>  -Location <loc
 По этим причинам служба IMDS Azure является нерекомендуемым способом запроса токенов, как только расширение виртуальной машины будет признано устаревшим. 
 
 
-## <a name="next-steps"></a>Next Steps
+## <a name="next-steps"></a>Следующие шаги
 
 * [Использование управляемых удостоверений для ресурсов Azure на виртуальной машине Azure для получения маркера доступа](how-to-use-vm-token.md)
-* [Служба метаданных экземпляров Azure](https://docs.microsoft.com/azure/virtual-machines/windows/instance-metadata-service)
+* [Служба метаданных экземпляров Azure](../../virtual-machines/windows/instance-metadata-service.md)

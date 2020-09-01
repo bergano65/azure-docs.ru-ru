@@ -5,12 +5,12 @@ ms.date: 12/16/2019
 ROBOTS: NOINDEX,NOFOLLOW
 ms.custom: RESTCURL2020FEB27
 ms.topic: how-to
-ms.openlocfilehash: d49b74ffff8f382427422071b7d8f494f71a52fb
-ms.sourcegitcommit: 61d850bc7f01c6fafee85bda726d89ab2ee733ce
+ms.openlocfilehash: 38bfada87701533002a2dcf304af573da4c87766
+ms.sourcegitcommit: bcda98171d6e81795e723e525f81e6235f044e52
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/03/2020
-ms.locfileid: "84345195"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89259903"
 ---
 # <a name="quickstart-create-a-knowledge-base-in-qna-maker-using-go"></a>Краткое руководство. Создание базы знаний в QnA Maker с помощью Go
 
@@ -37,44 +37,34 @@ ms.locfileid: "84345195"
 
 Чтобы добавить необходимые зависимости в проект, в верхней части файла `create-new-knowledge-base.go` укажите следующие строки:
 
-[!code-go[Add the required dependencies](~/samples-qnamaker-go/documentation-samples/quickstarts/create-knowledge-base/create-new-knowledge-base.go?range=1-11 "Add the required dependencies")]
-
-## <a name="add-the-required-constants"></a>Добавление необходимых констант
-После указания зависимостей добавьте необходимые константы, чтобы получить доступ к QnA Maker.
-
-Задайте следующие значения:
-
-* `<your-qna-maker-subscription-key>`. **Ключ** — это строка из 32 символов, которая доступна на странице "Быстрый запуск" ресурса QnA Maker на портале Azure. Это не то же самое, что ключ конечной точки прогнозирования.
-* `{your-resource-name}`. **Имя ресурса** используется для создания URL-адреса конечной точки разработки в формате `https://YOUR-RESOURCE-NAME.cognitiveservices.azure.com`. Это не тот же URL-адрес, который используется для запроса конечной точки прогнозирования.
-
-[!code-go[Add the required constants](~/samples-qnamaker-go/documentation-samples/quickstarts/create-knowledge-base/create-new-knowledge-base.go?range=13-20 "Add the required constants")]
+:::code language="go" source="~/cognitive-services-quickstart-code/go/QnAMaker/rest/create-kb.go" id="dependencies":::
 
 ## <a name="add-the-kb-model-definition"></a>Добавление определения модели базы знаний
 После констант добавьте приведенное ниже определение модели базы знаний. После определения модель преобразуется в строку.
 
-[!code-go[Add the KB model definition](~/samples-qnamaker-go/documentation-samples/quickstarts/create-knowledge-base/create-new-knowledge-base.go?range=22-44 "Add the KB model definition")]
+:::code language="go" source="~/cognitive-services-quickstart-code/go/QnAMaker/rest/create-kb.go" id="model":::
 
 ## <a name="add-supporting-structures-and-functions"></a>Добавление вспомогательных структур и функций
 
 Далее необходимо добавить приведенные ниже вспомогательные функции.
 
-1. Добавьте структуру для HTTP-запроса.
+1. Добавьте структуру для HTTP-ответа:
 
-    [!code-go[Add the structure for an HTTP request](~/samples-qnamaker-go/documentation-samples/quickstarts/create-knowledge-base/create-new-knowledge-base.go?range=46-49 "Add the structure for an HTTP request")]
+    :::code language="go" source="~/cognitive-services-quickstart-code/go/QnAMaker/rest/create-kb.go" id="response":::
 
-2. Добавьте приведенный ниже метод для обработки POST-запросов к API-интерфейсам QnA Maker. В этом руководстве POST используется для отправки определения базы знаний в QnA Maker.
+1. Добавьте приведенный ниже метод для обработки POST-запросов к API-интерфейсам QnA Maker. В этом руководстве POST используется для отправки определения базы знаний в QnA Maker.
 
-    [!code-go[Add the POST method](~/samples-qnamaker-go/documentation-samples/quickstarts/create-knowledge-base/create-new-knowledge-base.go?range=51-66 "Add the POST method")]
+    :::code language="go" source="~/cognitive-services-quickstart-code/go/QnAMaker/rest/create-kb.go" id="post":::
 
-3. Добавьте приведенный ниже метод для обработки GET-запросов к API-интерфейсам QnA Maker. В этом руководстве GET используется для проверки состояния операции создания.
+1. Добавьте приведенный ниже метод для обработки GET-запросов к API-интерфейсам QnA Maker. В этом руководстве GET используется для проверки состояния операции создания.
 
-    [!code-go[Add the GET method](~/samples-qnamaker-go/documentation-samples/quickstarts/create-knowledge-base/create-new-knowledge-base.go?range=68-83 "Add the GET method")]
+    :::code language="go" source="~/cognitive-services-quickstart-code/go/QnAMaker/rest/create-kb.go" id="get":::
 
 ## <a name="add-function-to-create-kb"></a>Добавление функции для создания базы знаний
 
 Добавьте приведенные ниже функции, чтобы отправить HTTP-запрос POST на создание базы знаний. **Идентификатор операции** _создания_ возвращается в **расположении**поля заголовка ответа POST, а затем используется как часть маршрута в запросе GET. `Ocp-Apim-Subscription-Key` — это ключ службы QnA Maker, используемый в процессе аутентификации.
 
-[!code-go[Add the create_kb method](~/samples-qnamaker-go/documentation-samples/quickstarts/create-knowledge-base/create-new-knowledge-base.go?range=85-97 "Add the create_kb method")]
+:::code language="go" source="~/cognitive-services-quickstart-code/go/QnAMaker/rest/create-kb.go" id="create_kb":::
 
 Этот вызов API возвращает ответ JSON, который содержит идентификатор операции. С помощью этого идентификатора определите, успешно ли создана база знаний.
 
@@ -92,7 +82,7 @@ ms.locfileid: "84345195"
 
 Добавьте приведенную ниже функцию, чтобы отправить HTTP-запрос GET на проверку состояния операции. `Ocp-Apim-Subscription-Key` — это ключ службы QnA Maker, используемый в процессе аутентификации.
 
-[!code-go[Add the check_status method](~/samples-qnamaker-go/documentation-samples/quickstarts/create-knowledge-base/create-new-knowledge-base.go?range=99-108 "Add the check_status method")]
+:::code language="go" source="~/cognitive-services-quickstart-code/go/QnAMaker/rest/create-kb.go" id="get_status":::
 
 Повторяйте вызов до успешного или неудачного выполнения:
 
@@ -110,7 +100,7 @@ ms.locfileid: "84345195"
 
 Ниже приведена функция main, которая создает базу данных и повторяет проверки состояния. Так как создание базы знаний может занять некоторое время, необходимо повторять вызовы, чтобы проверить состояние, пока не вернется успешный или неудачный ответ.
 
-[!code-go[Add the main method](~/samples-qnamaker-go/documentation-samples/quickstarts/create-knowledge-base/create-new-knowledge-base.go?range=110-140 "Add the main method")]
+:::code language="go" source="~/cognitive-services-quickstart-code/go/QnAMaker/rest/create-kb.go" id="main":::
 
 
 ## <a name="compile-the-program"></a>Компиляция программы

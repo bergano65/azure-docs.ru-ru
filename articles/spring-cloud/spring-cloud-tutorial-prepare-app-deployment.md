@@ -7,12 +7,12 @@ ms.topic: how-to
 ms.date: 02/03/2020
 ms.author: brendm
 ms.custom: devx-track-java
-ms.openlocfilehash: ff797f8b6fd375a940f77b4e0400bcb7a74450c4
-ms.sourcegitcommit: 3fb5e772f8f4068cc6d91d9cde253065a7f265d6
+ms.openlocfilehash: 79d3829eaea15c8e7909b98b83d1327cd90e4544
+ms.sourcegitcommit: bcda98171d6e81795e723e525f81e6235f044e52
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89179765"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89260329"
 ---
 # <a name="prepare-a-java-spring-application-for-deployment-in-azure-spring-cloud"></a>подготовке приложения Java Spring для развертывания в Azure Spring Cloud
 
@@ -41,8 +41,8 @@ Azure Spring Cloud поддерживает только приложения Sp
 Версия Spring Boot | Версия Spring Cloud
 ---|---
 2.1 | Greenwich.RELEASE
-2.2 | Hoxton.RELEASE
-2.3 | Хокстон. SR5
+2.2 | Хокстон. SR8
+2.3 | Хокстон. SR8
 
 ### <a name="dependencies-for-spring-boot-version-21"></a>Зависимости для Spring Boot версии 2.1
 
@@ -62,7 +62,7 @@ Azure Spring Cloud поддерживает только приложения Sp
             <dependency>
                 <groupId>org.springframework.cloud</groupId>
                 <artifactId>spring-cloud-dependencies</artifactId>
-                <version>Greenwich.SR4</version>
+                <version>Greenwich.RELEASE</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
@@ -88,7 +88,7 @@ Azure Spring Cloud поддерживает только приложения Sp
             <dependency>
                 <groupId>org.springframework.cloud</groupId>
                 <artifactId>spring-cloud-dependencies</artifactId>
-                <version>Hoxton.SR1</version>
+                <version>Hoxton.SR8</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
@@ -113,7 +113,7 @@ Azure Spring Cloud поддерживает только приложения Sp
             <dependency>
                 <groupId>org.springframework.cloud</groupId>
                 <artifactId>spring-cloud-dependencies</artifactId>
-                <version>Hoxton.SR5</version>
+                <version>Hoxton.SR8</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
@@ -122,49 +122,23 @@ Azure Spring Cloud поддерживает только приложения Sp
 ```
 ## <a name="azure-spring-cloud-client-dependency"></a>Зависимость клиента Azure Spring Cloud
 
-Azure Spring Cloud размещает компоненты Spring Cloud и управляет ими от вашего имени. К ним относятся реестр облачной службы Spring Cloud и сервер конфигурации Spring Cloud. Включите в зависимости клиентскую библиотеку Azure Spring Cloud, чтобы разрешить обмен данными с экземпляром службы Azure Spring Cloud.
+Azure Spring Cloud размещает компоненты Spring Cloud и управляет ими от вашего имени. К ним относятся реестр облачной службы Spring Cloud и сервер конфигурации Spring Cloud. Рекомендуется использовать пружинную загрузку 2,2 или 2,3. Для пружинной загрузки 2,1 необходимо включить клиентскую библиотеку Azure "Весна Cloud Client" в зависимости, чтобы обеспечить взаимодействие с экземпляром облачной службы Azure весны.
 
 В следующей таблице перечислены нужные версии Azure Spring Cloud для приложения, в котором используются Spring Boot и Spring Cloud.
 
-Версия Spring Boot | Версия Spring Cloud | Версия Azure Spring Cloud
+Версия Spring Boot | Версия Spring Cloud | Начальная версия облачного клиента Azure весны
 ---|---|---
-2.1 | Greenwich.RELEASE | 2.1
-2.2 | Hoxton.RELEASE | 2.2
-2.3 | Хокстон. SR5 | 2.3
+2.1 | Greenwich.RELEASE | 2.1.2
+2.2 | Хокстон. SR8 | Не требуется
+2.3 | Хокстон. SR8 | Не требуется
 
-Добавьте в файл pom.xml одну из следующих зависимостей. Выберите ту зависимость, у которой версия Azure Spring Cloud совпадает с используемой в вашей среде.
-
-### <a name="dependency-for-azure-spring-cloud-version-21"></a>Зависимость для Azure Spring Cloud версии 2.1
-
-Для Spring Boot версии 2.1 добавьте следующую зависимость в файл POM приложения.
+Если вы используете пружинную загрузку 2,1, включите следующие депенденЦии в файл pom.xml.
 
 ```xml
 <dependency>
         <groupId>com.microsoft.azure</groupId>
         <artifactId>spring-cloud-starter-azure-spring-cloud-client</artifactId>
         <version>2.1.2</version>
-</dependency>
-```
-
-### <a name="dependency-for-azure-spring-cloud-version-22"></a>Зависимость для Azure Spring Cloud версии 2.2
-
-Для Spring Boot версии 2.2 добавьте следующую зависимость в файл POM приложения.
-
-```xml
-<dependency>
-        <groupId>com.microsoft.azure</groupId>
-        <artifactId>spring-cloud-starter-azure-spring-cloud-client</artifactId>
-        <version>2.2.1</version>
-</dependency>
-```
-
-Для пружинной загрузки версии 2,3 Добавьте следующую зависимость в файл POM приложения.
-
-```xml
-<dependency>
-        <groupId>com.microsoft.azure</groupId>
-        <artifactId>spring-cloud-starter-azure-spring-cloud-client</artifactId>
-        <version>2.3.0</version>
 </dependency>
 ```
 

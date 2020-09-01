@@ -13,14 +13,16 @@ ms.devlang: na
 ms.topic: article
 ms.date: 04/01/2019
 ms.author: juliako
-ms.openlocfilehash: 9d73c280e3f5639b11e0d07b9ef2f775f48cd3c3
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: c0d3ece75d15ae07091f613348389f845ec74ef7
+ms.sourcegitcommit: bcda98171d6e81795e723e525f81e6235f044e52
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87038494"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89262521"
 ---
-# <a name="access-the-azure-media-services-api-with-azure-ad-authentication"></a>Доступ к API служб мультимедиа Azure с помощью аутентификации Azure AD  
+# <a name="access-the-azure-media-services-api-with-azure-ad-authentication"></a>Доступ к API служб мультимедиа Azure с помощью аутентификации Azure AD 
+
+[!INCLUDE [media services api v2 logo](./includes/v2-hr.md)] 
 
 > [!NOTE]
 > В Cлужбы мультимедиа версии 2 больше не добавляются новые компоненты или функциональные возможности. <br/>Ознакомьтесь с новейшей версией Служб мультимедиа — [версией 3](../latest/index.yml). Также изучите руководство по [миграции из версии 2 в версию 3](../latest/migrate-from-v2-to-v3.md).
@@ -139,7 +141,7 @@ API служб мультимедиа Azure — это REST API. Его можн
 
 Если вы не используете клиентский пакет SDK служб мультимедиа для .NET, то вам необходимо вручную создать запрос маркера Azure AD, указав параметры, описанные на шаге 1. Дополнительные сведения см. в разделе [Библиотеки проверки подлинности Azure Active Directory](../../active-directory/azuread-dev/active-directory-authentication-libraries.md).
 
-## <a name="troubleshooting"></a>Диагностика
+## <a name="troubleshooting"></a>Устранение неполадок
 
 Исключение: "Удаленный сервер возвратил ошибку: 401 - Не санкционировано"
 

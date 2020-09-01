@@ -15,14 +15,17 @@ ms.topic: article
 ms.date: 03/20/2019
 ms.author: anilmur
 ms.reviewer: juliako;johndeu
-ms.openlocfilehash: 4dceb558532305c6d2e84563e25ab05508423090
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: a53027ec1f775c240164f67e7ee0473a44690964
+ms.sourcegitcommit: bcda98171d6e81795e723e525f81e6235f044e52
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "72801953"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89262691"
 ---
-# <a name="create-advanced-encoding-workflows-with-workflow-designer"></a>Создание рабочих процессов расширенного кодирования с помощью конструктора рабочих процессов  
+# <a name="create-advanced-encoding-workflows-with-workflow-designer"></a>Создание рабочих процессов расширенного кодирования с помощью конструктора рабочих процессов
+
+[!INCLUDE [media services api v2 logo](./includes/v2-hr.md)]
+
 ## <a name="overview"></a>Обзор
 **Конструктор рабочих процессов** — это классическое средство Windows, которое используется для разработки и создания настраиваемых рабочих процессов шифрования с использованием **рабочего процесса Media Encoder Premium**.
 Возможности конструктора рабочих процессов позволяют проектировать и создавать сложные рабочие процессы, которые будут выполняться в **Media Encoder Premium**.  
@@ -83,12 +86,12 @@ ms.locfileid: "72801953"
 
 Вы можете открыть запрос в службу поддержки, перейдя к разделу [нового запроса на техническую поддержку](https://portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade/newsupportrequest)
 
-## <a name="next-step"></a>Следующий шаг
+## <a name="next-step"></a>Дальнейшие действия
 Просмотрите схемы обучения работе со службами мультимедиа.
 
 [!INCLUDE [media-services-learning-paths-include](../../../includes/media-services-learning-paths-include.md)]
 
-## <a name="provide-feedback"></a>Предоставление отзыва
+## <a name="provide-feedback"></a>Отзывы
 [!INCLUDE [media-services-user-voice-include](../../../includes/media-services-user-voice-include.md)]
 
 ## <a name="see-also"></a>См. также

@@ -13,14 +13,17 @@ ms.devlang: na
 ms.topic: article
 ms.date: 03/19/2019
 ms.author: juliako
-ms.openlocfilehash: 622f14beabb1f2f109dff5d28c1591ffdd5aa000
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 35f79702b7aad51b764ce2edb37c3c76d1fe98e8
+ms.sourcegitcommit: bcda98171d6e81795e723e525f81e6235f044e52
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "74901436"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89261518"
 ---
 # <a name="media-encoder-standard-schema"></a>Схема Media Encoder Standard
+
+[!INCLUDE [media services api v2 logo](./includes/v2-hr.md)]
+
 В этой статье описаны некоторые элементы и типы схемы XML, на которых основаны [предустановки Media Encoder Standard](media-services-mes-presets-overview.md). Также рассмотрены элементы и их допустимые значения.  
 
 ## <a name="preset-root-element"></a><a name="Preset"></a> Предустановка (корневой элемент)
@@ -28,7 +31,7 @@ ms.locfileid: "74901436"
 
 ### <a name="elements"></a>Элементы
 
-| Имя | Type | Описание: |
+| Название | Тип | Описание |
 | --- | --- | --- |
 | **Кодирование** |[Кодирование](media-services-mes-schema.md#Encoding) |Корневой элемент, который указывает, что источники входных данных должны быть закодированы. |
 | **Выходные данные** |[Выходные данные](media-services-mes-schema.md#Output) |Коллекция требуемых выходных файлов. |
@@ -36,16 +39,16 @@ ms.locfileid: "74901436"
 
 ### <a name="attributes"></a>Атрибуты
 
-| Имя | Type | Описание |
+| Название | Тип | Описание |
 | --- | --- | --- |
-| **Версия**<br/><br/> Обязательное значение |**xs: decimal** |Версия предустановки. Применяются следующие ограничения: xs:fractionDigits value="1" и xs:minInclusive value="1". Например, **version="1.0"**. |
+| **Версия**<br/><br/> Обязательно |**xs: decimal** |Версия предустановки. Применяются следующие ограничения: xs:fractionDigits value="1" и xs:minInclusive value="1". Например, **version="1.0"**. |
 
-## <a name="encoding"></a><a name="Encoding"></a>Шифрования
+## <a name="encoding"></a><a name="Encoding"></a> Шифрования
 Содержит последовательность следующих элементов.  
 
 ### <a name="elements"></a>Элементы
 
-| Имя | Type | Описание: |
+| Название | Тип | Описание |
 | --- | --- | --- |
 | **H264Video** |[H264Video](media-services-mes-schema.md#H264Video) |Параметры кодирования видео в формате H.264. |
 | **AACAudio** |[AACAudio](media-services-mes-schema.md#AACAudio) |Параметры кодирования аудио в формате AAC. |
@@ -53,31 +56,31 @@ ms.locfileid: "74901436"
 | **PngImage** |[PngImage](media-services-mes-schema.md#PngImage) |Параметры изображения в формате PNG. |
 | **JpgImage** |[JpgImage](media-services-mes-schema.md#JpgImage) |Параметры изображения в формате JPG. |
 
-## <a name="h264video"></a><a name="H264Video"></a>H264Video
+## <a name="h264video"></a><a name="H264Video"></a> H264Video
 ### <a name="elements"></a>Элементы
 
-| Имя | Type | Описание: |
+| Название | Тип | Описание |
 | --- | --- | --- |
 | **TwoPass**<br/><br/> minOccurs="0" |**xs:boolean** |Сейчас поддерживается только однопроходное кодирование. |
 | **KeyFrameInterval**<br/><br/> minOccurs="0"<br/><br/> **default="00:00:02"** |**xs:time** |Определяет фиксированный интервал между кадрами IDR в секундах. Этот параметр также называют длительностью GOP. В разделе **SceneChangeDetection** описывается, как указать, может ли кодировщик отклоняться от этого значения. |
 | **SceneChangeDetection**<br/><br/> minOccurs="0"<br/><br/> default=”false” |**xs: boolean** |Если задано значение true, кодировщик пытается обнаружить изменение сцены в видео и вставить кадр IDR. |
 | **Паролей**<br/><br/> minOccurs="0"<br/><br/> default="Balanced" |**xs:string** |Регулирует баланс между скоростью кодирования и качеством видео. Может принимать одно из следующих значений: **Speed**, **Balanced** и **Quality**.<br/><br/> Значение по умолчанию: **Balanced**. |
-| **SyncMode**<br/><br/> minOccurs="0" | |Функция будет доступна в будущем выпуске. |
+| **синкмоде**<br/><br/> minOccurs="0" | |Функция будет доступна в будущем выпуске. |
 | **H264Layers**<br/><br/> minOccurs="0" |[H264Layers](media-services-mes-schema.md#H264Layers) |Коллекция уровней выходных видео. |
 
 ### <a name="attributes"></a>Атрибуты
 
-| Имя | Type | Описание: |
+| Название | Тип | Описание |
 | --- | --- | --- |
-| **Условие** |**xs:string** | Если входные данные не имеют видео, может потребоваться заставить кодировщик вставить монохромную видеодорожку. Для этого используйте Condition = "InsertBlackIfNoVideoBottomLayerOnly" (для вставки видео с наименьшей скоростью) или Condition = "InsertBlackIfNoVideo" (для вставки видео на всех скоростях вывода). Дополнительные сведения см. в [этой статье](media-services-advanced-encoding-with-mes.md#no_video).|
+| **Condition** |**xs:string** | Если входные данные не имеют видео, может потребоваться заставить кодировщик вставить монохромную видеодорожку. Для этого используйте Condition = "InsertBlackIfNoVideoBottomLayerOnly" (для вставки видео с наименьшей скоростью) или Condition = "InsertBlackIfNoVideo" (для вставки видео на всех скоростях вывода). Дополнительные сведения см. в [этой статье](media-services-advanced-encoding-with-mes.md#no_video).|
 
-## <a name="h264layers"></a><a name="H264Layers"></a>H264Layers
+## <a name="h264layers"></a><a name="H264Layers"></a> H264Layers
 
 По умолчанию в случае отправки кодировщику входных данных, которые содержат только звук и не содержат видео, выходной ресурс-контейнер содержит файлы только с аудиоданными. Некоторые проигрыватели не смогут обработать такие выходные потоки. Можно указать атрибут **InsertBlackIfNoVideo** H264Video, чтобы кодировщик принудительного добавлял видеодорожку в выходные данные в этом сценарии. Дополнительные сведения см. в [этой статье](media-services-advanced-encoding-with-mes.md#no_video).
               
 ### <a name="elements"></a>Элементы
 
-| Имя | Type | Описание: |
+| Название | Тип | Описание |
 | --- | --- | --- |
 | **H264Layer**<br/><br/> minOccurs="0" maxOccurs="unbounded" |[H264Layer](media-services-mes-schema.md#H264Layer) |Коллекция уровней H264. |
 
@@ -89,10 +92,10 @@ ms.locfileid: "74901436"
 
 ### <a name="elements"></a>Элементы
 
-| Имя | Type | Описание |
+| Название | Тип | Описание |
 | --- | --- | --- |
 | **Профиль**<br/><br/> minOccurs="0"<br/><br/> default=”Auto” |**xs: string** |Может иметь одно из следующих значений **xs:string**: **Auto**, **Baseline**, **Main**, **High**. |
-| **Уровень**<br/><br/> minOccurs="0"<br/><br/> default=”Auto” |**xs: string** | |
+| **Level**<br/><br/> minOccurs="0"<br/><br/> default=”Auto” |**xs: string** | |
 | **Bitrate**<br/><br/> minOccurs="0" |**xs:int** |Скорость, используемая для этого уровня видео, указанная в Кбит/с. |
 | **MaxBitrate**<br/><br/> minOccurs="0" |**xs: int** |Максимальная скорость, используемая для этого уровня видео, указанная в Кбит/с. |
 | **BufferWindow**<br/><br/> minOccurs="0"<br/><br/> default="00:00:05" |**xs: time** |Длина буфера видео. |
@@ -105,37 +108,37 @@ ms.locfileid: "74901436"
 | **AdaptiveBFrame**<br/><br/> minOccurs="0" |**xs: boolean** |Копия из кодировщика мультимедиа Azure |
 | **Срезы**<br/><br/> minOccurs="0"<br/><br/> default="0" |**xs:int** |Определяет число фрагментов для разделенного кадра. Рекомендуется использовать значение по умолчанию. |
 
-## <a name="aacaudio"></a><a name="AACAudio"></a>AACAudio
+## <a name="aacaudio"></a><a name="AACAudio"></a> AACAudio
  Содержит последовательность следующих элементов и групп.  
 
  См. дополнительные сведения о стандарте [AAC](https://en.wikipedia.org/wiki/Advanced_Audio_Coding).  
 
 ### <a name="elements"></a>Элементы
 
-| Имя | Type | Описание |
+| Название | Тип | Описание |
 | --- | --- | --- |
 | **Профиль**<br/><br/> minOccurs="0 "<br/><br/> default="AACLC" |**xs: string** |Может принимать одно из следующих значений: **AACLC**, **HEAACV1** или **HEAACV2**. |
 
 ### <a name="attributes"></a>Атрибуты
 
-| Имя | Type | Описание: |
+| Название | Тип | Описание |
 | --- | --- | --- |
-| **Условие** |**xs: string** |Чтобы заставить кодировщик создать ресурс, содержащий звуковую дорожку с тишиной, когда входные данные не содержат звука, укажите значение "InsertSilenceIfNoAudio".<br/><br/> По умолчанию при отправке кодировщику входных данных, которые содержат только видео и не содержат звука, выходной ресурс-контейнер будет содержать файлы только с видеоданными. Некоторые проигрыватели не смогут обработать такие выходные потоки. Этот параметр можно использовать для принудительного добавления кодировщиком звуковой дорожки с тишиной к выходным данным в этом сценарии. |
+| **Condition** |**xs: string** |Чтобы заставить кодировщик создать ресурс, содержащий звуковую дорожку с тишиной, когда входные данные не содержат звука, укажите значение "InsertSilenceIfNoAudio".<br/><br/> По умолчанию при отправке кодировщику входных данных, которые содержат только видео и не содержат звука, выходной ресурс-контейнер будет содержать файлы только с видеоданными. Некоторые проигрыватели не смогут обработать такие выходные потоки. Этот параметр можно использовать для принудительного добавления кодировщиком звуковой дорожки с тишиной к выходным данным в этом сценарии. |
 
 ### <a name="groups"></a>Группы
 
-| Справка | Описание: |
+| Справочник | Описание |
 | --- | --- |
 | [AudioGroup](media-services-mes-schema.md#AudioGroup)<br/><br/> minOccurs="0" |См. описание [AudioGroup](media-services-mes-schema.md#AudioGroup), чтобы узнать необходимое число каналов, частоту выборки и скорость потока, которые можно установить для каждого профиля. |
 
-## <a name="audiogroup"></a><a name="AudioGroup"></a>AudioGroup
+## <a name="audiogroup"></a><a name="AudioGroup"></a> AudioGroup
 Дополнительные сведения о допустимых значениях для каждого профиля см. в таблице "Сведения об аудиокодеке" ниже.  
 
 ### <a name="elements"></a>Элементы
 
-| Имя | Type | Описание: |
+| Название | Тип | Описание |
 | --- | --- | --- |
-| **Channels**<br/><br/> minOccurs="0" |**xs: int** |Число закодированных аудиоканалов. Допустимые значения: 1, 2, 5, 6, 8.<br/><br/> Значение по умолчанию: 2. |
+| **Каналы**<br/><br/> minOccurs="0" |**xs: int** |Число закодированных аудиоканалов. Допустимые значения: 1, 2, 5, 6, 8.<br/><br/> Значение по умолчанию: 2. |
 | **SamplingRate**<br/><br/> minOccurs="0" |**xs: int** |Частота дискретизации, указанная в Гц. |
 | **Bitrate**<br/><br/> minOccurs="0" |**xs: int** |Скорость кодировки аудио, указанная в Кбит/с. |
 
@@ -147,18 +150,18 @@ ms.locfileid: "74901436"
 **HEAACV1** |1:<br/><br/> - 22050: скорость = 8<br/><br/> - 24000: 8 &lt;= скорость &lt;= 10<br/><br/> - 32000: 12 &lt;= скорость &lt;= 64<br/><br/> - 44100: 20 &lt;= скорость &lt;= 64<br/><br/> - 48000: 20 &lt;= скорость &lt;= 64<br/><br/> - 88200: скорость = 64<br/><br/> 2:<br/><br/> - 32000: 16 &lt;= скорость &lt;= 128<br/><br/> - 44100: 16 &lt;= скорость &lt;= 128<br/><br/> - 48000: 16 &lt;= скорость &lt;= 128<br/><br/> - 88 200 : 96 &lt;= скорость &lt;= 128<br/><br/> - 96000: 96 &lt;= скорость &lt;= 128<br/><br/> 5/6:<br/><br/> - 32 000 : 64 &lt;= скорость &lt;= 320<br/><br/> - 44100: 64 &lt;= скорость &lt;= 320<br/><br/> - 48000: 64 &lt;= скорость &lt;= 320<br/><br/> - 88 200 : 256 &lt;= скорость &lt;= 320<br/><br/> - 96000: 256 &lt;= скорость &lt;= 320<br/><br/> 8:<br/><br/> - 32000: 96 &lt;= скорость &lt;= 448<br/><br/> - 44100: 96 &lt;= скорость &lt;= 448<br/><br/> - 48000: 96 &lt;= скорость &lt;= 448<br/><br/> - 88200: 384 &lt;= скорость &lt;= 448<br/><br/> - 96000: 384 &lt;= скорость &lt;= 448  
 **HEAACV2** |2:<br/><br/> - 22050: 8 &lt;= скорость &lt;= 10<br/><br/> - 24000: 8 &lt;= скорость &lt;= 10<br/><br/> - 32000: 12 &lt;= скорость &lt;= 64<br/><br/> - 44100: 20 &lt;= скорость &lt;= 64<br/><br/> - 48000: 20 &lt;= скорость &lt;= 64<br/><br/> - 88200: 64 &lt;= скорость &lt;= 64  
   
-## <a name="clip"></a><a name="Clip"></a>Усечения
+## <a name="clip"></a><a name="Clip"></a> Усечения
 ### <a name="attributes"></a>Атрибуты
 
-| Имя | Type | Описание: |
+| Название | Тип | Описание |
 | --- | --- | --- |
 | **StartTime** |**xs:duration** |Указывает время начала презентации. Значение StartTime должно соответствовать абсолютной метке времени входящего видео. Например, если первый кадр входящего видео имеет метку времени 12:00:10.000, значение StartTime должно было равно или больше 12:00:10.000. |
 | **Длительность** |**xs:duration** |Указывает продолжительность презентации (например, внешний вид наложения в видео). |
 
-## <a name="output"></a><a name="Output"></a>Проверки
+## <a name="output"></a><a name="Output"></a> Вывод
 ### <a name="attributes"></a>Атрибуты
 
-| Имя | Type | Описание: |
+| Название | Тип | Описание |
 | --- | --- | --- |
 | **FileName** |**xs:string** |Имя выходного файла.<br/><br/> Для создания имен выходных файлов можно использовать макросы, описанные в следующей таблице. Пример:<br/><br/> **"Outputs": [      {       "FileName": "{Basename}*{Resolution}*{Bitrate}.mp4",       "Format": {         "Type": "MP4Format"       }     }   ]** |
 
@@ -178,9 +181,9 @@ ms.locfileid: "74901436"
 ## <a name="video-complex-type-inherits-from-codec"></a><a name="Video"></a> Видео (сложный тип, который наследуется из кодека)
 ### <a name="attributes"></a>Атрибуты
 
-| Имя | Type | Описание: |
+| Название | Тип | Описание |
 | --- | --- | --- |
-| **Start** |**xs:string** | |
+| **Начало** |**xs:string** | |
 | **Step** |**xs:string** | |
 | **Range** |**xs:string** | |
 | **PreserveResolutionAfterRotation** |**xs:boolean** |Подробное описание см. в следующем разделе: [PreserveResolutionAfterRotation](media-services-mes-schema.md#PreserveResolutionAfterRotation). |
@@ -203,44 +206,44 @@ ms.locfileid: "74901436"
 ## <a name="formatgroup-group"></a><a name="FormatGroup"></a> FormatGroup (группа)
 ### <a name="elements"></a>Элементы
 
-| Имя | Type | Описание: |
+| Название | Тип | Описание |
 | --- | --- | --- |
 | **BmpFormat** |**BmpFormat** | |
 | **PngFormat** |**PngFormat** | |
 | **JpgFormat** |**JpgFormat** | |
 
-## <a name="bmplayer"></a><a name="BmpLayer"></a>бмплайер
+## <a name="bmplayer"></a><a name="BmpLayer"></a> бмплайер
 ### <a name="element"></a>Элемент
 
-| Имя | Type | Описание: |
+| Имя | Тип | Описание |
 | --- | --- | --- |
 | **Width**<br/><br/> minOccurs="0" |**xs:int** | |
 | **Height**<br/><br/> minOccurs="0" |**xs:int** | |
 
 ### <a name="attributes"></a>Атрибуты
 
-| Имя | Type | Описание: |
+| Название | Тип | Описание |
 | --- | --- | --- |
-| **Условие** |**xs:string** | |
+| **Condition** |**xs:string** | |
 
-## <a name="pnglayer"></a><a name="PngLayer"></a>пнглайер
+## <a name="pnglayer"></a><a name="PngLayer"></a> пнглайер
 ### <a name="element"></a>Элемент
 
-| Имя | Type | Описание: |
+| Имя | Тип | Описание |
 | --- | --- | --- |
 | **Width**<br/><br/> minOccurs="0" |**xs:int** | |
 | **Height**<br/><br/> minOccurs="0" |**xs:int** | |
 
 ### <a name="attributes"></a>Атрибуты
 
-| Имя | Type | Описание: |
+| Название | Тип | Описание |
 | --- | --- | --- |
-| **Условие** |**xs:string** | |
+| **Condition** |**xs:string** | |
 
-## <a name="jpglayer"></a><a name="JpgLayer"></a>жпглайер
+## <a name="jpglayer"></a><a name="JpgLayer"></a> жпглайер
 ### <a name="element"></a>Элемент
 
-| Имя | Type | Описание: |
+| Имя | Тип | Описание |
 | --- | --- | --- |
 | **Width**<br/><br/> minOccurs="0" |**xs:int** | |
 | **Height**<br/><br/> minOccurs="0" |**xs:int** | |
@@ -248,56 +251,56 @@ ms.locfileid: "74901436"
 
 ### <a name="attributes"></a>Атрибуты
 
-| Имя | Type | Описание: |
+| Название | Тип | Описание |
 | --- | --- | --- |
-| **Условие** |**xs:string** | |
+| **Condition** |**xs:string** | |
 
-## <a name="pnglayers"></a><a name="PngLayers"></a>PngLayers
+## <a name="pnglayers"></a><a name="PngLayers"></a> PngLayers
 ### <a name="elements"></a>Элементы
 
-| Имя | Type | Описание: |
+| Название | Тип | Описание |
 | --- | --- | --- |
 | **PngLayer**<br/><br/> minOccurs="0" maxOccurs="unbounded" |[PngLayer](media-services-mes-schema.md#PngLayer) | |
 
 ## <a name="bmplayers"></a><a name="BmpLayers"></a> BmpLayers
 ### <a name="elements"></a>Элементы
 
-| Имя | Type | Описание: |
+| Название | Тип | Описание |
 | --- | --- | --- |
 | **BmpLayer**<br/><br/> minOccurs="0" maxOccurs="unbounded" |[BmpLayer](media-services-mes-schema.md#BmpLayer) | |
 
 ## <a name="jpglayers"></a><a name="JpgLayers"></a> JpgLayers
 ### <a name="elements"></a>Элементы
 
-| Имя | Type | Описание: |
+| Название | Тип | Описание |
 | --- | --- | --- |
 | **JpgLayer**<br/><br/> minOccurs="0" maxOccurs="unbounded" |[JpgLayer](media-services-mes-schema.md#JpgLayer) | |
 
 ## <a name="bmpimage-complex-type-inherits-from-video"></a><a name="BmpImage"></a> BmpImage (сложный тип, который наследуется из видео)
 ### <a name="elements"></a>Элементы
 
-| Имя | Type | Описание: |
+| Название | Тип | Описание |
 | --- | --- | --- |
 | **PngLayers**<br/><br/> minOccurs="0" |[PngLayers](media-services-mes-schema.md#PngLayers) |Уровни PNG |
 
 ## <a name="jpgimage-complex-type-inherits-from-video"></a><a name="JpgImage"></a> JpgImage (сложный тип, который наследуется из видео)
 ### <a name="elements"></a>Элементы
 
-| Имя | Type | Описание: |
+| Название | Тип | Описание |
 | --- | --- | --- |
 | **PngLayers**<br/><br/> minOccurs="0" |[PngLayers](media-services-mes-schema.md#PngLayers) |Уровни PNG |
 
 ## <a name="pngimage-complex-type-inherits-from-video"></a><a name="PngImage"></a> PngImage (сложный тип, который наследуется из видео)
 ### <a name="elements"></a>Элементы
 
-| Имя | Type | Описание: |
+| Название | Тип | Описание |
 | --- | --- | --- |
 | **PngLayers**<br/><br/> minOccurs="0" |[PngLayers](media-services-mes-schema.md#PngLayers) |Уровни PNG |
 
 ## <a name="examples"></a>Примеры
 Примеры предустановок XML, созданных на основе этой схемы, см. в документации по [предустановкам задач для MES (Media Encoder Standard)](media-services-mes-presets-overview.md).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 [!INCLUDE [media-services-learning-paths-include](../../../includes/media-services-learning-paths-include.md)]
 
 ## <a name="provide-feedback"></a>Отзывы

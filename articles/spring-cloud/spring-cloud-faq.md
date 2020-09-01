@@ -7,18 +7,18 @@ ms.topic: conceptual
 ms.date: 10/07/2019
 ms.author: brendm
 ms.custom: devx-track-java
-ms.openlocfilehash: 73c0eeb718bb6ede8215ed3a87e246185a248ffd
-ms.sourcegitcommit: 420c30c760caf5742ba2e71f18cfd7649d1ead8a
+ms.openlocfilehash: fcd9f0759ae885199347cc23d93e8f1c00251387
+ms.sourcegitcommit: bcda98171d6e81795e723e525f81e6235f044e52
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89054994"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89260532"
 ---
 # <a name="azure-spring-cloud-faq"></a>Вопросы и ответы по Azure весн Cloud
 
 В этой статье содержатся ответы на часто задаваемые вопросы о Microsoft Azure Веснного облака.
 
-## <a name="general"></a>Общие сведения
+## <a name="general"></a>Общие
 
 ### <a name="why-azure-spring-cloud"></a>Вопросы и ответы по Azure Spring Cloud.
 
@@ -40,10 +40,10 @@ Azure Веснного облака расширяет возможности д
 
 ### <a name="what-are-the-known-limitations-of-azure-spring-cloud"></a>Каковы известные ограничения Azure Веснного облака?
 
-Во время действия предварительной версии облако Azure весны имеет следующие известные ограничения.
-
+Azure Веснного облака имеет следующие известные ограничения.
+    
 * `spring.application.name` будет переопределено именем приложения, которое используется для создания каждого приложения.
-* `server.port` по умолчанию используется порт 80/443. Если применяется любое другое значение, оно будет переопределено в 80/443.
+* `server.port` по умолчанию используется порт 1025. Если применяется любое другое значение, оно будет переопределено в 1025.
 * Шаблоны портал Azure и Azure Resource Manager не поддерживают отправку пакетов приложений. Пакеты приложений можно отправлять только путем развертывания приложения с помощью Azure CLI.
 
 ### <a name="what-pricing-tiers-are-available"></a>Какие ценовые категории доступны? 

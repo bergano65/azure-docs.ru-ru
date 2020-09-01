@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 11/04/2019
 ms.author: brendm
 ms.custom: devx-track-java
-ms.openlocfilehash: cda22c63a70c5121e6a6972c66bdc0a4bb5158fc
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 7d47311385848f96a12a50c1dcf8b8284869c71d
+ms.sourcegitcommit: bcda98171d6e81795e723e525f81e6235f044e52
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87089470"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89260362"
 ---
 # <a name="quotas-and-service-plans-for-azure-spring-cloud"></a>Квоты и планы обслуживания для Azure Веснного облака
 
@@ -27,9 +27,6 @@ vCPU | 1 на экземпляр службы | 4 на экземпляр слу
 Экземпляры службы Azure Spring Cloud по регионам на одну подписку | 10 | 10
 Всего экземпляров приложений на экземпляр службы Azure Spring Cloud | 25 | 500
 Постоянные тома | 1 ГБ/приложение x 10 приложений | 50 ГБ/приложение x 10 приложений
-
-
-В течение периода действия предварительной версии Azure Веснное облако предлагает только один уровень служб. При достижении предельного значения вы получите ошибку 400, которая считывает: "квота превышает *лимит подписки для подписки в* регионе региона *, где создана облачная служба Azure" Весна*".
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
