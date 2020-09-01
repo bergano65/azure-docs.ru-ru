@@ -39,7 +39,7 @@ ms.locfileid: "88752863"
 
 Для начала на вкладке _Основные сведения_ настройте новое приложение и свяжите его с репозиторием GitHub.
 
-:::image type="content" source="media/getting-started-portal/basics-tab.png" alt-text="Вкладка "Основные сведения"":::
+:::image type="content" source="media/getting-started-portal/basics-tab.png" alt-text="Вкладка Основные сведения":::
 
 1. Выберите _подписку Azure_.
 1. Выберите или создайте _группу ресурсов_.
@@ -93,18 +93,18 @@ ms.locfileid: "88752863"
 
 1. Выберите **Review + create** (Просмотреть и создать).
 
-    :::image type="content" source="media/getting-started-portal/review-create.png" alt-text="Кнопка "Просмотр и создание"":::
+    :::image type="content" source="media/getting-started-portal/review-create.png" alt-text="Кнопка Просмотр и создание":::
 
     > [!NOTE]
     > Чтобы изменить эти значения после создания приложения, поправьте [файл рабочего процесса](github-actions-workflow.md).
 
 1. Нажмите кнопку **Создать**.
 
-    :::image type="content" source="media/getting-started-portal/create-button.png" alt-text="Кнопка "Создать"":::
+    :::image type="content" source="media/getting-started-portal/create-button.png" alt-text="Кнопка Создать":::
 
 1. Выберите **Перейти к ресурсу**.
 
-    :::image type="content" source="media/getting-started-portal/resource-button.png" alt-text="Кнопка "Перейти к ресурсу"":::
+    :::image type="content" source="media/getting-started-portal/resource-button.png" alt-text="Кнопка Перейти к ресурсу":::
 
 [!INCLUDE [view website](../../includes/static-web-apps-get-started-view-website.md)]
 
