@@ -13,13 +13,13 @@ ms.workload: iaas-sql-server
 ms.date: 11/13/2019
 ms.author: mathoma
 ms.reviewer: jroth
-ms.custom: devx-track-azurecli
-ms.openlocfilehash: 6c52275735a6558a625e2118761d7ba98509dbe1
-ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
+ms.custom: devx-track-azurecli, devx-track-azurepowershell
+ms.openlocfilehash: 3f1a9a2756d81765d82938651672e5a83edc48ed
+ms.sourcegitcommit: 656c0c38cf550327a9ee10cc936029378bc7b5a2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/31/2020
-ms.locfileid: "87497075"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89078696"
 ---
 # <a name="register-a-sql-server-vm-in-azure-with-the-sql-vm-resource-provider-rp"></a>Регистрация SQL Server виртуальной машины в Azure с помощью поставщика ресурсов виртуальной машины (RP) SQL
 [!INCLUDE[appliesto-sqlvm](../../includes/appliesto-sqlvm.md)]
@@ -398,9 +398,9 @@ Remove-AzSqlVM -ResourceGroupName <resource_group_name> -Name <VM_name>
 
 **Будет ли установлен агент на мою виртуальную машину при регистрации с помощью поставщика ресурсов виртуальной машины SQL?**
 
-Нет. При регистрации с помощью поставщика ресурсов виртуальной машины SQL будет создан только ресурс метаданных. Агент не будет установлен на виртуальной машине.
+Да, при регистрации в поставщике ресурсов виртуальной машины SQL на виртуальной машине будет установлен агент.
 
-Расширение IaaS для SQL Server необходимо только для обеспечения полной управляемости. При обновлении режима управляемости с упрощенного на полный будет установлено расширение IaaS для SQL Server и перезапущен SQL Server.
+Расширение SQL Server IaaS использует агент для запроса метаданных SQL Server. Единственный момент, когда агент не установлен, — это то, что поставщик ресурсов виртуальной машины SQL регситеред в режиме "без агента".
 
 **Будет ли регистрация с помощью SQL Server перезапуска поставщика ресурсов виртуальной машины SQL на моей виртуальной машине?**
 
@@ -466,6 +466,6 @@ Remove-AzSqlVM -ResourceGroupName <resource_group_name> -Name <VM_name>
 Дополнительные сведения см. в следующих статьях: 
 
 * [Обзор SQL Server на виртуальных машинах Windows](sql-server-on-azure-vm-iaas-what-is-overview.md).
-* [Вопросы и ответы об SQL Server на виртуальных машинах Windows](frequently-asked-questions-faq.md)
+* [Вопросы и ответы об SQL Server на виртуальных машинах Windows](frequently-asked-questions-faq.md)  
 * [Руководство по ценам для виртуальных машин SQL Server в Azure](pricing-guidance.md)
 * [Заметки о выпуске SQL Server на виртуальных машинах Windows](../../database/doc-changes-updates-release-notes.md)

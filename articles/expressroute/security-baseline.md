@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 06/22/2020
 ms.author: mbaldwin
 ms.custom: security-benchmark
-ms.openlocfilehash: f5c81897f74163191de4b167ffa56225ca0698ca
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: f84c73f3fbefddd2972f077826fe1e2a8738ad5a
+ms.sourcegitcommit: 656c0c38cf550327a9ee10cc936029378bc7b5a2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87079045"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89079155"
 ---
 # <a name="azure-security-baseline-for-expressroute"></a>Базовый план безопасности Azure для ExpressRoute
 
@@ -46,7 +46,7 @@ ms.locfileid: "87079045"
 
 ### <a name="13-protect-critical-web-applications"></a>1.3. Защита критических веб-приложений
 
-**Руководство**. Неприменимо; эта рекомендация предназначена для веб-приложений, работающих в службе приложений Azure или в ресурсах вычислений.
+**Рекомендации**. Неприменимо. Эта рекомендация предназначена для веб-приложений, работающих в службе приложений Azure или в ресурсах вычислений.
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -88,7 +88,7 @@ ms.locfileid: "87079045"
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
-**Ответственность**. Неприменимо
+**Ответственность**: Неприменимо
 
 ### <a name="18-minimize-complexity-and-administrative-overhead-of-network-security-rules"></a>1.8. Уменьшение сложности и дополнительных затрат на администрирование в правилах безопасности сети
 
@@ -182,7 +182,7 @@ ms.locfileid: "87079045"
 
 * [Настройка параметров хранения журнала](https://docs.microsoft.com/azure/azure-monitor/platform/manage-cost-storage#change-the-data-retention-period)
 
-**Мониторинг Центра безопасности Azure**. Неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
 **Ответственность**: Customer
 
@@ -194,7 +194,7 @@ ms.locfileid: "87079045"
 
 * [Получение и анализ журналов действий Azure в Log Analytics рабочей области в Azure Monitor](https://docs.microsoft.com/azure/azure-monitor/platform/activity-log-collect)
 
-**Мониторинг Центра безопасности Azure**. Неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
 **Ответственность**: Customer
 
@@ -240,13 +240,13 @@ ms.locfileid: "87079045"
 
 **Руководство**. обслуживание учетных записей пользователей, имеющих административный доступ к плоскости управления (например, портал Azure) ресурсов Azure ExpressRoute.
 
-Вы можете использовать область управления доступом и удостоверениями (IAM) в портал Azure для подписки, чтобы настроить управление доступом на основе ролей (RBAC). Роли применяются к пользователям, группам, субъектам-службам и управляемым удостоверениям в Active Directory.
+Вы можете использовать область управления доступом и удостоверениями (IAM) в портал Azure для подписки, чтобы настроить управление доступом на основе ролей Azure (Azure RBAC). Роли применяются к пользователям, группам, субъектам-службам и управляемым удостоверениям в Active Directory.
 
 Кроме того, партнеры, использующие API партнера ExpressRoute диспетчер ресурсов, могут применять управление доступом на основе ролей к ресурсу Експрессраутекроссконнектион. Эти элементы управления могут определять разрешения, для которых учетные записи пользователей могут изменять ресурс Експрессраутекроссконнектион, а также добавлять, обновлять и удалять конфигурации пиринга.
 
-* [Общие сведения о RBAC в Azure](https://docs.microsoft.com/azure/role-based-access-control/overview)
+* [Общие сведения об Azure RBAC](https://docs.microsoft.com/azure/role-based-access-control/overview)
 
-* [Использование RBAC в API партнера ExpressRoute диспетчер ресурсов](https://docs.microsoft.com/azure/expressroute/cross-connections-api-development)
+* [Использование Azure RBAC в диспетчер ресурсов API для партнера ExpressRoute](https://docs.microsoft.com/azure/expressroute/cross-connections-api-development)
 
 **Мониторинг Центра безопасности Azure**: Да
 
@@ -256,7 +256,7 @@ ms.locfileid: "87079045"
 
 **Рекомендации**. В Azure AD нет концепции паролей по умолчанию. Другие ресурсы Azure, которым требуется пароль, принудительно запрашивают пароль с требованиями к сложности и минимальной длиной пароля, которая зависит от службы. Вы несете ответственность за сторонние приложения и службы Marketplace, которые могут использовать пароли по умолчанию.
 
-**Мониторинг Центра безопасности Azure**. Неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
 **Ответственность**: Customer
 
@@ -293,7 +293,7 @@ ms.locfileid: "87079045"
 
 * [Мониторинг идентификации и доступа в Центре безопасности Azure](https://docs.microsoft.com/azure/security-center/security-center-identity-access)
 
-**Мониторинг Центра безопасности Azure**. Да
+**Мониторинг Центра безопасности Azure**: Да
 
 **Ответственность**: Customer
 
@@ -305,7 +305,7 @@ ms.locfileid: "87079045"
 
 * [Планирование развертывания облачной службы Многофакторной идентификации Azure](https://docs.microsoft.com/azure/active-directory/authentication/howto-mfa-getstarted)
 
-**Мониторинг Центра безопасности Azure**. Неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
 **Ответственность**: Customer
 
@@ -329,9 +329,9 @@ ms.locfileid: "87079045"
 
 * [Настройка именованных расположений в Azure](https://docs.microsoft.com/azure/active-directory/reports-monitoring/quickstart-configure-named-locations)
 
-**Мониторинг Центра безопасности Azure**. Неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
-**Ответственность**. Customer
+**Ответственность**: Customer
 
 ### <a name="39-use-azure-active-directory"></a>3.9. Использование Azure Active Directory
 
@@ -339,7 +339,7 @@ ms.locfileid: "87079045"
 
 * [Создание и настройка экземпляра Azure AD](https://docs.microsoft.com/azure/active-directory/fundamentals/active-directory-access-create-new-tenant)
 
-**Мониторинг Центра безопасности Azure**. Неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
 **Ответственность**: Customer
 
@@ -367,9 +367,9 @@ ms.locfileid: "87079045"
 
 * [Подключение к Azure Sentinel](https://docs.microsoft.com/azure/sentinel/quickstart-onboard)
 
-**Мониторинг Центра безопасности Azure**. Неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
-**Ответственность**. Customer
+**Ответственность**: Customer
 
 ### <a name="312-alert-on-account-login-behavior-deviation"></a>3.12. Предупреждение при подозрительном входе в учетную запись
 
@@ -427,7 +427,7 @@ ms.locfileid: "87079045"
 
 * [Общие сведения о защите данных клиентов в Azure](https://docs.microsoft.com/azure/security/fundamentals/protection-customer-data)
 
-**Мониторинг Центра безопасности Azure**. Неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
 **Ответственность**: Microsoft
 
@@ -437,7 +437,7 @@ ms.locfileid: "87079045"
 
 * [Как настроить IPSEC "сеть — сеть" через ExpressRoute](https://docs.microsoft.com/azure/expressroute/site-to-site-vpn-over-microsoft-peering)
 
-Как настроить IPSEC "сеть — сеть" через ExpressRoute:https://docs.microsoft.com/azure/expressroute/site-to-site-vpn-over-microsoft-peering
+Как настроить IPSEC "сеть — сеть" через ExpressRoute: https://docs.microsoft.com/azure/expressroute/site-to-site-vpn-over-microsoft-peering
 
 **Мониторинг центра безопасности Azure**: Сейчас это недоступно
 
@@ -453,27 +453,27 @@ ms.locfileid: "87079045"
 
 **Ответственность**: Неприменимо
 
-### <a name="46-use-role-based-access-control-to-control-access-to-resources"></a>4,6. Использование управления доступом на основе ролей для управления доступом к ресурсам
+### <a name="46-use-azure-rbac-to-control-access-to-resources"></a>4.6. Контроль доступа к ресурсам с помощью RBAC
 
-**Руководство**. Вы можете использовать область управления доступом и удостоверениями (IAM) в портал Azure для подписки, чтобы настроить управление доступом на основе РОЛЕЙ (RBAC). Роли применяются к пользователям, группам, субъектам-службам и управляемым удостоверениям в Active Directory. Для частных пользователей и групп можно использовать встроенные роли или пользовательские роли.
+**Руководство**. Вы можете использовать область управления доступом и удостоверениями (IAM) в портал Azure для подписки, чтобы настроить управление доступом на основе ролей Azure (Azure RBAC). Роли применяются к пользователям, группам, субъектам-службам и управляемым удостоверениям в Active Directory. Для частных пользователей и групп можно использовать встроенные роли или пользовательские роли.
 
 Azure ExpressRoute также имеет роли пользователя "владелец цепи" и "канал". Пользователи канала являются владельцами шлюзов виртуальных сетей (которые находятся в разных подписках с каналом ExpressRoute). Владелец канала имеет право изменить или отменить авторизацию в любое время. Отмена разрешения приводит к удалению всех связывающих подключений из подписки, доступ к которой был отменен. Пользователи канала могут активировать разрешения (по одному разрешению для каждой виртуальной сети).
 
 Кроме того, партнеры, использующие API партнера ExpressRoute диспетчер ресурсов, могут применять управление доступом на основе ролей к ресурсу Експрессраутекроссконнектион. Эти элементы управления могут определять разрешения, для которых учетные записи пользователей могут изменять ресурс Експрессраутекроссконнектион, а также добавлять, обновлять и удалять конфигурации пиринга.
 
-* [Общие сведения о RBAC в Azure](https://docs.microsoft.com/azure/role-based-access-control/overview)
+* [Общие сведения об Azure RBAC](https://docs.microsoft.com/azure/role-based-access-control/overview)
 
-* [Использование RBAC в API партнера ExpressRoute диспетчер ресурсов](https://docs.microsoft.com/azure/expressroute/cross-connections-api-development)
+* [Использование Azure RBAC в диспетчер ресурсов API для партнера ExpressRoute](https://docs.microsoft.com/azure/expressroute/cross-connections-api-development)
 
 * [Общие сведения о ролях администрирования в ExpressRoute](https://docs.microsoft.com/azure/expressroute/expressroute-howto-linkvnet-portal-resource-manager#connect-a-vnet-to-a-circuit---different-subscription)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
-**Ответственность**. Customer
+**Ответственность**: Customer
 
 ### <a name="47-use-host-based-data-loss-prevention-to-enforce-access-control"></a>4.7. Использование защиты от потери данных на основе узла для обеспечения контроля доступа
 
-**Рекомендации**. Неприменимо. Эта рекомендация предназначена для вычислительных ресурсов. Корпорация Майкрософт управляет базовой инфраструктурой для Azure Sentinel и реализовала четкие элементы управления для предотвращения потери или раскрытия данных клиента.
+**Руководство**. Неприменимо; эта рекомендация предназначена для вычислительных ресурсов. Корпорация Майкрософт управляет базовой инфраструктурой для Azure Sentinel и реализовала четкие элементы управления для предотвращения потери или раскрытия данных клиента.
 
 * [Защита данных клиентов в Azure](https://docs.microsoft.com/azure/security/fundamentals/protection-customer-data)
 
@@ -513,7 +513,7 @@ Azure ExpressRoute также имеет роли пользователя "вл
 
 **Руководство**: неприменимо; Корпорация Майкрософт выполняет Управление уязвимостью в базовых системах, поддерживающих Azure ExpressRoute.
 
-**Мониторинг Центра безопасности Azure**. Неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
 **Ответственность**: Microsoft
 
@@ -565,9 +565,9 @@ Azure ExpressRoute также имеет роли пользователя "вл
 
 * [Общие сведения об Azure RBAC](https://docs.microsoft.com/azure/role-based-access-control/overview)
 
-**Мониторинг Центра безопасности Azure**. Неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
-**Ответственность**. Customer
+**Ответственность**: Customer
 
 ### <a name="62-maintain-asset-metadata"></a>6.2. Ведение метаданных активов
 
@@ -593,7 +593,7 @@ Azure ExpressRoute также имеет роли пользователя "вл
 
 * [Создание и использование тегов](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-using-tags)
 
-**Мониторинг Центра безопасности Azure**. Неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
 **Ответственность**: Customer
 
@@ -653,7 +653,7 @@ Azure ExpressRoute также имеет роли пользователя "вл
 
 * [Как отказаться от определенного типа ресурса с помощью Политики Azure](https://docs.microsoft.com/azure/governance/policy/samples/not-allowed-resource-types)
 
-**Мониторинг Центра безопасности Azure**. Неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
 **Ответственность**: Customer
 
@@ -743,7 +743,7 @@ Azure ExpressRoute также имеет роли пользователя "вл
 
 * [Документация по Azure Repos](https://docs.microsoft.com/azure/devops/repos/index?view=azure-devops)
 
-**Мониторинг Центра безопасности Azure**: Неприменимо
+**Мониторинг Центра безопасности Azure**. Неприменимо
 
 **Ответственность**: Неприменимо
 
@@ -819,7 +819,7 @@ Azure ExpressRoute также имеет роли пользователя "вл
 
 * [Как настроить сканер учетных данных](https://secdevtools.azurewebsites.net/helpcredscan.html)
 
-**Мониторинг Центра безопасности Azure**. Неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
 **Ответственность**: Customer
 
@@ -841,7 +841,7 @@ Azure ExpressRoute также имеет роли пользователя "вл
 
 Вы отвечаете за предварительную проверку содержимого, которое передается в ресурсы Azure, не являющиеся ресурсами вычислений. Корпорация Майкрософт не может получить доступ к данным клиентов, поэтому не может проводить проверку содержимого клиентов от вредоносных программ от вашего имени.
 
-**Мониторинг Центра безопасности Azure**. Неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
 **Ответственность**: Customer
 
@@ -935,7 +935,7 @@ Azure ExpressRoute также имеет роли пользователя "вл
 
 * [См. публикацию NIST: руководство по тестированию, обучению и выполнению программ для ИТ-планов и возможностей](https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-84.pdf)
 
-**Мониторинг Центра безопасности Azure**: Неприменимо
+**Мониторинг Центра безопасности Azure**. Неприменимо
 
 **Ответственность**: Customer
 

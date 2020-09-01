@@ -8,12 +8,12 @@ ms.subservice: edge
 ms.topic: how-to
 ms.date: 06/24/2019
 ms.author: alkohli
-ms.openlocfilehash: 6e46d1a923eec5244bf77c201ff0b3189699c9ea
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 75e7a43d545bea63d553ad01836ed5c6ebc2dcc9
+ms.sourcegitcommit: 656c0c38cf550327a9ee10cc936029378bc7b5a2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84339728"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89079801"
 ---
 # <a name="manage-access-power-and-connectivity-mode-for-your-azure-stack-edge"></a>Управление доступом, питанием и режимом подключения для Azure Stackной стороны
 
@@ -95,7 +95,7 @@ Get-AzResourceProvider -ListAvailable |where {$_.Registrationstate -eq "Register
 Register-AzResourceProvider -ProviderNamespace Microsoft.DataBoxEdge
 ```
 
-Дополнительные сведения о регистрации поставщика ресурсов см. в разделе [Устранение ошибок регистрации поставщика ресурсов](https://docs.microsoft.com/azure/azure-resource-manager/resource-manager-register-provider-errors).
+Дополнительные сведения о регистрации поставщика ресурсов см. в разделе [Устранение ошибок регистрации поставщика ресурсов](../azure-resource-manager/templates/error-register-resource-provider.md).
 
 ## <a name="manage-connectivity-mode"></a>Управление режимом подключения
 
@@ -120,7 +120,7 @@ Register-AzResourceProvider -ProviderNamespace Microsoft.DataBoxEdge
  
 ## <a name="manage-power"></a>Управление питанием
 
-Вы можете выключить или перезапустить физическое устройство с помощью локального веб-интерфейса. Перед перезапуском рекомендуется перевести общие папки в автономный режим на сервере данных, а затем на устройстве. Это действие уменьшает возможность повреждения данных.
+Чтобы завершить работу физического устройства или перезапустить его, можно использовать локальный пользовательский веб-интерфейс. Перед тем как перезапустить устройство, рекомендуется отключить автономный доступ к ресурсам на сервере данных, а затем на устройстве. Это действие уменьшает возможность повреждения данных.
 
 1. В локальном пользовательском веб-интерфейсе последовательно выберите **Обслуживание > Настройки питания**.
 2. Выберите **Завершение работы** или **Перезагрузка** в зависимости от того, что вы собираетесь сделать.
@@ -132,6 +132,6 @@ Register-AzResourceProvider -ProviderNamespace Microsoft.DataBoxEdge
 > [!NOTE]
 > При завершении работы физического устройства необходимо будет нажать кнопку питания на устройстве, чтобы включить его.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Сведения об управлении общими папками см. [здесь](azure-stack-edge-manage-shares.md).

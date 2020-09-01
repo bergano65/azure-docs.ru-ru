@@ -1,0 +1,179 @@
+---
+title: Развертывание приложения PHP гостевой книги в Arc Enabled Kubernetes Azure Stack на пограничном устройстве | Документация Майкрософт
+description: В этой статье описывается, как развернуть незащищенное от Redis приложение PHP без отслеживания состояния с помощью Гитопс на Azure Stack кластере Kubernetes с поддержкой ARC.
+services: databox
+author: alkohli
+ms.service: databox
+ms.subservice: edge
+ms.topic: how-to
+ms.date: 08/25/2020
+ms.author: alkohli
+ms.openlocfilehash: 46cef291a447a7c243ee9ef66ee64e9c6264ad23
+ms.sourcegitcommit: 656c0c38cf550327a9ee10cc936029378bc7b5a2
+ms.translationtype: MT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89085766"
+---
+# <a name="deploy-a-php-guestbook-stateless-application-with-redis-on-arc-enabled-kubernetes-cluster-on-azure-stack-edge"></a>Развертывание приложения с нештатной книгой (без отслеживания состояния) на Redis с поддержкой ARC в кластере Kubernetes на границе Azure Stack
+
+В этой статье показано, как создать и развернуть простое многоуровневое веб-приложение с помощью Kubernetes и дуги Azure. Этот пример состоит из следующих компонентов:
+
+- Redis главный экземпляр для хранения записей гостевой книги
+- Несколько реплицируемых экземпляров Redis для обслуживания операций чтения
+- Несколько экземпляров веб-интерфейсов
+
+Развертывание выполняется с помощью Гитопс в кластере Kubernetes с поддержкой Arc на пограничном устройстве Azure Stack. 
+
+Эта процедура предназначена для тех, кто ознакомился с [Kubernetes рабочими нагрузками на Azure Stack пограничном устройстве](azure-stack-edge-gpu-kubernetes-workload-management.md) и знаком с концепциями того, [что такое служба Arc Azure Kubernetes (Предварительная версия)](https://docs.microsoft.com/azure/azure-arc/kubernetes/overview).
+
+
+## <a name="prerequisites"></a>Предварительные требования
+
+Перед развертыванием приложения без отслеживания состояния убедитесь, что выполнены следующие необходимые условия на устройстве и клиент, который будет использоваться для доступа к устройству:
+
+### <a name="for-device"></a>Для устройств
+
+1. У вас есть учетные данные для входа на 1 узел Azure Stack пограничной устройство.
+    1. Устройство активировано. См. раздел [Активация устройства](azure-stack-edge-gpu-deploy-activate.md).
+    1. Устройство имеет роль вычислений, настроенную через портал Azure и имеющую кластер Kubernetes. См. раздел [Настройка вычислений](azure-stack-edge-gpu-deploy-configure-compute.md).
+
+1. Вы включили дугу Azure в существующем кластере Kubernetes на устройстве, и у вас есть соответствующий ресурс Arc Azure в портал Azure. Подробные инструкции см. [в разделе Включение дуги Azure на Azure Stack пограничном устройстве](azure-stack-edge-gpu-deploy-arc-kubernetes-cluster.md).
+
+### <a name="for-client-accessing-the-device"></a>Для клиента, обращающегося к устройству
+
+1. У вас есть клиентская система Windows, которая будет использоваться для доступа к Azure Stack пограничному устройству.
+  
+    - Клиент работает под управлением Windows PowerShell 5,0 или более поздней версии. Чтобы скачать последнюю версию Windows PowerShell, перейдите к разделу [Установка Windows PowerShell](https://docs.microsoft.com/powershell/scripting/install/installing-windows-powershell?view=powershell-7).
+    
+    - Также можно использовать любой другой клиент с [поддерживаемой операционной системой](azure-stack-edge-gpu-system-requirements.md#supported-os-for-clients-connected-to-device) . В этой статье описывается процедура использования клиента Windows. 
+    
+1. Вы завершили процедуру, описанную в статье [доступ к кластеру Kubernetes на пограничном устройстве Azure Stack](azure-stack-edge-gpu-create-kubernetes-cluster.md). Вы выполнили следующие задачи:
+    
+    - Установлено `kubectl` на клиенте  <!--and saved the `kubeconfig` file with the user configuration to C:\\Users\\&lt;username&gt;\\.kube. -->
+    
+    - Убедитесь, что `kubectl` версия клиента отклонена, но не имеет более одной версии из главной версии Kubernetes, работающей на устройстве Azure Stack пограничном. 
+      - Используйте `kubectl version` для проверки версии kubectl, работающей на клиенте. Запишите полную версию.
+      - В локальном пользовательском интерфейсе устройства Azure Stack пограничных устройств перейдите к разделу **Обзор** и запишите номер программного обеспечения Kubernetes. 
+      - Проверьте эти две версии на совместимость с сопоставлением, указанным в поддерживаемой версии Kubernetes. <!--insert link-->.
+
+1. У вас есть [Конфигурация гитопс, которую можно использовать для запуска развертывания Azure Arc](https://github.com/kagoyal/dbehaikudemo). `yaml`Для развертывания на пограничном устройстве Azure Stack вы будете использовать следующие файлы.
+
+    - `frontend-deployment.yaml`<!-- - The guestbook application has a web frontend serving the HTTP requests written in PHP. It is configured to connect to the redis-master Service for write requests and the redis-slave service for Read requests. This file describes a deployment that runs the frontend of the guestbook application.-->
+    - `frontend-service.yaml` <!-- - This allows you to configure an externally visible frontend Service that can be accessed from outside the Kubernetes cluster on your device.-->
+    - `redis-master-deployment.yaml` <!-- - This deployment file runs a single replica Redis master Pod. The guestbook application uses Redis to store its data. It writes its data to a Redis master instance and reads data from multiple Redis slave instances.-->
+    - `redis-master-service.yaml` <!-- - The guestbook application needs to communicate to the Redis master to write its data. You need to apply a Service to proxy the traffic to the Redis master Pod. A Service defines a policy to access the Pods.-->
+    - `redis-slave-deployment.yaml` <!-- - Although the Redis master is a single pod, you can make it highly available to meet traffic demands by adding replica Redis slaves. The Redis Slave Deployment specifies two replicas.-->
+    - `redis-slave-service.yaml` <!-- - The guestbook application needs to communicate to Redis slaves to read data. To make the Redis slaves discoverable, you need to set up a Service. A Service provides transparent load balancing to a set of Pods.-->
+
+<!-- az cli version requirements-->
+
+
+## <a name="deploy-configuration"></a>Развертывание конфигурации
+
+Выполните следующие действия, чтобы настроить ресурс дуги Azure для развертывания конфигурации Гитопс с помощью портал Azure: 
+
+1. В портал Azure перейдите к ресурсу Arc Azure, созданному при включении дуги Azure в кластере Kubernetes на устройстве. 
+
+    ![Переход к ресурсу Arc Azure](media/azure-stack-edge-gpu-connect-powershell-interface/verify-azure-arc-enabled-1.png)
+
+1. Перейдите в раздел **конфигурации** и выберите **+ Добавить конфигурацию**.
+
+    ![Переход к конфигурациям](media/azure-stack-edge-gpu-connect-powershell-interface/select-configurations-1.png)
+
+1. В поле **Добавить конфигурацию**введите соответствующие значения для полей и нажмите кнопку **Применить**.
+
+    |Параметр  |Описание |
+    |---------|---------|
+    |Имя конфигурации     | Имя для ресурса конфигурации.        |
+    |Имя экземпляра оператора     |Имя экземпляра оператора для задания конкретной конфигурации. Имя — это строка из максимум 253 символов, которая должна быть строчной, буквенно-цифровой, дефисом и точкой.         |
+    |Пространство имен оператора     | Задайте значение **демотестгуестбук** , так как это соответствует пространству имен, указанному в развертывании `yaml` . <br> Поле определяет пространство имен, в котором установлен оператор. Имя — это строка из максимум 253 символов, которая должна быть строчной, буквенно-цифровой, дефисом и точкой.         |
+    |URL-адрес репозитория     |<br>Путь к репозиторию Git в `http://github.com/username/repo` или `git://github.com/username/repo` формате, где находится конфигурация гитопс.         |
+    |Область действия оператора     | Выберите **пространство имен**. <br>Определяет область, в которой установлен оператор. Выберите это пространство имен. Оператор будет установлен в пространстве имен, указанном в файлах развертывания YAML.       |
+    |Тип оператора     | Оставьте значение по умолчанию. <br>Это указывает тип оператора по умолчанию, установленный как Flux.        |
+    |Параметры оператора     | Не заполняйте это поле. <br>Это поле содержит параметры для передачи оператору Flux.        |
+    |Helm     | Установите этот параметр в значение **отключено**. <br>Включите этот параметр, если планируется развертывание на основе диаграмм.        |
+
+
+    ![Добавление конфигурации](media/azure-stack-edge-gpu-connect-powershell-interface/add-configuration-1.png)
+
+
+1. Запускается развертывание конфигурации, и **состояние оператора** отображается как **Ожидание**. 
+
+    ![Переход к конфигурациям](media/azure-stack-edge-gpu-connect-powershell-interface/view-configurations-1.png)
+
+1. Развертывание займет несколько минут. По завершении развертывания **состояние оператора** отображается как **установлено**.
+
+    ![Переход к конфигурациям](media/azure-stack-edge-gpu-connect-powershell-interface/view-configurations-2.png)
+
+
+## <a name="verify-deployment"></a>Проверка развертывания
+
+При развертывании с помощью конфигурации Гитопс создается `demotestguestbook` пространство имен, указанное в файлах развертывания, `yaml` расположенных в репозитории Git.
+
+1. После применения конфигурации Гитопс [подключитесь к интерфейсу PowerShell устройства](azure-stack-edge-gpu-connect-powershell-interface.md#connect-to-the-powershell-interface).
+1. Выполните следующую команду, чтобы вывести список модулей Pod, выполняющихся в `demotestguestbook` пространстве имен, соответствующем развертыванию.
+
+    `kubectl get pods -n <your-namespace>`
+  
+    Ниже приведен пример выходных данных.
+  
+    ```powershell
+    [10.128.44.240]: PS>kubectl get pods -n demotestguestbook
+    NAME                            READY   STATUS    RESTARTS   AGE
+    aseoperator1-5569658644-cqtb5   1/1     Running   0          91m
+    frontend-6cb7f8bd65-4xb4f       1/1     Running   0          91m
+    frontend-6cb7f8bd65-q9cxj       1/1     Running   0          91m
+    frontend-6cb7f8bd65-xpzs6       1/1     Running   0          91m
+    memcached-86bdf9f56b-5l2fq      1/1     Running   0          91m
+    redis-master-7db7f6579f-2z29w   1/1     Running   0          91m
+    redis-slave-7664787fbc-lgr2n    1/1     Running   0          91m
+    redis-slave-7664787fbc-vlvzn    1/1     Running   0          91m
+    [10.128.44.240]: PS>
+    ```  
+
+1. В этом примере интерфейсная служба была развернута как тип: балансировщик. Для просмотра гостевой книги необходимо найти IP-адрес этой службы. Выполните следующую команду.
+
+    `kubectl get service -n <your-namespace>`
+    
+    ```powershell
+    [10.128.44.240]: PS>kubectl get service -n demotestguestbook
+    NAME           TYPE           CLUSTER-IP       EXTERNAL-IP     PORT(S)        AGE
+    frontend       LoadBalancer   10.96.79.38      10.128.44.245   80:31238/TCP   85m
+    memcached      ClusterIP      10.102.47.75     <none>          11211/TCP      85m
+    redis-master   ClusterIP      10.104.32.99     <none>          6379/TCP       85m
+    redis-slave    ClusterIP      10.104.215.146   <none>          6379/TCP       85m
+    [10.128.44.240]: PS>
+    ```
+1. Интерфейсная служба `type:LoadBalancer` имеет внешний IP-адрес. Этот IP-адрес относится к диапазону IP-адресов, указанному для внешних служб при настройке параметров вычислений сети на устройстве. Используйте этот IP-адрес для просмотра гостевой книги по URL-адресу: `https://<external-IP-address>` .
+
+    ![Просмотр гостевой книги](media/azure-stack-edge-gpu-connect-powershell-interface/view-guestbook-1.png)
+
+## <a name="delete-deployment"></a>Удалить развертывание
+
+Чтобы удалить развертывание, можно удалить конфигурацию из портал Azure. При этом будут удалены созданные объекты, включая развертывания и службы.
+
+1. В портал Azure перейдите по адресу > конфигурации ресурсов ARC в Azure. 
+1. Выберите конфигурацию, которую необходимо удалить. Выберите... чтобы вызвать контекстное меню и выбрать команду **Удалить**.
+    ![Удалить конфигурацию](media/azure-stack-edge-gpu-connect-powershell-interface/delete-configuration-1.png)
+
+Удаление конфигурации может занять несколько минут.
+ 
+<!--```powershell
+kubectl delete deployment <deployment-name> -n <your-namespace>
+kubectl delete service <service-name> -n <your-namespace>
+```
+
+Here is a sample output of when you delete the deployments and the services.
+
+```powershell
+C:\Users\user>kubectl delete deployment,svc mysql -n userns1
+deployment.apps "mysql" deleted
+service "mysql" deleted
+C:\Users\user>
+```-->
+
+
+## <a name="next-steps"></a>Дальнейшие действия
+
+Узнайте, как [использовать панель мониторинга Kubernetes для мониторинга развертываний на устройстве Azure Stack пограничных устройств](azure-stack-edge-gpu-monitor-kubernetes-dashboard.md)

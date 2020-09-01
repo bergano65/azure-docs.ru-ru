@@ -94,6 +94,8 @@
       href: configure-automatic-updates.md
     - name: Установка языковых пакетов
       href: language-packs.md
+    - name: Разрешение рекомендаций
+      href: azure-advisor-recommendations.md
 - name: Основные понятия
   items:
     - name: Аутентификация

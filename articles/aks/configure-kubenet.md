@@ -5,12 +5,12 @@ services: container-service
 ms.topic: article
 ms.date: 06/02/2020
 ms.reviewer: nieberts, jomore
-ms.openlocfilehash: 037e07a1d8a6a3b4016d00f1b5a68bffc9caf335
-ms.sourcegitcommit: 8def3249f2c216d7b9d96b154eb096640221b6b9
+ms.openlocfilehash: f9bc0cd229888d952821509ced6cc5410000ee52
+ms.sourcegitcommit: 656c0c38cf550327a9ee10cc936029378bc7b5a2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87543373"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89078730"
 ---
 # <a name="use-kubenet-networking-with-your-own-ip-address-ranges-in-azure-kubernetes-service-aks"></a>Использование сети kubenet с пользовательскими диапазонами IP-адресов в Службе Azure Kubernetes (AKS)
 
@@ -20,12 +20,12 @@ ms.locfileid: "87543373"
 
 В этой статье показано, как с помощью сети *kubenet* создать и использовать подсеть виртуальной сети для кластера AKS. Дополнительные сведения о сетях см. в статье [Основные понятия сети в Службе Azure Kubernetes (AKS)][aks-network-concepts].
 
-## <a name="prerequisites"></a>Обязательные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 * Виртуальная сеть для кластера AKS должна разрешать исходящее подключение к Интернету.
 * Не создавайте больше одного кластера AKS в одной подсети.
 * Кластеры AKS не могут использовать `169.254.0.0/16` , `172.30.0.0/16` , `172.31.0.0/16` или `192.0.2.0/24` для диапазона адресов службы Kubernetes.
-* Субъект-служба, используемая кластером AKS, должна иметь по крайней мере роль [участника сети](../role-based-access-control/built-in-roles.md#network-contributor) в подсети в виртуальной сети. Если вы хотите определить [пользовательскую роль](../role-based-access-control/custom-roles.md) вместо того, чтобы использовать встроенную роль участника сети, требуются следующие разрешения:
+* Субъект-служба, используемая кластером AKS, должна иметь по крайней мере роль [участника сети](../role-based-access-control/built-in-roles.md#network-contributor) в подсети в виртуальной сети. Кроме того, для создания субъекта-службы и назначения ему разрешений необходимо иметь соответствующие разрешения, например владелец подписки. Если вы хотите определить [пользовательскую роль](../role-based-access-control/custom-roles.md) вместо того, чтобы использовать встроенную роль участника сети, требуются следующие разрешения:
   * `Microsoft.Network/virtualNetworks/subnets/join/action`
   * `Microsoft.Network/virtualNetworks/subnets/read`
 
@@ -244,7 +244,7 @@ az network vnet subnet list --resource-group
 az aks create -g MyResourceGroup -n MyManagedCluster --vnet-subnet-id MySubnetID
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 При развертывании кластера AKS в подсети существующей виртуальной сети его можно использовать в обычном режиме. Приступите к [созданию приложений с помощью Azure dev Spaces][dev-spaces], [развертыванию существующих приложений с помощью Helm][use-helm]или [созданию новых приложений с помощью Helm][develop-helm].
 

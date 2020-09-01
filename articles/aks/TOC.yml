@@ -129,6 +129,8 @@
       href: security-hardened-vm-host-image.md
     - name: Общие сведения о диагностике Службы Azure Kubernetes
       href: concepts-diagnostics.md
+    - name: Стабильная программная инженерия
+      href: concepts-sustainable-software-engineering.md
 - name: Практические руководства
   items:
     - name: Операции с кластером
