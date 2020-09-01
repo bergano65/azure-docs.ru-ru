@@ -10,12 +10,12 @@ ms.date: 08/10/2020
 ms.author: tamram
 ms.subservice: blobs
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 7e8d712a3477fe7dd9b963f203b3374dd5fa2a2e
-ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
+ms.openlocfilehash: b34664d36be2f18bc6821d5b13ca8bd403f2b6fc
+ms.sourcegitcommit: 656c0c38cf550327a9ee10cc936029378bc7b5a2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89001065"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89074412"
 ---
 # <a name="enable-and-manage-blob-versioning-preview"></a>Включение управления версиями BLOB-объектов и управление ими (Предварительная версия)
 
@@ -24,6 +24,8 @@ ms.locfileid: "89001065"
 В этой статье показано, как включить или отключить управление версиями BLOB-объектов для учетной записи хранения с помощью портал Azure или шаблона Azure Resource Manager.
 
 Перед включением управления версиями BLOB-объектов необходимо зарегистрироваться в предварительной версии. Дополнительные сведения о управлении версиями BLOB-объектов, включая сведения о регистрации для предварительной версии, см. в разделе [Управление версиями больших двоичных объектов (Предварительная версия)](versioning-overview.md).
+
+[!INCLUDE [storage-data-lake-gen2-support](../../../includes/storage-data-lake-gen2-support.md)]
 
 ## <a name="enable-blob-versioning"></a>Включение управления версиями BLOB-объектов
 

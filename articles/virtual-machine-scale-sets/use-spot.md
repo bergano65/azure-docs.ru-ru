@@ -8,13 +8,13 @@ ms.service: virtual-machine-scale-sets
 ms.subservice: spot
 ms.date: 03/25/2020
 ms.reviewer: jagaveer
-ms.custom: jagaveer, devx-track-azurecli
-ms.openlocfilehash: de8cfa66d6d52fe16cc40c5df0f41a39fff134fd
-ms.sourcegitcommit: 2ff0d073607bc746ffc638a84bb026d1705e543e
+ms.custom: jagaveer, devx-track-azurecli, devx-track-azurepowershell
+ms.openlocfilehash: b5888000028ba87d503bb0bc690aad6628a51a37
+ms.sourcegitcommit: 656c0c38cf550327a9ee10cc936029378bc7b5a2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87832643"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89072746"
 ---
 # <a name="azure-spot-vms-for-virtual-machine-scale-sets"></a>Виртуальные машины с Точкию Azure для масштабируемых наборов виртуальных машин 
 
@@ -186,6 +186,6 @@ $vmssConfig = New-AzVmssConfig `
 
 **Ответ.** Разместите вопрос с тегом `azure-spot` в разделе [вопросов и ответов](/answers/topics/azure-spot.html). 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Ознакомьтесь со сведениями о ценах на [странице для определения тарифа масштабируемых наборов виртуальных машин](https://azure.microsoft.com/pricing/details/virtual-machine-scale-sets/linux/).

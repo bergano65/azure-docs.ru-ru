@@ -6,16 +6,20 @@ ms.service: virtual-machines-linux
 ms.topic: how-to
 ms.date: 03/22/2019
 ms.author: cynthn
-ms.openlocfilehash: ef9650690435a3770e59326e757ab1c783fa7b23
-ms.sourcegitcommit: f353fe5acd9698aa31631f38dd32790d889b4dbb
+ms.openlocfilehash: 184e856636a74ce5b7ac72b2e8cab3d1f19c4e17
+ms.sourcegitcommit: 656c0c38cf550327a9ee10cc936029378bc7b5a2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87372762"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89074395"
 ---
 # <a name="how-to-create-a-linux-virtual-machine-with-azure-resource-manager-templates"></a>Как создать виртуальную машину Linux с помощью шаблонов Azure Resource Manager
 
 Узнайте, как создать виртуальную машину Linux с помощью шаблона Azure Resource Manager и Azure CLI из Azure Cloud Shell. Сведения о создании виртуальной машины Windows см. в статье [Создание виртуальной машины Windows на основе шаблона диспетчер ресурсов](../windows/ps-template.md).
+
+Альтернативой является развертывание шаблона из портал Azure. Чтобы открыть шаблон на портале, нажмите кнопку **развернуть в Azure** .
+
+[![Развертывание в Azure](../../media/template-deployments/deploy-to-azure.svg)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-quickstart-templates%2Fmaster%2F101-vm-sshkey%2Fazuredeploy.json)
 
 ## <a name="templates-overview"></a>Обзор шаблонов
 

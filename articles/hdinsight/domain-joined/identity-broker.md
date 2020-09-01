@@ -7,12 +7,12 @@ ms.author: hrasheed
 ms.reviewer: jasonh
 ms.topic: how-to
 ms.date: 12/12/2019
-ms.openlocfilehash: ff7cb3c03edf9b421347815311796896caaffd70
-ms.sourcegitcommit: 124f7f699b6a43314e63af0101cd788db995d1cb
+ms.openlocfilehash: 6ef76f3dafc02e89008ae164e3d868c628291766
+ms.sourcegitcommit: 656c0c38cf550327a9ee10cc936029378bc7b5a2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86086608"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89075313"
 ---
 # <a name="use-id-broker-preview-for-credential-management"></a>Использование брокера ИДЕНТИФИКАТОРов (Предварительная версия) для управления учетными данными
 
@@ -46,7 +46,7 @@ ms.locfileid: "86086608"
 
 ![Параметр для включения брокера ИДЕНТИФИКАТОРов](./media/identity-broker/identity-broker-enable.png)
 
-### <a name="using-azure-resource-manager-templates"></a>Использование шаблонов диспетчера ресурсов Azure
+### <a name="using-azure-resource-manager-templates"></a>Использование шаблонов Azure Resource Manager
 При добавлении новой роли `idbrokernode` с именем со следующими атрибутами в профиль вычислений шаблона будет создан кластер с включенным УЗЛОМ ID Broker:
 
 ```json
@@ -98,15 +98,23 @@ ms.locfileid: "86086608"
 
 Для аутентификации SSH требуется, чтобы хэш был доступен в AD DS Azure. Если вы хотите использовать SSH только в административных сценариях, можно создать одну облачную учетную запись и использовать ее для подключения к кластеру по протоколу SSH. Другие пользователи по-прежнему могут использовать средства Ambari или HDInsight (например, подключаемый модуль IntelliJ) без использования хэша пароля в Azure AD DS.
 
+Чтобы устранить проблемы с проверкой подлинности, ознакомьтесь с этим [руководством](https://docs.microsoft.com/azure/hdinsight/domain-joined/domain-joined-authentication-issues).
+
 ## <a name="clients-using-oauth-to-connect-to-hdinsight-gateway-with-id-broker-setup"></a>Клиенты, использующие OAuth для подключения к шлюзу HDInsight с помощью программы установки брокера ID
 
 В программе установки компонента Service Broker можно обновить пользовательские приложения и клиенты, подключающиеся к шлюзу, чтобы сначала получить требуемый маркер OAuth. Вы можете выполнить действия, описанные в этом [документе](https://docs.microsoft.com/azure/storage/common/storage-auth-aad-app) , чтобы получить маркер со следующими сведениями:
 
-*   URI ресурса OAuth:`https://hib.azurehdinsight.net` 
+*   URI ресурса OAuth: `https://hib.azurehdinsight.net` 
 * AppId: 7865c1d2-F040-46cc-875f-831a1ef6a28a
 *   Разрешение: (имя: Cluster. ReadWrite, идентификатор: 8f89faa0-ffef-4007-974d-4989b39ad77d)
 
-## <a name="next-steps"></a>Следующие шаги
+После получению маркера OAuth его можно использовать в заголовке авторизации для HTTP-запроса к шлюзу кластера (например, <clustername> -int.azurehdinsight.NET). Например, пример команды с фигурой на Livy API может выглядеть следующим образом:
+    
+```bash
+curl -k -v -H "Authorization: TOKEN" -H "Content-Type: application/json" -X POST -d '{ "file":"wasbs://mycontainer@mystorageaccount.blob.core.windows.net/data/SparkSimpleTest.jar", "className":"com.microsoft.spark.test.SimpleFile" }' "https://<clustername>-int.azurehdinsight.net/livy/batches" -H "X-Requested-By: UPN"
+``` 
+
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Настройка кластера HDInsight с Корпоративный пакет безопасности с помощью доменных служб Azure Active Directory](apache-domain-joined-configure-using-azure-adds.md)
 * [Синхронизация пользователей Azure Active Directory с кластером HDInsight](../hdinsight-sync-aad-users-to-cluster.md)

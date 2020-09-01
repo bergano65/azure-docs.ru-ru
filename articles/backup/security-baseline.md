@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 04/23/2020
 ms.author: mbaldwin
 ms.custom: security-benchmark
-ms.openlocfilehash: 7b48ac1621c5c8788a4ecdb9ceb3af78f8e82a37
-ms.sourcegitcommit: c6b9a46404120ae44c9f3468df14403bcd6686c1
+ms.openlocfilehash: bb4cc150fab388846b35dc9adebfacf7a56e9bbc
+ms.sourcegitcommit: 656c0c38cf550327a9ee10cc936029378bc7b5a2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88890507"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89073511"
 ---
 # <a name="azure-security-baseline-for-backup"></a>Базовые показатели безопасности Azure для резервного копирования
 
@@ -480,11 +480,11 @@ ms.locfileid: "88890507"
 
 ### <a name="46-use-azure-rbac-to-control-access-to-resources"></a>4.6. Контроль доступа к ресурсам с помощью RBAC
 
-**Руководство**. Управление доступом на основе ролей в Azure (Azure RBAC) обеспечивает точное управление доступом для Azure. С помощью RBAC вы можете распределить обязанности внутри команды и предоставить пользователям доступ на уровне, который им необходим для выполнения поставленных задач.
+**Руководство**. Управление доступом на основе ролей в Azure (Azure RBAC) обеспечивает точное управление доступом для Azure. С помощью Azure RBAC вы можете распределить обязанности внутри команды и предоставить пользователям доступ на уровне, который им необходим для выполнения поставленных задач.
 
 Azure Backup предоставляет три встроенных роли для управления операциями управления резервным копированием: участник резервного копирования, оператор резервного копирования и модуль чтения резервных копий. Вы можете сопоставлять встроенные роли резервного копирования с различными действиями по управлению резервными копиями.
 
-- [Настройка RBAC в Azure](../role-based-access-control/role-assignments-portal.md)
+- [Настройка Azure RBAC](../role-based-access-control/role-assignments-portal.md)
 
 - [Использование управления доступом на основе ролей для управления точками восстановления службы архивации Azure](./backup-rbac-rs-vault.md)
 

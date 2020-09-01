@@ -13,15 +13,15 @@ ms.service: virtual-machines-linux
 ms.topic: article
 ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure-services
-ms.date: 08/25/2020
+ms.date: 08/28/2020
 ms.author: juergent
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 704d4c1b4e4e4229f35526748494aaac2e351f99
-ms.sourcegitcommit: 927dd0e3d44d48b413b446384214f4661f33db04
+ms.openlocfilehash: 0f26c83f87811acc5853f1bff5303cd37092b33f
+ms.sourcegitcommit: 656c0c38cf550327a9ee10cc936029378bc7b5a2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88871383"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89075959"
 ---
 # <a name="use-azure-to-host-and-run-sap-workload-scenarios"></a>Использование Azure для размещения и выполнения сценариев рабочей нагрузки SAP
 
@@ -88,6 +88,7 @@ Azure для SAP HANA — это предложение, выделяющее A
 
 ## <a name="change-log"></a>Журнал изменений
 
+- 08/28/2020: измените [HA для SAP NW на виртуальных машинах Azure в SLES с использовании](./high-availability-guide-suse-netapp-files.md) , чтобы исправить опечатку
 - 08/25/2020: измените [руководство по высокой доступности для SAP ASCS/SCS с WSFC и общим диском](./sap-high-availability-guide-wsfc-shared-disk.md), [Подготовьте инфраструктуру Azure для SAP ASCS/SCS с WSFC и общим диском](./sap-high-availability-infrastructure-wsfc-shared-disk.md) и [установите SAP NW высокого уровня доступности с WSFC и общим диском](./sap-high-availability-guide-wsfc-shared-disk.md) , чтобы ознакомиться с возможностью использования общего диска Azure и документирования архитектуры SAP ERS2
 - 08/25/2020: выпущено [руководство по обеспечению высокого уровня доступности для SAP ASCS/SCS с кластером WSFC и общим диском Azure](./sap-ascs-ha-multi-sid-wsfc-azure-shared-disk.md)
 - 08/25/2020: измените [руководство по высокой доступности для SAP ASCS/SCS с WSFC и Azure NetApp Files (SMB)](./high-availability-guide-windows-netapp-files-smb.md). [Подготовка инфраструктуры Azure для SAP ASCS/SCS с WSFC и файловым ресурсом](./sap-high-availability-infrastructure-wsfc-file-share.md). Руководство по обеспечению [доступности с несколькими ИД безопасности для SAP ASCS/SCS с WSFC и общим диском](./sap-ascs-ha-multi-sid-wsfc-shared-disk.md) и [руководством по обеспечению высокого уровня безопасности для SAP ASCS/SCS с кластером WSFC](./sap-ascs-ha-multi-sid-wsfc-file-share.md) и общего диска в качестве результата обновления содержимого и реструктуризации в руководствах по обеспечению доступности для SAP ASCS/SCS с помощью WFC 

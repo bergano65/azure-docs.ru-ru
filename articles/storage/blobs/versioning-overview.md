@@ -9,13 +9,13 @@ ms.topic: conceptual
 ms.date: 05/05/2020
 ms.author: tamram
 ms.subservice: blobs
-ms.custom: devx-track-azurecli
-ms.openlocfilehash: 494c1fc1c1c91538240258ab0517c7ff79bdfa74
-ms.sourcegitcommit: 269da970ef8d6fab1e0a5c1a781e4e550ffd2c55
+ms.custom: devx-track-azurecli, devx-track-azurepowershell
+ms.openlocfilehash: 999f7bb14f87d883fa399b1168e887e935651e47
+ms.sourcegitcommit: 656c0c38cf550327a9ee10cc936029378bc7b5a2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/10/2020
-ms.locfileid: "88056539"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89074540"
 ---
 # <a name="blob-versioning-preview"></a>Управление версиями BLOB-объектов (предварительная версия)
 
@@ -29,6 +29,8 @@ ms.locfileid: "88056539"
 
 > [!IMPORTANT]
 > Управление версиями BLOB-объектов не может помочь в восстановлении после случайного удаления учетной записи хранения или контейнера. Чтобы предотвратить случайное удаление учетной записи хранения, Настройте блокировку **CannotDelete** для ресурса учетной записи хранения. Дополнительные сведения о блокировке ресурсов Azure см. [в разделе Блокировка ресурсов для предотвращения непредвиденных изменений](../../azure-resource-manager/management/lock-resources.md).
+
+[!INCLUDE [storage-data-lake-gen2-support](../../../includes/storage-data-lake-gen2-support.md)]
 
 ## <a name="how-blob-versioning-works"></a>Как работает управление версиями BLOB-объектов
 
@@ -163,7 +165,7 @@ ms.locfileid: "88056539"
 
 На следующей схеме показано, что происходит при создании моментального снимка BLOB-объекта с версией. На схеме версии BLOB-объектов и моментальные снимки с ИДЕНТИФИКАТОРами версии 2 и 3 содержат идентичные данные.
 
-:::image type="content" source="media/versioning-overview/snapshot-versioned-blob.png" alt-text="Схема, показывающая моментальные снимки BLOB-объекта с версией":::
+:::image type="content" source="media/versioning-overview/snapshot-versioned-blob.png" alt-text="Схема, показывающая моментальные снимки BLOB-объекта с версией ":::
 
 ## <a name="authorize-operations-on-blob-versions"></a>Авторизовать операции в версиях BLOB-объектов
 
@@ -192,13 +194,13 @@ ms.locfileid: "88056539"
 
 | **Разрешение** | **Символ URI** | **Разрешенные операции** |
 |----------------|----------------|------------------------|
-| DELETE         | x              | Удаление версии большого двоичного объекта. |
+| Удалить         | x              | Удаление версии большого двоичного объекта. |
 
 ## <a name="about-the-preview"></a>Сведения о предварительной версии
 
 Управление версиями BLOB-объектов доступно в предварительной версии в следующих регионах:
 
-- восточная часть США 2
+- Восточная часть США 2
 - Центральная часть США
 - Северная Европа
 - Западная Европа
@@ -320,7 +322,7 @@ az feature show --namespace Microsoft.Storage --name Versioning
 
 ![Ресурсы хранилища Azure](./media/versioning-overview/versions-billing-scenario-4.png)
 
-## <a name="see-also"></a>См. также
+## <a name="see-also"></a>См. также раздел
 
 - [Включение управления версиями BLOB-объектов](versioning-enable.md)
 - [Создание моментального снимка большого двоичного объекта](/rest/api/storageservices/creating-a-snapshot-of-a-blob)
