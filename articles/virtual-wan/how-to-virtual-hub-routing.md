@@ -30,7 +30,7 @@ ms.locfileid: "89145932"
 3. Выберите **+ создать таблицу маршрутов** , чтобы открыть страницу **Создание таблицы маршрутов** .
 4. На вкладке " **Основные сведения** " страницы Создание таблицы маршрутов заполните следующие поля.
 
-   :::image type="content" source="./media/how-to-virtual-hub-routing/basics.png" alt-text="Вкладка "Основные сведения"":::
+   :::image type="content" source="./media/how-to-virtual-hub-routing/basics.png" alt-text="Вкладка Основные сведения":::
 
    * **имя**;
    * **Маршруты**
