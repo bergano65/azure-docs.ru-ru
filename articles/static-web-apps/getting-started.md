@@ -104,7 +104,7 @@ ms.locfileid: "88752398"
 
 1. В окне обозревателя Visual Studio Code вернитесь в раздел _Статические веб-приложения_, щелкните правой кнопкой мыши **Рабочая среда** и выберите **Открыть на портале**, чтобы просмотреть приложение на портале Azure.
 
-    :::image type="content" source="media/getting-started/extension-open-in-portal.png" alt-text="Пункт "Открыть портал"":::
+    :::image type="content" source="media/getting-started/extension-open-in-portal.png" alt-text="Пункт Открыть портал":::
 
 [!INCLUDE [view website](../../includes/static-web-apps-get-started-view-website.md)]
 
