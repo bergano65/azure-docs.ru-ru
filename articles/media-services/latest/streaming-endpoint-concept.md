@@ -4,20 +4,20 @@ titleSuffix: Azure Media Services
 description: Сведения о конечных точках потоковой передачи (источник), динамической упаковке и службе потоковой передачи, которая доставляет содержимое непосредственно в клиентское приложение проигрывателя или в сеть доставки содержимого (CDN).
 services: media-services
 documentationcenter: ''
-author: Juliako
+author: IngridAtMicrosoft
 manager: femila
 editor: ''
 ms.service: media-services
 ms.workload: ''
 ms.topic: article
 ms.date: 02/13/2020
-ms.author: juliako
-ms.openlocfilehash: 6d725ed8a69e2dfed6f5197db731f4adac57e2e2
-ms.sourcegitcommit: cee72954f4467096b01ba287d30074751bcb7ff4
+ms.author: inhenkel
+ms.openlocfilehash: aa54bc6b8b0912158a5dcd369b12801d51ca7141
+ms.sourcegitcommit: bcda98171d6e81795e723e525f81e6235f044e52
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/30/2020
-ms.locfileid: "87446215"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89256503"
 ---
 # <a name="streaming-endpoints-origin-in-azure-media-services"></a>Конечные точки потоковой передачи (источник) в службах мультимедиа Azure
 
@@ -63,7 +63,7 @@ ms.locfileid: "87446215"
 
 ## <a name="comparing-streaming-types"></a>Сравнение типов потоковой передачи
 
-Функция|Standard|Premium
+Компонент|Standard|Premium
 ---|---|---
 Пропускная способность |До 600 Мбит/с и может обеспечить более эффективную пропускную способность при использовании CDN.|200 Мбит/с на единицу потоковой передачи. Может обеспечить более эффективную пропускную способность при использовании CDN.
 CDN|Azure CDN, CDN сторонней сети или нет CDN.|Azure CDN, CDN сторонней сети или нет CDN.
@@ -122,7 +122,7 @@ IP-фильтрация/G20/пользовательский узел <sup>1</su
 
     Сейчас службы мультимедиа не поддерживают TLS для личных доменов.
 
-- `maxCacheAge`— Переопределяет заданный по умолчанию заголовок управления для кэша HTTP max-age, заданный конечной точкой потоковой передачи для фрагментов мультимедиа и манифестов по требованию. Это значение задается в секундах.
+- `maxCacheAge` — Переопределяет заданный по умолчанию заголовок управления для кэша HTTP max-age, заданный конечной точкой потоковой передачи для фрагментов мультимедиа и манифестов по требованию. Это значение задается в секундах.
 - `resourceState` -
 
     - Остановлено: начальное состояние конечной точки потоковой передачи после создания

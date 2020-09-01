@@ -1,7 +1,7 @@
 ---
 title: Ошибки упаковки и происхождения служб мультимедиа Azure | Документация Майкрософт
 description: В этом разделе описываются ошибки, которые могут быть получены из службы конечной точки потоковой передачи служб мультимедиа Azure (Оргин).
-author: Juliako
+author: IngridAtMicrosoft
 manager: femila
 editor: ''
 services: media-services
@@ -12,13 +12,13 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
 ms.date: 05/07/2019
-ms.author: juliako
-ms.openlocfilehash: 1fc201cc1f3d4d26ca7b9e949d2917688e6fea8c
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.author: inhenkel
+ms.openlocfilehash: 8f4e0d9a6781e35c1ed6197dd32181511506d145
+ms.sourcegitcommit: bcda98171d6e81795e723e525f81e6235f044e52
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87091986"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89256486"
 ---
 # <a name="streaming-endpoint-origin-errors"></a>Ошибки конечной точки потоковой передачи (источника) 
 

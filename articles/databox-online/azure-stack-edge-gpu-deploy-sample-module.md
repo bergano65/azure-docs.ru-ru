@@ -1,23 +1,23 @@
 ---
-title: Развертывание модуля GPU на Microsoft Azure Stack пограничном устройстве | Документация Майкрософт
+title: Развертывание модуля GPU на Azure Stack пограничном устройстве GPU | Документация Майкрософт
 description: Описание включения вычислений и обеспечения готовности Azure Stackного устройства к вычислению с помощью локального пользовательского интерфейса.
 services: databox
 author: alkohli
 ms.service: databox
 ms.subservice: edge
 ms.topic: how-to
-ms.date: 07/23/2020
+ms.date: 08/31/2020
 ms.author: alkohli
-ms.openlocfilehash: 68badb1524c869309a0e2d96eaf6c9e490111bf7
-ms.sourcegitcommit: 656c0c38cf550327a9ee10cc936029378bc7b5a2
+ms.openlocfilehash: 5af86001d46bf194c9b61f325052a4cde0d86d5e
+ms.sourcegitcommit: bcda98171d6e81795e723e525f81e6235f044e52
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89085811"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89254565"
 ---
-# <a name="deploy-a-gpu-enabled-iot-module-on-azure-stack-edge-device"></a>Развертывание модуля IoT с поддержкой GPU на Azure Stack пограничном устройстве
+# <a name="deploy-a-gpu-enabled-iot-module-on-azure-stack-edge-gpu-device"></a>Развертывание модуля IoT с поддержкой GPU на Azure Stack пограничном устройстве GPU
 
-В этой статье описывается, как развернуть модуль IoT Edge с поддержкой GPU на устройстве Azure Stackного периметра. 
+В этой статье описывается, как развернуть модуль IoT Edge с поддержкой GPU на устройстве Azure Stackного GPU. 
 
 Вы узнаете, как выполнять следующие задачи:
   - Подготовка Azure Stackной границы для запуска модуля GPU.
@@ -162,6 +162,6 @@ ms.locfileid: "89085811"
 
         Вы видите, что время, затраченное на выполнение одного и того же набора операций (5000 итераций преобразования фигур) по GPU, гораздо меньше, чем для ЦП.
 
-## <a name="next-steps"></a>Next Steps
+## <a name="next-steps"></a>Следующие шаги
 
 - Дополнительные сведения о [настройке GPU для использования модуля](azure-stack-edge-j-series-configure-gpu-modules.md).

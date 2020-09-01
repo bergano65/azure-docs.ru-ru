@@ -1,6 +1,6 @@
 ---
-title: Использование kubectl для развертывания приложения с отслеживанием состояния Kubernetes с помощью динамически подготовленного общего ресурса на Azure Stack пограничном устройстве | Документация Майкрософт
-description: В этой статье описывается создание Kubernetes развертывания приложений с отслеживанием состояния с помощью динамически подготовленного общего ресурса с использованием kubectl на Microsoft Azure Stack пограничном устройстве.
+title: Использование kubectl для развертывания приложения с отслеживанием состояния Kubernetes с помощью динамически подготовленного общего ресурса на Azure Stack пограничном устройстве GPU | Документация Майкрософт
+description: Описывает создание Kubernetes развертывания приложений с отслеживанием состояния с помощью динамически подготовленного общего ресурса с использованием kubectl на устройстве Microsoft Azure Stack пограничной GPU.
 services: databox
 author: alkohli
 ms.service: databox
@@ -8,14 +8,14 @@ ms.subservice: edge
 ms.topic: how-to
 ms.date: 08/26/2020
 ms.author: alkohli
-ms.openlocfilehash: e83b2b1cb7013b9d72bd2c2de8c7636d5c9d8773
-ms.sourcegitcommit: 656c0c38cf550327a9ee10cc936029378bc7b5a2
+ms.openlocfilehash: c787fc4c37c8fc3b4b8f007b1a84a5989a15fbc4
+ms.sourcegitcommit: bcda98171d6e81795e723e525f81e6235f044e52
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89085706"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89254327"
 ---
-# <a name="use-kubectl-to-run-a-kubernetes-stateful-application-with-storageclass-on-your-azure-stack-edge-device"></a>Использование kubectl для запуска приложения Kubernetes с отслеживанием состояния с помощью Сторажекласс на пограничном устройстве Azure Stack
+# <a name="use-kubectl-to-run-a-kubernetes-stateful-application-with-storageclass-on-your-azure-stack-edge-gpu-device"></a>Использование kubectl для запуска приложения Kubernetes с отслеживанием состояния с помощью Сторажекласс на устройстве с Azure Stack пограничном GPU
 
 В этой статье показано, как развернуть приложение с отслеживанием состояния с одним экземпляром в Kubernetes с помощью Сторажекласс, чтобы динамически подготавливать хранилище и развертывание. Развертывание использует `kubectl` команды в существующем кластере Kubernetes и развертывает приложение MySQL. 
 

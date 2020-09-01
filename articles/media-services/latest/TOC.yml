@@ -7,6 +7,8 @@
     - name: Новые возможности в Службах мультимедиа
       displayName: release notes
       href: release-notes.md
+    - name: Соответствие Служб мультимедиа требованиям
+      href: concept-compliance.md
 - name: Краткие руководства
   items:
     - name: Настройка среды
@@ -45,33 +47,34 @@
           href: encrypt-content-quickstart.md
 - name: Учебники
   items:
-    - name: Кодирование размещенных удаленно файлов и потоковая передача видео
+    - name: .NET
       items:
-        - name: С помощью REST
-          displayName: 'encoding, job, transform'
+        - name: Кодирование и потоковая передача размещенных удаленно файлов (REST)
           href: stream-files-tutorial-with-rest.md
-        - name: С помощью CLI
-          href: stream-files-cli-quickstart.md
-        - name: С помощью .NET
+        - name: Кодирование и потоковая передача размещенных удаленно файлов (.NET)
           href: stream-files-dotnet-quickstart.md
-        - name: Использование Node.js
+        - name: Кодирование и потоковая передача отправленного файла
+          href: stream-files-tutorial-with-api.md
+        - name: Потоковая передача в реальном времени
+          href: stream-live-tutorial-with-api.md
+        - name: Анализ видео
+          href: analyze-videos-tutorial-with-api.md
+        - name: Динамическое шифрование с помощью AES-128
+          href: protect-with-aes128.md
+        - name: Динамическое шифрование с помощью DRM
+          href: protect-with-drm.md
+    - name: CLI
+      items:
+        - name: Кодирование и потоковая передача размещенных удаленно файлов (CLI)
+          href: stream-files-cli-quickstart.md
+    - name: Node.js
+      items:
+        - name: Кодирование и потоковая передача размещенных удаленно файлов (Node.js)
           href: stream-files-nodejs-quickstart.md
-    - name: Хранение событий AMS в Azure Log Analytics
-      href: tutorial-events-log-analytics.md
-    - name: Кодирование отправленного файла и потоковая передача видео
-      displayName: 'encode, encoding, job, transform'
-      href: stream-files-tutorial-with-api.md
-    - name: Потоковая передача в реальном времени
-      href: stream-live-tutorial-with-api.md
-      displayName: 'Live Events, Live Outputs, ingest'
-    - name: Анализ видео
-      displayName: 'job, transform, VideoAnalyzerPreset, AudioAnalyzerPreset'
-      href: analyze-videos-tutorial-with-api.md
-    - name: Динамическое шифрование с помощью AES-128
-      href: protect-with-aes128.md
-    - name: Динамическое шифрование с помощью DRM
-      displayName: 'PlayReady, Widevine, FairPlay'
-      href: protect-with-drm.md
+    - name: Портал Azure
+      items:
+        - name: Хранение событий AMS в Azure Log Analytics
+          href: tutorial-events-log-analytics.md
 - name: Примеры
   items:
     - name: "Примеры для Служб мультимедиа версии\_3"

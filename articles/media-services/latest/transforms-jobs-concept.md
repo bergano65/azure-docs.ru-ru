@@ -4,20 +4,20 @@ titleSuffix: Azure Media Services
 description: Узнайте, как создать преобразования для описания правил обработки видео в службах мультимедиа Azure.
 services: media-services
 documentationcenter: ''
-author: Juliako
+author: IngridAtMicrosoft
 manager: femila
 editor: ''
 ms.service: media-services
 ms.workload: ''
 ms.topic: article
 ms.date: 08/19/2019
-ms.author: juliako
-ms.openlocfilehash: d45d802456345eab857f571d2d52793c8be691eb
-ms.sourcegitcommit: 8def3249f2c216d7b9d96b154eb096640221b6b9
+ms.author: inhenkel
+ms.openlocfilehash: 103509de90d8819b19c46ebba7ae2dcc6071ac33
+ms.sourcegitcommit: bcda98171d6e81795e723e525f81e6235f044e52
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87543067"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89256075"
 ---
 # <a name="transforms-and-jobs-in-media-services"></a>Преобразования и задания в службах мультимедиа
 
@@ -52,7 +52,7 @@ ms.locfileid: "87543067"
 > [!NOTE]
 > Свойства **преобразования** и **задания** типа DateTime всегда имеют формат UTC.
 
-## <a name="transforms"></a>Transform
+## <a name="transforms"></a>Преобразования
 
 **Преобразования** можно использовать для настройки общих задач кодирования или анализа видеоматериалов. Каждое **Преобразование** описывает рецепт или рабочий процесс выполнения задач по обработке видео-или звуковых файлов. Одно преобразование может применять несколько правил. Например, преобразование может указать, что каждое видео кодируется в MP4-файл с заданной скоростью и что эскиз будет создан из первого кадра видео. Необходимо добавить одну запись TransformOutput для каждого правила, которое требуется включить в преобразование. Используйте предустановки, чтобы сообщить преобразованию, каким образом должны обрабатываться входные файлы мультимедиа.
 
@@ -119,7 +119,7 @@ ms.locfileid: "87543067"
 * [Коды ошибок](/rest/api/media/jobs/get#joberrorcode)
 * [Фильтрация, упорядочивание и разбиение по страницам сущностей Служб мультимедиа](entities-overview.md)
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Перед началом разработки ознакомьтесь [с разработкой с помощью API-интерфейсов служб мультимедиа v3](media-services-apis-overview.md) (содержит сведения о доступе к API, соглашения об именовании и т. д.).
 - Ознакомьтесь с этими учебниками:

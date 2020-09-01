@@ -6,17 +6,19 @@ keywords: encoding;encoders;media
 author: johndeu
 manager: johndeu
 ms.author: johndeu
-ms.date: 04/16/2020
+ms.date: 08/31/2020
 ms.topic: article
 ms.service: media-services
-ms.openlocfilehash: 67c26cbad2a723fa21fbe1719c6e43d3d63f2547
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: b246833b5a6ea38c70afe49f8b2d0421943a3a02
+ms.sourcegitcommit: bcda98171d6e81795e723e525f81e6235f044e52
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87030671"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89256792"
 ---
 # <a name="verified-on-premises-live-streaming-encoders"></a>Проверенные локальные кодировщики динамической потоковой передачи
+
+[!INCLUDE [media services api v3 logo](./includes/v3-hr.md)]
 
 В Службах мультимедиа Azure [трансляция](/rest/api/media/liveevents) (канал) представляет собой конвейер для обработки содержимого потоковой трансляции. Трансляция получает входные потоки одним из двух способов.
 
@@ -114,7 +116,7 @@ ms.locfileid: "87030671"
 > [!IMPORTANT]
 > Просмотрите физическое состояние компьютера (ЦП, памяти и т. д.), так как передача фрагментов в облако включает в себя операции ЦП и ввода-вывода. При изменении каких-либо параметров в кодировщике необходимо сбросить событие каналы/Live, чтобы изменения вступили в силу.
 
-## <a name="see-also"></a>См. также статью
+## <a name="see-also"></a>См. также
 
 [Потоковая трансляция в Службах мультимедиа Azure версии 3](live-streaming-overview.md)
 

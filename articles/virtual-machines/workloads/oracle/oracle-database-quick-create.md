@@ -9,17 +9,17 @@ editor: ''
 tags: azure-resource-manager
 ms.assetid: ''
 ms.service: virtual-machines-linux
-ms.topic: article
+ms.topic: quickstart
 ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure
-ms.date: 08/02/2018
+ms.date: 08/28/2020
 ms.author: rogardle
-ms.openlocfilehash: ca40fcb6a2e483e656058835f187dc50bf7bc9ab
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
-ms.translationtype: MT
+ms.openlocfilehash: fb4403747a3681abd6023cdb9b5e62fd50af12c3
+ms.sourcegitcommit: 3fb5e772f8f4068cc6d91d9cde253065a7f265d6
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87074062"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89179646"
 ---
 # <a name="create-an-oracle-database-in-an-azure-vm"></a>Создание базы данных Oracle на виртуальной машине Azure
 
@@ -82,7 +82,7 @@ ssh azureuser@<publicIpAddress>
 
 Программное обеспечение Oracle уже установлено в образе Marketplace. Создайте пример базы данных, как описано ниже. 
 
-1.  Переключитесь на учетную запись суперпользователя *oracle* и инициализируйте прослушиватель для ведения журнала.
+1.  Переключитесь на пользователя *oracle*, а затем запустите прослушиватель Oracle:
 
     ```bash
     $ sudo -su oracle
@@ -116,8 +116,13 @@ ssh azureuser@<publicIpAddress>
     The listener supports no services
     The command completed successfully
     ```
+2. Создание каталога данных для файлов данных Oracle
 
-2.  Создание базы данных
+    ```bash
+        mkdir /u01/app/oracle/oradata
+    ```
+
+3.  Создание базы данных
 
     ```bash
     dbca -silent \
@@ -136,28 +141,58 @@ ssh azureuser@<publicIpAddress>
            -databaseType MULTIPURPOSE \
            -automaticMemoryManagement false \
            -storageType FS \
+           -datafileDestination "/u01/app/oracle/oradata/"
            -ignorePreReqs
     ```
 
     Создание базы данных занимает несколько минут.
 
-3. Задайте переменные Oracle.
+    Выходные данные будут выглядеть примерно так:
 
-Прежде чем подключиться, необходимо задать две переменные среды: *ORACLE_HOME* и *ORACLE_SID*.
+    ```output
+        Copying database files
+        1% complete
+        2% complete
+        8% complete
+        13% complete
+        19% complete
+        27% complete
+        Creating and starting Oracle instance
+        29% complete
+        32% complete
+        33% complete
+        34% complete
+        38% complete
+        42% complete
+        43% complete
+        45% complete
+        Completing Database Creation
+        48% complete
+        51% complete
+        53% complete
+        62% complete
+        70% complete
+        72% complete
+        Creating Pluggable Databases
+        78% complete
+        100% complete
+        Look at the log file "/u01/app/oracle/cfgtoollogs/dbca/cdb1/cdb1.log" for further details.
+    ```
 
-```bash
-ORACLE_HOME=/u01/app/oracle/product/12.1.0/dbhome_1; export ORACLE_HOME
-ORACLE_SID=cdb1; export ORACLE_SID
-```
+4. Задайте переменные Oracle.
 
-При необходимости можно добавить переменные ORACLE_HOME и ORACLE_SID в BASHRC-файл. Это позволит сохранить переменные среды для следующих входов в систему. Добавьте следующие инструкции в файл `~/.bashrc` с помощью любого редактора.
+    Прежде чем подключиться, необходимо задать две переменные среды: *ORACLE_HOME* и *ORACLE_SID*.
 
-```bash
-# Add ORACLE_HOME. 
-export ORACLE_HOME=/u01/app/oracle/product/12.1.0/dbhome_1 
-# Add ORACLE_SID. 
-export ORACLE_SID=cdb1 
-```
+    ```bash
+        ORACLE_SID=cdb1; export ORACLE_SID
+    ```
+
+    При необходимости можно добавить переменные ORACLE_HOME и ORACLE_SID в BASHRC-файл. Это позволит сохранить переменные среды для следующих входов в систему. Добавьте следующие инструкции в файл `~/.bashrc` с помощью любого редактора.
+
+    ```bash
+    # Add ORACLE_SID. 
+    export ORACLE_SID=cdb1 
+    ```
 
 ## <a name="oracle-em-express-connectivity"></a>Подключение к Oracle EM Express
 

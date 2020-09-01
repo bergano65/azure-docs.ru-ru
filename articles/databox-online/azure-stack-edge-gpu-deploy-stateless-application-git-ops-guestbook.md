@@ -1,5 +1,5 @@
 ---
-title: Развертывание приложения PHP гостевой книги в Arc Enabled Kubernetes Azure Stack на пограничном устройстве | Документация Майкрософт
+title: Развертывание приложения PHP гостевой книги в Arc с включенной Kubernetes Azure Stack на пограничном устройстве GPU | Документация Майкрософт
 description: В этой статье описывается, как развернуть незащищенное от Redis приложение PHP без отслеживания состояния с помощью Гитопс на Azure Stack кластере Kubernetes с поддержкой ARC.
 services: databox
 author: alkohli
@@ -8,14 +8,14 @@ ms.subservice: edge
 ms.topic: how-to
 ms.date: 08/25/2020
 ms.author: alkohli
-ms.openlocfilehash: 46cef291a447a7c243ee9ef66ee64e9c6264ad23
-ms.sourcegitcommit: 656c0c38cf550327a9ee10cc936029378bc7b5a2
+ms.openlocfilehash: 83ac012c861a0d066bdc47d8e15cbe7ac398aa23
+ms.sourcegitcommit: bcda98171d6e81795e723e525f81e6235f044e52
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89085766"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89254225"
 ---
-# <a name="deploy-a-php-guestbook-stateless-application-with-redis-on-arc-enabled-kubernetes-cluster-on-azure-stack-edge"></a>Развертывание приложения с нештатной книгой (без отслеживания состояния) на Redis с поддержкой ARC в кластере Kubernetes на границе Azure Stack
+# <a name="deploy-a-php-guestbook-stateless-application-with-redis-on-arc-enabled-kubernetes-cluster-on-azure-stack-edge-gpu"></a>Развертывание приложения с нештатной книгой (Redis) для PHP с поддержкой ARC в кластере Kubernetes на Azure Stack ребра
 
 В этой статье показано, как создать и развернуть простое многоуровневое веб-приложение с помощью Kubernetes и дуги Azure. Этот пример состоит из следующих компонентов:
 
@@ -132,7 +132,7 @@ ms.locfileid: "89085766"
     [10.128.44.240]: PS>
     ```  
 
-1. В этом примере интерфейсная служба была развернута как тип: балансировщик. Для просмотра гостевой книги необходимо найти IP-адрес этой службы. Выполните следующую команду.
+1. В этом примере интерфейсная служба была развернута как тип: балансировщик. Для просмотра гостевой книги необходимо найти IP-адрес этой службы. Выполните следующую команду:
 
     `kubectl get service -n <your-namespace>`
     

@@ -13,14 +13,16 @@ ms.devlang: na
 ms.topic: article
 ms.date: 03/14/2019
 ms.author: juliako
-ms.openlocfilehash: b7f0b77ba11a0c9c1670ec240caf45fcf61a934d
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 0309579a674533ebd056c8493b149cc78beef607
+ms.sourcegitcommit: bcda98171d6e81795e723e525f81e6235f044e52
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "74896023"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89254083"
 ---
-#  <a name="use-media-encoder-standard-to-auto-generate-a-bitrate-ladder"></a>Использование Media Encoder Standard для автоматического создания лестнице скорости  
+#  <a name="use-media-encoder-standard-to-auto-generate-a-bitrate-ladder"></a>Использование Media Encoder Standard для автоматического создания лестнице скорости
+
+[!INCLUDE [media services api v2 logo](./includes/v2-hr.md)]  
 
 ## <a name="overview"></a>Обзор
 
@@ -174,7 +176,7 @@ namespace AdaptiveStreamingMESPresest
 ### <a name="example-1"></a>Пример 1
 При исходной высоте 1080 и частоте кадров 29,970 создается 6 слоев видео.
 
-|Уровень|Высота:|Ширина|Скорость (кбит/с)|
+|Уровень|Высота|Ширина|Скорость (кбит/с)|
 |---|---|---|---|
 |1|1080|1920|6780|
 |2|720|1280|3520|
@@ -186,7 +188,7 @@ namespace AdaptiveStreamingMESPresest
 ### <a name="example-2"></a>Пример 2
 При исходной высоте 720 и частоте кадров 23,970 создается 5 слоев видео.
 
-|Уровень|Высота:|Ширина|Скорость (кбит/с)|
+|Уровень|Высота|Ширина|Скорость (кбит/с)|
 |---|---|---|---|
 |1|720|1280|2940|
 |2|540|960|1850|
@@ -197,7 +199,7 @@ namespace AdaptiveStreamingMESPresest
 ### <a name="example-3"></a>Пример 3
 При исходной высоте 360 и частоте кадров 29,970 создается 3 слоя видео.
 
-|Уровень|Высота:|Ширина|Скорость (кбит/с)|
+|Уровень|Высота|Ширина|Скорость (кбит/с)|
 |---|---|---|---|
 |1|360|640|700|
 |2|270|480|440|

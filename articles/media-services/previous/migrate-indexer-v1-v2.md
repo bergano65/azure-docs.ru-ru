@@ -13,14 +13,16 @@ ms.devlang: na
 ms.topic: article
 ms.date: 09/20/2019
 ms.author: juliako
-ms.openlocfilehash: 84e4e34ab7b9f0250ae7bc94248fa98cbf23cd6c
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 3da6dd877a94da64f85f093ae98a0b8a109ab2e1
+ms.sourcegitcommit: bcda98171d6e81795e723e525f81e6235f044e52
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87084387"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89255109"
 ---
 # <a name="migrate-from-media-indexer-and-media-indexer-2-to-video-indexer"></a>Миграция из индексатора мультимедиа и индексатора мультимедиа 2 в индексатор видео
+
+[!INCLUDE [media services api v2 logo](./includes/v2-hr.md)]
 
 Процессор [Azure Media indexer](media-services-index-content.md) media и [Azure Media indexer 2 Preview](media-services-process-content-with-indexer2.md) обработчики мультимедиа выводятся из эксплуатации. Даты прекращения поддержки см. в разделе, посвященном [устаревшим компонентам](legacy-components.md). Вместо этих устаревших компонентов теперь используется [Индексатор видео Служб мультимедиа Azure](../video-indexer/index.yml).
 

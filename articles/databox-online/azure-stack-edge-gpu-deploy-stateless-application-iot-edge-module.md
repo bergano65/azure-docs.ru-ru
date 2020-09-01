@@ -1,6 +1,6 @@
 ---
-title: Управление кластерной сетью на Azure Stack границе для доступа к модулям | Документация Майкрософт
-description: В этой статье описывается, как расширить сеть вычислений на стороне Azure Stack, чтобы получить доступ к модулям через внешний IP-адрес.
+title: Развертывание приложения без отслеживания состояния Kubernetes на Azure Stack пограничных GPU с помощью модуля IoT Edge | Документация Майкрософт
+description: В этой статье описывается, как развернуть Kubernetes приложение без отслеживания состояния на устройстве GPU Azure Stack с помощью модуля IoT Edge, доступ к которому осуществляется через внешний IP-адрес.
 services: databox
 author: alkohli
 ms.service: databox
@@ -8,14 +8,14 @@ ms.subservice: edge
 ms.topic: how-to
 ms.date: 08/26/2020
 ms.author: alkohli
-ms.openlocfilehash: 8de3dbd754cd0cbef947d2cde44542f9f3f77a08
-ms.sourcegitcommit: 656c0c38cf550327a9ee10cc936029378bc7b5a2
+ms.openlocfilehash: 15316cbdd44053bfaf7403815ba42d92e2264b7b
+ms.sourcegitcommit: bcda98171d6e81795e723e525f81e6235f044e52
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89085655"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89254174"
 ---
-# <a name="use-iot-edge-module-to-run-a-kubernetes-stateless-application-on-your-azure-stack-edge-device"></a>Использование модуля IoT Edge для запуска приложения без отслеживания состояния Kubernetes на устройстве Azure Stackного периметра
+# <a name="use-iot-edge-module-to-run-a-kubernetes-stateless-application-on-your-azure-stack-edge-gpu-device"></a>Использование модуля IoT Edge для запуска приложения без отслеживания состояния Kubernetes на устройстве с Azure Stackм GPU
 
 В этой статье описывается, как можно использовать модуль IoT Edge для развертывания приложения без отслеживания состояния на устройстве Azure Stackного периметра.
 
@@ -78,7 +78,7 @@ ms.locfileid: "89085655"
 
         ![Указание сведений о порте в IoT Edge пользовательской колонке модуля](media/azure-stack-edge-gpu-deploy-stateless-application-iot-edge-module/verify-module-status-1.png)
 
-    4. Выберите **Review + create** (Просмотреть и создать). Проверьте сведения о модуле и нажмите кнопку **создать**.
+    4. Выберите **Проверить и создать**. Проверьте сведения о модуле и нажмите кнопку **создать**.
 
 ## <a name="verify-module-access"></a>Проверка доступа к модулю
 

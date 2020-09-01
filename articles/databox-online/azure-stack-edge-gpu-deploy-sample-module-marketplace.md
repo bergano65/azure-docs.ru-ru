@@ -8,14 +8,14 @@ ms.subservice: edge
 ms.topic: how-to
 ms.date: 08/25/2020
 ms.author: alkohli
-ms.openlocfilehash: 1532283be8521ad5c6cd5a9e2252e5ba839a4aa3
-ms.sourcegitcommit: 656c0c38cf550327a9ee10cc936029378bc7b5a2
+ms.openlocfilehash: ac9ff084476f37348b72bdb42b9b74660132b762
+ms.sourcegitcommit: bcda98171d6e81795e723e525f81e6235f044e52
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89085859"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89254649"
 ---
-# <a name="deploy-a-gpu-enabled-iot-module-from-azure-marketplace-on-azure-stack-edge-device"></a>Развертывание модуля IoT с поддержкой GPU из Azure Marketplace на Azure Stack пограничном устройстве
+# <a name="deploy-a-gpu-enabled-iot-module-from-azure-marketplace-on-azure-stack-edge-gpu-device"></a>Развертывание модуля IoT с поддержкой GPU из Azure Marketplace на устройстве с Azure Stack ребра
 
 В этой статье описывается, как развернуть модуль обработки графических процессоров (GPU) с поддержкой IoT Edge Module из Azure Marketplace на устройстве Azure Stackного периметра. 
 
@@ -113,6 +113,6 @@ ms.locfileid: "89085859"
 
         Вы видите, что время, затраченное на выполнение одного и того же набора операций (5000 итераций преобразования фигур) по GPU, гораздо меньше, чем для ЦП.
 
-## <a name="next-steps"></a>Next Steps
+## <a name="next-steps"></a>Следующие шаги
 
 - Дополнительные сведения о [настройке GPU для использования модуля](azure-stack-edge-j-series-configure-gpu-modules.md).

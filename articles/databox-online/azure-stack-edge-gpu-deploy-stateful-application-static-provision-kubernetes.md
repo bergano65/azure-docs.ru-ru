@@ -1,6 +1,6 @@
 ---
 title: Использование kubectl для развертывания приложения с отслеживанием состояния Kubernetes с помощью статически подготовленного общего ресурса на Azure Stack пограничном устройстве | Документация Майкрософт
-description: Описывает создание Kubernetes развертывания приложений с отслеживанием состояния с помощью статически подготовленного общего ресурса с использованием kubectl на Microsoft Azure Stack пограничном устройстве и управление им.
+description: Описывает создание Kubernetes развертывания приложений с отслеживанием состояния с помощью статически подготовленного общего ресурса с использованием kubectl на устройстве Azure Stack пограничной GPU.
 services: databox
 author: alkohli
 ms.service: databox
@@ -8,12 +8,12 @@ ms.subservice: edge
 ms.topic: how-to
 ms.date: 08/18/2020
 ms.author: alkohli
-ms.openlocfilehash: cabd27849445c0eab93a6649d228a172b66bd1a4
-ms.sourcegitcommit: 656c0c38cf550327a9ee10cc936029378bc7b5a2
+ms.openlocfilehash: 17be54536f785049aef6831e01f1f12219225b90
+ms.sourcegitcommit: bcda98171d6e81795e723e525f81e6235f044e52
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89085802"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89254378"
 ---
 # <a name="use-kubectl-to-run-a-kubernetes-stateful-application-with-a-persistentvolume-on-your-azure-stack-edge-device"></a>Использование kubectl для запуска приложения Kubernetes с отслеживанием состояния с помощью Персистентволуме на пограничном устройстве Azure Stack
 
