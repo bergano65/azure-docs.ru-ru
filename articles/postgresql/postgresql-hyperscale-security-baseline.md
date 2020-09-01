@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 08/04/2020
 ms.author: mbaldwin
 ms.custom: security-benchmark
-ms.openlocfilehash: debbc47204aca2fbea1307bd4b692921725e5fd0
-ms.sourcegitcommit: 97a0d868b9d36072ec5e872b3c77fa33b9ce7194
+ms.openlocfilehash: a7014e6721cb6985ddff5ddaf773de4e85a048e0
+ms.sourcegitcommit: 656c0c38cf550327a9ee10cc936029378bc7b5a2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/04/2020
-ms.locfileid: "87563914"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89071505"
 ---
 # <a name="azure-security-baseline-for-azure-database-for-postgresql---hyperscale"></a>Базовый план безопасности Azure для базы данных Azure для PostgreSQL — масштабирование
 
@@ -86,7 +86,7 @@ ms.locfileid: "87563914"
 
 **Мониторинг Центра безопасности Azure**. Сейчас это недоступно.
 
-**Ответственность**: Customer
+**Ответственность**. Customer
 
 ### <a name="25-configure-security-log-storage-retention"></a>2.5. Настройка хранения журнала безопасности
 
@@ -98,7 +98,7 @@ ms.locfileid: "87563914"
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
-**Ответственность**. Customer
+**Ответственность**: Customer
 
 ### <a name="26-monitor-and-review-logs"></a>2,6: мониторинг и просмотр журналов
 
@@ -112,7 +112,7 @@ ms.locfileid: "87563914"
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
-**Ответственность**. Customer
+**Ответственность**: Customer
 
 ### <a name="27-enable-alerts-for-anomalous-activities"></a>2,7: Включение оповещений для аномальных действий
 
@@ -155,7 +155,7 @@ ms.locfileid: "87563914"
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
-**Ответственность**. Customer
+**Ответственность**: Customer
 
 ### <a name="32-change-default-passwords-where-applicable"></a>3.2. Изменение паролей по умолчанию, где применимо
 
@@ -163,7 +163,7 @@ ms.locfileid: "87563914"
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
-**Ответственность**. Customer
+**Ответственность**: Customer
 
 ### <a name="33-use-dedicated-administrative-accounts"></a>3.3. Применение выделенных административных учетных записей
 
@@ -186,7 +186,7 @@ ms.locfileid: "87563914"
 - [Мониторинг идентификации и доступа в Центре безопасности Azure](https://docs.microsoft.com/azure/security-center/security-center-identity-access)
 
 
-**Мониторинг Центра безопасности Azure**. Да
+**Мониторинг Центра безопасности Azure**: Да
 
 **Ответственность**: Customer
 
@@ -311,7 +311,7 @@ ms.locfileid: "87563914"
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
-**Ответственность**. Customer
+**Ответственность**: Customer
 
 ### <a name="42-isolate-systems-storing-or-processing-sensitive-information"></a>4.2. Изолирование систем, хранящих или обрабатывающих конфиденциальные данные
 
@@ -347,13 +347,13 @@ ms.locfileid: "87563914"
 
 **Ответственность**: Совмещаемая блокировка
 
-### <a name="46-use-role-based-access-control-to-control-access-to-resources"></a>4,6. Использование управления доступом на основе ролей для управления доступом к ресурсам
+### <a name="46-use-azure-rbac-to-control-access-to-resources"></a>4.6. Контроль доступа к ресурсам с помощью RBAC
 
-**Руководство**. Использование управления доступом на основе РОЛЕЙ (RBAC) Azure для управления доступом к плоскости управления "горизонтальное масштабирование (Цитус)" (например, портал Azure). RBAC не влияет на разрешения пользователей в базе данных.
+**Руководство**. Использование управления доступом на основе ролей Azure (Azure RBAC) для управления доступом к плоскости управления "горизонтальное масштабирование (Цитус)" (например, портал Azure). Azure RBAC не влияет на разрешения пользователей в базе данных.
 
 Чтобы изменить привилегии пользователя на уровне базы данных, используйте стандартные команды PostgreSQL, используя такие средства, как PgAdmin или psql.
 
-- [Настройка RBAC в Azure](https://docs.microsoft.com/azure/role-based-access-control/role-assignments-portal)
+- [Настройка Azure RBAC](https://docs.microsoft.com/azure/role-based-access-control/role-assignments-portal)
 
 - [Как настроить доступ пользователей с помощью SQL для базы данных Azure для PostgreSQL](https://docs.microsoft.com/azure/postgresql/howto-hyperscale-create-users)
 
@@ -538,7 +538,7 @@ ms.locfileid: "87563914"
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
-**Ответственность**. Customer
+**Ответственность**: Customer
 
 ### <a name="75-securely-store-configuration-of-azure-resources"></a>7.5. Безопасное хранение конфигурации ресурсов Azure
 
@@ -548,9 +548,9 @@ ms.locfileid: "87563914"
 
 - [Документация по Azure Repos](https://docs.microsoft.com/azure/devops/repos/index?view=azure-devops)
 
-**Мониторинг Центра безопасности Azure**: Неприменимо
+**Мониторинг Центра безопасности Azure**. Неприменимо
 
-**Ответственность**. Customer
+**Ответственность**: Customer
 
 ### <a name="77-deploy-configuration-management-tools-for-azure-resources"></a>7,7: развертывание средств управления конфигурацией для ресурсов Azure
 
@@ -566,7 +566,7 @@ ms.locfileid: "87563914"
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
-**Ответственность**. Customer
+**Ответственность**: Customer
 
 ### <a name="79-implement-automated-configuration-monitoring-for-azure-resources"></a>7,9. Реализация автоматического мониторинга конфигурации для ресурсов Azure
 
@@ -576,7 +576,7 @@ ms.locfileid: "87563914"
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
-**Ответственность**. Customer
+**Ответственность**: Customer
 
 ### <a name="712-manage-identities-securely-and-automatically"></a>7.12. Безопасное и автоматическое управление удостоверениями
 
@@ -599,7 +599,7 @@ ms.locfileid: "87563914"
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
-**Ответственность**. Customer
+**Ответственность**: Customer
 
 ## <a name="malware-defense"></a>Защита от вредоносных программ
 
@@ -611,9 +611,9 @@ ms.locfileid: "87563914"
 
 Предварительно сканируйте любое содержимое, отправляемое в невычислительные ресурсы Azure, например служба приложений, хранилище Data Lake, хранилище BLOB-объектов, база данных Azure для PostgreSQL и т. д. Корпорация Майкрософт не может получить доступ к данным в этих экземплярах.
 
-**Мониторинг Центра безопасности Azure**: Неприменимо
+**Мониторинг центра безопасности Azure**: Неприменимо
 
-**Ответственность**. Customer
+**Ответственность**: Customer
 
 ## <a name="data-recovery"></a>Восстановление данных
 
@@ -682,7 +682,7 @@ ms.locfileid: "87563914"
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
-**Ответственность**. Customer
+**Ответственность**: Customer
 
 ### <a name="102-create-an-incident-scoring-and-prioritization-procedure"></a>10.2. Создание процедуры оценки инцидента и определения приоритетов
 
@@ -690,9 +690,9 @@ ms.locfileid: "87563914"
 
 Кроме того, четко помечайте подписки (для устар. производственной, непроизводственной) и создайте систему именования, чтобы четко определить и классифицировать ресурсы Azure.
 
-**Мониторинг Центра безопасности Azure**. Неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
-**Ответственность**. Customer
+**Ответственность**: Customer
 
 ### <a name="103-test-security-response-procedures"></a>10.3. Проверка процедур реагирования на угрозы
 
@@ -700,7 +700,7 @@ ms.locfileid: "87563914"
 
 - [См. публикацию NIST: руководство по тестированию, обучению и выполнению программ для ИТ-планов и возможностей](https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-84.pdf)
 
-**Мониторинг Центра безопасности Azure**: Неприменимо
+**Мониторинг Центра безопасности Azure**. Неприменимо
 
 **Ответственность**: Customer
 

@@ -11,12 +11,13 @@ author: iainfoulds
 manager: daveba
 ms.reviewer: jsimmons
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 841b12b27447c4d32d25b8eb0d5bcf51ff8e2932
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.custom: devx-track-azurepowershell
+ms.openlocfilehash: 02937c22cbc16defb0b7672ac7ebc56c2ae2beb5
+ms.sourcegitcommit: 656c0c38cf550327a9ee10cc936029378bc7b5a2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85550280"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89068785"
 ---
 # <a name="monitor-and-review-logs-for-on-premises-azure-ad-password-protection-environments"></a>Мониторинг и просмотр журналов для локальных сред защиты паролей Azure AD
 
@@ -63,7 +64,7 @@ ms.locfileid: "85550280"
 
 Ключевыми событиями, связанными с проверкой паролей, являются следующие:
 
-| событие |Изменение пароля |Настройка пароля|
+| Событие |Изменение пароля |Настройка пароля|
 | --- | :---: | :---: |
 |Успех |10014 |10015|
 |Ошибка (из-за политики паролей клиента)| 10016, 30002| 10017, 30003|
@@ -235,7 +236,7 @@ HKLM\System\CurrentControlSet\Services\AzureADPasswordProtectionDCAgent\Paramete
 
 Программное обеспечение службы агента контроллера домена устанавливает объект счетчика производительности с именем **Azure AD Password Protection**. В настоящее время доступны следующие счетчики производительности:
 
-|Имя счетчика производительности | Описание:|
+|Имя счетчика производительности | Описание|
 | --- | --- |
 |Обработано паролей |Этот счетчик отображает общее количество обработанных паролей (принятых или отклоненных) с момента последнего перезапуска.|
 |Принято паролей |Этот счетчик отображает общее количество принятых паролей с момента последнего перезапуска.|
@@ -382,7 +383,7 @@ Current version: 1.2.116.0
 
 Это событие будет выдаваться, даже если прокси-агент настроен с включенным автообновлением.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Предварительный просмотр: мониторинг, отчетность и устранение неполадок защиты паролем Azure AD](howto-password-ban-bad-on-premises-troubleshoot.md)
 

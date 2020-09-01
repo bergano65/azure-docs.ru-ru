@@ -7,16 +7,16 @@ ms.topic: conceptual
 ms.date: 07/02/2020
 ms.author: mbaldwin
 ms.custom: security-benchmark
-ms.openlocfilehash: 7871099e3e05613bec29a4bfc0824dd9647431e7
-ms.sourcegitcommit: dee7b84104741ddf74b660c3c0a291adf11ed349
+ms.openlocfilehash: 909d423b31bb76d8d6aaed994d1c9f7372cbc01f
+ms.sourcegitcommit: 656c0c38cf550327a9ee10cc936029378bc7b5a2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85937545"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89069788"
 ---
 # <a name="azure-policy-security-baseline-for-azure-security-benchmark"></a>Базовый план безопасности политики Azure для производительности системы безопасности Azure
 
-Этот базовый план безопасности применяет рекомендации из [теста безопасности Azure](../../../security/benchmarks/overview.md) к политике Azure. В тестовом производительности Azure содержатся рекомендации по обеспечению безопасности облачных решений в Azure. Содержимое группируются по **доменам соответствия** и **элементам управления безопасностью** , определенным в производительности системы безопасности Azure, и связанным рекомендациям, применимым к политике Azure. **Элементы управления** , неприменимые к политике Azure, были исключены. Сведения о том, как полностью сопоставить политику Azure с тестовым показателем безопасности Azure, см. в [полном файле сопоставления базовых показателей безопасности политики Azure](https://github.com/MicrosoftDocs/SecurityBenchmarks/tree/master/Azure%20Offer%20Security%20Baselines).
+Этот базовый план безопасности применяет рекомендации из [теста безопасности Azure](../../../security/benchmarks/overview.md) к политике Azure. Azure Security Benchmark содержит рекомендации по обеспечению безопасности облачных решений в Azure. Содержимое группируются по **доменам соответствия** и **элементам управления безопасностью** , определенным в производительности системы безопасности Azure, и связанным рекомендациям, применимым к политике Azure. **Элементы управления** , неприменимые к политике Azure, были исключены. Сведения о том, как полностью сопоставить политику Azure с тестовым показателем безопасности Azure, см. в [полном файле сопоставления базовых показателей безопасности политики Azure](https://github.com/MicrosoftDocs/SecurityBenchmarks/tree/master/Azure%20Offer%20Security%20Baselines).
 
 Сведения о сопоставлении элементов управления производительности Azure с встроенными определениями политик с помощью встроенной инициативы см. в разделе [соответствие нормативным требованиям: производительность системы безопасности Azure](../samples/azure-security-benchmark.md).
 
@@ -66,19 +66,19 @@ ms.locfileid: "85937545"
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
-**Ответственность**. Customer
+**Ответственность**: Customer
 
 ## <a name="data-protection"></a>Защита данных
 
 *Дополнительные сведения см. в статье [Управление безопасностью: защита данных](../../../security/benchmarks/security-control-data-protection.md).*
 
-### <a name="46-use-role-based-access-control-to-control-access-to-resources"></a>4,6. Использование управления доступом на основе ролей для управления доступом к ресурсам
+### <a name="46-use-azure-rbac-to-control-access-to-resources"></a>4.6. Контроль доступа к ресурсам с помощью RBAC
 
-**Руководство**. Используйте Azure Active Directory управления доступом на основе РОЛЕЙ (RBAC) для управления доступом к политике Azure.
+**Руководство**. Использование управления доступом на основе ролей Azure (Azure RBAC) для управления доступом к политике Azure.
 
-* [Разрешения RBAC в службе "Политика Azure"](../overview.md#rbac-permissions-in-azure-policy)
+* [Разрешения RBAC в Azure в политике Azure](../overview.md#rbac-permissions-in-azure-policy)
 
-* [Настройка RBAC в Azure](../../../role-based-access-control/role-assignments-portal.md)
+* [Настройка Azure RBAC](../../../role-based-access-control/role-assignments-portal.md)
 
 
 **Мониторинг Центра безопасности Azure**: в настоящее время недоступен.
@@ -119,7 +119,7 @@ ms.locfileid: "85937545"
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
-**Ответственность**. Customer
+**Ответственность**: Customer
 
 ### <a name="65-monitor-for-unapproved-azure-resources"></a>6.5. Отслеживание неутвержденных ресурсов Azure
 
@@ -130,7 +130,7 @@ ms.locfileid: "85937545"
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
-**Ответственность**. Customer
+**Ответственность**: Customer
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

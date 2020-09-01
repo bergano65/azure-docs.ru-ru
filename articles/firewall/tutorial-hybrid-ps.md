@@ -5,15 +5,15 @@ services: firewall
 author: vhorne
 ms.service: firewall
 ms.topic: how-to
-ms.date: 01/08/2020
+ms.date: 08/28/2020
 ms.author: victorh
 customer intent: As an administrator, I want to control network access from an on-premises network to an Azure virtual network.
-ms.openlocfilehash: 802df45e7434fd0cb425137964880a281f885ad8
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: a91d0e11c44657a2d4cdd267ffa6490ca89532a9
+ms.sourcegitcommit: 656c0c38cf550327a9ee10cc936029378bc7b5a2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85611209"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89069414"
 ---
 # <a name="deploy-and-configure-azure-firewall-in-a-hybrid-network-using-azure-powershell"></a>Развертывание и настройка Брандмауэра Azure в гибридной сети с помощью Azure PowerShell
 
@@ -31,23 +31,22 @@ ms.locfileid: "85611209"
 
 Вы узнаете, как выполнять следующие задачи:
 
-> [!div class="checklist"]
-> * Объявление переменных
-> * Создание центральной виртуальной сети с брандмауэром
-> * Создание периферийной виртуальной сети
-> * Создание локальной виртуальной сети
-> * Настройка и развертывание брандмауэра
-> * Создание и подключение шлюзов VPN
-> * Настройка пиринга между центральной и периферийной виртуальными сетями
-> * Создание маршрутов.
-> * Создание виртуальных машин
-> * тестирование брандмауэра.
+* Объявление переменных
+* Создание центральной виртуальной сети с брандмауэром
+* Создание периферийной виртуальной сети
+* Создание локальной виртуальной сети
+* Настройка и развертывание брандмауэра
+* Создание и подключение шлюзов VPN
+* Настройка пиринга между центральной и периферийной виртуальными сетями
+* Создание маршрутов.
+* Создание виртуальных машин
+* тестирование брандмауэра.
 
 Если вместо работы с этим руководством вы хотите использовать портал Azure, см. [руководство по развертыванию и настройке брандмауэра Azure в гибридной сети с помощью портал Azure](tutorial-hybrid-portal.md).
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Для работы с этой статьей необходимо запустить PowerShell локально. Необходимо установить модуль Azure PowerShell. Чтобы узнать версию, выполните команду `Get-Module -ListAvailable Az`. Если вам необходимо выполнить обновление, ознакомьтесь со статьей, посвященной [установке модуля Azure PowerShell](https://docs.microsoft.com/powershell/azure/install-Az-ps). После проверки версии PowerShell выполните командлет `Login-AzAccount`, чтобы создать подключение к Azure.
 
@@ -71,7 +70,7 @@ ms.locfileid: "85611209"
 
 Связанную справочную документацию по Azure PowerShell см. [здесь](https://docs.microsoft.com/powershell/module/az.network/new-azfirewall).
 
-Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
+Если у вас еще нет подписки Azure, создайте [бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
 ## <a name="declare-the-variables"></a>Объявление переменных
 

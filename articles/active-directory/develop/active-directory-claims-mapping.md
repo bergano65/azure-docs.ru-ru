@@ -13,12 +13,12 @@ ms.topic: how-to
 ms.date: 08/25/2020
 ms.author: ryanwi
 ms.reviewer: paulgarn, hirsin, jeedes, luleon
-ms.openlocfilehash: 1cd2b7550d47ecc92f8ca7f5531fab923e13930c
-ms.sourcegitcommit: b33c9ad17598d7e4d66fe11d511daa78b4b8b330
+ms.openlocfilehash: e1c931b37cbe155d62aaffe47e36d84afa547638
+ms.sourcegitcommit: 656c0c38cf550327a9ee10cc936029378bc7b5a2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88853362"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89068649"
 ---
 # <a name="how-to-customize-claims-emitted-in-tokens-for-a-specific-app-in-a-tenant-preview"></a>Руководство. Настройка утверждений, добавляемых в токены для определенных служб в клиенте (предварительная версия)
 
@@ -302,7 +302,7 @@ ms.locfileid: "88853362"
 | Пользователь | streetaddress | Почтовый адрес |
 | Пользователь | postalcode | Почтовый индекс |
 | Пользователь | preferredlanguange | Предпочитаемый язык |
-| Пользователь | onpremisesuserprincipalname | Имя участника-пользователя в локальной среде |
+| Пользователь | onpremisesuserprincipalname | Имя участника-пользователя в локальной среде |*
 | Пользователь | mailNickname | Почтовый псевдоним |
 | Пользователь | extensionattribute1 | Атрибут расширения 1 |
 | Пользователь | extensionattribute2 | Атрибут расширения 2 |
@@ -340,6 +340,8 @@ ms.locfileid: "88853362"
 
 - Тип JwtClaimType должен содержать имя утверждения для добавления в JWT.
 - Тип SamlClaimType должен содержать URI утверждения для добавления в токены SAML.
+
+* **атрибут onPremisesUserPrincipalName:** При использовании альтернативного идентификатора атрибут userPrincipalName локального атрибута является синхронизированным с атрибутом Azure AD onPremisesUserPrincipalName. Этот атрибут доступен только при настройке альтернативного идентификатора, но также доступен в бета-версии MS Graph: https://graph.microsoft.com/beta/me/ .
 
 > [!NOTE]
 > Имена и URI утверждений в наборе ограниченных утверждений не удастся использовать для элементов типа утверждения. Дополнительные сведения см. в разделе "Исключения и ограничения" далее в этой статье.

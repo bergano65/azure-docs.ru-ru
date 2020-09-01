@@ -12,17 +12,17 @@ ms.date: 11/26/2019
 ms.author: ryanwi
 ms.reviewer: dkershaw, sureshja
 ms.custom: aaddev, identityplatformtop40
-ms.openlocfilehash: 5d88c685f1e55bd361ac50662d9eaf931cba15c3
-ms.sourcegitcommit: b8702065338fc1ed81bfed082650b5b58234a702
+ms.openlocfilehash: da99468b1582c4acab192ad3b96761172aa69580
+ms.sourcegitcommit: 656c0c38cf550327a9ee10cc936029378bc7b5a2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/11/2020
-ms.locfileid: "88115804"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89068666"
 ---
 # <a name="azure-active-directory-graph-api"></a>API Graph Azure Active Directory
 
 > [!IMPORTANT]
-> Для доступа к ресурсам Azure Active Directory (Azure AD) настоятельно рекомендуется использовать [Microsoft Graph](https://developer.microsoft.com/graph) , а не API Graph Azure AD. В настоящее время усилия наших разработчиков направлены на Microsoft Graph, и дальнейшие усовершенствования API Azure AD Graph не планируются. Существует ограниченное количество сценариев, в которых API Graph Azure AD все еще может быть подходящими. Дополнительные сведения см. в блоге [Microsoft Graph или Azure AD Graph](https://developer.microsoft.com/office/blogs/microsoft-graph-or-azure-ad-graph/) , а также [в статье Перенос приложений Azure ad Graph в Microsoft Graph](/graph/migrate-azure-ad-graph-overview).
+> Для доступа к ресурсам Azure Active Directory (Azure AD) настоятельно рекомендуется использовать [Microsoft Graph](https://developer.microsoft.com/graph) , а не API Graph Azure AD. В настоящее время усилия наших разработчиков направлены на Microsoft Graph, и дальнейшие усовершенствования API Azure AD Graph не планируются. Существует ограниченное количество сценариев, в которых API Graph Azure AD все еще может быть подходящими. Дополнительные сведения см. в блоге [Microsoft Graph или Azure AD Graph](https://developer.microsoft.com/office/blogs/microsoft-graph-or-azure-ad-graph/) , а также [в статье Перенос приложений Azure ad Graph в Microsoft Graph](/graph/migrate-azure-ad-graph-planning-checklist).
 
 В этой статье рассматривается API Graph Azure AD. Аналогичные сведения, связанные с API Microsoft Graph, см. в статье [Использование API Microsoft Graph](/graph/use-the-api).
 

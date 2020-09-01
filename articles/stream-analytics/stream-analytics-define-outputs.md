@@ -7,12 +7,12 @@ ms.reviewer: mamccrea
 ms.service: stream-analytics
 ms.topic: conceptual
 ms.date: 08/25/2020
-ms.openlocfilehash: 92cc742fce101b67bfb359381b4eabf9cf2a404e
-ms.sourcegitcommit: 927dd0e3d44d48b413b446384214f4661f33db04
+ms.openlocfilehash: ade5972226a735ce5d093890091536baf02f5eff
+ms.sourcegitcommit: 656c0c38cf550327a9ee10cc936029378bc7b5a2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88869581"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89068989"
 ---
 # <a name="outputs-from-azure-stream-analytics"></a>Выходные данные из Azure Stream Analytics
 
@@ -24,12 +24,12 @@ ms.locfileid: "88869581"
 
 | Тип выходных данных | Секционирование | Безопасность | 
 |-------------|--------------|----------|
-|[Azure Data Lake Storage 1-го поколения](azure-data-lake-storage-gen1-output.md)|Пользователь Azure Active Directory </br> MSI|
+|[Azure Data Lake Storage 1-го поколения](azure-data-lake-storage-gen1-output.md)|Да|Пользователь Azure Active Directory </br> MSI|
 |[База данных SQL Azure](sql-database-output.md)|Да, необходимо включить.|Проверка подлинности пользователя SQL </br> MSI (Предварительная версия)|
-|[Azure Synapse Analytics (предварительная версия)](azure-synapse-analytics-output.md)|Нет|Проверка подлинности пользователя SQL|
+|[Azure Synapse Analytics (предварительная версия)](azure-synapse-analytics-output.md)|нет|Проверка подлинности пользователя SQL|
 |[Хранилище BLOB-объектов и Azure Data Lake Gen 2](blob-storage-azure-data-lake-gen2-output.md)|Да|MSI </br> Ключ доступа|
 |[Центры событий Azure](event-hubs-output.md)|Да|Ключ доступа|
-|[Power BI](power-bi-output.md)|Нет|Пользователь Azure Active Directory </br> MSI|
+|[Power BI](power-bi-output.md)|нет|Пользователь Azure Active Directory </br> MSI|
 |[Хранилище таблиц Azure](table-storage-output.md)|Да|Ключ учетной записи|
 |[Очереди служебной шины Azure](service-bus-queues-output.md)|Да|Ключ доступа|
 |[Разделы по служебной шине Azure](service-bus-topics-output.md)|Да|Ключ доступа|

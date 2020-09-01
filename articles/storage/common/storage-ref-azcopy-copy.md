@@ -8,12 +8,12 @@ ms.date: 07/24/2020
 ms.author: normesta
 ms.subservice: common
 ms.reviewer: zezha-msft
-ms.openlocfilehash: 883d0afac5623838e9dde068964b36cfe3b44380
-ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
+ms.openlocfilehash: b9d5a9e071cc1b2ac81e8cacea8c974181fbb3b6
+ms.sourcegitcommit: 656c0c38cf550327a9ee10cc936029378bc7b5a2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87281996"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89070400"
 ---
 # <a name="azcopy-copy"></a>azcopy copy
 
@@ -90,7 +90,7 @@ cat "/path/to/file.txt" | azcopy cp "https://[account].blob.core.windows.net/[co
 azcopy cp "/path/to/dir" "https://[account].blob.core.windows.net/[container]/[path/to/directory]?[SAS]" --recursive
 ```
 
-или диспетчер конфигурации служб
+или
 
 ```azcopy
 azcopy cp "/path/to/dir" "https://[account].blob.core.windows.net/[container]/[path/to/directory]?[SAS]" --recursive --put-md5
@@ -214,7 +214,7 @@ azcopy cp "https://s3.amazonaws.com/" "https://[destaccount].blob.core.windows.n
 - azcopy cp "https://s3.amazonaws.com/[bucket*name]/" "https://[destaccount].blob.core.windows.net?[SAS]" --recursive
 ```
 
-## <a name="options"></a>Параметры
+## <a name="options"></a>Варианты
 
 **--BACKUP** Активирует Windows "Себаккуппривилеже для отправки" или "Сересторепривилеже для скачивания", чтобы разрешить AzCopy просматривать и читать все файлы независимо от разрешений файловой системы и восстанавливать все разрешения. Требует, чтобы учетная запись, в которой запущен AzCopy, уже имеет эти разрешения (например, имеет права администратора или является членом `Backup Operators` группы). Этот флаг активирует привилегии, которые у учетной записи уже есть.
 
@@ -254,7 +254,7 @@ azcopy cp "https://s3.amazonaws.com/" "https://[destaccount].blob.core.windows.n
 
 Строка **--from-to** дополнительно задает комбинацию назначения источника. Например: `LocalBlob` , `BlobLocal` , `LocalBlobFS` .
 
-**--** Справка по копированию.
+**--**  Справка по копированию.
 
 **--include-After** строка включает только те файлы, которые были изменены в или после заданных даты и времени. Значение должно быть в формате ISO8601. Если часовой пояс не указан, предполагается, что значение находится в локальном часовом поясе компьютера, на котором выполняется AzCopy. Например, `2020-08-19T15:04:00Z` для времени в формате UTC или `2020-08-19` для полуночи (00:00) в местном часовом поясе. Как и в AzCopy 10,5, этот флаг применяется только к файлам, а не к папкам, поэтому свойства папки не копируются при использовании этого флага с `--preserve-smb-info` или `--preserve-smb-permissions` .
 
@@ -263,6 +263,8 @@ azcopy cp "https://s3.amazonaws.com/" "https://[destaccount].blob.core.windows.n
 Строка **--include-Path** включает в себя только эти пути при копировании. Этот параметр не поддерживает подстановочные знаки (*). Проверяет относительный префикс пути (например: `myFolder;myFolder/subDirName/file.pdf` ).
 
 **--include-шаблон** строки включает в себя только эти файлы при копировании. Этот параметр поддерживает подстановочные знаки (*). Отдельные файлы с помощью `;` .
+
+**— строка списка версий** указывает файл, в котором каждый идентификатор версии указан в отдельной строке. Убедитесь, что источник должен указывать на один большой двоичный объект, и все идентификаторы версий, указанные в файле с помощью этого флага, должны принадлежать только к исходному BLOB-объекту. AzCopy загрузит указанные версии в указанную папку назначения. Дополнительные сведения см. [в статье скачивание предыдущих версий большого двоичного объекта](storage-use-azcopy-blobs.md#download-previous-versions-of-a-blob).
 
 **--строка на уровне журнала** определяет уровень детализации журнала для файла журнала, доступные уровни: сведения (все запросы и ответы), предупреждение (медленные ответы), ошибка (только неудачные запросы) и нет (нет выходных журналов). (по умолчанию `INFO` ). 
 
@@ -302,6 +304,6 @@ azcopy cp "https://s3.amazonaws.com/" "https://[destaccount].blob.core.windows.n
 
 **--Trusted-Microsoft-суффиксы** указывает дополнительные суффиксы домена, в которых могут отправляться Azure Active Directory токены входа.  Значение по умолчанию — `*.core.windows.net;*.core.chinacloudapi.cn;*.core.cloudapi.de;*.core.usgovcloudapi.net`. Все перечисленные здесь значения добавляются к значениям по умолчанию. В целях безопасности следует размещать только Microsoft Azureные домены. Несколько записей разделяются точкой с запятой.
 
-## <a name="see-also"></a>См. также статью
+## <a name="see-also"></a>См. также раздел
 
 - [azcopy](storage-ref-azcopy.md)

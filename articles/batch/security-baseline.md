@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 04/09/2020
 ms.author: mbaldwin
 ms.custom: security-benchmark
-ms.openlocfilehash: 76312a55262d316c679bde2a69e8b98844addcb0
-ms.sourcegitcommit: 845a55e6c391c79d2c1585ac1625ea7dc953ea89
+ms.openlocfilehash: 59b795462ff6e033e299c15f4099b7bfd3874451
+ms.sourcegitcommit: 656c0c38cf550327a9ee10cc936029378bc7b5a2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/05/2020
-ms.locfileid: "85963875"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89069399"
 ---
 # <a name="azure-security-baseline-for-batch"></a>Базовый план безопасности Azure для пакетной службы
 
@@ -56,7 +56,7 @@ https://docs.microsoft.com/azure/security-center/security-center-network-recomme
 
 **Мониторинг Центра безопасности Azure**: Да
 
-**Ответственность**. Customer
+**Ответственность**: Customer
 
 ### <a name="13-protect-critical-web-applications"></a>1,3: защита критически важных веб-приложений
 
@@ -80,7 +80,7 @@ https://docs.microsoft.com/azure/security-center/security-center-alerts-service-
 
 **Мониторинг Центра безопасности Azure**: Да
 
-**Ответственность**. Customer
+**Ответственность**: Customer
 
 ### <a name="15-record-network-packets-and-flow-logs"></a>1,5: запись сетевых пакетов и журналов потоков
 
@@ -344,7 +344,7 @@ https://docs.microsoft.com/azure/security-center/security-center-identity-access
 
 https://docs.microsoft.com/rest/api/batchservice/computenode/adduser
 
-**Мониторинг Центра безопасности Azure**. Неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
 **Ответственность**: Customer
 
@@ -404,9 +404,9 @@ https://docs.microsoft.com/windows-server/identity/securing-privileged-access/pr
 
 https://docs.microsoft.com/azure/active-directory/authentication/howto-mfa-getstarted
 
-**Мониторинг Центра безопасности Azure**. Неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
-**Ответственность**. Customer
+**Ответственность**: Customer
 
 ### <a name="37-log-and-alert-on-suspicious-activity-from-administrative-accounts"></a>3,7: регистрация и оповещение о подозрительных действиях из учетных записей администраторов
 
@@ -460,7 +460,7 @@ https://docs.microsoft.com/azure/batch/batch-aad-auth
 
 https://docs.microsoft.com/azure/active-directory/governance/access-reviews-overview
 
-**Мониторинг Центра безопасности Azure**. Да
+**Мониторинг Центра безопасности Azure**: Да
 
 **Ответственность**: Customer
 
@@ -472,7 +472,7 @@ https://docs.microsoft.com/azure/active-directory/governance/access-reviews-over
 
 https://docs.microsoft.com/azure/active-directory/reports-monitoring/howto-integrate-activity-logs-with-log-analytics
 
-**Мониторинг Центра безопасности Azure**. Да
+**Мониторинг Центра безопасности Azure**: Да
 
 **Ответственность**: Customer
 
@@ -506,7 +506,7 @@ https://docs.microsoft.com/azure/sentinel/quickstart-onboard
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
-**Ответственность**. Customer
+**Ответственность**: Customer
 
 ## <a name="data-protection"></a>Защита данных
 
@@ -536,9 +536,9 @@ https://docs.microsoft.com/azure/batch/batch-virtual-network
 
 https://docs.microsoft.com/azure/storage/common/storage-security-guide
 
-**Мониторинг Центра безопасности Azure**. Да
+**Мониторинг Центра безопасности Azure**: Да
 
-**Ответственность**: Customer
+**Ответственность**. Customer
 
 ### <a name="43-monitor-and-block-unauthorized-transfer-of-sensitive-information"></a>4.3. Мониторинг и блокирование несанкционированной передачи конфиденциальной информации
 
@@ -596,19 +596,19 @@ https://docs.microsoft.com/azure/storage/common/storage-security-guide
 
 ### <a name="46-use-azure-rbac-to-control-access-to-resources"></a>4.6. Контроль доступа к ресурсам с помощью RBAC
 
-**Руководство**. Использование управления доступом на основе ролей (Azure Active Directory AAD) для управления доступом к плоскости управления ресурсами Azure, включая учетную запись пакетной службы, пул пакетов и учетные записи хранения.
+**Руководство**. Использование управления доступом на основе ролей Azure (Azure RBAC) для управления доступом к плоскости управления ресурсами Azure, включая учетную запись пакетной службы, пулы и учетные записи хранения.
 
 Общие сведения об Azure RBAC:
 
 https://docs.microsoft.com/azure/role-based-access-control/overview
 
-Настройка RBAC в Azure: 
+Как настроить Azure RBAC:
 
 https://docs.microsoft.com/azure/role-based-access-control/role-assignments-portal
 
 **Мониторинг Центра безопасности Azure**: в настоящее время недоступен.
 
-**Ответственность**: Customer
+**Ответственность**. Customer
 
 ### <a name="47-use-host-based-data-loss-prevention-to-enforce-access-control"></a>4.7. Использование защиты от потери данных на основе узла для обеспечения контроля доступа
 
@@ -632,7 +632,7 @@ https://docs.microsoft.com/azure/security/fundamentals/protection-customer-data
 
 https://docs.microsoft.com/azure/storage/common/storage-encryption-keys-portal
 
-**Мониторинг Центра безопасности Azure**. Да
+**Мониторинг Центра безопасности Azure**: Да
 
 **Ответственность**: Customer
 
@@ -650,7 +650,7 @@ https://docs.microsoft.com/azure/azure-monitor/platform/alerts-activity-log
 
 https://docs.microsoft.com/azure/storage/common/storage-monitor-storage-account
 
-**Мониторинг Центра безопасности Azure**. Да
+**Мониторинг Центра безопасности Azure**: Да
 
 **Ответственность**: Customer
 
@@ -692,7 +692,7 @@ https://docs.microsoft.com/azure/storage/common/storage-monitor-storage-account
 
 **Мониторинг Центра безопасности Azure**: в настоящее время недоступен.
 
-**Ответственность**: Customer
+**Ответственность**. Customer
 
 ### <a name="55-use-a-risk-rating-process-to-prioritize-the-remediation-of-discovered-vulnerabilities"></a>5.5. Использование процесса оценки рисков для определения приоритета в устранении обнаруженных уязвимостей
 
@@ -700,7 +700,7 @@ https://docs.microsoft.com/azure/storage/common/storage-monitor-storage-account
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
-**Ответственность**. Customer
+**Ответственность**: Customer
 
 ## <a name="inventory-and-asset-management"></a>Инвентаризация и управление ресурсами
 
@@ -726,7 +726,7 @@ https://docs.microsoft.com/azure/role-based-access-control/overview
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
-**Ответственность**. Customer
+**Ответственность**: Customer
 
 ### <a name="62-maintain-asset-metadata"></a>6,2: сохранение метаданных активов
 
@@ -767,7 +767,7 @@ https://docs.microsoft.com/azure/azure-resource-manager/resource-group-using-tag
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
-**Ответственность**. Customer
+**Ответственность**: Customer
 
 ### <a name="65-monitor-for-unapproved-azure-resources"></a>6,5: отслеживание неутвержденных ресурсов Azure
 
@@ -837,7 +837,7 @@ https://docs.microsoft.com/azure/azure-resource-manager/resource-group-using-tag
 
 **Мониторинг Центра безопасности Azure**: в настоящее время недоступен.
 
-**Ответственность**: Customer
+**Ответственность**. Customer
 
 ### <a name="611-divlimit-users-ability-to-interact-with-azure-resource-manager-via-scriptsdiv"></a>6.11. <div>Ограничение возможности пользователей взаимодействовать с Azure Resource Manager с помощью сценариев</div>
 
@@ -887,7 +887,7 @@ https://docs.microsoft.com/azure/governance/policy/tutorials/create-and-manage
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
-**Ответственность**. Customer
+**Ответственность**: Customer
 
 ### <a name="72-establish-secure-configurations-for-your-operating-system"></a>7,2: Установите безопасные конфигурации для вашей операционной системы
 
@@ -895,7 +895,7 @@ https://docs.microsoft.com/azure/governance/policy/tutorials/create-and-manage
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
-**Ответственность**. Customer
+**Ответственность**: Customer
 
 ### <a name="73-maintain-secure-configurations-for-all-azure-resources"></a>7,3: Обеспечьте безопасность конфигураций для всех ресурсов Azure
 
@@ -914,7 +914,7 @@ https://docs.microsoft.com/azure/governance/policy/tutorials/create-and-manage
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
-**Ответственность**. Customer
+**Ответственность**: Customer
 
 ### <a name="74-maintain-secure-configurations-for-operating-systems"></a>7,4: поддержание безопасных конфигураций для операционных систем
 
@@ -938,17 +938,17 @@ https://docs.microsoft.com/azure/devops/repos/index?view=azure-devops
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
-**Ответственность**. Customer
+**Ответственность**: Customer
 
 ### <a name="76-securely-store-custom-operating-system-images"></a>7,6: безопасное хранение пользовательских образов операционной системы
 
-**Руководство**. при использовании пользовательских образов для пулов пакетной службы Azure используйте управление доступом на основе РОЛЕЙ (RBAC), чтобы обеспечить доступ к образам только полномочным пользователям.
+**Руководство**. при использовании пользовательских образов для пулов пакетной службы Azure используйте управление доступом на основе ролей Azure (Azure RBAC), чтобы обеспечить доступ к образам только полномочным пользователям.
 
-Общие сведения о RBAC в Azure:
+Общие сведения об Azure RBAC:
 
 https://docs.microsoft.com/azure/role-based-access-control/rbac-and-directory-admin-roles
 
-Настройка RBAC в Azure: 
+Как настроить Azure RBAC:
 
 https://docs.microsoft.com/azure/role-based-access-control/quickstart-assign-role-user-portal
 
@@ -1068,7 +1068,7 @@ https://docs.microsoft.com/azure/key-vault/managed-identity
 
 https://docs.microsoft.com/azure/security/fundamentals/antimalware
 
-**Мониторинг Центра безопасности Azure**. Неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
 **Ответственность**: Совмещаемая блокировка
 
@@ -1127,7 +1127,7 @@ https://docs.microsoft.com/powershell/module/azurerm.keyvault/restore-azurekeyva
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
-**Ответственность**. Customer
+**Ответственность**: Customer
 
 ### <a name="94-ensure-protection-of-backups-and-customer-managed-keys"></a>9,4: Обеспечьте защиту резервных копий и управляемых клиентом ключей
 
@@ -1155,7 +1155,7 @@ https://docs.microsoft.com/azure/security-center/security-center-planning-and-op
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
-**Ответственность**. Customer
+**Ответственность**: Customer
 
 ### <a name="102-create-incident-scoring-and-prioritization-procedure"></a>10,2: создание оценки инцидента и процедура определения приоритетов
 
@@ -1173,7 +1173,7 @@ https://docs.microsoft.com/azure/security-center/security-center-planning-and-op
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
-**Ответственность**. Customer
+**Ответственность**: Customer
 
 ### <a name="104-provide-security-incident-contact-details-and-configure-alert-notifications-nbspfor-security-incidents"></a>10,4: укажите контактные данные инцидента безопасности и настройте уведомления о &nbsp; событиях для инцидентов безопасности.
 

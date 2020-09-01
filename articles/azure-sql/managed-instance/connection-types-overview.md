@@ -10,14 +10,15 @@ author: srdan-bozovic-msft
 ms.author: srbozovi
 ms.reviewer: vanto
 ms.date: 10/07/2019
-ms.openlocfilehash: 6c6774fb462a21e721b19ae53d1d018d780b28ae
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.custom: devx-track-azurepowershell
+ms.openlocfilehash: e46c6d1c14d226522a1d534418b91076efeaaccf
+ms.sourcegitcommit: 656c0c38cf550327a9ee10cc936029378bc7b5a2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85517326"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89070723"
 ---
-# <a name="azure-sql-managed-instance-connection-types"></a>Типы подключений Управляемый экземпляр Azure SQL
+# <a name="azure-sql-managed-instance-connection-types"></a>Типы соединения управляемого экземпляра SQL Azure
 [!INCLUDE[appliesto-sqlmi](../includes/appliesto-sqlmi.md)]
 
 В этой статье объясняется, как клиенты подключаются к Azure SQL Управляемый экземпляр в зависимости от типа соединения. Ниже приведены примеры сценариев для изменения типов подключений, а также соображения, связанные с изменением параметров подключения по умолчанию.
@@ -69,7 +70,7 @@ $mi = Get-AzSqlInstance -ResourceGroupName {rg-name} -Name {mi-name}
 $mi = $mi | Set-AzSqlInstance -ProxyOverride "Redirect" -force
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Восстановление базы данных в SQL Управляемый экземпляр](restore-sample-database-quickstart.md)
 - Узнайте, как [настроить общедоступную конечную точку на SQL управляемый экземпляр](public-endpoint-configure.md)

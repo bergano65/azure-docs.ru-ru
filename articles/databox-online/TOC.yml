@@ -1,73 +1,181 @@
 - name: Документация по Azure Stack Edge и Шлюзу Data Box
   href: /azure/databox-online/
   expanded: true
-- name: Шлюз Data Box
+- name: Azure Stack Edge с GPU (предварительная версия)
   items:
     - name: Обзор
       items:
-        - name: Общие сведения о Шлюзе Data Box
-          href: data-box-gateway-overview.md
+        - name: Что собой представляет Azure Stack Edge с GPU?
+          href: azure-stack-edge-gpu-overview.md
     - name: Учебники
       items:
-        - name: 1. Подготовка
-          href: data-box-gateway-deploy-prep.md
-        - name: 2а. Подготовка в Hyper-V
-          href: data-box-gateway-deploy-provision-hyperv.md
-        - name: 2б. Подготовка в VMware
-          href: data-box-gateway-deploy-provision-vmware.md
-        - name: '3. Подключение, настройка и активация'
-          href: data-box-gateway-deploy-connect-setup-activate.md
-        - name: 4. Добавление общего ресурса и подключение к нему
-          href: data-box-gateway-deploy-add-shares.md
+        - name: "0.\_Получение контрольного списка"
+          href: azure-stack-edge-gpu-deploy-checklist.md
+        - name: "1.\_Упорядочение, подготовка"
+          href: azure-stack-edge-gpu-deploy-prep.md
+        - name: "2.\_Установка"
+          href: azure-stack-edge-gpu-deploy-install.md
+        - name: "3.\_Подключение"
+          href: azure-stack-edge-gpu-deploy-connect.md
+        - name: "4.\_Настройка сети"
+          href: azure-stack-edge-gpu-deploy-configure-network-compute-web-proxy.md
+        - name: "5.\_Настройка устройства"
+          href: azure-stack-edge-gpu-deploy-set-up-device-update-time.md
+        - name: "6.\_Настройка сертификатов"
+          href: azure-stack-edge-gpu-deploy-configure-certificates.md
+        - name: "7.\_Активация"
+          href: azure-stack-edge-gpu-deploy-activate.md
+        - name: "8.\_Настройка вычислений"
+          href: azure-stack-edge-gpu-deploy-configure-compute.md
+        - name: "9A.\_Добавление общей папки и подключение к ней"
+          href: azure-stack-edge-j-series-deploy-add-shares.md
+        - name: "9Б.\_Добавление учетных записей хранения и подключение к ним"
+          href: azure-stack-edge-j-series-deploy-add-storage-accounts.md
     - name: Основные понятия
       items:
         - name: Обзор требований
-          href: data-box-gateway-system-requirements.md
+          href: azure-stack-edge-gpu-system-requirements.md
         - name: Изучение ограничений
-          href: data-box-gateway-limits.md
+          href: azure-stack-edge-limits.md
         - name: Общие сведения о безопасности
-          href: data-box-gateway-security.md
-        - name: Варианты использования
-          href: data-box-gateway-use-cases.md
+          href: azure-stack-edge-security.md
+        - name: Просмотр спецификаций
+          items:
+            - name: Характеристики устройства
+              href: azure-stack-edge-gpu-technical-specifications-compliance.md
+            - name: Характеристики кабелей питания
+              href: azure-stack-edge-technical-specifications-power-cords-regional.md
+        - name: Основные сведения о Kubernetes
+          items:
+            - name: Что такое Kubernetes?
+              href: azure-stack-edge-gpu-kubernetes-overview.md
+            - name: Хранилище Kubernetes
+              href: azure-stack-edge-gpu-kubernetes-storage.md
+            - name: Сети Kubernetes
+              href: azure-stack-edge-gpu-kubernetes-networking.md
+            - name: Kubernetes RBAC
+              href: azure-stack-edge-gpu-kubernetes-rbac.md
+            - name: Рабочие нагрузки Kubernetes
+              href: azure-stack-edge-gpu-kubernetes-workload-management.md
     - name: Практическое руководство
       items:
-        - name: Update
-          href: data-box-gateway-apply-updates.md
-        - name: Управление
+        - name: Развертывание примеров IoT Edge
+          items:
+            - name: Модуль из коллекции NVIDIA
+              href: azure-stack-edge-j-series-configure-gpu-modules.md
+            - name: Модуль GPU из репозитория Git
+              href: azure-stack-edge-gpu-deploy-sample-module.md
+            - name: 'Модуля GPU, полученный через Marketplace'
+              href: azure-stack-edge-gpu-deploy-sample-module-marketplace.md
+        - name: Развертывание рабочих нагрузок Kubernetes
+          items:
+            - name: Использование kubectl
+              items:
+                - name: Получение доступа к кластеру Kubernetes
+                  href: azure-stack-edge-gpu-create-kubernetes-cluster.md
+                - name: Предоставление приложения без отслеживания состояния
+                  href: azure-stack-edge-j-series-deploy-stateless-application-kubernetes.md
+                - name: Развертывание приложения с отслеживанием состояния (статическая подготовка)
+                  href: azure-stack-edge-gpu-deploy-stateful-application-static-provision-kubernetes.md
+                - name: Развертывание приложения с отслеживанием состояния (динамическая подготовка)
+                  href: azure-stack-edge-gpu-deploy-stateful-application-dynamic-provision-kubernetes.md
+            - name: Посредством IoT Edge
+              items:
+                - name: Предоставление приложения без отслеживания состояния
+                  href: azure-stack-edge-gpu-deploy-stateless-application-iot-edge-module.md
+            - name: Использование Azure Arc
+              items:
+                - name: Включение Arc в кластере Kubernetes
+                  href: azure-stack-edge-gpu-deploy-arc-kubernetes-cluster.md
+                - name: Развертывание приложения без отслеживания состояния с помощью GitOps
+                  href: azure-stack-edge-gpu-deploy-stateless-application-git-ops-guestbook.md
+        - name: Настройка Azure Resource Manager
+          items:
+            - name: Подключение с помощью Azure PowerShell
+              href: azure-stack-edge-j-series-connect-resource-manager.md
+            - name: Установка пароля Azure Resource Manager
+              href: azure-stack-edge-j-series-set-azure-resource-manager-password.md
+            - name: Настройка параметров TLS клиента
+              href: azure-stack-edge-j-series-configure-tls-settings.md
+        - name: Развертывание виртуальных машин
+          items:
+            - name: 'Развертывание виртуальных машин: шаблоны'
+              href: azure-stack-edge-gpu-deploy-virtual-machine-templates.md
+            - name: "Развертывание виртуальных машин\_— командлеты Azure PowerShell"
+              href: azure-stack-edge-j-series-deploy-virtual-machine-powershell.md
+            - name: "Развертывание виртуальных машин\_— скрипт Azure PowerShell"
+              href: azure-stack-edge-j-series-deploy-virtual-machine-powershell-script.md
+            - name: "Развертывание виртуальных машин\_— Azure CLI и Python"
+              href: azure-stack-edge-j-series-deploy-virtual-machine-cli-python.md
+            - name: Создание образа виртуальной машины
+              href: azure-stack-edge-j-series-create-virtual-machine-image.md
+        - name: Управление сертификатами
+          items:
+            - name: Требования
+              href: azure-stack-edge-j-series-certificate-requirements.md
+            - name: Использование собственных компонентов
+              href: azure-stack-edge-j-series-manage-certificates.md
+            - name: Создание сертификата с помощью средства проверки готовности Azure Stack
+              href: azure-stack-edge-j-series-create-certificates-tool.md
+            - name: Устранение ошибок сертификата
+              href: azure-stack-edge-j-series-certificate-troubleshooting.md
+            - name: Разработка модуля C#
+              href: azure-stack-edge-j-series-create-iot-edge-module.md
+        - name: Управление пограничными вычислениями
+          href: azure-stack-edge-j-series-manage-compute.md
+        - name: Управление шлюзом хранилища
           items:
             - name: Общие папки
-              href: data-box-gateway-manage-shares.md
+              href: azure-stack-edge-j-series-manage-shares.md
             - name: Пользователи
-              href: data-box-gateway-manage-users.md
+              href: azure-stack-edge-j-series-manage-users.md
+            - name: Учетные записи хранения
+              href: azure-stack-edge-j-series-manage-storage-accounts.md
             - name: Графики пропускной способности
-              href: data-box-gateway-manage-bandwidth-schedules.md
-            - name: 'Управление доступом, питанием и режимом подключения'
-              href: data-box-gateway-manage-access-power-connectivity-mode.md
+              href: azure-stack-edge-j-series-manage-bandwidth-schedules.md
+        - name: Управление устройством
+          items:
+            - name: 'Питание, доступ, подключение'
+              href: azure-stack-edge-manage-access-power-connectivity-mode.md
             - name: Использование PowerShell
-              href: data-box-gateway-connect-powershell-interface.md
+              href: azure-stack-edge-gpu-connect-powershell-interface.md
+            - name: Применение обновлений
+              href: azure-stack-edge-gpu-install-update.md
+            - name: Возврат устройства
+              href: azure-stack-edge-return-device.md
+            - name: Замена устройства
+              href: azure-stack-edge-replace-device.md
         - name: Монитор
-          href: data-box-gateway-monitor.md
+          items:
+            - name: Использование диаграмм метрик
+              href: azure-stack-edge-monitor.md
+            - name: Использование панели мониторинга Kubernetes
+              href: azure-stack-edge-gpu-monitor-kubernetes-dashboard.md
         - name: Диагностика
-          href: data-box-gateway-troubleshoot.md
-        - name: Обращение в службу поддержки Майкрософт
-          href: azure-stack-edge-contact-microsoft-support.md
+          items:
+            - name: Проблемы с устройством
+              href: azure-stack-edge-troubleshoot.md
+            - name: Проблемы с заказом
+              href: azure-stack-edge-troubleshoot-ordering.md
+            - name: Обращение в службу поддержки Майкрософт
+              href: azure-stack-edge-contact-microsoft-support.md
     - name: Заметки о выпуске
       items:
-        - name: "2007\_— текущая версия"
-          href: data-box-gateway-2007-release-notes.md
-        - name: 1911
-          href: data-box-gateway-1911-release-notes.md
-        - name: 1906
-          href: data-box-gateway-1906-release-notes.md
-        - name: 1905
-          href: data-box-gateway-1905-release-notes.md
-        - name: Общедоступная версия
-          href: data-box-gateway-release-notes.md
-- name: Azure Stack Edge
+        - name: Заметки о выпуске для 2008
+          href: azure-stack-edge-gpu-2008-release-notes.md
+    - name: Справочник
+      items:
+        - name: Azure PowerShell
+          href: 'https://docs.microsoft.com/powershell/module/az.stackedge/?view=azps-4.4.0#stack_edge'
+        - name: REST API
+          href: 'https://docs.microsoft.com/rest/api/databoxedgegateway'
+        - name: Пакет SDK для .NET
+          href: 'https://docs.microsoft.com/dotnet/api/overview/azure/databoxedge/databoxgateway?view=azure-dotnet'
+- name: Azure Stack Edge с ППВМ
   items:
     - name: Обзор
       items:
-        - name: Что такое Azure Stack Edge?
+        - name: Что собой представляет Azure Stack Edge с ППВМ?
           href: azure-stack-edge-overview.md
     - name: Учебники
       items:
@@ -151,6 +259,68 @@
           href: 'https://docs.microsoft.com/rest/api/databoxedgegateway'
         - name: Пакет SDK для .NET
           href: 'https://docs.microsoft.com/dotnet/api/overview/azure/databoxedge/databoxgateway?view=azure-dotnet'
+- name: Шлюз Data Box
+  items:
+    - name: Обзор
+      items:
+        - name: Общие сведения о Шлюзе Data Box
+          href: data-box-gateway-overview.md
+    - name: Учебники
+      items:
+        - name: 1. Подготовка
+          href: data-box-gateway-deploy-prep.md
+        - name: 2а. Подготовка в Hyper-V
+          href: data-box-gateway-deploy-provision-hyperv.md
+        - name: 2б. Подготовка в VMware
+          href: data-box-gateway-deploy-provision-vmware.md
+        - name: '3. Подключение, настройка и активация'
+          href: data-box-gateway-deploy-connect-setup-activate.md
+        - name: 4. Добавление общего ресурса и подключение к нему
+          href: data-box-gateway-deploy-add-shares.md
+    - name: Основные понятия
+      items:
+        - name: Обзор требований
+          href: data-box-gateway-system-requirements.md
+        - name: Изучение ограничений
+          href: data-box-gateway-limits.md
+        - name: Общие сведения о безопасности
+          href: data-box-gateway-security.md
+        - name: Варианты использования
+          href: data-box-gateway-use-cases.md
+    - name: Практическое руководство
+      items:
+        - name: Update
+          href: data-box-gateway-apply-updates.md
+        - name: Управление
+          items:
+            - name: Общие папки
+              href: data-box-gateway-manage-shares.md
+            - name: Пользователи
+              href: data-box-gateway-manage-users.md
+            - name: Графики пропускной способности
+              href: data-box-gateway-manage-bandwidth-schedules.md
+            - name: 'Управление доступом, питанием и режимом подключения'
+              href: data-box-gateway-manage-access-power-connectivity-mode.md
+            - name: Использование PowerShell
+              href: data-box-gateway-connect-powershell-interface.md
+        - name: Монитор
+          href: data-box-gateway-monitor.md
+        - name: Диагностика
+          href: data-box-gateway-troubleshoot.md
+        - name: Обращение в службу поддержки Майкрософт
+          href: azure-stack-edge-contact-microsoft-support.md
+    - name: Заметки о выпуске
+      items:
+        - name: "2007\_— текущая версия"
+          href: data-box-gateway-2007-release-notes.md
+        - name: 1911
+          href: data-box-gateway-1911-release-notes.md
+        - name: 1906
+          href: data-box-gateway-1906-release-notes.md
+        - name: 1905
+          href: data-box-gateway-1905-release-notes.md
+        - name: Общедоступная версия
+          href: data-box-gateway-release-notes.md
 - name: Ресурсы
   items:
     - name: Примеры модуля Azure Stack Edge на C# (.NET)

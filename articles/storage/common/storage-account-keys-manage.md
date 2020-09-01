@@ -8,13 +8,13 @@ ms.service: storage
 ms.topic: how-to
 ms.date: 04/24/2020
 ms.author: tamram
-ms.custom: devx-track-azurecli
-ms.openlocfilehash: 8fda0384dacaf1183458e90688b1f6b63cc63a35
-ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
+ms.custom: devx-track-azurecli, devx-track-azurepowershell
+ms.openlocfilehash: e5ea94fea00771b64634d6c28a7879fabb195f09
+ms.sourcegitcommit: 656c0c38cf550327a9ee10cc936029378bc7b5a2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/31/2020
-ms.locfileid: "87501344"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89069665"
 ---
 # <a name="manage-storage-account-access-keys"></a>Управление ключами доступа к учетной записи хранения
 
@@ -73,7 +73,7 @@ az storage account keys list \
 Корпорация Майкрософт рекомендует использовать Azure Key Vault для управления ключами доступа и их смены. Приложение может безопасно получать доступ к ключам в Key Vault, что позволяет избежать их хранения в коде приложения. Дополнительные сведения об использовании Key Vault для управления ключами см. в следующих статьях:
 
 - [Управление ключами учетной записи хранения с помощью Azure Key Vault и PowerShell](../../key-vault/secrets/overview-storage-keys-powershell.md)
-- [Управление ключами учетной записи хранения с помощью Azure Key Vault и Azure CLI](../../key-vault/secrets/overview-storage-keys.md)
+- [Управление ключами учетной записи хранения с помощью Azure Key Vault и Azure CLI](../../key-vault/secrets/overview-storage-keys.md)
 
 ## <a name="manually-rotate-access-keys"></a>Поворот ключей доступа вручную
 

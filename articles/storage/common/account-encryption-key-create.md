@@ -10,13 +10,13 @@ ms.date: 02/05/2020
 ms.author: tamram
 ms.reviewer: ozgun
 ms.subservice: common
-ms.custom: devx-track-azurecli
-ms.openlocfilehash: e6ae39fea8c3839208fc366ba0ce8d69799357d2
-ms.sourcegitcommit: 269da970ef8d6fab1e0a5c1a781e4e550ffd2c55
+ms.custom: devx-track-azurecli, devx-track-azurepowershell
+ms.openlocfilehash: d60a6f9032a39ab4889ce0db154739c5cb3b540b
+ms.sourcegitcommit: 656c0c38cf550327a9ee10cc936029378bc7b5a2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/10/2020
-ms.locfileid: "88056726"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89070502"
 ---
 # <a name="create-an-account-that-supports-customer-managed-keys-for-tables-and-queues"></a>Создание учетной записи, поддерживающей управляемые клиентом ключи для таблиц и очередей
 
@@ -32,7 +32,7 @@ ms.locfileid: "88056726"
 
 - Восточная часть США
 - Центрально-южная часть США
-- западная часть США 2  
+- Западная часть США 2  
 
 ### <a name="register-to-use-the-account-encryption-key"></a>Зарегистрируйтесь, чтобы использовать ключ шифрования учетной записи
 
@@ -62,7 +62,7 @@ az feature register --namespace Microsoft.Storage \
 
 # <a name="template"></a>[Шаблон](#tab/template)
 
-Недоступно
+Н/Д
 
 ---
 
@@ -94,7 +94,7 @@ az feature show --namespace Microsoft.Storage \
 
 # <a name="template"></a>[Шаблон](#tab/template)
 
-Недоступно
+Н/Д
 
 ---
 
@@ -120,7 +120,7 @@ az provider register --namespace 'Microsoft.Storage'
 
 # <a name="template"></a>[Шаблон](#tab/template)
 
-Недоступно
+Н/Д
 
 ---
 
@@ -217,7 +217,7 @@ az storage account create \
 
 После создания учетной записи, которая использует ключ шифрования учетной записи, ознакомьтесь с одной из следующих статей, чтобы настроить ключи, управляемые клиентом, с помощью Azure Key Vault.
 
-- [Настройка ключей, управляемых клиентом, с помощью Azure Key Vault портал Azure](storage-encryption-keys-portal.md)
+- [Настройка ключей, управляемых клиентом, с помощью Azure Key Vault на портале Azure](storage-encryption-keys-portal.md)
 - [Настройка ключей, управляемых клиентом, с Azure Key Vault с помощью PowerShell](storage-encryption-keys-powershell.md)
 - [Настройка ключей, управляемых клиентом, с помощью Azure Key Vault Azure CLI](storage-encryption-keys-cli.md)
 

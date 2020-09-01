@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 07/22/2020
 ms.author: mbaldwin
 ms.custom: security-benchmark
-ms.openlocfilehash: a3641994098834b47412598b25b3effb2be7d276
-ms.sourcegitcommit: 2ff0d073607bc746ffc638a84bb026d1705e543e
+ms.openlocfilehash: 6e620502deb67c7fe79341bc1a45cb1ce33fa52f
+ms.sourcegitcommit: 656c0c38cf550327a9ee10cc936029378bc7b5a2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87836723"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89071471"
 ---
 # <a name="azure-security-baseline-for-service-fabric"></a>Базовый план безопасности Azure для Service Fabric
 
@@ -546,7 +546,7 @@ ms.locfileid: "87836723"
 
 **Ответственность**: Совмещаемая блокировка
 
-### <a name="46-use-role-based-access-control-to-control-access-to-resources"></a>4,6. Использование управления доступом на основе ролей для управления доступом к ресурсам
+### <a name="46-use-azure-rbac-to-control-access-to-resources"></a>4.6. Контроль доступа к ресурсам с помощью RBAC
 
 **Руководство**. Неприменимо; эта рекомендация предназначена для невычислительных ресурсов, которые служат для хранения данных.
 
@@ -868,13 +868,13 @@ ms.locfileid: "87836723"
 
 ### <a name="76-securely-store-custom-operating-system-images"></a>7.6. Безопасное хранение пользовательских образов операционной системы
 
-**Рекомендации**. при использовании пользовательских образов используйте RBAC, чтобы обеспечить доступ к образам только полномочным пользователям. Для образов контейнеров Храните их в реестре контейнеров Azure и используйте RBAC, чтобы обеспечить доступ к образам только полномочным пользователям.
+**Руководство**. при использовании пользовательских образов используйте управление доступом на основе ролей Azure (Azure RBAC), чтобы предоставить доступ к образам только полномочным пользователям. Для образов контейнеров Храните их в реестре контейнеров Azure и используйте Azure RBAC, чтобы обеспечить доступ к образам только полномочным пользователям.
 
-* [Общие сведения о RBAC в Azure](../role-based-access-control/rbac-and-directory-admin-roles.md)
+* [Общие сведения об Azure RBAC](../role-based-access-control/rbac-and-directory-admin-roles.md)
 
-* [Общие сведения о RBAC для реестра контейнеров](../container-registry/container-registry-roles.md)
+* [Общие сведения об Azure RBAC для реестра контейнеров](../container-registry/container-registry-roles.md)
 
-* [Настройка RBAC в Azure](../role-based-access-control/quickstart-assign-role-user-portal.md)
+* [Настройка Azure RBAC](../role-based-access-control/quickstart-assign-role-user-portal.md)
 
 **Мониторинг Центра безопасности Azure**: в настоящее время недоступен.
 

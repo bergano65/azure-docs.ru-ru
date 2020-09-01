@@ -89,13 +89,13 @@
             - name: Создание управляемого диска на основе моментального снимка
               href: ../scripts/virtual-machines-linux-cli-sample-create-managed-disk-from-snapshot.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json
             - name: Копирование управляемого диска в ту же или другую подписку
-              href: ../scripts/virtual-machines-linux-cli-sample-copy-managed-disks-to-same-or-different-subscription.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json
+              href: ../scripts/virtual-machines-cli-sample-copy-managed-disks-to-same-or-different-subscription.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json
             - name: Экспорт моментального снимка в виде VHD в учетную запись хранения
               href: ../scripts/virtual-machines-cli-sample-copy-snapshot-to-storage-account.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json
             - name: Экспорт VHD управляемого диска в учетную запись хранения
               href: ../scripts/virtual-machines-linux-cli-sample-copy-managed-disks-vhd.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json
             - name: Копирование моментального снимка в ту же или в другую подписку
-              href: ../scripts/virtual-machines-linux-cli-sample-copy-snapshot-to-same-or-different-subscription.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json
+              href: ../scripts/virtual-machines-cli-sample-copy-snapshot-to-same-or-different-subscription.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json
         - name: Сеть виртуальных машин
           items:
             - name: Защита сетевого трафика между виртуальными машинами
@@ -143,13 +143,13 @@
             - name: Создание моментального снимка на основе VHD
               href: ../scripts/virtual-machines-linux-powershell-sample-create-snapshot-from-vhd.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json
             - name: Копирование моментального снимка в ту же или другую подписку
-              href: ../scripts/virtual-machines-linux-powershell-sample-copy-snapshot-to-same-or-different-subscription.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json
+              href: ../scripts/virtual-machines-powershell-sample-copy-snapshot-to-same-or-different-subscription.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json
         - name: Мониторинг виртуальных машин
           items:
             - name: Мониторинг виртуальной машины с помощью журналов Azure Monitor
               href: ./../scripts/virtual-machines-linux-powershell-sample-create-vm-oms.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json
             - name: Копирование управляемого диска в ту же или другую подписку
-              href: ../scripts/virtual-machines-linux-powershell-sample-copy-managed-disks-to-same-or-different-subscription.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json
+              href: ../scripts/virtual-machines-powershell-sample-copy-managed-disks-to-same-or-different-subscription.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json
             - name: Сбор сведений обо всех виртуальных машинах в подписке с помощью PowerShell
               href: ../scripts/virtual-machines-powershell-sample-collect-vm-details.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json
     - name: Встроенные компоненты Политики Azure
@@ -239,7 +239,7 @@
             - name: Серия Mv2
               href: ../mv2-series.md?toc=/azure/virtual-machines/linux/toc.json&bc=/azure/virtual-machines/linux/breadcrumb/toc.json
             - name: Ограниченное число виртуальных ЦП
-              href: ../constrained-vcpu.md
+              href: ../constrained-vcpu.md?toc=/azure/virtual-machines/linux/toc.json&bc=/azure/virtual-machines/linux/breadcrumb/toc.json
         - name: Оптимизированные для операций в хранилище
           items:
             - name: Обзор
@@ -294,7 +294,7 @@
             - name: Основные сведения о резервировании в Azure
               href: ../../cost-management-billing/reservations/save-compute-costs-reservations.md?toc=/azure/virtual-machines/linux/toc.json
             - name: Гибкость размера экземпляра виртуальной машины
-              href: ../reserved-vm-instance-size-flexibility.md
+              href: ../reserved-vm-instance-size-flexibility.md?toc=/azure/virtual-machines/linux/toc.json&bc=/azure/virtual-machines/linux/breadcrumb/toc.json
         - name: Точечные виртуальные машины
           displayName: 'pre-empt, preempt'
           href: ../spot-vms.md?toc=/azure/virtual-machines/linux/toc.json&bc=/azure/virtual-machines/linux/breadcrumb/toc.json
@@ -317,7 +317,7 @@
             - name: Основные сведения о резервировании в Azure
               href: ../../cost-management-billing/reservations/save-compute-costs-reservations.md
             - name: Гибкость размера экземпляра виртуальной машины
-              href: ../reserved-vm-instance-size-flexibility.md
+              href: ../reserved-vm-instance-size-flexibility.md?toc=/azure/virtual-machines/linux/toc.json&bc=/azure/virtual-machines/linux/breadcrumb/toc.json
         - name: Результаты теста производительности
           href: compute-benchmark-scores.md
     - name: Рекомендуемые дистрибутивы
@@ -329,21 +329,21 @@
     - name: Хранилище дисков
       items:
         - name: Общие сведения об управляемых дисках
-          href: ../managed-disks-overview.md
+          href: ../managed-disks-overview.md?toc=/azure/virtual-machines/linux/toc.json&bc=/azure/virtual-machines/linux/breadcrumb/toc.json
         - name: Выбор типа диска для виртуальных машин IaaS
-          href: ../disks-types.md
+          href: ../disks-types.md?toc=/azure/virtual-machines/linux/toc.json&bc=/azure/virtual-machines/linux/breadcrumb/toc.json
         - name: Шифрование
           href: disk-encryption.md
         - name: Резервирования Хранилища дисков
           href: ../../cost-management-billing/reservations/understand-disk-reservations.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json
         - name: Проектирование для обеспечения высокой производительности
-          href: ../premium-storage-performance.md
+          href: ../premium-storage-performance.md?toc=/azure/virtual-machines/linux/toc.json&bc=/azure/virtual-machines/linux/breadcrumb/toc.json
         - name: Всплеск активности диска
           href: disk-bursting.md
         - name: Целевые показатели масштабируемости для дисков
           href: disk-scalability-targets.md
         - name: Резервное копирование и аварийное восстановление дисков
-          href: ../backup-and-disaster-recovery-for-azure-iaas-disks.md
+          href: ../backup-and-disaster-recovery-for-azure-iaas-disks.md?toc=/azure/virtual-machines/linux/toc.json&bc=/azure/virtual-machines/linux/breadcrumb/toc.json
         - name: Общие диски
           href: disks-shared.md
         - name: Временные диски ОС
@@ -357,7 +357,7 @@
     - name: Безопасность
       items:
         - name: Безопасность и политика
-          href: ../security-policy.md
+          href: ../security-policy.md?toc=/azure/virtual-machines/linux/toc.json&bc=/azure/virtual-machines/linux/breadcrumb/toc.json
         - name: Шифрование дисков Azure
           href: disk-encryption-overview.md
         - name: Элементы управления безопасностью службы "Политика Azure"
@@ -370,7 +370,7 @@
         - name: Бастион
           href: ../../bastion/bastion-overview.md?toc=/azure/virtual-machines/linux/toc.json&bc=/azure/virtual-machines/linux/breadcrumb/toc.json
     - name: Состояния и жизненный цикл
-      href: ../states-lifecycle.md
+      href: ../states-lifecycle.md?toc=/azure/virtual-machines/linux/toc.json&bc=/azure/virtual-machines/linux/breadcrumb/toc.json
     - name: Наблюдение
       href: ../../azure-monitor/insights/monitor-vm-azure.md?toc=/azure/virtual-machines/linux/toc.json&bc=/azure/virtual-machines/linux/breadcrumb/toc.json
     - name: Диагностика загрузки
@@ -418,7 +418,7 @@
         - name: Общие сведения о переносе
           href: migration-classic-resource-manager-overview.md
         - name: Подробный обзор миграции
-          href: ../migration-classic-resource-manager-deep-dive.md
+          href: ../migration-classic-resource-manager-deep-dive.md?toc=/azure/virtual-machines/linux/toc.json&bc=/azure/virtual-machines/linux/breadcrumb/toc.json
         - name: Планирование миграции
           href: migration-classic-resource-manager-plan.md
         - name: Миграция с помощью интерфейса командной строки
@@ -428,7 +428,7 @@
         - name: 'Средства миграции, созданные сообществом'
           href: ../windows/migration-classic-resource-manager-community-tools.md?toc=/azure/virtual-machines/linux/toc.json&bc=/azure/virtual-machines/linux/breadcrumb/toc.json
         - name: ВОПРОСЫ И ОТВЕТЫ
-          href: ../migration-classic-resource-manager-faq.md
+          href: ../migration-classic-resource-manager-faq.md?toc=/azure/virtual-machines/linux/toc.json&bc=/azure/virtual-machines/linux/breadcrumb/toc.json
     - name: Использование образов
       displayName: 'SIG, AMI, image'
       items:
@@ -474,7 +474,7 @@
               href: cloudinit-bash-script.md
             - name: Подготовка существующей виртуальной машины для cloud-init
               href: cloudinit-prepare-custom-image.md
-        - name: Создание образов без
+        - name: Создание образов без агента подготовки
           href: no-agent.md
         - name: Отключение подготовки агента Linux
           href: disable-provisioning.md
@@ -797,7 +797,7 @@
                       href: ../../azure-monitor/platform/data-sources-custom-logs.md?toc=/azure/virtual-machines/linux/toc.json&bc=/azure/virtual-machines/linux/breadcrumb/toc.json
                     - name: Пользовательские поля
                       href: ../../azure-monitor/platform/custom-fields.md?toc=/azure/virtual-machines/linux/toc.json&bc=/azure/virtual-machines/linux/breadcrumb/toc.json
-            - name: Устранение неполадок
+            - name: Диагностика
               items:
                 - name: Расширение службы анализа журналов для виртуальной машины
                   href: ../../azure-monitor/platform/vmext-troubleshoot.md?toc=/azure/virtual-machines/linux/toc.json&bc=/azure/virtual-machines/linux/breadcrumb/toc.json
@@ -956,9 +956,9 @@
           href: detach-disk.md
         - name: Развертывание дисков с помощью шаблона ARM
           displayName: 'Azure Resource Manager, ARM'
-          href: ../using-managed-disks-template-deployments.md
+          href: ../using-managed-disks-template-deployments.md?toc=/azure/virtual-machines/linux/toc.json&bc=/azure/virtual-machines/linux/breadcrumb/toc.json
         - name: Включение общих дисков
-          href: ../disks-shared-enable.md
+          href: ../disks-shared-enable.md?toc=/azure/virtual-machines/linux/toc.json&bc=/azure/virtual-machines/linux/breadcrumb/toc.json
         - name: "Отправка VHD-файла на диск\_— CLI"
           href: disks-upload-vhd-to-managed-disk-cli.md
         - name: 'Безопасный импорт и экспорт диска: CLI'
@@ -968,11 +968,11 @@
         - name: Изменение размера диска
           href: expand-disks.md
         - name: Использование Обозревателя службы хранилища для управления дисками
-          href: ../disks-use-storage-explorer-managed-disks.md
+          href: ../disks-use-storage-explorer-managed-disks.md?toc=/azure/virtual-machines/linux/toc.json&bc=/azure/virtual-machines/linux/breadcrumb/toc.json
         - name: Моментальный снимок диска
           href: snapshot-copy-managed-disk.md
         - name: Зарезервировать Хранилище дисков
-          href: ../disks-reserved-capacity.md
+          href: ../disks-reserved-capacity.md?toc=/azure/virtual-machines/linux/toc.json&bc=/azure/virtual-machines/linux/breadcrumb/toc.json
         - name: "Создание добавочного моментального снимка\_— CLI"
           href: disks-incremental-snapshots.md
         - name: "Создание добавочного моментального снимка\_— портал"
@@ -1006,9 +1006,9 @@
         - name: Производительность
           items:
             - name: Использование ускорителя записи
-              href: ../how-to-enable-write-accelerator.md
+              href: ../how-to-enable-write-accelerator.md?toc=/azure/virtual-machines/linux/toc.json&bc=/azure/virtual-machines/linux/breadcrumb/toc.json
             - name: Использование дисков (цен. категория "Ультра")
-              href: ../disks-enable-ultra-ssd.md
+              href: ../disks-enable-ultra-ssd.md?toc=/azure/virtual-machines/linux/toc.json&bc=/azure/virtual-machines/linux/breadcrumb/toc.json
             - name: Тест производительности диска
               href: disks-benchmarks.md
             - name: Оптимизация производительности

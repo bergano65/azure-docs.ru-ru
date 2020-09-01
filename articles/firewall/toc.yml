@@ -1,4 +1,4 @@
-- name: Документации по Брандмауэру Azure
+- name: Документация по Брандмауэру Azure
   href: index.yml
 - name: Обзор
   items:

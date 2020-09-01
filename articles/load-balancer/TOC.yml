@@ -9,13 +9,15 @@
     - name: "Создание общедоступной подсистемы балансировки нагрузки\_— портал"
       href: quickstart-load-balancer-standard-public-portal.md
     - name: "Создание общедоступной подсистемы балансировки нагрузки\_— PowerShell"
-      href: quickstart-create-standard-load-balancer-powershell.md
+      href: quickstart-load-balancer-standard-public-powershell.md
     - name: "Создание общедоступной подсистемы балансировки нагрузки\_— Azure\_СLI"
       href: quickstart-load-balancer-standard-public-cli.md
     - name: "Создание общедоступной подсистемы балансировки нагрузки\_— шаблон ARM"
       href: quickstart-load-balancer-standard-public-template.md
     - name: "Создание внутренней подсистемы балансировки нагрузки\_— портал"
       href: quickstart-load-balancer-standard-internal-portal.md
+    - name: "Создание внутренней подсистемы балансировки нагрузки\_— PowerShell"
+      href: quickstart-load-balancer-standard-internal-powershell.md
     - name: "Создание внутренней подсистемы балансировки нагрузки\_— Azure\_CLI"
       href: quickstart-load-balancer-standard-internal-cli.md
   expanded: true

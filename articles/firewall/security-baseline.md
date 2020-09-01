@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 08/05/2020
 ms.author: mbaldwin
 ms.custom: security-benchmark
-ms.openlocfilehash: 869c6590146561f6f2f50694c5cc3f79530dad25
-ms.sourcegitcommit: 7fe8df79526a0067be4651ce6fa96fa9d4f21355
+ms.openlocfilehash: 9b5cc1cdae31039fe3f94bc49fadf848032cfd86
+ms.sourcegitcommit: 656c0c38cf550327a9ee10cc936029378bc7b5a2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87854401"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89069295"
 ---
 # <a name="azure-security-baseline-for-azure-firewall"></a>Базовый уровень безопасности Azure для брандмауэра Azure
 
@@ -74,7 +74,7 @@ ms.locfileid: "87854401"
 
 **Руководство**. Политика Azure пока не полностью поддерживается для брандмауэра Azure. Диспетчер брандмауэра Azure можно использовать для обеспечения стандартизации конфигураций безопасности.
 
-Вы также можете использовать схемы Azure для упрощения крупномасштабных развертываний Azure с помощью ключевых артефактов среды пакетов, таких как шаблоны диспетчера ресурсов Azure, элементы управления RBAC и политики, в одном определении схемы. Вы можете применить схему к новым подпискам, а также настроить управление и управление с помощью управления версиями.
+Вы также можете использовать схемы Azure для упрощения крупномасштабных развертываний Azure с помощью ключевых артефактов среды пакетов, таких как шаблоны диспетчера ресурсов Azure, элементы управления RBAC в Azure и политики, в одном определении схемы. Вы можете применить схему к новым подпискам, а также настроить управление и управление с помощью управления версиями.
 
 - [Настройка Политики Azure и управление ею](../governance/policy/tutorials/create-and-manage.md)
 
@@ -132,7 +132,7 @@ ms.locfileid: "87854401"
 
 Список действий с ресурсами в журналах действий: Azure Resource Manager операции поставщика ресурсов
 
-- [Как получить журналы и метрики платформы с помощью Azure Monitor](../azure-monitor/platform/diagnostic-settings.md)
+- [Как получить журналы и метрики платформы с помощью Azure Monitor ](../azure-monitor/platform/diagnostic-settings.md)
 
 - [Подключение к Azure Sentinel](../sentinel/quickstart-onboard.md)
 
@@ -416,11 +416,11 @@ ms.locfileid: "87854401"
 
 **Ответственность**: Совмещаемая блокировка
 
-### <a name="46-use-role-based-access-control-to-control-access-to-resources"></a>4,6. Использование управления доступом на основе ролей для управления доступом к ресурсам
+### <a name="46-use-azure-rbac-to-control-access-to-resources"></a>4.6. Контроль доступа к ресурсам с помощью RBAC
 
-**Руководство**. Используйте Azure Active Directory управления доступом на основе РОЛЕЙ (RBAC) для управления доступом к брандмауэру Azure и связанным ресурсам.
+**Руководство**. Использование управления доступом на основе ролей Azure (Azure RBAC) для управления доступом к брандмауэру Azure и связанным ресурсам.
 
-- [Настройка RBAC в Azure](../role-based-access-control/role-assignments-portal.md)
+- [Настройка Azure RBAC](../role-based-access-control/role-assignments-portal.md)
 
 **Мониторинг Центра безопасности Azure**: в настоящее время недоступен.
 
