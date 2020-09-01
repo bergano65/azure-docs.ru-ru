@@ -56,7 +56,7 @@ ms.locfileid: "88893979"
 
 В меню регистрации выберите *Аутентификация* и нажмите кнопку *Добавить платформу*.
 
-:::image type="content" source="media/quickstart-adt-explorer/authentication-pre.png" alt-text="Страница портала Azure в сведениях о проверке подлинности для регистрации приложения. Кнопка "Добавить платформу" выделена" lightbox="media/quickstart-adt-explorer/authentication-pre.png":::
+:::image type="content" source="media/quickstart-adt-explorer/authentication-pre.png" alt-text="Страница портала Azure в сведениях о проверке подлинности для регистрации приложения. Кнопка Добавить платформу выделена" lightbox="media/quickstart-adt-explorer/authentication-pre.png":::
 
 Далее, на странице *Настройка платформы* выберите *Интернет*.
 Заполните сведения о конфигурации следующим образом:
@@ -65,7 +65,7 @@ ms.locfileid: "88893979"
 
 :::row:::
     :::column:::
-        :::image type="content" source="media/quickstart-adt-explorer/authentication-configure-web.png" alt-text="Страница "Настройка платформы", на которой выделены сведения, описанные на экране выше":::
+        :::image type="content" source="media/quickstart-adt-explorer/authentication-configure-web.png" alt-text="Страница Настройка платформы, на которой выделены сведения, описанные на экране выше":::
     :::column-end:::
     :::column:::
     :::column-end:::
@@ -75,7 +75,7 @@ ms.locfileid: "88893979"
 
 Теперь у вас есть интернет-конфигурация, настроенная для использования в ADT Explorer. Это должно отобразиться на вкладке "Аутентификация" на портале Azure.
 
-:::image type="content" source="media/quickstart-adt-explorer/authentication-post.png" alt-text="Страница портала Azure в сведениях о проверке подлинности для регистрации приложения. Выделенный раздел "Интернет" платформы с URI перенаправления http://localhost:3000 и включенные маркеры доступа в разделе "Неявное предоставление разрешения"":::
+:::image type="content" source="media/quickstart-adt-explorer/authentication-post.png" alt-text="Страница портала Azure в сведениях о проверке подлинности для регистрации приложения. Выделенный раздел Интернет платформы с URI перенаправления http://localhost:3000 и включенные маркеры доступа в разделе Неявное предоставление разрешения":::
 
 ### <a name="run-and-configure-adt-explorer"></a>Запуск и настройка ADT Explorer
 
@@ -93,7 +93,7 @@ ms.locfileid: "88893979"
 
 Нажмите кнопку *Войти* в верхней части окна, чтобы настроить ADT Explorer для работы с настроенным экземпляром. 
 
-:::image type="content" source="media/quickstart-adt-explorer/sign-in.png" alt-text="ADT Explorer с выделенным значком "Войти" в верхней части окна. На значке изображен простой силуэт человека, перекрытый силуэтом ключа." lightbox="media/quickstart-adt-explorer/sign-in.png":::
+:::image type="content" source="media/quickstart-adt-explorer/sign-in.png" alt-text="ADT Explorer с выделенным значком Войти в верхней части окна. На значке изображен простой силуэт человека, перекрытый силуэтом ключа." lightbox="media/quickstart-adt-explorer/sign-in.png":::
 
 Введите важные сведения, собранные ранее в разделе [Предварительные требования](#prerequisites).
 * Идентификатор приложения (клиента)
@@ -130,7 +130,7 @@ ms.locfileid: "88893979"
 
 В окне *ПРЕДСТАВЛЕНИЕ МОДЕЛИ* щелкните значок *Отправить модель*.
 
-:::image type="content" source="media/quickstart-adt-explorer/upload-model.png" alt-text="Подсвеченный значок в середине окна "Представление модели". В нем отображается стрелка, указывающая на облако." lightbox="media/quickstart-adt-explorer/upload-model.png":::
+:::image type="content" source="media/quickstart-adt-explorer/upload-model.png" alt-text="Подсвеченный значок в середине окна Представление модели. В нем отображается стрелка, указывающая на облако." lightbox="media/quickstart-adt-explorer/upload-model.png":::
  
 1. В появившемся поле выбора файла перейдите к папке *Azure_Digital_Twins_samples/AdtSampleApp/SampleClientApp/models* в загруженном репозитории.
 2. Выберите *Room.json* и *Floor.json*, а затем нажмите кнопку ОК. (Вы можете передать другие модели, если хотите, но они не будут использоваться в этом кратком руководстве).
@@ -144,7 +144,7 @@ ADT Explorer теперь будет отправлять эти файлы мо
 
 :::row:::
     :::column:::
-        :::image type="content" source="media/quickstart-adt-explorer/model-info.png" alt-text="Окно "Представление модели" с двумя определениями модели, которые перечислены внутри, Floor (dtmi:example:Floor;1) и Room (dtmi:example:Room;1). Значок "Представление модели" с буквой "i" в окружности, выделен для каждой модели." lightbox="media/quickstart-adt-explorer/model-info.png":::
+        :::image type="content" source="media/quickstart-adt-explorer/model-info.png" alt-text="Окно Представление модели с двумя определениями модели, которые перечислены внутри, Floor (dtmi:example:Floor;1) и Room (dtmi:example:Room;1). Значок Представление модели с буквой i в окружности, выделен для каждой модели." lightbox="media/quickstart-adt-explorer/model-info.png":::
     :::column-end:::
     :::column:::
     :::column-end:::
@@ -168,7 +168,7 @@ ADT Explorer теперь будет отправлять эти файлы мо
 
 В окне *Представление графа* щелкните значок *Импорт графа*.
 
-:::image type="content" source="media/quickstart-adt-explorer/import-graph.png" alt-text="В окне "Представление графа" выделен значок. В нем отображается стрелка, указывающая на облако." lightbox="media/quickstart-adt-explorer/import-graph.png":::
+:::image type="content" source="media/quickstart-adt-explorer/import-graph.png" alt-text="В окне Представление графа выделен значок. В нем отображается стрелка, указывающая на облако." lightbox="media/quickstart-adt-explorer/import-graph.png":::
 
 В окне выбора файла перейдите к папке *client/examples* и выберите файл электронной таблицы _**buildingScenario.xlsx**_. Этот файл содержит описание примера графа. Нажмите кнопку ОК.
 
@@ -178,7 +178,7 @@ ADT Explorer теперь будет отправлять эти файлы мо
 
 :::row:::
     :::column:::
-        :::image type="content" source="media/quickstart-adt-explorer/graph-preview-save.png" alt-text="Выделенный значок "Сохранить" на панели предварительного просмотра графа" lightbox="media/quickstart-adt-explorer/graph-preview-save.png":::
+        :::image type="content" source="media/quickstart-adt-explorer/graph-preview-save.png" alt-text="Выделенный значок Сохранить на панели предварительного просмотра графа" lightbox="media/quickstart-adt-explorer/graph-preview-save.png":::
     :::column-end:::
     :::column:::
     :::column-end:::
@@ -188,7 +188,7 @@ ADT Explorer теперь будет использовать переданны
 
 :::row:::
     :::column:::
-        :::image type="content" source="media/quickstart-adt-explorer/import-success.png" alt-text="Диалоговое окно, указывающее на успешное завершение импорта графа. В нем написано: "Импорт успешно завершен. Импортировано 49 двойников. Импортировано 50 связей."" lightbox="media/quickstart-adt-explorer/import-success.png":::
+        :::image type="content" source="media/quickstart-adt-explorer/import-success.png" alt-text="Диалоговое окно, указывающее на успешное завершение импорта графа. В нем написано: Импорт успешно завершен. Импортировано 49 двойников. Импортировано 50 связей." lightbox="media/quickstart-adt-explorer/import-success.png":::
     :::column-end:::
     :::column:::
     :::column-end:::
@@ -198,7 +198,7 @@ ADT Explorer теперь будет использовать переданны
 
 Теперь граф отправлен в ADT Explorer. Чтобы увидеть граф, нажмите кнопку *Выполнить запрос* в окне *ОБОЗРЕВАТЕЛЬ ГРАФА* в верхней части окна ADT Explorer. 
 
-:::image type="content" source="media/quickstart-adt-explorer/run-query.png" alt-text="Выделенная кнопка "Выполнить запрос" рядом с верхней частью окна" lightbox="media/quickstart-adt-explorer/run-query.png":::
+:::image type="content" source="media/quickstart-adt-explorer/run-query.png" alt-text="Выделенная кнопка Выполнить запрос рядом с верхней частью окна" lightbox="media/quickstart-adt-explorer/run-query.png":::
 
 Будет выполнен запрос по умолчанию для выбора и отображения всех цифровых двойников. ADT Explorer извлечет все двойники и связи из службы и создаст граф, определенный в окне *ПРЕДСТАВЛЕНИЕ ГРАФА*.
 
