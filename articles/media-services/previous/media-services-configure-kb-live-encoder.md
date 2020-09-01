@@ -14,14 +14,17 @@ ms.devlang: ne
 ms.topic: article
 ms.date: 03/14/2019
 ms.author: juliako
-ms.openlocfilehash: babb5a10818c8108bae34402962fd2503dbecbdc
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: ab73b22e927ad1bbcc8a07173e1548157de03cdd
+ms.sourcegitcommit: bcda98171d6e81795e723e525f81e6235f044e52
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "81641682"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89258101"
 ---
-# <a name="use-the-haivision-kb-live-encoder-to-send-a-single-bitrate-live-stream"></a>Использование кодировщика Haivision KB для отправки односкоростного обновляющегося потока  
+# <a name="use-the-haivision-kb-live-encoder-to-send-a-single-bitrate-live-stream"></a>Использование кодировщика Haivision KB для отправки односкоростного обновляющегося потока
+
+[!INCLUDE [media services api v2 logo](./includes/v2-hr.md)]
+
 > [!div class="op_single_selector"]
 > * [Haivision](media-services-configure-kb-live-encoder.md)
 > * [Wirecast](media-services-configure-wirecast-live-encoder.md)
@@ -30,14 +33,14 @@ ms.locfileid: "81641682"
 
 В этом учебнике показано, как управлять службами мультимедиа Azure (AMS) с помощью Обозревателя служб мультимедиа Azure. Это средство запускается только на компьютерах с ОС Windows. Если вы используете Mac или Linux, воспользуйтесь классическим порталом Azure для создания [каналов](media-services-portal-creating-live-encoder-enabled-channel.md#create-a-channel) и [программ](media-services-portal-creating-live-encoder-enabled-channel.md).
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 *   Получите доступ к кодировщику Haivision KB, запустив ПО версии 5.01 или более поздней.
 * [Создание учетной записи служб мультимедиа Azure](media-services-portal-create-account.md)
 * Убедитесь, что запущена конечная точка потоковой передачи. Дополнительные сведения см. в статье об [управлении конечными точками потоковой передачи с помощью учетной записи служб мультимедиа](media-services-portal-manage-streaming-endpoints.md).
 * Установите последнюю версию средства [AMSE](https://github.com/Azure/Azure-Media-Services-Explorer) .
 * Запустите его и подключитесь к учетной записи AMS.
 
-## <a name="tips"></a>"Советы"
+## <a name="tips"></a>Советы
 * По возможности используйте проводное подключение к Интернету.
 * Для получения необходимой пропускной способности рекомендуется удвоить скорость потоковой передачи. Это требование не является обязательным, но оно поможет уменьшить влияние перегрузки сети на пропускную способность.
 * При использовании программных кодировщиков закройте все ненужные программы.

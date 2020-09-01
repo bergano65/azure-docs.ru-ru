@@ -15,14 +15,16 @@ ms.date: 03/14/2019
 ms.author: willzhan
 ms.reviewer: kilroyh;yanmf;juliako
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 5a4f436f6f5542db289ed219a240a68db5c2065b
-ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
+ms.openlocfilehash: e7e63225df4e337a93912bf1e1c17eb61a6cc9e0
+ms.sourcegitcommit: bcda98171d6e81795e723e525f81e6235f044e52
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89021533"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89258611"
 ---
-# <a name="design-of-a-content-protection-system-with-access-control-using-azure-media-services"></a>Проектирование системы защиты содержимого с управлением доступом с помощью служб мультимедиа Azure 
+# <a name="design-of-a-content-protection-system-with-access-control-using-azure-media-services"></a>Проектирование системы защиты содержимого с управлением доступом с помощью служб мультимедиа Azure
+
+[!INCLUDE [media services api v2 logo](./includes/v2-hr.md)]
 
 ## <a name="overview"></a>Обзор
 
@@ -219,7 +221,7 @@ ms.locfileid: "89021533"
     | **PlayReady** |Microsoft Edge или Internet Explorer 11 в Windows 10 |Успешно |Ошибка |
     | **Widevine** |Chrome, Firefox, Opera |Успешно |Ошибка |
     | **FairPlay** |Safari в macOS      |Успешно |Ошибка |
-    | **AES-128** |Большинство современных браузеров  |Успешно |Ошибка |
+    | **AES-128;** |Большинство современных браузеров  |Успешно |Ошибка |
 
 Дополнительные сведения о настройке Azure AD для приложения проигрывателя ASP.NET MVC см. в статье [Integrate Azure Media Services OWIN MVC based app with Azure Active Directory and restrict content key delivery based on JWT claims](http://gtrifonov.com/2015/01/24/mvc-owin-azure-media-services-ad-integration/) (Интеграция приложения на основе OWIN MVC Служб мультимедиа Azure с Azure Active Directory и ограничение доставки ключей содержимого на основе утверждений JWT).
 

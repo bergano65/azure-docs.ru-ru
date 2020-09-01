@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: sandeo
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 8e2c516371ada59501edd89491a07014ef949eba
-ms.sourcegitcommit: d661149f8db075800242bef070ea30f82448981e
+ms.openlocfilehash: f0313c27666cda785b24f23436f6ad727f337ca8
+ms.sourcegitcommit: bcda98171d6e81795e723e525f81e6235f044e52
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/19/2020
-ms.locfileid: "88604388"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89259359"
 ---
 # <a name="device-identity-and-desktop-virtualization"></a>Удостоверение устройств и виртуализация настольных систем
 
@@ -58,7 +58,7 @@ ms.locfileid: "88604388"
 |   |   |   | Не постоянный | Нет |
 |   | Управляемые | Текущие окна | Постоянный | Нет |
 |   |   |   | Не постоянный | Нет |
-| регистрация в Azure AD; | Федеративные и управляемые | Windows: текущая или Windows-уровень вниз | Постоянный/не постоянный | Неприменимо |
+| регистрация в Azure AD; | Федеративные и управляемые | Windows: текущая или Windows-уровень вниз | Постоянный/не постоянный | Н/Д |
 
 <sup>1</sup> **текущие устройства Windows** представляют собой Windows 10, Windows Server 2016 и Windows Server 2019.
 
@@ -68,7 +68,7 @@ ms.locfileid: "88604388"
 
 <sup>4</sup> **управляемая** инфраструктура идентификации представляет среду с Azure AD в качестве поставщика удостоверений, развернутого с помощью [синхронизации хэша паролей (PHS)](../hybrid/whatis-phs.md) или [сквозной проверки подлинности (PTA)](../hybrid/how-to-connect-pta.md) с [простым единым входом](../hybrid/how-to-connect-sso.md).
 
-<sup>5</sup> **Поддержка несохраняемости для Windows Current** требует дополнительного рассмотрения, как описано ниже в разделе руководства.
+<sup>5</sup> **Поддержка несохраняемости для Windows Current** требует дополнительного рассмотрения, как описано ниже в разделе руководства. Для этого сценария требуется Windows 10 1803, Windows Server 2019 или Windows Server (половина ежегодного канала), начиная с версии 1803
 
 <sup>6</sup> **Поддержка без сохранения состояния для Windows нижнего уровня** требует дополнительного рассмотрения, как описано ниже в разделе руководства.
 

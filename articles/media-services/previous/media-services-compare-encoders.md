@@ -15,14 +15,16 @@ ms.topic: article
 ms.date: 03/14/2019
 ms.author: juliako
 ms.reviewer: anilmur
-ms.openlocfilehash: f42361df438a434548b3bc9394c007ef8d4c6eb0
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: f9f9124568144efba6aa7d715c2e33aaa32e2baf
+ms.sourcegitcommit: bcda98171d6e81795e723e525f81e6235f044e52
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87038976"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89258135"
 ---
-# <a name="comparison-of-azure-on-demand-media-encoders"></a>Сравнение кодировщиков мультимедиа Azure по запросу  
+# <a name="comparison-of-azure-on-demand-media-encoders"></a>Сравнение кодировщиков мультимедиа Azure по запросу
+
+[!INCLUDE [media services api v2 logo](./includes/v2-hr.md)]  
 
 В этом разделе сравниваются возможности кодирования **Media Encoder Standard** и **рабочего процесса Media Encoder Premium**.
 
@@ -35,7 +37,7 @@ ms.locfileid: "87038976"
 |Применение условной логики при кодировании<br/>(например, если входные данные в формате HD, то следует кодировать звук в формат 5.1)|Нет|Да|
 |Субтитры стандарта|Нет|[Да](media-services-premium-workflow-encoder-formats.md#closed_captioning)|
 |[&reg;Исправление Dolby Professional громкости](https://professional.dolby.com/product/broadcast/vm600/)<br/> анализ с помощью диалоговых средств&trade;|Нет|Да|
-|Устранение чересстрочности, обратное преобразование видео|Basic|Качество трансляции|
+|Устранение чересстрочности, обратное преобразование видео|Базовый|Качество трансляции|
 |Обнаружение и удаление черных границ <br/>(вертикальные и горизонтальные рамки)|Нет|Да|
 |Создание эскизов|[Да](media-services-dotnet-generate-thumbnail-with-mes.md)|[Да](media-services-media-encoder-premium-workflow-tutorials.md#thumbnails_to__multibitrate_MP4)|
 |Обрезание и совмещение видео|[Да](media-services-advanced-encoding-with-mes.md#trim_video)|Да|

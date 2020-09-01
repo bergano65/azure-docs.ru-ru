@@ -14,14 +14,16 @@ ms.topic: article
 ms.date: 03/18/2019
 ms.author: juliako
 ms.reviewer: anilmur
-ms.openlocfilehash: f34e3a3d1e0245180ce923fc3ec7353ab1a176be
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 78236a334b6c75f823819c70c0cdbb75bb30191d
+ms.sourcegitcommit: bcda98171d6e81795e723e525f81e6235f044e52
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87086359"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89257438"
 ---
 # <a name="media-encoder-standard-formats-and-codecs"></a>Форматы и кодеки Media Encoder Standard
+
+[!INCLUDE [media services api v2 logo](./includes/v2-hr.md)]
 
 > [!div class="op_single_selector" title1="Выберите версию служб мультимедиа, которую вы используете:"]
 > * [Версия 2](media-services-media-encoder-standard-formats.md)
@@ -54,7 +56,7 @@ ms.locfileid: "87086359"
 
 * файлы MXF, GXF и QuickTime со звуковыми дорожками с чередованием стерео или форматом 5.1;
 
-or
+или
 
 * файлы MXF, GXF и QuickTime, где звук переносится как отдельные дорожки PCM, но сопоставление каналов (стерео или 5.1) можно определить по метаданным файла.
 
@@ -112,7 +114,7 @@ or
 ## <a name="provide-feedback"></a>Отзывы
 [!INCLUDE [media-services-user-voice-include](../../../includes/media-services-user-voice-include.md)]
 
-## <a name="see-also"></a>См. также статью
+## <a name="see-also"></a>См. также
 [Кодирование содержимого по запросу с помощью служб мультимедиа Azure](media-services-encode-asset.md)
 
 [Кодирование с помощью стандартного кодировщика мультимедиа](media-services-dotnet-encode-with-media-encoder-standard.md)

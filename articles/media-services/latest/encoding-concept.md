@@ -4,23 +4,25 @@ titleSuffix: Azure Media Services
 description: В этой статье объясняется, как кодировать видео и аудио с помощью служб мультимедиа Azure.
 services: media-services
 documentationcenter: ''
-author: Juliako
+author: IngridAtMicrosoft
 manager: femila
 editor: ''
 ms.service: media-services
 ms.workload: ''
 ms.topic: article
-ms.date: 04/29/2020
-ms.author: juliako
+ms.date: 08/31/2020
+ms.author: inhenkel
 ms.custom: seodec18
-ms.openlocfilehash: a54f86081774ffb9ac2fe23a72c8ba83e3d6845c
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 2e4db27f268d0d49696fd2a7dacc200942fa4477
+ms.sourcegitcommit: bcda98171d6e81795e723e525f81e6235f044e52
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87053346"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89258985"
 ---
 # <a name="encoding-video-and-audio-with-media-services"></a>Кодирование видео и аудио с помощью служб мультимедиа
+
+[!INCLUDE [media services api v3 logo](./includes/v3-hr.md)]
 
 Термин кодирование в службах мультимедиа применяется к процессу преобразования файлов, содержащих цифровые видео и (или) звук, из одного стандартного формата в другой, с целью уменьшения размера файлов и (б) создания формата, совместимого с широким спектром устройств и приложений. Этот процесс также называется сжатием видео или перекодировкой. Дополнительные сведения о концепциях см. в статье [Сжатие данных](https://en.wikipedia.org/wiki/Data_compression) и [кодирование и перекодирование](https://www.streamingmedia.com/Articles/Editorial/What-Is-/What-Is-Encoding-and-Transcoding-75025.aspx) .
 

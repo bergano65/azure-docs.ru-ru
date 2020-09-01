@@ -9,23 +9,25 @@ editor: ''
 ms.service: media-services
 ms.workload: ''
 ms.topic: article
-ms.date: 5/28/2020
+ms.date: 08/31/2020
 ms.author: inhenkel
 ms.custom: references_regions
-ms.openlocfilehash: 6ecc8cad4480528477f6bb470c7bc32ee2a20e11
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: e9da87f3b5f7cb513b4b5d51c93a59d1703d401d
+ms.sourcegitcommit: bcda98171d6e81795e723e525f81e6235f044e52
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87001355"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89258662"
 ---
 # <a name="clouds-and-regions-in-which-azure-media-services-v3-exists"></a>Облака и регионы, в которых существуют Службы мультимедиа Azure версии 3
+
+[!INCLUDE [media services api v3 logo](./includes/v3-hr.md)]
 
 Службы мультимедиа Azure версии 3 доступны через манифест диспетчера ресурсов Azure в глобальных Azure, Azure для государственных организаций, Azure для Германии, Azure China 21Vianet. Однако не все функции Служб мультимедиа доступны во всех облаках Azure. В этом документе описывается наличие основных компонентов Служб мультимедиа версии 3.
 
 ## <a name="feature-availability-in-azure-clouds"></a>Доступность функций в облаках Azure
 
-| Функция|Глобальные регионы Azure | Azure для государственных организаций|Azure для Германии|Azure China 21Vianet|
+| Компонент|Глобальные регионы Azure | Azure для государственных организаций|Azure для Германии|Azure China 21Vianet|
 | --- | --- | --- | --- | --- |
 | [Azure EventGrid](reacting-to-media-services-events.md) | Доступно | Недоступно | Недоступно | Недоступно |
 | [VideoAnalyzerPreset](analyzing-video-audio-files-concept.md) |  Доступно | Недоступно | Недоступно | Недоступно |
@@ -83,7 +85,7 @@ az account list-locations
 | Служба | Конечная точка |
 | ------- | -------- |
 | Azure Resource Manager |  `https://management.azure.com/` |
-| Проверка подлинности | `https://login.microsoftonline.com/` |
+| Аутентификация | `https://login.microsoftonline.com/` |
 | Аудитория токена | `https://management.core.windows.net/` |
 
 ### <a name="azure-government"></a>Azure для государственных организаций
@@ -91,7 +93,7 @@ az account list-locations
 | Служба | Конечная точка |
 | ------- | -------- |
 | Azure Resource Manager |  `https://management.usgovcloudapi.net/` |
-| Проверка подлинности | `https://login.microsoftonline.us/` |
+| Аутентификация | `https://login.microsoftonline.us/` |
 | Аудитория токена | `https://management.core.usgovcloudapi.net/` |
 
 ### <a name="azure-germany"></a>Azure для Германии
@@ -99,7 +101,7 @@ az account list-locations
 | Служба | Конечная точка |
 | ------- | -------- |
 | Azure Resource Manager | `https://management.cloudapi.de/` |
-| Проверка подлинности | `https://login.microsoftonline.de/` |
+| Аутентификация | `https://login.microsoftonline.de/` |
 | Аудитория токена | `https://management.core.cloudapi.de/`|
 
 ### <a name="azure-china-21vianet"></a>Azure China 21Vianet
@@ -107,10 +109,10 @@ az account list-locations
 | Служба | Конечная точка |
 | ------- | -------- |
 | Azure Resource Manager | `https://management.chinacloudapi.cn/` |
-| Проверка подлинности | `https://login.chinacloudapi.cn/` |
+| Аутентификация | `https://login.chinacloudapi.cn/` |
 | Аудитория токена |  `https://management.core.chinacloudapi.cn/` |
 
-## <a name="see-also"></a>См. также статью
+## <a name="see-also"></a>См. также
 
 * [Регионы Azure](https://azure.microsoft.com/global-infrastructure/regions/)
 * [Географические регионы Azure](https://azure.microsoft.com/global-infrastructure/geographies/)

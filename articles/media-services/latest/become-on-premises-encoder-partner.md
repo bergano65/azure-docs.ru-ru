@@ -5,17 +5,19 @@ services: media-services
 author: johndeu
 manager: johndeu
 ms.author: johndeu
-ms.date: 03/02/2020
+ms.date: 08/31/2020
 ms.topic: article
 ms.service: media-services
-ms.openlocfilehash: f98d9942f8c30f06b0144503b056c1e8a393ae52
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 5af6a7fc988271fc350ecc6e8be19742ede8ecee
+ms.sourcegitcommit: bcda98171d6e81795e723e525f81e6235f044e52
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "79298637"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89258645"
 ---
 # <a name="how-to-verify-your-on-premises-live-streaming-encoder"></a>Как проверить локальный кодировщик динамической потоковой передачи
+
+[!INCLUDE [media services api v3 logo](./includes/v3-hr.md)]
 
 Службы мультимедиа Azure помогают партнеру по локальным кодировщикам продвигать продукты, рекомендуя кодировщик корпоративным клиентам. Чтобы стать партнером по локальным кодировщикам, необходимо проверить совместимость вашего локального кодировщика со Службами мультимедиа. Для этого выполните следующие проверки.
 
@@ -71,6 +73,6 @@ ms.locfileid: "79298637"
 
 [Протестированные локальные кодировщики](recommended-on-premises-live-encoders.md)
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Потоковая трансляция в Службах мультимедиа Azure версии 3](live-streaming-overview.md)

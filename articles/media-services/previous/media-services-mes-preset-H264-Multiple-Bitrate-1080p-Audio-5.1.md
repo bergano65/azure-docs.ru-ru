@@ -14,14 +14,16 @@ ms.devlang: na
 ms.topic: article
 ms.date: 03/19/2019
 ms.author: juliako
-ms.openlocfilehash: 53ea54406969d246845018191960b13b8ee9a08a
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 806f175db2abefd6bebcd875c7adf4eb22f57f58
+ms.sourcegitcommit: bcda98171d6e81795e723e525f81e6235f044e52
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "61129769"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89257370"
 ---
-# <a name="h264-multiple-bitrate-1080p-audio-51"></a>H264 Multiple Bitrate 1080p Audio 5.1 
+# <a name="h264-multiple-bitrate-1080p-audio-51"></a>H264 Multiple Bitrate 1080p Audio 5.1
+
+[!INCLUDE [media services api v2 logo](./includes/v2-hr.md)]
 
 `Media Encoder Standard` определяет набор предустановок кодирования, которые можно использовать при создании заданий кодирования. Можно также использовать `preset name`, чтобы указать, в какой формат нужно закодировать файл мультимедиа. Или можно создать собственные предустановки в формате JSON или XML (с использованием кодировки UTF-8 или UTF-16). Затем следует передавать пользовательскую предустановку в кодировщик. Список предустановок, поддерживаемых данным кодировщиком `Media Encoder Standard`, приведен в разделе [Предустановки задач для Media Encoder Standard](media-services-mes-presets-overview.md).  
   

@@ -14,14 +14,16 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 04/01/2019
 ms.author: juliako
-ms.openlocfilehash: 73e92fa505a994cc5cc2fdb3a297dfd653a596a1
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 00035782a17936405b2b042035220dde87da12b1
+ms.sourcegitcommit: bcda98171d6e81795e723e525f81e6235f044e52
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87071818"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89257064"
 ---
-# <a name="upload-files-to-a-media-services-account-in-the-azure-portal"></a>Отправка файлов в учетную запись служб мультимедиа на портале Azure 
+# <a name="upload-files-to-a-media-services-account-in-the-azure-portal"></a>Отправка файлов в учетную запись служб мультимедиа на портале Azure
+
+[!INCLUDE [media services api v2 logo](./includes/v2-hr.md)]
 
 > [!div class="op_single_selector"]
 > * [Портал](media-services-portal-upload-files.md)
@@ -40,7 +42,7 @@ ms.locfileid: "87071818"
 
 ## <a name="upload-files"></a>Отправка файлов
 1. Выберите учетную запись служб мультимедиа Azure на [портале Azure](https://portal.azure.com/).
-2. Выберите **Параметры**  >  **ресурсы**. Затем нажмите кнопку **Отправить**.
+2. Установите флажок **Параметры** > **Ресурсы-контейнеры**. Затем нажмите кнопку **Отправить**.
    
     ![Отправка файлов](./media/media-services-portal-vod-get-started/media-services-upload.png)
    

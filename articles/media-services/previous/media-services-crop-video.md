@@ -14,14 +14,16 @@ ms.topic: article
 ms.date: 03/18/2019
 ms.author: anilmur
 ms.reviewer: juliako
-ms.openlocfilehash: 87348899a70d45fbfbce805bf2169f9f5e4e3f3e
-ms.sourcegitcommit: 845a55e6c391c79d2c1585ac1625ea7dc953ea89
+ms.openlocfilehash: 4264d1c0d83f14da02b26107d336521250fcf13b
+ms.sourcegitcommit: bcda98171d6e81795e723e525f81e6235f044e52
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/05/2020
-ms.locfileid: "85956769"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89257863"
 ---
-# <a name="crop-videos-with-media-encoder-standard"></a>Обрезка видео с помощью Media Encoder Standard  
+# <a name="crop-videos-with-media-encoder-standard"></a>Обрезка видео с помощью Media Encoder Standard
+
+[!INCLUDE [media services api v2 logo](./includes/v2-hr.md)] 
 
 Для обрезки входного видео можно использовать стандартный кодировщик служб мультимедиа (MES). Обрезка заключается в выборе прямоугольного окна в пределах видеокадра и кодировании в нем пикселей. Этот процесс продемонстрирован на схеме ниже.
 
@@ -139,10 +141,10 @@ ms.locfileid: "85956769"
 3. Обрезка применяется к видео, записанному в альбомном режиме (т. е. она не применяется к видео, которое записано с использованием смартфона, повернутого вертикально или настроенного на книжный режим).
 4. Рекомендуется применять к прогрессивному видео, которое записывается в пикселях широкоформатного кадра.
 
-## <a name="provide-feedback"></a>Предоставление отзыва
+## <a name="provide-feedback"></a>Отзывы
 [!INCLUDE [media-services-user-voice-include](../../../includes/media-services-user-voice-include.md)]
 
-## <a name="next-step"></a>Следующий шаг
+## <a name="next-step"></a>Дальнейшие действия
 См. схемы обучения по службам мультимедиа Azure, которые позволят вам узнать о возможностях, предлагаемых AMS.  
 
 [!INCLUDE [media-services-learning-paths-include](../../../includes/media-services-learning-paths-include.md)]

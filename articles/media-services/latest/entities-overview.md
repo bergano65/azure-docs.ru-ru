@@ -4,23 +4,25 @@ titleSuffix: Azure Media Services
 description: Сведения о фильтрации, упорядочении и разбиении на страницы сущностей служб мультимедиа Azure v3.
 services: media-services
 documentationcenter: ''
-author: Juliako
+author: IngridAtMicrosoft
 manager: femila
 editor: ''
 ms.service: media-services
 ms.workload: ''
 ms.topic: article
-ms.date: 01/21/2020
-ms.author: juliako
+ms.date: 08/31/2020
+ms.author: inhenkel
 ms.custom: seodec18, devx-track-csharp
-ms.openlocfilehash: 4fbd587b99875690a8c95952ce6b11d41e402726
-ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
+ms.openlocfilehash: 96f08f75d0921fdf88b71c8e8dd2398a6b85ec6d
+ms.sourcegitcommit: bcda98171d6e81795e723e525f81e6235f044e52
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89009888"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89258475"
 ---
 # <a name="filtering-ordering-and-paging-of-media-services-entities"></a>Фильтрация, упорядочение и разбиение на страницы объектов служб мультимедиа
+
+[!INCLUDE [media services api v3 logo](./includes/v3-hr.md)]
 
 В этом разделе обсуждаются параметры запроса OData и поддержка разбиения на страницы, доступные при перечислении сущностей служб мультимедиа Azure v3.
 
@@ -45,7 +47,7 @@ ms.locfileid: "89009888"
 - `ge`: Проверка того, что поле *больше или равно* значению константы.
 - `le`: Проверка того, что поле *меньше или равно* значению константы.
 
-## <a name="filter"></a>Filter
+## <a name="filter"></a>Фильтр
 
 Используйте `$filter` для предоставления параметра фильтра OData, чтобы найти только интересующие вас объекты.
 
@@ -156,7 +158,7 @@ client.Jobs.List(config.ResourceGroup, config.AccountName, VideoAnalyzerTransfor
 
 В следующей таблице показано, как можно применить параметры фильтрации и упорядочивания к разным сущностям.
 
-|Имя сущности|Имя свойства|Filter|Порядок|
+|Имя сущности|Имя свойства|Фильтр|Порядок|
 |---|---|---|---|
 |[Ресурсы](/rest/api/media/assets/)|name|`eq`, `gt`, `lt`, `ge`, `le`|`asc` и `desc`|
 ||properties.alternateId |`eq`||

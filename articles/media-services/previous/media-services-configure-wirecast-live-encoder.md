@@ -15,14 +15,17 @@ ms.topic: article
 ms.date: 03/14/2019
 ms.author: juliako
 ms.reviewer: cenkdin;anilmur
-ms.openlocfilehash: f5ca4496b9de25d6e95f37076f679eacff28af81
-ms.sourcegitcommit: 845a55e6c391c79d2c1585ac1625ea7dc953ea89
+ms.openlocfilehash: 7b11d7f577f0a2ceb7284d9f78ccf83a64c72fd3
+ms.sourcegitcommit: bcda98171d6e81795e723e525f81e6235f044e52
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/05/2020
-ms.locfileid: "85954981"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89258118"
 ---
-# <a name="use-the-wirecast-encoder-to-send-a-single-bitrate-live-stream"></a>Использование кодировщика Wirecast для отправки односкоростного обновляющегося потока 
+# <a name="use-the-wirecast-encoder-to-send-a-single-bitrate-live-stream"></a>Использование кодировщика Wirecast для отправки односкоростного обновляющегося потока
+
+[!INCLUDE [media services api v2 logo](./includes/v2-hr.md)]
+ 
 > [!div class="op_single_selector"]
 > * [Wirecast](media-services-configure-wirecast-live-encoder.md)
 >
@@ -34,13 +37,13 @@ ms.locfileid: "85954981"
 > [!NOTE]
 > Кодировщики должны поддерживать TLS 1,2 при использовании протоколов РТМПС. Используйте Wirecast версии 13.0.2 или выше из-за требования TLS 1,2.
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 * [Создание учетной записи служб мультимедиа Azure](media-services-portal-create-account.md)
 * Убедитесь, что запущена конечная точка потоковой передачи. Дополнительные сведения см. в статье об [управлении конечными точками потоковой передачи с помощью учетной записи служб мультимедиа](media-services-portal-manage-streaming-endpoints.md).
 * Установите последнюю версию средства [AMSE](https://github.com/Azure/Azure-Media-Services-Explorer) .
 * Запустите его и подключитесь к учетной записи AMS.
 
-## <a name="tips"></a>"Советы"
+## <a name="tips"></a>Советы
 * По возможности используйте проводное подключение к Интернету.
 * Для получения необходимой пропускной способности рекомендуется удвоить скорость потоковой передачи. Это требование не является обязательным, но оно поможет уменьшить влияние перегрузки сети на пропускную способность.
 * При использовании программных кодировщиков закройте все ненужные программы.
@@ -73,7 +76,7 @@ ms.locfileid: "85954981"
 ## <a name="configure-the-telestream-wirecast-encoder"></a><a id="configure_wirecast_rtmp" />Настройка кодировщика Telestream Wirecast
 В этом руководстве используются указанные ниже параметры вывода. В оставшейся части этого раздела этапы настройки описываются более подробно.
 
-**Видео**:
+**Видео.**
 
 * Кодек: H.264
 * Профиль: High (уровень 4.0)
@@ -110,7 +113,7 @@ ms.locfileid: "85954981"
    * Профиль: основной
    * Ключевой кадр: каждые 60 кадров
 
-     **Аудиосигнал**
+     **звук;**
 
    * Конечная скорость: 192 Кбит/сек
    * Частота выборки: 44,100 кГц
@@ -132,7 +135,7 @@ ms.locfileid: "85954981"
 
     ![Wirecast](./media/media-services-wirecast-live-encoder/media-services-wirecast5.png)
 
-1. Нажмите кнопку **ОК**.
+1. Щелкните **ОК**.
 2. На главном экране **Wirecast** подтвердите готовность источников ввода для видео и звука, а затем щелкните **Stream** (Потоковая передача) в верхнем левом углу.
 
     ![Wirecast](./media/media-services-wirecast-live-encoder/media-services-wirecast7.png)

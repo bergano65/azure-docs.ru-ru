@@ -15,14 +15,16 @@ ms.date: 09/22/2019
 ms.author: juliako
 ms.reviewer: adsolank
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 82c69d67d261c493d89f259720e1f903824d6ef8
-ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
+ms.openlocfilehash: 34f71242b5d9c607d0b27dca3abd3c441ddad36e
+ms.sourcegitcommit: bcda98171d6e81795e723e525f81e6235f044e52
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89013611"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89259767"
 ---
 # <a name="indexing-media-files-with-azure-media-indexer-2-preview"></a>Индексирование файлов мультимедиа с помощью индексатора мультимедийных данных Azure 2 (предварительная версия)
+
+[!INCLUDE [media services api v2 logo](./includes/v2-hr.md)]
 
 > [!NOTE]
 > Процессор мультимедиа **Azure Media indexer 2** будет снят с учета. Даты прекращения поддержки см. в разделе, посвященном [устаревшим компонентам](legacy-components.md). [Индексатор видео служб мультимедиа Azure](../video-indexer/index.yml) заменяет этот устаревший обработчик мультимедиа. Дополнительные сведения см. в статье [Переход с Azure Media Indexer и Azure Media Indexer 2 на Индексатор видео Служб мультимедиа Azure](migrate-indexer-v1-v2.md).

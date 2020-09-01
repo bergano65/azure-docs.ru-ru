@@ -13,14 +13,16 @@ ms.devlang: na
 ms.topic: article
 ms.date: 03/20/2019
 ms.author: juliako
-ms.openlocfilehash: 69b5e8721b320e799fbdfb31ff83f2e78e513b40
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 13a82aaa31734e98377d9f68c59c25c83a5d5f8a
+ms.sourcegitcommit: bcda98171d6e81795e723e525f81e6235f044e52
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87047508"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89259138"
 ---
-# <a name="import-a-postman-collection-with-live-streaming-operations"></a>Импорт коллекции Postman с помощью операций потоковой трансляции 
+# <a name="import-a-postman-collection-with-live-streaming-operations"></a>Импорт коллекции Postman с помощью операций потоковой трансляции
+
+[!INCLUDE [media services api v2 logo](./includes/v2-hr.md)]
 
 Эта статья содержит определение коллекции **Postman**, содержащей сгруппированные HTTP-запросы для вызова REST API Служб мультимедиа **потоковой трансляции** Azure. Дополнительные сведения о настройке **Postman** для вызова API REST Служб мультимедиа см. в [этой статье](media-rest-apis-with-postman.md).
 

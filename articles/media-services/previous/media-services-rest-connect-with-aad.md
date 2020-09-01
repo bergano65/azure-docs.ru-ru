@@ -14,14 +14,16 @@ ms.topic: article
 ms.date: 03/20/2019
 ms.author: juliako
 ms.reviewer: willzhan; johndeu
-ms.openlocfilehash: be7ac4073bb332a7595dcf211feb7087d0734854
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 958bfa605e0195b5f4fde2c0ff53a8ce567f50a5
+ms.sourcegitcommit: bcda98171d6e81795e723e525f81e6235f044e52
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87082738"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89257149"
 ---
 # <a name="use-azure-ad-authentication-to-access-the-media-services-api-with-rest"></a>Использование аутентификации Azure AD для доступа к API Служб мультимедиа с помощью REST
+
+[!INCLUDE [media services api v2 logo](./includes/v2-hr.md)]
 
 > [!NOTE]
 > В Cлужбы мультимедиа версии 2 больше не добавляются новые компоненты или функциональные возможности. <br/>Ознакомьтесь с новейшей версией Служб мультимедиа — [версией 3](../latest/index.yml). Также изучите руководство по [миграции из версии 2 в версию 3](../latest/migrate-from-v2-to-v3.md).
@@ -36,7 +38,7 @@ ms.locfileid: "87082738"
     > [!NOTE]
     > **Субъект-служба** — это лучшая методика для большинства приложений, подключающихся к службам мультимедиа Azure. 
 
-В этом руководстве вы узнаете, как:
+В этом руководстве описано следующее:
 
 > [!div class="checklist"]
 > * Получение сведений об аутентификации с портала Azure

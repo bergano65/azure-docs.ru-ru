@@ -12,12 +12,12 @@ manager: daveba
 ms.reviewer: sandeo
 ms.custom: references_regions
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b38d383f7dac832449e5b10e5cda6b0db859f9a0
-ms.sourcegitcommit: 3fb5e772f8f4068cc6d91d9cde253065a7f265d6
+ms.openlocfilehash: 42b980f809074c275a5e62098d4162e4cb4340a0
+ms.sourcegitcommit: bcda98171d6e81795e723e525f81e6235f044e52
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89180343"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89259376"
 ---
 # <a name="sign-in-to-windows-virtual-machine-in-azure-using-azure-active-directory-authentication-preview"></a>Вход в виртуальную машину Windows в Azure с помощью проверки подлинности Azure Active Directory (Предварительная версия)
 
@@ -191,9 +191,9 @@ az role assignment create \
 
 Дополнительные сведения об использовании Azure RBAC для управления доступом к ресурсам подписки Azure см. в следующих статьях:
 
-- [Добавление или удаление назначений ролей Azure с помощью Azure CLI](/azure/role-based-access-control/role-assignments-cli)
-- [Добавление и удаление назначений ролей Azure с помощью портала Azure](/azure/role-based-access-control/role-assignments-portal)
-- [Добавление или удаление назначений ролей Azure с помощью Azure PowerShell](/azure/role-based-access-control/role-assignments-powershell).
+- [Добавление или удаление назначений ролей Azure с помощью Azure CLI](../../role-based-access-control/role-assignments-cli.md)
+- [Добавление и удаление назначений ролей Azure с помощью портала Azure](../../role-based-access-control/role-assignments-portal.md)
+- [Добавление или удаление назначений ролей Azure с помощью Azure PowerShell](../../role-based-access-control/role-assignments-powershell.md).
 
 ## <a name="using-conditional-access"></a>Использование условного доступа
 
@@ -339,7 +339,7 @@ az role assignment create \
 
 ![Ваши учетные данные не работали](./media/howto-vm-sign-in-azure-ad-windows/your-credentials-did-not-work.png)
 
-Убедитесь, что компьютер Windows 10, который вы используете для запуска подключения к удаленному рабочему столу, — это одно из присоединенных к Azure AD или гибридное приложение Azure AD, присоединенное к тому же каталогу Azure AD, к которому присоединена виртуальная машина. Дополнительные сведения об удостоверении устройств см. в статье [что такое удостоверение устройства](/azure/active-directory/devices/overview).
+Убедитесь, что компьютер Windows 10, который вы используете для запуска подключения к удаленному рабочему столу, — это одно из присоединенных к Azure AD или гибридное приложение Azure AD, присоединенное к тому же каталогу Azure AD, к которому присоединена виртуальная машина. Дополнительные сведения об удостоверении устройств см. в статье [что такое удостоверение устройства](./overview.md).
 
 > [!NOTE]
 > В Windows 10 Build 20H1 добавлена поддержка компьютера, зарегистрированного в Azure AD, для инициирования подключения RDP к виртуальной машине. Если вы используете зарегистрированный Azure AD (не присоединенный к Azure AD или Гибридный компьютер с Azure AD) в качестве клиента RDP для запуска подключений к виртуальной машине, необходимо ввести учетные данные в формате Азуреад\упн (например, AzureAD\john@contoso.com ).
@@ -367,4 +367,4 @@ az role assignment create \
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Дополнительные сведения об Azure Active Directory см. в статье [Что такое Azure Active Directory](/azure/active-directory/fundamentals/active-directory-whatis).
+Дополнительные сведения об Azure Active Directory см. в статье [Что такое Azure Active Directory](../fundamentals/active-directory-whatis.md).

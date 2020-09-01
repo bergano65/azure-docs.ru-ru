@@ -14,14 +14,16 @@ ms.topic: article
 ms.date: 03/18/2019
 ms.author: juliako
 ms.custom: devx-track-csharp
-ms.openlocfilehash: d7125c67fb68665408009ffbe7823842ac1c99cf
-ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
+ms.openlocfilehash: 4ac981fb3aa17cbc242b5cc51cd579f926bad034
+ms.sourcegitcommit: bcda98171d6e81795e723e525f81e6235f044e52
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89019510"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89257982"
 ---
 # <a name="copying-existing-blobs-into-a-media-services-asset"></a>Копирование существующих BLOB-объектов в файл служб мультимедиа
+
+[!INCLUDE [media services api v2 logo](./includes/v2-hr.md)]
 
 > [!NOTE]
 > В Cлужбы мультимедиа версии 2 больше не добавляются новые компоненты или функциональные возможности. <br/>Ознакомьтесь с новейшей версией Служб мультимедиа — [версией 3](../latest/index.yml). Также изучите руководство по [миграции из версии 2 в версию 3](../latest/migrate-from-v2-to-v3.md).
@@ -43,7 +45,7 @@ ms.locfileid: "89019510"
 
 ## <a name="copy-blobs-between-two-ams-accounts"></a>Копирование больших двоичных объектов между двумя учетными записями AMS  
 
-### <a name="prerequisites"></a>Обязательные условия
+### <a name="prerequisites"></a>Предварительные требования
 
 Две учетные записи служб мультимедиа. См. дополнительные сведения о [создании учетной записи Служб мультимедиа Azure](media-services-portal-create-account.md).
 
@@ -161,7 +163,7 @@ namespace CopyExistingBlobsIntoAsset
 
 ## <a name="copy-blobs-from-a-storage-account-into-an-ams-account"></a>Копирование больших двоичных объектов из учетной записи хранения в учетную запись AMS 
 
-### <a name="prerequisites"></a>Обязательные условия
+### <a name="prerequisites"></a>Предварительные требования
 
 - Одна учетная запись хранения, из которой вы будете копировать BLOB-объекты.
 - Одна учетная запись AMS, в которую вы будете копировать BLOB-объекты.

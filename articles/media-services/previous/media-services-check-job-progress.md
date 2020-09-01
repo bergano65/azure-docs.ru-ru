@@ -15,14 +15,16 @@ ms.topic: article
 ms.date: 03/14/2019
 ms.author: juliako
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 2368108ab2a6c6799254e2846f566d71882ad1b7
-ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
+ms.openlocfilehash: 591f69855204c4489eb3e9c6edb3900044dda2db
+ms.sourcegitcommit: bcda98171d6e81795e723e525f81e6235f044e52
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89021492"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89258407"
 ---
-# <a name="monitor-job-progress-using-net"></a>Мониторинг хода выполнения задания с помощью .NET 
+# <a name="monitor-job-progress-using-net"></a>Мониторинг хода выполнения задания с помощью .NET
+
+[!INCLUDE [media services api v2 logo](./includes/v2-hr.md)]
 
 > [!NOTE]
 > В Cлужбы мультимедиа версии 2 больше не добавляются новые компоненты или функциональные возможности. <br/>Ознакомьтесь с новейшей версией Служб мультимедиа — [версией 3](../latest/index.yml). Также изучите руководство по [миграции из версии 2 в версию 3](../latest/migrate-from-v2-to-v3.md).
@@ -111,7 +113,7 @@ ms.locfileid: "89021492"
 ```
 
 
-## <a name="next-step"></a>Следующий шаг
+## <a name="next-step"></a>Дальнейшие действия
 Просмотрите схемы обучения работе со службами мультимедиа.
 
 [!INCLUDE [media-services-learning-paths-include](../../../includes/media-services-learning-paths-include.md)]

@@ -15,14 +15,16 @@ ms.topic: conceptual
 ms.date: 03/20/2019
 ms.author: juliako
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 7ef020298b66ce3b66f27bdd482ef7fc04a2504c
-ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
+ms.openlocfilehash: a55151ec70c27f18c9503235519d4dd2fcf5b64e
+ms.sourcegitcommit: bcda98171d6e81795e723e525f81e6235f044e52
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89021210"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89259665"
 ---
 # <a name="use-playready-andor-widevine-dynamic-common-encryption"></a>Использование общего динамического шифрования PlayReady и (или) Widevine DRM
+
+[!INCLUDE [media services api v2 logo](./includes/v2-hr.md)]
 
 > [!NOTE]
 > Для работы с этим учебником требуется учетная запись Azure. Дополнительные сведения см. в разделе [Бесплатная пробная версия Azure](https://azure.microsoft.com/pricing/free-trial/).   > новые функции или функции не добавляются в службы мультимедиа версии 2. <br/>Ознакомьтесь с новейшей версией Служб мультимедиа — [версией 3](../latest/index.yml). Также изучите руководство по [миграции из версии 2 в версию 3](../latest/migrate-from-v2-to-v3.md).
