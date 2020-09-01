@@ -8,12 +8,12 @@ ms.author: memildin
 ms.date: 08/11/2020
 ms.service: security-center
 ms.topic: conceptual
-ms.openlocfilehash: 7fab15ae4e9e58af58a4490beb2d512379976d1c
-ms.sourcegitcommit: 64ad2c8effa70506591b88abaa8836d64621e166
+ms.openlocfilehash: f3a542cd62c3d593dbc0cce7982d47222e9a7c88
+ms.sourcegitcommit: 3fb5e772f8f4068cc6d91d9cde253065a7f265d6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88264008"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89181109"
 ---
 # <a name="explore-and-manage-your-resources-with-asset-inventory-and-management-tools"></a>Исследование ресурсов и управление ими с помощью инвентаризации активов и средств управления
 
@@ -37,8 +37,8 @@ ms.locfileid: "88264008"
 
 |Аспект|Сведения|
 |----|:----|
-|Состояние выпуска:|Предварительный просмотр|
-|Цены|Служба предоставляется бесплатно.|
+|Состояние выпуска:|Preview (Предварительный просмотр)|
+|Цены|Free|
 |Необходимые роли и разрешения:|все пользователи|
 |Облако.|![Да](./media/icons/yes-icon.png) Коммерческие облака<br>![Нет](./media/icons/no-icon.png) National/независимых (US Gov, Китай gov, другое gov)|
 |||
@@ -103,6 +103,9 @@ ms.locfileid: "88264008"
 
     ![Фильтр "результаты безопасности содержат"](./media/asset-inventory/security-findings-contain-elements.png)
 
+    > [!TIP]
+    > **Фильтры с** результатами **безопасности содержат** только одно значение. Чтобы выполнить фильтрацию по нескольким, используйте **Добавление фильтров**.
+
 1. Чтобы использовать фильтр **ценовой категории** , выберите один или несколько параметров ("бесплатный", "частичный" или "Стандартный"):
 
     - **Бесплатные** ресурсы в ценовой категории "бесплатный"
@@ -141,7 +144,7 @@ ms.locfileid: "88264008"
 
 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 В этой статье описывается страница "Инвентаризация активов" центра безопасности Azure.
 

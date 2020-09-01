@@ -8,12 +8,12 @@ ms.author: divswa
 ms.reviewer: jonfan, estfan, logicappspm
 ms.topic: article
 ms.date: 04/27/2017
-ms.openlocfilehash: ad50cbb423f8c60f1caad159bc1a20cf96ed98aa
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: c6d95cb938a341b94a32989e82c42d37956c0a80
+ms.sourcegitcommit: 3fb5e772f8f4068cc6d91d9cde253065a7f265d6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "74792543"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89179850"
 ---
 # <a name="handle-edifact-documents-with-unh25-segments-in-azure-logic-apps"></a>Обработка документов EDIFACT с помощью сегментов UNH 2.5 в Azure Logic Apps
 
@@ -57,12 +57,10 @@ ms.locfileid: "74792543"
 
 1. Настройте схему в параметрах отправки в соглашении EDIFACT.
 
-1. Выберите соглашение EDIFACT и щелкните **Редактирование в качестве JSON**.  Добавьте значение UNH2.5 в **schemaReferences** для соглашения отправки.
-
 1. Выберите соглашение EDIFACT и выберите **изменить как JSON**. Добавьте значение UNH 2.5 в раздел с соглашением об отправке `schemaReferences` :
 
    ![Добавление UNH 2.5 в соглашение об отправке](./media/logic-apps-enterprise-integration-edifact_inputfile_unh2.5/image2.png)
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Дополнительные сведения о [соглашениях для учетных записей интеграции](../logic-apps/logic-apps-enterprise-integration-agreements.md)

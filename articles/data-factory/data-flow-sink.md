@@ -8,13 +8,13 @@ manager: anandsub
 ms.service: data-factory
 ms.topic: conceptual
 ms.custom: seo-lt-2019
-ms.date: 06/03/2020
-ms.openlocfilehash: 49cfc4899379698cab78a5e22fcffacb60636052
-ms.sourcegitcommit: f844603f2f7900a64291c2253f79b6d65fcbbb0c
+ms.date: 08/18/2020
+ms.openlocfilehash: b2a356f8ee6c8e3d11548a3c7c17a868e4c057c4
+ms.sourcegitcommit: 3fb5e772f8f4068cc6d91d9cde253065a7f265d6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/10/2020
-ms.locfileid: "86223641"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89179187"
 ---
 # <a name="sink-transformation-in-mapping-data-flow"></a>Преобразование приемника в потоке данных сопоставления
 
@@ -36,7 +36,7 @@ ms.locfileid: "86223641"
 
 ![Встроенный набор данных](media/data-flow/inline-selector.png "Встроенный набор данных")
 
-##  <a name="supported-sink-types"></a><a name="supported-sinks"></a>Поддерживаемые типы приемников
+##  <a name="supported-sink-types"></a><a name="supported-sinks"></a> Поддерживаемые типы приемников
 
 Поток данных сопоставления соответствует подходу "извлечь", "Загрузка", "преобразование" (ELT) и работает с *промежуточными* наборами DataSet, которые находятся в Azure. В настоящее время в преобразовании источника можно использовать следующие наборы данных:
 
@@ -48,8 +48,9 @@ ms.locfileid: "86223641"
 | [Azure Synapse Analytics](connector-azure-sql-data-warehouse.md#mapping-data-flow-properties) | | ✓/- |
 | [База данных SQL Azure](connector-azure-sql-database.md#mapping-data-flow-properties) | | ✓/- |
 | [Azure CosmosDB (API SQL)](connector-azure-cosmos-db.md#mapping-data-flow-properties) | | ✓/- |
+| [Snowflake](connector-snowflake.md) | | ✓/✓ |
 
-Параметры, характерные для этих соединителей, находятся на вкладке " **Параметры** ". примеры скриптов для данных и потоковой передачи в этих параметрах находятся в документации по соединителю. 
+Параметры, относящиеся к этим соединителям, находятся на вкладке **Параметры** . Сведения и примеры сценариев потока данных для этих параметров находятся в документации по соединителю. 
 
 Фабрике данных Azure доступно более [90 собственных соединителей](connector-overview.md). Чтобы записать данные в другие источники из потока данных, используйте действие копирования для загрузки этих данных из поддерживаемого приемника.
 

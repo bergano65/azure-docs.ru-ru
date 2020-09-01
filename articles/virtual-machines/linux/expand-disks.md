@@ -7,12 +7,12 @@ ms.topic: how-to
 ms.date: 10/15/2018
 ms.author: rogarana
 ms.subservice: disks
-ms.openlocfilehash: cdc5f56d4500581b36f366663dc3db915070ee2e
-ms.sourcegitcommit: 271601d3eeeb9422e36353d32d57bd6e331f4d7b
+ms.openlocfilehash: bbb959b6b1d71c81f7b920b3962f693716041e16
+ms.sourcegitcommit: 3fb5e772f8f4068cc6d91d9cde253065a7f265d6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/20/2020
-ms.locfileid: "88649852"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89181754"
 ---
 # <a name="expand-virtual-hard-disks-on-a-linux-vm-with-the-azure-cli"></a>Расширение виртуальных жестких дисков на виртуальной машине Linux с помощью Azure CLI
 
@@ -71,12 +71,12 @@ ms.locfileid: "88649852"
 1. Подключитесь к виртуальной машине по протоколу SSH, используя соответствующие учетные данные. Вы можете просмотреть общедоступный IP-адрес виртуальной машины с помощью команды [az vm show](/cli/azure/vm#az-vm-show):
 
     ```azurecli
-    az vm show --resource-group myResourceGroup --name myVM -d --query [publicIps] --o tsv
+    az vm show --resource-group myResourceGroup --name myVM -d --query [publicIps] --output tsv
     ```
 
 1. Развертывание основного раздела и файловой системы.
 
-    а. Если диск подключен, отключите его:
+    a. Если диск подключен, отключите его:
 
     ```bash
     sudo umount /dev/sdc1
@@ -113,7 +113,7 @@ ms.locfileid: "88649852"
     End?  [107GB]? 215GB
     ```
 
-    d. Чтобы закрыть командную строку, введите `quit`.
+    г. Чтобы закрыть командную строку, введите `quit`.
 
 1. Изменив размер раздела, проверьте его целостность с помощью команды `e2fsck`.
 

@@ -15,12 +15,12 @@ ms.topic: how-to
 ms.date: 05/11/2018
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b15250804dd316000aa20d6b97e9cccbfc36e9ad
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 2d48483697970333c542f140567ca6a6d3fcf7d2
+ms.sourcegitcommit: 3fb5e772f8f4068cc6d91d9cde253065a7f265d6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85359098"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89179153"
 ---
 # <a name="diagnose-and-remediate-duplicated-attribute-sync-errors"></a>Диагностика и устранение ошибок синхронизации повторяющихся атрибутов
 
@@ -58,7 +58,7 @@ ms.locfileid: "85359098"
 | OnPremiseSecurityIdentifier |  AttributeValueMustBeUnique |
 
 >[!IMPORTANT]
-> Для доступа к этой функции в параметрах RBAC требуется разрешение **глобального администратора** или **участника**.
+> Для доступа к этой функции требуется разрешение **глобального администратора** или разрешение **участника** из Azure RBAC.
 >
 
 Следуя инструкциям на портале Azure, вы сможете уточнить сведения об ошибках синхронизации и найти более конкретные решения.
@@ -148,7 +148,7 @@ ms.locfileid: "85359098"
 
 
 **Вопрос.** Какие разрешения нужны пользователю для применения исправления?  
-**Ответ.** Разрешения **глобального администратора** или **участника** в параметрах RBAC позволяют получить доступ к диагностике и устранению неполадок.
+**Ответ.** **Глобальный администратор**или **участник** роли Azure RBAC имеет разрешение на доступ к процессу диагностики и устранения неполадок.
 
 
 **Вопрос.** Нужно ли мне настраивать AAD Connect или обновлять агент Azure AD Connect Health для использования этой функции?  

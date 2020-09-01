@@ -13,12 +13,12 @@ ms.author: ajburnle
 ms.reviewer: jeffsta
 ms.custom: it-pro, seodec18, contperfq4
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 95c3ad5fa66e1327c1fe646303f268ae4e84bd89
-ms.sourcegitcommit: 2ff0d073607bc746ffc638a84bb026d1705e543e
+ms.openlocfilehash: cbc1286b6c434d1c7a110c75dd5085de2043012d
+ms.sourcegitcommit: 3fb5e772f8f4068cc6d91d9cde253065a7f265d6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87825027"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89179102"
 ---
 # <a name="associate-or-add-an-azure-subscription-to-your-azure-active-directory-tenant"></a>Связывание или добавление подписки Azure в клиент Azure Active Directory
 
@@ -38,21 +38,22 @@ ms.locfileid: "87825027"
 > Перемещение кластера Azure Kubernetes Service (AKS) в другую подписку или перемещение владения кластером в новый клиент приводит к потере функциональности кластера из-за потери назначений ролей и прав субъекта-службы. Дополнительные сведения о AKS см. в статье [Azure Kubernetes Service (AKS)](https://docs.microsoft.com/azure/aks/).
 
 
-## <a name="before-you-begin"></a>Подготовка к работе
+## <a name="before-you-begin"></a>Перед началом
 
 Прежде чем можно будет связать или добавить подписку, выполните следующие действия.
 
 - Ознакомьтесь с приведенным ниже списком изменений, которые будут выполнены после связывания или добавления подписки, и того, как это может быть затронуто.
 
-  - Пользователи, которым назначены роли с помощью RBAC, потеряют доступ к ним
+  - Пользователи, которым назначены роли с помощью Azure RBAC, потеряют доступ
   - Администратор служб и Соадминистратор потеряют доступ
   - Если у вас есть хранилища ключей, они станут недоступными и их потребуется исправить после сопоставления.
   - Если у вас есть управляемые удостоверения для таких ресурсов, как виртуальные машины или Logic Apps, необходимо повторно включить или создать их заново после сопоставления.
   - Если у вас есть зарегистрированная Azure Stack, ее потребуется повторно зарегистрировать после связи
+  - Дополнительные сведения см. в статье [Передача подписки Azure в другой каталог Azure AD (предварительная версия)](../../role-based-access-control/transfer-subscription.md).
 
 - Войдите, используя учетную запись, которая:
 
-  - Имеет назначение роли [владельца](../../role-based-access-control/built-in-roles.md#owner) для подписки. Сведения о назначении роли владельца см. [в статье Управление доступом к ресурсам Azure с помощью RBAC и портал Azure](../../role-based-access-control/role-assignments-portal.md).
+  - Имеет назначение роли [владельца](../../role-based-access-control/built-in-roles.md#owner) для подписки. Сведения о назначении роли владельца см. [в разделе Добавление или удаление назначений ролей Azure с помощью портал Azure](../../role-based-access-control/role-assignments-portal.md).
   - Существует и в текущем каталоге, и в новом каталоге. Текущий каталог связан с подпиской. Вы свяжете новый каталог с подпиской. Дополнительные сведения о получении доступа к другому каталогу см. [в разделе добавление Azure Active Directory пользователей службы совместной работы B2B в портал Azure](../b2b/add-users-administrator.md).
 
 - Убедитесь, что не используете следующие подписки: поставщики облачных служб Azure (CSP) (MS-AZR-0145P, MS-AZR-0146P, MS-AZR-159P), внутренняя подписка Майкрософт (MS-AZR-0015P) или Microsoft Imagine (MS-AZR-0144P).
@@ -91,7 +92,9 @@ ms.locfileid: "87825027"
 
 - Если вы зарегистрировали Azure Stack с помощью этой подписки, необходимо выполнить повторную регистрацию. Дополнительные сведения см. в статье [регистрация Azure Stack в Azure](/azure-stack/operator/azure-stack-registration).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+- Дополнительные сведения см. в статье [Передача подписки Azure в другой каталог Azure AD (предварительная версия)](../../role-based-access-control/transfer-subscription.md).
+
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Сведения о создании нового клиента Azure AD см. [в разделе Краткое руководство. Создание нового клиента в Azure Active Directory](active-directory-access-create-new-tenant.md).
 

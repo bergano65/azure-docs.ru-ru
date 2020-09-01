@@ -3,12 +3,12 @@ title: Обновление агента Службы восстановлени
 description: Узнайте, как обновить агент Службы восстановления Microsoft Azure (MARS).
 ms.topic: conceptual
 ms.date: 03/03/2020
-ms.openlocfilehash: c822c75fa1232d2304b5bcb4a0afe4323e52287f
-ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
+ms.openlocfilehash: a1ee26db962781643e9599069282647658301bac
+ms.sourcegitcommit: 3fb5e772f8f4068cc6d91d9cde253065a7f265d6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89007372"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89181482"
 ---
 # <a name="upgrade-the-microsoft-azure-recovery-services-mars-agent"></a>Обновление агента Службы восстановления Microsoft Azure (MARS)
 
@@ -71,7 +71,7 @@ ms.locfileid: "89007372"
 
     ![Мастер обновления агента Службы восстановления Microsoft Azure](./media/upgrade-mars-agent/agent-upgrade-wizard.png)
 
-1. Нажмите **Далее**.
+1. Выберите **Далее**.
 
 1. Выберите **Обновить**.
 
@@ -81,7 +81,7 @@ ms.locfileid: "89007372"
 
 ## <a name="for-system-center-data-protection-manager-sc-dpm-customers"></a>Для клиентов System Center Data Protection Manager (SC DPM)
 
-Если на серверах System Center Data Protection Manager (SC DPM) установлены агенты Azure Backup, необходимо выполнить следующие действия, чтобы определить, требуется ли серверу DPM обновление Azure Backup агента:
+Если агенты Azure Backup установлены на серверах System Center Data Protection Manager (SC DPM), необходимо выполнить следующие действия, чтобы определить, требуется ли серверу DPM обновление Azure Backup агента:
 
 1. Войдите на сервер SC DPM с правами администратора.
 2. Откройте консоль DPM.

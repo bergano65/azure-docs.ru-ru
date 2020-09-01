@@ -9,12 +9,12 @@ ms.date: 08/08/2020
 ms.topic: how-to
 ms.service: key-vault
 ms.subservice: general
-ms.openlocfilehash: af7cb87f8caf0176505c8af864ae8d3cb0c312a0
-ms.sourcegitcommit: 02ca0f340a44b7e18acca1351c8e81f3cca4a370
+ms.openlocfilehash: 860f9b0e49423b5d144d56ecd965153f7a362d87
+ms.sourcegitcommit: 3fb5e772f8f4068cc6d91d9cde253065a7f265d6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/19/2020
-ms.locfileid: "88585701"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89180921"
 ---
 # <a name="service-to-service-authentication-to-azure-key-vault-using-net"></a>Проверка подлинности с взаимодействием между службами в Azure Key Vault с помощью .NET
 
@@ -54,7 +54,7 @@ ms.locfileid: "88585701"
     string accessToken = await azureServiceTokenProvider2.GetAccessTokenAsync("https://management.azure.com/").ConfigureAwait(false);
     ```
 
-Класс `AzureServiceTokenProvider` кэширует токен в памяти и извлекает его из Azure AD прямо перед истечением срока действия. Поэтому больше не нужно проверять срок действия перед вызовом `GetAccessTokenAsync` метода. Просто вызовите метод, когда необходимо использовать токен.
+Не нужно проверять срок действия маркера перед вызовом `GetAccessTokenAsync` метода, так как `AzureServiceTokenProvider` он кэширует маркер в памяти и извлекает его из Azure AD непосредственно перед истечением срока действия. 
 
 Для метода `GetAccessTokenAsync` требуется наличие идентификатора ресурса. Дополнительные сведения о службах Microsoft Azure см. в статье [что такое управляемые удостоверения для ресурсов Azure](../../active-directory/msi-overview.md).
 
@@ -110,7 +110,7 @@ ms.locfileid: "88585701"
 
 Когда служба вызывает службы Azure, можно выполнить предыдущие действия, так как службы Azure предоставляют доступ пользователям и приложениям.
 
-При создании службы, которая вызывает пользовательскую службу, выполните проверку подлинности среды локальной разработки с помощью учетных данных клиента Azure AD. Имеются две возможности:
+При создании службы, которая вызывает пользовательскую службу, выполните проверку подлинности среды локальной разработки с помощью учетных данных клиента Azure AD. Существует два варианта.
 
 - Войдите в Azure, используя субъект-службу:
 
@@ -235,7 +235,7 @@ ms.locfileid: "88585701"
 
 Для управления процессом используйте строку подключения, переданную в конструктор `AzureServiceTokenProvider` или указанную в переменной среды *AzureServicesAuthConnectionString*.  Поддерживаются следующие варианты.
 
-| Параметр строки подключения | Сценарий | Комментарии|
+| Параметр строки подключения | Сценарий | Примечания|
 |:--------------------------------|:------------------------|:----------------------------|
 | `RunAs=Developer; DeveloperTool=AzureCli` | Локальная разработка | `AzureServiceTokenProvider` использует Azure CLI для получения токена. |
 | `RunAs=Developer; DeveloperTool=VisualStudio` | Локальная разработка | `AzureServiceTokenProvider` использует Visual Studio для получения токена. |

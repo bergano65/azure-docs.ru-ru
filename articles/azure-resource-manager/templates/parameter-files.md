@@ -2,13 +2,13 @@
 title: Создание файла параметров
 description: Создание файла параметров для передачи значений во время развертывания шаблона Azure Resource Manager
 ms.topic: conceptual
-ms.date: 06/19/2020
-ms.openlocfilehash: 8039b63978e52b69b0f8ffb4dd4e052769f3c5e6
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.date: 08/31/2020
+ms.openlocfilehash: ff5fa74f8b4b7f0ce7dfe2164a369cfd5eedb4d9
+ms.sourcegitcommit: 3fb5e772f8f4068cc6d91d9cde253065a7f265d6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87082942"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89179629"
 ---
 # <a name="create-resource-manager-parameter-file"></a>Создание файла параметров Resource Manager
 
@@ -184,10 +184,30 @@ ms.locfileid: "87082942"
 
 ## <a name="deploy-template-with-parameter-file"></a>Развертывание шаблона с помощью файла параметров
 
-См.
+Чтобы передать локальный файл параметров с Azure CLI, укажите параметр @ и имя файла параметров.
 
-- [Развертывание ресурсов с помощью шаблонов ARM и Azure CLI](./deploy-cli.md#parameters)
-- [Развертывание ресурсов с помощью шаблонов ARM и Azure PowerShell](./deploy-powershell.md#pass-parameter-values)
+```azurecli
+az deployment group create \
+  --name ExampleDeployment \
+  --resource-group ExampleGroup \
+  --template-file storage.json \
+  --parameters @storage.parameters.json
+```
+
+Дополнительные сведения см. в статье [развертывание ресурсов с помощью шаблонов ARM и Azure CLI](./deploy-cli.md#parameters).
+
+Чтобы передать локальный файл параметров с Azure PowerShell, используйте `TemplateParameterFile` параметр.
+
+```azurepowershell
+New-AzResourceGroupDeployment -Name ExampleDeployment -ResourceGroupName ExampleResourceGroup `
+  -TemplateFile c:\MyTemplates\azuredeploy.json `
+  -TemplateParameterFile c:\MyTemplates\storage.parameters.json
+```
+
+Дополнительные сведения см. в статье [развертывание ресурсов с помощью шаблонов ARM и Azure PowerShell](./deploy-powershell.md#pass-parameter-values)
+
+> [!NOTE]
+> Невозможно использовать файл параметров с колонкой настраиваемого шаблона на портале.
 
 ## <a name="file-name"></a>Имя файла
 
@@ -199,7 +219,7 @@ ms.locfileid: "87082942"
 
 Вы можете использовать в ходе одной операции развертывания как встроенные параметры, так и локальный файл параметров. Например, часть значений можно указать в локальном файле параметров, а другую часть — в команде развертывания. Если значения для одного параметра указаны одновременно и в локальном файле параметров, и в командной строке, более высокий приоритет имеет значение из командной строки.
 
-Можно использовать внешний файл параметров, указав универсальный код ресурса (URI) для файла. При этом нельзя передавать другие значения ни как встроенные, ни в локальном файле. Все встроенные параметры игнорируются. Все значения параметров следует указать во внешнем файле.
+Можно использовать внешний файл параметров, указав универсальный код ресурса (URI) для файла. При использовании внешнего файла параметров нельзя передавать другие значения как встроенные данные, так и из локального файла. Все встроенные параметры игнорируются. Все значения параметров следует указать во внешнем файле.
 
 ## <a name="parameter-name-conflicts"></a>Конфликты параметров
 

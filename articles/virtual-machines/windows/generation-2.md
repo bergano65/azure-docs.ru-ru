@@ -8,12 +8,12 @@ ms.workload: infrastructure-services
 ms.topic: how-to
 ms.date: 02/11/2020
 ms.author: jushiman
-ms.openlocfilehash: 1204435a5f1d7a48fceb654df10b8394d6f5df50
-ms.sourcegitcommit: d7352c07708180a9293e8a0e7020b9dd3dd153ce
+ms.openlocfilehash: db3bfddd3376a013cc8921f9e0b94bd30bfe041f
+ms.sourcegitcommit: 3fb5e772f8f4068cc6d91d9cde253065a7f265d6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/30/2020
-ms.locfileid: "89146646"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89181533"
 ---
 # <a name="support-for-generation-2-vms-on-azure"></a>Поддержка виртуальных машин 2-го поколения в Azure
 
@@ -29,7 +29,8 @@ ms.locfileid: "89146646"
 
 * [серия B](../sizes-b-series-burstable.md);
 * [серия DCsv2](../dcv2-series.md);
-* [серии DSv2](../dv2-dsv2-series.md) и [DSv3](../dv3-dsv3-series.md);
+* [Серия DSv2](../dv2-dsv2-series.md) 
+* [Серия Dsv3](../dv3-dsv3-series.md)
 * [Серия Dsv4](../dv4-dsv4-series.md)
 * [Серия Ddsv4](../ddv4-ddsv4-series.md)
 * [серия Dasv4](../dav4-dasv4-series.md);
@@ -39,10 +40,12 @@ ms.locfileid: "89146646"
 * [серия GS](../sizes-previous-gen.md#gs-series);
 * [серия HB](../hb-series.md);
 * [серия HC](../hc-series.md);
-* [серии LS](../sizes-previous-gen.md#ls-series) и [Lsv2](../lsv2-series.md);
+* [Серия Ls](../sizes-previous-gen.md#ls-series) 
+* [Серия Lsv2](../lsv2-series.md)
 * [серия M](../m-series.md);
 * [серия Mv2](../mv2-series.md)<sup>1</sup>;
-* [серии NCv2](../ncv2-series.md) и [NCv3](../ncv3-series.md);
+* [Серия NCv2](../ncv2-series.md) 
+* [Серия NCv3](../ncv3-series.md)
 * [серия ND](../nd-series.md);
 * [серия NVv3](../nvv3-series.md).
 
@@ -84,7 +87,7 @@ ms.locfileid: "89146646"
 |---------|--------------|--------------|
 | Загрузка             | PCAT                      | UEFI                               |
 | Контроллеры дисков | IDE                       | SCSI                               |
-| Размеры виртуальной машины         | Все размеры виртуальной машины. | Только виртуальные машины, которые поддерживают хранилища ценовой категории "Премиум". |
+| Размеры виртуальной машины         | Все размеры виртуальной машины. | [Просмотреть доступные размеры](https://docs.microsoft.com/azure/virtual-machines/windows/generation-2#generation-2-vm-sizes) |
 
 ### <a name="generation-1-vs-generation-2-capabilities"></a>Возможности 1-го и 2-го поколений
 

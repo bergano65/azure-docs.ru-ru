@@ -14,12 +14,12 @@ ms.author: curtand
 ms.reviewer: vincesm
 ms.custom: it-pro, fasttrack-edit
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 87bb20d23f773997addd170da09ca8f20d2a8ce7
-ms.sourcegitcommit: e69bb334ea7e81d49530ebd6c2d3a3a8fa9775c9
+ms.openlocfilehash: 953217d15e6aede86d863bcd5be6df583d15df6d
+ms.sourcegitcommit: 3fb5e772f8f4068cc6d91d9cde253065a7f265d6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "88949989"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89180088"
 ---
 # <a name="administrator-role-permissions-in-azure-active-directory"></a>Разрешения роли администратора в Azure Active Directory
 
@@ -1980,6 +1980,6 @@ Device Users (Пользователи устройства) | Не рекоме
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-* Дополнительные сведения о том, как назначить пользователя администратором подписки Azure, см. в статье об [управлении доступом с помощью ролей Azure (Azure RBAC)](../../role-based-access-control/role-assignments-portal.md).
+* Дополнительные сведения о назначении пользователя в качестве администратора подписки Azure см. в статье [Добавление и удаление назначений ролей Azure (Azure RBAC)](../../role-based-access-control/role-assignments-portal.md) .
 * Дополнительные сведения о том, как контролируется доступ к ресурсам в Microsoft Azure, см. в [этой статье](../../role-based-access-control/rbac-and-directory-admin-roles.md).
 * Дополнительные сведения о связи между подписками и клиентом Azure AD, а также инструкции по связыванию или добавлению подписки см. в статье [связывание или Добавление подписки Azure в клиент Azure Active Directory](../fundamentals/active-directory-how-subscriptions-associated-directory.md) .

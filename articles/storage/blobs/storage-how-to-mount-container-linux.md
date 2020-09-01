@@ -8,12 +8,12 @@ ms.topic: how-to
 ms.date: 2/1/2019
 ms.author: ripohane
 ms.reviewer: dineshm
-ms.openlocfilehash: 8dc7c16b83816d2b408cef7ade06767bfe2a4582
-ms.sourcegitcommit: 2ff0d073607bc746ffc638a84bb026d1705e543e
+ms.openlocfilehash: 297595c6c4a9c82c3d0293f2cea2db66ea9ca54a
+ms.sourcegitcommit: 3fb5e772f8f4068cc6d91d9cde253065a7f265d6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87826554"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89180411"
 ---
 # <a name="how-to-mount-blob-storage-as-a-file-system-with-blobfuse"></a>Как подключить хранилище BLOB-объектов в качестве файловой системы с использованием blobfuse
 
@@ -76,6 +76,7 @@ sudo yum install blobfuse
 ### <a name="optional-use-a-ramdisk-for-the-temporary-path"></a>Использование электронного диска для временного пути (необязательно)
 В следующем примере создается электронный диск на 16 ГБ и каталог для blobfuse. Выберите размер в соответствии со своими потребностями. Такой электронный диск позволяет blobfuse открывать файлы размером до 16 ГБ. 
 ```bash
+sudo mkdir /mnt/ramdisk
 sudo mount -t tmpfs -o size=16g tmpfs /mnt/ramdisk
 sudo mkdir /mnt/ramdisk/blobfusetmp
 sudo chown <youruser> /mnt/ramdisk/blobfusetmp

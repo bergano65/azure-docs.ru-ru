@@ -9,13 +9,13 @@ ms.topic: conceptual
 author: danimir
 ms.author: danil
 ms.reviewer: douglas, carlrab, sstein
-ms.date: 08/18/2020
-ms.openlocfilehash: 1833f0343aa3e41119e215e7ce022f122d13489b
-ms.sourcegitcommit: 02ca0f340a44b7e18acca1351c8e81f3cca4a370
+ms.date: 08/31/2020
+ms.openlocfilehash: 0d5390beff6c3e0045c6b887f0262a54a737a851
+ms.sourcegitcommit: 3fb5e772f8f4068cc6d91d9cde253065a7f265d6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/19/2020
-ms.locfileid: "88589509"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89181771"
 ---
 # <a name="user-initiated-manual-failover-on-sql-managed-instance"></a>Ручная отработка отказа, инициированная пользователем в SQL Управляемый экземпляр
 
@@ -36,6 +36,15 @@ ms.locfileid: "88589509"
 > Обеспечение отказоустойчивости приложений до развертывания в рабочей среде поможет снизить риск сбоев приложений в рабочей среде и повлиять на доступность приложений для ваших клиентов.
 
 ## <a name="initiate-manual-failover-on-sql-managed-instance"></a>Запуск отработки отказа вручную на Управляемый экземпляр SQL
+
+### <a name="rbac-permissions-required"></a>Требуются разрешения RBAC
+
+Пользователь, инициирующий отработку отказа, должен иметь одну из следующих ролей RBAC:
+
+- Роль владельца подписки или
+- Роль участника Управляемый экземпляр или
+- Пользовательская роль со следующим разрешением:
+  - `Microsoft.Sql/managedInstances/failover/action`
 
 ### <a name="using-powershell"></a>Использование PowerShell
 
