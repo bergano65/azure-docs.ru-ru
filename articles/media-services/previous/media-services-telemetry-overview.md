@@ -14,15 +14,16 @@ ms.devlang: na
 ms.topic: article
 ms.date: 04/01/2019
 ms.author: juliako
-ms.openlocfilehash: 52b737e88e13c59d260da73c6fa37a1088cb91d5
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 0701e9c6428283d45cf4b4a2e24c8de99d9a286b
+ms.sourcegitcommit: bcda98171d6e81795e723e525f81e6235f044e52
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87038474"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89265904"
 ---
 # <a name="azure-media-services-telemetry"></a>Телеметрия Служб мультимедиа Azure  
 
+[!INCLUDE [media services api v2 logo](./includes/v2-hr.md)]
 
 > [!NOTE]
 > В Cлужбы мультимедиа версии 2 больше не добавляются новые компоненты или функциональные возможности. <br/>Ознакомьтесь с новейшей версией Служб мультимедиа — [версией 3](../latest/index.yml). Также изучите руководство по [миграции из версии 2 в версию 3](../latest/migrate-from-v2-to-v3.md).
@@ -53,7 +54,7 @@ ms.locfileid: "87038474"
 
 - Можно считывать данные непосредственно из хранилища таблиц Azure (например, с помощью пакета SDK для хранилища). Описание таблиц хранилища телеметрии см. в подразделе **Использование данных телеметрии**[этого](/previous-versions/azure/mt742089(v=azure.100)) раздела.
 
-Или
+либо
 
 - Для чтения данных из хранилища можно использовать поддержку, реализованную в пакете SDK служб мультимедиа для .NET, как описано в [этом](media-services-dotnet-telemetry.md) разделе. 
 
@@ -78,9 +79,9 @@ ms.locfileid: "87038474"
 ---|---|---
 PartitionKey|{ИД_учетной_записи}_{ИД_сущности}|e49bef329c29495f9b9570989682069d_64435281c50a4dd8ab7011cb0f4cdf66<br/<br/>Идентификатор учетной записи добавляется в ключ секции для упрощения рабочих процессов, в которых несколько учетных записей служб мультимедиа записывают данные в одну учетную запись хранения.
 RowKey|{число секунд до полуночи}_{случайное значение}|01688_00199<br/><br/>Ключ строки начинается с числа секунд до полуночи, чтобы сделать возможным выполнение запросов получения N первых элементов в секции. Дополнительные сведения см. в [этой статье](../../cosmos-db/table-storage-design-guide.md#log-tail-pattern). 
-Timestamp|Дата и время|Создаваемая автоматически метка времени из таблицы Azure: 2016-Auto-09-09T22:43:42.241Z.
-Type|Тип сущности, предоставляющей данные телеметрии.|Channel, StreamingEndpoint, Archive.<br/><br/>Тип события — это просто строковое значение.
-Имя|Имя события телеметрии.|ChannelHeartbeat, StreamingEndpointRequestLog.
+Отметка времени|Дата и время|Создаваемая автоматически метка времени из таблицы Azure: 2016-Auto-09-09T22:43:42.241Z.
+Тип|Тип сущности, предоставляющей данные телеметрии.|Channel, StreamingEndpoint, Archive.<br/><br/>Тип события — это просто строковое значение.
+name|Имя события телеметрии.|ChannelHeartbeat, StreamingEndpointRequestLog.
 ObservedTime|Время возникновения события телеметрии (UTC).|2016-09-09T22:42:36.924Z<br/><br/>Наблюдаемое время предоставляется сущностью, отправляющей данные телеметрии (например, сущностью Channel). Возможны проблемы синхронизации между компонентами, поэтому данное значение является приблизительным.
 ServiceID|{ИД_службы}|f70bd731-691d-41c6-8f2d-671d0bdc9c7e
 Свойства, относящиеся к сущности|Определяются событием.|StreamName: stream1, Bitrate 10123…<br/><br/>Остальные свойства определены для конкретного типа события. Таблица Azure содержит пары "ключ-значение".  (То есть различные строки в таблице имеют разные наборы свойств.)
@@ -100,8 +101,8 @@ ServiceID|{ИД_службы}|f70bd731-691d-41c6-8f2d-671d0bdc9c7e
 PartitionKey|PartitionKey|e49bef329c29495f9b9570989682069d_64435281c50a4dd8ab7011cb0f4cdf66
 RowKey|RowKey|01688_00199
 Отметка времени|Отметка времени|Создаваемая автоматически метка времени из таблицы Azure: 2016-Auto-09-09T22:43:42.241Z.
-Type|Type|StreamingEndpoint
-Имя|Имя|StreamingEndpointRequestLog
+Тип|Тип|StreamingEndpoint
+name|name|StreamingEndpointRequestLog
 ObservedTime|ObservedTime|2016-09-09T22:42:36.924Z
 ServiceID|Идентификатор службы.|f70bd731-691d-41c6-8f2d-671d0bdc9c7e
 HostName|Имя узла конечной точки.|builddemoserver.origin.mediaservices.windows.net
@@ -119,8 +120,8 @@ E2ELatency|Средняя совокупная задержка.|250
 PartitionKey|PartitionKey|e49bef329c29495f9b9570989682069d_64435281c50a4dd8ab7011cb0f4cdf66
 RowKey|RowKey|01688_00199
 Отметка времени|Отметка времени|Создаваемая автоматически метка времени из таблицы Azure: 2016-Auto-09-09T22:43:42.241Z.
-Type|Type|Канал
-Имя|Имя|ChannelHeartbeat
+Тип|Тип|Канал
+name|name|ChannelHeartbeat
 ObservedTime|ObservedTime|2016-09-09T22:42:36.924Z
 ServiceID|Идентификатор службы.|f70bd731-691d-41c6-8f2d-671d0bdc9c7e
 TrackType|Тип дорожки: видео, звук или текст.|video/audio
@@ -144,8 +145,8 @@ UnexpectedBitrate|Значение True, если расчетная или фа
 PartitionKey|PartitionKey|e49bef329c29495f9b9570989682069d_64435281c50a4dd8ab7011cb0f4cdf66
 RowKey|RowKey|01688_00199
 Отметка времени|Отметка времени|Создаваемая автоматически метка времени из таблицы Azure: 2016-Auto-09-09T22:43:42.241Z.
-Type|Type|Архив
-Имя|Имя|ArchiveHeartbeat
+Тип|Тип|Архив
+name|name|ArchiveHeartbeat
 ObservedTime|ObservedTime|2016-09-09T22:42:36.924Z
 ServiceID|Идентификатор службы.|f70bd731-691d-41c6-8f2d-671d0bdc9c7e
 ManifestName|URL-адрес программы.|asset-eb149703-ed0a-483c-91c4-e4066e72cce3/a0a5cfbf-71ec-4bd2-8c01-a92a2b38c9ba.ism

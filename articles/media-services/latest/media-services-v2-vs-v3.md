@@ -3,7 +3,7 @@ title: Миграция из служб мультимедиа Azure v2 в v3
 description: В этой статье описаны изменения, которые впервые появились в версии 3 Служб мультимедиа Azure, и приведены различия между двумя версиями.
 services: media-services
 documentationcenter: na
-author: Juliako
+author: IngridAtMicrosoft
 manager: femila
 editor: ''
 tags: ''
@@ -13,16 +13,18 @@ ms.devlang: multiple
 ms.topic: article
 ms.tgt_pltfrm: multiple
 ms.workload: media
-ms.date: 03/09/2020
-ms.author: juliako
-ms.openlocfilehash: dfbe1e7fdfca6f9959218f47d903301cb4b6d899
-ms.sourcegitcommit: cee72954f4467096b01ba287d30074751bcb7ff4
+ms.date: 08/31/2020
+ms.author: inhenkel
+ms.openlocfilehash: be0c12eacae9bb13a475de4634746e9d38d35e43
+ms.sourcegitcommit: bcda98171d6e81795e723e525f81e6235f044e52
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/30/2020
-ms.locfileid: "87448398"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89267570"
 ---
 # <a name="media-services-v2-vs-v3"></a>Службы мультимедиа версии 2 и v3
+
+[!INCLUDE [media services api v3 logo](./includes/v3-hr.md)]
 
 В этой статье описаны изменения, которые впервые появились в версии 3 Служб мультимедиа Azure, и приведены различия между двумя версиями.
 
@@ -94,14 +96,14 @@ API версии 3 содержит следующие недочеты функ
 |v3, свойства|свойства v2|
 |---|---|
 |`id`-(уникальный) полный путь Azure Resource Manager см. в разделе примеры в [активе](/rest/api/media/assets/createorupdate) .||
-|`name`-(Unique) см. [соглашения об именовании](media-services-apis-overview.md#naming-conventions) ||
+|`name` -(Unique) см. [соглашения об именовании](media-services-apis-overview.md#naming-conventions) ||
 |`alternateId`|`AlternateId`|
-|`assetId`|`Id`-(уникальное) значение начинается с `nb:cid:UUID:` префикса.|
+|`assetId`|`Id` -(уникальное) значение начинается с `nb:cid:UUID:` префикса.|
 |`created`|`Created`|
 |`description`|`Name`|
 |`lastModified`|`LastModified`|
 |`storageAccountName`|`StorageAccountName`|
-|`storageEncryptionFormat`| `Options`(параметры создания)|
+|`storageEncryptionFormat`| `Options` (параметры создания)|
 |`type`||
 
 ### <a name="storage-side-encryption"></a>Шифрование на стороне хранилища

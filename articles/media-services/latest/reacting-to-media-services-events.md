@@ -3,22 +3,24 @@ title: Реагирование на события Служб мультиме�
 description: В этой статье описывается, как подписываться на события служб мультимедиа с помощью службы "Сетка событий Azure".
 services: media-services
 documentationcenter: ''
-author: Juliako
+author: IngridAtMicrosoft
 manager: femila
 editor: ''
 ms.service: media-services
 ms.workload: ''
 ms.topic: article
-ms.date: 08/08/2019
-ms.author: juliako
-ms.openlocfilehash: e24bacb0ea7ab406442022915872fc77e9cc1a5e
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.date: 08/31/2020
+ms.author: inhenkel
+ms.openlocfilehash: d2dffc90d78d5d173e25232010171a5c0109e028
+ms.sourcegitcommit: bcda98171d6e81795e723e525f81e6235f044e52
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "74887890"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89267517"
 ---
 # <a name="handling-event-grid-events"></a>Обработка событий Сетки событий
+
+[!INCLUDE [media services api v3 logo](./includes/v3-hr.md)]
 
 События Служб мультимедиа позволяют приложениям реагировать на различные события (например, событие изменения состояния задания) с помощью современных безсерверных архитектур. При этом не требуется сложный код или дорогостоящие и неэффективные службы опроса. Вместо этого события отправляются через службу [Сетка событий Azure](https://azure.microsoft.com/services/event-grid/) обработчикам событий, таким как [Функции Azure](https://azure.microsoft.com/services/functions/), [Azure Logic Apps](https://azure.microsoft.com/services/logic-apps/), или даже в веб-перехватчик. При этом вы оплачиваете только то, что используете. Дополнительные сведения о ценах см. на странице [с ценами на службу"Сетка событий Azure"](https://azure.microsoft.com/pricing/details/event-grid/).
 
@@ -42,7 +44,7 @@ ms.locfileid: "74887890"
 > [!NOTE]
 > События подчиняются Соглашение об уровне обслуживанияу "Сетка событий" [(SLA)](https://azure.microsoft.com/support/legal/sla/event-grid/v1_0/). Если вы хотите получать уведомления о событиях с помощью интерфейсов API, см. примеры использования событий с [пакетом](https://github.com/Azure-Samples/media-services-v3-dotnet) SDK для .NET или [Java](https://github.com/Azure-Samples/media-services-v3-java).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Мониторинг событий — портал](monitor-events-portal-how-to.md)
 * [Мониторинг событий (CLI)](job-state-events-cli-how-to.md)

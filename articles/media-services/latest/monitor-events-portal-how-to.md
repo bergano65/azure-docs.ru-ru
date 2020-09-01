@@ -3,7 +3,7 @@ title: Мониторинг событий служб мультимедиа Azu
 description: В этой статье показано, как подписаться на Сетку событий для отслеживания событий Служб мультимедиа Azure.
 services: media-services
 documentationcenter: na
-author: Juliako
+author: IngridAtMicrosoft
 manager: femila
 editor: ''
 tags: ''
@@ -13,16 +13,18 @@ ms.devlang: multiple
 ms.topic: article
 ms.tgt_pltfrm: multiple
 ms.workload: media
-ms.date: 01/21/2020
-ms.author: juliako
-ms.openlocfilehash: 602ff0a29f3fd8717e581b6ac15d493e3ad475f7
-ms.sourcegitcommit: 8def3249f2c216d7b9d96b154eb096640221b6b9
+ms.date: 08/31/2020
+ms.author: inhenkel
+ms.openlocfilehash: 26e6e56d7c14cfa0ab54776003ae4489bb254094
+ms.sourcegitcommit: bcda98171d6e81795e723e525f81e6235f044e52
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87542401"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89265853"
 ---
 # <a name="create-and-monitor-media-services-events-with-event-grid-using-the-azure-portal"></a>Создание и мониторинг событий Служб мультимедиа Azure с помощью Сетки событий и портала Azure
+
+[!INCLUDE [media services api v3 logo](./includes/v3-hr.md)]
 
 "Сетка событий Azure" — это служба обработки событий для облака. Эта служба использует [подписки на события](../../event-grid/concepts.md#event-subscriptions) для маршрутизации сообщений о событиях подписчикам. События Служб мультимедиа содержат все сведения, необходимые для реагирования на изменения в данных. Событие Служб мультимедиа можно определить, так как свойство eventType начинается с Microsoft.Media. Дополнительные сведения см. в статье [Схемы службы "Сетка событий Azure" для событий Служб мультимедиа](media-services-event-schemas.md).
 
@@ -30,9 +32,9 @@ ms.locfileid: "87542401"
 
 По завершении можно увидеть, что данные событий отправлены в веб-приложение.
 
-## <a name="prerequisites"></a>Обязательные условия 
+## <a name="prerequisites"></a>Предварительные требования 
 
-* Активная подписка Azure.
+* Наличие активной подписки Azure.
 * Создайте учетную запись Служб мультимедиа Azure, как описано в [этом руководстве](./create-account-howto.md).
 
 ## <a name="create-a-message-endpoint"></a>Создание конечной точки сообщения
@@ -41,7 +43,7 @@ ms.locfileid: "87542401"
 
 1. Выберите **Развернуть в Azure**, чтобы развернуть решение в своей подписке. На портале Azure укажите значения остальных параметров.
 
-   [![Изображение, показывающее кнопку "развернуть в Azure".](https://azuredeploy.net/deploybutton.png)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure-Samples%2Fazure-event-grid-viewer%2Fmaster%2Fazuredeploy.json)
+   [![Изображение с кнопкой "Развернуть в Azure".](https://azuredeploy.net/deploybutton.png)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure-Samples%2Fazure-event-grid-viewer%2Fmaster%2Fazuredeploy.json)
 
 1. Завершение развертывания может занять несколько минут. Когда развертывание успешно завершится, откройте веб-приложение и убедитесь, что оно работает. Откройте браузер и перейдите по адресу `https://<your-site-name>.azurewebsites.net`.
 
@@ -86,6 +88,6 @@ ms.locfileid: "87542401"
 
 ![Просмотр события подписки](./media/monitor-events-portal/view-subscription-event.png)
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Отправка, кодирование и потоковая передача](stream-files-tutorial-with-api.md)

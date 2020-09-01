@@ -8,12 +8,12 @@ ms.workload: infrastructure-services
 ms.topic: how-to
 ms.date: 02/11/2020
 ms.author: jushiman
-ms.openlocfilehash: db3bfddd3376a013cc8921f9e0b94bd30bfe041f
-ms.sourcegitcommit: 3fb5e772f8f4068cc6d91d9cde253065a7f265d6
+ms.openlocfilehash: b18218515e4fbd9886317e116c76186b8372392c
+ms.sourcegitcommit: bcda98171d6e81795e723e525f81e6235f044e52
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89181533"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89267553"
 ---
 # <a name="support-for-generation-2-vms-on-azure"></a>Поддержка виртуальных машин 2-го поколения в Azure
 
@@ -29,7 +29,7 @@ ms.locfileid: "89181533"
 
 * [серия B](../sizes-b-series-burstable.md);
 * [серия DCsv2](../dcv2-series.md);
-* [Серия DSv2](../dv2-dsv2-series.md) 
+* [Серия Dsv2](../dv2-dsv2-series.md) 
 * [Серия Dsv3](../dv3-dsv3-series.md)
 * [Серия Dsv4](../dv4-dsv4-series.md)
 * [Серия Ddsv4](../ddv4-ddsv4-series.md)

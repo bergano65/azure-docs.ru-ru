@@ -1,19 +1,19 @@
 ---
 title: Использование портал Azure для устранения неполадок Azure Stack ребра с помощью GPU | Документация Майкрософт
-description: Описывает, как устранять неполадки Azure Stack пограничных проблем.
+description: Описывает, как устранять неполадки Azure Stack граничных GPU.
 services: databox
 author: alkohli
 ms.service: databox
 ms.subservice: edge
-ms.topic: article
+ms.topic: troubleshooting
 ms.date: 08/19/2020
 ms.author: alkohli
-ms.openlocfilehash: b92d590756ddd98d145d1728c89ea4cf98662d0d
-ms.sourcegitcommit: 656c0c38cf550327a9ee10cc936029378bc7b5a2
+ms.openlocfilehash: 22f0c63c2b60b6c72ad297492045df17e10dd06c
+ms.sourcegitcommit: bcda98171d6e81795e723e525f81e6235f044e52
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89085131"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89268328"
 ---
 # <a name="troubleshoot-issues-on-your-azure-stack-edge-gpu-device"></a>Устранение неполадок на устройстве GPU Azure Stack ребра 
 

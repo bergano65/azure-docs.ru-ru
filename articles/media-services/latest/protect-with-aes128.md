@@ -4,7 +4,7 @@ titleSuffix: Azure Media Services
 description: Узнайте, как зашифровать видео с помощью алгоритма AES с 128-разрядным шифрованием и использовать службу доставки ключей в службах мультимедиа Azure.
 services: media-services
 documentationcenter: ''
-author: Juliako
+author: IngridAtMicrosoft
 manager: femila
 editor: ''
 ms.service: media-services
@@ -12,16 +12,18 @@ ms.workload: media
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 07/09/2020
-ms.author: juliako
-ms.openlocfilehash: 45bb8637d37c9c3789a962c9f5ac42227d547637
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.date: 08/31/2020
+ms.author: inhenkel
+ms.openlocfilehash: d8bc270549f702f9ba277b3514a3332d16b52d8d
+ms.sourcegitcommit: bcda98171d6e81795e723e525f81e6235f044e52
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87022826"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89267179"
 ---
 # <a name="tutorial-encrypt-video-with-aes-128-and-use-the-key-delivery-service"></a>Учебник. шифрование видео с помощью AES-128 и использование службы доставки ключей
+
+[!INCLUDE [media services api v3 logo](./includes/v3-hr.md)]
 
 > [!NOTE]
 > Несмотря на то, что в этом учебнике используются примеры для [пакета SDK для .NET](/dotnet/api/microsoft.azure.management.media.models.liveevent?view=azure-dotnet), общие шаги одинаковы для [REST API](/rest/api/media/liveevents), [CLI](/cli/azure/ams/live-event?view=azure-cli-latest) или других поддерживаемых [пакетов SDK](media-services-apis-overview.md#sdks).
@@ -32,7 +34,7 @@ ms.locfileid: "87022826"
 
 Выходные данные примера этой статьи включают URL-адрес Проигрыватель мультимедиа Azure, URL-адрес манифеста и маркер AES, необходимый для воспроизведения содержимого. В примере задается срок действия маркера JSON Web Token (JWT) равным 1 часу. Можно открыть браузер и вставить полученный URL-адрес, чтобы запустить демонстрационную страницу Проигрывателя мультимедиа Azure с URL-адресом и токеном, который уже указан (в следующем формате: ```https://ampdemo.azureedge.net/?url= {dash Manifest URL} &aes=true&aestoken=Bearer%3D{ JWT Token here}```).
 
-В этом учебнике описаны следующие процедуры.
+В этом учебнике демонстрируется выполнение следующих действий:
 
 > [!div class="checklist"]
 > * Скачайте пример [енкриптвисаес](https://github.com/Azure-Samples/media-services-v3-dotnet-tutorials/blob/master/AMSV3Tutorials/EncryptWithAES) , описанный в этой статье.

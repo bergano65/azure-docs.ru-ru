@@ -3,7 +3,7 @@ title: Просмотр метрик с помощью Azure Monitor
 description: В этой статье показано, как отслеживать метрики с помощью портал Azureных диаграмм и Azure CLI.
 services: media-services
 documentationcenter: ''
-author: Juliako
+author: IngridAtMicrosoft
 manager: femila
 editor: ''
 ms.service: media-services
@@ -11,17 +11,19 @@ ms.workload: media
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 07/08/2019
-ms.author: juliako
+ms.date: 08/31/2020
+ms.author: inhenkel
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: 154e5b5d9639203810e9d16dec4e2907fe5ee80a
-ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
+ms.openlocfilehash: dc532df51b4bbe2e7da1b47dfcc8d2e05e42f796
+ms.sourcegitcommit: bcda98171d6e81795e723e525f81e6235f044e52
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/31/2020
-ms.locfileid: "87504302"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89267593"
 ---
 # <a name="monitor-media-services-metrics"></a>Monitor Media Services metrics (Мониторинг метрик службы мультимедиа)
+
+[!INCLUDE [media services api v3 logo](./includes/v3-hr.md)]
 
 [Azure Monitor](../../azure-monitor/overview.md) позволяет отслеживать метрики и журналы диагностики, которые помогут понять, как работают приложения. Подробное описание этой функции и сведения о том, почему вы хотите использовать метрики и журналы диагностики служб мультимедиа Azure, см. в статье [мониторинг метрик служб мультимедиа и журналов диагностики](media-services-metrics-diagnostic-logs.md).
 
@@ -30,7 +32,7 @@ Azure Monitor предоставляет несколько способов в�
 ## <a name="prerequisites"></a>Предварительные требования
 
 - [Создание учетной записи Служб мультимедиа](./create-account-howto.md)
-- Просмотр [мониторинга метрик и журналов диагностики служб мультимедиа](media-services-metrics-diagnostic-logs.md)
+- Просмотр  [мониторинга метрик и журналов диагностики служб мультимедиа](media-services-metrics-diagnostic-logs.md)
 
 ## <a name="view-metrics-in-azure-portal"></a>Просмотр метрик в портал Azure
 
@@ -68,7 +70,7 @@ az monitor metrics list --resource \
 
 Чтобы получить другие метрики, замените "исходящий" на имя метрики, которое вас интересует.
 
-## <a name="see-also"></a>См. также статью
+## <a name="see-also"></a>См. также
 
 * [Метрики Azure Monitor](../../azure-monitor/platform/data-platform.md)
 * [Создание, Просмотр оповещений метрик и управление ими с помощью Azure Monitor](../../azure-monitor/platform/alerts-metric.md).

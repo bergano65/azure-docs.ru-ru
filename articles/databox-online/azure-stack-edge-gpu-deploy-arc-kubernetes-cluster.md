@@ -1,6 +1,6 @@
 ---
-title: Включение дуги Azure на Kubernetes на Azure Stack пограничном устройстве | Документация Майкрософт
-description: Описывает, как включить дугу Azure в существующем кластере Kubernetes на пограничном устройстве Azure Stack.
+title: Включение службы "Дуга Azure" на Kubernetes на устройстве "GPU" на Azure Stack ребра | Документация Майкрософт
+description: В этой статье описывается, как включить дугу Azure в существующем кластере Kubernetes на устройстве с Azure Stack пограничным GPU.
 services: databox
 author: alkohli
 ms.service: databox
@@ -8,14 +8,14 @@ ms.subservice: edge
 ms.topic: how-to
 ms.date: 08/25/2020
 ms.author: alkohli
-ms.openlocfilehash: 03bf2a01ad4c1d5d017d881bf171806fa33e8799
-ms.sourcegitcommit: 656c0c38cf550327a9ee10cc936029378bc7b5a2
+ms.openlocfilehash: 5cd163b4c7514507d2a0563f1254c83dd22a3af2
+ms.sourcegitcommit: bcda98171d6e81795e723e525f81e6235f044e52
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89086109"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89268199"
 ---
-# <a name="enable-azure-arc-on-kubernetes-cluster-on-your-azure-stack-edge-device"></a>Включение дуги Azure в кластере Kubernetes на пограничном устройстве Azure Stack
+# <a name="enable-azure-arc-on-kubernetes-cluster-on-your-azure-stack-edge-gpu-device"></a>Включение дуги Azure в кластере Kubernetes на устройстве с Azure Stack ребра
 
 В этой статье показано, как включить дугу Azure на существующем кластере Kubernetes на пограничном устройстве Azure Stack. 
 
@@ -132,7 +132,7 @@ ms.locfileid: "89086109"
     Дополнительные сведения о создании субъекта-службы и выполнении назначения ролей см. в статье [Создание субъекта-службы адаптации с поддержкой ARC в Azure](https://docs.microsoft.com/azure/azure-arc/kubernetes/create-onboarding-service-principal).
 
 
-## <a name="enable-arc-on-kubernetes-cluster"></a>Включение дуги в кластере Kubernetes
+## <a name="enable-arc-on-kubernetes-cluster"></a>Включение Arc в кластере Kubernetes
 
 Выполните следующие действия, чтобы настроить кластер Kubernetes для управления службой "Дуга Azure".
 

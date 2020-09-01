@@ -6,30 +6,28 @@ ms.topic: how-to
 ms.date: 08/25/2020
 ms.author: peshultz
 ms.custom: references_regions
-ms.openlocfilehash: 5210ead0a85cff27c38d9ff9fb0d387e3799428c
-ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
+ms.openlocfilehash: 9b0f7f9963ee0edd3986f7ec808a8a4060d857f8
+ms.sourcegitcommit: bcda98171d6e81795e723e525f81e6235f044e52
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89038655"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89267056"
 ---
 # <a name="create-a-pool-with-disk-encryption-enabled"></a>Создание пула с включенным шифрованием дисков
 
-При создании пула пакетной службы Azure с помощью конфигурации виртуальной машины можно зашифровать вычисленные узлы в пуле с помощью ключа, управляемого платформой, указав конфигурацию шифрования диска. 
+При создании пула пакетной службы Azure с помощью конфигурации виртуальной машины можно зашифровать вычисленные узлы в пуле с помощью ключа, управляемого платформой, указав конфигурацию шифрования диска.
 
-В этой статье объясняется, как создать пул пакетной службы с включенным шифрованием дисков. 
+В этой статье объясняется, как создать пул пакетной службы с включенным шифрованием дисков.
 
 ## <a name="why-use-a-pool-with-disk-encryption-configuration"></a>Зачем использовать пул с конфигурацией шифрования дисков?
 
 С помощью пула пакетной службы вы можете получать доступ к данным и хранить их на временных дисках, а также в ОПЕРАЦИОННЫХ узлах. Шифрование диска на стороне сервера с помощью управляемого платформой ключа обеспечит защиту этих данных с низкой нагрузкой и удобством.  
 
-Пакетная обработка применяет одну из этих технологий шифрования дисков на расчетных узлах на основе конфигурации пула и региональной поддержки. 
+Пакетная обработка применяет одну из этих технологий шифрования дисков на расчетных узлах на основе конфигурации пула и региональной поддержки.
 
-* [Управляемое шифрование диска неактивных с ключами, управляемыми платформой](../virtual-machines/windows/disk-encryption.md#platform-managed-keys) 
-
-* [Шифрование на узле с помощью управляемого платформой ключа](../virtual-machines/windows/disk-encryption.md#encryption-at-host---end-to-end-encryption-for-your-vm-data) 
-
-* [Дисковое шифрование Azure](../security/fundamentals/azure-disk-encryption-vms-vmss.md) 
+- [Управляемое шифрование диска неактивных с ключами, управляемыми платформой](../virtual-machines/windows/disk-encryption.md#platform-managed-keys)
+- [Шифрование на узле с помощью управляемого платформой ключа](../virtual-machines/windows/disk-encryption.md#encryption-at-host---end-to-end-encryption-for-your-vm-data)
+- [Дисковое шифрование Azure](../security/fundamentals/azure-disk-encryption-vms-vmss.md)
 
 > [!IMPORTANT]
 > Поддержка шифрования на узле с помощью управляемого платформой ключа в пакетной службе Azure в настоящее время находится в общедоступной предварительной версии для восточной части США, западной части США 2, юго-центральной части США, US Gov (Вирджиния) и US Gov (Аризона) регионов.
@@ -42,17 +40,17 @@ ms.locfileid: "89038655"
 
 При создании пула пакетной службы на портал Azure выберите **темпораридиск** или **Осандтемпораридиск** в разделе **Конфигурация шифрования диска**.
 
-![Снимок экрана с параметром конфигурации шифрования диска в портал Azure.](./media/disk-encryption/portal-view.png)
+:::image type="content" source="media/disk-encryption/portal-view.png" alt-text="Снимок экрана с параметром конфигурации шифрования диска в портал Azure.":::
 
 После создания пула можно увидеть целевые объекты конфигурации шифрования дисков в разделе **Свойства** пула.
 
-![Снимок экрана, показывающий целевые объекты конфигурации шифрования дисков в портал Azure.](./media/disk-encryption/disk-encryption-configuration-target.png)
+:::image type="content" source="media/disk-encryption/configuration-target.png" alt-text="Снимок экрана, показывающий целевые объекты конфигурации шифрования дисков в портал Azure.":::
 
 ## <a name="examples"></a>Примеры
 
 В следующих примерах показано, как зашифровать операционную систему и временные диски в пуле пакетной службы с помощью пакета SDK для .NET пакетной службы, пакетной REST API и Azure CLI.
 
-### <a name="batch-net-sdk"></a>Пакет SDK .NET для пакетной службы 
+### <a name="batch-net-sdk"></a>Пакет SDK .NET для пакетной службы
 
 ```csharp
 pool.VirtualMachineConfiguration.DiskEncryptionConfiguration = new DiskEncryptionConfiguration(
@@ -61,7 +59,6 @@ pool.VirtualMachineConfiguration.DiskEncryptionConfiguration = new DiskEncryptio
 ```
 
 ### <a name="batch-rest-api"></a>REST API пакетной службы
-
 
 URL-АДРЕС REST API:
 ```
@@ -107,3 +104,8 @@ az batch pool create \
     --node-agent-sku-id "batch.node.ubuntu 18.04" \
     --disk-encryption-targets OsDisk TemporaryDisk
 ```
+
+## <a name="next-steps"></a>Дальнейшие действия
+
+- Дополнительные сведения о [шифровании хранилище дисков Azure на стороне сервера](../virtual-machines/windows/disk-encryption.md).
+- Подробные сведения о пакетной службе см. в статье [Рабочий процесс и ресурсы пакетной службы](batch-service-workflow-features.md).

@@ -3,26 +3,28 @@ title: Часто задаваемые вопросы о Службах муль
 description: В этой статье приводятся ответы на часто задаваемые вопросы о службах мультимедиа Azure v3.
 services: media-services
 documentationcenter: ''
-author: Juliako
+author: IngridAtMicrosoft
 manager: femila
 editor: ''
 ms.service: media-services
 ms.workload: ''
 ms.topic: article
-ms.date: 04/07/2020
-ms.author: juliako
-ms.openlocfilehash: 70499ad354e2fafaac99fe46c1838a0be2813943
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.date: 08/31/2020
+ms.author: inhenkel
+ms.openlocfilehash: d34b5aaaa12a3d296f92e0d7be34ae76931d8506
+ms.sourcegitcommit: bcda98171d6e81795e723e525f81e6235f044e52
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87011691"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89268491"
 ---
 # <a name="media-services-v3-frequently-asked-questions"></a>Часто задаваемые вопросы о службах мультимедиа v3
 
+[!INCLUDE [media services api v3 logo](./includes/v3-hr.md)]
+
 В этой статье приводятся ответы на часто задаваемые вопросы о службах мультимедиа Azure v3.
 
-## <a name="general"></a>Общие сведения
+## <a name="general"></a>Общие
 
 ### <a name="what-are-the-azure-portal-limitations-for-media-services-v3"></a>Каковы ограничения портал Azure для служб мультимедиа v3?
 
@@ -119,7 +121,7 @@ ms.locfileid: "87011691"
 
 Используйте API служб мультимедиа Azure для настройки доставки лицензий и ключей и шифрования ресурсов (как показано в [этом примере](https://github.com/Azure-Samples/media-services-v3-dotnet-tutorials/blob/master/AMSV3Tutorials/EncryptWithAES/Program.cs)).
 
-Дополнительные сведения можно найти в разделе
+Дополнительные сведения см. на странице
 
 - [Обзор системы защиты содержимого](content-protection-overview.md)
 - [Проектирование системы для защиты содержимого с несколькими подсистемами DRM и управлением доступом](design-multi-drm-system-with-access-control.md)

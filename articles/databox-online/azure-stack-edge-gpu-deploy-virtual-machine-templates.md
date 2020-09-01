@@ -5,17 +5,17 @@ services: databox
 author: alkohli
 ms.service: databox
 ms.subservice: edge
-ms.topic: article
+ms.topic: how-to
 ms.date: 08/04/2020
 ms.author: alkohli
-ms.openlocfilehash: 330186b12efcc31e9f99d7c4bdbff3e081311c23
-ms.sourcegitcommit: 656c0c38cf550327a9ee10cc936029378bc7b5a2
+ms.openlocfilehash: 5b69d10bc2f3c5ec737e026059c82c3efac681b5
+ms.sourcegitcommit: bcda98171d6e81795e723e525f81e6235f044e52
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89085490"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89268165"
 ---
-# <a name="deploy-vms-on-your-azure-stack-edge-device-via-templates"></a>Развертывание виртуальных машин на Azure Stack пограничных устройствах с помощью шаблонов
+# <a name="deploy-vms-on-your-azure-stack-edge-gpu-device-via-templates"></a>Развертывание виртуальных машин на устройстве с Azure Stack ребра с помощью шаблонов
 
 В этом учебнике описывается создание виртуальной машины на Azure Stack пограничном устройстве и управление ею с помощью шаблонов. Эти шаблоны являются файлами нотация объектов JavaScript (JSON), которые определяют инфраструктуру и конфигурацию для виртуальной машины. В этих шаблонах указываются развертываемые ресурсы и свойства этих ресурсов.
 
@@ -167,7 +167,7 @@ key2 7vnVMJUwJXlxkXXOyVO4NfqbW5e/5hZ+VOs+C/h/ReeoszeV+qoyuBitgnWjiDPNdH4+lSm1/Zj
 
     ![Импорт сертификата конечной точки хранилища BLOB-объектов](media/azure-stack-edge-gpu-deploy-virtual-machine-templates/import-blob-storage-endpoint-certificate-1.png)
 
-    - Если вы используете сертификаты, создаваемые устройством, скачайте и преобразуйте сертификат конечной точки хранилища BLOB `.cer` -объектов в `.pem` Формат. Выполните следующую команду. 
+    - Если вы используете сертификаты, создаваемые устройством, скачайте и преобразуйте сертификат конечной точки хранилища BLOB `.cer` -объектов в `.pem` Формат. Выполните следующую команду: 
     
         ```powershell
         PS C:\windows\system32> Certutil -encode 'C:\myasegpu1_Blob storage (1).cer' .\blobstoragecert.pem
@@ -185,11 +185,11 @@ key2 7vnVMJUwJXlxkXXOyVO4NfqbW5e/5hZ+VOs+C/h/ReeoszeV+qoyuBitgnWjiDPNdH4+lSm1/Zj
 
     ![Подключение к службе хранилища Azure 1](media/azure-stack-edge-gpu-deploy-virtual-machine-templates/connect-azure-storage-1.png)
 
-5. Выберите параметр **Использовать имя и ключ учетной записи хранения**. Нажмите **Далее**.
+5. Выберите параметр **Использовать имя и ключ учетной записи хранения**. Выберите **Далее**.
 
     ![Подключение к службе хранилища Azure 2](media/azure-stack-edge-gpu-deploy-virtual-machine-templates/connect-azure-storage-2.png)
 
-6. В поле **подключение с именем и ключом**укажите **Отображаемое имя**, **имя учетной записи хранения**, **ключ учетной записи**хранения Azure. Выберите **другой** домен хранилища и укажите `<device name>.<DNS domain>` строку подключения. Если сертификат не был установлен в Обозреватель службы хранилища, установите флажок **использовать HTTP** . Нажмите **Далее**.
+6. В поле **подключение с именем и ключом**укажите **Отображаемое имя**, **имя учетной записи хранения**, **ключ учетной записи**хранения Azure. Выберите **другой** домен хранилища и укажите `<device name>.<DNS domain>` строку подключения. Если сертификат не был установлен в Обозреватель службы хранилища, установите флажок **использовать HTTP** . Выберите **Далее**.
 
     ![Подключение с помощью имени и ключа](media/azure-stack-edge-gpu-deploy-virtual-machine-templates/connect-name-key-1.png)
 

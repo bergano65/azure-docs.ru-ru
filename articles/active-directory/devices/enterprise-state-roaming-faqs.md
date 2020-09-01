@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: na
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 35669a7d80907e2335c68b1da9010f5879aa6c7c
-ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
+ms.openlocfilehash: d9510bd564ced2f458a9a78ff23200bb32358c3e
+ms.sourcegitcommit: bcda98171d6e81795e723e525f81e6235f044e52
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87274091"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89268542"
 ---
 # <a name="settings-and-data-roaming-faq"></a>Часто задаваемые вопросы о перемещении параметров и данных
 
@@ -37,7 +37,7 @@ ms.locfileid: "87274091"
 > [!NOTE]
 > Эта статья относится к устаревшему браузеру на основе HTML Microsoft, запущенному с Windows 10 за июль 2015. Статья не относится к новому браузеру на основе Microsoft Chromium, выпущенному 15 января 2020 г. Дополнительные сведения о поведении синхронизации для нового Microsoft ребра см. в статье [Microsoft ребра Sync](/deployedge/microsoft-edge-enterprise-sync).
 
-**Данные приложения** — универсальные приложения для Windows могут записывать данные параметров в папку Roaming. Все данные, записанные в эту папку, будут автоматически синхронизироваться. Такую возможность можно предусмотреть для приложения еще на этапе его проектирования. Дополнительные сведения о разработке универсального приложения для Windows, использующего роуминг, см. в блоге по [API хранилища AppData](https://msdn.microsoft.com/library/windows/apps/mt299098.aspx) и к [блогу о роуминге для разработчиков Windows 8 AppData](https://blogs.windows.com/windowsdeveloper/2016/05/04/roaming-app-data-and-the-user-experience/).
+**Данные приложения** — универсальные приложения для Windows могут записывать данные параметров в папку Roaming. Все данные, записанные в эту папку, будут автоматически синхронизироваться. Такую возможность можно предусмотреть для приложения еще на этапе его проектирования. Дополнительные сведения о разработке универсального приложения для Windows, использующего роуминг, см. в блоге по [API хранилища AppData](/windows/uwp/design/app-settings/store-and-retrieve-app-data) и к [блогу о роуминге для разработчиков Windows 8 AppData](https://blogs.windows.com/windowsdeveloper/2016/05/04/roaming-app-data-and-the-user-experience/).
 
 ## <a name="what-account-is-used-for-settings-sync"></a>Какая учетная запись используется для синхронизации параметров?
 
@@ -86,9 +86,9 @@ ms.locfileid: "87274091"
 Перемещать можно только универсальные приложения Windows. Для существующих классических приложений Windows перемещение можно настроить двумя способами.
 
 * С помощью [моста для классических приложений](https://aka.ms/desktopbridge) можно перенести классические приложения Windows на универсальную платформу Windows. В этом случае для перемещения данных приложения в Azure AD нужно внести минимальные изменения в код. Мост для классических приложений присваивает вашим приложениям удостоверения приложений, позволяя включить перемещение данных приложений для существующих классических приложений.
-* [User Experience Virtualization (UE-V)](https://technet.microsoft.com/library/dn458947.aspx) можно создать шаблон пользовательских параметров для существующих классических приложений Windows и включить перемещение для приложений Win32. При использовании этого варианта разработчику приложений не нужно изменять код приложений. Пользователи UE-V, которые приобрели пакет Microsoft Desktop Optimization Pack, могут перемещать данные только в локальной среде Active Directory.
+* [User Experience Virtualization (UE-V)](/previous-versions//dn458947(v=vs.85)) можно создать шаблон пользовательских параметров для существующих классических приложений Windows и включить перемещение для приложений Win32. При использовании этого варианта разработчику приложений не нужно изменять код приложений. Пользователи UE-V, которые приобрели пакет Microsoft Desktop Optimization Pack, могут перемещать данные только в локальной среде Active Directory.
 
-Администраторы могут настроить UE-V для перемещения данных классических приложений для Windows. Для этого они должны изменить перемещение параметров операционной системы Windows и данных универсальных приложений с помощью [групповых политик UE-V](https://technet.microsoft.com/itpro/mdop/uev-v2/configuring-ue-v-2x-with-group-policy-objects-both-uevv2). К ним относятся:
+Администраторы могут настроить UE-V для перемещения данных классических приложений для Windows. Для этого они должны изменить перемещение параметров операционной системы Windows и данных универсальных приложений с помощью [групповых политик UE-V](/microsoft-desktop-optimization-pack/uev-v2/configuring-ue-v-2x-with-group-policy-objects-both-uevv2). К ним относятся:
 
 * групповая политика "Перемещать параметры Windows";
 * групповая политика "Не синхронизировать приложения Windows";

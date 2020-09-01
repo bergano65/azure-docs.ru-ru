@@ -4,7 +4,7 @@ titleSuffix: Azure Media Services
 description: Узнайте, как отслеживать метрики и журналы диагностики служб мультимедиа Azure с помощью Azure Monitor.
 services: media-services
 documentationcenter: ''
-author: Juliako
+author: IngridAtMicrosoft
 manager: femila
 editor: ''
 ms.service: media-services
@@ -12,16 +12,18 @@ ms.workload: media
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 07/08/2019
-ms.author: juliako
-ms.openlocfilehash: 7058160819c9b6ccc3f63511f86e930fcbfc413b
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.date: 08/31/2020
+ms.author: inhenkel
+ms.openlocfilehash: 49a237a122b97fc44df4525ca02dbb478be104ab
+ms.sourcegitcommit: bcda98171d6e81795e723e525f81e6235f044e52
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87011657"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89267613"
 ---
 # <a name="monitor-media-services-metrics-and-diagnostic-logs-via-azure-monitor"></a>Мониторинг метрик и журналов диагностики служб мультимедиа с помощью Azure Monitor
+
+[!INCLUDE [media services api v3 logo](./includes/v3-hr.md)]
 
 [Azure Monitor](../../azure-monitor/overview.md) позволяет отслеживать метрики и журналы диагностики, которые помогут понять, как работают приложения. Все данные, собираемые службой Azure Monitor, соответствуют одному из двух основных типов, то есть представляют собой метрики или журналы. Вы можете отслеживать журналы диагностики служб мультимедиа и создавать оповещения и уведомления для собранных метрик и журналов. Данные метрик можно визуализировать и анализировать с помощью [обозревателя метрик](../../azure-monitor/platform/metrics-getting-started.md). Вы можете отправить журналы в службу [хранилища Azure](https://azure.microsoft.com/services/storage/), выполнить их потоковую передачу в [концентраторы событий Azure](https://azure.microsoft.com/services/event-hubs/), экспортировать их в [log Analytics](https://azure.microsoft.com/services/log-analytics/)или использовать сторонние службы.
 
@@ -92,7 +94,7 @@ ms.locfileid: "87011657"
 
 ### <a name="key-delivery"></a>Доставка ключей
 
-|Имя|Описание|
+|name|Описание|
 |---|---|
 |Запрос службы доставки ключей|Журналы, отображающие сведения о запросе службы доставки ключей. Дополнительные сведения см. в разделе [схемы](media-services-diagnostic-logs-schema.md).|
 

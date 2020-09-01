@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: spunukol
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: bbfbad53fd2361752824292e0ade82f3ac231916
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 2bb8c6c64e0a68f5176c4eb0c0177c5220394695
+ms.sourcegitcommit: bcda98171d6e81795e723e525f81e6235f044e52
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87098022"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89268763"
 ---
 # <a name="enforce-tls-12-for-the-azure-ad-registration-service"></a>Принудительное применение TLS 1,2 для службы регистрации Azure AD
 
@@ -52,7 +52,7 @@ ms.locfileid: "87098022"
 
 ## <a name="update-ad-fs-servers"></a>Обновление серверов AD FS
 
-Все AD FS серверы, используемые для связи со службой регистрации устройств Azure AD, должны обеспечить включение TLS 1,2. Сведения о том, как включить или проверить конфигурацию, см. в разделе [Управление протоколами SSL/TLS и комплектами шифров для AD FS](https://docs.microsoft.com/windows-server/identity/ad-fs/operations/manage-ssl-protocols-in-ad-fs) .
+Все AD FS серверы, используемые для связи со службой регистрации устройств Azure AD, должны обеспечить включение TLS 1,2. Сведения о том, как включить или проверить конфигурацию, см. в разделе [Управление протоколами SSL/TLS и комплектами шифров для AD FS](/windows-server/identity/ad-fs/operations/manage-ssl-protocols-in-ad-fs) .
 
 ## <a name="client-updates"></a>Клиентские обновления
 
@@ -68,4 +68,4 @@ ms.locfileid: "87098022"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-[Обзор TLS/SSL (поставщик общих служб Schannel)](https://docs.microsoft.com/windows-server/security/tls/tls-ssl-schannel-ssp-overview)
+[Обзор TLS/SSL (поставщик общих служб Schannel)](/windows-server/security/tls/tls-ssl-schannel-ssp-overview)

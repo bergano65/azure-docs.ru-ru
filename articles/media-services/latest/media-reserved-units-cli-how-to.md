@@ -3,7 +3,7 @@ title: Использование CLI для масштабирования за
 description: В этом разделе показано, как использовать CLI для масштабирования обработки мультимедиа с использованием служб мультимедиа Azure.
 services: media-services
 documentationcenter: ''
-author: juliako
+author: IngridAtMicrosoft
 manager: femila
 editor: ''
 ms.service: media-services
@@ -11,17 +11,19 @@ ms.workload: media
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 03/09/2020
-ms.author: juliako
+ms.date: 08/31/2020
+ms.author: inhenkel
 ms.custom: seodec18
-ms.openlocfilehash: 6715014485b227713447ce5d552cf7ba79737845
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 8e681b1f82086480541d08ae9f8ef9e5cf07b4df
+ms.sourcegitcommit: bcda98171d6e81795e723e525f81e6235f044e52
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87053221"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89268474"
 ---
 # <a name="scaling-media-processing"></a>Масштабирование при обработке мультимедиа
+
+[!INCLUDE [media services api v3 logo](./includes/v3-hr.md)]
 
 Службы мультимедиа Azure позволяют масштабировать обработку мультимедиа в учетной записи, управляя зарезервированными единицами мультимедиа (MRU). Мрус определяет скорость обработки задач обработки мультимедиа. Вы можете выбрать один из следующих типов зарезервированных единиц: **S1**, **S2** или **S3**. Например, если использовать тип зарезервированной единицы **S2**, задание по кодированию выполняется быстрее по сравнению заданием, для которого выбран тип **S1**. 
 
@@ -71,7 +73,7 @@ az ams account mru set -n amsaccount -g amsResourceGroup --count 10 --type S3
 
 [Анализ видео](analyze-videos-tutorial-with-api.md) 
 
-## <a name="see-also"></a>См. также статью
+## <a name="see-also"></a>См. также
 
 * [Квоты и ограничения](limits-quotas-constraints.md)
 * [Azure CLI](/cli/azure/ams?view=azure-cli-latest)

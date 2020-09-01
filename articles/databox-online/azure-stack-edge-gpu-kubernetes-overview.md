@@ -8,14 +8,14 @@ ms.subservice: edge
 ms.topic: conceptual
 ms.date: 08/28/2020
 ms.author: alkohli
-ms.openlocfilehash: b85586a431a20102035e253537fc45c8a8a54796
-ms.sourcegitcommit: 656c0c38cf550327a9ee10cc936029378bc7b5a2
+ms.openlocfilehash: be7e01644d7d1f232c50b1efbadf100671a262fe
+ms.sourcegitcommit: bcda98171d6e81795e723e525f81e6235f044e52
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89085403"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89268114"
 ---
-# <a name="kubernetes-on-your-azure-stack-edge-device"></a>Kubernetes на устройстве Azure Stack пограничных устройств
+# <a name="kubernetes-on-your-azure-stack-edge-gpu-device"></a>Kubernetes на устройстве GPU Azure Stack ребра
 
 Kubernetes — это популярная платформа с открытым исходным кодом для управления контейнерными приложениями. В этой статье приводится обзор Kubernetes, а затем описывается, как Kubernetes работает на устройстве с Azure Stackным пограничным устройством. 
 

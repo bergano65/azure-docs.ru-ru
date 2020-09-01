@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: ravenn
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 7637a4280d725aa8cd3482641645dbe19cb56210
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: c8d03b8f13a016dc21e37b82f66abc8050ef17d8
+ms.sourcegitcommit: bcda98171d6e81795e723e525f81e6235f044e52
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84689050"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89266788"
 ---
 # <a name="azure-active-directory-device-management-faq"></a>Часто задаваемые вопросы об управлении устройствами в Azure Active Directory
 
@@ -62,7 +62,7 @@ ms.locfileid: "84689050"
 - Пользователь отключает устройство на портале "Мои приложения". 
 - Администратор (или пользователь) удаляет или отключает устройство в портал Azure или с помощью PowerShell.
 - Только гибридное присоединение к Azure AD. Администратор удаляет область "подразделение устройств из области синхронизации", что приводит к удалению устройств из Azure AD.
-- Обновление Azure AD Connect до версии 1.4. XX. x. [Основные сведения об Azure AD Connect 1.4. XX. x и о некотором выявление устройства](/azure/active-directory/hybrid/reference-connect-device-disappearance).
+- Обновление Azure AD Connect до версии 1.4. XX. x. [Основные сведения об Azure AD Connect 1.4. XX. x и о некотором выявление устройства](../hybrid/reference-connect-device-disappearance.md).
 
 
 Ниже приведены сведения о том, как эти действия можно исправить.
@@ -312,7 +312,7 @@ ms.locfileid: "84689050"
 Ответ **.** Выполните следующие действия.
 
 1.    [Создание политики соответствия требованиям](/intune/compliance-policy-create-mac-os)
-1.    [Определение политики условного доступа для устройств macOS](../active-directory-conditional-access-azure-portal.md) 
+1.    [Определение политики условного доступа для устройств macOS](../conditional-access/overview.md) 
 
 **Примечания**
 

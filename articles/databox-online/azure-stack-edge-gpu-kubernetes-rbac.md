@@ -8,14 +8,14 @@ ms.subservice: edge
 ms.topic: conceptual
 ms.date: 08/27/2020
 ms.author: alkohli
-ms.openlocfilehash: 703e67b4829413776dc8d98843888fbd67906baa
-ms.sourcegitcommit: 3fb5e772f8f4068cc6d91d9cde253065a7f265d6
+ms.openlocfilehash: 697c686b61a86cb01327364ad73f30f88e2e151d
+ms.sourcegitcommit: bcda98171d6e81795e723e525f81e6235f044e52
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89182196"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89268080"
 ---
-# <a name="kubernetes-role-based-access-control-on-your-azure-stack-edge-device"></a>Kubernetes управления доступом на основе ролей на устройстве Azure Stack пограничных устройств
+# <a name="kubernetes-role-based-access-control-on-your-azure-stack-edge-gpu-device"></a>Kubernetes управления доступом на основе ролей на устройстве GPU Azure Stack
 
 
 При настройке роли вычислений на Azure Stack пограничной устройстве создается кластер Kubernetes. Вы можете использовать Kubernetes управления доступом на основе ролей (RBAC), чтобы ограничить доступ к ресурсам кластера на устройстве.

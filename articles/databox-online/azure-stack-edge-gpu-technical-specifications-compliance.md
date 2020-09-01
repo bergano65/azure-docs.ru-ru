@@ -5,17 +5,17 @@ services: databox
 author: alkohli
 ms.service: databox
 ms.subservice: edge
-ms.topic: article
+ms.topic: conceptual
 ms.date: 08/26/2020
 ms.author: alkohli
-ms.openlocfilehash: 87c96ef6487895d3230541f0ae5fe15c5a645368
-ms.sourcegitcommit: 656c0c38cf550327a9ee10cc936029378bc7b5a2
+ms.openlocfilehash: 3f354655a612d4085b0a0de45ae1a6e5ee097ade
+ms.sourcegitcommit: bcda98171d6e81795e723e525f81e6235f044e52
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89085295"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89266669"
 ---
-# <a name="azure-stack-edge-technical-specifications-and-compliance"></a>Технические спецификации и соответствие требованиям Azure Stack
+# <a name="technical-specifications-and-compliance-for-azure-stack-edge-with-gpu"></a>Технические спецификации и соответствие требованиям для Azure Stackного ребра с помощью GPU 
 
 Аппаратные компоненты Azure Stack пограничных устройств с интегрированным графическим процессором (GPU) соответствуют техническим спецификациям и нормативным требованиям, изложенным в этой статье. Технические спецификации описывают оборудование, единицы питания (блока питания), емкость хранилища, корпуса и стандарты окружающей среды.
 

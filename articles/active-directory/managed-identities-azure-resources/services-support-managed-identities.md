@@ -11,12 +11,12 @@ ms.subservice: msi
 manager: daveba
 ms.collection: M365-identity-device-management
 ms.custom: references_regions
-ms.openlocfilehash: 1d9bd6ccc0f92ab28088e886c5bd17d79bc6cea3
-ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
+ms.openlocfilehash: e62fc34ad02303f61214f754f6506c39af76fc94
+ms.sourcegitcommit: bcda98171d6e81795e723e525f81e6235f044e52
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89007633"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89267451"
 ---
 # <a name="services-that-support-managed-identities-for-azure-resources"></a>Службы с поддержкой управляемых удостоверений для ресурсов Azure
 
@@ -39,7 +39,7 @@ ms.locfileid: "89007633"
 
 Чтобы настроить управляемые удостоверения для Управления API Azure версии 2 (в регионах, где они доступны), см. следующий список.
 
-- [Шаблон Azure Resource Manager](/azure/api-management/api-management-howto-use-managed-service-identity)
+- [Шаблон Azure Resource Manager](../../api-management/api-management-howto-use-managed-service-identity.md)
 
 
 ### <a name="azure-app-service"></a>Служба приложений Azure
@@ -51,10 +51,10 @@ ms.locfileid: "89007633"
 
 Чтобы настроить управляемые удостоверения для Службы приложений Azure (в регионах, где они доступны), см. следующий список.
 
-- [Портал Azure](/azure/app-service/overview-managed-identity#using-the-azure-portal)
-- [Azure CLI](/azure/app-service/overview-managed-identity#using-the-azure-cli)
-- [Azure PowerShell](/azure/app-service/overview-managed-identity#using-azure-powershell)
-- [Шаблон Azure Resource Manager](/azure/app-service/overview-managed-identity#using-an-azure-resource-manager-template)
+- [Портал Azure](../../app-service/overview-managed-identity.md#using-the-azure-portal)
+- [Azure CLI](../../app-service/overview-managed-identity.md#using-the-azure-cli)
+- [Azure PowerShell](../../app-service/overview-managed-identity.md#using-azure-powershell)
+- [Шаблон Azure Resource Manager](../../app-service/overview-managed-identity.md#using-an-azure-resource-manager-template)
 
 ### <a name="azure-arc-enabled-kubernetes"></a>Azure Arc с поддержкой Kubernetes
 
@@ -63,7 +63,7 @@ ms.locfileid: "89007633"
 | Назначено системой | Preview (Предварительный просмотр) | Недоступно | Недоступно | Недоступно | 
 | Назначено пользователем | Недоступно | Недоступно | Недоступно | Недоступно |
 
-В настоящее время Kubernetes с поддержкой Arc Azure [поддерживает назначенное системой удостоверение](https://docs.microsoft.com/azure/azure-arc/kubernetes/connect-cluster#azure-arc-agents-for-kubernetes). Сертификат управляемого удостоверения службы используется всеми агентами Kubernetes, поддерживающими Azure Arc, для взаимодействия с Azure.
+В настоящее время Kubernetes с поддержкой Arc Azure [поддерживает назначенное системой удостоверение](../../azure-arc/kubernetes/connect-cluster.md#azure-arc-agents-for-kubernetes). Сертификат управляемого удостоверения службы используется всеми агентами Kubernetes, поддерживающими Azure Arc, для взаимодействия с Azure.
 
 ### <a name="azure-blueprints"></a>Azure Blueprints
 
@@ -165,10 +165,10 @@ ms.locfileid: "89007633"
 
 Чтобы настроить управляемые удостоверения для Функций Azure (в регионах, где они доступны), см. следующий список.
 
-- [Портал Azure](/azure/app-service/overview-managed-identity#using-the-azure-portal)
-- [Azure CLI](/azure/app-service/overview-managed-identity#using-the-azure-cli)
-- [Azure PowerShell](/azure/app-service/overview-managed-identity#using-azure-powershell)
-- [Шаблон Azure Resource Manager](/azure/app-service/overview-managed-identity#using-an-azure-resource-manager-template)
+- [Портал Azure](../../app-service/overview-managed-identity.md#using-the-azure-portal)
+- [Azure CLI](../../app-service/overview-managed-identity.md#using-the-azure-cli)
+- [Azure PowerShell](../../app-service/overview-managed-identity.md#using-azure-powershell)
+- [Шаблон Azure Resource Manager](../../app-service/overview-managed-identity.md#using-an-azure-resource-manager-template)
 
 ### <a name="azure-iot-hub"></a>Центр Интернета вещей Azure
 
@@ -185,7 +185,7 @@ ms.locfileid: "89007633"
 
 Тип управляемого удостоверения | Все общедоступные версии<br>Глобальные регионы Azure | Azure для государственных организаций | Azure для Германии | Azure China 21Vianet |
 | --- | --- | --- | --- | --- |
-| Назначено системой | Доступно в регионе, где доступна служба импорта и экспорта Azure | Предварительный просмотр | Доступно | Доступно |
+| Назначено системой | Доступно в регионе, где доступна служба импорта и экспорта Azure | Preview (Предварительный просмотр) | Доступно | Доступно |
 | Назначено пользователем | Недоступно | Недоступно | Недоступно | Недоступно |
 
 ### <a name="azure-kubernetes-service-aks"></a>Служба Azure Kubernetes (AKS)
@@ -196,7 +196,7 @@ ms.locfileid: "89007633"
 | Назначено пользователем | ![Доступно][check] | ![Доступно][check] | Недоступно | ![Доступно][check] |
 
 
-Дополнительные сведения см. в статье [Использование управляемых удостоверений в службе Kubernetes Azure](https://docs.microsoft.com/azure/aks/use-managed-identity).
+Дополнительные сведения см. в статье [Использование управляемых удостоверений в службе Kubernetes Azure](../../aks/use-managed-identity.md).
 
 
 ### <a name="azure-logic-apps"></a>Azure Logic Apps
@@ -209,8 +209,8 @@ ms.locfileid: "89007633"
 
 Чтобы настроить управляемые удостоверения для Logic Apps (в регионах, где они доступны), см. следующий список.
 
-- [Портал Azure](/azure/logic-apps/create-managed-service-identity#enable-system-assigned-identity-in-azure-portal)
-- [Шаблон Azure Resource Manager](https://docs.microsoft.com/azure/logic-apps/logic-apps-azure-resource-manager-templates-overview)
+- [Портал Azure](../../logic-apps/create-managed-service-identity.md#enable-system-assigned-identity-in-azure-portal)
+- [Шаблон Azure Resource Manager](../../logic-apps/logic-apps-azure-resource-manager-templates-overview.md)
 
 
 ### <a name="azure-policy"></a>Политика Azure
@@ -224,14 +224,14 @@ ms.locfileid: "89007633"
 
 - [Портал Azure](../../governance/policy/tutorials/create-and-manage.md#assign-a-policy)
 - [PowerShell](../../governance/policy/how-to/remediate-resources.md#create-managed-identity-with-powershell)
-- [Azure CLI](https://docs.microsoft.com/cli/azure/policy/assignment?view=azure-cli-latest#az-policy-assignment-create)
-- [Шаблоны диспетчера ресурсов Azure](https://docs.microsoft.com/azure/templates/microsoft.authorization/policyassignments)
-- [REST](https://docs.microsoft.com/rest/api/resources/policyassignments/create)
+- [Azure CLI](/cli/azure/policy/assignment?view=azure-cli-latest#az-policy-assignment-create)
+- [Шаблоны диспетчера ресурсов Azure](/azure/templates/microsoft.authorization/policyassignments)
+- [REST](/rest/api/resources/policyassignments/create)
 
 
 ### <a name="azure-service-fabric"></a>Azure Service Fabric
 
-[Управляемое удостоверение для приложений Service Fabric](https://docs.microsoft.com/azure/service-fabric/concepts-managed-identity) доступно во всех регионах.
+[Управляемое удостоверение для приложений Service Fabric](../../service-fabric/concepts-managed-identity.md) доступно во всех регионах.
 
 Тип управляемого удостоверения | Все общедоступные версии<br>Глобальные регионы Azure | Azure для государственных организаций | Azure для Германии | Azure China 21Vianet |
 | --- | :-: | :-: | :-: | :-: |
@@ -291,9 +291,9 @@ ms.locfileid: "89007633"
 | Тип управляемого удостоверения | Все общедоступные версии<br>Глобальные регионы Azure | Azure для государственных организаций | Azure для Германии | Azure China 21Vianet |
 | --- | :-: | :-: | :-: | :-: |
 | Назначено системой | Недоступно | Недоступно | Недоступно | Недоступно | 
-| Назначено пользователем | [Доступно в поддерживаемых регионах](https://docs.microsoft.com/azure/virtual-machines/windows/image-builder-overview#regions) | Недоступно | Недоступно | Недоступно |
+| Назначено пользователем | [Доступно в поддерживаемых регионах](../../virtual-machines/windows/image-builder-overview.md#regions) | Недоступно | Недоступно | Недоступно |
 
-Сведения о настройке управляемого удостоверения для построителя образов виртуальных машин Azure (в регионах, где это возможно) см. в разделе [Общие сведения о построителе образов](https://docs.microsoft.com/azure/virtual-machines/windows/image-builder-overview#permissions).
+Сведения о настройке управляемого удостоверения для построителя образов виртуальных машин Azure (в регионах, где это возможно) см. в разделе [Общие сведения о построителе образов](../../virtual-machines/windows/image-builder-overview.md#permissions).
 ### <a name="azure-signalr-service"></a>Служба Azure SignalR
 
 Тип управляемого удостоверения | Все общедоступные версии<br>Глобальные регионы Azure | Azure для государственных организаций | Azure для Германии | Azure China 21Vianet |
@@ -397,7 +397,7 @@ ms.locfileid: "89007633"
 | Azure China 21Vianet | `https://*.asazure.chinacloudapi.cn` | ![Доступно][check] |
 
 > [!Note]
-> Microsoft Power BI также [поддерживает управляемые удостоверения](https://docs.microsoft.com/azure/stream-analytics/powerbi-output-managed-identity).
+> Microsoft Power BI также [поддерживает управляемые удостоверения](../../stream-analytics/powerbi-output-managed-identity.md).
 
 
 [check]: media/services-support-managed-identities/check.png "Доступно"

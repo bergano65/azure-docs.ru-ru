@@ -15,12 +15,12 @@ ms.workload: identity
 ms.date: 12/01/2017
 ms.author: barclayn
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a0bcf6d99511f744b321a7a47913b44dc376143f
-ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
+ms.openlocfilehash: 4683a77b9467775fbe368e2017416e0fbff9718c
+ms.sourcegitcommit: bcda98171d6e81795e723e525f81e6235f044e52
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89016144"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89266295"
 ---
 # <a name="how-to-use-managed-identities-for-azure-resources-on-an-azure-vm-to-acquire-an-access-token"></a>Как использовать управляемые удостоверения для ресурсов Azure на виртуальной машине Azure для получения маркера доступа 
 
@@ -30,7 +30,7 @@ ms.locfileid: "89016144"
 
 Эта статья содержит различные примеры кода и скриптов для получения маркера, а также инструкции по обработке ситуаций с просроченным маркером и устранению ошибок HTTP. 
 
-## <a name="prerequisites"></a>Обязательные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 [!INCLUDE [msi-qs-configure-prereqs](../../../includes/active-directory-msi-qs-configure-prereqs.md)]
 
@@ -125,7 +125,7 @@ Content-Type: application/json
 
 ## <a name="get-a-token-using-the-microsoftazureservicesappauthentication-library-for-net"></a>Получение токена с помощью библиотеки Microsoft.Azure.Services.AppAuthentication для .NET
 
-Самый простой способ для приложений и функций .NET работать с управляемыми удостоверениями для ресурсов Azure заключается в использовании пакета Microsoft.Azure.Services.AppAuthentication. Эта библиотека также позволяет локально тестировать код на компьютере разработки с использованием учетной записи пользователя из Visual Studio, [Azure CLI](https://docs.microsoft.com/cli/azure?view=azure-cli-latest) или встроенной проверки подлинности Active Directory. Дополнительные сведения о параметрах локальной разработки с помощью этой библиотеки см. в [Справочник Microsoft.Azure.Services.AppAuthentication](/azure/key-vault/service-to-service-authentication). В этом разделе показано, как начать работу с библиотекой в коде.
+Самый простой способ для приложений и функций .NET работать с управляемыми удостоверениями для ресурсов Azure заключается в использовании пакета Microsoft.Azure.Services.AppAuthentication. Эта библиотека также позволяет локально тестировать код на компьютере разработки с использованием учетной записи пользователя из Visual Studio, [Azure CLI](/cli/azure?view=azure-cli-latest) или встроенной проверки подлинности Active Directory. Дополнительные сведения о параметрах локальной разработки с помощью этой библиотеки см. в [Справочник Microsoft.Azure.Services.AppAuthentication](../../key-vault/general/service-to-service-authentication.md). В этом разделе показано, как начать работу с библиотекой в коде.
 
 1. Добавьте ссылки на пакеты NuGet [Microsoft.Azure.Services.AppAuthentication](https://www.nuget.org/packages/Microsoft.Azure.Services.AppAuthentication) и [Microsoft.Azure.KeyVault](https://www.nuget.org/packages/Microsoft.Azure.KeyVault) в приложение.
 
@@ -141,7 +141,7 @@ Content-Type: application/json
     var kv = new KeyVaultClient(new KeyVaultClient.AuthenticationCallback(azureServiceTokenProvider.KeyVaultTokenCallback));
     ```
     
-Дополнительные сведения о пакете Microsoft.Azure.Services.AppAuthentication и операциях, которые он предоставляет, приведены в [справочнике по Microsoft.Azure.Services.AppAuthentication ](/azure/key-vault/service-to-service-authentication) и [примере .NET, использующем службу приложений и хранилище ключей с управляемыми удостоверениями для ресурсов Azure](https://github.com/Azure-Samples/app-service-msi-keyvault-dotnet).
+Дополнительные сведения о пакете Microsoft.Azure.Services.AppAuthentication и операциях, которые он предоставляет, приведены в [справочнике по Microsoft.Azure.Services.AppAuthentication ](../../key-vault/general/service-to-service-authentication.md) и [примере .NET, использующем службу приложений и хранилище ключей с управляемыми удостоверениями для ресурсов Azure](https://github.com/Azure-Samples/app-service-msi-keyvault-dotnet).
 
 ## <a name="get-a-token-using-c"></a>Получение маркера с использованием C#
 
@@ -381,7 +381,7 @@ echo The managed identities for Azure resources access token is $access_token
 |           | access_denied | Владелец ресурса или сервер авторизации отклонил запрос. |  |
 |           | unsupported_response_type | Сервер авторизации не поддерживает получение маркера доступа с помощью этого метода. |  |
 |           | invalid_scope | Запрошенная область недопустима, неизвестна или неверна. |  |
-| 500 — внутренняя ошибка сервера | неизвестно | Не удалось извлечь маркер из Active Directory. Дополнительные сведения см. в статье вход в систему. *\<file path\>* | Убедитесь, что на виртуальной машине включены управляемые удостоверения для ресурсов Azure. Если вам нужна помощь с конфигурацией виртуальной машины, ознакомьтесь с разделом [Настройка управляемых удостоверений для ресурсов Azure на виртуальной машине с помощью портала Azure](qs-configure-portal-windows-vm.md).<br><br>Кроме того, убедитесь, что универсальный код ресурса (URI) запроса HTTP GET отформатирован правильно, в частности универсальный код ресурса (URI), указанный в строке запроса. В качестве примера см. "Пример запроса" в предыдущем разделе для REST или раздел [Службы Azure, поддерживающие аутентификацию Azure AD](services-support-msi.md) для получения списка служб и соответствующих идентификаторов ресурсов.
+| 500 — внутренняя ошибка сервера | неизвестно | Не удалось извлечь маркер из Active Directory. Дополнительные сведения см. в статье вход в систему. *\<file path\>* | Убедитесь, что на виртуальной машине включены управляемые удостоверения для ресурсов Azure. Если вам нужна помощь с конфигурацией виртуальной машины, ознакомьтесь с разделом [Настройка управляемых удостоверений для ресурсов Azure на виртуальной машине с помощью портала Azure](qs-configure-portal-windows-vm.md).<br><br>Кроме того, убедитесь, что универсальный код ресурса (URI) запроса HTTP GET отформатирован правильно, в частности универсальный код ресурса (URI), указанный в строке запроса. В качестве примера см. "Пример запроса" в предыдущем разделе для REST или раздел [Службы Azure, поддерживающие аутентификацию Azure AD](./services-support-managed-identities.md) для получения списка служб и соответствующих идентификаторов ресурсов.
 
 ## <a name="retry-guidance"></a>Рекомендации по использованию механизма повторов 
 
@@ -391,23 +391,15 @@ echo The managed identities for Azure resources access token is $access_token
 
 Для повторных попыток рекомендуем следующую стратегию: 
 
-| **Стратегия повторов** | **Параметры** | **Значения** | **Принцип работы** |
+| **Стратегия повторов** | **Параметры** | **Значения** | **Принципы работы** |
 | --- | --- | --- | --- |
 |ExponentialBackoff |Число повторных попыток<br />Минимальная задержка<br />Максимальная задержка<br />Разностная задержка<br />Первый быстрый повтор |5<br />0 с<br />60 с<br />2 с<br />false |Попытка 1 — задержка 0 с<br />Попытка 2 — задержка 2 с<br />Попытка 3 — задержка 6 с<br />Попытка 4 — задержка 14 с<br />Попытка 5 — задержка 30 с |
 
 ## <a name="resource-ids-for-azure-services"></a>Идентификаторы ресурсов для служб Azure
 
-Список ресурсов, которые поддерживают Azure AD и были протестированы с управляемыми удостоверениями для ресурсов Azure и соответствующими идентификаторами ресурсов, приведен в разделе [Службы Azure, поддерживающие аутентификацию Azure AD](services-support-msi.md).
+Список ресурсов, которые поддерживают Azure AD и были протестированы с управляемыми удостоверениями для ресурсов Azure и соответствующими идентификаторами ресурсов, приведен в разделе [Службы Azure, поддерживающие аутентификацию Azure AD](./services-support-managed-identities.md).
 
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
 - Чтобы включить управляемые удостоверения для ресурсов Azure на виртуальной машине Azure, ознакомьтесь с разделом [Настройка управляемых удостоверений для ресурсов Azure на виртуальной машине с помощью портала Azure](qs-configure-portal-windows-vm.md).
-
-
-
-
-
-
-
-

@@ -9,16 +9,18 @@ editor: ''
 ms.service: media-services
 ms.workload: ''
 ms.topic: article
-ms.date: 03/14/2019
+ms.date: 08/31/2020
 ms.author: juliako
-ms.openlocfilehash: e5d32d1bc3bd704b03e58c62251a323ed3f4662c
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 1d05e73bc9aa51bf20121790de94b1b6d0e26615
+ms.sourcegitcommit: bcda98171d6e81795e723e525f81e6235f044e52
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "61229056"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89268576"
 ---
-# <a name="generate-a-thumbnail-sprite"></a>Создание эскиза спрайта  
+# <a name="generate-a-thumbnail-sprite"></a>Создание эскиза спрайта
+
+[!INCLUDE [media services api v2 logo](./includes/v2-hr.md)]
 
 Media Encoder Standard можно использовать для создания эскиза спрайта, который представляет собой JPEG-файл, содержащий несколько эскизов разрешений небольшого размера, объединенных в одно (большое) изображение вместе с VTT-файлом. Этот VTT-файл указывает диапазон времени во входных видеоданных, которые представляет каждый эскиз, а также размер и координаты этого эскиза в большом JPEG-файле. Видеопроигрыватели используют VTT-файл и изображение спрайта, чтобы показать "визуальную" панель поиска, предоставляя читателю визуальную обратную связь при очистке назад и вперед по временной шкале видео.
 
@@ -33,7 +35,7 @@ Media Encoder Standard можно использовать для создани
 
     1. Если для SpriteColumn установлено значение M >= 1, выходное изображение представляет собой прямоугольник со столбцами M. Если количество эскизов, сгенерированных с помощью # 2, не является точным кратным M, последняя строка будет неполной и останется с черными пикселями.  
 
-Например:
+Пример:
 
 ```json
 {

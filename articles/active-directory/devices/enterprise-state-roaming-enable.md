@@ -12,12 +12,12 @@ manager: daveba
 ms.reviewer: na
 ms.custom: references_regions
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: f5f6e44aa89c1e2815d70bb4ba2ae5f5680252ac
-ms.sourcegitcommit: 8def3249f2c216d7b9d96b154eb096640221b6b9
+ms.openlocfilehash: 34b554fbef63f23b3540fe49e5c45976122add25
+ms.sourcegitcommit: bcda98171d6e81795e723e525f81e6235f044e52
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87541895"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89268610"
 ---
 # <a name="enable-enterprise-state-roaming-in-azure-active-directory"></a>Включение службы Enterprise State Roaming в Azure Active Directory
 
@@ -32,11 +32,11 @@ Enterprise State Roaming доступна для любой организаци
 
 1. Войдите в [Центр администрирования Azure AD](https://aad.portal.azure.com/)
 1. Выберите **Azure Active Directory**  >  **устройства**  >  **Enterprise State Roaming**.
-1. Включите параметр **Пользователи могут выполнять синхронизацию параметров и данных разных устройств**. Дополнительные сведения см. в статье [о настройке параметров устройств](/azure/active-directory/device-management-azure-portal).
+1. Включите параметр **Пользователи могут выполнять синхронизацию параметров и данных разных устройств**. Дополнительные сведения см. в статье [о настройке параметров устройств](./device-management-azure-portal.md).
   
    ![Изображение с настройкой параметра "Пользователи могут выполнять синхронизацию параметров и данных разных устройств"](./media/enterprise-state-roaming-enable/device-settings.png)
   
-Службу Enterprise State Roaming могут использовать устройства Windows 10, которые прошли аутентификацию с удостоверением Azure AD. В качестве основного идентификатора для входа устройств, присоединенных к Azure AD, используется удостоверение Azure AD, поэтому дополнительная настройка не требуется. Если используются устройства с локальной версией службы Active Directory, ИТ-администратору следует изучить инструкции по [настройке устройств с гибридным присоединением к Azure Active Directory](hybrid-azuread-join-manual-steps.md). 
+Службу Enterprise State Roaming могут использовать устройства Windows 10, которые прошли аутентификацию с удостоверением Azure AD. В качестве основного идентификатора для входа устройств, присоединенных к Azure AD, используется удостоверение Azure AD, поэтому дополнительная настройка не требуется. Если используются устройства с локальной версией службы Active Directory, ИТ-администратору следует изучить инструкции по [настройке устройств с гибридным присоединением к Azure Active Directory](./hybrid-azuread-join-plan.md). 
 
 ## <a name="data-storage"></a>Хранилище данных
 
@@ -90,7 +90,7 @@ Enterprise State Roaming доступна для любой организаци
 
 Политика хранения удаленных данных не настраивается. После окончательного удаления данных восстановить их невозможно. Но данные о параметрах удаляются только из Microsoft Cloud, а не с устройства пользователя. Если это устройство повторно подключится к службе Enterprise State Roaming, все параметры снова будут синхронизированы и сохранены в Microsoft Cloud.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Обзор службы Enterprise State Roaming](enterprise-state-roaming-overview.md)
 * [Часто задаваемые вопросы о перемещении параметров и данных](enterprise-state-roaming-faqs.md)

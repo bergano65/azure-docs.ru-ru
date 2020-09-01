@@ -4,7 +4,7 @@ titleSuffix: Azure Media Services
 description: Узнайте, как использовать динамическое шифрование DRM и службу доставки лицензий для доставки потоков, зашифрованных с помощью лицензий Microsoft PlayReady, Google Widevine или Apple FairPlay.
 services: media-services
 documentationcenter: ''
-author: juliako
+author: IngridAtMicrosoft
 manager: femila
 editor: ''
 ms.service: media-services
@@ -12,17 +12,19 @@ ms.workload: media
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 07/09/2020
-ms.author: juliako
+ms.date: 08/31/2020
+ms.author: inhenkel
 ms.custom: seodec18
-ms.openlocfilehash: 8ab8a3ce0718cac3135bfdac67088d36fcd4f184
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 97011222593d249461719e3492dd5b54fb63baff
+ms.sourcegitcommit: bcda98171d6e81795e723e525f81e6235f044e52
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87060612"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89267145"
 ---
 # <a name="tutorial-use-drm-dynamic-encryption-and-license-delivery-service"></a>Учебник. Использование динамического шифрования DRM и службы доставки лицензий
+
+[!INCLUDE [media services api v3 logo](./includes/v3-hr.md)]
 
 > [!NOTE]
 > Несмотря на то что в этом учебнике используются примеры для [пакета SDK для .NET](/dotnet/api/microsoft.azure.management.media.models.liveevent?view=azure-dotnet), общие шаги одинаковы для [REST API](/rest/api/media/liveevents), [CLI](/cli/azure/ams/live-event?view=azure-cli-latest) или других поддерживаемых [пакетов SDK](media-services-apis-overview.md#sdks).
@@ -37,7 +39,7 @@ ms.locfileid: "87060612"
 
 ![AMS с видео, защищенным DRM, в Проигрыватель мультимедиа Azure](./media/protect-with-drm/ams_player.png)
 
-В этом учебнике описаны следующие процедуры.
+В этом учебнике демонстрируется выполнение следующих действий:
 
 > [!div class="checklist"]
 > * Создайте преобразование кодировки.
@@ -48,7 +50,7 @@ ms.locfileid: "87060612"
 
 [!INCLUDE [quickstarts-free-trial-note](../../../includes/quickstarts-free-trial-note.md)]
 
-## <a name="prerequisites"></a>Обязательные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Ниже перечислены необходимые условия для выполнения действий, описанных в этом руководстве:
 

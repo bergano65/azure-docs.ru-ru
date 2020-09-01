@@ -3,12 +3,12 @@ title: Поддержка оценки VMware в службе "Миграция 
 description: Узнайте о поддержке оценки виртуальных машин VMware с помощью средства оценки сервера службы "Миграция Azure".
 ms.topic: conceptual
 ms.date: 06/08/2020
-ms.openlocfilehash: 9c9b1f7687d1ab1af36ac603501ecbaa7affd9b6
-ms.sourcegitcommit: 5b8fb60a5ded05c5b7281094d18cf8ae15cb1d55
+ms.openlocfilehash: 4f724297f216267dadda31be4bd548eb241b9845
+ms.sourcegitcommit: bcda98171d6e81795e723e525f81e6235f044e52
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87387036"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89266975"
 ---
 # <a name="support-matrix-for-vmware-assessment"></a>Таблица поддержки для оценки виртуальных машин VMware 
 
@@ -40,6 +40,7 @@ ms.locfileid: "87387036"
 **VMware** | **Сведения**
 --- | ---
 **Виртуальные машины VMware** | Все операционные системы можно оценить для миграции. 
+**Хранилище** | Поддерживаются диски, подключенные к контроллерам SCSI, IDE и SATA.
 
 
 ## <a name="azure-migrate-appliance-requirements"></a>Требования к устройству Миграции Azure

@@ -3,22 +3,24 @@ title: Заметки о выпуске Служб мультимедиа Azure 
 description: Чтобы вы оставались в курсе последних разработок, в этой статье предоставлены последние обновления Служб мультимедиа Azure версии 3.
 services: media-services
 documentationcenter: ''
-author: Juliako
+author: IngridAtMicrosoft
 manager: femila
 editor: ''
 ms.service: media-services
 ms.workload: na
 ms.topic: article
-ms.date: 06/03/2020
-ms.author: juliako
-ms.openlocfilehash: 53e337cf4ccbabf7f0b7a227632ba5e996e2b4f3
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.date: 08/31/2020
+ms.author: inhenkel
+ms.openlocfilehash: 2e637392328c7a09fb23adeca61a352707f05e0e
+ms.sourcegitcommit: bcda98171d6e81795e723e525f81e6235f044e52
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87072146"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89267514"
 ---
 # <a name="azure-media-services-v3-release-notes"></a>Заметки о выпуске Служб мультимедиа Azure версии 3
+
+[!INCLUDE [media services api v3 logo](./includes/v3-hr.md)]
 
 >Получайте уведомления о том, когда следует повторно посетить эту страницу для обновлений, скопировав и вставив URL-адрес `https://docs.microsoft.com/api/search/rss?search=%22Azure+Media+Services+v3+release+notes%22&locale=en-us` в средство чтения RSS-канала.
 
@@ -50,7 +52,7 @@ ms.locfileid: "87072146"
 
 Мы опубликовали высокий уровень доступности со службами мультимедиа и [обзором](./media-services-high-availability-encoding.md) видео по запросу (VOD) и [примерами](https://github.com/Azure-Samples/media-services-v3-dotnet/tree/master/HighAvailabilityEncodingStreaming).
 
-## <a name="june-2020"></a>Июнь 2020 г.
+## <a name="june-2020"></a>июнь 2020 г.
 
 ### <a name="live-video-analytics-on-iot-edge-preview-release"></a>Интерактивная аналитика видео в предварительной версии IoT Edge
 

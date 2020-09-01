@@ -12,12 +12,12 @@ manager: daveba
 ms.reviewer: jairoc
 ms.collection: M365-identity-device-management
 ms.custom: has-adal-ref
-ms.openlocfilehash: 08f083fe60076c80b5b7d60f555daac499974254
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: bc926c385aeee40601c00b3b4ab68065a4260f2f
+ms.sourcegitcommit: bcda98171d6e81795e723e525f81e6235f044e52
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "82611319"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89268780"
 ---
 # <a name="troubleshooting-hybrid-azure-active-directory-joined-devices"></a>Устранение неполадок на устройствах с гибридным присоединением к Azure Active Directory
 
@@ -28,8 +28,8 @@ ms.locfileid: "82611319"
 В этой статье предполагается, что вы [настроили гибридное присоединение устройств к Azure Active Directory](hybrid-azuread-join-plan.md) для поддержки следующих сценариев:
 
 - Условный доступ на основе информации об устройстве
-- [Корпоративное перемещение параметров](../active-directory-windows-enterprise-state-roaming-overview.md)
-- [Windows Hello для бизнеса](../active-directory-azureadjoin-passport-deployment.md)
+- [Корпоративное перемещение параметров](./enterprise-state-roaming-overview.md)
+- [Windows Hello для бизнеса](/windows/security/identity-protection/hello-for-business/hello-identity-verification)
 
 В этом документе содержатся рекомендации по устранению потенциальных проблем.
 
@@ -42,7 +42,7 @@ ms.locfileid: "82611319"
 **Для получения сведений о состоянии присоединения выполните следующие действия:**
 
 1. Откройте командную строку от имени администратора.
-2. Введите `dsregcmd /status`.
+2. Введите `dsregcmd /status`
 
 ```
 +----------------------------------------------------------------------+
@@ -170,7 +170,7 @@ WamDefaultAuthority: organizations
 - **DSREG_AUTOJOIN_DISC_FAILED** (0x801c0021/-2145648607)
    - Причина: сбой общего обнаружения. Не удалось получить метаданные обнаружения из DRS.
    - Решение. Найдите подошибку ниже для дальнейшего изучения.
-- **DSREG_AUTOJOIN_DISC_WAIT_TIMEOUT** (0x801c001f/-2145648609)
+- **DSREG_AUTOJOIN_DISC_WAIT_TIMEOUT**  (0x801c001f/-2145648609)
    - Причина: истекло время ожидания операции при выполнении обнаружения.
    - Решение. Убедитесь, что `https://enterpriseregistration.windows.net` оно доступно в контексте системы. Дополнительные сведения см. в разделе [требования к сетевым подключениям](hybrid-azuread-join-managed-domains.md#prerequisites).
 - **DSREG_AUTOJOIN_USERREALM_DISCOVERY_FAILED** (0x801c0021/-2145648611)
@@ -373,13 +373,13 @@ WamDefaultAuthority: organizations
 
 ##### <a name="federated-join-server-errors"></a>Ошибки федеративных присоединение к серверу
 
-| Код ошибки сервера | Сообщение об ошибке сервера | Возможные причины | Решение |
+| Код ошибки сервера | Сообщение об ошибке сервера | Возможные причины | Разрешение |
 | --- | --- | --- | --- |
 | Счетчику регистраций | Ваш запрос временно регулируется. Повторите попытку через 300 секунд. | Ожидаемая ошибка. Возможно, из-за выполнения нескольких запросов на регистрацию в ходе быстрой успешной операции. | Повторить попытку Join после cooldown периода |
 
 ##### <a name="sync-join-server-errors"></a>Ошибки синхронизации присоединение к серверу
 
-| Код ошибки сервера | Сообщение об ошибке сервера | Возможные причины | Решение |
+| Код ошибки сервера | Сообщение об ошибке сервера | Возможные причины | Разрешение |
 | --- | --- | --- | --- |
 | Счетчику регистраций | AADSTS90002: клиент <UUID> не найден. Эта ошибка может возникать, если для клиента нет активных подписок. Обратитесь к администратору подписки. | Недопустимый идентификатор клиента в объекте SCP | Убедитесь, что объект SCP настроен с правильным ИДЕНТИФИКАТОРом клиента Azure AD и активными подписками и содержится в клиенте. |
 | Счетчику регистраций | Объект устройства с указанным ИДЕНТИФИКАТОРом не найден. | Ожидаемая ошибка при синхронизации соединений. Объект устройства не синхронизирован из AD в Azure AD | Дождитесь завершения синхронизации Azure AD Connect и следующей попытки объединения после завершения синхронизации, устраните проблему. |
@@ -387,7 +387,7 @@ WamDefaultAuthority: organizations
 
 ### <a name="step-5-collect-logs-and-contact-microsoft-support"></a>Шаг 5. получение журналов и контактных служба поддержки Майкрософт
 
-Скачайте файл Auth.zip из[https://github.com/CSS-Windows/WindowsDiag/tree/master/ADS/AUTH](https://github.com/CSS-Windows/WindowsDiag/tree/master/ADS/AUTH)
+Скачайте файл Auth.zip из [https://github.com/CSS-Windows/WindowsDiag/tree/master/ADS/AUTH](https://github.com/CSS-Windows/WindowsDiag/tree/master/ADS/AUTH)
 
 1. Распакуйте файлы и переименуйте добавленные файлы **start-auth.txt** и **stop-auth.txt** в **старт-АУС. cmd** и **стоп-АУС. cmd**.
 1. В командной строке с повышенными привилегиями запустите **старт-АУС. cmd**.

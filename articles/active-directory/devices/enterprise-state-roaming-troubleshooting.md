@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: tanning
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a5043873b18f2d2115fd23e8b52959290393bfb8
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: fb376ebacdd76fdde30178e19fa3c3062e57da1c
+ms.sourcegitcommit: bcda98171d6e81795e723e525f81e6235f044e52
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85604545"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89267247"
 ---
 # <a name="troubleshooting-enterprise-state-roaming-settings-in-azure-active-directory"></a>Устранение неполадок параметров Enterprise State Roaming в Azure Active Directory
 
@@ -82,7 +82,7 @@ ms.locfileid: "85604545"
 
 **Потенциальная ошибка**. Синхронизация может завершиться ошибкой, если администратор настроит службы федерации Active Directory (AD FS) политику условного доступа многофакторной проверки подлинности и срок действия маркера доступа на устройстве истекает. Убедитесь, что для входа в систему и выхода из нее вы используете ПИН-код Microsoft Passport for Work или выполняете проверку подлинности в службе Многофакторной идентификации при получении доступа к другим службам Azure, таким как Office 365.
 
-### <a name="event-viewer"></a>Просмотр событий
+### <a name="event-viewer"></a>Средство просмотра событий
 
 Для расширенного поиска проблем можно использовать средство просмотра событий, чтобы находить конкретные ошибки. Они описаны в следующем разделе. События можно найти в разделе Просмотр событий > **Applications and Services Logs**  >  **Microsoft**  >  **Windows**  >  **журнале settingsync-Azure** и о проблемах, связанных с удостоверениями, в **журналах приложений и служб**  >  **Microsoft**  >  **Windows**  >  **AAD**.
 
@@ -108,10 +108,10 @@ ms.locfileid: "85604545"
 
 ### <a name="theme-is-not-syncing-as-well-as-data-protected-with-windows-information-protection"></a>Не синхронизируется тема, а также данные, защищенные с помощью Windows Information Protection 
 
-Чтобы предотвратить утечку данных, данные, защищенные с помощью [windows Information Protection](https://technet.microsoft.com/itpro/windows/keep-secure/protect-enterprise-data-using-wip) , не будут синхронизироваться с Enterprise State Roaming для устройств, использующих годовщину Windows 10.
+Чтобы предотвратить утечку данных, данные, защищенные с помощью [windows Information Protection](/windows/security/information-protection/windows-information-protection/protect-enterprise-data-using-wip) , не будут синхронизироваться с Enterprise State Roaming для устройств, использующих годовщину Windows 10.
 
 **Рекомендуемое действие**  
-Отсутствует. Эта проблема, возможно, будет решена в будущих обновлениях Windows.
+Нет. Эта проблема, возможно, будет решена в будущих обновлениях Windows.
 
 ---
 
@@ -120,7 +120,7 @@ ms.locfileid: "85604545"
 Присоединенные к домену устройства не синхронизируются, если для параметра "Дата, время и регион" установлено значение "Автоматическое время". Использование значения "Автоматическое время" может переопределять другие параметры даты, времени и региона и стать причиной отсутствия синхронизации. 
 
 **Рекомендуемое действие**  
-Отсутствует. 
+Нет. 
 
 ---
 
@@ -138,7 +138,7 @@ ms.locfileid: "85604545"
 При попытке выполнить вход на устройстве Windows с помощью смарт-карты или виртуальной смарт-карты синхронизация параметров перестает работать.     
 
 **Рекомендуемое действие**  
-Отсутствует. Эта проблема, возможно, будет решена в будущих обновлениях Windows.
+Нет. Эта проблема, возможно, будет решена в будущих обновлениях Windows.
 
 ---
 
@@ -180,6 +180,6 @@ ms.locfileid: "85604545"
 **Рекомендуемое действие**  
 Выполните действия, описанные в статье [KB3196528](https://support.microsoft.com/kb/3196528).  
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Общие сведения см. в [обзоре службы Enterprise State Roaming](enterprise-state-roaming-overview.md).

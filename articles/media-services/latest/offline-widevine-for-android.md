@@ -12,17 +12,19 @@ ms.workload: media
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 04/07/2020
+ms.date: 08/31/2020
 ms.author: willzhan
 ms.custom: devx-track-csharp
-ms.openlocfilehash: b603b800dfdfb96e9b6b1074dc1e39d31b994c06
-ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
+ms.openlocfilehash: a1e85f37a0dfdbb7ff10db13e53b1998ef391caa
+ms.sourcegitcommit: bcda98171d6e81795e723e525f81e6235f044e52
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "88997784"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89267200"
 ---
 # <a name="offline-widevine-streaming-for-android-with-media-services-v3"></a>Автономная потоковая передача Widevine для Android с помощью служб мультимедиа v3
+
+[!INCLUDE [media services api v3 logo](./includes/v3-hr.md)]
 
 Помимо защиты содержимого для автономной потоковой передачи подписка содержимого мультимедиа и службы аренды предоставляют содержимое, которое можно загрузить. Это подходит при отсутствии подключения к Интернету. Возможно, потребуется загрузить содержимое на ваш телефон или планшет для воспроизведения в режиме "в самолете", когда во время полета нет подключения к сети. Дополнительные сценарии, в которых может потребоваться загрузить содержимое:
 
@@ -43,7 +45,7 @@ ms.locfileid: "88997784"
 > [!NOTE]
 > В автономной системе DRM оплачивается только один запрос на лицензию при скачивании содержимого. Плата за любые ошибки не взимается.
 
-## <a name="prerequisites"></a>Обязательные условия 
+## <a name="prerequisites"></a>Предварительные требования 
 
 Перед реализацией автономного DRM для Widevine на устройствах Android вам потребуется:
 

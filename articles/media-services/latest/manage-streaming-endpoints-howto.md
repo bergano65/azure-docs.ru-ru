@@ -3,7 +3,7 @@ title: Управление конечными точками потоковой
 description: В этой статье показано, как управлять конечными точками потоковой передачи с помощью служб мультимедиа Azure v3.
 services: media-services
 documentationcenter: ''
-author: Juliako
+author: IngridAtMicrosoft
 writer: juliako
 manager: femila
 editor: ''
@@ -12,17 +12,19 @@ ms.workload: media
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 03/11/2020
-ms.author: juliako
+ms.date: 08/31/2020
+ms.author: inhenkel
 ms.custom: devx-track-azurecli, devx-track-csharp
-ms.openlocfilehash: d8b5f79d9c9050eeb7957ddcf28021e3c8b3dd94
-ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
+ms.openlocfilehash: 08730961d81cd14b5ba8af0778d2de4078398bff
+ms.sourcegitcommit: bcda98171d6e81795e723e525f81e6235f044e52
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89010653"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89266550"
 ---
 # <a name="manage-streaming-endpoints-with--media-services-v3"></a>Управление конечными точками потоковой передачи с помощью служб мультимедиа v3
+
+[!INCLUDE [media services api v3 logo](./includes/v3-hr.md)]
 
 При создании учетной записи служб мультимедиа [Конечная точка потоковой передачи](streaming-endpoint-concept.md) **по умолчанию** добавляется в учетную запись в **остановленном** состоянии. Чтобы начать потоковую передачу содержимого и воспользоваться [динамической упаковкой](dynamic-packaging-overview.md) и [динамическим шифрованием](content-protection-overview.md), конечная точка потоковой передачи, из которой требуется потоковая передача содержимого, должна находиться в состоянии **выполняется** .
 
@@ -31,7 +33,7 @@ ms.locfileid: "89010653"
 > [!NOTE]
 > Плата взимается, только когда конечная точка потоковой передачи используется.
     
-## <a name="prerequisites"></a>Обязательные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Обзор. 
 
@@ -45,7 +47,7 @@ ms.locfileid: "89010653"
 POST https://management.azure.com/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/mediaresources/providers/Microsoft.Media/mediaservices/slitestmedia10/streamingEndpoints/myStreamingEndpoint1/start?api-version=2018-07-01
 ```
 
-Дополнительные сведения см. в разделе: 
+Дополнительные сведения см. на странице 
 
 * Справочная документация по [запуску StreamingEndpoint](/rest/api/media/streamingendpoints/start) .
 * Запуск конечной точки потоковой передачи является асинхронной операцией. 

@@ -3,23 +3,25 @@ title: Кодирование настраиваемого преобразов�
 description: В этом разделе показано, как использовать службы мультимедиа Azure v3 для кодирования пользовательского преобразования с помощью функции RESTFUL.
 services: media-services
 documentationcenter: ''
-author: Juliako
+author: IngridAtMicrosoft
 manager: femila
 editor: ''
 ms.service: media-services
 ms.workload: ''
 ms.topic: article
 ms.custom: ''
-ms.date: 05/14/2019
-ms.author: juliako
-ms.openlocfilehash: 4bd092dbee09a783dcbd6e36c82a70ff5decaf83
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.date: 08/31/2020
+ms.author: inhenkel
+ms.openlocfilehash: 9bdea0998b5d6b4c10a96d2ef593f46d6b7c02bf
+ms.sourcegitcommit: bcda98171d6e81795e723e525f81e6235f044e52
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87053326"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89267009"
 ---
 # <a name="how-to-encode-with-a-custom-transform---rest"></a>Как кодировать с пользовательским преобразованием — остальное
+
+[!INCLUDE [media services api v3 logo](./includes/v3-hr.md)]
 
 При кодировании со службами мультимедиа Azure можно быстро приступить к работе с помощью одной из рекомендуемых встроенных предустановок на основе отраслевых рекомендаций, как показано в руководстве по [потоковой передаче файлов](stream-files-tutorial-with-rest.md#create-a-transform) . Вы также можете создать пользовательскую предустановку, предназначенную для конкретных сценариев или требований к устройствам.
 

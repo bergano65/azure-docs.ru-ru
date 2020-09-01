@@ -4,7 +4,7 @@ titleSuffix: Azure Media Services
 description: Сведения о защите содержимого с помощью динамического шифрования, протоколов потоковой передачи и типов шифрования в службах мультимедиа Azure.
 services: media-services
 documentationcenter: ''
-author: Juliako
+author: IngridAtMicrosoft
 manager: femila
 editor: ''
 ms.service: media-services
@@ -12,17 +12,19 @@ ms.workload: media
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 03/17/2020
-ms.author: juliako
+ms.date: 08/31/2020
+ms.author: inhenkel
 ms.custom: seodec18, devx-track-csharp
-ms.openlocfilehash: e21aba7b06e6c692337344477bfb52e7f7acb27c
-ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
+ms.openlocfilehash: 81ec96d244c36c0328134b415465d632ef6c1dd5
+ms.sourcegitcommit: bcda98171d6e81795e723e525f81e6235f044e52
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89012201"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89267927"
 ---
 # <a name="protect-your-content-with-media-services-dynamic-encryption"></a>Защита содержимого с помощью динамического шифрования служб мультимедиа
+
+[!INCLUDE [media services api v3 logo](./includes/v3-hr.md)]
 
 Службы мультимедиа Azure помогут вам защитить данные мультимедиа, покидающие ваш компьютер, на всех этапах хранения, обработки и доставки, а также доставлять в режиме реального времени и по требованию содержимое, зашифрованное динамически с помощью Advanced Encryption Standard (AES-128) или трех основных систем управления цифровыми правами (DRM): Microsoft PlayReady, Google Widevine и Apple FairPlay. Они также обеспечивают службу доставки ключей AES и лицензий DRM (PlayReady, Widevine и FairPlay) авторизованным клиентам. Если содержимое шифруется с помощью открытого ключа AES и отправляется по протоколу HTTPS, оно не очищается до тех пор, пока не достигнет клиента. 
 
@@ -124,7 +126,7 @@ ms.locfileid: "89012201"
 
 |Формат контейнера|Схема шифрования|Пример URL-адреса|
 |---|---|---|
-|Все|AES|`https://amsv3account-usw22.streaming.media.azure.net/00000000-0000-0000-0000-000000000000/ignite.ism/manifest(format=m3u8-aapl,encryption=cbc)`|
+|All|AES|`https://amsv3account-usw22.streaming.media.azure.net/00000000-0000-0000-0000-000000000000/ignite.ism/manifest(format=m3u8-aapl,encryption=cbc)`|
 |MPG2-TS |CBCS (FairPlay) |`https://amsv3account-usw22.streaming.media.azure.net/00000000-0000-0000-0000-000000000000/ignite.ism/manifest(format=m3u8-aapl,encryption=cbcs-aapl)`|
 |CMAF(fmp4) |CBCS (FairPlay) |`https://amsv3account-usw22.streaming.media.azure.net/00000000-0000-0000-0000-000000000000/ignite.ism/manifest(format=m3u8-cmaf,encryption=cbcs-aapl)`|
 |MPG2-TS |CENC (PlayReady) |`https://amsv3account-usw22.streaming.media.azure.net/00000000-0000-0000-0000-000000000000/ignite.ism/manifest(format=m3u8-aapl,encryption=cenc)`|
@@ -142,7 +144,7 @@ HLS/КМАФ + FairPlay (включая HEVC/H. 265) поддерживаетс�
 
 |Формат контейнера|Схема шифрования|Примеры URL-адресов
 |---|---|---|
-|Все|AES|`https://amsv3account-usw22.streaming.media.azure.net/00000000-0000-0000-0000-000000000000/ignite.ism/manifest(format=mpd-time-csf,encryption=cbc)`|
+|All|AES|`https://amsv3account-usw22.streaming.media.azure.net/00000000-0000-0000-0000-000000000000/ignite.ism/manifest(format=mpd-time-csf,encryption=cbc)`|
 |CSF(fmp4) |CENC (Widevine + PlayReady) |`https://amsv3account-usw22.streaming.media.azure.net/00000000-0000-0000-0000-000000000000/ignite.ism/manifest(format=mpd-time-csf,encryption=cenc)`|
 |CMAF(fmp4)|CENC (Widevine + PlayReady)|`https://amsv3account-usw22.streaming.media.azure.net/00000000-0000-0000-0000-000000000000/ignite.ism/manifest(format=mpd-time-cmaf,encryption=cenc)`|
 
@@ -249,7 +251,7 @@ streamingPolicy.EnvelopEncryption.customKeyAcquisitionUrlTemplate = "https://myk
 > [!NOTE]
 > Widevine — это служба, которая предоставляется компанией Google Inc. и подпадает под условия предоставления услуг и политику конфиденциальности Google Inc.
 
-## <a name="troubleshoot"></a>Устранение неполадок
+## <a name="troubleshoot"></a>Диагностика
 
 Если возникает `MPE_ENC_ENCRYPTION_NOT_SET_IN_DELIVERY_POLICY` ошибка, убедитесь, что указана соответствующая политика потоковой передачи.
 
@@ -265,5 +267,5 @@ streamingPolicy.EnvelopEncryption.customKeyAcquisitionUrlTemplate = "https://myk
 * [Защита с помощью DRM](protect-with-drm.md)
 * [Разработка системы защиты содержимого с несколькими DRM с помощью контроля доступа](design-multi-drm-system-with-access-control.md)
 * [Шифрование на стороне хранилища](storage-account-concept.md#storage-side-encryption)
-* [Часто задаваемые вопросы](frequently-asked-questions.md)
+* [Часто задаваемые вопросы по Аналитике компьютеров](frequently-asked-questions.md)
 * [Обработчик веб-токенов JSON](/dotnet/framework/security/json-web-token-handler)

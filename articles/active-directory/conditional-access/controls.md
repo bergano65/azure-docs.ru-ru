@@ -11,19 +11,19 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: inbarc
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 6eb4efd26502c20a33cb61ab1c9d58f2757bbd70
-ms.sourcegitcommit: e69bb334ea7e81d49530ebd6c2d3a3a8fa9775c9
+ms.openlocfilehash: 59f83d232874a7702598b6ea5fdd458c101e7e79
+ms.sourcegitcommit: bcda98171d6e81795e723e525f81e6235f044e52
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "88948306"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89266584"
 ---
 # <a name="custom-controls-preview"></a>Настраиваемые элементы управления (предварительная версия)
 
 Пользовательские элементы управления — это функция предварительной версии Azure Active Directory. При использовании пользовательских элементов управления пользователи перенаправляются в совместимую службу для удовлетворения требований к проверке подлинности за пределами Azure Active Directory. Чтобы удовлетворить этот элемент управления, браузер пользователя перенаправляется к внешней службе, выполняет необходимую проверку подлинности и перенаправляется обратно в Azure Active Directory. Azure Active Directory проверяет ответ и, если пользователь прошел проверку подлинности или проверен, пользователь переходит в поток условного доступа.
 
 > [!NOTE]
-> Дополнительные сведения об изменениях, которые планируется реализовать в пользовательском элементе управления, см. в [обновлении](../fundamentals/whats-new.md#upcoming-changes-to-custom-controls)за Февраль 2020.
+> Дополнительные сведения об изменениях, которые мы планируем реализовать в функции пользовательского элемента управления, см. в [архиве февраль 2020 для новых](../fundamentals/whats-new-archive.md#upcoming-changes-to-custom-controls)возможностей.
 
 ## <a name="creating-custom-controls"></a>Создание пользовательских элементов управления
 

@@ -3,23 +3,25 @@ title: Сигнальные звуковые дорожки с помощью с
 description: Выполните действия, описанные в этом руководстве, чтобы отправить файл, закодировать видео, добавить описательные звуковые дорожки и выполнить потоковую передачу содержимого с помощью служб мультимедиа v3.
 services: media-services
 documentationcenter: ''
-author: Juliako
+author: IngridAtMicrosoft
 manager: femila
 editor: ''
 ms.service: media-services
 ms.workload: ''
 ms.topic: article
 ms.custom: devx-track-csharp
-ms.date: 09/25/2019
-ms.author: juliako
-ms.openlocfilehash: cce2dfe943519f39fbe0660338babf782fee4336
-ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
+ms.date: 08/31/2020
+ms.author: inhenkel
+ms.openlocfilehash: 1a8986dcba9dc64eb77d8bc8c6e77704fa212abb
+ms.sourcegitcommit: bcda98171d6e81795e723e525f81e6235f044e52
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89006658"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89267434"
 ---
 # <a name="signal-descriptive-audio-tracks"></a>Сигнальные звуковые дорожки сигнала
+
+[!INCLUDE [media services api v3 logo](./includes/v3-hr.md)]
 
 Вы можете добавить в видео дорожку речевого сопровождения, чтобы помочь слабовидящим клиентам следить за видеозаписью, слушая повествование. В службах мультимедиа версии 3 вы сообщаете о звуковых дорожках, записываете звуковую дорожку в файл манифеста.
 

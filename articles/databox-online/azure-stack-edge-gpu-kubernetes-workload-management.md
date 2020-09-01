@@ -6,14 +6,14 @@ author: alkohli
 ms.service: databox
 ms.subservice: edge
 ms.topic: conceptual
-ms.date: 08/12/2020
+ms.date: 08/31/2020
 ms.author: alkohli
-ms.openlocfilehash: 2e2a41f797c6c58597e90ef6bd6e373ab7408a7b
-ms.sourcegitcommit: 3fb5e772f8f4068cc6d91d9cde253065a7f265d6
+ms.openlocfilehash: 38c46bdcce64f726b3a7ddf74e0cfd10a14ba663
+ms.sourcegitcommit: bcda98171d6e81795e723e525f81e6235f044e52
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89182060"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89268042"
 ---
 # <a name="kubernetes-workload-management-on-your-azure-stack-edge-device"></a>Управление рабочей нагрузкой Kubernetes на пограничном устройстве Azure Stack
 
@@ -47,11 +47,11 @@ ms.locfileid: "89182060"
 
 ![Развертывание рабочей нагрузки Kubernetes](./media/azure-stack-edge-gpu-kubernetes-workload-management/kubernetes-workload-management-1.png)
 
-- **Локальное развертывание**. это осуществляется с помощью средства доступа из командной строки `kubectl` , такого как, которое позволяет развертывать K8 `yamls` . Подключитесь к кластеру K8 на границе Azure Stack, созданной с помощью `kubeconfig` файла. Дополнительные сведения см. в подразделах [доступ к кластеру Kubernetes через kubectl](azure-stack-edge-gpu-create-kubernetes-cluster.md).
+- **Локальное развертывание**. это осуществляется с помощью средства доступа из командной строки `kubectl` , такого как, которое позволяет развертывать Kubernetes `yamls` . Подключитесь к кластеру Kubernetes на границе Azure Stack, созданной с помощью `kubeconfig` файла. Дополнительные сведения см. в подразделах [доступ к кластеру Kubernetes через kubectl](azure-stack-edge-gpu-create-kubernetes-cluster.md).
 
-- **Развертывание IOT Edge**. это осуществляется с помощью IOT EDGE, который подключается к центру Интернета вещей Azure. Вы подключаетесь к кластеру K8 на устройстве Azure Stack погранично через `iotedge` пространство имен. Агенты IoT Edge, развернутые в этом пространстве имен, отвечают за подключение к Azure. Вы применяете `IoT Edge deployment.json` конфигурацию с помощью Azure DEVOPS CI/CD. Управление пространствами имен и IoT Edge осуществляется с помощью оператора облака.
+- **Развертывание IOT Edge**. это осуществляется с помощью IOT EDGE, который подключается к центру Интернета вещей Azure. Вы подключаетесь к кластеру Kubernetes на устройстве Azure Stack погранично через `iotedge` пространство имен. Агенты IoT Edge, развернутые в этом пространстве имен, отвечают за подключение к Azure. Вы применяете `IoT Edge deployment.json` конфигурацию с помощью Azure DEVOPS CI/CD. Управление пространствами имен и IoT Edge осуществляется с помощью оператора облака.
 
-- **Развертывание Azure/Arc**. Azure ARC — это гибридное средство управления, которое позволит развертывать приложения в кластерах K8. Вы подключаете кластер K8 на устройстве Azure Stack погранично через `azure-arc namespace` . Агенты развертываются в этом пространстве имен, которые отвечают за подключение к Azure. Конфигурация развертывания применяется с помощью управления конфигурацией на основе Гитопс. Служба "Дуга Azure" также позволяет использовать Azure Monitor для контейнеров для просмотра и мониторинга кластеров. Дополнительные сведения см. в разделе [что такое Azure-Arc Enabled Kubernetes?](https://docs.microsoft.com/azure/azure-arc/kubernetes/overview).
+- **Развертывание Azure/Arc**. Azure ARC — это гибридное средство управления, которое позволит развертывать приложения в кластерах Kubernetes. Вы подключаете кластер Kubernetes на устройстве Azure Stack погранично через `azure-arc namespace` . Агенты развертываются в этом пространстве имен, которые отвечают за подключение к Azure. Конфигурация развертывания применяется с помощью управления конфигурацией на основе Гитопс. Служба "Дуга Azure" также позволяет использовать Azure Monitor для контейнеров для просмотра и мониторинга кластеров. Дополнительные сведения см. в разделе [что такое Azure-Arc Enabled Kubernetes?](https://docs.microsoft.com/azure/azure-arc/kubernetes/overview).
 
 ## <a name="choose-the-deployment-type"></a>Выбор типа развертывания
 

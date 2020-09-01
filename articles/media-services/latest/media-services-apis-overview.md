@@ -4,23 +4,25 @@ titleSuffix: Azure Media Services
 description: Узнайте больше о правилах для работы с сущностями и API при разработке с использованием Служб мультимедиа версии 3.
 services: media-services
 documentationcenter: ''
-author: Juliako
+author: IngridAtMicrosoft
 manager: femila
 editor: ''
 ms.service: media-services
 ms.workload: ''
 ms.topic: article
-ms.date: 10/21/2019
-ms.author: juliako
+ms.date: 08/31/2020
+ms.author: inhenkel
 ms.custom: seodec18
-ms.openlocfilehash: dcec4d0bc93433c768faf10e4520131aeecc5e77
-ms.sourcegitcommit: 6fc156ceedd0fbbb2eec1e9f5e3c6d0915f65b8e
+ms.openlocfilehash: 6cb771b8df4ab81ff9c538a38b084856b1dfbc39
+ms.sourcegitcommit: bcda98171d6e81795e723e525f81e6235f044e52
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/21/2020
-ms.locfileid: "88719195"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89267281"
 ---
 # <a name="develop-with-media-services-v3-apis"></a>Разработка с помощью API Служб мультимедиа версии 3
+
+[!INCLUDE [media services api v3 logo](./includes/v3-hr.md)]
 
 Как разработчик вы можете использовать [REST API](/rest/api/media/) Служб мультимедиа или клиентские библиотеки, которые позволяют взаимодействовать с REST API для простого создания, контроля и обслуживания настраиваемых рабочих процессов. API [Служб мультимедиа версии 3](https://aka.ms/ams-v3-rest-sdk) основан на спецификации OpenAPI (ранее известной как Swagger).
 
