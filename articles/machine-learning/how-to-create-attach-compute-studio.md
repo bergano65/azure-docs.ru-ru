@@ -61,7 +61,7 @@ ms.locfileid: "89147608"
 
 1. Если отображается список ресурсов вычислений, выберите **+ создать** над списком.
 
-    :::image type="content" source="media/how-to-create-attach-studio/select-new.png" alt-text="Выберите "создать"":::
+    :::image type="content" source="media/how-to-create-attach-studio/select-new.png" alt-text="Выберите создать":::
 
 
 1. Заполните форму для типа вычислений:
