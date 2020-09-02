@@ -8,12 +8,12 @@ ms.service: cognitive-services
 ms.topic: include
 ms.date: 08/05/2020
 ms.author: pafarley
-ms.openlocfilehash: 93ea0ffc94b78e014b30ab1d45d589eba50fe524
-ms.sourcegitcommit: d661149f8db075800242bef070ea30f82448981e
+ms.openlocfilehash: d8da5fcffa6ff02bed76973021b8a69c6c250821
+ms.sourcegitcommit: 5ed504a9ddfbd69d4f2d256ec431e634eb38813e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/19/2020
-ms.locfileid: "88607629"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89321632"
 ---
 [Справочная документация](https://docs.microsoft.com/dotnet/api/overview/azure/cognitiveservices/management?view=azure-dotnet) | [Исходный код библиотеки](https://github.com/Azure/azure-sdk-for-net/tree/master/sdk/cognitiveservices/Microsoft.Azure.Management.CognitiveServices) | [Пакет (NuGet)](https://www.nuget.org/packages/Microsoft.Azure.Management.CognitiveServices/) | [Примеры](https://github.com/Azure/azure-sdk-for-net/tree/master/sdk/cognitiveservices/Microsoft.Azure.Management.CognitiveServices/tests)
 
@@ -22,15 +22,9 @@ ms.locfileid: "88607629"
 * Действующая подписка Azure ([создайте бесплатную учетную запись](https://azure.microsoft.com/free/)).
 * Текущая версия [.NET Core](https://dotnet.microsoft.com/download/dotnet-core).
 
-## <a name="create-an-azure-service-principal"></a>Создание субъекта-службы Azure
+[!INCLUDE [Create a service principal](./create-service-principal.md)]
 
-Чтобы приложение взаимодействовало с учетной записью Azure, необходима субъект-служба Azure для управления разрешениями. Выполните инструкции по [созданию субъекта-службы Azure](https://docs.microsoft.com/powershell/azure/create-azure-service-principal-azureps?view=azps-4.4.0&viewFallbackFrom=azps-3.3.0).
-
-При создании субъекта-службы вы увидите, что у него есть значение секрета, идентификатор и идентификатор приложения. Сохраните идентификатор приложения и секрет во временное расположение для последующих шагов.
-
-## <a name="create-a-resource-group"></a>Создание группы ресурсов
-
-Перед созданием ресурса Cognitive Services в вашей учетной записи должна быть группа ресурсов Azure, в которой будет содержаться ресурс. Если у вас еще нет группы ресурсов, создайте ее на [портале Azure](https://ms.portal.azure.com/), прежде чем продолжить работу.
+[!INCLUDE [Create a resource group](./create-resource-group.md)]
 
 ## <a name="create-a-new-c-application"></a>Создание нового приложения C#
 
@@ -100,71 +94,7 @@ dotnet add package Microsoft.Azure.Management.ResourceManager.Fluent
 
 [!INCLUDE [cognitive-services-subscription-types](../../../../includes/cognitive-services-subscription-types.md)]
 
-Список номеров SKU и сведения о ценах см. ниже. 
-
-#### <a name="multi-service"></a>Несколько служб
-
-| Служба                    | Вид                      |
-|----------------------------|---------------------------|
-| Несколько служб. См. дополнительные сведения на [странице с расценками](https://azure.microsoft.com/pricing/details/cognitive-services/).            | `CognitiveServices`     |
-
-
-#### <a name="vision"></a>Компьютерное зрение
-
-| Служба                    | Вид                      |
-|----------------------------|---------------------------|
-| Компьютерное зрение            | `ComputerVision`          |
-| Ресурс прогнозирования службы "Пользовательское визуальное распознавание" | `CustomVision.Prediction` |
-| Ресурс обучения службы "Пользовательское визуальное распознавание"   | `CustomVision.Training`   |
-| Распознавание лиц                       | `Face`                    |
-| Распознаватель документов            | `FormRecognizer`          |
-| Распознаватель рукописного текста             | `InkRecognizer`           |
-
-#### <a name="search"></a>Поиск
-
-| Служба            | Вид                  |
-|--------------------|-----------------------|
-| Автозаполнение Bing   | `Bing.Autosuggest.v7` |
-| Пользовательский поиск Bing | `Bing.CustomSearch`   |
-| API Поиска сущностей Bing | `Bing.EntitySearch`   |
-| Поиск Bing        | `Bing.Search.v7`      |
-| API Проверки орфографии Bing   | `Bing.SpellCheck.v7`  |
-
-#### <a name="speech"></a>Речь
-
-| Служба            | Вид                 |
-|--------------------|----------------------|
-| Службы "Речь"    | `SpeechServices`     |
-| Распознавание речи | `SpeakerRecognition` |
-
-#### <a name="language"></a>Язык
-
-| Служба            | Вид                |
-|--------------------|---------------------|
-| Анализ форм | `FormUnderstanding` |
-| LUIS               | `LUIS`              |
-| QnA Maker          | `QnAMaker`          |
-| Анализ текста     | `TextAnalytics`     |
-| Преобразование текста   | `TextTranslation`   |
-
-#### <a name="decision"></a>Решение
-
-| Служба           | Вид               |
-|-------------------|--------------------|
-| Детектор аномалий  | `AnomalyDetector`  |
-| Content Moderator | `ContentModerator` |
-| Персонализатор      | `Personalizer`     |
-
-
-#### <a name="pricing-tiers-and-billing"></a>Ценовые категории и выставление счетов
-
-Ценовые категории (и сумма в выставленных счетах) основаны на количестве отправленных вами транзакций с использованием данных аутентификации. Каждая ценовая категория определяет:
-* максимальное количество разрешенных транзакций, обрабатываемых в секунду (TPS);
-* функции службы, включенные в ценовой категории;
-* стоимость предопределенного количества транзакций. При превышении этого количества будет взиматься дополнительная плата, как указано в [сведениях о ценах](https://azure.microsoft.com/pricing/details/cognitive-services/custom-vision-service/) для вашей службы.
-
-> [!NOTE]
-> Многие из служб Cognitive Services имеют бесплатный уровень, который можно использовать для пробного использования службы. Чтобы использовать бесплатный уровень, выберите `F0` в качестве номера SKU для вашего ресурса.
+[!INCLUDE [SKUs and pricing](./sku-pricing.md)]
 
 ## <a name="create-a-cognitive-services-resource"></a>Создание ресурса Cognitive Services
 

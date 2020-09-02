@@ -9,16 +9,17 @@ ms.service: cognitive-search
 ms.devlang: dotnet
 ms.topic: quickstart
 ms.date: 08/05/2020
-ms.openlocfilehash: a2a860a2ff96c74f9d19fe7abfd845bbae8023cd
-ms.sourcegitcommit: 4f1c7df04a03856a756856a75e033d90757bb635
+ms.custom: devx-track-csharp
+ms.openlocfilehash: 7901254463ef052f3c13b2c9fc49c31bd8ebc454
+ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87922274"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89020870"
 ---
 # <a name="quickstart-create-a-search-index-using-the-azuresearchdocuments-client-library"></a>Краткое руководство. Создание индекса поиска с помощью клиентской библиотеки Azure.Search.Documents
 
-С помощью новой [клиентской библиотеки Azure.Search.Documents (версия 11)](https://docs.microsoft.com/dotnet/api/overview/azure/search.documents-readme?view=azure-dotnet) вы можете создать консольное приложение .NET Core на языке C#, которое создает, загружает и запрашивает индекс поиска.
+С помощью новой [клиентской библиотеки Azure.Search.Documents (версия 11)](/dotnet/api/overview/azure/search.documents-readme?view=azure-dotnet) вы можете создать консольное приложение .NET Core на языке C#, которое создает, загружает и запрашивает индекс поиска.
 
 [Скачайте исходный код](https://github.com/Azure-Samples/azure-search-dotnet-samples/tree/master/quickstart-v11), чтобы начать работу с готовым проектом, или выполните описанные в этой статье действия, чтобы создать собственный проект.
 
@@ -77,7 +78,7 @@ ms.locfileid: "87922274"
    using Azure.Search.Documents.Models;
    ```
 
-1. Создайте два клиента: [SearchIndexClient](https://docs.microsoft.com/dotnet/api/azure.search.documents.indexes.searchindexclient) создает новый индекс, а [SearchClient](https://docs.microsoft.com/dotnet/api/azure.search.documents.searchclient) работает с существующим. Обоим клиентам нужны конечная точка службы и ключ API администрирования, чтобы пройти проверку подлинности и получить права на создание и удаление.
+1. Создайте два клиента: [SearchIndexClient](/dotnet/api/azure.search.documents.indexes.searchindexclient) создает новый индекс, а [SearchClient](/dotnet/api/azure.search.documents.searchclient) работает с существующим. Обоим клиентам нужны конечная точка службы и ключ API администрирования, чтобы пройти проверку подлинности и получить права на создание и удаление.
 
    ```csharp
    static void Main(string[] args)
@@ -99,7 +100,7 @@ ms.locfileid: "87922274"
 
 В этом кратком руководстве показано, как создать индекс Hotels, в который вы позже загрузите данные об отелях и к которому будете выполнять запросы. На этом шаге следует определить поля в этом индексе. Каждое определение поля содержит имя, тип данных и атрибуты, которые определяют способ использования этого поля.
 
-В нашем примере для простоты и удобочитаемости используются синхронные методы библиотеки Azure.Search.Documents. Но для рабочих сценариев лучше использовать асинхронные методы, чтобы приложение было масштабируемым и отзывчивым. Например, следует использовать [CreateIndexAsync](https://docs.microsoft.com/dotnet/api/azure.search.documents.indexes.searchindexclient.createindexasync) вместо [CreateIndex](https://docs.microsoft.com/dotnet/api/azure.search.documents.indexes.searchindexclient.createindex).
+В нашем примере для простоты и удобочитаемости используются синхронные методы библиотеки Azure.Search.Documents. Но для рабочих сценариев лучше использовать асинхронные методы, чтобы приложение было масштабируемым и отзывчивым. Например, следует использовать [CreateIndexAsync](/dotnet/api/azure.search.documents.indexes.searchindexclient.createindexasync) вместо [CreateIndex](/dotnet/api/azure.search.documents.indexes.searchindexclient.createindex).
 
 1. Добавьте в проект два пустых определения классов: **Hotel.cs**
 
@@ -131,7 +132,7 @@ ms.locfileid: "87922274"
     }
     ```
 
-1. В **Program.cs** укажите поля и атрибуты. Для создания индекса используются [SearchIndex](https://docs.microsoft.com/dotnet/api/azure.search.documents.indexes.models.searchindex) и [CreateIndex](https://docs.microsoft.com/dotnet/api/azure.search.documents.indexes.searchindexclient.createindex).
+1. В **Program.cs** укажите поля и атрибуты. Для создания индекса используются [SearchIndex](/dotnet/api/azure.search.documents.indexes.models.searchindex) и [CreateIndex](/dotnet/api/azure.search.documents.indexes.searchindexclient.createindex).
 
    ```csharp
     // Define an index schema using SearchIndex
@@ -154,9 +155,9 @@ ms.locfileid: "87922274"
 
 Атрибуты поля определяют его использование в приложении. Например, атрибут `IsFilterable` должен быть присвоен каждому полю, которое поддерживает выражение фильтра.
 
-В отличие от предыдущих версий пакета SDK для .NET, в которых требовался атрибут [IsSearchable](https://docs.microsoft.com/dotnet/api/microsoft.azure.search.models.field.issearchable) для строковых полей с поддержкой поиска, здесь вы можете использовать [SearchableField](https://docs.microsoft.com/dotnet/api/azure.search.documents.indexes.models.searchablefield) и [SimpleField](https://docs.microsoft.com/dotnet/api/azure.search.documents.indexes.models.simplefield), чтобы упростить определения полей.
+В отличие от предыдущих версий пакета SDK для .NET, в которых требовался атрибут [IsSearchable](/dotnet/api/microsoft.azure.search.models.field.issearchable) для строковых полей с поддержкой поиска, здесь вы можете использовать [SearchableField](/dotnet/api/azure.search.documents.indexes.models.searchablefield) и [SimpleField](/dotnet/api/azure.search.documents.indexes.models.simplefield), чтобы упростить определения полей.
 
-Но для самого определения, как и в предыдущих версиях, требуются другие атрибуты. Например, [IsFilterable](https://docs.microsoft.com/dotnet/api/azure.search.documents.indexes.models.searchfield.isfilterable), [IsSortable](https://docs.microsoft.com/dotnet/api/azure.search.documents.indexes.models.searchfield.issortable) и [IsFacetable](https://docs.microsoft.com/dotnet/api/azure.search.documents.indexes.models.searchfield.isfacetable) должны присваиваться явным образом, как в примере выше. 
+Но для самого определения, как и в предыдущих версиях, требуются другие атрибуты. Например, [IsFilterable](/dotnet/api/azure.search.documents.indexes.models.searchfield.isfilterable), [IsSortable](/dotnet/api/azure.search.documents.indexes.models.searchfield.issortable) и [IsFacetable](/dotnet/api/azure.search.documents.indexes.models.searchfield.isfacetable) должны присваиваться явным образом, как в примере выше. 
 
 <a name="load-documents"></a>
 
@@ -166,7 +167,7 @@ ms.locfileid: "87922274"
 
 Документы в службе "Когнитивный поиск Azure" представляют собой структуры данных, которые служат входами для индексирования и (или) выходами для запросов. Полученные из внешнего источника данных входные документы могут содержать строки базы данных, большие двоичные объекты из хранилища BLOB-объектов или сохраненные на диске документы JSON. В нашем примере мы выбрали самый простой путь, внедрив прямо в код документы JSON с данными о пяти отелях. 
 
-При отправке документов необходимо использовать объект [IndexDocumentsBatch](https://docs.microsoft.com/dotnet/api/azure.search.documents.models.indexdocumentsbatch-1). IndexDocumentsBatch включает разные свойства [Actions](https://docs.microsoft.com/dotnet/api/azure.search.documents.models.indexdocumentsbatch-1.actions), каждое из которых содержит документ и свойство для определения действия, выполняемого Когнитивным поиском Azure ([отправка, объединение, удаление и mergeOrUpload](search-what-is-data-import.md#indexing-actions)).
+При отправке документов необходимо использовать объект [IndexDocumentsBatch](/dotnet/api/azure.search.documents.models.indexdocumentsbatch-1). IndexDocumentsBatch включает разные свойства [Actions](/dotnet/api/azure.search.documents.models.indexdocumentsbatch-1.actions), каждое из которых содержит документ и свойство для определения действия, выполняемого Когнитивным поиском Azure ([отправка, объединение, удаление и mergeOrUpload](search-what-is-data-import.md#indexing-actions)).
 
 1. В файле **Program.cs** создайте массив документов и действий с индексом, а затем передайте этот массив в `ndexDocumentsBatch`. Указанные ниже документы соответствуют формату индекса hotels-quickstart-v11 index, который определен в классе hotel.
 
@@ -185,7 +186,7 @@ ms.locfileid: "87922274"
     qryclient.IndexDocuments(batch, idxoptions);
     ```
 
-    Создав экземпляр объекта [IndexDocumentsBatch](https://docs.microsoft.com/dotnet/api/azure.search.documents.models.indexdocumentsbatch-1), вы сможете отправить его в индекс, вызвав [IndexDocuments](https://docs.microsoft.com/dotnet/api/azure.search.documents.searchclient.indexdocuments) из объекта [SearchClient](https://docs.microsoft.com/dotnet/api/azure.search.documents.searchclient).
+    Создав экземпляр объекта [IndexDocumentsBatch](/dotnet/api/azure.search.documents.models.indexdocumentsbatch-1), вы сможете отправить его в индекс, вызвав [IndexDocuments](/dotnet/api/azure.search.documents.searchclient.indexdocuments) из объекта [SearchClient](/dotnet/api/azure.search.documents.searchclient).
 
 1. Так как это консольное приложение выполняет все команды последовательно, включите 2-секундные паузы между операциями индексирования и запросов.
 
@@ -201,9 +202,9 @@ ms.locfileid: "87922274"
 
 Результаты запросов можно получить сразу по завершении индексирования первого документа, но для полноценного тестирования индекса придется подождать, пока закончится индексирование всех документов.
 
-В этом разделе мы добавим две новые функции: логику запроса и результаты. Для запросов примените метод [Search](https://docs.microsoft.com/dotnet/api/azure.search.documents.searchclient.search). Этот метод принимает текст для поиска (строку запроса) и другие [параметры](https://docs.microsoft.com/dotnet/api/azure.search.documents.searchoptions).
+В этом разделе мы добавим две новые функции: логику запроса и результаты. Для запросов примените метод [Search](/dotnet/api/azure.search.documents.searchclient.search). Этот метод принимает текст для поиска (строку запроса) и другие [параметры](/dotnet/api/azure.search.documents.searchoptions).
 
-Класс [SearchResults](https://docs.microsoft.com/dotnet/api/azure.search.documents.models.searchresults-1) представляет результаты запроса.
+Класс [SearchResults](/dotnet/api/azure.search.documents.models.searchresults-1) представляет результаты запроса.
 
 1. В файле **Program.cs** создайте метод WriteDocuments, который выводит в консоль результаты поиска.
 
@@ -267,17 +268,17 @@ ms.locfileid: "87922274"
 
 + Полнотекстовый поисковый запрос ищет один или несколько терминов в полях индекса с поддержкой поиска. Первый из запросов здесь является полнотекстовым. Полнотекстовый поиск возвращает оценки релевантности для ранжирования результатов.
 
-+ Фильтром называется логическое выражение, которое оценивается для всех полей в индексе с атрибутом [IsFilterable](https://docs.microsoft.com/dotnet/api/azure.search.documents.indexes.models.searchfield.isfilterable). Фильтрующие запросы могут включать или исключать указанные значения. Поэтому для фильтрующего запроса не существует оценки релевантности. Последние два запроса здесь демонстрируют использование фильтра.
++ Фильтром называется логическое выражение, которое оценивается для всех полей в индексе с атрибутом [IsFilterable](/dotnet/api/azure.search.documents.indexes.models.searchfield.isfilterable). Фильтрующие запросы могут включать или исключать указанные значения. Поэтому для фильтрующего запроса не существует оценки релевантности. Последние два запроса здесь демонстрируют использование фильтра.
 
 Полнотекстовый поиск и фильтры можно использовать вместе или по отдельности.
 
-Поиск и фильтрация выполняются с помощью метода [SearchClient.Search](https://docs.microsoft.com/dotnet/api/azure.search.documents.searchclient.search). Строку поиска можно передать в параметре `searchText`, а выражение фильтра — свойстве [Filter](https://docs.microsoft.com/dotnet/api/azure.search.documents.searchoptions.filter) класса [SearchOptions](https://docs.microsoft.com/dotnet/api/azure.search.documents.searchoptions). Чтобы выполнить фильтрацию без поиска, передайте `"*"` в качестве значения параметра `searchText` в метод [Search](https://docs.microsoft.com/dotnet/api/azure.search.documents.searchclient.search). Чтобы выполнить поиск без фильтрации, не задавайте значение свойству `Filter` или вообще не передавайте экземпляр `SearchOptions`.
+Поиск и фильтрация выполняются с помощью метода [SearchClient.Search](/dotnet/api/azure.search.documents.searchclient.search). Строку поиска можно передать в параметре `searchText`, а выражение фильтра — свойстве [Filter](/dotnet/api/azure.search.documents.searchoptions.filter) класса [SearchOptions](/dotnet/api/azure.search.documents.searchoptions). Чтобы выполнить фильтрацию без поиска, передайте `"*"` в качестве значения параметра `searchText` в метод [Search](/dotnet/api/azure.search.documents.searchclient.search). Чтобы выполнить поиск без фильтрации, не задавайте значение свойству `Filter` или вообще не передавайте экземпляр `SearchOptions`.
 
 ## <a name="run-the-program"></a>Запуск программы
 
 Нажмите клавишу F5, чтобы перестроить приложение и запустить полнофункциональную программу. 
 
-Выходные данные содержат сообщения из [Console.WriteLIne](https://docs.microsoft.com/dotnet/api/system.console.writeline), а также сведения о запросе и результаты.
+Выходные данные содержат сообщения из [Console.WriteLIne](/dotnet/api/system.console.writeline), а также сведения о запросе и результаты.
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 
@@ -297,4 +298,4 @@ ms.locfileid: "87922274"
 Хотите оптимизировать и сократить ваши расходы на облако?
 
 > [!div class="nextstepaction"]
-> [Начните анализировать затраты с помощью службы "Управление затратами"](https://docs.microsoft.com/azure/cost-management-billing/costs/quick-acm-cost-analysis?WT.mc_id=costmanagementcontent_docsacmhorizontal_-inproduct-learn)
+> [Начните анализировать затраты с помощью службы "Управление затратами"](../cost-management-billing/costs/quick-acm-cost-analysis.md?WT.mc_id=costmanagementcontent_docsacmhorizontal_-inproduct-learn)

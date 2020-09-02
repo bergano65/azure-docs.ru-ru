@@ -1,14 +1,14 @@
 ---
 title: Краткое руководство. Создание схемы с помощью PowerShell
 description: В этом кратком руководстве вы создадите, определите и развернете артефакты с помощью PowerShell и Azure Blueprints.
-ms.date: 05/06/2020
+ms.date: 08/27/2020
 ms.topic: quickstart
-ms.openlocfilehash: b881731dfdcaf9e9e016d1437e51dbd5c1a7488a
-ms.sourcegitcommit: f684589322633f1a0fafb627a03498b148b0d521
+ms.openlocfilehash: 339cd4628cda5f469a783db02c10f86259c93941
+ms.sourcegitcommit: 8a7b82de18d8cba5c2cec078bc921da783a4710e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/06/2020
-ms.locfileid: "85970507"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89051514"
 ---
 # <a name="quickstart-define-and-assign-an-azure-blueprint-with-powershell"></a>Краткое руководство. Определение и назначение схемы Azure с помощью PowerShell
 

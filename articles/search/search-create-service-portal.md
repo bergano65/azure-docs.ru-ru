@@ -8,12 +8,12 @@ ms.author: terrychr
 ms.service: cognitive-search
 ms.topic: quickstart
 ms.date: 07/14/2020
-ms.openlocfilehash: b9507e500282afbdfba5cedd5420974aa8b3ade8
-ms.sourcegitcommit: 1b2d1755b2bf85f97b27e8fbec2ffc2fcd345120
+ms.openlocfilehash: 6813db0b7416695fb9433a701114f2684dd0e122
+ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/04/2020
-ms.locfileid: "87554028"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88927125"
 ---
 # <a name="quickstart-create-an-azure-cognitive-search-service-in-the-portal"></a>Краткое руководство. Создание службы "Когнитивный поиск Azure" на портале
 
@@ -96,7 +96,7 @@ ms.locfileid: "87554028"
 
  Если вы используете обогащение с помощью ИИ, создайте службу поиска в том же регионе, что и Cognitive Services. *Совместное размещение Когнитивного поиска Azure и Cognitive Services в одном регионе является обязательным условием для обогащения ИИ*.
 
- Клиенты с требованиями к непрерывности бизнес-процессов и аварийному восстановлению (BCDR) должны создавать службы в [региональных парах](https://docs.microsoft.com/azure/best-practices-availability-paired-regions#azure-regional-pairs). Например, если вы работаете в Северной Америке, для каждой службы можно выбрать Восточную часть США и Западную часть США или Центрально-северную часть США и Центрально-южную часть США.
+ Клиенты с требованиями к непрерывности бизнес-процессов и аварийному восстановлению (BCDR) должны создавать службы в [региональных парах](../best-practices-availability-paired-regions.md#azure-regional-pairs). Например, если вы работаете в Северной Америке, для каждой службы можно выбрать Восточную часть США и Западную часть США или Центрально-северную часть США и Центрально-южную часть США.
 
 ### <a name="recommendations"></a>Рекомендации
 
@@ -160,7 +160,7 @@ ms.locfileid: "87554028"
 
 Несмотря на то, что большинство пользователей использует только одну службу, избыточность служб может потребоваться, если в эксплуатационных целях необходимо обеспечить следующее:
 
-+ [Непрерывность бизнес-процессов и аварийное восстановление (BCDR)](https://docs.microsoft.com/azure/best-practices-availability-paired-regions). Когнитивный поиск Azure не обеспечивает немедленную отработку отказа в случае сбоя.
++ [Непрерывность бизнес-процессов и аварийное восстановление (BCDR)](../best-practices-availability-paired-regions.md). Когнитивный поиск Azure не обеспечивает немедленную отработку отказа в случае сбоя.
 
 + [Многоклиентские архитектуры](search-modeling-multitenant-saas-applications.md) иногда вызывают две или более служб.
 

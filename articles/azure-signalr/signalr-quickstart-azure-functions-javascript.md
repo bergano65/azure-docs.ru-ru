@@ -8,12 +8,12 @@ ms.topic: quickstart
 ms.date: 12/14/2019
 ms.author: zhshang
 ms.custom: devx-track-javascript
-ms.openlocfilehash: 3f1051b81666a036203eb1c810875d837ef9816f
-ms.sourcegitcommit: 5b8fb60a5ded05c5b7281094d18cf8ae15cb1d55
+ms.openlocfilehash: 74f0a1c163380b88986b6866e346a5f044772a0e
+ms.sourcegitcommit: 8a7b82de18d8cba5c2cec078bc921da783a4710e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87386883"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89050562"
 ---
 # <a name="quickstart-use-javascript-to-create-a-chat-room-with-azure-functions-and-signalr-service"></a>Краткое руководство. Использование JavaScript для создания чат-комнаты с помощью служб "Функции Azure" и SignalR
 
@@ -32,13 +32,21 @@ ms.locfileid: "87386883"
 > [!NOTE]
 > Это краткое руководство предназначено для macOS, Windows или Linux.
 
+[Возникли проблемы? Сообщите нам!](https://aka.ms/asrs/qsjs)
+
 ## <a name="log-in-to-azure"></a>Вход в Azure
 
 Войдите на портал Azure по адресу <https://portal.azure.com/> с помощью своей учетной записи Azure.
 
+[Возникли проблемы? Сообщите нам!](https://aka.ms/asrs/qsjs)
+
 [!INCLUDE [Create instance](includes/signalr-quickstart-create-instance.md)]
 
+[Возникли проблемы? Сообщите нам!](https://aka.ms/asrs/qsjs)
+
 [!INCLUDE [Clone application](includes/signalr-quickstart-clone-application.md)]
+
+[Возникли проблемы? Сообщите нам!](https://aka.ms/asrs/qsjs)
 
 ## <a name="configure-and-run-the-azure-function-app"></a>Настройка и запуск приложения-функции Azure
 
@@ -71,9 +79,15 @@ ms.locfileid: "87386883"
 
     ![Создание службы SignalR](media/signalr-quickstart-azure-functions-javascript/signalr-quickstart-run-application.png)
 
+[Возникли проблемы? Сообщите нам!](https://aka.ms/asrs/qsjs)
+
 [!INCLUDE [Run web application](includes/signalr-quickstart-run-web-application.md)]
 
+[Возникли проблемы? Сообщите нам!](https://aka.ms/asrs/qsjs)
+
 [!INCLUDE [Cleanup](includes/signalr-quickstart-cleanup.md)]
+
+[Возникли проблемы? Сообщите нам!](https://aka.ms/asrs/qsjs)
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
@@ -81,3 +95,5 @@ ms.locfileid: "87386883"
 
 > [!div class="nextstepaction"]
 > [Развертывание Функций Azure с помощью VS Code](/azure/developer/javascript/tutorial-vscode-serverless-node-01)
+
+[Возникли проблемы? Сообщите нам!](https://aka.ms/asrs/qsjs)

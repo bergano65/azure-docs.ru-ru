@@ -5,14 +5,15 @@ author: sffamily
 ms.service: signalr
 ms.devlang: dotnet
 ms.topic: quickstart
+ms.custom: devx-track-csharp
 ms.date: 03/04/2019
 ms.author: zhshang
-ms.openlocfilehash: 75d9977546c2a085765310a5654897f739a271ae
-ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
+ms.openlocfilehash: 54a4c9374c064073620f2679e7c7511e30c45de6
+ms.sourcegitcommit: 8a7b82de18d8cba5c2cec078bc921da783a4710e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "65595395"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89050647"
 ---
 # <a name="quickstart-create-a-chat-room-with-azure-functions-and-signalr-service-using-c"></a>Краткое руководство. Создание комнаты чата с помощью служб "Функции Azure" и SignalR с помощью C\#
 
@@ -26,13 +27,21 @@ ms.locfileid: "65595395"
 
 [!INCLUDE [quickstarts-free-trial-note](../../includes/quickstarts-free-trial-note.md)]
 
+[Возникли проблемы? Сообщите нам!](https://aka.ms/asrs/qscsharp)
+
 ## <a name="log-in-to-azure"></a>Вход в Azure
 
 Войдите на портал Azure по адресу <https://portal.azure.com/> с помощью своей учетной записи Azure.
 
+[Возникли проблемы? Сообщите нам!](https://aka.ms/asrs/qscsharp)
+
 [!INCLUDE [Create instance](includes/signalr-quickstart-create-instance.md)]
 
+[Возникли проблемы? Сообщите нам!](https://aka.ms/asrs/qscsharp)
+
 [!INCLUDE [Clone application](includes/signalr-quickstart-clone-application.md)]
+
+[Возникли проблемы? Сообщите нам!](https://aka.ms/asrs/qscsharp)
 
 ## <a name="configure-and-run-the-azure-function-app"></a>Настройка и запуск приложения-функции Azure
 
@@ -66,10 +75,15 @@ ms.locfileid: "65595395"
         ```bash
         func start
         ```
+[Возникли проблемы? Сообщите нам!](https://aka.ms/asrs/qscsharp)
 
 [!INCLUDE [Run web application](includes/signalr-quickstart-run-web-application.md)]
 
+[Возникли проблемы? Сообщите нам!](https://aka.ms/asrs/qscsharp)
+
 [!INCLUDE [Cleanup](includes/signalr-quickstart-cleanup.md)]
+
+[Возникли проблемы? Сообщите нам!](https://aka.ms/asrs/qscsharp)
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
@@ -77,3 +91,5 @@ ms.locfileid: "65595395"
 
 > [!div class="nextstepaction"]
 > [Разработка Функций Azure с помощью Visual Studio](../azure-functions/functions-develop-vs.md)
+
+[Возникли проблемы? Сообщите нам!](https://aka.ms/asrs/qscsharp)

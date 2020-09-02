@@ -16,17 +16,17 @@ ms.date: 11/13/2018
 ms.author: markvi
 ms.reviewer: dhanyahk
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 897762e523a2d20445c3a25e612cf138e021f633
-ms.sourcegitcommit: 493b27fbfd7917c3823a1e4c313d07331d1b732f
+ms.openlocfilehash: 94f4d17596936dd9d0ebbdae3c351cac9ed2a570
+ms.sourcegitcommit: 58d3b3314df4ba3cabd4d4a6016b22fa5264f05a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/21/2020
-ms.locfileid: "83739725"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89299870"
 ---
 # <a name="quickstart-configure-named-locations-in-azure-active-directory"></a>Краткое руководство. Настройка именованных расположений в Azure Active Directory
 
 С помощью именованных расположений можно пометить доверенные диапазоны IP-адресов в вашей организации. Именованные расположения в Azure AD используются для перечисленных ниже задач.
-- Определение ложноположительных событий при [обнаружении рисков](concept-risk-events.md). Вход из надежного расположения снижает риски входа пользователя.   
+- Определение ложноположительных событий при [обнаружении рисков](../identity-protection/overview-identity-protection.md). Вход из надежного расположения снижает риски входа пользователя.   
 - Настройка [условного доступа на основе расположения](../conditional-access/location-condition.md).
 
 Из этого краткого руководства вы узнаете, как настроить именованные расположения в своей среде.
@@ -64,4 +64,4 @@ ms.locfileid: "83739725"
 Дополнительные сведения см. в разделе:
 
 - [Расположение как условие в политике условного доступа](../conditional-access/concept-conditional-access-conditions.md#locations).
-- [Отчет о событиях входа, представляющих риск, на портале Azure Active Directory](concept-risky-sign-ins.md)  
+- [Отчет о событиях входа, представляющих риск, на портале Azure Active Directory](../identity-protection/overview-identity-protection.md)

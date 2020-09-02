@@ -9,12 +9,12 @@ ms.subservice: ''
 ms.date: 04/15/2020
 ms.author: jovanpop
 ms.reviewer: jrasnick
-ms.openlocfilehash: e1223a9cd5bd3a092bc35c9ba03f7352c6ac7eed
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: ce7238aaa10b1e73f7fa3c061045f47cbc472e23
+ms.sourcegitcommit: 3246e278d094f0ae435c2393ebf278914ec7b97b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87059413"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89378701"
 ---
 # <a name="transact-sql-features-supported-in-azure-synapse-sql"></a>Функции T-SQL, которые поддерживаются в Azure Synapse SQL
 
@@ -54,7 +54,7 @@ Azure Synapse SQL — это служба аналитики больших д�
 | **Инструкция INSERT** | Да | Нет |
 | **Инструкция UPDATE** | Да | Нет |
 | **Инструкция DELETE** | Да | Нет |
-| **Инструкция MERGE** | Да | Нет |
+| **Инструкция MERGE** | Нет | Нет |
 | **[Транзакции](develop-transactions.md)** | Да | Нет |
 | **[Метки](develop-label.md)** | Да | Нет |
 | **Загрузка данных** | Да. Лучше всего использовать инструкцию [COPY](/sql/t-sql/statements/copy-into-transact-sql?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest), но система поддерживает для загрузки данных как массовую загрузку (BCP), так и [CETAS](/sql/t-sql/statements/create-external-table-as-select-transact-sql?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest). | Нет |

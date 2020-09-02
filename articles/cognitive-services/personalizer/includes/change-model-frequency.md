@@ -7,15 +7,15 @@ ms.service: cognitive-services
 ms.subservice: personalizer
 ms.topic: include
 ms.custom: include file
-ms.date: 01/15/2020
-ms.openlocfilehash: d03d904de68720874ea175c95244ba80c586df82
-ms.sourcegitcommit: 0e8a4671aa3f5a9a54231fea48bcfb432a1e528c
+ms.date: 08/25/2020
+ms.openlocfilehash: 4eacc1c4e863ad1a278a4974bb0f6c101aafe7e0
+ms.sourcegitcommit: 420c30c760caf5742ba2e71f18cfd7649d1ead8a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/24/2020
-ms.locfileid: "87133902"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89055408"
 ---
-## <a name="change-the-model-update-frequency"></a>Изменение частоты обновления модели
+### <a name="change-the-model-update-frequency"></a>Изменение частоты обновления модели
 
 На портале Azure в ресурсе "Персонализатор" на странице **Настройка** установите значение для параметра **Частота обновления модели** на 10 секунд. С такой высокой частотой служба будет обучаться быстро, и вы увидите, как главное действие меняется с каждой итерацией.
 

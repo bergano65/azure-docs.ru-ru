@@ -5,14 +5,15 @@ author: sffamily
 ms.service: signalr
 ms.devlang: dotnet
 ms.topic: quickstart
+ms.custom: devx-track-csharp
 ms.date: 11/04/2019
 ms.author: zhshang
-ms.openlocfilehash: 4665666fe56c208b2437a7051bbf9201383365f8
-ms.sourcegitcommit: 845a55e6c391c79d2c1585ac1625ea7dc953ea89
+ms.openlocfilehash: 6c330b201c74a2ce56283e30be90cd117b1022f6
+ms.sourcegitcommit: 8a7b82de18d8cba5c2cec078bc921da783a4710e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/05/2020
-ms.locfileid: "85962141"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89050533"
 ---
 # <a name="quickstart-create-a-chat-room-by-using-signalr-service"></a>Краткое руководство. Создание чата с помощью Службы SignalR
 
@@ -33,9 +34,13 @@ Azure SignalR — это служба Azure, которая помогает р�
 * Установите [пакет SDK для .NET Core](https://www.microsoft.com/net/download/windows).
 * Скачанный или клонированный репозиторий [примеров AzureSignalR](https://github.com/aspnet/AzureSignalR-samples), доступный в репозитории GitHub. 
 
+[Возникли проблемы? Сообщите нам!](https://aka.ms/asrs/qsnetcore)
+
 ## <a name="create-an-azure-signalr-resource"></a>Создание ресурса Azure SignalR
 
 [!INCLUDE [azure-signalr-create](../../includes/signalr-create.md)]
+
+[Возникли проблемы? Сообщите нам!](https://aka.ms/asrs/qsnetcore)
 
 ## <a name="create-an-aspnet-core-web-app"></a>Создание веб-приложения ASP.NET Core
 
@@ -49,6 +54,7 @@ Azure SignalR — это служба Azure, которая помогает р�
     dotnet new mvc
     ```
 
+[Возникли проблемы? Сообщите нам!](https://aka.ms/asrs/qsnetcore)
 
 ## <a name="add-secret-manager-to-the-project"></a>Добавление менеджера секретных ключей в проект
 
@@ -71,6 +77,8 @@ Azure SignalR — это служба Azure, которая помогает р�
     </ItemGroup>
     </Project>    
     ```
+    
+[Возникли проблемы? Сообщите нам!](https://aka.ms/asrs/qsnetcore)
 
 ## <a name="add-azure-signalr-to-the-web-app"></a>Добавление веб-приложения Azure SignalR
 
@@ -225,6 +233,7 @@ connection.start()
     }
     ```
 
+[Возникли проблемы? Сообщите нам!](https://aka.ms/asrs/qsnetcore)
 
 ## <a name="build-and-run-the-app-locally"></a>Создание и запуск приложения локально
 
@@ -254,7 +263,7 @@ connection.start()
 
     ![Пример групповой беседы Azure SignalR](media/signalr-quickstart-dotnet-core/signalr-quickstart-complete-local.png)
 
-
+[Возникли проблемы? Сообщите нам!](https://aka.ms/asrs/qsnetcore)
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 
@@ -279,7 +288,7 @@ connection.start()
    
 Через некоторое время группа ресурсов и все ее ресурсы будут удалены.
 
-
+[Возникли проблемы? Сообщите нам!](https://aka.ms/asrs/qsnetcore)
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
@@ -288,4 +297,5 @@ connection.start()
 > [!div class="nextstepaction"]
 > [Tutorial: Azure SignalR Service authentication](./signalr-concept-authenticate-oauth.md) (Руководство по аутентификации службы Azure SignalR)
 
+[Возникли проблемы? Сообщите нам!](https://aka.ms/asrs/qsnetcore)
 

@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 04/02/2019
 ms.author: memildin
-ms.openlocfilehash: 67017bdc98b997c728c4d5dcfab92e0804498060
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 7469d60095026c8a016fc1ecaa1a4f92361800f3
+ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87084013"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89019385"
 ---
 # <a name="quickstart-onboard-your-azure-stack-virtual-machines-to-security-center"></a>Краткое руководство. Подключение виртуальных машин Azure Stack к Центру безопасности
 После подключения подписки Azure можете включить Центр безопасности, чтобы защитить виртуальные машины, работающие в Azure Stack, добавив расширение виртуальной машины **Azure Monitor, Update and Configuration Management** из Azure Stack Marketplace.
@@ -72,7 +72,7 @@ ms.locfileid: "87084013"
 7. Указав все необходимые параметры конфигурации, нажмите кнопку **ОК**.
 8. После завершения установки для расширения будет отображаться состояние **Подготовка успешно завершена**. Виртуальная машина отобразится на портале Центра безопасности в течение часа.
 
-Дополнительные сведения об установке и настройке агента для Windows см. в разделе [Подключение компьютеров Windows](../azure-monitor/platform/agent-windows.md#install-the-agent-using-setup-wizard).
+Дополнительные сведения об установке и настройке агента для Windows см. в разделе [Подключение компьютеров Windows](../azure-monitor/platform/agent-windows.md#install-agent-using-setup-wizard).
 
 Сведения об устранении неполадок с агентами Linux см. в статье [Устранение неполадок с агентом Log Analytics для Linux](../azure-monitor/platform/agent-linux-troubleshoot.md).
 

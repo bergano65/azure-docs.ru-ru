@@ -10,19 +10,19 @@ ms.service: cognitive-search
 ms.topic: quickstart
 ms.date: 06/23/2020
 ms.custom: devx-track-javascript
-ms.openlocfilehash: 043d5224c9bfefb189e36c0f4b744c93b376ace0
-ms.sourcegitcommit: e71da24cc108efc2c194007f976f74dd596ab013
+ms.openlocfilehash: 2c97a770dc10168284bebbc038d8c48145c2a385
+ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87420861"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88917896"
 ---
 # <a name="quickstart-create-an-azure-cognitive-search-index-in-nodejs-using-rest-apis"></a>Краткое руководство. Создание индекса службы "Когнитивный поиск Azure" в Node.js с помощью REST API
 > [!div class="op_single_selector"]
 > * [JavaScript](search-get-started-nodejs.md)
 > * [C#](search-get-started-dotnet.md)
 > * [Портал](search-get-started-portal.md)
-> * [PowerShell](search-create-index-rest-api.md)
+> * [PowerShell](./search-get-started-powershell.md)
 > * [Python](search-get-started-python.md)
 > * [Postman](search-get-started-postman.md)
 
@@ -130,7 +130,7 @@ ms.locfileid: "87420861"
 
 ## <a name="1---create-index"></a>1\. Создание индекса 
 
-Создайте файл **hotels_quickstart_index.json**.  Этот файл определяет, как Когнитивный поиск Azure будет работать с документами, которые вы отправите на следующем шаге. Каждое поле идентифицируется по свойству `name`, и для каждого поля указано значение `type`. У каждого поля также есть ряд атрибутов индекса, которые определяют, может ли Когнитивный поиск Azure применять это поле для поиска, фильтрации, сортировки и определения аспектов. Большинство полей имеют простой тип данных, но некоторые (например, `AddressType`) являются сложными типами, что позволяет создавать сложные структуры данных в индексе.  Вы можете подробнее изучить [поддерживаемые типы данных](https://docs.microsoft.com/rest/api/searchservice/supported-data-types) и [атрибуты индекса](https://docs.microsoft.com/azure/search/search-what-is-an-index#index-attributes). 
+Создайте файл **hotels_quickstart_index.json**.  Этот файл определяет, как Когнитивный поиск Azure будет работать с документами, которые вы отправите на следующем шаге. Каждое поле идентифицируется по свойству `name`, и для каждого поля указано значение `type`. У каждого поля также есть ряд атрибутов индекса, которые определяют, может ли Когнитивный поиск Azure применять это поле для поиска, фильтрации, сортировки и определения аспектов. Большинство полей имеют простой тип данных, но некоторые (например, `AddressType`) являются сложными типами, что позволяет создавать сложные структуры данных в индексе.  Вы можете подробнее изучить [поддерживаемые типы данных](/rest/api/searchservice/supported-data-types) и [атрибуты индекса](./search-what-is-an-index.md#index-attributes). 
 
 Добавьте следующий код в **hotels_quickstart_index.json** или [скачайте готовый файл](https://github.com/Azure-Samples/azure-search-javascript-samples/blob/master/quickstart/hotels_quickstart_index.json). 
 
@@ -610,7 +610,7 @@ const run = async () => {
 
 ## <a name="3---search-an-index"></a>3\. Поиск в индексе
 
-Вернитесь к вкладке **Индексы** на странице **обзорных сведений** о службе Поиска Azure на портале Azure. Теперь индекс этот содержит четыре документа и потребляет некоторый объем хранилища (правильное состояние индекса может отображаться в пользовательском интерфейсе с задержкой в несколько минут). Щелкните имя индекса, которое будет передаваться в **обозреватель поиска**. Эта страница позволяет экспериментировать с запросами к данным. Попробуйте выполнить поиск по строке запроса `*&$count=true`, которая должна вернуть все документы и сообщить количество результатов. Попробуйте использовать строку запроса `historic&highlight=Description&$filter=Rating gt 4`, которая должна вернуть один документ со словом historic в тегах `<em></em>`. Узнайте, [как создать запрос в службе "Когнитивный поиск Azure"](https://docs.microsoft.com/azure/search/search-query-overview). 
+Вернитесь к вкладке **Индексы** на странице **обзорных сведений** о службе Поиска Azure на портале Azure. Теперь индекс этот содержит четыре документа и потребляет некоторый объем хранилища (правильное состояние индекса может отображаться в пользовательском интерфейсе с задержкой в несколько минут). Щелкните имя индекса, которое будет передаваться в **обозреватель поиска**. Эта страница позволяет экспериментировать с запросами к данным. Попробуйте выполнить поиск по строке запроса `*&$count=true`, которая должна вернуть все документы и сообщить количество результатов. Попробуйте использовать строку запроса `historic&highlight=Description&$filter=Rating gt 4`, которая должна вернуть один документ со словом historic в тегах `<em></em>`. Узнайте, [как создать запрос в службе "Когнитивный поиск Azure"](./search-query-overview.md). 
 
 Воспроизведите эти запросы в коде, открыв файл **index.js** и добавив следующий код в его начало:
 
