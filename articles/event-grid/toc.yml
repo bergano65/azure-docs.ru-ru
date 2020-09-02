@@ -94,8 +94,6 @@
       href: template-samples.md
     - name: Примеры кода
       href: /samples/browse/?term=Event+Grid
-    - name: Встроенные компоненты Политики Azure
-      href: ./policy-samples.md
 - name: Основные понятия
   items:
     - name: 'Термины, связанные с Сеткой событий'
@@ -296,6 +294,9 @@
           href: /azure/templates/microsoft.eventgrid/topics
     - name: Пакеты SDK
       href: sdk-overview.md
+    - name: Встроенные компоненты Политики Azure
+      displayName: 'samples, policies, definitions'
+      href: ./policy-reference.md
 - name: Ресурсы
   items:
     - name: Развитие навыков с помощью Microsoft Learn

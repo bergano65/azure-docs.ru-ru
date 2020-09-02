@@ -21,11 +21,6 @@
       href: tutorial-custom-providers-create.md
     - name: Расширение ресурсов
       href: tutorial-resource-onboarding.md
-- name: Примеры
-  items:
-    - name: Встроенные политики службы "Политика Azure"
-      displayName: 'samples, policies, definitions'
-      href: ./policy-samples.md
 - name: Основные понятия
   items:
     - name: Политика Azure для ассоциаций
@@ -50,6 +45,9 @@
       href: /rest/api/customproviders/
     - name: Azure CLI
       href: /cli/azure/ext/custom-providers/custom-providers/
+    - name: Встроенные политики службы "Политика Azure"
+      displayName: 'samples, policies, definitions'
+      href: ./policy-reference.md
 - name: Ресурсы
   items:
     - name: Стратегия развития Azure

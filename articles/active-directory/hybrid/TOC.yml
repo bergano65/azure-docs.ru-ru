@@ -31,7 +31,7 @@
         - name: Что такое Azure AD Connect с расширением Azure AD Connect Health
           href: whatis-azure-ad-connect.md
         - name: Выбор правильного метода аутентификации
-          href: 'https://docs.microsoft.com/azure/security/fundamentals/choose-ad-authn'
+          href: ./choose-ad-authn.md
         - name: Синхронизация удостоверений и устойчивость повторяющихся атрибутов
           href: how-to-connect-syncservice-duplicate-attribute-resiliency.md
     - name: Синхронизация хэша паролей
@@ -339,7 +339,7 @@
     - name: "Журнал версий агента сквозной аутентификации Azure\_AD"
       href: reference-connect-pta-version-history.md
     - name: Журнал версий соединителей
-      href: reference-connect-sync-connector-version-history.md
+      href: /microsoft-identity-manager/reference/microsoft-identity-manager-2016-connector-version-history
     - name: Учетные записи и разрешения
       href: reference-connect-accounts-permissions.md
     - name: 'Azure AD Connect: вопросы и ответы'

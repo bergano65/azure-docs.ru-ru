@@ -105,9 +105,6 @@
       href: samples/cli-samples.md
     - name: Azure PowerShell
       href: samples/powershell-samples.md
-    - name: Встроенные компоненты Политики Azure
-      displayName: 'samples, policies, definitions'
-      href: samples/policy-samples.md
 - name: Основные понятия
   items:
     - name: Что можно отслеживать?
@@ -147,7 +144,7 @@
           href: platform/personal-data-mgmt.md
         - name: Сбор и хранение данных приложений
           href: app/data-retention-privacy.md
-    - name: видны узлы
+    - name: Предупреждения
       items:
         - name: Обзор
           href: platform/alerts-overview.md
@@ -1298,6 +1295,9 @@
           href: /azure/templates/microsoft.insights/allversions
         - name: Журналы Azure Monitor
           href: /azure/templates/microsoft.operationalinsights/allversions
+    - name: Встроенные компоненты Политики Azure
+      displayName: 'samples, policies, definitions'
+      href: samples/policy-reference.md
     - name: Прекращение поддержки функций и API
       items:
         - name: Классический API автомасштабирования и метрик

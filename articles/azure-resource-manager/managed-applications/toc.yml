@@ -25,9 +25,6 @@
       href: powershell-samples.md
     - name: Решения для управляемых приложений
       href: sample-projects.md
-    - name: Встроенные компоненты Политики Azure
-      displayName: 'samples, policies, definitions'
-      href: ./policy-samples.md
 - name: Основные понятия
   items:
     - name: Просмотр артефакта определения
@@ -157,6 +154,9 @@
               href: microsoft-storage-multistorageaccountcombo.md
             - name: StorageAccountSelector
               href: microsoft-storage-storageaccountselector.md
+    - name: Встроенные компоненты Политики Azure
+      displayName: 'samples, policies, definitions'
+      href: ./policy-reference.md
 - name: Ресурсы
   items:
     - name: Стратегия развития Azure

@@ -74,9 +74,6 @@
       href: sample-scripts-azure-cli.md
     - name: Пулы подключений Java
       href: sample-scripts-java-connection-pooling.md
-    - name: Встроенные компоненты Политики Azure
-      displayName: 'samples, policies, definitions'
-      href: ./policy-samples.md
 - name: Основные понятия
   items:
     - name: Серверы и базы данных
@@ -332,6 +329,9 @@
       href: /azure/templates/microsoft.dbformysql/allversions
     - name: Управление хранимыми процедурами
       href: reference-stored-procedures.md
+    - name: Встроенные компоненты Политики Azure
+      displayName: 'samples, policies, definitions'
+      href: ./policy-reference.md
 - name: Ресурсы
   items:
     - name: Шаблоны развертывания

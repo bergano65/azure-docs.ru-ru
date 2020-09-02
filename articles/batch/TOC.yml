@@ -44,9 +44,6 @@
           href: 'https://github.com/Azure/azure-batch-samples'
     - name: Azure CLI
       href: cli-samples.md
-    - name: Встроенные политики службы "Политика Azure"
-      displayName: 'samples, policies, definitions'
-      href: ./policy-samples.md
 - name: Основные понятия
   items:
     - name: Безопасность
@@ -268,6 +265,9 @@
           href: batch-task-complete-event.md
         - name: Событие сбоя выполнения задачи
           href: batch-task-fail-event.md
+    - name: Встроенные компоненты Политики Azure
+      displayName: 'samples, policies, definitions'
+      href: ./policy-reference.md
 - name: Ресурсы
   items:
     - name: Обновления Azure

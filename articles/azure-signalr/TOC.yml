@@ -31,8 +31,6 @@
       href: 'https://github.com/aspnet/AzureSignalR-samples'
     - name: Azure CLI
       href: signalr-reference-cli.md
-    - name: Встроенные политики службы "Политика Azure"
-      href: ./policy-samples.md
 - name: Основные понятия
   items:
     - name: Внутренние компоненты службы Azure SignalR
@@ -103,6 +101,9 @@
       href: 'https://docs.microsoft.com/aspnet/core/signalr'
     - name: Протокол Службы Azure SignalR
       href: 'https://github.com/Azure/azure-signalr/blob/dev/specs/ServiceProtocol.md'
+    - name: Встроенные компоненты Политики Azure
+      displayName: 'samples, policies, definitions'
+      href: ./policy-reference.md
 - name: Ресурсы
   items:
     - name: Решения

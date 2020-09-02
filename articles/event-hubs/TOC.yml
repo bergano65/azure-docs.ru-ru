@@ -75,9 +75,6 @@
   items:
     - name: Примеры кода
       href: event-hubs-samples.md
-    - name: Встроенные компоненты Политики Azure
-      displayName: 'samples, policies, definitions'
-      href: ./policy-samples.md
 - name: Основные понятия
   items:
     - name: 'Термины, касающиеся Концентраторов событий'
@@ -290,6 +287,9 @@
       href: event-hubs-quotas.md
     - name: Конфигурации Apache Kafka
       href: apache-kafka-configurations.md
+    - name: Встроенные компоненты Политики Azure
+      displayName: 'samples, policies, definitions'
+      href: ./policy-reference.md
 - name: Ресурсы
   items:
     - name: Развитие навыков с помощью Microsoft Learn

@@ -72,9 +72,6 @@
   items:
     - name: 'Служебная шина: примеры'
       href: service-bus-samples.md
-    - name: Встроенные компоненты Политики Azure
-      displayName: 'samples, policies, definitions'
-      href: ./policy-samples.md
 - name: Основные понятия
   items:
     - name: 'Обмен сообщениями: уровень "Премиум"'
@@ -272,6 +269,9 @@
       href: service-bus-messaging-sql-filter.md
     - name: Синтаксис SQLRuleAction
       href: service-bus-messaging-sql-rule-action.md
+    - name: Встроенные компоненты Политики Azure
+      displayName: 'samples, policies, definitions'
+      href: ./policy-reference.md
 - name: Ресурсы
   items:
     - name: ВОПРОСЫ И ОТВЕТЫ

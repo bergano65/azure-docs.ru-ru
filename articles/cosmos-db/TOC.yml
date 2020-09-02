@@ -83,9 +83,6 @@
       href: cli-samples.md
     - name: Azure Resource Manager
       href: resource-manager-samples.md
-    - name: Встроенные компоненты Политики Azure
-      displayName: 'samples, policies, definitions'
-      href: ./policy-samples.md
 - name: Основные понятия
   items:
     - name: Сравнение баз данных NoSQL с реляционными базами данных
@@ -1305,6 +1302,11 @@
       displayName: ARM
     - name: Заметки о выпуске эмулятора
       href: local-emulator-release-notes.md
+- name: Ссылка
+  items:
+    - name: Встроенные компоненты Политики Azure
+      displayName: 'samples, policies, definitions'
+      href: ./policy-reference.md
 - name: Ресурсы
   items:
     - name: Развитие навыков с помощью Microsoft Learn

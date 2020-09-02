@@ -116,9 +116,6 @@
       href: service-fabric-powershell-samples.md
     - name: Интерфейс командной строки Service Fabric
       href: samples-cli.md
-    - name: Встроенные компоненты Политики Azure
-      displayName: 'samples, policies, definitions'
-      href: ./policy-samples.md
 - name: Основные понятия
   items:
     - name: Основные сведения о микрослужбах
@@ -895,6 +892,9 @@
           href: service-fabric-service-model-schema-element-groups.md
     - name: Переменные среды
       href: service-fabric-environment-variables-reference.md
+    - name: Встроенные компоненты Политики Azure
+      displayName: 'samples, policies, definitions'
+      href: ./policy-reference.md
 - name: Ресурсы
   items:
     - name: Стратегия развития Azure

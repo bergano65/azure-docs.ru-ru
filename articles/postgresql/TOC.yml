@@ -73,9 +73,6 @@
   items:
     - name: Azure CLI
       href: sample-scripts-azure-cli.md
-    - name: Встроенные политики службы "Политика Azure"
-      displayName: 'samples, policies, definitions'
-      href: ./policy-samples.md
 - name: Основные понятия
   items:
     - name: Отдельный сервер
@@ -393,6 +390,9 @@
           href: reference-hyperscale-parameters.md
         - name: Системные таблицы
           href: reference-hyperscale-metadata.md
+    - name: Встроенные компоненты Политики Azure
+      displayName: 'samples, policies, definitions'
+      href: ./policy-reference.md
 - name: Ресурсы
   items:
     - name: Развитие навыков с помощью Microsoft Learn

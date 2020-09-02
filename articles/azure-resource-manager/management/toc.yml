@@ -4,11 +4,6 @@
   items:
     - name: Что такое Resource Manager?
       href: overview.md
-- name: Примеры
-  items:
-    - name: Встроенные компоненты Политики Azure
-      displayName: 'samples, policies, definitions'
-      href: ./policy-samples.md
 - name: Основные понятия
   items:
     - name: Ограничения подписки и службы
@@ -17,8 +12,6 @@
       href: resource-name-rules.md
     - name: Развертывание с помощью Azure Resource Manager и классическая модель развертывания
       href: deployment-models.md
-    - name: Общие атрибуты безопасности Azure
-      href: azure-resource-manager-security-controls.md
     - name: Поставщики ресурсов по службам
       href: azure-services-resource-providers.md
     - name: Типы ресурсов расширения
@@ -30,6 +23,8 @@
         - name: Элементы управления безопасностью службы "Политика Azure"
           displayName: 'regulatory, compliance, standards, domains'
           href: ./security-controls-policy.md
+        - name: Общие атрибуты безопасности Azure
+          href: azure-resource-manager-security-controls.md
 - name: Практическое руководство
   items:
     - name: Перемещение групп ресурсов и подписок
@@ -172,6 +167,9 @@
       href: /java/api/com.microsoft.azure.management.resources
     - name: Python
       href: /python/api/overview/azure/resources?view=azure-python
+    - name: Встроенные компоненты Политики Azure
+      displayName: 'samples, policies, definitions'
+      href: ./policy-reference.md
 - name: Ресурсы
   items:
     - name: Стратегия развития Azure

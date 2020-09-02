@@ -88,9 +88,6 @@
       href: /samples/browse/?languages=python&products=azure-cognitive-search
     - name: Примеры REST
       href: /samples/browse/?expanded=azure&languages=http&products=azure-cognitive-search
-    - name: Встроенные компоненты Политики Azure
-      displayName: 'samples, policies, definitions'
-      href: ./policy-samples.md
 - name: Основные понятия
   items:
     - name: Полнотекстовый поиск
@@ -496,6 +493,9 @@
           items:
             - name: Распознавание именованных сущностей
               href: cognitive-search-skill-named-entity-recognition.md
+    - name: Встроенные компоненты Политики Azure
+      displayName: 'samples, policies, definitions'
+      href: ./policy-reference.md
 - name: Ресурсы
   items:
     - name: Поддержка сообщества Azure
@@ -526,5 +526,5 @@
       href: search-faq-frequently-asked-questions.md
     - name: Цены
       href: 'https://azure.microsoft.com/pricing/details/search/'
-    - name: Видео
+    - name: Видеоролики
       href: 'https://azure.microsoft.com/resources/videos/index/?services=search'

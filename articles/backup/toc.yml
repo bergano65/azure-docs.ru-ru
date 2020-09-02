@@ -44,11 +44,6 @@
           href: tutorial-sap-hana-restore-cli.md
         - name: Управление резервными копиями баз данных SAP HANA с помощью CLI
           href: tutorial-sap-hana-manage-cli.md
-- name: Примеры
-  items:
-    - name: Встроенные компоненты Политики Azure
-      displayName: 'samples, policies, definitions'
-      href: ./policy-samples.md
 - name: Основные понятия
   items:
     - name: Таблицы поддержки
@@ -428,6 +423,9 @@
       href: /rest/api/recoveryservices/
     - name: Шаблон Resource Manager
       href: /azure/templates/microsoft.recoveryservices/allversions
+    - name: Встроенные компоненты Политики Azure
+      displayName: 'samples, policies, definitions'
+      href: ./policy-reference.md
 - name: Ресурсы
   items:
     - name: Соответствие нормативным требованиям

@@ -26,11 +26,6 @@
       href: tutorial-custom-role-powershell.md
     - name: "Создание настраиваемой роли\_— CLI"
       href: tutorial-custom-role-cli.md
-- name: Примеры
-  items:
-    - name: Встроенные политики службы "Политика Azure"
-      displayName: 'samples, policies, definitions'
-      href: ./policy-samples.md
 - name: Основные понятия
   items:
     - name: Рекомендации
@@ -120,7 +115,7 @@
       href: ../azure-resource-manager/management/azure-subscription-service-limits.md#role-based-access-control-limits
     - name: Azure PowerShell
       href: /powershell/module/az.resources
-    - name: Azure CLI;
+    - name: Azure CLI
       href: /cli/azure/role?view=azure-cli-latest
     - name: REST API
       href: /rest/api/authorization/
@@ -131,6 +126,9 @@
           href: /azure/templates/microsoft.authorization/roleassignments
         - name: Определения ролей
           href: /azure/templates/microsoft.authorization/roledefinitions
+    - name: Встроенные компоненты Политики Azure
+      displayName: 'samples, policies, definitions'
+      href: ./policy-reference.md
 - name: Ресурсы
   items:
     - name: Развитие навыков с помощью Microsoft Learn

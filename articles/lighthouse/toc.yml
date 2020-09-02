@@ -10,9 +10,6 @@
     - name: Индекс
       displayName: 'template, sample'
       href: ./samples/index.md
-    - name: Встроенные политики службы "Политика Azure"
-      displayName: 'samples, policies, definitions'
-      href: ./samples/policy-samples.md
 - name: Основные понятия
   items:
     - name: Делегированное управление ресурсами Azure
@@ -95,6 +92,9 @@
       href: /rest/api/managedservices/
     - name: OpenAPI
       href: 'https://github.com/Azure/azure-rest-api-specs/tree/master/specification/managedservices/resource-manager/Microsoft.ManagedServices/preview/2018-06-01-preview'
+    - name: Встроенные компоненты Политики Azure
+      displayName: 'samples, policies, definitions'
+      href: ./samples/policy-reference.md
 - name: Ресурсы
   items:
     - name: Раздел вопросов и ответов об Azure Lighthouse на сайте Майкрософт

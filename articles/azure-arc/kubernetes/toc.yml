@@ -4,12 +4,6 @@
   items:
     - name: Сведения о Kubernetes с поддержкой Arc
       href: overview.md
-- name: Примеры
-  items:
-    - name: Встроенные политики службы "Политика Azure"
-      items:
-        - name: Kubernetes с поддержкой Arc
-          href: policy-samples.md
 - name: Практические руководства
   items:
     - name: Подключение к Azure Arc
@@ -34,3 +28,8 @@
           href: deploy-azure-iot-edge-workloads.md
     - name: Устранение неполадок
       href: Troubleshooting.md
+- name: Справочник
+  items:
+    - name: Встроенные компоненты Политики Azure
+      displayName: 'samples, policies, definitions'
+      href: policy-reference.md

@@ -93,9 +93,6 @@
           href: ./scripts/powershell-single-av-zone-scale-set.md
         - name: 'Создание масштабируемого набора, избыточного между зонами'
           href: ./scripts/powershell-sample-zone-redundant-scale-set.md
-    - name: Встроенные компоненты Политики Azure
-      displayName: 'samples, policies, definitions'
-      href: ./policy-samples.md
 - name: Основные понятия
   items:
     - name: Azure Resource Manager
@@ -394,6 +391,9 @@
       href: /rest/api/virtualmachinescalesets/
     - name: Шаблоны Azure
       href: /azure/templates/microsoft.compute/virtualmachinescalesets
+    - name: Встроенные компоненты Политики Azure
+      displayName: 'samples, policies, definitions'
+      href: ./policy-reference.md
 - name: Ресурсы
   items:
     - name: Стратегия развития Azure

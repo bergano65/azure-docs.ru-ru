@@ -22,11 +22,6 @@
       href: data-lake-store-get-started-powershell.md
     - name: Использование Azure CLI
       href: data-lake-store-get-started-cli-2.0.md
-- name: Примеры
-  items:
-    - name: Встроенные компоненты Политики Azure
-      displayName: 'samples, policies, definitions'
-      href: ./policy-samples.md
 - name: Практическое руководство
   items:
     - name: Загрузка и перемещение данных
@@ -177,6 +172,9 @@
       href: /azure/templates/microsoft.datalakestore/allversions
     - name: Azure CLI
       href: 'https://docs.microsoft.com/cli/azure/dls'
+    - name: Встроенные политики службы "Политика Azure"
+      displayName: 'samples, policies, definitions'
+      href: ./policy-reference.md
 - name: Ресурсы
   items:
     - name: Стратегия развития Azure

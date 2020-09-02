@@ -40,9 +40,6 @@
   items:
     - name: Примеры кода
       href: 'https://azure.microsoft.com/resources/samples/?service=stream-analytics'
-    - name: Встроенные компоненты Политики Azure
-      displayName: 'samples, policies, definitions'
-      href: ./policy-samples.md
 - name: Основные понятия
   items:
     - name: Выбор технологии анализа потоковой передачи
@@ -655,6 +652,9 @@
       href: /azure/templates/microsoft.streamanalytics/allversions
     - name: Azure CLI
       href: /cli/azure/ext/stream-analytics/stream-analytics
+    - name: Встроенные политики службы "Политика Azure"
+      displayName: 'samples, policies, definitions'
+      href: ./policy-reference.md
 - name: Ресурсы
   items:
     - name: Предварительные версии Stream Analytics

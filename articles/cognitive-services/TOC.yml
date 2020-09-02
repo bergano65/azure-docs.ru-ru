@@ -26,10 +26,6 @@
       href: resource-manager-template.md
     - name: Ведение журнала диагностики
       href: diagnostic-logging.md
-- name: Примеры
-  items:
-    - name: Встроенные компоненты Политики Azure
-      href: ./policy-samples.md
 - name: Безопасность
   items:
     - name: Безопасность Cognitive Services
@@ -86,6 +82,11 @@
           href: ./big-data/recipes/anomaly-detection.md
         - name: 'Рецепт: Art Explorer'
           href: ./big-data/recipes/art-explorer.md
+- name: Ссылка
+  items:
+    - name: Встроенные компоненты Политики Azure
+      displayName: 'samples, policies, definitions'
+      href: ./policy-reference.md
 - name: Ресурсы
   items:
     - name: Стратегия развития Azure
