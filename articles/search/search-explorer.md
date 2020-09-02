@@ -8,18 +8,18 @@ ms.author: heidist
 ms.service: cognitive-search
 ms.topic: quickstart
 ms.date: 06/07/2020
-ms.openlocfilehash: 19d46c034d56c1c54f8a00f08a7e3e72e758984f
-ms.sourcegitcommit: 20e246e86e25d63bcd521a4b4d5864fbc7bad1b0
+ms.openlocfilehash: 8f004ff8118829ebf2d245a136cf22cdde23accc
+ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84488211"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88929794"
 ---
 # <a name="quickstart-use-search-explorer-to-run-queries-in-the-portal"></a>Краткое руководство. Использование проводника поиска для выполнения запросов на портале
 
 **Проводник поиска** — это встроенное средство обработки запросов, используемое для выполнения запросов к индексу поиска в Когнитивном поиске Azure. Это средство упрощает изучение синтаксиса запроса, проверку выражения запроса или фильтра, а также подтверждение результатов обновления с помощью проверки наличия в индексе нового содержимого.
 
-Для демонстрации проводника поиска в этом кратком руководстве используется существующий индекс. Запросы формулируются с помощью [REST API поиска](https://docs.microsoft.com/rest/api/searchservice/), а ответы возвращаются в виде документов JSON.
+Для демонстрации проводника поиска в этом кратком руководстве используется существующий индекс. Запросы формулируются с помощью [REST API поиска](/rest/api/searchservice/), а ответы возвращаются в виде документов JSON.
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -133,7 +133,7 @@ ms.locfileid: "84488211"
 
    ![Выражение OrderBy](./media/search-explorer/search-explorer-example-ordery.png "Изменение порядка сортировки")
 
-Выражения **$filter** и **$orderby** являются конструкциями OData. Дополнительные сведения см. в статье [OData Expression Syntax for Azure Search](https://docs.microsoft.com/rest/api/searchservice/odata-expression-syntax-for-azure-search) (Синтаксис выражений OData для службы поиска Azure).
+Выражения **$filter** и **$orderby** являются конструкциями OData. Дополнительные сведения см. в статье [OData Expression Syntax for Azure Search](/rest/api/searchservice/odata-expression-syntax-for-azure-search) (Синтаксис выражений OData для службы поиска Azure).
 
 <a name="start-search-explorer"></a>
 
@@ -147,7 +147,7 @@ ms.locfileid: "84488211"
 
 + Запросы в свободной форме, аналогичные вводимым в коммерческом веб-браузере, можно использовать для тестирования взаимодействия с пользователем. Например, при использовании встроенного примера индекса недвижимости, можно ввести "Seattle apartments lake washington", а затем с помощью клавиш CTRL-F искать условия в результатах поиска. 
 
-+ Синтаксис выражений запросов и фильтров поддерживается Когнитивным поиском Azure. По умолчанию используется [простой синтаксис](https://docs.microsoft.com/rest/api/searchservice/simple-query-syntax-in-azure-search), но при необходимости можно использовать [полный запрос Lucene](https://docs.microsoft.com/rest/api/searchservice/lucene-query-syntax-in-azure-search), чтобы создавать более эффективные запросы. Для [выражений фильтров](https://docs.microsoft.com/rest/api/searchservice/odata-expression-syntax-for-azure-search) используется синтаксис OData.
++ Синтаксис выражений запросов и фильтров поддерживается Когнитивным поиском Azure. По умолчанию используется [простой синтаксис](/rest/api/searchservice/simple-query-syntax-in-azure-search), но при необходимости можно использовать [полный запрос Lucene](/rest/api/searchservice/lucene-query-syntax-in-azure-search), чтобы создавать более эффективные запросы. Для [выражений фильтров](/rest/api/searchservice/odata-expression-syntax-for-azure-search) используется синтаксис OData.
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 
@@ -159,7 +159,7 @@ ms.locfileid: "84488211"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Чтобы узнать больше о структурах запросов и синтаксисе, используйте Postman или аналогичное средство для создания выражений запросов, использующих больше элементов API. [REST API поиска](https://docs.microsoft.com/rest/api/searchservice/) особенно полезно для обучения и исследований.
+Чтобы узнать больше о структурах запросов и синтаксисе, используйте Postman или аналогичное средство для создания выражений запросов, использующих больше элементов API. [REST API поиска](/rest/api/searchservice/) особенно полезно для обучения и исследований.
 
 > [!div class="nextstepaction"]
 > [Создание простого запроса в Postman](search-query-simple-examples.md)

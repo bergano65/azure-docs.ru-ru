@@ -5,12 +5,12 @@ ms.topic: quickstart
 ms.date: 03/28/2019
 ms.reviewer: astay; kraigb
 ms.custom: mvc, seodec18, devx-track-python
-ms.openlocfilehash: 7515fe7b7e3d2a9d0f1e0497aa226ceb3e6be16c
-ms.sourcegitcommit: 2ffa5bae1545c660d6f3b62f31c4efa69c1e957f
+ms.openlocfilehash: 88a3876757c3f51d1fc70692976987560ee1b991
+ms.sourcegitcommit: 648c8d250106a5fca9076a46581f3105c23d7265
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/11/2020
-ms.locfileid: "88083771"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88961641"
 ---
 # <a name="configure-a-linux-python-app-for-azure-app-service"></a>Настройка приложения Python в Linux для Службы приложений Azure
 
@@ -21,7 +21,7 @@ ms.locfileid: "88083771"
 Это руководство содержит основные понятия и инструкции для разработчиков Python, которые используют встроенный контейнер Linux в Службе приложений. Если вы раньше не использовали Службу приложений Azure, ознакомьтесь сначала со статьями [Создание приложения Python в Службе приложений Azure в Linux (предварительная версия)](quickstart-python.md) и [Создание приложения Python с подключением к базе данных PostgreSQL в Службе приложений Azure](tutorial-python-postgresql-app.md).
 
 > [!NOTE]
-> Сейчас для запуска приложения Python в Службе приложений рекомендуется использовать Linux. Возможности использования Windows описаны в статье [Работа с Python в Службе приложений Azure (Windows)](https://docs.microsoft.com/visualstudio/python/managing-python-on-azure-app-service).
+> Сейчас для запуска приложения Python в Службе приложений рекомендуется использовать Linux. Возможности использования Windows описаны в статье [Работа с Python в Службе приложений Azure (Windows)](/visualstudio/python/managing-python-on-azure-app-service).
 >
 
 ## <a name="show-python-version"></a>Просмотр версии Python

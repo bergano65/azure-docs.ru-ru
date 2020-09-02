@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: calebb
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 34cc8154660db8afcd5859d45ccfd622bc7ca88f
-ms.sourcegitcommit: e132633b9c3a53b3ead101ea2711570e60d67b83
+ms.openlocfilehash: 53f99456449e778ff7c1fd3ab096e1afd3562c1e
+ms.sourcegitcommit: e69bb334ea7e81d49530ebd6c2d3a3a8fa9775c9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "86039829"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88948867"
 ---
 # <a name="quickstart-require-terms-of-use-to-be-accepted-before-accessing-cloud-apps"></a>Краткое руководство. Требование принятия условий использования перед доступом к облачным приложениям
 
@@ -25,7 +25,7 @@ ms.locfileid: "86039829"
 - Простой способ настройки условий использования (ToU)
 - Возможность требовать принятия ваших условий использования с помощью политики условного доступа  
 
-В этом кратком руководстве содержатся инструкции по настройке [политики условного доступа Azure AD](../active-directory-conditional-access-azure-portal.md), которая требует принятия условий использования (ToU) для выбранных облачных приложений в существующей среде.
+В этом кратком руководстве содержатся инструкции по настройке [политики условного доступа Azure AD](./overview.md), которая требует принятия условий использования (ToU) для выбранных облачных приложений в существующей среде.
 
 ![Создание политики](./media/require-tou/5555.png)
 
@@ -209,4 +209,4 @@ ms.locfileid: "86039829"
 ## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
-> [Требование многофакторной проверки подлинности для конкретных приложений](app-based-mfa.md)
+> [Требование многофакторной проверки подлинности для конкретных приложений](../authentication/tutorial-enable-azure-mfa.md)

@@ -7,12 +7,12 @@ ms.topic: quickstart
 ms.date: 04/18/2020
 ms.author: lcozzens
 ms.custom: devx-track-java
-ms.openlocfilehash: 615815f11264578bc2a5930553c8e6f5bfed937f
-ms.sourcegitcommit: b8702065338fc1ed81bfed082650b5b58234a702
+ms.openlocfilehash: 337baae97d426fe05ac59290a882865038f60c02
+ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/11/2020
-ms.locfileid: "88121907"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89019748"
 ---
 # <a name="quickstart-add-feature-flags-to-a-spring-boot-app"></a>Краткое руководство. Добавление флагов функций в приложение Spring Boot
 
@@ -97,7 +97,7 @@ ms.locfileid: "88121907"
     ```
 
 > [!Note]
-> Существует библиотека управления функциями вне обозревателя интернета, которая не зависит от spring-web (веб-сайта). Сведения о различиях см. в [документации GitHub](https://github.com/microsoft/spring-cloud-azure/tree/master/spring-cloud-azure-feature-management).
+> Существует библиотека управления функциями вне обозревателя интернета, которая не зависит от spring-web (веб-сайта). Сведения о различиях см. в [документации GitHub](https://github.com/microsoft/spring-cloud-azure).
 
 ## <a name="connect-to-an-app-configuration-store"></a>Подключение к хранилищу Конфигурации приложений
 

@@ -12,12 +12,12 @@ ms.date: 04/09/2019
 ms.author: kenwith
 ms.reviewer: arvinh
 ms.custom: it-pro
-ms.openlocfilehash: 8f6d9c3409e0b91b6744d406fb1af674f73dbe3c
-ms.sourcegitcommit: b8702065338fc1ed81bfed082650b5b58234a702
+ms.openlocfilehash: a79078977d25c55edfb4ad72bbd4602a073231f6
+ms.sourcegitcommit: c94a177b11a850ab30f406edb233de6923ca742a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/11/2020
-ms.locfileid: "88117895"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89277941"
 ---
 # <a name="quickstart-view-the-list-of-applications-that-are-using-your-azure-active-directory-azure-ad-tenant-for-identity-management"></a>Краткое руководство. Просмотр списка приложений, которые используют арендатор Azure Active Directory (Azure AD) для управления удостоверениями
 
@@ -27,7 +27,7 @@ ms.locfileid: "88117895"
 
 Чтобы просмотреть приложения, зарегистрированные в вашем арендаторе Azure AD, вам потребуется следующее:
 
-- Учетная запись Azure с активной подпиской. [Создайте учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) бесплатно.
+- Учетная запись Azure. [Создайте учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) бесплатно.
 
 >[!IMPORTANT]
 >Мы рекомендуем не использовать рабочую среду для тестового выполнения шагов из этого краткого руководства.

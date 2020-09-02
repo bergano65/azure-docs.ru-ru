@@ -10,24 +10,24 @@ ms.topic: quickstart
 ms.devlang: rest-api
 ms.date: 08/20/2020
 ms.custom: devx-track-python
-ms.openlocfilehash: aa2357e31bf2fba97ae8547948cacdffc70cc741
-ms.sourcegitcommit: e0785ea4f2926f944ff4d65a96cee05b6dcdb792
+ms.openlocfilehash: e4141bc4887a166876d1fc4590b73f382abd0b95
+ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/21/2020
-ms.locfileid: "88705016"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88936679"
 ---
 # <a name="quickstart-create-an-azure-cognitive-search-index-in-python-using-jupyter-notebooks"></a>Краткое руководство. Создание индекса службы "Когнитивный поиск Azure" в Python с помощью записных книжек Jupyter
 
 > [!div class="op_single_selector"]
 > * [Python (REST)](search-get-started-python.md)
-> * [PowerShell (REST)](search-create-index-rest-api.md)
-> * [C#](search-create-index-dotnet.md)
+> * [PowerShell (REST)](./search-get-started-powershell.md)
+> * [C#](./search-get-started-dotnet.md)
 > * [Postman (REST)](search-get-started-postman.md)
 > * [Портал](search-get-started-portal.md)
 > 
 
-Создайте записную книжку Jupyter, которая создает, загружает и запрашивает индекс службы "Когнитивный поиск Azure", с помощью Python и [REST API службы "Когнитивный поиск Azure"](https://docs.microsoft.com/rest/api/searchservice/). В этой статье содержатся сведения о пошаговом создании записной книжки. Вы также можете [скачать и запустить готовую записную книжку Jupyter Python](https://github.com/Azure-Samples/azure-search-python-samples).
+Создайте записную книжку Jupyter, которая создает, загружает и запрашивает индекс службы "Когнитивный поиск Azure", с помощью Python и [REST API службы "Когнитивный поиск Azure"](/rest/api/searchservice/). В этой статье содержатся сведения о пошаговом создании записной книжки. Вы также можете [скачать и запустить готовую записную книжку Jupyter Python](https://github.com/Azure-Samples/azure-search-python-samples).
 
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
@@ -93,7 +93,7 @@ ms.locfileid: "88705016"
 
 ## <a name="1---create-an-index"></a>1\. Создание индекса
 
-Если вы не используете портал, для загрузки данных необходимо наличие индекса в службе. На этом шаге для отправки схемы индекса в службу используется [REST API создания индекса](https://docs.microsoft.com/rest/api/searchservice/create-index).
+Если вы не используете портал, для загрузки данных необходимо наличие индекса в службе. На этом шаге для отправки схемы индекса в службу используется [REST API создания индекса](/rest/api/searchservice/create-index).
 
 Обязательные элементы индекса включают в себя имя, коллекцию полей и ключ. Коллекция полей определяет структуру *документа*. Каждое поле имеет имя, тип и атрибуты, которые определяют использование поля (например, обладает ли оно возможностью полнотекстового поиска, можно ли его отфильтровать или извлечь из результатов поиска). В индексе одно из полей типа `Edm.String` должно быть назначено в качестве *ключа* для идентификации документа.
 
@@ -149,7 +149,7 @@ ms.locfileid: "88705016"
 
 ## <a name="2---load-documents"></a>2\. Загрузка документов
 
-Чтобы передать документы, отправьте запрос HTTP POST в конечную точку URL-адреса индекса. Используется REST API [добавления, обновления и удаления документов](https://docs.microsoft.com/rest/api/searchservice/addupdate-or-delete-documents). Источником документов является [HotelsData](https://github.com/Azure-Samples/azure-search-sample-data/blob/master/hotels/HotelsData_toAzureSearch.JSON) на сайте GitHub.
+Чтобы передать документы, отправьте запрос HTTP POST в конечную точку URL-адреса индекса. Используется REST API [добавления, обновления и удаления документов](/rest/api/searchservice/addupdate-or-delete-documents). Источником документов является [HotelsData](https://github.com/Azure-Samples/azure-search-sample-data/blob/master/hotels/HotelsData_toAzureSearch.JSON) на сайте GitHub.
 
 1. В новой ячейке укажите четыре документа, соответствующие схеме индекса. Укажите действие отправки для каждого документа.
 
@@ -251,7 +251,7 @@ ms.locfileid: "88705016"
 
 ## <a name="3---search-an-index"></a>3\. Поиск в индексе
 
-В рамках этого раздела мы покажем, как создать запрос в индекс с помощью [REST API поиска документов](https://docs.microsoft.com/rest/api/searchservice/search-documents).
+В рамках этого раздела мы покажем, как создать запрос в индекс с помощью [REST API поиска документов](/rest/api/searchservice/search-documents).
 
 1. В ячейке укажите выражение запроса, который выполняет пустой поиск (search=*), возвращая неупорядоченный список (search score = 1.0) произвольных документов. По умолчанию служба "Когнитивный поиск Azure" возвращает 50 лучших соответствий за раз. Как структурированный этот запрос возвращает структуру и значения документа. Добавьте $count=true, чтобы получить количество всех документов в результатах.
 

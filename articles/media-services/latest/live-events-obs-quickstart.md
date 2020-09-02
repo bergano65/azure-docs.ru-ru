@@ -6,15 +6,17 @@ ms.service: media-services
 ms.topic: quickstart
 ms.author: inhenkel
 author: IngridAtMicrosoft
-ms.date: 04/16/2020
-ms.openlocfilehash: 671609fc1db7325823e8ac40b2b8153682596588
-ms.sourcegitcommit: 2721b8d1ffe203226829958bee5c52699e1d2116
+ms.date: 08/31/2020
+ms.openlocfilehash: 04b0ef0d6a480270b1f0a3546319b2608d638677
+ms.sourcegitcommit: bcda98171d6e81795e723e525f81e6235f044e52
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84147823"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89265513"
 ---
 # <a name="create-an-azure-media-services-live-stream-with-obs"></a>Создание прямой трансляции в Службах мультимедиа Azure с помощью OBS
+
+[!INCLUDE [media services api v3 logo](./includes/v3-hr.md)]
 
 Из этого краткого руководства вы узнаете, как создать прямую трансляцию в Службах мультимедиа Azure с помощью портала Azure и Open Broadcasting Studio (OBS). Далее предполагается, что у вас есть подписка Azure и создана учетная запись Служб мультимедиа Azure.
 

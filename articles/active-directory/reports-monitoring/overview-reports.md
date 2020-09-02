@@ -17,12 +17,12 @@ ms.date: 11/13/2018
 ms.author: markvi
 ms.reviewer: dhanyahk
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 6c2ae9e7654fa468d499ca6ef8543b98b1e372ca
-ms.sourcegitcommit: 1d9f7368fa3dadedcc133e175e5a4ede003a8413
+ms.openlocfilehash: 5c07500ec432d176b2cf74aa95f0a1c943348f9f
+ms.sourcegitcommit: d68c72e120bdd610bb6304dad503d3ea89a1f0f7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85481397"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89229522"
 ---
 # <a name="what-are-azure-active-directory-reports"></a>Что такое отчеты в Azure Active Directory
 
@@ -44,9 +44,9 @@ ms.locfileid: "85481397"
 
 Отчеты системы безопасности помогают защитить удостоверения организации. Есть два типа отчетов системы безопасности:
 
-- **Пользователи, находящиеся в группе риска.** [С помощью отчетов безопасности о пользователях, находящихся в группе риска](concept-user-at-risk.md) вы получите сведения об учетных записях пользователей, которые могли быть скомпрометированы.
+- **Пользователи, находящиеся в группе риска.** [С помощью отчетов безопасности о пользователях, находящихся в группе риска](../identity-protection/overview-identity-protection.md) вы получите сведения об учетных записях пользователей, которые могли быть скомпрометированы.
 
-- **Рискованные входы в систему.** [С помощью отчетов безопасности о рискованных входах в систему](concept-risky-sign-ins.md) вы получите сведения о попытках входа пользователями, которые не являются законными владельцами учетной записи пользователя. 
+- **Рискованные входы в систему.** [С помощью отчетов безопасности о рискованных входах в систему](../identity-protection/overview-identity-protection.md) вы получите сведения о попытках входа пользователями, которые не являются законными владельцами учетной записи пользователя. 
 
 ### <a name="what-azure-ad-license-do-you-need-to-access-a-security-report"></a>Какая лицензия Azure AD требуется для доступа к отчету безопасности?  
 
@@ -81,7 +81,7 @@ ms.locfileid: "85481397"
 
 #### <a name="what-azure-ad-license-do-you-need-to-access-the-audit-logs-report"></a>Какая требуется лицензия Azure AD, чтобы получить доступ к отчету о журналах аудита?  
 
-Отчет о журналах аудита доступен для функций, на которые у вас есть лицензии. Если у вас есть лицензия для определенной функции, у вас также есть доступ к данным журнала аудита для этой функции. Подробное сравнение возможностей, доступных в [различных типах лицензий](https://docs.microsoft.com/azure/active-directory/fundamentals/active-directory-whatis#what-are-the-azure-ad-licenses), можно просмотреть на странице с [ценами на Azure Active Directory](https://azure.microsoft.com/pricing/details/active-directory/). См. дополнительные сведения о [функциях и возможностях Azure Active Directory](https://docs.microsoft.com/azure/active-directory/fundamentals/active-directory-whatis#which-features-work-in-azure-ad).
+Отчет о журналах аудита доступен для функций, на которые у вас есть лицензии. Если у вас есть лицензия для определенной функции, у вас также есть доступ к данным журнала аудита для этой функции. Подробное сравнение возможностей, доступных в [различных типах лицензий](../fundamentals/active-directory-whatis.md#what-are-the-azure-ad-licenses), можно просмотреть на странице с [ценами на Azure Active Directory](https://azure.microsoft.com/pricing/details/active-directory/). См. дополнительные сведения о [функциях и возможностях Azure Active Directory](../fundamentals/active-directory-whatis.md#which-features-work-in-azure-ad).
 
 ### <a name="sign-ins-report"></a>Отчет о входе
 
@@ -101,6 +101,6 @@ ms.locfileid: "85481397"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- [отчетом о входах, представляющих риск](concept-risky-sign-ins.md);
+- [отчетом о входах, представляющих риск](../identity-protection/overview-identity-protection.md);
 - [отчетом о журналах аудита](concept-audit-logs.md);
 - [отчетом о журналах входа](concept-sign-ins.md).

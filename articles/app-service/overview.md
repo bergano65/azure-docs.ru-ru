@@ -5,12 +5,12 @@ ms.assetid: 94af2caf-a2ec-4415-a097-f60694b860b3
 ms.topic: overview
 ms.date: 07/06/2020
 ms.custom: devx-track-dotnet, mvc, seodec18
-ms.openlocfilehash: b6d8a73dd4f4e7c1a1e430b6f5ea494ed51d20c0
-ms.sourcegitcommit: 4913da04fd0f3cf7710ec08d0c1867b62c2effe7
+ms.openlocfilehash: 1b72224441741990a1fc94400dfe718ea9d1b0b3
+ms.sourcegitcommit: 648c8d250106a5fca9076a46581f3105c23d7265
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88211697"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88961488"
 ---
 # <a name="app-service-overview"></a>Обзор Службы приложений Azure
 
@@ -28,15 +28,15 @@ ms.locfileid: "88211697"
 * **Управляемая рабочая среда** — Служба приложений автоматически [устанавливает исправления и обеспечивает обслуживание ОС и языковых платформ](overview-patch-os-runtime.md). Сфокусируйтесь на написании эффективных приложений и предоставьте Azure управление платформой.
 * **Контейнеризация и Docker** — преобразите для Docker свое приложение и разместите пользовательский контейнер Windows или Linux в Службе приложений. Запуск приложений с несколькими контейнерами с помощью Docker Compose. Используйте свои навыки работы с Docker непосредственно в Службе приложений.
 * **Оптимизация DevOps** — Настройка [непрерывной интеграции и непрерывного развертывания](deploy-continuous-deployment.md) с помощью Azure DevOps, GitHub, BitBucket, Docker Hub или Реестра контейнеров Azure. Повышайте уровень обновлений с помощью [тестовых и промежуточных сред](deploy-staging-slots.md). Управляйте приложениями в службе приложений с помощью оболочки [Azure PowerShell](/powershell/azure/) или [кроссплатформенного интерфейса командной строки (CLI)](/cli/azure/install-azure-cli).
-* **Высокодоступное глобальное масштабирование.** [Увеличивайте](manage-scale-up.md) либо [уменьшайте](../monitoring-and-diagnostics/insights-how-to-scale.md) размер вручную или автоматически. Храните приложения в любом месте глобальной инфраструктуры центра обработки данных. При этом [соглашение об уровне обслуживания](https://azure.microsoft.com/support/legal/sla/app-service/) гарантирует высокую доступность.
+* **Высокодоступное глобальное масштабирование.** [Увеличивайте](manage-scale-up.md) либо [уменьшайте](../azure-monitor/platform/autoscale-get-started.md) размер вручную или автоматически. Храните приложения в любом месте глобальной инфраструктуры центра обработки данных. При этом [соглашение об уровне обслуживания](https://azure.microsoft.com/support/legal/sla/app-service/) гарантирует высокую доступность.
 * **Подключение к платформам SaaS и локальным данным.** Доступно более 50 [соединителей](../connectors/apis-list.md) для корпоративных систем (например, SAP), служб SaaS (например, Salesforce) и популярных интернет-служб (например, Facebook). Получайте доступ к локальным данным с помощью [гибридных подключений](app-service-hybrid-connections.md) и [виртуальных сетей Azure](web-sites-integrate-with-vnet.md).
 * **Безопасность и соответствие требованиям.** Служба приложений совместима со стандартами [ISO, SOC и PCI](https://www.microsoft.com/en-us/trustcenter). Выполняйте аутентификацию пользователей с помощью [Azure Active Directory](configure-authentication-provider-aad.md), [Google](configure-authentication-provider-google.md), [Facebook](configure-authentication-provider-facebook.md), [Twitter](configure-authentication-provider-twitter.md) или [учетной записи Майкрософт](configure-authentication-provider-microsoft.md). Создавайте [ограничения IP-адресов](app-service-ip-restrictions.md) и [управляйте удостоверениями службы](overview-managed-identity.md).
 * **Шаблоны приложений.** Вы можете выбрать любой шаблон приложения из обширного списка в [Azure Marketplace](https://azure.microsoft.com/marketplace/), например WordPress, Joomla и Drupal.
 * **Интеграция с Visual Studio и Visual Studio Code.** Выделенные инструменты в Visual Studio и Visual Studio Code упрощают создание, развертывание и отладку приложений.
 * **Функции API и мобильных приложений.** Служба приложений обеспечивает полную поддержку CORS для работы с RESTful API. Также она упрощает использование мобильных приложений, обеспечивая аутентификацию, автономную синхронизацию данных, отправку push-уведомлений и многое другое.
-* **Независимый от сервера код.** Выполняйте фрагменты кода или скрипта по требованию без необходимости явно подготавливать и администрировать инфраструктуру. Платите только за время выполнения кода (см. статью [Документация по функциям Azure](/azure/azure-functions/)).
+* **Независимый от сервера код.** Выполняйте фрагменты кода или скрипта по требованию без необходимости явно подготавливать и администрировать инфраструктуру. Платите только за время выполнения кода (см. статью [Документация по функциям Azure](../azure-functions/index.yml)).
 
-Помимо Службы приложений, Azure предлагает и другие службы, которые можно использовать для размещения веб-сайтов и веб-приложений. В большинстве случаев оптимальным вариантом является служба приложений.  Для реализации архитектуры микрослужб рекомендуется использовать [службу Azure Spring-Cloud](/azure/spring-cloud/) или [Service Fabric](https://azure.microsoft.com/documentation/services/service-fabric).  Если вам требуется дополнительный контроль над виртуальными машинами, на которых выполняется ваш код, рекомендуется использовать [Виртуальные машины Azure](https://azure.microsoft.com/documentation/services/virtual-machines/). Дополнительные сведения о выборе между этими службами Azure см. в статье [Сравнение службы приложений Azure, виртуальных машин, Service Fabric и облачных служб](overview-compare.md).
+Помимо Службы приложений, Azure предлагает и другие службы, которые можно использовать для размещения веб-сайтов и веб-приложений. В большинстве случаев оптимальным вариантом является служба приложений.  Для реализации архитектуры микрослужб рекомендуется использовать [службу Azure Spring-Cloud](../spring-cloud/index.yml) или [Service Fabric](https://azure.microsoft.com/documentation/services/service-fabric).  Если вам требуется дополнительный контроль над виртуальными машинами, на которых выполняется ваш код, рекомендуется использовать [Виртуальные машины Azure](https://azure.microsoft.com/documentation/services/virtual-machines/). Дополнительные сведения о выборе между этими службами Azure см. в статье [Сравнение службы приложений Azure, виртуальных машин, Service Fabric и облачных служб](/azure/architecture/guide/technology-choices/compute-decision-tree).
 
 ## <a name="app-service-on-linux"></a>Служба приложений в Linux
 
@@ -44,7 +44,7 @@ ms.locfileid: "88211697"
 
 ### <a name="built-in-languages-and-frameworks"></a>Встроенная поддержка нескольких языков и платформ
 
-Служба приложений в Linux поддерживает ряд встроенных образов, характерных для конкретного языка. Просто разверните код. Поддерживаемые языки включают в себя: Node.js, Java (JRE 8 и JRE 11), PHP, Python, .NET Core и Ruby. Выполните [`az webapp list-runtimes --linux`](https://docs.microsoft.com/cli/azure/webapp?view=azure-cli-latest#az-webapp-list-runtimes), чтобы просмотреть поддерживаемые языки и версии. Если среда выполнения, необходимая для приложения, не поддерживается во встроенных образах, ее можно развернуть с помощью пользовательского контейнера.
+Служба приложений в Linux поддерживает ряд встроенных образов, характерных для конкретного языка. Просто разверните код. Поддерживаемые языки включают в себя: Node.js, Java (JRE 8 и JRE 11), PHP, Python, .NET Core и Ruby. Выполните [`az webapp list-runtimes --linux`](/cli/azure/webapp?view=azure-cli-latest#az-webapp-list-runtimes), чтобы просмотреть поддерживаемые языки и версии. Если среда выполнения, необходимая для приложения, не поддерживается во встроенных образах, ее можно развернуть с помощью пользовательского контейнера.
 
 ### <a name="limitations"></a>Ограничения
 
