@@ -107,12 +107,12 @@
           href: update-regulatory-compliance-packages.md
     - name: Проверка виртуальных машин на наличие уязвимостей
       items:
-        - name: Общие сведения о сканировании уязвимостей
-          href: security-center-vulnerability-assessment-recommendations.md
-        - name: Интегрированный сканер уязвимостей для виртуальных машин
-          href: built-in-vulnerability-assessment.md
-        - name: Использование внешних сканеров
-          href: partner-vulnerability-assessment.md
+        - name: Развертывание интегрированного сканера уязвимостей на виртуальных машинах
+          href: deploy-vulnerability-assessment-vm.md
+        - name: Развертывание BYOL-решения для оценки уязвимостей на виртуальных машинах
+          href: deploy-vulnerability-assessment-byol-vm.md
+        - name: Проверка и устранение уязвимостей на виртуальных машинах
+          href: remediate-vulnerability-findings-vm.md
     - name: Настройка защиты от угроз и обработки оповещений
       items:
         - name: Управление оповещениями системы безопасности

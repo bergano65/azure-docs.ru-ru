@@ -7,12 +7,25 @@
       href: ../azure-management.md
     - name: Группы управления
       href: ./overview.md
+- name: Краткие руководства
+  expanded: true
+  items:
+    - name: Создание группы управления с помощью портала
+      displayName: hierarchy
+      href: ./create-management-group-portal.md
+    - name: "Создание группы управления с помощью Azure\_CLI"
+      displayName: hierarchy
+      href: ./create-management-group-azure-cli.md
+    - name: "Создание группы управления с помощью Azure\_PowerShell"
+      displayName: hierarchy
+      href: ./create-management-group-powershell.md
+    - name: Создание группы управления с помощью REST
+      displayName: hierarchy
+      href: ./create-management-group-rest-api.md
 - name: Практические руководства
   expanded: true
   items:
-    - name: Создание групп управления
-      href: ./create.md
-    - name: Управление ресурсами
+    - name: Управление иерархией ресурсов
       href: ./manage.md
     - name: Защита иерархии ресурсов
       href: ./how-to/protect-resource-hierarchy.md

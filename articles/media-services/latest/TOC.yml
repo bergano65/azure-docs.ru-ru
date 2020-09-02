@@ -49,20 +49,22 @@
   items:
     - name: .NET
       items:
-        - name: Кодирование и потоковая передача размещенных удаленно файлов (REST)
-          href: stream-files-tutorial-with-rest.md
         - name: Кодирование и потоковая передача размещенных удаленно файлов (.NET)
           href: stream-files-dotnet-quickstart.md
-        - name: Кодирование и потоковая передача отправленного файла
+        - name: Кодирование и потоковая передача отправленного файла (.NET)
           href: stream-files-tutorial-with-api.md
-        - name: Потоковая передача в реальном времени
+        - name: Потоковая трансляция с помощью .NET
           href: stream-live-tutorial-with-api.md
-        - name: Анализ видео
+        - name: Анализ видео с помощью .NET
           href: analyze-videos-tutorial-with-api.md
         - name: Динамическое шифрование с помощью AES-128
           href: protect-with-aes128.md
         - name: Динамическое шифрование с помощью DRM
           href: protect-with-drm.md
+    - name: REST
+      items:
+        - name: Кодирование и потоковая передача размещенных удаленно файлов (REST)
+          href: stream-files-tutorial-with-rest.md
     - name: CLI
       items:
         - name: Кодирование и потоковая передача размещенных удаленно файлов (CLI)

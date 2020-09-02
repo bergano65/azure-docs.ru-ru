@@ -41,8 +41,6 @@
       href: ./policies/index.md
     - name: Azure PowerShell
       href: powershell-samples.md
-    - name: Встроенные компоненты Политики Azure
-      href: ./policy-samples.md
 - name: Основные понятия
   items:
     - name: Терминология
@@ -263,6 +261,9 @@
       href: /rest/api/apimanagement/ApiManagementREST/api-management-REST
     - name: Шаблон Resource Manager
       href: /azure/templates/microsoft.apimanagement/allversions
+    - name: Встроенные компоненты Политики Azure
+      displayName: 'samples, policies, definitions'
+      href: ./policy-reference.md
 - name: Ресурсы
   items:
     - name: ВОПРОСЫ И ОТВЕТЫ

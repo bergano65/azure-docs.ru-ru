@@ -4,6 +4,10 @@
   items:
     - name: Что такое ExpressRoute?
       href: expressroute-introduction.md
+- name: Краткое руководство
+  items:
+    - name: Создание канала ExpressRoute с помощью шаблона ARM
+      href: quickstart-create-expressroute-vnet-template.md
 - name: Учебники
   items:
     - name: Создание и изменение канала

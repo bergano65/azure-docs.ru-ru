@@ -4,6 +4,8 @@
   items:
     - name: Сведения о серверах с поддержкой Azure Arc?
       href: overview.md
+    - name: Новые возможности агента Connected Machine
+      href: agent-release-notes.md
 - name: Краткие руководства
   items:
     - name: Включение агента серверов с поддержкой Arc
@@ -14,12 +16,6 @@
       href: ./learn/tutorial-assign-policy-portal.md
     - name: Мониторинг компьютера
       href: ./learn/tutorial-enable-vm-insights.md
-- name: Примеры
-  items:
-    - name: Встроенные компоненты Политики Azure
-      items:
-        - name: Серверы с поддержкой Arc
-          href: policy-samples.md
 - name: Основные понятия
   items:
     - name: Безопасность
@@ -55,3 +51,6 @@
           href: data-residency.md
         - name: REST
           href: /rest/api/hybridcompute
+        - name: Встроенные компоненты Политики Azure
+          displayName: 'samples, policies, definitions'
+          href: policy-reference.md

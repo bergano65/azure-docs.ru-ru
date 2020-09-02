@@ -116,6 +116,10 @@
               href: howto-authentication-passwordless-security-key-windows.md
             - name: Единый вход для доступа к локальным ресурсам
               href: howto-authentication-passwordless-security-key-on-premises.md
+            - name: Вопросы и ответы о гибридной среде
+              href: howto-authentication-passwordless-faqs.md
+            - name: Устранение неполадок с гибридными развертываниями
+              href: howto-authentication-passwordless-troubleshoot.md
         - name: Вход без пароля с помощью телефона
           href: howto-authentication-passwordless-phone.md
         - name: Windows Hello для бизнеса
@@ -209,7 +213,7 @@
               href: howto-mfa-nps-extension-errors.md
     - name: Диагностика
       items:
-        - name: Устранение неполадок с SSPR
+        - name: SSPR
           href: active-directory-passwords-troubleshoot.md
         - name: 'SSPR: часто задаваемые вопросы'
           href: active-directory-passwords-faq.md

@@ -1,0 +1,48 @@
+- name: Аттестация Microsoft Azure (предварительная версия)
+  href: index.yml
+- name: Обзор
+  items:
+    - name: Сведения о службе "Аттестация Microsoft Azure"
+      href: overview.md
+- name: Краткие руководства
+  items:
+    - name: Шаблон ARM
+      href: quickstart-template.md
+    - name: PowerShell
+      href: quickstart-powershell.md
+- name: Учебники
+  items:
+    - name: Создание и подписывание политики аттестации
+      href: author-sign-policy.md
+    - name: Примеры кода для аттестации SGX
+      href: 'https://docs.microsoft.com/en-us/samples/browse/?expanded=azure&terms=attestation'
+- name: Примеры
+  items:
+    - name: Политика аттестации
+      href: policy-examples.md
+    - name: 'Сертификат пользователя, подписавшего политику'
+      href: policy-signer-examples.md
+- name: Основные понятия
+  items:
+    - name: Основные понятия
+      href: basic-concepts.md
+    - name: Утверждения политики аттестации
+      items:
+        - name: Грамматика правил утверждения
+          href: claim-rule-grammar.md
+        - name: Наборы утверждений
+          href: claim-sets.md
+    - name: Рабочий процесс
+      href: workflow.md
+- name: Ссылки
+  items:
+    - name: ВОПРОСЫ И ОТВЕТЫ
+      href: faq.md
+    - name: REST
+      href: /rest/api/attestation/
+    - name: Azure PowerShell
+      href: /powershell/module/az.attestation/?view=azps-4.3.0#attestation
+    - name: Библиотека Azure DCAP для Windows
+      href: 'https://www.nuget.org/packages/Microsoft.Azure.DCAP/'
+    - name: Библиотека Azure DCAP для Linux
+      href: 'https://packages.microsoft.com/ubuntu/18.04/prod/pool/main/a/az-dcap-client/'

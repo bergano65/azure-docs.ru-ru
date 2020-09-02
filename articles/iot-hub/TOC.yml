@@ -84,11 +84,6 @@
       href: tutorial-firmware-update.md
     - name: Проверка подключения устройства
       href: tutorial-connectivity.md
-- name: Примеры
-  items:
-    - name: Встроенные компоненты Политики Azure
-      displayName: 'samples, policies, definitions'
-      href: ./policy-samples.md
 - name: Основные понятия
   items:
     - name: Поддержка TLS
@@ -461,6 +456,9 @@
       href: 'https://docs.microsoft.com/rest/api/iothub/certificates'
     - name: Шаблон Resource Manager
       href: /azure/templates/microsoft.devices/iothub-allversions
+    - name: Встроенные компоненты Политики Azure
+      displayName: 'samples, policies, definitions'
+      href: ./policy-reference.md
     - name: Прекращение поддержки компонентов и API
       items:
         - name: Мониторинг операций

@@ -34,7 +34,7 @@
       items:
         - name: ASP.NET
           href: quickstart-v2-aspnet-webapp.md
-        - name: ASP.NET Core
+        - name: "ASP.NET\_Core"
           href: quickstart-v2-aspnet-core-webapp.md
         - name: Node.js
           href: quickstart-v2-nodejs-webapp.md
@@ -273,7 +273,9 @@
               href: msal-net-adfs-support.md
             - name: Миграция в MSAL.NET
               href: msal-net-migration.md
-            - name: Перенос приложений Xamarin в MSAL.NET с помощью брокеров
+            - name: Перенос приложения Xamarin Android в MSAL.NET с помощью брокера
+              href: msal-net-migration-android-broker.md
+            - name: Перенос приложения Xamarin iOS в MSAL.NET с помощью брокера
               href: msal-net-migration-ios-broker.md
             - name: Рекомендации для веб-браузера
               href: msal-net-web-browsers.md
