@@ -61,8 +61,6 @@
           href: security-center-recommendations.md
         - name: Обзор политик безопасности
           href: tutorial-security-policy.md
-        - name: Встроенные политики безопасности
-          href: security-center-policy-definitions.md
         - name: Использование рекомендаций для повышения уровня безопасности
           href: security-center-using-recommendations.md
         - name: Базовые средства безопасности
@@ -157,7 +155,7 @@
       href: asset-inventory.md
     - name: Интеграция с другими средствами и службами
       items:
-        - name: Интеграция с Windows Admin Center
+        - name: Защита серверов Windows Admin Center
           href: windows-admin-center-integration.md
         - name: Защита веб-приложений и интерфейсов API Службы приложений Azure
           href: security-center-app-services.md
@@ -211,6 +209,9 @@
       href: security-center-features-retirement-july2019.md
     - name: Оценка защиты конечной точки и рекомендации
       href: security-center-endpoint-protection.md
+    - name: Встроенные компоненты Политики Azure
+      displayName: 'samples, policies, definitions'
+      href: ./policy-reference.md
 - name: Ресурсы
   items:
     - name: Развитие навыков с помощью Microsoft Learn

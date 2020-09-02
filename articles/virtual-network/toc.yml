@@ -37,9 +37,6 @@
       href: powershell-samples.md
     - name: Шаблоны Resource Manager
       href: template-samples.md
-    - name: Встроенные компоненты Политики Azure
-      displayName: 'samples, policies, definitions'
-      href: ./policy-samples.md
 - name: Основные понятия
   items:
     - name: Непрерывность бизнес-процессов
@@ -100,7 +97,7 @@
           items:
             - name: Обзор
               href: security-overview.md
-            - name: Принцип работы
+            - name: Принципы работы
               href: network-security-group-how-it-works.md
         - name: Группы безопасности приложений
           href: application-security-groups.md
@@ -226,6 +223,12 @@
               href: ipv6-reserve-public-ip-address-prefix.md
         - name: Назначение IP-адресов
           items:
+            - name: "Создание общедоступного IP-адреса\_— портал"
+              href: create-public-ip-portal.md
+            - name: "Создание общедоступного IP-адреса\_— PowerShell"
+              href: create-public-ip-powershell.md
+            - name: "Создание общедоступного IP-адреса\_— Azure CLI"
+              href: create-public-ip-cli.md
             - name: Управление общедоступными IP-адресами
               href: virtual-network-public-ip-address.md
             - name: Управление префиксами общедоступных IP-адресов
@@ -432,6 +435,9 @@
       href: /azure/templates/microsoft.network/allversions
     - name: Примеры кода
       href: 'https://azure.microsoft.com/resources/samples/?service=virtual-network'
+    - name: Встроенные компоненты Политики Azure
+      displayName: 'samples, policies, definitions'
+      href: ./policy-reference.md
 - name: Ресурсы
   items:
     - name: Развитие навыков с помощью Microsoft Learn

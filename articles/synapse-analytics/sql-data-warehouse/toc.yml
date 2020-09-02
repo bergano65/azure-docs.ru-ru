@@ -122,7 +122,7 @@
               href: /azure/sql-database/transparent-data-encryption-azure-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json
             - name: Прозрачное шифрование данных с созданием собственных ключей
               href: /azure/sql-database/transparent-data-encryption-byok-azure-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json
-    - name: Загрузка данных
+    - name: прием и подготовка данных;
       items:
         - name: Обзор
           href: design-elt-data-loading.md
@@ -284,7 +284,7 @@
           href: sql-data-warehouse-encryption-tde.md
         - name: Включение шифрования (T-SQL)
           href: sql-data-warehouse-encryption-tde-tsql.md
-    - name: Загрузка данных
+    - name: Загрузка и подготовка данных
       items:
         - name: Загрузка из хранилища Azure Data Lake Storage (ADLS)
           href: sql-data-warehouse-load-from-azure-data-lake-store.md

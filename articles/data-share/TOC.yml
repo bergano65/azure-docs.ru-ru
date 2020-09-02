@@ -9,9 +9,9 @@
       href: supported-data-stores.md
 - name: Краткие руководства
   items:
-    - name: "Создание общего ресурса данных\_— портал Azure"
+    - name: "Общий доступ к данным\_— портал Azure"
       href: share-your-data-portal.md
-    - name: Создание общего ресурса данных с помощью шаблона ARM
+    - name: "Общий доступ к данным\_— шаблон ARM"
       displayName: Resource Manager
       href: share-your-data-arm.md
 - name: Учебники
@@ -39,6 +39,10 @@
   items:
     - name: Совместное использование и получение данных по источнику
       items:
+        - name: Предоставление общего доступа к данным из хранилища Azure
+          href: how-to-share-from-storage.md
+        - name: Предоставление общего доступа к данным из Базы данных SQL Azure в Synapse Analytics
+          href: how-to-share-from-sql.md
         - name: Предоставление общего доступа к данным из Azure Data Explorer
           href: /azure/data-explorer/data-share
           maintainContext: true

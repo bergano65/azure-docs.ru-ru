@@ -949,6 +949,8 @@
           href: ./disk-encryption.md
         - name: Синхронизация по протоколу LDAP в Ranger и Apache Ambari
           href: ./domain-joined/ldap-sync.md
+        - name: Дойное шифрование передаваемых данных
+          href: ./domain-joined/encryption-in-transit.md
     - name: Практические руководства
       items:
         - name: Управление учетными данными с помощью брокера удостоверений

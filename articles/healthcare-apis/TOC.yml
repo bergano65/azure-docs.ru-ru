@@ -46,11 +46,6 @@
       items:
         - name: Получение данных устройства через Центр Интернета вещей Azure
           href: device-data-through-iot-hub.md
-- name: Примеры
-  items:
-    - name: Встроенные политики службы "Политика Azure"
-      displayName: 'samples, policies, definitions'
-      href: ./policy-samples.md
 - name: Практические руководства
   expanded: false
   items:
@@ -82,6 +77,11 @@
           href: configure-cross-origin-resource-sharing.md
         - name: Настройка экспорта
           href: configure-export-data.md
+    - name: Экспорт данных
+      expanded: false
+      items:
+        - name: Обезличенный экспорт
+          href: export-data.md
     - name: Поиск идентификаторов объектов удостоверений
       href: find-identity-object-ids.md
     - name: Включение ведения журнала диагностики в Azure API для FHIR®
@@ -118,3 +118,6 @@
   items:
     - name: Azure CLI
       href: /cli/azure/ext/healthcareapis/healthcareapis
+    - name: Встроенные компоненты Политики Azure
+      displayName: 'samples, policies, definitions'
+      href: ./policy-reference.md

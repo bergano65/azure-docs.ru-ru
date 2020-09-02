@@ -39,9 +39,6 @@
   items:
     - name: Примеры кода для Key Vault
       href: 'https://docs.microsoft.com/samples/browse/?expanded=azure&products=azure-key-vault'
-    - name: Встроенные компоненты Политики Azure
-      displayName: 'samples, policies, definitions'
-      href: ../policy-samples.md?toc=/azure/key-vault/general/toc.json&bc=/azure/key-vault/breadcrumb/toc.json
 - name: Основные понятия
   items:
     - name: Основные понятия
@@ -90,6 +87,8 @@
           href: managed-identity.md
         - name: Использование политики управления доступом
           href: group-permissions-for-apps.md
+        - name: Использование управления доступом на основе ролей (предварительная версия)
+          href: rbac-guide.md
         - name: Устранение неполадок с доступом
           href: troubleshooting-access-issues.md
     - name: Разработка
@@ -163,6 +162,9 @@
     - name: Шаблон Resource Manager
       href: /azure/templates/microsoft.keyvault/allversions
       displayName: ARM
+    - name: Встроенные компоненты Политики Azure
+      displayName: 'samples, policies, definitions'
+      href: ../policy-reference.md?toc=/azure/key-vault/general/toc.json&bc=/azure/key-vault/breadcrumb/toc.json
 - name: Ресурсы
   items:
     - name: Развитие навыков с помощью Microsoft Learn

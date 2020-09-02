@@ -73,15 +73,15 @@
               items:
                 - name: Получение доступа к кластеру Kubernetes
                   href: azure-stack-edge-gpu-create-kubernetes-cluster.md
-                - name: Предоставление приложения без отслеживания состояния
+                - name: Приложение без отслеживания состояния
                   href: azure-stack-edge-j-series-deploy-stateless-application-kubernetes.md
-                - name: Развертывание приложения с отслеживанием состояния (статическая подготовка)
+                - name: Статически подготовленное приложение с отслеживанием состояния
                   href: azure-stack-edge-gpu-deploy-stateful-application-static-provision-kubernetes.md
-                - name: Развертывание приложения с отслеживанием состояния (динамическая подготовка)
+                - name: Динамически подготовленное приложение с отслеживанием состояния
                   href: azure-stack-edge-gpu-deploy-stateful-application-dynamic-provision-kubernetes.md
             - name: Посредством IoT Edge
               items:
-                - name: Предоставление приложения без отслеживания состояния
+                - name: Приложение без отслеживания состояния
                   href: azure-stack-edge-gpu-deploy-stateless-application-iot-edge-module.md
             - name: Использование Azure Arc
               items:
@@ -119,8 +119,8 @@
               href: azure-stack-edge-j-series-create-certificates-tool.md
             - name: Устранение ошибок сертификата
               href: azure-stack-edge-j-series-certificate-troubleshooting.md
-            - name: Разработка модуля C#
-              href: azure-stack-edge-j-series-create-iot-edge-module.md
+        - name: Разработка модуля C#
+          href: azure-stack-edge-j-series-create-iot-edge-module.md
         - name: Управление пограничными вычислениями
           href: azure-stack-edge-j-series-manage-compute.md
         - name: Управление шлюзом хранилища

@@ -30,10 +30,10 @@
     - name: Основные понятия
       expanded: false
       items:
+        - name: Цены на внешние удостоверения
+          href: external-identities-pricing.md
         - name: Рекомендации по B2B
           href: b2b-fundamentals.md
-        - name: Лицензирование B2B
-          href: licensing-guidance.md
         - name: "Доступ внешних пользователей к B2B и Office\_365"
           href: o365-external-user.md
         - name: Активация приглашения

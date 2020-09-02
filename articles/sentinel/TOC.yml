@@ -171,6 +171,10 @@
           href: livestream.md
     - name: Удаление Azure Sentinel
       href: offboard.md
+- name: Справочник (новый)
+  items:
+    - name: Интерфейсы REST API
+      href: 'https://docs.microsoft.com/rest/api/securityinsights/'
 - name: Ресурсы
   items:
     - name: Полезные ресурсы

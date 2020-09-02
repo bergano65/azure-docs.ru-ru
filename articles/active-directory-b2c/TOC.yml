@@ -81,6 +81,8 @@
       href: user-profile-attributes.md
     - name: Сеансы единого входа
       href: session-overview.md
+    - name: Защита идентификации и условный доступ
+      href: conditional-access-identity-protection-overview.md
 - name: Практические руководства
   items:
     - name: Интеграция приложений
@@ -111,6 +113,8 @@
               href: configure-ropc.md
             - name: Настройка самостоятельного сброса пароля
               href: user-flow-self-service-password-reset.md
+        - name: Добавление условного доступа
+          href: conditional-access-user-flow.md
         - name: Настройка UX
           items:
             - name: Настройка пользовательского интерфейса
@@ -164,6 +168,8 @@
           href: user-flow-custom-attributes.md
         - name: Транзитный внешний токен IdP
           href: idp-pass-through-user-flow.md
+    - name: Защита идентификации и условный доступ
+      href: conditional-access-identity-protection-setup.md
     - name: Настраиваемая политика
       items:
         - name: Создание политики
@@ -333,6 +339,9 @@
                       href: aad-sspr-technical-profile.md
                     - name: Преобразование утверждений
                       href: claims-transformation-technical-profile.md
+                    - name: Технический профиль условного доступа
+                      href: conditional-access-technical-profile.md
+                      displayName: ca
                     - name: Поставщик токенов JWT
                       href: jwt-issuer-technical-profile.md
                     - name: OAuth1

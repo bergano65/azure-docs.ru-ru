@@ -16,6 +16,8 @@
       href: add-application-portal.md
     - name: Настройка приложения
       href: add-application-portal-configure.md
+    - name: Назначение пользователей приложению
+      href: add-application-portal-assign-users.md
     - name: Настройка единого входа
       href: add-application-portal-setup-sso.md
     - name: Удаление приложения
