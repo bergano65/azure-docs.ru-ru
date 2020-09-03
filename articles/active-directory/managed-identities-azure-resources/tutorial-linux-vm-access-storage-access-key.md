@@ -3,7 +3,7 @@ title: Учебник`:`. Получение доступа к службе хр
 description: Из этого руководства вы узнаете, как получить доступ к службе хранилища Azure с помощью назначаемого системой управляемого удостоверения на виртуальной машине Linux.
 services: active-directory
 documentationcenter: ''
-author: MarkusVi
+author: barclayn
 manager: daveba
 editor: daveba
 ms.service: active-directory
@@ -13,14 +13,14 @@ ms.topic: tutorial
 ms.tgt_pltfrm: na
 ms.workload: identity
 ms.date: 03/04/2020
-ms.author: markvi
+ms.author: barclayn
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 86f875fa80f8bb8dd33a369a23f49833162cd417
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: 4c00c723c23e2f0d962009d33a6abe1008c734a5
+ms.sourcegitcommit: bcda98171d6e81795e723e525f81e6235f044e52
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "78273821"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89266278"
 ---
 # <a name="tutorial-use-a-linux-vm-system-assigned-managed-identity-to-access-azure-storage-via-access-key"></a>Руководство по использованию назначаемого системой управляемого удостоверения виртуальной машины Linux для доступа к службе хранилища Azure
 
@@ -78,7 +78,7 @@ ms.locfileid: "78273821"
 
 Далее в этом руководстве мы будем работать с виртуальной машиной, которую только что создали.
 
-Для выполнения этих действий вам потребуется клиент SSH. Если вы используете Windows, можно использовать клиент SSH в [подсистеме Windows для Linux](https://msdn.microsoft.com/commandline/wsl/install_guide). Если вам нужна помощь в настройке ключей SSH-клиента, ознакомьтесь с разделом [Использование ключей SSH с Windows в Azure](../../virtual-machines/linux/ssh-from-windows.md) или [Как создать и использовать пару из открытого и закрытого ключей SSH для виртуальных машин Linux в Azure](../../virtual-machines/linux/mac-create-ssh-keys.md).
+Для выполнения этих действий вам потребуется клиент SSH. Если вы используете Windows, можно использовать клиент SSH в [подсистеме Windows для Linux](/windows/wsl/install-win10). Если вам нужна помощь в настройке ключей SSH-клиента, ознакомьтесь с разделом [Использование ключей SSH с Windows в Azure](../../virtual-machines/linux/ssh-from-windows.md) или [Как создать и использовать пару из открытого и закрытого ключей SSH для виртуальных машин Linux в Azure](../../virtual-machines/linux/mac-create-ssh-keys.md).
 
 1. На портале Azure перейдите к разделу **Виртуальные машины**, выберите свою виртуальную машину Linux и вверху в разделе **Обзор** щелкните **Подключить**. Скопируйте строку подключения к виртуальной машине. 
 2. Подключитесь к виртуальной машине c помощью клиента SSH.  
@@ -127,7 +127,7 @@ curl https://management.azure.com/subscriptions/<SUBSCRIPTION ID>/resourceGroups
 echo "This is a test file." > test.txt
 ```
 
-Теперь выполните аутентификацию с помощью команды CLI `az storage`, указав в ней ключ доступа к хранилищу. Отправьте файл в контейнер больших двоичных объектов. Для выполнения этого шага нужно [установить последнюю версию Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli) на виртуальной машине, если вы не сделали этого ранее.
+Теперь выполните аутентификацию с помощью команды CLI `az storage`, указав в ней ключ доступа к хранилищу. Отправьте файл в контейнер больших двоичных объектов. Для выполнения этого шага нужно [установить последнюю версию Azure CLI](/cli/azure/install-azure-cli) на виртуальной машине, если вы не сделали этого ранее.
  
 
 ```azurecli-interactive
@@ -199,4 +199,4 @@ az storage blob download -c <CONTAINER NAME> -n test.txt -f test-download.txt --
 Из этого руководства вы узнали, как использовать назначаемое системой управляемое удостоверение виртуальной машины Linux для получения доступа к службе хранилища Azure с помощью ключа доступа.  Дополнительные сведения о ключах доступа к службе хранилища Azure см. здесь:
 
 > [!div class="nextstepaction"]
->[Управление ключами доступа к хранилищу](/azure/storage/common/storage-create-storage-account)
+>[Управление ключами доступа к хранилищу](../../storage/common/storage-account-create.md)

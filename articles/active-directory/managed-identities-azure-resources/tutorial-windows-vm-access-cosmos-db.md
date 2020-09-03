@@ -3,7 +3,7 @@ title: Руководство по использованию управляем
 description: В этом руководстве объясняется, как получить доступ к Azure Cosmos DB с помощью назначаемого системой управляемого удостоверения на виртуальной машине Windows.
 services: active-directory
 documentationcenter: ''
-author: MarkusVi
+author: barclayn
 manager: daveba
 editor: ''
 ms.service: active-directory
@@ -13,14 +13,14 @@ ms.topic: tutorial
 ms.tgt_pltfrm: na
 ms.workload: identity
 ms.date: 01/14/2020
-ms.author: markvi
+ms.author: barclayn
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 11b7f8eeb94fb2d6f197af2d40b120c5f74d6128
-ms.sourcegitcommit: b9d4b8ace55818fcb8e3aa58d193c03c7f6aa4f1
+ms.openlocfilehash: 17cdebb1291f78706178e129a62b932d45f38537
+ms.sourcegitcommit: bcda98171d6e81795e723e525f81e6235f044e52
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "82583059"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89263082"
 ---
 # <a name="tutorial-use-a-windows-vm-system-assigned-managed-identity-to-access-azure-cosmos-db"></a>Руководство по Использование назначаемого системой управляемого удостоверения виртуальной машины Windows для доступа к Azure Cosmos DB
 
@@ -84,7 +84,7 @@ New-AzRoleAssignment -ObjectId $spID -RoleDefinitionName "Cosmos DB Account Read
 
 В этом разделе показано, как вызывать Azure Resource Manager с помощью маркера доступа для назначенного системой управляемого удостоверения ВМ Windows. Далее в этом руководстве мы будем работать с виртуальной машиной, которую только что создали. 
 
-Вам нужно установить последнюю версию [Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli) на виртуальной машине Windows.
+Вам нужно установить последнюю версию [Azure CLI](/cli/azure/install-azure-cli) на виртуальной машине Windows.
 
 
 
@@ -204,6 +204,4 @@ az cosmosdb collection show -c <COLLECTION ID> -d <DATABASE ID> --url-connection
 Из этого руководства вы узнали, как получить доступ к Cosmos DB с помощью назначаемого системой управляемого удостоверения на виртуальной машине Windows.  Дополнительные сведения о Cosmos DB см. здесь:
 
 > [!div class="nextstepaction"]
->[Добро пожаловать в базу данных Azure Cosmos DB](/azure/cosmos-db/introduction)
-
-
+>[Добро пожаловать в базу данных Azure Cosmos DB](../../cosmos-db/introduction.md)

@@ -17,12 +17,12 @@ ms.author: markvi
 ms.reviewer: dhanyahk
 ms.collection: M365-identity-device-management
 ms.custom: has-adal-ref
-ms.openlocfilehash: 4f27385cc33c6c289718c3143d03e24f0454a9f0
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: bc763a99c945925b80171738f4076e6305d92df9
+ms.sourcegitcommit: d68c72e120bdd610bb6304dad503d3ea89a1f0f7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85608014"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89229465"
 ---
 # <a name="tutorial-get-data-using-the-azure-active-directory-reporting-api-with-certificates"></a>Руководство по Получение данных с помощью API отчетов Azure Active Directory с сертификатами
 
@@ -100,5 +100,5 @@ ms.locfileid: "85608014"
 ## <a name="next-steps"></a>Дальнейшие действия
 
 * [Ознакомление с API отчетов](concept-reporting-api.md)
-* [Справочник по API аудита](https://developer.microsoft.com/graph/docs/api-reference/beta/resources/directoryaudit) 
-* [Справочник по API отчетов о действиях при входе](https://developer.microsoft.com/graph/docs/api-reference/beta/resources/signin)
+* [Справочник по API аудита](/graph/api/resources/directoryaudit?view=graph-rest-beta) 
+* [Справочник по API отчетов о действиях при входе](/graph/api/resources/signin?view=graph-rest-beta)

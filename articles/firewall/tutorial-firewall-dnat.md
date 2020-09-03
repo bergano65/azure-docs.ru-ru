@@ -1,19 +1,19 @@
 ---
-title: Фильтрация входящего Интернет-трафика с помощью DNAT службы "Брандмауэр Azure" и портала
+title: Руководство по Фильтрация входящего Интернет-трафика с помощью DNAT службы "Брандмауэр Azure" и портала
 description: В этом руководстве вы можете узнать, как развернуть и настроить DNAT службы "Брандмауэр Azure" с помощью портала Azure.
 services: firewall
 author: vhorne
 ms.service: firewall
 ms.topic: tutorial
-ms.date: 03/02/2020
+ms.date: 08/28/2020
 ms.author: victorh
 ms.custom: mvc
-ms.openlocfilehash: 7220e48c6103352108bdb89e107bb862ee194040
-ms.sourcegitcommit: c5021f2095e25750eb34fd0b866adf5d81d56c3a
+ms.openlocfilehash: 8f528c6be68258400cb3e29582943f1d657c557d
+ms.sourcegitcommit: 656c0c38cf550327a9ee10cc936029378bc7b5a2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "78251488"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89069278"
 ---
 # <a name="tutorial-filter-inbound-internet-traffic-with-azure-firewall-dnat-using-the-azure-portal"></a>Руководство по Фильтрация входящего Интернет-трафика с помощью DNAT службы "Брандмауэр Azure" и портала Azure
 
@@ -28,12 +28,11 @@ ms.locfileid: "78251488"
 > * Настройка правила DNAT
 > * тестирование брандмауэра.
 
+## <a name="prerequisites"></a>Предварительные требования
+
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
-В рамках этого руководства вы создадите две пиринговые виртуальные сети:
 
-- **VN-Hub** — в этой виртуальной сети находится брандмауэр.
-- **VN-Spoke** — в этой виртуальной сети находится сервер рабочей нагрузки.
 
 ## <a name="create-a-resource-group"></a>Создание группы ресурсов
 
@@ -45,6 +44,11 @@ ms.locfileid: "78251488"
 6. Нажмите кнопку **создания**.
 
 ## <a name="set-up-the-network-environment"></a>Настройка сетевой среды
+
+В рамках этого руководства вы создадите две пиринговые виртуальные сети:
+
+- **VN-Hub** — в этой виртуальной сети находится брандмауэр.
+- **VN-Spoke** — в этой виртуальной сети находится сервер рабочей нагрузки.
 
 Сначала создайте виртуальные сети, а затем установите пиринг между ними.
 

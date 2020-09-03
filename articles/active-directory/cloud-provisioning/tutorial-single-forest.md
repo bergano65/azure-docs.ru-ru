@@ -11,12 +11,12 @@ ms.date: 12/05/2019
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d4fbfe9222971ccd1d28ceaddc91b137c6106e12
-ms.sourcegitcommit: 5cace04239f5efef4c1eed78144191a8b7d7fee8
+ms.openlocfilehash: a63bd6be9b21a506054ab5a02fa7f5d6751f303a
+ms.sourcegitcommit: d68c72e120bdd610bb6304dad503d3ea89a1f0f7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86146749"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89228381"
 ---
 # <a name="tutorial-integrate-a-single-forest-with-a-single-azure-ad-tenant"></a>Руководство по Интеграция одного леса с одним клиентом Azure AD
 
@@ -29,8 +29,8 @@ ms.locfileid: "86146749"
 ## <a name="prerequisites"></a>Предварительные требования
 ### <a name="in-the-azure-active-directory-admin-center"></a>В центре администрирования Azure Active Directory
 
-1. Создайте облачную учетную запись глобального администратора в клиенте Azure AD. Таким образом, вы сможете управлять конфигурацией клиента, если работа локальных служб завершится сбоем или они станут недоступными. Узнайте больше о [добавлении облачной учетной записи глобального администратора](../active-directory-users-create-azure-portal.md). Этот шаг очень важен, чтобы не потерять доступ к клиенту.
-2. Добавьте одно [имя личного домена](../active-directory-domains-add-azure-portal.md) (или несколько) в клиент Azure AD. Пользователи могут выполнить вход с помощью одного из этих доменных имен.
+1. Создайте облачную учетную запись глобального администратора в клиенте Azure AD. Таким образом, вы сможете управлять конфигурацией клиента, если работа локальных служб завершится сбоем или они станут недоступными. Узнайте больше о [добавлении облачной учетной записи глобального администратора](../fundamentals/add-users-azure-active-directory.md). Этот шаг очень важен, чтобы не потерять доступ к клиенту.
+2. Добавьте одно [имя личного домена](../fundamentals/add-custom-domain.md) (или несколько) в клиент Azure AD. Пользователи могут выполнить вход с помощью одного из этих доменных имен.
 
 ### <a name="in-your-on-premises-environment"></a>В локальной среде
 

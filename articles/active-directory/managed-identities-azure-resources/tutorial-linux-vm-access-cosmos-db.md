@@ -3,7 +3,7 @@ title: Учебник. Получение доступа к Azure Cosmos DB дл
 description: Из этого руководства вы узнаете, как получить доступ к Azure Cosmos DB с помощью назначаемого системой управляемого удостоверения на виртуальной машине Linux.
 services: active-directory
 documentationcenter: ''
-author: MarkusVi
+author: barclayn
 manager: daveba
 editor: ''
 ms.service: active-directory
@@ -13,14 +13,14 @@ ms.topic: tutorial
 ms.tgt_pltfrm: na
 ms.workload: identity
 ms.date: 04/09/2018
-ms.author: markvi
+ms.author: barclayn
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: f15a269656f205b0acb6a49740dd4c625c0bdd41
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: 2006c44d68d9570af0bfa410cc7fe908502d2ba5
+ms.sourcegitcommit: bcda98171d6e81795e723e525f81e6235f044e52
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "78248279"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89267995"
 ---
 # <a name="tutorial-use-a-linux-vm-system-assigned-managed-identity-to-access-azure-cosmos-db"></a>Руководство по Использование назначаемого системой управляемого удостоверения на виртуальной машине Linux для доступа к Azure Cosmos DB 
 
@@ -44,7 +44,7 @@ ms.locfileid: "78248279"
 Запустить примеры сценариев CLI в этом руководстве можно двумя способами:
 
 - Использовать службу [Azure Cloud Shell](~/articles/cloud-shell/overview.md) на портале Azure или с помощью кнопки **Попробовать**, расположенной в правом верхнем углу каждого блока кода.
-- [Установить последнюю версию интерфейса командной строки (CLI) 2.0](https://docs.microsoft.com/cli/azure/install-azure-cli) (2.0.23 или более позднюю версию), если вы предпочитаете использовать локальную консоль CLI.
+- [Установить последнюю версию интерфейса командной строки (CLI) 2.0](/cli/azure/install-azure-cli) (2.0.23 или более позднюю версию), если вы предпочитаете использовать локальную консоль CLI.
 
 ## <a name="create-a-cosmos-db-account"></a>Создание учетной записи Cosmos DB 
 
@@ -114,7 +114,7 @@ az role assignment create --assignee <MI PRINCIPALID> --role '<ROLE NAME>' --sco
 
 Далее в этом руководстве мы будем работать с виртуальной машиной, созданной ранее.
 
-Для выполнения этих действий вам потребуется клиент SSH. Если вы используете Windows, можно использовать клиент SSH в [подсистеме Windows для Linux](https://msdn.microsoft.com/commandline/wsl/install_guide). Если вам нужна помощь в настройке ключей SSH-клиента, ознакомьтесь с разделом [Использование ключей SSH с Windows в Azure](../../virtual-machines/linux/ssh-from-windows.md) или [Как создать и использовать пару из открытого и закрытого ключей SSH для виртуальных машин Linux в Azure](../../virtual-machines/linux/mac-create-ssh-keys.md).
+Для выполнения этих действий вам потребуется клиент SSH. Если вы используете Windows, можно использовать клиент SSH в [подсистеме Windows для Linux](/windows/wsl/install-win10). Если вам нужна помощь в настройке ключей SSH-клиента, ознакомьтесь с разделом [Использование ключей SSH с Windows в Azure](../../virtual-machines/linux/ssh-from-windows.md) или [Как создать и использовать пару из открытого и закрытого ключей SSH для виртуальных машин Linux в Azure](../../virtual-machines/linux/mac-create-ssh-keys.md).
 
 1. На портале Azure перейдите к разделу **Виртуальные машины**, выберите свою виртуальную машину Linux и вверху в разделе **Обзор** щелкните **Подключить**. Скопируйте строку подключения к виртуальной машине. 
 2. Подключитесь к виртуальной машине c помощью клиента SSH.  
@@ -228,5 +228,4 @@ az cosmosdb collection show -c <COLLECTION ID> -d <DATABASE ID> --url-connection
 Из этого руководства вы узнали, как получить доступ к базе данных Cosmos DB с помощью назначаемого системой управляемого удостоверения виртуальной машины Linux.  Дополнительные сведения о Cosmos DB см. здесь:
 
 > [!div class="nextstepaction"]
->[Добро пожаловать в базу данных Azure Cosmos DB](/azure/cosmos-db/introduction)
-
+>[Добро пожаловать в базу данных Azure Cosmos DB](../../cosmos-db/introduction.md)

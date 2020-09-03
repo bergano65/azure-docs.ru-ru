@@ -6,12 +6,12 @@ ms.author: daperlov
 ms.service: data-factory
 ms.topic: tutorial
 ms.date: 08/11/2020
-ms.openlocfilehash: 809011df3c8cd6dbc1ee2a2129a261102adb43c0
-ms.sourcegitcommit: d8b8768d62672e9c287a04f2578383d0eb857950
+ms.openlocfilehash: c1527161948a6312fc0877748b2818b3ccc2143e
+ms.sourcegitcommit: 5ed504a9ddfbd69d4f2d256ec431e634eb38813e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/11/2020
-ms.locfileid: "88067857"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89322625"
 ---
 # <a name="mapping-data-flow-video-tutorials"></a>Видеоматериалы по потоку данных для сопоставления
 
@@ -107,8 +107,6 @@ ms.locfileid: "88067857"
 
 [Data lineage](https://www.youtube.com/watch?v=5KvqYF-y93s) (Происхождение данных)
 
-[Optimization tips](https://www.youtube.com/watch?v=a2KtwUJngHo) (Советы по оптимизации)
-
 [Iterate files with parameters](http://youtu.be/uEgz0ptYRDM?hd=1) (Итерация файлов с параметрами)
 
 [Decrease start-up times](https://youtu.be/FFCbU4ujCiY?t=528) (Уменьшение времени запуска)
@@ -121,7 +119,7 @@ ms.locfileid: "88067857"
 
 [Оптимизация времени запуска для потоков данных ](https://www.youtube.com/watch?v=VT_2ZV3a7Fc)
 
-[Среды выполнения Azure Integration Runtime для потоков данных](https://mssqldude.wordpress.com/)
+[Среды выполнения Azure Integration Runtime для потоков данных](https://www.youtube.com/watch?v=VT_2ZV3a7Fc)
 
 ## <a name="mapping-data-flow-scenarios"></a>Сценарии потоков данных для сопоставления
 
@@ -131,7 +129,7 @@ ms.locfileid: "88067857"
 
 [Clean addresses pattern](https://youtu.be/axEYbuU3lmw) (Шаблон чистых адресов)
 
-[Deduplication](https://www.youtube.com/watch?v=OLenvYwg__I) (Дедупликация)
+[Deduplication](https://youtu.be/QOi26ETtPTw) (Дедупликация)
 
 [Merge files](http://youtu.be/WbDTBAyYte8) (Объединить файлы)
 
