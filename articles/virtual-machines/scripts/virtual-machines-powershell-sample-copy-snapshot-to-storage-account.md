@@ -1,0 +1,53 @@
+---
+title: Пример скрипта PowerShell для экспорта или копирования моментального снимка в виде VHD в учетную запись хранения в другом регионе
+description: Пример сценария Azure PowerShell для экспорта или копирования моментального снимка в виде VHD в учетную запись хранения в другом регионе.
+documentationcenter: storage
+author: ramankumarlive
+manager: kavithag
+ms.service: virtual-machines
+ms.subservice: disks
+ms.topic: sample
+ms.workload: infrastructure
+ms.date: 06/05/2017
+ms.author: ramankum
+ms.openlocfilehash: 389c256e951c8a97f0233e5082ea13cc1573302d
+ms.sourcegitcommit: 5ed504a9ddfbd69d4f2d256ec431e634eb38813e
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89320381"
+---
+# <a name="exportcopy-managed-snapshots-as-vhd-to-a-storage-account-in-different-region-with-powershell"></a>Экспорт или копирование управляемых моментальных снимков в виде VHD в учетную запись хранения в другом регионе с помощью PowerShell
+
+Этот сценарий экспортирует управляемый моментальный снимок в учетную запись хранения в другом регионе. Сначала он создает URI SAS для моментального снимка, а затем использует его для копирования в учетную запись хранения в другом регионе. Этот сценарий можно использовать для обеспечения резервной копии управляемых дисков в другом регионе в целях аварийного восстановления.  
+
+[!INCLUDE [sample-powershell-install](../../../includes/sample-powershell-install.md)]
+
+[!INCLUDE [quickstarts-free-trial-note](../../../includes/quickstarts-free-trial-note.md)]
+
+ 
+
+## <a name="sample-script"></a>Пример скрипта
+
+[!code-powershell[main](../../../powershell_scripts/virtual-machine/copy-snapshot-to-storage-account/copy-snapshot-to-storage-account.ps1 "Copy snapshot")]
+
+
+## <a name="script-explanation"></a>Описание скрипта
+
+Этот сценарий выполняет приведенные ниже команды для создания универсального кода ресурса (URI) SAS для управляемого моментального снимка и копирует моментальный снимок в учетную запись хранения, используя созданный универсальный код ресурса (URI) SAS. Для каждой команды в таблице приведены ссылки на соответствующую документацию.
+
+| Get-Help | Примечания |
+|---|---|
+| [Grant-AzSnapshotAccess](/powershell/module/az.compute/new-azdisk) | Создает универсальный код ресурса (URI) SAS для моментального снимка, который используется для копирования моментального снимка в учетную запись хранения. |
+| [New-AzureStorageContext](/powershell/module/azure.storage/new-azurestoragecontext) | Создает контекст учетной записи хранения с помощью имени учетной записи и ключа. Этот контекст можно использовать для выполнения операций чтения и записи с учетной записью хранения. |
+| [Start-AzureStorageBlobCopy](/powershell/module/azure.storage/start-azurestorageblobcopy) | Копирует базовый VHD моментального снимка в учетную запись хранения. |
+
+## <a name="next-steps"></a>Дальнейшие действия
+
+[Создание управляемого диска на основе VHD](virtual-machines-powershell-sample-create-managed-disk-from-vhd.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)
+
+[Создание виртуальной машины на основе управляемого диска](./virtual-machines-powershell-sample-create-vm-from-managed-os-disks.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)
+
+Дополнительные сведения о модуле Azure PowerShell см. в [документации по Azure PowerShell](/powershell/azure/).
+
+Дополнительные примеры сценариев PowerShell для виртуальных машин представлены в [документации по виртуальным машинам Azure под управлением Linux](../linux/powershell-samples.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json).

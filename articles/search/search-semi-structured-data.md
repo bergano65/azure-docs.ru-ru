@@ -8,18 +8,18 @@ ms.author: heidist
 ms.service: cognitive-search
 ms.topic: tutorial
 ms.date: 06/23/2020
-ms.openlocfilehash: 0e6759837519feccf6069e805e3fe0f72562fb7b
-ms.sourcegitcommit: 62717591c3ab871365a783b7221851758f4ec9a4
+ms.openlocfilehash: 8a615dc02b78993a18a86def9d8f496ba0bba922
+ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/22/2020
-ms.locfileid: "85559018"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88929709"
 ---
 # <a name="tutorial-index-json-blobs-from-azure-storage-using-rest"></a>Руководство по индексированию больших двоичных объектов JSON из службы хранилища Azure с помощью REST
 
 Служба "Когнитивный поиск Azure" может индексировать документы и массивы JSON в хранилище BLOB-объектов Azure с помощью [индексатора](search-indexer-overview.md), который умеет читать полуструктурированные данные. Частично структурированные данные содержат теги или метки, отделяющие содержимое в данных. Этим они отличаются от неструктурированных данных, которые должны быть полностью проиндексированы, и от формально структурированных данных, которые соответствуют модели данных, например схеме реляционной базы данных, и поддерживают индексирование по отдельным полям.
 
-В этом учебнике используется Postman и [REST API поиска](https://docs.microsoft.com/rest/api/searchservice/), чтобы выполнять следующие задачи:
+В этом учебнике используется Postman и [REST API поиска](/rest/api/searchservice/), чтобы выполнять следующие задачи:
 
 > [!div class="checklist"]
 > * Настройка источника данных службы "Когнитивный поиск Azure" для контейнера больших двоичных объектов.
@@ -31,7 +31,7 @@ ms.locfileid: "85559018"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-+ [Хранилище Azure](https://docs.microsoft.com/azure/storage/common/storage-quickstart-create-account)
++ [Хранилище Azure](../storage/common/storage-account-create.md)
 + [Классическое приложение Postman](https://www.getpostman.com/)
 + [Создайте службу поиска](search-create-service-portal.md) или [найдите существующую службу](https://ms.portal.azure.com/#blade/HubsExtension/BrowseResourceBlade/resourceType/Microsoft.Search%2FsearchServices) 
 
@@ -72,7 +72,7 @@ ms.locfileid: "85559018"
 
 1. Щелкните службу **Большие двоичные объекты**.
 
-1. [Создайте контейнер больших двоичных объектов](https://docs.microsoft.com/azure/storage/blobs/storage-quickstart-blobs-portal) для хранения примера данных. Можно задать любое из допустимых значений уровня общего доступа.
+1. [Создайте контейнер больших двоичных объектов](../storage/blobs/storage-quickstart-blobs-portal.md) для хранения примера данных. Можно задать любое из допустимых значений уровня общего доступа.
 
 1. Откройте контейнер после создания и на панели команд выберите **Загрузить**.
 
@@ -116,7 +116,7 @@ ms.locfileid: "85559018"
 
 ## <a name="3---create-a-data-source"></a>3\. Создание источника данных
 
-[API создания источника данных](https://docs.microsoft.com/rest/api/searchservice/create-data-source) создает объект службы "Когнитивный поиск Azure", в котором указываются данные для индексирования.
+[API создания источника данных](/rest/api/searchservice/create-data-source) создает объект службы "Когнитивный поиск Azure", в котором указываются данные для индексирования.
 
 1. Задайте для конечной точки этого вызова значение `https://[service name].search.windows.net/datasources?api-version=2020-06-30`. Замените `[service name]` именем службы поиска. 
 
@@ -159,7 +159,7 @@ ms.locfileid: "85559018"
 
 ## <a name="4---create-an-index"></a>4\. Создание индекса
     
-Второй вызов — [API создания индекса](https://docs.microsoft.com/rest/api/searchservice/create-index), создающий индекс службы "Когнитивный поиск Azure", в котором хранятся все доступные для поиска данные. Индекс указывает все параметры и их атрибуты.
+Второй вызов — [API создания индекса](/rest/api/searchservice/create-index), создающий индекс службы "Когнитивный поиск Azure", в котором хранятся все доступные для поиска данные. Индекс указывает все параметры и их атрибуты.
 
 1. Задайте для конечной точки этого вызова значение `https://[service name].search.windows.net/indexes?api-version=2020-06-30`. Замените `[service name]` именем службы поиска.
 
@@ -234,7 +234,7 @@ ms.locfileid: "85559018"
 
 ## <a name="5---create-and-run-an-indexer"></a>5\. Создание и запуск индексатора
 
-Индексатор подключает источник данных, импортирует данные в целевой индекс поиска и при необходимости предоставляет расписание для автоматизации обновления данных. REST API — [создание индексатора](https://docs.microsoft.com/rest/api/searchservice/create-indexer).
+Индексатор подключает источник данных, импортирует данные в целевой индекс поиска и при необходимости предоставляет расписание для автоматизации обновления данных. REST API — [создание индексатора](/rest/api/searchservice/create-indexer).
 
 1. Задайте для универсального кода ресурса (URI) этого вызова значение `https://[service name].search.windows.net/indexers?api-version=2020-06-30`. Замените `[service name]` именем службы поиска.
 

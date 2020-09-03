@@ -3,7 +3,7 @@ title: Учебник. Получение доступа к Azure Key Vault дл
 description: Из этого руководства вы узнаете, как получить доступ к хранилищу Azure Key Vault с помощью назначенного системой управляемого удостоверения на виртуальной машине Windows.
 services: active-directory
 documentationcenter: ''
-author: MarkusVi
+author: barclayn
 manager: daveba
 editor: daveba
 ms.service: active-directory
@@ -13,14 +13,14 @@ ms.topic: tutorial
 ms.tgt_pltfrm: na
 ms.workload: identity
 ms.date: 01/10/2020
-ms.author: markvi
+ms.author: barclayn
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 7648f0c41731968c6cf8d2b2b2e55fffd9b5f53d
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 2890eb2211ac0a105363742a0e900e52a577ed27
+ms.sourcegitcommit: bcda98171d6e81795e723e525f81e6235f044e52
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87018780"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89255831"
 ---
 # <a name="tutorial-use-a-windows-vm-system-assigned-managed-identity-to-access-azure-key-vault"></a>Руководство по Использование назначенного системой управляемого удостоверения на виртуальной машине Windows для доступа к Azure Key Vault 
 
@@ -75,7 +75,7 @@ ms.locfileid: "87018780"
  
 ## <a name="access-data"></a>Доступ к данным  
 
-В этом разделе показано, как получить маркер доступа с помощью удостоверения виртуальной машины и использовать этот маркер для получения секрета из Key Vault. Если вы не установили версию PowerShell 4.3.1 или выше, [загрузите и установите последнюю версию](https://docs.microsoft.com/powershell/azure/).
+В этом разделе показано, как получить маркер доступа с помощью удостоверения виртуальной машины и использовать этот маркер для получения секрета из Key Vault. Если вы не установили версию PowerShell 4.3.1 или выше, [загрузите и установите последнюю версию](/powershell/azure/).
 
 Сначала получим маркер доступа для аутентификации в Key Vault с помощью управляемого удостоверения виртуальной машины:
  
@@ -128,4 +128,4 @@ ms.locfileid: "87018780"
 Из этого руководства вы узнали, как получить доступ к хранилищу Azure Key Vault с помощью назначенного системой управляемого удостоверения на виртуальной машине Windows.  Дополнительные сведения об Azure Key Vault см. здесь:
 
 > [!div class="nextstepaction"]
->[Хранилище ключей Azure](/azure/key-vault/key-vault-overview)
+>[Хранилище ключей Azure](../../key-vault/general/overview.md)

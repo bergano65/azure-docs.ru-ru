@@ -3,7 +3,7 @@ title: Учебник. Получение доступа к Azure Data Lake Stor
 description: В этом руководстве описано, как получить доступ к Azure Data Lake Storage с помощью назначаемого системой управляемого удостоверения на виртуальной машине Windows.
 services: active-directory
 documentationcenter: ''
-author: MarkusVi
+author: barclayn
 manager: daveba
 editor: ''
 ms.service: active-directory
@@ -13,14 +13,14 @@ ms.topic: tutorial
 ms.tgt_pltfrm: na
 ms.workload: identity
 ms.date: 11/14/2018
-ms.author: markvi
+ms.author: barclayn
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c03f78341b7521267f8aaf72d58ebd4c912949ce
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: d29edec6145ebc03218264532cae07b6afc9654c
+ms.sourcegitcommit: bcda98171d6e81795e723e525f81e6235f044e52
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "75977879"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89254208"
 ---
 # <a name="tutorial-use-a-windows-vm-system-assigned-managed-identity-to-access-azure-data-lake-store"></a>Руководство по Получение доступа к Azure Data Lake Storage с помощью назначаемого системой управляемого удостоверения на виртуальной машине Windows
 
@@ -46,7 +46,7 @@ ms.locfileid: "75977879"
 
 ## <a name="grant-access"></a>Предоставление доступа
 
-Теперь можно предоставить виртуальной машине доступ к файлам и папкам в Azure Data Lake Store.  Для выполнения этого шага можно использовать имеющееся хранилище Azure Data Lake Store или создать новое.  Чтобы создать новое хранилище Data Lake Store с помощью портала Azure, следуйте этому [краткому руководству по Azure Data Lake Store](https://docs.microsoft.com/azure/data-lake-store/data-lake-store-get-started-portal). В [документации по Azure Data Lake Store](https://docs.microsoft.com/azure/data-lake-store/data-lake-store-overview) также есть краткие руководства, описывающие использование Azure CLI и Azure PowerShell.
+Теперь можно предоставить виртуальной машине доступ к файлам и папкам в Azure Data Lake Store.  Для выполнения этого шага можно использовать имеющееся хранилище Azure Data Lake Store или создать новое.  Чтобы создать новое хранилище Data Lake Store с помощью портала Azure, следуйте этому [краткому руководству по Azure Data Lake Store](../../data-lake-store/data-lake-store-get-started-portal.md). В [документации по Azure Data Lake Store](../../data-lake-store/data-lake-store-overview.md) также есть краткие руководства, описывающие использование Azure CLI и Azure PowerShell.
 
 Создайте папку в Data Lake Storage и предоставьте назначаемому системой удостоверению виртуальной машины разрешение на чтение, запись и выполнение файлов в этой папке:
 
@@ -62,11 +62,11 @@ ms.locfileid: "75977879"
 10. Как и на шаге 5, нажмите кнопку **Добавить**, в поле **Выбор** введите имя виртуальной машины, выберите ее и нажмите кнопку **Выбрать**.
 11. Как и на шаге 6, щелкните **Выбор разрешений**, выберите разрешения **Чтение**, **Запись** и **Выполнение**, добавьте их в раздел **Эта папка**, после чего добавьте их в качестве **записи разрешения доступа и записи разрешений по умолчанию**.  Нажмите кнопку **ОК**.  Разрешения должны быть успешно добавлены.
 
-Теперь назначаемое системой управляемое удостоверение виртуальной машины сможет выполнять все операции с файлами в созданной папке.  Дополнительные сведения об управлении доступом к Data Lake Store см. в статье [Контроль доступа в Azure Data Lake Store](https://docs.microsoft.com/azure/data-lake-store/data-lake-store-access-control).
+Теперь назначаемое системой управляемое удостоверение виртуальной машины сможет выполнять все операции с файлами в созданной папке.  Дополнительные сведения об управлении доступом к Data Lake Store см. в статье [Контроль доступа в Azure Data Lake Store](../../data-lake-store/data-lake-store-access-control.md).
 
 ## <a name="access-data"></a>Доступ к данным
 
-В репозитории Azure Data Lake Storage изначально реализована поддержка аутентификации Azure AD, поэтому он может напрямую принимать маркеры доступа, полученные с помощью управляемых удостоверений для ресурсов Azure.  Для аутентификации в файловой системе Data Lake Store маркер доступа, выданный службой Azure AD конечной точке файловой системы Data Lake Store, отправляется в заголовке авторизации в формате "Bearer <ЗНАЧЕНИЕ_МАРКЕРА_ДОСТУПА>".  Дополнительные сведения о поддержке Data Lake Store для аутентификации Azure AD см. в разделе [Аутентификация в Data Lake Store с помощью Azure Active Directory](https://docs.microsoft.com/azure/data-lake-store/data-lakes-store-authentication-using-azure-active-directory).
+В репозитории Azure Data Lake Storage изначально реализована поддержка аутентификации Azure AD, поэтому он может напрямую принимать маркеры доступа, полученные с помощью управляемых удостоверений для ресурсов Azure.  Для аутентификации в файловой системе Data Lake Store маркер доступа, выданный службой Azure AD конечной точке файловой системы Data Lake Store, отправляется в заголовке авторизации в формате "Bearer <ЗНАЧЕНИЕ_МАРКЕРА_ДОСТУПА>".  Дополнительные сведения о поддержке Data Lake Store для аутентификации Azure AD см. в разделе [Аутентификация в Data Lake Store с помощью Azure Active Directory](../../data-lake-store/data-lakes-store-authentication-using-azure-active-directory.md).
 
 > [!NOTE]
 > Клиентские пакеты SDK файловой системы Data Lake Storage пока не поддерживают управляемые удостоверения для ресурсов Azure.  Это руководство будет обновлено, как только поддержка будет добавлена в пакет SDK.
@@ -193,4 +193,4 @@ ms.locfileid: "75977879"
 Из этого руководства вы узнали, как получить доступ к Azure Data Lake Storage с помощью назначаемого системой управляемого удостоверения на виртуальной машине Windows. Дополнительные сведения об Azure Data Lake Store см. здесь:
 
 > [!div class="nextstepaction"]
->[Azure Data Lake Storage](/azure/data-lake-store/data-lake-store-overview)
+>[Azure Data Lake Storage](../../data-lake-store/data-lake-store-overview.md)
