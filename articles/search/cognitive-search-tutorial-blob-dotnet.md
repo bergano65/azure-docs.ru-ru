@@ -8,18 +8,19 @@ ms.author: maheff
 ms.service: cognitive-search
 ms.topic: tutorial
 ms.date: 08/20/2020
-ms.openlocfilehash: 693a7006a9f5742341a11af23b64bcd8c501618f
-ms.sourcegitcommit: e0785ea4f2926f944ff4d65a96cee05b6dcdb792
+ms.custom: devx-track-csharp
+ms.openlocfilehash: 09273cf901830e850acca05c57c0b110ffd7e28a
+ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/21/2020
-ms.locfileid: "88705900"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89002868"
 ---
 # <a name="tutorial-ai-generated-searchable-content-from-azure-blobs-using-the-net-sdk"></a>Руководство по Работа с созданным ИИ содержимым с возможностью поиска из больших двоичных объектов Azure с использованием пакета SDK для .NET
 
 Если у вас есть неструктурированный текст или изображения в хранилище BLOB-объектов Azure, [конвейер обогащения с помощью искуственного интелекта](cognitive-search-concept-intro.md) поможет извлекать информацию и создавать содержимое, применимое для сценариев полнотекстового поиска и интеллектуального анализа. В этом учебнике для C# внимание уделяется созданию полей на основе распознавания текста (OCR) изображений и обработки естественного языка. Все это позволит вам использовать информацию в запросах, аспектах и фильтрах.
 
-В этом учебнике используется C# и пакет [SDK для .NET](https://docs.microsoft.com/dotnet/api/overview/azure/search) для выполнения следующих задач:
+В этом учебнике используется C# и пакет [SDK для .NET](/dotnet/api/overview/azure/search) для выполнения следующих задач:
 
 > [!div class="checklist"]
 > * Начните с файлов приложений и изображений в хранилище BLOB-объектов Azure.
@@ -127,7 +128,7 @@ ms.locfileid: "88705900"
 
 ### <a name="install-nuget-packages"></a>Установка пакетов Nuget
 
-[Пакет SDK службы "Когнитивный поиск Azure" для .NET](https://docs.microsoft.com/dotnet/api/overview/azure/search) содержит несколько клиентских библиотек, которые позволяют управлять индексами, источниками данных, индексаторами и наборами навыков, а также отправлять документы, управлять ими и выполнять запросы, не вникая в детали HTTP и JSON. Эти клиентские библиотеки распределяются как пакеты NuGet.
+[Пакет SDK службы "Когнитивный поиск Azure" для .NET](/dotnet/api/overview/azure/search) содержит несколько клиентских библиотек, которые позволяют управлять индексами, источниками данных, индексаторами и наборами навыков, а также отправлять документы, управлять ими и выполнять запросы, не вникая в детали HTTP и JSON. Эти клиентские библиотеки распределяются как пакеты NuGet.
 
 Для этого проекта установите пакет NuGet `Microsoft.Azure.Search` версии 9 или более поздней.
 
@@ -680,7 +681,7 @@ private static Index CreateDemoIndex(SearchServiceClient serviceClient)
 using Index = Microsoft.Azure.Search.Models.Index;
 ```
 
-Дополнительные сведения об определении индекса см. в статье [Create Index (Azure Search Service REST API)](https://docs.microsoft.com/rest/api/searchservice/create-index) (Создание индексов (REST API службы "Поиск Azure")).
+Дополнительные сведения об определении индекса см. в статье [Create Index (Azure Search Service REST API)](/rest/api/searchservice/create-index) (Создание индексов (REST API службы "Поиск Azure")).
 
 ### <a name="step-4-create-and-run-an-indexer"></a>Шаг 4. Создание и запуск индексатора
 
@@ -905,7 +906,7 @@ catch (Exception e)
 }
 ```
 
-Повторите запрос для дополнительных полей: content, languageCode, keyPhrases и organizations в этом упражнении. Вы можете возвратить несколько полей с помощью свойства [Select](https://docs.microsoft.com/dotnet/api/microsoft.azure.search.models.searchparameters.select?view=azure-dotnet), используя разделенный запятыми список.
+Повторите запрос для дополнительных полей: content, languageCode, keyPhrases и organizations в этом упражнении. Вы можете возвратить несколько полей с помощью свойства [Select](/dotnet/api/microsoft.azure.search.models.searchparameters.select?view=azure-dotnet), используя разделенный запятыми список.
 
 <a name="reset"></a>
 

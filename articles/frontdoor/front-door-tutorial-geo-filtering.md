@@ -3,20 +3,20 @@ title: Руководство. Настройка политики геофил�
 description: Из этого руководства вы узнаете, как создать простую политику геофильтрации и связать ее с существующим узлом внешнего интерфейса Front Door.
 services: frontdoor
 documentationcenter: ''
-author: teresayao
+author: duongau
 ms.service: frontdoor
 ms.workload: infrastructure-services
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: tutorial
 ms.date: 03/21/2019
-ms.author: tyao
-ms.openlocfilehash: 2ce55ee50a2b302712973b99dc6503f1e6bbc425
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.author: duau
+ms.openlocfilehash: 31892232d5483bd2cb99d27c4672dbf347b904ef
+ms.sourcegitcommit: 5a3b9f35d47355d026ee39d398c614ca4dae51c6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87074794"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89399027"
 ---
 # <a name="how-to-set-up-a-geo-filtering-waf-policy-for-your-front-door"></a>Руководство по настройке политики геофильтрации брандмауэра веб-приложения (WAF) для службы Front Door
 В этом руководстве показано, как с помощью Azure PowerShell создать простую политику геофильтрации и связать ее с имеющимся узлом внешнего интерфейса Front Door. Этот пример политики геофильтрации будет блокировать запросы от других стран или регионов, кроме США.

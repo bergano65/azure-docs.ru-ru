@@ -9,12 +9,12 @@ ms.topic: sample
 ms.date: 12/11/2017
 ms.author: msangapu
 ms.custom: mvc, seodec18
-ms.openlocfilehash: 92cb41552d246dd30a84ce7bc27573ab6dbb7dae
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: 53b0cacc4641b1b4a2d05243c62176cab9f144cf
+ms.sourcegitcommit: 648c8d250106a5fca9076a46581f3105c23d7265
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80058097"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88958649"
 ---
 # <a name="connect-an-app-service-app-to-a-storage-account-using-cli"></a>Подключение приложения Службы приложений к учетной записи хранения в интерфейсе командной строки
 
@@ -48,6 +48,6 @@ ms.locfileid: "80058097"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Дополнительные сведения об Azure CLI см. в [документации по Azure CLI](https://docs.microsoft.com/cli/azure).
+Дополнительные сведения об Azure CLI см. в [документации по Azure CLI](/cli/azure).
 
 Дополнительные примеры скриптов Azure CLI для службы приложений см. в [документации по службе приложений Azure](../samples-cli.md).

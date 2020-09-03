@@ -3,7 +3,7 @@ title: Учебник по добавлению личного домена к �
 description: В этом руководстве вы узнаете, как подключить личный домен к службе Azure Front Door.
 services: frontdoor
 documentationcenter: ''
-author: sharad4u
+author: duongau
 editor: ''
 ms.service: frontdoor
 ms.workload: infrastructure-services
@@ -11,13 +11,13 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: tutorial
 ms.date: 09/10/2018
-ms.author: sharadag
-ms.openlocfilehash: 5ffa85a2a681bfd064bfeade77d9ae7b85b1f723
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.author: duau
+ms.openlocfilehash: f0d4ab9e3ecba8af1f6775389a4837e8c90eb14d
+ms.sourcegitcommit: 5a3b9f35d47355d026ee39d398c614ca4dae51c6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "79471767"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89399775"
 ---
 # <a name="tutorial-add-a-custom-domain-to-your-front-door"></a>Руководство по Добавление личного домена в службу Front Door
 В этом руководстве показано, как добавить личный домен в службу Front Door. При использовании службы Azure Front Door для доставки приложения, если вы хотите обеспечить видимость своего доменного имени в запросе пользователя, требуется личный домен. Видимое доменное имя удобно для клиентов и эффективно используется для популяризации бренда.

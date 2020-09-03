@@ -3,12 +3,13 @@ title: Руководство по Отправка данных Центров 
 description: Руководство по Описывается, как перенести данные в Хранилище данных SQL с помощью службы "Сетка событий Azure" и Центров событий Хранилище данных SQL использует функцию Azure, чтобы получить файл записи.
 ms.topic: tutorial
 ms.date: 07/07/2020
-ms.openlocfilehash: 9373eb4902d1bc06b394385135d08236cfcea8f4
-ms.sourcegitcommit: 62717591c3ab871365a783b7221851758f4ec9a4
+ms.custom: devx-track-csharp
+ms.openlocfilehash: 1c4a1943981fc3e9f1df0fafff540e24ee3631e9
+ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/22/2020
-ms.locfileid: "86117565"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89007474"
 ---
 # <a name="tutorial-stream-big-data-into-a-data-warehouse"></a>Руководство по Потоковая передача больших данных в хранилище данных
 [Сетка событий](overview.md) Azure — интеллектуальная служба маршрутизации событий, позволяющая реагировать на уведомления (события) приложений и служб. Например, она может активировать функции Azure для обработки данных Центров событий, собранных в хранилище BLOB-объектов Azure или Data Lake Storage, и переноса данных в другие репозитории данных. В этом [примере интеграции Центров событий Azure и службы "Сетка событий"](https://github.com/Azure/azure-event-hubs/tree/master/samples/e2e/EventHubsCaptureEventGridDemo) показано, как с помощью Центров событий Azure и службы "Сетка событий Azure" легко перенести данные Центров событий из хранилища BLOB-объектов в Хранилище данных SQL.

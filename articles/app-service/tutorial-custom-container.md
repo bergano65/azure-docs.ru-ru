@@ -7,18 +7,18 @@ ms.author: msangapu
 keywords: служба приложений azure, веб-приложение, linux, windows, docker, контейнер
 ms.custom: devx-track-csharp, mvc, seodec18, devx-track-python
 zone_pivot_groups: app-service-containers-windows-linux
-ms.openlocfilehash: a3579ba805d0da08184e6274de60086a9d55a938
-ms.sourcegitcommit: 4913da04fd0f3cf7710ec08d0c1867b62c2effe7
+ms.openlocfilehash: df46d61ddfba5f4da977b19db3158691c78168f8
+ms.sourcegitcommit: 648c8d250106a5fca9076a46581f3105c23d7265
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88212941"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88958496"
 ---
 # <a name="migrate-custom-software-to-azure-app-service-using-a-custom-container"></a>Перенос пользовательского программного обеспечения в Службу приложений Azure с помощью пользовательского контейнера
 
 ::: zone pivot="container-windows"  
 
-[Служба приложений Azure](overview.md) предоставляет предопределенные стеки приложений на платформе Windows, например ASP.NET или Node.js, выполняющиеся в IIS. Предварительно настроенная среда Windows блокирует в операционной системе возможность административного доступа, установки программного обеспечения, изменений в глобальном кэше сборок и т. д. (см. раздел [Функциональные возможности операционной системы для службы приложений Azure](operating-system-functionality.md)). Но с помощью пользовательского контейнера Windows в Службе приложений (предварительная версия) можно вносить в ОС изменения, необходимые для вашего приложения. Поэтому вы можете легко перенести локальное приложение, которому требуется пользовательская ОС и конфигурация программного обеспечения. В этом руководстве показано, как перенести в службу приложений приложение ASP.NET, которое использует пользовательские шрифты, установленные в библиотеке шрифтов Windows. Вы развернете пользовательский образ Windows из Visual Studio в [Реестр контейнеров Azure](https://docs.microsoft.com/azure/container-registry/), а затем запустите его в службе приложений.
+[Служба приложений Azure](overview.md) предоставляет предопределенные стеки приложений на платформе Windows, например ASP.NET или Node.js, выполняющиеся в IIS. Предварительно настроенная среда Windows блокирует в операционной системе возможность административного доступа, установки программного обеспечения, изменений в глобальном кэше сборок и т. д. (см. раздел [Функциональные возможности операционной системы для службы приложений Azure](operating-system-functionality.md)). Но с помощью пользовательского контейнера Windows в Службе приложений (предварительная версия) можно вносить в ОС изменения, необходимые для вашего приложения. Поэтому вы можете легко перенести локальное приложение, которому требуется пользовательская ОС и конфигурация программного обеспечения. В этом руководстве показано, как перенести в службу приложений приложение ASP.NET, которое использует пользовательские шрифты, установленные в библиотеке шрифтов Windows. Вы развернете пользовательский образ Windows из Visual Studio в [Реестр контейнеров Azure](../container-registry/index.yml), а затем запустите его в службе приложений.
 
 ![Показано веб-приложение, выполняемое в контейнере Windows.](media/tutorial-custom-container/app-running.png)
 
@@ -92,7 +92,7 @@ RUN ${source:-obj/Docker/publish/InstallFont.ps1}
 
 ## <a name="publish-to-azure-container-registry"></a>Публикация в Реестре контейнеров Azure
 
-В [Реестре контейнеров Azure](https://docs.microsoft.com/azure/container-registry/) можно хранить образы для развертывания контейнеров. Можно настроить службу приложений для использования образов, размещенных в Реестре контейнеров Azure.
+В [Реестре контейнеров Azure](../container-registry/index.yml) можно хранить образы для развертывания контейнеров. Можно настроить службу приложений для использования образов, размещенных в Реестре контейнеров Azure.
 
 ### <a name="open-publish-wizard"></a>Открытие мастера публикации
 
@@ -439,7 +439,7 @@ az group create --name AppSvc-DockerTutorial-rg --location westus2
     
     Дополнительные сведения об этой переменной среды см. в [файле сведений в репозитории этого примера](https://github.com/Azure-Samples/docker-django-webapp-linux) на сайте GitHub.
 
-1. Включите [управляемое удостоверение](/azure/app-service/overview-managed-identity) для веб-приложения, выполнив команду [`az webapp identity assign`](/cli/azure/webapp/identity?view=azure-cli-latest#az-webapp-identity-assign).
+1. Включите [управляемое удостоверение](./overview-managed-identity.md) для веб-приложения, выполнив команду [`az webapp identity assign`](/cli/azure/webapp/identity?view=azure-cli-latest#az-webapp-identity-assign).
 
     ```azurecli-interactive
     az webapp identity assign --resource-group AppSvc-DockerTutorial-rg --name <app-name> --query principalId --output tsv
@@ -466,7 +466,7 @@ az group create --name AppSvc-DockerTutorial-rg --location westus2
     - `<registry-name>` на имя реестра контейнеров;
     - `<subscription-id>` на идентификатор подписки, полученный командой `az account show`.
 
-Дополнительные сведения об этих разрешениях см. в статье [Общие сведения об управлении доступом на основе ролей (RBAC) для ресурсов Azure](/azure/role-based-access-control/overview). 
+Дополнительные сведения об этих разрешениях см. в статье [Общие сведения об управлении доступом на основе ролей (RBAC) для ресурсов Azure](../role-based-access-control/overview.md). 
 
 ## <a name="deploy-the-image-and-test-the-app"></a>Развертывание образа и тестирование приложения
 

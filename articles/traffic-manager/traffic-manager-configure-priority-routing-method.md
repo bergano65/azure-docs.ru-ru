@@ -3,20 +3,20 @@ title: Руководство. Настройка метода маршрути�
 description: В этом руководстве объясняется, как настроить метод маршрутизации трафика по приоритету с помощью Диспетчера трафика.
 services: traffic-manager
 documentationcenter: ''
-author: rohinkoul
+author: duongau
 ms.service: traffic-manager
 ms.devlang: na
 ms.topic: tutorial
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 03/20/2017
-ms.author: rohink
-ms.openlocfilehash: 2c541f8318bd7e75de7526e6b7a9e3a32462782d
-ms.sourcegitcommit: 62717591c3ab871365a783b7221851758f4ec9a4
+ms.author: duau
+ms.openlocfilehash: 404338c3e36216833d39c3551ae2dee0be304d24
+ms.sourcegitcommit: 5a3b9f35d47355d026ee39d398c614ca4dae51c6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/22/2020
-ms.locfileid: "84706755"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89401016"
 ---
 # <a name="tutorial-configure-priority-traffic-routing-method-in-traffic-manager"></a>Руководство по Настройка метода маршрутизации трафика по приоритету в диспетчере трафика
 
