@@ -12,12 +12,12 @@ metadata:
   title: Документация по Распознаванию речи (LUIS)
   titleSuffix: Azure Cognitive Services
   description: Служба "Распознавание речи" (LUIS) позволяет приложению распознавать желания людей, исходя из их слов. LUIS использует машинное обучение, позволяя разработчикам создавать приложения, которые могут получать входные данные пользователей на естественном языке, а также распознавать их значение.
-  ms.openlocfilehash: 561f6ee161d2a697b8c143ee49209515f679c77b
-  ms.sourcegitcommit: 3bf69c5a5be48c2c7a979373895b4fae3f746757
+  ms.openlocfilehash: 6e34c5e39118565e14a40765443583b0b9ed237b
+  ms.sourcegitcommit: 5ed504a9ddfbd69d4f2d256ec431e634eb38813e
   ms.translationtype: HT
   ms.contentlocale: ru-RU
-  ms.lasthandoff: 08/14/2020
-  ms.locfileid: "88236528"
+  ms.lasthandoff: 09/02/2020
+  ms.locfileid: "89322489"
 landingContent:
 - title: Сведения о Распознавании речи (LUIS)
   linkLists:
@@ -60,9 +60,9 @@ landingContent:
     - text: 'Портал: Создание приложения LUIS'
       url: get-started-portal-build-app.md
     - text: Использование пакета SDK для C#
-      url: quickstart-sdk.md?pivots=programming-language-csharp
+      url: azure-sdk-quickstart.md?pivots=programming-language-csharp
     - text: Использование пакета SDK для Python
-      url: quickstart-sdk.md?pivots=programming-language-python
+      url: azure-sdk-quickstart.md?pivots=programming-language-python
   - linkListType: how-to-guide
     links:
     - text: Создание приложения LUIS
@@ -88,7 +88,7 @@ landingContent:
     - text: 'Портал: Развертывание приложения в конечной точке прогнозирования'
       url: get-started-portal-deploy-app.md
     - text: Использование пакета SDK
-      url: quickstart-sdk.md
+      url: azure-sdk-quickstart.md
   - linkListType: how-to-guide
     links:
     - text: Управление версиями приложения
@@ -106,7 +106,7 @@ landingContent:
   - linkListType: quickstart
     links:
     - text: Использование пакета SDK
-      url: quickstart-sdk.md
+      url: azure-sdk-quickstart.md
   - linkListType: quickstart
     links:
     - text: Использование REST API с C#

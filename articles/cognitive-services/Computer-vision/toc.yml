@@ -4,7 +4,7 @@
   expanded: true
   items:
     - name: Что собой представляет Компьютерное зрение
-      href: Home.md
+      href: overview.md
     - name: Новые возможности
       href: whats-new.md
 - name: Краткие руководства

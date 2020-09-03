@@ -22,7 +22,7 @@
     - name: Использование браузера
       href: luis-get-started-get-intent-from-browser.md
     - name: Использование пакета SDK
-      href: quickstart-sdk.md
+      href: azure-sdk-quickstart.md
     - name: Использование REST API
       items:
         - name: Получение сведений о намерении

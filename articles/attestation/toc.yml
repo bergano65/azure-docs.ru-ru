@@ -15,7 +15,7 @@
     - name: Создание и подписывание политики аттестации
       href: author-sign-policy.md
     - name: Примеры кода для аттестации SGX
-      href: 'https://docs.microsoft.com/en-us/samples/browse/?expanded=azure&terms=attestation'
+      href: /samples/browse/?expanded=azure&terms=attestation
 - name: Примеры
   items:
     - name: Политика аттестации
