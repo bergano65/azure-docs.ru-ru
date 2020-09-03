@@ -144,7 +144,7 @@
           href: platform/personal-data-mgmt.md
         - name: Сбор и хранение данных приложений
           href: app/data-retention-privacy.md
-    - name: Предупреждения
+    - name: видны узлы
       items:
         - name: Обзор
           href: platform/alerts-overview.md
@@ -160,6 +160,8 @@
       href: platform/partners.md
     - name: Безопасность
       items:
+        - name: Базовые средства безопасности
+          href: security-baseline.md
         - name: Элементы управления безопасностью службы "Политика Azure"
           displayName: 'regulatory, compliance, standards, domains'
           href: ./platform/security-controls-policy.md

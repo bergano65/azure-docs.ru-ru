@@ -1,21 +1,21 @@
 ---
-title: Общие сведения о брандмауэре веб-приложения Azure
+title: Что такое брандмауэр веб-приложения Azure в Шлюзе приложений Azure?
 titleSuffix: Azure Web Application Firewall
-description: В этой статье представлен обзор брандмауэра веб-приложения в Шлюзе приложений.
+description: В этой статье представлен обзор брандмауэра веб-приложения (WAF) в Шлюзе приложений.
 services: web-application-firewall
 author: vhorne
 ms.service: web-application-firewall
-ms.date: 11/14/2019
+ms.date: 08/31/2020
 ms.author: victorh
-ms.topic: overview
-ms.openlocfilehash: d7eaff980b50cc463efc09e49febd4a947a7543c
-ms.sourcegitcommit: 5cace04239f5efef4c1eed78144191a8b7d7fee8
+ms.topic: conceptual
+ms.openlocfilehash: e3b7e3ae10afd45105358743ef1fc0f4c6d14e78
+ms.sourcegitcommit: d68c72e120bdd610bb6304dad503d3ea89a1f0f7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86142849"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89227004"
 ---
-# <a name="azure-web-application-firewall-on-azure-application-gateway"></a>Подробные сведения о брандмауэре веб-приложения Azure в Шлюзе приложений Azure
+# <a name="what-is-azure-web-application-firewall-on-azure-application-gateway"></a>Что такое брандмауэр веб-приложения Azure в Шлюзе приложений Azure?
 
 Брандмауэр веб-приложения (WAF) Azure в Шлюзе веб-приложений Azure обеспечивает централизованную защиту веб-приложений от распространенных эксплойтов и уязвимостей. Веб-приложения все чаще подвергаются вредоносным атакам, использующим общеизвестные уязвимости. Наиболее распространенными атаками являются внедрение SQL и использование межсайтовых скриптов.
 
@@ -158,7 +158,7 @@ Microsoft Azure Sentinel — это масштабируемое ориенти
 С помощью встроенной книги событий брандмауэра Azure WAF вы можете получить общие сведения о событиях безопасности для WAF. В книге сохраняются события, примененные правила и блокировки, а также все данные, которые записываются в журналы брандмауэра. Дополнительные сведения о ведении журналов см. ниже. 
 
 
-![Sentinel](../media/ag-overview/sentinel.png)
+![Книга событий брандмауэра Azure WAF](../media/ag-overview/sentinel.png)
 
 #### <a name="logging"></a>Logging
 
@@ -206,10 +206,12 @@ WAF в Шлюзе приложений предоставляет подробн
 
 Модели ценообразования для ценовых категорий SKU WAF_v1 и WAF_v2 имеют ряд отличий. Дополнительные сведения см. на странице [о ценах на Шлюз приложений](https://azure.microsoft.com/pricing/details/application-gateway/). 
 
+## <a name="whats-new"></a>Новые возможности
+
+О новых возможностях брандмауэра веб-приложения Azure можно узнать на странице [Обновления Azure](https://azure.microsoft.com/updates/?category=networking&query=Web%20Application%20Firewall).
+
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- Начните работу с [создания политики WAF](create-waf-policy-ag.md).
 - Дополнительные сведения об [управляемых правилах WAF](application-gateway-crs-rulegroups-rules.md).
 - Дополнительные сведения о [настраиваемых правилах](custom-waf-rules-overview.md).
 - Дополнительные сведения см. в статье [Брандмауэр веб-приложения в Azure Front Door](../afds/afds-overview.md)
-

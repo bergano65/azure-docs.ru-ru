@@ -4,7 +4,7 @@
   expanded: true
   items:
     - name: Что такое Cognitive Services?
-      href: Welcome.md
+      href: what-are-cognitive-services.md
     - name: Новые возможности в документации по Когнитивному поиску
       href: whats-new-docs.md
     - name: Cognitive Services и Машинное обучение
@@ -82,7 +82,7 @@
           href: ./big-data/recipes/anomaly-detection.md
         - name: 'Рецепт: Art Explorer'
           href: ./big-data/recipes/art-explorer.md
-- name: Ссылка
+- name: Справочник
   items:
     - name: Встроенные компоненты Политики Azure
       displayName: 'samples, policies, definitions'

@@ -111,6 +111,9 @@
           href: ddos-protection-overview.md
         - name: TAP виртуальной сети
           href: virtual-network-tap-overview.md
+        - name: Элементы управления безопасностью службы "Политика Azure"
+          displayName: 'regulatory, compliance, standards, domains'
+          href: ./security-controls-policy.md
     - name: Подсети
       items:
         - name: Расширение подсети
