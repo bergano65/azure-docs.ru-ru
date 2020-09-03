@@ -8,12 +8,13 @@ ms.author: heidist
 ms.service: cognitive-search
 ms.topic: tutorial
 ms.date: 06/20/2020
-ms.openlocfilehash: d63e437090b2875c7e6a8273fdf22d49597d408f
-ms.sourcegitcommit: 62717591c3ab871365a783b7221851758f4ec9a4
+ms.custom: devx-track-csharp
+ms.openlocfilehash: d3dd75d246c1f74253a9ce910e50b05402065464
+ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/22/2020
-ms.locfileid: "85262214"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88998464"
 ---
 # <a name="tutorial-index-from-multiple-data-sources-using-the-net-sdk"></a>Руководство по Индексирование из нескольких источников данных с помощью пакета SDK для .NET
 
@@ -21,7 +22,7 @@ ms.locfileid: "85262214"
 
 Этот учебник описывает, как индексировать данные об отелях из источника данных Azure Cosmos DB и как объединить их с подробными сведениями о номерах отелей, извлеченными из документов в хранилище BLOB-объектов. В результате мы получим индекс поиска данных об отелях со сложными типами данных.
 
-В этом учебнике используется язык C# и [пакет SDK для .NET](https://docs.microsoft.com/dotnet/api/overview/azure/search). Вот какие шаги выполняются в этом учебнике:
+В этом учебнике используется язык C# и [пакет SDK для .NET](/dotnet/api/overview/azure/search). Вот какие шаги выполняются в этом учебнике:
 
 > [!div class="checklist"]
 > * отправка примера данных и создание источников данных;
@@ -34,8 +35,8 @@ ms.locfileid: "85262214"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-+ [Azure Cosmos DB](https://docs.microsoft.com/azure/cosmos-db/create-cosmosdb-resources-portal)
-+ [Хранилище Azure](https://docs.microsoft.com/azure/storage/common/storage-quickstart-create-account)
++ [Azure Cosmos DB](../cosmos-db/create-cosmosdb-resources-portal.md)
++ [Хранилище Azure](../storage/common/storage-account-create.md)
 + [Visual Studio 2019](https://visualstudio.microsoft.com/)
 + [Создайте службу поиска](search-create-service-portal.md) или [найдите существующую службу](https://ms.portal.azure.com/#blade/HubsExtension/BrowseResourceBlade/resourceType/Microsoft.Search%2FsearchServices) 
 
@@ -80,7 +81,7 @@ ms.locfileid: "85262214"
 
 1. Войдите на [портал Azure](https://portal.azure.com), перейдите к учетной записи хранения Azure, щелкните **Большие двоичные объекты**, а затем — **+ Container** (+ Контейнер).
 
-1. [Создайте контейнер больших двоичных объектов](https://docs.microsoft.com/azure/storage/blobs/storage-quickstart-blobs-portal) с именем **hotel-rooms**, в котором будут храниться JSON-файлы с примерами данных о номерах отелей. Можно задать любое из допустимых значений уровня общего доступа.
+1. [Создайте контейнер больших двоичных объектов](../storage/blobs/storage-quickstart-blobs-portal.md) с именем **hotel-rooms**, в котором будут храниться JSON-файлы с примерами данных о номерах отелей. Можно задать любое из допустимых значений уровня общего доступа.
 
    ![Создание контейнера больших двоичных объектов](media/tutorial-multiple-data-sources/blob-add-container.png "Создание контейнера BLOB-объектов")
 
@@ -171,7 +172,7 @@ ms.locfileid: "85262214"
 
 ### <a name="create-an-index"></a>Создание индекса
 
-Этот пример программы использует пакет SDK для .NET, чтобы определить и создать индекс службы "Когнитивный поиск Azure". С помощью [FieldBuilder](https://docs.microsoft.com/dotnet/api/microsoft.azure.search.fieldbuilder) из класса C# модели данных программа создает структуру индекса.
+Этот пример программы использует пакет SDK для .NET, чтобы определить и создать индекс службы "Когнитивный поиск Azure". С помощью [FieldBuilder](/dotnet/api/microsoft.azure.search.fieldbuilder) из класса C# модели данных программа создает структуру индекса.
 
 Модель данных определяется в классе Hotel, который содержит также ссылки на классы Address и Room. FieldBuilder углубляется в структуру определений нескольких классов, создавая на их основе сложную структуру данных для индекса. Теги метаданных применяются для определения атрибутов каждого поля, например сведений о поддержке поиска или сортировки.
 
@@ -319,7 +320,7 @@ private static async Task CreateAndRunBlobIndexer(string indexName, SearchServic
 
 Индексаторы хранилища больших двоичных объектов умеют использовать параметры, определяющие режим анализа. Режим анализа будет разным для больших двоичных объектов, представляющих один документ или несколько документов. В нашем примере каждый большой двоичный объект представляет один документ индекса, поэтому в коде используется параметр `IndexingParameters.ParseJson()`.
 
-Дополнительные сведения о параметрах индексатора для анализа больших двоичных объектов JSON см. в [этой статье](search-howto-index-json-blobs.md). Дополнительные сведения о том, как указать эти параметры с помощью пакета SDK для .NET, см. в документации по классу [IndexerParametersExtension](https://docs.microsoft.com/dotnet/api/microsoft.azure.search.models.indexingparametersextensions).
+Дополнительные сведения о параметрах индексатора для анализа больших двоичных объектов JSON см. в [этой статье](search-howto-index-json-blobs.md). Дополнительные сведения о том, как указать эти параметры с помощью пакета SDK для .NET, см. в документации по классу [IndexerParametersExtension](/dotnet/api/microsoft.azure.search.models.indexingparametersextensions).
 
 Перед созданием индексатора программа также удаляет существующий индексатор с тем же именем на случай, если вы будете выполнять этот пример более одного раза.
 

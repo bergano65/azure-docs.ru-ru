@@ -3,23 +3,25 @@ title: Кодирование и потоковая передача файла 
 description: Следуйте инструкциям в этом руководстве, чтобы закодировать файл на основе URL-адреса и потоковой передачи содержимого с помощью Служб мультимедиа Azure и REST.
 services: media-services
 documentationcenter: ''
-author: Juliako
+author: IngridAtMicrosoft
 manager: femila
 editor: ''
 ms.service: media-services
 ms.workload: ''
 ms.topic: tutorial
 ms.custom: mvc
-ms.date: 03/16/2020
-ms.author: juliako
-ms.openlocfilehash: f12771e55ced3b8783b6c7497b83e6b041c66b75
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.date: 08/31/2020
+ms.author: inhenkel
+ms.openlocfilehash: 350584984bff82c7dc80aff38044d887f981424c
+ms.sourcegitcommit: bcda98171d6e81795e723e525f81e6235f044e52
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87074473"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89256762"
 ---
 # <a name="tutorial-encode-a-remote-file-based-on-url-and-stream-the-video---rest"></a>Руководство по Кодирование удаленного файла на основе URL-адреса и потоковой передачи видео с помощью REST
+
+[!INCLUDE [media services api v3 logo](./includes/v3-hr.md)]
 
 Службы мультимедиа Azure позволяют кодировать файлы мультимедиа в разные форматы, пригодные для воспроизведения в разных браузерах и на различных устройствах. Например, можно организовать потоковую передачу содержимого в форматах HLS или MPEG DASH от Apple. Перед тем как передавать файл мультимедиа высокого качества, его нужно закодировать. Рекомендации по кодировке см. в статье [Encoding with Azure Media Services](encoding-concept.md) (Кодирование в Службах мультимедиа Azure).
 

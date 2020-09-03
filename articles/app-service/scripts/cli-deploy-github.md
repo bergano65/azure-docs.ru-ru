@@ -9,12 +9,12 @@ ms.topic: sample
 ms.date: 12/11/2017
 ms.author: msangapu
 ms.custom: mvc, seodec18, devx-track-azurecli
-ms.openlocfilehash: 722e4d6b25e20914b3aedf59ebb531b05af0e6cc
-ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
+ms.openlocfilehash: 8bd56db368fd42373450d435d2de913363c9d90e
+ms.sourcegitcommit: 648c8d250106a5fca9076a46581f3105c23d7265
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/31/2020
-ms.locfileid: "87495562"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88960791"
 ---
 # <a name="create-an-app-service-app-with-deployment-from-github-using-azure-cli"></a>Создание приложения Службы приложений с непрерывным развертыванием из GitHub в интерфейсе командной строки Azure
 
@@ -45,6 +45,6 @@ ms.locfileid: "87495562"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Дополнительные сведения об Azure CLI см. в [документации по Azure CLI](https://docs.microsoft.com/cli/azure).
+Дополнительные сведения об Azure CLI см. в [документации по Azure CLI](/cli/azure).
 
 Дополнительные примеры скриптов Azure CLI для службы приложений см. в [документации по службе приложений Azure](../samples-cli.md).

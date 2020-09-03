@@ -12,12 +12,12 @@ ms.date: 04/25/2019
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 3e5ad7badfa44a006fd7e71d3b0e42ee95ac698d
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: a9cd70d534cebf35938285208dc76bd4a6d94533
+ms.sourcegitcommit: c94a177b11a850ab30f406edb233de6923ca742a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "64919005"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89279012"
 ---
 # <a name="tutorial--setting-up-phs-as-backup-for-ad-fs-in-azure-ad-connect"></a>Руководство по  Настройка PHS в качестве резервной копии для AD FS в Azure AD Connect
 
@@ -33,7 +33,7 @@ ms.locfileid: "64919005"
 Перед изучением этого руководства ознакомьтесь со статьей[Руководство. Создание федерации среды одного леса AD в облаке с использованием PHS](tutorial-federation.md).  Завершите это руководство, прежде чем предпринимать шаги, описанные в этом документе.
 
 >[!IMPORTANT]
->Перед переключением на PHS следует создать резервную копию среды AD FS.  Это можно сделать с помощью [AD FS Rapid Restore Tool](https://docs.microsoft.com/windows-server/identity/ad-fs/operations/ad-fs-rapid-restore-tool#how-to-use-the-tool).
+>Перед переключением на PHS следует создать резервную копию среды AD FS.  Это можно сделать с помощью [AD FS Rapid Restore Tool](/windows-server/identity/ad-fs/operations/ad-fs-rapid-restore-tool#how-to-use-the-tool).
 
 ## <a name="enable-phs-in-azure-ad-connect"></a>Включение PHS для Azure AD Connect
 Теперь, когда у нас есть среда Azure AD Connect, в которой используется федерация, нужно включить синхронизацию хэшей паролей и разрешить Azure AD Connect синхронизировать хэши.

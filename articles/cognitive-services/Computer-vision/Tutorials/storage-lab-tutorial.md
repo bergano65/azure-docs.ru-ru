@@ -10,16 +10,17 @@ ms.subservice: computer-vision
 ms.topic: tutorial
 ms.date: 08/05/2020
 ms.author: pafarley
-ms.openlocfilehash: f350aae32909de2b9be4384d921f7507a158f6ff
-ms.sourcegitcommit: c293217e2d829b752771dab52b96529a5442a190
+ms.custom: devx-track-csharp
+ms.openlocfilehash: f14bcc1b0576a5ad2f4dbbf30311f613607d3ee5
+ms.sourcegitcommit: 5ed504a9ddfbd69d4f2d256ec431e634eb38813e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/15/2020
-ms.locfileid: "88243859"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89322336"
 ---
 # <a name="tutorial-use-computer-vision-to-generate-image-metadata-in-azure-storage"></a>Руководство по Создание метаданных изображений в службе хранилища Azure с помощью API компьютерного зрения
 
-В этом руководстве вы узнаете, как интегрировать службу Azure "Компьютерное зрение" в веб-приложение для создания метаданных для переданных изображений. Это полезно для сценариев [управления цифровыми активами (DAM)](../Home.md#computer-vision-for-digital-asset-management), например, если компании нужно быстро создать для всех изображений описательные субтитры или ключевые слова с возможностью поиска.
+В этом руководстве вы узнаете, как интегрировать службу Azure "Компьютерное зрение" в веб-приложение для создания метаданных для переданных изображений. Это полезно для сценариев [управления цифровыми активами (DAM)](../overview.md#computer-vision-for-digital-asset-management), например, если компании нужно быстро создать для всех изображений описательные субтитры или ключевые слова с возможностью поиска.
 
 Руководство по всему приложению можно найти на странице о [службе хранилища Azure и лаборатории Cognitive Services](https://github.com/Microsoft/computerscience/blob/master/Labs/Azure%20Services/Azure%20Storage/Azure%20Storage%20and%20Cognitive%20Services%20(MVC).md) на GitHub, а это руководство в основном охватывает упражнение 5 лаборатории. Вы можете создать сквозное приложение, следуя каждому шагу, но если вам просто интересно, как службу "Компьютерное зрение" можно интегрировать в существующее веб-приложение, прочтите об этом здесь.
 

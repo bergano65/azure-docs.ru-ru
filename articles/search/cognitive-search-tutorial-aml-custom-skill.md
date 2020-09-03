@@ -8,16 +8,16 @@ ms.author: terrychr
 ms.service: cognitive-search
 ms.topic: tutorial
 ms.date: 06/10/2020
-ms.openlocfilehash: 69618604c38d82567260e45d651df523055c5f7b
-ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
+ms.openlocfilehash: a4e686fe7adcc7e990a26484bc5850de977e862a
+ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2020
-ms.locfileid: "86245336"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88924594"
 ---
 # <a name="tutorial-build-and-deploy-a-custom-skill-with-azure-machine-learning"></a>Руководство по созданию и развертыванию настраиваемого навыка с помощью службы "Машинное обучение Azure" 
 
-В этом учебнике рассказывается о том, как с помощью Машинного обучения Azure создать [настраиваемый навык](https://docs.microsoft.com/azure/search/cognitive-search-aml-skill) для извлечения аспектной тональности из [отзывов об отеле в наборе данных](https://www.kaggle.com/datafiniti/hotel-reviews) (распространяется по лицензии Creative Commons [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode.txt)). Это позволит правильно назначать положительные и отрицательные тональности определенным сущностям, например персоналу, номеру, холлу или бассейну, в пределах одного отзыва.
+В этом учебнике рассказывается о том, как с помощью Машинного обучения Azure создать [настраиваемый навык](./cognitive-search-aml-skill.md) для извлечения аспектной тональности из [отзывов об отеле в наборе данных](https://www.kaggle.com/datafiniti/hotel-reviews) (распространяется по лицензии Creative Commons [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode.txt)). Это позволит правильно назначать положительные и отрицательные тональности определенным сущностям, например персоналу, номеру, холлу или бассейну, в пределах одного отзыва.
 
 Для обучения аспектной модели тональности в службе "Машинное обучение Azure" вы будете использовать [репозиторий рецептов NLP](https://github.com/microsoft/nlp-recipes/tree/master/examples/sentiment_analysis/absa). Затем модель будет развернута в качестве конечной точки в кластере Azure Kubernetes. После развертывания конечная точка добавляется в конвейер обогащения в качестве навыка Машинного обучения Azure для использования службой "Когнитивный поиск".
 
@@ -36,10 +36,10 @@ ms.locfileid: "86245336"
 ## <a name="prerequisites"></a>Предварительные требования
 
 * Подписка Azure (получите [бесплатную подписку](https://azure.microsoft.com/free/?WT.mc_id=A261C142F))
-* [Служба "Когнитивный поиск Azure"](https://docs.microsoft.com/azure/search/search-get-started-arm)
-* [Ресурсы Cognitive Services](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account?tabs=multiservice%2Cwindows)
-* [Учетная запись хранения Azure](https://docs.microsoft.com/azure/storage/common/storage-account-create?toc=%2Fazure%2Fstorage%2Fblobs%2Ftoc.json&tabs=azure-portal)
-* [Рабочая область машинного обучения Azure](https://docs.microsoft.com/azure/machine-learning/how-to-manage-workspace)
+* [Служба "Когнитивный поиск Azure"](./search-get-started-arm.md)
+* [Ресурсы Cognitive Services](../cognitive-services/cognitive-services-apis-create-account.md?tabs=multiservice%2cwindows)
+* [Учетная запись хранения Azure](../storage/common/storage-account-create.md?tabs=azure-portal&toc=%2fazure%2fstorage%2fblobs%2ftoc.json)
+* [Рабочая область машинного обучения Azure](../machine-learning/how-to-manage-workspace.md)
 
 ## <a name="setup"></a>Настройка
 
@@ -47,9 +47,9 @@ ms.locfileid: "86245336"
 * Извлеките содержимое, если оно скачано в виде ZIP-файла. Убедитесь, что файлы доступны для чтения и записи.
 * При настройке учетных записей и служб Azure копируйте имена и ключи в легкодоступный текстовый файл. Имена и ключи будут добавлены в первую ячейку записной книжки, в которой определены переменные для доступа к службам Azure.
 * Если вы не знакомы со службой "Машинное обучение Azure" и ее требованиями, перед началом работы вам, возможно, следует ознакомиться с перечисленными ниже документами.
- * [Настройка среды разработки для Машинного обучения Azure](https://docs.microsoft.com/azure/machine-learning/how-to-configure-environment)
- * [Создание рабочих областей Машинного обучения Azure и управление ими с помощью портала Azure](https://docs.microsoft.com/azure/machine-learning/how-to-manage-workspace)
- * Чтобы легко и быстро приступить к работе при настройке среды разработки для Машинного обучения Azure, рекомендуется использовать [облачную вычислительную операцию](https://docs.microsoft.com/azure/machine-learning/how-to-configure-environment#compute-instance).
+ * [Настройка среды разработки для Машинного обучения Azure](../machine-learning/how-to-configure-environment.md)
+ * [Создание рабочих областей Машинного обучения Azure и управление ими с помощью портала Azure](../machine-learning/how-to-manage-workspace.md)
+ * Чтобы легко и быстро приступить к работе при настройке среды разработки для Машинного обучения Azure, рекомендуется использовать [облачную вычислительную операцию](../machine-learning/how-to-configure-environment.md#compute-instance).
 * Отправьте файл набора данных в контейнер в учетной записи хранения. Если вы хотите настроить обучение в записной книжке, потребуется файл большего размера. Если вы предпочитаете пропустить этап обучения, рекомендуется использовать файл меньшего размера.
 
 ## <a name="open-notebook-and-connect-to-azure-services"></a>Открытие записной книжки и подключение к службам Azure
@@ -68,9 +68,9 @@ ms.locfileid: "86245336"
 
 Раздел 3 записной книжки используется для обучения моделей, созданных с помощью раздела 2, регистрации этих моделей и развертывания их в качестве конечной точки в кластере Azure Kubernetes. Если вы не знакомы с Azure Kubernetes, прежде чем пытаться создать кластер вывода, настоятельно рекомендуем ознакомиться со следующими статьями.
 
-* [Обзор службы Azure Kubernetes](https://docs.microsoft.com/azure/aks/intro-kubernetes)
-* [Ключевые концепции Kubernetes для службы Azure Kubernetes (AKS)](https://docs.microsoft.com/azure/aks/concepts-clusters-workloads)
-* [Квоты, ограничения размера виртуальной машины и доступность региона в службе Kubernetes Azure (AKS)](https://docs.microsoft.com/azure/aks/quotas-skus-regions)
+* [Обзор службы Azure Kubernetes](../aks/intro-kubernetes.md)
+* [Ключевые концепции Kubernetes для службы Azure Kubernetes (AKS)](../aks/concepts-clusters-workloads.md)
+* [Квоты, ограничения размера виртуальной машины и доступность региона в службе Kubernetes Azure (AKS)](../aks/quotas-skus-regions.md)
 
 Создание и развертывание кластера вывода может занять до 30 минут. Для тестирования веб-службы перед переходом к последним шагам рекомендуется обновить набор навыков и запустить индексатор.
 
@@ -108,5 +108,5 @@ ms.locfileid: "86245336"
 ## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
-> [Ознакомьтесь с возможностями веб-API для настраиваемых навыков](https://docs.microsoft.com/azure/search/cognitive-search-custom-skill-web-api)
-> [Узнайте больше о добавлении настраиваемых навыков в конвейер обогащения](https://docs.microsoft.com/azure/search/cognitive-search-custom-skill-interface)
+> [Ознакомьтесь с возможностями веб-API для настраиваемых навыков](./cognitive-search-custom-skill-web-api.md)
+> [Узнайте больше о добавлении настраиваемых навыков в конвейер обогащения](./cognitive-search-custom-skill-interface.md)

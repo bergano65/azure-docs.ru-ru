@@ -9,12 +9,12 @@ ms.topic: sample
 ms.date: 12/11/2017
 ms.author: msangapu
 ms.custom: devx-track-dotnet, mvc, seodec18, devx-track-azurecli
-ms.openlocfilehash: 37e9ffc96c6bd072a5d0406f059458bfc0a06199
-ms.sourcegitcommit: 4913da04fd0f3cf7710ec08d0c1867b62c2effe7
+ms.openlocfilehash: 25fe0ab86136a1c9667961a5de04e525eb8e8aa2
+ms.sourcegitcommit: 648c8d250106a5fca9076a46581f3105c23d7265
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88207815"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88960570"
 ---
 # <a name="create-an-aspnet-core-app-in-a-docker-container-from-docker-hub-using-azure-cli"></a>Создание приложения ASP.NET Core в контейнере Docker из Docker Hub с помощью Azure CLI
 
@@ -45,6 +45,6 @@ ms.locfileid: "88207815"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Дополнительные сведения об Azure CLI см. в [документации по Azure CLI](https://docs.microsoft.com/cli/azure).
+Дополнительные сведения об Azure CLI см. в [документации по Azure CLI](/cli/azure).
 
 Дополнительные примеры скриптов Azure CLI для службы приложений см. в [документации по службе приложений Azure](../samples-cli.md).
