@@ -1,170 +1,157 @@
 ---
-title: Отправка и получение событий через Центры событий Azure с помощью Python (старая версия)
-description: В этом пошаговом руководстве показано, как создать и выполнить скрипты Python, которые отправляют или получают события через Центры событий Azure с помощью старого пакета azure/event-hub версии 1.
+title: Отправка и получение событий через Центры событий Azure с помощью Python (последняя версия)
+description: В статье описано, как создать приложение Python, которое отправляет события или получает их из службы "Центры событий Azure" с помощью последнего пакета azure-eventhub версии 5.
 ms.topic: quickstart
-ms.date: 06/23/2020
-ms.openlocfilehash: 4ce53d2d82a00f98dbbd538bd7a61da9ba44e832
-ms.sourcegitcommit: 01cd19edb099d654198a6930cebd61cae9cb685b
+ms.date: 02/11/2020
+ms.openlocfilehash: b6a30ba0cef8c460a2a3035b3ab40fd8173d7b2e
+ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/24/2020
-ms.locfileid: "85314477"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88933908"
 ---
-# <a name="quickstart-send-and-receive-events-with-event-hubs-using-python-azure-eventhub-version-1"></a>Краткое руководство. Отправка и получение событий через Центры событий с использованием Python (azure-eventhub, версия 1)
-В этом кратком руководстве показано, как отправлять события в концентратор событий и получать события из него с помощью пакета Python **azure-eventhub версии 1**. 
-
-> [!WARNING]
-> В этом кратком руководстве используется старый пакет azure-eventhub версии 1. Краткое руководство по использованию пакета azure-eventhub **последней версии 5** [для отправки и получения событий см. здесь](get-started-python-send-v2.md). Чтобы начать использовать в приложении новый пакет вместо старого, ознакомьтесь с руководством по [переходу с azure-eventhub версии 1 на версию 5](https://github.com/Azure/azure-sdk-for-python/blob/master/sdk/eventhub/azure-eventhub/migration_guide.md).
- 
+# <a name="send-events-to-or-receive-events-from-event-hubs-by-using-python-azure-eventhub-version-5"></a>Отправка событий или получение событий из концентраторов событий с помощью Python (azure-eventhub версии 5)
+В этом кратком руководстве показано, как отправлять события в концентратор событий и получать события из него с помощью пакета Python **azure-eventhub версии 5**.
 
 ## <a name="prerequisites"></a>Предварительные требования
-Если вы впервые используете Центры событий Azure, ознакомьтесь с общими сведениями в [этой статье](event-hubs-about.md), прежде чем приступить к работе с этим руководством. 
+Если вы впервые используете Центры событий Azure, ознакомьтесь с [общими сведениями](event-hubs-about.md), прежде чем приступить к работе с этим руководством. 
 
 Для работы с данным руководством необходимо следующее:
 
 - **Подписка Microsoft Azure.** Чтобы использовать службы Azure, в том числе Центры событий Azure, потребуется действующая подписка.  Если у вас еще нет учетной записи Azure, [зарегистрируйтесь для работы с бесплатной пробной версией](https://azure.microsoft.com/free/) или [активируйте преимущества для подписчиков MSDN при создании учетной записи](https://azure.microsoft.com).
-- Python 3.4 или более поздней версии, для которого установлено и обновлено `pip`.
-- Пакет Python для Центров событий. Чтобы установить этот пакет, выполните следующую команду в окне командной строки, где путь к Python сохранен в переменной окружения path. 
-  
-  ```cmd
-  pip install azure-eventhub==1.3.*
-  ```
-- **Создайте пространство имен Центров событий и концентратор событий**. Первым шагом является использование [портала Azure](https://portal.azure.com) для создания пространства имен типа Центров событий и получение учетных данных управления, необходимых приложению для взаимодействия с концентратором событий. Чтобы создать пространство имен и концентратор событий, выполните инструкции из [этой статьи](event-hubs-create.md). Затем получите значение ключа доступа для концентратора событий, следуя инструкциям в приведенных ниже статьях. [Получение строки подключения на портале](event-hubs-get-connection-string.md#get-connection-string-from-the-portal). Используйте ключ доступа в коде, который вы напишете далее в рамках этого краткого руководства. Имя ключа по умолчанию: **RootManageSharedAccessKey**. 
+- Python 2.7, 3.5 или более поздней версии, для которого установлено и обновлено PIP.
+- Пакет Python для Центров событий. 
 
+    Чтобы установить этот пакет, выполните следующую команду в окне командной строки, где путь к Python сохранен в переменной окружения path.
+
+    ```cmd
+    pip install azure-eventhub
+    ```
+
+    Установите следующий пакет для получения событий с помощью хранилища BLOB-объектов Azure в качестве хранилища контрольных точек.
+
+    ```cmd
+    pip install azure-eventhub-checkpointstoreblob-aio
+    ```
+- **Создайте пространство имен Центров событий и концентратор событий**. Первым шагом является использование [портала Azure](https://portal.azure.com) для создания пространства имен типа Центров событий и получение учетных данных управления, необходимых приложению для взаимодействия с концентратором событий. Чтобы создать пространство имен и концентратор событий, выполните инструкции из [этой статьи](event-hubs-create.md). Получите **строку подключения для пространства имен Центров событий**, следуя инструкциям из статьи [Получение строки подключения на портале](event-hubs-get-connection-string.md#get-connection-string-from-the-portal). Строка подключения понадобится нам позже в рамках этого краткого руководства.
 
 ## <a name="send-events"></a>Отправка событий
+В этом разделе вы создадите скрипт Python для отправки событий в концентратор событий, созданный ранее.
 
-Чтобы создать приложение Python, которое отправляет события в концентратор событий, выполните следующее.
+1. Откройте предпочитаемый редактор Python, например [Visual Studio Code](https://code.visualstudio.com/).
+2. Создайте сценарий с именем *send.py*. Этот сценарий отправляет пакет событий в концентратор событий, созданный ранее.
+3. Скопируйте приведенный ниже код в файл *send.py*.
 
-> [!NOTE]
-> Вы можете пропустить работу с кратким руководством и сразу скачать [примеры приложений](https://github.com/Azure/azure-event-hubs-python/tree/master/examples) с сайта GitHub. Замените строки `EventHubConnectionString` и `EventHubName` значениями для реального концентратора событий.
+    ```python
+    import asyncio
+    from azure.eventhub.aio import EventHubProducerClient
+    from azure.eventhub import EventData
 
-1. Откройте редактор Python, например [Visual Studio Code](https://code.visualstudio.com/).
-2. Создайте новый файл с именем *send.py*. Этот сценарий отправляет 100 событий в ваш концентратор событий.
-3. Вставьте следующий код в *send.py*, заменив концентраторы событий \<namespace>, \<eventhub>, \<AccessKeyName> и \<primary key value> своими значениями: 
-   
-   ```python
-   import sys
-   import logging
-   import datetime
-   import time
-   import os
-   
-   from azure.eventhub import EventHubClient, Sender, EventData
-   
-   logger = logging.getLogger("azure")
-   
-   # Address can be in either of these formats:
-   # "amqps://<URL-encoded-SAS-policy>:<URL-encoded-SAS-key>@<namespace>.servicebus.windows.net/eventhub"
-   # "amqps://<namespace>.servicebus.windows.net/<eventhub>"
-   # SAS policy and key are not required if they are encoded in the URL
-   
-   ADDRESS = "amqps://<namespace>.servicebus.windows.net/<eventhub>"
-   USER = "<AccessKeyName>"
-   KEY = "<primary key value>"
-   
-   try:
-       if not ADDRESS:
-           raise ValueError("No EventHubs URL supplied.")
-   
-       # Create Event Hubs client
-       client = EventHubClient(ADDRESS, debug=False, username=USER, password=KEY)
-       sender = client.add_sender(partition="0")
-       client.run()
-       try:
-           start_time = time.time()
-           for i in range(100):
-               print("Sending message: {}".format(i))
-               message = "Message {}".format(i)
-               sender.send(EventData(message))
-       except:
-           raise
-       finally:
-           end_time = time.time()
-           client.stop()
-           run_time = end_time - start_time
-           logger.info("Runtime: {} seconds".format(run_time))
-   
-   except KeyboardInterrupt:
-       pass
-   ```
-   
-4. Сохраните файл. 
+    async def run():
+        # Create a producer client to send messages to the event hub.
+        # Specify a connection string to your event hubs namespace and
+            # the event hub name.
+        producer = EventHubProducerClient.from_connection_string(conn_str="EVENT HUBS NAMESPACE - CONNECTION STRING", eventhub_name="EVENT HUB NAME")
+        async with producer:
+            # Create a batch.
+            event_data_batch = await producer.create_batch()
 
-Чтобы запустить скрипт, перейдите в каталог с сохраненным файлом *send.py* и выполните следующую команду.
+            # Add events to the batch.
+            event_data_batch.add(EventData('First event '))
+            event_data_batch.add(EventData('Second event'))
+            event_data_batch.add(EventData('Third event'))
 
-```cmd
-start python send.py
-```
+            # Send the batch of events to the event hub.
+            await producer.send_batch(event_data_batch)
 
-Поздравляем! Теперь вы можете отправлять сообщения в концентратор событий.
+    loop = asyncio.get_event_loop()
+    loop.run_until_complete(run())
+
+    ```
+
+    > [!NOTE]
+    > Полный исходный код, включая информационные комментарии, можно найти на странице [GitHub send_async.py](https://github.com/Azure/azure-sdk-for-python/blob/master/sdk/eventhub/azure-eventhub/samples/async_samples/send_async.py).
+    
 
 ## <a name="receive-events"></a>Получение событий
+В этом кратком руководстве в качестве хранилища контрольных точек используется хранилище BLOB-объектов Azure. Хранилище контрольных точек используется для сохранения контрольных точек (т. е. последних позиций чтения).  
 
-Чтобы создать приложение Python, которое получает события из концентратора событий, выполните следующее.
+> [!NOTE]
+> При использовании Azure Stack Hub учтите, что эта платформа может поддерживать версию пакета SDK для хранилища BLOB-объектов, отличающуюся от доступных в Azure. Например, если вы используете [Azure Stack Hub версии 2002](/azure-stack/user/event-hubs-overview), последней доступной версией для службы хранилища будет 2017-11-09. В таком случае кроме действий, описанных в этом разделе, вам нужно добавить код для включения поддержки API службы хранилища версии 2017-11-09. См. сведения о том, как включить поддержку определенной версии API службы хранилища для [синхронного](https://github.com/Azure/azure-sdk-for-python/blob/master/sdk/eventhub/azure-eventhub-checkpointstoreblob/samples/receive_events_using_checkpoint_store_storage_api_version.py) и [асинхронного](https://github.com/Azure/azure-sdk-for-python/blob/master/sdk/eventhub/azure-eventhub-checkpointstoreblob-aio/samples/receive_events_using_checkpoint_store_storage_api_version_async.py) выполнения на GitHub. См. сведения о версиях службы хранилища Azure, поддерживаемых в Azure Stack Hub, в статье [Хранилище Azure Stack Hub. Отличия и рекомендации](/azure-stack/user/azure-stack-acs-differences).
 
-1. В редакторе Python создайте файл с именем *recv.py*.
-2. Вставьте следующий код в *recv.py*, заменив концентраторы событий \<namespace>, \<eventhub>, \<AccessKeyName> и \<primary key value> своими значениями: 
-   
-   ```python
-   import os
-   import sys
-   import logging
-   import time
-   from azure.eventhub import EventHubClient, Receiver, Offset
-   
-   logger = logging.getLogger("azure")
-   
-   # Address can be in either of these formats:
-   # "amqps://<URL-encoded-SAS-policy>:<URL-encoded-SAS-key>@<mynamespace>.servicebus.windows.net/myeventhub"
-   # "amqps://<namespace>.servicebus.windows.net/<eventhub>"
-   # SAS policy and key are not required if they are encoded in the URL
-   
-   ADDRESS = "amqps://<namespace>.servicebus.windows.net/<eventhub>"
-   USER = "<AccessKeyName>"
-   KEY = "<primary key value>"
-   
-   
-   CONSUMER_GROUP = "$default"
-   OFFSET = Offset("-1")
-   PARTITION = "0"
-   
-   total = 0
-   last_sn = -1
-   last_offset = "-1"
-   client = EventHubClient(ADDRESS, debug=False, username=USER, password=KEY)
-   try:
-       receiver = client.add_receiver(
-           CONSUMER_GROUP, PARTITION, prefetch=5000, offset=OFFSET)
-       client.run()
-       start_time = time.time()
-       for event_data in receiver.receive(timeout=100):
-           print("Received: {}".format(event_data.body_as_str(encoding='UTF-8')))
-           total += 1
-   
-       end_time = time.time()
-       client.stop()
-       run_time = end_time - start_time
-       print("Received {} messages in {} seconds".format(total, run_time))
-   
-   except KeyboardInterrupt:
-       pass
-   finally:
-       client.stop()
-   ```
-   
-4. Сохраните файл.
 
-Чтобы запустить скрипт, перейдите в ту папку, где сохранен файл *recv.py*, и выполните следующую команду.
+### <a name="create-an-azure-storage-account-and-a-blob-container"></a>Создание учетной записи хранения Azure и контейнера больших двоичных объектов
+Создайте учетную запись хранения Azure и контейнер больших двоичных объектов в ней, выполнив следующие действия.
 
-```cmd
-start python recv.py
+1. [Создайте учетную запись хранения Azure](../storage/common/storage-account-create.md?tabs=azure-portal)
+2. [Создание контейнера больших двоичных объектов](../storage/blobs/storage-quickstart-blobs-portal.md#create-a-container)
+3. [Получение строки подключения к учетной записи хранения](../storage/common/storage-configure-connection-string.md).
+
+Обязательно запишите строку подключения и имя контейнера для последующего использования в коде получения.
+
+
+### <a name="create-a-python-script-to-receive-events"></a>Создание сценария Python для получения событий
+
+В этом разделе вы создадите скрипт Python для получения событий из концентратора событий.
+
+1. Откройте предпочитаемый редактор Python, например [Visual Studio Code](https://code.visualstudio.com/).
+2. Создайте сценарий с именем *recv.py*.
+3. Вставьте в *recv.py* следующий код.
+
+    ```python
+    import asyncio
+    from azure.eventhub.aio import EventHubConsumerClient
+    from azure.eventhub.extensions.checkpointstoreblobaio import BlobCheckpointStore
+
+
+    async def on_event(partition_context, event):
+        # Print the event data.
+        print("Received the event: \"{}\" from the partition with ID: \"{}\"".format(event.body_as_str(encoding='UTF-8'), partition_context.partition_id))
+
+        # Update the checkpoint so that the program doesn't read the events
+        # that it has already read when you run it next time.
+        await partition_context.update_checkpoint(event)
+
+    async def main():
+        # Create an Azure blob checkpoint store to store the checkpoints.
+        checkpoint_store = BlobCheckpointStore.from_connection_string("AZURE STORAGE CONNECTION STRING", "BLOB CONTAINER NAME")
+
+        # Create a consumer client for the event hub.
+        client = EventHubConsumerClient.from_connection_string("EVENT HUBS NAMESPACE CONNECTION STRING", consumer_group="$Default", eventhub_name="EVENT HUB NAME", checkpoint_store=checkpoint_store)
+        async with client:
+            # Call the receive method. Read from the beginning of the partition (starting_position: "-1")
+            await client.receive(on_event=on_event,  starting_position="-1")
+
+    if __name__ == '__main__':
+        loop = asyncio.get_event_loop()
+        # Run the main method.
+        loop.run_until_complete(main())    
+    ```
+
+    > [!NOTE]
+    > Полный исходный код, включая дополнительные информационные комментарии, можно найти на странице [GitHub recv_with_checkpoint_store_async.py](https://github.com/Azure/azure-sdk-for-python/blob/master/sdk/eventhub/azure-eventhub/samples/async_samples/recv_with_checkpoint_store_async.py).
+
+
+### <a name="run-the-receiver-app"></a>Запуск приложения получателя
+
+Чтобы выполнить сценарий, откройте окно командной строки с Python в пути, а затем выполните следующую команду.
+
+```bash
+python recv.py
 ```
 
+### <a name="run-the-sender-app"></a>Запуск приложения отправителя
+
+Чтобы выполнить сценарий, откройте окно командной строки с Python в пути, а затем выполните следующую команду.
+
+```bash
+python send.py
+```
+
+В окне получателя должны отобразиться сообщения, отправленные в концентратор событий.
+
+
 ## <a name="next-steps"></a>Дальнейшие действия
-Дополнительные сведения о Центрах событий см. в следующих статьях:
+В этом кратком руководстве события отправлены и получены асинхронно. Чтобы узнать, как отправлять и получать события синхронно, перейдите на страницу [GitHub sync_samples](https://github.com/Azure/azure-sdk-for-python/tree/master/sdk/eventhub/azure-eventhub/samples/sync_samples).
 
-- [EventProcessorHost](event-hubs-event-processor-host.md)
-- [Функции и терминология в Центрах событий Azure](event-hubs-features.md)
-- [Часто задаваемые вопросы о Центрах событий](event-hubs-faq.md)
-
+Для всех примеров (синхронных и асинхронных) в GitHub перейдите на страницу [Azure Event Hubs client library for Python Samples](https://github.com/Azure/azure-sdk-for-python/tree/master/sdk/eventhub/azure-eventhub/samples) (Клиентская библиотека Центров событий Azure для примеров Python).

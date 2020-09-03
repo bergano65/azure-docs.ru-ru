@@ -13,12 +13,12 @@ ms.date: 05/17/2019
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c3d681dd06f07f6174e31b59cccf42df5dc16a1e
-ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
+ms.openlocfilehash: f74798eeed4764bf2f7b71cb5049fb1c6b3ae077
+ms.sourcegitcommit: c94a177b11a850ab30f406edb233de6923ca742a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "68779850"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89278655"
 ---
 # <a name="what-is-hybrid-identity-with-azure-active-directory"></a>Что собой представляет гибридная идентификация с использованием Azure Active Directory
 
@@ -36,7 +36,7 @@ ms.locfileid: "68779850"
 
 Эти методы проверки подлинности также предоставляют возможности [единого входа](how-to-connect-sso.md).  Единый вход обеспечивает пользователям автоматический вход в систему, когда они работают на корпоративных устройствах, подключенных к корпоративной сети.
 
-См. дополнительные сведения о [выборе правильного метода аутентификации для гибридного решения для идентификации Azure Active Directory](https://docs.microsoft.com/azure/security/fundamentals/choose-ad-authn). 
+См. дополнительные сведения о [выборе правильного метода аутентификации для гибридного решения для идентификации Azure Active Directory](./choose-ad-authn.md). 
 
 ## <a name="common-scenarios-and-recommendations"></a>Распространенные сценарии и рекомендации 
 
@@ -60,7 +60,7 @@ ms.locfileid: "68779850"
 > 
 > <sup>3</sup> Федеративный единый вход с AD FS.  
 >  
-> <sup>4</sup> AD FS можно интегрировать с корпоративной инфраструктурой открытых ключей PKI, чтобы разрешить вход с использованием сертификатов. Это могут быть программные сертификаты, развернутые с помощью доверенного канала подготовки, например MDM, GPO, или смарт-сертификаты (включая карты PIV/CAC) или Hello для бизнеса (доверенный сертификат). Дополнительные сведения о поддержке проверки подлинности с использованием смарт-карт см. в [этом блоге](https://blogs.msdn.microsoft.com/samueld/2016/07/19/adfs-certauth-aad-o365/). 
+> <sup>4</sup> AD FS можно интегрировать с корпоративной инфраструктурой открытых ключей PKI, чтобы разрешить вход с использованием сертификатов. Это могут быть программные сертификаты, развернутые с помощью доверенного канала подготовки, например MDM, GPO, или смарт-сертификаты (включая карты PIV/CAC) или Hello для бизнеса (доверенный сертификат). Дополнительные сведения о поддержке проверки подлинности с использованием смарт-карт см. в [этом блоге](/archive/blogs/samueld/adfs-certauth-aad-o365). 
 > 
 
 ## <a name="license-requirements-for-using-azure-ad-connect"></a>Лицензионные требования для Azure AD Connect
@@ -73,5 +73,4 @@ ms.locfileid: "68779850"
 - [Использование синхронизации хэша паролей](whatis-phs.md) 
 - [Использование сквозной проверки подлинности](how-to-connect-pta.md) 
 - [Использование федерации](whatis-fed.md) 
-- [Использование единого входа](how-to-connect-sso.md) 
-
+- [Использование единого входа](how-to-connect-sso.md)

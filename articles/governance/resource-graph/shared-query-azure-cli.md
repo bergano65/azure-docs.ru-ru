@@ -3,12 +3,12 @@ title: Краткое руководство. Создание общего за
 description: В этом кратком руководстве приведены шаги по включению расширения Resource Graph для Azure CLI и созданию общего запроса.
 ms.date: 06/29/2020
 ms.topic: quickstart
-ms.openlocfilehash: fc03339c50316516301901d84d2c5a3ba2ab287d
-ms.sourcegitcommit: 73ac360f37053a3321e8be23236b32d4f8fb30cf
+ms.openlocfilehash: c5f7e6fbe1b462c1f9b6e8ad46c598398e1aca02
+ms.sourcegitcommit: 8a7b82de18d8cba5c2cec078bc921da783a4710e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/30/2020
-ms.locfileid: "85569517"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89050970"
 ---
 # <a name="quickstart-create-a-resource-graph-shared-query-using-azure-cli"></a>Краткое руководство. Создание общего запроса к Resource Graph с помощью Azure CLI
 
@@ -26,7 +26,7 @@ ms.locfileid: "85569517"
 
 Чтобы обеспечить работу Azure CLI с Azure Resource Graph, необходимо добавить расширение. Это расширение работает везде, где может использоваться оболочка Azure CLI, включая [bash на операционной системе Windows 10](/windows/wsl/install-win10), [Cloud Shell](https://shell.azure.com) (как автономно, так и внутри портала), [образ Azure CLI Docker](https://hub.docker.com/r/microsoft/azure-cli/) или установленную локально.
 
-1. Убедитесь, что установлена последняя версия Azure CLI (не ниже **2.8.0**). Если она еще не установлена, выполните [эти инструкции](/cli/azure/install-azure-cli-windows?view=azure-cli-latest).
+1. Убедитесь, что установлена последняя версия Azure CLI (не ниже **2.8.0**). Если она еще не установлена, выполните [эти инструкции](/cli/azure/install-azure-cli-windows).
 
 1. В своей среде Azure CLI выполните команду [az extension add](/cli/azure/extension#az-extension-add), чтобы импортировать расширение Resource Graph с помощью следующей команды:
 

@@ -8,12 +8,12 @@ ms.author: terrychr
 ms.service: cognitive-search
 ms.topic: quickstart
 ms.date: 06/07/2020
-ms.openlocfilehash: 632071c2a9597fc11ab4ffc0971493ef5b52d807
-ms.sourcegitcommit: 124f7f699b6a43314e63af0101cd788db995d1cb
+ms.openlocfilehash: f405219701e910159de6f4fc91e9960a76f5a0cd
+ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86083565"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88935319"
 ---
 # <a name="quickstart-create-an-azure-cognitive-search-index-in-the-azure-portal"></a>Краткое руководство. Создание индекса службы "Когнитивный поиск Azure" на портале Azure
 > [!div class="op_single_selector"]
@@ -140,7 +140,7 @@ ms.locfileid: "86083565"
 
 У вас уже должен быть индекс службы поиска, который можно запрашивать, используя встроенный в страницу запроса [**проводник поиска**](search-explorer.md). Это поле для поиска, с помощью которого можно проверить произвольные строки запроса.
 
-**Обозреватель поиска** используется только для обработки [запросов REST API](https://docs.microsoft.com/rest/api/searchservice/search-documents). Но он также поддерживает [простой синтаксис запросов](https://docs.microsoft.com/rest/api/searchservice/simple-query-syntax-in-azure-search) и [средство полного синтаксического анализа запросов Lucene](https://docs.microsoft.com/rest/api/searchservice/lucene-query-syntax-in-azure-search), а также все параметры поиска, доступные в операциях [REST API поиска документов](https://docs.microsoft.com/rest/api/searchservice/search-documents#bkmk_examples).
+**Обозреватель поиска** используется только для обработки [запросов REST API](/rest/api/searchservice/search-documents). Но он также поддерживает [простой синтаксис запросов](/rest/api/searchservice/simple-query-syntax-in-azure-search) и [средство полного синтаксического анализа запросов Lucene](/rest/api/searchservice/lucene-query-syntax-in-azure-search), а также все параметры поиска, доступные в операциях [REST API поиска документов](/rest/api/searchservice/search-documents#bkmk_examples).
 
 > [!TIP]
 > В [обзорном видео о службе "Когнитивный поиск Azure"](https://channel9.msdn.com/Events/Connect/2016/138) следующие действия демонстрируются начиная с 6:08.
@@ -188,7 +188,7 @@ ms.locfileid: "86083565"
 
 * Параметр **$filter** возвращает результаты, соответствующие указанным условиям. В данном случае это отели с числом звезд больше 4.
 
-* Синтаксис фильтра — это конструкция OData. Дополнительные сведения см. в статье [OData Expression Syntax for Azure Search](https://docs.microsoft.com/rest/api/searchservice/odata-expression-syntax-for-azure-search) (Синтаксис выражений OData для службы поиска Azure).
+* Синтаксис фильтра — это конструкция OData. Дополнительные сведения см. в статье [OData Expression Syntax for Azure Search](/rest/api/searchservice/odata-expression-syntax-for-azure-search) (Синтаксис выражений OData для службы поиска Azure).
 
 ### <a name="facet-the-query"></a><a name="facet-query"></a> Аспектирование запроса
 
@@ -207,7 +207,7 @@ ms.locfileid: "86083565"
 
 * Аспектировать можно только фильтруемые поля. В результатах могут быть возвращены только поля, доступные для получения.
 
-* В поле *Rating* отображаются числа с плавающей запятой двойной точности, а группирование выполняется по точному значению. Дополнительные сведения о группировании по интервалу (например, "3 звезды", "4 звезды" и т. д.) см. в статье о том, [как реализовать фасетную навигацию в службе "Когнитивный поиск Azure"](https://docs.microsoft.com/azure/search/search-faceted-navigation#filter-based-on-a-range).
+* В поле *Rating* отображаются числа с плавающей запятой двойной точности, а группирование выполняется по точному значению. Дополнительные сведения о группировании по интервалу (например, "3 звезды", "4 звезды" и т. д.) см. в статье о том, [как реализовать фасетную навигацию в службе "Когнитивный поиск Azure"](./search-faceted-navigation.md#filter-based-on-a-range).
 
 
 ### <a name="highlight-search-results"></a><a name="highlight-query"></a> Выделение результатов поиска
@@ -240,11 +240,11 @@ ms.locfileid: "86083565"
 
 Поиск нечетких соответствий и поиск с использованием подстановочных знаков влияют на выходные данные поиска. Лингвистический анализ не выполняется для этих форматов запроса. Перед применением поиска нечетких соответствий и поиска с использованием подстановочных знаков просмотрите статью о том, [как работает полнотекстовый поиск в службе "Когнитивный поиск Azure"](search-lucene-query-architecture.md#stage-2-lexical-analysis) и найдите раздел об исключениях лексического анализа.
 
-Дополнительные сведения о сценариях запроса при использовании средства полного синтаксического анализа запросов см. в статье [Lucene query syntax in Azure Cognitive Search](https://docs.microsoft.com/rest/api/searchservice/lucene-query-syntax-in-azure-search) (Синтаксис запросов Lucene в службе "Когнитивный поиск Azure").
+Дополнительные сведения о сценариях запроса при использовании средства полного синтаксического анализа запросов см. в статье [Lucene query syntax in Azure Cognitive Search](/rest/api/searchservice/lucene-query-syntax-in-azure-search) (Синтаксис запросов Lucene в службе "Когнитивный поиск Azure").
 
 ### <a name="try-geospatial-search"></a><a name="geo-search"></a> Пробное использование геопространственного поиска
 
-Для поддержки геопространственного поиска нужно задать [тип данных edm.GeographyPoint](https://docs.microsoft.com/rest/api/searchservice/supported-data-types) для поля, содержащего координаты. Геопространственный поиск — это тип фильтра, описанный в статье [OData Expression Syntax for Azure Search](https://docs.microsoft.com/rest/api/searchservice/odata-expression-syntax-for-azure-search) (Синтаксис выражений OData для службы поиска Azure).
+Для поддержки геопространственного поиска нужно задать [тип данных edm.GeographyPoint](/rest/api/searchservice/supported-data-types) для поля, содержащего координаты. Геопространственный поиск — это тип фильтра, описанный в статье [OData Expression Syntax for Azure Search](/rest/api/searchservice/odata-expression-syntax-for-azure-search) (Синтаксис выражений OData для службы поиска Azure).
 
 #### <a name="example-geo-coordinate-filters-searchcounttruefiltergeodistancelocationgeographypoint-12212-4767-le-5"></a>Пример (фильтры географических координат): `search=*&$count=true&$filter=geo.distance(Location,geography'POINT(-122.12 47.67)') le 5`
 
@@ -256,7 +256,7 @@ ms.locfileid: "86083565"
 
 В этом учебнике вы получили краткие сведения об использовании службы "Когнитивный поиск Azure" на портале Azure.
 
-Вы узнали, как создавать индекс поиска с помощью мастера **импорта данных**. Вы узнали об [индексаторах](search-indexer-overview.md), а также о базовом рабочем процессе проектирования индекса, включая [поддерживаемые изменения в опубликованном индексе](https://docs.microsoft.com/rest/api/searchservice/update-index).
+Вы узнали, как создавать индекс поиска с помощью мастера **импорта данных**. Вы узнали об [индексаторах](search-indexer-overview.md), а также о базовом рабочем процессе проектирования индекса, включая [поддерживаемые изменения в опубликованном индексе](/rest/api/searchservice/update-index).
 
 Используя **обозреватель поиска** на портале Azure, вы узнали о синтаксисе простых запросов путем применения практических примеров, демонстрирующих основные возможности, такие как фильтры, выделение совпадений, поиск нечетких соответствий и геопространственный поиск.
 
@@ -280,4 +280,4 @@ ms.locfileid: "86083565"
 Хотите оптимизировать и сократить ваши расходы на облако?
 
 > [!div class="nextstepaction"]
-> [Начните анализировать затраты с помощью службы "Управление затратами"](https://docs.microsoft.com/azure/cost-management-billing/costs/quick-acm-cost-analysis?WT.mc_id=costmanagementcontent_docsacmhorizontal_-inproduct-learn)
+> [Начните анализировать затраты с помощью службы "Управление затратами"](../cost-management-billing/costs/quick-acm-cost-analysis.md?WT.mc_id=costmanagementcontent_docsacmhorizontal_-inproduct-learn)
