@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: sandeo
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b80cd2e40e54837682e72837cf0d1a9058f3a7fc
-ms.sourcegitcommit: 0b8320ae0d3455344ec8855b5c2d0ab3faa974a3
+ms.openlocfilehash: 6c062b907f1e8a8e0541db0d69c6e24901f3145f
+ms.sourcegitcommit: bcda98171d6e81795e723e525f81e6235f044e52
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/30/2020
-ms.locfileid: "87428382"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89268559"
 ---
 # <a name="tutorial-configure-hybrid-azure-active-directory-joined-devices-manually"></a>Руководство по Настройка устройств с гибридным присоединением к Azure Active Directory
 
@@ -39,7 +39,7 @@ ms.locfileid: "87428382"
 
 В данном руководстве предполагается, что вы ознакомлены со следующими темами:
 
-* [Общие сведения об управлении устройствами в Azure Active Directory](../device-management-introduction.md)
+* [Общие сведения об управлении устройствами в Azure Active Directory](./overview.md)
 * [Планирование реализации гибридного присоединения к Azure Active Directory](hybrid-azuread-join-plan.md).
 * [Управление гибридным присоединением устройств к Azure Active Directory](hybrid-azuread-join-control.md)
 
@@ -94,7 +94,7 @@ Azure AD Connect выполняет следующие функции:
 
 Объект точки подключения службы (SCP) используется устройствами во время регистрации для получения сведений о клиенте Azure AD. В локальном экземпляре Active Directory должен существовать объект SCP для гибридных устройств, присоединенных к Azure AD, определенный в разделе контекста именования конфигурации в лесу компьютеров. В каждом лесу существует только один контекст именования конфигурации. В конфигурации Active Directory с несколькими лесами точка подключения службы должна существовать во всех лесах с присоединенными к домену компьютерами.
 
-Для получения контекста именования конфигурации для леса можно использовать командлет [**Get-ADRootDSE**](https://technet.microsoft.com/library/ee617246.aspx).  
+Для получения контекста именования конфигурации для леса можно использовать командлет [**Get-ADRootDSE**](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/ee617246(v=technet.10)).  
 
 Для леса, в котором домен Active Directory имеет имя *example.com*, контекст именования конфигурации будет таким:
 
@@ -167,7 +167,7 @@ Azure AD Connect выполняет следующие функции:
 
 В приведенном выше сценарии `$verifiedDomain = "contoso.com"` является заполнителем, который необходимо заменить одним из проверенных доменных имен в Azure AD. Необходимо будет стать владельцем этого домена, прежде чем использовать его.
 
-Дополнительные сведения о проверенных доменных именах см. в статье [Краткое руководство. Добавление личного домена в Azure Active Directory](../active-directory-domains-add-azure-portal.md).
+Дополнительные сведения о проверенных доменных именах см. в статье [Краткое руководство. Добавление личного домена в Azure Active Directory](../fundamentals/add-custom-domain.md).
 
 Чтобы получить список проверенных доменов компании, можно использовать командлет [Get-AzureADDomain](/powershell/module/Azuread/Get-AzureADDomain?view=azureadps-2.0).
 
@@ -326,7 +326,7 @@ Azure AD Connect выполняет следующие функции:
 
 В приведенном выше утверждении `<verified-domain-name>` является заполнителем, который необходимо заменить одним из проверенных доменных имен в Azure AD. Например, воспользуйтесь `Value = "http://contoso.com/adfs/services/trust/"`.
 
-Дополнительные сведения о проверенных доменных именах см. в статье [Краткое руководство. Добавление личного домена в Azure Active Directory](../active-directory-domains-add-azure-portal.md).  
+Дополнительные сведения о проверенных доменных именах см. в статье [Краткое руководство. Добавление личного домена в Azure Active Directory](../fundamentals/add-custom-domain.md).  
 
 Чтобы получить список проверенных доменов компании, можно использовать командлет [Get-MsolDomain](/powershell/module/msonline/get-msoldomain?view=azureadps-1.0).
 
@@ -614,7 +614,7 @@ Get-MsolDevice -All -IncludeSystemManagedDevices | where {($_.DeviceTrustType -e
 
 Если возникают проблемы с настройкой гибридного присоединения к Azure AD для устройств Windows, присоединенных к домену, ознакомьтесь со следующими статьями:
 
-- [Устранение неполадок с устройствами с помощью команды dsregcmd](https://docs.microsoft.com/azure/active-directory/devices/troubleshoot-device-dsregcmd)
+- [Устранение неполадок с устройствами с помощью команды dsregcmd](./troubleshoot-device-dsregcmd.md)
 - [Устранение неполадок на устройствах с гибридным присоединением к Azure Active Directory](troubleshoot-hybrid-join-windows-current.md)
 - [Устранение неполадок на устройствах нижнего уровня с гибридным присоединением к Azure Active Directory](troubleshoot-hybrid-join-windows-legacy.md)
 

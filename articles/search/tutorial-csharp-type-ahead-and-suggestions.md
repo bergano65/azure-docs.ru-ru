@@ -8,13 +8,13 @@ ms.author: heidist
 ms.service: cognitive-search
 ms.topic: tutorial
 ms.date: 07/15/2020
-ms.custom: devx-track-javascript
-ms.openlocfilehash: 244809db8efac00124a11ab5c163bfefc9ea7dd2
-ms.sourcegitcommit: e71da24cc108efc2c194007f976f74dd596ab013
+ms.custom: devx-track-javascript, devx-track-csharp
+ms.openlocfilehash: 47c846f0d8d1cccd91301c7424b2618fffddd565
+ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87420606"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88998447"
 ---
 # <a name="tutorial-add-autocomplete-and-suggestions-using-the-net-sdk"></a>Руководство по Добавление автозаполнения и предложений с помощью пакета SDK для .NET
 
@@ -145,7 +145,7 @@ ms.locfileid: "87420606"
  
     ![Ввод "pa", когда для fuzzy задано значение true](./media/tutorial-csharp-create-first-app/azure-search-suggest-fuzzy.png)
 
-    Подробные сведения о логике, используемой в поиске по нечетким соответствиям, приведены в статье о [синтаксисе запросов Lucene в службе "Когнитивный поиск Azure"](https://docs.microsoft.com/azure/search/query-lucene-syntax).
+    Подробные сведения о логике, используемой в поиске по нечетким соответствиям, приведены в статье о [синтаксисе запросов Lucene в службе "Когнитивный поиск Azure"](./query-lucene-syntax.md).
 
 ## <a name="add-highlighting-to-the-suggestions"></a>Добавление выделения для предложений
 
@@ -244,7 +244,7 @@ ms.locfileid: "87420606"
 
     Обратите внимание на то, что при автозаполнении используется та же функция *средства подбора* с именем "sg", что и для предложений (здесь мы пытаемся автоматически заполнить поле именем отеля).
 
-    Есть ряд настроек **AutocompleteMode**. Здесь мы используем **OneTermWithContext**. Описание дополнительных параметров см. в разделе об [API автозавершения](https://docs.microsoft.com/rest/api/searchservice/autocomplete).
+    Есть ряд настроек **AutocompleteMode**. Здесь мы используем **OneTermWithContext**. Описание дополнительных параметров см. в разделе об [API автозавершения](/rest/api/searchservice/autocomplete).
 
 4. Запустите приложение. Обратите внимание на то, что варианты, которые отображаются в раскрывающемся списке, являются отдельными словами. Введите слова, начинающиеся с "re". Обратите внимание на то, что количество предлагаемых вариантов уменьшается по мере набора букв.
 
@@ -464,5 +464,3 @@ ms.locfileid: "87420606"
 
 > [!div class="nextstepaction"]
 > [Руководство для разработчиков C#. Использование аспектов для улучшения навигации в службе "Когнитивный поиск Azure"](tutorial-csharp-facets.md)
-
-

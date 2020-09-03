@@ -5,12 +5,12 @@ ms.devlang: dotnet
 ms.topic: tutorial
 ms.date: 04/27/2020
 ms.custom: devx-track-csharp, mvc, cli-validate
-ms.openlocfilehash: bb1c947a388811efb5d161b7739664bea9fc85c8
-ms.sourcegitcommit: 4913da04fd0f3cf7710ec08d0c1867b62c2effe7
+ms.openlocfilehash: 882188c638c77fa0055f1c2d2e664d97a4fe9359
+ms.sourcegitcommit: 648c8d250106a5fca9076a46581f3105c23d7265
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88213713"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88962270"
 ---
 # <a name="tutorial-secure-azure-sql-database-connection-from-app-service-using-a-managed-identity"></a>Руководство по Безопасное подключение к Базе данных SQL Azure из службы приложений с использованием управляемого удостоверения
 
@@ -37,7 +37,7 @@ ms.locfileid: "88213713"
 > * Подключитесь к базе данных SQL из Visual Studio с использованием аутентификации Azure AD
 
 > [!NOTE]
->Аутентификация Azure AD _отличается_ от [интегрированной аутентификации Windows](/previous-versions/windows/it-pro/windows-server-2003/cc758557(v=ws.10)) в локальном экземпляре Active Directory (AD DS). Доменные службы Active Directory и Azure AD используют разные протоколы аутентификации. Дополнительные сведения см. на странице [Документация по доменным службам Azure AD](https://docs.microsoft.com/azure/active-directory-domain-services/).
+>Аутентификация Azure AD _отличается_ от [интегрированной аутентификации Windows](/previous-versions/windows/it-pro/windows-server-2003/cc758557(v=ws.10)) в локальном экземпляре Active Directory (AD DS). Доменные службы Active Directory и Azure AD используют разные протоколы аутентификации. Дополнительные сведения см. на странице [Документация по доменным службам Azure AD](../active-directory-domain-services/index.yml).
 
 [!INCLUDE [quickstarts-free-trial-note](../../includes/quickstarts-free-trial-note.md)]
 
@@ -83,7 +83,7 @@ az sql server ad-admin create --resource-group myResourceGroup --server-name <se
 
 ### <a name="macos-client"></a>Клиент macOS
 
-Версия Visual Studio для Mac интегрирована с проверкой подлинности Azure AD. Но библиотека [Microsoft.Azure.Services.AppAuthentication](https://www.nuget.org/packages/Microsoft.Azure.Services.AppAuthentication), которая будет использоваться позже, может использовать маркеры из Azure CLI. Чтобы включить разработку и отладку в Visual Studio, сначала необходимо [установить Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli) на локальном компьютере.
+Версия Visual Studio для Mac интегрирована с проверкой подлинности Azure AD. Но библиотека [Microsoft.Azure.Services.AppAuthentication](https://www.nuget.org/packages/Microsoft.Azure.Services.AppAuthentication), которая будет использоваться позже, может использовать маркеры из Azure CLI. Чтобы включить разработку и отладку в Visual Studio, сначала необходимо [установить Azure CLI](/cli/azure/install-azure-cli) на локальном компьютере.
 
 После установки Azure CLI на локальном компьютере войдите в Azure CLI с помощью следующей команды, используя учетные данные пользователя Azure AD:
 

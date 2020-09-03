@@ -8,13 +8,13 @@ ms.author: heidist
 ms.service: cognitive-search
 ms.topic: tutorial
 ms.date: 06/20/2020
-ms.custom: devx-track-javascript
-ms.openlocfilehash: f2182dcfd3db83580dfbec9b4f09479650dd62ca
-ms.sourcegitcommit: e71da24cc108efc2c194007f976f74dd596ab013
+ms.custom: devx-track-javascript, devx-track-csharp
+ms.openlocfilehash: 9819615039a6dd6aceec796a3ec1c7338f6f3968
+ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87420640"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88998532"
 ---
 # <a name="tutorial-order-search-results-using-the-net-sdk"></a>Руководство по Упорядочивание результатов поиска с помощью пакета SDK для .NET
 
@@ -462,8 +462,8 @@ ms.locfileid: "87420640"
 
 4. Теперь вам нужно объединить эти механизмы. Но в рамках этого руководства мы остановимся на этих фрагментах кода, оставив читателю самостоятельно потренироваться в создании приложений на основе карты. Чтобы дальше развить этот пример, можно передать в поиск название города и радиус или выбирать на карте точку и значение радиуса. Эти дополнительные возможности можно изучить в следующих документах:
 
-* [Документация по службе карт Azure](https://docs.microsoft.com/azure/azure-maps/)
-* [Поиск адреса с помощью службы поиска Azure Maps](https://docs.microsoft.com/azure/azure-maps/how-to-search-for-address)
+* [Документация по службе карт Azure](../azure-maps/index.yml)
+* [Поиск адреса с помощью службы поиска Azure Maps](../azure-maps/how-to-search-for-address.md)
 
 ## <a name="order-results-based-on-a-scoring-profile"></a>Упорядочение результатов по профилю повышения
 
@@ -959,7 +959,7 @@ ms.locfileid: "87420640"
 
 ### <a name="resources"></a>Ресурсы
 
-Подробные сведения см. в статье [Add scoring profiles to an Azure Search index](https://docs.microsoft.com/azure/search/index-add-scoring-profiles) (Добавление профилей повышения в индекс Когнитивного поиска Azure).
+Подробные сведения см. в статье [Add scoring profiles to an Azure Search index](/azure/search/index-add-scoring-profiles) (Добавление профилей повышения в индекс Когнитивного поиска Azure).
 
 ## <a name="takeaways"></a>Общие выводы
 
@@ -975,4 +975,4 @@ ms.locfileid: "87420640"
 
 Вы завершили серию учебников по C#, и получили ценные знания об API-интерфейсах Когнитивного поиска Azure.
 
-Подробные сведения и учебники вы можете найти в библиотеке документации [Microsoft Learn](https://docs.microsoft.com/learn/browse/?products=azure) или в других разделах [документации по Когнитивному поиску Azure](https://docs.microsoft.com/azure/search/).
+Подробные сведения и учебники вы можете найти в библиотеке документации [Microsoft Learn](/learn/browse/?products=azure) или в других разделах [документации по Когнитивному поиску Azure](./index.yml).
