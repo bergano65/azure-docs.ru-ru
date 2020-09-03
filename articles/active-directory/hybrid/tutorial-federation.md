@@ -14,12 +14,12 @@ ms.date: 08/16/2018
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: e3a17eb7fdde6840ce04fb0cbce13ec3f1a121e0
-ms.sourcegitcommit: c5021f2095e25750eb34fd0b866adf5d81d56c3a
+ms.openlocfilehash: 3a68c3719ea742a5c02f8be167fc1989ae4683c0
+ms.sourcegitcommit: c94a177b11a850ab30f406edb233de6923ca742a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "80673705"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89279199"
 ---
 # <a name="tutorial-federate-a-single-ad-forest-environment-to-the-cloud"></a>Руководство по Создание федерации среды одного леса AD в облаке с использованием PHS
 
@@ -29,9 +29,9 @@ ms.locfileid: "80673705"
 
 ## <a name="prerequisites"></a>Предварительные требования
 Для работы с этим учебником требуется следующее:
-- Компьютер с установленным [Hyper-V](https://docs.microsoft.com/windows-server/virtualization/hyper-v/hyper-v-technology-overview).  Рекомендуется использовать компьютер с ОС [Windows 10](https://docs.microsoft.com/virtualization/hyper-v-on-windows/about/supported-guest-os) или [Windows Server 2016](https://docs.microsoft.com/windows-server/virtualization/hyper-v/supported-windows-guest-operating-systems-for-hyper-v-on-windows).
+- Компьютер с установленным [Hyper-V](/windows-server/virtualization/hyper-v/hyper-v-technology-overview).  Рекомендуется использовать компьютер с ОС [Windows 10](/virtualization/hyper-v-on-windows/about/supported-guest-os) или [Windows Server 2016](/windows-server/virtualization/hyper-v/supported-windows-guest-operating-systems-for-hyper-v-on-windows).
 - [Подписка Azure](https://azure.microsoft.com/free)
-- - [Внешний сетевой адаптер](https://docs.microsoft.com/virtualization/hyper-v-on-windows/quick-start/connect-to-network) для связи виртуальной машины с Интернетом.
+- - [Внешний сетевой адаптер](/virtualization/hyper-v-on-windows/quick-start/connect-to-network) для связи виртуальной машины с Интернетом.
 - Копия Windows Server 2016.
 - [Личный домен](../../active-directory/fundamentals/add-custom-domain.md), который можно проверить.
 
@@ -140,7 +140,7 @@ Restart-Computer
 $DatabasePath = "c:\windows\NTDS"
 $DomainMode = "WinThreshold"
 $DomainName = "contoso.com"
-$DomaninNetBIOSName = "CONTOSO"
+$DomainNetBIOSName = "CONTOSO"
 $ForestMode = "WinThreshold"
 $LogPath = "c:\windows\NTDS"
 $SysVolPath = "c:\windows\SYSVOL"
@@ -292,4 +292,3 @@ New-SelfSignedCertificate -DnsName $DNSname -CertStoreLocation $Location
 - [Оборудование и предварительные требования](how-to-connect-install-prerequisites.md) 
 - [Настраиваемые параметры](how-to-connect-install-custom.md)
 - [Azure AD Connect и федерация](how-to-connect-fed-whatis.md)
-

@@ -7,12 +7,12 @@ ms.devlang: azurecli
 ms.topic: sample
 ms.date: 12/11/2017
 ms.custom: mvc, seodec18
-ms.openlocfilehash: 888e0e66c4dafbe7d2613a4b92b1f7b0dfd55eab
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: bbae57f453cfd425da3d294ff96e40a229aa1a49
+ms.sourcegitcommit: 648c8d250106a5fca9076a46581f3105c23d7265
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80058603"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88962729"
 ---
 # <a name="map-a-custom-domain-to-an-app-service-app-using-cli"></a>Сопоставление личного домена с приложением Службы приложений с помощью CLI
 
@@ -43,6 +43,6 @@ ms.locfileid: "80058603"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Дополнительные сведения об Azure CLI см. в [документации по Azure CLI](https://docs.microsoft.com/cli/azure).
+Дополнительные сведения об Azure CLI см. в [документации по Azure CLI](/cli/azure).
 
 Дополнительные примеры скриптов Azure CLI для службы приложений см. в [документации по службе приложений Azure](../samples-cli.md).
