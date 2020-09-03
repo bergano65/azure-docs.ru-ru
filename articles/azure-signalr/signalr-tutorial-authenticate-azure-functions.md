@@ -7,12 +7,12 @@ ms.topic: tutorial
 ms.date: 03/01/2019
 ms.author: zhshang
 ms.custom: devx-track-javascript
-ms.openlocfilehash: 72f6cee18664f63e36c38499e77f4c0ba7177c96
-ms.sourcegitcommit: 5b8fb60a5ded05c5b7281094d18cf8ae15cb1d55
+ms.openlocfilehash: 45dc137141491938367fb57c6955e8e3145f8ff9
+ms.sourcegitcommit: 8a7b82de18d8cba5c2cec078bc921da783a4710e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87386866"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89050460"
 ---
 # <a name="tutorial-azure-signalr-service-authentication-with-azure-functions"></a>Руководство по аутентификации в службе Azure SignalR с помощью Функций Azure
 
@@ -38,9 +38,13 @@ ms.locfileid: "87386866"
   * [Функции Azure](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-azurefunctions) — работа с Функциями Azure в VS Code;
   * [Live Server](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer) — локальное отображение веб-страниц для тестирования.
 
+[Возникли проблемы? Сообщите нам!](https://aka.ms/asrs/qsauth)
+
 ## <a name="sign-into-the-azure-portal"></a>Войдите на портал Azure.
 
 Войдите на [портал Azure](https://portal.azure.com/) со своими учетными данными.
+
+[Возникли проблемы? Сообщите нам!](https://aka.ms/asrs/qsauth)
 
 ## <a name="create-an-azure-signalr-service-instance"></a>Создание экземпляра службы Azure SignalR
 
@@ -66,7 +70,8 @@ ms.locfileid: "87386866"
 1. После развертывания экземпляра откройте его на портале и найдите страницу "Параметры". Измените параметр "Режим службы" на *Бессерверный*.
 
     ![Режим Службы SignalR](media/signalr-concept-azure-functions/signalr-service-mode.png)
-
+    
+[Возникли проблемы? Сообщите нам!](https://aka.ms/asrs/qsauth)
 
 ## <a name="initialize-the-function-app"></a>Инициализация приложения-функции
 
@@ -76,7 +81,7 @@ ms.locfileid: "87386866"
 
 1. С помощью расширения "Функции Azure" в VS Code инициализируйте приложение-функцию в главной папке проекта.
    1. Откройте палитру команд в VS Code, последовательно выбрав **Представление > Палитра команд** (или с помощью клавиш `Ctrl-Shift-P`, в macOS — `Cmd-Shift-P`).
-   1. Найдите и выберите команду **Azure Functions: Create New Project** (Функции Azure: создать проект).
+   1. Найдите команду **Azure Functions: Create New Project** (Функции Azure: создание нового проекта) и выберите ее.
    1. Должна отобразиться главная папка проекта. Выберите ее (или найдите с помощью кнопки "Обзор").
    1. При появлении запроса на выбор языка выберите **JavaScript**.
 
@@ -131,7 +136,7 @@ ms.locfileid: "87386866"
 
 1. Сохраните файл.
 
-    
+[Возникли проблемы? Сообщите нам!](https://aka.ms/asrs/qsauth)
 
 ## <a name="create-a-function-to-authenticate-users-to-signalr-service"></a>Создание функции для аутентификации пользователей в службе SignalR
 
@@ -142,9 +147,9 @@ ms.locfileid: "87386866"
 
 1. Откройте палитру команд VS Code (`Ctrl-Shift-P`, macOS — `Cmd-Shift-P`).
 
-1. Найдите и выберите команду **Azure Functions: Create Function** (Функции Azure: создать функцию).
+1. Найдите и выберите команду **Azure Functions: Создание функции**.
 
-1. При появлении запроса введите следующие сведения.
+1. При появлении запроса введите представленные ниже сведения.
 
     | Имя | Значение |
     |---|---|
@@ -195,15 +200,17 @@ ms.locfileid: "87386866"
 
     Эта функция принимает сведения о подключении SignalR из входной привязки и возвращает их клиенту в тексте ответа HTTP. Клиент SignalR будет использовать эту информацию для подключения к экземпляру Службы SignalR.
 
+[Возникли проблемы? Сообщите нам!](https://aka.ms/asrs/qsauth)
+
 ## <a name="create-a-function-to-send-chat-messages"></a>Создание функции для отправки сообщений чата
 
 Также этому веб-приложению нужен API-интерфейс HTTP для отправки сообщений чата. Вы создадите активируемую по запросу HTTP функцию с именем *SendMessage*, которая отправляет сообщения всем подключенным клиентам через службу SignalR.
 
 1. Откройте палитру команд VS Code (`Ctrl-Shift-P`, macOS — `Cmd-Shift-P`).
 
-1. Найдите и выберите команду **Azure Functions: Create Function** (Функции Azure: создать функцию).
+1. Найдите и выберите команду **Azure Functions: Создание функции**.
 
-1. При появлении запроса введите следующие сведения.
+1. При появлении запроса введите представленные ниже сведения.
 
     | Имя | Значение |
     |---|---|
@@ -276,6 +283,8 @@ ms.locfileid: "87386866"
 
 1. Сохраните файл.
 
+[Возникли проблемы? Сообщите нам!](https://aka.ms/asrs/qsauth)
+
 ## <a name="create-and-run-the-chat-client-web-user-interface"></a>Создание и запуск пользовательского веб-интерфейса для клиентов чата
 
 Пользовательский интерфейс приложения чата представляет собой простое одностраничное приложение, созданное на платформе Vue JavaScript. Оно будет размещено отдельно от приложения-функции. В локальной среде этот веб-интерфейс выполняется с помощью расширения Live Server для VS Code.
@@ -284,7 +293,7 @@ ms.locfileid: "87386866"
 
 1. В папке **content** создайте новый файл с именем **index.html**.
 
-1. Скопируйте и вставьте содержимое файла **[index.html](https://github.com/Azure-Samples/signalr-service-quickstart-serverless-chat/blob/2720a9a565e925db09ef972505e1c5a7a3765be4/docs/demo/chat-with-auth/index.html)** .
+1. Скопируйте и вставьте содержимое файла **[index.html](https://github.com/Azure-Samples/signalr-service-quickstart-serverless-chat/blob/2720a9a565e925db09ef972505e1c5a7a3765be4/docs/demo/chat-with-auth/index.html)**.
 
 1. Сохраните файл.
 
@@ -293,6 +302,8 @@ ms.locfileid: "87386866"
 1. При открытом файле **index.html** запустите Live Server через палитру команд VS Code (`Ctrl-Shift-P`, macOS — `Cmd-Shift-P`), где нужно выбрать команду **Live Server: Open with Live Server** (Live Server: открыть с помощью Live Server). Live Server откроет приложение в браузере.
 
 1. Приложение открылось. Введите сообщение в окне чата и нажмите клавишу ВВОД. Обновите приложение, чтобы увидеть новые сообщения. Так как аутентификация пока не настроена, все сообщения отправляются от имени пользователя anonymous (аноним).
+
+[Возникли проблемы? Сообщите нам!](https://aka.ms/asrs/qsauth)
 
 ## <a name="deploy-to-azure-and-enable-authentication"></a>Развертывание в Azure и включение аутентификации
 
@@ -322,7 +333,7 @@ ms.locfileid: "87386866"
     | Группа ресурсов | Выберите группу ресурсов |
     | Имя ресурса | Уникальное имя учетной записи хранения |
     | Расположение | Выберите то же расположение, что и для других ресурсов |
-    | Производительность | Standard |
+    | Производительность | Стандартный |
     | Тип учетной записи | StorageV2 (учетная запись общего назначения версии 2) |
     | Репликация | Локально избыточное хранилище (LRS) |
     | Уровень доступа | Горячий |
@@ -339,7 +350,7 @@ ms.locfileid: "87386866"
 
 1. В поле **Имя документа индекса** введите *index.html*.
 
-1. Выберите команду **Сохранить**.
+1. Нажмите кнопку **Сохранить**.
 
 1. Появится **основная конечная точка**. Запишите это значение. Оно потребуется для настройки приложения-функции.
 
@@ -370,7 +381,7 @@ ms.locfileid: "87386866"
 
 1. Откройте палитру команд VS Code (`Ctrl-Shift-P`, macOS — `Cmd-Shift-P`) и выберите **Azure Functions: Deploy to Function App** (Функции Azure: развертывание приложения-функции).
 
-1. При появлении запроса введите следующие сведения.
+1. При появлении запроса введите представленные ниже сведения.
 
     | Имя | Значение |
     |---|---|
@@ -389,7 +400,7 @@ ms.locfileid: "87386866"
 
 1. Найдите и выберите команду **Azure Functions: Upload local settings** (Функции Azure: отправка локальных параметров).
 
-1. При появлении запроса введите следующие сведения.
+1. При появлении запроса введите представленные ниже сведения.
 
     | Имя | Значение |
     |---|---|
@@ -490,9 +501,13 @@ ms.locfileid: "87386866"
 
 ![Демонстрация](media/signalr-tutorial-authenticate-azure-functions/signalr-serverless-chat.gif)
 
+[Возникли проблемы? Сообщите нам!](https://aka.ms/asrs/qsauth)
+
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 
 Чтобы очистить ресурсы, созданные при работе с этим руководством, удалите группу ресурсов через портал Azure.
+
+[Возникли проблемы? Сообщите нам!](https://aka.ms/asrs/qsauth)
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
@@ -500,3 +515,6 @@ ms.locfileid: "87386866"
 
 > [!div class="nextstepaction"]
 > [Создание приложений в реальном времени с помощью решения "Функции Azure"](signalr-concept-azure-functions.md)
+
+[Возникли проблемы? Сообщите нам!](https://aka.ms/asrs/qsauth)
+

@@ -11,12 +11,12 @@ author: MarkusVi
 manager: daveba
 ms.reviewer: sandeo
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: cffd72171693499365f31b6eb51fd2586187b98b
-ms.sourcegitcommit: 2bab7c1cd1792ec389a488c6190e4d90f8ca503b
+ms.openlocfilehash: 93caf52d8b4a11f9843ad5f18ebf968d1d0730cd
+ms.sourcegitcommit: d68c72e120bdd610bb6304dad503d3ea89a1f0f7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88271269"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89226213"
 ---
 # <a name="tutorial-configure-the-log-analytics-wizard"></a>Руководство по настройке мастера Log Analytics
 
@@ -41,15 +41,15 @@ ms.locfileid: "88271269"
 
 Ознакомьтесь со следующими статьями:
 
-- [Руководство. Сбор и анализ журналов ресурсов из ресурса Azure](https://docs.microsoft.com/azure/azure-monitor/learn/tutorial-resource-logs)
+- [Руководство. Сбор и анализ журналов ресурсов из ресурса Azure](../../azure-monitor/learn/tutorial-resource-logs.md)
 
-- [Интеграция журналов действий с Log Analytics](https://docs.microsoft.com/azure/active-directory/reports-monitoring/howto-integrate-activity-logs-with-log-analytics)
+- [Интеграция журналов действий с Log Analytics](./howto-integrate-activity-logs-with-log-analytics.md)
 
-- [Управление учетными записями для аварийного доступа в Azure AD](https://docs.microsoft.com/azure/active-directory/users-groups-roles/directory-emergency-access)
+- [Управление учетными записями для аварийного доступа в Azure AD](../users-groups-roles/directory-emergency-access.md)
 
-- [Краткий справочник по KQL](https://docs.microsoft.com/azure/data-explorer/kql-quick-reference)
+- [Краткий справочник по KQL](/azure/data-explorer/kql-quick-reference)
 
-- [Изучение и предоставление общего доступа к данным об использовании c интерактивными книгами в Application Insights](https://docs.microsoft.com/azure/azure-monitor/platform/workbooks-overview)
+- [Изучение и предоставление общего доступа к данным об использовании c интерактивными книгами в Application Insights](../../azure-monitor/platform/workbooks-overview.md)
 
 
 

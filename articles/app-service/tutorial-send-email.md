@@ -4,12 +4,12 @@ description: Узнайте о том, как вызывать бизнес-пр
 ms.topic: tutorial
 ms.date: 04/08/2020
 ms.custom: devx-track-csharp, mvc
-ms.openlocfilehash: 9d4136099a8cadc43a53298f367f6eeb784e5ce1
-ms.sourcegitcommit: 4913da04fd0f3cf7710ec08d0c1867b62c2effe7
+ms.openlocfilehash: ddd57bfe653766d133824f42098d9ad9adb1e56b
+ms.sourcegitcommit: 648c8d250106a5fca9076a46581f3105c23d7265
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88212845"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88962202"
 ---
 # <a name="tutorial-send-email-and-invoke-other-business-processes-from-app-service"></a>Руководство по Отправка сообщений электронной почты и вызов других бизнес-процессов из Службы приложений
 
@@ -84,7 +84,7 @@ ms.locfileid: "88212845"
 1. В нижней части конструктора щелкните **Новый шаг**, введите **Gmail** в поле поиска действий, найдите и выберите **Отправка электронной почты (v2)** .
     
     > [!TIP]
-    > Вы можете найти другие типы интеграции, например SendGrid, MailChimp, Office 365 и SalesForce. См. сведения в документации по [Logic Apps](https://docs.microsoft.com/azure/logic-apps/).
+    > Вы можете найти другие типы интеграции, например SendGrid, MailChimp, Office 365 и SalesForce. См. сведения в документации по [Logic Apps](../logic-apps/index.yml).
 1. В диалоговом окне **Gmail** щелкните **Вход** и войдите в учетную запись Gmail, из которой нужно отправить электронное письмо.
 
     ![Снимок экрана: диалоговое окно Gmail, используемое для входа в учетную запись Gmail, из которой необходимо отправить электронное письмо.](./media/tutorial-send-email/gmail-sign-in.png)
@@ -152,7 +152,7 @@ az webapp config appsettings set --name <app-name> --resource-group <resource-gr
 
 ### <a name="aspnet"></a>[ASP.NET](#tab/dotnet)
 
-В ASP.NET можно отправить HTTP-запрос POST с помощью класса [System.Net.Http.HttpClient](https://docs.microsoft.com/dotnet/api/system.net.http.httpclient). Пример:
+В ASP.NET можно отправить HTTP-запрос POST с помощью класса [System.Net.Http.HttpClient](/dotnet/api/system.net.http.httpclient). Пример:
 
 ```csharp
 // requires using System.Net.Http;
@@ -177,7 +177,7 @@ var statusCode = result.StatusCode.ToString();
 
 ### <a name="aspnet-core"></a>[ASP.NET Core](#tab/dotnetcore)
 
-В ASP.NET Core можно отправить HTTP-запрос POST с помощью класса [System.Net.Http.HttpClient](https://docs.microsoft.com/dotnet/api/system.net.http.httpclient). Пример:
+В ASP.NET Core можно отправить HTTP-запрос POST с помощью класса [System.Net.Http.HttpClient](/dotnet/api/system.net.http.httpclient). Пример:
 
 ```csharp
 // requires using System.Net.Http;
@@ -199,7 +199,7 @@ var statusCode = result.StatusCode.ToString();
 ```
 
 > [!NOTE]
-> Этот код специально упрощен для ознакомления. В реальной системе не следует создавать новый экземпляр объекта `HttpClient` для каждого запроса. Соблюдайте рекомендации из руководства по [использованию IHttpClientFactory для реализации устойчивых запросов HTTP](https://docs.microsoft.com/dotnet/architecture/microservices/implement-resilient-applications/use-httpclientfactory-to-implement-resilient-http-requests).
+> Этот код специально упрощен для ознакомления. В реальной системе не следует создавать новый экземпляр объекта `HttpClient` для каждого запроса. Соблюдайте рекомендации из руководства по [использованию IHttpClientFactory для реализации устойчивых запросов HTTP](/dotnet/architecture/microservices/implement-resilient-applications/use-httpclientfactory-to-implement-resilient-http-requests).
 
 Если вы тестируете этот код в примере приложения для руководства по [ разработке приложения на основе ASP.NET Core с базой данных SQL в Службе приложений Azure](tutorial-dotnetcore-sqldb-app.md), вы можете с его помощью отправить подтверждение по электронной почте в [действии Create](https://github.com/Azure-Samples/dotnetcore-sqldb-tutorial/blob/master/Controllers/TodosController.cs#L56-L65) после добавления элемента `Todo`.
 
