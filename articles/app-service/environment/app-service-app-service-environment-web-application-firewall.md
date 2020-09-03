@@ -7,17 +7,17 @@ ms.topic: tutorial
 ms.date: 03/03/2018
 ms.author: stefsch
 ms.custom: mvc, seodec18
-ms.openlocfilehash: d629aca791794de6c3e065fdc9f4a9e7f6d8a5df
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: e40a42afc99d505dc48794d5ad919e4d682b7070
+ms.sourcegitcommit: 648c8d250106a5fca9076a46581f3105c23d7265
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85833187"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88961845"
 ---
 # <a name="configuring-a-web-application-firewall-waf-for-app-service-environment"></a>Настройка брандмауэра веб-приложения (WAF) для среды службы приложений
 ## <a name="overview"></a>Обзор
 
-Брандмауэры веб-приложения (WAF) защищают веб-приложения, проверяя входящий трафик Интернета и блокируя атаки с использованием кода SQL и межсайтовых скриптов, передачи вредоносных программ, атаки DDoS на приложения и другие атаки. Они также проверяют ответы от внутренних веб-серверов, предотвращая потерю данных (DLP). В сочетании с изоляцией и дополнительным масштабированием, предоставляемым средами службы приложений, это обеспечивает идеальную среду для размещения важных коммерческих веб-приложений с большим трафиком, способных противостоять вредоносным запросам. Azure предоставляет возможности WAF со [шлюзом приложений](https://docs.microsoft.com/azure/application-gateway/application-gateway-introduction).  См. документацию по [интеграции ILB ASE со шлюзом приложений](https://docs.microsoft.com/azure/app-service/environment/integrate-with-application-gateway).
+Брандмауэры веб-приложения (WAF) защищают веб-приложения, проверяя входящий трафик Интернета и блокируя атаки с использованием кода SQL и межсайтовых скриптов, передачи вредоносных программ, атаки DDoS на приложения и другие атаки. Они также проверяют ответы от внутренних веб-серверов, предотвращая потерю данных (DLP). В сочетании с изоляцией и дополнительным масштабированием, предоставляемым средами службы приложений, это обеспечивает идеальную среду для размещения важных коммерческих веб-приложений с большим трафиком, способных противостоять вредоносным запросам. Azure предоставляет возможности WAF со [шлюзом приложений](../../application-gateway/overview.md).  См. документацию по [интеграции ILB ASE со шлюзом приложений](./integrate-with-application-gateway.md).
 
 Помимо Шлюза приложений Azure, в [Azure Marketplace](https://azuremarketplace.microsoft.com/marketplace/apps/barracudanetworks.waf?tab=PlansAndPrice) доступны такие возможности, как [Barracuda WAF для Azure](https://www.barracuda.com/programs/azure). В остальной части этого документа описано, как интегрировать среду службы приложений с устройством Barracuda WAF.
 
@@ -34,7 +34,7 @@ ms.locfileid: "85833187"
 > 
 
 ## <a name="configuring-your-app-service-environment"></a>Настройка среды службы приложений
-Инструкции по настройке среды службы приложений см. в соответствующей [документации](app-service-web-how-to-create-an-app-service-environment.md). После создания среды службы приложений в ней можно создавать веб-приложения, приложения API и [мобильные приложения](../../app-service-mobile/app-service-mobile-value-prop.md), которые будут защищены брандмауэром веб-приложения (WAF), который мы настроим в следующем разделе.
+Инструкции по настройке среды службы приложений см. в соответствующей [документации](app-service-web-how-to-create-an-app-service-environment.md). После создания среды службы приложений в ней можно создавать веб-приложения, приложения API и [мобильные приложения](/previous-versions/azure/app-service-mobile/app-service-mobile-value-prop), которые будут защищены брандмауэром веб-приложения (WAF), который мы настроим в следующем разделе.
 
 ## <a name="configuring-your-barracuda-waf-cloud-service"></a>Настройка облачной службы Barracuda WAF
 У нас есть [подробная статья](https://campus.barracuda.com/product/webapplicationfirewall/article/WAF/DeployWAFInAzure) о развертывании Barracuda WAF на виртуальной машине в Azure. Так как нам требуется отказоустойчивость и отсутствие единой точки отказа, необходимо развернуть по крайней мере 2 экземпляра виртуальной машины WAF в той же облачной службе, следуя этим инструкциям.

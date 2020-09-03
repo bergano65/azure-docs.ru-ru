@@ -8,13 +8,13 @@ ms.service: virtual-machine-scale-sets
 ms.subservice: powershell
 ms.date: 03/27/2018
 ms.reviewer: jushiman
-ms.custom: mimckitt
-ms.openlocfilehash: 1093d6df3bef052df2dbe6df04f52d6a119357db
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.custom: mimckitt, devx-track-azurepowershell
+ms.openlocfilehash: 021719751d1f1cc93d1ad841429c2e025a902c8a
+ms.sourcegitcommit: 656c0c38cf550327a9ee10cc936029378bc7b5a2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87087090"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89078900"
 ---
 # <a name="create-a-basic-virtual-machine-scale-set-with-powershell"></a>Создание базового масштабируемого набора виртуальных машин с помощью PowerShell
 Этот скрипт позволяет создать масштабируемый набор виртуальных машин под управлением Windows Server 2016. После выполнения сценария можно получить доступ к экземплярам виртуальных машин по протоколу RDP.

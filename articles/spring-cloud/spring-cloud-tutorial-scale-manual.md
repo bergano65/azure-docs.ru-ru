@@ -7,12 +7,12 @@ ms.author: brendm
 author: bmitchell287
 ms.date: 10/06/2019
 ms.custom: devx-track-java
-ms.openlocfilehash: edbb3c1b2ed3e696c304f72c7b40fa926cae2c54
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: c3c660c5e301081ee82a12275b6e9125f0fc781b
+ms.sourcegitcommit: 58d3b3314df4ba3cabd4d4a6016b22fa5264f05a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87021194"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89289823"
 ---
 # <a name="tutorial-scale-an-application-in-azure-spring-cloud"></a>Руководство по масштабированию приложения в Azure Spring Cloud
 
@@ -27,7 +27,7 @@ ms.locfileid: "87021194"
 Для выполнения этих процедур требуется:
 
 * Подписка Azure. Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу. 
-* Развернутый экземпляр службы Azure Spring Cloud.  Чтобы приступить к работе, следуйте инструкциям из статьи [Краткое руководство. Запуск приложения Java Spring с помощью Azure CLI](spring-cloud-quickstart-launch-app-cli.md).
+* Развернутый экземпляр службы Azure Spring Cloud.  Чтобы приступить к работе, следуйте инструкциям из статьи [Краткое руководство. Запуск приложения Java Spring с помощью Azure CLI](spring-cloud-quickstart.md).
 * По крайней мере одно приложение, ранее созданное в этом экземпляре службы.
 
 ## <a name="navigate-to-the-scale-page-in-the-azure-portal"></a>Переход на страницу масштабирования на портале Azure

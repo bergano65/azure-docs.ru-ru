@@ -3,26 +3,28 @@ title: Пример скрипта Azure CLI. Создание и отправк
 description: В скрипте Azure CLI в этой статье показано, как отправить задание для простого преобразования кодирования с помощью URL-адреса HTTPs.
 services: media-services
 documentationcenter: ''
-author: Juliako
+author: IngridAtMicrosoft
 manager: femila
 editor: ''
 ms.assetid: ''
 ms.service: media-services
 ms.devlang: azurecli
-ms.topic: sample
+ms.topic: how-to
 ms.tgt_pltfrm: multiple
 ms.workload: na
-ms.date: 05/01/2019
-ms.author: juliako
+ms.date: 08/31/2020
+ms.author: inhenkel
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: c89fe37bb443dbdbb312f2c930a4df8a708bb597
-ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
+ms.openlocfilehash: 0f2e1d901e674c3fecf957bd10314e51195f8b84
+ms.sourcegitcommit: 58d3b3314df4ba3cabd4d4a6016b22fa5264f05a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/31/2020
-ms.locfileid: "87500697"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89295994"
 ---
 # <a name="cli-example-create-and-submit-a-job"></a>Пример для CLI. Создание и отправка задания
+
+[!INCLUDE [media services api v3 logo](./includes/v3-hr.md)]
 
 При отправке заданий из Служб мультимедиа версии 3 необходимо указать расположение входного видео. Это можно сделать, указав URL-адрес HTTPS как входные данные задания (как показано в этой статье). 
 

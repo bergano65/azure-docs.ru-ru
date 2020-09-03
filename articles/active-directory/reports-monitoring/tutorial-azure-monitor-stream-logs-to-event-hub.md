@@ -17,12 +17,12 @@ ms.date: 04/18/2019
 ms.author: markvi
 ms.reviewer: dhanyahk
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: eba44252672248b983d7f6e0c843f638e5f73447
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: 4cf35b2c15c0d85c93e69ef4e3b6c76932cbd75d
+ms.sourcegitcommit: d68c72e120bdd610bb6304dad503d3ea89a1f0f7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "74007656"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89229384"
 ---
 # <a name="tutorial-stream-azure-active-directory-logs-to-an-azure-event-hub"></a>Руководство по Потоковая передача журналов Azure Active Directory в концентратор событий Azure
 
@@ -35,7 +35,7 @@ ms.locfileid: "74007656"
 * Подписка Azure. Если у вас нет подписки Azure, можно [зарегистрироваться и получить бесплатную пробную версию](https://azure.microsoft.com/free/).
 * Клиент Azure AD.
 * Пользователь, который является *глобальным администратором* или *администратором безопасности* для этого клиента Azure AD.
-* Пространство имен Центров событий и концентратор событий в подписке Azure. Узнайте, как [создать концентратор событий](https://docs.microsoft.com/azure/event-hubs/event-hubs-create).
+* Пространство имен Центров событий и концентратор событий в подписке Azure. Узнайте, как [создать концентратор событий](../../event-hubs/event-hubs-create.md).
 
 ## <a name="stream-logs-to-an-event-hub"></a>Потоковая передача журналов в концентратор событий
 
@@ -79,19 +79,19 @@ ms.locfileid: "74007656"
     
     * **ArcSight**: подробные сведения об интеграции журналов Azure AD со ArcSight с помощью Azure Monitor см. в [этой статье](howto-integrate-activity-logs-with-arcsight.md).
     
-    * **Splunk**. Дополнительные сведения об интеграции журналов Azure AD со Splunk с помощью Azure Monitor см. в [этой](tutorial-integrate-activity-logs-with-splunk.md) статье.
+    * **Splunk**. Дополнительные сведения об интеграции журналов Azure AD со Splunk с помощью Azure Monitor см. в [этой](./howto-integrate-activity-logs-with-splunk.md) статье.
     
     * **IBM QRadar**. DSM и протокол концентратора событий Azure доступны для скачивания на [веб-сайте поддержки IBM](https://www.ibm.com/support). Дополнительные сведения об интеграции с Azure см. на веб-сайте [IBM QRadar Security Intelligence Platform 7.3.0](https://www.ibm.com/support/knowledgecenter/SS42VS_DSM/c_dsm_guide_microsoft_azure_overview.html?cp=SS42VS_7.3.0).
     
     * **Sumo Logic.** Чтобы настроить Sumo Logic для получения данных из концентратора событий, см. статью об [установке приложения Azure AD и просмотре панелей мониторинга](https://help.sumologic.com/Send-Data/Applications-and-Other-Data-Sources/Azure_Active_Directory/Install_the_Azure_Active_Directory_App_and_View_the_Dashboards). 
 
-* **Настройте специальные инструменты**. Если текущий инструмент SIEM пока не поддерживается в системе диагностики Azure Monitor, можно настроить пользовательские инструменты с помощью API Центров событий. Дополнительные сведения см. в статье [Основные сведения о получении сообщений с помощью узла EventProcessorHost в .NET Standard](https://docs.microsoft.com/azure/event-hubs/event-hubs-dotnet-standard-getstarted-receive-eph).
+* **Настройте специальные инструменты**. Если текущий инструмент SIEM пока не поддерживается в системе диагностики Azure Monitor, можно настроить пользовательские инструменты с помощью API Центров событий. Дополнительные сведения см. в статье [Основные сведения о получении сообщений с помощью узла EventProcessorHost в .NET Standard](../../event-hubs/event-hubs-dotnet-standard-getstarted-send.md).
 
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
 * [Интеграция журналов Azure Active Directory с ArcSight с помощью Azure Monitor](howto-integrate-activity-logs-with-arcsight.md)
-* [Integrate Azure AD logs with Splunk by using Azure Monitor (preview)](tutorial-integrate-activity-logs-with-splunk.md) (Интеграция журналов Azure AD со Splunk с помощью Azure Monitor (предварительная версия))
+* [Integrate Azure AD logs with Splunk by using Azure Monitor (preview)](./howto-integrate-activity-logs-with-splunk.md) (Интеграция журналов Azure AD со Splunk с помощью Azure Monitor (предварительная версия))
 * [Интеграция журналов Azure AD с SumoLogic с помощью Azure Monitor](howto-integrate-activity-logs-with-sumologic.md)
 * [Interpret the Azure AD audit logs schema in Azure Monitor (preview)](reference-azure-monitor-audit-log-schema.md) (Интерпретация схемы журналов аудита Azure Active Directory в Azure Monitor (предварительная версия))
 * [Interpret the Azure AD sign-in logs schema in Azure Monitor (preview)](reference-azure-monitor-sign-ins-log-schema.md) (Интерпретация схемы журналов входа Azure Active Directory в Azure Monitor (предварительная версия))

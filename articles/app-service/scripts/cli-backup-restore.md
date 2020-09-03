@@ -9,12 +9,12 @@ ms.date: 12/07/2017
 ms.author: msangapu
 ms.reviewer: cephalin
 ms.custom: mvc, seodec18
-ms.openlocfilehash: 8c3c0f4f57d21e5c07867a2c43ce3c3114f79a9b
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: be6a0a5b700c4110acd4481b12130185c9878883
+ms.sourcegitcommit: 648c8d250106a5fca9076a46581f3105c23d7265
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80058855"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88962786"
 ---
 # <a name="restore-a-web-app-from-a-backup-using-cli"></a>Восстановление веб-приложения из резервной копии в интерфейсе командной строки
 
@@ -43,6 +43,6 @@ ms.locfileid: "80058855"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Дополнительные сведения об Azure CLI см. в [документации по Azure CLI](https://docs.microsoft.com/cli/azure).
+Дополнительные сведения об Azure CLI см. в [документации по Azure CLI](/cli/azure).
 
 Дополнительные примеры скриптов Azure CLI для службы приложений см. в [документации по службе приложений Azure](../samples-cli.md).
