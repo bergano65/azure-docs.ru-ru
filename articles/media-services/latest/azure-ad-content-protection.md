@@ -10,17 +10,19 @@ ms.workload: media
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: tutorial
-ms.date: 07/1/2020
+ms.date: 08/31/2020
 ms.author: inhenkel
 ms.custom: devx-track-javascript
-ms.openlocfilehash: ad50b29dbda7c09c9312ebb4a01ebc5da568f3da
-ms.sourcegitcommit: e71da24cc108efc2c194007f976f74dd596ab013
+ms.openlocfilehash: 006e312e67f5f4014248c44a799c2dde826801c2
+ms.sourcegitcommit: bcda98171d6e81795e723e525f81e6235f044e52
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87422102"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89258849"
 ---
 # <a name="tutorial-end-to-end-content-protection-using-azure-ad"></a>Руководство по комплексной защите содержимого с помощью Azure AD
+
+[!INCLUDE [media services api v3 logo](./includes/v3-hr.md)]
 
 С помощью этого руководства и предоставленного примера проигрывателя вы настроите подсистему комплексной защиты содержимого мультимедиа на основе Служб мультимедиа Azure (AMS) и Azure Active Directory (AAD) для потоковой передачи содержимого мультимедиа со всеми поддерживаемыми AMS DRM/AES-128, протоколами потоковой передачи, кодеками и форматами контейнеров. Пример является достаточно универсальным для безопасного доступа к любому интерфейсу REST API, защищенному с помощью OAuth 2 посредством потока кода авторизации с ключом проверки для обмена кодом (PKCE). (Служба доставки лицензий Служб мультимедиа Azure — это всего лишь один из них.) Он также работает для API Microsoft Graph или любых пользовательских REST API, защищенных с помощью потока кода авторизации OAuth 2. Это сопровождающий документ для [этого примера кода](https://github.com/Azure-Samples/media-services-content-protection-azure-ad).
 

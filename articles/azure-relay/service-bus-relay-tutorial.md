@@ -2,13 +2,14 @@
 title: Предоставление локальной службы WCF REST для клиентов с помощью Azure Relay
 description: В этом руководстве описывается, как предоставить локальную службу WCF на базе REST для внешнего клиента с помощью Ретранслятора WCF Azure.
 ms.topic: tutorial
+ms.custom: devx-track-dotnet
 ms.date: 06/23/2020
-ms.openlocfilehash: 50628073efd7114aaacfe37177d2f5beb3be3d47
-ms.sourcegitcommit: 62717591c3ab871365a783b7221851758f4ec9a4
+ms.openlocfilehash: bb2b9b5ed7c263762cc24b8eb2e6d66215147c4c
+ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/22/2020
-ms.locfileid: "85322690"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88935710"
 ---
 # <a name="tutorial-expose-an-on-premises-wcf-rest-service-to-external-client-by-using-azure-wcf-relay"></a>Руководство по Предоставление локальной службы WCF на базе REST для внешнего клиента с помощью Ретранслятора WCF Azure
 

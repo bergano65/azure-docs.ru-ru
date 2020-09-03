@@ -5,12 +5,12 @@ author: msangapu-msft
 ms.author: msangapu
 ms.topic: tutorial
 ms.date: 06/20/2020
-ms.openlocfilehash: 106427a6b26386e6ff881862f836e9108a27aa96
-ms.sourcegitcommit: 2ffa5bae1545c660d6f3b62f31c4efa69c1e957f
+ms.openlocfilehash: c34cf47a5b8c20c10b160ac6e55309b3c18448f3
+ms.sourcegitcommit: 648c8d250106a5fca9076a46581f3105c23d7265
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/11/2020
-ms.locfileid: "88082327"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88959023"
 ---
 # <a name="tutorial-troubleshoot-an-app-service-app-with-azure-monitor"></a>Руководство по Устранение неполадок с приложением Службы приложений с помощью Azure Monitor
 
@@ -18,9 +18,9 @@ ms.locfileid: "88082327"
 > Интеграция Azure Monitor со Службой приложений доступна в [предварительной версии](https://aka.ms/appsvcblog-azmon).
 >
 
-В этом учебнике описано, как устранять неполадки в приложении [Службы приложений](overview.md) с помощью [Azure Monitor](https://docs.microsoft.com/azure/azure-monitor/overview). Этот пример приложения содержит код, который занимает всю доступную память и приводит к ошибкам HTTP 500. Эту ошибку вы сможете диагностировать и устранить с помощью Azure Monitor. По завершении вы получите тестовое приложение, работающее в Службе приложений в Linux, интегрированной с [Azure Monitor](https://docs.microsoft.com/azure/azure-monitor/overview).
+В этом учебнике описано, как устранять неполадки в приложении [Службы приложений](overview.md) с помощью [Azure Monitor](../azure-monitor/overview.md). Этот пример приложения содержит код, который занимает всю доступную память и приводит к ошибкам HTTP 500. Эту ошибку вы сможете диагностировать и устранить с помощью Azure Monitor. По завершении вы получите тестовое приложение, работающее в Службе приложений в Linux, интегрированной с [Azure Monitor](../azure-monitor/overview.md).
 
-Служба [Azure Monitor](https://docs.microsoft.com/azure/azure-monitor/overview) обеспечивает максимальную доступность и производительность приложений и служб, предоставляя полноценное решение для сбора, анализа и обработки данных телеметрии из облачных и локальных сред.
+Служба [Azure Monitor](../azure-monitor/overview.md) обеспечивает максимальную доступность и производительность приложений и служб, предоставляя полноценное решение для сбора, анализа и обработки данных телеметрии из облачных и локальных сред.
 
 В этом руководстве описано следующее:
 
@@ -38,7 +38,7 @@ ms.locfileid: "88082327"
 Для работы с этим руководством вам понадобится:
 
 - [Подписка Azure.](https://azure.microsoft.com/free/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=visualstudio)
-- [Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli)
+- [Azure CLI](/cli/azure/install-azure-cli)
 - [Git](https://git-scm.com/);
 
 ## <a name="create-azure-resources"></a>Создание ресурсов Azure
@@ -73,12 +73,12 @@ az monitor log-analytics workspace create --resource-group myResourceGroup --wor
 
 ### <a name="create-a-diagnostic-setting"></a>Создание параметра диагностики
 
-Параметры диагностики позволяют настроить сбор метрик из определенных служб Azure в журналы Azure Monitor, чтобы анализировать их совместно с другими данными мониторинга с помощью запросов по журналам. Для работы с этим руководством вы включите ведение журналов веб-сервера, а также журналов ошибок и стандартного потока вывода. Полный список типов журналов с описанием см. в статье [Поддерживаемые типы журналов](https://docs.microsoft.com/azure/app-service/troubleshoot-diagnostic-logs#supported-log-types).
+Параметры диагностики позволяют настроить сбор метрик из определенных служб Azure в журналы Azure Monitor, чтобы анализировать их совместно с другими данными мониторинга с помощью запросов по журналам. Для работы с этим руководством вы включите ведение журналов веб-сервера, а также журналов ошибок и стандартного потока вывода. Полный список типов журналов с описанием см. в статье [Поддерживаемые типы журналов](./troubleshoot-diagnostic-logs.md#supported-log-types).
 
 Чтобы создать параметры диагностики для AppServiceConsoleLogs (стандартный поток вывода и ошибки) и AppServiceHTTPLogs (журналы веб-сервера), нужно выполнить следующие команды. Замените _\<app-name>_ и _\<workspace-name>_ собственными значениями. 
 
 > [!NOTE]
-> Первые две команды, `resourceID` и `workspaceID`, создают переменные для использования в команде `az monitor diagnostic-settings create`. Дополнительные сведения об этой команде см. в разделе [Создание параметров диагностики с помощью Azure CLI](https://docs.microsoft.com/azure/azure-monitor/platform/diagnostic-settings#create-diagnostic-settings-using-azure-cli).
+> Первые две команды, `resourceID` и `workspaceID`, создают переменные для использования в команде `az monitor diagnostic-settings create`. Дополнительные сведения об этой команде см. в разделе [Создание параметров диагностики с помощью Azure CLI](../azure-monitor/platform/diagnostic-settings.md#create-using-azure-cli).
 >
 
 ```bash
@@ -129,7 +129,7 @@ az monitor diagnostic-settings create --resource $resourceID \
 
 ### <a name="log-queries"></a>Запросы журнала
 
-Запросы по журналам позволяют с пользой применить все данные, собранные в журналах Azure Monitor. Вы можете применять запросы по журналам, собранным в AppServiceHTTPLogs и AppServiceConsoleLogs. Дополнительные сведения о запросах по журналам см. в [этой обзорной статье](https://docs.microsoft.com/azure/azure-monitor/log-query/log-query-overview).
+Запросы по журналам позволяют с пользой применить все данные, собранные в журналах Azure Monitor. Вы можете применять запросы по журналам, собранным в AppServiceHTTPLogs и AppServiceConsoleLogs. Дополнительные сведения о запросах по журналам см. в [этой обзорной статье](../azure-monitor/log-query/log-query-overview.md).
 
 ### <a name="view-appservicehttplogs-with-log-query"></a>Просмотр AppServiceHTTPLogs с помощью запросов по журналам
 

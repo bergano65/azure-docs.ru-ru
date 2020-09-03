@@ -8,12 +8,12 @@ ms.subservice: gateway
 ms.topic: tutorial
 ms.date: 03/25/2019
 ms.author: alkohli
-ms.openlocfilehash: 64a33b12da0e9b90eaeb7039f65b2493a839a0c4
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 6488871067416b2cee533561bae47874413d9012
+ms.sourcegitcommit: c6b9a46404120ae44c9f3468df14403bcd6686c1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87054117"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88892122"
 ---
 # <a name="tutorial-provision-azure-data-box-gateway-in-vmware"></a>Руководство по Подготовка Шлюза Azure Data Box в VMware
 
@@ -200,7 +200,7 @@ ms.locfileid: "87054117"
 
 8. Для настройки сети используйте командлет `Set-HcsIpAddress` . Пример приведен ниже.
 
-    `Set-HcsIpAddress –Name Ethernet –IpAddress 10.161.22.90 –Netmask 255.255.255.0 –Gateway 10.161.22.1`
+    `Set-HcsIpAddress –Name Ethernet0 –IpAddress 10.161.22.90 –Netmask 255.255.255.0 –Gateway 10.161.22.1`
 
 9. По завершении начальной установки и загрузки устройства отобразится текст его баннера. Для управления устройством запишите IP-адрес и URL-адрес, отображающиеся в тексте баннера. Этот IP-адрес используется для подключения к пользовательскому веб-интерфейсу виртуального устройства, а также для выполнения локальной установки и активации.
 

@@ -8,12 +8,12 @@ manager: nitinme
 ms.service: cognitive-search
 ms.topic: tutorial
 ms.date: 05/19/2020
-ms.openlocfilehash: 2f25cab211d24facea7863c15b6d7671a9657ae9
-ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
+ms.openlocfilehash: b6164ef955ac92a7ef8776e560ea4d3a92abaf8d
+ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87290678"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88935982"
 ---
 # <a name="tutorial-diagnose-repair-and-commit-changes-to-your-skillset"></a>Руководство по диагностике, исправлению ошибок и фиксации изменений в наборе навыков
 
@@ -39,7 +39,7 @@ ms.locfileid: "87290678"
 
 * [Загрузите пример данных](https://github.com/Azure-Samples/azure-search-sample-data/tree/master/clinical-trials-pdf-19) состоящий из 19 файлов.
 
-* [Создайте учетную запись хранения Azure](https://docs.microsoft.com/azure/storage/common/storage-quickstart-create-account?tabs=azure-portal) или [найдите имеющуюся учетную запись](https://ms.portal.azure.com/#blade/HubsExtension/BrowseResourceBlade/resourceType/Microsoft.Storage%2storageAccounts/). 
+* [Создайте учетную запись хранения Azure](../storage/common/storage-account-create.md?tabs=azure-portal) или [найдите имеющуюся учетную запись](https://ms.portal.azure.com/#blade/HubsExtension/BrowseResourceBlade/resourceType/Microsoft.Storage%2storageAccounts/). 
 
    Выберите регион, в котором размещается Когнитивный поиск Azure, чтобы не оплачивать трафик.
    
@@ -258,5 +258,5 @@ ms.locfileid: "87290678"
 ## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
-> [Узнайте больше о наборах навыков](https://docs.microsoft.com/azure/search/cognitive-search-working-with-skillsets)
-> [Узнайте больше о добавочном обогащении и кэшировании](https://docs.microsoft.com/azure/search/cognitive-search-incremental-indexing-conceptual)
+> [Узнайте больше о наборах навыков](./cognitive-search-working-with-skillsets.md)
+> [Узнайте больше о добавочном обогащении и кэшировании](./cognitive-search-incremental-indexing-conceptual.md)

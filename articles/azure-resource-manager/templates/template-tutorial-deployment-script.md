@@ -10,15 +10,15 @@ ms.service: azure-resource-manager
 ms.workload: multiple
 ms.tgt_pltfrm: na
 ms.devlang: na
-ms.date: 04/23/2020
+ms.date: 08/25/2020
 ms.topic: tutorial
 ms.author: jgao
-ms.openlocfilehash: 81574f25e2132a7079fa0242284fb67b0132a8af
-ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
+ms.openlocfilehash: e1094befcc6b3a6e9d56ba3b603dc45fcb91ba13
+ms.sourcegitcommit: ac7ae29773faaa6b1f7836868565517cd48561b2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86119333"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88825500"
 ---
 # <a name="tutorial-use-deployment-scripts-to-create-a-self-signed-certificate-preview"></a>Руководство по Использование скриптов развертывания для создания самозаверяющего сертификата (предварительная версия)
 
@@ -42,7 +42,7 @@ ms.locfileid: "86119333"
 
 * **[Visual Studio Code](https://code.visualstudio.com/) с расширением средств диспетчера ресурсов**. См. [Краткое руководство. Создание шаблонов Azure Resource Manager c помощью Visual Studio Code](./quickstart-create-templates-use-visual-studio-code.md).
 
-* **Назначаемое пользователем управляемое удостоверение с ролью участника на уровне подписки**. Это удостоверение используется для выполнения скриптов развертывания. Сведения о его создании см. в [этом разделе](../../active-directory/managed-identities-azure-resources/qs-configure-portal-windows-vm.md#user-assigned-managed-identity). Идентификатор удостоверения необходим при развертывании шаблона. Требуемый формат удостоверения:
+* **Назначаемое пользователем управляемое удостоверение с ролью участника на уровне подписки**. Это удостоверение используется для выполнения скриптов развертывания. Сведения о его создании см. в [этом разделе](../../active-directory/managed-identities-azure-resources/how-to-manage-ua-identity-portal.md). Идентификатор удостоверения необходим при развертывании шаблона. Требуемый формат удостоверения:
 
   ```json
   /subscriptions/<SubscriptionID>/resourcegroups/<ResourceGroupName>/providers/Microsoft.ManagedIdentity/userAssignedIdentities/<IdentityID>
