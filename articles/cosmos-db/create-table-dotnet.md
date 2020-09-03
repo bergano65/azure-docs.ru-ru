@@ -128,7 +128,7 @@ ms.locfileid: "89020241"
 
 2. В поле **Обзор** NuGet введите Microsoft.Azure.Cosmos.Table. Это запрос для поиска клиентской библиотеки API таблицы Cosmos DB. Обратите внимание, что на данный момент эта библиотека доступна только для .NET Framework и .NET Standard. 
    
-   :::image type="content" source="media/create-table-dotnet/azure-cosmosdb-nuget-browse.png" alt-text="Вкладка "Обзор" в NuGet":::
+   :::image type="content" source="media/create-table-dotnet/azure-cosmosdb-nuget-browse.png" alt-text="Вкладка Обзор в NuGet":::
 
 3. Щелкните **Установить**, чтобы установить библиотеку **Microsoft.Azure.Cosmos.Table**. Установится пакет API таблицы Azure Cosmos DB и все зависимые компоненты.
 
