@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: sandeo
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a4f30202b08328854296b45e0279fc51b25b0a7c
-ms.sourcegitcommit: 0b8320ae0d3455344ec8855b5c2d0ab3faa974a3
+ms.openlocfilehash: 56b0685dee518399ae8328ddac18f03e82918a38
+ms.sourcegitcommit: bcda98171d6e81795e723e525f81e6235f044e52
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/30/2020
-ms.locfileid: "87428466"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89268423"
 ---
 # <a name="tutorial-configure-hybrid-azure-active-directory-join-for-managed-domains"></a>Руководство по Настройка гибридного присоединения к Azure Active Directory для управляемых доменов
 
@@ -73,9 +73,9 @@ ms.locfileid: "87428466"
 > [!WARNING]
 > Если ваша организация использует прокси-серверы, которые перехватывают трафик SSL для таких сценариев, как защита от потери данных или ограничения арендатора Azure AD, убедитесь, что трафик к https://device.login.microsoftonline.com исключается из процесса приостановки и изучения TLS-трафика. Если адрес https://device.login.microsoftonline.com не будет исключен, это может вызвать ошибки при аутентификации с помощью сертификата клиента, что приведет к проблемам с регистрацией устройств и условным доступом на основе устройств.
 
-Если вашей организации требуется доступ к Интернету через исходящий прокси-сервер, вы можете [реализовать автоматическое обнаружение веб-прокси (WPAD)](https://docs.microsoft.com/previous-versions/tn-archive/cc995261(v%3dtechnet.10)), чтобы обеспечить регистрацию устройств в Azure AD на компьютерах Windows 10. Если возникли проблемы при настройке и управлении WPAD, см. статью об устранении неполадок с автоматическим обнаружением [здесь](/previous-versions/tn-archive/cc302643(v=technet.10)). На устройствах с ОС Windows 10 версии ниже 1709 WPAD является единственным доступным вариантом, позволяющим настроить прокси-сервер для работы с гибридным присоединением к Azure AD. 
+Если вашей организации требуется доступ к Интернету через исходящий прокси-сервер, вы можете [реализовать автоматическое обнаружение веб-прокси (WPAD)](/previous-versions/tn-archive/cc995261(v=technet.10)), чтобы обеспечить регистрацию устройств в Azure AD на компьютерах Windows 10. Если возникли проблемы при настройке и управлении WPAD, см. статью об устранении неполадок с автоматическим обнаружением [здесь](/previous-versions/tn-archive/cc302643(v=technet.10)). На устройствах с ОС Windows 10 версии ниже 1709 WPAD является единственным доступным вариантом, позволяющим настроить прокси-сервер для работы с гибридным присоединением к Azure AD. 
 
-Если вы не используете WPAD, параметры прокси-сервера WinHTTP можно настроить на компьютере с Windows 10 версии не ниже 1709. Дополнительные сведения см. в статье [Развертывание параметров прокси-сервера WinHTTP с помощью объекта групповой политики](https://blogs.technet.microsoft.com/netgeeks/2018/06/19/winhttp-proxy-settings-deployed-by-gpo/).
+Если вы не используете WPAD, параметры прокси-сервера WinHTTP можно настроить на компьютере с Windows 10 версии не ниже 1709. Дополнительные сведения см. в статье [Развертывание параметров прокси-сервера WinHTTP с помощью объекта групповой политики](/archive/blogs/netgeeks/winhttp-proxy-settings-deployed-by-gpo).
 
 > [!NOTE]
 > Если вы настроите параметры прокси-сервера на компьютере с помощью параметров WinHTTP, любые компьютеры, которым не удается подключиться к настроенному прокси-серверу, не смогут подключиться к Интернету.
@@ -174,7 +174,7 @@ ms.locfileid: "87428466"
 ### <a name="using-the-azure-portal"></a>Использование портала Azure
 
 1. Перейдите на страницу устройства по [прямой ссылке](https://portal.azure.com/#blade/Microsoft_AAD_IAM/DevicesMenuBlade/Devices).
-2. См. сведения о том, как найти устройство, в статье [Управление удостоверениями устройств с помощью портала Azure](https://docs.microsoft.com/azure/active-directory/devices/device-management-azure-portal#locate-devices).
+2. См. сведения о том, как найти устройство, в статье [Управление удостоверениями устройств с помощью портала Azure](./device-management-azure-portal.md).
 3. Если для столбца **Зарегистрировано** отображается состояние **Ожидается**, это значит, что гибридное присоединение к Azure AD не завершено.
 4. Если для столбца **Зарегистрировано** отображается **дата и время**, это значит, что гибридное присоединение к Azure AD завершено.
 
@@ -224,7 +224,7 @@ Get-MsolDevice -All -IncludeSystemManagedDevices | where {($_.DeviceTrustType -e
 
 Если возникают проблемы с настройкой гибридного присоединения к Azure AD для устройств Windows, присоединенных к домену, ознакомьтесь со следующими статьями:
 
-- [Устранение неполадок с устройствами с помощью команды dsregcmd](https://docs.microsoft.com/azure/active-directory/devices/troubleshoot-device-dsregcmd)
+- [Устранение неполадок с устройствами с помощью команды dsregcmd](./troubleshoot-device-dsregcmd.md)
 - [Устранение неполадок на устройствах с гибридным присоединением к Azure Active Directory](troubleshoot-hybrid-join-windows-current.md)
 - [Устранение неполадок на устройствах нижнего уровня с гибридным присоединением к Azure Active Directory](troubleshoot-hybrid-join-windows-legacy.md)
 

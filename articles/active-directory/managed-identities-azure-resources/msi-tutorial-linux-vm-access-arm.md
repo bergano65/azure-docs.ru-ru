@@ -3,7 +3,7 @@ title: Получение доступа к Azure Resource Manager с помощ
 description: Из этого руководства вы узнаете, как получить доступ к Azure Resource Manager с помощью назначаемого пользователем управляемого удостоверения виртуальной машины Linux.
 services: active-directory
 documentationcenter: ''
-author: MarkusVi
+author: barclayn
 manager: daveba
 editor: daveba
 ms.service: active-directory
@@ -13,15 +13,15 @@ ms.topic: tutorial
 ms.tgt_pltfrm: na
 ms.workload: identity
 ms.date: 12/22/2017
-ms.author: markvi
+ms.author: barclayn
 ROBOTS: NOINDEX,NOFOLLOW
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 57b68ebb21c0c10c3fbe3fd77d11785d16a10053
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: c27480f29a29f4805f8a9cafcfd388cb0638519e
+ms.sourcegitcommit: bcda98171d6e81795e723e525f81e6235f044e52
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "60443472"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89269324"
 ---
 # <a name="tutorial-use-a-user-assigned-managed-identity-on-a-linux-vm-to-access-azure-resource-manager"></a>Руководство по Получение доступа к Azure Resource Manager с помощью назначаемого пользователем управляемого удостоверения виртуальной машины Linux
 
@@ -43,7 +43,7 @@ ms.locfileid: "60443472"
 
 - [Войдите на портал Azure](https://portal.azure.com).
 
-- [Создайте виртуальную машину Linux](/azure/virtual-machines/linux/quick-create-portal).
+- [Создайте виртуальную машину Linux](../../virtual-machines/linux/quick-create-portal.md).
 
 - Если вы решили установить и использовать CLI локально, для выполнения инструкций в этом руководстве вам понадобится Azure CLI 2.0.4 или более поздней версии. Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI 2.0]( /cli/azure/install-azure-cli).
 
@@ -122,11 +122,11 @@ az role assignment create --assignee <UAMI PRINCIPALID> --role 'Reader' --scope 
 
 Далее в этом руководстве мы будем работать с виртуальной машиной, которую только что создали.
 
-Для выполнения этих действий вам потребуется клиент SSH. Если вы используете Windows, можно использовать клиент SSH в [подсистеме Windows для Linux](https://msdn.microsoft.com/commandline/wsl/about). 
+Для выполнения этих действий вам потребуется клиент SSH. Если вы используете Windows, можно использовать клиент SSH в [подсистеме Windows для Linux](/windows/wsl/about). 
 
 1. Войдите на [портал](https://portal.azure.com) Azure.
 2. На портале перейдите к разделу **Виртуальные машины**, выберите виртуальную машину Linux и в разделе **Обзор** щелкните **Подключить**. Скопируйте строку подключения к виртуальной машине.
-3. Подключитесь к виртуальной машине с помощью выбранного клиента SSH. Если вы используете Windows, можно использовать клиент SSH в [подсистеме Windows для Linux](https://msdn.microsoft.com/commandline/wsl/about). Если вам нужна помощь в настройке ключей SSH-клиента, ознакомьтесь с разделом [Использование ключей SSH с Windows в Azure](~/articles/virtual-machines/linux/ssh-from-windows.md) или [Как создать и использовать пару из открытого и закрытого ключей SSH для виртуальных машин Linux в Azure](~/articles/virtual-machines/linux/mac-create-ssh-keys.md).
+3. Подключитесь к виртуальной машине с помощью выбранного клиента SSH. Если вы используете Windows, можно использовать клиент SSH в [подсистеме Windows для Linux](/windows/wsl/about). Если вам нужна помощь в настройке ключей SSH-клиента, ознакомьтесь с разделом [Использование ключей SSH с Windows в Azure](~/articles/virtual-machines/linux/ssh-from-windows.md) или [Как создать и использовать пару из открытого и закрытого ключей SSH для виртуальных машин Linux в Azure](~/articles/virtual-machines/linux/mac-create-ssh-keys.md).
 4. В окне терминала с помощью cURL выполните запрос к конечной точке службы метаданных экземпляров (IMDS) Azure, чтобы получить маркер доступа для Azure Resource Manager.  
 
    В следующем примере показан запрос CURL для получения маркера доступа. Не забудьте заменить `<CLIENT ID>` свойством `clientId`, возвращенным командой `az identity create` при [создании назначаемого пользователем управляемого удостоверения](#create-a-user-assigned-managed-identity): 
@@ -179,5 +179,4 @@ az role assignment create --assignee <UAMI PRINCIPALID> --role 'Reader' --scope 
 Из этого руководства вы узнали, как создать назначаемое пользователем управляемое удостоверение и подключить его к виртуальной машине Linux, чтобы получить доступ к API Azure Resource Manager.  Сведения об Azure Resource Manager см. здесь:
 
 > [!div class="nextstepaction"]
->[Azure Resource Manager](/azure/azure-resource-manager/resource-group-overview)
-
+>[Azure Resource Manager](../../azure-resource-manager/management/overview.md)

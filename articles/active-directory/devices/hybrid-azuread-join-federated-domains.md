@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: sandeo
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 9cf30324371043d8b702d3e22ec3ecd98e114ba6
-ms.sourcegitcommit: 0b8320ae0d3455344ec8855b5c2d0ab3faa974a3
+ms.openlocfilehash: 3a37353615e35cd75c126c268de71d10077a9071
+ms.sourcegitcommit: bcda98171d6e81795e723e525f81e6235f044e52
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/30/2020
-ms.locfileid: "87428583"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89268440"
 ---
 # <a name="tutorial-configure-hybrid-azure-active-directory-join-for-federated-domains"></a>Руководство по Настройка гибридного присоединения к Azure Active Directory для федеративных доменов
 
@@ -88,7 +88,7 @@ ms.locfileid: "87428583"
 
 Если вашей организации требуется доступ к Интернету через исходящий прокси-сервер, корпорация Майкрософт рекомендует [реализовать автоматическое обнаружение веб-прокси (WPAD)](/previous-versions/tn-archive/cc995261(v%3dtechnet.10)), чтобы обеспечить регистрацию устройств в Azure AD на компьютерах Windows 10. Если возникли проблемы при настройке и управлении WPAD, обратитесь к статье об [устранении неполадок с автоматическим обнаружением](/previous-versions/tn-archive/cc302643(v=technet.10)). 
 
-Если вы не используете WPAD и хотите настроить параметры прокси-сервера на компьютере, это можно сделать, начиная с Windows 10 версии 1709. Дополнительные сведения см. в записи блога о [настройке параметров WinHTTP с использованием объекта групповой политики](https://blogs.technet.microsoft.com/netgeeks/2018/06/19/winhttp-proxy-settings-deployed-by-gpo/).
+Если вы не используете WPAD и хотите настроить параметры прокси-сервера на компьютере, это можно сделать, начиная с Windows 10 версии 1709. Дополнительные сведения см. в записи блога о [настройке параметров WinHTTP с использованием объекта групповой политики](/archive/blogs/netgeeks/winhttp-proxy-settings-deployed-by-gpo).
 
 > [!NOTE]
 > Если вы настроите параметры прокси-сервера на компьютере с помощью параметров WinHTTP, любые компьютеры, которым не удается подключиться к настроенному прокси-серверу, не смогут подключиться к Интернету.
@@ -193,7 +193,7 @@ ms.locfileid: "87428583"
 ### <a name="using-the-azure-portal"></a>Использование портала Azure
 
 1. Перейдите на страницу устройства по [прямой ссылке](https://portal.azure.com/#blade/Microsoft_AAD_IAM/DevicesMenuBlade/Devices).
-2. См. сведения о том, как найти устройство, в статье [Управление удостоверениями устройств с помощью портала Azure](https://docs.microsoft.com/azure/active-directory/devices/device-management-azure-portal#locate-devices).
+2. См. сведения о том, как найти устройство, в статье [Управление удостоверениями устройств с помощью портала Azure](./device-management-azure-portal.md).
 3. Если для столбца **Зарегистрировано** отображается состояние **Ожидается**, это значит, что гибридное присоединение к Azure AD не завершено. В федеративных средах это может произойти, только если не удалось выполнить регистрацию, а для AAD Connect настроена синхронизация устройств.
 4. Если для столбца **Зарегистрировано** отображается **дата и время**, это значит, что гибридное присоединение к Azure AD завершено.
 
@@ -243,7 +243,7 @@ Get-MsolDevice -All -IncludeSystemManagedDevices | where {($_.DeviceTrustType -e
 
 Если возникают проблемы с настройкой гибридного присоединения к Azure AD для устройств Windows, присоединенных к домену, ознакомьтесь со следующими статьями:
 
-- [Устранение неполадок с устройствами с помощью команды dsregcmd](https://docs.microsoft.com/azure/active-directory/devices/troubleshoot-device-dsregcmd)
+- [Устранение неполадок с устройствами с помощью команды dsregcmd](./troubleshoot-device-dsregcmd.md)
 - [Устранение неполадок на устройствах под управлением Windows 10 и Windows Server 2016 с гибридным присоединением к Azure Active Directory](troubleshoot-hybrid-join-windows-current.md)
 - [Устранение неполадок на устройствах нижнего уровня с гибридным присоединением к Azure Active Directory](troubleshoot-hybrid-join-windows-legacy.md)
 

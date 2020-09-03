@@ -9,14 +9,14 @@ ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
 ms.topic: tutorial
-ms.date: 08/05/2020
+ms.date: 08/27/2020
 ms.author: jeedes
-ms.openlocfilehash: 4608e8b818fcb75d91d7daf5278ba1dd30c9d667
-ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
+ms.openlocfilehash: 36a90dee086a0ada705a0c067f3ad9d717542d52
+ms.sourcegitcommit: 656c0c38cf550327a9ee10cc936029378bc7b5a2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88555911"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89077540"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-datasite"></a>Руководство по интеграции единого входа Azure Active Directory с Datasite
 
@@ -42,6 +42,9 @@ ms.locfileid: "88555911"
 * Datasite поддерживает единый вход, инициированный **поставщиком услуг**.
 
 * После настройки Datasite вы можете применить функцию управления сеансом, которая защищает от хищения конфиденциальных данных вашей организации и несанкционированного доступа к ним в реальном времени. Управление сеансом является расширением функции условного доступа. [Узнайте, как применять управление сеансами с помощью Microsoft Cloud App Security](https://docs.microsoft.com/cloud-app-security/proxy-deployment-any-app).
+
+> [!NOTE]
+> Идентификатор этого приложения — фиксированное строковое значение, поэтому в одном клиенте можно настроить только один экземпляр.
 
 ## <a name="adding-datasite-from-the-gallery"></a>Добавление Datasite из коллекции
 
@@ -80,10 +83,7 @@ ms.locfileid: "88555911"
 
 1. На странице **Базовая конфигурация SAML** введите значения следующих полей.
 
-    В текстовом поле **URL-адрес входа** введите URL-адрес в формате `https://auth.<ENVIRONMENT>.com/sp/ACS.saml2`.
-
-    > [!NOTE]
-    > Это значение приведено для примера. Вместо него необходимо указать фактический URL-адрес входа. Для получения этого значения обратитесь к [группе поддержки клиентов Datasite](mailto:service@datasite.com). Можно также посмотреть шаблоны в разделе **Базовая конфигурация SAML** на портале Azure.
+    В текстовом поле **URL-адрес входа** введите URL-адрес: `https://auth.datasite.com/sp/ACS.saml2`.
 
 1. На странице **Настройка единого входа с помощью SAML** в разделе **Сертификат подписи SAML** найдите пункт **Сертификат (Base64)** и щелкните **Скачать**, чтобы скачать сертификат. Сохраните этот сертификат на компьютере.
 

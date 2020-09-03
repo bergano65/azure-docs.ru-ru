@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 05/07/2020
 ms.author: jeedes
-ms.openlocfilehash: a074b3f0accf0e0cf800f6b06ce8466e984f8693
-ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
+ms.openlocfilehash: cb052f4ce962b1757f47f64e3f26fa5db2a731fa
+ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88546598"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88999688"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-tableau-server"></a>Руководство по интеграции единого входа Azure Active Directory с Tableau Server
 
@@ -141,7 +141,7 @@ ms.locfileid: "88546598"
 
     b. Установите флажок **Включить проверку подлинности SAML для сервера**.
 
-    c. URL-адрес возврата Tableau Server — URL-адрес для доступа пользователей Tableau Server, например <http://tableau_server>. Не рекомендуем использовать `http://localhost`. URL-адреса с косой чертой в конце (например, `http://tableau_server/`) не поддерживаются. Скопируйте **URL-адрес возврата Tableau Server** и вставьте его в текстовое поле **URL-адрес входа** в разделе **Базовая конфигурация SAML** на портале Azure.
+    c. URL-адрес возврата Tableau Server — URL-адрес для доступа пользователей Tableau Server, например `http://tableau_server`. Не рекомендуем использовать `http://localhost`. URL-адреса с косой чертой в конце (например, `http://tableau_server/`) не поддерживаются. Скопируйте **URL-адрес возврата Tableau Server** и вставьте его в текстовое поле **URL-адрес входа** в разделе **Базовая конфигурация SAML** на портале Azure.
 
     d. Идентификатор сущности SAML — идентификатор сущности однозначно определяет установку Tableau Server для поставщика удостоверений. Если нужно, здесь можно еще раз ввести URL-адрес Tableau Server, но это необязательно должен быть URL-адрес Tableau Server. Скопируйте **Идентификатор сущности SAML** и вставьте его в текстовое поле **Идентификатор** в разделе **Базовая конфигурация SAML** на портале Azure.
 

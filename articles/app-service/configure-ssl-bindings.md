@@ -6,16 +6,16 @@ ms.topic: tutorial
 ms.date: 04/30/2020
 ms.reviewer: yutlin
 ms.custom: seodec18
-ms.openlocfilehash: fb62d4d2ca22b6043e63645006c2d60cf0b7859b
-ms.sourcegitcommit: 2ffa5bae1545c660d6f3b62f31c4efa69c1e957f
+ms.openlocfilehash: 6c3f4cfe7c896b317edc5897098a1c18c98dc826
+ms.sourcegitcommit: 648c8d250106a5fca9076a46581f3105c23d7265
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/11/2020
-ms.locfileid: "88078637"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88962644"
 ---
 # <a name="secure-a-custom-dns-name-with-a-tlsssl-binding-in-azure-app-service"></a>Защита пользовательского DNS-имени с помощью привязки TLS/SSL в Службе приложений Azure
 
-В этой статье показано, как защитить [личный домен](app-service-web-tutorial-custom-domain.md) в [приложении Службы приложений](https://docs.microsoft.com/azure/app-service/) или [приложении-функции](https://docs.microsoft.com/azure/azure-functions/) путем создания привязки к сертификату. По завершении работы с этой статьей вы сможете получить доступ к приложению Службы приложений в конечной точке `https://` для настраиваемого DNS-имени (например, `https://www.contoso.com`). 
+В этой статье показано, как защитить [личный домен](app-service-web-tutorial-custom-domain.md) в [приложении Службы приложений](./index.yml) или [приложении-функции](../azure-functions/index.yml) путем создания привязки к сертификату. По завершении работы с этой статьей вы сможете получить доступ к приложению Службы приложений в конечной точке `https://` для настраиваемого DNS-имени (например, `https://www.contoso.com`). 
 
 ![Веб-приложение с настраиваемым TLS/SSL-сертификатом](./media/configure-ssl-bindings/app-with-custom-ssl.png)
 
@@ -37,7 +37,7 @@ ms.locfileid: "88078637"
 
 Ознакомьтесь со следующими статьями:
 
-- [Создано приложение службы приложений](/azure/app-service/).
+- [Создано приложение службы приложений](./index.yml).
 - [Руководство. Сопоставление существующего настраиваемого DNS-имени со Службой приложений Azure](app-service-web-tutorial-custom-domain.md) или [Приобретение личного доменного имени в Службе приложений Azure](manage-custom-dns-buy-domain.md).
 - [Добавление закрытого сертификата в приложение](configure-ssl-certificate.md)
 
@@ -168,4 +168,4 @@ ms.locfileid: "88078637"
 ## <a name="more-resources"></a>Дополнительные ресурсы
 
 * [Использование TLS/SSL-сертификата в коде в Службе приложений Azure](configure-ssl-certificate-in-code.md)
-* [FAQ: Configuration and management FAQs for Web Apps in Azure](https://docs.microsoft.com/azure/app-service/faq-configuration-and-management/) (Часто задаваемые вопросы о настройке и управлении для функции "Веб-приложения" в Azure)
+* [FAQ: Configuration and management FAQs for Web Apps in Azure](./faq-configuration-and-management.md) (Часто задаваемые вопросы о настройке и управлении для функции "Веб-приложения" в Azure)
