@@ -3,12 +3,12 @@ title: Введение
 description: Сведения о преимуществах и возможностях решения Azure VMware для развертывания рабочих нагрузок на основе VMware и управления ими в Azure.
 ms.topic: overview
 ms.date: 05/04/2020
-ms.openlocfilehash: 9d39cb759190eef535519decccec943ab66de2c7
-ms.sourcegitcommit: 62717591c3ab871365a783b7221851758f4ec9a4
+ms.openlocfilehash: 3d6801a6cdec7600cc6003711a08e6af8c86483e
+ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/22/2020
-ms.locfileid: "88752126"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89005060"
 ---
 # <a name="what-is-azure-vmware-solution-preview"></a>Что такое решение Azure VMware (предварительная версия)?
 
@@ -46,7 +46,7 @@ ms.locfileid: "88752126"
 
 ## <a name="monitoring-your-private-cloud"></a>Мониторинг частного облака
 
-Вы можете использовать [журналы в Azure Monitor](../azure-monitor/overview.md), чтобы собирать журналы с виртуальных машин, которые выполняются в частном облаке решения Azure VMware. Вы можете [скачать агент MMA и установить его](../azure-monitor/platform/log-analytics-agent.md#installation-and-configuration) на виртуальных машинах Linux и Windows, которые работают в частных облаках решения Azure VMware, используя те же запросы, что и на локальных виртуальных машинах. Просто выполняйте те же запросы, что и обычно на виртуальных машинах. Дополнительные сведения о создании запросов см. в [этой статье](../azure-monitor/log-query/log-query-overview.md#how-can-i-learn-how-to-write-queries).
+Вы можете использовать [журналы в Azure Monitor](../azure-monitor/overview.md), чтобы собирать журналы с виртуальных машин, которые выполняются в частном облаке решения Azure VMware. Вы можете [скачать агент MMA и установить его](../azure-monitor/platform/log-analytics-agent.md#installation-options) на виртуальных машинах Linux и Windows, которые работают в частных облаках решения Azure VMware, используя те же запросы, что и на локальных виртуальных машинах. Просто выполняйте те же запросы, что и обычно на виртуальных машинах. Дополнительные сведения о создании запросов см. в [этой статье](../azure-monitor/log-query/log-query-overview.md#how-can-i-learn-how-to-write-queries).
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

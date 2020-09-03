@@ -6,12 +6,12 @@ ms.topic: quickstart
 ms.date: 08/01/2020
 ms.custom: devx-track-csharp, mvc, devcenter, vs-azure, seodec18
 zone_pivot_groups: app-service-platform-windows-linux
-ms.openlocfilehash: b7402dc3f7c1e5c7ff5552b2f454156ef1539711
-ms.sourcegitcommit: 4913da04fd0f3cf7710ec08d0c1867b62c2effe7
+ms.openlocfilehash: 5604153d31a2828bcefbeccbd2f4fea428e878b5
+ms.sourcegitcommit: 648c8d250106a5fca9076a46581f3105c23d7265
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88212680"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88961539"
 ---
 # <a name="quickstart-create-an-aspnet-core-web-app-in-azure"></a>Краткое руководство. Создание веб-приложения ASP.NET Core в Azure
 
@@ -59,8 +59,8 @@ ms.locfileid: "88212680"
 
 В процессе настройки Службы приложений вы создадите следующее:
 
-- Новая [группа ресурсов](https://docs.microsoft.com/azure/azure-resource-manager/management/overview#terminology) для всех ресурсов Azure, которые потребуются для этой службы.
-- Новый [план размещения](https://docs.microsoft.com/azure/app-service/overview-hosting-plans), который позволяет определить расположение, размер и функции фермы веб-серверов для размещения приложения.
+- Новая [группа ресурсов](../azure-resource-manager/management/overview.md#terminology) для всех ресурсов Azure, которые потребуются для этой службы.
+- Новый [план размещения](./overview-hosting-plans.md), который позволяет определить расположение, размер и функции фермы веб-серверов для размещения приложения.
 
 Выполните следующие действия, чтобы создать Службу приложений и опубликовать веб-приложение:
 
@@ -160,7 +160,7 @@ ms.locfileid: "88212680"
 ::: zone-end  
 
 ::: zone pivot="platform-linux"
-[Служба приложений на платформе Linux](overview.md#app-service-on-linux) — это высокомасштабируемая служба размещения с самостоятельной установкой исправлений на основе операционной системы Linux. В этом кратком руководстве показано, как создать приложение [.NET Core](https://docs.microsoft.com/aspnet/core/) в службе приложений на платформе Linux. Создайте приложение с помощью [Azure CLI](https://docs.microsoft.com/cli/azure/get-started-with-azure-cli) и разверните код .NET Core в приложении с помощью Git.
+[Служба приложений на платформе Linux](overview.md#app-service-on-linux) — это высокомасштабируемая служба размещения с самостоятельной установкой исправлений на основе операционной системы Linux. В этом кратком руководстве показано, как создать приложение [.NET Core](/aspnet/core/) в службе приложений на платформе Linux. Создайте приложение с помощью [Azure CLI](/cli/azure/get-started-with-azure-cli) и разверните код .NET Core в приложении с помощью Git.
 
 ![Пример приложения, выполняющегося в Azure](media/quickstart-dotnetcore/dotnet-browse-azure.png)
 
@@ -322,4 +322,4 @@ git push azure master
 > [!div class="nextstepaction"]
 > [Настройка приложения ASP.NET Core](configure-language-dotnetcore.md)
 
-::: zone-end  
+::: zone-end

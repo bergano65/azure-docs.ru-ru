@@ -12,12 +12,12 @@ ms.date: 07/01/2020
 ms.author: kenwith
 ms.reviewer: arvinh
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: dafd3d7805924d92354c3de6ded50f17598f80f6
-ms.sourcegitcommit: 2ffa5bae1545c660d6f3b62f31c4efa69c1e957f
+ms.openlocfilehash: 293aa80336b259a760a835e3ece56d50287f06ed
+ms.sourcegitcommit: 58d3b3314df4ba3cabd4d4a6016b22fa5264f05a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/11/2020
-ms.locfileid: "88078076"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89299887"
 ---
 # <a name="what-is-application-management"></a>Что такое управление приложениями?
 
@@ -93,6 +93,6 @@ Azure AD упрощает процесс управления приложен�
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- [Цикл кратких руководств по управлению приложениями в Azure AD](view-applications-portal.md)
+- [Серия кратких руководств по управлению приложениями](view-applications-portal.md)
 - [Руководство по интеграции Azure Active Directory с приложениями](plan-an-application-integration.md)
 - [Автоматическая подготовка пользователей и ее отмена для приложений в Azure AD](../app-provisioning/user-provisioning.md)

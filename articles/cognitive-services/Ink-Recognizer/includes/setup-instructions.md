@@ -4,12 +4,12 @@ ms.author: aahi
 ms.service: cognitive-services
 ms.topic: include
 ms.date: 06/20/2019
-ms.openlocfilehash: c202ba1d7363af9791daa801f0c447c49a80859b
-ms.sourcegitcommit: bf8c447dada2b4c8af017ba7ca8bfd80f943d508
+ms.openlocfilehash: 9d46b304d598b4830cf325909f77eea6b68af757
+ms.sourcegitcommit: 58d3b3314df4ba3cabd4d4a6016b22fa5264f05a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/25/2020
-ms.locfileid: "85378618"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89304120"
 ---
 >[!NOTE]
 > Конечные точки для ресурсов, созданных после 1 июля 2019 г., поддерживают пользовательский формат поддомена, показанный ниже. Дополнительные сведения и полный список региональных конечных точек см. в статье [Custom subdomain names for Cognitive Services](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-custom-subdomains) (Пользовательские имена поддоменов для Cognitive Services). 
@@ -20,6 +20,6 @@ ms.locfileid: "85378618"
 
 Создайте две переменные [среды](../../cognitive-services-apis-create-account.md#get-the-keys-for-your-resource):
 
-* `INK_RECOGNITION_SUBSCRIPTION_KEY` — конечная точка для вашего ресурса. Она должна выглядеть так: <br> `https://<your-custom-subdomain>.api.cognitive.microsoft.com` 
+* `INK_RECOGNITION_SUBSCRIPTION_KEY` — ключ подписки для аутентификации запросов. 
 
-* `INK_RECOGNITION_ENDPOINT` — ключ подписки для аутентификации запросов.   
+* `INK_RECOGNITION_ENDPOINT` — конечная точка для вашего ресурса. Она должна выглядеть так: <br> `https://<your-custom-subdomain>.api.cognitive.microsoft.com`   

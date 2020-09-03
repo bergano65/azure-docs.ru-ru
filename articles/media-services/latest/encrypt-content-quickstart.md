@@ -2,15 +2,17 @@
 title: Шифрование содержимого с помощью портала Azure
 description: В этом кратком руководстве показано, как на портале Azure настроить шифрование содержимого с помощью Служб мультимедиа Azure.
 ms.topic: quickstart
-ms.date: 06/08/2020
-ms.openlocfilehash: 6ff3c14039f9199053d3d43c6ce4488c2692b336
-ms.sourcegitcommit: 55b2bbbd47809b98c50709256885998af8b7d0c5
+ms.date: 08/31/2020
+ms.openlocfilehash: e42b2d4487f2f51c082f22068160a02b3dcbb0a5
+ms.sourcegitcommit: bcda98171d6e81795e723e525f81e6235f044e52
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84988827"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89263643"
 ---
 # <a name="quickstart-use-portal-to-encrypt-content"></a>Краткое руководство. Шифрование содержимого с помощью портала
+
+[!INCLUDE [media services api v3 logo](./includes/v3-hr.md)]
 
 Службы мультимедиа Azure помогут вам защитить данные мультимедиа, покидающие ваш компьютер, на всех этапах хранения, обработки и доставки, а также доставлять в режиме реального времени и по требованию содержимое, зашифрованное динамически с помощью Advanced Encryption Standard (AES-128) или трех основных систем управления цифровыми правами (DRM): Microsoft PlayReady, Google Widevine и Apple FairPlay. Они также обеспечивают службу доставки ключей AES и лицензий DRM (PlayReady, Widevine и FairPlay) авторизованным клиентам. 
  

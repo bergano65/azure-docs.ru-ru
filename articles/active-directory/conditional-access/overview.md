@@ -12,12 +12,12 @@ manager: daveba
 ms.reviewer: calebb
 ms.collection: M365-identity-device-management
 ms.custom: contperfq4
-ms.openlocfilehash: 9bd4c7f17ec1a75e54ca857325cdbb7bf3358511
-ms.sourcegitcommit: 3bf69c5a5be48c2c7a979373895b4fae3f746757
+ms.openlocfilehash: 6475fc61502a82844605ba267db5f8da984c8de6
+ms.sourcegitcommit: e69bb334ea7e81d49530ebd6c2d3a3a8fa9775c9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88234709"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88948884"
 ---
 # <a name="what-is-conditional-access"></a>Что собой представляет условный доступ
 
@@ -100,6 +100,6 @@ ms.locfileid: "88234709"
 
 - [Building a Conditional Access policy piece by piece](concept-conditional-access-policies.md) (Пошаговое создание политики условного доступа)
 - [Планирование развертывания политики условного доступа](plan-conditional-access.md)
-- [Что такое Защита идентификации Azure Active Directory (обновленная)?](../identity-protection/overview-v2.md)
+- [Что такое Защита идентификации Azure Active Directory (обновленная)?](../identity-protection/overview-identity-protection.md)
 - [Общие сведения о Microsoft Cloud App Security](/cloud-app-security/what-is-cloud-app-security)
 - [Документация по Microsoft Intune](/intune/index)

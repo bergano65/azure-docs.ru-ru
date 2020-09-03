@@ -8,12 +8,12 @@ manager: nitinme
 ms.service: cognitive-search
 ms.topic: quickstart
 ms.date: 06/30/2020
-ms.openlocfilehash: 5d21508a794683096009f53314bebca4e4f2ac98
-ms.sourcegitcommit: 73ac360f37053a3321e8be23236b32d4f8fb30cf
+ms.openlocfilehash: 75cacf0dc899f47d55c44e5262b23bae73bfa7ab
+ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/30/2020
-ms.locfileid: "85565313"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88924373"
 ---
 # <a name="quickstart-create-an-azure-cognitive-search-knowledge-store-in-the-azure-portal"></a>Краткое руководство. Создание хранилища знаний службы "Когнитивный поиск Azure" на портале Azure
 
@@ -31,7 +31,7 @@ ms.locfileid: "85565313"
 
 + Служба "Когнитивный поиск Azure". [Создайте службу](search-create-service-portal.md) или [найдите имеющуюся службу](https://ms.portal.azure.com/#blade/HubsExtension/BrowseResourceBlade/resourceType/Microsoft.Search%2FsearchServices) в рамках текущей подписки. Вы можете использовать бесплатную службу для выполнения инструкций, описанных в этом кратком руководстве. 
 
-+ Учетная запись хранения Azure с [хранилищем BLOB-объектов](https://docs.microsoft.com/azure/storage/blobs/).
++ Учетная запись хранения Azure с [хранилищем BLOB-объектов](../storage/blobs/index.yml).
 
 > [!NOTE]
 > В этом кратком руководстве также используется [Azure Cognitive Services](https://azure.microsoft.com/services/cognitive-services/) для искусственного интеллекта. Так как рабочая нагрузка мала, Cognitive Services работает в фоновом режиме, чтобы обеспечить бесплатную обработку до 20 транзакций. Это означает, что вы можете выполнить это упражнение без создания дополнительного ресурса Cognitive Services.
@@ -42,7 +42,7 @@ ms.locfileid: "85565313"
 
 1. [Скачайте HotelReviews_Free.csv](https://knowledgestoredemo.blob.core.windows.net/hotel-reviews/HotelReviews_Free.csv?sp=r&st=2019-11-04T01:23:53Z&se=2025-11-04T16:00:00Z&spr=https&sv=2019-02-02&sr=b&sig=siQgWOnI%2FDamhwOgxmj11qwBqqtKMaztQKFNqWx00AY%3D). Это данные отзывов об отелях, сохраненные в CSV-файле (с сайта Kaggle.com) и содержащие 19 элементов отзывов клиентов об одном отеле. 
 
-1. [Создайте учетную запись хранения Azure](https://docs.microsoft.com/azure/storage/common/storage-quickstart-create-account?tabs=azure-portal) или [найдите имеющуюся учетную запись](https://ms.portal.azure.com/#blade/HubsExtension/BrowseResourceBlade/resourceType/Microsoft.Storage%2storageAccounts/) в текущей подписке. Служба хранилища Azure будет использоваться как для импорта необработанного содержимого, так и для хранилища знаний, которое является конечным результатом.
+1. [Создайте учетную запись хранения Azure](../storage/common/storage-account-create.md?tabs=azure-portal) или [найдите имеющуюся учетную запись](https://ms.portal.azure.com/#blade/HubsExtension/BrowseResourceBlade/resourceType/Microsoft.Storage%2storageAccounts/) в текущей подписке. Служба хранилища Azure будет использоваться как для импорта необработанного содержимого, так и для хранилища знаний, которое является конечным результатом.
 
    + Выберите тип учетной записи **StorageV2 (общего назначения версии 2)** .
 

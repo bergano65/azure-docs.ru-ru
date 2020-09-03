@@ -7,12 +7,12 @@ ms.date: 08/28/2019
 ms.topic: quickstart
 ms.custom: devx-track-csharp
 zone_pivot_groups: app-service-containers-windows-linux
-ms.openlocfilehash: 2aed6a2fea38f10a2e06ea51edb7fb529c8a2dde
-ms.sourcegitcommit: 4913da04fd0f3cf7710ec08d0c1867b62c2effe7
+ms.openlocfilehash: 33eaf6274f2da09ab98a21e6028b0103df817744
+ms.sourcegitcommit: 648c8d250106a5fca9076a46581f3105c23d7265
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88212524"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88961369"
 ---
 # <a name="run-a-custom-container-in-azure"></a>Запуск пользовательского контейнера в Azure
 
@@ -103,7 +103,7 @@ ms.locfileid: "88212524"
 
    ![Настройка Веб-приложения для контейнеров](media/quickstart-custom-container/configure-web-app-continer.png)
 
-    Если у вас есть пользовательский образ для веб-приложения в другом расположении, например [реестре контейнеров Azure](/azure/container-registry/) или любом другом частном репозитории, его можно настроить здесь.
+    Если у вас есть пользовательский образ для веб-приложения в другом расположении, например [реестре контейнеров Azure](../container-registry/index.yml) или любом другом частном репозитории, его можно настроить здесь.
 
 1. Выберите **Просмотр и создание**, а затем нажмите кнопку **Создать** и подождите, пока Azure создаст необходимые ресурсы.
 
@@ -173,8 +173,8 @@ https://<app_name>.scm.azurewebsites.net/api/logstream
 
 Для запуска приложения можно использовать другой пользовательский образ Docker. Но вам нужно выбрать правильный [родительский образ (базовый образ)](https://docs.docker.com/develop/develop-images/baseimages/) для платформы, которую вы хотите использовать:
 
-- Для развертывания приложений .NET Framework используйте родительский образ на основе выпуска [канала долгосрочного обслуживания (LTSC)](https://docs.microsoft.com/windows-server/get-started-19/servicing-channels-19#long-term-servicing-channel-ltsc) для Windows Server Core 2019. 
-- Для развертывания приложений .NET Core используйте родительский образ на основе выпуска [канала полугодичного обслуживания (SAC)](https://docs.microsoft.com/windows-server/get-started-19/servicing-channels-19#semi-annual-channel) для Windows Server Nano 1809. 
+- Для развертывания приложений .NET Framework используйте родительский образ на основе выпуска [канала долгосрочного обслуживания (LTSC)](/windows-server/get-started-19/servicing-channels-19#long-term-servicing-channel-ltsc) для Windows Server Core 2019. 
+- Для развертывания приложений .NET Core используйте родительский образ на основе выпуска [канала полугодичного обслуживания (SAC)](/windows-server/get-started-19/servicing-channels-19#semi-annual-channel) для Windows Server Nano 1809. 
 
 Скачивание родительского образа во время запуска приложения занимает некоторое время. Но вы можете ускорить запуск, используя один из следующих родительских образов, уже кэшированных в службе приложений Azure:
 
@@ -188,7 +188,7 @@ https://<app_name>.scm.azurewebsites.net/api/logstream
 ::: zone-end  
 
 ::: zone pivot="container-linux"
-Служба приложений в Linux предоставляет предопределенные стеки приложений на платформе Linux с поддержкой определенных языков (например, .NET, PHP, Node.js и т. д.). Вы также можете использовать пользовательский образ Docker для запуска веб-приложения в стеке приложений, который еще не определен в Azure. В этом кратком руководстве показано, как развернуть образ из [Реестра контейнеров Azure](/azure/container-registry) (ACR) в Службе приложений.
+Служба приложений в Linux предоставляет предопределенные стеки приложений на платформе Linux с поддержкой определенных языков (например, .NET, PHP, Node.js и т. д.). Вы также можете использовать пользовательский образ Docker для запуска веб-приложения в стеке приложений, который еще не определен в Azure. В этом кратком руководстве показано, как развернуть образ из [Реестра контейнеров Azure](../container-registry/index.yml) (ACR) в Службе приложений.
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -200,7 +200,7 @@ https://<app_name>.scm.azurewebsites.net/api/logstream
 
 ## <a name="create-an-image"></a>Создание образа
 
-Для выполнения заданий этого краткого руководства вам потребуется подходящий образ веб-приложения, хранящийся в [Реестре контейнеров Azure](/azure/container-registry). Следуйте инструкциям в статье [Краткое руководство. Создание частного реестра контейнеров с помощью портала Azure](/azure/container-registry/container-registry-get-started-portal), но вместо образа `hello-world` используйте `mcr.microsoft.com/azuredocs/go`. Для справки см. [пример Dockerfile из репозитория примеров Azure](https://github.com/Azure-Samples/go-docs-hello-world).
+Для выполнения заданий этого краткого руководства вам потребуется подходящий образ веб-приложения, хранящийся в [Реестре контейнеров Azure](../container-registry/index.yml). Следуйте инструкциям в статье [Краткое руководство. Создание частного реестра контейнеров с помощью портала Azure](../container-registry/container-registry-get-started-portal.md), но вместо образа `hello-world` используйте `mcr.microsoft.com/azuredocs/go`. Для справки см. [пример Dockerfile из репозитория примеров Azure](https://github.com/Azure-Samples/go-docs-hello-world).
 
 > [!IMPORTANT]
 > Не забудьте установить для параметра **Администратор** значение **Включить** при создании реестра контейнеров. Его также можно установить из раздела **Ключи доступа** на странице реестра на портале Azure. Этот параметр необходим для доступа к Службе приложений.
@@ -261,4 +261,4 @@ docker --version
 
 Или получите их, установив пакет расширений [инструментов Azure](https://marketplace.visualstudio.com/items?itemName=ms-vscode.vscode-node-azure-pack).
 
-::: zone-end  
+::: zone-end

@@ -3,7 +3,7 @@ title: Настройка управляемых удостоверений в �
 description: Пошаговые инструкции по настройке управляемых удостоверений для ресурсов Azure в масштабируемом наборе виртуальных машин с помощью портала Azure.
 services: active-directory
 documentationcenter: ''
-author: MarkusVi
+author: barclayn
 manager: daveba
 editor: ''
 ms.service: active-directory
@@ -13,14 +13,14 @@ ms.topic: quickstart
 ms.tgt_pltfrm: na
 ms.workload: identity
 ms.date: 02/20/2018
-ms.author: markvi
+ms.author: barclayn
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d05ee1be18b315c63ccf9d564ea95391a163826e
-ms.sourcegitcommit: 4f1c7df04a03856a756856a75e033d90757bb635
+ms.openlocfilehash: e9ab1adeac5f8c67e06682f49fdded88e6a350e7
+ms.sourcegitcommit: bcda98171d6e81795e723e525f81e6235f044e52
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87924501"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89262679"
 ---
 # <a name="configure-managed-identities-for-azure-resources-on-a-virtual-machine-scale-set-using-the-azure-portal"></a>Настройка управляемых удостоверений для ресурсов Azure в масштабируемом наборе виртуальных машин с помощью портала Azure
 
@@ -37,7 +37,7 @@ ms.locfileid: "87924501"
     > [!NOTE]
     > Дополнительные назначения ролей в каталоге Azure AD не требуются.
 
-    - [Участник виртуальных машин](/azure/role-based-access-control/built-in-roles#virtual-machine-contributor) для включения и удаления управляемого удостоверения, назначаемого системой, в масштабируемом наборе виртуальных машин.
+    - [Участник виртуальных машин](../../role-based-access-control/built-in-roles.md#virtual-machine-contributor) для включения и удаления управляемого удостоверения, назначаемого системой, в масштабируемом наборе виртуальных машин.
 
 ## <a name="system-assigned-managed-identity"></a>Управляемое удостоверение, назначаемое системой
 

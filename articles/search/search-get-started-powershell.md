@@ -9,23 +9,24 @@ ms.service: cognitive-search
 ms.topic: quickstart
 ms.devlang: rest-api
 ms.date: 08/17/2020
-ms.openlocfilehash: b74deaecd1a71fec14e31f0a6aca2fed34361d76
-ms.sourcegitcommit: 54d8052c09e847a6565ec978f352769e8955aead
+ms.custom: devx-track-azurepowershell
+ms.openlocfilehash: f803532e7d08d0de21541cb5d1b52639b623bb90
+ms.sourcegitcommit: 656c0c38cf550327a9ee10cc936029378bc7b5a2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88506011"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89078305"
 ---
 # <a name="quickstart-create-an-azure-cognitive-search-index-in-powershell-using-rest-apis"></a>Краткое руководство. Создание индекса службы "Когнитивный поиск Azure" в PowerShell с помощью REST API
 > [!div class="op_single_selector"]
-> * [PowerShell (REST)](search-create-index-rest-api.md)
-> * [C#](search-create-index-dotnet.md)
+> * [PowerShell (REST)]()
+> * [C#](./search-get-started-dotnet.md)
 > * [Postman (REST)](search-get-started-postman.md)
 > * [Python](search-get-started-python.md)
 > * [Портал](search-get-started-portal.md)
 > 
 
-Эта статья поможет вам создать, загрузить и запросить индекс службы "Когнитивный поиск Azure" с помощью PowerShell и [REST API службы "Когнитивный поиск Azure"](https://docs.microsoft.com/rest/api/searchservice/). Здесь содержатся сведения о выполнении команд PowerShell в интерактивном режиме. Вы также можете [скачать и запустить скрипт PowerShell](https://github.com/Azure-Samples/azure-search-powershell-samples/tree/master/Quickstart), выполняющий те же операции.
+Эта статья поможет вам создать, загрузить и запросить индекс службы "Когнитивный поиск Azure" с помощью PowerShell и [REST API службы "Когнитивный поиск Azure"](/rest/api/searchservice/). Здесь содержатся сведения о выполнении команд PowerShell в интерактивном режиме. Вы также можете [скачать и запустить скрипт PowerShell](https://github.com/Azure-Samples/azure-search-powershell-samples/tree/master/Quickstart), выполняющий те же операции.
 
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
@@ -33,7 +34,7 @@ ms.locfileid: "88506011"
 
 Для выполнения инструкций из этого краткого руководства необходимы перечисленные ниже службы и инструменты. 
 
-+ [Средство PowerShell 5.1 или более поздней версии](https://github.com/PowerShell/PowerShell), использующее [Invoke-RestMethod](https://docs.microsoft.com/powershell/module/Microsoft.PowerShell.Utility/Invoke-RestMethod) для выполнения последовательных и интерактивных шагов.
++ [Средство PowerShell 5.1 или более поздней версии](https://github.com/PowerShell/PowerShell), использующее [Invoke-RestMethod](/powershell/module/Microsoft.PowerShell.Utility/Invoke-RestMethod) для выполнения последовательных и интерактивных шагов.
 
 + [Создайте службу "Когнитивный поиск Azure"](search-create-service-portal.md) или [найдите имеющуюся службу](https://ms.portal.azure.com/#blade/HubsExtension/BrowseResourceBlade/resourceType/Microsoft.Search%2FsearchServices) в рамках текущей подписки. Вы можете использовать бесплатную службу для выполнения инструкций, описанных в этом кратком руководстве. 
 
@@ -85,7 +86,7 @@ ms.locfileid: "88506011"
 
 ## <a name="1---create-an-index"></a>1\. Создание индекса
 
-Если вы не используете портал, для загрузки данных необходимо наличие индекса в службе. Этот шаг определяет индекс и передает его в службу. Для этого используется [REST API для создания индекса](https://docs.microsoft.com/rest/api/searchservice/create-index).
+Если вы не используете портал, для загрузки данных необходимо наличие индекса в службе. Этот шаг определяет индекс и передает его в службу. Для этого используется [REST API для создания индекса](/rest/api/searchservice/create-index).
 
 Обязательные элементы индекса включают в себя имя и коллекцию полей. Коллекция полей определяет структуру *документа*. Каждое поле имеет имя, тип и атрибуты, которые определяют его использование (например, обладает ли оно возможностью полнотекстового поиска, можно ли его отфильтровать или извлечь из результатов поиска). В индексе одно из полей типа `Edm.String` должно быть назначено в качестве *ключа* для идентификации документа.
 
@@ -179,7 +180,7 @@ ms.locfileid: "88506011"
 
 ## <a name="2---load-documents"></a>2\. Загрузка документов
 
-Чтобы передать документы, отправьте запрос HTTP POST в конечную точку URL-адреса индекса. В этой задаче используется REST API для [добавления, обновления и удаления документов](https://docs.microsoft.com/rest/api/searchservice/addupdate-or-delete-documents).
+Чтобы передать документы, отправьте запрос HTTP POST в конечную точку URL-адреса индекса. В этой задаче используется REST API для [добавления, обновления и удаления документов](/rest/api/searchservice/addupdate-or-delete-documents).
 
 1. Вставьте этот пример в PowerShell, чтобы создать объект **$body**, содержащий документы для передачи. 
 
@@ -281,7 +282,7 @@ ms.locfileid: "88506011"
     ```powershell
     Invoke-RestMethod -Uri $url -Headers $headers -Method Post -Body $body | ConvertTo-Json
     ```
-    Результаты должны выглядеть следующим образом. Вы должны увидеть [код состояния 201](https://docs.microsoft.com/rest/api/searchservice/HTTP-status-codes).
+    Результаты должны выглядеть следующим образом. Вы должны увидеть [код состояния 201](/rest/api/searchservice/HTTP-status-codes).
 
     ```
     {
@@ -317,7 +318,7 @@ ms.locfileid: "88506011"
 
 ## <a name="3---search-an-index"></a>3\. Поиск в индексе
 
-В рамках этого раздела мы покажем, как создать запрос в индекс с помощью [API поиска документов](https://docs.microsoft.com/rest/api/searchservice/search-documents).
+В рамках этого раздела мы покажем, как создать запрос в индекс с помощью [API поиска документов](/rest/api/searchservice/search-documents).
 
 Обязательно используйте одинарные кавычки при поиске $urls. Строки запроса содержат символы **$** . Их можно использовать, если вся строка заключена в одинарные кавычки.
 

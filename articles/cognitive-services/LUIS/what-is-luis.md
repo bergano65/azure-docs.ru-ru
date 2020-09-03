@@ -5,12 +5,12 @@ keywords: Azure, искусственный интеллект, ИИ, обраб
 ms.topic: overview
 ms.date: 08/07/2020
 ms.custom: cog-serv-seo-aug-2020
-ms.openlocfilehash: 22fe99e1552a9612adfbc455d60852f1591a1a54
-ms.sourcegitcommit: 62717591c3ab871365a783b7221851758f4ec9a4
+ms.openlocfilehash: 98d801f6a34feb40d56215f8b6257a68ec628e10
+ms.sourcegitcommit: 5ed504a9ddfbd69d4f2d256ec431e634eb38813e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/22/2020
-ms.locfileid: "88752154"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89320058"
 ---
 # <a name="what-is-language-understanding-luis"></a>Что такое служба "Распознавание речи" (LUIS)?
 
@@ -64,7 +64,7 @@ ms.locfileid: "88752154"
 |`When does your store open?`|StoreHoursAndLocation|открыт|
 |`Schedule a meeting at 1pm with Bob in Distribution`|ScheduleMeeting|13:00, Боб|
 
-Создайте модель с помощью API [разработки](https://go.microsoft.com/fwlink/?linkid=2092087), [**портала LUIS**](https://www.luis.ai) или обоих этих средств. Узнайте больше о том, как выполнить сборку с помощью [портала](get-started-portal-build-app.md) и [клиентских библиотек пакета SDK](quickstart-sdk.md).
+Создайте модель с помощью API [разработки](https://go.microsoft.com/fwlink/?linkid=2092087), [**портала LUIS**](https://www.luis.ai) или обоих этих средств. Узнайте больше о том, как выполнить сборку с помощью [портала](get-started-portal-build-app.md) и [клиентских библиотек пакета SDK](azure-sdk-quickstart.md).
 
 ## <a name="step-2-get-the-query-prediction"></a>Шаг 2. Получение прогноза запросов
 
@@ -126,7 +126,7 @@ LUIS предоставляет инструменты, функцию упра�
 
 ## <a name="learn-with-the-quickstarts"></a>Изучение по кратким руководствам
 
-Узнайте о LUIS из практичных кратких руководств, воспользовавшись [порталом](get-started-portal-build-app.md) и [клиентскими библиотеками SDK](quickstart-sdk.md).
+Узнайте о LUIS из практичных кратких руководств, воспользовавшись [порталом](get-started-portal-build-app.md) и [клиентскими библиотеками SDK](azure-sdk-quickstart.md).
 
 
 ## <a name="next-steps"></a>Дальнейшие шаги
