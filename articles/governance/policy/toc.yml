@@ -93,6 +93,9 @@
     - name: Оценка влияния новой политики
       displayName: 'audit, enforcementmode, compliance'
       href: ./concepts/evaluate-impact.md
+    - name: Рекомендуемые политики
+      displayName: 'VMs, virtual machines'
+      href: ./concepts/recommended-policies.md
     - name: Соответствие нормативным требованиям
       displayName: 'standards, domains, controls'
       href: ./concepts/regulatory-compliance.md

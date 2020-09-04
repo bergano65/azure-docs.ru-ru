@@ -80,7 +80,7 @@
               href: data-factory-azure-search-connector.md
             - name: База данных SQL Azure
               href: data-factory-azure-sql-connector.md
-            - name: "Хранилище данных SQL\_Azure"
+            - name: Azure Synapse Analytics
               href: data-factory-azure-sql-data-warehouse-connector.md
             - name: Хранилище таблиц Azure
               href: data-factory-azure-table-connector.md

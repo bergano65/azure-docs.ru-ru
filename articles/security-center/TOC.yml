@@ -130,6 +130,7 @@
         - name: Автоматизации реагирования на оповещения
           href: workflow-automation.md
         - name: Экспорт оповещений
+          displayName: continuous
           href: continuous-export.md
     - name: Использование рекомендаций по безопасности для повышения безопасности
       items:
@@ -150,6 +151,7 @@
         - name: Автоматизация ответов рекомендации
           href: workflow-automation.md
         - name: Экспорт рекомендаций
+          displayName: continuous
           href: continuous-export.md
     - name: Управление ресурсами с помощью инвентаризации активов
       href: asset-inventory.md

@@ -173,6 +173,8 @@
           href: iot-hub-devguide-glossary.md
     - name: Безопасность
       items:
+        - name: Базовые средства безопасности
+          href: security-baseline.md
         - name: Рекомендации
           href: /azure/iot-fundamentals/security-recommendations?context=azure/iot-hub/rc/rc
         - name: Все аспекты безопасности

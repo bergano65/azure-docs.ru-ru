@@ -23,6 +23,8 @@
         - name: Элементы управления безопасностью службы "Политика Azure"
           displayName: 'regulatory, compliance, standards, domains'
           href: security-controls-policy.md
+        - name: Общие сведения о безопасности
+          href: security-overview.md
 - name: Практические руководства
   items:
     - name: Подключение к Azure Arc

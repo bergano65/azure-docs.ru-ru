@@ -28,8 +28,6 @@
       href: oracle-reference-architecture.md
     - name: "Разработка архитектуры Oracle\_DB"
       href: oracle-design.md
-    - name: "Стратегия резервного копирования для Oracle\_DB"
-      href: oracle-backup-recovery.md
     - name: Параметры аварийного восстановления Oracle
       href: oracle-disaster-recovery.md
 - name: Практические руководства

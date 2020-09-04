@@ -219,9 +219,10 @@
     - name: Создание вычислительных ресурсов
       items:
         - name: Использование Studio
+          displayName: 'compute target, dsvm, Data Science Virtual Machine, local, cluster, ACI, container instance, Databricks, data lake, lake, HDI, HDInsight, low priority'
           href: how-to-create-attach-compute-studio.md
         - name: Использование пакета SDK для Python
-          displayName: 'compute target, dsvm, Data Science Virtual Machine, local, cluster, ACI, container instance, Databricks, data lake, lake, HDI, HDInsight'
+          displayName: 'compute target, dsvm, Data Science Virtual Machine, local, cluster, ACI, container instance, Databricks, data lake, lake, HDI, HDInsight, low priority'
           href: how-to-create-attach-compute-sdk.md
     - name: Настройка среды
       items:
@@ -477,9 +478,6 @@
         - name: Отладка и устранение неполадок с параллельным выполнением шагов
           displayName: debug_batch consume pipeline parallelrunstep inference
           href: how-to-debug-parallel-run-step.md
-        - name: Итерация и доработка конвейеров машинного обучения
-          displayName: modularizing testing
-          href: concept-pipeline-practices-tips.md
     - name: Azure Pipelines для CI/CD
       displayName: 'continuous, integration, delivery'
       href: /azure/devops/pipelines/targets/azure-machine-learning?context=azure/machine-learning/context/ml-context
