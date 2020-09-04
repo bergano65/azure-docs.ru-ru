@@ -1,7 +1,7 @@
 - name: Решение VMware от CloudSimple
   href: /azure/vmware-cloudsimple
   items:
-    - name: Обзор
+    - name: Общие сведения
       items:
         - name: Решение VMware от CloudSimple
           href: cloudsimple-vmware-solutions-overview.md
@@ -52,7 +52,7 @@
           href: node-quota.md
         - name: Обслуживание и обновления
           href: cloudsimple-maintenance-updates.md
-        - name: ВОПРОСЫ И ОТВЕТЫ
+        - name: Вопросы и ответы
           href: cloudsimple-faq.md
     - name: Учебники
       items:
@@ -178,3 +178,7 @@
               href: on-premises-connection.md
             - name: Виртуальное сетевое подключение Azure с помощью ExpressRoute
               href: azure-expressroute-connection.md
+    - name: заметки о выпуске;
+      items:
+        - name: "Обновление CloudSimple за сентябрь 2020\_г."
+          href: update-plan-sept-2020.md

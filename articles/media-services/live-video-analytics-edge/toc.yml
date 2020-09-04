@@ -93,10 +93,10 @@
       href: troubleshoot-how-to.md
 - name: Справочник
   items:
-    - name: Контракт данных HTTP
-      href: http-data-contract.md
-    - name: Контракт данных gRPC
-      href: grpc-data-contract.md
+    - name: Протокол расширения HTTP
+      href: http-extension-protocol.md
+    - name: Протокол расширения gRPC
+      href: grpc-extension-protocol.md
     - name: Схема метаданных вывода
       href: inference-metadata-schema.md
     - name: Прямые методы

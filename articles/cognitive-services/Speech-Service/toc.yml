@@ -241,11 +241,8 @@
   items:
     - name: Документация по распознаванию намерений
       href: index-intent-recognition.yml
-    - name: Краткое руководство
-      items:
-        - name: 'Распознавание речи, намерений и сущностей'
-          displayName: 'Recognize intents and entities with LUIS, LUIS, Language Understanding, prebuilt domains'
-          href: quickstarts/intent-recognition.md
+    - name: Краткое руководство по распознаванию намерений
+      href: quickstarts/intent-recognition.md
     - name: Практические руководства
       items:
         - name: Распознавание намерений в речи с помощью LUIS (C#)
@@ -466,18 +463,14 @@
           href: custom-keyword-basics.md
 - name: API Распознавания говорящего
   items:
-    - name: Обзор
-      items:
-        - name: Что такое распознавание говорящего?
-          href: speaker-recognition-overview.md
-        - name: Основные сведения об API "Распознавание говорящего"
-          href: speaker-recognition-basics.md
+    - name: Основные сведения о Распознавании говорящего
+      href: speaker-recognition-overview.md
+    - name: Краткое руководство по Распознаванию говорящего
+      href: get-started-speaker-recognition.md
     - name: Справочник
       items:
-        - name: Интерфейсы REST API
-          items:
-            - name: REST API службы "Распознавание говорящего"
-              href: 'https://docs.microsoft.com/rest/api/speakerrecognition/'
+        - name: REST API службы "Распознавание говорящего"
+          href: 'https://docs.microsoft.com/rest/api/speakerrecognition/'
 - name: Hosting
   items:
     - name: Документация по размещению

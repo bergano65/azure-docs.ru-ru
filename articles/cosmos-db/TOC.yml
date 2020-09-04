@@ -661,6 +661,14 @@
               href: cassandra-secondary-index.md
         - name: Практические руководства
           items:
+            - name: Миграция в API Cassandra
+              items:
+                - name: "Миграция из Oracle\_DB в API Cassandra с помощью Striim"
+                  href: cosmosdb-cassandra-api-migrate-data-striim.md
+                - name: Миграция с Oracle DB в API Cassandra с помощью Blitzz
+                  href: oracle-migrate-cosmos-db-blitzz.md
+                - name: Миграция с Apache Cassandra в API Cassandra с помощью Blitzz
+                  href: cassandra-migrate-cosmos-db-blitzz.md
             - name: Канал изменений
               href: cassandra-change-feed.md
             - name: Хранение данных и управление ими с помощью Spring Data
@@ -736,12 +744,9 @@
                       href: tutorial-develop-mongodb-nodejs-part6.md
                 - name: Приложение Node.js и React
                   href: tutorial-develop-mongodb-react.md
-            - name: "2.\_Перенос данных"
-              displayName: import
-              href: ../dms/tutorial-mongodb-cosmos-db.md?toc=/azure/cosmos-db/toc.json&bc=/azure/cosmos-db/breadcrumb/toc.json
-            - name: "3.\_Запрос данных"
+            - name: "2.\_Запрашивание данных"
               href: tutorial-query-mongodb.md
-            - name: "4.\_Глобальное распределение данных"
+            - name: "3.\_Глобальное распределение данных"
               href: tutorial-global-distribution-mongodb.md
         - name: Основные понятия
           items:
@@ -753,10 +758,16 @@
               href: mongodb-api-faq.md
         - name: Практические руководства
           items:
-            - name: Руководство по подготовке к миграции
-              href: mongodb-pre-migration.md
-            - name: Руководство по действиям после миграции
-              href: mongodb-post-migration.md
+            - name: Переход на API MongoDB
+              items:
+                - name: Руководство по подготовке к миграции
+                  href: mongodb-pre-migration.md
+                - name: Database Migration Service (в подключенном режиме)
+                  href: ../dms/tutorial-mongodb-cosmos-db-online.md?toc=/azure/cosmos-db/toc.json&bc=/azure/cosmos-db/breadcrumb/toc.json
+                - name: Database Migration Service (в автономном режиме)
+                  href: ../dms/tutorial-mongodb-cosmos-db.md?toc=/azure/cosmos-db/toc.json&bc=/azure/cosmos-db/breadcrumb/toc.json
+                - name: Руководство по действиям после миграции
+                  href: mongodb-post-migration.md
             - name: Получение строки подключения
               href: connect-mongodb-account.md
             - name: "Подключение с помощью Studio\_3T"
@@ -1235,12 +1246,6 @@
           href: cosmosdb-migrationchoices.md
         - name: Миграция в API SQL с помощью Striim
           href: cosmosdb-sql-api-migrate-data-striim.md
-        - name: Миграция в API Cassandra с помощью Striim
-          href: cosmosdb-cassandra-api-migrate-data-striim.md
-        - name: Миграция с Oracle DB в API Cassandra с помощью Blitzz
-          href: oracle-migrate-cosmos-db-blitzz.md
-        - name: Миграция с Apache Cassandra в API Cassandra с помощью Blitzz
-          href: cassandra-migrate-cosmos-db-blitzz.md
         - name: Перенос сотен терабайт данных в Azure Cosmos DB
           href: migrate-cosmosdb-data.md
         - name: Перенос данных со связью "один к нескольким"
@@ -1302,7 +1307,7 @@
       displayName: ARM
     - name: Заметки о выпуске эмулятора
       href: local-emulator-release-notes.md
-- name: Ссылка
+- name: Справочник
   items:
     - name: Встроенные компоненты Политики Azure
       displayName: 'samples, policies, definitions'

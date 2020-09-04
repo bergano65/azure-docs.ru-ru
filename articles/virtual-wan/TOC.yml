@@ -4,16 +4,6 @@
   items:
     - name: Что такое Виртуальная глобальная сеть?
       href: virtual-wan-about.md
-    - name: Architecture
-      items:
-        - name: Переход на Виртуальную глобальную сеть
-          href: migrate-from-hub-spoke-topology.md
-        - name: Архитектура глобальной транзитной сети
-          href: virtual-wan-global-transit-network-architecture.md
-        - name: Архитектура подключения SD-WAN
-          href: sd-wan-connectivity-architecture.md
-        - name: Межсоединение с Китаем
-          href: interconnect-china.md
 - name: Учебники
   items:
     - name: Создание подключения "сеть — сеть"
@@ -36,11 +26,21 @@
           href: virtual-wan-locations-partners.md
         - name: Рекомендации по автоматизации для партнеров
           href: virtual-wan-configure-automation-providers.md
+    - name: Architecture
+      items:
+        - name: Переход на Виртуальную глобальную сеть
+          href: migrate-from-hub-spoke-topology.md
+        - name: Архитектура глобальной транзитной сети
+          href: virtual-wan-global-transit-network-architecture.md
+        - name: Архитектура подключения SD-WAN
+          href: sd-wan-connectivity-architecture.md
+        - name: Межсоединение с Китаем
+          href: interconnect-china.md
     - name: Маршрутизация
       items:
         - name: Сведения о маршрутизации виртуальных концентраторов
           href: about-virtual-hub-routing.md
-        - name: Сценарии
+        - name: Сценарии маршрутизации
           items:
             - name: Подключение "любой к любому"
               href: scenario-any-to-any.md
@@ -154,8 +154,6 @@
   items:
     - name: ВОПРОСЫ И ОТВЕТЫ
       href: virtual-wan-faq.md
-    - name: Объявления об обновлении
-      href: 'https://azure.microsoft.com/updates/?category=networking&query=VIRTUAL%20WAN'
     - name: Цены
       href: 'https://azure.microsoft.com/pricing/details/virtual-wan'
     - name: Ограничения подписки и службы

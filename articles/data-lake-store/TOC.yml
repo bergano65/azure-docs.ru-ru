@@ -138,7 +138,7 @@
           href: data-lake-store-power-bi.md
         - name: Использование с Каталогом данных
           href: data-lake-store-with-data-catalog.md
-        - name: Использование Хранилища данных SQL с PolyBase
+        - name: Использование с PolyBase в Azure Synapse Analytics
           href: ../sql-data-warehouse/sql-data-warehouse-load-from-azure-data-lake-store.md
         - name: Использование с SQL Server Integration Services
           href: 'https://docs.microsoft.com/sql/integration-services/connection-manager/azure-data-lake-store-connection-manager'
@@ -172,7 +172,7 @@
       href: /azure/templates/microsoft.datalakestore/allversions
     - name: Azure CLI
       href: 'https://docs.microsoft.com/cli/azure/dls'
-    - name: Встроенные политики службы "Политика Azure"
+    - name: Встроенные компоненты Политики Azure
       displayName: 'samples, policies, definitions'
       href: ./policy-reference.md
 - name: Ресурсы

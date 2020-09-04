@@ -107,10 +107,10 @@
           href: howto-run-a-job.md
     - name: Преобразование
       items:
-        - name: Экспорт данных в целевое расположение в Azure (устарело)
-          href: howto-export-data.md
         - name: Экспорт данных в целевое расположение в облаке (предварительная версия)
-          href: howto-use-data-export.md
+          href: howto-export-data.md
+        - name: Экспорт данных в целевое расположение в облаке (устарело)
+          href: howto-export-data-legacy.md
         - name: Создание действий веб-перехватчиков на основе правил
           href: howto-create-webhooks.md
         - name: Использование рабочих процессов для интеграции с другими службами

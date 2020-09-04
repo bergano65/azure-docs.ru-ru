@@ -4,8 +4,6 @@
   items:
     - name: Что такое Azure Front Door?
       href: front-door-overview.md
-    - name: Новые возможности в Azure Front Door
-      href: front-door-whats-new.md
 - name: Краткие руководства
   expanded: true
   items:

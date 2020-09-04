@@ -39,6 +39,10 @@
       href: application-management-fundamentals.md
     - name: Общие сценарии управления приложениями
       href: common-scenarios.md
+    - name: Просмотр приложений в клиенте
+      href: application-types.md
+    - name: Назначение пользователей приложениям
+      href: ways-users-get-assigned-to-applications.md
     - name: Планирование интеграции облачных приложений
       items:
         - name: Начало работы с интеграцией приложений
@@ -114,7 +118,7 @@
           href: grant-admin-consent.md
         - name: Настройка рабочего процесса согласия администратора (предварительная версия)
           href: configure-admin-consent-workflow.md
-        - name: Назначение приложению пользователя или группы
+        - name: Управление назначением пользователей для приложения
           href: assign-user-or-group-access-portal.md
         - name: 'Проверка разрешений, предоставляемых приложениям'
           href: manage-application-permissions.md
@@ -124,8 +128,6 @@
           href: access-panel-manage-self-service-access.md
         - name: Способы удаления доступа пользователя к приложению
           href: methods-for-removing-user-access.md
-        - name: Отмена доступа для пользователя или группы
-          href: remove-user-or-group-access-portal.md
         - name: Скрытие приложения от пользователя
           href: hide-application-from-user-portal.md
         - name: Отключение входа для пользователя
@@ -203,11 +205,7 @@
     - name: Диагностика
       items:
         - name: Устранение неполадок при добавлении приложений
-          items:
-            - name: "Распространенные проблемы\_— приложения из коллекции"
-              href: adding-gallery-app-common-problems.md
-            - name: "Распространенные проблемы\_— приложения не из коллекции"
-              href: adding-non-gallery-app-common-problems.md
+          href: troubleshoot-adding-apps.md
         - name: Устранение неполадок со входом пользователей
           items:
             - name: Непредусмотренный запрос на продолжение
@@ -234,12 +232,6 @@
               href: configure-federated-single-sign-on-gallery-applications-problems.md
             - name: 'Настройка федеративного единого входа в приложения не из коллекции: распространенные проблемы'
               href: configure-federated-single-sign-on-non-gallery-applications-problems.md
-        - name: Устранение неполадок в списке приложений и назначениях
-          items:
-            - name: Управление списком приложений для вашего клиента
-              href: application-types.md
-            - name: Непредусмотренное назначение пользователю
-              href: ways-users-get-assigned-to-applications.md
         - name: Устранение неполадок с локальными приложениями
           items:
             - name: Устранение неполадок с прокси приложения

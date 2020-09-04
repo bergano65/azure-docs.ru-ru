@@ -125,8 +125,12 @@
       maintainContext: true
 - name: Практические руководства
   items:
-    - name: Перемещение между регионами
-      href: move-across-regions.md
+    - name: Переместить
+      items:
+        - name: Перемещение пространства имен в другой регион
+          href: move-across-regions.md
+        - name: Перемещение выделенного кластера в другой регион
+          href: move-cluster-across-regions.md
     - name: Динамическое добавление разделов
       href: dynamically-add-partitions.md
     - name: Использование хранилища BLOB-объектов в качестве хранилища контрольных точек в Azure Stack Hub

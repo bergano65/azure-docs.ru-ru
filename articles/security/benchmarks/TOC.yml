@@ -65,6 +65,8 @@
       href: ../../firewall/security-baseline.md
     - name: Базовые средства безопасности Функций Azure
       href: ../../azure-functions/security-baseline.md
+    - name: Базовые показатели безопасности Azure Monitor
+      href: ../../azure-monitor/security-baseline.md
     - name: Базовые средства безопасности Машинного обучения Azure
       href: ../../machine-learning/security-baseline.md
     - name: Базовые показатели безопасности Политики Azure

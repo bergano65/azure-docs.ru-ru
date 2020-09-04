@@ -105,6 +105,8 @@
           href: unresponsive-vm-apply-group-policy.md
         - name: При применении политики безопасности виртуальная машина не отвечает
           href: unresponsive-vm-apply-security-policy.md
+        - name: 'Ошибка диспетчера загрузки Windows: состояние "Недопустимый хэш образа"'
+          href: windows-boot-error-invalid-image-hash.md
         - name: "Ошибка остановки работы Windows\_— неправильная информация о конфигурации системы"
           href: windows-stop-error-bad-system-config-info.md
         - name: 'STOP-ошибка Windows "Status No Memory" (Состояние: недостаточно памяти)'

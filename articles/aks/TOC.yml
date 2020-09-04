@@ -187,6 +187,14 @@
           href: azure-netapp-files.md
         - name: Использование дисков Azure (цен. категория "Ультра") (предварительная версия)
           href: use-ultra-disks.md
+        - name: Драйверы хранилища CSI
+          items:
+            - name: Включение драйверов хранилища CSI (предварительная версия)
+              href: csi-storage-drivers.md
+            - name: Драйверы CSI Хранилища дисков Azure (предварительная версия)
+              href: azure-disk-csi.md
+            - name: Драйверы CSI Файлов Azure (предварительная версия)
+              href: azure-files-csi.md
     - name: Настройка сети
       items:
         - name: Создание виртуальной сети или использование существующей
@@ -252,9 +260,9 @@
           href: update-credentials.md
         - name: Включение интеграции с Azure Active Directory
           items:
-            - name: AAD с управлением AKS
+            - name: "Azure\_AD под управлением AKS"
               href: managed-aad.md
-            - name: Интеграция AAD (устарело)
+            - name: "Интеграция с Azure\_AD (устарело)"
               href: azure-ad-integration-cli.md
         - name: Использование Azure RBAC для авторизации Kubernetes (предварительная версия)
           href: manage-azure-rbac.md
