@@ -206,6 +206,10 @@
       items:
         - name: Устранение неполадок при добавлении приложений
           href: troubleshoot-adding-apps.md
+        - name: Устранение неполадок с единым входом на основе пароля
+          href: troubleshoot-password-based-sso.md
+        - name: Устранение неполадок единого входа на основе SAML
+          href: troubleshoot-saml-based-sso.md
         - name: Устранение неполадок со входом пользователей
           items:
             - name: Непредусмотренный запрос на продолжение
@@ -224,14 +228,6 @@
               href: application-sign-in-problem-federated-sso-gallery.md
             - name: Проблемы со специально разработанным приложением
               href: application-sign-in-problem-custom-dev.md
-        - name: Устранение неполадок при выполнении единого входа
-          items:
-            - name: Устранение неполадок с единым входом на основе пароля
-              href: troubleshoot-password-based-sso.md
-            - name: 'Настройка федеративного единого входа в приложения из коллекции: распространенные проблемы'
-              href: configure-federated-single-sign-on-gallery-applications-problems.md
-            - name: 'Настройка федеративного единого входа в приложения не из коллекции: распространенные проблемы'
-              href: configure-federated-single-sign-on-non-gallery-applications-problems.md
         - name: Устранение неполадок с локальными приложениями
           items:
             - name: Устранение неполадок с прокси приложения
