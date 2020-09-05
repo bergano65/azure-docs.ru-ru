@@ -94,6 +94,6 @@
     - name: Стратегия развития Azure
       href: 'https://azure.microsoft.com/roadmap/?category=security-identity'
     - name: 'Блог по безопасности, конфиденциальности и соответствию нормам Azure'
-      href: 'https://blogs.msdn.com/b/azuresecurity/'
+      href: 'https://docs.microsoft.com/archive/blogs/azuresecurity/'
     - name: Доступность по регионам
       href: 'https://azure.microsoft.com/regions/services/'

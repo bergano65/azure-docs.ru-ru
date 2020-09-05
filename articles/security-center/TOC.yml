@@ -229,7 +229,7 @@
     - name: План подготовки к работе
       href: security-center-readiness-roadmap.md
     - name: 'Блог по безопасности, конфиденциальности и соответствию нормам Azure'
-      href: 'https://blogs.msdn.com/b/azuresecurity/'
+      href: 'https://docs.microsoft.com/archive/blogs/azuresecurity/'
     - name: Центр безопасности Azure на Stack Overflow
       href: 'https://stackoverflow.com/search?q=azure-security-center'
     - name: Видео

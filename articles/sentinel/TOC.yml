@@ -182,7 +182,7 @@
     - name: Стратегия развития Azure
       href: 'https://azure.microsoft.com/updates/?updateType=security&category=security&query=sentinel'
     - name: 'Блог по безопасности, конфиденциальности и соответствию нормам Azure'
-      href: 'https://blogs.msdn.com/b/azuresecurity/'
+      href: 'https://docs.microsoft.com/archive/blogs/azuresecurity/'
     - name: Доступность по регионам
       href: 'https://azure.microsoft.com/global-infrastructure/services/?products=azure-sentinel'
     - name: Цены

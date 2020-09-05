@@ -109,8 +109,6 @@
           href: credential-access-key-vault.md
         - name: Использование сертификатов с пакетной службой
           href: batch-certificates.md
-    - name: Использование пакетов приложений
-      href: batch-application-packages.md
     - name: Копирование файлов и приложений на узлы пула
       items:
         - name: Копирование приложений и данных в узлы пула

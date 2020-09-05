@@ -307,14 +307,6 @@
           href: ../acu.md?toc=/azure/virtual-machines/linux/toc.json&bc=/azure/virtual-machines/linux/breadcrumb/toc.json
         - name: Квоты на виртуальные ЦП
           href: quotas.md
-        - name: Зарезервированные экземпляры
-          items:
-            - name: Предоплата за виртуальные машины
-              href: prepay-reserved-vm-instances.md
-            - name: Основные сведения о резервировании в Azure
-              href: ../../cost-management-billing/reservations/save-compute-costs-reservations.md
-            - name: Гибкость размера экземпляра виртуальной машины
-              href: ../reserved-vm-instance-size-flexibility.md?toc=/azure/virtual-machines/linux/toc.json&bc=/azure/virtual-machines/linux/breadcrumb/toc.json
         - name: Результаты теста производительности
           href: compute-benchmark-scores.md
     - name: Рекомендуемые дистрибутивы

@@ -117,6 +117,9 @@
               href: concepts-data-encryption-postgresql.md
             - name: Двойное шифрование инфраструктуры
               href: concepts-infrastructure-double-encryption.md
+            - name: Элементы управления безопасностью службы "Политика Azure"
+              displayName: 'regulatory, compliance, standards, domains'
+              href: ./security-controls-policy.md
             - name: 'Базовые показатели безопасности, учитываемые решением для оценки безопасности Azure'
               href: security-baseline.md
         - name: Непрерывность бизнес-процессов

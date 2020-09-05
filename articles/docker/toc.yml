@@ -10,15 +10,15 @@
     - name: 'Веб-приложение Python и Docker, PostgreSQL'
       href: ../app-service/tutorial-python-postgresql-app.md?toc=%2fazure%2fpostgresql%2ftoc.json
     - name: 'CI/CD и Docker, Jenkins, Linux'
-      href: /azure/jenkins/tutorial-jenkins-github-docker-cicd
+      href: /azure/developer/jenkins/pipeline-with-github-and-docker
 - name: Практические руководства
   items:
     - name: Расширение виртуальной машины Docker
-      href: /azure/virtual-machines/linux/dockerextension
+      href: 'https://github.com/Azure/azure-docker-extension/blob/master/README.md'
     - name: Виртуальная машина Docker
-      href: /azure/virtual-machines/linux/docker-machine
+      href: ../virtual-machines/linux/docker-machine.md
     - name: Реестр контейнеров Docker
-      href: /azure/container-registry/container-registry-get-started-portal
+      href: ../container-registry/container-registry-get-started-portal.md
 - name: Ресурсы
   items:
     - name: Стратегия развития Azure
