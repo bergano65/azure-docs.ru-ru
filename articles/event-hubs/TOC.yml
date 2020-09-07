@@ -64,7 +64,7 @@
   items:
     - name: Визуализация аномальных данных в потоках данных Центров событий
       href: event-hubs-tutorial-visualize-anomalies.md
-    - name: Хранение собранных данных в Хранилище данных SQL
+    - name: Хранение собранных данных в Azure Synapse Analytics
       href: store-captured-data-data-warehouse.md
     - name: Обработка событий Центров событий в Apache Kafka с использованием Stream Analytics
       href: event-hubs-kafka-stream-analytics.md

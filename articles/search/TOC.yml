@@ -114,6 +114,8 @@
         - name: Элементы управления безопасностью службы "Политика Azure"
           displayName: 'regulatory, compliance, standards, domains'
           href: ./security-controls-policy.md
+        - name: Защита ресурсов индексатора
+          href: search-indexer-securing-resources.md
 - name: Практические руководства
   items:
     - name: Создание индексов и конструкций
@@ -354,6 +356,14 @@
               href: search-security-trimming-for-azure-search.md
             - name: Фильтрация по удостоверениям пользователей
               href: search-security-trimming-for-azure-search-with-aad.md
+        - name: Безопасность исходящего трафика (индексаторы)
+          items:
+            - name: Реализация доступа через диапазон IP-адресов
+              href: search-indexer-howto-access-ip-restricted.md
+            - name: Реализация доступа с использованием исключения доверенных служб
+              href: search-indexer-howto-access-trusted-service-exception.md
+            - name: Реализация доступа через частные конечные точки
+              href: search-indexer-howto-access-private.md
     - name: Управление
       items:
         - name: Портал
@@ -392,14 +402,14 @@
       href: /azure/templates/microsoft.search/searchservices
     - name: REST
       items:
-        - name: Поиск 2020-06-30
+        - name: API поиска (стабильная версия)
           href: /rest/api/searchservice
-        - name: Поиск 2020-06-30-Preview
+        - name: API поиска (предварительная версия)
           href: /rest/api/searchservice/index-preview
-        - name: Управление 2020-03-13
+        - name: API управления (стабильная версия)
           href: /rest/api/searchmanagement
-        - name: Management 2019-10-01-Preview
-          href: /rest/api/searchmanagement/index-2019-10-01-preview
+        - name: API управления (предварительная версия)
+          href: /rest/api/searchmanagement/index-preview
     - name: .NET
       items:
         - name: API поиска
@@ -526,5 +536,5 @@
       href: search-faq-frequently-asked-questions.md
     - name: Цены
       href: 'https://azure.microsoft.com/pricing/details/search/'
-    - name: Видеоролики
+    - name: Видео
       href: 'https://azure.microsoft.com/resources/videos/index/?services=search'

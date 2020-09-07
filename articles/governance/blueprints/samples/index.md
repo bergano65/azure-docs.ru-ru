@@ -1,14 +1,14 @@
 ---
 title: Индекс примеров схем
 description: Индексы соответствия и стандартные примеры для развертывания сред, политик и базовых решений Cloud Adoption Framework с помощью Azure Blueprints.
-ms.date: 07/01/2020
+ms.date: 07/10/2020
 ms.topic: sample
-ms.openlocfilehash: ef85ef0615fa0817a574240e65b7670daeaff33b
-ms.sourcegitcommit: ec682dcc0a67eabe4bfe242fce4a7019f0a8c405
+ms.openlocfilehash: cf8109dc8446fe1e3625e4f7c6fd0b5493c352d6
+ms.sourcegitcommit: de2750163a601aae0c28506ba32be067e0068c0c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/09/2020
-ms.locfileid: "86181562"
+ms.lasthandoff: 09/04/2020
+ms.locfileid: "89488360"
 ---
 # <a name="azure-blueprints-samples"></a>Примеры для Azure Blueprints
 
@@ -26,7 +26,7 @@ ms.locfileid: "86181562"
 | [Уровень влияния DoD 5](./dod-impact-level-5/index.md) | Набор политик, которые помогут обеспечить соответствие требованиям уровня влияния DoD 5. |
 | [FedRAMP — средний уровень](./fedramp-m/index.md) | Набор политик, которые помогут обеспечить соответствие требованиям FedRAMP среднего уровня. |
 | [FedRAMP — высокий уровень](./fedramp-h/index.md) | Набор политик, которые помогут обеспечить соответствие требованиям FedRAMP высокого уровня. |
-| [HIPAA HITRUST](./HIPAA-HITRUST/index.md) | Набор политик, которые помогут обеспечить соответствие требованиям HIPAA HITRUST. |
+| [HIPAA HITRUST 9.2](./hipaa-hitrust-9-2.md) | Набор политик, которые помогут обеспечить соответствие требованиям HIPAA HITRUST. |
 | [IRS 1075](./irs-1075/index.md) | В этом документе описаны средства защиты для обеспечения соответствия требованиям IRS 1075.|
 | [ISO 27001](./iso27001/index.md) | В этом документе описаны средства защиты для обеспечения соответствия требованиям ISO 27001. |
 | [ISO 27001: общие службы](./iso27001-shared/index.md) | Предоставляет соответствующий требованиям набор шаблонов инфраструктуры и средства соответствия политикам, которые помогут пройти аттестацию ISO 27001. |

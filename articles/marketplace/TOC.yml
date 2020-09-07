@@ -59,6 +59,8 @@
               href: ./marketplace-criteria-content-validation.md
             - name: Поставщики облачных решений
               href: ./cloud-solution-providers.md
+            - name: Руководство по регистрации для участия в программе Connect
+              href: ./cloud-partner-portal/business-applications-isv-program.md
         - name: Преимущества использования Marketplace
           href: ./gtm-your-marketplace-benefits.md
           items:

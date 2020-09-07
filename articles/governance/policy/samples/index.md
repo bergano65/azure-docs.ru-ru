@@ -1,14 +1,14 @@
 ---
 title: Индекс примеров политик
 description: Индекс встроенных определений Политики Azure. Теги категорий, соответствие нормативным требованиям, Key Vault, Kubernetes, гостевая конфигурация и многое другое.
-ms.date: 06/10/2020
+ms.date: 07/20/2020
 ms.topic: sample
-ms.openlocfilehash: 7528a22ad09db1e06aabf84ad946ef7af36a8430
-ms.sourcegitcommit: c4ad4ba9c9aaed81dfab9ca2cc744930abd91298
+ms.openlocfilehash: b4f76c42eb23ce368875dfb91f2f7b9e7ee1bd50
+ms.sourcegitcommit: de2750163a601aae0c28506ba32be067e0068c0c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/12/2020
-ms.locfileid: "84736787"
+ms.lasthandoff: 09/04/2020
+ms.locfileid: "89481568"
 ---
 # <a name="azure-policy-samples"></a>Примеры для Политики Azure
 
@@ -39,6 +39,7 @@ ms.locfileid: "84736787"
 
 - [Решение для оценки безопасности Azure](./azure-security-benchmark.md)
 - [Тесты для оценки безопасности CIS для платформ Microsoft Azure версии 1.1.0](./cis-azure-1-1-0.md)
+- [HIPAA HITRUST 9.2](./hipaa-hitrust-9-2.md)
 - [NIST SP 800-53, ред. 4](./nist-sp-800-53-r4.md)
 - [NIST SP 800-171 R2](./nist-sp-800-171-r2.md)
 

@@ -36,12 +36,6 @@
       href: concepts-security.md
 - name: Практические руководства
   items:
-    - name: Разработка
-      items:
-        - name: Использование интерфейсов API и пакетов SDK
-          href: how-to-use-apis-sdks.md
-        - name: Создание пользовательских пакетов SDK с помощью AutoRest
-          href: how-to-create-custom-sdks.md
     - name: Развертывание
       items:
         - name: Использование CLI для Azure Digital Twins
@@ -78,6 +72,14 @@
           href: how-to-create-azure-function.md
         - name: Запрос данных о графе двойника
           href: how-to-query-graph.md
+    - name: Разработка клиентских приложений
+      items:
+        - name: Использование интерфейсов API и пакетов SDK
+          href: how-to-use-apis-sdks.md
+        - name: Создание пользовательских пакетов SDK с помощью AutoRest
+          href: how-to-create-custom-sdks.md
+        - name: Интеграция со службой Azure SignalR
+          href: how-to-integrate-azure-signalr.md
     - name: Входные данные подключения
       items:
         - name: Прием данных телеметрии из Центра Интернета вещей
@@ -188,6 +190,8 @@
           href: 'https://docs.microsoft.com/samples/azure-samples/digital-twins-iothub-integration/adt-iothub-provision-sample/'
         - name: Пользовательские операции Swagger в Azure Digital Twins
           href: 'https://docs.microsoft.com/samples/azure-samples/digital-twins-custom-swaggers/azure-digital-twins-custom-swaggers/'
+        - name: Пример интеграции с SignalR
+          href: 'https://docs.microsoft.com/samples/azure-samples/digitaltwins-signalr-webapp-sample/digital-twins-samples/'
     - name: Инструменты Azure
       items:
         - name: Azure Cloud Shell
