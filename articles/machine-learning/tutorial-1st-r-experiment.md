@@ -10,12 +10,12 @@ ms.reviewer: sgilley
 author: revodavid
 ms.author: davidsmi
 ms.date: 02/07/2020
-ms.openlocfilehash: 887b2da46fdcd6ad275f18913fd7ba675700ad3b
-ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
+ms.openlocfilehash: 8d5a8555b2bd57dc024318464e38f042469beb4b
+ms.sourcegitcommit: 4a7a4af09f881f38fcb4875d89881e4b808b369b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89015991"
+ms.lasthandoff: 09/04/2020
+ms.locfileid: "89458677"
 ---
 # <a name="tutorial-use-r-to-create-a-machine-learning-model-preview"></a>Руководство по созданию модели машинного обучения с помощью R (предварительная версия)
 [!INCLUDE [applies-to-skus](../../includes/aml-applies-to-basic-enterprise-sku.md)]
@@ -72,7 +72,7 @@ ms.locfileid: "89015991"
 
 1. В RStudio перейдите на вкладку "Терминал" и в каталог, в котором вы хотите клонировать репозиторий.
 
-1. Выполните в терминале команду git clone https://github.com/Azure/azureml-sdk-for-r.git, чтобы клонировать репозиторий.
+1. Выполните в терминале команду git clone https://github.com/Azure/azureml-sdk-for-r, чтобы клонировать репозиторий.
 
 1. В RStudio перейдите в папку *vignettes* клонированной папки *azureml-sdk-for-r*.  В разделе *vignettes* (Виньетки) выберите файл *train-and-deploy-first-model.Rmd*, чтобы найти виньетку, используемую в этом учебнике. Дополнительные файлы, используемые для виньеток, находятся в подпапке *train-and-deploy-first-model*. После открытия виньетки задайте рабочую папку для расположения файла, последовательно выбрав **Сеанс > Set Working Directory (Задать рабочую папку) > To Source File Location (В расположение исходного файла)** . 
 
