@@ -54,6 +54,8 @@
               href: connect-microsoft-defender-advanced-threat-protection.md
             - name: Azure ATP
               href: connect-azure-atp.md
+            - name: Защита от атак DDoS Azure
+              href: connect-azure-ddos-protection.md
             - name: Брандмауэр Azure
               href: connect-azure-firewall.md
             - name: Центр безопасности Azure
