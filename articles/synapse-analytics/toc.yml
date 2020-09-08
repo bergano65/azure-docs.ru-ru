@@ -36,6 +36,8 @@
   items:
     - name: Создание рабочей области Synapse с помощью портала Azure
       href: quickstart-create-workspace.md
+    - name: Развертывание с помощью шаблона
+      href: quickstart-deployment-template-workspaces.md
     - name: Создание рабочей области Synapse с помощью Azure CLI
       href: quickstart-create-workspace-cli.md
     - name: Использование Synapse Studio
@@ -210,6 +212,8 @@
               href: ./spark/apache-spark-delta-lake-overview.md
             - name: Производительность Apache Spark
               href: ./spark/apache-spark-performance.md
+            - name: Оптимизация производительности для Apache Spark с помощью индексов гиперпространств
+              href: ./spark/apache-spark-performance-hyperspace.md
             - name: "Принцип работы автоматического масштабирования Apache\_Spark"
               href: ./spark/apache-spark-autoscale.md
         - name: Разработка

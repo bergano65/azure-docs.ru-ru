@@ -8,14 +8,14 @@ ms.subservice: core
 ms.topic: tutorial
 ms.author: sgilley
 author: sdgilley
-ms.date: 02/10/2020
+ms.date: 08/25/2020
 ms.custom: devx-track-python
-ms.openlocfilehash: be8f0c85f62779dec9231a9f44155d4608e88b52
-ms.sourcegitcommit: 7fe8df79526a0067be4651ce6fa96fa9d4f21355
+ms.openlocfilehash: fb380e4b71ba68daf694ab725c41be64f066805e
+ms.sourcegitcommit: b33c9ad17598d7e4d66fe11d511daa78b4b8b330
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87852707"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88854926"
 ---
 # <a name="tutorial-train-your-first-ml-model"></a>Руководство по обучению модели Машинного обучения
 
@@ -43,21 +43,24 @@ ms.locfileid: "87852707"
 
 1. Откройте записную книжку **tutorial-1st-experiment-sdk-train.ipynb** в своей папке, как показано в [первой части](tutorial-1st-experiment-sdk-setup.md#open).
 
-
-> [!Warning]
-> **Не** создавайте *другую* записную книжку в интерфейсе Jupyter! Записная книжка *tutorials/create-first-ml-experiment/tutorial-1st-experiment-sdk-train.ipynb* содержит **все данные и код**, необходимые для работы с этим руководством.
+**Не** создавайте *другую* записную книжку в интерфейсе Jupyter! Записная книжка *tutorials/create-first-ml-experiment/tutorial-1st-experiment-sdk-train.ipynb* содержит **все данные и код**, необходимые для работы с этим руководством.
 
 ## <a name="connect-workspace-and-create-experiment"></a>Подключение рабочей области и создание эксперимента
 
-> [!Important]
-> Оставшаяся часть этой статьи содержит то же содержимое, что и записная книжка.  
->
-> Перейдите в записную книжку Jupyter, чтобы вы могли просматривать его во время выполнения кода. 
-> Чтобы выполнить одну ячейку кода в записной книжке, щелкните эту ячейку и нажмите клавиши **SHIFT+ВВОД**. Или запустите всю записную книжку, выбрав **Запустить все** в верхней части панели инструментов.
+<!-- nbstart https://raw.githubusercontent.com/Azure/MachineLearningNotebooks/master/tutorials/create-first-ml-experiment/tutorial-1st-experiment-sdk-train.ipynb -->
 
-Импортируйте класс `Workspace` и загрузите сведения о подписке из файла `config.json` с помощью функции `from_config().`. При этом по умолчанию выполняется поиск JSON-файла в текущем каталоге, но вы также можете задать параметр пути, чтобы указать на файл, используя `from_config(path="your/file/path")`. Файл будет автоматически помещен в корневой каталог облачного сервера записной книжки.
+> [!TIP]
+> Содержимое файла _tutorial-1st-experiment-sdk-train.ipynb_. Перейдите в записную книжку Jupyter, чтобы вы могли просматривать его во время выполнения кода. Чтобы выполнить одну ячейку кода в записной книжке, щелкните эту ячейку и нажмите клавиши **SHIFT+ВВОД**. Или запустите всю записную книжку, выбрав **Запустить все** в верхней части панели инструментов.
 
-Если при выполнении следующего кода будет запрошена дополнительная аутентификация, просто вставьте ссылку в браузере и введите маркер проверки подлинности.
+
+Импортируйте класс `Workspace` и загрузите сведения о подписке из файла `config.json` с помощью функции `from_config().`. При этом по умолчанию выполняется поиск JSON-файла в текущем каталоге, но вы также можете задать параметр пути, чтобы указать на файл, используя `from_config(path="your/file/path")`. Если эта записная книжка из рабочей области выполняется на облачном сервере записных книжек, это значит, что файл автоматически размещается в корневом каталоге.
+
+Если при выполнении следующего кода будет запрошена дополнительная аутентификация, просто вставьте ссылку в браузере и введите маркер проверки подлинности. Кроме того, при наличии нескольких клиентов, связанных с пользователем, необходимо добавить следующие строки:
+```
+from azureml.core.authentication import InteractiveLoginAuthentication
+interactive_auth = InteractiveLoginAuthentication(tenant_id="your-tenant-id")
+Additional details on authentication can be found here: https://aka.ms/aml-notebook-auth 
+```
 
 ```python
 from azureml.core import Workspace
@@ -105,16 +108,16 @@ alphas = [0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0]
 for alpha in alphas:
     run = experiment.start_logging()
     run.log("alpha_value", alpha)
-
+    
     model = Ridge(alpha=alpha)
     model.fit(X=X_train, y=y_train)
     y_pred = model.predict(X=X_test)
     rmse = math.sqrt(mean_squared_error(y_true=y_test, y_pred=y_pred))
     run.log("rmse", rmse)
-
+    
     model_name = "model_alpha_" + str(alpha) + ".pkl"
     filename = "outputs/" + model_name
-
+    
     joblib.dump(value=model, filename=filename)
     run.upload_file(name=model_name, path_or_stream=filename)
     run.complete()
@@ -162,7 +165,7 @@ for run in experiment.get_runs():
     # each logged metric becomes a key in this returned dict
     run_rmse = run_metrics["rmse"]
     run_id = run_details["runId"]
-
+    
     if minimum_rmse is None:
         minimum_rmse = run_rmse
         minimum_rmse_runid = run_id
@@ -172,15 +175,15 @@ for run in experiment.get_runs():
             minimum_rmse_runid = run_id
 
 print("Best run_id: " + minimum_rmse_runid)
-print("Best run_id rmse: " + str(minimum_rmse))
+print("Best run_id rmse: " + str(minimum_rmse))    
 ```
-
 ```output
 Best run_id: 864f5ce7-6729-405d-b457-83250da99c80
 Best run_id rmse: 57.234760283951765
 ```
 
 Запуск с наилучшим результатом можно получить по его идентификатору, используя конструктор `Run` вместе с объектом эксперимента. Затем нужно вызвать `get_file_names()`, чтобы просмотреть все доступные для скачивания файлы для этого запуска. В нашем примере вы отправляли один файл для каждого запуска во время обучения.
+
 
 ```python
 from azureml.core import Run
@@ -194,9 +197,11 @@ print(best_run.get_file_names())
 
 Вызовите `download()` для объекта запуска, указав имя файла модели для скачивания. По умолчанию эта функция сохраняет файлы в текущем каталоге.
 
+
 ```python
 best_run.download_file(name="model_alpha_0.1.pkl")
 ```
+<!-- nbend -->
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 

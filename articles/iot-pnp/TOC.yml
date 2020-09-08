@@ -29,6 +29,8 @@
           href: quickstart-service-python.md
 - name: Учебники
   items:
+    - name: Подключение многокомпонентного устройства (C)
+      href: tutorial-multiple-components-c.md
     - name: Подключение многокомпонентного устройства (C#)
       href: tutorial-multiple-components-csharp.md
     - name: Подключение многокомпонентного устройства (Java)

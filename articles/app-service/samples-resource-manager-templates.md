@@ -4,15 +4,15 @@ description: В этой статье приведены примеры шабл
 author: tfitzmac
 tags: azure-service-management
 ms.topic: sample
-ms.date: 01/04/2019
+ms.date: 08/26/2020
 ms.author: tomfitz
 ms.custom: mvc, fasttrack-edit
-ms.openlocfilehash: 4ac8e7d51ce9a3d5694f2853219bb04869a91734
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.openlocfilehash: 5129fccceb633991767cdd3b52bbb5b6af067270
+ms.sourcegitcommit: c6b9a46404120ae44c9f3468df14403bcd6686c1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86517711"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88891051"
 ---
 # <a name="azure-resource-manager-templates-for-app-service"></a>Шаблоны Azure Resource Manager для Службы приложений
 
@@ -44,6 +44,7 @@ ms.locfileid: "86517711"
 | [Приложение с базой данных в службе "База данных SQL Azure"](https://github.com/Azure/azure-quickstart-templates/tree/master/201-web-app-sql-database)| Развертывает приложение Службы приложений и базу данных в службе "База данных SQL Azure" с уровнем обслуживания "Базовый". |
 | [Приложение с подключением к хранилищу BLOB-объектов](https://github.com/Azure/azure-quickstart-templates/tree/master/201-web-app-blob-connection)| Развертывает приложение Службы приложений со строкой подключения к хранилищу BLOB-объектов Azure. Вы сможете использовать хранилище BLOB-объектов из приложения. |
 | [Приложение с кэшем Azure для Redis](https://github.com/Azure/azure-quickstart-templates/tree/master/201-web-app-with-redis-cache)| Развертывает приложение Службы приложений с кэшем Azure для Redis. |
+| [Приложение, подключенное к внутреннему веб-приложению](https://github.com/Azure/azure-quickstart-templates/tree/master/101-webapp-privateendpoint-vnet-injection)| Развертывает два веб-приложения (внешнее и внутреннее), безопасно подключенных друг к другу с помощью внедрения виртуальной сети и частной конечной точки. |
 |**Среда службы приложений**| **Описание** |
 | [Создание среды службы приложений версии 2](https://github.com/Azure/azure-quickstart-templates/tree/master/201-web-app-asev2-create) | Позволяет создать среду службы приложений версии 2 в виртуальной сети. |
 | [Создание среды службы приложений версии 2 с адресом ILB](https://github.com/Azure/azure-quickstart-templates/tree/master/201-web-app-asev2-ilb-create/) | Позволяет создать среду службы приложений версии 2 в виртуальной сети с адресом частной внутренней подсистемы балансировки нагрузки. |

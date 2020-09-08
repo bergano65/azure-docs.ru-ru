@@ -1,18 +1,18 @@
 ---
 title: Учебник по добавлению образца модели (Azure Analysis Services) | Документация Майкрософт
-description: Это руководство содержит сведения о том, как добавить образец модели в службах Azure Analysis Services.
+description: Из этого руководства вы узнаете, как добавить образец модели в Azure Analysis Services.
 author: minewiskan
 ms.service: azure-analysis-services
 ms.topic: tutorial
-ms.date: 05/19/2020
+ms.date: 08/31/2020
 ms.author: owend
 ms.reviewer: minewiskan
-ms.openlocfilehash: 88ed58ea1eea80b4b890c31260fc65153377eaaa
-ms.sourcegitcommit: 62717591c3ab871365a783b7221851758f4ec9a4
+ms.openlocfilehash: 5b84c2e50ae7f5038cf9cb8a96c0c51d6537c929
+ms.sourcegitcommit: d68c72e120bdd610bb6304dad503d3ea89a1f0f7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/22/2020
-ms.locfileid: "83697506"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89230909"
 ---
 # <a name="tutorial-add-a-sample-model-from-the-portal"></a>Руководство. Добавление образца модели с портала
 
@@ -24,7 +24,7 @@ ms.locfileid: "83697506"
 
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
 
-## <a name="before-you-begin"></a>Перед началом
+## <a name="prerequisites"></a>Предварительные требования
 
 Для работы с этим учебником необходимы указанные ниже компоненты.
 
@@ -45,7 +45,7 @@ ms.locfileid: "83697506"
 
 2. В разделе **Новая модель** > **Выбор источника данных** установите флажок **Пример данных**, а затем нажмите кнопку **Добавить**.
 
-    ![Выбор примеров данных](./media/analysis-services-create-sample-model/aas-create-sample-data.png)
+    ![Выбор элемента "Новая модель"](./media/analysis-services-create-sample-model/aas-create-sample-data.png)
 
 3. В области **Обзор** проверьте, добавлен ли образец модели `adventureworks`.
 

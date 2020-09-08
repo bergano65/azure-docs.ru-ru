@@ -31,6 +31,8 @@
           href: manage-user-access-with-access-reviews.md
         - name: 'Управление пользователями, которые исключены из политик условного доступа'
           href: conditional-access-exclusion.md
+    - name: Проверка и удаление пользователей из внешних организаций
+      href: access-reviews-external-users.md
 - name: Практические руководства
   expanded: true
   items:

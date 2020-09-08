@@ -15,12 +15,12 @@ ms.topic: tutorial
 ms.date: 08/11/2020
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 5b679028a0d99d20497ad1f4e7d870c39b76a136
-ms.sourcegitcommit: 271601d3eeeb9422e36353d32d57bd6e331f4d7b
+ms.openlocfilehash: ecb53d661b1171f9c1b18d37d0bb35952645ba7e
+ms.sourcegitcommit: 58d3b3314df4ba3cabd4d4a6016b22fa5264f05a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/20/2020
-ms.locfileid: "88657130"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89299717"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-fortigate-ssl-vpn"></a>Руководство по интеграции единого входа Azure Active Directory с VPN SSL FortiGate
 
@@ -67,8 +67,8 @@ ms.locfileid: "88657130"
     1. **[Создание тестового пользователя Azure AD](#create-an-azure-ad-test-user)** требуется для проверки работы единого входа Azure AD с помощью пользователя B.Simon.
     1. **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы позволить пользователю B.Simon использовать единый вход Azure AD.
 1. **[Настройка единого входа в VPN SSL FortiGate](#configure-fortigate-ssl-vpn-sso)** необходима, чтобы настроить параметры единого входа на стороне приложения.
-    1. **[Создание тестового пользователя приложения VPN SSL FortiGate](#create-fortigate-ssl-vpn-test-user)** требуется для того, чтобы в VPN SSL FortiGate существовал пользователь B. Simon, связанный с одноименным пользователем в Azure AD.
-1. **[Проверка единого входа](#test-sso)** позволяет убедиться в правильности конфигурации.
+    1. **Создание тестового пользователя приложения VPN SSL FortiGate** требуется для того, чтобы в VPN SSL FortiGate существовал пользователь B. Simon, связанный с одноименным пользователем в Azure AD.
+1. **[Проверка единого входа](#test-single-sign-on)** позволяет убедиться в правильности конфигурации.
 
 ## <a name="configure-azure-ad-sso"></a>Настройка единого входа Azure AD
 
@@ -142,22 +142,113 @@ ms.locfileid: "88657130"
 1. Если ожидается, что в утверждении SAML будет получено какое-либо значение роли, то в диалоговом окне **Выбор роли** нужно выбрать соответствующую роль для пользователя из списка и затем нажать кнопку **Выбрать**, расположенную в нижней части экрана.
 1. В диалоговом окне **Добавление назначения** нажмите кнопку **Назначить**.
 
+### <a name="create-a-security-group-for-the-test-user"></a>Создание группы безопасности для тестового пользователя
+
+В этом разделе вы создадите группу безопасности в Azure Active Directory для тестового пользователя. Она будет использоваться в FortiGate для предоставления пользователю сетевого доступа через VPN.
+
+1. На портале Azure в области слева выберите **Azure Active Directory**, а затем — **Группы**.
+1. В верхней части экрана щелкните **Новый пользователь**.
+1. В разделе свойств **Новая группа** сделайте следующее.
+   1. В поле **Тип группы** выберите **Безопасность**.
+   1. В поле **Имя** введите `FortiGateAccess`.
+   1. В поле **Описание группы** введите `Group for granting FortiGate VPN access`.
+   1. Установите для параметра **Azure AD roles can be assigned to the group (Preview)** (Роли Azure AD можно назначить группе (предварительная версия)) значение **Нет**.
+   1. В поле **Тип членства** выберите **Назначено**.
+   1. В разделе **Участники** выберите **Нет выбранных участников**.
+   1. В диалоговом окне **Пользователи и группы** выберите **B.Simon** в списке пользователей, а затем в нижней части экрана нажмите кнопку **Выбрать**.
+   1. Нажмите кнопку **создания**.
+1. Вернувшись в колонку **Группы** в Azure Active Directory найдите группу **доступа к FortiGate** и запишите **идентификатор объекта** для последующего использования.
+
 ## <a name="configure-fortigate-ssl-vpn-sso"></a>Настройка единого входа в VPN SSL FortiGate
 
-Чтобы настроить единый вход на стороне **VPN SSL FortiGate**, следуйте указаниям [в этом](https://aka.ms/AA9avum) документе.
+### <a name="upload-the-base64-saml-certificate-to-the-fortigate-appliance"></a>Загрузка сертификата SAML в кодировке Base64 в приложение FortiGate
 
-> [!NOTE]
-> Дополнительные сведения о настройке VPN SSL FortiGate см. [по этой](https://docs.fortinet.com/document/fortigate/6.4.0/new-features/558169/saml-sp-for-vpn-authentication) ссылке.
+После завершения в клиенте настройки SAML приложения FortiGate будет скачан сертификат SAML в кодировке Base64. Загрузите его в приложение FortiGate, выполните следующие действия:
 
-### <a name="create-fortigate-ssl-vpn-test-user"></a>Создание тестового пользователя приложения VPN SSL FortiGate
+1. Откройте портал управления приложения FortiGate.
+1. В меню слева выберите **System** (Система).
+1. В разделе **System** (Система) выберите **Certificates** (Сертификаты).
+1. Выберите **Import** -> **Remote Certificate** (Импорт > Удаленный сертификат).
+1. Перейдите к сертификату, скачанному из развертывания приложения FortiGate в клиенте Azure, выберите его и нажмите кнопку **OK**.
 
-В этом разделе вы узнаете, как создать пользователя B. Simon в приложении VPN SSL FortiGate. Обратитесь к  [группе поддержки VPN SSL FortiGate](mailto:tac_amer@fortinet.com), чтобы добавить пользователей на платформу VPN SSL FortiGate. Перед использованием единого входа необходимо создать и активировать пользователей.
+После отправки сертификата запишите его имя в разделе **System** > **Certificates** > **Remote Certificate** (Система > Сертификаты > Удаленный сертификат). Имя по умолчанию — REMOTE_Cert_**N**, где **N** — это целое значение.
 
-## <a name="test-sso"></a>Проверка единого входа 
+### <a name="perform-fortigate-command-line-configuration"></a>Выполнение настройки из командной строки FortiGate
+
+Для выполнения следующих действий необходимо настроить URL-адрес выхода Azure. Этот URL-адрес содержит вопросительный знак (?). Для успешной отправки этого символа необходимо выполнить специальные действия. Их невозможно выполнить из консоли FortiGate CLI. Вместо этого установите сеанс SSH для приложения FortiGate с помощью средства PuTTY. Если приложение FortiGate является виртуальной машиной Azure, вы можете выполнить указанные ниже действия в последовательной консоли виртуальной машины Azure.
+
+Для выполнения этих действий потребуются записанные ранее значения.
+
+- Идентификатор сущности
+- URL-адрес ответа
+- URL-адрес выхода.
+- URL-адрес входа Azure
+- Идентификатор Azure AD
+- URL-адрес выхода Azure
+- Имя сертификата SAML в кодировке Base64 (REMOTE_Cert_N).
+
+1. Установите сеанс SSH для приложения FortiGate и выполните вход с помощью учетной записи администратора FortiGate.
+1. Выполните следующие команды:
+
+   ```console
+    config user saml
+    edit azure
+    set entity-id <Entity ID>
+    set single-sign-on-url <Reply URL>
+    set single-logout-url <Logout URL>
+    set idp-single-sign-on-url <Azure Login URL>
+    set idp-entity-id <Azure AD Identifier>
+    set idp-single-logout-url <Azure Logout URL>
+    set idp-cert <Base64 SAML Certificate Name>
+    set user-name username
+    set group-name group
+    end
+
+   ```
+
+   > [!NOTE]
+   > **URL-адрес выхода Azure** содержит знак `?`. Чтобы правильно указать URL-адрес в последовательной консоли FortiGate, необходимо нажать правильную последовательность клавиш. `https://login.microsoftonline.com/common/wsfederation?wa=wsignout1.0` — это как правило стандартный URL-адрес.
+   >
+   > Чтобы ввести URL-адрес выхода Azure в последовательной консоли, введите `set idp-single-logout-url https://login.microsoftonline.com/common/wsfederation`.
+   > 
+   > Затем нажмите клавиши CTRL+V и вставьте остальную часть URL-адреса, чтобы завершить строку: `set idp-single-logout-url https://login.microsoftonline.com/common/wsfederation?wa=wsignout1.0`.
+
+### <a name="configure-fortigate-for-group-matching"></a>Настройка FortiGate для сопоставления групп
+
+В этом разделе вы настроите FortiGate для распознавания идентификатора объекта группы безопасности, в которой находится тестовый пользователь. Это позволит FortiGate принимать решения о доступе на основе членства в группе.
+
+Для выполнения этих действий потребуется идентификатор объекта группы безопасности **FortiGateAccess**, созданной ранее.
+
+1. Установите сеанс SSH для приложения FortiGate и выполните вход с помощью учетной записи администратора FortiGate.
+1. Выполните следующие команды:
+
+   ```
+    config user group
+    edit FortiGateAccess
+    set member azure
+    config match
+    edit 1
+    set server-name azure
+    set group-name <Object Id>
+    next
+    end
+    next
+    end
+   ```
+
+### <a name="create-fortigate-vpn-portals-and-firewall-policy"></a>Создание VPN-порталов и политики брандмауэра FortiGate
+
+В этом разделе вы настроите VPN-порталы и политики брандмауэра FortiGate, предоставляющие доступ к группе безопасности **FortiGateAccess**, созданной ранее.
+
+Обратитесь в  [группу поддержки FortiGate](mailto:tac_amer@fortinet.com), чтобы добавить VPN-порталы и политику брандмауэра на VPN-платформу FortiGate. Эти действия необходимо выполнить перед использованием единого входа.
+
+## <a name="test-single-sign-on"></a>Проверка единого входа 
 
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
 Щелкнув плитку VPN SSL FortiGate на Панели доступа, вы автоматически войдете в приложение VPN SSL FortiGate, для которого настроили единый вход. См. дополнительные сведения о [панели доступа](https://docs.microsoft.com/azure/active-directory/active-directory-saas-access-panel-introduction)
+
+Чтобы обеспечить лучшее взаимодействие с пользователем, Майкрософт и FortiGate рекомендуют использовать VPN-клиент Fortinet и FortiClient.
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

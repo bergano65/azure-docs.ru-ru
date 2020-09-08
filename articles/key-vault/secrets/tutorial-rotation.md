@@ -10,16 +10,17 @@ ms.subservice: general
 ms.topic: tutorial
 ms.date: 01/26/2020
 ms.author: mbaldwin
-ms.openlocfilehash: b61ba7f160d012cc3d9ad9f477e969a626fdc38e
-ms.sourcegitcommit: 8def3249f2c216d7b9d96b154eb096640221b6b9
+ms.custom: devx-track-csharp
+ms.openlocfilehash: 5adc2a91df5d394fbed3ff10b0ebc5cb543a3ba3
+ms.sourcegitcommit: 3246e278d094f0ae435c2393ebf278914ec7b97b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87541425"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89378021"
 ---
 # <a name="automate-the-rotation-of-a-secret-for-resources-that-use-one-set-of-authentication-credentials"></a>Автоматизация смены секретов для ресурсов с одним набором учетных данных для аутентификации
 
-Лучшим способом проверки подлинности в службах Azure является использование [управляемого удостоверения](../general/managed-identity.md), но иногда его использование невозможно. В этих случаях используют ключи доступа или секреты. Время от времени необходимо сменять эти ключи доступа или секреты.
+Лучшим способом проверки подлинности в службах Azure является использование [управляемого удостоверения](../general/authentication.md), но иногда его использование невозможно. В этих случаях используют ключи доступа или секреты. Время от времени необходимо сменять эти ключи доступа или секреты.
 
 В этом учебнике описано, как автоматизировать периодическую смену секретов для баз данных и служб, которые используют один набор учетных данных для аутентификации. В частности, в этом учебнике выполняется смена паролей SQL Server, хранящихся в Azure Key Vault. Для ротации используется функция, запускаемая уведомлением Сетки событий Azure:
 
@@ -112,7 +113,7 @@ akvrotation-fnapp        akvrotation       eastus      Microsoft.Web/sites
 akvrotation-fnapp        akvrotation       eastus      Microsoft.insights/components
 ```
 
-Сведения о создании приложения-функции и использовании управляемого удостоверения для доступа к Key Vault см. в статьях [Создание приложения-функции на портале Azure](../../azure-functions/functions-create-function-app-portal.md) и [Выполнение проверки подлинности Key Vault с использованием управляемого удостоверения](../general/managed-identity.md).
+Дополнительные сведения о создании приложения-функции и использовании управляемого удостоверения для доступа к Key Vault см. в статьях [Создание приложения-функции на портале Azure](/azure/azure-functions/functions-create-function-app-portal), [Использование управляемых удостоверений в Службе приложений и Функциях Azure](/azure/app-service/overview-managed-identity) и [Назначение политики доступа к Key Vault с помощью портала Azure](../general/assign-access-policy-portal.md).
 
 ### <a name="rotation-function"></a>Функция ротации
 Развернутая на предыдущем шаге функция использует событие, чтобы активировать ротацию секрета путем обновления Key Vault и базы данных SQL. 

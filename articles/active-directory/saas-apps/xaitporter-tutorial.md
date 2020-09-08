@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 05/03/2019
 ms.author: jeedes
-ms.openlocfilehash: bdea7fc3c295016204a80772bdf367dda7e194fb
-ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
+ms.openlocfilehash: 80900f8a63d29e8c36ec190945efc3c44f713a3f
+ms.sourcegitcommit: 58d3b3314df4ba3cabd4d4a6016b22fa5264f05a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88546310"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89296912"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-xaitporter"></a>Руководство по интеграции Azure Active Directory с XaitPorter
 
@@ -112,7 +112,7 @@ ms.locfileid: "88546310"
 
     ![Ссылка для скачивания сертификата](common/copy-metadataurl.png)
 
-6. Предоставьте **IP-адрес** или **URL-адрес метаданных федерации приложений**[группе поддержки SmartRecruiters](https://www.smartrecruiters.com/about-us/contact-us/), чтобы она могла проверить, доступен ли этот IP-адрес вашему экземпляру XaitPorter, настроив список разрешений на своей стороне. 
+6. Предоставьте **IP-адрес** или **URL-адрес метаданных федерации приложений** специалистам [службы поддержки SmartRecruiters](https://www.smartrecruiters.com/about-us/contact-us/), чтобы они могли проверить, доступен ли этот IP-адрес вашему экземпляру XaitPorter, настроив рекомендованный список на своей стороне. 
 
 ### <a name="configure-xaitporter-single-sign-on"></a>Настройка единого входа в XaitPorter
 
@@ -213,4 +213,3 @@ ms.locfileid: "88546310"
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
 - [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
-

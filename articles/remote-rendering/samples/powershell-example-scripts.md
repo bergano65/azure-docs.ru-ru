@@ -5,12 +5,13 @@ author: florianborn71
 ms.author: flborn
 ms.date: 02/12/2020
 ms.topic: sample
-ms.openlocfilehash: 07055025eff9ab81c7321624daed9b4a6e993a60
-ms.sourcegitcommit: 54d8052c09e847a6565ec978f352769e8955aead
+ms.custom: devx-track-azurepowershell
+ms.openlocfilehash: fbac172952c9feea92341dbc028567235b9250bc
+ms.sourcegitcommit: 656c0c38cf550327a9ee10cc936029378bc7b5a2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88506517"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89075279"
 ---
 # <a name="example-powershell-scripts"></a>Примеры скриптов PowerShell
 
@@ -20,6 +21,9 @@ ms.locfileid: "88506517"
 - [REST API сеанса](../how-tos/session-rest-api.md).
 
 [Репозиторий примеров для ARR](https://github.com/Azure/azure-remote-rendering) содержит в папке *Scripts* примеры скриптов для взаимодействия с REST API этой службы. В этой статье описывается их использование.
+
+> [!CAUTION]
+Слишком частые вызовы функций REST API приведут к тому, что сервер начнет использовать регулирование и в итоге вернет ошибку. В этом случае идентификатор кода ошибки HTTP будет таким: 429 ("Слишком много запросов"). Поэтому очень важно, чтобы между последовательными вызовами была задержка в **5–10 секунд**.
 
 ## <a name="prerequisites"></a>Предварительные требования
 

@@ -42,7 +42,7 @@
               href: ./iot-edge-module.md
             - name: Консультационные услуги
               href: ./consulting-services.md
-            - name: "Office\_365, Dynamics\_365 и Power BI"
+            - name: "Microsoft\_365, Dynamics\_365 и Power\_BI"
               href: ./appsource-offer-publishing-guide.md
             - name: Включение аутентификации предложения с помощью Azure AD
               href: ./enable-appsource-marketplace-using-azure-ad.md
@@ -60,7 +60,7 @@
             - name: Поставщики облачных решений
               href: ./cloud-solution-providers.md
             - name: Руководство по регистрации для участия в программе Connect
-              href: ./cloud-partner-portal/business-applications-isv-program.md
+              href: ./business-applications-isv-program.md
         - name: Преимущества использования Marketplace
           href: ./gtm-your-marketplace-benefits.md
           items:

@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 09/11/2019
 ms.author: jeedes
-ms.openlocfilehash: 08f5829eb624f13be44bba633f3188d8d9876058
-ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
+ms.openlocfilehash: 99f29f884997fbdd4761a5aa2d1f3a8bc15aa797
+ms.sourcegitcommit: c6b9a46404120ae44c9f3468df14403bcd6686c1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88547466"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88891612"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-jira-saml-sso-by-microsoft"></a>Руководство по Интеграция единого входа Azure Active Directory с JIRA SAML SSO by Microsoft
 
@@ -37,7 +37,7 @@ ms.locfileid: "88547466"
 Чтобы настроить интеграцию Azure AD с JIRA SAML SSO by Microsoft, вам потребуется следующее:
 
 - Подписка Azure AD. Если у вас нет подписки, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/).
-- В 64-разрядной версии Windows должен быть установлен и настроен выпуск JIRA Core и JIRA Software 6.4–8.11.0 или JIRA Service Desk 3.0–4.8.0.
+- В 64-разрядной версии Windows должен быть установлен и настроен выпуск JIRA Core и JIRA Software 6.4–8.11.0 или JIRA Service Desk 3.0–4.11.1.
 - поддержка HTTPS на сервере JIRA;
 - поддерживаемые версии подключаемого модуля JIRA указаны в разделе ниже;
 - сервер JIRA должен быть доступен через Интернет, в частности, на странице входа Azure AD для аутентификации, и должен иметь возможность получать маркер из Azure AD;
@@ -59,7 +59,7 @@ ms.locfileid: "88547466"
 ## <a name="supported-versions-of-jira"></a>Поддерживаемые версии JIRA
 
 * JIRA Core и JIRA Software: с 6.4 по 8.11.0
-* JIRA Service Desk 3.0.0–4.8.0;
+* JIRA Service Desk 3.0.0–4.11.1;
 * JIRA поддерживает также 5.2. Дополнительные сведения см. в статье об [использовании единого входа Microsoft Azure Active Directory для JIRA 5.2](jira52microsoft-tutorial.md).
 
 > [!NOTE]

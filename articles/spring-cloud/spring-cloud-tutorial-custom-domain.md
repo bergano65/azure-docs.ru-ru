@@ -7,12 +7,12 @@ ms.topic: tutorial
 ms.date: 03/19/2020
 ms.author: brendm
 ms.custom: devx-track-java
-ms.openlocfilehash: d6e4b77c6eba976de052295e4a0001924ad90644
-ms.sourcegitcommit: f353fe5acd9698aa31631f38dd32790d889b4dbb
+ms.openlocfilehash: 05107d0246be2273c09e91573bd30a4108ac7795
+ms.sourcegitcommit: 58d3b3314df4ba3cabd4d4a6016b22fa5264f05a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87374207"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89290333"
 ---
 # <a name="map-an-existing-custom-domain-to-azure-spring-cloud"></a>Сопоставление существующего личного домена с Azure Spring Cloud
 Технология DNS (служба доменных имен) предназначена для хранения имен узлов в сети. В этом руководстве показано, как с помощью записи CNAME сопоставить домен (например, www.contoso.com). Также мы защитим домен с помощью сертификата и покажем, как применить протокол TLS (или SSL). 
@@ -20,7 +20,7 @@ ms.locfileid: "87374207"
 Сертификаты используются для шифрования веб-трафика. Сертификаты TLS/SSL можно хранить в Azure Key Vault. 
 
 ## <a name="prerequisites"></a>Предварительные требования
-* Приложение, развернутое в Azure Spring Cloud (можно воспользоваться статьей [Краткое руководство. Запуск существующего приложения Azure Spring Cloud с помощью портала Azure](spring-cloud-quickstart-launch-app-portal.md) или применить любое существующее приложение).
+* Приложение, развернутое в Azure Spring Cloud (можно воспользоваться статьей [Краткое руководство. Запуск существующего приложения Azure Spring Cloud с помощью портала Azure](spring-cloud-quickstart.md) или применить любое существующее приложение).
 * Доменное имя с доступом к реестру DNS для поставщика домена, например GoDaddy.
 * Закрытый сертификат (т. е. ваш самозаверяющий сертификат) стороннего поставщика. Этот сертификат должен соответствовать домену.
 * Развернутый экземпляр [Azure Key Vault](https://docs.microsoft.com/azure/key-vault/key-vault-overview).
@@ -145,7 +145,7 @@ az spring-cloud app custom-domain list --app <app name>
 1. В поле **Сертификат** выберите или импортируйте сертификат.
 1. Выберите команду **Сохранить**.
 
-    ![Добавление привязки SSL](./media/custom-dns-tutorial/add-ssl-binding.png)
+    ![Добавление SSL-привязки 1](./media/custom-dns-tutorial/add-ssl-binding.png)
 
 Вы также можете использовать Azure CLI, чтобы **добавить привязки SSL**.
 ```
@@ -154,14 +154,14 @@ az spring-cloud app custom-domain update --domain-name <domain name> --certifica
 
 После успешного добавления привязки SSL состояние домена станет "безопасным": **Работоспособно**. 
 
-![Добавление привязки SSL](./media/custom-dns-tutorial/secured-domain-state.png)
+![Добавление SSL-привязки 2](./media/custom-dns-tutorial/secured-domain-state.png)
 
 ## <a name="enforce-https"></a>Принудительное использование HTTPS
 По умолчанию любой пользователь по-прежнему может обращаться к приложению по протоколу HTTP, но вы можете перенаправить все HTTP-запросы на порт HTTPS.
 
 Для этого на странице приложения в области навигации слева выберите **Личный домен**. Здесь для параметра **Только HTTPS** установите значение *True*.
 
-![Добавление привязки SSL](./media/custom-dns-tutorial/enforce-http.png)
+![Добавление SSL-привязки 3](./media/custom-dns-tutorial/enforce-http.png)
 
 Вы также можете использовать Azure CLI для принудительного применения HTTPS.
 ```

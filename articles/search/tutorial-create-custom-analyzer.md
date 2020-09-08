@@ -8,12 +8,12 @@ ms.author: delegenz
 ms.service: cognitive-search
 ms.topic: tutorial
 ms.date: 06/22/2020
-ms.openlocfilehash: a9c2a5beae8a9206554dd6c432c1d8442b652696
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: e714c58827ebb4ee7e50696db27644fa65a73af1
+ms.sourcegitcommit: 58d3b3314df4ba3cabd4d4a6016b22fa5264f05a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87021891"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89290316"
 ---
 # <a name="tutorial-create-a-custom-analyzer-for-phone-numbers"></a>Руководство по Создание пользовательского анализатора телефонных номеров
 
@@ -21,7 +21,7 @@ ms.locfileid: "87021891"
 
 В некоторых случаях, например при использовании текстового поля для ввода, улучшить результаты поиска можно с помощью правильно подобранного [языкового анализатора](index-add-language-analyzers.md). Но в некоторых сценариях, например при точном поиске телефонных номеров, URL-адресов или сообщений электронной почты, применение пользовательских анализаторов будет более оптимальным.
 
-В этом руководстве используются [REST API](https://docs.microsoft.com/rest/api/searchservice/) Postman и Когнитивного поиска Azure, чтобы вы могли:
+В этом руководстве используются [REST API](/rest/api/searchservice/) Postman и Когнитивного поиска Azure, чтобы вы могли:
 
 > [!div class="checklist"]
 > * узнать о принципах работы анализаторов;
@@ -225,7 +225,7 @@ GET https://<YOUR-SEARCH-SERVICE-NAME>.search.windows.net/indexes/tutorial-basic
 
 ## <a name="4---debug-search-results"></a>4\. Отладка результатов поиска
 
-Чтобы понять, чем вызваны такие результаты, важно знать, как работают анализаторы. Мы можем протестировать анализатор по умолчанию с использованием [API анализа текста](https://docs.microsoft.com/rest/api/searchservice/test-analyzer), а затем создать анализатор, соответствующий нашим потребностям.
+Чтобы понять, чем вызваны такие результаты, важно знать, как работают анализаторы. Мы можем протестировать анализатор по умолчанию с использованием [API анализа текста](/rest/api/searchservice/test-analyzer), а затем создать анализатор, соответствующий нашим потребностям.
 
 ### <a name="how-analyzers-work"></a>Принципы работы анализаторов
 
@@ -239,7 +239,7 @@ GET https://<YOUR-SEARCH-SERVICE-NAME>.search.windows.net/indexes/tutorial-basic
 
 На схеме ниже можно видеть, как эти три компонента создают обрабатывают последовательность:
 
-  ![Схема процесса анализатора](media/tutorial-create-custom-analyzer/analyzers-explained.png)
+  ![Схема процесса анализатора для разбивки предложения на лексемы](media/tutorial-create-custom-analyzer/analyzers-explained.png)
 
 Затем эти маркеры сохраняются в инвертированном индексе, который позволяет выполнять быстрый полнотекстовый поиск.  Инвертированный индекс обеспечивает поддержку полнотекстового поиска благодаря сопоставлению всех уникальных терминов, извлеченных во время лексического анализа, с документами, в которых они встречаются. Пример можно видеть на схеме ниже:
 
@@ -251,7 +251,7 @@ GET https://<YOUR-SEARCH-SERVICE-NAME>.search.windows.net/indexes/tutorial-basic
 1. В инвертированном индексе выполняется поиск документов с совпадающими терминами.
 1. Наконец, полученные документы ранжируются с применением [алгоритма сходства](index-ranking-similarity.md).
 
-  ![Схема процесса анализатора](media/tutorial-create-custom-analyzer/query-architecture-explained.png)
+  ![Схема процесса анализатора с ранжированием сходных элементов](media/tutorial-create-custom-analyzer/query-architecture-explained.png)
 
 Если термины запроса не соответствуют терминам в инвертированном индексе, запрос не возвращает результаты. Чтобы узнать больше о принципах работы запросов, см. статью о [полнотекстовом поиске](search-lucene-query-architecture.md).
 
@@ -260,7 +260,7 @@ GET https://<YOUR-SEARCH-SERVICE-NAME>.search.windows.net/indexes/tutorial-basic
 
 ### <a name="test-analyzer-using-the-analyze-text-api"></a>Тестирование анализатора с помощью API анализа текста
 
-Когнитивный поиск Azure включает [API анализа текста](https://docs.microsoft.com/rest/api/searchservice/test-analyzer), который позволяет тестировать анализаторы и изучать то, как они обрабатывают текст.
+Когнитивный поиск Azure включает [API анализа текста](/rest/api/searchservice/test-analyzer), который позволяет тестировать анализаторы и изучать то, как они обрабатывают текст.
 
 API анализа текста вызывается с помощью следующего запроса:
 

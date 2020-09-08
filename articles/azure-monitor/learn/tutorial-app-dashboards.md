@@ -7,12 +7,12 @@ author: lgayhardt
 ms.author: lagayhar
 ms.date: 07/3/2019
 ms.custom: mvc
-ms.openlocfilehash: 49984349ce8d9d1bc43778c0042dd21485eded15
-ms.sourcegitcommit: 2ff0d073607bc746ffc638a84bb026d1705e543e
+ms.openlocfilehash: 1b6fdbdfaef601751961d022858545d731fe62a8
+ms.sourcegitcommit: b33c9ad17598d7e4d66fe11d511daa78b4b8b330
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87829685"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88856010"
 ---
 # <a name="create-custom-kpi-dashboards-using-azure-application-insights"></a>Создание настраиваемых панелей мониторинга ключевых показателей эффективности с помощью Azure Application Insights
 
@@ -40,6 +40,9 @@ ms.locfileid: "87829685"
 Войдите на портал Azure по адресу [https://portal.azure.com](https://portal.azure.com).
 
 ## <a name="create-a-new-dashboard"></a>Создание панели мониторинга
+> [!WARNING]
+> Если вы перемещаете ресурс Application Insights в другую группу ресурсов или подписку, вам потребуется вручную обновить панель мониторинга, удалив старые плитки и закрепив новые из того же ресурса Application Insights в новом расположении. 
+
 Одна панель мониторинга может содержать ресурсы из нескольких приложений, групп ресурсов и подписок.  Начните работу с руководством с создания панели мониторинга для приложения.  
 
 1. На панели мониторинга выберите **Новая панель мониторинга**.

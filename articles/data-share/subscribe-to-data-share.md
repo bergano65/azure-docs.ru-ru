@@ -6,12 +6,12 @@ ms.author: jife
 ms.service: data-share
 ms.topic: tutorial
 ms.date: 08/14/2020
-ms.openlocfilehash: 409f143ce67e301e3b2a973d8d2db80380fbd50e
-ms.sourcegitcommit: ef055468d1cb0de4433e1403d6617fede7f5d00e
+ms.openlocfilehash: 104654a721912324cdc8ea636e8b4e75765e73f7
+ms.sourcegitcommit: bcda98171d6e81795e723e525f81e6235f044e52
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/16/2020
-ms.locfileid: "88258648"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89268899"
 ---
 # <a name="tutorial-accept-and-receive-data-using-azure-data-share"></a>Руководство по Прием и получение данных с помощью Azure Data Share  
 
@@ -38,7 +38,7 @@ ms.locfileid: "88258648"
 * Разрешение на запись в учетную запись хранения, которая имеется в *Microsoft.Storage/storageAccounts/write*. Это разрешение назначено роли участника. 
 * Разрешение на добавление назначения ролей в учетную запись хранения, имеющуюся в *Microsoft.Authorization/role assignments/write*. Это разрешение назначено роли владельца.  
 
-### <a name="receive-data-into-a-sql-based-source"></a>Получение данных в источник на основе SQL
+### <a name="receive-data-into-a-sql-based-target"></a>Поступление данных в целевое расположение на основе SQL:
 
 * Разрешение на запись в базы данных на сервере SQL, которое присутствует в *Microsoft.Sql/servers/databases/write*. Это разрешение назначено роли участника. 
 * Разрешение на доступ управляемого удостоверения общего ресурса данных к Базе данных SQL Azure или Хранилищу данных SQL Azure. Это можно обеспечить следующим образом. 
@@ -78,7 +78,7 @@ ms.locfileid: "88258648"
 
    Чтобы открыть приглашение непосредственно из портала Azure, найдите на портале параметр **Приглашения Data Share**. Вы перейдете к списку приглашений Data Share.
 
-   ![Приглашения](./media/invitations.png "Список приглашений") 
+   ![Список приглашений](./media/invitations.png "Список приглашений") 
 
 1. Выберите общий ресурс для просмотра. 
 

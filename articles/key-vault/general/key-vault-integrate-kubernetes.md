@@ -1,19 +1,22 @@
 ---
 title: Интеграция Azure Key Vault с Kubernetes
 description: В рамках этого учебника вы получите доступ к секретам Azure Key Vault с помощью драйвера интерфейса хранилища контейнера (CSI) хранилища секретов, а затем подключитесь к объектам pod Kubernetes.
-author: rkarlin
-ms.author: rkarlin
+author: ShaneBala-keyvault
+ms.author: sudbalas
 ms.service: key-vault
 ms.topic: tutorial
-ms.date: 06/04/2020
-ms.openlocfilehash: 1942576037c7367612580a04d4187ccf4655aade
-ms.sourcegitcommit: 56cbd6d97cb52e61ceb6d3894abe1977713354d9
+ms.date: 08/25/2020
+ms.openlocfilehash: bfcaf9d4b1d03457f2e4cddd2e0eaf9d9d58eee2
+ms.sourcegitcommit: 927dd0e3d44d48b413b446384214f4661f33db04
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/20/2020
-ms.locfileid: "88685890"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88869190"
 ---
 # <a name="tutorial-configure-and-run-the-azure-key-vault-provider-for-the-secrets-store-csi-driver-on-kubernetes"></a>Руководство по настройке и запуску поставщика Azure Key Vault для драйвера CSI хранилища секретов в Kubernetes
+
+> [!IMPORTANT]
+> Драйвер CSI — это проект с открытым исходным кодом, и он не поддерживается службой технической поддержки Azure. Все отзывы и сведения об ошибках, связанные с интеграцией Key Vault с драйвером CSI, отправляйте по ссылке на сайт GitHub, приведенной внизу на этой странице. Это средство предоставляется пользователям для самостоятельной установки на кластерах и сбора отзывов представителей сообщества.
 
 В рамках этого учебника вы получите доступ к секретам Azure Key Vault с помощью драйвера интерфейса хранилища контейнера (CSI) хранилища секретов, а затем подключите секреты к объектам pod Kubernetes.
 

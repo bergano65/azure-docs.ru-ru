@@ -1,18 +1,18 @@
 ---
 title: Руководство. Настройка ролей для служб Azure Analysis Services | Документация Майкрософт
-description: Узнайте, как настроить роли администратора и пользователя в Azure Analysis Services с помощью портала Azure или SQL Server Management Studio.
+description: Из этого руководства вы узнаете, как настроить роли администратора и пользователя в Azure Analysis Services с помощью портала Azure или SQL Server Management Studio.
 author: minewiskan
 ms.service: azure-analysis-services
 ms.topic: tutorial
-ms.date: 04/15/2020
+ms.date: 08/31/2020
 ms.author: owend
 ms.reviewer: owend
-ms.openlocfilehash: 6e757260c7cd8945ff75dd0e760f3afeffd992f9
-ms.sourcegitcommit: 62717591c3ab871365a783b7221851758f4ec9a4
+ms.openlocfilehash: 0a19a0ed359cae61778866303d864d60e0e7606e
+ms.sourcegitcommit: d68c72e120bdd610bb6304dad503d3ea89a1f0f7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/22/2020
-ms.locfileid: "84016395"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89229367"
 ---
 # <a name="tutorial-configure-server-administrator-and-user-roles"></a>Руководство по Настройка ролей администратора и пользователя сервера
 
@@ -63,7 +63,7 @@ ms.locfileid: "84016395"
 
 3. В **обозревателе объектов** разверните узел объектов сервера. Щелкните имя сервера правой кнопкой мыши, чтобы открыть его свойства.
    
-    ![Подключение в среде SSMS](./media/analysis-services-tutorial-roles/aas-connect-ssms-objexp.png)
+    ![Обозреватель объектов в SSMS](./media/analysis-services-tutorial-roles/aas-connect-ssms-objexp.png)
 
 ## <a name="add-a-user-account-to-the-server-administrator-role"></a>Добавление учетной записи пользователя к роли администратора сервера
 

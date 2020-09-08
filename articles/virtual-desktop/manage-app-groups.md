@@ -6,12 +6,12 @@ ms.topic: tutorial
 ms.date: 08/20/2020
 ms.author: helohr
 manager: lizross
-ms.openlocfilehash: e495288bcd2c966dab49925a55507ab1f2379f64
-ms.sourcegitcommit: d18a59b2efff67934650f6ad3a2e1fe9f8269f21
+ms.openlocfilehash: 21dba3c9beeefa2b25b8038f6cbd0ec77f947774
+ms.sourcegitcommit: d68c72e120bdd610bb6304dad503d3ea89a1f0f7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/20/2020
-ms.locfileid: "88659489"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89226732"
 ---
 # <a name="tutorial-manage-app-groups-with-the-azure-portal"></a>Руководство по управлению группами приложений с помощью портала Azure
 
@@ -31,6 +31,8 @@ ms.locfileid: "88659489"
 Если вы уже создали виртуальные машины для пула узлов и узла сеансов с помощью портала Azure или PowerShell, можете добавить группы приложений на портале Azure с помощью следующей процедуры.
 
 1.  Войдите на [портал Azure](https://portal.azure.com/).
+   
+   >![ПРИМЕЧАНИЕ] Если вы выполняете вход на портал US Gov, перейдите по ссылке [https://portal.azure.us/](https://portal.azure.us/).
 
 2.  Найдите и выберите **Виртуальный рабочий стол Windows**.
 

@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 09/10/2019
 ms.author: jeedes
-ms.openlocfilehash: 3b3f279b28bf78114556623865a9f132174c6e41
-ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
+ms.openlocfilehash: 0348e5c773f37606a3975a8e62e556bef291a758
+ms.sourcegitcommit: 58d3b3314df4ba3cabd4d4a6016b22fa5264f05a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88550549"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89297320"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-hightail"></a>Руководство по интеграции единого входа Azure Active Directory с Hightail
 
@@ -109,7 +109,7 @@ ms.locfileid: "88550549"
     ![Копирование URL-адресов настройки](common/copy-configuration-urls.png)
 
 > [!NOTE]
-> Перед настройкой единого входа в приложение Hightail внесите почтовый домен Hightail в список разрешенных, чтобы все пользователи этого домена могли использовать функции единого входа.
+> Перед настройкой единого входа в приложение Hightail добавьте домен электронной почты Hightail в список разрешенных, чтобы все пользователи этого домена могли использовать функции единого входа.
 
 ### <a name="create-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
 

@@ -9,12 +9,12 @@ ms.service: machine-learning
 ms.subservice: core
 ms.topic: tutorial
 ms.date: 03/26/2020
-ms.openlocfilehash: b4167f8958f7a1613c4d48625f7a79a02c7588d0
-ms.sourcegitcommit: 8def3249f2c216d7b9d96b154eb096640221b6b9
+ms.openlocfilehash: 4028d6732220dba4848c88306a501ce22af7487a
+ms.sourcegitcommit: d7352c07708180a9293e8a0e7020b9dd3dd153ce
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87543407"
+ms.lasthandoff: 08/30/2020
+ms.locfileid: "89144033"
 ---
 # <a name="tutorial-train-and-deploy-a-model-from-the-cli"></a>Руководство по Обучение и развертывание моделей из интерфейса командной строки
 [!INCLUDE [applies-to-skus](../../includes/aml-applies-to-basic-enterprise-sku.md)]
@@ -300,7 +300,7 @@ data:
 > [!TIP]
 > Хотя можно вручную создать файл runconfig, в этом примере он был создан с помощью файла `generate-runconfig.py`, включенного в репозиторий. Этот файл получает ссылку на зарегистрированный набор данных, создает конфигурацию запуска программным способом, а затем сохраняет ее в файле.
 
-Дополнительные сведения о файлах конфигурации запуска см. в разделе [Установка и использование целевых объектов вычислений для обучения модели](how-to-set-up-training-targets.md#create-run-configuration-and-submit-run-using-azure-machine-learning-cli). Полный справочник по JSON см. в [runconfigschema.json](https://github.com/microsoft/MLOps/blob/b4bdcf8c369d188e83f40be8b748b49821f71cf2/infra-as-code/runconfigschema.json).
+Дополнительные сведения о файлах конфигурации запуска см. в разделе [Использование целевых объектов вычислений для обучения модели](how-to-set-up-training-targets.md#whats-a-run-configuration). Полный справочник по JSON см. в [runconfigschema.json](https://github.com/microsoft/MLOps/blob/b4bdcf8c369d188e83f40be8b748b49821f71cf2/infra-as-code/runconfigschema.json).
 
 ## <a name="submit-the-training-run"></a>Отправка обучающего запуска
 

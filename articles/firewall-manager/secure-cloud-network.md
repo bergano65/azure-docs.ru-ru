@@ -5,14 +5,14 @@ services: firewall-manager
 author: vhorne
 ms.service: firewall-manager
 ms.topic: tutorial
-ms.date: 07/29/2020
+ms.date: 08/28/2020
 ms.author: victorh
-ms.openlocfilehash: 458ebe14e77c7b190a5c4cdd9b408396589d5d27
-ms.sourcegitcommit: e71da24cc108efc2c194007f976f74dd596ab013
+ms.openlocfilehash: 9da1340d08d4eaab3ba208c667861093ef0f799b
+ms.sourcegitcommit: 656c0c38cf550327a9ee10cc936029378bc7b5a2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87420827"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89079121"
 ---
 # <a name="tutorial-secure-your-virtual-hub-using-azure-firewall-manager"></a>Руководство по Защита виртуального концентратора с помощью Диспетчера брандмауэра Azure
 
@@ -32,6 +32,10 @@ ms.locfileid: "87420827"
 > * Развертывание серверов
 > * Создание политики брандмауэра и защита концентратора
 > * тестирование брандмауэра.
+
+## <a name="prerequisites"></a>Предварительные требования
+
+Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
 ## <a name="create-a-hub-and-spoke-architecture"></a>Создание звездообразной архитектуры
 
@@ -270,6 +274,10 @@ Update-AzVirtualHubVnetConnection -ResourceGroupName fw-manager `
 
 Итак, теперь вы убедились в том, что правило сети брандмауэра работает:
 * Удаленный рабочий стол можно подключить к серверу, расположенному в другой виртуальной сети.
+
+## <a name="clean-up-resources"></a>Очистка ресурсов
+
+Когда вы протестируете ресурсы брандмауэра, удалите группу ресурсов **fw-manager** со всеми ресурсами, связанными с брандмауэром.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

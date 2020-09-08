@@ -1,5 +1,5 @@
 ---
-title: Написание кода для клиентского приложения
+title: Руководство. Написание кода для клиентского приложения
 titleSuffix: Azure Digital Twins
 description: Руководство по написанию минимального объема кода для клиентского приложения с помощью пакета SDK для .NET (C# ).
 author: baanders
@@ -7,16 +7,23 @@ ms.author: baanders
 ms.date: 05/05/2020
 ms.topic: tutorial
 ms.service: digital-twins
-ms.openlocfilehash: 52a22dd215769208b60f180b576ae5763d67eade
-ms.sourcegitcommit: 5b6acff3d1d0603904929cc529ecbcfcde90d88b
+ms.openlocfilehash: c000d48043a46ecdbdfee263cc5c8ce877f66b4b
+ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/21/2020
-ms.locfileid: "88723475"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88923710"
 ---
-# <a name="coding-with-the-azure-digital-twins-apis"></a>Написание кода с помощью API Azure Digital Twins
+# <a name="tutorial-coding-with-the-azure-digital-twins-apis"></a>Руководство по Написание кода с помощью API Azure Digital Twins
 
 Часто разработчики, работающие с Azure Digital Twins, пишут клиентское приложение для взаимодействия со своим экземпляром службы Azure Digital Twins. Этот учебник предназначен для разработчиков и содержит вводные сведения о программировании для службы Azure Digital Twins с помощью [клиентской библиотеки Digital Twins Интернета вещей Azure для .NET (C#)](https://github.com/Azure/azure-sdk-for-net/tree/master/sdk/digitaltwins/Azure.DigitalTwins.Core). В нем пошагово описывается процесс написания консольного клиентского приложения на C# с самого начала.
+
+> [!div class="checklist"]
+> * Настройка проекта
+> * Начало создания кода проекта   
+> * Полный пример кода
+> * Очистка ресурсов
+> * Дальнейшие действия
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -48,7 +55,7 @@ dotnet new console
 
 ```cmd/sh
 dotnet add package Azure.DigitalTwins.Core --version 1.0.0-preview.3
-dotnet add package Azure.identity --version 1.1.1
+dotnet add package Azure.identity
 ```
 
 Первая зависимость — [клиентская библиотека Digital Twins Интернета вещей Azure для .NET](https://github.com/Azure/azure-sdk-for-net/tree/master/sdk/digitaltwins/Azure.DigitalTwins.Core). Вторая зависимость предоставляет инструменты для проверки подлинности в Azure.
@@ -419,7 +426,6 @@ using System.Threading.Tasks;
 using System.IO;
 using System.Collections.Generic;
 using Azure;
-using Azure.DigitalTwins.Core.Models;
 using Azure.DigitalTwins.Core.Serialization;
 using System.Text.Json;
 
@@ -532,24 +538,7 @@ namespace minimal
  
 Экземпляр из этого руководства можно использовать при работе со следующим руководством [ *Изучение Azure Digital Twins с помощью примера клиентского приложения*](tutorial-command-line-app.md). Если вы планируете продолжить работу со следующим учебником, то можете сохранить настроенный здесь экземпляр Azure Digital Twins.
  
-Если ресурсы, созданные для этого учебника, вам больше не нужны, можете удалить их.
-
-В [Azure Cloud Shell](https://shell.azure.com) можно удалить все ресурсы Azure в группе ресурсов с помощью команды [az group delete](https://docs.microsoft.com/cli/azure/group?view=azure-cli-latest#az-group-delete). При этом удаляется группа ресурсов и экземпляр Azure Digital Twins.
-
-> [!IMPORTANT]
-> Удаление группы ресурсов — процесс необратимый. Группа ресурсов и все содержащиеся в ней ресурсы удаляются без возможности восстановления. Будьте внимательны, чтобы случайно не удалить не ту группу ресурсов или не те ресурсы. 
-
-Откройте Azure Cloud Shell и выполните следующую команду, чтобы удалить группу ресурсов и все ее содержимое.
-
-```azurecli-interactive
-az group delete --name <your-resource-group>
-```
-
-Затем удалите регистрацию приложения Azure Active Directory, которую вы создали для своего клиентского приложения, с помощью следующей команды:
-
-```azurecli
-az ad app delete --id <your-application-ID>
-```
+[!INCLUDE [digital-twins-cleanup-basic.md](../../includes/digital-twins-cleanup-basic.md)]
 
 Наконец, удалите папку проекта, созданную на локальном компьютере.
 
@@ -561,7 +550,3 @@ az ad app delete --id <your-application-ID>
 
 > [!div class="nextstepaction"]
 > [*Руководство. Изучение Azure Digital Twins с помощью примера клиентского приложения*](tutorial-command-line-app.md)
-
-Вы также можете расширить знания, полученные при написании кода для этого учебника, изучив дополнительные операции управления в статьях с инструкциями или ознакомившись с документацией по концепциям, чтобы узнать больше об элементах, с которыми вы работали в этом учебнике.
-* [*Практическое руководство. Управление настраиваемыми моделями*](how-to-manage-model.md).
-* [*Основные понятия. Настраиваемые модели*](concepts-models.md).

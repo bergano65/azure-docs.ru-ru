@@ -9,14 +9,14 @@ ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
 ms.topic: tutorial
-ms.date: 03/12/2020
+ms.date: 08/17/2020
 ms.author: jeedes
-ms.openlocfilehash: 8bd41034d6d4cfa444ae4c0711fd46cb2924d009
-ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
+ms.openlocfilehash: d8a4a4360265cabc179c8cd41d0a33a0575f55a6
+ms.sourcegitcommit: b33c9ad17598d7e4d66fe11d511daa78b4b8b330
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88554095"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88855026"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-palo-alto-networks---admin-ui"></a>Руководство по Интеграция Azure Active Directory с Palo Alto Networks (пользовательский интерфейс администратора)
 
@@ -43,6 +43,7 @@ ms.locfileid: "88554095"
 
 * Palo Alto Networks (пользовательский интерфейс администратора) поддерживает единый вход инициированного **пакета обновления**.
 * Palo Alto Networks (пользовательский интерфейс администратора) поддерживает подготовку пользователей **JIT**.
+* После настройки Palo Alto Networks (пользовательский интерфейс администратора) вы можете применить функцию управления сеансом, которая в реальном времени защищает конфиденциальные данные вашей организации от кражи и несанкционированного доступа. Управление сеансом является расширением функции условного доступа. [Узнайте, как применять управление сеансами с помощью Microsoft Cloud App Security](https://docs.microsoft.com/cloud-app-security/proxy-deployment-any-app).
 
 ## <a name="adding-palo-alto-networks---admin-ui-from-the-gallery"></a>Добавление Palo Alto Networks (пользовательский интерфейс администратора) из коллекции.
 
@@ -55,8 +56,7 @@ ms.locfileid: "88554095"
 1. В разделе **Добавление из коллекции** введите **Palo Alto Networks (пользовательский интерфейс администратора)** в поле поиска.
 1. Выберите **Palo Alto Networks (пользовательский интерфейс администратора)** на панели результатов и добавьте это приложение. Подождите несколько секунд, пока приложение не будет добавлено в ваш клиент.
 
-## <a name="configure-and-test-azure-ad-single-sign-on"></a>Настройка и проверка единого входа в Azure AD
-
+## <a name="configure-and-test-azure-ad-sso"></a>Настройка и проверка единого входа Azure AD
 В этом разделе описана настройка и проверка единого входа Azure AD с помощью Palo Alto Networks (пользовательский интерфейс администратора) с использованием тестового пользователя **B.Simon**.
 Для правильной работы единого входа необходимо установить связь между пользователем Azure AD и соответствующим пользователем Palo Alto Networks (пользовательский интерфейс администратора).
 
@@ -116,6 +116,9 @@ ms.locfileid: "88554095"
     | username | user.userprincipalname |
     | adminrole | customadmin |
     | | |
+
+    > [!NOTE]
+    > Значение, используемое вместо _adminrole_, должно совпадать с именем роли, настроенной в **Palo Alto Networks**, как упоминалось на шаге 9. 
 
     > [!NOTE]
     > Дополнительные сведения об этих атрибутах см. в следующих статьях:
@@ -272,5 +275,3 @@ Palo Alto Networks (пользовательский интерфейс адми
 - [Пробное использование Palo Alto Networks (пользовательский интерфейс администратора) с Azure AD](https://aad.portal.azure.com/)
 
 - [Что такое управление сеансами в Microsoft Cloud App Security?](https://docs.microsoft.com/cloud-app-security/proxy-intro-aad)
-
-- [Защита приложений с помощью Управление условным доступом к приложениям Microsoft Cloud App Security](https://docs.microsoft.com/cloud-app-security/proxy-intro-aad)

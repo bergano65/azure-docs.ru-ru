@@ -10,12 +10,12 @@ author: peterclu
 ms.author: peterlu
 ms.date: 03/29/2020
 ms.custom: designer
-ms.openlocfilehash: c1d927583ecf0ac5684c607b7d203c3224fe87b1
-ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
+ms.openlocfilehash: c4fa5a2554f10a720c0f2241e17514e798cf7f4c
+ms.sourcegitcommit: d39f2cd3e0b917b351046112ef1b8dc240a47a4f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87318833"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88812943"
 ---
 # <a name="example-pipelines--datasets-for-azure-machine-learning-designer-preview"></a>Примеры конвейеров и наборов данных для конструктора Машинного обучения Azure (предварительная версия)
 
@@ -55,9 +55,9 @@ ms.locfileid: "87318833"
 
 1. После выполнения конвейера его можно проверить, а также просмотреть выходные данные для каждого модуля, чтобы получить дополнительные сведения. Чтобы просмотреть выходные данные модулей:
 
-   1. Выберите модуль на холсте.
+   1. На холсте щелкните правой кнопкой мыши модуль, выходные данные которого вы хотите просмотреть.
+   1. Выберите **Визуализировать**.
 
-   1. В области "Сведения о модуле" справа от холста щелкните элемент **Outputs + logs** (Выходные данные и журналы). Щелкните ![значок визуализации](./media/tutorial-designer-automobile-price-train-score/visualize-icon.png) графа, чтобы просмотреть результаты соответствующего модуля. 
 
    Используйте примеры в качестве отправных точек для ряда распространенных сценариев машинного обучения.
 

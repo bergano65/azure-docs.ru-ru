@@ -10,16 +10,16 @@ ms.subservice: general
 ms.topic: tutorial
 ms.date: 06/22/2020
 ms.author: jalichwa
-ms.openlocfilehash: 0d2ee8fbcb71d8703702f2c72e0bf629563667b9
-ms.sourcegitcommit: 8def3249f2c216d7b9d96b154eb096640221b6b9
+ms.openlocfilehash: bf4864e0c6342cbd4729d5b99479eb2ef1a2c48c
+ms.sourcegitcommit: 3246e278d094f0ae435c2393ebf278914ec7b97b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87542201"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89378225"
 ---
 # <a name="automate-the-rotation-of-a-secret-for-resources-with-two-sets-of-authentication-credentials"></a>Автоматизация смены секретов для ресурсов с двумя наборами учетных данных для аутентификации
 
-Лучшим способом проверки подлинности в службах Azure является использование [управляемого удостоверения](../general/managed-identity.md), но иногда его использование невозможно. В этих случаях используются ключи доступа или пароли. Ключи доступа и пароли следует часто сменять.
+Лучшим способом проверки подлинности в службах Azure является использование [управляемого удостоверения](../general/authentication.md), но иногда его использование невозможно. В этих случаях используются ключи доступа или пароли. Ключи доступа и пароли следует часто сменять.
 
 В этом учебнике описано, как автоматизировать периодическую смену секретов для баз данных и служб, которые используют два набора учетных данных для аутентификации. В частности, в этом учебнике с помощью функции, которая запускается уведомлением Сетки событий Azure, выполняется смена ключей учетной записи службы хранилища Azure, сохраненных в Azure Key Vault в виде секретов. , перечислены ниже.
 
@@ -91,7 +91,7 @@ akvrotationstorage2    akvrotation      eastus      Microsoft.Storage/storageAcc
 1. Выберите **Просмотр и создание**.
 1. Нажмите кнопку **Создать**
 
-   ![Проверка и создание](../media/secrets/rotation-dual/dual-rotation-2.png)
+   ![Проверка и создание первой учетной записи хранения](../media/secrets/rotation-dual/dual-rotation-2.png)
 
 Выполнив описанные выше действия, вы создадите учетную запись хранения, ферму серверов, приложение-функцию и Application Insights. После завершения развертывания вы увидите следующий экран: ![Развертывание завершено](../media/secrets/rotation-dual/dual-rotation-3.png)
 > [!NOTE]
@@ -136,13 +136,13 @@ az keyvault secret set --name storageKey --vault-name akvrotation-kv --value <ke
 ```azurecli
 az keyvault secret show --vault-name akvrotation-kv --name storageKey
 ```
-Обратите внимание, что `CredentialId` получает значение альтернативного `keyName`, а `value` создается повторно. ![Отображение секретов](../media/secrets/rotation-dual/dual-rotation-4.png)
+Обратите внимание, что `CredentialId` получает значение альтернативного `keyName`, а `value` создается повторно. ![Выходные данные команды az keyvault secret show для первой учетной записи хранения](../media/secrets/rotation-dual/dual-rotation-4.png)
 
 Получите ключи доступа для проверки значения:
 ```azurecli
 az storage account keys list -n akvrotationstorage 
 ```
-![Список ключей доступа](../media/secrets/rotation-dual/dual-rotation-5.png)
+![Выходные данные команды az storage account keys list для первой учетной записи хранения](../media/secrets/rotation-dual/dual-rotation-5.png)
 
 ## <a name="add-additional-storage-accounts-for-rotation"></a>Добавление дополнительных учетных записей хранения для смены секретов
 
@@ -164,7 +164,7 @@ az storage account keys list -n akvrotationstorage
 1. Выберите **Просмотр и создание**.
 1. Нажмите кнопку **Создать**
 
-   ![Проверка и создание](../media/secrets/rotation-dual/dual-rotation-7.png)
+   ![Проверка и создание второй учетной записи хранения](../media/secrets/rotation-dual/dual-rotation-7.png)
 
 ### <a name="add-another-storage-account-access-key-to-key-vault"></a>Добавление в Key Vault дополнительного ключа доступа к учетной записи хранения
 
@@ -190,13 +190,13 @@ az keyvault secret set --name storageKey2 --vault-name akvrotation-kv --value <k
 ```azurecli
 az keyvault secret show --vault-name akvrotation-kv --name storageKey2
 ```
-Обратите внимание, что `CredentialId` получает значение альтернативного `keyName`, а `value` создается повторно. ![Отображение секретов](../media/secrets/rotation-dual/dual-rotation-8.png)
+Обратите внимание, что `CredentialId` получает значение альтернативного `keyName`, а `value` создается повторно. ![Выходные данные команды az keyvault secret show для второй учетной записи хранения](../media/secrets/rotation-dual/dual-rotation-8.png)
 
 Получите ключи доступа для проверки значения:
 ```azurecli
 az storage account keys list -n akvrotationstorage 
 ```
-![Список ключей доступа](../media/secrets/rotation-dual/dual-rotation-9.png)
+![Выходные данные команды az storage account keys list для второй учетной записи хранения](../media/secrets/rotation-dual/dual-rotation-9.png)
 
 ## <a name="available-key-vault-dual-credential-rotation-functions"></a>Доступные функции Key Vault для смены дублирующихся учетных данных
 

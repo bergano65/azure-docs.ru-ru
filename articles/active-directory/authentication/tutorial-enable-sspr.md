@@ -10,12 +10,12 @@ ms.author: iainfou
 author: iainfoulds
 ms.reviewer: rhicock
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a4cdeff5e08813140c45d0a30877c3789d1bc21b
-ms.sourcegitcommit: 6fc156ceedd0fbbb2eec1e9f5e3c6d0915f65b8e
+ms.openlocfilehash: 30a51f4b07f62b6e3491f74de78ea0d04bbb1775
+ms.sourcegitcommit: 5a3b9f35d47355d026ee39d398c614ca4dae51c6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/21/2020
-ms.locfileid: "88718855"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89399979"
 ---
 # <a name="tutorial-enable-users-to-unlock-their-account-or-reset-passwords-using-azure-active-directory-self-service-password-reset"></a>Руководство по Включение самостоятельного сброса пароля для разблокировки учетных записей или сброса паролей пользователями в Azure Active Directory
 
@@ -37,7 +37,8 @@ ms.locfileid: "88718855"
 
 Для работы с этим учебником требуются следующие ресурсы и разрешения:
 
-* Рабочий клиент Azure AD, для которого включена по меньшей мере лицензия Azure AD Premium P1 или пробная лицензия.
+* Работающий клиент Azure AD, для которого включена по меньшей мере лицензия Azure AD Free или пробная лицензия. На уровне "Бесплатный" SSPR работает только для пользователей облака в Azure AD.
+    * В последующих руководствах этой серии для локального компонента обратной записи паролей потребуется лицензия Azure AD Premium P1 или пробная лицензия.
     * [Создайте ее бесплатно](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), если нужно.
 * Учетная запись с привилегиями *глобального администратора*.
 * Тестовый пользователь без прав администратора, пароль которого вам известен, например *testuser*. В этом учебнике вы протестируете работу пользователей с SSPR, используя эту учетную запись.

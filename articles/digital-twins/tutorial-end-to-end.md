@@ -1,5 +1,5 @@
 ---
-title: Подключение комплексного решения
+title: Руководство. Подключение комплексного решения
 titleSuffix: Azure Digital Twins
 description: В этом учебнике показывается, как подключить готовое решение Azure Digital Twins, управляемое данными устройства.
 author: baanders
@@ -7,22 +7,23 @@ ms.author: baanders
 ms.date: 4/15/2020
 ms.topic: tutorial
 ms.service: digital-twins
-ms.openlocfilehash: 0407046dcafb0dcc1872d5083669e09b378a75cd
-ms.sourcegitcommit: 2ff0d073607bc746ffc638a84bb026d1705e543e
+ms.openlocfilehash: b22505d5152b005a054d36fafb965006d04b201e
+ms.sourcegitcommit: 5a3b9f35d47355d026ee39d398c614ca4dae51c6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87827390"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89401781"
 ---
-# <a name="build-out-an-end-to-end-solution"></a>Создание комплексного решения
+# <a name="tutorial-build-out-an-end-to-end-solution"></a>Руководство по Создание комплексного решения
 
 Чтобы настроить полное готовое решение, управляемое динамическими данными из вашей среды, вы можете подключить свой экземпляр Azure Digital Twins к другим службам Azure, предназначенным для управления устройствами и данными.
 
 В этом учебнике вам предстоит выполнить следующее.
-* Настроить экземпляр Azure Digital Twins.
-* Познакомиться с примером сценария сборки и узнать, как реализуются предварительно созданные компоненты.
-* Использовать приложение [Функции Azure](../azure-functions/functions-overview.md) для маршрутизации имитированных данных телеметрии из устройства [Центра Интернета вещей](../iot-hub/about-iot-hub.md) в свойства цифрового двойника.
-* Распространить изменения с помощью **графа двойника**, обрабатывая уведомления цифрового двойника с помощью маршрутов, конечных точек и Функций Azure.
+> [!div class="checklist"]
+> * Настроить экземпляр Azure Digital Twins.
+> * Познакомиться с примером сценария сборки и узнать, как реализуются предварительно созданные компоненты.
+> * Использовать приложение [Функции Azure](../azure-functions/functions-overview.md) для маршрутизации имитированных данных телеметрии из устройства [Центра Интернета вещей](../iot-hub/about-iot-hub.md) в свойства цифрового двойника.
+> * Распространить изменения с помощью **графа двойника**, обрабатывая уведомления цифрового двойника с помощью маршрутов, конечных точек и Функций Azure.
 
 [!INCLUDE [Azure Digital Twins tutorial: sample prerequisites](../../includes/digital-twins-tutorial-sample-prereqs.md)]
 
@@ -365,6 +366,8 @@ az dt endpoint show --dt-name <your-Azure-Digital-Twins-instance> --endpoint-nam
 
 Теперь создайте маршрут Azure Digital Twins, который отправляет события в только что созданную конечную точку Azure Digital Twins.
 
+[!INCLUDE [digital-twins-known-issue-cloud-shell](../../includes/digital-twins-known-issue-cloud-shell.md)]
+
 ```azurecli
 az dt route create --dt-name <your-Azure-Digital-Twins-instance> --endpoint-name <your-Azure-Digital-Twins-endpoint> --route-name <name-for-your-Azure-Digital-Twins-route>
 ```
@@ -433,7 +436,7 @@ ObserveProperties thermostat67 Temperature room21 Temperature
 
 Если ресурсы, созданные для этого учебника, вам больше не нужны, можете удалить их. 
 
-В Azure Cloud Shell можно удалить все ресурсы Azure в группе ресурсов с помощью команды [az group delete](https://docs.microsoft.com/cli/azure/group?view=azure-cli-latest#az-group-delete). Это приведет к удалению всей группы ресурсов: экземпляра Azure Digital Twins, Центра Интернета вещей и регистрации устройства в этом центре, раздела Сетки событий и связанных с ним подписок, а также обоих приложений Функций Azure вместе со связанными с ними ресурсами, такими как хранилище.
+В [Azure Cloud Shell](https://shell.azure.com) можно удалить все ресурсы Azure в группе ресурсов с помощью команды [az group delete](https://docs.microsoft.com/cli/azure/group?view=azure-cli-latest#az-group-delete). Это приведет к удалению всей группы ресурсов, экземпляра Azure Digital Twins, Центра Интернета вещей и регистрации устройства в этом центре, раздела Сетки событий и связанных с ним подписок, а также приложения Функций Azure вместе с двумя функциями и связанными с ними ресурсами, такими как хранилище.
 
 > [!IMPORTANT]
 > Удаление группы ресурсов — процесс необратимый. Группа ресурсов и все содержащиеся в ней ресурсы удаляются без возможности восстановления. Будьте внимательны, чтобы случайно не удалить не ту группу ресурсов или не те ресурсы. 
@@ -448,14 +451,13 @@ az group delete --name <your-resource-group>
 az ad app delete --id <your-application-ID>
 ```
 
-Наконец, удалите скачанную папку примера проекта с локального компьютера.
+Наконец, удалите папку примера проекта, скачанную на локальный компьютер.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
 В этом учебнике вы создали готовый сценарий, который показывает, как можно управлять данными устройства Azure Digital Twins в реальном времени.
 
 Далее ознакомьтесь со следующей документацией по основным понятиям, чтобы больше узнать об элементах, с которыми вы работали в этом учебнике.
-* [*Основные понятия. Настраиваемые модели*](concepts-models.md).
 
-Кроме того, дополнительные сведения о процессах, описанных в этом руководстве, можно найти в статьях с инструкциями.
-* [*Практическое руководство. Использование CLI для Azure Digital Twins*](how-to-use-cli.md)
+> [!div class="nextstepaction"]
+> [*Основные понятия. Настраиваемые модели*](concepts-models.md).
