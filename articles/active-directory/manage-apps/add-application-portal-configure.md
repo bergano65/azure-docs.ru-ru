@@ -10,12 +10,12 @@ ms.topic: quickstart
 ms.workload: identity
 ms.date: 10/29/2019
 ms.author: kenwith
-ms.openlocfilehash: 1873cd14883e8b1a5174b8761e4a0bc9ba1ef872
-ms.sourcegitcommit: 628be49d29421a638c8a479452d78ba1c9f7c8e4
+ms.openlocfilehash: 1cc7d7755d22568b9b66216709dc0c3765d58657
+ms.sourcegitcommit: 58d3b3314df4ba3cabd4d4a6016b22fa5264f05a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/20/2020
-ms.locfileid: "88641863"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89300159"
 ---
 # <a name="quickstart-configure-properties-for-an-application-in-your-azure-active-directory-azure-ad-tenant"></a>Краткое руководство. Настройка свойств приложения в арендаторе Azure Active Directory (Azure AD)
 
@@ -31,7 +31,7 @@ ms.locfileid: "88641863"
 - Необязательное действие: Знакомство с инструкциями по [добавлению приложения](add-application-portal.md).
 
 >[!IMPORTANT]
->Не используйте рабочую среду для тестирования инструкций, приведенных в этом кратком руководстве.
+>Не используйте рабочую среду для проверки инструкций, приведенных в этом кратком руководстве.
 
 ## <a name="configure-app-properties"></a>Настройка свойств приложений
 
@@ -93,6 +93,6 @@ ms.locfileid: "88641863"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Перейдите к следующей статье, чтобы узнать, как настроить единый вход для приложения.
+Чтобы узнать, как назначить пользователей приложению, перейдите к следующей статье.
 > [!div class="nextstepaction"]
-> [Настройка единого входа](add-application-portal-setup-sso.md)
+> [Назначение пользователей приложению](add-application-portal-assign-users.md)

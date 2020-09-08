@@ -8,12 +8,12 @@ ms.devlang: azurecli
 ms.topic: quickstart
 ms.date: 3/18/2020
 ms.custom: mvc, devx-track-azurecli
-ms.openlocfilehash: 4f2c0a51f7c8d2441c9ddff2520dae2f5cc13565
-ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
+ms.openlocfilehash: 40f820a32c7848b5370cb664d706e9f20928bc5c
+ms.sourcegitcommit: 58d3b3314df4ba3cabd4d4a6016b22fa5264f05a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/31/2020
-ms.locfileid: "87495354"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89296487"
 ---
 # <a name="quickstart-create-an-azure-database-for-mysql-using-a-simple-azure-cli-command---az-mysql-up-preview"></a>Краткое руководство. Создание Базы данных Azure для MySQL с помощью простой команды Azure CLI — az mysql up (предварительная версия)
 
@@ -75,7 +75,7 @@ admin-password | Генерируемое системой | Пароль адм
 
 Сервер создается со следующими параметрами.
 
-- Создается правило брандмауэра devbox. Azure CLI пытается определить IP-адрес компьютера, с которого выполняется команда `az mysql up`, и помещает этот IP-адрес в список разрешений.
+- Создается правило брандмауэра devbox. Azure CLI пытается определить IP-адрес компьютера, с которого выполняется команда `az mysql up`, и разрешает доступ к этому IP-адресу.
 - Параметру "Разрешить доступ к службам Azure" задано значение "Вкл." Этот параметр настраивает брандмауэр сервера на прием подключений от всех ресурсов Azure, включая ресурсы вне вашей подписки.
 - Параметру `wait_timeout` присвоено значение 8 часов.
 - Создается пустая база данных с именем sampledb.

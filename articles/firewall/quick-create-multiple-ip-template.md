@@ -1,19 +1,19 @@
 ---
 title: Краткое руководство. Создание Брандмауэра Azure с несколькими общедоступными IP-адресами, используя шаблон Resource Manager
-description: Сведения об использовании шаблона Azure Resource Manager (шаблона ARM) для создания Брандмауэра Azure с несколькими общедоступными IP-адресами.
+description: В этом кратком руководстве показано, как с помощью шаблона Azure Resource Manager (шаблона ARM) создать Брандмауэр Azure с несколькими общедоступными IP-адресами.
 services: firewall
 author: vhorne
 ms.service: firewall
 ms.topic: quickstart
 ms.custom: subject-armqs
-ms.date: 04/14/2020
+ms.date: 08/28/2020
 ms.author: victorh
-ms.openlocfilehash: 41190cd52e29b187182589f93e9d494d05943cf8
-ms.sourcegitcommit: e0785ea4f2926f944ff4d65a96cee05b6dcdb792
+ms.openlocfilehash: 282ce16c926c61008d0ebd70106b161425a15c9e
+ms.sourcegitcommit: 656c0c38cf550327a9ee10cc936029378bc7b5a2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/21/2020
-ms.locfileid: "88705441"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89079087"
 ---
 # <a name="quickstart-create-an-azure-firewall-with-multiple-public-ip-addresses---arm-template"></a>Краткое руководство. Создание Брандмауэра Azure с несколькими общедоступными IP-адресами с помощью шаблона ARM
 

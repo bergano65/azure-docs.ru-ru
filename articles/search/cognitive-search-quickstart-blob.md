@@ -8,12 +8,12 @@ ms.author: heidist
 ms.service: cognitive-search
 ms.topic: quickstart
 ms.date: 06/07/2020
-ms.openlocfilehash: db9e8f71787026abea74fbbfeed51a227a295601
-ms.sourcegitcommit: 20e246e86e25d63bcd521a4b4d5864fbc7bad1b0
+ms.openlocfilehash: 8fba7245475c9873a3e2d3abeda4806d1376e7ca
+ms.sourcegitcommit: 58d3b3314df4ba3cabd4d4a6016b22fa5264f05a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84488959"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89300040"
 ---
 # <a name="quickstart-create-an-azure-cognitive-search-cognitive-skillset-in-the-azure-portal"></a>Краткое руководство. Создание набора навыков Когнитивного поиска на портале Azure
 
@@ -29,7 +29,7 @@ ms.locfileid: "84488959"
 
 + Служба "Когнитивный поиск Azure". [Создайте службу](search-create-service-portal.md) или [найдите имеющуюся службу](https://ms.portal.azure.com/#blade/HubsExtension/BrowseResourceBlade/resourceType/Microsoft.Search%2FsearchServices) в рамках текущей подписки. Вы можете использовать бесплатную службу для выполнения инструкций, описанных в этом кратком руководстве. 
 
-+ Учетная запись хранения Azure с [хранилищем BLOB-объектов](https://docs.microsoft.com/azure/storage/blobs/).
++ Учетная запись хранения Azure с [хранилищем BLOB-объектов](../storage/blobs/index.yml).
 
 > [!NOTE]
 > В этом кратком руководстве также используется [Azure Cognitive Services](https://azure.microsoft.com/services/cognitive-services/) для искусственного интеллекта. Так как рабочая нагрузка мала, Cognitive Services работает в фоновом режиме, чтобы обеспечить бесплатную обработку до 20 транзакций. Это означает, что вы можете выполнить это упражнение без создания дополнительного ресурса Cognitive Services.
@@ -40,7 +40,7 @@ ms.locfileid: "84488959"
 
 1. [Скачайте пример данных](https://1drv.ms/f/s!As7Oy81M_gVPa-LCb5lC_3hbS-4), который состоит из небольшого набора файлов различных типов. Распакуйте файлы.
 
-1. [Создайте учетную запись хранения Azure](https://docs.microsoft.com/azure/storage/common/storage-quickstart-create-account?tabs=azure-portal) или [найдите имеющуюся учетную запись](https://ms.portal.azure.com/#blade/HubsExtension/BrowseResourceBlade/resourceType/Microsoft.Storage%2storageAccounts/). 
+1. [Создайте учетную запись хранения Azure](../storage/common/storage-account-create.md?tabs=azure-portal) или [найдите имеющуюся учетную запись](https://ms.portal.azure.com/#blade/HubsExtension/BrowseResourceBlade/resourceType/Microsoft.Storage%2storageAccounts/). 
 
    + Выберите регион, в котором размещается Когнитивный поиск Azure, чтобы не оплачивать трафик. 
 
@@ -76,7 +76,7 @@ ms.locfileid: "84488959"
 
 1. В этом кратком руководстве мы используем ресурс Cognitive Services уровня **Бесплатный**. Демонстрационные данные состоят из 14 файлов, поэтому для этого краткого руководства достаточно бесплатного набора из 20 транзакций на Cognitive Services. 
 
-   ![Подключение Cognitive Services](media/cognitive-search-quickstart-blob/cog-search-attach.png)
+   ![Подключение Cognitive Services: подключение базовой службы](media/cognitive-search-quickstart-blob/cog-search-attach.png)
 
 1. Разверните элемент **Добавить обогащения** и выберите четыре значения. 
 
@@ -86,7 +86,7 @@ ms.locfileid: "84488959"
 
    Выберите навыки распознавания сущностей (людей, организаций и расположений) и анализа изображений.
 
-   ![Подключение Cognitive Services](media/cognitive-search-quickstart-blob/skillset.png)
+   ![Подключение Cognitive Services: выбор служб для набора навыков](media/cognitive-search-quickstart-blob/skillset.png)
 
    Перейдите к следующей странице.
 
@@ -169,7 +169,7 @@ ms.locfileid: "84488959"
 
 Выходные данные направляются в индекс поиска. Существует сопоставление между парами "имя — значение", созданными во время индексирования, и отдельными полями в индексе. На внутреннем уровне портал настраивает [заметки](cognitive-search-concept-annotations-syntax.md) и определяет [набор навыков](cognitive-search-defining-skillset.md), устанавливая порядок операций и общий поток действий. Эти шаги скрыты на портале, но эти понятия становятся важными при написании кода.
 
-Наконец, вы узнали, что можно проверять содержимое путем запроса индекса. В результате служба "Когнитивный поиск Azure" предоставляет доступный для поиска индекс, который можно запрашивать с помощью [простого](https://docs.microsoft.com/rest/api/searchservice/simple-query-syntax-in-azure-search) или [полностью расширенного синтаксиса запроса](https://docs.microsoft.com/rest/api/searchservice/lucene-query-syntax-in-azure-search). Индекс, который содержит обогащенные поля, не отличается от других. Если вы хотите включить стандартные или [настраиваемые анализаторы](search-analyzers.md), [профили оценки](https://docs.microsoft.com/rest/api/searchservice/add-scoring-profiles-to-a-search-index), [синонимы](search-synonyms.md), [фильтры аспектов](search-filters-facets.md), географический поиск или любую другую функцию службы "Когнитивный поиск Azure", вы можете это сделать.
+Наконец, вы узнали, что можно проверять содержимое путем запроса индекса. В результате служба "Когнитивный поиск Azure" предоставляет доступный для поиска индекс, который можно запрашивать с помощью [простого](/rest/api/searchservice/simple-query-syntax-in-azure-search) или [полностью расширенного синтаксиса запроса](/rest/api/searchservice/lucene-query-syntax-in-azure-search). Индекс, который содержит обогащенные поля, не отличается от других. Если вы хотите включить стандартные или [настраиваемые анализаторы](search-analyzers.md), [профили оценки](/rest/api/searchservice/add-scoring-profiles-to-a-search-index), [синонимы](search-synonyms.md), [фильтры аспектов](search-filters-facets.md), географический поиск или любую другую функцию службы "Когнитивный поиск Azure", вы можете это сделать.
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 

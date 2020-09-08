@@ -1,20 +1,20 @@
 ---
 title: Краткое руководство. Направление веб-трафика с помощью CLI
 titleSuffix: Azure Application Gateway
-description: Узнайте, как с помощью Azure CLI создать Шлюз приложений Azure, который направляет веб-трафик к виртуальным машинам в серверном пуле.
+description: В этом кратком руководстве показано, как с помощью Azure CLI создать Шлюз приложений Azure, который направляет веб-трафик к виртуальным машинам в серверном пуле.
 services: application-gateway
 author: vhorne
 ms.service: application-gateway
 ms.topic: quickstart
-ms.date: 03/05/2020
+ms.date: 08/27/2020
 ms.author: victorh
 ms.custom: mvc, devx-track-javascript, devx-track-azurecli
-ms.openlocfilehash: d79f51e32fa62527140ccf19cfc3573339d22fab
-ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
+ms.openlocfilehash: b6b2077a71870d619c023b0d66c37ebc043aa3f3
+ms.sourcegitcommit: 648c8d250106a5fca9076a46581f3105c23d7265
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/31/2020
-ms.locfileid: "87499132"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88961760"
 ---
 # <a name="quickstart-direct-web-traffic-with-azure-application-gateway---azure-cli"></a>Краткое руководство. Направление веб-трафика с помощью Шлюза приложений Azure и Azure CLI.
 
@@ -24,12 +24,14 @@ ms.locfileid: "87499132"
 
 Инструкции в этом кратком руководстве можно также выполнить с помощью [Azure PowerShell](quick-create-powershell.md) или [портала Azure](quick-create-portal.md).
 
-[!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
-
 ## <a name="prerequisites"></a>Предварительные требования
 
 - Учетная запись Azure с активной подпиской. [Создайте учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) бесплатно.
 - [Azure CLI версии 2.0.4 или более поздней](/cli/azure/install-azure-cli) (при локальном запуске Azure CLI).
+
+[!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
+
+
 
 ## <a name="create-resource-group"></a>Создать группу ресурсов
 

@@ -8,12 +8,12 @@ ms.author: heidist
 ms.service: cognitive-search
 ms.topic: quickstart
 ms.date: 07/01/2020
-ms.openlocfilehash: c6ab5c2cae2bb966c2b040b40dbf36e56a54411b
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.openlocfilehash: 6adbd83ddfbdb82d1054d4e74dd9492d08583ede
+ms.sourcegitcommit: 58d3b3314df4ba3cabd4d4a6016b22fa5264f05a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86496758"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89292543"
 ---
 # <a name="quickstart-create-a-demo-app-in-the-portal-azure-cognitive-search"></a>Краткое руководство. Создание демонстрационного приложения на портале (Когнитивный поиск Azure)
 
@@ -61,7 +61,7 @@ ms.locfileid: "86496758"
 
 1. Для параметра Description (Описание) выберите поле, которое содержит полезные сведения для выбора документа, который захочет просмотреть посетитель.
 
-   ![Страница источника данных для примера данных](media/search-create-app-portal/configure-results.png)
+   ![Настройка результатов для примера данных](media/search-create-app-portal/configure-results.png)
 
 ## <a name="add-a-sidebar"></a>Добавление боковой панели
 
@@ -111,4 +111,4 @@ ms.locfileid: "86496758"
 Базовое приложение удобно для первоначального изучения и выполнения небольших задач, а ознакомление с API на этапе обучения поможет вам лучше понять основные концепции и рабочие процессы.
 
 > [!div class="nextstepaction"]
-> [Создание индекса службы поиска Azure с помощью пакета SDK для .NET](https://docs.microsoft.com/azure/search/search-create-index-dotnet)
+> [Создание индекса службы поиска Azure с помощью пакета SDK для .NET](./search-get-started-dotnet.md)

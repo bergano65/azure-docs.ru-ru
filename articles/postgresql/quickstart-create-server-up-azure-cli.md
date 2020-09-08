@@ -8,12 +8,12 @@ ms.devlang: azurecli
 ms.topic: quickstart
 ms.date: 05/06/2019
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: 1a2b7ceea74091931c92d28f8fa47b9046b545fc
-ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
+ms.openlocfilehash: 662d34d3ed89a7d440a604de4338de334ea0bd11
+ms.sourcegitcommit: 58d3b3314df4ba3cabd4d4a6016b22fa5264f05a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/31/2020
-ms.locfileid: "87496582"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89300023"
 ---
 # <a name="quickstart-use-an-azure-cli-command-az-postgres-up-preview-to-create-an-azure-database-for-postgresql---single-server"></a>Краткое руководство. Создание базы данных в службе "База данных Azure для PostgreSQL — отдельный сервер" с помощью команды Azure CLI az postgres up (предварительная версия)
 
@@ -75,7 +75,7 @@ admin-password | Генерируемое системой | Пароль адм
 
 Сервер создается со следующими параметрами.
 
-- Создается правило брандмауэра devbox. Azure CLI пытается определить IP-адрес компьютера, с которого выполняется команда `az postgres up`, и помещает этот IP-адрес в список разрешений.
+- Создается правило брандмауэра devbox. Azure CLI пытается определить IP-адрес компьютера, с которого выполняется команда `az postgres up`, и разрешает доступ к этому IP-адресу.
 - Параметру "Разрешить доступ к службам Azure" задано значение "Вкл." Этот параметр настраивает брандмауэр сервера на прием подключений от всех ресурсов Azure, включая ресурсы вне вашей подписки.
 - Создается пустая база данных с именем sampledb.
 - В sampledb создается привилегированный пользователь с именем root.

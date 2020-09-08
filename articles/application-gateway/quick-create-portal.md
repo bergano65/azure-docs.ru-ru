@@ -1,20 +1,20 @@
 ---
 title: Краткое руководство. Направление веб-трафика с помощью портала
 titleSuffix: Azure Application Gateway
-description: Узнайте, как с помощью портала Azure создать Шлюз приложений Azure, который направляет веб-трафик к виртуальным машинам в серверном пуле.
+description: В этом кратком руководстве показано, как с помощью портала Azure создать Шлюз приложений Azure, который направляет веб-трафик к виртуальным машинам в серверном пуле.
 services: application-gateway
 author: vhorne
 ms.service: application-gateway
 ms.topic: quickstart
-ms.date: 05/21/2020
+ms.date: 08/27/2020
 ms.author: victorh
 ms.custom: mvc
-ms.openlocfilehash: a6415657d68e10b63e357f3c1353bb66fc9c8262
-ms.sourcegitcommit: a9784a3fd208f19c8814fe22da9e70fcf1da9c93
+ms.openlocfilehash: 4929836b7fb617884008fafea50a10e0212fbd58
+ms.sourcegitcommit: 648c8d250106a5fca9076a46581f3105c23d7265
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/22/2020
-ms.locfileid: "83779427"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88961964"
 ---
 # <a name="quickstart-direct-web-traffic-with-azure-application-gateway---azure-portal"></a>Краткое руководство. Направление веб-трафика с помощью Шлюза приложений Azure на портале Azure
 

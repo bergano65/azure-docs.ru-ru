@@ -10,12 +10,12 @@ ms.topic: include
 ms.date: 12/19/2019
 ms.custom: devx-track-java
 ms.author: pafarley
-ms.openlocfilehash: 6eacaf2ec75c485dbdd7e66a73cdd36787da6126
-ms.sourcegitcommit: 62717591c3ab871365a783b7221851758f4ec9a4
+ms.openlocfilehash: 2b305b1ffc5c72780f903c7798fbce24c630baba
+ms.sourcegitcommit: 5ed504a9ddfbd69d4f2d256ec431e634eb38813e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/22/2020
-ms.locfileid: "88753023"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89321887"
 ---
 <a name="HOLTop"></a>
 
@@ -78,13 +78,13 @@ mkdir -p src/main/java
 
 ### <a name="install-the-client-library"></a>Установка клиентской библиотеки
 
-В этом кратком руководстве используется диспетчер зависимостей Gradle. Клиентскую библиотеку и информацию для других диспетчеров зависимостей можно найти в [центральном репозитории Maven](https://search.maven.org/artifact/com.microsoft.azure.cognitiveservices/azure-cognitiveservices-textanalytics/).
+В этом кратком руководстве используется диспетчер зависимостей Gradle. Клиентскую библиотеку и информацию для других диспетчеров зависимостей можно найти в [центральном репозитории Maven](https://search.maven.org/artifact/com.microsoft.azure.cognitiveservices/azure-cognitiveservices-computervision).
 
 В файле проекта *build.gradle.kts* добавьте клиентскую библиотеку службы "Компьютерное зрение" в качестве зависимости.
 
 ```kotlin
 dependencies {
-    compile(group = "com.microsoft.azure.cognitiveservices", name = "azure-cognitiveservices-computervision", version = "1.0.2-beta")
+    compile(group = "com.microsoft.azure.cognitiveservices", name = "azure-cognitiveservices-computervision", version = "1.0.4-beta")
 }
 ```
 
@@ -204,26 +204,47 @@ dependencies {
 
 ## <a name="read-printed-and-handwritten-text"></a>Чтение печатного и рукописного текста
 
-Компьютерное зрение может считывать видимый текст в образе и преобразовывать его в поток символов.
+Компьютерное зрение может считывать видимый текст в образе и преобразовывать его в поток символов. В этом разделе определяется метод `ReadFromFile`, который получает путь к локальному файлу и выводит текст c изображения на консоль.
 
 > [!NOTE]
 > Кроме того, можно прочитать текст на удаленном изображении, используя его URL-адрес. Пример кода для сценариев, в которых используются удаленные изображения, см. на [сайте GitHub](https://github.com/Azure-Samples/cognitive-services-quickstart-code/blob/master/java/ComputerVision/src/main/java/ComputerVisionQuickstart.java).
 
-### <a name="call-the-recognize-api"></a>Вызов API распознавания
+### <a name="set-up-test-image"></a>Настройка тестового изображения
 
-Сначала используйте следующий код, чтобы вызвать метод **recognizePrintedTextInStream** для данного образа. При добавлении этого кода в проект необходимо заменить значение `localTextImagePath` на путь к локальному образу. Вы можете скачать [пример изображения](https://raw.githubusercontent.com/MicrosoftDocs/azure-docs/master/articles/cognitive-services/Computer-vision/Images/readsample.jpg) для использования.
+Создайте папку **resources/** в папке **src/main/** вашего проекта и добавьте изображение, на котором нужно прочесть текст. Вы можете скачать [пример изображения](https://raw.githubusercontent.com/MicrosoftDocs/azure-docs/master/articles/cognitive-services/Computer-vision/Images/readsample.jpg) для использования.
+
+Затем добавьте следующее определение метода в класс **ComputerVisionQuickstarts**. При необходимости измените значение `localFilePath` в соответствии с вашим файлом изображения. 
+
+[!code-java[](~/cognitive-services-quickstart-code/java/ComputerVision/src/main/java/ComputerVisionQuickstart.java?name=snippet_read_setup)]
+
+### <a name="call-the-read-api"></a>Вызов API чтения
+
+Затем добавьте следующий код, чтобы вызвать метод **readInStreamWithServiceResponseAsync** для данного изображения.
 
 [!code-java[](~/cognitive-services-quickstart-code/java/ComputerVision/src/main/java/ComputerVisionQuickstart.java?name=snippet_read_call)]
 
-### <a name="print-recognize-results"></a>Вывод результатов распознавания
 
-Следующий блок кода обрабатывает возвращаемый текст и анализирует его для вывода первого слова в каждой строке. Этот код можно использовать для быстрого понимания структуры экземпляра **OcrResult**.
+Следующий блок кода извлекает идентификатор операции из ответа на вызов Read. Он использует этот идентификатор со вспомогательным методом для вывода результатов чтения текста на консоль. 
 
-[!code-java[](~/cognitive-services-quickstart-code/java/ComputerVision/src/main/java/ComputerVisionQuickstart.java?name=snippet_read_print)]
+[!code-java[](~/cognitive-services-quickstart-code/java/ComputerVision/src/main/java/ComputerVisionQuickstart.java?name=snippet_read_response)]
 
-Наконец, закройте блок try-catch и определение метода.
+Закройте блок try-catch и определение метода.
 
 [!code-java[](~/cognitive-services-quickstart-code/java/ComputerVision/src/main/java/ComputerVisionQuickstart.java?name=snippet_read_catch)]
+
+### <a name="get-read-results"></a>Получение результатов чтения
+
+Затем добавьте определение для вспомогательного метода. Этот метод использует идентификатор операции из предыдущего шага для запроса операции чтения и получения результатов распознавания текста, когда они доступны.
+
+[!code-java[](~/cognitive-services-quickstart-code/java/ComputerVision/src/main/java/ComputerVisionQuickstart.java?name=snippet_read_result_helper_call)]
+
+Остальная часть метода анализирует результаты распознавания текста и выводит их на консоль.
+
+[!code-java[](~/cognitive-services-quickstart-code/java/ComputerVision/src/main/java/ComputerVisionQuickstart.java?name=snippet_read_result_helper_print)]
+
+Наконец, добавьте другой вспомогательный метод, который использовался выше, который извлекает идентификатор операции из начального ответа.
+
+[!code-java[](~/cognitive-services-quickstart-code/java/ComputerVision/src/main/java/ComputerVisionQuickstart.java?name=snippet_opid_extract)]
 
 ## <a name="run-the-application"></a>Выполнение приложения
 
@@ -253,5 +274,5 @@ gradle run
 > [!div class="nextstepaction"]
 >[Справочник по службе "Компьютерное зрение" для Java](https://docs.microsoft.com/java/api/overview/azure/cognitiveservices/client/computervision?view=azure-java-stable)
 
-* [Что собой представляет Компьютерное зрение](../../Home.md)
+* [Что собой представляет Компьютерное зрение](../../overview.md)
 * Исходный код для этого шаблона можно найти на портале [GitHub](https://github.com/Azure-Samples/cognitive-services-quickstart-code/blob/master/java/ComputerVision/src/main/java/ComputerVisionQuickstart.java).

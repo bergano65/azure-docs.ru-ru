@@ -10,12 +10,12 @@ ms.topic: quickstart
 ms.date: 08/17/2020
 ms.author: pafarley
 ms.custom: devx-track-python
-ms.openlocfilehash: 8132358dcd0ad9d87dc6687afd2adef1942f3b67
-ms.sourcegitcommit: ac7ae29773faaa6b1f7836868565517cd48561b2
+ms.openlocfilehash: 5e27aaebc015f47e0fcdb5da81770d49b86ad000
+ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88823910"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88934333"
 ---
 # <a name="quickstart-extract-business-card-data-using-the-form-recognizer-rest-api-with-python"></a>Краткое руководство. Извлечение данных визитной карточки с помощью REST API Распознавателя документов и Python
 
@@ -38,33 +38,35 @@ ms.locfileid: "88823910"
 
 ## <a name="analyze-a-business-card"></a>Анализ визитной карточки
 
-Для начала анализа визитной карточки запустите API **[анализа визитных карточек](https://westus2.dev.cognitive.microsoft.com/docs/services/form-recognizer-api-v2/operations/AnalyzeReceiptAsync)** , используя приведенный ниже скрипт Python. Перед выполнением сценария внесите следующие изменения:
+Для начала анализа визитной карточки запустите API **[анализа визитных карточек](https://westus2.dev.cognitive.microsoft.com/docs/services/form-recognizer-api-v2-1-preview-1/operations/AnalyzeBusinessCardAsync)** , используя приведенный ниже скрипт Python. Перед выполнением сценария внесите следующие изменения:
 
-1. Замените `<Endpoint>` конечной точкой, полученной из подписки Распознавателя документов.
-1. Замените `<path to your business card>` на путь к документу локальной формы.
+1. Замените `<endpoint>` конечной точкой, полученной из подписки Распознавателя документов.
+1. Измените `<path to your business card>` на локальный путь к изображению визитной карточки или PDF-файлу.
 1. Замените `<subscription key>` ключом подписки, скопированным на предыдущем шаге.
+1. Измените `<file type>` на image/jpeg, image/png, application/pdf или image/tiff.
 
     ```python
-    ########### Python Form Recognizer Async Business cards #############
+    ########### Python Form Recognizer Async Business Cards #############
 
     import json
     import time
     from requests import get, post
     
     # Endpoint URL
-    endpoint = r"<Endpoint>"
+    endpoint = r"<endpoint>"
     apim_key = "<subscription key>"
     post_url = endpoint + "/formrecognizer/v2.1-preview.1/prebuilt/businessCard/analyze"
     source = r"<path to your business card>"
+    content_type = "<file type>"
     
     headers = {
         # Request headers
-        'Content-Type': '<file type>',
+        'Content-Type': content_type,
         'Ocp-Apim-Subscription-Key': apim_key,
     }
     
     params = {
-        "includeTextDetails": True
+        "includeTextDetails": True  # True to output all recognized text
     }
     
     with open(source, "rb") as f:
@@ -86,15 +88,15 @@ ms.locfileid: "88823910"
 1. Откройте окно командной строки.
 1. В командной строке выполните пример кода с помощью команды `python`. Например, `python form-recognizer-businesscards.py`.
 
-Вы получите ответ, включающий заголовок `202 (Success)`**Operation-Location**, который сценарий выведет в окно консоли. Этот заголовок содержит идентификатор операции, который можно использовать для запроса состояния асинхронной операции и получения результатов. В следующем примере значения строка после `operations/` является идентификатором операции.
+Вы получите ответ, включающий заголовок `202 (Success)`**Operation-Location**, который сценарий выведет в окно консоли. Этот заголовок содержит идентификатор результата, который можно использовать для запрашивания состояния длительной операции и получения результатов. В следующем примере значения строка после `operations/` является идентификатором результата.
 
 ```console
-https://cognitiveservice/formrecognizer/v2.1-preview.1/prebuilt/businessCard/analyzeresults/54f0b076-4e38-43e5-81bd-b85b8835fdfb
+https://cognitiveservice/formrecognizer/v2.1-preview.1/prebuilt/businessCard/analyzeResults/54f0b076-4e38-43e5-81bd-b85b8835fdfb
 ```
 
 ## <a name="get-the-business-card-results"></a>Получение результатов анализа визитной карточки
 
-После вызова API **анализа визитных карточек** вызовите API **[получения результатов анализа визитных карточек](https://westus2.dev.cognitive.microsoft.com/docs/services/form-recognizer-api-v2/operations/GetAnalyzeReceiptResult)** , чтобы узнать о состоянии операции и извлеченных данных. Добавьте следующий код в нижнюю часть сценария Python. При этом в новом вызове API используется значение идентификатора операции. Этот сценарий вызывает API с регулярными интервалами, пока не станут доступны результаты. Мы рекомендуем установить интервал одну секунду или более.
+После вызова API **анализа визитных карточек** вызовите API **[получения результатов анализа визитных карточек](https://westcentralus.dev.cognitive.microsoft.com/docs/services/form-recognizer-api-v2-1-preview-1/operations/GetAnalyzeBusinessCardResult)** , чтобы узнать о состоянии операции и извлеченных данных. Добавьте следующий код в нижнюю часть сценария Python. При этом в новом вызове API используется значение идентификатора результата. Этот сценарий вызывает API с регулярными интервалами, пока не станут доступны результаты. Мы рекомендуем установить интервал одну секунду или более.
 
 ```python
 n_tries = 10
@@ -129,7 +131,7 @@ while n_try < n_tries:
 ### <a name="examine-the-response"></a>Изучите ответ.
 ![Визитная карточка компании Contoso](../media/business-card-english.jpg)
 
-В этом примере показаны выходные данные JSON, возвращаемые Распознавателем документов. Эти примеры были усечены для удобства чтения примера.
+В этом примере показаны выходные данные JSON, возвращаемые Распознавателем документов. Они усечены для удобочитаемости.
 
 ```json
 {
@@ -243,7 +245,7 @@ while n_try < n_tries:
 }
 ```
 
-Сценарий выведет ответы в консоль до завершения операции **анализа визитной карточки**. Узел `"readResults"` содержит весь распознанный текст. Текст упорядочивается по страницам, затем по строкам, а затем по отдельным словам. Узел `"documentResults"` содержит обнаруженные моделью значения для конкретной визитной карточки. Для них удобно использовать пары "ключ-значение", например название компании, имя, фамилия, телефон и т. п.
+Сценарий выведет ответы в консоль до завершения операции **анализа визитной карточки**. Узел `"readResults"` содержит весь распознанный текст. Текст упорядочивается по страницам, затем по строкам, а затем по отдельным словам. Узел `"documentResults"` содержит обнаруженные моделью значения для конкретной визитной карточки. Здесь вы найдете полезные контактные данные, такие как имя компании, ФИО, номер телефона и т. д.
 
 
 ## <a name="next-steps"></a>Дальнейшие шаги
@@ -251,4 +253,4 @@ while n_try < n_tries:
 Из этого краткого руководства вы узнали, как использовать REST API Распознавателя документов и Python для извлечения содержимого из визитной карточки. Для более подробного изучения API Распознавателя документов см. справочную документацию.
 
 > [!div class="nextstepaction"]
-> [Справочная документация по REST API](https://westus2.dev.cognitive.microsoft.com/docs/services/form-recognizer-api-v2/operations/AnalyzeReceiptAsync)
+> [Справочная документация по REST API](https://westcentralus.dev.cognitive.microsoft.com/docs/services/form-recognizer-api-v2-1-preview-1/operations/AnalyzeBusinessCardAsync)

@@ -8,12 +8,12 @@ ms.subservice: billing
 ms.topic: conceptual
 ms.date: 08/20/2020
 ms.author: banders
-ms.openlocfilehash: ffb72b4b06b8925cae57989a171d7efbd88c3866
-ms.sourcegitcommit: 56cbd6d97cb52e61ceb6d3894abe1977713354d9
+ms.openlocfilehash: 52dd9d2f6299f8d574934e7baec54333d2ffc0c8
+ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/20/2020
-ms.locfileid: "88686612"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88997580"
 ---
 # <a name="transfer-azure-subscriptions-between-subscribers-and-csps"></a>Перенос подписок Azure между подписчиками и CSP
 
@@ -24,6 +24,9 @@ ms.locfileid: "88686612"
 Партнеры по прямым счетам CSP, сертифицированные как [Поставщик управляемых служб Azure Expert](https://partner.microsoft.com/membership/azure-expert-msp), могут запрашивать перенос подписок Azure для клиентов с прямым Соглашением Enterprise (EA). Перенос подписок разрешен только для клиентов, которые приняли Клиентское соглашение Майкрософт (MCA) и приобрели план Azure.
 
 После утверждения запроса CSP может предоставить своим клиентам объединенный счет. Дополнительные сведения о передаче подписок с помощью CSP см. в разделе [Get billing ownership of Azure subscriptions to your MPA account](mpa-request-ownership.md) (Получение права владения на выставление счетов в подписках Azure).
+
+>[!IMPORTANT]
+> После передачи подписки EA партнеру CSP все увеличения квоты, ранее сделанные в подписке EA, будут приведены к значениям по умолчанию. Если после передачи подписки требуется увеличить квоту, вашему поставщику CSP нужно отправить запрос на [увеличение квоты](https://docs.microsoft.com/azure/azure-portal/supportability/regional-quota-requests). 
 
 ## <a name="other-subscription-transfers-to-a-csp-partner"></a>Передача другой подписки партнеру CSP
 

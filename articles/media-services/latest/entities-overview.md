@@ -1,7 +1,7 @@
 ---
-title: Фильтрация, упорядочение и разбиение на страницы объектов служб мультимедиа
+title: Фильтрация, упорядочивание и разбиение по страницам сущностей Служб мультимедиа
 titleSuffix: Azure Media Services
-description: Сведения о фильтрации, упорядочении и разбиении на страницы сущностей служб мультимедиа Azure v3.
+description: Сведения о фильтрации, упорядочении и разбиении на страницы сущностей Служб мультимедиа Azure версии 3.
 services: media-services
 documentationcenter: ''
 author: IngridAtMicrosoft
@@ -9,27 +9,27 @@ manager: femila
 editor: ''
 ms.service: media-services
 ms.workload: ''
-ms.topic: article
+ms.topic: overview
 ms.date: 08/31/2020
 ms.author: inhenkel
 ms.custom: seodec18, devx-track-csharp
-ms.openlocfilehash: 96f08f75d0921fdf88b71c8e8dd2398a6b85ec6d
-ms.sourcegitcommit: bcda98171d6e81795e723e525f81e6235f044e52
-ms.translationtype: MT
+ms.openlocfilehash: 9a8cff3685cdaad011332adf58dc76f74976cd44
+ms.sourcegitcommit: 58d3b3314df4ba3cabd4d4a6016b22fa5264f05a
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/01/2020
-ms.locfileid: "89258475"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89300193"
 ---
-# <a name="filtering-ordering-and-paging-of-media-services-entities"></a>Фильтрация, упорядочение и разбиение на страницы объектов служб мультимедиа
+# <a name="filtering-ordering-and-paging-of-media-services-entities"></a>Фильтрация, упорядочивание и разбиение по страницам сущностей Служб мультимедиа
 
 [!INCLUDE [media services api v3 logo](./includes/v3-hr.md)]
 
-В этом разделе обсуждаются параметры запроса OData и поддержка разбиения на страницы, доступные при перечислении сущностей служб мультимедиа Azure v3.
+В этом разделе обсуждаются параметры запроса OData и поддержка разбиения на страницы, доступные при перечислении сущностей Служб мультимедиа Azure версии 3.
 
 ## <a name="considerations"></a>Рекомендации
 
-* Свойства сущностей, имеющих тип, `Datetime` всегда имеют формат UTC.
-* Перед отправкой запроса пробелы в строке запроса должны быть закодированы в виде URL-адреса.
+* Свойства сущностей типа `Datetime` всегда задаются в формате UTC.
+* Пробел в строке запроса должен быть закодирован в формате URL перед отправкой запроса.
 
 ## <a name="comparison-operators"></a>Операторы сравнения
 
@@ -37,27 +37,27 @@ ms.locfileid: "89258475"
 
 Операторы равенства:
 
-- `eq`. Проверьте, *равно* ли поле значению константы.
-- `ne`: Проверьте, *не равно* ли поле значению константы.
+- `eq`: Проверяет, является ли поле *равным* постоянному значению.
+- `ne`: Проверяет, является ли поле *не равным* постоянному значению.
 
 Операторы диапазона:
 
-- `gt`: Проверьте, больше ли поле, *чем* постоянное значение.
-- `lt`: Проверяет, меньше ли поле, *чем* постоянное значение.
-- `ge`: Проверка того, что поле *больше или равно* значению константы.
-- `le`: Проверка того, что поле *меньше или равно* значению константы.
+- `gt`: Проверяет, *больше ли* поле постоянного значения.
+- `lt`: Проверяет, *меньше ли* поле постоянного значения.
+- `ge`: Проверяет, *больше или равно* поле постоянному значению.
+- `le`: Проверяет, *меньше или равно* поле постоянному значению.
 
-## <a name="filter"></a>Фильтр
+## <a name="filter"></a>Filter
 
-Используйте `$filter` для предоставления параметра фильтра OData, чтобы найти только интересующие вас объекты.
+Используйте `$filter`, чтобы указать параметр фильтра OData для поиска только интересующих вас объектов.
 
-В следующем примере показано, как фильтровать `alternateId` значение ресурса:
+В приведенных ниже примерах фильтрация выполняется по значению `alternateId` ресурса.
 
 ```
 GET https://management.azure.com/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/mediaresources/providers/Microsoft.Media/mediaServices/amstestaccount/assets?api-version=2018-07-01&$filter=properties/alternateId%20eq%20'unique identifier'
 ```
 
-В следующем примере кода C# фильтры по дате создания ресурса:
+В следующем примере C# выполняется фильтрация по дате создания ресурса:
 
 ```csharp
 var odataQuery = new ODataQuery<Asset>("properties/created lt 2018-05-11T17:39:08.387Z");
@@ -66,30 +66,30 @@ var firstPage = await MediaServicesArmClient.Assets.ListAsync(CustomerResourceGr
 
 ## <a name="order-by"></a>Упорядочить по
 
-Используйте `$orderby` для сортировки возвращаемых объектов по указанному параметру. Пример:  
+Используйте `$orderby`, чтобы отсортировать возвращенные объекты по указанному параметру. Например:  
 
 ```
 GET https://management.azure.com/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/mediaresources/providers/Microsoft.Media/mediaServices/amstestaccount/assets?api-version=2018-07-01$orderby=properties/created%20gt%202018-05-11T17:39:08.387Z
 ```
 
-Чтобы отсортировать результаты по возрастанию или по убыванию, добавьте либо `asc` `desc` к имени поля, разделенному пробелом. Например: `$orderby properties/created desc`.
+Чтобы отсортировать результаты по возрастанию или по убыванию, добавьте в имя поля `asc` или `desc`, разделяя их пробелом. Например: `$orderby properties/created desc`.
 
-## <a name="skip-token"></a>Пропустить токен
+## <a name="skip-token"></a>Маркер пропуска
 
-Если ответ запроса содержит много элементов, служба возвращает `$skiptoken` `@odata.nextLink` значение (), которое используется для получения следующей страницы результатов. Используйте его для постраничного просмотра всего результирующего набора.
+Если ответ запроса содержит много элементов, служба возвращает значение `$skiptoken` (`@odata.nextLink`), которое используется для получения следующей страницы результатов. Используйте его для постраничного просмотра всего набора результатов.
 
-В службах мультимедиа v3 нельзя настроить размер страницы. Размер страницы зависит от типа сущности. Дополнительные сведения см. в следующих разделах.
+В Службах мультимедиа версии 3 нельзя настроить размер страницы. Размер страницы зависит от типа сущности. Дополнительные сведения см. в следующих разделах.
 
-Если при разбиении по коллекциям создаются или удаляются сущности, изменения отражаются в возвращенных результатах (если эти изменения находятся в той части коллекции, которая еще не была загружена).
+Если сущности создаются или удаляются во время разбиения коллекции на страницы, изменения отражаются в возвращаемых результатах (если эти изменения находятся в той части коллекции, которая не была скачана).
 
 > [!TIP]
-> Всегда используйте `nextLink` для перечисления коллекции и не зависят от конкретного размера страницы.
+> Всегда используйте `nextLink` для перечисления коллекции, независимо от конкретного размера страницы.
 >
-> `nextLink`Значение будет представлено только в том случае, если имеется более одной страницы сущностей.
+> Значение `nextLink` будет представлено только в том случае, если есть более одной страницы сущностей.
 
-Рассмотрим следующий пример `$skiptoken` использования WHERE. Замените *amstestaccount* именем своей учетной записи и установите для значения *api-version* последнюю версию.
+Рассмотрим следующий пример, где используется `$skiptoken`. Замените *amstestaccount* именем своей учетной записи и установите для значения *api-version* последнюю версию.
 
-Если вы запрашиваете список ресурсов следующим образом:
+При запросе списка ресурсов следующим образом:
 
 ```
 GET  https://management.azure.com/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/mediaresources/providers/Microsoft.Media/mediaServices/amstestaccount/assets?api-version=2018-07-01 HTTP/1.1
@@ -97,7 +97,7 @@ x-ms-client-request-id: dd57fe5d-f3be-4724-8553-4ceb1dbe5aab
 Content-Type: application/json; charset=utf-8
 ```
 
-Вы получите ответ, аналогичный следующему:
+вы должны увидеть ответ следующего вида.
 
 ```
 HTTP/1.1 200 OK
@@ -125,7 +125,7 @@ HTTP/1.1 200 OK
 https://management.azure.com/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/mediaresources/providers/Microsoft.Media/mediaServices/amstestaccount/assets?api-version=2018-07-01&$skiptoken=Asset+517
 ```
 
-В следующем примере C# показано, как перечислить все указатели потоковой передачи в учетной записи.
+В следующем примере C# показано перечисление всех указателей потока в учетной записи.
 
 ```csharp
 var firstPage = await MediaServicesArmClient.StreamingLocators.ListAsync(CustomerResourceGroup, CustomerAccountName);
@@ -139,7 +139,7 @@ while (currentPage.NextPageLink != null)
 
 ## <a name="using-logical-operators-to-combine-query-options"></a>Использование логических операторов для объединения параметров запроса
 
-Службы мультимедиа v3 поддерживают логические операторы **or** **и and.** 
+Службы мультимедиа версии 3 поддерживают логические операторы **OR** и **AND**. 
 
 В следующем примере для проверки состояния задания выполняется проверка:
 
@@ -147,18 +147,18 @@ while (currentPage.NextPageLink != null)
 https://management.azure.com/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/qbtest/providers/Microsoft.Media/mediaServices/qbtest/transforms/VideoAnalyzerTransform/jobs?$filter=properties/state%20eq%20Microsoft.Media.JobState'Scheduled'%20or%20properties/state%20eq%20Microsoft.Media.JobState'Processing'&api-version=2018-07-01
 ```
 
-Такой же запрос создается в C# следующим образом: 
+Тот же запрос создается в C# следующим образом: 
 
 ```csharp
 var odataQuery = new ODataQuery<Job>("properties/state eq Microsoft.Media.JobState'Scheduled' or properties/state eq Microsoft.Media.JobState'Processing'");
 client.Jobs.List(config.ResourceGroup, config.AccountName, VideoAnalyzerTransformName, odataQuery);
 ```
 
-## <a name="filtering-and-ordering-options-of-entities"></a>Фильтрация и сортировка параметров сущностей
+## <a name="filtering-and-ordering-options-of-entities"></a>Фильтрация и упорядочивание параметров сущностей
 
 В следующей таблице показано, как можно применить параметры фильтрации и упорядочивания к разным сущностям.
 
-|Имя сущности|Имя свойства|Фильтр|Порядок|
+|Имя сущности|Имя свойства|Filter|Порядок|
 |---|---|---|---|
 |[Ресурсы](/rest/api/media/assets/)|name|`eq`, `gt`, `lt`, `ge`, `le`|`asc` и `desc`|
 ||properties.alternateId |`eq`||
@@ -187,7 +187,7 @@ client.Jobs.List(config.ResourceGroup, config.AccountName, VideoAnalyzerTransfor
 * [Список ресурсов](/rest/api/media/assets/list)
 * [Список политик ключей содержимого](/rest/api/media/contentkeypolicies/list)
 * [Список заданий](/rest/api/media/jobs/list)
-* [Перечисление политик потоковой передачи](/rest/api/media/streamingpolicies/list)
-* [Перечисление указателей потоковой передачи](/rest/api/media/streaminglocators/list)
+* [Список политик потоковой передачи](/rest/api/media/streamingpolicies/list)
+* [Список указателей потоковой передачи](/rest/api/media/streaminglocators/list)
 * [Краткое руководство по потоковой передаче видеофайлов — .NET](stream-files-dotnet-quickstart.md)
 * [Квоты и ограничения](limits-quotas-constraints.md)

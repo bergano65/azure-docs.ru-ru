@@ -6,16 +6,16 @@ author: diberry
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: language-understanding
-ms.date: 08/13/2020
+ms.date: 09/01/2020
 ms.topic: include
-ms.custom: include file
+ms.custom: include file, cog-serv-seo-aug-2020
 ms.author: diberry
-ms.openlocfilehash: eac827097f892de81bc5820994f3e2a4e0696dcb
-ms.sourcegitcommit: c293217e2d829b752771dab52b96529a5442a190
+ms.openlocfilehash: 0cb7378f818263ddf3b4c4b2d041649ffbaed4e2
+ms.sourcegitcommit: 5ed504a9ddfbd69d4f2d256ec431e634eb38813e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/15/2020
-ms.locfileid: "88246435"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89323112"
 ---
 С помощью клиентских библиотек Распознавания речи (LUIS) для Python вы можете:
 
@@ -28,7 +28,7 @@ ms.locfileid: "88246435"
 
 ## <a name="prerequisites"></a>Обязательные условия
 
-* Текущая версия [Python 3.x](https://www.python.org/). 
+* Текущая версия [Python 3.x](https://www.python.org/).
 * Подписка Azure — [создайте бесплатную учетную запись](https://azure.microsoft.com/free/cognitive-services).
 * Получив подписку Azure, [создайте ресурс LUIS](https://ms.portal.azure.com/#create/Microsoft.CognitiveServicesLUISAllInOne) на портале Azure, чтобы получить ключ и конечную точку. Дождитесь, пока закончится развертывание, и нажмите кнопку **Перейти к ресурсу**.
     * Для подключения приложения к LUIS для разработки потребуется ключ и конечная точка для [созданного](../luis-how-to-azure-subscription.md#create-luis-resources-in-azure-portal) ресурса. Ключ и конечная точка будут вставлены в приведенный ниже код в кратком руководстве. Вы можете использовать ценовую категорию "Бесплатный" (`F0`), чтобы поработать со службой.
@@ -43,7 +43,7 @@ ms.locfileid: "88246435"
     mkdir quickstart-sdk && cd quickstart-sdk
     ```
 
-1. Создайте файл с именем `authoring_and_predict.py` для своего кода Python. 
+1. Создайте файл с именем `authoring_and_predict.py` для своего кода Python.
 
     ```console
     touch authoring_and_predict.py
@@ -61,6 +61,8 @@ pip install azure-cognitiveservices-language-luis
 
 Клиент для разработки LUIS является объектом [LUISAuthoringClient](https://docs.microsoft.com/python/api/azure-cognitiveservices-language-luis/azure.cognitiveservices.language.luis.authoring.luisauthoringclient?view=azure-python), который проходит проверку подлинности в Azure и содержит ваш ключ разработки.
 
+## <a name="code-examples-for-authoring"></a>Примеры кода для разработки
+
 После создания используйте клиент для доступа к функциям, включая:
 
 * Приложения — [создание](https://docs.microsoft.com/python/api/azure-cognitiveservices-language-luis/azure.cognitiveservices.language.luis.authoring.operations.appsoperations?view=azure-python#add-application-create-object--custom-headers-none--raw-false----operation-config-), [удаление](https://docs.microsoft.com/python/api/azure-cognitiveservices-language-luis/azure.cognitiveservices.language.luis.authoring.operations.appsoperations?view=azure-python#delete-app-id--force-false--custom-headers-none--raw-false----operation-config-), [публикация](https://docs.microsoft.com/python/api/azure-cognitiveservices-language-luis/azure.cognitiveservices.language.luis.authoring.operations.appsoperations?view=azure-python#publish-app-id--version-id-none--is-staging-false--custom-headers-none--raw-false----operation-config-).
@@ -76,6 +78,8 @@ pip install azure-cognitiveservices-language-luis
 
 Клиент для среды выполнения прогнозирования LUIS представляет собой объект [LUISRuntimeClient](https://docs.microsoft.com/python/api/azure-cognitiveservices-language-luis/azure.cognitiveservices.language.luis.runtime.luisruntimeclient?view=azure-python), который проходит проверку подлинности в Azure и содержит ваш ключ ресурса.
 
+## <a name="code-examples-for-prediction-runtime"></a>Примеры кода для среды выполнения прогнозирования
+
 После создания используйте клиент для доступа к функциям, включая:
 
 * Прогнозирование по [слоту промежуточного хранения или рабочему слоту](https://docs.microsoft.com/python/api/azure-cognitiveservices-language-luis/azure.cognitiveservices.language.luis.runtime.operations.predictionoperations?view=azure-python#get-slot-prediction-app-id--slot-name--prediction-request--verbose-none--show-all-intents-none--log-none--custom-headers-none--raw-false----operation-config-)
@@ -85,26 +89,28 @@ pip install azure-cognitiveservices-language-luis
 
 ## <a name="add-the-dependencies"></a>Добавление зависимостей
 
-Добавьте клиентские библиотеки в файл Python. 
+Добавьте клиентские библиотеки в файл Python.
 
 [!code-python[Add python libraries to code file](~/cognitive-services-quickstart-code/python/LUIS/sdk-3x/authoring_and_predict.py?name=Dependencies)]
 
 
-## <a name="add-boilerplate-code"></a>Добавление стандартного кода 
+## <a name="add-boilerplate-code"></a>Добавление стандартного кода
 
-1. Добавьте метод `quickstart` и его вызов. Этот метод охватывает большую часть оставшегося кода. Он вызывается в конце файла. 
+1. Добавьте метод `quickstart` и его вызов. Этот метод охватывает большую часть оставшегося кода. Он вызывается в конце файла.
 
     ```python
-    def quickstart(): 
+    def quickstart():
 
         # add calls here, remember to indent properly
-    
+
     quickstart()
     ```
 
-1. Добавьте оставшийся код в метод quickstart, если не указано иное. 
+1. Добавьте оставшийся код в метод quickstart, если не указано иное.
 
 ## <a name="create-variables-for-the-app"></a>Создание переменных для приложения
+
+Создайте два набора переменных, один из которых вам нужно изменить, а второй оставить таким, как показано в примере кода. 
 
 1. Создайте переменные для хранения ключа разработки и имен ресурсов.
 
@@ -118,7 +124,7 @@ pip install azure-cognitiveservices-language-luis
 
 Теперь создайте объект [CognitiveServicesCredentials](https://docs.microsoft.com/python/api/msrest/msrest.authentication.cognitiveservicescredentials?view=azure-python) с помощью ключа и используйте его со своей конечной точкой, чтобы создать объект [LUISAuthoringClient](https://docs.microsoft.com/python/api/azure-cognitiveservices-language-luis/azure.cognitiveservices.language.luis.authoring.luisauthoringclient?view=azure-python).
 
-[!code-python[Create LUIS authoring client object](~/cognitive-services-quickstart-code/python/LUIS/sdk-3x/authoring_and_predict.py?name=AuthoringCreateClient)]
+[!code-python[Authenticate the client](~/cognitive-services-quickstart-code/python/LUIS/sdk-3x/authoring_and_predict.py?name=AuthoringCreateClient)]
 
 ## <a name="create-a-luis-app"></a>Создание приложения LUIS
 
@@ -126,7 +132,7 @@ pip install azure-cognitiveservices-language-luis
 
 Создайте метод [AppsOperation](https://docs.microsoft.com/python/api/azure-cognitiveservices-language-luis/azure.cognitiveservices.language.luis.authoring.operations.appsoperations?view=azure-python) добавления [объекта](https://docs.microsoft.com/python/api/azure-cognitiveservices-language-luis/azure.cognitiveservices.language.luis.authoring.operations.appsoperations?view=azure-python#add-application-create-object--custom-headers-none--raw-false----operation-config-), чтобы создать приложение. Название, язык и региональные параметры являются обязательными свойствами.
 
-[!code-python[Create LUIS client app](~/cognitive-services-quickstart-code/python/LUIS/sdk-3x/authoring_and_predict.py?name=AuthoringCreateApplication)]
+[!code-python[Create a LUIS app](~/cognitive-services-quickstart-code/python/LUIS/sdk-3x/authoring_and_predict.py?name=AuthoringCreateApplication)]
 
 
 ## <a name="create-intent-for-the-app"></a>Создание намерения для приложения
@@ -136,7 +142,7 @@ pip install azure-cognitiveservices-language-luis
 
 Значение `intentName` жестко запрограммировано в `OrderPizzaIntent` как одна из переменных, описанных в разделе [Создание переменных для приложения](#create-variables-for-the-app).
 
-[!code-python[Create intent](~/cognitive-services-quickstart-code/python/LUIS/sdk-3x/authoring_and_predict.py?name=AddIntent)]
+[!code-python[Create intent for the app](~/cognitive-services-quickstart-code/python/LUIS/sdk-3x/authoring_and_predict.py?name=AddIntent)]
 
 ## <a name="create-entities-for-the-app"></a>Создание сущностей для приложения
 
@@ -148,11 +154,11 @@ pip install azure-cognitiveservices-language-luis
 
 Код создания сущности создает сущность машинного обучения с вложенными сущностями и функциями, применяемыми к вложенным сущностям `Quantity`.
 
-:::image type="content" source="../media/quickstart-sdk/machine-learned-entity.png" alt-text="Код создания сущности создает сущность машинного обучения с вложенными сущностями и функциями, применяемыми к вложенным сущностям Quantity.":::
+:::image type="content" source="../media/quickstart-sdk/machine-learned-entity.png" alt-text="Снимок экрана: часть страницы портала с созданной сущностью машинного обучения с вложенными сущностями и функциями, применяемыми к вложенным сущностям Quantity.":::
 
-[!code-python[Create entities](~/cognitive-services-quickstart-code/python/LUIS/sdk-3x/authoring_and_predict.py?name=AuthoringAddEntities)]
+[!code-python[Create entities for the app](~/cognitive-services-quickstart-code/python/LUIS/sdk-3x/authoring_and_predict.py?name=AuthoringAddEntities)]
 
-Поместите следующий метод над методом `quickstart`, чтобы определить идентификатор вложенной сущности Quantity для назначения функций такой вложенной сущности.
+Поместите следующий метод над методом `quickstart`, чтобы определить идентификатор вложенной сущности Quantity для назначения ей функций.
 
 [!code-python[Find subentity id](~/cognitive-services-quickstart-code/python/LUIS/sdk-3x/authoring_and_predict.py?name=AuthoringSortModelObject)]
 
@@ -162,11 +168,11 @@ pip install azure-cognitiveservices-language-luis
 
 Добавьте примеры речевых фрагментов, создав список объектов [ExampleLabelObject](https://docs.microsoft.com/python/api/azure-cognitiveservices-language-luis/azure.cognitiveservices.language.luis.authoring.models.examplelabelobject?view=azure-python), по одному объекту для каждого примера высказывания. Каждый пример должен пометить все сущности словарем пар "имя — значение" имени и значения сущности. Значение сущности должно быть точно таким, как оно указано в тексте примера высказывания.
 
-:::image type="content" source="../media/quickstart-sdk/labeled-example-machine-learned-entity.png" alt-text="Значение сущности должно быть точно таким, как оно указано в тексте примера высказывания.":::
+:::image type="content" source="../media/quickstart-sdk/labeled-example-machine-learned-entity.png" alt-text="Снимок экрана: часть страницы с помеченным на портале примером речевого фрагмента.":::
 
-Вызовите [examples.add](https://docs.microsoft.com//python/api/azure-cognitiveservices-language-luis/azure.cognitiveservices.language.luis.authoring.operations.examplesoperations?view=azure-python#add-app-id--version-id--example-label-object--enable-nested-children-false--custom-headers-none--raw-false----operation-config-) с идентификатором приложения, идентификатором версии и примером. 
+Вызовите [examples.add](https://docs.microsoft.com//python/api/azure-cognitiveservices-language-luis/azure.cognitiveservices.language.luis.authoring.operations.examplesoperations?view=azure-python#add-app-id--version-id--example-label-object--enable-nested-children-false--custom-headers-none--raw-false----operation-config-) с идентификатором приложения, идентификатором версии и примером.
 
-[!code-python[Add example utterance to a specific intent](~/cognitive-services-quickstart-code/python/LUIS/sdk-3x/authoring_and_predict.py?name=AuthoringAddLabeledExamples)]
+[!code-python[Add example utterance to intent](~/cognitive-services-quickstart-code/python/LUIS/sdk-3x/authoring_and_predict.py?name=AuthoringAddLabeledExamples)]
 
 ## <a name="train-the-app"></a>Обучение приложения
 
@@ -176,9 +182,9 @@ pip install azure-cognitiveservices-language-luis
 
 Очень маленькая модель, такая как в этом кратком руководстве, будет обучаться очень быстро. Обучение приложений рабочего уровня должно включать в себя вызов опроса с помощью метода [get_status](https://docs.microsoft.com/python/api/azure-cognitiveservices-language-luis/azure.cognitiveservices.language.luis.authoring.operations.trainoperations?view=azure-python#get-status-app-id--version-id--custom-headers-none--raw-false----operation-config-), чтобы определить, прошло ли обучение успешно. Ответ представляет собой список объектов [ModelTrainingInfo](https://docs.microsoft.com/python/api/azure-cognitiveservices-language-luis/azure.cognitiveservices.language.luis.authoring.models.modeltraininginfo?view=azure-python) с отдельным состоянием для каждого объекта. Все объекты должны быть успешно обучены, чтобы обучение считалось завершенным.
 
-[!code-python[Train the app's version](~/cognitive-services-quickstart-code/python/LUIS/sdk-3x/authoring_and_predict.py?name=TrainAppVersion)]
+[!code-python[Train the app](~/cognitive-services-quickstart-code/python/LUIS/sdk-3x/authoring_and_predict.py?name=TrainAppVersion)]
 
-## <a name="publish-a-language-understanding-app"></a>Публикация приложения LUIS
+## <a name="publish-app-to-production-slot"></a>Публикация приложения в рабочий слот
 
 Опубликуйте приложение LUIS с помощью метода [app.publish](https://docs.microsoft.com/python/api/azure-cognitiveservices-language-luis/azure.cognitiveservices.language.luis.authoring.operations.appsoperations?view=azure-python#publish-app-id--version-id-none--is-staging-false--custom-headers-none--raw-false----operation-config-). При этом публикуется текущая обученная версия в указанный слот в конечной точке. Ваше клиентское приложение использует эту конечную точку для отправки пользовательских высказываний для прогнозирования намерения и извлечения сущности.
 
@@ -190,7 +196,7 @@ pip install azure-cognitiveservices-language-luis
 
 [!INCLUDE [Caution about using authoring key](caution-authoring-key.md)]
 
-[!code-python[Create LUIS runtime client object](~/cognitive-services-quickstart-code/python/LUIS/sdk-3x/authoring_and_predict.py?name=PredictionCreateClient)]
+[!code-python[Authenticate the prediction runtime client](~/cognitive-services-quickstart-code/python/LUIS/sdk-3x/authoring_and_predict.py?name=PredictionCreateClient)]
 
 ## <a name="get-prediction-from-runtime"></a>Получение прогноза из среды выполнения
 
@@ -200,7 +206,7 @@ pip install azure-cognitiveservices-language-luis
 
 Метод **[get_slot_prediction](https://docs.microsoft.com/python/api/azure-cognitiveservices-language-luis/azure.cognitiveservices.language.luis.runtime.operations.predictionoperations?view=azure-python#get-slot-prediction-app-id--slot-name--prediction-request--verbose-none--show-all-intents-none--log-none--custom-headers-none--raw-false----operation-config-)** принимает для выполнения запроса несколько обязательных параметров, в том числе идентификатор приложения, имя слота и объект запроса прогнозирования. Есть еще несколько необязательных параметров, например для режимов подробного протоколирования, отображения всех намерений и ведения журнала. Запрос возвратит объект [PredictionResponse](https://docs.microsoft.com/python/api/azure-cognitiveservices-language-luis/azure.cognitiveservices.language.luis.runtime.models.predictionresponse?view=azure-python).
 
-[!code-python[Get prediction based on query](~/cognitive-services-quickstart-code/python/LUIS/sdk-3x/authoring_and_predict.py?name=QueryPredictionEndpoint)]
+[!code-python[Get prediction from runtime](~/cognitive-services-quickstart-code/python/LUIS/sdk-3x/authoring_and_predict.py?name=QueryPredictionEndpoint)]
 
 [!INCLUDE [Prediction JSON response](sdk-json.md)]
 

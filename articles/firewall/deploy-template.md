@@ -1,19 +1,19 @@
 ---
 title: Краткое руководство. Создание Брандмауэра Azure с зонами доступности с помощью шаблона Resource Manager
-description: 'Развертывание службы "Брандмауэр Azure" с помощью шаблона. Виртуальная сеть является виртуальной сетью с тремя подсетями. В ней развернуты две виртуальные машины Windows Server: инсталляционный сервер и обычный сервер.'
+description: 'В этом кратком руководстве показано, как выполнить развертывание службы "Брандмауэр Azure" с помощью шаблона. Виртуальная сеть является виртуальной сетью с тремя подсетями. В ней развернуты две виртуальные машины Windows Server: инсталляционный сервер и обычный сервер.'
 services: firewall
 author: vhorne
 ms.service: firewall
 ms.topic: quickstart
 ms.custom: subject-armqs
-ms.date: 04/30/2020
+ms.date: 08/28/2020
 ms.author: victorh
-ms.openlocfilehash: 104e2e9f6593d95caf77c0796f8b9465eebcfcee
-ms.sourcegitcommit: e0785ea4f2926f944ff4d65a96cee05b6dcdb792
+ms.openlocfilehash: c8b4102968e4b6b633216e29d5e993a1c98fa1c6
+ms.sourcegitcommit: 656c0c38cf550327a9ee10cc936029378bc7b5a2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/21/2020
-ms.locfileid: "88705135"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89071726"
 ---
 # <a name="quickstart-deploy-azure-firewall-with-availability-zones---arm-template"></a>Краткое руководство. Развертывание Брандмауэра Azure с зонами доступности с помощью шаблона ARM
 

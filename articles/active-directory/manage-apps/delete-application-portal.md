@@ -10,12 +10,12 @@ ms.topic: quickstart
 ms.workload: identity
 ms.date: 07/01/2020
 ms.author: kenwith
-ms.openlocfilehash: 422c174116bb6973993f5c6093a83f8bdb42a62a
-ms.sourcegitcommit: 85eb6e79599a78573db2082fe6f3beee497ad316
+ms.openlocfilehash: 659d136695943d846fe57986d4b64a37f0d8f30e
+ms.sourcegitcommit: 58d3b3314df4ba3cabd4d4a6016b22fa5264f05a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87808241"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89300125"
 ---
 # <a name="quickstart-delete-an-application-from-your-azure-active-directory-azure-ad-tenant"></a>Краткое руководство. Удаление приложения из арендатора Azure Active Directory (Azure AD)
 
@@ -30,10 +30,11 @@ ms.locfileid: "87808241"
 - Необязательное действие: Знакомство с инструкциями по [просмотру приложений](view-applications-portal.md).
 - Необязательное действие: Знакомство с инструкциями по [добавлению приложения](add-application-portal.md).
 - Необязательное действие: Знакомство с инструкциями по [настройке приложения](add-application-portal-configure.md).
+- Необязательное действие: [Назначение пользователей приложению](add-application-portal-assign-users.md).
 - Необязательное действие: Знакомство со статьей [Настройка единого входа](add-application-portal-setup-sso.md).
 
 >[!IMPORTANT]
->Не используйте рабочую среду для тестирования инструкций, приведенных в этом кратком руководстве.
+>Не используйте рабочую среду для проверки инструкций, приведенных в этом кратком руководстве.
 
 ## <a name="delete-an-application-from-your-azure-ad-tenant"></a>Удаление приложения из арендатора Azure AD
 

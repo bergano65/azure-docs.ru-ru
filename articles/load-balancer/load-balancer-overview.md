@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 1/14/2020
 ms.author: allensu
-ms.openlocfilehash: 898f63cbfba082f8c268587bcd2ea7f575d07f81
-ms.sourcegitcommit: e71da24cc108efc2c194007f976f74dd596ab013
+ms.openlocfilehash: 602a36964d4a6d5f3660499570327db3479c980e
+ms.sourcegitcommit: 58d3b3314df4ba3cabd4d4a6016b22fa5264f05a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87420334"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89299207"
 ---
 # <a name="what-is-azure-load-balancer"></a>Что такое Azure Load Balancer?
 
@@ -74,6 +74,10 @@ Load Balancer (цен. категория "Стандартный") постро
 Сведения о ценах на Load Balancer уровня "Стандартный" см. раздел [Цены на Load Balancer](https://azure.microsoft.com/pricing/details/load-balancer/).
 Load Balancer уровня "Базовый" предоставляется бесплатно.
 См. [Соглашение об уровне обслуживания для Load Balancer](https://aka.ms/lbsla). Load Balancer уровня "Базовый" не имеет Соглашения об уровне обслуживания (SLA).
+
+## <a name="whats-new"></a>Новые возможности
+
+Подпишитесь на RSS-канал и просматривайте последние обновления компонентов для Azure Load Balancer на странице [Обновления Azure](https://azure.microsoft.com/updates/?category=networking&query=load%20balancer).
 
 ## <a name="next-steps"></a>Дальнейшие действия
 См. сведения об [обновлении Load Balancer ценовой категории "Базовый" до ценовой категории "Стандартный"](upgrade-basic-standard.md).

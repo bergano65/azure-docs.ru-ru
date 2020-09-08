@@ -1,18 +1,18 @@
 ---
 title: Краткое руководство. Создание сервера Azure Analysis Services на портале Azure  | Документация Майкрософт
-description: Узнайте, как быстро создать экземпляр сервера Azure Analysis Services с помощью портал Azure.
+description: В этом кратком руководстве показано, как быстро создать экземпляр сервера Azure Analysis Services с помощью портал Azure.
 author: minewiskan
 ms.service: azure-analysis-services
 ms.topic: quickstart
-ms.date: 05/19/2020
+ms.date: 08/31/2020
 ms.author: owend
 ms.reviewer: minewiskan
-ms.openlocfilehash: 36899aa789f4947fe860621bc1795bfbe2ff1ecf
-ms.sourcegitcommit: 595cde417684e3672e36f09fd4691fb6aa739733
+ms.openlocfilehash: 488e7c84e481edd1b136fe90ab948d3cfb51ed2c
+ms.sourcegitcommit: d68c72e120bdd610bb6304dad503d3ea89a1f0f7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/20/2020
-ms.locfileid: "83697485"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89230786"
 ---
 # <a name="quickstart-create-a-server---portal"></a>Краткое руководство по созданию сервера с помощью портала
 
@@ -59,5 +59,3 @@ ms.locfileid: "83697485"
 
 > [!div class="nextstepaction"]
 > [Краткое руководство. Настройка брандмауэра сервера с помощью портала](analysis-services-qs-firewall.md)   
-> [!div class="nextstepaction"]
-> [Руководство. Добавление образца модели на сервер](analysis-services-create-sample-model.md)

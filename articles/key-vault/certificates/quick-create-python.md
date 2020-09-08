@@ -8,12 +8,12 @@ ms.service: key-vault
 ms.subservice: certificates
 ms.topic: quickstart
 ms.custom: devx-track-python
-ms.openlocfilehash: 86ce2b95cce82bd6d6877f83c3bc0b0496804c83
-ms.sourcegitcommit: dea88d5e28bd4bbd55f5303d7d58785fad5a341d
+ms.openlocfilehash: d0d1ed2b082abe5930f358a2551a967dd158aa41
+ms.sourcegitcommit: 3246e278d094f0ae435c2393ebf278914ec7b97b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87875342"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89376593"
 ---
 # <a name="quickstart-azure-key-vault-certificates-client-library-for-python"></a>Краткое руководство. Использование клиентской библиотеки сертификатов Azure Key Vault для Python
 
@@ -68,7 +68,7 @@ az keyvault create --name <your-unique-keyvault-name> -g "myResourceGroup"
 
 ### <a name="create-a-service-principal"></a>Создание субъекта-службы
 
-Самый простой способ проверить подлинность облачного приложения NET — с помощью управляемых удостоверений. Дополнительные сведения см. в статье [Provide Key Vault authentication with a managed identity](../general/managed-identity.md) (Предоставление проверки подлинности Key Vault с помощью управляемого удостоверения).
+Проверить подлинность облачного приложения проще всего с помощью управляемых удостоверений. Дополнительные сведения см. в статье [Проверка подлинности в Azure Key Vault](../general/authentication.md).
 
 Однако для простоты в рамках этого краткого руководства создается классическое приложение, требующее использования субъекта-службы и политики управления доступом. Для субъекта-службы требуется уникальное имя в формате http://&lt;уникальное_имя_субъекта-службы&gt;.
 
@@ -237,8 +237,8 @@ print(" done.")
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-В этом кратком руководстве вы создали хранилище ключей, сохранили в нем сертификат и извлекли его. Дополнительные сведения о Key Vault и его интеграции в приложения см. в следующих статьях.
+При работе с этим кратким руководством вы создали хранилище ключей, сохранили в нем сертификат и извлекли его. Дополнительные сведения о Key Vault и его интеграции в приложения см. в следующих статьях.
 
-- [Обзор Azure Key Vault](../general/overview.md)
+- [Обзор хранилища ключей Azure](../general/overview.md)
 - [Руководство разработчика Azure Key Vault](../general/developers-guide.md)
-- [Рекомендации по Azure Key Vault](../general/best-practices.md)
+- [Рекомендации по использованию Key Vault](../general/best-practices.md)

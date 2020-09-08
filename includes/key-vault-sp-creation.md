@@ -4,14 +4,14 @@ ms.service: key-vault
 ms.topic: include
 ms.date: 07/20/2020
 ms.author: msmbaldwin
-ms.openlocfilehash: d669874040b04af089b4d57333869fe34066720e
-ms.sourcegitcommit: 2ff0d073607bc746ffc638a84bb026d1705e543e
+ms.openlocfilehash: 6dbdebb1a9fc31e225349cc7fca8366e8b8ed004
+ms.sourcegitcommit: 3246e278d094f0ae435c2393ebf278914ec7b97b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87841837"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89378561"
 ---
-Самый простой способ проверить подлинность облачного приложения — с помощью управляемых удостоверений. Дополнительные сведения см. в статье [Provide Key Vault authentication with a managed identity](/azure/key-vault/general/managed-identity) (Предоставление проверки подлинности Key Vault с помощью управляемого удостоверения). 
+Проверить подлинность облачного приложения проще всего с помощью управляемых удостоверений. Дополнительные сведения см. в статье [Проверка подлинности в Azure Key Vault](/azure/key-vault/general/authentication).
 
 Однако для простоты в рамках этого краткого руководства создается классическое приложение, требующее использования субъекта-службы и политики управления доступом. Для субъекта-службы требуется уникальное имя в формате http://&lt;уникальное_имя_субъекта-службы&gt;.
 

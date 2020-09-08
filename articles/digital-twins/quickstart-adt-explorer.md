@@ -7,12 +7,12 @@ ms.author: baanders
 ms.date: 8/12/2020
 ms.topic: quickstart
 ms.service: digital-twins
-ms.openlocfilehash: b199a50443445b983011d755c3ffacaa71131faf
-ms.sourcegitcommit: c6b9a46404120ae44c9f3468df14403bcd6686c1
+ms.openlocfilehash: bbb1378419c68db07be5ca14ca6834810f2fc9f5
+ms.sourcegitcommit: 420c30c760caf5742ba2e71f18cfd7649d1ead8a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88893979"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89055470"
 ---
 # <a name="explore-a-sample-azure-digital-twins-scenario-using-adt-explorer"></a>Изучите пример сценария Azure Digital Twins с помощью ADT Explorer
 
@@ -26,6 +26,10 @@ ms.locfileid: "88893979"
 1. Отправка предварительно построенных моделей и данных графа для создания примера сценария
 1. Изучение созданного графа сценария
 1. Внесение изменений в граф
+
+Пример графа, с которым вы будете работать, представляет собой здание с двумя этажами и двумя комнатами. Граф будет выглядеть так:
+
+:::image type="content" source="media/quickstart-adt-explorer/graph-view-full.png" alt-text="Представление графа, состоящее из четырех циклических узлов, соединенных стрелками. Окружность с меткой "Этаж1" соединена стрелкой с меткой "содержит" и окружностью с меткой "Комната1"; окружность с меткой "Этаж0" соединена стрелкой с меткой "содержит" и окружностью с меткой "Комната0". "Этаж1" и "Этаж0" не подключены.":::
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -56,7 +60,7 @@ ms.locfileid: "88893979"
 
 В меню регистрации выберите *Аутентификация* и нажмите кнопку *Добавить платформу*.
 
-:::image type="content" source="media/quickstart-adt-explorer/authentication-pre.png" alt-text="Страница портала Azure в сведениях о проверке подлинности для регистрации приложения. Кнопка Добавить платформу выделена" lightbox="media/quickstart-adt-explorer/authentication-pre.png":::
+:::image type="content" source="media/quickstart-adt-explorer/authentication-pre.png" alt-text="Страница портала Azure в сведениях о проверке подлинности для регистрации приложения. Кнопка "Добавить платформу" выделена" lightbox="media/quickstart-adt-explorer/authentication-pre.png":::
 
 Далее, на странице *Настройка платформы* выберите *Интернет*.
 Заполните сведения о конфигурации следующим образом:
@@ -65,7 +69,7 @@ ms.locfileid: "88893979"
 
 :::row:::
     :::column:::
-        :::image type="content" source="media/quickstart-adt-explorer/authentication-configure-web.png" alt-text="Страница Настройка платформы, на которой выделены сведения, описанные на экране выше":::
+        :::image type="content" source="media/quickstart-adt-explorer/authentication-configure-web.png" alt-text="Страница "Настройка платформы", на которой выделены сведения, описанные на экране выше":::
     :::column-end:::
     :::column:::
     :::column-end:::
@@ -75,7 +79,7 @@ ms.locfileid: "88893979"
 
 Теперь у вас есть интернет-конфигурация, настроенная для использования в ADT Explorer. Это должно отобразиться на вкладке "Аутентификация" на портале Azure.
 
-:::image type="content" source="media/quickstart-adt-explorer/authentication-post.png" alt-text="Страница портала Azure в сведениях о проверке подлинности для регистрации приложения. Выделенный раздел Интернет платформы с URI перенаправления http://localhost:3000 и включенные маркеры доступа в разделе Неявное предоставление разрешения":::
+:::image type="content" source="media/quickstart-adt-explorer/authentication-post.png" alt-text="Страница портала Azure в сведениях о проверке подлинности для регистрации приложения. Выделенный раздел "Интернет" платформы с URI перенаправления http://localhost:3000 и включенные маркеры доступа в разделе "Неявное предоставление разрешения"":::
 
 ### <a name="run-and-configure-adt-explorer"></a>Запуск и настройка ADT Explorer
 
@@ -93,12 +97,12 @@ ms.locfileid: "88893979"
 
 Нажмите кнопку *Войти* в верхней части окна, чтобы настроить ADT Explorer для работы с настроенным экземпляром. 
 
-:::image type="content" source="media/quickstart-adt-explorer/sign-in.png" alt-text="ADT Explorer с выделенным значком Войти в верхней части окна. На значке изображен простой силуэт человека, перекрытый силуэтом ключа." lightbox="media/quickstart-adt-explorer/sign-in.png":::
+:::image type="content" source="media/quickstart-adt-explorer/sign-in.png" alt-text="ADT Explorer с выделенным значком "Войти" в верхней части окна. На значке изображен простой силуэт человека, перекрытый силуэтом ключа." lightbox="media/quickstart-adt-explorer/sign-in.png":::
 
 Введите важные сведения, собранные ранее в разделе [Предварительные требования](#prerequisites).
 * Идентификатор приложения (клиента)
 * Идентификатор каталога (клиента)
-* URL-адрес ADT в формате *https://<instance host name>*
+* URL-адрес ADT в формате *https://{имя узла экземпляра}*
 
 >[!NOTE]
 > Вы можете в любое время повторно посетить страницу и изменить эту информацию, выбрав тот же значок, чтобы снова открыть поле входа. Он сохранит переданные значения.
@@ -130,21 +134,21 @@ ms.locfileid: "88893979"
 
 В окне *ПРЕДСТАВЛЕНИЕ МОДЕЛИ* щелкните значок *Отправить модель*.
 
-:::image type="content" source="media/quickstart-adt-explorer/upload-model.png" alt-text="Подсвеченный значок в середине окна Представление модели. В нем отображается стрелка, указывающая на облако." lightbox="media/quickstart-adt-explorer/upload-model.png":::
+:::image type="content" source="media/quickstart-adt-explorer/upload-model.png" alt-text="Подсвеченный значок в середине окна "Представление модели". В нем отображается стрелка, указывающая на облако." lightbox="media/quickstart-adt-explorer/upload-model.png":::
  
 1. В появившемся поле выбора файла перейдите к папке *Azure_Digital_Twins_samples/AdtSampleApp/SampleClientApp/models* в загруженном репозитории.
 2. Выберите *Room.json* и *Floor.json*, а затем нажмите кнопку ОК. (Вы можете передать другие модели, если хотите, но они не будут использоваться в этом кратком руководстве).
 3. После всплывающего диалогового окна появится запрос на вход в учетную запись Azure.
 
 >[!NOTE]
->Если вы видите следующее сообщение об ошибке: :::image type="content" source="media/quickstart-adt-explorer/error-models-popup.png" alt-text="Всплывающее окно ошибки чтения Ошибка: Ошибка выборки моделей: ClientAuthError: Ошибка открытия всплывающего окна. Это может произойти, если используется IE или если всплывающие окна заблокированы в браузере. и кнопка Закрыть в нижней части" border="false"::: 
+>Если вы видите следующее сообщение об ошибке: :::image type="content" source="media/quickstart-adt-explorer/error-models-popup.png" alt-text="Всплывающее окно ошибки чтения "Ошибка: Ошибка выборки моделей: ClientAuthError: Ошибка открытия всплывающего окна. Это может произойти, если используется IE или если всплывающие окна заблокированы в браузере." и кнопка "Закрыть" в нижней части" border="false"::: 
 > Попробуйте отключить блокирование всплывающих окон или используйте другой браузер.
 
 ADT Explorer теперь будет отправлять эти файлы модели в ваш экземпляр Azure Digital Twins. Они должны отображаться в окне *ПРЕДСТАВЛЕНИЕ МОДЕЛИ*, в котором отображаются понятные имена и полные идентификаторы моделей. Вы можете щелкнуть пузырь сведений *ПРЕДСТАВЛЕНИЕ МОДЕЛИ*, чтобы увидеть код DTDL.
 
 :::row:::
     :::column:::
-        :::image type="content" source="media/quickstart-adt-explorer/model-info.png" alt-text="Окно Представление модели с двумя определениями модели, которые перечислены внутри, Floor (dtmi:example:Floor;1) и Room (dtmi:example:Room;1). Значок Представление модели с буквой i в окружности, выделен для каждой модели." lightbox="media/quickstart-adt-explorer/model-info.png":::
+        :::image type="content" source="media/quickstart-adt-explorer/model-info.png" alt-text="Окно "Представление модели" с двумя определениями модели, которые перечислены внутри, Floor (dtmi:example:Floor;1) и Room (dtmi:example:Room;1). Значок "Представление модели" с буквой "i" в окружности, выделен для каждой модели." lightbox="media/quickstart-adt-explorer/model-info.png":::
     :::column-end:::
     :::column:::
     :::column-end:::
@@ -168,9 +172,9 @@ ADT Explorer теперь будет отправлять эти файлы мо
 
 В окне *Представление графа* щелкните значок *Импорт графа*.
 
-:::image type="content" source="media/quickstart-adt-explorer/import-graph.png" alt-text="В окне Представление графа выделен значок. В нем отображается стрелка, указывающая на облако." lightbox="media/quickstart-adt-explorer/import-graph.png":::
+:::image type="content" source="media/quickstart-adt-explorer/import-graph.png" alt-text="В окне "Представление графа" выделен значок. В нем отображается стрелка, указывающая на облако." lightbox="media/quickstart-adt-explorer/import-graph.png":::
 
-В окне выбора файла перейдите к папке *client/examples* и выберите файл электронной таблицы _**buildingScenario.xlsx**_. Этот файл содержит описание примера графа. Нажмите кнопку ОК.
+В поле селектора файла перейдите в папку *Azure_Digital_Twins_samples/AdtSampleApp/SampleClientApp* и выберите файл таблицы _**buildingScenario.xlsx**_. Этот файл содержит описание примера графа. Нажмите кнопку ОК.
 
 Через несколько секунд ADT Explorer откроет представление *Импорт*, в котором отображается предварительный просмотр загружаемого графа.
 
@@ -178,7 +182,7 @@ ADT Explorer теперь будет отправлять эти файлы мо
 
 :::row:::
     :::column:::
-        :::image type="content" source="media/quickstart-adt-explorer/graph-preview-save.png" alt-text="Выделенный значок Сохранить на панели предварительного просмотра графа" lightbox="media/quickstart-adt-explorer/graph-preview-save.png":::
+        :::image type="content" source="media/quickstart-adt-explorer/graph-preview-save.png" alt-text="Выделенный значок "Сохранить" на панели предварительного просмотра графа" lightbox="media/quickstart-adt-explorer/graph-preview-save.png":::
     :::column-end:::
     :::column:::
     :::column-end:::
@@ -188,7 +192,7 @@ ADT Explorer теперь будет использовать переданны
 
 :::row:::
     :::column:::
-        :::image type="content" source="media/quickstart-adt-explorer/import-success.png" alt-text="Диалоговое окно, указывающее на успешное завершение импорта графа. В нем написано: Импорт успешно завершен. Импортировано 49 двойников. Импортировано 50 связей." lightbox="media/quickstart-adt-explorer/import-success.png":::
+        :::image type="content" source="media/quickstart-adt-explorer/import-success.png" alt-text="Диалоговое окно, указывающее на успешное завершение импорта графа. В нем написано: "Импорт успешно завершен. Импортировано 49 двойников. Импортировано 50 связей."" lightbox="media/quickstart-adt-explorer/import-success.png":::
     :::column-end:::
     :::column:::
     :::column-end:::
@@ -198,7 +202,7 @@ ADT Explorer теперь будет использовать переданны
 
 Теперь граф отправлен в ADT Explorer. Чтобы увидеть граф, нажмите кнопку *Выполнить запрос* в окне *ОБОЗРЕВАТЕЛЬ ГРАФА* в верхней части окна ADT Explorer. 
 
-:::image type="content" source="media/quickstart-adt-explorer/run-query.png" alt-text="Выделенная кнопка Выполнить запрос рядом с верхней частью окна" lightbox="media/quickstart-adt-explorer/run-query.png":::
+:::image type="content" source="media/quickstart-adt-explorer/run-query.png" alt-text="Выделенная кнопка "Выполнить запрос" рядом с верхней частью окна" lightbox="media/quickstart-adt-explorer/run-query.png":::
 
 Будет выполнен запрос по умолчанию для выбора и отображения всех цифровых двойников. ADT Explorer извлечет все двойники и связи из службы и создаст граф, определенный в окне *ПРЕДСТАВЛЕНИЕ ГРАФА*.
 
@@ -206,7 +210,7 @@ ADT Explorer теперь будет использовать переданны
 
 Теперь можно увидеть отправленный граф образца сценария:
 
-:::image type="content" source="media/quickstart-adt-explorer/graph-view-full.png" alt-text="Окно Представление графа, содержащее граф двойника. Окружность с меткой floor1 соединена стрелкой с меткой contains и окружностью с меткой room1; окружность с меткой floor0 соединена стрелкой с меткой contains и окружностью с меткой room0.":::
+:::image type="content" source="media/quickstart-adt-explorer/graph-view-full.png" alt-text="Окно "Представление графа", содержащее граф двойника. Окружность с меткой "floor1" соединена стрелкой с меткой "contains" и окружностью с меткой "room1"; окружность с меткой "floor0" соединена стрелкой с меткой "contains" и окружностью с меткой "room0".":::
 
 Окружности (узлы графа) представляют цифровых двойников, а линии представляют связи. Вы увидите, что двойник *Floor0* содержит *Room0*, а двойник *Floor1* содержит *Room1*.
 
@@ -220,7 +224,7 @@ ADT Explorer теперь будет использовать переданны
 
 :::row:::
     :::column:::
-        :::image type="content" source="media/quickstart-adt-explorer/properties-room0.png" alt-text="Выделенное окно Обозреватель свойств, в котором отображаются свойства для Room0, включая (среди прочего) поле $dtId Room0, поле температуры со значением 70 и поле влажности со значением 30." lightbox="media/quickstart-adt-explorer/properties-room0.png":::
+        :::image type="content" source="media/quickstart-adt-explorer/properties-room0.png" alt-text="Выделенное окно "Обозреватель свойств", в котором отображаются свойства для Room0, включая (среди прочего) поле $dtId "Room0", поле температуры со значением 70 и поле влажности со значением 30." lightbox="media/quickstart-adt-explorer/properties-room0.png":::
     :::column-end:::
     :::column:::
     :::column-end:::
@@ -232,7 +236,7 @@ ADT Explorer теперь будет использовать переданны
 
 :::row:::
     :::column:::
-        :::image type="content" source="media/quickstart-adt-explorer/properties-room1.png" alt-text="Выделенное окно Обозреватель свойств, в котором отображаются свойства для Room1, включая (среди прочего) поле $dtId Room1, поле температуры со значением 80 и поле влажности со значением 60." lightbox="media/quickstart-adt-explorer/properties-room1.png":::
+        :::image type="content" source="media/quickstart-adt-explorer/properties-room1.png" alt-text="Выделенное окно "Обозреватель свойств", в котором отображаются свойства для Room1, включая (среди прочего) поле $dtId "Room1", поле температуры со значением 80 и поле влажности со значением 60." lightbox="media/quickstart-adt-explorer/properties-room1.png":::
     :::column-end:::
     :::column:::
     :::column-end:::
@@ -271,7 +275,7 @@ SELECT * FROM DigitalTwins T WHERE T.Temperature > 75
 
 :::row:::
     :::column:::
-        :::image type="content" source="media/quickstart-adt-explorer/new-properties-room0.png" alt-text="Окно Обозреватель свойств, в котором отображаются свойства для Room0. Значение температуры — это редактируемое поле, в котором отображается число 76, а значок Сохранить выделен." lightbox="media/quickstart-adt-explorer/new-properties-room0.png":::
+        :::image type="content" source="media/quickstart-adt-explorer/new-properties-room0.png" alt-text="Окно "Обозреватель свойств", в котором отображаются свойства для Room0. Значение температуры — это редактируемое поле, в котором отображается число 76, а значок "Сохранить" выделен." lightbox="media/quickstart-adt-explorer/new-properties-room0.png":::
     :::column-end:::
     :::column:::
     :::column-end:::

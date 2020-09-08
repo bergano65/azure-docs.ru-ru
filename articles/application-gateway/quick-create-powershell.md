@@ -1,20 +1,20 @@
 ---
 title: Краткое руководство. Направление веб-трафика с помощью PowerShell
 titleSuffix: Azure Application Gateway
-description: Узнайте, как с помощью Azure PowerShell создать шлюз приложений Azure, который направляет веб-трафик к виртуальным машинам в серверном пуле.
+description: В этом кратком руководстве показано, как с помощью Azure PowerShell создать Шлюз приложений Azure, который направляет веб-трафик к виртуальным машинам в серверном пуле.
 services: application-gateway
 author: vhorne
 ms.service: application-gateway
 ms.topic: quickstart
-ms.date: 04/15/2020
+ms.date: 08/27/2020
 ms.author: victorh
 ms.custom: mvc
-ms.openlocfilehash: 3e1ca14d967b0e88ea7eb559fd9962a3824ff9b0
-ms.sourcegitcommit: b80aafd2c71d7366838811e92bd234ddbab507b6
+ms.openlocfilehash: 115f01bffc4664798682923cb83a99a23a8ce274
+ms.sourcegitcommit: 648c8d250106a5fca9076a46581f3105c23d7265
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "81406211"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88958343"
 ---
 # <a name="quickstart-direct-web-traffic-with-azure-application-gateway-using-azure-powershell"></a>Краткое руководство. Направление веб-трафика с помощью Шлюза приложений Azure в Azure PowerShell
 
@@ -24,14 +24,14 @@ ms.locfileid: "81406211"
 
 Инструкции в этом кратком руководстве можно также выполнить с помощью [Azure CLI](quick-create-cli.md) или [портала Azure](quick-create-portal.md).
 
-[!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
-
-[!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
-
 ## <a name="prerequisites"></a>Предварительные требования
 
 - Учетная запись Azure с активной подпиской. [Создайте учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) бесплатно.
 - [Azure PowerShell версии 1.0.0 или более поздней версии](/powershell/azure/install-az-ps) (при локальном запуске Azure PowerShell).
+
+[!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
+
+[!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
 ## <a name="connect-to-azure"></a>Подключение к Azure
 

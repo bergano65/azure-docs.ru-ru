@@ -8,12 +8,12 @@ ms.service: key-vault
 ms.subservice: keys
 ms.topic: quickstart
 ms.custom: devx-track-python
-ms.openlocfilehash: c590fea274900f580a5c8415f6b04c2f9108f74f
-ms.sourcegitcommit: dea88d5e28bd4bbd55f5303d7d58785fad5a341d
+ms.openlocfilehash: 18ba00b39d8ffd703eb31b95d373e5b89e51c59b
+ms.sourcegitcommit: 3246e278d094f0ae435c2393ebf278914ec7b97b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87876943"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89376831"
 ---
 # <a name="quickstart-azure-key-vault-keys-client-library-for-python"></a>Краткое руководство. Использование клиентской библиотеки ключей Azure Key Vault для Python
 
@@ -68,7 +68,7 @@ az keyvault create --name <your-unique-keyvault-name> -g "myResourceGroup"
 
 ### <a name="create-a-service-principal"></a>Создание субъекта-службы
 
-Самый простой способ проверить подлинность облачного приложения NET — с помощью управляемых удостоверений. Дополнительные сведения см. в статье [Provide Key Vault authentication with a managed identity](../general/managed-identity.md) (Предоставление проверки подлинности Key Vault с помощью управляемого удостоверения). 
+Проверить подлинность облачного приложения проще всего с помощью управляемых удостоверений. Дополнительные сведения см. в статье [Проверка подлинности в Azure Key Vault](../general/authentication.md). 
 
 Однако для простоты в рамках этого краткого руководства создается классическое приложение, требующее использования субъекта-службы и политики управления доступом. Для субъекта-службы требуется уникальное имя в формате http://&lt;уникальное_имя_субъекта-службы&gt;.
 
@@ -235,6 +235,6 @@ print(" done.")
 
 Из этого краткого руководства вы узнали, как создать хранилище ключей, сохранить в нем ключ и извлечь его. Дополнительные сведения о Key Vault и его интеграции в приложения см. в следующих статьях.
 
-- [Обзор Azure Key Vault](../general/overview.md)
+- [Обзор хранилища ключей Azure](../general/overview.md)
 - [Руководство разработчика Azure Key Vault](../general/developers-guide.md)
-- [Рекомендации по Azure Key Vault](../general/best-practices.md)
+- [Рекомендации по использованию Key Vault](../general/best-practices.md)

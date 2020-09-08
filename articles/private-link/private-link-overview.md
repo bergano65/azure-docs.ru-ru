@@ -8,12 +8,12 @@ ms.topic: overview
 ms.date: 06/18/2020
 ms.author: allensu
 ms.custom: fasttrack-edit
-ms.openlocfilehash: c2959507b8b9275ee2b7a9ebd8159e0014e932c0
-ms.sourcegitcommit: 628be49d29421a638c8a479452d78ba1c9f7c8e4
+ms.openlocfilehash: 908d9386f08c5de863d1d435c54d65cb85feef7a
+ms.sourcegitcommit: 3fb5e772f8f4068cc6d91d9cde253065a7f265d6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/20/2020
-ms.locfileid: "88639704"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89181669"
 ---
 # <a name="what-is-azure-private-link"></a>Что собой представляет Приватный канал Azure? 
 Приватный канал Azure обеспечивает доступ к службам Azure PaaS (например, к службе хранилища Azure и Базе данных SQL), а также размещенным в Azure службам, которые принадлежат клиенту или партнеру, через [частную конечную точку](private-endpoint-overview.md) виртуальной сети.
@@ -62,7 +62,7 @@ ms.locfileid: "88639704"
 |Ретранслятор Azure | Все общедоступные регионы      |  | Preview (Предварительный просмотр) <br/> [Дополнительные сведения](https://docs.microsoft.com/azure/service-bus-relay/private-link-service)  |
 |Сетка событий Azure| Все общедоступные регионы<br/> Регионы для государственных организаций       |  | GA   <br/> [Дополнительные сведения](https://docs.microsoft.com/azure/event-grid/network-security) |
 |Веб-приложения Azure | Все общедоступные регионы      | Поддерживается для приложений-функций эластичной базы данных (цен. категория "Премиум") Windows и Linux PremiumV2.  | Preview (Предварительный просмотр)   <br/> [Дополнительные сведения](https://docs.microsoft.com/azure/app-service/networking/private-endpoint)   |
-|Машинное обучение Azure | Восточная часть США, западная часть США 2      |  | Preview (Предварительный просмотр)   <br/> [Дополнительные сведения](https://docs.microsoft.com/azure/machine-learning/how-to-configure-private-link)   |
+|Машинное обучение Azure | Восточная часть США, центрально-южная часть США, западная часть США 2      |  | Preview (Предварительный просмотр)   <br/> [Дополнительные сведения](https://docs.microsoft.com/azure/machine-learning/how-to-configure-private-link)   |
 | Служба автоматизации Azure  | Все общедоступные регионы |  | Preview (Предварительный просмотр) | |
 | Центр Интернета вещей Azure | Все общедоступные регионы    |  | GA   <br/> [Дополнительные сведения](https://docs.microsoft.com/azure/iot-hub/virtual-network-support ) |
 | Azure SignalR | Восточная часть США, западная часть США 2, центрально-южная часть США      |  | Preview (Предварительный просмотр)   <br/> [Дополнительные сведения](https://aka.ms/asrs/privatelink)   |

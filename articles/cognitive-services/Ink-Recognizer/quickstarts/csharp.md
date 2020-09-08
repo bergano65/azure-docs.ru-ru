@@ -1,23 +1,26 @@
 ---
 title: Краткое руководство. Распознавание рукописного ввода с помощью REST API Распознавателя рукописного текста и C#
 titleSuffix: Azure Cognitive Services
-description: В этом кратком руководстве показано, как использовать API "Распознаватель рукописного текста", чтобы начать распознавать рукописный текст.
+description: В этом кратком руководстве показано, как распознать рукописный текст с помощью API "Распознаватель рукописного текста" и C#.
 services: cognitive-services
 author: aahill
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: ink-recognizer
 ms.topic: quickstart
-ms.date: 06/30/2020
+ms.date: 08/24/2020
 ms.author: aahi
-ms.openlocfilehash: f61566c3d5efa7f973141253353fde7e4893bc6e
-ms.sourcegitcommit: 93462ccb4dd178ec81115f50455fbad2fa1d79ce
+ms.custom: devx-track-csharp
+ms.openlocfilehash: a4bb02f11c7a9a75ddc96e0ee8e9f4b868f8ade5
+ms.sourcegitcommit: 8a7b82de18d8cba5c2cec078bc921da783a4710e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/06/2020
-ms.locfileid: "85986080"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89051599"
 ---
 # <a name="quickstart-recognize-digital-ink-with-the-ink-recognizer-rest-api-and-c"></a>Краткое руководство. Распознавание рукописного ввода с помощью REST API Распознавателя рукописного текста и C#
+
+[!INCLUDE [ink-recognizer-deprecation](../includes/deprecation-note.md)]
 
 Используйте сведения из этого краткого руководство, чтобы начать отправлять рукописные мазки в API Распознавателя рукописного текста. Это приложение C# отправляет запрос API, содержащий данные рукописного мазка в формате JSON, и возвращает ответ.
 

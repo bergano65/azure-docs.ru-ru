@@ -11,12 +11,12 @@ ms.workload: identity
 ms.date: 07/01/2020
 ms.author: kenwith
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 461a424f23161e1567c6b32a38db0225efc56b1e
-ms.sourcegitcommit: 85eb6e79599a78573db2082fe6f3beee497ad316
+ms.openlocfilehash: 040cc2dfa48f24fff4c7dda2cb6010efb01e9b86
+ms.sourcegitcommit: 58d3b3314df4ba3cabd4d4a6016b22fa5264f05a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87808394"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89300142"
 ---
 # <a name="quickstart-set-up-single-sign-on-sso-for-an-application-in-your-azure-active-directory-azure-ad-tenant"></a>Краткое руководство. Настройка единого входа для приложения в арендаторе Azure Active Directory (Azure AD)
 
@@ -32,10 +32,11 @@ ms.locfileid: "87808394"
 - Необязательное действие: Знакомство с инструкциями по [просмотру приложений](view-applications-portal.md).
 - Необязательное действие: Знакомство с инструкциями по [добавлению приложения](add-application-portal.md).
 - Необязательное действие: Знакомство с инструкциями по [настройке приложения](add-application-portal-configure.md).
+- Необязательное действие: [Назначение пользователей приложению](add-application-portal-assign-users.md).
 
 
 >[!IMPORTANT]
->Не используйте рабочую среду для тестирования инструкций, приведенных в этом кратком руководстве.
+>Не используйте рабочую среду для проверки инструкций, приведенных в этом кратком руководстве.
 
 
 ## <a name="enable-single-sign-on-for-an-app"></a>Включение единого входа для приложения

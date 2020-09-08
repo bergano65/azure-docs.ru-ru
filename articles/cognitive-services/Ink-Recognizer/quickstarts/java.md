@@ -1,24 +1,26 @@
 ---
 title: Краткое руководство. Распознавание рукописного ввода с помощью REST API Распознавателя рукописного текста и Java
 titleSuffix: Azure Cognitive Services
-description: Из этого краткого руководства вы узнаете, как использовать API "Распознаватель рукописного текста", чтобы начать распознавать рукописный текст.
+description: Узнайте, как распознать рукописный текст с помощью API "Распознаватель рукописного текста" и Java.
 services: cognitive-services
 author: aahill
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: ink-recognizer
 ms.topic: quickstart
-ms.date: 06/30/2020
+ms.date: 08/24/2020
 ms.author: aahi
 ms.custom: devx-track-java
-ms.openlocfilehash: 902d8a592893a70b8a694ab888bb3c22c6c9670a
-ms.sourcegitcommit: f353fe5acd9698aa31631f38dd32790d889b4dbb
+ms.openlocfilehash: b73f5013fdbef34344ece672bacff90db9bac60b
+ms.sourcegitcommit: 8a7b82de18d8cba5c2cec078bc921da783a4710e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87371555"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89051582"
 ---
 # <a name="quickstart-recognize-digital-ink-with-the-ink-recognizer-rest-api-and-java"></a>Краткое руководство. Распознавание рукописного ввода с помощью REST API Распознавателя рукописного текста и Java
+
+[!INCLUDE [ink-recognizer-deprecation](../includes/deprecation-note.md)]
 
 Используйте это краткое руководство, чтобы начать использовать API Распознавателя рукописного текста для рукописных фрагментов. Это приложение Java отправляет запрос API, содержащий данные росчерка пера в формате JSON, и возвращает ответ.
 

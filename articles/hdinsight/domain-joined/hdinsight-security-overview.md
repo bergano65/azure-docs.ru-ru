@@ -7,13 +7,13 @@ ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: overview
 ms.custom: seoapr2020
-ms.date: 04/20/2020
-ms.openlocfilehash: 1869671b465b7175cf3160c41debc66cbd0818ad
-ms.sourcegitcommit: bf8c447dada2b4c8af017ba7ca8bfd80f943d508
+ms.date: 08/24/2020
+ms.openlocfilehash: 9cfda93cb7f99851109ab7c4a4590517f785c8a1
+ms.sourcegitcommit: 58d3b3314df4ba3cabd4d4a6016b22fa5264f05a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/25/2020
-ms.locfileid: "85367110"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89292985"
 ---
 # <a name="overview-of-enterprise-security-in-azure-hdinsight"></a>Общие сведения о корпоративной безопасности в Azure HDInsight
 
@@ -59,7 +59,7 @@ Azure HDInsight предлагает ряд методов для соответ
 
 Защита данных важна для соблюдения требований безопасности и соответствия, установленных в организации. Помимо ограничения доступа неавторизованных сотрудников к данным, их следует зашифровать.
 
-Хранилище Azure и Data Lake Storage 1-го и 2-го поколений поддерживают прозрачное [шифрование неактивных данных](../../storage/common/storage-service-encryption.md) на стороне сервера. Защищенные кластеры HDInsight также полностью поддерживают его.
+HDInsight поддерживает шифрование неактивных данных с помощью как управляемых платформой, так и [управляемых клиентом ключей](../disk-encryption.md). Шифрование передаваемых данных осуществляется с помощью TLS и IPSec. Дополнительные сведения см. в статье [Шифрование передаваемых данных для Azure HDInsight](encryption-in-transit.md).
 
 ### <a name="compliance"></a>Соответствие нормативным требованиям
 
@@ -79,7 +79,7 @@ Azure HDInsight предлагает ряд методов для соответ
 |  | Включите свойство [Требуется безопасное перемещение](../../storage/common/storage-require-secure-transfer.md) в учетной записи хранения. | Customer |
 |  | Настройка [брандмауэров службы хранилища Azure](../../storage/common/storage-network-security.md) и виртуальных сетей | Customer |
 |  | Настройка [конечных точек службы для виртуальной сети Azure](https://docs.microsoft.com/azure/virtual-network/virtual-network-service-endpoints-overview) для Cosmos DB и [Базы данных SQL Azure](https://docs.microsoft.com/azure/sql-database/sql-database-vnet-service-endpoint-rule-overview) | Customer |
-|  | Убедитесь, что [шифрование TLS](../../storage/common/storage-security-tls.md) включено для передаваемых данных. | Customer |
+|  | Убедитесь, что функция [шифрования при передаче](./encryption-in-transit.md) включена, чтобы при передаче данных внутри кластера использовались TLS и IPSec. | Customer |
 |  | Настройка [управляемых пользователем ключей](../../storage/common/storage-encryption-keys-portal.md) для шифрования службы хранилища Azure | Customer |
 |  | Контролируйте доступ специалистов службы поддержки Azure к вашим данным, используя [защищенное хранилище](https://docs.microsoft.com/azure/security/fundamentals/customer-lockbox-overview). | Customer |
 | Безопасность приложений и ПО промежуточного слоя | Интеграция с AAD-DS и [настройка проверки подлинности](apache-domain-joined-configure-using-azure-adds.md) | Customer |
