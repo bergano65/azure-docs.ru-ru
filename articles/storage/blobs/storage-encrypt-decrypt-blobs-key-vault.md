@@ -11,12 +11,12 @@ ms.author: tamram
 ms.reviewer: ozgun
 ms.subservice: blobs
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 975952a0a084286bdbc19ce02c1192d076cf3600
-ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
+ms.openlocfilehash: 8ac69b442b06864fd45561b26909e1247674611a
+ms.sourcegitcommit: 4a7a4af09f881f38fcb4875d89881e4b808b369b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89001405"
+ms.lasthandoff: 09/04/2020
+ms.locfileid: "89458388"
 ---
 # <a name="tutorial---encrypt-and-decrypt-blobs-using-azure-key-vault"></a>Руководство. Шифрование и расшифровка больших двоичных объектов с помощью Azure Key Vault
 
@@ -240,4 +240,4 @@ SymmetricKey sec = (SymmetricKey) cloudResolver.ResolveKeyAsync(
 
 Дополнительные сведения о REST API для больших двоичных объектов см. в статье [REST API службы BLOB-объектов](https://msdn.microsoft.com/library/azure/dd135733.aspx).
 
-Новости о службе хранилища Microsoft Azure см. в [блоге команды разработчиков службы хранилища Microsoft Azure](https://blogs.msdn.com/b/windowsazurestorage/).
+Новости о службе хранилища Microsoft Azure см. в [блоге команды разработчиков службы хранилища Microsoft Azure](https://docs.microsoft.com/archive/blogs/windowsazurestorage/).

@@ -11,12 +11,12 @@ ms.workload: infrastructure
 ms.date: 1/3/2020
 ms.author: ushan
 ms.custom: devops, devx-track-javascript
-ms.openlocfilehash: 140365abad266617443d58b7ed59f05a27009f59
-ms.sourcegitcommit: 0b8320ae0d3455344ec8855b5c2d0ab3faa974a3
+ms.openlocfilehash: c83a67f7d524a062485f2c68e0adb7fdd2855a84
+ms.sourcegitcommit: 4a7a4af09f881f38fcb4875d89881e4b808b369b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/30/2020
-ms.locfileid: "87433050"
+ms.lasthandoff: 09/04/2020
+ms.locfileid: "89462179"
 ---
 # <a name="tutorial-deploy-your-app-to-linux-virtual-machines-in-azure-using-azure-devops-services-and-azure-pipelines"></a>Руководство по Развертывание приложения на виртуальных машинах Linux в Azure с помощью Azure DevOps Services и Azure Pipelines
 
@@ -84,9 +84,10 @@ https://github.com/azure-devops/fabrikam-node
 
 #### <a name="java"></a>[Java](#tab/java)
 
-- Для развертывания приложений на основе Java Spring Boot и Spring Cloud создайте в Azure виртуальную машину Linux, используя [этот шаблон](https://azuremarketplace.microsoft.com/marketplace/apps/azul.azul-zulu8-ubuntu-1804), который включает среду выполнения на основе OpenJDK с полной поддержкой.
-- Для развертывания сервлетов Java на сервере Tomcat создайте виртуальную машину Linux, используя Java 8 и [этот шаблон](https://azuremarketplace.microsoft.com/marketplace/apps/azul.azul-zulu8-ubuntu-1804), и [настройте Tomcat 9.x в качестве службы](https://tomcat.apache.org/tomcat-9.0-doc/setup.html).
-- Для развертывания приложения на базе Java EE используйте шаблон Azure, чтобы создать [виртуальную машину Linux с Java и WebSphere 9.x](https://azuremarketplace.microsoft.com/marketplace/apps/midvision.websphere-application-server-nde-90), [виртуальную машину Linux с Java и WebLogic 12.x](https://azuremarketplace.microsoft.com/marketplace/apps/oracle.20191009-arm-oraclelinux-wls-admin) или [виртуальную машину Linux с Java и WildFly/JBoss 14](https://azuremarketplace.microsoft.com/marketplace/apps/azul.azul-zulu8-ubuntu-1804). 
+- Для развертывания приложений на основе Java Spring Boot и Spring Cloud создайте в Azure виртуальную машину Linux, используя [этот шаблон](https://azuremarketplace.microsoft.com/marketplace/apps/azul.azul-zulu13-ubuntu-2004), который включает среду выполнения на основе OpenJDK с полной поддержкой.
+- Для развертывания сервлетов Java на сервере Tomcat создайте виртуальную машину Linux, используя Java 8 и [этот шаблон](https://azuremarketplace.microsoft.com/marketplace/apps/azul.azul-zulu13-ubuntu-2004), и [настройте Tomcat 9.x в качестве службы](https://tomcat.apache.org/tomcat-9.0-doc/setup.html).
+- Для развертывания приложения на базе Java EE используйте шаблон Azure, чтобы создать [виртуальную машину Linux с Java и WebSphere 9.x](https://azuremarketplace.microsoft.com/marketplace/apps/midvision.websphere-application-server-nde-90), [виртуальную машину Linux с Java и WebLogic 12.x](https://azuremarketplace.microsoft.com/marketplace/apps/oracle.20191009-arm-oraclelinux-wls-admin) или [виртуальную машину Linux с Java и WildFly/JBoss 14](https://azuremarketplace.microsoft.com/marketplace/apps/azul.azul-zulu13-ubuntu-2004). 
+
 
 #### <a name="javascript"></a>[JavaScript](#tab/java-script)
 

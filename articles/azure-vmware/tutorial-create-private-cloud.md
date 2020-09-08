@@ -2,13 +2,13 @@
 title: Руководство. Развертывание кластера vSphere в Azure
 description: Узнайте, как развернуть в Azure кластер vSphere с помощью Решения Azure VMWare
 ms.topic: tutorial
-ms.date: 08/21/2020
-ms.openlocfilehash: 8aeedeeb785f149239f2bf9a4b58a18ec8bfeb77
-ms.sourcegitcommit: 62717591c3ab871365a783b7221851758f4ec9a4
+ms.date: 09/07/2020
+ms.openlocfilehash: 69a29a459ba283bb34169112ac2fa174ac6a14af
+ms.sourcegitcommit: 8791f69d44150767807d215cafc4076f3ed43f9f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/22/2020
-ms.locfileid: "88750475"
+ms.lasthandoff: 09/08/2020
+ms.locfileid: "89512385"
 ---
 # <a name="tutorial-deploy-an-azure-vmware-solution-private-cloud-in-azure"></a>Руководство по Развертывание частного облака Решения Azure VMware в Azure
 
@@ -30,14 +30,7 @@ ms.locfileid: "88750475"
 
 ## <a name="register-the-resource-provider"></a>Регистрация поставщика ресурсов
 
-Чтобы использовать Решение Azure VMware, необходимо сначала зарегистрировать поставщик ресурсов в подписке.
-
-```
-azurecli-interactive
-az provider register -n Microsoft.AVS --subscription <your subscription ID>
-```
-
-В [списке поставщиков и типов ресурсов](../azure-resource-manager/management/resource-providers-and-types.md) описано, как еще можно зарегистрировать поставщик ресурсов.
+[!INCLUDE [register-resource-provider-steps](includes/register-resource-provider-steps.md)]
 
 
 ## <a name="create-a-private-cloud"></a>Создание частного облака
@@ -46,34 +39,7 @@ az provider register -n Microsoft.AVS --subscription <your subscription ID>
 
 ### <a name="azure-portal"></a>Портал Azure
 
-1. Войдите на [портал Azure](https://portal.azure.com).
-
-1. Выберите **Создать ресурс**. В текстовом поле **Поиск в Marketplace** введите `Azure VMware Solution` и выберите из списка вариант **Azure VMware Solution** (Решение Azure VMware). В окне **Azure VMware Solution** (Решение Azure VMware) выберите команду **Создать**.
-
-1. На вкладке **Основные сведения** введите значения указанных полей. В следующей таблице перечислены свойства полей.
-
-   | Поле   | Значение  |
-   | ---| --- |
-   | **Подписка** | Подписка, которую вы намерены использовать для развертывания.|
-   | **Группа ресурсов** | Группа ресурсов для ресурсов частного облака. |
-   | **Расположение** | Выберите расположение, например **Восточная часть США**.|
-   | **Имя ресурса** | Имя частного облака Решения Azure VMware. |
-   | **SKU** | Выберите следующее значение SKU: AV36 |
-   | **Узлы** | Обозначает количество узлов, которые будут добавлены в кластер частного облака. Значение по умолчанию (3) можно увеличить или уменьшить после развертывания.  |
-   | **Пароль администратора vCenter** | Введите пароль администратора облака. |
-   | **Пароль диспетчера NSX-T** | Введите пароль администратора NSX-T. |
-   | **Блок адресов** | Введите блок IP-адресов для сети CIDR частного облака, например 10.175.0.0/22. |
-
-   :::image type="content" source="./media/tutorial-create-private-cloud/create-private-cloud.png" alt-text="На вкладке Основные сведения введите значения для полей." border="true":::
-
-1. Завершив этот процесс, щелкните элемент **Просмотр и создание**. На следующем экране проверьте правильность введенных данных. Если вся информация указана правильно, щелкните команду **Создать**.
-
-   > [!NOTE]
-   > Это действие занимает примерно два часа. 
-
-1. Проверьте успешность развертывания. Перейдите к созданной группе ресурсов и выберите частное облако.  После завершения развертывания отобразится состояние **Выполнено**. 
-
-   :::image type="content" source="./media/tutorial-create-private-cloud/validate-deployment.png" alt-text="Проверьте успешность развертывания." border="true":::
+[!INCLUDE [create-avs-private-cloud-azure-portal](includes/create-avs-private-cloud-azure-portal-steps.md)]
 
 ### <a name="azure-cli"></a>Azure CLI
 

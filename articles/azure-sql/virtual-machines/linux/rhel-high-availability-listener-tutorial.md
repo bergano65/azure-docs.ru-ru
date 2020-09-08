@@ -8,12 +8,12 @@ author: VanMSFT
 ms.author: vanto
 ms.reviewer: jroth
 ms.date: 03/11/2020
-ms.openlocfilehash: f60cb3f28c57d6df4a309a7630d078c593d75410
-ms.sourcegitcommit: 61d850bc7f01c6fafee85bda726d89ab2ee733ce
+ms.openlocfilehash: 01501b99d5d7c42af98d0397cf6ff8cbca14b07b
+ms.sourcegitcommit: de2750163a601aae0c28506ba32be067e0068c0c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/03/2020
-ms.locfileid: "84343771"
+ms.lasthandoff: 09/04/2020
+ms.locfileid: "89485810"
 ---
 # <a name="tutorial-configure-an-availability-group-listener-for-sql-server-on-rhel-virtual-machines-in-azure"></a>Руководство по настройке прослушивателя группы доступности для SQL Server на виртуальных машинах RHEL в Azure
 [!INCLUDE[appliesto-sqlvm](../../includes/appliesto-sqlvm.md)]
@@ -41,7 +41,7 @@ ms.locfileid: "84343771"
 
 ## <a name="create-the-load-balancer-in-the-azure-portal"></a>Создание балансировщика нагрузки на портале Azure
 
-Приведенные ниже инструкции помогут вам выполнить шаги 1–4 из раздела [Создание и настройка подсистемы балансировки нагрузки на портале Azure](../windows/availability-group-load-balancer-portal-configure.md#create-and-configure-the-load-balancer-in-the-azure-portal) статьи о [настройке подсистемы балансировки нагрузки на портале Azure](../windows/availability-group-load-balancer-portal-configure.md).
+Приведенные ниже инструкции помогут вам выполнить шаги 1–4 из раздела [Создание и настройка подсистемы балансировки нагрузки на портале Azure](../windows/availability-group-load-balancer-portal-configure.md#create--configure-load-balancer) статьи о [настройке подсистемы балансировки нагрузки на портале Azure](../windows/availability-group-load-balancer-portal-configure.md).
 
 ### <a name="create-the-load-balancer"></a>Создание подсистемы балансировки нагрузки
 

@@ -1,18 +1,18 @@
 ---
 title: Перемещение виртуальных машин в регион Azure с зонами доступности с помощью Azure Site Recovery
 services: site-recovery
-author: rajani-janaki-ram
+author: sideeksh
 ms.service: site-recovery
 ms.topic: tutorial
 ms.date: 01/28/2019
-ms.author: rajanaki
+ms.author: sideeksh
 ms.custom: MVC
-ms.openlocfilehash: 7d92311dfa699247995c7ded3e3930e19a9a537a
-ms.sourcegitcommit: 62717591c3ab871365a783b7221851758f4ec9a4
+ms.openlocfilehash: c1a552ba634234ac3b4d4a8eec260c739ce0d846
+ms.sourcegitcommit: ac5cbef0706d9910a76e4c0841fdac3ef8ed2e82
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/22/2020
-ms.locfileid: "86135463"
+ms.lasthandoff: 09/03/2020
+ms.locfileid: "89425478"
 ---
 # <a name="move-azure-vms-into-availability-zones"></a>Перенос виртуальных машин Azure в Зоны доступности
 Зоны доступности в Azure помогают защитить приложения и данные от сбоев центра обработки данных. Каждая зона доступности состоит из одного или нескольких центров обработки данных, оснащенных независимыми системами электроснабжения, охлаждения и сетевого взаимодействия. Чтобы обеспечить отказоустойчивость, во всех включенных регионах используются минимум три отдельные зоны. Физическое разделение Зон доступности в пределах региона помогает защитить приложения и данные от сбоев центра обработки данных. С помощью Зон доступности Azure предлагает Соглашение об уровне обслуживания, гарантирующее доступность виртуальных машин на уровне 99,99 %. Как упоминалось в статье [Регионы с поддержкой Зон доступности](../availability-zones/az-region.md), Зоны доступности поддерживаются не во всех регионах.

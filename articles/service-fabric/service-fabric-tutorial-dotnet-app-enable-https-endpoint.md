@@ -4,12 +4,12 @@ description: Из этого руководства вы узнаете, как 
 ms.topic: tutorial
 ms.date: 07/22/2019
 ms.custom: mvc, devx-track-csharp
-ms.openlocfilehash: 6b8587982a8cbe496427960495055adbd68a07a7
-ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
+ms.openlocfilehash: b309a13288c8ea95f453c1e80549a979e3f89921
+ms.sourcegitcommit: bf1340bb706cf31bb002128e272b8322f37d53dd
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "88997291"
+ms.lasthandoff: 09/03/2020
+ms.locfileid: "89441533"
 ---
 # <a name="tutorial-add-an-https-endpoint-to-an-aspnet-core-web-api-front-end-service-using-kestrel"></a>Руководство по Добавление конечной точки HTTPS в интерфейсную службу веб-API ASP.NET Core с использованием Kestrel
 
@@ -238,7 +238,7 @@ private X509Certificate2 FindMatchingCertificateBySubject(string subjectCommonNa
 
 Чтобы запустить PowerShell из точки входа **SetupEntryPoint**, запустите PowerShell.exe в пакетном файле, который указывает на файл PowerShell. Сначала добавьте пакетный файл в проект службы.  В обозревателе решений щелкните правой кнопкой мыши **VotingWeb**, выберите **Добавить**->**Новый элемент** и добавьте новый файл с именем Setup.bat.  Измените файл *Setup.bat*, добавив следующую команду:
 
-```bat
+```cmd
 powershell.exe -ExecutionPolicy Bypass -Command ".\SetCertAccess.ps1"
 ```
 
