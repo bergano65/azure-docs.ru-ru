@@ -4,14 +4,6 @@
   items:
     - name: Что такое Брандмауэр Azure?
       href: overview.md
-- name: Учебники
-  items:
-    - name: Развертывание и настройка
-      href: tutorial-firewall-deploy-portal.md
-    - name: Развертывание в гибридной сети
-      href: tutorial-hybrid-portal.md
-    - name: Фильтрация входящего трафика с помощью DNAT
-      href: tutorial-firewall-dnat.md
 - name: Краткие руководства
   expanded: true
   items:
@@ -24,6 +16,14 @@
     - name: Развертывание с использованием Зон доступности. Шаблон ARM
       displayName: Resource Manager
       href: deploy-template.md
+- name: Учебники
+  items:
+    - name: Развертывание и настройка
+      href: tutorial-firewall-deploy-portal.md
+    - name: Развертывание в гибридной сети
+      href: tutorial-hybrid-portal.md
+    - name: Фильтрация входящего трафика с помощью DNAT
+      href: tutorial-firewall-dnat.md
 - name: Примеры
   items:
     - name: Azure PowerShell

@@ -35,6 +35,8 @@
   items:
     - name: Внутренние компоненты службы Azure SignalR
       href: signalr-concept-internals.md
+    - name: Режим службы
+      href: concept-service-mode.md
     - name: Масштабирование SignalR для ASP.NET Core
       href: signalr-concept-scale-aspnet-core.md
     - name: Бессерверные приложения
