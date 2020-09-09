@@ -4,15 +4,15 @@ description: Сведения об Azure HPC Cache, решения для быс
 author: ekpgh
 ms.service: hpc-cache
 ms.topic: overview
-ms.date: 07/16/2020
+ms.date: 09/03/2020
 ms.author: v-erkel
 ms.custom: references_regions
-ms.openlocfilehash: 8c8223872ec3ef1d875e10ead8f327db01a924c4
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 0c898b0d5a58654547cb6205ee0c845c9cfa4aa9
+ms.sourcegitcommit: f845ca2f4b626ef9db73b88ca71279ac80538559
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87053685"
+ms.lasthandoff: 09/09/2020
+ms.locfileid: "89611744"
 ---
 # <a name="what-is-azure-hpc-cache"></a>Что такое Azure HPC Cache?
 
@@ -65,11 +65,11 @@ Azure HPC Cache также можно использовать для повыш
 * US Gov (Аризона)
 * US Gov (Вирджиния)
 
-## <a name="service-availability"></a>Доступность службы
+<!-- ## Service availability
 
-Необходимо запросить доступ для каждой подписки, которая будет использоваться с Azure HPC Cache. Это ограничение обеспечивает качество обслуживания.
+You must request access for each subscription you will use with Azure HPC Cache. This restriction helps ensure service quality.
 
-Запросите доступ, заполнив [эту форму](https://aka.ms/onboard-hpc-cache). После добавления подписки в список доступа можно создать кэши.
+Request access by filling out [this form](https://aka.ms/onboard-hpc-cache). After your subscription is added to the access list, you can create caches. -->
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

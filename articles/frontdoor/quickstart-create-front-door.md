@@ -3,7 +3,7 @@ title: Краткое руководство. Обеспечение высок�
 description: В этом кратком руководстве показано, как использовать Azure Front Door Service для работы с глобальным веб-приложением с высоким уровнем доступности и производительности.
 services: front-door
 documentationcenter: ''
-author: sharad4u
+author: duongau
 editor: ''
 ms.assetid: ''
 ms.service: frontdoor
@@ -12,13 +12,13 @@ ms.topic: quickstart
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 04/27/2020
-ms.author: sharadag
-ms.openlocfilehash: c1ce34bb7fc851d3f763241c9e92371b43ed1861
-ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
+ms.author: duau
+ms.openlocfilehash: 16ebfe7ae39d63f455e39c677acc61b31d40bb5a
+ms.sourcegitcommit: d0541eccc35549db6381fa762cd17bc8e72b3423
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "82133413"
+ms.lasthandoff: 09/09/2020
+ms.locfileid: "89569243"
 ---
 # <a name="quickstart-create-a-front-door-for-a-highly-available-global-web-application"></a>Краткое руководство. Создание службы Front Door для глобального веб-приложения высокого уровня доступности
 
@@ -165,5 +165,3 @@ ms.locfileid: "82133413"
 Теперь вы можете переходить к следующей статье, где описано добавление личного домена в Front Door.
 > [!div class="nextstepaction"]
 > [Добавить личный домен](front-door-custom-domain.md)
-
-См. сведения о маршрутизации трафика в руководстве по [методам маршрутизации Front Door](front-door-routing-methods.md).

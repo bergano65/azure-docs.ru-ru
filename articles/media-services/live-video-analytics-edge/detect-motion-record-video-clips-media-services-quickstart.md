@@ -3,12 +3,12 @@ title: Запись видео в Службы мультимедиа Azure пр
 description: В этом кратком руководстве показано, как использовать Аналитику видеотрансляции в IoT Edge для обнаружения движения во время видеотрансляции и записи видеороликов в Службы мультимедиа Azure.
 ms.topic: quickstart
 ms.date: 04/27/2020
-ms.openlocfilehash: 972b85c00aa29cc39dafd03b9945e489680dd9a5
-ms.sourcegitcommit: d8b8768d62672e9c287a04f2578383d0eb857950
+ms.openlocfilehash: d4301a9c0c5684be04ee2cfbace60c1bb1904876
+ms.sourcegitcommit: d0541eccc35549db6381fa762cd17bc8e72b3423
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/11/2020
-ms.locfileid: "88067684"
+ms.lasthandoff: 09/09/2020
+ms.locfileid: "89569018"
 ---
 # <a name="quickstart-detect-motion-record-video-to-media-services"></a>Краткое руководство. Запись видео в Cлужбы мультимедиа при обнаружении движения
 
@@ -33,7 +33,8 @@ ms.locfileid: "88067684"
 
 Выполняя указанные ниже действия, вы будете использовать Аналитику видеотрансляции в IoT Edge для обнаружения движения автомобиля и записи видеоролика, начиная с 5-секундной отметки. Приведенная ниже схема является визуальным представлением общего потока.
 
-![Запись видео на основе событий в активы на основе событий движения](./media/quickstarts/topology.png)
+> [!div class="mx-imgBorder"]
+> :::image type="content" source="./media/quickstarts/topology.svg" alt-text="Запись видео на основе событий в активы на основе событий движения":::
 
 ## <a name="use-direct-method-calls"></a>Использование вызовов прямых методов
 

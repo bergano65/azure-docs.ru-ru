@@ -4,18 +4,18 @@ description: В этом кратком руководстве показано,
 ms.topic: quickstart
 ms.date: 08/10/2020
 zone_pivot_groups: ams-lva-edge-programming-languages
-ms.openlocfilehash: 45595e8e6aa53b41d6d8b0d9d11457468dc47013
-ms.sourcegitcommit: 56cbd6d97cb52e61ceb6d3894abe1977713354d9
+ms.openlocfilehash: 4d8b91529eaf5a9ee93cff28153b28b26fb7e685
+ms.sourcegitcommit: d0541eccc35549db6381fa762cd17bc8e72b3423
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/20/2020
-ms.locfileid: "88691040"
+ms.lasthandoff: 09/09/2020
+ms.locfileid: "89566924"
 ---
 # <a name="quickstart-detect-motion-and-emit-events"></a>Краткое руководство. Создание событий при обнаружении движения
 
 В этом руководстве изложены пошаговые инструкции по началу работы с Аналитикой видеотрансляции в IoT Edge. В нем используется имитация видеотрансляции и виртуальная машина Azure в качестве устройства IoT Edge. После завершения процедуры настройки вы сможете запустить имитацию видеотрансляции с помощью графа мультимедиа, который обнаруживает движения в этой трансляции и сообщает о них. На следующей схеме представлено изображение графа мультимедиа:
 
-![Аналитика видеотрансляции на основе обнаружения движения](./media/analyze-live-video/motion-detection.png) 
+![Аналитика видеотрансляции на основе обнаружения движения](./media/analyze-live-video/motion-detection.svg) 
 
 ::: zone pivot="programming-language-csharp"
 [!INCLUDE [header](includes/detect-motion-emit-events-quickstart/csharp/header.md)]
