@@ -9,12 +9,12 @@ ms.topic: overview
 ms.custom: sqldbrb=1
 ms.reviewer: vanto
 ms.date: 03/09/2020
-ms.openlocfilehash: 5fcc50670973c361d830e4e6bbf2ce26101b8582
-ms.sourcegitcommit: 4913da04fd0f3cf7710ec08d0c1867b62c2effe7
+ms.openlocfilehash: f8c7e2cfb17ca48a67a009f532a9cbb6894cc05d
+ms.sourcegitcommit: bf1340bb706cf31bb002128e272b8322f37d53dd
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88213371"
+ms.lasthandoff: 09/03/2020
+ms.locfileid: "89442604"
 ---
 # <a name="azure-private-link-for-azure-sql-database-and-azure-synapse-analytics"></a>Приватный канал Azure для базы данных SQL Azure и Azure Synapse Analytics
 [!INCLUDE[appliesto-sqldb-asa](../includes/appliesto-sqldb-asa.md)]
@@ -22,7 +22,7 @@ ms.locfileid: "88213371"
 Приватный канал позволяет подключаться к различным службам PaaS в Azure через **частную конечную точку**. Чтобы получить список служб PaaS, поддерживающих функции Приватного канала, перейдите на страницу [документации по Приватному каналу](../../private-link/index.yml). Частная конечная точка — это частный IP-адрес в определенной [виртуальной сети](../../virtual-network/virtual-networks-overview.md) и подсети.
 
 > [!IMPORTANT]
-> Эта статья относится как к базе данных SQL Azure, так и к Azure Synapse Analytics (ранее — хранилище данных SQL Azure). Для простоты термин "база данных" применяется к обеим из них. Аналогичным образом, "сервером" называется [логический сервер SQL Server](logical-servers.md), на котором размещены База данных SQL Azure и Azure Synapse Analytics. Эта статья *не* относится к **управляемому экземпляру базы данных SQL Azure**.
+> Эта статья относится как к базе данных SQL Azure, так и к Azure Synapse Analytics (ранее — хранилище данных SQL). Для простоты термин "база данных" применяется к обеим из них. Аналогичным образом, "сервером" называется [логический сервер SQL Server](logical-servers.md), на котором размещены База данных SQL Azure и Azure Synapse Analytics. Эта статья *не* относится к **управляемому экземпляру базы данных SQL Azure**.
 
 ## <a name="data-exfiltration-prevention"></a>Предотвращение кражи данных
 

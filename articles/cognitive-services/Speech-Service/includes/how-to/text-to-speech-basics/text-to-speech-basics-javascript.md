@@ -5,12 +5,12 @@ ms.topic: include
 ms.date: 04/15/2020
 ms.author: trbye
 ms.custom: devx-track-javascript
-ms.openlocfilehash: 931fcd113f883f126c2f94e6f3d06684b9a0e772
-ms.sourcegitcommit: 42107c62f721da8550621a4651b3ef6c68704cd3
+ms.openlocfilehash: f5cbfc96ecc7fce8dbdcca776d13847087cfcd03
+ms.sourcegitcommit: 5a3b9f35d47355d026ee39d398c614ca4dae51c6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87407644"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89400925"
 ---
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -75,6 +75,8 @@ const sdk = require("microsoft-cognitiveservices-speech-sdk");
 function synthesizeSpeech() {
     const speechConfig = SpeechConfig.fromSubscription("YourSubscriptionKey", "YourServiceRegion");
 }
+
+synthesizeSpeech();
 ```
 
 ## <a name="synthesize-speech-to-a-file"></a>Синтезирование речи в файл

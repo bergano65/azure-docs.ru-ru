@@ -9,12 +9,12 @@ author: j-martens
 ms.author: jmartens
 ms.date: 11/04/2019
 ms.custom: devx-track-python
-ms.openlocfilehash: 2c043ab535504a02a151d308de0562debdba950a
-ms.sourcegitcommit: d7352c07708180a9293e8a0e7020b9dd3dd153ce
+ms.openlocfilehash: 233eb06714dc8ac614cceef157f87d175c3f455b
+ms.sourcegitcommit: 4a7a4af09f881f38fcb4875d89881e4b808b369b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/30/2020
-ms.locfileid: "89145898"
+ms.lasthandoff: 09/04/2020
+ms.locfileid: "89462468"
 ---
 # <a name="what-is-azure-machine-learning"></a>Что такое служба "Машинное обучение Microsoft Azure"?
 
@@ -69,7 +69,7 @@ ms.locfileid: "89145898"
 
 ## <a name="build-ml-models-in-the-studio"></a>Создание моделей машинного обучения в студии
 
-[Студия Машинного обучения Azure](https://www.ml.azure.com) — это веб-портал в службе "Машинное обучение Azure" для обучения моделей, развертывания и управления активами с написанием минимального количества кода или без него. Для удобства работы студия интегрируется с пакетом SDK для Машинного обучения Azure. Дополнительные сведения см. в статье [Что такое студия Машинного обучения Azure](overview-what-is-machine-learning-studio.md).
+[Студия Машинного обучения Azure](https://studio.azureml.net) — это веб-портал в службе "Машинное обучение Azure" для обучения моделей, развертывания и управления активами с написанием минимального количества кода или без него. Для удобства работы студия интегрируется с пакетом SDK для Машинного обучения Azure. Дополнительные сведения см. в статье [Что такое студия Машинного обучения Azure](overview-what-is-machine-learning-studio.md).
 
 + **Конструктор Машинного обучения Azure (предварительная версия).**
 
@@ -86,7 +86,7 @@ ms.locfileid: "89145898"
 
 + **И это еще не все!**
 
-  Посетите студию Машинного обучения Azure по адресу [ml.azure.com](https://www.ml.azure.com). 
+  Посетите студию Машинного обучения Azure по адресу [ml.azure.com](https://studio.azureml.net). 
 
 
 ## <a name="mlops-deploy--lifecycle-management"></a>MLOps: развертывание и управление жизненным циклом

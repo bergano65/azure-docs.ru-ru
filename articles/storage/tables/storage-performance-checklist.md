@@ -9,12 +9,12 @@ ms.topic: overview
 ms.date: 10/10/2019
 ms.subservice: tables
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 9a60683b8dbf809bc3e91ffd8720b545db4c361d
-ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
+ms.openlocfilehash: 9d3f7d5f496634f10b48e7509c21cd634fd92d3c
+ms.sourcegitcommit: 4a7a4af09f881f38fcb4875d89881e4b808b369b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89008681"
+ms.lasthandoff: 09/04/2020
+ms.locfileid: "89458338"
 ---
 # <a name="performance-and-scalability-checklist-for-table-storage"></a>Контрольный список для обеспечения масштабируемости и производительности для Хранилища таблиц
 
@@ -197,7 +197,7 @@ ThreadPool.SetMinThreads(100,100); //(Determine the right number for your applic
 
 Начиная со службы хранилища версии 2013-08-15, для передачи данных таблицы Хранилище таблиц поддерживает формат JSON вместо формата AtomPub на базе XML. Использование JSON может уменьшить размеры полезной нагрузки на 75 %, а следовательно сильно увеличить производительность приложения.
 
-Дополнительные сведения см. в статьях [Microsoft Azure Tables: Introducing JSON](https://blogs.msdn.com/b/windowsazurestorage/archive/2013/12/05/windows-azure-tables-introducing-json.aspx) (Таблицы Microsoft Azure: введение в JSON) и [Payload Format for Table Service Operations](https://msdn.microsoft.com/library/azure/dn535600.aspx) (Формат полезных данных для операций службы таблиц).
+Дополнительные сведения см. в статьях [Microsoft Azure Tables: Introducing JSON](https://docs.microsoft.com/archive/blogs/windowsazurestorage/windows-azure-tables-introducing-json) (Таблицы Microsoft Azure: введение в JSON) и [Payload Format for Table Service Operations](https://msdn.microsoft.com/library/azure/dn535600.aspx) (Формат полезных данных для операций службы таблиц).
 
 ### <a name="disable-nagle"></a>Отключение алгоритма Нейгла
 

@@ -8,12 +8,12 @@ ms.topic: quickstart
 ms.date: 08/24/2020
 ms.author: robinsh
 ms.custom: mvc, subject-armqs
-ms.openlocfilehash: fd2742744ef4f2f616e772c8f387887e113b132a
-ms.sourcegitcommit: b33c9ad17598d7e4d66fe11d511daa78b4b8b330
+ms.openlocfilehash: 4112e8aae485e229beb16d21e90280750e1465e1
+ms.sourcegitcommit: 4a7a4af09f881f38fcb4875d89881e4b808b369b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88861743"
+ms.lasthandoff: 09/04/2020
+ms.locfileid: "89462672"
 ---
 # <a name="quickstart-deploy-an-azure-iot-hub-and-a-storage-account-using-an-arm-template"></a>Краткое руководство. Развертывание Центра Интернета вещей Azure и учетной записи хранения с помощью шаблона ARM
 
@@ -32,8 +32,8 @@ ms.locfileid: "88861743"
 :::code language="json" source="~/quickstart-templates/101-iothub-auto-route-messages/azuredeploy.json":::
 
 В шаблоне определено два ресурса Azure: 
-* [Microsoft.Devices/Iothubs](/azure/templates/microsoft.iothubs)
-* [Microsoft.Storage/](/azure/templates/microsoft.storage)
+* [Microsoft.Devices/Iothubs](/azure/templates/microsoft.devices/iothubs)
+* [Microsoft.Storage/](/azure/templates/microsoft.storage/allversions)
 
 ## <a name="deploy-the-template-and-run-the-sample-app"></a>Развертывание шаблона и запуск примера приложения
 
@@ -46,7 +46,7 @@ ms.locfileid: "88861743"
 
     [![Развернуть в Azure](https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/1-CONTRIBUTION-GUIDE/images/deploytoazure.svg?sanitize=true)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-quickstart-templates%2Fmaster%2F101-iothub-auto-route-messages%2Fazuredeploy.json)
 
-1. Скачайте и распакуйте [примеры C# для Интернета вещей](https://Azure-Samples/azure-iot-samples-csharp).
+1. Скачайте и распакуйте [примеры C# для Интернета вещей](https://docs.microsoft.com/samples/azure-samples/azure-iot-samples-csharp/azure-iot-samples-for-csharp-net/).
 
 1. Откройте командное окно и перейдите в папку, в которую вы распаковали примеры C# для Интернета вещей. Найдите папку с файлом arm-read-write.csproj. Переменные среды создаются в этом командном окне. Войдите на портал Azure на странице https://portal.azure.com, чтобы получить ключи. Выберите **Группы ресурсов**, а затем щелкните группу ресурсов, используемую для этого краткого руководства.
 
