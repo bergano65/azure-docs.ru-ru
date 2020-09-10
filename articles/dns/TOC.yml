@@ -17,6 +17,8 @@
           href: dns-getstarted-powershell.md
         - name: "Создание общедоступной зоны\_— CLI"
           href: dns-getstarted-cli.md
+        - name: "Создание общедоступной зоны\_— шаблон ARM"
+          href: dns-get-started-template.md
     - name: Частная зона DNS
       items:
         - name: "Создание частной зоны\_— портал"

@@ -52,8 +52,20 @@
           href: how-application-gateway-works.md
         - name: Компоненты Шлюза приложений
           href: application-gateway-components.md
-        - name: Общие сведения о настройке
-          href: configuration-overview.md
+        - name: Параметр Configuration
+          items:
+            - name: Обзор
+              href: configuration-overview.md
+            - name: Инфраструктура
+              href: configuration-infrastructure.md
+            - name: Интерфейсный IP-адрес
+              href: configuration-front-end-ip.md
+            - name: Прослушиватели
+              href: configuration-listeners.md
+            - name: Правила маршрутизации запросов
+              href: configuration-request-routing-rules.md
+            - name: Параметры HTTP
+              href: configuration-http-settings.md
     - name: Поддержка больших объемов трафика
       href: high-traffic-support.md
     - name: "SKU автомасштабирования версии\_2"

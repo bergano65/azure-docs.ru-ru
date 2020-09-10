@@ -5,7 +5,7 @@
   items:
     - name: Архитектура решения
       href: architecture.md
-    - name: Решение по обеспечению безопасности для ОСРВ Azure
+    - name: Модуль безопасности для ОСРВ Azure
       href: iot-security-azure-rtos.md
     - name: Агенты безопасности
       href: security-agent-architecture.md
@@ -23,6 +23,8 @@
 - name: Краткие руководства
   expanded: true
   items:
+    - name: Настройка модуля безопасности для ОСРВ Azure
+      href: quickstart-azure-rtos-security-module.md
     - name: Подключение Центра безопасности Azure для Интернета вещей в Центре Интернета вещей
       href: quickstart-onboard-iot-hub.md
     - name: Настройка решения
@@ -37,6 +39,12 @@
       href: quickstart-investigate-security-alerts.md
 - name: Основные понятия
   items:
+    - name: Модуль безопасности для ОСРВ Azure
+      items:
+        - name: Общие сведения о модуле безопасности для ОСРВ Azure
+          href: concept-rtos-security-module.md
+        - name: 'Рекомендации и оповещения, касающиеся модуля безопасности для ОСРВ Azure'
+          href: concept-rtos-security-alerts-recommendations.md
     - name: Аутентификация агентов безопасности
       href: concept-security-agent-authentication-methods.md
     - name: Модуль безопасности
@@ -55,6 +63,8 @@
       href: concept-pricing.md
 - name: Практические руководства
   items:
+    - name: Работа с модулем безопасности для ОСРВ Azure
+      href: how-to-azure-rtos-security-module.md
     - name: Какой агент нужно развернуть?
       items:
         - name: Выбор агента для развертывания
@@ -87,13 +97,29 @@
       href: how-to-configure-with-sentinel.md
     - name: Настройка решения
       href: how-to-customize-solution.md
-- name: Ресурсы
+- name: Ссылки
   items:
+    - name: API модуля безопасности для ОСРВ Azure
+      href: azure-rtos-security-module-api.md
     - name: Часто задаваемые вопросы
       href: resources-frequently-asked-questions.md
     - name: Стратегия развития Azure
       href: 'https://azure.microsoft.com/roadmap/?category=security-identity'
-    - name: 'Блог по безопасности, конфиденциальности и соответствию нормам Azure'
-      href: 'https://docs.microsoft.com/archive/blogs/azuresecurity/'
+- name: Ресурсы
+  items:
+    - name: Развитие навыков обеспечения безопасности с помощью Microsoft Learn
+      href: 'https://docs.microsoft.com/learn/browse/?term=securityS&terms=securityS'
+    - name: Документация по Центру безопасности Azure
+      href: 'https://docs.microsoft.com/azure/security-center/'
+    - name: Документация по системе безопасности Azure
+      href: 'https://docs.microsoft.com/azure/security/'
+    - name: Модуль безопасности ОСРВ Azure на Stack Overflow
+      href: 'https://stackoverflow.com/questions/tagged/azure-rtos+azure-iot-security-module'
+    - name: 'Блог по вопросам безопасности, конфиденциальности и соответствию нормам Интернета вещей Azure'
+      href: 'https://techcommunity.microsoft.com/t5/iot-security/bd-p/IoTSecurity'
     - name: Доступность по регионам
       href: 'https://azure.microsoft.com/regions/services/'
+    - name: Цены
+      href: 'https://azure.microsoft.com/pricing/details/security-center/'
+    - name: Видео
+      href: 'https://azure.microsoft.com/resources/videos/index/?services=security-center&service=internet-of-things&page=1&sort=newest'

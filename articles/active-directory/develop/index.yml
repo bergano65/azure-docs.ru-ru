@@ -9,12 +9,12 @@ metadata:
   ms.service: active-directory
   ms.subservice: develop
   ms.workload: identity
-  ms.openlocfilehash: 115c2b7058941512bf75f2b45b17d4a0a806c1af
-  ms.sourcegitcommit: 56cbd6d97cb52e61ceb6d3894abe1977713354d9
+  ms.openlocfilehash: f6893522b66f20dd26905084e5b09d303cbfd5b3
+  ms.sourcegitcommit: f845ca2f4b626ef9db73b88ca71279ac80538559
   ms.translationtype: HT
   ms.contentlocale: ru-RU
-  ms.lasthandoff: 08/20/2020
-  ms.locfileid: "88690295"
+  ms.lasthandoff: 09/09/2020
+  ms.locfileid: "89612775"
 landingContent:
 - title: Общие сведения о платформе удостоверений Майкрософт
   linkLists:
@@ -120,6 +120,14 @@ landingContent:
   linkLists:
   - linkListType: whats-new
     links:
+    - text: Краткое руководство. Регистрация приложения (перезапись)
+      url: quickstart-register-app.md
+    - text: Краткое руководство. Предоставление веб-API (перезапись)
+      url: quickstart-configure-app-expose-web-apis.md
+    - text: Краткое руководство. Доступ к веб-API (перезапись)
+      url: quickstart-configure-app-access-web-apis.md
+    - text: Миграция приложения Xamarin Android с использованием брокера в MSAL.NET
+      url: msal-net-migration-android-broker.md
     - text: Обработка ошибок и исключений (Android)
       url: msal-android-handling-exceptions.md
     - text: Атрибуты расширения схемы каталога в утверждениях

@@ -136,7 +136,11 @@
       items:
         - name: Рекомендации по устранению проблем
           href: security-center-remediate-recommendations.md
+        - name: Предотвращение неправильной настройки с помощью элементов "Применить" и "Отклонить"
+          displayName: recommendations
+          href: prevent-misconfigurations.md
         - name: Повышение уровня безопасности
+          displayName: recommendations
           href: security-center-monitoring.md
         - name: Справочный список рекомендаций
           href: recommendations-reference.md

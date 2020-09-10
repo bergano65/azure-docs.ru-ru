@@ -9,8 +9,8 @@
     - name: "Добавление пользователей в Azure\_AD"
       href: ../fundamentals/add-users-azure-active-directory.md?context=azure%2factive-directory%2fusers-groups-roles%2fcontext%2fugr-context
     - name: Назначение лицензий пользователям
-      href: ../fundamentals/license-users-groups.md?context=azure%2factive-directory%2fusers-groups-roles%2fcontext%2fugr-context
-    - name: Предоставление разрешения на неограниченное количество регистраций приложений
+      href: /azure/active-directory/fundamentals/license-users-groups?context=azure/active-directory/users-groups-roles/context/ugr-context
+    - name: Создание неограниченного количества регистраций приложений
       href: roles-quickstart-app-registration-limits.md
     - name: Настройка срока действия групп
       href: groups-quickstart-expiration.md
@@ -175,6 +175,8 @@
               href: ../fundamentals/active-directory-users-assign-role-azure-portal.md?context=azure%2factive-directory%2fusers-groups-roles%2fcontext%2fugr-context
             - name: Назначение настраиваемых ролей в PowerShell
               href: roles-assign-powershell.md
+            - name: Пользовательские роли для корпоративных приложений
+              href: custom-enterprise-apps.md
             - name: Разрешения настраиваемых ролей
               href: roles-custom-available-permissions.md
             - name: Делегирование разрешений администратора приложений

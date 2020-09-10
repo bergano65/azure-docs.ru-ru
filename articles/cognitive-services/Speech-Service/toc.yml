@@ -16,24 +16,14 @@
   items:
     - name: Документация по преобразованию речи в текст
       href: index-speech-to-text.yml
-    - name: Обзор
-      items:
-        - name: Что такое преобразование речи в текст?
-          href: speech-to-text.md
-        - name: Основы распознавания речи
-          href: speech-to-text-basics.md
-    - name: Краткие руководства
-      items:
-        - name: Распознавание речи при вводе с микрофона
-          href: quickstarts/speech-to-text-from-microphone.md
-        - name: Распознавание речи из звукового файла
-          href: quickstarts/speech-to-text-from-file.md
-        - name: 'Распознавание речи из файлов, находящихся в хранилище BLOB-объектов'
-          href: quickstarts/from-blob.md
-        - name: Тестирование модели с использованием звуковых файлов в Speech Studio
-          href: quickstarts/speech-studio-test-model.md
+    - name: Общие сведения о преобразовании речи в текст
+      href: speech-to-text.md
+    - name: Краткое руководство по преобразованию речи в текст
+      href: get-started-speech-to-text.md
     - name: Практические руководства
       items:
+        - name: 'Распознавание речи из файлов, находящихся в хранилище BLOB-объектов'
+          href: quickstarts/from-blob.md
         - name: Выбор режима распознавания речи
           href: how-to-choose-recognition-mode.md
         - name: Изменение исходного языка при распознавании речи
@@ -57,6 +47,8 @@
           href: tutorial-tenant-model.md
     - name: Настройка
       items:
+        - name: Тестирование модели с использованием звуковых файлов в Speech Studio
+          href: quickstarts/speech-studio-test-model.md
         - name: Подготовка данных для службы пользовательского распознавания речи
           href: how-to-custom-speech-test-and-train.md
         - name: Проверка данных службы пользовательского распознавания речи
@@ -75,33 +67,29 @@
           href: how-to-custom-speech-human-labeled-transcriptions.md
     - name: Справочник
       items:
-        - name: API для работы с пакетом SDK службы "Речь"
-          items:
-            - name: C++
-              displayName: 'C++ SDK,C++ dev kit,reference,reference docs,ref documentation'
-              href: 'https://aka.ms/csspeech/cppref'
-            - name: C#
-              displayName: 'CSharp SDK,.NET SDK,C# SDK,C# dev kit,reference,reference docs,ref documentation'
-              href: 'https://aka.ms/csspeech/csharpref'
-            - name: Java
-              displayName: 'Java SDK,Java dev kit,reference,reference docs,ref documentation'
-              href: 'https://aka.ms/csspeech/javaref'
-            - name: JavaScript
-              displayName: 'Node, Node.js, NodeJS, JS SDK,JavaScript SDK,JavaScript dev kit,reference,reference docs,ref documentation'
-              href: 'https://aka.ms/csspeech/javascriptref'
-            - name: Objective-C
-              displayName: 'Objective-C SDK,Objective-C dev kit,reference,reference docs,ref documentation'
-              href: 'https://aka.ms/csspeech/objectivecref'
-            - name: Python
-              displayName: 'Python SDK,Python dev kit,reference,reference docs,ref documentation'
-              href: 'https://aka.ms/csspeech/pythonref'
-            - name: Заметки о выпуске
-              displayName: 'release notes,updates,what''s new,what is new,changes'
-              href: releasenotes.md
-        - name: Интерфейсы REST API
-          items:
-            - name: REST API преобразования речи в текст;
-              href: rest-speech-to-text.md
+        - name: C++
+          displayName: 'C++ SDK,C++ dev kit,reference,reference docs,ref documentation'
+          href: 'https://aka.ms/csspeech/cppref'
+        - name: C#
+          displayName: 'CSharp SDK,.NET SDK,C# SDK,C# dev kit,reference,reference docs,ref documentation'
+          href: 'https://aka.ms/csspeech/csharpref'
+        - name: Java
+          displayName: 'Java SDK,Java dev kit,reference,reference docs,ref documentation'
+          href: 'https://aka.ms/csspeech/javaref'
+        - name: JavaScript
+          displayName: 'Node, Node.js, NodeJS, JS SDK,JavaScript SDK,JavaScript dev kit,reference,reference docs,ref documentation'
+          href: 'https://aka.ms/csspeech/javascriptref'
+        - name: Objective-C
+          displayName: 'Objective-C SDK,Objective-C dev kit,reference,reference docs,ref documentation'
+          href: 'https://aka.ms/csspeech/objectivecref'
+        - name: Python
+          displayName: 'Python SDK,Python dev kit,reference,reference docs,ref documentation'
+          href: 'https://aka.ms/csspeech/pythonref'
+        - name: Заметки о выпуске
+          displayName: 'release notes,updates,what''s new,what is new,changes'
+          href: releasenotes.md
+        - name: REST API преобразования речи в текст;
+          href: rest-speech-to-text.md
     - name: Ресурсы
       items:
         - name: Поддержка языков

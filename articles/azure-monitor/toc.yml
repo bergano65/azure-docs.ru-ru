@@ -566,6 +566,8 @@
               href: platform/itsmc-overview.md
             - name: Подключения управления ИТ-услугами
               href: platform/itsmc-connections.md
+            - name: Интеграция безопасного экспорта
+              href: platform/it-service-management-connector-secure-webhook-connections.md
             - name: Создание веб-приложения Service Manager
               href: platform/itsmc-service-manager-script.md
             - name: Исправление проблем с синхронизацией ServiceNow ITSM
@@ -720,6 +722,10 @@
                       href: app/monitor-performance-live-website-now.md
                 - name: Java
                   href: app/java-on-premises.md
+        - name: OpenTelemetry
+          items:
+            - name: ВОПРОСЫ И ОТВЕТЫ
+              href: faq.md#opentelemetry
         - name: Создание ресурса (классическая модель)
           href: app/create-new-resource.md
         - name: Создание ресурса (на основе рабочей области)
@@ -1010,6 +1016,8 @@
           href: insights/container-insights-health.md
         - name: Мониторинг производительности GPU
           href: insights/container-insights-gpu-monitoring.md
+        - name: Мониторинг развертываний и средств HPA
+          href: insights/container-insights-deployment-hpa-metrics.md
         - name: Просмотр динамических данных
           items:
             - name: Общие сведения о динамических данных (предварительная версия)

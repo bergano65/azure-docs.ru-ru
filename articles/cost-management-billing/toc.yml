@@ -114,6 +114,8 @@
           href: understand/mca-overview.md
         - name: Учетные записи выставления счетов для партнерского соглашения Майкрософт
           href: understand/mpa-overview.md
+        - name: Передача подписок между партнерами (предварительная версия)
+          href: manage/azure-plan-subscription-transfer-partners.md
 - name: Практические руководства
   items:
     - name: Настройка службы Управления затратами и выставления счетов

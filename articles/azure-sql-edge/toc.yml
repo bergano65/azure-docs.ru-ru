@@ -77,3 +77,11 @@
       items:
         - name: Date_Bucket (Transact-SQL)
           href: date-bucket-tsql.md
+        - name: Хранение и очистка данных
+          items:
+            - name: Общие сведения о хранении данных
+              href: data-retention-overview.md
+            - name: Включение или отключение хранения данных
+              href: data-retention-enable-disable.md
+            - name: Очистка данных в рамках политики их хранения
+              href: data-retention-cleanup.md

@@ -1,0 +1,36 @@
+- name: Документация по Azure Resource Mover
+  href: index.yml
+- name: Обзор
+  items:
+    - name: Сведения об Azure Resource Mover
+      href: overview.md
+    - name: Выберите средство для перемещения ресурсов
+      href: select-move-tool.md
+    - name: Часто задаваемые вопросы
+      href: common-questions.md
+- name: Учебники
+  items:
+    - name: Перенос виртуальных машин Azure в другой регион
+      href: tutorial-move-region-virtual-machines.md
+    - name: Перемещение ресурсов SQL в другой регион
+      href: tutorial-move-region-sql.md
+- name: Основные понятия
+  items:
+    - name: Обзор средств перемещения
+      href: about-move-process.md
+    - name: Таблица поддержки для перемещения виртуальных машин Azure между регионами
+      href: support-matrix-move-region-azure-vm.md
+    - name: Таблица поддержки для перемещения SQL Azure между регионами
+      href: support-matrix-move-region-sql.md
+- name: Руководства
+  items:
+    - name: Удаление ресурсов из коллекции перемещения
+      href: remove-move-resources.md
+- name: Ресурсы
+  items:
+    - name: Миграция с помощью Cloud Adoption Framework
+      href: /azure/cloud-adoption-framework/migrate/
+    - name: Шаблон Resource Manager
+      href: /azure/templates/microsoft.migrate/allversions
+    - name: Стратегия развития Azure
+      href: 'https://azure.microsoft.com/roadmap/'

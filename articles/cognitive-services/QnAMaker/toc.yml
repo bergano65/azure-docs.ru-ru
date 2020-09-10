@@ -24,6 +24,8 @@
   items:
     - name: Интеграция с Power Virtual Agents
       href: Tutorials/integrate-with-power-virtual-assistant-fallback-topic.md
+    - name: Создание бота вопросов и ответов с помощью Службы Azure Bot
+      href: Tutorials/create-faq-bot-with-azure-bot-service.md
     - name: Тестирование с помощью пакетного файла
       href: Quickstarts/batch-testing.md
 - name: Основные понятия
@@ -91,7 +93,7 @@
         - name: Миграция на новую базу знаний
           href: Tutorials/migrate-knowledge-base.md
           displayName: 'metadata, pair'
-        - name: Тест
+        - name: Тестирование базы знаний
           href: How-To/test-knowledge-base.md
     - name: Управление наборами вопросов и ответов
       items:
