@@ -96,7 +96,7 @@
         - name: Группы безопасности сети
           items:
             - name: Обзор
-              href: security-overview.md
+              href: network-security-groups-overview.md
             - name: Принципы работы
               href: network-security-group-how-it-works.md
         - name: Группы безопасности приложений

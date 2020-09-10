@@ -32,6 +32,10 @@
       href: private-link-service-overview.md
     - name: Интеграция с частной конечной точкой DNS
       href: private-endpoint-dns.md
+    - name: Безопасность
+      items:
+        - name: Базовые средства безопасности
+          href: security-baseline.md
 - name: Практическое руководство
   items:
     - name: Частное подключение к учетной записи хранения

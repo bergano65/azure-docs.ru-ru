@@ -27,6 +27,8 @@
       href: quickstart-ruby.md
     - name: Статический HTML-сайт
       href: quickstart-html.md
+    - name: Шаблон ARM
+      href: quickstart-arm-template.md
     - name: Пользовательский контейнер
       href: quickstart-custom-container.md
     - name: Многоконтейнерное приложение

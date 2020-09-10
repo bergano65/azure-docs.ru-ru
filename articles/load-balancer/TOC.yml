@@ -81,6 +81,8 @@
       href: load-balancer-standard-virtual-machine-scale-sets.md
 - name: Практическое руководство
   items:
+    - name: Параметры портала
+      href: manage.md
     - name: Масштабируемые наборы виртуальных машин
       items:
         - name: "Использование с существующим решением Azure Load Balancer\_— портал"
