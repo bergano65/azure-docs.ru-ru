@@ -10,12 +10,12 @@ author: sdgilley
 ms.author: sgilley
 ms.date: 03/18/2020
 ms.custom: seodec18, devx-track-python
-ms.openlocfilehash: f56b289f65bf12c1ad89d046d6bc26acd76249ce
-ms.sourcegitcommit: 7fe8df79526a0067be4651ce6fa96fa9d4f21355
+ms.openlocfilehash: 402eaec50d273c4d8d9215f53fa433d0db4332e8
+ms.sourcegitcommit: 3be3537ead3388a6810410dfbfe19fc210f89fec
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87849785"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89649907"
 ---
 # <a name="tutorial-train-image-classification-models-with-mnist-data-and-scikit-learn"></a>Руководство по обучению моделей классификации изображений с использованием данных MNIST и Scikit-learn 
 [!INCLUDE [applies-to-skus](../../includes/aml-applies-to-basic-enterprise-sku.md)]
@@ -37,7 +37,7 @@ ms.locfileid: "87849785"
 Если у вас еще нет подписки Azure, создайте бесплатную учетную запись, прежде чем начинать работу. Опробуйте [бесплатную или платную версию Машинного обучения Azure](https://aka.ms/AMLFree) уже сегодня.
 
 >[!NOTE]
-> Код в этой статье протестирован с помощью [пакета SDK для Машинного обучения Azure](https://docs.microsoft.com/python/api/overview/azure/ml/intro?view=azure-ml-py) версии 1.0.83.
+> Код в этой статье протестирован с помощью [пакета SDK для Машинного обучения Azure](https://docs.microsoft.com/python/api/overview/azure/ml/intro?view=azure-ml-py&preserve-view=true) версии 1.0.83.
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -183,7 +183,7 @@ mnist_file_dataset = mnist_file_dataset.register(workspace=ws,
 
 ### <a name="display-some-sample-images"></a>Отображение некоторых примеров изображений
 
-Загрузите сжатые файлы в массивы `numpy`. Затем с помощью `matplotlib` постройте график 30 случайных изображений из набора данных с подписями над ними. На этом шаге потребуется функция `load_data`, которая содержится в файле `util.py`. Этот файл находится в папке примера. Разместите его в той же папке, где находится эта записная книжка. Функция `load_data` выполняет анализ сжатых файлов, преобразовывая их в массивы numpy.
+Загрузите сжатые файлы в массивы `numpy`. Затем с помощью `matplotlib` постройте график 30 случайных изображений из набора данных с подписями над ними. На этом шаге потребуется функция `load_data`, которая содержится в файле `utils.py`. Этот файл находится в папке примера. Разместите его в той же папке, где находится эта записная книжка. Функция `load_data` выполняет анализ сжатых файлов, преобразовывая их в массивы numpy.
 
 ```python
 # make sure utils.py is in the same directory as this code
@@ -386,7 +386,7 @@ run
 
 ### <a name="jupyter-widget"></a>Мини-приложение Jupyter
 
-Отслеживайте ход выполнения с помощью [мини-приложения Jupyter](https://docs.microsoft.com/python/api/azureml-widgets/azureml.widgets?view=azure-ml-py). Как и отправка выполнения, мини-приложение работает асинхронно и в реальном времени предоставляет обновления каждые 10–15 секунд, пока не завершит задание.
+Отслеживайте ход выполнения с помощью [мини-приложения Jupyter](https://docs.microsoft.com/python/api/azureml-widgets/azureml.widgets?view=azure-ml-py&preserve-view=true). Как и отправка выполнения, мини-приложение работает асинхронно и в реальном времени предоставляет обновления каждые 10–15 секунд, пока не завершит задание.
 
 ```python
 from azureml.widgets import RunDetails

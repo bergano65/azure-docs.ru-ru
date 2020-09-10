@@ -11,12 +11,12 @@ ms.author: tracych
 author: tracychms
 ms.date: 08/14/2020
 ms.custom: Build2020, devx-track-python
-ms.openlocfilehash: 04d1e531f3041ef0a6231607cc795c67168ebf2e
-ms.sourcegitcommit: 271601d3eeeb9422e36353d32d57bd6e331f4d7b
+ms.openlocfilehash: 0fb46f4b9fd29c47e9cd38920665b2791f678847
+ms.sourcegitcommit: 3be3537ead3388a6810410dfbfe19fc210f89fec
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/20/2020
-ms.locfileid: "88651205"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89647225"
 ---
 # <a name="run-batch-inference-on-large-amounts-of-data-by-using-azure-machine-learning"></a>Выполнение пакетного вывода больших объемов данных с помощью Машинного обучения Azure
 [!INCLUDE [applies-to-skus](../../includes/aml-applies-to-basic-enterprise-sku.md)]
@@ -67,7 +67,7 @@ ws = Workspace.from_config()
 
 ### <a name="create-a-compute-target"></a>Создание целевого объекта вычислений
 
-В Машинном обучении Azure *вычислительной средой* (или *целевым объектом вычислений*) считаются компьютеры или кластеры, которые выполняют вычислительные операции конвейера машинного обучения. Выполните следующий код, чтобы создать целевой объект [AmlCompute](https://docs.microsoft.com/python/api/azureml-core/azureml.core.compute.amlcompute.amlcompute?view=azure-ml-py) на основе ЦП.
+В Машинном обучении Azure *вычислительной средой* (или *целевым объектом вычислений*) считаются компьютеры или кластеры, которые выполняют вычислительные операции конвейера машинного обучения. Выполните следующий код, чтобы создать целевой объект [AmlCompute](https://docs.microsoft.com/python/api/azureml-core/azureml.core.compute.amlcompute.amlcompute?view=azure-ml-py&preserve-view=true) на основе ЦП.
 
 ```python
 from azureml.core.compute import AmlCompute, ComputeTarget
@@ -134,9 +134,9 @@ def_data_store = ws.get_default_datastore()
 
 ### <a name="create-the-data-inputs"></a>Создание входных данных
 
-Входные данные для пакетного вывода — это данные, которые необходимо секционировать для параллельной обработки. Конвейер пакетного вывода данных принимает входные данные через [`Dataset`](https://docs.microsoft.com/python/api/azureml-core/azureml.core.dataset.dataset?view=azure-ml-py).
+Входные данные для пакетного вывода — это данные, которые необходимо секционировать для параллельной обработки. Конвейер пакетного вывода данных принимает входные данные через [`Dataset`](https://docs.microsoft.com/python/api/azureml-core/azureml.core.dataset.dataset?view=azure-ml-py&preserve-view=true).
 
-`Dataset` в Машинном обучении Azure предназначен для изучения, преобразования и администрирования данных. Существует два типа ключей: [`TabularDataset`](https://docs.microsoft.com/python/api/azureml-core/azureml.data.tabulardataset?view=azure-ml-py) и [`FileDataset`](https://docs.microsoft.com/python/api/azureml-core/azureml.data.filedataset?view=azure-ml-py). В этом примере в качестве входных данных будет использоваться `FileDataset`. `FileDataset` предоставляет возможность загрузки или подключения файлов для вычислений. Создавая набор данных, вы одновременно создаете ссылку на расположение источника данных. Любые преобразования разбиения, примененные к такому набору данных, будут сохранены и в исходном наборе данных. Данные хранятся только в исходном расположении, а значит не потребуется лишних расходов на хранение.
+`Dataset` в Машинном обучении Azure предназначен для изучения, преобразования и администрирования данных. Существует два типа ключей: [`TabularDataset`](https://docs.microsoft.com/python/api/azureml-core/azureml.data.tabulardataset?view=azure-ml-py&preserve-view=true) и [`FileDataset`](https://docs.microsoft.com/python/api/azureml-core/azureml.data.filedataset?view=azure-ml-py&preserve-view=true). В этом примере в качестве входных данных будет использоваться `FileDataset`. `FileDataset` предоставляет возможность загрузки или подключения файлов для вычислений. Создавая набор данных, вы одновременно создаете ссылку на расположение источника данных. Любые преобразования разбиения, примененные к такому набору данных, будут сохранены и в исходном наборе данных. Данные хранятся только в исходном расположении, а значит не потребуется лишних расходов на хранение.
 
 Дополнительные сведения о наборах данных в Машинном обучении Azure см. в руководстве по [созданию наборов данных и получению доступа к ним (предварительная версия)](https://docs.microsoft.com/azure/machine-learning/how-to-create-register-datasets).
 
@@ -147,7 +147,7 @@ path_on_datastore = mnist_blob.path('mnist/')
 input_mnist_ds = Dataset.File.from_files(path=path_on_datastore, validate=False)
 ```
 
-Чтобы использовать динамические входные данные при запуске конвейера пакетного вывода, можно определить входные данные `Dataset` как [`PipelineParameter`](https://docs.microsoft.com/python/api/azureml-pipeline-core/azureml.pipeline.core.graph.pipelineparameter?view=azure-ml-py). Входной набор данных можно указывать каждый раз при повторной отправке конвейера пакетного вывода.
+Чтобы использовать динамические входные данные при запуске конвейера пакетного вывода, можно определить входные данные `Dataset` как [`PipelineParameter`](https://docs.microsoft.com/python/api/azureml-pipeline-core/azureml.pipeline.core.graph.pipelineparameter?view=azure-ml-py&preserve-view=true). Входной набор данных можно указывать каждый раз при повторной отправке конвейера пакетного вывода.
 
 ```python
 from azureml.data.dataset_consumption_config import DatasetConsumptionConfig
@@ -159,7 +159,7 @@ input_mnist_ds_consumption = DatasetConsumptionConfig("minist_param_config", pip
 
 ### <a name="create-the-output"></a>Создание выходных данных
 
-Объекты [`PipelineData`](https://docs.microsoft.com/python/api/azureml-pipeline-core/azureml.pipeline.core.pipelinedata?view=azure-ml-py) нужны для передачи промежуточных данных между шагами конвейера. В нашем примере они используются для выходных данных вывода.
+Объекты [`PipelineData`](https://docs.microsoft.com/python/api/azureml-pipeline-core/azureml.pipeline.core.pipelinedata?view=azure-ml-py&preserve-view=true) нужны для передачи промежуточных данных между шагами конвейера. В нашем примере они используются для выходных данных вывода.
 
 ```python
 from azureml.pipeline.core import Pipeline, PipelineData
@@ -353,7 +353,7 @@ parallelrun_step = ParallelRunStep(
 ```
 ### <a name="create-and-run-the-pipeline"></a>Создание и запуск конвейера
 
-Теперь запустите конвейер. Сначала создайте объект [`Pipeline`](https://docs.microsoft.com/python/api/azureml-pipeline-core/azureml.pipeline.core.pipeline%28class%29?view=azure-ml-py), используя ссылку на вашу рабочую область и созданный шаг конвейера. Параметр `steps` является массивом шагов. В этом случае для пакетного вывода выполняется только один шаг. Чтобы создать конвейеры с несколькими шагами, разместите шаги по порядку в этом массиве.
+Теперь запустите конвейер. Сначала создайте объект [`Pipeline`](https://docs.microsoft.com/python/api/azureml-pipeline-core/azureml.pipeline.core.pipeline%28class%29?view=azure-ml-py&preserve-view=true), используя ссылку на вашу рабочую область и созданный шаг конвейера. Параметр `steps` является массивом шагов. В этом случае для пакетного вывода выполняется только один шаг. Чтобы создать конвейеры с несколькими шагами, разместите шаги по порядку в этом массиве.
 
 Затем используйте функцию `Experiment.submit()`, чтобы передать конвейер для выполнения.
 
@@ -371,7 +371,7 @@ pipeline_run = experiment.submit(pipeline)
 Задание пакетного вывода может выполняться длительное время. В этом примере ход выполнения отслеживается с помощью мини-приложения Jupyter. Вы также можете отслеживать ход выполнения задания, используя следующие средства:
 
 * Студии машинного обучения Azure. 
-* консольные выходные данные из объекта [`PipelineRun`](https://docs.microsoft.com/python/api/azureml-pipeline-core/azureml.pipeline.core.run.pipelinerun?view=azure-ml-py).
+* консольные выходные данные из объекта [`PipelineRun`](https://docs.microsoft.com/python/api/azureml-pipeline-core/azureml.pipeline.core.run.pipelinerun?view=azure-ml-py&preserve-view=true).
 
 ```python
 from azureml.widgets import RunDetails

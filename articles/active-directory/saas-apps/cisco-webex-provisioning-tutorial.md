@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 07/12/2019
 ms.author: zhchia
-ms.openlocfilehash: bdf2bf4102795d35df7eae658e3a24028da79b33
-ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
+ms.openlocfilehash: 2500a22d4d3775f7cfea7afbf4e8d106ec2da139
+ms.sourcegitcommit: 3be3537ead3388a6810410dfbfe19fc210f89fec
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88551308"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89647977"
 ---
 # <a name="tutorial-configure-cisco-webex-for-automatic-user-provisioning"></a>Руководство по настройке Cisco Webex для автоматической подготовки пользователей
 
@@ -97,7 +97,7 @@ ms.locfileid: "88551308"
 
     ![Подготовка Cisco Webex](./media/cisco-webex-provisioning-tutorial/secrettoken1.png)
 
-6.  В поле **URL-адрес клиента** введите значение в формате `https://api.ciscoweb.com/v1/scim/[OrgId]`. Чтобы получить `[OrgId]`, войдите в [Центр управления Cisco Webex](https://admin.webex.com/login). Щелкните имя своей организации в левом нижнем углу и скопируйте значение из **идентификатора организации**. 
+6.  В поле **URL-адрес клиента** введите значение в формате `https://api.ciscospark.com/v1/scim/[OrgId]`. Чтобы получить `[OrgId]`, войдите в [Центр управления Cisco Webex](https://admin.webex.com/login). Щелкните имя своей организации в левом нижнем углу и скопируйте значение из **идентификатора организации**. 
 
     * Чтобы получить значение для поля **Секретный токен**, перейдите по этому [URL-адресу](https://idbroker.webex.com/idb/saml2/jsp/doSSO.jsp?type=login&goto=https%3A%2F%2Fidbroker.webex.com%2Fidb%2Foauth2%2Fv1%2Fauthorize%3Fresponse_type%3Dtoken%26client_id%3DC4ca14fe00b0e51efb414ebd45aa88c1858c3bfb949b2405dba10b0ca4bc37402%26redirect_uri%3Dhttp%253A%252F%252Flocalhost%253A3000%252Fauth%252Fcode%26scope%3Dspark%253Apeople_read%2520spark%253Apeople_write%2520Identity%253ASCIM%26state%3Dthis-should-be-a-random-string-for-security-purpose). На открывшейся странице входа в Webex войдите с помощью полной учетной записи администратора Cisco Webex для своей организации. Появится страница ошибки с сообщением о том, что сайт недоступен, но это обычное явление.
 

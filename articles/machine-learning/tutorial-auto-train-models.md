@@ -11,12 +11,12 @@ ms.author: anumamah
 ms.reviewer: nibaccam
 ms.date: 08/14/2020
 ms.custom: devx-track-python
-ms.openlocfilehash: 884e97815a048d3e37dba57d362d71e72ef5e103
-ms.sourcegitcommit: b8702065338fc1ed81bfed082650b5b58234a702
+ms.openlocfilehash: efe2f062cc75fb05484fe810a3ae16c07e93339b
+ms.sourcegitcommit: 3be3537ead3388a6810410dfbfe19fc210f89fec
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/11/2020
-ms.locfileid: "88120853"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89651755"
 ---
 # <a name="tutorial-use-automated-machine-learning-to-predict-taxi-fares"></a>Руководство по Использованию автоматического машинного обучения для прогнозирования тарифов на такси
 [!INCLUDE [applies-to-skus](../../includes/aml-applies-to-basic-enterprise-sku.md)]
@@ -173,7 +173,7 @@ final_df.describe()
 
 ## <a name="configure-workspace"></a>Настройка рабочей области
 
-В существующей рабочей области создайте объект. Класс [Workspace](https://docs.microsoft.com/python/api/azureml-core/azureml.core.workspace.workspace?view=azure-ml-py) принимает сведения о подписке и ресурсах Azure. Он также создает облачный ресурс для мониторинга и отслеживания работы модели. `Workspace.from_config()` считывает файл **config.json** и загружает сведения о проверке подлинности в объект с именем `ws`. `ws` используется в остальном коде в этом руководстве.
+В существующей рабочей области создайте объект. Класс [Workspace](https://docs.microsoft.com/python/api/azureml-core/azureml.core.workspace.workspace?view=azure-ml-py&preserve-view=true) принимает сведения о подписке и ресурсах Azure. Он также создает облачный ресурс для мониторинга и отслеживания работы модели. `Workspace.from_config()` считывает файл **config.json** и загружает сведения о проверке подлинности в объект с именем `ws`. `ws` используется в остальном коде в этом руководстве.
 
 ```python
 from azureml.core.workspace import Workspace
@@ -300,7 +300,7 @@ BEST: The best observed score thus far.
 
 ## <a name="explore-the-results"></a>Просмотр результатов.
 
-Просмотрите результаты автоматического обучения с помощью [мини-приложения Jupyter](https://docs.microsoft.com/python/api/azureml-widgets/azureml.widgets?view=azure-ml-py). Мини-приложение позволяет просматривать график и таблицу всех отдельных итераций выполнения, а также метрики и метаданные точности обучения. Кроме того, с помощью раскрывающегося списка вы можете выполнить фильтрацию по метрикам точности, отличным от основной.
+Просмотрите результаты автоматического обучения с помощью [мини-приложения Jupyter](https://docs.microsoft.com/python/api/azureml-widgets/azureml.widgets?view=azure-ml-py&preserve-view=true). Мини-приложение позволяет просматривать график и таблицу всех отдельных итераций выполнения, а также метрики и метаданные точности обучения. Кроме того, с помощью раскрывающегося списка вы можете выполнить фильтрацию по метрикам точности, отличным от основной.
 
 ```python
 from azureml.widgets import RunDetails
