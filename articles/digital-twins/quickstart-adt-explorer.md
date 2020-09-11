@@ -141,7 +141,7 @@ ms.locfileid: "89055470"
 3. После всплывающего диалогового окна появится запрос на вход в учетную запись Azure.
 
 >[!NOTE]
->Если вы видите следующее сообщение об ошибке: :::image type="content" source="media/quickstart-adt-explorer/error-models-popup.png" alt-text="Всплывающее окно ошибки чтения "Ошибка: Ошибка выборки моделей: ClientAuthError: Ошибка открытия всплывающего окна. Это может произойти, если используется IE или если всплывающие окна заблокированы в браузере." и кнопка "Закрыть" в нижней части" border="false"::: 
+>Если вы видите следующее сообщение об ошибке: :::image type="content" source="media/quickstart-adt-explorer/error-models-popup.png" alt-text="Всплывающее окно ошибки чтения Ошибка: Ошибка выборки моделей: ClientAuthError: Ошибка открытия всплывающего окна. Это может произойти, если используется IE или если всплывающие окна заблокированы в браузере. и кнопка Закрыть в нижней части" border="false"::: 
 > Попробуйте отключить блокирование всплывающих окон или используйте другой браузер.
 
 ADT Explorer теперь будет отправлять эти файлы модели в ваш экземпляр Azure Digital Twins. Они должны отображаться в окне *ПРЕДСТАВЛЕНИЕ МОДЕЛИ*, в котором отображаются понятные имена и полные идентификаторы моделей. Вы можете щелкнуть пузырь сведений *ПРЕДСТАВЛЕНИЕ МОДЕЛИ*, чтобы увидеть код DTDL.
@@ -202,7 +202,7 @@ ADT Explorer теперь будет использовать переданны
 
 Теперь граф отправлен в ADT Explorer. Чтобы увидеть граф, нажмите кнопку *Выполнить запрос* в окне *ОБОЗРЕВАТЕЛЬ ГРАФА* в верхней части окна ADT Explorer. 
 
-:::image type="content" source="media/quickstart-adt-explorer/run-query.png" alt-text="Выделенная кнопка "Выполнить запрос" рядом с верхней частью окна" lightbox="media/quickstart-adt-explorer/run-query.png":::
+:::image type="content" source="media/quickstart-adt-explorer/run-query.png" alt-text="Выделенная кнопка Выполнить запрос рядом с верхней частью окна" lightbox="media/quickstart-adt-explorer/run-query.png":::
 
 Будет выполнен запрос по умолчанию для выбора и отображения всех цифровых двойников. ADT Explorer извлечет все двойники и связи из службы и создаст граф, определенный в окне *ПРЕДСТАВЛЕНИЕ ГРАФА*.
 
@@ -210,7 +210,7 @@ ADT Explorer теперь будет использовать переданны
 
 Теперь можно увидеть отправленный граф образца сценария:
 
-:::image type="content" source="media/quickstart-adt-explorer/graph-view-full.png" alt-text="Окно "Представление графа", содержащее граф двойника. Окружность с меткой "floor1" соединена стрелкой с меткой "contains" и окружностью с меткой "room1"; окружность с меткой "floor0" соединена стрелкой с меткой "contains" и окружностью с меткой "room0".":::
+:::image type="content" source="media/quickstart-adt-explorer/graph-view-full.png" alt-text="Окно Представление графа, содержащее граф двойника. Окружность с меткой floor1 соединена стрелкой с меткой contains и окружностью с меткой room1; окружность с меткой floor0 соединена стрелкой с меткой contains и окружностью с меткой room0.":::
 
 Окружности (узлы графа) представляют цифровых двойников, а линии представляют связи. Вы увидите, что двойник *Floor0* содержит *Room0*, а двойник *Floor1* содержит *Room1*.
 
@@ -224,7 +224,7 @@ ADT Explorer теперь будет использовать переданны
 
 :::row:::
     :::column:::
-        :::image type="content" source="media/quickstart-adt-explorer/properties-room0.png" alt-text="Выделенное окно "Обозреватель свойств", в котором отображаются свойства для Room0, включая (среди прочего) поле $dtId "Room0", поле температуры со значением 70 и поле влажности со значением 30." lightbox="media/quickstart-adt-explorer/properties-room0.png":::
+        :::image type="content" source="media/quickstart-adt-explorer/properties-room0.png" alt-text="Выделенное окно Обозреватель свойств, в котором отображаются свойства для Room0, включая (среди прочего) поле $dtId Room0, поле температуры со значением 70 и поле влажности со значением 30." lightbox="media/quickstart-adt-explorer/properties-room0.png":::
     :::column-end:::
     :::column:::
     :::column-end:::
@@ -236,7 +236,7 @@ ADT Explorer теперь будет использовать переданны
 
 :::row:::
     :::column:::
-        :::image type="content" source="media/quickstart-adt-explorer/properties-room1.png" alt-text="Выделенное окно "Обозреватель свойств", в котором отображаются свойства для Room1, включая (среди прочего) поле $dtId "Room1", поле температуры со значением 80 и поле влажности со значением 60." lightbox="media/quickstart-adt-explorer/properties-room1.png":::
+        :::image type="content" source="media/quickstart-adt-explorer/properties-room1.png" alt-text="Выделенное окно Обозреватель свойств, в котором отображаются свойства для Room1, включая (среди прочего) поле $dtId Room1, поле температуры со значением 80 и поле влажности со значением 60." lightbox="media/quickstart-adt-explorer/properties-room1.png":::
     :::column-end:::
     :::column:::
     :::column-end:::
@@ -275,7 +275,7 @@ SELECT * FROM DigitalTwins T WHERE T.Temperature > 75
 
 :::row:::
     :::column:::
-        :::image type="content" source="media/quickstart-adt-explorer/new-properties-room0.png" alt-text="Окно "Обозреватель свойств", в котором отображаются свойства для Room0. Значение температуры — это редактируемое поле, в котором отображается число 76, а значок "Сохранить" выделен." lightbox="media/quickstart-adt-explorer/new-properties-room0.png":::
+        :::image type="content" source="media/quickstart-adt-explorer/new-properties-room0.png" alt-text="Окно Обозреватель свойств, в котором отображаются свойства для Room0. Значение температуры — это редактируемое поле, в котором отображается число 76, а значок Сохранить выделен." lightbox="media/quickstart-adt-explorer/new-properties-room0.png":::
     :::column-end:::
     :::column:::
     :::column-end:::
