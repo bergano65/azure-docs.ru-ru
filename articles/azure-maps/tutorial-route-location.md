@@ -211,7 +211,7 @@ ms.locfileid: "89400336"
 
 3. Сохраните файл **MapRoute.html** и обновите страницу в браузере. Теперь на карте появится маршрут от начальной до конечной точки.
 
-     :::image type="content" source="./media/tutorial-route-location/map-route.png" alt-text="Элемент управления картой в Azure и служба "Построение маршрутов"":::
+     :::image type="content" source="./media/tutorial-route-location/map-route.png" alt-text="Элемент управления картой в Azure и служба Построение маршрутов":::
 
     Полный исходный код для этого примера можно получить [здесь](https://github.com/Azure-Samples/AzureMapsCodeSamples/blob/master/AzureMapsCodeSamples/Tutorials/route.html). Работающий пример можно изучить [здесь](https://azuremapscodesamples.azurewebsites.net/?sample=Route%20to%20a%20destination).
 
