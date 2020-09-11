@@ -466,6 +466,8 @@
       href: site-recovery-monitor-and-troubleshoot.md
     - name: Мониторинг Site Recovery с помощью журналов Azure Monitor
       href: monitor-log-analytics.md
+    - name: Мониторинг шаблонов обработки данных на виртуальных машинах
+      href: monitoring-high-churn.md
     - name: Мониторинг серверов обработки
       href: vmware-physical-azure-monitor-process-server.md
 - name: Устранение неполадок

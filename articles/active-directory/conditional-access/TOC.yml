@@ -52,8 +52,8 @@
   items:
     - name: Планирование развертывания политики условного доступа
       href: plan-conditional-access.md
-    - name: Рекомендации
-      href: best-practices.md
+    - name: Интерфейсы API для условного доступа
+      href: howto-conditional-access-apis.md
     - name: Распространенные политики условного доступа
       items:
         - name: Блокировка устаревших методов проверки подлинности
@@ -92,6 +92,8 @@
       href: terms-of-use.md
     - name: Элементы управления сохраняемости браузера и частотой входов
       href: howto-conditional-access-session-lifetime.md
+    - name: Рекомендации
+      href: best-practices.md
     - name: Устранение неполадок
       items:
         - name: Устранение проблем со входом

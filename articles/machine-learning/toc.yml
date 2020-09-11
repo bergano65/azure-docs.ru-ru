@@ -166,9 +166,21 @@
               href: how-to-use-azure-ad-identity.md
         - name: Безопасность сети
           items:
-            - name: Использование виртуальных сетей
+            - name: Общие сведения о виртуальных сетях
               displayName: 'vnet, blob'
-              href: how-to-enable-virtual-network.md
+              href: how-to-network-security-overview.md
+            - name: Защита ресурсов рабочей области
+              displayName: 'vnet, workspace, container instance, container registry'
+              href: how-to-secure-workspace-vnet.md
+            - name: Защита среды обучения
+              displayName: vnet
+              href: how-to-secure-training-vnet.md
+            - name: Защита среды для операций вывода
+              displayName: vnet
+              href: how-to-secure-inferencing-vnet.md
+            - name: Использование студии в виртуальной сети
+              displayName: vnet
+              href: how-to-enable-studio-virtual-network.md
             - name: Использование Приватного канала
               displayName: private endpoint
               href: how-to-configure-private-link.md
@@ -307,6 +319,9 @@
             - name: Настройка гиперпараметров
               displayName: parameter
               href: how-to-tune-hyperparameters.md
+        - name: Работа с MLflow
+          displayName: 'log, monitor, deploy, metrics, Databricks, model registry, register'
+          href: how-to-use-mlflow.md
         - name: Scikit-learn
           href: how-to-train-scikit-learn.md
         - name: TensorFlow
@@ -328,9 +343,6 @@
             - name: Просмотр журналов
               displayName: 'troubleshoot, log, files, tracing'
               href: how-to-monitor-view-training-logs.md
-            - name: Отслеживание экспериментов с помощью потока ML
-              displayName: 'log, monitor, metrics, Databricks'
-              href: how-to-use-mlflow.md
             - name: Визуализация выполняется с помощью TensorBoard
               displayName: 'log, monitor, metrics'
               href: how-to-monitor-tensorboard.md

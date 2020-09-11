@@ -1136,7 +1136,21 @@
           displayname: Workbooks
           href: platform/workbooks-overview.md
         - name: Визуализации
-          href: platform/workbooks-visualizations.md
+          items:
+            - name: Текст
+              href: platform/workbooks-text-visualizations.md
+            - name: Диаграмма
+              href: platform/workbooks-chart-visualizations.md
+            - name: Макет Grid
+              href: platform/workbooks-grid-visualizations.md
+            - name: Tile
+              href: platform/workbooks-tile-visualizations.md
+            - name: Дерево
+              href: platform/workbooks-tree-visualizations.md
+            - name: График
+              href: platform/workbooks-graph-visualizations.md
+            - name: Составная панель
+              href: platform/workbooks-composite-bar.md
         - name: Источники данных
           href: platform/workbooks-data-sources.md
         - name: Параметры

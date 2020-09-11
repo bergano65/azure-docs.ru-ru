@@ -58,9 +58,11 @@
               href: set-up-mabs-for-avs.md
             - name: Резервное копирование виртуальных машин частного облака с помощью Backup Server
               href: backup-avs-vms-with-mabs.md
+        - name: Управление жизненным циклом виртуальных машин
+          href: lifecycle-management-of-azure-vmware-solution-vms.md
         - name: Шлюз приложений
           href: protect-avs-web-apps-with-app-gateway.md
-        - name: Диспетчер трафика с AVS
+        - name: Диспетчер трафика
           href: deploy-traffic-manager-to-balance-avs-workloads.md
     - name: Решения VMware
       items:

@@ -213,8 +213,10 @@
               href: howto-mfa-nps-extension-errors.md
     - name: Диагностика
       items:
-        - name: SSPR
-          href: active-directory-passwords-troubleshoot.md
+        - name: Самостоятельный сброс пароля (SSPR)
+          href: troubleshoot-sspr.md
+        - name: SSPR с использованием обратной записи
+          href: troubleshoot-sspr-writeback.md
         - name: 'SSPR: часто задаваемые вопросы'
           href: active-directory-passwords-faq.md
         - name: 'MFA: вопросы и ответы'

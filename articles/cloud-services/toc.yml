@@ -151,6 +151,8 @@
           href: cloud-services-disaster-recovery-guidance.md
         - name: Рабочий процесс для архитектуры классической виртуальной машины
           href: cloud-services-workflow-process.md
+        - name: Поддержка работоспособности ресурсов для Облачных служб
+          href: resource-health-for-cloud-services.md
         - name: Часто задаваемые вопросы об Облачных службах
           items:
             - name: Часто задаваемые вопросы о доступности приложений и служб

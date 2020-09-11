@@ -67,6 +67,8 @@
   items:
     - name: Подготовка приложения Java Spring к развертыванию
       href: spring-cloud-tutorial-prepare-app-deployment.md
+    - name: Запуск приложения Java из исходного кода
+      href: spring-cloud-howto-launch-from-source.md
     - name: Настройка сервера конфигурации
       href: spring-cloud-tutorial-config-server.md
     - name: Поддержка регистрации служб

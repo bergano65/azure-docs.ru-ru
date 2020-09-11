@@ -310,7 +310,7 @@
               href: storage-blobs-list.md
             - name: Управление свойствами и метаданными больших двоичных объектов (.NET)
               href: storage-blob-properties-metadata.md
-            - name: Копирование большого двоичного объекта (.NET)
+            - name: Копирование большого двоичного объекта (SDK)
               href: storage-blob-copy.md
         - name: Авторизация доступа к данным больших двоичных объектов
           items:
