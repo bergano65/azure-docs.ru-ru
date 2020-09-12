@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.date: 06/25/2019
 ms.author: aahi
 ms.custom: seodec2018
-ms.openlocfilehash: 284f8c8432d732fdfa7e16b43a47578437bcf0ba
-ms.sourcegitcommit: 3541c9cae8a12bdf457f1383e3557eb85a9b3187
+ms.openlocfilehash: a5e69fe855f0c1e99dc3672425d9aeea13d4e827
+ms.sourcegitcommit: 58d3b3314df4ba3cabd4d4a6016b22fa5264f05a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/09/2020
-ms.locfileid: "86202247"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89297796"
 ---
 # <a name="bing-web-search-api-response-structure-and-answer-types"></a>Структура откликов и типы ответов API Bing для поиска в Интернете  
 
@@ -294,7 +294,7 @@ Encoded query: 8^2%2B11^2-2*8*11*cos%2837%29
 |------------|-----------------|
 |+|Сложение|
 |-|Вычитание|
-|/|Деление|
+|/|Отдел|
 |*|Умножение|
 |^|Питание|
 |!|Факториал|
@@ -309,7 +309,7 @@ Encoded query: 8^2%2B11^2-2*8*11*cos%2837%29
 |Pi|3,14159...|
 |Градус|Градус|
 |i|Мнимое число|
-|Д.|e, 2,71828...|
+|й|e, 2,71828...|
 |GoldenRatio|Золотое сечение: 1,61803...|
 
 Математическое выражение может содержать следующие функции:
@@ -445,7 +445,7 @@ Query: What time is it in the U.S.
 
 Тем не менее, при вызове API Bing для поиска в Интернете из JavaScript встроенные средства обеспечения безопасности браузера (CORS) могут блокировать доступ к значениям этих заголовков.
 
-Чтобы получить доступ к заголовкам, можно выполнить запрос API Bing для поиска в Интернете через прокси-сервер CORS. Ответ от прокси-сервера содержит заголовок `Access-Control-Expose-Headers`, который вносит заголовки ответов в список разрешений и делает их доступными для JavaScript.
+Чтобы получить доступ к заголовкам, можно выполнить запрос API Bing для поиска в Интернете через прокси-сервер CORS. Ответ такого прокси-сервера имеет `Access-Control-Expose-Headers` заголовок, который фильтрует заголовки ответа и делает их доступными для JavaScript.
 
 Установить прокси-сервер CORS довольно просто. Это позволит нашему [учебному приложению](tutorial-bing-web-search-single-page-app.md) иметь доступ к необязательным заголовкам клиента. Для начала [установите платформу Node.js](https://nodejs.org/en/download/), если она еще не установлена. В командной строке введите следующую команду:
 
@@ -480,6 +480,6 @@ cors-proxy-server
 
 * Ознакомьтесь с документацией по [регулированию запросов](throttling-requests.md).  
 
-## <a name="see-also"></a>См. также  
+## <a name="see-also"></a>См. также раздел  
 
 * [Справка по API Bing для поиска в Интернете версии 7](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-web-api-v7-reference)

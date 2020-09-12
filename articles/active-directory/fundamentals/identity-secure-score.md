@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: tilarso
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 0f75dea2cffbe710bf2778ceab5eacc91ffcca9c
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 77c673ec52873d854647cf49c0efcbd650fb6aa8
+ms.sourcegitcommit: 5ed504a9ddfbd69d4f2d256ec431e634eb38813e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "77523120"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89320653"
 ---
 # <a name="what-is-the-identity-secure-score-in-azure-active-directory"></a>Общие сведения об оценке безопасности удостоверений в Azure Active Directory
 
@@ -66,7 +66,7 @@ ms.locfileid: "77523120"
 - спланировать улучшения безопасности;
 - оценить успешность внесенных улучшений.
 
-## <a name="what-you-should-know"></a>Необходимая информация
+## <a name="what-you-should-know"></a>Учитываемые аспекты
 
 ### <a name="who-can-use-the-identity-secure-score"></a>Кто может использовать оценку безопасности удостоверений
 
@@ -104,16 +104,16 @@ ms.locfileid: "77523120"
 
 ### <a name="how-does-the-identity-secure-score-relate-to-the-office-365-secure-score"></a>Как оценка безопасности удостоверений согласуется с Оценкой безопасности Office 365?
 
-[Оценка Microsoft Secure](https://docs.microsoft.com/office365/securitycompliance/microsoft-secure-score) содержит пять категорий элементов управления и оценок:
+[Оценка Microsoft Secure](/office365/securitycompliance/microsoft-secure-score) содержит пять категорий элементов управления и оценок:
 
 - Идентификация
 - Данные
 - Устройства
 - Инфраструктура
-- Приложения
+- "Приложения"
 
 Оценка безопасного удостоверения представляет собой удостоверение, представляющее собой часть оценки безопасности Майкрософт. Такое перекрытие означает, что ваши рекомендации для оценки безопасности идентификации и оценки удостоверения в корпорации Майкрософт одинаковы.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
-[Узнайте больше о Microsoft Secure Score](https://docs.microsoft.com/office365/securitycompliance/microsoft-secure-score)
+[Узнайте больше о Microsoft Secure Score](/office365/securitycompliance/microsoft-secure-score)

@@ -12,12 +12,12 @@ manager: daveba
 ms.reviewer: rogoya
 ms.collection: M365-identity-device-management
 ms.custom: contperfq4
-ms.openlocfilehash: 7c5015cb6328dba70fed40053bc234966572ae98
-ms.sourcegitcommit: dea88d5e28bd4bbd55f5303d7d58785fad5a341d
+ms.openlocfilehash: 64ee8f2daddd53d37aeaf0f02208e02500b48f57
+ms.sourcegitcommit: 5ed504a9ddfbd69d4f2d256ec431e634eb38813e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87873727"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89320874"
 ---
 # <a name="what-are-security-defaults"></a>Что такое параметры безопасности по умолчанию?
 
@@ -92,7 +92,7 @@ ms.locfileid: "87873727"
 > [!WARNING]
 > Перед включением параметров безопасности по умолчанию убедитесь, что администраторы не используют старые протоколы проверки подлинности. Дополнительные сведения см. в разделе [Как отказаться от устаревшей проверки подлинности](concept-fundamentals-block-legacy-authentication.md).
 
-- [Как настроить отправку электронной почты с помощью Office 365 и Microsoft 365 на многофункциональном устройстве или в приложении](https://docs.microsoft.com/exchange/mail-flow-best-practices/how-to-set-up-a-multifunction-device-or-application-to-send-email-using-microsoft-365-or-office-365)
+- [Как настроить отправку электронной почты с помощью Office 365 и Microsoft 365 на многофункциональном устройстве или в приложении](/exchange/mail-flow-best-practices/how-to-set-up-a-multifunction-device-or-application-to-send-email-using-microsoft-365-or-office-365)
 
 ### <a name="protecting-privileged-actions"></a>Защита привилегированных действий
 
@@ -109,7 +109,7 @@ ms.locfileid: "87873727"
 После включения параметров безопасности по умолчанию в клиенте любой пользователь, пытающийся получить доступ к порталу Azure, Azure PowerShell или Azure CLI, должен будет пройти дополнительную проверку подлинности. Эта политика применяется ко всем пользователям, обращающимся к Azure Resource Manager, будь то администратор или простой пользователь. 
 
 > [!NOTE]
-> В клиентах Exchange Online до версии 2017 современная проверка подлинности по умолчанию отключена. Чтобы избежать цикла входа во время проверки подлинности в этих клиентах, необходимо [включить современную проверку подлинности](https://docs.microsoft.com/exchange/clients-and-mobile-in-exchange-online/enable-or-disable-modern-authentication-in-exchange-online).
+> В клиентах Exchange Online до версии 2017 современная проверка подлинности по умолчанию отключена. Чтобы избежать цикла входа во время проверки подлинности в этих клиентах, необходимо [включить современную проверку подлинности](/exchange/clients-and-mobile-in-exchange-online/enable-or-disable-modern-authentication-in-exchange-online).
 
 > [!NOTE]
 > Учетная запись синхронизации Azure AD Connect исключается из параметров безопасности по умолчанию и не требует регистрации или прохождения многофакторной проверки подлинности. Организациям не следует использовать эту учетную запись в других целях.

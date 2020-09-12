@@ -7,12 +7,12 @@ ms.service: spring-cloud
 ms.topic: how-to
 ms.date: 05/29/2020
 ms.custom: devx-track-java
-ms.openlocfilehash: 1f48cd185f2aa25954627a9ff26f3e59b8e76e7a
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: d8f3b4d57f00ef33bbf566c36babafd83be9a5df
+ms.sourcegitcommit: 58d3b3314df4ba3cabd4d4a6016b22fa5264f05a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87037318"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89299632"
 ---
 # <a name="how-to-self-diagnose-and-solve-problems-in-azure-spring-cloud"></a>Самостоятельное устранение неполадок и решение проблем в Azure Веснного облака
 Служба диагностики Azure весны в облаке — это интерактивный интерфейс, помогающий устранять неполадки в приложении. Настройка не требуется. При обнаружении проблем в облачной диагностике Azure можно обнаружить ошибки и ознакомиться с информацией, помогающей устранить проблему и устранить ее.
@@ -21,7 +21,7 @@ ms.locfileid: "87037318"
 Для работы с этим учебником необходимы указанные ниже компоненты.
 
 * Подписка Azure. Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
-* Развернутый экземпляр службы Azure Spring Cloud. Чтобы приступить к работе, следуйте инструкциям статьи [Краткое руководство. Запуск приложения Java Spring с помощью Azure CLI](spring-cloud-quickstart-launch-app-cli.md).
+* Развернутый экземпляр службы Azure Spring Cloud. Чтобы приступить к работе, следуйте инструкциям статьи [Краткое руководство. Запуск приложения Java Spring с помощью Azure CLI](spring-cloud-quickstart.md).
 * По крайней мере одно приложение, ранее созданное в этом экземпляре службы.
 
 ## <a name="navigate-to-the-diagnostics-page"></a>Переход на страницу "Диагностика"

@@ -5,12 +5,12 @@ ms.topic: article
 ms.date: 08/14/2019
 ms.reviewer: byvinyal
 ms.custom: seodec18
-ms.openlocfilehash: 45d2ec6cf4b2a54b899036d932bc310caede3c29
-ms.sourcegitcommit: f844603f2f7900a64291c2253f79b6d65fcbbb0c
+ms.openlocfilehash: 739325f66594667c6973df356e2bcf26a3eb056d
+ms.sourcegitcommit: 58d3b3314df4ba3cabd4d4a6016b22fa5264f05a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/10/2020
-ms.locfileid: "86223862"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89300278"
 ---
 # <a name="configure-deployment-credentials-for-azure-app-service"></a>Настройка учетных данных развертывания службы приложений Azure
 [Служба приложений Azure](https://go.microsoft.com/fwlink/?LinkId=529714) поддерживает два типа учетных данных для [развертывания локальной системы Git](deploy-local-git.md) и [развертывания FTP(S)](deploy-ftp.md). Эти учетные данные не совпадают с учетными данными подписки Azure.
@@ -73,6 +73,36 @@ az webapp deployment user set --user-name <username> --password <password>
 2. Выберите **Учетные данные приложения**. Скопируйте имя пользователя или пароль с помощью ссылки **Копировать**.
 
 Чтобы сбросить учетные данные на уровне приложения, выберите **Сбросить учетные данные** в том же диалоговом окне.
+
+## <a name="disable-basic-authentication"></a>Отключить обычную проверку подлинности
+
+Некоторые организации должны удовлетворять требованиям безопасности, а отключать доступ через FTP или WebDeploy. Таким образом, члены Организации могут получать доступ к своим службам приложений только через API-интерфейсы, управляемые Azure Active Directory (Azure AD).
+
+### <a name="ftp"></a>FTP
+
+Чтобы отключить FTP-доступ к сайту, выполните следующую команду интерфейса командной строки. Замените заполнители своей группой ресурсов и именем сайта. 
+
+```bash
+az resource update --resource-group <resource-group> --name ftp --namespace Microsoft.Web --resource-type basicPublishingCredentialsPolicies --parent sites/<site-name> --set properties.allow=false
+```
+
+Чтобы убедиться, что FTP-доступ заблокирован, можно попытаться выполнить проверку подлинности с помощью FTP-клиента, например FileZilla. Чтобы получить учетные данные публикации, перейдите в колонку "Обзор" сайта и щелкните Скачать профиль публикации. Для проверки подлинности используйте имя узла FTP, имя пользователя и пароль, и вы получите ответ об ошибке 401, указывающий на то, что вы не прошли авторизацию.
+
+### <a name="webdeploy-and-scm"></a>WebDeploy и SCM
+
+Чтобы отключить базовый доступ с проверкой подлинности к порту веб-развертывания и сайту SCM, выполните следующую команду CLI. Замените заполнители своей группой ресурсов и именем сайта. 
+
+```bash
+az resource update --resource-group <resource-group> --name scm --namespace Microsoft.Web --resource-type basicPublishingCredentialsPolicies --parent sites/<site-name> --set properties.allow=false
+```
+
+Чтобы убедиться, что учетные данные профиля публикации заблокированы для WebDeploy, попробуйте [Опубликовать веб-приложение с помощью Visual Studio 2019](https://docs.microsoft.com/visualstudio/deployment/quickstart-deploy-to-azure?view=vs-2019).
+
+### <a name="disable-access-to-the-api"></a>Отключить доступ к API
+
+API в предыдущем разделе является резервной системой управления доступом на основе ролей (RBAC) Azure. Это означает, что вы можете [создать пользовательскую роль](https://docs.microsoft.com/azure/role-based-access-control/custom-roles#steps-to-create-a-custom-role) и назначить ей пользователей с низкими привелджед, чтобы они не могли включить обычную проверку подлинности на всех сайтах. Чтобы настроить пользовательскую роль, [выполните следующие инструкции](https://azure.github.io/AppService/2020/08/10/securing-data-plane-access.html#create-a-custom-rbac-role).
+
+Можно также использовать [Azure Monitor](https://azure.github.io/AppService/2020/08/10/securing-data-plane-access.html#audit-with-azure-monitor) для аудита любых успешных запросов проверки подлинности и применения [политики Azure](https://azure.github.io/AppService/2020/08/10/securing-data-plane-access.html#enforce-compliance-with-azure-policy) для применения этой конфигурации ко всем сайтам в подписке.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

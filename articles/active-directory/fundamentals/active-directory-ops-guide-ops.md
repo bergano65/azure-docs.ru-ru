@@ -11,12 +11,12 @@ ms.workload: identity
 ms.subservice: fundamentals
 ms.date: 10/31/2019
 ms.author: martinco
-ms.openlocfilehash: d039373d3e70076149da2b970a234b59d7aa661a
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: edb35986fcfc0e8855fa712b519ee7a8ca2f0ed8
+ms.sourcegitcommit: 5ed504a9ddfbd69d4f2d256ec431e634eb38813e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "75422946"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89321962"
 ---
 # <a name="azure-active-directory-general-operations-guide-reference"></a>Справочник по общим операциям Azure Active Directory
 
@@ -49,8 +49,8 @@ ms.locfileid: "75422946"
 
 #### <a name="owners-recommended-reading"></a>Рекомендованные для чтения владельцы
 
-- [Назначение ролей администратора в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-assign-admin-roles-azure-portal)
-- [Система управления в Azure](https://docs.microsoft.com/azure/security/governance-in-azure)
+- [Назначение ролей администратора в Azure Active Directory](../users-groups-roles/directory-assign-admin-roles.md)
+- [Система управления в Azure](../../governance/index.yml)
 
 ## <a name="hybrid-management"></a>Гибридное управление
 
@@ -69,12 +69,12 @@ ms.locfileid: "75422946"
 
 #### <a name="hybrid-management-recommended-reading"></a>Рекомендуемый способ чтения для гибридного управления
 
-- [Azure AD Connect выполняет следующие функции: Автоматическое обновление](https://docs.microsoft.com/azure/active-directory/hybrid/how-to-connect-install-automatic-upgrade)
-- [Общие сведения о соединителях Azure AD Application Proxy | Автоматические обновления](https://docs.microsoft.com/azure/active-directory/manage-apps/application-proxy-connectors#automatic-updates)
+- [Azure AD Connect выполняет следующие функции: Автоматическое обновление](../hybrid/how-to-connect-install-automatic-upgrade.md)
+- [Общие сведения о соединителях Azure AD Application Proxy | Автоматические обновления](../manage-apps/application-proxy-connectors.md#automatic-updates)
 
 ### <a name="azure-ad-connect-health-alert-baseline"></a>Базовый план оповещений Azure AD Connect Health
 
-Организации должны развертывать [Azure AD Connect Health](https://docs.microsoft.com/azure/active-directory/hybrid/whatis-azure-ad-connect#what-is-azure-ad-connect-health) для мониторинга и создания отчетов Azure AD Connect и AD FS. Azure AD Connect и AD FS являются критически важными компонентами, которые могут нарушить управление жизненным циклом и проверку подлинности и, следовательно, привести к простоям. Azure AD Connect Health помогает отслеживать и получать ценные сведения о локальной инфраструктуре идентификации, обеспечивая надежность среды.
+Организации должны развертывать [Azure AD Connect Health](../hybrid/whatis-azure-ad-connect.md#what-is-azure-ad-connect-health) для мониторинга и создания отчетов Azure AD Connect и AD FS. Azure AD Connect и AD FS являются критически важными компонентами, которые могут нарушить управление жизненным циклом и проверку подлинности и, следовательно, привести к простоям. Azure AD Connect Health помогает отслеживать и получать ценные сведения о локальной инфраструктуре идентификации, обеспечивая надежность среды.
 
 ![Архитектура Azure AD Connect работоспособности](./media/active-directory-ops-guide/active-directory-ops-img16.png)
 
@@ -82,7 +82,7 @@ ms.locfileid: "75422946"
 
 #### <a name="azure-ad-connect-health-recommended-reading"></a>Azure AD Connect Health рекомендуемого чтения
 
-- [Установка агента Azure AD Connect Health](https://docs.microsoft.com/azure/active-directory/hybrid/how-to-connect-health-agent-install)
+- [Установка агента Azure AD Connect Health](../hybrid/how-to-connect-health-agent-install.md)
 
 ### <a name="on-premises-agents-logs"></a>Журналы локальных агентов
 
@@ -90,11 +90,11 @@ ms.locfileid: "75422946"
 
 #### <a name="on-premises-agents-logs-recommended-reading"></a>Рекомендуемые для чтения журналы локальных агентов
 
-- [Устранение неполадок прокси-сервера приложений](https://docs.microsoft.com/azure/active-directory/active-directory-application-proxy-troubleshoot)
-- [Azure Active Directory: устранение неполадок с самостоятельным сбросом пароля](https://docs.microsoft.com/azure/active-directory/active-directory-passwords-troubleshoot#password-writeback-event-log-error-codes)
-- [Сведения о соединителях прокси приложения Azure AD](https://docs.microsoft.com/azure/active-directory/application-proxy-understand-connectors)
-- [Azure AD Connect: Устранение неполадок сквозной проверки подлинности](https://docs.microsoft.com/azure/active-directory/connect/active-directory-aadconnect-troubleshoot-pass-through-authentication#collecting-pass-through-authentication-agent-logs)
-- [Устранение ошибок для расширения NPS Azure MFA](https://docs.microsoft.com/azure/multi-factor-authentication/multi-factor-authentication-nps-errors)
+- [Устранение неполадок прокси-сервера приложений](../manage-apps/application-proxy-troubleshoot.md)
+- [Azure Active Directory: устранение неполадок с самостоятельным сбросом пароля](../authentication/active-directory-passwords-troubleshoot.md#password-writeback-event-log-error-codes)
+- [Сведения о соединителях прокси приложения Azure AD](../manage-apps/application-proxy-connectors.md)
+- [Azure AD Connect: Устранение неполадок сквозной проверки подлинности](../hybrid/tshoot-connect-pass-through-authentication.md#collecting-pass-through-authentication-agent-logs)
+- [Устранение ошибок для расширения NPS Azure MFA](../authentication/howto-mfa-nps-extension-errors.md)
 
 ### <a name="on-premises-agents-management"></a>Управление локальными агентами
 
@@ -106,14 +106,14 @@ ms.locfileid: "75422946"
 
 #### <a name="on-premises-agents-management-recommended-reading"></a>Рекомендованное чтение для управления локальными агентами
 
-- [Сведения о соединителях прокси приложения Azure AD](https://docs.microsoft.com/azure/active-directory/manage-apps/application-proxy-connectors)
+- [Сведения о соединителях прокси приложения Azure AD](../manage-apps/application-proxy-connectors.md)
 - [Краткое руководство по сквозной проверке подлинности Azure AD](../hybrid/how-to-connect-pta-quick-start.md#step-4-ensure-high-availability)
 
 ## <a name="management-at-scale"></a>Управление в масштабе
 
 ### <a name="identity-secure-score"></a>Оценка безопасности удостоверений
 
-[Оценка безопасного удостоверения](https://docs.microsoft.com/azure/active-directory/fundamentals/identity-secure-score) предоставляет количественную меру безопасности Организации. Он является ключом к постоянному анализу и устранению полученных результатов и стремится получить максимальную оценку. Оценка поможет вам:
+[Оценка безопасного удостоверения](./identity-secure-score.md) предоставляет количественную меру безопасности Организации. Он является ключом к постоянному анализу и устранению полученных результатов и стремится получить максимальную оценку. Оценка поможет вам:
 
 - объективно определить уровень безопасности удостоверений;
 - спланировать улучшения безопасности;
@@ -125,15 +125,15 @@ ms.locfileid: "75422946"
 
 ### <a name="notifications"></a>Уведомления
 
-Корпорация Майкрософт отправляет администраторам сообщения электронной почты, чтобы уведомлять о различных изменениях в службе, необходимых обновлениях конфигурации и ошибках, требующих вмешательства администратора. Важно, чтобы клиенты настроили адреса электронной почты для уведомлений, чтобы уведомления отправлялись соответствующим членам группы, которые могут подтвердить работу и действовать на всех уведомлениях. Рекомендуется добавить нескольких получателей в [Центр сообщений Office 365](https://docs.microsoft.com/office365/admin/manage/message-center) и запросить отправку уведомлений (включая Azure AD Connect Health уведомления) в список рассылки или общий почтовый ящик. Если у вас есть только одна учетная запись глобального администратора с адресом электронной почты, обязательно настройте по крайней мере две учетные записи, поддерживающие электронную почту.
+Корпорация Майкрософт отправляет администраторам сообщения электронной почты, чтобы уведомлять о различных изменениях в службе, необходимых обновлениях конфигурации и ошибках, требующих вмешательства администратора. Важно, чтобы клиенты настроили адреса электронной почты для уведомлений, чтобы уведомления отправлялись соответствующим членам группы, которые могут подтвердить работу и действовать на всех уведомлениях. Рекомендуется добавить нескольких получателей в [Центр сообщений Office 365](/office365/admin/manage/message-center) и запросить отправку уведомлений (включая Azure AD Connect Health уведомления) в список рассылки или общий почтовый ящик. Если у вас есть только одна учетная запись глобального администратора с адресом электронной почты, обязательно настройте по крайней мере две учетные записи, поддерживающие электронную почту.
 
 Azure AD использует два адреса "от": <o365mc@email2.microsoft.com> , которые отправляют уведомления центра сообщений Office 365 и <azure-noreply@microsoft.com> , которые отправляют уведомления, связанные с:
 
-- [Проверки доступа Azure AD](https://docs.microsoft.com/azure/active-directory/governance/access-reviews-overview)
-- [Azure AD Connect Health](https://docs.microsoft.com/azure/active-directory/hybrid/how-to-connect-health-operations#enable-email-notifications)
-- [Защита идентификации Azure AD](/azure/active-directory/identity-protection/howto-identity-protection-configure-notifications)
-- [Azure AD Privileged Identity Management](https://docs.microsoft.com/azure/active-directory/privileged-identity-management/pim-email-notifications)
-- [Уведомления об истечении срока действия корпоративного приложения](https://docs.microsoft.com/azure/active-directory/manage-apps/manage-certificates-for-federated-single-sign-on#add-email-notification-addresses-for-certificate-expiration)
+- [Проверки доступа Azure AD](../governance/access-reviews-overview.md)
+- [Azure AD Connect Health](../hybrid/how-to-connect-health-operations.md#enable-email-notifications)
+- [Защита идентификации Azure AD](../identity-protection/howto-identity-protection-configure-notifications.md)
+- [Azure AD Privileged Identity Management](../privileged-identity-management/pim-email-notifications.md)
+- [Уведомления об истечении срока действия корпоративного приложения](../manage-apps/manage-certificates-for-federated-single-sign-on.md#add-email-notification-addresses-for-certificate-expiration)
 - Уведомления об подготовке к работе корпоративного приложения
 
 Сведения о типе отправляемых уведомлений и их расположении см. в следующей таблице:
@@ -148,13 +148,13 @@ Azure AD использует два адреса "от": <o365mc@email2.microso
 
 #### <a name="notifications-recommended-reading"></a>Рекомендуемые для чтения уведомления
 
-- [Изменение адреса организации, технического контакта и других возможностей — Office 365](https://docs.microsoft.com/office365/admin/manage/change-address-contact-and-more)
+- [Изменение адреса организации, технического контакта и других возможностей — Office 365](/office365/admin/manage/change-address-contact-and-more)
 
 ## <a name="operational-surface-area"></a>Рабочая контактная зона
 
 ### <a name="ad-fs-lockdown"></a>Блокировка AD FS
 
-Организации, которые настраивают приложения для проверки подлинности непосредственно в преимуществах Azure AD с [использованием Smart-блокировки Azure AD](https://docs.microsoft.com/azure/active-directory/active-directory-secure-passwords). При использовании AD FS в Windows Server 2012 R2 реализуйте AD FS [защиту блокировки экстрасети](https://docs.microsoft.com/windows-server/identity/ad-fs/operations/configure-ad-fs-extranet-soft-lockout-protection). Если вы используете AD FS в Windows Server 2016 или более поздней версии, реализуйте [интеллектуальную блокировку экстрасети](https://support.microsoft.com/help/4096478/extranet-smart-lockout-feature-in-windows-server-2016). Как минимум, рекомендуется включить блокировку экстрасети, чтобы она содержала риск атак методом подбора в локальной Active Directory. Однако при наличии AD FS в Windows 2016 или более поздней версии следует также включить интеллектуальную блокировку экстрасети, которая поможет устранить атаки на [распыление паролей](https://www.microsoft.com/microsoft-365/blog/2018/03/05/azure-ad-and-adfs-best-practices-defending-against-password-spray-attacks/) .
+Организации, которые настраивают приложения для проверки подлинности непосредственно в преимуществах Azure AD с [использованием Smart-блокировки Azure AD](../authentication/concept-sspr-howitworks.md). При использовании AD FS в Windows Server 2012 R2 реализуйте AD FS [защиту блокировки экстрасети](/windows-server/identity/ad-fs/operations/configure-ad-fs-extranet-soft-lockout-protection). Если вы используете AD FS в Windows Server 2016 или более поздней версии, реализуйте [интеллектуальную блокировку экстрасети](https://support.microsoft.com/help/4096478/extranet-smart-lockout-feature-in-windows-server-2016). Как минимум, рекомендуется включить блокировку экстрасети, чтобы она содержала риск атак методом подбора в локальной Active Directory. Однако при наличии AD FS в Windows 2016 или более поздней версии следует также включить интеллектуальную блокировку экстрасети, которая поможет устранить атаки на [распыление паролей](https://www.microsoft.com/microsoft-365/blog/2018/03/05/azure-ad-and-adfs-best-practices-defending-against-password-spray-attacks/) .
 
 Если AD FS используется только для Федерации Azure AD, можно отключить некоторые конечные точки, чтобы максимально сокращать контактную зону для атак. Например, если AD FS используется только для Azure AD, следует отключить конечные точки WS-Trust, кроме конечных точек, включенных для **усернамемиксед** и **windowstransport**.
 
@@ -164,7 +164,7 @@ Azure AD использует два адреса "от": <o365mc@email2.microso
 
 Модель административного уровня Active Directory разработана для защиты систем идентификации с помощью набора буферных зон между полным контролем над средой (уровень 0) и рабочими ресурсами рабочей станции с высоким риском, которые часто подвергаются атакам. ![Схема, показывающая три уровня модели уровней](./media/active-directory-ops-guide/active-directory-ops-img18.png)
 
-[Модель уровня](https://docs.microsoft.com/windows-server/identity/securing-privileged-access/securing-privileged-access-reference-material) состоит из трех уровней и включает только учетные записи администратора, а не учетные записи обычных пользователей.
+[Модель уровня](/windows-server/identity/securing-privileged-access/securing-privileged-access-reference-material) состоит из трех уровней и включает только учетные записи администратора, а не учетные записи обычных пользователей.
 
 - **Уровень 0**   — Прямое управление корпоративными удостоверениями в среде. К уровню 0 принадлежат учетные записи, группы и другие ресурсы с прямым или непрямым административным контролем над лесами, доменами или контроллерами доменов Active Directory, а также над их ресурсами. Степень безопасности всех ресурсов уровня 0 одинакова, так как фактически все они находятся под контролем друг друга.
 - **Уровень 1**   — Управление серверами и приложениями предприятия. К ресурсам уровня 1 принадлежат серверные операционные системы, облачные службы и корпоративные приложения. Учетные записи администраторов уровня 1 предоставляют права административного управления значительной частью бизнеса, в основе которого лежат эти ресурсы. Распространенный пример такой роли — администратор сервера. Он занимается обслуживанием операционных систем этих ресурсов и может повлиять на все службы предприятия.
@@ -184,6 +184,6 @@ Azure AD использует два адреса "от": <o365mc@email2.microso
 - Блокировка AD FS.
 - Блокировка доступа к компьютерам с помощью локальных компонентов удостоверений.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Сведения о реализации всех возможностей, которые вы не развернули, см. в статье [планы развертывания Azure AD](active-directory-deployment-plans.md) .

@@ -6,14 +6,14 @@ ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
 author: vikrambmsft
 ms.author: vikramb
-ms.date: 04/14/2020
+ms.date: 09/01/2020
 ms.custom: devx-track-terraform
-ms.openlocfilehash: c5fc239c32037354547c6818fd507a7a8cfd3657
-ms.sourcegitcommit: bfeae16fa5db56c1ec1fe75e0597d8194522b396
+ms.openlocfilehash: 50e9eb6d5024d83e841532ed64e84b477a261c9a
+ms.sourcegitcommit: 5ed504a9ddfbd69d4f2d256ec431e634eb38813e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/10/2020
-ms.locfileid: "88031422"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89320976"
 ---
 # <a name="commercial-marketplace-partner-and-customer-usage-attribution"></a>Сведения о партнере коммерческого рынка и использовании клиентов
 
@@ -97,9 +97,9 @@ ms.locfileid: "88031422"
 
 1. Откройте шаблон Resource Manager.
 
-1. Добавьте новый ресурс в основной файл шаблона. Этот ресурс можно указать только в файле **mainTemplate.json** или **azuredeploy.json**, но не во вложенных или связанных шаблонах.
+1. Добавьте новый ресурс типа [Microsoft. Resources/deployments](https://docs.microsoft.com/azure/templates/microsoft.resources/deployments) в основной файл шаблона. Этот ресурс можно указать только в файле **mainTemplate.json** или **azuredeploy.json**, но не во вложенных или связанных шаблонах.
 
-1. Введите значение GUID после `pid-` префикса (например, PID-eb7927c8-dd66-43e1-b0cf-c346a422063).
+1. Введите значение GUID после `pid-` префикса в качестве имени ресурса. Например, если GUID имеет значение eb7927c8-dd66-43e1-b0cf-c346a422063, имя ресурса будет иметь значение _PID-eb7927c8-dd66-43e1-b0cf-c346a422063_.
 
 1. Проверьте шаблон на наличие ошибок.
 
@@ -112,11 +112,11 @@ ms.locfileid: "88031422"
 Чтобы включить отслеживание ресурсов для шаблона, необходимо добавить следующие дополнительные ресурсы в разделе ресурсов. Обязательно измените данные в примере кода ниже своими входными данными, когда будете добавлять его в основной файл шаблона.
 Этот ресурс должен быть добавлен только в файл **mainTemplate.json** или **azuredeploy.json**, но не во вложенные или связанные шаблоны.
 
-```
+```json
 // Make sure to modify this sample code with your own inputs where applicable
 
 { // add this resource to the resources section in the mainTemplate.json (do not add the entire file)
-    "apiVersion": "2018-02-01",
+    "apiVersion": "2020-06-01",
     "name": "pid-XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX", // use your generated GUID here
     "type": "Microsoft.Resources/deployments",
     "properties": {
@@ -153,6 +153,20 @@ ms.locfileid: "88031422"
 
 > [!NOTE]
 > Добавьте атрибут для каждого клиента. Глобальная статическая конфигурация не поддерживается. Вы может присвоить тег фабрике клиента, чтобы гарантировать отслеживание каждого клиента. Дополнительные сведения см. в [примере фабрики клиента](https://github.com/Azure/azure-cli/blob/7402fb2c20be2cdbcaa7bdb2eeb72b7461fbcc30/src/azure-cli-core/azure/cli/core/commands/client_factory.py#L70-L79), размещенном в GitHub.
+
+#### <a name="example-the-net-sdk"></a>Пример: пакет SDK для .NET
+
+Для .NET обязательно задайте агент пользователя. Библиотеку [Microsoft. Azure. Management. Fluent](https://docs.microsoft.com/dotnet/api/microsoft.azure.management.fluent?view=azure-dotnet) можно использовать для задания агента пользователя с помощью следующего кода (пример в C#):
+
+```csharp
+
+var azure = Microsoft.Azure.Management.Fluent.Azure
+    .Configure()
+    // Add your pid in the user agent header
+    .WithUserAgent("pid-XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX", String.Empty) 
+    .Authenticate(/* Credentials created via Microsoft.Azure.Management.ResourceManager.Fluent.SdkContext.AzureCredentialsFactory */)
+    .WithSubscription("<subscription ID>");
+```
 
 #### <a name="tag-a-deployment-by-using-the-azure-powershell"></a>Присвоение тега развертыванию с помощью Azure PowerShell
 
@@ -339,7 +353,7 @@ foreach ($deployment in $deployments){
 
 **Вам не удалось обновить свойство *contentVersion* основного шаблона?**
 
-Скорее всего, это ошибка: она иногда возникает, когда шаблон развертывается с использованием ссылки TemplateLink из другого шаблона, который по какой-то причине ожидает более старого значения сontentVersion. Обойти эту проблему можно путем использования свойства метаданных:
+Скорее всего, это ошибка, если шаблон развертывается с помощью TemplateLink из другого шаблона, который ожидает более ранних contentVersion по какой-либо причине. Обойти эту проблему можно путем использования свойства метаданных:
 
 ```
 "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",

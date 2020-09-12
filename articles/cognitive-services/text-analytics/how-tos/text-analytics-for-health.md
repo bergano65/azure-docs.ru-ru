@@ -10,12 +10,12 @@ ms.subservice: text-analytics
 ms.topic: conceptual
 ms.date: 08/06/2020
 ms.author: aahi
-ms.openlocfilehash: 4ba7aa530699ab0e06ac42e3701265254b617f73
-ms.sourcegitcommit: c28fc1ec7d90f7e8b2e8775f5a250dd14a1622a6
+ms.openlocfilehash: 5bb244796414c828e1535e4874fc85aa83f182dc
+ms.sourcegitcommit: 58d3b3314df4ba3cabd4d4a6016b22fa5264f05a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/13/2020
-ms.locfileid: "88167697"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89300074"
 ---
 # <a name="how-to-use-text-analytics-for-health-preview"></a>Как использовать Анализ текста для работоспособности (Предварительная версия)
 
@@ -91,7 +91,7 @@ ms.locfileid: "88167697"
 Azure [веб-приложение для контейнеров](https://azure.microsoft.com/services/app-service/containers/) — это ресурс Azure, предназначенный для выполнения контейнеров в облаке. Она предоставляет готовые возможности, такие как автоматическое масштабирование, поддержка контейнеров DOCKER и создание прикрепления DOCKER, Поддержка HTTPS и многое другое.
 
 > [!NOTE]
-> С помощью веб-приложения Azure вы автоматически получите домен в виде`<appservice_name>.azurewebsites.net`
+> С помощью веб-приложения Azure вы автоматически получите домен в виде `<appservice_name>.azurewebsites.net`
 
 Запустите этот скрипт PowerShell с помощью Azure CLI, чтобы создать Веб-приложение для контейнеров, используя подписку и образ контейнера по протоколу HTTPS. Дождитесь завершения сценария (приблизительно 25-30 минут) перед отправкой первого запроса.
 
@@ -161,11 +161,11 @@ az container create --resource-group $resource_group_name --name $azure_containe
 
 #### <a name="set-up-nginx-as-an-ingress-gateway"></a>Настройка NGINX в качестве входящего шлюза
 
-NGINX использует [файлы конфигурации](https://docs.nginx.com/nginx/admin-guide/basic-functionality/managing-configuration-files/) для включения компонентов во время выполнения. Чтобы включить завершение TLS для другой службы, необходимо указать SSL-сертификат для завершения подключения TLS и `proxy_pass` указать адрес службы. Пример приведен ниже.
+NGINX использует [файлы конфигурации](https://docs.nginx.com/nginx/admin-guide/basic-functionality/managing-configuration-files/) для включения компонентов во время выполнения. Чтобы включить завершение TLS для другой службы, необходимо указать SSL-сертификат для завершения подключения TLS и  `proxy_pass` указать адрес службы. Пример приведен ниже.
 
 
 > [!NOTE]
-> `ssl_certificate`в локальной файловой системе контейнера NGINX требуется указать путь. Адрес, указанный для, `proxy_pass` должен быть доступен в сети контейнера nginx.
+> `ssl_certificate` в локальной файловой системе контейнера NGINX требуется указать путь. Адрес, указанный для, `proxy_pass` должен быть доступен в сети контейнера nginx.
 
 Контейнер NGINX загрузит все файлы в `_.conf_` , которые будут подключены к `/etc/nginx/conf.d/` пути конфигурации HTTP.
 
@@ -399,22 +399,19 @@ example.json
 
 ```json
 "relations": [
-  {
-      "relationType": "DosageOfMedication",
-      "score": 1.0,
-      "bidirectional": false,
-      "source": "#/documents/2/entities/0",
-      "target": "#/documents/2/entities/1",
-      "entities": [
-          {
-              "id": "0",
-              "role": "ATTRIBUTE"
-          },
-          {
-              "id": "1",
-              "role": "ENTITY"
-          }
-      ]
+                {
+                    "relationType": "DosageOfMedication",
+                    "bidirectional": false,
+                    "source": "#/documents/1/entities/0",
+                    "target": "#/documents/1/entities/1"
+                },
+                {
+                    "relationType": "FrequencyOfMedication",
+                    "bidirectional": false,
+                    "source": "#/documents/1/entities/2",
+                    "target": "#/documents/1/entities/1"
+                }
+            ]
   },
 ...
 ]

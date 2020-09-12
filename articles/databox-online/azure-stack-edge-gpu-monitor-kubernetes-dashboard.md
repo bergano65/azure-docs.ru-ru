@@ -8,12 +8,12 @@ ms.subservice: edge
 ms.topic: how-to
 ms.date: 08/29/2020
 ms.author: alkohli
-ms.openlocfilehash: 7274cef73bff3fb87d55ad636ff0167c8a064796
-ms.sourcegitcommit: 3fb5e772f8f4068cc6d91d9cde253065a7f265d6
+ms.openlocfilehash: 12fe605fef444b4e0d7439350e350316157f53a5
+ms.sourcegitcommit: 58d3b3314df4ba3cabd4d4a6016b22fa5264f05a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89180683"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89297870"
 ---
 # <a name="use-kubernetes-dashboard-to-monitor-your-azure-stack-edge-gpu-device"></a>Использование панели мониторинга Kubernetes для мониторинга устройства GPU Azure Stack ребра
 
@@ -26,7 +26,6 @@ ms.locfileid: "89180683"
 > [!div class="checklist"]
 >
 > * Доступ к панели мониторинга Kubernetes на устройстве
-> * Скачать `aseuser` конфигурацию
 > * Просмотр модулей, развернутых на устройстве
 > * Получение IP-адреса для приложений, развернутых на устройстве
 > * Просмотр журналов контейнеров для модулей, развернутых на устройстве
@@ -42,26 +41,18 @@ ms.locfileid: "89180683"
 
 Панель мониторинга Kubernetes доступна *только для чтения* и выполняется на главном узле Kubernetes по порту 31000. Чтобы получить доступ к панели мониторинга, выполните следующие действия. 
 
-1. В локальном пользовательском интерфейсе устройства перейдите на **устройство** и перейдите в раздел **конечные точки устройства**. Выберите URL-адрес панели мониторинга Kubernetes, чтобы открыть панель мониторинга в браузере.
+1. В локальном пользовательском интерфейсе устройства перейдите на **устройство** и перейдите в раздел **конечные точки устройства**. 
+1. Выберите **скачать конфигурацию** , чтобы скачать `kubeconfig` , что позволяет получить доступ к панели мониторинга. Сохраните `config.json` файл в локальной системе.
+1. Выберите URL-адрес панели мониторинга Kubernetes, чтобы открыть панель мониторинга в браузере.
 
     ![URL-адрес панели мониторинга Kubernetes на странице устройства в локальном пользовательском интерфейсе](./media/azure-stack-edge-gpu-monitor-kubernetes-dashboard/kubernetes-dashboard-url-local-ui-1.png)
 
-1. На странице **входа в панель мониторинга Kubernetes** выберите **токен**. 
-1. Укажите токен. 
-    1. Чтобы получить маркер, [подключитесь через интерфейс PowerShell устройства](azure-stack-edge-gpu-connect-powershell-interface.md).
-    1. Выполните команду:  `Get-HcsKubernetesDashboardToken`
+1. На странице **входа в панель мониторинга Kubernetes** :
     
-    1. Скопируйте строку токена, предоставленную вам, в командной строке. Пример выходных данных:
-        
-        ```powershell
-        [10.100.10.10]: PS>Get-HcsKubernetesDashboardToken
-        eyJhbGciOiJSUzI1NiIsImtpZCI6IkpFTEtBYTMyZ0Ezb01OYTVFSnVaUV85OWtLdXNETTZQR0k0UlFybGdReFUifQ.eyJpc3MiOiJrdWJlcm5ldGVzL3NlcnZpY2VhY2NvdW50Iiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9uYW1lc3BhY2UiOiJrdWJlcm5ldGVzLWRhc2hib2FyZCIsImt1YmVybmV0ZXMuaW8vc2VydmljZWFjY291bnQvc2VjcmV0Lm5hbWUiOiJrdWJlcm5ldGVzLWRhc2hib2FyZC10b2tlbi03czZ6ayIsImt1YmVybmV0ZXMuaW8vc2VydmljZWFjY291bnQvc2VydmljZS1hY2NvdW50Lm5hbWUiOiJrdWJlcm5ldGVzLWRhc2hib2FyZCIsImt1YmVybmV0ZXMuaW8vc2VydmljZWFjY291bnQvc2VydmljZS1hY2NvdW50LnVpZCI6IjU3NzY3ZDAzLTJlYWUtNDlkMi1hNDEyLTNkOTU3MDFiMThiMyIsInN1YiI6InN5c3RlbTpzZXJ2aWNlYWNjb3VudDprdWJlcm5ldGVzLWRhc2hib2FyZDprdWJlcm5ldGVzLWRhc2hib2FyZCJ9.UgNrpVYVJBEaWxFlljuENUQQmzFXMYG2VsJUIYFdp2AO20zX0k5dRvwcCpeGlqSKb9MyYjG0c6RmT9uCOZk-vAwt7btszQLD7KPCwh_nn_NiIyO8ApgGRYZP8NuP8CBTX3tl_hpwfHtZ0ksbuKAduIL-0uPF0rG5wgLk9cTEw6fKSc2UZW6bIzhNSp_uSiP6MexOS6OftF9JFZejkIGd33dSp-k-tgFlm2Zy96sdFJC0q-XsH7jygiVnfxA9XMs5wqW26LkCh0rfO2WI3C1XFK-4TpufRZLJHo5WPlu-Tnsxa8xmtk2jQ3us-sXcBRrvhPNPrNKkbqc9hbjmWfGD0Q
-        [10.100.10.10]: PS>
-        ```
-        
-1. Выберите **Войти**.
-
-    ![Войти на панель мониторинга Kubernetes](./media/azure-stack-edge-gpu-monitor-kubernetes-dashboard/kubernetes-dashboard-sign-in-1.png)
+    1. Выберите **kubeconfig**. 
+        ![Выбор параметра kubeconfig](./media/azure-stack-edge-gpu-monitor-kubernetes-dashboard/kubernetes-dashboard-sign-in-1.png) 
+    1. Нажмите кнопку с многоточием **...**. Просмотрите и укажите `kubeconfig` , что вы ранее скачали в локальной системе. Выберите **Войти**.
+        ![Перейти к файлу kubeconfig](./media/azure-stack-edge-gpu-monitor-kubernetes-dashboard/kubernetes-dashboard-sign-in-2.png)    
 
 6. Теперь вы можете просмотреть панель мониторинга Kubernetes для устройства Azure Stack пограничных устройств в режиме только для чтения.
 
@@ -110,6 +101,21 @@ ms.locfileid: "89180683"
 
     ![Просмотр журналов контейнеров 2](./media/azure-stack-edge-gpu-monitor-kubernetes-dashboard/kubernetes-view-container-logs-1.png)
     
+
+## <a name="view-cpu-memory-usage"></a>Просмотр использования ЦП, памяти
+
+На панели мониторинга Kubernetes для Azure Stack пограничных устройств также имеется [надстройка сервера метрик](https://kubernetes.io/docs/tasks/debug-application-cluster/resource-metrics-pipeline/) , которая объединяет использование ЦП и памяти в рамках ресурсов Kubernetes.
+ 
+Например, можно просмотреть ресурсы ЦП и объем памяти, потребляемые во всех развертываниях во всех пространствах имен. 
+
+![Просмотр использования ЦП и памяти во всех развертываниях](./media/azure-stack-edge-gpu-monitor-kubernetes-dashboard/view-cpu-memory-all-1.png)
+
+Можно также выполнить фильтрацию по определенному пространству имен. В следующем примере можно просмотреть потребление ресурсов ЦП и памяти только для развертываний ARC в Azure.  
+
+![Просмотр использования ЦП и памяти для развертываний ARC в Azure](./media/azure-stack-edge-gpu-monitor-kubernetes-dashboard/view-cpu-memory-azure-arc-1.png)
+
+Сервер метрик Kubernetes предоставляет конвейеры автомасштабирования, аналогичные таким, как в [горизонтальном автомасштабировании Pod](https://kubernetes.io/docs/tasks/run-application/horizontal-pod-autoscale/).
+
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

@@ -12,12 +12,12 @@ ms.date: 06/05/2020
 ms.author: celested
 ms.reviewer: asteen, jlu, hirsin
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: fd24e6847dbf02bc7efe5d9e6ea02043879f720b
-ms.sourcegitcommit: bcb962e74ee5302d0b9242b1ee006f769a94cfb8
+ms.openlocfilehash: bed6bc43dfc15abf2bdf9f38a5de2240d348d6fb
+ms.sourcegitcommit: 5ed504a9ddfbd69d4f2d256ec431e634eb38813e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "86054718"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89320262"
 ---
 # <a name="configure-the-stay-signed-in-prompt-for-azure-ad-accounts"></a>Настроить параметр "остаться в системе?" запрос учетных записей Azure AD
 
@@ -57,7 +57,7 @@ ms.locfileid: "86054718"
 
 Вы можете запретить пользователям видеть прерывание, установив для параметра " **Показывать"** значение " **нет** " в расширенной настройке фирменной символики. Это приведет к отключению запроса функции "оставаться для всех пользователей в каталоге Azure AD.
 
-Вы также можете использовать постоянные элементы управления сеансом браузера в условном доступе, чтобы запретить пользователям видеть запрос функции "оставаться. Этот параметр позволяет отключить запрос функции "оставаться для выделенной группы пользователей (например, глобальных администраторов), не влияя на поведение входа для остальных пользователей в каталоге. Дополнительные сведения см. [в разделе Частота входа пользователя в систему](https://docs.microsoft.com/azure/active-directory/conditional-access/howto-conditional-access-session-lifetime). 
+Вы также можете использовать постоянные элементы управления сеансом браузера в условном доступе, чтобы запретить пользователям видеть запрос функции "оставаться. Этот параметр позволяет отключить запрос функции "оставаться для выделенной группы пользователей (например, глобальных администраторов), не влияя на поведение входа для остальных пользователей в каталоге. Дополнительные сведения см. [в разделе Частота входа пользователя в систему](../conditional-access/howto-conditional-access-session-lifetime.md). 
 
 Чтобы убедиться, что запрос функции "оставаться отображается только в том случае, если он может помочь пользователю, запрос функции" оставаться намеренно не показан в следующих сценариях:
 
@@ -68,10 +68,10 @@ ms.locfileid: "86054718"
 * Вход выполняется во время потока согласия пользователя или администратора
 * Постоянное управление сеансом браузера настраивается в политике условного доступа.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Узнайте о других параметрах, влияющих на время ожидания сеанса входа:
 
-* Microsoft 365 — [время ожидания бездействующего сеанса](https://docs.microsoft.com/sharepoint/sign-out-inactive-users)
-* Условный доступ Azure AD — [Частота входа пользователя](https://docs.microsoft.com/azure/active-directory/conditional-access/howto-conditional-access-session-lifetime)
-* Портал Azure — [время ожидания бездействия на уровне каталога](https://docs.microsoft.com/azure/azure-portal/admin-timeout)
+* Microsoft 365 — [время ожидания бездействующего сеанса](/sharepoint/sign-out-inactive-users)
+* Условный доступ Azure AD — [Частота входа пользователя](../conditional-access/howto-conditional-access-session-lifetime.md)
+* Портал Azure — [время ожидания бездействия на уровне каталога](../../azure-portal/set-preferences.md#change-the-directory-timeout-setting-admin)

@@ -9,12 +9,12 @@ tags: Lucene query analyzer syntax
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 11/04/2019
-ms.openlocfilehash: 9d3f8208af9d5997f5a9e025a54b54b5b035fb85
-ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
+ms.openlocfilehash: 8e8c32f5596e469de5402a1f712d234a806a69e4
+ms.sourcegitcommit: 58d3b3314df4ba3cabd4d4a6016b22fa5264f05a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88934979"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89298000"
 ---
 # <a name="use-the-full-lucene-search-syntax-advanced-queries-in-azure-cognitive-search"></a>Использование полного синтаксиса поиска Lucene (расширенные запросы в Azure Когнитивный поиск)
 
@@ -40,13 +40,13 @@ ms.locfileid: "88934979"
 
 Настроенный заголовок запроса можно многократно использовать для всех запросов в этой статье, только заменяя строку **search=**. 
 
-  ![Заголовок запроса Postman](media/search-query-lucene-examples/postman-header.png)
+  ![Параметры набора заголовков запроса POST](media/search-query-lucene-examples/postman-header.png)
 
 ### <a name="set-the-request-url"></a>Настройка URL-адреса запроса
 
 Запрос — это команда GET с URL-адресом, содержащим конечную точку Когнитивный поиск Azure и строку поиска.
 
-  ![Заголовок запроса Postman](media/search-query-lucene-examples/postman-basic-url-request-elements.png)
+  ![Запрос POST заголовка GET](media/search-query-lucene-examples/postman-basic-url-request-elements.png)
 
 URL-адрес содержит следующие элементы.
 
@@ -111,7 +111,7 @@ https://azs-playground.search.windows.net/indexes/nycjobs/docs?api-version=2020-
 
 Результат запроса должен выглядеть, как на снимке экрана ниже.
 
-  ![Пример ответа Postman](media/search-query-lucene-examples/postman-sample-results.png)
+  ![Публикация образца ответа с результатами](media/search-query-lucene-examples/postman-sample-results.png)
 
 Вы могли заметить оценку поиска в ответе. Универсальная оценка 1 отображается, если приоритет не указан, потому что выполнен поиск не всего текста или не указано условие. Для нулевого поиска без критериев строки возвращаются в произвольном порядке. При включении фактических условий поиска результаты поиска будут развиваться в осмысленных значениях.
 
@@ -137,7 +137,7 @@ $select=business_title, posting_type&search=business_title:(senior NOT junior) A
 https://azs-playground.search.windows.net/indexes/nycjobs/docs?api-version=2020-06-30&queryType=full&$count=true&$select=business_title&search=business_title:(senior NOT junior)
 ```
 
-  ![Пример ответа Postman](media/search-query-lucene-examples/intrafieldfilter.png)
+  ![Пример выражения поиска ответа после примера](media/search-query-lucene-examples/intrafieldfilter.png)
 
 Можно определить операцию поиска по полю с помощью синтаксиса **fieldname: сеарчекспрессион** , где выражение поиска может представлять собой одно слово или фразу или более сложное выражение в круглых скобках, при необходимости с логическими операторами. Вот несколько примеров.
 

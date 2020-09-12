@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 10/31/2019
 ms.author: brendm
 ms.custom: devx-track-java, devx-track-azurecli
-ms.openlocfilehash: c8d5b983e376243eca83b929f87ff1e44d4b3470
-ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
+ms.openlocfilehash: 17dd83ba7df469e12e0569e670d71b9068bb2a9f
+ms.sourcegitcommit: 58d3b3314df4ba3cabd4d4a6016b22fa5264f05a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/31/2020
-ms.locfileid: "87500374"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89297524"
 ---
 # <a name="start-stop-and-delete-your-azure-spring-cloud-application"></a>Запуск, завершение и удаление облачного приложения Azure весны
 
@@ -30,7 +30,7 @@ ms.locfileid: "87500374"
 ## <a name="using-the-azure-cli"></a>Использование Azure CLI
 
 > [!NOTE]
-> В интерфейсе командной строки Azure можно использовать необязательные параметры и настроить значения по умолчанию. Дополнительные сведения о Azure CLI см. в [справочной документации](spring-cloud-cli-reference.md).  
+> В интерфейсе командной строки Azure можно использовать необязательные параметры и настроить значения по умолчанию. Дополнительные сведения о Azure CLI см. в [справочной документации](/cli/azure/ext/spring-cloud/spring-cloud?view=azure-cli-latest).  
 
 Сначала установите облачное расширение Azure "Весна" для Azure CLI следующим образом:
 

@@ -2,13 +2,13 @@
 title: Функции шаблонов
 description: Описывает функции, используемые в шаблоне диспетчера ресурсов Azure для извлечения значений, работы со строками и числовыми значениями и получения сведений о развертывании.
 ms.topic: conceptual
-ms.date: 04/27/2020
-ms.openlocfilehash: d237f5c42c1d1eaab7b2236b15a3122bcb55865b
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.date: 09/01/2020
+ms.openlocfilehash: c78e9481e6f2ba1f17389992aab2712719fc4c3b
+ms.sourcegitcommit: 3246e278d094f0ae435c2393ebf278914ec7b97b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84331412"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89378412"
 ---
 # <a name="arm-template-functions"></a>Функции шаблонов ARM
 
@@ -38,7 +38,7 @@ ms.locfileid: "84331412"
 
 Диспетчер ресурсов предоставляет несколько функций для работы с массивами.
 
-* [array](template-functions-array.md#array).
+* [array](template-functions-array.md#array)
 * [concat](template-functions-array.md#concat)
 * [contains](template-functions-array.md#contains)
 * [createArray](template-functions-array.md#createarray)
@@ -88,7 +88,7 @@ Resource Manager предоставляет ряд функций для вып�
 Диспетчер ресурсов предоставляет следующие функции для получения значений из разделов шаблонов и значений, связанных с развертыванием:
 
 * [развертывания](template-functions-deployment.md#deployment)
-* [PXE](template-functions-deployment.md#environment)
+* [environment](template-functions-deployment.md#environment) (среда)
 * [parameters](template-functions-deployment.md#parameters)
 * [variables](template-functions-deployment.md#variables)
 
@@ -102,7 +102,7 @@ Resource Manager предоставляет ряд функций для вып�
 
 Resource Manager предоставляет для работы с логическими условиями следующие функции:
 
-* [and](template-functions-logical.md#and) (и);
+* [and](template-functions-logical.md#and)
 * [bool](template-functions-logical.md#bool)
 * [if](template-functions-logical.md#if)
 * [not](template-functions-logical.md#not) (не);
@@ -167,6 +167,7 @@ Resource Manager предоставляет для работы с логиче�
 * [listKeys](template-functions-resource.md#listkeys)
 * [листсекретс](template-functions-resource.md#list)
 * [list*](template-functions-resource.md#list)
+* [пиккзонес](template-functions-resource.md#pickzones)
 * [providers](template-functions-resource.md#providers)
 * [reference](template-functions-resource.md#reference)
 * [resourceGroup](template-functions-resource.md#resourcegroup) — может использоваться только в развертываниях для группы ресурсов.
@@ -243,7 +244,7 @@ Resource Manager предоставляет для работы с логиче�
 * [uriComponent](template-functions-string.md#uricomponent)
 * [uriComponentToString](template-functions-string.md#uricomponenttostring)
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Описание разделов в шаблоне ARM см. в разделе [Создание шаблонов ARM](template-syntax.md) .
 * Сведения о слиянии нескольких шаблонов см. в разделе [Использование связанных шаблонов с Azure Resource Manager](linked-templates.md)

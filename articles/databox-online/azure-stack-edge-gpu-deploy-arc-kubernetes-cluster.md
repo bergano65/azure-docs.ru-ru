@@ -6,14 +6,14 @@ author: alkohli
 ms.service: databox
 ms.subservice: edge
 ms.topic: how-to
-ms.date: 08/25/2020
+ms.date: 09/01/2020
 ms.author: alkohli
-ms.openlocfilehash: 5cd163b4c7514507d2a0563f1254c83dd22a3af2
-ms.sourcegitcommit: bcda98171d6e81795e723e525f81e6235f044e52
+ms.openlocfilehash: 3405f28d5f306e8370bae72eb5f3f3c406235c3d
+ms.sourcegitcommit: 5ed504a9ddfbd69d4f2d256ec431e634eb38813e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/01/2020
-ms.locfileid: "89268199"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89322030"
 ---
 # <a name="enable-azure-arc-on-kubernetes-cluster-on-your-azure-stack-edge-gpu-device"></a>Включение дуги Azure в кластере Kubernetes на устройстве с Azure Stack ребра
 
@@ -59,7 +59,7 @@ ms.locfileid: "89268199"
 
 ## <a name="register-kubernetes-resource-providers"></a>Регистрация поставщиков ресурсов Kubernetes
 
-Перед настройкой кластера Kubernetes с помощью дуги Azure необходимо включить и зарегистрировать `Microsoft.Kubernetes` `Microsoft.KubernetesConfiguration` подписку. 
+Перед включением дуги Azure в кластере Kubernetes необходимо включить и зарегистрировать `Microsoft.Kubernetes` `Microsoft.KubernetesConfiguration` подписку. 
 
 1. Чтобы включить поставщик ресурсов, в портал Azure перейдите к подписке, которую вы планируете использовать для развертывания. Перейдите к **поставщику ресурсов**. 
 1. На правой панели найдите поставщиков, которых нужно добавить. В этом примере — `Microsoft.Kubernetes` и `Microsoft.KubernetesConfiguration` .
@@ -88,7 +88,7 @@ ms.locfileid: "89268199"
 
 1. Чтобы создать субъект-службу, используйте следующую команду через `az cli` .
 
-    `az as sp create-for-rbac --skip assignment --name "<Informative name for service principal>"`  
+    `az ad sp create-for-rbac --skip assignment --name "<Informative name for service principal>"`  
 
     Сведения о том, как войти в `az cli` , [запустите Cloud Shell в портал Azure](../cloud-shell/quickstart-powershell.md?view=azure-cli-latest#start-cloud-shell)
 
@@ -142,12 +142,12 @@ ms.locfileid: "89268199"
 
     `Set-HcsKubernetesAzureArcAgent -SubscriptionId "<Your Azure Subscription Id>" -ResourceGroupName "<Resource Group Name>" -ResourceName "<Azure Arc resource name (shouldn't exist already)>" -Location "<Region associated with resource group>" -TenantId "<Tenant Id of service principal>" -ClientId "<App id of service principal>" -ClientSecret "<Password of service principal>"`
 
-    Чтобы развернуть дугу Azure на Azure Stack пограничном устройстве, убедитесь, что вы используете [поддерживаемый регион для дуги Azure](../azure-arc/kubernetes/overview.md#supported-regions). В настоящее время доступна предварительная версия Azure ARC. 
+    Чтобы развернуть дугу Azure на Azure Stack пограничном устройстве, убедитесь, что вы используете [поддерживаемый регион для дуги Azure](../azure-arc/kubernetes/overview.md#supported-regions). В настоящее время доступна предварительная версия Azure ARC. Кроме того, можно определить точное имя региона для передачи в командлет с помощью `az account list-locations` команды.
     
     Пример:
    
     ```powershell
-    [10.128.44.240]: PS>Set-HcsKubernetesAzureArcAgent -SubscriptionId "062c67a6-019b-40af-a775-c4dc1abe56ed" -ResourceGroupName "myaserg1" -ResourceName "myasetestresarc" -Location "WestEurope" -TenantId "72f988bf-86f1-41af-91ab-2d7cd011db47" -ClientId "aa8a082e-0fa1-4a82-b51c-e8b2a9fdaa8b" -ClientSecret "<password>"
+    [10.128.44.240]: PS>Set-HcsKubernetesAzureArcAgent -SubscriptionId "062c67a6-019b-40af-a775-c4dc1abe56ed" -ResourceGroupName "myaserg1" -ResourceName "myasetestresarc" -Location "westeurope" -TenantId "72f988bf-86f1-41af-91ab-2d7cd011db47" -ClientId "aa8a082e-0fa1-4a82-b51c-e8b2a9fdaa8b" -ClientSecret "<password>"
         [10.128.44.240]: PS>
     ```
     

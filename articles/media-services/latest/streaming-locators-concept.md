@@ -8,16 +8,16 @@ manager: femila
 editor: ''
 ms.service: media-services
 ms.workload: ''
-ms.topic: article
+ms.topic: conceptual
 ms.date: 03/04/2020
 ms.author: inhenkel
 ms.custom: devx-track-csharp
-ms.openlocfilehash: fe448ea5a4d9610ff82beb7cfa1071d2e8249dfd
-ms.sourcegitcommit: bcda98171d6e81795e723e525f81e6235f044e52
+ms.openlocfilehash: 68df5256949db44b2b347002570c64d1aa0d55ea
+ms.sourcegitcommit: 58d3b3314df4ba3cabd4d4a6016b22fa5264f05a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/01/2020
-ms.locfileid: "89257625"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89297966"
 ---
 # <a name="streaming-locators"></a>Указатели потоковой передачи
 
@@ -99,7 +99,7 @@ StreamingLocator locator = await client.StreamingLocators.CreateAsync(
 |Java|[ассетстреаминглокатор](/rest/api/media/assets/liststreaminglocators#assetstreaminglocator)|
 |Node.js|[listStreamingLocators](/javascript/api/@azure/arm-mediaservices/assets#liststreaminglocators-string--string--string--msrest-requestoptionsbase-)|
 
-## <a name="see-also"></a>См. также
+## <a name="see-also"></a>См. также раздел
 
 * [Ресурсы](assets-concept.md)
 * [Политики потоковой передачи](streaming-policy-concept.md)

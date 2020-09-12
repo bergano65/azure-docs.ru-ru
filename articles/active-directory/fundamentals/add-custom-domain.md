@@ -13,12 +13,12 @@ ms.author: ajburnle
 ms.reviewer: elkuzmen
 ms.custom: it-pro, seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c8035744cd7ff7bb3d8347a7d26796531a666bbd
-ms.sourcegitcommit: fbb66a827e67440b9d05049decfb434257e56d2d
+ms.openlocfilehash: fc512bf664857129377d2eb928ff025d1c5f659b
+ms.sourcegitcommit: 5ed504a9ddfbd69d4f2d256ec431e634eb38813e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87796817"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89321180"
 ---
 # <a name="add-your-custom-domain-name-using-the-azure-active-directory-portal"></a>Добавление имени личного домена с помощью портала Azure Active Directory
 
@@ -116,4 +116,4 @@ ms.locfileid: "87796817"
 
 - Измените информацию о доменном имени в Azure AD. Дополнительные сведения см. в статье [Управление личными доменными именами в Azure Active Directory](../users-groups-roles/domains-manage.md).
 
-- Если у вас есть локальные версии Windows Server и вы хотите использовать их вместе с Azure Active Directory, изучите статью об [интеграции локальных каталогов с Azure Active Directory](../connect/active-directory-aadconnect.md).
+- Если у вас есть локальные версии Windows Server и вы хотите использовать их вместе с Azure Active Directory, изучите статью об [интеграции локальных каталогов с Azure Active Directory](../hybrid/whatis-hybrid-identity.md).

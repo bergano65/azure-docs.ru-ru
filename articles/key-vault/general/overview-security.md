@@ -1,5 +1,5 @@
 ---
-title: Безопасность Azure Key Vault | Документация Майкрософт
+title: Безопасность Azure Key Vault
 description: Управление правами доступа для Azure Key Vault, ключей и секретов. Описание модели проверки подлинности и авторизации для Key Vault и обеспечения защиты вашего хранилища ключей.
 services: key-vault
 author: msmbaldwin
@@ -10,17 +10,16 @@ ms.subservice: general
 ms.topic: conceptual
 ms.date: 04/18/2019
 ms.author: mbaldwin
-Customer intent: As a key vault administrator, I want to learn the options available to secure my vaults
-ms.openlocfilehash: edef64c215f96b34cd0efbff4521a7d5adb98885
-ms.sourcegitcommit: 927dd0e3d44d48b413b446384214f4661f33db04
+ms.openlocfilehash: 4c0430f96934c16a26ca3ab908da6aa017810ad0
+ms.sourcegitcommit: 3246e278d094f0ae435c2393ebf278914ec7b97b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88870584"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89377579"
 ---
 # <a name="azure-key-vault-security"></a>Безопасность Azure Key Vault
 
-Вам необходимо защитить ключи шифрования и секреты, например, сертификаты, строки подключения и пароли в облаке, чтобы использовать Azure Key Vault. Так как вы храните конфиденциальные и критически важные для бизнеса данные, необходимо повысить безопасность ваших хранилищ и хранимых в них данных. В этой статье рассматриваются некоторые принципы, которые вам следует рассмотреть при проектировании безопасности Azure Key Vault.
+Azure Key Vault используется для защиты ключей шифрования и секретов, таких как сертификаты, строки подключения и пароли в облаке. При хранении конфиденциальных и критически важных данных необходимо предпринять шаги по повышению безопасности хранилищ и хранящихся в них данных.
 
 ## <a name="identity-and-access-management"></a>Управление удостоверениями и доступом
 
@@ -65,7 +64,7 @@ ms.locfileid: "88870584"
 > [!IMPORTANT]
 > Политика доступа к Key Vault не поддерживает детализированные разрешения на уровне объектов, таких как определенный ключ, секрет или сертификат. Если пользователю предоставлено разрешение на создание и удаление ключей, он может выполнять эти операции со всеми ключами в этом хранилище ключей.
 
-Чтобы задать политики доступа для хранилища ключей, можно использовать [портал Azure](https://portal.azure.com/), [Azure CLI](/cli/azure/install-azure-cli?view=azure-cli-latest), [Azure PowerShell](/powershell/azure/) или [REST API управления Key Vault](/rest/api/keyvault/).
+Вы можете задать политики доступа для хранилища ключей, используя [портал Azure](assign-access-policy-portal.md), [Azure CLI](assign-access-policy-cli.md), [Azure POWERSHELL](assign-access-policy-powershell.md)или [API-интерфейсы RESTful управления Key Vault](/rest/api/keyvault/).
 
 Вы можете ограничить доступ к плоскости данных с помощью [конечных точек службы виртуальной сети для Azure Key Vault](overview-vnet-service-endpoints.md). Вы можете настроить [брандмауэры и правила виртуальной сети](network-security.md) в качестве дополнительного уровня безопасности.
 
@@ -93,7 +92,7 @@ ms.locfileid: "88870584"
 - Используйте стандартные методы контроля доступа, предоставляемые Azure, для защиты журналов путем ограничения доступа к ним.
 - Удаляйте журналы, которые больше не нужно хранить в учетной записи хранения.
 
-Рекомендации по безопасному управлению учетными записями хранения см. в статье [Руководство по безопасности службы хранилища Azure](../../storage/blobs/security-recommendations.md)
+Рекомендации по безопасному управлению учетными записями хранения см. в статье Обзор [безопасности службы хранилища Azure](../../storage/blobs/security-recommendations.md) .
 
 ## <a name="next-steps"></a>Next Steps
 

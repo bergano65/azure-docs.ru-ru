@@ -6,16 +6,16 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 04/10/2019
-ms.openlocfilehash: 5b450254648cb253d6631397d703430401009f14
-ms.sourcegitcommit: 4f1c7df04a03856a756856a75e033d90757bb635
+ms.openlocfilehash: cff2e918c7b67f6d3bccb9b56366cbf034ed1bb5
+ms.sourcegitcommit: 58d3b3314df4ba3cabd4d4a6016b22fa5264f05a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87925640"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89300108"
 ---
 # <a name="manage-access-to-log-data-and-workspaces-in-azure-monitor"></a>Управление доступом к данным журнала и рабочим областям в Azure Monitor
 
-Azure Monitor хранят данные [журнала](data-platform-logs.md) в рабочей области log Analytics. Рабочая область — это контейнер, который содержит данные и сведения о конфигурации. Для управления доступом к данным журнала выполняются различные задачи администрирования, связанные с рабочей областью.
+Azure Monitor хранят данные [журнала](data-platform-logs.md) в рабочей области log Analytics. Рабочей областью называется контейнер, который содержит данные и сведения о конфигурации. Для управления доступом к данным журнала выполняются различные задачи администрирования, связанные с рабочей областью.
 
 В этой статье объясняется, как управлять доступом к журналам и администрировать рабочие области, содержащие их, включая предоставление доступа к: 
 
@@ -228,14 +228,14 @@ Set-AzResource -ResourceId $_.ResourceId -Properties $_.Properties -Force
 
     * Предоставьте пользователям следующие разрешения в рабочей области: 
 
-        * `Microsoft.OperationalInsights/workspaces/read`— требуется, чтобы пользователь мог перечислить рабочую область и открыть колонку рабочей области в портал Azure
-        * `Microsoft.OperationalInsights/workspaces/query/read`— требуется для каждого пользователя, который может выполнять запросы.
-        * `Microsoft.OperationalInsights/workspaces/query/SigninLogs/read`— чтобы иметь возможность читать журналы входа в Azure AD.
-        * `Microsoft.OperationalInsights/workspaces/query/Update/read`— чтобы иметь возможность читать журналы решений Управление обновлениями
-        * `Microsoft.OperationalInsights/workspaces/query/UpdateRunProgress/read`— чтобы иметь возможность читать журналы решений Управление обновлениями
-        * `Microsoft.OperationalInsights/workspaces/query/UpdateSummary/read`— чтобы иметь возможность читать журналы управления обновлениями.
-        * `Microsoft.OperationalInsights/workspaces/query/Heartbeat/read`— требуется для использования решения Управление обновлениями
-        * `Microsoft.OperationalInsights/workspaces/query/ComputerGroup/read`— требуется для использования решения Управление обновлениями
+        * `Microsoft.OperationalInsights/workspaces/read` — требуется, чтобы пользователь мог перечислить рабочую область и открыть колонку рабочей области в портал Azure
+        * `Microsoft.OperationalInsights/workspaces/query/read` — требуется для каждого пользователя, который может выполнять запросы.
+        * `Microsoft.OperationalInsights/workspaces/query/SigninLogs/read` — чтобы иметь возможность читать журналы входа в Azure AD.
+        * `Microsoft.OperationalInsights/workspaces/query/Update/read` — чтобы иметь возможность читать журналы решений Управление обновлениями
+        * `Microsoft.OperationalInsights/workspaces/query/UpdateRunProgress/read` — чтобы иметь возможность читать журналы решений Управление обновлениями
+        * `Microsoft.OperationalInsights/workspaces/query/UpdateSummary/read` — чтобы иметь возможность читать журналы управления обновлениями.
+        * `Microsoft.OperationalInsights/workspaces/query/Heartbeat/read` — требуется для использования решения Управление обновлениями
+        * `Microsoft.OperationalInsights/workspaces/query/ComputerGroup/read` — требуется для использования решения Управление обновлениями
 
     * Предоставьте пользователям следующие разрешения для своих ресурсов: `*/read` , назначенные роли читателя или `Microsoft.Insights/logs/*/read` . 
 
@@ -270,7 +270,7 @@ Set-AzResource -ResourceId $_.ResourceId -Properties $_.Properties -Force
     "Microsoft.OperationalInsights/workspaces/query/SecurityBaseline/read"
 ],
 ```
-В приведенных выше примерах определяется список разрешений таблиц. В этом примере показано определение черного списка, когда пользователь может получить доступ ко всем таблицам, но таблице _секуритялерт_ :
+В приведенных выше примерах определяется список разрешенных таблиц. В этом примере показано блокированное определение списка, когда пользователь может получить доступ ко всем таблицам, но таблице _секуритялерт_ :
 
 ```
 "Actions":  [

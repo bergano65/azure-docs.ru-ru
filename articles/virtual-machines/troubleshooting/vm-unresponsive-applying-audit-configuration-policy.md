@@ -14,12 +14,12 @@ ms.tgt_pltfrm: vm-windows
 ms.topic: troubleshooting
 ms.date: 08/24/2020
 ms.author: v-miegge
-ms.openlocfilehash: e55fa377f28572901202b4d722bea70786edae22
-ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
+ms.openlocfilehash: bc41783bf977806b5f9bba5b953f1f581ad07f18
+ms.sourcegitcommit: 58d3b3314df4ba3cabd4d4a6016b22fa5264f05a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88942197"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89299530"
 ---
 # <a name="virtual-machine-is-unresponsive-while-applying-audit-policy-configuration-policy"></a>При применении политики конфигурации политики аудита виртуальная машина не отвечает.
 
@@ -27,7 +27,7 @@ ms.locfileid: "88942197"
 
 ## <a name="symptom"></a>Симптом
 
-При использовании [диагностики загрузки](https://docs.microsoft.com/azure/virtual-machines/troubleshooting/boot-diagnostics) для просмотра снимка экрана виртуальной машины вы увидите, что на снимке экрана показано, что операционная система (ОС) была остановлена во время загрузки с сообщением **применение политики конфигурации политики аудита**.
+При использовании [диагностики загрузки](https://docs.microsoft.com/azure/virtual-machines/troubleshooting/boot-diagnostics) для просмотра снимка экрана виртуальной машины вы увидите, что на снимке экрана отображается, что операционная система (ОС) не отвечала во время загрузки с сообщением **применение политики конфигурации политики аудита**.
 
   ![Загрузка ОС с сообщением: "применение политики конфигурации политики аудита"](./media/vm-unresponsive-applying-audit-configuration-policy/1.png)
 

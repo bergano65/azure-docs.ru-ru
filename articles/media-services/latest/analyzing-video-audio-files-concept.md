@@ -9,17 +9,19 @@ manager: femila
 editor: ''
 ms.service: media-services
 ms.workload: ''
-ms.topic: article
+ms.topic: conceptual
 ms.date: 08/31/2020
 ms.author: inhenkel
-ms.openlocfilehash: 78ac75566eac120db4527b2e04324e7e6d40808c
-ms.sourcegitcommit: bcda98171d6e81795e723e525f81e6235f044e52
+ms.openlocfilehash: 29d80d2c6dc4e090e30d7a90460dc970ff4d8ca9
+ms.sourcegitcommit: 5ed504a9ddfbd69d4f2d256ec431e634eb38813e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/01/2020
-ms.locfileid: "89258900"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89320687"
 ---
 # <a name="analyze-video-and-audio-files-with-azure-media-services"></a>Анализ видео и звуковых файлов с помощью служб мультимедиа Azure
+
+[!INCLUDE [regulation](../video-indexer/includes/regulation.md)]
 
 [!INCLUDE [media services api v3 logo](./includes/v3-hr.md)]
 
@@ -72,11 +74,11 @@ ms.locfileid: "89258900"
 |name|Описание|
 |---|---|
 |идентификатор|Идентификатор строки.|
-|text|Сама расшифровка аудиозаписи.|
+|текст|Сама расшифровка аудиозаписи.|
 |язык|Язык расшифровки аудиозаписи. Предназначен для поддержки расшифровки, где каждая строка может быть написана на другом языке.|
 |instances|Список диапазонов времени, в которых появилась эта строка. Если экземпляр является расшифровкой, будет отображаться только один экземпляр.|
 
-Пример.
+Пример
 
 ```json
 "transcript": [
@@ -110,7 +112,7 @@ ms.locfileid: "89258900"
 |name|Описание|
 |---|---|
 |идентификатор|Идентификатор строки OCR.|
-|text|Текст OCR.|
+|текст|Текст OCR.|
 |confidence|Достоверность распознавания.|
 |язык|Язык OCR.|
 |instances|Список диапазонов времени, где появилось это OCR (одно и то же OCR может появляться несколько раз).|
@@ -361,7 +363,7 @@ ms.locfileid: "89258900"
 |name|Описание|
 |---|---|
 |идентификатор|Идентификатор ключевого слова.|
-|text|Идентификатор текста.|
+|текст|Идентификатор текста.|
 |confidence|Достоверность распознавания ключевого слова.|
 |язык|Язык ключевого слова (при наличии перевода).|
 |instances|Список диапазонов времени, где появилось это ключевое слово (ключевое слово может появляться несколько раз).|

@@ -3,12 +3,12 @@ title: Часто задаваемые вопросы о резервном ко
 description: В этой статье вы найдете ответы на часто задаваемые вопросы о защите общих папок Azure с помощью службы Azure Backup.
 ms.date: 04/22/2020
 ms.topic: conceptual
-ms.openlocfilehash: 0db30de655bfc0b98baa81a4ef20532e697fc1f8
-ms.sourcegitcommit: ac7ae29773faaa6b1f7836868565517cd48561b2
+ms.openlocfilehash: c62f8376b220911edd26edbe18955d0103440b81
+ms.sourcegitcommit: 3246e278d094f0ae435c2393ebf278914ec7b97b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88824735"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89377426"
 ---
 # <a name="questions-about-backing-up-azure-files"></a>Вопросы о резервном копировании файлов Azure
 
@@ -30,7 +30,7 @@ ms.locfileid: "88824735"
 
 Да. Функция защиты общих папок Azure, подключенных к группам синхронизации, включена.
 
-### <a name="when-trying-to-back-up-file-shares-i-clicked-on-a-storage-account-for-discovering-the-file-shares-in-it-however-i-didnt-protect-them-how-do-i-protect-these-file-shares-with-any-other-vault"></a>При попытке создать резервную копию общих файловых ресурсов я выбираю учетную запись хранения для обнаружения файловых ресурсов. Но мне не удалось защитить эти ресурсы. Как защитить эти общие папки с помощью другого хранилища?
+### <a name="when-trying-to-back-up-file-shares-i-selected-a-storage-account-to-discover-the-file-shares-in-it-however-i-didnt-protect-them-how-do-i-protect-these-file-shares-with-any-other-vault"></a>При попытке резервного копирования файловых ресурсов я выбрал учетную запись хранения для обнаружения общих файловых ресурсов. Но мне не удалось защитить эти ресурсы. Как защитить эти общие папки с помощью другого хранилища?
 
 Если во время создания резервной копии выбрать учетную запись хранения для обнаружения общих папок в ней, учетная запись хранения регистрируется в хранилище, из которого выбирается учетная запись. Если вы выбираете для защиты общие папки в другом хранилище, [отмените регистрацию](manage-afs-backup.md#unregister-a-storage-account) выбранной учетной записи хранения в этом хранилище.
 

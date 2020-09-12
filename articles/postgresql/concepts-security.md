@@ -6,12 +6,12 @@ ms.author: raagyema
 ms.service: postgresql
 ms.topic: conceptual
 ms.date: 11/22/2019
-ms.openlocfilehash: 02dc9e1ad9ee46b1a400e44b6ef737e70571a17a
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: b95e02046b2f05dd89ec8fce5da438380a8894e9
+ms.sourcegitcommit: 3246e278d094f0ae435c2393ebf278914ec7b97b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "75972583"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89375798"
 ---
 # <a name="security-in-azure-database-for-postgresql---single-server"></a>Безопасность в базе данных Azure для PostgreSQL — один сервер
 
@@ -23,7 +23,7 @@ ms.locfileid: "75972583"
 База данных Azure для PostgreSQL обеспечивает защиту данных путем шифрования транзитных данных с защитой транспортного уровня. Шифрование (SSL/TLS) применяется по умолчанию.
 
 ### <a name="at-rest"></a>Неактивных
-В службе "База данных Azure для PostgreSQL" используется проверенный криптографический модуль FIPS 140-2 для шифрования неактивных данных. Данные, включая резервные копии, шифруются на диске (за исключением временных файлов, создаваемых при выполнении запросов). Служба использует 256-разрядный шифр AES, включенный в шифрование службы хранилища Azure. Ключами управляет система. Шифрование хранилища всегда включено, и его нельзя отключить.
+В службе "База данных Azure для PostgreSQL" используется проверенный криптографический модуль FIPS 140-2 для шифрования неактивных данных. Данные, включая резервные копии, шифруются на диске, включая временные файлы, созданные при выполнении запросов. Служба использует 256-разрядный шифр AES, включенный в шифрование службы хранилища Azure. Ключами управляет система. Шифрование хранилища всегда включено, и его нельзя отключить.
 
 
 ## <a name="network-security"></a>Безопасность сети
@@ -55,6 +55,6 @@ ms.locfileid: "75972583"
 [Ведение журнала аудита](concepts-audit.md) доступно для наблюдения за действиями в базах данных. 
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 - Включение правил брандмауэра для [IP-адресов](concepts-firewall-rules.md) или [виртуальных сетей](concepts-data-access-and-security-vnet.md)
 - Дополнительные сведения о [проверке подлинности Azure Active Directory](concepts-aad-authentication.md) в базе данных Azure для PostgreSQL

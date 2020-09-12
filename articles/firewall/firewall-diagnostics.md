@@ -5,20 +5,20 @@ services: firewall
 author: vhorne
 ms.service: firewall
 ms.topic: how-to
-ms.date: 07/10/2020
+ms.date: 09/02/2020
 ms.author: victorh
-ms.openlocfilehash: 82202705c5dbd4539eec4775d0844a749fd405f9
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.openlocfilehash: 92fc4252dd52236e2cc4e8fdfdd2afa32059a721
+ms.sourcegitcommit: 3246e278d094f0ae435c2393ebf278914ec7b97b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86537009"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89376950"
 ---
 # <a name="monitor-azure-firewall-logs-and-metrics"></a>Мониторинг журналов и метрик Брандмауэра Azure
 
 Работу брандмауэра Azure можно отслеживать с помощью журналов брандмауэра. Также журналы действий можно использовать для аудита операций на ресурсах брандмауэра Azure. С помощью метрик можно просматривать счетчики производительности на портале.
 
-Доступ к некоторым из этих журналов можно получить через портал. Журналы можно передавать в [Журналы Azure Monitor](../azure-monitor/insights/azure-networking-analytics.md), службу хранилища, Центры событий, а затем анализировать в Журналах Azure Monitor или при помощи различных инструментов, таких как Excel и Power BI.
+Доступ к некоторым из этих журналов можно получить через портал. Журналы можно отправлять в [Azure Monitor журналы](../azure-monitor/insights/azure-networking-analytics.md), хранилище и концентраторы событий, а также анализировать в журналах Azure Monitor или с помощью различных средств, таких как Excel и Power BI.
 
 [!INCLUDE [azure-monitor-log-analytics-rebrand](../../includes/azure-monitor-log-analytics-rebrand.md)]
 
@@ -45,7 +45,7 @@ ms.locfileid: "86537009"
 6. В разделе **Журнал**выберите **азурефиреваллаппликатионруле** и **азурефиреваллнетворкруле** , чтобы получить журналы для правил приложений и сетей.
 7. Выберите **отправить log Analytics** , чтобы настроить рабочую область.
 8. Выберите свою подписку.
-9. Щелкните **Сохранить**.
+9. Выберите **Сохранить**.
 
 ## <a name="enable-logging-with-powershell"></a>Включение ведения журнала с помощью PowerShell
 
@@ -78,6 +78,7 @@ ms.locfileid: "86537009"
 
 * **Средства Azure.** Информацию из журналов действий можно получать с помощью Azure PowerShell, Azure CLI, REST API Azure или портала Azure. Пошаговые инструкции для каждого метода подробно описаны в статье [Activity operations with Resource Manager](../azure-resource-manager/management/view-activity-logs.md) (Выполнение операций в журналах действий с помощью Resource Manager).
 * **Power BI**. Если у вас еще нет учетной записи [Power BI](https://powerbi.microsoft.com/pricing) , вы можете попробовать ее бесплатно. Используя [пакет содержимого журналов действий Azure для Power BI](https://powerbi.microsoft.com/en-us/documentation/powerbi-content-pack-azure-audit-logs/), можно анализировать данные с помощью предварительно настроенных панелей мониторинга, которые можно использовать "как есть" или дополнительно настроить.
+* **Azure Sentinel**. Вы можете подключать журналы брандмауэра Azure к Azure Sentinel, позволяя просматривать данные журналов в книгах, использовать их для создания пользовательских оповещений и внедрять их для улучшения вашего расследования. Соединитель данных брандмауэра Azure в Azure Sentinel сейчас находится в общедоступной предварительной версии. Дополнительные сведения см. в статье [подключение данных из брандмауэра Azure](../sentinel/connect-azure-firewall.md).
 
 ## <a name="view-and-analyze-the-network-and-application-rule-logs"></a>Просмотр и анализ журналов правил сети и приложений
 

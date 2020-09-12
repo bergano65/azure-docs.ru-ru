@@ -7,12 +7,12 @@ ms.service: spring-cloud
 ms.topic: how-to
 ms.date: 04/20/2020
 ms.custom: devx-track-java
-ms.openlocfilehash: 3a7ed148c4bc8d58b2dcbc344656137a403c62eb
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 4315427598d004459862bcf12959e22e83c84d5d
+ms.sourcegitcommit: 58d3b3314df4ba3cabd4d4a6016b22fa5264f05a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87037548"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89299732"
 ---
 # <a name="integrate-azure-spring-cloud-with-azure-load-balance-solutions"></a>Интеграция Azure Spring Cloud с решениями Azure для распределения нагрузки
 
@@ -24,9 +24,9 @@ Azure уже предоставляет различные решения бал
 2.  Интеграция Azure Веснного облака с шлюзом приложений Azure
 3.  Интеграция Azure Веснного облака с помощью передней дверцы Azure
 
-## <a name="prerequisites"></a>Обязательные условия
+## <a name="prerequisites"></a>Предварительные требования
 
-* Azure Веснного облака: [как создать облачную службу Azure весны](https://docs.microsoft.com/azure/spring-cloud/spring-cloud-quickstart-launch-app-portal)
+* Azure Веснного облака: [как создать облачную службу Azure весны](https://docs.microsoft.com/azure/spring-cloud/spring-cloud-quickstart)
 * Диспетчер трафика Azure: [Создание диспетчера трафика](https://docs.microsoft.com/azure/traffic-manager/quickstart-create-traffic-manager-profile/)
 * Шлюз приложений Azure: [Создание шлюза приложения](https://docs.microsoft.com/azure/application-gateway/quick-create-portal)
 * Передняя дверца Azure: [Создание передней дверцы](https://docs.microsoft.com/azure/frontdoor/quickstart-create-front-door)

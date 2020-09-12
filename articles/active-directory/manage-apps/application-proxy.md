@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.date: 07/14/2020
 ms.author: kenwith
 ms.reviewer: japere
-ms.openlocfilehash: 96ebfecf01ff147a874674861c7cb64cb3725d52
-ms.sourcegitcommit: c28fc1ec7d90f7e8b2e8775f5a250dd14a1622a6
+ms.openlocfilehash: 82e984b629c8d838ba179b25a78262eccf078a04
+ms.sourcegitcommit: 3246e278d094f0ae435c2393ebf278914ec7b97b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/13/2020
-ms.locfileid: "88164926"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89377868"
 ---
 # <a name="remote-access-to-on-premises-applications-through-azure-ad-application-proxy"></a>Удаленный доступ к локальным приложениям через Azure AD Application Proxy
 
@@ -57,6 +57,11 @@ Application Proxy поддерживает единый вход. Дополни
 4. Если вы настроили единый вход, то соединитель выполняет требуемую дополнительную аутентификацию от имени пользователя.
 5. Соединитель отправляет запрос локальному приложению.
 6. Ответ отправляется пользователю через службу и соединитель Application Proxy.
+
+> [!NOTE]
+> Как и большинство гибридных агентов Azure AD, соединителю прокси приложения не требуется открывать входящие подключения через брандмауэр. Пользовательский трафик на шаге 3 завершается в службе прокси приложения (в Azure AD). Соединитель прокси приложения (локально) отвечает за остальную часть обмена данными.
+>
+
 
 | Компонент | Описание |
 | --------- | ----------- |

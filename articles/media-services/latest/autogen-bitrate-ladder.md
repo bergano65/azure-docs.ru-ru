@@ -10,22 +10,22 @@ ms.service: media-services
 ms.workload: media
 ms.tgt_pltfrm: na
 ms.devlang: na
-ms.topic: article
+ms.topic: conceptual
 ms.date: 08/31/2020
 ms.author: inhenkel
 ms.custom: seodec18
-ms.openlocfilehash: f1c5fb04597ec274eaf2b4a4e7a5e2b96f1816f1
-ms.sourcegitcommit: bcda98171d6e81795e723e525f81e6235f044e52
+ms.openlocfilehash: 05accd69f1868b8b0e0f6dbd4fb5c21ee843ec5e
+ms.sourcegitcommit: 58d3b3314df4ba3cabd4d4a6016b22fa5264f05a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/01/2020
-ms.locfileid: "89258832"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89297730"
 ---
 #  <a name="encode-with-an-auto-generated-bitrate-ladder"></a>Кодирование с помощью автоматически созданной схемы скоростей
 
 [!INCLUDE [media services api v3 logo](./includes/v3-hr.md)]
 
-## <a name="overview"></a>Обзор
+## <a name="overview"></a>Overview
 
 В этой статье показано, как с помощью кодировщика по плану Standard в Службах мультимедиа закодировать входные видео в автоматически созданную схему скоростей (пары "скорость — разрешение") на основе разрешений и скорости входных данных. Этот встроенный параметр кодировщика (или предустановка) никогда не превышает разрешение и скорость входных данных. Например, если указаны входные данные с разрешением 720p и скоростью 3 Мбит/с, то разрешение выходных данных не выше 720p, а скорость их запуска ниже 3 Мбит/с.
 

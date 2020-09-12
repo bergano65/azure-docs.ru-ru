@@ -3,12 +3,12 @@ title: восстановление состояния системы в Windows
 description: Пошаговое описание восстановления состояния системы Windows Server из резервной копии в Azure.
 ms.topic: conceptual
 ms.date: 06/30/2020
-ms.openlocfilehash: d3fb88ddbb02327db4388de18d2645519e13d2ec
-ms.sourcegitcommit: 3fb5e772f8f4068cc6d91d9cde253065a7f265d6
+ms.openlocfilehash: 824ed5e71934af370211bfa8b4c266fe4323b4ad
+ms.sourcegitcommit: 3246e278d094f0ae435c2393ebf278914ec7b97b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89178592"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89377443"
 ---
 # <a name="restore-system-state-to-windows-server"></a>Восстановление состояния системы в Windows Server
 
@@ -56,7 +56,7 @@ ms.locfileid: "89178592"
 
 8. Проверьте сведения о восстановлении в области **подтверждения** и нажмите кнопку **восстановить**.
 
-   ![Нажмите кнопку "Восстановить", чтобы подтвердить действие восстановления](./media/backup-azure-restore-system-state/confirm-recovery.png)
+   ![Выберите восстановить, чтобы подтвердить действие восстановления.](./media/backup-azure-restore-system-state/confirm-recovery.png)
 
 9. Скопируйте каталог *WindowsImageBackup* в место назначения восстановления на некритический том сервера. Обычно том ОС Windows является критическим томом.
 
@@ -104,7 +104,7 @@ ms.locfileid: "89178592"
 
 11. Проверьте сведения о восстановлении на панели подтверждения и нажмите кнопку **восстановить**.
 
-    ![Нажмите кнопку "Восстановить", чтобы подтвердить процесс восстановления](./media/backup-azure-restore-system-state/confirm-recovery.png)
+    ![Нажмите кнопку восстановить, чтобы подтвердить процесс восстановления.](./media/backup-azure-restore-system-state/confirm-recovery.png)
 
 12. Скопируйте каталог *WindowsImageBackup* на некритический том сервера (например, D:\). Обычно том ОС Windows является критическим томом.
 

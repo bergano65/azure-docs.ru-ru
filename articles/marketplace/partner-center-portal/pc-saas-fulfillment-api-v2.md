@@ -7,20 +7,20 @@ ms.topic: reference
 ms.date: 06/10/2020
 author: mingshen-ms
 ms.author: mingshen
-ms.openlocfilehash: f40da30ff0d702078861367dea810cc8ca1ab91b
-ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
+ms.openlocfilehash: 4a98207ef5b03f77a4f741894ec210f7551c5933
+ms.sourcegitcommit: 3246e278d094f0ae435c2393ebf278914ec7b97b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87305148"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89378140"
 ---
-# <a name="saas-fulfillment-apis-version-2-in-microsoft-commercial-marketplace"></a>API-интерфейсы выполнения SaaS версии 2 в коммерческом магазине Майкрософт
+# <a name="saas-fulfillment-apis-version-2-in-the-commercial-marketplace"></a>API-интерфейсы выполнения SaaS версии 2 в коммерческом магазине
 
 В этой статье описываются интерфейсы API, позволяющие партнерам продавать свои предложения SaaS в Microsoft AppSource и Azure Marketplace. Издатель необходим для реализации интеграции с этими API-интерфейсами для публикации предложения SaaS, доступного для языка, в центре партнеров.
 
 ## <a name="managing-the-saas-subscription-life-cycle"></a>Управление жизненным циклом подписки SaaS
 
-Azure Marketplace управляет всем жизненным циклом подписки SaaS, следующей за ее покупкой у конечного клиента.  Он использует целевую страницу, API выполнения, API операций и веб-перехватчик в качестве механизма для управления фактической активацией и использованием подписки SaaS, обновлениями и отменой подписки.  Счет по конечному клиенту основан на состоянии подписки SaaS, которую поддерживает корпорация Майкрософт. 
+Коммерческий рынок управляет всем жизненным циклом подписки SaaS, следующей за ее покупкой у конечного клиента.  Он использует целевую страницу, API выполнения, API операций и веб-перехватчик в качестве механизма для управления фактической активацией и использованием подписки SaaS, обновлениями и отменой подписки.  Счет по конечному клиенту основан на состоянии подписки SaaS, которую поддерживает корпорация Майкрософт. 
 
 ### <a name="states-of-a-saas-subscription"></a>Состояния подписки SaaS
 
@@ -35,7 +35,7 @@ Azure Marketplace управляет всем жизненным циклом п
 Для создания учетной записи:
 
 1. Клиент должен нажать кнопку **Configure (настроить** ), которая доступна для предложения SaaS после успешной покупки в Microsoft AppSource или портал Azure. Или в сообщении электронной почты о том, что клиент получит вскоре после покупки.
-2. Затем корпорация Майкрософт уведомляет партнера о приобретении, открыв на новой вкладке браузера URL-адрес целевой страницы с параметром токена (маркер идентификации покупки Marketplace).
+2. Затем корпорация Майкрософт уведомляет партнера о приобретении, открыв на новой вкладке браузера URL-адрес целевой страницы с параметром маркера (маркер идентификации покупки коммерческого магазина).
 
 Примером такого вызова является `https://contoso.com/signup?token=<blob>` , тогда как URL-адрес целевой страницы для этого предложения SaaS в центре партнеров настроен как `https://contoso.com/signup` . Этот маркер предоставляет издателю идентификатор, который однозначно идентифицирует покупку SaaS и клиента.
 
@@ -46,12 +46,12 @@ URL-адрес целевой страницы должен быть готов 
 
 Затем необходимо передать *маркер* обратно в корпорацию Майкрософт из издателя, вызвав [API разрешения SaaS](#resolve-a-purchased-subscription), в качестве значения `x-ms-marketplace-token header` параметра Header.  В результате вызова API для разрешения маркер передается для получения сведений о покупке SaaS, например уникального идентификатора покупки, идентификатора приобретенного предложения, идентификатора приобретенного плана и т. д.
 
-На целевой странице клиент должен войти в новую или существующую учетную запись SaaS с помощью единого входа Azure Active Directory (AAD).
+На целевой странице клиент должен войти в новую или существующую учетную запись SaaS с помощью единого входа Azure Active Directory (Azure AD).
 
 Издатель должен реализовать вход с помощью единого входа, чтобы обеспечить взаимодействие с пользователем, требуемое Майкрософт для этого потока.  Обязательно используйте приложение Azure AD с несколькими клиентами, допуская рабочие и учебные учетные записи или персональные учетные записи Майкрософт при настройке единого входа.  Это требование применимо только к целевой странице и пользователям, которые перенаправляются в службу SaaS, если уже выполнил вход с учетными данными Майкрософт. Он не применяется ко всем именам входа в службу SaaS.
 
 > [!NOTE]
->Если для входа в систему SSO требуется, чтобы администратор предоставил разрешение на предоставление приложению, описание предложения в центре партнеров должно раскрывать, требуется ли доступ на уровне администратора. Это соответствует [политикам сертификации Marketplace](https://docs.microsoft.com/legal/marketplace/certification-policies#10003-authentication-options).
+>Если для входа в систему SSO требуется, чтобы администратор предоставил разрешение на предоставление приложению, описание предложения в центре партнеров должно раскрывать, требуется ли доступ на уровне администратора. Это соответствует [политикам сертификации коммерческих рынков](https://docs.microsoft.com/legal/marketplace/certification-policies#10003-authentication-options).
 
 После входа клиент должен завершить настройку SaaS на стороне издателя. Затем издатель должен вызвать [API активации подписки](#activate-a-subscription) для отправки сигнала в Marketplace о завершении подготовки учетной записи SaaS.
 Это приведет к запуску цикла выставления счетов клиента. Если вызов API активации подписки не выполнен, клиент не оплачивает покупку.
@@ -67,16 +67,16 @@ URL-адрес целевой страницы должен быть готов 
 
 #### <a name="being-updated-subscribed"></a>Обновляется (подписка)
 
-Это действие означает, что обновление имеющейся активной подписки SaaS будет обрабатываться как корпорацией Майкрософт, так и издателем. Такое обновление может инициироваться
+Это действие означает, что обновление имеющейся активной подписки SaaS будет обрабатываться как корпорацией Майкрософт, так и издателем. Такое обновление может инициироваться:
 
-* Клиент из Marketplace
-* CSP из Marketplace
-* клиент с сайта SaaS издателя (не применяется к поставщикам служб, которые сделали покупки)
+- Клиент из коммерческого рынка.
+- CSP из коммерческого рынка.
+- клиент с сайта SaaS издателя (не применяется к поставщикам служб, которые были приобретены).
 
 Для подписки SaaS доступно два типа обновлений:
 
-1. План обновления, когда клиент выбирает другой план для подписки.
-1. Обновление количества при изменении клиентом количества приобретенных мест для подписки
+- План обновления, когда клиент выбирает другой план для подписки.
+- Обновление количества при изменении клиентом количества приобретенных мест для подписки
 
 Можно обновить только активную подписку. Во время обновления подписки ее состояние остается активным на стороне Майкрософт.
 
@@ -194,7 +194,7 @@ URL-адрес целевой страницы должен быть готов 
 |  `x-ms-requestid`    |  Уникальное строковое значение для отслеживания запроса клиента, желательно GUID. Если это значение не указано, оно создается и возвращается в заголовках ответа. |
 |  `x-ms-correlationid` |  Уникальное строковое значение для операции на стороне клиента. Этот параметр позволяет сопоставить все события клиентской операции с событиями на стороне сервера. Если это значение не указано, оно создается и возвращается в заголовках ответа.  |
 |  `authorization`     |  Уникальный маркер доступа, определяющий издателя, который делает этот вызов API. Формат — это то, что `"Bearer <accessaccess_token>"` значение маркера извлекается издателем, как описано в [статьях получение маркера на основе приложения Azure AD](./pc-saas-registration.md#get-the-token-with-an-http-post). |
-|  `x-ms-marketplace-token`  | Параметр *токена* идентификации покупки Marketplace для разрешения.  Токен передается при вызове URL-адреса целевой страницы, когда клиент перенаправляется на веб-сайт партнера SaaS (например `https://contoso.com/signup?token=<token><authorization_token>` ,). <br> <br>  *Примечание.* Закодированное значение *токена* является частью URL-адреса целевой страницы, поэтому его необходимо декодировать перед использованием в качестве параметра в этом вызове API.  <br> <br> Пример закодированной строки в URL-адресе выглядит следующим образом: `contoso.com/signup?token=ab%2Bcd%2Fef` , где токен имеет значение `ab%2Bcd%2Fef` .  Один и тот же маркер декодирования будет следующим:`Ab+cd/ef` |
+|  `x-ms-marketplace-token`  | Параметр *токена* идентификации покупки Marketplace для разрешения.  Токен передается при вызове URL-адреса целевой страницы, когда клиент перенаправляется на веб-сайт партнера SaaS (например `https://contoso.com/signup?token=<token><authorization_token>` ,). <br> <br>  *Примечание.* Закодированное значение *токена* является частью URL-адреса целевой страницы, поэтому его необходимо декодировать перед использованием в качестве параметра в этом вызове API.  <br> <br> Пример закодированной строки в URL-адресе выглядит следующим образом: `contoso.com/signup?token=ab%2Bcd%2Fef` , где токен имеет значение `ab%2Bcd%2Fef` .  Один и тот же маркер декодирования будет следующим: `Ab+cd/ef` |
 | | |
 
 *Коды ответов:*
@@ -248,7 +248,7 @@ URL-адрес целевой страницы должен быть готов 
 
 ```
 
-Код: 400. неправильный запрос. `x-ms-marketplace-token`отсутствует, неправильно сформирован, недопустим или просрочен.
+Код: 400. неправильный запрос. `x-ms-marketplace-token` отсутствует, неправильно сформирован, недопустим или просрочен.
 
 Код: 403 запрещено. Маркер авторизации недопустим, срок его действия истек или не указан.  Запрос пытается получить доступ к подписке SaaS для предложения, которое было опубликовано с другим ИДЕНТИФИКАТОРом Azure AD App из того, который использовался для создания маркера авторизации.
 
@@ -296,9 +296,9 @@ URL-адрес целевой страницы должен быть готов 
 
 Код: 400. неверный запрос: проверка не пройдена.
 
-* `planId`не существует в полезных данных запроса.
-* `planId`в полезных данных запроса не совпадает с приобретенным.
-* `quantity`в полезных данных запроса не совпадает с приобретенным
+* `planId` не существует в полезных данных запроса.
+* `planId` в полезных данных запроса не совпадает с приобретенным.
+* `quantity` в полезных данных запроса не совпадает с приобретенным
 * Подписка SaaS находится в состоянии подписки или приостановлена.
 
 Код: 403 запрещено. Маркер авторизации недопустим, просрочен или не указан. Запрос пытается получить доступ к подписке SaaS для предложения, которое было опубликовано с другим ИДЕНТИФИКАТОРом Azure AD App из того, который использовался для создания маркера авторизации.
@@ -426,7 +426,7 @@ URL-адрес целевой страницы должен быть готов 
 
 Извлекает указанную приобретенную подписку SaaS для предложения SaaS, опубликованного в Marketplace издателем. Используйте этот вызов, чтобы получить всю доступную информацию для конкретной подписки SaaS по ее ИДЕНТИФИКАТОРу, а не вызывать API для получения списка всех подписок.
 
-##### <a name="get-httpsmarketplaceapimicrosoftcomapisaassubscriptionssubscriptionidapi-versionapiversion"></a>Получить`https://marketplaceapi.microsoft.com/api/saas/subscriptions/<subscriptionId>?api-version=<ApiVersion>`
+##### <a name="get-httpsmarketplaceapimicrosoftcomapisaassubscriptionssubscriptionidapi-versionapiversion"></a>Получить `https://marketplaceapi.microsoft.com/api/saas/subscriptions/<subscriptionId>?api-version=<ApiVersion>`
 
 *Параметры запроса:*
 
@@ -498,7 +498,7 @@ URL-адрес целевой страницы должен быть готов 
 
 Этот вызов возвращает список планов, доступных для этого клиента, в дополнение к уже приобретенному.  Список может быть представлен конечному клиенту на сайте издателя.  Конечный клиент может изменить план подписки на любой из планов в возвращенном списке.  Изменение плана на один список, не указанный в списке, завершится ошибкой.
 
-##### <a name="get-httpsmarketplaceapimicrosoftcomapisaassubscriptionssubscriptionidlistavailableplansapi-versionapiversion"></a>Получить`https://marketplaceapi.microsoft.com/api/saas/subscriptions/<subscriptionId>/listAvailablePlans?api-version=<ApiVersion>`
+##### <a name="get-httpsmarketplaceapimicrosoftcomapisaassubscriptionssubscriptionidlistavailableplansapi-versionapiversion"></a>Получить `https://marketplaceapi.microsoft.com/api/saas/subscriptions/<subscriptionId>/listAvailablePlans?api-version=<ApiVersion>`
 
 *Параметры запроса:*
 
@@ -552,7 +552,7 @@ URL-адрес целевой страницы должен быть готов 
 
 Этот API может вызываться только для активных подписок.  Любой план можно изменить на любой другой существующий план (открытый или частный), но не сам.  Для частных планов клиент клиента должен быть определен как часть аудитории плана в центре партнеров.
 
-##### <a name="patch-httpsmarketplaceapimicrosoftcomapisaassubscriptionssubscriptionidapi-versionapiversion"></a>Защиты`https://marketplaceapi.microsoft.com/api/saas/subscriptions/<subscriptionId>?api-version=<ApiVersion>`
+##### <a name="patch-httpsmarketplaceapimicrosoftcomapisaassubscriptionssubscriptionidapi-versionapiversion"></a>Защиты `https://marketplaceapi.microsoft.com/api/saas/subscriptions/<subscriptionId>?api-version=<ApiVersion>`
 
 *Параметры запроса:*
 
@@ -617,7 +617,7 @@ URL-адрес целевой страницы должен быть готов 
 
 Количество рабочих мест не может быть больше, чем разрешено в текущем плане.  В этом случае перед изменением количества необходимо изменить план.
 
-##### <a name="patchhttpsmarketplaceapimicrosoftcomapisaassubscriptionssubscriptionidapi-versionapiversion"></a>Защиты`https://marketplaceapi.microsoft.com/api/saas/subscriptions/<subscriptionId>?api-version=<ApiVersion>`
+##### <a name="patchhttpsmarketplaceapimicrosoftcomapisaassubscriptionssubscriptionidapi-versionapiversion"></a>Обновление`https://marketplaceapi.microsoft.com/api/saas/subscriptions/<subscriptionId>?api-version=<ApiVersion>`
 
 *Параметры запроса:*
 
@@ -738,7 +738,7 @@ URL-адрес целевой страницы должен быть готов 
 
 Сейчас в качестве ответа для этого вызова API возвращаются только те операции, которые **возобновляются** .
 
-##### <a name="get-httpsmarketplaceapimicrosoftcomapisaassubscriptionssubscriptionidoperationsapi-versionapiversion"></a>Получить`https://marketplaceapi.microsoft.com/api/saas/subscriptions/<subscriptionId>/operations?api-version=<ApiVersion>`
+##### <a name="get-httpsmarketplaceapimicrosoftcomapisaassubscriptionssubscriptionidoperationsapi-versionapiversion"></a>Получить `https://marketplaceapi.microsoft.com/api/saas/subscriptions/<subscriptionId>/operations?api-version=<ApiVersion>`
 
 *Параметры запроса:*
 
@@ -792,11 +792,11 @@ URL-адрес целевой страницы должен быть готов 
 
 #### <a name="get-operation-status"></a>Получение состояния операции
 
-Позволяет издателю отслеживанию состояния указанной асинхронной операции: **Отмена подписки**, **чанжеплан**или **чанжекуантити**.
+Позволяет издателю отслеживанию состояния указанной асинхронной операции:  **Отмена подписки**, **чанжеплан**или **чанжекуантити**.
 
 `operationId`Для этого вызова API можно получить значение, возвращенное в результате **выполнения операции**, получения вызова API или `<id>` значения параметра, полученного в вызове веб-перехватчика.
 
-##### <a name="get-httpsmarketplaceapimicrosoftcomapisaassubscriptionssubscriptionidoperationsoperationidapi-versionapiversion"></a>Получить`https://marketplaceapi.microsoft.com/api/saas/subscriptions/<subscriptionId>/operations/<operationId>?api-version=<ApiVersion>`
+##### <a name="get-httpsmarketplaceapimicrosoftcomapisaassubscriptionssubscriptionidoperationsoperationidapi-versionapiversion"></a>Получить `https://marketplaceapi.microsoft.com/api/saas/subscriptions/<subscriptionId>/operations/<operationId>?api-version=<ApiVersion>`
 
 *Параметры запроса:*
 
@@ -857,7 +857,7 @@ Response body:
 
 `operationId`Для этого вызова API можно получить значение, возвращенное в результате **выполнения операции**, а также получить вызов API отложенных операций или `<id>` значение параметра, полученное в вызове веб-перехватчика.
 
-##### <a name="patch-httpsmarketplaceapimicrosoftcomapisaassubscriptionssubscriptionidoperationsoperationidapi-versionapiversion"></a>Защиты`https://marketplaceapi.microsoft.com/api/saas/subscriptions/<subscriptionId>/operations/<operationId>?api-version=<ApiVersion>`
+##### <a name="patch-httpsmarketplaceapimicrosoftcomapisaassubscriptionssubscriptionidoperationsoperationidapi-versionapiversion"></a>Защиты `https://marketplaceapi.microsoft.com/api/saas/subscriptions/<subscriptionId>/operations/<operationId>?api-version=<ApiVersion>`
 
 *Параметры запроса:*
 
@@ -969,13 +969,13 @@ Response body:
 
 Действия *плана изменения*, *изменения количества*и *отмены подписки* тестируются со стороны издателя.  С стороны Майкрософт, *Отмена подписки* может запускаться как в портал Azure, так и в центре администрирования (портале, где управляются покупки Microsoft AppSource).  *Изменение количества и плана* можно активировать только из центра администрирования.
 
-## <a name="get-support"></a>Получение поддержки
+## <a name="get-support"></a>Техническая поддержка
 
 Варианты поддержки издателя см. [в разделе Поддержка программы коммерческого рынка в центре партнеров](support.md) .
 
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Дополнительные возможности для предложений SaaS в Marketplace см. в статье [API-интерфейсы службы измерения](marketplace-metering-service-apis.md) Marketplace.
+Дополнительные варианты предложений SaaS в коммерческом магазине см. в разделе [API-интерфейсы коммерческого рынка](marketplace-metering-service-apis.md) .
 
 Ознакомьтесь с [пакетом SDK SaaS](https://github.com/Azure/Microsoft-commercial-marketplace-transactable-SaaS-offer-SDK) , созданным на основе API-интерфейсов, описанных в этом документе, и используйте его.

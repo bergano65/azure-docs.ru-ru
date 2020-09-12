@@ -7,12 +7,12 @@ ms.author: baanders
 ms.date: 7/23/2020
 ms.topic: how-to
 ms.service: digital-twins
-ms.openlocfilehash: 5d41a9b638ab023d045060e14488e91dca07b10f
-ms.sourcegitcommit: 3fb5e772f8f4068cc6d91d9cde253065a7f265d6
+ms.openlocfilehash: 63bc46f679b71f6965cda8f9db800a125683c093
+ms.sourcegitcommit: 58d3b3314df4ba3cabd4d4a6016b22fa5264f05a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89181380"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89298901"
 ---
 # <a name="set-up-an-azure-digital-twins-instance-and-authentication-scripted"></a>Настройка экземпляра Azure Digital двойников и проверки подлинности (с помощью сценария)
 
@@ -58,6 +58,13 @@ ms.locfileid: "89181380"
     * Для регистрации приложения: *URL-адрес ответа приложения Azure AD* для приложения Azure AD. Используйте команду `http://localhost`. Сценарий настроит *общедоступный клиентский/собственный (мобильный & Настольный)* универсальный код ресурса (URI).
 
 Скрипт создаст экземпляр Azure Digital двойников, назначьте пользователю Azure роль *владельца Azure Digital двойников (Предварительная версия)* на экземпляре и настройте регистрацию приложения Azure AD для использования в клиентском приложении.
+
+>[!NOTE]
+>В настоящее время существует **известная ошибка** установки сценариев, в которой некоторые пользователи (особенно пользователи, находящиеся в личных [учетных записях Майкрософт (MSAS)](https://account.microsoft.com/account)) могут найти **назначение ролей для _владельца Azure Digital двойников (Предварительная версия)_ не создано**.
+>
+>Вы можете проверить назначение ролей в разделе [*Проверка назначения роли пользователя*](#verify-user-role-assignment) далее в этой статье. при необходимости настройте назначение ролей вручную с помощью [портал Azure](how-to-set-up-instance-portal.md#set-up-user-access-permissions) или [CLI](how-to-set-up-instance-cli.md#set-up-user-access-permissions).
+>
+>Дополнительные сведения об этой неполадке см. [*в разделе Устранение неполадок: известные проблемы в Azure Digital двойников*](troubleshoot-known-issues.md#missing-role-assignment-after-scripted-setup).
 
 Ниже приведен фрагмент журнала вывода из скрипта:
 
@@ -127,5 +134,9 @@ ms.locfileid: "89181380"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-См. раздел как подключить клиентское приложение к экземпляру, написав код проверки подлинности клиентского приложения:
+Вытестируйте отдельные REST API вызовы в экземпляре с помощью команд CLI Azure Digital двойников: 
+* [AZ DT Справочник](https://docs.microsoft.com/cli/azure/ext/azure-iot/dt?view=azure-cli-latest)
+* [*Практическое руководство. Использование CLI для Azure Digital Twins*](how-to-use-cli.md)
+
+Или см. раздел как подключить клиентское приложение к экземпляру, написав код проверки подлинности клиентского приложения:
 * [*Пошаговое руководство. Написание кода проверки подлинности приложения*](how-to-authenticate-client.md)

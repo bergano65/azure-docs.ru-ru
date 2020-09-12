@@ -6,15 +6,15 @@ ms.service: virtual-machines-linux
 ms.subservice: imaging
 ms.topic: how-to
 ms.workload: infrastructure
-ms.date: 07/06/2020
+ms.date: 09/01/2020
 ms.author: danis
 ms.reviewer: cynthn
-ms.openlocfilehash: d177e7fd7d18b24f9d8fd7f3e6662abe16bba317
-ms.sourcegitcommit: e132633b9c3a53b3ead101ea2711570e60d67b83
+ms.openlocfilehash: 63bc3caf97e1325c365171ba3f8e6353885d9b68
+ms.sourcegitcommit: 5ed504a9ddfbd69d4f2d256ec431e634eb38813e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "86045337"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89322557"
 ---
 # <a name="creating-generalized-images-without-a-provisioning-agent"></a>Создание обобщенных образов без агента подготовки
 
@@ -78,7 +78,7 @@ $ sudo rm -rf /var/lib/waagent /etc/waagent.conf /var/log/waagent.log
 
 Кроме того, в виртуальной машине, так как мы удалили агент Linux для Azure, необходимо предоставить механизм для подготовки отчетов. 
 
-#### <a name="python-script"></a>Сценарий Python
+#### <a name="python-script"></a>Скрипт Python
 
 ```python
 import http.client
@@ -174,7 +174,7 @@ wireserver_conn.close()
    </Health>
    ```
 
-3. Опубликовать эти данные в Виресервер:`curl -X POST -H 'x-ms-version: 2012-11-30' -H "x-ms-agent-name: WALinuxAgent" -H "Content-Type: text/xml;charset=utf-8" -d "$REPORT_READY_XML" http://168.63.129.16/machine?comp=health`
+3. Опубликовать эти данные в Виресервер: `curl -X POST -H 'x-ms-version: 2012-11-30' -H "x-ms-agent-name: WALinuxAgent" -H "Content-Type: text/xml;charset=utf-8" -d "$REPORT_READY_XML" http://168.63.129.16/machine?comp=health`
 
 ### <a name="automating-running-the-code-at-first-boot"></a>Автоматизация выполнения кода при первой загрузке
 
@@ -199,7 +199,7 @@ WantedBy=multi-user.target
 Эта системная служба выполняет три вещи для базовой подготовки:
 
 1. Отчеты, готовые к работе в Azure (чтобы указать, что он был успешно создан).
-1. Переименовывает виртуальную машину на основе имени предоставленной пользователем виртуальной машины, изменяя эти данные из IMDS.
+1. Переименовывает виртуальную машину на основе имени предоставленной пользователем виртуальной машины, изменяя эти данные из [службы метаданных экземпляра Azure (IMDS)](https://docs.microsoft.com/azure/virtual-machines/linux/instance-metadata-service). **Примечание** . IMDS также предоставляет другие [метаданные экземпляра](https://docs.microsoft.com/azure/virtual-machines/linux/instance-metadata-service#accessing-azure-instance-metadata-service), такие как открытые ключи SSH, поэтому вы можете задать больше имени узла.
 1. Отключается, чтобы он выполнялся только при первой загрузке, а не при последующих перезагрузках.
 
 С помощью единицы в файловой системе выполните следующую команду, чтобы включить ее:
@@ -271,6 +271,6 @@ Jun 11 20:28:56 thstringnopa2 systemd[1]: Started Azure Provisioning.
 
 Если вы реализуете собственный код подготовки или агента, вы владеете поддержкой этого кода, поддержка Майкрософт будет исследовать только проблемы, связанные с интерфейсами подготовки, которые недоступны. Мы постоянно делаем улучшения и изменения в этой области, поэтому необходимо отслеживать изменения в Cloud-init и агенте Linux для Azure для подготовки изменений API.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения см. в разделе [Подготовка Linux](provisioning.md).

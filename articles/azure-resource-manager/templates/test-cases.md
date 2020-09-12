@@ -2,15 +2,15 @@
 title: Тестовые случаи для набора средств тестирования
 description: Описание тестов, выполняемых набором средств тестирования шаблонов ARM.
 ms.topic: conceptual
-ms.date: 06/19/2020
+ms.date: 09/02/2020
 ms.author: tomfitz
 author: tfitzmac
-ms.openlocfilehash: 5c18a2658ba1af9370699004860d1743603e8143
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: dda8e92c17029126e7f473a6aee03acfc970e04b
+ms.sourcegitcommit: 3246e278d094f0ae435c2393ebf278914ec7b97b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85255844"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89378123"
 ---
 # <a name="default-test-cases-for-arm-template-test-toolkit"></a>Тестовые случаи по умолчанию для набора средств тестирования шаблонов ARM
 
@@ -100,6 +100,37 @@ ms.locfileid: "85255844"
         "type": "SecureString"
     }
 }
+```
+
+## <a name="environment-urls-cant-be-hardcoded"></a>URL-адреса окружения не могут быть жестко заданы
+
+Имя теста: **Деплойменттемплате не должно содержать жестко** заданный URI
+
+Не кодировать URL-адреса среды в шаблоне. Вместо этого используйте [функцию среды](template-functions-deployment.md#environment) для динамического получения этих URL-адресов во время развертывания. Список заблокированных узлов URL-адресов см. в разделе [тестовый случай](https://github.com/Azure/arm-ttk/blob/master/arm-ttk/testcases/deploymentTemplate/DeploymentTemplate-Must-Not-Contain-Hardcoded-Uri.test.ps1).
+
+Следующий пример приводит к **сбою** теста, так как URL-адрес жестко закодирован.
+
+```json
+"variables":{
+    "AzureURL":"https://management.azure.com"
+}
+```
+
+Тест также **завершается ошибкой** при использовании [concat](template-functions-string.md#concat) или [URI](template-functions-string.md#uri).
+
+```json
+"variables":{
+    "AzureSchemaURL1": "[concat('https://','gallery.azure.com')]",
+    "AzureSchemaURL2": "[uri('gallery.azure.com','test')]"
+}
+```
+
+В следующем примере выполняется **Передача** этого теста.
+
+```json
+"variables": {
+    "AzureSchemaURL": "[environment().gallery]"
+},
 ```
 
 ## <a name="location-uses-parameter"></a>В расположении используется параметр
@@ -351,18 +382,18 @@ ms.locfileid: "85255844"
 
 ## <a name="artifacts-parameter-defined-correctly"></a>Параметр артефактов определен правильно
 
-Имя теста: **артефакты — параметр**
+Имя теста: **параметр артефактов**
 
-При включении параметров для `_artifactsLocation` и `_artifactsLocationSasToken` Используйте правильные значения по умолчанию и типы. Для прохождения этого теста должны выполняться следующие условия.
+При включении параметров для `_artifactsLocation` и `_artifactsLocationSasToken` Используйте правильные значения по умолчанию и типы. Для передачи этого теста должны быть выполнены следующие условия.
 
 * Если вы предоставляете один параметр, необходимо указать другой.
-* `_artifactsLocation`должен быть **строковым**
-* `_artifactsLocation`в основном шаблоне должно быть значение по умолчанию
-* `_artifactsLocation`не может иметь значение по умолчанию во вложенном шаблоне 
-* `_artifactsLocation`должен иметь `"[deployment().properties.templateLink.uri]"` URL-адрес необработанного репозитория или его значение по умолчанию
-* `_artifactsLocationSasToken`должен быть **secureString**
-* `_artifactsLocationSasToken`может иметь только пустую строку для значения по умолчанию
-* `_artifactsLocationSasToken`не может иметь значение по умолчанию во вложенном шаблоне 
+* `_artifactsLocation` должен быть **строковым**
+* `_artifactsLocation` в основном шаблоне должно быть значение по умолчанию
+* `_artifactsLocation` не может иметь значение по умолчанию во вложенном шаблоне 
+* `_artifactsLocation` должен иметь `"[deployment().properties.templateLink.uri]"` URL-адрес необработанного репозитория или его значение по умолчанию
+* `_artifactsLocationSasToken` должен быть **secureString**
+* `_artifactsLocationSasToken` может иметь только пустую строку для значения по умолчанию
+* `_artifactsLocationSasToken` не может иметь значение по умолчанию во вложенном шаблоне 
 
 ## <a name="declared-variables-must-be-used"></a>Необходимо использовать объявленные переменные
 
@@ -514,9 +545,9 @@ ms.locfileid: "85255844"
 
 Для `reference` и `list*` Проверка **завершается ошибкой** при использовании `concat` для создания идентификатора ресурса.
 
-## <a name="dependson-cant-be-conditional"></a>dependsOn не может быть условным
+## <a name="dependson-best-practices"></a>рекомендации по dependsOn
 
-Имя теста: **DependsOn не должно быть условным**
+Имя теста: рекомендации по **DependsOn**
 
 При задании зависимостей развертывания не используйте функцию [If](template-functions-logical.md#if) для проверки условия. Если один ресурс зависит от ресурса, который [условно развернут](conditional-resource-deployment.md), установите зависимость так же, как и для любого ресурса. Если условный ресурс не развернут, Azure Resource Manager автоматически удаляет его из необходимых зависимостей.
 
@@ -572,7 +603,7 @@ ms.locfileid: "85255844"
 
 ## <a name="use-stable-vm-images"></a>Использование стабильных образов виртуальных машин
 
-Имя теста: " **virtual-machines" — "не требуется — предварительная версия** "
+Имя теста: **виртуальные машины не должны быть предварительной версией**
 
 Виртуальные машины не должны использовать предварительные образы.
 
@@ -656,6 +687,6 @@ ms.locfileid: "85255844"
 }
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о запуске набора средств тестирования см. в статье [Использование набора средств тестирования ARM](test-toolkit.md).

@@ -7,12 +7,12 @@ ms.author: dobett
 ms.date: 08/13/2020
 ms.topic: troubleshooting
 ms.service: iot-central
-ms.openlocfilehash: 6a1506de0bf21e44d84925fabeeea860f5807e2c
-ms.sourcegitcommit: 648c8d250106a5fca9076a46581f3105c23d7265
+ms.openlocfilehash: 2bf48b6808fccb1f4344e66a2b8f1fc2d4c52ef6
+ms.sourcegitcommit: 5ed504a9ddfbd69d4f2d256ec431e634eb38813e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "88958105"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89322455"
 ---
 # <a name="troubleshoot-why-data-from-your-devices-isnt-showing-up-in-azure-iot-central"></a>Устранение неполадок, почему данные с устройств не отображаются в Azure IoT Central
 
@@ -57,7 +57,7 @@ az set account --subscription <your-subscription-id>
 Чтобы отслеживать данные телеметрии, отправляемые устройством, используйте следующую команду:
 
 ```cmd/bash
-az iot central app monitor-events --app-id <app-id> --device-id <device-name>
+az iot central diagnostics monitor-events --app-id <app-id> --device-id <device-name>
 ```
 
 Если устройство успешно подключено к IoT Central, вы увидите результат, аналогичный приведенному ниже:
@@ -82,7 +82,7 @@ Filtering on device: device-001
 Для мониторинга обновлений свойств устройство обменивается данными с IoT Central используйте следующую команду предварительной версии:
 
 ```cmd/bash
-az iot central app monitor-properties --app-id <app-id> --device-id <device-name>
+az iot central diagnostics monitor-properties --app-id <app-id> --device-id <device-name>
 ```
 
 Если устройство успешно отправляет обновления свойств, вы увидите результат, аналогичный приведенному ниже:
@@ -106,7 +106,7 @@ rocessorArchitecture': 'ARM', 'swVersion': '1.0.0'}
 Если данные не отображаются на мониторе, проверьте состояние подготовки устройства, выполнив следующую команду:
 
 ```cmd/bash
-az iot central app device registration-info --app-id <app-id> --device-id <device-name>
+az iot central device registration-info --app-id <app-id> --device-id <device-name>
 ```
 
 В следующих выходных данных показан пример устройства, для которого заблокировано подключение:
@@ -131,7 +131,7 @@ https://aka.ms/iotcentral-docs-dps-SAS",
 
 | Состояние подготовки устройства | Описание | Возможное устранение рисков |
 | - | - | - |
-| Подготовлено | Не удается немедленно распознать ошибку. | Н/Д |
+| Подготовлено | Не удается немедленно распознать ошибку. | Недоступно |
 | Зарегистрировано | Устройство еще не подключено к IoT Central. | Проверьте журналы устройств на наличие проблем с подключением. |
 | Блокировано | Устройству запрещено подключаться к IoT Central. | Устройству запрещено подключаться к IoT Central приложению. Разблокируйте устройство в IoT Central и повторите попытку. Дополнительные сведения см. в разделе [блочные устройства](concepts-get-connected.md#device-status-values). |
 | Неутвержденные | Устройство не утверждено. | Устройство не утверждено для подключения к IoT Central приложению. Утвердите устройство в IoT Central и повторите попытку. Дополнительные сведения см. в разделе [утверждение устройств](concepts-get-connected.md#connect-without-registering-devices) . |
@@ -176,13 +176,13 @@ https://aka.ms/iotcentral-docs-dps-SAS",
 - Чтобы проверить данные телеметрии, используйте команду Предварительный просмотр:
 
     ```cmd/bash
-    az iot central app validate-messages --app-id <app-id> --device-id <device-name>
+    az iot central diagnostics validate-messages --app-id <app-id> --device-id <device-name>
     ```
 
 - Чтобы проверить обновления свойств, используйте команду Предварительный просмотр
 
     ```cmd/bash
-    az iot central app validate-properties --app-id <app-id> --device-id <device-name>
+    az iot central diagnostics validate-properties --app-id <app-id> --device-id <device-name>
     ```
 
 При первом запуске команды может появиться запрос на установку `uamqp` библиотеки `validate` .
@@ -203,13 +203,13 @@ tatype 'double'. Data '56'. All dates/times/datetimes/durations must be ISO 8601
 
 Если вы предпочитаете использовать графический интерфейс пользователя, используйте IoT Central представление **необработанных данных** , чтобы определить, не моделируется ли что-либо. Представление " **необработанные данные** " не обнаруживает, отправляет ли устройство неверно сформированный код JSON.
 
-:::image type="content" source="media/troubleshoot-connection/raw-data-view.png" alt-text="Снимок экрана представления необработанные данные":::
+:::image type="content" source="media/troubleshoot-connection/raw-data-view.png" alt-text="Снимок экрана представления "необработанные данные"":::
 
 После обнаружения проблемы может потребоваться обновить встроенное по устройства или создать новый шаблон устройства, моделирующий ранее несмоделированные данные.
 
 Если вы решили создать новый шаблон, который моделирует данные правильно, перенесите устройства из старого шаблона в новый шаблон. Дополнительные сведения см. в статье [Управление устройствами в приложении IOT Central Azure](howto-manage-devices.md).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Если вам нужна дополнительная помощь, вы можете обратиться к экспертам по Azure на [форумах MSDN Azure и Stack overflow](https://azure.microsoft.com/support/community/). Кроме того, вы можете отправить запрос в [службу поддержки Azure](https://portal.azure.com/#create/Microsoft.Support).
 

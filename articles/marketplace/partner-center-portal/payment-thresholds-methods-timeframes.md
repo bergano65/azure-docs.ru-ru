@@ -6,13 +6,13 @@ ms.author: mingshen
 ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
-ms.date: 04/24/2020
-ms.openlocfilehash: f5614da7eac0717894d2bcb3c9cfdd959cb57f72
-ms.sourcegitcommit: d661149f8db075800242bef070ea30f82448981e
+ms.date: 09/02/2020
+ms.openlocfilehash: 0d98afb97113f222b9ff0edc8405ea75ad10a3fb
+ms.sourcegitcommit: 5ed504a9ddfbd69d4f2d256ec431e634eb38813e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/19/2020
-ms.locfileid: "88607276"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89322081"
 ---
 # <a name="payment-thresholds-methods-and-time-frames"></a>Пороги, методы и сроки оплаты
 
@@ -78,7 +78,7 @@ ms.locfileid: "88607276"
 | Кот-д'Ивуар | Да | Да | Да | Нет |
 | Хорватия | Да | Да | Да | Нет |
 | Кипр | Да | Да | Да | Да |
-| Чешская Республика | Да | Да | Да | Да |
+| Чехия | Да | Да | Да | Да |
 | Дания | Да | Да | Да | Да |
 | Доминика | Да | Да | Нет | Да |
 | Доминиканская Республика | Да | Да | Да | Да |
@@ -123,7 +123,6 @@ ms.locfileid: "88607276"
 | Лихтенштейн | Да | Да | Да | Да |
 | Литва | Да | Да | Да | Нет |
 | Люксембург | Да | Да | Да | Да |
-| Бывшая югославская Республика Македония | Нет | Да | Да | Нет |
 | Мадагаскар | Да | Да | Да | Нет |
 | Малави | Да | Да | Да | Да |
 | Малайзия | Да | Да | Да | Да |
@@ -142,6 +141,7 @@ ms.locfileid: "88607276"
 | Никарагуа | Да | Да | Да | Да |
 | Нигер | Да | Да | Да | Нет |
 | Нигерия | Да | Да | Да | Нет |
+| Северная Македония | Нет | Да | Да | Нет |
 | Норвегия | Да | Да | Да | Да |
 | Оман | Да | Да | Да | Да |
 | Пакистан | Да | Да | Да | Нет |

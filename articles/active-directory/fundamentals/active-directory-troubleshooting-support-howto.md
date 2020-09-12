@@ -15,12 +15,12 @@ ms.author: ajburnle
 ms.reviewer: jeffsta
 ms.custom: it-pro, seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 4e4d1490c4900c957a7dce7e632415823723f81b
-ms.sourcegitcommit: fbb66a827e67440b9d05049decfb434257e56d2d
+ms.openlocfilehash: 9be6efeba101dc922a1045042b64ac64bc6cd093
+ms.sourcegitcommit: 5ed504a9ddfbd69d4f2d256ec431e634eb38813e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87797293"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89322540"
 ---
 # <a name="find-help-and-open-a-support-ticket-for-azure-active-directory"></a>Поиск справки и создание запроса в службу поддержки — Azure Active Directory
 Корпорация Майкрософт предоставляет услуги глобальной технической и предпродажной поддержки, а также поддержки по выставлению счетов и подписке для Azure Active Directory (Azure AD). Поддержка доступна как через Интернет, так и по телефону для платных и пробных подписок Microsoft Azure. Поддержка по телефону и поддержка выставления счетов по сети доступны на дополнительных языках. 
@@ -29,7 +29,7 @@ ms.locfileid: "87797293"
 
 Прежде чем создать запрос в службу поддержки, ознакомьтесь со следующими ресурсами, содержащими полезные сведения. 
 
-* Содержимое, например инструкции и примеры кода для ИТ-специалистов и разработчиков, см. в [технической документации на сайте docs.microsoft.com](https://docs.microsoft.com/azure/active-directory/).
+* Содержимое, например инструкции и примеры кода для ИТ-специалистов и разработчиков, см. в [технической документации на сайте docs.microsoft.com](../index.yml).
 
 * [Техническое сообщество Майкрософт](https://techcommunity.microsoft.com/) — это место для наших партнеров и клиентов ИТ-специалистов по совместной работе, совместному использованию и освоению. [Информационный центр технического сообщества Майкрософт](https://techcommunity.microsoft.com/t5/Community-Info-Center/ct-p/Community-Info-Center) используется для объявлений, записей в блоге, Ask-Me-любых (АМА) взаимодействий с экспертами и т. д. Вы также можете [присоединиться к сообществу и предлагать свои идеи](https://techcommunity.microsoft.com/t5/Communities/ct-p/communities).
 
@@ -98,6 +98,6 @@ ms.locfileid: "87797293"
 
 ##  <a name="next-steps"></a>Дальнейшие действия
 
-* [Техническое сообщество Майкрософт](https://techcommunity.microsoft.com/)
+* [Сообщество Microsoft Tech](https://techcommunity.microsoft.com/)
 
-* [Техническая документация на сайте docs.microsoft.com](https://docs.microsoft.com/azure/active-directory/)
+* [Техническая документация на сайте docs.microsoft.com](../index.yml)

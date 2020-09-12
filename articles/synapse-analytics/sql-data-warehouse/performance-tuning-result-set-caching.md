@@ -11,20 +11,18 @@ ms.date: 10/10/2019
 ms.author: xiaoyul
 ms.reviewer: nidejaco;
 ms.custom: azure-synapse
-ms.openlocfilehash: 919f3105c1ee9cc8cbdfaf413be56f6dd6291683
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 2c29ad48e8dc626617786e519e84c92875bc6170
+ms.sourcegitcommit: 3246e278d094f0ae435c2393ebf278914ec7b97b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85212689"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89378531"
 ---
 # <a name="performance-tuning-with-result-set-caching"></a>Настройка производительности путем кэширования результирующего набора
 
 Если включено кэширование результирующего набора, Synapse SQL автоматически кэширует результаты запроса в пользовательской базе данных для многократного использования.  Это позволяет последующим запросам получать результаты непосредственно из материализованного кэша, поэтому перерасчет не требуется.   Кэширование результирующего набора улучшает производительность запросов и сокращает использование ресурсов вычислений.  Кроме того, запросы, использующие кэшированный результирующий набор, не используют слоты выдачи и поэтому не учитываются для существующих ограничений параллелизма. В целях безопасности пользователи могут получить доступ к кэшированным результатам только в том случае, если они имеют те же разрешения на доступ к данным, что и пользователи, создающие кэшированные результаты.  
 
 ## <a name="key-commands"></a>Основные команды
-
-[Включение или выключение кэширования результирующего набора для пользовательской базы данных](/sql/t-sql/statements/alter-database-transact-sql-set-options?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest)
 
 [Включение или выключение кэширования результирующего набора для пользовательской базы данных](/sql/t-sql/statements/alter-database-transact-sql-set-options?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest)
 
