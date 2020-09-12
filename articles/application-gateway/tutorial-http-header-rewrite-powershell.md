@@ -7,12 +7,12 @@ ms.service: application-gateway
 ms.topic: how-to
 ms.date: 11/19/2019
 ms.author: absha
-ms.openlocfilehash: f8aec788e5370bd0c6f0e2f1b6ff032ca68cac87
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: e18288dbc2a09c7e9dd5b0c0e96dfd04ec192596
+ms.sourcegitcommit: 1b320bc7863707a07e98644fbaed9faa0108da97
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84806434"
+ms.lasthandoff: 09/09/2020
+ms.locfileid: "89595909"
 ---
 # <a name="create-an-application-gateway-and-rewrite-http-headers"></a>Создание шлюза приложений и перезапись заголовков HTTP
 
@@ -20,15 +20,13 @@ ms.locfileid: "84806434"
 
 Вы узнаете, как выполнять следующие задачи:
 
-> [!div class="checklist"]
->
-> * Создание автоматически масштабируемой виртуальной сети.
-> * Создание зарезервированного общедоступного IP-адреса
-> * Настройка инфраструктуры шлюза приложений.
-> * указать конфигурацию правила перезаписи заголовка HTTP;
-> * Настройка автомасштабирования
-> * Создание шлюза приложений
-> * Тестирование шлюза приложений
+* Создание автоматически масштабируемой виртуальной сети.
+* Создание зарезервированного общедоступного IP-адреса
+* Настройка инфраструктуры шлюза приложений.
+* указать конфигурацию правила перезаписи заголовка HTTP;
+* Настройка автомасштабирования
+* Создание шлюза приложений
+* Тестирование шлюза приложений
 
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
@@ -173,6 +171,6 @@ Get-AzPublicIPAddress -ResourceGroupName $rg -Name AppGwVIP
 
 `Remove-AzResourceGroup -Name $rg`
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Создание шлюза приложений с правилами маршрутизации на основе URL-путей](./tutorial-url-route-powershell.md)

@@ -8,12 +8,12 @@ ms.topic: how-to
 ms.date: 07/19/2019
 ms.author: victorh
 ms.custom: mvc
-ms.openlocfilehash: cb45f4a19cf36fe291ffe7299a46a44a245fbb8f
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: f29b31b09c2532c336ef2a2d574fab5e000b3e4b
+ms.sourcegitcommit: 1b320bc7863707a07e98644fbaed9faa0108da97
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84806196"
+ms.lasthandoff: 09/09/2020
+ms.locfileid: "89595892"
 ---
 # <a name="manage-web-traffic-with-an-application-gateway-using-azure-powershell"></a>Управление веб-трафиком с помощью шлюза приложений в Azure PowerShell
 
@@ -21,10 +21,9 @@ ms.locfileid: "84806196"
 
 Вы узнаете, как выполнять следующие задачи:
 
-> [!div class="checklist"]
-> * Настройка сети
-> * Создание шлюза приложений
-> * создание масштабируемого набора виртуальных машин с серверным пулом, используемым по умолчанию.
+* Настройка сети
+* Создание шлюза приложений
+* создание масштабируемого набора виртуальных машин с серверным пулом, используемым по умолчанию.
 
 При необходимости эти инструкции можно выполнить с помощью [Azure CLI](tutorial-manage-web-traffic-cli.md).
 

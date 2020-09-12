@@ -6,12 +6,12 @@ ms.suite: integration
 ms.reviewer: klam, logicappspm
 ms.topic: article
 ms.date: 10/09/2018
-ms.openlocfilehash: 796558c2579504b673fd15c468ce635c6b1cca8e
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 19f42270e37c42cf56bbde04f73c01027a56ff63
+ms.sourcegitcommit: f8d2ae6f91be1ab0bc91ee45c379811905185d07
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87066368"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89657385"
 ---
 # <a name="create-conditional-statements-that-control-workflow-actions-in-azure-logic-apps"></a>Создание условных операторов, которые управляют действиями в рабочих процессах Azure Logic Apps
 
@@ -28,7 +28,7 @@ ms.locfileid: "87066368"
 
 * Базовые знания [создания приложений логики](../logic-apps/quickstart-create-first-logic-app-workflow.md).
 
-* Чтобы выполнить действия, указанные в данной статье, [создайте этот пример приложения логики](../logic-apps/quickstart-create-first-logic-app-workflow.md), используя учетную запись Outlook.com или Office 365 Outlook.
+* Чтобы выполнить пример в этой статье, [Создайте пример приложения логики](../logic-apps/quickstart-create-first-logic-app-workflow.md) с учетной записью Outlook.com или рабочей или учебной учетной записью.
 
 ## <a name="add-condition"></a>Добавьте условие
 

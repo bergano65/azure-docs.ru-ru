@@ -1,29 +1,26 @@
 ---
-title: Обработка канала изменений в хранилище BLOB-объектов Azure (Предварительная версия) | Документация Майкрософт
+title: Обработка веб-канала изменений в хранилище BLOB-объектов Azure | Документация Майкрософт
 description: Узнайте, как обрабатывать журналы веб-каналов изменений в клиентском приложении .NET.
 author: normesta
 ms.author: normesta
-ms.date: 06/18/2020
+ms.date: 09/08/2020
 ms.topic: article
 ms.service: storage
 ms.subservice: blobs
 ms.reviewer: sadodd
 ms.custom: devx-track-csharp
-ms.openlocfilehash: cc70204a56c3a853c6c6c7f0e1573c71854c0f19
-ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
+ms.openlocfilehash: f0e89fdfba852fc056cf48efd1b92daabb272cf0
+ms.sourcegitcommit: d0541eccc35549db6381fa762cd17bc8e72b3423
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89018966"
+ms.lasthandoff: 09/09/2020
+ms.locfileid: "89568257"
 ---
-# <a name="process-change-feed-in-azure-blob-storage-preview"></a>Обработка канала изменений в хранилище BLOB-объектов Azure (Предварительная версия)
+# <a name="process-change-feed-in-azure-blob-storage"></a>Обработка веб-канала изменений в хранилище BLOB-объектов Azure
 
 Веб-канал изменений предоставляет журналы транзакций всех изменений, происходящих в больших двоичных объектах и метаданных больших двоичных объектов в вашей учетной записи хранения. В этой статье показано, как считывать записи веб-канала изменений с помощью библиотеки обработчика канала изменений больших двоичных объектов.
 
-Дополнительные сведения о канале изменений см. [в статье канал изменений в хранилище BLOB-объектов Azure (Предварительная версия)](storage-blob-change-feed.md).
-
-> [!NOTE]
-> Веб-канал изменений находится в общедоступной предварительной версии и доступен в ограниченных регионах. Дополнительные сведения об этой функции вместе с известными проблемами и ограничениями см. [в статье поддержка веб-канала изменений в хранилище BLOB-объектов Azure](storage-blob-change-feed.md). Библиотека обработчика веб-канала изменений может быть изменена между сейчас и когда эта библиотека становится общедоступной.
+Дополнительные сведения о веб-канале изменений см. в статье [веб-канал изменений в хранилище BLOB-объектов Azure](storage-blob-change-feed.md).
 
 ## <a name="get-the-blob-change-feed-processor-library"></a>Получение библиотеки обработчика канала изменений больших двоичных объектов
 
@@ -219,4 +216,4 @@ public async Task<List<BlobChangeFeedEvent>> ChangeFeedBetweenDatesAsync(string 
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Дополнительные сведения о журналах веб-канала изменений. См. [веб-канал изменений в хранилище BLOB-объектов Azure (Предварительная версия)](storage-blob-change-feed.md)
+Дополнительные сведения о журналах веб-канала изменений. См. [веб-канал изменений в хранилище BLOB-объектов Azure](storage-blob-change-feed.md)

@@ -1,67 +1,67 @@
 ---
-title: 'Cognitive Services документы: новые возможности для 1 июля 2020 — 31 июля 2020 г.'
-description: Новые возможности в документации по Cognitive Services 1 июля 2020 — 31 июля 2020 г.
+title: 'Cognitive Services документы: новые возможности для 1 августа 2020 — 31 августа 2020'
+description: Новые возможности в документации по Cognitive Services 1 августа 2020 — 31 августа 2020.
 author: erhopf
 manager: nitinme
 ms.topic: conceptual
 ms.author: erhopf
 ms.service: cognitive-services
-ms.date: 08/03/2020
-ms.openlocfilehash: eda90a430d96d43d052a603f82832aef6c0facdb
-ms.sourcegitcommit: 1b2d1755b2bf85f97b27e8fbec2ffc2fcd345120
+ms.date: 09/08/2020
+ms.openlocfilehash: a48efed2444a6d2210a24a7f25ad8dce8ae32940
+ms.sourcegitcommit: d0541eccc35549db6381fa762cd17bc8e72b3423
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/04/2020
-ms.locfileid: "87553365"
+ms.lasthandoff: 09/09/2020
+ms.locfileid: "89567968"
 ---
-# <a name="cognitive-services-docs-whats-new-for-july-1-2020---july-31-2020"></a>Cognitive Services документы: новые возможности для 1 июля 2020 — 31 июля 2020 г.
+# <a name="cognitive-services-docs-whats-new-for-august-1-2020---august-31-2020"></a>Cognitive Services документы: новые возможности для 1 августа 2020 — 31 августа 2020
 
-Добро пожаловать в Cognitive Services документы с 1 июля 2020 до 31 июля 2020. В этой статье перечислены некоторые основные изменения, внесенные в документы в течение этого периода.
+Добро пожаловать в Cognitive Services документы с 1 августа 2020 до 31 августа 2020. В этой статье перечислены основные изменения, внесенные в документацию в течение этого периода.
+
+## <a name="computer-vision"></a>Компьютерное зрение
+
+### <a name="new-articles"></a>Новые статьи
+
+- [Обновление API Компьютерного зрения с версии 2.0 или 2.1 до версии 3.0.](/azure/cognitive-services/computer-vision/upgrade-api-versions)
+
+## <a name="containers"></a>Контейнеры
+
+### <a name="updated-articles"></a>Обновленные статьи
+
+- [Теги образа контейнера Cognitive Services Azure](/azure/cognitive-services/containers/container-image-tags)
 
 ## <a name="form-recognizer"></a>Распознаватель документов
 
 ### <a name="new-articles"></a>Новые статьи
 
-- [Учебник. Создание приложения для обработки форм с помощью построителя искусственного интеллекта](/azure/cognitive-services/form-recognizer/tutorial-ai-builder)
+- [Сведения о визитных карточках](/azure/cognitive-services/form-recognizer/concept-business-cards)
+- [Сведения о квитанциях](/azure/cognitive-services/form-recognizer/concept-receipts)
+- [Краткое руководство. Извлечение данных визитной карточки с помощью REST API Распознавателя документов и Python](/azure/cognitive-services/form-recognizer/quickstarts/python-business-cards)
 
-## <a name="personalizer"></a>Персонализатор
+### <a name="updated-articles"></a>Обновленные статьи
 
-### <a name="new-articles"></a>Новые статьи
-
-- [Руководство по использованию Персонализатора в чат-боте .NET](/azure/cognitive-services/personalizer/tutorial-use-personalizer-chat-bot)
-
-## <a name="qna-maker"></a>QnA Maker
-
-### <a name="new-articles"></a>Новые статьи
-
-- [Планирование приложения QnA Maker](/azure/cognitive-services/qnamaker/concepts/plan)
+- [Краткое руководство. по обучению модели Распознавателя документов и извлечению данных форм с помощью REST API и cURL](/azure/cognitive-services/form-recognizer/quickstarts/curl-train-extract)
+- [Краткое руководство. Обучение модели распознавателя форм с метками с помощью REST API и Python](/azure/cognitive-services/form-recognizer/quickstarts/python-labeled-data)
+- [Краткое руководство. Извлечение текста и сведений о макете с использованием Распознавателя документов и Python](/azure/cognitive-services/form-recognizer/quickstarts/python-layout)
+- [Краткое руководство. по обучению модели Распознавателя документов и извлечению данных из форм с помощью REST API и Python](/azure/cognitive-services/form-recognizer/quickstarts/python-train-extract)
 
 ## <a name="speech-service"></a>Служба "Речь"
 
 ### <a name="new-articles"></a>Новые статьи
 
-- [Пользовательские команды для шифрования неактивных данных](/azure/cognitive-services/speech-service/custom-commands-encryption-of-data-at-rest)
-- [Основы пользовательских ключевых слов](/azure/cognitive-services/speech-service/custom-keyword-basics)
-- [Использование пользовательских команд с Пользовательским голосом](/azure/cognitive-services/speech-service/how-to-custom-commands-use-custom-voice)
-- [Набор пакетной обработки для речевых контейнеров](/azure/cognitive-services/speech-service/speech-container-batch-processing)
+- [Квоты и ограничения речевых служб](/azure/cognitive-services/speech-service/speech-services-quotas-and-limits)
 
-## <a name="text-analytics"></a>Анализ текста
+### <a name="updated-articles"></a>Обновленные статьи
 
-### <a name="new-articles"></a>Новые статьи
-
-- [Как использовать Анализ текста для работоспособности (Предварительная версия)](/azure/cognitive-services/text-analytics/how-tos/text-analytics-for-health)
+- [Длинный аудио API (Предварительная версия)](/azure/cognitive-services/speech-service/long-audio-api)
 
 ## <a name="community-contributors"></a>Участники сообщества
 
-Следующие пользователи участвовали в Cognitive Services документы в течение этого периода. Спасибо! Сведения о том, как внести участие, см. по ссылкам в разделе "приступить к работе" на [целевой странице](index.yml)"новые возможности".
+Следующие пользователи участвовали в Cognitive Services документы в течение этого периода. Спасибо! 
 
-- [милестонедев](https://github.com/milestonedev) -Джастин миль (2)
-- [феликсванлиувен](https://github.com/felixvanleeuwen) (1)
-- [Лоикб](https://github.com/LoicB) -Лоик бэйлот (1)
-- [нкгами](https://github.com/nkgami) -Хироки Накагами (1)
-- [Русселлжка](https://github.com/RussellJQA) -Рассел Джонсон (1)
-- [рйотокуро](https://github.com/ryotokuro) -таийуе Tan (1)
-- [сморкуенд](https://github.com/smorcuend) -Сергио моркуенде (1)
-- [свилдерманн](https://github.com/swildermann) -Свен вилдерманн (1)
+- [hyoshioka0128](https://github.com/hyoshioka0128) -Хироши Йошиока (2)
+- [анвеш-b](https://github.com/anwesh-b) — анвеш будхасоки (1)
+- [жанжелфдез](https://github.com/jangelfdez) -Jose áнжел фернáндез (1)
+- [xhan742](https://github.com/xhan742) (1)
 
 [!INCLUDE [Service specific updates](./includes/service-specific-updates.md)]

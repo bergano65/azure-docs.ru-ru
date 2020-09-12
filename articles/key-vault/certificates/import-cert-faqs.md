@@ -10,12 +10,12 @@ ms.subservice: certificates
 ms.topic: how-to
 ms.date: 07/20/2020
 ms.author: sebansal
-ms.openlocfilehash: b7a2c78238de58ee8851462aa7193121b35f72a9
-ms.sourcegitcommit: 02ca0f340a44b7e18acca1351c8e81f3cca4a370
+ms.openlocfilehash: 3b87d68fb9b5fa5f5f8dec43c39ea8b7dbf08b93
+ms.sourcegitcommit: 3be3537ead3388a6810410dfbfe19fc210f89fec
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/19/2020
-ms.locfileid: "88588827"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89651848"
 ---
 # <a name="importing-azure-key-vault-certificates-faq"></a>Импорт сертификатов Azure Key Vault вопросы и ответы
 
@@ -54,7 +54,7 @@ ms.locfileid: "88588827"
 
 ### <a name="how-can-i-resolve-error-type-conflict-when-creating-a-certificate"></a>Как можно разрешить «тип ошибки: конфликт при создании сертификата»?
     
-Имя каждого сертификата должно быть уникальным. Сертификат с тем же именем, что и другой, может быть в обратимо удаленном состоянии. Кроме того, в соответствии с [композицией сертификата](https://docs.microsoft.com/azure/key-vault/certificates/about-certificates#composition-of-a-certificate) в Azure Key Vault, если в хранилище ключей есть другой ключ или секрет с тем же именем, которое вы пытаетесь указать для вашего сертификата, создание сертификата завершится ошибкой, и вам потребуется удалить этот ключ или секрет или использовать другое имя для сертификата. 
+Имя каждого сертификата должно быть уникальным. Сертификат с таким именем может находиться в состоянии обратимого удаления. Кроме того, в соответствии с [композицией сертификата](https://docs.microsoft.com/azure/key-vault/certificates/about-certificates#composition-of-a-certificate)при создании нового сертификата он создает секрет с тем же именем, поэтому при наличии другого ключа или секрета в хранилище ключей с тем же именем, которое вы пытаетесь указать для вашего сертификата, создание сертификата завершится сбоем, и вам нужно будет либо удалить этот ключ или секрет, либо использовать другое имя для сертификата. 
 
 Дополнительные сведения см. в разделе [Получение удаленной операции с сертификатом](https://docs.microsoft.com/rest/api/keyvault/getdeletedcertificate/getdeletedcertificate).
 

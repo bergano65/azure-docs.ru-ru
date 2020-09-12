@@ -9,12 +9,12 @@ ms.topic: how-to
 ms.date: 11/13/2019
 ms.author: victorh
 ms.custom: mvc, devx-track-azurecli
-ms.openlocfilehash: 40761b8b187d864c7b93b8aa4ee49233683fcad7
-ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
+ms.openlocfilehash: 4baafe9f3356e3134626c819c47939b96ab48a79
+ms.sourcegitcommit: 1b320bc7863707a07e98644fbaed9faa0108da97
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/31/2020
-ms.locfileid: "87502768"
+ms.lasthandoff: 09/09/2020
+ms.locfileid: "89595861"
 ---
 # <a name="create-an-application-gateway-that-hosts-multiple-web-sites-using-the-azure-cli"></a>Создание шлюза приложений, на котором размещено несколько веб-сайтов, с помощью Azure CLI
 
@@ -22,15 +22,14 @@ ms.locfileid: "87502768"
 
 Вы узнаете, как выполнять следующие задачи:
 
-> [!div class="checklist"]
-> * Настройка сети
-> * Создание шлюза приложений
-> * Создание серверных прослушивателей
-> * Создание правил маршрутизации
-> * создание масштабируемых наборов виртуальных машин с внутренними пулами.
-> * создание записи CNAME в домене.
+* Настройка сети
+* Создание шлюза приложений
+* Создание серверных прослушивателей
+* Создание правил маршрутизации
+* создание масштабируемых наборов виртуальных машин с внутренними пулами.
+* создание записи CNAME в домене.
 
-:::image type="content" source="./media/tutorial-multiple-sites-cli/scenario.png" alt-text="Шлюз приложений для нескольких сайтов":::
+:::image type="content" source="./media/tutorial-multiple-sites-cli/scenario.png" alt-text="Многосайтовый шлюз приложений":::
 
 При необходимости эти инструкции можно выполнить с помощью [Azure PowerShell](tutorial-multiple-sites-powershell.md).
 
