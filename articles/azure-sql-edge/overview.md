@@ -9,12 +9,12 @@ author: SQLSourabh
 ms.author: sourabha
 ms.reviewer: sstein
 ms.date: 05/19/2020
-ms.openlocfilehash: 2c96e4b7baa2c463c42db9440cadb3cb396fde1b
-ms.sourcegitcommit: 628be49d29421a638c8a479452d78ba1c9f7c8e4
+ms.openlocfilehash: 20e709db9e6992f52b04934cb0f6eb65d3dcb44c
+ms.sourcegitcommit: de2750163a601aae0c28506ba32be067e0068c0c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/20/2020
-ms.locfileid: "88642475"
+ms.lasthandoff: 09/04/2020
+ms.locfileid: "89489533"
 ---
 # <a name="what-is-azure-sql-edge-preview"></a>Что такое SQL Azure для пограничных вычислений (предварительная версия)?
 
@@ -67,7 +67,7 @@ SQL Azure для пограничных вычислений делает соз
 - [SQL Server Management Studio](/sql/ssms/download-sql-server-management-studio-ssms/): бесплатное, доступное для скачивания клиентское приложение для управления любой инфраструктурой SQL, от SQL Server до Базы данных SQL.
 - [SQL Server Data Tools в Visual Studio](/sql/ssdt/download-sql-server-data-tools-ssdt/): бесплатное, доступное для скачивания клиентское приложение для разработки реляционных баз данных SQL Server, баз данных SQL Azure, пакетов Integration Services, моделей данных Analysis Services и отчетов Reporting Services.
 - [Azure Data Studio](/sql/azure-data-studio/what-is/): бесплатное, скачиваемое кроссплатформенное решение для специалистов по работе с данными, использующих семейство локальных и облачных платформ данных Майкрософт в Windows, macOS и Linux.
-- [Visual Studio Code](https://code.visualstudio.com/docs): бесплатный скачиваемый редактор кода с открытым кодом для Windows, macOS и Linux. Он поддерживает расширения, включая [расширение mssql](https://aka.ms/mssql-marketplace), для выполнения запросов к Microsoft SQL Server, Базе данных SQL Azure и Хранилищу данных SQL.
+- [Visual Studio Code](https://code.visualstudio.com/docs): бесплатный скачиваемый редактор кода с открытым кодом для Windows, macOS и Linux. Он поддерживает расширения, включая [расширение MSSQL](https://aka.ms/mssql-marketplace) для запросов Microsoft SQL Server, базу данных SQL Azure и Azure синапсе Analytics.
 
 
 ## <a name="next-steps"></a>Дальнейшие действия

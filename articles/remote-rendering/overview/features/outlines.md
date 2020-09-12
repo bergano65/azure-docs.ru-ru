@@ -6,12 +6,12 @@ ms.author: flborn
 ms.date: 02/11/2020
 ms.topic: article
 ms.custom: devx-track-csharp
-ms.openlocfilehash: a3b4ba62072e26f16a0e39416c9ae346d1acefd9
-ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
+ms.openlocfilehash: 5dd6d682c9db044763cad64eec420c1974d4ac03
+ms.sourcegitcommit: f845ca2f4b626ef9db73b88ca71279ac80538559
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "88997529"
+ms.lasthandoff: 09/09/2020
+ms.locfileid: "89613698"
 ---
 # <a name="outline-rendering"></a>Отрисовка структуры
 
@@ -29,7 +29,7 @@ ms.locfileid: "88997529"
 | `PulseRateHz`    | FLOAT   | Скорость колебания контура в секунду.|
 | `PulseIntensity` | FLOAT   | Интенсивность импульсов контура. Допускаются значения в диапазоне от 0,0 (нет пульсации) и 1,0 (полный диапазон пульсации). Интенсивность неявным образом задает минимальную прозрачность контура (`MinOpacity = 1.0 - PulseIntensity`). |
 
-![Контуры](./media/outlines.png) Пример изменения параметров: цвет (`color`) желтый (слева) стал пурпурным (по центру), а пульсация (`pulseIntensity`) увеличена с 0 до 0,8 (справа).
+![Объект, отображаемый три раза с различными параметрами структуры ](./media/outlines.png) , влияет на изменение `color` параметра с желтого (левого) на пурпурный (по центру) и `pulseIntensity` от 0 до 0,8 (справа).
 
 ## <a name="example"></a>Пример
 
@@ -60,6 +60,11 @@ void SetOutlineParameters(ApiHandle<AzureSession> session)
 ## <a name="performance"></a>Производительность
 
 Отрисовка контура может оказать значительное влияние на производительность отрисовки. Это влияние зависит от соотношения пространства, занимаемого на экране выбранными и невыбранными объектами в определенном кадре.
+
+## <a name="api-documentation"></a>Документирование API
+
+* [C# Ремотеманажер. Аутлинесеттингс, свойство](https://docs.microsoft.com/dotnet/api/microsoft.azure.remoterendering.remotemanager.outlinesettings)
+* [C++ Ремотеманажер:: Аутлинесеттингс ()](https://docs.microsoft.com/cpp/api/remote-rendering/remotemanager#outlinesettings)
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

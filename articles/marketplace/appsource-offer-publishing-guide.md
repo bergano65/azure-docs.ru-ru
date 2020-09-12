@@ -1,24 +1,24 @@
 ---
 title: Рекомендации по публикации предложения для Microsoft AppSource
-description: Пошаговое руководств и сведения о публикации контрольных списков для публикации приложений на Microsoft AppSource Office 365, Dynamics 365, Power Apps и Power BI.
+description: Пошаговое руководств и сведения о публикации контрольных списков для публикации приложений в Microsoft AppSource для Microsoft 365, Dynamics 365, Power Apps и Power BI.
 ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
 author: keferna
 ms.author: keferna
-ms.date: 04/15/2020
-ms.openlocfilehash: c0052b515d87ecb744783d57942d2557fc1db913
-ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
+ms.date: 09/04/2020
+ms.openlocfilehash: 68b11c672d362e7af7dfc01e2679d035d9e1e4c9
+ms.sourcegitcommit: de2750163a601aae0c28506ba32be067e0068c0c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86110289"
+ms.lasthandoff: 09/04/2020
+ms.locfileid: "89484822"
 ---
-# <a name="offer-publishing-guide-for-office-365-dynamics-365-power-apps-and-power-bi"></a>Предлагаемое руководством по публикации для Office 365, Dynamics 365, Power Apps и Power BI
+# <a name="offer-publishing-guide-for-microsoft-365-dynamics-365-power-apps-and-power-bi"></a>Рекомендации по публикации предложений для Microsoft 365, Dynamics 365, Power Apps и Power BI
 
-Microsoft AppSource включает предложения, которые создают или расширяют Office 365, Dynamics 365, Power Apps и Power BI. Каждый из этих продуктов содержит специальную документацию по процессу публикации. 
+Microsoft AppSource включает предложения, которые Разрабатывайте или расширяют Microsoft 365, Dynamics 365, Power Apps и Power BI. Каждый из этих продуктов содержит специальную документацию по процессу публикации. 
 
-У AppSource есть платные, списки и пробные предложения, а также обращения к действиям, *их получение сейчас*, *связь со мной*и *попробуйте сейчас*.
+У AppSource есть платные предложения, списки и пробные варианты, с помощью которых можно *получить*список, *связаться со мной*и *попробовать сейчас*.
 
 ## <a name="product-specific-guides"></a>Руководства по конкретным продуктам
 
@@ -26,8 +26,8 @@ Microsoft AppSource включает предложения, которые со
 
 | Продукт    | Руководство по публикации  |
 | :------------------- | :-------------------|
-| Office 365 | Ознакомьтесь с [процессом публикации и рекомендациями](/office/dev/store/submit-to-appsource-via-partner-center). |
-| Dynamics 365 Business Central | Сведения о публикации предложения в центре партнеров см. в статье [Создание нового предложения Dynamics 365 Business Central](./partner-center-portal/create-new-business-central-offer.md). |
+| Microsoft 365 | Ознакомьтесь с [процессом публикации и рекомендациями](/office/dev/store/submit-to-appsource-via-partner-center). |
+| Dynamics 365 Business Central | Сведения о публикации предложения в центре партнеров см. в статье [Создание нового предложения Dynamics 365 Business Central](./partner-center-portal/create-new-business-central-offer.md). |
 | Dynamics 365 for Finance and Operations. | При создании для выпуска Enterprise ознакомьтесь с [процессом публикации и рекомендациями](/dynamics365/fin-ops-core/dev-itpro/lcs-solutions/lcs-solutions-app-source)<br/>Сведения о публикации предложения в центре партнеров см. в статье [Создание нового Dynamics 365 для операций с предложениями](./partner-center-portal/create-new-operations-offer.md).  |
 | Dynamics 365 for Customer Engagement | Ознакомьтесь с [процессом публикации и рекомендациями](/dynamics365/customer-engagement/developer/publish-app-appsource).<br/>Сведения о публикации предложения в центре партнеров см. в статье [Создание нового Dynamics 365 для участия клиентов & Power Apps](./partner-center-portal/create-new-customer-engagement-offer.md).  |
 | Power Apps | Узнайте, как [Разрешить клиентам тестировать приложение на AppSource](https://powerapps.microsoft.com/blog/appsource-test-drive/). |

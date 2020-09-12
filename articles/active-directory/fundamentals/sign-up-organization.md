@@ -13,19 +13,19 @@ ms.author: ajburnle
 ms.reviewer: jeffsta
 ms.custom: it-pro, seodec18, seo-update-azuread-jan
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 7af76e98175c1c9cd3031c13bbecca6acc43ca55
-ms.sourcegitcommit: fbb66a827e67440b9d05049decfb434257e56d2d
+ms.openlocfilehash: 9cc6f0a6325aabae18460d696c2c1b1b2c8f7f74
+ms.sourcegitcommit: d0541eccc35549db6381fa762cd17bc8e72b3423
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87799077"
+ms.lasthandoff: 09/09/2020
+ms.locfileid: "89568852"
 ---
 # <a name="sign-up-your-organization-to-use-azure-active-directory"></a>Регистрация организации для использования Azure Active Directory
 Зарегистрируйтесь в службе Azure Active Directory (Azure AD) или в новой подписке Microsoft Azure, используя:
 
-- **учетная запись Майкрософт.** Используйте персональную учетную запись Майкрософт, чтобы получить доступ к Azure и ко всем потребительским продуктам и облачным службам Майкрософт, таким как Outlook (Hotmail), Messenger, OneDrive, MSN, Xbox LIVE или Office 365. Регистрация почтового ящика Outlook.com автоматически создает учетную запись Майкрософт. Дополнительные сведения см. в статье [Общие сведения об учетной записи Майкрософт](https://account.microsoft.com/account).
+- **учетная запись Майкрософт.** Используйте персональные учетная запись Майкрософт, чтобы получить доступ к Azure и всем ориентированным на потребителей продуктам и облачным службам Майкрософт, таким как Outlook (Hotmail), Messenger, OneDrive, MSN, Xbox LIVE или Microsoft 365. Регистрация почтового ящика Outlook.com автоматически создает учетную запись Майкрософт. Дополнительные сведения см. в статье [Общие сведения об учетной записи Майкрософт](https://account.microsoft.com/account).
 
-- **Рабочую или учебную учетную запись.** Используйте рабочую или учебную учетную запись, чтобы получить доступ к облачным службам для малого и среднего бизнеса и корпоративным облачным службам Майкрософт, таким как Azure, Microsoft Intune или Office 365. После регистрации в любой из этих служб от имени организации Azure AD автоматически подготавливает каталог на основе облака для вашей организации. Дополнительные сведения см. в руководстве по [управлению каталогом Azure AD](active-directory-administer.md).
+- **Рабочую или учебную учетную запись.** Используйте рабочую или учебную учетную запись для получения доступа ко всем малым, средним и корпоративным облачным службам Майкрософт, таким как Azure, Microsoft Intune или Microsoft 365. После регистрации в любой из этих служб от имени организации Azure AD автоматически подготавливает каталог на основе облака для вашей организации. Дополнительные сведения см. в руководстве по [управлению каталогом Azure AD](./active-directory-whatis.md).
 
   > [!Note]
   >   Мы рекомендуем использовать рабочую или учебную учетную запись, если у вас уже есть доступ к Azure AD. В любом случае следует использовать тип учетной записи, связанный с вашей подпиской Azure.
@@ -38,7 +38,6 @@ ms.locfileid: "87799077"
 
 - [Дополнительные сведения об Azure AD](active-directory-whatis.md)
 
-- [Использование локальной инфраструктуры удостоверений в облаке](../connect/active-directory-aadconnect.md)
+- [Использование локальной инфраструктуры удостоверений в облаке](../hybrid/whatis-hybrid-identity.md)
 
 - [Посетите блог Microsoft Azure](https://azure.microsoft.com/blog/)
-

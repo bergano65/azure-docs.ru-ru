@@ -3,12 +3,12 @@ title: Использование Azure DevTest Labs для виртуальны
 description: Сведения об использовании Azure DevTest Labs для виртуальных машин и тестовых сред PaaS.
 ms.topic: article
 ms.date: 06/26/2020
-ms.openlocfilehash: 9207c070c13c5e276a6ab95e3bcf1bb8671dc382
-ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
+ms.openlocfilehash: 978071aa160098612a5effebfb30d5d58b777df7
+ms.sourcegitcommit: 58d3b3314df4ba3cabd4d4a6016b22fa5264f05a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87272902"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89299836"
 ---
 # <a name="use-azure-devtest-labs-for-vm-and-paas-test-environments"></a>Использование Azure DevTest Labs для виртуальных машин и тестовых сред PaaS
 
@@ -46,7 +46,7 @@ Azure DevTest Labs можно использовать для реализаци
    
    | Задача | Что вы узнаете |
    | --- | --- |
-   | [Настройка образов Azure Marketplace](devtest-lab-configure-marketplace-images.md) |Сведения о том, как добавить образы Azure Marketplace в список разрешений, а также сделать доступными необходимые образы для тестировщиков.|
+   | [Настройка образов Azure Marketplace](devtest-lab-configure-marketplace-images.md) |Узнайте, как разрешить образы Azure Marketplace, сделав доступными для выбора только те образы, которые вы хотите использовать для тестировщиков.|
    | [Создание пользовательского образа](devtest-lab-create-template.md) |Сведения о том, как создать пользовательский образ путем предварительной установки необходимого ПО. С помощью пользовательского образа тестеры смогут быстро создавать виртуальные машины.|
    | [Дополнительные сведения о фабрике образов](./devtest-lab-faq.md#blog-post) |Как настроить и использовать фабрику образов (видео).|
 

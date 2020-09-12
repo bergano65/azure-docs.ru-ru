@@ -10,12 +10,12 @@ ms.subservice: sql-dw
 ms.date: 11/04/2019
 ms.author: martinle
 ms.reviewer: igorstan
-ms.openlocfilehash: b3ee3f729e1e2f03d7c72a72081ad2e3f0316cbb
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 228fa18fef0f681437fd2c0c87e3114d14977a49
+ms.sourcegitcommit: 4a7a4af09f881f38fcb4875d89881e4b808b369b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85482536"
+ms.lasthandoff: 09/04/2020
+ms.locfileid: "89462655"
 ---
 # <a name="azure-synapse-analytics-formerly-sql-dw-frequently-asked-questions"></a>Azure синапсе Analytics (ранее SQL DW) часто задаваемые вопросы
 
@@ -27,7 +27,7 @@ A. Azure синапсе — это служба аналитики, котора
 
 У. Что произошло с хранилищем данных SQL Azure?
 
-A. Azure синапсе — это хранилище данных SQL Azure (SQL DW). Мы воспользовались тем же ведущим хранилищем данных на весь новый уровень производительности и возможностей. Вы можете продолжить выполнение существующих рабочих нагрузок хранилища данных в рабочей среде с помощью Azure синапсе. Дополнительные сведения см. в статье [что такое Azure синапсе Analytics](sql-data-warehouse-overview-what-is.md).
+A. Azure синапсе — это развитие хранилища данных SQL Azure. Мы воспользовались тем же ведущим хранилищем данных на весь новый уровень производительности и возможностей. Вы можете продолжить выполнение существующих рабочих нагрузок хранилища данных в рабочей среде с помощью Azure синапсе. Дополнительные сведения см. в разделе [Что такое Azure Synapse Analytics?](sql-data-warehouse-overview-what-is.md)
 
 У. Что такое пул SQL синапсе?
 
@@ -75,7 +75,7 @@ A. [Запросы в службу поддержки](sql-data-warehouse-get-st
 
 У. Какие типы данных поддерживаются?
 
-A. См. раздел [типы данных](sql-data-warehouse-tables-data-types.md).
+A. См. раздел  [типы данных](sql-data-warehouse-tables-data-types.md).
 
 У. Какие функции таблиц поддерживаются?
 
@@ -109,6 +109,6 @@ A. Поддержка драйвера для пула SQL синапсе мож
 
 О. HDI может использовать Azure Data Lake Store или WASB в качестве уровня HDFS. Если у вас есть уровень HDFS, вы можете загрузить эти данные в пул синапсе SQL. Тем не менее, создание вычислений со стековой памятью для экземпляра HDI невозможно.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения об Azure синапсе в целом см. на странице с [обзором](sql-data-warehouse-overview-faq.md) .

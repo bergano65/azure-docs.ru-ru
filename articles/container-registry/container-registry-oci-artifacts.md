@@ -4,14 +4,14 @@ description: Отправка и извлечение артефактов с о
 author: SteveLasker
 manager: gwallace
 ms.topic: article
-ms.date: 03/11/2020
+ms.date: 08/12/2020
 ms.author: stevelas
-ms.openlocfilehash: 2c6b66b635a2513ccc19e0352414d18d8389fef1
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 7c95766cc12b281521fa52ab113fadd4321d0815
+ms.sourcegitcommit: de2750163a601aae0c28506ba32be067e0068c0c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "79371058"
+ms.lasthandoff: 09/04/2020
+ms.locfileid: "89485009"
 ---
 # <a name="push-and-pull-an-oci-artifact-using-an-azure-container-registry"></a>Отправка и извлечение артефакта OCI с помощью реестра контейнеров Azure
 
@@ -19,7 +19,7 @@ ms.locfileid: "79371058"
 
 Чтобы продемонстрировать эту возможность, в этой статье показано, как использовать средство [реестра OCI как хранилище (Орас)](https://github.com/deislabs/oras) для отправки примера артефакта — текстового файла в реестр контейнеров Azure. Затем извлекать артефакт из реестра. Вы можете управлять множеством артефактов OCI в реестре контейнеров Azure, используя различные программы командной строки, подходящие для каждого артефакта.
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 * **Реестр контейнеров Azure** . Создайте реестр контейнеров в подписке Azure. Это можно сделать на [портале Azure](container-registry-get-started-portal.md) или с помощью [Azure CLI](container-registry-get-started-azure-cli.md).
 * **Средство Орас** . Скачайте и установите текущий выпуск Орас для вашей операционной системы из [репозитория GitHub](https://github.com/deislabs/oras/releases). Средство выпускается как сжатый tarball ( `.tar.gz` файл). Извлеките и установите файл, используя стандартные процедуры для вашей операционной системы.
@@ -54,7 +54,7 @@ az acr login --name myregistry
 ```
 
 > [!NOTE]
-> `az acr login`использует клиент DOCKER для установки маркера Azure Active Directory в `docker.config` файле. Для выполнения отдельного потока проверки подлинности необходимо установить и запустить клиент DOCKER.
+> `az acr login` использует клиент DOCKER для установки маркера Azure Active Directory в `docker.config` файле. Для выполнения отдельного потока проверки подлинности необходимо установить и запустить клиент DOCKER.
 
 ## <a name="push-an-artifact"></a>Отправка артефакта
 
@@ -150,7 +150,37 @@ az acr repository delete \
     --image samples/artifact:1.0
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="example-build-docker-image-from-oci-artifact"></a>Пример. Создание образа DOCKER из артефакта OCI
+
+Исходный код и двоичные файлы для сборки образа контейнера можно хранить как артефакты OCI в реестре контейнеров Azure. Вы можете ссылаться на исходный артефакт в качестве контекста сборки для [задачи контроля](container-registry-tasks-overview.md)доступа. В этом примере показано, как сохранить Dockerfile в качестве артефакта OCI, а затем ссылаться на артефакт для создания образа контейнера.
+
+Например, создайте однострочный Dockerfile:
+
+```bash
+echo "FROM hello-world" > hello-world.dockerfile
+```
+
+Войдите в реестр контейнеров назначения.
+
+```azurecli
+az login
+az acr login --name myregistry
+```
+
+Создайте и отправьте новый артефакт OCI в целевой реестр с помощью `oras push` команды. В этом примере задается тип носителя по умолчанию для артефакта.
+
+```bash
+oras push myregistry.azurecr.io/hello-world:1.0 hello-world.dockerfile
+```
+
+Выполните команду [AZ запись контроля](/cli/azure/acr#az-acr-build) доступа, чтобы создать образ Hello-World, используя новый артефакт в качестве контекста сборки:
+
+```azurecli
+az acr build --registry myregistry --file hello-world.dockerfile \
+  oci://myregistry.azurecr.io/hello-world:1.0
+```
+
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Дополнительные сведения о [библиотеке Орас](https://github.com/deislabs/oras/tree/master/docs), включая настройку манифеста для артефакта
 * Справочные сведения о новых типах артефактов см. в репозитории [артефактов OCI](https://github.com/opencontainers/artifacts) .

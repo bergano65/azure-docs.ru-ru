@@ -6,12 +6,12 @@ ms.topic: how-to
 ms.date: 05/02/2019
 ms.author: helohr
 manager: lizross
-ms.openlocfilehash: 3e53d8bf8f7cb024b468983f596d3d1bd5c91ee7
-ms.sourcegitcommit: 98854e3bd1ab04ce42816cae1892ed0caeedf461
+ms.openlocfilehash: 1596dd8c03ba546c47429183e5d237579f1634f1
+ms.sourcegitcommit: bf1340bb706cf31bb002128e272b8322f37d53dd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "88007307"
+ms.lasthandoff: 09/03/2020
+ms.locfileid: "89442928"
 ---
 # <a name="install-office-on-a-master-vhd-image"></a>Установка Office в главный образ VHD
 
@@ -56,7 +56,7 @@ ms.locfileid: "88007307"
 
 Средство развертывания Office содержит setup.exe. Чтобы установить Office, выполните в командной строке следующую команду:
 
-```batch
+```cmd
 Setup.exe /configure configuration.xml
 ```
 
@@ -90,7 +90,7 @@ Setup.exe /configure configuration.xml
 
 После установки Office можно обновить поведение Office по умолчанию. Выполните следующие команды по отдельности или в пакетном файле, чтобы обновить поведение.
 
-```batch
+```cmd
 rem Mount the default user registry hive
 reg load HKU\TempDefault C:\Users\Default\NTUSER.DAT
 rem Must be executed with default registry hive mounted.
@@ -117,41 +117,41 @@ reg add HKLM\SOFTWARE\Policies\Microsoft\office\16.0\common\officeupdate /v hide
 
 1. Сначала создайте расположение для размещения установщика OneDrive. Папка локального диска или [ \\ \\ UNC] (file://UNC) — это нормально.
 
-2. Скачайте OneDriveSetup.exe в промежуточное расположение с помощью этой ссылки:<https://aka.ms/OneDriveWVD-Installer>
+2. Скачайте OneDriveSetup.exe в промежуточное расположение с помощью этой ссылки: <https://aka.ms/OneDriveWVD-Installer>
 
 3. Если вы установили Office в OneDrive, опустив установку **\<ExcludeApp ID="OneDrive" /\>** , удалите все существующие установки onedrive для каждого пользователя из командной строки с повышенными привилегиями, выполнив следующую команду:
 
-    ```batch
+    ```cmd
     "[staged location]\OneDriveSetup.exe" /uninstall
     ```
 
 4. Выполните эту команду из командной строки с повышенными привилегиями, чтобы задать значение реестра **аллусерсинсталл** :
 
-    ```batch
+    ```cmd
     REG ADD "HKLM\Software\Microsoft\OneDrive" /v "AllUsersInstall" /t REG_DWORD /d 1 /reg:64
     ```
 
 5. Выполните следующую команду, чтобы установить OneDrive в режиме "на компьютер":
 
-    ```batch
+    ```cmd
     Run "[staged location]\OneDriveSetup.exe" /allusers
     ```
 
 6. Выполните следующую команду, чтобы настроить OneDrive для запуска при входе для всех пользователей:
 
-    ```batch
+    ```cmd
     REG ADD "HKLM\Software\Microsoft\Windows\CurrentVersion\Run" /v OneDrive /t REG_SZ /d "C:\Program Files (x86)\Microsoft OneDrive\OneDrive.exe /background" /f
     ```
 
 7. Включите **автоматическую настройку учетной записи пользователя** , выполнив следующую команду.
 
-    ```batch
+    ```cmd
     REG ADD "HKLM\SOFTWARE\Policies\Microsoft\OneDrive" /v "SilentAccountConfig" /t REG_DWORD /d 1 /f
     ```
 
 8. Перенаправьте и переместите известные папки Windows в OneDrive, выполнив следующую команду.
 
-    ```batch
+    ```cmd
     REG ADD "HKLM\SOFTWARE\Policies\Microsoft\OneDrive" /v "KFMSilentOptIn" /t REG_SZ /d "<your-AzureAdTenantId>" /f
     ```
 

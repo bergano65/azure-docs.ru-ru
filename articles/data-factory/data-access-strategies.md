@@ -8,12 +8,12 @@ ms.service: data-factory
 ms.workload: data-services
 ms.topic: conceptual
 ms.date: 05/28/2020
-ms.openlocfilehash: 015feac819467cf60bfb2faab27af769fadc3cfa
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.openlocfilehash: 76181f089511a6645a51707f9a8537c1589d82bf
+ms.sourcegitcommit: de2750163a601aae0c28506ba32be067e0068c0c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86522879"
+ms.lasthandoff: 09/04/2020
+ms.locfileid: "89484958"
 ---
 # <a name="data-access-strategies"></a>Стратегии получения доступа к данным
 
@@ -55,7 +55,7 @@ ms.locfileid: "86522879"
     |                              | База данных Azure для MariaDB, MySQL и PostgreSQL       | -                | -                   | Да             | -            | Да                  |
     |                              | Хранилище файлов Azure                                  | Да              | -                   | Да             | -            | .                    |
     |                              | Служба хранилища Azure (BLOB-объект, ADLS 2-го поколения)                     | Да              | Да (только проверка подлинности MSI) | Да             | -            | .                    |
-    |                              | БД SQL Azure, Хранилище данных SQL (Synapse Analytics), Ml SQL  | Да (только для базы данных SQL Azure или DW)        | -                   | Да             | -            | Да                  |
+    |                              | База данных SQL Azure, Azure синапсе Analytics), SQL ml  | Да (только для базы данных SQL Azure или DW)        | -                   | Да             | -            | Да                  |
     |                              | Azure Key Vault (для получения секретов или строки подключения) | да      | Да                 | Да             | -            | -                    |
     | Другие хранилища данных PaaS/SaaS | AWS S3, SalesForce, Google Cloud Storage и т. д.    | -                | -                   | Да             | -            | -                    |
     | Azure laaS                   | SQL Server, Oracle и т. д.                          | -                | -                   | Да             | Да          | -                    |
@@ -73,7 +73,7 @@ ms.locfileid: "86522879"
     |                                | База данных Azure для MariaDB, MySQL и PostgreSQL               | Да       | -                   |
     |                                | Хранилище файлов Azure                                            | Да       | -                   |
     |                                | Служба хранилища Azure (блог, ADLS 2-го поколения)                             | Да       | Да (только проверка подлинности MSI) |
-    |                                | БД SQL Azure, Хранилище данных SQL (Synapse Analytics), Ml SQL          | Да       | -                   |
+    |                                | База данных SQL Azure, Azure синапсе Analytics), SQL ml          | Да       | -                   |
     |                                | Azure Key Vault (для получения секретов или строки подключения) | Да       | Да                 |
     | Другие хранилища данных PaaS/SaaS | AWS S3, SalesForce, Google Cloud Storage и т. д.              | Да       | -                   |
     | Azure laaS                     | SQL Server, Oracle и т. д.                                  | Да       | -                   |

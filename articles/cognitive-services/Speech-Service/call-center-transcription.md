@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 07/05/2019
 ms.author: erhopf
-ms.openlocfilehash: 77573ac4240eeded1f803d88f218aaf4d4c5a929
-ms.sourcegitcommit: ce44069e729fce0cf67c8f3c0c932342c350d890
+ms.openlocfilehash: 84a1e2edcbe9e9da93a158ebc11e7bf638dae100
+ms.sourcegitcommit: 4a7a4af09f881f38fcb4875d89881e4b808b369b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84636132"
+ms.lasthandoff: 09/04/2020
+ms.locfileid: "89462740"
 ---
 # <a name="speech-service-for-telephony-data"></a>Служба распознавания речи для данных телефонии
 
@@ -60,7 +60,7 @@ ms.locfileid: "84636132"
 
 ### <a name="translation"></a>Перевод
 
-Некоторые компании поэкспериментируют с предоставлением переведенных записей из вызовов поддержки иностранных языков, чтобы менеджеры по доставке могли понять принципы работы своих клиентов в мире. Мы предлагаем непревзойденные средства для [перевода](translation.md). Мы можем преобразовать звук в аудио или аудио в текст для большого количества национальных настроек.
+Некоторые компании поэкспериментируют с предоставлением переведенных записей из вызовов поддержки иностранных языков, чтобы менеджеры по доставке могли понять принципы работы своих клиентов в мире. Мы предлагаем непревзойденные средства для [перевода](/azure/cognitive-services/speech-service/speech-translation). Мы можем преобразовать звук в аудио или аудио в текст для большого количества национальных настроек.
 
 ### <a name="text-to-speech"></a>Преобразование текста в речь
 

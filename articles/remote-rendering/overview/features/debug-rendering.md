@@ -6,12 +6,12 @@ ms.author: jumeder
 ms.date: 06/15/2020
 ms.topic: article
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 9ee6945cec4c2441334e665947568743aaf29226
-ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
+ms.openlocfilehash: ebde1be459078f4f3473ebc3042d8acebcce910a
+ms.sourcegitcommit: f845ca2f4b626ef9db73b88ca71279ac80538559
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89013594"
+ms.lasthandoff: 09/09/2020
+ms.locfileid: "89613743"
 ---
 # <a name="debug-rendering"></a>Отладка отрисовки
 
@@ -74,6 +74,10 @@ API отладки отрисовки предназначен для выпол
 
 * Включение наложения текста практически не отражается на производительности.
 * Включение каркасного режима приводит к нетривиальным затратам на производительность, которые зависят от конкретной сцены. В сложных сценах этот режим может привести к снижению частоты кадров ниже целевого значения в 60 Гц.
+
+## <a name="api-documentation"></a>Документирование API
+
+* [C++ Ремотеманажер::D Ебугрендерингсеттингс ()](https://docs.microsoft.com/cpp/api/remote-rendering/remotemanager#debugrenderingsettings)
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

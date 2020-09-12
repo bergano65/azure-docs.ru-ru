@@ -5,12 +5,12 @@ author: jakrams
 ms.author: jakras
 ms.date: 02/11/2020
 ms.topic: article
-ms.openlocfilehash: af33a777d2d6ef53965c2168ac0abee00f59bc50
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: cda4aa9a811bac0ccf20caec32ee38da9b46b6c7
+ms.sourcegitcommit: f845ca2f4b626ef9db73b88ca71279ac80538559
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84021387"
+ms.lasthandoff: 09/09/2020
+ms.locfileid: "89613765"
 ---
 # <a name="color-materials"></a>Цветовые материалы
 
@@ -50,6 +50,13 @@ ms.locfileid: "84021387"
   1. **Алфаблендед:** Этот режим аналогичен режиму прозрачности для для материалов PBR. Его следует использовать для просмотра таких материалов, как стекло.
 
   1. **Аддитивный:** Этот режим является самым простым и наиболее эффективным режимом прозрачности. Вклад материала добавляется к визуализированному изображению. Этот режим можно использовать для имитации свечения (но еще прозрачных) объектов, таких как маркеры, используемые для выделения важных объектов.
+
+## <a name="api-documentation"></a>Документирование API
+
+* [Класс C# Колорматериал](https://docs.microsoft.com/dotnet/api/microsoft.azure.remoterendering.colormaterial)
+* [C# Ремотеманажер. Креатематериал ()](https://docs.microsoft.com/dotnet/api/microsoft.azure.remoterendering.remotemanager.creatematerial)
+* [Класс C++ Колорматериал](https://docs.microsoft.com/cpp/api/remote-rendering/colormaterial)
+* [C++ Ремотеманажер:: Креатематериал ()](https://docs.microsoft.com/cpp/api/remote-rendering/remotemanager#creatematerial)
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

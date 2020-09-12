@@ -4,13 +4,13 @@ description: Узнайте, как создать кластер, которы�
 services: container-service
 ms.custom: fasttrack-edit, references_regions
 ms.topic: article
-ms.date: 08/13/2020
-ms.openlocfilehash: f24351c5f77e6c00365497d5e6deeefea8271cb9
-ms.sourcegitcommit: 927dd0e3d44d48b413b446384214f4661f33db04
+ms.date: 09/04/2020
+ms.openlocfilehash: b6162249592bf470c3b8e52686abd44b813d5606
+ms.sourcegitcommit: de2750163a601aae0c28506ba32be067e0068c0c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88871417"
+ms.lasthandoff: 09/04/2020
+ms.locfileid: "89489142"
 ---
 # <a name="create-an-azure-kubernetes-service-aks-cluster-that-uses-availability-zones"></a>Создание кластера Службы Azure Kubernetes (AKS), который использует зоны доступности
 
@@ -150,7 +150,8 @@ Name:       aks-nodepool1-28993262-vmss000004
 Теперь у нас есть два дополнительных узла в зонах 1 и 2. Можно развернуть приложение, состоящее из трех реплик. В качестве примера мы будем использовать NGINX:
 
 ```console
-kubectl run nginx --image=nginx --replicas=3
+kubectl create deployment nginx --image=nginx
+kubectl scale deployment nginx --replicas=3
 ```
 
 При просмотре узлов, на которых выполняются модули pod, вы увидите модули pod на узлах, соответствующих трем различным зонам доступности. Например, с помощью команды `kubectl describe pod | grep -e "^Name:" -e "^Node:"` в интерпретаторе bash вы получите примерно такой результат:

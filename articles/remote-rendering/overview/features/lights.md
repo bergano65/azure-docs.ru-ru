@@ -5,12 +5,12 @@ author: florianborn71
 ms.author: flborn
 ms.date: 02/10/2020
 ms.topic: article
-ms.openlocfilehash: e33e012480c876dc5befbb93404bdb131ea9329a
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 2ddce7e2f073914e9393eabf12e8b0f4ef347828
+ms.sourcegitcommit: f845ca2f4b626ef9db73b88ca71279ac80538559
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84022152"
+ms.lasthandoff: 09/09/2020
+ms.locfileid: "89613646"
 ---
 # <a name="scene-lighting"></a>Освещение сцены
 
@@ -60,15 +60,26 @@ ms.locfileid: "84022152"
 
 * **Projected2dTexture:** Если задана допустимая [двухмерная текстура](../../concepts/textures.md), изображение проецируется на геометрию, на которую помещается освещение. Цвет текстуры используется для модуляции цвета освещения.
 
-## <a name="directional-light"></a>Направленный осветитель
+## <a name="directional-light"></a>Направленное освещение
 
 `DirectionalLightComponent`Имитирует источник освещения, который бесконечно далеко не работает. Освещение направлено на направление *отрицательной оси z сущности «владелец*». Расположение сущности не учитывается.
 
 Дополнительные свойства отсутствуют.
 
-## <a name="performance-considerations"></a>Особенности производительности
+## <a name="performance-considerations"></a>Рекомендации по производительности
 
 Источники освещения оказывают значительное влияние на производительность отрисовки. Используйте их внимательно и только в том случае, если это необходимо для приложения. Любое статическое глобальное освещение, включая статический направленный компонент, можно достичь с помощью [пользовательской высокотекстурной текстуры](sky.md)без дополнительной стоимости отрисовки.
+
+## <a name="api-documentation"></a>Документирование API
+
+* [Класс C# Лигхткомпонентбасе](https://docs.microsoft.com/dotnet/api/microsoft.azure.remoterendering.lightcomponentbase)
+* [Класс C# Поинтлигхткомпонент](https://docs.microsoft.com/dotnet/api/microsoft.azure.remoterendering.pointlightcomponent)
+* [Класс C# Спотлигхткомпонент](https://docs.microsoft.com/dotnet/api/microsoft.azure.remoterendering.spotlightcomponent)
+* [Класс C# Директионаллигхткомпонент](https://docs.microsoft.com/dotnet/api/microsoft.azure.remoterendering.directionallightcomponent)
+* [Класс C++ Лигхткомпонентбасе](https://docs.microsoft.com/cpp/api/remote-rendering/lightcomponentbase)
+* [Класс C++ Поинтлигхткомпонент](https://docs.microsoft.com/cpp/api/remote-rendering/pointlightcomponent)
+* [Класс C++ Спотлигхткомпонент](https://docs.microsoft.com/cpp/api/remote-rendering/spotlightcomponent)
+* [Класс C++ Директионаллигхткомпонент](https://docs.microsoft.com/cpp/api/remote-rendering/directionallightcomponent)
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

@@ -10,12 +10,12 @@ ms.service: machine-learning
 ms.subservice: core
 ms.topic: conceptual
 ms.date: 07/10/2020
-ms.openlocfilehash: 314f6a45bf688125e79f0b8ce0099a8326b339dc
-ms.sourcegitcommit: 648c8d250106a5fca9076a46581f3105c23d7265
+ms.openlocfilehash: 2af6749565a7fefd2892b82bcd5dff203eccdedc
+ms.sourcegitcommit: f8d2ae6f91be1ab0bc91ee45c379811905185d07
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "88958156"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89661217"
 ---
 # <a name="use-private-python-packages-with-azure-machine-learning"></a>Использование частных пакетов Python с Машинное обучение Azure
 [!INCLUDE [applies-to-skus](../../includes/aml-applies-to-basic-enterprise-sku.md)]
@@ -31,12 +31,12 @@ ms.locfileid: "88958156"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
- * [Пакет SDK для машинное обучение Azure для Python](https://docs.microsoft.com/python/api/overview/azure/ml/install?view=azure-ml-py)
+ * [Пакет SDK для машинное обучение Azure для Python](https://docs.microsoft.com/python/api/overview/azure/ml/install?view=azure-ml-py&preserve-view=true)
  * [Рабочая область машинное обучение Azure](how-to-manage-workspace.md)
 
 ## <a name="use-small-number-of-packages-for-development-and-testing"></a>Использование небольшого числа пакетов для разработки и тестирования
 
-Для небольшого числа частных пакетов в одной рабочей области используйте статический [`Environment.add_private_pip_wheel()`](https://docs.microsoft.com/python/api/azureml-core/azureml.core.environment.environment?view=azure-ml-py#add-private-pip-wheel-workspace--file-path--exist-ok-false-) метод. Такой подход позволяет быстро добавить в рабочую область частный пакет, который хорошо подходит для целей разработки и тестирования.
+Для небольшого числа частных пакетов в одной рабочей области используйте статический [`Environment.add_private_pip_wheel()`](https://docs.microsoft.com/python/api/azureml-core/azureml.core.environment.environment?view=azure-ml-py#&preserve-view=trueadd-private-pip-wheel-workspace--file-path--exist-ok-false-) метод. Такой подход позволяет быстро добавить в рабочую область частный пакет, который хорошо подходит для целей разработки и тестирования.
 
 Укажите аргумент пути к файлу в локальном файле колеса и выполните ```add_private_pip_wheel``` команду. Команда возвращает URL-адрес, используемый для наблюдения за расположением пакета в рабочей области. Запишите URL-адрес хранилища и передайте ему `add_pip_package()` метод.
 
@@ -58,7 +58,7 @@ myenv.python.conda_dependencies=conda_dep
 
  1. [Создайте личный маркер доступа (PAT)](https://docs.microsoft.com/azure/devops/organizations/accounts/use-personal-access-tokens-to-authenticate?view=azure-devops&tabs=preview-page#create-a-pat) для своего экземпляра Azure DevOps. Задайте область токена для __упаковки > чтения__. 
 
- 2. Добавьте URL-адрес Azure DevOps и PAT как свойства рабочей области с помощью метода [Workspace. set_connection](https://docs.microsoft.com/python/api/azureml-core/azureml.core.workspace.workspace?view=azure-ml-py#set-connection-name--category--target--authtype--value-) .
+ 2. Добавьте URL-адрес Azure DevOps и PAT как свойства рабочей области с помощью метода [Workspace. set_connection](https://docs.microsoft.com/python/api/azureml-core/azureml.core.workspace.workspace?view=azure-ml-py#&preserve-view=trueset-connection-name--category--target--authtype--value-) .
 
      ```python
     from azureml.core import Workspace
@@ -91,19 +91,13 @@ myenv.python.conda_dependencies=conda_dep
 
 Вы можете использовать пакеты из учетной записи хранения Azure в брандмауэре вашей организации. Учетная запись хранения может содержать проверенный набор пакетов или внутреннее зеркало общедоступных пакетов.
 
-Чтобы настроить такое частное хранилище, сделайте следующее:
+Сведения о настройке этого частного хранилища см. в статье [защита машинное обучение Azure рабочей области и связанных ресурсов](how-to-secure-workspace-vnet.md#secure-azure-storage-accounts). Также необходимо [разместить реестр контейнеров Azure (запись контроля доступа) за виртуальной](how-to-secure-workspace-vnet.md#enable-azure-container-registry-acr)сетью.
 
-1. [Поместите рабочую область в виртуальную сеть (VNet)](how-to-enable-virtual-network.md).
-1. Создайте учетную запись хранения и [запретите общий доступ](https://docs.microsoft.com/azure/storage/common/storage-network-security).
-1. Размещение пакетов Python, которые вы хотите использовать, в контейнер в учетной записи хранения 
-1. [Разрешение доступа к учетной записи хранения из виртуальной сети рабочей области](https://docs.microsoft.com/azure/storage/common/storage-network-security#grant-access-from-a-virtual-network)
-1. [Поместите реестр контейнеров Azure (запись контроля доступа) для рабочей области за виртуальной](how-to-enable-virtual-network.md#azure-container-registry)сетью.
-
-    > [!IMPORTANT]
-    > Необходимо выполнить этот шаг, чтобы иметь возможность обучать или развертывать модели с помощью частного репозитория пакетов.
+> [!IMPORTANT]
+> Необходимо выполнить этот шаг, чтобы иметь возможность обучать или развертывать модели с помощью частного репозитория пакетов.
 
 После завершения этих конфигураций можно сослаться на пакеты в определении среды Машинное обучение Azure по полному URL-адресу в хранилище больших двоичных объектов Azure.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
  * Дополнительные сведения о [корпоративной безопасности в машинное обучение Azure](concept-enterprise-security.md)

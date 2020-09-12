@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 06/23/2020
 ms.author: memildin
-ms.openlocfilehash: e378ffe00be9215c692a832e232fac7e866ab3c9
-ms.sourcegitcommit: c6b9a46404120ae44c9f3468df14403bcd6686c1
+ms.openlocfilehash: faa61dc351bebd3d2a85ad229036e5b9fba9256e
+ms.sourcegitcommit: 7f62a228b1eeab399d5a300ddb5305f09b80ee14
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88890830"
+ms.lasthandoff: 09/08/2020
+ms.locfileid: "89514617"
 ---
 # <a name="prevent-dangling-dns-entries-and-avoid-subdomain-takeover"></a>Предотвращение висячих записей DNS и избежание поддоменного перенаправление
 
@@ -27,27 +27,33 @@ ms.locfileid: "88890830"
 
 ## <a name="what-is-subdomain-takeover"></a>Что такое поддомены перенаправление?
 
-Такеоверс поддоменов — это распространенная угроза высокой серьезности для организаций, которые регулярно создают и удаляют множество ресурсов. Дочерний домен перенаправление может возникать, если имеется запись DNS, указывающая на отозванный ресурс Azure. Такие записи DNS также называются "висячими DNS" записями. Записи CNAME особенно уязвимы для этой угрозы.
+Такеоверс поддоменов — это распространенная угроза высокой серьезности для организаций, которые регулярно создают и удаляют множество ресурсов. Дочерний домен перенаправление может возникать, если имеется [запись DNS](https://docs.microsoft.com/azure/dns/dns-zones-records#dns-records) , указывающая на отозванный ресурс Azure. Такие записи DNS также называются "висячими DNS" записями. Записи CNAME особенно уязвимы для этой угрозы. Поддомены такеоверс позволяют вредоносным субъектам перенаправлять трафик, предназначенный для домена организации, на сайт, выполняющий вредоносные действия.
 
 Распространенный сценарий для поддомена перенаправление:
 
-1. Создается веб-сайт. 
+1. **СОЗДАТЬ**
 
-    В этом примере — `app-contogreat-dev-001.azurewebsites.net`.
+    1. Вы подготавливаете ресурс Azure с полным доменным именем (FQDN) `app-contogreat-dev-001.azurewebsites.net` .
 
-1. Запись CNAME добавляется в DNS, указывающую на веб-сайт. 
+    1. Вы назначаете запись CNAME в зоне DNS с поддоменом `greatapp.contoso.com` , который направляет трафик в ресурс Azure.
 
-    В этом примере было создано следующее понятное имя: `greatapp.contoso.com` .
+1. **ОТЗЫВ**
 
-1. Через несколько месяцев сайт больше не нужен, поэтому он удаляется **без** удаления соответствующей записи DNS. 
+    1. Ресурс Azure будет отозван или удален после того, как он больше не нужен. 
+    
+        На этом этапе запись CNAME `greatapp.contoso.com` *должна* быть удалена из зоны DNS. Если запись CNAME не удаляется, она объявляется как активный домен, но не направляет трафик в активный ресурс Azure. Это определение «висячих» записей DNS.
 
-    DNS-запись CNAME теперь называется "висячим".
+    1. Висячий поддомен `greatapp.contoso.com` теперь уязвим и может быть переназначен другому ресурсу подписки Azure.
 
-1. Практически сразу после удаления сайта субъект угрозы обнаруживает отсутствующий сайт и создает свой собственный веб-сайт по адресу `app-contogreat-dev-001.azurewebsites.net` .
+1. **ПЕРЕНАПРАВЛЕНИЕ**
 
-    Теперь трафик, предназначенный для, передается `greatapp.contoso.com` на сайт Azure с субъектом-службой, а субъект угрозы контролирует отображаемое содержимое. 
+    1. Используя часто доступные методы и средства, субъект угрозы обнаруживает висячий поддомен.  
 
-    Использование висячего DNS было злоумышленником, а поддомен Contoso "Греатапп" был жертвой поддомена перенаправление. 
+    1. Субъект угрозы подготавливает ресурс Azure с тем же полным доменным именем ранее управляемого ресурса. В этом примере — `app-contogreat-dev-001.azurewebsites.net`.
+
+    1. Трафик, отправляемый в поддомен, `myapp.contoso.com` теперь направляется в ресурс вредоносного субъекта, где они управляют содержимым.
+
+
 
 ![Дочерний домен перенаправление от отозванного веб-сайта](./media/subdomain-takeover/subdomain-takeover.png)
 
@@ -63,17 +69,85 @@ ms.locfileid: "88890830"
 
 - Файл cookie, который получается **от неподозрительных посетителей** . обычно веб-приложениям предоставляется доступ к файлам cookie сеанса в поддоменах (*. contoso.com), поэтому к ним могут обращаться все поддомены. Актеры угроз могут использовать поддомен перенаправление для создания подлинной страницы, обманным путем, чтобы пользователи могли посетить эту страницу и собирать свои файлы cookie (даже безопасные файлы cookie). Распространенное заблуждение заключается в том, что использование SSL-сертификатов защищает сайт и файлы cookie пользователей от перенаправление. Однако субъект угрозы может использовать захваченный поддомен для применения и получения действительного SSL-сертификата. Действительные SSL-сертификаты предоставляют им доступ к защищенным файлам cookie и могут дополнительно повысить воспринимаемую законность вредоносного сайта.
 
-- **Фишинговые кампании** . подлинные поддомены можно использовать в кампаниях с фишингом. Это справедливо для вредоносных веб-узлов, а также для записей MX, которые позволяют субъекту угрозы получать сообщения электронной почты, адресованные законному поддомену известной торговой марки.
+- **Фишинговые кампании** . подлинные поддомены могут использоваться в phishing-кампаниях. Это справедливо для вредоносных веб-узлов и записей MX, которые позволяют субъекту угрозы получать сообщения электронной почты, адресованные законному поддомену известной торговой марки.
 
-- **Дополнительные риски** — вредоносные веб-сайты можно использовать для эскалации на другие классические атаки, такие как XSS, CSRF, CORS и т. д.
+- **Дополнительные риски** — вредоносные веб-сайты могут быть использованы для передачи другим классическим атакам, таким как XSS, CSRF, обход CORS и т. д.
 
 
 
-## <a name="preventing-dangling-dns-entries"></a>Предотвращение висячих записей DNS
+## <a name="identify-dangling-dns-entries"></a>Обнаружение висячих DNS-записей
+
+Чтобы найти в Организации записи DNS, которые могут быть висячими, используйте средства PowerShell, размещенные в GitHub, с помощью Microsoft ["Get-данглингднсрекордс"](https://aka.ms/DanglingDNSDomains).
+
+Это средство помогает клиентам Azure получить список всех доменов с записью CNAME, связанной с существующим ресурсом Azure, созданным в своих подписках или клиентах.
+
+Если ваши записи CNAME находятся в других службах DNS и указывают на ресурсы Azure, укажите записи CNAME в входном файле средства.
+
+Это средство поддерживает ресурсы Azure, перечисленные в следующей таблице. Средство извлекает или принимает в качестве входных данных все записи CNAME клиента.
+
+
+| Служба                   | Тип                                        | фкднпроперти                               | Пример                         |
+|---------------------------|---------------------------------------------|--------------------------------------------|---------------------------------|
+| Azure Front Door          | microsoft.network/frontdoors                | Properties. cName                           | `abc.azurefd.net`               |
+| хранилище BLOB-объектов Azure        | microsoft.storage/storageaccounts           | Properties. первичных. BLOB           | `abc. blob.core.windows.net`    |
+| Azure CDN                 | microsoft.cdn/profiles/endpoints            | Свойства. имя узла                        | `abc.azureedge.net`             |
+| Общедоступные IP-адреса       | microsoft.network/publicipaddresses         | Properties. dnsSettings. FQDN                | `abc.EastUs.cloudapp.azure.com` |
+| Диспетчер трафика Azure     | microsoft.network/trafficmanagerprofiles    | Properties. dnsConfig. FQDN                  | `abc.trafficmanager.net`        |
+| Экземпляр контейнера Azure  | microsoft.containerinstance/containergroups | Properties. ipAddress. FQDN                  | `abc.EastUs.azurecontainer.io`  |
+| Cлужба управления Azure API      | microsoft.apimanagement/service             | Properties. Хостнамеконфигуратионс. имя_узла | `abc.azure-api.net`             |
+| Служба приложений Azure         | microsoft.web/sites                         | Properties. параметром DefaultHostName                 | `abc.azurewebsites.net`         |
+| Служба приложений Azure — слоты | microsoft.web/sites/slots                   | Properties. параметром DefaultHostName                 | `abc-def.azurewebsites.net`     |
+
+
+
+### <a name="prerequisites"></a>Предварительные требования
+
+Запустите запрос от имени пользователя, который:
+
+- как минимум доступ на уровне чтения к подпискам Azure
+- доступ для чтения к графу ресурсов Azure
+
+Если вы являетесь глобальным администратором клиента организации, вы можете повысить свою учетную запись, чтобы получить доступ ко всем подпискам вашей организации, используя рекомендации в статье [повышение уровня доступа для управления всеми подписками и группами управления Azure](https://docs.microsoft.com/azure/role-based-access-control/elevate-access-global-admin).
+
+
+> [!TIP]
+> В графе ресурсов Azure есть ограничения на регулирование и разбиение на страницы, которые следует учитывать при наличии крупной среды Azure. Дополнительные [сведения](https://docs.microsoft.com/azure/governance/resource-graph/concepts/work-with-data) о работе с большими наборами данных ресурсов Azure. 
+> 
+> Для предотвращения этих ограничений средство использует пакетирование подписок.
+
+### <a name="run-the-script"></a>Выполнение скрипта
+
+Существует две версии сценария, обе имеют одинаковые входные параметры и получают аналогичные выходные данные:
+
+|Сценарий  |Сведения  |
+|---------|---------|
+|**Get-DanglingDnsRecordsPsCore.ps1**    |Параллельный режим поддерживается только в PowerShell версии 7 и выше, иначе будет выполняться последовательный режим.|
+|**Get-DanglingDnsRecordsPsDesktop.ps1** |Поддерживается только в PowerShell версии ниже 6, так как этот сценарий использует [Рабочий процесс Windows](https://docs.microsoft.com/dotnet/framework/windows-workflow-foundation/overview).|
+
+Узнайте больше и скачайте сценарии PowerShell из GitHub: https://aka.ms/DanglingDNSDomains .
+
+## <a name="remediate-dangling-dns-entries"></a>Исправление висячих записей DNS 
+
+Изучите зоны DNS и найдите записи CNAME, которые были приостановлены или были сделаны. Если поддомены могут быть висячими или перезаписаны, удалите уязвимые поддомены и снизите риски, выполнив следующие действия.
+
+1. Из зоны DNS удалите все записи CNAME, которые указывают на полные доменные имена ресурсов, которые больше не подготавливаются.
+
+1. Чтобы разрешить маршрутизацию трафика к ресурсам в элементе управления, подготавливает дополнительные ресурсы с полным доменным имен, указанным в записях CNAME для висячих поддоменов.
+
+1. Проверьте код приложения на наличие ссылок на конкретные поддомены и обновите неправильные или устаревшие ссылки на поддомены.
+
+1. Выясните, произошли ли какие либо компромиссы, и примите меры в отношении процедур реагирования на инциденты вашей организации. Советы и рекомендации по исследованию этой проблемы можно найти ниже.
+
+    Если логика приложения так, что секреты, такие как учетные данные OAuth, были отправлены в висячий поддомен, или конфиденциальные данные были отправлены в висячие поддомены, эти данные могли быть предоставлены третьим сторонам.
+
+1. Узнайте, почему запись CNAME не была удалена из зоны DNS при отмене подготовки ресурса, и выполните действия по обеспечению обновления записей DNS при отмене подготовки ресурсов Azure в будущем.
+
+
+## <a name="prevent-dangling-dns-entries"></a>Запретить висячие записи DNS
 
 Обеспечение того, что в организации реализованы процессы для предотвращения висячих DNS-записей, а результирующий такеоверс поддомена является важной частью программы безопасности.
 
-Доступные сегодня меры по превентивной работе перечислены ниже.
+Некоторые службы Azure предлагают функции, которые помогут в создании предупредительных мер и подробно описаны ниже. Другие методы для предотвращения этой проблемы должны быть установлены с помощью рекомендаций Организации или стандартных операционных процедур.
 
 
 ### <a name="use-azure-dns-alias-records"></a>Использование записей псевдонимов Azure DNS
@@ -122,110 +196,6 @@ ms.locfileid: "88890830"
 
     - Настройте каталог услуг конечных точек полного доменного имени (FQDN) Azure и владельцев приложений. Чтобы создать каталог услуг, выполните следующий скрипт запроса графа ресурсов Azure. Этот сценарий проецирует сведения о конечной точке FQDN ресурсов, к которым у вас есть доступ, и выводит их в CSV-файл. Если у вас есть доступ ко всем подпискам для клиента, сценарий учитывает все эти подписки, как показано в следующем примере скрипта. Чтобы ограничить результаты конкретным набором подписок, измените скрипт, как показано ниже.
 
-        >[!IMPORTANT]
-        > **Разрешения** . Запустите запрос от имени пользователя, имеющего доступ ко всем подпискам Azure. 
-        >
-        > **Ограничения** . в графе ресурсов Azure есть ограничения на регулирование и разбиение на страницы, которые следует учитывать при наличии крупной среды Azure. Дополнительные [сведения](https://docs.microsoft.com/azure/governance/resource-graph/concepts/work-with-data) о работе с большими наборами данных ресурсов Azure. В следующем примере скрипта используется пакетирование подписок, чтобы избежать этих ограничений.
-
-        ```powershell
-        
-            # Fetch the full array of subscription IDs.
-            $subscriptions = Get-AzSubscription
-
-            $subscriptionIds = $subscriptions.Id
-                    # Output file path and names
-                    $date = get-date
-                    $fdate = $date.ToString("MM-dd-yyy hh_mm_ss tt")
-                    $fdate #log to console
-                    $rpath = [Environment]::GetFolderPath("MyDocuments") + '\' # Feel free to update your path.
-                    $rname = 'Tenant_FQDN_Report_' + $fdate + '.csv' # Feel free to update the document name.
-                    $fpath = $rpath + $rname
-                    $fpath #This is the output file of FQDN report.
-
-            # queries
-            $allTypesFqdnsQuery = "where type in ('microsoft.network/frontdoors',
-                                    'microsoft.storage/storageaccounts',
-                                    'microsoft.cdn/profiles/endpoints',
-                                    'microsoft.network/publicipaddresses',
-                                    'microsoft.network/trafficmanagerprofiles',
-                                    'microsoft.containerinstance/containergroups',
-                                    'microsoft.web/sites',
-                                    'microsoft.web/sites/slots')
-                        | extend FQDN = case(
-                            type =~ 'microsoft.network/frontdoors', properties['cName'],
-                            type =~ 'microsoft.storage/storageaccounts', parse_url(tostring(properties['primaryEndpoints']['blob'])).Host,
-                            type =~ 'microsoft.cdn/profiles/endpoints', properties['hostName'],
-                            type =~ 'microsoft.network/publicipaddresses', properties['dnsSettings']['fqdn'],
-                            type =~ 'microsoft.network/trafficmanagerprofiles', properties['dnsConfig']['fqdn'],
-                            type =~ 'microsoft.containerinstance/containergroups', properties['ipAddress']['fqdn'],
-                            type =~ 'microsoft.web/sites', properties['defaultHostName'],
-                            type =~ 'microsoft.web/sites/slots', properties['defaultHostName'],
-                            '')
-                        | project id, type, name, FQDN
-                        | where isnotempty(FQDN)";
-
-            $apiManagementFqdnsQuery = "where type =~ 'microsoft.apimanagement/service'
-                        | project id, type, name,
-                            gatewayUrl=parse_url(tostring(properties['gatewayUrl'])).Host,
-                            portalUrl =parse_url(tostring(properties['portalUrl'])).Host,
-                            developerPortalUrl = parse_url(tostring(properties['developerPortalUrl'])).Host,
-                            managementApiUrl = parse_url(tostring(properties['managementApiUrl'])).Host,
-                            gatewayRegionalUrl = parse_url(tostring(properties['gatewayRegionalUrl'])).Host,
-                            scmUrl = parse_url(tostring(properties['scmUrl'])).Host,
-                            additionaLocs = properties['additionalLocations']
-                        | mvexpand additionaLocs
-                        | extend additionalPropRegionalUrl = tostring(parse_url(tostring(additionaLocs['gatewayRegionalUrl'])).Host)
-                        | project id, type, name, FQDN = pack_array(gatewayUrl, portalUrl, developerPortalUrl, managementApiUrl, gatewayRegionalUrl, scmUrl,             
-                            additionalPropRegionalUrl)
-                        | mvexpand FQDN
-                        | where isnotempty(FQDN)";
-
-            $queries = @($allTypesFqdnsQuery, $apiManagementFqdnsQuery);
-
-            # Paging helper cursor
-            $Skip = 0;
-            $First = 1000;
-
-            # If you have large number of subscriptions, process them in batches of 2,000.
-            $counter = [PSCustomObject] @{ Value = 0 }
-            $batchSize = 2000
-            $response = @()
-
-            # Group the subscriptions into batches.
-            $subscriptionsBatch = $subscriptionIds | Group -Property { [math]::Floor($counter.Value++ / $batchSize) }
-
-            foreach($query in $queries)
-            {
-                # Run the query for each subscription batch with paging.
-                foreach ($batch in $subscriptionsBatch)
-                { 
-                    $Skip = 0; #Reset after each batch.
-
-                    $response += do { Start-Sleep -Milliseconds 500;   if ($Skip -eq 0) {$y = Search-AzGraph -Query $query -First $First -Subscription $batch.Group ; } `
-                    else {$y = Search-AzGraph -Query $query -Skip $Skip -First $First -Subscription $batch.Group } `
-                    $cont = $y.Count -eq $First; $Skip = $Skip + $First; $y; } while ($cont)
-                }
-            }
-
-            # View the completed results of the query on all subscriptions
-            $response | Export-Csv -Path $fpath -Append  
-
-        ```
-
-        Список типов и их `FQDNProperty` значений, как указано в предыдущем запросе графа ресурсов:
-
-        |Имя ресурса  | `<ResourceType>`  | `<FQDNproperty>`  |
-        |---------|---------|---------|
-        |Azure Front Door|microsoft.network/frontdoors|Properties. cName|
-        |хранилище BLOB-объектов Azure|microsoft.storage/storageaccounts|Properties. первичных. BLOB|
-        |Azure CDN|microsoft.cdn/profiles/endpoints|Свойства. имя узла|
-        |Общедоступные IP-адреса|microsoft.network/publicipaddresses|Properties. dnsSettings. FQDN|
-        |Диспетчер трафика Azure|microsoft.network/trafficmanagerprofiles|Properties. dnsConfig. FQDN|
-        |Экземпляр контейнера Azure|microsoft.containerinstance/containergroups|Properties. ipAddress. FQDN|
-        |Служба управления Azure API|microsoft.apimanagement/service|Properties. Хостнамеконфигуратионс. имя_узла|
-        |Служба приложений Azure|microsoft.web/sites|Properties. параметром DefaultHostName|
-        |Служба приложений Azure — слоты|microsoft.web/sites/slots|Properties. параметром DefaultHostName|
-
 
 - **Создание процедур для исправления:**
     - При обнаружении висячих DNS-записей команде необходимо выяснить, не произошло ли нарушение безопасности.
@@ -233,7 +203,7 @@ ms.locfileid: "88890830"
     - Удалите запись DNS, если она больше не используется, или укажите правильный ресурс Azure (FQDN), принадлежащий вашей организации.
  
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о связанных службах и функциях Azure, которые можно использовать для защиты от перенаправление поддоменов, см. на следующих страницах.
 

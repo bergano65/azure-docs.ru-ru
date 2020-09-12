@@ -1,19 +1,19 @@
 ---
 title: Перенос кластера HBase в новую версию в Azure HDInsight
 description: Как перенести кластеры Apache HBase в более новую версию в Azure HDInsight.
-author: ashishthaps
-ms.author: ashishth
+author: hrasheed-msft
+ms.author: hrasheed
 ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: how-to
 ms.custom: hdinsightactive
 ms.date: 01/02/2020
-ms.openlocfilehash: 23843743b58db91d457b509fa38243f110b76b41
-ms.sourcegitcommit: 124f7f699b6a43314e63af0101cd788db995d1cb
+ms.openlocfilehash: 9e233b93a1dc054e6d9f713e790e706d589bf01e
+ms.sourcegitcommit: 59ea8436d7f23bee75e04a84ee6ec24702fb2e61
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86079553"
+ms.lasthandoff: 09/07/2020
+ms.locfileid: "89503998"
 ---
 # <a name="migrate-an-apache-hbase-cluster-to-a-new-version"></a>Перенос данных кластера Apache HBase в новую версию
 
@@ -32,17 +32,17 @@ ms.locfileid: "86079553"
 
 | Тип совместимости | Основной номер версии| Дополнительный номер версии | Обновление |
 | --- | --- | --- | --- |
-| Совместимость клиента и сервера на уровне передачи данных | Нет | Да | Да |
-| Совместимость серверов | Нет | Да | Да |
-| Совместимость форматов файлов | Нет | Да | Да |
-| Совместимость API клиента | Нет | Да | Да |
-| Совместимость клиента на уровне двоичного кода | N | Нет | Да |
+| Совместимость клиента и сервера на уровне передачи данных | N | Да | Да |
+| Совместимость серверов | N | Да | Да |
+| Совместимость форматов файлов | N | Да | Да |
+| Совместимость API клиента | N | Да | Да |
+| Совместимость клиента на уровне двоичного кода | N | N | Да |
 | **Ограниченная совместимость API на стороне сервера** |  |  |  |
-| объем стабилен | Нет | Да | Да |
-| Развитие | N | Нет | Да |
+| объем стабилен | N | Да | Да |
+| Развитие | N | N | Да |
 | Работает неустойчиво | N | N | N |
-| Совместимость зависимостей | Нет | Да | Да |
-| Совместимость операций | N | Нет | Да |
+| Совместимость зависимостей | N | Да | Да |
+| Совместимость операций | N | N | Да |
 
 ## <a name="upgrade-with-same-apache-hbase-major-version"></a>Обновление с тем же основным номером версии Apache HBase
 
@@ -213,7 +213,7 @@ ms.locfileid: "86079553"
 
 1. Если новый кластер подходит, удалите исходный кластер.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о [Apache HBase](https://hbase.apache.org/) и обновлении кластеров HDInsight см. в следующих статьях:
 

@@ -3,20 +3,20 @@ title: Настройка политики cookie для иммерсивног�
 titleSuffix: Azure Cognitive Services
 description: В этой статье показано, как задать политику cookie для иммерсивного модуля чтения.
 services: cognitive-services
-author: pasta
+author: nitinme
 manager: guillasi
 ms.service: cognitive-services
 ms.subservice: immersive-reader
 ms.topic: conceptual
 ms.date: 01/06/2020
-ms.author: pasta
+ms.author: nitinme
 ms.custom: devx-track-javascript
-ms.openlocfilehash: 6bc55416c335f370151e54d2b09ccf00bd799fdb
-ms.sourcegitcommit: 42107c62f721da8550621a4651b3ef6c68704cd3
+ms.openlocfilehash: 44de79afd6e2fb1f1d4fff1323484364a17da8d0
+ms.sourcegitcommit: 59ea8436d7f23bee75e04a84ee6ec24702fb2e61
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87406900"
+ms.lasthandoff: 09/07/2020
+ms.locfileid: "89505307"
 ---
 # <a name="how-to-set-the-cookie-policy-for-the-immersive-reader"></a>Настройка политики cookie для иммерсивное средство чтения
 

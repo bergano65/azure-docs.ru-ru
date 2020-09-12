@@ -2,13 +2,13 @@
 title: Развертывание ресурсов в подписке
 description: В этой статье описывается создание группы ресурсов в шаблоне Azure Resource Manager. Здесь также показано, как развернуть ресурсы в области подписки Azure.
 ms.topic: conceptual
-ms.date: 07/27/2020
-ms.openlocfilehash: aca1aaf9d7d0c8a97bf2dad437953ccadc02a924
-ms.sourcegitcommit: 98854e3bd1ab04ce42816cae1892ed0caeedf461
+ms.date: 09/04/2020
+ms.openlocfilehash: ef4f92d2e113e7cd393c50ba4eb8b47eb4ad9d08
+ms.sourcegitcommit: 4feb198becb7a6ff9e6b42be9185e07539022f17
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "88002785"
+ms.lasthandoff: 09/04/2020
+ms.locfileid: "89468646"
 ---
 # <a name="create-resource-groups-and-resources-at-the-subscription-level"></a>Создание групп ресурсов и ресурсов на уровне подписки
 
@@ -115,7 +115,7 @@ New-AzSubscriptionDeployment `
 
 ## <a name="deployment-scopes"></a>Области развертывания
 
-При развертывании в подписке можно ориентироваться на подписку или любые группы ресурсов в подписке. Пользователь, развертывающий шаблон, должен иметь доступ к указанной области.
+При развертывании в подписку можно ориентироваться на одну подписку и любые группы ресурсов в рамках подписки. Нельзя выполнить развертывание в подписке, которая отличается от целевой подписки. Пользователь, развертывающий шаблон, должен иметь доступ к указанной области.
 
 Ресурсы, определенные в разделе ресурсов шаблона, применяются к подписке.
 
@@ -145,7 +145,7 @@ New-AzSubscriptionDeployment `
             "properties": {
                 "mode": "Incremental",
                 "template": {
-                    nested-template
+                    nested-template-with-resource-group-resources
                 }
             }
         }
@@ -154,15 +154,19 @@ New-AzSubscriptionDeployment `
 }
 ```
 
+В этой статье можно найти шаблоны, демонстрирующие развертывание ресурсов в различных областях. Сведения о шаблоне, который создает группу ресурсов и развертывает в ней учетную запись хранения, см. в разделе [Создание группы ресурсов и ресурсов](#create-resource-group-and-resources). Для шаблона, который создает группу ресурсов, применяет к ней блокировку и назначает роль для группы ресурсов, см. раздел [Управление доступом](#access-control).
+
 ## <a name="use-template-functions"></a>Использование функций шаблонов
 
 Важные рекомендации при использовании функций шаблонов для развертываний на уровне подписки:
 
 * Функция [resourceGroup()](template-functions-resource.md#resourcegroup)**не** поддерживается.
 * Функции [reference()](template-functions-resource.md#reference) и [list()](template-functions-resource.md#list) поддерживаются.
-* Используйте функцию [subscriptionResourceId()](template-functions-resource.md#subscriptionresourceid), чтобы получить идентификатор ресурса для ресурсов, развернутых на уровне подписки.
+* Не используйте [resourceId ()](template-functions-resource.md#resourceid) , чтобы получить идентификатор ресурса для ресурсов, развернутых на уровне подписки.
 
-  Например, чтобы получить идентификатор ресурса для определения политики, используйте:
+  Вместо этого используйте функцию [субскриптионресаурцеид ()](template-functions-resource.md#subscriptionresourceid) .
+
+  Например, чтобы получить идентификатор ресурса для определения политики, развернутой в подписке, используйте:
 
   ```json
   subscriptionResourceId('Microsoft.Authorization/roleDefinitions/', parameters('roleDefinition'))
@@ -420,7 +424,7 @@ New-AzSubscriptionDeployment `
       ],
       "properties": {
         "scope": "[subscription().id]",
-        "policyDefinitionId": "[resourceId('Microsoft.Authorization/policyDefinitions', 'locationpolicy')]"
+        "policyDefinitionId": "[subscriptionResourceId('Microsoft.Authorization/policyDefinitions', 'locationpolicy')]"
       }
     }
   ]

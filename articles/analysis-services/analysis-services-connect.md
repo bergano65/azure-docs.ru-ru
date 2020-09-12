@@ -4,16 +4,16 @@ description: Узнайте, как подключиться к серверу �
 author: minewiskan
 ms.service: azure-analysis-services
 ms.topic: conceptual
-ms.date: 04/17/2020
+ms.date: 09/04/2020
 ms.author: owend
 ms.reviewer: minewiskan
 ms.custom: references_regions
-ms.openlocfilehash: 170cf0081e6671451ece6dc2924ae7e418f520a2
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.openlocfilehash: 71caad8ce650b86f4350b32974bb8d980538b223
+ms.sourcegitcommit: de2750163a601aae0c28506ba32be067e0068c0c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86506780"
+ms.lasthandoff: 09/04/2020
+ms.locfileid: "89489023"
 ---
 # <a name="connecting-to-servers"></a>Подключение к серверам
 
@@ -76,6 +76,24 @@ ms.locfileid: "86506780"
 ## <a name="connect-using-an-odc-file"></a>Подключение с помощью ODC-файла
 
 Пользователи предыдущих версий Excel могут подключаться к серверу Azure Analysis Services с помощью файла подключения к данным Office (ODC). Дополнительные сведения см. в разделе [Создание файла подключения к данным Office (ODC-файла)](analysis-services-odc.md).
+
+## <a name="connect-as-a-linked-server-from-sql-server"></a>Подключиться как связанный сервер из SQL Server
+
+SQL Server может подключаться к ресурсу Azure Analysis Services как к [связанному серверу](https://docs.microsoft.com/sql/relational-databases/linked-servers/create-linked-servers-sql-server-database-engine) , указав MSOLAP в качестве поставщика источника данных. Перед настройкой соединения с связанным сервером обязательно установите последнюю версию [клиентской библиотеки MSOLAP](https://docs.microsoft.com/analysis-services/client-libraries?view=azure-analysis-services-current) (поставщика). 
+
+Для соединений связанного сервера с Azure Analysis Services необходимо создать экземпляр поставщика MSOLAP вне процесса SQL Server. При настройке параметров связанных серверов убедитесь, что **не выбран**параметр **Разрешить необрабатываемые процессы** .
+
+Если выбран параметр **Разрешить необработку** и экземпляр поставщика создается в SQL Server процессе, возвращается следующая ошибка:
+
+```
+OLE DB provider "MSOLAP" for linked server "(null)" returned message "The following system error occurred: ".
+
+OLE DB provider "MSOLAP" for linked server "(null)" returned message "The connection failed because user credentials are needed and Sign-In UI is not allowed.".
+
+Msg 7303, Level 16, State 1, Line 2
+Cannot initialize the data source object of OLE DB provider "MSOLAP" for linked server "(null)".
+```
+
 
 
 ## <a name="next-steps"></a>Дальнейшие действия

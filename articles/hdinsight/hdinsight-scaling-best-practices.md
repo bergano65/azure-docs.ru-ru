@@ -1,19 +1,19 @@
 ---
 title: Масштабирование размеров кластера в Azure HDInsight
 description: Гибкое масштабирование кластера Apache Hadoop в соответствии с рабочей нагрузкой в Azure HDInsight
-author: ashishthaps
+author: hrasheed-msft
 ms.author: ashish
 ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: how-to
 ms.custom: seoapr2020
 ms.date: 04/29/2020
-ms.openlocfilehash: a9d419052f000b220c993109e45d371398607275
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 44cfc5b651bdd5dc0d7abee575bd964ad0b603d0
+ms.sourcegitcommit: 59ea8436d7f23bee75e04a84ee6ec24702fb2e61
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87006456"
+ms.lasthandoff: 09/07/2020
+ms.locfileid: "89505018"
 ---
 # <a name="scale-azure-hdinsight-clusters"></a>Масштабирование кластеров Azure HDInsight
 
@@ -111,9 +111,9 @@ HDInsight обеспечивает эластичность с помощью п
 
     После масштабирования на `N` рабочие узлы HDInsight автоматически настроит следующие конфигурации и перезапустите Hive.
 
-  * Максимальное число одновременных запросов:`hive.server2.tez.sessions.per.default.queue = min(N, 32)`
-  * Число узлов, используемых LLAP Hive:`num_llap_nodes  = N`
-  * Число узлов для запуска управляющей программы Hive LLAP:`num_llap_nodes_for_llap_daemons = N`
+  * Максимальное число одновременных запросов: `hive.server2.tez.sessions.per.default.queue = min(N, 32)`
+  * Число узлов, используемых LLAP Hive: `num_llap_nodes  = N`
+  * Число узлов для запуска управляющей программы Hive LLAP: `num_llap_nodes_for_llap_daemons = N`
 
 ## <a name="how-to-safely-scale-down-a-cluster"></a>Безопасное масштабирование кластера
 
@@ -146,7 +146,7 @@ HDInsight обеспечивает эластичность с помощью п
 yarn application -kill <application_id>
 ```
 
-Например.
+Пример:
 
 ```bash
 yarn application -kill "application_1499348398273_0003"
