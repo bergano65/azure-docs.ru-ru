@@ -1,6 +1,6 @@
 ---
 title: Устранение неполадок при проверке издателя — платформа удостоверений Майкрософт | Azure
-description: В этой статье описаны способы устранения неполадок проверки издателя (предварительная версия) для платформы удостоверений Майкрософт с помощью вызова API-интерфейсов Microsoft Graph.
+description: Описание способов устранения неполадок с проверкой издателя для платформы Microsoft Identity с помощью вызова Microsoft Graph API.
 services: active-directory
 author: rwike77
 manager: CelesteDG
@@ -12,15 +12,15 @@ ms.date: 05/08/2020
 ms.author: ryanwi
 ms.custom: aaddev
 ms.reviewer: jesakowi
-ms.openlocfilehash: 3069e3caf81d9bb2f809b21c88383c419e3b90b3
-ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
+ms.openlocfilehash: c332b960caf7707953069c5252219ca6c51761a8
+ms.sourcegitcommit: 3c66bfd9c36cd204c299ed43b67de0ec08a7b968
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87282982"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "90007559"
 ---
-# <a name="troubleshoot-publisher-verification-preview"></a>Устранение неполадок с проверкой издателя (предварительная версия)
-Если вам не удается завершить процесс или возникло непредвиденное поведение при [проверке подлинности издателя (предварительная версия)](publisher-verification-overview.md), следует начать со следующих действий при получении ошибок или обнаружении непредвиденного поведения: 
+# <a name="troubleshoot-publisher-verification"></a>Устранение неполадок с проверкой издателя
+Если не удается завершить процесс или возникло непредвиденное поведение при [проверке издателя](publisher-verification-overview.md), следует начать с следующих действий, если возникают ошибки или возникает непредвиденное поведение. 
 
 1. Проверьте [требования](publisher-verification-overview.md#requirements) и убедитесь, что они выполнены.
 
@@ -62,7 +62,7 @@ ms.locfileid: "87282982"
 
 ## <a name="making-microsoft-graph-api-calls"></a>Выполнение вызовов API Microsoft Graph 
 
-Если вы столкнулись с проблемой, но не можете понять, что вы видите в пользовательском интерфейсе, может быть полезно выполнить устранение неполадок с помощью вызовов Microsoft Graph, чтобы выполнить те же операции, которые можно выполнить на портале регистрации приложений. На этапе предварительной версии эти API-интерфейсы будут доступны только в бета-версии конечной точки Microsoft Graph.  
+Если вы столкнулись с проблемой, но не можете понять, что вы видите в пользовательском интерфейсе, может быть полезно выполнить устранение неполадок с помощью вызовов Microsoft Graph, чтобы выполнить те же операции, которые можно выполнить на портале регистрации приложений.
 
 Самый простой способ выполнить эти запросы — использовать [песочницу Graph](https://developer.microsoft.com/graph/graph-explorer). Вы также можете рассмотреть другие варианты, например использовать [POST](https://www.postman.com/) или [вызвать веб-запросы](/powershell/module/microsoft.powershell.utility/invoke-webrequest?view=powershell-7) с помощью PowerShell.  
 

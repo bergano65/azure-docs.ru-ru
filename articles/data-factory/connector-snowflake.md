@@ -11,12 +11,12 @@ ms.workload: data-services
 ms.topic: conceptual
 ms.custom: seo-lt-2019
 ms.date: 08/28/2020
-ms.openlocfilehash: fa8bb310d6a088db92b3dfd8eb6d2f584e9ffab7
-ms.sourcegitcommit: 3fb5e772f8f4068cc6d91d9cde253065a7f265d6
+ms.openlocfilehash: 255fa9e058fdbb3b7edb73e75fd53f4a2490bfca
+ms.sourcegitcommit: 70ee014d1706e903b7d1e346ba866f5e08b22761
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89181890"
+ms.lasthandoff: 09/11/2020
+ms.locfileid: "90023862"
 ---
 # <a name="copy-and-transform-data-in-snowflake-by-using-azure-data-factory"></a>Копирование и преобразование данных в снежинках с помощью фабрики данных Azure
 
@@ -63,7 +63,11 @@ ms.locfileid: "89181890"
     "properties": {
         "type": "Snowflake",
         "typeProperties": {
-            "connectionString": "jdbc:snowflake://<accountname>.snowflakecomputing.com/?user=<username>&password=<password>&db=<database>&warehouse=<warehouse>&role=<myRole>"
+            "connectionString": "jdbc:snowflake://<accountname>.snowflakecomputing.com/?user=<username>&db=<database>&warehouse=<warehouse>&role=<myRole>",
+            "password": {
+                "type": "SecureString",
+                "value": "<password>"
+            }
         },
         "connectVia": {
             "referenceName": "<name of Integration Runtime>",
@@ -149,7 +153,7 @@ ms.locfileid: "89181890"
 | query          | Указывает SQL запрос для чтения данных из снежинки. Если имена схемы, таблицы и столбца содержат строчные буквы, заключайте идентификатор объекта в запрос, `select * from "schema"."myTable"` например.<br>Исполнение хранимой процедуры не поддерживается. | Нет       |
 | exportSettings | Дополнительные параметры, используемые для получения данных из снежинки. Можно настроить те, которые поддерживаются командой Копировать в, которую будет передавать фабрика данных при вызове инструкции. | Нет       |
 | ***В разделе `exportSettings` :*** |  |  |
-| тип | Тип команды экспорта, установленный в **сновфлакикспорткопикомманд**. | Да |
+| type | Тип команды экспорта, установленный в **сновфлакикспорткопикомманд**. | Да |
 | аддитионалкопйоптионс | Дополнительные параметры копирования, предоставляемые в виде словаря пар "ключ-значение". Примеры: MAX_FILE_SIZE, OVERWRITE. Дополнительные сведения см. в разделе [Параметры копирования «снежинка](https://docs.snowflake.com/en/sql-reference/sql/copy-into-location.html#copy-options-copyoptions)». | Нет |
 | аддитионалформатоптионс | Дополнительные параметры формата файла, предоставляемые для копирования команды в виде словаря пар "ключ-значение". Примеры: DATE_FORMAT, TIME_FORMAT, TIMESTAMP_FORMAT. Дополнительные сведения см. в разделе [Параметры формата типа "снежинка](https://docs.snowflake.com/en/sql-reference/sql/copy-into-location.html#format-type-options-formattypeoptions)". | Нет |
 
@@ -175,7 +179,7 @@ ms.locfileid: "89181890"
 - В источнике действия копирования `additionalColumns` не указано.
 - Сопоставление столбцов не указано.
 
-**Пример.**
+**Пример**.
 
 ```json
 "activities":[
@@ -226,7 +230,7 @@ ms.locfileid: "89181890"
 > [!NOTE]
 > Связанная служба хранилища BLOB-объектов Azure должна использовать проверку подлинности подписанного URL-доступа, как это требуется для команды копирования по схеме "Снежинка". 
 
-**Пример.**
+**Пример**.
 
 ```json
 "activities":[
@@ -280,7 +284,7 @@ ms.locfileid: "89181890"
 | preCopyScript     | Укажите SQL-запрос для выполнения действия копирования перед записью данных в «снежинка» в каждом запуске. Это свойство используется для очистки предварительно загруженных данных. | нет                                            |
 | importSettings | Дополнительные параметры, используемые для записи данных в снежинки. Можно настроить те, которые поддерживаются командой Копировать в, которую будет передавать фабрика данных при вызове инструкции. | Нет |
 | ***В разделе `importSettings` :*** |                                                              |  |
-| тип | Тип команды импорта, установленный в **сновфлакеимпорткопикомманд**. | Да |
+| type | Тип команды импорта, установленный в **сновфлакеимпорткопикомманд**. | Да |
 | аддитионалкопйоптионс | Дополнительные параметры копирования, предоставляемые в виде словаря пар "ключ-значение". Примеры: ON_ERROR, FORCE, LOAD_UNCERTAIN_FILES. Дополнительные сведения см. в разделе [Параметры копирования «снежинка](https://docs.snowflake.com/en/sql-reference/sql/copy-into-table.html#copy-options-copyoptions)». | Нет |
 | аддитионалформатоптионс | Дополнительные параметры формата файла, предоставляемые команде COPY, предоставленные в виде словаря пар "ключ-значение". Примеры: DATE_FORMAT, TIME_FORMAT, TIMESTAMP_FORMAT. Дополнительные сведения см. в разделе [Параметры формата типа "снежинка](https://docs.snowflake.com/en/sql-reference/sql/copy-into-table.html#format-type-options-formattypeoptions)". | Нет |
 
@@ -310,7 +314,7 @@ ms.locfileid: "89181890"
    - Если источником является папка, то параметру присваивается `recursive` значение true.
    - Параметры `prefix`, `modifiedDateTimeStart`, `modifiedDateTimeEnd` и `enablePartitionDiscovery` не указываются.
 
-**Пример.**
+**Пример**.
 
 ```json
 "activities":[
@@ -360,7 +364,7 @@ ms.locfileid: "89181890"
 > [!NOTE]
 > Для связанной службы хранилища BLOB-объектов Azure необходимо использовать проверку подлинности подписанного URL-доступа, как это требуется для команды копирования по схеме "Снежинка".
 
-**Пример.**
+**Пример**.
 
 ```json
 "activities":[

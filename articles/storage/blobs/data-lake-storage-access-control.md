@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 03/16/2020
 ms.author: normesta
 ms.reviewer: jamesbak
-ms.openlocfilehash: 9edf348c856de5c75c95d8a8f1957dcf73fc8ec1
-ms.sourcegitcommit: bfeae16fa5db56c1ec1fe75e0597d8194522b396
+ms.openlocfilehash: fa6a226926439e30b9ca51c75743ce35915ffd85
+ms.sourcegitcommit: 43558caf1f3917f0c535ae0bf7ce7fe4723391f9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/10/2020
-ms.locfileid: "88030492"
+ms.lasthandoff: 09/11/2020
+ms.locfileid: "90017240"
 ---
 # <a name="access-control-in-azure-data-lake-storage-gen2"></a>Управление доступом в Azure Data Lake Storage 2-го поколения
 
@@ -256,7 +256,7 @@ umask для Azure Data Lake Storage 2-го поколения является 
 | umask.owning_group  |    0         |   `---`      | Для группы владельцев стандартный список ACL родительского элемента копируется в список ACL для доступа дочернего элемента. | 
 | umask.other         |    7         |   `RWX`      | Для других пользователей все разрешения в списке ACL для доступа дочернего элемента удаляются. |
 
-Значение umask, используемое Azure Data Lake Storage 2-го поколения, фактически означает, что значение для **других пользователей** никогда не передается по умолчанию в новые дочерние элементы независимо от того, что указывает ACL по умолчанию. 
+Значение umask, используемое Azure Data Lake Storage 2-го поколения фактически означает, что значение для **другого** никогда не передается по умолчанию для новых дочерних элементов, если только ACL по умолчанию не определен в родительском каталоге. В этом случае umask фактически игнорируется, а разрешения, определенные ACL по умолчанию, применяются к дочернему элементу. 
 
 Следующий псевдокод показывает, как применяется umask при создании списков ACL для дочернего элемента.
 
@@ -328,7 +328,7 @@ az ad sp show --id 18218b12-1895-43e9-ad80-6e8fc1ea88ce --query objectId
 
 Будет отображен идентификатор объекта.
 
-Если у субъекта-службы правильный идентификатор объекта, перейдите на страницу Обозреватель службы хранилища **Управление доступом** , чтобы добавить OID и назначить соответствующие разрешения для OID. Убедитесь, что выбран параметр **сохранить**.
+Если у субъекта-службы правильный идентификатор объекта, перейдите на страницу Обозреватель службы хранилища **Управление доступом** , чтобы добавить OID и назначить соответствующие разрешения для OID. Убедитесь, что выбран параметр **Сохранить**.
 
 ### <a name="does-data-lake-storage-gen2-support-inheritance-of-acls"></a>Поддерживает ли Data Lake Storage 2-го поколения наследование списков ACL?
 
@@ -347,6 +347,6 @@ az ad sp show --id 18218b12-1895-43e9-ad80-6e8fc1ea88ce --query objectId
 * [POSIX ACL on Ubuntu](https://help.ubuntu.com/community/FilePermissionsACLs) (POSIX ACL для Ubuntu)
 * [ACL с использованием списков управления доступом в Linux](https://bencane.com/2012/05/27/acl-using-access-control-lists-on-linux/)
 
-## <a name="see-also"></a>См. также
+## <a name="see-also"></a>См. также раздел
 
 * [Общие сведения об Azure Data Lake Storage 2-го поколения](../blobs/data-lake-storage-introduction.md)

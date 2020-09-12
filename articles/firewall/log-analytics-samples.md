@@ -1,20 +1,20 @@
 ---
-title: Примеры журналов в Azure Firewall для анализа
+title: Журналы Azure Monitor для брандмауэра Azure
 description: Журналы Azure Monitor можно использовать для анализа брандмауэра Azure. Пример файла создается в конструкторе представлений Azure Monitor.
 services: firewall
 author: vhorne
 ms.service: firewall
-ms.topic: article
-ms.date: 01/23/2020
+ms.topic: how-to
+ms.date: 09/11/2020
 ms.author: victorh
-ms.openlocfilehash: bc34afe82c1b73afb5f3d5d1a07f2a5059590146
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 5acbc1f3b8c5519c22105f05219ab2cef5c15892
+ms.sourcegitcommit: 70ee014d1706e903b7d1e346ba866f5e08b22761
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "76706003"
+ms.lasthandoff: 09/11/2020
+ms.locfileid: "90023879"
 ---
-# <a name="azure-firewall-log-analytics-samples"></a>Примеры журналов в Azure Firewall для анализа
+# <a name="azure-monitor-logs-for-azure-firewall"></a>Журналы Azure Monitor для брандмауэра Azure
 
 Для анализа журналов брандмауэра Azure можно использовать следующие примеры журналов Azure Monitor. Пример файла создан в конструкторе представлений Azure Monitor, [Конструктор представлений в Azure Monitor](https://docs.microsoft.com/azure/log-analytics/log-analytics-view-designer) статье содержит дополнительные сведения о концепции представления.
 
@@ -30,7 +30,7 @@ ms.locfileid: "76706003"
 2. Откройте **Конструктор представлений** под разделом **Общие**.
 3. Щелкните **Импорт**.
 4. Найдите и выберите файл **AzureFirewall.omsview**, который вы скачали ранее.
-5. Нажмите кнопку **Сохранить**.
+5. Нажмите **Сохранить**.
 
 Вот как выглядит представление данных из журнала правил приложений:
 
@@ -170,11 +170,11 @@ AzureDiagnostics
 
 В следующих примерах журнала показаны данные, содержащиеся в записи журнала.
 
-![запись журнала](media/log-analytics-samples/log1.png)
+![запись журнала One](media/log-analytics-samples/log1.png)
 
-![запись журнала](media/log-analytics-samples/log2.png)
+![запись журнала 2 ](media/log-analytics-samples/log2.png)
 
-![запись журнала](media/log-analytics-samples/log3.png)
-## <a name="next-steps"></a>Дальнейшие шаги
+![запись журнала 3](media/log-analytics-samples/log3.png)
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения см. в [руководстве по мониторингу журналов и метрик Брандмауэра Azure](tutorial-diagnostics.md).

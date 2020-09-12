@@ -6,13 +6,13 @@ ms.subservice: ''
 ms.topic: conceptual
 author: bwren
 ms.author: bwren
-ms.date: 08/21/2020
-ms.openlocfilehash: 6eb4aee1cfe62b09210f62d016028485594a9474
-ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
+ms.date: 09/02/2020
+ms.openlocfilehash: 2a0c95e45dc529d779d6b06e1e5bdb32ba80b241
+ms.sourcegitcommit: 3c66bfd9c36cd204c299ed43b67de0ec08a7b968
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89000793"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "90007542"
 ---
 # <a name="overview-of-azure-monitor-agents"></a>Общие сведения об агентах Azure Monitor
 
@@ -35,7 +35,7 @@ ms.locfileid: "89000793"
 | | Агент Azure Monitor (Предварительная версия) | Диагностика<br>расширение (WAD) | Log Analytics<br>агент | Зависимость<br>агент |
 |:---|:---|:---|:---|:---|
 | **Поддерживаемые среды** | Azure | Azure | Azure<br>Другое облако<br>В локальной среде | Azure<br>Другое облако<br>В локальной среде | 
-| **Требования к агентам**  | Отсутствуют | Отсутствуют | Отсутствуют | Требуется агент Log Analytics |
+| **Требования к агентам**  | None | None | None | Требуется агент Log Analytics |
 | **Собираемые данные** | журналы событий;<br>Производительность | журналы событий;<br>ETW-события<br>Производительность<br>Файловые журналы<br>Журналы IIS<br>Журналы приложений .NET<br>Аварийные дампы<br>Журналы диагностики агента | журналы событий;<br>Производительность<br>Файловые журналы<br>Журналы IIS<br>Полезные сведения и решения<br>Другие службы | зависимости процессов.<br>Метрики сетевого подключения |
 | **Отправленные данные** | Журналы Azure Monitor<br>Метрики Azure Monitor | Хранилище Azure<br>Метрики Azure Monitor<br>Концентратор событий | Журналы Azure Monitor | Журналы Azure Monitor<br>(с помощью агента Log Analytics) |
 | **Службы и**<br>**особенностей**<br>**поддерживается** | Log Analytics<br>Обозреватель метрик | Обозреватель метрик | Azure Monitor для виртуальных машин<br>Log Analytics<br>Служба автоматизации Azure<br>Центр безопасности Azure<br>Azure Sentinel | Azure Monitor для виртуальных машин<br>Сопоставление служб |
@@ -45,7 +45,7 @@ ms.locfileid: "89000793"
 | | Агент Azure Monitor (Предварительная версия) | Диагностика<br>расширение (LAD) | Telegraf<br>агент | Log Analytics<br>агент | Зависимость<br>агент |
 |:---|:---|:---|:---|:---|:---|
 | **Поддерживаемые среды** | Azure | Azure | Azure<br>Другое облако<br>В локальной среде | Azure<br>Другое облако<br>В локальной среде | Azure<br>Другое облако<br>В локальной среде |
-| **Требования к агентам**  | Отсутствуют | Отсутствуют | Отсутствуют | Отсутствуют | Требуется агент Log Analytics |
+| **Требования к агентам**  | None | None | None | None | Требуется агент Log Analytics |
 | **Собираемые данные** | Системный журнал<br>Производительность | Системный журнал<br>Производительность | Производительность | Системный журнал<br>Производительность| зависимости процессов.<br>Метрики сетевого подключения |
 | **Отправленные данные** | Журналы Azure Monitor<br>Метрики Azure Monitor | Хранилище Azure<br>Концентратор событий | Метрики Azure Monitor | Журналы Azure Monitor | Журналы Azure Monitor<br>(с помощью агента Log Analytics) |
 | **Службы и**<br>**особенностей**<br>**поддерживается** | Log Analytics<br>Обозреватель метрик | | Обозреватель метрик | Azure Monitor для виртуальных машин<br>Log Analytics<br>Служба автоматизации Azure<br>Центр безопасности Azure<br>Azure Sentinel | Azure Monitor для виртуальных машин<br>Сопоставление служб |
@@ -147,8 +147,8 @@ ms.locfileid: "89000793"
 | Windows Server 2016 Core                                 |   |   |   | X |
 | Windows Server 2012 R2                                   | X | X | X | X |
 | Windows Server 2012                                      | X | X | X | X |
-| Windows Server 2008 R2                                   |   | X | X | X |
-| Windows 10 Корпоративная<br>(включая несколько сеансов) и Pro  |   | X | X | X |
+| Windows Server 2008 R2                                   |   | X | X | X |
+| Windows 10 Корпоративная<br>(включая несколько сеансов) и Pro  | X | X | X | X |
 | Windows 8 Корпоративная и Профессиональная                             |   | X | X |   |
 | Windows 7 SP1                                            |   | X | X |   |
 
@@ -159,6 +159,7 @@ ms.locfileid: "89000793"
 |:---|:---:|:---:|:---:|:---:
 | Amazon Linux 2017.09                                     |   | X |   |   |
 | CentOS Linux 7                                           | X | X |   | X |
+| CentOS Linux 7,8                                         | X | X | X | X |
 | CentOS Linux 7,6                                         | X | X | X | X |
 | CentOS Linux 6                                           | X | X |   |   |
 | CentOS Linux 6.5 +                                        | X | X |   | X |
@@ -170,11 +171,11 @@ ms.locfileid: "89000793"
 | Oracle Linux 7                                           | X | X |   | X |
 | Oracle Linux 6                                           | X | X |   |   |
 | Oracle Linux 6.4+                                        | X | X |   | X |
-| Red Hat Enterprise Linux Server 8                        | X | X |   |   |
+| Red Hat Enterprise Linux Server 8                        |   | X |   |   |
 | Red Hat Enterprise Linux Server 7                        | X | X | X | X |
 | Red Hat Enterprise Linux Server 6                        | X | X | X |   |
 | Red Hat Enterprise Linux Server 6.7 +                     | X | X | X | X |
-| SUSE Linux Enterprise Server 15                          | X | X | X |   |
+| SUSE Linux Enterprise Server 15                          | X | X |   |   |
 | SUSE Linux Enterprise Server 12                          | X | X | X | X |
 | Ubuntu 18.04 LTS                                         | X | X | X | X |
 | Ubuntu 16.04 LTS                                         | X | X | X | X |
@@ -184,11 +185,11 @@ ms.locfileid: "89000793"
 #### <a name="dependency-agent-linux-kernel-support"></a>Поддержка ядра Linux для агента зависимостей
 Так как агент зависимостей работает на уровне ядра, поддержка также зависит от версии ядра. В следующей таблице перечислены основные и вспомогательные версии ОС Linux и поддерживаемые в агенте зависимости версиях ядра.
 
-| Распределение | Версия ОС | Версия ядра |
+| Distribution | Версия ОС | Версия ядра |
 |:---|:---|:---|
 |  Red Hat Linux 7   | 7.6     | 3.10.0-957  |
 |                    | 7.5     | 3.10.0-862  |
-|                    | 7,4     | 3.10.0-693  |
+|                    | 7.4     | 3.10.0-693  |
 | Red Hat Linux 6    | 6.10    | 2.6.32-754 |
 |                    | 6.9     | 2.6.32-696  |
 | центосплус         | 6.10    | 2.6.32 — 754.3.5<br>2.6.32 — 696.30.1 |

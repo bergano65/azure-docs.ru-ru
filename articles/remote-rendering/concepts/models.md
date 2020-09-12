@@ -6,12 +6,12 @@ ms.author: jakras
 ms.date: 02/05/2020
 ms.topic: conceptual
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 9fd18195c0276999f445e0990838e293a5081131
-ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
+ms.openlocfilehash: e9c8c4a1209b8bb5be7af87ef22aeab0ffd90b79
+ms.sourcegitcommit: 70ee014d1706e903b7d1e346ba866f5e08b22761
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89021890"
+ms.lasthandoff: 09/11/2020
+ms.locfileid: "90023777"
 ---
 # <a name="models"></a>Модели
 
@@ -28,7 +28,6 @@ ms.locfileid: "89021890"
 Создание моделей для среды выполнения достигается за счет [преобразования входных моделей](../how-tos/conversion/model-conversion.md) из файлов таких форматов, как FBX и GLTF. Процесс преобразования извлекает все ресурсы (текстуры, материалы, сетки и т. д.) и преобразует их в форматы, оптимизированные для среды выполнения. Он также извлекает структурную информацию и преобразует ее в структуру графа из сущностей и компонентов Удаленной отрисовки Azure.
 
 > [!IMPORTANT]
->
 > [Преобразование модели](../how-tos/conversion/model-conversion.md) — это единственный способ создания [сеток](meshes.md). В среде выполнения сетки могут совместно использоваться несколькими сущностями, но передать сетку в среду выполнения можно только путем загрузки модели.
 
 ## <a name="loading-models"></a>Загрузка моделей
@@ -118,6 +117,13 @@ ApiHandle<LoadModelAsync> LoadModel(ApiHandle<AzureSession> session, ApiHandle<E
 
 > [!CAUTION]
 > Все *асинхронные функции* в Удаленной отрисовке Azure возвращают объекты асинхронной операции. Ссылку на эти объекты необходимо хранить до завершения операции. В противном случае сборщик мусора C# может удалить операцию раньше, чем она завершится. Приведенный выше пример кода использует *await*, чтобы гарантировать сохранение ссылки в локальной переменной loadOp до полного завершения загрузки модели. Но если вместо этого используется событие *Completed*, асинхронную операцию необходимо хранить в переменной-члене.
+
+## <a name="api-documentation"></a>Документирование API
+
+* [C# Ремотеманажер. Лоадмоделасинк ()](https://docs.microsoft.com/dotnet/api/microsoft.azure.remoterendering.remotemanager.loadmodelasync)
+* [C# Ремотеманажер. Лоадмоделфромсасасинк ()](https://docs.microsoft.com/dotnet/api/microsoft.azure.remoterendering.remotemanager.loadmodelfromsasasync)
+* [C++ Ремотеманажер:: Лоадмоделасинк ()](https://docs.microsoft.com/cpp/api/remote-rendering/remotemanager#loadmodelasync)
+* [C++ Ремотеманажер:: Лоадмоделфромсасасинк ()](https://docs.microsoft.com/cpp/api/remote-rendering/remotemanager#loadmodelfromsasasync)
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

@@ -8,12 +8,12 @@ ms.subservice: fhir
 ms.topic: reference
 ms.date: 02/07/2019
 ms.author: matjazl
-ms.openlocfilehash: bdf328222fef1f763776bd26c47f5cd4d65e487e
-ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
+ms.openlocfilehash: afb4026a7865f2cc8f831d8d1d7b1d332014d310
+ms.sourcegitcommit: 3c66bfd9c36cd204c299ed43b67de0ec08a7b968
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89000011"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "90007576"
 ---
 # <a name="features"></a>Компоненты
 
@@ -39,7 +39,7 @@ API Azure для FHIR обеспечивает полностью управля
 | Delete (условный)           | Нет        | Нет        | Нет        |                                                     |
 | create                         | Да       | Да       | Да       | Поддержка как POST, так и постановки                               |
 | создать (условный)           | Да       | Да       | Да       |                                                     |
-| поиск                         | Partial   | Partial   | Partial   | См. ниже                                           |
+| search                         | Partial   | Partial   | Partial   | См. ниже                                           |
 | цепочка поиска                 | Нет        | Да       | Нет        |                                           |
 | обратный поиск в цепочке         | Нет        | Нет        | Нет        |                                            |
 | capabilities                   | Да       | Да       | Да       |                                                     |
@@ -98,14 +98,24 @@ API Azure для FHIR обеспечивает полностью управля
 | Операции поиска       | Поддерживается — PaaS | Поддерживаемые — OSS (SQL) | Поддерживаемые — OSS (Cosmos DB) | Комментировать |
 |-------------------------|-----------|-----------|-----------|---------|
 | `_filter`               | Нет        | Нет        | Нет        |         |
-| `_sort`                 | Нет        | Partial   | Partial        |   `_sort=_lastUpdated` поддерживается.       |
+| `_sort`                 | Partial        | Partial   | Partial        |   `_sort=_lastUpdated` поддерживается.       |
 | `_score`                | Нет        | Нет        | Нет        |         |
 | `_count`                | Да       | Да       | Да       |         |
 | `_summary`              | Partial   | Partial   | Partial   | `_summary=count` поддерживается. |
 | `_include`              | Нет        | Да       | Нет        |         |
 | `_revinclude`           | Нет        | Да       | Нет        | Количество включаемых элементов ограничено 100. |
 | `_contained`            | Нет        | Нет        | Нет        |         |
-| `_elements`             | Нет        | Нет        | Нет        |         |
+| `_elements`             | Да        | Да        | Да        |         |
+
+## <a name="extended-operations"></a>Расширенные операции
+
+Все поддерживаемые операции, расширяющие API RESTFUL.
+
+| Тип параметра поиска | Поддерживается — PaaS | Поддерживаемые — OSS (SQL) | Поддерживаемые — OSS (Cosmos DB) | Комментировать |
+|-----------------------|-----------|-----------|-----------|---------|
+| $export (вся система)                | Да       | Да       | Да       |         |
+| Пациент/$export         | Да       | Да       | Да       |         |
+| Группа или $export               | Да       | Да       | Да       |         |
 
 ## <a name="persistence"></a>Сохраняемость
 
