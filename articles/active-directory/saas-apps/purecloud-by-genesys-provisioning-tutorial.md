@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: article
 ms.date: 02/05/2020
 ms.author: Zhchia
-ms.openlocfilehash: 1397aa350ccc3114954902a6bfd02826cdff965f
-ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
+ms.openlocfilehash: 4983a4a637ae636c6a3ef4a485c1777fc9b8a77a
+ms.sourcegitcommit: 43558caf1f3917f0c535ae0bf7ce7fe4723391f9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88553290"
+ms.lasthandoff: 09/11/2020
+ms.locfileid: "90015183"
 ---
 # <a name="tutorial-configure-purecloud-by-genesys-for-automatic-user-provisioning"></a>Учебник. Настройка Пуреклауд с помощью Женесис для автоматической подготовки пользователей
 
@@ -111,6 +111,8 @@ ms.locfileid: "88553290"
      |phoneNumbers[type eq "work"].value|Строка|
      |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:department|Строка|
      |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:manager|Справочник|
+     |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:employeeNumber|Строка|
+     
 
 10. В разделе **сопоставления** выберите **синхронизировать Azure Active Directory группы в пуреклауд by женесис**.
 
@@ -144,6 +146,10 @@ ms.locfileid: "88553290"
 * Используйте [журналы подготовки](https://docs.microsoft.com/azure/active-directory/reports-monitoring/concept-provisioning-logs), чтобы определить, какие пользователи были подготовлены успешно или неудачно.
 * Используйте [индикатор выполнения](https://docs.microsoft.com/azure/active-directory/app-provisioning/application-provisioning-when-will-provisioning-finish-specific-user), чтобы узнать состояние цикла подготовки и приблизительное время до его завершения.
 * Если конфигурация подготовки, вероятно, находится в неработоспособном состоянии, приложение перейдет в карантин. Дополнительные сведения о режимах карантина см. [здесь](https://docs.microsoft.com/azure/active-directory/manage-apps/application-provisioning-quarantine-status).
+
+## <a name="change-log"></a>Журнал изменений
+
+09/10 — добавлена поддержка корпоративного атрибута «Емплойинумбер».
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

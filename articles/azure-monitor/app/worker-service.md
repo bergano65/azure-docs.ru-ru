@@ -4,12 +4,12 @@ description: Мониторинг приложений .NET Core/. NET Framework
 ms.topic: conceptual
 ms.custom: devx-track-csharp
 ms.date: 05/11/2020
-ms.openlocfilehash: 6f31236e516e44df9f5115e3efeb48db46853e8d
-ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
+ms.openlocfilehash: 2ca5fc2d8f5e9e399fd7dfd3238d0ec16056d537
+ms.sourcegitcommit: 3c66bfd9c36cd204c299ed43b67de0ec08a7b968
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88933279"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "90007219"
 ---
 # <a name="application-insights-for-worker-service-applications-non-http-applications"></a>Application Insights для приложений службы рабочей роли (приложений, отличных от HTTP)
 
@@ -19,7 +19,7 @@ Application Insights выпускает новый пакет SDK с имене�
 
 ## <a name="supported-scenarios"></a>Поддерживаемые сценарии
 
-Пакет [SDK Application Insights для службы рабочей роли](https://www.nuget.org/packages/Microsoft.ApplicationInsights.WorkerService) лучше всего подходит для приложений, отличных от HTTP, независимо от того, где или как они выполняются. Если приложение работает и имеет сетевое подключение к Azure, можно собирать данные телеметрии. Мониторинг Application Insights поддерживается везде, где поддерживается .NET Core. Этот пакет можно использовать в новой добавленной [службе рабочей роли .NET Core 3,0](https://devblogs.microsoft.com/aspnet/dotnet-core-workers-in-azure-container-instances), [фоновых задачах в ASP.NET Core 2.1/2.2](/aspnet/core/fundamentals/host/hosted-services?view=aspnetcore-2.2), консольных приложениях (.NET Core/.NET Framework) и т. д.
+Пакет [SDK Application Insights для службы рабочей роли](https://www.nuget.org/packages/Microsoft.ApplicationInsights.WorkerService) лучше всего подходит для приложений, отличных от HTTP, независимо от того, где или как они выполняются. Если приложение работает и имеет сетевое подключение к Azure, можно собирать данные телеметрии. Мониторинг Application Insights поддерживается везде, где поддерживается .NET Core. Этот пакет можно использовать в новой добавленной [службе рабочей роли .NET Core 3,0](https://devblogs.microsoft.com/aspnet/dotnet-core-workers-in-azure-container-instances), [фоновых задачах в ASP.NET Core 2.1/2.2](/aspnet/core/fundamentals/host/hosted-services?view=aspnetcore-2.2&preserve-view=true), консольных приложениях (.NET Core/.NET Framework) и т. д.
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -124,7 +124,7 @@ Application Insights выпускает новый пакет SDK с имене�
 Кроме того, можно указать ключ инструментирования в любой из следующих переменных среды.
 `APPINSIGHTS_INSTRUMENTATIONKEY` или `ApplicationInsights:InstrumentationKey`
 
-Пример: `SET ApplicationInsights:InstrumentationKey=putinstrumentationkeyhere`
+Например: `SET ApplicationInsights:InstrumentationKey=putinstrumentationkeyhere`
 НИ `SET APPINSIGHTS_INSTRUMENTATIONKEY=putinstrumentationkeyhere`
 
 Как правило, `APPINSIGHTS_INSTRUMENTATIONKEY` указывает ключ инструментирования для приложений, развернутых в веб-приложениях в виде веб-заданий.
@@ -134,7 +134,7 @@ Application Insights выпускает новый пакет SDK с имене�
 
 ## <a name="aspnet-core-background-tasks-with-hosted-services"></a>ASP.NET Core фоновых задач с размещенными службами
 
-В [этом](/aspnet/core/fundamentals/host/hosted-services?tabs=visual-studio&view=aspnetcore-2.2) документе описывается создание фоновых задач в приложении ASP.NET Core 2.1/2.2.
+В [этом](/aspnet/core/fundamentals/host/hosted-services?tabs=visual-studio&view=aspnetcore-2.2&preserve-view=true) документе описывается создание фоновых задач в приложении ASP.NET Core 2.1/2.2.
 
 Полный [Пример общего доступа](https://github.com/microsoft/ApplicationInsights-Home/tree/master/Samples/WorkerServiceSDK/BackgroundTasksWithHostedService)
 
@@ -352,16 +352,17 @@ Application Insights выпускает новый пакет SDK с имене�
 
 Часто используемые параметры в `ApplicationInsightsServiceOptions`
 
-|Параметр | Описание | Значение по умолчанию
+|Параметр | Описание | По умолчанию
 |---------------|-------|-------
 |енаблекуиккпулсеметрикстреам | Включить или отключить функцию Ливеметрикс | Да
 |енаблеадаптивесамплинг | Включение или отключение адаптивной выборки | Да
 |енаблехеартбеат | Функция "включить/отключить пульс", которая периодически (по умолчанию составляет 15 минут) отправляет пользовательскую метрику "Хеартбеатстате" со сведениями о среде выполнения, такими как версия .NET, сведения о среде Azure, если применимо, и т. д. | Да
 |аддаутоколлектедметрицекстрактор | Включите или отключите средство извлечения Аутоколлектедметрикс, которое представляет собой Телеметрипроцессор, который отправляет предварительно агрегированные метрики о запросах и зависимостях перед выполнением выборки. | Да
+|енабледиагностикстелеметримодуле | Включить или отключить `DiagnosticsTelemetryModule` . Отключение этого параметра приведет к игнорированию следующих параметров. `EnableHeartbeat`, `EnableAzureInstanceMetadataTelemetryModule`, `EnableAppServicesHeartbeatTelemetryModule` | Да
 
 См. список [настраиваемых параметров `ApplicationInsightsServiceOptions` в](https://github.com/microsoft/ApplicationInsights-dotnet/blob/develop/NETCORE/src/Shared/Extensions/ApplicationInsightsServiceOptions.cs) для наиболее актуального списка.
 
-### <a name="sampling"></a>Дискретизация
+### <a name="sampling"></a>Выборка
 
 Пакет SDK Application Insights для службы рабочей роли поддерживает как фиксированную, так и адаптивную выборку. Адаптивная выборка включена по умолчанию. Настройка выборки для службы рабочей роли выполняется так же, как и для [приложений ASP.NET Core](./sampling.md#configuring-adaptive-sampling-for-aspnet-core-applications).
 
@@ -533,9 +534,9 @@ using Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel;
 
 [Консольное приложение .NET Core](https://github.com/microsoft/ApplicationInsights-Home/tree/master/Samples/WorkerServiceSDK/ConsoleAppWithApplicationInsights) Используйте этот пример, если вы используете консольное приложение, написанное на .NET Core (2,0 или более поздней версии) или .NET Framework (4.7.2 или более поздней версии).
 
-[Фоновые задачи ASP .NET Core с хостедсервицес](https://github.com/microsoft/ApplicationInsights-Home/tree/master/Samples/WorkerServiceSDK/BackgroundTasksWithHostedService) Используйте этот пример, если вы используете Asp.Net Core 2.1/2.2 и создаете фоновые задачи в соответствии с [официальным руководством.](/aspnet/core/fundamentals/host/hosted-services?view=aspnetcore-2.2)
+[Фоновые задачи ASP .NET Core с хостедсервицес](https://github.com/microsoft/ApplicationInsights-Home/tree/master/Samples/WorkerServiceSDK/BackgroundTasksWithHostedService) Используйте этот пример, если вы используете Asp.Net Core 2.1/2.2 и создаете фоновые задачи в соответствии с [официальным руководством.](/aspnet/core/fundamentals/host/hosted-services?view=aspnetcore-2.2&preserve-view=true)
 
-[Рабочая служба .NET Core 3,0](https://github.com/microsoft/ApplicationInsights-Home/tree/master/Samples/WorkerServiceSDK/WorkerServiceSampleWithApplicationInsights) Используйте этот пример, если у вас есть приложение рабочей службы .NET Core 3,0 в соответствии с [официальным руководством](/aspnet/core/fundamentals/host/hosted-services?tabs=visual-studio&view=aspnetcore-3.0#worker-service-template)
+[Рабочая служба .NET Core 3,0](https://github.com/microsoft/ApplicationInsights-Home/tree/master/Samples/WorkerServiceSDK/WorkerServiceSampleWithApplicationInsights) Используйте этот пример, если у вас есть приложение рабочей службы .NET Core 3,0 в соответствии с [официальным руководством](/aspnet/core/fundamentals/host/hosted-services?tabs=visual-studio&view=aspnetcore-3.0&preserve-view=true#worker-service-template)
 
 ## <a name="open-source-sdk"></a>Пакет SDK с открытым исходным кодом
 
@@ -547,4 +548,3 @@ using Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel;
 * [Следите за автоматической](./auto-collect-dependencies.md)отслеживанием дополнительных зависимостей.
 * [Расширить или отфильтровать автоматические собираемые данные телеметрии](./api-filtering-sampling.md).
 * [Внедрение зависимостей в ASP.NET Core](/aspnet/core/fundamentals/dependency-injection).
-

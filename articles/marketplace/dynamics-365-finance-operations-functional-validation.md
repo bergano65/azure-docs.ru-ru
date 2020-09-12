@@ -7,12 +7,12 @@ ms.topic: article
 author: emuench
 ms.author: navits
 ms.date: 07/17/2020
-ms.openlocfilehash: 1b5c756fed5d172593b23c2a157c280caa614940
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: e512c233ccfd793b87f203f837b11e97966d8102
+ms.sourcegitcommit: 43558caf1f3917f0c535ae0bf7ce7fe4723391f9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87098699"
+ms.lasthandoff: 09/11/2020
+ms.locfileid: "90016254"
 ---
 # <a name="appsource-dynamics-365-finance-and-operations-functional-validation"></a>AppSource Dynamics 365 Финансы и функциональная проверка операций
 
@@ -35,7 +35,7 @@ ms.locfileid: "87098699"
 
 ### <a name="option-1-30-minute-conference-call"></a>Параметр 1:30 — поминутный вызов конференции
 
-Чтобы запланировать окончательный вызов проверки, свяжитесь [appsourceCRM@microsoft.com](mailto:appsourceCRM@microsoft.com) с названием вашего предложения и некоторыми потенциальными интервалами времени в диапазоне от 8 часов утра. до 17:00 По тихоокеанскому времени.
+Чтобы запланировать окончательный вызов проверки, свяжитесь [appsourceCRM@microsoft.com](mailto:appsourceCRM@microsoft.com) с названием вашего предложения и некоторыми потенциальными слотами времени в диапазоне от 8 до 5 по тихоокеанскому времени.
 
 ### <a name="option-2-upload-a-demo-video-and-lcs-screenshots"></a>Вариант 2. Отправка демонстрационных видеороликов и снимков LCS
 
@@ -56,7 +56,7 @@ ms.locfileid: "87098699"
 
       2. Выберите **LCS**  >  **Solution Management**  >  **пакет решения**для управления решением LCS. Используйте снимки экрана, которые включают в себя обзор пакета и содержимое, показанное в следующих примерах:
 
-    | Поле | ОС контейнера <img src="" width="400px">|
+    | Поле | Образ — <img src="" width="400px">|
     | --- | --- |
     | Основные сведения о пакете | [![Экран обзора пакета](media/dynamics-365-finance-operations/package-overview-45.png)](media/dynamics-365-finance-operations/package-overview.png#lightbox) |
     | <ul><li>Утверждающие решения</li></ul> | [![Экран обзора пакета](media/dynamics-365-finance-operations/solution-approvers-45.png)](media/dynamics-365-finance-operations/solution-approvers.png#lightbox) |

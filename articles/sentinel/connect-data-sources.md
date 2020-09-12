@@ -1,10 +1,10 @@
 ---
 title: Подключение источников данных к Azure Sentinel | Документация Майкрософт
-description: Узнайте, как подключать такие источники данных, как защита от угроз Майкрософт, Microsoft 365 и Office 365, Azure AD, ATP и Cloud App Security в Azure Sentinel.
+description: Узнайте, как подключать такие источники данных, как Microsoft 365 Defender (ранее — Microsoft Threat protection), Microsoft 365 и Office 365, Azure AD, ATP и Cloud App Security в Azure Sentinel.
 services: sentinel
 documentationcenter: na
 author: yelevin
-manager: angrobe
+manager: rkarlin
 editor: ''
 ms.service: azure-sentinel
 ms.subservice: azure-sentinel
@@ -13,32 +13,31 @@ ms.topic: how-to
 ms.custom: mvc
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 11/04/2019
+ms.date: 09/08/2020
 ms.author: yelevin
-ms.openlocfilehash: a2b9c1602ead56b35c46508ef4d414145eb07432
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 4618bb4ba65c48808bc738b51c90a6fd04f0eca3
+ms.sourcegitcommit: f8d2ae6f91be1ab0bc91ee45c379811905185d07
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85555507"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89659637"
 ---
 # <a name="connect-data-sources"></a>Подключение источников данных
 
-Когда вы включили метку Azure, первым делом нужно подключить источники данных. В состав Azure Sentinel входит ряд соединителей для решений Майкрософт, которые доступны в режиме реального времени и обеспечивают интеграцию с Microsoft Threat Protection, в том числе решения Майкрософт для защиты от угроз, Microsoft 365 источники (включая Office 365), Azure AD, Azure ATP, Microsoft Cloud App Security и многое другое. Кроме того, доступны встроенные соединители для более широкой экосистемы безопасности для решений сторонних разработчиков. Вы также можете использовать общий формат событий (CEF), syslog или API для подключения источников данных к Azure Sentinel.
+Когда вы включили метку Azure, первым делом нужно подключить источники данных. В состав Azure Sentinel входит ряд соединителей для решений Майкрософт, которые доступны в режиме реального времени и обеспечивают интеграцию с Microsoft 365 Defender (ранее — решения Майкрософт для защиты от угроз), Microsoft 365 источники (включая Office 365), Azure AD, защитник Майкрософт для идентификации (ранее — Azure ATP), Microsoft Cloud App Security и многое другое. Кроме того, доступны встроенные соединители для более широкой экосистемы безопасности для решений сторонних разработчиков. Чтобы подключить источники данных к Azure Sentinel, вы можете использовать Common Event Format (CEF), Syslog или REST API.
 
 1. В меню выберите **Data connectors** (Соединители данных). На этой странице приведен полный список соединителей Azure Sentinel и показано состояние каждого из них. Выберите нужный соединитель и щелкните **Open connector page** (Открыть страницу соединителя). 
 
-   ![Сборщики данных](./media/collect-data/collect-data-page.png)
+   ![Коллекция соединителей данных](./media/collect-data/collect-data-page.png)
 
 1. На странице соединителя проверьте, выполнены ли все предварительные требования, и следуйте инструкциям, чтобы подключить данные к Azure Sentinel. Синхронизация журналов с Azure Sentinel может начаться не сразу. После подключения вы увидите сводку данных в графе **Data received** (Полученные данные) и состояние подключения для типов данных.
 
-   ![Подключение сборщиков](./media/collect-data/opened-connector-page.png)
+   ![Настройка соединителей данных](./media/collect-data/opened-connector-page.png)
   
 1. Перейдите на вкладку **Next steps** (Дальнейшие действия), чтобы посмотреть список готового содержимого, предоставляемого Azure Sentinel для определенного типа данных.
 
-   ![Сборщики данных](./media/collect-data/data-insights.png)
+   ![Дальнейшие действия для соединителей](./media/collect-data/data-insights.png)
  
-
 ## <a name="data-connection-methods"></a>Методы подключения к данным
 
 Azure Sentinel поддерживает следующие методы подключения к данным:
@@ -48,13 +47,13 @@ Azure Sentinel поддерживает следующие методы подк
     - [Действия Azure](connect-azure-activity.md)
     - [Azure Active Directory](connect-azure-active-directory.md) — журналы аудита и журналы входа
     - [Защита идентификации Azure AD](connect-azure-ad-Identity-protection.md)
-    - [Расширенная защита от угроз Azure](connect-azure-atp.md)
+    - [Защитник Майкрософт для идентификации](connect-azure-atp.md) (ранее — Azure Advanced Threat protection)
     - [Azure Information Protection](connect-azure-information-protection.md)
-    - [Центр безопасности Azure](connect-azure-security-center.md)
+    - [Защитник Azure](connect-azure-security-center.md) (прежнее название — центр безопасности Azure)
     - [Cloud App Security](connect-cloud-app-security.md)
     - [Сервер доменных имен](connect-dns.md)
     - [Office 365](connect-office-365.md)
-    - [ATP в Microsoft Defender](connect-microsoft-defender-advanced-threat-protection.md)
+    - [Защитник Майкрософт для конечной точки](connect-microsoft-defender-advanced-threat-protection.md) (прежнее название — Advanced Threat Protection в защитнике Майкрософт)
     - [Брандмауэр веб-приложения (Майкрософт)](connect-microsoft-waf.md)
     - [Брандмауэр Windows](connect-windows-firewall.md)
     - [События безопасности Windows](connect-windows-security-events.md)
@@ -135,8 +134,8 @@ Azure Sentinel поддерживает следующие методы подк
 | Данные передачи | [Подключение передаваемых данных](../azure-monitor/insights/wire-data.md) | &#10007; | |
 | WindowsFirewall | [Подключение брандмауэра Windows](connect-windows-firewall.md) | &#10003; | |
 | SecurityAlert службы "Защита идентификации Azure AD"  | [Подключения Защиты идентификации Azure AD](connect-azure-ad-identity-protection.md)  | &#10003; | |
-| AATP SecurityAlert  | [Подключение Azure ATP](connect-azure-atp.md) | &#10003; | |
-| SecurityAlert сертификатов службы приложений  | [Подключение к центру безопасности Azure](connect-azure-security-center.md)  | &#10003; | |
+| AATP SecurityAlert  | [Подключение защитника Майкрософт для идентификации](connect-azure-atp.md) (ранее — Azure ATP) | &#10003; | |
+| SecurityAlert сертификатов службы приложений  | [Подключение к службе "защитник Azure"](connect-azure-security-center.md) (прежнее название — центр безопасности Azure)  | &#10003; | |
 | MCAS SecurityAlert  | [Подключение Microsoft Cloud App Security](connect-cloud-app-security.md)  | &#10003; | |
 | SecurityAlert | | | |
 | Sysmon (событие) | [Подключение Sysmon](https://azure.microsoft.com/blog/detecting-in-memory-attacks-with-sysmon-and-azure-security-center)<br> [Подключение событий Windows](../azure-monitor/platform/data-sources-windows-events.md) <br> [Получение средства синтаксического анализа Sysmon](https://github.com/Azure/Azure-Sentinel/blob/master/Parsers/Sysmon/Sysmon-v10.42-Parser.txt)| &#10007; | По умолчанию на виртуальных машинах не установлена коллекция Sysmon. Дополнительные сведения об установке агента Sysmon см. в разделе [Sysmon](https://docs.microsoft.com/sysinternals/downloads/sysmon). |

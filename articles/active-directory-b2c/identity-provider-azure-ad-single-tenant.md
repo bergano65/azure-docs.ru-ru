@@ -12,12 +12,12 @@ ms.date: 04/20/2020
 ms.author: mimart
 ms.subservice: B2C
 ms.custom: fasttrack-edit
-ms.openlocfilehash: ce5f373576f13a4b1bdb88b5ffb7869a2d7865cd
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: e4fa4b64c6519df90d5883e8c5760b3ed2ce0337
+ms.sourcegitcommit: 3c66bfd9c36cd204c299ed43b67de0ec08a7b968
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85388363"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "90004465"
 ---
 # <a name="set-up-sign-in-for-a-specific-azure-active-directory-organization-in-azure-active-directory-b2c"></a>Настройка входа для определенной организации Azure Active Directory в Azure Active Directory B2C
 
@@ -27,29 +27,30 @@ ms.locfileid: "85388363"
 
 ## <a name="configure-azure-ad-as-an-identity-provider"></a>Настройка Azure AD в качестве поставщика удостоверений для клиента
 
-1. Убедитесь, что вы используете каталог, содержащий клиент Azure AD B2C. Выберите фильтр **Каталог и подписка** в верхнем меню, а затем каталог, содержащий клиент Azure AD B2C.
+1. Убедитесь, что вы используете каталог, содержащий клиент Azure AD B2C. Выберите фильтр **Каталог и подписка** в верхнем меню, а затем каталог, содержащий клиент Azure AD B2C.
 1. Выберите **Все службы** в левом верхнем углу окна портала Azure, а затем найдите и выберите **Azure AD B2C**.
-1. Выберите **поставщики удостоверений**, а затем выберите **Новый поставщик OpenID Connect Connect**.
+1. Щелкните элемент **Поставщики удостоверений**, а затем выберите **Новый поставщик OpenID Connect**.
 1. Введите **Имя**. Например, введите *Azure AD Contoso*.
-1. В поле **URL-адрес метаданных**введите следующий URL-адрес, заменяющий `{tenant}` доменное имя вашего клиента Azure AD:
+1. В поле **URL-адрес метаданных** введите указанный ниже URL-адрес, заменив `{tenant}` реальным доменным именем вашего клиента Azure AD.
 
     ```
     https://login.microsoftonline.com/{tenant}/v2.0/.well-known/openid-configuration
     ```
 
     Например, `https://login.microsoftonline.com/contoso.onmicrosoft.com/v2.0/.well-known/openid-configuration`.
+    Например, `https://login.microsoftonline.com/contoso.com/v2.0/.well-known/openid-configuration`.
 
-1. В поле **идентификатор клиента**введите ранее записанный идентификатор приложения.
-1. В поле **секрет клиента**введите секрет клиента, который вы записали ранее.
+1. В поле **Идентификатор клиента** введите ранее записанное значение идентификатора приложения.
+1. В поле **Секрет клиента** введите ранее записанное значение секрета клиента.
 1. Для **области**введите `openid profile` .
 1. Оставьте значения по умолчанию для **типа ответа**и **режим ответа**.
 1. Используемых В качестве **подсказки для домена**введите `contoso.com` . Дополнительные сведения см. в статье [Настройка прямого входа в систему с помощью Azure Active Directory B2C](direct-signin.md#redirect-sign-in-to-a-social-provider).
 1. В разделе **сопоставление утверждений поставщика удостоверений**выберите следующие утверждения:
 
-    * **Идентификатор пользователя**: *OID*
-    * **Отображаемое имя**: *имя*
-    * **Заданное имя**: *given_name*
-    * **Фамилия**: *family_name*
-    * **Адрес электронной почты**: *unique_name*
+    * **User ID**: *oid*;
+    * **Display name**: *name*;
+    * **Given name**: *given_name*;
+    * **Surname**: *family_name*;
+    * **Email**: *unique_name*.
 
 1. Щелкните **Сохранить**.

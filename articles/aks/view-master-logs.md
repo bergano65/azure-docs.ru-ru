@@ -4,12 +4,12 @@ description: Узнайте, как включить и просмотреть �
 services: container-service
 ms.topic: article
 ms.date: 01/03/2019
-ms.openlocfilehash: 721ef4f60d263602b01b5957bfb9bc3b5682a2df
-ms.sourcegitcommit: 8a7b82de18d8cba5c2cec078bc921da783a4710e
+ms.openlocfilehash: a0207ebbb1596e41ad65e21a769d7041a239f767
+ms.sourcegitcommit: 3c66bfd9c36cd204c299ed43b67de0ec08a7b968
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89048284"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "90004873"
 ---
 # <a name="enable-and-review-kubernetes-master-node-logs-in-azure-kubernetes-service-aks"></a>Включение и просмотр журналов главного узла Kubernetes в Службе Azure Kubernetes (AKS)
 
@@ -69,42 +69,43 @@ pod/nginx created
 
 Включение и отображение журналов диагностики может занять несколько минут. В портал Azure перейдите к кластеру AKS и выберите **журналы** в левой части. Закройте окно *примеры запросов* , если оно отображается.
 
-
 В области слева выберите **Журналы**. Чтобы просмотреть журналы *KUBE-Audit* , введите в текстовое поле следующий запрос:
 
 ```
-AzureDiagnostics
-| where Category == "kube-audit"
-| project log_s
+KubePodInventory
+| where TimeGenerated > ago(1d)
 ```
 
 Скорее всего, возвращаются многие журналы. Чтобы просмотреть журналы о модуле NGINX, созданном на предыдущем шаге, добавьте дополнительную инструкцию *WHERE* для поиска *nginx* , как показано в следующем примере запроса:
 
 ```
-AzureDiagnostics
-| where Category == "kube-audit"
-| where log_s contains "nginx"
-| project log_s
+KubePodInventory
+| where TimeGenerated > ago(1d)
+| where Name contains "nginx"
 ```
-
-Чтобы просмотреть дополнительные журналы, вы можете обновить запрос, указав для имени *категории**kube-controller-manager* или *kube-scheduler*, в зависимости от того, какие дополнительные журналы вы активируете. Затем вы можете использовать дополнительные инструкции *where* для уточнения событий, которые вы ищете.
 
 Дополнительные сведения о том, как запрашивать и фильтровать данные журнала, см. в разделе [Просмотр или анализ данных, собранных с помощью поиска по журналам log Analytics][analyze-log-analytics].
 
 ## <a name="log-event-schema"></a>Схема событий журналов
 
-Чтобы проанализировать данные журнала, в следующей таблице представлена схема, используемая для каждого события:
+AKS регистрирует следующие события:
 
-| Имя поля               | Описание |
-|--------------------------|-------------|
-| *resourceId*             | Ресурс Azure, с помощью которого был создан журнал |
-| *time*                   | Метка времени — время передачи журнала |
-| *category*               | Имя контейнера или компонента, генерирующего журнал |
-| *operationName*          | Всегда *Служба контейнеров Майкрософт, управляемые кластеры, журналы диагностики, чтение* |
-| *properties.log*         | Полный текст журнала из компонента |
-| *properties.stream*      | *stderr* или *stdout* |
-| *properties.pod*         | Имя модуля pod, из которого получен журнал |
-| *properties.containerID* | Идентификатор контейнера DOCKER, из которого получен этот журнал |
+* [AzureActivity][log-schema-azureactivity]
+* [AzureMetrics][log-schema-azuremetrics]
+* [ContainerImageInventory][log-schema-containerimageinventory]
+* [ContainerInventory][log-schema-containerinventory]
+* [контаинерлог][log-schema-containerlog]
+* [контаинернодеинвентори][log-schema-containernodeinventory]
+* [контаинерсервицелог][log-schema-containerservicelog]
+* [Периодический сигнал][log-schema-heartbeat]
+* [InsightsMetrics][log-schema-insightsmetrics]
+* [кубивентс][log-schema-kubeevents]
+* [кубехеалс][log-schema-kubehealth]
+* [кубемонажентевентс][log-schema-kubemonagentevents]
+* [кубенодеинвентори][log-schema-kubenodeinventory]
+* [кубеподинвентори][log-schema-kubepodinventory]
+* [кубесервицес][log-schema-kubeservices]
+* [Perf][log-schema-perf]
 
 ## <a name="log-roles"></a>Роли журнала
 
@@ -131,3 +132,19 @@ AzureDiagnostics
 [az-feature-register]: /cli/azure/feature#az-feature-register
 [az-feature-list]: /cli/azure/feature#az-feature-list
 [az-provider-register]: /cli/azure/provider#az-provider-register
+[log-schema-azureactivity]: /azure/azure-monitor/reference/tables/azureactivity
+[log-schema-azuremetrics]: /azure/azure-monitor/reference/tables/azuremetrics
+[log-schema-containerimageinventory]: /azure/azure-monitor/reference/tables/containerimageinventory
+[log-schema-containerinventory]: /azure/azure-monitor/reference/tables/containerinventory
+[log-schema-containerlog]: /azure/azure-monitor/reference/tables/containerlog
+[log-schema-containernodeinventory]: /azure/azure-monitor/reference/tables/containernodeinventory
+[log-schema-containerservicelog]: /azure/azure-monitor/reference/tables/containerservicelog
+[log-schema-heartbeat]: /azure/azure-monitor/reference/tables/heartbeat
+[log-schema-insightsmetrics]: /azure/azure-monitor/reference/tables/insightsmetrics
+[log-schema-kubeevents]: /azure/azure-monitor/reference/tables/kubeevents
+[log-schema-kubehealth]: /azure/azure-monitor/reference/tables/kubehealth
+[log-schema-kubemonagentevents]: /azure/azure-monitor/reference/tables/kubemonagentevents
+[log-schema-kubenodeinventory]: /azure/azure-monitor/reference/tables/kubenodeinventory
+[log-schema-kubepodinventory]: /azure/azure-monitor/reference/tables/kubepodinventory
+[log-schema-kubeservices]: /azure/azure-monitor/reference/tables/kubeservices
+[log-schema-perf]: /azure/azure-monitor/reference/tables/perf

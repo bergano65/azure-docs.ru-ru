@@ -11,12 +11,12 @@ author: aashishb
 ms.reviewer: larryfr
 ms.date: 07/17/2020
 ms.custom: how-to, devx-track-python
-ms.openlocfilehash: 581feff516e0f0cd820c94290d4aaa729cc4d3a4
-ms.sourcegitcommit: c6b9a46404120ae44c9f3468df14403bcd6686c1
+ms.openlocfilehash: 443649826e821014e0e9918526a363a944b5eceb
+ms.sourcegitcommit: f8d2ae6f91be1ab0bc91ee45c379811905185d07
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88889946"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89660007"
 ---
 # <a name="use-workspace-behind-a-firewall-for-azure-machine-learning"></a>Использование рабочей области за брандмауэром для Машинное обучение Azure
 
@@ -92,4 +92,4 @@ ms.locfileid: "88889946"
 ## <a name="next-steps"></a>Дальнейшие действия
 
 * [Руководство. развертыванию и настройке службы "Брандмауэр Azure" с помощью портала Azure](../firewall/tutorial-firewall-deploy-portal.md)
-* [Защита заданий экспериментирования и вывода машинного обучения Azure в виртуальной сети Azure](how-to-enable-virtual-network.md)
+* [Защита заданий экспериментирования и вывода Машинного обучения Azure в виртуальной сети Azure](how-to-network-security-overview.md)

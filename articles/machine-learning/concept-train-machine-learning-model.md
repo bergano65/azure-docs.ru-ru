@@ -10,12 +10,12 @@ ms.subservice: core
 ms.topic: conceptual
 ms.date: 05/13/2020
 ms.custom: devx-track-python
-ms.openlocfilehash: d0341e5a4d5dc036a4c3f90b2a25003137602694
-ms.sourcegitcommit: d7352c07708180a9293e8a0e7020b9dd3dd153ce
+ms.openlocfilehash: 6b40130fb1d965abf76ba9ed1f6ebd45d94c8e01
+ms.sourcegitcommit: 3be3537ead3388a6810410dfbfe19fc210f89fec
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/30/2020
-ms.locfileid: "89144844"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89651020"
 ---
 # <a name="train-models-with-azure-machine-learning"></a>Обучение моделей с помощью Машинного обучения Azure
 
@@ -42,13 +42,13 @@ ms.locfileid: "89144844"
 
 Пакет SDK службы "Машинное обучение Azure" для Python позволяет создавать и запускать рабочие процессы машинного обучения с помощью Машинного обучения Azure. Вы можете взаимодействовать со службой из интерактивного сеанса Python, Jupyter Notebook, Visual Studio Code или предпочитаемой интегрированной среды разработки.
 
-* [Что собой представляет пакет SDK службы "Машинное обучение Azure"для Python?](https://docs.microsoft.com/python/api/overview/azure/ml/intro?view=azure-ml-py)
-* [Установка и обновление пакета SDK](https://docs.microsoft.com/python/api/overview/azure/ml/install?view=azure-ml-py)
+* [Что собой представляет пакет SDK службы "Машинное обучение Azure"для Python?](https://docs.microsoft.com/python/api/overview/azure/ml/intro?view=azure-ml-py&preserve-view=true)
+* [Установка и обновление пакета SDK](https://docs.microsoft.com/python/api/overview/azure/ml/install?view=azure-ml-py&preserve-view=true)
 * [Настройка среды разработки для Машинного обучения Azure](how-to-configure-environment.md)
 
 ### <a name="run-configuration"></a>Конфигурация запуска
 
-Используя [RunConfiguration](https://docs.microsoft.com/python/api/azureml-core/azureml.core.runconfiguration?view=azure-ml-py), можно определить универсальное задание обучения с помощью Машинного обучения Azure. Затем используется конфигурация запуска, а также скрипты обучения, чтобы обучать модель на целевом объекте вычислений.
+Используя [RunConfiguration](https://docs.microsoft.com/python/api/azureml-core/azureml.core.runconfiguration?view=azure-ml-py&preserve-view=true), можно определить универсальное задание обучения с помощью Машинного обучения Azure. Затем используется конфигурация запуска, а также скрипты обучения, чтобы обучать модель на целевом объекте вычислений.
 
 Вы можете начать с конфигурации запуска для локального компьютера, а затем при необходимости переключиться на облачный целевой объект вычислений. При изменении целевого объекта вычислений изменяется только используемая конфигурация запуска. В ходе выполнения также записываются сведения о задании обучения, такие как входные и выходные данные, а также журналы.
 

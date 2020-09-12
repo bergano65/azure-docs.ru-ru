@@ -2,19 +2,15 @@
 title: Управление переменными в службе автоматизации Azure
 description: В этой статье рассказывается, как работать с переменными в модулях runbook и конфигурациях DSC.
 services: automation
-ms.service: automation
 ms.subservice: shared-capabilities
-author: mgoedtel
-ms.author: magoedte
-ms.date: 05/14/2019
+ms.date: 09/10/2020
 ms.topic: conceptual
-manager: carmonm
-ms.openlocfilehash: ee49ae905622b4b76d782f6a31e0c2333b6d54be
-ms.sourcegitcommit: 269da970ef8d6fab1e0a5c1a781e4e550ffd2c55
+ms.openlocfilehash: 300bfa2ed801b810bcaaeb5bc4d04775d590015b
+ms.sourcegitcommit: 3c66bfd9c36cd204c299ed43b67de0ec08a7b968
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/10/2020
-ms.locfileid: "88055298"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "90004571"
 ---
 # <a name="manage-variables-in-azure-automation"></a>Управление переменными в службе автоматизации Azure
 
@@ -30,7 +26,7 @@ ms.locfileid: "88055298"
 
 Служба автоматизации Azure сохраняет переменные, чтобы они были доступны даже после сбоя модуля runbook или конфигурации DSC. Это также позволяет модулю runbook или конфигурации DSC задать значение, которое может использоваться другим модулем или этим же модулем либо конфигурацией DSC при следующем запуске.
 
-Служба автоматизации Azure хранит каждую зашифрованную переменную безопасным образом. При создании переменной можно указать ее шифрование и хранение с помощью службы автоматизации Azure в качестве безопасного ресурса. После создания переменной ее состояние шифрования нельзя изменить без повторного создания переменной. Рекомендация центра безопасности Azure заключается в шифровании всех переменных службы автоматизации Azure, как описано в разделе [переменные учетной записи службы автоматизации](../../security-center/recommendations-reference.md#recs-computeapp). 
+Служба автоматизации Azure хранит каждую зашифрованную переменную безопасным образом. При создании переменной можно указать ее шифрование и хранение с помощью службы автоматизации Azure в качестве безопасного ресурса. После создания переменной ее состояние шифрования нельзя изменить без повторного создания переменной. Рекомендация центра безопасности Azure заключается в шифровании всех переменных службы автоматизации Azure, как описано в разделе [переменные учетной записи службы автоматизации](../../security-center/recommendations-reference.md#recs-computeapp).
 
 >[!NOTE]
 >Безопасные средства в службе автоматизации Azure включают учетные данные, сертификаты, подключения и зашифрованные переменные. Эти ресурсы шифруются и хранятся в службе автоматизации Azure с помощью уникального ключа, который создается для каждой учетной записи службы автоматизации. Служба автоматизации Azure хранит ключ в управляемом системой хранилище ключей Key Vault. Перед сохранением защищенного ресурса служба автоматизации Azure загружает ключ из Key Vault, а затем использует его для шифрования ресурса. 
@@ -45,7 +41,7 @@ ms.locfileid: "88055298"
 * Логическое
 * NULL
 
-Переменная не ограничена указанным типом данных. Если значение должно иметь другой тип, следует задать его с помощью Windows PowerShell. Если указать `Not defined`, значение переменной будет задано равным NULL. Значение задается с помощью командлета [Set-AzAutomationVariable](/powershell/module/az.automation/set-azautomationvariable?view=azps-3.5.0) или внутреннего командлета `Set-AutomationVariable`.
+Переменная не ограничена указанным типом данных. Если значение должно иметь другой тип, следует задать его с помощью Windows PowerShell. Если указать `Not defined`, значение переменной будет задано равным NULL. Значение задается с помощью командлета [Set-AzAutomationVariable](/powershell/module/az.automation/set-azautomationvariable) или внутреннего командлета `Set-AutomationVariable`.
 
 Создать или изменить значение сложной переменной на портале Azure невозможно. Однако с помощью Windows PowerShell можно указать значение любого типа. Сложные типы возвращаются в виде [PSCustomObject](/dotnet/api/system.management.automation.pscustomobject).
 
@@ -60,10 +56,10 @@ ms.locfileid: "88055298"
 
 | Командлет | Описание |
 |:---|:---|
-|[Get-AzAutomationVariable](/powershell/module/az.automation/get-azautomationvariable?view=azps-3.5.0) | Получает значение существующей переменной. Если значение простого типа, возвращается тот же тип. Если это сложный тип, возвращается тип `PSCustomObject`. <br>**Примечание.**  Этот командлет нельзя использовать для получения значения зашифрованной переменной. Единственный способ получить такое значение — использовать внутренний командлет `Get-AutomationVariable` в модуле runbook или конфигурации DSC. См. раздел [Внутренние командлеты для доступа к переменным](#internal-cmdlets-to-access-variables). |
-|[New-AzAutomationVariable](/powershell/module/az.automation/new-azautomationvariable?view=azps-3.5.0) | Создает новую переменную и устанавливает ее значение.|
-|[Remove-AzAutomationVariable](/powershell/module/az.automation/remove-azautomationvariable?view=azps-3.5.0)| Удаляет существующую переменную.|
-|[Set-AzAutomationVariable](/powershell/module/az.automation/set-azautomationvariable?view=azps-3.5.0)| Получает значение существующей переменной. |
+|[Get-AzAutomationVariable](/powershell/module/az.automation/get-azautomationvariable) | Получает значение существующей переменной. Если значение простого типа, возвращается тот же тип. Если это сложный тип, возвращается тип `PSCustomObject`. <br>**Примечание.**  Этот командлет нельзя использовать для получения значения зашифрованной переменной. Единственный способ получить такое значение — использовать внутренний командлет `Get-AutomationVariable` в модуле runbook или конфигурации DSC. См. раздел [Внутренние командлеты для доступа к переменным](#internal-cmdlets-to-access-variables). |
+|[New-AzAutomationVariable](/powershell/module/az.automation/new-azautomationvariable) | Создает новую переменную и устанавливает ее значение.|
+|[Remove-AzAutomationVariable](/powershell/module/az.automation/remove-azautomationvariable)| Удаляет существующую переменную.|
+|[Set-AzAutomationVariable](/powershell/module/az.automation/set-azautomationvariable)| Получает значение существующей переменной. |
 
 ## <a name="internal-cmdlets-to-access-variables"></a>Внутренние командлеты для доступа к переменным
 
@@ -103,16 +99,16 @@ Write-output "The encrypted value of the variable is: $mytestencryptvar"
 
 ### <a name="create-and-get-a-variable-using-the-azure-portal"></a>Создание и получение переменной с помощью портала Azure
 
-1. В учетной записи службы автоматизации щелкните плитку **Ресурсы**, а затем в колонке **Ресурсы** выберите **Переменные**.
-2. На плитке **Переменные** выберите **Добавить переменную**.
-3. Укажите параметры в колонке **Новая переменная** и нажмите кнопку **Создать**, чтобы сохранить новую переменную.
+1. В учетной записи службы автоматизации в области слева выберите **переменные** в разделе **Общие ресурсы**.
+2. На странице **переменные** выберите **Добавить переменную**.
+3. Заполните параметры на странице **Новая переменная** , а затем нажмите кнопку **создать** , чтобы сохранить новую переменную.
 
 > [!NOTE]
 > После сохранения зашифрованной переменной ее нельзя просмотреть на портале. Ее можно только изменять.
 
 ### <a name="create-and-get-a-variable-in-windows-powershell"></a>Создание и получение переменной в Windows PowerShell
 
-В модуле runbook или конфигурации DSC для создания переменной и задания ее начального значения используется командлет `New-AzAutomationVariable`. Если переменная зашифрована, в вызове должен использоваться параметр `Encrypted`. Скрипт может получить значение переменной с помощью `Get-AzAutomationVariable`. 
+В модуле runbook или конфигурации DSC для создания переменной и задания ее начального значения используется командлет `New-AzAutomationVariable`. Если переменная зашифрована, в вызове должен использоваться параметр `Encrypted`. Скрипт может получить значение переменной с помощью `Get-AzAutomationVariable`.
 
 >[!NOTE]
 >Скрипт PowerShell не может получить зашифрованное значение. Единственный способ сделать это — использовать внутренний командлет `Get-AutomationVariable`.
@@ -127,7 +123,7 @@ $string = (Get-AzAutomationVariable -ResourceGroupName "ResourceGroup01" `
 –AutomationAccountName "MyAutomationAccount" –Name 'MyStringVariable').Value
 ```
 
-В приведенном ниже примере показано, как создать переменную сложного типа и вернуть ее свойства. В данном случае используется объект виртуальной машины из [Get-AzVM](/powershell/module/Az.Compute/Get-AzVM?view=azps-3.5.0).
+В приведенном ниже примере показано, как создать переменную сложного типа и вернуть ее свойства. В данном случае используется объект виртуальной машины из [Get-AzVM](/powershell/module/Az.Compute/Get-AzVM).
 
 ```powershell
 $vm = Get-AzVM -ResourceGroupName "ResourceGroup01" –Name "VM01"

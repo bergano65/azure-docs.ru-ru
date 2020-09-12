@@ -8,14 +8,14 @@ ms.tgt_pltfrm: ibiza
 ms.topic: conceptual
 ms.date: 07/23/2020
 ms.author: mbullwin
-ms.openlocfilehash: 1d85f011289bfa27bcf1e94d8da8cd7a32092c2c
-ms.sourcegitcommit: fbb66a827e67440b9d05049decfb434257e56d2d
+ms.openlocfilehash: 18e757ccac56d2165a1b46bb73a698ac754177b7
+ms.sourcegitcommit: f8d2ae6f91be1ab0bc91ee45c379811905185d07
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87799571"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89657952"
 ---
-# <a name="azure-monitor-workbooks"></a>Изучение и предоставление общего доступа к данным об использовании c интерактивными книгами в Application Insights
+# <a name="azure-monitor-workbooks"></a>Azure Monitor книги
 
 Книги предоставляют гибкий холст для анализа данных и создания полнофункциональных визуальных отчетов в портал Azure. Они позволяют переходить к нескольким источникам данных из Azure и объединять их в единый интерактивный интерфейс. 
 
@@ -43,12 +43,13 @@ ms.locfileid: "87799571"
 
 Книги предоставляют широкий набор возможностей для визуализации данных. Подробные примеры каждого типа визуализации см. в приведенных ниже ссылках на примеры.
 
-* [Текст](workbooks-visualizations.md#text)
-* [Создание графиков](workbooks-visualizations.md#charts)
-* [Сетки](workbooks-visualizations.md#grids)
-* [Плитки](workbooks-visualizations.md#tiles)
-* [Деревья](workbooks-visualizations.md#trees)
-* [Графы](workbooks-visualizations.md#graphs)
+* [Text](workbooks-text-visualizations.md)
+* [Создание графиков](workbooks-chart-visualizations.md)
+* [Сетки](workbooks-grid-visualizations.md)
+* [Плитки](workbooks-tile-visualizations.md)
+* [Деревья](workbooks-tree-visualizations.md)
+* [Графы](workbooks-graph-visualizations.md)
+* [Составная панель](workbooks-composite-bar.md)
 
 ![Примеры визуализаций книги](./media/workbooks-overview/visualizations.png)
 
@@ -86,9 +87,9 @@ ms.locfileid: "87799571"
 
 ### <a name="editing-mode"></a>Режим правки
 
-Чтобы понять, как объединяется этот шаблон книги, необходимо переключиться в режим редактирования, нажав кнопку **изменить**. 
+Чтобы понять, как объединяется этот шаблон книги, необходимо переключиться в режим редактирования, нажав кнопку **изменить**.
 
-![Снимок экрана шаблона "анализ сбоев приложений"](./media/workbooks-overview/edit.png)
+![Снимок экрана: кнопка "Изменить" в книгах.](./media/workbooks-overview/edit.png)
 
 После переключения в режим правки появится несколько полей **ввода** , соответствующих каждому отдельному аспекту книги.
 

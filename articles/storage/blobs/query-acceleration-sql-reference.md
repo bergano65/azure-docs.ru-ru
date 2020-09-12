@@ -1,28 +1,25 @@
 ---
-title: Справочник по языку SQL для ускорения запросов (Предварительная версия)
+title: Справочник по языку SQL для ускорения запросов
 titleSuffix: Azure Storage
 description: Узнайте, как использовать синтаксис SQL для ускорения запросов.
 services: storage
 author: normesta
 ms.service: storage
 ms.topic: conceptual
-ms.date: 04/21/2020
+ms.date: 09/09/2020
 ms.author: normesta
 ms.subservice: data-lake-storage-gen2
 ms.reviewer: ereilebr
-ms.openlocfilehash: 3408970bcf5e34ce9f0f0afe9e723b4877dcd694
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: affddf7367f58107106ae07a07b8baedac73e251
+ms.sourcegitcommit: f8d2ae6f91be1ab0bc91ee45c379811905185d07
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84193412"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89659567"
 ---
-# <a name="query-acceleration-sql-language-reference-preview"></a>Справочник по языку SQL для ускорения запросов (Предварительная версия)
+# <a name="query-acceleration-sql-language-reference"></a>Справочник по языку SQL для ускорения запросов
 
 Ускорение запросов поддерживает язык ANSI, аналогичный SQL, для выражения запросов к содержимому большого двоичного объекта.  Диалект SQL для ускорения запросов — это подмножество ANSI SQL с ограниченным набором поддерживаемых типов данных, операторов и т. д., но оно также расширяется в стандарте ANSI SQL для поддержки запросов к иерархическим форматам данных, таким как JSON. 
-
-> [!NOTE]
-> Функция ускорения запросов доступна в общедоступной предварительной версии и доступна в центральных регионах для Канады и Франции. Чтобы просмотреть ограничения, см. статью [Известные проблемы](data-lake-storage-known-issues.md) . Чтобы зарегистрироваться в предварительной версии, см. [эту форму](https://aka.ms/adls/qa-preview-signup). 
 
 ## <a name="select-syntax"></a>Выбор синтаксиса
 
@@ -66,7 +63,7 @@ SELECT sys.split(split_size)FROM BlobStorage
 |timestamp|Момент времени.                           |
 |BOOLEAN  |Значение true или false.                             |
 
-При чтении значений из данных в формате CSV все значения считываются как строки.  Строковые значения могут быть преобразованы в другие типы с помощью выражений ПРИВЕДЕНия.  Значения могут быть неявно приведены к другим типам в зависимости от контекста. Дополнительные сведения см. в разделе [приоритет типов данных (Transact-SQL)](https://docs.microsoft.com/sql/t-sql/data-types/data-type-precedence-transact-sql?view=sql-server-2017).
+При чтении значений из данных в формате CSV все значения считываются как строки.  Строковые значения могут быть преобразованы в другие типы с помощью выражений ПРИВЕДЕНия.  Значения могут быть неявно приведены к другим типам в зависимости от контекста. Дополнительные сведения см. в разделе [приоритет типов данных (Transact-SQL)](https://docs.microsoft.com/sql/t-sql/data-types/data-type-precedence-transact-sql).
 
 ## <a name="expressions"></a>Выражения
 
@@ -80,15 +77,36 @@ SELECT sys.split(split_size)FROM BlobStorage
 
 Поддерживаются следующие стандартные операторы SQL:
 
-``=``, ``!=``, ``<>``, ``<``, ``<=``, ``>``, ``>=``, ``+``, ``-``, ``/``, ``*``, ``%``, ``AND``, ``OR``, ``NOT``, ``CAST``, ``BETWEEN``, ``IN``, ``NULLIF``, ``COALESCE``
+|Оператор|Описание|
+|--|--|
+|[=](https://docs.microsoft.com/sql/t-sql/language-elements/equals-transact-sql)    |Проверяет равенство двух выражений (оператор сравнения).|
+|[!=](https://docs.microsoft.com/sql/t-sql/language-elements/not-equal-to-transact-sql-exclamation)    |Проверяет неравенство одного выражения другому (оператор сравнения).|
+|[<>](https://docs.microsoft.com/sql/t-sql/language-elements/not-equal-to-transact-sql-traditional)    |Сравнивает два выражения для неравенства (оператор сравнения).|
+|[<](https://docs.microsoft.com/sql/t-sql/language-elements/less-than-transact-sql)    |Сравнивает два выражения для меньшего (оператора сравнения).|
+|[<=](https://docs.microsoft.com/sql/t-sql/language-elements/less-than-or-equal-to-transact-sql)    |Сравнивает два выражения на наличие меньшего или равного (оператора сравнения).|
+|[>](https://docs.microsoft.com/sql/t-sql/language-elements/greater-than-transact-sql)    |Сравнивает два выражения для оператора "больше" (оператор сравнения). |
+|[>=](https://docs.microsoft.com/sql/t-sql/language-elements/greater-than-or-equal-to-transact-sql)    |Сравнивает два выражения на верность того, больше или равно одно выражение другому (оператор сравнения).|
+|[+](https://docs.microsoft.com/sql/t-sql/language-elements/add-transact-sql)    |складывает два числа. С помощью этого арифметического оператора сложения можно также прибавлять число дней к дате.|
+|[-](https://docs.microsoft.com/sql/t-sql/language-elements/subtract-transact-sql)    |Вычитает одно число из другого (оператор арифметического вычитания). |
+|[/](https://docs.microsoft.com/sql/t-sql/language-elements/divide-transact-sql)    |Выполняет деление одного числа на другое (арифметический оператор деления).|
+|[*](https://docs.microsoft.com/sql/t-sql/language-elements/multiply-transact-sql)    |Умножает два выражения (арифметический оператор умножения).|
+|[%](https://docs.microsoft.com/sql/t-sql/language-elements/modulo-transact-sql)    |Возвращает остаток от деления одного числа на другое.|
+|[AND](https://docs.microsoft.com/sql/t-sql/language-elements/bitwise-and-transact-sql)    |Выполняет побитовую логическую операцию «И» между двумя целочисленными значениями.|
+|[OR](https://docs.microsoft.com/sql/t-sql/language-elements/bitwise-or-transact-sql)    |Выполняет побитовую логическую операцию или между двумя указанными целочисленными значениями, преобразованными в двоичные выражения в инструкциях Transact-SQL.|
+|[NOT](https://docs.microsoft.com/sql/t-sql/language-elements/not-transact-sql)    |Инвертирует входное логическое значение.|
+|[CAST](https://docs.microsoft.com/sql/t-sql/functions/cast-and-convert-transact-sql)    |Преобразует выражение одного типа данных в другой.|
+|[BETWEEN](https://docs.microsoft.com/sql/t-sql/language-elements/between-transact-sql)    |Определяет диапазон для проверки.|
+|[IN](https://docs.microsoft.com/sql/t-sql/language-elements/in-transact-sql)    |Определяет, совпадает ли указанное значение с одним из значений, содержащихся во вложенном запросе или списке.|
+|[NULLIF](https://docs.microsoft.com/sql/t-sql/language-elements/nullif-transact-sql)    |Возвращает значение NULL, если два указанных выражения равны.|
+|[COALESCE](https://docs.microsoft.com/sql/t-sql/language-elements/coalesce-transact-sql)    |Вычисляет аргументы по порядку и возвращает текущее значение первого выражения, которое изначально не имеет значения NULL.|
 
-Если типы данных слева и справа от оператора различаются, автоматическое преобразование будет выполняться в соответствии с указанными здесь правилами: [приоритет типов данных (Transact-SQL)](https://docs.microsoft.com/sql/t-sql/data-types/data-type-precedence-transact-sql?view=sql-server-2017).
+Если типы данных слева и справа от оператора различаются, автоматическое преобразование будет выполняться в соответствии с указанными здесь правилами: [приоритет типов данных (Transact-SQL)](https://docs.microsoft.com/sql/t-sql/data-types/data-type-precedence-transact-sql).
 
 Язык SQL с ускорением запросов поддерживает только небольшое подмножество типов данных, обсуждаемых в этой статье.  См. раздел [типы данных](#data-types) этой статьи.
 
 ### <a name="casts"></a>Приведения
 
-Язык SQL с ускорением запросов поддерживает оператор CAST в соответствии с правилами, приведенными здесь: [Преобразование типов данных (ядро СУБД)](https://docs.microsoft.com/sql/t-sql/data-types/data-type-conversion-database-engine?view=sql-server-2017).  
+Язык SQL с ускорением запросов поддерживает оператор CAST в соответствии с правилами, приведенными здесь: [Преобразование типов данных (ядро СУБД)](https://docs.microsoft.com/sql/t-sql/data-types/data-type-conversion-database-engine).  
 
 Язык SQL с ускорением запросов поддерживает только неограниченное подмножество типов данных, обсуждаемых в этой статье.  См. раздел [типы данных](#data-types) этой статьи.
 
@@ -96,7 +114,16 @@ SELECT sys.split(split_size)FROM BlobStorage
 
 Язык SQL для ускорения запросов поддерживает следующие стандартные строковые функции SQL:
 
-``LIKE``, ``CHAR_LENGTH``, ``CHARACTER_LENGTH``, ``LOWER``, ``UPPER``, ``SUBSTRING``, ``TRIM``, ``LEADING``, ``TRAILING``.
+|Функция|Описание|
+|--|--|
+|CHAR_LENGTH    | Возвращает длину в символах строкового выражения, если строковое выражение имеет символьный тип данных; в противном случае возвращает длину строкового выражения в байтах (наименьшее целое число не меньше числа бит, деленного на 8). (Эта функция аналогична функции CHARACTER_LENGTH.)|
+|CHARACTER_LENGTH    |Возвращает длину в символах строкового выражения, если строковое выражение имеет символьный тип данных; в противном случае возвращает длину строкового выражения в байтах (наименьшее целое число не меньше числа бит, деленного на 8). (Эта функция аналогична функции CHAR_LENGTH|
+|[LOWER](https://docs.microsoft.com/sql/t-sql/functions/lower-transact-sql)    |Возвращает символьное выражение после преобразования символов верхнего регистра в символы нижнего регистра.|
+|[UPPER](https://docs.microsoft.com/sql/t-sql/functions/upper-transact-sql)    |Возвращает символьное выражение, в котором символы нижнего регистра преобразованы в символы верхнего регистра.|
+|[SUBSTRING](https://docs.microsoft.com/sql/t-sql/functions/substring-transact-sql)    |Возвращает часть символьного, двоичного, текстового или графического выражения в SQL Server.|
+|[TRIM](https://docs.microsoft.com/sql/t-sql/functions/trim-transact-sql)    |Удаляет символ пробела (32) или другие указанные символы из начала и конца строки.|
+|LEADING    |Описание|
+|TRAILING    |Описание|
 
 Вот несколько примеров:
 
@@ -108,16 +135,6 @@ SELECT sys.split(split_size)FROM BlobStorage
 |UPPER|``SELECT UPPER('AbCdEfG') from BlobStorage``|``ABCDEFG``|
 |SUBSTRING|``SUBSTRING('123456789', 1, 5)``|``23456``|
 |TRIM|``TRIM(BOTH '123' FROM '1112211Microsoft22211122')``|``Microsoft``|
-
-Функция [Like](https://docs.microsoft.com/sql/t-sql/language-elements/like-transact-sql?view=sql-server-ver15) позволяет найти шаблон. Вот несколько примеров, в которых для поиска строки данных используется функция [Like](https://docs.microsoft.com/sql/t-sql/language-elements/like-transact-sql?view=sql-server-ver15) ``abc,abd,cd\ntest,test2,test3\na_bc,xc%d^e,gh[i `` .
-
-|Запрос|Пример|
-|--|--|
-|``SELECT _1, _2, _3 from BlobStorage where _2 LIKE 'a%'``|``abc,abd,cd\n``|
-|``SELECT * from BlobStorage where _1 LIKE 'a[bcd]c``|``abc,abd,cd\n``|
-|``SELECT _1 from BlobStorage where _2 LIKE '[^xyz]%'``|``abc\ntest\n``|
-|``SELECT * from BlobStorage where _1 LIKE 'a_``|``abc,abd,cd\n``|
-|``SELECT _2,_3 from BlobStorage where _3 LIKE '[g-h]_![[a-j]' Escape '!'``|``xc%d^e,gh[i\n``|
 
 ### <a name="date-functions"></a>Функции данных
 
@@ -133,14 +150,12 @@ SELECT sys.split(split_size)FROM BlobStorage
 
 Примеры:
 
-```sql
-DATE_ADD(datepart, quantity, timestamp)
-DATE_ADD('minute', 1, CAST('2017-01-02T03:04:05.006Z' AS TIMESTAMP)
+"" SQL DATE_ADD (datepart, Quantity, timestamp) DATE_ADD ("Minute", 1, CAST ("2017-01-02T03:04:05.006 Z" в качестве метки времени)
 ```
 
-#### <a name="date_diff-function"></a>Функция DATE_DIFF
+#### DATE_DIFF function
 
-Язык SQL для ускорения запросов поддерживает год, месяц, день, час, минуту, секунду для ``DATE_DIFF`` функции.
+The query acceleration SQL language supports year, month, day, hour, minute, second for the ``DATE_DIFF`` function.
 
 ```sql
 DATE_DIFF(datepart, timestamp, timestamp)
@@ -172,7 +187,7 @@ TO_STRING(CAST('1969-07-20T20:18Z' AS TIMESTAMP),  'MMMM d, y')
 |Строка форматирования    |Выходные данные                               |
 |-----------------|-------------------------------------|
 |yy               |Год в формате 2 цифр — 1999 как "99"|
-|y                |Год в формате 4 цифр               |
+|да                |Год в формате 4 цифр               |
 |гггг             |Год в формате 4 цифр               |
 |M                |Месяц года — 1                    |
 |ММ               |Нуль-го месяца — 01               |
@@ -220,12 +235,12 @@ TO_TIMESTAMP('2007T')
 
 |Выражение|Описание|
 |--|--|
-|[COUNT ( \* )](https://docs.microsoft.com/sql/t-sql/functions/count-transact-sql?view=sql-server-ver15)    |Возвращает количество записей, соответствующих выражению предиката.|
-|[COUNT (выражение)](https://docs.microsoft.com/sql/t-sql/functions/count-transact-sql?view=sql-server-ver15)    |Возвращает число записей, для которых выражение не имеет значение null.|
-|[AVERAGE (выражение)](https://docs.microsoft.com/sql/t-sql/functions/avg-transact-sql?view=sql-server-ver15)    |Возвращает среднее значение выражения, отличное от NULL.|
-|[MIN (выражение)](https://docs.microsoft.com/sql/t-sql/functions/min-transact-sql?view=sql-server-ver15)    |Возвращает минимальное значение выражения, отличное от NULL.|
-|[Max (выражение](https://docs.microsoft.com/sql/t-sql/functions/max-transact-sql?view=sql-server-ver15))    |Возвращает максимальное значение выражения, отличное от NULL.|
-|[SUM (выражение)](https://docs.microsoft.com/sql/t-sql/functions/sum-transact-sql?view=sql-server-ver15)    |Возвращает сумму всех значений выражения, отличных от NULL.|
+|[COUNT ( \* )](https://docs.microsoft.com/sql/t-sql/functions/count-transact-sql)    |Возвращает количество записей, соответствующих выражению предиката.|
+|[COUNT (выражение)](https://docs.microsoft.com/sql/t-sql/functions/count-transact-sql)    |Возвращает число записей, для которых выражение не имеет значение null.|
+|[AVERAGE (выражение)](https://docs.microsoft.com/sql/t-sql/functions/avg-transact-sql)    |Возвращает среднее значение выражения, отличное от NULL.|
+|[MIN (выражение)](https://docs.microsoft.com/sql/t-sql/functions/min-transact-sql)    |Возвращает минимальное значение выражения, отличное от NULL.|
+|[MAX (выражение](https://docs.microsoft.com/sql/t-sql/functions/max-transact-sql)    |Возвращает максимальное значение выражения, отличное от NULL.|
+|[SUM (выражение)](https://docs.microsoft.com/sql/t-sql/functions/sum-transact-sql)    |Возвращает сумму всех значений выражения, отличных от NULL.|
 
 ### <a name="missing"></a>ОТСУТСТВУЮЩ
 
@@ -321,8 +336,8 @@ SELECT sys.split(split_size)FROM BlobStorage
 >[!NOTE]
 > Значение split_size должно быть не менее 10 МБ (10485760).
 
-## <a name="see-also"></a>См. также
+## <a name="see-also"></a>См. также раздел
 
-- [Ускорение запросов Azure Data Lake Storage (Предварительная версия)](data-lake-storage-query-acceleration.md)
-- [Фильтрация данных с помощью ускорения запросов Azure Data Lake Storage (Предварительная версия)](data-lake-storage-query-acceleration-how-to.md)
+- [Ускорение запросов Azure Data Lake Storage](data-lake-storage-query-acceleration.md)
+- [Фильтрация данных с помощью ускорения запросов Azure Data Lake Storage](data-lake-storage-query-acceleration-how-to.md)
 

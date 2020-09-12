@@ -6,14 +6,14 @@ author: alkohli
 ms.service: databox
 ms.subservice: edge
 ms.topic: how-to
-ms.date: 08/25/2020
+ms.date: 09/09/2020
 ms.author: alkohli
-ms.openlocfilehash: ac9ff084476f37348b72bdb42b9b74660132b762
-ms.sourcegitcommit: bcda98171d6e81795e723e525f81e6235f044e52
+ms.openlocfilehash: 7d29408c126844615666a4ab217027b6ae1d037d
+ms.sourcegitcommit: f8d2ae6f91be1ab0bc91ee45c379811905185d07
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/01/2020
-ms.locfileid: "89254649"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89659959"
 ---
 # <a name="deploy-a-gpu-enabled-iot-module-from-azure-marketplace-on-azure-stack-edge-gpu-device"></a>Развертывание модуля IoT с поддержкой GPU из Azure Marketplace на устройстве с Azure Stack ребра
 
@@ -33,9 +33,7 @@ ms.locfileid: "89254649"
 Перед началом работы убедитесь, что у вас есть следующие ресурсы:
 
 - У вас есть доступ к GPU, поддерживающему 1-node Azure Stack пограничном устройстве. Это устройство активируется с помощью ресурса в Azure. 
-- Вы настроили вычисление на этом устройстве. 
-    - Выполните действия, описанные в [руководстве по настройке вычислений на Azure Stack пограничном устройстве](azure-stack-edge-gpu-deploy-configure-compute.md).
-    - Обязательно 
+- Вы настроили вычисление на этом устройстве. Выполните действия, описанные в [руководстве по настройке вычислений на Azure Stack пограничном устройстве](azure-stack-edge-gpu-deploy-configure-compute.md).
 - Следующие ресурсы по разработке в клиенте Windows:
     - [Visual Studio Code](https://code.visualstudio.com/)  
     - [Расширение Azure IOT Edge для Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=vsciot-vscode.azure-iot-edge).   
@@ -113,6 +111,6 @@ ms.locfileid: "89254649"
 
         Вы видите, что время, затраченное на выполнение одного и того же набора операций (5000 итераций преобразования фигур) по GPU, гораздо меньше, чем для ЦП.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Next Steps
 
 - Дополнительные сведения о [настройке GPU для использования модуля](azure-stack-edge-j-series-configure-gpu-modules.md).

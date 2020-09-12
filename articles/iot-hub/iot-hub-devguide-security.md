@@ -16,12 +16,12 @@ ms.custom:
 - 'Role: Operations'
 - devx-track-javascript
 - devx-track-csharp
-ms.openlocfilehash: f8971faec53830746c76d09a6cf7f22d2c80c45a
-ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
+ms.openlocfilehash: 3e1de8b5c35c2f62c65b2bdd4751df86127010ad
+ms.sourcegitcommit: 43558caf1f3917f0c535ae0bf7ce7fe4723391f9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89017691"
+ms.lasthandoff: 09/11/2020
+ms.locfileid: "90015132"
 ---
 # <a name="control-access-to-iot-hub"></a>Управление доступом к Центру Интернета вещей
 
@@ -361,7 +361,12 @@ var token = generateSasToken(endpoint, policyKey, policyName, 60);
 
 Для аутентификации устройство может использовать только один из вариантов: либо сертификат X.509, либо маркер безопасности.
 
-Дополнительные сведения об аутентификации с помощью центра сертификации см. в статье [Проверка подлинности устройства с помощью сертификатов ЦС X.509](iot-hub-x509ca-overview.md).
+Следующие функциональные возможности не поддерживаются для устройств, использующих проверку подлинности ЦС X. 509:
+
+* HTTPS, MQTT через WebSockets и AMQP через протоколы WebSocket.
+* Передача файлов (все протоколы).
+
+Дополнительные сведения об аутентификации с помощью центра сертификации см. в статье [Проверка подлинности устройства с помощью сертификатов ЦС X.509](iot-hub-x509ca-overview.md). Сведения о том, как отправить и проверить центр сертификации с помощью центра Интернета вещей, см. [в разделе Настройка безопасности X. 509 в центре Интернета вещей Azure](iot-hub-security-x509-get-started.md).
 
 ### <a name="register-an-x509-certificate-for-a-device"></a>Регистрация сертификата X.509 для устройства
 

@@ -1,20 +1,20 @@
 ---
-title: Справочник по службе файлов Azure
-description: Найдите Справочник по API службы хранилища Azure, файлы readme и пакеты клиентских библиотек.
+title: Справочные материалы по Файлам Azure
+description: Найдите Справочник по API файлов Azure, файлы readme и пакеты клиентских библиотек.
 author: mhopkins-msft
 ms.author: mhopkins
 ms.date: 07/14/2020
 ms.service: storage
 ms.topic: conceptual
 ms.reviewer: ripohane
-ms.openlocfilehash: c5799b7ec9f6ecce1b9203345446b2d3240beb80
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.openlocfilehash: cbbd4960a498516182323748e6609b834b1d4884
+ms.sourcegitcommit: 43558caf1f3917f0c535ae0bf7ce7fe4723391f9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86527852"
+ms.lasthandoff: 09/11/2020
+ms.locfileid: "90014690"
 ---
-# <a name="azure-files-reference"></a>Справочник по службе файлов Azure
+# <a name="azure-files-reference"></a>Справочные материалы по Файлам Azure
 
 Найдите Справочник по API службы файлов Azure, пакеты библиотек, файлы readme и статьи по началу работы.
 
@@ -66,8 +66,8 @@ ms.locfileid: "86527852"
 
 |  Версия  | Справочная документация | Пакет | Краткое руководство |
 | :-------: | ----------------------- | ------- | ---------- |
-| 12.x | [Клиентские библиотеки службы хранилища Azure версии 12 для Python](/azure/developer/python/sdk/storage/overview?view=storage-py-v12) | [Пакет (PyPI)](https://pypi.org/project/azure-storage-file/12.0.0b4/) | [Примеры](/python/api/overview/azure/storage-file-share-readme#examples) |
-| 2.x | [Клиентские библиотеки службы хранилища Azure версии 2 для Python](/azure/developer/python/sdk/storage/overview?view=storage-py-v2) | [Пакет (PyPI)](https://pypi.org/project/azure-storage-file/2.1.0/) | [Разработка для хранилища файлов Azure с помощью Python](/azure/storage/files/storage-python-how-to-use-file-storage) |
+| 12.x | [Клиентские библиотеки службы хранилища Azure версии 12 для Python](/azure/developer/python/sdk/storage/overview) | [Пакет (PyPI)](https://pypi.org/project/azure-storage-file/12.0.0b4/) | [Примеры](/python/api/overview/azure/storage-file-share-readme#examples) |
+| 2.x | [Клиентские библиотеки службы хранилища Azure версии 2 для Python](/azure/developer/python/sdk/storage/overview?view=storage-py-v2&preserve-view=true) | [Пакет (PyPI)](https://pypi.org/project/azure-storage-file/2.1.0/) | [Разработка для хранилища файлов Azure с помощью Python](/azure/storage/files/storage-python-how-to-use-file-storage) |
 
 ## <a name="javascript-client-libraries"></a>Клиентские библиотеки JavaScript
 
@@ -75,14 +75,14 @@ ms.locfileid: "86527852"
 
 |  Версия  | Справочная документация | Пакет | Краткое руководство |
 | :-------: | ----------------------- | ------- | ---------- |
-| 12.x | [Клиентская библиотека службы файлов Azure для JavaScript](/javascript/api/overview/azure/storage-file-share-readme) | [Пакет (NPM)](https://www.npmjs.com/package/@azure/storage-file-share) | [Примеры](/javascript/api/overview/azure/storage-file-share-readme#examples) |
-| 10.x | [@azure/storage-file](/javascript/api/@azure/storage-file) | [Пакет (NPM)](https://www.npmjs.com/package/@azure/storage-file) | &nbsp; |
+| 12.x | [Клиентская библиотека службы файлов Azure для JavaScript](/javascript/api/overview/azure/storage-file-share-readme) | [Пакет (npm)](https://www.npmjs.com/package/@azure/storage-file-share) | [Примеры](/javascript/api/overview/azure/storage-file-share-readme#examples) |
+| 10.x | [@azure/storage-file](/javascript/api/@azure/storage-file) | [Пакет (npm)](https://www.npmjs.com/package/@azure/storage-file) | &nbsp; |
 
-## <a name="rest-apis"></a>REST API
+## <a name="rest-apis"></a>Интерфейсы REST API
 
 В следующей таблице перечислены справочные материалы и примеры документации по интерфейсам API службы файлов Azure.
 
-| Справочная документация | Обзор |
+| Справочная документация | Overview |
 | ----------------------- | -------- |
 | [REST API службы файлов](/rest/api/storageservices/file-service-rest-api) | [Основные понятия службы файлов](/rest/api/storageservices/file-service-concepts) |
 
@@ -106,8 +106,9 @@ ms.locfileid: "86527852"
 
 | Версия | Платформа |
 | ------- | -------- |
-|  3.x  | [PowerShell](https://docs.microsoft.com/powershell/module/az.storage/?view=azps-3.8.0) |
-|  2.x  | [PowerShell](https://docs.microsoft.com/powershell/module/az.storage/?view=azps-2.8.0) |
+|  4.x  | [PowerShell](/powershell/module/az.storage/?view=azps-4.6.1&preserve-view=true) |
+|  3.x  | [PowerShell](/powershell/module/az.storage/?view=azps-3.8.0&preserve-view=true) |
+|  2.x  | [PowerShell](/powershell/module/az.storage/?view=azps-2.8.0&preserve-view=true) |
 
 ## <a name="azure-cli"></a>Azure CLI
 

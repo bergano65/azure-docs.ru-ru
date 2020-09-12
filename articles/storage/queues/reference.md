@@ -1,19 +1,19 @@
 ---
 title: Справочная документация по Хранилищу очередей Azure
-description: Найдите Справочник по API службы хранилища Azure, файлы readme и пакеты клиентских библиотек.
+description: Найдите Справочник по API хранилища очередей Azure, файлы readme и пакеты клиентских библиотек.
 author: mhopkins-msft
 ms.author: mhopkins
-ms.date: 06/02/2020
+ms.date: 09/10/2020
 ms.service: storage
 ms.subservice: queues
 ms.topic: conceptual
 ms.reviewer: ripohane
-ms.openlocfilehash: fbf20b92edf5d8dce8438731c2812a78e457a402
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 5544a6985ca357688b2585fa29c6dc63546c3e8c
+ms.sourcegitcommit: 43558caf1f3917f0c535ae0bf7ce7fe4723391f9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84976665"
+ms.lasthandoff: 09/11/2020
+ms.locfileid: "90014962"
 ---
 # <a name="azure-queue-storage-reference"></a>Справочная документация по Хранилищу очередей Azure
 
@@ -25,8 +25,8 @@ ms.locfileid: "84976665"
 
 |  Версия  | Справочная документация | Пакет | Краткое руководство |
 | :-------: | ----------------------- | ------- | ---------- |
-| 12.x | [Пространство имен Azure. Storage. Queues](/dotnet/api/azure.storage.queues) | [Пакет (NuGet)](https://www.nuget.org/packages/Azure.Storage.Queues/) | [Краткое руководство. Клиентская библиотека хранилища очередей Azure версии 12 для .NET](/azure/storage/queues/storage-quickstart-queues-dotnet) |
-| 11. x | [Пространство имен Microsoft. Azure. Storage. Queue](/dotnet/api/microsoft.azure.storage.queue) | [Пакет (NuGet)](https://www.nuget.org/packages/Microsoft.Azure.Storage.Queue/) | [Краткое руководство. Использование пакета SDK службы хранилища Azure версии 11 для .NET для управления очередью](/azure/storage/queues/storage-quickstart-queues-dotnet-legacy) |
+| 12.x | [Пространство имен Azure. Storage. Queues](/dotnet/api/azure.storage.queues) | [Пакет (NuGet)](https://www.nuget.org/packages/Azure.Storage.Queues/) | [Краткое руководство. Использование клиентской библиотеки Хранилища очередей Azure версии 12 для .NET](/azure/storage/queues/storage-quickstart-queues-dotnet) |
+| 11. x | [Пространство имен Microsoft. Azure. Storage. Queue](/dotnet/api/microsoft.azure.storage.queue) | [Пакет (NuGet)](https://www.nuget.org/packages/Microsoft.Azure.Storage.Queue/) | [Краткое руководство. Использование пакета SDK службы хранилища Azure версии 11 для .NET, чтобы управлять очередью](/azure/storage/queues/storage-quickstart-queues-dotnet-legacy) |
 
 ### <a name="storage-management"></a>Управление хранением
 
@@ -50,7 +50,7 @@ ms.locfileid: "84976665"
 
 |  Версия  | Справочная документация | Пакет | Краткое руководство |
 | :-------: | ----------------------- | ------- | ---------- |
-| 12.x | [Клиентская библиотека очереди службы хранилища Azure для Java](https://azuresdkdocs.blob.core.windows.net/$web/java/azure-storage-queue/12.0.0/index.html) | [Пакет (Maven)](https://mvnrepository.com/artifact/com.azure/azure-storage-queue) | [Краткое руководство. Клиентская библиотека хранилища очередей Azure версии 12 для Java](/azure/storage/queues/storage-quickstart-queues-java) |
+| 12.x | [Клиентская библиотека очереди службы хранилища Azure для Java](/java/api/overview/azure/storage-queue-readme) | [Пакет (Maven)](https://mvnrepository.com/artifact/com.azure/azure-storage-queue) | [Краткое руководство. Использование клиентской библиотеки Хранилища очередей Azure версии 12 для Java](/azure/storage/queues/storage-quickstart-queues-java) |
 | 8.x | [com. Microsoft. Azure. Storage. Queue](/java/api/com.microsoft.azure.storage.queue) | [Пакет (Maven)](https://mvnrepository.com/artifact/com.microsoft.azure/azure-storage) | [Краткое руководство. Управление большими двоичными объектами с помощью пакета SDK V8 для Java](/azure/storage/blobs/storage-quickstart-blobs-java-legacy) |
 
 ### <a name="storage-management"></a>Управление хранением
@@ -67,8 +67,8 @@ ms.locfileid: "84976665"
 
 |  Версия  | Справочная документация | Пакет | Краткое руководство |
 | :-------: | ----------------------- | ------- | ---------- |
-| 12.x | [Клиентские библиотеки службы хранилища Azure версии 12 для Python](/azure/developer/python/sdk/storage/overview?view=storage-py-v12) | [Пакет (PyPI)](https://pypi.org/project/azure-storage-queue/) | [Краткое руководство. Клиентская библиотека хранилища очередей Azure версии 12 для Python](/azure/storage/queues/storage-quickstart-queues-python) |
-| 2.x | [Клиентские библиотеки службы хранилища Azure версии 2 для Python](/azure/developer/python/sdk/storage/overview?view=storage-py-v2) | [Пакет (PyPI)](https://pypi.org/project/azure-storage-queue/2.1.0/) | [Использование Хранилища очередей Azure версии 2.1 из Python](/azure/storage/queues/storage-python-how-to-use-queue-storage) |
+| 12.x | [Клиентские библиотеки службы хранилища Azure версии 12 для Python](/azure/developer/python/sdk/storage/overview) | [Пакет (PyPI)](https://pypi.org/project/azure-storage-queue/) | [Краткое руководство. Клиентская библиотека Хранилища очередей Azure версии 12 для Python](/azure/storage/queues/storage-quickstart-queues-python) |
+| 2.x | [Клиентские библиотеки службы хранилища Azure версии 2 для Python](/azure/developer/python/sdk/storage/overview?view=storage-py-v2&preserve-view=true) | [Пакет (PyPI)](https://pypi.org/project/azure-storage-queue/2.1.0/) | [Использование Хранилища очередей Azure версии 2.1 из Python](/azure/storage/queues/storage-python-how-to-use-queue-storage) |
 
 ## <a name="javascript-client-libraries"></a>Клиентские библиотеки JavaScript
 
@@ -76,16 +76,16 @@ ms.locfileid: "84976665"
 
 |  Версия  | Справочная документация | Пакет | Краткое руководство |
 | :-------: | ----------------------- | ------- | ---------- |
-| 12.x | [Клиентская библиотека очереди службы хранилища Azure для JavaScript](/javascript/api/overview/azure/storage-queue-readme) | [Пакет (NPM)](https://www.npmjs.com/package/@azure/storage-queue) | [Краткое руководство. Клиентская библиотека хранилища очередей Azure версии 12 для JavaScript](/azure/storage/queues/storage-quickstart-queues-nodejs) |
-| 10.x | [@azure/storage-queue](/javascript/api/@azure/storage-queue/?view=azure-node-legacy) | [Пакет (NPM)](https://www.npmjs.com/package/@azure/storage-queue/v/10.3.0) | [Использование службы очередей Azure для создания и удаления очередей из Node.js](/azure/storage/queues/storage-nodejs-how-to-use-queues) |
+| 12.x | [Клиентская библиотека очереди службы хранилища Azure для JavaScript](/javascript/api/overview/azure/storage-queue-readme) | [Пакет (npm)](https://www.npmjs.com/package/@azure/storage-queue) | [Краткое руководство. Использование клиентской библиотеки Хранилища очередей Azure версии 12 для JavaScript](/azure/storage/queues/storage-quickstart-queues-nodejs) |
+| 10.x | [@azure/storage-queue](/javascript/api/@azure/storage-queue/?view=azure-node-legacy&preserve-view=true) | [Пакет (npm)](https://www.npmjs.com/package/@azure/storage-queue/v/10.3.0) | [Использование службы очередей Azure для создания и удаления очередей из Node.js](/azure/storage/queues/storage-nodejs-how-to-use-queues) |
 
 ## <a name="rest-apis"></a>Интерфейсы REST API
 
 В следующей таблице перечислены справочные материалы и примеры документации по API-интерфейсам службы хранилища очередей Azure.
 
-| Справочная документация | Обзор |
+| Справочная документация | Overview |
 | ----------------------- | -------- |
-| [служба очередей REST API](/rest/api/storageservices/queue-service-rest-api) | [Основные понятия служба очередей](/rest/api/storageservices/queue-service-concepts) |
+| [служба очередей REST API](/rest/api/storageservices/queue-service-rest-api) | [Основные понятия службы очередей](/rest/api/storageservices/queue-service-concepts) |
 
 ### <a name="other-rest-reference"></a>Другая ссылка на остальные элементы
 
@@ -107,8 +107,9 @@ ms.locfileid: "84976665"
 
 | Версия | Платформа |
 | ------- | -------- |
-|  3.x  | [PowerShell](https://docs.microsoft.com/powershell/module/az.storage/?view=azps-3.8.0) |
-|  2.x  | [PowerShell](https://docs.microsoft.com/powershell/module/az.storage/?view=azps-2.8.0) |
+|  4.x  | [PowerShell](/powershell/module/az.storage/?view=azps-4.6.1&preserve-view=true) |
+|  3.x  | [PowerShell](/powershell/module/az.storage/?view=azps-3.8.0&preserve-view=true) |
+|  2.x  | [PowerShell](/powershell/module/az.storage/?view=azps-2.8.0&preserve-view=true) |
 
 ## <a name="azure-cli"></a>Azure CLI
 

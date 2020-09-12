@@ -11,12 +11,12 @@ ms.reviewer: jmartens
 ms.date: 08/06/2020
 ms.topic: conceptual
 ms.custom: troubleshooting, contperfq4, devx-track-python
-ms.openlocfilehash: 3f8a3c705878e212e6a26670e20b5a81a3f2a6ba
-ms.sourcegitcommit: 4e5560887b8f10539d7564eedaff4316adb27e2c
+ms.openlocfilehash: 4a0601e2821920e7de3b389d9acfd78598ef67ee
+ms.sourcegitcommit: 43558caf1f3917f0c535ae0bf7ce7fe4723391f9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87904383"
+ms.lasthandoff: 09/11/2020
+ms.locfileid: "90019297"
 ---
 # <a name="troubleshoot-docker-deployment-of-models-with-azure-kubernetes-service-and-azure-container-instances"></a>Устранение неполадок при развертывании в DOCKER моделей с помощью службы Kubernetes Azure и экземпляров контейнеров Azure 
 
@@ -25,7 +25,7 @@ ms.locfileid: "87904383"
 ## <a name="prerequisites"></a>Предварительные требования
 
 * **Подписка Azure**. Если у вас ее нет, используйте [бесплатную или платную версию Машинного обучения Azure](https://aka.ms/AMLFree).
-* [Пакет SDK для Машинного обучения Azure](https://docs.microsoft.com/python/api/overview/azure/ml/install?view=azure-ml-py).
+* [Пакет SDK для Машинного обучения Azure](https://docs.microsoft.com/python/api/overview/azure/ml/install?view=azure-ml-py&preserve-view=true).
 * [Интерфейс командной строки Azure](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest).
 * [Расширение CLI для Машинного обучения Azure](reference-azure-machine-learning-cli.md).
 * Для локальной отладки вам необходима рабочая установка Docker в локальной системе.
@@ -36,7 +36,7 @@ ms.locfileid: "87904383"
 
 При развертывании модели в Машинном обучении Azure система выполняет ряд задач.
 
-Рекомендуемый подход к развертыванию модели заключается в использовании API [модели. deploy ()](https://docs.microsoft.com/python/api/azureml-core/azureml.core.model%28class%29?view=azure-ml-py#deploy-workspace--name--models--inference-config-none--deployment-config-none--deployment-target-none--overwrite-false-) с использованием объекта [среды](how-to-use-environments.md) в качестве входного параметра. В этом случае служба создает базовый образ DOCKER на этапе развертывания и подключает все необходимые модели в одном вызове. Основные задачи развертывания:
+Рекомендуемый подход к развертыванию модели заключается в использовании API [модели. deploy ()](https://docs.microsoft.com/python/api/azureml-core/azureml.core.model%28class%29?view=azure-ml-py#&preserve-view=truedeploy-workspace--name--models--inference-config-none--deployment-config-none--deployment-target-none--overwrite-false-) с использованием объекта [среды](how-to-use-environments.md) в качестве входного параметра. В этом случае служба создает базовый образ DOCKER на этапе развертывания и подключает все необходимые модели в одном вызове. Основные задачи развертывания:
 
 1. Регистрация модели в реестре моделей рабочей области.
 
@@ -52,7 +52,7 @@ ms.locfileid: "87904383"
 
 Если возникнут какие-либо проблемы, прежде всего следует разбить задачу развертывания (описанную ранее) на отдельные шаги, чтобы установить причину проблемы.
 
-Так как предполагается, что вы используете новый/рекомендуемый метод развертывания (использование API [Model.deploy()](https://docs.microsoft.com/python/api/azureml-core/azureml.core.model%28class%29?view=azure-ml-py#deploy-workspace--name--models--inference-config-none--deployment-config-none--deployment-target-none--overwrite-false-) с объектом [среды](how-to-use-environments.md) в качестве входного параметра), ваш код можно разбить на три основных этапа:
+Так как предполагается, что вы используете новый/рекомендуемый метод развертывания (использование API [Model.deploy()](https://docs.microsoft.com/python/api/azureml-core/azureml.core.model%28class%29?view=azure-ml-py#&preserve-view=truedeploy-workspace--name--models--inference-config-none--deployment-config-none--deployment-target-none--overwrite-false-) с объектом [среды](how-to-use-environments.md) в качестве входного параметра), ваш код можно разбить на три основных этапа:
 
 1. Регистрация модели. Ниже приведен пример кода:
 
@@ -101,7 +101,7 @@ ms.locfileid: "87904383"
 
 Если при развертывании модели в ACI или AKS возникли проблемы, попробуйте развернуть ее как локальную веб-службу. Использование локальной веб-службы упрощает устранение неполадок. Образ Docker, содержащий модель, скачивается и запускается в локальной системе.
 
-Пример [локального развертывания](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/deployment/deploy-to-local/register-model-deploy-local.ipynb) можно найти в репозитории [мачинелеарнингнотебукс](https://github.com/Azure/MachineLearningNotebooks) , чтобы просмотреть пример готового к запуску примера.
+Пример [локального развертывания](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/deployment/deploy-to-local/register-model-deploy-local.ipynb) можно найти в репозитории  [мачинелеарнингнотебукс](https://github.com/Azure/MachineLearningNotebooks) , чтобы просмотреть пример готового к запуску примера.
 
 > [!WARNING]
 > Развертывания локальных веб-служб не поддерживаются для рабочих сред.
@@ -163,7 +163,7 @@ print(service.run(input_data=test_sample))
 > [!NOTE]
 > Сценарий перезагружается из расположения, указанного объектом `InferenceConfig`, используемым службой.
 
-Чтобы изменить модель, зависимости Conda или конфигурацию развертывания, используйте метод [update()](https://docs.microsoft.com/python/api/azureml-core/azureml.core.webservice%28class%29?view=azure-ml-py#update--args-). В следующем примере обновляется модель, используемая службой:
+Чтобы изменить модель, зависимости Conda или конфигурацию развертывания, используйте метод [update()](https://docs.microsoft.com/python/api/azureml-core/azureml.core.webservice%28class%29?view=azure-ml-py#&preserve-view=trueupdate--args-). В следующем примере обновляется модель, используемая службой:
 
 ```python
 service.update([different_model], inference_config, deployment_config)
@@ -171,7 +171,7 @@ service.update([different_model], inference_config, deployment_config)
 
 ### <a name="delete-the-service"></a>Удаление службы
 
-Чтобы удалить службу, воспользуйтесь методом [delete()](https://docs.microsoft.com/python/api/azureml-core/azureml.core.webservice%28class%29?view=azure-ml-py#delete--).
+Чтобы удалить службу, воспользуйтесь методом [delete()](https://docs.microsoft.com/python/api/azureml-core/azureml.core.webservice%28class%29?view=azure-ml-py#&preserve-view=truedelete--).
 
 ### <a name="inspect-the-docker-log"></a><a id="dockerlog"></a> Проверка журнала Docker
 
@@ -185,7 +185,7 @@ print(service.get_logs())
 print(ws.webservices['mysvc'].get_logs())
 ```
 Если строка `Booting worker with pid: <pid>` в журналах встречается несколько раз, это означает, что недостаточно памяти для запуска рабочей роли.
-Эту ошибку можно устранить, увеличив значение `memory_gb` в`deployment_config`
+Эту ошибку можно устранить, увеличив значение `memory_gb` в `deployment_config`
  
 ## <a name="container-cannot-be-scheduled"></a>Контейнер невозможно запланировать
 
@@ -201,7 +201,7 @@ print(ws.webservices['mysvc'].get_logs())
 
 ## <a name="function-fails-get_model_path"></a>Ошибка выполнения функции: get_model_path()
 
-Часто в рамках функции `init()` в скрипте оценки вызывается функция [Model.get_model_path()](https://docs.microsoft.com/python/api/azureml-core/azureml.core.model.model?view=azure-ml-py#get-model-path-model-name--version-none---workspace-none-), чтобы найти файл модели или папку с файлами модели в контейнере. Если файл или папку модели найти не удается, происходит сбой функции. Самый простой способ устранить эту ошибку — это выполнить приведенный ниже код Python в оболочке контейнера.
+Часто в рамках функции `init()` в скрипте оценки вызывается функция [Model.get_model_path()](https://docs.microsoft.com/python/api/azureml-core/azureml.core.model.model?view=azure-ml-py#&preserve-view=trueget-model-path-model-name--version-none---workspace-none-), чтобы найти файл модели или папку с файлами модели в контейнере. Если файл или папку модели найти не удается, происходит сбой функции. Самый простой способ устранить эту ошибку — это выполнить приведенный ниже код Python в оболочке контейнера.
 
 ```python
 from azureml.core.model import Model
@@ -276,7 +276,7 @@ def run(input_data):
     > [!NOTE]
     > Если пики запроса будут превышать новое минимальное количество реплик, снова отобразится код 503. Например, по мере увеличения трафика, поступающего в вашу службу, может потребоваться увеличение минимального количества реплик.
 
-Дополнительные сведения о настройке `autoscale_target_utilization`, `autoscale_max_replicas` и `autoscale_min_replicas` см. на [этой странице](https://docs.microsoft.com/python/api/azureml-core/azureml.core.webservice.akswebservice?view=azure-ml-py).
+Дополнительные сведения о настройке `autoscale_target_utilization`, `autoscale_max_replicas` и `autoscale_min_replicas` см. на [этой странице](https://docs.microsoft.com/python/api/azureml-core/azureml.core.webservice.akswebservice?view=azure-ml-py&preserve-view=true).
 
 ## <a name="http-status-code-504"></a>Код состояния HTTP 504
 
@@ -287,6 +287,8 @@ def run(input_data):
 ## <a name="advanced-debugging"></a>Расширенная отладка
 
 В некоторых случаях может потребоваться интерактивная отладка кода Python, содержащегося в развертывании модели. Например, если начальный сценарий не работает и причину невозможно определить с помощью дополнительного ведения журнала. С помощью Visual Studio Code и дебугпи можно присоединяться к коду, выполняющемуся в контейнере DOCKER. Дополнительные сведения см. в [разделе Интерактивная Отладка в VS Code Guide](how-to-debug-visual-studio-code.md#debug-and-troubleshoot-deployments).
+
+## <a name="model-deployment-user-forum"></a>[Форум пользователя по развертыванию модели](https://docs.microsoft.com/answers/topics/azure-machine-learning-inference.html)
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

@@ -15,12 +15,12 @@ ms.date: 08/23/2019
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 4956014e3a950a729ef3993e10ca455ab8aae6f4
-ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
+ms.openlocfilehash: 7f6c75337c27e14fb77161cf641cde0a582901e7
+ms.sourcegitcommit: 43558caf1f3917f0c535ae0bf7ce7fe4723391f9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2020
-ms.locfileid: "86256685"
+ms.lasthandoff: 09/11/2020
+ms.locfileid: "90014639"
 ---
 # <a name="azure-active-directory-connect-faq"></a>Часто задаваемые вопросы по Azure Active Directory Connect
 
@@ -34,13 +34,13 @@ ms.locfileid: "86256685"
 
 Дополнительные сведения см. на следующих ресурсах: 
 
-* [Защита групп администраторов](https://docs.microsoft.com/windows-server/identity/ad-ds/plan/security-best-practices/appendix-g--securing-administrators-groups-in-active-directory)
+* [Защита групп администраторов](/windows-server/identity/ad-ds/plan/security-best-practices/appendix-g--securing-administrators-groups-in-active-directory)
 
-* [Защита встроенных учетных записей администратора](https://docs.microsoft.com/windows-server/identity/ad-ds/plan/security-best-practices/appendix-d--securing-built-in-administrator-accounts-in-active-directory)
+* [Защита встроенных учетных записей администратора](/windows-server/identity/ad-ds/plan/security-best-practices/appendix-d--securing-built-in-administrator-accounts-in-active-directory)
 
-* [Повышение безопасности и поддержка за счет сокращения направлений атак](https://docs.microsoft.com/windows-server/identity/securing-privileged-access/securing-privileged-access#2-reduce-attack-surfaces )
+* [Повышение безопасности и поддержка за счет сокращения направлений атак](/windows-server/identity/securing-privileged-access/securing-privileged-access#2-reduce-attack-surfaces )
 
-* [Сокращение направлений атак на Active Directory](https://docs.microsoft.com/windows-server/identity/ad-ds/plan/security-best-practices/reducing-the-active-directory-attack-surface)
+* [Сокращение направлений атак на Active Directory](/windows-server/identity/ad-ds/plan/security-best-practices/reducing-the-active-directory-attack-surface)
 
 **Вопрос. Будет ли работать установка, если глобальный администратор Azure Active Directory (Azure AD) имеет двухфакторную проверку подлинности (2FA)?**  
 Такой сценарий поддерживается в сборках начиная с февраля 2016 года.
@@ -139,10 +139,10 @@ ms.locfileid: "86256685"
 Нет, использование Azure AD Connect не поддерживается через NAT. 
 
 ## <a name="federation"></a>Федерация
-**Вопрос. Что делать, если мне на электронную почту пришло сообщение с требованием обновить срок действия сертификата Office 365?**  
+**Вопрос. что делать, если я получаю сообщение электронной почты с просьбой продлить сертификат Microsoft 365?**  
 Рекомендации об обновлении сертификата см. в [этом разделе](how-to-connect-fed-o365-certs.md).
 
-**Вопрос. У меня задан параметр "Автоматически обновлять проверяющую сторону" для проверяющей стороны Office 365. Потребуется выполнить ли какое-либо действие при автоматической смене сертификата для подписи маркера?**  
+**Вопрос. у меня есть параметр "автоматически обновлять проверяющую сторону" для Microsoft 365 проверяющей стороны. Нужно ли предпринимать какие бы то ни было действия, когда сертификат для подписи маркера автоматически переносится?**  
 Используйте инструкции, приведенные в статье [Обновление сертификатов федерации для Office 365 и Azure AD](how-to-connect-fed-o365-certs.md).
 
 ## <a name="environment"></a>Среда
@@ -155,14 +155,14 @@ ms.locfileid: "86256685"
 **В. Если синхронизированное устройство (например, HAADJ) отключено на портале Azure, почему оно снова включено?**<br>
 Синхронизированные устройства можно создавать или настраивать локально. Если синхронизированное устройство включено локально, оно может быть снова включено в портале Azure, даже если оно ранее было отключено администратором. Чтобы отключить синхронизированное устройство, используйте локальную службу Active Directory для отключения учетной записи компьютера.
 
-**В. Если для синхронизированных пользователей отключен вход на портале Office 365 или Azure AD, почему он разблокируется при повторном входе?**<br>
+**Формате. Если я заблокировал вход пользователя на Microsoft 365 или на портале Azure AD для синхронизированных пользователей, почему он разблокируется при повторном входе?**<br>
 Синхронизированных пользователей можно создавать или настраивать локально. Если учетная запись включена локально, она может разблокировать блокировку входа, настроенную администратором.
 
 ## <a name="identity-data"></a>Данные удостоверений
 **Вопрос. Почему атрибут userPrincipalName (UPN) в Azure AD не соответствует локальному имени участника-пользователя ?**  
 Дополнительные сведения вы найдете в следующих статьях:
 
-* [User names in Office 365, Azure, or Intune don't match the on-premises UPN or alternate login ID](https://support.microsoft.com/kb/2523192) (Имена пользователей в Office 365, Azure или Intune не совпадают с локальным именем участника-пользователя или альтернативным именем для входа)
+* [Имена пользователей в Microsoft 365, Azure или Intune не соответствуют локальному имени участника-пользователя или альтернативному ИДЕНТИФИКАТОРу входа](https://support.microsoft.com/kb/2523192)
 * [Изменения не синхронизированы с помощью средства Azure Active Directory Sync после изменения имени участника-пользователя учетной записи пользователя для использования другого федеративного домена](https://support.microsoft.com/kb/2669550)
 
 Можно также настроить Azure AD так, чтобы модуль синхронизации обновлял UPN, как описано в статье [Функции службы синхронизации Azure AD Connect](how-to-connect-syncservice-features.md).
@@ -253,19 +253,19 @@ ms.locfileid: "86256685"
 Да, вы можете автоматически обновить сервер Azure AD Connect, который находится в промежуточном режиме.
 
 **Вопрос. Что делать, если автоматическое обновление завершается ошибкой, а сервер Azure AD Connect не запускается?**  
-В редких случаях служба Azure AD Connect не запускается после обновления. В таком случае перезагрузите сервер, что зачастую позволяет устранить ошибку. Если служба Azure AD Connect по-прежнему не запускается, отправьте запрос в службу поддержки. Дополнительные сведения см. в разделе [How to create service requests to contact Office 365 support?](https://blogs.technet.microsoft.com/praveenkumar/2013/07/17/how-to-create-service-requests-to-contact-office-365-support/) (Как создать запрос на обслуживание в службу поддержки Office 365). 
+В редких случаях служба Azure AD Connect не запускается после обновления. В таком случае перезагрузите сервер, что зачастую позволяет устранить ошибку. Если служба Azure AD Connect по-прежнему не запускается, отправьте запрос в службу поддержки. Дополнительные сведения см. [в разделе Создание запроса на обслуживание для обращения в службу поддержки Microsoft 365](/archive/blogs/praveenkumar/how-to-create-service-requests-to-contact-office-365-support). 
 
 **Вопрос. У меня нет четкого представления о рисках при обновлении версии Azure AD Connect. Можете ли вы мне позвонить, чтобы помочь с обновлением?**  
-Если вам требуется помощь при обновлении до новой версии Azure AD Connect, отправьте запрос в службу поддержки в разделе [How to create service requests to contact Office 365 support?](https://blogs.technet.microsoft.com/praveenkumar/2013/07/17/how-to-create-service-requests-to-contact-office-365-support/) (Как создать запрос на обслуживание в службу поддержки Office 365).
+Если вам требуется помощь в обновлении до более новой версии Azure AD Connect, отправьте запрос в службу поддержки по адресу [Создание запроса на обслуживание, чтобы обратиться в службу поддержки Microsoft 365](/archive/blogs/praveenkumar/how-to-create-service-requests-to-contact-office-365-support).
 
 ## <a name="operational-best-practice"></a>Практические рекомендации    
 Ниже приведены некоторые рекомендации, которые следует реализовать при синхронизации между Windows Server Active Directory и Azure Active Directory.
 
-**Применить многофакторную проверку подлинности для всех синхронизированных учетных записей** Многофакторная идентификация Azure помогает защитить доступ к данным и приложениям, одновременно обеспечивая простоту для пользователей. Эта служба предлагает дополнительную защиту за счет дополнительного способа аутентификации и, используя ряд простых методов проверки подлинности, обеспечивает строгую проверку. Направление пользователям запросов о необходимости Многофакторной идентификации зависит от настроек, заданных администратором. Дополнительные сведения о MFA можно узнать здесь:https://www.microsoft.com/security/business/identity/mfa?rtc=1
+**Применить многофакторную проверку подлинности для всех синхронизированных учетных записей** Многофакторная идентификация Azure помогает защитить доступ к данным и приложениям, одновременно обеспечивая простоту для пользователей. Эта служба предлагает дополнительную защиту за счет дополнительного способа аутентификации и, используя ряд простых методов проверки подлинности, обеспечивает строгую проверку. Направление пользователям запросов о необходимости Многофакторной идентификации зависит от настроек, заданных администратором. Дополнительные сведения о MFA можно узнать здесь: https://www.microsoft.com/security/business/identity/mfa?rtc=1
 
-**Следуйте рекомендациям по безопасности Azure AD Connect Server** Сервер Azure AD Connect содержит важные данные идентификации и должен рассматриваться как компонент уровня 0, как описано в [модели административного уровня Active Directory](https://docs.microsoft.com/windows-server/identity/securing-privileged-access/securing-privileged-access-reference-material). См. также [рекомендации по обеспечению безопасности сервера AADConnect](https://docs.microsoft.com/azure/active-directory/hybrid/how-to-connect-install-prerequisites#azure-ad-connect-server).
+**Следуйте рекомендациям по безопасности Azure AD Connect Server** Сервер Azure AD Connect содержит важные данные идентификации и должен рассматриваться как компонент уровня 0, как описано в [модели административного уровня Active Directory](/windows-server/identity/securing-privileged-access/securing-privileged-access-reference-material). См. также [рекомендации по обеспечению безопасности сервера AADConnect](./how-to-connect-install-prerequisites.md#azure-ad-connect-server).
 
-**Включение PHS для обнаружения утечек учетных данных** Синхронизация хэша паролей также позволяет [обнаруживать утечку учетных данных](https://docs.microsoft.com/azure/active-directory/identity-protection/concept-identity-protection-risks) для ваших гибридных учетных записей. Корпорация Майкрософт работает вместе с темными веб-законами и правоохранительными органами, чтобы найти общедоступные пары имен пользователей и паролей. Если любая из этих пар соответствует требованиям пользователей, соответствующая учетная запись перемещается в высокий риск. 
+**Включение PHS для обнаружения утечек учетных данных** Синхронизация хэша паролей также позволяет [обнаруживать утечку учетных данных](../identity-protection/concept-identity-protection-risks.md) для ваших гибридных учетных записей. Корпорация Майкрософт вместе со специалистами по теневому Интернету и правоохранительными органами работает над поиском общедоступных пар имен и паролей. Если любая из этих пар соответствует требованиям пользователей, соответствующая учетная запись перемещается в высокий риск. 
 
 
 ## <a name="troubleshooting"></a>Устранение неполадок
@@ -275,11 +275,11 @@ ms.locfileid: "86256685"
 
 * В базе знаний Майкрософт можно найти технические решения распространенных проблем, связанные с поддержкой Azure AD Connect.
 
-[Страница Майкрософт с вопросами и ответами для Azure Active Directory](https://docs.microsoft.com/answers/topics/azure-active-directory.html)
+[Страница Майкрософт с вопросами и ответами для Azure Active Directory](/answers/topics/azure-active-directory.html)
 
-* Найдите технические вопросы и ответы или задайте свои вопросы в [сообществе Azure AD](https://docs.microsoft.com/answers/topics/azure-active-directory.html).
+* Найдите технические вопросы и ответы или задайте свои вопросы в [сообществе Azure AD](/answers/topics/azure-active-directory.html).
 
-[How to get support for Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-troubleshooting-support-howto) (Как получить поддержку для Azure AD)
+[How to get support for Azure Active Directory](../fundamentals/active-directory-troubleshooting-support-howto.md) (Как получить поддержку для Azure AD)
 
 **Вопрос. Почему после ошибок этапа синхронизации появляются события 6311 и 6401?**
 

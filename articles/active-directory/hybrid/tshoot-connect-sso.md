@@ -13,12 +13,12 @@ ms.date: 10/07/2019
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d5b35815e42b6c9fa5cbd874c0a58f5285c99539
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: bdaa84d54bbd5558c995014aa4621b0051a36e97
+ms.sourcegitcommit: 43558caf1f3917f0c535ae0bf7ce7fe4723391f9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85355919"
+ms.lasthandoff: 09/11/2020
+ms.locfileid: "90016271"
 ---
 # <a name="troubleshoot-azure-active-directory-seamless-single-sign-on"></a>Устранение неполадок с простым единым входом Azure Active Directory
 
@@ -29,7 +29,7 @@ ms.locfileid: "85355919"
 - В некоторых случаях включение простого единого входа может занять до 30 минут.
 - Если отключить и повторно включить эффективный единый вход для клиента, пользователи не смогут применять единый вход, пока не истечет срок действия их кэшированных билетов Kerberos (как правило, они действительны в течение 10 часов).
 - После успешного единого входа пользователю не предоставляется возможность выбрать вариант **Оставаться в системе**. Из-за такого поведения [сценарии сопоставления SharePoint и OneDrive](https://support.microsoft.com/help/2616712/how-to-configure-and-to-troubleshoot-mapped-network-drives-that-connec) не работают.
-- Для поддержки клиентов Office 365 для 32-разрядной версии Windows (Outlook, Word, Excel и другие) версии 16.0.8730.xxxx и выше используется неинтерактивная процедура. Другие версии не поддерживаются. В этих версиях для входа в систему пользователи будут вводить свое имя пользователя, но не пароль. Для OneDrive потребуется активировать [функцию автоматической настройки OneDrive](https://techcommunity.microsoft.com/t5/Microsoft-OneDrive-Blog/Previews-for-Silent-Sync-Account-Configuration-and-Bandwidth/ba-p/120894), чтобы включить автоматический вход в систему.
+- Microsoft 365 Клиенты Win32 (Outlook, Word, Excel и др.) с версиями 16.0.8730. xxxx и более поздних версий поддерживаются с помощью неинтерактивного потока. Другие версии не поддерживаются. В этих версиях для входа в систему пользователи будут вводить свое имя пользователя, но не пароль. Для OneDrive потребуется активировать [функцию автоматической настройки OneDrive](https://techcommunity.microsoft.com/t5/Microsoft-OneDrive-Blog/Previews-for-Silent-Sync-Account-Configuration-and-Bandwidth/ba-p/120894), чтобы включить автоматический вход в систему.
 - Простой единый вход не работает в конфиденциальном режиме просмотра в Firefox.
 - Простой единый вход не работает в Internet Explorer с включенным режимом повышенной защиты.
 - Простой единый вход не работает в браузерах на мобильных устройствах с iOS и Android.
@@ -74,9 +74,9 @@ ms.locfileid: "85355919"
 Используйте следующий контрольный список для устранения неполадок простого единого входа.
 
 - Проверьте, включена ли функция простого единого входа в Azure AD Connect. Если функцию не удается включить (например, из-за заблокированного порта), обеспечьте соблюдение всех [предварительных требований](how-to-connect-sso-quick-start.md#step-1-check-the-prerequisites).
-- Если вы включили и [присоединение к Azure AD](../active-directory-azureadjoin-overview.md), и эффективный единый вход для клиента, убедитесь, что проблема не связана с присоединением к Azure AD. Единый вход при присоединении Azure AD имеет приоритет над эффективным единым входом, если устройство зарегистрировано в Azure AD и присоединено к домену. При едином входе с присоединением к Azure AD отображается плитка входа с надписью "Подключено к Windows".
+- Если вы включили и [присоединение к Azure AD](../devices/overview.md), и эффективный единый вход для клиента, убедитесь, что проблема не связана с присоединением к Azure AD. Единый вход при присоединении Azure AD имеет приоритет над эффективным единым входом, если устройство зарегистрировано в Azure AD и присоединено к домену. При едином входе с присоединением к Azure AD отображается плитка входа с надписью "Подключено к Windows".
 - Убедитесь, что URL-адрес Azure AD ( `https://autologon.microsoftazuread-sso.com` ) является частью параметров зоны интрасети пользователя.
-- Убедитесь, что корпоративное устройство присоединено к домену Active Directory. Для функционирования простого единого входа устройство _не обязательно_ должно быть [присоединено к Azure AD](../active-directory-azureadjoin-overview.md).
+- Убедитесь, что корпоративное устройство присоединено к домену Active Directory. Для функционирования простого единого входа устройство _не обязательно_ должно быть [присоединено к Azure AD](../devices/overview.md).
 - Убедитесь, что пользователь вошел в систему с этого устройства с помощью доменной учетной записи Active Directory.
 - Убедитесь, что учетная запись пользователя относится к лесу Active Directory, в котором настроен простой единый вход.
 - Убедитесь, что устройство подключено к корпоративной сети.
@@ -106,7 +106,7 @@ ms.locfileid: "85355919"
 
 ### <a name="step-1-import-the-seamless-sso-powershell-module"></a>Шаг 1. Импортируйте модуль PowerShell для простого единого входа
 
-1. Сначала скачайте и установите [Azure PowerShell](https://docs.microsoft.com/powershell/azure/active-directory/overview).
+1. Сначала скачайте и установите [Azure PowerShell](/powershell/azure/active-directory/overview).
 2. Перейдите в папку `%programfiles%\Microsoft Azure Active Directory Connect`.
 3. Импортируйте модуль PowerShell для простого единого входа с помощью следующей команды: `Import-Module .\AzureADSSO.psd1`.
 

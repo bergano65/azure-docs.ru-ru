@@ -7,12 +7,12 @@ ms.topic: how-to
 ms.date: 10/19/2019
 ms.author: rogarana
 ms.subservice: files
-ms.openlocfilehash: d00b0558f85e18dfb53736d89fead953cc01ee60
-ms.sourcegitcommit: 269da970ef8d6fab1e0a5c1a781e4e550ffd2c55
+ms.openlocfilehash: 957e827e621d07ed9b5533a1607f955f05985d9b
+ms.sourcegitcommit: 3c66bfd9c36cd204c299ed43b67de0ec08a7b968
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/10/2020
-ms.locfileid: "88053173"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "90004788"
 ---
 # <a name="use-azure-files-with-linux"></a>Использование Файлов Azure в Linux
 [Файлы Azure](storage-files-introduction.md) — это простая в использовании облачная файловая система от Майкрософт. Файловые ресурсы Azure можно подключить в дистрибутивах Linux с помощью [SMB-клиента в ядре](https://wiki.samba.org/index.php/LinuxCIFS). В этой статье описаны два способа подключения файлового ресурса Azure: по запросу с помощью команды `mount` и при загрузке путем создания записи в `/etc/fstab`.
@@ -69,7 +69,7 @@ uname -r
 
 * **Самая последняя версия интерфейса командной строки Azure (CLI).** Дополнительные сведения об установке Azure CLI см. в статьях [установка Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest) и выбор операционной системы. Если вы предпочитаете использовать модуль Azure PowerShell в PowerShell 6 +, вы можете, однако, приведенные ниже инструкции представлены для Azure CLI.
 
-* **Откройте порт 445**. Взаимодействие SMB выполняется через TCP-порт 445. Проверьте, чтобы брандмауэр не блокировал TCP-порты 445 с клиентского компьютера.  Замените **<>группы ресурсов** и **<учетной записи хранилища>**
+* **Откройте порт 445**. Взаимодействие SMB выполняется через TCP-порт 445. Проверьте, чтобы брандмауэр не блокировал TCP-порты 445 с клиентского компьютера.  Замените `<your-resource-group>` , а `<your-storage-account>` затем выполните следующий скрипт:
     ```bash
     resourceGroupName="<your-resource-group>"
     storageAccountName="<your-storage-account>"
@@ -114,6 +114,7 @@ uname -r
 1. **Используйте команду mount, чтобы подключить файловый ресурс Azure**. В примере ниже локальные разрешения для файлов и папок Linux по умолчанию 0755, что означает чтение, запись и выполнение для владельца (на основе владельца файлов и каталогов Linux), чтение и выполнение для пользователей в группе владелец, а также чтение и выполнение для других компонентов в системе. Можно использовать `uid` `gid` Параметры подключения и, чтобы задать идентификатор пользователя и группу для подключения. Кроме того, можно использовать `dir_mode` и `file_mode` для задания пользовательских разрешений. Дополнительные сведения о настройке разрешений см. в разделе [Цифровая нотация UNIX](https://en.wikipedia.org/wiki/File_system_permissions#Numeric_notation) в Википедии. 
 
     ```bash
+    # This command assumes you have logged in with az login
     httpEndpoint=$(az storage account show \
         --resource-group $resourceGroupName \
         --name $storageAccountName \
@@ -176,6 +177,7 @@ uname -r
 1. **Используйте следующую команду, чтобы `/etc/fstab` Добавить следующую строку в **: в примере ниже локальные разрешения для файлов и папок Linux по умолчанию 0755, что означает чтение, запись и выполнение для владельца (на основе владельца файлов и каталогов Linux), чтение и выполнение для пользователей в группе владелец, а также чтение и выполнение для других компонентов в системе. Можно использовать `uid` `gid` Параметры подключения и, чтобы задать идентификатор пользователя и группу для подключения. Кроме того, можно использовать `dir_mode` и `file_mode` для задания пользовательских разрешений. Дополнительные сведения о настройке разрешений см. в разделе [Цифровая нотация UNIX](https://en.wikipedia.org/wiki/File_system_permissions#Numeric_notation) в Википедии.
 
     ```bash
+    # This command assumes you have logged in with az login
     httpEndpoint=$(az storage account show \
         --resource-group $resourceGroupName \
         --name $storageAccountName \
