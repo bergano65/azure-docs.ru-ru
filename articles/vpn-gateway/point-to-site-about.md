@@ -5,14 +5,14 @@ services: vpn-gateway
 author: cherylmc
 ms.service: vpn-gateway
 ms.topic: conceptual
-ms.date: 02/19/2020
+ms.date: 09/02/2020
 ms.author: cherylmc
-ms.openlocfilehash: 381aad5d0a56362d9966ed54b931a8478f2f6bf2
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 9ad0ad7b1ff2f0b706595daf8b8c93f480f0e00b
+ms.sourcegitcommit: 9c262672c388440810464bb7f8bcc9a5c48fa326
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "80410499"
+ms.lasthandoff: 09/03/2020
+ms.locfileid: "89421719"
 ---
 # <a name="about-point-to-site-vpn"></a>Сведения о VPN-подключениях типа "точка — сеть"
 
@@ -102,7 +102,7 @@ ZIP-файл также содержит значения важных пара�
 
 **IKEv2**
 
-|**Шифр** | **Контроля** | **УКАЗАННЫЙ** | **Группа DH** |
+|**Шифр** | **Целостность** | **УКАЗАННЫЙ** | **Группа DH** |
 |---        | ---           | ---       | ---   |
 |GCM_AES256 |   GCM_AES256  | SHA384    | GROUP_24 |
 |GCM_AES256 |   GCM_AES256  | SHA384    | GROUP_14 |
@@ -122,9 +122,9 @@ ZIP-файл также содержит значения важных пара�
 |AES256     |   SHA256      | SHA256    | GROUP_ECP256 |
 |AES256     |   SHA256      | SHA256    | GROUP_2 |
 
-**Туннель**
+**IPsec**
 
-|**Шифр** | **Контроля** | **Группа PFS** |
+|**Шифр** | **Целостность** | **Группа PFS** |
 |---        | ---           | ---       |
 |GCM_AES256 | GCM_AES256 | GROUP_NONE |
 |GCM_AES256 | GCM_AES256 | GROUP_24 |
@@ -178,7 +178,7 @@ ZIP-файл также содержит значения важных пара�
 
 [!INCLUDE [vpn-gateway-point-to-site-faq-include](../../includes/vpn-gateway-faq-p2s-radius-include.md)]
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Next Steps
 
 * [Настройка подключения типа "точка — сеть" к виртуальной сети с использованием аутентификации RADIUS и PowerShell](point-to-site-how-to-radius-ps.md)
 

@@ -3,13 +3,13 @@ title: Поддерживаемые службы и схемы в журнала
 description: Узнайте о поддерживаемых службах и схеме событий для журналов ресурсов Azure.
 ms.subservice: logs
 ms.topic: reference
-ms.date: 06/15/2020
-ms.openlocfilehash: acd661467e90b4915daa2f3eb31f34fd350dc9f5
-ms.sourcegitcommit: d68c72e120bdd610bb6304dad503d3ea89a1f0f7
+ms.date: 09/01/2020
+ms.openlocfilehash: d0f78b858da51838aacd9e3be9b0a069918710a7
+ms.sourcegitcommit: 9c262672c388440810464bb7f8bcc9a5c48fa326
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/01/2020
-ms.locfileid: "89226469"
+ms.lasthandoff: 09/03/2020
+ms.locfileid: "89421923"
 ---
 # <a name="common-and-service-specific-schema-for-azure-resource-logs"></a>Распространенная и зависящая от службы схема для журналов ресурсов Azure
 
@@ -49,7 +49,7 @@ ms.locfileid: "89226469"
 | Служба | Схемы и документы |
 | --- | --- |
 | Azure Active Directory | [Общие сведения](../../active-directory/reports-monitoring/concept-activity-logs-azure-monitor.md), [схема журнала аудита](../../active-directory/reports-monitoring/reference-azure-monitor-audit-log-schema.md) и [схема входа](../../active-directory/reports-monitoring/reference-azure-monitor-sign-ins-log-schema.md) |
-| Службы Analysis Services | https://docs.microsoft.com/azure/analysis-services/analysis-services-logging |
+| Службы Analysis Services | [Azure Analysis Services — ведение журнала диагностики](../../analysis-services/analysis-services-logging.md) |
 | Управление API | [Журналы ресурсов управления API](../../api-management/api-management-howto-use-azure-monitor.md#resource-logs) |
 | Шлюзы приложений |[Ведение журнала для шлюза приложений](../../application-gateway/application-gateway-diagnostics.md) |
 | Служба автоматизации Azure |[Log Analytics для службы автоматизации Azure](../../automation/automation-manage-send-joblogs-log-analytics.md) |
@@ -60,12 +60,12 @@ ms.locfileid: "89226469"
 | Cosmos DB | [Журнал ведения диагностики Azure Cosmos DB](../../cosmos-db/monitor-cosmos-db.md) |
 | Фабрика данных | [Мониторинг фабрик данных с помощью Azure Monitor](../../data-factory/monitor-using-azure-monitor.md) |
 | Data Lake Analytics |[Доступ к журналам для Azure Data Lake Analytics](../../data-lake-analytics/data-lake-analytics-diagnostic-logs.md) |
-| Data Lake Storage |[Доступ к журналам для Azure Data Lake Store](../../data-lake-store/data-lake-store-diagnostic-logs.md) |
+| Data Lake Store |[Доступ к журналам для Azure Data Lake Store](../../data-lake-store/data-lake-store-diagnostic-logs.md) |
 | Azure Data Explorer | [Журналы обозреватель данных Azure](/azure/data-explorer/using-diagnostic-logs) |
 | База данных Azure для MySQL | [Журналы сервера в базе данных Azure для MySQL](../../mysql/concepts-server-logs.md#diagnostic-logs) |
 | База данных Azure для PostgreSQL | [Журналы базы данных Azure для PostgreSQL](../../postgresql/concepts-server-logs.md#resource-logs) |
-| Azure Databricks | [Журнал ведения диагностики в Azure Databricks](https://github.com/MicrosoftDocs/databricks-pr/blob/live/databricks/administration-guide/account-settings/azure-diagnostic-logs.md) |
-| Digital Twins | [Настройка системы диагностики Digital двойников](../../digital-twins/troubleshoot-diagnostics.md#log-schemas)
+| Azure Databricks | [Журнал ведения диагностики в Azure Databricks](https://docs.microsoft.com/azure/databricks/administration-guide/account-settings/azure-diagnostic-logs) |
+| Azure Digital Twins | [Настройка диагностики Azure Digital двойников](../../digital-twins/troubleshoot-diagnostics.md#log-schemas)
 | Центры событий |[Журналы концентраторов событий Azure](../../event-hubs/event-hubs-diagnostic-logs.md) |
 | ExpressRoute | Схема недоступна. |
 | Брандмауэр Azure | Схема недоступна. |
@@ -88,7 +88,7 @@ ms.locfileid: "89226469"
 
 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Next Steps
 
 * [Просмотр категорий журналов ресурсов, которые можно собираются](resource-logs-categories.md)
 * [Дополнительные сведения о журналах ресурсов](./platform-logs-overview.md)

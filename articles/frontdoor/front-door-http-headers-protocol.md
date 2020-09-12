@@ -3,20 +3,20 @@ title: Поддержка протокола для заголовков HTTP в
 description: В этой статье описываются протоколы HTTP Header, поддерживаемые интерфейсом front двери.
 services: frontdoor
 documentationcenter: ''
-author: sharad4u
+author: duongau
 ms.service: frontdoor
 ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 09/10/2018
-ms.author: sharadag
-ms.openlocfilehash: a1060cbf1b2204c3feba413b8c8ce0cba58941c6
-ms.sourcegitcommit: fbb66a827e67440b9d05049decfb434257e56d2d
+ms.author: duau
+ms.openlocfilehash: 6864a854215d899043607b3d01cffbd343ee7751
+ms.sourcegitcommit: 5a3b9f35d47355d026ee39d398c614ca4dae51c6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87799129"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89399520"
 ---
 # <a name="protocol-support-for-http-headers-in-azure-front-door"></a>Поддержка протокола для заголовков HTTP в передней дверце Azure
 В этой статье описывается протокол, который поддерживает передняя дверь с частями пути вызова (см. изображение). В следующих разделах содержатся дополнительные сведения о заголовках HTTP, поддерживаемых передней дверцей.
@@ -33,7 +33,7 @@ ms.locfileid: "87799129"
 
 Передняя дверца включает заголовки входящего запроса, если они не удалены из-за ограничений. Передняя дверца также добавляет следующие заголовки:
 
-| Заголовок  | Пример и описание |
+| Header  | Пример и описание |
 | ------------- | ------------- |
 | Via |  Via: 1,1 Azure </br> Передняя дверь добавляет версию HTTP клиента, а затем *Azure* в качестве значения для заголовка Via. Этот заголовок указывает версию HTTP клиента, и эта Передняя дверца является промежуточным получателем для запроса между клиентом и серверной частью.  |
 | X-Azure-ClientIP | X-Azure-ClientIP: 127.0.0.1 </br> Представляет IP-адрес клиента, связанный с обрабатываемым запросом. Например, запрос, поступающий от прокси-сервера, может добавить заголовок X-Forwardd-for, чтобы указать IP-адрес исходного вызывающего объекта. |
@@ -50,7 +50,7 @@ ms.locfileid: "87799129"
 
 Все заголовки, отправленные в переднюю дверцу из серверной части, также передаются клиенту. Ниже приведены заголовки, отправляемые с передней дверцы клиентам.
 
-| Заголовок  | Пример |
+| Header  | Пример |
 | ------------- | ------------- |
 | X — Azure-ref |  *X-Azure-ref: 0zxV + XAAAAABKMMOjBv2NT4TY6SQVjC0zV1NURURHRTA2MTkANDM3YzgyY2QtMzYwYS00YTU0LTk0YzMtNWZmNzA3NjQ3Nzgz* </br> Это уникальная эталонная строка, которая идентифицирует запрос, обслуженный Front Door. Это важно для устранения неполадок, так как оно используется для поиска в журналах доступа.|
 

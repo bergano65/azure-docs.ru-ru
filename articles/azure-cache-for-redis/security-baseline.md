@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 03/16/2020
 ms.author: mbaldwin
 ms.custom: subject-security-benchmark
-ms.openlocfilehash: 215d31ee4797dd3e7eef88d3a6679f2256f0ffae
-ms.sourcegitcommit: d68c72e120bdd610bb6304dad503d3ea89a1f0f7
+ms.openlocfilehash: 0ab9eb36e9d254c4dab5aed36ec6e9784f04d958
+ms.sourcegitcommit: 5a3b9f35d47355d026ee39d398c614ca4dae51c6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/01/2020
-ms.locfileid: "89225984"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89400744"
 ---
 # <a name="azure-security-baseline-for-azure-cache-for-redis"></a>Базовый план безопасности Azure для кэша Azure для Redis
 
@@ -947,11 +947,15 @@ https://docs.microsoft.com/azure/azure-app-configuration/howto-integrate-azure-m
 
 Создание Key Vault: 
 
-https://docs.microsoft.com/azure/key-vault/quick-create-portal
+https://docs.microsoft.com/azure/key-vault/general/quick-create-portal
 
-Проверка подлинности в Key Vault с помощью управляемого удостоверения: 
+Проверка подлинности в Key Vault:
 
-https://docs.microsoft.com/azure/key-vault/managed-identity
+https://docs.microsoft.com/azure/key-vault/general/authentication
+
+Назначение политики доступа Key Vault.
+
+https://docs.microsoft.com/azure/key-vault/general/assign-access-policy-portal
 
 **Мониторинг Центра безопасности Azure**: Да
 
@@ -991,7 +995,7 @@ https://docs.microsoft.com/azure/azure-app-configuration/howto-integrate-azure-m
 
 ### <a name="81-use-centrally-managed-anti-malware-software"></a>8.1. Использование централизованно управляемого программного обеспечения для защиты от вредоносных программ
 
-**Руководство**. Неприменимо; эта рекомендация предназначена для вычислительных ресурсов.
+**Руководство**: Неприменимо; эта рекомендация предназначена для вычислительных ресурсов.
 
 Защита от вредоносных программ Майкрософт включена на базовом узле, поддерживающем службы Azure (например, служба приложений Azure), но не выполняется в содержимом клиента.
 
@@ -1005,13 +1009,13 @@ https://docs.microsoft.com/azure/azure-app-configuration/howto-integrate-azure-m
 
 Предварительно сканируйте любое содержимое, отправляемое в невычислительные ресурсы Azure, например служба приложений, хранилище Data Lake, хранилище BLOB-объектов, база данных Azure для PostgreSQL и т. д. Корпорация Майкрософт не может получить доступ к данным в этих экземплярах.
 
-**Мониторинг Центра безопасности Azure**: Неприменимо
+**Мониторинг центра безопасности Azure**: Неприменимо
 
 **Ответственность**: Customer
 
 ### <a name="83-ensure-anti-malware-software-and-signatures-are-updated"></a>8.3. Своевременное обновление программного обеспечения для защиты от вредоносных программ и подписей
 
-**Руководство**. Неприменимо; эта рекомендация предназначена для вычислительных ресурсов.
+**Рекомендации**. Неприменимо. Эта рекомендация предназначена для вычислительных ресурсов.
 
 Защита от вредоносных программ Майкрософт включена на базовом узле, поддерживающем службы Azure (например, кэш Azure для Redis), но не выполняется в содержимом клиента.
 

@@ -2,17 +2,17 @@
 title: Использование S2S VPN в качестве резервной копии для частного пиринга Azure ExpressRoute | Документация Майкрософт
 description: На этой странице приведены рекомендации по архитектуре для резервного копирования частного пиринга Azure ExpressRoute с помощью VPN типа S2S.
 services: networking
-author: rambk
+author: duongau
 ms.service: expressroute
 ms.topic: how-to
 ms.date: 02/05/2020
-ms.author: rambala
-ms.openlocfilehash: 68596b881ef1b62187bdb7194b364c9477b4e04d
-ms.sourcegitcommit: c293217e2d829b752771dab52b96529a5442a190
+ms.author: duau
+ms.openlocfilehash: 0ab74a14c16b7ea1d587cfcc82eea689e2f98c83
+ms.sourcegitcommit: 5a3b9f35d47355d026ee39d398c614ca4dae51c6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/15/2020
-ms.locfileid: "88244777"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89393026"
 ---
 # <a name="using-s2s-vpn-as-a-backup-for-expressroute-private-peering"></a>Использование S2S VPN в качестве резервной копии для частного пиринга ExpressRoute
 
@@ -302,7 +302,7 @@ Set-AzExpressRouteCircuit -ExpressRouteCircuit $ckt
 
 Чтобы убедиться, что трафик переключается обратно в ExpressRoute, повторите traceroute и убедитесь, что он проходит через частный пиринг ExpressRoute.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 ExpressRoute предназначен для обеспечения высокого уровня доступности без единой точки отказа в сети Microsoft. По-прежнему канал ExpressRoute ограничен одним географическим регионом и поставщиком услуг. VPN-подключение S2S может быть хорошим решением пассивного резервного копирования аварийного восстановления для канала ExpressRoute. Для надежного решения пассивного резервного копирования, регулярного обслуживания пассивной конфигурации и периодической проверки соединение имеет большое значение. Важно, чтобы конфигурация VPN была устаревшей и периодически (скажем, каждый квартал) повторить шаги проверки и отработки отказа, описанные в этой статье, во время периода обслуживания.
 

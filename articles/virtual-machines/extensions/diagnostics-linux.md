@@ -9,12 +9,12 @@ ms.tgt_pltfrm: vm-linux
 ms.topic: article
 ms.date: 12/13/2018
 ms.author: akjosh
-ms.openlocfilehash: 6bf82e85bfe36466010ce1cc8914bbd1221fe51a
-ms.sourcegitcommit: bcda98171d6e81795e723e525f81e6235f044e52
+ms.openlocfilehash: 7a0b2afa8b566ec82fc638291c43f3e0419f654c
+ms.sourcegitcommit: 5a3b9f35d47355d026ee39d398c614ca4dae51c6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/01/2020
-ms.locfileid: "89267859"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89400693"
 ---
 # <a name="use-linux-diagnostic-extension-to-monitor-metrics-and-logs"></a>Отслеживание метрик и журналов с помощью диагностического расширения Linux
 
@@ -70,7 +70,7 @@ ms.locfileid: "89267859"
 * **Агент Linux для Azure 2.2.0 или более поздней версии**. Большинство образов в коллекции виртуальных машин Azure на базе Linux включает версию 2.2.7 или более позднюю. Чтобы проверить версию, установленную в виртуальной машине, выполните команду `/usr/sbin/waagent -version`. Если в виртуальной машине установлена более старая версия гостевого агента, выполните [эти инструкции](./update-linux-agent.md) по ее обновлению.
 * **Azure CLI**. [Установите среду Azure CLI](/cli/azure/install-azure-cli) на компьютере.
 * Команда wget, если у вас ее еще нет: Выполните `sudo apt-get install wget`.
-* Существующая подписка Azure и существующая учетная запись хранилища в ней для хранения данных.
+* Существующая подписка Azure и существующая учетная запись хранения общего назначения для хранения данных.  Учетные записи хранения общего назначения поддерживают хранилище таблиц, которое требуется.  Учетная запись хранилища BLOB-объектов не будет работать.
 
 ### <a name="sample-installation"></a>Пример установки
 

@@ -3,20 +3,20 @@ title: Передняя дверца Azure — переопределение UR
 description: Эта статья поможет вам понять, как клиентская дверца Azure переопределяет URL-адреса для ваших маршрутов, если они настроены.
 services: front-door
 documentationcenter: ''
-author: sharad4u
+author: duongau
 ms.service: frontdoor
 ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 09/10/2018
-ms.author: sharadag
-ms.openlocfilehash: 1e5bd565be7a1cabf08ddf33c65eb12b5294249f
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.author: duau
+ms.openlocfilehash: 8f4a6283f762d9792f50651b9caee17795df6d55
+ms.sourcegitcommit: 5a3b9f35d47355d026ee39d398c614ca4dae51c6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "79471478"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89398943"
 ---
 # <a name="url-rewrite-custom-forwarding-path"></a>Переопределение URL-адреса (пользовательский путь переадресации)
 Передняя дверца Azure поддерживает переопределение URL-адресов, позволяя настроить необязательный **Пользовательский путь перенаправления** , который будет использоваться при создании запроса на пересылку в серверную часть. По умолчанию, если пользовательский путь переадресации не указан, служба Front Door скопирует входящий URL-путь в URL-адрес, используемый в перенаправленном запросе. Заголовок узла, используемый в перенаправленном запросе, соответствует настройкам для выбранной серверной части. Сведения о том, какие действия он выполняет и как его можно настроить, см. в разделе [Заголовок узла серверной системы](front-door-backend-pool.md#hostheader).

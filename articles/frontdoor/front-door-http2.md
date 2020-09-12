@@ -3,20 +3,20 @@ title: Передняя дверца Azure — поддержка HTTP2 | Док
 description: Эта статья поможет вам узнать о поддержке HTTP/2 в передней дверце Azure.
 services: frontdoor
 documentationcenter: ''
-author: sharad4u
+author: duongau
 ms.service: frontdoor
 ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 09/10/2018
-ms.author: sharadag
-ms.openlocfilehash: 8a3ae8065553b34a72528cb0f2681e327dc90097
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.author: duau
+ms.openlocfilehash: 7cdcef80ef2433d34b32589d2539089fb9801eb1
+ms.sourcegitcommit: 5a3b9f35d47355d026ee39d398c614ca4dae51c6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "80985190"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89399435"
 ---
 # <a name="http2-support-in-azure-front-door"></a>Поддержка HTTP/2 в передней дверце Azure
 
@@ -52,11 +52,11 @@ HTTP/2 является основной редакцией HTTP/1.1. Этот �
 |-------------|------------|
 |Microsoft Edge| 12|
 |Google Chrome| 43|
-|Mozilla Firefox| 38|
+|Mozilla Firefox;| 38|
 |Opera| 32|
 |Safari| 9|
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Next Steps
 
 Дополнительные сведения о HTTP/2 см. в следующих ресурсах.
 

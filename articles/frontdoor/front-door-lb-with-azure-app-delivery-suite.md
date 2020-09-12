@@ -3,24 +3,24 @@ title: Передняя дверца Azure — балансировка нагр
 description: Эта статья поможет вам узнать о том, как Azure рекомендует выполнять балансировку нагрузки с помощью пакета доставки приложений.
 services: frontdoor
 documentationcenter: ''
-author: sharad4u
+author: duongau
 ms.service: frontdoor
 ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 09/10/2018
-ms.author: sharadag
-ms.openlocfilehash: 44af14a01e7b045b7abb6a84db89a67f3dd22445
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.author: duau
+ms.openlocfilehash: 685ee9feaf057e4f2fae3cfe016624806f1ad00c
+ms.sourcegitcommit: 5a3b9f35d47355d026ee39d398c614ca4dae51c6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "80875288"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89399469"
 ---
 # <a name="load-balancing-with-azures-application-delivery-suite"></a>Балансировка нагрузки с помощью набора служб Azure для предоставления приложения
 
-## <a name="introduction"></a>Вступление
+## <a name="introduction"></a>Введение
 Microsoft Azure предоставляет несколько глобальных и региональных служб для управления распределением сетевого трафика и балансировкой нагрузки: диспетчер трафика, передняя дверца, шлюз приложений и Load Balancer.  Совместное использование этих служб в множестве регионов Azure и разных зональных архитектурах позволяет создавать надежные, масштабируемые, высокопроизводительные приложения.
 
 ![Набор служб для предоставления приложений ][1]
@@ -81,7 +81,7 @@ Load Balancer — это неотъемлемая часть стека SDN Azur
 > Этот пример демонстрирует лишь одну из многих возможных конфигураций, которые можно реализовать с использованием служб Azure для балансировки нагрузки. Диспетчер трафика, Front Door, Шлюз приложений и Load Balancer можно использовать совместно в зависимости от ваших потребностей. Например, если не требуется разгрузка TLS/SSL или обработка уровня 7, Load Balancer можно использовать вместо шлюза приложений.
 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Next Steps
 
 - Дополнительные сведения о [создании Front Door](quickstart-create-front-door.md).
 - Дополнительные сведения о том, [как работает Front Door](front-door-routing-architecture.md).
