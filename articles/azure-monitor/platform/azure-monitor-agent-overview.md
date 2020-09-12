@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 08/10/2020
-ms.openlocfilehash: ff70beef89f6db240db244de1e11e54193858be0
-ms.sourcegitcommit: e0785ea4f2926f944ff4d65a96cee05b6dcdb792
+ms.openlocfilehash: 0fc9139e9456a62bf3586fb358046e7c868b834a
+ms.sourcegitcommit: 3c66bfd9c36cd204c299ed43b67de0ec08a7b968
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/21/2020
-ms.locfileid: "88705781"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "90005230"
 ---
 # <a name="azure-monitor-agent-overview-preview"></a>Общие сведения об агенте Azure Monitor (Предварительная версия)
 Агент Azure Monitor (АМА) собирает данные мониторинга из гостевой операционной системы виртуальных машин и доставляет их в Azure Monitor. В этой статье содержатся общие сведения об агенте Azure Monitor, включая инструкции по его установке и настройке сбора данных.
@@ -79,7 +79,7 @@ ms.locfileid: "88705781"
 В настоящее время агентом Azure Monitor поддерживаются следующие операционные системы.
 
 ### <a name="windows"></a>Windows 
-  - Windows Server 2019
+  - Windows Server 2019
   - Windows Server 2016
   - Windows Server 2012
   - Windows Server 2012 R2
@@ -88,12 +88,12 @@ ms.locfileid: "88705781"
   - CentOS 6<sup>1</sup>, 7
   - Debian 9, 10
   - Oracle Linux 6<sup>1</sup>, 7
-  - RHEL 6<sup>1</sup>, 7, 8
+  - RHEL 6<sup>1</sup>, 7
   - SLES 11, 12, 15
   - Ubuntu 14,04 LTS, 16,04 LTS, 18,04 LTS
 
 > [!IMPORTANT]
-> <sup>1</sup> Чтобы эти дистрибутивы отправляли данные системного журнала, необходимо удалить rsyslog и установить syslog-ng.
+> <sup>1</sup> Чтобы эти дистрибутивы отправляли данные системного журнала, необходимо перезапустить службу rsyslog один раз после установки агента.
 
 
 ## <a name="security"></a>Безопасность
@@ -105,7 +105,7 @@ ms.locfileid: "88705781"
 
 | Свойство | Windows | Linux |
 |:---|:---|:---|
-| Издатель | Microsoft. Azure. Monitor  | Microsoft. Azure. Monitor |
+| Publisher | Microsoft. Azure. Monitor  | Microsoft. Azure. Monitor |
 | Тип      | азуремониторвиндовсажент | азуремониторлинуксажент  |
 | TypeHandlerVersion  | 1.0 | 1.5 |
 

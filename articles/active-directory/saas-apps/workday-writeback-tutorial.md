@@ -10,12 +10,12 @@ ms.topic: article
 ms.workload: identity
 ms.date: 05/26/2020
 ms.author: chmutali
-ms.openlocfilehash: 324d3a21e1694d243f03beca28ac8376bedffa4d
-ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
+ms.openlocfilehash: 8c76bddc0fae024b0dd2bdd27d6b1e10d71dec71
+ms.sourcegitcommit: 43558caf1f3917f0c535ae0bf7ce7fe4723391f9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88526836"
+ms.lasthandoff: 09/11/2020
+ms.locfileid: "90017478"
 ---
 # <a name="tutorial-configure-attribute-writeback-from-azure-ad-to-workday"></a>Руководство. Настройка обратной записи атрибутов из Azure AD в Workday
 Цель этого руководства — продемонстрировать шаги, которые необходимо выполнить для обратной записи атрибутов из Azure AD в Workday. Приложение подготовки обратной записи Workday поддерживает назначение значений следующим атрибутам Workday:
@@ -26,7 +26,7 @@ ms.locfileid: "88526836"
 * Номер рабочего мобильного устройства (включая код страны, код города, номер)
 * Основной флаг рабочего мобильного устройства
 
-## <a name="overview"></a>Обзор
+## <a name="overview"></a>Overview
 
 После настройки входящей интеграции подготовки с помощью [workday для локального](workday-inbound-tutorial.md) приложения подготовки AD или [рабочего дня в приложении подготовки Azure AD](workday-inbound-cloud-only-tutorial.md) можно дополнительно настроить приложение обратной записи workday для записи контактной информации, такой как Рабочая электронная почта и номер телефона, в Workday. 
 
@@ -34,7 +34,7 @@ ms.locfileid: "88526836"
 
 Решение по подготовке обратной записи пользователя Workday идеально подходит для:
 
-* Организации, использующие Office 365, которым требуется обратная запись полномочных атрибутов, управляемых им (например, адрес электронной почты, имя пользователя и номер телефона), обратно в Workday.
+* Организации, использующие Microsoft 365, желающие выполнить обратную запись полномочных атрибутов, управляемых им (например, адрес электронной почты, имя пользователя и номер телефона), обратно в Workday.
 
 ## <a name="configure-integration-system-user-in-workday"></a>Настройка пользователя системы интеграции в Workday
 

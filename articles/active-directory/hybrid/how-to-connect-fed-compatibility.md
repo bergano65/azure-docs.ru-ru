@@ -16,23 +16,23 @@ ms.date: 08/23/2018
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: f3ca659535c225ca6736fe7bba8aa5b0120c684c
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 895e7347feea3190ba9bdc273200d2985dfaa0d1
+ms.sourcegitcommit: f8d2ae6f91be1ab0bc91ee45c379811905185d07
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85359829"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89661831"
 ---
 # <a name="azure-ad-federation-compatibility-list"></a>Список совместимости с федерацией Azure AD
-Azure Active Directory предоставляет возможность единого входа и обеспечивает повышенную безопасность доступа к приложениям для Office 365 и других служб Microsoft Online Services для гибридных и исключительно облачных реализаций без использования стороннего решения. Office 365, как и большинство служб Microsoft Online Services, интегрируется с Azure Active Directory для служб каталогов, аутентификации и авторизации. Azure Active Directory также предоставляет возможность единого входа в тысячи приложений SaaS и локальные веб-приложения. Список поддерживаемых приложений SaaS см. в [коллекции приложений](https://azuremarketplace.microsoft.com/marketplace/apps/category/azure-active-directory-apps) Azure Active Directory. 
+Azure Active Directory предоставляет единый вход и улучшенную безопасность доступа к приложениям для Microsoft 365 и других служб Microsoft Online Services для гибридных и облачных реализаций без необходимости решения сторонних разработчиков. Microsoft 365, как и большинство веб-служб Майкрософт, интегрирована с Azure Active Directory для служб каталогов, проверки подлинности и авторизации. Azure Active Directory также предоставляет возможность единого входа в тысячи приложений SaaS и локальные веб-приложения. Список поддерживаемых приложений SaaS см. в [коллекции приложений](https://azuremarketplace.microsoft.com/marketplace/apps/category/azure-active-directory-apps) Azure Active Directory. 
 
 ## <a name="idp-validation"></a>Проверка IdP
-Если ваша организация использует стороннее решение для федерации, то можно настроить единый вход для пользователей в локальной среде Active Directory с помощью служб Microsoft Online, например Office 365, при условии, что это стороннее решение для федерации совместимо с Azure Active Directory.  По вопросам совместимости обратитесь к поставщику удостоверений.  Если вы хотите просмотреть список поставщиков удостоверений, которые ранее были проверены корпорацией Майкрософт на совместимость с Azure AD, щелкните [здесь](https://www.microsoft.com/download/details.aspx?id=56843). 
+Если в вашей организации используется стороннее решение Федерации, вы можете настроить единый вход для локальных Active Directory пользователей с помощью служб Microsoft Online Services, таких как Microsoft 365, при условии, что стороннее решение Федерации совместимо с Azure Active Directory.  По вопросам совместимости обратитесь к поставщику удостоверений.  Если вы хотите просмотреть список поставщиков удостоверений, которые ранее проверялись на совместимость с Azure AD, Майкрософт, см. [документацию по совместимости поставщика удостоверений Azure AD](https://www.microsoft.com/download/details.aspx?id=56843). 
 
 >[!NOTE]
 >Корпорация Майкрософт больше не предоставляет проверочное тестирование независимых поставщиков удостоверений, чтобы обеспечить совместимость с Azure Active Directory. Если вы хотите проверить взаимодействие своего продукта, ознакомьтесь с этими [рекомендациями](https://www.microsoft.com/download/details.aspx?id=56843). 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Next Steps
 
 - [Интеграция локальных каталогов с Azure Active Directory](whatis-hybrid-identity.md)
 - [Azure AD Connect и федерация](how-to-connect-fed-whatis.md)

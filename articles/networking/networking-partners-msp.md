@@ -7,12 +7,12 @@ ms.service: expressroute
 ms.topic: conceptual
 ms.date: 07/23/2020
 ms.author: sukishen
-ms.openlocfilehash: 237ca65d5feadd019b734dd751d943c06c9a2213
-ms.sourcegitcommit: 02ca0f340a44b7e18acca1351c8e81f3cca4a370
+ms.openlocfilehash: fc3c4055feedeb7c1c41a53dc26ac7c29a2cb4fe
+ms.sourcegitcommit: 3c66bfd9c36cd204c299ed43b67de0ec08a7b968
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/19/2020
-ms.locfileid: "88587010"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "90007508"
 ---
 # <a name="about-azure-networking-msp-partners"></a>Сведения о партнерах программы для поставщиков сетевых устройств и служб Azure (MSP)
 
@@ -46,6 +46,7 @@ ms.locfileid: "88587010"
 |[Liquid Telecom](https://liquidcloud.africa/azure-networking)|[Готовность к облаку: оценка (2 ч)](https://azuremarketplace.microsoft.com/en-us/marketplace/consulting-services/liquidtelecommunicationsoperationslimited.liquid_cloud_readiness_assessment)|||||
 |[Macquarie Telecom](https://macquariecloudservices.com/azure-managed-services/)|[Управляемые службы Azure от Macquarie Cloud](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/macquariecloudservices.managed_services?tab=Overview)||[Установка Virtual Edge SD-WAN от Macquarie Cloud](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/macquariecloudservices.nanaged_network_services?tab=Overview)|||
 |[Megaport](https://www.megaport.com/services/microsoft-expressroute/)||[mcr](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/megaport1582290752989.megaport_mcr?tab=Overview)||||
+|[Nokia](https://www.nokia.com/networks/services/managed-services/)|||[Нбконсулт Nokia НУАЖЕ сдван](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/nbconsult1588859334197.nbconsult-nokia-nuage?tab=Overview); [НУАЖЕ SD-wan 2,0 Виртуальная глобальная сеть Azure](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/nokiaofamericacorporation1591716055441.nuage_sd-wan_2-0_azure_virtual_wan?tab=Overview)|[Клавиатура Nokia 4G & 5G Private Wireless (НДАК)](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/nokiaofamericacorporation1591716055441.ndac_5g-ready_private_wireless?tab=Overview)|
 |[Облачные службы Oncore]( https://www.oncore.cloud/services/ue-for-expressroute/)|[Корпоративные облачные платформы: семинар (~10 дней)](https://azuremarketplace.microsoft.com/en-us/marketplace/consulting-services/oncore_cloud_services-4944214.oncore_cloud_onboard_201810)|[UniversalEdge для Azure ExpressRoute](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/oncore_cloud_services-4944214.universaledge_for_expressroute?tab=Overview)||||
 |[Orixcom]( https://www.orixcom.com/cloud-solutions/)||[Управляемая служба ExpressRoute от Orixcom](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/orixcom.orixcom_managed_expressroute?tab=Overview)|[Orixcom SD-WAN](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/orixcom.orixcom_sd_wan?tab=Overview)|||
 |[SoftBank]( https://www.softbank.jp/biz/nw/nwp/cloud_access/direct_access_for_az/)|[Служба консультаций по Сети Azure: оценка (1 нед.)](https://azuremarketplace.microsoft.com/en-us/marketplace/consulting-services/sbmpn.softbank_nw_msp_service_azure); [Служба оценки Azure (1 нед.)](https://azuremarketplace.microsoft.com/en-us/marketplace/consulting-services/sbmpn.softbank_msp_service_azure_01?tab=Overview&pub_source=email&pub_status=success)|||||
@@ -55,7 +56,7 @@ ms.locfileid: "88587010"
 |[Vigilant IT](https://vigilant.it/manage-cloud-service/)|[Проверка работоспособности Azure: оценка (5 дн.)](https://azuremarketplace.microsoft.com/en-us/marketplace/consulting-services/vigilant-it.ahc01)|[ExpressRoute: реализация (5 дн.)](https://azuremarketplace.microsoft.com/en-us/marketplace/consulting-services/vigilant-it.erd01)|||
 |[Vandis](https://www.vandis.com/microsoft-azure-practice/)||[Управляемая служба ExpressRoute от Vandis](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/vandis.vandis_managed_expressroute?tab=Overview)|[Управляемая глобальная виртуальная сеть Vandis от Fortinet](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/vandis.vandis_managed_vwan_powered_by_fortinet?tab=Overview); [Управляемая глобальная виртуальная сеть Vandis от Palo Alto Networks](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/vandis.vandis_managed_vwan_powered_by_palo_alto_networks?tab=Overview)|
 
-Azure Marketplace предлагает управляемые службы ExpressRoute, виртуальные глобальные сети, службы безопасности и зоны частных пограничных услуг со следующих партнеров по сети Azure для сетей MSP: [Амдокс](https://www.amdocs.com/);  [Подразделение Telekom](https://www.telekom.com/en/media/media-information/archive/deutsche-telekom-offers-managed-network-services-for-microsoft-azure-598406);  [Доступ IX](https://www.ixreach.com/services/sdn-cloud-connect/);  В  [облаке](https://intercloud.com/partners/microsoft-azure/);  [Кинкс](https://www.kinx.net/service/cloud/?lang=en); [Омниклаудс](https://omniclouds.com/); [Оранжевые бизнес-услуги](https://www.orange-business.com/en/solutions/cloud-computing); [Сежонг телекоммуникации](https://www.sejongtelecom.net/en/pages/service/cloud_ms);
+Azure Marketplace предлагает управляемые службы ExpressRoute, виртуальные глобальные сети, службы безопасности и зоны частных пограничных услуг со следующих партнеров по сети Azure для сетей MSP: [Амдокс](https://www.amdocs.com/);  [Подразделение Telekom](https://www.telekom.com/en/media/media-information/archive/deutsche-telekom-offers-managed-network-services-for-microsoft-azure-598406);  [Доступ IX](https://www.ixreach.com/services/sdn-cloud-connect/);  В  [облаке](https://intercloud.com/partners/microsoft-azure/);  [Кинкс](https://www.kinx.net/service/cloud/?lang=en); [Омниклаудс](https://omniclouds.com/); [Опенсистем](https://open-systems.com/solutions/cloud-enablement/); [Оранжевые бизнес-услуги](https://www.orange-business.com/en/partners/orange-business-services-become-microsoft-azure-networking-managed-services-provider); [Телекоммуникации Сежонг](https://www.sejongtelecom.net/en/pages/service/cloud_ms)
 
 ## <a name="expressroute-partners"></a><a name="expressroute"></a>Партнеры ExpressRoute
 
