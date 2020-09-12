@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 04/23/2019
 ms.author: vitalyg
 ms.subservice: metrics
-ms.openlocfilehash: 4800234b55507b7c8d8a16d16ce4d2fef3365baa
-ms.sourcegitcommit: 2ff0d073607bc746ffc638a84bb026d1705e543e
+ms.openlocfilehash: 54f99f2f8708fca9c02950a8886a2a9b976a93dd
+ms.sourcegitcommit: bf1340bb706cf31bb002128e272b8322f37d53dd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87829600"
+ms.lasthandoff: 09/03/2020
+ms.locfileid: "89440683"
 ---
 # <a name="troubleshooting-metrics-charts"></a>Устранение неполадок с диаграммами метрик
 
@@ -110,7 +110,7 @@ ms.locfileid: "87829600"
 
 1. Убедитесь, что учетная запись хранения не защищена брандмауэром. Порталу Azure необходим доступ к учетной записи хранения для получения данных метрик и составления диаграмм.
 
-1. С помощью [обозревателя службы хранилища Azure](https://azure.microsoft.com/features/storage-explorer/) убедитесь, что метрики передаются в учетную запись хранения. Если метрики не собираются, выполните инструкции из [руководства по устранению неполадок для расширения диагностики Azure](diagnostics-extension-troubleshooting.md#metric-data-doesnt-appear-in-the-azure-portal).
+1. Используйте [Обозреватель службы хранилища Azure](https://azure.microsoft.com/features/storage-explorer/) , чтобы проверить, что метрики передаются в учетную запись хранения. Если метрики не собираются, выполните инструкции из [руководства по устранению неполадок для расширения диагностики Azure](diagnostics-extension-troubleshooting.md#metric-data-doesnt-appear-in-the-azure-portal).
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

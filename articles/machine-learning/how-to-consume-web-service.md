@@ -11,19 +11,19 @@ ms.reviewer: larryfr
 ms.date: 06/17/2020
 ms.topic: conceptual
 ms.custom: how-to, devx-track-python, devx-track-csharp
-ms.openlocfilehash: 56cd2117a352626cf59023d62ea8c931401389c5
-ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
+ms.openlocfilehash: 3e6b5e2e06e6cd87295b2faf2a426b75b5f6bf10
+ms.sourcegitcommit: 3be3537ead3388a6810410dfbfe19fc210f89fec
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89018099"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89650756"
 ---
 # <a name="consume-an-azure-machine-learning-model-deployed-as-a-web-service"></a>Использование модели Машинного обучения Azure, развернутой в качестве веб-службы
 [!INCLUDE [applies-to-skus](../../includes/aml-applies-to-basic-enterprise-sku.md)]
 
 При развертывании модели Машинное обучение Azure в качестве веб-службы создается конечная точка REST API. Вы можете отправить данные в эту конечную точку и получить прогноз, возвращенный моделью. В этом документе описано, как создать клиенты для работы с веб-службой на языках C#, Go, Java и Python.
 
-Веб-служба создается при развертывании модели в локальной среде, в службе "экземпляры контейнеров Azure", в Azure Kubernetes Service или в виде программируемых массивов шлюзов (FPGA). Чтобы получить универсальный код ресурса (URI), используемый для доступа к веб-службе, используйте [пакет SDK для машинное обучение Azure](https://docs.microsoft.com/python/api/overview/azure/ml/intro?view=azure-ml-py). Если проверка подлинности включена, можно также использовать пакет SDK для получения ключей или маркеров проверки подлинности.
+Веб-служба создается при развертывании модели в локальной среде, в службе "экземпляры контейнеров Azure", в Azure Kubernetes Service или в виде программируемых массивов шлюзов (FPGA). Чтобы получить универсальный код ресурса (URI), используемый для доступа к веб-службе, используйте [пакет SDK для машинное обучение Azure](https://docs.microsoft.com/python/api/overview/azure/ml/intro?view=azure-ml-py&preserve-view=true). Если проверка подлинности включена, можно также использовать пакет SDK для получения ключей или маркеров проверки подлинности.
 
 Ниже приведен общий рабочий процесс создания клиента, который использует веб-службу Машинного обучения:
 
@@ -39,7 +39,7 @@ ms.locfileid: "89018099"
 > [!NOTE]
 > Для получения информации о веб-службе используется пакет SDK для Машинного обучения Azure. Этот пакет SDK написан на Python. Вы можете использовать любой язык для создания клиента для службы.
 
-Класс [azureml.core.Webservice](https://docs.microsoft.com/python/api/azureml-core/azureml.core.webservice(class)?view=azure-ml-py) предоставляет необходимые сведения для создания клиента. Следующие свойства `Webservice` могут быть полезны при создании клиентского приложения:
+Класс [azureml.core.Webservice](https://docs.microsoft.com/python/api/azureml-core/azureml.core.webservice(class)?view=azure-ml-py&preserve-view=true) предоставляет необходимые сведения для создания клиента. Следующие свойства `Webservice` могут быть полезны при создании клиентского приложения:
 
 * `auth_enabled` — Если включена проверка подлинности ключа `True` ; в противном случае — значение `False` .
 * `token_auth_enabled` — Если включена проверка подлинности токенов `True` ; в противном случае — значение `False` .
@@ -57,7 +57,7 @@ ms.locfileid: "89018099"
     print(service.swagger_uri)
     ```
 
-* С помощью `Webservice.list` можно получить список развернутых веб-служб для моделей в рабочей области. Добавляя фильтры, можно сузить список возвращаемых сведений. Дополнительные сведения о возможностях фильтрации см. в справочной документации по [Webservice.list](https://docs.microsoft.com/python/api/azureml-core/azureml.core.webservice.webservice.webservice?view=azure-ml-py).
+* С помощью `Webservice.list` можно получить список развернутых веб-служб для моделей в рабочей области. Добавляя фильтры, можно сузить список возвращаемых сведений. Дополнительные сведения о возможностях фильтрации см. в справочной документации по [Webservice.list](https://docs.microsoft.com/python/api/azureml-core/azureml.core.webservice.webservice.webservice?view=azure-ml-py&preserve-view=true).
 
     ```python
     services = Webservice.list(ws)
@@ -113,7 +113,7 @@ print(primary)
 ```
 
 > [!IMPORTANT]
-> Если необходимо повторно создать ключ, используйте [`service.regen_key`](https://docs.microsoft.com/python/api/azureml-core/azureml.core.webservice(class)?view=azure-ml-py) .
+> Если необходимо повторно создать ключ, используйте [`service.regen_key`](https://docs.microsoft.com/python/api/azureml-core/azureml.core.webservice(class)?view=azure-ml-py&preserve-view=true) .
 
 #### <a name="authentication-with-tokens"></a>Аутентификация с помощью токенов
 
@@ -501,7 +501,7 @@ print(resp.text)
 
 ## <a name="web-service-schema-openapi-specification"></a>Схема веб-службы (спецификация OpenAPI)
 
-Если вы использовали автоматическое создание схем в развертывании, можно получить адрес спецификации OpenAPI для службы с помощью [свойства swagger_uri](https://docs.microsoft.com/python/api/azureml-core/azureml.core.webservice.local.localwebservice?view=azure-ml-py#swagger-uri). (Например, `print(service.swagger_uri)` .) Используйте запрос GET или откройте универсальный код ресурса (URI) в браузере, чтобы получить спецификацию.
+Если вы использовали автоматическое создание схем в развертывании, можно получить адрес спецификации OpenAPI для службы с помощью [свойства swagger_uri](https://docs.microsoft.com/python/api/azureml-core/azureml.core.webservice.local.localwebservice?view=azure-ml-py#&preserve-view=trueswagger-uri). (Например, `print(service.swagger_uri)` .) Используйте запрос GET или откройте универсальный код ресурса (URI) в браузере, чтобы получить спецификацию.
 
 Следующий документ JSON является примером схемы (спецификации OpenAPI), созданной для развертывания:
 
@@ -643,7 +643,7 @@ print(resp.text)
 
 
 > [!TIP]
-> После развертывания службы можно получить документ JSON схемы. Используйте [свойство swagger_uri](https://docs.microsoft.com/python/api/azureml-core/azureml.core.webservice.local.localwebservice?view=azure-ml-py#swagger-uri) из развернутой веб-службы (например, `service.swagger_uri` ), чтобы получить универсальный код ресурса (URI) для файла Swagger локальной веб-службы.
+> После развертывания службы можно получить документ JSON схемы. Используйте [свойство swagger_uri](https://docs.microsoft.com/python/api/azureml-core/azureml.core.webservice.local.localwebservice?view=azure-ml-py#&preserve-view=trueswagger-uri) из развернутой веб-службы (например, `service.swagger_uri` ), чтобы получить универсальный код ресурса (URI) для файла Swagger локальной веб-службы.
 
 ## <a name="consume-the-service-from-power-bi"></a>Consume the service from Power BI (Использование службы из Power BI)
 

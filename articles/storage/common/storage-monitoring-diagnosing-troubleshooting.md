@@ -9,12 +9,12 @@ ms.author: normesta
 ms.reviewer: fryu
 ms.subservice: common
 ms.custom: monitoring, devx-track-csharp
-ms.openlocfilehash: 93015427dddfe2b311783c20587792e34c098ce8
-ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
+ms.openlocfilehash: b1b438dd9370e0f0d76e5c596176d9bd08cc76d5
+ms.sourcegitcommit: 4a7a4af09f881f38fcb4875d89881e4b808b369b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89011044"
+ms.lasthandoff: 09/04/2020
+ms.locfileid: "89462009"
 ---
 # <a name="monitor-diagnose-and-troubleshoot-microsoft-azure-storage"></a>Мониторинг, диагностика и устранение неисправностей службы хранилища Microsoft Azure
 [!INCLUDE [storage-selector-portal-monitoring-diagnosing-troubleshooting](../../../includes/storage-selector-portal-monitoring-diagnosing-troubleshooting.md)]
@@ -134,7 +134,7 @@ ms.locfileid: "89011044"
 >
 >
 
-Чтобы узнать, как оценить размер различных объектов для хранения данных, например больших двоичных объектов, прочтите запись блога [Общая информация о плате за использование хранилища Azure: пропускная способность, транзакции и емкость](https://blogs.msdn.com/b/windowsazurestorage/archive/2010/07/09/understanding-windows-azure-storage-billing-bandwidth-transactions-and-capacity.aspx).
+Чтобы узнать, как оценить размер различных объектов для хранения данных, например больших двоичных объектов, прочтите запись блога [Общая информация о плате за использование хранилища Azure: пропускная способность, транзакции и емкость](https://docs.microsoft.com/archive/blogs/patrick_butler_monterde/azure-storage-understanding-windows-azure-storage-billing-bandwidth-transactions-and-capacity).
 
 ### <a name="monitoring-availability"></a><a name="monitoring-availability"></a>Мониторинг доступности
 Вы должны отслеживать доступность служб хранилища в своей учетной записи хранения путем мониторинга значения в столбце **Доступность** таблиц, содержащих метрики, которые фиксируются каждую минуту или каждый час: **$MetricsHourPrimaryTransactionsBlob**, **$MetricsHourPrimaryTransactionsTable**, **$MetricsHourPrimaryTransactionsQueue**, **$MetricsMinutePrimaryTransactionsBlob**, **$MetricsMinutePrimaryTransactionsTable**, **$MetricsMinutePrimaryTransactionsQueue** и **$MetricsCapacityBlob**. Столбец **Доступность** содержит процентное значение, которое отражает доступность службы или операции API, указанной в соответствующей строке (**Ключ строки** показывает, содержит ли строка метрики для службы в целом или только для конкретной операции API).

@@ -12,12 +12,12 @@ ms.date: 05/22/2019
 ms.author: ryanwi
 ms.reviewer: lenalepa, sureshja
 ms.custom: aaddev
-ms.openlocfilehash: 517d6f7f06025b35dd27fa69d1de1b4139de6c8d
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 73c4931533e3926086320531a0800a572d13808c
+ms.sourcegitcommit: c52e50ea04dfb8d4da0e18735477b80cafccc2cf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85478014"
+ms.lasthandoff: 09/08/2020
+ms.locfileid: "89535778"
 ---
 # <a name="how-to-configure-terms-of-service-and-privacy-statement-for-an-app"></a>Как настроить условия предоставления услуг и заявления о конфиденциальности для приложения
 
@@ -58,7 +58,7 @@ ms.locfileid: "85478014"
 ### <a name="using-the-azure-portal"></a><a name="azure-portal"></a>Использование портала Azure
 Выполните следующие действия в портал Azure.
 
-1. Войдите на [портал Azure](https://portal.azure.com/).
+1. Войдите в [портал Azure](https://portal.azure.com/), выберите правильный клиент AzureAD (не B2C).
 2. Перейдите к разделу **Регистрация приложений** и выберите свое приложение.
 3. Откройте панель **фирменной символики** .
 4. Заполните поля **URL-адрес условий предоставления услуг** и **URL-адрес заявления о конфиденциальности**.
@@ -69,6 +69,11 @@ ms.locfileid: "85478014"
 ### <a name="using-the-app-object-json"></a><a name="app-object-json"></a>с помощью JSON объекта приложения;
 
 Если вы предпочитаете непосредственно изменить объект JSON приложения, то можно использовать редактор манифестов на портале Azure или портале регистрации приложений, чтобы добавить ссылки на условия обслуживания и заявление о конфиденциальности для приложения.
+
+1. Перейдите к разделу **регистрации приложений** и выберите свое приложение.
+2. Откройте панель **Манифест** .
+3. Ctrl + F, выполните поиск по запросу «Информатионалурлс». Введите сведения.
+4. Сохраните изменения.
 
 ```json
     "informationalUrls": { 

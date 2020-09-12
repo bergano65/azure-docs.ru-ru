@@ -12,12 +12,12 @@ ms.reviewer: jrasnick
 manager: craigg
 ms.custom: seo-lt-2019
 tags: azure-synapse
-ms.openlocfilehash: 01b6a72dfe3180324919fd712412ae88578c641b
-ms.sourcegitcommit: 8a7b82de18d8cba5c2cec078bc921da783a4710e
+ms.openlocfilehash: 6f7af74cce6bbafea7924d505f768503c7b1f108
+ms.sourcegitcommit: 4a7a4af09f881f38fcb4875d89881e4b808b369b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89047458"
+ms.lasthandoff: 09/04/2020
+ms.locfileid: "89457997"
 ---
 # <a name="azure-synapse-analytics-release-notes"></a>Заметки о выпуске Azure Synapse Analytics
 
@@ -35,7 +35,7 @@ ms.locfileid: "89047458"
 > ```sql
 > SELECT SERVERPROPERTY('ProductVersion')
 >
-> --To return engine edition, use this command that returns 6 for Azure Synapse Analytics (Formerly SQL Data Warehouse):
+> --To return engine edition, use this command that returns 6 for Azure Synapse Analytics (formerly SQL Data Warehouse):
 >
 > SELECT SERVERPROPERTY('EngineEdition')
 > ```
@@ -51,7 +51,7 @@ ms.locfileid: "89047458"
 
 | Улучшения службы | Сведения |
 | --- | --- |
-|**Шифрование на уровне столбцов (общедоступная Предварительная версия)**|Защитите конфиденциальную информацию в хранилище данных SQL синапсе, применив симметричное шифрование к столбцу данных с помощью Transact-SQL. Шифрование на уровне столбцов содержит встроенные функции, которые можно использовать для шифрования данных с помощью симметричных ключей, которые дополнительно защищаются сертификатом, паролем, симметричным ключом или асимметричным ключом. Дополнительные сведения см. [в статье шифрование столбца данных](/sql/relational-databases/security/encryption/encrypt-a-column-of-data?view=azure-sqldw-latest).|
+|**Шифрование на уровне столбцов (общедоступная Предварительная версия)**|Защитите конфиденциальную информацию в Azure синапсе Analytics, применив симметричное шифрование к столбцу данных с помощью Transact-SQL. Шифрование на уровне столбцов содержит встроенные функции, которые можно использовать для шифрования данных с помощью симметричных ключей, которые дополнительно защищаются сертификатом, паролем, симметричным ключом или асимметричным ключом. Дополнительные сведения см. [в статье шифрование столбца данных](/sql/relational-databases/security/encryption/encrypt-a-column-of-data?view=azure-sqldw-latest).|
 |**Поддержка уровня совместимости (GA)**|В этом выпуске пользователи теперь могут задать уровень совместимости базы данных, чтобы определять язык Transact-SQL и поведение обработки запросов конкретной версии ядра Synapse SQL. Дополнительные сведения см. в статьях [sys.database_scoped_configurations (Transact-SQL)](/sql/relational-databases/system-catalog-views/sys-database-scoped-configurations-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest) и [ALTER DATABASE SCOPED CONFIGURATION (Transact-SQL)](/sql/t-sql/statements/alter-database-scoped-configuration-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest).|
 |**Безопасность на уровне строк**|Этот выпуск включает в себя улучшение операций обновления и удаления строк с принудительным применением RLS. В этом выпуске операции обновления и удаления с внутренними функциями, такими как "is_rolemember", будут выполнены, если встроенная функция не ссылается ни на один столбец в целевой таблице DML. До этого улучшения произошел сбой этих операций из-за ограничений в базовых операциях DML.|
 |**DBCC SHRINKDATABASE (GA)**|Теперь размер файлов данных и журналов можно сжать в указанной базе данных. Дополнительные сведения см. в [документации](https://docs.microsoft.com/sql/t-sql/database-console-commands/dbcc-shrinkdatabase-transact-sql?view=sql-server-ver15).|

@@ -4,14 +4,14 @@ description: Создание экземпляра Azure HPC Cache
 author: ekpgh
 ms.service: hpc-cache
 ms.topic: how-to
-ms.date: 07/10/2020
+ms.date: 09/03/2020
 ms.author: v-erkel
-ms.openlocfilehash: a988f08b2b6e30543c112b20e5b374130ceddc47
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 5b1062556f1f971690f835274be15c11b072eca9
+ms.sourcegitcommit: f845ca2f4b626ef9db73b88ca71279ac80538559
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87092496"
+ms.lasthandoff: 09/09/2020
+ms.locfileid: "89612078"
 ---
 # <a name="create-an-azure-hpc-cache"></a>Создание Azure HPC Cache
 
@@ -29,7 +29,7 @@ ms.locfileid: "87092496"
 
 ![снимок экрана: страница со сведениями о проекте на портале Azure](media/hpc-cache-create-basics.png)
 
-В области **Сведения о проекте** выберите подписку и группу ресурсов, в которых будет размещаться кэш. Убедитесь, что подписка находится в [списке доступа](hpc-cache-prerequisites.md#azure-subscription).
+В области **Сведения о проекте** выберите подписку и группу ресурсов, в которых будет размещаться кэш.<!-- Make sure the subscription is on the [access](hpc-cache-prerequisites.md#azure-subscription) list.  -->
 
 В области **Сведения о службе** задайте имя кэша и следующие атрибуты:
 
@@ -132,11 +132,11 @@ nets/<cache_subnet_name>"``
 
   | Объем кэша | Standard_2G | Standard_4G | Standard_8G |
   |------------|-------------|-------------|-------------|
-  | 3072 ГБ    | да         | нет          | нет          |
-  | 6144 ГБ    | Да         | да         | нет          |
-  | 12288 ГБ   | Да         | Да         | Да         |
-  | 24576 ГБ   | нет          | да         | Да         |
-  | 49152 ГБ   | Нет          | нет          | да         |
+  | 3072 ГБ    | да         | Нет          | Нет          |
+  | 6144 ГБ    | да         | да         | Нет          |
+  | 12288 ГБ   | да         | да         | да         |
+  | 24576 ГБ   | Нет          | да         | да         |
+  | 49152 ГБ   | Нет          | Нет          | да         |
 
   Ознакомьтесь с разделом **Установка емкости кэша** на вкладке инструкции портала, чтобы получить важные сведения о ценах, пропускной способности и том, как правильно установить размер кэша для рабочего процесса.
 

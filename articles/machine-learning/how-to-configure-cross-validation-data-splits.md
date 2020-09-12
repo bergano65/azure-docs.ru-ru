@@ -11,12 +11,12 @@ ms.author: cesardl
 author: CESARDELATORRE
 ms.reviewer: nibaccam
 ms.date: 06/16/2020
-ms.openlocfilehash: 900d5cd435a913c0859c862d176fd30130e0a079
-ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
+ms.openlocfilehash: 7a7b603efe376250607b4a48ff3ef2833f40a2bd
+ms.sourcegitcommit: 3be3537ead3388a6810410dfbfe19fc210f89fec
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87321502"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89650728"
 ---
 # <a name="configure-data-splits-and-cross-validation-in-automated-machine-learning"></a>Настройка разбиения данных и перекрестной проверки в автоматизированном машинном обучении
 
@@ -24,7 +24,7 @@ ms.locfileid: "87321502"
 
 В Машинное обучение Azure при использовании Аутомл для создания нескольких моделей машинного обучения каждому дочернему выполнению необходимо проверить связанную модель, вычисляя метрики качества для этой модели, например точность или AUC с весом. Эти метрики рассчитываются путем сравнения прогнозов, производимых с каждой моделью, с реальными метками прошлых наблюдений в данных проверки. 
 
-Эксперименты Аутомл выполняют проверку модели автоматически. В следующих разделах описано, как можно дополнительно настроить параметры проверки с помощью [пакета SDK для машинное обучение Azure Python](https://docs.microsoft.com/python/api/overview/azure/ml/?view=azure-ml-py). 
+Эксперименты Аутомл выполняют проверку модели автоматически. В следующих разделах описано, как можно дополнительно настроить параметры проверки с помощью [пакета SDK для машинное обучение Azure Python](https://docs.microsoft.com/python/api/overview/azure/ml/?view=azure-ml-py&preserve-view=true). 
 
 Сведения о низком коде или работе без кода см. [в статье Создание автоматических экспериментов машинного обучения в машинное обучение Azure Studio](how-to-use-automated-ml-for-ml-models.md). 
 
@@ -47,7 +47,7 @@ ms.locfileid: "87321502"
 
 ## <a name="default--data-splits-and-cross-validation"></a>Разбиение данных по умолчанию и перекрестная проверка
 
-Используйте объект [аутомлконфиг](https://docs.microsoft.com/python/api/azureml-train-automl-client/azureml.train.automl.automlconfig.automlconfig?view=azure-ml-py) для определения параметров эксперимента и обучения. В следующем фрагменте кода обратите внимание, что определены только обязательные параметры, которые являются параметрами для `n_cross_validation` или `validation_ data` **не** включены.
+Используйте объект [аутомлконфиг](https://docs.microsoft.com/python/api/azureml-train-automl-client/azureml.train.automl.automlconfig.automlconfig?view=azure-ml-py&preserve-view=true) для определения параметров эксперимента и обучения. В следующем фрагменте кода обратите внимание, что определены только обязательные параметры, которые являются параметрами для `n_cross_validation` или `validation_ data` **не** включены.
 
 ```python
 data = "https://automlsamplenotebookdata.blob.core.windows.net/automl-sample-notebook-data/creditcard.csv"
@@ -93,7 +93,7 @@ automl_config = AutoMLConfig(compute_target = aml_remote_compute,
 
 ## <a name="provide-validation-set-size"></a>Задать размер набора проверки
 
-В этом случае для эксперимента предоставляется только один набор данных. То есть `validation_data` параметр **не** указан, а предоставленный набор данных присваивается `training_data` параметру.  В `AutoMLConfig` объекте можно задать `validation_size` параметр для удержания части обучающих данных для проверки. Это означает, что проверочный набор будет разбиваться по Аутомл из первоначально `training_data` предоставленного. Это значение должно находиться в диапазоне от 0,0 до 1,0, не включительно (например, 0,2 означает, что 20% данных будут храниться для данных проверки).
+В этом случае для эксперимента предоставляется только один набор данных. То есть `validation_data` параметр **не** указан, а предоставленный набор данных присваивается  `training_data` параметру.  В `AutoMLConfig` объекте можно задать `validation_size` параметр для удержания части обучающих данных для проверки. Это означает, что проверочный набор будет разбиваться по Аутомл из первоначально `training_data` предоставленного. Это значение должно находиться в диапазоне от 0,0 до 1,0, не включительно (например, 0,2 означает, что 20% данных будут храниться для данных проверки).
 
 См. Следующий пример кода:
 

@@ -2,13 +2,13 @@
 title: Поддержка тегов для ресурсов
 description: В этой статье описываются типы ресурсов Azure, поддерживающие теги, а также приводятся сведения о всех службах Azure.
 ms.topic: conceptual
-ms.date: 08/25/2020
-ms.openlocfilehash: 1f74ecff7c5db7a851ad2795fdfdb8e552a309c0
-ms.sourcegitcommit: d68c72e120bdd610bb6304dad503d3ea89a1f0f7
+ms.date: 09/08/2020
+ms.openlocfilehash: ea46e263d934c327cf6dfa343a5e0b5a170f545e
+ms.sourcegitcommit: 7f62a228b1eeab399d5a300ddb5305f09b80ee14
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/01/2020
-ms.locfileid: "89231526"
+ms.lasthandoff: 09/08/2020
+ms.locfileid: "89513920"
 ---
 # <a name="tag-support-for-azure-resources"></a>Поддержка тегов для ресурсов Azure
 В этой статье приводятся сведения о поддержке типом ресурса функции [тегов](tag-resources.md). Столбец с подписью **поддерживает теги** . указывает, имеет ли тип ресурса свойство для тега. Столбец с меткой **тег в отчете о затратах** указывает, передает ли этот тип ресурса тег в отчет о затратах. Вы можете просматривать затраты по тегам в [анализе затрат на управление затратами](../../cost-management-billing/costs/group-filter.md) , а также в [счетах на счета и данные о ежедневном использовании в Azure](../../cost-management-billing/manage/download-azure-invoice-daily-usage-date.md).
@@ -903,7 +903,7 @@ ms.locfileid: "89231526"
 > | регистрация | нет | Нет |
 > | Reportconfigs | Нет | Нет |
 > | Отчеты | Нет | Нет |
-> | "Настройки" | Нет | Нет |
+> | Параметры | Нет | Нет |
 > | шовбаккрулес | Нет | Нет |
 > | Представления | Нет | нет |
 
@@ -963,7 +963,10 @@ ms.locfileid: "89231526"
 > | Коэффициенты и metricDefinitions | Нет | Нет |
 > | dataFactorySchema | Нет | нет |
 > | factories | Да | Да |
-> | factories / integrationRuntimes | Нет | нет |
+> | factories / integrationRuntimes | Нет | Нет |
+
+> [!NOTE]
+> Если в фабрике данных есть среды выполнения интеграции Azure SSIS, то их стоимость работы будет помечена тегами фабрики данных.  Запуск среды выполнения интеграции Azure SSIS должен быть остановлен и перезапущен для применения новых тегов фабрики данных к их затратам на выполнение.
 
 ## <a name="microsoftdatalakeanalytics"></a>Microsoft.DataLakeAnalytics
 

@@ -1,22 +1,22 @@
 ---
 title: Быстрое масштабирование и защита веб-приложения с помощью Azure Front Door и брандмауэра веб-приложения Azure (WAF) | Документация Майкрософт
-description: В этой статье рассказывается о том, как использовать брандмауэр веб-приложения со службой Azure Front Door
+description: Эта статья поможет вам понять, как использовать брандмауэр веб-приложения в службе "Передняя дверь" Azure.
 services: frontdoor
 documentationcenter: ''
-author: tremansdoerfer
+author: duongau
 ms.service: frontdoor
 ms.devlang: na
 ms.topic: how-to
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 05/06/2020
-ms.author: rimansdo
-ms.openlocfilehash: 6f91a98372aa85a52a6013a121235ca354004a84
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.author: duau
+ms.openlocfilehash: a0252004b01e64b195b372d72682f6b777012258
+ms.sourcegitcommit: c52e50ea04dfb8d4da0e18735477b80cafccc2cf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84743547"
+ms.lasthandoff: 09/08/2020
+ms.locfileid: "89535437"
 ---
 # <a name="quickly-scale-and-protect-a-web-application-using-azure-front-door-and-azure-web-application-firewall-waf"></a>Быстрое масштабирование и защита веб-приложения с помощью службы Azure Front Door и брандмауэра веб-приложения Azure (WAF)
 
@@ -119,7 +119,7 @@ az network front-door update --name <> --resource-group <> --set frontendEndpoin
 
 Конкретные действия по обновлению записей DNS будут зависеть от поставщика службы DNS, однако если вы используете Azure DNS для размещения DNS-имени, то обратитесь к документации по [обновлению записей DNS](https://docs.microsoft.com/azure/dns/dns-operations-recordsets-cli) и укажите на параметр hostName AFD. 
 
-Важно обратить внимание на следующую особенность: если нужно, чтобы пользователи могли переходить на веб-сайт, используя верхнюю точку зоны (например, contoso.com), необходимо использовать Azure DNS и [тип записи ALIAS](https://docs.microsoft.com/azure/dns/dns-alias) для размещения DNS-имени. 
+Здесь стоит обратить внимание на то, что если вам нужно, чтобы пользователи могли переходить на веб-сайт с помощью зоны вершине, например contoso.com, необходимо использовать Azure DNS и [тип записи псевдонима](https://docs.microsoft.com/azure/dns/dns-alias) для размещения DNS-имени. 
 
 Кроме того, необходимо обновить конфигурацию AFD и [добавить этот личный домен](https://docs.microsoft.com/azure/frontdoor/front-door-custom-domain), чтобы AFD приняла это сопоставление.
 

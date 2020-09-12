@@ -3,12 +3,12 @@ title: Установка агента подключенного компьют
 description: Из этой статьи вы узнаете, как подключить компьютеры к Azure с помощью серверов с поддержкой ARC (Предварительная версия) с помощью Windows PowerShell DSC.
 ms.date: 03/12/2020
 ms.topic: conceptual
-ms.openlocfilehash: 25d6e435c261a83bf81c15d5dd445a936d48a08b
-ms.sourcegitcommit: 4913da04fd0f3cf7710ec08d0c1867b62c2effe7
+ms.openlocfilehash: 675258ff95829c2dc9922571db5014b2ba93d336
+ms.sourcegitcommit: d0541eccc35549db6381fa762cd17bc8e72b3423
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88213090"
+ms.lasthandoff: 09/09/2020
+ms.locfileid: "89565826"
 ---
 # <a name="how-to-install-the-connected-machine-agent-using-windows-powershell-dsc"></a>Установка агента подключенного компьютера с помощью Windows PowerShell DSC
 
@@ -82,7 +82,7 @@ ms.locfileid: "88213090"
 
 Этот ресурс можно добавить в существующие конфигурации DSC, чтобы представить комплексную конфигурацию для компьютера. Например, может потребоваться добавить этот ресурс в конфигурацию, которая задает параметры безопасности операционной системы.
 
-Модуль [компситересаурце](https://www.powershellgallery.com/packages/compositeresource/0.4.0) из коллекция PowerShell можно использовать для создания [составного ресурса](/powershell/scripting/dsc/resources/authoringResourceComposite?view=powershell-7) в примере конфигурации для дальнейшего упрощения объединения конфигураций.
+Модуль [компоситересаурце](https://www.powershellgallery.com/packages/compositeresource/0.4.0) из коллекция PowerShell можно использовать для создания [составного ресурса](/powershell/scripting/dsc/resources/authoringResourceComposite?view=powershell-7) в примере конфигурации для дальнейшего упрощения объединения конфигураций.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

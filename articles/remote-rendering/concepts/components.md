@@ -6,12 +6,12 @@ ms.author: flborn
 ms.date: 02/04/2020
 ms.topic: conceptual
 ms.custom: devx-track-csharp
-ms.openlocfilehash: d957da572bfdd3119dda506ac8f5bb42064d7758
-ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
+ms.openlocfilehash: a488e2499b92b290ad2b55120c3c70a18d45d426
+ms.sourcegitcommit: f845ca2f4b626ef9db73b88ca71279ac80538559
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89020309"
+ms.lasthandoff: 09/09/2020
+ms.locfileid: "89613933"
 ---
 # <a name="components"></a>Components
 
@@ -53,7 +53,6 @@ lightComponent->Destroy();
 lightComponent = nullptr;
 ```
 
-
 Компонент прикрепляется к сущности во время создания. После этого его нельзя передать другой сущности. Компоненты явным образом удаляются с помощью функции `Component.Destroy()` или это происходит автоматически при уничтожении сущности-владельца компонента.
 
 За раз к сущности можно добавить только один экземпляр каждого типа компонента.
@@ -61,6 +60,15 @@ lightComponent = nullptr;
 ## <a name="unity-specific"></a>Особенности при работе с Unity
 
 Интеграция Unity предоставляет дополнительные функции расширения для взаимодействия с компонентами. Дополнительную информацию см. в статье [Игровые объекты и компоненты Unity](../how-tos/unity/objects-components.md).
+
+## <a name="api-documentation"></a>Документирование API
+
+* [Компонентбасе C#](https://docs.microsoft.com/dotnet/api/microsoft.azure.remoterendering.componentbase)
+* [C# Ремотеманажер. Креатекомпонент ()](https://docs.microsoft.com/dotnet/api/microsoft.azure.remoterendering.remotemanager.createcomponent)
+* [C# Entity. Финдкомпонентофтипе ()](https://docs.microsoft.com/dotnet/api/microsoft.azure.remoterendering.entity.findcomponentoftype)
+* [Компонентбасе C++](https://docs.microsoft.com/cpp/api/remote-rendering/componentbase)
+* [C++ Ремотеманажер:: Креатекомпонент ()](https://docs.microsoft.com/cpp/api/remote-rendering/remotemanager#createcomponent)
+* [C++ Entity:: Финдкомпонентофтипе ()](https://docs.microsoft.com/cpp/api/remote-rendering/entity#findcomponentoftype)
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

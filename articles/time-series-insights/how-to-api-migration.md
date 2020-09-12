@@ -10,16 +10,16 @@ ms.workload: big-data
 ms.topic: conceptual
 ms.date: 08/12/2020
 ms.custom: shresha
-ms.openlocfilehash: 784c19844c658af6850c755244314145223c45ef
-ms.sourcegitcommit: c28fc1ec7d90f7e8b2e8775f5a250dd14a1622a6
+ms.openlocfilehash: d68323bb72779ec5978c721b5258d4c8a8d4940d
+ms.sourcegitcommit: 3be3537ead3388a6810410dfbfe19fc210f89fec
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/13/2020
-ms.locfileid: "88163957"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89650796"
 ---
 # <a name="migrating-to-new-azure-time-series-insights-gen2-api-versions"></a>Переход на новые версии API службы "аналитика временных рядов Azure Gen2"
 
-## <a name="overview"></a>Обзор
+## <a name="overview"></a>Overview
 
 Если вы создали среду Gen2 "аналитика временных рядов Azure" в общедоступной предварительной версии (до 16 июля, 2020), обновите среду TSI, чтобы использовать новые общедоступные версии API, выполнив действия, описанные в этой статье.
 
@@ -39,7 +39,7 @@ ms.locfileid: "88163957"
 
 1. В обозревателе появится запрос на обновление синтаксиса, используемого переменными модели временных рядов и сохраненными запросами.
 
-    [![Предупреждение](media/api-migration/ux-prompt.png)](media/v2-update-overview/overview-one.png#lightbox)
+    [![prompt](media/api-migration/ux-prompt.png)](media/v2-update-overview/overview-one.png#lightbox)
 
     Если вы случайно закрыли уведомление, его можно найти на панели уведомлений.
 
@@ -56,11 +56,11 @@ ms.locfileid: "88163957"
 
     [![Обновить переменные](media/api-migration/ux-migration-tool-downloaded-types.png)](media/v2-update-overview/overview-one.png#lightbox)
 
-1. Щелкните **обновить сохраненные запросы**. Средство сообщит вам, когда были обновлены переменные.
+1. Щелкните **обновить сохраненные запросы**. Средство сообщит о том, что сохраненные запросы были обновлены.
 
     [![Обновление сохраненных запросов](media/api-migration/ux-migration-tool-updated-variables.png)](media/v2-update-overview/overview-one.png#lightbox)
 
-1. Нажмите кнопку **Готово**.
+1. Нажмите кнопку **Done**(Готово).
 
     [![Завершенная миграция](media/api-migration/ux-migration-tool-updated-saved-queries.png)](media/v2-update-overview/overview-one.png#lightbox)
 
@@ -99,7 +99,7 @@ ms.locfileid: "88163957"
 
 - Интерфейсы API типов
   - [Операция размещения](https://docs.microsoft.com/rest/api/time-series-insights/dataaccessgen2/timeseriestypes/executebatch#typesbatchput)
-- API запросов
+- Интерфейсы API для запросов
   - [События](https://docs.microsoft.com/rest/api/time-series-insights/dataaccessgen2/query/execute#getevents)
   - [Серия](https://docs.microsoft.com/rest/api/time-series-insights/dataaccessgen2/query/execute#getseries)
   - [жетаггрегатесериес](https://docs.microsoft.com/rest/api/time-series-insights/dataaccessgen2/query/execute#aggregateseries)

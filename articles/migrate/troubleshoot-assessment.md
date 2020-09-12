@@ -7,12 +7,12 @@ author: musa-57
 ms.manager: abhemraj
 ms.author: hamusa
 ms.date: 01/02/2020
-ms.openlocfilehash: a6a185c61c32636dd0189bc5835f850348b196cd
-ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
+ms.openlocfilehash: afc7e6c1ed41661c835a811a7cbcaa6f7771328e
+ms.sourcegitcommit: 3be3537ead3388a6810410dfbfe19fc210f89fec
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89020360"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89645648"
 ---
 # <a name="troubleshoot-assessmentdependency-visualization"></a>Устранение неполадок с визуализацией оценок и зависимостей
 
@@ -147,7 +147,8 @@ ms.locfileid: "89020360"
 
 ## <a name="dependency-visualization-in-azure-government"></a>Визуализация зависимостей в Azure для государственных организаций
 
-Служба "миграция Azure" зависит от Сопоставление служб функции визуализации зависимостей. Так как Сопоставление служб в настоящее время недоступна в Azure для государственных организаций, эта функция недоступна в Azure для государственных организаций.
+Анализ зависимостей на основе агента не поддерживается в Azure для государственных организаций. Используйте анализ зависимостей без агента.
+
 
 ## <a name="dependencies-dont-show-after-agent-install"></a>Зависимости не отображаются после установки агента
 
@@ -160,7 +161,7 @@ ms.locfileid: "89020360"
 
     ![Состояние MMA](./media/troubleshoot-assessment/mma-properties.png)
 
-Для виртуальных машин Linux убедитесь, что команды установки для MMA и агент зависимостей были успешной.
+Для виртуальных машин Linux убедитесь, что команды установки для MMA и агент зависимостей были успешной. Дополнительные рекомендации по устранению неполадок см. [здесь](https://docs.microsoft.com/azure/azure-monitor/insights/service-map#post-installation-issues).
 
 ## <a name="supported-operating-systems"></a>Поддерживаемые операционные системы
 
@@ -181,7 +182,6 @@ ms.locfileid: "89020360"
 ## <a name="machines-show-install-agent"></a>Компьютеры показывают "установить агент"
 
 После переноса компьютеров с включенной визуализацией зависимостей в Azure компьютеры могут отображать действие "установить агент" вместо "Просмотр зависимостей" из-за следующего поведения:
-
 
 - После миграции в Azure локальные компьютеры отключаются, а аналогичные виртуальные машины загружаются в Azure. Эти компьютеры получают другие MAC-адреса.
 - Компьютеры могут также иметь разные IP-адреса в зависимости от того, был ли сохранен локальный IP-адрес.

@@ -1,17 +1,17 @@
 ---
-title: Microsoft Kubernetes Service Fabric Consortium в службе Azure (AKS)
+title: Развертывание в службе Azure Kubernetes Service Fabric Consortium
 description: Развертывание и настройка сети консорциума Kubernetes для структуры в службе Azure
 ms.date: 08/06/2020
 ms.topic: how-to
 ms.reviewer: ravastra
-ms.openlocfilehash: d23a0120aafb4dc3e6952b40959a20f9a3456614
-ms.sourcegitcommit: d68c72e120bdd610bb6304dad503d3ea89a1f0f7
+ms.openlocfilehash: 081c7a10ee091f573e8f999c94588ef85c784f74
+ms.sourcegitcommit: 3be3537ead3388a6810410dfbfe19fc210f89fec
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/01/2020
-ms.locfileid: "89226882"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89651557"
 ---
-# <a name="hyperledger-fabric-consortium-on-azure-kubernetes-service-aks"></a>Microsoft Kubernetes Service Fabric Consortium в службе Azure (AKS)
+# <a name="deploy-hyperledger-fabric-consortium-on-azure-kubernetes-service"></a>Развертывание в службе Azure Kubernetes Service Fabric Consortium
 
 Для развертывания и настройки сети "консорциум по структуре" в Azure можно использовать шаблон "структура" в Azure Kubernetes Service (AKS).
 
@@ -334,7 +334,7 @@ CHANNEL_NAME=<channelName>
 ```
 Команда установит чаинкоде на всех одноранговых узлах одноранговой Организации, установленной в `ORGNAME` переменной среды. Если в канале находятся две или более одноранговые Организации и вы хотите установить чаинкоде на всех этих узлах, выполните эту команду отдельно для каждой одноранговой Организации.  
 
-Выполните следующие действия:  
+Выполните следующие действия.  
 
 1.  Задайте `ORGNAME` и `USER_IDENTITY` в соответствии с `peerOrg1` и выполните `./azhlf chaincode install` команду.  
 2.  Задайте `ORGNAME` и `USER_IDENTITY` в соответствии с `peerOrg2` и выполните `./azhlf chaincode install` команду.  
@@ -359,7 +359,7 @@ CHANNEL_NAME=<channelName>
 ```
 
 `<collectionConfigJSONFilePath>`Часть — это путь к JSON-файлу, который содержит коллекции, определенные для создания экземпляра закрытых чаинкоде данных. JSON-файл конфигурации образца коллекции можно найти относительно каталога *азлфтул* по следующему пути: `./samples/chaincode/src/private_marbles/collections_config.json` .
-Передача `<transientArgs>` в виде допустимого JSON в строковом формате. Экранирование любых специальных символов. Пример: `'{\\\"asset\":{\\\"name\\\":\\\"asset1\\\",\\\"price\\\":99}}'`
+Передача `<transientArgs>` в виде допустимого JSON в строковом формате. Экранирование любых специальных символов. Например: `'{\\\"asset\":{\\\"name\\\":\\\"asset1\\\",\\\"price\\\":99}}'`
 
 > [!NOTE]
 > Выполните команду один раз из одной одноранговой Организации в канале. После успешной отправки транзакции в заказ, заказ распределяет эту транзакцию всем одноранговым организациям в канале. Затем создается экземпляр чаинкоде на всех одноранговых узлах во всех одноранговых организациях в канале.  

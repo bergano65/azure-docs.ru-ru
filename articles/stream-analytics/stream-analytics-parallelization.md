@@ -7,12 +7,12 @@ ms.reviewer: mamccrea
 ms.service: stream-analytics
 ms.topic: conceptual
 ms.date: 05/04/2020
-ms.openlocfilehash: 8a86c1df5925097fa85d09590b59f8f30fde41d4
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: aed0c83bfa61f6afdbdcca3c10dbd5fac3f823d3
+ms.sourcegitcommit: 4a7a4af09f881f38fcb4875d89881e4b808b369b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85296327"
+ms.lasthandoff: 09/04/2020
+ms.locfileid: "89458184"
 ---
 # <a name="leverage-query-parallelization-in-azure-stream-analytics"></a>Использование параллелизации запросов в Azure Stream Analytics
 В этой статье показано, как воспользоваться преимуществами параллелизма в Azure Stream Analytics. Узнайте, как масштабировать задания Stream Analytics с помощью настройки входных разделов, настройки аналитики определения запроса.
@@ -41,7 +41,7 @@ ms.locfileid: "85296327"
 -   Центры событий (требуется явно задать ключ раздела).
 -   Центр Интернета вещей (требуется явно задать ключ раздела).
 -   Служебная шина
-- SQL и хранилище данных SQL с необязательным секционированием. Дополнительные сведения см. на странице [Вывод в базу данных SQL Azure](https://docs.microsoft.com/azure/stream-analytics/stream-analytics-sql-output-perf).
+- SQL и Azure синапсе Analytics с дополнительным секционированием. Дополнительные сведения см. на [странице "выходные данные для базы данных SQL Azure](https://docs.microsoft.com/azure/stream-analytics/stream-analytics-sql-output-perf)".
 
 Power BI не поддерживает секционирование. Однако можно по-прежнему секционировать входные данные как описано в [этом разделе](#multi-step-query-with-different-partition-by-values). 
 

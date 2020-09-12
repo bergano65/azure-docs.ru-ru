@@ -2,18 +2,18 @@
 title: 'Azure ExpressRoute: рабочий процесс настройки канала'
 description: На этой странице показан рабочий процесс для настройки каналов ExpressRoute и пиринга
 services: expressroute
-author: cherylmc
+author: duongau
 ms.service: expressroute
 ms.topic: conceptual
 ms.date: 08/24/2020
-ms.author: cherylmc
+ms.author: duau
 ms.custom: contperfq1
-ms.openlocfilehash: 229b7c145fa38443d2bc5f99005078ffa7f77065
-ms.sourcegitcommit: d39f2cd3e0b917b351046112ef1b8dc240a47a4f
+ms.openlocfilehash: bb0d3cebd9382ef2c81b217417cfbcb6198b6ebb
+ms.sourcegitcommit: d0541eccc35549db6381fa762cd17bc8e72b3423
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88814082"
+ms.lasthandoff: 09/09/2020
+ms.locfileid: "89565929"
 ---
 # <a name="expressroute-workflows-for-circuit-provisioning-and-circuit-states"></a>Процедуры ExpressRoute для подготовки каналов и состояний каналов
 
@@ -86,7 +86,7 @@ ms.locfileid: "88814082"
 
 #### <a name="for-microsoft-peering"></a>Для пиринга Майкрософт
 
-Включите этот параметр для доступа к Microsoft веб-службы, например Office 365. Кроме того, все службы Azure PaaS доступны через пиринг Майкрософт. Необходимо убедиться, что для подключения к Майкрософт используется отдельный прокси-сервер или ребро, чем тот, который используется в Интернете. Подключение к ExpressRoute и к Интернету через один и тот же ресурс приведет к асимметричной маршрутизации и вызовет проблемы подключения в вашей сети.
+Включите этот параметр, чтобы получить доступ к веб-службы Майкрософт, например Microsoft 365. Кроме того, все службы Azure PaaS доступны через пиринг Майкрософт. Необходимо убедиться, что для подключения к Майкрософт используется отдельный прокси-сервер или ребро, чем тот, который используется в Интернете. Подключение к ExpressRoute и к Интернету через один и тот же ресурс приведет к асимметричной маршрутизации и вызовет проблемы подключения в вашей сети.
 
 * Подсеть пиринга для пути 1 (/30) — должен быть общедоступным IP-адресом
 * Подсеть пиринга для пути 2 (/30) — должен быть общедоступным IP-адресом

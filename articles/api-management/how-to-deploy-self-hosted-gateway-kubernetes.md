@@ -9,18 +9,18 @@ ms.workload: mobile
 ms.topic: article
 ms.author: apimpm
 ms.date: 04/23/2020
-ms.openlocfilehash: abcda4ea4b14f058325318661daa574494268780
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 023c2c89b90d6ddc71abc95db325dcdeb7684a2d
+ms.sourcegitcommit: 206629373b7c2246e909297d69f4fe3728446af5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87056389"
+ms.lasthandoff: 09/06/2020
+ms.locfileid: "89500136"
 ---
 # <a name="deploy-a-self-hosted-gateway-to-kubernetes"></a>Развертывание независимого шлюза в Kubernetes
 
 В этой статье описаны действия по развертыванию компонента самостоятельно размещенного шлюза службы управления API Azure в кластере Kubernetes.
 
-## <a name="prerequisites"></a>Обязательные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 - Выполните инструкции из краткого руководства [Создание экземпляра службы управления API Azure](get-started-create-service-instance.md).
 - Создайте кластер Kubernetes.
@@ -63,7 +63,7 @@ ms.locfileid: "87056389"
 ## <a name="production-deployment-considerations"></a>Вопросы развертывания в рабочей среде
 
 ### <a name="access-token"></a>Маркер доступа
-Без действительного маркера доступа автономный шлюз не сможет получить доступ к данным конфигурации и загрузить их из конечной точки связанной службы управления API. Маркер доступа может быть допустимым не более 30 дней. Его необходимо повторно создать, а кластер, настроенный с помощью нового маркера, вручную или через автоматизацию до истечения срока действия. 
+Без действительного маркера доступа автономный шлюз не сможет получить доступ к данным конфигурации и загрузить их из конечной точки связанной службы управления API. Маркер доступа может быть допустимым не более 30 дней. Его необходимо повторно создать, а кластер, настроенный с помощью нового маркера, вручную или через автоматизацию до истечения срока действия.
 
 При автоматизации обновления токена используйте [эту операцию API управления](/rest/api/apimanagement/2019-12-01/gateway/generatetoken) для создания нового маркера. Сведения об управлении секретами Kubernetes см. на [веб-сайте Kubernetes](https://kubernetes.io/docs/concepts/configuration/secret).
 
@@ -106,6 +106,9 @@ ms.locfileid: "87056389"
 Файл YAML, указанный в портал Azure, применяет политику [клустерфирст](https://kubernetes.io/docs/concepts/services-networking/dns-pod-service/#pod-s-dns-policy) по умолчанию. Эта политика приводит к тому, что запросы разрешения имен, не разрешенные DNS-кластером, перенаправляются на вышестоящий DNS-сервер, унаследованный от узла.
 
 Дополнительные сведения о разрешении имен в Kubernetes см. на [веб-сайте Kubernetes](https://kubernetes.io/docs/concepts/services-networking/dns-pod-service). Рассмотрите возможность настройки [политики DNS](https://kubernetes.io/docs/concepts/services-networking/dns-pod-service/#pod-s-dns-policy) или [конфигурации DNS](https://kubernetes.io/docs/concepts/services-networking/dns-pod-service/#pod-s-dns-config) в соответствии с настройками.
+
+### <a name="external-traffic-policy"></a>Политика внешнего трафика
+Файл YAML, указанный в поле портал Azure Sets `externalTrafficPolicy` объекта [службы](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.19/#service-v1-core) `Local` . Это сохраняет IP-адрес вызывающей стороны (доступен в [контексте запроса](api-management-policy-expressions.md#ContextVariables)) и отключает балансировку нагрузки между узлами, устраняя сетевые переходы. Имейте в виду, что этот параметр может привести к асимметричному распределению трафика в развертываниях с неравным количеством модулей шлюзов на узел.
 
 ### <a name="custom-domain-names-and-ssl-certificates"></a>Пользовательские доменные имена и SSL-сертификаты
 

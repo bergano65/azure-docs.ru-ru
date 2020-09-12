@@ -11,12 +11,12 @@ ms.subservice: core
 ms.date: 07/30/2020
 ms.topic: conceptual
 ms.custom: how-to
-ms.openlocfilehash: 18c7e5b3a1401540d7a94186fda647d413d562c0
-ms.sourcegitcommit: 5b6acff3d1d0603904929cc529ecbcfcde90d88b
+ms.openlocfilehash: 44fe71f575a32ccc1a687bc87793cb6a8b6508a9
+ms.sourcegitcommit: 3be3537ead3388a6810410dfbfe19fc210f89fec
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/21/2020
-ms.locfileid: "88723849"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89650623"
 ---
 # <a name="enable-logging-in-azure-ml-training-runs"></a>Включение ведения журнала в учебных запусках МАШИНного обучения Azure
 [!INCLUDE [applies-to-skus](../../includes/aml-applies-to-basic-enterprise-sku.md)]
@@ -37,17 +37,17 @@ ms.locfileid: "88723849"
 
 ## <a name="data-types"></a>Типы данных
 
-Можно вести журнал нескольких типов данных, включая скалярные значения, списки, таблицы, изображения, каталоги и многое другое. Дополнительные сведения и примеры кода Python для различных типов данных см. на [странице справки по запуску класса](https://docs.microsoft.com/python/api/azureml-core/azureml.core.run(class)?view=azure-ml-py).
+Можно вести журнал нескольких типов данных, включая скалярные значения, списки, таблицы, изображения, каталоги и многое другое. Дополнительные сведения и примеры кода Python для различных типов данных см. на [странице справки по запуску класса](https://docs.microsoft.com/python/api/azureml-core/azureml.core.run(class)?view=azure-ml-py&preserve-view=true).
 
 ## <a name="interactive-logging-session"></a>Интерактивный сеанс ведения журнала
 
-Интерактивные сеансы ведения журнала обычно используются в средах записных книжек. Метод [эксперимент. start_logging ()](https://docs.microsoft.com/python/api/azureml-core/azureml.core.experiment(class)?view=azure-ml-py#start-logging--args----kwargs-) запускает интерактивный сеанс ведения журнала. Все метрики, регистрируемые во время сеанса, добавляются в запись Run в эксперименте. Метод [Run. Complete ()](https://docs.microsoft.com/python/api/azureml-core/azureml.core.run(class)?view=azure-ml-py#complete--set-status-true-) завершает сеансы и помечает выполнение как завершенное.
+Интерактивные сеансы ведения журнала обычно используются в средах записных книжек. Метод [эксперимент. start_logging ()](https://docs.microsoft.com/python/api/azureml-core/azureml.core.experiment(class)?view=azure-ml-py#&preserve-view=truestart-logging--args----kwargs-) запускает интерактивный сеанс ведения журнала. Все метрики, регистрируемые во время сеанса, добавляются в запись Run в эксперименте. Метод [Run. Complete ()](https://docs.microsoft.com/python/api/azureml-core/azureml.core.run(class)?view=azure-ml-py#&preserve-view=truecomplete--set-status-true-) завершает сеансы и помечает выполнение как завершенное.
 
 ## <a name="scriptrunconfig-logs"></a>Журналы Скриптрунконфиг
 
-В этом разделе вы узнаете, как добавить код ведения журнала в Скриптконфиг запуски. Класс [**скриптрунконфиг**](https://docs.microsoft.com/python/api/azureml-core/azureml.core.scriptrunconfig?view=azure-ml-py) можно использовать для инкапсуляции скриптов и сред для повторяемых запусков. Этот параметр также можно использовать для отображения мини-приложения записных книжек визуального Jupyter для мониторинга.
+В этом разделе вы узнаете, как добавить код ведения журнала в Скриптконфиг запуски. Класс [**скриптрунконфиг**](https://docs.microsoft.com/python/api/azureml-core/azureml.core.scriptrunconfig?view=azure-ml-py&preserve-view=true) можно использовать для инкапсуляции скриптов и сред для повторяемых запусков. Этот параметр также можно использовать для отображения мини-приложения записных книжек визуального Jupyter для мониторинга.
 
-В этом примере выполняется очистка параметров по альфа-значениям и результаты записываются с помощью метода [Run. log ()](https://docs.microsoft.com/python/api/azureml-core/azureml.core.run(class)?view=azure-ml-py#log-name--value--description----) .
+В этом примере выполняется очистка параметров по альфа-значениям и результаты записываются с помощью метода [Run. log ()](https://docs.microsoft.com/python/api/azureml-core/azureml.core.run(class)?view=azure-ml-py#&preserve-view=truelog-name--value--description----) .
 
 1. Создайте сценарий обучения, включающий логику ведения журнала `train.py` .
 

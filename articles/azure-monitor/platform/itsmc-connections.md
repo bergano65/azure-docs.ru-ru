@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: nolavime
 ms.author: v-jysur
 ms.date: 05/12/2020
-ms.openlocfilehash: bf1721b45ff63c225c378e50bff9040948820c8b
-ms.sourcegitcommit: bfeae16fa5db56c1ec1fe75e0597d8194522b396
+ms.openlocfilehash: 57a981f4967bc58ca39067f94abdcf64d764ab87
+ms.sourcegitcommit: c52e50ea04dfb8d4da0e18735477b80cafccc2cf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/10/2020
-ms.locfileid: "88035031"
+ms.lasthandoff: 09/08/2020
+ms.locfileid: "89536197"
 ---
 # <a name="connect-itsm-productsservices-with-it-service-management-connector"></a>Подключение продуктов и служб ITSM с помощью соединителя управления ИТ-службами
 В этой статье описывается, как настроить в Log Analytics связь между продуктами или службами ITSM и соединителем управления ИТ-службами (ITSM), чтобы централизованно управлять рабочими элементами ITSM. Дополнительные сведения об ITSMC см. в [этом обзоре](./itsmc-overview.md).
@@ -298,6 +298,10 @@ ms.locfileid: "88035031"
 
 В разделах ниже приведены сведения о подключении экземпляра Provance к ITSMC в Azure.
 
+> [!NOTE]
+> 
+> Начиная с 1-Oct-2020 Provance ITSM интеграция с оповещением Azure больше не будет включена для новых клиентов. Новые подключения ITSM не будут поддерживаться. 
+> Существующие подключения ITSM будут поддерживаться.
 
 ### <a name="prerequisites"></a>Предварительные требования
 
@@ -352,6 +356,11 @@ ms.locfileid: "88035031"
 
 В разделах ниже приведены сведения о подключении экземпляра Cherwell к ITSMC в Azure.
 
+> [!NOTE]
+> 
+> Начиная с 1-Oct-2020 Cherwell ITSM интеграция с оповещением Azure больше не будет включена для новых клиентов. Новые подключения ITSM не будут поддерживаться. 
+> Существующие подключения ITSM будут поддерживаться.
+
 ### <a name="prerequisites"></a>Предварительные требования
 
 Выполните указанные ниже предварительные требования.
@@ -362,7 +371,7 @@ ms.locfileid: "88035031"
 
 ### <a name="connection-procedure"></a>Процедура подключения
 
-Используйте следующую процедуру, чтобы создать подключение Provance:
+Используйте следующую процедуру, чтобы создать подключение Cherwell:
 
 1. На портале Azure перейдите к разделу **Все ресурсы** и найдите элемент **ServiceDesk(имя_вашей_рабочей_области)**
 

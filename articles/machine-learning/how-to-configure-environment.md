@@ -11,12 +11,12 @@ ms.reviewer: larryfr
 ms.date: 12/27/2019
 ms.topic: conceptual
 ms.custom: how-to, devx-track-python
-ms.openlocfilehash: a6e603ad5698e7a6a57799def8a0f2de28e0cada
-ms.sourcegitcommit: d7352c07708180a9293e8a0e7020b9dd3dd153ce
+ms.openlocfilehash: 8ad22abdf17c68c93a6189db839fe357e7acc91e
+ms.sourcegitcommit: 3be3537ead3388a6810410dfbfe19fc210f89fec
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/30/2020
-ms.locfileid: "89144895"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89650828"
 ---
 # <a name="configure-a-development-environment-for-azure-machine-learning"></a>Настройка среды разработки для Машинного обучения Azure
 [!INCLUDE [applies-to-skus](../../includes/aml-applies-to-basic-enterprise-sku.md)]
@@ -81,7 +81,7 @@ DSVM — это настраиваемый образ виртуальной м
 
     * На портале Azure:
 
-        * [Создание виртуальной машины для обработки и анализа данных на платформе Ubuntu](https://docs.microsoft.com/azure/machine-learning/data-science-virtual-machine/dsvm-ubuntu-intro)
+        * [Создание виртуальной машины Ubuntu для обработки и анализа данных](https://docs.microsoft.com/azure/machine-learning/data-science-virtual-machine/dsvm-ubuntu-intro)
 
         * [Создание виртуальной машины Windows для обработки и анализа данных](https://docs.microsoft.com/azure/machine-learning/data-science-virtual-machine/provision-vm)
 
@@ -185,7 +185,7 @@ DSVM — это настраиваемый образ виртуальной м
    >
    >   `pip install --upgrade azureml-sdk\[notebooks,automl\]`
 
-   Установка пакета SDK займет несколько минут. Дополнительные сведения о параметрах установки см. в разделе [руководства по установке](https://docs.microsoft.com/python/api/overview/azure/ml/install?view=azure-ml-py).
+   Установка пакета SDK займет несколько минут. Дополнительные сведения о параметрах установки см. в разделе [руководства по установке](https://docs.microsoft.com/python/api/overview/azure/ml/install?view=azure-ml-py&preserve-view=true).
 
 1. Установите другие пакеты для экспериментов машинного обучения.
 
@@ -361,7 +361,7 @@ Azure Databricks — это среда на основе Apache Spark в обл�
 
 Существует три способа создать файл конфигурации.
 
-* **Используйте  [ws. write_config](https://docs.microsoft.com/python/api/overview/azure/ml/intro?view=azure-ml-py)**: для записи *config.jsв* файле. Файл содержит сведения о конфигурации вашей рабочей области. Вы можете скачать или скопировать файл *config.json* в другие среды разработки.
+* **Используйте  [ws. write_config](https://docs.microsoft.com/python/api/overview/azure/ml/intro?view=azure-ml-py&preserve-view=true)**: для записи *config.jsв* файле. Файл содержит сведения о конфигурации вашей рабочей области. Вы можете скачать или скопировать файл *config.json* в другие среды разработки.
 
 * **Скачайте файл**: в [портал Azure](https://ms.portal.azure.com)выберите  **скачать config.jsв** разделе **Обзор** рабочей области.
 
@@ -389,4 +389,4 @@ Azure Databricks — это среда на основе Apache Spark в обл�
 ## <a name="next-steps"></a>Дальнейшие действия
 
 - [Обучение модели](tutorial-train-models-with-aml.md) на машинное обучение Azure с помощью набора данных MNIST
-- Просмотрите статью [What is the Azure Machine Learning SDK for Python?](https://docs.microsoft.com/python/api/overview/azure/ml/intro?view=azure-ml-py) (Что такое пакет SDK для Машинного обучения Azure для Python?)
+- Просмотрите статью [What is the Azure Machine Learning SDK for Python?](https://docs.microsoft.com/python/api/overview/azure/ml/intro?view=azure-ml-py&preserve-view=true) (Что такое пакет SDK для Машинного обучения Azure для Python?)

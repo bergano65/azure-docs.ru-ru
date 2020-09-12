@@ -10,12 +10,12 @@ author: lobrien
 ms.date: 08/20/2020
 ms.topic: conceptual
 ms.custom: how-to, contperfq4, devx-track-python
-ms.openlocfilehash: 8b20a0815ab16a3713d640a25171e440a8330dd1
-ms.sourcegitcommit: d68c72e120bdd610bb6304dad503d3ea89a1f0f7
+ms.openlocfilehash: 6744bbf2e77fa0ec275350678e75ff094eec82e0
+ms.sourcegitcommit: 3be3537ead3388a6810410dfbfe19fc210f89fec
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/01/2020
-ms.locfileid: "89230319"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89650388"
 ---
 # <a name="moving-data-into-and-between-ml-pipeline-steps-python"></a>Перемещение данных в этапы конвейера машинного обучения и между ними (Python)
 
@@ -33,7 +33,7 @@ ms.locfileid: "89230319"
 - Создание новых `Dataset` объектов из `PipelineData` сохраняемых
 
 > [!TIP]
-> Улучшенный интерфейс передачи временных данных между этапами конвейера и сохранения данных после выполнения конвейеров доступен в классах общедоступной предварительной версии  [`OutputFileDatasetConfig`](https://docs.microsoft.com/python/api/azureml-core/azureml.data.outputfiledatasetconfig?view=azure-ml-py) и [`OutputTabularDatasetConfig`](https://docs.microsoft.com/python/api/azureml-core/azureml.data.output_dataset_config.outputtabulardatasetconfig?view=azure-ml-py) .  Эти классы являются [экспериментальными](https://docs.microsoft.com/python/api/overview/azure/ml/?view=azure-ml-py#stable-vs-experimental) функциями предварительной версии и могут измениться в любое время.
+> Улучшенный интерфейс передачи временных данных между этапами конвейера и сохранения данных после выполнения конвейеров доступен в классах общедоступной предварительной версии  [`OutputFileDatasetConfig`](https://docs.microsoft.com/python/api/azureml-core/azureml.data.outputfiledatasetconfig?view=azure-ml-py&preserve-view=true) и [`OutputTabularDatasetConfig`](https://docs.microsoft.com/python/api/azureml-core/azureml.data.output_dataset_config.outputtabulardatasetconfig?view=azure-ml-py&preserve-view=true) .  Эти классы являются [экспериментальными](https://docs.microsoft.com/python/api/overview/azure/ml/?view=azure-ml-py#&preserve-view=truestable-vs-experimental) функциями предварительной версии и могут измениться в любое время.
 
 
 ## <a name="prerequisites"></a>Предварительные требования
@@ -42,7 +42,7 @@ ms.locfileid: "89230319"
 
 - Подписка Azure. Если у вас еще нет подписки Azure, создайте бесплатную учетную запись, прежде чем начинать работу. Попробуйте [бесплатную или платную версию Машинного обучения Azure](https://aka.ms/AMLFree).
 
-- [Пакет SDK для Машинного обучения Azure для Python](https://docs.microsoft.com/python/api/overview/azure/ml/intro?view=azure-ml-py) или доступ к [Студии машинного обучения Azure](https://ml.azure.com/).
+- [Пакет SDK для Машинного обучения Azure для Python](https://docs.microsoft.com/python/api/overview/azure/ml/intro?view=azure-ml-py&preserve-view=true) или доступ к [Студии машинного обучения Azure](https://ml.azure.com/).
 
 - Рабочая область машинного обучения Azure.
   
@@ -61,7 +61,7 @@ ms.locfileid: "89230319"
 
 ## <a name="use-dataset-objects-for-pre-existing-data"></a>Использование `Dataset` объектов для уже существующих данных 
 
-Предпочтительный способ приема данных в конвейер — использование объекта [DataSet](https://docs.microsoft.com/python/api/azureml-core/azureml.core.dataset%28class%29?view=azure-ml-py) . `Dataset` объекты представляют постоянные данные, доступные во всей рабочей области.
+Предпочтительный способ приема данных в конвейер — использование объекта [DataSet](https://docs.microsoft.com/python/api/azureml-core/azureml.core.dataset%28class%29?view=azure-ml-py&preserve-view=true) . `Dataset` объекты представляют постоянные данные, доступные во всей рабочей области.
 
 Существует множество способов создания и регистрации `Dataset` объектов. Табличные наборы данных предназначены для доступа к данным с разделителями в одном или нескольких файлах. Файловые наборы данных — это двоичные данные (например, изображения) или данные, которые вы будете анализировать. Самым простым программным способом создания `Dataset` объектов является использование существующих больших двоичных объектов в хранилище рабочей области или общедоступных URL-адресах.
 
@@ -152,7 +152,7 @@ ds = Dataset.get_by_name(workspace=ws, name='mnist_opendataset')
 
 ## <a name="use-pipelinedata-for-intermediate-data"></a>Использовать `PipelineData` для промежуточных данных
 
-Хотя `Dataset` объекты представляют постоянные данные, объекты [пипелинедата](https://docs.microsoft.com/python/api/azureml-pipeline-core/azureml.pipeline.core.pipelinedata?view=azure-ml-py) используются для временных данных, выводимых шагами конвейера. Так как время существования `PipelineData` объекта длиннее, чем один шаг конвейера, оно определяется в скрипте определения конвейера. При создании `PipelineData` объекта необходимо указать имя и хранилище данных, в котором будут размещаться данные. Передайте `PipelineData` объекты в объект `PythonScriptStep` _both_ с помощью `arguments` `outputs` аргументов и.
+Хотя `Dataset` объекты представляют постоянные данные, объекты [пипелинедата](https://docs.microsoft.com/python/api/azureml-pipeline-core/azureml.pipeline.core.pipelinedata?view=azure-ml-py&preserve-view=true) используются для временных данных, выводимых шагами конвейера. Так как время существования `PipelineData` объекта длиннее, чем один шаг конвейера, оно определяется в скрипте определения конвейера. При создании `PipelineData` объекта необходимо указать имя и хранилище данных, в котором будут размещаться данные. Передайте `PipelineData` объекты в объект `PythonScriptStep` _both_ с помощью `arguments` `outputs` аргументов и.
 
 ```python
 
@@ -177,7 +177,8 @@ PipelineData("clean_data", datastore=def_blob_store, output_mode="upload", outpu
 ```
 
 > [!TIP]
-> С помощью общедоступного класса предварительной версии можно улучшить процесс передачи промежуточных данных между этапами конвейера `OutputFileDatasetConfig` . Дополнительные сведения о `OutputFileDatasetConfig` шаблонах и методах разработки см. в [справочной документации по пакету SDK](https://docs.microsoft.com/python/api/azureml-core/azureml.data.outputfiledatasetconfig?view=azure-ml-py).
+> С помощью общедоступного класса предварительной версии можно улучшить процесс передачи промежуточных данных между этапами конвейера [`OutputFileDatasetConfig`](https://docs.microsoft.com/python/api/azureml-core/azureml.data.outputfiledatasetconfig?view=azure-ml-py&preserve-view=true) . Пример кода с помощью см `OutputFileDatasetConfig` . в разделе [создание конвейера машинного обучения на два этапа](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/work-with-data/datasets-tutorial/pipeline-with-datasets/pipeline-for-image-classification.ipynb).
+
 
 ### <a name="use-pipelinedata-as-outputs-of-a-training-step"></a>Использование `PipelineData` в качестве выходных данных для этапа обучения
 В конвейере `PythonScriptStep` можно получить доступные выходные пути с помощью аргументов программы. Если этот шаг является первым и будет инициализировать выходные данные, необходимо создать каталог по указанному пути. Затем можно записать все файлы, которые должны содержаться в `PipelineData` .
@@ -192,7 +193,7 @@ with open(args.output_path, 'w') as f:
     f.write("Step 1's output")
 ```
 
-Если вы создали `PipelineData` с `is_directory` аргументом, для которого задано значение `True` , достаточно просто выполнить `os.makedirs()` вызов, после чего вы сможете писать любые файлы, необходимые для пути. Дополнительные сведения см. в справочной документации по [пипелинедата](https://docs.microsoft.com/python/api/azureml-pipeline-core/azureml.pipeline.core.pipelinedata?view=azure-ml-py) .
+Если вы создали `PipelineData` с `is_directory` аргументом, для которого задано значение `True` , достаточно просто выполнить `os.makedirs()` вызов, после чего вы сможете писать любые файлы, необходимые для пути. Дополнительные сведения см. в справочной документации по [пипелинедата](https://docs.microsoft.com/python/api/azureml-pipeline-core/azureml.pipeline.core.pipelinedata?view=azure-ml-py&preserve-view=true) .
 
 
 ### <a name="read-pipelinedata-as-inputs-to-non-initial-steps"></a>Считать `PipelineData` входные данные неначальными шагами
@@ -227,7 +228,7 @@ pipeline = Pipeline(workspace=ws, steps=[step1, step2])
 `PipelineData`Входным значением является путь к предыдущему выходному файлу. 
 
 > [!TIP]
-> С помощью общедоступного класса предварительной версии можно улучшить процесс передачи промежуточных данных между этапами конвейера `OutputFileDatasetConfig` . Дополнительные сведения о `OutputFileDatasetConfig` шаблонах и методах разработки см. в [справочной документации по пакету SDK](https://docs.microsoft.com/python/api/azureml-core/azureml.data.outputfiledatasetconfig?view=azure-ml-py).
+> С помощью общедоступного класса предварительной версии можно улучшить процесс передачи промежуточных данных между этапами конвейера [`OutputFileDatasetConfig`](https://docs.microsoft.com/python/api/azureml-core/azureml.data.outputfiledatasetconfig?view=azure-ml-py&preserve-view=true) . Пример кода с помощью см `OutputFileDatasetConfig` . в разделе [создание конвейера машинного обучения на два этапа](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/work-with-data/datasets-tutorial/pipeline-with-datasets/pipeline-for-image-classification.ipynb).
 
 Если, как показано ранее, первый шаг записал один файл, его использование может выглядеть следующим образом: 
 
@@ -249,7 +250,7 @@ step1_output_ds.register(name="processed_data", create_new_version=True)
 
 ```
 > [!TIP]
-> В общедоступном классе предварительной версии доступен улучшенный интерфейс для сохранения промежуточных данных за пределами выполняемых конвейеров `OutputFileDatasetConfig` . Дополнительные сведения о `OutputFileDatasetConfig` шаблонах и методах разработки см. в [справочной документации по пакету SDK](https://docs.microsoft.com/python/api/azureml-core/azureml.data.outputfiledatasetconfig?view=azure-ml-py).
+> В общедоступном классе предварительной версии доступен улучшенный интерфейс для сохранения промежуточных данных за пределами выполняемых конвейеров [`OutputFileDatasetConfig`](https://docs.microsoft.com/python/api/azureml-core/azureml.data.outputfiledatasetconfig?view=azure-ml-py&preserve-view=true) . Пример кода с помощью см `OutputFileDatasetConfig` . в разделе [создание конвейера машинного обучения на два этапа](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/work-with-data/datasets-tutorial/pipeline-with-datasets/pipeline-for-image-classification.ipynb).
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

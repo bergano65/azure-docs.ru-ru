@@ -6,12 +6,12 @@ ms.author: flborn
 ms.date: 02/03/2020
 ms.topic: conceptual
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 20de83e190a419b95c99c1c1238eb931910feb82
-ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
+ms.openlocfilehash: 1c49c7bfaa7714dda902d05537fbe3d8a55d5abe
+ms.sourcegitcommit: f845ca2f4b626ef9db73b88ca71279ac80538559
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89020292"
+ms.lasthandoff: 09/09/2020
+ms.locfileid: "89613920"
 ---
 # <a name="entities"></a>Сущности
 
@@ -21,7 +21,7 @@ ms.locfileid: "89020292"
 
 Для сущностей задаются преобразования со свойствами перемещения, поворота и масштабирования. Сами сущности не имеют никаких наблюдаемых возможностей. Любое поведение реализуется через добавление компонентов к сущностям. Например, добавив [CutPlaneComponent](../overview/features/cut-planes.md), можно создать плоскость разрезания в позиции расположения сущности.
 
-Наиболее важным аспектом самой сущности является иерархия и итоговое иерархическое преобразование. Например, если несколько сущностей присоединены как дочерние элементы к одной родительской сущности, все эти сущности можно перемещать, поворачивать и масштабировать синхронно, изменяя преобразование для родительской сущности.
+Наиболее важным аспектом самой сущности является иерархия и итоговое иерархическое преобразование. Например, если несколько сущностей присоединены как дочерние элементы к одной родительской сущности, все эти сущности можно перемещать, поворачивать и масштабировать синхронно, изменяя преобразование для родительской сущности. Кроме того, состояние сущности `enabled` можно использовать для отключения видимости и ответов на преобразования лучей для полной вложенной диаграммы в иерархии.
 
 Сущность имеет строго один родительский элемент. При удалении родительского элемента с помощью `Entity.Destroy()` удаляются и все его дочерние элементы, в том числе подключенные [компоненты](components.md). Таким образом, модель из сцены можно удалить путем вызова `Destroy` для корневого узла модели, полученного от метода `AzureSession.Actions.LoadModelAsync()` или аналогичного метода SAS `AzureSession.Actions.LoadModelFromSASAsync()`.
 
@@ -95,7 +95,6 @@ Double3 translation = entity->GetPosition();
 Quaternion rotation = entity->GetRotation();
 ```
 
-
 ### <a name="querying-spatial-bounds"></a>Запросы для получения пространственных границ
 
 Запросы к границам выполняются асинхронно и могут применяться к полной иерархии объектов, где одна сущность считается корневой. Описанию границ объектов посвящена [отдельная глава](object-bounds.md) руководства.
@@ -137,6 +136,13 @@ metaDataQuery->Completed([](const ApiHandle<MetadataQueryAsync>& query)
 ```
 
 Запрос будет считаться успешно выполненным, даже если в объекте нет метаданных.
+
+## <a name="api-documentation"></a>Документирование API
+
+* [Класс сущностей C#](https://docs.microsoft.com/dotnet/api/microsoft.azure.remoterendering.entity)
+* [C# Ремотеманажер. Креатинтити ()](https://docs.microsoft.com/dotnet/api/microsoft.azure.remoterendering.remotemanager.createentity)
+* [Класс сущностей C++](https://docs.microsoft.com/cpp/api/remote-rendering/entity)
+* [C++ Ремотеманажер:: Креатинтити ()](https://docs.microsoft.com/cpp/api/remote-rendering/remotemanager#createentity)
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

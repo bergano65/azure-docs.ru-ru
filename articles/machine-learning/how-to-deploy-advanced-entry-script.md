@@ -8,18 +8,18 @@ ms.subservice: core
 ms.topic: conceptual
 ms.date: 07/31/2020
 ms.author: gopalv
-ms.openlocfilehash: 0499cd6885454604e89ce4cadc313b2f68c45156
-ms.sourcegitcommit: 8def3249f2c216d7b9d96b154eb096640221b6b9
+ms.openlocfilehash: 95d3570d93aa4966fcf6864838ec01735b8662db
+ms.sourcegitcommit: 3be3537ead3388a6810410dfbfe19fc210f89fec
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87544675"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89650280"
 ---
 # <a name="advanced-entry-script-authoring"></a>Разработка расширенных сценариев ввода
 
 В этой статье показано, как написать скрипты записи для специализированных вариантов использования.
 
-## <a name="prerequisites"></a>Обязательные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 В этой статье предполагается, что у вас уже есть обученная модель машинного обучения, которую планируется развернуть с помощью Машинное обучение Azure. Дополнительные сведения о развертывании модели см. в [этом руководстве](how-to-deploy-and-where.md).
 
@@ -90,7 +90,7 @@ def run(data):
 ```
 
 
-## <a name="binary-ie-image-data"></a><a id="binary-data"></a>Двоичные данные (т. е. изображение)
+## <a name="binary-ie-image-data"></a><a id="binary-data"></a> Двоичные данные (т. е. изображение)
 
 Если модель принимает двоичные данные, например изображение, необходимо изменить `score.py` файл, используемый для развертывания, чтобы принимать необработанные HTTP-запросы. Чтобы принимать необработанные данные, используйте `AMLRequest` класс в скрипте записи и добавьте `@rawhttp` декоратор в `run()` функцию.
 
@@ -260,16 +260,16 @@ second_model_path = os.path.join(os.getenv('AZUREML_MODEL_DIR'), second_model_na
 
 ### <a name="get_model_path"></a>get_model_path
 
-При регистрации модели вы предоставляете имя модели, используемое для управления моделью в реестре. Это имя используется с методом [model. get_model_path ()](https://docs.microsoft.com/python/api/azureml-core/azureml.core.model.model?view=azure-ml-py#get-model-path-model-name--version-none---workspace-none-) для получения пути к файлу модели или файлам в локальной файловой системе. При регистрации папки или коллекции файлов этот API возвращает путь к каталогу, содержащему эти файлы.
+При регистрации модели вы предоставляете имя модели, используемое для управления моделью в реестре. Это имя используется с методом [model. get_model_path ()](https://docs.microsoft.com/python/api/azureml-core/azureml.core.model.model?view=azure-ml-py#&preserve-view=trueget-model-path-model-name--version-none---workspace-none-) для получения пути к файлу модели или файлам в локальной файловой системе. При регистрации папки или коллекции файлов этот API возвращает путь к каталогу, содержащему эти файлы.
 
 При регистрации модели ей присваивается имя. Имя соответствует месту размещения модели: локально или во время развертывания службы.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Устранение неполадок при развертывании](how-to-troubleshoot-deployment.md)
 * [развертывание в Службе Azure Kubernetes](how-to-deploy-azure-kubernetes-service.md).
 * [Создание клиентских приложений для использования веб-служб](how-to-consume-web-service.md)
-* [Обновить веб-службу](how-to-deploy-update-web-service.md)
+* [Обновление веб-службы](how-to-deploy-update-web-service.md)
 * [Развертывание модели с помощью пользовательского образа DOCKER](how-to-deploy-custom-docker-image.md)
 * [Использование TLS для защиты веб-службы с помощью Машинного обучения Azure](how-to-secure-web-service.md).
 * [Мониторинг моделей Машинное обучение Azure с помощью Application Insights](how-to-enable-app-insights.md)

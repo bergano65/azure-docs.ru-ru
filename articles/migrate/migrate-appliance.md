@@ -3,12 +3,12 @@ title: Устройство службы "Миграция Azure"
 description: Общие сведения об устройстве Миграции Azure, используемом для оценки и миграции серверов.
 ms.topic: conceptual
 ms.date: 05/04/2020
-ms.openlocfilehash: a313d7b964e6ea849acb5b034ed55975b8c5b524
-ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
+ms.openlocfilehash: f0bba2f2d200ffc84855ff8fc7f634bd8b71ceb6
+ms.sourcegitcommit: 7f62a228b1eeab399d5a300ddb5305f09b80ee14
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88927525"
+ms.lasthandoff: 09/08/2020
+ms.locfileid: "89514362"
 ---
 # <a name="azure-migrate-appliance"></a>Устройство службы "Миграция Azure"
 
@@ -121,7 +121,7 @@ download.microsoft.com/download | Разрешение скачивания из
 graph.windows.net | Войдите в свою подписку Azure.
 login.microsoftonline.us  | Создание приложений Azure Active Directory (AD) для взаимодействия устройства с Миграцией Azure.
 management.usgovcloudapi.net | Создание приложений Azure AD для взаимодействия устройства с службой "Миграция Azure".
-dc.services.visualstudio.com | Передача журналов приложений, используемых для внутреннего мониторинга.
+*.services.visualstudio.com | Передача журналов приложений, используемых для внутреннего мониторинга.
 *.vault.usgovcloudapi.net | Управление секретами в Azure Key Vault.
 aka.ms/* | Разрешение доступа к ссылкам AKA. Используется для обновления устройства Миграции Azure.
 download.microsoft.com/download | Разрешение скачивания из Центра загрузки Майкрософт.
@@ -227,7 +227,7 @@ IPv6-адреса | vm.Guest.Net
 
 **Data**  | **Командлет PowerShell** | **Свойство**
 --- | --- | ---
-Имя  | Get-WindowsFeature  | Имя
+name  | Get-WindowsFeature  | name
 Тип функции | Get-WindowsFeature  | Объект featuretype
 Parent  | Get-WindowsFeature  | Parent
 
@@ -237,8 +237,8 @@ Parent  | Get-WindowsFeature  | Parent
 
 **Data**  | **Расположение реестра**  | **Key**
 --- | --- | ---
-Имя  | HKLM: \ SOFTWARE\Microsoft\Microsoft SQL сохраняет имена экземпляров  | инсталлединстанце
-выпуск  | HKLM: \ SOFTWARE\Microsoft\Microsoft SQL Server \\ \<InstanceName> \setup  | выпуск 
+name  | HKLM: \ SOFTWARE\Microsoft\Microsoft SQL сохраняет имена экземпляров  | инсталлединстанце
+Выпуск  | HKLM: \ SOFTWARE\Microsoft\Microsoft SQL Server \\ \<InstanceName> \setup  | Выпуск 
 Пакет обновления  | HKLM: \ SOFTWARE\Microsoft\Microsoft SQL Server \\ \<InstanceName> \setup  | SP
 Версия  | HKLM: \ SOFTWARE\Microsoft\Microsoft SQL Server \\ \<InstanceName> \setup  | Версия 
 
@@ -248,9 +248,9 @@ Parent  | Get-WindowsFeature  | Parent
 
 Данные  | класс WMI  | Свойство класса WMI
 --- | --- | ---
-Имя  | Win32_operatingsystem  | Caption
+name  | Win32_operatingsystem  | Caption
 Версия  | Win32_operatingsystem  | Версия
-Архитектура  | Win32_operatingsystem  | OSArchitecture
+Architecture  | Win32_operatingsystem  | OSArchitecture
 
 #### <a name="linux-vm-apps-data"></a>Данные приложений виртуальной машины Linux
 
@@ -258,7 +258,7 @@ Parent  | Get-WindowsFeature  | Parent
 
 Данные  | Get-Help
 --- | --- 
-Имя | RPM, dpkg — запрос, привязка
+name | RPM, dpkg — запрос, привязка
 Версия | RPM, dpkg — запрос, привязка
 Поставщик | RPM, dpkg — запрос, привязка
 
@@ -268,8 +268,8 @@ Parent  | Get-WindowsFeature  | Parent
 
 **Data**  | **Команда** 
 --- | --- | ---
-Имя <br/> version | Собраны из одного или нескольких следующих файлов:<br/> <br/>/etc/os-release  <br> /usr/lib/os-release  <br> /etc/enterprise-release  <br> /etc/redhat-release  <br> /etc/oracle-release  <br> /etc/SuSE-release  <br> /etc/lsb-release  <br> /etc/debian_version 
-Архитектура | uname
+name <br/> version | Собраны из одного или нескольких следующих файлов:<br/> <br/>/etc/os-release  <br> /usr/lib/os-release  <br> /etc/enterprise-release  <br> /etc/redhat-release  <br> /etc/oracle-release  <br> /etc/SuSE-release  <br> /etc/lsb-release  <br> /etc/debian_version 
+Architecture | uname
 
 
 ### <a name="app-dependencies-metadata"></a>Метаданные зависимостей приложений
