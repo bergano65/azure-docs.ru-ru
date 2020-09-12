@@ -6,12 +6,12 @@ ms.author: raagyema
 ms.service: postgresql
 ms.topic: conceptual
 ms.date: 07/17/2020
-ms.openlocfilehash: 544fabf9a32eaa7ef7457fc26ae9212b9fce9872
-ms.sourcegitcommit: 2ff0d073607bc746ffc638a84bb026d1705e543e
+ms.openlocfilehash: 56b2fd7d78d95978b2e822f2d18160013d17eb15
+ms.sourcegitcommit: bf1340bb706cf31bb002128e272b8322f37d53dd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87837216"
+ms.lasthandoff: 09/03/2020
+ms.locfileid: "89433625"
 ---
 # <a name="use-virtual-network-service-endpoints-and-rules-for-azure-database-for-postgresql---single-server"></a>Использование конечных точек службы и правил виртуальной сети для базы данных Azure для PostgreSQL — один сервер
 
@@ -106,7 +106,7 @@ ms.locfileid: "87837216"
 
 - Правила виртуальной сети применяются только к виртуальным сетям Azure Resource Manager, но не к сетям на основе [классической модели развертывания][arm-deployment-model-568f].
 
-- Включение конечных точек службы виртуальной сети для Базы данных Azure для PostgreSQL с помощью тега службы **Microsoft.Sql** также включает конечные точки для всех служб Базы данных Azure: Базы данных Azure для MySQL, Базы данных Azure для PostgreSQL, Базы данных SQL Azure и хранилища данных SQL Azure.
+- Включение конечных точек службы виртуальной сети в базу данных Azure для PostgreSQL с помощью тега службы **Microsoft. SQL** также позволяет использовать конечные точки для всех служб базы данных Azure: база данных Azure для MySQL, база данных Azure для PostgreSQL, база данных SQL Azure и аналитика синапсе Azure (ранее — хранилище данных SQL).
 
 - Поддержка конечных точек службы виртуальной сети предназначена только для серверов общего назначения и серверов, оптимизированных для операций в памяти.
 
@@ -128,8 +128,8 @@ ms.locfileid: "87837216"
 
 Задать параметр **IgnoreMissingServiceEndpoint** можно с помощью Azure CLI или портала.
 
-## <a name="related-articles"></a>Связанные статьи
-- [виртуальные сети Azure;][vm-virtual-network-overview]
+## <a name="related-articles"></a>Похожие статьи
+- [Виртуальные сети Azure][vm-virtual-network-overview]
 - [Конечные точки службы виртуальной сети Azure][vm-virtual-network-service-endpoints-overview-649d]
 
 ## <a name="next-steps"></a>Дальнейшие действия

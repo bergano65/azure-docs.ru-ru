@@ -5,14 +5,14 @@ author: Microsoft-BradleyWright
 ms.author: brwrigh
 ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 06/17/2020
-ms.openlocfilehash: 03fa302d2e8aa173419912b99d60734c7a4e0356
-ms.sourcegitcommit: d39f2cd3e0b917b351046112ef1b8dc240a47a4f
+ms.openlocfilehash: 6ca03e56d49d26fcd34a25ce1e3734db65b19b65
+ms.sourcegitcommit: 3be3537ead3388a6810410dfbfe19fc210f89fec
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88814270"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89646834"
 ---
 # <a name="create-a-consulting-service-offer"></a>Создание предложения консультационных услуг
 
@@ -98,12 +98,12 @@ ms.locfileid: "88814270"
 
 3. Если вы выбрали **Azure** в качестве основного продукта, выберите до трех **областей решения**. Так клиенты быстрее найдут ваше предложение в Azure Marketplace. Если вы выбрали другой продукт, пропустите этот шаг.
 
-    - Аналитика
+    - Analytics
     - Модернизации приложения
     - Архив
-    - ИИ и машинное обучение
+    - Средства ИИ и машинного обучения
     - Backup
-    - Большие данные
+    - Данные большого размера
     - Платформа данных
     - Управление центром обработки данных
     - DevOps
@@ -113,7 +113,7 @@ ms.locfileid: "88814270"
     - Миграция
     - Сеть
     - Безопасность
-    - Служба хранилища
+    - Хранилище
 
 1. Если вы выбрали **Azure** в качестве основного продукта, то можете выбрать до шести **отраслей**. Так клиенты быстрее найдут ваше предложение в Azure Marketplace. Полный список отраслей в [предложении](../gtm-offer-listing-best-practices.md)содержит рекомендации. Если вы не выбрали Azure, пропустите этот шаг.
 1. Если вы выбрали *другой* основной продукт, задайте не более трех **применимых продуктов**. Так клиенты быстрее найдут ваше предложение в AppSource. Дополнительные сведения см. в документе [с рекомендациями по размещению консультационных услуг в Microsoft AppSource](https://go.microsoft.com/fwlink/?LinkId=828734&amp;clcid=0x409) (в формате PDF).

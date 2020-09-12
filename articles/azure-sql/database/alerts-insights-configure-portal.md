@@ -11,20 +11,20 @@ author: aamalvea
 ms.author: aamalvea
 ms.reviewer: jrasnik, carlrab
 ms.date: 05/04/2020
-ms.openlocfilehash: d03c1cad9692058c47dd643be9770284b207bb74
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 2b7457ad5870e31d682f8727901795c9d6d73f06
+ms.sourcegitcommit: bf1340bb706cf31bb002128e272b8322f37d53dd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85553501"
+ms.lasthandoff: 09/03/2020
+ms.locfileid: "89442689"
 ---
 # <a name="create-alerts-for-azure-sql-database-and-azure-synapse-analytics-using-the-azure-portal"></a>Создание оповещений для базы данных SQL Azure и Azure синапсе Analytics с помощью портал Azure
 [!INCLUDE[appliesto-sqldb-asa](../includes/appliesto-sqldb-asa.md)]
 
 
-## <a name="overview"></a>Обзор
+## <a name="overview"></a>Overview
 
-В этой статье показано, как настроить оповещения для баз данных в базе данных SQL Azure и Azure синапсе Analytics (ранее — хранилище данных SQL Azure) с помощью портал Azure. Оповещения могут отправить электронное сообщение или вызвать веб-перехватчик, когда какая-либо метрика достигает порога (например, размер базы данных или использование ЦП).
+В этой статье показано, как настроить оповещения для баз данных в базе данных SQL Azure и Azure синапсе Analytics (ранее — хранилище данных SQL) с помощью портал Azure. Оповещения могут отправить электронное сообщение или вызвать веб-перехватчик, когда какая-либо метрика достигает порога (например, размер базы данных или использование ЦП).
 
 > [!NOTE]
 > Конкретные инструкции по SQL Azure Управляемый экземпляр см. в статье [Создание оповещений для управляемый экземпляр SQL Azure](../managed-instance/alerts-create.md).
@@ -45,7 +45,7 @@ ms.locfileid: "85553501"
 * [Портал Azure](../../azure-monitor/platform/alerts-classic-portal.md)
 * [PowerShell](../../azure-monitor/platform/alerts-classic-portal.md)
 * [Интерфейс командной строки (CLI)](../../azure-monitor/platform/alerts-classic-portal.md)
-* [Azure Monitor REST API](https://msdn.microsoft.com/library/azure/dn931945.aspx)
+* [REST API Azure Monitor](https://msdn.microsoft.com/library/azure/dn931945.aspx)
 
 ## <a name="create-an-alert-rule-on-a-metric-with-the-azure-portal"></a>Создание правила генерации оповещений на основе метрики с помощью портала Azure
 
@@ -71,6 +71,6 @@ ms.locfileid: "85553501"
 
 В течение 10 минут оповещение активно и активируется, как описано выше.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Узнайте больше о [настройке веб-перехватчиков webhook в оповещениях](../../azure-monitor/platform/alerts-webhooks.md).

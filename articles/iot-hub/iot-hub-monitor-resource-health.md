@@ -12,12 +12,12 @@ ms.custom:
 - 'Role: Cloud Development'
 - 'Role: Technical Support'
 - devx-track-csharp
-ms.openlocfilehash: c7b2055494d61ba348ae6226e6fc0ad9ce5775bb
-ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
+ms.openlocfilehash: 100f87b8a13fb424706c3b5ec13268cd3ba42bbe
+ms.sourcegitcommit: bf1340bb706cf31bb002128e272b8322f37d53dd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89022145"
+ms.lasthandoff: 09/03/2020
+ms.locfileid: "89438407"
 ---
 # <a name="monitor-the-health-of-azure-iot-hub-and-diagnose-problems-quickly"></a>Мониторинг работоспособности Центра Интернета вещей Azure и быстрая диагностика неполадок
 
@@ -61,7 +61,7 @@ Azure Monitor отслеживает различные операции, вып
             "operationName": "deviceConnect",
             "category": "Connections",
             "level": "Information",
-            "properties": "{\"deviceId\":\"<deviceId>\",\"protocol\":\"<protocol>\",\"authType\":\"{\\\"scope\\\":\\\"device\\\",\\\"type\\\":\\\"sas\\\",\\\"issuer\\\":\\\"iothub\\\",\\\"acceptingIpFilterRule\\\":null}\",\"maskedIpAddress\":\"<maskedIpAddress>\"}",
+            "properties": "{\"deviceId\":\"<deviceId>\",\"sdkVersion\":\"<sdkVersion>\",\"protocol\":\"<protocol>\",\"authType\":\"{\\\"scope\\\":\\\"device\\\",\\\"type\\\":\\\"sas\\\",\\\"issuer\\\":\\\"iothub\\\",\\\"acceptingIpFilterRule\\\":null}\",\"maskedIpAddress\":\"<maskedIpAddress>\"}",
             "location": "Resource location"
         }
     ]
@@ -352,7 +352,7 @@ Azure Monitor отслеживает различные операции, вып
 
 В этом случае `durationMs` не подсчитывается, так как часы Центра Интернета вещей могут быть не синхронизированы с часами устройства, из-за чего расчет длительности может давать ошибочные результаты. Рекомендуется создавать логику с использованием метки времени в разделе `properties`, чтобы записывать пики задержки соединения устройства с облаком.
 
-| Свойство | Type | Описание |
+| Свойство | Тип | Описание |
 |--------------------|-----------------------------------------------|------------------------------------------------------------------------------------------------|
 | **messageSize** | Целое число | Размер сообщения, поступающего с устройства в облако, в байтах |
 | **deviceId** | Строка 7-битовых букв и цифр ASCII | Удостоверение устройства |
@@ -386,7 +386,7 @@ Azure Monitor отслеживает различные операции, вып
 
 В `properties` разделе этот журнал содержит дополнительные сведения о входящих сообщениях.
 
-| Свойство | Type | Описание |
+| Свойство | Тип | Описание |
 |--------------------|-----------------------------------------------|------------------------------------------------------------------------------------------------|
 | **isRoutingEnabled** | Строка | Значение true или false показывает, включена ли маршрутизация сообщений в Центре Интернета вещей |
 | **parentSpanId** | Строка | [Span-id](https://w3c.github.io/trace-context/#parent-id) родительского сообщения, которое в этом случае является трассировкой сообщения, передаваемого из устройства в облако (D2C) |
@@ -418,7 +418,7 @@ Azure Monitor отслеживает различные операции, вып
 
 В `properties` разделе этот журнал содержит дополнительные сведения о входящих сообщениях.
 
-| Свойство | Type | Описание |
+| Свойство | Тип | Описание |
 |--------------------|-----------------------------------------------|------------------------------------------------------------------------------------------------|
 | **endpointName** | Строка | Имя конечной точки маршрутизации |
 | **endpointType** | Строка | Тип конечной точки маршрутизации |
@@ -426,7 +426,7 @@ Azure Monitor отслеживает различные операции, вып
 
 #### <a name="configurations"></a>Конфигурации
 
-Журналы конфигурации центра Интернета вещей отслеживают события и ошибки для набора функций автоматического управления устройствами.
+Журналы конфигурации центра Интернета вещей записывают события и ошибки для набора функций автоматического управления устройствами.
 
 ```json
 {
@@ -470,6 +470,42 @@ Azure Monitor отслеживает различные операции, вып
          }
     ]
 }
+```
+
+### <a name="sdk-version"></a>Версия пакета SDK
+
+Некоторые операции возвращают `sdkVersion` свойство в своем `properties` объекте. Для этих операций, когда устройство или серверное приложение использует один из пакетов SDK для Интернета вещей Azure, это свойство содержит сведения об используемом пакете SDK, версии пакета SDK и платформе, на которой выполняется пакет SDK. В следующем примере показано `sdkVersion` свойство, порожденное для `deviceConnect` операции при использовании пакета SDK для устройства Node.js: `"azure-iot-device/1.17.1 (node v10.16.0; Windows_NT 10.0.18363; x64)"` . Ниже приведен пример значения, созданного для .NET (C#) SDK: `".NET/1.21.2 (.NET Framework 4.8.4200.0; Microsoft Windows 10.0.17763 WindowsProduct:0x00000004; X86)"` .
+
+В следующей таблице показано имя пакета SDK, используемого для различных пакетов SDK для Azure IoT.
+
+| Имя пакета SDK в свойстве Сдкверсион | Язык |
+|----------|----------|
+| .NET | .NET (C#) |
+| Microsoft. Azure. Devices | Пакет SDK для служб .NET (C#) |
+| Microsoft. Azure. Devices. Client | Пакет SDK для устройств .NET (C#) |
+| iothubclient | Пакет SDK для устройств C или Python v1 (не рекомендуется) |
+| иосубсервицеклиент | Пакет SDK для C или Python v1 (не рекомендуется) |
+| Azure-IOT-Device-iothub-корректировка | Пакет SDK для устройства Python |
+| azure-iot-device | Пакет SDK для Node.js устройства |
+| azure-iothub | Пакет SDK для службы Node.js |
+| com. Microsoft. Azure. iothub-Java-Client | Пакет SDK для устройств Java |
+| com. Microsoft. Azure. iothub. Service. SDK | Пакет SDK для службы Java |
+| com. Microsoft. Azure. SDK. IOT. IOT-Device-Client | Пакет SDK для устройств Java |
+| com. Microsoft. Azure. SDK. IOT. IOT-Service-Client | Пакет SDK для службы Java |
+| C | Внедренный C |
+| C + (Оссимплифиед = Azure RTO) | ОСРВ Azure |
+
+Можно извлечь свойство версии пакета SDK при выполнении запросов к журналам диагностики. Следующий запрос извлекает свойство версии пакета SDK (и идентификатор устройства) из свойств, возвращаемых событиями соединения. Эти два свойства записываются в результаты вместе со временем события и ИДЕНТИФИКАТОРом ресурса центра Интернета вещей, к которому подключается устройство.
+
+```kusto
+// SDK version of devices
+// List of devices and their SDK versions that connect to IoT Hub
+AzureDiagnostics
+| where ResourceProvider == "MICROSOFT.DEVICES" and ResourceType == "IOTHUBS"
+| where Category == "Connections"
+| extend parsed_json = parse_json(properties_s) 
+| extend SDKVersion = tostring(parsed_json.sdkVersion) , DeviceId = tostring(parsed_json.deviceId)
+| distinct DeviceId, SDKVersion, TimeGenerated, _ResourceId
 ```
 
 ### <a name="read-logs-from-azure-event-hubs"></a>Чтение журналов из Центров событий Azure

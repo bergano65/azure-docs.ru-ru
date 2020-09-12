@@ -2,17 +2,17 @@
 title: 'Azure ExpressRoute: Оптимизация маршрутизации'
 description: В этой статье приведены сведения о том, как оптимизировать маршрутизацию при наличии нескольких каналов ExpressRoute, с помощью которых устанавливается подключение между сетью Майкрософт и корпоративной сетью.
 services: expressroute
-author: charwen
+author: duongau
 ms.service: expressroute
 ms.topic: how-to
 ms.date: 07/11/2019
-ms.author: charwen
-ms.openlocfilehash: 2672068e505b7c86127b8b765372e7c607c3875a
-ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
+ms.author: duau
+ms.openlocfilehash: aef21ecbda26e47dc6ef8a915cbd4403c13430e4
+ms.sourcegitcommit: 5a3b9f35d47355d026ee39d398c614ca4dae51c6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2020
-ms.locfileid: "86259780"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89395236"
 ---
 # <a name="optimize-expressroute-routing"></a>Оптимизация маршрутизации ExpressRoute
 При наличии нескольких каналов ExpressRoute к сети Майкрософт можно подключиться по нескольким маршрутам. Поэтому маршрутизация может быть неоптимальной, а это значит, что при передаче трафика из вашей сети в сеть Майкрософт и наоборот он будет проходить более длинный маршрут. А это, в свою очередь, может стать причиной возникновения длительной задержки, которая прямо влияет на производительность приложения и работу пользователей. В настоящей статье описана эта проблема и объясняется, как оптимизировать маршрутизацию с помощью стандартных технологий.

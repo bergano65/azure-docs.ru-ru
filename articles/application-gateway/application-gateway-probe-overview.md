@@ -7,12 +7,12 @@ ms.service: application-gateway
 ms.topic: article
 ms.date: 07/09/2020
 ms.author: victorh
-ms.openlocfilehash: b613e89fbe29074160d83a96d2cd13505244994a
-ms.sourcegitcommit: ec682dcc0a67eabe4bfe242fce4a7019f0a8c405
+ms.openlocfilehash: f0e5a153efe26640e54f386600f07c7b3d4711d0
+ms.sourcegitcommit: 3be3537ead3388a6810410dfbfe19fc210f89fec
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/09/2020
-ms.locfileid: "86186726"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89649066"
 ---
 # <a name="application-gateway-health-monitoring-overview"></a>Обзор мониторинга работоспособности шлюза приложений
 
@@ -98,7 +98,7 @@ $match = New-AzApplicationGatewayProbeHealthResponseMatch -Body "Healthy"
 
 Кроме того, не должно блокироваться исходящее подключение к Интернету, а также необходимо разрешить входящий трафик из тега **AzureLoadBalancer**.
 
-Дополнительные сведения см. в статье [Обзор конфигурации шлюза приложений](configuration-overview.md#network-security-groups-on-the-application-gateway-subnet).
+Дополнительные сведения см. в статье [Обзор конфигурации шлюза приложений](configuration-infrastructure.md#network-security-groups).
 
 ## <a name="next-steps"></a>Дальнейшие действия
 Ознакомившись со сведениями о мониторинге работоспособности шлюза приложений, можно настроить [пользовательскую проверку работоспособности](application-gateway-create-probe-portal.md) на портале Azure либо [пользовательскую проверку работоспособности](application-gateway-create-probe-ps.md) с использованием модели развертывания PowerShell или Azure Resource Manager.

@@ -3,12 +3,12 @@ title: Расширение Политики Azure для Visual Studio Code
 description: Узнайте, как использовать расширение политики Azure для Visual Studio Code поиска псевдонимов Azure Resource Manager.
 ms.date: 06/16/2020
 ms.topic: how-to
-ms.openlocfilehash: c91d39414a376b410e52c2ba60ce15ed0c5054f6
-ms.sourcegitcommit: f684589322633f1a0fafb627a03498b148b0d521
+ms.openlocfilehash: 9b3f27492bee5301e22e83ebf9734afa3de43897
+ms.sourcegitcommit: 3be3537ead3388a6810410dfbfe19fc210f89fec
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/06/2020
-ms.locfileid: "85970762"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89648327"
 ---
 # <a name="use-azure-policy-extension-for-visual-studio-code"></a>Использование расширения политики Azure для Visual Studio Code
 
@@ -21,7 +21,7 @@ ms.locfileid: "85970762"
 > [!NOTE]
 > Изменения, внесенные локально в политики, просмотренные в расширении политики Azure для Visual Studio Code, не синхронизируются с Azure.
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Для выполнения действий, описанных в этой статье, необходимо следующее:
 
@@ -52,7 +52,7 @@ ms.locfileid: "85970762"
 
 1. Выберите облако для страны из списка:
 
-   :::image type="content" source="../media/extension-for-vscode/set-default-azure-cloud-sign-in.png" alt-text="Настройка входа в облако Azure по умолчанию для Visual Studio Code" border="false":::
+   :::image type="content" source="../media/extension-for-vscode/set-default-azure-cloud-sign-in.png" alt-text="Снимок экрана: выбор страны для входа в облако Azure для Visual Studio Code." border="false":::
 
 ## <a name="connect-to-an-azure-account"></a>Подключение к учетной записи Azure
 
@@ -64,13 +64,13 @@ ms.locfileid: "85970762"
 
      В расширении политики Azure выберите вход в **Azure**.
 
-     :::image type="content" source="../media/extension-for-vscode/azure-cloud-sign-in-policy-extension.png" alt-text="Вход в облако Azure для Visual Studio Code из расширения политики Azure" border="false":::
+     :::image type="content" source="../media/extension-for-vscode/azure-cloud-sign-in-policy-extension.png" alt-text="Снимок экрана Visual Studio Code и значок для расширения политики Azure." border="false":::
 
    - Палитра команд
 
      В строке меню выберите **вид**  >  **Палитра команд**и введите **Azure: вход**.
 
-     :::image type="content" source="../media/extension-for-vscode/azure-cloud-sign-in-command-palette.png" alt-text="Вход в облако Azure для Visual Studio Code из палитры команд" border="false":::
+     :::image type="content" source="../media/extension-for-vscode/azure-cloud-sign-in-command-palette.png" alt-text="Снимок экрана параметров входа в облако Azure для Visual Studio Code из палитры команд." border="false":::
 
 1. Следуйте инструкциям по входу, чтобы войти в Azure. После подключения имя учетной записи Azure отобразится в строке состояния в нижней части окна Visual Studio Code.
 
@@ -125,7 +125,7 @@ ms.locfileid: "85970762"
 
 После открытия ресурса при наведении указателя мыши на имя или значение свойства диспетчер ресурсов отображается псевдоним политики Azure, если он существует. В этом примере ресурс является `Microsoft.Compute/virtualMachines` типом ресурса, а свойство **Properties. StorageProfile. imageReference. предложение** наводится на него. При наведении указателя мыши отображаются совпадающие псевдонимы.
 
-:::image type="content" source="../media/extension-for-vscode/extension-hover-shows-property-alias.png" alt-text="При наведении указателя мыши на расширение политики Azure отображается диспетчер ресурсов псевдоним свойства" border="false":::
+:::image type="content" source="../media/extension-for-vscode/extension-hover-shows-property-alias.png" alt-text="Снимок экрана расширения политики Azure для Visual Studio Code наведения указателя мыши на свойство для отображения имен псевдонимов." border="false":::
 
 > [!NOTE]
 > Расширение VS Code предоставляет только свойства режима диспетчера ресурсов и не отображает свойств [режима поставщика ресурсов](../concepts/definition-structure.md#mode).

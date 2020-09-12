@@ -8,12 +8,12 @@ ms.subservice: edge
 ms.topic: how-to
 ms.date: 08/28/2020
 ms.author: alkohli
-ms.openlocfilehash: d5210a3788f7bb054492c2d83c595c26fa3c4f42
-ms.sourcegitcommit: bcda98171d6e81795e723e525f81e6235f044e52
+ms.openlocfilehash: aa35111a2fa26b3e4fd5e80a8227b7c244f30e9f
+ms.sourcegitcommit: 4a7a4af09f881f38fcb4875d89881e4b808b369b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/01/2020
-ms.locfileid: "89265717"
+ms.lasthandoff: 09/04/2020
+ms.locfileid: "89461720"
 ---
 # <a name="deploy-vms-on-your-azure-stack-edge-gpu-device-via-azure-powershell"></a>Развертывание виртуальных машин на Azure Stack пограничном устройстве GPU с помощью Azure PowerShell
 
@@ -23,7 +23,7 @@ ms.locfileid: "89265717"
 
 ## <a name="vm-deployment-workflow"></a>Рабочий процесс развертывания виртуальной машины
 
-Рабочий процесс развертывания показан на следующей схеме.
+Выполнение рабочего процесса развертывания показано на схеме ниже.
 
 ![Рабочий процесс развертывания виртуальной машины](media/azure-stack-edge-j-series-deploy-virtual-machine-powershell/vm-workflow_r.svg)
 
@@ -178,7 +178,7 @@ key1 /IjVJN+sSf7FMKiiPLlDm8mc9P4wtcmhhbnCa7...
 key2 gd34TcaDzDgsY9JtDNMUgLDOItUU0Qur3CBo6Q...
 ```
 
-## <a name="add-blob-uri-to-hosts-file"></a>Добавление URI BLOB-объекта в файл hosts
+## <a name="add-blob-uri-to-hosts-file"></a>Добавление URI BLOB-объекта в файл hosts.
 
 Вы уже добавили URI BLOB-объекта в файл hosts для клиента, который используется для подключения к хранилищу BLOB-объектов в разделе [изменение файла узла для разрешения имен конечных точек](azure-stack-edge-j-series-connect-resource-manager.md#step-5-modify-host-file-for-endpoint-name-resolution). Это была запись для URI большого двоичного объекта:
 
@@ -212,7 +212,7 @@ AzCopy /Source:\\hcsfs\scratch\vm_vhds\linux\ /Dest:http://sa191113014333.blob.d
 ```
 
 
-## <a name="create-managed-disks-from-the-vhd"></a>Создание управляемых дисков из виртуального жесткого диска
+## <a name="create-managed-disks-from-the-vhd"></a>Создание управляемых дисков из VHD.
 
 Создайте управляемый диск на основе отправленного виртуального жесткого диска.
 
@@ -220,8 +220,8 @@ AzCopy /Source:\\hcsfs\scratch\vm_vhds\linux\ /Dest:http://sa191113014333.blob.d
 $DiskConfig = New-AzureRmDiskConfig -Location DBELocal -CreateOption Import -SourceUri "Source URL for your VHD"
 ```
 Результат выполнения команды показан ниже: 
-
-$DiskConfig = New-AzureRmDiskConfig-Location Дбелокал — CreateOption Import — SourceUri http://sa191113014333.blob.dbe-1dcmhq2.microsoftdatabox.com/vmimages/ubuntu13.vhd 
+<code>
+$DiskConfig = New-AzureRmDiskConfig -Location DBELocal -CreateOption Import –SourceUri http://</code><code>sa191113014333.blob.dbe-1dcmhq2.microsoftdatabox.com/vmimages/ubuntu13.vhd</code> 
 
 ```powershell
 New-AzureRMDisk -ResourceGroupName <Resource group name> -DiskName <Disk name> -Disk $DiskConfig
@@ -251,7 +251,7 @@ Location           : DBELocal
 Tags               : {}
 ```
 
-## <a name="create-a-vm-image-from-the-image-managed-disk"></a>Создание образа виртуальной машины на основе управляемого диска образа
+## <a name="create-a-vm-image-from-the-image-managed-disk"></a>Создание образа виртуальной машины на основе управляемого диска образа.
 
 Используйте следующую команду, чтобы создать образ виртуальной машины на основе управляемого диска. Замените значения в \< \> именах выбранными.
 
@@ -283,7 +283,7 @@ Location             : dbelocal
 Tags                 : {}
 ```
 
-## <a name="create-vm-with-previously-created-resources"></a>Создание виртуальной машины с ранее созданными ресурсами
+## <a name="create-vm-with-previously-created-resources"></a>Создание виртуальной машины с ранее созданными ресурсами.
 
 Перед созданием и развертыванием виртуальной машины необходимо создать одну виртуальную сеть и связать ее с виртуальным сетевым интерфейсом.
 
@@ -408,24 +408,39 @@ New-AzureRmVM -ResourceGroupName <Resource Group Name> -Location DBELocal -VM $V
 
 ## <a name="connect-to-a-vm"></a>Подключение к виртуальной машине
 
-Подключитесь к виртуальной машине с помощью частного IP-адреса, переданного во время создания виртуальной машины.
+В зависимости от того, была создана виртуальная машина Windows или Linux, действия для подключения могут отличаться.
 
-Откройте сеанс SSH для подключения с IP-адресом.
+### <a name="connect-to-linux-vm"></a>Подключение к виртуальной машине Linux
+
+Выполните следующие действия, чтобы подключиться к виртуальной машине Linux.
+
+[!INCLUDE [azure-stack-edge-gateway-connect-vm](../../includes/azure-stack-edge-gateway-connect-virtual-machine-linux.md)]
+
+### <a name="connect-to-windows-vm"></a>Подключение к виртуальной машине Windows
+
+Выполните следующие действия, чтобы подключиться к виртуальной машине Windows.
+
+[!INCLUDE [azure-stack-edge-gateway-connect-vm](../../includes/azure-stack-edge-gateway-connect-virtual-machine-windows.md)]
+
+
+<!--Connect to the VM using the private IP that you passed during the VM creation.
+
+Open an SSH session to connect with the IP address.
 
 `ssh -l <username> <ip address>`
 
-При появлении запроса введите пароль, который использовался при создании виртуальной машины.
+When prompted, provide the password that you used when creating the VM.
 
-Если необходимо указать ключ SSH, используйте эту команду.
+If you need to provide the SSH key, use this command.
 
-SSH-i c:/Users/Administrator/. ssh/id_rsa Administrator@5.5.41.236
+ssh -i c:/users/Administrator/.ssh/id_rsa Administrator@5.5.41.236
 
-Если во время создания виртуальной машины использовался общедоступный IP-адрес, то для подключения к виртуальной машине его можно использовать. Чтобы получить общедоступный IP-адрес, сделайте следующее: 
+If you used a public IP address during VM creation, you can use that IP to connect to the VM. To get the public IP: 
 
 ```powershell
 $publicIp = Get-AzureRmPublicIpAddress -Name <Public IP> -ResourceGroupName <Resource group name>
 ```
-В этом случае общедоступный IP-адрес будет таким же, как и частный IP-адрес, переданный во время создания виртуального сетевого интерфейса.
+The public IP in this case will be the same as the private IP that you passed during virtual network interface creation.-->
 
 
 ## <a name="manage-vm"></a>Управление виртуальной машиной

@@ -11,12 +11,12 @@ ms.workload: na
 ms.topic: article
 ms.date: 08/31/2020
 ms.author: inhenkel
-ms.openlocfilehash: 2e637392328c7a09fb23adeca61a352707f05e0e
-ms.sourcegitcommit: bcda98171d6e81795e723e525f81e6235f044e52
+ms.openlocfilehash: 5a22bd9508feac1348bcd8042fa6ac791864c261
+ms.sourcegitcommit: ac5cbef0706d9910a76e4c0841fdac3ef8ed2e82
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/01/2020
-ms.locfileid: "89267514"
+ms.lasthandoff: 09/03/2020
+ms.locfileid: "89425642"
 ---
 # <a name="azure-media-services-v3-release-notes"></a>Заметки о выпуске Служб мультимедиа Azure версии 3
 
@@ -38,13 +38,25 @@ ms.locfileid: "89267514"
 >
 > Дополнительные сведения см. [в разделе ограничения портал Azure для служб мультимедиа v3](frequently-asked-questions.md#what-are-the-azure-portal-limitations-for-media-services-v3).
 
+
+## <a name="august-2020"></a>Август 2020 г.
+
+### <a name="dynamic-encryption"></a>динамическое шифрование.
+Поддержка устаревшего зашифрованного формата файлов с поддержкой PlayReady (ПИФФ 1,1) теперь доступна в динамическом упаковщике. Это обеспечивает поддержку устаревших наборов смарт-ТВ из Samsung и LG, которые реализовали первые черновики Common Encryption Standard (CENC), опубликованный корпорацией Майкрософт.  Формат ПИФФ 1,1 также известен как формат шифрования, который ранее поддерживался клиентской библиотекой Silverlight. В настоящее время единственным сценарием использования для этого формата шифрования является обращение к нестандартному рынку интеллектуального телевидения, где в некоторых регионах остается нетривиальным числом интеллектуальных ТЕЛЕВИЗОРов, поддерживающих только Smooth Streaming с шифрованием ПИФФ 1,1. 
+
+Чтобы использовать новую поддержку шифрования ПИФФ 1,1, измените значение Encryption на "Пифф" в URL-пути указателя потоковой передачи. Дополнительные сведения см. в [обзоре защита содержимого.](content-protection-overview.md)
+Например: `https://amsv3account-usw22.streaming.media.azure.net/00000000-0000-0000-0000-000000000000/ignite.ism/manifest(encryption=piff)`|
+
+> [!NOTE]
+> Поддержка ПИФФ 1,1 предоставляется в виде обратно совместимого решения для интеллектуального телевидения (Samsung, LG), которое реализовало раннюю версию Common Encryption Silverlight. Рекомендуется использовать формат ПИФФ, где это необходимо для поддержки устаревших Smart-телевизоров Samsung или LG, поставляемых между 2009-2015, которые поддерживали шифрование PlayReady ПИФФ 1,1. 
+
 ## <a name="july-2020"></a>Июль 2020 г.
 
 ### <a name="live-transcriptions"></a>Динамические транскрипции
 
 Интерактивные записи теперь поддерживают 19 языков и 8 регионов.
 
-## <a name="protecting-your-content-with-media-services-and-azure-ad"></a>Защита содержимого с помощью служб мультимедиа и Azure AD
+### <a name="protecting-your-content-with-media-services-and-azure-ad"></a>Защита содержимого с помощью служб мультимедиа и Azure AD
 
 Мы опубликовали учебник [с именем сквозной защиты содержимого с помощью Azure AD](./azure-ad-content-protection.md).
 
@@ -52,7 +64,7 @@ ms.locfileid: "89267514"
 
 Мы опубликовали высокий уровень доступности со службами мультимедиа и [обзором](./media-services-high-availability-encoding.md) видео по запросу (VOD) и [примерами](https://github.com/Azure-Samples/media-services-v3-dotnet/tree/master/HighAvailabilityEncodingStreaming).
 
-## <a name="june-2020"></a>июнь 2020 г.
+## <a name="june-2020"></a>Июнь 2020 г.
 
 ### <a name="live-video-analytics-on-iot-edge-preview-release"></a>Интерактивная аналитика видео в предварительной версии IoT Edge
 

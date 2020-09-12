@@ -10,12 +10,12 @@ author: lobrien
 ms.author: laobri
 ms.topic: conceptual
 ms.date: 12/12/2019
-ms.openlocfilehash: 3e1cfa13a3fd568ab2f1253c015880c57f99ce7e
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 83c0fd796b7527c6f5e396a813def984b88ee9ac
+ms.sourcegitcommit: bf1340bb706cf31bb002128e272b8322f37d53dd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87012491"
+ms.lasthandoff: 09/03/2020
+ms.locfileid: "89440360"
 ---
 # <a name="data-platforms-supported-on-the-data-science-virtual-machine"></a>Языки, поддерживаемые Виртуальной машиной для обработки и анализа данных
 
@@ -37,7 +37,7 @@ ms.locfileid: "87012491"
 > SQL Server Developer Edition можно использовать только в целях разработки и тестирования. Для запуска в рабочей среде вам потребуется лицензия или одна из виртуальных машин SQL Server.
 
 
-### <a name="setup"></a>Установка
+### <a name="setup"></a>Настройка
 
 Сервер базы данных уже предварительно настроен, а службы Windows, связанные с SQL Server (например `SQL Server (MSSQLSERVER)` ,), настроены для автоматического запуска. Только ручной шаг включает в себя включение аналитической аналитики базы данных с помощью Microsoft Machine Learning Server. Вы можете включить аналитику, выполнив следующую команду в качестве однократного действия в SQL Server Management Studio (SSMS). Выполните эту команду после входа в систему от имени администратора компьютера, откройте новый запрос в SSMS и убедитесь, что выбранная база данных `master` :
 
@@ -53,7 +53,7 @@ CREATE LOGIN [%COMPUTERNAME%\SQLRUserGroup] FROM WINDOWS
 
 По умолчанию сервер базы данных с экземпляром базы данных по умолчанию запускается автоматически. Чтобы получить доступ к базе данных SQL Server локально, на виртуальной машине можно использовать такие средства, как SQL Server Management Studio. Учетные записи локального администратора имеют административный доступ к базе данных.
 
-Кроме того, DSVM поставляется с драйверами ODBC и JDBC для взаимодействия с SQL Server, базами данных SQL Azure и хранилищем данных SQL Azure из приложений, написанных на нескольких языках, включая Python и Machine Learning Server.
+Кроме того, DSVM поставляется с драйверами ODBC и JDBC для взаимодействия с SQL Server, базами данных SQL Azure и Azure синапсе Analytics из приложений, написанных на нескольких языках, включая Python и Machine Learning Server.
 
 ### <a name="how-is-it-configured-and-installed-on-the-dsvm"></a>Как она настраивается и устанавливается на DSVM? 
 
@@ -75,7 +75,7 @@ CREATE LOGIN [%COMPUTERNAME%\SQLRUserGroup] FROM WINDOWS
 
 Вы можете использовать Spark из R с помощью таких библиотек, как Spark, Sparklyr и Microsoft Machine Learning Server, доступных в DSVM. См. указатели на примеры в предыдущей таблице.
 
-### <a name="setup"></a>Установка
+### <a name="setup"></a>Настройка
 Перед запуском в контексте Spark в Microsoft Machine Learning Server в Ubuntu Linux DSVM Edition необходимо выполнить однократную настройку, чтобы включить локальный одноузловой экземпляр Hadoop HDFS и Yarn. По умолчанию на виртуальной машине для обработки и анализа данных службы Hadoop установлены, но отключены. Чтобы включить их, выполните следующие команды с правами root в первый раз:
 
 ```bash

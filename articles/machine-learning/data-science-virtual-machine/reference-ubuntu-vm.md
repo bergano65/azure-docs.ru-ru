@@ -9,12 +9,12 @@ ms.custom: devx-track-python
 ms.author: gopalv
 ms.date: 09/11/2019
 ms.topic: reference
-ms.openlocfilehash: c919e8abc55dd5cb36325ae060340c1ee147a1a0
-ms.sourcegitcommit: d39f2cd3e0b917b351046112ef1b8dc240a47a4f
+ms.openlocfilehash: d356bd43e5e09dfce96a801732e79d2efe8c08bd
+ms.sourcegitcommit: bf1340bb706cf31bb002128e272b8322f37d53dd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88816309"
+ms.lasthandoff: 09/03/2020
+ms.locfileid: "89440343"
 ---
 # <a name="reference-ubuntu-linux-data-science-virtual-machine"></a>Справочник: виртуальная машина Ubuntu (Linux) для обработки и анализа данных
 
@@ -232,7 +232,7 @@ LaTeX устанавливается с помощью пакета texlive вм
 * **Обозреватель службы хранилища Azure**: обозреватель службы хранилища Azure — это графическое средство, которое можно использовать для просмотра объектов, сохраненных в учетной записи хранения Azure, а также для отправки и загрузки данных в большие двоичные объекты Azure и обратно. Для доступа к обозревателю хранилищ воспользуйтесь значком рабочего стола. Его можно открыть из командной строки, введя команду **StorageExplorer**. Для этого необходимо выполнить вход в клиенте X2Go или настроить перенаправление X11.
 * **Библиотеки Azure**. ниже приведены некоторые предварительно установленные библиотеки.
   
-  * **Python**. библиотеки, связанные с Azure, в Python — это *Azure*, *azureml*, *pydocumentdb*и *pyodbc*. Первые три библиотеки позволяют обращаться к службам хранилища Azure, Машинному обучению Azure и Azure Cosmos DB (база данных NoSQL в Azure). Четвертая библиотека, pyodbc, (вместе с драйвером Microsoft ODBC для SQL Server) обеспечивает доступ к SQL Server, Базе данных SQL Azure и хранилищу данных SQL Azure из Python с помощью интерфейса ODBC. Для просмотра всех перечисленных библиотек введите команду **pip list**. Выполните эту команду как в среде Python версии 2.7, так и в среде Python версии 3.5.
+  * **Python**. библиотеки, связанные с Azure, в Python — это *Azure*, *azureml*, *pydocumentdb*и *pyodbc*. Первые три библиотеки позволяют обращаться к службам хранилища Azure, Машинному обучению Azure и Azure Cosmos DB (база данных NoSQL в Azure). Четвертая Библиотека, pyodbc (вместе с драйвером Microsoft ODBC для SQL Server), обеспечивает доступ к SQL Server, базе данных SQL Azure и Azure синапсе Analytics из Python с помощью интерфейса ODBC. Для просмотра всех перечисленных библиотек введите команду **pip list**. Выполните эту команду как в среде Python версии 2.7, так и в среде Python версии 3.5.
   * **R**: библиотеки, связанные с Azure, в r — AZUREML и RODBC.
   * **Java**. Список библиотек Java для Azure можно найти в каталоге /dsvm/sdk/AzureSDKJava на виртуальной машине. Основные библиотеки — это API-интерфейсы для службы хранилища Azure и API-интерфейсы для управления Azure, драйверы Azure Cosmos DB и драйверы JDBC для SQL Server.  
 
@@ -282,7 +282,7 @@ vw house_dataset
 
 В этом каталоге есть и другие примеры, большего размера. Дополнительные сведения о Vowpal Wabbit см. в [этом разделе GitHub](https://github.com/JohnLangford/vowpal_wabbit) и на [вики-сайте Vowpal Wabbit](https://github.com/JohnLangford/vowpal_wabbit/wiki).
 
-### <a name="xgboost"></a>XGBoost
+### <a name="xgboost"></a>xgboost;
 
 Библиотека xgboost разработана и оптимизирована для алгоритмов увеличивающегося дерева. Цель этой библиотеки — сдвинуть вычислительные ограничения виртуальных машин до пределов, необходимых для получения повышенного дерева большого размера, которое является масштабируемым, переносимым и точным.
 

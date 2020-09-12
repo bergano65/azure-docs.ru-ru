@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 06/28/2020
 ms.author: memildin
-ms.openlocfilehash: e0085ef5213853a1577ec039d5e360114aa7c64e
-ms.sourcegitcommit: 37afde27ac137ab2e675b2b0492559287822fded
+ms.openlocfilehash: de5346387336acb5a4b13457d3a163f529c51b89
+ms.sourcegitcommit: bf1340bb706cf31bb002128e272b8322f37d53dd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88566273"
+ms.lasthandoff: 09/03/2020
+ms.locfileid: "89438693"
 ---
 # <a name="advanced-data-security-for-sql-machines-preview"></a>Расширенная защита данных для компьютеров SQL (Предварительная версия)
 
@@ -109,7 +109,7 @@ ms.locfileid: "88566273"
     В каждом представлении проверки безопасности сортируются по **степени серьезности**. Щелкните определенную проверку безопасности, чтобы просмотреть область сведений с **описанием**, способ устранения **этой проблемы** и другие связанные сведения, такие как **влияние** или **тест производительности**.
 
 ## <a name="advanced-threat-protection-for-sql-servers-on-machines-alerts"></a>Предупреждения Advanced Threat Protection для серверов SQL Server на компьютерах
-Предупреждения создаются необычными и потенциально опасными попытками получить доступ к компьютерам SQL или использовать их. Эти события могут активировать предупреждения, показанные в [разделе оповещения для базы данных SQL и хранилища данных SQL страницы справочника по оповещениям](alerts-reference.md#alerts-sql-db-and-warehouse).
+Предупреждения создаются необычными и потенциально опасными попытками получить доступ к компьютерам SQL или использовать их. Эти события могут активировать предупреждения, показанные в [разделе оповещения для базы данных SQL и Azure синапсе Analytics (ранее — хранилище данных SQL) на странице справки по оповещениям](alerts-reference.md#alerts-sql-db-and-warehouse).
 
 
 
@@ -131,7 +131,7 @@ ms.locfileid: "88566273"
 
 Связанные материалы см. в следующей статье:
 
-- [Оповещения системы безопасности для базы данных SQL и хранилища данных SQL](alerts-reference.md#alerts-sql-db-and-warehouse)
+- [Оповещения системы безопасности для базы данных SQL и Azure синапсе Analytics (ранее — хранилище данных SQL)](alerts-reference.md#alerts-sql-db-and-warehouse)
 - [Настройка уведомлений по электронной почте для оповещений системы безопасности](security-center-provide-security-contact-details.md)
 - [Дополнительные сведения об Azure Sentinel](https://docs.microsoft.com/azure/sentinel/)
 - [Расширенный пакет безопасности данных в центре безопасности Azure](https://docs.microsoft.com/azure/sql-database/sql-database-advanced-data-security)

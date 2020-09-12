@@ -8,16 +8,16 @@ ms.date: 4/24/2020
 ms.topic: how-to
 ms.service: digital-twins
 ms.custom: devx-track-javascript
-ms.openlocfilehash: 3cf14ce3e8ef9b1d783191fe6c01c5e311d57786
-ms.sourcegitcommit: b33c9ad17598d7e4d66fe11d511daa78b4b8b330
+ms.openlocfilehash: c562708dcf554afc8dfe4acf6b525db1db677f40
+ms.sourcegitcommit: d0541eccc35549db6381fa762cd17bc8e72b3423
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88855947"
+ms.lasthandoff: 09/09/2020
+ms.locfileid: "89564908"
 ---
 # <a name="create-custom-sdks-for-azure-digital-twins-using-autorest"></a>Создание настраиваемых пакетов SDK для Azure Digital двойников с помощью функции автоотдыха
 
-Сейчас единственным опубликованным пакетом SDK для плоскости данных для взаимодействия с API-интерфейсами Azure Digital двойников является для .NET (C#). Дополнительные сведения о пакете SDK для .NET и интерфейсах API см. в статье [*как использовать интерфейсы API и пакеты SDK для цифровых двойников Azure*](how-to-use-apis-sdks.md). Если вы работаете на другом языке, в этой статье вы узнаете, как создать собственный пакет SDK для плоскости данных на выбранном языке с помощью функции автоотдыха.
+Сейчас единственными пакетами SDK для плоскости Data плоскость для взаимодействия с API-интерфейсами Azure Digital двойников являются .NET (C#) и JavaScript. Сведения об этих пакетах SDK и интерфейсах API см. в статье [*как использовать интерфейсы API и пакеты SDK для цифровых двойников Azure*](how-to-use-apis-sdks.md). Если вы работаете на другом языке, в этой статье вы узнаете, как создать собственный пакет SDK для плоскости данных на выбранном языке с помощью функции автоотдыха.
 
 >[!NOTE]
 > При необходимости можно также использовать автооставшуюся для создания пакета SDK для плоскости управления. Для этого выполните действия, описанные в этой статье, с помощью [файла Swagger плоскости управления (OpenAPI)](https://github.com/Azure/azure-rest-api-specs/tree/master/specification/digitaltwins/resource-manager/Microsoft.DigitalTwins/preview/2020-03-01-preview) , а не плоскости данных.
@@ -57,7 +57,7 @@ autorest --input-file=digitaltwins.json --<language> --output-folder=ADTApi --ad
 
 В этом разделе приводятся инструкции по созданию пакета SDK в виде библиотеки классов, которая является собственным проектом и может быть включена в другие проекты. Эти действия зависят от **Visual Studio** (вы можете установить последнюю версию отсюда [).](https://visualstudio.microsoft.com/downloads/)
 
-Ниже приведены инструкции.
+Для этого выполните указанные ниже действия.
 
 1. Создание нового решения Visual Studio для библиотеки классов
 2. Использовать *адтапи* в качестве имени проекта

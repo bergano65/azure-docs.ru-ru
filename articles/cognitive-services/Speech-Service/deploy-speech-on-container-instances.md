@@ -8,14 +8,14 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: speech-service
 ms.topic: conceptual
-ms.date: 04/01/2020
+ms.date: 09/03/2020
 ms.author: aahi
-ms.openlocfilehash: 610d5ce095097a31ee92c67f0112d1657424858e
-ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
+ms.openlocfilehash: 5a85086ea8d969dc70f4cd24b25a00765da285eb
+ms.sourcegitcommit: ac5cbef0706d9910a76e4c0841fdac3ef8ed2e82
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "80878754"
+ms.lasthandoff: 09/03/2020
+ms.locfileid: "89425812"
 ---
 # <a name="deploy-the-speech-service-container-to-azure-container-instances"></a>Развертывание контейнера службы речи в службе "экземпляры контейнеров Azure"
 
@@ -25,7 +25,7 @@ ms.locfileid: "80878754"
 
 ## <a name="request-access-to-the-container-registry"></a>Запрос доступа к реестру контейнеров
 
-Сначала необходимо завершить и отправить [форму запроса Cognitive Services речевых контейнеров](https://aka.ms/speechcontainerspreview/) , чтобы запросить доступ к контейнеру. 
+Сначала необходимо завершить и отправить [форму запроса Cognitive Services речевых контейнеров](https://aka.ms/csgate/) , чтобы запросить доступ к контейнеру. 
 
 [!INCLUDE [Request access to the container registry](../../../includes/cognitive-services-containers-request-access-only.md)]
 

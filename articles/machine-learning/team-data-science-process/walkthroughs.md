@@ -11,12 +11,12 @@ ms.topic: article
 ms.date: 01/10/2020
 ms.author: tdsp
 ms.custom: seodec18, previous-author=deguhath, previous-ms.author=deguhath
-ms.openlocfilehash: 8fa21cc690742a71100c53b4e5b6ce122d1a6147
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 76027275d6f0b838ed6fbb7275086f190701d286
+ms.sourcegitcommit: bf1340bb706cf31bb002128e272b8322f37d53dd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "75864083"
+ms.lasthandoff: 09/03/2020
+ms.locfileid: "89439833"
 ---
 # <a name="walkthroughs-executing-the-team-data-science-process"></a>Пошаговые руководства по процессу обработки и анализа данных группы
 
@@ -32,11 +32,11 @@ ms.locfileid: "75864083"
 - [HDInsight Hadoop walkthroughs using Hive](walkthroughs-hdinsight-hadoop.md) (Пошаговые руководства по HDInsight Hadoop с использованием Hive). В этих пошаговых руководствах для выполнения прогнозной аналитики с кластером HDInsight Hadoop используется Hive.
 - [Azure Data Lake walkthroughs using U-SQL](walkthroughs-azure-data-lake.md) (Пошаговые руководства по Azure Data Lake с использованием U-SQL). В этих пошаговых руководствах для выполнения прогнозной аналитики с Azure Data Lake используется U-SQL.
 - [SQL Server](walkthroughs-sql-server.md). В этих пошаговых руководствах для выполнения прогнозной аналитики используются SQL Server, службы R для SQL Server и службы Python для SQL Server.
-- [SQL Data Warehouse](walkthroughs-sql-data-warehouse.md) (Хранилище данных SQL). В этих пошаговых руководствах для выполнения прогнозной аналитики используется хранилище данных SQL. 
+- [Azure синапсе Analytics](walkthroughs-sql-data-warehouse.md) В этих пошаговых руководствах для выполнения прогнозной аналитики используется Azure синапсе Analytics. 
 
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Описание ключевых компонентов, составляющих процесс обработки и анализа данных группы, см. в статье [Жизненный цикл процесса обработки и анализа данных группы](overview.md).
 

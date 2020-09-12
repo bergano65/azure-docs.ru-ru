@@ -11,12 +11,12 @@ ms.reviewer: larryfr
 ms.date: 07/17/2020
 ms.topic: conceptual
 ms.custom: how-to, devx-track-python
-ms.openlocfilehash: 04442ad2c6f12960a6c27cc96b52eae20b046851
-ms.sourcegitcommit: 98854e3bd1ab04ce42816cae1892ed0caeedf461
+ms.openlocfilehash: 006aab66eb220c3bb74794ba78bf1495583b653e
+ms.sourcegitcommit: 3be3537ead3388a6810410dfbfe19fc210f89fec
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "88008208"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89648320"
 ---
 # <a name="deploy-your-existing-model-with-azure-machine-learning"></a>Развертывание существующей модели с помощью Машинное обучение Azure
 [!INCLUDE [applies-to-skus](../../includes/aml-applies-to-basic-enterprise-sku.md)]
@@ -28,11 +28,11 @@ ms.locfileid: "88008208"
 ## <a name="prerequisites"></a>Предварительные требования
 
 * [Рабочая область Машинное обучение Azure](how-to-manage-workspace.md)
-  + В примерах Python предполагается, что `ws` для переменной задана рабочая область машинное обучение Azure. Дополнительные сведения о подключении к рабочей области см. в [документации по машинное обучение Azure SDK для Python](https://docs.microsoft.com/python/api/overview/azure/ml/?view=azure-ml-py#workspace).
+  + В примерах Python предполагается, что `ws` для переменной задана рабочая область машинное обучение Azure. Дополнительные сведения о подключении к рабочей области см. в [документации по машинное обучение Azure SDK для Python](https://docs.microsoft.com/python/api/overview/azure/ml/?view=azure-ml-py#&preserve-view=trueworkspace).
   
   + В примерах CLI используются заполнители `myworkspace` и `myresourcegroup` , которые следует заменить именем рабочей области и группой ресурсов, содержащей ее.
 
-* [Пакет SDK для машинное обучение Azure Python](https://docs.microsoft.com/python/api/overview/azure/ml/install?view=azure-ml-py).  
+* [Пакет SDK для машинное обучение Azure Python](https://docs.microsoft.com/python/api/overview/azure/ml/install?view=azure-ml-py&preserve-view=true).  
 
 * [Расширение CLI](reference-azure-machine-learning-cli.md) [Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest) и машинное обучение.
 
@@ -52,7 +52,7 @@ model = Model.register(model_path = "./models",
                        workspace = ws)
 ```
 
-Дополнительные сведения см. в справочнике по [model. Register ()](https://docs.microsoft.com/python/api/azureml-core/azureml.core.model(class)?view=azure-ml-py#register-workspace--model-path--model-name--tags-none--properties-none--description-none--datasets-none--model-framework-none--model-framework-version-none--child-paths-none--sample-input-dataset-none--sample-output-dataset-none--resource-configuration-none-) .
+Дополнительные сведения см. в справочнике по [model. Register ()](https://docs.microsoft.com/python/api/azureml-core/azureml.core.model(class)?view=azure-ml-py#&preserve-view=trueregister-workspace--model-path--model-name--tags-none--properties-none--description-none--datasets-none--model-framework-none--model-framework-version-none--child-paths-none--sample-input-dataset-none--sample-output-dataset-none--resource-configuration-none-) .
 
 ```azurecli
 az ml model register -p ./models -n sentiment -w myworkspace -g myresourcegroup
@@ -103,7 +103,7 @@ inference_config = InferenceConfig(entry_script="score.py",
 Дополнительные сведения см. в следующих статьях:
 
 + [Использование сред](how-to-use-environments.md).
-+ Ссылка на [инференцеконфиг](https://docs.microsoft.com/python/api/azureml-core/azureml.core.model.inferenceconfig?view=azure-ml-py) .
++ Ссылка на [инференцеконфиг](https://docs.microsoft.com/python/api/azureml-core/azureml.core.model.inferenceconfig?view=azure-ml-py&preserve-view=true) .
 
 
 CLI загружает конфигурацию вывода из файла YAML:
@@ -220,7 +220,7 @@ def predict(text, include_neutral=True):
 
 ## <a name="define-deployment"></a>Определение развертывания
 
-Пакет [WebService](https://docs.microsoft.com/python/api/azureml-core/azureml.core.webservice?view=azure-ml-py) содержит классы, используемые для развертывания. Используемый класс определяет, где развертывается модель. Например, для развертывания в качестве веб-службы в службе Kubernetes Azure используйте [аксвебсервице. deploy_configuration ()](/python/api/azureml-core/azureml.core.webservice.akswebservice?view=azure-ml-py#deploy-configuration-autoscale-enabled-none--autoscale-min-replicas-none--autoscale-max-replicas-none--autoscale-refresh-seconds-none--autoscale-target-utilization-none--collect-model-data-none--auth-enabled-none--cpu-cores-none--memory-gb-none--enable-app-insights-none--scoring-timeout-ms-none--replica-max-concurrent-requests-none--max-request-wait-time-none--num-replicas-none--primary-key-none--secondary-key-none--tags-none--properties-none--description-none--gpu-cores-none--period-seconds-none--initial-delay-seconds-none--timeout-seconds-none--success-threshold-none--failure-threshold-none--namespace-none--token-auth-enabled-none--compute-target-name-none-) для создания конфигурации развертывания.
+Пакет [WebService](https://docs.microsoft.com/python/api/azureml-core/azureml.core.webservice?view=azure-ml-py&preserve-view=true) содержит классы, используемые для развертывания. Используемый класс определяет, где развертывается модель. Например, для развертывания в качестве веб-службы в службе Kubernetes Azure используйте [аксвебсервице. deploy_configuration ()](/python/api/azureml-core/azureml.core.webservice.akswebservice?view=azure-ml-py#&preserve-view=truedeploy-configuration-autoscale-enabled-none--autoscale-min-replicas-none--autoscale-max-replicas-none--autoscale-refresh-seconds-none--autoscale-target-utilization-none--collect-model-data-none--auth-enabled-none--cpu-cores-none--memory-gb-none--enable-app-insights-none--scoring-timeout-ms-none--replica-max-concurrent-requests-none--max-request-wait-time-none--num-replicas-none--primary-key-none--secondary-key-none--tags-none--properties-none--description-none--gpu-cores-none--period-seconds-none--initial-delay-seconds-none--timeout-seconds-none--success-threshold-none--failure-threshold-none--namespace-none--token-auth-enabled-none--compute-target-name-none-) для создания конфигурации развертывания.
 
 В следующем коде Python определяется конфигурация развертывания для локального развертывания. Эта конфигурация развертывает модель как веб-службу на локальном компьютере.
 
@@ -233,7 +233,7 @@ from azureml.core.webservice import LocalWebservice
 deployment_config = LocalWebservice.deploy_configuration()
 ```
 
-Дополнительные сведения см. в справочнике по [локалвебсервице. deploy_configuration ()](https://docs.microsoft.com/python/api/azureml-core/azureml.core.webservice.localwebservice?view=azure-ml-py#deploy-configuration-port-none-) .
+Дополнительные сведения см. в справочнике по [локалвебсервице. deploy_configuration ()](https://docs.microsoft.com/python/api/azureml-core/azureml.core.webservice.localwebservice?view=azure-ml-py#&preserve-view=truedeploy-configuration-port-none-) .
 
 CLI загружает конфигурацию развертывания из файла YAML:
 
@@ -260,7 +260,7 @@ print(service.state)
 print("scoring URI: " + service.scoring_uri)
 ```
 
-Дополнительные сведения см. в справочнике по [модели. deploy ()](https://docs.microsoft.com/python/api/azureml-core/azureml.core.model.model?view=azure-ml-py#deploy-workspace--name--models--inference-config-none--deployment-config-none--deployment-target-none--overwrite-false-) .
+Дополнительные сведения см. в справочнике по [модели. deploy ()](https://docs.microsoft.com/python/api/azureml-core/azureml.core.model.model?view=azure-ml-py#&preserve-view=truedeploy-workspace--name--models--inference-config-none--deployment-config-none--deployment-target-none--overwrite-false-) .
 
 Чтобы развернуть модель из интерфейса командной строки, используйте следующую команду. Эта команда развертывает версию 1 зарегистрированной модели ( `sentiment:1` ) с помощью вывода и конфигурации развертывания, хранящейся в `inferenceConfig.json` `deploymentConfig.json` файлах и.
 

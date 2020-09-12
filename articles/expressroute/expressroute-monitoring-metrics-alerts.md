@@ -2,17 +2,17 @@
 title: 'Azure ExpressRoute: мониторинг, метрики и оповещения'
 description: Сведения о мониторинге, метриках и оповещениях Azure ExpressRoute с помощью Azure Monitor. это средство останавливает магазин для всех метрик, предупреждений, журналов диагностики в Azure.
 services: expressroute
-author: mialdrid
+author: duongau
 ms.service: expressroute
 ms.topic: how-to
 ms.date: 08/25/2020
-ms.author: cherylmc
-ms.openlocfilehash: 6f3bd5392457f05caa8704e7e1de5b4155b28794
-ms.sourcegitcommit: 927dd0e3d44d48b413b446384214f4661f33db04
+ms.author: duau
+ms.openlocfilehash: fc83e5e8d14250ed163a56830311533144bbe344
+ms.sourcegitcommit: 5a3b9f35d47355d026ee39d398c614ca4dae51c6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88871359"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89395440"
 ---
 # <a name="expressroute-monitoring-metrics-and-alerts"></a>Мониторинг, метрики и оповещения в ExpressRoute
 
@@ -155,7 +155,7 @@ ms.locfileid: "88871359"
 
 :::image type="content" source="./media/expressroute-monitoring-metrics-alerts/alertshowto6activitylog.jpg" alt-text="журналы действий":::
   
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Настройте подключение ExpressRoute.
   

@@ -1,5 +1,5 @@
 ---
-title: Загрузка данных Contoso Retail в хранилище данных SQL синапсе
+title: Загрузка данных Contoso Retail в синапсе SQL
 description: Используйте команды Polybase и T-SQL для загрузки двух таблиц из данных Contoso Retail в синапсе SQL.
 services: synapse-analytics
 author: kevinvngo
@@ -11,16 +11,16 @@ ms.date: 04/17/2018
 ms.author: kevin
 ms.reviewer: igorstan
 ms.custom: seo-lt-2019
-ms.openlocfilehash: 90da35b76bbe6ec933b3a1fd200f0f5bad643759
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 904ce55f376e42156b014056b1226512b2784742
+ms.sourcegitcommit: 4a7a4af09f881f38fcb4875d89881e4b808b369b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85213318"
+ms.lasthandoff: 09/04/2020
+ms.locfileid: "89461703"
 ---
 # <a name="load-contoso-retail-data-to-synapse-sql"></a>Загрузка данных Contoso Retail в синапсе SQL 
 
-В этом руководстве вы узнаете, как использовать команды Polybase и T-SQL для загрузки двух таблиц из розничных данных Contoso в хранилище данных SQL синапсе.
+В этом руководстве вы узнаете, как использовать команды Polybase и T-SQL для загрузки двух таблиц из данных Contoso Retail в синапсе SQL.
 
 Изучив данный учебник, вы научитесь:
 
@@ -30,11 +30,11 @@ ms.locfileid: "85213318"
 
 ## <a name="before-you-begin"></a>Перед началом
 
-Для работы с этим руководством вам потребуется учетная запись Azure, у которой уже есть хранилище данных синапсе SQL. Если у вас нет подготовленного хранилища данных, см. раздел [Создание хранилища данных и настройка правила брандмауэра на уровне сервера](create-data-warehouse-portal.md).
+Для работы с этим руководством вам потребуется учетная запись Azure, у которой уже есть синапсе SQL. Если у вас нет подготовленного хранилища данных, см. раздел [Создание хранилища данных и настройка правила брандмауэра на уровне сервера](create-data-warehouse-portal.md).
 
 ## <a name="configure-the-data-source"></a>Настройка источника данных
 
-PolyBase использует внешние объекты T-SQL для определения расположения и атрибутов внешних данных. Определения внешних объектов хранятся в хранилище данных SQL синапсе. Данные хранятся извне.
+PolyBase использует внешние объекты T-SQL для определения расположения и атрибутов внешних данных. Определения внешних объектов хранятся в синапсе SQL. Данные хранятся извне.
 
 ## <a name="create-a-credential"></a>Создание учетных данных
 
@@ -122,7 +122,7 @@ GO
 
 Выполните следующий скрипт, чтобы создать внешние таблицы DimProduct и FactOnlineSales. Здесь вы можете определить имена столбцов и типы данных и привязать их к расположению и формату файлов хранилища BLOB-объектов Azure. Определение хранится в хранилище данных, а данные по-прежнему находятся в Azure Storage Blob.
 
-Параметр **Location** — это папка в корневой папке в Azure Storage BLOB. Все таблицы находятся в разных папках.
+Параметр  **Location** — это папка в корневой папке в Azure Storage BLOB. Все таблицы находятся в разных папках.
 
 ```sql
 --DimProduct
@@ -274,7 +274,7 @@ ORDER BY
 
 ## <a name="optimize-columnstore-compression"></a>Оптимизация сжатия columnstore
 
-По умолчанию хранилище данных SQL синапсе сохраняет таблицу как кластеризованный индекс columnstore. После завершения загрузки для некоторых строк данных может не выполняться сжатие в индекс columnstore.  Это может произойти по разным причинам. Чтобы узнать больше, ознакомьтесь с [управлением индексами columnstore](sql-data-warehouse-tables-index.md).
+По умолчанию синапсе SQL сохраняет таблицу как кластеризованный индекс columnstore. После завершения загрузки для некоторых строк данных может не выполняться сжатие в индекс columnstore.  Это может произойти по разным причинам. Чтобы узнать больше, ознакомьтесь с [управлением индексами columnstore](sql-data-warehouse-tables-index.md).
 
 Чтобы оптимизировать производительность запросов и сжатие columnstore после загрузки, перестройте таблицу, чтобы настроить принудительное сжатие всех строк таблиц индексом columnstore.
 
@@ -352,7 +352,7 @@ JOIN    [cso].[DimProduct]      AS p ON f.[ProductKey] = p.[ProductKey]
 GROUP BY p.[BrandName]
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Чтобы загрузить полный набор данных, выполните пример [Загрузить полное хранилище данных Contoso Retail](https://github.com/Microsoft/sql-server-samples/tree/master/samples/databases/contoso-data-warehouse/readme.md) из репозитория Microsoft SQL Server Samples.
 Дополнительные советы по разработке см. в разделе [решения по проектированию и приемы программирования для хранилищ данных](sql-data-warehouse-overview-develop.md).

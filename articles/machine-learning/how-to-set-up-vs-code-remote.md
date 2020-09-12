@@ -1,7 +1,7 @@
 ---
-title: 'Интерактивная отладка: VS Code &ных экземпляров машинного обучения (Предварительная версия)'
+title: Подключение к вычислительному экземпляру в Visual Studio Code (Предварительная версия)
 titleSuffix: Azure Machine Learning
-description: Настройка VS Code удаленного для интерактивной отладки кода с помощью Машинное обучение Azure.
+description: Узнайте, как подключиться к вычислительному экземпляру Машинное обучение Azure в Visual Studio Code
 services: machine-learning
 ms.service: machine-learning
 ms.subservice: core
@@ -9,34 +9,73 @@ ms.topic: conceptual
 ms.custom: how-to
 ms.author: jmartens
 author: j-martens
-ms.date: 08/06/2020
-ms.openlocfilehash: 37d0ec0295d76f740b2e8bf70ae72f0c95e68d14
-ms.sourcegitcommit: 4e5560887b8f10539d7564eedaff4316adb27e2c
+ms.date: 09/03/2020
+ms.openlocfilehash: 2c7ff633705d3db327c563b41ce199a5342dda82
+ms.sourcegitcommit: 4a7a4af09f881f38fcb4875d89881e4b808b369b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87904485"
+ms.lasthandoff: 09/04/2020
+ms.locfileid: "89461567"
 ---
-# <a name="debug-interactively-on-an-azure-machine-learning-compute-instance-with-vs-code-remote-preview"></a>Отладка в интерактивном режиме на Машинное обучение Azure вычислительного экземпляра с VS Code удаленно (Предварительная версия)
+# <a name="connect-to-an-azure-machine-learning-compute-instance-in-visual-studio-code-preview"></a>Подключение к вычислительному экземпляру Машинное обучение Azure в Visual Studio Code (Предварительная версия)
 
-В этой статье вы узнаете, как настроить Visual Studio Code удаленное расширение на Машинное обучение Azure вычислительного экземпляра, чтобы можно было выполнять **интерактивную отладку кода** из VS Code.
+В этой статье вы узнаете, как подключиться к вычислительному экземпляру Машинное обучение Azure с помощью Visual Studio Code.
 
-* [Вычислительный экземпляр машинное обучение Azure](concept-compute-instance.md) — это полностью управляемая облачная Рабочая станция для специалистов по обработке и анализу данных, которая предоставляет ИТ-администраторам возможности управления и готовности предприятия. 
+[Вычислительный экземпляр машинное обучение Azure](concept-compute-instance.md) — это полностью управляемая облачная Рабочая станция для специалистов по обработке и анализу данных, которая предоставляет ИТ-администраторам возможности управления и готовности предприятия.
 
-* [Visual Studio Code удаленный](https://code.visualstudio.com/docs/remote/remote-overview) Разработка позволяет использовать контейнер, удаленный компьютер или подсистему Windows для Linux (WSL) в качестве полнофункциональной среды разработки. 
+Существует два способа подключения к вычислительному экземпляру из Visual Studio Code.
 
-## <a name="prerequisite"></a>Предварительные требования  
+* Удаленный Jupyter Notebook Server. Этот параметр позволяет задать вычислительный экземпляр в качестве удаленного Jupyter Notebook сервера.
+* [Visual Studio Code Удаленная разработка](https://code.visualstudio.com/docs/remote/remote-overview). Visual Studio Code Удаленная разработка позволяет использовать контейнер, удаленный компьютер или подсистему Windows для Linux (WSL) в качестве полнофункциональной среды разработки.
 
-* Вычислительный экземпляр с поддержкой SSH. Дополнительные сведения [см. в разделе "создание вычислительного экземпляра".](https://docs.microsoft.com/azure/machine-learning/concept-compute-instance#create)
-* На платформах Windows необходимо [установить клиент SSH, совместимый с OpenSSH](https://code.visualstudio.com/docs/remote/troubleshooting#_installing-a-supported-ssh-client) , если он еще не существует. 
+## <a name="configure-compute-instance-as-remote-notebook-server"></a>Настройка экземпляра COMPUTE в качестве сервера удаленной записной книжки
 
-> [!Note]
-> Выводимое значение не поддерживается в Windows, так как команда SSH должна находиться в пути. 
+Чтобы настроить вычислительный экземпляр в качестве удаленного Jupyter Notebook сервера, потребуется выполнить несколько предварительных условий.
 
-## <a name="get-the-ip-and-ssh-port-for-your-compute-instance"></a>Получение IP-адреса и порта SSH для вычислительного экземпляра
+* Расширение Машинное обучение Azure Visual Studio Code. Дополнительные сведения см. в разделе с [руководством по установке расширения Машинное обучение Azure Visual Studio Code](tutorial-setup-vscode-extension.md).
+* Рабочая область Машинное обучение Azure. [Используйте расширение Машинное обучение Azure Visual Studio Code, чтобы создать рабочую область](how-to-manage-resources-vscode.md#create-a-workspace) , если она еще не создана.
+
+Для подключения к вычислительному экземпляру:
+
+1. Откройте Jupyter Notebook в Visual Studio Code.
+1. При загрузке интегрированной записной книжки выберите **Jupyter Server**.
+
+    > [!div class="mx-imgBorder"]
+    > ![Раскрывающийся список запуска Машинное обучение Azure удаленных серверов Jupyter Notebook](media/how-to-set-up-vs-code-remote/launch-server-selection-dropdown.png)
+
+    Кроме того, можно использовать палитру команд:
+
+    1. Откройте палитру команд. Для этого на панели меню выберите **Вид > Палитра команд**.
+    1. Введите в текстовое поле `Azure ML: Connect to Compute instance Jupyter server` .
+
+1. Выберите `Azure ML Compute Instances` из списка параметров сервера Jupyter.
+1. Выберите подписку в списке подписок. Если ранее вы настроили рабочую область по умолчанию Машинное обучение Azure, этот шаг пропускается.
+1. Щелкните рабочую область.
+1. Выберите вычислительный экземпляр из списка. Если у вас ее нет, выберите **создать новый экземпляр Azure вычислительная среда ML** и следуйте инструкциям на экране, чтобы создать его.
+1. Чтобы изменения вступили в силу, необходимо перезагрузить Visual Studio Code.
+1. Откройте Jupyter Notebook и выполните ячейку.
+
+> [!IMPORTANT]
+> Чтобы установить соединение, **необходимо** запустить ячейку.
+
+На этом этапе можно продолжить выполнение ячеек в записной книжке Jupyter.
+
+> [!TIP]
+> Вы также можете работать с файлами скриптов Python (. Копировать), содержащими ячейки кода Jupyter. Дополнительные сведения см. в [интерактивной документации по Visual Studio Code Python](https://code.visualstudio.com/docs/python/jupyter-support-py).
+
+## <a name="configure-compute-instance-remote-development"></a>Настройка удаленной разработки вычислительных экземпляров
+
+Для полнофункциональной удаленной разработки потребуется несколько предварительных условий:
+
+* [Visual Studio Code удаленное расширение SSH](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-ssh).
+* Вычислительный экземпляр с поддержкой SSH. Дополнительные сведения см. [в разделе "создание вычислительного экземпляра"](concept-compute-instance.md#create).
+
+> [!NOTE]
+> На платформах Windows необходимо [установить клиент SSH, совместимый с OpenSSH](https://code.visualstudio.com/docs/remote/troubleshooting#_installing-a-supported-ssh-client) , если он еще не существует. Выводимое значение не поддерживается в Windows, так как команда SSH должна находиться в пути.
+
+### <a name="get-the-ip-and-ssh-port-for-your-compute-instance"></a>Получение IP-адреса и порта SSH для вычислительного экземпляра
 
 1. Перейдите в Машинное обучение Azure Studio по адресу https://ml.azure.com/ .
-
 2. Выберите [рабочую область](concept-workspace.md).
 1. Перейдите на вкладку « **экземпляры вычислений** ».
 1. В столбце **URI приложения** щелкните ссылку **SSH** для вычислительного экземпляра, который требуется использовать в качестве удаленного вычислений. 
@@ -73,9 +112,9 @@ ms.locfileid: "87904485"
    chmod 600 ~/.ssh/id_azmlcitest_rsa
    ```
 
-## <a name="add-instance-as-a-host"></a>Добавление экземпляра в качестве узла
+### <a name="add-instance-as-a-host"></a>Добавление экземпляра в качестве узла
 
-Откройте файл `~/.ssh/config` (Linux) или `C:\Users<username>.ssh\config` (Windows) в редакторе и добавьте новую запись, подобную следующей:
+Откройте файл `~/.ssh/config` (Linux) или `C:\Users<username>.ssh\config` (Windows) в редакторе и добавьте новую запись, аналогичную приведенной ниже:
 
 ```
 Host azmlci1 
@@ -95,19 +134,15 @@ Host azmlci1
 |----|---------|
 |Узел|Использование любой краткой формы для вычислительного экземпляра |
 |HostName|Это IP-адрес вычислительного экземпляра |
-|Порт|Это порт, показанный в диалоговом окне SSH выше |
+|Port|Это порт, показанный в диалоговом окне SSH выше |
 |Пользователь|Это должно быть `azureuser` |
 |идентитифиле|Должен указывать на файл, в который был сохранен закрытый ключ |
 
 Теперь вы можете подключиться к вычислительному экземпляру по протоколу SSH, используя сокращенную версию, которую вы использовали ранее `ssh azmlci1` .
 
-## <a name="connect-vs-code-to-the-instance"></a>Подключение VS Code к экземпляру
+### <a name="connect-vs-code-to-the-instance"></a>Подключение VS Code к экземпляру
 
-1. [Установите Visual Studio Code](https://code.visualstudio.com/).
-
-1. [Установите удаленное расширение SSH](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-ssh).
-
-1. Щелкните значок Remote-SSH слева, чтобы отобразить конфигурации SSH.
+1. Щелкните значок Remote-SSH на панели действий Visual Studio Code, чтобы отобразить конфигурации SSH.
 
 1. Щелкните правой кнопкой мыши только что созданную конфигурацию узла SSH.
 

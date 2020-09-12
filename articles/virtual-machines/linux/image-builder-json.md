@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.service: virtual-machines-linux
 ms.subservice: imaging
 ms.reviewer: cynthn
-ms.openlocfilehash: 6ed95f87d2b2a5f811531a5ff258ebe97a9b892a
-ms.sourcegitcommit: 927dd0e3d44d48b413b446384214f4661f33db04
+ms.openlocfilehash: 3c2dbf8c98901d5a4147939c42e289abf25f7d21
+ms.sourcegitcommit: 3246e278d094f0ae435c2393ebf278914ec7b97b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88869207"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89378378"
 ---
 # <a name="preview-create-an-azure-image-builder-template"></a>Предварительный просмотр: Создание шаблона Конструктора образов виртуальных машин Azure 
 
@@ -142,7 +142,7 @@ ms.locfileid: "88869207"
 
 ## <a name="properties-source"></a>Свойства: source
 
-В настоящее время построитель образов поддерживает только образы и виртуальные машины Hyper Generation 1 `source` . раздел содержит сведения об исходном образе, который будет использоваться построителем образов.
+В разделе `source` содержатся сведения об исходном образе, который будет использоваться Конструктором образов. В настоящее время построитель образов поддерживает создание образов Hyper-V (GEN1) 1 в галерее образов (SIG) или управляемом образе Azure. Если вы хотите создать образы Gen2, необходимо использовать исходный образ Gen2 и распространить его на виртуальный жесткий диск. После этого потребуется создать управляемый образ из виртуального жесткого диска и вставить его в подпись в качестве образа Gen2.
 
 Для API должен быть задан тип источника, определяющий источник для сборки образа. В настоящее время существует три типа:
 - PlatformImage — указывает, что источником является образ Marketplace;
@@ -571,7 +571,7 @@ az resource show \
 
 ```json
 {
-    "type": "sharedImage",
+    "type": "SharedImage",
     "galleryImageId": "<resource ID>",
     "runOutputName": "<name>",
     "artifactTags": {

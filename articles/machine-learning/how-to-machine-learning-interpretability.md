@@ -11,12 +11,12 @@ ms.author: mithigpe
 author: minthigpen
 ms.reviewer: Luis.Quintanilla
 ms.date: 07/09/2020
-ms.openlocfilehash: 533ecbaebc5d36f8a6660ce22e5cab3630e3655f
-ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
+ms.openlocfilehash: d30fe5f8adccba81baf8bfe1070f95a890d1dc7a
+ms.sourcegitcommit: 3be3537ead3388a6810410dfbfe19fc210f89fec
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87306406"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89649433"
 ---
 # <a name="model-interpretability-in-azure-machine-learning-preview"></a>Интерпретируемость модели в Машинное обучение Azure (Предварительная версия)
 [!INCLUDE [applies-to-skus](../../includes/aml-applies-to-basic-enterprise-sku.md)]
@@ -39,7 +39,7 @@ ms.locfileid: "87306406"
 
 ## <a name="interpretability-with-azure-machine-learning"></a>Интерпретируемость с помощью Машинное обучение Azure
 
-Классы интерпретации доступны через несколько пакетов SDK: (Узнайте, как [установить пакеты SDK для машинное обучение Azure](https://docs.microsoft.com/python/api/overview/azure/ml/install?view=azure-ml-py)).
+Классы интерпретации доступны через несколько пакетов SDK: (Узнайте, как [установить пакеты SDK для машинное обучение Azure](https://docs.microsoft.com/python/api/overview/azure/ml/install?view=azure-ml-py&preserve-view=true)).
 
 * `azureml.interpret`— основной пакет, содержащий функциональные возможности, поддерживаемые корпорацией Майкрософт.
 
@@ -69,7 +69,7 @@ ms.locfileid: "87306406"
 
 ## <a name="supported-interpretability-techniques"></a>Поддерживаемые методы интерпретации
 
- `azureml-interpret`использует методики интерпретации, разработанные в [интерпретированном сообществе](https://github.com/interpretml/interpret-community/), пакет Python с открытым исходным кодом для обучения интерпретируемых моделей и помогая объяснить блаккбокс AI-системы. [Интерпретатор-сообщество](https://github.com/interpretml/interpret-community/) выступает в качестве узла для поддерживаемых объяснений SDK и в настоящее время поддерживает следующие методы интерпретации:
+ `azureml-interpret` использует методики интерпретации, разработанные в [интерпретированном сообществе](https://github.com/interpretml/interpret-community/), пакет Python с открытым исходным кодом для обучения интерпретируемых моделей и помогая объяснить блаккбокс AI-системы. [Интерпретатор-сообщество](https://github.com/interpretml/interpret-community/) выступает в качестве узла для поддерживаемых объяснений SDK и в настоящее время поддерживает следующие методы интерпретации:
 
 |Методика интерпретации|Описание|Тип|
 |--|--|--------------------|
@@ -90,7 +90,7 @@ ms.locfileid: "87306406"
 * Линеарексплаинер для линейных моделей
 * Кернелексплаинер для всех других моделей
 
-`TabularExplainer`также обладает значительными усовершенствованиями функций и производительности по прямым ШАП объяснениям:
+`TabularExplainer` также обладает значительными усовершенствованиями функций и производительности по прямым ШАП объяснениям:
 
 * **Формирование сводных данных инициализации**. В случаях, когда скорость объяснения наиболее важна, мы суммируем набор данных инициализации и создадим небольшой набор репрезентативных образцов, который ускоряет создание общих и индивидуальных значений важности функций.
 * **Выборка набора оценочных данных**. Если пользователь передает большой набор образцов оценки, но на самом деле они не требуют оценки, для параметра выборки можно задать значение true, чтобы ускорить вычисление общих объяснений модели.
@@ -121,4 +121,4 @@ ms.locfileid: "87306406"
 
 - См. [инструкции](how-to-machine-learning-interpretability-aml.md) по включению интерпретации для моделей, как локально, так и на машинное обучение Azure удаленных ресурсов вычислений. 
 - Дополнительные сценарии см. в [примерах записных книжек](https://github.com/Azure/MachineLearningNotebooks/tree/master/how-to-use-azureml/explain-model) . 
-- Если вы заинтересованы в работе с текстовыми сценариями, см. раздел [интерпретируемый текст](https://github.com/interpretml/interpret-text), связанный репозиторий с открытым кодом для [интерпретации сообщества](https://github.com/interpretml/interpret-community/), для методов интерпретации для NLP. `azureml.interpret`в настоящее время пакет не поддерживает эти методы, но вы можете приступить к работе с [примером записной книжки на классификации текста](https://github.com/interpretml/interpret-text/blob/master/notebooks/text_classification/text_classification_classical_text_explainer.ipynb).
+- Если вы заинтересованы в работе с текстовыми сценариями, см. раздел [интерпретируемый текст](https://github.com/interpretml/interpret-text), связанный репозиторий с открытым кодом для [интерпретации сообщества](https://github.com/interpretml/interpret-community/), для методов интерпретации для NLP. `azureml.interpret` в настоящее время пакет не поддерживает эти методы, но вы можете приступить к работе с [примером записной книжки на классификации текста](https://github.com/interpretml/interpret-text/blob/master/notebooks/text_classification/text_classification_classical_text_explainer.ipynb).

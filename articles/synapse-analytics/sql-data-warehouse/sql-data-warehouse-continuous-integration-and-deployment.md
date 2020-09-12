@@ -11,12 +11,12 @@ ms.date: 02/04/2020
 ms.author: kevin
 ms.reviewer: igorstan
 ms.custom: azure-synapse
-ms.openlocfilehash: 725e8165f8a7bdb654f61d7257867a2d0bf17110
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 131811ffd268f001a047a7031170f0723770d24c
+ms.sourcegitcommit: 4a7a4af09f881f38fcb4875d89881e4b808b369b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85213573"
+ms.lasthandoff: 09/04/2020
+ms.locfileid: "89462332"
 ---
 # <a name="continuous-integration-and-deployment-for-data-warehousing"></a>Непрерывная интеграция и развертывание хранилищ данных
 
@@ -44,13 +44,13 @@ ms.locfileid: "85213573"
 
 На этом этапе у вас есть простая среда, в которой в результате любого возврата к главной ветви репозитория системы управления версиями автоматически активируется успешная сборка проекта базы данных в Visual Studio. Убедитесь, что автоматизация работает комплексно, внеся изменение в проект локальной базы данных и возвратив это изменение в главную ветвь.
 
-## <a name="continuous-deployment-with-the-azure-sql-data-warehouse-or-database-deployment-task"></a>Непрерывное развертывание с помощью задачи развертывания Data Warehouse (или Базы данных) SQL Azure
+## <a name="continuous-deployment-with-the-azure-synapse-analytics-or-database-deployment-task"></a>Непрерывное развертывание с помощью задачи развертывания Azure синапсе Analytics (или базы данных)
 
-1. Добавьте новую задачу с помощью [задачи развертывания Базы данных SQL Azure](/azure/devops/pipelines/targets/azure-sqldb) и заполните необходимые поля, чтобы подключиться к целевому хранилищу данных. При запуске этой задачи DACPAC, созданный в результате предыдущего процесса сборки, развертывается в целевом хранилище данных. Вы также можете использовать [задачу развертывания Хранилища данных SQL Azure](https://marketplace.visualstudio.com/items?itemName=ms-sql-dw.SQLDWDeployment).
+1. Добавьте новую задачу с помощью [задачи развертывания Базы данных SQL Azure](/azure/devops/pipelines/targets/azure-sqldb) и заполните необходимые поля, чтобы подключиться к целевому хранилищу данных. При запуске этой задачи DACPAC, созданный в результате предыдущего процесса сборки, развертывается в целевом хранилище данных. Вы также можете использовать [задачу развертывания Azure синапсе Analytics](https://marketplace.visualstudio.com/items?itemName=ms-sql-dw.SQLDWDeployment).
 
       ![Задача развертывания](./media/sql-data-warehouse-continuous-integration-and-deployment/4-deployment-task.png "Задача развертывания")
 
-2. При использовании локального агента убедитесь, что для переменной среды задано использование правильного файла SqlPackage.exe для Хранилища данных SQL. Путь должен выглядеть следующим образом:
+2. Если вы используете собственный агент, убедитесь, что для переменной среды задано использование правильного SqlPackage.exe для Azure синапсе Analytics. Путь должен выглядеть следующим образом:
 
       ![Переменная среды](./media/sql-data-warehouse-continuous-integration-and-deployment/5-environment-variable-preview.png "Переменная среды")
 
@@ -58,7 +58,7 @@ ms.locfileid: "85213573"
 
    Запустите и проверьте свой конвейер. Вы можете вносить изменения локально и возвращать изменения в системе управления версиями, в результате чего должна выполняться автоматическая сборка и развертывание.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Изучение [архитектуры MPP пула SQL синапсе](massively-parallel-processing-mpp-architecture.md)
 - Быстрое создание [пула SQL](create-data-warehouse-portal.md)

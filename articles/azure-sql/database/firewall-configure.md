@@ -12,17 +12,17 @@ author: VanMSFT
 ms.author: vanto
 ms.reviewer: carlrab
 ms.date: 06/17/2020
-ms.openlocfilehash: e18c0470a2d1be8323c2fe1c0780bfd47f3f64cb
-ms.sourcegitcommit: 124f7f699b6a43314e63af0101cd788db995d1cb
+ms.openlocfilehash: ef46a0040ba767197028d170372a4a9edca9feee
+ms.sourcegitcommit: bf1340bb706cf31bb002128e272b8322f37d53dd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86085112"
+ms.lasthandoff: 09/03/2020
+ms.locfileid: "89442714"
 ---
 # <a name="azure-sql-database-and-azure-synapse-ip-firewall-rules"></a>Правила брандмауэра для базы данных SQL Azure и IP-адреса Azure синапсе
 [!INCLUDE[appliesto-sqldb-asa](../includes/appliesto-sqldb-asa.md)]
 
-Например, при создании нового сервера в базе данных SQL Azure или Azure синапсе Analytics с именем *MySQLServer*, к примеру, брандмауэр уровня сервера блокирует доступ к общедоступной конечной точке сервера (который доступен по адресу *MySQLServer.Database.Windows.NET*). Для простоты *база данных SQL* используется для ссылки на базу данных SQL и Azure синапсе Analytics (ранее — хранилище данных SQL Azure).
+Например, при создании нового сервера в базе данных SQL Azure или Azure синапсе Analytics с именем *MySQLServer*, к примеру, брандмауэр уровня сервера блокирует доступ к общедоступной конечной точке сервера (который доступен по адресу *MySQLServer.Database.Windows.NET*). Для простоты *база данных SQL* используется для ссылки на базу данных SQL и Azure синапсе Analytics (ранее — хранилище данных SQL).
 
 > [!IMPORTANT]
 > Эта статья *не* относится к *управляемому экземпляру базы данных SQL Azure*. Сведения о конфигурации сети см. [в статье подключение приложения к Azure SQL управляемый экземпляр](../managed-instance/connect-application-instance.md).
@@ -267,7 +267,7 @@ az sql server firewall-rule create --resource-group myResourceGroup --server $se
   - Попросите поставщика услуг Интернета указать диапазон IP-адресов, назначенный клиентским компьютерам, которые обращаются к серверу. Добавьте этот диапазон IP-адресов в качестве правила брандмауэра IP.
   - Для клиентских компьютеров следует получить статические IP-адреса. Добавьте IP-адреса в качестве правил брандмауэра IP-адресов.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Убедитесь, что корпоративная сетевая среда разрешает входящий трафик из диапазонов вычислительных IP-адресов (включая диапазоны SQL), которые используются центрами обработки данных Azure. Может потребоваться добавить эти IP-адреса в список разрешений. См. раздел [диапазоны IP-адресов центра обработки данных Microsoft Azure](https://www.microsoft.com/download/details.aspx?id=41653).  
 - Краткое руководство по созданию правила брандмауэра IP на уровне сервера см. в статье [Создание отдельной базы данных в базе данных SQL Azure](single-database-create-quickstart.md).

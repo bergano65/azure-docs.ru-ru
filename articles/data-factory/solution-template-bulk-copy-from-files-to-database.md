@@ -8,12 +8,12 @@ ms.service: data-factory
 ms.workload: data-services
 ms.topic: conceptual
 ms.date: 01/08/2020
-ms.openlocfilehash: 468bd838237e076aacb9dee0ccacfdcc1ea940af
-ms.sourcegitcommit: 1895459d1c8a592f03326fcb037007b86e2fd22f
+ms.openlocfilehash: c7f4cba10117efef4099b3524b49cae313593a9a
+ms.sourcegitcommit: bf1340bb706cf31bb002128e272b8322f37d53dd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82629122"
+ms.lasthandoff: 09/03/2020
+ms.locfileid: "89442723"
 ---
 # <a name="bulk-copy-from-files-to-database"></a>Массовое копирование из файлов в базу данных
 
@@ -55,7 +55,7 @@ ms.locfileid: "82629122"
     ![Проверка конвейера](media/solution-template-bulk-copy-from-files-to-database/new-pipeline.png)
 
     > [!NOTE]
-    > Если в качестве назначения данных на **шаге 2** выбрано **Azure Synapse Analytics (ранее — Хранилище данных SQL)** , необходимо ввести подключение к хранилищу BLOB-объектов Azure для промежуточного хранения в соответствии с требованиями Хранилища данных SQL Polybase. Как показано на следующем снимке экрана, шаблон автоматически создаст *Путь к хранилищу* для хранилища BLOB-объектов. Проверьте, создан ли контейнер, после выполнения конвейера.
+    > Если вы выбрали **Azure синапсе Analytics (ранее SQL DW)** в качестве назначения данных на **шаге 2** , упомянутого выше, необходимо ввести подключение к хранилищу BLOB-объектов Azure для промежуточного хранения в соответствии с требованиями Azure синапсе Analytics (ранее — хранилище данных SQL) polybase. Как показано на следующем снимке экрана, шаблон автоматически создаст *Путь к хранилищу* для хранилища BLOB-объектов. Проверьте, создан ли контейнер, после выполнения конвейера.
         
     ![Настройка Polybase](media/solution-template-bulk-copy-from-files-to-database/staging-account.png)
 

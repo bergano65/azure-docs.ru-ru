@@ -1,18 +1,18 @@
 ---
 title: Обновления и обновление компонентов в Azure Site Recovery
 description: Содержит общие сведения об обновлениях служб Azure Site Recovery и обновлении компонентов.
-author: rajani-janaki-ram
+author: Rajeswari-Mamilla
 manager: rochakm
 ms.service: site-recovery
 ms.topic: conceptual
 ms.date: 07/31/2019
-ms.author: rajanaki
-ms.openlocfilehash: 483d2152f3af13c82830528ea73e837fe3788ca4
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.author: ramamill
+ms.openlocfilehash: a1ea8b6fb9800d796670161288be0d86ce6ffc42
+ms.sourcegitcommit: ac5cbef0706d9910a76e4c0841fdac3ef8ed2e82
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84629374"
+ms.lasthandoff: 09/03/2020
+ms.locfileid: "89424945"
 ---
 # <a name="service-updates-in-site-recovery"></a>Обновления службы в Site Recovery
 
@@ -112,7 +112,7 @@ Site Recovery уведомляет вас о просроченных компо
 
 В примере в таблице показано, как это работает.
 
-|**Версия агента (Последняя перезагрузка)** | **Обновление до** | **Обязательная перезагрузка?**|
+|**Версия агента (Последняя перезагрузка)** | **Обновить до** | **Обязательная перезагрузка?**|
 |---------|---------|---------|
 |9.16 |  9.18 | Не обязательно|
 |9.16 | 9.19 | Не обязательно|
@@ -138,6 +138,6 @@ Site Recovery уведомляет вас о просроченных компо
 2. Установите последнюю версию поставщика на сервере VMM, управляющем вторичным сайтом восстановления. Если VMM развернут в кластере, установите поставщик на всех узлах кластера.
 3. После обновления сайта восстановления установите поставщик на сервере VMM, который управляет первичным сайтом.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Для отслеживания новых обновлений и выпусков перейдите на страницу [обновлений Azure](https://azure.microsoft.com/updates/?product=site-recovery) .

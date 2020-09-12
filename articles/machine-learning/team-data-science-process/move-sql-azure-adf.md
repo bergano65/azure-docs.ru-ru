@@ -8,15 +8,15 @@ editor: marktab
 ms.service: machine-learning
 ms.subservice: team-data-science-process
 ms.topic: article
-ms.date: 01/10/2020
+ms.date: 09/03/2020
 ms.author: tdsp
 ms.custom: seodec18, previous-author=deguhath, previous-ms.author=deguhath
-ms.openlocfilehash: 18ded2713ec89a9a0666cd00221d437c1c9ef090
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 6f2e0b9a797edb2d5529bb0645ed56c44df3121c
+ms.sourcegitcommit: bf1340bb706cf31bb002128e272b8322f37d53dd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87092428"
+ms.lasthandoff: 09/03/2020
+ms.locfileid: "89440027"
 ---
 # <a name="move-data-from-a-sql-server-database-to-sql-database-with-azure-data-factory"></a>Перемещение данных из базы данных SQL Server в базу данных SQL с помощью фабрики данных Azure
 
@@ -60,12 +60,12 @@ ADF позволяет выполнять планирование и отсле
 >
 >
 
-## <a name="upload-the-data-to-your-sql-server-instance"></a><a name="upload-data"></a>Отправка данных в экземпляр SQL Server
+## <a name="upload-the-data-to-your-sql-server-instance"></a><a name="upload-data"></a> Отправка данных в экземпляр SQL Server
 Для демонстрации процесса переноса данных мы используем [набор данных о такси Нью-Йорка](https://chriswhong.com/open-data/foil_nyc_taxi/) . Набор данных о такси Нью-Йорка доступен, как отмечено в этой статье, в хранилище BLOB-объектов Azure [здесь](https://www.andresmh.com/nyctaxitrips/). Данные содержатся в двух файлах: trip_data.csv, содержащем сведения о поездках, и trip_far.csv, содержащем сведения о тарифах для каждой поездки. Пример и описание этих файлов приведены в [описании набора данных «Поездки такси Нью-Йорка»](sql-walkthrough.md#dataset).
 
 Вы можете либо адаптировать описанные здесь процедуры к собственному набору данных, либо выполнить описанные действия с набором данных о такси Нью-Йорка. Чтобы передать набор данных Нью такси в базу данных SQL Server, выполните процедуру, описанную в разделе [инструкции по импорту данных в базу данных SQL Server](sql-walkthrough.md#dbload).
 
-## <a name="create-an-azure-data-factory"></a><a name="create-adf"></a>Создание фабрики данных Azure
+## <a name="create-an-azure-data-factory"></a><a name="create-adf"></a> Создание фабрики данных Azure
 Инструкции по созданию фабрики данных Azure и группы ресурсов на [портале Azure](https://portal.azure.com/) представлены [здесь](../../data-factory/tutorial-hybrid-copy-portal.md#create-a-data-factory). Задайте имя *adfdsp* для нового экземпляра ADF и имя *adfdsprg* для созданной группы ресурсов.
 
 ## <a name="install-and-configure-azure-data-factory-integration-runtime"></a>Установка и настройка фабрики данных Azure Integration Runtime
@@ -232,7 +232,7 @@ New-AzureDataFactoryTable -ResourceGroupName adfdsprg -DataFactoryName adfdsp -F
     "name": "AMLDSProcessPipeline",
     "properties":
     {
-        "description" : "This pipeline has one Copy activity that copies data from SQL Server to Azure blob",
+        "description" : "This pipeline has two activities: the first one copies data from SQL Server to Azure Blob, and the second one copies from Azure Blob to Azure Database Table",
         "activities":
         [
             {

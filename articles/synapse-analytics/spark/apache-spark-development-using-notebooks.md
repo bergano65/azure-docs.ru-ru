@@ -10,12 +10,12 @@ ms.date: 05/01/2020
 ms.author: ruxu
 ms.reviewer: ''
 ms.custom: devx-track-python
-ms.openlocfilehash: 6e0062450889a2bbbdfcd47137ffbe36b83cae57
-ms.sourcegitcommit: 7fe8df79526a0067be4651ce6fa96fa9d4f21355
+ms.openlocfilehash: 2feaf33f7bc31396764bfbaa3ae6291b6752e961
+ms.sourcegitcommit: f845ca2f4b626ef9db73b88ca71279ac80538559
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87849104"
+ms.lasthandoff: 09/09/2020
+ms.locfileid: "89612805"
 ---
 # <a name="create-develop-and-maintain-synapse-studio-preview-notebooks-in-azure-synapse-analytics"></a>Создание, разработка и обслуживание записных книжек синапсе Studio (Предварительная версия) в Azure синапсе Analytics
 
@@ -232,7 +232,7 @@ from pyspark.sql.types import *
 account_name = "Your account name"
 container_name = "Your container name"
 relative_path = "Your path"
-adls_path = 'abfss://%s@%s.dfs.core.windows.net/%s' % (blob_container_name, blob_account_name,  blob_relative_path)
+adls_path = 'abfss://%s@%s.dfs.core.windows.net/%s' % (container_name, account_name, relative_path)
 
 spark.conf.set("fs.azure.account.auth.type.%s.dfs.core.windows.net" %account_name, "SharedKey")
 spark.conf.set("fs.azure.account.key.%s.dfs.core.windows.net" %account_name ,"Your ADLSg2 Primary Key")
@@ -349,7 +349,7 @@ displayHTML(html)
    ![notebook-properties](./media/apache-spark-development-using-notebooks/synapse-notebook-properties.png)
 
 ## <a name="magic-commands"></a>Магические команды
-В записных книжках Azure Synapse Studio можно использовать привычные магические команды Jupyter. Текущие доступные магические команды указаны в приведенном ниже списке. Поделитесь с нами своими вариантами использования на GitHub, чтобы мы могли продолжать создавать еще больше магических команд с учетом ваших потребностей.
+В записных книжках Azure Synapse Studio можно использовать привычные магические команды Jupyter. Текущие доступные магические команды указаны в приведенном ниже списке. Расскажите нам [о вариантах использования на GitHub](https://github.com/MicrosoftDocs/azure-docs/issues/new) , чтобы мы могли продолжить создавать более волшебные команды в соответствии с вашими потребностями.
 
 Доступные магическые строки: [% лсмагик](https://ipython.readthedocs.io/en/stable/interactive/magics.html#magic-lsmagic), [% времени](https://ipython.readthedocs.io/en/stable/interactive/magics.html#magic-time), [% времени](https://ipython.readthedocs.io/en/stable/interactive/magics.html#magic-timeit)
 

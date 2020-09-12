@@ -9,12 +9,12 @@ ms.subservice: core
 ms.topic: conceptual
 ms.custom: how-to
 ms.date: 05/14/2020
-ms.openlocfilehash: 05ecce2d6ef0f8a3f241570ba9364c5e38682f3e
-ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
+ms.openlocfilehash: 1293534849c98cee51349bbefd3073cc8b94f876
+ms.sourcegitcommit: 3be3537ead3388a6810410dfbfe19fc210f89fec
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87319445"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89647216"
 ---
 # <a name="create-and-explore-azure-machine-learning-dataset-with-labels"></a>Создание и изучение набора данных с метками в Машинном обучении Azure
 
@@ -22,13 +22,13 @@ ms.locfileid: "87319445"
 
 ## <a name="what-are-datasets-with-labels"></a>Что такое наборы данных с метками 
 
-Наборы данных с метками в Машинном обучении Azure являются объектами [TabularDataset](how-to-create-register-datasets.md#dataset-types) со свойством label (метка). Далее мы будем называть их просто наборами данных с метками. Объекты TabularDataset такого типа создаются только в качестве выходных данных проектов маркировки в Машинном обучении Azure. Чтобы создать проект маркировки данных, выполните [эти шаги](how-to-create-labeling-projects.md). Решение "Машинное обучение" поддерживает проекты маркировки данных для классификации изображений (с несколькими метками или классами) и идентификация объектов (с использованием ограничивающих прямоугольников).
+В качестве наборов данных можно использовать Машинное обучение Azure наборы данных с метками. Эти конкретные типы наборов данных с помеченными данными создаются только в виде выходных данных Машинное обучение Azure проектов меток. Чтобы создать проект маркировки данных, выполните [эти шаги](how-to-create-labeling-projects.md). Решение "Машинное обучение" поддерживает проекты маркировки данных для классификации изображений (с несколькими метками или классами) и идентификация объектов (с использованием ограничивающих прямоугольников).
 
 ## <a name="prerequisites"></a>Предварительные требования
 
 * Подписка Azure. Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://aka.ms/AMLFree), прежде чем начинать работу.
-* [Пакет SDK Python для Машинного обучения Azure](https://docs.microsoft.com/python/api/overview/azure/ml/intro?view=azure-ml-py) или доступ к [Студии машинного обучения Azure](https://ml.azure.com/).
-    * Установка пакета [azure-contrib-dataset](https://docs.microsoft.com/python/api/azureml-contrib-dataset/?view=azure-ml-py).
+* [Пакет SDK Python для Машинного обучения Azure](https://docs.microsoft.com/python/api/overview/azure/ml/intro?view=azure-ml-py&preserve-view=true) или доступ к [Студии машинного обучения Azure](https://ml.azure.com/).
+    * Установка пакета [azure-contrib-dataset](https://docs.microsoft.com/python/api/azureml-contrib-dataset/?view=azure-ml-py&preserve-view=true).
 * Рабочая область машинного обучения. См. сведения о [создании рабочей области машинного обучения Azure](how-to-manage-workspace.md).
 * Доступ к проекту маркировки данных в Машинном обучении Azure. Если у вас нет проекта маркировки, создайте его по [этой инструкции](how-to-create-labeling-projects.md).
 
@@ -52,7 +52,7 @@ ms.locfileid: "87319445"
 
 ### <a name="pandas-dataframe"></a>Кадр данных Pandas
 
-Чтобы выгрузить наборы данных с метками в кадр данных Pandas, используйте метод [`to_pandas_dataframe()`](https://docs.microsoft.com/python/api/azureml-core/azureml.data.tabulardataset?view=azure-ml-py#to-pandas-dataframe-on-error--null---out-of-range-datetime--null--) из класса `azureml-contrib-dataset`. Чтобы установить этот класс, выполните следующую команду: 
+Чтобы выгрузить наборы данных с метками в кадр данных Pandas, используйте метод [`to_pandas_dataframe()`](https://docs.microsoft.com/python/api/azureml-core/azureml.data.tabulardataset?view=azure-ml-py#&preserve-view=trueto-pandas-dataframe-on-error--null---out-of-range-datetime--null--) из класса `azureml-contrib-dataset`. Чтобы установить этот класс, выполните следующую команду: 
 
 ```shell
 pip install azureml-contrib-dataset
@@ -80,7 +80,7 @@ imgplot = plt.imshow(img)
 
 ### <a name="torchvision-datasets"></a>Наборы данных Torchvision
 
-Вы можете выгрузить наборы данных с метками в набор данных Torchvision с помощью метода [to_torchvision()](https://docs.microsoft.com/python/api/azureml-contrib-dataset/azureml.contrib.dataset.tabulardataset?view=azure-ml-py#to-torchvision--), который также размещен в классе `azureml-contrib-dataset`. Чтобы использовать этот метод, необходимо установить [PyTorch](https://pytorch.org/). 
+Вы можете выгрузить наборы данных с метками в набор данных Torchvision с помощью метода [to_torchvision()](https://docs.microsoft.com/python/api/azureml-contrib-dataset/azureml.contrib.dataset.tabulardataset?view=azure-ml-py#&preserve-view=trueto-torchvision--), который также размещен в классе `azureml-contrib-dataset`. Чтобы использовать этот метод, необходимо установить [PyTorch](https://pytorch.org/). 
 
 ```python
 from torchvision.transforms import functional as F

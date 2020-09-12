@@ -15,12 +15,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 12/02/2019
 ms.author: yelevin
-ms.openlocfilehash: 2110d3319cebf693ef06deec26a29fa655e35035
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 54c10d7941e053bec928f8f43310218d89124f9a
+ms.sourcegitcommit: 4a7a4af09f881f38fcb4875d89881e4b808b369b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "77585277"
+ms.lasthandoff: 09/04/2020
+ms.locfileid: "89461737"
 ---
 # <a name="useful-resources-for-working-with-azure-sentinel"></a>Полезные ресурсы для работы с Azure Sentinel
 
@@ -28,7 +28,7 @@ ms.locfileid: "77585277"
 
 В этой статье перечислены ресурсы, которые могут помочь получить дополнительные сведения о работе с Sentinel.
 
-Соединители Azure Logic Apps:<https://docs.microsoft.com/connectors/>
+Соединители Azure Logic Apps: <https://docs.microsoft.com/connectors/>
 
 
 ## <a name="auditing-and-reporting"></a>Аудит и создание отчетов
@@ -81,5 +81,5 @@ ms.locfileid: "77585277"
 Просмотрите записи в блоге с метками Azure из [течкоммунити](https://techcommunity.microsoft.com/t5/Azure-Sentinel/bg-p/AzureSentinelBlog) и [Microsoft Azure](https://azure.microsoft.com/blog/tag/azure-sentinel/).
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
-В этом документе вы получили список ресурсов, которые полезны при работе с Azure Sentinel. Дополнительные сведения о безопасности и соответствии требованиям Azure см. в [блоге Microsoft Azure безопасность и соответствие требованиям](https://blogs.msdn.com/b/azuresecurity/).
+## <a name="next-steps"></a>Дальнейшие действия
+В этом документе вы получили список ресурсов, которые полезны при работе с Azure Sentinel. Дополнительные сведения о безопасности и соответствии требованиям Azure см. в [блоге Microsoft Azure безопасность и соответствие требованиям](https://docs.microsoft.com/archive/blogs/azuresecurity/).

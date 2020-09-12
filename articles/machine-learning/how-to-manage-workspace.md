@@ -10,17 +10,17 @@ author: sdgilley
 ms.date: 12/27/2019
 ms.topic: conceptual
 ms.custom: how-to
-ms.openlocfilehash: e2f13cbdca9d6372677bbba24d60f4a73436cfd7
-ms.sourcegitcommit: 3fb5e772f8f4068cc6d91d9cde253065a7f265d6
+ms.openlocfilehash: 1f68753e7b28163f3ec0c18c30cf5939e0bc5243
+ms.sourcegitcommit: 3be3537ead3388a6810410dfbfe19fc210f89fec
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89179307"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89649426"
 ---
 # <a name="create-and-manage-azure-machine-learning-workspaces-in-the-azure-portal"></a>Создание рабочих областей Машинного обучения Azure и управление ими с помощью портала Azure
 [!INCLUDE [applies-to-skus](../../includes/aml-applies-to-basic-enterprise-sku.md)]
 
-В этой статье вы создадите, просмотрите и удалите [**машинное обучение Azure рабочие области**](concept-workspace.md) в портал Azure для [машинное обучение Azure](overview-what-is-azure-ml.md).  Портал — самый простой способ начать работу с рабочими областями, но по мере необходимости изменения или требования к автоматизации можно также создавать и удалять рабочие области [с помощью интерфейса командной строки](reference-azure-machine-learning-cli.md) [с кодом Python](https://docs.microsoft.com/python/api/overview/azure/ml/intro?view=azure-ml-py) или с [помощью расширения VS Code](tutorial-setup-vscode-extension.md).
+В этой статье вы создадите, просмотрите и удалите [**машинное обучение Azure рабочие области**](concept-workspace.md) в портал Azure для [машинное обучение Azure](overview-what-is-azure-ml.md).  Портал — самый простой способ начать работу с рабочими областями, но по мере необходимости изменения или требования к автоматизации можно также создавать и удалять рабочие области [с помощью интерфейса командной строки](reference-azure-machine-learning-cli.md) [с кодом Python](https://docs.microsoft.com/python/api/overview/azure/ml/intro?view=azure-ml-py&preserve-view=true) или с [помощью расширения VS Code](tutorial-setup-vscode-extension.md).
 
 ## <a name="create-a-workspace"></a>Создание рабочей области
 

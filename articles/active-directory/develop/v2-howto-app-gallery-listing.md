@@ -12,12 +12,12 @@ ms.date: 08/14/2020
 ms.author: kenwith
 ms.reviewer: jeedes
 ms.custom: aaddev
-ms.openlocfilehash: 1ce8f376d3264a06618cb7321c75142dcf92d9ea
-ms.sourcegitcommit: c6b9a46404120ae44c9f3468df14403bcd6686c1
+ms.openlocfilehash: dc271fa768bee66107e66a1b8d4f16c1188ce418
+ms.sourcegitcommit: bf1340bb706cf31bb002128e272b8322f37d53dd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88891867"
+ms.lasthandoff: 09/03/2020
+ms.locfileid: "89439750"
 ---
 # <a name="publish-your-app-to-the-azure-ad-app-gallery"></a>Публикация приложения в коллекции приложений Azure AD
 
@@ -277,6 +277,6 @@ Web Services Federation (WS-подача) — это [промышленный �
 Microsoft Partner Network обеспечивает мгновенный доступ к эксклюзивным ресурсам, программам, средствам и подключениям. Чтобы присоединиться к сети и создать план рынка, см. статью [доступ к коммерческим клиентам](https://partner.microsoft.com/explore/commercial#gtm).
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
-
-Дополнительные сведения о разработке приложений, поддерживающих вход с помощью Azure AD, см. в статье [Сценарии проверки подлинности в Azure AD](authentication-flows-app-scenarios.md).
+## <a name="next-steps"></a>Дальнейшие действия
+* [Создание конечной точки SCIM и настройка подготовки пользователей](../app-provisioning/use-scim-to-provision-users-and-groups.md)
+* [Сценарии проверки подлинности в Azure AD](authentication-flows-app-scenarios.md)

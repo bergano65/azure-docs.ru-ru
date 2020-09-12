@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 03/11/2020
 ms.author: memildin
-ms.openlocfilehash: d12df01fe1506f7f5ade9cce60ae7af0412e3010
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 1f69fe027772dc2d008a567723a5b3c04f3ee51b
+ms.sourcegitcommit: 3246e278d094f0ae435c2393ebf278914ec7b97b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87080817"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89378208"
 ---
 # <a name="adaptive-network-hardening-in-azure-security-center"></a>Адаптивное усиление защиты сети в центре безопасности Azure
 Узнайте, как настроить Адаптивное усиление защиты сети в центре безопасности Azure.
@@ -35,6 +35,17 @@ ms.locfileid: "87080817"
 
 
 ![Режим усиления защиты сети](./media/security-center-adaptive-network-hardening/traffic-hardening.png)
+
+
+## <a name="availability"></a>Доступность
+
+|Аспект|Сведения|
+|----|:----|
+|Состояние выпуска:|Общедоступная версия|
+|Цены|Уровень служб "Стандартный"|
+|Необходимые роли и разрешения:|Разрешения на запись в группы безопасности сетие компьютера|
+|Облако.|![Да](./media/icons/yes-icon.png) Коммерческие облака<br>![Нет](./media/icons/no-icon.png) National/независимых (US Gov, Китай gov, другое gov)|
+|||
 
 
 ## <a name="view-adaptive-network-hardening-alerts-and-rules"></a>Просмотр адаптивных предупреждений и правил усиления защиты сети

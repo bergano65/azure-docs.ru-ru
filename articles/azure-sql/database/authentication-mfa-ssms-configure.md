@@ -12,20 +12,20 @@ author: GithubMirek
 ms.author: mireks
 ms.reviewer: vanto
 ms.date: 08/27/2019
-ms.openlocfilehash: 791402f5d9648c8d235f8853de1b6c41f8082e1b
-ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
+ms.openlocfilehash: b1dbd66e34790599020233c5b1249593a4c0472d
+ms.sourcegitcommit: bf1340bb706cf31bb002128e272b8322f37d53dd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89018340"
+ms.lasthandoff: 09/03/2020
+ms.locfileid: "89442655"
 ---
 # <a name="configure-multi-factor-authentication-for-sql-server-management-studio-and-azure-ad"></a>Настройка Многофакторной идентификации для SQL Server Management Studio и Azure AD
 [!INCLUDE[appliesto-sqldb-sqlmi-asa](../includes/appliesto-sqldb-sqlmi-asa.md)]
 
-В этой статье показано, как использовать многофакторную идентификацию (MFA) Azure Active Directory (Azure AD) с SQL Server Management Studio (SSMS). Azure AD MFA можно использовать при подключении SSMS или SqlPackage.exe к [базе данных SQL Azure](sql-database-paas-overview.md), [управляемый экземпляр SQL Azure](../managed-instance/sql-managed-instance-paas-overview.md) и [Azure синапсе Analytics (ранее — хранилище данных SQL Azure)](../../synapse-analytics/sql-data-warehouse/sql-data-warehouse-overview-what-is.md). Общие сведения о многофакторной проверке подлинности см. [в статье универсальная проверка подлинности с использованием базы данных SQL, sql управляемый экземпляр и Azure синапсе (поддержка SSMS для MFA)](../database/authentication-mfa-ssms-overview.md).
+В этой статье показано, как использовать многофакторную идентификацию (MFA) Azure Active Directory (Azure AD) с SQL Server Management Studio (SSMS). Azure AD MFA можно использовать при подключении SSMS или SqlPackage.exe к [базе данных SQL Azure](sql-database-paas-overview.md), [управляемый экземпляр SQL Azure](../managed-instance/sql-managed-instance-paas-overview.md) и [Azure синапсе Analytics (ранее — хранилище данных SQL)](../../synapse-analytics/sql-data-warehouse/sql-data-warehouse-overview-what-is.md). Общие сведения о многофакторной проверке подлинности см. [в статье универсальная проверка подлинности с использованием базы данных SQL, sql управляемый экземпляр и Azure синапсе (поддержка SSMS для MFA)](../database/authentication-mfa-ssms-overview.md).
 
 > [!IMPORTANT]
-> В оставшейся части этой статьи в качестве баз данных в базе данных SQL Azure, Azure SQL Управляемый экземпляр и Azure синапсе (прежнее хранилище данных SQL Azure) упоминается этот сервер, который ссылается на [сервер](logical-servers.md) , на котором размещены базы данных SQL Azure и Azure синапсе.
+> В оставшейся части этой статьи в качестве баз данных в базе данных SQL Azure, Azure SQL Управляемый экземпляр и Azure синапсе (прежнее хранилище данных SQL) упоминается общедоступный [сервер, на](logical-servers.md) котором размещены базы данных SQL Azure и Azure синапсе.
 
 ## <a name="configuration-steps"></a>Этапы настройки
 
@@ -52,7 +52,7 @@ ms.locfileid: "89018340"
 
    ![mfa-tenant-ssms](./media/authentication-mfa-ssms-configure/mfa-tenant-ssms.png)
 
-4. Выберите **Параметры** и укажите базу данных в диалоговом окне **Параметры** . (Если подключенный пользователь является гостевым пользователем (т. е. joe@outlook.com ), необходимо установить флажок и добавить текущее доменное имя AD или идентификатор клиента как часть параметров. Дополнительные сведения см. в статье [Универсальная проверка подлинности для Базы данных SQL и Хранилища данных SQL (поддержка SSMS для MFA)](../database/authentication-mfa-ssms-overview.md). Щелкните **Подключить**.  
+4. Выберите **Параметры** и укажите базу данных в диалоговом окне **Параметры** . (Если подключенный пользователь является гостевым пользователем (т. е. joe@outlook.com ), необходимо установить флажок и добавить текущее доменное имя AD или идентификатор клиента как часть параметров. См. статью [Универсальная проверка подлинности с помощью базы данных SQL и Azure синапсе Analytics (поддержка SSMS для MFA)](../database/authentication-mfa-ssms-overview.md). Щелкните **Подключить**.  
 5. Когда откроется диалоговое окно **Вход в учетную запись** , укажите учетную запись и пароль своего удостоверения Azure Active Directory. Пароль не требуется, если пользователь является частью домена в федерации с Azure AD.
 
    ![2mfa-sign-in](./media/authentication-mfa-ssms-configure/2mfa-sign-in.png)  

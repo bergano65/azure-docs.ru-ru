@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: troubleshooting
 ms.date: 01/23/2017
 ms.author: mazha
-ms.openlocfilehash: 53db148eac0d56e53bb96e0597ad53d3183d86e9
-ms.sourcegitcommit: 9ce0350a74a3d32f4a9459b414616ca1401b415a
+ms.openlocfilehash: f49af1488a0c044639a72fc2ea52ba0a47727a24
+ms.sourcegitcommit: bf1340bb706cf31bb002128e272b8322f37d53dd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/13/2020
-ms.locfileid: "88192516"
+ms.lasthandoff: 09/03/2020
+ms.locfileid: "89433676"
 ---
 # <a name="troubleshooting-cdn-file-compression"></a>Устранение неполадок со сжатием файлов CDN
 Эта статья поможет вам устранить неполадки со [сжатием файлов CDN](cdn-improve-performance.md).
@@ -111,8 +111,8 @@ ms.locfileid: "88192516"
 
 Чтобы сжатие файла было возможным, его размер должен удовлетворять таким требованиям:
 
-* более 128 байт;
-* менее 1 МБ.
+* Больше 128 байт (длина содержимого: 128)
+* Меньше 3 МБ
 
 ### <a name="check-the-request-at-the-origin-server-for-a-via-header"></a>Проверьте, есть ли в запросе на сервере-источнике заголовок **Via** .
 HTTP-заголовок **Via** указывает веб-серверу, что запрос передается через прокси-сервер.  Если запрос содержит заголовок **Via** , веб-серверы Microsoft IIS по умолчанию не сжимают ответы.  Чтобы изменить это поведение, сделайте следующее.

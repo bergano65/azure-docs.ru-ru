@@ -3,12 +3,12 @@ title: Как заменить ленточную инфраструктуру
 description: Узнайте, как Azure Backup предоставляет семантику, аналогичную ленте, которая позволяет выполнять резервное копирование и восстановление данных в Azure.
 ms.topic: conceptual
 ms.date: 04/30/2017
-ms.openlocfilehash: 4174868d391eda70ce4921deee63b8bacf672b4c
-ms.sourcegitcommit: afa1411c3fb2084cccc4262860aab4f0b5c994ef
+ms.openlocfilehash: 695cc2644521384527ecd871f3613a078e987aa7
+ms.sourcegitcommit: 3246e278d094f0ae435c2393ebf278914ec7b97b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/23/2020
-ms.locfileid: "88757240"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89378446"
 ---
 # <a name="move-your-long-term-storage-from-tape-to-the-azure-cloud"></a>Перенос долгосрочного хранения данных с магнитной ленты в облако Azure
 
@@ -62,7 +62,7 @@ ms.locfileid: "88757240"
 
 ## <a name="advanced-configuration"></a>Расширенная конфигурация
 
-Щелкнув элемент **Изменить** на показанном выше экране, клиенты получат доступ к дополнительным возможностям для составления расписаний хранения.
+Если нажать кнопку **изменить** на предыдущем экране, у клиентов будет дополнительная гибкость при определении расписаний хранения.
 
 ![Изменение окна политики](./media/backup-azure-backup-cloud-as-tape/modify.png)
 

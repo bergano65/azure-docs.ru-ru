@@ -13,12 +13,12 @@ ms.author: ajburnle
 ms.reviewer: piotrci
 ms.custom: it-pro, seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 9f2e3e9376c26bae2c0b3c0dda06b781b5f2f7c4
-ms.sourcegitcommit: fbb66a827e67440b9d05049decfb434257e56d2d
+ms.openlocfilehash: 425809339cf4c468293801460fdeb79d9e467968
+ms.sourcegitcommit: d0541eccc35549db6381fa762cd17bc8e72b3423
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87799163"
+ms.lasthandoff: 09/09/2020
+ms.locfileid: "89565605"
 ---
 # <a name="sign-up-for-azure-active-directory-premium-editions"></a>Регистрация для работы с выпусками Azure Active Directory Premium
 Вы можете приобрести выпуски Azure Active Directory (Azure AD) Premium и связать их со своей подпиской Azure. Если вам нужно создать новую подписку Azure, нужно также активировать план лицензирования и доступ к службе Azure AD.
@@ -28,7 +28,7 @@ ms.locfileid: "87799163"
 
 Перед регистрацией для Active Directory Premium 1 или Premium 2 необходимо сначала определить, какие из существующих подписок или планов планируете использовать:
 
-- существующую подписку Azure или Office 365;
+- Через существующую подписку Azure или Microsoft 365
 
 - план лицензирования Enterprise Mobility + Security;
 
@@ -36,8 +36,8 @@ ms.locfileid: "87799163"
 
 Регистрация с использованием подписки Azure с помощью ранее приобретенной и активированной лицензии Azure AD автоматически активирует лицензии в том же каталоге. Если это не так, вам по-прежнему необходимо активировать план лицензирования и доступ к Azure AD. Дополнительные сведения об активации плана лицензирования см. в разделе [Активация плана лицензирования](#activate-your-new-license-plan). Дополнительные сведения об активации доступа к Azure AD см. в разделе [Активация доступа к Azure Active Directory](#activate-your-azure-ad-access). 
 
-## <a name="sign-up-using-your-existing-azure-or-office-365-subscription"></a>Регистрация с помощью существующей подписки Azure или Office 365
-Как подписчик Azure или Office 365 вы можете приобрести выпуски Azure Active Directory Premium в Интернете. Подробные инструкции см. в статье [Регистрация для работы с выпусками Azure Active Directory Premium](https://channel9.msdn.com/Series/Azure-Active-Directory-Videos-Demos/How-to-Purchase-Azure-Active-Directory-Premium-New-Customers).
+## <a name="sign-up-using-your-existing-azure-or-microsoft-365-subscription"></a>Регистрация с помощью существующей подписки Azure или Microsoft 365
+Как подписчик Azure или Microsoft 365, вы можете приобрести Azure Active Directory Premium выпусков в Интернете. Подробные инструкции см. в статье [Регистрация для работы с выпусками Azure Active Directory Premium](https://channel9.msdn.com/Series/Azure-Active-Directory-Videos-Demos/How-to-Purchase-Azure-Active-Directory-Premium-New-Customers).
 
 ## <a name="sign-up-using-your-enterprise-mobility--security-licensing-plan"></a>Регистрация с использованием плана лицензирования Enterprise Mobility + Security
 Enterprise Mobility + Security — набор, состоящий из Azure AD Premium, Azure Information Protection и Microsoft Intune. Если у вас уже есть лицензия EMS, вы может начать работу с Azure AD, используя один из следующих вариантов лицензирования:

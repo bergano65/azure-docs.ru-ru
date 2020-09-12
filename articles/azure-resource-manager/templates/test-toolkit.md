@@ -2,19 +2,19 @@
 title: Набор средств тестирования шаблонов ARM
 description: Описывает, как запустить набор средств тестирования шаблона ARM в шаблоне. Набор средств позволяет увидеть, реализованы ли рекомендации.
 ms.topic: conceptual
-ms.date: 06/19/2020
+ms.date: 09/02/2020
 ms.author: tomfitz
 author: tfitzmac
-ms.openlocfilehash: 7b88096dfdd1c7fb3e2671a369132e75a8885b8d
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 73f6db8cbd5e4d7a0670c394f6af338aae8e9e79
+ms.sourcegitcommit: bf1340bb706cf31bb002128e272b8322f37d53dd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85255836"
+ms.lasthandoff: 09/03/2020
+ms.locfileid: "89439566"
 ---
 # <a name="use-arm-template-test-toolkit"></a>Использование набора средств для тестирования шаблонов ARM
 
-[Набор средств тестирования шаблонов ARM](https://aka.ms/arm-ttk) проверяет, использует ли шаблон рекомендованные методы. Если шаблон не соответствует рекомендуемым методикам, он возвращает список предупреждений с предлагаемыми изменениями. С помощью набора средств тестирования можно узнать, как избежать распространенных проблем при разработке шаблонов.
+[Набор средств тестирования шаблона Azure Resource Manager (ARM)](https://aka.ms/arm-ttk) проверяет, использует ли шаблон рекомендованные методы. Если шаблон не соответствует рекомендуемым методикам, он возвращает список предупреждений с предлагаемыми изменениями. С помощью набора средств тестирования можно узнать, как избежать распространенных проблем при разработке шаблонов.
 
 Набор тестов набора средств тестирования предоставляет ряд [проверок по умолчанию](test-cases.md). Эти тесты являются рекомендациями, но не требованиями. Вы можете решить, какие тесты соответствуют вашим целям, и настроить, какие тесты выполняются.
 
@@ -22,53 +22,103 @@ ms.locfileid: "85255836"
 
 Набор средств — это набор сценариев PowerShell, которые можно запускать из команды в PowerShell или CLI.
 
-## <a name="download-test-toolkit"></a>Загрузить набор средств тестирования
+## <a name="install-on-windows"></a>Установка в Windows
 
-Чтобы использовать набор средств для тестирования, можно создать вилку и клонировать [репозиторий](https://aka.ms/arm-ttk) , содержащий скрипты, или [скачать последний ZIP-файл](https://aka.ms/arm-ttk-latest).
+1. Если у вас еще нет PowerShell, [установите PowerShell в Windows](/powershell/scripting/install/installing-powershell-core-on-windows).
 
-В зависимости от политики выполнения на компьютере, на котором выполняется сценарий, может возникнуть ошибка, возникающая при выполнении скриптов из Интернета. Необходимо либо изменить [политику выполнения](/powershell/module/microsoft.powershell.core/about/about_execution_policies) , либо [разблокировать файлы скриптов](/powershell/module/microsoft.powershell.utility/unblock-file).
+1. [Скачайте последнюю ZIP-файл](https://aka.ms/arm-ttk-latest) для набора средств тестирования и извлеките его.
 
-## <a name="run-on-powershell"></a>Запуск в PowerShell
+1. Запустите PowerShell.
 
-Перед выполнением тестов Импортируйте модуль.
+1. Перейдите к папке, в которую был извлечен набор средств для тестирования. В этой папке перейдите в папку **ARM-ТТК** .
 
-```powershell
-Import-Module .\arm-ttk.psd1 # from the same directory as .\arm-ttk.psd1
-```
+1. Если [Политика выполнения](/powershell/module/microsoft.powershell.core/about/about_execution_policies) блокирует сценарии из Интернета, необходимо разблокировать файлы скриптов. Убедитесь, что вы находитесь в папке **ARM-ТТК** .
 
-Чтобы выполнить тесты в **PowerShell**, используйте следующую команду:
+   ```powershell
+   Get-ChildItem *.ps1, *.psd1, *.ps1xml, *.psm1 -Recurse | Unblock-File
+   ```
 
-```powershell
-Test-AzTemplate -TemplatePath $TemplateFolder
-```
+1. Импортируйте модуль.
 
-## <a name="run-on-linux"></a>Запуск в Linux
+   ```powershell
+   Import-Module .\arm-ttk.psd1
+   ```
 
-Перед выполнением тестов установите [PowerShell Core](/powershell/scripting/install/installing-powershell-core-on-linux).
+1. Чтобы выполнить тесты, используйте следующую команду:
 
-Чтобы запустить тесты в **Linux** в bash, используйте следующую команду:
+   ```powershell
+   Test-AzTemplate -TemplatePath \path\to\template
+   ```
 
-```bash
-Test-AzTemplate.sh -TemplatePath $TemplateFolder
-```
+## <a name="install-on-linux"></a>Установка в Linux
 
-Также можно выполнить тест на pwsh.exe.
+1. Если у вас еще нет PowerShell, [установите PowerShell в Linux](/powershell/scripting/install/installing-powershell-core-on-linux).
 
-## <a name="run-on-macos"></a>Запуск в macOS
+1. [Скачайте последнюю ZIP-файл](https://aka.ms/arm-ttk-latest) для набора средств тестирования и извлеките его.
 
-Перед выполнением тестов установите [PowerShell Core](/powershell/scripting/install/installing-powershell-core-on-macos). 
+1. Запустите PowerShell.
 
-Установите `coreutils`:
+   ```bash
+   pwsh
+   ```
 
-```bash
-brew install coreutils
-```
+1. Перейдите к папке, в которую был извлечен набор средств для тестирования. В этой папке перейдите в папку **ARM-ТТК** .
 
-Чтобы выполнить тесты в **macOS**, используйте следующую команду:
+1. Если [Политика выполнения](/powershell/module/microsoft.powershell.core/about/about_execution_policies) блокирует сценарии из Интернета, необходимо разблокировать файлы скриптов. Убедитесь, что вы находитесь в папке **ARM-ТТК** .
 
-```bash
-Test-AzTemplate.sh -TemplatePath $TemplateFolder
-```
+   ```powershell
+   Get-ChildItem *.ps1, *.psd1, *.ps1xml, *.psm1 -Recurse | Unblock-File
+   ```
+
+1. Импортируйте модуль.
+
+   ```powershell
+   Import-Module ./arm-ttk.psd1
+   ```
+
+1. Чтобы выполнить тесты, используйте следующую команду:
+
+   ```powershell
+   Test-AzTemplate -TemplatePath /path/to/template
+   ```
+
+## <a name="install-on-macos"></a>Установка в macOS
+
+1. Если у вас еще нет PowerShell, [установите PowerShell на macOS](/powershell/scripting/install/installing-powershell-core-on-macos).
+
+1. Установите `coreutils`:
+
+   ```bash
+   brew install coreutils
+   ```
+
+1. [Скачайте последнюю ZIP-файл](https://aka.ms/arm-ttk-latest) для набора средств тестирования и извлеките его.
+
+1. Запустите PowerShell.
+
+   ```bash
+   pwsh
+   ```
+
+1. Перейдите к папке, в которую был извлечен набор средств для тестирования. В этой папке перейдите в папку **ARM-ТТК** .
+
+1. Если [Политика выполнения](/powershell/module/microsoft.powershell.core/about/about_execution_policies) блокирует сценарии из Интернета, необходимо разблокировать файлы скриптов. Убедитесь, что вы находитесь в папке **ARM-ТТК** .
+
+   ```powershell
+   Get-ChildItem *.ps1, *.psd1, *.ps1xml, *.psm1 -Recurse | Unblock-File
+   ```
+
+1. Импортируйте модуль.
+
+   ```powershell
+   Import-Module ./arm-ttk.psd1
+   ```
+
+1. Чтобы выполнить тесты, используйте следующую команду:
+
+   ```powershell
+   Test-AzTemplate -TemplatePath /path/to/template
+   ```
 
 ## <a name="result-format"></a>Формат результата
 
@@ -230,6 +280,6 @@ param(
 }
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о тестах по умолчанию см. в разделе [тестовые случаи для набора средств](test-cases.md).

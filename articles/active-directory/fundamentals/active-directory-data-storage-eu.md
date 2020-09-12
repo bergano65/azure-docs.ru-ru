@@ -12,15 +12,15 @@ ms.topic: conceptual
 ms.date: 03/04/2019
 ms.custom: it-pro, seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 99d8ae8c5e3218959a483e78f70a6502bf7a5a47
-ms.sourcegitcommit: fbb66a827e67440b9d05049decfb434257e56d2d
+ms.openlocfilehash: 874df2cc17e291cb6811ca07d01237f01b523860
+ms.sourcegitcommit: d0541eccc35549db6381fa762cd17bc8e72b3423
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87799112"
+ms.lasthandoff: 09/09/2020
+ms.locfileid: "89565044"
 ---
 # <a name="identity-data-storage-for-european-customers-in-azure-active-directory"></a>Хранение данных удостоверений клиентов из ЕС — Azure Active Directory
-Данные удостоверений хранятся в службе Azure AD в географическом расположении на основе адреса, предоставленного вашей организацией, при подписке на Microsoft Online Service, например Office 365 и Azure. Сведения о том, где хранятся данные удостоверений, можно найти в разделе [где находятся ваши данные?](https://www.microsoft.com/trustcenter/privacy/where-your-data-is-located) центра управления безопасностью Майкрософт.
+Данные удостоверений хранятся в службе Azure AD в географическом расположении на основе адреса, предоставленного вашей организацией, при подписке на службу Microsoft Online Service, например Microsoft 365 и Azure. Сведения о том, где хранятся данные удостоверений, можно найти в разделе [где находятся ваши данные?](https://www.microsoft.com/trustcenter/privacy/where-your-data-is-located) центра управления безопасностью Майкрософт.
 
 Для клиентов, которые указали адрес в Европе, Azure AD хранит большую часть данных удостоверений в европейских центрах данных. В этом документе содержатся сведения о любых данных, хранящихся за пределами Европы службами Azure AD.
 
@@ -30,11 +30,11 @@ ms.locfileid: "87799112"
 - Push-уведомления, использующие приложение Microsoft Authenticator, формируются в центрах обработки данных в США. Кроме того, службы, связанные с поставщиками устройств, также могут играть в игру, а эти службы, возможно, вне Европы.
 - OATH-коды всегда проверяются в США. 
 
-Дополнительные сведения о том, какие сведения о пользователе собираются в Azure сервер Многофакторной идентификации (сервер MFA) и в облачной службе Azure MFA, см. в статье [сбор данных пользователей многофакторной идентификации Azure](https://docs.microsoft.com/azure/active-directory/authentication/howto-mfa-reporting-datacollection).
+Дополнительные сведения о том, какие сведения о пользователе собираются в Azure сервер Многофакторной идентификации (сервер MFA) и в облачной службе Azure MFA, см. в статье [сбор данных пользователей многофакторной идентификации Azure](../authentication/howto-mfa-reporting-datacollection.md).
 
 ## <a name="microsoft-azure-active-directory-b2c-azure-ad-b2c"></a>Microsoft Azure Active Directory B2C (Active Directory B2C)
 
-Данные конфигурации политики Azure AD B2C и контейнеры ключей хранятся в центрах обработки данных США. Они не содержат персональных данных пользователя. Дополнительные сведения о конфигурациях политики см. в статье [Azure Active Directory B2C: встроенные политики](https://docs.microsoft.com/azure/active-directory-b2c/active-directory-b2c-reference-policies).
+Данные конфигурации политики Azure AD B2C и контейнеры ключей хранятся в центрах обработки данных США. Они не содержат персональных данных пользователя. Дополнительные сведения о конфигурациях политики см. в статье [Azure Active Directory B2C: встроенные политики](../../active-directory-b2c/user-flow-overview.md).
 
 ## <a name="microsoft-azure-active-directory-b2b-azure-ad-b2b"></a>Microsoft Azure Active Directory B2B (Active Directory B2B) 
     
@@ -50,7 +50,7 @@ Azure AD DS хранит данные пользователей в том же 
 - Список утвержденных федеративных доменов для приложения
 - Открытый ключ подписи маркера приложения 
 
-Дополнительные сведения о Федерации в Microsoft Exchange Server см. в статье [интеграция: Exchange 2013](https://docs.microsoft.com/exchange/federation-exchange-2013-help) .
+Дополнительные сведения о Федерации в Microsoft Exchange Server см. в статье [интеграция: Exchange 2013](/exchange/federation-exchange-2013-help) .
 
 
 ## <a name="other-considerations"></a>Другие замечания
@@ -61,12 +61,12 @@ Azure AD DS хранит данные пользователей в том же 
 
 ## <a name="next-steps"></a>Дальнейшие действия
 Дополнительные сведения об этих функциях и возможностях, описанных выше, смотрите в следующих статьях.
-- [Что такое Многофакторная идентификация Azure?](https://docs.microsoft.com/azure/active-directory/authentication/multi-factor-authentication)
+- [Что такое Многофакторная идентификация Azure?](../authentication/concept-mfa-howitworks.md)
 
-- [Самостоятельный сброс пароля в Azure AD](https://docs.microsoft.com/azure/active-directory/authentication/active-directory-passwords-overview)
+- [Самостоятельный сброс пароля в Azure AD](../authentication/concept-sspr-howitworks.md)
 
-- [Что такое Azure Active Directory B2C?](https://docs.microsoft.com/azure/active-directory-b2c/active-directory-b2c-overview)
+- [Что такое Azure Active Directory B2C?](../../active-directory-b2c/overview.md)
 
-- [Что такое служба совместной работы Azure AD B2B?](https://docs.microsoft.com/azure/active-directory/active-directory-b2b-what-is-azure-ad-b2b)
+- [Что такое служба совместной работы Azure AD B2B?](../external-identities/what-is-b2b.md)
 
-- [Доменные службы Azure Active Directory (AD)](https://docs.microsoft.com/azure/active-directory-domain-services/active-directory-ds-overview)
+- [Доменные службы Azure Active Directory (AD)](../../active-directory-domain-services/overview.md)

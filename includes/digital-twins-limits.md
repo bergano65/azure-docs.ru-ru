@@ -5,12 +5,12 @@ ms.service: digital-twins
 ms.topic: include
 ms.date: 6/9/2020
 ms.author: baanders
-ms.openlocfilehash: 22b00b41c7fce0af57fd9f92b0f42bbd9412afda
-ms.sourcegitcommit: 5a37753456bc2e152c3cb765b90dc7815c27a0a8
+ms.openlocfilehash: 2ea607b22bfa1eebdf6b63adcd14a5d1bb1ca9d0
+ms.sourcegitcommit: 58d3b3314df4ba3cabd4d4a6016b22fa5264f05a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/04/2020
-ms.locfileid: "87771182"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89304050"
 ---
 ### <a name="functional-limits"></a>Функциональные ограничения
 
@@ -42,7 +42,7 @@ ms.locfileid: "87771182"
 | API моделей | Число запросов в секунду | 100 | Да |
 | API Digital двойников | Число запросов в секунду | 1000 | Да |
 | API запроса | Число запросов в секунду | 500 | Да |
-| API запроса | Количество единиц запросов в секунду | 4000 | Да |
+| API запроса | [Количество единиц запросов](../articles/digital-twins/concepts-query-units.md) в секунду | 4000 | Да |
 | API маршрутов событий | Число запросов в секунду | 100 | Да |
 
 ### <a name="other-limits"></a>Другие ограничения

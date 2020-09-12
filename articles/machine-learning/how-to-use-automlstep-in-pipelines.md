@@ -11,12 +11,12 @@ manager: cgronlun
 ms.date: 08/26/2020
 ms.topic: conceptual
 ms.custom: how-to, devx-track-python
-ms.openlocfilehash: 0daa094a6d804cd8a40c4ba76b696e3c9b580f8a
-ms.sourcegitcommit: d68c72e120bdd610bb6304dad503d3ea89a1f0f7
+ms.openlocfilehash: eb28ee0adb3c23a44936cbc940ee9bcddfd11141
+ms.sourcegitcommit: 3be3537ead3388a6810410dfbfe19fc210f89fec
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/01/2020
-ms.locfileid: "89230353"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89647406"
 ---
 # <a name="use-automated-ml-in-an-azure-machine-learning-pipeline-in-python"></a>Использование автоматизированного ML в конвейере Машинное обучение Azure в Python
 [!INCLUDE [applies-to-skus](../../includes/aml-applies-to-basic-enterprise-sku.md)]
@@ -41,7 +41,7 @@ ms.locfileid: "89230353"
 
 
 > [!TIP]
-> Улучшенный интерфейс передачи временных данных между этапами конвейера доступен в классах общедоступной предварительной версии  [`OutputFileDatasetConfig`](https://docs.microsoft.com/python/api/azureml-core/azureml.data.outputfiledatasetconfig?view=azure-ml-py) и [`OutputTabularDatasetConfig`](https://docs.microsoft.com/python/api/azureml-core/azureml.data.output_dataset_config.outputtabulardatasetconfig?view=azure-ml-py) .  Эти классы являются [экспериментальными](https://docs.microsoft.com/python/api/overview/azure/ml/?view=azure-ml-py#stable-vs-experimental) функциями предварительной версии и могут измениться в любое время.
+> Улучшенный интерфейс передачи временных данных между этапами конвейера доступен в классах общедоступной предварительной версии  [`OutputFileDatasetConfig`](https://docs.microsoft.com/python/api/azureml-core/azureml.data.outputfiledatasetconfig?view=azure-ml-py&preserve-view=true) и [`OutputTabularDatasetConfig`](https://docs.microsoft.com/python/api/azureml-core/azureml.data.output_dataset_config.outputtabulardatasetconfig?view=azure-ml-py&preserve-view=true) .  Эти классы являются [экспериментальными](https://docs.microsoft.com/python/api/overview/azure/ml/?view=azure-ml-py#&preserve-view=truestable-vs-experimental) функциями предварительной версии и могут измениться в любое время.
 
 `AutoMLStep`Объект настраивается с помощью `AutoMLConfig` объекта. `AutoMLConfig` является гибким классом, как описано в разделе [Настройка автоматизированных экспериментов машинного обучения в Python](https://docs.microsoft.com/azure/machine-learning/how-to-configure-auto-train#configure-your-experiment-settings). 
 
@@ -251,7 +251,7 @@ dataprep_step = PythonScriptStep(
 `prepped_data_path`Объект имеет тип `PipelineOutputFileDataset` . Обратите внимание, что он указан как в `arguments` аргументах, так и в `outputs` . Если просмотреть предыдущий шаг, вы увидите, что в коде подготовки данных значение аргумента `'--output_path'` — это путь к файлу, в который был записан файл Parquet. 
 
 > [!TIP]
-> С помощью общедоступного класса предварительной версии можно улучшить процесс передачи промежуточных данных между этапами конвейера `OutputFileDatasetConfig` . Дополнительные сведения о `OutputFileDatasetConfig` шаблонах и методах разработки см. в [справочной документации по пакету SDK](https://docs.microsoft.com/python/api/azureml-core/azureml.data.outputfiledatasetconfig?view=azure-ml-py).
+> С помощью общедоступного класса предварительной версии можно улучшить процесс передачи промежуточных данных между этапами конвейера [`OutputFileDatasetConfig`](https://docs.microsoft.com/python/api/azureml-core/azureml.data.outputfiledatasetconfig?view=azure-ml-py&preserve-view=true) . Пример кода с использованием `OutputFileDatasetConfig` класса см. в разделе [создание конвейера машинного обучения на два этапа](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/work-with-data/datasets-tutorial/pipeline-with-datasets/pipeline-for-image-classification.ipynb).
 
 ## <a name="train-with-automlstep"></a>Обучение с помощью Аутомлстеп
 
@@ -270,7 +270,7 @@ prepped_data = prepped_data_path.parse_parquet_files(file_extension=None)
 В приведенном выше фрагменте кода создается высокопроизводительный `PipelineOutputTabularDataset` `PipelineOutputFileDataset` результат выполнения этапа подготовки данных.
 
 > [!TIP]
-> Открытый класс предварительной версии `OutputFileDatasetConfig` также имеет возможность преобразования в в `OutputFileDatasetConfig` [`OutputTabularDatasetConfig`](https://docs.microsoft.com/python/api/azureml-core/azureml.data.output_dataset_config.outputtabulardatasetconfig?view=azure-ml-py) для использования в аутомл. Дополнительные сведения о `OutputFileDatasetConfig` шаблонах и методах разработки см. в [справочной документации по пакету SDK](https://docs.microsoft.com/python/api/azureml-core/azureml.data.outputfiledatasetconfig?view=azure-ml-py).
+> Класс общедоступной предварительной версии [`OutputFileDatasetConfig`](https://docs.microsoft.com/python/api/azureml-core/azureml.data.outputfiledatasetconfig?view=azure-ml-py&preserve-view=true) содержит метод [read_delimited_files ()](https://docs.microsoft.com/python/api/azureml-core/azureml.data.outputfiledatasetconfig?view=azure-ml-py#&preserve-view=trueread-delimited-files-include-path-false--separator------header--promoteheadersbehavior-all-files-have-same-headers--3---partition-format-none--path-glob-none--set-column-types-none-) , который преобразует `OutputFileDatasetConfig` в [`OutputTabularDatasetConfig`](https://docs.microsoft.com/python/api/azureml-core/azureml.data.output_dataset_config.outputtabulardatasetconfig?view=azure-ml-py&preserve-view=true) для использования в аутомл выполняются.
 
 Другой вариант — использовать `Dataset` объекты, зарегистрированные в рабочей области:
 
@@ -520,7 +520,7 @@ model.get_port_data_reference().download('.')
 
 Наконец, фактические метрики и модель загружаются на локальный компьютер, как было сказано в разделе "анализ результатов конвейера" выше.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Next Steps
 
 - Запустите эту записную книжку Jupyter, где [приведен полный пример автоматизированного ML в конвейере](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/machine-learning-pipelines/nyc-taxi-data-regression-model-building/nyc-taxi-data-regression-model-building.ipynb) , который использует регрессию для прогнозирования такси году
 - [Создание автоматизированных экспериментов ML без написания кода](how-to-use-automated-ml-for-ml-models.md)
