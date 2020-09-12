@@ -7,14 +7,14 @@ author: HeidiSteen
 ms.author: heidist
 ms.service: cognitive-search
 ms.topic: conceptual
-ms.date: 04/15/2020
+ms.date: 09/08/2020
 ms.custom: devx-track-javascript, devx-track-csharp
-ms.openlocfilehash: c0031b09dbb3335113cb52c9b3ec5e4fd4fa2758
-ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
+ms.openlocfilehash: 8be53838f6262eaafc643bc78fd08b6f02d9bac6
+ms.sourcegitcommit: f8d2ae6f91be1ab0bc91ee45c379811905185d07
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89011585"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89660256"
 ---
 # <a name="add-autocomplete-and-suggestions-to-client-apps"></a>Добавление автозаполнения и предложений в клиентские приложения
 
@@ -139,9 +139,11 @@ source: "/home/suggest?highlights=true&fuzzy=true&",
 
 ### <a name="suggest-function"></a>Предложение Function
 
-Если вы используете C# и приложение MVC, файл **HomeController.CS** в каталоге Controllers — это место, где можно создать класс для предлагаемых результатов. В .NET функция предлагаю основана на [методе документсоператионсекстенсионс. предлагаю](/dotnet/api/microsoft.azure.search.documentsoperationsextensions.suggest?view=azure-dotnet).
+Если вы используете C# и приложение MVC, файл **HomeController.CS** в каталоге Controllers — это место, где можно создать класс для предлагаемых результатов. В .NET функция предлагаю основана на [методе документсоператионсекстенсионс. предлагаю](/dotnet/api/microsoft.azure.search.documentsoperationsextensions.suggest?view=azure-dotnet). Дополнительные сведения о пакете SDK для .NET см. в статье [использование когнитивный Поиск Azure из приложения .NET](./search-howto-dotnet-sdk.md).
 
-`InitSearch`Метод создает клиент индексов HTTP с проверкой подлинности в службе когнитивный Поиск Azure. Дополнительные сведения о пакете SDK для .NET см. в статье [использование когнитивный Поиск Azure из приложения .NET](./search-howto-dotnet-sdk.md).
+`InitSearch`Метод создает клиент индексов HTTP с проверкой подлинности в службе когнитивный Поиск Azure. Свойства класса [сугжестпараметерс](https://docs.microsoft.com/dotnet/api/microsoft.azure.search.models.suggestparameters) определяют, какие поля ищутся и возвращаются в результатах, число совпадений и используется ли нечеткое сопоставление. 
+
+Для автозаполнения ограничение нечеткого сопоставления ограничено одним расстоянием правки (одним пропущенным или недопустимым символом). Обратите внимание, что нечеткие совпадения в запросах автозаполнения иногда могут привести к непредвиденным результатам в зависимости от размера индекса и его сегментирования. Дополнительные сведения см. в разделе [Основные понятия секционирования и сегментирования](search-capacity-planning.md#concepts-search-units-replicas-partitions-shards).
 
 ```csharp
 public ActionResult Suggest(bool highlights, bool fuzzy, string term)
@@ -250,5 +252,5 @@ public ActionResult AutoComplete(string term)
 Используйте эти ссылки для получения комплексных инструкций или кода, демонстрирующих возможности поиска как типов. Оба примера кода включают гибридные реализации предложений и автозаполнения вместе.
 
 + [Учебник. Создание первого приложения на C# (урок 3)](tutorial-csharp-type-ahead-and-suggestions.md)
-+ [Пример кода C#: Azure-Search-DotNet-Samples/Create-First-App/3 — Add-typeahead/](https://github.com/Azure-Samples/azure-search-dotnet-samples/tree/master/create-first-app/3-add-typeahead)
++ [Пример кода C#: Azure-Search-DotNet-Samples/Create-First-App/3 — Add-typeahead/](https://github.com/Azure-Samples/azure-search-dotnet-samples/tree/master/create-first-app/v10/3-add-typeahead)
 + [Пример кода на C# и JavaScript с использованием параллельной программы RESTFUL](https://github.com/Azure-Samples/search-dotnet-getting-started/tree/master/DotNetHowToAutocomplete)

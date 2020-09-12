@@ -9,12 +9,12 @@ ms.topic: troubleshooting
 author: luisquintanilla
 ms.author: luquinta
 ms.date: 08/06/2020
-ms.openlocfilehash: 73cb8396876a5baad74190ec9a86237362037c36
-ms.sourcegitcommit: 4e5560887b8f10539d7564eedaff4316adb27e2c
+ms.openlocfilehash: 1449114ad14ebbd064f95ad2853b516893ba4b12
+ms.sourcegitcommit: f8d2ae6f91be1ab0bc91ee45c379811905185d07
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87908906"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89661689"
 ---
 # <a name="interactive-debugging-with-visual-studio-code"></a>Интерактивная Отладка с помощью Visual Studio Code
 
@@ -26,7 +26,7 @@ ms.locfileid: "87908906"
 
 В некоторых случаях может потребоваться интерактивно отлаживать код Python, используемый в конвейере машинного обучения. С помощью VS Code и дебугпи можно присоединяться к коду, как он выполняется в среде обучения.
 
-### <a name="prerequisites"></a>Предварительные условия
+### <a name="prerequisites"></a>Предварительные требования
 
 * __Рабочая область машинное обучение Azure__ , настроенная для использования __виртуальной сети Azure__.
 * __Конвейер машинное обучение Azure__ , использующий скрипты Python в рамках этапов конвейера. Например, Писонскриптстеп.
@@ -37,7 +37,7 @@ ms.locfileid: "87908906"
   * Вычислительный экземпляр виртуальной машины записной книжки в виртуальной сети
   * Клиентский компьютер, имеющий подключение к виртуальной сети по частной сети либо по VPN, либо через ExpressRoute.
 
-Дополнительные сведения об использовании виртуальной сети Azure с Машинное обучение Azure см. в статье [Защита заданий экспериментирования и вывода машинного обучения Azure в виртуальной сети Azure](how-to-enable-virtual-network.md).
+Дополнительные сведения об использовании виртуальной сети Azure с Машинное обучение Azure см. в статье [Общие сведения о изоляции и конфиденциальности виртуальной сети](how-to-network-security-overview.md).
 
 > [!TIP]
 > Хотя вы можете работать с Машинное обучение Azureными ресурсами, которые не находятся за виртуальной сетью, рекомендуется использовать виртуальную сеть.
@@ -281,7 +281,7 @@ ip_address: 10.3.0.5
 В некоторых случаях может потребоваться интерактивная отладка кода Python, содержащегося в развертывании модели. Например, если начальный сценарий не работает и причину невозможно определить с помощью дополнительного ведения журнала. С помощью VS Code и дебугпи можно присоединяться к коду, выполняющемуся в контейнере DOCKER.
 
 > [!IMPORTANT]
-> Этот метод отладки не работает при использовании `Model.deploy()` и `LocalWebservice.deploy_configuration` для развертывания модели в локальной среде. В этом случае необходимо создать образ, используя метод [Model.package()](https://docs.microsoft.com/python/api/azureml-core/azureml.core.model.model?view=azure-ml-py#package-workspace--models--inference-config-none--generate-dockerfile-false-).
+> Этот метод отладки не работает при использовании `Model.deploy()` и `LocalWebservice.deploy_configuration` для развертывания модели в локальной среде. В этом случае необходимо создать образ, используя метод [Model.package()](https://docs.microsoft.com/python/api/azureml-core/azureml.core.model.model?view=azure-ml-py#&preserve-view=truepackage-workspace--models--inference-config-none--generate-dockerfile-false-).
 
 Для локальных развертываний веб-службы требуется рабочая установка Docker в локальной системе. Дополнительные сведения об использовании Docker см. в [соответствующей документации](https://docs.docker.com/). Обратите внимание, что при работе с экземплярами вычислений DOCKER уже установлен.
 

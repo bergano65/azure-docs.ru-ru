@@ -6,19 +6,19 @@ ms.author: flborn
 ms.date: 02/12/2010
 ms.topic: how-to
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 0488f467a036957bf2341aab63919a105f383bdf
-ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
+ms.openlocfilehash: 420ff7ed838bc9fa14c1276ae0a70220fc7e11a9
+ms.sourcegitcommit: 70ee014d1706e903b7d1e346ba866f5e08b22761
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89003530"
+ms.lasthandoff: 09/11/2020
+ms.locfileid: "90024066"
 ---
 # <a name="use-the-azure-frontend-apis-for-authentication"></a>Использование внешних API Azure для проверки подлинности
 
 В этом разделе мы рассмотрим, как использовать API для проверки подлинности и управления сеансами.
 
 > [!CAUTION]
-Функции, описанные в этой главе, выдают внутренним функциям вызовы RESTFUL на сервере. Как и для всех вызовов RESTFUL, отправка этих команд слишком часто приведет к тому, что сервер будет регулировать и возвращать ошибку в конечном итоге. `SessionGeneralContext.HttpResponseCode`В данном случае значение элемента равно 429 ("слишком много запросов"). В качестве правила "бегунок" **между последовательными вызовами**должна быть задержка в 5-10 секунд.
+> Функции, описанные в этой главе, выдают внутренним функциям вызовы RESTFUL на сервере. Как и для всех вызовов RESTFUL, отправка этих команд слишком часто приведет к тому, что сервер будет регулировать и возвращать ошибку в конечном итоге. `SessionGeneralContext.HttpResponseCode`В данном случае значение элемента равно 429 ("слишком много запросов"). Поэтому очень важно, чтобы между последовательными вызовами была задержка в **5–10 секунд**.
 
 
 ## <a name="azurefrontendaccountinfo"></a>AzureFrontendAccountInfo

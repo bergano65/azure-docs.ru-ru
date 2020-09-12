@@ -9,12 +9,12 @@ ms.topic: how-to
 ms.date: 08/20/2020
 ms.author: tamram
 ms.reviewer: fryu
-ms.openlocfilehash: 3d46df8847a5865c42438ea36245ead0f1e6e528
-ms.sourcegitcommit: e69bb334ea7e81d49530ebd6c2d3a3a8fa9775c9
+ms.openlocfilehash: f65bf2bbe174ff90d5a0b962768833b8668f6400
+ms.sourcegitcommit: 43558caf1f3917f0c535ae0bf7ce7fe4723391f9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "88951123"
+ms.lasthandoff: 09/11/2020
+ms.locfileid: "90019722"
 ---
 # <a name="prevent-shared-key-authorization-for-an-azure-storage-account-preview"></a>Запретить авторизацию общего ключа для учетной записи хранения Azure (Предварительная версия)
 
@@ -213,7 +213,7 @@ resources
 
 | Средство Azure | Авторизация Azure AD в службе хранилища Azure |
 |-|-|
-| Портал Azure | Поддерживается. Сведения об авторизации учетной записи Azure AD из портал Azure см. в разделе [Выбор способа авторизации доступа к данным BLOB-объектов или очередей в портал Azure](storage-access-blobs-queues-portal.md). |
+| Портал Azure | Поддерживается. Сведения об авторизации учетной записи Azure AD из портал Azure см. в разделе [Выбор способа авторизации доступа к данным BLOB-объектов в портал Azure](../blobs/authorize-blob-access-portal.md). |
 | AzCopy | Поддерживается для хранилища BLOB-объектов. Сведения об авторизации операций AzCopy см. в разделе [Выбор порядка предоставления учетных данных авторизации](storage-use-azcopy-v10.md#choose-how-youll-provide-authorization-credentials) в документации AzCopy. |
 | Обозреватель службы хранилища Azure | Поддерживается только для хранилища BLOB-объектов и Azure Data Lake Storage 2-го поколения. Доступ Azure AD к хранилищу очередей не поддерживается. Убедитесь, что выбран правильный клиент Azure AD. Дополнительные сведения см. в статье [Приступая к работе с обозреватель службы хранилища](/azure/vs-azure-tools-storage-manage-with-storage-explorer?tabs=windows#sign-in-to-azure) |
 | Azure PowerShell | Поддерживается. Сведения о том, как авторизовать команды PowerShell с помощью Azure AD для доступа к данным BLOB-объектов и очередей, см. [в статье запуск команд PowerShell с учетными данными Azure AD для доступа к данным BLOB-объектов или очередей](authorize-active-directory-powershell.md). |
@@ -245,7 +245,7 @@ resources
 
 Если доступ к общим ключам не разрешен для учетной записи хранения во время предварительной версии, подписанные URL-адрес, предназначенные для целевых ресурсов очереди, таблицы или службы файлов Azure, остаются разрешенными. Это ограничение относится как к токенам SAS службы, так и к маркерам SAS учетной записи. Оба типа SAS додаются авторизации с помощью общего ключа.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Авторизация доступа к данным в службе хранилища Azure](storage-auth.md)
 - [Авторизация доступа к BLOB-объектам и очередям с помощью Azure Active Directory](storage-auth-aad.md)

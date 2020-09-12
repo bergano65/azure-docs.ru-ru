@@ -11,14 +11,14 @@ ms.author: nigup
 author: nishankgu
 ms.date: 07/24/2020
 ms.custom: how-to, seodec18
-ms.openlocfilehash: afffdd0267cde8ffc841587748e51dd27e021369
-ms.sourcegitcommit: 2ffa5bae1545c660d6f3b62f31c4efa69c1e957f
+ms.openlocfilehash: 235135cbbcc7c622f4dd23c2e4f29cc3636dc1ea
+ms.sourcegitcommit: f8d2ae6f91be1ab0bc91ee45c379811905185d07
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/11/2020
-ms.locfileid: "88079592"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89661935"
 ---
-# <a name="manage-access-to-an-azure-machine-learning-workspace"></a>Управление доступом к рабочей области Машинное обучение Azure
+# <a name="manage-access-to-an-azure-machine-learning-workspace"></a>Управление доступом к рабочей области Машинного обучения Azure
 [!INCLUDE [aml-applies-to-basic-enterprise-sku](../../includes/aml-applies-to-basic-enterprise-sku.md)]
 
 Из этой статьи вы узнаете, как управлять доступом к рабочей области Машинное обучение Azure. Управление [доступом на основе ролей Azure (Azure RBAC)](/azure/role-based-access-control/overview) используется для управления доступом к ресурсам Azure. Пользователям в Azure Active Directory назначаются определенные роли, которые предоставляют доступ к ресурсам. Azure предоставляет встроенные роли и возможность создания пользовательских ролей.
@@ -135,16 +135,16 @@ az ml workspace share -w my_workspace -g my_resource_group --role "Data Scientis
 | Действие | Область действия уровня подписки | Область действия уровня группы ресурсов | Область уровня рабочей области |
 | ----- | ----- | ----- | ----- |
 | Создать рабочую область | Не требуется | Владелец или участник | Н/д (владелец или наследует роль более высокого уровня после создания) |
-| Обновление выпуска рабочей области | Не требуется | Не требуется | Владелец, участник или пользовательская роль, которая позволяет:`/workspaces/write` |
-| Запросить квоту на уровне подписки Амлкомпуте или задать квоту на уровне рабочей области | Владелец, участник или пользовательская роль </br>позволяя`/locations/updateQuotas/action`</br> в области действия подписки | Не санкционировано | Не санкционировано |
-| Создать новый кластер вычислений | Не требуется | Не требуется | Владелец, участник или пользовательская роль, которая позволяет:`/workspaces/computes/write` |
-| Создание нового вычислительного экземпляра | Не требуется | Не требуется | Владелец, участник или пользовательская роль, которая позволяет:`/workspaces/computes/write` |
-| Отправка любого типа запуска | Не требуется | Не требуется | Владелец, участник или пользовательская роль, которая позволяет:`"/workspaces/*/read", "/workspaces/environments/write", "/workspaces/experiments/runs/write", "/workspaces/metadata/artifacts/write", "/workspaces/metadata/snapshots/write", "/workspaces/environments/build/action", "/workspaces/experiments/runs/submit/action", "/workspaces/environments/readSecrets/action"` |
-| Публикация конечной точки конвейера | Не требуется | Не требуется | Владелец, участник или пользовательская роль, которая позволяет:`"/workspaces/pipelines/write", "/workspaces/endpoints/pipelines/*", "/workspaces/pipelinedrafts/*", "/workspaces/modules/*"` |
-| Развертывание зарегистрированной модели в ресурсе AKS/ACI | Не требуется | Не требуется | Владелец, участник или пользовательская роль, которая позволяет:`"/workspaces/services/aks/write", "/workspaces/services/aci/write"` |
+| Обновление выпуска рабочей области | Не требуется | Не требуется | Владелец, участник или пользовательская роль, которая позволяет: `/workspaces/write` |
+| Запросить квоту на уровне подписки Амлкомпуте или задать квоту на уровне рабочей области | Владелец, участник или пользовательская роль </br>позволяя `/locations/updateQuotas/action`</br> в области действия подписки | Не санкционировано | Не санкционировано |
+| Создать новый кластер вычислений | Не требуется | Не требуется | Владелец, участник или пользовательская роль, которая позволяет: `/workspaces/computes/write` |
+| Создание нового вычислительного экземпляра | Не требуется | Не требуется | Владелец, участник или пользовательская роль, которая позволяет: `/workspaces/computes/write` |
+| Отправка любого типа запуска | Не требуется | Не требуется | Владелец, участник или пользовательская роль, которая позволяет: `"/workspaces/*/read", "/workspaces/environments/write", "/workspaces/experiments/runs/write", "/workspaces/metadata/artifacts/write", "/workspaces/metadata/snapshots/write", "/workspaces/environments/build/action", "/workspaces/experiments/runs/submit/action", "/workspaces/environments/readSecrets/action"` |
+| Публикация конечной точки конвейера | Не требуется | Не требуется | Владелец, участник или пользовательская роль, которая позволяет: `"/workspaces/pipelines/write", "/workspaces/endpoints/pipelines/*", "/workspaces/pipelinedrafts/*", "/workspaces/modules/*"` |
+| Развертывание зарегистрированной модели в ресурсе AKS/ACI | Не требуется | Не требуется | Владелец, участник или пользовательская роль, которая позволяет: `"/workspaces/services/aks/write", "/workspaces/services/aci/write"` |
 | Оценка по развернутой конечной точке AKS | Не требуется | Не требуется | Владелец, участник или настраиваемая роль: `"/workspaces/services/aks/score/action", "/workspaces/services/aks/listkeys/action"` (если не используется Azure Active Directory auth) или `"/workspaces/read"` (при использовании токена проверки подлинности) |
-| Доступ к хранилищу с помощью интерактивных записных книжек | Не требуется | Не требуется | Владелец, участник или пользовательская роль, которая позволяет:`"/workspaces/computes/read", "/workspaces/notebooks/samples/read", "/workspaces/notebooks/storage/*"` |
-| Создать новую настраиваемую роль | Владелец, участник или пользовательская роль, допускающая`Microsoft.Authorization/roleDefinitions/write` | Не требуется | Владелец, участник или пользовательская роль, которая позволяет:`/workspaces/computes/write` |
+| Доступ к хранилищу с помощью интерактивных записных книжек | Не требуется | Не требуется | Владелец, участник или пользовательская роль, которая позволяет: `"/workspaces/computes/read", "/workspaces/notebooks/samples/read", "/workspaces/notebooks/storage/*"` |
+| Создать новую настраиваемую роль | Владелец, участник или пользовательская роль, допускающая `Microsoft.Authorization/roleDefinitions/write` | Не требуется | Владелец, участник или пользовательская роль, которая позволяет: `/workspaces/computes/write` |
 
 > [!TIP]
 > Если при первом создании рабочей области возникает ошибка, убедитесь, что она разрешена `Microsoft.MachineLearningServices/register/action` . Это действие позволяет зарегистрировать поставщик Машинное обучение Azure ресурсов в подписке Azure.
@@ -429,6 +429,6 @@ az role definition update --role-definition update_def.json --subscription <sub-
 ## <a name="next-steps"></a>Дальнейшие действия
 
 - [Общие сведения об обеспечении безопасности на уровне предприятия](concept-enterprise-security.md)
-- [Безопасный запуск экспериментов и выведение/Оценка в виртуальной сети](how-to-enable-virtual-network.md)
+- [Общие сведения о изоляции и конфиденциальности виртуальной сети](how-to-network-security-overview.md)
 - [Руководство. Обучение моделей](tutorial-train-models-with-aml.md)
 - [Операции с поставщиками ресурсов](/azure/role-based-access-control/resource-provider-operations#microsoftmachinelearningservices)

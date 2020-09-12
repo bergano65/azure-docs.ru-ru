@@ -13,12 +13,12 @@ ms.custom:
 - mqtt
 - 'Role: Cloud Development'
 - 'Role: IoT Device'
-ms.openlocfilehash: 619bc7cec2f8a79a656cf3a7ad1f86d1e5786abb
-ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
+ms.openlocfilehash: 1792535fab79ed20bdf77f96b4fc39f13b0c7bbb
+ms.sourcegitcommit: 43558caf1f3917f0c535ae0bf7ce7fe4723391f9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87322998"
+ms.lasthandoff: 09/11/2020
+ms.locfileid: "90016012"
 ---
 # <a name="reference---choose-a-communication-protocol"></a>Справочник — выбор протокола связи
 
@@ -55,11 +55,13 @@ ms.locfileid: "87322998"
 > [!WARNING]
 > При использовании протокола HTTPS каждое устройство должно опрашивать сообщения, отправляемые из облака на устройство, не более чем один раз каждые 25 минут. В процессе разработки каждое устройство может опрашиваться чаще, если это необходимо.
 
+[!INCLUDE [iot-hub-include-x509-ca-signed-support-note](../../includes/iot-hub-include-x509-ca-signed-support-note.md)]
+
 ## <a name="port-numbers"></a>Номера портов
 
 Устройства могут взаимодействовать с Центром Интернета вещей в Azure с использованием различных протоколов. Как правило, выбор протокола определяется конкретными требованиями решения. В следующей таблице перечислены исходящие порты, которые должны быть открыты, чтобы устройство могло воспользоваться определенным протоколом.
 
-| Протокол | Порт |
+| Протокол | Port |
 | --- | --- |
 | MQTT |8883 |
 | MQTT через WebSocket |443 |

@@ -8,12 +8,12 @@ ms.service: hdinsight
 ms.topic: conceptual
 ms.custom: seoapr2020
 ms.date: 04/21/2020
-ms.openlocfilehash: b74ca75b26d4d98c79091683f428eb39e5827665
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 6e46cca28c049a794db617797d5f09e9f3b5720d
+ms.sourcegitcommit: 3c66bfd9c36cd204c299ed43b67de0ec08a7b968
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "82183506"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "90006897"
 ---
 # <a name="transport-layer-security-in-azure-hdinsight"></a>Безопасность транспортного уровня в Azure HDInsight
 
@@ -21,8 +21,6 @@ ms.locfileid: "82183506"
 
 По умолчанию кластеры Azure HDInsight принимают TLS 1,2 подключений на общедоступных конечных точках HTTPS и более ранние версии для обеспечения обратной совместимости. Вы можете управлять минимальной версией TLS, поддерживаемой на узлах шлюза во время создания кластера, с помощью портал Azure или шаблона диспетчер ресурсов. На портале выберите версию TLS на вкладке **безопасность и сеть** во время создания кластера. Для шаблона диспетчер ресурсов во время развертывания используйте свойство **минсуппортедтлсверсион** . Пример шаблона см. в статье шаблон быстрого запуска для [HDInsight минимум TLS 1,2](https://github.com/Azure/azure-quickstart-templates/tree/master/101-hdinsight-minimum-tls). Это свойство поддерживает три значения: "1,0", "1,1" и "1,2", которые соответствуют TLS 1.0 +, TLS 1.1 + и TLS 1.2 + соответственно.
 
-> [!IMPORTANT]
-> Начиная с 30 июня 2020, Azure HDInsight будет применять TLS 1,2 или более поздние версии для всех подключений HTTPS. Рекомендуется убедиться, что все клиенты готовы к обработке TLS 1,2 или более поздних версий. Дополнительные сведения см. в статье [принудительное применение Azure HDINSIGHT TLS 1,2](https://azure.microsoft.com/updates/azure-hdinsight-tls-12-enforcement/).
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

@@ -6,12 +6,12 @@ ms.suite: integration
 ms.reviewer: arthii, logicappspm
 ms.topic: article
 ms.date: 05/15/2020
-ms.openlocfilehash: 9e50cdb16ee6acbdb903681984dcfbd7bfe170fa
-ms.sourcegitcommit: 5b8fb60a5ded05c5b7281094d18cf8ae15cb1d55
+ms.openlocfilehash: f646af4cad6101e019e58f4f50a40b07aff19461
+ms.sourcegitcommit: f8d2ae6f91be1ab0bc91ee45c379811905185d07
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87386135"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89660479"
 ---
 # <a name="install-on-premises-data-gateway-for-azure-logic-apps"></a>Установка локального шлюза данных для Azure Logic Apps
 
@@ -33,7 +33,7 @@ ms.locfileid: "87386135"
   * Ваша учетная запись Azure должна быть рабочей или учебной учетной записью, которая выглядит как `username@contoso.com` . Невозможно использовать учетные записи Azure B2B (гостевые) или личные учетные записи Майкрософт, например @hotmail.com или @outlook.com.
 
     > [!NOTE]
-    > Если вы зарегистрировались для использования предложения Office 365 и не предоставили рабочий электронный адрес, то ваш адрес может выглядеть так: `username@domain.onmicrosoft.com`. Ваша учетная запись хранится в клиенте Azure AD. В большинстве случаев имя участника-пользователя (UPN) для учетной записи Azure совпадает с адресом электронной почты.
+    > Если вы зарегистрировались для предложения Microsoft 365 и не представити свой рабочий адрес электронной почты, ваш адрес может выглядеть так `username@domain.onmicrosoft.com` . Ваша учетная запись хранится в клиенте Azure AD. В большинстве случаев имя участника-пользователя (UPN) для учетной записи Azure совпадает с адресом электронной почты.
 
     Чтобы использовать [стандартную подписку Visual Studio](https://visualstudio.microsoft.com/vs/pricing/) , связанную с учетная запись Майкрософт, сначала [Создайте клиент Azure AD](../active-directory/develop/quickstart-create-new-tenant.md) или используйте каталог по умолчанию. Добавьте в каталог пользователя с паролем, а затем предоставьте этому пользователю доступ к своей подписке Azure. Затем вы можете войти в систему во время установки шлюза, используя эти имя пользователя и пароль.
 

@@ -10,12 +10,12 @@ ms.service: security-center
 ms.topic: conceptual
 ms.date: 06/30/2020
 ms.author: memildin
-ms.openlocfilehash: 69f439e102edc53207e44d63cb29396f64f59e0e
-ms.sourcegitcommit: 2bab7c1cd1792ec389a488c6190e4d90f8ca503b
+ms.openlocfilehash: e2f72cc0ea6851caaf5d0db2f17f8e16473d420e
+ms.sourcegitcommit: 0194a29a960e3615f96a2d9d8a7e681cf3e8f9ab
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88272507"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89667556"
 ---
 # <a name="threat-protection-in-azure-security-center"></a>Защита от угроз с помощью Центра безопасности Azure
 
@@ -25,7 +25,7 @@ ms.locfileid: "88272507"
 
 * **Защита от угроз для вычислительных ресурсов Azure**. Компьютеры с Windows и Linux, Служба приложений Azure и контейнеры Azure.
 
-* **Защита от угроз для ресурсов данных Azure**. База данных SQL и хранилище данных SQL, служба хранилища Azure и Azure Cosmos DB.
+* **Защита от угроз для ресурсов данных Azure**: база данных SQL и Azure синапсе Analytics (ранее — хранилище данных SQL), служба хранилища azure и Azure Cosmos DB
 
 * **Защита от угроз для уровней служб Azure**. Сетевой уровень Azure, уровень управления Azure (Azure Resource Manager) (предварительная версия) и Azure Key Vault (предварительная версия).
 
@@ -131,19 +131,19 @@ ms.locfileid: "88272507"
 
 
 
-## <a name="threat-protection-for-sql-database-and-sql-data-warehouse"></a>Защита от угроз для Базы данных SQL и хранилища данных SQL <a name="data-sql"></a>
+## <a name="threat-protection-for-sql-database-and-azure-synapse-analytics-formerly-sql-data-warehouse"></a>Защита от угроз для базы данных SQL и Azure синапсе Analytics (ранее — хранилище данных SQL) <a name="data-sql"></a>
 
 Служба "Расширенная защита от угроз" для Базы данных SQL Azure позволяет выявить подозрительную активность, указывающую на необычные и потенциально опасные попытки получить доступ к базам данных или воспользоваться ими.
 
 Вы получаете оповещения о подозрительных действиях с базами данных, потенциальных уязвимостях, атаках путем внедрения кода SQL и аномальных закономерностях в доступе к базам данных и шаблонах запросов.
 
-Расширенная защита от угроз для базы данных SQL Azure и SQL входит в состав унифицированного пакета [расширенной защиты данных (ADS)](https://docs.microsoft.com/azure/sql-database/sql-database-advanced-data-security) для расширенных возможностей обеспечения безопасности SQL, охватывающих базу данных SQL Azure, управляемые экземпляры Azure SQL, базы данных хранилища данных SQL Azure и серверы SQL Server на виртуальных машинах Azure.
+Расширенная защита от угроз для базы данных SQL Azure и SQL входит в состав унифицированного пакета [расширенной защиты данных (ADS)](https://docs.microsoft.com/azure/sql-database/sql-database-advanced-data-security) для расширенных возможностей обеспечения безопасности SQL, охватывающих базы данных SQL Azure, управляемые экземпляры Azure SQL, Azure синапсе Analytics (ранее — хранилище данных SQL) и серверы SQL Server на виртуальных машинах Azure.
 
 Дополнительные сведения см. в разделе:
 
 * [Включение Расширенной защиты от угроз для Базы данных SQL Azure](https://docs.microsoft.com/azure/sql-database/sql-database-threat-detection-overview)
 * [Включение Расширенной защиты от угроз для серверов SQL Server на виртуальных машинах Azure](security-center-iaas-advanced-data.md)
-* [Список оповещений системы защиты от угроз для Базы данных SQL и хранилища данных SQL](alerts-reference.md#alerts-sql-db-and-warehouse)
+* [Список оповещений защиты от угроз для базы данных SQL и Azure синапсе Analytics (ранее — хранилище данных SQL)](alerts-reference.md#alerts-sql-db-and-warehouse)
 
 
 
@@ -164,8 +164,6 @@ ms.locfileid: "88272507"
 Защита от угроз для службы хранилища Azure обнаруживает потенциально опасные действия в учетных записях хранения Azure. Данные могут быть защищены независимо от того, хранятся ли они в виде контейнеров больших двоичных объектов, файловых ресурсов или озера данных.
 
 Этот уровень защиты позволяет устранять угрозы *без* необходимости быть экспертом по безопасности и помогает управлять системами мониторинга безопасности.
-
-Учетные записи хранения защищены 
 
 ### <a name="what-kind-of-alerts-does-threat-protection-for-azure-storage-provide"></a>Какие оповещения предоставляет служба защиты от угроз для службы хранилища Azure?
 
@@ -204,7 +202,7 @@ ms.locfileid: "88272507"
 
 
 
-## <a name="threat-protection-for-azure-cosmos-db"></a>Защита от угроз для Azure Cosmos DB <a name="cosmos-db"></a>
+## <a name="threat-protection-for-azure-cosmos-db-preview"></a>Защита от угроз для Azure Cosmos DB (Предварительная версия) <a name="cosmos-db"></a>
 
 Оповещения Azure Cosmos DB создаются при нестандартных и потенциально вредоносных попытках получить доступ к учетным записям Azure Cosmos DB или использовать их.
 

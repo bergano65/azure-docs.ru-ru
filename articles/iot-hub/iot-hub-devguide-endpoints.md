@@ -13,12 +13,12 @@ ms.custom:
 - mqtt
 - 'Role: Cloud Development'
 - 'Role: System Architecture'
-ms.openlocfilehash: 7e59229f6664dc8966aa491e9d2ded1abbd5536f
-ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
+ms.openlocfilehash: 9ae21b2a6d470b959f5e869e8a9edda9c56bec73
+ms.sourcegitcommit: 43558caf1f3917f0c535ae0bf7ce7fe4723391f9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87323049"
+ms.lasthandoff: 09/11/2020
+ms.locfileid: "90019569"
 ---
 # <a name="reference---iot-hub-endpoints"></a>Руководство. Конечные точки Центра Интернета вещей
 
@@ -55,6 +55,8 @@ ms.locfileid: "87323049"
   * *Получение и обновление свойств двойников устройств*. Устройство использует эти конечные точки для доступа к свойствам [своего двойника](iot-hub-devguide-device-twins.md). HTTPS не поддерживается.
 
   * *Получение запросов прямых методов*. Устройство использует эту конечную точку для ожидания передачи данных запросов [прямых методов](iot-hub-devguide-direct-methods.md). HTTPS не поддерживается.
+
+  [!INCLUDE [iot-hub-include-x509-ca-signed-support-note](../../includes/iot-hub-include-x509-ca-signed-support-note.md)]
 
 * **Конечные точки службы**. Каждый Центр Интернета вещей предоставляет набор конечных точек серверной части решения для взаимодействия с устройствами. За одним исключением эти конечные точки предоставляются только через протоколы WebSocket [AMQP](https://www.amqp.org/) и AMQP. Конечная точка вызова прямого метода предоставляется по протоколу HTTPS.
   

@@ -1,27 +1,27 @@
 ---
-title: Общие сведения о сводках по выплатам — Azure Marketplace
+title: Общие сведения о выплатах, Azure Marketplace
 description: В сводке по выплатам отображаются сведения о денежных средствах, полученных вами за свое предложение. Кроме того, с ее помощью можно узнать, когда вы будете получать платежи и сколько вы получите.
 ms.subservice: partnercenter-marketplace-publisher
 ms.service: marketplace
 ms.topic: article
 author: mingshen-ms
 ms.author: mingshen
-ms.date: 07/14/2020
-ms.openlocfilehash: 2e7658e965931dd78a6db0e2c9fee36edffff98b
-ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
+ms.date: 09/09/2020
+ms.openlocfilehash: 708fc2c0783bdefa4ac4fa4b73f10733bba0bc04
+ms.sourcegitcommit: 3c66bfd9c36cd204c299ed43b67de0ec08a7b968
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/31/2020
-ms.locfileid: "87479818"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "90006930"
 ---
 # <a name="payout-summary-overview"></a>Общие сведения о сводках по выплатам
 
 В [сводке по выплатам](./payout-summary.md) отображаются сведения о денежных средствах, полученных вами с помощью корпорации Майкрософт. Кроме того, с ее помощью можно узнать, когда вы будете получать платежи и сколько вы получите.
 
-Если вы продаете свои продукты через Azure Marketplace, также отобразятся сведения об успешных выплатах в сводке. Дополнительные сведения о платежах Azure Marketplace см. в статьях [Политики участия в Azure Marketplace](https://docs.microsoft.com/legal/marketplace/participation-policy) и [Соглашение с издателем Microsoft Azure Marketplace](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4xqkx).
+Если вы продаете предложения в Azure Marketplace, вы также увидите сведения об успешных выплатах в сводке выплата. Дополнительные сведения о платеже Azure Marketplace см. [в разделе Получение платного рынка](./get-paid.md) и [соглашения об использовании Microsoft Publisher](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4xqkx).
 
 > [!NOTE]
-> Чтобы получить выплату, необходимо достигнуть [порогового значения](./payment-thresholds-methods-timeframes.md) в 50 долларов США. Дополнительные сведения о пороговом значении платежа см. в [соглашении с издателем Microsoft Azure Marketplace](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4xqkx).
+> Чтобы получить выплату, необходимо достигнуть порогового значения в 50 долларов США. Дополнительные сведения см. в [соглашении Microsoft Publisher](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4xqkx).
 
 Чтобы просмотреть сведения о выплатах, войдите в [Центр партнеров](https://partner.microsoft.com/dashboard/home) и выберите значок выплата в правом верхнем углу экрана:
 
@@ -29,7 +29,7 @@ ms.locfileid: "87479818"
 
 ## <a name="roles-and-permissions"></a>Роли и разрешения
 
-Ниже указаны роли и разрешения для доступа к отчету о выплатах.
+Это роли и разрешения для доступа к отчету о выплатах:
 
 | Отчеты/страницы | Владелец учетной записи | Manager | Разработчик | Бизнес-участник | Финансист | Маркетолог |
 | --- | --- | --- | --- | --- | --- | --- |
@@ -45,7 +45,7 @@ ms.locfileid: "87479818"
 
 ## <a name="payment-schedules"></a>Расписания оплаты
 
-Обсуждение расписаний оплаты, включая периоды удержания, отображение партнеров и использование кредитной карты или счета клиентом, см. в разделе [Расписания оплаты](./payout-policy-details.md#payment-schedules) статьи **Сведения о выплатах**.
+Обсуждение расписаний оплаты, включая удержание периодов, видимость партнеров и время, когда клиент использует кредитную карту или счет, см. в разделе [расписания оплаты](./payout-policy-details.md#payment-schedules) статьи **сведения о выплатах** .
 
 ## <a name="transaction-history-download-export"></a>Экспорт загруженного журнала транзакций
 

@@ -6,41 +6,32 @@ services: machine-learning
 ms.service: machine-learning
 ms.subservice: core
 ms.topic: conceptual
-ms.custom: how-to
+ms.custom: how-to, contperfq1
 ms.author: jordane
 author: jpe316
 ms.reviewer: larryfr
-ms.date: 06/23/2020
-ms.openlocfilehash: 6c85a7315fe05bb4fedabd176295523c2fa95d81
-ms.sourcegitcommit: b33c9ad17598d7e4d66fe11d511daa78b4b8b330
+ms.date: 09/01/2020
+ms.openlocfilehash: da6554ae3b7df9962e1f57ac652567c282227d64
+ms.sourcegitcommit: f8d2ae6f91be1ab0bc91ee45c379811905185d07
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88855237"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89661652"
 ---
 # <a name="deploy-a-model-to-an-azure-kubernetes-service-cluster"></a>Развертывание модели в кластере службы Azure Kubernetes
 [!INCLUDE [applies-to-skus](../../includes/aml-applies-to-basic-enterprise-sku.md)]
 
 Узнайте, как использовать Машинное обучение Azure для развертывания модели в качестве веб-службы в службе Azure Kubernetes Service (AKS). Служба Azure Kubernetes подходит для крупномасштабных производственных развертываний. Используйте службу Kubernetes Azure, если требуется одна или несколько из следующих возможностей:
 
-- __Быстрое время отклика__.
-- __Автоматическое масштабирование__ развернутой службы.
-- Параметры __аппаратного ускорения__ , такие как многопроцессорные и программируемые массивы ШЛЮЗОВ (FPGA).
+- __Быстрое время отклика__
+- __Автомасштабирование__ развернутой службы
+- __Logging__
+- __Сбор данных модели__
+- __Аутентификация__
+- __Терминирование TLS__
+- Такие параметры __аппаратного ускорения__ , как GPU и программируемые на поля массивы ШЛЮЗОВ (FPGA)
 
-> [!IMPORTANT]
-> Масштабирование кластера не предоставляется с помощью пакета SDK для Машинное обучение Azure. Дополнительные сведения о масштабировании узлов в кластере AKS см. в разделе. 
-- [Ручное масштабирование числа узлов в кластере AKS](../aks/scale-cluster.md)
-- [Настройка автомасштабирования кластера в AKS](../aks/cluster-autoscaler.md)
-
-При развертывании в службе Kubernetes Azure развертывание выполняется в кластере AKS, __подключенном к рабочей области__. Существует два способа подключения кластера AKS к рабочей области.
-
-* Создайте кластер AKS с помощью пакета SDK Машинное обучение Azure, Машинное обучение CLI или [машинное обучение Azure Studio](https://ml.azure.com). Этот процесс автоматически подключает кластер к рабочей области.
-* Подключите существующий кластер AKS к рабочей области Машинное обучение Azure. Кластер можно подключить с помощью Машинное обучение Azure пакета SDK, Машинное обучение интерфейса командной строки или Машинное обучение Azure Studio.
-
-Кластер AKS и Рабочая область AML могут находиться в разных группах ресурсов.
-
-> [!IMPORTANT]
-> Процесс создания или вложения является задачей, которая выполняется один раз. После подключения кластера AKS к рабочей области его можно использовать для развертываний. Вы можете отсоединить или удалить кластер AKS, если он больше не нужен. После отсоединения или удаления развертывание в кластере будет невозможно.
+При развертывании в службе Kubernetes Azure развертывание выполняется в кластере AKS, __подключенном к рабочей области__. Сведения о подключении кластера AKS к рабочей области см. в статье [Создание и подключение кластера службы Kubernetes Azure](how-to-create-attach-kubernetes.md).
 
 > [!IMPORTANT]
 > Рекомендуется выполнять отладку локально перед развертыванием в веб-службе. Дополнительные сведения см. в разделе [Локальная отладка](https://docs.microsoft.com/azure/machine-learning/how-to-troubleshoot-deployment#debug-locally) .
@@ -53,7 +44,7 @@ ms.locfileid: "88855237"
 
 - Модель машинного обучения, зарегистрированная в вашей рабочей области. Если у вас нет зарегистрированной модели, см. раздел [как и где развертывать модели](how-to-deploy-and-where.md).
 
-- [Расширение Azure CLI для службы машинное обучение](reference-azure-machine-learning-cli.md), [машинное обучение Azure пакет SDK для Python](https://docs.microsoft.com/python/api/overview/azure/ml/intro?view=azure-ml-py)или [расширение машинное обучение Azure Visual Studio Code](tutorial-setup-vscode-extension.md).
+- [Расширение Azure CLI для службы машинное обучение](reference-azure-machine-learning-cli.md), [машинное обучение Azure пакет SDK для Python](https://docs.microsoft.com/python/api/overview/azure/ml/intro?view=azure-ml-py&preserve-view=true)или [расширение машинное обучение Azure Visual Studio Code](tutorial-setup-vscode-extension.md).
 
 - В фрагментах кода __Python__ в этой статье предполагается, что установлены следующие переменные:
 
@@ -65,170 +56,9 @@ ms.locfileid: "88855237"
 
 - В фрагментах кода __CLI__ в этой статье предполагается, что вы создали `inferenceconfig.json` документ. Дополнительные сведения о создании этого документа см. в разделе [как и где развертываются модели](how-to-deploy-and-where.md).
 
-- Если вам требуется Load Balancer (цен. категория "Стандартный") (SLB), развернутый в кластере вместо базового Load Balancer (БЛБ), создайте кластер на портале AKS, CLI или SDK, а затем подключите его к рабочей области AML.
+- Кластер службы Kubernetes Azure, подключенный к рабочей области. Дополнительные сведения см. в статье [Создание и подключение кластера службы Kubernetes Azure](how-to-create-attach-kubernetes.md).
 
-- Если у вас есть политика Azure, которая ограничит создание общедоступного IP-адреса, создание кластера AKS завершится сбоем. Для AKS требуется общедоступный IP-адрес для [исходящего трафика](https://docs.microsoft.com/azure/aks/limit-egress-traffic). В этой статье также приводятся рекомендации по блокированию исходящего трафика из кластера через общедоступный IP-адрес, за исключением нескольких полных доменных имен. Существует два способа включения общедоступного IP-адреса:
-  - Кластер может использовать общедоступный IP-адрес, созданный по умолчанию с помощью БЛБ или SLB, или
-  - Кластер можно создать без общедоступного IP-адреса, а затем настроить общедоступный IP-адрес брандмауэром с определяемым пользователем маршрутом, как описано [здесь](https://docs.microsoft.com/azure/aks/egress-outboundtype) . 
-  
-  Плоскость управления AML не взаимодействуют с этим общедоступным IP-адресом. Он обращается к плоскости управления AKS для развертываний. 
-
-- Если вы подключаете кластер AKS с [разрешенным диапазоном IP-адресов для доступа к серверу API](https://docs.microsoft.com/azure/aks/api-server-authorized-ip-ranges), включите диапазоны IP-адресов плоскости AML управления для кластера AKS. Плоскость управления AML развертывается в парных регионах и развертывает в кластере AKS. Без доступа к серверу API не удается развернуть модули. Используйте [диапазоны IP-адресов](https://www.microsoft.com/en-us/download/confirmation.aspx?id=56519) для [парных регионов]( https://docs.microsoft.com/azure/best-practices-availability-paired-regions) при включении диапазонов IP-адресов в кластере AKS.
-
-
-  Диапазоны IP-адресов аусроизед работают только с Load Balancer (цен. категория "Стандартный").
- 
- - Имя вычислений должно быть уникальным в пределах рабочей области
-   - Имя является обязательным и должно иметь длину от 3 до 24 символов.
-   - Допустимыми символами являются буквы верхнего и нижнего регистра, цифры и символ-знак.
-   - Имя должно начинаться с буквы
-   - Имя должно быть уникальным среди всех существующих вычислений в регионе Azure. Вы увидите оповещение, если выбранное имя не является уникальным
-   
- - Если вы хотите развернуть модели на узлах GPU или узлах FPGA (или на любом конкретном номере SKU), необходимо создать кластер с конкретным номером SKU. Создание пула вторичных узлов в существующем кластере и развертывание моделей в пуле вторичных узлов не поддерживаются.
-
-## <a name="create-a-new-aks-cluster"></a>Создание нового кластера AKS
-
-**Оценка времени**: приблизительно 10 минут.
-
-Создание или присоединение кластера AKS выполняется один раз для рабочей области. Один кластер можно использовать для нескольких развертываний. При удалении кластера или группы ресурсов, содержащей этот кластер, необходимо создать новый кластер в следующий раз, когда потребуется выполнить развертывание. К рабочей области можно подключить несколько кластеров AKS.
- 
-Машинное обучение Azure теперь поддерживает использование службы Azure Kubernetes, для которой включена частная ссылка.
-Чтобы создать частный кластер AKS, следуйте инструкциям [здесь](https://docs.microsoft.com/azure/aks/private-clusters)
-
-> [!TIP]
-> Если вы хотите защитить кластер AKS с помощью виртуальной сети Azure, сначала необходимо создать виртуальную сеть. Дополнительные сведения см. [в статье безопасное экспериментирование и вывод данных с помощью виртуальной сети Azure](how-to-enable-virtual-network.md#aksvnet).
-
-Если вы хотите создать кластер AKS для __разработки__, __проверки__и __тестирования__ вместо рабочей среды, можно указать __назначение кластера__ для __тестирования разработки__.
-
-> [!WARNING]
-> Если задать `cluster_purpose = AksCompute.ClusterPurpose.DEV_TEST` , созданный кластер не подходит для трафика уровня рабочей среды и может увеличить время вывода. Кластеры для разработки и тестирования также не гарантируют отказоустойчивость. Для кластеров разработки и тестирования рекомендуется по крайней мере 2 виртуальных ЦП.
-
-В следующих примерах показано, как создать новый кластер AKS с помощью пакета SDK и интерфейса командной строки.
-
-**Использование пакета SDK**
-
-```python
-from azureml.core.compute import AksCompute, ComputeTarget
-
-# Use the default configuration (you can also provide parameters to customize this).
-# For example, to create a dev/test cluster, use:
-# prov_config = AksCompute.provisioning_configuration(cluster_purpose = AksCompute.ClusterPurpose.DEV_TEST)
-prov_config = AksCompute.provisioning_configuration()
-# Example configuration to use an existing virtual network
-# prov_config.vnet_name = "mynetwork"
-# prov_config.vnet_resourcegroup_name = "mygroup"
-# prov_config.subnet_name = "default"
-# prov_config.service_cidr = "10.0.0.0/16"
-# prov_config.dns_service_ip = "10.0.0.10"
-# prov_config.docker_bridge_cidr = "172.17.0.1/16"
-
-aks_name = 'myaks'
-# Create the cluster
-aks_target = ComputeTarget.create(workspace = ws,
-                                    name = aks_name,
-                                    provisioning_configuration = prov_config)
-
-# Wait for the create process to complete
-aks_target.wait_for_completion(show_output = True)
-```
-
-> [!IMPORTANT]
-> Для [`provisioning_configuration()`](https://docs.microsoft.com/python/api/azureml-core/azureml.core.compute.akscompute?view=azure-ml-py) , если вы выбираете пользовательские значения для `agent_count` и, а не, то необходимо убедиться, `vm_size` `cluster_purpose` `DEV_TEST` что `agent_count` умножение на `vm_size` больше или равно 12 виртуальным ЦП. Например, если вы используете `vm_size` "Standard_D3_v2" с 4 виртуальными процессорами, то следует выбрать не `agent_count` более 3.
->
-> Пакет SDK для Машинное обучение Azure не обеспечивает поддержку масштабирования кластера AKS. Чтобы масштабировать узлы в кластере, используйте пользовательский интерфейс для кластера AKS в Машинное обучение Azure Studio. Можно изменить только число узлов, а не размер виртуальной машины кластера.
-
-Дополнительные сведения о классах, методах и параметрах, используемых в этом примере, см. в следующих справочных документах:
-
-* [Акскомпуте. Клустерпурпосе](https://docs.microsoft.com/python/api/azureml-core/azureml.core.compute.aks.akscompute.clusterpurpose?view=azure-ml-py)
-* [Акскомпуте. provisioning_configuration](/python/api/azureml-core/azureml.core.compute.akscompute?view=azure-ml-py#attach-configuration-resource-group-none--cluster-name-none--resource-id-none--cluster-purpose-none-)
-* [ComputeTarget. Create](https://docs.microsoft.com/python/api/azureml-core/azureml.core.compute.computetarget?view=azure-ml-py#create-workspace--name--provisioning-configuration-)
-* [ComputeTarget. wait_for_completion](https://docs.microsoft.com/python/api/azureml-core/azureml.core.compute.computetarget?view=azure-ml-py#wait-for-completion-show-output-false-)
-
-**Использование интерфейса командной строки**
-
-```azurecli
-az ml computetarget create aks -n myaks
-```
-
-Дополнительные сведения см. в справке по команде [AZ ML computetarget Create AKS](https://docs.microsoft.com/cli/azure/ext/azure-cli-ml/ml/computetarget/create?view=azure-cli-latest#ext-azure-cli-ml-az-ml-computetarget-create-aks) .
-
-## <a name="attach-an-existing-aks-cluster"></a>Подключение существующего кластера AKS
-
-**Оценка времени:** Приблизительно 5 минут.
-
-Если у вас уже есть кластер AKS в подписке Azure и он имеет версию 1,17 или более раннюю, его можно использовать для развертывания образа.
-
-> [!TIP]
-> Существующий кластер AKS может находиться в регионе Azure, отличном от Машинное обучение Azure рабочей области.
->
-> Если вы хотите защитить кластер AKS с помощью виртуальной сети Azure, сначала необходимо создать виртуальную сеть. Дополнительные сведения см. [в статье безопасное экспериментирование и вывод данных с помощью виртуальной сети Azure](how-to-enable-virtual-network.md#aksvnet).
-
-При присоединении кластера AKS к рабочей области можно определить, как будет использоваться кластер, задав `cluster_purpose` параметр.
-
-Если не задать `cluster_purpose` параметр или задать `cluster_purpose = AksCompute.ClusterPurpose.FAST_PROD` , кластер должен иметь по крайней мере 12 виртуальных ЦП.
-
-Если задано значение `cluster_purpose = AksCompute.ClusterPurpose.DEV_TEST` , кластеру не требуется 12 виртуальных ЦП. Для разработки и тестирования рекомендуется по крайней мере 2 виртуальных ЦП. Однако кластер, настроенный для разработки и тестирования, не подходит для трафика уровня рабочей среды и может увеличить время вывода. Кластеры для разработки и тестирования также не гарантируют отказоустойчивость.
-
-> [!WARNING]
-> Не создавайте несколько одновременных вложений в одном кластере AKS из рабочей области. Например, можно подключить один кластер AKS к рабочей области, используя два разных имени. Каждое новое вложение приведет к нарушению предыдущих существующих вложений.
->
-> Если требуется повторно подключить кластер AKS, например для изменения настроек TLS или другого кластера, необходимо сначала удалить существующее вложение с помощью [акскомпуте. Detach ()](https://docs.microsoft.com/python/api/azureml-core/azureml.core.compute.akscompute?view=azure-ml-py#detach--).
-
-Дополнительные сведения о создании кластера AKS с помощью Azure CLI или портала см. в следующих статьях:
-
-* [Создание кластера AKS с помощью CLI](https://docs.microsoft.com/cli/azure/aks?toc=%2Fazure%2Faks%2FTOC.json&bc=%2Fazure%2Fbread%2Ftoc.json&view=azure-cli-latest#az-aks-create)
-* [Создание кластера AKS (портал)](https://docs.microsoft.com/azure/aks/kubernetes-walkthrough-portal?view=azure-cli-latest)
-* [Создание кластера AKS (шаблон ARM в шаблонах быстрого запуска Azure)](https://github.com/Azure/azure-quickstart-templates/tree/master/101-aks-azml-targetcompute)
-
-В следующих примерах показано, как подключить существующий кластер AKS к рабочей области.
-
-**Использование пакета SDK**
-
-```python
-from azureml.core.compute import AksCompute, ComputeTarget
-# Set the resource group that contains the AKS cluster and the cluster name
-resource_group = 'myresourcegroup'
-cluster_name = 'myexistingcluster'
-
-# Attach the cluster to your workgroup. If the cluster has less than 12 virtual CPUs, use the following instead:
-# attach_config = AksCompute.attach_configuration(resource_group = resource_group,
-#                                         cluster_name = cluster_name,
-#                                         cluster_purpose = AksCompute.ClusterPurpose.DEV_TEST)
-attach_config = AksCompute.attach_configuration(resource_group = resource_group,
-                                         cluster_name = cluster_name)
-aks_target = ComputeTarget.attach(ws, 'myaks', attach_config)
-
-# Wait for the attach process to complete
-aks_target.wait_for_completion(show_output = True)
-```
-
-Дополнительные сведения о классах, методах и параметрах, используемых в этом примере, см. в следующих справочных документах:
-
-* [Акскомпуте. attach_configuration ()](/python/api/azureml-core/azureml.core.compute.akscompute?view=azure-ml-py#attach-configuration-resource-group-none--cluster-name-none--resource-id-none--cluster-purpose-none-)
-* [Акскомпуте. Клустерпурпосе](https://docs.microsoft.com/python/api/azureml-core/azureml.core.compute.aks.akscompute.clusterpurpose?view=azure-ml-py)
-* [Акскомпуте. Attach](https://docs.microsoft.com/python/api/azureml-core/azureml.core.compute.computetarget?view=azure-ml-py#attach-workspace--name--attach-configuration-)
-
-**Использование интерфейса командной строки**
-
-Чтобы подключить существующий кластер с помощью интерфейса командной строки, необходимо получить идентификатор ресурса существующего кластера. Чтобы получить это значение, используйте следующую команду. Замените `myexistingcluster` именем кластера AKS. Замените на `myresourcegroup` группу ресурсов, содержащую кластер:
-
-```azurecli
-az aks show -n myexistingcluster -g myresourcegroup --query id
-```
-
-Эта команда возвращает значение следующего вида:
-
-```text
-/subscriptions/{GUID}/resourcegroups/{myresourcegroup}/providers/Microsoft.ContainerService/managedClusters/{myexistingcluster}
-```
-
-Чтобы подключить существующий кластер к рабочей области, используйте следующую команду. Замените на `aksresourceid` значение, возвращенное предыдущей командой. Замените `myresourcegroup` группой ресурсов, содержащей рабочую область. Замените `myworkspace` именем рабочей области.
-
-```azurecli
-az ml computetarget attach aks -n myaks -i aksresourceid -g myresourcegroup -w myworkspace
-```
-
-Дополнительные сведения см. в справочнике по команде [AZ ML computetarget Attach AKS](https://docs.microsoft.com/cli/azure/ext/azure-cli-ml/ml/computetarget/attach?view=azure-cli-latest#ext-azure-cli-ml-az-ml-computetarget-attach-aks) .
+    - Если вы хотите развернуть модели на узлах GPU или узлах FPGA (или на любом конкретном номере SKU), необходимо создать кластер с конкретным номером SKU. Создание пула вторичных узлов в существующем кластере и развертывание моделей в пуле вторичных узлов не поддерживаются.
 
 ## <a name="deploy-to-aks"></a>Развертывание в AKS
 
@@ -236,7 +66,6 @@ az ml computetarget attach aks -n myaks -i aksresourceid -g myresourcegroup -w m
 
 > [!NOTE]
 > Число развертываемых моделей ограничено до 1 000 моделей на развертывание (для каждого контейнера).
-
 
 ### <a name="using-the-sdk"></a>Использование пакета SDK
 
@@ -257,10 +86,10 @@ print(service.get_logs())
 
 Дополнительные сведения о классах, методах и параметрах, используемых в этом примере, см. в следующих справочных документах:
 
-* [акскомпуте](https://docs.microsoft.com/python/api/azureml-core/azureml.core.compute.aks.akscompute?view=azure-ml-py)
-* [Аксвебсервице. deploy_configuration](https://docs.microsoft.com/python/api/azureml-core/azureml.core.webservice.aks.aksservicedeploymentconfiguration?view=azure-ml-py)
-* [Модель. Развертывание](https://docs.microsoft.com/python/api/azureml-core/azureml.core.model.model?view=azure-ml-py#deploy-workspace--name--models--inference-config-none--deployment-config-none--deployment-target-none--overwrite-false-)
-* [WebService. wait_for_deployment](https://docs.microsoft.com/python/api/azureml-core/azureml.core.webservice%28class%29?view=azure-ml-py#wait-for-deployment-show-output-false-)
+* [акскомпуте](https://docs.microsoft.com/python/api/azureml-core/azureml.core.compute.aks.akscompute?view=azure-ml-py&preserve-view=true)
+* [Аксвебсервице. deploy_configuration](https://docs.microsoft.com/python/api/azureml-core/azureml.core.webservice.aks.aksservicedeploymentconfiguration?view=azure-ml-py&preserve-view=true)
+* [Модель. Развертывание](https://docs.microsoft.com/python/api/azureml-core/azureml.core.model.model?view=azure-ml-py#&preserve-view=truedeploy-workspace--name--models--inference-config-none--deployment-config-none--deployment-target-none--overwrite-false-)
+* [WebService. wait_for_deployment](https://docs.microsoft.com/python/api/azureml-core/azureml.core.webservice%28class%29?view=azure-ml-py#&preserve-view=truewait-for-deployment-show-output-false-)
 
 ### <a name="using-the-cli"></a>Использование интерфейса командной строки
 
@@ -418,7 +247,7 @@ print(primary)
 ```
 
 > [!IMPORTANT]
-> Если необходимо повторно создать ключ, используйте [`service.regen_key`](https://docs.microsoft.com/python/api/azureml-core/azureml.core.webservice(class)?view=azure-ml-py)
+> Если необходимо повторно создать ключ, используйте [`service.regen_key`](https://docs.microsoft.com/python/api/azureml-core/azureml.core.webservice(class)?view=azure-ml-py&preserve-view=true)
 
 ### <a name="authentication-with-tokens"></a>Аутентификация с помощью токенов
 
@@ -444,7 +273,7 @@ print(token)
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-* [Безопасное экспериментирование и вывод в виртуальной сети](how-to-enable-virtual-network.md)
+* [Безопасная организация в среде с виртуальной сетью Azure](how-to-secure-inferencing-vnet.md)
 * [Развертывание модели с помощью пользовательского образа DOCKER](how-to-deploy-custom-docker-image.md)
 * [Устранение неполадок развертывания](how-to-troubleshoot-deployment.md)
 * [Обновление веб-службы](how-to-deploy-update-web-service.md)

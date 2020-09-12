@@ -7,18 +7,18 @@ ms.author: hrasheed
 ms.reviewer: jasonh
 ms.topic: how-to
 ms.date: 12/12/2019
-ms.openlocfilehash: 6ef76f3dafc02e89008ae164e3d868c628291766
-ms.sourcegitcommit: 656c0c38cf550327a9ee10cc936029378bc7b5a2
+ms.openlocfilehash: 3b2807ccd6d83511dd0c9a32a177ea9fe2c4b642
+ms.sourcegitcommit: f8d2ae6f91be1ab0bc91ee45c379811905185d07
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89075313"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89662099"
 ---
 # <a name="use-id-broker-preview-for-credential-management"></a>Использование брокера ИДЕНТИФИКАТОРов (Предварительная версия) для управления учетными данными
 
 В этой статье описывается, как настроить и использовать функцию брокера ИДЕНТИФИКАТОРов в Azure HDInsight. Эту функцию можно использовать для входа в Apache Ambari через многофакторную идентификацию Azure и получения необходимых билетов Kerberos без хэширования паролей в доменных службах Azure Active Directory (Azure AD DS).
 
-## <a name="overview"></a>Обзор
+## <a name="overview"></a>Overview
 
 Брокер идентификации упрощает настройку сложных проверок подлинности в следующих сценариях:
 
@@ -111,7 +111,7 @@ ms.locfileid: "89075313"
 После получению маркера OAuth его можно использовать в заголовке авторизации для HTTP-запроса к шлюзу кластера (например, <clustername> -int.azurehdinsight.NET). Например, пример команды с фигурой на Livy API может выглядеть следующим образом:
     
 ```bash
-curl -k -v -H "Authorization: TOKEN" -H "Content-Type: application/json" -X POST -d '{ "file":"wasbs://mycontainer@mystorageaccount.blob.core.windows.net/data/SparkSimpleTest.jar", "className":"com.microsoft.spark.test.SimpleFile" }' "https://<clustername>-int.azurehdinsight.net/livy/batches" -H "X-Requested-By: UPN"
+curl -k -v -H "Authorization: Bearer Access_TOKEN" -H "Content-Type: application/json" -X POST -d '{ "file":"wasbs://mycontainer@mystorageaccount.blob.core.windows.net/data/SparkSimpleTest.jar", "className":"com.microsoft.spark.test.SimpleFile" }' "https://<clustername>-int.azurehdinsight.net/livy/batches" -H "X-Requested-By:<username@domain.com>"
 ``` 
 
 ## <a name="next-steps"></a>Дальнейшие действия

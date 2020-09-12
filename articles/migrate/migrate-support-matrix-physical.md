@@ -3,12 +3,12 @@ title: Поддержка оценки физических серверов в 
 description: Сведения о поддержке оценки физических серверов с помощью Azure Migrate Server — Оценка серверов
 ms.topic: conceptual
 ms.date: 06/03/2020
-ms.openlocfilehash: 2b96bff7468f0705f2b80f60dcd5248960495f16
-ms.sourcegitcommit: 628be49d29421a638c8a479452d78ba1c9f7c8e4
+ms.openlocfilehash: dffa95fe717f8588f56b9dee60ede8bbf44aceb9
+ms.sourcegitcommit: f8d2ae6f91be1ab0bc91ee45c379811905185d07
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/20/2020
-ms.locfileid: "88640129"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89660352"
 ---
 # <a name="support-matrix-for-physical-server-assessment"></a>Матрица поддержки для оценки физических серверов 
 
@@ -34,8 +34,8 @@ ms.locfileid: "88640129"
 | **Поддержка**                | **Сведения**               
 | :-------------------       | :------------------- |
 | **Развертывание физического сервера**       | Физический сервер может быть автономным или развернутым в кластере. |
-| **Разрешения**           | **Windows:** Используйте учетную запись домена для компьютеров, присоединенных к домену, и локальную учетную запись для компьютеров, которые не присоединены к домену. Учетная запись пользователя должна быть добавлена в следующие группы: "Пользователи удаленного управления", "Пользователи Монитора производительности" и "Пользователи журналов производительности". <br/><br/> **Linux:** Вам потребуются права суперпользователя на серверах Linux, которые вы хотите обнаружить. <br/> Кроме того, убедитесь, что необходимые возможности установлены с помощью следующих команд. <br/> сеткап CAP_DAC_READ_SEARCH + EIP/УСР/сбин/фдиск <br/> сеткап CAP_DAC_READ_SEARCH + EIP/сбин/фдиск (если/УСР/сбин/фдиск отсутствует) <br/> сеткап "cap_dac_override, cap_dac_read_search, cap_fowner, cap_fsetid, cap_setuid, cap_setpcap, cap_net_bind_service, cap_net_admin, cap_sys_chroot, cap_sys_admin, cap_sys_resource, cap_audit_control, cap_setfcap = + EIP"/сбин/ЛВМ <br/> сеткап CAP_DAC_READ_SEARCH + EIP/УСР/сбин/дмидекоде <br/> chmod a + r/СИС/класс/ДМИ/ИД/product_uuid
-| **Операционная система** | Все операционные системы, за исключением Windows Server 2003 и SUSE Linux, можно оценить для миграции. |
+| **Разрешения**           | **Windows:** Используйте учетную запись домена для присоединенных к домену компьютеров, а также локальную учетную запись для компьютеров, которые не присоединены к домену. Учетная запись пользователя должна быть добавлена в следующие группы: "Пользователи удаленного управления", "Пользователи Монитора производительности" и "Пользователи журналов производительности". <br/><br/> **Linux:** Вам потребуются права суперпользователя на серверах Linux, которые вы хотите обнаружить. <br/> Кроме того, убедитесь, что необходимые возможности установлены с помощью следующих команд. <br/> сеткап CAP_DAC_READ_SEARCH + EIP/УСР/сбин/фдиск <br/> сеткап CAP_DAC_READ_SEARCH + EIP/сбин/фдиск (если/УСР/сбин/фдиск отсутствует) <br/> сеткап "cap_dac_override, cap_dac_read_search, cap_fowner, cap_fsetid, cap_setuid, cap_setpcap, cap_net_bind_service, cap_net_admin, cap_sys_chroot, cap_sys_admin, cap_sys_resource, cap_audit_control, cap_setfcap = + EIP"/сбин/ЛВМ <br/> сеткап CAP_DAC_READ_SEARCH + EIP/УСР/сбин/дмидекоде <br/> chmod a + r/СИС/класс/ДМИ/ИД/product_uuid
+| **Операционная система** | Все операционные системы Windows и Linux можно оценить для миграции. |
 
 
 ## <a name="azure-migrate-appliance-requirements"></a>Требования к устройству Миграции Azure

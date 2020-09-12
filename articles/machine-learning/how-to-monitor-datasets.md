@@ -11,19 +11,19 @@ author: lostmygithubaccount
 ms.date: 06/25/2020
 ms.topic: conceptual
 ms.custom: how-to
-ms.openlocfilehash: 270e93302a90c458ccbdfdc4d2ced8f0d3c263af
-ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
+ms.openlocfilehash: 4b2b435be2a39b6e31a7f44fa6acbe7e1bc9c2c0
+ms.sourcegitcommit: f8d2ae6f91be1ab0bc91ee45c379811905185d07
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87319683"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89661670"
 ---
 # <a name="detect-data-drift-preview-on-datasets"></a>Обнаружение смещения данных (Предварительная версия) в наборах
 [!INCLUDE [applies-to-skus](../../includes/aml-applies-to-basic-enterprise-sku.md)]
 
 > [!IMPORTANT]
 > В настоящее время в общедоступной предварительной версии обнаружение данных о смещении в них не осуществляется.
-> Предварительная версия предоставляется без соглашения об уровне обслуживания и не рекомендуется для рабочих нагрузок. Некоторые функции могут не поддерживаться или их возможности могут быть ограничены. Дополнительные сведения см. в статье [Дополнительные условия использования предварительных выпусков Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
+> Предварительная версия предоставляется без соглашения об уровне обслуживания и не рекомендована для производственных рабочих нагрузок. Некоторые функции могут не поддерживаться или их возможности могут быть ограничены. Дополнительные сведения см. в статье [Дополнительные условия использования предварительных выпусков Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
 
 Узнайте, как отслеживать смещение данных и задавать предупреждения при высоком смещении.  
 
@@ -46,7 +46,7 @@ ms.locfileid: "87319683"
 Для создания мониторов набора данных и работы с ними требуются:
 * Подписка Azure. Если у вас еще нет подписки Azure, создайте бесплатную учетную запись, прежде чем начинать работу. Опробуйте [бесплатную или платную версию Машинного обучения Azure](https://aka.ms/AMLFree) уже сегодня.
 * [Рабочая область машинное обучение Azure](how-to-manage-workspace.md).
-* [Установленный пакет SDK для машинное обучение Azure для Python](https://docs.microsoft.com/python/api/overview/azure/ml/install?view=azure-ml-py), включающий пакет azureml-DataSets.
+* [Установленный пакет SDK для машинное обучение Azure для Python](https://docs.microsoft.com/python/api/overview/azure/ml/install?view=azure-ml-py&preserve-view=true), включающий пакет azureml-DataSets.
 * Структурированные (табличные) данные с меткой времени, указанной в пути к файлу, имени файла или столбце в данных.
 
 ## <a name="what-is-data-drift"></a>Что такое смещение данных?
@@ -88,7 +88,7 @@ ms.locfileid: "87319683"
 
 Мониторы наборов данных зависят от следующих служб Azure.
 
-|Служба Azure  |Описание:  |
+|Служба Azure  |Описание  |
 |---------|---------|
 | *Набор данных* | Для получения обучающих данных и сравнения данных для обучения модели в смещении используются Машинное обучение наборы.  Создание профиля данных используется для создания некоторых из сообщаемых метрик, таких как min, Max, distinct values и Distinct Count. |
 | *Конвейер и вычисление Azureml* | Задание вычисления смещения размещается в конвейере azureml.  Задание активируется по требованию или по расписанию для выполнения в расчете, настроенном на момент создания монитора отклонения.
@@ -105,7 +105,7 @@ ms.locfileid: "87319683"
 
 ### <a name="python-sdk"></a><a name="sdk-dataset"></a>Пакет SDK для Python
 
-[`Dataset`](https://docs.microsoft.com/python/api/azureml-core/azureml.data.tabulardataset?view=azure-ml-py#with-timestamp-columns-timestamp-none--partition-timestamp-none--validate-false----kwargs-)Метод класса [`with_timestamp_columns()`](https://docs.microsoft.com/python/api/azureml-core/azureml.data.tabulardataset?view=azure-ml-py#with-timestamp-columns-timestamp-none--partition-timestamp-none--validate-false----kwargs-) определяет столбец временной метки для набора данных.
+[`Dataset`](https://docs.microsoft.com/python/api/azureml-core/azureml.data.tabulardataset?view=azure-ml-py#&preserve-view=truewith-timestamp-columns-timestamp-none--partition-timestamp-none--validate-false----kwargs-)Метод класса [`with_timestamp_columns()`](https://docs.microsoft.com/python/api/azureml-core/azureml.data.tabulardataset?view=azure-ml-py#&preserve-view=truewith-timestamp-columns-timestamp-none--partition-timestamp-none--validate-false----kwargs-) определяет столбец временной метки для набора данных.
 
 ```python 
 from azureml.core import Workspace, Dataset, Datastore
@@ -132,9 +132,9 @@ dset = dset.with_timestamp_columns('date')
 dset = dset.register(ws, 'target')
 ```
 
-Полный пример использования `timeseries` наборов данных см. в [примере записной книжки](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/work-with-data/datasets-tutorial/timeseries-datasets/tabular-timeseries-dataset-filtering.ipynb) или в [документации по пакету SDK для наборов данных](https://docs.microsoft.com/python/api/azureml-core/azureml.data.tabulardataset?view=azure-ml-py#with-timestamp-columns-timestamp-none--partition-timestamp-none--validate-false----kwargs-).
+Полный пример использования `timeseries` наборов данных см. в [примере записной книжки](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/work-with-data/datasets-tutorial/timeseries-datasets/tabular-timeseries-dataset-filtering.ipynb) или в [документации по пакету SDK для наборов данных](https://docs.microsoft.com/python/api/azureml-core/azureml.data.tabulardataset?view=azure-ml-py#&preserve-view=truewith-timestamp-columns-timestamp-none--partition-timestamp-none--validate-false----kwargs-).
 
-### <a name="azure-machine-learning-studio"></a><a name="studio-dataset"></a>Машинное обучение Azure Studio
+### <a name="azure-machine-learning-studio"></a><a name="studio-dataset"></a>Студия машинного обучения Azure.
 [!INCLUDE [applies-to-skus](../../includes/aml-applies-to-enterprise-sku-inline.md)]
 
 При создании набора данных с помощью Машинное обучение Azure Studio убедитесь, что путь к данным содержит сведения о метке времени, включает все вложенные папки с данными и задает формат раздела.
@@ -208,7 +208,7 @@ monitor = monitor.enable_schedule()
 
 Полный пример настройки `timeseries` набора данных и средства обнаружения смещения данных см. в нашем [примере записной книжки](https://aka.ms/datadrift-notebook).
 
-### <a name="azure-machine-learning-studio"></a><a name="studio-monitor"></a>Машинное обучение Azure Studio
+### <a name="azure-machine-learning-studio"></a><a name="studio-monitor"></a> Машинное обучение Azure Studio
 [!INCLUDE [applies-to-skus](../../includes/aml-applies-to-enterprise-sku-inline.md)]
 
 Чтобы настроить оповещения в мониторе набора данных, Рабочая область, содержащая набор данных, для которого необходимо создать монитор, должен иметь возможности выпуска Enterprise Edition.
@@ -227,9 +227,9 @@ monitor = monitor.enable_schedule()
 
 * **Параметры монитора**.  Эти параметры предназначены для конвейера монитора запланированного набора данных, который будет создан. 
 
-    | Параметр | Описание: | Советы | Изменяемый | 
+    | Параметр | Описание | Советы | Изменяемый | 
     | ------- | ----------- | ---- | ------- |
-    | Имя | Имя монитора набора данных. | | Нет |
+    | name | Имя монитора набора данных. | | Нет |
     | Компоненты | Список функций, которые будут анализироваться за смещение данных с течением времени. | Задайте функции вывода модели для измерения смещения концепции. Не включайте функции, которые естественным образом отменяют время (месяц, год, индекс и т. д.). После настройки списка функций можно выполнить обратную засыпку и существующий монитор рассмещения данных. | Да | 
     | Целевой объект вычисления | Целевой объект Машинное обучение Azure вычислений для запуска заданий монитора набора данных. | | Да | 
     | Включить | Включение или отключение расписания в конвейере монитора набора данных | Отключите расписание для анализа исторических данных с помощью параметра «обратная засыпку». Его можно включить после создания монитора набора данных. | Да | 

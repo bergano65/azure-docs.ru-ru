@@ -8,18 +8,16 @@ ms.topic: how-to
 ms.service: iot-central
 services: iot-central
 manager: peterpr
-ms.openlocfilehash: 8725a822c575ce80b9810d56bfd072241ded4c86
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: ee9552b251cbc8cca1891de043ee79682e7b2d6c
+ms.sourcegitcommit: 43558caf1f3917f0c535ae0bf7ce7fe4723391f9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "80157948"
+ms.lasthandoff: 09/11/2020
+ms.locfileid: "90017104"
 ---
 # <a name="manage-devices-in-your-azure-iot-central-application"></a>Управление устройствами в приложении Azure IoT Central
 
-
-
-В этой статье описывается, как оператор может управлять устройствами в приложении Microsoft Azure IoT Central. Как оператор вы можете:
+В этой статье описывается, как оператор управляет устройствами в приложении IoT Central Azure. Как оператор вы можете:
 
 - Используйте страницу **устройства** для просмотра, добавления и удаления устройств, подключенных к приложению IOT Central Azure.
 - Поддерживать актуальность сведений об используемых устройствах.
@@ -71,7 +69,7 @@ ms.locfileid: "80157948"
     > [!NOTE]
     > Если у вас еще нет шаблона устройства, вы можете импортировать устройства на **все устройства** и зарегистрировать их без шаблона. После импорта устройств их можно перенести в шаблон.
 
-1. Выберите **Импортировать**.
+1. Выберите **Импорт**.
 
     ![Действие импорта](./media/howto-manage-devices/bulkimport1a.png)
 

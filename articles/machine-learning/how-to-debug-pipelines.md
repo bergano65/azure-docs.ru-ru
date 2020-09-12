@@ -10,17 +10,17 @@ ms.author: laobri
 ms.date: 08/28/2020
 ms.topic: conceptual
 ms.custom: troubleshooting, devx-track-python
-ms.openlocfilehash: 0f051e5b5711cec9fd8e72ec2b84c18f80430a0a
-ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
+ms.openlocfilehash: cad1c8b7250ddf1e675145e764abcc90b4db9d86
+ms.sourcegitcommit: f8d2ae6f91be1ab0bc91ee45c379811905185d07
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89018065"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89661716"
 ---
 # <a name="debug-and-troubleshoot-machine-learning-pipelines"></a>Отладка и устранение неполадок в конвейерах машинного обучения
 [!INCLUDE [applies-to-skus](../../includes/aml-applies-to-basic-enterprise-sku.md)]
 
-Из этой статьи вы узнаете, как устранять неполадки и отлаживать [конвейеры машинного обучения](concept-ml-pipelines.md) в [машинное обучение Azure SDK](https://docs.microsoft.com/python/api/overview/azure/ml/intro?view=azure-ml-py) и [конструкторе машинное обучение Azure (Предварительная версия)](https://docs.microsoft.com/azure/machine-learning/concept-designer). 
+Из этой статьи вы узнаете, как устранять неполадки и отлаживать [конвейеры машинного обучения](concept-ml-pipelines.md) в [машинное обучение Azure SDK](https://docs.microsoft.com/python/api/overview/azure/ml/intro?view=azure-ml-py&preserve-view=true) и [конструкторе машинное обучение Azure (Предварительная версия)](https://docs.microsoft.com/azure/machine-learning/concept-designer). 
 
 ## <a name="troubleshooting-tips"></a>Советы по устранению неполадок
 
@@ -33,7 +33,7 @@ ms.locfileid: "89018065"
 | Неоднозначные ошибки с целевыми объектами вычислений | Попробуйте удалить и повторно создать целевые объекты вычислений. Повторное создание целевых объектов вычислений является быстрым и может решить некоторые временные проблемы. |
 | Конвейер не использует повторно шаги | Повторное использование шага включено по умолчанию, но убедитесь, что вы не отключили его на этапе конвейера. Если повторное использование отключено, `allow_reuse` параметр на шаге будет установлен в значение `False` . |
 | Конвейер перезапускается без необходимости | Чтобы обеспечить повторный запуск шагов только при изменении базовых данных или скриптов, следует разделить Каталоги исходного кода на каждый шаг. Если один и тот же исходный каталог используется для нескольких шагов, может возникнуть ненужное повторное использование. Используйте `source_directory` параметр для объекта шага конвейера, чтобы указать на свой изолированный каталог для этого шага, и убедитесь, что вы не используете один и тот же `source_directory` путь для нескольких шагов. |
-
+| Шаг с замедлением при обучении эпохи обучения или другое поведение цикла | Попробуйте переключить записи файлов, включая ведение журнала, с `as_mount()` на `as_upload()` . Режим **подключения** использует удаленную виртуальную файловую систему и загружает весь файл каждый раз, когда он добавляется к. |
 
 ## <a name="debugging-techniques"></a>Методы отладки
 
@@ -148,7 +148,7 @@ logger.error("I am an OpenCensus error statement with custom dimensions", {'step
 1. На правой панели модуля перейдите на вкладку  **выходные данные + журналы** .
 1. Разверните правую панель и выберите **70_driver_log.txt** , чтобы просмотреть файл в браузере. Кроме того, можно скачать журналы локально.
 
-    ![Развернутая область вывода в конструкторе](./media/how-to-debug-pipelines/designer-logs.png)
+    ![Развернутая область вывода в конструкторе](./media/how-to-debug-pipelines/designer-logs.png)? View = Azure-ML-корректировка&сохранить-просмотреть = true)? View = Azure-ML-Корр&Preserve-View = true)
 
 ### <a name="get-logs-from-pipeline-runs"></a>Получение журналов из запусков конвейера
 
@@ -174,6 +174,6 @@ logger.error("I am an OpenCensus error statement with custom dimensions", {'step
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-* Обратитесь к Справочнику по пакету SDK, чтобы получить справку по пакету [azureml-конвейеры-Core](https://docs.microsoft.com/python/api/azureml-pipeline-core/?view=azure-ml-py) и пакету [azureml-конвейеры-этапов](https://docs.microsoft.com/python/api/azureml-pipeline-steps/?view=azure-ml-py) .
+* Обратитесь к Справочнику по пакету SDK, чтобы получить справку по пакету [azureml-конвейеры-Core](https://docs.microsoft.com/python/api/azureml-pipeline-core/?view=azure-ml-py&preserve-view=true) и пакету [azureml-конвейеры-этапов](https://docs.microsoft.com/python/api/azureml-pipeline-steps/?view=azure-ml-py&preserve-view=true) .
 
 * См. список [исключений и кодов ошибок конструктора](algorithm-module-reference/designer-error-codes.md).

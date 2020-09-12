@@ -11,13 +11,13 @@ ms.topic: conceptual
 ms.date: 05/19/2020
 ms.author: ryanwi
 ms.reviewer: saeeda, jmprieur
-ms.custom: aaddev
-ms.openlocfilehash: 7b89add55a060c7ba0ef9488f1f6438090b8d3d2
-ms.sourcegitcommit: b8702065338fc1ed81bfed082650b5b58234a702
+ms.custom: aaddev, fasttrack-edit
+ms.openlocfilehash: f8906c5fb934546ac8b1a95f817874f91f6c3b95
+ms.sourcegitcommit: 43558caf1f3917f0c535ae0bf7ce7fe4723391f9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/11/2020
-ms.locfileid: "88121176"
+ms.lasthandoff: 09/11/2020
+ms.locfileid: "90015812"
 ---
 # <a name="application-types-for-microsoft-identity-platform"></a>Типы приложений для платформы удостоверений Microsoft
 
@@ -42,9 +42,9 @@ https://login.microsoftonline.com/common/oauth2/v2.0/token
 
 ## <a name="single-page-apps-javascript"></a>Одностраничные приложения (JavaScript)
 
-Многие современные приложения содержат одностраничное приложение переднего плана, созданное преимущественно с помощью языка JavaScript, часто на платформе Angular, React или Vue. Конечная точка платформы Microsoft Identity поддерживает эти приложения с помощью [потока кода авторизации OAuth 2.0](v2-oauth2-auth-code-flow.md).
+Многие современные приложения содержат одностраничное приложение переднего плана, созданное преимущественно с помощью языка JavaScript, часто на платформе Angular, React или Vue. Конечная точка платформы идентификации Майкрософт поддерживает эти приложения с помощью протокола [OpenID Connect Connect](v2-protocols-oidc.md) для проверки подлинности и либо [неявного разрешения OAuth 2,0](v2-oauth2-implicit-grant-flow.md) , либо более свежего [кода авторизации OAuth 2,0 + PKCE](v2-oauth2-auth-code-flow.md) для авторизации (см. ниже).
 
-В этом потоке приложение получает код от конечной точки платформы удостоверений Microsoft `authorize` и активирует его для маркеров и обновления маркеров с помощью межсайтовых веб-запросов. Срок действия маркера обновления истекает каждые 24 часа, и приложение должно запросить другой код.
+На приведенной ниже схеме последовательности показан код авторизации OAuth 2,0 (с подробными сведениями о PKCE опущен), где приложение получает код от конечной точки платформы идентификации Майкрософт `authorize` и активирует его для токенов и обновляет маркеры с помощью межсайтовых веб-запросов. Срок действия маркера обновления истекает каждые 24 часа, и приложение должно запросить другой код. В дополнение к маркеру доступа, `id_token` который представляет пользователя, выполнившего вход, в клиентское приложение, как правило, запрашивается в том же потоке и (или) отдельном запросе OpenID Connect Connect (не показано здесь).
 
 ![Поток кода для приложений SPA](media/v2-oauth-auth-code-spa/active-directory-oauth-code-spa.png)
 

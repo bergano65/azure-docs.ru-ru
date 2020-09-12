@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 12/29/2019
 ms.author: yelevin
-ms.openlocfilehash: 4042f7b9d0f6fdf293f338c89d5783fe266c4edf
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 0d918de4669e1b4bac6c1775a813eb1d224f39cf
+ms.sourcegitcommit: f8d2ae6f91be1ab0bc91ee45c379811905185d07
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "77581690"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89662020"
 ---
 # <a name="remove-azure-sentinel-from-your-workspace"></a>Удаление Sentinel Azure из рабочей области
 
@@ -48,13 +48,13 @@ ms.locfileid: "77581690"
 
 -   AWS
 
--   Оповещения системы безопасности служб Майкрософт (Azure ATP, Microsoft Cloud App Security, включая Cloud Discovery теневых ИТ-отчетов, защита идентификации Azure AD, ATP в защитнике Майкрософт, центр безопасности Azure)
+-   Оповещения безопасности служб Майкрософт: защитник Майкрософт для идентификации (*ранее — Azure ATP*), Microsoft Cloud App Security, включая Cloud Discovery ТЕНЕВых ИТ-отчетов, Защита идентификации Azure AD, защитник Майкрософт для конечной точки (*ранее — ATP в защитнике Майкрософт*), защитник Azure (*ранее — центр безопасности Azure*).
 
 -   Аналитика угроз
 
--   Общие журналы безопасности (включая журналы на основе CEF, Barracuda и системный журнал) (при наличии центра безопасности Azure эти журналы будут продолжать собираться.)
+-   Общие журналы безопасности (включая журналы на основе CEF, Barracuda и системный журнал) (если у вас есть защитник Azure, эти журналы будут по-прежнему собраны.)
 
--   События безопасности Windows (при наличии центра безопасности Azure эти журналы будут по-прежнему собраны).
+-   События безопасности Windows (если у вас есть защитник Azure, эти журналы будут по-прежнему собраны).
 
 В течение первых 48 часов правила данных и аналитики (включая конфигурацию автоматизации в реальном времени) больше не будут доступны или могут быть разрешены для запросов в Azure Sentinel.
 
@@ -76,6 +76,6 @@ ms.locfileid: "77581690"
 
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 В этом документе вы узнали, как удалить службу Sentinel Azure. Если вы передумали и хотите установить ее снова:
 - Начало работы [с подсистемой Azure Sentinel](quickstart-onboard.md).

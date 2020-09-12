@@ -12,12 +12,12 @@ ms.custom:
 - 'Role: Cloud Development'
 - 'Role: IoT Device'
 - 'Role: System Architecture'
-ms.openlocfilehash: 33c878b2af64a72212a8aac060e9ccac83b79a53
-ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
+ms.openlocfilehash: 2289ff37a0e524bc765163047608eb604c02372e
+ms.sourcegitcommit: 43558caf1f3917f0c535ae0bf7ce7fe4723391f9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87326517"
+ms.lasthandoff: 09/11/2020
+ms.locfileid: "90019807"
 ---
 # <a name="device-authentication-using-x509-ca-certificates"></a>Проверка подлинности устройства с помощью сертификатов ЦС X.509
 
@@ -28,11 +28,13 @@ ms.locfileid: "87326517"
 * подпись устройств с помощью сертификата ЦС X.509;
 * способ проверки подлинности устройств, подписанных центром сертификации X.509.
 
-## <a name="overview"></a>Обзор
+[!INCLUDE [iot-hub-include-x509-ca-signed-support-note](../../includes/iot-hub-include-x509-ca-signed-support-note.md)]
+
+## <a name="overview"></a>Overview
 
 Возможность использования ЦС X.509 позволяет выполнять проверку подлинности устройства в Центре Интернета вещей с помощью центра сертификации (ЦС). Это значительно упрощает процесс регистрации устройств и логистику цепочки поставок во время изготовления устройства. Дополнительные сведения об использовании сертификатов ЦС X.509 для проверки подлинности устройств см. в статье [Conceptual understanding of X.509 CA certificates in the IoT industry](iot-hub-x509ca-concept.md) (Общие сведения о сертификатах ЦС X.509 в Центре Интернета вещей).  Мы рекомендуем ознакомиться с этой статьей, прежде чем продолжить, так как в ней объясняется, почему существуют описанные ниже шаги.
 
-## <a name="prerequisite"></a>Предварительные требования
+## <a name="prerequisite"></a>Предварительное требование
 
 Чтобы использовать возможность ЦС X.509, требуется учетная запись Центра Интернета вещей.  [Узнайте, как создать экземпляр Центра Интернета вещей](quickstart-send-telemetry-dotnet.md), если он еще не создан.
 

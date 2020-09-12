@@ -11,12 +11,12 @@ ms.subservice: msi
 manager: daveba
 ms.collection: M365-identity-device-management
 ms.custom: references_regions
-ms.openlocfilehash: e62fc34ad02303f61214f754f6506c39af76fc94
-ms.sourcegitcommit: bcda98171d6e81795e723e525f81e6235f044e52
+ms.openlocfilehash: 207b4a926e77ff55faad388b6eeaeb221ec252a8
+ms.sourcegitcommit: 3c66bfd9c36cd204c299ed43b67de0ec08a7b968
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/01/2020
-ms.locfileid: "89267451"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "90006786"
 ---
 # <a name="services-that-support-managed-identities-for-azure-resources"></a>Службы с поддержкой управляемых удостоверений для ресурсов Azure
 
@@ -185,7 +185,7 @@ ms.locfileid: "89267451"
 
 Тип управляемого удостоверения | Все общедоступные версии<br>Глобальные регионы Azure | Azure для государственных организаций | Azure для Германии | Azure China 21Vianet |
 | --- | --- | --- | --- | --- |
-| Назначено системой | Доступно в регионе, где доступна служба импорта и экспорта Azure | Preview (Предварительный просмотр) | Доступно | Доступно |
+| Назначено системой | Доступно в регионе, где доступна служба импорта и экспорта Azure | Предварительный просмотр | Доступно | Доступно |
 | Назначено пользователем | Недоступно | Недоступно | Недоступно | Недоступно |
 
 ### <a name="azure-kubernetes-service-aks"></a>Служба Azure Kubernetes (AKS)
@@ -284,6 +284,7 @@ ms.locfileid: "89267451"
 - [Azure CLI](qs-configure-cli-windows-vm.md)
 - [Шаблоны диспетчера ресурсов Azure](qs-configure-template-windows-vm.md)
 - [REST](qs-configure-rest-vm.md)
+- [Пакеты SDK для Azure](qs-configure-sdk-windows-vm.md)
 
 
 ### <a name="azure-vm-image-builder"></a>Построитель образов виртуальных машин Azure

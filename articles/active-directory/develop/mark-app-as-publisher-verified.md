@@ -12,21 +12,21 @@ ms.date: 05/08/2020
 ms.author: ryanwi
 ms.custom: aaddev
 ms.reviewer: jesakowi
-ms.openlocfilehash: d25a3831897ff8ad2e7dfb0c69910fee246aec21
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: b3c3bed20b5fd60b9323dada617fb1302efc41d2
+ms.sourcegitcommit: 3c66bfd9c36cd204c299ed43b67de0ec08a7b968
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85477691"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "90006950"
 ---
-# <a name="mark-your-app-as-publisher-verified-preview"></a>Добавление для приложения метки "Проверенный издатель" (предварительная версия)
+# <a name="mark-your-app-as-publisher-verified"></a>Добавление для приложения метки "Проверенный издатель"
 
 Если приложение помечено как "проверенный издатель", это означает, что издатель подтвердил удостоверение с помощью учетной записи Microsoft Partner Network (MPN) и привязал эту учетную запись MPN к регистрации приложения. В этой статье описывается, как завершить [процесс проверки издателя (предварительная версия)](publisher-verification-overview.md).
 
 ## <a name="quickstart"></a>Краткое руководство
 Если вы уже зарегистрировались в Microsoft Partner Network (MPN) и выполнили все [предварительные требования](publisher-verification-overview.md#requirements), можно сразу приступить к работе: 
 
-1. Перейдите на страницу предварительной версии [портала регистрации приложений](https://aka.ms/PublisherVerificationPreview).
+1. Перейдите на [портал регистрации приложений](https://aka.ms/PublisherVerificationPreview).
 
 1. Выберите приложение и щелкните **Фирменная символика**. 
 
@@ -46,7 +46,7 @@ ms.locfileid: "85477691"
 
     - В Центре партнеров этот пользователь должен иметь следующие роли: Администратор MPN, администратор учетных записей или глобальный администратор (это общая роль, приобретенная в Azure AD). 
 
-1. Перейдите на страницу предварительной версии портала регистрации приложений.  
+1. Перейдите на портал регистрации приложений:  
 
 1. Щелкните приложение, которое вы хотите пометить как "проверенный издатель" и откройте колонку "Фирменная символика". 
 

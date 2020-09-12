@@ -13,12 +13,12 @@ ms.date: 09/18/2018
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: bee5ba92f6795df6635dc98a19cabaeb9692a470
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 244456298e9a85f7cf7a5bdc175f1df5397ca207
+ms.sourcegitcommit: f8d2ae6f91be1ab0bc91ee45c379811905185d07
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85358741"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89662154"
 ---
 # <a name="azure-ad-connect-and-azure-ad-connect-health-installation-roadmap"></a>План установки Azure AD Connect и Azure AD Connect Health
 
@@ -49,14 +49,14 @@ ms.locfileid: "85358741"
 |После установки | [Проверка установки и назначение лицензий ](how-to-connect-post-installation.md)|
 
 ### <a name="learn-more-about-install-azure-ad-connect"></a>Дополнительные сведения об установке Azure AD Connect
-Также требуется подготовиться к [рабочим](how-to-connect-sync-operations.md) вопросам. Может потребоваться наличие резервного сервера, на который можно будет легко перейти в случае [аварии](how-to-connect-sync-staging-server.md#disaster-recovery). Если планируется часто изменять конфигурацию, следует предусмотреть сервер для [промежуточного режима](how-to-connect-sync-staging-server.md) .
+Также требуется подготовиться к [рабочим](./how-to-connect-sync-staging-server.md) вопросам. Может потребоваться наличие резервного сервера, на который можно будет легко перейти в случае [аварии](how-to-connect-sync-staging-server.md#disaster-recovery). Если планируется часто изменять конфигурацию, следует предусмотреть сервер для [промежуточного режима](how-to-connect-sync-staging-server.md) .
 
 |Раздел |Ссылка|  
 | --- | --- |
 |Поддерживаемые топологии | [Топологии для Azure AD Connect](plan-connect-topologies.md)|
 |Принципы проектирования | [Azure AD Connect концепции проектирования](plan-connect-design-concepts.md)|
 |Учетные записи, используемые для установки | [Azure AD Connect: учетные записи и разрешения](reference-connect-accounts-permissions.md)|
-|Операционное планирование | [Службы синхронизации Azure AD Connect: рабочие задачи и рекомендации](how-to-connect-sync-operations.md)|
+|Операционное планирование | [Службы синхронизации Azure AD Connect: рабочие задачи и рекомендации](./how-to-connect-sync-staging-server.md)|
 |Параметры входа пользователя | [Azure AD Connect параметры входа пользователя](plan-connect-user-signin.md)|
 
 ## <a name="configure-sync-features"></a>Настройка функций синхронизации
@@ -66,7 +66,7 @@ Azure AD Connect поставляется с несколькими функци
 
 [Синхронизация хэша паролей](how-to-connect-password-hash-synchronization.md) подразумевает синхронизацию хэша паролей из Active Directory в Azure AD. Пользователи могут использовать один и тот же пароль локально и в облаке, но управление им осуществляется только из одного расположения. Так как при синхронизации паролей в качестве главного источника используется локальная служба Active Directory, вы также можете применить собственную политику паролей.
 
-[Компонент обратной записи паролей](../authentication/quickstart-sspr.md) позволит вашим пользователям изменять и сбрасывать пароли в облаке, а также применять вашу локальную политику паролей.
+[Компонент обратной записи паролей](../authentication/tutorial-enable-sspr.md) позволит вашим пользователям изменять и сбрасывать пароли в облаке, а также применять вашу локальную политику паролей.
 
 [Обратная запись устройств](how-to-connect-device-writeback.md) позволит записать устройство, зарегистрированное в Azure AD, обратно в локальную Active Directory, чтобы его можно было использовать для условного доступа.
 
@@ -80,7 +80,7 @@ Azure AD Connect поставляется с несколькими функци
 |Настройка фильтрации | [Синхронизация Azure AD Connect: Настройка фильтрации](how-to-connect-sync-configure-filtering.md)|
 |Синхронизация хэша паролей | [Синхронизации хэша паролей](how-to-connect-password-hash-synchronization.md)|
 |Сквозная проверка подлинности | [Сквозная проверка подлинности](how-to-connect-pta.md)
-|Компонент обратной записи паролей | [Начало работы с управлением паролями](../authentication/quickstart-sspr.md)|
+|Компонент обратной записи паролей | [Начало работы с управлением паролями](../authentication/tutorial-enable-sspr.md)|
 |Обратная запись устройств | [Включение обратной записи устройств в службе Azure AD Connect](how-to-connect-device-writeback.md)|
 |Предотвращение случайного удаления | [Синхронизация Azure AD Connect: предотвращение случайного удаления](how-to-connect-sync-feature-prevent-accidental-deletes.md)|
 |Автоматическое обновление | [Azure AD Connect выполняет следующие функции: Автоматическое обновление](how-to-connect-install-automatic-upgrade.md)|
@@ -124,7 +124,7 @@ Azure AD Connect поставляется с несколькими функци
 |Все статьи, посвященные AD FS | [Azure AD Connect и федерация](how-to-connect-fed-whatis.md)|
 |Настройка служб AD FS с поддоменами | [Поддержка нескольких доменов для федерации с Azure AD](how-to-connect-install-multiple-domains.md)|
 |Управление фермой AD FS | [Управление службами федерации Active Directory и их настройка с помощью Azure AD Connect](how-to-connect-fed-management.md)|
-|Обновление сертификатов федерации вручную | [Обновление сертификатов федерации для Office 365 и Azure AD](how-to-connect-fed-o365-certs.md)|
+|Обновление сертификатов федерации вручную | [Продление сертификатов федерации для Microsoft 365 и Azure AD](how-to-connect-fed-o365-certs.md)|
 
 
 ## <a name="get-started-with-azure-ad-connect-health"></a>Приступая к работе с Azure AD Connect Health
@@ -165,7 +165,7 @@ Azure AD Connect поставляется с несколькими функци
 * **Доменные службы Active Directory.** В этом разделе представлены все леса AD DS, которые в настоящее время отслеживает служба Azure AD Connect Health. Если выбрать лес, откроется колонка со сведениями об этом лесе. Эти сведения включают обзор основной информации, панель мониторинга контроллеров домена, панель мониторинга состояния репликации, оповещения и мониторинг. Дополнительные сведения о возможностях см. в статье [Использование Azure AD Connect Health с AD DS](how-to-connect-health-adds.md).
 * **Настройка.** В этом разделе можно включить или отключить следующие функции.
 
-   - **Автоматическое обновление** агента Azure AD Connect Health до последней версии: агент Azure AD Connect Health автоматически обновляется каждый раз, когда доступны новые версии. Этот параметр по умолчанию включен.
+   - **Автоматическое обновление** агента Azure AD Connect Health до последней версии: агент Azure AD Connect Health автоматически обновляется каждый раз, когда доступны новые версии. По умолчанию параметр включен.
    - **Доступ к данным** из каталога Azure AD только в целях устранения неполадок. Если этот параметр включен, корпорация Майкрософт может получить доступ к тем же данным, которые отображаются у пользователя. Эти сведения могут быть полезны для устранения неполадок и предоставления необходимой помощи. По умолчанию этот параметр отключен
 * Раздел **Управление доступом на основе ролей (IAM)** предназначен для управления доступом к данным Connect Health с помощью ролей. 
 

@@ -6,15 +6,15 @@ ms.author: viviali
 ms.date: 03/27/2020
 ms.topic: how-to
 ms.service: iot-central
-ms.custom: devx-track-azurecli
+ms.custom: devx-track-azurecli, device-developer
 services: iot-central
 manager: corywink
-ms.openlocfilehash: b9cf8b862f77af833016d6aabb0ccae7bea8e24a
-ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
+ms.openlocfilehash: 276513e41b1595180acb0a596b236428032d87a6
+ms.sourcegitcommit: 43558caf1f3917f0c535ae0bf7ce7fe4723391f9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/31/2020
-ms.locfileid: "87497432"
+ms.lasthandoff: 09/11/2020
+ms.locfileid: "90015982"
 ---
 # <a name="monitor-device-connectivity-using-azure-cli"></a>Мониторинг подключения устройств с помощью Azure CLI
 
@@ -26,7 +26,7 @@ ms.locfileid: "87497432"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-+ Azure CLI установлен и имеет версию 2.0.7 или более позднюю. Проверьте версию Azure CLI, выполнив `az --version` . Узнайте, как устанавливать и обновлять [документы Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli)
++ Azure CLI установлен и имеет версию 2.7.0 или более позднюю. Проверьте версию Azure CLI, выполнив `az --version` . Узнайте, как устанавливать и обновлять [документы Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli)
 + Рабочая или учебная учетная запись в Azure, добавленная в качестве пользователя в IoT Centralое приложение.
 
 ## <a name="install-the-iot-central-extension"></a>Установка расширения IoT Central
@@ -43,7 +43,7 @@ az extension add --name azure-iot
 az --version
 ```
 
-Вы должны увидеть расширение Azure-IOT 0.8.1 или более поздней версии. Если это не так, выполните:
+Вы должны увидеть расширение Azure-IOT 0.9.9 или более поздней версии. Если это не так, выполните:
 
 ```azurecli
 az extension update --name azure-iot
@@ -68,14 +68,14 @@ az login
 Отслеживайте сообщения, которые отправляются в приложение IoT Central с устройств. Выходные данные включают все заголовки и заметки.
 
 ```azurecli
-az iot central app monitor-events --app-id <app-id> --properties all
+az iot central diagnostics monitor-events --app-id <app-id> --properties all
 ```
 
 ### <a name="view-device-properties"></a>Просмотр свойств устройства
 Просмотр текущих свойств чтения и чтения и записи для данного устройства.
 
 ```azurecli
-az iot central device-twin show --app-id <app-id> --device-id <device-id>
+az iot central device twin show --app-id <app-id> --device-id <device-id>
 ```
 
 ## <a name="next-steps"></a>Дальнейшие действия

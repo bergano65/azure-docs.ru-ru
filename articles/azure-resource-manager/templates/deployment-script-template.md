@@ -7,12 +7,12 @@ ms.service: azure-resource-manager
 ms.topic: conceptual
 ms.date: 07/24/2020
 ms.author: jgao
-ms.openlocfilehash: 4094e610bb290fc11656dc192f3d0a495f679dc5
-ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
+ms.openlocfilehash: fb6d1c9e0e2ca545be850af22df15b342cf8d82c
+ms.sourcegitcommit: 0194a29a960e3615f96a2d9d8a7e681cf3e8f9ab
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87291795"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89667500"
 ---
 # <a name="use-deployment-scripts-in-templates-preview"></a>Использование сценариев развертывания в шаблонах (предварительная версия)
 
@@ -143,11 +143,11 @@ ms.locfileid: "87291795"
 - **azPowerShellVersion**/**azCliVersion**. Укажите используемую версию модуля. Список поддерживаемых версий PowerShell и CLI см. в разделе [Предварительные требования](#prerequisites).
 - **arguments**. Укажите значения параметров. Значения разделяются пробелами.
 
-    Скрипты развертывания разбивают аргументы на массив строк путем вызова системного вызова [коммандлинетоаргвв](/windows/win32/api/shellapi/nf-shellapi-commandlinetoargvw) . Это необходимо, так как аргументы передаются в качестве [Свойства команды](/rest/api/container-instances/containergroups/createorupdate#containerexec) в экземпляр контейнера Azure, а свойство Command — в виде массива String.
+    Скрипты развертывания разбивают аргументы на массив строк путем вызова системного вызова [коммандлинетоаргвв ](/windows/win32/api/shellapi/nf-shellapi-commandlinetoargvw) . Это необходимо, так как аргументы передаются в качестве [Свойства команды](/rest/api/container-instances/containergroups/createorupdate#containerexec) в экземпляр контейнера Azure, а свойство Command — в виде массива String.
 
     Если аргументы содержат escape-символы, используйте [жсонескапер](https://www.jsonescaper.com/) для двойного экранирования символов. Вставьте исходную экранированную строку в средство, а затем выберите **escape**.  Средство выводит строку с двойным экранированием. Например, в предыдущем примере шаблона аргумент имеет **имя \\ «Джон дружащим \\ »**.  Экранированная строка имеет **имя \\ \\ \\ «Джон дружащим \\ \\ \\ »**.
 
-    Чтобы передать параметр шаблона ARM типа Object в качестве аргумента, преобразуйте объект в строку с помощью функции [String ()](./template-functions-string.md#string) , а затем используйте функцию ** \\ \\ \\ ** [Replace ()](./template-functions-string.md#replace) для замены любого из них. ** \\ ** Например:
+    Чтобы передать параметр шаблона ARM типа Object в качестве аргумента, преобразуйте объект в строку с помощью функции [String ()](./template-functions-string.md#string) , а затем используйте функцию ** \\ \\ \\ ** [Replace ()](./template-functions-string.md#replace) для замены любого из них. ** \\ ** Пример:
 
     ```json
     replace(string(parameters('tables')), '\"', '\\\"')
@@ -217,7 +217,7 @@ Write-Host "Press [ENTER] to continue ..."
 
 ## <a name="use-supporting-scripts"></a>Использование вспомогательных сценариев
 
-Можно разделить сложную логику и поместить ее в один или несколько вспомогательных файлов сценария. Свойство `supportingScriptURI` позволяет при необходимости указать массив универсальных кодов ресурса (URI) для вспомогательных файлов сценария.
+Можно разделить сложную логику и поместить ее в один или несколько вспомогательных файлов сценария. Свойство `supportingScriptUris` позволяет при необходимости указать массив универсальных кодов ресурса (URI) для вспомогательных файлов сценария.
 
 ```json
 "scriptContent": "

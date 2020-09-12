@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.author: sgilley
 author: sdgilley
 ms.date: 07/08/2020
-ms.openlocfilehash: 437c2b8e42ed5128cc716eee23b8702ec012b481
-ms.sourcegitcommit: c6b9a46404120ae44c9f3468df14403bcd6686c1
+ms.openlocfilehash: e765422ebfce1a4328bac9a17edb8b581f87e6f7
+ms.sourcegitcommit: f8d2ae6f91be1ab0bc91ee45c379811905185d07
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88890920"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89661704"
 ---
 # <a name="what-is-an-azure-machine-learning-workspace"></a>Что такое рабочая область Машинного обучения Azure?
 
@@ -54,7 +54,7 @@ ms.locfileid: "88890920"
 + В Интернете:
     + [Машинное обучение Azure Studio ](https://ml.azure.com) 
     + [Конструктор машинное обучение Azure (Предварительная версия)](concept-designer.md) доступен только в рабочих областях [Enterprise Edition](overview-what-is-azure-ml.md#sku) .
-+ В любой среде Python с [пакетом SDK для машинное обучение Azure для Python](https://docs.microsoft.com/python/api/overview/azure/ml/intro?view=azure-ml-py).
++ В любой среде Python с [пакетом SDK для машинное обучение Azure для Python](https://docs.microsoft.com/python/api/overview/azure/ml/intro?view=azure-ml-py&preserve-view=true).
 + В любой среде R с [машинное обучение Azureным пакетом SDK для r (Предварительная версия)](https://azure.github.io/azureml-sdk-for-r/reference/index.html).
 + В командной строке с помощью [расширения CLI](https://docs.microsoft.com/azure/machine-learning/reference-azure-machine-learning-cli) машинное обучение Azure
 + [Расширение Машинное обучение Azure VS Code](how-to-manage-resources-vscode.md#workspaces)
@@ -94,7 +94,7 @@ ms.locfileid: "88890920"
 Существует несколько способов создания рабочей области.  
 
 * Используйте [портал Azure](how-to-manage-workspace.md) для интерфейса «точка-и щелчок», чтобы проанализировать каждый шаг.
-* Использование [пакета SDK машинное обучение Azure для Python](https://docs.microsoft.com/python/api/overview/azure/ml/intro?view=azure-ml-py#workspace) для создания рабочей области на лету из сценариев Python и записных книжек Юпитер
+* Использование [пакета SDK машинное обучение Azure для Python](https://docs.microsoft.com/python/api/overview/azure/ml/intro?view=azure-ml-py#&preserve-view=trueworkspace) для создания рабочей области на лету из сценариев Python и записных книжек Юпитер
 * Используйте [шаблон Azure Resource Manager](how-to-create-workspace-template.md) или интерфейс [командной строки машинное обучение Azure](reference-azure-machine-learning-cli.md) , если необходимо автоматизировать или настроить создание с использованием корпоративных стандартов безопасности.
 * При работе в Visual Studio Code используйте [расширение VS Code](how-to-manage-resources-vscode.md#create-a-workspace).
 

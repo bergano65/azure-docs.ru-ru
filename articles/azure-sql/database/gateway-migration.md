@@ -10,12 +10,12 @@ author: rohitnayakmsft
 ms.author: rohitna
 ms.reviewer: vanto
 ms.date: 07/01/2019
-ms.openlocfilehash: af5486630eb89de198b6ed2975a919b04b01a902
-ms.sourcegitcommit: 54d8052c09e847a6565ec978f352769e8955aead
+ms.openlocfilehash: ee55e0a66a0487291233713498f6eb541980dbba
+ms.sourcegitcommit: 3c66bfd9c36cd204c299ed43b67de0ec08a7b968
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88507524"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "90004278"
 ---
 # <a name="azure-sql-database-traffic-migration-to-newer-gateways"></a>Перенос трафика базы данных SQL Azure на более новые шлюзы
 [!INCLUDE[appliesto-sqldb](../includes/appliesto-sqldb.md)]
@@ -27,6 +27,14 @@ ms.locfileid: "88507524"
 ## <a name="status-updates"></a>Обновления состояния
 
 # <a name="in-progress"></a>[Выполняется](#tab/in-progress-ip)
+### <a name="october-2020"></a>Октябрь 2020 г.
+
+Новые шлюзы SQL добавляются в следующие регионы:
+
+- Центрально-Западная Германия: 51.116.240.0, 51.116.248.0
+
+Эти шлюзы SQL начинают принимать клиентский трафик на 12 октября 2020. 
+
 ### <a name="september-2020"></a>Сентябрь 2020 г.
 Новые шлюзы SQL добавляются в следующие регионы. Эти шлюзы SQL начинают принимать клиентский трафик на **15 сентября 2020**:
 
@@ -116,6 +124,6 @@ ms.locfileid: "88507524"
 
 Если описанное выше решение не работает, отправьте запрос в службу поддержки для базы данных SQL или Управляемый экземпляр SQL, используя следующий URL-адрес: https://aka.ms/getazuresupport
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Узнайте больше о [архитектуре подключения SQL Azure](connectivity-architecture.md)
