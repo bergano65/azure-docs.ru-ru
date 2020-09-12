@@ -5,15 +5,15 @@ services: data-factory
 author: nabhishek
 ms.service: data-factory
 ms.topic: troubleshooting
-ms.date: 8/26/2019
+ms.date: 09/01/2020
 ms.author: abnarain
 ms.reviewer: craigg
-ms.openlocfilehash: 568739ebdce632ae955da5e1cec12635c86af57c
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.openlocfilehash: 783e48139cf057bb17278d98e3683cb2b4cbad89
+ms.sourcegitcommit: c94a177b11a850ab30f406edb233de6923ca742a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86522862"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89279556"
 ---
 # <a name="troubleshoot-azure-data-factory"></a>Устранение неполадок в Фабрике данных Azure
 [!INCLUDE[appliesto-adf-asa-md](includes/appliesto-adf-asa-md.md)]
@@ -821,7 +821,7 @@ ms.locfileid: "86522862"
 
 - **Сообщение.** `User name and password cannot be null or empty to connect to the HDInsight cluster.`
 
-- **Причина.** Имя пользователя или пароль пусты.
+- **Причина**: имя пользователя или пароль пусты.
 
 - **Рекомендация**. Укажите правильные учетные данные для подключения к HDI и повторите попытку.
 
@@ -1053,6 +1053,11 @@ ms.locfileid: "86522862"
 1. Справочные ресурсы: **Файл** > **Сохранить** > **Все сеансы**.
 
 Дополнительные сведения см. на странице [начала работы с Fiddler](https://docs.telerik.com/fiddler/Configure-Fiddler/Tasks/ConfigureFiddler).
+
+## <a name="general"></a>Общие сведения
+
+### <a name="activity-stuck-issue"></a>Проблемы с задержанным действием
+Если вы следите за тем, чтобы действие выполнялось намного дольше обычного выполнения, не выполняя никаких действий, может произойти зависание. Вы можете попробовать отменить его и повторить попытку, чтобы узнать, помогает ли он. Если это действие копирования, можно узнать о мониторинге производительности и устранении неполадок при [устранении неполадок, связанных с действиями копирования](copy-activity-performance-troubleshooting.md). Если это поток данных, ознакомьтесь с руководством по настройке [производительности потоков данных](concepts-data-flow-performance.md) .
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

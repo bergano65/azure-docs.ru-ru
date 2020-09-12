@@ -15,12 +15,12 @@ ms.date: 01/31/2019
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 75300824d94ecbd77f426539ce99da6caaa2e27a
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 0f33cbb8caaf81b862198d694b0562d461de8a74
+ms.sourcegitcommit: c94a177b11a850ab30f406edb233de6923ca742a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85359999"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89279284"
 ---
 # <a name="how-to-customize-a-synchronization-rule"></a>Настройка правила синхронизации
 
@@ -43,14 +43,14 @@ ms.locfileid: "85359999"
 * Чтобы изменить правило **для исходящего трафика**, измените фильтр в редакторе правил синхронизации.
 
 ## <a name="recommended-documents"></a>**Рекомендуемые документы**
-* [Синхронизация Azure AD Connect: технические понятия](https://docs.microsoft.com/azure/active-directory/hybrid/how-to-connect-sync-technical-concepts)
-* [Синхронизация Azure AD Connect: общие сведения об архитектуре](https://docs.microsoft.com/azure/active-directory/hybrid/concept-azure-ad-connect-sync-architecture)
-* [Служба синхронизации Azure AD Connect: общие сведения о декларативной подготовке](https://docs.microsoft.com/azure/active-directory/hybrid/concept-azure-ad-connect-sync-declarative-provisioning)
-* [Azure AD Connect синхронизации: Общие сведения о выражениях декларативной подготовки](https://docs.microsoft.com/azure/active-directory/hybrid/concept-azure-ad-connect-sync-declarative-provisioning-expressions)
-* [Службы синхронизации Azure AD Connect: общие сведения о конфигурации по умолчанию](https://docs.microsoft.com/azure/active-directory/hybrid/concept-azure-ad-connect-sync-default-configuration)
-* [Синхронизация Azure AD Connect: общие сведения о пользователях, группах и контактах](https://docs.microsoft.com/azure/active-directory/hybrid/concept-azure-ad-connect-sync-user-and-contacts)
-* [Синхронизация Azure AD Connect: теневые атрибуты](https://docs.microsoft.com/azure/active-directory/hybrid/how-to-connect-syncservice-shadow-attributes)
+* [Синхронизация Azure AD Connect: технические понятия](./how-to-connect-sync-technical-concepts.md)
+* [Синхронизация Azure AD Connect: общие сведения об архитектуре](./concept-azure-ad-connect-sync-architecture.md)
+* [Служба синхронизации Azure AD Connect: общие сведения о декларативной подготовке](./concept-azure-ad-connect-sync-declarative-provisioning.md)
+* [Azure AD Connect синхронизации: Общие сведения о выражениях декларативной подготовки](./concept-azure-ad-connect-sync-declarative-provisioning-expressions.md)
+* [Службы синхронизации Azure AD Connect: общие сведения о конфигурации по умолчанию](./concept-azure-ad-connect-sync-default-configuration.md)
+* [Синхронизация Azure AD Connect: общие сведения о пользователях, группах и контактах](./concept-azure-ad-connect-sync-user-and-contacts.md)
+* [Синхронизация Azure AD Connect: теневые атрибуты](./how-to-connect-syncservice-shadow-attributes.md)
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Next Steps
 - [Синхронизация Azure AD Connect](how-to-connect-sync-whatis.md).
 - [Что такое Гибридная идентификация?](whatis-hybrid-identity.md)

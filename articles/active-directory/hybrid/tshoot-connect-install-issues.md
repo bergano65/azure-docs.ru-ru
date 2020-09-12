@@ -15,23 +15,23 @@ ms.date: 01/31/2019
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 6da21e9aa3b3b4cafec71a4d1881b9eb32b4dedc
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 25314b4a306678dc877a95194907b3d73979e4f8
+ms.sourcegitcommit: c94a177b11a850ab30f406edb233de6923ca742a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85356225"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89275867"
 ---
 # <a name="troubleshoot-azure-ad-connect-install-issues"></a>Устранение неполадок: Azure AD Connect проблемы установки
 
 ## <a name="recommended-steps"></a>**Рекомендуемые действия**
-Убедитесь, что [тип установки Azure AD Connect](https://docs.microsoft.com/azure/active-directory/hybrid/how-to-connect-install-select-installation) подходит для вас. Если возникло условие экспресс-установки, то мы настоятельно рекомендуем перейти к экспресс-установке. Экспресс-установка предоставляет минимальные параметры, необходимые для завершения установки, поэтому существует меньше вероятности возникновения проблем. 
+Убедитесь, что [тип установки Azure AD Connect](./how-to-connect-install-select-installation.md) подходит для вас. Если возникло условие экспресс-установки, то мы настоятельно рекомендуем перейти к экспресс-установке. Экспресс-установка предоставляет минимальные параметры, необходимые для завершения установки, поэтому существует меньше вероятности возникновения проблем. 
 
 Тем не менее, если условия экспресс-установки не возникают и вам необходимо выполнить выборочную установку, ознакомьтесь с приведенными ниже рекомендациями, которые помогут вам избежать распространенных проблем. Для простоты здесь упомянуты только выборочные параметры.
 
 * Убедитесь, что вы являетесь администратором на компьютере, где устанавливается AAD Connect. Войдите на компьютер под этими же учетными данными администратора.
 
-* Оставьте значения по умолчанию для всех параметров на следующей странице, за исключением параметра "Использовать существующий SQL Server", если вы хотите использовать существующий SQL Server. Дополнительные сведения об использовании параметров выборочной установки см. [здесь](https://docs.microsoft.com/azure/active-directory/hybrid/how-to-connect-install-custom). 
+* Оставьте значения по умолчанию для всех параметров на следующей странице, за исключением параметра "Использовать существующий SQL Server", если вы хотите использовать существующий SQL Server. Дополнительные сведения об использовании параметров выборочной установки см. [здесь](./how-to-connect-install-custom.md). 
 
     ![Параметр "Использовать существующий SQL Server"](media/tshoot-connect-install-issues/tshoot-connect-install-issues/useexistingsqlserver.png)
 
@@ -41,26 +41,21 @@ ms.locfileid: "85356225"
 
 ### <a name="common-issues"></a>**Распространенные проблемы**
 
-* [Проблемы с подключением к локальной Active Directory](https://docs.microsoft.com/azure/active-directory/hybrid/reference-connect-adconnectivitytools).
+* [Проблемы с подключением к локальной Active Directory](./reference-connect-adconnectivitytools.md).
 
-* [Проблемы с подключением к веб-службе Azure Active Directory](https://docs.microsoft.com/azure/active-directory/hybrid/tshoot-connect-connectivity).
+* [Проблемы с подключением к веб-службе Azure Active Directory](./tshoot-connect-connectivity.md).
 
-* [Проблемы с разрешениями локального Active Directory](https://docs.microsoft.com/azure/active-directory/hybrid/how-to-connect-configure-ad-ds-connector-account).
+* [Проблемы с разрешениями локального Active Directory](./how-to-connect-configure-ad-ds-connector-account.md).
 
 ## <a name="recommended-documents"></a>**Рекомендуемые документы**
-* [Необходимые условия для Azure AD Connect](https://docs.microsoft.com/azure/active-directory/hybrid/how-to-connect-install-prerequisites)
-* [Выбор типа установки для Azure AD Connect](https://docs.microsoft.com/azure/active-directory/hybrid/how-to-connect-install-select-installation)
-* [Приступая к работе с Azure AD Connect с использованием стандартных параметров](https://docs.microsoft.com/azure/active-directory/hybrid/how-to-connect-install-express)
-* [Выборочная установка Azure AD Connect](https://docs.microsoft.com/azure/active-directory/hybrid/how-to-connect-install-custom)
-* [Azure AD Connect: обновление до последней версии](https://docs.microsoft.com/azure/active-directory/hybrid/how-to-upgrade-previous-version)
-* [Azure AD Connect: что такое промежуточный сервер?](https://docs.microsoft.com/azure/active-directory/hybrid/plan-connect-topologies#staging-server)
-* [Что такое модуль PowerShell ADConnectivityTools?](https://docs.microsoft.com/azure/active-directory/hybrid/how-to-connect-adconnectivitytools)
+* [Необходимые условия для Azure AD Connect](./how-to-connect-install-prerequisites.md)
+* [Выбор типа установки для Azure AD Connect](./how-to-connect-install-select-installation.md)
+* [Приступая к работе с Azure AD Connect с использованием стандартных параметров](./how-to-connect-install-express.md)
+* [Выборочная установка Azure AD Connect](./how-to-connect-install-custom.md)
+* [Azure AD Connect: обновление до последней версии](./how-to-upgrade-previous-version.md)
+* [Azure AD Connect: что такое промежуточный сервер?](./plan-connect-topologies.md#staging-server)
+* [Что такое модуль PowerShell ADConnectivityTools?](./how-to-connect-adconnectivitytools.md)
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 - [Синхронизация Azure AD Connect](how-to-connect-sync-whatis.md).
 - [Что собой представляет гибридная идентификация](whatis-hybrid-identity.md)
-
-
-
-
-

@@ -8,12 +8,12 @@ ms.topic: article
 ms.date: 10/17/2016
 ms.author: akjosh
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: fda228f6a24e981bb848fbb106709aaa3d8e8613
-ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
+ms.openlocfilehash: 2237b0b0d0c1f6e95e100743b377f9c04f57210f
+ms.sourcegitcommit: c94a177b11a850ab30f406edb233de6923ca742a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87269127"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89279709"
 ---
 # <a name="understanding-and-using-the-azure-linux-agent"></a>Что такое агент Linux для Azure и как его использовать
 
@@ -53,7 +53,7 @@ ms.locfileid: "87269127"
 * **Расширение виртуальной машины**
   
   * Вставка компонента, созданного корпорацией Майкрософт и ее партнерами, в виртуальную машину Linux (IaaS) для включения программного обеспечения и автоматизации настройки
-  * Эталонная реализация расширения виртуальной машины в[https://github.com/Azure/azure-linux-extensions](https://github.com/Azure/azure-linux-extensions)
+  * Эталонная реализация расширения виртуальной машины в [https://github.com/Azure/azure-linux-extensions](https://github.com/Azure/azure-linux-extensions)
 
 ## <a name="communication"></a>Обмен данными
 Поток информации от платформы к агенту передается по двум каналам:
@@ -92,6 +92,9 @@ ms.locfileid: "87269127"
 * Инструменты обработки текста: sed, grep
 * Сетевые инструменты: ip-route
 * Поддержка ядра для монтирования файловых систем UDF.
+
+Убедитесь, что ваша виртуальная машина имеет доступ к IP-адресу 168.63.129.16. Дополнительные сведения см. в разделе [что такое IP-адрес 168.63.129.16](https://docs.microsoft.com/azure/virtual-network/what-is-ip-address-168-63-129-16).
+
 
 ## <a name="installation"></a>Установка
 Установка с помощью пакета RPM или DEB из репозитория пакета дистрибутива является предпочтительным способом установки и обновления агента Linux для Azure. Все [поставщики поддерживаемых дистрибутивов](../linux/endorsed-distros.md) встраивают пакет агента Linux для Azure в свои образы и репозитории.

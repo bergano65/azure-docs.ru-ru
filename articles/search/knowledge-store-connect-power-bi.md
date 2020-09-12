@@ -8,12 +8,12 @@ manager: nitinme
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 06/30/2020
-ms.openlocfilehash: 5be97414a2e4270870d976a9922415b227c66e27
-ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
+ms.openlocfilehash: 91e75b60f5324288c9f1adac59e31b9c1a1b0e9e
+ms.sourcegitcommit: 58d3b3314df4ba3cabd4d4a6016b22fa5264f05a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88924356"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89289177"
 ---
 # <a name="connect-a-knowledge-store-with-power-bi"></a>Подключение хранилища знаний с помощью Power BI
 
@@ -45,7 +45,7 @@ ms.locfileid: "88924356"
 
 1. В окне **Получение данных** выберите **Azure**, а затем выберите **Хранилище таблиц Azure**.
 
-1. Щелкните **Подключить**.
+1. Нажмите кнопку **Подключить**.
 
 1. В поле **Имя или URL-адрес учетной записи** введите имя своей учетной записи хранилища Azure (для вас будет создан полный URL-адрес).
 
@@ -68,7 +68,7 @@ ms.locfileid: "88924356"
 
 1. Щелкните значок с противоположными стрелками в верхней правой части таблицы, чтобы развернуть *Содержимое*. Когда отобразится список столбцов, выберите все столбцы, а затем отмените выбор столбцов, начинающихся с "метаданных". Щелкните **ОК**, чтобы отобразить выбранные столбцы.
 
-   ![Изменение таблиц](media/knowledge-store-connect-power-bi/powerbi-expand-content-table.png "Развертывание содержимого")
+   ![Развертывание содержимого](media/knowledge-store-connect-power-bi/powerbi-expand-content-table.png "Развертывание содержимого")
 
 1. Измените тип данных для следующих столбцов, щелкнув значок ABC-123 в левом верхнем углу столбца.
 

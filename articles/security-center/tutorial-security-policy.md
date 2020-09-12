@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 11/04/2019
 ms.author: memildin
-ms.openlocfilehash: 52488eb43377978d7f936ba0aa452cc872f8d899
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.openlocfilehash: 94a0c0af5071397ee4deb859f8f58f2ed1c73a77
+ms.sourcegitcommit: c94a177b11a850ab30f406edb233de6923ca742a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86519360"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89277669"
 ---
 # <a name="working-with-security-policies"></a>Использование политик безопасности
 
@@ -40,7 +40,7 @@ ms.locfileid: "86519360"
 * **Добавление политик соответствия нормативным** требованиям. панель мониторинга соответствия нормативным требованиям для центра безопасности показывает состояние всех оценок в среде в контексте определенного стандартного или нормативного (например, Azure CI, NIST SP 800-53 R4, SWIFT CSP КСКФ-v2020). Дополнительные сведения см. [в статье улучшение соответствия нормативным требованиям](security-center-compliance-dashboard.md).
 
 
-## <a name="managing-your-security-policies"></a>Управление политиками безопасности
+## <a name="manage-your-security-policies"></a>Управление политиками безопасности
 
 Чтобы просмотреть свои политики безопасности в центре безопасности, сделайте следующее:
 
@@ -54,7 +54,7 @@ ms.locfileid: "86519360"
 
 1. Откроется страница Политика безопасности для этой подписки или группы управления. В нем отображаются доступные и назначенные политики.
 
-   ![Экран политики](./media/tutorial-security-policy/security-policy-page.png)
+   ![страница политики](./media/tutorial-security-policy/security-policy-page.png)
 
     > [!NOTE]
     > При наличии метки "MG Inherited" вместе с политикой по умолчанию это означает, что политика была назначена группе управления и унаследована просматриваемой подпиской.
@@ -111,17 +111,17 @@ ms.locfileid: "86519360"
 
 1. Выберите **Просмотреть действующую политику**.
 
-   ![отключить политику](./media/tutorial-security-policy/view-effective-policy.png)
+   ![Просмотреть политику](./media/tutorial-security-policy/view-effective-policy.png)
 
 1. Выберите назначенную политику.
 
-   ![отключить политику](./media/tutorial-security-policy/security-policy.png)
+   ![Выбор политики](./media/tutorial-security-policy/security-policy.png)
 
 1. В разделе **Параметры** найдите политику, вызывающую рекомендацию, которую необходимо отключить, и из раскрывающегося списка выберите **отключено** .
 
    ![отключить политику](./media/tutorial-security-policy/disable-policy.png)
 
-1. Щелкните **Сохранить**.
+1. Выберите **Сохранить**.
 
    > [!NOTE]
    > Для вступления в силу изменений политики отключения может потребоваться до 12 часов.

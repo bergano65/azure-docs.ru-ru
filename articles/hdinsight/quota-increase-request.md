@@ -8,12 +8,12 @@ ms.service: hdinsight
 ms.topic: how-to
 ms.custom: hdinsightactive
 ms.date: 05/07/2020
-ms.openlocfilehash: 4de32bad763c0bbf0e143a7ce639efec8c9c41ae
-ms.sourcegitcommit: 124f7f699b6a43314e63af0101cd788db995d1cb
+ms.openlocfilehash: f8411176e0979bdb894983bcf866abd0e1109e21
+ms.sourcegitcommit: 58d3b3314df4ba3cabd4d4a6016b22fa5264f05a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86079621"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89291676"
 ---
 # <a name="requesting-quota-increases-for-azure-hdinsight"></a>Запрос на увеличение квоты для Azure HDInsight
 
@@ -65,7 +65,7 @@ ms.locfileid: "86079621"
 1. На вкладке **Проверить и создать** выберите **Создать**.
 
 > [!NOTE]  
-> Если нужно увеличить квоту на ядра HDInsight в частную область, [отправьте запрос на список разрешений](https://aka.ms/canaryintwhitelist).
+> Если вам нужно увеличить квоту ядра HDInsight в частном регионе, [отправьте запрос утвержденного списка](https://aka.ms/canaryintwhitelist).
 
 Вы можете [обратиться в службу поддержки, чтобы запросить увеличение квоты](https://docs.microsoft.com/azure/azure-portal/supportability/resource-manager-core-quotas-request).
 

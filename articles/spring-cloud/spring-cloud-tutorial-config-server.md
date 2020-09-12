@@ -7,12 +7,12 @@ ms.author: brendm
 author: bmitchell287
 ms.date: 10/18/2019
 ms.custom: devx-track-java
-ms.openlocfilehash: 38ef1188503d0076cfd98843f6f68c990fba7463
-ms.sourcegitcommit: e2b36c60a53904ecf3b99b3f1d36be00fbde24fb
+ms.openlocfilehash: 665d508a7d95e177d0db09ad86e2a5f0ee4d605b
+ms.sourcegitcommit: 58d3b3314df4ba3cabd4d4a6016b22fa5264f05a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/24/2020
-ms.locfileid: "88762385"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89291302"
 ---
 # <a name="set-up-a-spring-cloud-config-server-instance-for-your-service"></a>настройке экземпляра сервера конфигурации Spring Cloud для службы
 
@@ -22,7 +22,7 @@ ms.locfileid: "88762385"
 
 ## <a name="prerequisites"></a>Предварительные требования
 * Подписка Azure. Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу. 
-* Подготовленная и запущенная служба Azure Spring Cloud. Чтобы настроить и запустить службу Azure Spring Cloud, ознакомьтесь со статьей [Краткое руководство. Запуск приложения Java Spring с помощью Azure CLI](spring-cloud-quickstart-launch-app-cli.md).
+* Подготовленная и запущенная служба Azure Spring Cloud. Чтобы настроить и запустить службу Azure Spring Cloud, ознакомьтесь со статьей [Краткое руководство. Запуск приложения Java Spring с помощью Azure CLI](spring-cloud-quickstart.md).
 
 ## <a name="restriction"></a>Ограничение
 

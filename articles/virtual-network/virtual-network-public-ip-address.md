@@ -1,6 +1,7 @@
 ---
-title: Создание, изменение или удаление общедоступного IP-адреса Azure | Документация Майкрософт
-description: Создание, изменение или удаление общедоступного IP-адреса. Также Узнайте, как общедоступный IP-адрес является ресурсом с собственными настраиваемыми параметрами.
+title: Управление общедоступными IP-адресами | Документация Майкрософт
+titleSuffix: Azure Virtual Network
+description: Управление общедоступными IP-адресами.  Также Узнайте, как общедоступный IP-адрес является ресурсом с собственными настраиваемыми параметрами.
 services: virtual-network
 documentationcenter: na
 author: asudbring
@@ -16,14 +17,14 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 08/06/2019
 ms.author: kumud
-ms.openlocfilehash: 4c0766dc063932c5fdd41a4e21ac11befd84a0e5
-ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
+ms.openlocfilehash: 7beff39ed2c37eeb0f07571ba6d611d23a3221e7
+ms.sourcegitcommit: 58d3b3314df4ba3cabd4d4a6016b22fa5264f05a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87265132"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89292033"
 ---
-# <a name="create-change-or-delete-a-public-ip-address"></a>Создание, изменение и удаление общедоступного IP-адреса
+# <a name="manage-public-ip-addresses"></a>Управление общедоступными IP-адресами
 
 Общие сведения об общедоступном IP-адресе, а также о его создании, изменении и удалении. Общедоступный IP-адрес — это ресурс с собственными настраиваемыми параметрами. Назначение общедоступного IP-адреса ресурсу Azure, который поддерживает общие IP-адреса, позволяет следующее.
 - Входящий трафик из Интернета к ресурсам, таким как виртуальные машины Azure, шлюзы приложений Azure, подсистемы балансировки нагрузки Azure, VPN-шлюзы Azure и другие. Можно по-прежнему взаимодействовать с некоторыми ресурсами из Интернета, такими как виртуальные машины, если виртуальная машина не имеет назначенного ей общего IP-адреса. Пока виртуальная машина является частью пула внутренней подсистемы балансировки нагрузки, то взаимодействовать невозможно, потому что подсистема балансировки нагрузки имеет назначенный общедоступный IP-адрес. Чтобы определить, можно ли ресурсу для определенной службы Azure назначить общедоступный IP-адрес или он может обращаться через общедоступный IP-адрес другого ресурса Azure, см. документацию для службы.
@@ -70,7 +71,7 @@ ms.locfileid: "87265132"
 
 Хотя на портале предоставляется возможность создания двух ресурсов общедоступных IP-адресов (IPv4 и IPv6), следующие команды PowerShell и интерфейса командной строки создают один ресурс с адресом для одной или другой версии IP. Если требуется два ресурса общедоступного IP-адреса, по одному для каждой версии IP, необходимо дважды выполнить команду, указав другие имена и IP-версии для ресурсов общедоступного IP-адреса.
 
-|Средство|Команда|
+|Инструмент|Get-Help|
 |---|---|
 |CLI|[az network public-ip create](/cli/azure/network/public-ip#az-network-public-ip-create)|
 |PowerShell|[New-AzPublicIpAddress](/powershell/module/az.network/new-azpublicipaddress)|
@@ -89,7 +90,7 @@ ms.locfileid: "87265132"
 
 **Команды**
 
-|Средство|Команда|
+|Инструмент|Get-Help|
 |---|---|
 |CLI|Команда [az network public-ip list](/cli/azure/network/public-ip#az-network-public-ip-list) выводит список общедоступных IP-адресов, [az network public-ip show](/cli/azure/network/public-ip#az-network-public-ip-show) — отображает параметры, [az network public-ip update](/cli/azure/network/public-ip#az-network-public-ip-update) — обновляет IP-адрес, а [az network public-ip delete](/cli/azure/network/public-ip#az-network-public-ip-delete) — удаляет IP-адрес.|
 |PowerShell|[Get-азпублиЦипаддресс](/powershell/module/az.network/get-azpublicipaddress) для получения объекта общедоступного IP-адреса и просмотра его параметров, [Set-азпублиЦипаддресс](/powershell/module/az.network/set-azpublicipaddress) для обновления параметров; [Remove-азпублиЦипаддресс](/powershell/module/az.network/remove-azpublicipaddress) to delete|
@@ -108,7 +109,7 @@ ms.locfileid: "87265132"
 
 Для выполнения задач с общедоступными IP-адресами учетной записи должна быть назначена роль [Участник сетей](../role-based-access-control/built-in-roles.md?toc=%2fazure%2fvirtual-network%2ftoc.json#network-contributor) или [пользовательская](../role-based-access-control/custom-roles.md?toc=%2fazure%2fvirtual-network%2ftoc.json) роль, которой назначены соответствующие разрешения, перечисленные в таблице ниже.
 
-| Действие                                                             | Имя                                                           |
+| Действие                                                             | name                                                           |
 | ---------                                                          | -------------                                                  |
 | Microsoft.Network/publicIPAddresses/read                           | Чтение общедоступного IP-адреса.                                          |
 | Microsoft.Network/publicIPAddresses/write                          | Создание или обновление общедоступного IP-адреса.                           |

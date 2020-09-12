@@ -9,16 +9,16 @@ manager: femila
 editor: ''
 ms.service: media-services
 ms.workload: ''
-ms.topic: article
+ms.topic: conceptual
 ms.date: 08/31/2020
 ms.author: inhenkel
 ms.custom: seodec18
-ms.openlocfilehash: 3507d3f0ac978c6f7c2f5fc29fc563eaba79d98a
-ms.sourcegitcommit: bcda98171d6e81795e723e525f81e6235f044e52
+ms.openlocfilehash: 99101f31ec955c822c784180dd8b04bfb8e5f73c
+ms.sourcegitcommit: 58d3b3314df4ba3cabd4d4a6016b22fa5264f05a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/01/2020
-ms.locfileid: "89258866"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89291608"
 ---
 # <a name="assets-in-azure-media-services-v3"></a>Ресурсы в службах мультимедиа Azure v3
 
@@ -46,6 +46,6 @@ ms.locfileid: "89258866"
 
 [Общие сведения о службах мультимедиа](media-services-overview.md)
 
-## <a name="see-also"></a>См. также
+## <a name="see-also"></a>См. также раздел
 
 [Различия между Службами мультимедиа версий 2 и 3](migrate-from-v2-to-v3.md)

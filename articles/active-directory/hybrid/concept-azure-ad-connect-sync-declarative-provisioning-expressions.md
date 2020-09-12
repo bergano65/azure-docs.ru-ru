@@ -16,19 +16,19 @@ ms.date: 07/18/2017
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: cdc7c9dba49bf37db1f039d43b0450c65884c74b
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 02490839a9e35695ae2e8b3f750e139ad7413aa4
+ms.sourcegitcommit: c94a177b11a850ab30f406edb233de6923ca742a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "60245502"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89280219"
 ---
 # <a name="azure-ad-connect-sync-understanding-declarative-provisioning-expressions"></a>Служба синхронизации Azure AD Connect: общие сведения о выражениях декларативной подготовки
 Служба синхронизации Azure AD Connect основана на принципах декларативной подготовки, впервые представленной в Forefront Identity Manager 2010. Эта функция позволяет реализовать бизнес-логику интеграции идентификации без необходимости написания компилируемого кода.
 
 Важной частью декларативной подготовки является язык выражений, используемый в потоке атрибутов. Это подмножество Microsoft® Visual Basic® для приложений (VBA). Этот язык используется в Microsoft Office и знаком пользователи, имеющим опыт работы с VBScript. Язык выражений декларативной подготовки не структурированный и использует только функции, но не методы или инструкции. Вместо этого функции вложены в поток программы.
 
-Подробнее об этом см. в статье [Справочник по языку Office VBA](https://msdn.microsoft.com/library/gg264383.aspx).
+Подробнее об этом см. в статье [Справочник по языку Office VBA](/office/vba/api/overview/language-reference).
 
 Атрибуты являются строго типизированными. Функция принимает только атрибуты правильного типа. Регистр символов также учитывается. Имена функций и атрибутов должны указываться с учетом регистра, иначе произойдет ошибка.
 
@@ -100,4 +100,3 @@ ms.locfileid: "60245502"
 **Справочные разделы**
 
 * [Синхронизация Azure AD Connect: справочник по функциям](reference-connect-sync-functions-reference.md)
-

@@ -10,17 +10,17 @@ ms.service: media-services
 ms.workload: media
 ms.tgt_pltfrm: na
 ms.devlang: na
-ms.topic: article
+ms.topic: error-reference
 ms.date: 05/07/2019
 ms.author: inhenkel
-ms.openlocfilehash: 8f4e0d9a6781e35c1ed6197dd32181511506d145
-ms.sourcegitcommit: bcda98171d6e81795e723e525f81e6235f044e52
+ms.openlocfilehash: 8442c52052a2016da002d392c6fe0834b3813229
+ms.sourcegitcommit: 58d3b3314df4ba3cabd4d4a6016b22fa5264f05a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/01/2020
-ms.locfileid: "89256486"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89295331"
 ---
-# <a name="streaming-endpoint-origin-errors"></a>Ошибки конечной точки потоковой передачи (источника) 
+# <a name="streaming-endpoint-origin-errors"></a>Ошибки конечной точки потоковой передачи (источника)
 
 В этом разделе описываются ошибки, которые могут быть получены из [службы конечной точки потоковой передачи](streaming-endpoint-concept.md)служб мультимедиа Azure.
 

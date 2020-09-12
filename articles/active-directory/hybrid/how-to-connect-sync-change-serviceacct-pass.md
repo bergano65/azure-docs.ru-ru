@@ -17,19 +17,19 @@ ms.date: 05/02/2019
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: ce4c64f0be61c2fe28a102674929333235ee29c8
-ms.sourcegitcommit: 5b8fb60a5ded05c5b7281094d18cf8ae15cb1d55
+ms.openlocfilehash: 31c76b78d4ab7a3f305b52526b7e4ce14f3b1ede
+ms.sourcegitcommit: c94a177b11a850ab30f406edb233de6923ca742a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87385098"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89278043"
 ---
 # <a name="changing-the-adsync-service-account-password"></a>Изменение пароля учетной записи службы ADSync
 Если изменить пароль учетной записи службы ADSync, служба синхронизации не сможет правильно запуститься до тех пор, пока не будет отменен ключ шифрования и не повторно инициализирует пароль учетной записи службы ADSync. 
 
 Azure AD Connect, как часть служб синхронизации, использует ключ шифрования для хранения паролей учетной записи соединителя AD DS и учетной записи службы ADSync.  Эти учетные записи шифруются перед сохранением в базе данных. 
 
-Используемый ключ шифрования защищается с помощью [защиты данных Windows (DPAPI)](https://msdn.microsoft.com/library/ms995355.aspx). DPAPI защищает ключ шифрования с помощью **учетной записи службы ADSync**. 
+Используемый ключ шифрования защищается с помощью [защиты данных Windows (DPAPI)](/previous-versions/ms995355(v=msdn.10)). DPAPI защищает ключ шифрования с помощью **учетной записи службы ADSync**. 
 
 Если необходимо изменить пароль учетной записи службы, то для этого можно использовать процедуры, описанные в разделе прекращение использования [ключа шифрования учетной записи службы ADSync](#abandoning-the-adsync-service-account-encryption-key) .  Эти процедуры вам пригодятся и в том случае, когда по какой-либо причине вам понадобится сбросить ключ шифрования.
 

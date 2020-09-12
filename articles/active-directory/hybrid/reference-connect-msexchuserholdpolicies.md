@@ -14,18 +14,18 @@ ms.date: 08/23/2019
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: f4c637a01825616334cda8faa594efd08f29de8d
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: e4950906e016b9e1915d18ecacc1edcfda8b4d09
+ms.sourcegitcommit: c94a177b11a850ab30f406edb233de6923ca742a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "74213075"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89279403"
 ---
 # <a name="azure-ad-connect---msexchuserholdpolicies-and-cloudmsexchuserholdpolicies"></a>Azure AD Connect МсексчусерхолдполиЦиес и КлаудмсексчусерхолдполиЦиес
 В следующем справочном документе описываются эти атрибуты, используемые Exchange, и правильный способ изменения правил синхронизации по умолчанию.
 
 ## <a name="what-are-msexchuserholdpolicies-and-cloudmsexchuserholdpolicies"></a>Что такое МсексчусерхолдполиЦиес и КлаудмсексчусерхолдполиЦиес?
-Существует два типа [удержаний](https://docs.microsoft.com/Exchange/policy-and-compliance/holds/holds?view=exchserver-2019) , доступных для сервера Exchange: судебное хранение и хранение на месте. Если удержание судебного разбирательства включено, все элементы почтового ящика помещаются в удержание.  Хранение на месте используется для сохранения только тех элементов, которые удовлетворяют критериям поискового запроса, определенного с помощью средства встроенного обнаружения электронных данных.
+Существует два типа [удержаний](/Exchange/policy-and-compliance/holds/holds?view=exchserver-2019) , доступных для сервера Exchange: судебное хранение и хранение на месте. Если удержание судебного разбирательства включено, все элементы почтового ящика помещаются в удержание.  Хранение на месте используется для сохранения только тех элементов, которые удовлетворяют критериям поискового запроса, определенного с помощью средства встроенного обнаружения электронных данных.
 
 Атрибуты МсексчусерхолдполЦиес и КлаудмсексчусерхолдполиЦиес позволяют локальным AD и Azure AD определить, какие пользователи находятся в удержании, в зависимости от того, использует ли они локальную среду Exchange или Exchange.
 

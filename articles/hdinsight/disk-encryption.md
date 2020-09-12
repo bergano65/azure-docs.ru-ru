@@ -8,12 +8,12 @@ ms.reviewer: hrasheed
 ms.service: hdinsight
 ms.topic: conceptual
 ms.date: 08/10/2020
-ms.openlocfilehash: a78b56de537cfac0da48814afe9b07d911a61af1
-ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
+ms.openlocfilehash: 97d899d73359cc45daf88940b815ed262c3b4766
+ms.sourcegitcommit: 58d3b3314df4ba3cabd4d4a6016b22fa5264f05a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89020778"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89290843"
 ---
 # <a name="azure-hdinsight-double-encryption-for-data-at-rest"></a>Двойное шифрование Azure HDInsight для неактивных данных
 
@@ -36,7 +36,7 @@ HDInsight поддерживает несколько типов шифрова�
 |Тип кластера |Диск ОС (управляемый диск) |Диск данных (управляемый диск) |Диск временных данных (локальный SSD) |
 |---|---|---|---|
 |Kafka, HBase с ускоренной записью|Layer1: [Шифрование SSE](https://docs.microsoft.com/azure/virtual-machines/windows/managed-disks-overview#encryption) по умолчанию|Layer1: [Шифрование SSE](https://docs.microsoft.com/azure/virtual-machines/windows/managed-disks-overview#encryption) по умолчанию, Layer2: Необязательное шифрование неактивных с помощью CMK|Layer1: Необязательное шифрование на узле с помощью PMK, Layer2: Необязательное шифрование неактивных с помощью CMK|
-|Все остальные кластеры (Spark, Interactive, Hadoop, HBase без ускоренной записи)|Layer1: [Шифрование SSE](https://docs.microsoft.com/azure/virtual-machines/windows/managed-disks-overview#encryption) по умолчанию|Н/Д|Layer1: Необязательное шифрование на узле с помощью PMK, Layer2: Необязательное шифрование неактивных с помощью CMK|
+|Все остальные кластеры (Spark, Interactive, Hadoop, HBase без ускоренной записи)|Layer1: [Шифрование SSE](https://docs.microsoft.com/azure/virtual-machines/windows/managed-disks-overview#encryption) по умолчанию|Недоступно|Layer1: Необязательное шифрование на узле с помощью PMK, Layer2: Необязательное шифрование неактивных с помощью CMK|
 
 ## <a name="encryption-at-rest-using-customer-managed-keys"></a>Шифрование неактивных с помощью управляемых клиентом ключей
 
@@ -71,7 +71,7 @@ HDInsight поддерживает несколько типов шифрова�
 
 ### <a name="create-azure-key-vault"></a>Создание хранилища Azure Key Vault
 
-Создать хранилище ключей. Конкретные действия см. в разделе [Create Azure Key Vault](../key-vault/secrets/quick-create-portal.md) .
+Создание хранилища ключей. Конкретные действия см. в разделе [Create Azure Key Vault](../key-vault/secrets/quick-create-portal.md) .
 
 HDInsight поддерживает только Azure Key Vault. Если у вас есть собственное хранилище ключей, вы можете импортировать ключи в Azure Key Vault. Помните, что для хранилища ключей должно быть включено **обратимое удаление** . Дополнительные сведения об импорте существующих ключей см. в статье [Сведения о ключах, секретах и сертификатах](../key-vault/about-keys-secrets-and-certificates.md).
 
@@ -463,7 +463,7 @@ New-AzHDInsightCluster `
 
 ```azurecli
 az hdinsight create -t spark -g MyResourceGroup -n MyCluster \\
--p "HttpPassword1234!" \\
+-p "yourpass" \\
 --storage-account MyStorageAccount --encryption-at-host true
 ```
 

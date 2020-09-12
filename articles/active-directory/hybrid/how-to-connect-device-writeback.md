@@ -16,12 +16,12 @@ ms.date: 05/08/2018
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 3b139441adb02f5fb33ae8c4a70aaa9b423f0d0e
-ms.sourcegitcommit: cee72954f4467096b01ba287d30074751bcb7ff4
+ms.openlocfilehash: d526394ac89e2d29b2002004736e8480bb15b954
+ms.sourcegitcommit: c94a177b11a850ab30f406edb233de6923ca742a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/30/2020
-ms.locfileid: "87447097"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89279267"
 ---
 # <a name="azure-ad-connect-enabling-device-writeback"></a>Azure AD Connect: включение обратной записи устройств
 > [!NOTE]
@@ -31,10 +31,10 @@ ms.locfileid: "87447097"
 
 Следующая документация содержит сведения о том, как включить функцию обратной записи устройств в службе Azure AD Connect. Обратная запись устройств используется в ситуациях,
 
-* Включение [Windows Hello для бизнеса с помощью развертывания гибридного доверия сертификатов](https://docs.microsoft.com/windows/security/identity-protection/hello-for-business/hello-hybrid-cert-trust-prereqs#device-registration)
+* Включение [Windows Hello для бизнеса с помощью развертывания гибридного доверия сертификатов](/windows/security/identity-protection/hello-for-business/hello-hybrid-cert-trust-prereqs#device-registration)
 * Включение условного доступа на основе устройств в службы ADFS (2012 R2 или более поздней версии) защищенных приложений (отношения доверия с проверяющей стороной).
 
-Это обеспечивает дополнительную защиту и гарантию того, что доступ к приложениям предоставляется только доверенным устройствам. Дополнительные сведения об условном доступе см. в статьях [Управление рисками с помощью условного доступа](../active-directory-conditional-access-azure-portal.md) и [Настройка локального условного доступа с использованием регистрация устройств Azure Active Directory](../../active-directory/active-directory-device-registration-on-premises-setup.md).
+Это обеспечивает дополнительную защиту и гарантию того, что доступ к приложениям предоставляется только доверенным устройствам. Дополнительные сведения об условном доступе см. в статьях [Управление рисками с помощью условного доступа](../conditional-access/overview.md) и [Настройка локального условного доступа с использованием регистрация устройств Azure Active Directory](../devices/overview.md).
 
 > [!IMPORTANT]
 > <li>Устройства должны находиться в том же лесу, что и пользователи. Поскольку обратная запись устройств должна производиться в один лес, эта функция в настоящий момент не поддерживает развертывание с несколькими лесами пользователей.</li>
@@ -59,7 +59,7 @@ ms.locfileid: "87447097"
 
 4. Страница **Контейнер устройств** содержит параметр подготовки Active Directory с использованием одного из двух вариантов:
 
-    a. **Предоставление учетных данных администратора предприятия**. Если учетные данные администратора предприятия предоставлены для леса, в который необходимо выполнить обратную запись устройств, Azure AD Connect автоматически подготовит лес во время настройки обратной записи устройства.
+    а. **Предоставление учетных данных администратора предприятия**. Если учетные данные администратора предприятия предоставлены для леса, в который необходимо выполнить обратную запись устройств, Azure AD Connect автоматически подготовит лес во время настройки обратной записи устройства.
 
     b. **Загрузка сценария PowerShell **. Azure AD Connect автоматически создает сценарий PowerShell, который может подготовить Active Directory для обратной записи устройства. Если учетные данные администратора предприятия не могут быть предоставлены в Azure AD Connect, предлагаем загрузить сценарий PowerShell. Укажите скачанный скрипт PowerShell **CreateDeviceContainer.ps1** администратору предприятия леса, в который будут записаны устройства.
     ![Подготовка леса Active Directory](./media/how-to-connect-device-writeback/devicecontainercreds.png)
@@ -83,7 +83,7 @@ ms.locfileid: "87447097"
    ![Центр администрирования Active Directory: список зарегистрированных устройств](./media/how-to-connect-device-writeback/devicewriteback6.png)
 
 ## <a name="enable-conditional-access"></a>Включить условный доступ
-Подробные инструкции о включении этого сценария см. в статье [Настройка локального условного доступа с помощью регистрации устройств в Azure Active Directory](../../active-directory/active-directory-device-registration-on-premises-setup.md).
+Подробные инструкции о включении этого сценария см. в статье [Настройка локального условного доступа с помощью регистрации устройств в Azure Active Directory](../devices/overview.md).
 
 ## <a name="troubleshooting"></a>Устранение неполадок
 ### <a name="the-writeback-checkbox-is-still-disabled"></a>Флажок обратной записи по-прежнему отключен
@@ -126,9 +126,8 @@ ms.locfileid: "87447097"
 ![Устранение неполадок, проверка разрешений в конфигурации регистрации устройства](./media/how-to-connect-device-writeback/troubleshoot6.png)
 
 ## <a name="additional-information"></a>Дополнительные сведения
-* [Управление рисками с помощью условного доступа](../active-directory-conditional-access-azure-portal.md)
-* [Настройка локального условного доступа с помощью Регистрация устройств Azure Active Directory](../../active-directory/active-directory-device-registration-on-premises-setup.md)
+* [Управление рисками с помощью условного доступа](../conditional-access/overview.md)
+* [Настройка локального условного доступа с помощью Регистрация устройств Azure Active Directory](../devices/overview.md)
 
 ## <a name="next-steps"></a>Дальнейшие действия
 Узнайте больше об [интеграции локальных удостоверений с Azure Active Directory](whatis-hybrid-identity.md).
-

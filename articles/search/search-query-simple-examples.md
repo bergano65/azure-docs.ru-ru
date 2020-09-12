@@ -8,12 +8,12 @@ ms.author: heidist
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 11/04/2019
-ms.openlocfilehash: afc9f8e29cf27734787da9cab3e3456e5414d9ac
-ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
+ms.openlocfilehash: 3c469d7274bb90e194478af2464cb352efe7490c
+ms.sourcegitcommit: 58d3b3314df4ba3cabd4d4a6016b22fa5264f05a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88918032"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89294872"
 ---
 # <a name="create-a-simple-query-in-azure-cognitive-search"></a>Создание простого запроса в Azure Когнитивный поиск
 
@@ -37,13 +37,13 @@ ms.locfileid: "88918032"
 
 Настроенный заголовок запроса можно многократно использовать для всех запросов в этой статье, только заменяя строку **search=**. 
 
-  ![Заголовок запроса Postman](media/search-query-lucene-examples/postman-header.png)
+  ![Параметры набора заголовков запроса POST](media/search-query-lucene-examples/postman-header.png)
 
 ### <a name="set-the-request-url"></a>Настройка URL-адреса запроса
 
 Запрос — это команда GET с URL-адресом, содержащим конечную точку Когнитивный поиск Azure и строку поиска.
 
-  ![Заголовок запроса Postman](media/search-query-lucene-examples/postman-basic-url-request-elements.png)
+  ![Запрос POST заголовка GET](media/search-query-lucene-examples/postman-basic-url-request-elements.png)
 
 URL-адрес содержит следующие элементы.
 

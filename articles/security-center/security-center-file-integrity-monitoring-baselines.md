@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 05/29/2019
 ms.author: memildin
-ms.openlocfilehash: bb45e1d1ee17a6daf16bd688982f79fda986bde5
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: d336c58971b16875d9861f85dde9529de8c734e2
+ms.sourcegitcommit: c94a177b11a850ab30f406edb233de6923ca742a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "73664405"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89278091"
 ---
 # <a name="compare-baselines-using-file-integrity-monitoring-fim"></a>Сравнение базовых показателей с помощью мониторинга целостности файлов
 
@@ -41,7 +41,7 @@ ms.locfileid: "73664405"
 >[!NOTE]
 > Рекурсивные проверки применяются только к рекомендуемым кустам безопасности, а не к пользовательским путям реестра.  
 
-## <a name="adding-a-custom-registry-check"></a>Добавление пользовательской проверки реестра
+## <a name="add-a-custom-registry-check"></a>Добавление пользовательской проверки реестра
 
 Базовые показатели FIM начинаются с определения характеристик известного состояния операционной системы и поддерживающего приложения.  В этом примере мы рассмотрим конфигурации политики паролей для Windows Server 2008 и более поздних версий.
 
@@ -73,14 +73,14 @@ ms.locfileid: "73664405"
 
       ![Включение FIM в реестре](./media/security-center-file-integrity-monitoring-baselines/baselines-add-registry.png)
 
-## <a name="tracking-changes-to-windows-files"></a>Отслеживание изменений в файлах Windows
+## <a name="track-changes-to-windows-files"></a>Отслеживание изменений в файлах Windows
 
 1. В окне **Добавление файла Windows для отслеживание изменений** в текстовом поле **введите путь** введите папку, содержащую файлы, которые необходимо отвестить. В примере на следующем рисунке **веб-приложение Contoso** находится в D:\ диск в структуре папок **контосвебапп** .  
 1. Создайте настраиваемую запись файла Windows, указав имя класса параметров, включив рекурсию и указав верхнюю папку с суффиксом-шаблоном (*).
 
     ![Включение FIM для файла](./media/security-center-file-integrity-monitoring-baselines/baselines-add-file.png)
 
-## <a name="retrieving-change-data"></a>Получение данных изменений
+## <a name="retrieve-change-data"></a>Получение данных изменений
 
 Данные мониторинга целостности файлов находятся в наборе таблиц Azure Log Analytics/ConfigurationChange.  
 

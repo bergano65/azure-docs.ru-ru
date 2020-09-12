@@ -12,12 +12,12 @@ ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
 ms.custom: devx-track-azurepowershell
-ms.openlocfilehash: ce6f0e5e6e958e72ddc04608c5f207fedb18daf9
-ms.sourcegitcommit: 656c0c38cf550327a9ee10cc936029378bc7b5a2
+ms.openlocfilehash: 9a082270e2c113bcdf31ed6bd6db3d38a7117500
+ms.sourcegitcommit: c94a177b11a850ab30f406edb233de6923ca742a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89072270"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89279301"
 ---
 # <a name="azure-ad-connectconfigure-ad-ds-connector-account-permissions"></a>Azure AD Connect выполняет следующие функции: Настройка разрешений учетной записи соединителя AD DS 
 
@@ -39,12 +39,12 @@ ms.locfileid: "89072270"
 | Синхронизация хэша паролей |<li>Репликация изменений каталога</li>  <li>Репликация всех изменений каталога |
 | Гибридное развертывание Exchange |Разрешения на чтение и запись для атрибутов, описанных в статье [Гибридная обратная запись Exchange](reference-connect-sync-attributes-synchronized.md#exchange-hybrid-writeback) для пользователей, групп и контактов. |
 | Общедоступная папка почты Exchange |Разрешения на чтение для атрибутов, описанных в статье [Службы синхронизации Azure AD Connect: атрибуты, синхронизируемые с Azure Active Directory](reference-connect-sync-attributes-synchronized.md#exchange-mail-public-folder), для общедоступных папок. | 
-| Компонент обратной записи паролей |Разрешения на чтение и запись для атрибутов, описанных в статье [Приступая к работе с компонентами управления паролями](../authentication/howto-sspr-writeback.md) для пользователей. |
+| Компонент обратной записи паролей |Разрешения на чтение и запись для атрибутов, описанных в статье [Приступая к работе с компонентами управления паролями](../authentication/tutorial-enable-sspr-writeback.md) для пользователей. |
 | Обратная запись устройств |Разрешения на чтение и запись для объектов и контейнеров устройства, описанные в [обратной записи устройств](how-to-connect-device-writeback.md). |
 | Обратная запись групп |Чтение, создание, обновление и удаление объектов групп для синхронизированных **групп Office 365**.|
 
 ## <a name="using-the-adsyncconfig-powershell-module"></a>Использование модуля ADSyncConfig PowerShell 
-Модулю ADSyncConfig необходимы [средства удаленного администрирования сервера (RSAT) для AD DS](https://docs.microsoft.com/windows-server/remote/remote-server-administration-tools), поскольку он зависит от модуля PowerShell для AD DS и средств. Чтобы установить средства удаленного администрирования сервера для AD DS, откройте окно Windows PowerShell в режиме "Запуск от имени администратора" и выполните: 
+Модулю ADSyncConfig необходимы [средства удаленного администрирования сервера (RSAT) для AD DS](/windows-server/remote/remote-server-administration-tools), поскольку он зависит от модуля PowerShell для AD DS и средств. Чтобы установить средства удаленного администрирования сервера для AD DS, откройте окно Windows PowerShell в режиме "Запуск от имени администратора" и выполните: 
 
 ``` powershell
 Install-WindowsFeature RSAT-AD-Tools 
@@ -311,4 +311,3 @@ Set-ADSyncRestrictedPermissions -ADConnectorAccountDN'CN=ADConnectorAccount,CN=U
 - [Приступая к работе с Azure AD Connect с использованием стандартных параметров](how-to-connect-install-express.md)
 - [Выборочная установка Azure AD Connect](how-to-connect-install-custom.md)
 - [Справочник по ADSyncConfig](reference-connect-adsyncconfig.md)
-

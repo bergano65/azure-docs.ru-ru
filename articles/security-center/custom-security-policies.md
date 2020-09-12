@@ -8,12 +8,12 @@ ms.service: security-center
 ms.topic: conceptual
 ms.date: 04/22/2020
 ms.author: memildin
-ms.openlocfilehash: 6f11de7f38ff97b1141afa48c26788a171727cb6
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 065c6661ffc9f618a5dfd32a9f45d26569a56003
+ms.sourcegitcommit: c94a177b11a850ab30f406edb233de6923ca742a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85559570"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89278179"
 ---
 # <a name="using-custom-security-policies"></a>Использование пользовательских политик безопасности
 
@@ -69,7 +69,7 @@ ms.locfileid: "85559570"
 
     [![Пользовательские рекомендации](media/custom-security-policies/custom-policy-recommendations.png)](media/custom-security-policies/custom-policy-recommendations-in-context.png#lightbox)
 
-## <a name="enhancing-your-custom-recommendations-with-detailed-information"></a>Усовершенствование пользовательских рекомендаций с помощью дополнительных сведений
+## <a name="enhance-your-custom-recommendations-with-detailed-information"></a>Улучшенные пользовательские рекомендации с подробными сведениями
 
 Встроенные рекомендации, предоставляемые Центром безопасности Azure, включают такие сведения, как уровни серьезности и инструкции по исправлению. Если вы хотите добавить эти сведения в пользовательские рекомендации, чтобы они появлялись на портале Azure или при каждом доступе к рекомендациям, необходимо использовать REST API. 
 

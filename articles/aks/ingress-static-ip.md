@@ -5,12 +5,12 @@ description: Сведения об установке и настройке ко
 services: container-service
 ms.topic: article
 ms.date: 08/17/2020
-ms.openlocfilehash: dbab9df3acf7de801a4e75502863fff698232458
-ms.sourcegitcommit: b33c9ad17598d7e4d66fe11d511daa78b4b8b330
+ms.openlocfilehash: be4856beac69d11de12ec764f313fa59f3b24e9f
+ms.sourcegitcommit: 58d3b3314df4ba3cabd4d4a6016b22fa5264f05a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88852563"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89290554"
 ---
 # <a name="create-an-ingress-controller-with-a-static-public-ip-address-in-azure-kubernetes-service-aks"></a>Создание контроллера входящего трафика со статическим общедоступным IP-адресом в Службе Azure Kubernetes (AKS)
 
@@ -18,7 +18,7 @@ ms.locfileid: "88852563"
 
 В этой статье описывается, как установить и настроить [контроллер входящего трафика NGINX][nginx-ingress] в кластере Службы Azure Kubernetes (AKS). Контроллер входящего трафика настраивается со статическим общедоступным IP-адресом. Для автоматического создания и настройки сертификатов [Let's Encrypt][lets-encrypt] используется проект [cert-manager][cert-manager]. Наконец, в кластере AKS запущено два приложения, каждое из которых доступно по одному IP-адресу.
 
-Кроме того, вы можете сделать следующее:
+Также можно:
 
 - [Создать базовый контроллер входящего трафика с внешним сетевым подключением.][aks-ingress-basic]
 - [Включить надстройку маршрутизации приложений HTTP.][aks-http-app-routing]
@@ -50,7 +50,7 @@ az network public-ip create --resource-group MC_myResourceGroup_myAKSCluster_eas
 ```
 
 > [!NOTE]
-> Приведенные выше команды создают IP-адрес, который будет удален при удалении кластера AKS. Кроме того, можно создать IP-адрес в другой группе ресурсов, которую можно управлять отдельно от кластера AKS. Если вы создаете IP-адрес в другой группе ресурсов, убедитесь, что участник-служба, используемый кластером AKS, имеет делегированные разрешения на доступ к другой группе ресурсов, например к *участнику сети*.
+> Приведенные выше команды создают IP-адрес, который будет удален при удалении кластера AKS. Кроме того, можно создать IP-адрес в другой группе ресурсов, которую можно управлять отдельно от кластера AKS. Если вы создаете IP-адрес в другой группе ресурсов, убедитесь, что участник-служба, используемый кластером AKS, имеет делегированные разрешения на доступ к другой группе ресурсов, например к *участнику сети*. Дополнительные сведения см. [в статье Использование статического общедоступного IP-адреса и метки DNS с подсистемой балансировки нагрузки AKS][aks-static-ip].
 
 Разверните диаграмму *nginx ingress* с помощью Helm. Для обеспечения дополнительной избыточности развертываются две реплики контроллеров входящего трафика NGINX с использованием параметра `--set controller.replicaCount`. Чтобы максимально эффективно использовать реплики контроллера входящего трафика, убедитесь, что в кластере AKS используется несколько узлов.
 
@@ -449,7 +449,7 @@ az network public-ip delete --resource-group MC_myResourceGroup_myAKSCluster_eas
 - [Контроллер входящего трафика NGINX][nginx-ingress]
 - [cert-manager][cert-manager]
 
-Кроме того, вы можете сделать следующее:
+Также можно:
 
 - [Создать базовый контроллер входящего трафика с внешним сетевым подключением.][aks-ingress-basic]
 - [Включить надстройку маршрутизации приложений HTTP.][aks-http-app-routing]
@@ -483,3 +483,4 @@ az network public-ip delete --resource-group MC_myResourceGroup_myAKSCluster_eas
 [aks-quickstart-portal]: kubernetes-walkthrough-portal.md
 [client-source-ip]: concepts-network.md#ingress-controllers
 [install-azure-cli]: /cli/azure/install-azure-cli
+[aks-static-ip]: static-ip.md

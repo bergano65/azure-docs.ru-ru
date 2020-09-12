@@ -8,12 +8,12 @@ ms.service: security-center
 ms.topic: conceptual
 ms.date: 11/04/2019
 ms.author: memildin
-ms.openlocfilehash: 449096590df6145c9f80dcf2c97726931909a2ae
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 7025b091b83a56b7b3df18c3f42cb84b163560bb
+ms.sourcegitcommit: c94a177b11a850ab30f406edb233de6923ca742a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "77914812"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89277771"
 ---
 # <a name="threat-protection-for-azure-key-vault-preview"></a>Защита от угроз для Azure Key Vault (Предварительная версия)
 
@@ -21,7 +21,7 @@ ms.locfileid: "77914812"
 
 Когда центр безопасности обнаруживает аномальные действия, он отображает предупреждения. Он также отправляет администратору подписки сведения о подозрительной активности и рекомендации по исследованию и исправлению обнаруженных угроз.
 
-## <a name="configuring-threat-protection-from-security-center"></a>Настройка защиты от угроз в центре безопасности
+## <a name="configure-threat-protection-from-security-center"></a>Настройка защиты от угроз в центре безопасности
 
 По умолчанию расширенная защита от угроз включена для всех учетных записей Key Vault при подоформлении стандартной ценовой категории центра безопасности. Дополнительные сведения см. на странице [цен](security-center-pricing.md).
 

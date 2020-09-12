@@ -7,12 +7,12 @@ ms.topic: how-to
 ms.date: 11/04/2019
 ms.author: brendm
 ms.custom: devx-track-java
-ms.openlocfilehash: ef202bb3ba82b48aca75c7f934aecb3f5fbe0a0b
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
-ms.translationtype: HT
+ms.openlocfilehash: 0287bc8a11c359acce5fbf12d3a51e99a9f5420e
+ms.sourcegitcommit: 58d3b3314df4ba3cabd4d4a6016b22fa5264f05a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87070758"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89297150"
 ---
 # <a name="bind-an-azure-database-for-mysql-instance-to-your-azure-spring-cloud-application"></a>привязке экземпляра Базы данных Azure для MySQL к приложению Azure Spring Cloud 
 
@@ -24,7 +24,7 @@ ms.locfileid: "87070758"
 * Учетная запись базы данных Azure для MySQL
 * Azure CLI
 
-Если у вас нет развернутого экземпляра Azure Spring Cloud, выполните инструкции, приведенные в статье [Краткое руководство. Запуск приложения Azure Spring Cloud с помощью портала Azure](spring-cloud-quickstart-launch-app-portal.md), чтобы развернуть первое приложение Azure Spring Cloud.
+Если у вас нет развернутого экземпляра Azure Spring Cloud, выполните инструкции, приведенные в статье [Краткое руководство. Запуск приложения Azure Spring Cloud с помощью портала Azure](spring-cloud-quickstart.md), чтобы развернуть первое приложение Azure Spring Cloud.
 
 ## <a name="bind-your-app-to-your-azure-database-for-mysql-instance"></a>Привязка приложения к экземпляру Базы данных Azure для MySQL
 

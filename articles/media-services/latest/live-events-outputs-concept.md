@@ -11,15 +11,15 @@ ms.service: media-services
 ms.workload: media
 ms.tgt_pltfrm: na
 ms.devlang: ne
-ms.topic: article
+ms.topic: conceptual
 ms.date: 08/31/2020
 ms.author: inhenkel
-ms.openlocfilehash: da91e37c47db6d944aa6974123dd80ec982453e4
-ms.sourcegitcommit: bcda98171d6e81795e723e525f81e6235f044e52
+ms.openlocfilehash: 9a32cd4db9a4c4dbd2b5f36c16feef4717790c3c
+ms.sourcegitcommit: 58d3b3314df4ba3cabd4d4a6016b22fa5264f05a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/01/2020
-ms.locfileid: "89265190"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89291472"
 ---
 # <a name="live-events-and-live-outputs-in-media-services"></a>Динамические события и динамические выходные данные в службах мультимедиа
 
@@ -71,7 +71,7 @@ ms.locfileid: "89265190"
 
 ## <a name="creating-live-events"></a>Создание событий Live
 
-### <a name="options"></a>Элемент Options
+### <a name="options"></a>Параметры
 
 При создании события потоковой трансляции можно указать следующие параметры.
 

@@ -16,12 +16,12 @@ ms.date: 06/09/2020
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: ac36650e285c371457b89f7a362b51fa74d7d47c
-ms.sourcegitcommit: 656c0c38cf550327a9ee10cc936029378bc7b5a2
+ms.openlocfilehash: 7046ab3c30e120aaaf285c32e25fce03524a0cf4
+ms.sourcegitcommit: c94a177b11a850ab30f406edb233de6923ca742a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89071437"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89280168"
 ---
 # <a name="azure-active-directory-pass-through-authentication-frequently-asked-questions"></a>Сквозная проверка подлинности Azure Active: ответы на часто задаваемые вопросы
 
@@ -29,7 +29,7 @@ ms.locfileid: "89071437"
 
 ## <a name="which-of-the-methods-to-sign-in-to-azure-ad-pass-through-authentication-password-hash-synchronization-and-active-directory-federation-services-ad-fs-should-i-choose"></a>Какой из методов входа в Azure AD следует выбрать: сквозную аутентификацию, синхронизацию хэша паролей или службы федерации Active Directory (AD FS)?
 
-[В этом руководстве](https://docs.microsoft.com/azure/security/fundamentals/choose-ad-authn) вы можете ознакомиться со сравнением различных методов входа Azure AD и узнать, как выбрать правильный метод входа в систему для своей организации.
+[В этом руководстве](./choose-ad-authn.md) вы можете ознакомиться со сравнением различных методов входа Azure AD и узнать, как выбрать правильный метод входа в систему для своей организации.
 
 ## <a name="is-pass-through-authentication-a-free-feature"></a>Функция сквозной проверки подлинности является бесплатной?
 
@@ -39,7 +39,7 @@ ms.locfileid: "89071437"
 
 Нет. Сквозная аутентификация доступна только в доступном по всему миру экземпляре Azure AD.
 
-## <a name="does-conditional-access-work-with-pass-through-authentication"></a>Работает ли [условный доступ](../active-directory-conditional-access-azure-portal.md) со сквозной проверкой подлинности?
+## <a name="does-conditional-access-work-with-pass-through-authentication"></a>Работает ли [условный доступ](../conditional-access/overview.md) со сквозной проверкой подлинности?
 
 Да. Все возможности условного доступа, включая многофакторную идентификацию Azure, работают с сквозной проверкой подлинности.
 
@@ -148,7 +148,7 @@ ms.locfileid: "89071437"
 
 ## <a name="why-do-i-need-a-cloud-only-global-administrator-account-to-enable-pass-through-authentication"></a>Зачем для включения сквозной аутентификации нужна облачная учетная запись глобального администратора?
 
-Рекомендуется включать или отключать сквозную аутентификацию, используя облачную учетную запись глобального администратора. Узнайте [, как добавить облачную учетную запись глобального администратора](../active-directory-users-create-azure-portal.md). Выполните эти инструкции, чтобы не потерять доступ к клиенту.
+Рекомендуется включать или отключать сквозную аутентификацию, используя облачную учетную запись глобального администратора. Узнайте [, как добавить облачную учетную запись глобального администратора](../fundamentals/add-users-azure-active-directory.md). Выполните эти инструкции, чтобы не потерять доступ к клиенту.
 
 ## <a name="how-can-i-disable-pass-through-authentication"></a>Как можно отключить сквозную проверку подлинности?
 
@@ -184,4 +184,3 @@ ms.locfileid: "89071437"
 - [Руководство по безопасности](how-to-connect-pta-security-deep-dive.md). Получите дополнительные технические сведения о сквозной аутентификации.
 - [Простой единый вход Azure Active Directory](how-to-connect-sso.md). Узнайте подробнее об этой дополнительной функции.
 - [UserVoice](https://feedback.azure.com/forums/169401-azure-active-directory/category/160611-directory-synchronization-aad-connect). Оставить запрос на новые функции можно на форуме по Azure Active Directory.
-

@@ -16,12 +16,12 @@ ms.date: 07/17/2017
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d6a61a4a26176ee353d1f182579e1f8d80a95aab
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 7ca5361d8500ecd4ea22a577d0a4dc7ced606eab
+ms.sourcegitcommit: c94a177b11a850ab30f406edb233de6923ca742a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85356004"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89275908"
 ---
 # <a name="azure-ad-connect-how-to-recover-from-localdb-10-gb-limit"></a>Azure AD Connect: восстановление из LocalDB с ограничением в 10 ГБ
 Azure AD Connect требуется база данных SQL Server для хранения учетных данных. Можно использовать выпуск SQL Server 2012 Express LocalDB по умолчанию, установленный с помощью Azure AD Connect, или полную версию SQL Server. SQL Server Express налагает ограничение в размере 10 ГБ. Если при использовании LocalDB достигнут этот предел, служба синхронизации Azure AD Connect больше не сможет запускаться или выполнять синхронизацию должным образом. Эта статья содержит рекомендации по восстановлению.
@@ -55,7 +55,7 @@ Azure AD Connect требуется база данных SQL Server для хр
 5. Попытайтесь запустить службу, если она не запущена. Если служба запустилась, пропустите шаг [сжатия базы данных](#shrink-the-database) и перейдите к шагу [удаления данных журнала выполнения](#delete-run-history-data). В противном случае перейдите к шагу [сжатия базы данных](#shrink-the-database).
 
 ### <a name="shrink-the-database"></a>Сжатие базы данных
-Операция сжатия позволяет освободить достаточный объем пространства базы данных, чтобы запустить службу синхронизации. При этом освобождается место в базе данных путем удаления пробелов. Этот наилучшее, но не всегда действующее решение. Дополнительные сведения об операции сжатия см. в статье [Сжатие базы данных](https://msdn.microsoft.com/library/ms189035.aspx).
+Операция сжатия позволяет освободить достаточный объем пространства базы данных, чтобы запустить службу синхронизации. При этом освобождается место в базе данных путем удаления пробелов. Этот наилучшее, но не всегда действующее решение. Дополнительные сведения об операции сжатия см. в статье [Сжатие базы данных](/sql/relational-databases/databases/shrink-a-database?view=sql-server-ver15).
 
 > [!IMPORTANT]
 > Этот шаг можно пропустить, если службу синхронизации удалось запустить. Не рекомендуется сжимать базу данных SQL, так как это может привести к снижению производительности из-за увеличения фрагментации.
@@ -100,8 +100,8 @@ Azure AD Connect требуется база данных SQL Server для хр
 
 ## <a name="long-term-solution--migrate-to-full-sql"></a>Долгосрочное решение. Переход на полную версию SQL Server
 Эта проблема указывает на то, что текущий размер базы данных (10 ГБ) больше не достаточен для синхронизации локальной службы Active Directory с Azure AD. Рекомендуется перейти на использование полной версии SQL Server. Нельзя напрямую заменить LocalDB существующего развертывания Azure AD Connect полной версией SQL Server. Вместо этого необходимо развернуть новый сервер Azure AD Connect с полной версией SQL Server. Рекомендуется выполнить обновление со сменой сервера, при котором новый сервер Azure AD Connect (с базой данных SQL) развертывается в качестве промежуточного сервера рядом с существующим сервером Azure AD Connect (с LocalDB). 
-* Инструкции по настройке удаленного экземпляра SQL Server с Azure AD Connect см.в статье [Выборочная установка Azure AD Connect](https://docs.microsoft.com/azure/active-directory/connect/active-directory-aadconnect-get-started-custom).
-* Инструкции по выполнению обновления со сменой сервера для Azure AD Connect см. в разделе [Обновление со сменой сервера](https://docs.microsoft.com/azure/active-directory/connect/active-directory-aadconnect-upgrade-previous-version#swing-migration).
+* Инструкции по настройке удаленного экземпляра SQL Server с Azure AD Connect см.в статье [Выборочная установка Azure AD Connect](./how-to-connect-install-custom.md).
+* Инструкции по выполнению обновления со сменой сервера для Azure AD Connect см. в разделе [Обновление со сменой сервера](./how-to-upgrade-previous-version.md#swing-migration).
 
 ## <a name="next-steps"></a>Дальнейшие действия
 Узнайте больше об [интеграции локальных удостоверений с Azure Active Directory](whatis-hybrid-identity.md).

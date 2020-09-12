@@ -6,12 +6,12 @@ ms.topic: conceptual
 ms.date: 08/12/2020
 ms.author: helohr
 manager: lizross
-ms.openlocfilehash: d75d6ecf73dece6dad43367a7f869a1b8ec3d86b
-ms.sourcegitcommit: 1aef4235aec3fd326ded18df7fdb750883809ae8
+ms.openlocfilehash: f9f68d3734cd7de83a2ddd376caefa410c619d61
+ms.sourcegitcommit: 58d3b3314df4ba3cabd4d4a6016b22fa5264f05a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/12/2020
-ms.locfileid: "88135867"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89291115"
 ---
 # <a name="safe-url-list"></a>Список надежных URL-адресов
 
@@ -31,8 +31,8 @@ ms.locfileid: "88135867"
 |catalogartifact.azureedge.net|443|Azure Marketplace|AzureCloud;|
 |kms.core.windows.net|1688;|Активация Windows|Интернет|
 |wvdportalstorageblob.blob.core.windows.net|443|Поддержка портала Azure|AzureCloud;|
-| 169.254.169.254 | 80 | [Конечная точка службы метаданных экземпляра Azure](../virtual-machines/windows/instance-metadata-service.md) | Н/Д |
-| 168.63.129.16 | 80 | [Мониторинг работоспособности узла сеансов](../virtual-network/security-overview.md#azure-platform-considerations) | Н/Д |
+| 169.254.169.254 | 80 | [Конечная точка службы метаданных экземпляра Azure](../virtual-machines/windows/instance-metadata-service.md) | Недоступно |
+| 168.63.129.16 | 80 | [Мониторинг работоспособности узла сеансов](../virtual-network/security-overview.md#azure-platform-considerations) | Недоступно |
 
 >[!IMPORTANT]
 >Виртуальный рабочий стол Windows теперь поддерживает тег полного доменного имени. Дополнительные сведения см. в статье [Использование Брандмауэра Azure для защиты развертываний виртуального рабочего стола Windows](../firewall/protect-windows-virtual-desktop.md).
@@ -60,7 +60,7 @@ ms.locfileid: "88135867"
 >
 >1. Зарегистрируйте свои виртуальные машины в пуле узлов Виртуального рабочего стола Windows.
 >2. Откройте **средство просмотра событий**, перейдите в **Журнал Windows**  >  **приложение**  >  **ВВД-Agent** и найдите событие с идентификатором 3701.
->3. Список разрешений URL-адреса, найденные в событии с ИДЕНТИФИКАТОРом 3701. URL-адреса в событии с ИДЕНТИФИКАТОРом 3701 зависят от региона. Вам потребуется повторить процесс разблокировки с соответствующими URL-адресами для каждого региона, в котором вы хотите развернуть виртуальные машины.
+>3. Разблокируйте URL-адреса, найденные в событии с ИДЕНТИФИКАТОРом 3701. URL-адреса в событии с ИДЕНТИФИКАТОРом 3701 зависят от региона. Вам потребуется повторить процесс разблокировки с соответствующими URL-адресами для каждого региона, в котором вы хотите развернуть виртуальные машины.
 
 ## <a name="remote-desktop-clients"></a>Клиенты удаленного рабочего стола
 

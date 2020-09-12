@@ -15,12 +15,12 @@ ms.date: 01/15/2018
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 661747754369c17ca98ae69d477e04124b6a2942
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: d9470e9af38fdd814f5059538656e6a3dbb8e3a7
+ms.sourcegitcommit: c94a177b11a850ab30f406edb233de6923ca742a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "60245489"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89279318"
 ---
 # <a name="azure-ad-connect-sync-understanding-users-groups-and-contacts"></a>Синхронизация Azure AD Connect: общие сведения о пользователях, группах и контактах
 Существует несколько разных причин, по которым нужно иметь несколько лесов Active Directory. Кроме того, существует несколько разных топологий развертывания. Распространенные модели включают развертывание ресурсов учетной записи и лесов с синхронизированным глобальным списком адресов после слияния и поглощения. Но даже при наличии чистых моделей гибридные модели не менее часто используются. Конфигурация по умолчанию в службе синхронизации Azure AD Connect не предполагает какой-то конкретной модели. Тем не менее, в зависимости от выбора сопоставления пользователей в руководстве по установке, можно наблюдать разное поведение.
@@ -39,15 +39,15 @@ ms.locfileid: "60245489"
 
 * Azure AD Connect не синхронизирует встроенные группы безопасности;
 
-* Azure AD Connect не поддерживает синхронизацию [основных групп](https://technet.microsoft.com/library/cc771489(v=ws.11).aspx) в Azure AD;
+* Azure AD Connect не поддерживает синхронизацию [основных групп](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc771489(v=ws.11)) в Azure AD;
 
-* Azure AD Connect не поддерживает синхронизацию [динамических групп рассылки](https://technet.microsoft.com/library/bb123722(v=exchg.160).aspx) в Azure AD.
+* Azure AD Connect не поддерживает синхронизацию [динамических групп рассылки](/Exchange/recipients/dynamic-distribution-groups/dynamic-distribution-groups?view=exchserver-2019) в Azure AD.
 
 * Чтобы синхронизировать группу Active Directory в Azure AD как группу с поддержкой электронной почты, выполните следующие действия:
 
     * Если атрибут группы *proxyAddress* пуст, атрибут *mail* должен иметь значение.
 
-    * Если атрибут *proxyAddress* группы не является пустым, он должен содержать хотя бы одно значение адреса прокси-сервера SMTP. Ниже приведены некоторые примеры:
+    * Если атрибут *proxyAddress* группы не является пустым, он должен содержать хотя бы одно значение адреса прокси-сервера SMTP. Ниже приводится несколько примеров.
     
       * Группа Active Directory, атрибут proxyAddress которой имеет значение *{"X500:/0=contoso.com/ou=users/cn=testgroup"}*, не будет поддерживать электронную почту в Azure AD. У нее нет SMTP-адреса.
       
@@ -76,4 +76,3 @@ ms.locfileid: "60245489"
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 * [Синхронизация Azure AD Connect: Настройка параметров синхронизации](how-to-connect-sync-whatis.md)
 * [Интеграция локальных удостоверений с Azure Active Directory](whatis-hybrid-identity.md)
-

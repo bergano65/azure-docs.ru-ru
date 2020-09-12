@@ -17,12 +17,12 @@ ms.subservice: hybrid
 ms.author: billmath
 ms.custom: seohack1
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 82c66231bcbdcaeb5371838291f1e6998f9f8bd7
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 2eb656e46ce5e26fca5ae5c094f9b8bb85819caa
+ms.sourcegitcommit: c94a177b11a850ab30f406edb233de6923ca742a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85356174"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89275782"
 ---
 # <a name="azure-ad-connect-sync-handling-largeobject-errors-caused-by-usercertificate-attribute"></a>Синхронизация Azure AD Connect: обработка ошибок LargeObject, вызванных атрибутом userCertificate
 
@@ -30,28 +30,28 @@ ms.locfileid: "85356174"
 
 >*"Подготовленный объект слишком велик. Сократите число значений атрибутов для этого объекта. Операция будет повторена в следующем цикле синхронизации... "*
 
-Ошибку LargeObject могут вызвать другие атрибуты AD. Чтобы убедиться, что ошибку действительно вызвал атрибут userCertificate, необходимо проверить объект в локальной службе AD или выполнить [поиск в метавселенной Synchronization Service Manager](https://docs.microsoft.com/azure/active-directory/connect/active-directory-aadconnectsync-service-manager-ui-mvsearch).
+Ошибку LargeObject могут вызвать другие атрибуты AD. Чтобы убедиться, что ошибку действительно вызвал атрибут userCertificate, необходимо проверить объект в локальной службе AD или выполнить [поиск в метавселенной Synchronization Service Manager](./how-to-connect-sync-service-manager-ui-mvsearch.md).
 
 Список объектов в клиенте с ошибками LargeObject можно получить одним из следующих методов:
 
- * Если в клиенте включена служба Azure AD Connect Health для синхронизации, вы можете ознакомиться с предоставляемым [отчетом об ошибках синхронизации](https://docs.microsoft.com/azure/active-directory/connect-health/active-directory-aadconnect-health-sync).
+ * Если в клиенте включена служба Azure AD Connect Health для синхронизации, вы можете ознакомиться с предоставляемым [отчетом об ошибках синхронизации](./how-to-connect-health-sync.md).
  
  * В электронном письме с уведомлением для ошибок синхронизации каталогов, отправляемом в конце каждого цикла синхронизации, есть список объектов с ошибками LargeObject. 
- * Если выбрать новую операцию экспорта в Azure AD, на [вкладке операций Synchronization Service Manager](https://docs.microsoft.com/azure/active-directory/connect/active-directory-aadconnectsync-service-manager-ui-operations) отобразится список объектов с ошибками LargeObject.
+ * Если выбрать новую операцию экспорта в Azure AD, на [вкладке операций Synchronization Service Manager](./how-to-connect-sync-service-manager-ui-operations.md) отобразится список объектов с ошибками LargeObject.
  
 ## <a name="mitigation-options"></a>Варианты устранения ошибок
 Пока ошибка LargeObject не устранена, невозможно экспортировать другие изменения атрибутов одного объекта в Azure AD. Ниже представлены способы устранения ошибки:
 
- * Обновите Azure AD Connect до сборки 1.1.524.0 или более поздних версий. В Azure AD Connect сборки 1.1.524.0 стандартные правила синхронизации были обновлены: атрибуты userCertificate и userSMIMECertificate не экспортируются, если эти атрибуты имеют более 15 значений. Информацию об обновлении Azure AD Connect см. в статье [Azure AD Connect: обновление до последней версии](https://docs.microsoft.com/azure/active-directory/connect/active-directory-aadconnect-upgrade-previous-version).
+ * Обновите Azure AD Connect до сборки 1.1.524.0 или более поздних версий. В Azure AD Connect сборки 1.1.524.0 стандартные правила синхронизации были обновлены: атрибуты userCertificate и userSMIMECertificate не экспортируются, если эти атрибуты имеют более 15 значений. Информацию об обновлении Azure AD Connect см. в статье [Azure AD Connect: обновление до последней версии](./how-to-upgrade-previous-version.md).
 
  * Реализуйте **исходящее правило синхронизации** в Azure AD Connect, экспортирующее **значение null, а не фактические значения для объектов с более чем 15 значениями сертификата**. Этот вариант подходит, если не нужно экспортировать значения сертификата для объектов с более чем 15 значениями в Azure AD. Дополнительные сведения о реализации этого правила синхронизации см. в следующем разделе: [Реализация правила синхронизации для ограничения экспорта атрибута userCertificate](#implementing-sync-rule-to-limit-export-of-usercertificate-attribute).
 
  * Сократите количество значений сертификата в локальном объекте AD (15 или меньше), удалив значения, которые больше не используются в вашей организации. Это подходящий вариант, если увеличение числа атрибутов произошло из-за сертификатов с истекшим сроком действия или неиспользуемых сертификатов. Чтобы найти, архивировать и удалить сертификаты с истекшим сроком действия в локальной версии AD, вы можете использовать [скрипт PowerShell отсюда](https://gallery.technet.microsoft.com/Remove-Expired-Certificates-0517e34f). Прежде чем удалять сертификаты, мы рекомендуем свериться с администраторами инфраструктуры открытых ключей в организации.
 
  * Настройте Azure AD Connect таким образом, чтобы атрибут userCertificate не экспортировался в Azure AD. В общем мы не рекомендуем этот вариант, так как атрибут может использоваться в Microsoft Online Services для реализации определенных сценариев, В частности:
-    * Атрибут userCertificate объекта User используется в клиентах Exchange Online и Outlook для подписывания и шифрования сообщений. Дополнительные сведения об этой функции см. в статье [S/MIME для подписи и шифрования сообщений](https://technet.microsoft.com/library/dn626158(v=exchg.150).aspx).
+    * Атрибут userCertificate объекта User используется в клиентах Exchange Online и Outlook для подписывания и шифрования сообщений. Дополнительные сведения об этой функции см. в статье [S/MIME для подписи и шифрования сообщений](/microsoft-365/security/office-365-security/s-mime-for-message-signing-and-encryption?view=o365-worldwide).
 
-    * Атрибут userCertificate объекта Computer используется в Azure AD для подключения локальных, присоединенных к домену устройств с Windows 10 к Azure AD. Дополнительные сведения об этой функции см. в статье [Подключение присоединенных к домену устройств к Azure AD для работы в Windows 10](https://docs.microsoft.com/azure/active-directory/active-directory-azureadjoin-devices-group-policy).
+    * Атрибут userCertificate объекта Computer используется в Azure AD для подключения локальных, присоединенных к домену устройств с Windows 10 к Azure AD. Дополнительные сведения об этой функции см. в статье [Подключение присоединенных к домену устройств к Azure AD для работы в Windows 10](../devices/hybrid-azuread-join-plan.md).
 
 ## <a name="implementing-sync-rule-to-limit-export-of-usercertificate-attribute"></a>Реализация правила синхронизации для ограничения экспорта атрибута userCertificate
 Чтобы устранить ошибку LargeObject, вызванную атрибутом userCertificate, реализуйте исходящее правило синхронизации в Azure AD Connect, экспортирующее **значение null, а не фактические значения для объектов с более чем 15 значениями сертификата**. В этом разделе описываются шаги, необходимые для реализации правила синхронизации для объектов **User**. Эти же действия можно использовать для объектов **Contact** и **Computer**.
@@ -90,9 +90,9 @@ ms.locfileid: "85356174"
 
 2. Настройте фильтры поиска со следующими значениями:
 
-    | Атрибут | Значение |
+    | attribute | Значение |
     | --- | --- |
-    | Direction (направление) |**Исходящие** |
+    | Direction |**Исходящий трафик** |
     | Тип объекта метавселенной |**Person** |
     | Соединитель |*Имя вашего клиента Azure AD* |
     | Тип объекта соединителя |**user** |
@@ -115,7 +115,7 @@ ms.locfileid: "85356174"
 1. В редакторе правил синхронизации нажмите кнопку **Add new rule** (Добавить новое правило).
 2. На **вкладке Описание**укажите следующую конфигурацию.
 
-    | Атрибут | Значение | Сведения |
+    | attribute | Значение | Сведения |
     | --- | --- | --- |
     | Имя | *Укажите имя* | Например, *Из внешней среды в AAD — пользовательское переопределение для userCertificate*. |
     | Описание | *Укажите описание* | Например, *если атрибут userCertificate содержит более 15 значений, экспортировать NULL.* |
@@ -129,11 +129,11 @@ ms.locfileid: "85356174"
 4. Пропустите вкладку **Join rules** (Правила объединения).
 5. Перейдите на вкладку **Transformations** (Преобразования), чтобы добавить новое преобразование, используя следующую конфигурацию:
 
-    | Атрибут | Значение |
+    | attribute | Значение |
     | --- | --- |
-    | Тип потока |**Expression** |
+    | Тип потока |**Выражение** |
     | Целевой атрибут |**userCertificate** |
-    | Исходный атрибут |*Используйте следующее выражение*:`IIF(IsNullOrEmpty([userCertificate]), NULL, IIF((Count([userCertificate])> 15),AuthoritativeNull,[userCertificate]))` |
+    | Исходный атрибут |*Используйте следующее выражение*: `IIF(IsNullOrEmpty([userCertificate]), NULL, IIF((Count([userCertificate])> 15),AuthoritativeNull,[userCertificate]))` |
     
 6. Нажмите кнопку **Добавить**, чтобы создать правило синхронизации.
 
@@ -183,4 +183,3 @@ ms.locfileid: "85356174"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 Узнайте больше об [интеграции локальных удостоверений с Azure Active Directory](whatis-hybrid-identity.md).
-

@@ -8,12 +8,12 @@ ms.author: heidist
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 11/04/2019
-ms.openlocfilehash: 7cd6e61b8614e4c8ff5d54232972865c81cbb3ff
-ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
+ms.openlocfilehash: 1fa464eca69f50fba7fa125212b85e0f7f63bcc9
+ms.sourcegitcommit: 58d3b3314df4ba3cabd4d4a6016b22fa5264f05a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88928876"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89294787"
 ---
 # <a name="create-and-manage-api-keys-for-an-azure-cognitive-search-service"></a>Создание ключей API для службы Когнитивный поиск Azure и управление ими
 
@@ -21,7 +21,7 @@ ms.locfileid: "88928876"
 
 Ключи создаются вместе со службой поиска во время подготовки службы. Просмотреть и получить значение ключа можно на [портале Azure](https://portal.azure.com).
 
-![Страница портала, раздел "Параметры", пункт "Ключи"](media/search-manage/azure-search-view-keys.png)
+![Страница портала, раздел Получение параметров, ключи](media/search-manage/azure-search-view-keys.png)
 
 ## <a name="what-is-an-api-key"></a>Что собой представляет ключ API
 
@@ -47,7 +47,7 @@ ms.locfileid: "88928876"
 2. Выведите список [служб поиска](https://portal.azure.com/#blade/HubsExtension/BrowseResourceBlade/resourceType/Microsoft.Search%2FsearchServices) для вашей подписки.
 3. Выберите службу и на странице Обзор щелкните **Параметры**  > **ключи** , чтобы просмотреть ключи администратора и запроса.
 
-   ![Страница портала, раздел "Параметры", пункт "Ключи"](media/search-security-overview/settings-keys.png)
+   ![Страница портала, параметры просмотра, раздел "ключи"](media/search-security-overview/settings-keys.png)
 
 ## <a name="create-query-keys"></a>Создание ключей запроса
 
@@ -93,7 +93,7 @@ ms.locfileid: "88928876"
 > [!Note]
 > Чтобы применить доступ к результатам поиска на основе удостоверений, вы можете создать фильтры безопасности по идентификаторам, удаляя из результатов те документы, к которым запрашивающая сторона не должна иметь доступ. Дополнительные сведения см. в статьях о [фильтрах безопасности](search-security-trimming-for-azure-search.md) и [безопасности в Active Directory](search-security-trimming-for-azure-search-with-aad.md).
 
-## <a name="see-also"></a>См. также
+## <a name="see-also"></a>См. также раздел
 
 + [Управление доступом на основе ролей в Azure Когнитивный поиск](search-security-rbac.md)
 + [Управление с помощью PowerShell](search-manage-powershell.md) 

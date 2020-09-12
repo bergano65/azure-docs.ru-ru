@@ -1,21 +1,21 @@
 ---
-title: Как интегрировать центр администрирования Windows с центром безопасности Azure | Документация Майкрософт
+title: Как защитить серверы центра администрирования Windows с помощью центра безопасности Azure
 description: В этой статье объясняется, как интегрировать центр безопасности Azure с центром администрирования Windows.
 services: security-center
 author: memildin
 manager: rkarlin
 ms.service: security-center
 ms.topic: conceptual
-ms.date: 11/04/2019
+ms.date: 08/31/2020
 ms.author: memildin
-ms.openlocfilehash: 9eae210818cf623078090503deefc6295dab7164
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 90c1132091f543b84fc764522dfa95672f2e2aef
+ms.sourcegitcommit: c94a177b11a850ab30f406edb233de6923ca742a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87076360"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89277499"
 ---
-# <a name="integrate-azure-security-center-with-windows-admin-center"></a>Интеграция центра безопасности Azure с центром администрирования Windows
+# <a name="protect-windows-admin-center-resources-with-security-center"></a>Защита ресурсов центра администрирования Windows с помощью центра безопасности
 
 Центр администрирования Windows — это средство управления для серверов Windows. Это единое место для системных администраторов, которое может получить доступ к большинству наиболее часто используемых средств администрирования. В центре администрирования Windows вы можете напрямую подключить локальные серверы к центру безопасности Azure. Вы можете просмотреть сводку рекомендаций по безопасности и оповещений непосредственно в центре администрирования Windows.
 
@@ -31,7 +31,7 @@ ms.locfileid: "87076360"
 
 Комбинируя эти два средства, центр безопасности превращается в единую область стекла для просмотра всей информации о безопасности, независимо от ресурса: Защита центра администрирования Windows, управляемых локальными серверами, виртуальными машинами и дополнительными рабочими нагрузками PaaS.
 
-## <a name="onboarding-windows-admin-center-managed-servers-into-security-center"></a>Подключение управляемых серверов центра администрирования Windows к центру безопасности
+## <a name="onboard-windows-admin-center-managed-servers-into-security-center"></a>Встроенные управляемые серверы центра администрирования Windows в центр безопасности
 
 1. В центре администрирования Windows выберите один из серверов, а затем в области **средства** выберите расширение центра безопасности Azure:
 
@@ -54,16 +54,16 @@ ms.locfileid: "87076360"
     > После адаптации для отображения рекомендаций может потребоваться некоторое время. Фактически, в зависимости от активности сервера вы не *можете получить оповещения* . Чтобы создать тестовые оповещения для проверки правильности работы предупреждений, следуйте инструкциям в [процедуре проверки предупреждений](security-center-alert-validation.md).
 
 
-## <a name="viewing-security-recommendations-and-alerts-in-windows-admin-center"></a>Просмотр рекомендаций по безопасности и оповещений в центре администрирования Windows
+## <a name="view-security-recommendations-and-alerts-in-windows-admin-center"></a>Просмотр рекомендаций по безопасности и оповещений в центре администрирования Windows
 
 После подключения вы можете просматривать оповещения и рекомендации непосредственно в области центра безопасности Azure центра администрирования Windows. Щелкните рекомендацию или оповещение, чтобы просмотреть их в портал Azure. Здесь вы получите дополнительные сведения и узнаете, как устранить проблемы.
 
 [![Рекомендации и оповещения центра безопасности, как показано в центре администрирования Windows](media/windows-admin-center-integration/asc-recommendations-and-alerts-in-wac.png)](media/windows-admin-center-integration/asc-recommendations-and-alerts-in-wac.png#lightbox)
 
-## <a name="viewing-security-recommendations-and-alerts-for-windows-admin-center-managed-servers-in-security-center"></a>Просмотр рекомендаций по безопасности и оповещений для управляемых серверов центра администрирования Windows в центре безопасности
+## <a name="view-security-recommendations-and-alerts-for-windows-admin-center-managed-servers-in-security-center"></a>Просмотр рекомендаций по безопасности и оповещений для управляемых серверов центра администрирования Windows в центре безопасности
 Из центра безопасности Azure:
 
-* Чтобы просмотреть рекомендации по безопасности для всех серверов центра администрирования Windows, откройте окно " **Compute & приложения** " и перейдите на вкладку " **виртуальные машины и компьютеры** ". отфильтруйте список по ресурсу "сервер", как показано ниже:
+* Чтобы просмотреть рекомендации по безопасности для всех серверов центра администрирования Windows, откройте окно **Compute & приложения** и перейдите на вкладку **виртуальные машины и компьютеры** . Отфильтруйте список по ресурсу "сервер", как показано ниже:
 
     [![Просмотр рекомендаций по безопасности для управляемых серверов центра администрирования Windows](media/windows-admin-center-integration/viewing-recommendations-wac.png)](media/windows-admin-center-integration/viewing-recommendations-wac.png#lightbox)
 

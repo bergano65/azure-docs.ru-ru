@@ -10,12 +10,12 @@ ms.subservice: bing-autosuggest
 ms.topic: conceptual
 ms.date: 06/27/2019
 ms.author: scottwhi
-ms.openlocfilehash: 7d16b0755fae91979802e50cb2ebbf4324ce2c45
-ms.sourcegitcommit: dee7b84104741ddf74b660c3c0a291adf11ed349
+ms.openlocfilehash: 3aa8d691eb62b94c5784d8a6efc35b53a3762d7f
+ms.sourcegitcommit: 58d3b3314df4ba3cabd4d4a6016b22fa5264f05a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85921148"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89294124"
 ---
 # <a name="sending-requests-to-the-bing-autosuggest-api"></a>Отправка запросов к API Автозаполнения Bing.
 
@@ -64,7 +64,7 @@ GET https://api.cognitive.microsoft.com/bing/v7.0/Suggestions
 > [!NOTE]
 > При вызове API Автозаполнения Bing из JavaScript встроенные средства обеспечения безопасности браузера могут блокировать доступ к значениям этих заголовков.
 
-Для устранения этой проблемы запрос API автозаполнения Bing можно выполнить через прокси-сервер CORS. Ответ с такого прокси-сервера содержит заголовок `Access-Control-Expose-Headers`, который вносит заголовки ответов в список разрешений и делает их доступными для JavaScript.
+Для устранения этой проблемы запрос API автозаполнения Bing можно выполнить через прокси-сервер CORS. Ответ такого прокси-сервера имеет `Access-Control-Expose-Headers` заголовок, который фильтрует заголовки ответа и делает их доступными для JavaScript.
 
 Установить прокси-сервер CORS довольно просто. Это позволит нашему [учебному приложению](../tutorials/autosuggest.md) иметь доступ к необязательным заголовкам клиента. Для начала [установите платформу Node.js](https://nodejs.org/en/download/), если она еще не установлена. В командной строке введите следующую команду:
 
@@ -173,7 +173,7 @@ BingAPIs-Market: en-US
 }
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Что такое API автозаполнения Bing?](../get-suggested-search-terms.md)
 - [Справочник по API автозаполнения Bing версии 7](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-autosuggest-api-v7-reference)

@@ -17,19 +17,19 @@ ms.subservice: hybrid
 ms.author: billmath
 ms.custom: seohack1
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c915898d3eec4494b6a300e88ffde216f21d5d68
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 396344ba90aa3850d7d23dc40d6df95f6d1f6c3f
+ms.sourcegitcommit: c94a177b11a850ab30f406edb233de6923ca742a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85358129"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89279522"
 ---
 # <a name="user-privacy-and-azure-active-directory-pass-through-authentication"></a>Конфиденциальность пользователей и сквозная аутентификация Azure Active Directory
 
 
 [!INCLUDE [Privacy](../../../includes/gdpr-intro-sentence.md)]
 
-## <a name="overview"></a>Обзор
+## <a name="overview"></a>Overview
 
 Сквозная аутентификация Azure AD создает следующие типы журналов, которые могут содержать персональные данные:
 
@@ -67,7 +67,7 @@ Foreach ($file in $Files) {
 
 ### <a name="delete-authentication-agent-event-logs"></a>Удаление журналов событий агента аутентификации
 
-Этот продукт может также создавать **журналы событий Windows**. Дополнительные сведения см. в [этой статье](https://msdn.microsoft.com/library/windows/desktop/aa385780(v=vs.85).aspx).
+Этот продукт может также создавать **журналы событий Windows**. Дополнительные сведения см. в [этой статье](/windows/win32/wes/windows-event-log).
 
 Чтобы посмотреть журналы, связанные с агентом сквозной аутентификации, откройте на сервере приложение **Просмотр событий** и проверьте расположение **Application and Service Logs\Microsoft\AzureAdConnect\AuthenticationAgent\Admin**.
 
@@ -103,8 +103,8 @@ Foreach ($file in $files) {
  
 ### <a name="note-about-domain-controller-logs"></a>Примечание о журналах контроллеров домена
 
-Если включено ведение журнала аудита, этот продукт может создавать журналы безопасности для контроллеров домена. Дополнительные сведения о настройке политик аудита см. в [этой статье](https://technet.microsoft.com/library/dd277403.aspx).
+Если включено ведение журнала аудита, этот продукт может создавать журналы безопасности для контроллеров домена. Дополнительные сведения о настройке политик аудита см. в [этой статье](/previous-versions/tn-archive/dd277403(v=technet.10)).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 * [Просмотр политики конфиденциальности корпорации Майкрософт в центре управления безопасностью](https://www.microsoft.com/trustcenter)
 * [**Устранение неполадок**](tshoot-connect-pass-through-authentication.md). Узнайте, как устранить самые распространенные проблемы с этой функцией.

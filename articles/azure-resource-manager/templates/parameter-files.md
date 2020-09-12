@@ -2,13 +2,13 @@
 title: Создание файла параметров
 description: Создание файла параметров для передачи значений во время развертывания шаблона Azure Resource Manager
 ms.topic: conceptual
-ms.date: 08/31/2020
-ms.openlocfilehash: ff5fa74f8b4b7f0ce7dfe2164a369cfd5eedb4d9
-ms.sourcegitcommit: 3fb5e772f8f4068cc6d91d9cde253065a7f265d6
+ms.date: 09/01/2020
+ms.openlocfilehash: 2b6d942b21594fa608127bb8f403e72295671005
+ms.sourcegitcommit: c94a177b11a850ab30f406edb233de6923ca742a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89179629"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89276666"
 ---
 # <a name="create-resource-manager-parameter-file"></a>Создание файла параметров Resource Manager
 
@@ -147,6 +147,8 @@ ms.locfileid: "89179629"
   }
 }
 ```
+
+Файл параметров может содержать только значения параметров, определенных в шаблоне. Если файл параметров содержит дополнительные параметры, которые не соответствуют параметрам в шаблоне, возникает ошибка.
 
 ## <a name="parameter-type-formats"></a>Форматы типа параметров
 

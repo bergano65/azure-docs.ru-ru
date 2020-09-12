@@ -10,12 +10,12 @@ ms.workload: identity
 ms.service: active-directory
 manager: daveba
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 6c748df10e432e3bebbce0dc8cb39dd2101d52e2
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: e105d4909705622a931c51bcb7cf0a9db4179525
+ms.sourcegitcommit: c94a177b11a850ab30f406edb233de6923ca742a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "81680042"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89279607"
 ---
 # <a name="azure-ad-userprincipalname-population"></a>Указание атрибута UserPrincipalName в Azure AD
 
@@ -56,7 +56,7 @@ UserPrincipalName — это атрибут, который является и�
 
 ![Непроверенные домены](./media/plan-connect-userprincipalname/altloginid.png)  
 
-Дополнительные сведения см. в статье [Configuring Alternate Login ID](https://docs.microsoft.com/windows-server/identity/ad-fs/operations/configuring-alternate-login-id) (Настройка альтернативного имени пользователя) и разделе [Конфигурация входа в Azure AD](how-to-connect-install-custom.md#azure-ad-sign-in-configuration).
+Дополнительные сведения см. в статье [Configuring Alternate Login ID](/windows-server/identity/ad-fs/operations/configuring-alternate-login-id) (Настройка альтернативного имени пользователя) и разделе [Конфигурация входа в Azure AD](how-to-connect-install-custom.md#azure-ad-sign-in-configuration).
 
 ## <a name="non-verified-upn-suffix"></a>Непроверенный суффикс имени участника-пользователя
 Если атрибут UserPrincipalName или суффикс альтернативного имени пользователя для локальной среды не проверен клиентом Azure AD, тогда в качестве значения атрибута UserPrincipalName Azure AD будет задано MOERA. В Azure AD MOERA определяется по атрибуту MailNickName Azure AD, а исходный домен Azure AD указывается в формате &lt;MailNickName&gt;@&lt;исходный домен&gt;.
@@ -177,6 +177,6 @@ UserPrincipalName — это атрибут, который является и�
 - MailNickName      : us4     
 - UserPrincipalName : us5@verified.contoso.com
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Next Steps
 - [Интеграция локальных каталогов с Azure Active Directory](whatis-hybrid-identity.md)
 - [Выборочная установка Azure AD Connect](how-to-connect-install-custom.md)

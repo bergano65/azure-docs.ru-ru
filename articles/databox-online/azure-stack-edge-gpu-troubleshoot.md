@@ -8,12 +8,12 @@ ms.subservice: edge
 ms.topic: troubleshooting
 ms.date: 08/19/2020
 ms.author: alkohli
-ms.openlocfilehash: 22f0c63c2b60b6c72ad297492045df17e10dd06c
-ms.sourcegitcommit: bcda98171d6e81795e723e525f81e6235f044e52
+ms.openlocfilehash: 92b82631ca78826dd927c6773c47072038eb4ab1
+ms.sourcegitcommit: 58d3b3314df4ba3cabd4d4a6016b22fa5264f05a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/01/2020
-ms.locfileid: "89268328"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89290129"
 ---
 # <a name="troubleshoot-issues-on-your-azure-stack-edge-gpu-device"></a>Устранение неполадок на устройстве GPU Azure Stack ребра 
 
@@ -140,7 +140,7 @@ ms.locfileid: "89268328"
 
 Ниже приведены ошибки, которые могут отображаться во время настройки Azure Resource Manager для доступа к устройству. 
 
-| **Проблемы и ошибки** |  **Способы устранения:** | 
+| **Проблемы и ошибки** |  **Решение** | 
 |------------|-----------------|
 |Общие проблемы|<li>[Убедитесь, что Пограничное устройство настроено правильно](#verify-the-device-is-configured-properly).<li> [Проверка правильности настройки клиента](#verify-the-client-is-configured-properly)|
 |Add-AzureRmEnvironment: при отправке запроса произошла ошибка.<br>В строке: 1 символ: 1<br>+ Add-AzureRmEnvironment-Name Az3-ARMEndpoint " https://management.dbe ...|Эта ошибка означает, что устройство Azure Stack пограничной связи недоступно или неправильно настроено. Убедитесь, что пограничные устройства и клиент настроены правильно. Инструкции см. в строке **Общие проблемы** в этой таблице.|
@@ -184,17 +184,17 @@ ms.locfileid: "89268328"
 
 Ниже приведены ошибки, связанные с хранилищем BLOB-объектов на Azure Stack пограничном или Шлюз Data Box устройстве.
 
-| **Проблемы и ошибки** |  **Способы устранения:** | 
+| **Проблемы и ошибки** |  **Решение** | 
 |--------------------|-----------------|
 |Не удалось получить дочерние ресурсы. Значение одного из заголовков HTTP имеет неправильный формат.| В меню **Правка** выберите пункт **целевые Azure Stack API**. Затем перезапустите Обозреватель службы хранилища Azure.|
 |функцию getaddrinfo ЕНОТФАУНД <accountname> . BLOB. <serialnumber> microsoftdatabox.com|Убедитесь, что имя конечной точки `<accountname>.blob.<serialnumber>.microsoftdatabox.com` Добавлено в файл hosts по указанному пути: `C:\Windows\System32\drivers\etc\hosts` в Windows или `/etc/hosts` Linux.|
 |Не удалось получить дочерние ресурсы.<br> Сведения: самозаверяющий сертификат |Импортируйте SSL-сертификат для устройства в Обозреватель службы хранилища Azure: <ol><li>Скачайте сертификат из портал Azure. Дополнительные сведения см. [в разделе скачивание сертификата](https://docs.microsoft.com/azure/databox/data-box-deploy-copy-data-via-rest#download-certificate).</li><li>В меню **Правка** выберите SSL-сертификаты и щелкните **Импорт сертификатов**.</li></ol>|
-|Команда AzCopy зависает в течение минуты, после чего отобразится следующее сообщение об ошибке:<br>`Failed to enumerate directory https://… The remote name could not be resolved <accountname>.blob.<serialnumber>.microsoftdatabox.com`|Убедитесь, что имя конечной точки `<accountname>.blob.<serialnumber>.microsoftdatabox.com` Добавлено в файл hosts по адресу: `C:\Windows\System32\drivers\etc\hosts` .|
-|Команда AzCopy зависает в течение минуты, после чего отобразится следующее сообщение об ошибке:<br>`Error parsing source location. The underlying connection was closed: Could not establish trust relationship for the SSL/TLS secure channel`. |Импортируйте SSL-сертификат для устройства в хранилище сертификатов системы. Дополнительные сведения см. [в разделе скачивание сертификата](https://docs.microsoft.com/azure/databox/data-box-deploy-copy-data-via-rest#download-certificate).|
-|Команда AzCopy зависает в течение 20 минут, после чего отобразится следующее сообщение об ошибке:<br>`Error parsing source location https://<accountname>.blob.<serialnumber>.microsoftdatabox.com/<cntnr>. No such device or address`. |Убедитесь, что имя конечной точки `<accountname>.blob.<serialnumber>.microsoftdatabox.com` Добавлено в файл hosts по адресу: `/etc/hosts` .|
-|Команда AzCopy зависает в течение 20 минут, после чего отобразится следующее сообщение об ошибке:<br>`Error parsing source location… The SSL connection could not be established`. |Импортируйте SSL-сертификат для устройства в хранилище сертификатов системы. Дополнительные сведения см. [в разделе скачивание сертификата](https://docs.microsoft.com/azure/databox/data-box-deploy-copy-data-via-rest#download-certificate).|
-|Команда AzCopy зависает в течение 20 минут, после чего отобразится следующее сообщение об ошибке:<br>`Error parsing source location https://<accountname>.blob.<serialnumber>.microsoftdatabox.com/<cntnr>. No such device or address`|Убедитесь, что имя конечной точки `<accountname>.blob.<serialnumber>.microsoftdatabox.com` Добавлено в файл hosts по адресу: `/etc/hosts` .|
-|Команда AzCopy зависает в течение 20 минут, после чего отобразится следующее сообщение об ошибке: `Error parsing source location… The SSL connection could not be established` .|Импортируйте SSL-сертификат для устройства в хранилище сертификатов системы. Дополнительные сведения см. [в разделе скачивание сертификата](https://docs.microsoft.com/azure/databox/data-box-deploy-copy-data-via-rest#download-certificate).|
+|Команда AzCopy перестает отвечать на минуты, прежде чем отобразится эта ошибка:<br>`Failed to enumerate directory https://… The remote name could not be resolved <accountname>.blob.<serialnumber>.microsoftdatabox.com`|Убедитесь, что имя конечной точки `<accountname>.blob.<serialnumber>.microsoftdatabox.com` Добавлено в файл hosts по адресу: `C:\Windows\System32\drivers\etc\hosts` .|
+|Команда AzCopy перестает отвечать на минуты, прежде чем отобразится эта ошибка:<br>`Error parsing source location. The underlying connection was closed: Could not establish trust relationship for the SSL/TLS secure channel`. |Импортируйте SSL-сертификат для устройства в хранилище сертификатов системы. Дополнительные сведения см. [в разделе скачивание сертификата](https://docs.microsoft.com/azure/databox/data-box-deploy-copy-data-via-rest#download-certificate).|
+|Команда AzCopy перестает отвечать на запросы в течение 20 минут, после чего отображается следующее сообщение об ошибке:<br>`Error parsing source location https://<accountname>.blob.<serialnumber>.microsoftdatabox.com/<cntnr>. No such device or address`. |Убедитесь, что имя конечной точки `<accountname>.blob.<serialnumber>.microsoftdatabox.com` Добавлено в файл hosts по адресу: `/etc/hosts` .|
+|Команда AzCopy перестает отвечать на запросы в течение 20 минут, после чего отображается следующее сообщение об ошибке:<br>`Error parsing source location… The SSL connection could not be established`. |Импортируйте SSL-сертификат для устройства в хранилище сертификатов системы. Дополнительные сведения см. [в разделе скачивание сертификата](https://docs.microsoft.com/azure/databox/data-box-deploy-copy-data-via-rest#download-certificate).|
+|Команда AzCopy перестает отвечать на запросы в течение 20 минут, после чего отображается следующее сообщение об ошибке:<br>`Error parsing source location https://<accountname>.blob.<serialnumber>.microsoftdatabox.com/<cntnr>. No such device or address`|Убедитесь, что имя конечной точки `<accountname>.blob.<serialnumber>.microsoftdatabox.com` Добавлено в файл hosts по адресу: `/etc/hosts` .|
+|Команда AzCopy перестает отвечать на запросы в течение 20 минут, после чего отображается следующее сообщение об ошибке: `Error parsing source location… The SSL connection could not be established` .|Импортируйте SSL-сертификат для устройства в хранилище сертификатов системы. Дополнительные сведения см. [в разделе скачивание сертификата](https://docs.microsoft.com/azure/databox/data-box-deploy-copy-data-via-rest#download-certificate).|
 |Значение одного из заголовков HTTP имеет неправильный формат.|Установленная версия библиотеки служба хранилища Microsoft Azure для Python не поддерживается Data Box. Поддерживаемые версии см. в разделе Azure Data Box требования к хранилищу BLOB-объектов.|
 |… [SSL: CERTIFICATE_VERIFY_FAILED]...| Перед запуском Python присвойте переменной среды REQUESTS_CA_BUNDLE путь к файлу SSL-сертификата в кодировке Base64 (см. раздел [Загрузка сертификата](https://docs.microsoft.com/azure/databox/data-box-deploy-copy-data-via-rest#download-certificate)). Пример:<br>`export REQUESTS_CA_BUNDLE=/tmp/mycert.cer`<br>`python`<br>Кроме того, добавьте сертификат в хранилище сертификатов системы, а затем задайте для этой переменной среды путь к этому хранилищу. Например, в Ubuntu: <br>`export REQUESTS_CA_BUNDLE=/etc/ssl/certs/ca-certificates.crt`<br>`python`.|
 |Время ожидания соединения истекло.|Войдите в Azure Stack пограничным, а затем убедитесь, что она разблокирована. При каждом перезапуске устройства он остается заблокированным до тех пор, пока пользователь не войдет в систему.|

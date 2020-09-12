@@ -7,12 +7,12 @@ ms.author: baanders
 ms.date: 7/23/2020
 ms.topic: how-to
 ms.service: digital-twins
-ms.openlocfilehash: 300a11c36b11230d2bd75534f152a0a5955743ed
-ms.sourcegitcommit: 3fb5e772f8f4068cc6d91d9cde253065a7f265d6
+ms.openlocfilehash: 12b0dd957cb89fc7114c752312b08f1e490499da
+ms.sourcegitcommit: c94a177b11a850ab30f406edb233de6923ca742a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89181801"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89280032"
 ---
 # <a name="set-up-an-azure-digital-twins-instance-and-authentication-portal"></a>Настройка экземпляра и проверки подлинности Azure Digital двойников (портал)
 
@@ -32,11 +32,11 @@ ms.locfileid: "89181801"
 
 На портале нажмите кнопку _создать ресурс_ в меню домашней страницы служб Azure.
 
-:::image type="content" source= "media/how-to-set-up-instance/portal/create-resource.png" alt-text="Выбор пункта создать ресурс на домашней странице портал Azure":::
+:::image type="content" source= "media/how-to-set-up-instance/portal/create-resource.png" alt-text="Выбор пункта "создать ресурс" на домашней странице портал Azure":::
 
 Найдите *Azure Digital двойников* в поле поиска и выберите в результатах службу **Azure Digital двойников (Предварительная версия)** . Нажмите кнопку _создать_ , чтобы создать новый экземпляр службы.
 
-:::image type="content" source= "media/how-to-set-up-instance/portal/create-azure-digital-twins.png" alt-text="Выбор команды создать на странице службы цифровых двойников Azure":::
+:::image type="content" source= "media/how-to-set-up-instance/portal/create-azure-digital-twins.png" alt-text="Выбор команды "создать" на странице службы цифровых двойников Azure":::
 
 На следующей странице *Создание ресурса* заполните указанные ниже значения.
 * **Подписка**. Подписка Azure, которую вы используете.
@@ -52,7 +52,7 @@ ms.locfileid: "89181801"
 
 После *создания*вы можете просмотреть состояние развертывания экземпляра в уведомлениях Azure на панели значков портала. Уведомление сообщит о том, что развертывание прошло успешно, и вы сможете нажать кнопку _Перейти к ресурсу_ , чтобы просмотреть созданный экземпляр.
 
-:::image type="content" source="media/how-to-set-up-instance/portal/notifications-deployment.png" alt-text="Просмотр уведомлений Azure, демонстрирующих успешное развертывание, и выделение кнопки перейти к ресурсу":::
+:::image type="content" source="media/how-to-set-up-instance/portal/notifications-deployment.png" alt-text="Просмотр уведомлений Azure, демонстрирующих успешное развертывание, и выделение кнопки "перейти к ресурсу"":::
 
 Кроме того, если развертывание завершается неудачно, в уведомлении будет указано, почему. Просмотрите уведомление в сообщении об ошибке и повторите попытку создания экземпляра.
 
@@ -71,7 +71,7 @@ ms.locfileid: "89181801"
 
 Сначала откройте страницу для своего экземпляра Azure Digital двойников в портал Azure. В меню экземпляра выберите *Управление доступом (IAM)*. Нажмите кнопку  *Добавить* в разделе *Добавление назначения роли*.
 
-:::image type="content" source="media/how-to-set-up-instance/portal/add-role-assignment-1.png" alt-text="Добавление назначения роли на странице Управление доступом (IAM)":::
+:::image type="content" source="media/how-to-set-up-instance/portal/add-role-assignment-1.png" alt-text="Добавление назначения роли на странице "Управление доступом (IAM)"":::
 
 На следующей странице *Добавление назначения ролей* введите значения (они должны быть выполнены пользователем с [достаточными разрешениями](#prerequisites-permission-requirements) в подписке Azure):
 * **Роль**: в раскрывающемся меню выберите *Azure Digital двойников Owner (Предварительная версия)* .
@@ -80,7 +80,7 @@ ms.locfileid: "89181801"
 
 :::row:::
     :::column:::
-        :::image type="content" source="media/how-to-set-up-instance/portal/add-role-assignment-2.png" alt-text="Заполнение указанных полей в диалоговом окне Добавление назначения роли":::
+        :::image type="content" source="media/how-to-set-up-instance/portal/add-role-assignment-2.png" alt-text="Заполнение указанных полей в диалоговом окне "Добавление назначения роли"":::
     :::column-end:::
     :::column:::
     :::column-end:::
@@ -102,7 +102,7 @@ ms.locfileid: "89181801"
 
 Начните с перехода к [Azure Active Directory](https://portal.azure.com/#blade/Microsoft_AAD_IAM/ActiveDirectoryMenuBlade/Overview) в портал Azure (вы можете использовать эту ссылку или найти ее с помощью панели поиска портала). Выберите *Регистрация приложений* в меню служба, а затем *+ Новая регистрация*.
 
-:::image type="content" source="media/how-to-set-up-instance/portal/new-registration.png" alt-text="Просмотрите страницу службы Azure AD в портал Azure, выделите пункт меню Регистрация приложений и нажмите кнопку + Новая регистрация.":::
+:::image type="content" source="media/how-to-set-up-instance/portal/new-registration.png" alt-text="Просмотрите страницу службы Azure AD в портал Azure, выделите пункт меню "Регистрация приложений" и нажмите кнопку "+ Новая регистрация".":::
 
 На следующей странице *Регистрация приложения* Введите запрошенные значения:
 * **Имя**: отображаемое имя приложения Azure AD, связываемое с регистрацией.
@@ -111,7 +111,7 @@ ms.locfileid: "89181801"
 
 По завершении нажмите кнопку Register ( *зарегистрировать* ).
 
-:::image type="content" source="media/how-to-set-up-instance/portal/register-an-application.png" alt-text="Представление страницы регистрация приложения с указанными введенными значениями":::
+:::image type="content" source="media/how-to-set-up-instance/portal/register-an-application.png" alt-text="Представление страницы "регистрация приложения" с указанными введенными значениями":::
 
 После завершения настройки регистрации портал перенаправит вас на страницу сведений о ней.
 
@@ -121,7 +121,7 @@ ms.locfileid: "89181801"
 
 На странице портала для регистрации приложения в меню выберите *разрешения API* . На следующей странице разрешения нажмите кнопку *+ Добавить разрешение* .
 
-:::image type="content" source="media/how-to-set-up-instance/portal/add-permission.png" alt-text="Просмотр регистрации приложения в портал Azure, выделение пункта меню разрешения API и кнопка + добавить разрешение":::
+:::image type="content" source="media/how-to-set-up-instance/portal/add-permission.png" alt-text="Просмотр регистрации приложения в портал Azure, выделение пункта меню "разрешения API" и кнопка "+ добавить разрешение"":::
 
 На следующей странице *разрешений API запроса* перейдите к *API-интерфейсам, используемым моей организацией* , и выполните поиск по запросу *Azure Digital двойников*. Выберите *Azure Digital двойников* из результатов поиска, чтобы продолжить назначение разрешений для API-интерфейсов цифровой двойников Azure.
 
@@ -132,7 +132,7 @@ ms.locfileid: "89181801"
 
 Далее предстоит выбрать разрешения, которые будут предоставлены для этих API. Разверните разрешение **Чтение (1)** и установите флажок *чтение. запись* , чтобы предоставить этому приложению доступ для чтения и записи регистрации приложения.
 
-:::image type="content" source="media/how-to-set-up-instance/portal/request-api-permissions-2.png" alt-text="Просмотр страницы разрешения API запросов Выбор разрешений чтение. запись для API-интерфейсов цифрового двойников Azure":::
+:::image type="content" source="media/how-to-set-up-instance/portal/request-api-permissions-2.png" alt-text="Просмотр страницы "разрешения API запросов" Выбор разрешений "чтение. запись" для API-интерфейсов цифрового двойников Azure":::
 
 По завершении нажмите кнопку *Добавить разрешения* .
 
@@ -140,13 +140,13 @@ ms.locfileid: "89181801"
 
 Вернитесь на страницу *разрешения API* и убедитесь, что теперь есть запись для Azure Digital двойников, отражающая разрешения на чтение и запись:
 
-:::image type="content" source="media/how-to-set-up-instance/portal/verify-api-permissions.png" alt-text="Представление портала с разрешениями API для регистрации приложения Azure AD с доступом чтение и запись для Azure Digital двойников":::
+:::image type="content" source="media/how-to-set-up-instance/portal/verify-api-permissions.png" alt-text="Представление портала с разрешениями API для регистрации приложения Azure AD с доступом "чтение и запись" для Azure Digital двойников":::
 
 Вы также можете проверить подключение к Azure Digital двойников в *manifest.js*регистрации приложения, которое автоматически обновлялось с помощью сведений о цифровой двойников Azure при добавлении разрешений API.
 
 Для этого в меню выберите *Манифест* , чтобы просмотреть код манифеста регистрации приложения. Прокрутите окно кода вниз и найдите эти поля в разделе `requiredResourceAccess` . Значения должны соответствовать приведенным на снимке экрана ниже:
 
-:::image type="content" source="media/how-to-set-up-instance/portal/verify-manifest.png" alt-text="Представление портала манифеста для регистрации приложения Azure AD. В разделе requiredResourceAccess вложено значение Ресаурцеаппид 0b07f429-9f4b-4714-9392-cc5e8e80c8b0 и значение resourceAccess > ID 4589bd03-58cb-4e6c-b17f-b580e39652f8":::
+:::image type="content" source="media/how-to-set-up-instance/portal/verify-manifest.png" alt-text="Представление портала манифеста для регистрации приложения Azure AD. В разделе "requiredResourceAccess" вложено значение "Ресаурцеаппид" 0b07f429-9f4b-4714-9392-cc5e8e80c8b0 и значение "resourceAccess > ID" 4589bd03-58cb-4e6c-b17f-b580e39652f8":::
 
 ### <a name="collect-important-values"></a>Получение важных значений
 
@@ -162,5 +162,9 @@ ms.locfileid: "89181801"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-См. раздел как подключить клиентское приложение к экземпляру, написав код проверки подлинности клиентского приложения:
+Вытестируйте отдельные REST API вызовы в экземпляре с помощью команд CLI Azure Digital двойников: 
+* [AZ DT Справочник](https://docs.microsoft.com/cli/azure/ext/azure-iot/dt?view=azure-cli-latest)
+* [*Практическое руководство. Использование CLI для Azure Digital Twins*](how-to-use-cli.md)
+
+Или см. раздел как подключить клиентское приложение к экземпляру, написав код проверки подлинности клиентского приложения:
 * [*Пошаговое руководство. Написание кода проверки подлинности приложения*](how-to-authenticate-client.md)

@@ -1,79 +1,96 @@
 ---
-title: Использование хранилища очередей Azure из Node.js — службы хранилища Azure
-description: Вы узнаете, как использовать службы очередей Azure для создания и удаления очередей, вставки, получения и удаления сообщений. Примеры кода написаны на Node.js.
+title: Как использовать хранилище очередей Azure из Node.js — службы хранилища Azure
+description: Узнайте, как использовать служба очередей Azure для создания и удаления очередей. Узнайте, как вставлять, получать и удалять сообщения с помощью Node.js.
 author: mhopkins-msft
 ms.author: mhopkins
-ms.date: 12/08/2016
+ms.date: 08/31/2020
 ms.service: storage
 ms.subservice: queues
 ms.topic: how-to
 ms.reviewer: dineshm
 ms.custom: seo-javascript-september2019, devx-track-javascript
-ms.openlocfilehash: 53bd4905cf4b8829d65ce2b10c85260ff3f8926c
-ms.sourcegitcommit: 4913da04fd0f3cf7710ec08d0c1867b62c2effe7
+ms.openlocfilehash: 18e184ed126aab8d03867db7b6b7d28c88644366
+ms.sourcegitcommit: 58d3b3314df4ba3cabd4d4a6016b22fa5264f05a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88210531"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89288820"
 ---
-# <a name="use-azure-queue-service-to-create-and-delete-queues-from-nodejs"></a>Использование службы очередей Azure для создания и удаления очередей из Node.js
+# <a name="how-to-use-azure-queue-storage-from-nodejs"></a>Как использовать хранилище очередей Azure из Node.js
+
 [!INCLUDE [storage-selector-queue-include](../../../includes/storage-selector-queue-include.md)]
 
-[!INCLUDE [storage-check-out-samples-all](../../../includes/storage-check-out-samples-all.md)]
+## <a name="overview"></a>Overview
 
-## <a name="overview"></a>Обзор
-В этом руководстве показано, как реализовать типичные сценарии с использованием службы очередей Microsoft Azure. Примеры написаны с использованием интерфейса API Node.js. Здесь описаны такие сценарии, как **вставка**, **просмотр**, **получение** и **удаление** сообщений очереди, а также **создание и удаление очередей**.
-
-> [!IMPORTANT]
-> Эта статья относится к устаревшей версии клиентской библиотеки службы хранилища Azure для JavaScript. Чтобы приступить к работе с последней версией, ознакомьтесь со статьей [Краткое руководство. Клиентская библиотека хранилища очередей Azure для JavaScript.](storage-quickstart-queues-nodejs.md)
+В этом руководство показано, как выполнять типичные сценарии с помощью служба очередей Microsoft Azure. Примеры написаны с использованием интерфейса API Node.js. К рассматриваемым сценариям относятся Вставка, просмотр, получение и удаление сообщений очереди. Также научитесь создавать и удалять очереди.
 
 [!INCLUDE [storage-queue-concepts-include](../../../includes/storage-queue-concepts-include.md)]
 
 [!INCLUDE [storage-create-account-include](../../../includes/storage-create-account-include.md)]
 
 ## <a name="create-a-nodejs-application"></a>Создание приложения Node.js
-Создайте пустое приложение Node.js. Инструкции по созданию приложения Node.js см. в статьях [Создание веб-приложения Node.js в Azure](../../app-service/quickstart-nodejs.md), [Построение и развертывание приложения Node.js в облачной службе Azure](../../cloud-services/cloud-services-nodejs-develop-deploy-app.md) — с использованием Windows PowerShell, или [Node.js tutorial in VS Code](https://code.visualstudio.com/docs/nodejs/nodejs-tutorial) (Руководство по Node.js в VS Code).
+
+Сведения о создании пустого Node.jsного приложения см. в статьях [Создание веб-приложения Node.js в службе приложений Azure][Create a Node.js web app in Azure App Service], создание [и развертывание приложения Node.js в облачной службе Azure][Build and deploy a Node.js application to an Azure Cloud Service] с помощью Windows PowerShell или [Visual Studio Code][Visual Studio Code].
 
 ## <a name="configure-your-application-to-access-storage"></a>Настройка приложения для доступа к хранилищу
-Для использования службы хранилища Azure необходим пакет SDK для службы хранилища Azure для Node.js, который содержит набор удобных библиотек, взаимодействующих со службами REST хранилища.
+
+[Клиентская библиотека службы хранилища Azure для JavaScript][Azure Storage client library for JavaScript] содержит набор удобных библиотек, взаимодействующих со службами RESTful службы хранилища.
 
 ### <a name="use-node-package-manager-npm-to-obtain-the-package"></a>Использование диспетчера пакета Node (NPM) для получения пакета
-1. Используя интерфейс командной строки, такой как **PowerShell** (Windows), **Terminal** (Mac) или **Bash** (Unix), перейдите в папку, в которой создан пример приложения.
-2. Введите в командной строке **npm install azure-storage** . Результат выполнения этой команды будет аналогичен следующему примеру:
- 
-    ```bash
-    azure-storage@0.5.0 node_modules\azure-storage
-    +-- extend@1.2.1
-    +-- xmlbuilder@0.4.3
-    +-- mime@1.2.11
-    +-- node-uuid@1.4.3
-    +-- validator@3.22.2
-    +-- underscore@1.4.4
-    +-- readable-stream@1.0.33 (string_decoder@0.10.31, isarray@0.0.1, inherits@2.0.1, core-util-is@1.0.1)
-    +-- xml2js@0.2.7 (sax@0.5.2)
-    +-- request@2.57.0 (caseless@0.10.0, aws-sign2@0.5.0, forever-agent@0.6.1, stringstream@0.0.4, oauth-sign@0.8.0, tunnel-agent@0.4.1, isstream@0.1.2, json-stringify-safe@5.0.1, bl@0.9.4, combined-stream@1.0.5, qs@3.1.0, mime-types@2.0.14, form-data@0.2.0, http-signature@0.11.0, tough-cookie@2.0.0, hawk@2.3.1, har-validator@1.8.0)
-    ```
 
-3. Выполнив команду **ls** вручную, можно убедиться, что папка **node\_modules** создана. В этой папке находится пакет **azure-storage** , содержащий библиотеки, необходимые для доступа к хранилищу.
+1. Используйте интерфейс командной строки, например PowerShell (Windows), Terminal (Mac) или bash (UNIX), перейдите в папку, в которой был создан пример приложения.
+
+# <a name="javascript-v12"></a>[JavaScript версии 12](#tab/javascript)
+
+1. В окне командной строки введите **NPM Install \@ Azure/Storage-Queue** .
+
+1. Убедитесь, что папка " ** \_ модули узла** " создана. Внутри этой папки вы найдете пакет ** \@ Azure/Storage-Queue** , который содержит клиентскую библиотеку, необходимую для доступа к хранилищу.
+
+# <a name="javascript-v2"></a>[JavaScript v2](#tab/javascript2)
+
+1. Введите в командной строке **npm install azure-storage** .
+
+1. Убедитесь, что папка " ** \_ модули узла** " создана. В этой папке вы найдете пакет **Azure-Storage** , который содержит библиотеки, необходимые для доступа к хранилищу.
+
+---
 
 ### <a name="import-the-package"></a>Импорт пакета
-Используйте Блокнот или другой текстовый редактор, чтобы добавить следующий код в начало файла **server.js** приложения, где планируется использовать хранилище.
+
+В редакторе кода добавьте следующий код в начало файла JavaScript, в котором планируется использовать очереди.
+
+# <a name="javascript-v12"></a>[JavaScript версии 12](#tab/javascript)
+
+:::code language="javascript" source="~/azure-storage-snippets/queues/howto/JavaScript/JavaScript-v12/javascript-queues-v12.js" id="Snippet_ImportStatements":::
+
+# <a name="javascript-v2"></a>[JavaScript v2](#tab/javascript2)
 
 ```javascript
 var azure = require('azure-storage');
 ```
 
-## <a name="setup-an-azure-storage-connection"></a>Настройка подключения к службе хранилища Azure
-Модуль Azure считывает переменные среды AZURE\_STORAGE\_ACCOUNT и AZURE\_STORAGE\_ACCESS\_KEY или AZURE\_STORAGE\_CONNECTION\_STRING, чтобы получить информацию, необходимую для подключения к учетной записи хранения Azure. Если эти переменные среды не заданы, при вызове **createQueueService**необходимо указать сведения об учетной записи.
+---
 
-## <a name="how-to-create-a-queue"></a>Практическое руководство. Создание очереди
+## <a name="how-to-create-a-queue"></a>Как создать очередь
+
+# <a name="javascript-v12"></a>[JavaScript версии 12](#tab/javascript)
+
+Следующий код получает значение переменной среды `AZURE_STORAGE_CONNECTION_STRING` с именем и использует ее для создания объекта [куеуесервицеклиент](/javascript/api/@azure/storage-queue/queueserviceclient) . Затем объект **куеуесервицеклиент** используется для создания объекта [QueueClient](/javascript/api/@azure/storage-queue/queueclient) . Объект **QueueClient** позволяет работать с определенной очередью.
+
+:::code language="javascript" source="~/azure-storage-snippets/queues/howto/JavaScript/JavaScript-v12/javascript-queues-v12.js" id="Snippet_CreateQueue":::
+
+Если очередь уже существует, возникает исключение.
+
+# <a name="javascript-v2"></a>[JavaScript v2](#tab/javascript2)
+
+Модуль Azure будет считывать переменные среды `AZURE_STORAGE_ACCOUNT` `AZURE_STORAGE_ACCESS_KEY` , а также сведения, `AZURE_STORAGE_CONNECTION_STRING` необходимые для подключения к учетной записи хранения Azure. Если эти переменные среды не заданы, необходимо указать сведения об учетной записи при вызове **креатекуеуесервице**.
+
 Следующий пример кода создает объект **QueueService** , который позволяет работать с очередями.
 
 ```javascript
 var queueSvc = azure.createQueueService();
 ```
 
-Используйте метод **createQueueIfNotExists** , который возвращает указанную очередь, если она уже существует, или создает новую с указанным именем, если она отсутствует.
+Вызовите метод **createQueueIfNotExists** , чтобы создать новую очередь с указанным именем или вернуть очередь, если она уже существует.
 
 ```javascript
 queueSvc.createQueueIfNotExists('myqueue', function(error, results, response){
@@ -85,30 +102,19 @@ queueSvc.createQueueIfNotExists('myqueue', function(error, results, response){
 
 Если очередь создана, значение `result.created` будет истинно. Если очередь уже существует, значение `result.created` будет ложно.
 
-### <a name="filters"></a>Фильтры
-Дополнительные операции фильтрации можно применить к выполняемым операциям, используя **QueueService**. К операциям фильтрации могут относиться ведение журнала, автоматический повтор и т. д. Фильтры являются объектами, реализующими метод со следующей сигнатурой:
+---
 
-```javascript
-function handle (requestOptions, next)
-```
+## <a name="how-to-insert-a-message-into-a-queue"></a>Вставка сообщения в очередь
 
-Выполнив предварительную обработку параметров запроса, метод должен вызвать "next", передавая обратный вызов со следующей сигнатурой:
+# <a name="javascript-v12"></a>[JavaScript версии 12](#tab/javascript)
 
-```javascript
-function (returnObject, finalCallback, next)
-```
+Чтобы добавить сообщение в очередь, вызовите метод [SendMessage](/javascript/api/@azure/storage-queue/queueclient#sendmessage-string--queuesendmessageoptions-) .
 
-В этой функции обратного вызова и после обработки returnObject (ответ на запрос к серверу) функция обратного вызова должна либо вызвать "next", если он существует, чтобы продолжить обработку других фильтров, либо в противном случае просто вызвать "finalCallback" для завершения обращения к службе.
+:::code language="javascript" source="~/azure-storage-snippets/queues/howto/JavaScript/JavaScript-v12/javascript-queues-v12.js" id="Snippet_AddMessage":::
 
-В пакет SDK Azure для Node.js включены два фильтра, реализующие логику повторных попыток: **ExponentialRetryPolicyFilter** и **LinearRetryPolicyFilter**. Следующий код создает объект **QueueService**, использующий **ExponentialRetryPolicyFilter**:
+# <a name="javascript-v2"></a>[JavaScript v2](#tab/javascript2)
 
-```javascript
-var retryOperations = new azure.ExponentialRetryPolicyFilter();
-var queueSvc = azure.createQueueService().withFilter(retryOperations);
-```
-
-## <a name="how-to-insert-a-message-into-a-queue"></a>Практическое руководство. Вставка сообщения в очередь
-Чтобы вставить сообщение в очередь, используйте метод **createMessage** , чтобы создать новое сообщение и добавить его в очередь.
+Чтобы вставить сообщение в очередь, вызовите метод **createMessage** , чтобы создать новое сообщение и добавить его в очередь.
 
 ```javascript
 queueSvc.createMessage('myqueue', "Hello world!", function(error, results, response){
@@ -118,8 +124,21 @@ queueSvc.createMessage('myqueue', "Hello world!", function(error, results, respo
 });
 ```
 
-## <a name="how-to-peek-at-the-next-message"></a>Практическое руководство. Просмотр следующего сообщения
-Можно посмотреть сообщение в начале очереди, не удаляя его из очереди, вызвав метод **peekMessages** . По умолчанию **peekMessages** просматривает одно сообщение.
+---
+
+## <a name="how-to-peek-at-the-next-message"></a>Просмотр следующего сообщения
+
+Вы можете просматривать сообщения в очереди, не удаляя их из очереди, вызывая метод **peekMessages** .
+
+# <a name="javascript-v12"></a>[JavaScript версии 12](#tab/javascript)
+
+По умолчанию [peekMessages](/javascript/api/@azure/storage-queue/queueclient#peekmessages-queuepeekmessagesoptions-) просматривает одно сообщение. В следующем примере просматривается первые пять сообщений в очереди. Если отображается менее пяти сообщений, возвращаются только видимые сообщения.
+
+:::code language="javascript" source="~/azure-storage-snippets/queues/howto/JavaScript/JavaScript-v12/javascript-queues-v12.js" id="Snippet_PeekMessage":::
+
+# <a name="javascript-v2"></a>[JavaScript v2](#tab/javascript2)
+
+По умолчанию **peekMessages** просматривает одно сообщение.
 
 ```javascript
 queueSvc.peekMessages('myqueue', function(error, results, response){
@@ -131,43 +150,23 @@ queueSvc.peekMessages('myqueue', function(error, results, response){
 
 Его содержит объект `result` .
 
-> [!NOTE]
-> Если вызвать метод **peekMessages** , когда в очереди нет сообщений, оповещение об ошибке не появляется, но сообщения не возвращаются.
-> 
-> 
+---
 
-## <a name="how-to-dequeue-the-next-message"></a>Практическое руководство. Удаление следующего сообщения из очереди
-Обработка сообщения выполняется двухэтапным процессом:
+Вызов **peekMessages** при отсутствии сообщений в очереди не возвращает ошибку. Однако сообщения не возвращаются.
 
-1. удаление сообщения из очереди.
-2. удаление сообщения.
+## <a name="how-to-change-the-contents-of-a-queued-message"></a>Изменение содержимого сообщения в очереди
 
-Чтобы удалить сообщение из очереди, используйте метод **getMessage**. В результате сообщения становятся невидимыми в очереди, и другие клиенты не могут их обрабатывать. После того как приложение обработало сообщение, вызовите метод **deleteMessage** , чтобы удалить его из очереди. Следующий пример получает сообщение, а затем удаляет его:
+В следующем примере обновляется текст сообщения.
 
-```javascript
-queueSvc.getMessages('myqueue', function(error, results, response){
-  if(!error){
-    // Message text is in results[0].messageText
-    var message = results[0];
-    queueSvc.deleteMessage('myqueue', message.messageId, message.popReceipt, function(error, response){
-      if(!error){
-        //message deleted
-      }
-    });
-  }
-});
-```
+# <a name="javascript-v12"></a>[JavaScript версии 12](#tab/javascript)
 
-> [!NOTE]
-> По умолчанию сообщение остается скрытым в течение 30 секунд, а потом снова становится видимым для других клиентов. Чтобы задать другое значение, укажите с методом **getMessages** параметр `options.visibilityTimeout`.
-> 
-> [!NOTE]
-> Если использовать метод **getMessages** , когда в очереди нет сообщений, оповещение об ошибке не появляется, но сообщения не возвращаются.
-> 
-> 
+Измените содержимое сообщения на месте в очереди, вызвав [updateMessage](/javascript/api/@azure/storage-queue/queueclient#updatemessage-string--string--string--number--queueupdatemessageoptions-). 
 
-## <a name="how-to-change-the-contents-of-a-queued-message"></a>Практическое руководство. Изменение содержимого сообщения в очереди
-Вы можете изменить содержимое сообщения непосредственно в очереди с помощью **updateMessage**. Следующий пример обновляет текст сообщения:
+:::code language="javascript" source="~/azure-storage-snippets/queues/howto/JavaScript/JavaScript-v12/javascript-queues-v12.js" id="Snippet_UpdateMessage":::
+
+# <a name="javascript-v2"></a>[JavaScript v2](#tab/javascript2)
+
+Измените содержимое сообщения на месте в очереди, вызвав **updateMessage**. 
 
 ```javascript
 queueSvc.getMessages('myqueue', function(error, getResults, getResponse){
@@ -183,13 +182,73 @@ queueSvc.getMessages('myqueue', function(error, getResults, getResponse){
 });
 ```
 
-## <a name="how-to-additional-options-for-dequeuing-messages"></a>Практическое руководство. Использование дополнительных параметров для удаления сообщений из очереди
+---
+
+## <a name="how-to-dequeue-a-message"></a>Вывод сообщения из очереди
+
+Вывод сообщения из очереди состоит из двух этапов:
+
+1. Получите сообщение.
+
+1. удаление сообщения.
+
+В следующем примере возвращается сообщение, а затем удаляется.
+
+# <a name="javascript-v12"></a>[JavaScript версии 12](#tab/javascript)
+
+Чтобы получить сообщение, вызовите метод [рецеивемессажес](/javascript/api/@azure/storage-queue/queueclient#receivemessages-queuereceivemessageoptions-) . Этот вызов делает сообщения невидимыми в очереди, поэтому другие клиенты не могут их обработать. После того как приложение обработало сообщение, вызовите метод [deleteMessage](/javascript/api/@azure/storage-queue/queueclient#deletemessage-string--string--queuedeletemessageoptions-) , чтобы удалить его из очереди.
+
+:::code language="javascript" source="~/azure-storage-snippets/queues/howto/JavaScript/JavaScript-v12/javascript-queues-v12.js" id="Snippet_DequeueMessage":::
+
+По умолчанию сообщение скрыто только в течение 30 секунд. Через 30 секунд она будет видна другим клиентам. Можно указать другое значение, задав [Options. visibilityTimeout](/javascript/api/@azure/storage-queue/queuereceivemessageoptions#visibilitytimeout) при вызове **рецеивемессажес**.
+
+Вызов **рецеивемессажес** при отсутствии сообщений в очереди не возвращает ошибку. Однако сообщения не возвращаются.
+
+# <a name="javascript-v2"></a>[JavaScript v2](#tab/javascript2)
+
+Чтобы получить сообщение, вызовите метод **.** Этот вызов делает сообщения невидимыми в очереди, поэтому другие клиенты не могут их обработать. После того как приложение обработало сообщение, вызовите метод **deleteMessage** , чтобы удалить его из очереди.
+
+```javascript
+queueSvc.getMessages('myqueue', function(error, results, response){
+  if(!error){
+    // Message text is in results[0].messageText
+    var message = results[0];
+    queueSvc.deleteMessage('myqueue', message.messageId, message.popReceipt, function(error, response){
+      if(!error){
+        //message deleted
+      }
+    });
+  }
+});
+```
+
+По умолчанию сообщение скрыто только в течение 30 секунд. Через 30 секунд она будет видна другим клиентам. Чтобы задать другое значение, укажите с методом **getMessages** параметр `options.visibilityTimeout`.
+
+Использование **метода** noreturn при отсутствии сообщений в очереди не возвращает ошибку. Однако сообщения не возвращаются.
+
+---
+
+## <a name="additional-options-for-dequeuing-messages"></a>Дополнительные варианты удаления сообщений из очереди
+
+# <a name="javascript-v12"></a>[JavaScript версии 12](#tab/javascript)
+
+Существует два способа настройки извлечения сообщения из очереди:
+
+* [Options. нумберофмессажес](/javascript/api/@azure/storage-queue/queuereceivemessageoptions#numberofmessages) — получение пакета сообщений (до 32.)
+* [Options. visibilityTimeout](/javascript/api/@azure/storage-queue/queuereceivemessageoptions#visibilitytimeout) — задает более длительное или более короткое время ожидания невидимости.
+
+В следующем примере метод **рецеивемессажес** используется для получения пяти сообщений в одном вызове. Затем он обрабатывает каждое сообщение с помощью цикла `for`. Он также задает время ожидания невидимости пять минут для всех сообщений, возвращенных методом.
+
+:::code language="javascript" source="~/azure-storage-snippets/queues/howto/JavaScript/JavaScript-v12/javascript-queues-v12.js" id="Snippet_DequeueMessages":::
+
+# <a name="javascript-v2"></a>[JavaScript v2](#tab/javascript2)
+
 Существует два способа настройки извлечения сообщения из очереди:
 
 * `options.numOfMessages` — извлекает пакет сообщений (до 32).
 * `options.visibilityTimeout` — задает более длительное или короткое время ожидания невидимости.
 
-В следующем примере кода метод **getMessages** используется для получения 15 сообщений в одном вызове. Затем он обрабатывает каждое сообщение с помощью цикла for. Он также задает время ожидания невидимости пять минут для всех сообщений, возвращенных методом.
+В следующем примере кода метод **getMessages** используется для получения 15 сообщений в одном вызове. Затем он обрабатывает каждое сообщение с помощью цикла `for`. Он также задает время ожидания невидимости пять минут для всех сообщений, возвращенных методом.
 
 ```javascript
 queueSvc.getMessages('myqueue', {numOfMessages: 15, visibilityTimeout: 5 * 60}, function(error, results, getResponse){
@@ -208,8 +267,19 @@ queueSvc.getMessages('myqueue', {numOfMessages: 15, visibilityTimeout: 5 * 60}, 
 });
 ```
 
-## <a name="how-to-get-the-queue-length"></a>Практическое руководство. Получение длины очереди
-Метод **getQueueMetadata** возвращает метаданные очереди, в том числе приблизительное количество сообщений, ожидающих в очереди.
+---
+
+## <a name="how-to-get-the-queue-length"></a>Как получить длину очереди
+
+# <a name="javascript-v12"></a>[JavaScript версии 12](#tab/javascript)
+
+Метод [WebMethod](/javascript/api/@azure/storage-queue/queueclient#getproperties-queuegetpropertiesoptions-) возвращает метаданные об очереди, включая приблизительное количество сообщений, ожидающих в очереди.
+
+:::code language="javascript" source="~/azure-storage-snippets/queues/howto/JavaScript/JavaScript-v12/javascript-queues-v12.js" id="Snippet_QueueLength":::
+
+# <a name="javascript-v2"></a>[JavaScript v2](#tab/javascript2)
+
+Метод **getQueueMetadata** возвращает метаданные об очереди, включая приблизительное количество сообщений, ожидающих в очереди.
 
 ```javascript
 queueSvc.getQueueMetadata('myqueue', function(error, results, response){
@@ -219,7 +289,18 @@ queueSvc.getQueueMetadata('myqueue', function(error, results, response){
 });
 ```
 
-## <a name="how-to-list-queues"></a>Практическое руководство. Получение списка очередей
+---
+
+## <a name="how-to-list-queues"></a>Как получить список очередей
+
+# <a name="javascript-v12"></a>[JavaScript версии 12](#tab/javascript)
+
+Чтобы получить список очередей, вызовите метод [куеуесервицеклиент. listQueues](). Чтобы получить список, отфильтрованный по определенному префиксу, задайте [Параметры. prefix](/javascript/api/@azure/storage-queue/servicelistqueuesoptions#prefix) в вызове **listQueues**.
+
+:::code language="javascript" source="~/azure-storage-snippets/queues/howto/JavaScript/JavaScript-v12/javascript-queues-v12.js" id="Snippet_ListQueues":::
+
+# <a name="javascript-v2"></a>[JavaScript v2](#tab/javascript2)
+
 Чтобы извлечь список очередей, используйте **listQueuesSegmented**. Чтобы извлечь список, отфильтрованный по определенному префиксу, используйте **listQueuesSegmentedWithPrefix**.
 
 ```javascript
@@ -230,9 +311,22 @@ queueSvc.listQueuesSegmented(null, function(error, results, response){
 });
 ```
 
-Если не удается вернуть все очереди, атрибут `result.continuationToken` можно использовать в качестве первого параметра метода **listQueuesSegmented** или второго параметра метода **listQueuesSegmentedWithPrefix** для получения дополнительных результатов.
+Если не удается вернуть все очереди, передайте в `result.continuationToken` качестве первого параметра **listQueuesSegmented** или второго параметра **listQueuesSegmentedWithPrefix** значение, чтобы получить дополнительные результаты.
 
-## <a name="how-to-delete-a-queue"></a>Практическое руководство. Удаление очереди
+---
+
+## <a name="how-to-delete-a-queue"></a>Удаление очереди
+
+# <a name="javascript-v12"></a>[JavaScript версии 12](#tab/javascript)
+
+Чтобы удалить очередь и все сообщения, содержащиеся в ней, вызовите метод [deleteQueue](/javascript/api/@azure/storage-queue/queueclient#delete-queuedeleteoptions-) объекта **QueueClient** .
+
+:::code language="javascript" source="~/azure-storage-snippets/queues/howto/JavaScript/JavaScript-v12/javascript-queues-v12.js" id="Snippet_DeleteQueue":::
+
+Чтобы очистить все сообщения из очереди, не удаляя их, вызовите [clearMessages](/javascript/api/@azure/storage-queue/queueclient#clearmessages-queueclearmessagesoptions-).
+
+# <a name="javascript-v2"></a>[JavaScript v2](#tab/javascript2)
+
 Чтобы удалить очередь и все сообщения, содержащиеся в ней, вызовите метод **deleteQueue** для объекта Queue.
 
 ```javascript
@@ -243,108 +337,21 @@ queueSvc.deleteQueue(queueName, function(error, response){
 });
 ```
 
-Чтобы удалить все сообщения очереди без удаления самой очереди, используйте метод **clearMessages**.
+Чтобы очистить все сообщения из очереди, не удаляя их, вызовите **clearMessages**.
 
-## <a name="how-to-work-with-shared-access-signatures"></a>Практическое руководство. Работа с подписанными URL-адресами
-Подписи общего доступа (SAS) — безопасный способ предоставить детальный доступ к очередям без указания имени или ключей своей учетной записи хранения. SAS часто используется для предоставления ограниченного доступа к очередям, например, позволяет мобильному приложению отправлять сообщения.
+---
 
-Надежное приложение, например, облачная служба, создает подпись SAS с помощью **generateSharedAccessSignature** службы **QueueService** и предоставляет ее ненадежному или полунадежному приложению. Например, мобильному приложению. Подпись SAS создается с использованием политики, которая описывает даты начала и окончания срока действия SAS, а также уровень доступа, который предоставляется держателю подписи SAS.
+[!INCLUDE [storage-check-out-samples-all](../../../includes/storage-check-out-samples-all.md)]
 
-В следующем примере создается новая общая политика, которая позволяет держателю подписи SAS добавлять сообщения в очередь в течение 100 минут с момента своего создания.
+## <a name="next-steps"></a>Дальнейшие действия
 
-```javascript
-var startDate = new Date();
-var expiryDate = new Date(startDate);
-expiryDate.setMinutes(startDate.getMinutes() + 100);
-startDate.setMinutes(startDate.getMinutes() - 100);
-
-var sharedAccessPolicy = {
-  AccessPolicy: {
-    Permissions: azure.QueueUtilities.SharedAccessPermissions.ADD,
-    Start: startDate,
-    Expiry: expiryDate
-  }
-};
-
-var queueSAS = queueSvc.generateSharedAccessSignature('myqueue', sharedAccessPolicy);
-var host = queueSvc.host;
-```
-
-Обратите внимание, что также должна быть предоставлена информация узла, поскольку она требуется держателю SAS для совершения попыток доступа к очереди.
-
-Клиентское приложение далее использует подпись SAS с помощью **QueueServiceWithSAS** для выполнения операций с очередью. Следующий пример выполняет подключение к очереди и создает сообщение.
-
-```javascript
-var sharedQueueService = azure.createQueueServiceWithSas(host, queueSAS);
-sharedQueueService.createMessage('myqueue', 'Hello world from SAS!', function(error, result, response){
-  if(!error){
-    //message added
-  }
-});
-```
-
-Поскольку подпись SAS была создана только для доступа добавления, если выполняется попытка чтения, обновления или удаления сообщений, будет возвращена ошибка.
-
-### <a name="access-control-lists"></a>Доступ к спискам управления
-Можно также использовать список управления доступом (ACL) для задания политики доступа подписи SAS. Это может оказаться полезным, когда необходимо предоставить доступ к очереди нескольким клиентам, но с различной политикой доступа для каждого из них.
-
-ACL реализуется с помощью массива политик доступа, каждая из которых связана со своим идентификатором. В следующем примере определяются две политики, по одной для пользователей user1 и user2:
-
-```javascript
-var sharedAccessPolicy = {
-  user1: {
-    Permissions: azure.QueueUtilities.SharedAccessPermissions.PROCESS,
-    Start: startDate,
-    Expiry: expiryDate
-  },
-  user2: {
-    Permissions: azure.QueueUtilities.SharedAccessPermissions.ADD,
-    Start: startDate,
-    Expiry: expiryDate
-  }
-};
-```
-
-В этом примере код получает текущее значение ACL для **myqueue**, а затем добавляет новые политики с помощью **setQueueAcl**. Такой подход допускает выполнение:
-
-```javascript
-var extend = require('extend');
-queueSvc.getQueueAcl('myqueue', function(error, result, response) {
-  if(!error){
-    var newSignedIdentifiers = extend(true, result.signedIdentifiers, sharedAccessPolicy);
-    queueSvc.setQueueAcl('myqueue', newSignedIdentifiers, function(error, result, response){
-      if(!error){
-        // ACL set
-      }
-    });
-  }
-});
-```
-
-После задания ACL можно создать подпись SAS на основе идентификатора политики. В следующем примере создается новая подпись SAS для пользователя 'user2':
-
-```javascript
-queueSAS = queueSvc.generateSharedAccessSignature('myqueue', { Id: 'user2' });
-```
-
-## <a name="next-steps"></a>Next Steps
 Вы изучили основные сведения о хранилище очередей. Дополнительные сведения о более сложных задачах по использованию хранилища можно найти по следующим ссылкам.
 
-* Посетите [блог команды разработчиков службы хранилища Azure][Azure Storage Team Blog].
-* Посетите репозиторий [пакета SDK службы хранилища Azure для Node][Azure Storage SDK for Node] на веб-сайте GitHub.
+* Посетите [блог команды разработчиков службы хранилища Azure][Azure Storage Team Blog] , чтобы узнать о новых возможностях
+* Посетите веб [клиентскую библиотеку службы хранилища Azure для JavaScript][Azure Storage client library for JavaScript] в репозитории на сайте GitHub
 
-
-
-[Azure Storage SDK for Node]: https://github.com/Azure/azure-storage-node
-
-[using the REST API]: https://msdn.microsoft.com/library/azure/hh264518.aspx
-
-[Azure Portal]: https://portal.azure.com
-
-[Создание веб-приложения Node.js в службе приложений Azure](../../app-service/quickstart-nodejs.md)
-
-[Построение и развертывание приложения Node.js в облачной службе Azure](../../cloud-services/cloud-services-nodejs-develop-deploy-app.md)
-
-[Azure Storage Team Blog]: https://blogs.msdn.com/b/windowsazurestorage/
-
-[Build and deploy a Node.js web app to Azure using Web Matrix]: https://www.microsoft.com/web/webmatrix/
+[Azure Storage client library for JavaScript]: https://github.com/Azure/azure-sdk-for-js/tree/master/sdk/storage#azure-storage-client-library-for-javascript
+[Azure Storage Team Blog]: https://techcommunity.microsoft.com/t5/azure-storage/bg-p/AzureStorageBlog
+[Build and deploy a Node.js application to an Azure Cloud Service]: ../../cloud-services/cloud-services-nodejs-develop-deploy-app.md
+[Create a Node.js web app in Azure App Service]: ../../app-service/quickstart-nodejs.md
+[Visual Studio Code]: https://code.visualstudio.com/docs/nodejs/nodejs-tutorial

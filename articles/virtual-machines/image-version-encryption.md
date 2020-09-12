@@ -8,12 +8,12 @@ ms.workload: infrastructure-services
 ms.topic: how-to
 ms.date: 08/11/2020
 ms.author: cynthn
-ms.openlocfilehash: 21e6dc5a975f43456a077559eebafd975cea66a1
-ms.sourcegitcommit: d39f2cd3e0b917b351046112ef1b8dc240a47a4f
+ms.openlocfilehash: 91f485d03717ab80bac26abd16da165d7b0dead7
+ms.sourcegitcommit: 58d3b3314df4ba3cabd4d4a6016b22fa5264f05a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88816496"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89291931"
 ---
 # <a name="preview-use-customer-managed-keys-for-encrypting-images"></a>Предварительный просмотр: Использование управляемых клиентом ключей для шифрования образов
 
@@ -149,7 +149,7 @@ az provider register -n Microsoft.Compute
 ```
 
 
-Чтобы задать набор шифрования диска для версии образа, используйте команду [az image gallery create-image-version](/cli/azure/sig/image-version#az-sig-image-version-create) с параметром `--target-region-encryption`. Формат для `--target-region-encryption` представляет собой разделенный пробелами список ключей для шифрования дисков ОС и данных. Результат будет выглядеть так: `<encryption set for the OS disk>,<Lun number of the data disk>, <encryption set for the data disk>, <Lun number for the second data disk>, <encryption set for the second data disk>`. 
+Чтобы задать набор шифрования диска для версии образа, используйте команду [az image gallery create-image-version](/cli/azure/sig/image-version#az-sig-image-version-create) с параметром `--target-region-encryption`. Формат `--target-region-encryption` представляет собой разделенный запятыми список ключей для шифрования дисков операционной системы и данных. Результат будет выглядеть так: `<encryption set for the OS disk>,<Lun number of the data disk>,<encryption set for the data disk>,<Lun number for the second data disk>,<encryption set for the second data disk>`. 
 
 Если источником для диска ОС является управляемый диск или виртуальная машина, используйте `--managed-image`, чтобы указать источник для версии образа. В этом примере источником является управляемый образ с диском ОС, а также диском данных с LUN 0. Диск ОС будет зашифрован с помощью DiskEncryptionSet1, а диск данных — с помощью DiskEncryptionSet2.
 

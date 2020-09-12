@@ -16,12 +16,12 @@ ms.date: 04/08/2019
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 7a14249f28da15f04a214c2a1cb4bd415fb59ce9
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 69373e039320cd733fb859bb84e03e5493e05403
+ms.sourcegitcommit: c94a177b11a850ab30f406edb233de6923ca742a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85356633"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89277210"
 ---
 # <a name="azure-ad-connect-upgrade-from-a-previous-version-to-the-latest"></a>Azure AD Connect: обновление до последней версии
 В этой статье описываются различные варианты обновления установленного экземпляра Azure Active Directory (Azure AD) Connect до последней версии. Мы рекомендуем устанавливать все новые выпуски Azure AD Connect. Действия, описанные в разделе [Обновление со сменой сервера](#swing-migration), можно также использовать при значительных изменениях конфигурации.
@@ -54,7 +54,7 @@ ms.locfileid: "85356633"
 
 Во время обновления на месте могут быть внесены изменения, требующие выполнения определенных действий по синхронизации (включая шаг полного импорта и шаг полной синхронизации) после завершения обновления. Сведения о том, как отложить эти действия, см. в разделе [Как отложить полную синхронизацию после обновления](#how-to-defer-full-synchronization-after-upgrade).
 
-При использовании Azure AD Connect с нестандартным соединителем (например, универсальным соединителем LDAP и универсальным соединителем SQL) необходимо обновить соответствующую конфигурацию соединителя в [Synchronization Service Manager](https://docs.microsoft.com/azure/active-directory/connect/active-directory-aadconnectsync-service-manager-ui-connectors) после обновления на месте. Дополнительные сведения о том, как обновить конфигурацию соединителя, см. в статье [История выпусков версий соединителей](https://docs.microsoft.com/azure/active-directory/connect/active-directory-aadconnectsync-connector-version-history#troubleshooting). Если не обновить конфигурацию, действия импорта и экспорта для соединителя не будут выполняться правильно. В журнале событий приложений появится ошибка *Assembly version in AAD Connector configuration ("X.X.XXX.X") is earlier than the actual version ("X.X.XXX.X") of "C:\Program Files\Microsoft Azure AD Sync\Extensions\Microsoft.IAM.Connector.GenericLdap.dll* (Версия сборки в конфигурации соединителя AAD ("X.X.XXX.X") ниже текущей версии ("X.X.XXX.X") файла "C:\Program Files\Microsoft Azure AD Sync\Extensions\Microsoft.IAM.Connector.GenericLdap.dll").
+При использовании Azure AD Connect с нестандартным соединителем (например, универсальным соединителем LDAP и универсальным соединителем SQL) необходимо обновить соответствующую конфигурацию соединителя в [Synchronization Service Manager](./how-to-connect-sync-service-manager-ui-connectors.md) после обновления на месте. Дополнительные сведения о том, как обновить конфигурацию соединителя, см. в статье [История выпусков версий соединителей](/microsoft-identity-manager/reference/microsoft-identity-manager-2016-connector-version-history#troubleshooting). Если не обновить конфигурацию, действия импорта и экспорта для соединителя не будут выполняться правильно. В журнале событий приложений появится ошибка *Assembly version in AAD Connector configuration ("X.X.XXX.X") is earlier than the actual version ("X.X.XXX.X") of "C:\Program Files\Microsoft Azure AD Sync\Extensions\Microsoft.IAM.Connector.GenericLdap.dll* (Версия сборки в конфигурации соединителя AAD ("X.X.XXX.X") ниже текущей версии ("X.X.XXX.X") файла "C:\Program Files\Microsoft Azure AD Sync\Extensions\Microsoft.IAM.Connector.GenericLdap.dll").
 
 ## <a name="swing-migration"></a>Обновление со сменой сервера
 При наличии сложного развертывания или большого числа объектов обновление системы "на месте" будет нецелесообразно. У некоторых клиентов процесс может занять несколько дней, в течение которых никакие изменения синхронизироваться не будут. Этот метод также можно использовать, если планируется значительно изменить конфигурацию и нужно проверить ее перед отправкой в облако.
@@ -167,5 +167,5 @@ At line:1 char:1
 
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 Дополнительные сведения об [интеграции локальных удостоверений с Azure Active Directory](whatis-hybrid-identity.md).

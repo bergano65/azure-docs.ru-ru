@@ -17,12 +17,12 @@ ms.date: 07/17/2017
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c8d0e8301fe5443e548dd35a6b6058e8c7a409d0
-ms.sourcegitcommit: cec9676ec235ff798d2a5cad6ee45f98a421837b
+ms.openlocfilehash: 956428b6f197912e2ab7c3a94133ed9d59f37749
+ms.sourcegitcommit: c94a177b11a850ab30f406edb233de6923ca742a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85849902"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89279930"
 ---
 # <a name="federate-multiple-instances-of-azure-ad-with-single-instance-of-ad-fs"></a>Федерация нескольких экземпляров Azure AD с одним экземпляром AD FS
 
@@ -42,7 +42,7 @@ ms.locfileid: "85849902"
 
 ## <a name="step-1-establish-a-two-way-trust"></a>Шаг 1. Установка взаимного доверия
  
-Чтобы служба AD FS в contoso.com могла проверять подлинность пользователей в fabrikam.com, требуется взаимное доверие между contoso.com и fabrikam.com. Следуйте рекомендациям, приведенным в этой [статье](https://technet.microsoft.com/library/cc816590.aspx), чтобы создать отношения взаимного доверия.
+Чтобы служба AD FS в contoso.com могла проверять подлинность пользователей в fabrikam.com, требуется взаимное доверие между contoso.com и fabrikam.com. Следуйте рекомендациям, приведенным в этой [статье](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc816590(v=ws.10)), чтобы создать отношения взаимного доверия.
  
 ## <a name="step-2-modify-contosocom-federation-settings"></a>Шаг 2. Изменение параметров федерации contoso.com 
  
@@ -69,5 +69,5 @@ Convert-MsolDomainToFederated -DomainName fabrikam.com -Verbose -SupportMultiple
  
 Вышеуказанная операция добавит домен fabrikam.com в федерацию с тем же экземпляром AD FS. Параметры обоих доменов можно проверить с помощью командлета Get-MsolDomainFederationSettings.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 [Подключение Active Directory к Azure Active Directory](whatis-hybrid-identity.md)

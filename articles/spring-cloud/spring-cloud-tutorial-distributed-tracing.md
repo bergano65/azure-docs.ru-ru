@@ -7,12 +7,12 @@ ms.topic: how-to
 ms.date: 10/06/2019
 ms.author: brendm
 ms.custom: devx-track-java
-ms.openlocfilehash: 1e3579f79f9daa80c3d3f2206be7a76cc5505e80
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
-ms.translationtype: HT
+ms.openlocfilehash: 1ff76c38031ac367bf81f6d152642a4d9a209bb7
+ms.sourcegitcommit: 58d3b3314df4ba3cabd4d4a6016b22fa5264f05a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87037025"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89294005"
 ---
 # <a name="use-distributed-tracing-with-azure-spring-cloud"></a>Использование распределенной трассировки в Azure Spring Cloud
 
@@ -28,7 +28,7 @@ ms.locfileid: "87037025"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Чтобы выполнить процедуры из этого учебника, вам потребуется подготовленная и запущенная служба Azure Spring Cloud. Выполните [краткое руководство по развертыванию приложения с помощью Azure CLI](spring-cloud-quickstart-launch-app-cli.md), чтобы подготовить и запустить службу Azure Spring Cloud.
+Чтобы выполнить процедуры из этого учебника, вам потребуется подготовленная и запущенная служба Azure Spring Cloud. Выполните [краткое руководство по развертыванию приложения с помощью Azure CLI](spring-cloud-quickstart.md), чтобы подготовить и запустить службу Azure Spring Cloud.
     
 ## <a name="add-dependencies"></a>Добавление зависимостей
 

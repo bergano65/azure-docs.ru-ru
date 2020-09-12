@@ -9,16 +9,16 @@ editor: ''
 ms.service: media-services
 ms.subservice: ''
 ms.workload: ''
-ms.topic: article
+ms.topic: conceptual
 ms.custom: ''
 ms.date: 08/31/2020
 ms.author: inhenkel
-ms.openlocfilehash: 2b20668ea08186f42eed89f82fb1ae8d85cf090d
-ms.sourcegitcommit: bcda98171d6e81795e723e525f81e6235f044e52
+ms.openlocfilehash: c3aaba6939f9e5e3f5d7c169cd3a199cc93f527d
+ms.sourcegitcommit: 58d3b3314df4ba3cabd4d4a6016b22fa5264f05a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/01/2020
-ms.locfileid: "89267706"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89296784"
 ---
 # <a name="high-availability-with-media-services-and-video-on-demand-vod"></a>Высокий уровень доступности с помощью служб мультимедиа и видео по запросу (VOD)
 
@@ -28,7 +28,7 @@ ms.locfileid: "89267706"
 
 В документации по архитектуре Azure имеется шаблон разработки высокого уровня доступности, именуемый [жеодес](/azure/architecture/patterns/geodes) . В нем описывается развертывание повторяющихся ресурсов в разных географических регионах для обеспечения масштабируемости и устойчивости.  Службы Azure можно использовать для создания такой архитектуры, которая охватывает множество различных аспектов проектирования высокого уровня доступности, таких как избыточность, мониторинг работоспособности, балансировка нагрузки, резервное копирование и восстановление данных.  Одна из таких архитектур описана ниже с подробными сведениями о каждой службе, используемой в решении, а также о том, как отдельные службы можно использовать для создания архитектуры с высоким уровнем доступности для приложения VOD.
 
-### <a name="sample"></a>Пример
+### <a name="sample"></a>Образец
 
 Для ознакомления с высоким уровнем доступности с помощью служб мультимедиа и видео по запросу (VOD) доступен образец. Кроме того, здесь подробно описано, как службы используются для VOD сценария.  Образец не предназначен для использования в рабочей среде в текущей форме.  Внимательно ознакомьтесь с образцом кода и файлом readme, особенно в разделе, посвященном [режимам сбоя](https://github.com/Azure-Samples/media-services-v3-dotnet/tree/master/HighAvailabilityEncodingStreaming) , перед интеграцией в рабочее приложение.  Рабочая реализация высокого уровня доступности видео по запросу (VOD) также должна тщательно проверять стратегию сети доставки содержимого (CDN).  Ознакомьтесь с [кодом на сайте GitHub](https://github.com/Azure-Samples/media-services-v3-dotnet/tree/master/HighAvailabilityEncodingStreaming).
 
@@ -63,7 +63,7 @@ ms.locfileid: "89267706"
 * Отправьте носитель в тот же регион, из которого вы планируете отправить задание. Дополнительные сведения о том, как начать кодирование, см. в разделе [Создание входных данных задания с помощью URL-адреса HTTPS](https://review.docs.microsoft.com/azure/media-services/latest/job-input-from-http-how-to) или [Создание входных данных задания из локального файла](https://review.docs.microsoft.com/azure/media-services/latest/job-input-from-local-file-how-to).
 * Если необходимо повторно отправить [Задание](https://review.docs.microsoft.com/azure/media-services/latest/transforms-jobs-concept) в другой регион, можно использовать `JobInputHttp` или использовать `Copy-Blob` для копирования данных из контейнера исходного ресурса в контейнер ресурса в альтернативном регионе.
 
-### <a name="monitoring"></a>Мониторинг
+### <a name="monitoring"></a>Наблюдение
 
 * Подпишитесь на `JobStateChange` сообщения в каждой учетной записи с помощью службы "Сетка событий Azure".
     * [Регистрация событий](https://review.docs.microsoft.com/azure/media-services/latest/reacting-to-media-services-events) с помощью портал Azure или интерфейса командной строки (это также можно сделать с помощью пакета SDK для управления сеткой событий).
