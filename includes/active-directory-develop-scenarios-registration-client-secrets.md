@@ -1,44 +1,42 @@
 ---
-title: включить файл
+title: Включить файл
 description: включить файл для целевых страниц сценария конфиденциального клиента (управляющая программа, веб-приложение, веб-API)
 services: active-directory
 documentationcenter: dev-center-name
 author: jmprieur
 manager: CelesteDG
-editor: ''
 ms.service: active-directory
 ms.devlang: na
 ms.topic: include
 ms.tgt_pltfrm: na
 ms.workload: identity
-ms.date: 07/15/2020
+ms.date: 08/14/2020
 ms.author: jmprieur
-ms.custom: include file
-ms.openlocfilehash: a3acdbb93dd20f0b89e4f99d64f5f7a30ce40623
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 42102f38959911388cefcc141d949e59f24a2c31
+ms.sourcegitcommit: bf1340bb706cf31bb002128e272b8322f37d53dd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87102955"
+ms.lasthandoff: 09/03/2020
+ms.locfileid: "89436479"
 ---
-## <a name="register-secrets-or-certificates"></a>Регистрация секретов или сертификатов
+## <a name="add-a-client-secret-or-certificate"></a>Добавление секрета клиента или сертификата
 
-Как и для любого конфиденциального клиентского приложения, необходимо зарегистрировать секрет или сертификат. Вы можете зарегистрировать секреты приложения с помощью интерактивного интерфейса в [портал Azure](https://portal.azure.com/#blade/Microsoft_AAD_IAM/ActiveDirectoryMenuBlade/RegisteredAppsPreview) или с помощью средств командной строки (например, PowerShell).
+Как и в случае с любым конфиденциальным клиентским приложением, необходимо добавить секрет или сертификат, который будет использоваться в качестве *учетных данных* этого приложения, чтобы он мог проходить проверку подлинности без участия пользователя.
 
-### <a name="register-client-secrets-by-using-the-application-registration-portal"></a>Регистрация секретов клиента с помощью портала регистрации приложений
+Учетные данные можно добавить в регистрацию клиентского приложения с помощью [портал Azure](#add-client-credentials-by-using-the-azure-portal) или с помощью программы командной строки, например [PowerShell](#add-client-credentials-by-using-powershell).
 
-Управление учетными данными клиента происходит на странице **сертификаты & секреты** для приложения:
+### <a name="add-client-credentials-by-using-the-azure-portal"></a>Добавление учетных данных клиента с помощью портал Azure
 
-![Сертификат & секретной страницы](../articles/active-directory/develop/media/quickstart-update-azure-ad-app-preview/credentials-certificates-secrets.png)
+Чтобы добавить учетные данные в приложение конфиденциального клиентского приложения, выполните действия, описанные в разделе Краткое руководство по [регистрации приложения на платформе Microsoft Identity](../articles/active-directory/develop/quickstart-register-app.md) , для типа учетных данных, которые вы хотите добавить.
 
-- *Секрет клиента* создается путем выбора **нового секрета клиента** в регистрации приложения в портал Azure. При создании секрета клиента _необходимо_ записать строку секрета, прежде чем переходить от области **Сертификаты & секреты** . Строка секрета никогда не отображается снова.
-- Во время регистрации приложения для отправки сертификата используется кнопка **отправить сертификат** . Azure AD поддерживает только сертификаты, которые непосредственно зарегистрированы в приложении, и не подчиняются цепочкам сертификатов.
+* [Добавление секрета клиента](../articles/active-directory/develop/quickstart-register-app.md#add-a-client-secret)
+* [Добавление сертификата](../articles/active-directory/develop/quickstart-register-app.md#add-a-certificate)
 
-Дополнительные сведения см. в разделе [Краткое руководство. Настройка клиентского приложения для доступа к веб-API | Добавьте учетные данные в приложение](../articles/active-directory/develop/quickstart-configure-app-access-web-apis.md#add-credentials-to-your-web-application).
+### <a name="add-client-credentials-by-using-powershell"></a>Добавление учетных данных клиента с помощью PowerShell
 
-### <a name="register-client-secrets-by-using-powershell"></a>Регистрация секретов клиента с помощью PowerShell
+Кроме того, можно добавить учетные данные при регистрации приложения на платформе Microsoft Identity с помощью PowerShell.
 
-Кроме того, вы можете зарегистрировать приложение в Azure AD с помощью программ командной строки. В примере [Active-Directory-команда dotnetcore-демон-v2](https://github.com/Azure-Samples/active-directory-dotnetcore-daemon-v2) показано, как зарегистрировать секрет приложения или сертификат в приложении Azure AD:
+Пример кода [Active-Directory-команда dotnetcore-DAEMON-v2](https://github.com/Azure-Samples/active-directory-dotnetcore-daemon-v2) в GitHub показывает, как добавить секрет приложения или сертификат при регистрации приложения.
 
-- Дополнительные сведения о регистрации секрета приложения см. в разделе [аппкреатионскриптс/Configure.ps1](https://github.com/Azure-Samples/active-directory-dotnetcore-daemon-v2/blob/5199032b352a912e7cc0fce143f81664ba1a8c26/AppCreationScripts/Configure.ps1#L190).
-- Дополнительные сведения о регистрации сертификата в приложении см. в разделе [аппкреатионскриптс-висцерт/Configure.ps1](https://github.com/Azure-Samples/active-directory-dotnetcore-daemon-v2/blob/5199032b352a912e7cc0fce143f81664ba1a8c26/AppCreationScripts-withCert/Configure.ps1#L162-L178).
+- Дополнительные сведения о добавлении **секрета клиента** с помощью PowerShell см. в разделе [аппкреатионскриптс/Configure.ps1](https://github.com/Azure-Samples/active-directory-dotnetcore-daemon-v2/blob/5199032b352a912e7cc0fce143f81664ba1a8c26/AppCreationScripts/Configure.ps1#L190).
+- Дополнительные сведения о добавлении **сертификата** с помощью PowerShell см. в разделе [аппкреатионскриптс-висцерт/Configure.ps1](https://github.com/Azure-Samples/active-directory-dotnetcore-daemon-v2/blob/5199032b352a912e7cc0fce143f81664ba1a8c26/AppCreationScripts-withCert/Configure.ps1#L162-L178).

@@ -7,14 +7,14 @@ author: aahill
 manager: nitinme
 ms.service: cognitive-services
 ms.topic: reference
-ms.date: 04/01/2020
+ms.date: 08/31/2020
 ms.author: aahi
-ms.openlocfilehash: 2a57c5244630c2328320d7d99eed98c892d49897
-ms.sourcegitcommit: d68c72e120bdd610bb6304dad503d3ea89a1f0f7
+ms.openlocfilehash: 4a98007917e95b1880661fe35bfd3f85f633e9a3
+ms.sourcegitcommit: 5ed504a9ddfbd69d4f2d256ec431e634eb38813e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/01/2020
-ms.locfileid: "89230761"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89321775"
 ---
 # <a name="azure-cognitive-services-container-image-tags"></a>Теги образа контейнера Cognitive Services Azure
 
@@ -33,7 +33,7 @@ Azure Cognitive Services предлагает множество образов 
 |-------------------------------|:------|
 | `latest`                      |       |
 
-## <a name="computer-vision"></a>API Компьютерного зрения
+## <a name="computer-vision"></a>Компьютерное зрение
 
 Образ контейнера для оптического распознавания [компьютерное зрение][cv-containers] можно найти в `containerpreview.azurecr.io` реестре контейнеров. Он находится в `microsoft` репозитории и называется `cognitive-services-read` . Полное имя образа контейнера —, `containerpreview.azurecr.io/microsoft/cognitive-services-read` .
 
@@ -997,6 +997,32 @@ Azure Cognitive Services предлагает множество образов 
 | `1.0.0-amd64-zh-cn-huihuirus-preview`       | Образ контейнера с `zh-CN` локальным и `zh-CN-HuihuiRUS` голосовым языком.       |
 | `1.0.0-amd64-zh-cn-kangkang-apollo-preview` | Образ контейнера с `zh-CN` локальным и `zh-CN-Kangkang-Apollo` голосовым языком. |
 | `1.0.0-amd64-zh-cn-yaoyao-apollo-preview`   | Образ контейнера с `zh-CN` локальным и `zh-CN-Yaoyao-Apollo` голосовым языком.   |
+
+## <a name="neural-text-to-speech"></a>Преобразование текста в речь для нейронов
+
+Образ контейнера [SP-НТТС] в контейнере "текст нейронной речи" можно найти в `containerpreview.azurecr.io` реестре контейнеров. Он находится в `microsoft` репозитории и называется `cognitive-services-neural-text-to-speech` . Полное имя образа контейнера —, `containerpreview.azurecr.io/microsoft/cognitive-services-neural-text-to-speech` .
+
+Этот образ контейнера имеет следующие доступные Теги:
+
+| Теги изображений                                  | Примечания                                                                      |
+|---------------------------------------------|:---------------------------------------------------------------------------|
+| `latest`                                    | Образ контейнера с `en-US` локальным и `en-US-AriaNeural` голосовым языком.      |
+| `1.1.0-amd64-de-de-katjaneural-preview`     | Образ контейнера с `de-DE` локальным и `de-DE-KatjaNeural` голосовым языком.     |
+| `1.1.0-amd64-en-au-natashaneural-preview`   | Образ контейнера с `en-AU` локальным и `en-AU-NatashaNeural` голосовым языком.   |
+| `1.1.0-amd64-en-ca-claraneural-preview`     | Образ контейнера с `en-CA` локальным и `en-CA-ClaraNeural` голосовым языком.     |
+| `1.1.0-amd64-en-gb-libbyneural-preview`     | Образ контейнера с `en-GB` локальным и `en-GB-LibbyNeural` голосовым языком.     |
+| `1.1.0-amd64-en-gb-mianeural-preview`       | Образ контейнера с `en-GB` локальным и `en-GB-MiaNeural` голосовым языком.       |
+| `1.1.0-amd64-en-us-arianeural-preview`      | Образ контейнера с `en-US` локальным и `en-US-AriaNeural` голосовым языком.      |
+| `1.1.0-amd64-en-us-guyneural-preview`       | Образ контейнера с `en-US` локальным и `en-US-GuyNeural` голосовым языком.       |
+| `1.1.0-amd64-es-es-elviraneural-preview`    | Образ контейнера с `es-ES` локальным и `es-ES-ElviraNeural` голосовым языком.    |
+| `1.1.0-amd64-es-mx-dalianeural-preview`     | Образ контейнера с `es-MX` локальным и `es-MX-DaliaNeural` голосовым языком.     |
+| `1.1.0-amd64-fr-ca-sylvieneural-preview`    | Образ контейнера с `fr-CA` локальным и `fr-CA-SylvieNeural` голосовым языком.    |
+| `1.1.0-amd64-fr-fr-deniseneural-preview`    | Образ контейнера с `fr-FR` локальным и `fr-FR-DeniseNeural` голосовым языком.    |
+| `1.1.0-amd64-it-it-elsaneural-preview`      | Образ контейнера с `it-IT` локальным и `it-IT-ElsaNeural` голосовым языком.      |
+| `1.1.0-amd64-ja-jp-nanamineural-preview`    | Образ контейнера с `ja-JP` локальным и `ja-JP-NanamiNeural` голосовым языком.    |
+| `1.1.0-amd64-ko-kr-sunhineural-preview`     | Образ контейнера с `ko-KR` локальным и `ko-KR-SunHiNeural` голосовым языком.     |
+| `1.1.0-amd64-pt-br-franciscaneural-preview` | Образ контейнера с `pt-BR` локальным и `pt-BR-FranciscaNeural` голосовым языком. |
+| `1.1.0-amd64-zh-cn-xiaoxiaoneural-preview`  | Образ контейнера с `zh-CN` локальным и `zh-CN-XiaoxiaoNeural` голосовым языком.  |
 
 ## <a name="key-phrase-extraction"></a>Извлечение ключевых фраз
 

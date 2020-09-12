@@ -8,12 +8,12 @@ ms.service: virtual-machines-linux
 ms.topic: article
 ms.date: 12/02/2019
 ms.author: mbaldwin
-ms.openlocfilehash: e6702ab3753604af50e21f931dd23f63de3c1451
-ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
+ms.openlocfilehash: 4c5389e322fdf44e8a71baa8770f87c276c076c9
+ms.sourcegitcommit: 5a3b9f35d47355d026ee39d398c614ca4dae51c6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88936203"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89400404"
 ---
 # <a name="key-vault-virtual-machine-extension-for-linux"></a>Расширение виртуальной машины Key Vault для Linux
 
@@ -206,7 +206,7 @@ Azure PowerShell можно использовать для развертыва
 Ознакомьтесь со следующими ограничениями и требованиями.
 - Ограничения, касающиеся решения Key Vault:
   - оно должно существовать во время развертывания; 
-  - Политика доступа Key Vault должна быть настроена для удостоверения виртуальной машины или масштабируемого набора виртуальных машин с помощью управляемого удостоверения. См. статью [Проверка подлинности в Key Vault с помощью управляемого удостоверения](../../key-vault/general/managed-identity.md).
+  - Политика доступа Key Vault должна быть установлена для удостоверения виртуальной машины или VMSS с помощью управляемого удостоверения. См. статью [Проверка подлинности в Key Vault](/azure/key-vault/general/authentication) и [назначение политики доступа Key Vault](/azure/key-vault/general/assign-access-policy-cli).
 
 
 ## <a name="troubleshoot-and-support"></a>Устранение неполадок и поддержка

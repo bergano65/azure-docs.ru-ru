@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 04/10/2020
 ms.author: mbaldwin
 ms.custom: subject-security-benchmark
-ms.openlocfilehash: d939c03aef8d155d83d20c7d8211e04fae26c228
-ms.sourcegitcommit: d68c72e120bdd610bb6304dad503d3ea89a1f0f7
+ms.openlocfilehash: 34036388ce9243c082cf79eb4be9251957eafc01
+ms.sourcegitcommit: 5a3b9f35d47355d026ee39d398c614ca4dae51c6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/01/2020
-ms.locfileid: "89230285"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89400472"
 ---
 # <a name="azure-security-baseline-for-key-vault"></a>Базовая конфигурация системы безопасности Azure для Key Vault
 
@@ -411,7 +411,7 @@ https://docs.microsoft.com/azure/security-center/security-center-identity-access
 
 ### <a name="37-log-and-alert-on-suspicious-activity-from-administrative-accounts"></a>3.7. Ведение журнала и создание оповещений по подозрительным действиям учетных записей администраторов
 
-**Руководство**. Использование Azure Active Directory (AAD) Управление привилегированными пользователями (PIM) для создания журналов и оповещений при возникновении подозрительных или ненадежных действий в среде. Используйте обнаружение рисков AAD для просмотра предупреждений и отчетов о поведении опасного пользователя. Для дополнительного ведения журнала Отправьте оповещения об обнаружении рисков центра безопасности Azure в Azure Monitor и настройте пользовательские оповещения и уведомления с помощью групп действий.
+**Руководство**. Использование Azure Active Directory (Azure AD) Управление привилегированными пользователями (PIM) для создания журналов и оповещений при возникновении подозрительных или ненадежных действий в среде. Используйте обнаружение рисков Azure AD для просмотра предупреждений и отчетов о поведении опасного пользователя. Для дополнительного ведения журнала Отправьте оповещения об обнаружении рисков центра безопасности Azure в Azure Monitor и настройте пользовательские оповещения и уведомления с помощью групп действий.
 
 Включите расширенную защиту от угроз (ATP) для Azure Key Vault, чтобы создать оповещения для подозрительных действий.
 
@@ -445,7 +445,7 @@ Azure Active Directory обнаружения рисков: https://docs.microso
 
 ### <a name="39-use-azure-active-directory"></a>3.9. Использование Azure Active Directory
 
-**Руководство**. Использование Azure Active Directory (AAD) в качестве централизованной системы проверки подлинности и авторизации для ресурсов Azure, таких как key Vault. Это позволяет управлять доступом на основе ролей (RBAC) для администрирования конфиденциальных ресурсов.
+**Руководство**. Использование Azure Active Directory (Azure AD) в качестве централизованной системы проверки подлинности и авторизации для ресурсов Azure, таких как key Vault. Это позволяет управлять доступом на основе ролей (RBAC) для администрирования конфиденциальных ресурсов.
 
  
 
@@ -460,7 +460,7 @@ https://docs.microsoft.com/azure/active-directory/fundamentals/active-directory-
 
 ### <a name="310-regularly-review-and-reconcile-user-access"></a>3.10. Регулярная проверка и согласование доступа пользователей
 
-**Рекомендации**. проверьте журналы Azure Active Directory (AAD), чтобы упростить обнаружение устаревших учетных записей с помощью Azure Key Vault административных ролей. Кроме того, используйте проверки доступа AAD для эффективного управления членством в группах, доступом к корпоративным приложениям, которые могут использоваться для доступа к Azure Key Vault и назначения ролей. Доступ пользователей следует проверять регулярно, например каждые 90 дней, чтобы убедиться, что доступ к ним имеют только нужные пользователи.
+**Руководство**. Ознакомьтесь с журналами Azure Active Directory (Azure AD), чтобы упростить обнаружение устаревших учетных записей с помощью Azure Key Vault административных ролей. Кроме того, используйте проверки доступа Azure AD для эффективного управления членством в группах, доступом к корпоративным приложениям, которые могут использоваться для доступа к Azure Key Vault и назначения ролей. Доступ пользователей следует проверять регулярно, например каждые 90 дней, чтобы убедиться, что доступ к ним имеют только нужные пользователи.
 
 Azure Active Directory отчеты и документация по мониторингу:
 
@@ -1009,11 +1009,15 @@ https://docs.microsoft.com/azure/azure-app-configuration/howto-integrate-azure-m
 
 Создание Key Vault: 
 
-https://docs.microsoft.com/azure/key-vault/quick-create-portal
+https://docs.microsoft.com/azure/key-vault/general/quick-create-portal
 
-Проверка подлинности в Key Vault с помощью управляемого удостоверения:  
+Проверка подлинности в Key Vault:
 
-https://docs.microsoft.com/azure/key-vault/managed-identity
+https://docs.microsoft.com/azure/key-vault/general/authentication
+
+Назначение политики доступа Key Vault.
+
+https://docs.microsoft.com/azure/key-vault/general/assign-access-policy-portal
 
 **Мониторинг Центра безопасности Azure**: Да
 
@@ -1025,16 +1029,13 @@ https://docs.microsoft.com/azure/key-vault/managed-identity
 
   
 
-Интеграция с управляемыми удостоверениями Azure:  
+* [Интеграция с управляемыми удостоверениями Azure](/azure/azure-app-configuration/howto-integrate-azure-managed-service-identity)
 
-https://docs.microsoft.com/azure/azure-app-configuration/howto-integrate-azure-managed-service-identity  
+* [Создание Key Vault](quick-create-portal.md)
 
-Создание Key Vault:  
+* [Проверка подлинности в Key Vault](authentication.md)
 
-https://docs.microsoft.com/azure/key-vault/quick-create-portal    
-
-Проверка подлинности в Key Vault с помощью управляемого удостоверения:   
-https://docs.microsoft.com/azure/key-vault/managed-identity
+* [Назначение политики доступа Key Vault](assign-access-policy-portal.md)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 

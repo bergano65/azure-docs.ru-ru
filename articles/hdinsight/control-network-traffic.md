@@ -6,13 +6,13 @@ ms.author: hrasheed
 ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: conceptual
-ms.date: 05/04/2020
-ms.openlocfilehash: 54a55789cf867c97cf2384b48f1e5545ee54dafc
-ms.sourcegitcommit: 318d1bafa70510ea6cdcfa1c3d698b843385c0f6
+ms.date: 09/02/2020
+ms.openlocfilehash: a33bc5816ded7cdca75737b02add0a6ca8821700
+ms.sourcegitcommit: 5a3b9f35d47355d026ee39d398c614ca4dae51c6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/21/2020
-ms.locfileid: "83773412"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89400200"
 ---
 # <a name="control-network-traffic-in-azure-hdinsight"></a>Управление сетевым трафиком в Azure HDInsight
 
@@ -32,7 +32,11 @@ ms.locfileid: "83773412"
 
 1. Определите регион Azure, который планируется использовать для HDInsight.
 
-2. Найдите теги службы, необходимые для HDInsight в вашем регионе. Дополнительные сведения см. в статье [Теги службы Azure HDInsight для групп безопасности сети](hdinsight-service-tags.md).
+2. Найдите теги службы, необходимые для HDInsight в вашем регионе. Существует несколько способов получить эти теги службы:
+    1. Просмотрите список опубликованных тегов служб в [тегах службы "Группа безопасности сети" (NSG) для Azure HDInsight](hdinsight-service-tags.md). 
+    2. Если ваш регион отсутствует в списке, используйте [API обнаружения тегов службы](../virtual-network/service-tags-overview.md#use-the-service-tag-discovery-api-public-preview) , чтобы найти тег службы для вашего региона.
+    3. Если вы не можете использовать API, скачайте [JSON-файл тега службы](../virtual-network/service-tags-overview.md#discover-service-tags-by-using-downloadable-json-files) и найдите нужный регион.
+
 
 3. Создайте или измените группы безопасности сети для подсети, в которой планируется установить HDInsight.
 
@@ -51,10 +55,6 @@ ms.locfileid: "83773412"
 Клиентам, которые хотят настроить принудительное туннелирование, следует применить [пользовательские хранилища метаданных](./hdinsight-use-external-metadata-stores.md) и настроить подключение к ним из подсети кластера или локальной сети.
 
 Из [этой статьи](hdinsight-restrict-outbound-traffic.md) вы узнаете, как настроить ограничения исходящего сетевого трафика для кластеров Azure HDInsight с помощью определяемых пользователем маршрутов в Брандмауэре Azure.
-
-## <a name="required-ip-addresses"></a>Требуемые IP-адреса
-
-Если для управления трафиком используются группы безопасности сети или определяемые пользователем маршруты, воспользуйтесь [списком IP-адресов управления HDInsight](hdinsight-management-ip-addresses.md).
 
 ## <a name="required-ports"></a>Требуемые порты
 

@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 07/13/2020
 ms.author: mbaldwin
 ms.custom: subject-security-benchmark
-ms.openlocfilehash: 8ac7bec3065299ea62daae11adeeb1363f98d450
-ms.sourcegitcommit: d68c72e120bdd610bb6304dad503d3ea89a1f0f7
+ms.openlocfilehash: 627c0c77cc206cd1b3210fcfc7b2a9bbc3c6daea
+ms.sourcegitcommit: 5a3b9f35d47355d026ee39d398c614ca4dae51c6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/01/2020
-ms.locfileid: "89231203"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89401101"
 ---
 # <a name="azure-security-baseline-for-linux-virtual-machines"></a>Базовый план безопасности Azure для Виртуальные машины Linux
 
@@ -980,7 +980,9 @@ ms.locfileid: "89231203"
 
 * [Создание Key Vault](../../key-vault/secrets/quick-create-portal.md)
 
-* [Как обеспечить проверку подлинности Key Vault с помощью управляемого удостоверения](../../key-vault/general/managed-identity.md)
+* [Проверка подлинности в Key Vault](../../key-vault/general/authentication.md)
+
+* [Назначение политики доступа Key Vault](../../key-vault/general/assign-access-policy-portal.md)
 
 **Мониторинг Центра безопасности Azure**: Да
 

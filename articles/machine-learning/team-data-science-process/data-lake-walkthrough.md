@@ -11,12 +11,12 @@ ms.topic: article
 ms.date: 01/10/2020
 ms.author: tdsp
 ms.custom: seodec18, previous-author=deguhath, previous-ms.author=deguhath
-ms.openlocfilehash: 48e6d8870baad60c79cf392894db8b71003bb875
-ms.sourcegitcommit: 0b2367b4a9171cac4a706ae9f516e108e25db30c
+ms.openlocfilehash: b45cc87c525ab66a3807f71901728e60d086ea74
+ms.sourcegitcommit: bf1340bb706cf31bb002128e272b8322f37d53dd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2020
-ms.locfileid: "86276988"
+ms.lasthandoff: 09/03/2020
+ms.locfileid: "89440411"
 ---
 # <a name="scalable-data-science-with-azure-data-lake-an-end-to-end-walkthrough"></a>Полное пошаговое руководство по масштабируемому анализу данных с помощью Azure Data Lake
 В этом пошаговом руководстве на примере набора данных о поездках и тарифах такси в Нью-Йорке показано, как использовать Azure Data Lake для выполнения задач по исследованию и двоичной классификации данных, чтобы спрогнозировать вероятность получения чаевых за поездку. Здесь подробно описаны шаги [процесса обработки и анализа данных группы](https://docs.microsoft.com/azure/machine-learning/team-data-science-process/)— от получения данных для обучения модели и до развертывания веб-службы, которая публикует модель.
@@ -34,7 +34,7 @@ ms.locfileid: "86276988"
 ### <a name="azure-data-lake-analytics"></a>Аналитика озера данных Azure
 [Microsoft Azure Data Lake](https://azure.microsoft.com/solutions/data-lake/) предусматривает все необходимые возможности для аналитиков, упрощающие хранение данных любого размера, формата и скорости обработки и обеспечивающие высокую гибкость и экономичность обработки данных, углубленной аналитики и создания моделей машинного обучения.   Плата взимается за задание, и только если данные обработаны фактически. Аналитика озера данных Azure предполагает использование U-SQL, языка, который объединяет декларативную природу SQL с выразительностью C#, чтобы позволить создавать масштабируемые распределенные запросы. Она позволяет обрабатывать неструктурированные данные, применяя схему для чтения, вставки пользовательской логики и определяемых пользователем функций (UDF), и предполагает возможности расширения, обеспечивающие точный контроль над выполнением в масштабе. Дополнительные сведения о принципах разработки U-SQL см. в [записи блога о Visual Studio](https://blogs.msdn.microsoft.com/visualstudio/2015/09/28/introducing-u-sql-a-language-that-makes-big-data-processing-easy/).
 
-Аналитика озера данных — это также ключевая часть Cortana Analytics Suite. Она поддерживает работу с хранилищем данных SQL Azure, Power BI и фабрикой данных. Это сочетание обеспечивает полную облачную платформу для работы с большими данными и расширенной аналитикой.
+Data Lake Analytics является также ключевой частью Кортаны Analytics Suite и работает с Azure синапсе Analytics, Power BI и фабрикой данных. Это сочетание обеспечивает полную облачную платформу для работы с большими данными и расширенной аналитикой.
 
 В начале этого пошагового руководства описано, как установить необходимые компоненты и ресурсы, которые требуются для выполнения задач обработки и анализа данных. Затем он описывает этапы обработки данных с помощью U-SQL и завершает работу, показывая, как использовать Python и Hive с Машинное обучение Azure Studio (классической) для создания и развертывания прогнозных моделей.
 
@@ -50,7 +50,7 @@ ms.locfileid: "86276988"
 ### <a name="scripts"></a>Сценарии
 В этом пошаговом руководстве описаны только основные шаги. Вы можете скачать полный **скрипт U-SQL**, а также **записную книжку Jupyter** из [GitHub](https://github.com/Azure/Azure-MachineLearning-DataScience/tree/master/Misc/AzureDataLakeWalkthrough).
 
-## <a name="prerequisites"></a>Обязательные условия
+## <a name="prerequisites"></a>Предварительные требования
 Прежде чем начать работу по этим разделам, необходимо обеспечить наличие следующего:
 
 * Подписка Azure. Если у вас ее нет, см. статью [о получении бесплатной пробной версии Azure](https://azure.microsoft.com/documentation/videos/get-azure-free-trial-for-testing-hadoop-in-hdinsight/).
@@ -181,7 +181,7 @@ FROM "wasb://container_name@blob_storage_account_name.blob.core.windows.net/nyct
 USING Extractors.Csv();
 ```
 
-В первой строке содержатся заголовки, поэтому необходимо их удалить и заменить типы столбцов на соответствующие. Обработанные данные можно сохранить в Azure Data Lake Storage с помощью **swebhdfs://data_lake_storage_name. azuredatalakestorage. NET/folder_name/file_name**_ или в учетную запись хранилища BLOB-объектов Azure с помощью **wasb://container_name \@ blob_storage_account_name. BLOB. Core. windows. NET/BLOB_NAME**.
+В первой строке содержатся заголовки, поэтому необходимо их удалить и заменить типы столбцов на соответствующие. Обработанные данные можно сохранить в Azure Data Lake Storage с помощью **swebhdfs://data_lake_storage_name. azuredatalakestorage. NET/folder_name/file_name**_ или в учетную запись хранилища BLOB-объектов Azure с помощью  **wasb://container_name \@ blob_storage_account_name. BLOB. Core. windows. NET/BLOB_NAME**.
 
 ```sql
 // change data types
@@ -660,7 +660,7 @@ from azureml import services
   NYCTAXIPredictor(1,2,1,0,0,0,0,0,1)
   ```
 
-    ![C4](./media/data-lake-walkthrough/c4-call-API.PNG)
+    ![c4](./media/data-lake-walkthrough/c4-call-API.PNG)
 
 ## <a name="option-2-create-and-deploy-models-directly-in-azure-machine-learning"></a>Вариант 2. Создание и развертывание моделей прямо в Машинном обучении Azure
 Машинное обучение Azure Studio (классическая модель) может считывать данные непосредственно из Azure Data Lake Storage, а затем использовать для создания и развертывания моделей. Этот подход использует таблицу Hive, которая указывает на Azure Data Lake Storage. Для таблицы Hive необходимо подготовить отдельный кластер Azure HDInsight. 
@@ -753,10 +753,10 @@ LOCATION 'adl://data_lake_storage_name.azuredatalakestore.net:443/nyctaxi_folder
 ## <a name="summary"></a>Сводка
 Выполняя это пошаговое руководство, вы создали среду обработки и анализа данных для создания масштабируемых комплексных решений в Azure Data Lake. Эта среда использовалась для анализа большого набора данных, в отношении которого выполнены ключевые шаги по обработке данных — от получения данных и обучения модели до развертывания модели в качестве веб-службы. U-SQL использовался для обработки, исследования и выборки данных. Python и Hive использовались с Машинное обучение Azure Studio (классической) для создания и развертывания прогнозных моделей.
 
-## <a name="whats-next"></a>Что дальше?
+## <a name="whats-next"></a>Дальнейшие действия
 Схема обучения для [процесса обработки и анализа данных группы (TDSP)](https://docs.microsoft.com/azure/machine-learning/team-data-science-process/) содержит ссылки на разделы, описывающие каждый шаг в процессе расширенной аналитики. Существует ряд пошаговых руководств, упорядоченных на странице [Пошаговые руководства по процессу обработки и анализа данных](walkthroughs.md) , которые демонстрируют, как использовать ресурсы и службы в различных сценариях прогнозной аналитики.
 
-* [Процесс обработки и анализа данных группы на практике: использование хранилища данных SQL](sqldw-walkthrough.md)
+* [Процесс обработки и анализа данных группы в действии: использование Azure синапсе Analytics](sqldw-walkthrough.md)
 * [Процесс обработки и анализа данных группы на практике: использование кластеров HDInsight Hadoop](hive-walkthrough.md)
 * [Процесс обработки и анализа данных группы на практике: использование SQL Server](sql-walkthrough.md)
 * [Общие сведения об обработке и анализе данных с помощью платформы Spark в Azure HDInsight](spark-overview.md)

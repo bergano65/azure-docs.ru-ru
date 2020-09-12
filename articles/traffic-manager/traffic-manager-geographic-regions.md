@@ -3,7 +3,7 @@ title: Иерархия стран или регионов, используем
 description: В этой статье приведена иерархия стран и регионов, используемая для географической маршрутизации в диспетчере трафика Azure.
 services: traffic-manager
 documentationcenter: ''
-author: rohinkoul
+author: duongau
 manager: twooley
 ms.service: traffic-manager
 ms.devlang: na
@@ -11,13 +11,13 @@ ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 03/22/2017
-ms.author: rohink
-ms.openlocfilehash: 19445c06ccf08d2d7916545ad495c56883616c7a
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.author: duau
+ms.openlocfilehash: 83300a5c518a3acf853968164031a80e1c882187
+ms.sourcegitcommit: 5a3b9f35d47355d026ee39d398c614ca4dae51c6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "76938644"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89401243"
 ---
 # <a name="countryregion-hierarchy-used-by-azure-traffic-manager-for-geographic-traffic-routing-method"></a>Иерархия стран и регионов, используемая диспетчером трафика Azure для географической маршрутизации трафика
 
@@ -688,6 +688,6 @@ ms.locfileid: "76938644"
 
         - WS (Самоа)
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Узнайте больше о [методе географической маршрутизации трафика в диспетчере трафика Azure](traffic-manager-routing-methods.md#geographic).
