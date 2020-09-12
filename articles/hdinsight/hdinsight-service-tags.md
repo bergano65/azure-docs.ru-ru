@@ -6,19 +6,21 @@ ms.author: hrasheed
 ms.service: hdinsight
 ms.topic: conceptual
 ms.custom: hdinsightactive
-ms.date: 04/15/2020
-ms.openlocfilehash: 5608d0cd83e506bc6b30337db5148f344f59f80e
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.date: 08/11/2020
+ms.openlocfilehash: 112f915f533627ccdc0ac6efe38caacc80b254bc
+ms.sourcegitcommit: 5a3b9f35d47355d026ee39d398c614ca4dae51c6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "81410856"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89399962"
 ---
 # <a name="nsg-service-tags-for-azure-hdinsight"></a>Теги службы NSG для Azure HDInsight
 
 Теги службы Azure HDInsight для групп безопасности сети (группы безопасности сети) представляют собой группы IP-адресов для служб работоспособности и управления. Эти группы помогают сократить сложность создания правил безопасности. [Теги службы](../virtual-network/security-overview.md#service-tags) разрешают входящий трафик от конкретных IP [-адресов](hdinsight-management-ip-addresses.md) , не вводя в группы безопасности сети каждый адрес управления.
 
 Служба HDInsight управляет этими тегами службы. Нельзя создать собственный тег службы или изменить существующий тег. Корпорация Майкрософт управляет префиксами адресов, которые соответствуют тегу службы, и автоматически обновляет тег службы при изменении адресов.
+
+Если вы хотите использовать определенный регион и тег службы еще не документирован на этой странице, можно использовать [API обнаружения тегов службы](../virtual-network/service-tags-overview.md#use-the-service-tag-discovery-api-public-preview) для поиска тега службы. Можно также скачать [JSON тег службы](../virtual-network/service-tags-overview.md#discover-service-tags-by-using-downloadable-json-files) и найти нужный регион.
 
 ## <a name="get-started-with-service-tags"></a>Начало работы с тегами службы
 
@@ -54,15 +56,15 @@ ms.locfileid: "81410856"
 
 Если кластер находится в регионе, указанном в этой таблице, необходимо добавить в NSG только один региональный тег службы.
 
-| Country | Регион | Тег службы |
+| Country | Region | Тег службы |
 | ---- | ---- | ---- |
 | Австралия | Восточная Австралия | HDInsight. AustraliaEast |
-| &nbsp; | Юго-Восточная часть Австралии | HDInsight. AustraliaSoutheast |
+| &nbsp; | Australia Southeast | HDInsight. AustraliaSoutheast |
 | &nbsp; | Центральная Австралия | HDInsight. Аустралиацентрал |
 | Китай | Восточный Китай 2 | HDInsight. ChinaEast2 |
 | &nbsp; | Северный Китай 2 | HDInsight. ChinaNorth2 |
 | США | Центрально-северная часть США | HDInsight. NorthCentralUS |
-| &nbsp; | западная часть США 2 | HDInsight. WestUS2 |
+| &nbsp; | Западная часть США 2 | HDInsight. WestUS2 |
 | &nbsp; | центрально-западная часть США | HDInsight. WestCentralUS |
 | Canada | Восточная Канада | HDInsight. Канадаеаст |
 | Бразилия | Южная Бразилия | HDInsight. Бразилсаус |
@@ -74,9 +76,9 @@ ms.locfileid: "81410856"
 | Франция | Центральная Франция| HDInsight. Францецентрал |
 | Соединенное Королевство | южная часть Соединенного Королевства | HDInsight. UKSouth |
 | Azure для государственных организаций | Центральная часть США (DoD) | HDInsight. Усдодцентрал |
-| &nbsp; | USGov (Техас) | HDInsight. Усговтексас |
+| &nbsp; | US Gov (Техас) | HDInsight. Усговтексас |
 | &nbsp; | Восточная Восток | HDInsight. Усдодеаст |
-| &nbsp; | USGov (Аризона) | HDInsight. Усговаризона |
+| &nbsp; | US Gov (Аризона) | HDInsight. Усговаризона |
 
 ### <a name="use-multiple-regional-service-tags"></a>Использование нескольких региональных тегов служб
 
@@ -94,7 +96,7 @@ ms.locfileid: "81410856"
 - `HDInsight.WestUS`
 - `HDInsight.EastUS`
 
-| Country | Регион | Тег службы |
+| Country | Region | Тег службы |
 | ---- | ---- | ---- |
 | США | восточная часть США 2 | HDInsight. EastUS2 |
 | &nbsp; | Центральная часть США | HDInsight. CentralUS |
@@ -106,7 +108,7 @@ ms.locfileid: "81410856"
 | Европа | Северная Европа | HDInsight. Норсеуропе |
 | &nbsp; | Западная Европа| HDInsight. WestEurope |
 | Азия | Восточная Азия | HDInsight. EastAsia |
-| &nbsp; | Юго-Восточная Азия | HDInsight. SoutheastAsia |
+| &nbsp; | Southeast Asia | HDInsight. SoutheastAsia |
 | Австралия | Восточная Австралия | HDInsight. AustraliaEast |
 
 #### <a name="group-2"></a>Группа 2

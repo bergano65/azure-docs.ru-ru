@@ -3,15 +3,15 @@ title: Что отслеживает Azure Monitor
 description: Сведения о всех службах и других ресурсах, которые отслеживает Azure Monitor.
 ms.subservice: ''
 ms.topic: conceptual
-author: bwren
-ms.author: bwren
-ms.date: 06/15/2020
-ms.openlocfilehash: 48eb8674a7d3f0fbeb8cc012debfc8a08752d5ff
-ms.sourcegitcommit: 2ffa5bae1545c660d6f3b62f31c4efa69c1e957f
+author: rboucher
+ms.author: robb
+ms.date: 08/15/2020
+ms.openlocfilehash: 1841c4eb8975c865c5f15a0e8fe3a6b5f0522820
+ms.sourcegitcommit: bf1340bb706cf31bb002128e272b8322f37d53dd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/11/2020
-ms.locfileid: "88080870"
+ms.lasthandoff: 09/03/2020
+ms.locfileid: "89435411"
 ---
 # <a name="what-is-monitored-by-azure-monitor"></a>Что отслеживает Azure Monitor?
 В этой статье описаны различные приложения и службы, которые отслеживаются с помощью Azure Monitor. 
@@ -120,7 +120,7 @@ ms.locfileid: "88080870"
 |Центр Интернета вещей | Да | Да | нет |  |
 |Key Vault | Да | Да | [Да](./insights/key-vault-insights-overview.md) |  |
 |Служба Kubernetes (AKS) | нет | нет | [Да](insights/container-insights-overview.md)  |  |
-|Load Balancer | Да | Да | нет |  |
+|Load Balancer | Да | Нет | нет |  |
 |Logic Apps | Да | Да | нет |  |
 |Служба машинного обучения | нет | нет | нет |  |
 |Управляемые приложения  | нет | нет | нет |  |
@@ -151,7 +151,7 @@ ms.locfileid: "88080870"
 |Портал регистрации | нет | нет | нет |  |
 |Site Recovery | нет | Да | нет |  |
 |Служба Spring Cloud | нет | Нет | нет |  |
-|Хранилище данных SQL | Да | Да | нет |  |
+|Azure Synapse Analytics | Да | Да | нет |  |
 |База данных SQL | Да | Да | нет |  |
 |SQL Server Stretch Database | Да | Да | нет |  |
 |Стек | нет | Нет | нет |  |

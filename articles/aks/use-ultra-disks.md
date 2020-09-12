@@ -4,12 +4,12 @@ description: Узнайте, как включить и настроить Ultra
 services: container-service
 ms.topic: article
 ms.date: 07/10/2020
-ms.openlocfilehash: 6ad739a128839eac4d664ffb6f9e3b2fcd07f2d9
-ms.sourcegitcommit: 271601d3eeeb9422e36353d32d57bd6e331f4d7b
+ms.openlocfilehash: 3f15f075604c104b467af289f6f5d4b92dc12659
+ms.sourcegitcommit: 9c262672c388440810464bb7f8bcc9a5c48fa326
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/20/2020
-ms.locfileid: "88650185"
+ms.lasthandoff: 09/03/2020
+ms.locfileid: "89420869"
 ---
 # <a name="use-azure-ultra-disks-on-azure-kubernetes-service-preview"></a>Использование Azure Ultra Disks в службе Kubernetes Azure (Предварительная версия)
 
@@ -21,11 +21,6 @@ ms.locfileid: "88650185"
 
 > [!IMPORTANT]
 > Для дисков Azure Ultra требуются нодепулс, развернутые в зонах доступности и регионах, которые поддерживают эти диски, а также только определенные серии виртуальных машин. См. [**область и ограничения для Ultra дисков уровня "Глобальный**](../virtual-machines/disks-enable-ultra-ssd.md#ga-scope-and-limitations)".
-
-### <a name="prerequisites"></a>Предварительные требования
-
-- Убедитесь, что `EnableUltraSSD` включен флаг компонента.
-- Убедитесь, что установлено Последнее `aks-preview` [расширение CLI][az-extension-add] .
 
 ### <a name="register-the-enableultrassd-preview-feature"></a>Регистрация `EnableUltraSSD` функции предварительной версии
 
@@ -78,7 +73,7 @@ az extension update --name aks-preview
 az group create --name myResourceGroup --location westus2
 ```
 
-Создайте кластер AKS с управляемой интеграцией Azure AD и Azure RBAC для авторизации Kubernetes.
+Создайте кластер AKS с поддержкой Ultra Disks.
 
 ```azurecli-interactive
 # Create an AKS-managed Azure AD cluster
@@ -133,7 +128,7 @@ storageclass.storage.k8s.io/ultra-disk-sc created
 
 ## <a name="create-a-persistent-volume-claim"></a>Создание заявки на доступ к постоянному тому
 
-Утверждение постоянного тома (PVC) используется для автоматической подготовки хранилища на основе класса хранения. В этом случае утверждение постоянного тома может использовать один из предварительно созданных классов хранения для создания управляемого диска Azure уровня "Стандартный" или "Премиум".
+Утверждение постоянного тома (PVC) используется для автоматической подготовки хранилища на основе класса хранения. В этом случае PVC может использовать ранее созданный класс хранения для создания диска Ultra.
 
 Создайте файл `azure-ultra-disk-pvc.yaml` и скопируйте в него следующий манифест. Заявка запрашивает диск с именем `ultra-disk` размером *1000 ГБ* с доступом *реадвритеонце* . Класс хранения *Ultra-Disk-SC* указывается как класс хранения.
 

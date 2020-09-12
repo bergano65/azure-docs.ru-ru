@@ -6,12 +6,12 @@ ms.topic: article
 ms.date: 7/01/2019
 ms.author: msangapu
 zone_pivot_groups: app-service-containers-windows-linux
-ms.openlocfilehash: 8ca3688ad11bc7a694327990be22b8eccd8f8161
-ms.sourcegitcommit: 648c8d250106a5fca9076a46581f3105c23d7265
+ms.openlocfilehash: c240399f1368862a969561409371e075a010e8f2
+ms.sourcegitcommit: bf1340bb706cf31bb002128e272b8322f37d53dd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "88962865"
+ms.lasthandoff: 09/03/2020
+ms.locfileid: "89435615"
 ---
 # <a name="access-azure-storage-as-a-network-share-from-a-container-in-app-service"></a>Доступ к хранилищу Azure в качестве сетевой папки из контейнера в службе приложений
 
@@ -57,7 +57,7 @@ ms.locfileid: "88962865"
 - В настоящее время служба хранилища Azure в службе приложений **не поддерживается** для использования собственных сценариев (неконтейнерные приложения Windows).
 - Служба хранилища Azure в службе приложений **не поддерживает** использование конфигурации **брандмауэра хранилища** из-за ограничений инфраструктуры.
 - Служба хранилища Azure с помощью службы приложений позволяет указать до **пяти** точек подключения для каждого приложения.
-- Служба хранилища Azure, подключенная к приложению, недоступна через конечные точки FTP или FTPs службы приложений. Используйте [Обозреватель службы хранилища Azure](https://azure.microsoft.com/features/storage-explorer/).
+- Служба хранилища Azure, подключенная к приложению, недоступна через конечные точки FTP или FTPs службы приложений. Или воспользуйтесь [обозревателем хранилищ Azure](https://azure.microsoft.com/features/storage-explorer/).
 
 ::: zone-end
 
@@ -67,7 +67,7 @@ ms.locfileid: "88962865"
 - Служба хранилища Azure в службе приложений поддерживает подключение **контейнеров файлов Azure** (чтение и запись) и **контейнеров больших двоичных объектов Azure** (только для чтения).
 - Служба хранилища Azure в службе приложений **не поддерживает** использование конфигурации **брандмауэра хранилища** из-за ограничений инфраструктуры.
 - Служба хранилища Azure в службе приложений позволяет указать до **пяти** точек подключения для каждого приложения.
-- Служба хранилища Azure, подключенная к приложению, недоступна через конечные точки FTP или FTPs службы приложений. Используйте [Обозреватель службы хранилища Azure](https://azure.microsoft.com/features/storage-explorer/).
+- Служба хранилища Azure, подключенная к приложению, недоступна через конечные точки FTP или FTPs службы приложений. Или воспользуйтесь [обозревателем хранилищ Azure](https://azure.microsoft.com/features/storage-explorer/).
 
 ::: zone-end
 
@@ -114,7 +114,7 @@ az webapp config storage-account add --resource-group <group-name> --name <app-n
 az webapp config storage-account list --resource-group <resource-group> --name <app-name>
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 ::: zone pivot="container-windows"
 

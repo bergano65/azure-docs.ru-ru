@@ -7,12 +7,12 @@ ms.service: firewall
 ms.topic: how-to
 ms.date: 06/18/2020
 ms.author: victorh
-ms.openlocfilehash: e921ea707e4a0df968d162726fe53064491cb032
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 744fe22b6b2c9fbeb9b149760145267ccb6fa6f8
+ms.sourcegitcommit: bf1340bb706cf31bb002128e272b8322f37d53dd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85610512"
+ms.lasthandoff: 09/03/2020
+ms.locfileid: "89435218"
 ---
 # <a name="configure-azure-firewall-application-rules-with-sql-fqdns"></a>Настройка правил приложений брандмауэра Azure с полными доменными именами SQL
 
@@ -20,7 +20,7 @@ ms.locfileid: "85610512"
 
 Полные доменные имена SQL позволяют фильтровать трафик
 
-- из виртуальных сетей в базу данных SQL Azure или хранилище данных SQL Azure. Пример: Разрешить только доступ к *sql-server1.database.windows.net*.
+- Из виртуальных сетей в базу данных SQL Azure или Azure синапсе Analytics. Пример: Разрешить только доступ к *sql-server1.database.windows.net*.
 - Из локальной среды в управляемые экземпляры SQL Azure или IaaS SQL, выполняемую в ваших виртуальных сетях.
 - Из туннеля spoke-to-spoke в управляемые экземпляры SQL Azure или IaaS SQL, выполняемую в ваших виртуальных сетях.
 
@@ -30,7 +30,7 @@ ms.locfileid: "85610512"
 ## <a name="configure-using-azure-cli"></a>Настройка с использованием интерфейса командной строки Azure
 
 1. Развертывание [брандмауэра Azure с использованием интерфейса командной строки Azure](deploy-cli.md).
-2. Если вы фильтруете трафик, направляющийся в базу данных SQL Azure, хранилище данных SQL или управляемый экземпляр SQL, убедитесь, что задан режим подключения SQL через **прокси**. Сведения об изменении режима подключения SQL см. в разделе [Настройки подключения SQL Azure](https://docs.microsoft.com/azure/sql-database/sql-database-connectivity-settings#change-connection-policy-via-azure-cli).
+2. Если вы фильтруете трафик в базу данных SQL Azure, Azure синапсе Analytics или SQL Управляемый экземпляр, убедитесь, что для режима подключения SQL задано значение **прокси**. Сведения об изменении режима подключения SQL см. в разделе [Настройки подключения SQL Azure](https://docs.microsoft.com/azure/sql-database/sql-database-connectivity-settings#change-connection-policy-via-azure-cli).
 
    > [!NOTE]
    > В *прокси-* режиме SQL может наблюдаться увеличенная задержка по сравнению с режимом *перенаправления*. Если вы хотите продолжить пользоваться режимом перенаправления, который применяется для клиентов, подключающихся внутри Azure, по умолчанию, можно фильтровать доступ, используя [тег службы](service-tags.md) SQL в [сетевых правилах](tutorial-firewall-deploy-portal.md#configure-a-network-rule) брандмауэра.
@@ -52,7 +52,7 @@ ms.locfileid: "85610512"
 
 ## <a name="configure-using-the-azure-portal"></a>Настройка с помощью портала Azure
 1. Развертывание [брандмауэра Azure с использованием интерфейса командной строки Azure](deploy-cli.md).
-2. Если вы фильтруете трафик, направляющийся в базу данных SQL Azure, хранилище данных SQL или управляемый экземпляр SQL, убедитесь, что задан режим подключения SQL через **прокси**. Сведения об изменении режима подключения SQL см. в разделе [Настройки подключения SQL Azure](https://docs.microsoft.com/azure/sql-database/sql-database-connectivity-settings#change-connection-policy-via-azure-cli).  
+2. Если вы фильтруете трафик в базу данных SQL Azure, Azure синапсе Analytics или SQL Управляемый экземпляр, убедитесь, что для режима подключения SQL задано значение **прокси**. Сведения об изменении режима подключения SQL см. в разделе [Настройки подключения SQL Azure](https://docs.microsoft.com/azure/sql-database/sql-database-connectivity-settings#change-connection-policy-via-azure-cli).  
 
    > [!NOTE]
    > В *прокси-* режиме SQL может наблюдаться увеличенная задержка по сравнению с режимом *перенаправления*. Если вы хотите продолжить пользоваться режимом перенаправления, который применяется для клиентов, подключающихся внутри Azure, по умолчанию, можно фильтровать доступ, используя [тег службы](service-tags.md) SQL в [сетевых правилах](tutorial-firewall-deploy-portal.md#configure-a-network-rule) брандмауэра.

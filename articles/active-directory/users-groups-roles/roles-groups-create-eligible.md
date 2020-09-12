@@ -13,16 +13,16 @@ ms.author: curtand
 ms.reviewer: vincesm
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 8f816c95b5e210e86e2215cadf8407f442d69ebe
-ms.sourcegitcommit: 5f7b75e32222fe20ac68a053d141a0adbd16b347
+ms.openlocfilehash: 1c5efbbd5f9f5dfe701deb50b51605ab324c081a
+ms.sourcegitcommit: 5a3b9f35d47355d026ee39d398c614ca4dae51c6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/31/2020
-ms.locfileid: "87476242"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89401679"
 ---
 # <a name="create-a-role-assignable-group-in-azure-active-directory"></a>Создание назначаемой роли группы в Azure Active Directory
 
-Роль можно назначить только группе, которая была создана со свойством "Исассигнаблетороле", установленным в значение true, или созданным на портале Azure AD с **ролями Azure AD, которые могут быть назначены для** включения в группу. Этот атрибут группы делает группу, которая может быть назначена роли в Azure Active Directory (Azure AD). В этой статье описывается, как создать этот особый тип группы.
+Роль можно назначить только группе, которая была создана со свойством "Исассигнаблетороле", установленным в значение true, или созданным на портале Azure AD с **ролями Azure AD, которые могут быть назначены для** включения в группу. Этот атрибут группы делает группу, которая может быть назначена роли в Azure Active Directory (Azure AD). В этой статье описывается, как создать этот особый тип группы. **Примечание.** Группа со свойством Исассигнаблетороле, имеющим значение true, не может иметь динамический тип членства. Дополнительные сведения см. в разделе [Использование группы для управления назначениями ролей Azure AD](https://docs.microsoft.com/azure/active-directory/users-groups-roles/roles-groups-concept).
 
 ## <a name="using-azure-ad-admin-center"></a>Использование центра администрирования Azure AD
 

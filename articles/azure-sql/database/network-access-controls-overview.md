@@ -1,7 +1,7 @@
 ---
 title: Средства контроля сетевого доступа
 titleSuffix: Azure SQL Database & Azure Synapse Analytics
-description: Обзор управления доступом к сети для базы данных SQL Azure и Azure синапсе Analytics (ранее — хранилище данных SQL Azure).
+description: Обзор управления доступом к сети для базы данных SQL Azure и Azure синапсе Analytics (ранее — хранилище данных SQL).
 services: sql-database
 ms.service: sql-database
 ms.subservice: security
@@ -12,12 +12,12 @@ author: rohitnayakmsft
 ms.author: rohitna
 ms.reviewer: vanto
 ms.date: 03/09/2020
-ms.openlocfilehash: 435a5fe6f5900ffe742d4459e8e402d2e698ca9f
-ms.sourcegitcommit: 124f7f699b6a43314e63af0101cd788db995d1cb
+ms.openlocfilehash: caad78bf61c9ad470464d69c7320aa1d08dcee09
+ms.sourcegitcommit: bf1340bb706cf31bb002128e272b8322f37d53dd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86085469"
+ms.lasthandoff: 09/03/2020
+ms.locfileid: "89435377"
 ---
 # <a name="azure-sql-database-and-azure-synapse-analytics-network-access-controls"></a>Управление доступом к сети для базы данных SQL Azure и Azure синапсе Analytics
 
@@ -102,7 +102,7 @@ start          end
 13.86.216.192  13.86.216.223
 ```
 
-Теперь можно добавить их как отдельные правила брандмауэра, а затем установить параметр **Разрешить службам Azure доступ к серверу** .
+Теперь можно добавить их как отдельные правила брандмауэра, а затем установить параметр **Разрешить службам Azure доступ к серверу**  .
 
 ## <a name="ip-firewall-rules"></a>Правила брандмауэра для IP-адресов
 
@@ -142,7 +142,7 @@ start          end
 
 Частная ссылка позволяет подключаться к серверу через **закрытую конечную точку**. Частная конечная точка — это частный IP-адрес в определенной [виртуальной сети](../../virtual-network/virtual-networks-overview.md) и подсети.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Краткое руководство по созданию правила брандмауэра IP на уровне сервера см. в разделе [Создание базы данных в базе данных SQL](single-database-create-quickstart.md).
 

@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 03/16/2020
 ms.author: mbaldwin
 ms.custom: subject-security-benchmark
-ms.openlocfilehash: 99985ba8540a347977b9eaf2e733a308fa777b97
-ms.sourcegitcommit: d68c72e120bdd610bb6304dad503d3ea89a1f0f7
+ms.openlocfilehash: 051f6e6ef15cc94e2b607c74e666bae9c91c1160
+ms.sourcegitcommit: 5a3b9f35d47355d026ee39d398c614ca4dae51c6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/01/2020
-ms.locfileid: "89231407"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89401628"
 ---
 # <a name="azure-security-baseline-for-cosmos-db"></a>Базовый план безопасности Azure для Cosmos DB
 
@@ -890,9 +890,11 @@ Azure Cosmos DB предоставляет встроенный RBAC для ра
 
 Интеграция с управляемыми удостоверениями Azure: https://docs.microsoft.com/azure/azure-app-configuration/howto-integrate-azure-managed-service-identity
 
-Создание Key Vault: https://docs.microsoft.com/azure/key-vault/quick-create-portal
+Создание Key Vault: https://docs.microsoft.com/azure/key-vault/general/quick-create-portal
 
-Проверка подлинности в Key Vault с помощью управляемого удостоверения: https://docs.microsoft.com/azure/key-vault/managed-identity
+Проверка подлинности в Key Vault: https://docs.microsoft.com/azure/key-vault/general/authentication
+
+Назначение политики доступа Key Vault. https://docs.microsoft.com/azure/key-vault/general/assign-access-policy-portal
 
 **Мониторинг Центра безопасности Azure**: Да
 

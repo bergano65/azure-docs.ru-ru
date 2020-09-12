@@ -2,18 +2,18 @@
 title: 'Azure ExpressRoute: таблицы ARP — устранение неполадок'
 description: На этой странице приводятся инструкции по получению таблиц ARP для канала ExpressRoute.
 services: expressroute
-author: charwen
+author: duongau
 ms.service: expressroute
 ms.topic: troubleshooting
 ms.date: 01/30/2017
-ms.author: charwen
+ms.author: duau
 ms.custom: seodec18
-ms.openlocfilehash: 5819717443de1d5742d46994dca2f23579e527a0
-ms.sourcegitcommit: 93462ccb4dd178ec81115f50455fbad2fa1d79ce
+ms.openlocfilehash: 9272bb8bac2054d7a02a7eac8c214395a86ceebf
+ms.sourcegitcommit: 5a3b9f35d47355d026ee39d398c614ca4dae51c6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/06/2020
-ms.locfileid: "85986462"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89394862"
 ---
 # <a name="getting-arp-tables-in-the-resource-manager-deployment-model"></a>Получение таблиц ARP в модели развертывания с помощью Resource Manager
 > [!div class="op_single_selector"]
@@ -193,7 +193,7 @@ Age InterfaceProperty IpAddress  MacAddress
 * Вы не увидите таблицу ARP для пиринга при наличии проблем на стороне сети Майкрософт. 
 * Отправьте запрос в [службу поддержки Майкрософт](https://portal.azure.com/?#blade/Microsoft_Azure_Support/HelpAndSupportBlade). Укажите, что у вас проблема с подключением уровня 2. 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Next Steps
 * Проверка конфигураций уровня 3 для канала ExpressRoute.
   * Получение сводки маршрутов для определения состояния сеансов BGP. 
   * Получение таблицы маршрутов для определения того, какие префиксы объявляются в ExpressRoute.

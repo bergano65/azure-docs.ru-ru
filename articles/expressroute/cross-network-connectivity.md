@@ -2,17 +2,17 @@
 title: Подключение между сетями в Azure
 description: На этой странице описывается сценарий приложения для подключения между сетями и решения на основе сетевых компонентов Azure.
 services: expressroute
-author: rambk
+author: duongau
 ms.service: expressroute
 ms.topic: article
 ms.date: 04/03/2019
-ms.author: rambala
-ms.openlocfilehash: 646482472caf6aded9142f33fb6bd879938998d3
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.author: duau
+ms.openlocfilehash: f13e3c03c0cfd747c7819d95a5fb98560db861c4
+ms.sourcegitcommit: 5a3b9f35d47355d026ee39d398c614ca4dae51c6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85124959"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89398075"
 ---
 # <a name="cross-network-connectivity"></a>Возможность подключения нескольких сетей
 
@@ -112,7 +112,7 @@ ExpressRoute Global Reach обеспечивает подключение меж
 
 ![Таблица маршрутов Fabrikam ExpressRoute после Global Reach]( ./media/cross-network-connectivity/fabrikamexr-rt-gr.png )
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные вопросы по виртуальной сети и пирингу виртуальных сетей см. в разделе [часто ЗАдаваемые вопросы о виртуальном сетевом][VNet-FAQ]уровне. Дополнительные вопросы об ExpressRoute и подключении к виртуальной сети см. в разделе [вопросы и ответы по expressroute][ER-FAQ] .
 

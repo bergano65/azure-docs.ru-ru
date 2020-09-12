@@ -12,12 +12,12 @@ ms.topic: conceptual
 ms.date: 01/22/2018
 ms.author: jingwang
 robots: noindex
-ms.openlocfilehash: c2e2394bbcee5294bfb752a0af2969457ffff0ee
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 290990e312a7f591539686ecce1eec1ac742dd60
+ms.sourcegitcommit: bf1340bb706cf31bb002128e272b8322f37d53dd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84710156"
+ms.lasthandoff: 09/03/2020
+ms.locfileid: "89443030"
 ---
 # <a name="move-data-from-amazon-redshift-using-azure-data-factory"></a>Перемещение данных из Amazon Redshift с помощью фабрики данных Azure
 > [!div class="op_single_selector" title1="Выберите используемую версию службы "Фабрика данных":"]
@@ -34,7 +34,7 @@ ms.locfileid: "84710156"
 > [!TIP]
 > Чтобы обеспечить наилучшую производительность при копировании больших объемов данных из Amazon Redshift, рекомендуется использовать встроенную команду Redshift **UNLOAD** через Amazon Simple Storage Service (Amazon S3). Дополнительные сведения см. в разделе [Копирование данных из Amazon Redshift с помощью UNLOAD](#use-unload-to-copy-data-from-amazon-redshift).
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 * Для перемещения данных в локальное хранилище установите [шлюз управления данными](data-factory-data-management-gateway.md) на локальный компьютер. Предоставьте доступ для шлюза в кластер Amazon Redshift с помощью IP-адреса локального компьютера. Инструкции см. в статье об [авторизации доступа к кластеру](https://docs.aws.amazon.com/redshift/latest/gsg/rs-gsg-authorize-cluster-access.html).
 * Дополнительные сведения о перемещении в хранилище данных Azure см. в статье [Microsoft Azure Datacenter IP Ranges ](https://www.microsoft.com/download/details.aspx?id=41653) (Диапазоны IP-адресов центра обработки данных Microsoft Azure).
 
@@ -59,7 +59,7 @@ ms.locfileid: "84710156"
 
 В таблице ниже приведены описания элементов JSON, которые относятся к связанной службе Amazon Redshift.
 
-| Свойство. | Описание | Обязательно |
+| Свойство | Описание | Обязательно |
 | --- | --- | --- |
 | **type** |Этому свойству необходимо задать значение **AmazonRedshift**. |Да |
 | **server** |IP-адрес или имя узла сервера Amazon Redshift. |Да |
@@ -74,7 +74,7 @@ ms.locfileid: "84710156"
 
 Раздел **typeProperties** во всех типах наборов данных разный. Он содержит сведения о расположении данных в хранилище. Раздел **typeProperties** набора данных типа **RelationalTable** (который включает в себя набор данных Amazon Redshift) содержит следующие свойства:
 
-| Свойство. | Описание | Обязательное значение |
+| Свойство | Описание | Обязательно |
 | --- | --- | --- |
 | **tableName** |Имя таблицы в базе данных Amazon Redshift, на которое ссылается связанная служба. |Нет (если указано свойство **query** действия копирования типа **RelationalSource**). |
 
@@ -84,7 +84,7 @@ ms.locfileid: "84710156"
 
 Если действие копирования относится к типу **AmazonRedshiftSource**, в разделе **typeProperties** для него доступны следующие свойства:
 
-| Свойство. | Описание | Обязательное значение |
+| Свойство | Описание | Обязательно |
 | --- | --- | --- |
 | **запрос** | Используйте пользовательский запрос для чтения данных. |Нет (если для свойства **tableName** задано значение dataset). |
 | **redshiftUnloadSettings** | Содержит группу свойств при использовании команды Redshift **UNLOAD**. | Нет |
@@ -93,7 +93,7 @@ ms.locfileid: "84710156"
 
 Кроме того, можно использовать тип **RelationalSource** (включающий Amazon Redshift) со следующим свойством в разделе **typeProperties**. Обратите внимание, что этот тип источника не поддерживает Redshift команду **UNLOAD**.
 
-| Свойство. | Описание | Обязательное значение |
+| Свойство | Описание | Обязательно |
 | --- | --- | --- |
 | **запрос** |Используйте пользовательский запрос для чтения данных. | Нет (если для свойства **tableName** задано значение dataset). |
 
@@ -101,13 +101,13 @@ ms.locfileid: "84710156"
 
 Команда Amazon Redshift [**UNLOAD**](https://docs.aws.amazon.com/redshift/latest/dg/r_UNLOAD.html) выгружает результаты запроса для одного или нескольких файлов в Amazon S3. Эта команда рекомендуется Amazon для копирования больших наборов данных из Redshift.
 
-**Пример. Копирование данных из Amazon Redshift в хранилище данных SQL Azure**
+**Пример. копирование данных из Amazon RedShift в Azure синапсе Analytics (ранее — хранилище данных SQL)**
 
-В этом примере копируются данные из Amazon Redshift в хранилище данных SQL Azure. В этом примере используется команда Redshift **UNLOAD**, промежуточные данные копирования и Microsoft PolyBase.
+В этом примере данные из Amazon RedShift копируются в Azure синапсе Analytics. В этом примере используется команда Redshift **UNLOAD**, промежуточные данные копирования и Microsoft PolyBase.
 
-В этом примере варианта использования действие копирования сначала выгружает данные из Amazon Redshift Amazon S3, как указано в параметре **redshiftUnloadSettings**. Затем данные копируются из Amazon S3 в хранилище BLOB-объектов Azure, как указано в параметре **stagingSettings**. Наконец, PolyBase загружает данные в хранилище данных SQL. Все промежуточные форматы обновляются действием копирования.
+В этом примере варианта использования действие копирования сначала выгружает данные из Amazon Redshift Amazon S3, как указано в параметре **redshiftUnloadSettings**. Затем данные копируются из Amazon S3 в хранилище BLOB-объектов Azure, как указано в параметре **stagingSettings**. Наконец, Polybase загружает данные в Azure синапсе Analytics. Все промежуточные форматы обновляются действием копирования.
 
-![Копирование рабочего процесса из Amazon Redshift в хранилище данных SQL](media/data-factory-amazon-redshift-connector/redshift-to-sql-dw-copy-workflow.png)
+![Копирование рабочего процесса из Amazon RedShift в Azure синапсе Analytics](media/data-factory-amazon-redshift-connector/redshift-to-sql-dw-copy-workflow.png)
 
 ```json
 {
@@ -333,7 +333,7 @@ ms.locfileid: "84710156"
 | INTEGER |Int32 |
 | bigint |Int64 |
 | DECIMAL |Decimal |
-| ВЕЩЕСТВЕННОЕ ЧИСЛО |Один |
+| ВЕЩЕСТВЕННОЕ ЧИСЛО |Single |
 | DOUBLE PRECISION |Double |
 | BOOLEAN |Строка |
 | CHAR |Строка |
@@ -351,5 +351,5 @@ ms.locfileid: "84710156"
 ## <a name="performance-and-tuning"></a>Производительность и настройка
 Сведения о ключевых факторах, влияющих на производительность действия копирования, и различных способах оптимизации этого процесса см. в статье [Руководство по настройке производительности действия копирования](data-factory-copy-activity-performance.md).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 Пошаговые инструкции по созданию конвейера с действием копирования см. в руководстве [Копирование данных из хранилища BLOB-объектов Azure в базу данных SQL с помощью фабрики данных](data-factory-copy-data-from-azure-blob-storage-to-sql-database.md).

@@ -2,17 +2,17 @@
 title: 'Azure ExpressRoute: Настройка БФД'
 description: Эта статья содержит инструкции по настройке обнаружения двунаправленной передачи (BFD) через частный пиринг по каналу ExpressRoute.
 services: expressroute
-author: rambk
+author: duongau
 ms.service: expressroute
 ms.topic: article
 ms.date: 11/1/2018
-ms.author: rambala
-ms.openlocfilehash: ec9c6248f4054329bd3cd9b74855964c4acf72c4
-ms.sourcegitcommit: 9b5c20fb5e904684dc6dd9059d62429b52cb39bc
+ms.author: duau
+ms.openlocfilehash: db2f45da0193ac648d58c0be9773f36e542ed917
+ms.sourcegitcommit: 5a3b9f35d47355d026ee39d398c614ca4dae51c6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85855156"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89397616"
 ---
 # <a name="configure-bfd-over-expressroute"></a>Настройка обнаружения двунаправленной передачи через ExpressRoute
 
@@ -68,7 +68,7 @@ router bgp 65020
 >Если вы настроили геоизбыточные каналы ExpressRoute или используете VPN-подключение типа "сеть — сеть" в качестве резервной копии; Включение БФД может ускорить отработку отказа после сбоя подключения ExpressRoute. 
 >
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Next Steps
 
 Дополнительные сведения доступны в следующих источниках:
 

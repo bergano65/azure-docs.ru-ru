@@ -7,12 +7,12 @@ ms.topic: conceptual
 author: keferna
 ms.author: keferna
 ms.date: 08/18/2020
-ms.openlocfilehash: c475e548cc8e29a83f2d440df43fb8ac31dc1c1e
-ms.sourcegitcommit: d39f2cd3e0b917b351046112ef1b8dc240a47a4f
+ms.openlocfilehash: 6eeb27f6382585e883fbebc40a9f70feb33adb4f
+ms.sourcegitcommit: 9c262672c388440810464bb7f8bcc9a5c48fa326
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88816258"
+ms.lasthandoff: 09/03/2020
+ms.locfileid: "89420614"
 ---
 # <a name="iot-edge-modules"></a>Модули IoT Edge
 
@@ -30,7 +30,7 @@ ms.locfileid: "88816258"
 
 ## <a name="what-is-an-iot-edge-module"></a>Что такое модуль IoT Edge?
 
-Azure IoT Edge позволяет развертывать модули бизнес-логики на пограничных устройствах и управлять этими модулями. Модуль Azure IoT Edge представляет собой наименьшую единицу вычислительных ресурсов, которыми управляет IoT Edge. Эти модули могут содержать службы Майкрософт (например, Azure Stream Analytics), сторонние службы или пользовательский код для конкретного решения. Дополнительные сведения о модулях IoT Edge см. в статье [Общие сведения о модулях IoT Edge Azure](../iot-edge/iot-edge-modules.md).
+Azure IoT Edge позволяет развертывать модули бизнес-логики на пограничных устройствах и управлять этими модулями. Azure IoT Edge модули — это наименьшие вычислительные единицы, управляемые IoT Edge, и могут содержать службы Майкрософт (например, Azure Stream Analytics), сторонние службы или собственный код для конкретного решения. Дополнительные сведения о модулях IoT Edge см. в статье [Общие сведения о модулях IoT Edge Azure](../iot-edge/iot-edge-modules.md).
 
 **Какова разница между типом предложения контейнера и типом предложения модуля IoT Edge?**
 
@@ -40,7 +40,7 @@ Azure IoT Edge позволяет развертывать модули бизн
 
 **Выбор правильного Интернет-магазина**
 
-IoT Edge модули публикуются только в Azure Marketplace; AppSource не применяется. Дополнительные сведения о различиях и целевой аудитории в Интернет-магазинах см. в разделе [Определение параметров публикации](determine-your-listing-type.md).
+IoT Edge модули публикуются только в Azure Marketplace; AppSource не применяется. Дополнительные сведения о различиях между Интернет-магазинами см. в разделе [Определение параметров публикации](determine-your-listing-type.md).
 
 **Варианты выставления счетов**
 
@@ -75,6 +75,5 @@ Marketplace в настоящее время поддерживает **бесп
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- [Сведения](https://azuremarketplace.microsoft.com/sell) о коммерческом рынке.
 - [Войдите в Центр партнеров](https://partner.microsoft.com/dashboard/account/v3/enrollment/introduction/partnership), чтобы создать или завершить свое предложение.
 - [Создание предложения модуля IOT Edge](./partner-center-portal/azure-iot-edge-module-creation.md) в центре партнеров.

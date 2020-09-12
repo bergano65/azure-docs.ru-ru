@@ -2,23 +2,23 @@
 title: О Фастпас Azure ExpressRoute
 description: Сведения о Фастпас Azure ExpressRoute для отправки сетевого трафика путем обхода шлюза
 services: expressroute
-author: cherylmc
+author: duongau
 ms.service: expressroute
 ms.topic: conceptual
 ms.date: 03/25/2020
-ms.author: cherylmc
-ms.openlocfilehash: 265004b1171d1df95b3090676d5836b951c28a28
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.author: duau
+ms.openlocfilehash: bf600d835e177ce51870ed2a8894adcd667e3901
+ms.sourcegitcommit: 5a3b9f35d47355d026ee39d398c614ca4dae51c6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "80282857"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89398058"
 ---
 # <a name="about-expressroute-fastpath"></a>Сведения об ExpressRoute FastPath
 
 Шлюз виртуальной сети ExpressRoute предназначен для обмена сетевыми маршрутами и маршрутизации сетевого трафика. Фастпас предназначен для повышения производительности пути к данным между локальной сетью и виртуальной сетью. Если этот параметр включен, Фастпас отправляет сетевой трафик непосредственно на виртуальные машины в виртуальной сети, минуя шлюз.
 
-## <a name="requirements"></a>Requirements (Требования)
+## <a name="requirements"></a>Требования
 
 ### <a name="circuits"></a>Каналы
 

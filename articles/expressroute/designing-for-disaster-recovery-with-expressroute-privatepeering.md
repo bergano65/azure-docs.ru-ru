@@ -2,17 +2,17 @@
 title: 'Azure ExpressRoute: проектирование аварийного восстановления'
 description: На этой странице приведены рекомендации по архитектуре для аварийного восстановления при использовании Azure ExpressRoute.
 services: expressroute
-author: rambk
+author: duongau
 ms.service: expressroute
 ms.topic: article
 ms.date: 05/25/2019
-ms.author: rambala
-ms.openlocfilehash: 8adfb0ef0d9aa79d1b14127453f76223f035d62a
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.author: duau
+ms.openlocfilehash: 0c85272989a362da77b01af7bb1fe968516e53b6
+ms.sourcegitcommit: 5a3b9f35d47355d026ee39d398c614ca4dae51c6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87081174"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89398008"
 ---
 # <a name="designing-for-disaster-recovery-with-expressroute-private-peering"></a>Проектирование аварийного восстановления с помощью частного пиринга ExpressRoute
 
@@ -76,11 +76,11 @@ ExpressRoute обеспечивает высокий уровень доступ
 
 На следующем снимке экрана показано, как настроить вес подключения ExpressRoute с помощью портал Azure.
 
-[![3-5]][3]
+[![3]][3]
 
 На следующей схеме показано влияние выбора пути ExpressRoute с помощью веса соединения. Значение веса соединения по умолчанию — 0. В приведенном ниже примере весовой коэффициент подключения для ExpressRoute 1 настроен как 100. Когда виртуальная сеть получает префикс маршрута, объявленный через несколько каналов ExpressRoute, виртуальная сеть предпочитает подключение с самым высоким весом.
 
-[![четырех]][4]
+[![4]][4]
 
 Если подключения ExpressRoute 1 отключаются, то виртуальная сеть будет видеть объявление маршрута 10.1.11.0/24 только через ExpressRoute 2; и поэтому в этом состоянии сбоя используется резервный канал.
 

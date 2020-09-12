@@ -5,14 +5,14 @@ services: vpn-gateway
 author: cherylmc
 ms.service: vpn-gateway
 ms.topic: how-to
-ms.date: 01/10/2020
+ms.date: 09/02/2020
 ms.author: cherylmc
-ms.openlocfilehash: 5f16a902980b8cf88fb3e8a7f888a0f58ed34355
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 35631c8a0b66ade1457228ba16150f94f761f7b3
+ms.sourcegitcommit: 9c262672c388440810464bb7f8bcc9a5c48fa326
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84986556"
+ms.lasthandoff: 09/03/2020
+ms.locfileid: "89419917"
 ---
 # <a name="create-and-install-vpn-client-configuration-files-for-p2s-radius-authentication"></a>Создание и установка файлов конфигурации VPN-клиента для аутентификации при подключениях типа "точка — сеть" с использованием RADIUS
 
@@ -45,7 +45,7 @@ ms.locfileid: "84986556"
 
 При настройке аутентификации по имени пользователя и паролю можно создать только конфигурацию для протокола аутентификации по имени пользователя и паролю EAP-MSCHAPv2. В командах для параметра `-AuthenticationMethod` укажите значение `EapMSChapv2`.
 
-### <a name="1-generate-vpn-client-configuration-files"></a><a name="usernamefiles"></a>1. Создание файлов конфигурации VPN-клиента
+### <a name="1-generate-vpn-client-configuration-files"></a><a name="usernamefiles"></a> 1. Создание файлов конфигурации VPN-клиента
 
 Файлы конфигурации VPN-клиента можно создать с помощью портал Azure или с помощью Azure PowerShell.
 
@@ -80,7 +80,7 @@ New-AzVpnClientConfiguration -ResourceGroupName "TestRG" -Name "VNet1GW" -Authen
 Get-AzVpnClientConfiguration -ResourceGroupName "TestRG" -Name "VNet1GW"
 ```
 
-### <a name="2-configure-vpn-clients"></a><a name="setupusername"></a>2. Настройка VPN-клиентов
+### <a name="2-configure-vpn-clients"></a><a name="setupusername"></a> 2. Настройка VPN-клиентов
 
 Можно настроить следующие VPN-клиенты:
 
@@ -130,7 +130,7 @@ Get-AzVpnClientConfiguration -ResourceGroupName "TestRG" -Name "VNet1GW"
 6. При установке профиля вы можете указать имя пользователя и пароль, которые используются для проверки подлинности VPN. Эти сведения вводить не обязательно, но если вы их укажете, они сохранятся и будут автоматически подставляться при установке подключения.Нажмите кнопку **Install (Установить)**, чтобы продолжить.
 
    ![Поля Username (Имя пользователя) и Password (Пароль) для VPN](./media/point-to-site-vpn-client-configuration-radius/adsettings.png)
-7. Введите имя пользователя и пароль, чтобы получить разрешения, необходимые для установки профиля на компьютере. Нажмите кнопку **ОК**.
+7. Введите имя пользователя и пароль, чтобы получить разрешения, необходимые для установки профиля на компьютере. Щелкните **ОК**.
 
    ![Поля Username (Имя пользователя) и Password (Пароль) для установки профиля](./media/point-to-site-vpn-client-configuration-radius/adusername.png)
 8. Установленный профиль отображается в диалоговом окне **Profiles** (Профили). Это диалоговое окно также можно открыть позже в разделе **System Preferences** (Системные настройки).
@@ -211,7 +211,7 @@ New-AzVpnClientConfiguration -ResourceGroupName "TestRG" -Name "VNet1GW" -Authen
 Get-AzVpnClientConfiguration -ResourceGroupName "TestRG" -Name "VNet1GW" | fl
 ```
  
-### <a name="2-configure-vpn-clients"></a><a name="setupusername"></a>2. Настройка VPN-клиентов
+### <a name="2-configure-vpn-clients"></a><a name="setupusername"></a> 2. Настройка VPN-клиентов
 
 Можно настроить следующие VPN-клиенты:
 
@@ -279,7 +279,7 @@ Get-AzVpnClientConfiguration -ResourceGroupName "TestRG" -Name "VNet1GW" | fl
    
    Кроме того, папка **GenericDevice** содержит CER-файл с именем **VpnServerRoot**. В этом файле содержится корневой сертификат, который требуется для проверки VPN-шлюза Azure при установке подключения "точка — сеть". Установите сертификат на всех устройствах, которые будут подключаться к виртуальной сети Azure.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Вернитесь к статье, чтобы [завершить настройку подключения типа "точка — сеть"](point-to-site-how-to-radius-ps.md).
 

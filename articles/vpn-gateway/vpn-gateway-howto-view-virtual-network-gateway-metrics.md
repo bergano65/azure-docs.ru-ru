@@ -2,17 +2,17 @@
 title: Просмотр метрик VPN-шлюза Azure
 description: Действия для просмотра метрик VPN-шлюза
 services: vpn-gateway
-author: kumudD
+author: cherylmc
 ms.service: vpn-gateway
 ms.topic: how-to
-ms.date: 07/12/2020
+ms.date: 09/03/2020
 ms.author: alzam
-ms.openlocfilehash: b3a79b8101a55eaf401c20cb118be3b0796b7aca
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.openlocfilehash: 4b33af3e64726e124373f57920836bce145cd891
+ms.sourcegitcommit: bf1340bb706cf31bb002128e272b8322f37d53dd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86532148"
+ms.lasthandoff: 09/03/2020
+ms.locfileid: "89443183"
 ---
 # <a name="view-vpn-gateway-metrics"></a>Просмотр метрик VPN-шлюза
 
@@ -37,7 +37,7 @@ ms.locfileid: "86532148"
 1. Перейдите к ресурсу шлюза виртуальной сети на портале.
 2. Выберите **Обзор** , чтобы просмотреть общие метрики входящих и исходящих данных туннеля.
 
-   ![Параметры для создания правила генерации оповещений](./media/vpn-gateway-howto-view-virtual-network-gateway-metrics/overview.png "Представление")
+   ![Параметры для создания правила генерации оповещений](./media/vpn-gateway-howto-view-virtual-network-gateway-metrics/overview.png "Просмотр")
 
 3. Для просмотра других метрик, перечисленных выше. Щелкните раздел **метрики** в ресурсе шлюза виртуальной сети и выберите метрику из раскрывающегося списка.
 

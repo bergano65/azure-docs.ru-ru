@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 05/27/2020
 ms.author: mbaldwin
 ms.custom: subject-security-benchmark
-ms.openlocfilehash: 87421509326ef8837a9787ed01a70915c7c5aafa
-ms.sourcegitcommit: d68c72e120bdd610bb6304dad503d3ea89a1f0f7
+ms.openlocfilehash: a26581b61a4b99bd11f48a3d431a1bb85148d66b
+ms.sourcegitcommit: 5a3b9f35d47355d026ee39d398c614ca4dae51c6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/01/2020
-ms.locfileid: "89230744"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89393434"
 ---
 # <a name="azure-security-baseline-for-container-instances"></a>Базовые показатели безопасности Azure для экземпляров контейнеров
 
@@ -988,7 +988,9 @@ ms.locfileid: "89230744"
 
 * [Создание Key Vault](../key-vault/secrets/quick-create-portal.md)
 
-* [Как обеспечить проверку подлинности Key Vault с помощью управляемого удостоверения](../key-vault/general/managed-identity.md)
+* [Проверка подлинности в Key Vault](../key-vault/general/authentication.md)
+
+* [Назначение политики доступа Key Vault](../key-vault/general/assign-access-policy-portal.md)
 
 * [Использование управляемых удостоверений для службы "Экземпляры контейнеров Azure"](./container-instances-managed-identity.md)
 
@@ -1148,7 +1150,7 @@ ms.locfileid: "89230744"
 
 * [См. публикацию NIST: руководство по тестированию, обучению и выполнению программ для ИТ-планов и возможностей](https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-84.pdf)
 
-**Мониторинг Центра безопасности Azure**: Неприменимо
+**Мониторинг Центра безопасности Azure**. Неприменимо
 
 **Ответственность**: Customer
 

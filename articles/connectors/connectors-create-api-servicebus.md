@@ -5,14 +5,14 @@ services: logic-apps
 ms.suite: integration
 ms.reviewer: logicappspm
 ms.topic: conceptual
-ms.date: 07/31/2020
+ms.date: 09/03/2020
 tags: connectors
-ms.openlocfilehash: 13732c6d31f19dfb2548154feb8336a1dff3a529
-ms.sourcegitcommit: b33c9ad17598d7e4d66fe11d511daa78b4b8b330
+ms.openlocfilehash: 68b81fa8cf110b47581e482e7e546821d40aef62
+ms.sourcegitcommit: bf1340bb706cf31bb002128e272b8322f37d53dd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88853290"
+ms.lasthandoff: 09/03/2020
+ms.locfileid: "89435156"
 ---
 # <a name="exchange-messages-in-the-cloud-by-using-azure-logic-apps-and-azure-service-bus"></a>Обмен сообщениями в облаке с помощью Azure Logic Apps и служебной шины Azure
 
@@ -167,7 +167,7 @@ ms.locfileid: "88853290"
 
 ## <a name="connector-reference"></a>Справочник по соединителям
 
-Соединитель служебной шины может сэкономить до 1 500 уникальных сеансов за раз из служебной шины в кэш соединителя. Если число сеансов превышает это ограничение, старые сеансы удаляются из кэша. Дополнительные сведения см. в разделе [сеансы сообщений](../service-bus-messaging/message-sessions.md).
+С помощью служебной шины соединитель служебной шины может сохранять до 1 500 уникальных сеансов за раз в кэше соединителя на каждую [сущность обмена сообщениями служебной шины, например подписку или раздел](../service-bus-messaging/service-bus-queues-topics-subscriptions.md). Если число сеансов превышает это ограничение, старые сеансы удаляются из кэша. Дополнительные сведения см. в разделе [сеансы сообщений](../service-bus-messaging/message-sessions.md).
 
 Для получения других технических сведений о триггерах, действиях и ограничениях, которые описаны в описании Swagger соединителя, ознакомьтесь со [страницей справочника по соединителям](/connectors/servicebus/). Дополнительные сведения об обмене сообщениями через служебную шину Azure см. в статье [что такое служебная шина Azure](../service-bus-messaging/service-bus-messaging-overview.md)?
 

@@ -11,12 +11,12 @@ ms.workload: data-services
 ms.topic: conceptual
 ms.date: 10/22/2018
 ms.author: jingwang
-ms.openlocfilehash: 3422176ed89b7f575c11cc40e5be8420da0018b0
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 170716804a5bc3133e070ee67f2aac71acad7b0b
+ms.sourcegitcommit: bf1340bb706cf31bb002128e272b8322f37d53dd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "81415797"
+ms.lasthandoff: 09/03/2020
+ms.locfileid: "89435570"
 ---
 # <a name="load-data-from-office-365-by-using-azure-data-factory"></a>Загрузка данных из Office 365 с помощью Фабрики данных Azure
 
@@ -63,7 +63,7 @@ ms.locfileid: "81415797"
 
 2. В окне Новый набор данных выберите **Office 365**и нажмите кнопку **продолжить**.
  
-3. Теперь вы используете вкладку Конфигурация действия копирования. Нажмите кнопку " **изменить** " рядом с набором данных Office 365, чтобы продолжить настройку данных.
+3. Теперь на вкладке Конфигурация действия копирования. Нажмите кнопку **изменить** рядом с набором данных Office 365, чтобы продолжить настройку данных.
 
     ![Общая настройка набора данных Office 365](./media/load-office-365-data/transition-to-edit-dataset.png)
  
@@ -147,7 +147,7 @@ _Состояние ExtractingData (Извлечение данных):_
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Перейдите к следующей статье, чтобы узнать о поддержке хранилища данных SQL Azure: 
+Перейдите к следующей статье, чтобы узнать о поддержке Azure синапсе Analytics (прежнее хранилище данных SQL). 
 
 > [!div class="nextstepaction"]
 >[Соединитель Office 365](connector-office-365.md)

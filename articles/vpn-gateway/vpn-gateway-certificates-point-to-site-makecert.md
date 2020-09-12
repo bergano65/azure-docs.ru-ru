@@ -5,14 +5,14 @@ services: vpn-gateway
 author: cherylmc
 ms.service: vpn-gateway
 ms.topic: how-to
-ms.date: 09/05/2018
+ms.date: 09/02/2020
 ms.author: cherylmc
-ms.openlocfilehash: d7903dc7f614d16380626f27579363b1529665cc
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 926de9f3fd357cd9d9ca067e4f7beff7d03eec95
+ms.sourcegitcommit: 5a3b9f35d47355d026ee39d398c614ca4dae51c6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84988123"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89394198"
 ---
 # <a name="generate-and-export-certificates-for-point-to-site-connections-using-makecert"></a>Создание и экспорт сертификатов для подключений типа "точка — сеть" с помощью MakeCert
 
@@ -73,11 +73,11 @@ ms.locfileid: "84988123"
 
 [!INCLUDE [Export client certificate](../../includes/vpn-gateway-certificates-export-client-cert-include.md)]
 
-### <a name="install-an-exported-client-certificate"></a><a name="install"></a>Установка экспортированного сертификата клиента
+### <a name="install-an-exported-client-certificate"></a><a name="install"></a>установить экспортированный сертификат клиента;
 
 См. инструкции по [установке сертификата клиента](point-to-site-how-to-vpn-client-install-azure-cert.md).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Продолжайте настраивать параметры конфигурации типа "точка-сеть". 
 

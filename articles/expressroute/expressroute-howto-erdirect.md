@@ -2,17 +2,17 @@
 title: 'Azure ExpressRoute: Настройка Direct ExpressRoute'
 description: Узнайте, как с помощью Azure PowerShell настроить Azure ExpressRoute Direct для прямого подключения к глобальной сети Майкрософт в точках пиринга по всему миру.
 services: expressroute
-author: jaredr80
+author: duongau
 ms.service: expressroute
 ms.topic: how-to
 ms.date: 01/22/2020
-ms.author: jaredro
-ms.openlocfilehash: 42803cbc7901be01c88145e2d98f2982434710a1
-ms.sourcegitcommit: 9ce0350a74a3d32f4a9459b414616ca1401b415a
+ms.author: duau
+ms.openlocfilehash: c4ce764f50f85ef9979d5a14235759c16228f6b7
+ms.sourcegitcommit: 5a3b9f35d47355d026ee39d398c614ca4dae51c6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/13/2020
-ms.locfileid: "88192766"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89396035"
 ---
 # <a name="how-to-configure-expressroute-direct"></a>Настройка Direct для ExpressRoute
 
@@ -275,6 +275,6 @@ ExpressRoute Direct дает возможность подключения не�
   GatewayManagerEtag     
   ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения об использовании ExpressRoute Direct см. в [обзоре](expressroute-erdirect-about.md).

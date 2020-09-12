@@ -1,6 +1,6 @@
 ---
-title: Назначение корпоративному приложению пользователя или группы в Azure AD
-description: Узнайте, как выбрать корпоративное приложение и назначить для него пользователя или группу в Azure Active Directory.
+title: Управление назначением пользователей для приложения в Azure Active Directory
+description: Узнайте, как назначать и отменять назначение пользователей и групп для приложения, использующего Azure Active Directory для управления удостоверениями.
 services: active-directory
 author: kenwith
 manager: celestedg
@@ -11,24 +11,21 @@ ms.topic: how-to
 ms.date: 02/21/2020
 ms.author: kenwith
 ms.reviewer: luleon
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 7875bfc55d4530f7f56a96599491cab4a98ced04
-ms.sourcegitcommit: 628be49d29421a638c8a479452d78ba1c9f7c8e4
+ms.openlocfilehash: 763b5a9f4c471e338dd493c85ce93a67810b5134
+ms.sourcegitcommit: ac5cbef0706d9910a76e4c0841fdac3ef8ed2e82
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/20/2020
-ms.locfileid: "88642033"
+ms.lasthandoff: 09/03/2020
+ms.locfileid: "89426305"
 ---
-# <a name="assign-a-user-or-group-to-an-enterprise-app-in-azure-active-directory"></a>Назначение пользователя или группы корпоративному приложению в Azure Active Directory
+# <a name="manage-user-assignment-for-an-app-in-azure-active-directory"></a>Управление назначением пользователей для приложения в Azure Active Directory
 
-В этой статье показано, как назначать пользователей или группы корпоративным приложениям в Azure Active Directory (Azure AD) с портала Azure или с помощью PowerShell. При назначении пользователя приложению приложение отображается в окне " [Мои приложения](https://myapps.microsoft.com/) " пользователя для быстрого доступа. Если приложение предоставляет роли, можно также назначить пользователю определенную роль.
+В этой статье показано, как назначать пользователей и группы корпоративным приложениям в Azure Active Directory (Azure AD) в портал Azure или с помощью PowerShell. При назначении пользователя приложению приложение отображается в окне " [Мои приложения](https://myapps.microsoft.com/) " пользователя для быстрого доступа. Если приложение предоставляет роли, можно также назначить пользователю определенную роль.
 
 Для более полного контроля можно настроить определенные типы корпоративных приложений так, чтобы они [требовали назначения пользователей](#configure-an-application-to-require-user-assignment). 
 
-Чтобы [назначить пользователя или группу корпоративному приложению](#assign-users-or-groups-to-an-app-via-the-azure-portal), необходимо войти в систему как глобальный администратор, администратор приложения, администратор облачных приложений или назначенный владелец корпоративного приложения.
-
 > [!IMPORTANT]
-> При назначении группы для приложения доступ будут иметь только пользователи из этой группы. Присваивание не является каскадным для вложенных групп.
+> После назначения приложению группы, доступ будут иметь только пользователи из этой группы. Назначение не распространяется на вложенные группы.
 
 > [!NOTE]
 > Для назначения ролей на основе групп необходимо установить Azure Active Directory Premium P1 или P2. Назначение на основе группы поддерживается только для групп безопасности. Членство во вложенных группах и группы Office 365 в настоящее время не поддерживаются. Требования к лицензированию компонентов, рассматриваемых в этой статье, см. на странице [Цены на Azure Active Directory](https://azure.microsoft.com/pricing/details/active-directory). 
@@ -47,60 +44,32 @@ ms.locfileid: "88642033"
 
 Этот параметр не влияет на отображение приложения в окне "Мои приложения". Приложения отображаются на панелях доступа пользователей "Мои приложения" после назначения приложению пользователя или группы. Справочные сведения доступны в разделе [Управление доступом к приложениям](what-is-access-management.md).
 
-
 Чтобы запросить назначение пользователей для приложения, выполните следующие действия.
-
 1. Войдите на [портал Azure](https://portal.azure.com) с учетной записью администратора или в качестве владельца приложения.
-
 2. Выберите **Azure Active Directory**. В области слева выберите **Корпоративные приложения**.
-
 3. Выберите нужное приложение в списке. Если приложение не отображается, начните вводить его название в поле поиска. Либо используйте элементы управления фильтрами, чтобы выбрать тип приложения, статус или видимость, а затем нажмите **Применить**.
-
 4. В области навигации слева щелкните **Свойства**.
-
 5. Убедитесь, что переключатель **Требуется ли назначать пользователей?** находится в положении **Да**.
-
    > [!NOTE]
    > Если переключатель **Требуется ли назначать пользователей?** недоступен, можно с помощью PowerShell задать свойство appRoleAssignmentRequired для соответствующего субъекта-службы.
-
 6. Нажмите кнопку **Сохранить** вверху экрана.
 
-## <a name="assign-users-or-groups-to-an-app-via-the-azure-portal"></a>Назначение пользователей или групп приложению с помощью портала Azure
+## <a name="assign-or-unassign-users-and-groups-for-an-app-using-the-azure-portal"></a>Назначение или отмена назначения пользователей и групп для приложения с помощью портал Azure
+Сведения о том, как назначить или отменить назначение пользователя или группы с помощью портал Azure, см. в [руководстве по управлению приложениями](add-application-portal-assign-users.md).
 
-1. Войдите на [портал Azure](https://portal.azure.com) как глобальный администратор, администратор приложения, администратор облачных приложений или назначенный владелец корпоративного приложения.
-2. Выберите **Azure Active Directory**. В области слева выберите **Корпоративные приложения**.
-3. Выберите нужное приложение в списке. Если приложение не отображается, начните вводить его название в поле поиска. Либо используйте элементы управления фильтрами, чтобы выбрать тип приложения, статус или видимость, а затем нажмите **Применить**.
-4. В меню навигации слева выберите **Пользователи и группы**.
-   > [!NOTE]
-   > Если требуется назначить пользователей приложениям Microsoft, таким как Office 365, нужно помнить, что в некоторых из них используется PowerShell. 
-5. Нажмите кнопку **Добавить пользователя**.
-6. В области **Добавление назначения** выберите **Пользователи и группы**.
-7. Выберите пользователя или группу, которые нужно назначить приложению, или начните вводить имя пользователя или группы в поле поиска. Можно выбрать несколько пользователей и групп, и выбранные параметры будут отображаться в разделе **Выбранные элементы**.
-8. По завершении щелкните **Сохранить**.
+## <a name="assign-or-unassign-users-and-groups-for-an-app-using-the-graph-api"></a>Назначение или отмена назначения пользователей и групп для приложения с помощью API Graph
+Вы можете использовать API Graph, чтобы назначить или отменить назначение пользователей и групп для приложения. Дополнительные сведения см. в разделе [назначения ролей приложений](https://docs.microsoft.com/graph/api/resources/approleassignment).
 
-   ![Назначение приложению пользователя или группы](./media/assign-user-or-group-access-portal/assign-users.png)
-
-9. В области **Пользователи и группы** выберите одного или несколько пользователей или групп из списка, а затем нажмите кнопку **Выбрать** в нижней части панели.
-10. Если приложение поддерживает такую возможность, можно назначить роль пользователю или группе. В области **Добавление назначения** выберите **Выбрать роль**. Затем в области **Выбор роли** выберите роль для этих пользователей или групп. Нажмите кнопку **ОК** в нижней части области. 
-
-    > [!NOTE]
-    > Если приложение не поддерживает выбор ролей, назначается роль доступа по умолчанию. В этом случае приложение управляет уровнем доступа пользователей.
-
-2. В области **Добавление назначения** нажмите кнопку **Назначить** в нижней части области.
-
-## <a name="assign-users-or-groups-to-an-app-via-powershell"></a>Назначение пользователей или групп приложению с помощью PowerShell
-
+## <a name="assign-users-and-groups-to-an-app-using-powershell"></a>Назначение пользователей и групп для приложения с помощью PowerShell
 1. Откройте окно Windows PowerShell с повышенными привилегиями.
-
    > [!NOTE]
    > Вам потребуется установить модуль Azure AD (с помощью команды `Install-Module -Name AzureAD`). Если будет предложено установить модуль NuGet или новый модуль PowerShell Azure для Active Directory версии 2, введите Y и нажмите клавишу ВВОД.
-
-1. Выполните команду `Connect-AzureAD` и войдите в систему с помощью учетных данных глобального администратора.
-1. Чтобы назначить пользователя и его роль в приложении, используйте следующий скрипт:
+2. Выполните команду `Connect-AzureAD` и войдите в систему с помощью учетных данных глобального администратора.
+3. Чтобы назначить пользователя и его роль в приложении, используйте следующий скрипт:
 
     ```powershell
     # Assign the values to the variables
-    $username = "<You user's UPN>"
+    $username = "<Your user's UPN>"
     $app_name = "<Your App's display name>"
     $app_role_name = "<App role display name>"
 
@@ -112,7 +81,6 @@ ms.locfileid: "88642033"
     # Assign the user to the app role
     New-AzureADUserAppRoleAssignment -ObjectId $user.ObjectId -PrincipalId $user.ObjectId -ResourceId $sp.ObjectId -Id $appRole.Id
     ```
-
 Дополнительные сведения о том, как назначить пользователю роль в приложении, см. в документации по командлету [New-AzureADUserAppRoleAssignment](https://docs.microsoft.com/powershell/module/azuread/new-azureaduserapproleassignment?view=azureadps-2.0).
 
 Чтобы назначить группу корпоративному приложению, необходимо заменить `Get-AzureADUser` на `Get-AzureADGroup`, а `New-AzureADUserAppRoleAssignment` — на `New-AzureADGroupAppRoleAssignment`.
@@ -130,33 +98,52 @@ ms.locfileid: "88642033"
     $username = "britta.simon@contoso.com"
     $app_name = "Workplace Analytics"
     ```
-
-1. В этом примере неизвестно, как именно называется роль приложения, которую мы хотим назначить пользователю Britta Simon. Выполните следующие команды, чтобы получить пользователя ($user) и субъект-службу ($sp) с помощью отображаемых имен участника-пользователя и субъекта-службы.
+2. В этом примере неизвестно, как именно называется роль приложения, которую мы хотим назначить пользователю Britta Simon. Выполните следующие команды, чтобы получить пользователя ($user) и субъект-службу ($sp) с помощью отображаемых имен участника-пользователя и субъекта-службы.
 
     ```powershell
     # Get the user to assign, and the service principal for the app to assign to
     $user = Get-AzureADUser -ObjectId "$username"
     $sp = Get-AzureADServicePrincipal -Filter "displayName eq '$app_name'"
     ```
-
-1. Выполните команду `$sp.AppRoles`, чтобы отобразить роли, доступные для приложения Workplace Analytics. В этом примере мы хотим назначить пользователю Britta Simon роль Analyst (Limited Access) (аналитик с ограниченным доступом).
-
+3. Выполните команду `$sp.AppRoles`, чтобы отобразить роли, доступные для приложения Workplace Analytics. В этом примере мы хотим назначить пользователю Britta Simon роль Analyst (Limited Access) (аналитик с ограниченным доступом).
    ![Показывает доступные пользователю роли с использованием роли в приложении Workplace Analytics](./media/assign-user-or-group-access-portal/workplace-analytics-role.png)
-
-1. Присвойте имя роли переменной `$app_role_name`.
+4. Присвойте имя роли переменной `$app_role_name`.
 
     ```powershell
     # Assign the values to the variables
     $app_role_name = "Analyst (Limited access)"
     $appRole = $sp.AppRoles | Where-Object { $_.DisplayName -eq $app_role_name }
     ```
-
-1. Выполните следующую команду, чтобы назначить пользователю роль в приложении:
+5. Выполните следующую команду, чтобы назначить пользователю роль в приложении:
 
     ```powershell
     # Assign the user to the app role
     New-AzureADUserAppRoleAssignment -ObjectId $user.ObjectId -PrincipalId $user.ObjectId -ResourceId $sp.ObjectId -Id $appRole.Id
     ```
+
+## <a name="unassign-users-and-groups-from-an-app-using-powershell"></a>Отмена назначения пользователей и групп из приложения с помощью PowerShell
+
+1. Откройте окно Windows PowerShell с повышенными привилегиями.
+   > [!NOTE]
+   > Вам потребуется установить модуль Azure AD (с помощью команды `Install-Module -Name AzureAD`). Если будет предложено установить модуль NuGet или новый модуль PowerShell Azure для Active Directory версии 2, введите Y и нажмите клавишу ВВОД.
+2. Выполните команду `Connect-AzureAD` и войдите в систему с помощью учетных данных глобального администратора.
+3. Чтобы удалить пользователя и роль из приложения, используйте следующий скрипт:
+
+    ```powershell
+    # Store the proper parameters
+    $user = get-azureaduser -ObjectId <objectId>
+    $spo = Get-AzureADServicePrincipal -ObjectId <objectId>
+
+    #Get the ID of role assignment 
+    $assignments = Get-AzureADServiceAppRoleAssignment -ObjectId $spo.ObjectId | Where {$_.PrincipalDisplayName -eq $user.DisplayName}
+
+    #if you run the following, it will show you what is assigned what
+    $assignments | Select *
+
+    #To remove the App role assignment run the following command.
+    Remove-AzureADServiceAppRoleAssignment -ObjectId $spo.ObjectId -AppRoleAssignmentId $assignments[assignment #].ObjectId
+    ```
+
 
 ## <a name="related-articles"></a>Связанные статьи
 

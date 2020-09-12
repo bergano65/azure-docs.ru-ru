@@ -5,12 +5,12 @@ services: automation
 ms.subservice: process-automation
 ms.date: 03/16/2018
 ms.topic: conceptual
-ms.openlocfilehash: 3399138ef7c14dd2db9133334a08b3984bd26448
-ms.sourcegitcommit: ec682dcc0a67eabe4bfe242fce4a7019f0a8c405
+ms.openlocfilehash: a47f720344a16d0f77559d6aabfb2b0245e62976
+ms.sourcegitcommit: ac5cbef0706d9910a76e4c0841fdac3ef8ed2e82
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/09/2020
-ms.locfileid: "86186013"
+ms.lasthandoff: 09/03/2020
+ms.locfileid: "89426339"
 ---
 # <a name="migrate-from-orchestrator-to-azure-automation-beta"></a>Миграция из Orchestrator в службу автоматизации Azure (бета-версия)
 
@@ -20,7 +20,7 @@ ms.locfileid: "86186013"
 
 ## <a name="download-the-orchestrator-migration-toolkit"></a>Скачивание набора средств для миграции Orchestrator
 
-Первым делом перед миграцией скачайте [набор средств для миграции System Center Orchestrator](https://www.microsoft.com/download/details.aspx?id=47323&WT.mc_id=rss_alldownloads_all). Этот набор средств содержит решения для преобразования модулей runbook Orchestrator в модули runbook службы автоматизации Azure.  
+Первым делом перед миграцией скачайте [набор средств для миграции System Center Orchestrator](https://www.microsoft.com/download/details.aspx?id=47323). Этот набор средств содержит решения для преобразования модулей runbook Orchestrator в модули runbook службы автоматизации Azure.  
 
 ## <a name="import-the-standard-activities-module"></a>Импорт модуля стандартных действий
 

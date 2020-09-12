@@ -8,12 +8,12 @@ ms.subservice: edge
 ms.topic: how-to
 ms.date: 08/04/2020
 ms.author: alkohli
-ms.openlocfilehash: 5b69d10bc2f3c5ec737e026059c82c3efac681b5
-ms.sourcegitcommit: bcda98171d6e81795e723e525f81e6235f044e52
+ms.openlocfilehash: 4f5fb02239fa48d96b0b779af7c970fc67fbcb99
+ms.sourcegitcommit: 9c262672c388440810464bb7f8bcc9a5c48fa326
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/01/2020
-ms.locfileid: "89268165"
+ms.lasthandoff: 09/03/2020
+ms.locfileid: "89419832"
 ---
 # <a name="deploy-vms-on-your-azure-stack-edge-gpu-device-via-templates"></a>Развертывание виртуальных машин на устройстве с Azure Stack ребра с помощью шаблонов
 
@@ -139,7 +139,7 @@ key1 GsCm7QriXurqfqx211oKdfQ1C9Hyu5ZutP6Xl0dqlNNhxLxDesDej591M8y7ykSPN4fY9vmVpgc
 key2 7vnVMJUwJXlxkXXOyVO4NfqbW5e/5hZ+VOs+C/h/ReeoszeV+qoyuBitgnWjiDPNdH4+lSm1/ZjvoBWsQ1klqQ== ll
 ```
 
-### <a name="add-blob-uri-to-hosts-file"></a>Добавление URI BLOB-объекта в файл hosts
+### <a name="add-blob-uri-to-hosts-file"></a>Добавление URI BLOB-объекта в файл hosts.
 
 Убедитесь, что вы уже добавили URI большого двоичного объекта в файл hosts для клиента, который используется для подключения к хранилищу BLOB-объектов. **Запустите Блокнот от имени администратора** и добавьте следующую запись для URI большого двоичного объекта в `C:\windows\system32\drivers\etc\hosts` :
 
@@ -167,7 +167,7 @@ key2 7vnVMJUwJXlxkXXOyVO4NfqbW5e/5hZ+VOs+C/h/ReeoszeV+qoyuBitgnWjiDPNdH4+lSm1/Zj
 
     ![Импорт сертификата конечной точки хранилища BLOB-объектов](media/azure-stack-edge-gpu-deploy-virtual-machine-templates/import-blob-storage-endpoint-certificate-1.png)
 
-    - Если вы используете сертификаты, создаваемые устройством, скачайте и преобразуйте сертификат конечной точки хранилища BLOB `.cer` -объектов в `.pem` Формат. Выполните следующую команду: 
+    - Если вы используете сертификаты, создаваемые устройством, скачайте и преобразуйте сертификат конечной точки хранилища BLOB `.cer` -объектов в `.pem` Формат. Выполните следующую команду. 
     
         ```powershell
         PS C:\windows\system32> Certutil -encode 'C:\myasegpu1_Blob storage (1).cer' .\blobstoragecert.pem
@@ -245,11 +245,14 @@ AzCopy /Source:\\hcsfs\scratch\vm_vhds\linux\ /Dest:http://sa191113014333.blob.d
 
 ```json
 "parameters": {
+        "osType": {
+              "value": "<Operating system corresponding to the VHD you upload can be Windows or Linux>"
+        },
         "imageName": {
             "value": "<Name for the VM iamge>"
         },
         "imageUri": {
-      "value": "<Path to the VHD that you uploaded in the Storage account>"
+              "value": "<Path to the VHD that you uploaded in the Storage account>"
         },
         "vnetName": {
             "value": "<Name for the virtual network where you will deploy the VM>"
@@ -501,7 +504,7 @@ AzCopy /Source:\\hcsfs\scratch\vm_vhds\linux\ /Dest:http://sa191113014333.blob.d
         
         $templateFile = "<Path to CreateVM.json>"
         $templateParameterFile = "<Path to CreateVM.parameters.json>"
-        $RGName = "RG1"
+        $RGName = "<Resource group name>"
              
         New-AzureRmResourceGroupDeployment `
             -ResourceGroupName $RGName `
@@ -547,7 +550,27 @@ AzCopy /Source:\\hcsfs\scratch\vm_vhds\linux\ /Dest:http://sa191113014333.blob.d
         
         PS C:\07-30-2020>
     ```   
- 
+Можно также выполнить `New-AzureRmResourceGroupDeployment` команду асинхронно с `–AsJob` параметром. Ниже приведен пример выходных данных при выполнении командлета в фоновом режиме. Затем можно запросить состояние задания, созданного с помощью `Get-Job` командлета.
+
+    ```powershell   
+    PS C:\WINDOWS\system32> New-AzureRmResourceGroupDeployment `
+    >>     -ResourceGroupName $RGName `
+    >>     -TemplateFile $templateFile `
+    >>     -TemplateParameterFile $templateParameterFile `
+    >>     -Name "Deployment2" `
+    >>     -AsJob
+     
+    Id     Name            PSJobTypeName   State         HasMoreData     Location             Command
+    --     ----            -------------   -----         -----------     --------             -------
+    2      Long Running... AzureLongRun... Running       True            localhost            New-AzureRmResourceGro...
+     
+    PS C:\WINDOWS\system32> Get-Job -Id 2
+     
+    Id     Name            PSJobTypeName   State         HasMoreData     Location             Command
+    --     ----            -------------   -----         -----------     --------             -------
+    2      Long Running... AzureLongRun... Completed     True            localhost            New-AzureRmResourceGro...
+    ```
+
 7. Убедитесь, что виртуальная машина успешно подготовлена. Выполните следующую команду:
 
     `Get-AzureRmVm`
@@ -555,7 +578,19 @@ AzCopy /Source:\\hcsfs\scratch\vm_vhds\linux\ /Dest:http://sa191113014333.blob.d
 
 ## <a name="connect-to-a-vm"></a>Подключение к виртуальной машине
 
+В зависимости от того, была создана виртуальная машина Windows или Linux, действия для подключения могут отличаться.
+
+### <a name="connect-to-windows-vm"></a>Подключение к виртуальной машине Windows
+
+Выполните следующие действия, чтобы подключиться к виртуальной машине Windows.
+
 [!INCLUDE [azure-stack-edge-gateway-connect-vm](../../includes/azure-stack-edge-gateway-connect-virtual-machine-windows.md)]
+
+### <a name="connect-to-linux-vm"></a>Подключение к виртуальной машине Linux
+
+Выполните следующие действия, чтобы подключиться к виртуальной машине Linux.
+
+[!INCLUDE [azure-stack-edge-gateway-connect-vm](../../includes/azure-stack-edge-gateway-connect-virtual-machine-linux.md)]
 
 <!--## Manage VM
 

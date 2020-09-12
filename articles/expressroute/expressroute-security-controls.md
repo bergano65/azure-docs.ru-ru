@@ -3,16 +3,16 @@ title: 'Azure ExpressRoute: средства управления безопас
 description: Сведения об элементах управления безопасностью в Azure ExpressRoute, которые являются характеристиками или характеристиками, которые помогают предотвращать, обнаруживать уязвимости системы безопасности и реагировать на них.
 services: expressroute
 ms.service: expressroute
-author: msmbaldwin
+author: duongau
 ms.topic: conceptual
 ms.date: 06/05/2019
-ms.author: mbaldwin
-ms.openlocfilehash: 6a4589d1aa768548f2ae9ffa01f289c823c0b2e5
-ms.sourcegitcommit: 9ce0350a74a3d32f4a9459b414616ca1401b415a
+ms.author: duau
+ms.openlocfilehash: 24057de44f3d28df96bcb93e89af9c3afa6fa3c6
+ms.sourcegitcommit: 5a3b9f35d47355d026ee39d398c614ca4dae51c6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/13/2020
-ms.locfileid: "88192421"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89394913"
 ---
 # <a name="security-controls-for-azure-expressroute"></a>Средства управления безопасностью для Azure ExpressRoute
 
@@ -61,6 +61,6 @@ ms.locfileid: "88192421"
 |---|---|--|
 | Поддержка управления конфигурацией (управление версиями конфигураций и т. д.)| Да | Через поставщик сетевых ресурсов (NRP). |
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Дополнительные сведения о [встроенных средствах управления безопасностью в службах Azure](../security/fundamentals/security-controls.md).

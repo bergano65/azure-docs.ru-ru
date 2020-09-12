@@ -11,18 +11,18 @@ ms.topic: how-to
 ms.date: 05/05/2020
 ms.author: sudbalas
 Customer intent: As a key vault administrator, I want to move my vault to another subscription.
-ms.openlocfilehash: 3c2fef4ebd7db076a502f63101c80c4e08683b39
-ms.sourcegitcommit: d7352c07708180a9293e8a0e7020b9dd3dd153ce
+ms.openlocfilehash: e6ab37539d00b6748d0e63a3f559bf70f493cf42
+ms.sourcegitcommit: 5a3b9f35d47355d026ee39d398c614ca4dae51c6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/30/2020
-ms.locfileid: "89145371"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89394743"
 ---
 # <a name="moving-an-azure-key-vault-to-another-subscription"></a>Перемещение Azure Key Vault в другую подписку
 
 [!INCLUDE [updated-for-az](../../../includes/updated-for-az.md)]
 
-## <a name="overview"></a>Обзор
+## <a name="overview"></a>Overview
 
 > [!IMPORTANT]
 > **Перемещение хранилища ключей в другую подписку приведет к критическому изменению среды.**
@@ -97,11 +97,9 @@ az keyvault update -n myvault --set Properties.tenantId=$tenantId          # Upd
 
 Теперь, когда хранилище связано с правильным идентификатором клиента, и старые записи политики доступа удалены, задайте новые записи политики доступа с помощью командлета [Set-AzKeyVaultAccessPolicy](/powershell/module/az.keyvault/Set-azKeyVaultAccessPolicy) или команды Azure CLI [az keyvault set-policy](/cli/azure/keyvault?view=azure-cli-latest#az-keyvault-set-policy).
 
-Если вы используете управляемое удостоверение для ресурсов Azure, необходимо также обновить его до нового клиента Azure AD. Дополнительные сведения об управляемых удостоверениях см. в разделе [Выполнение проверки подлинности Key Vault с помощью управляемого удостоверения](managed-identity.md).
+Если вы используете управляемое удостоверение для ресурсов Azure, необходимо также обновить его до нового клиента Azure Active Directory. Дополнительные сведения об управляемых удостоверениях см. в разделе [Общие сведения об управляемом удостоверении](/azure/active-directory/managed-identities-azure-resources/overview).
 
-Если вы используете MSI, необходимо также обновить идентификатор MSI, так как старый идентификатор больше не будет находиться в правильном клиенте AAD. Чтобы устранить эту проблему, см. следующие документы. 
+Если вы используете управляемое удостоверение, вам также потребуется обновить удостоверение, так как старое удостоверение больше не будет находиться в правильном Azure Active Directoryном клиенте. Чтобы устранить эту проблему, см. следующие документы. 
 
 * [Обновление MSI](https://docs.microsoft.com/azure/active-directory/managed-identities-azure-resources/known-issues#transferring-a-subscription-between-azure-ad-directories)
 * [Перенос подписки в новый каталог](https://docs.microsoft.com/azure/role-based-access-control/transfer-subscription)
-
-

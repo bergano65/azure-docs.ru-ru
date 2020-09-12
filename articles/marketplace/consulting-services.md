@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 06/08/2020
 author: Microsoft-BradleyWright
 ms.author: brwrigh
-ms.openlocfilehash: afcca913b8a9c8fb31fa6e18d0570aebd68b8ef3
-ms.sourcegitcommit: d39f2cd3e0b917b351046112ef1b8dc240a47a4f
+ms.openlocfilehash: 9745dce03d87b447dfd606f021891794cb343593
+ms.sourcegitcommit: 9c262672c388440810464bb7f8bcc9a5c48fa326
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88814728"
+ms.lasthandoff: 09/03/2020
+ms.locfileid: "89419760"
 ---
 # <a name="consulting-service-offers"></a>Предложения консультационных услуг
 
@@ -22,16 +22,16 @@ ms.locfileid: "88814728"
 
 ## <a name="compare-consulting-services"></a>Сравнение консультационных услуг
 
-Интернет-магазины коммерческого магазина, Microsoft AppSource и Azure Marketplace, согласовываются с аудиторией и облачными продуктами, чтобы помочь клиентам найти необходимые объекты. У каждого интернет-магазина есть специализированные варианты публикации, которые помогут вам максимально увеличить инвестиции в публикацию. Дополнительные сведения о разнице между двумя Интернет-магазинами см. в статье [сравнение Microsoft AppSource и Azure Marketplace](comparing-appsource-azure-marketplace.md).
+Коммерческие Интернет-магазины Marketplace, Microsoft AppSource и Azure Marketplace, согласовываются с типами решений и облачными продуктами, чтобы помочь клиентам найти необходимые объекты. У каждого интернет-магазина есть специализированные варианты публикации, которые помогут вам максимально увеличить инвестиции в публикацию. Дополнительные сведения о разнице между двумя Интернет-магазинами см. в статье [сравнение Microsoft AppSource и Azure Marketplace](comparing-appsource-azure-marketplace.md).
 
 Предложения о предоставлении услуг на базе Dynamics 365, Power Apps, и Power BI могут размещаться в AppSource. Дополнительные сведения см. в документе [с рекомендациями по размещению консультационных услуг в Microsoft AppSource](https://go.microsoft.com/fwlink/?LinkId=828734&clcid=0x409).
 
 Предложения консультационных услуг и управляемых служб, основанные на Microsoft Azure, могут быть указаны в Azure Marketplace. Дополнительные сведения см. в статьях [Как опубликовать консультационную услугу Azure](./partner-center-portal/create-consulting-service-offer.md) и [Как опубликовать предложения управляемых служб в Azure Marketplace](../lighthouse/how-to/publish-managed-services-offers.md).
 
 > [!Note]
-> Консультационные услуги в Azure Marketplace должны ориентироваться на предложения для технических специалистов и содержать технические решения и службы Azure.
+> Консультационные услуги в Azure Marketplace должны сосредоточиться на технических решениях и службах Azure.
 >
-> Консультационные услуги в AppSource должны ориентироваться на предложения пользователей с опытом предоставления качественных решений для Dynamics 365, Power BI или Power Apps.
+> Консультационные услуги в AppSource должны сосредоточиться на бизнес-решениях для Dynamics 365, Power BI или Power Apps.
  
 > [!TIP]
 > Чтобы опубликовать в Azure Marketplace, в раскрывающемся списке **основной продукт** центра партнеров выберите **Azure**.
@@ -131,7 +131,7 @@ ms.locfileid: "88814728"
 > * **Лично**. На месте расположения клиента или на территории партнера.
 > * **Виртуально**. С помощью телеконференций, веб-конференций или удаленной реализации.
 
-Как только вы настроите необходимые элементы, перечисленные выше, команда проверки содержимого проверит, чтобы ваше описание предложения было информативным и исчерпывающим для целевой аудитории. 
+После того как вы настроили ранее указанные элементы, Группа проверки содержимого проверит, что ваше описание предложения является информативным и полным. 
 
 ### <a name="the-listing-title"></a>Заголовок списка
 
@@ -171,9 +171,5 @@ ms.locfileid: "88814728"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Если вы еще не сделали этого, ознакомьтесь со статьей [Расширение облачного бизнеса с помощью Azure Marketplace](https://azuremarketplace.microsoft.com/sell).
-
-Чтобы зарегистрироваться и начать работу в Центре партнеров, выполните следующие действия.
-
-* [Войдите в Центр партнеров](https://partner.microsoft.com/dashboard/account/v3/enrollment/introduction/partnership), чтобы создать или завершить свое предложение.
-* Дополнительные сведения см. в разделе [Создание предложения консультационных услуг](./partner-center-portal/create-consulting-service-offer.md).
+- [Развивайте свой облачный бизнес с помощью Azure Marketplace](https://azuremarketplace.microsoft.com/sell).
+- [Создание предложения консультационных услуг](./partner-center-portal/create-consulting-service-offer.md)

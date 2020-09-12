@@ -9,12 +9,12 @@ ms.subservice: general
 ms.topic: how-to
 ms.date: 8/30/2020
 ms.author: mbaldwin
-ms.openlocfilehash: 8f1e95c1244d327478862c3919481394d974ea42
-ms.sourcegitcommit: bcda98171d6e81795e723e525f81e6235f044e52
+ms.openlocfilehash: 9b7abc39bf50a61b7b52bc4027c6d845728c3874
+ms.sourcegitcommit: 9c262672c388440810464bb7f8bcc9a5c48fa326
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/01/2020
-ms.locfileid: "89270345"
+ms.lasthandoff: 09/03/2020
+ms.locfileid: "89419271"
 ---
 # <a name="provide-access-to-key-vault-keys-certificates-and-secrets-with-an-azure-role-based-access-control-preview"></a>Предоставление доступа к ключам, сертификатам и секретам Key Vault с помощью управления доступом на основе ролей Azure (Предварительная версия)
 
@@ -38,7 +38,7 @@ Azure RBAC позволяет пользователям управлять ра
 
 Дополнительные сведения о рекомендациях по управлению Azure Key Vault см. в следующих статьях:
 
-- [Рекомендации по Azure Key Vault](best-practices.md)
+- [Рекомендации по использованию Key Vault](best-practices.md)
 - [Ограничения службы Azure Key Vault](service-limits.md)
 
 ## <a name="azure-built-in-roles-for-key-vault-data-plane-operations-preview"></a>Встроенные роли Azure для Key Vault операций с плоскостью данных (Предварительная версия)
@@ -61,6 +61,10 @@ Azure RBAC позволяет пользователям управлять ра
 Новая модель разрешений RBAC в Azure для хранилища ключей предоставляет альтернативу модели разрешений политики доступа к хранилищу. 
 
 ### <a name="enable-azure-rbac-permissions-on-key-vault"></a>Включение разрешений RBAC в Azure на Key Vault
+
+Во время действия предварительной версии необходимо использовать тег компонента Azure RBAC (Microsoft_Azure_KeyVault_RBACEnabled = true), чтобы просмотреть новые параметры модели разрешений.
+
+https://portal.azure.com/?Microsoft_Azure_KeyVault_RBACEnabled=true#home
 
 > [!IMPORTANT]
 > Настройка модели разрешений Azure RBAC делает недействительными все разрешения политик доступа. Это может привести к простоям, если эквивалентные роли Azure не назначены.
@@ -205,8 +209,6 @@ az role definition create --role-definition '{ \
 Дополнительные сведения о создании пользовательских ролей см. в следующих статьях:
 
 [Настраиваемые роли Azure](https://docs.microsoft.com/azure/role-based-access-control/custom-roles)
-
-Для доступных действий проверка приложения: **Доступные действия**
 
 ## <a name="known-limits-and-performance"></a>Известные ограничения и производительность
 

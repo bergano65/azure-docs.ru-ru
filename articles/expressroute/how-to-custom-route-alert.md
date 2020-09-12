@@ -2,17 +2,17 @@
 title: 'ExpressRoute: Настройка пользовательских оповещений для объявленных маршрутов'
 description: В этой статье показано, как с помощью службы автоматизации Azure и Logic Apps отслеживать количество маршрутов, объявляемых из шлюза ExpressRoute в локальные сети, чтобы предотвратить попадание в пределы маршрутов 200.
 services: expressroute
-author: cherylmc
+author: duongau
 ms.service: expressroute
 ms.topic: how-to
 ms.date: 05/29/2020
-ms.author: cherylmc
-ms.openlocfilehash: 42f416cf6f297eb54298a10162e7ba28f7acd1bd
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.author: duau
+ms.openlocfilehash: f29f43234f1541abeb448e722d0b72ef7c0221c9
+ms.sourcegitcommit: 5a3b9f35d47355d026ee39d398c614ca4dae51c6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84738487"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89401730"
 ---
 # <a name="configure-custom-alerts-to-monitor-advertised-routes"></a>Настройка пользовательских оповещений для отслеживания объявляемых маршрутов
 
@@ -235,7 +235,7 @@ Write-Output  $jsonResults
 
 При запуске скрипта PowerShell выполняется сбор списка значений:
  
-* Группа ресурсов
+* групп ресурсов;
 
 * Имя шлюза ExpressRoute
 
@@ -257,7 +257,7 @@ Write-Output  $jsonResults
 
 * Предупреждающее сообщение для подробного описания состояния (ОК, предупреждение, предупреждение)
 
-Сценарий PowerShell преобразует собранные данные в выходные данные JSON. Модуль Runbook использует командлет PowerShell [Write-Output](https://docs.microsoft.com/powershell/module/Microsoft.PowerShell.Utility/Write-Output?) в качестве потока вывода для передачи информации клиенту.
+Сценарий PowerShell преобразует собранные данные в выходные данные JSON. Модуль Runbook использует командлет PowerShell [Write-Output](https://docs.microsoft.com/powershell/module/Microsoft.PowerShell.Utility/Write-Output?)  в качестве потока вывода для передачи информации клиенту.
 
 ### <a name="4-validate-the-runbook"></a><a name="validate"></a>4. Проверка модуля Runbook
 
@@ -399,7 +399,7 @@ Azure Logic Apps — это Orchestrator для всех процессов сб
 
 6. В поле корень действия **условия** измените логическую операцию на **или**.
 
-   :::image type="content" source="./media/custom-route-alert-portal/condition-or.png" alt-text="Ни" lightbox="./media/custom-route-alert-portal/condition-or-expand.png":::
+   :::image type="content" source="./media/custom-route-alert-portal/condition-or.png" alt-text="Or" lightbox="./media/custom-route-alert-portal/condition-or-expand.png":::
 
 7. Проверьте значение числа префиксов сети, которые шлюз ExpressRoute объявляет двум одноранговым узлам BGP. Число маршрутов доступно в "numRoutePeer1" и "numRoutePeer2" в **динамическом содержимом**. В поле значение введите значение для **numRoutePeer1**.
 
@@ -455,6 +455,6 @@ Logic Apps предоставляет много соединителей эле
 
 :::image type="content" source="./media/custom-route-alert-portal/trigger.png" alt-text="Запустить триггер":::
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о настройке рабочего процесса см. в разделе [Azure Logic Apps](../logic-apps/logic-apps-overview.md).

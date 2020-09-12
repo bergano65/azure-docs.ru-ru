@@ -6,12 +6,12 @@ ms.suite: integration
 ms.reviewer: klam, rarayudu, logicappspm
 ms.topic: conceptual
 ms.date: 03/11/2020
-ms.openlocfilehash: a7cc135555db2673225d857bf6a21e57de3e3f6b
-ms.sourcegitcommit: 5b8fb60a5ded05c5b7281094d18cf8ae15cb1d55
+ms.openlocfilehash: ad5b4245cc445ecf8fae22c39db3365d71730a56
+ms.sourcegitcommit: 5a3b9f35d47355d026ee39d398c614ca4dae51c6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87386169"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89400149"
 ---
 # <a name="set-up-customer-managed-keys-to-encrypt-data-at-rest-for-integration-service-environments-ises-in-azure-logic-apps"></a>Настройка ключей, управляемых клиентом, для шифрования неактивных данных в средах службы интеграции (Исес) в Azure Logic Apps
 
@@ -47,7 +47,7 @@ Azure Logic Apps использует хранилище Azure для хране
   |----------|-------|
   | **Тип ключа** | RSA |
   | **Размер ключа RSA** | 2048 |
-  | **Включен** | Да |
+  | **Enabled** | Да |
   |||
 
   ![Создание ключа шифрования, управляемого клиентом](./media/customer-managed-keys-integration-service-environment/create-customer-managed-key-for-encryption.png)
@@ -225,7 +225,7 @@ Azure Logic Apps использует хранилище Azure для хране
 
    1. Завершив работу с областью **политики доступа** , нажмите кнопку **сохранить**.
 
-Дополнительные сведения см. в статье [предоставление Key Vault проверки подлинности с помощью управляемого удостоверения](../key-vault/general/managed-identity.md#grant-your-app-access-to-key-vault).
+Дополнительные сведения см. в статьях [Проверка подлинности в Key Vault](/azure/key-vault/general/authentication) и [назначение политики доступа Key Vault](/azure/key-vault/general/assign-access-policy-portal).
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

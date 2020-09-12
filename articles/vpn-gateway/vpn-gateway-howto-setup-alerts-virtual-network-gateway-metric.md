@@ -2,17 +2,17 @@
 title: Настройка оповещений в метриках VPN-шлюза Azure
 description: Узнайте, как использовать портал Azure для настройки оповещений Azure Monitor на основе метрик для VPN-шлюзов виртуальной сети.
 services: vpn-gateway
-author: kumudD
+author: cherylmc
 ms.service: vpn-gateway
 ms.topic: how-to
-ms.date: 04/22/2019
+ms.date: 09/03/2020
 ms.author: alzam
-ms.openlocfilehash: 14bb407cb12e24ca789085e954aaabff2333da7b
-ms.sourcegitcommit: bfeae16fa5db56c1ec1fe75e0597d8194522b396
+ms.openlocfilehash: 05fbc5675d6ee3b6720d9db9e07e7010cf1d9172
+ms.sourcegitcommit: bf1340bb706cf31bb002128e272b8322f37d53dd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/10/2020
-ms.locfileid: "88033501"
+ms.lasthandoff: 09/03/2020
+ms.locfileid: "89435663"
 ---
 # <a name="set-up-alerts-on-vpn-gateway-metrics"></a>Настройка оповещений для метрик VPN-шлюза
 
@@ -21,16 +21,16 @@ ms.locfileid: "88033501"
 
 |**Метрика**   | **Единица измерения** | **Степень детализации данных** | **Описание** | 
 |---       | ---        | ---       | ---            | ---       |
-|**AverageBandwidth**| Байт/с  | 5 мин| Среднее использование пропускной способности для всех подключений типа "сеть — сеть" в шлюзе.     |
-|**P2SBandwidth**| Байт/с  | 1 минута  | Среднее использование пропускной способности всех подключений типа "точка — сеть" в шлюзе.    |
-|**P2SConnectionCount**| Count  | 1 минута  | Число подключений типа "точка — сеть" в шлюзе.   |
-|**TunnelAverageBandwidth** | Байт/с    | 5 мин  | Среднее использование пропускной способности туннелей, созданных на шлюзе. |
-|**TunnelEgressBytes** | Байты | 5 мин | Исходящий трафик по туннелям, созданным на шлюзе.   |
-|**TunnelEgressPackets** | Count | 5 мин | Число исходящих пакетов в туннелях, созданных на шлюзе.   |
-|**TunnelEgressPacketDropTSMismatch** | Count | 5 мин | Число исходящих пакетов, отбрасываемых в туннелях, вызванных несоответствием селектора трафика. |
-|**TunnelIngressBytes** | Байты | 5 мин | Входящий трафик по туннелям, созданным на шлюзе.   |
-|**TunnelIngressPackets** | Count | 5 мин | Число входящих пакетов на туннели, созданных на шлюзе.   |
-|**TunnelIngressPacketDropTSMismatch** | Count | 5 мин | Число входящих пакетов, отбрасываемых в туннелях, вызванных несоответствием селектора трафика. |
+|**AverageBandwidth**| Байт/с  | 5 минут| Среднее использование пропускной способности для всех подключений типа "сеть — сеть" в шлюзе.     |
+|**P2SBandwidth**| Байт/с  | 1 минута  | Среднее использование пропускной способности всех подключений типа "точка — сеть" в шлюзе.    |
+|**P2SConnectionCount**| Количество  | 1 минута  | Число подключений типа "точка — сеть" в шлюзе.   |
+|**TunnelAverageBandwidth** | Байт/с    | 5 минут  | Среднее использование пропускной способности туннелей, созданных на шлюзе. |
+|**TunnelEgressBytes** | Байты | 5 минут | Исходящий трафик по туннелям, созданным на шлюзе.   |
+|**TunnelEgressPackets** | Количество | 5 минут | Число исходящих пакетов в туннелях, созданных на шлюзе.   |
+|**TunnelEgressPacketDropTSMismatch** | Количество | 5 минут | Число исходящих пакетов, отбрасываемых в туннелях, вызванных несоответствием селектора трафика. |
+|**TunnelIngressBytes** | Байты | 5 минут | Входящий трафик по туннелям, созданным на шлюзе.   |
+|**TunnelIngressPackets** | Количество | 5 минут | Число входящих пакетов на туннели, созданных на шлюзе.   |
+|**TunnelIngressPacketDropTSMismatch** | Количество | 5 минут | Число входящих пакетов, отбрасываемых в туннелях, вызванных несоответствием селектора трафика. |
 
 
 ## <a name="set-up-azure-monitor-alerts-based-on-metrics-by-using-the-azure-portal"></a><a name="setup"></a>Настройка оповещений Azure Monitor на основе метрик с помощью портал Azure
@@ -50,11 +50,11 @@ ms.locfileid: "88033501"
 
 2. Выберите VPN-шлюз в качестве ресурса.
 
-   ![Кнопка "выбрать" и VPN-шлюз в списке ресурсов](./media/vpn-gateway-howto-setup-alerts-virtual-network-gateway-metric/metric-alert2.png "Выбрать")
+   ![Кнопка "выбрать" и VPN-шлюз в списке ресурсов](./media/vpn-gateway-howto-setup-alerts-virtual-network-gateway-metric/metric-alert2.png "Выберите пункт")
 
 3. Выберите метрику для настройки оповещения.
 
-   ![Выбранная метрика в списке метрик](./media/vpn-gateway-howto-setup-alerts-virtual-network-gateway-metric/metric-alert3.png "Выбрать")
+   ![Выбранная метрика в списке метрик](./media/vpn-gateway-howto-setup-alerts-virtual-network-gateway-metric/metric-alert3.png "Выберите пункт")
 4. Настройте логику сигнала. Существует три компонента:
 
     а. **Измерения**: если у метрики есть измерения, можно выбрать определенные значения измерений, чтобы предупреждение выработало только данные этого измерения. Они необязательны.
@@ -63,11 +63,11 @@ ms.locfileid: "88033501"
 
     c. **Время**: укажите гранулярность данных метрик и период времени для вычисления предупреждения.
 
-   ![Сведения о настройке логики сигнала](./media/vpn-gateway-howto-setup-alerts-virtual-network-gateway-metric/metric-alert4.png "Выбрать")
+   ![Сведения о настройке логики сигнала](./media/vpn-gateway-howto-setup-alerts-virtual-network-gateway-metric/metric-alert4.png "Выберите пункт")
 
 5. Чтобы просмотреть настроенные правила, выберите **Управление правилами оповещений**.
 
-   ![Кнопка для управления правилами оповещений](./media/vpn-gateway-howto-setup-alerts-virtual-network-gateway-metric/metric-alert8.png "Выбрать")
+   ![Кнопка для управления правилами оповещений](./media/vpn-gateway-howto-setup-alerts-virtual-network-gateway-metric/metric-alert8.png "Выберите пункт")
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

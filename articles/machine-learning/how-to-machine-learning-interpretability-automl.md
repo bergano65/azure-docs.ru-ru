@@ -10,12 +10,12 @@ ms.custom: how-to
 ms.author: mithigpe
 author: minthigpen
 ms.date: 07/09/2020
-ms.openlocfilehash: 0ddfb0c9b10d96acd511b7bfaee4c6ef85d04812
-ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
+ms.openlocfilehash: 921132947fbf52fbd187941b96d8b75197763387
+ms.sourcegitcommit: 9c262672c388440810464bb7f8bcc9a5c48fa326
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87306423"
+ms.lasthandoff: 09/03/2020
+ms.locfileid: "89419118"
 ---
 # <a name="interpretability-model-explanations-in-automated-machine-learning-preview"></a>Интерпретируемость: пояснения к модели в автоматизированном машинном обучении (Предварительная версия)
 
@@ -39,6 +39,14 @@ ms.locfileid: "87306423"
 ## <a name="interpretability-during-training-for-the-best-model"></a>Возможности интерпретации во время обучения для наилучшей модели
 
 Извлеките пояснения из `best_run` , которое включает объяснения для сконструированных функций.
+
+> [!Warning]
+> Понятность, объяснение лучшей модели недоступна для экспериментов автоматического обучения, которые рекомендуют следующие алгоритмы в качестве наилучшей модели: 
+> * ForecastTCN
+> * Среднее значение 
+> * Алгоритма
+> * Среднее значение по сезону 
+> * Сезонный Байес
 
 ### <a name="download-engineered-feature-importance-from-artifact-store"></a>Скачивание характеристик сконструированной функции из хранилища артефактов
 
@@ -112,7 +120,7 @@ engineered_explanations = explainer.explain(['local', 'global'], eval_dataset=au
 print(engineered_explanations.get_feature_importance_dict())
 ```
 
-### <a name="interpretability-during-inference"></a>Интерпретируемость во время вывода
+## <a name="interpretability-during-inference"></a>Интерпретируемость во время вывода
 
 В этом разделе вы узнаете, как эксплуатацию автоматизированную Модель ML с помощью объяснения, которое использовалось для расчета объяснений в предыдущем разделе.
 
@@ -213,6 +221,6 @@ if service.state == 'Healthy':
 
 [![Архитектура интерпретации Машинное обучение](./media/how-to-machine-learning-interpretability-automl/automl-explainability.png)](./media/how-to-machine-learning-interpretability-automl/automl-explainability.png#lightbox)
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о том, как включить пояснения к модели и важность признаков в областях пакета SDK Машинное обучение Azure, отличного от автоматизированного машинного обучения, см. в [статье о концепции, посвященной возможностям интерпретации](how-to-machine-learning-interpretability.md).

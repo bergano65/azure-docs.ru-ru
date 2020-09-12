@@ -1,18 +1,18 @@
 ---
 title: Добавление модулей Runbook службы автоматизации Azure в Site Recovery планы восстановления
 description: Узнайте, как расширить планы восстановления с помощью службы автоматизации Azure для аварийного восстановления, используя Azure Site Recovery.
-author: rajani-janaki-ram
-manager: gauravd
+author: Rajeswari-Mamilla
+manager: rochakm
 ms.service: site-recovery
 ms.topic: conceptual
 ms.date: 09/18/2019
-ms.author: rajanaki
-ms.openlocfilehash: 1df17ccb41c974c8939710850b5bb71ee3a5ef1b
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.author: ramamill
+ms.openlocfilehash: a141280338632fdad7053cbbe76c8bdf2797443d
+ms.sourcegitcommit: ac5cbef0706d9910a76e4c0841fdac3ef8ed2e82
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87021585"
+ms.lasthandoff: 09/03/2020
+ms.locfileid: "89424877"
 ---
 # <a name="add-azure-automation-runbooks-to-recovery-plans"></a>Добавление модулей Runbook службы автоматизации Azure в планы восстановления
 
@@ -98,7 +98,7 @@ $vmMap = $RecoveryPlanContext.VmMap
 
 
 
-## <a name="before-you-start"></a>Прежде чем начать
+## <a name="before-you-start"></a>Перед началом работы
 
 - Если вы еще не знакомы со службой автоматизации Azure, вы можете [зарегистрироваться](https://azure.microsoft.com/services/automation/) и [скачать примеры сценариев](https://azure.microsoft.com/documentation/scripts/).
 - Убедитесь, что в учетную запись службы автоматизации добавлены следующие модули.
@@ -115,7 +115,7 @@ $vmMap = $RecoveryPlanContext.VmMap
 ## <a name="customize-the-recovery-plan"></a>Настройка плана восстановления
 
 1. В хранилище выберите **планы восстановления (Site Recovery)** .
-2. Чтобы создать план восстановления, щелкните **+ план восстановления**. [Подробнее.](site-recovery-create-recovery-plans.md) Если у вас уже есть план восстановления, выберите его, чтобы открыть.
+2. Чтобы создать план восстановления, щелкните **+ план восстановления**. [Подробнее](site-recovery-create-recovery-plans.md). Если у вас уже есть план восстановления, выберите его, чтобы открыть.
 3. На странице план восстановления нажмите кнопку **настроить**.
 
     ![Нажмите кнопку "Настроить"](media/site-recovery-runbook-automation-new/custom-rp.png)

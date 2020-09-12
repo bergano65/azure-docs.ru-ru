@@ -2,20 +2,20 @@
 title: Проверка параметров диспетчера трафика Azure
 description: В этой статье вы узнаете, как проверить параметры диспетчера трафика и протестировать метод маршрутизации трафика.
 services: traffic-manager
-author: rohinkoul
+author: duongau
 ms.service: traffic-manager
 ms.devlang: na
 ms.topic: how-to
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 03/16/2017
-ms.author: rohink
-ms.openlocfilehash: 894f01244fef94e9f5a60823ba06ff38c01288a1
-ms.sourcegitcommit: ec682dcc0a67eabe4bfe242fce4a7019f0a8c405
+ms.author: duau
+ms.openlocfilehash: 4bb7458d4258dffb074d663e5cf712c7a0245cc7
+ms.sourcegitcommit: 5a3b9f35d47355d026ee39d398c614ca4dae51c6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/09/2020
-ms.locfileid: "86187002"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89401526"
 ---
 # <a name="verify-traffic-manager-settings"></a>Проверка параметров диспетчера трафика
 
