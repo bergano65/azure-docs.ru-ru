@@ -11,18 +11,18 @@ ms.date: 04/17/2018
 ms.author: xiaoyul
 ms.reviewer: igorstan
 ms.custom: seo-lt-2019
-ms.openlocfilehash: d4459547300f5dfc7b7c22d1e531b928a13aa66c
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 91b6dac5fba4bb8dfd8cf4a3bb4e5952f8388bb5
+ms.sourcegitcommit: 4a7a4af09f881f38fcb4875d89881e4b808b369b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85213437"
+ms.lasthandoff: 09/04/2020
+ms.locfileid: "89459153"
 ---
 # <a name="using-labels-to-instrument-queries-in-synapse-sql-pool"></a>Использование меток для инструментирования запросов в пуле SQL синапсе
 
 В эту статью включены советы по разработке решений с помощью меток для инструментирования запросов в пуле SQL.
 
-Рекомендации по использованию меток для инструментирования запросов в хранилище данных SQL Azure для разработки решений.
+Советы по использованию меток для инструментирования запросов в Azure синапсе Analytics для разработки решений.
 
 ## <a name="what-are-labels"></a>Что такое метки
 

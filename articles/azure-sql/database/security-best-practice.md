@@ -10,12 +10,12 @@ ms.author: vanto
 ms.topic: article
 ms.date: 02/20/2020
 ms.reviewer: ''
-ms.openlocfilehash: 6630b924decacc5ff59611c657e1d7e38b1813a7
-ms.sourcegitcommit: 8def3249f2c216d7b9d96b154eb096640221b6b9
+ms.openlocfilehash: e720a95007ff06a954affe03f43f386be3bed39f
+ms.sourcegitcommit: bf1340bb706cf31bb002128e272b8322f37d53dd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87541725"
+ms.lasthandoff: 09/03/2020
+ms.locfileid: "89442111"
 ---
 # <a name="playbook-for-addressing-common-security-requirements-with-azure-sql-database-and-azure-sql-managed-instance"></a>Сборник тренировочных заданий для решения общих требований к безопасности базы данных SQL Azure и Azure SQL Управляемый экземпляр
 [!INCLUDE[appliesto-sqldb-sqlmi](../includes/appliesto-sqldb-sqlmi.md)]
@@ -33,7 +33,7 @@ ms.locfileid: "87541725"
 
 ### <a name="deployment-offers-not-covered-in-this-guide"></a>Предложения по развертыванию, не описанные в этом разделе
 
-- Хранилище данных SQL Azure
+- Azure Synapse Analytics (прежнее название — Хранилище данных SQL)
 - Виртуальные машины SQL Azure (IaaS)
 - SQL Server
 
@@ -47,7 +47,7 @@ ms.locfileid: "87541725"
 - Сотрудники по конфиденциальности
 - Инженеры по безопасности
 
-### <a name="using-this-guide"></a><a id="using"></a>Использование этого руководством
+### <a name="using-this-guide"></a><a id="using"></a> Использование этого руководством
 
 Этот документ предназначен для дополнения к существующей документации по [безопасности базы данных SQL Azure](security-overview.md) .
 
@@ -62,7 +62,7 @@ ms.locfileid: "87541725"
 
 Мы планируем продолжить обновление рекомендаций и рекомендаций, перечисленных здесь. Укажите входные данные или любые исправления для этого документа, используя ссылку **отзыва** в нижней части этой статьи.
 
-## <a name="authentication"></a>Authentication
+## <a name="authentication"></a>Аутентификация
 
 Аутентификацией называют процесс подтверждения личности пользователя. База данных SQL Azure и SQL Управляемый экземпляр поддерживают два типа проверки подлинности:
 
@@ -174,8 +174,8 @@ ms.locfileid: "87541725"
 **Рекомендации:**
 
 - Используйте [управляемые удостоверения для ресурсов Azure](../../active-directory/managed-identities-azure-resources/overview.md).
-  - [Управляемое удостоверение, назначенное системой](../../active-directory/managed-identities-azure-resources/tutorial-windows-vm-access-sql.md)
-  - [Управляемое удостоверение, назначенное пользователем](../../active-directory/managed-identities-azure-resources/how-to-manage-ua-identity-portal.md)
+  - [Управляемое удостоверение, назначаемое системой](../../active-directory/managed-identities-azure-resources/tutorial-windows-vm-access-sql.md)
+  - [Управляемое удостоверение, назначаемое пользователем](../../active-directory/managed-identities-azure-resources/how-to-manage-ua-identity-portal.md)
   - [Использование базы данных SQL Azure из службы приложений Azure с управляемым удостоверением (без изменений кода)](https://github.com/Azure-Samples/app-service-msi-entityframework-dotnet)
 
 - Использование проверки подлинности на основе сертификатов для приложения.
@@ -501,7 +501,7 @@ ms.locfileid: "87541725"
 
 **Как реализовать**:
 
-- Убедитесь, что клиентские компьютеры, подключающиеся к базе данных SQL Azure и SQL Управляемый экземпляр, используют протокол [TLS](security-overview.md#transport-layer-security-encryption-in-transit).
+- Убедитесь, что клиентские компьютеры, подключающиеся к базе данных SQL Azure и SQL Управляемый экземпляр, используют протокол  [TLS](security-overview.md#transport-layer-security-encryption-in-transit).
 
 **Рекомендации:**
 
@@ -798,6 +798,6 @@ ms.locfileid: "87541725"
 
 - Дополнительные функции обеспечения непрерывности бизнес-процессов, такие как группы автоматической отработки отказа в различных геообъектовах Azure, можно настроить, как описано здесь: [Обзор непрерывности бизнес-процессов](business-continuity-high-availability-disaster-recover-hadr-overview.md)
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - См. [Обзор возможностей безопасности базы данных SQL Azure](security-overview.md) .

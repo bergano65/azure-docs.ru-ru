@@ -5,12 +5,12 @@ services: container-service
 ms.topic: article
 ms.date: 07/06/2020
 author: jluk
-ms.openlocfilehash: 18947f409ebcef570998671f9f421f8228e9692d
-ms.sourcegitcommit: 25bb515efe62bfb8a8377293b56c3163f46122bf
+ms.openlocfilehash: e1c5f32e8e5df69a9c4b1eeeda46caf9d8b51f6e
+ms.sourcegitcommit: bf1340bb706cf31bb002128e272b8322f37d53dd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87987364"
+ms.lasthandoff: 09/03/2020
+ms.locfileid: "89440882"
 ---
 # <a name="secure-pods-with-azure-policy-preview"></a>Защита модулей Pod с помощью политики Azure (Предварительная версия)
 
@@ -28,7 +28,7 @@ ms.locfileid: "87987364"
 
 В этом документе предполагается, что вы развернули следующие ссылки в пошаговом руководстве.
 
-* Зарегистрированные `Microsoft.ContainerService` `Microsoft.PolicyInsights` поставщики ресурсов и с помощью`az provider register`
+* Зарегистрированные `Microsoft.ContainerService` `Microsoft.PolicyInsights` поставщики ресурсов и с помощью `az provider register`
 * `AKS-AzurePolicyAutoApprove`Флаг предварительной версии зарегистрирован с помощью`az feature register`
 * Azure CLI установлен с `aks-preview` расширением 0.4.53 или более поздней версии
 * Кластер AKS на поддерживаемой версии 1,15 или более поздней, с надстройкой политики Azure
@@ -77,18 +77,18 @@ ms.locfileid: "87987364"
 
 |[Управление политикой безопасности Pod](https://kubernetes.io/docs/concepts/policy/pod-security-policy/#what-is-a-pod-security-policy)| Ссылка на определение политики Azure| [Базовая инициатива](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicySetDefinitions%2Fa8640138-9b0a-4a28-b8cb-1666c838647d) | [Ограниченная инициатива](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicySetDefinitions%2F42b8ef37-b724-4e24-bbc8-7a7708edfe00) |
 |---|---|---|---|
-|Запретить запуск привилегированных контейнеров|[Общедоступное облако](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F95edb821-ddaf-4404-9732-666045e056b4)| да | да
-|Запретить совместное использование пространств имен узла|[Общедоступное облако](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F47a1ee2f-2a2a-4576-bf2a-e0e36709c2b8)| да | да
-|Ограничение использования сети и портов узла|[Общедоступное облако](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F82985f06-dc18-4a48-bc1c-b9f4f0098cfe)| да | да
-|Ограничение использования файловой системы узла|[Общедоступное облако](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F098fc59e-46c7-4d99-9b16-64990e543d75)| да | да
-|Ограничение возможностей Linux до [набора по умолчанию](https://docs.docker.com/engine/reference/run/#runtime-privilege-and-linux-capabilities)|[Общедоступное облако](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2Fc26596ff-4d70-4e6a-9a30-c2506bd2f80c) | да | да
-|Ограничение использования определенных типов томов|[Общедоступное облако](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F16697877-1118-4fb1-9b65-9898ec2509ec)| - | Да — разрешенные типы томов: `configMap` ,, `emptyDir` `projected` , `downwardAPI` ,`persistentVolumeClaim`|
-|Укрупнение привилегий до корня|[Общедоступное облако](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F1c6e92c9-99f0-4e55-9cf2-0c234dc48f99) | - | да |
-|Ограничение идентификаторов пользователей и групп контейнера|[Общедоступное облако](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2Ff06ddb64-5fa3-4b77-b166-acb36f7f6042) | - | да|
+|Запретить запуск привилегированных контейнеров|[Общедоступное облако](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F95edb821-ddaf-4404-9732-666045e056b4)| Да | Да
+|Запретить совместное использование пространств имен узла|[Общедоступное облако](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F47a1ee2f-2a2a-4576-bf2a-e0e36709c2b8)| Да | Да
+|Ограничение использования сети и портов узла|[Общедоступное облако](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F82985f06-dc18-4a48-bc1c-b9f4f0098cfe)| Да | Да
+|Ограничение использования файловой системы узла|[Общедоступное облако](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F098fc59e-46c7-4d99-9b16-64990e543d75)| Да | Да
+|Ограничение возможностей Linux до [набора по умолчанию](https://docs.docker.com/engine/reference/run/#runtime-privilege-and-linux-capabilities)|[Общедоступное облако](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2Fc26596ff-4d70-4e6a-9a30-c2506bd2f80c) | Да | Да
+|Ограничение использования определенных типов томов|[Общедоступное облако](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F16697877-1118-4fb1-9b65-9898ec2509ec)| - | Да — разрешенные типы томов: `configMap` ,, `emptyDir` `projected` , `downwardAPI` , `persistentVolumeClaim`|
+|Укрупнение привилегий до корня|[Общедоступное облако](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F1c6e92c9-99f0-4e55-9cf2-0c234dc48f99) | - | Да |
+|Ограничение идентификаторов пользователей и групп контейнера|[Общедоступное облако](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2Ff06ddb64-5fa3-4b77-b166-acb36f7f6042) | - | Да|
 |Ограничить выделение Фсграуп, владеющего томами Pod|[Общедоступное облако](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2Ff06ddb64-5fa3-4b77-b166-acb36f7f6042) | - | Да — допустимые правила: `runAsUser: mustRunAsNonRoot` , `supplementalGroup: mustRunAs 1:65536` , `fsGroup: mustRunAs 1:65535` , `runAsGroup: mustRunAs 1:65535` .  |
-|Требуется профиль секкомп|[Общедоступное облако](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F975ce327-682c-4f2e-aa46-b9598289b86c) | - | Да, Алловедпрофилес * `docker/default` или`runtime/default` |
+|Требуется профиль секкомп|[Общедоступное облако](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F975ce327-682c-4f2e-aa46-b9598289b86c) | - | Да, Алловедпрофилес * `docker/default` или `runtime/default` |
 
-\*DOCKER или Default не рекомендуется использовать в Kubernetes, начиная с версии 1.11
+\* DOCKER или Default не рекомендуется использовать в Kubernetes, начиная с версии 1.11
 
 ### <a name="additional-optional-policies"></a>Дополнительные необязательные политики
 
@@ -258,7 +258,7 @@ kubectl delete -f nginx-unprivileged.yaml
 
 Чтобы отключить надстройку политики Azure, используйте команду [AZ AKS Disable-надстроек][az-aks-disable-addons] .
 
-```azure-cli
+```azurecli
 az aks disable-addons --addons azure-policy --name MyAKSCluster --resource-group MyResourceGroup
 ```
 
@@ -285,7 +285,7 @@ az aks disable-addons --addons azure-policy --name MyAKSCluster --resource-group
 | Область политики | Политики безопасности Pod не являются пространствами имен | Шаблоны ограничений, используемые политикой Azure, не являются пространствами имен.
 | Действие "запретить/аудит/изменения" | Политики безопасности Pod поддерживают только запрещенные действия. Изменения можно выполнять со значениями по умолчанию для запросов на создание. Проверку можно выполнить во время запросов на обновление.| Политика Azure поддерживает как аудит, так & запрещать действия. Изменения пока не поддерживаются, но были запланированы.
 | Соответствие политике безопасности Pod | Не существует сведений о соответствии модулей Pod, существовавших до включения политики безопасности модуля. Несоответствующие Pod, созданные после включения политик безопасности Pod, отклоняются. | Несоответствующие модули, существовавшие до применения политик Azure, будут отображаться в нарушениях политики. Несоответствующие модули Pod, созданные после включения политик Azure, отклоняются, если для политик задано действие Deny.
-| Просмотр политик в кластере | `kubectl get psp` | `kubectl get constrainttemplate`— Возвращаются все политики.
+| Просмотр политик в кластере | `kubectl get psp` | `kubectl get constrainttemplate` — Возвращаются все политики.
 | Политика безопасности Pod "Стандартный — привилегированный" | Ресурс политики безопасности Pod, созданный по умолчанию, создается при включении этой функции. | Привилегированный режим не подразумевает ограничений, поэтому он эквивалентен отсутствию назначения политики Azure.
 | [Политика безопасности Pod "Стандартный" — "базовый"/"по умолчанию"](https://kubernetes.io/docs/concepts/security/pod-security-standards/#baseline-default) | Пользователь устанавливает базовый ресурс политики безопасности Pod. | Политика Azure предоставляет [встроенную базовую инициативу](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicySetDefinitions%2Fa8640138-9b0a-4a28-b8cb-1666c838647d) , которая сопоставляется с базовой политикой безопасности Pod.
 | [Политика безопасности Pod — ограничена по стандарту](https://kubernetes.io/docs/concepts/security/pod-security-standards/#restricted) | Пользователь устанавливает ресурс с ограничением политики безопасности Pod. | Политика Azure предоставляет [встроенную ограниченную инициативу](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicySetDefinitions%2F42b8ef37-b724-4e24-bbc8-7a7708edfe00) , которая сопоставляется с ограниченной политикой безопасности Pod.

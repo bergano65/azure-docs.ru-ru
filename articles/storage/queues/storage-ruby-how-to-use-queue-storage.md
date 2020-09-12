@@ -8,19 +8,19 @@ ms.service: storage
 ms.subservice: queues
 ms.topic: how-to
 ms.reviewer: dineshm
-ms.openlocfilehash: ac47747f7789b23801900804522681e5a4b10e5a
-ms.sourcegitcommit: 2ffa5bae1545c660d6f3b62f31c4efa69c1e957f
+ms.openlocfilehash: c29b864fb3a547599f32c00c9e8c27cbdb0e0a92
+ms.sourcegitcommit: 4a7a4af09f881f38fcb4875d89881e4b808b369b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/11/2020
-ms.locfileid: "88078705"
+ms.lasthandoff: 09/04/2020
+ms.locfileid: "89459612"
 ---
 # <a name="how-to-use-queue-storage-from-ruby"></a>Использование хранилища очередей из Ruby
 [!INCLUDE [storage-selector-queue-include](../../../includes/storage-selector-queue-include.md)]
 
 [!INCLUDE [storage-try-azure-tools-queues](../../../includes/storage-try-azure-tools-queues.md)]
 
-## <a name="overview"></a>Обзор
+## <a name="overview"></a>Overview
 В этом руководстве показано, как реализовать типичные сценарии с использованием службы хранилища очередей Microsoft Azure. Примеры написаны с помощью Ruby Azure API.
 Здесь описаны такие сценарии, как **вставка**, **просмотр**, **получение** и **удаление** сообщений очереди, а также **создание и удаление очередей**.
 
@@ -151,7 +151,7 @@ azure_queue_service.delete_queue("test-queue")
 ## <a name="next-steps"></a>Next Steps
 Вы изучили основные сведения о хранилище очередей. Дополнительные сведения о более сложных задачах по использованию хранилища можно найти по следующим ссылкам.
 
-* Посетите [блог команды разработчиков хранилища Azure](https://blogs.msdn.com/b/windowsazurestorage/)
+* Посетите [блог команды разработчиков хранилища Azure](https://docs.microsoft.com/archive/blogs/windowsazurestorage/)
 * Посетите репозиторий [Azure SDK для Ruby](https://github.com/WindowsAzure/azure-sdk-for-ruby) в GitHub
 
 Сравнение службы очередей Azure, описанной в этой статье, и очередей служебной шины Azure, описанных в статье [Как использовать очереди служебной шины](https://azure.microsoft.com/develop/ruby/how-to-guides/service-bus-queues/), см. в статье [Очереди Azure и очереди служебной шины: сходства и различия](../../service-bus-messaging/service-bus-azure-and-service-bus-queues-compared-contrasted.md).

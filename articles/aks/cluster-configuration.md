@@ -6,12 +6,12 @@ ms.topic: conceptual
 ms.date: 08/06/2020
 ms.author: jpalma
 author: palma21
-ms.openlocfilehash: daffcbf0a2ceb6f28cbb539906d4c6387840aa20
-ms.sourcegitcommit: 62717591c3ab871365a783b7221851758f4ec9a4
+ms.openlocfilehash: 5b26054ae8dfb73dea8d064292beb73220be5e09
+ms.sourcegitcommit: bf1340bb706cf31bb002128e272b8322f37d53dd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/22/2020
-ms.locfileid: "88752097"
+ms.lasthandoff: 09/03/2020
+ms.locfileid: "89433455"
 ---
 # <a name="configure-an-aks-cluster"></a>Настройка кластера AKS.
 
@@ -218,7 +218,7 @@ az extension update --name aks-preview
 ### <a name="use-gen2-vms-on-new-clusters-preview"></a>Использование виртуальных машин Gen2 в новых кластерах (Предварительная версия)
 Настройте кластер для использования виртуальных машин Gen2 для выбранного SKU при создании кластера. Используйте `--aks-custom-headers` флаг, чтобы задать Gen2 в качестве создания виртуальной машины в новом кластере.
 
-```azure-cli
+```azurecli
 az aks create --name myAKSCluster --resource-group myResourceGroup -s Standard_D2s_v3 --aks-custom-headers usegen2vm=true
 ```
 
@@ -227,7 +227,7 @@ az aks create --name myAKSCluster --resource-group myResourceGroup -s Standard_D
 ### <a name="use-gen2-vms-on-existing-clusters-preview"></a>Использование виртуальных машин Gen2 в существующих кластерах (Предварительная версия)
 Настройте новый пул узлов для использования виртуальных машин Gen2. Используйте `--aks-custom-headers` флаг, чтобы задать Gen2 в качестве создания виртуальной машины для этого пула узлов.
 
-```azure-cli
+```azurecli
 az aks nodepool add --name gen2 --cluster-name myAKSCluster --resource-group myResourceGroup -s Standard_D2s_v3 --aks-custom-headers usegen2vm=true
 ```
 
@@ -276,7 +276,7 @@ az extension update --name aks-preview
 
 Настройте кластер для использования временных дисков ОС при создании кластера. Используйте `--aks-custom-headers` флаг, чтобы задать эфемерную ОС в качестве типа диска ОС для нового кластера.
 
-```azure-cli
+```azurecli
 az aks create --name myAKSCluster --resource-group myResourceGroup -s Standard_DS3_v2 --aks-custom-headers EnableEphemeralOSDisk=true
 ```
 
@@ -285,7 +285,7 @@ az aks create --name myAKSCluster --resource-group myResourceGroup -s Standard_D
 ### <a name="use-ephemeral-os-on-existing-clusters-preview"></a>Использование эфемерной ОС в существующих кластерах (Предварительная версия)
 Настройте новый пул узлов для использования временных дисков ОС. Используйте `--aks-custom-headers` флаг, чтобы задать в качестве типа диска ОС в качестве типа диска ОС для пула узлов.
 
-```azure-cli
+```azurecli
 az aks nodepool add --name ephemeral --cluster-name myAKSCluster --resource-group myResourceGroup -s Standard_DS3_v2 --aks-custom-headers EnableEphemeralOSDisk=true
 ```
 

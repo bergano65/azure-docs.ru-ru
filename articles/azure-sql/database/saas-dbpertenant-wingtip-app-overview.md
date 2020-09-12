@@ -11,12 +11,12 @@ author: stevestein
 ms.author: sstein
 ms.reviewer: ''
 ms.date: 09/24/2018
-ms.openlocfilehash: edf66af2df56785977418a118847991165ab3702
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: d291adcf53469825f32b664cb7f4ffdb0bbf244b
+ms.sourcegitcommit: bf1340bb706cf31bb002128e272b8322f37d53dd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84025635"
+ms.lasthandoff: 09/03/2020
+ms.locfileid: "89441023"
 ---
 # <a name="introduction-to-a-multitenant-saas-app-that-uses-the-database-per-tenant-pattern-with-azure-sql-database"></a>Введение в многоклиентское приложение SaaS, использующее шаблон "база данных на клиента" с базой данных SQL Azure
 [!INCLUDE[appliesto-sqldb](../includes/appliesto-sqldb.md)]
@@ -37,7 +37,7 @@ ms.locfileid: "84025635"
 
 ## <a name="sql-database-wingtip-saas-tutorials"></a>Руководства по SaaS Wingtip базы данных SQL
 
-Развернув приложение, изучите перечисленные ниже руководства, которые основываются на базовом развертывании. В этих руководствах рассматриваются распространенные шаблоны SaaS, использующие встроенные функции Базы данных SQL, хранилища данных SQL и других служб Azure. Руководства содержат скрипты PowerShell с подробными описаниями. Эти описания позволят быстрее разобраться в шаблонах управления SaaS и применить их в приложениях.
+Развернув приложение, изучите перечисленные ниже руководства, которые основываются на базовом развертывании. В этих руководствах рассматриваются распространенные шаблоны SaaS, в которых используются встроенные функции базы данных SQL, Azure синапсе Analytics (ранее — хранилище данных SQL) и другие службы Azure. Руководства содержат скрипты PowerShell с подробными описаниями. Эти описания позволят быстрее разобраться в шаблонах управления SaaS и применить их в приложениях.
 
 
 | Учебник | Описание |
@@ -53,7 +53,7 @@ ms.locfileid: "84025635"
 |[Межклиентская аналитика с помощью извлеченных данных](saas-tenancy-tenant-analytics.md) | Извлечение данных клиента в базу данных аналитики или хранилище данных для автономных аналитических запросов. |
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Общие рекомендации по работе с примерами приложений SaaS Wingtip Tickets](saas-tenancy-wingtip-app-guidance-tips.md)
 - [Развертывание и изучение мультитенантного приложения SaaS, использующего базу данных SQL Azure](../../sql-database/saas-dbpertenant-get-started-deploy.md)

@@ -4,12 +4,12 @@ description: В этой статье описывается узел обраб
 ms.topic: conceptual
 ms.date: 06/23/2020
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 27b587e6562b5ba0c9bf28a52a00a9d8e7d9201c
-ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
+ms.openlocfilehash: a05f2172b266301919d0a800fb863b8f0dbe5884
+ms.sourcegitcommit: 5ed504a9ddfbd69d4f2d256ec431e634eb38813e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89010466"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89319508"
 ---
 # <a name="event-processor-host"></a>Узел обработчика событий
 > [!NOTE]
@@ -87,6 +87,8 @@ public class SimpleEventProcessor : IEventProcessor
 
 Наконец, потребители регистрируют экземпляр [EventProcessorHost](/dotnet/api/microsoft.azure.eventhubs.processor.eventprocessorhost) в службе Центров событий. Регистрация класса обработчика событий с экземпляром EventProcessorHost запускает обработку событий. Регистрация указывает службе Центров событий ожидать потребления событий из секций в приложение-потребителе, а также вызова кода реализации [IEventProcessor](/dotnet/api/microsoft.azure.eventhubs.processor.ieventprocessor) всякий раз, когда события передаются для потребления. 
 
+> [!NOTE]
+> В Customergroupname учитывается регистр.  Изменения в Customergroupname могут привести к чтению всех разделов с начала потока.
 
 ### <a name="example"></a>Пример
 

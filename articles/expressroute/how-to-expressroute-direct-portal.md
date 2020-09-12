@@ -2,24 +2,24 @@
 title: 'Azure ExpressRoute: Настройка Direct для ExpressRoute: портал'
 description: Эта страница поможет настроить ExpressRoute Direct с помощью портала.
 services: expressroute
-author: cherylmc
+author: duongau
 ms.service: expressroute
 ms.topic: how-to
 ms.date: 08/06/2020
-ms.author: cherylmc
-ms.openlocfilehash: 475b2aa99296995c3adb51eca2d6bdb53616670e
-ms.sourcegitcommit: 4e5560887b8f10539d7564eedaff4316adb27e2c
+ms.author: duau
+ms.openlocfilehash: 09d3723224f9c678e41a6cbc86b5f8f9655173c8
+ms.sourcegitcommit: 5a3b9f35d47355d026ee39d398c614ca4dae51c6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87903601"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89401475"
 ---
 # <a name="create-expressroute-direct-using-the-azure-portal"></a>Создание ExpressRoute Direct с помощью портал Azure
 
 В этой статье показано, как создать ExpressRoute Direct с помощью портал Azure.
 Служба ExpressRoute Direct позволяет напрямую подключаться к глобальной сети Майкрософт в местах пиринга, стратегически распределенных по всему миру. См. дополнительные сведения об [ExpressRoute Direct](expressroute-erdirect-about.md).
 
-## <a name="before-you-begin"></a><a name="before"></a>Подготовка к работе
+## <a name="before-you-begin"></a><a name="before"></a>Перед началом
 
 Убедитесь, что поставщик ресурсов **Microsoft. Network** зарегистрирован в вашей подписке. Регистрация поставщика ресурсов настраивает подписку для работы с поставщиком ресурсов.
 

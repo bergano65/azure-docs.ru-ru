@@ -8,12 +8,12 @@ ms.subservice: edge
 ms.topic: how-to
 ms.date: 08/25/2020
 ms.author: alkohli
-ms.openlocfilehash: 83ac012c861a0d066bdc47d8e15cbe7ac398aa23
-ms.sourcegitcommit: bcda98171d6e81795e723e525f81e6235f044e52
+ms.openlocfilehash: 7fdd9b8ca0fd62d55f5a9412af9486bfb2b942c1
+ms.sourcegitcommit: 5ed504a9ddfbd69d4f2d256ec431e634eb38813e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/01/2020
-ms.locfileid: "89254225"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89319298"
 ---
 # <a name="deploy-a-php-guestbook-stateless-application-with-redis-on-arc-enabled-kubernetes-cluster-on-azure-stack-edge-gpu"></a>Развертывание приложения с нештатной книгой (Redis) для PHP с поддержкой ARC в кластере Kubernetes на Azure Stack ребра
 
@@ -57,7 +57,7 @@ ms.locfileid: "89254225"
       - В локальном пользовательском интерфейсе устройства Azure Stack пограничных устройств перейдите к разделу **Обзор** и запишите номер программного обеспечения Kubernetes. 
       - Проверьте эти две версии на совместимость с сопоставлением, указанным в поддерживаемой версии Kubernetes. <!--insert link-->.
 
-1. У вас есть [Конфигурация гитопс, которую можно использовать для запуска развертывания Azure Arc](https://github.com/kagoyal/dbehaikudemo). `yaml`Для развертывания на пограничном устройстве Azure Stack вы будете использовать следующие файлы.
+1. У вас есть [Конфигурация гитопс, которую можно использовать для запуска развертывания Azure Arc](https://github.com/kagoyal/dbehaikudemo). В этом примере `yaml` для развертывания на Azure Stack пограничном устройстве будут использоваться следующие файлы.
 
     - `frontend-deployment.yaml`<!-- - The guestbook application has a web frontend serving the HTTP requests written in PHP. It is configured to connect to the redis-master Service for write requests and the redis-slave service for Read requests. This file describes a deployment that runs the frontend of the guestbook application.-->
     - `frontend-service.yaml` <!-- - This allows you to configure an externally visible frontend Service that can be accessed from outside the Kubernetes cluster on your device.-->
@@ -132,7 +132,7 @@ ms.locfileid: "89254225"
     [10.128.44.240]: PS>
     ```  
 
-1. В этом примере интерфейсная служба была развернута как тип: балансировщик. Для просмотра гостевой книги необходимо найти IP-адрес этой службы. Выполните следующую команду:
+1. В этом примере интерфейсная служба была развернута как тип: балансировщик. Для просмотра гостевой книги необходимо найти IP-адрес этой службы. Выполните следующую команду.
 
     `kubectl get service -n <your-namespace>`
     

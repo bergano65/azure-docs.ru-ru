@@ -2,17 +2,17 @@
 title: 'VPN-шлюз Azure: Настройка оповещений для событий журнала диагностики'
 description: Узнайте, как настроить оповещения на основе событий журнала ресурсов из VPN-шлюза Azure с помощью Azure Monitor Log Analytics.
 services: vpn-gateway
-author: kumudD
+author: cherylmc
 ms.service: vpn-gateway
 ms.topic: how-to
-ms.date: 06/12/2019
+ms.date: 09/03/2020
 ms.author: alzam
-ms.openlocfilehash: f8c688adda3924d0cea3c9b57d2d24ed3b3b1e68
-ms.sourcegitcommit: bfeae16fa5db56c1ec1fe75e0597d8194522b396
+ms.openlocfilehash: e2451796cb99f57501ed74aba1dc7a3077b51881
+ms.sourcegitcommit: bf1340bb706cf31bb002128e272b8322f37d53dd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/10/2020
-ms.locfileid: "88033179"
+ms.lasthandoff: 09/03/2020
+ms.locfileid: "89441618"
 ---
 # <a name="set-up-alerts-on-resource-log-events-from-vpn-gateway"></a>Настройка оповещений о событиях журнала ресурсов из VPN-шлюза
 
@@ -20,7 +20,7 @@ ms.locfileid: "88033179"
 
 В Azure доступны следующие журналы ресурсов:
 
-|***Имя*** | ***Описание*** |
+|***имя***; | ***Описание*** |
 |---        | ---               |
 |GatewayDiagnosticLog | Содержит журналы ресурсов для событий настройки шлюза, основные изменения и события обслуживания. |
 |TunnelDiagnosticLog | Содержит события изменения состояния туннеля. События подключения и отключения туннеля имеют обобщенную причину изменения состояния, если применимо |
@@ -39,39 +39,39 @@ ms.locfileid: "88033179"
 
 2. На странице **log Analytics** выберите **создать** .
 
-   ![Страница Log Analytics с кнопкой "создать"](./media/vpn-gateway-howto-setup-alerts-virtual-network-gateway-log/log-alert1.png  "Выбрать")
+   ![Страница Log Analytics с кнопкой "создать"](./media/vpn-gateway-howto-setup-alerts-virtual-network-gateway-log/log-alert1.png  "Выберите пункт")
 
 3. Выберите **создать** и введите сведения.
 
-   ![Сведения о создании рабочей области Log Analytics](./media/vpn-gateway-howto-setup-alerts-virtual-network-gateway-log/log-alert2.png  "Выбрать")
+   ![Сведения о создании рабочей области Log Analytics](./media/vpn-gateway-howto-setup-alerts-virtual-network-gateway-log/log-alert2.png  "Выберите пункт")
 
 4. Найдите VPN-шлюз в колонке **мониторинг**  >  **параметров диагностики** .
 
-   ![Варианты поиска VPN-шлюза в параметрах диагностики](./media/vpn-gateway-howto-setup-alerts-virtual-network-gateway-log/log-alert3.png  "Выбрать")
+   ![Варианты поиска VPN-шлюза в параметрах диагностики](./media/vpn-gateway-howto-setup-alerts-virtual-network-gateway-log/log-alert3.png  "Выберите пункт")
 
 5. Чтобы включить диагностику, дважды щелкните шлюз, а затем выберите **включить диагностику**.
 
-   ![Параметры для включения диагностики](./media/vpn-gateway-howto-setup-alerts-virtual-network-gateway-log/log-alert4.png  "Выбрать")
+   ![Параметры для включения диагностики](./media/vpn-gateway-howto-setup-alerts-virtual-network-gateway-log/log-alert4.png  "Выберите пункт")
 
 6. Введите сведения и убедитесь, что выбран параметр **Send to log Analytics** и **туннелдиагностиклог** . Выберите рабочую область Log Analytics, созданную на шаге 3.
 
-   ![Выбранные флажки](./media/vpn-gateway-howto-setup-alerts-virtual-network-gateway-log/log-alert5.png  "Выбрать")
+   ![Выбранные флажки](./media/vpn-gateway-howto-setup-alerts-virtual-network-gateway-log/log-alert5.png  "Выберите пункт")
 
    > [!NOTE]
    > Первоначальное отображение данных может занять несколько часов.
 
 7. Перейдите к обзору ресурса шлюза виртуальной сети и выберите **оповещения** на вкладке **мониторинг** . Затем создайте новое правило генерации оповещений или измените существующее правило генерации оповещений.
 
-   ![Варианты создания нового правила генерации оповещений](./media/vpn-gateway-howto-setup-alerts-virtual-network-gateway-log/log-alert6.png  "Выбрать")
+   ![Варианты создания нового правила генерации оповещений](./media/vpn-gateway-howto-setup-alerts-virtual-network-gateway-log/log-alert6.png  "Выберите пункт")
 
-   ![точка-сеть](./media/vpn-gateway-howto-setup-alerts-virtual-network-gateway-log/log-alert6.png  "Выбрать")
+   ![точка-сеть](./media/vpn-gateway-howto-setup-alerts-virtual-network-gateway-log/log-alert6.png  "Выберите пункт")
 8. Выберите рабочую область Log Analytics и ресурс.
 
-   ![Параметры для рабочей области и ресурса](./media/vpn-gateway-howto-setup-alerts-virtual-network-gateway-log/log-alert7.png  "Выбрать")
+   ![Параметры для рабочей области и ресурса](./media/vpn-gateway-howto-setup-alerts-virtual-network-gateway-log/log-alert7.png  "Выберите пункт")
 
 9. Выберите **Пользовательский поиск по журналу** в качестве логики сигнала в разделе **Добавить условие**.
 
-   ![Элементы, выделенные для пользовательского поиска по журналам](./media/vpn-gateway-howto-setup-alerts-virtual-network-gateway-log/log-alert8.png  "Выбрать")
+   ![Элементы, выделенные для пользовательского поиска по журналам](./media/vpn-gateway-howto-setup-alerts-virtual-network-gateway-log/log-alert8.png  "Выберите пункт")
 
 10. Введите следующий запрос в текстовом поле **поисковый запрос** . Замените значения в <> и TimeGenerated соответствующим образом.
 
@@ -88,15 +88,15 @@ ms.locfileid: "88033179"
 
     Установите пороговое значение 0 и нажмите кнопку **Готово**.
 
-    ![Ввод запроса и выбор порогового значения](./media/vpn-gateway-howto-setup-alerts-virtual-network-gateway-log/log-alert9.png  "Выбрать")
+    ![Ввод запроса и выбор порогового значения](./media/vpn-gateway-howto-setup-alerts-virtual-network-gateway-log/log-alert9.png  "Выберите пункт")
 
 11. На странице **Создание правила** выберите **создать** в разделе **группы действий** . Введите сведения и нажмите кнопку **ОК**.
 
-    ![Сведения о новой группе действий](./media/vpn-gateway-howto-setup-alerts-virtual-network-gateway-log/log-alert10.png  "Выбрать")
+    ![Сведения о новой группе действий](./media/vpn-gateway-howto-setup-alerts-virtual-network-gateway-log/log-alert10.png  "Выберите пункт")
 
 12. На странице **Создание правила** введите сведения о **действиях настройки** и убедитесь, что в разделе **имя группы действий** отображается правильное имя. Выберите **создать правило генерации оповещений** , чтобы создать правило.
 
-    ![Параметры для создания правила](./media/vpn-gateway-howto-setup-alerts-virtual-network-gateway-log/log-alert11.png  "Выбрать")
+    ![Параметры для создания правила](./media/vpn-gateway-howto-setup-alerts-virtual-network-gateway-log/log-alert11.png  "Выберите пункт")
 
 ## <a name="set-up-alerts-by-using-powershell"></a><a name="setuppowershell"></a>Настройка оповещений с помощью PowerShell
 

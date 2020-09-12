@@ -14,12 +14,12 @@ ms.author: ajburnle
 ms.reviewer: jeffsta
 ms.custom: it-pro, seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 9909b92e58d73c9578d3d17a7bbf24fe2924fae2
-ms.sourcegitcommit: fbb66a827e67440b9d05049decfb434257e56d2d
+ms.openlocfilehash: c69f2ce964d9171197771d783358dcef2ca60726
+ms.sourcegitcommit: 5ed504a9ddfbd69d4f2d256ec431e634eb38813e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87797089"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89319531"
 ---
 # <a name="assign-or-remove-licenses-in-the-azure-active-directory-portal"></a>Назначение или удаление лицензий на портале Azure Active Directory
 
@@ -35,7 +35,7 @@ ms.locfileid: "87797089"
 
 - Azure AD Premium P2
 
-Конкретные сведения о каждом плане лицензии и связанных с ней сведениях о лицензировании см. в разделе [какая лицензия необходима?](https://azure.microsoft.com/pricing/details/active-directory/) Чтобы зарегистрироваться в планах лицензий Azure AD Premium, см. [здесь](https://docs.microsoft.com/azure/active-directory/fundamentals/active-directory-get-started-premium).
+Конкретные сведения о каждом плане лицензии и связанных с ней сведениях о лицензировании см. в разделе [какая лицензия необходима?](https://azure.microsoft.com/pricing/details/active-directory/) Чтобы зарегистрироваться в планах лицензий Azure AD Premium, см. [здесь](./active-directory-get-started-premium.md).
 
 Некоторые службы Майкрософт доступны не во всех регионах. Прежде чем назначать лицензию группе, вы должны указать **Место использования** для всех участников. Это значение можно задать в разделе **Azure Active Directory &gt; Пользователи &gt; Профиль &gt; Параметры** в Azure AD. Любой пользователь, расположение которого не указано, наследует расположение Организации Azure AD.
 
@@ -140,7 +140,7 @@ ms.locfileid: "87797089"
     > [!NOTE]
     > Если локальная учетная запись пользователя, синхронизированная с Azure AD, выходит за пределы области действия синхронизации или при удалении синхронизации, то пользователь обратимо удаляется в Azure AD. В этом случае лицензии, назначенные пользователю напрямую или через лицензирование на основе группы, будут помечены как **приостановленные** , а не **удалены**.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 После назначения лицензий можно выполнять следующие операции:
 

@@ -8,16 +8,16 @@ ms.service: active-directory
 ms.subservice: develop
 ms.topic: how-to
 ms.workload: identity
-ms.date: 08/25/2020
+ms.date: 09/03/2020
 ms.author: ryanwi
 ms.reviewer: paulgarn, hirsin, keyam
 ms.custom: aaddev
-ms.openlocfilehash: e53cf38c9544884caddfdf03c2615217c49ec3d0
-ms.sourcegitcommit: 656c0c38cf550327a9ee10cc936029378bc7b5a2
+ms.openlocfilehash: 2d895a6703123d8725a375e29e2e26b64b621f23
+ms.sourcegitcommit: bf1340bb706cf31bb002128e272b8322f37d53dd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89068732"
+ms.lasthandoff: 09/03/2020
+ms.locfileid: "89436856"
 ---
 # <a name="how-to-provide-optional-claims-to-your-app"></a>Как предоставить приложению необязательные утверждения
 
@@ -130,7 +130,7 @@ ms.locfileid: "89068732"
 
 **Настройка необязательных утверждений с помощью пользовательского интерфейса**
 
-[![Настройка необязательных утверждений с помощью пользовательского интерфейса](./media/active-directory-optional-claims/token-configuration.png)](./media/active-directory-optional-claims/token-configuration.png)
+[![Настройка необязательных утверждений в пользовательском интерфейсе](./media/active-directory-optional-claims/token-configuration.png)](./media/active-directory-optional-claims/token-configuration.png)
 
 1. В разделе **Управление** выберите **Конфигурация токена**.
 1. Выберите **Добавить необязательное утверждение**.
@@ -238,7 +238,7 @@ ms.locfileid: "89068732"
 1. Выберите в списке приложение, для которого нужно настроить необязательные утверждения.
 1. В разделе **Управление** выберите **Конфигурация токена**.
 1. Выберите **Добавить утверждение группы**.
-1. Выберите типы для возвращения (**Все группы**, **SecurityGroup** или **DirectoryRole**). Параметр **Все группы** включает **SecurityGroup**, **DirectoryRole** и **DistributionList**.
+1. Выберите типы групп для возврата (**группы безопасности**или **роли каталогов**, **все группы**и **группы, назначенные приложению**). **Группы, назначенные** параметру приложения, включают только группы, назначенные приложению. Параметр **все группы** включает в себя **SecurityGroup**, **DirectoryRole**и **Дистрибутионлист**, но не **назначенные приложению группы**. 
 1. Необязательно. Выберите свойства определенного типа маркера, чтобы изменить значение утверждения групп, чтобы оно содержало атрибуты локальной группы или чтобы изменить тип утверждения на роль.
 1. Нажмите кнопку **Сохранить**.
 
@@ -256,6 +256,7 @@ ms.locfileid: "89068732"
    - "Все" (этот параметр включает SecurityGroup, DirectoryRole и DistributionList)
    - "SecurityGroup"
    - "DirectoryRole"
+   - "ApplicationGroup" (этот параметр включает только группы, назначенные приложению)
 
    Пример:
 
@@ -307,7 +308,7 @@ ms.locfileid: "89068732"
 
     **Настройка с помощью пользовательского интерфейса.**
 
-    [![Настройка необязательных утверждений с помощью пользовательского интерфейса](./media/active-directory-optional-claims/groups-example-1.png)](./media/active-directory-optional-claims/groups-example-1.png)
+    [![Настройка необязательных утверждений](./media/active-directory-optional-claims/groups-example-1.png)](./media/active-directory-optional-claims/groups-example-1.png)
 
     **Запись в манифесте приложения.**
 
@@ -328,7 +329,7 @@ ms.locfileid: "89068732"
 
     **Настройка с помощью пользовательского интерфейса.**
 
-    [![Настройка необязательных утверждений с помощью пользовательского интерфейса](./media/active-directory-optional-claims/groups-example-2.png)](./media/active-directory-optional-claims/groups-example-2.png)
+    [![Необязательные утверждения в манифесте](./media/active-directory-optional-claims/groups-example-2.png)](./media/active-directory-optional-claims/groups-example-2.png)
 
     **Запись в манифесте приложения.**
 
@@ -394,7 +395,7 @@ ms.locfileid: "89068732"
 
 1. Выберите **Добавить необязательное утверждение**, выберите тип маркера **SAML**, в списке утверждений выберите **extn.skypeID** (применимо только в том случае, если вы создали объект пользователя Azure AD с именем skypeID), а затем нажмите **Добавить**.
 
-    [![Настройка необязательных утверждений с помощью пользовательского интерфейса](./media/active-directory-optional-claims/token-config-example.png)](./media/active-directory-optional-claims/token-config-example.png)
+    [![Необязательные утверждения для токена SAML](./media/active-directory-optional-claims/token-config-example.png)](./media/active-directory-optional-claims/token-config-example.png)
 
 **Настройка с помощью манифеста.**
 

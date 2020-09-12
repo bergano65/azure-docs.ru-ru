@@ -6,12 +6,12 @@ ms.service: data-lake-store
 ms.topic: conceptual
 ms.date: 05/29/2018
 ms.author: twooley
-ms.openlocfilehash: f56d3a364e38d13931f8e07d749d3a5958dcee67
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 9318ce7d73f2d05dde6815a0ded4269510760251
+ms.sourcegitcommit: bf1340bb706cf31bb002128e272b8322f37d53dd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85322515"
+ms.lasthandoff: 09/03/2020
+ms.locfileid: "89441992"
 ---
 # <a name="integrating-azure-data-lake-storage-gen1-with-other-azure-services"></a>Интеграция Azure Data Lake Storage 1-го поколения с другими службами Azure
 Azure Data Lake Storage 1-го поколения можно использовать вместе с другими службами Azure для охвата более широкого диапазона сценариев. В следующей статье перечислены службы, с которыми может интегрироваться Data Lake Storage 1-го поколения.
@@ -21,7 +21,7 @@ Azure Data Lake Storage 1-го поколения можно использов�
 
 Инструкции по подготовке кластера HDInsight с Data Lake Storage 1-го поколения озера данных см. в следующих статьях.
 
-* [Создание кластеров HDInsight, использующих Data Lake Storage 1-го поколения, с помощью портала Azure](data-lake-store-hdinsight-hadoop-use-portal.md)
+* [Подготавливается кластер HDInsight с Data Lake Storage 1-го поколения с помощью портал Azure](data-lake-store-hdinsight-hadoop-use-portal.md)
 * [Создание кластеров HDInsight, использующих Data Lake Storage 1-го как хранилище по умолчанию, с помощью Azure PowerShell](data-lake-store-hdinsight-hadoop-use-powershell-for-default-storage.md)
 * [Создание кластеров HDInsight, использующих с Data Lake Storage 1-го поколения как дополнительное хранилище, с помощью Azure PowerShell](data-lake-store-hdinsight-hadoop-use-powershell.md)
 
@@ -53,13 +53,13 @@ Power BI можно использовать, чтобы импортирова�
 ## <a name="use-data-lake-storage-gen1-with-sql-server-integration-services-ssis"></a>Использование Data Lake Storage 1-го поколения со службами SQL Server Integration Services (SSIS)
 Вы можете использовать диспетчер подключений Data Lake Storage 1-го поколения в SSIS для подключения пакета служб SSIS к Data Lake Storage 1-го поколения. См. дополнительные сведения об [использовании Data Lake Storage 1-го поколения со службами SSIS](https://docs.microsoft.com/sql/integration-services/connection-manager/azure-data-lake-store-connection-manager).
 
-## <a name="use-data-lake-storage-gen1-with-sql-data-warehouse"></a>Использование Data Lake Storage 1-го поколения с хранилищем данных SQL
-С помощью PolyBase вы можете загружать данные из Data Lake Storage 1-го поколения в хранилище данных SQL. См. дополнительные сведения об [использовании Data Lake Storage 1-го поколения с хранилищем данных SQL](../synapse-analytics/sql-data-warehouse/sql-data-warehouse-load-from-azure-data-lake-store.md).
+## <a name="use-data-lake-storage-gen1-with-azure-synapse-analytics"></a>Использование Data Lake Storage 1-го поколения с Azure синапсе Analytics
+Polybase можно использовать для загрузки данных из Data Lake Storage 1-го поколения в Azure синапсе Analytics (ранее — хранилище данных SQL). Дополнительные сведения см. [в статье использование Data Lake Storage 1-го поколения с Azure синапсе Analytics](../synapse-analytics/sql-data-warehouse/sql-data-warehouse-load-from-azure-data-lake-store.md).
 
 ## <a name="use-data-lake-storage-gen1-with-azure-event-hubs"></a>Использование Data Lake Storage 1-го поколения с центрами событий Azure
 Azure Data Lake Storage 1-го поколения можно использовать для архивации и сбора данных, полученных центрами событий Azure. Дополнительные сведения см. в статье [Запись данных из центров событий с помощью Data Lake Storage 1-го поколения](data-lake-store-archive-eventhub-capture.md).
 
-## <a name="see-also"></a>См. также
+## <a name="see-also"></a>См. также раздел
 * [Общие сведения об Azure Data Lake Storage Gen1](data-lake-store-overview.md)
 * [Начало работы с Data Lake Storage 1-го поколения с помощью портала Azure](data-lake-store-get-started-portal.md)
 * [Начало работы с Data Lake Storage 1-го поколения с помощью PowerShell](data-lake-store-get-started-powershell.md)  

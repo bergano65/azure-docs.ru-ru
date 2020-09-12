@@ -8,12 +8,12 @@ ms.service: load-balancer
 ms.topic: conceptual
 ms.date: 09/04/2019
 ms.author: mbaldwin
-ms.openlocfilehash: 97d2cd8e9ba51e4fc6ebab8459b04f4f37e876d3
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: eec032ad56d00778627fc147761f61c03ba8bafd
+ms.sourcegitcommit: bf1340bb706cf31bb002128e272b8322f37d53dd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84668429"
+ms.lasthandoff: 09/03/2020
+ms.locfileid: "89442094"
 ---
 # <a name="security-controls-for-azure-sql-database-and-sql-managed-instance"></a>Элементы управления безопасностью для базы данных SQL Azure и Управляемый экземпляр SQL
 [!INCLUDE[appliesto-sqldb-sqlmi](../includes/appliesto-sqldb-sqlmi.md)]
@@ -46,7 +46,7 @@ ms.locfileid: "84668429"
 | Управление безопасностью | Да/нет | Примечания|
 |---|---|--|
 | Аутентификация| Да | Azure Active Directory (Azure AD) |
-| Авторизация| Да | Отсутствуют |
+| Авторизация| Да | None |
 
 ## <a name="data-protection"></a>Защита данных
 
@@ -62,16 +62,16 @@ ms.locfileid: "84668429"
 
 | Управление безопасностью | Да/нет | Примечания|
 |---|---|--|
-| Поддержка управления конфигурацией, например управление версиями конфигурации| нет  | None |
+| Поддержка управления конфигурацией, например управление версиями конфигурации| Нет  | None |
 
 ## <a name="additional-security-controls-for-sql-database"></a>Дополнительные средства управления безопасностью для базы данных SQL
 
 | Управление безопасностью | Да/нет | Примечания|
 |---|---|--|
 | Превентивные: Оценка уязвимостей | Да | См. раздел [Служба оценки уязвимостей SQL, позволяющая определить уязвимости базы данных](sql-vulnerability-assessment.md). |
-| Превентивные: обнаружение и классификация данных  | Да | См. раздел [база данных SQL Azure и обнаружение данных хранилища данных sql & классификация](data-discovery-and-classification-overview.md). |
+| Превентивные: обнаружение и классификация данных  | Да | См. раздел [база данных SQL Azure и обнаружение данных Azure синапсе Analytics & классификация](data-discovery-and-classification-overview.md). |
 | Обнаружение: обнаружение угроз | Да | См. [Дополнительные сведения о расширенной защите от угроз для базы данных SQL Azure](threat-detection-overview.md). |
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Дополнительные сведения о [встроенных средствах управления безопасностью в службах Azure](../../security/fundamentals/security-controls.md).

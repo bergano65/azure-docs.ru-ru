@@ -12,12 +12,12 @@ ms.topic: conceptual
 ms.date: 01/10/2018
 ms.author: jingwang
 robots: noindex
-ms.openlocfilehash: 7188cb5774699fc6e31fc3b8c78068bb33c6f552
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 10476544e513b52567eb0ca0182039f2c5f482c3
+ms.sourcegitcommit: bf1340bb706cf31bb002128e272b8322f37d53dd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84707299"
+ms.lasthandoff: 09/03/2020
+ms.locfileid: "89441635"
 ---
 # <a name="repeatable-copy-in-azure-data-factory"></a>Повторяющаяся операция копирования в фабрике данных Azure
 
@@ -27,7 +27,7 @@ ms.locfileid: "84707299"
 > [!NOTE]
 > Приведенные ниже примеры предназначены для SQL Azure, но подходят для любого хранилища данных, поддерживающего прямоугольные наборы данных. Для хранилища данных может потребоваться настроить параметр **type** источника и свойство **query** (например, query вместо sqlReaderQuery).   
 
-Обычно при чтении из реляционных хранилищ нужно считывать только данные, соответствующие этому срезу. Сделать это можно с помощью системных переменных WindowStart и WindowEnd, доступных в фабрике данных Azure. Сведения о переменных и функциях в фабрике данных Azure см. в статье [Фабрика данных Azure — функции и системные переменные](data-factory-functions-variables.md). Пример. 
+Обычно при чтении из реляционных хранилищ нужно считывать только данные, соответствующие этому срезу. Сделать это можно с помощью системных переменных WindowStart и WindowEnd, доступных в фабрике данных Azure. Сведения о переменных и функциях в фабрике данных Azure см. в статье [Фабрика данных Azure — функции и системные переменные](data-factory-functions-variables.md). Пример 
 
 ```json
 "source": {
@@ -104,7 +104,7 @@ ID    Product        Quantity    ModifiedDate
 
 ### <a name="mechanism-2-using-sliceidentifiercolumnname"></a>Механизм 2: использование sliceIdentifierColumnName
 > [!IMPORTANT]
-> Сейчас sliceIdentifierColumnName не поддерживается для хранилища данных SQL Azure. 
+> В настоящее время sliceIdentifierColumnName не поддерживается для Azure синапсе Analytics (ранее — хранилища данных SQL). 
 
 Другой способ достижения повторяемости — выделение в целевой таблице специального столбца sliceIdentifierColumnName. Этот столбец будет использовать фабрика данных Azure, чтобы синхронизировать источник и назначение. Такой подход работает при наличии гибкости в изменении или определении целевой схемы таблицы SQL. 
 
@@ -147,9 +147,9 @@ ID    Product        Quantity    ModifiedDate
 
 Как и при использовании первого механизма, действие копирования сначала автоматически удаляет из целевой таблицы SQL данные для заданного среза. После этого данные из источника вставляются в целевую таблицу. 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 См. следующие статьи о соединителях, где есть полные примеры JSON: 
 
 - [База данных SQL Azure](data-factory-azure-sql-connector.md)
-- [Хранилище данных SQL Azure](data-factory-azure-sql-data-warehouse-connector.md)
+- [Azure Synapse Analytics](data-factory-azure-sql-data-warehouse-connector.md)
 - [SQL Server](data-factory-sqlserver-connector.md)

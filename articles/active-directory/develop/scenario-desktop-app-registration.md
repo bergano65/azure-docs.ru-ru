@@ -11,12 +11,12 @@ ms.workload: identity
 ms.date: 09/09/2019
 ms.author: jmprieur
 ms.custom: aaddev
-ms.openlocfilehash: 599603ba867e21694392e38e9692280f010e08eb
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 6796ac42a10d3b976b23f5af1418b1789011d61b
+ms.sourcegitcommit: bf1340bb706cf31bb002128e272b8322f37d53dd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "80885163"
+ms.lasthandoff: 09/03/2020
+ms.locfileid: "89440955"
 ---
 # <a name="desktop-app-that-calls-web-apis-app-registration"></a>Классическое приложение, вызывающее веб-API: регистрация приложения
 
@@ -28,7 +28,7 @@ ms.locfileid: "80885163"
 
 ### <a name="audience-for-interactive-token-acquisition"></a>Аудитория для интерактивного получения маркера
 
-Если в классическом приложении используется интерактивная проверка подлинности, вы можете выполнять вход пользователей из любого [типа учетной записи](quickstart-register-app.md#register-a-new-application-using-the-azure-portal).
+Если в классическом приложении используется интерактивная проверка подлинности, вы можете выполнять вход пользователей из любого [типа учетной записи](quickstart-register-app.md).
 
 ### <a name="audience-for-desktop-app-silent-flows"></a>Аудитория для потоковой передачи в классическом приложении
 
@@ -41,7 +41,7 @@ ms.locfileid: "80885163"
 URI перенаправления для использования в классическом приложении зависят от последовательности, которую вы хотите использовать.
 
 - При использовании интерактивной проверки подлинности или потока кода устройства используйте `https://login.microsoftonline.com/common/oauth2/nativeclient` . Чтобы добиться этой конфигурации, выберите соответствующий URL-адрес в разделе **Проверка подлинности** для вашего приложения.
-  
+
   > [!IMPORTANT]
   > Сейчас MSAL.NET использует другой URI перенаправления по умолчанию в классических приложениях, работающих в Windows ( `urn:ietf:wg:oauth:2.0:oob` ). В будущем мы хотим изменить это значение по умолчанию, поэтому мы рекомендуем использовать `https://login.microsoftonline.com/common/oauth2/nativeclient` .
 
@@ -55,7 +55,7 @@ URI перенаправления для использования в клас
 
 Классические приложения вызывают интерфейсы API для пользователя, выполнившего вход. Они должны запрашивать делегированные разрешения. Они не могут запрашивать разрешения приложения, которые обрабатываются только в [управляющих приложениях](scenario-daemon-overview.md).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Классическое приложение: Конфигурация приложения](scenario-desktop-app-configuration.md)

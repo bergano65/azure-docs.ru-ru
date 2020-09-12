@@ -10,12 +10,12 @@ ms.subservice: sql-dw
 ms.date: 09/05/2019
 ms.author: xiaoyul
 ms.reviewer: nibruno; jrasnick
-ms.openlocfilehash: e624cf343209af722bfd007bd66a5e48b56eaff2
-ms.sourcegitcommit: 845a55e6c391c79d2c1585ac1625ea7dc953ea89
+ms.openlocfilehash: ddab106e11340dd040b99d1e8abf9d93e9338ab7
+ms.sourcegitcommit: bf1340bb706cf31bb002128e272b8322f37d53dd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/05/2020
-ms.locfileid: "85956395"
+ms.lasthandoff: 09/03/2020
+ms.locfileid: "89441210"
 ---
 # <a name="performance-tune-with-materialized-views"></a>Настройка производительности с материализованными представлениями
 
@@ -52,7 +52,7 @@ ms.locfileid: "85956395"
 
 Материализованные представления, реализованные в пуле SQL, также предоставляют следующие дополнительные преимущества.
 
-По сравнению с другими поставщиками хранилища данных материализованные представления, реализованные в Хранилище данных SQL Azure, также предоставляют следующие дополнительные преимущества.
+По сравнению с другими поставщиками хранилища данных материализованные представления, реализованные в Azure синапсе Analytics, также предоставляют следующие дополнительные преимущества:
 
 - Автоматическое и синхронное обновление данных при их изменении в базовых таблицах. Вмешательство пользователя не требуется.
 - Широкая поддержка агрегатных функций. См. статью [CREATE MATERIALIZED VIEW AS SELECT (Transact-SQL)](/sql/t-sql/statements/create-materialized-view-as-select-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest).

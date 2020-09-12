@@ -14,12 +14,12 @@ ms.tgt_pltfrm: vm-linux
 ms.devlang: azurecli
 ms.date: 10/09/2019
 ms.author: v-six
-ms.openlocfilehash: cf27a842d37e96c82370e9b9b81763c8a5d1f7c9
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.openlocfilehash: fd49993e6825c47bbae8f034715c03191e06ab2d
+ms.sourcegitcommit: bf1340bb706cf31bb002128e272b8322f37d53dd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86509058"
+ms.lasthandoff: 09/03/2020
+ms.locfileid: "89441669"
 ---
 # <a name="troubleshoot-linux-vm-starting-issues-due-to-fstab-errors"></a>Устранение проблем с запуском виртуальных машин Linux из-за ошибок fstab
 
@@ -107,7 +107,7 @@ Give root password for maintenance
 ### <a name="using-single-user-mode"></a>Использование однопользовательского режима
 
 1. Подключитесь к [последовательной консоли](./serial-console-linux.md).
-2. Использование последовательной консоли для использования [однопользовательского режима режима одного](../linux/serial-console-grub-single-user-mode.md) пользователя
+2. Использование последовательной консоли для использования [однопользовательского режима режима одного](serial-console-grub-single-user-mode.md) пользователя
 3. После загрузки виртуальной машины в однопользовательский режим. Откройте файл fstab с помощью любого текстового редактора. 
 
    ```
@@ -235,7 +235,7 @@ Give root password for maintenance
 13. После повторного создания виртуальной машины и подключения к ней через SSH выполните следующие действия.
     * Проверьте все строки fstab, которые были изменены или добавлены в комментарий во время восстановления.
     * Убедитесь, что вы используете UUID и параметр "не пройден".
-    * Протестируйте все изменения fstab, прежде чем перезапускать виртуальную машину. Для этого используйте следующую команду:``$ sudo mount -a``
+    * Протестируйте все изменения fstab, прежде чем перезапускать виртуальную машину. Для этого используйте следующую команду: ``$ sudo mount -a``
     * Создайте дополнительную копию исправленного файла fstab для использования в будущих сценариях восстановления.
 
 ## <a name="next-steps"></a>Дальнейшие действия

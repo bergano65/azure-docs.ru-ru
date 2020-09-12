@@ -12,12 +12,12 @@ author: stevestein
 ms.author: sstein
 ms.reviewer: ''
 ms.date: 03/12/2019
-ms.openlocfilehash: dbcc82d3ec4b50cf51210f8a4319bbf374185a88
-ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
+ms.openlocfilehash: abb8f42e7fe4ffe6e933f466202247c73ece129a
+ms.sourcegitcommit: bf1340bb706cf31bb002128e272b8322f37d53dd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/31/2020
-ms.locfileid: "87498095"
+ms.lasthandoff: 09/03/2020
+ms.locfileid: "89441720"
 ---
 # <a name="what-is-a-logical-sql-server-in-azure-sql-database-and-azure-synapse"></a>Что такое логический сервер SQL Server в базе данных SQL Azure и Azure синапсе?
 [!INCLUDE[appliesto-sqldb-asa](../includes/appliesto-sqldb-asa.md)]
@@ -150,7 +150,7 @@ ms.locfileid: "87498095"
 |[CREATE DATABASE (база данных SQL Azure)](/sql/t-sql/statements/create-database-transact-sql?view=azuresqldb-current) | Создает новую базу данных в базе данных SQL Azure. Для создания новой базы данных необходимо подключение к базе данных master.|
 |[Создание базы данных (Azure синапсе)](/sql/t-sql/statements/create-database-transact-sql?view=azure-sqldw-latest) | Создает новую базу данных хранилища данных в Azure синапсе. Для создания новой базы данных необходимо подключение к базе данных master.|
 | [CREATE DATABASE (база данных SQL Azure)](/sql/t-sql/statements/alter-database-transact-sql?view=azuresqldb-current) |Изменяет базу данных или эластичный пул. |
-|[ALTER DATABASE (хранилище данных SQL Azure)](https://docs.microsoft.com/sql/t-sql/statements/alter-database-transact-sql?view=sql-server-ver15)|Изменяет базу данных хранилища данных в Azure синапсе.|
+|[ALTER DATABASE (Azure синапсе Analytics)](https://docs.microsoft.com/sql/t-sql/statements/alter-database-transact-sql?view=sql-server-ver15)|Изменяет базу данных хранилища данных в Azure синапсе.|
 |[DROP DATABASE (Transact-SQL)](/sql/t-sql/statements/drop-database-transact-sql)|Удаляет базу данных.|
 |[sys.database_service_objectives (база данных SQL Azure)](/sql/relational-databases/system-catalog-views/sys-database-service-objectives-azure-sql-database)|Возвращает выпуск (уровень служб), Цель обслуживания (ценовая категория) и имя эластичного пула (если таковые имеются) для базы данных. При входе в базу данных master для сервера возвращает сведения обо всех базах данных. Для Azure синапсе необходимо подключиться к базе данных master.|
 |[sys.dm_db_resource_stats (база данных SQL Azure)](/sql/relational-databases/system-dynamic-management-views/sys-dm-db-resource-stats-azure-sql-database)| Возвращает сведения о потреблении ресурсов ЦП, операций ввода-вывода и памяти для базы данных в базе данных SQL Azure. Существует одна строка для каждых 15 секунд, даже если в базе данных не выполняется никаких действий.|

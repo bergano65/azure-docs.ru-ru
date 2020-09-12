@@ -11,12 +11,12 @@ ms.date: 04/15/2020
 ms.author: kevin
 ms.reviewer: igorstan
 ms.custom: azure-synapse
-ms.openlocfilehash: acfb2af7d482f9c0a51596818b1302584277defb
-ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
+ms.openlocfilehash: fe847dfa24e618d2e837943309475f0a436d3a44
+ms.sourcegitcommit: 4a7a4af09f881f38fcb4875d89881e4b808b369b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/31/2020
-ms.locfileid: "87486822"
+ms.lasthandoff: 09/04/2020
+ms.locfileid: "89459306"
 ---
 # <a name="best-practices-for-loading-data-for-data-warehousing"></a>Рекомендации по загрузке данных для их хранения
 
@@ -144,6 +144,6 @@ ALTER DATABASE SCOPED CREDENTIAL my_credential WITH IDENTITY = 'my_identity', SE
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- Дополнительные сведения о PolyBase и проектировании процесса извлечения, загрузки и преобразования (ELT) см. в статье о [проектировании ELT для хранилища данных SQL](../sql-data-warehouse/design-elt-data-loading.md?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json).
-- Руководство по загрузке см. в статье [Загрузка данных из хранилища BLOB-объектов Azure в хранилище данных SQL Azure с помощью PolyBase](../sql-data-warehouse/load-data-from-azure-blob-storage-using-polybase.md?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json).
+- Дополнительные сведения о Polybase и проектировании процесса извлечения, загрузки и преобразования (ELT) см. в статье [проектирование ELT для Azure синапсе Analytics](../sql-data-warehouse/design-elt-data-loading.md?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json).
+- Чтобы получить руководство по загрузке, [Используйте polybase для загрузки данных из хранилища BLOB-объектов Azure в Azure синапсе Analytics](../sql-data-warehouse/load-data-from-azure-blob-storage-using-polybase.md?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json).
 - Инструкции по мониторингу загрузки данных см. в статье [Мониторинг рабочей нагрузки с помощью динамических административных представлений](../sql-data-warehouse/sql-data-warehouse-manage-monitor.md?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json).

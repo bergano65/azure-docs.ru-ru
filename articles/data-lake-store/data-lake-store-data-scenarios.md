@@ -10,12 +10,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 06/27/2018
 ms.author: twooley
-ms.openlocfilehash: 3d6f3a7a5fafc643b346d3df1306820114827049
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 058862f2b274ef4e956c82fbcc44dec92a270d32
+ms.sourcegitcommit: bf1340bb706cf31bb002128e272b8322f37d53dd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84193670"
+ms.lasthandoff: 09/03/2020
+ms.locfileid: "89441057"
 ---
 # <a name="using-azure-data-lake-storage-gen1-for-big-data-requirements"></a>Использование Data Lake Storage Gen1 для обеспечения соответствия требованиям больших данных
 
@@ -41,7 +41,7 @@ ms.locfileid: "84193670"
 | Источник данных | Средство для приема |
 | --- | --- |
 | Локальный компьютер |<ul> <li>[Портал Azure](data-lake-store-get-started-portal.md)</li> <li>[Azure PowerShell](data-lake-store-get-started-powershell.md)</li> <li>[Azure CLI](data-lake-store-get-started-cli-2.0.md)</li> <li>[Data Lake Tools для Visual Studio](../data-lake-analytics/data-lake-analytics-data-lake-tools-get-started.md) </li></ul> |
-| Большой двоичный объект хранилища Azure |<ul> <li>[Фабрика данных Azure](../data-factory/connector-azure-data-lake-store.md).</li> <li>[Средство AdlCopy](data-lake-store-copy-data-azure-storage-blob.md)</li><li>[DistCp, запущенный на кластере HDInsight](data-lake-store-copy-data-wasb-distcp.md)</li> </ul> |
+| Azure Storage Blob. |<ul> <li>[Фабрика данных Azure](../data-factory/connector-azure-data-lake-store.md).</li> <li>[Средство AdlCopy](data-lake-store-copy-data-azure-storage-blob.md)</li><li>[DistCp, запущенный на кластере HDInsight](data-lake-store-copy-data-wasb-distcp.md)</li> </ul> |
 
 ### <a name="streamed-data"></a>Потоковые данные
 Представляет данные, которые могут быть созданы различными источниками, такими как приложения, устройства, датчики и т. д. Эти данные можно принимать в Data Lake Storage 1-го поколения с помощью различных средств. Как правило, эти средства собирают и обрабатывают данные на основе событий в режиме реального времени, а затем записывают события в пакетном режиме в Data Lake Storage 1-го поколения для последующей обработки.
@@ -78,7 +78,7 @@ ms.locfileid: "84193670"
 ### <a name="data-stored-in-on-premises-or-iaas-hadoop-clusters"></a>Данные, хранящиеся в локальных кластерах Hadoop или кластерах Hadoop в IaaS
 Большие объемы данных могут храниться в кластерах Hadoop, размещенных локально на компьютерах, использующих HDFS. Кластеры Hadoop могут быть развернуты локально или работать в кластере IaaS в Azure. К копированию таких данных в Azure Data Lake Storage 1-го поколения могут предъявляться требования, в зависимости от того, является ли эта операция одноразовой или повторяющейся. Существуют различные возможности выполнить их. Ниже приведен список альтернативных вариантов и связанные с ними компромиссы.
 
-| Подход | Сведения | Преимущества | Особенности |
+| Подход | Сведения | Преимущества | Рекомендации |
 | --- | --- | --- | --- |
 | Использование Фабрики данных Azure (ADF) для копирования данных напрямую из кластеров Hadoop в Azure Data Lake Storage 1-го поколения |[ADF поддерживает HDFS в качестве источника данных.](../data-factory/connector-hdfs.md) |ADF реализована готовая поддержка HDFS, а также первоклассные инструменты комплексного управления и мониторинга. |Требуется развернуть шлюз управления данными в локальном кластере или кластере IaaS. |
 | Экспорт данных из Hadoop в виде файлов. Затем — копирование этих файлов в Azure Data Lake Storage 1-го поколения с помощью соответствующего механизма. |Вы можете скопировать файлы в Azure Data Lake Storage 1-го поколения с помощью: <ul><li>[Azure PowerShell только для Windows](data-lake-store-get-started-powershell.md)</li><li>[Azure CLI](data-lake-store-get-started-cli-2.0.md)</li><li>Пользовательское приложение, использующее любой пакет SDK для Azure Data Lake Storage 1-го поколения</li></ul> |Можно быстро приступить к работе. Возможны настраиваемые передачи данных. |Многоэтапный процесс с использованием нескольких технологий. Учитывая настраиваемый характер инструментов, со временем будет все сложнее осуществлять управление и мониторинг. |
@@ -130,5 +130,5 @@ ms.locfileid: "84193670"
 
 ![Визуализация данных в Data Lake Storage 1-го поколения](./media/data-lake-store-data-scenarios/visualize-data.png "Визуализация данных в Data Lake Storage 1-го поколения")
 
-* Сначала с помощью [Фабрики данных Azure переместите данные из Data Lake Storage 1-го поколения в Хранилище данных SQL Azure](../data-factory/copy-activity-overview.md).
-* После этого вы можете [интегрировать Power BI с хранилищем данных SQL Azure](../synapse-analytics/sql-data-warehouse/sql-data-warehouse-get-started-visualize-with-power-bi.md) для создания визуального представления данных.
+* Вы можете начать с использования [фабрики данных Azure для перемещения данных из Data Lake Storage 1-го поколения в Azure синапсе Analytics (ранее — хранилище данных SQL)](../data-factory/copy-activity-overview.md) .
+* После этого можно [интегрировать Power BI с Azure синапсе Analytics](../synapse-analytics/sql-data-warehouse/sql-data-warehouse-get-started-visualize-with-power-bi.md) для создания визуального представления данных.

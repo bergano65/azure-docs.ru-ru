@@ -10,12 +10,12 @@ ms.topic: how-to
 ms.workload: infrastructure-services
 ms.date: 06/04/2018
 ms.author: kumud
-ms.openlocfilehash: c56b5ac1c1aa6fa5894d1aedcb94fe4694c2db28
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 221f7577b3181b1535ab9f544073dac4d031fe66
+ms.sourcegitcommit: 5ed504a9ddfbd69d4f2d256ec431e634eb38813e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84696037"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89319451"
 ---
 # <a name="resource-logging-for-a-network-security-group"></a>Ведение журнала ресурсов для группы безопасности сети
 
@@ -24,7 +24,7 @@ ms.locfileid: "84696037"
 При включении ведения журнала для NSG можно собрать следующие типы данных журнала ресурсов:
 
 * **Журналы событий**. Содержат записи, по которым правила NSG на основе MAC-адреса применяются к виртуальным машинам.
-* **Журналы счетчиков**. Содержат записи с информацией о том, сколько раз каждое правило NSG было применено для запрета или разрешения трафика. Состояние этих правил регистрируется каждые 60 секунд.
+* **Журналы счетчиков**. Содержат записи с информацией о том, сколько раз каждое правило NSG было применено для запрета или разрешения трафика. Состояние этих правил собираются каждые 300 секунд.
 
 Журналы ресурсов доступны только для группы безопасности сети, развернутых с помощью модели развертывания Azure Resource Manager. Вы не можете включить ведение журнала ресурсов для группы безопасности сети, развернутых с помощью классической модели развертывания. Чтобы получить более полное представление об этих двух моделях, прочитайте статью [Развертывание с помощью Azure Resource Manager и классическое развертывание: сведения о моделях развертывания и состоянии ресурсов](../resource-manager-deployment-model.md?toc=%2fazure%2fvirtual-network%2ftoc.json).
 
@@ -137,7 +137,7 @@ az monitor diagnostic-settings create \
 
 Данные в формате JSON записываются в журналы следующих категорий.
 
-### <a name="event"></a>событие
+### <a name="event"></a>Событие
 
 Журнал событий содержит сведения о том, какие правила NSG на основе MAC-адреса применяются к виртуальным машинам. Эти данные регистрируются для каждого события. В следующем примере данные зарегистрированы для виртуальной машины с IP-адресом 192.168.1.4 и MAC-адресом 00-0D-3A-92-6A-7C.
 
@@ -204,7 +204,7 @@ az monitor diagnostic-settings create \
   - журнал событий: `insights-logs-networksecuritygroupevent/resourceId=/SUBSCRIPTIONS/[ID]/RESOURCEGROUPS/[RESOURCE-GROUP-NAME-FOR-NSG]/PROVIDERS/MICROSOFT.NETWORK/NETWORKSECURITYGROUPS/[NSG NAME]/y=[YEAR]/m=[MONTH/d=[DAY]/h=[HOUR]/m=[MINUTE]`
   - журнал счетчика правил: `insights-logs-networksecuritygrouprulecounter/resourceId=/SUBSCRIPTIONS/[ID]/RESOURCEGROUPS/[RESOURCE-GROUP-NAME-FOR-NSG]/PROVIDERS/MICROSOFT.NETWORK/NETWORKSECURITYGROUPS/[NSG NAME]/y=[YEAR]/m=[MONTH/d=[DAY]/h=[HOUR]/m=[MINUTE]`
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Дополнительные сведения о [ведении журнала действий](../azure-monitor/platform/platform-logs-overview.md?toc=%2fazure%2fvirtual-network%2ftoc.json). Ведение журнала действий включено по умолчанию для всех создаваемых NSG, независимо от модели развертывания Azure. Чтобы определить в журнале активности, какие операции были выполнены с группами безопасности сети, найдите записи, содержащие следующие типы ресурсов:
   - Microsoft.ClassicNetwork/networkSecurityGroups

@@ -6,12 +6,12 @@ ms.service: cosmos-db
 ms.topic: conceptual
 ms.date: 05/19/2020
 ms.author: ramkris
-ms.openlocfilehash: 3a522a5a5945fe7a4b63dc759077d744f951a76f
-ms.sourcegitcommit: d39f2cd3e0b917b351046112ef1b8dc240a47a4f
+ms.openlocfilehash: d6039ac3bead535fd9c7de64a8e92a0d7a58f390
+ms.sourcegitcommit: 5ed504a9ddfbd69d4f2d256ec431e634eb38813e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88814422"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89319242"
 ---
 # <a name="azure-synapse-link-for-azure-cosmos-db-near-real-time-analytics-use-cases"></a>Azure Synapse Link для Azure Cosmos DB: Варианты использования аналитики почти в реальном времени
 
@@ -142,4 +142,4 @@ Azure Synapse Link позволяет Azure Cosmos DB не только исп�
 
 * [Ключевые концепции Apache Spark в Azure Synapse Analytics](../synapse-analytics/spark/apache-spark-concepts.md)
 
-* [Использование бессерверного SQL / SQL по запросу (предварительная версия) в Azure Synapse Analytics](../synapse-analytics/sql/on-demand-workspace-overview.md).
+* [Поддержка среды выполнения SQL Server в Azure синапсе Analytics](../synapse-analytics/sql/on-demand-workspace-overview.md)

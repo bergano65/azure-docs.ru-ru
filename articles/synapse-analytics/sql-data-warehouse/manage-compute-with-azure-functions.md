@@ -11,12 +11,12 @@ ms.date: 04/27/2018
 ms.author: jrasnick
 ms.reviewer: igorstan
 ms.custom: seo-lt-2019, azure-synapse
-ms.openlocfilehash: 60e79ecd4148829c38b237c0e28d60796e84ac01
-ms.sourcegitcommit: 8def3249f2c216d7b9d96b154eb096640221b6b9
+ms.openlocfilehash: 11cb0c30a1a6ed70cca82e494fcec73936975f39
+ms.sourcegitcommit: bf1340bb706cf31bb002128e272b8322f37d53dd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87543662"
+ms.lasthandoff: 09/03/2020
+ms.locfileid: "89442228"
 ---
 # <a name="use-azure-functions-to-manage-compute-resources-in-azure-synapse-analytics-sql-pool"></a>Использование функций Azure для управления ресурсами вычислений в пуле SQL Azure синапсе Analytics
 
@@ -38,7 +38,7 @@ ms.locfileid: "87543662"
 
 После получения предыдущей информации разверните этот шаблон:
 
-[![Изображение, показывающее кнопку "развернуть в Azure".](https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/1-CONTRIBUTION-GUIDE/images/deploytoazure.png)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FMicrosoft%2Fsql-data-warehouse-samples%2Fmaster%2Farm-templates%2FsqlDwTimerScaler%2Fazuredeploy.json)
+[![Изображение с кнопкой "Развернуть в Azure".](https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/1-CONTRIBUTION-GUIDE/images/deploytoazure.png)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FMicrosoft%2Fsql-data-warehouse-samples%2Fmaster%2Farm-templates%2FsqlDwTimerScaler%2Fazuredeploy.json)
 
 После развертывания шаблона, необходимо найти три новых ресурса: бесплатный план обслуживания приложений Azure, план приложения-функции на основе потребления и учетную запись хранения, которая управляет журналом и очередью операций. Продолжайте изучать следующие разделы, чтобы узнать, как изменить развернутые функции в соответствии с потребностями.
 
@@ -54,7 +54,7 @@ ms.locfileid: "87543662"
 
 3. В текущий момент должно отображаться значение *%ScaleDownTime%* или *%ScaleUpTime%*. Эти значения указывают на то, что расписание основано на значениях, определенных в [параметрах приложения](../../azure-functions/functions-how-to-use-azure-function-app-settings.md?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json). Пока что это значение можно проигнорировать и изменить время в расписании по своему усмотрению, основываясь на следующих шагах.
 
-4. В области расписания добавьте время, которое должно отражаться в выражении CRON, чтобы определить частоту увеличения масштаба хранилища данных SQL.
+4. В области расписание добавьте время для выражения CRON, которое будет показывать, как часто требуется масштабировать аналитику Azure синапсе Analytics.
 
    ![Изменение расписания функции](./media/manage-compute-with-azure-functions/change-schedule.png)
 
@@ -165,7 +165,7 @@ ms.locfileid: "87543662"
 | Функция 3 | 0 0 23 * * 5   | `var operation = {"operationType": "PauseDw"}` |
 | Функция 4 | 0 0 7 * * 0    | `var operation = {"operationType": "ResumeDw"}` |
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о функциях Azure триггера с таймером см. [здесь](../../azure-functions/functions-create-scheduled-function.md?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json).
 

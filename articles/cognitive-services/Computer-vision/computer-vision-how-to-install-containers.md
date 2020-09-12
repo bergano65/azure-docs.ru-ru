@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.date: 05/05/2020
 ms.author: aahi
 ms.custom: seodec18
-ms.openlocfilehash: 70cbb21430253dc9683cd3803f2a09ef8bb858cb
-ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
+ms.openlocfilehash: 13d483507092892187bc13dd23bfa51ed516c890
+ms.sourcegitcommit: bf1340bb706cf31bb002128e272b8322f37d53dd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88545647"
+ms.lasthandoff: 09/03/2020
+ms.locfileid: "89441159"
 ---
 # <a name="install-and-run-read-containers-preview"></a>Установка и запуск контейнеров чтения (Предварительная версия)
 
@@ -55,6 +55,7 @@ ms.locfileid: "88545647"
 ```console
 grep -q avx2 /proc/cpuinfo && echo AVX2 supported || echo No AVX2 support detected
 ```
+
 > [!WARNING]
 > Главный компьютер *необходим* для поддержки AVX2. Контейнер *не будет* работать правильно без поддержки AVX2.
 
@@ -68,14 +69,14 @@ grep -q avx2 /proc/cpuinfo && echo AVX2 supported || echo No AVX2 support detect
 
 | Контейнер | Реестр контейнеров, имя репозитория или образа |
 |-----------|------------|
-| Чтение | `containerpreview.azurecr.io/microsoft/cognitive-services-read:latest` |
+| Чтение | `containerpreview.azurecr.io/microsoft/cognitive-services-read:2.0` |
 
 Используйте [`docker pull`](https://docs.docker.com/engine/reference/commandline/pull/) команду, чтобы скачать образ контейнера.
 
 ### <a name="docker-pull-for-the-read-container"></a>Извлечение DOCKER для контейнера чтения
 
 ```bash
-docker pull containerpreview.azurecr.io/microsoft/cognitive-services-read:latest
+docker pull containerpreview.azurecr.io/microsoft/cognitive-services-read:2.0
 ```
 
 [!INCLUDE [Tip for using docker list](../../../includes/cognitive-services-containers-docker-list-tip.md)]
@@ -186,13 +187,16 @@ ApiKey={API_KEY}
 }
 ```
 
+> [!IMPORTANT]
+> При развертывании нескольких контейнеров чтения за подсистемой балансировки нагрузки, например в разделе Docker Compose или Kubernetes, необходим внешний кэш. Так как контейнер обработки и контейнер запроса GET могут отличаться, внешний кэш сохраняет результаты и разделяет их между контейнерами. Дополнительные сведения о параметрах кэша см. в разделе [Configure компьютерное зрение Container DOCKER](https://docs.microsoft.com/azure/cognitive-services/computer-vision/computer-vision-resource-container-config).
+
 ### <a name="synchronous-read"></a>Синхронное чтение
 
 `POST /vision/v2.0/read/core/Analyze`Для синхронного считывания изображения можно использовать операцию. Когда изображение считывается целиком, тогда API возвращает ответ JSON. Единственное исключение — при возникновении ошибки. При возникновении ошибки возвращается следующий код JSON:
 
 ```json
 {
-    status: "Failed"
+    "status": "Failed"
 }
 ```
 
@@ -267,7 +271,7 @@ export interface Word {
 
 [!INCLUDE [Discoverability of more container information](../../../includes/cognitive-services-containers-discoverability.md)]
 
-## <a name="summary"></a>Итоги
+## <a name="summary"></a>Сводка
 
 Из этой статьи вы узнали основные понятия и рабочий процесс, позволяющий скачивать, устанавливать и запускать контейнеры компьютерного зрения. В разделе "Сводка" сделайте следующее.
 
@@ -283,7 +287,7 @@ export interface Word {
 ## <a name="next-steps"></a>Дальнейшие действия
 
 * Ознакомьтесь со статьей о [конфигурации контейнеров](computer-vision-resource-container-config.md).
-* Дополнительные сведения о распознавании печатного и рукописного текста см. в статье [Обзор компьютерного зрения](Home.md).
+* Дополнительные сведения о распознавании печатного и рукописного текста см. в статье [Обзор компьютерного зрения](overview.md).
 * Дополнительные сведения о методах, поддерживаемых контейнером, см. в статье [API компьютерного зрения](//westus.dev.cognitive.microsoft.com/docs/services/5adf991815e1060e6355ad44/operations/56f91f2e778daf14a499e1fa).
 * Чтобы разрешать проблемы, связанные с функциональностью Компьютерного зрения, ознакомьтесь с [часто задаваемыми вопросами](FAQ.md).
 * Использование большего числа [контейнеров Cognitive Services](../cognitive-services-container-support.md)

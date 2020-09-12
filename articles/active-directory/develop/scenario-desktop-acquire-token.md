@@ -12,12 +12,12 @@ ms.workload: identity
 ms.date: 05/18/2020
 ms.author: jmprieur
 ms.custom: aaddev, devx-track-python
-ms.openlocfilehash: 300bc6acbe7821841b578dcc2166ecfc498ad750
-ms.sourcegitcommit: a2a7746c858eec0f7e93b50a1758a6278504977e
+ms.openlocfilehash: 0d1946862ec8af6a107ca4f5f963efbcb8912a5e
+ms.sourcegitcommit: bf1340bb706cf31bb002128e272b8322f37d53dd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/12/2020
-ms.locfileid: "88141301"
+ms.lasthandoff: 09/03/2020
+ms.locfileid: "89440938"
 ---
 # <a name="desktop-app-that-calls-web-apis-acquire-a-token"></a>Классическое приложение, которое вызывает веб-API: Получение маркера
 
@@ -38,7 +38,7 @@ ms.locfileid: "88141301"
 AuthenticationResult result;
 var accounts = await app.GetAccountsAsync();
 IAccount account = ChooseAccount(accounts); // for instance accounts.FirstOrDefault
-                                            // if the app manages is at most one account  
+                                            // if the app manages is at most one account
 try
 {
  result = await app.AcquireTokenSilent(scopes, account)
@@ -370,7 +370,7 @@ if accounts:
 if not result:
     result = app.acquire_token_by_authorization_code(
          request.args['code'],
-         scopes=config["scope"])    
+         scopes=config["scope"])
 
 ```
 
@@ -433,7 +433,7 @@ application.acquireToken(with: interactiveParameters, completionBlock: { (result
   - Администратор клиента должен предварительно одобрить всех пользователей в клиенте для использования приложения.
   - Другими словами:
     - Вы как разработчик выбрали **Предоставить разрешения** на портале Azure для себя.
-    - Администратор клиента выбрал **Предоставить или отозвать согласие администратора для {домен клиента}** на вкладке **Разрешения API** в разделе регистрации приложения. Дополнительные сведения см. в разделе [Добавление разрешений для доступа к веб-API](./quickstart-configure-app-access-web-apis.md#add-permissions-to-access-web-apis).
+    - Администратор клиента выбрал **Предоставить или отозвать согласие администратора для {домен клиента}** на вкладке **Разрешения API** в разделе регистрации приложения. Дополнительные сведения см. [в статье Добавление разрешений для доступа к веб-API](quickstart-configure-app-access-web-apis.md#add-permissions-to-access-your-web-api).
     - Или вы предоставили пользователям возможность согласиться на приложение. Дополнительные сведения см. в разделе [Запрос на получение согласия одного пользователя](./v2-permissions-and-consent.md#requesting-individual-user-consent).
     - Или вы предоставили администратору клиента возможность согласиться на приложение. Дополнительные сведения см. в разделе [Согласие администратора](./v2-permissions-and-consent.md#requesting-consent-for-an-entire-tenant).
 
@@ -978,7 +978,7 @@ static async Task<AuthenticationResult> GetATokenForGraph()
         // If you want to provide a more complex user experience, check out ex.Classification
 
         return await AcquireByDeviceCodeAsync(pca);
-    }         
+    }
 }
 
 private async Task<AuthenticationResult> AcquireByDeviceCodeAsync(IPublicClientApplication pca)

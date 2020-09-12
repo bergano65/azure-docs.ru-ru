@@ -2,17 +2,17 @@
 title: 'Azure ExpressRoute: перемещение общедоступного пиринга в пиринг Майкрософт'
 description: В этой статье приведены этапы перехода с общедоступного пиринга на пиринг Майкрософт в ExpressRoute.
 services: expressroute
-author: cherylmc
+author: duongau
 ms.service: expressroute
 ms.topic: how-to
 ms.date: 12/12/2019
-ms.author: cherylmc
-ms.openlocfilehash: 2f6b3ec93498ab58ba67a2ca08199feaa2da73ef
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.author: duau
+ms.openlocfilehash: 5671be5e54a9bb789e349a4da6d0f1809807d974
+ms.sourcegitcommit: 5a3b9f35d47355d026ee39d398c614ca4dae51c6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84738368"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89401424"
 ---
 # <a name="move-a-public-peering-to-microsoft-peering"></a>Переход с общедоступного пиринга на пиринг Майкрософт
 
@@ -33,7 +33,7 @@ ms.locfileid: "84738368"
 
 Используйте [асимметричную маршрутизацию с несколькими сетевыми путями](https://docs.microsoft.com/azure/expressroute/expressroute-asymmetric-routing) для предупреждения о асимметричной маршрутизации перед настройкой пиринга Майкрософт.
 
-* Если вы используете общедоступный пиринг и для доступа к [службе хранилища Azure](../storage/common/storage-network-security.md) или [базе данных SQL Azure](../azure-sql/database/vnet-service-endpoint-rule-overview.md) применяются правила IP-сети для общедоступных IP-адресов, убедитесь, что пул IP-адресов NAT, настроенный с пирингом Майкрософт, указан в списке общедоступных IP-адресов для учетной записи хранения Azure или учетной записи Azure SQL.<br>
+* Если вы используете общедоступный пиринг и в настоящее время есть правила IP-сети для общедоступных IP-адресов, которые используются для доступа к [службе хранилища Azure](../storage/common/storage-network-security.md) или [базе данных SQL Azure](../azure-sql/database/vnet-service-endpoint-rule-overview.md), необходимо убедиться в том, что пул IP-адресов NAT, настроенный с пирингом Майкрософт, включен в список общедоступного IP-адреса для учетной записи хранения Azure или учетной записи Azure SQL.<br>
 * Чтобы переместить пиринг Майкрософт без простоев, выполните инструкции в этой статье в том порядке, в котором они представлены.
 
 ## <a name="1-create-microsoft-peering"></a><a name="create"></a>1. Создание пиринга Майкрософт

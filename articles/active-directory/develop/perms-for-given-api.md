@@ -11,20 +11,20 @@ ms.workload: identity
 ms.topic: conceptual
 ms.date: 07/15/2019
 ms.author: ryanwi
-ms.openlocfilehash: d9b84f2eace9ec268c6ff0942d19b47402e19bde
-ms.sourcegitcommit: b8702065338fc1ed81bfed082650b5b58234a702
+ms.openlocfilehash: 7b70460af8126199b19c18118897c93f0477791c
+ms.sourcegitcommit: bf1340bb706cf31bb002128e272b8322f37d53dd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/11/2020
-ms.locfileid: "88120734"
+ms.lasthandoff: 09/03/2020
+ms.locfileid: "89442209"
 ---
-# <a name="how-to-select-permissions-for-a-given-api"></a>Выбор разрешений для заданного API 
+# <a name="how-to-select-permissions-for-a-given-api"></a>Выбор разрешений для заданного API
 
 ## <a name="recommended-documents"></a>Рекомендуемые документы
 
 - Дополнительные сведения о том, как клиентские приложения используют [запросы делегированных разрешений и разрешений приложений](./developer-glossary.md#permissions) для доступа к ресурсам.
-- Пошаговые инструкции по [настройке запросов разрешений для клиентского приложения](./quickstart-register-app.md)
-- Вы можете ознакомиться с более подробными сведениями о том, как приложения-ресурсы предоставляют [области](./developer-glossary.md#scopes) и [роли приложения](./developer-glossary.md#roles) клиентским приложениям, которые на портале Azure называются делегированными разрешениями и разрешениями приложения, соответственно. 
+- Пошаговые инструкции по [настройке запросов разрешений для клиентского приложения](./quickstart-configure-app-access-web-apis.md)
+- Вы можете ознакомиться с более подробными сведениями о том, как приложения-ресурсы предоставляют [области](./developer-glossary.md#scopes) и [роли приложения](./developer-glossary.md#roles) клиентским приложениям, которые на портале Azure называются делегированными разрешениями и разрешениями приложения, соответственно.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

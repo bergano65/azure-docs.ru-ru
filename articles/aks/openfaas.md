@@ -6,12 +6,12 @@ ms.topic: conceptual
 ms.date: 03/05/2018
 ms.author: juda
 ms.custom: mvc
-ms.openlocfilehash: 95039573c607f516755f08f1ebad8b968416ec8b
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 98b1842f81703041f419850be17c0c05a24b7c6b
+ms.sourcegitcommit: bf1340bb706cf31bb002128e272b8322f37d53dd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "80631472"
+ms.lasthandoff: 09/03/2020
+ms.locfileid: "89440904"
 ---
 # <a name="using-openfaas-on-aks"></a>Использование OpenFaaS в AKS
 
@@ -91,7 +91,8 @@ alertmanager-config  1     20s
 NOTES:
 To verify that openfaas has started, run:
 
-  kubectl --namespace=openfaas get deployments -l "release=openfaas, app=openfaas"
+```console
+kubectl --namespace=openfaas get deployments -l "release=openfaas, app=openfaas"
 ```
 
 Для получения доступа к шлюзу OpenFaaS создается общедоступный IP-адрес. Чтобы получить этот IP-адрес, используйте команду [kubectl get service][kubectl-get]. Процесс назначения службе IP-адреса может занять около минуты.
@@ -244,7 +245,7 @@ curl -s http://52.186.64.52:8080/function/cosmos-query
 
 ![замещающий текст](media/container-service-serverless/OpenFaaSUI.png)
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Next Steps
 
 Вы можете продолжить изучение OpenFaaSного семинара с помощью набора практических лабораторных занятий, в которых рассматриваются такие темы, как создание собственного робота GitHub, использование секретов, просмотр метрик и автоматическое масштабирование.
 

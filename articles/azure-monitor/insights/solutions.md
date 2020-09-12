@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 08/07/2020
-ms.openlocfilehash: 04f2d11b9fc8bbd61319a057c091cddbf140b9db
-ms.sourcegitcommit: 1aef4235aec3fd326ded18df7fdb750883809ae8
+ms.openlocfilehash: 013d8b77a16a4c7cd0efdadce25fd141793070be
+ms.sourcegitcommit: 4a7a4af09f881f38fcb4875d89881e4b808b369b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/12/2020
-ms.locfileid: "88135541"
+ms.lasthandoff: 09/04/2020
+ms.locfileid: "89459527"
 ---
 # <a name="monitoring-solutions-in-azure-monitor"></a>Решения мониторинга в Azure Monitor
 
@@ -97,7 +97,7 @@ az monitor log-analytics solution list --resource-group MyResourceGroup
 
    Необходимо [установить Azure CLI](/cli/azure/install-azure-cli) перед выполнением справочных команд CLI.  При желании можно также использовать Azure Cloud Shell для выполнения действий, описанных в этой статье.  Azure Cloud Shell — это среда интерактивной оболочки, которая используется в браузере.  Начните Cloud Shell с помощью одного из следующих методов:
 
-   - Откройте Cloud Shell, перейдя по[https://shell.azure.com](https://shell.azure.com)
+   - Откройте Cloud Shell, перейдя по [https://shell.azure.com](https://shell.azure.com)
 
    - Нажмите кнопку **Cloud Shell** в строке меню в верхнем правом углу [портал Azure](https://portal.azure.com)
 
@@ -109,18 +109,18 @@ az monitor log-analytics solution list --resource-group MyResourceGroup
     az login
     ```
 
-1. Установка расширения `log-analytics`
+1. Установка расширения `log-analytics-solution`
 
-   `log-analytics`Команда является экспериментальным расширением основного Azure CLI. Дополнительные сведения о расширениях см. в статье [Использование расширения с Azure CLI](/cli/azure/azure-cli-extensions-overview?).
+   `log-analytics-solution`Команда является экспериментальным расширением основного Azure CLI. Дополнительные сведения о расширениях см. в статье [Использование расширения с Azure CLI](/cli/azure/azure-cli-extensions-overview?).
 
    ```azurecli
-   az extension add --name log-analytics
+   az extension add --name log-analytics-solution
    ```
 
    Ожидается следующее предупреждение.
 
    ```output
-   The installed extension `log-analytics` is experimental and not covered by customer support.  Please use with discretion.
+   The installed extension `log-analytics-solution` is experimental and not covered by customer support.  Please use with discretion.
    ```
 
 ### <a name="install-a-solution-with-the-azure-cli"></a>Установка решения с Azure CLI
@@ -159,7 +159,6 @@ az monitor log-analytics solution create --resource-group MyResourceGroup \
 
 * Каждая установка решения может использовать только одну рабочую область Log Analytics и одну учетную запись службы автоматизации. Решение можно установить отдельно в нескольких рабочих областях.
 * Если для решения нужна учетная запись службы автоматизации, она должна быть связана с рабочей областью Log Analytics для этого же решения. Рабочая область Log Analytics может быть связана только с одной учетной записью службы автоматизации и наоборот.
-* Чтобы рабочую область Log Analytics и учетную запись службы автоматизации можно было связать, они должны находиться в одной подписке, но при этом могут находиться в разных группах ресурсов, развернутых в одном регионе. Допустимое исключение: рабочая область Log Analytics в восточной части США и учетная запись службы автоматизации в восточной части США 2.
 
 Если решение устанавливается из Azure Marketplace, вам предлагают указать рабочую область и учетную запись службы автоматизации. При необходимости связь между ними создается автоматически.
 

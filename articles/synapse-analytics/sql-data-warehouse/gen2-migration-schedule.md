@@ -12,12 +12,12 @@ ms.topic: article
 ms.subservice: sql-dw
 ms.date: 01/21/2020
 ms.custom: seo-lt-2019, azure-synapse
-ms.openlocfilehash: 71219abaf6493d6dce03f05ad0e61fb71bff1745
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: eebde4470ba2635a5287cb3b0103fa49e0e243e0
+ms.sourcegitcommit: bf1340bb706cf31bb002128e272b8322f37d53dd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85207725"
+ms.lasthandoff: 09/03/2020
+ms.locfileid: "89441006"
 ---
 # <a name="upgrade-your-sql-pool-to-gen2"></a>Обновление пула SQL до Gen2
 
@@ -124,13 +124,13 @@ ms.locfileid: "85207725"
 
 - Ответ. Нет. После обновления региона создание новых экземпляров 1-го поколения будет отключено.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Действия по обновлению](upgrade-to-latest-generation.md)
-- [Период обслуживания](maintenance-scheduling.md)
+- [Периоды обслуживания](maintenance-scheduling.md)
 - [Мониторинг работоспособности ресурсов](../../service-health/resource-health-overview.md?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json)
 - [что нужно знать перед началом миграции](upgrade-to-latest-generation.md#before-you-begin)
 - [Обновление на месте или обновление из точки восстановления](upgrade-to-latest-generation.md)
 - [Создание определенной пользователем точки восстановления](sql-data-warehouse-restore-points.md)
 - [Сведения о восстановлении до поколения 2](sql-data-warehouse-restore-active-paused-dw.md)
-- [Открытие запроса в службу поддержки касательно Хранилища данных SQL Azure](https://go.microsoft.com/fwlink/?linkid=857950)
+- [Открытие запроса на поддержку Azure синапсе Analytics](https://go.microsoft.com/fwlink/?linkid=857950)
