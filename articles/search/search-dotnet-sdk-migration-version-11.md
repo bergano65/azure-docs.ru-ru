@@ -10,12 +10,12 @@ ms.devlang: dotnet
 ms.topic: conceptual
 ms.date: 08/20/2020
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 5a72f864d16ff89636b77709e439dd04134b64b7
-ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
+ms.openlocfilehash: 5c943de87cbf53d4971e5cbf58768221bf2cf248
+ms.sourcegitcommit: 4a7a4af09f881f38fcb4875d89881e4b808b369b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89002731"
+ms.lasthandoff: 09/04/2020
+ms.locfileid: "89462264"
 ---
 # <a name="upgrade-to-azure-cognitive-search-net-sdk-version-11"></a>Обновление до Azure Когнитивный поиск .NET SDK версии 11
 
@@ -77,11 +77,11 @@ ms.locfileid: "89002731"
 | [итемеррор](/dotnet/api/microsoft.azure.search.models.itemerror) | [сеарчиндексереррор](/dotnet/api/azure.search.documents.indexes.models.searchindexererror) |
 | [Analyzer](/dotnet/api/microsoft.azure.search.models.analyzer) | [Лексикаланализер](/dotnet/api/azure.search.documents.indexes.models.lexicalanalyzer) (также `AnalyzerName` `LexicalAnalyzerName` ) |
 | [анализерекуест](/dotnet/api/microsoft.azure.search.models.analyzerequest) | [анализетекстоптионс](/dotnet/api/azure.search.documents.indexes.models.analyzetextoptions) |
-| [StandardAnalyzer](/dotnet/api/microsoft.azure.search.models.standardanalyzer) | [луценестандарданализер](//dotnet/api/azure.search.documents.indexes.models.lucenestandardanalyzer) |
+| [StandardAnalyzer](/dotnet/api/microsoft.azure.search.models.standardanalyzer) | [луценестандарданализер](/dotnet/api/azure.search.documents.indexes.models.lucenestandardanalyzer) |
 | [стандардтокенизер](/dotnet/api/microsoft.azure.search.models.standardtokenizer) | [Луценестандардтокенизер](/dotnet/api/azure.search.documents.indexes.models.lucenestandardtokenizer) (также `StandardTokenizerV2` `LuceneStandardTokenizerV2` ) |
 | [токенинфо](/dotnet/api/microsoft.azure.search.models.tokeninfo) | [анализедтокенинфо](/dotnet/api/azure.search.documents.indexes.models.analyzedtokeninfo) |
 | [Разметчика](/dotnet/api/microsoft.azure.search.models.tokenizer) | [Лексикалтокенизер](/dotnet/api/azure.search.documents.indexes.models.lexicaltokenizer) (также `TokenizerName` `LexicalTokenizerName` ) |
-| [SynonymMap. Format](/dotnet/api/microsoft.azure.search.models.synonymmap.format) | Нет. Удалите ссылки на `Format` . |
+| [SynonymMap. Format](/dotnet/api/microsoft.azure.search.models.synonymmap.format) | Отсутствует. Удалите ссылки на `Format` . |
 
 Определения полей упрощаются: [сеарчаблефиелд](/dotnet/api/azure.search.documents.indexes.models.searchablefield), [симплефиелд](/dotnet/api/azure.search.documents.indexes.models.simplefield), [Комплексфиелд](/dotnet/api/azure.search.documents.indexes.models.complexfield) — это новые интерфейсы API для создания определений полей.
 
@@ -90,7 +90,7 @@ ms.locfileid: "89002731"
 | Версия 10 | Эквивалент версии 11 |
 |------------|-----------------------|
 | [Индексатор](/dotnet/api/microsoft.azure.search.models.indexer) | [сеарчиндексер](/dotnet/api/azure.search.documents.indexes.models.searchindexer) |
-| [DataSource](/dotnet/api/microsoft.azure.search.models.datasource) | [сеарчиндексердатасаурцеконнектион](//dotnet/api/azure.search.documents.indexes.models.searchindexerdatasourceconnection) |
+| [DataSource](/dotnet/api/microsoft.azure.search.models.datasource) | [сеарчиндексердатасаурцеконнектион](/dotnet/api/azure.search.documents.indexes.models.searchindexerdatasourceconnection) |
 | [Навыков](/dotnet/api/microsoft.azure.search.models.skill) | [сеарчиндексерскилл](/dotnet/api/azure.search.documents.indexes.models.searchindexerskill) |
 | [Набор навыков](/dotnet/api/microsoft.azure.search.models.skillset) | [сеарчиндексерскиллсет](/dotnet/api/azure.search.documents.indexes.models.searchindexerskill) |
 | [DataSourceType](/dotnet/api/microsoft.azure.search.models.datasourcetype) | [сеарчиндексердатасаурцетипе](/dotnet/api/azure.search.documents.indexes.models.searchindexerdatasourcetype) |

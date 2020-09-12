@@ -3,16 +3,16 @@ title: Устранение неполадок службы Azure Image Builder
 description: Устранение распространенных проблем и ошибок при использовании службы "Построитель образов виртуальных машин Azure"
 author: cynthn
 ms.author: danis
-ms.date: 08/07/2020
+ms.date: 09/03/2020
 ms.topic: troubleshooting
 ms.service: virtual-machines
 ms.subservice: imaging
-ms.openlocfilehash: 754d9324137632b928e67bbe4c67a3e6c72e452a
-ms.sourcegitcommit: d8b8768d62672e9c287a04f2578383d0eb857950
+ms.openlocfilehash: ee65cd1605e23dfd5699f92a900bdb5e7952fe13
+ms.sourcegitcommit: 4a7a4af09f881f38fcb4875d89881e4b808b369b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/11/2020
-ms.locfileid: "88068205"
+ms.lasthandoff: 09/04/2020
+ms.locfileid: "89459935"
 ---
 # <a name="troubleshoot-azure-image-builder-service"></a>Устранение неполадок службы Azure Image Builder
 
@@ -209,7 +209,7 @@ Get-AzImageBuilderTemplate -ImageTemplateName  <imageTemplateName> -ResourceGrou
     ```
 5. Стадия отмены подготовки. В построителе образов Azure добавлен скрытый элемент настройки. Этот этап отмены подготовки отвечает за подготовку виртуальной машины для отмены подготовки. Он запускает Windows Sysprep (с помощью c:\DeprovisioningScript.ps1) или в Linux waagent unготовить (с помощью/ТМП/депровисионингскрипт.ш). 
 
-    Пример.
+    Пример:
     ```text
     PACKER ERR 2020/03/04 23:05:04 [INFO] (telemetry) Starting provisioner powershell
     PACKER ERR 2020/03/04 23:05:04 packer: 2020/03/04 23:05:04 Found command: if( TEST-PATH c:\DeprovisioningScript.ps1 ){cat c:\DeprovisioningScript.ps1} else {echo "Deprovisioning script [c:\DeprovisioningScript.ps1] could not be found. Image build may fail or the VM created from the Image may not boot. Please make sure the deprovisioning script is not accidentally deleted by a Customizer in the Template."}
@@ -247,7 +247,7 @@ Get-AzImageBuilderTemplate -ImageTemplateName  <imageTemplateName> -ResourceGrou
 
 Проверьте журнал на обнаружение сбоев настраиваемых типов. Выполните поиск по запросу *(телеметрии)*. 
 
-Пример.
+Пример:
 ```text
 (telemetry) Starting provisioner windows-update
 (telemetry) ending windows-update
@@ -502,6 +502,28 @@ Done exporting Packer logs to Azure for Packer prefix: [a170b40d-2d77-4ac3-8719-
 
 Увеличьте размер виртуальной машины. Также можно добавить 60-секундную настройку спящего режима PowerShell, чтобы избежать проблем с синхронизацией.
 
+### <a name="cancelling-builder-after-context-cancellation-context-canceled"></a>Отмена построителя после отмены контекста отмены контекста
+
+#### <a name="error"></a>Ошибка
+```text
+PACKER ERR 2020/03/26 22:11:23 Cancelling builder after context cancellation context canceled
+PACKER OUT Cancelling build after receiving terminated
+PACKER ERR 2020/03/26 22:11:23 packer-builder-azure-arm plugin: Cancelling hook after context cancellation context canceled
+..
+PACKER ERR 2020/03/26 22:11:23 packer-builder-azure-arm plugin: Cancelling provisioning due to context cancellation: context canceled
+PACKER ERR 2020/03/26 22:11:25 packer-builder-azure-arm plugin: [ERROR] Remote command exited without exit status or exit signal.
+PACKER ERR 2020/03/26 22:11:25 packer-builder-azure-arm plugin: [INFO] RPC endpoint: Communicator ended with: 2300218
+PACKER ERR 2020/03/26 22:11:25 [INFO] 148974 bytes written for 'stdout'
+PACKER ERR 2020/03/26 22:11:25 [INFO] 0 bytes written for 'stderr'
+PACKER ERR 2020/03/26 22:11:25 [INFO] RPC client: Communicator ended with: 2300218
+PACKER ERR 2020/03/26 22:11:25 [INFO] RPC endpoint: Communicator ended with: 2300218
+```
+#### <a name="cause"></a>Причина
+Служба Image Builder использует порт 22 (Linux) или 5986 (Windows) для подключения к виртуальной машине сборки. это происходит, когда служба отключается от виртуальной машины сборки во время сборки образа. Причины отключения могут различаться, но включение или Настройка брандмауэров в сценарии может заблокировать указанные выше порты.
+
+#### <a name="solution"></a>Решение
+Проверьте свои сценарии на наличие изменений или включения брандмауэра, а также измените протокол SSH или WinRM и убедитесь, что все изменения обеспечивают постоянное подключение между службой и создание виртуальной машины на указанных выше портах. Дополнительные сведения о сетях с помощью Image Builder см. в [требованиях](https://docs.microsoft.com/azure/virtual-machines/linux/image-builder-networking).
+
 ## <a name="devops-task"></a>Задание DevOps 
 
 ### <a name="troubleshooting-the-task"></a>Устранение неполадок в задаче
@@ -633,9 +655,9 @@ Write-Output '>>> Sysprep complete ...'
 Выбор варианта продукта:
 ```bash
 Product Family: Azure
-Product: Virtual Machine Running Windows
-Support Topic: Management
-Support Subtopic: Issues with Azure Image Builder
+Product: Virtual Machine Running (Window\Linux)
+Support Topic: Azure Features
+Support Subtopic: Azure Image Builder
 ```
 
 ## <a name="next-steps"></a>Дальнейшие действия

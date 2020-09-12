@@ -10,12 +10,12 @@ ms.workload: infrastructure-services
 ms.tgt_pltfrm: vm-linux
 ms.topic: article
 ms.date: 04/14/2018
-ms.openlocfilehash: a5d49a16324a5a97f4a0507f9abf47ea602ea072
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 0fb19524079f84e92e1ddbc98a61917026492663
+ms.sourcegitcommit: 4feb198becb7a6ff9e6b42be9185e07539022f17
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "72328718"
+ms.lasthandoff: 09/04/2020
+ms.locfileid: "89469904"
 ---
 # <a name="use-managed-identities-for-azure-resources-in-azure-cloud-shell"></a>Использование управляемых удостоверений для ресурсов Azure в Azure Cloud Shell
 
@@ -43,8 +43,8 @@ echo The MSI access token is $access_token
 
 Если маркер кэшируется в коде, необходимо подготовиться к обработке сценариев, в которых ресурс указывает, что срок действия маркера истек.
 
-Сведения об обработке ошибок маркера см. [здесь](https://docs.microsoft.com/azure/active-directory/managed-service-identity/how-to-use-vm-token#error-handling).
+Сведения об обработке ошибок маркера см. [здесь](../active-directory/managed-identities-azure-resources/how-to-use-vm-token.md#error-handling).
 
 ## <a name="next-steps"></a>Дальнейшие действия
-[Управляемое удостоверение службы (MSI) для ресурсов Azure](https://docs.microsoft.com/azure/active-directory/managed-service-identity/overview)  
-[Использование управляемого удостоверения службы (MSI) виртуальной машины Azure для получения маркера](https://docs.microsoft.com/azure/active-directory/managed-service-identity/how-to-use-vm-token)
+[Управляемое удостоверение службы (MSI) для ресурсов Azure](../active-directory/managed-identities-azure-resources/overview.md)  
+[Использование управляемого удостоверения службы (MSI) виртуальной машины Azure для получения маркера](../active-directory/managed-identities-azure-resources/how-to-use-vm-token.md)

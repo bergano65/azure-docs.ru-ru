@@ -9,12 +9,12 @@ ms.author: nibaccam
 ms.subservice: core
 ms.topic: conceptual
 ms.date: 03/27/2020
-ms.openlocfilehash: 8c2867fc5d57cf9ad6eb6bf2d90e02c61e320120
-ms.sourcegitcommit: d7352c07708180a9293e8a0e7020b9dd3dd153ce
+ms.openlocfilehash: 62edee6a882191551ce2409646ea8b617576c059
+ms.sourcegitcommit: 3be3537ead3388a6810410dfbfe19fc210f89fec
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/30/2020
-ms.locfileid: "89146663"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89651152"
 ---
 # <a name="distributed-training-with-azure-machine-learning"></a>Распределенное обучение с помощью Машинное обучение Azure
 
@@ -24,7 +24,7 @@ ms.locfileid: "89146663"
 
 ## <a name="deep-learning-and-distributed-training"></a>Глубокое обучение и распределенное обучение 
 
-Существует два основных типа распределенного обучения: [параллелизм данных](#data-parallelism) и [параллелизм моделей](#model-parallelism). Для распределенного обучения по моделям глубокого обучения [пакет SDK для машинное обучение Azure в Python](https://docs.microsoft.com/python/api/overview/azure/ml/intro?view=azure-ml-py) поддерживает интеграцию с популярными платформами, PyTorch и TensorFlow. Обе платформы используют параллелизм данных для распределенного обучения и могут использовать [хоровод](https://horovod.readthedocs.io/en/latest/summary_include.html) для оптимизации скорости вычислений. 
+Существует два основных типа распределенного обучения: [параллелизм данных](#data-parallelism) и [параллелизм моделей](#model-parallelism). Для распределенного обучения по моделям глубокого обучения [пакет SDK для машинное обучение Azure в Python](https://docs.microsoft.com/python/api/overview/azure/ml/intro?view=azure-ml-py&preserve-view=true) поддерживает интеграцию с популярными платформами, PyTorch и TensorFlow. Обе платформы используют параллелизм данных для распределенного обучения и могут использовать [хоровод](https://horovod.readthedocs.io/en/latest/summary_include.html) для оптимизации скорости вычислений. 
 
 * [Распределенное обучение с помощью PyTorch](how-to-train-pytorch.md#distributed-training)
 

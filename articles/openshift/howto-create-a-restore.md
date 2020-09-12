@@ -8,12 +8,12 @@ author: troy0820
 ms.author: b-trconn
 keywords: aro, openshift, az aro, red hat, cli
 ms.custom: mvc
-ms.openlocfilehash: 95e2b268da0785816423ec1ee9c8e31730d48ed8
-ms.sourcegitcommit: 7fe8df79526a0067be4651ce6fa96fa9d4f21355
+ms.openlocfilehash: 0cd6797bcdfadca807e25f8b3decf34bd553fc56
+ms.sourcegitcommit: 4feb198becb7a6ff9e6b42be9185e07539022f17
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87854332"
+ms.lasthandoff: 09/04/2020
+ms.locfileid: "89470057"
 ---
 # <a name="create-an-azure-red-hat-openshift-4-cluster-application-restore"></a>Создание восстановления приложения кластера Azure Red Hat OpenShift 4
 
@@ -23,7 +23,7 @@ ms.locfileid: "87854332"
 > * Настройка необходимых компонентов и установка необходимых средств
 > * Создание приложения Azure Red Hat OpenShift 4 для восстановления
 
-Если вы решили установить и использовать CLI локально, для работы с этим руководством вам потребуется Azure CLI версии 2.6.0 или более поздней. Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI 2.0](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest).
+Если вы решили установить и использовать интерфейс командной строки локально, то для работы с этим руководством вам понадобится Azure CLI 2.6.0 или более поздней версии. Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI 2.0](/cli/azure/install-azure-cli?view=azure-cli-latest).
 
 ## <a name="before-you-begin"></a>Перед началом
 
@@ -57,7 +57,7 @@ oc get restore -n velero <name of restore created previously> -o yaml
 ```
 На этом этапе `Completed` необходимо восстановить приложение Azure Red Hat 4.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 В этой статье было восстановлено приложение кластера Azure Red Hat OpenShift 4. Вы ознакомились с выполнением следующих задач:
 
@@ -68,5 +68,3 @@ oc get restore -n velero <name of restore created previously> -o yaml
 Перейдите к следующей статье, чтобы узнать о поддерживаемых ресурсах Azure Red Hat OpenShift 4.
 
 * [Поддерживаемые ресурсы Azure Red Hat OpenShift v4](supported-resources.md)
-
-

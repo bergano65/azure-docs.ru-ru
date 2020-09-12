@@ -2,17 +2,17 @@
 title: Использование Azure ExpressRoute для поддержки удаленных пользователей
 description: На этой странице описывается, как можно использовать Azure ExpressRoute для удаленной работы из-за гриппа КОВИД-19.
 services: expressroute
-author: cherylmc
+author: duongau
 ms.service: expressroute
 ms.topic: how-to
 ms.date: 03/22/2020
-ms.author: ajitbhu
-ms.openlocfilehash: 18b30380ede0c95c7d039749a4d47f65e5824058
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.author: duau
+ms.openlocfilehash: d51f47b73fe572ce81d3e7b54f902f94fcd11b5b
+ms.sourcegitcommit: d0541eccc35549db6381fa762cd17bc8e72b3423
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84738079"
+ms.lasthandoff: 09/09/2020
+ms.locfileid: "89567679"
 ---
 # <a name="using-azure-expressroute-to-create-hybrid-connectivity-to-support-remote-users"></a>Использование Azure ExpressRoute для создания гибридного подключения для поддержки удаленных пользователей
 
@@ -31,18 +31,18 @@ ms.locfileid: "84738079"
 * [Увеличение пропускной способности для существующей цепи ExpressRoute](expressroute-howto-circuit-portal-resource-manager.md#modify)
 * [Мониторинг ExpressRoute, метрики и оповещения](expressroute-monitoring-metrics-alerts.md#expressroute-gateway-connections-in-bitsseconds)
 * [Оптимизация маршрутов через ExpressRoute](expressroute-optimize-routing.md)
-* [Azure ExpressRoute для Office 365](https://docs.microsoft.com/office365/enterprise/azure-expressroute?redirectSourcePath=%252farticle%252f6d2534a2-c19c-4a99-be5e-33a0cee5d3bd)
+* [Azure ExpressRoute для Microsoft 365](/microsoft-365/enterprise/azure-expressroute)
 * [Рекомендации по асимметричной маршрутизации](expressroute-asymmetric-routing.md)
 * [Как открыть запрос в службу поддержки в портал Azure](https://portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade/overview)
 
-## <a name="troubleshoot"></a>Устранение неполадок
+## <a name="troubleshoot"></a>Диагностика
 
 * [Проверка подключения ExpressRoute](expressroute-troubleshooting-expressroute-overview.md).
 * Получение таблицы ARP в [Диспетчер ресурсов](expressroute-troubleshooting-arp-resource-manager.md) и [классической](expressroute-troubleshooting-arp-classic.md) модели
 * [Сброс канала с ошибками](reset-circuit.md)
 * [Устранение неполадок производительности сети](expressroute-troubleshooting-network-performance.md)
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Next Steps
 
 * [Дополнительные сведения о моделях подключения ExpressRoute](expressroute-connectivity-models.md)
 * Узнайте больше о подключениях ExpressRoute и доменах маршрутизации. См. раздел [каналы ExpressRoute и домены маршрутизации](expressroute-circuit-peerings.md) .

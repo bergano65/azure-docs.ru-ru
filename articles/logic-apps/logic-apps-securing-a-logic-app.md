@@ -5,13 +5,13 @@ services: logic-apps
 ms.suite: integration
 ms.reviewer: rarayudu, logicappspm
 ms.topic: conceptual
-ms.date: 08/27/2020
-ms.openlocfilehash: 442b5acf3a6786b9fcaf0a96015a6df31215653c
-ms.sourcegitcommit: d68c72e120bdd610bb6304dad503d3ea89a1f0f7
+ms.date: 09/08/2020
+ms.openlocfilehash: 75c434b5c1927251940a691a16069425b4cc88a3
+ms.sourcegitcommit: 206629373b7c2246e909297d69f4fe3728446af5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/01/2020
-ms.locfileid: "89231424"
+ms.lasthandoff: 09/06/2020
+ms.locfileid: "89500408"
 ---
 # <a name="secure-access-and-data-in-azure-logic-apps"></a>Безопасный доступ и данные в Azure Logic Apps
 
@@ -32,7 +32,7 @@ Azure Logic Apps использует [хранилище Azure](../storage/inde
 
 * [Общие сведения о шифровании в Azure](../security/fundamentals/encryption-overview.md)
 * [Шифрование неактивных данных в Azure](../security/fundamentals/encryption-atrest.md)
-* [Общие сведения о Тесте производительности системы безопасности Azure](../security/benchmarks/overview.md)
+* [Решение для оценки безопасности Azure](../security/benchmarks/overview.md)
 
 <a name="secure-inbound-requests"></a>
 
@@ -197,7 +197,7 @@ POST /subscriptions/<Azure-subscription-ID>/resourceGroups/<Azure-resource-group
    | Свойство | Обязательно | Описание |
    |----------|----------|-------------|
    | **Имя политики** | Да | Имя, которое будет использоваться для политики авторизации |
-   | **Утверждения** | Да | Типы утверждений и значения, принимаемые приложением логики из входящих вызовов. Доступные типы утверждений: <p><p>- **Издатель** <br>- **Аудитория** <br>- **Тема** <br>- **Идентификатор JWT** (идентификатор JSON Web Token) <p><p>Как минимум, список **утверждений** должен включать утверждение **издателя** , которое имеет значение, начинающееся с `https://sts.windows.net/` или `https://login.microsoftonline.com/` как идентификатор издателя Azure AD. Дополнительные сведения об этих типах утверждений см. в разделе [Утверждения в маркерах безопасности Azure AD](../active-directory/azuread-dev/v1-authentication-scenarios.md#claims-in-azure-ad-security-tokens). Можно также указать собственный тип и значение утверждения. |
+   | **Утверждения** | Да | Типы утверждений и значения, принимаемые приложением логики из входящих вызовов. Доступные типы утверждений: <p><p>- **Издатель** <br>- **Аудитория** <br>- **Тема** <br>- **Идентификатор JWT** (идентификатор JSON Web Token) <p><p>Как минимум, список **утверждений** должен включать утверждение **издателя** , которое имеет значение, начинающееся с или в `https://sts.windows.net/` `https://login.microsoftonline.com/` качестве идентификатора издателя Azure AD. Дополнительные сведения об этих типах утверждений см. в разделе [Утверждения в маркерах безопасности Azure AD](../active-directory/azuread-dev/v1-authentication-scenarios.md#claims-in-azure-ad-security-tokens). Можно также указать собственный тип и значение утверждения. |
    |||
 
 1. Чтобы добавить еще одно утверждение, выберите один из следующих вариантов.
@@ -216,6 +216,9 @@ POST /subscriptions/<Azure-subscription-ID>/resourceGroups/<Azure-resource-group
 
 Чтобы включить Azure AD OAuth в шаблоне ARM для развертывания приложения логики, в `properties` разделе [определения ресурса приложения логики](../logic-apps/logic-apps-azure-resource-manager-templates-overview.md#logic-app-resource-definition)добавьте `accessControl` объект, если он не существует, который содержит `triggers` объект. В `triggers` объекте добавьте объект, в `openAuthenticationPolicies` котором вы определили одну или несколько политик авторизации, выполнив следующий синтаксис:
 
+> [!NOTE]
+> Как минимум, `claims` массив должен включать `iss` утверждение, которое имеет значение, начинающееся с `https://sts.windows.net/` или в `https://login.microsoftonline.com/` качестве идентификатора издателя Azure AD. Дополнительные сведения об этих типах утверждений см. в разделе [Утверждения в маркерах безопасности Azure AD](../active-directory/azuread-dev/v1-authentication-scenarios.md#claims-in-azure-ad-security-tokens). Можно также указать собственный тип и значение утверждения.
+
 ```json
 "resources": [
    {
@@ -233,7 +236,7 @@ POST /subscriptions/<Azure-subscription-ID>/resourceGroups/<Azure-resource-group
                         "claims": [
                            {
                               "name": "<claim-name>",
-                              "values": "<claim-value>"
+                              "value": "<claim-value>"
                            }
                         ]
                      }
@@ -811,7 +814,7 @@ POST /subscriptions/<Azure-subscription-ID>/resourceGroups/<Azure-resource-group
 | [Сертификат клиента](#client-certificate-authentication) | Управление API Azure, службы приложений Azure, HTTP, HTTP + Swagger, веб-перехватчик HTTP |
 | [Active Directory OAuth](#azure-active-directory-oauth-authentication) | Управление API Azure, службы приложений Azure, функции Azure, HTTP, HTTP + Swagger, веб-перехватчик HTTP |
 | [Raw](#raw-authentication) | Управление API Azure, службы приложений Azure, функции Azure, HTTP, HTTP + Swagger, веб-перехватчик HTTP |
-| [Управляемое удостоверение](#managed-identity-authentication) | Управление API Azure, службы приложений Azure, функции Azure, HTTP |
+| [Управляемое удостоверение](#managed-identity-authentication) | Управление API Azure, службы приложений Azure, функции Azure, HTTP, веб-перехватчик HTTP |
 |||
 
 <a name="basic-authentication"></a>

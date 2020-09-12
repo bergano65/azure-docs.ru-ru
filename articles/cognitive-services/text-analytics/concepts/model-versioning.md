@@ -10,16 +10,16 @@ ms.subservice: text-analytics
 ms.topic: article
 ms.date: 07/16/2020
 ms.author: aahi
-ms.openlocfilehash: 7d008dc0f7ed90397ac07e12320d861b107f0f46
-ms.sourcegitcommit: b8702065338fc1ed81bfed082650b5b58234a702
+ms.openlocfilehash: e6763633ce27c537f1384e8e51020d44132c0377
+ms.sourcegitcommit: 4feb198becb7a6ff9e6b42be9185e07539022f17
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/11/2020
-ms.locfileid: "88120938"
+ms.lasthandoff: 09/04/2020
+ms.locfileid: "89469853"
 ---
 # <a name="model-versioning-in-the-text-analytics-api"></a>Управление версиями модели в API анализа текста
 
-Версия 3 API анализа текста позволяет выбрать версию модели, используемую для данных. Используйте необязательный `model-version` параметр, чтобы выбрать версию модели в запросах API. Например, так: `<resource-url>/text/analytics/v3.0/sentiment?model-version=2020-04-01`. Если этот параметр не указан, API по умолчанию будет иметь последнюю стабильную версию. 
+Версия 3 API анализа текста позволяет выбрать версию модели, используемую для данных. Используйте необязательный `model-version` параметр, чтобы выбрать версию модели в запросах API. Например: `<resource-url>/text/analytics/v3.0/sentiment?model-version=2020-04-01`. Если этот параметр не указан, API по умолчанию будет иметь последнюю стабильную версию. 
 
 ## <a name="available-versions"></a>Доступные версии
 
@@ -44,13 +44,10 @@ ms.locfileid: "88120938"
 
 | Конечная точка                        | Тег образа контейнера                     | Версия модели |
 |---------------------------------|-----------------------------------------|---------------|
-| `/domains/health`               | `1.1.013150001-amd64-preview`или последняя версия | `2020-07-24`  |
+| `/entities/health`               | `1.1.013150001-amd64-preview` или последняя версия | `2020-07-24`  |
 | `/domains/health`               | `1.1.012640001-amd64-preview`           | `2020-05-08`  |
 | `/domains/health`               | `1.1.012420001-amd64-preview`           | `2020-05-08`  |
 | `/domains/health`               | `1.1.012070001-amd64-preview`           | `2020-04-16`  |
-| `/domains/health`               | `1.1.012070001-amd64-preview`           | `2020-07-24`  |
-
-
 
 
 ## <a name="next-steps"></a>Дальнейшие действия

@@ -7,12 +7,13 @@ ms.topic: how-to
 ms.date: 04/21/2020
 ms.author: rogarana
 ms.subservice: files
-ms.openlocfilehash: d4aad485741abc1c0f54e14e00cd8654a8addbca
-ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
+ms.custom: contperfq1
+ms.openlocfilehash: f64e3459863cc7b7ffddfae824f9c4012802a457
+ms.sourcegitcommit: 206629373b7c2246e909297d69f4fe3728446af5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88930810"
+ms.lasthandoff: 09/06/2020
+ms.locfileid: "89500323"
 ---
 # <a name="enable-azure-active-directory-domain-services-authentication-on-azure-files"></a>Включение проверки подлинности доменных служб Azure Active Directory в службе файлов Azure
 
@@ -58,7 +59,7 @@ ms.locfileid: "88930810"
 
 ## <a name="regional-availability"></a>Доступность по регионам
 
-Проверка подлинности файлов Azure с помощью Azure AD DS доступна во [всех общедоступных регионах Azure](https://azure.microsoft.com/global-infrastructure/locations/).
+Проверка подлинности файлов Azure с помощью Azure AD DS доступна во [всех общедоступных и gov регионах Azure](https://azure.microsoft.com/global-infrastructure/locations/).
 
 ## <a name="overview-of-the-workflow"></a>Обзор рабочего процесса
 
@@ -88,7 +89,7 @@ ms.locfileid: "88930810"
 1. В портал Azure перейдите к существующей учетной записи хранения или [Создайте учетную запись хранения](../common/storage-account-create.md).
 1. В разделе **Параметры** выберите **Конфигурация**.
 1. В разделе " **доступ на основе удостоверений" для файловых ресурсов** перейдите в режим **Azure Active Directory службы домена (AAD DS)** в значение " **включено**".
-1. Нажмите **Сохранить**.
+1. Выберите **Сохранить**.
 
 На следующем рисунке показано, как включить проверку подлинности Azure AD DS по протоколу SMB для вашей учетной записи хранения.
 

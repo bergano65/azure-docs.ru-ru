@@ -8,12 +8,12 @@ ms.service: security-center
 ms.topic: conceptual
 ms.date: 09/10/2019
 ms.author: memildin
-ms.openlocfilehash: e26744c2003bd55b33b638b15775c52abbe1dc32
-ms.sourcegitcommit: 0b80a5802343ea769a91f91a8cdbdf1b67a932d3
+ms.openlocfilehash: f5e71697ca6ce9e2585bbb903ad8c46744e05e13
+ms.sourcegitcommit: 4a7a4af09f881f38fcb4875d89881e4b808b369b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/25/2020
-ms.locfileid: "83836011"
+ms.lasthandoff: 09/04/2020
+ms.locfileid: "89462400"
 ---
 # <a name="azure-security-center-troubleshooting-guide"></a>Руководство по устранению неполадок в центре безопасности Azure
 
@@ -29,7 +29,7 @@ ms.locfileid: "83836011"
 
 * анализ поведения виртуальных машин;
 * анализ сети;
-* анализ базы данных SQL и хранилища данных SQL;
+* Анализ базы данных SQL и Azure синапсе Analytics (ранее — хранилище данных SQL)
 * контекстные сведения.
 
 В зависимости от типов оповещений клиенты могут собирать данные, необходимые для анализа оповещений, с помощью следующих ресурсов:
@@ -151,4 +151,4 @@ ms.locfileid: "83836011"
 * [Возможности обнаружения центра безопасности Azure](security-center-detection-capabilities.md)
 * [Мониторинг решений партнеров с помощью центра безопасности Azure](security-center-partner-solutions.md) — узнайте, как отслеживать состояние работоспособности решений партнеров.
 * [Центр безопасности Azure: часто задаваемые вопросы](faq-general.md) — часто задаваемые вопросы об использовании этой службы.
-* [Блог по безопасности Azure](https://blogs.msdn.com/b/azuresecurity/) — публикации блога, посвященные безопасности и соответствию требованиям в Azure.
+* [Блог по безопасности Azure](https://docs.microsoft.com/archive/blogs/azuresecurity/) — публикации блога, посвященные безопасности и соответствию требованиям в Azure.

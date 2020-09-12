@@ -8,16 +8,16 @@ author: sabbour
 ms.author: asabbour
 keywords: aro, openshift, az aro, red hat, cli
 ms.custom: mvc
-ms.openlocfilehash: 10a7dc662993327b71d43c27f44d22166a3f3611
-ms.sourcegitcommit: 02ca0f340a44b7e18acca1351c8e81f3cca4a370
+ms.openlocfilehash: 2cb54c202af04996080cda970b3d327145f0e72b
+ms.sourcegitcommit: 4feb198becb7a6ff9e6b42be9185e07539022f17
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/19/2020
-ms.locfileid: "88590325"
+ms.lasthandoff: 09/04/2020
+ms.locfileid: "89469887"
 ---
 # <a name="configure-azure-active-directory-authentication-for-an-azure-red-hat-openshift-4-cluster-portal"></a>Настройка проверки подлинности Azure Active Directory для кластера Azure Red Hat OpenShift 4 (портал)
 
-Если вы решили установить и использовать CLI локально, для работы с этим руководством вам потребуется Azure CLI версии 2.6.0 или более поздней. Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI 2.0](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest).
+Если вы решили установить и использовать интерфейс командной строки локально, то для работы с этим руководством вам понадобится Azure CLI 2.6.0 или более поздней версии. Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI 2.0](/cli/azure/install-azure-cli?view=azure-cli-latest).
 
 ## <a name="before-you-begin"></a>Перед началом
 
@@ -50,7 +50,7 @@ echo "OAuth callback URL: https://oauth-openshift.apps.$domain.$location.aroapp.
 
 ## <a name="configure-optional-claims"></a>Настройка необязательных утверждений
 
-Разработчики приложений могут использовать [необязательные утверждения](https://docs.microsoft.com/azure/active-directory/develop/active-directory-optional-claims) в своих приложениях Azure AD, чтобы указать, какие утверждения они хотят в токенах, отправляемых в приложение.
+Разработчики приложений могут использовать [необязательные утверждения](../active-directory/develop/active-directory-optional-claims.md) в своих приложениях Azure AD, чтобы указать, какие утверждения они хотят в токенах, отправляемых в приложение.
 
 Необязательные утверждения можно использовать, чтобы:
 
@@ -68,7 +68,7 @@ echo "OAuth callback URL: https://oauth-openshift.apps.$domain.$location.aroapp.
 
 Приложения, зарегистрированные в клиенте Azure Active Directory (Azure AD), по умолчанию являются доступными для всех пользователей клиента, которые успешно прошли проверку подлинности. Azure AD позволяет администраторам и разработчикам клиента ограничить доступ к приложению определенными пользователями или группами безопасности в клиенте.
 
-Следуйте инструкциям в документации по Azure Active Directory, чтобы [назначить пользователей и группы для приложения](https://docs.microsoft.com/azure/active-directory/develop/howto-restrict-your-app-to-a-set-of-users#app-registration).
+Следуйте инструкциям в документации по Azure Active Directory, чтобы [назначить пользователей и группы для приложения](../active-directory/develop/howto-restrict-your-app-to-a-set-of-users.md#app-registration).
 
 ## <a name="configure-openshift-openid-authentication"></a>Настройка проверки подлинности OpenShift OpenID Connect
 
@@ -100,7 +100,7 @@ URL-адрес консоли кластера можно найти, выпол
 
 Перейдите по URL-адресу консоли в браузере и войдите с помощью учетных данных `kubeadmin`.
 
-Перейдите в меню **Администрирование**, щелкните **Параметры кластера**и выберите вкладку **Глобальная конфигурация** . Прокрутите экран, чтобы выбрать **OAuth**.
+Перейдите в меню **Администрирование**, щелкните **Параметры кластера**, а затем выберите вкладку **Глобальная конфигурация** . Прокрутите экран, чтобы выбрать **OAuth**.
 
 Прокрутите вниз, чтобы выбрать **Добавить** в разделе **поставщики удостоверений** , и выберите **OpenID Connect Connect**.
 ![Выберите OpenID Connect Connect в раскрывающемся списке поставщиков удостоверений.](media/aro4-oauth-idpdrop.png)

@@ -11,12 +11,12 @@ ms.service: data-factory
 ms.workload: data-services
 ms.topic: conceptual
 ms.date: 01/10/2018
-ms.openlocfilehash: 74cf34438ca142302a6853e8e488b0c7188b162b
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.openlocfilehash: eb320cb71de43c40522bf93213fd98247a0d5b59
+ms.sourcegitcommit: bf1340bb706cf31bb002128e272b8322f37d53dd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86522369"
+ms.lasthandoff: 09/03/2020
+ms.locfileid: "89436303"
 ---
 # <a name="transform-data-in-azure-data-factory-version-1"></a>Преобразование данных в фабрике данных Azure версии 1
 > [!div class="op_single_selector"]
@@ -29,7 +29,7 @@ ms.locfileid: "86522369"
 > * [Аналитика озера данных U-SQL](data-factory-usql-activity.md)
 > * [Пользовательские действия .NET](data-factory-use-custom-activities.md)
 
-## <a name="overview"></a>Обзор
+## <a name="overview"></a>Overview
 > [!NOTE]
 > В этой статье рассматривается служба "Фабрика данных Azure" версии 1. Если вы используете текущую версию Фабрики данных, см. статью о [действиях по преобразованию данных в службе "Фабрика данных"](../transform-data.md).
 
@@ -65,7 +65,7 @@ ms.locfileid: "86522369"
 Дополнительные сведения об этих действиях машинного обучения см. в разделе [Создание прогнозных конвейеров с помощью действий машинного обучения Azure](data-factory-azure-ml-batch-execution-activity.md). 
 
 ## <a name="stored-procedure-activity"></a>Действие хранимой процедуры
-C помощью действия хранимой процедуры SQL Server в конвейере фабрики данных можно вызвать хранимую процедуру из одного из следующих хранилищ данных: база данных SQL Azure, хранилище данных SQL Azure, база данных SQL Server вашего предприятия или виртуальная машина Azure. Дополнительные сведения см. в статье о [действии хранимой процедуры](data-factory-stored-proc-activity.md) .  
+Вы можете использовать действие SQL Server хранимой процедуры в конвейере фабрики данных для вызова хранимой процедуры в одном из следующих хранилищ данных: база данных SQL Azure, Azure синапсе Analytics (ранее — хранилище данных SQL), SQL Server базу данных на предприятии или виртуальную машину Azure. Дополнительные сведения см. в статье о [действии хранимой процедуры](data-factory-stored-proc-activity.md) .  
 
 ## <a name="data-lake-analytics-u-sql-activity"></a>Действие U-SQL Data Lake Analytics
 Действие U-SQL Data Lake Analytics запускает сценарий U-SQL для кластера Azure Data Lake Analytics. Дополнительные сведения см. в статье о [действиях U-SQL в аналитике данных](data-factory-usql-activity.md) . 
@@ -83,7 +83,7 @@ C помощью действия хранимой процедуры SQL Serve
 
 В статье [Связанные службы вычислений](data-factory-compute-linked-services.md) описывается, какие службы вычислений поддерживает фабрика данных. 
 
-## <a name="summary"></a>Итоги
+## <a name="summary"></a>Сводка
 Фабрика данных Azure поддерживает приведенные ниже действия преобразования данных и вычислительных сред для них. Действия преобразования можно добавлять в конвейеры как по отдельности, так и в цепочке с другим действием.
 
 | Действия по преобразованию данных | Вычислительная среда |
@@ -93,7 +93,7 @@ C помощью действия хранимой процедуры SQL Serve
 | [MapReduce](data-factory-map-reduce.md) |HDInsight [Hadoop] |
 | [Потоковая передача Hadoop](data-factory-hadoop-streaming-activity.md) |HDInsight [Hadoop] |
 | [Создание прогнозирующих конвейеров с помощью машинного обучения Azure и фабрики данных Azure](data-factory-azure-ml-batch-execution-activity.md) |Azure |
-| [Хранимая процедура](data-factory-stored-proc-activity.md) |Azure SQL, хранилище данных Azure SQL или SQL Server |
+| [Хранимая процедура](data-factory-stored-proc-activity.md) |Azure SQL, Azure синапсе Analytics или SQL Server |
 | [Аналитика озера данных U-SQL](data-factory-usql-activity.md) |Аналитика озера данных Azure |
 | [DotNet](data-factory-use-custom-activities.md) |HDInsight [Hadoop] или пакетная служба Azure |
 

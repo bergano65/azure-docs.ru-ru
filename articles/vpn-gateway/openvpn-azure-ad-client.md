@@ -2,17 +2,17 @@
 title: 'VPN-шлюз: VPN-клиент для подключений по протоколу P2S Опенвпн: проверка подлинности Azure AD'
 description: VPN-подключение P2S можно использовать для подключения к виртуальной сети с помощью проверки подлинности Azure AD.
 services: vpn-gateway
-author: kumudD
+author: cherylmc
 ms.service: vpn-gateway
 ms.topic: conceptual
-ms.date: 06/25/2020
+ms.date: 09/03/2020
 ms.author: alzam
-ms.openlocfilehash: c14d300e2c09316e0665ece3f3e15f7036d5b9a1
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.openlocfilehash: 781d3aeea6a5568aec065ec4b1cbcfacb74836a6
+ms.sourcegitcommit: bf1340bb706cf31bb002128e272b8322f37d53dd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86525081"
+ms.lasthandoff: 09/03/2020
+ms.locfileid: "89434679"
 ---
 # <a name="azure-active-directory-authentication-configure-a-vpn-client-for-p2s-openvpn-protocol-connections"></a>Azure Active Directory проверка подлинности: Настройка VPN-клиента для подключений по протоколу P2S Опенвпн
 
@@ -20,6 +20,8 @@ ms.locfileid: "86525081"
 
 > [!NOTE]
 > Проверка подлинности Azure AD поддерживается только для подключений по протоколу OpenVPN®.
+>
+> Для аутентификации Azure AD требуется VPN-клиент Azure, доступный только для Windows 10.
 >
 
 ## <a name="working-with-client-profiles"></a><a name="profile"></a>Работа с профилями клиентов
@@ -88,11 +90,11 @@ ms.locfileid: "86525081"
 
 1. Щелкните многоточие рядом с удаляемым клиентским профилем. Затем щелкните **Remove** (Удалить).
 
-    ![delete](./media/openvpn-azure-ad-client/delete/delete1.jpg)
+    ![удалить](./media/openvpn-azure-ad-client/delete/delete1.jpg)
 
 2. Выберите **Remove** (Удалить), чтобы выполнить удаление.
 
-    ![delete](./media/openvpn-azure-ad-client/delete/delete2.jpg)
+    ![удалить](./media/openvpn-azure-ad-client/delete/delete2.jpg)
 
 ## <a name="create-a-connection"></a><a name="connection"></a>Создание подключения
 
@@ -154,7 +156,7 @@ ms.locfileid: "86525081"
 
     ![diagnose](./media/openvpn-azure-ad-client/diagnose/diagnose4.jpg)
 
-## <a name="faq"></a>часто задаваемые вопросы
+## <a name="faq"></a>ВОПРОСЫ И ОТВЕТЫ
 
 ### <a name="how-do-i-add-dns-suffixes-to-the-vpn-client"></a>Разделы справки добавить DNS-суффиксы к VPN-клиенту?
 

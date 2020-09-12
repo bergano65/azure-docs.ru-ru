@@ -5,15 +5,15 @@ services: virtual-desktop
 author: Heidilohr
 ms.service: virtual-desktop
 ms.topic: conceptual
-ms.date: 08/27/2020
+ms.date: 09/04/2020
 ms.author: helohr
 manager: lizross
-ms.openlocfilehash: 8328fa9c9e32a22e8e5093aa343f333cd1914ddc
-ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
+ms.openlocfilehash: 5681228e5da2708912d69f16a4b09a4a93d8bb04
+ms.sourcegitcommit: 206629373b7c2246e909297d69f4fe3728446af5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89038667"
+ms.lasthandoff: 09/06/2020
+ms.locfileid: "89500306"
 ---
 # <a name="supported-authentication-methods"></a>Поддерживаемые методы проверки подлинности
 
@@ -25,7 +25,7 @@ ms.locfileid: "89038667"
 
 В настоящее время поддерживаются следующие методы входа:
 
-- Клиент классических приложений Windows
+- Клиент Удаленного рабочего стола
     - Имя пользователя и пароль
     - Смарт-карта
     - Windows Hello
@@ -43,9 +43,13 @@ ms.locfileid: "89038667"
 >[!NOTE]
 >Смарт-карта и Windows Hello могут использовать Kerberos только для входа. Для входа с использованием протокола Kerberos требуется строка с учетом контроллера домена.
 
+## <a name="hybrid-identity"></a>Гибридное удостоверение
+
+Виртуальные рабочие столы Windows поддерживают [гибридные удостоверения](../active-directory/hybrid/whatis-hybrid-identity.md) с помощью Azure Active Directory (AD), в том числе из федеративных с использованием службы федерации Active Directory (AD FS) (ADFS). Поскольку пользователи должны быть обнаруживаемыми в Azure AD, виртуальные рабочие столы Windows не поддерживают автономное развертывание Active Directory с ADFS.
+
 ## <a name="single-sign-on-sso"></a>Единый вход (SSO)
 
-Виртуальный рабочий стол Windows сейчас не поддерживает службы федерации Active Directory (AD FS) (ADFS) для проверки подлинности или единого входа.
+Виртуальный рабочий стол Windows сейчас не поддерживает службы федерации Active Directory (AD FS) (ADFS) для единого входа.
 
 Единственный способ избежать запроса учетных данных для узла сеансов — сохранить их в клиенте. Мы рекомендуем сделать это только для защищенных устройств, чтобы предотвратить доступ других пользователей к ресурсам.
 

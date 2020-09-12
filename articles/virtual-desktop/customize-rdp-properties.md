@@ -3,15 +3,15 @@ title: Настройка свойств RDP с помощью PowerShell — Az
 description: Настройка свойств RDP для виртуальных рабочих столов Windows с помощью командлетов PowerShell.
 author: Heidilohr
 ms.topic: how-to
-ms.date: 07/20/2020
+ms.date: 09/04/2020
 ms.author: helohr
 manager: lizross
-ms.openlocfilehash: 439f009d70775428a00f627160bf4d6b8ab9b089
-ms.sourcegitcommit: 98854e3bd1ab04ce42816cae1892ed0caeedf461
+ms.openlocfilehash: 7c4bda1ecf28e964db6ba672157790114affe650
+ms.sourcegitcommit: 4a7a4af09f881f38fcb4875d89881e4b808b369b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "88009109"
+ms.lasthandoff: 09/04/2020
+ms.locfileid: "89462230"
 ---
 # <a name="customize-remote-desktop-protocol-rdp-properties-for-a-host-pool"></a>Настройка свойств протокол удаленного рабочего стола (RDP) для пула узлов
 
@@ -21,6 +21,16 @@ ms.locfileid: "88009109"
 Настройка свойств протокол удаленного рабочего стола пула узлов (RDP), таких как использование нескольких мониторов и перенаправление звука, позволяет обеспечить оптимальную работу пользователей в зависимости от их потребностей. Свойства RDP можно настроить в виртуальном рабочем столе Windows с помощью портал Azure или с помощью параметра *-кустомрдппроперти* в командлете **Update-азввдхостпул** .
 
 Полный список поддерживаемых свойств и их значений по умолчанию см. в разделе [Поддерживаемые параметры RDP-файла](https://docs.microsoft.com/windows-server/remote/remote-desktop-services/clients/rdp-files?context=/azure/virtual-desktop/context/context) .
+
+## <a name="default-rdp-file-properties"></a>Свойства RDP-файла по умолчанию
+
+По умолчанию RDP-файлы имеют следующие свойства:
+
+|Свойство RDP|На рабочем столе|Как RemoteApp|
+|---|---|---|
+|Режим с несколькими мониторами|Активировано|Недоступно|
+|Перенаправление дисков включено|Диски, буфер обмена, принтеры, COM-порты, USB-устройства и SmartCards|Диски, буфер обмена и принтеры|
+|Режим удаленного звука|Воспроизвести локально|Воспроизвести локально|
 
 ## <a name="prerequisites"></a>Предварительные требования
 

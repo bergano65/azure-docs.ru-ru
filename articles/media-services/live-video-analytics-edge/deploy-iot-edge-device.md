@@ -3,12 +3,12 @@ title: Развертывание Live Video Analytics на IoT Edge устро�
 description: В этой статье перечислены действия, которые помогут вам развернуть службу Live Video Analytics на устройстве IoT Edge. Это можно сделать, например, при наличии доступа к локальной виртуальной машине Linux и (или) ранее созданной учетной записи служб мультимедиа Azure.
 ms.topic: how-to
 ms.date: 04/27/2020
-ms.openlocfilehash: 774fdb440307d0df92e9735a8bdf055687f450a2
-ms.sourcegitcommit: 56cbd6d97cb52e61ceb6d3894abe1977713354d9
+ms.openlocfilehash: eecc17e36f35e7552c0be83f7ecc38f2d644f18d
+ms.sourcegitcommit: bf1340bb706cf31bb002128e272b8322f37d53dd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/20/2020
-ms.locfileid: "88684105"
+ms.lasthandoff: 09/03/2020
+ms.locfileid: "89439628"
 ---
 # <a name="deploy-live-video-analytics-on-an-iot-edge-device"></a>Развертывание Live Video Analytics на устройстве IoT Edge
 
@@ -38,7 +38,7 @@ ms.locfileid: "88684105"
 
 Этот параметр является необязательным. Для этого можно использовать следующую команду Azure CLI:
 
-```azure-cli
+```azurecli
 az ams streaming-endpoint scale --resource-group $RESOURCE_GROUP --account-name $AMS_ACCOUNT -n default --scale-units 1
 ```
 
@@ -47,7 +47,7 @@ az ams streaming-endpoint scale --resource-group $RESOURCE_GROUP --account-name 
 > [!IMPORTANT]
 > На этом этапе будет взиматься плата за подписку.
 
-```azure-cli
+```azurecli
 az ams streaming-endpoint start --resource-group $RESOURCE_GROUP --account-name $AMS_ACCOUNT -n default --no-wait
 ```
 

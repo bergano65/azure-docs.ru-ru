@@ -11,18 +11,18 @@ ms.workload: data-services
 ms.topic: conceptual
 ms.custom: seo-lt-2019
 ms.date: 9/03/2019
-ms.openlocfilehash: a0263880262da95f4d26ee8388da464e9a59efca
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 2197136b86d0bfbb2de79af6712c953339d46371
+ms.sourcegitcommit: bf1340bb706cf31bb002128e272b8322f37d53dd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "81416458"
+ms.lasthandoff: 09/03/2020
+ms.locfileid: "89442843"
 ---
 # <a name="use-azure-data-factory-to-migrate-data-from-an-on-premises-netezza-server-to-azure"></a>Перенос данных с локального сервера Netezza в Azure с помощью фабрики данных Azure 
 
 [!INCLUDE[appliesto-adf-xxx-md](includes/appliesto-adf-xxx-md.md)]
 
-Фабрика данных Azure предоставляет производительный, надежный и экономичный механизм переноса данных с локального сервера Netezza в учетную запись хранения Azure или базу данных хранилища данных SQL Azure. 
+Фабрика данных Azure предоставляет мощный, надежный и экономичный механизм переноса данных с локального сервера Netezza в учетную запись хранения Azure или базу данных Azure синапсе Analytics (ранее — хранилище данных SQL). 
 
 В этой статье содержатся следующие сведения для специалистов по обработке и анализу данных и разработчиков:
 
@@ -57,7 +57,7 @@ ms.locfileid: "81416458"
 
 ## <a name="network-security"></a>Безопасность сети 
 
-По умолчанию фабрика данных Azure передает данные с локального сервера Netezza в учетную запись хранения Azure или базу данных хранилища данных SQL Azure, используя зашифрованное соединение по протоколу HTTPS. HTTPS обеспечивает шифрование данных при передаче и предотвращает прослушивание трафика и атаки типа "злоумышленник в середине".
+По умолчанию фабрика данных Azure передает данные с локального сервера Netezza в учетную запись хранения Azure или базу данных Azure синапсе Analytics, используя зашифрованное подключение по протоколу HTTPS. HTTPS обеспечивает шифрование данных при передаче и предотвращает прослушивание трафика и атаки типа "злоумышленник в середине".
 
 Кроме того, если вы не хотите, чтобы данные передавались через общедоступный Интернет, вы можете повысить безопасность, передавая данные через частный пиринг через канал Azure Express Route. 
 
@@ -109,7 +109,7 @@ ms.locfileid: "81416458"
    
    - Также можно использовать [субъект-службу](https://docs.microsoft.com/azure/data-factory/connector-azure-data-lake-storage#service-principal-authentication) или [ключ учетной записи хранения](https://docs.microsoft.com/azure/data-factory/connector-azure-data-lake-storage#account-key-authentication). 
 
-- Для проверки подлинности в хранилище данных SQL Azure выполните следующие действия.
+- Для аутентификации в Azure синапсе Analytics:
 
    - Мы настоятельно рекомендуем использовать [управляемые удостоверения для ресурсов Azure](https://docs.microsoft.com/azure/data-factory/connector-azure-sql-data-warehouse#managed-identity).
    
@@ -131,7 +131,7 @@ ms.locfileid: "81416458"
 
 В случае сбоя любого задания копирования из-за временной ошибки сети или хранилища данных можно повторно выполнить задание копирования, завершившееся сбоем, чтобы перезагрузить эту конкретную секцию из таблицы. Другие задания копирования, которые загружают другие секции, не затрагиваются.
 
-При загрузке данных в базу данных хранилища данных SQL Azure мы рекомендуем включить Polybase в задании копирования с помощью хранилища BLOB-объектов Azure в качестве промежуточного хранения.
+При загрузке данных в базу данных Azure синапсе Analytics мы рекомендуем включить Polybase в задании копирования с помощью хранилища BLOB-объектов Azure в качестве промежуточного хранения.
 
 ### <a name="migrate-delta-data"></a>Перенос разностных данных 
 
@@ -162,7 +162,7 @@ ms.locfileid: "81416458"
 
 ### <a name="estimate-your-pricing"></a>Оценка цен 
 
-Рассмотрим следующий конвейер, который создается для переноса данных с локального сервера Netezza в базу данных хранилища данных SQL Azure:
+Рассмотрим следующий конвейер, который создается для переноса данных с локального сервера Netezza в базу данных Azure синапсе Analytics:
 
 ![Ценовой конвейер](media/data-migration-guidance-netezza-azure-sqldw/pricing-pipeline.png)
 
@@ -187,7 +187,7 @@ ms.locfileid: "81416458"
 > [!NOTE]
 > В приведенной выше таблице указаны гипотетические цены. Реальная цена зависит от фактической пропускной способности в среде. Цена на компьютере с Windows (с установленным локальным IR) не включена. 
 
-### <a name="additional-references"></a>Дополнительные ссылки
+### <a name="additional-references"></a>Дополнительная справка
 
 Дополнительные сведения см. в следующих статьях и руководствах:
 
@@ -196,7 +196,7 @@ ms.locfileid: "81416458"
 - [Соединитель ODBC](https://docs.microsoft.com/azure/data-factory/connector-odbc)
 - [Соединитель хранилища BLOB-объектов Azure](https://docs.microsoft.com/azure/data-factory/connector-azure-blob-storage)
 - [Copy data to or from Azure Data Lake Storage Gen2 Preview using Azure Data Factory (Preview)](https://docs.microsoft.com/azure/data-factory/connector-azure-data-lake-storage) (Копирование данных в Azure Data Lake Storage Gen2 (предварительная версия) или из него с помощью фабрики данных Azure)
-- [Соединитель хранилища данных Azure SQL](https://docs.microsoft.com/azure/data-factory/connector-azure-sql-data-warehouse)
+- [Соединитель Azure синапсе Analytics](https://docs.microsoft.com/azure/data-factory/connector-azure-sql-data-warehouse)
 - [Руководство по настройке производительности действия копирования](https://docs.microsoft.com/azure/data-factory/copy-activity-performance)
 - [Создание и настройка локальной среды выполнения интеграции](https://docs.microsoft.com/azure/data-factory/create-self-hosted-integration-runtime)
 - [Высокая доступность и масштабируемость локальной среды выполнения интеграции](https://docs.microsoft.com/azure/data-factory/create-self-hosted-integration-runtime#high-availability-and-scalability)

@@ -9,12 +9,12 @@ ms.author: laobri
 author: lobrien
 ms.date: 08/17/2020
 ms.custom: devx-track-python
-ms.openlocfilehash: a62d12aa92e41d4a91f963d962616af11d917195
-ms.sourcegitcommit: d661149f8db075800242bef070ea30f82448981e
+ms.openlocfilehash: 2232aa46b0586ca62e80c8b9002271a67e4021c1
+ms.sourcegitcommit: 3be3537ead3388a6810410dfbfe19fc210f89fec
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/19/2020
-ms.locfileid: "88604467"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89651125"
 ---
 # <a name="what-are-azure-machine-learning-pipelines"></a>Что такое Машинное обучение Azure конвейеров?
 
@@ -89,7 +89,7 @@ ms.locfileid: "88604467"
 
 ## <a name="building-pipelines-with-the-python-sdk"></a>Создание конвейеров с помощью пакета SDK для Python
 
-В [пакете SDK для машинное обучение Azure Python](https://docs.microsoft.com/python/api/overview/azure/ml/install?view=azure-ml-py)конвейер — это объект Python, определенный в `azureml.pipeline.core` модуле. Объект [конвейера](https://docs.microsoft.com/python/api/azureml-pipeline-core/azureml.pipeline.core.pipeline%28class%29?view=azure-ml-py) содержит упорядоченную последовательность из одного или нескольких объектов [пипелинестеп](https://docs.microsoft.com/python/api/azureml-pipeline-core/azureml.pipeline.core.builder.pipelinestep?view=azure-ml-py) . `PipelineStep`Класс является абстрактным, и фактические шаги будут подклассами, такими как [естиматорстеп](https://docs.microsoft.com/python/api/azureml-pipeline-steps/azureml.pipeline.steps.estimatorstep?view=azure-ml-py), [писонскриптстеп](https://docs.microsoft.com/python/api/azureml-pipeline-steps/azureml.pipeline.steps.pythonscriptstep?view=azure-ml-py)или [дататрансферстеп](https://docs.microsoft.com/python/api/azureml-pipeline-steps/azureml.pipeline.steps.datatransferstep?view=azure-ml-py). Класс [модулестеп](https://docs.microsoft.com/python/api/azureml-pipeline-steps/azureml.pipeline.steps.modulestep?view=azure-ml-py) содержит многократно используемую последовательность действий, которые могут совместно использоваться в конвейерах. `Pipeline`Выполняется как часть `Experiment` .
+В [пакете SDK для машинное обучение Azure Python](https://docs.microsoft.com/python/api/overview/azure/ml/install?view=azure-ml-py&preserve-view=true)конвейер — это объект Python, определенный в `azureml.pipeline.core` модуле. Объект [конвейера](https://docs.microsoft.com/python/api/azureml-pipeline-core/azureml.pipeline.core.pipeline%28class%29?view=azure-ml-py&preserve-view=true) содержит упорядоченную последовательность из одного или нескольких объектов [пипелинестеп](https://docs.microsoft.com/python/api/azureml-pipeline-core/azureml.pipeline.core.builder.pipelinestep?view=azure-ml-py&preserve-view=true) . `PipelineStep`Класс является абстрактным, и фактические шаги будут подклассами, такими как [естиматорстеп](https://docs.microsoft.com/python/api/azureml-pipeline-steps/azureml.pipeline.steps.estimatorstep?view=azure-ml-py&preserve-view=true), [писонскриптстеп](https://docs.microsoft.com/python/api/azureml-pipeline-steps/azureml.pipeline.steps.pythonscriptstep?view=azure-ml-py&preserve-view=true)или [дататрансферстеп](https://docs.microsoft.com/python/api/azureml-pipeline-steps/azureml.pipeline.steps.datatransferstep?view=azure-ml-py&preserve-view=true). Класс [модулестеп](https://docs.microsoft.com/python/api/azureml-pipeline-steps/azureml.pipeline.steps.modulestep?view=azure-ml-py&preserve-view=true) содержит многократно используемую последовательность действий, которые могут совместно использоваться в конвейерах. `Pipeline`Выполняется как часть `Experiment` .
 
 Конвейер машинного обучения Azure связан с рабочей областью Машинное обучение Azure, а этап конвейера связан с целевым объектом вычислений, доступным в этой рабочей области. Дополнительные сведения см. в статьях [создание рабочих областей машинное обучение Azure и управление ими в портал Azure](https://docs.microsoft.com/azure/machine-learning/how-to-manage-workspace) или [целевые объекты вычислений в машинное обучение Azure?](https://docs.microsoft.com/azure/machine-learning/concept-compute-target).
 
@@ -125,7 +125,7 @@ pipeline_run = experiment.submit(pipeline)
 pipeline_run.wait_for_completion()
 ```
 
-Фрагмент кода начинается с общих Машинное обучение Azure объектов,, a, `Workspace` `Datastore` [ComputeTarget](https://docs.microsoft.com/python/api/azureml-core/azureml.core.computetarget?view=azure-ml-py)и `Experiment` . Затем код создает объекты для хранения `input_data` и `output_data` . Массив `steps` содержит один элемент, `PythonScriptStep` который будет использовать объекты данных и выполняется в `compute_target` . Затем код создает экземпляр `Pipeline` самого объекта, передавая в него рабочую область и массив шагов. Вызов начинается с `experiment.submit(pipeline)` запуска конвейера машинного обучения Azure. Вызов `wait_for_completion()` блокируется до завершения конвейера. 
+Фрагмент кода начинается с общих Машинное обучение Azure объектов,, a, `Workspace` `Datastore` [ComputeTarget](https://docs.microsoft.com/python/api/azureml-core/azureml.core.computetarget?view=azure-ml-py&preserve-view=true)и `Experiment` . Затем код создает объекты для хранения `input_data` и `output_data` . Массив `steps` содержит один элемент, `PythonScriptStep` который будет использовать объекты данных и выполняется в `compute_target` . Затем код создает экземпляр `Pipeline` самого объекта, передавая в него рабочую область и массив шагов. Вызов начинается с `experiment.submit(pipeline)` запуска конвейера машинного обучения Azure. Вызов `wait_for_completion()` блокируется до завершения конвейера. 
 
 Дополнительные сведения о подключении конвейера к данным см. в статьях [доступ к данным в машинное обучение Azure](concept-data.md) и [Перемещение данных между этапами конвейера ml (Python)](how-to-move-data-in-out-of-pipelines.md). 
 
@@ -159,6 +159,6 @@ pipeline_run.wait_for_completion()
 
 + Узнайте, как [выполнять пакетные прогнозы для больших данных](tutorial-pipeline-batch-scoring-classification.md ).
 
-+ См. справочную документацию по пакету SDK и [этапам](https://docs.microsoft.com/python/api/azureml-pipeline-steps/?view=azure-ml-py) [конвейера](https://docs.microsoft.com/python/api/azureml-pipeline-core/?view=azure-ml-py) .
++ См. справочную документацию по пакету SDK и [этапам](https://docs.microsoft.com/python/api/azureml-pipeline-steps/?view=azure-ml-py&preserve-view=true) [конвейера](https://docs.microsoft.com/python/api/azureml-pipeline-core/?view=azure-ml-py&preserve-view=true) .
 
 + Ознакомьтесь с примерами записных книжек Jupyter, демонстрирующими [машинное обучение Azure конвейеры](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/machine-learning-pipelines). Узнайте, как [запускать записные книжки для изучения этой службы](samples-notebooks.md).

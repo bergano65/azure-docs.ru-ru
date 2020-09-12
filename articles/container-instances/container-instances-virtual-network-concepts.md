@@ -3,13 +3,12 @@ title: Сценарии использования виртуальной сет
 description: Сценарии, ресурсы и ограничения для развертывания групп контейнеров в виртуальной сети Azure.
 ms.topic: article
 ms.date: 08/11/2020
-ms.author: danlep
-ms.openlocfilehash: 0474a5f85829080a89a74195483484c464de5840
-ms.sourcegitcommit: 927dd0e3d44d48b413b446384214f4661f33db04
+ms.openlocfilehash: 5e9c1d1606a9ad491ba7a7e623f1606717aa5b1f
+ms.sourcegitcommit: d0541eccc35549db6381fa762cd17bc8e72b3423
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88870771"
+ms.lasthandoff: 09/09/2020
+ms.locfileid: "89569175"
 ---
 # <a name="virtual-network-scenarios-and-resources"></a>Сценарии и ресурсы виртуальной сети
 
@@ -75,7 +74,7 @@ ms.locfileid: "88870771"
 
 ![Группы контейнеров в виртуальной сети][aci-vnet-01]
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Примеры развертывания с Azure CLI см. в статье [развертывание экземпляров контейнеров в виртуальной сети Azure](container-instances-vnet.md).
 * Чтобы развернуть новую виртуальную сеть, подсеть, сетевой профиль и группу контейнеров с помощью шаблона Resource Manager, см. страницу [создания группы контейнеров Azure с виртуальной сетью](https://github.com/Azure/azure-quickstart-templates/tree/master/101-aci-vnet

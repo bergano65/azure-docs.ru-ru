@@ -10,14 +10,14 @@ ms.service: media-services
 ms.subservice: video-indexer
 ms.workload: na
 ms.topic: article
-ms.date: 08/05/2020
+ms.date: 09/03/2020
 ms.author: juliako
-ms.openlocfilehash: 1b11dc0ee17fd0686776a7262c4bc99bd98bcc3e
-ms.sourcegitcommit: 2ff0d073607bc746ffc638a84bb026d1705e543e
+ms.openlocfilehash: e2b45ebf9acea7334678110015d8cfd3022675f4
+ms.sourcegitcommit: 59ea8436d7f23bee75e04a84ee6ec24702fb2e61
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87837315"
+ms.lasthandoff: 09/07/2020
+ms.locfileid: "89505345"
 ---
 # <a name="azure-media-services-video-indexer-release-notes"></a>Заметки о выпуске индексатора видео служб мультимедиа Azure
 
@@ -29,6 +29,16 @@ ms.locfileid: "87837315"
 * Известные проблемы
 * Исправления ошибок
 * Нерекомендуемые функции.
+
+## <a name="august-2020"></a>Август 2020 г.
+
+### <a name="mobile-design-for-the-video-indexer-website"></a>Дизайн мобильных приложений для веб-сайта индексатора видео
+
+Интерфейс веб-сайта индексатора видео теперь поддерживает мобильные устройства. Взаимодействие с пользователем отвечает за адаптацию к размеру мобильного экрана (за исключением пользовательских интерфейсов настройки). 
+
+### <a name="accessibility-improvements-and-bug-fixes"></a>Улучшения специальных возможностей и исправления ошибок 
+
+Как часть рекомендаций WCAG (рекомендации по специальным возможностям для веб-содержимого), веб-сайты индексатора видео в качестве части стандартов специальных возможностей Майкрософт согласовываются с уровнем C. Устранены некоторые ошибки и улучшения, связанные с навигацией с помощью клавиатуры, программным доступом и средством чтения с экрана. 
 
 ## <a name="july-2020"></a>Июль 2020 г.
 
@@ -129,7 +139,7 @@ ms.locfileid: "87837315"
  
 ### <a name="new-video-indexer-github-repository"></a>Репозиторий нового индексатора видео GitHub
 
-Новый индексатор видео GitHub с различными проектами, руководства по началу работы и примеры кода теперь доступны:https://github.com/Azure-Samples/media-services-video-indexer
+Новый индексатор видео GitHub с различными проектами, руководства по началу работы и примеры кода теперь доступны: https://github.com/Azure-Samples/media-services-video-indexer
  
 ### <a name="swagger-update"></a>Обновление Swagger
 

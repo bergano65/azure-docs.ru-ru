@@ -4,12 +4,12 @@ description: Получение количества просмотров стр
 ms.topic: conceptual
 ms.date: 08/06/2020
 ms.custom: devx-track-javascript
-ms.openlocfilehash: 3acb7379644b5bfcb22ed86b6bde7031095fef24
-ms.sourcegitcommit: 152c522bb5ad64e5c020b466b239cdac040b9377
+ms.openlocfilehash: 9f335ca6912545b39fb8276f5895f98e653735d0
+ms.sourcegitcommit: f8d2ae6f91be1ab0bc91ee45c379811905185d07
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88224859"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89656951"
 ---
 # <a name="application-insights-for-web-pages"></a>Application Insights для веб-страниц
 
@@ -115,7 +115,7 @@ cfg: { // Application Insights Configuration
 
 ### <a name="sending-telemetry-to-the-azure-portal"></a>Отправка данных телеметрии в портал Azure
 
-По умолчанию в Application Insights SDK для JavaScript выполняется Автосбор нескольких элементов телеметрии, которые полезны для определения работоспособности приложения и базового интерфейса пользователя. К ним относятся следующие объекты.
+По умолчанию в Application Insights SDK для JavaScript выполняется Автосбор нескольких элементов телеметрии, которые полезны для определения работоспособности приложения и базового интерфейса пользователя. Сюда входит следующее.
 
 - **Неперехваченные исключения** в приложении, включая сведения о
     - Трассировка стека
@@ -155,7 +155,7 @@ appInsights.trackTrace({message: 'this message will not be sent'}); // Not sent
 
 | Имя | По умолчанию | Описание |
 |------|---------|-------------|
-| instrumentationKey | null | **Обязательно**<br>Ключ инструментирования, полученный из портал Azure. |
+| instrumentationKey | null | **Обязательное**<br>Ключ инструментирования, полученный из портал Azure. |
 | accountId | null | Необязательный идентификатор учетной записи, если приложение группирует пользователей в учетные записи. Без пробелов, запятых, точек с запятой, знаков равенства или вертикальных линий |
 | сессионреневалмс | 1800000 | Сеанс регистрируется, если пользователь неактивен в течение этого периода времени в миллисекундах. Значение по умолчанию — 30 минут. |
 | сессионекспиратионмс | 86400000 | Сеанс заносится в журнал, если он продолжался в течение этого времени (в миллисекундах). По умолчанию — 24 часа |
@@ -204,8 +204,7 @@ appInsights.trackTrace({message: 'this message will not be sent'}); // Not sent
 
 По умолчанию этот пакет SDK **не** будет управлять изменением маршрута на основе состояния, которое происходит в одностраничных приложениях. Чтобы включить автоматическое отслеживание изменений маршрута для одностраничного приложения, можно добавить `enableAutoRouteTracking: true` в конфигурацию установки.
 
-В настоящее время мы предлагаем отдельный [подключаемый модуль реагирования](#react-extensions), который можно инициализировать с помощью этого пакета SDK. Кроме того, будет осуществляться отслеживание изменений маршрута, а также собраны [другие данные телеметрии, связанные с реагированием](https://github.com/microsoft/ApplicationInsights-JS/blob/17ef50442f73fd02a758fbd74134933d92607ecf/extensions/applicationinsights-react-js/README.md).
-
+В настоящее время мы предлагаем отдельный [подключаемый модуль реагирования](javascript-react-plugin.md), который можно инициализировать с помощью этого пакета SDK. Кроме того, будет осуществляться отслеживание изменений маршрута, а также собраны другие данные телеметрии, связанные с реагированием.
 > [!NOTE]
 > Используйте `enableAutoRouteTracking: true` , только если **не** используется подключаемый модуль "реагирующий". Оба варианта могут отправлять новые PageViews при изменении маршрута. Если оба этих флажка включены, может быть отправлен дубликат PageViews.
 
@@ -213,12 +212,13 @@ appInsights.trackTrace({message: 'this message will not be sent'}); // Not sent
 
 С помощью параметра `autoTrackPageVisitTime: true` время, затрачиваемое пользователем на каждую страницу, будет отслеживаниь. На каждом новом PageView время, которое пользователь тратил на *предыдущей* странице, отправляется как [Пользовательская метрика](../platform/metrics-custom-overview.md) с именем `PageVisitTime` . Эта пользовательская метрика отображается в [Обозреватель метрик](../platform/metrics-getting-started.md) как "Метрика на основе журнала".
 
-## <a name="react-extensions"></a>Модули реагирования
+## <a name="extensions"></a>Модули
 
 | Модули |
 |---------------|
 | [React](javascript-react-plugin.md)|
 | [React Native](javascript-react-native-plugin.md)|
+| [Angular](https://github.com/microsoft/ApplicationInsights-JS/tree/master/extensions/applicationinsights-angularplugin-js) |
 
 ## <a name="correlation"></a>Корреляция
 
@@ -315,7 +315,7 @@ npm i --save @microsoft/applicationinsights-web-basic
 
 ## <a name="examples"></a>Примеры
 
-Примеры готовности к запуску см. в разделе [примеры пакетов SDK для Application Insights JavaScript](https://github.com/topics/applicationinsights-js-demo)
+Примеры готовности к запуску см. в разделе [Application Insights примеров SDK для JavaScript](https://github.com/Azure-Samples?q=applicationinsights-js-demo).
 
 ## <a name="upgrading-from-the-old-version-of-application-insights"></a>Обновление старой версии Application Insights
 

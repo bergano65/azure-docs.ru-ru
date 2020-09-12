@@ -12,12 +12,12 @@ manager: mflasko
 ms.reviewer: douglasl
 ms.custom: seo-lt-2019
 ms.date: 08/11/2020
-ms.openlocfilehash: 3bc8458aa009920f183b076d12185295ef294e07
-ms.sourcegitcommit: faeabfc2fffc33be7de6e1e93271ae214099517f
+ms.openlocfilehash: 18e1ff05d76937f8809408da0ed25f55120e456a
+ms.sourcegitcommit: bf1340bb706cf31bb002128e272b8322f37d53dd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/13/2020
-ms.locfileid: "88186086"
+ms.lasthandoff: 09/03/2020
+ms.locfileid: "89440581"
 ---
 # <a name="customize-the-setup-for-an-azure-ssis-integration-runtime"></a>Настройка среды выполнения интеграции Azure Integration Services
 
@@ -143,13 +143,13 @@ ms.locfileid: "88186086"
 
    * При выборе компонента **фабрики задач SentryOne** можно установить набор компонентов [фабрики задач](https://www.sentryone.com/products/task-factory/high-performance-ssis-components) из SentryOne на Azure-SSIS IR. Для этого введите лицензионный ключ продукта, который вы приобрели заранее, в текстовом поле **лицензионный ключ** . Текущая интегрированная версия — **2020.1.3**.
 
-   * При выборе **OH22'S Хедда. Компонент ввода-вывода** можно установить [Хедда. ](https://hedda.io/ssis-component/)Компонент качества или очистки данных ввода-вывода из oh22 на Azure-SSIS IR. Для этого необходимо приобрести свою службу заранее. Текущая интегрированная версия — **1.0.14**.
+   * При выборе **OH22'S Хедда. Компонент ввода-вывода** можно установить [Хедда. ](https://hedda.io/ssis-component/) Компонент качества или очистки данных ввода-вывода из oh22 на Azure-SSIS IR. Для этого необходимо приобрести свою службу заранее. Текущая интегрированная версия — **1.0.14**.
 
    * При выборе компонента **oh22's SQLPhonetics.NET** можно установить компонент качества данных [SQLPhonetics.NET](https://appsource.microsoft.com/product/web-apps/oh22.sqlphonetics-ssis) и соответствующий параметр из oh22 на Azure-SSIS IR. Для этого введите лицензионный ключ продукта, который вы приобрели заранее, в текстовом поле **лицензионный ключ** . Текущая интегрированная версия — **1.0.45**.
 
-   * Если вы выбрали компонент **Кингсвайсофт Integration Toolkit для служб** SSIS, можно установить набор соединителей [SSIS Integration Toolkit](https://www.kingswaysoft.com/products/ssis-integration-toolkit-for-microsoft-dynamics-365) для приложений CRM/ERP/Marketing/Collaboration, таких как Microsoft Dynamics, SharePoint, Project Server, Oracle/Salesforce Marketing Cloud и т. п. из кингсвайсофт на Azure-SSIS IR. Для этого введите лицензионный ключ продукта, который вы приобрели заранее, в текстовом поле **лицензионный ключ** . Текущая интегрированная версия — **2019.2**.
+   * Если вы выбрали компонент **Кингсвайсофт Integration Toolkit для служб** SSIS, можно установить набор соединителей [SSIS Integration Toolkit](https://www.kingswaysoft.com/products/ssis-integration-toolkit-for-microsoft-dynamics-365) для приложений CRM/ERP/Marketing/Collaboration, таких как Microsoft Dynamics, SharePoint, Project Server, Oracle/Salesforce Marketing Cloud и т. п. из кингсвайсофт на Azure-SSIS IR. Для этого введите лицензионный ключ продукта, который вы приобрели заранее, в текстовом поле **лицензионный ключ** . Текущая интегрированная версия — **2020,1**.
 
-   * При выборе компонента **пакета производительности SSIS кингсвайсофт** можно установить набор компонентов [пакета производительности SSIS](https://www.kingswaysoft.com/products/ssis-productivity-pack) из кингсвайсофт на Azure-SSIS IR. Для этого введите лицензионный ключ продукта, который вы приобрели заранее, в текстовом поле **лицензионный ключ** . Текущая интегрированная версия — **10.0**.
+   * При выборе компонента **пакета производительности SSIS кингсвайсофт** можно установить набор компонентов [пакета производительности SSIS](https://www.kingswaysoft.com/products/ssis-productivity-pack) из кингсвайсофт на Azure-SSIS IR. Для этого введите лицензионный ключ продукта, который вы приобрели заранее, в текстовом поле **лицензионный ключ** . Текущая интегрированная версия — **20,1**.
 
    * Если выбрать компонент **Звлечь Сеобалд Software** , то можно установить [звлечь — это](https://theobald-software.com/en/xtract-is/) набор соединителей для систем SAP (ERP, s/4HANA, BW) из сеобалд Software на Azure-SSIS IR. Для этого перетащите & Отгрузите или отправьте файл лицензии продукта, который вы приобрели заранее, в поле ввода **файла лицензии** . Текущая интегрированная версия — **6.1.1.3**.
 

@@ -11,20 +11,20 @@ author: rohitnayakmsft
 ms.author: rohitna
 ms.reviewer: vanto, genemi
 ms.date: 11/14/2019
-ms.openlocfilehash: 76a31b10c15f2dff3d6d9304dcff6d0fb489ea7f
-ms.sourcegitcommit: 4913da04fd0f3cf7710ec08d0c1867b62c2effe7
+ms.openlocfilehash: 827d66b51aa2080c4fb10209439d7781ddf787a7
+ms.sourcegitcommit: bf1340bb706cf31bb002128e272b8322f37d53dd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88210389"
+ms.lasthandoff: 09/03/2020
+ms.locfileid: "89436931"
 ---
 # <a name="use-virtual-network-service-endpoints-and-rules-for-servers-in-azure-sql-database"></a>Использование конечных точек службы и правил виртуальной сети для серверов в базе данных SQL Azure
 [!INCLUDE[appliesto-sqldb-asa](../includes/appliesto-sqldb-asa.md)]
 
-*Правила виртуальной сети* — это одна из функций безопасности брандмауэра, которая определяет, принимает ли сервер для баз данных и эластичных пулов в [базе данных SQL Azure](sql-database-paas-overview.md) или для баз данных в [Azure синапсе](../../synapse-analytics/sql-data-warehouse/sql-data-warehouse-overview-what-is.md) связь, отправляемую из определенных подсетей в виртуальных сетях. В этой статье объясняется, почему функция правила виртуальной сети иногда является лучшим вариантом для безопасного обмена данными с базой данных в базе данных SQL Azure и хранилищем данных SQL.
+*Правила виртуальной сети* — это одна из функций безопасности брандмауэра, которая определяет, принимает ли сервер для баз данных и эластичных пулов в [базе данных SQL Azure](sql-database-paas-overview.md) или для баз данных в [Azure синапсе](../../synapse-analytics/sql-data-warehouse/sql-data-warehouse-overview-what-is.md) связь, отправляемую из определенных подсетей в виртуальных сетях. В этой статье объясняется, почему функция правила виртуальной сети иногда является лучшим вариантом для безопасного подключения к базе данных в базе данных SQL Azure и Azure синапсе Analytics (ранее — хранилище данных SQL).
 
 > [!NOTE]
-> Эта статья относится как к базе данных SQL Azure, так и к Azure Synapse Analytics (ранее — хранилище данных SQL). Для простоты термин "база данных" применяется к обеим из них. Аналогичным образом, "сервером" называется [логический сервер SQL Server](logical-servers.md), на котором размещены База данных SQL Azure и Azure Synapse Analytics.
+> Эта статья относится как к базе данных SQL Azure, так и к Azure синапсе Analytics. Для простоты термин "база данных" применяется к обеим из них. Аналогичным образом, "сервером" называется [логический сервер SQL Server](logical-servers.md), на котором размещены База данных SQL Azure и Azure Synapse Analytics.
 
 Чтобы создать правило виртуальной сети, требуется [конечная точка службы для виртуальной сети][vm-virtual-network-service-endpoints-overview-649d], используемая для ссылки.
 
@@ -104,7 +104,7 @@ When searching for blogs about ASM, you probably need to use this old and now-fo
 
 ## <a name="impact-of-using-vnet-service-endpoints-with-azure-storage"></a>Влияние использования конечных точек службы виртуальной сети со службой хранилища Azure
 
-Служба хранилища Azure реализовала ту же функцию, которая позволяет ограничить возможность подключения к учетной записи службы хранилища Azure. Если вы решили применить эту функцию к учетной записи службы хранилища Azure, используемой Базой данных Azure SQL, могут возникнуть проблемы. Ниже приведен список и описание функций Базы данных SQL Azure и Хранилища данных SQL Azure, на которых это отразится.
+Служба хранилища Azure реализовала ту же функцию, которая позволяет ограничить возможность подключения к учетной записи службы хранилища Azure. Если вы решили применить эту функцию к учетной записи службы хранилища Azure, используемой Базой данных Azure SQL, могут возникнуть проблемы. Далее приведен список и обсуждение функций Azure синапсе Analytics и базы данных SQL Azure, на которые повлияла эта функция.
 
 ### <a name="azure-synapse-polybase-and-copy-statement"></a>Azure синапсе Polybase и инструкция COPY
 
@@ -275,12 +275,12 @@ Polybase и инструкция COPY обычно используются дл
 
 <a name="anchor-how-to-links-60h"></a>
 
-## <a name="related-articles"></a>Связанные статьи
+## <a name="related-articles"></a>Похожие статьи
 
 - [Конечные точки службы виртуальной сети Azure][vm-virtual-network-service-endpoints-overview-649d]
 - [Правила брандмауэра уровня сервера и базы данных][sql-db-firewall-rules-config-715d]
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [С помощью PowerShell создайте конечную точку службы виртуальной сети, а затем правило виртуальной сети для базы данных SQL Azure.][sql-db-vnet-service-endpoint-rule-powershell-md-52d]
 - [Правила виртуальной сети: операции][rest-api-virtual-network-rules-operations-862r] с REST API

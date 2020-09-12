@@ -8,12 +8,12 @@ ms.service: hdinsight
 ms.topic: how-to
 ms.date: 11/15/2019
 ms.custom: H1Hack27Feb2017,hdinsightactive, devx-track-python
-ms.openlocfilehash: 2f02e579f7679180cecfd8a48736b3af307ba371
-ms.sourcegitcommit: dea88d5e28bd4bbd55f5303d7d58785fad5a341d
+ms.openlocfilehash: 9c16b3ff013c2985ea381ed4bb002276b1c3fdb8
+ms.sourcegitcommit: 4a7a4af09f881f38fcb4875d89881e4b808b369b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87874764"
+ms.lasthandoff: 09/04/2020
+ms.locfileid: "89462247"
 ---
 # <a name="use-python-user-defined-functions-udf-with-apache-hive-and-apache-pig-in-hdinsight"></a>Использование определяемых пользователем функций Python с Apache Hive и Apache Pig в HDInsight
 
@@ -25,7 +25,7 @@ ms.locfileid: "87874764"
 
 В состав HDInsight также входят Jython, который представляет собой реализацию Python, написанную на Java. Jython выполняется непосредственно на виртуальная машина Java и не использует потоковую передачу. Jython является рекомендуемым интерпретатором Python при использовании Python с Pig.
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 * **Кластер Hadoop в HDInsight**. Ознакомьтесь со статьей [Краткое руководство. Использование Apache Hadoop и Apache Hive в Azure HDInsight с шаблоном Resource Manager](apache-hadoop-linux-tutorial-get-started.md).
 * **Клиент SSH**. Дополнительные сведения см. в руководстве по [подключению к HDInsight (Apache Hadoop) с помощью SSH](../hdinsight-hadoop-linux-use-ssh-unix.md).
@@ -38,7 +38,7 @@ ms.locfileid: "87874764"
 
 ## <a name="storage-configuration"></a>Конфигурация хранилища
 
-Если используемая учетная запись хранения имеет тип или, никаких действий не требуется `Storage (general purpose v1)` `StorageV2 (general purpose v2)` .  Процесс, описанный в этой статье, будет создавать выходные данные по меньшей мере `/tezstaging` .  Конфигурация Hadoop по умолчанию будет содержать `/tezstaging` в `fs.azure.page.blob.dir` переменной конфигурации `core-site.xml` для службы `HDFS` .  Эта конфигурация приведет к тому, что выходные данные в каталог будут страничными BLOB-объектами, которые не поддерживаются для типа учетной записи хранения `BlobStorage` .  Для использования в `BlobStorage` этой статье удалите `/tezstaging` из `fs.azure.page.blob.dir` переменной конфигурации.  Доступ к конфигурации можно получить из [пользовательского интерфейса Ambari](../hdinsight-hadoop-manage-ambari.md).  В противном случае вы получите сообщение об ошибке:`Page blob is not supported for this account type.`
+Если используемая учетная запись хранения имеет тип или, никаких действий не требуется `Storage (general purpose v1)` `StorageV2 (general purpose v2)` .  Процесс, описанный в этой статье, будет создавать выходные данные по меньшей мере `/tezstaging` .  Конфигурация Hadoop по умолчанию будет содержать `/tezstaging` в `fs.azure.page.blob.dir` переменной конфигурации `core-site.xml` для службы `HDFS` .  Эта конфигурация приведет к тому, что выходные данные в каталог будут страничными BLOB-объектами, которые не поддерживаются для типа учетной записи хранения `BlobStorage` .  Для использования в `BlobStorage` этой статье удалите `/tezstaging` из `fs.azure.page.blob.dir` переменной конфигурации.  Доступ к конфигурации можно получить из [пользовательского интерфейса Ambari](../hdinsight-hadoop-manage-ambari.md).  В противном случае вы получите сообщение об ошибке: `Page blob is not supported for this account type.`
 
 > [!WARNING]  
 > Шаги в этом документе основаны на следующих предположениях:  
@@ -300,8 +300,8 @@ Get-AzHDInsightJobOutput `
 
 Чтобы указать интерпретатор Python, используйте `register` при указании ссылки на скрипт Python. Следующие примеры регистрируют скрипты с Pig в качестве `myfuncs`:
 
-* **Чтобы использовать Jython,** сделайте следующее:`register '/path/to/pigudf.py' using jython as myfuncs;`
-* **Чтобы использовать язык C Python**:`register '/path/to/pigudf.py' using streaming_python as myfuncs;`
+* **Чтобы использовать Jython,** сделайте следующее: `register '/path/to/pigudf.py' using jython as myfuncs;`
+* **Чтобы использовать язык C Python**: `register '/path/to/pigudf.py' using streaming_python as myfuncs;`
 
 > [!IMPORTANT]  
 > При использовании Jython путь к файлу pig_jython может быть локальным путем или WASBS://. Но при использовании CPython необходимо указать ссылку на файл в локальной файловой системе узла, который используется для отправки задания Pig.
@@ -594,7 +594,7 @@ Caused by: org.apache.hadoop.hive.ql.metadata.HiveException: [Error 20001]: An e
 
 ## <a name="next-steps"></a><a name="next"></a>Следующие шаги
 
-Если вам нужно загрузить модули Python, которые не поставляются по умолчанию, см. статью [How to deploy a Python module to Windows Azure HDInsight](https://blogs.msdn.com/b/benjguin/archive/2014/03/03/how-to-deploy-a-python-module-to-windows-azure-hdinsight.aspx) (Как развернуть модуль Python в Windows Azure HDInsight).
+Если вам нужно загрузить модули Python, которые не поставляются по умолчанию, см. статью [How to deploy a Python module to Windows Azure HDInsight](https://docs.microsoft.com/archive/blogs/benjguin/how-to-deploy-a-python-module-to-windows-azure-hdinsight) (Как развернуть модуль Python в Windows Azure HDInsight).
 
 Сведения о других способах использования Pig и Hive и дополнительную информацию об использовании MapReduce см. в следующих документах:
 

@@ -5,14 +5,14 @@ services: vpn-gateway
 author: cherylmc
 ms.service: vpn-gateway
 ms.topic: how-to
-ms.date: 03/05/2020
+ms.date: 09/03/2020
 ms.author: cherylmc
-ms.openlocfilehash: 5abf79d23ca2de661383cc002dac9d7f9e4dc5bf
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: b14f3c241fd21d3d4f9c4e17ae95d8048139cec1
+ms.sourcegitcommit: bf1340bb706cf31bb002128e272b8322f37d53dd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84985572"
+ms.lasthandoff: 09/03/2020
+ms.locfileid: "89442877"
 ---
 # <a name="configure-a-vnet-to-vnet-vpn-gateway-connection-by-using-the-azure-portal"></a>Настройка подключения VPN-шлюза "виртуальная сеть — виртуальная сеть" с использованием портала Azure
 
@@ -78,7 +78,7 @@ ms.locfileid: "84985572"
     - **Диапазон адресов**: 10.1.0.0/16.
     - **Подписка**. Выберите подписку, которую хотите использовать.
     - **Группа ресурсов**: TestRG1
-    - **Расположение.** восточная часть США.
+    - **Расположение**: Восточная часть США
     - **Подсеть**
         - **Имя**: интерфейсный
         - **Диапазон адресов**: 10.1.0.0/24
@@ -107,7 +107,7 @@ ms.locfileid: "84985572"
    - **Подсеть** 
       - **Имя**: интерфейсный
       - **Диапазон адресов**: 10.41.0.0/24.
-   - **Подсеть шлюза** 
+   - **GatewaySubnet** 
       - **Имя**: *GatewaySubnet* заполняется автозаполнением
       - **Диапазон адресов**: 10.41.255.0/27
 
@@ -148,7 +148,7 @@ ms.locfileid: "84985572"
    ![Страница "подключения"](./media/vpn-gateway-howto-vnet-vnet-resource-manager-portal/connections.png "Страница "подключения"")
 2. Выберите **+ Добавить** , чтобы открыть страницу **Добавление подключения** .
 
-   ![Добавить соединение](./media/vpn-gateway-howto-vnet-vnet-resource-manager-portal/vnet1-vnet4-connection.png "Добавление подключения")
+   ![Добавить подключение](./media/vpn-gateway-howto-vnet-vnet-resource-manager-portal/vnet1-vnet4-connection.png "Добавление подключения")
 3. На странице **Добавление подключения** укажите значения для подключения:
 
    - **Имя**: введите имя для подключения. Например, *VNet1toVNet4*.
@@ -165,7 +165,7 @@ ms.locfileid: "84985572"
 
      - **Общий ключ (PSK)**. в этом поле введите общий ключ для подключения. Этот ключ можно сгенерировать или создать самостоятельно. В подключении типа "сеть — сеть" один и тот же ключ используется и для локального устройства, и для подключения шлюза виртуальной сети. То же самое и здесь, но вместо подключения к VPN-устройству выполняется подключение к другому шлюзу виртуальной сети.
     
-4. Нажмите кнопку **ОК** , чтобы сохранить изменения.
+4. Нажмите кнопку **OK**, чтобы сохранить изменения.
 
 ## <a name="configure-the-vnet4-gateway-connection"></a>Настройка подключения к шлюзу VNet4
 Затем создайте подключение из VNet4 к VNet1. На портале выберите шлюз виртуальной сети, связанный с VNet4. Выполните шаги из предыдущего раздела, заменив значения, чтобы создать подключение из VNet4 к VNet1. Используйте тот же общий ключ.
@@ -189,7 +189,7 @@ ms.locfileid: "84985572"
 
 [!INCLUDE [vpn-gateway-vnet-vnet-faq](../../includes/vpn-gateway-faq-vnet-vnet-include.md)]
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Сведения об ограничении сетевого трафика к ресурсам в виртуальной сети см. в статье [Безопасность сети](../virtual-network/security-overview.md).
 

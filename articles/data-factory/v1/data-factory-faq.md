@@ -11,12 +11,12 @@ ms.service: data-factory
 ms.workload: data-services
 ms.topic: conceptual
 ms.date: 01/10/2018
-ms.openlocfilehash: 1b042c0279e458cf83bd5c81147f4b1f25d7687d
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: a019b86adf3dfe950b7d93f50c834d004a2aebf9
+ms.sourcegitcommit: 4a7a4af09f881f38fcb4875d89881e4b808b369b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "75645146"
+ms.lasthandoff: 09/04/2020
+ms.locfileid: "89462349"
 ---
 # <a name="azure-data-factory---frequently-asked-questions"></a>Фабрика данных Azure — часто задаваемые вопросы
 > [!NOTE]
@@ -25,7 +25,7 @@ ms.locfileid: "75645146"
 [!INCLUDE [updated-for-az](../../../includes/updated-for-az.md)]
 
 ## <a name="general-questions"></a>Общие вопросы
-### <a name="what-is-azure-data-factory"></a>Что такое фабрика данных Azure?
+### <a name="what-is-azure-data-factory"></a>Что такое Фабрика данных Azure?
 Фабрика данных представляет собой облачную службу интеграции информации, которая **автоматизирует перемещение и преобразование данных**. Как на фабрике сырье превращается в готовую продукцию с помощью оборудования, так и в фабриках данных необработанные данные собираются и преобразовываются в готовые к использованию сведения с помощью специальных служб.
 
 Фабрика данных позволяет создавать управляемые данными рабочие процессы для перемещения данных между локальными и облачными хранилищами данных, а также обрабатывать или преобразовывать данные с помощью служб вычислений, таких как Azure HDInsight и Azure Data Lake Analytics. Для созданного конвейера, который выполняет необходимое действие, можно запланировать периодический запуск (ежечасно, ежедневно, еженедельно и т. д.).   
@@ -72,7 +72,7 @@ ms.locfileid: "75645146"
 | [Пакетная служба Azure](data-factory-compute-linked-services.md#azure-batch-linked-service) |[DotNet](data-factory-use-custom-activities.md) |
 | [Машинное обучение Azure](data-factory-compute-linked-services.md#azure-machine-learning-linked-service) |[Создание прогнозирующих конвейеров с помощью машинного обучения Azure и фабрики данных Azure](data-factory-azure-ml-batch-execution-activity.md) |
 | [Azure Data Lake Analytics](data-factory-compute-linked-services.md#azure-data-lake-analytics-linked-service) |[Аналитика озера данных U-SQL](data-factory-usql-activity.md) |
-| [Azure SQL](data-factory-compute-linked-services.md#azure-sql-linked-service), [хранилище данных Azure SQL](data-factory-compute-linked-services.md#azure-sql-data-warehouse-linked-service), [SQL Server](data-factory-compute-linked-services.md#sql-server-linked-service) |[Хранимая процедура](data-factory-stored-proc-activity.md) |
+| [Azure SQL](data-factory-compute-linked-services.md#azure-sql-linked-service), [Azure синапсе Analytics (ранее — хранилище данных SQL)](data-factory-compute-linked-services.md#azure-synapse-analytics-linked-service), [SQL Server](data-factory-compute-linked-services.md#sql-server-linked-service) |[Хранимая процедура](data-factory-stored-proc-activity.md) |
 
 ### <a name="how-does-azure-data-factory-compare-with-sql-server-integration-services-ssis"></a>Чем отличаются возможности фабрики данных Azure и SQL Server Integration Services (SSIS)? 
 Ознакомьтесь с представлением [фабрики данных Azure и служб SSIS](https://www.sqlbits.com/Sessions/Event15/Azure_Data_Factory_vs_SSIS) от одного из наших MVP (наиболее ценных специалистов): Рэд Reza RAD. Некоторые из последних изменений в фабрике данных могут отсутствовать в наборе слайдов. Мы постоянно добавляем в фабрику данных Azure дополнительные возможности. Мы постоянно добавляем в фабрику данных Azure дополнительные возможности. Мы внесем эти обновления в сравнение технологий интеграции данных от корпорации Майкрософт позже в этом году.   
@@ -205,4 +205,4 @@ ms.locfileid: "75645146"
 [adf-pricing-details]: https://go.microsoft.com/fwlink/?LinkId=517777
 [hdinsight-supported-regions]: https://azure.microsoft.com/pricing/details/hdinsight/
 [hdinsight-alternate-storage]: https://social.technet.microsoft.com/wiki/contents/articles/23256.using-an-hdinsight-cluster-with-alternate-storage-accounts-and-metastores.aspx
-[hdinsight-alternate-storage-2]: https://blogs.msdn.com/b/cindygross/archive/2014/05/05/use-additional-storage-accounts-with-hdinsight-hive.aspx
+[hdinsight-alternate-storage-2]: https://docs.microsoft.com/archive/blogs/cindygross/use-additional-storage-accounts-with-hdinsight-hive

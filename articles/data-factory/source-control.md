@@ -10,13 +10,13 @@ manager: anandsub
 ms.reviewer: ''
 ms.topic: conceptual
 ms.custom: seo-lt-2019
-ms.date: 04/30/2020
-ms.openlocfilehash: 66cc7b0d4f205a93c41f49ecaadac495a98b6da6
-ms.sourcegitcommit: e69bb334ea7e81d49530ebd6c2d3a3a8fa9775c9
+ms.date: 09/08/2020
+ms.openlocfilehash: 2f4e0728a863521f772f4d1c9531b07f427bfb3e
+ms.sourcegitcommit: 1b320bc7863707a07e98644fbaed9faa0108da97
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "88949139"
+ms.lasthandoff: 09/09/2020
+ms.locfileid: "89595102"
 ---
 # <a name="source-control-in-azure-data-factory"></a>Система управления версиями в Фабрике данных Azure
 [!INCLUDE[appliesto-adf-xxx-md](includes/appliesto-adf-xxx-md.md)]
@@ -242,13 +242,13 @@ ms.locfileid: "88949139"
 
 ## <a name="switch-to-a-different-git-repository"></a>Переход на другой репозиторий Git
 
-Чтобы перейти на другой репозиторий Git, щелкните значок **Параметры репозитория Git** в правом верхнем углу страницы обзора Фабрики данных. Если значок не отображается, очистите локальный кэш браузера. Чтобы разорвать связь с текущим репозиторием, выберите значок.
+Чтобы переключиться на другой репозиторий Git, перейдите на страницу конфигурации Git в центре управления в **системе управления версиями**. Выберите **Отключить**. 
 
-![Значок Git](media/author-visually/remove-repo.png)
+![Значок Git](media/author-visually/remove-repository.png)
 
-Когда появится область Repository Settings (Параметры репозитория), выберите **Remove Git** (Удалить Git). Введите имя фабрики данных и нажмите кнопку **подтвердить**, чтобы удалить репозиторий Git, связанный с фабрикой данных.
+Введите имя фабрики данных и нажмите кнопку **подтвердить**, чтобы удалить репозиторий Git, связанный с фабрикой данных.
 
-![Удаление связи с текущим репозиторием Git](media/author-visually/remove-repo2.png)
+![Удаление связи с текущим репозиторием Git](media/author-visually/remove-repository-2.png)
 
 После удаления связи с текущим репозиторием можно настроить параметры Git для использования другого репозитория, а затем импортировать существующие ресурсы Фабрики данных в новый репозиторий.
 

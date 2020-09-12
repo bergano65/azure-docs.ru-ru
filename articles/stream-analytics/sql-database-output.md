@@ -7,16 +7,16 @@ ms.reviewer: mamccrea
 ms.service: stream-analytics
 ms.topic: conceptual
 ms.date: 08/25/2020
-ms.openlocfilehash: d61cad0be25f5aa1a4c63bf3dc128196ad80fdad
-ms.sourcegitcommit: 927dd0e3d44d48b413b446384214f4661f33db04
+ms.openlocfilehash: 83fa119a17d319dffe1fcd54173d9a11b29135ca
+ms.sourcegitcommit: de2750163a601aae0c28506ba32be067e0068c0c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88875851"
+ms.lasthandoff: 09/04/2020
+ms.locfileid: "89481835"
 ---
 # <a name="azure-sql-database-output-from-azure-stream-analytics"></a>Выходные данные базы данных SQL Azure от Azure Stream Analytics
 
-[База данных SQL Azure](https://azure.microsoft.com/services/sql-database/) может служить местом назначения для выходных реляционных данных, а также для выходных данных приложений, которые зависят от содержимого, размещенного в реляционной базе данных. Azure Stream Analyticsные задания записываются в существующую таблицу в базе данных SQL. Схема таблицы должна в точности соответствовать полям и их типам в выходных данных задания. С помощью параметра вывода данных для базы данных SQL можно также указать [хранилище данных SQL Azure](https://azure.microsoft.com/documentation/services/sql-data-warehouse/) в качестве выходных данных. Сведения о способах улучшения пропускной способности операций записи см. в статье [Azure Stream Analytics output to Azure SQL Database](stream-analytics-sql-output-perf.md) (Запись выходных данных Azure Stream Analytics в службу "База данных SQL Azure").
+[База данных SQL Azure](https://azure.microsoft.com/services/sql-database/) может служить местом назначения для выходных реляционных данных, а также для выходных данных приложений, которые зависят от содержимого, размещенного в реляционной базе данных. Azure Stream Analyticsные задания записываются в существующую таблицу в базе данных SQL. Схема таблицы должна в точности соответствовать полям и их типам в выходных данных задания. Вы также можете указать [Azure синапсе Analytics](https://azure.microsoft.com/documentation/services/sql-data-warehouse/) в качестве выходных данных с помощью параметра вывода базы данных SQL. Сведения о способах улучшения пропускной способности операций записи см. в статье [Azure Stream Analytics output to Azure SQL Database](stream-analytics-sql-output-perf.md) (Запись выходных данных Azure Stream Analytics в службу "База данных SQL Azure").
 
 Вы также можете использовать [управляемый экземпляр Azure SQL](https://docs.microsoft.com/azure/sql-database/sql-database-managed-instance) в качестве выходных данных. Необходимо [настроить общедоступную конечную точку в управляемый экземпляр SQL](https://docs.microsoft.com/azure/sql-database/sql-database-managed-instance-public-endpoint-configure) , а затем вручную настроить следующие параметры в Azure Stream Analytics. Виртуальная машина Azure, на которой работает SQL Server с подключенной базой данных, также дополнительно настраивается вручную с использованием параметров ниже.
 

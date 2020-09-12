@@ -6,16 +6,16 @@ ms.author: jzim
 ms.service: container-service
 ms.topic: conceptual
 ms.date: 05/13/2019
-ms.openlocfilehash: ad03538cafcce9c1d660d0f2ac5eb3c6ae5f4f38
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 775aa44043e9c8900bd0c040ab603736314ea34e
+ms.sourcegitcommit: 4feb198becb7a6ff9e6b42be9185e07539022f17
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84694911"
+ms.lasthandoff: 09/04/2020
+ms.locfileid: "89469989"
 ---
 # <a name="create-an-azure-ad-tenant-for-azure-red-hat-openshift"></a>Создание клиента Azure AD для Azure Red Hat OpenShift
 
-Для Microsoft Azure Red Hat OpenShift требуется клиент [Azure Active Directory (Azure AD)](https://docs.microsoft.com/azure/active-directory/develop/quickstart-create-new-tenant) , в котором будет создан кластер. *Клиент* — это выделенный экземпляр Azure AD, который разработчик организации или приложения получает при создании связи с Майкрософт путем регистрации в Azure, Microsoft Intune или Microsoft 365. Каждый клиент Azure AD отличается от других клиентов Azure AD и имеет собственные рабочие и учебные удостоверения и регистрации приложений.
+Для Microsoft Azure Red Hat OpenShift требуется клиент [Azure Active Directory (Azure AD)](../active-directory/develop/quickstart-create-new-tenant.md) , в котором будет создан кластер. *Клиент* — это выделенный экземпляр Azure AD, который разработчик организации или приложения получает при создании связи с Майкрософт путем регистрации в Azure, Microsoft Intune или Microsoft 365. Каждый клиент Azure AD отличается от других клиентов Azure AD и имеет собственные рабочие и учебные удостоверения и регистрации приложений.
 
 Если у вас еще нет клиента Azure AD, следуйте этим инструкциям, чтобы создать его.
 
@@ -39,9 +39,9 @@ ms.locfileid: "84694911"
 
 ## <a name="resources"></a>Ресурсы
 
-Дополнительные сведения о [клиентах Azure AD](https://docs.microsoft.com/azure/active-directory/develop/quickstart-create-new-tenant)см. в [Azure Active Directory документации](https://docs.microsoft.com/azure/active-directory/) .
+Дополнительные сведения о [клиентах Azure AD](../active-directory/develop/quickstart-create-new-tenant.md)см. в [Azure Active Directory документации](../active-directory/index.yml) .
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Узнайте, как создать субъект-службу, сгенерировать секрет клиента и URL обратного вызова проверки подлинности, а затем создать нового Active Directory пользователя для тестирования приложений в кластере Azure Red Hat OpenShift.
 

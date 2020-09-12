@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.author: sgilley
 author: sdgilley
 ms.date: 07/27/2020
-ms.openlocfilehash: 805141dedddcd915d266c9651fc51732fb51e1b0
-ms.sourcegitcommit: d7352c07708180a9293e8a0e7020b9dd3dd153ce
+ms.openlocfilehash: 08f1d1e0ca1936b30db968dde5d7f6f2e6104cf8
+ms.sourcegitcommit: 3be3537ead3388a6810410dfbfe19fc210f89fec
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/30/2020
-ms.locfileid: "89146744"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89651206"
 ---
 #  <a name="what-are-compute-targets-in-azure-machine-learning"></a>Что такое целевые показатели вычислений в Машинное обучение Azure? 
 
@@ -49,9 +49,9 @@ ms.locfileid: "89146744"
 Управляемый ресурс вычислений создается и управляется с помощью Машинное обучение Azure. Это вычисление оптимизировано для рабочих нагрузок машинного обучения. Машинное обучение Azureными кластерами вычислений и [экземплярами вычислений](concept-compute-instance.md) являются только управляемые вычислений. 
 
 Вы можете создавать Машинное обучение Azureные или расчетные кластеры из:
-* [Машинное обучение Azure Studio](how-to-create-attach-compute-studio.md)
+* [Студия машинного обучения Azure.](how-to-create-attach-compute-studio.md)
 * Портал Azure
-* Классы [компутеинстанце](https://docs.microsoft.com/python/api/azureml-core/azureml.core.compute.computeinstance(class)?view=azure-ml-py) и [амлкомпуте](https://docs.microsoft.com/python/api/azureml-core/azureml.core.compute.amlcompute(class)?view=azure-ml-py) пакета SDK для Python
+* Классы [компутеинстанце](https://docs.microsoft.com/python/api/azureml-core/azureml.core.compute.computeinstance(class)?view=azure-ml-py&preserve-view=true) и [амлкомпуте](https://docs.microsoft.com/python/api/azureml-core/azureml.core.compute.amlcompute(class)?view=azure-ml-py&preserve-view=true) пакета SDK для Python
 * [Пакет SDK для R](https://azure.github.io/azureml-sdk-for-r/reference/index.html#section-compute-targets) (Предварительная версия)
 * Шаблон диспетчер ресурсов. Пример шаблона см. в статье [Создание шаблона вычислений машинное обучение Azure](https://github.com/Azure/azure-quickstart-templates/tree/master/101-machine-learning-compute-create-amlcompute).
 * Расширение машинного обучения [для Azure CLI](reference-azure-machine-learning-cli.md#resource-management).  
@@ -82,19 +82,19 @@ ms.locfileid: "89146744"
 
 | **Поддерживаемые серии виртуальных машин**  | **Ограничения** |
 |------------|------------|
-| D | Нет |
-| Dv2 | Нет |  
-| DSv2 | Нет |  
-| Серия fsv2 | Нет | 
+| D | None |
+| Dv2 | None |  
+| DSv2 | None |  
+| Серия fsv2 | None | 
 | HBv2 | Запрос утверждения |  
 | HCS | Запрос утверждения |  
 | M | Запрос утверждения |
-| NC | Нет |    
+| NC | None |    
 | NCsv2 | Запрос утверждения |
 | NCsv3 | Запрос утверждения |  
 | Структура | Запрос утверждения |
 | NDv2 | Запрос утверждения |
-| NV | Нет |
+| NV | None |
 | NVv3 | Запрос утверждения | 
 
 

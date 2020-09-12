@@ -9,12 +9,12 @@ ms.service: time-series-insights
 services: time-series-insights
 ms.topic: conceptual
 ms.date: 08/31/2020
-ms.openlocfilehash: 4e6586453469797458bc60fc7499a45a9aad9b9b
-ms.sourcegitcommit: d68c72e120bdd610bb6304dad503d3ea89a1f0f7
+ms.openlocfilehash: 9dbc66e3331325e9b79d0434fb452d01d69d550a
+ms.sourcegitcommit: de2750163a601aae0c28506ba32be067e0068c0c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/01/2020
-ms.locfileid: "89226749"
+ms.lasthandoff: 09/04/2020
+ms.locfileid: "89482595"
 ---
 # <a name="supported-data-types"></a>Поддерживаемые типы данных
 
@@ -27,10 +27,10 @@ ms.locfileid: "89226749"
 | **double** | 64-разрядное число двойной точности  | `"value": 31.0482941` | `$event.value.Double` или `$event['value'].Double` |  `value_double`
 | **long** | 64-разрядное целое число со знаком  | `"value" : 31` | `$event.value.Long` или `$event['value'].Long` |  `value_long`
 | **string** | Текстовые значения должны состоять из допустимых UTF-8. Значения NULL и пустые строки считаются одинаковыми. |  `"site": "DIM_MLGGG"`| `$event.site.String` или `$event['site'].String`| `site_string`
-| **dynamic** | Сложный (не являющийся примитивом) тип, состоящий из массива или контейнера свойств (Dictionary). Сейчас только переведенные массивы JSON примитивов или массивов объектов, не содержащих идентификатор TS или свойство timestamp, будут храниться как динамические. Ознакомьтесь с этой [статьей](./concepts-json-flattening-escaping-rules.md) , чтобы понять, как объекты будут сведены, а массивы можно будет отменить. Свойства полезных данных, хранящиеся в этом типе, доступны только при выборе `Explore Events` в ОБОЗРЕВАТЕЛЕ TSI для просмотра необработанных событий или через [`GetEvents`](https://docs.microsoft.com/rest/api/time-series-insights/dataaccessgen2/query/execute#getevents)   API запросов для синтаксического анализа на стороне клиента. |  `"values": "[197, 194, 189, 188]"` | Ссылки на динамические типы в выражении временных рядов пока не поддерживаются | `values_dynamic`
+| **dynamic** | Сложный (не являющийся примитивом) тип, состоящий из массива или контейнера свойств (Dictionary). Сейчас только переведенные массивы JSON примитивов или массивов объектов, не содержащих идентификатор TS или свойство timestamp, будут храниться как динамические. Ознакомьтесь с этой [статьей](./concepts-json-flattening-escaping-rules.md) , чтобы понять, как объекты будут сведены, а массивы можно будет отменить. Свойства полезных данных, хранящиеся в этом типе, доступны только при выборе `Explore Events` в обозревателе "аналитика временных рядов" для просмотра необработанных событий или через [`GetEvents`](https://docs.microsoft.com/rest/api/time-series-insights/dataaccessgen2/query/execute#getevents)   API запросов для синтаксического анализа на стороне клиента. |  `"values": "[197, 194, 189, 188]"` | Ссылки на динамические типы в выражении временных рядов пока не поддерживаются | `values_dynamic`
 
 > [!NOTE]
-> 64 разрядов поддерживаются, но максимальное число, которое обозреватель службы "аналитика временных рядов Azure" может безопасно выразить, равно 9 007 199 254 740 991 (2 ^ 53-1) из-за ограничений JavaScript. При работе с числами в модели данных выше можно уменьшить размер, создав [переменную модели временных рядов](/concepts-variables#numeric-variables) и [преобразуя](https://docs.microsoft.com/rest/api/time-series-insights/reference-time-series-expression-syntax#conversion-functions) значение.
+> 64 разрядов поддерживаются, но максимальное число, которое обозреватель службы "аналитика временных рядов Azure" может безопасно выразить, равно 9 007 199 254 740 991 (2 ^ 53-1) из-за ограничений JavaScript. При работе с числами в модели данных выше можно уменьшить размер, создав [переменную модели временных рядов](/azure/time-series-insights/concepts-variables#numeric-variables) и [преобразуя](https://docs.microsoft.com/rest/api/time-series-insights/reference-time-series-expression-syntax#conversion-functions) значение.
 
 > [!NOTE]
 > Тип **строки** не допускает значения NULL:

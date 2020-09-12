@@ -4,12 +4,12 @@ description: Найдите ответы на часто задаваемые в
 ms.reviewer: vijayts
 ms.topic: conceptual
 ms.date: 04/23/2019
-ms.openlocfilehash: c1efbc44ae1e4bea96c063e4dc734f1cc53a42ac
-ms.sourcegitcommit: 3fb5e772f8f4068cc6d91d9cde253065a7f265d6
+ms.openlocfilehash: 9c6e99b81ce10cfabd4109bb18376b2579edef20
+ms.sourcegitcommit: 206629373b7c2246e909297d69f4fe3728446af5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89180105"
+ms.lasthandoff: 09/06/2020
+ms.locfileid: "89500340"
 ---
 # <a name="faq-about-sql-server-databases-that-are-running-on-an-azure-vm-backup"></a>Часто задаваемые вопросы о SQL Server базах данных, работающих в резервной копии виртуальной машины Azure
 
@@ -72,7 +72,7 @@ ms.locfileid: "89180105"
 
 ## <a name="can-i-see-scheduled-backup-jobs-in-the-backup-jobs-menu"></a>Можно ли просмотреть запланированные задания резервного копирования в меню "Задания резервного копирования"?
 
-В меню " **Задание архивации** " отображаются только задания архивации по запросу. Для отслеживания использования запланированных заданий [с помощью Azure Monitor](backup-azure-monitoring-use-azuremonitor.md).
+В меню **Задание резервного копирования** отображаются все запланированные и выполняемые по требованию операции, за исключением запланированных резервных копий журналов, так как они могут быть очень частыми. Для запланированных заданий журнала используйте [мониторинг с помощью Azure Monitor](backup-azure-monitoring-use-azuremonitor.md).
 
 ## <a name="are-future-databases-automatically-added-for-backup"></a>Добавляются ли автоматически будущие базы данных в резервное копирование?
 

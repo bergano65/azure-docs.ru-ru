@@ -8,12 +8,12 @@ ms.service: hdinsight
 ms.topic: how-to
 ms.custom: hdinsightactive,hdiseo17may2017
 ms.date: 02/28/2020
-ms.openlocfilehash: 95af0cd4b59863ad0f591476441d9a7733765453
-ms.sourcegitcommit: 124f7f699b6a43314e63af0101cd788db995d1cb
+ms.openlocfilehash: 37fdf863d29015bba7015fcff1ae49a34aebd785
+ms.sourcegitcommit: 4a7a4af09f881f38fcb4875d89881e4b808b369b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86076034"
+ms.lasthandoff: 09/04/2020
+ms.locfileid: "89462281"
 ---
 # <a name="what-is-apache-hive-and-hiveql-on-azure-hdinsight"></a>Обзор Apache Hive и HiveQL в Azure HDInsight
 
@@ -100,7 +100,7 @@ Hive также поддерживает пользовательские **се
 
 * [Работа с определяемыми пользователем функциями C# с использованием Apache Hive в HDInsight](../hadoop/apache-hadoop-hive-pig-udf-dotnet-csharp.md)
 
-* [Как добавить настраиваемые определяемые пользователем функции Apache Hive в HDInsight](https://blogs.msdn.com/b/bigdatasupport/archive/2014/01/14/how-to-add-custom-hive-udfs-to-hdinsight.aspx)
+* [Как добавить настраиваемые определяемые пользователем функции Apache Hive в HDInsight](https://docs.microsoft.com/archive/blogs/bigdatasupport/how-to-add-custom-hive-udfs-to-hdinsight)
 
 * [Пример определяемой пользователем функции Apache Hive для преобразования форматов даты и времени в метки времени Hive](https://github.com/Azure-Samples/hdinsight-java-hive-udf)
 
@@ -131,7 +131,7 @@ SELECT t4 AS sev, COUNT(*) AS count FROM log4jLogs
 
 В предыдущем примере операторы HiveQL выполняют следующие действия.
 
-|. |Описание |
+|Инструкция |Описание |
 |---|---|
 |DROP TABLE|Если таблица уже существует, удалите ее.|
 |CREATE EXTERNAL TABLE|Создает **внешнюю** таблицу в Hive. Внешние таблицы хранят только определения таблицы в Hive. Данные остаются в исходном расположении и формате.|
@@ -164,7 +164,7 @@ SELECT t1, t2, t3, t4, t5, t6, t7
 
 Эти операторы выполняют следующие действия:
 
-|. |Описание |
+|Инструкция |Описание |
 |---|---|
 |CREATE TABLE, ЕСЛИ НЕ СУЩЕСТВУЕТ|Если таблица не существует, создайте ее. Поскольку ключевое слово **External** не используется, эта инструкция создает внутреннюю таблицу. Таблица хранится в хранилище данных Hive и полностью управляется Hive.|
 |ХРАНИТСЯ В ВИДЕ ORC|Позволяет сохранить данные в формате ORC. Это высокооптимизированный и эффективный формат для хранения данных Hive.|
@@ -207,7 +207,7 @@ HDInsight предоставляет LLAP в кластере интеракти
 
 Apache Oozie — это система рабочих процессов и координации, управляющая заданиями Hadoop. Дополнительные сведения см. в статье об [использовании Apache Oozie с Hive для определения и запуска рабочего процесса](../hdinsight-use-oozie-linux-mac.md).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Теперь, когда вы знаете, что такое инфраструктура Hive и как ее использовать с Hadoop в HDInsight, воспользуйтесь следующими ссылками, чтобы изучить другие способы работы с Azure HDInsight.
 

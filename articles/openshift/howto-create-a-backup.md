@@ -8,12 +8,12 @@ author: troy0820
 ms.author: b-trconn
 keywords: aro, openshift, az aro, red hat, cli
 ms.custom: mvc
-ms.openlocfilehash: 046cd30c0f93a468287c73573a3d18f4ba66221b
-ms.sourcegitcommit: 56cbd6d97cb52e61ceb6d3894abe1977713354d9
+ms.openlocfilehash: 6cf77aa41a9a485ba70519fed33c1b6aec736525
+ms.sourcegitcommit: 4feb198becb7a6ff9e6b42be9185e07539022f17
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/20/2020
-ms.locfileid: "88690227"
+ms.lasthandoff: 09/04/2020
+ms.locfileid: "89470074"
 ---
 # <a name="create-an-azure-red-hat-openshift-4-cluster-application-backup"></a>Создание резервной копии приложения кластера Azure Red Hat OpenShift 4
 
@@ -23,7 +23,7 @@ ms.locfileid: "88690227"
 > * Настройка необходимых компонентов и установка необходимых средств
 > * Создание резервной копии приложений Azure Red Hat OpenShift 4
 
-Если вы решили установить и использовать CLI локально, для работы с этим руководством вам потребуется Azure CLI версии 2.6.0 или более поздней. Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI 2.0](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest).
+Если вы решили установить и использовать интерфейс командной строки локально, то для работы с этим руководством вам понадобится Azure CLI 2.6.0 или более поздней версии. Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI 2.0](/cli/azure/install-azure-cli?view=azure-cli-latest).
 
 ## <a name="before-you-begin"></a>Перед началом
 
@@ -122,7 +122,7 @@ oc get backups -n velero <name of backup> -o yaml
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-В этой статье была создана резервная копия приложения кластера Azure Red Hat OpenShift 4. Вы научились выполнять следующие задачи:
+В этой статье была создана резервная копия приложения кластера Azure Red Hat OpenShift 4. Вы ознакомились с выполнением следующих задач:
 
 > [!div class="checklist"]
 > * Создание резервной копии приложения кластера OpenShift v4 с помощью Велеро

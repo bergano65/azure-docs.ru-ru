@@ -11,13 +11,13 @@ author: swinarko
 ms.reviewer: douglasl
 manager: mflasko
 ms.custom: seo-lt-2019
-ms.date: 08/10/2020
-ms.openlocfilehash: 006b7db9f63f5ba74fee936383206b18c42aa038
-ms.sourcegitcommit: 1a0dfa54116aa036af86bd95dcf322307cfb3f83
+ms.date: 09/06/2020
+ms.openlocfilehash: fb5b5cb0ac4a9ace7b5de5e92308da58fd2b1fec
+ms.sourcegitcommit: 59ea8436d7f23bee75e04a84ee6ec24702fb2e61
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/10/2020
-ms.locfileid: "88041873"
+ms.lasthandoff: 09/07/2020
+ms.locfileid: "89504950"
 ---
 # <a name="execute-ssis-packages-in-azure-from-ssdt"></a>Выполнение пакетов служб SSIS в Azure из SSDT
 
@@ -45,7 +45,7 @@ ms.locfileid: "88041873"
 
 Если вы хотите немедленно подключиться к Azure-SSIS IR, см. Дополнительные сведения в разделе [Подключение к Azure-SSIS IR](#connectssisir) . Вы также можете подключиться позже, щелкнув правой кнопкой мыши узел проекта в обозреватель решений окне SSDT, чтобы открыть меню. Затем выберите пункт **Подключение к службам SSIS в фабрике данных Azure** в подменю **службы SSIS в фабрике данных Azure** .
 
-### <a name="azure-enabling-existing-ssis-projects"></a><a name="azureenableproject"></a>Активация существующих проектов служб SSIS в Azure
+### <a name="azure-enabling-existing-ssis-projects"></a><a name="azureenableproject"></a> Активация существующих проектов служб SSIS в Azure
 
 Для существующих проектов служб SSIS их можно включить в Azure, выполнив следующие действия.
 
@@ -57,13 +57,13 @@ ms.locfileid: "88041873"
 
    ![Выберите конфигурацию Visual Studio](media/how-to-invoke-ssis-package-ssdt/ssdt-azure-enabled-select-visual-studio-configurations.png)
 
-3. Для включения в Azure существующих проектов служб SSIS необходимо задать версию целевого сервера, которая будет последней версией, поддерживаемой Azure-SSIS IR. В настоящее время Azure-SSIS IR имеет уровень совместимости по умолчанию 140, который равен **SQL Server 2017**. Убедитесь, что пакеты не содержат дополнительные компоненты, которые не поддерживаются на SQL Server 2017. Также убедитесь, что все совместимые дополнительные компоненты также установлены на Azure-SSIS IR с помощью пользовательских настроек, см. раздел [настройка Azure-SSIS IR](https://docs.microsoft.com/azure/data-factory/how-to-configure-azure-ssis-ir-custom-setup). Нажмите кнопку **Далее** , чтобы продолжить.
+3. Для включения в Azure существующих проектов служб SSIS необходимо задать версию целевого сервера, которая будет последней версией, поддерживаемой Azure-SSIS IR. Azure-SSIS IR в настоящее время основывается на **SQL Server 2017**. Убедитесь, что пакеты не содержат дополнительные компоненты, которые не поддерживаются на SQL Server 2017. Также убедитесь, что все совместимые дополнительные компоненты также установлены на Azure-SSIS IR с помощью пользовательских настроек, см. раздел [настройка Azure-SSIS IR](https://docs.microsoft.com/azure/data-factory/how-to-configure-azure-ssis-ir-custom-setup). Нажмите кнопку **Далее** , чтобы продолжить.
 
    ![Переключение версии целевого сервера](media/how-to-invoke-ssis-package-ssdt/ssdt-azure-enabled-switch-target-server-version-step.png)
 
 4. Чтобы завершить подключение проекта к Azure-SSIS IR, см. раздел [Подключение к Azure-SSIS IR](#connectssisir) .
 
-## <a name="connect-azure-enabled-projects-to-ssis-in-azure-data-factory"></a><a name="connectssisir"></a>Подключение проектов с поддержкой Azure к службам SSIS в фабрике данных Azure
+## <a name="connect-azure-enabled-projects-to-ssis-in-azure-data-factory"></a><a name="connectssisir"></a> Подключение проектов с поддержкой Azure к службам SSIS в фабрике данных Azure
 
 Подключив проекты с поддержкой Azure к службам SSIS в ADF, вы можете передать пакеты в службу файлов Azure и запускать их на Azure-SSIS IR. Это можно сделать, выполнив следующие действия.
 
@@ -117,7 +117,7 @@ ms.locfileid: "88041873"
 
 ## <a name="execute-ssis-packages-in-azure"></a>Выполнение пакетов служб SSIS в Azure
 
-### <a name="configuring-azure-enabled-settings"></a><a name="azureenabledsettings"></a>Настройка параметров с поддержкой Azure
+### <a name="configuring-azure-enabled-settings"></a><a name="azureenabledsettings"></a> Настройка параметров с поддержкой Azure
 
 Перед выполнением пакетов в Azure можно настроить для них параметры, поддерживающие Azure. Например, можно включить проверку подлинности Windows на Azure-SSIS IR для доступа к локальным или облачным хранилищам данных, выполнив следующие действия.
 
@@ -151,7 +151,7 @@ ms.locfileid: "88041873"
 
 Если пакеты содержат задачи «Выполнение пакета», которые ссылаются на дочерние пакеты, хранящиеся в локальных файловых системах, выполните следующие дополнительные действия.
 
-1. Отправьте дочерние пакеты в службу файлов Azure в той же учетной записи хранения Azure, которая подключена к проектам, и получите новый UNC-путь, например`\\YourStorageAccountName.file.core.windows.net\ssdtexecution\YourChildPackage1.dtsx`
+1. Отправьте дочерние пакеты в службу файлов Azure в той же учетной записи хранения Azure, которая подключена к проектам, и получите новый UNC-путь, например `\\YourStorageAccountName.file.core.windows.net\ssdtexecution\YourChildPackage1.dtsx`
 
 2. Замените путь к этим дочерним пакетам в диспетчере подключения файлов для задач "выполнение пакета" с новым путем в формате UNC.
    - Если локальный компьютер, на котором работает SSDT, не может получить доступ к новому UNC-пути, его можно ввести на панели Свойства диспетчера подключения файлов.
@@ -168,7 +168,7 @@ ms.locfileid: "88041873"
 
 Если в пакетах уже настроено использование **EncryptSensitiveWithPassword** / уровней защиты EncryptSensitiveWithPassword**EncryptAllWithPassword** , мы будем оставаться без изменений. При передаче пакетов в службу файлов Azure для выполнения на Azure-SSIS IR мы будем случайным образом создавать пароли шифрования.
 
-### <a name="switching-package-execution-environments"></a><a name="switchenvironment"></a>Переключение сред выполнения пакетов
+### <a name="switching-package-execution-environments"></a><a name="switchenvironment"></a> Переключение сред выполнения пакетов
 
 При параметризации проекта или пакетов в модели развертывания проекта можно создать несколько конфигураций VS для переключения сред выполнения пакетов. Таким образом, для параметров проекта или пакета можно назначить значения, зависящие от среды, во время выполнения. Мы рекомендуем использовать по крайней мере две разные конфигурации VS для выполнения пакетов в локальных и облачных средах, чтобы можно было включить в Azure проекты в соответствии с конфигурацией облака. Ниже приведен пошаговый пример переключения сред выполнения пакетов между локальным компьютером и Azure.
 

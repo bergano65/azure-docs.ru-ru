@@ -2,20 +2,20 @@
 title: Мониторинг сайта SharePoint с помощью Application Insights
 description: Начало мониторинга нового приложения с помощью нового ключа инструментирования
 ms.topic: conceptual
-ms.date: 07/11/2018
-ms.openlocfilehash: 392c0e0ee46e8acd540d498cbda1d240611d182e
-ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
+ms.date: 09/08/2020
+ms.openlocfilehash: 0d365e1fbcc52e14cfc727dd1de3e31a7d3e5d68
+ms.sourcegitcommit: c52e50ea04dfb8d4da0e18735477b80cafccc2cf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87326534"
+ms.lasthandoff: 09/08/2020
+ms.locfileid: "89536503"
 ---
 # <a name="monitor-a-sharepoint-site-with-application-insights"></a>Мониторинг сайта SharePoint с помощью Application Insights
 
 Azure Application Insights позволяет отслеживать доступность, производительность и использование приложений. В этой статье вы узнаете, как настроить эту службу для сайта SharePoint.
 
 > [!NOTE]
-> Из-за проблем с безопасностью вы не можете напрямую добавить сценарий, описанный в этой статье, к веб-страницам в современном UX SharePoint. В качестве альтернативы можно использовать [SharePoint Framework (спфкс)](/sharepoint/dev/spfx/extensions/overview-extensions) для создания пользовательского расширения, которое можно использовать для установки Application Insights на сайтах SharePoint. Дополнительные сведения см. в статье [Создание решения расширения спфкс с помощью AppInsights, установленного с нуля](https://github.com/microsoft/ApplicationInsights-JS/tree/master/SPO#how-to-create-a-spfx-extension-solution-with-appinsights-installed-from-scratch) , или [Просмотр примера](https://github.com/microsoft/ApplicationInsights-JS/tree/master/SPO/AppInsightsExtensionSolutionSample). 
+> Из-за проблем с безопасностью вы не можете напрямую добавить сценарий, описанный в этой статье, к веб-страницам в современном UX SharePoint. В качестве альтернативы можно использовать [SharePoint Framework (спфкс)](/sharepoint/dev/spfx/extensions/overview-extensions) для создания пользовательского расширения, которое можно использовать для установки Application Insights на сайтах SharePoint. Дополнительные сведения см. в статье [Создание решения расширения спфкс с помощью AppInsights, установленного с нуля](https://github.com/microsoft/ApplicationInsights-JS/tree/master/SPO#how-to-create-a-spfx-extension-solution-with-appinsights-installed-from-scratch) , или [Просмотр примера](https://github.com/microsoft/ApplicationInsights-JS/tree/master/SPO/AppInsightsExtensionSolutionSample-NPM). 
 
 ## <a name="create-an-application-insights-resource"></a>Создание ресурса Application Insights
 На [портале Azure](https://portal.azure.com) создайте ресурс Application Insights. Выберите приложение ASP.NET в качестве типа приложения.
@@ -55,7 +55,7 @@ var sdkInstance="appInsightsSDK";window[sdkInstance]="appInsights";var aiName=wi
 
 ![Снимок экрана, показывающий, как изменить главную страницу с помощью конструктора SharePoint или другого редактора.](./media/sharepoint/03-master.png)
 
-Добавьте код непосредственно перед </head> тегами. 
+Добавьте код непосредственно перед </head> XML. 
 
 ![Снимок экрана, на котором показано, куда добавить код на страницу сайта.](./media/sharepoint/04-code.png)
 

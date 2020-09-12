@@ -1,19 +1,19 @@
 ---
 title: Архитектура Apache Hadoop в Azure HDInsight
 description: Описание Apache Hadoop хранения и обработки в кластерах Azure HDInsight.
-author: ashishthaps
-ms.author: ashishth
+author: hrasheed-msft
+ms.author: hrasheed
 ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: conceptual
 ms.custom: hdinsightactive
 ms.date: 02/07/2020
-ms.openlocfilehash: 3feacd94558ba275c81469827993aef106ae633c
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: cbd1303417f008da476356a274dde30d7d02d36f
+ms.sourcegitcommit: 59ea8436d7f23bee75e04a84ee6ec24702fb2e61
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "77162214"
+ms.lasthandoff: 09/07/2020
+ms.locfileid: "89505511"
 ---
 # <a name="apache-hadoop-architecture-in-hdinsight"></a>Архитектура Apache Hadoop в HDInsight
 
@@ -68,7 +68,7 @@ YARN развертывается во всех типах кластера HDIn
 
 `fs.trash.interval`Свойство из **HDFS**  >  серверной системы HDFS с**расширенным ядром** должно оставаться в значении по умолчанию, поскольку не следует `0` хранить данные в локальной файловой системе. Это значение не влияет на удаленные учетные записи хранения (WASB, ADLS GEN1, АБФС)
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Использование MapReduce в Apache Hadoop в HDInsight](hadoop/hdinsight-use-mapreduce.md)
 * [Введение в Azure HDInsight](hadoop/apache-hadoop-introduction.md)

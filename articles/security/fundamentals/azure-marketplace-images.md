@@ -12,12 +12,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 01/11/2019
 ms.author: terrylan
-ms.openlocfilehash: 6058b0d72eafe3a44ebdbabf291af05c08e772b3
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 7c317a0b4fea0c981b227bace00c1b8924fd582c
+ms.sourcegitcommit: c52e50ea04dfb8d4da0e18735477b80cafccc2cf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87038279"
+ms.lasthandoff: 09/08/2020
+ms.locfileid: "89536388"
 ---
 # <a name="security-recommendations-for-azure-marketplace-images"></a>Рекомендации по обеспечению безопасности для образов Azure Marketplace
 
@@ -65,11 +65,3 @@ ms.locfileid: "87038279"
 
 Даже если в вашей организации нет образов в Azure Marketplace, рассмотрите возможность проверки конфигураций образов Windows и Linux в соответствии с этими рекомендациями.
 
-## <a name="contacting-customers"></a>Обращение к клиентам
-
-Для обнаружения клиентов и их контактных сообщений:
-
-1.  В Портал Cloud Partner на левой границе выберите **аналитика**.
-2.  На вкладке **заказы и использование** поля **Дата начала** и **Дата окончания** используются для запроса сведений об использовании в пределах требуемого диапазона дат. Здесь показано, какие подписки Azure использовались для предложения ежедневно. Экспортируйте эти данные. 
-3.  Аналогичным образом на вкладке **Customer (клиент** ) запросите и экспортируйте клиентскую базу.
-4.  Сопоставьте идентификатор подписки из шага 2 с ИДЕНТИФИКАТОРом подписки из шага 3, чтобы найти необходимые сведения о клиенте.

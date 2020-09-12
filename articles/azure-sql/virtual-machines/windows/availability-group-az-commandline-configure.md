@@ -13,12 +13,12 @@ ms.date: 08/20/2020
 ms.author: mathoma
 ms.reviewer: jroth
 ms.custom: seo-lt-2019
-ms.openlocfilehash: a74a791c8c6a95c71faf1f4a0ce6eaacd7c68901
-ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
+ms.openlocfilehash: 212ead54f0f8212ae251175d40873e7cec4e0240
+ms.sourcegitcommit: de2750163a601aae0c28506ba32be067e0068c0c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89003037"
+ms.lasthandoff: 09/04/2020
+ms.locfileid: "89482680"
 ---
 # <a name="configure-an-availability-group-for-sql-server-on-azure-vm-powershell--az-cli"></a>Настройка группы доступности для SQL Server на виртуальной машине Azure (PowerShell & AZ CLI)
 [!INCLUDE[appliesto-sqlvm](../../includes/appliesto-sqlvm.md)]
@@ -27,7 +27,7 @@ ms.locfileid: "89003037"
 
 Развертывание группы доступности по-прежнему выполняется вручную с помощью SQL Server Management Studio (SSMS) или Transact-SQL (T-SQL). 
 
-## <a name="prerequisites"></a>Обязательные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы настроить Always On группы доступности, необходимо выполнить следующие предварительные требования. 
 
@@ -44,13 +44,13 @@ ms.locfileid: "89003037"
 - Существующая учетная запись пользователя домена с разрешением на **создание объекта компьютера** в домене. Например, учетная запись администратора домена обычно имеет соответствующие разрешения (например: account@domain.com). _Эта учетная запись также должна входить в группу локальных администраторов на каждой виртуальной машине для создания кластера._
 - Учетная запись пользователя домена, которая используется для управления SQL Server. 
  
-## <a name="create-a-storage-account-as-a-cloud-witness"></a>Создание учетной записи хранения в качестве облачного следящего сервера
+## <a name="create-a-storage-account"></a>Создание учетной записи хранения 
+
 Для кластера требуется учетная запись хранения, которая будет использоваться в качестве облака-свидетеля. Вы можете использовать существующую учетную запись хранения или создать ее. Если вы хотите использовать существующую учетную запись хранения, перейдите к следующему разделу. 
 
 Следующий фрагмент кода создает учетную запись хранения: 
 
 # <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
-
 
 ```azurecli-interactive
 # Create the storage account
@@ -80,7 +80,7 @@ New-AzStorageAccount -ResourceGroupName <resource group name> -Name <name> `
 
 ---
 
-## <a name="define-windows-failover-cluster-metadata"></a>Определение метаданных отказоустойчивого кластера Windows
+## <a name="define-cluster-metadata"></a>Определение метаданных кластера
 
 Группа команд [az sql vm group](https://docs.microsoft.com/cli/azure/sql/vm/group?view=azure-cli-latest) Azure CLI управляет метаданными службы отказоустойчивого кластера Windows Server (WSFC), в которой размещается группа доступности. К метаданным кластера относятся домен Active Directory, учетные записи кластера, учетные записи хранения, которые используются в роли облака-свидетеля, и версия SQL Server. Используйте [az sql vm group create](https://docs.microsoft.com/cli/azure/sql/vm/group?view=azure-cli-latest#az-sql-vm-group-create) для определения метаданных для WSFC, чтобы при добавлении первой виртуальной машины SQL Server был создан кластер в соответствии с определением. 
 
@@ -183,6 +183,17 @@ Update-AzSqlVM -ResourceId $sqlvm2.ResourceId -SqlVM $sqlvmconfig2
 ```
 
 ---
+
+
+## <a name="validate-cluster"></a>Проверка кластера 
+
+Чтобы отказоустойчивый кластер поддерживался корпорацией Майкрософт, он должен пройти проверку кластера. Подключитесь к виртуальной машине с помощью предпочтительного метода, например протокол удаленного рабочего стола (RDP), и убедитесь, что кластер прошел проверку, прежде чем продолжить. Несоблюдение этого действия оставляет кластер в неподдерживаемом состоянии. 
+
+Вы можете проверить кластер с помощью диспетчер отказоустойчивости кластеров (FCM) или следующей команды PowerShell:
+
+   ```powershell
+   Test-Cluster –Node ("<node1>","<node2>") –Include "Inventory", "Network", "System Configuration"
+   ```
 
 ## <a name="create-availability-group"></a>Создание группы доступности
 

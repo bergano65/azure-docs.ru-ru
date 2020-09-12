@@ -5,14 +5,14 @@ services: vpn-gateway
 author: scottnap
 ms.service: vpn-gateway
 ms.topic: conceptual
-ms.date: 03/21/2020
+ms.date: 09/08/2020
 ms.author: scottnap
-ms.openlocfilehash: 8a22e8f0bde2d13b4055566d96680fadc2db6e11
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 4783016e472907392f2d379efa0fed2d90ed21bc
+ms.sourcegitcommit: 1b320bc7863707a07e98644fbaed9faa0108da97
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "80337090"
+ms.lasthandoff: 09/09/2020
+ms.locfileid: "89595365"
 ---
 # <a name="working-remotely-network-virtual-appliance-nva-considerations-for-remote-work"></a>Работа в удаленном режиме: вопросы использования сетевого виртуального устройства (NVA) для удаленной работы
 
@@ -47,11 +47,13 @@ ms.locfileid: "80337090"
 - Входящие потоки
 - Исходящие потоки
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Next Steps
 
 Большинство основных NVA партнеров разместили рекомендации по масштабированию для внезапного, непредвиденного роста во время КОВИД-19. Вот несколько полезных ссылок на ресурсы партнеров.
 
 [Barracuda разрешать работу дома, обеспечивая защиту данных во время КОВИД-19](https://www.barracuda.com/covid-19/work-from-home "Разрешите работу из дома, обеспечив защиту данных во время КОВИД-19.")
+
+[Проверка защищенности удаленных сотрудников во время коронавирус](https://www.checkpoint.com/solutions/secure-remote-workforce-during-coronavirus/ "Обеспечение безопасности удаленных сотрудников во время коронавирус")
 
 [Справка по реализации и повышению производительности и масштабирования Cisco AnyConnect для подготовки КОВИД-19](https://www.cisco.com/c/en/us/support/docs/security/anyconnect-secure-mobility-client/215331-anyconnect-implementation-and-performanc.html "Справка по реализации и повышению производительности и масштабирования Cisco AnyConnect для подготовки КОВИД-19")
 

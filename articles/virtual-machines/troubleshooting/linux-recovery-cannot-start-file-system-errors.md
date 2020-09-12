@@ -14,12 +14,12 @@ ms.tgt_pltfrm: vm-linux
 ms.devlang: azurecli
 ms.date: 10/09/2019
 ms.author: v-six
-ms.openlocfilehash: e26d4070bc9fabeb3467e7bdc805faad4e6646c3
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.openlocfilehash: bae0eb91460bf7ab72abbaa7fa56b2515367d37d
+ms.sourcegitcommit: bf1340bb706cf31bb002128e272b8322f37d53dd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86526509"
+ms.lasthandoff: 09/03/2020
+ms.locfileid: "89436193"
 ---
 # <a name="troubleshoot-linux-vm-starting-issues-due-to-file-system-errors"></a>Устранение неполадок, возникающих при запуске виртуальной машины Linux из-за ошибок файловой системы
 
@@ -83,7 +83,7 @@ Checking all file systems.
 
    > [!Note]
    > Дополнительные сведения об использовании последовательной консоли для Linux см. в следующих статьях:
-   > * [Использование последовательной консоли для доступа к GRUB и однопользовательским режимам](../linux/serial-console-grub-single-user-mode.md)
+   > * [Использование последовательной консоли для доступа к GRUB и однопользовательским режимам](serial-console-grub-single-user-mode.md)
    > * [Использование последовательной консоли для вызовов Сисрк и NMI](./serial-console-nmi-sysrq.md)
 
 2. Нажмите кнопку с индикатором питания, а затем выберите перезапустить виртуальную машину. (Если последовательная консоль не включена или не подключена успешно, кнопка не отображается.)

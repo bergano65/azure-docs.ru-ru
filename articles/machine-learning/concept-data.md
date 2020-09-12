@@ -11,12 +11,12 @@ author: nibaccam
 ms.author: nibaccam
 ms.date: 08/31/2020
 ms.custom: devx-track-python
-ms.openlocfilehash: 958a433cc76f00010fe6fd431d8bea4fe6380a9c
-ms.sourcegitcommit: d7352c07708180a9293e8a0e7020b9dd3dd153ce
+ms.openlocfilehash: 85aa78223b8db76cfb430341b19878bc6bbe87d7
+ms.sourcegitcommit: 3be3537ead3388a6810410dfbfe19fc210f89fec
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/30/2020
-ms.locfileid: "89146695"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89651175"
 ---
 # <a name="secure-data-access-in-azure-machine-learning"></a>Защита доступа к данным в Машинное обучение Azure
 
@@ -24,7 +24,7 @@ ms.locfileid: "89146695"
 
 *    Взаимодействие с кадрами данных Pandas и Spark
 *    Управление версиями и отслеживание преобразований данных
-*    Добавление меток к данным 
+*    Маркировка данных 
 *    Мониторинг смещения данных
     
 ## <a name="data-workflow"></a>Рабочий процесс данных
@@ -81,9 +81,9 @@ ms.locfileid: "89146695"
 
 Существует два типа наборов данных: 
 
-+ [Филедатасет](https://docs.microsoft.com/python/api/azureml-core/azureml.data.file_dataset.filedataset?view=azure-ml-py) ссылается на один или несколько файлов в хранилищах данных или общедоступных URL-адресах. Если данные уже очищены и готовы к использованию в учебных экспериментах, можно [загрузить или подключить](how-to-train-with-datasets.md#mount-files-to-remote-compute-targets) к целевому объекту вычислений файлы, на которые ссылается филедатасетс.
++ [Филедатасет](https://docs.microsoft.com/python/api/azureml-core/azureml.data.file_dataset.filedataset?view=azure-ml-py&preserve-view=true) ссылается на один или несколько файлов в хранилищах данных или общедоступных URL-адресах. Если данные уже очищены и готовы к использованию в учебных экспериментах, можно [загрузить или подключить](how-to-train-with-datasets.md#mount-files-to-remote-compute-targets) к целевому объекту вычислений файлы, на которые ссылается филедатасетс.
 
-+ [Табулардатасет](https://docs.microsoft.com/python/api/azureml-core/azureml.data.tabulardataset?view=azure-ml-py) представляет данные в табличном формате путем синтаксического анализа указанного файла или списка файлов. Вы можете загрузить Табулардатасет в кадр данных Pandas или Spark для дальнейшей обработки и очистки. Полный список форматов данных, которые можно создать Табулардатасетс из, см. в разделе [класс табулардатасетфактори](https://aka.ms/tabulardataset-api-reference).
++ [Табулардатасет](https://docs.microsoft.com/python/api/azureml-core/azureml.data.tabulardataset?view=azure-ml-py&preserve-view=true) представляет данные в табличном формате путем синтаксического анализа указанного файла или списка файлов. Вы можете загрузить Табулардатасет в кадр данных Pandas или Spark для дальнейшей обработки и очистки. Полный список форматов данных, которые можно создать Табулардатасетс из, см. в разделе [класс табулардатасетфактори](https://aka.ms/tabulardataset-api-reference).
 
 Дополнительные возможности наборов данных можно найти в следующей документации:
 
@@ -105,7 +105,7 @@ ms.locfileid: "89146695"
 
 <a name="label"></a>
 
-## <a name="data-labeling"></a>Добавление меток к данным
+## <a name="data-labeling"></a>Маркировка данных
 
 Добавление меток к большим объемам данных часто усложняет проекты машинного обучения. Для таких компонентов концепции компьютера, как классификация изображений или обнаружение объектов, обычно требуются тысячи изображений и соответствующие метки.
 

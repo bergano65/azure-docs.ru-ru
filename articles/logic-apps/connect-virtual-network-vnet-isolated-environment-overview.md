@@ -6,12 +6,12 @@ ms.suite: integration
 ms.reviewer: jonfan, logicappspm
 ms.topic: conceptual
 ms.date: 07/05/2020
-ms.openlocfilehash: f152283b1280cde2a26569b8acf10738e883e39e
-ms.sourcegitcommit: d39f2cd3e0b917b351046112ef1b8dc240a47a4f
+ms.openlocfilehash: 86d647a79b7babc2780cb0db904e689f3916673f
+ms.sourcegitcommit: 206629373b7c2246e909297d69f4fe3728446af5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88816033"
+ms.lasthandoff: 09/06/2020
+ms.locfileid: "89500391"
 ---
 # <a name="access-to-azure-virtual-network-resources-from-azure-logic-apps-by-using-integration-service-environments-ises"></a>Доступ к ресурсам виртуальных сетей Azure из Azure Logic Apps с использованием сред службы интеграции (ISE)
 
@@ -60,7 +60,7 @@ ms.locfileid: "88816033"
   * Служба автоматизации Azure, Azure Key Vault, служба "Сетка событий Azure" и журналы Azure Monitor
   * FTP, SFTP — SSH, файловая система и SMTP
   * SAP, IBM MQ, IBM DB2 и IBM 3270
-  * SQL Server, хранилище данных SQL Azure Azure Cosmos DB
+  * SQL Server, Azure синапсе Analytics Azure Cosmos DB
   * AS2, X12 и EDIFACT
 
   С редкими исключениями, если соединитель ISE доступен для локальной системы или источника данных, вы можете подключиться напрямую, не используя [локальный шлюз данных](../logic-apps/logic-apps-gateway-connection.md). Дополнительные сведения см. в подразделе [доступ к локальным системам](#on-premises) далее в этой статье.
@@ -142,7 +142,7 @@ ms.locfileid: "88816033"
 
 ## <a name="integration-accounts-with-ise"></a>Учетные записи интеграции в ISE
 
-Учетные записи интеграции с приложениями логики можно использовать в среде службы интеграции. Тем не менее эти учетные записи интеграции должны использовать *ту же ISE*, что и связанные приложения логики. Приложения логики в среде ISE могут ссылаться только на те учетные записи интеграции, которые находятся в одной с ними среде ISE. При создании учетной записи интеграции можно выбрать среду ISE в качестве расположения учетной записи интеграции. Чтобы узнать, как цены и данные о выставлении счетов для учетных записей интеграции с интегрированной средой ISE, см. [Logic Appsную модель ценообразования](../logic-apps/logic-apps-pricing.md#fixed-pricing). Сведения о тарифах см. на странице [цен на Logic Apps](https://azure.microsoft.com/pricing/details/logic-apps/).
+Учетные записи интеграции с приложениями логики можно использовать в среде службы интеграции. Тем не менее эти учетные записи интеграции должны использовать *ту же ISE*, что и связанные приложения логики. Приложения логики в среде ISE могут ссылаться только на те учетные записи интеграции, которые находятся в одной с ними среде ISE. При создании учетной записи интеграции можно выбрать среду ISE в качестве расположения учетной записи интеграции. Чтобы узнать, как цены и данные о выставлении счетов для учетных записей интеграции с интегрированной средой ISE, см. [Logic Appsную модель ценообразования](../logic-apps/logic-apps-pricing.md#fixed-pricing). Сведения о тарифах см. на странице [цен на Logic Apps](https://azure.microsoft.com/pricing/details/logic-apps/). Сведения об ограничениях см. в разделе [ограничения учетной записи интеграции](../logic-apps/logic-apps-limits-and-config.md#integration-account-limits).
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

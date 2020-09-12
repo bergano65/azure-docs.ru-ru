@@ -1,18 +1,18 @@
 ---
-title: Миграция из Azure Red Hat OpenShift 3,11 в Azure Red Hat OpenShift 4
-description: Миграция из Azure Red Hat OpenShift 3,11 в Azure Red Hat OpenShift 4
+title: Миграция из Azure Red Hat OpenShift 3.11 в Azure Red Hat OpenShift 4
+description: Миграция из Azure Red Hat OpenShift 3.11 в Azure Red Hat OpenShift 4
 author: sakthi-vetrivel
 ms.author: suvetriv
 ms.service: container-service
 ms.topic: conceptual
 ms.date: 08/13/2020
 keywords: миграция, АТО, openshift, Red Hat
-ms.openlocfilehash: 68e8be24273dfab490d2423b76c372f2ff9f2b38
-ms.sourcegitcommit: 54d8052c09e847a6565ec978f352769e8955aead
+ms.openlocfilehash: 322c0cf5ece2a9c950e71b947e2aa6088a165cb8
+ms.sourcegitcommit: 4feb198becb7a6ff9e6b42be9185e07539022f17
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88513264"
+ms.lasthandoff: 09/04/2020
+ms.locfileid: "89469751"
 ---
 # <a name="migrate-from-azure-red-hat-openshift-311-to-azure-red-hat-openshift-4"></a>Миграция из Azure Red Hat OpenShift 3,11 в Azure Red Hat OpenShift 4
 
@@ -81,7 +81,7 @@ az aro create \
 
 Azure Red Hat OpenShift 4 использует несколько различных операторов для настройки сети в кластере: [оператор сети кластера](https://docs.openshift.com/aro/4/networking/cluster-network-operator.html#nw-cluster-network-operator_cluster-network-operator), [оператор DNS](https://docs.openshift.com/aro/4/networking/dns-operator.html)и [оператор](https://docs.openshift.com/aro/4/networking/ingress-operator.html)входящего трафика. Дополнительные сведения о настройке сети в кластере Azure Red Hat OpenShift 4 см. в статье [Схема сетей](concepts-networking.md) и [Общие сведения о](https://docs.openshift.com/aro/4/networking/understanding-networking.html)работе в сети.
 
-### <a name="storage"></a>Служба хранилища
+### <a name="storage"></a>Память
 Azure Red Hat OpenShift 4 поддерживает следующие подключаемые модули Персистентволуме:
 
 - Хранилище эластичных блоков AWS (EBS)
@@ -100,7 +100,7 @@ Azure Red Hat OpenShift 4 поддерживает следующие подкл
 
 Azure Red Hat OpenShift 4 может создавать образы из исходного кода, развертывать их и управлять жизненным циклом. Для этого Azure Red Hat OpenShift предоставляет 4 [внутренний встроенный реестр образов контейнеров](https://docs.openshift.com/aro/4/registry/registry-options.html) , который можно развернуть в среде Azure Red Hat OpenShift для локального управления образами.
 
-Если вы используете такие внешние реестры, как [Реестр контейнеров Azure](https://docs.microsoft.com/azure/container-registry/), [Red Hat Quay](https://docs.openshift.com/aro/4/registry/registry-options.html#registry-quay-overview_registry-options)или [Реестр Red Hat с поддержкой проверки подлинности](https://docs.openshift.com/aro/4/registry/registry-options.html#registry-authentication-enabled-registry-overview_registry-options), выполните действия по предоставлению учетных данных в кластер, чтобы разрешить кластеру доступ к репозиториям.
+Если вы используете такие внешние реестры, как [Реестр контейнеров Azure](../container-registry/index.yml), [Red Hat Quay](https://docs.openshift.com/aro/4/registry/registry-options.html#registry-quay-overview_registry-options)или [Реестр Red Hat с поддержкой проверки подлинности](https://docs.openshift.com/aro/4/registry/registry-options.html#registry-authentication-enabled-registry-overview_registry-options), выполните действия по предоставлению учетных данных в кластер, чтобы разрешить кластеру доступ к репозиториям.
 
 ### <a name="monitoring"></a>Наблюдение
 
@@ -126,6 +126,5 @@ az openshift delete --name $CLUSTER_NAME
                     [--subscription]
                     [--yes]
 ```
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 Ознакомьтесь с документацией по Azure Red Hat OpenShift, предоставленной Red Hat [здесь](https://docs.openshift.com/aro/4/welcome/index.html).
-

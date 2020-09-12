@@ -8,12 +8,12 @@ author: ms-jasondel
 ms.author: jasondel
 keywords: aro, openshift, az aro, red hat, cli
 ms.custom: mvc
-ms.openlocfilehash: c196d48d22a2bd714c4b6252ad927d18790f4674
-ms.sourcegitcommit: 269da970ef8d6fab1e0a5c1a781e4e550ffd2c55
+ms.openlocfilehash: 11343ba668a4b74c436313f0abd4daed577c36d4
+ms.sourcegitcommit: 59ea8436d7f23bee75e04a84ee6ec24702fb2e61
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/10/2020
-ms.locfileid: "88056777"
+ms.lasthandoff: 09/07/2020
+ms.locfileid: "89505358"
 ---
 # <a name="create-an-azure-red-hat-openshift-4-private-cluster"></a>Создание частного кластера Azure Red Hat OpenShift 4
 
@@ -23,17 +23,35 @@ ms.locfileid: "88056777"
 > * настраивать необходимые компоненты и создавать необходимую виртуальную сеть и подсети;
 > * Развертывание кластера с частной конечной точкой сервера API и закрытым контроллером входящего трафика
 
-Если вы решили установить и использовать CLI локально, для работы с этим руководством вам потребуется Azure CLI версии 2.6.0 или более поздней. Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI 2.0](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest).
+Если вы решили установить и использовать интерфейс командной строки локально, то для работы с этим руководством вам понадобится Azure CLI 2.6.0 или более поздней версии. Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI 2.0](/cli/azure/install-azure-cli?view=azure-cli-latest).
 
 ## <a name="before-you-begin"></a>Перед началом
 
-### <a name="register-the-resource-provider"></a>Регистрация поставщика ресурсов
+### <a name="register-the-resource-providers"></a>Регистрация поставщиков ресурсов
 
-Затем необходимо зарегистрировать поставщик ресурсов `Microsoft.RedHatOpenShift` в подписке.
+1. Если у вас несколько подписок Azure, укажите соответствующий идентификатор подписки:
 
-```azurecli-interactive
-az provider register -n Microsoft.RedHatOpenShift --wait
-```
+    ```azurecli-interactive
+    az account set --subscription <SUBSCRIPTION ID>
+    ```
+
+1. Зарегистрируйте `Microsoft.RedHatOpenShift` поставщик ресурсов:
+
+    ```azurecli-interactive
+    az provider register -n Microsoft.RedHatOpenShift --wait
+    ```
+
+1. Зарегистрируйте `Microsoft.Compute` поставщик ресурсов:
+
+    ```azurecli-interactive
+    az provider register -n Microsoft.Compute --wait
+    ```
+
+1. Зарегистрируйте `Microsoft.Storage` поставщик ресурсов:
+
+    ```azurecli-interactive
+    az provider register -n Microsoft.Storage --wait
+    ```
 
 ### <a name="get-a-red-hat-pull-secret-optional"></a>Получение секрета для извлечения Red Hat (необязательно)
 
@@ -141,7 +159,7 @@ az provider register -n Microsoft.RedHatOpenShift --wait
     --service-endpoints Microsoft.ContainerRegistry
     ```
 
-5. **[Отключите политики частной конечной точки подсети](https://docs.microsoft.com/azure/private-link/disable-private-link-service-network-policy) в главной подсети.** Это необходимо для подключения к кластеру и управления им.
+5. **[Отключите политики частной конечной точки подсети](../private-link/disable-private-link-service-network-policy.md) в главной подсети.** Это необходимо для подключения к кластеру и управления им.
 
     ```azurecli-interactive
     az network vnet subnet update \
@@ -207,7 +225,7 @@ URL-адрес консоли кластера можно найти, выпол
 ```
 
 >[!IMPORTANT]
-> Чтобы подключиться к частному кластеру Azure Red Hat OpenShift, необходимо выполнить следующий шаг с узла, который находится либо в созданной виртуальной сети, либо в виртуальной сети с [пиринговым](https://docs.microsoft.com/azure/virtual-network/virtual-network-peering-overview) подключением к виртуальной сети, в которой был развернут кластер.
+> Чтобы подключиться к частному кластеру Azure Red Hat OpenShift, необходимо выполнить следующий шаг с узла, который находится либо в созданной виртуальной сети, либо в виртуальной сети с [пиринговым](../virtual-network/virtual-network-peering-overview.md) подключением к виртуальной сети, в которой был развернут кластер.
 
 Перейдите по URL-адресу консоли в браузере и войдите с помощью учетных данных `kubeadmin`.
 
@@ -230,9 +248,9 @@ apiServer=$(az aro show -g $RESOURCEGROUP -n $CLUSTER --query apiserverProfile.u
 ```
 
 >[!IMPORTANT]
-> Чтобы подключиться к частному кластеру Azure Red Hat OpenShift, необходимо выполнить следующий шаг с узла, который находится либо в созданной виртуальной сети, либо в виртуальной сети с [пиринговым](https://docs.microsoft.com/azure/virtual-network/virtual-network-peering-overview) подключением к виртуальной сети, в которой был развернут кластер.
+> Чтобы подключиться к частному кластеру Azure Red Hat OpenShift, необходимо выполнить следующий шаг с узла, который находится либо в созданной виртуальной сети, либо в виртуальной сети с [пиринговым](../virtual-network/virtual-network-peering-overview.md) подключением к виртуальной сети, в которой был развернут кластер.
 
-Войдите на сервер API кластера OpenShift с помощью следующей команды. Замените **\<kubeadmin password>** паролем, который вы только что извлекли.
+Войдите на сервер API кластера OpenShift с помощью следующей команды. Замените **\<kubeadmin password>** паролем, который вы только что получили.
 
 ```azurecli-interactive
 oc login $apiServer -u kubeadmin -p <kubeadmin password>

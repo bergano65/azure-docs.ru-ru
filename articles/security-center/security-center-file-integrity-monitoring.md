@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 03/13/2019
 ms.author: memildin
-ms.openlocfilehash: 68d3646b4ebc3fc5dd5943186afdb75307dfd5ed
-ms.sourcegitcommit: 1a0dfa54116aa036af86bd95dcf322307cfb3f83
+ms.openlocfilehash: 910d98558e5b949a76202cce48c2a210531d5c35
+ms.sourcegitcommit: 4a7a4af09f881f38fcb4875d89881e4b808b369b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/10/2020
-ms.locfileid: "88042672"
+ms.lasthandoff: 09/04/2020
+ms.locfileid: "89459799"
 ---
 # <a name="file-integrity-monitoring-in-azure-security-center"></a>Мониторинг целостности файлов в центре безопасности Azure
 В этом руководстве объясняется, как настроить мониторинг целостности файлов в центре безопасности Azure.
@@ -176,7 +176,7 @@ FIM использует решение "Отслеживание изменен
 
 1. Вернитесь к **панели мониторинга целостности файлов** и выберите **Параметры**.
 
-   !["Настройки"][11]
+   ![Параметры][11]
 
    Откроется страница **Конфигурация рабочей области** с тремя вкладками: **Реестр Windows**, **Файлы Windows** и **Файлы Linux**. На каждой вкладке перечислены сущности, которые можно изменять для этой категории. Для каждой сущности центр безопасности предоставляет информацию о том, включена ли для нее функция FIM (true или false).  Редактирование сущности позволяет включить или отключить для нее функцию FIM.
 
@@ -223,7 +223,7 @@ FIM использует решение "Отслеживание изменен
 
    ![Присвоение значения False параметру "Включено"][19]
 
-6. Щелкните **Сохранить**.
+6. Выберите **Сохранить**.
 
 ## <a name="folder-and-path-monitoring-using-wildcards"></a>Мониторинг папки и пути мониторинга с использованием подстановочных знаков
 
@@ -249,7 +249,7 @@ FIM использует решение "Отслеживание изменен
 
 * [Настройка политик безопасности](tutorial-security-policy.md) . Узнайте, как настроить политики безопасности для подписок и групп ресурсов Azure.
 * [Рекомендации по управлению безопасностью](security-center-recommendations.md) — сведения об использовании рекомендаций для защиты ресурсов Azure.
-* [Блог по безопасности Azure](https://blogs.msdn.com/b/azuresecurity/)— последние новости и информация об обеспечении безопасности в Azure.
+* [Блог по безопасности Azure](https://docs.microsoft.com/archive/blogs/azuresecurity/)— последние новости и информация об обеспечении безопасности в Azure.
 
 <!--Image references-->
 [1]: ./media/security-center-file-integrity-monitoring/security-center-dashboard.png

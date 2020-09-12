@@ -5,12 +5,12 @@ author: jakrams
 ms.author: jakras
 ms.date: 02/04/2020
 ms.topic: how-to
-ms.openlocfilehash: db05c7a5a45221485ecb62c2c90d56be52d5ef48
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 49d3fd953d069f4368d28e26265114e574e8100a
+ms.sourcegitcommit: 655e4b75fa6d7881a0a410679ec25c77de196ea3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84808610"
+ms.lasthandoff: 09/07/2020
+ms.locfileid: "89506667"
 ---
 # <a name="convert-models"></a>Преобразование моделей
 
@@ -21,9 +21,9 @@ ms.locfileid: "84808610"
 
 Служба преобразования поддерживает следующие форматы:
 
-- **FBX** (версия 2011 и более поздние)
+- **FBX**  (версия 2011 и более поздние)
 - **Глтф** (версия 2. x)
-- **GLBA** (версия 2. x)
+- **GLBA**  (версия 2. x)
 
 Существуют небольшие различия между форматами для преобразования свойства материала, как указано в разделе [сопоставление материалов для форматов модели](../../reference/material-mapping.md).
 
@@ -53,9 +53,10 @@ ms.locfileid: "84808610"
 - [Краткое руководство. Преобразование модели для подготовки к просмотру](../../quickstarts/convert-model.md) — пошаговое введение в преобразование модели.
 - [Примеры сценариев PowerShell](../../samples/powershell-example-scripts.md), демонстрирующие использование службы преобразования, можно найти в [репозитории образцов arr](https://github.com/Azure/azure-remote-rendering) в папке *Scripts* .
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Использование хранилища BLOB-объектов Azure для преобразования модели](blob-storage.md)
 - [Преобразование модели REST API](conversion-rest-api.md)
 - [Настройка преобразования модели](configure-model-conversion.md)
+- [Расположение файлов для преобразования](layout-files-for-conversion.md)
 - [Сопоставление материалов для форматов модели](../../reference/material-mapping.md)

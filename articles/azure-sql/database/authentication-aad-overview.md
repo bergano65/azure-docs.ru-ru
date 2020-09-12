@@ -1,5 +1,5 @@
 ---
-title: Аутентификация Azure Active Directory
+title: Проверка подлинности Azure Active Directory
 description: Узнайте, как использовать Azure Active Directory для проверки подлинности с помощью базы данных SQL Azure, Управляемый экземпляр SQL Azure и Azure синапсе Analytics.
 services: sql-database
 ms.service: sql-db-mi
@@ -11,18 +11,18 @@ author: GithubMirek
 ms.author: mireks
 ms.reviewer: vanto, carlrab
 ms.date: 04/23/2020
-ms.openlocfilehash: e1f97b1a29681a65cddf3a5904020555e903fe63
-ms.sourcegitcommit: 93462ccb4dd178ec81115f50455fbad2fa1d79ce
+ms.openlocfilehash: 943569a16101ac170d01d08250b31ba67c0e590e
+ms.sourcegitcommit: bf1340bb706cf31bb002128e272b8322f37d53dd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/06/2020
-ms.locfileid: "85984781"
+ms.lasthandoff: 09/03/2020
+ms.locfileid: "89434288"
 ---
 # <a name="use-azure-active-directory-authentication"></a>Использовать проверку подлинности Azure Active Directory
 
 [!INCLUDE[appliesto-sqldb-sqlmi-asa](../includes/appliesto-sqldb-sqlmi-asa.md)]
 
-Проверка подлинности Azure Active Directory (Azure AD) — это механизм подключения к [базе данных SQL Azure](sql-database-paas-overview.md), [Azure SQL управляемый экземпляр](../managed-instance/sql-managed-instance-paas-overview.md)и [Azure синапсе Analytics (ранее — хранилище данных SQL Azure)](../../synapse-analytics/sql-data-warehouse/sql-data-warehouse-overview-what-is.md) с помощью удостоверений в Azure AD.
+Проверка подлинности Azure Active Directory (Azure AD) — это механизм подключения к [базе данных SQL Azure](sql-database-paas-overview.md), [Azure SQL управляемый экземпляр](../managed-instance/sql-managed-instance-paas-overview.md)и [Azure синапсе Analytics (ранее — хранилище данных SQL)](../../synapse-analytics/sql-data-warehouse/sql-data-warehouse-overview-what-is.md) с помощью удостоверений в Azure AD.
 
 > [!NOTE]
 > Эта статья относится к базе данных SQL Azure, Управляемый экземпляр SQL и Azure синапсе Analytics.
@@ -161,14 +161,14 @@ ms.locfileid: "85984781"
 - Аутентификация Azure AD поддерживается для базы данных SQL Azure и Azure синапсе с помощью портал Azure **импорта базы** данных и **экспорта баз данных** . Импорт и экспорт с помощью аутентификации Azure AD также поддерживаются командой PowerShell.
 - Проверка подлинности Azure AD поддерживается для базы данных SQL, SQL Управляемый экземпляр и Azure синапсе с помощью интерфейса командной строки. Дополнительные сведения см. в статьях [Настройка аутентификации Azure AD и управление ею с помощью базы данных SQL или Azure синапсе](authentication-aad-configure.md) и [SQL Server-AZ SQL Server](https://docs.microsoft.com/cli/azure/sql/server).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Чтобы узнать, как создать и заполнить экземпляр Azure AD, а затем настроить его с помощью базы данных SQL Azure, Управляемый экземпляр SQL или Azure синапсе, см. статью [Настройка и управление Azure Active Directory аутентификацией с помощью базы данных SQL, sql управляемый экземпляр или Azure синапсе](authentication-aad-configure.md).
 - Руководство по использованию участников-серверов Azure AD (имен входа) с SQL Управляемый экземпляр см. в статье [участники сервера Azure AD (имена входа) с sql управляемый экземпляр](../managed-instance/aad-security-configure-tutorial.md)
 - Общие сведения о именах входа, пользователях, ролях базы данных и разрешениях в базе данных SQL см. в разделе [имена входа, пользователи, роли базы данных и разрешения](logins-create-manage.md).
 - Дополнительные сведения о субъектах базы данных см. в [этой статье](https://msdn.microsoft.com/library/ms181127.aspx).
 - Дополнительные сведения о ролях баз данных см. в статье [Роли уровня базы данных](https://msdn.microsoft.com/library/ms189121.aspx).
-- Синтаксис создания субъектов-серверов Azure AD (имен входа) для SQL Управляемый экземпляр см. в разделе [Создание имени входа](/sql/t-sql/statements/create-login-transact-sql?view=azuresqldb-mi-current).
+- Синтаксис создания субъектов-серверов Azure AD (имен входа) для SQL Управляемый экземпляр см. в разделе  [Создание имени входа](/sql/t-sql/statements/create-login-transact-sql?view=azuresqldb-mi-current).
 - Дополнительные сведения о правилах брандмауэра см. в статье [Обзор правил брандмауэра базы данных SQL Azure](firewall-configure.md).
 
 <!--Image references-->

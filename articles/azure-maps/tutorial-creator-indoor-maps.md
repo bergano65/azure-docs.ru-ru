@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.service: azure-maps
 services: azure-maps
 manager: philmea
-ms.openlocfilehash: bf2fbb48c34631bc74a3b712e135b618a1718d8e
-ms.sourcegitcommit: 56cbd6d97cb52e61ceb6d3894abe1977713354d9
+ms.openlocfilehash: 9ed6690348816229d369bcff5d92c9703a4b3702
+ms.sourcegitcommit: 4feb198becb7a6ff9e6b42be9185e07539022f17
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/20/2020
-ms.locfileid: "88688098"
+ms.lasthandoff: 09/04/2020
+ms.locfileid: "89469921"
 ---
 # <a name="use-creator-to-create-indoor-maps"></a>Использование Creator для создания схем помещений
 
@@ -120,7 +120,7 @@ API отправки данных — это долго выполняющая�
 4. Запустите новый HTTP-метод **GET** на вкладке "Построитель". Добавьте первичный ключ подписки Azure Maps в `status URL`. Выполните запрос **Get** по адресу `status URL` , скопированному на шаге 3. Он `status URL` выглядит как следующий URL-адрес:
 
     ```http
-    https://atlas.microsoft.com/conversion/operations/<operationId>?api-version=1.0
+    https://atlas.microsoft.com/conversion/operations/<operationId>?api-version=1.0&subscription-key={Azure-Maps-Primary-Subscription-key}
     ```
 
     Если процесс преобразования еще не завершен, вы можете увидеть нечто вроде следующего ответа JSON:
@@ -208,7 +208,7 @@ API отправки данных — это долго выполняющая�
 3. Выполните запрос **GET** в `statusURL` для этого набора фрагментов. Добавьте первичный ключ подписки Azure Maps для проверки подлинности. Запрос должен выглядеть, как в этом URL-адресе:
 
    ```http
-    https://atlas.microsoft.com/tileset/operations/<operationId>?api-version=1.0&subscription-key=<Azure-Maps-Primary-Subscription-key>
+    https://atlas.microsoft.com/tileset/operations/<operationId>?api-version=1.0&subscription-key={Azure-Maps-Primary-Subscription-key}
     ```
 
 4. После успешного завершения HTTP-запроса **GET** заголовок ответа будет содержать `tilesetId` для созданного набора фрагментов. Скопируйте `tilesetId`.

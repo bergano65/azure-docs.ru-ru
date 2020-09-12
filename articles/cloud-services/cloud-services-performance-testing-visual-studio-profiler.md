@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.topic: article
 ms.date: 11/18/2016
 ms.author: mikejo
-ms.openlocfilehash: 21270d3c7143ce063ffe30d939368b9813e9072e
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 503b1ca8c8f1ff06bbdd54316611d886fb1e9d87
+ms.sourcegitcommit: 4a7a4af09f881f38fcb4875d89881e4b808b369b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "70094099"
+ms.lasthandoff: 09/04/2020
+ms.locfileid: "89462315"
 ---
 # <a name="testing-the-performance-of-a-cloud-service-locally-in-the-azure-compute-emulator-using-the-visual-studio-profiler"></a>Локальное тестирование производительности облачной службы в эмуляторе вычислений Azure с помощью профилировщика Visual Studio
 Для тестирования производительности облачных служб доступны разнообразные средства и методы.
@@ -163,12 +163,12 @@ public static string Concatenate(int number)
 * При использовании команд профилирования из командной строки, особенно глобальных параметров, убедитесь, что вызван VSPerfClrEnv /globaloff и завершена работа VsPerfMon.exe.
 * Если в ходе выборки будет выведено сообщение "PRF0025: данные не собраны", убедитесь, что в присоединенном процессе есть загрузка ЦП. Приложения, которые не производят вычислений, могут не предоставлять данных для выборки.  Это также может быть связано с завершением процесса до начала сбора данных. Убедитесь, что метод Run для профилируемой роли не завершен.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Next Steps
 Инструментирование двоичных файлов Azure в эмуляторе не поддерживается в профилировщике Visual Studio, но в случае, если нужно проверить распределение памяти, этот параметр можно выбрать при профилировании. Можно также выбрать параллельное профилирование — это поможет выявить затраты времени на конкурирование потоков за блокировку, или профилирование взаимодействия слоев, что поможет отслеживать проблемы с производительностью в ходе обмена данными между слоями приложения, чаще всего между уровнем данных и ролью рабочего процесса.  Можно просмотреть запросы к базе данных, создаваемые приложением, и использовать данные профилирования для повышения эффективности работы с базой данных. Сведения о профилировании межуровневого взаимодействия см. в записи блога [Walkthrough: Using the Tier Interaction Profiler in Visual Studio Team System 2010][3] (Пошаговое руководство. Использование профилировщика межуровневого взаимодействия в Visual Studio Team System 2010).
 
 [1]: https://docs.microsoft.com/azure/application-insights/app-insights-profiler
 [2]: https://msdn.microsoft.com/library/azure/hh411542.aspx
-[3]: https://blogs.msdn.com/b/habibh/archive/2009/06/30/walkthrough-using-the-tier-interaction-profiler-in-visual-studio-team-system-2010.aspx
+[3]: https://docs.microsoft.com/archive/blogs/habibh/walkthrough-using-the-tier-interaction-profiler-in-visual-studio-team-system-2010
 [4]: ./media/cloud-services-performance-testing-visual-studio-profiler/ProfilingLocally09.png
 [5]: ./media/cloud-services-performance-testing-visual-studio-profiler/ProfilingLocally10.png
 [6]: ./media/cloud-services-performance-testing-visual-studio-profiler/ProfilingLocally02.png
