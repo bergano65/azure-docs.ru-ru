@@ -1,7 +1,7 @@
 ---
 title: Azure AD Connect. Управление службами AD FS и их настройка | Документация Майкрософт
 description: Управление службами AD FS с помощью Azure AD Connect и настройка пользовательского входа в AD FS с помощью Azure AD Connect и PowerShell.
-keywords: AD FS, ADFS, управление AD FS, AAD Connect, Connect, вход, настройка AD FS, восстановление доверия, Office 365, федерация, проверяющая сторона
+keywords: AD FS, ADFS, управление AD FSми, AAD Connect, Connect, вход, настройка AD FS, исправление доверия, M365, Федерация, проверяющая сторона
 services: active-directory
 documentationcenter: ''
 author: billmath
@@ -18,12 +18,12 @@ ms.subservice: hybrid
 ms.author: billmath
 ms.custom: seohack1
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 58bc154f4ffb234df52faf3c02b5ed7ecaf77c2e
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: dadffd6fe3e6b438b21900f957f0d4ef71bb23cb
+ms.sourcegitcommit: f8d2ae6f91be1ab0bc91ee45c379811905185d07
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85830933"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89661263"
 ---
 # <a name="manage-and-customize-active-directory-federation-services-by-using-azure-ad-connect"></a>Управление службами федерации Active Directory и их настройка с помощью Azure AD Connect
 В этой статье описывается управление службами федерации Active Directory (AD FS) и их настройка с помощью Azure Active Directory (Azure AD) Connect, а также рассматриваются другие стандартные задачи AD FS, которые может потребоваться выполнить для полной настройки фермы AD FS.
@@ -31,7 +31,7 @@ ms.locfileid: "85830933"
 | Раздел | Что описывает |
 |:--- |:--- |
 | **Управление AD FS** | |
-| [Восстановление доверия](#repairthetrust) |Восстановление доверия федерации с Office 365. |
+| [Восстановление доверия](#repairthetrust) |Как восстановить доверие федерации с помощью Microsoft 365. |
 | [Федерацию с Azure AD с помощью альтернативного имени пользователя](#alternateid) | Настройка федерации с использованием альтернативного имени пользователя.  |
 | [Добавление сервера AD FS](#addadfsserver) |Расширение фермы AD FS с использованием дополнительного сервера AD FS. |
 | [Добавление прокси-сервера веб-приложения AD FS](#addwapserver) |Добавление к ферме AD FS дополнительного сервера прокси-службы веб-приложения (WAP). |
@@ -85,7 +85,7 @@ Azure AD Connect может проверить текущую работоспо
     При обнаружении такой проблемы необходимо исправить конфигурацию, установив обязательное обновление [KB2919355](https://go.microsoft.com/fwlink/?LinkID=396590) и восстановив доверие с помощью действия [Восстановление доверия AAD и ADFS](#repairthetrust).
 
 > [!NOTE]
-> Дополнительные сведения об альтернативном имени пользователя и о его настройке вручную см. в статье [Configuring Alternate Login ID](https://technet.microsoft.com/windows-server-docs/identity/ad-fs/operations/configuring-alternate-login-id) (Настройка альтернативного имени пользователя).
+> Дополнительные сведения об альтернативном имени пользователя и о его настройке вручную см. в статье [Configuring Alternate Login ID](/windows-server/identity/ad-fs/operations/configuring-alternate-login-id) (Настройка альтернативного имени пользователя).
 
 ## <a name="add-an-ad-fs-server"></a><a name="addadfsserver"></a>Добавление сервера AD FS 
 
@@ -174,7 +174,7 @@ Azure AD Connect может проверить текущую работоспо
 
    ![Домен Azure AD](./media/how-to-connect-fed-management/AdditionalDomain4.PNG)
 
-    Когда вы выберете домен, мастер предоставит соответствующие сведения о дальнейших действиях, которые будут выполнены мастером, а также о результатах настроек. В некоторых случаях при выборе домена, еще не проверенного в Azure AD, мастер предоставит сведения, которые помогут проверить домен. Дополнительные сведения см. в разделе [Добавление имени личного домена в Azure Active Directory](../active-directory-domains-add-azure-portal.md).
+    Когда вы выберете домен, мастер предоставит соответствующие сведения о дальнейших действиях, которые будут выполнены мастером, а также о результатах настроек. В некоторых случаях при выборе домена, еще не проверенного в Azure AD, мастер предоставит сведения, которые помогут проверить домен. Дополнительные сведения см. в разделе [Добавление имени личного домена в Azure Active Directory](../fundamentals/add-custom-domain.md).
 
 5. Нажмите кнопку **Далее**. На странице **Готово к настройке** отображается список действий, которые выполнит Azure AD Connect. Чтобы завершить настройку, нажмите кнопку **Установить** .
 
@@ -207,7 +207,7 @@ Set-AdfsGlobalWebContent -SignInPageDescriptionText "<p>Sign-in to Contoso requi
 ```
 
 ## <a name="modify-ad-fs-claim-rules"></a><a name="modclaims"></a>Изменение правил утверждений служб федерации Active Directory 
-Службы AD FS поддерживают обширный язык утверждений, с помощью которого можно создавать настраиваемые правила утверждений. Дополнительные сведения см. в разделе [Роль языка правил утверждений](https://technet.microsoft.com/library/dd807118.aspx).
+Службы AD FS поддерживают обширный язык утверждений, с помощью которого можно создавать настраиваемые правила утверждений. Дополнительные сведения см. в разделе [Роль языка правил утверждений](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dd807118(v=ws.11)).
 
 Далее рассматривается, как можно создавать пользовательские правила для некоторых сценариев, связанных с использованием Azure AD и федерации AD FS.
 
@@ -262,5 +262,5 @@ c1:[Type == "urn:anandmsft:tmp/idflag", Value =~ "useguid"]
 
 Можно включить несколько доменов в федерацию с помощью Azure AD Connect, как описано в разделе [Добавление нового федеративного домена](how-to-connect-fed-management.md#addfeddomain). Azure AD Connect версии 1.1.553.0 и более поздней создает корректное правило утверждения для issuerID автоматически. Если вы не можете использовать Azure AD Connect версии 1.1.553.0 или более поздней, рекомендуется использовать средство [Правила утверждений Azure AD RPT](https://aka.ms/aadrptclaimrules) для создания и установки корректных правил утверждений для доверия проверяющей стороне Azure AD.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 См. [дополнительные сведения о параметрах входа пользователя](plan-connect-user-signin.md).

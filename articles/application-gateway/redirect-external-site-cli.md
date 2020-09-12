@@ -7,12 +7,12 @@ ms.service: application-gateway
 ms.topic: how-to
 ms.date: 11/13/2019
 ms.author: victorh
-ms.openlocfilehash: b671af46d34e3b45796186cd10282d060fa8c537
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 7566122e4edf4357562e830197fade746f18a16f
+ms.sourcegitcommit: 1b320bc7863707a07e98644fbaed9faa0108da97
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84804665"
+ms.lasthandoff: 09/09/2020
+ms.locfileid: "89594272"
 ---
 # <a name="create-an-application-gateway-with-external-redirection-using-the-azure-cli"></a>Создание шлюза приложений с перенаправлением внешнего трафика с помощью Azure CLI
 
@@ -20,10 +20,9 @@ ms.locfileid: "84804665"
 
 Вы узнаете, как выполнять следующие задачи:
 
-> [!div class="checklist"]
-> * Настройка сети
-> * создание прослушивателя и правила перенаправления;
-> * Создание шлюза приложений
+* Настройка сети
+* создание прослушивателя и правила перенаправления;
+* Создание шлюза приложений
 
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
@@ -130,7 +129,7 @@ az network application-gateway rule create \
 
 В браузере должен открыться сайт *bing.com*.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 В этом руководстве вы узнали, как:
 

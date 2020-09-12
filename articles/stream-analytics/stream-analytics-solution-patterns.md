@@ -7,12 +7,12 @@ ms.reviewer: mamccrea
 ms.service: stream-analytics
 ms.topic: conceptual
 ms.date: 06/21/2019
-ms.openlocfilehash: c3d487c1595a077ac8609813a41d15e28ede0e0b
-ms.sourcegitcommit: 4e5560887b8f10539d7564eedaff4316adb27e2c
+ms.openlocfilehash: b82dd4ea8a74c51606b7a388b8d6ede07b1057c4
+ms.sourcegitcommit: 4a7a4af09f881f38fcb4875d89881e4b808b369b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87903329"
+ms.lasthandoff: 09/04/2020
+ms.locfileid: "89461550"
 ---
 # <a name="azure-stream-analytics-solution-patterns"></a>Шаблоны решений Azure Stream Analytics
 
@@ -102,7 +102,7 @@ SQL не является хранилищем данных с высокой п
 
 ## <a name="use-reference-data-for-enrichment"></a>Использование эталонных данных для обогащения
 
-Для ядер ETL часто требуется обогащение данных. Azure Stream Analytics поддерживает обогащение данных с помощью [справочных данных](stream-analytics-use-reference-data.md) из базы данных SQL и хранилища BLOB-объектов Azure. Обогащение данных можно выполнить для размещения данных как в Azure Data Lake, так и в хранилище данных SQL.
+Для ядер ETL часто требуется обогащение данных. Azure Stream Analytics поддерживает обогащение данных с помощью [справочных данных](stream-analytics-use-reference-data.md) из базы данных SQL и хранилища BLOB-объектов Azure. Обогащение данных можно выполнить для размещения данных как в Azure Data Lake, так и в Azure синапсе Analytics.
 
 
 ![Автономная аналитика ASA с расширенными данными](media/stream-analytics-solution-patterns/offline-analytics-enriched.png)
@@ -115,7 +115,7 @@ SQL не является хранилищем данных с высокой п
 
 ## <a name="how-to-monitor-asa-jobs"></a>Мониторинг заданий ASA
 
-Задание Azure Stream Analytics может быть запущено 24/7 для непрерывной обработки входящих событий в режиме реального времени. Его Гарантия доступности важна для работоспособности всего приложения. Хотя Stream Analytics — единственная служба Streaming Analytics в отрасли, которая предлагает [гарантию доступности 99,9%](https://azure.microsoft.com/support/legal/sla/stream-analytics/v1_0/), вы по-прежнему можете столкнуться с определенными уровнями времени простоя. В течение многих лет Stream Analytics предоставила метрики, журналы и состояния заданий для отражения работоспособности заданий. Все они отображаются с помощью Azure Monitor службы и могут быть экспортированы в OMS. Дополнительные сведения см. в статьях [изучение мониторинга Stream Analytics заданий и мониторинг запросов](stream-analytics-monitoring.md).
+Задание Azure Stream Analytics может быть запущено 24/7 для непрерывной обработки входящих событий в режиме реального времени. Его Гарантия доступности важна для работоспособности всего приложения. Хотя Stream Analytics — единственная служба Streaming Analytics в отрасли, которая предлагает  [гарантию доступности 99,9%](https://azure.microsoft.com/support/legal/sla/stream-analytics/v1_0/), вы по-прежнему можете столкнуться с определенными уровнями времени простоя. В течение многих лет Stream Analytics предоставила метрики, журналы и состояния заданий для отражения работоспособности заданий. Все они отображаются с помощью Azure Monitor службы и могут быть экспортированы в OMS. Дополнительные сведения см. в статьях [изучение мониторинга Stream Analytics заданий и мониторинг запросов](stream-analytics-monitoring.md).
 
 ![Мониторинг ASA](media/stream-analytics-solution-patterns/monitoring.png)
 
@@ -180,7 +180,7 @@ SQL не является хранилищем данных с высокой п
 
 Ключом является проектирование системы в шаблонах с композицией, поэтому каждая подсистема может быть построена, протестирована, обновлена и восстановлена независимо друг от друга.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Теперь вы узнали о различных шаблонах решений, использующих Azure Stream Analytics. Теперь вы можете вникнуть в детали и создать свое первое задание Stream Analytics:
 

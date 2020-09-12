@@ -11,12 +11,12 @@ services: iot-edge
 ms.custom:
 - amqp
 - mqtt
-ms.openlocfilehash: 6f5698c5390a341df505bf5a1f849e121bd754a2
-ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
+ms.openlocfilehash: 7cabae837656611813d44017ce2e1112f06066ef
+ms.sourcegitcommit: 5d7f8c57eaae91f7d9cf1f4da059006521ed4f9f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2020
-ms.locfileid: "86258780"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89669612"
 ---
 # <a name="prepare-to-deploy-your-iot-edge-solution-in-production"></a>Подготовка к развертыванию решения IoT Edge в рабочей среде
 
@@ -41,7 +41,7 @@ ms.locfileid: "86258780"
 На каждом устройстве IoT Edge в рабочей среде необходимо установить сертификат от центра сертификации (ЦС). Затем этот сертификат ЦС объявляется в файле config.yaml для среды выполнения IoT Edge. В сценариях разработки и тестирования среда выполнения IoT Edge создает временные сертификаты, если в файле config. YAML не объявлено ни одного сертификата. Однако срок действия этих сертификатов истекает спустя три месяца, и они недостаточно безопасны для рабочих сценариев. В рабочих сценариях необходимо предоставить собственный сертификат ЦС устройства либо из самозаверяющего центра сертификации, либо из коммерческого центра сертификации.
 
 > [!NOTE]
-> В настоящее время ограничение в либиоссм предотвращает использование сертификатов, срок действия которых истекает 1 января 2050.
+> В настоящее время ограничение в либиоссм предотвращает использование сертификатов, срок действия которых истекает 1 января 2038.
 
 Сведения о роли сертификатов ЦС для устройств см. в статье [Сведения об использовании сертификатов Azure IoT Edge](iot-edge-certs.md).
 
@@ -182,7 +182,7 @@ ms.locfileid: "86258780"
 | Контейнер среды выполнения IoT Edge | Команда DOCKER Pull |
 | --- | --- |
 | [Агент Azure IoT Edge](https://hub.docker.com/_/microsoft-azureiotedge-agent) | `docker pull mcr.microsoft.com/azureiotedge-agent` |
-| [Центр Azure IoT Edge](https://hub.docker.com/_/microsoft-azureiotedge-hub) | `docker pull mcr.microsoft.com/azureiotedge-hub` |
+| [Концентратор Azure IoT Edge](https://hub.docker.com/_/microsoft-azureiotedge-hub) | `docker pull mcr.microsoft.com/azureiotedge-hub` |
 
 Затем обязательно обновите ссылки на образ в deployment.template.jsв файле для системных модулей edgeAgent и edgeHub. Замените на `mcr.microsoft.com` имя и сервер реестра для обоих модулей.
 
@@ -231,7 +231,7 @@ ms.locfileid: "86258780"
 Некоторые из этих правил брандмауэра наследуются от реестра контейнеров Azure. Дополнительные сведения см. в статье [Настройка правил для доступа к реестру контейнеров Azure за брандмауэром](../container-registry/container-registry-firewall-access-rules.md).
 
 > [!NOTE]
-> Чтобы обеспечить согласованное полное доменное имя между конечной точкой и конечными точками данных, начиная с **15 июня, 2020** конечная точка данных реестра контейнеров Майкрософт изменится с `*.cdn.mscr.io` на`*.data.mcr.microsoft.com`  
+> Чтобы обеспечить согласованное полное доменное имя между конечной точкой и конечными точками данных, начиная с **15 июня, 2020** конечная точка данных реестра контейнеров Майкрософт изменится с `*.cdn.mscr.io` на `*.data.mcr.microsoft.com`  
 > Дополнительные сведения см. в [статье Настройка правил брандмауэра для клиента реестра контейнеров Microsoft](https://github.com/microsoft/containerregistry/blob/master/client-firewall-rules.md) .
 
 Если вы не хотите настраивать брандмауэр для разрешения доступа к общедоступным реестрам контейнеров, вы можете хранить образы в частном реестре контейнеров, как описано в разделе [Хранение контейнеров среды выполнения в частном реестре](#store-runtime-containers-in-your-private-registry).
@@ -285,7 +285,7 @@ ms.locfileid: "86258780"
 
 #### <a name="option-adjust-log-settings-for-each-container-module"></a>Параметр: Настройка параметров журнала для каждого модуля контейнера
 
-Это можно сделать в **креатеоптионс** каждого модуля. Например:
+Это можно сделать в **креатеоптионс** каждого модуля. Пример:
 
 ```yml
 "createOptions": {
@@ -321,9 +321,9 @@ ms.locfileid: "86258780"
 
 ### <a name="consider-tests-and-cicd-pipelines"></a>Тесты и конвейеры CI/CD
 
-Для максимально эффективного развертывания IoT Edge рекомендуем интегрировать рабочую среду с конвейерами CI/CD и тестирования. Azure IoT Edge поддерживает множество платформ CI/CD, включая Azure DevOps. Дополнительные сведения см. в статье [Непрерывная интеграция и непрерывное развертывание в Azure IoT Edge](how-to-ci-cd.md).
+Для максимально эффективного развертывания IoT Edge рекомендуем интегрировать рабочую среду с конвейерами CI/CD и тестирования. Azure IoT Edge поддерживает множество платформ CI/CD, включая Azure DevOps. Дополнительные сведения см. в статье [Непрерывная интеграция и непрерывное развертывание в Azure IoT Edge](how-to-continuous-integration-continuous-deployment.md).
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
 * Дополнительные сведения см. в статье об [автоматическом развертывании IoT Edge](module-deployment-monitoring.md).
-* Узнайте о поддержке [непрерывных интеграции и развертывания](how-to-ci-cd.md) в IoT Edge.
+* Узнайте о поддержке [непрерывных интеграции и развертывания](how-to-continuous-integration-continuous-deployment.md) в IoT Edge.

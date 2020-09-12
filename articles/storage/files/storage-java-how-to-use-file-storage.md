@@ -8,12 +8,12 @@ ms.date: 09/19/2017
 ms.custom: devx-track-java
 ms.author: rogarana
 ms.subservice: files
-ms.openlocfilehash: b1edc13888a42086cdcd3c3c7756491bd5f43241
-ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
+ms.openlocfilehash: 2c80d741ca1cf0b4d66bc18488af8ef1da44fd14
+ms.sourcegitcommit: 4a7a4af09f881f38fcb4875d89881e4b808b369b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87314481"
+ms.lasthandoff: 09/04/2020
+ms.locfileid: "89462604"
 ---
 # <a name="develop-for-azure-files-with-java"></a>Разработка для файлов Azure с использованием языка Java
 [!INCLUDE [storage-selector-file-include](../../../includes/storage-selector-file-include.md)]
@@ -73,7 +73,7 @@ try {
 
 **CloudStorageAccount.parse** вызывает прерывание InvalidKeyException, поэтому необходимо поместить его в блок try-catch.
 
-## <a name="create-an-azure-file-share"></a>Создание файлового ресурса Azure
+## <a name="create-an-azure-file-share"></a>создать файловый ресурс Azure;
 Все файлы и каталоги в файлах Azure находятся в контейнере, который называется **общей папкой**. Учетная запись хранения может иметь столько общих папок, насколько позволяет емкость вашей учетной записи. Чтобы получить доступ к общей папке и ее содержимому, необходимо использовать клиент файлов Azure.
 
 ```java
@@ -186,7 +186,7 @@ CloudFileDirectory rootDir = share.getRootDirectoryReference();
         cloudFile.uploadFromFile(filePath);
 ```
 
-## <a name="download-a-file"></a>Скачивание файла
+## <a name="download-a-file"></a>скачать файл;
 Одной из наиболее частых операций, которые выполняются с файлами Azure, является скачивание файлов. В следующем примере происходит скачивание файла SampleFile.txt с последующим отображением его содержимого.
 
 ```java
@@ -222,14 +222,14 @@ if ( file.deleteIfExists() ) {
 }
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 Если вы хотите узнать больше о других API-интерфейсах Azure, пожалуйста перейдите по следующим ссылкам.
 
 * [Azure для разработчиков Java](/java/azure)/)
-* [Пакет SDK службы хранилища Azure для Java](https://github.com/azure/azure-storage-java)
+* [Пакет SDK для службы хранилища Azure для Java](https://github.com/azure/azure-storage-java)
 * [Microsoft Azure Storage SDK for Android](https://github.com/azure/azure-storage-android)
 * [справочнике по пакету SDK для клиента службы хранилища Azure](https://javadoc.io/doc/com.microsoft.azure/azure-core/0.8.0/index.html)
 * [API-интерфейс REST служб хранилища Azure](https://msdn.microsoft.com/library/azure/dd179355.aspx)
-* [Блог рабочей группы службы хранилища Azure](https://blogs.msdn.com/b/windowsazurestorage/)
+* [Блог рабочей группы службы хранилища Azure](https://docs.microsoft.com/archive/blogs/windowsazurestorage/)
 * [Приступая к работе со служебной программой командной строки AzCopy](../common/storage-use-azcopy.md)
 * [Устранение неполадок с файлами Azure в Windows](storage-troubleshoot-windows-file-connection-problems.md)

@@ -9,13 +9,13 @@ author: djpmsft
 ms.author: daperlov
 ms.reviewer: ''
 manager: anandsub
-ms.date: 05/15/2020
-ms.openlocfilehash: ac51fd63adcc0328ff67f5fbe13dbfdb768f4bfe
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.date: 09/08/2020
+ms.openlocfilehash: 6f8d74ade382db9bfa28c3ab6f03b95b5ac7947c
+ms.sourcegitcommit: d0541eccc35549db6381fa762cd17bc8e72b3423
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84343125"
+ms.lasthandoff: 09/09/2020
+ms.locfileid: "89567131"
 ---
 # <a name="visual-authoring-in-azure-data-factory"></a>Визуальная разработка в фабрике данных Azure
 
@@ -39,9 +39,17 @@ ms.locfileid: "84343125"
 
 Для изменения свойств таких ресурсов верхнего уровня, как конвейеры, наборы данных и потоки данных, можно использовать панель свойств в правой части холста. На ней указываются такие свойства, как имя, описание, заметки и другие высокоуровневые свойства. Для редактирования подресурсов, таких как действия конвейера и преобразования потока данных, используется панель в нижней части холста. 
 
-![Холст разработки](media/author-visually/properties-pane.png)
+![панель свойств](media/author-visually/properties-pane.png)
 
 Панель свойств открывается по умолчанию только при создании ресурса. Чтобы изменить его, щелкните значок панели свойств в правом верхнем углу холста.
+
+### <a name="related-resources"></a>Связанные ресурсы
+
+На панели «Свойства» можно увидеть, какие ресурсы зависят от выбранного ресурса, выбрав **соответствующую** вкладку. Все ресурсы, ссылающиеся на текущий ресурс, будут перечислены здесь.
+
+![Связанные ресурсы](media/author-visually/related-resources.png)
+
+Например, на приведенном выше рисунке один конвейер и два потока данных используют текущий выбранный набор данных.
 
 ## <a name="management-hub"></a>Центр управления
 

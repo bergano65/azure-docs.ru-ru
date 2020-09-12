@@ -7,12 +7,12 @@ ms.topic: how-to
 ms.date: 07/27/2020
 ms.author: normesta
 ms.subservice: common
-ms.openlocfilehash: b43b20023aa0d96dcaa3ce79b626d61ec6f6752d
-ms.sourcegitcommit: e71da24cc108efc2c194007f976f74dd596ab013
+ms.openlocfilehash: a30ab4136b1d54e852ddb8fe3d0ed9a4e2bc9149
+ms.sourcegitcommit: de2750163a601aae0c28506ba32be067e0068c0c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87423837"
+ms.lasthandoff: 09/04/2020
+ms.locfileid: "89485946"
 ---
 # <a name="get-started-with-azcopy"></a>Начало работы с AzCopy
 
@@ -158,7 +158,7 @@ $env:AZCOPY_SPA_CLIENT_SECRET="$(Read-Host -prompt "Enter key")"
 Затем введите следующую команду и нажмите клавишу ВВОД.
 
 ```azcopy
-azcopy login --service-principal --certificate-path path-to-certificate-file --application-id application-id --tenant-id=tenant-id
+azcopy login --service-principal  --application-id application-id --tenant-id=tenant-id
 ```
 
 Замените `<application-id>` заполнитель идентификатором приложения для регистрации приложения субъекта-службы. Замените `<tenant-id>` заполнитель идентификатором клиента организации, к которой принадлежит учетная запись хранения. Чтобы найти идентификатор клиента, выберите **Azure Active Directory > свойства > идентификатор каталога** в портал Azure. 
@@ -247,7 +247,7 @@ azcopy copy "C:\local\path" "https://account.blob.core.windows.net/mycontainer1/
 
 Дополнительные сведения о маркерах SAS и их получении см. в разделе [использование подписанных URL-адресов (SAS)](https://docs.microsoft.com/azure/storage/common/storage-sas-overview).
 
-## <a name="transfer-files"></a>Перенос файлов
+## <a name="transfer-files"></a>Передача файлов
 
 После проверки подлинности удостоверения или получения маркера SAS можно начать передачу файлов.
 
@@ -271,7 +271,7 @@ azcopy copy "C:\local\path" "https://account.blob.core.windows.net/mycontainer1/
 
 Чтобы получить ссылку, выполните следующую команду:
 
-| Операционная система  | Команда |
+| Операционная система  | Get-Help |
 |--------|-----------|
 | **Linux** | `curl -s -D- https://aka.ms/downloadazcopy-v10-linux | grep ^Location` |
 | **Windows** | `(curl https://aka.ms/downloadazcopy-v10-windows -MaximumRedirection 0 -ErrorAction silentlycontinue).headers.location` |
@@ -281,7 +281,7 @@ azcopy copy "C:\local\path" "https://account.blob.core.windows.net/mycontainer1/
 
 URL-адрес отображается в выходных данных этой команды. Затем скрипт может скачать AzCopy с помощью этого URL-адреса.
 
-| Операционная система  | Команда |
+| Операционная система  | Get-Help |
 |--------|-----------|
 | **Linux** | `wget -O azcopy_v10.tar.gz https://aka.ms/downloadazcopy-v10-linux && tar -xf azcopy_v10.tar.gz --strip-components=1` |
 | **Windows** | `Invoke-WebRequest https://azcopyvnext.azureedge.net/release20190517/azcopy_windows_amd64_10.1.2.zip -OutFile azcopyv10.zip <<Unzip here>>` |

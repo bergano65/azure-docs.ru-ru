@@ -8,12 +8,12 @@ ms.service: hdinsight
 ms.topic: how-to
 ms.custom: hdiseo17may2017,seoapr2020
 ms.date: 04/27/2020
-ms.openlocfilehash: d642397ef42227e530bd9eff14c3da6078241281
-ms.sourcegitcommit: 124f7f699b6a43314e63af0101cd788db995d1cb
+ms.openlocfilehash: b678e4de76619ff17703caecfa7a52682e835674
+ms.sourcegitcommit: 4a7a4af09f881f38fcb4875d89881e4b808b369b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86085877"
+ms.lasthandoff: 09/04/2020
+ms.locfileid: "89462570"
 ---
 # <a name="upload-data-for-apache-hadoop-jobs-in-hdinsight"></a>Отправка данных для заданий Apache Hadoop в HDInsight
 
@@ -31,7 +31,7 @@ HDInsight предоставляет распределенную файлову
 
 ## <a name="upload-data-to-azure-storage"></a>Отправка данных в службу хранилища Azure
 
-### <a name="utilities"></a>Техническое оборудование
+### <a name="utilities"></a>Служебные программы
 
 Корпорация Майкрософт предоставляет следующие служебные программы для работы со службой хранилища Azure:
 
@@ -58,7 +58,7 @@ HDInsight предоставляет распределенную файлову
 hadoop fs -copyFromLocal <localFilePath> <storageFilePath>
 ```
 
-Например: `hadoop fs -copyFromLocal data.txt /example/data/data.txt`
+Например `hadoop fs -copyFromLocal data.txt /example/data/data.txt`.
 
 Так как файловая система по умолчанию для HDInsight находится в службе хранилища Azure,/ексампле/Дата/data.txt на самом деле находится в службе хранилища Azure. Можно также использовать следующую ссылку на файл:
 
@@ -68,7 +68,7 @@ hadoop fs -copyFromLocal <localFilePath> <storageFilePath>
 
 `wasbs://<ContainerName>@<StorageAccountName>.blob.core.windows.net/example/data/davinci.txt`
 
-Список других команд Hadoop, работающих с файлами, см. в разделе[https://hadoop.apache.org/docs/current/hadoop-project-dist/hadoop-common/FileSystemShell.html](https://hadoop.apache.org/docs/current/hadoop-project-dist/hadoop-common/FileSystemShell.html)
+Список других команд Hadoop, работающих с файлами, см. в разделе [https://hadoop.apache.org/docs/current/hadoop-project-dist/hadoop-common/FileSystemShell.html](https://hadoop.apache.org/docs/current/hadoop-project-dist/hadoop-common/FileSystemShell.html)
 
 > [!WARNING]  
 > В кластерах Apache HBase при записи данных используется размер блока по умолчанию (256 КБ). Это подходит, когда используются API HBase или REST API. Но при попытке записать более 12 ГБ данных с помощью команды `hadoop` или `hdfs dfs` возникнет ошибка. Дополнительные сведения см. [в статье исключение хранилища для записи в BLOB-объекте](hdinsight-troubleshoot-hdfs.md#storage-exception-for-write-on-blob).
@@ -77,7 +77,7 @@ hadoop fs -copyFromLocal <localFilePath> <storageFilePath>
 
 Существуют также несколько приложений, которые предоставляют графический интерфейс для работы с хранилищем Azure. В следующей таблице приведен список некоторых из таких приложений:
 
-| Клиент | Linux | OS X | Windows |
+| клиент | Linux | OS X | Windows |
 | --- |:---:|:---:|:---:|
 | [Microsoft Visual Studio Tools для HDInsight](hadoop/apache-hadoop-visual-studio-tools-get-started.md#explore-linked-resources) |✔ |✔ |✔ |
 | [Обозреватель службы хранилища Azure](../storage/blobs/storage-quickstart-blobs-storage-explorer.md) |✔ |✔ |✔ |
@@ -88,7 +88,7 @@ hadoop fs -copyFromLocal <localFilePath> <storageFilePath>
 
 ## <a name="mount-azure-storage-as-local-drive"></a>Подключение службы хранилища Azure в качестве локального диска
 
-Подробные сведения см. в статье [Mount Azure Blob Storage as Local Drive](https://blogs.msdn.com/b/bigdatasupport/archive/2014/01/09/mount-azure-blob-storage-as-local-drive.aspx) (Подключение хранилища BLOB-объектов Azure в качестве локального диска).
+Подробные сведения см. в статье [Mount Azure Blob Storage as Local Drive](https://docs.microsoft.com/archive/blogs/bigdatasupport/mount-azure-blob-storage-as-local-drive) (Подключение хранилища BLOB-объектов Azure в качестве локального диска).
 
 ## <a name="upload-using-services"></a>Отправка с помощью служб
 
@@ -121,7 +121,7 @@ Sqoop — это средство, предназначенное для пер�
 
 Подробные сведения об установке пакетов SDK для Azure см. на странице [Загрузки](https://azure.microsoft.com/downloads/).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Теперь, когда вы понимаете, как получать данные в HDInsight, ознакомьтесь со следующими статьями, чтобы изучить анализ:
 

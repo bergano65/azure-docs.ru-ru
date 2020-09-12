@@ -8,12 +8,12 @@ ms.topic: article
 ms.date: 05/26/2020
 ms.author: victorh
 ms.custom: references_regions
-ms.openlocfilehash: a5825cf5461213e3440893597059c84dcdc9ad33
-ms.sourcegitcommit: 3bf69c5a5be48c2c7a979373895b4fae3f746757
+ms.openlocfilehash: b55ba6ab73758ed562aaabeef91cf08acf659758
+ms.sourcegitcommit: 3be3537ead3388a6810410dfbfe19fc210f89fec
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88236120"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89646543"
 ---
 # <a name="frequently-asked-questions-about-application-gateway"></a>Часто задаваемые вопросы о Шлюзе приложений
 
@@ -105,7 +105,7 @@ Set-AzPublicIpAddress -PublicIpAddress $publicIP
 
 ### <a name="does-application-gateway-v2-support-user-defined-routes-udr"></a>Поддерживает ли Шлюз приложений версии 2 определяемые пользователем маршруты (UDR)?
 
-Да, но только в определенных сценариях. Дополнительные сведения см. в статье [Обзор конфигурации шлюза приложений](configuration-overview.md#user-defined-routes-supported-on-the-application-gateway-subnet).
+Да, но только в определенных сценариях. Дополнительные сведения см. в статье [Конфигурация инфраструктуры шлюза приложений](configuration-infrastructure.md#supported-user-defined-routes).
 
 ### <a name="does-application-gateway-support-x-forwarded-for-headers"></a>Поддерживает ли Шлюз приложений заголовки X-Forwarded-For?
 
@@ -136,7 +136,7 @@ Set-AzPublicIpAddress -PublicIpAddress $publicIP
 ### <a name="does-application-gateway-affinity-cookie-support-samesite-attribute"></a>Поддерживает ли атрибут SameSite файл cookie сходства Шлюза приложений?
 Да, в [обновлении браузера Chromium](https://www.chromium.org/Home) [версии 80](https://chromiumdash.appspot.com/schedule) внедрено предписание считать, что для файлов cookie HTTP без атрибута SameSite значение SameSite=Lax. Это означает, что браузер не будет отправлять файл cookie сходства Шлюза приложений в контексте решений сторонних разработчиков. 
 
-В этом сценарии Шлюз приложений внедряет в дополнение к существующему файлу cookie *ApplicationGatewayAffinity* другой идентичный файл cookie с именем *ApplicationGatewayAffinityCORS*.  Эти файлы cookie похожи, но к файлу cookie *ApplicationGatewayAffinityCORS* добавлены еще два атрибута: *SameSite=None; Secure*. Эти атрибуты поддерживают закрепленные сеансы даже для междоменных запросов. Дополнительные сведения см. в разделе [Сходство на основе файлов cookie](configuration-overview.md#cookie-based-affinity).
+В этом сценарии Шлюз приложений внедряет в дополнение к существующему файлу cookie *ApplicationGatewayAffinity* другой идентичный файл cookie с именем *ApplicationGatewayAffinityCORS*.  Эти файлы cookie похожи, но к файлу cookie *ApplicationGatewayAffinityCORS* добавлены еще два атрибута: *SameSite=None; Secure*. Эти атрибуты поддерживают закрепленные сеансы даже для междоменных запросов. Дополнительные сведения см. в разделе [Сходство на основе файлов cookie](configuration-http-settings.md#cookie-based-affinity).
 
 ## <a name="performance"></a>Производительность
 
@@ -186,7 +186,7 @@ Set-AzPublicIpAddress -PublicIpAddress $publicIP
 
 ### <a name="does-the-application-gateway-subnet-support-user-defined-routes"></a>Поддерживает ли подсеть шлюза приложений определяемые пользователем маршруты?
 
-См. раздел [Определяемые пользователем маршруты, поддерживаемые в подсети Шлюза приложений](https://docs.microsoft.com/azure/application-gateway/configuration-overview#user-defined-routes-supported-on-the-application-gateway-subnet).
+См. раздел [Определяемые пользователем маршруты, поддерживаемые в подсети Шлюза приложений](https://docs.microsoft.com/azure/application-gateway/configuration-infrastructure#supported-user-defined-routes).
 
 ### <a name="what-are-the-limits-on-application-gateway-can-i-increase-these-limits"></a>Какие у шлюза приложений ограничения? Можно ли увеличить предельные значения?
 
@@ -404,7 +404,7 @@ Set-AzPublicIpAddress -PublicIpAddress $publicIP
 
 ### <a name="why-is-my-aks-cluster-with-kubenet-not-working-with-agic"></a>Почему мой кластер AKS с кубенет не работает с АГИК?
 
-АГИК пытается автоматически связать ресурс таблицы маршрутов с подсетью шлюза приложений, но может не выполнить это из-за отсутствия разрешений в АГИК. Если АГИК не удалось связать таблицу маршрутов с подсетью шлюза приложений, в журналах АГИК будет обнаружена ошибка. в этом случае необходимо вручную связать таблицу маршрутов, созданную кластером AKS, с подсетью шлюза приложений. Дополнительные сведения см. [здесь](configuration-overview.md#user-defined-routes-supported-on-the-application-gateway-subnet).
+АГИК пытается автоматически связать ресурс таблицы маршрутов с подсетью шлюза приложений, но может не выполнить это из-за отсутствия разрешений в АГИК. Если АГИК не удалось связать таблицу маршрутов с подсетью шлюза приложений, в журналах АГИК будет обнаружена ошибка. в этом случае необходимо вручную связать таблицу маршрутов, созданную кластером AKS, с подсетью шлюза приложений. Дополнительные сведения см. в разделе [Поддерживаемые определяемые пользователем маршруты](configuration-infrastructure.md#supported-user-defined-routes).
 
 ### <a name="can-i-connect-my-aks-cluster-and-application-gateway-in-separate-virtual-networks"></a>Можно ли подключить кластер AKS и шлюз приложений в отдельных виртуальных сетях? 
 

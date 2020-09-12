@@ -10,18 +10,18 @@ ms.subservice: translator-text
 ms.topic: reference
 ms.date: 08/06/2020
 ms.author: swmachan
-ms.openlocfilehash: a853a28cf7633b5e81bfec2865cc8dc91f2d2f40
-ms.sourcegitcommit: 4e5560887b8f10539d7564eedaff4316adb27e2c
+ms.openlocfilehash: 59e064dc2b9d33bda966eb50544c8383b0394dd3
+ms.sourcegitcommit: d0541eccc35549db6381fa762cd17bc8e72b3423
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87903992"
+ms.lasthandoff: 09/09/2020
+ms.locfileid: "89566608"
 ---
 # <a name="translator-30-translate"></a>Переводчик 3,0: преобразование
 
 Этот интерфейс позволяет переводить текст.
 
-## <a name="request-url"></a>Request URL (URL-адрес запроса)
+## <a name="request-url"></a>URL-адрес запроса
 
 Отправьте запрос `POST` на следующий адрес.
 
@@ -104,7 +104,7 @@ https://api.cognitive.microsofttranslator.com/translate?api-version=3.0
 
 <table width="100%">
   <th width="20%">Заголовки</th>
-  <th>Описание:</th>
+  <th>Описание</th>
   <tr>
     <td>Заголовки проверки подлинности</td>
     <td><em>Обязательный заголовок запроса</em>.<br/>См. <a href="https://docs.microsoft.com/azure/cognitive-services/translator/reference/v3-0-reference#authentication">описание доступных способов аутентификации</a>.</td>
@@ -182,7 +182,7 @@ https://api.cognitive.microsofttranslator.com/translate?api-version=3.0
 
 <table width="100%">
   <th width="20%">Заголовки</th>
-  <th>Описание:</th>
+  <th>Описание</th>
     <tr>
     <td>X-RequestId</td>
     <td>Сформированное службой значение для идентификации запроса. Оно используется для устранения неполадок.</td>
@@ -280,7 +280,7 @@ curl -X POST "https://api.cognitive.microsofttranslator.com/translate?api-versio
     }
 ]
 ```
-Ответ похож на ответ из предыдущего примера. Так как было запрошено автоматическое определение языка, ответ также включает сведения о языке оригинального текста. 
+Ответ похож на ответ из предыдущего примера. Так как было запрошено автоматическое определение языка, ответ также включает сведения о языке оригинального текста. Автоматическое определение языка работает с более длинным входным текстом.
 
 ### <a name="translate-with-transliteration"></a>Перевод методом транслитерации
 

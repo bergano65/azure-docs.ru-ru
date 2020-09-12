@@ -10,12 +10,12 @@ ms.subservice: translator-text
 ms.topic: conceptual
 ms.date: 08/06/2020
 ms.author: swmachan
-ms.openlocfilehash: 9ce2ea7da562372e5c1c25d4c0fe9ab410b02a1d
-ms.sourcegitcommit: 4e5560887b8f10539d7564eedaff4316adb27e2c
+ms.openlocfilehash: dff69f00833cc3f8004befd330d144f4da0e332d
+ms.sourcegitcommit: d0541eccc35549db6381fa762cd17bc8e72b3423
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87903413"
+ms.lasthandoff: 09/09/2020
+ms.locfileid: "89566591"
 ---
 # <a name="request-limits-for-translator"></a>Ограничения запросов для переводчика
 
@@ -31,7 +31,7 @@ ms.locfileid: "87903413"
 |:----|:----|:----|:----|
 | Перевод | 10 000    | 100   | 10 000 |
 | Транслитерация | 5 000 | 10    | 5 000 |
-| Определение | 10 000 | 100 |   50 000 |
+| Определение | 50 000 | 100 |   50 000 |
 | BreakSentence | 50 000    | 100 | 50 000 |
 | Поиск по словарю| 100 |  10  | 1000 |
 | Примеры словарей | 100 для текста и 100 для перевода (всего 200)| 10|   2 000 |
@@ -77,7 +77,7 @@ ms.locfileid: "87903413"
 > [!NOTE]
 > Это ограничение не применяется к переводам.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Цены](https://azure.microsoft.com/pricing/details/cognitive-services/translator-text-api/)
 * [Доступность по регионам](https://azure.microsoft.com/global-infrastructure/services/?products=cognitive-services)

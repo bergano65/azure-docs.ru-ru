@@ -16,12 +16,12 @@ ms.date: 06/17/2020
 ms.author: barclayn
 ms.reviewer: markwahl-msft
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 216cff03ac6ce64dee9aae1e9daa4a86385eeb0e
-ms.sourcegitcommit: 9c3cfbe2bee467d0e6966c2bfdeddbe039cad029
+ms.openlocfilehash: e230d3a4029d97a328280f581c126c7ec2d0bdb3
+ms.sourcegitcommit: 4a7a4af09f881f38fcb4875d89881e4b808b369b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/24/2020
-ms.locfileid: "88783337"
+ms.lasthandoff: 09/04/2020
+ms.locfileid: "89460802"
 ---
 # <a name="troubleshoot-azure-ad-entitlement-management"></a>Устранение неполадок управления назначениями Azure AD
 
@@ -47,7 +47,7 @@ ms.locfileid: "88783337"
 
 * При удалении члена команды они также удаляются из группы Microsoft 365. С удалением из чата команды может возникнуть задержка. Дополнительные сведения см. в разделе [членство в группе](/microsoftteams/office-365-groups#group-membership).
 
-* Убедитесь, что каталог не настроен для работы в нескольких регионах. Сейчас для управления правами не поддерживаются несколько регионов для SharePoint Online. Чтобы можно было управлять правами для сайтов SharePoint Online, эти сайты должны принадлежать к географическому расположению по умолчанию. Дополнительные сведения см. [в статье поддержка нескольких географических возможностей в OneDrive и SharePoint Online](/Office365/Enterprise/multi-geo-capabilities-in-onedrive-and-sharepoint-online-in-office-365).
+* Убедитесь, что каталог не настроен для работы в нескольких регионах. Сейчас для управления правами не поддерживаются несколько регионов для SharePoint Online. Чтобы можно было управлять правами для сайтов SharePoint Online, эти сайты должны принадлежать к географическому расположению по умолчанию. Дополнительные сведения см. [в статье поддержка нескольких географических возможностей в OneDrive и SharePoint Online](/Microsoft 365/Enterprise/multi-geo-capabilities-in-onedrive-and-sharepoint-online-in-office-365).
 
 ## <a name="access-packages"></a>Пакеты для доступа
 

@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 03/01/2019
 ms.author: antchu
 ms.custom: devx-track-javascript, devx-track-csharp
-ms.openlocfilehash: 0b5056f221fdd6036e5f6dff3d69a21c3a2dc27e
-ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
+ms.openlocfilehash: ce42c0ec75ebed52311fe6aa026f794d6c2f7584
+ms.sourcegitcommit: 7f62a228b1eeab399d5a300ddb5305f09b80ee14
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88928570"
+ms.lasthandoff: 09/08/2020
+ms.locfileid: "89513952"
 ---
 # <a name="azure-functions-development-and-configuration-with-azure-signalr-service"></a>Azure Functions development and configuration with Azure SignalR Service (Разработка и настройка функций Azure с помощью Службы Azure SignalR)
 
@@ -51,7 +51,9 @@ ms.locfileid: "88928570"
 
 Используйте привязку *триггера SignalR* для обработки сообщений, отправленных службой SignalR. Вы можете активировать, когда клиенты отправляют сообщения или клиенты могут подключиться или отключиться.
 
-Дополнительные сведения см. в разделе [Справочник по привязке *триггера SignalR* .](../azure-functions/functions-bindings-signalr-service-trigger.md)
+Дополнительные сведения см. в [справочнике по привязке *триггера SignalR* ](../azure-functions/functions-bindings-signalr-service-trigger.md).
+
+Кроме того, необходимо настроить конечную точку функции в качестве вышестоящей, чтобы служба активировала функцию, в которой есть сообщение от клиента. Дополнительные сведения о настройке вышестоящей конфигурации см. в этом [документе](concept-upstream.md).
 
 ### <a name="sending-messages-and-managing-group-membership"></a>Отправка сообщений и управление членством в группах
 
@@ -69,7 +71,7 @@ SignalR имеет концепцию "концентраторов". Каждо
 
 Модель на основе класса выделяется для C#. Модель на основе классов может иметь совместимый интерфейс программирования на стороне сервера SignalR. Он имеет следующие возможности.
 
-* Меньше конфигураций: имя класса используется как `HubName` , имя метода используется как, `Event` а параметр `Category` — автоматически в соответствии с именем метода.
+* Меньше работы по настройке: имя класса используется как `HubName` , имя метода используется как, `Event` а параметр `Category` — автоматически в соответствии с именем метода.
 * Автоматическая привязка параметра: ни один `ParameterNames` атрибут `[SignalRParameter]` , ни не требуется. Параметры имеют автоматическую привязку к аргументам метода функции Azure по порядку.
 * Удобный процесс вывода и согласования.
 
@@ -109,7 +111,7 @@ public class SignalRTestHub : ServerlessHub
 
 ### <a name="define-hub-method"></a>Определение метода концентратора
 
-Все методы концентратора **должны**  иметь `[SignalRTrigger]` атрибут и **должны** использовать конструктор без параметров. Затем **имя метода** обрабатывается как **событие**параметра.
+Все методы концентратора **должны** иметь аргумент, `InvocationContext` объявленный `[SignalRTrigger]` атрибутом, и использовать конструктор без параметров. Затем **имя метода** обрабатывается как **событие**параметра.
 
 По умолчанию, `category=messages` за исключением имени метода является одно из следующих имен:
 
@@ -202,7 +204,11 @@ const connection = new signalR.HubConnectionBuilder()
 
 ### <a name="sending-messages-from-a-client-to-the-service"></a>Отправка сообщений от клиента службе
 
-Хотя пакет SDK SignalR позволяет клиентским приложениям вызывать логику серверной части в концентраторе SignalR, эта функция пока не поддерживается при использовании службы SignalR с функциями Azure. Используйте HTTP-запросы для вызова функций Azure.
+Если для ресурса SignalR настроено восходящий [поток](concept-upstream.md) , вы можете отправить сообщения от клиента в функции Azure с помощью любого клиента SignalR. Ниже приведен пример в JavaScript:
+
+```javascript
+connection.send('method1', 'arg1', 'arg2');
+```
 
 ## <a name="azure-functions-configuration"></a>Настройка функций Azure
 
@@ -221,7 +227,7 @@ const connection = new signalR.HubConnectionBuilder()
 * `CORS` — Введите базовый URL-адрес, который является источником клиентского приложения.
 * `CORSCredentials` -Задайте значение `true` , чтобы разрешить запросы "вискредентиалс"
 
-Пример.
+Пример
 
 ```json
 {

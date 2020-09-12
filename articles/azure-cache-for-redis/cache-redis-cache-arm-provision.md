@@ -7,12 +7,12 @@ ms.service: cache
 ms.topic: conceptual
 ms.custom: subject-armqs
 ms.date: 08/18/2020
-ms.openlocfilehash: 3c2d13794f2fc3af4541032d1f94967681c0deee
-ms.sourcegitcommit: 656c0c38cf550327a9ee10cc936029378bc7b5a2
+ms.openlocfilehash: a2ab400158f77af7934ca3f9f7c811d5fe2bd340
+ms.sourcegitcommit: 4a7a4af09f881f38fcb4875d89881e4b808b369b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89078424"
+ms.lasthandoff: 09/04/2020
+ms.locfileid: "89461244"
 ---
 # <a name="create-an-azure-cache-for-redis-using-a-resource-manager-template"></a>Создание кэша Azure для Redis с помощью шаблона диспетчер ресурсов
 
@@ -27,7 +27,7 @@ ms.locfileid: "89078424"
 ## <a name="prerequisites"></a>Предварительные требования
 
 * **Подписка Azure**: Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/), прежде чем начинать работу.
-* **Учетная запись хранения**. чтобы создать ее, см. статью [Создание учетной записи хранения Azure](/storage/common/storage-account-create?toc=%2Fazure%2Fstorage%2Fblobs%2Ftoc.json&tabs=template). Учетная запись хранения используется для диагностических данных.
+* **Учетная запись хранения**. чтобы создать ее, см. статью [Создание учетной записи хранения Azure](/azure/storage/common/storage-account-create?tabs=azure-portal). Учетная запись хранения используется для диагностических данных.
 
 ## <a name="review-the-template"></a>Изучение шаблона
 
@@ -38,7 +38,7 @@ ms.locfileid: "89078424"
 В шаблоне определены следующие ресурсы:
 
 * [Microsoft.Cache/Redis;](/azure/templates/microsoft.cache/redis)
-* [Microsoft. Insights/DiagnosticSettings](/azure/templates/diagnosticsettings)
+* [Microsoft. Insights/DiagnosticSettings](/azure/templates/microsoft.insights/diagnosticsettings)
 
 Также доступны шаблоны диспетчер ресурсов для нового [уровня "Премиум](cache-overview.md#service-tiers) ".
 

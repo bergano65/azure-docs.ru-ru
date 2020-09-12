@@ -8,12 +8,12 @@ ms.author: nibaccam
 author: nibaccam
 ms.date: 08/05/2020
 ms.custom: how-to, tracking-python
-ms.openlocfilehash: 00718e15b069e9be25abdaf0e4460eae20c6afd0
-ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
+ms.openlocfilehash: 0725a97aecab5d03c2f5e3937c181a95a7b97c2a
+ms.sourcegitcommit: 4a7a4af09f881f38fcb4875d89881e4b808b369b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "88998081"
+ms.lasthandoff: 09/04/2020
+ms.locfileid: "89461516"
 ---
 # <a name="create-azure-machine-learning-datasets-from-azure-open-datasets"></a>Создание наборов данных Машинное обучение Azure из открытых наборов данных Azure
 [!INCLUDE [aml-applies-to-basic-enterprise-sku](../../includes/aml-applies-to-basic-enterprise-sku.md)]
@@ -38,7 +38,7 @@ ms.locfileid: "88998081"
 Открытые наборы данных находятся в облаке на Microsoft Azure и включены в [пакет SDK для машинное обучение Azure Python](#create-datasets-with-the-sdk) и в [машинное обучение Azure Studio](#create-datasets-with-the-studio).
 
 
-## <a name="prerequisites"></a>Обязательные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Для этой статьи требуется:
 
@@ -111,7 +111,7 @@ titanic_ds = titanic_ds.register(workspace=workspace,
 
     ![Выбор набора данных](./media/how-to-create-dataset-from-open-dataset/open-datasets-2.png)
 
-1. Выберите имя, под которым будет зарегистрирован набор данных, и при необходимости отфильтруйте данные с помощью доступных фильтров. В этом случае для набора данных " **общедоступные праздники** " вы фильтруете период времени в один год и код страны только в США. Подробные сведения о данных, такие как, описания полей и диапазоны дат, см. в [каталоге открытых наборов данных Azure](https://azure.microsoft.com/services/op[en-datasets/catalog/) . Нажмите кнопку **Создать**.
+1. Выберите имя, под которым будет зарегистрирован набор данных, и при необходимости отфильтруйте данные с помощью доступных фильтров. В этом случае для набора данных " **общедоступные праздники** " вы фильтруете период времени в один год и код страны только в США. Подробные сведения о данных, такие как, описания полей и диапазоны дат, см. в [каталоге открытых наборов данных Azure](https://azure.microsoft.com/services/open-datasets/catalog) . Нажмите кнопку **создания**.
 
     ![Установка параметров набора данных и создание набора данных](./media/how-to-create-dataset-from-open-dataset/open-datasets-3.png)
 

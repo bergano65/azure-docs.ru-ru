@@ -11,12 +11,12 @@ ms.reviewer: larryfr
 ms.date: 03/06/2020
 ms.topic: conceptual
 ms.custom: how-to, racking-python
-ms.openlocfilehash: 8d1ea9b0989a71268b98f0b2fd1d95d5671f996b
-ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
+ms.openlocfilehash: ff327372a0ec22ca6291615ca64f01a4aa5807be
+ms.sourcegitcommit: 3be3537ead3388a6810410dfbfe19fc210f89fec
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87325803"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89646227"
 ---
 # <a name="deploy-a-machine-learning-model-to-azure-functions-preview"></a>Развертывание модели машинного обучения в функциях Azure (Предварительная версия)
 [!INCLUDE [applies-to-skus](../../includes/aml-applies-to-basic-enterprise-sku.md)]
@@ -37,9 +37,9 @@ ms.locfileid: "87325803"
     > [!IMPORTANT]
     > В фрагментах кода в этой статье предполагается, что вы установили следующие переменные:
     >
-    > * `ws`— Рабочая область Машинное обучение Azure.
-    > * `model`— Зарегистрированная модель, которая будет развернута.
-    > * `inference_config`— Конфигурация вывода для модели.
+    > * `ws` — Рабочая область Машинное обучение Azure.
+    > * `model` — Зарегистрированная модель, которая будет развернута.
+    > * `inference_config` — Конфигурация вывода для модели.
     >
     > Дополнительные сведения об установке этих переменных см. в разделе [Развертывание моделей с помощью машинное обучение Azure](how-to-deploy-and-where.md).
 
@@ -63,7 +63,7 @@ ms.locfileid: "87325803"
 Эти сущности инкапсулированы в __конфигурацию вывода__. В конфигурации зависимостей указываются скрипт входа и другие зависимости.
 
 > [!IMPORTANT]
-> При создании конфигурации вывода для использования с функциями Azure необходимо использовать объект [среды](https://docs.microsoft.com/python/api/azureml-core/azureml.core.environment%28class%29?view=azure-ml-py) . Обратите внимание, что при определении пользовательской среды необходимо добавить azureml-Defaults с версией >= 1.0.45 в качестве зависимости PIP. Этот пакет содержит функции, необходимые для размещения модели в качестве веб-службы. В следующем примере демонстрируется создание объекта среды и его использование с конфигурацией вывода:
+> При создании конфигурации вывода для использования с функциями Azure необходимо использовать объект [среды](https://docs.microsoft.com/python/api/azureml-core/azureml.core.environment%28class%29?view=azure-ml-py&preserve-view=true) . Обратите внимание, что при определении пользовательской среды необходимо добавить azureml-Defaults с версией >= 1.0.45 в качестве зависимости PIP. Этот пакет содержит функции, необходимые для размещения модели в качестве веб-службы. В следующем примере демонстрируется создание объекта среды и его использование с конфигурацией вывода:
 >
 > ```python
 > from azureml.core.environment import Environment
@@ -96,7 +96,7 @@ pip install azureml-contrib-functions
 
 ## <a name="create-the-image"></a>Создание образа
 
-Чтобы создать образ DOCKER, развернутый в функциях Azure, используйте [azureml. от участников сообщества. functions. Package](https://docs.microsoft.com/python/api/azureml-contrib-functions/azureml.contrib.functions?view=azure-ml-py) или конкретную функцию пакета для триггера, который вы хотите использовать. В следующем фрагменте кода показано, как создать новый пакет с триггером большого двоичного объекта из модели и конфигурации вывода:
+Чтобы создать образ DOCKER, развернутый в функциях Azure, используйте [azureml. от участников сообщества. functions. Package](https://docs.microsoft.com/python/api/azureml-contrib-functions/azureml.contrib.functions?view=azure-ml-py&preserve-view=true) или конкретную функцию пакета для триггера, который вы хотите использовать. В следующем фрагменте кода показано, как создать новый пакет с триггером большого двоичного объекта из модели и конфигурации вывода:
 
 > [!NOTE]
 > В фрагменте кода предполагается, что `model` содержит зарегистрированную модель и `inference_config` содержит конфигурацию для среды вывода. Дополнительные сведения см. в разделе [Развертывание моделей с помощью машинное обучение Azure](how-to-deploy-and-where.md).
@@ -184,7 +184,7 @@ print(blob.location)
     ```azurecli-interactiv
     az storage account show-connection-string --resource-group myresourcegroup --name <triggerStorage> --query connectionString --output tsv
     ```
-    Запишите эту строку подключения, чтобы предоставить приложению функции. Он будет использоваться позже при запросе`<triggerConnectionString>`
+    Запишите эту строку подключения, чтобы предоставить приложению функции. Он будет использоваться позже при запросе `<triggerConnectionString>`
 
 1. Создайте контейнеры для входных и выходных данных в учетной записи хранения. Замените на `<triggerConnectionString>` строку подключения, возвращенную ранее:
 
@@ -301,4 +301,4 @@ print(blob.location)
 * Дополнительные сведения о службе хранилища BLOB-объектов см. в статье триггеры [хранилища BLOB-объектов Azure](https://docs.microsoft.com/azure/azure-functions/functions-bindings-storage-blob).
 * [Разверните модель в службе приложений Azure](how-to-deploy-app-service.md).
 * [Использование модели Машинного обучения Azure, развернутой в качестве веб-службы](how-to-consume-web-service.md)
-* [Справочник по интерфейсам API](https://docs.microsoft.com/python/api/azureml-contrib-functions/azureml.contrib.functions?view=azure-ml-py)
+* [Справочник по интерфейсам API](https://docs.microsoft.com/python/api/azureml-contrib-functions/azureml.contrib.functions?view=azure-ml-py&preserve-view=true)

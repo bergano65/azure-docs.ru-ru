@@ -11,12 +11,12 @@ ms.date: 02/04/2019
 ms.author: kevin
 ms.reviewer: jrasnick
 ms.custom: azure-synapse
-ms.openlocfilehash: 44755ab13b95db1ffec8183d00a4054e291c5a50
-ms.sourcegitcommit: e132633b9c3a53b3ead101ea2711570e60d67b83
+ms.openlocfilehash: bce5e14db133ad55a2035c0c8074486ed1b8a6ec
+ms.sourcegitcommit: 4a7a4af09f881f38fcb4875d89881e4b808b369b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "86039030"
+ms.lasthandoff: 09/04/2020
+ms.locfileid: "89460513"
 ---
 # <a name="troubleshooting-synapse-sql-in-azure-synapse-analytics"></a>Устранение неполадок с Synapse SQL в Azure Synapse Analytics
 
@@ -37,7 +37,7 @@ ms.locfileid: "86039030"
 | Проблема                                                        | Решение                                                   |
 | :----------------------------------------------------------- | :----------------------------------------------------------- |
 | В обозревателе объектов Visual Studio отсутствуют пользователи Azure AD           | Это известная проблема  Сведения о пользователях можно просмотреть в файле [sys.database_principals](/sql/relational-databases/system-catalog-views/sys-database-principals-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest).  Дополнительные сведения об использовании Azure Active Directory с пулом Synapse SQL приводятся в статье [Аутентификация в Azure Synapse](sql-data-warehouse-authentication.md). |
-| Создание сценариев вручную, использование мастера создания сценариев или подключение с помощью SSMS происходит медленно, не отвечает или с ошибками. | Убедитесь, что пользователи были созданы в базе данных master. Коме того, убедитесь, что в параметрах создания сценариев заданы выпуск ядра "Выпуск Microsoft Azure SQL Data Warehouse Edition" и тип модуля "База данных SQL Microsoft Azure". |
+| Создание сценариев вручную, использование мастера создания сценариев или подключение с помощью SSMS происходит медленно, не отвечает или с ошибками. | Убедитесь, что пользователи были созданы в базе данных master. В параметрах создания скриптов также убедитесь, что для выпуска Engine задано значение "Microsoft Azure синапсе Analytics Edition", а тип модуля — "База данных SQL Microsoft Azure". |
 | Создание скриптов в SSMS завершается ошибкой                               | Если для параметра "Сформировать скрипт для зависимых объектов" задано значение True, создание скрипта для пула Synapse SQL завершается ошибкой. Чтобы устранить проблему, выберите **Сервис -> Параметры -> Обозреватель объектов SQL Server -> Создать скрипт для зависимых параметров и задайте значение False** |
 
 ## <a name="performance"></a>Производительность

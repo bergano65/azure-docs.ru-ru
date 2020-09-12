@@ -11,21 +11,21 @@ ms.date: 06/11/2020
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 8c8fb54261f51d74f02b7b79c27f7a2043426686
-ms.sourcegitcommit: 5b8fb60a5ded05c5b7281094d18cf8ae15cb1d55
+ms.openlocfilehash: e2e24246c749978cd2bbb5b3d0821eea6d7dfb4b
+ms.sourcegitcommit: f8d2ae6f91be1ab0bc91ee45c379811905185d07
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87385149"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89660868"
 ---
 # <a name="azure-ad-connect-group-writeback"></a>Обратная запись группы Azure AD Connect
 
-Обратная запись групп позволяет клиентам использовать облачные группы для их гибридных задач. Если вы используете функцию Группы Office 365, эти группы могут быть доступны в вашей локальной службе Active Directory. Этот параметр доступен **только** при наличии Exchange в локальной Active Directory.
+Обратная запись групп позволяет клиентам использовать облачные группы для их гибридных задач. Если используется функция групп Microsoft 365, эти группы можно представить в локальном Active Directory. Этот параметр доступен **только** при наличии Exchange в локальной Active Directory.
 
 ## <a name="pre-requisites"></a>Предварительные требования
 Для включения обратной записи групп должны быть выполнены следующие предварительные требования.
 - Azure Active Directory Premium лицензий для вашего клиента.
-- Настроенное гибридное развертывание между локальной организацией Exchange и Office 365 и проверено, что оно работает правильно.
+- Настроенное гибридное развертывание между локальной организацией Exchange и Microsoft 365 и проверено, что оно работает правильно.
 - Установлена поддерживаемая версия Exchange в локальной среде
 - Настроен единый вход с помощью Azure Active Directory Connect 
 
@@ -34,10 +34,10 @@ ms.locfileid: "87385149"
 
 1. Откройте мастер Azure AD Connect, выберите **Настройка** , а затем нажмите кнопку **Далее**.
 2. Выберите **настроить параметры синхронизации** , а затем нажмите кнопку **Далее**.
-3. На странице **Подключение к Azure AD** введите свои учетные данные. Щелкните **Далее**.
+3. На странице **Подключение к Azure AD** введите свои учетные данные. Нажмите кнопку **Далее**.
 4. На странице **Дополнительные компоненты** убедитесь, что настроенные ранее параметры по-прежнему выбраны.
 5. Выберите элемент **обратная запись группы** , а затем нажмите кнопку **Далее**.
-6. На **странице Обратная запись**выберите Active Directory подразделения (OU) для хранения объектов, которые синхронизированы из Office 365 в локальную организацию, а затем нажмите кнопку **Далее**.
+6. На **странице Обратная запись**выберите Active Directory подразделения (OU) для хранения объектов, которые синхронизируются из Microsoft 365 с локальной организацией, а затем нажмите кнопку **Далее**.
 7. На странице **все готово** для настройки нажмите кнопку **настроить**.
 8. После завершения работы мастера нажмите кнопку **выход** на странице Настройка завершена.
 9. Откройте Windows PowerShell от имени администратора на Azure Active Directory Connect сервере и выполните следующие команды.
@@ -48,7 +48,7 @@ Import-Module "C:\Program Files\Microsoft Azure Active Directory Connect\AdSyncC
 Set-ADSyncUnifiedGroupWritebackPermissions -ADConnectorAccountDN $AzureADConnectSWritebackAccountDN
 ```
 
-Дополнительные сведения о настройке групп Office 365 см. в статье [Настройка групп Microsoft 365 с помощью локального гибридного сервера Exchange](https://docs.microsoft.com/exchange/hybrid-deployment/set-up-microsoft-365-groups#enable-group-writeback-in-azure-ad-connect).
+Дополнительные сведения о настройке групп Microsoft 365 см. в разделе [Настройка групп Microsoft 365 с использованием гибридной локальной среды Exchange](/exchange/hybrid-deployment/set-up-microsoft-365-groups#enable-group-writeback-in-azure-ad-connect).
 
 ## <a name="disabling-group-writeback"></a>Отключение обратной записи группы
 Чтобы отключить обратную запись группы, выполните следующие действия. 
@@ -61,7 +61,7 @@ Set-ADSyncUnifiedGroupWritebackPermissions -ADConnectorAccountDN $AzureADConnect
 
    ![Флажок снят](media/how-to-connect-group-writeback/group2.png)
   
-3. Щелкните **Далее**.
+3. Нажмите кнопку **Далее**.
 4. Щелкните **Настройка**.
 
  >[!NOTE]

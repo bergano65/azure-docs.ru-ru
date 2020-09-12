@@ -10,14 +10,14 @@ ms.assetid: 1c46ed69-4049-44ec-9b46-e90e964a4a8e
 ms.service: data-factory
 ms.workload: data-services
 ms.topic: conceptual
-ms.date: 08/14/2020
+ms.date: 09/09/2020
 ms.author: jingwang
-ms.openlocfilehash: 26d52eed02c9d25ed2f18afa3a5262ba9224b0ba
-ms.sourcegitcommit: 152c522bb5ad64e5c020b466b239cdac040b9377
+ms.openlocfilehash: c761cf1265ad61517a9d0123b932d31b27d157dd
+ms.sourcegitcommit: f845ca2f4b626ef9db73b88ca71279ac80538559
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88224872"
+ms.lasthandoff: 09/09/2020
+ms.locfileid: "89613504"
 ---
 # <a name="get-metadata-activity-in-azure-data-factory"></a>Действие "получить метаданные" в фабрике данных Azure
 
@@ -50,7 +50,7 @@ ms.locfileid: "88224872"
 | [Google Cloud Storage](connector-google-cloud-storage.md) | √/√ | √/√ | √ | x/x | √/√* | √ | x | √ | √ | √/√* |
 | [Хранилище BLOB-объектов Azure](connector-azure-blob-storage.md) | √/√ | √/√ | √ | x/x | √/√* | √ | √ | √ | √ | √/√ |
 | [Azure Data Lake Storage 1-го поколения](connector-azure-data-lake-store.md) | √/√ | √/√ | √ | x/x | √/√ | √ | x | √ | √ | √/√ |
-| [Azure Data Lake Storage 2-го поколения](connector-azure-data-lake-storage.md) | √/√ | √/√ | √ | x/x | √/√ | √ | x | √ | √ | √/√ |
+| [Azure Data Lake Storage 2-го поколения](connector-azure-data-lake-storage.md) | √/√ | √/√ | √ | x/x | √/√ | √ | √ | √ | √ | √/√ |
 | [Файлы Azure](connector-azure-file-storage.md) | √/√ | √/√ | √ | √/√ | √/√ | √ | x | √ | √ | √/√ |
 | [Файловая система](connector-file-system.md) | √/√ | √/√ | √ | √/√ | √/√ | √ | x | √ | √ | √/√ |
 | [SFTP](connector-sftp.md) | √/√ | √/√ | √ | x/x | √/√ | √ | x | √ | √ | √/√ |
@@ -69,7 +69,7 @@ ms.locfileid: "88224872"
 |:--- |:--- |:--- |:--- |
 | [База данных SQL Azure](connector-azure-sql-database.md) | √ | √ | √ |
 | [Управляемый экземпляр SQL Azure](../azure-sql/managed-instance/sql-managed-instance-paas-overview.md) | √ | √ | √ |
-| [Хранилище данных SQL Azure](connector-azure-sql-data-warehouse.md) | √ | √ | √ |
+| [Azure Synapse Analytics](connector-azure-sql-data-warehouse.md) | √ | √ | √ |
 | [SQL Server](connector-sql-server.md) | √ | √ | √ |
 
 ### <a name="metadata-options"></a>Параметры метаданных
@@ -173,7 +173,7 @@ fieldList | Типы необходимых сведений о метаданн
 форматсеттингс | Применяется при использовании набора данных типа Format. | Нет
 сторесеттингс | Применяется при использовании набора данных типа Format. | Нет
 
-## <a name="sample-output"></a>Пример полученных результатов
+## <a name="sample-output"></a>Пример выходных данных
 
 Результаты получения метаданных отображаются в выходных данных действия. Ниже приведены два примера, в которых показаны расширенные параметры метаданных. Чтобы использовать результаты в последующем действии, используйте следующий шаблон: `@{activity('MyGetMetadataActivity').output.itemName}` .
 

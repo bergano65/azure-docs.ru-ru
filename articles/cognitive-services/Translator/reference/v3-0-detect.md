@@ -10,12 +10,12 @@ ms.subservice: translator-text
 ms.topic: reference
 ms.date: 02/01/2019
 ms.author: swmachan
-ms.openlocfilehash: adfd91a3f82a83f6bb5e076247f1539029d5a04e
-ms.sourcegitcommit: bb0afd0df5563cc53f76a642fd8fc709e366568b
+ms.openlocfilehash: eb20fe91a54007f24c56a95e67942728674471ea
+ms.sourcegitcommit: d0541eccc35549db6381fa762cd17bc8e72b3423
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83592293"
+ms.lasthandoff: 09/09/2020
+ms.locfileid: "89566642"
 ---
 # <a name="translator-30-detect"></a>Переводчик 3,0: обнаружение
 
@@ -67,7 +67,7 @@ https://api.cognitive.microsofttranslator.com/detect?api-version=3.0
 
 ## <a name="request-body"></a>Тело запроса
 
-Текст запроса является массивом в формате JSON. Каждый элемент этого массива представляет собой объект JSON со строковым свойством `Text`. Определение языка применяется к значению свойства `Text`. Ниже представлен пример текста запроса.
+Текст запроса является массивом в формате JSON. Каждый элемент этого массива представляет собой объект JSON со строковым свойством `Text`. Определение языка применяется к значению свойства `Text`. Автоматическое определение языка работает с более длинным входным текстом. Ниже представлен пример текста запроса.
 
 ```json
 [
@@ -78,7 +78,6 @@ https://api.cognitive.microsofttranslator.com/detect?api-version=3.0
 Действительны следующие ограничения.
 
 * Массив может содержать не более 100 элементов.
-* Длина текстового значения в одном элементе массива не должна превышать 10 000 символов, включая пробелы.
 * Общий объем текста запроса не должен превышать 50 000 символов, включая пробелы.
 
 ## <a name="response-body"></a>Текст ответа

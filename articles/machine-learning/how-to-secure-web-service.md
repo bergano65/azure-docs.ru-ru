@@ -11,12 +11,12 @@ author: aashishb
 ms.date: 03/05/2020
 ms.topic: conceptual
 ms.custom: how-to
-ms.openlocfilehash: 0afb7906e102e4f0fb49245949b08618da1693ec
-ms.sourcegitcommit: bcda98171d6e81795e723e525f81e6235f044e52
+ms.openlocfilehash: f2d874925cdad05ec7979575c9b87608da542927
+ms.sourcegitcommit: f8d2ae6f91be1ab0bc91ee45c379811905185d07
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/01/2020
-ms.locfileid: "89265683"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89661441"
 ---
 # <a name="use-tls-to-secure-a-web-service-through-azure-machine-learning"></a>Использование TLS для защиты веб-службы с помощью Машинного обучения Azure.
 [!INCLUDE [applies-to-skus](../../includes/aml-applies-to-basic-enterprise-sku.md)]
@@ -78,12 +78,12 @@ ms.locfileid: "89265683"
 ### <a name="deploy-on-aks-and-field-programmable-gate-array-fpga"></a>Развертывание в AKS и программируемом массиве Gates (FPGA)
 
   > [!NOTE]
-  > Сведения в этом разделе также применяются при развертывании безопасной веб-службы для конструктора. Если вы не знакомы с использованием пакета SDK для Python, см. статью [что такое пакет SDK для машинное обучение Azure для Python?](https://docs.microsoft.com/python/api/overview/azure/ml/intro?view=azure-ml-py).
+  > Сведения в этом разделе также применяются при развертывании безопасной веб-службы для конструктора. Если вы не знакомы с использованием пакета SDK для Python, см. статью [что такое пакет SDK для машинное обучение Azure для Python?](https://docs.microsoft.com/python/api/overview/azure/ml/intro?view=azure-ml-py&preserve-view=true).
 
 При развертывании в AKS можно создать новый кластер AKS или подключить существующий. Дополнительные сведения о создании или присоединении кластера см. в статье [развертывание модели в кластере службы Azure Kubernetes](how-to-deploy-azure-kubernetes-service.md).
   
--  При создании нового кластера используется **[акскомпуте. provisioning_configuration ()](/python/api/azureml-core/azureml.core.compute.akscompute?view=azure-ml-py#provisioning-configuration-agent-count-none--vm-size-none--ssl-cname-none--ssl-cert-pem-file-none--ssl-key-pem-file-none--location-none--vnet-resourcegroup-name-none--vnet-name-none--subnet-name-none--service-cidr-none--dns-service-ip-none--docker-bridge-cidr-none--cluster-purpose-none--load-balancer-type-none--load-balancer-subnet-none-)**.
-- При присоединении существующего кластера используется **[акскомпуте. attach_configuration ()](/python/api/azureml-core/azureml.core.compute.akscompute?view=azure-ml-py#attach-configuration-resource-group-none--cluster-name-none--resource-id-none--cluster-purpose-none-)**. Оба возвращают объект конфигурации, имеющий метод **enable_ssl** .
+-  При создании нового кластера используется **[акскомпуте. provisioning_configuration ()](/python/api/azureml-core/azureml.core.compute.akscompute?view=azure-ml-py#&preserve-view=trueprovisioning-configuration-agent-count-none--vm-size-none--ssl-cname-none--ssl-cert-pem-file-none--ssl-key-pem-file-none--location-none--vnet-resourcegroup-name-none--vnet-name-none--subnet-name-none--service-cidr-none--dns-service-ip-none--docker-bridge-cidr-none--cluster-purpose-none--load-balancer-type-none--load-balancer-subnet-none-)**.
+- При присоединении существующего кластера используется **[акскомпуте. attach_configuration ()](/python/api/azureml-core/azureml.core.compute.akscompute?view=azure-ml-py#&preserve-view=trueattach-configuration-resource-group-none--cluster-name-none--resource-id-none--cluster-purpose-none-)**. Оба возвращают объект конфигурации, имеющий метод **enable_ssl** .
 
 Метод **enable_ssl** может использовать сертификат, предоставляемый корпорацией Майкрософт или сертификатом, который вы приобрели.
 
@@ -130,7 +130,7 @@ ms.locfileid: "89265683"
                                         ssl_key_pem_file="key.pem", ssl_cname="www.contoso.com")
     ```
 
-Дополнительные сведения о *enable_ssl*см. в разделе [акспровисионингконфигуратион. enable_ssl ()](https://docs.microsoft.com/python/api/azureml-core/azureml.core.compute.aks.aksprovisioningconfiguration?view=azure-ml-py#enable-ssl-ssl-cname-none--ssl-cert-pem-file-none--ssl-key-pem-file-none--leaf-domain-label-none--overwrite-existing-domain-false-) и [аксаттачконфигуратион. enable_ssl ()](https://docs.microsoft.com/python/api/azureml-core/azureml.core.compute.aks.aksattachconfiguration?view=azure-ml-py#enable-ssl-ssl-cname-none--ssl-cert-pem-file-none--ssl-key-pem-file-none--leaf-domain-label-none--overwrite-existing-domain-false-).
+Дополнительные сведения о *enable_ssl*см. в разделе [акспровисионингконфигуратион. enable_ssl ()](https://docs.microsoft.com/python/api/azureml-core/azureml.core.compute.aks.aksprovisioningconfiguration?view=azure-ml-py#&preserve-view=trueenable-ssl-ssl-cname-none--ssl-cert-pem-file-none--ssl-key-pem-file-none--leaf-domain-label-none--overwrite-existing-domain-false-) и [аксаттачконфигуратион. enable_ssl ()](https://docs.microsoft.com/python/api/azureml-core/azureml.core.compute.aks.aksattachconfiguration?view=azure-ml-py#&preserve-view=trueenable-ssl-ssl-cname-none--ssl-cert-pem-file-none--ssl-key-pem-file-none--leaf-domain-label-none--overwrite-existing-domain-false-).
 
 ### <a name="deploy-on-azure-container-instances"></a>Развертывание в службе "экземпляры контейнеров Azure"
 
@@ -200,8 +200,8 @@ az ml computetarget update aks -g "myresourcegroup" -w "myresourceworkspace" -n 
 
 Дополнительные сведения см. в следующих справочных документах:
 
-* [сслконфигуратион](https://docs.microsoft.com/python/api/azureml-core/azureml.core.compute.aks.sslconfiguration?view=azure-ml-py)
-* [аксупдатеконфигуратион](https://docs.microsoft.com/python/api/azureml-core/azureml.core.compute.aks.aksupdateconfiguration?view=azure-ml-py)
+* [сслконфигуратион](https://docs.microsoft.com/python/api/azureml-core/azureml.core.compute.aks.sslconfiguration?view=azure-ml-py&preserve-view=true)
+* [аксупдатеконфигуратион](https://docs.microsoft.com/python/api/azureml-core/azureml.core.compute.aks.aksupdateconfiguration?view=azure-ml-py&preserve-view=true)
 
 ### <a name="update-custom-certificate"></a>Обновить пользовательский сертификат
 
@@ -240,8 +240,8 @@ az ml computetarget update aks -g "myresourcegroup" -w "myresourceworkspace" -n 
 
 Дополнительные сведения см. в следующих справочных документах:
 
-* [сслконфигуратион](https://docs.microsoft.com/python/api/azureml-core/azureml.core.compute.aks.sslconfiguration?view=azure-ml-py)
-* [аксупдатеконфигуратион](https://docs.microsoft.com/python/api/azureml-core/azureml.core.compute.aks.aksupdateconfiguration?view=azure-ml-py)
+* [сслконфигуратион](https://docs.microsoft.com/python/api/azureml-core/azureml.core.compute.aks.sslconfiguration?view=azure-ml-py&preserve-view=true)
+* [аксупдатеконфигуратион](https://docs.microsoft.com/python/api/azureml-core/azureml.core.compute.aks.aksupdateconfiguration?view=azure-ml-py&preserve-view=true)
 
 ## <a name="disable-tls"></a>Отключить TLS
 
@@ -264,4 +264,4 @@ aks_target.update(update_config)
 ## <a name="next-steps"></a>Дальнейшие действия
 Вы узнаете, как выполнять следующие задачи:
 + [Использование модели машинного обучения, развернутой в качестве веб-службы](how-to-consume-web-service.md)
-+ [Безопасный запуск экспериментов и вывод в виртуальной сети Azure](how-to-enable-virtual-network.md)
++ [Общие сведения о изоляции и конфиденциальности виртуальной сети](how-to-network-security-overview.md)

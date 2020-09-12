@@ -11,12 +11,12 @@ ms.subservice: core
 ms.date: 08/28/2020
 ms.topic: conceptual
 ms.custom: how-to, devx-track-python, contperfq1
-ms.openlocfilehash: ca76ec5bef1d908ca3cea6ce0f58b1205c1676ca
-ms.sourcegitcommit: d7352c07708180a9293e8a0e7020b9dd3dd153ce
+ms.openlocfilehash: da48b593b8f645566b2f9775fabc5d8e62e625b6
+ms.sourcegitcommit: f8d2ae6f91be1ab0bc91ee45c379811905185d07
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/30/2020
-ms.locfileid: "89144096"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89661573"
 ---
 # <a name="submit-a-training-run-to-a-compute-target"></a>Отправка обучающего выполнения в целевой объект вычислений
 
@@ -31,19 +31,19 @@ ms.locfileid: "89144096"
 ## <a name="prerequisites"></a>Предварительные требования
 
 * Если у вас еще нет подписки Azure, создайте бесплатную учетную запись, прежде чем начинать работу. Опробуйте [бесплатную или платную версию машинное обучение Azure](https://aka.ms/AMLFree) уже сегодня
-* [Пакет SDK для машинное обучение Azure для Python](https://docs.microsoft.com/python/api/overview/azure/ml/install?view=azure-ml-py)
+* [Пакет SDK для машинное обучение Azure для Python](https://docs.microsoft.com/python/api/overview/azure/ml/install?view=azure-ml-py&preserve-view=true)
 * [Рабочая область машинное обучение Azure](how-to-manage-workspace.md)`ws`
 * Целевой объект вычислений, `my_compute_target` .  Создать целевой объект вычислений с помощью:
   * [Пакет SDK для Python](how-to-create-attach-compute-sdk.md) 
-  * [Машинное обучение Azure Studio](how-to-create-attach-compute-studio.md)
+  * [Студия машинного обучения Azure.](how-to-create-attach-compute-studio.md)
 
 ## <a name="whats-a-script-run-configuration"></a><a name="whats-a-run-configuration"></a>Что такое конфигурация запуска сценария?
 
-Вы отправляете обучающий эксперимент с помощью объекта [скриптрунконфиг](https://docs.microsoft.com/python/api/azureml-core/azureml.core.scriptrunconfig?view=azure-ml-py) .  Этот объект включает в себя следующее.
+Вы отправляете обучающий эксперимент с помощью объекта [скриптрунконфиг](https://docs.microsoft.com/python/api/azureml-core/azureml.core.scriptrunconfig?view=azure-ml-py&preserve-view=true) .  Этот объект включает в себя следующее.
 
 * **source_directory**: исходный каталог, который содержит сценарий обучения.
 * **script**: определение сценария обучения.
-* **run_config**: [Конфигурация запуска](https://docs.microsoft.com/python/api/azureml-core/azureml.core.runconfiguration?view=azure-ml-py), которая, в свою очередь, определяет, где будет выполняться обучение. В `run_config` задается целевой объект вычислений и среда, используемая при запуске сценария обучения.  
+* **run_config**: [Конфигурация запуска](https://docs.microsoft.com/python/api/azureml-core/azureml.core.runconfiguration?view=azure-ml-py&preserve-view=true), которая, в свою очередь, определяет, где будет выполняться обучение. В `run_config` задается целевой объект вычислений и среда, используемая при запуске сценария обучения.  
 
 ## <a name="whats-an-environment"></a>Что такое среда?
 
@@ -167,7 +167,7 @@ run = experiment.submit(config=script_run_config)
 ## <a name="next-steps"></a>Дальнейшие действия
 
 * [Руководство. по обучению модели классификации изображений с помощью Службы машинного обучения Azure](tutorial-train-models-with-aml.md). В нем используется управляемый целевой объект вычислений для обучения модели.
-* Узнайте, как [эффективно настроить гиперпараметры](how-to-tune-hyperparameters.md) для создания улучшенных моделей.
+* Узнайте, как [эффективно настроить параметры](how-to-tune-hyperparameters.md) для создания лучших моделей. View = Azure-ML-корректировка&сохранить-View = true)
 * После обучения модели узнайте о [способах и расположениях развертывания моделей](how-to-deploy-and-where.md).
-* Обзор справочника по пакету SDK [класса RunConfiguration](https://docs.microsoft.com/python/api/azureml-core/azureml.core.runconfig.runconfiguration?view=azure-ml-py).
+* Обзор справочника по пакету SDK [класса RunConfiguration](https://docs.microsoft.com/python/api/azureml-core/azureml.core.runconfig.runconfiguration?view=azure-ml-py&preserve-view=true).
 * [Использование Машинного обучения Azure с виртуальными сетями Microsoft Azure](how-to-enable-virtual-network.md)

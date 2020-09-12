@@ -8,12 +8,12 @@ ms.service: security-center
 ms.topic: conceptual
 ms.date: 09/10/2019
 ms.author: memildin
-ms.openlocfilehash: e9e67dc0da7f81f73d8237769e7aea90f9bc1585
-ms.sourcegitcommit: 2ff0d073607bc746ffc638a84bb026d1705e543e
+ms.openlocfilehash: 45d3ec8dc5d819464046e40bab22491a4bccde63
+ms.sourcegitcommit: 4a7a4af09f881f38fcb4875d89881e4b808b369b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87833425"
+ms.lasthandoff: 09/04/2020
+ms.locfileid: "89461329"
 ---
 # <a name="planning-and-operations-guide"></a>Руководство по планированию и эксплуатации
 Это руководством для ИТ-специалистов, ИТ-архитекторов, аналитиков информационной безопасности и облачных администраторов, планирующих использовать центр безопасности Azure.
@@ -170,7 +170,7 @@ ms.locfileid: "87833425"
 
 Общие сведения о центре безопасности дают представление о безопасности во всех относящихся и не относящихся к Azure ресурсах, которые вы подключили. В приведенном ниже примере показана среда с множеством проблем, которые необходимо решить:
 
-!["Веб-транзакции"](./media/security-center-planning-and-operations-guide/security-center-planning-and-operations-guide-fig11.png)
+![панель мониторинга](./media/security-center-planning-and-operations-guide/security-center-planning-and-operations-guide-fig11.png)
 
 > [!NOTE]
 > Центр безопасности не повлияет на выполнение обычных операций. Он будет выполнять пассивный мониторинг развертываний и предоставлять рекомендации в соответствии с включенными политиками безопасности.
@@ -237,4 +237,4 @@ ms.locfileid: "87833425"
 * [Мониторинг работоспособности системы безопасности в центре безопасности Azure](security-center-monitoring.md) — Узнайте, как отслеживать работоспособность ресурсов Azure.
 * [Мониторинг решений партнеров с помощью центра безопасности Azure](security-center-partner-solutions.md) — узнайте, как отслеживать состояние работоспособности решений партнеров.
 * [Центр безопасности Azure: часто ЗАдаваемые](faq-general.md) вопросы — часто задаваемые вопросы об использовании службы.
-* [Блог по безопасности Azure](https://blogs.msdn.com/b/azuresecurity/) — Поиск записей в блоге о безопасности и соответствии требованиям в Azure.
+* [Блог по безопасности Azure](https://docs.microsoft.com/archive/blogs/azuresecurity/) — Поиск записей в блоге о безопасности и соответствии требованиям в Azure.

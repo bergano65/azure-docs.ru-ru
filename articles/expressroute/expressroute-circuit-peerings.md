@@ -2,17 +2,17 @@
 title: 'Azure ExpressRoute: цепи и пиринг'
 description: Общие сведения о каналах ExpressRoute и доменах маршрутизации (пиринге).
 services: expressroute
-author: mialdrid
+author: duongau
 ms.service: expressroute
 ms.topic: conceptual
 ms.date: 12/13/2019
-ms.author: mialdrid
-ms.openlocfilehash: e2c730906e8dcb31c3365259088240c74e416855
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.author: duau
+ms.openlocfilehash: 072eeb0bee0d0441549d2edad448f3b1c85a28a4
+ms.sourcegitcommit: d0541eccc35549db6381fa762cd17bc8e72b3423
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86537026"
+ms.lasthandoff: 09/09/2020
+ms.locfileid: "89566506"
 ---
 # <a name="expressroute-circuits-and-peering"></a>Каналы и пиринг ExpressRoute
 
@@ -54,7 +54,7 @@ ms.locfileid: "86537026"
 
 [!INCLUDE [expressroute-office365-include](../../includes/expressroute-office365-include.md)]
 
-Подключение к Microsoft веб-службы (Office 365 и службы PaaS Azure) осуществляется через пиринг Майкрософт. Мы разрешаем двунаправленное подключение между вашей глобальной сетью и облачными службами Майкрософт через домен маршрутизации пиринга Майкрософт. Вы должны подключаться к облачным службам Майкрософт только через общедоступные IP-адреса, принадлежащие вам или вашему поставщику услуг подключения, и должны соблюдать все установленные правила. Дополнительные сведения см. в статье [Предварительные требования и контрольный список для ExpressRoute](expressroute-prerequisites.md).
+Подключение к Microsoft веб-службы (Microsoft 365 и службы PaaS Azure) осуществляется через пиринг Майкрософт. Мы разрешаем двунаправленное подключение между вашей глобальной сетью и облачными службами Майкрософт через домен маршрутизации пиринга Майкрософт. Вы должны подключаться к облачным службам Майкрософт только через общедоступные IP-адреса, принадлежащие вам или вашему поставщику услуг подключения, и должны соблюдать все установленные правила. Дополнительные сведения см. в статье [Предварительные требования и контрольный список для ExpressRoute](expressroute-prerequisites.md).
 
 Дополнительные сведения о поддерживаемых службах, ценах и конфигурации см. на [странице вопросов и ответов](expressroute-faqs.md). Сведения о списке поставщиков услуг размещения, предлагающих поддержку пиринга Майкрософт, см. на странице [расположений ExpressRoute](expressroute-locations.md).
 

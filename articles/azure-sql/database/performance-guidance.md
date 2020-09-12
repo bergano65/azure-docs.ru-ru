@@ -8,16 +8,16 @@ ms.subservice: performance
 ms.custom: sqldbrb=2
 ms.devlang: ''
 ms.topic: conceptual
-author: CarlRabeler
-ms.author: carlrab
-ms.reviewer: carlrab; jrasnick
+author: stevestein
+ms.author: sstein
+ms.reviewer: jrasnick
 ms.date: 03/10/2020
-ms.openlocfilehash: 793010ba9eaea32256796f5fcd42d1c469eb7917
-ms.sourcegitcommit: 93462ccb4dd178ec81115f50455fbad2fa1d79ce
+ms.openlocfilehash: 54a6293a29a407a7014aafb66587dcb01fc13337
+ms.sourcegitcommit: 3be3537ead3388a6810410dfbfe19fc210f89fec
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/06/2020
-ms.locfileid: "85981994"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89645791"
 ---
 # <a name="tune-applications-and-databases-for-performance-in-azure-sql-database-and-azure-sql-managed-instance"></a>Настройка приложений и баз данных для повышения производительности в базе данных SQL Azure и Управляемый экземпляр Azure SQL
 [!INCLUDE[appliesto-sqldb-sqlmi](../includes/appliesto-sqldb-sqlmi.md)]
@@ -265,7 +265,7 @@ ORDER BY start_time DESC
 
 Некоторые приложения базы данных содержат рабочие нагрузки, выполняющие много операций чтения. Уровни кэширования могут снизить нагрузку на базу данных и потенциально снизить размер вычислений, необходимый для поддержки базы данных, с помощью базы данных SQL Azure и Управляемый экземпляр Azure SQL. При использовании [кэша Azure для Redis](https://azure.microsoft.com/services/cache/)при наличии рабочей нагрузки с интенсивным чтением данных можно считывать данные один раз (или, возможно, один раз на компьютер уровня приложения в зависимости от того, как он настроен), а затем сохранять эти данные за пределами базы данных. Это помогает снизить нагрузку на базу данных (загрузка ЦП и число операций ввода-вывода), однако это может повлиять на согласованность транзакций, так как данные в кэше могут быть не синхронизированы с данными в базе данных. Для многих приложений определенный уровень несогласованности приемлем, однако это подходит не для всех рабочих нагрузок. Мы советуем внимательно изучить требования к приложению, прежде чем использовать стратегию кэширования на уровне приложения.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Дополнительные сведения об уровнях служб на основе единиц DTU см. в статье о [модели приобретения на основе единиц DTU](service-tiers-dtu.md).
 - Дополнительные сведения об уровнях служб на основе виртуальных ядер см. в разделе [Модель приобретения на основе виртуальных ядер](service-tiers-vcore.md).

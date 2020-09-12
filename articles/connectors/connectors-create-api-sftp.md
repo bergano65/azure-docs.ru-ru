@@ -1,21 +1,22 @@
 ---
-title: Подключение к учетной записи SFTP
-description: Автоматизация задач и процессов, которые отслеживают, создают, отправляют и получают файлы для SFTP-сервера по SSH, а также управляют ими с помощью Azure Logic Apps
+title: Подключение к учетной записи SFTP (не рекомендуется)
+description: Автоматизируйте задачи и процессы, которые отслеживают, создают, отправляют и получают файлы для SFTP Server с помощью Azure Logic Apps
 services: logic-apps
 ms.suite: integration
 author: divyaswarnkar
-ms.reviewer: divswa, klam, logicappspm
+ms.reviewer: estfan, logicappspm
 ms.topic: article
 ms.date: 11/01/2019
 tags: connectors
-ms.openlocfilehash: d0da98070fa8da5403677e1a67bda75456c74d80
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ROBOTS: NOINDEX
+ms.openlocfilehash: 817c17b0e05180f5c7a616320a25c2bc3c21c5f8
+ms.sourcegitcommit: 3be3537ead3388a6810410dfbfe19fc210f89fec
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "74789279"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89651413"
 ---
-# <a name="monitor-create-and-manage-sftp-files-by-using-azure-logic-apps"></a>Мониторинг и создание SFTP-файлов, а также управление ими с помощью Azure Logic Apps
+# <a name="monitor-create-and-manage-sftp-files-in-azure-logic-apps"></a>Мониторинг, создание файлов SFTP и управление ими в Azure Logic Apps
 
 > [!IMPORTANT]
 > Использование [соединителя SFTP-SSH](../connectors/connectors-sftp-ssh.md) в качестве соединителя SFTP является устаревшим. Вы больше не можете выбирать триггеры и действия SFTP в конструкторе приложений логики.
@@ -113,10 +114,6 @@ ms.locfileid: "74789279"
 ### <a name="sftp-action-get-content"></a>Действие SFTP: получить содержимое
 
 Это действие получает содержимое из файла на сервере SFTP. Например, вы можете добавить триггер из предыдущего примера и условие, которому должно соответствовать содержимое файла. Если оно соответствует условию, действие, которое получает содержимое, может выполняться.
-
-## <a name="connector-reference"></a>Справочник по соединителям
-
-Дополнительные технические сведения о триггерах, действиях и ограничениях, которые приведены в описании OpenAPI соединителя (прежнее название — Swagger), можно найти на [странице справки](/connectors/sftpconnector/) соединителя.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

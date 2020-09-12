@@ -7,12 +7,12 @@ ms.service: application-gateway
 ms.topic: how-to
 ms.date: 11/14/2019
 ms.author: victorh
-ms.openlocfilehash: 0c1baa96c9093e02c54fb70949d1de0ddbda1bcd
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 7c65f143552aa14f9e309b68f484f9c0695e8dbd
+ms.sourcegitcommit: 1b320bc7863707a07e98644fbaed9faa0108da97
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84804321"
+ms.lasthandoff: 09/09/2020
+ms.locfileid: "89596068"
 ---
 # <a name="create-an-application-gateway-with-http-to-https-redirection-using-azure-powershell"></a>Создание шлюза приложений с перенаправлением трафика HTTP в HTTPS с помощью Azure PowerShell
 
@@ -20,12 +20,11 @@ ms.locfileid: "84804321"
 
 Вы узнаете, как выполнять следующие задачи:
 
-> [!div class="checklist"]
-> * Создание самозаверяющего сертификата
-> * настройка сети;
-> * создание шлюза приложений с сертификатом;
-> * добавление прослушивателя и правила перенаправления;
-> * создание масштабируемого набора виртуальных машин с серверным пулом, используемым по умолчанию.
+* Создание самозаверяющего сертификата
+* настройка сети;
+* создание шлюза приложений с сертификатом;
+* добавление прослушивателя и правила перенаправления;
+* создание масштабируемого набора виртуальных машин с серверным пулом, используемым по умолчанию.
 
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
@@ -320,7 +319,7 @@ Update-AzVmss `
 
 ## <a name="test-the-application-gateway"></a>Тестирование шлюза приложений
 
-Вы можете использовать командлет [Get-AzPublicIPAddress](/powershell/module/az.network/get-azpublicipaddress), чтобы получить общедоступный IP-адрес шлюза приложений. Скопируйте общедоступный IP-адрес и вставьте его в адресную строку браузера. Например: http://52.170.203.149
+Вы можете использовать командлет [Get-AzPublicIPAddress](/powershell/module/az.network/get-azpublicipaddress), чтобы получить общедоступный IP-адрес шлюза приложений. Скопируйте общедоступный IP-адрес и вставьте его в адресную строку браузера. Например http://52.170.203.149.
 
 ```powershell
 Get-AzPublicIPAddress -ResourceGroupName myResourceGroupAG -Name myAGPublicIPAddress

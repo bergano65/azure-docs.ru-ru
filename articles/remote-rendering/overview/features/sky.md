@@ -6,12 +6,12 @@ ms.author: flborn
 ms.date: 02/07/2020
 ms.topic: article
 ms.custom: devx-track-csharp
-ms.openlocfilehash: f2a871e409761116182f67eb877f3727038fe0dc
-ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
+ms.openlocfilehash: 39e3b41d49ad06e5dbe5164809a6743da8dedae5
+ms.sourcegitcommit: f845ca2f4b626ef9db73b88ca71279ac80538559
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89013645"
+ms.lasthandoff: 09/09/2020
+ms.locfileid: "89613755"
 ---
 # <a name="sky-reflections"></a>Отражения неба
 
@@ -28,8 +28,8 @@ ms.locfileid: "89013645"
 
 | Неровность  | 0                                        | 0,25                                          | 0,5                                          | 0,75                                          | 1                                          |
 |:----------:|:----------------------------------------:|:---------------------------------------------:|:--------------------------------------------:|:---------------------------------------------:|:------------------------------------------:|
-| Неметаллические  | ![Dielectric0](media/dielectric-0.png)   | ![GreenPointPark](media/dielectric-0.25.png)  | ![GreenPointPark](media/dielectric-0.5.png)  | ![GreenPointPark](media/dielectric-0.75.png)  | ![GreenPointPark](media/dielectric-1.png)  |
-| Металлические      | ![GreenPointPark](media/metallic-0.png)  | ![GreenPointPark](media/metallic-0.25.png)    | ![GreenPointPark](media/metallic-0.5.png)    | ![GreenPointPark](media/metallic-0.75.png)    | ![GreenPointPark](media/metallic-1.png)    |
+| Неметаллические  | ![Неэлектрический, грубость = 0](media/dielectric-0.png)   | ![Неэлектрический, грубость = 0,25](media/dielectric-0.25.png)  | ![Неэлектрический, грубость = 0,5](media/dielectric-0.5.png)  | ![Неэлектрический, грубость = 0,75](media/dielectric-0.75.png)  | ![Неэлектрический, грубость = 1](media/dielectric-1.png)  |
+| Металлические      | ![Металл, грубость = 0](media/metallic-0.png)  | ![Металлическое, грубое = 0,25](media/metallic-0.25.png)    | ![Металл, грубость = 0,5](media/metallic-0.5.png)    | ![Металл, грубое значение = 0,75](media/metallic-0.75.png)    | ![Металл, грубость = 1](media/metallic-1.png)    |
 
 Дополнительные сведения о модели освещения см. в главе о [материалах](../../concepts/materials.md).
 
@@ -84,7 +84,7 @@ void ChangeEnvironmentMap(ApiHandle<AzureSession> session)
             }
             else
             {
-                printf("Texture loading failed!");
+                printf("Texture loading failed!\n");
             }
         });
 }
@@ -121,20 +121,25 @@ void ChangeEnvironmentMap(ApiHandle<AzureSession> session)
 
 |Идентификатор                         | Описание                                              | Иллюстрация                                                      |
 |-----------------------------------|:---------------------------------------------------------|:-----------------------------------------------------------------:|
-|builtin://Autoshop                 | Разнообразные полосы света, яркое базовое освещение для закрытых помещений    | ![Autoshop](media/autoshop.png)
-|builtin://BoilerRoom               | Яркое освещение для сцен в закрытых помещениях, свет от нескольких окон      | ![BoilerRoom](media/boiler-room.png)
-|builtin://ColorfulStudio           | Окрашенный свет в закрытом помещении средней освещенности  | ![ColorfulStudio](media/colorful-studio.png)
-|builtin://Hangar                   | Равномерное неинтенсивное освещение в помещении большого размера                     | ![SmallHangar](media/hangar.png)
-|builtin://IndustrialPipeAndValve   | Тускло освещенное закрытое помещение с контрастными участками              | ![IndustrialPipeAndValve](media/industrial-pipe-and-valve.png)
-|builtin://Lebombo                  | Равномерное дневное освещение в комнате, ярко освещенная область окна     | ![Lebombo](media/lebombo.png)
-|builtin://SataraNight              | Темное ночное небо и земля со множеством источников света   | ![SataraNight](media/satara-night.png)
-|builtin://SunnyVondelpark          | Яркий солнечный свет и контрастные тени                      | ![SunnyVondelpark](media/sunny-vondelpark.png)
-|builtin://Syferfontein             | Чистое небо, умеренное освещение от земли            | ![Syferfontein](media/syferfontein.png)
-|builtin://TearsOfSteelBridge       | Умеренное освещение с неравномерными светлыми и затененными участками                         | ![TearsOfSteelBridge](media/tears-of-steel-bridge.png)
-|builtin://VeniceSunset             | Вечернее закатное освещение перед сумерками                    | ![VeniceSunset](media/venice-sunset.png)
-|builtin://WhippleCreekRegionalPark | Освещение ярких тонов зеленого и белого цвета, затененная земля | ![WhippleCreekRegionalPark](media/whipple-creek-regional-park.png)
-|builtin://WinterRiver              | Дневное освещение с ярко и равномерно освещенной землей                 | ![WinterRiver](media/winter-river.png)
-|builtin://DefaultSky               | То же, что и TearsOfSteelBridge                               | ![DefaultSky](media/tears-of-steel-bridge.png)
+|builtin://Autoshop                 | Разнообразные полосы света, яркое базовое освещение для закрытых помещений    | ![Скибокса автомагазина, используемая для освещения объекта](media/autoshop.png)
+|builtin://BoilerRoom               | Яркое освещение для сцен в закрытых помещениях, свет от нескольких окон      | ![Боилеррум скибокс, используемый для освещения объекта](media/boiler-room.png)
+|builtin://ColorfulStudio           | Окрашенный свет в закрытом помещении средней освещенности  | ![Колорфулстудио скибокс, используемый для освещения объекта](media/colorful-studio.png)
+|builtin://Hangar                   | Равномерное неинтенсивное освещение в помещении большого размера                     | ![Смаллхангар скибокс, используемый для освещения объекта](media/hangar.png)
+|builtin://IndustrialPipeAndValve   | Тускло освещенное закрытое помещение с контрастными участками              | ![Индустриалпипеандвалве скибокс, используемый для освещения объекта](media/industrial-pipe-and-valve.png)
+|builtin://Lebombo                  | Равномерное дневное освещение в комнате, ярко освещенная область окна     | ![Лебомбо скибокс, используемый для освещения объекта](media/lebombo.png)
+|builtin://SataraNight              | Темное ночное небо и земля со множеством источников света   | ![Сатаранигхт скибокс, используемый для освещения объекта](media/satara-night.png)
+|builtin://SunnyVondelpark          | Яркий солнечный свет и контрастные тени                      | ![Суннивонделпарк скибокс, используемый для освещения объекта](media/sunny-vondelpark.png)
+|builtin://Syferfontein             | Чистое небо, умеренное освещение от земли            | ![Сиферфонтеин скибокс, используемый для освещения объекта](media/syferfontein.png)
+|builtin://TearsOfSteelBridge       | Умеренное освещение с неравномерными светлыми и затененными участками                         | ![Теарсофстилбридже скибокс, используемый для освещения объекта](media/tears-of-steel-bridge.png)
+|builtin://VeniceSunset             | Вечернее закатное освещение перед сумерками                    | ![Веницесунсет скибокс, используемый для освещения объекта](media/venice-sunset.png)
+|builtin://WhippleCreekRegionalPark | Освещение ярких тонов зеленого и белого цвета, затененная земля | ![Вхипплекрикрегионалпарк скибокс, используемый для освещения объекта](media/whipple-creek-regional-park.png)
+|builtin://WinterRiver              | Дневное освещение с ярко и равномерно освещенной землей                 | ![Винтерривер скибокс, используемый для освещения объекта](media/winter-river.png)
+|builtin://DefaultSky               | То же, что и TearsOfSteelBridge                               | ![Дефаултски скибокс, используемый для освещения объекта](media/tears-of-steel-bridge.png)
+
+## <a name="api-documentation"></a>Документирование API
+
+* [C# Ремотеманажер. Скирефлектионсеттингс, свойство](https://docs.microsoft.com/dotnet/api/microsoft.azure.remoterendering.remotemanager.skyreflectionsettings)
+* [C++ Ремотеманажер:: Скирефлектионсеттингс ()](https://docs.microsoft.com/cpp/api/remote-rendering/remotemanager#skyreflectionsettings)
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

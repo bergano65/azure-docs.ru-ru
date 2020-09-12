@@ -2,18 +2,18 @@
 title: Поставщики услуг подключения и расположения для Azure ExpressRoute | Документация Майкрософт
 description: В этой статье приведена подробная информация о расположениях, где предлагаются услуги, и способах подключения к регионам Azure. Эта таблица отсортирована по поставщику услуг подключения.
 services: expressroute
-author: cherylmc
+author: duongau
 ms.service: expressroute
 ms.topic: conceptual
 ms.workload: infrastructure-services
 ms.date: 08/26/2020
-ms.author: cherylmc
-ms.openlocfilehash: e47f555e33b9b6d3548f82485767184c89236731
-ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
+ms.author: duau
+ms.openlocfilehash: 78c0b589bfbab17f8c20b3e0b1181fca878d621d
+ms.sourcegitcommit: 3be3537ead3388a6810410dfbfe19fc210f89fec
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88927635"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89651336"
 ---
 # <a name="expressroute-connectivity-partners-and-peering-locations"></a>Партнеры по подключению ExpressRoute и расположения пиринга
 
@@ -74,7 +74,7 @@ ms.locfileid: "88927635"
 
 ### <a name="global-commercial-azure"></a>Глобальная коммерческая версия Azure
 
-| **Поставщик услуг** | **Microsoft Azure** | **Office 365**  | **Расположения** |
+| **Поставщик услуг** | **Microsoft Azure** | **Microsoft 365**  | **Расположения** |
 | --- | --- | --- | --- |
 | **[AARNet](https://www.aarnet.edu.au/network-and-services/connectivity-services/azure-expressroute)** |Поддерживается |Поддерживается |Мельбурн, Сидней |
 | **[Airtel](https://www.airtel.in/business/#/)** | Поддерживается | Поддерживается | Ченнаи 2, Мумбаи 2 |
@@ -86,7 +86,7 @@ ms.locfileid: "88927635"
 | **[BBIX](https://www.bbix.net/en/service/ix/)** | Поддерживается | Поддерживается | Токио |
 | **[BCX](https://www.bcx.co.za/solutions/connectivity/data-networks)** |Поддерживается |Поддерживается |Кейптаун, Йоханнесбург|
 | **[Bell Canada](https://business.bell.ca/shop/enterprise/cloud-connect-access-to-cloud-partner-services)** |Поддерживается |Поддерживается |Квебек, Монреаль, Торонто |
-| **[British Telecom](https://www.globalservices.bt.com/en/solutions/products/cloud-connect-azure)** |Поддерживается |Поддерживается |Амстердам, Гонконг (САР), Йоханнесбург, Лондон, Ньюпорт (Уэльс), Сан-Паулу, Кремниевая долина, Сингапур, Сидней, Токио, Вашингтон (округ Колумбия) |
+| **[British Telecom](https://www.globalservices.bt.com/en/solutions/products/cloud-connect-azure)** |Поддерживается |Поддерживается |Амстердам, Amsterdam2, Гонконг, САР, Йоханнесбург, Лондон, Ньюпорт (штат Вашингтон), Сан--Паулу, Silicon впадина, Сингапур, Сидней, Токио, Вашингтон (округ Колумбия) |
 | **[C3ntro](https://www.c3ntro.com/data1/express-route1.php)** |Поддерживается |Поддерживается |Майами |
 | **CDC** | Поддерживается | Поддерживается | Канберра, Канберра 2 |
 | **[CenturyLink Cloud Connect](https://www.centurylink.com/cloudconnect)** |Поддерживается |Поддерживается |Амстердам 2, Чикаго, Франкфурт, Гонконг, Лас-Вегас, Лондон 2, Нью Йорк, Париж, Сан-Антонио, Кремниевая долина, Токио, Торонто, Вашингтон (округ Колумбия), Вашингтон (округ Колумбия) 2 |
@@ -97,7 +97,7 @@ ms.locfileid: "88927635"
 | **[Chunghwa Telecom](https://www.cht.com.tw/en/home/cht/about-cht/products-and-services/International/Cloud-Service)** |Поддерживается |Поддерживается |Тайбэй |
 | **[Claro](https://www.usclaro.com/enterprise-mnc/connectivity/mpls/)** |Поддерживается |Поддерживается |Майами |
 | **[Cologix](https://www.cologix.com/hyperscale/microsoft-azure/)** |Поддерживается |Поддерживается |Чикаго, Далласе, Миннеаполисе, Монреаль, Торонто, Vancouver, Вашингтон (округ Колумбия) |
-| **[Colt](https://www.colt.net/direct-connect/azure/)** |Поддерживается |Поддерживается |Амстердам, Амстердам 2, Чикаго, Дублин, Франкфурт, Лондон, Лондон 2, Ньюпорт, Нью Йорк, Осака, Париж, Кремниевая долина, Кремниевая долина 2, Сингапур 2, Токио, Вашингтон (округ Колумбия) |
+| **[Colt](https://www.colt.net/direct-connect/azure/)** |Поддерживается |Поддерживается |Амстердам, Amsterdam2, Чикаго, Дублин, Франкфурт, Лондон, London2, Милан, Ньюпорт, Нью Йорк, Осака, Париж, впадина, Silicon Valley2, Сингапур 2, Токио, Вашингтон (округ Колумбия) |
 | **[Comcast](https://business.comcast.com/landingpage/microsoft-azure)** |Поддерживается |Поддерживается |Чикаго, Кремниевая долина, Вашингтон, округ Колумбия |
 | **[CoreSite](https://www.coresite.com/solutions/cloud-services/public-cloud-providers/microsoft-azure-expressroute)** |Поддерживается |Поддерживается |Чикаго, Денвер, Лос-Анджелес, Нью-Йорк, Кремниевая долина, Кремниевая долина 2, Вашингтон (округ Колумбия), Вашингтон (округ Колумбия) 2 |
 | **[DE-CIX](https://www.de-cix.net/en/de-cix-service-world/cloud-exchange/find-a-cloud-service/detail/microsoft-azure)** | Поддерживается |Поддерживается |Amsterdam2, Dubai2, Франкфурт, Марселе, Мумбаи, Мюнхене, Нью Йорк |
@@ -109,6 +109,7 @@ ms.locfileid: "88927635"
 | **Etisalat UAE** |Поддерживается |Поддерживается |Дубаи|
 | **[euNetworks](https://eunetworks.com/services/solutions/cloud-connect/microsoft-azure-expressroute/)** |Поддерживается |Поддерживается |Амстердам, Amsterdam2, Дублин, Франкфурт, Лондон |
 | **FarEasTone** |Поддерживается |Поддерживается |Тайбэй|
+| **Fibrenoire** |Поддерживается |Поддерживается |Монреаль|
 | **GÉANT** |Поддерживается |Поддерживается |Амстердам, Amsterdam2, Дублин, Франкфурт, Марселе |
 | **гтт** |Поддерживается |Поддерживается |Лондон 2 |
 | **[Global Cloud Xchange (GCX)](https://globalcloudxchange.com/cloud-platform/cloud-x-fusion/)** | Поддерживается| Поддерживается | Ченнаи, Мумбаи |
@@ -164,13 +165,14 @@ ms.locfileid: "88927635"
 | **[Teraco](https://www.teraco.co.za/services/africa-cloud-exchange/)** |Поддерживается |Поддерживается |Кейптаун, Йоханнесбург |
 | **[TIME dotCom](https://www.time.com.my/enterprise/connectivity/direct-cloud)** | Поддерживается | Поддерживается | Куала-Лумпур |
 | **[Transtelco](https://transtelco.net/enterprise-services/)** |Поддерживается |Поддерживается |Далласе, Куеретаро (Мексика)|
+| **T-Systems** |Поддерживается |Поддерживается |Франкфурт|
 | **[UOLDIVEO](https://www.uoldiveo.com.br/)** |Поддерживается |Поддерживается |Сан-Паулу |
 | **[уих](https://www.uih.co.th/en/network-solutions/global-network/cloud-direct-for-microsoft-azure-expressroute)** | Поддерживается | Поддерживается | Бангкок |
 | **[Verizon](https://enterprise.verizon.com/products/network/application-enablement/secure-cloud-interconnect/)** |Поддерживается |Поддерживается |Амстердам, Чикаго, Даллас, Гонконг (САР), Лондон, Мумбаи, Кремниевая долина, Сингапур, Сидней, Токио, Торонто, Вашингтон (округ Колумбия) |
 | **[Viasat](http://www.directcloud.viasatbusiness.com/)** | Поддерживается | Поддерживается | Вашингтон (округ Колумбия) 2 |
 | **[Vocus Group NZ](https://www.vocus.co.nz/business/cloud-data-centres)** | Поддерживается | Поддерживается | Окленд, Сидней |
 | **[Vodafone](https://www.vodafone.com/business/global-enterprise/global-connectivity/vodafone-ip-vpn-cloud-connect)** |Поддерживается |Поддерживается |Амстердам 2, Лондон, Сингапур |
-| **[Vodafone Idea](https://discover.vodafone.in/business/enterprise-solutions/connectivity/vpn-extended-connect)** | Поддерживается | Поддерживается | Мумбаи 2 |
+| **[Vodafone Idea](https://www.vodafone.in/business/enterprise-solutions/connectivity/vpn-extended-connect)** | Поддерживается | Поддерживается | Мумбаи 2 |
 | **[Zayo](https://www.zayo.com/solutions/industries/cloud-connectivity/microsoft-expressroute)** |Поддерживается |Поддерживается |Амстердам, Чикаго, Даллас, Денвер, Лондон, Лос-Анджелес, Монреаль, Нью-Йорк, Париж, Сиэтл, Кремниевая долина, Торонто, Вашингтон (округ Колумбия), Вашингтон (округ Колумбия) 2 |
 
  **+** означает "скоро"

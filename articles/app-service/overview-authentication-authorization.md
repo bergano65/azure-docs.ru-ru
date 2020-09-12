@@ -6,12 +6,12 @@ ms.topic: article
 ms.date: 07/08/2020
 ms.reviewer: mahender
 ms.custom: seodec18, fasttrack-edit, has-adal-ref
-ms.openlocfilehash: 19d6a646df22e2f8c9bdfc03f15453a520e527a4
-ms.sourcegitcommit: 648c8d250106a5fca9076a46581f3105c23d7265
+ms.openlocfilehash: e984332e6e93fc9a42123d06f320a66073585bff
+ms.sourcegitcommit: 1b320bc7863707a07e98644fbaed9faa0108da97
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "88962831"
+ms.lasthandoff: 09/09/2020
+ms.locfileid: "89596045"
 ---
 # <a name="authentication-and-authorization-in-azure-app-service-and-azure-functions"></a>Проверка подлинности и авторизация в службе приложений Azure и функциях Azure
 
@@ -149,11 +149,11 @@ ms.locfileid: "88962831"
 
 ## <a name="more-resources"></a>Дополнительные ресурсы
 
-[Руководство по сквозной проверке подлинности и авторизации в службе приложений Azure (Windows)](tutorial-auth-aad.md)  
-[Руководство по сквозной проверке подлинности и авторизации в службе приложений Azure (Linux)](./tutorial-auth-aad.md?pivots=platform-linux%3fpivots%3dplatform-linux)  
-[Настройка проверки подлинности и авторизации в службе приложений](app-service-authentication-how-to.md) 
- [Интеграция .NET Core с Azure AppService еасяус (третья сторона)](https://github.com/MaximRouiller/MaximeRouiller.Azure.AppService.EasyAuth) 
- [Получение проверки подлинности службы приложений Azure с помощью .NET Core (третья сторона)](https://github.com/kirkone/KK.AspNetCore.EasyAuthAuthentication)
+* [Руководство по сквозной проверке подлинности и авторизации в службе приложений Azure (Windows)](tutorial-auth-aad.md)  
+* [Руководство по сквозной проверке подлинности и авторизации в службе приложений Azure (Linux)](./tutorial-auth-aad.md?pivots=platform-linux%3fpivots%3dplatform-linux)  
+* [Customize authentication and authorization in Azure App Service](app-service-authentication-how-to.md) (Настройка проверки подлинности и авторизации в Службе приложений Azure)
+* [Интеграция .NET Core с Azure AppService Еасяус (третья сторона)](https://github.com/MaximRouiller/MaximeRouiller.Azure.AppService.EasyAuth)
+* [Получение проверки подлинности службы приложений Azure с помощью .NET Core (третья сторона)](https://github.com/kirkone/KK.AspNetCore.EasyAuthAuthentication)
 
 Практические руководства для поставщика:
 

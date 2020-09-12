@@ -8,12 +8,12 @@ ms.service: application-gateway
 ms.topic: how-to
 ms.date: 11/14/2019
 ms.author: victorh
-ms.openlocfilehash: d889d0c13c911e02d73bb1de76b7c3d1aa240027
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: d0730148a3da41d0d72961ea521577fa370b183d
+ms.sourcegitcommit: 1b320bc7863707a07e98644fbaed9faa0108da97
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84806804"
+ms.lasthandoff: 09/09/2020
+ms.locfileid: "89596096"
 ---
 # <a name="create-an-application-gateway-with-internal-redirection-using-the-azure-cli"></a>Создание шлюза приложений с перенаправлением внутреннего трафика при помощи Azure CLI
 
@@ -21,12 +21,11 @@ ms.locfileid: "84806804"
 
 Вы узнаете, как выполнять следующие задачи:
 
-> [!div class="checklist"]
-> * Настройка сети
-> * Создание шлюза приложений
-> * добавление прослушивателей и правила перенаправления;
-> * создание масштабируемого набора виртуальных машин с внутренним пулом;
-> * создание записи CNAME в домене.
+* Настройка сети
+* Создание шлюза приложений
+* добавление прослушивателей и правила перенаправления;
+* создание масштабируемого набора виртуальных машин с внутренним пулом;
+* создание записи CNAME в домене.
 
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
@@ -215,7 +214,7 @@ az network public-ip show \
 
 Измените адрес на другой домен, например http: \/ /www.contoso.org, и вы увидите, что трафик был перенаправлен обратно в прослушиватель для www \. contoso.com.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 В этом руководстве вы узнали, как:
 

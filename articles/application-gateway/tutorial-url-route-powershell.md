@@ -8,12 +8,12 @@ ms.topic: how-to
 ms.date: 07/31/2019
 ms.author: victorh
 ms.custom: mvc
-ms.openlocfilehash: fccc7281ed2978ccc63cd7b53a82c8a00b57d3c2
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 37e76f54b9c4fe38c891f7cee7bc443d1b0b20f5
+ms.sourcegitcommit: 1b320bc7863707a07e98644fbaed9faa0108da97
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84805991"
+ms.lasthandoff: 09/09/2020
+ms.locfileid: "89596079"
 ---
 # <a name="route-web-traffic-based-on-the-url-using-azure-powershell"></a>Маршрутизация веб-трафика на основе URL-адреса с использованием Azure PowerShell
 
@@ -23,10 +23,9 @@ ms.locfileid: "84805991"
 
 Вы узнаете, как выполнять следующие задачи:
 
-> [!div class="checklist"]
-> * Настройка сети
-> * создание прослушивателей, сопоставления URL-путей и правил;
-> * создание масштабируемых серверных пулов.
+* Настройка сети
+* создание прослушивателей, сопоставления URL-путей и правил;
+* создание масштабируемых серверных пулов.
 
 ![Пример маршрутизации для URL-адресов](./media/tutorial-url-route-powershell/scenario.png)
 

@@ -11,12 +11,12 @@ ms.author: aashishb
 author: aashishb
 ms.reviewer: larryfr
 ms.date: 06/19/2020
-ms.openlocfilehash: c6b8f9d7f99d49f65a45d0e09623ef2f0e1217f2
-ms.sourcegitcommit: 5b8fb60a5ded05c5b7281094d18cf8ae15cb1d55
+ms.openlocfilehash: 2888e46d26a58e8451f38accbb9073d657f8ea1b
+ms.sourcegitcommit: 3be3537ead3388a6810410dfbfe19fc210f89fec
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87387070"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89651462"
 ---
 # <a name="regenerate-storage-account-access-keys"></a>Повторное создание ключей доступа для учетной записи хранения
 [!INCLUDE [applies-to-skus](../../includes/aml-applies-to-basic-enterprise-sku.md)]
@@ -32,7 +32,7 @@ ms.locfileid: "87387070"
 
 * Рабочая область машинного обучения Azure. Дополнительные сведения см. в статье [Создание рабочей области](how-to-manage-workspace.md) .
 
-* [Пакет SDK для Машинного обучения Azure](https://docs.microsoft.com/python/api/overview/azure/ml/install?view=azure-ml-py).
+* [Пакет SDK для Машинного обучения Azure](https://docs.microsoft.com/python/api/overview/azure/ml/install?view=azure-ml-py&preserve-view=true).
 
 * [Расширение CLI машинное обучение Azure](reference-azure-machine-learning-cli.md).
 
@@ -141,4 +141,4 @@ for name, ds in datastores.items():
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Дополнительные сведения о регистрации хранилищ данных см [`Datastore`](https://docs.microsoft.com/python/api/azureml-core/azureml.core.datastore(class)?view=azure-ml-py) . в справочнике по классам.
+Дополнительные сведения о регистрации хранилищ данных см [`Datastore`](https://docs.microsoft.com/python/api/azureml-core/azureml.core.datastore(class)?view=azure-ml-py&preserve-view=true) . в справочнике по классам.

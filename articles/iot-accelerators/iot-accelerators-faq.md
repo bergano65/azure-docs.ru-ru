@@ -8,12 +8,12 @@ services: iot-accelerators
 ms.topic: conceptual
 ms.date: 02/15/2018
 ms.author: dobett
-ms.openlocfilehash: 7a2b167f90b4ec79f5fa515ded1c676ca7085e72
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: abab80f8c790a170ec30fa228dd86576079a73a0
+ms.sourcegitcommit: 4a7a4af09f881f38fcb4875d89881e4b808b369b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "75647719"
+ms.lasthandoff: 09/04/2020
+ms.locfileid: "89462553"
 ---
 # <a name="frequently-asked-questions-for-iot-solution-accelerators"></a>Часто задаваемые вопросы об акселераторах решений для Интернета вещей
 
@@ -101,9 +101,9 @@ ms.locfileid: "75647719"
 
 ### <a name="how-do-i-delete-an-azure-ad-tenant"></a>Как удалить клиент Azure AD?
 
-Ознакомьтесь с записью блога Эрика Голпа (Eric Golpe) [Walkthrough of Deleting an Azure AD Tenant](https://blogs.msdn.com/b/ericgolpe/archive/2015/04/30/walkthrough-of-deleting-an-azure-ad-tenant.aspx) (Пошаговое руководство по удалению клиента Azure AD).
+Ознакомьтесь с записью блога Эрика Голпа (Eric Golpe) [Walkthrough of Deleting an Azure AD Tenant](https://docs.microsoft.com/archive/blogs/ericgolpe/walkthrough-of-deleting-an-azure-ad-tenant) (Пошаговое руководство по удалению клиента Azure AD).
 
-### <a name="next-steps"></a>Дальнейшие шаги
+### <a name="next-steps"></a>Дальнейшие действия
 
 Вы также можете ознакомиться с другими функциями и возможностями акселераторов решений для Интернета вещей:
 

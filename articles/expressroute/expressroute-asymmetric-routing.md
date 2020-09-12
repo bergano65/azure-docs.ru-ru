@@ -2,17 +2,17 @@
 title: 'Azure ExpressRoute: асимметричная маршрутизация'
 description: В этой статье рассматриваются проблемы, которые могут возникнуть при асимметричной маршрутизации в сети, когда есть несколько подключений к целевому расположению.
 services: expressroute
-author: osamazia
+author: duongau
 ms.service: expressroute
 ms.topic: article
 ms.date: 10/10/2016
-ms.author: osamam
-ms.openlocfilehash: 8adfcc6559e3e2d48aabd3cfeec4fe20541917c3
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.author: duau
+ms.openlocfilehash: ee96abb51e03fb1dc567b66d180cb520de299d95
+ms.sourcegitcommit: d0541eccc35549db6381fa762cd17bc8e72b3423
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "74072142"
+ms.lasthandoff: 09/09/2020
+ms.locfileid: "89566540"
 ---
 # <a name="asymmetric-routing-with-multiple-network-paths"></a>Асимметричная маршрутизация с использованием нескольких сетевых путей
 В этой статье объясняется, как прямой и обратный сетевой трафик может проходить по разным маршрутам, если между исходным и целевым сетевыми расположениями есть несколько путей.
@@ -64,5 +64,5 @@ ms.locfileid: "74072142"
 ![Конфигурация сети во время SNAT](./media/expressroute-asymmetric-routing/AsymmetricRouting2.png)
 
 ## <a name="asymmetric-routing-detection"></a>Обнаружение асимметричной маршрутизации
-Лучшим подтверждением того, что сетевой трафик проходит по ожидаемому пути, является трассировка маршрута. Если вы ожидаете, что трафик от вашего локального SMTP-сервера в Майкрософт будет проходить через Интернет, ожидаемым маршрутом при трассировке будет маршрут от SMTP-сервера к Office 365. Ее результат подтвердит, что трафик из вашей сети действительно направляется к Интернету, а не к ExpressRoute.
+Лучшим подтверждением того, что сетевой трафик проходит по ожидаемому пути, является трассировка маршрута. Если вы ожидаете передачи трафика с локального SMTP-сервера в корпорацию Майкрософт для получения пути в Интернете, ожидаемый Traceroute — от SMTP-сервера до Microsoft 365. Ее результат подтвердит, что трафик из вашей сети действительно направляется к Интернету, а не к ExpressRoute.
 

@@ -11,12 +11,12 @@ author: jpe316
 ms.date: 06/03/2020
 ms.topic: conceptual
 ms.custom: how-to, contperfq4, devx-track-python
-ms.openlocfilehash: 263038ee1be8b31d493282cd920f386132420156
-ms.sourcegitcommit: 271601d3eeeb9422e36353d32d57bd6e331f4d7b
+ms.openlocfilehash: a5f56beb179f7c72fe66c7423999201f3460b143
+ms.sourcegitcommit: 3be3537ead3388a6810410dfbfe19fc210f89fec
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/20/2020
-ms.locfileid: "88648791"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89646300"
 ---
 # <a name="what-are-field-programmable-gate-arrays-fpga-and-how-to-deploy"></a>Что такое программируемые массивы вентиля (FPGA) и как развернуть
 
@@ -78,7 +78,7 @@ FPGA доступны в следующих регионах Azure:
 
 ## <a name="deploy-models-on-fpgas"></a>Развертывание моделей в ППВМ
 
-Вы можете развернуть модель как веб-службу на FPGA с помощью [Машинное обучение Azure модели с аппаратным ускорением](https://docs.microsoft.com/python/api/azureml-accel-models/azureml.accel?view=azure-ml-py). Использование FPGA обеспечивает немалое определение задержки, даже с одним размером пакета. Вывод или оценка модели — это этап, в котором развернутая модель используется для прогнозирования, чаще всего в рабочих данных.
+Вы можете развернуть модель как веб-службу на FPGA с помощью [Машинное обучение Azure модели с аппаратным ускорением](https://docs.microsoft.com/python/api/azureml-accel-models/azureml.accel?view=azure-ml-py&preserve-view=true). Использование FPGA обеспечивает немалое определение задержки, даже с одним размером пакета. Вывод или оценка модели — это этап, в котором развернутая модель используется для прогнозирования, чаще всего в рабочих данных.
 
 Развертывание модели в FPGA включает следующие шаги.
 
@@ -121,7 +121,7 @@ FPGA доступны в следующих регионах Azure:
     ```
 ### <a name="1-define-the-tensorflow-model"></a>1. Определение модели TensorFlow
 
-Используйте [пакет SDK Машинного обучения Azure для Python](https://docs.microsoft.com/python/api/overview/azure/ml/intro?view=azure-ml-py), чтобы создать определение службы. Определение службы представляет собой файл, описывающий конвейер графов (входящие данные, характеризатор и классификатор) на основе TensorFlow. Команда развертывания автоматически выполняет сжатие определения и графов в ZIP-файл и передает этот файл в хранилище BLOB-объектов Azure. DNN уже развернут для запуска в FPGA.
+Используйте [пакет SDK Машинного обучения Azure для Python](https://docs.microsoft.com/python/api/overview/azure/ml/intro?view=azure-ml-py&preserve-view=true), чтобы создать определение службы. Определение службы представляет собой файл, описывающий конвейер графов (входящие данные, характеризатор и классификатор) на основе TensorFlow. Команда развертывания автоматически выполняет сжатие определения и графов в ZIP-файл и передает этот файл в хранилище BLOB-объектов Azure. DNN уже развернут для запуска в FPGA.
 
 1. Рабочая область Машинное обучение Azure нагрузки
 

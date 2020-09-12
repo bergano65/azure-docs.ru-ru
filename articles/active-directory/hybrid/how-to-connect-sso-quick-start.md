@@ -16,12 +16,12 @@ ms.date: 04/16/2019
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: bc955fe64ae68cb1248b0e616357bccf82f5f036
-ms.sourcegitcommit: 0820c743038459a218c40ecfb6f60d12cbf538b3
+ms.openlocfilehash: f137b61f36ee425bdfecf3135370fded04242335
+ms.sourcegitcommit: f8d2ae6f91be1ab0bc91ee45c379811905185d07
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87115757"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89658754"
 ---
 # <a name="azure-active-directory-seamless-single-sign-on-quickstart"></a>Azure Active Directory простой единый вход: Краткое руководство
 
@@ -40,7 +40,7 @@ ms.locfileid: "87115757"
    - Если брандмауэр или прокси-сервер допускает, добавьте подключения к списку разрешенных URL-адресов ** \* msappproxy.NET** через порт 443. Если нет, разрешите доступ к [диапазонам IP-адресов центра обработки данных Azure](https://www.microsoft.com/download/details.aspx?id=41653). Список диапазонов IP-адресов обновляется еженедельно. Это предварительное условие применяется только в том случае, если вы включаете функцию. Его выполнение не обязательно для фактического входа пользователя.
 
     >[!NOTE]
-    >В Azure AD Connect версий 1.1.557.0, 1.1.558.0, 1.1.561.0 и 1.1.614.0 есть проблема, связанная с синхронизацией хэшей паролей. Если вы _не_ планируете использовать синхронизацию хэша паролей в сочетании с сквозной проверкой подлинности, ознакомьтесь с [заметками о выпуске Azure AD Connect](https://docs.microsoft.com/azure/active-directory/connect/active-directory-aadconnect-version-history#116470) , чтобы получить дополнительные сведения.
+    >В Azure AD Connect версий 1.1.557.0, 1.1.558.0, 1.1.561.0 и 1.1.614.0 есть проблема, связанная с синхронизацией хэшей паролей. Если вы _не_ планируете использовать синхронизацию хэша паролей в сочетании с сквозной проверкой подлинности, ознакомьтесь с [заметками о выпуске Azure AD Connect](./reference-connect-version-history.md) , чтобы получить дополнительные сведения.
 
 * **Использование поддерживаемой топологии Azure AD Connect**. Убедитесь, что вы используете одну из поддерживаемых топологий Azure AD Connect, описанных [здесь](plan-connect-topologies.md).
 
@@ -51,9 +51,9 @@ ms.locfileid: "87115757"
     * синхронизируется с Azure AD через Azure AD Connect;
     * содержит пользователей, для которых нужно включить простой единый вход.
     
-* **Включение современной аутентификации**. Для работы этой функции необходимо включить [современную аутентификацию](https://docs.microsoft.com/office365/enterprise/modern-auth-for-office-2013-and-2016) на клиенте.
+* **Включение современной аутентификации**. Для работы этой функции необходимо включить [современную аутентификацию](/office365/enterprise/modern-auth-for-office-2013-and-2016) на клиенте.
 
-* **Использование последних версий клиентов Office 365.** Чтобы использовать автоматический вход для клиентов Office 365 (Outlook, Word, Excel и пр.), вашим пользователям требуются версии 16.0.8730.xxxx и выше.
+* **Используйте последние версии Microsoft 365 клиентов**: чтобы получить возможность автоматического входа с помощью Microsoft 365 клиентов (Outlook, Word, Excel и др.), пользователям необходимо использовать версии 16.0.8730. xxxx или более поздней.
 
 ## <a name="step-2-enable-the-feature"></a>Шаг 2. Включение компонента
 
@@ -187,11 +187,11 @@ Mozilla Firefox не выполняет аутентификацию Kerberos а
 
 #### <a name="microsoft-edge-based-on-chromium-all-platforms"></a>Microsoft Edge на базе Chromium (все платформы)
 
-Если вы переопределили параметры политики [ауснеготиатеделегатеалловлист](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#authnegotiatedelegateallowlist) или [ауссервералловлист](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#authserverallowlist) в своей среде, убедитесь, что вы также добавили URL-адрес Azure AD ( `https://autologon.microsoftazuread-sso.com` ).
+Если вы переопределили параметры политики [ауснеготиатеделегатеалловлист](/DeployEdge/microsoft-edge-policies#authnegotiatedelegateallowlist) или [ауссервералловлист](/DeployEdge/microsoft-edge-policies#authserverallowlist) в своей среде, убедитесь, что вы также добавили URL-адрес Azure AD ( `https://autologon.microsoftazuread-sso.com` ).
 
 #### <a name="microsoft-edge-based-on-chromium-macos-and-other-non-windows-platforms"></a>Microsoft ребро на основе Chromium (macOS и других платформ, отличных от Windows)
 
-Сведения о том, как добавить URL-адрес Azure AD для встроенной проверки подлинности в список разрешений, см. в [статье Microsoft ребр](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#authserverallowlist) на основе Chromium на macOS и других платформах, отличных от Windows.
+Сведения о том, как добавить URL-адрес Azure AD для встроенной проверки подлинности в список разрешений, см. в [статье Microsoft ребр](/DeployEdge/microsoft-edge-policies#authserverallowlist) на основе Chromium на macOS и других платформах, отличных от Windows.
 
 #### <a name="google-chrome-all-platforms"></a>Google Chrome (все платформы)
 
@@ -211,7 +211,7 @@ Mozilla Firefox не выполняет аутентификацию Kerberos а
 
 Чтобы проверить функцию для конкретного пользователя, убедитесь, что соблюдаются все следующие условия:
   - Пользователь выполняет вход на корпоративном устройстве.
-  - Это устройство присоединено к домену Active Directory. Устройство _не_ требуется [присоединять к Azure AD](../active-directory-azureadjoin-overview.md).
+  - Это устройство присоединено к домену Active Directory. Устройство _не_ требуется [присоединять к Azure AD](../devices/overview.md).
   - У него должно быть прямое подключение к контроллеру домена по корпоративной проводной или беспроводной сети или через подключение удаленного доступа, например VPN-подключение.
   - Вы [развернули функцию](#step-3-roll-out-the-feature) для этого пользователя с помощью групповой политики.
 

@@ -6,12 +6,12 @@ ms.assetid: 10da5b8a-1823-41a3-a2ff-a0717c2b5c2d
 ms.topic: article
 ms.date: 08/25/2020
 ms.custom: seodec18
-ms.openlocfilehash: c51745b7760573aa3c6ae067e9a6c1cc315f8e56
-ms.sourcegitcommit: 927dd0e3d44d48b413b446384214f4661f33db04
+ms.openlocfilehash: e1b50675bef0f883ff617b3098a742d3491b3c13
+ms.sourcegitcommit: de2750163a601aae0c28506ba32be067e0068c0c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88871400"
+ms.lasthandoff: 09/04/2020
+ms.locfileid: "89484310"
 ---
 # <a name="migrate-an-active-dns-name-to-azure-app-service"></a>Перенос активного DNS-имени в службу приложений Azure
 
@@ -21,7 +21,7 @@ ms.locfileid: "88871400"
 
 Если вас не беспокоит простой при разрешении DNS-имен, обратитесь к разделу [Сопоставление существующего настраиваемого DNS-имени со Службой приложений Azure](app-service-web-tutorial-custom-domain.md).
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Для работы с этим руководством:
 
@@ -40,7 +40,7 @@ ms.locfileid: "88871400"
 
 ### <a name="get-domain-verification-id"></a>Получение идентификатора проверки домена
 
-Получите идентификатор проверки домена для приложения, выполнив действия, описанные в статье [Получение идентификатора проверки домена](app-service-web-tutorial-custom-domain.md#get-domain-verification-id).
+Получите идентификатор проверки домена для приложения, выполнив действия, описанные в статье [Получение идентификатора проверки домена](app-service-web-tutorial-custom-domain.md#get-a-domain-verification-id).
 
 ### <a name="create-domain-verification-record"></a>Создание записи для проверки домена
 
@@ -48,9 +48,9 @@ ms.locfileid: "88871400"
 
 | Пример записи DNS | Узел, для которого задается TXT | Значение TXT |
 | - | - | - |
-| \@ (root) | _асуид_ | [Идентификатор проверки домена для приложения](app-service-web-tutorial-custom-domain.md#get-domain-verification-id) |
-| www (поддомен) | _АСУиД. www_ | [Идентификатор проверки домена для приложения](app-service-web-tutorial-custom-domain.md#get-domain-verification-id) |
-| \* (с подстановочным знаком) | _асуид_ | [Идентификатор проверки домена для приложения](app-service-web-tutorial-custom-domain.md#get-domain-verification-id) |
+| \@ (root) | _асуид_ | [Идентификатор проверки домена для приложения](app-service-web-tutorial-custom-domain.md#get-a-domain-verification-id) |
+| www (поддомен) | _АСУиД. www_ | [Идентификатор проверки домена для приложения](app-service-web-tutorial-custom-domain.md#get-a-domain-verification-id) |
+| \* (с подстановочным знаком) | _асуид_ | [Идентификатор проверки домена для приложения](app-service-web-tutorial-custom-domain.md#get-a-domain-verification-id) |
 
 На странице записей DNS запомните тип DNS-имени, которое требуется перенести. Служба приложений поддерживает сопоставление из записей CNAME и записей A.
 
@@ -119,7 +119,7 @@ ms.locfileid: "88871400"
 
 Вы можете найти единицу развертывания для приложения, просмотрев доменное имя URL-адреса FTP/S `<deployment-unit>.ftp.azurewebsites.windows.net` . Проверьте и убедитесь, что единица развертывания отличается между исходным и целевым приложениями. Единица развертывания приложения определяется [планом службы приложений](overview-hosting-plans.md) , в котором он находится. Он выбирается случайным образом в Azure при создании плана и не может быть изменен. В Azure только два плана находятся в одной и той же единице развертывания при [их создании в той же группе ресурсов *и* одном регионе](app-service-plan-manage.md#create-an-app-service-plan), но нет логики, чтобы убедиться в том, что планы находятся в разных единицах развертывания. Единственным способом создания плана в другой единице развертывания является создание плана в новой группе ресурсов или регионе до тех пор, пока вы не получите другую единицу развертывания.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Узнайте, как привязать пользовательский сертификат TLS/SSL к службе приложений.
 

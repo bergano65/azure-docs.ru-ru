@@ -16,12 +16,12 @@ ms.date: 08/13/2019
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: caf7db5f27ed6f612d0896bff0899feda3311883
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 1708b3b8777b32aac7c160a1084235ba1b2eda13
+ms.sourcegitcommit: f8d2ae6f91be1ab0bc91ee45c379811905185d07
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85357755"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89658350"
 ---
 # <a name="azure-active-directory-seamless-single-sign-on"></a>Простой единый вход Azure Active Directory
 
@@ -56,10 +56,10 @@ ms.locfileid: "85357755"
 - Если приложение (например, `https://myapps.microsoft.com/contoso.com`) пересылает параметр `domain_hint` (OpenID Connect), параметр `whr` (SAML), определяющий клиент, или параметр `login_hint`, определяющий пользователя в запросе на вход в Azure AD, то пользователи автоматически входят в систему, не вводя имена пользователей и пароли.
 - Пользователи могут использовать автоматический единый вход, если приложение (например, `https://contoso.sharepoint.com`) отправляет запросы на вход в конечные точки Azure AD, настроенные как клиенты, то есть `https://login.microsoftonline.com/contoso.com/<..>` или `https://login.microsoftonline.com/<tenant_ID>/<..>`, вместо обычной конечной точки Azure AD (`https://login.microsoftonline.com/common/<...>`).
 - Поддерживается выход. Это позволяет пользователям выбрать другую учетную запись Azure AD для входа вместо того, чтобы автоматически входить с помощью простого единого входа.
-- Для поддержки клиентов Office 365 для 32-разрядной версии Windows (Outlook, Word, Excel и другие) версии 16.0.8730.xxxx и выше используется неинтерактивная процедура. Для OneDrive потребуется активировать [функцию автоматической настройки OneDrive](https://techcommunity.microsoft.com/t5/Microsoft-OneDrive-Blog/Previews-for-Silent-Sync-Account-Configuration-and-Bandwidth/ba-p/120894), чтобы включить автоматический вход в систему.
+- Microsoft 365 Клиенты Win32 (Outlook, Word, Excel и др.) с версиями 16.0.8730. xxxx и более поздних версий поддерживаются с помощью неинтерактивного потока. Для OneDrive потребуется активировать [функцию автоматической настройки OneDrive](https://techcommunity.microsoft.com/t5/Microsoft-OneDrive-Blog/Previews-for-Silent-Sync-Account-Configuration-and-Bandwidth/ba-p/120894), чтобы включить автоматический вход в систему.
 - Функцию можно включить с помощью Azure AD Connect.
 - Это бесплатная функция, и для ее использования не требуются платные выпуски Azure AD.
-- Она доступна в клиентах на основе веб-браузера и клиентах Office, поддерживающих [современную проверку подлинности](https://docs.microsoft.com/office365/enterprise/modern-auth-for-office-2013-and-2016) на платформах и в браузерах с поддержкой проверки подлинности Kerberos.
+- Она доступна в клиентах на основе веб-браузера и клиентах Office, поддерживающих [современную проверку подлинности](/office365/enterprise/modern-auth-for-office-2013-and-2016) на платформах и в браузерах с поддержкой проверки подлинности Kerberos.
 
 | Операционная система и браузер |Internet Explorer|Microsoft Edge|Google Chrome|Mozilla Firefox|Safari|
 | --- | --- |--- | --- | --- | -- 
@@ -88,4 +88,3 @@ ms.locfileid: "85357755"
 - [**Часто задаваемые вопросы**](how-to-connect-sso-faq.md). Ответы на часто задаваемые вопросы.
 - [**Устранение неполадок**](tshoot-connect-sso.md). Узнайте, как устранить самые распространенные проблемы с этой функцией.
 - [**UserVoice**](https://feedback.azure.com/forums/169401-azure-active-directory/category/160611-directory-synchronization-aad-connect). Отправка запросов новых функций.
-

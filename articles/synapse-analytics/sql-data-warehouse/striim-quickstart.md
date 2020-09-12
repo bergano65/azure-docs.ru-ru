@@ -1,6 +1,6 @@
 ---
 title: Быстрый запуск Стриим
-description: Быстро приступите к работе со Striim и хранилищем данных SQL Azure.
+description: Быстро Начните работу с Стриим и Azure синапсе Analytics.
 services: synapse-analytics
 author: mlee3gsd
 manager: craigg
@@ -11,18 +11,18 @@ ms.date: 10/12/2018
 ms.author: martinle
 ms.reviewer: igorstan
 ms.custom: seo-lt-2019
-ms.openlocfilehash: 945bcd03bc3bf13517836e7a5624bd5142782183
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: d6b5fa1a42201479c5d426a5bbb9188d0cb8e03d
+ms.sourcegitcommit: de2750163a601aae0c28506ba32be067e0068c0c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85208558"
+ms.lasthandoff: 09/04/2020
+ms.locfileid: "89485980"
 ---
-# <a name="striim-azure-sql-dw-marketplace-offering-install-guide"></a>Руководство по установке Striim для хранилища данных SQL Azure
+# <a name="striim-azure-synapse-analytics-marketplace-offering-install-guide"></a>Стриим Azure синапсе Analytics Marketplace, предлагающая рекомендации по установке
 
-В этом кратком руководстве предполагается, что у вас имеется экземпляр хранилища данных SQL.
+В этом кратком руководстве предполагается, что у вас уже есть предварительно существующий экземпляр Azure синапсе Analytics.
 
-Найдите Striim в Azure Marketplace и выберите решение "Striim for Data Integration to SQL Data Warehouse (Staged)". 
+Выполните поиск Стриим в Azure Marketplace и выберите параметр Стриим для интеграции данных в Azure синапсе Analytics (промежуточная). 
 
 ![Установка Striim][install]
 
@@ -32,7 +32,7 @@ ms.locfileid: "85208558"
 
 После развертывания щелкните основной узел \<VM Name> на портале Azure, щелкните "Подключить" и скопируйте имя для входа, используя локальную учетную запись виртуальной машины. 
 
-![Подключение Striim к хранилищу данных SQL Azure][connect]
+![Подключение Стриим к Azure синапсе Analytics][connect]
 
 Скачайте файл sqljdbc42.jar по ссылке <https://www.microsoft.com/en-us/download/details.aspx?id=54671> на локальный компьютер. 
 

@@ -11,12 +11,12 @@ ms.date: 06/25/2020
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: efcf2df4e472d022fcdec0c9b7c69c73192c503f
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
-ms.translationtype: HT
+ms.openlocfilehash: 622d38e09f65d05d7cba7a34f30a070c27d3fd37
+ms.sourcegitcommit: f8d2ae6f91be1ab0bc91ee45c379811905185d07
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86518476"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89658380"
 ---
 # <a name="azure-active-directory-connect-cloud-provisioning-faq"></a>Вопросы и ответы по подготовке к облаку Azure Active Directory Connect
 
@@ -74,7 +74,7 @@ ms.locfileid: "86518476"
 
 **Вопрос.  Что означает сообщение об отсутствии поддержки Гибридной среды Exchange?**
 
-Функция гибридного развертывания Exchange обеспечивает сосуществование почтовых ящиков Exchange в локальной среде и в службе Office 365. Azure AD Connect синхронизирует определенный набор атрибутов из AAD в локальный каталог.  Агент подготовки облака в настоящее время не синхронизирует эти атрибуты обратно в локальный каталог, и поэтому не поддерживается в качестве замены Azure AD Connect.
+Гибридное развертывание Exchange обеспечивает совместное существование почтовых ящиков Exchange как локально, так и в Microsoft 365. Azure AD Connect синхронизирует определенный набор атрибутов из AAD в локальный каталог.  Агент подготовки облака в настоящее время не синхронизирует эти атрибуты обратно в локальный каталог, и поэтому не поддерживается в качестве замены Azure AD Connect.
 
 **Вопрос.  Можно ли установить агент подготовки облака на Windows Server Core?**
 

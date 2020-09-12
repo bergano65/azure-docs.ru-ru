@@ -6,12 +6,12 @@ ms.topic: how-to
 ms.date: 03/30/2020
 ms.author: helohr
 manager: lizross
-ms.openlocfilehash: c261ea174f37de51a8fbd5b36aeb40c26d44e6a9
-ms.sourcegitcommit: 56cbd6d97cb52e61ceb6d3894abe1977713354d9
+ms.openlocfilehash: 09e0b3bbac0bdc1d268aa7f24741aeb12a7d366d
+ms.sourcegitcommit: 4a7a4af09f881f38fcb4875d89881e4b808b369b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/20/2020
-ms.locfileid: "88691400"
+ms.lasthandoff: 09/04/2020
+ms.locfileid: "89462587"
 ---
 # <a name="deploy-a-windows-virtual-desktop-classic-management-tool-with-an-azure-resource-manager-template"></a>Развертывание средства управления виртуальным рабочим столом Windows (классическая модель) с помощью шаблона Azure Resource Manager
 
@@ -20,7 +20,7 @@ ms.locfileid: "88691400"
 
 В этой статье содержатся инструкции, которые помогут развернуть пользовательский интерфейс с помощью шаблона Azure Resource Manager.
 
-## <a name="important-considerations"></a>Важные замечания
+## <a name="important-considerations"></a>Важные аспекты
 
 Так как приложению требуется согласие на взаимодействие с Виртуальным рабочим столом Windows, это средство не поддерживает сценарии совместной работы (B2B). Для каждой подписки клиента Azure Active Directory потребуется отдельное развертывание средства управления.
 
@@ -98,7 +98,7 @@ ms.locfileid: "88691400"
 
 Выполните приведенные ниже инструкции, чтобы запустить средство:
 
-1. Выберите ресурс Служб приложений Azure с именем, которое вы указали в шаблоне (например, Apr3UX), и перейдите по связанному с ним URL-адресу (например, <https://rdmimgmtweb-210520190304.azurewebsites.net>).
+1. Выберите ресурс Служб приложений Azure с именем, которое вы указали в шаблоне (например, Apr3UX), и перейдите по связанному с ним URL-адресу (например, `https://rdmimgmtweb-210520190304.azurewebsites.net`).
 2. Войдите в систему, используя свои учетные данные для Виртуального рабочего стола Windows.
 3. При появлении запроса на выбор группы клиентов выберите **Default Tenant Group** (Группа клиентов по умолчанию) из раскрывающегося списка.
 4. После выбора **Default Tenant Group** (Группа клиентов по умолчанию) в левой части окна должно появиться меню. В этом меню найдите и выберите имя группы клиентов.

@@ -16,12 +16,12 @@ ms.date: 10/07/2019
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: ea5c3e0ffc000d3d239e87e9771d1b49d98fd206
-ms.sourcegitcommit: 02ca0f340a44b7e18acca1351c8e81f3cca4a370
+ms.openlocfilehash: 3d72b70248e317d1caee4527be38fe304cfe7f16
+ms.sourcegitcommit: f8d2ae6f91be1ab0bc91ee45c379811905185d07
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/19/2020
-ms.locfileid: "88589050"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89658333"
 ---
 # <a name="azure-active-directory-seamless-single-sign-on-frequently-asked-questions"></a>Простой единый вход Azure Active Directory: Часто задаваемые вопросы
 
@@ -37,7 +37,7 @@ ms.locfileid: "88589050"
 
 **Вопрос. Доступен ли простой единый вход в облаках [Azure для Германии](https://www.microsoft.de/cloud-deutschland) и [Azure для государственных организаций](https://azure.microsoft.com/features/gov/)?**
 
-Простой единый вход доступен для облака Azure для государственных организаций. Сведения см. в статье [Рекомендации по гибридной идентификации для Azure для государственных организаций](https://docs.microsoft.com/azure/active-directory/hybrid/reference-connect-government-cloud).
+Простой единый вход доступен для облака Azure для государственных организаций. Сведения см. в статье [Рекомендации по гибридной идентификации для Azure для государственных организаций](./reference-connect-government-cloud.md).
 
 **Вопрос. Какие приложения поддерживают возможность использовать параметр `domain_hint` или `login_hint` для простого единого входа?**
 
@@ -62,11 +62,11 @@ ms.locfileid: "88589050"
 
 **Вопрос. Поддерживает ли простой единый вход в качестве имени пользователя `Alternate ID` вместо `userPrincipalName`?**
 
-Да. Поддерживает ли простой единый вход `Alternate ID` в качестве имени пользователя, если это настроено в Azure AD Connect, как показано [здесь](how-to-connect-install-custom.md). Не все приложения Office 365 поддерживают `Alternate ID`. Заявление о поддержке см. в документации к приложению.
+Да. Поддерживает ли простой единый вход `Alternate ID` в качестве имени пользователя, если это настроено в Azure AD Connect, как показано [здесь](how-to-connect-install-custom.md). Не все Microsoft 365 поддерживаются приложениями `Alternate ID` . Заявление о поддержке см. в документации к приложению.
 
-**Вопрос. В чем разница между возможностями единого входа, который предоставляется через [присоединение к Azure AD](../active-directory-azureadjoin-overview.md), и простого единого входа?**
+**Вопрос. В чем разница между возможностями единого входа, который предоставляется через [присоединение к Azure AD](../devices/overview.md), и простого единого входа?**
 
-После [присоединения к Azure AD](../active-directory-azureadjoin-overview.md) пользователи могут воспользоваться возможностями единого входа, если их устройства зарегистрированы в Azure AD. Эти устройства не должны быть присоединены к домену. Возможность единого входа обеспечивается с помощью *основных токенов обновления* (*PRT*), а не протокола Kerberos. Лучше всего эта возможность работает на устройствах с Windows 10. В браузере Microsoft Edge единый вход выполняется автоматически. Эта возможность также работает в Chrome с использованием расширения браузера.
+После [присоединения к Azure AD](../devices/overview.md) пользователи могут воспользоваться возможностями единого входа, если их устройства зарегистрированы в Azure AD. Эти устройства не должны быть присоединены к домену. Возможность единого входа обеспечивается с помощью *основных токенов обновления* (*PRT*), а не протокола Kerberos. Лучше всего эта возможность работает на устройствах с Windows 10. В браузере Microsoft Edge единый вход выполняется автоматически. Эта возможность также работает в Chrome с использованием расширения браузера.
 
 В клиенте можно настроить и технологию единого входа, предоставленную после присоединения к Azure AD, и простой единый вход. Эти две возможности дополняют друг друга. Если включены обе эти технологии, приоритет имеет единый вход, предоставленный после присоединения к Azure AD.
 
@@ -85,7 +85,7 @@ ms.locfileid: "88589050"
 
    **Шаг 1. Получение списка лесов AD, где включен простой единый вход**
 
-   1. Сначала скачайте и установите [Azure PowerShell](https://docs.microsoft.com/powershell/azure/active-directory/overview).
+   1. Сначала скачайте и установите [Azure PowerShell](/powershell/azure/active-directory/overview).
    2. Перейдите в папку `%programfiles%\Microsoft Azure Active Directory Connect`.
    3. Импортируйте модуль PowerShell для простого единого входа с помощью следующей команды: `Import-Module .\AzureADSSO.psd1`.
    4. Откройте PowerShell от имени администратора. В PowerShell вызовите `New-AzureADSSOAuthenticationContext`. Появится всплывающее окно для ввода учетных данных глобального администратора клиента.
@@ -130,7 +130,7 @@ ms.locfileid: "88589050"
 
    Выполните следующие действия на локальном сервере с запущенным средством Azure AD Connect:
 
-   1. Сначала скачайте и установите [Azure PowerShell](https://docs.microsoft.com/powershell/azure/active-directory/overview).
+   1. Сначала скачайте и установите [Azure PowerShell](/powershell/azure/active-directory/overview).
    2. Перейдите в папку `%programfiles%\Microsoft Azure Active Directory Connect`.
    3. Импортируйте модуль PowerShell для простого единого входа с помощью следующей команды: `Import-Module .\AzureADSSO.psd1`.
    4. Откройте PowerShell от имени администратора. В PowerShell вызовите `New-AzureADSSOAuthenticationContext`. Появится всплывающее окно для ввода учетных данных глобального администратора клиента.
@@ -145,7 +145,7 @@ ms.locfileid: "88589050"
 
    Выполните задачи 1–4 ниже, если вы отключили простой единый вход с помощью Azure AD Connect. Если вы отключили простой единый вход с помощью PowerShell, сразу переходите к задаче 5 ниже.
 
-   1. Сначала скачайте и установите [Azure PowerShell](https://docs.microsoft.com/powershell/azure/active-directory/overview).
+   1. Сначала скачайте и установите [Azure PowerShell](/powershell/azure/active-directory/overview).
    2. Перейдите в папку `%programfiles%\Microsoft Azure Active Directory Connect`.
    3. Импортируйте модуль PowerShell для простого единого входа с помощью следующей команды: `Import-Module .\AzureADSSO.psd1`.
    4. Откройте PowerShell от имени администратора. В PowerShell вызовите `New-AzureADSSOAuthenticationContext`. Появится всплывающее окно для ввода учетных данных глобального администратора клиента.

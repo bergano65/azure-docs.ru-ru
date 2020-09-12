@@ -10,12 +10,12 @@ ms.reviewer: jmartens
 author: cartacioS
 ms.author: sacartac
 ms.date: 04/22/2020
-ms.openlocfilehash: 081da2b3f6fbe97ebce21940d7e0ca8978793b15
-ms.sourcegitcommit: 271601d3eeeb9422e36353d32d57bd6e331f4d7b
+ms.openlocfilehash: eef8abebde2578ac549b2facfc1317a90ecc7fb5
+ms.sourcegitcommit: f8d2ae6f91be1ab0bc91ee45c379811905185d07
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/20/2020
-ms.locfileid: "88652106"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89658559"
 ---
 # <a name="what-is-automated-machine-learning-automl"></a>Что такое автоматизированное машинное обучение (AutoML)?
 
@@ -204,9 +204,9 @@ ms.locfileid: "88652106"
 
 ## <a name="automl-in-azure-machine-learning"></a>Использование AutoML в Машинном обучении Azure
 
-Машинное обучение Azure предлагает два варианта взаимодействия с автоматизированным ML.
+Машинное обучение Azure предлагает два опыта работы с автоматизированным ML:
 
-* [Пакет SDK для Python для Машинного обучения Azure](https://docs.microsoft.com/python/api/overview/azure/ml/intro?view=azure-ml-py) для тех, кто предпочитает работать с кодом. 
+* [Пакет SDK для Python для Машинного обучения Azure](https://docs.microsoft.com/python/api/overview/azure/ml/intro?view=azure-ml-py&preserve-view=true) для тех, кто предпочитает работать с кодом. 
 
 * Студия Машинного обучения Azure по адресу [https://ml.azure.com](https://ml.azure.com/) для тех, кто имеет ограниченные знания кода или обходится без них.  
 
@@ -277,7 +277,7 @@ ms.locfileid: "88652106"
 
  + **Сведения о низком или недоступном коде**см. в [руководстве по созданию автоматизированных моделей классификации ML с помощью машинное обучение Azure Studio](tutorial-first-experiment-automated-ml.md).
 
-В статье приводятся дополнительные сведения о возможностях, предоставляемых Аутомл. Например, 
+В статье приводятся дополнительные сведения о возможностях, предоставляемых Аутомл. Например, примененная к объекту директива 
 
 + Настройка параметров для экспериментов автоматического обучения
     + В Студии машинного обучения Azure выполните [эти инструкции](how-to-use-automated-ml-for-ml-models.md). 
@@ -289,9 +289,9 @@ ms.locfileid: "88652106"
 
 Ознакомьтесь с подробными примерами кода и вариантами использования в [репозитории записных книжек GitHub для автоматизированных примеров машинного обучения](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/automated-machine-learning/).
 
-### <a name="python-sdk-reference"></a>Справочник по пакету SDK для Python 
+### <a name="python-sdk-reference"></a>Справочник по пакету SDK для Python
 
-Углубить свои знания о шаблонах разработки SDK и спецификациях классов с помощью [справочной документации по классу аутомл](https://docs.microsoft.com/python/api/azureml-train-automl-client/azureml.train.automl.automlconfig.automlconfig?view=azure-ml-py). 
+Углубить свои знания о шаблонах разработки SDK и спецификациях классов с помощью [справочной документации по классу аутомл](https://docs.microsoft.com/python/api/azureml-train-automl-client/azureml.train.automl.automlconfig.automlconfig?view=azure-ml-py&preserve-view=true). 
 
 > [!Note]
 > Автоматизированные функции машинного обучения также доступны в других решениях Майкрософт, таких как, [ml.NET](https://docs.microsoft.com/dotnet/machine-learning/automl-overview), [HDInsight](../hdinsight/spark/apache-spark-run-machine-learning-automl.md), [Power BI](https://docs.microsoft.com/power-bi/service-machine-learning-automated) и [SQL Server](https://cloudblogs.microsoft.com/sqlserver/2019/01/09/how-to-automate-machine-learning-on-sql-server-2019-big-data-clusters/)

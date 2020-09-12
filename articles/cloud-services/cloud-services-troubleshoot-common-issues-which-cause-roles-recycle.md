@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: tbd
 ms.date: 06/15/2018
 ms.author: v-six
-ms.openlocfilehash: 61f555dc8f24ce303934187d36ee994b25b31920
-ms.sourcegitcommit: dee7b84104741ddf74b660c3c0a291adf11ed349
+ms.openlocfilehash: 4bf33db28d68b600d860a132027e5be440377b34
+ms.sourcegitcommit: 4a7a4af09f881f38fcb4875d89881e4b808b369b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85920088"
+ms.lasthandoff: 09/04/2020
+ms.locfileid: "89460292"
 ---
 # <a name="common-issues-that-cause-roles-to-recycle"></a>Распространенные проблемы, вызывающие перезапуск ролей
 В этой статье рассматриваются некоторые распространенные причины проблем с развертыванием, а также советы по их устранению. На наличие проблем с приложением указывает то, что экземпляр роли не запускается или циклически переключается между состояниями "Инициализация", "Занято" и "Остановлено".
@@ -62,10 +62,10 @@ DefaultEndpointsProtocol=https;AccountName=MyAccountName;AccountKey=MyAccountKey
 ## <a name="exported-certificate-does-not-include-private-key"></a>Экспортированный сертификат не содержит закрытый ключ.
 Чтобы запустить веб-роль с помощью TLS, необходимо убедиться, что экспортированный сертификат управления включает закрытый ключ. При использовании *диспетчера сертификатов Windows* для экспорта сертификата обязательно выберите **Да** в качестве значения параметра **Экспорт закрытого ключа**. Сертификат следует экспортировать в формате PFX, так как в настоящее время поддерживается только он.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 Просмотрите дополнительные [статьи об устранении неполадок](https://azure.microsoft.com/documentation/articles/?tag=top-support-issue&product=cloud-services) в облачных службах.
 
-Дополнительные сценарии перезапуска ролей см. в [серии статей в блоге Кевина Уильямсона](https://blogs.msdn.com/b/kwill/archive/2013/08/09/windows-azure-paas-compute-diagnostics-data.aspx).
+Дополнительные сценарии перезапуска ролей см. в [серии статей в блоге Кевина Уильямсона](https://docs.microsoft.com/archive/blogs/kwill/windows-azure-paas-compute-diagnostics-data).
 
 [RoleEntryPoint]: https://msdn.microsoft.com/library/microsoft.windowsazure.serviceruntime.roleentrypoint.aspx
 [OnStart]: https://msdn.microsoft.com/library/microsoft.windowsazure.serviceruntime.roleentrypoint.onstart.aspx

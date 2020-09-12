@@ -3,12 +3,12 @@ title: Azure Lighthouse и управляемые приложения Azure
 description: Узнайте, как управляемые приложения Azure Лигхсаусе и Azure могут помочь в различных сценариях и о том, как их можно использовать вместе.
 ms.date: 08/12/2020
 ms.topic: conceptual
-ms.openlocfilehash: 81ff61a6d1b7487d3da0643bac3987589de46c1e
-ms.sourcegitcommit: c28fc1ec7d90f7e8b2e8775f5a250dd14a1622a6
+ms.openlocfilehash: 7fd8801fc714a0f0c245d27462e368602dc41eb5
+ms.sourcegitcommit: de2750163a601aae0c28506ba32be067e0068c0c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/13/2020
-ms.locfileid: "88163430"
+ms.lasthandoff: 09/04/2020
+ms.locfileid: "89483853"
 ---
 # <a name="azure-lighthouse-and-azure-managed-applications"></a>Azure Lighthouse и управляемые приложения Azure
 
@@ -23,7 +23,7 @@ ms.locfileid: "88163430"
 
 С помощью [Azure лигхсаусе](../overview.md)поставщик услуг может выполнять широкий спектр задач управления непосредственно в подписке клиента (или группе ресурсов). Этот доступ достигается с помощью логической проекции, позволяя поставщикам служб входить в свой клиент и обращаться к ресурсам, принадлежащим клиенту клиента. Клиент может определить, какие подписки или группы ресурсов делегировать поставщику услуг, и что клиент обеспечивает полный доступ к этим ресурсам. Они также могут в любое время удалить доступ поставщика услуг.
 
-Чтобы использовать Azure Лигхсаусе, клиенты будут подключены для [делегированного управления ресурсами Azure](azure-delegated-resource-management.md) либо путем [развертывания шаблонов ARM](../how-to/onboard-customer.md) , либо с помощью [предложения управляемой службы в Azure Marketplace](managed-services-offers.md). Вы можете отразить влияние на участие клиентов, [связав свой идентификатор партнера](../../cost-management-billing/manage/link-partner-id.md).
+Чтобы использовать Azure Лигхсаусе, клиенты будут подключены для [делегированного управления ресурсами Azure](azure-delegated-resource-management.md) либо путем [развертывания шаблонов ARM](../how-to/onboard-customer.md) , либо с помощью [предложения управляемой службы в Azure Marketplace](managed-services-offers.md). Вы можете отразить влияние на участие клиентов и получить получившийся кредит от партнера по партнерам, [связав свой идентификатор партнера](../how-to/partner-earned-credit.md).
 
 Azure Лигхсаусе обычно используется, когда поставщик услуг будет выполнять задачи управления для клиента на постоянной основе.
 

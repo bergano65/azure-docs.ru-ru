@@ -8,12 +8,12 @@ ms.topic: conceptual
 author: j-martens
 ms.author: jmartens
 ms.date: 06/11/2020
-ms.openlocfilehash: fbe3f0109ca3af2cf9ff44061c7882e6bd72c8a6
-ms.sourcegitcommit: 54d8052c09e847a6565ec978f352769e8955aead
+ms.openlocfilehash: ab8a49f62735a47c4ccc9fa488eed60088cd9c20
+ms.sourcegitcommit: f8d2ae6f91be1ab0bc91ee45c379811905185d07
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88508608"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89658590"
 ---
 # <a name="enterprise-preview-and-basic-editions-of-azure-machine-learning"></a>Enterprise (Предварительная версия) и основные выпуски Машинное обучение Azure 
 
@@ -29,7 +29,7 @@ ms.locfileid: "88508608"
 
 ### <a name="data-for-machine-learning-capabilities"></a>Данные для Машинное обучение возможностей  
 
-| Возможности                     | Выпуск                 |
+| Характеристики                     | Выпуск                 |
 |------------------------------------------------------------------------------------|:-----------:|
 | Добавление меток: [Создание проектов с метками и управление ими](tutorial-labeling.md) в студии (веб)                                                | Все                     |
 | Пометка: метка в студии (веб)                                    | Все                     |
@@ -46,7 +46,7 @@ ms.locfileid: "88508608"
 
 ### <a name="automated-training-capabilities-automl"></a>Возможности автоматического обучения (Аутомл)
 
-| Возможности    | Выпуск                 |
+| Характеристики    | Выпуск                 |
 |------------------------------------------------------------------------------------|:-----------:|
 | Создание и запуск [экспериментов аутомл в записных книжках](how-to-configure-auto-train.md)               | Все                     |
 | Создание и запуск  [экспериментов аутомл в студии (Интернет)](how-to-use-automated-ml-for-ml-models.md)   | Только выпуск Enterprise Edition |
@@ -60,7 +60,7 @@ ms.locfileid: "88508608"
 
 ### <a name="responsible-machine-learning"></a>Ответственный Машинное обучение
 
-| Возможности    | Выпуск                 |
+| Характеристики    | Выпуск                 |
 |------------------------------------------------------------------------------------|:-----------:|
 | [Объясняемость модели](how-to-machine-learning-interpretability-automl.md)                                              | Все                     |
 | [Разностное конфиденциальность](how-to-differential-privacy.md)                          | Все                     |
@@ -73,7 +73,7 @@ ms.locfileid: "88508608"
 
 ### <a name="build-and-train-capabilities"></a>Возможности сборки и обучения
 
-| Возможности    | Выпуск                 |
+| Характеристики    | Выпуск                 |
 |------------------------------------------------------------------------------------|:-----------:|
 | Интеграция Visual Studio Code                                                     | Все                     |
 | Подкреплением обучение                                                             | Все                     |
@@ -95,7 +95,7 @@ ms.locfileid: "88508608"
 
 ### <a name="deployment-and-model-management-capabilities"></a>Возможности развертывания и управления моделями
 
-| Возможности                            | Выпуск                 |
+| Характеристики                            | Выпуск                 |
 |------------------------------------------------------------------------------------|:-----------:|
 | Расширение Azure DevOps для Машинное обучение и Azure ML CLI                 | Все                     |
 | [Интеграция с Сеткой событий](how-to-use-event-grid.md)                                                             | Все                     |
@@ -110,15 +110,15 @@ ms.locfileid: "88508608"
 
 ### <a name="security-governance-and-control-capabilities"></a>Возможности безопасности, управления и контроля
 
-| Возможности     | Выпуск                 |
+| Характеристики     | Выпуск                 |
 |------------------------------------------------------------------------------------|:-----------:|
 | Поддержка [управления доступом на основе ролей в Azure (Azure RBAC)](how-to-assign-roles.md)                                           | Все                     |
-| Поддержка [виртуальных сетей (VNet)](how-to-enable-virtual-network.md) для вычислений                                         | Все                     |
+| Поддержка [виртуальных сетей (VNet)](how-to-secure-training-vnet.md) для вычислений                                         | Все                     |
 | Оценка проверки подлинности конечной точки                                                    | Все                     |
 | [Частная ссылка рабочей области](how-to-configure-private-link.md)                                                            | Все                     |
 | [Управление квотами](how-to-manage-quotas.md) в рабочих областях                                                 | Только выпуск Enterprise Edition |
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о доступных возможностях см. на [странице с обзором машинное обучение Azure Edition и ценах](https://azure.microsoft.com/pricing/details/machine-learning/). 
 

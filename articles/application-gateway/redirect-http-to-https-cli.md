@@ -8,12 +8,12 @@ ms.service: application-gateway
 ms.topic: how-to
 ms.date: 11/15/2019
 ms.author: victorh
-ms.openlocfilehash: 19bfaf611093f6ca178a627123d4d0f9c8ccf3ca
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 828012e7e41f8710dc57f1c830b81d403507d27d
+ms.sourcegitcommit: 1b320bc7863707a07e98644fbaed9faa0108da97
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84804412"
+ms.lasthandoff: 09/09/2020
+ms.locfileid: "89594275"
 ---
 # <a name="create-an-application-gateway-with-http-to-https-redirection-using-the-azure-cli"></a>Создание шлюза приложений с сертификатом с помощью Azure CLI
 
@@ -21,12 +21,11 @@ ms.locfileid: "84804412"
 
 Вы узнаете, как выполнять следующие задачи:
 
-> [!div class="checklist"]
-> * Создание самозаверяющего сертификата
-> * настройка сети;
-> * создание шлюза приложений с сертификатом;
-> * добавление прослушивателя и правила перенаправления;
-> * создание масштабируемого набора виртуальных машин с серверным пулом, используемым по умолчанию.
+* Создание самозаверяющего сертификата
+* настройка сети;
+* создание шлюза приложений с сертификатом;
+* добавление прослушивателя и правила перенаправления;
+* создание масштабируемого набора виртуальных машин с серверным пулом, используемым по умолчанию.
 
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 

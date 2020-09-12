@@ -5,12 +5,12 @@ services: container-service
 ms.topic: article
 ms.date: 06/02/2020
 ms.reviewer: nieberts, jomore
-ms.openlocfilehash: f9bc0cd229888d952821509ced6cc5410000ee52
-ms.sourcegitcommit: 656c0c38cf550327a9ee10cc936029378bc7b5a2
+ms.openlocfilehash: 6f773f57bea40ba87f35ca2bbefe424d084afb2e
+ms.sourcegitcommit: 4a7a4af09f881f38fcb4875d89881e4b808b369b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89078730"
+ms.lasthandoff: 09/04/2020
+ms.locfileid: "89462145"
 ---
 # <a name="use-kubenet-networking-with-your-own-ip-address-ranges-in-azure-kubernetes-service-aks"></a>Использование сети kubenet с пользовательскими диапазонами IP-адресов в Службе Azure Kubernetes (AKS)
 
@@ -24,7 +24,7 @@ ms.locfileid: "89078730"
 
 * Виртуальная сеть для кластера AKS должна разрешать исходящее подключение к Интернету.
 * Не создавайте больше одного кластера AKS в одной подсети.
-* Кластеры AKS не могут использовать `169.254.0.0/16` , `172.30.0.0/16` , `172.31.0.0/16` или `192.0.2.0/24` для диапазона адресов службы Kubernetes.
+* Кластеры AKS не могут использовать `169.254.0.0/16` , `172.30.0.0/16` , `172.31.0.0/16` или `192.0.2.0/24` для диапазона адресов службы Kubernetes, диапазона адресов Pod или диапазона адресов виртуальной сети кластера.
 * Субъект-служба, используемая кластером AKS, должна иметь по крайней мере роль [участника сети](../role-based-access-control/built-in-roles.md#network-contributor) в подсети в виртуальной сети. Кроме того, для создания субъекта-службы и назначения ему разрешений необходимо иметь соответствующие разрешения, например владелец подписки. Если вы хотите определить [пользовательскую роль](../role-based-access-control/custom-roles.md) вместо того, чтобы использовать встроенную роль участника сети, требуются следующие разрешения:
   * `Microsoft.Network/virtualNetworks/subnets/join/action`
   * `Microsoft.Network/virtualNetworks/subnets/read`

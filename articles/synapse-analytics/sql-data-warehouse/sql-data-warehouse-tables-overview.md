@@ -11,12 +11,12 @@ ms.date: 03/15/2019
 ms.author: xiaoyul
 ms.reviewer: igorstan
 ms.custom: seo-lt-2019
-ms.openlocfilehash: eaea80ae874b93a640c885e0d4b7afde2a165c16
-ms.sourcegitcommit: c5021f2095e25750eb34fd0b866adf5d81d56c3a
+ms.openlocfilehash: 0138b4dcc547b961f941522abd03cd351d4d3737
+ms.sourcegitcommit: 4a7a4af09f881f38fcb4875d89881e4b808b369b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88798573"
+ms.lasthandoff: 09/04/2020
+ms.locfileid: "89460553"
 ---
 # <a name="design-tables-in-synapse-sql-pool"></a>Разработка таблиц в пуле синапсе SQL
 
@@ -46,7 +46,7 @@ CREATE SCHEMA wwi;
 
 | Таблица WideWorldImportersDW  | Тип таблицы | Пул SQL |
 |:-----|:-----|:------|:-----|
-| Город | Измерение | wwi.DimCity |
+| City | Измерение | wwi.DimCity |
 | Порядок | Факты | wwi.FactOrder |
 
 ## <a name="table-persistence"></a>Сохраняемость таблицы
@@ -111,7 +111,7 @@ CREATE TABLE MyTable (col1 int, col2 int );
 
 ## <a name="table-partitions"></a>Разделы таблицы
 
-Секционированная таблица хранит данные и выполняет операции со строками таблицы в соответствии с диапазонами данных. Например, таблицу можно разделить по дню, месяцу или году. Вы можете улучшить производительность запросов путем исключения секций, что ограничивает проверку запросов к данным в секции. Вы также можете управлять данными путем переключения разделов. Так как данные в хранилище данных SQL уже распределены, слишком большое количество разделов может замедлить производительность запросов. Дополнительные сведения см. в статье [Секционирование таблиц в хранилище данных SQL](sql-data-warehouse-tables-partition.md).  При переключении секций в секции таблицы, которые не являются пустыми, рекомендуется использовать параметр TRUNCATE_TARGET в инструкции [ALTER TABLE](/sql/t-sql/statements/alter-table-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest) , если существующие данные должны быть усечены. Приведенный ниже код переключается в преобразованных ежедневных данных в SalesFact перезаписи существующих данных.
+Секционированная таблица хранит данные и выполняет операции со строками таблицы в соответствии с диапазонами данных. Например, таблицу можно разделить по дню, месяцу или году. Вы можете улучшить производительность запросов путем исключения секций, что ограничивает проверку запросов к данным в секции. Вы также можете управлять данными путем переключения разделов. Так как данные в Azure синапсе Analytics уже распределены, слишком большое количество секций может снизить производительность запросов. Дополнительные сведения см. в статье [Секционирование таблиц в хранилище данных SQL](sql-data-warehouse-tables-partition.md).  При переключении секций в секции таблицы, которые не являются пустыми, рекомендуется использовать параметр TRUNCATE_TARGET в инструкции [ALTER TABLE](/sql/t-sql/statements/alter-table-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest) , если существующие данные должны быть усечены. Приведенный ниже код переключается в преобразованных ежедневных данных в SalesFact перезаписи существующих данных.
 
 ```sql
 ALTER TABLE SalesFact_DailyFinalLoad SWITCH PARTITION 256 TO SalesFact PARTITION 256 WITH (TRUNCATE_TARGET = ON);  
@@ -294,9 +294,6 @@ SELECT *
 FROM size
 ;
 ```
-
->[!TIP]
-> Для повышения производительности в синапсе SQL рассмотрите возможность использования представления **sys. pdw_permanent_table_mappings** вместо **sys. pdw_table_mappings** в постоянных пользовательских таблицах. Дополнительные сведения см. в разделе **[sys. pdw_permanent_table_mappings &#40;&#41;Transact-SQL ](/sql/relational-databases/system-catalog-views/sys-pdw-permanent-table-mappings-transact-sql?view=azure-sqldw-latest)** .
 
 ### <a name="table-space-summary"></a>Сводка табличного пространства
 

@@ -4,12 +4,12 @@ description: Из этой статьи вы узнаете, как управл
 ms.topic: conceptual
 ms.date: 09/12/2018
 ms.assetid: b8487516-7ac5-4435-9680-674d9ecf5642
-ms.openlocfilehash: f9cd0cca938dac79071d7ded6f6139f4e3c3840d
-ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
+ms.openlocfilehash: ad60436d82ccc8049a4509ba5bf1e244bee150ea
+ms.sourcegitcommit: 655e4b75fa6d7881a0a410679ec25c77de196ea3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89011196"
+ms.lasthandoff: 09/07/2020
+ms.locfileid: "89506684"
 ---
 # <a name="restore-azure-virtual-machines-using-rest-api"></a>Восстановление виртуальных машин Azure с помощью REST API
 
@@ -31,7 +31,7 @@ URI *GET* имеет все необходимые параметры. Нет н
 
 ### <a name="responses"></a>Ответы
 
-|Имя  |Type  |Описание  |
+|Имя  |Тип  |Описание  |
 |---------|---------|---------|
 |200 ОК     |   [RecoveryPointResourceList](/rest/api/backup/recoverypoints/list#recoverypointresourcelist)      |       ОК  |
 
@@ -144,7 +144,7 @@ POST https://management.azure.com/Subscriptions/{subscriptionId}/resourceGroups/
 
 Она возвращает два ответа: 202 (принято), когда создается другая операция, и 200 (ОК), когда эта операция завершается.
 
-|Имя  |Type  |Описание  |
+|Имя  |Тип  |Описание  |
 |---------|---------|---------|
 |202 — принято     |         |     Принято    |
 
@@ -216,7 +216,7 @@ X-Powered-By: ASP.NET
 
 Чтобы инициировать восстановление диска из резервной копии виртуальной машины Azure, выполните компоненты текста запроса.
 
-|Имя  |Type  |Описание  |
+|Имя  |Тип  |Описание  |
 |---------|---------|---------|
 |properties     | [IaaSVMRestoreRequest](/rest/api/backup/restores/trigger#iaasvmrestorerequest)        |    RestoreRequestResourceProperties     |
 
@@ -244,6 +244,30 @@ X-Powered-By: ASP.NET
 }
 ```
 
+### <a name="restore-disks-selectively"></a>Выборочное восстановление дисков
+
+Если вы [выборочно создаете резервные копии дисков](backup-azure-arm-userestapi-backupazurevms.md#excluding-disks-in-azure-vm-backup), список резервных дисков, доступных для архивации, приведен в [сводке по точкам восстановления](#select-recovery-point) и [подробному ответу](https://docs.microsoft.com/rest/api/backup/recoverypoints/get). Вы также можете выборочно восстановить диски и дополнительные [сведения.](selective-disk-backup-restore.md#selective-disk-restore) Чтобы выборочно восстановить диск из списка резервных копий дисков, найдите LUN диска в ответе точки восстановления и добавьте свойство **ресторедисклунлист** в [текст запроса выше](#example-request) , как показано ниже.
+
+```json
+{
+    "properties": {
+        "objectType": "IaasVMRestoreRequest",
+        "recoveryPointId": "20982486783671",
+        "recoveryType": "RestoreDisks",
+        "sourceResourceId": "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/testRG/providers/Microsoft.Compute/virtualMachines/testVM",
+        "storageAccountId": "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/testRG/providers/Microsoft.Storage/storageAccounts/testAccount",
+        "region": "westus",
+        "createNewCloudService": false,
+        "originalStorageAccountOption": false,
+        "encryptionDetails": {
+          "encryptionEnabled": false
+        },
+        "restoreDiskLunList" : [0]
+    }
+}
+
+```
+
 После того как вы отправите ответ, как описано [выше](#responses), и полное задание выполнено, диски и Конфигурация виртуальной машины ("VMConfig.jsна") будут присутствовать в указанной учетной записи хранения.
 
 ### <a name="replace-disks-in-a-backed-up-virtual-machine"></a>Замена дисков в резервной виртуальной машине
@@ -254,7 +278,7 @@ X-Powered-By: ASP.NET
 
 Чтобы активировать замену дисков из резервной копии виртуальной машины Azure, ниже приведены компоненты текста запроса.
 
-|Имя  |Type  |Описание  |
+|Имя  |Тип  |Описание  |
 |---------|---------|---------|
 |properties     | [IaaSVMRestoreRequest](/rest/api/backup/restores/trigger#iaasvmrestorerequest)        |    RestoreRequestResourceProperties     |
 
