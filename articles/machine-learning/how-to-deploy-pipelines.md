@@ -11,12 +11,12 @@ author: lobrien
 ms.date: 8/25/2020
 ms.topic: conceptual
 ms.custom: how-to, contperfq1
-ms.openlocfilehash: 4515eda6723a9a347a7a0aa56187f40ed4269cdc
-ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
+ms.openlocfilehash: 08529d1bb50a1a5d5b3c7d0296aa36f021f45e98
+ms.sourcegitcommit: 3be3537ead3388a6810410dfbfe19fc210f89fec
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88942227"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89646089"
 ---
 # <a name="publish-and-track-machine-learning-pipelines"></a>Публикация и мониторинг конвейеров машинного обучения
 
@@ -38,7 +38,7 @@ ms.locfileid: "88942227"
 
 После создания и запуска конвейера можно опубликовать конвейер, чтобы он выполнялся с разными входными данными. Чтобы конечная точка RESTFUL уже опубликованного конвейера принимала параметры, необходимо настроить конвейер на использование `PipelineParameter` объектов для аргументов, которые будут отличаться.
 
-1. Чтобы создать параметр конвейера, используйте объект [PipelineParameter](https://docs.microsoft.com/python/api/azureml-pipeline-core/azureml.pipeline.core.graph.pipelineparameter?view=azure-ml-py) со значением по умолчанию.
+1. Чтобы создать параметр конвейера, используйте объект [PipelineParameter](https://docs.microsoft.com/python/api/azureml-pipeline-core/azureml.pipeline.core.graph.pipelineparameter?view=azure-ml-py&preserve-view=true) со значением по умолчанию.
 
    ```python
    from azureml.pipeline.core.graph import PipelineParameter
@@ -73,7 +73,7 @@ ms.locfileid: "88942227"
 
 Все опубликованные конвейеры используют конечную точку REST. Конечная точка конвейера позволяет запускать конвейер из любых внешних систем, включая клиентов, не относящихся к Python. Эта конечная точка обеспечивает управляемую повторяемость для сценариев пакетной оценки и переобучения.
 
-Чтобы вызвать выполнение предыдущего конвейера, необходим маркер заголовка проверки подлинности Azure Active Directory. Этот маркер описан в справочнике по [классам азуреклиаусентикатион](https://docs.microsoft.com/python/api/azureml-core/azureml.core.authentication.azurecliauthentication?view=azure-ml-py) и в [проверке подлинности в машинное обучение Azure](https://aka.ms/pl-restep-auth) записной книжке.
+Чтобы вызвать выполнение предыдущего конвейера, необходим маркер заголовка проверки подлинности Azure Active Directory. Этот маркер описан в справочнике по [классам азуреклиаусентикатион](https://docs.microsoft.com/python/api/azureml-core/azureml.core.authentication.azurecliauthentication?view=azure-ml-py&preserve-view=true) и в [проверке подлинности в машинное обучение Azure](https://aka.ms/pl-restep-auth) записной книжке.
 
 ```python
 from azureml.pipeline.core import PublishedPipeline
@@ -150,10 +150,10 @@ p = PublishedPipeline.get(ws, id="068f4885-7088-424b-8ce2-eeb9ba5381a6")
 p.disable()
 ```
 
-Его можно включить снова с помощью `p.enable()` . Дополнительные сведения см. в разделе Справочник по [классам публишедпипелине](https://docs.microsoft.com/python/api/azureml-pipeline-core/azureml.pipeline.core.publishedpipeline?view=azure-ml-py) .
+Его можно включить снова с помощью `p.enable()` . Дополнительные сведения см. в разделе Справочник по [классам публишедпипелине](https://docs.microsoft.com/python/api/azureml-pipeline-core/azureml.pipeline.core.publishedpipeline?view=azure-ml-py&preserve-view=true) .
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
 - Используйте [эти записные книжки Jupyter на сайте GitHub](https://aka.ms/aml-pipeline-readme), чтобы подробнее изучить конвейеры машинного обучения.
-- См. справочную справку по пакету [azureml-конвейеры-Core](https://docs.microsoft.com/python/api/azureml-pipeline-core/?view=azure-ml-py) и пакету [azureml-конвейеры-этапов](https://docs.microsoft.com/python/api/azureml-pipeline-steps/?view=azure-ml-py) .
+- См. справочную справку по пакету [azureml-конвейеры-Core](https://docs.microsoft.com/python/api/azureml-pipeline-core/?view=azure-ml-py&preserve-view=true) и пакету [azureml-конвейеры-этапов](https://docs.microsoft.com/python/api/azureml-pipeline-steps/?view=azure-ml-py&preserve-view=true) .
 - Советы по отладке и устранению неполадок конвейеров см. [в этой статье](how-to-debug-pipelines.md) .

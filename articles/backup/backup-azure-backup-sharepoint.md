@@ -3,12 +3,12 @@ title: Резервное копирование фермы SharePoint в Azure 
 description: В этой статье описывается защита фермы SharePoint в Azure с помощью DPM или сервера службы архивации Azure
 ms.topic: conceptual
 ms.date: 03/09/2020
-ms.openlocfilehash: b326ce15cd605f4f768a03b95337bbc5bd6aaabc
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: a667626fb53920150a4b5a16759228aacbfae75d
+ms.sourcegitcommit: 3246e278d094f0ae435c2393ebf278914ec7b97b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87032890"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89375250"
 ---
 # <a name="back-up-a-sharepoint-farm-to-azure-with-dpm"></a>Резервное копирование фермы SharePoint в Azure с помощью DPM
 
@@ -24,7 +24,7 @@ ms.locfileid: "87032890"
 
 Перед архивацией фермы SharePoint в Azure необходимо выполнить некоторые действия.
 
-### <a name="prerequisites"></a>Обязательные условия
+### <a name="prerequisites"></a>Предварительные требования
 
 Прежде чем продолжить, выполните все [предварительные требования по использованию службы Microsoft Azure Backup](backup-azure-dpm-introduction.md#prerequisites-and-limitations) для защиты рабочих нагрузок. В частности, необходимо создать хранилище резервных копий, скачать учетные данные хранилища, установить агент службы Azure Backup и зарегистрировать DPM и Azure Backup Server в хранилище.
 
@@ -53,7 +53,7 @@ ms.locfileid: "87032890"
    > Так как для фермы SharePoint предусмотрен длительный срок хранения в Azure, на сервере DPM нет доступных сведений о каталоге (метаданных). В результате каждый раз, когда базу данных контента SharePoint требуется вернуть в состояние на определенный момент, необходимо каталогизировать ферму SharePoint заново.
    >
    >
-3. Нажмите кнопку **Повторить каталогизацию**.
+3. Нажмите кнопку **повторить каталогизацию**.
 
     ![DPM SharePoint Protection10](./media/backup-azure-backup-sharepoint/dpm-sharepoint-protection12.png)
 
@@ -61,10 +61,10 @@ ms.locfileid: "87032890"
 
     ![DPM SharePoint Protection11](./media/backup-azure-backup-sharepoint/dpm-sharepoint-protection13.png)
 
-    После завершения каталогизации состояние изменится на *Успешно*. Щелкните **Закрыть**.
+    После завершения каталогизации состояние изменится на *Успешно*. Выберите **Закрыть**.
 
     ![DPM SharePoint Protection12](./media/backup-azure-backup-sharepoint/dpm-sharepoint-protection14.png)
-4. Щелкните объект SharePoint на вкладке DPM **Восстановление** , чтобы получить структуру базы данных контента. Щелкните элемент правой кнопкой мыши и выберите **Восстановить**.
+4. Выберите объект SharePoint, отображаемый на вкладке **Восстановление** DPM, чтобы получить структуру базы данных содержимого. Щелкните элемент правой кнопкой мыши и выберите команду **восстановить**.
 
     ![DPM SharePoint Protection13](./media/backup-azure-backup-sharepoint/dpm-sharepoint-protection15.png)
 5. Выполните процедуру восстановления, описанную ранее в этой статье, чтобы восстановить базу данных содержимого SharePoint с диска.

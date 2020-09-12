@@ -1,5 +1,5 @@
 ---
-title: Загрузка данных в Azure синапсе Analytics
+title: Загрузка данных в Azure Synapse Analytics
 description: Копирование данных в Azure синапсе Analytics с помощью фабрики данных Azure
 services: data-factory
 ms.author: jingwang
@@ -11,18 +11,18 @@ ms.workload: data-services
 ms.topic: conceptual
 ms.custom: seo-lt-2019
 ms.date: 06/08/2020
-ms.openlocfilehash: 8891c65707822abeb2bcca52280d9b56dc725e4f
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: c90590ac4c47f6ac8d51273fecfb653dfe056b1d
+ms.sourcegitcommit: de2750163a601aae0c28506ba32be067e0068c0c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85252004"
+ms.lasthandoff: 09/04/2020
+ms.locfileid: "89485776"
 ---
 # <a name="load-data-into-azure-synapse-analytics-by-using-azure-data-factory"></a>Загрузка данных в Azure синапсе Analytics с помощью фабрики данных Azure
 
 [!INCLUDE[appliesto-adf-asa-md](includes/appliesto-adf-asa-md.md)]
 
-[Azure синапсе Analytics (прежнее название — SQL DW)](../synapse-analytics/sql-data-warehouse/sql-data-warehouse-overview-what-is.md) — это облачная база данных с горизонтальным масштабированием, которая может обрабатывать большие объемы данных, как реляционные, так и нереляционные. Azure синапсе Analytics построена на основе архитектуры массовой параллельной обработки (MPP), оптимизированной для рабочих нагрузок хранилища корпоративных данных. Оно предоставляет эластичность облака и гибкие возможности масштабирования хранилища и вычислительной мощности независимо друг от друга.
+[Azure синапсе Analytics](../synapse-analytics/sql-data-warehouse/sql-data-warehouse-overview-what-is.md) — это облачная масштабируемая база данных, которая может обрабатывать большие объемы данных, как реляционные, так и нереляционные. Azure синапсе Analytics построена на основе архитектуры массовой параллельной обработки (MPP), оптимизированной для рабочих нагрузок хранилища корпоративных данных. Оно предоставляет эластичность облака и гибкие возможности масштабирования хранилища и вычислительной мощности независимо друг от друга.
 
 Приступить к работе с Azure синапсе Analytics стало проще, чем когда-либо с помощью фабрики данных Azure. Фабрика данных Azure — это полностью управляемая облачная служба интеграции данных. Вы можете использовать службу, чтобы заполнить Azure синапсе Analytics данными из существующей системы и сэкономить время при создании решений аналитики.
 
@@ -64,7 +64,7 @@ ms.locfileid: "85252004"
 
    Выберите плитку **Создание и мониторинг**, чтобы открыть на отдельной вкладке приложение интеграции данных.
 
-## <a name="load-data-into-azure-synapse-analytics"></a>Загрузка данных в Azure синапсе Analytics
+## <a name="load-data-into-azure-synapse-analytics"></a>Загрузка данных в Azure Synapse Analytics
 
 1. На странице Начало **работы** выберите плитку **копирование данных** , чтобы запустить средство копирование данных.
 
@@ -102,13 +102,13 @@ ms.locfileid: "85252004"
 
     а. Щелкните **+Создать подключение**, чтобы добавить подключение.
 
-    b. В коллекции выберите **Azure синапсе Analytics (ранее — SQL DW)** и нажмите кнопку **продолжить**. Вы можете ввести текст "SQL" в поле поиска, чтобы отфильтровать соединители.
+    b. Выберите **Azure синапсе Analytics (ранее — хранилище данных SQL)** из коллекции и нажмите кнопку **продолжить**. Вы можете ввести текст "SQL" в поле поиска, чтобы отфильтровать соединители.
 
-    ![Выбор хранилища данных SQL Azure](./media/load-azure-sql-data-warehouse/select-azure-sql-dw-sink.png)
+    ![Выбор Azure синапсе Analytics](./media/load-azure-sql-data-warehouse/select-azure-sql-dw-sink.png)
 
     c. На странице **Новая связанная служба** выберите имя сервера и имя базы данных из раскрывающегося списка и укажите имя пользователя и пароль. Нажмите кнопку **проверить подключение** , чтобы проверить параметры, а затем выберите **создать**.
 
-    ![Настройка хранилища данных SQL Azure](./media/load-azure-sql-data-warehouse/configure-azure-sql-dw.png)
+    ![Настройка Azure синапсе Analytics](./media/load-azure-sql-data-warehouse/configure-azure-sql-dw.png)
 
     d. Выберите созданную связанную службу в качестве приемника, а затем нажмите кнопку **Далее**.
 
@@ -152,7 +152,7 @@ ms.locfileid: "85252004"
 
     ![Мониторинг сведений о выполнении действия](./media/load-azure-sql-data-warehouse/monitor-activity-run-details-2.png)
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Перейдите к следующей статье, чтобы узнать о поддержке Azure синапсе Analytics.
 

@@ -12,12 +12,12 @@ author: rohitnayakmsft
 ms.author: rohitna
 ms.reviewer: carlrab, vanto
 ms.date: 06/26/2020
-ms.openlocfilehash: 4d48ca3685dca36157307e7cb4b3d25261c243aa
-ms.sourcegitcommit: e0785ea4f2926f944ff4d65a96cee05b6dcdb792
+ms.openlocfilehash: 10108fdf4f2b7090eaeaa4b378992c2e94d3b04c
+ms.sourcegitcommit: de2750163a601aae0c28506ba32be067e0068c0c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/21/2020
-ms.locfileid: "88705747"
+ms.lasthandoff: 09/04/2020
+ms.locfileid: "89489584"
 ---
 # <a name="azure-sql-database-and-azure-synapse-analytics-connectivity-architecture"></a>Архитектура подключения к базе данных SQL Azure и Azure синапсе Analytics
 [!INCLUDE[appliesto-sqldb-asa](../includes/appliesto-sqldb-asa.md)]
@@ -80,7 +80,7 @@ ms.locfileid: "88705747"
 | Central2 Австралия   | 20.36.113.0 |
 | Восточная Австралия       | 13.75.149.87, 40.79.161.1, 13.70.112.9 |
 | Юго-Восточная Австралия | 191.239.192.109, 13.73.109.251, 13.77.48.10 |
-| Южная Бразилия         | 104.41.11.5, 191.233.200.14 |
+| Brazil South         | 104.41.11.5, 191.233.200.14 |
 | Центральная Канада       | 40.85.224.249, 52.246.152.0, 20.38.144.1 |
 | Восточная Канада          | 40.86.226.166, 52.242.30.154 |
 | Центральная часть США           | 13.67.215.62, 52.182.137.15, 23.99.160.139, 104.208.16.96, 104.208.21.1 |
@@ -94,6 +94,7 @@ ms.locfileid: "88705747"
 | Центральная Франция       | 40.79.137.0, 40.79.129.1 |
 | Центральная Германия      | 51.4.144.100       |
 | Северо-восточная Германия   | 51.5.144.179       |
+| Центрально-Западная Германия | 51.116.240.0, 51.116.248.0, 51.116.152.0 |
 | Центральная Индия        | 104.211.96.159     |
 | Южная Индия          | 104.211.224.146    |
 | Западная Индия           | 104.211.160.80     |

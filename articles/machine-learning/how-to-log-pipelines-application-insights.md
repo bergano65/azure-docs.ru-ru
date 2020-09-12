@@ -10,12 +10,12 @@ ms.subservice: core
 ms.date: 08/11/2020
 ms.topic: conceptual
 ms.custom: how-to, devx-track-python
-ms.openlocfilehash: 17a60ae604a74cf98f3a11e0cbee6d22898c1336
-ms.sourcegitcommit: b8702065338fc1ed81bfed082650b5b58234a702
+ms.openlocfilehash: 808f71ae138922b93e3742f7ff2f526e419cf58c
+ms.sourcegitcommit: 3be3537ead3388a6810410dfbfe19fc210f89fec
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/11/2020
-ms.locfileid: "88122058"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89645879"
 ---
 # <a name="collect-machine-learning-pipeline-log-files-in-application-insights-for-alerts-and-debugging"></a>Получение файлов журнала конвейера машинного обучения в Application Insights для предупреждений и отладки
 [!INCLUDE [applies-to-skus](../../includes/aml-applies-to-basic-enterprise-sku.md)]
@@ -24,7 +24,7 @@ ms.locfileid: "88122058"
 
 Если журналы будут находиться в однократном месте, будет представлена история исключений и сообщений об ошибках. Поскольку Application Insights интегрируется с оповещениями Azure, можно также создавать оповещения на основе запросов Application Insights.
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 * Выполните действия, чтобы создать рабочую область [машинное обучение Azure](./how-to-manage-workspace.md) и [создать первый конвейер](./how-to-create-your-first-pipeline.md) .
 * [Настройте среду разработки](./how-to-configure-environment.md) для установки пакета SDK для Машинного обучения Azure.
@@ -34,11 +34,11 @@ ms.locfileid: "88122058"
   ```
 * Создание [экземпляра Application Insights](../azure-monitor/app/opencensus-python.md) (этот документ также содержит сведения о получении строки подключения для ресурса).
 
-## <a name="getting-started"></a>Начало работы
+## <a name="getting-started"></a>Приступая к работе
 
 В этом разделе представлены общие сведения об использовании Опенценсус из конвейера Машинное обучение Azure. Подробное руководство см. в разделе [опенценсус Azure Monitor EXPORTS](https://github.com/census-instrumentation/opencensus-python/tree/master/contrib/opencensus-ext-azure) .
 
-Добавьте Писонскриптстеп в конвейер машинного обучения Azure. Настройте [RunConfiguration](https://docs.microsoft.com/python/api/azureml-core/azureml.core.runconfiguration?view=azure-ml-py) с зависимостью от опенценсус-ext-Azure. Настройте `APPLICATIONINSIGHTS_CONNECTION_STRING` переменную среды.
+Добавьте Писонскриптстеп в конвейер машинного обучения Azure. Настройте [RunConfiguration](https://docs.microsoft.com/python/api/azureml-core/azureml.core.runconfiguration?view=azure-ml-py&preserve-view=true) с зависимостью от опенценсус-ext-Azure. Настройте `APPLICATIONINSIGHTS_CONNECTION_STRING` переменную среды.
 
 ```python
 from azureml.core.conda_dependencies import CondaDependencies

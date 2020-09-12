@@ -8,16 +8,18 @@ ms.service: virtual-machines
 ms.topic: conceptual
 ms.date: 08/10/2020
 ms.author: vikancha
-ms.openlocfilehash: 73d583cb371876cefc10c982dbe66f6e15bddf03
-ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
+ms.openlocfilehash: af9f7eb21d533bc5fb365e7cbf1fb8fc18184fa7
+ms.sourcegitcommit: 3246e278d094f0ae435c2393ebf278914ec7b97b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88932616"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89375233"
 ---
-# <a name="ncast4_v3-series"></a>Серия NCasT4_v3 
+# <a name="ncast4_v3-series-in-preview"></a>Серии NCasT4_v3 (Предварительная версия) 
 
 Виртуальные машины серии NCasT4_v3 на базе процессоров [NVIDIA Tesla T4](https://www.nvidia.com/en-us/data-center/tesla-t4/) GPU и AMD ЕПИК 7V12 (Рим). Компоненты виртуальных машин до 4 видеопроцессоров NVIDIA T4 с 16 ГБ памяти каждый, до 64 процессоров AMD ЕПИК 7V12 (Рим) и 440 гиб системной памяти. Эти виртуальные машины идеально подходят для выполнения рабочих нагрузок в МАШИНном обучении и AI с использованием CUDA, TensorFlow, Pytorch, Caffe и других платформ или рабочих нагрузок графики с помощью технологии сетки NVIDIA. Серии NCasT4_v3 идеально подходят для выполнения рабочих нагрузок вывода.
+
+Вы можете [Отправить запрос](https://aka.ms/NCT4v3Preview) в рамках программы предварительной версии.
 
 <br>
 
