@@ -10,12 +10,12 @@ ms.topic: article
 ms.workload: identity
 ms.date: 05/26/2020
 ms.author: chmutali
-ms.openlocfilehash: 69c3246c910a83d889151d6ad749e1be86340e8c
-ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
+ms.openlocfilehash: 7d47c21da1279271b12933a2e4642abcce622600
+ms.sourcegitcommit: 43558caf1f3917f0c535ae0bf7ce7fe4723391f9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88540972"
+ms.lasthandoff: 09/11/2020
+ms.locfileid: "90015489"
 ---
 # <a name="tutorial-configure-workday-to-azure-ad-user-provisioning"></a>Руководство по настройке рабочего дня для подготовки пользователей в Azure AD
 Цель этого руководства — продемонстрировать шаги, которые необходимо выполнить, чтобы подготавливать рабочие данные рабочих ролей из Workday в Azure Active Directory. 
@@ -27,13 +27,13 @@ ms.locfileid: "88540972"
 
 Для подготовки учетных записей пользователей [служба подготовки пользователей Azure Active Directory](../app-provisioning/user-provisioning.md) интегрируется с [API отдела кадров Workday](https://community.workday.com/sites/default/files/file-hosting/productionapi/Human_Resources/v21.1/Get_Workers.html). Рабочие процессы подготовки пользователей Workday, поддерживаемые службой подготовки пользователей Azure AD, позволяют автоматизировать следующие сценарии работы отдела кадров и управления жизненным циклом удостоверений.
 
-* **Наем новых сотрудников** . при добавлении нового сотрудника в Workday учетная запись пользователя автоматически создается в Azure Active Directory и дополнительно Office 365 и [других приложениях SaaS, поддерживаемых Azure AD](../app-provisioning/user-provisioning.md), с обратным записью адреса электронной почты в Workday.
+* **Наем новых сотрудников** . при добавлении нового сотрудника в Workday учетная запись пользователя автоматически создается в Azure Active Directory и при необходимости Microsoft 365 и [других приложений SaaS, поддерживаемых Azure AD](../app-provisioning/user-provisioning.md), с обратной записью адреса электронной почты в Workday.
 
-* **Обновление атрибутов и профилей сотрудников** . при обновлении записи сотрудника в Workday (например, в имени, названии или менеджере) учетная запись пользователя будет автоматически обновлена Azure Active Directory и при необходимости Office 365 и [других приложений SaaS, поддерживаемых Azure AD](../app-provisioning/user-provisioning.md).
+* **Обновление атрибутов и профилей сотрудников** . при обновлении записи сотрудника в Workday (например, в имени, названии или менеджере) учетная запись пользователя будет автоматически обновлена Azure Active Directory и при необходимости Microsoft 365 и [других приложений SaaS, поддерживаемых Azure AD](../app-provisioning/user-provisioning.md).
 
-* **Прекращение сотрудников** . когда сотрудник завершает работу в Workday, учетная запись пользователя автоматически отключается в Azure Active Directory и при необходимости Office 365 и [других приложениях SaaS, поддерживаемых Azure AD](../app-provisioning/user-provisioning.md).
+* **Прекращение сотрудников** . когда сотрудник завершает работу в Workday, учетная запись пользователя автоматически отключается в Azure Active Directory и при необходимости Microsoft 365 и [других приложений SaaS, поддерживаемых Azure AD](../app-provisioning/user-provisioning.md).
 
-* Повторный **прием сотрудников** . когда сотрудник переключается в Workday, его старая учетная запись может быть автоматически повторно активирована или повторно подготовлена (в зависимости от предпочтений) для Azure Active Directory и при необходимости Office 365 и [других приложений SaaS, поддерживаемых Azure AD](../app-provisioning/user-provisioning.md).
+* Повторный **прием сотрудников** . когда сотрудник переключается в Workday, его старая учетная запись может быть автоматически повторно активирована или повторно подготовлена (в зависимости от предпочтений), чтобы Azure Active Directory и при необходимости Microsoft 365 и [других приложений SaaS, поддерживаемых Azure AD](../app-provisioning/user-provisioning.md).
 
 ### <a name="who-is-this-user-provisioning-solution-best-suited-for"></a>Кому это решение подготовки пользователей подходит лучше всего?
 
@@ -45,7 +45,7 @@ ms.locfileid: "88540972"
 
 * Организации, которым требуется подготовка пользователей с помощью данных, полученных из Workday
 
-* организаций, использующих Office 365 для электронной почты.
+* Организации, использующие Microsoft 365 для электронной почты
 
 ## <a name="solution-architecture"></a>Архитектура решения
 

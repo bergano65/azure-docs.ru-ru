@@ -6,16 +6,16 @@ services: storage
 author: tamram
 ms.service: storage
 ms.topic: how-to
-ms.date: 07/29/2020
+ms.date: 09/10/2020
 ms.author: tamram
 ms.reviewer: fryu
 ms.subservice: common
-ms.openlocfilehash: 2439bec08c16ce109b271844dc72b8fd2569aa07
-ms.sourcegitcommit: afa1411c3fb2084cccc4262860aab4f0b5c994ef
+ms.openlocfilehash: 4c88791815d248cc20546d7942e7b0f107071186
+ms.sourcegitcommit: 43558caf1f3917f0c535ae0bf7ce7fe4723391f9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/23/2020
-ms.locfileid: "88755914"
+ms.lasthandoff: 09/11/2020
+ms.locfileid: "90018583"
 ---
 # <a name="enforce-a-minimum-required-version-of-transport-layer-security-tls-for-requests-to-a-storage-account"></a>Принудительная минимальная требуемая версия протокола TLS для запросов к учетной записи хранения
 
@@ -92,11 +92,13 @@ StorageBlobLogs
 Чтобы настроить минимальную версию TLS для учетной записи хранения, задайте версию **минимумтлсверсион** для учетной записи. Это свойство доступно для всех учетных записей хранения, созданных с помощью модели развертывания Azure Resource Manager. Дополнительные сведения о модели развертывания Azure Resource Manager см. в разделе [Общие сведения об учетной записи хранения](storage-account-overview.md).
 
 > [!NOTE]
-> Свойство **минимумтлсверсион** не задано по умолчанию и не возвращает значение, пока оно не будет явно задано. Учетная запись хранения разрешает запросы, отправленные с помощью TLS версии 1,0 или выше, если свойство имеет значение **null**.
+> Свойство **минимумтлсверсион** в настоящее время доступно только для учетных записей хранения в общедоступном облаке Azure.
 
 # <a name="portal"></a>[Портал](#tab/portal)
 
-Чтобы настроить минимальную версию TLS для учетной записи хранения с портал Azure, выполните следующие действия.
+При создании учетной записи хранения с портал Azure по умолчанию для минимальной версии TLS устанавливается значение 1,2.
+
+Чтобы настроить минимальную версию TLS для существующей учетной записи хранения с портал Azure, выполните следующие действия.
 
 1. Войдите в свою учетную запись хранения на портале Azure.
 1. Выберите параметр **конфигурации** .
@@ -108,6 +110,8 @@ StorageBlobLogs
 
 Чтобы настроить минимальную версию TLS для учетной записи хранения с помощью PowerShell, установите [Azure PowerShell версии 4.4.0](https://www.powershellgallery.com/packages/Az/4.4.0) или более поздней. Затем настройте свойство **минимумтлсверсион** для новой или существующей учетной записи хранения. Допустимые значения для **минимумтлсверсион** : `TLS1_0` , `TLS1_1` и `TLS1_2` .
 
+Свойство **минимумтлсверсион** не задано по умолчанию при создании учетной записи хранения с помощью PowerShell. Это свойство не возвращает значение, пока оно не будет явно задано. Учетная запись хранения разрешает запросы, отправленные с помощью TLS версии 1,0 или выше, если свойство имеет значение **null**.
+
 В следующем примере создается учетная запись хранения и задается **МИНИМУМТЛСВЕРСИОН** TLS 1,1, затем обновляется учетная запись и задается **минимумтлсверсион** в TLS 1,2. В этом примере также извлекается значение свойства в каждом случае. Не забудьте заменить значения заполнителей в квадратных скобках собственными значениями:
 
 ```powershell
@@ -116,18 +120,18 @@ $accountName = "<storage-account>"
 $location = "<location>"
 
 # Create a storage account with MinimumTlsVersion set to TLS 1.1.
-New-AzStorageAccount -ResourceGroupName $rgName \
-    -AccountName $accountName \
-    -Location $location \
-    -SkuName Standard_GRS \
+New-AzStorageAccount -ResourceGroupName $rgName `
+    -AccountName $accountName `
+    -Location $location `
+    -SkuName Standard_GRS `
     -MinimumTlsVersion TLS1_1
 
 # Read the MinimumTlsVersion property.
 (Get-AzStorageAccount -ResourceGroupName $rgName -Name $accountName).MinimumTlsVersion
 
 # Update the MinimumTlsVersion version for the storage account to TLS 1.2.
-Set-AzStorageAccount -ResourceGroupName $rgName \
-    -AccountName $accountName \
+Set-AzStorageAccount -ResourceGroupName $rgName `
+    -AccountName $accountName `
     -MinimumTlsVersion TLS1_2
 
 # Read the MinimumTlsVersion property.
@@ -137,6 +141,8 @@ Set-AzStorageAccount -ResourceGroupName $rgName \
 # <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
 
 Чтобы настроить минимальную версию TLS для учетной записи хранения с Azure CLI, установите Azure CLI версии 2.9.0 или более поздней. Дополнительные сведения см. в статье [Установка Azure CLI](/cli/azure/install-azure-cli). Затем настройте свойство **минимумтлсверсион** для новой или существующей учетной записи хранения. Допустимые значения для **минимумтлсверсион** : `TLS1_0` , `TLS1_1` и `TLS1_2` .
+
+Свойство **минимумтлсверсион** не задано по умолчанию при создании учетной записи хранения с Azure CLI. Это свойство не возвращает значение, пока оно не будет явно задано. Учетная запись хранения разрешает запросы, отправленные с помощью TLS версии 1,0 или выше, если свойство имеет значение **null**.
 
 В следующем примере создается учетная запись хранения и задается **МИНИМУМТЛСВЕРСИОН** TLS 1,1. Затем он обновляет учетную запись и устанавливает для свойства **минимумтлсверсион** значение TLS 1,2. В этом примере также извлекается значение свойства в каждом случае. Не забудьте заменить значения заполнителей в квадратных скобках собственными значениями:
 

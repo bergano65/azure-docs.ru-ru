@@ -1,6 +1,6 @@
 ---
 title: 'Azure AD Connect выполняет следующие функции: История выпусков версий | Документация Майкрософт'
-description: В этой статье перечислены все выпуски Azure AD Connect и Azure AD Sync
+description: В этой статье перечислены все выпуски Azure AD Connect и Azure AD Sync.
 services: active-directory
 author: billmath
 manager: daveba
@@ -12,12 +12,12 @@ ms.date: 08/07/2020
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 9b0b0a98e80fb7f343411b49ff2ccd11046bcdc5
-ms.sourcegitcommit: 269da970ef8d6fab1e0a5c1a781e4e550ffd2c55
+ms.openlocfilehash: 1570f4a8c4fb23b885c1de68c2c8d2440c4f6aae
+ms.sourcegitcommit: 43558caf1f3917f0c535ae0bf7ce7fe4723391f9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/10/2020
-ms.locfileid: "88052935"
+ms.lasthandoff: 09/11/2020
+ms.locfileid: "90018447"
 ---
 # <a name="azure-ad-connect-version-release-history"></a>Azure AD Connect выполняет следующие функции: Журнал выпуска версий
 Команда Azure Active Directory (Azure AD) регулярно обновляет службу Azure AD Connect, добавляя новые функции и возможности. Не все эти дополнения применимы для всех пользователей.
@@ -48,7 +48,7 @@ ms.locfileid: "88052935"
 >
 >Если вы включили Azure AD Connect для синхронизации, вскоре вы начнете получать автоматические уведомления о работоспособности, которые предупреждают вас о предстоящем устаревании при использовании одной из предыдущих версий.
 >
->Дополнительные сведения об обновлении Azure AD Connect до последней версии см. в [этой статье](https://docs.microsoft.com/azure/active-directory/hybrid/how-to-upgrade-previous-version).
+>Дополнительные сведения об обновлении Azure AD Connect до последней версии см. в [этой статье](./how-to-upgrade-previous-version.md).
 >
 >Сведения журнала версий об устаревших версиях см. в разделе [Архив журнала выпусков Azure AD Connect версий](reference-connect-version-history-archive.md)
 
@@ -74,7 +74,7 @@ ms.locfileid: "88052935"
 ### <a name="functional-changes"></a>Функциональные изменения
 Этот выпуск включает в себя общедоступную предварительную версию функции экспорта конфигурации существующего Azure AD Connect сервера в. JSON-файл, который затем можно использовать при установке нового сервера Azure AD Connect для создания копии исходного сервера.
 
-Подробное описание этой новой функции можно найти в [этой статье](https://docs.microsoft.com/azure/active-directory/hybrid/how-to-connect-import-export-config) .
+Подробное описание этой новой функции можно найти в [этой статье](./how-to-connect-import-export-config.md) .
 
 ### <a name="fixed-issues"></a>Устраненные проблемы
 - Исправлена ошибка, при которой в локализованных сборках во время обновления было бы выдано ложное предупреждение о размере локальной базы данных.
@@ -244,7 +244,7 @@ ms.locfileid: "88052935"
 
 ## <a name="13210"></a>1.3.21.0
 >[!IMPORTANT]
->Существует известная ошибка обновления Azure AD Connect с более ранней версии до версии 1.3.21.0, когда на портале Office 365 не отражается обновленная версия, несмотря на то, что Azure AD Connect успешно обновлен.
+>Существует известная ошибка обновления Azure AD Connect от более ранней версии до 1.3.21.0, где портал Microsoft 365 не отражает обновленную версию, несмотря на то, что Azure AD Connect успешно обновлена.
 >
 > Чтобы устранить эту проблему, необходимо импортировать модуль **AdSync**, а затем запустить командлет`Set-ADSyncDirSyncConfiguration` PowerShell на сервере Azure AD Connect.  В этом случае выполните указанные ниже действия.
 >

@@ -10,12 +10,12 @@ ms.topic: article
 ms.workload: identity
 ms.date: 05/26/2020
 ms.author: chmutali
-ms.openlocfilehash: 51ab05a995ba5b620b759f419fb5b4594873d2f5
-ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
+ms.openlocfilehash: 0a025ad7857594b3117b1703a0e19ae47407d0fd
+ms.sourcegitcommit: 43558caf1f3917f0c535ae0bf7ce7fe4723391f9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88527814"
+ms.lasthandoff: 09/11/2020
+ms.locfileid: "90018107"
 ---
 # <a name="tutorial-configure-workday-for-automatic-user-provisioning"></a>Руководство по Настройка Workday для автоматической подготовки пользователей
 
@@ -31,15 +31,15 @@ ms.locfileid: "88527814"
 
 Для подготовки учетных записей пользователей [служба подготовки пользователей Azure Active Directory](../app-provisioning/user-provisioning.md) интегрируется с [API отдела кадров Workday](https://community.workday.com/sites/default/files/file-hosting/productionapi/Human_Resources/v21.1/Get_Workers.html). Рабочие процессы подготовки пользователей Workday, поддерживаемые службой подготовки пользователей Azure AD, позволяют автоматизировать следующие сценарии работы отдела кадров и управления жизненным циклом удостоверений.
 
-* **Найм новых сотрудников** . когда новый сотрудник добавляется в Workday, учетная запись пользователя автоматически создается в Active Directory, Azure Active Directory и дополнительно Office 365 и [других приложениях SaaS, поддерживаемых Azure AD](../app-provisioning/user-provisioning.md), с обратной записью контактных данных, управляемых ИТ-откликом, в Workday.
+* **Найм новых сотрудников** . при добавлении нового сотрудника в workday учетная запись пользователя автоматически создается в Active Directory, Azure Active Directory и дополнительно Microsoft 365 и [других приложениях SaaS, поддерживаемых Azure AD](../app-provisioning/user-provisioning.md), с обратной записью контактных данных, управляемых ИТ-откликом, в workday.
 
-* **Обновления атрибута и профиля сотрудника**. При обновлении записи сотрудника в Workday (например, имени, должности или руководителя) его учетная запись пользователя будет автоматически обновлена в Active Directory, Azure Active Directory и при необходимости в Office 365 и [других приложениях SaaS, поддерживаемых Azure AD](../app-provisioning/user-provisioning.md).
+* **Обновление атрибутов и профилей сотрудников** . при обновлении записи сотрудника в Workday (например, в имени, названии или менеджере) учетная запись пользователя будет автоматически обновлена в Active Directory, Azure Active Directory и при необходимости Microsoft 365 и [других приложений SaaS, поддерживаемых Azure AD](../app-provisioning/user-provisioning.md).
 
-* **Увольнения сотрудников**. При увольнении сотрудника в Workday его учетная запись пользователя будет автоматически отключена в Active Directory, Azure Active Directory и при необходимости в Office 365 и [других приложениях SaaS, поддерживаемых Azure AD](../app-provisioning/user-provisioning.md).
+* **Прекращение сотрудников** . когда сотрудник завершает работу в Workday, учетная запись пользователя автоматически отключается в Active Directory, Azure Active Directory и при необходимости Microsoft 365 и [других приложений SaaS, поддерживаемых Azure AD](../app-provisioning/user-provisioning.md).
 
-* **Повторные наймы сотрудников**. При повторном поступлении сотрудника на работу в Workday его старая учетная запись может быть автоматически активирована повторно или повторно подготовлена (в зависимости от вашего желания) в Active Directory, Azure Active Directory и при необходимости в Office 365 и [других приложениях SaaS, поддерживаемых Azure AD](../app-provisioning/user-provisioning.md).
+* Повторный **прием сотрудников** . когда сотрудник переключается в Workday, его старая учетная запись может быть автоматически повторно активирована или повторно подготовлена (в зависимости от ваших предпочтений) для Active Directory, Azure Active Directory и, при необходимости, Microsoft 365 и [других приложений SaaS, поддерживаемых Azure AD](../app-provisioning/user-provisioning.md).
 
-### <a name="whats-new"></a>Новое
+### <a name="whats-new"></a>Новые возможности
 В этом разделе записаны последние улучшения интеграции с Workday. Список комплексных обновлений, запланированных изменений и архивов см. на странице [что нового в Azure Active Directory?](../fundamentals/whats-new.md) 
 
 * **Май 2020 — возможность обратной записи телефонных номеров в Workday:** Помимо адреса электронной почты и имени пользователя, теперь можно выполнить обратную запись номера рабочего телефона и номера мобильного телефона из Azure AD в Workday. Дополнительные сведения см. в руководстве по [приложению обратной записи](workday-writeback-tutorial.md).
@@ -60,7 +60,7 @@ ms.locfileid: "88527814"
 
 * организаций, которым необходимо синхронизировать процессы присоединения, перемещения и удаления пользователей с одним или несколькими лесами Active Directory, доменами и подразделениями на основе только данных изменений, обнаруженных в модуле HCM Workday (см. раздел об [операции Get_Workers](https://community.workday.com/sites/default/files/file-hosting/productionapi/Human_Resources/v21.1/Get_Workers.html));
 
-* организаций, использующих Office 365 для электронной почты.
+* Организации, использующие Microsoft 365 для электронной почты
 
 ## <a name="solution-architecture"></a>Архитектура решения
 
@@ -373,7 +373,7 @@ ms.locfileid: "88527814"
 1. Проверьте установку агента и убедитесь, что он работает, открыв оснастку "Службы" и обнаружив службу под именем "Microsoft Azure AD Connect Provisioning Agent"
 
    >[!div class="mx-imgBorder"]
-   >![Службы](./media/workday-inbound-tutorial/services.png)
+   >![Снимок экрана: агент подготовки Microsoft Azure AD Connect, выполняющийся в службах](./media/workday-inbound-tutorial/services.png)
 
 ### <a name="part-3-in-the-provisioning-app-configure-connectivity-to-workday-and-active-directory"></a>Часть 3. В приложении подготовки настройте подключения к Workday и Active Directory
 На этом шаге мы устанавливаем подключение с Workday и Active Directory на портале Azure. 

@@ -10,12 +10,12 @@ ms.topic: article
 ms.workload: identity
 ms.date: 08/05/2020
 ms.author: chmutali
-ms.openlocfilehash: 4b048053a553176f73b5bd199bcb6e28bc74cc6c
-ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
+ms.openlocfilehash: b185f29cea61b9c366714a1af72648aeee35b61c
+ms.sourcegitcommit: 43558caf1f3917f0c535ae0bf7ce7fe4723391f9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88534002"
+ms.lasthandoff: 09/11/2020
+ms.locfileid: "90017937"
 ---
 # <a name="tutorial-configure-attribute-write-back-from-azure-ad-to-sap-successfactors"></a>Руководство. Настройка атрибута обратной записи из Azure AD в SAP SuccessFactors
 Цель этого учебника — продемонстрировать действия, которые необходимо выполнить с помощью атрибутов обратной записи из Azure AD в службу SAP SuccessFactors Employee Central. 
@@ -40,7 +40,7 @@ ms.locfileid: "88534002"
 
 Решение для подготовки пользователей обратной записи SuccessFactors идеально подходит для:
 
-* Организации, использующие Office 365, которым требуется обратная запись полномочных атрибутов, управляемых им (например, адрес электронной почты, Телефон, имя пользователя), обратно в SuccessFactors Employee Central.
+* Организации, использующие Microsoft 365, желающие сделать запись полномочными атрибутами, управляемыми им (например, адресом электронной почты, телефоном, именем пользователя), обратно в SuccessFactors Employee Central.
 
 ## <a name="configuring-successfactors-for-the-integration"></a>Настройка SuccessFactors для интеграции
 

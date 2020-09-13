@@ -12,12 +12,12 @@ ms.custom:
 - mqtt
 - 'Role: Cloud Development'
 - 'Role: IoT Device'
-ms.openlocfilehash: c80823513dd65d68d74be62ca1194f843623d2dc
-ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
+ms.openlocfilehash: 3286b464051b8fea88d2797d4f82b20fe432b4b8
+ms.sourcegitcommit: 43558caf1f3917f0c535ae0bf7ce7fe4723391f9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87323032"
+ms.lasthandoff: 09/11/2020
+ms.locfileid: "90019535"
 ---
 # <a name="upload-files-with-iot-hub"></a>Отправка файлов с помощью Центра Интернета вещей
 
@@ -28,6 +28,8 @@ ms.locfileid: "87323032"
 Перед отправкой файла в Центр Интернета вещей с устройства необходимо настроить центр, [связав учетную запись хранения Azure](iot-hub-devguide-file-upload.md#associate-an-azure-storage-account-with-iot-hub) с ним.
 
 После этого устройство сможет [инициализировать отправку](iot-hub-devguide-file-upload.md#initialize-a-file-upload) и [уведомить Центр Интернета вещей](iot-hub-devguide-file-upload.md#notify-iot-hub-of-a-completed-file-upload) о завершении передачи. Служба может дополнительно создавать [сообщение уведомления](iot-hub-devguide-file-upload.md#file-upload-notifications), когда устройство будет уведомлять Центр Интернета вещей о завершении передачи.
+
+[!INCLUDE [iot-hub-include-x509-ca-signed-file-upload-support-note](../../includes/iot-hub-include-x509-ca-signed-file-upload-support-note.md)]
 
 ### <a name="when-to-use"></a>Назначение
 

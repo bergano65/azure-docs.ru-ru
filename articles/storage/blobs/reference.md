@@ -3,17 +3,17 @@ title: Справочная документация по хранилищу BLO
 description: Найдите Справочник по API хранилища BLOB-объектов Azure, файлы readme и пакеты клиентских библиотек.
 author: mhopkins-msft
 ms.author: mhopkins
-ms.date: 06/02/2020
+ms.date: 09/10/2020
 ms.service: storage
 ms.subservice: blobs
 ms.topic: conceptual
 ms.reviewer: ripohane
-ms.openlocfilehash: 477170cf3c2bab54efc5ef74495f39fb89f62c77
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: b8e4cada8ac2570fa32d55e35cbcdb214d5b5188
+ms.sourcegitcommit: 43558caf1f3917f0c535ae0bf7ce7fe4723391f9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84976699"
+ms.lasthandoff: 09/11/2020
+ms.locfileid: "90018162"
 ---
 # <a name="azure-blob-storage-reference"></a>Справочная документация по хранилищу BLOB-объектов Azure
 
@@ -25,8 +25,8 @@ ms.locfileid: "84976699"
 
 |  Версия  | Справочная документация | Пакет | Краткое руководство |
 | :-------: | ----------------------- | ------- | ---------- |
-| 12.x | [Клиентская библиотека хранилища BLOB-объектов Azure для .NET](/dotnet/api/overview/azure/storage.blobs-readme) | [Пакет (NuGet)](https://www.nuget.org/packages/Azure.Storage.Blobs/) | [Краткое руководство. Использование библиотеки хранилища BLOB-объектов Azure версии 12 для .NET](/azure/storage/blobs/storage-quickstart-blobs-dotnet) |
-| 11. x | [Пространство имен Microsoft. Azure. Storage. BLOB](/dotnet/api/microsoft.azure.storage.blob) | [Пакет (NuGet)](https://www.nuget.org/packages/Microsoft.Azure.Storage.Blob/) | [Краткое руководство. Клиентская библиотека хранилища BLOB-объектов Azure версии 11 для .NET](/azure/storage/blobs/storage-quickstart-blobs-dotnet-legacy) |
+| 12.x | [Клиентская библиотека хранилища BLOB-объектов Azure для .NET](/dotnet/api/overview/azure/storage.blobs-readme) | [Пакет (NuGet)](https://www.nuget.org/packages/Azure.Storage.Blobs/) | [Краткое руководство. Клиентская библиотека службы хранилища BLOB-объектов Azure v12 для .NET](/azure/storage/blobs/storage-quickstart-blobs-dotnet) |
+| 11. x | [Пространство имен Microsoft. Azure. Storage. BLOB](/dotnet/api/microsoft.azure.storage.blob) | [Пакет (NuGet)](https://www.nuget.org/packages/Microsoft.Azure.Storage.Blob/) | [Краткое руководство. Использование библиотеки хранилища BLOB-объектов Azure версии 11 для .NET](/azure/storage/blobs/storage-quickstart-blobs-dotnet-legacy) |
 
 ### <a name="storage-management"></a>Управление хранением
 
@@ -50,7 +50,7 @@ ms.locfileid: "84976699"
 
 |  Версия  | Справочная документация | Пакет | Краткое руководство |
 | :-------: | ----------------------- | ------- | ---------- |
-| 12.x | [Хранилище Azure — BLOB-объекты](https://azuresdkdocs.blob.core.windows.net/$web/java/azure-storage-blob/12.0.0/index.html) | [Пакет (Maven)](https://mvnrepository.com/artifact/com.azure/azure-storage-blob) | [Краткое руководство. Управление большими двоичными объектами с помощью пакета SDK для Java версии 12](/azure/storage/blobs/storage-quickstart-blobs-java) |
+| 12.x | [Хранилище Azure — BLOB-объекты](/java/api/overview/azure/storage-blob-readme) | [Пакет (Maven)](https://mvnrepository.com/artifact/com.azure/azure-storage-blob) | [Краткое руководство. Управление большими двоичными объектами с помощью пакета SDK для Java версии 12](/azure/storage/blobs/storage-quickstart-blobs-java) |
 | 8.x | [com. Microsoft. Azure. Storage. BLOB](/java/api/com.microsoft.azure.storage.blob) | [Пакет (Maven)](https://mvnrepository.com/artifact/com.microsoft.azure/azure-storage) | [Краткое руководство. Управление большими двоичными объектами с помощью пакета SDK V8 для Java](/azure/storage/blobs/storage-quickstart-blobs-java-legacy) |
 
 ### <a name="storage-management"></a>Управление хранением
@@ -67,8 +67,8 @@ ms.locfileid: "84976699"
 
 |  Версия  | Справочная документация | Пакет | Краткое руководство |
 | :-------: | ----------------------- | ------- | ---------- |
-| 12.x | [Клиентские библиотеки службы хранилища Azure версии 12 для Python](/azure/developer/python/sdk/storage/overview?view=storage-py-v12) | [Пакет (PyPI)](https://pypi.org/project/azure-storage-blob/) | [Краткое руководство. Управление большими двоичными объектами с помощью пакета SDK для Python версии 12](/azure/storage/blobs/storage-quickstart-blobs-python) |
-| 2.x | [Клиентские библиотеки службы хранилища Azure версии 2 для Python](/azure/developer/python/sdk/storage/overview?view=storage-py-v2) | [Пакет (PyPI)](https://pypi.org/project/azure-storage-blob/2.1.0/) | [Краткое руководство. Управление большими двоичными объектами с помощью пакета SDK для Python версии 2.1](/azure/storage/blobs/storage-quickstart-blobs-python-legacy) |
+| 12.x | [Клиентские библиотеки службы хранилища Azure версии 12 для Python](/azure/developer/python/sdk/storage/overview) | [Пакет (PyPI)](https://pypi.org/project/azure-storage-blob/) | [Краткое руководство. Управление большими двоичными объектами с помощью пакета SDK для Python версии 12](/azure/storage/blobs/storage-quickstart-blobs-python) |
+| 2.x | [Клиентские библиотеки службы хранилища Azure версии 2 для Python](/azure/developer/python/sdk/storage/overview?view=storage-py-v2&preserve-view=true) | [Пакет (PyPI)](https://pypi.org/project/azure-storage-blob/2.1.0/) | [Краткое руководство. Управление большими двоичными объектами с помощью пакета SDK для Python версии 2.1](/azure/storage/blobs/storage-quickstart-blobs-python-legacy) |
 
 ## <a name="javascript-client-libraries"></a>Клиентские библиотеки JavaScript
 
@@ -76,8 +76,8 @@ ms.locfileid: "84976699"
 
 |  Версия  | Справочная документация | Пакет | Краткое руководство |
 | :-------: | ----------------------- | ------- | ---------- |
-| 12.x | [Клиентская библиотека Azure Storage Blob для JavaScript](/javascript/api/overview/azure/storage-blob-readme) | [Пакет (NPM)](https://www.npmjs.com/package/@azure/storage-blob) | [Краткое руководство. Управление большими двоичными объектами с помощью пакета SDK для JavaScript версии 12 в Node.js](/azure/storage/blobs/storage-quickstart-blobs-nodejs) <br/> [Краткое руководство. Управление большими двоичными объектами с помощью пакета SDK для JavaScript версии 12 в браузере](/azure/storage/blobs/quickstart-blobs-javascript-browser) |
-| 10.x | [@azure/storage-blob](/javascript/api/@azure/storage-blob/?view=azure-node-legacy) | [Пакет (NPM)](https://www.npmjs.com/package/@azure/storage-blob/v/10.5.0) | [Краткое руководство. Управление большими двоичными объектами с помощью пакета SDK для JavaScript V10 в Node.js](/azure/storage/blobs/storage-quickstart-blobs-nodejs-legacy) <br/> [Краткое руководство. Управление большими двоичными объектами с помощью пакета SDK для JavaScript версии 10 в браузере](/azure/storage/blobs/storage-quickstart-blobs-javascript-client-libraries-legacy)|
+| 12.x | [Клиентская библиотека Azure Storage Blob для JavaScript](/javascript/api/overview/azure/storage-blob-readme) | [Пакет (npm)](https://www.npmjs.com/package/@azure/storage-blob) | [Краткое руководство. Управление большими двоичными объектами с помощью пакета SDK для JavaScript версии 12 в Node.js](/azure/storage/blobs/storage-quickstart-blobs-nodejs) <br/> [Краткое руководство. Управление большими двоичными объектами с помощью пакета SDK для JavaScript версии 12 в браузере](/azure/storage/blobs/quickstart-blobs-javascript-browser) |
+| 10.x | [@azure/storage-blob](/javascript/api/@azure/storage-blob/?view=azure-node-legacy&preserve-view=true) | [Пакет (npm)](https://www.npmjs.com/package/@azure/storage-blob/v/10.5.0) | [Краткое руководство. Управление большими двоичными объектами с помощью пакета SDK для JavaScript версии 10 в Node.js](/azure/storage/blobs/storage-quickstart-blobs-nodejs-legacy) <br/> [Краткое руководство. Управление большими двоичными объектами с помощью пакета SDK для JavaScript версии 10 в браузере](/azure/storage/blobs/storage-quickstart-blobs-javascript-client-libraries-legacy)|
 
 ## <a name="rest-apis"></a>Интерфейсы REST API
 
@@ -107,8 +107,9 @@ ms.locfileid: "84976699"
 
 | Версия | Платформа |
 | ------- | -------- |
-|  3.x  | [PowerShell](https://docs.microsoft.com/powershell/module/az.storage/?view=azps-3.8.0) |
-|  2.x  | [PowerShell](https://docs.microsoft.com/powershell/module/az.storage/?view=azps-2.8.0) |
+|  4.x  | [PowerShell](/powershell/module/az.storage/?view=azps-4.6.1&preserve-view=true) |
+|  3.x  | [PowerShell](/powershell/module/az.storage/?view=azps-3.8.0&preserve-view=true) |
+|  2.x  | [PowerShell](/powershell/module/az.storage/?view=azps-2.8.0&preserve-view=true) |
 
 ## <a name="azure-cli"></a>Azure CLI
 

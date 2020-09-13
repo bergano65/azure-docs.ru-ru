@@ -10,12 +10,12 @@ ms.topic: article
 ms.workload: identity
 ms.date: 08/05/2020
 ms.author: chmutali
-ms.openlocfilehash: 9c94d2ab2e0c49fe38142e42cf934c440746da75
-ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
+ms.openlocfilehash: b7571b0a064e10faf5f002c9487ecc804ac78665
+ms.sourcegitcommit: 43558caf1f3917f0c535ae0bf7ce7fe4723391f9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88546684"
+ms.lasthandoff: 09/11/2020
+ms.locfileid: "90017903"
 ---
 # <a name="tutorial-configure-sap-successfactors-to-azure-ad-user-provisioning"></a>Учебник. Настройка SAP SuccessFactors для подготовки пользователей в Azure AD
 Цель этого учебника — продемонстрировать шаги, которые необходимо выполнить, чтобы подготовить рабочие данные от SuccessFactors сотрудника к Azure Active Directory с дополнительным адресом электронной почты, перезаписываемым в SuccessFactors. 
@@ -29,13 +29,13 @@ ms.locfileid: "88546684"
 
 Рабочие процессы подготовки пользователей SuccessFactors, поддерживаемые службой подготовки пользователей Azure AD, обеспечивают автоматизацию следующих сценариев управления персоналом и жизненным циклом удостоверений.
 
-* **Наем новых сотрудников** . при добавлении нового сотрудника в SuccessFactors учетная запись пользователя автоматически создается в Azure Active Directory и дополнительно Office 365 и [других приложениях SaaS, поддерживаемых Azure AD](../app-provisioning/user-provisioning.md), с обратным записью адреса электронной почты в SuccessFactors.
+* **Наем новых сотрудников** . при добавлении нового сотрудника в SuccessFactors учетная запись пользователя автоматически создается в Azure Active Directory и при необходимости Microsoft 365 и [других приложений SaaS, поддерживаемых Azure AD](../app-provisioning/user-provisioning.md), с обратной записью адреса электронной почты в SuccessFactors.
 
-* **Обновление атрибутов и профилей сотрудников** . при обновлении записи сотрудника в SuccessFactors (например, ее имени, должности или руководителя) учетная запись пользователя будет автоматически обновлена Azure Active Directory и дополнительно Office 365 и [других приложений SaaS, поддерживаемых Azure AD](../app-provisioning/user-provisioning.md).
+* **Обновление атрибутов и профилей сотрудников** . при обновлении записи сотрудника в SuccessFactors (например, ее имени, должности или руководителя) учетная запись пользователя будет автоматически обновлена Azure Active Directory и при необходимости Microsoft 365 и [других приложений SaaS, поддерживаемых Azure AD](../app-provisioning/user-provisioning.md).
 
-* **Прекращение сотрудников** . когда сотрудник завершает работу в SuccessFactors, его учетная запись автоматически отключается в Azure Active Directory и при необходимости Office 365 и [других приложениях SaaS, поддерживаемых Azure AD](../app-provisioning/user-provisioning.md).
+* **Прекращение сотрудников** . когда сотрудник завершает работу в SuccessFactors, учетная запись пользователя автоматически отключается в Azure Active Directory и при необходимости Microsoft 365 и [других приложений SaaS, поддерживаемых Azure AD](../app-provisioning/user-provisioning.md).
 
-* Повторный **прием сотрудников** . когда сотрудник переключается в SuccessFactors, его старая учетная запись может быть автоматически повторно активирована или повторно подготовлена (в зависимости от ваших предпочтений), чтобы Azure Active Directory и дополнительно Office 365 и [других приложений SaaS, поддерживаемых Azure AD](../app-provisioning/user-provisioning.md).
+* Повторный **прием сотрудников** . когда сотрудник переключается в SuccessFactors, его старая учетная запись может быть автоматически повторно активирована или повторно подготовлена (в зависимости от предпочтений), чтобы Azure Active Directory и при необходимости Microsoft 365 и [других приложений SaaS, поддерживаемых Azure AD](../app-provisioning/user-provisioning.md).
 
 ### <a name="who-is-this-user-provisioning-solution-best-suited-for"></a>Кому это решение подготовки пользователей подходит лучше всего?
 
@@ -47,7 +47,7 @@ SuccessFactors решение Azure Active Directory для подготовки
 
 * Организации, которым требуется подготовка пользователей с помощью данных, полученных от [SuccessFactors Employee Central (EC)](https://www.successfactors.com/products-services/core-hr-payroll/employee-central.html)
 
-* организаций, использующих Office 365 для электронной почты.
+* Организации, использующие Microsoft 365 для электронной почты
 
 ## <a name="solution-architecture"></a>Архитектура решения
 
