@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 05/04/2020
 ms.author: mbaldwin
 ms.custom: subject-security-benchmark
-ms.openlocfilehash: 5609df554e78996e50dcc57e200bb1dc1282cfb0
-ms.sourcegitcommit: d68c72e120bdd610bb6304dad503d3ea89a1f0f7
+ms.openlocfilehash: 21e2b197c31a30ab8a249e2e8e398072a624154c
+ms.sourcegitcommit: 5a3b9f35d47355d026ee39d398c614ca4dae51c6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/01/2020
-ms.locfileid: "89230506"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89394097"
 ---
 # <a name="azure-security-baseline-for-azure-functions"></a>Базовый план безопасности Azure для функций Azure
 
@@ -960,7 +960,9 @@ ms.locfileid: "89230506"
 
 - [Использование управляемых удостоверений в Службе приложений и Функциях Azure](../app-service/overview-managed-identity.md)
 
-- [Как обеспечить проверку подлинности Key Vault с помощью управляемого удостоверения](../key-vault/general/managed-identity.md)
+* [Проверка подлинности в Key Vault](../key-vault/general/authentication.md)
+
+* [Назначение политики доступа Key Vault](../key-vault/general/assign-access-policy-portal.md)
 
 - [Использование Key Vault ссылок для службы приложений и функций Azure](../app-service/app-service-key-vault-references.md)
 
@@ -1059,7 +1061,7 @@ ms.locfileid: "89230506"
 
 - [Документация по Azure Repos](/azure/devops/repos/index?view=azure-devops)
 
-**Мониторинг Центра безопасности Azure**: Неприменимо
+**Мониторинг Центра безопасности Azure**. Неприменимо
 
 **Ответственность**: Customer
 

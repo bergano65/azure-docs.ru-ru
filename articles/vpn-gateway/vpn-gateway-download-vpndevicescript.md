@@ -4,17 +4,16 @@ description: В этой статье описывается, как загру�
 titleSuffix: Azure VPN Gateway
 services: vpn-gateway
 author: yushwang
-manager: rossort
 ms.service: vpn-gateway
 ms.topic: how-to
-ms.date: 01/09/2019
+ms.date: 09/02/2020
 ms.author: yushwang
-ms.openlocfilehash: e17d17484ea9caf735fd717b1e58b85e798df87b
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 70d9a8069979a299ad3031de37c525438ab0159d
+ms.sourcegitcommit: 5a3b9f35d47355d026ee39d398c614ca4dae51c6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84983212"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89394607"
 ---
 # <a name="download-vpn-device-configuration-scripts-for-s2s-vpn-connections"></a>Загрузка сценариев конфигурации VPN-устройств для VPN-подключений типа "сеть — сеть"
 
@@ -98,6 +97,6 @@ Get-AzVirtualNetworkGatewayConnectionVpnDeviceConfigScript -Name $Connection -Re
 
 После того как вы загрузили и подтвердили сценарий конфигурации, следующим шагом будет применение сценария к VPN-устройству. Фактическая процедура зависит от типов и моделей VPN-устройств. Ознакомьтесь с руководствами по эксплуатации или инструкциями к VPN-устройствам.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Продолжите настройку [подключения типа "сеть — сеть"](vpn-gateway-howto-site-to-site-resource-manager-portal.md).

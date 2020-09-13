@@ -2,18 +2,18 @@
 title: 'Azure ExpressRoute: Настройка пиринга: CLI'
 description: Эта статья поможет вам создать и подготовить частный пиринг, общедоступный пиринг или пиринг Microsoft для канала ExpressRoute. а также показано, как проверить состояние, обновить или удалить пиринги для канала.
 services: expressroute
-author: cherylmc
+author: duongau
 ms.service: expressroute
 ms.topic: how-to
 ms.date: 04/24/2019
-ms.author: cherylmc
+ms.author: duau
 ms.custom: seodec18
-ms.openlocfilehash: cbde41bd79409255e1ebf5145548ea260ac8581d
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: c20b0741f12ee2cab40d8f5b53c51ad537801bf2
+ms.sourcegitcommit: 5a3b9f35d47355d026ee39d398c614ca4dae51c6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84727047"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89393179"
 ---
 # <a name="create-and-modify-peering-for-an-expressroute-circuit-using-cli"></a>Создание и изменение пиринга для канала ExpressRoute с помощью интерфейса командной строки
 
@@ -326,7 +326,7 @@ az network express-route peering delete -g ExpressRouteResourceGroup --circuit-n
 ```
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Следующий шаг — [связывание виртуальной сети с каналом ExpressRoute](howto-linkvnet-cli.md).
 

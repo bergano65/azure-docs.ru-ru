@@ -2,18 +2,18 @@
 title: 'Azure ExpressRoute: Добавление шлюза в виртуальную сеть: портал'
 description: В этой статье описывается добавление шлюза виртуальной сети в уже созданную виртуальную сеть диспетчер ресурсов для ExpressRoute с помощью портал Azure.
 services: expressroute
-author: cherylmc
+author: duongau
 ms.service: expressroute
 ms.topic: how-to
 ms.date: 12/06/2018
-ms.author: cherylmc
+ms.author: duau
 ms.custom: seodec18
-ms.openlocfilehash: 188d366dafce6ee79a084750b5f7d1fe4140432b
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 06f7e5d28017ee618adfeeec52c6f1226e1ae82c
+ms.sourcegitcommit: 5a3b9f35d47355d026ee39d398c614ca4dae51c6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84736379"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89396367"
 ---
 # <a name="configure-a-virtual-network-gateway-for-expressroute-using-the-azure-portal"></a>Настройка шлюза виртуальной сети для ExpressRoute с помощью портала Azure
 > [!div class="op_single_selector"]
@@ -78,5 +78,5 @@ ms.locfileid: "84736379"
 13. Проверьте параметры. В нижней части колонки можно выбрать параметр **Закрепить на панели мониторинга**, если необходимо, чтобы шлюз отображался на панели мониторинга.
 14. Щелкните **Создать** , чтобы создать шлюз. После проверки параметров шлюз будет развернут. Создание шлюза виртуальной сети может длиться до 45 минут.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 После создания шлюза виртуальной сети вы можете связать виртуальную сеть с каналом ExpressRoute. Ознакомьтесь со статьей [Связывание виртуальной сети с каналом ExpressRoute](expressroute-howto-linkvnet-portal-resource-manager.md).

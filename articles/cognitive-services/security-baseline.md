@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 06/22/2020
 ms.author: mbaldwin
 ms.custom: subject-security-benchmark
-ms.openlocfilehash: 3633afa3ed7d3dc9ba3d85bd7542ef9838881c5b
-ms.sourcegitcommit: d68c72e120bdd610bb6304dad503d3ea89a1f0f7
+ms.openlocfilehash: 796ef0b82c15940ce9200e0b50916ca657f10b99
+ms.sourcegitcommit: 5a3b9f35d47355d026ee39d398c614ca4dae51c6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/01/2020
-ms.locfileid: "89225654"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89393899"
 ---
 # <a name="azure-security-baseline-for-cognitive-services"></a>Базовый план безопасности Azure для Cognitive Services
 
@@ -872,7 +872,9 @@ ms.locfileid: "89225654"
 
 * [Создание Key Vault](https://docs.microsoft.com/azure/key-vault/quick-create-portal)
 
-* [Как обеспечить проверку подлинности Key Vault с помощью управляемого удостоверения](https://docs.microsoft.com/azure/key-vault/managed-identity)
+* [Проверка подлинности в Key Vault](https://docs.microsoft.com/azure/key-vault/general/authentication)
+
+* [Назначение политики доступа Key Vault](https://docs.microsoft.com/azure/key-vault/general/assign-access-policy-portal)
 
 **Мониторинг Центра безопасности Azure**: Да
 
@@ -922,13 +924,13 @@ ms.locfileid: "89225654"
 
 Предварительно сканируйте любое содержимое, отправляемое в невычислительные ресурсы Azure, например служба приложений, хранилище Data Lake, хранилище BLOB-объектов, база данных Azure для PostgreSQL и т. д. Корпорация Майкрософт не может получить доступ к данным в этих экземплярах.
 
-**Мониторинг центра безопасности Azure**: Неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
 **Ответственность**: Customer
 
 ### <a name="83-ensure-anti-malware-software-and-signatures-are-updated"></a>8.3. Своевременное обновление программного обеспечения для защиты от вредоносных программ и подписей
 
-**Рекомендации**. Неприменимо. Эта рекомендация предназначена для вычислительных ресурсов.
+**Руководство**. Неприменимо; эта рекомендация предназначена для вычислительных ресурсов.
 
 Защита от вредоносных программ Майкрософт включена на базовом узле, поддерживающем службы Azure (например, Azure Cognitive Services), но не выполняется в содержимом клиента.
 
@@ -984,7 +986,7 @@ ms.locfileid: "89225654"
 
 * [Как восстановить резервную копию ключей хранилища ключей в Azure](https://docs.microsoft.com/powershell/module/azurerm.keyvault/restore-azurekeyvaultkey?view=azurermps-6.13.0)
 
-**Мониторинг Центра безопасности Azure**: Неприменимо
+**Мониторинг Центра безопасности Azure**. Неприменимо
 
 **Ответственность**: Customer
 
@@ -1038,7 +1040,7 @@ ms.locfileid: "89225654"
 
 * [См. публикацию NIST: руководство по тестированию, обучению и выполнению программ для ИТ-планов и возможностей](https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-84.pdf)
 
-**Мониторинг Центра безопасности Azure**: Неприменимо
+**Мониторинг Центра безопасности Azure**. Неприменимо
 
 **Ответственность**: Customer
 
@@ -1084,7 +1086,7 @@ ms.locfileid: "89225654"
 
 * [Дополнительные сведения о стратегии корпорации Майкрософт и реализации "красной команды", а также о тестировании на основе уязвимости для облачной инфраструктуры, служб и приложений Майкрософт см. здесь](https://gallery.technet.microsoft.com/Cloud-Red-Teaming-b837392e)
 
-**Мониторинг Центра безопасности Azure**: Неприменимо
+**Мониторинг Центра безопасности Azure**. Неприменимо
 
 **Ответственность**: Совмещаемая блокировка
 

@@ -5,20 +5,20 @@ services: vpn-gateway
 author: cherylmc
 ms.service: vpn-gateway
 ms.topic: how-to
-ms.date: 02/10/2020
+ms.date: 09/02/2020
 ms.author: cherylmc
-ms.openlocfilehash: 686732716b26e8e82aa98d445cd04b0d311cf23a
-ms.sourcegitcommit: bfeae16fa5db56c1ec1fe75e0597d8194522b396
+ms.openlocfilehash: 8b6ab5dcbd38925afbd98381e427426d27110a53
+ms.sourcegitcommit: 5a3b9f35d47355d026ee39d398c614ca4dae51c6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/10/2020
-ms.locfileid: "88035541"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89393519"
 ---
 # <a name="create-a-route-based-vpn-gateway-using-powershell"></a>Создание VPN-шлюза на основе маршрутов с помощью PowerShell
 
 Эта статья поможет быстро создать VPN-шлюз Azure на основе маршрутов, используя PowerShell. VPN-шлюз используется при создании VPN-подключения к локальной сети. Также вы можете использовать VPN-шлюз для подключения виртуальных сетей.
 
-## <a name="before-you-begin"></a>Подготовка
+## <a name="before-you-begin"></a>Перед началом
 
 Инструкции в этой статье позволяют создать виртуальную сеть, подсеть, подсеть шлюза и VPN-шлюз на основе маршрутов (шлюз виртуальной сети). Создав шлюз, можно создавать подключения. Для этих действий требуется подписка Azure. Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
