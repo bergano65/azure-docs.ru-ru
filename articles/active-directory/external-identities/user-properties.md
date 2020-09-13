@@ -12,12 +12,12 @@ manager: celestedg
 ms.reviewer: mal
 ms.custom: it-pro, seo-update-azuread-jan, seoapril2019
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: e7271c4de6d5c186c9e561aa37a140eaa04cbc0a
-ms.sourcegitcommit: 4e5560887b8f10539d7564eedaff4316adb27e2c
+ms.openlocfilehash: a61a298b3b1d9e129b0ef3bbfff12f34d0ba09a8
+ms.sourcegitcommit: 5d7f8c57eaae91f7d9cf1f4da059006521ed4f9f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87908917"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89668960"
 ---
 # <a name="properties-of-an-azure-active-directory-b2b-collaboration-user"></a>Свойства пользователя службы совместной работы Azure Active Directory B2B
 
@@ -108,7 +108,7 @@ ms.locfileid: "87908917"
 
 ## <a name="can-i-update-a-guest-users-email-address"></a>Можно ли обновить адрес электронной почты гостевого пользователя?
 
-Если гостевой пользователь принимает ваше приглашение и впоследствии изменяет свой адрес электронной почты, новое сообщение не будет автоматически синхронизироваться с объектом гостевого пользователя в вашем каталоге. Свойство mail создается с помощью [Microsoft Graph API](https://docs.microsoft.com/graph/api/resources/user?view=graph-rest-1.0). Вы можете обновить свойство mail через центр администрирования Exchange или [Exchange Online PowerShell](https://docs.microsoft.com/powershell/module/exchange/users-and-groups/set-mailuser?view=exchange-ps), и изменения будут отражены в объекте гостевого пользователя Azure AD.
+Если гостевой пользователь принимает ваше приглашение и впоследствии изменяет свой адрес электронной почты, новое сообщение не будет автоматически синхронизироваться с объектом гостевого пользователя в вашем каталоге. Свойство mail создается с помощью [Microsoft Graph API](https://docs.microsoft.com/graph/api/resources/user?view=graph-rest-1.0). Свойство Mail можно обновить с помощью Microsoft Graph API, центра администрирования Exchange или [Exchange Online PowerShell](https://docs.microsoft.com/powershell/module/exchange/users-and-groups/set-mailuser?view=exchange-ps). Изменение будет отражено в объекте гостевого пользователя Azure AD.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

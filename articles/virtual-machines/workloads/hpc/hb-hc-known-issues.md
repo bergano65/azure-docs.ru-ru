@@ -1,6 +1,6 @@
 ---
-title: Известные проблемы с виртуальными машинами серии ХБ и HC (виртуальные машины Azure) | Документация Майкрософт
-description: Сведения об известных проблемах с размерами виртуальных машин серии ХБ в Azure.
+title: Устранение известных проблем с помощью виртуальных машин HPC и GPU с виртуальными машинами Azure | Документация Майкрософт
+description: Сведения об устранении известных проблем с размерами виртуальных машин HPC и GPU в Azure.
 services: virtual-machines
 documentationcenter: ''
 author: vermagit
@@ -10,19 +10,47 @@ tags: azure-resource-manager
 ms.service: virtual-machines
 ms.workload: infrastructure-services
 ms.topic: article
-ms.date: 08/19/2020
+ms.date: 09/08/2020
 ms.author: amverma
 ms.reviewer: cynthn
-ms.openlocfilehash: 6316bcc91bb381facb4f77b2d8dbd8b22f9ed387
-ms.sourcegitcommit: d18a59b2efff67934650f6ad3a2e1fe9f8269f21
+ms.openlocfilehash: 42a27092a87488e39d1195dba5fb64173cf52af7
+ms.sourcegitcommit: 3c66bfd9c36cd204c299ed43b67de0ec08a7b968
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/20/2020
-ms.locfileid: "88660101"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "90004210"
 ---
 # <a name="known-issues-with-h-series-and-n-series-vms"></a>Известные проблемы с виртуальными машинами серий H и N
 
-Эта статья содержит наиболее распространенные проблемы и решения при использовании виртуальных машин серии [H](../../sizes-hpc.md) и [N](../../sizes-gpu.md) .
+Эта статья содержит наиболее распространенные проблемы и решения при использовании виртуальных машин HPC серии [H](../../sizes-hpc.md) и [серии N](../../sizes-gpu.md) и GPU.
+
+## <a name="infiniband-driver-installation-on-n-series-vms"></a>Установка драйвера InfiniBand на виртуальных машинах серии N
+
+NC24r_v3 и ND40r_v2 включены в SR-IOV, а в NC24r и NC24r_v2 не включены SR-IOV. [Ниже](../../sizes-hpc.md#rdma-capable-instances)приведены некоторые сведения о разветвления.
+InfiniBand (геодоступность) можно настроить на размерах виртуальных машин с поддержкой SR-IOV с помощью драйверов ОФЕД, в то время как размер виртуальных машин не на основе SR-IOV требует наличия драйверов ND. Эта поддержка в [CentOS-HPC вмис](configure.md)доступна соответствующим образом. Для Ubuntu см. [инструкции](https://techcommunity.microsoft.com/t5/azure-compute/configuring-infiniband-for-ubuntu-hpc-and-gpu-vms/ba-p/1221351) по установке драйверов ОФЕД и ND, как описано в [документах](enable-infiniband.md#vm-images-with-infiniband-drivers).
+
+## <a name="duplicate-mac-with-cloud-init-with-ubuntu-on-h-series-and-n-series-vms"></a>Дублирование компьютеров MAC с помощью Cloud-init с Ubuntu на виртуальных машинах серии H и N
+
+Существует известная ошибка, связанная с Cloud-init на образы виртуальных машин Ubuntu, когда она пытается открыть интерфейс для пересчета. Это может произойти либо при перезагрузке виртуальной машины, либо при попытке создать образ виртуальной машины после обобщения. В журналах загрузки виртуальной машины может отображаться сообщение об ошибке: "Starting Network Service... Рунтимиррор: обнаружен дубликат Mac-адреса. "eth1" и "IB0" имеют Mac ".
+
+Этот "дубликат MAC с Cloud-init в Ubuntu" является известной проблемой. Обходной путь:
+1) Развертывание образа виртуальной машины (Ubuntu 18,04) Marketplace
+2) Установите необходимые пакеты программного обеспечения для включения ГЕО([инструкции](https://techcommunity.microsoft.com/t5/azure-compute/configuring-infiniband-for-ubuntu-hpc-and-gpu-vms/ba-p/1221351))
+3) Измените waagent. conf на Change Енаблердма = y.
+4) Отключение сетевых подключений в Cloud-init
+    ```console
+    echo network: {config: disabled} | sudo tee /etc/cloud/cloud.cfg.d/99-disable-network-config.cfg
+    ```
+5) Измените файл конфигурации сети нетплан, созданный Cloud-init, чтобы удалить MAC.
+    ```console
+    sudo bash -c "cat > /etc/netplan/50-cloud-init.yaml" <<'EOF'
+    network:
+        ethernets:
+        eth0:
+            dhcp4: true
+        version: 2
+    EOF
+    ```
 
 ## <a name="dram-on-hb-series"></a>DRAM в серии ХБ
 
@@ -30,7 +58,7 @@ ms.locfileid: "88660101"
 
 ## <a name="accelerated-networking"></a>Ускорение работы в сети
 
-Служба "Ускоренная работа в Azure" в настоящее время не включена, но будет по мере прохождения через период предварительной версии. Мы будем уведомлять клиентов о том, что эта функция поддерживается.
+В данный момент не включена поддержка ускоренной работы в Azure на виртуальных машинах HPC и GPU с поддержкой географических процессоров. Мы будем уведомлять клиентов о том, что эта функция поддерживается.
 
 ## <a name="qp0-access-restriction"></a>Ограничение доступа qp0
 
@@ -48,7 +76,7 @@ sed -i 's/GSS_USE_PROXY="yes"/GSS_USE_PROXY="no"/g' /etc/sysconfig/nfs
 
 В системах HPC часто бывает полезно очистить память после завершения задания, прежде чем следующему пользователю будет назначен тот же узел. После запуска приложений в Linux может оказаться, что объем доступной памяти сокращается при увеличении памяти буфера, несмотря на то, что не выполняются никакие приложения.
 
-![Снимок экрана командной строки](./media/known-issues/cache-cleaning-1.png)
+![Снимок экрана командной строки перед очисткой](./media/known-issues/cache-cleaning-1.png)
 
 `numactl -H`При использовании будет показано, какие NUMAnode памяти буферизованы (возможно, все). В Linux пользователи могут очищать кэши тремя способами, чтобы вернуть буферную или кэшированную память в "Free". Необходимо быть корневым или иметь разрешения sudo.
 
@@ -58,11 +86,11 @@ echo 2 > /proc/sys/vm/drop_caches [frees slab objects e.g. dentries, inodes]
 echo 3 > /proc/sys/vm/drop_caches [cleans page-cache and slab objects]
 ```
 
-![Снимок экрана командной строки](./media/known-issues/cache-cleaning-2.png)
+![Снимок экрана командной строки после очистки](./media/known-issues/cache-cleaning-2.png)
 
 ## <a name="kernel-warnings"></a>Предупреждения ядра
 
-При загрузке виртуальной машины серии ХБ в Linux могут появиться следующие предупреждающие сообщения ядра.
+При загрузке виртуальной машины серии ХБ в Linux можно игнорировать следующие предупреждающие сообщения ядра. Это связано с известным ограничением низкоуровневой оболочки Azure, которое будет решаться с течением времени.
 
 ```console
 [  0.004000] WARNING: CPU: 4 PID: 0 at arch/x86/kernel/smpboot.c:376 topology_sane.isra.3+0x80/0x90
@@ -82,17 +110,9 @@ echo 3 > /proc/sys/vm/drop_caches [cleans page-cache and slab objects]
 [  0.004000] ---[ end trace 73fc0e0825d4ca1f ]---
 ```
 
-Это предупреждение можно игнорировать. Это связано с известным ограничением низкоуровневой оболочки Azure, которое будет решаться с течением времени.
-
-
-## <a name="infiniband-driver-installation-on-infiniband-enabled-n-series-vm-sizes"></a>Установка драйвера InfiniBand на виртуальных машинах серии N с поддержкой InfiniBand
-
-NC24r_v3 и ND40r_v2 включены в SR-IOV, а в NC24r и NC24r_v2 не включены SR-IOV. [Ниже](../../sizes-hpc.md#rdma-capable-instances)приведены некоторые сведения о разветвления.
-InfiniBand (геодоступность) можно настроить на размерах виртуальных машин с поддержкой SR-IOV с помощью драйверов ОФЕД, в то время как размер виртуальных машин не на основе SR-IOV требует наличия драйверов ND. Эта поддержка в [CentOS-HPC вмис](configure.md)доступна соответствующим образом. Для Ubuntu см. [инструкции](https://techcommunity.microsoft.com/t5/azure-compute/configuring-infiniband-for-ubuntu-hpc-and-gpu-vms/ba-p/1221351) по установке драйверов ОФЕД и ND, как описано в [документах](enable-infiniband.md#vm-images-with-infiniband-drivers).
-
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
 - Дополнительные сведения об оптимальной настройке рабочих нагрузок для производительности и масштабируемости см. в статье с обзором виртуальных машин серии [HB](hb-series-overview.md) и [HC](hc-series-overview.md).
 - Ознакомьтесь с последними объявлениями и некоторыми примерами HPC, а также результатами в [блогах технического сообщества службы вычислений](https://techcommunity.microsoft.com/t5/azure-compute/bg-p/AzureCompute).
-- Сведения о более высоком уровне архитектурного представления выполнения рабочих нагрузок HPC см. в статье [Высокопроизводительные вычисления (HPC) в Azure](/azure/architecture/topics/high-performance-computing/).
+- Более высокоуровневое архитектурное представление выполнения рабочих нагрузок HPC см. в статье [высокопроизводительные вычисления (HPC) в Azure](/azure/architecture/topics/high-performance-computing/).

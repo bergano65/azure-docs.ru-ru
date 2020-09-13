@@ -6,12 +6,12 @@ ms.service: azure-resource-manager
 ms.topic: reference
 ms.date: 08/25/2020
 ms.author: raynew
-ms.openlocfilehash: 8c18a4d2fa6e5bdb211b77d4d7bb28af7e5b1c1a
-ms.sourcegitcommit: e69bb334ea7e81d49530ebd6c2d3a3a8fa9775c9
+ms.openlocfilehash: 608d9511b14ef8dd3815d6f9b45cda31e6b38b94
+ms.sourcegitcommit: 3c66bfd9c36cd204c299ed43b67de0ec08a7b968
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "88948119"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "90004312"
 ---
 # <a name="support-for-moving-azure-resources-across-regions"></a>Поддержка перемещения ресурсов Azure в разных регионах
 
@@ -363,9 +363,9 @@ ms.locfileid: "88948119"
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Перемещение региона | 
 > | ------------- | ----------- |
-> | availabilitysets | нет | 
+> | availabilitysets | Да <br/><br/> Используйте перемещение [ресурсов Azure](../../resource-mover/tutorial-move-region-virtual-machines.md) для перемещения групп доступности. | 
 > | diskencryptionsets | нет | 
-> | disks | нет | 
+> | disks | Да <br/><br/> Используйте перемещение [ресурсов Azure](../../resource-mover/tutorial-move-region-virtual-machines.md) для перемещения виртуальных машин Azure и связанных дисков. | 
 > | galleries | нет | 
 > | galleries / images | нет | 
 > | galleries / images / versions | нет | 
@@ -377,7 +377,7 @@ ms.locfileid: "88948119"
 > | sharedvmimages | нет | 
 > | sharedvmimages / versions | нет | 
 > | snapshots | нет | 
-> | virtualmachines | Да | 
+> | virtualmachines | Да <br/><br/> Перемещение виртуальных машин Azure с помощью [перемещения ресурсов Azure](../../resource-mover/tutorial-move-region-virtual-machines.md) . | 
 > | virtualmachines / extensions | нет | 
 > | virtualmachinescalesets | нет | 
 
@@ -544,14 +544,14 @@ ms.locfileid: "88948119"
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Перемещение региона | 
 > | ------------- | ----------- |
-> | servers | Для перемещения существующего сервера можно использовать реплику чтения между регионами. [Подробнее.](../../postgresql/howto-move-regions-portal.md)<br/><br/> Если служба подготовлена с геоизбыточным хранилищем резервных копий, можно использовать геовосстановление для восстановления в других регионах. [Подробнее.](../../mariadb/concepts-business-continuity.md#recover-from-an-azure-regional-data-center-outage)
+> | servers | Для перемещения существующего сервера можно использовать реплику чтения между регионами. [Подробнее](../../postgresql/howto-move-regions-portal.md).<br/><br/> Если служба подготовлена с геоизбыточным хранилищем резервных копий, можно использовать геовосстановление для восстановления в других регионах. [Подробнее](../../mariadb/concepts-business-continuity.md#recover-from-an-azure-regional-data-center-outage).
 
 ## <a name="microsoftdbformysql"></a>Microsoft.DBforMySQL
 
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Перемещение региона | 
 > | ------------- | ----------- |
-> | servers | Для перемещения существующего сервера можно использовать реплику чтения между регионами. [Подробнее.](../../mysql/howto-move-regions-portal.md)
+> | servers | Для перемещения существующего сервера можно использовать реплику чтения между регионами. [Подробнее](../../mysql/howto-move-regions-portal.md).
 
 ## <a name="microsoftdbforpostgresql"></a>Microsoft.DBforPostgreSQL
 
@@ -581,7 +581,7 @@ ms.locfileid: "88948119"
 > | ------------- | ----------- |
 > | elasticpools | Нет. Ресурс не предоставлен.
 > | elasticpools / iothubtenants | Нет. Ресурс не предоставлен.
-> | iothubs | Да. [Подробнее](../../iot-hub/iot-hub-how-to-clone.md)
+> | iothubs | Да. [Дополнительные сведения](../../iot-hub/iot-hub-how-to-clone.md)
 > | provisioningservices | Нет | 
 
 ## <a name="microsoftdevspaces"></a>Microsoft.DevSpaces
@@ -908,13 +908,13 @@ ms.locfileid: "88948119"
 > | expressrouteports | нет | 
 > | frontdoors | нет | 
 > | frontdoorwebapplicationfirewallpolicies | нет | 
-> | loadbalancers | Да <br/><br/> Можно экспортировать существующую конфигурацию в качестве шаблона и развернуть шаблон в новом регионе. Узнайте, как переместить [внешнюю](../..//load-balancer/move-across-regions-external-load-balancer-portal.md) или [внутреннюю](../../load-balancer/move-across-regions-internal-load-balancer-portal.md) подсистему балансировки нагрузки. |
+> | loadbalancers | Да <br/><br/> Используйте перемещение [ресурсов Azure](../../resource-mover/tutorial-move-region-virtual-machines.md) для перемещения внутренних и внешних подсистем балансировки нагрузки. |
 > | localnetworkgateways |  нет | 
 > | natgateways |  нет | 
 > | networkintentpolicies |  Нет | 
-> | networkinterfaces | Да | 
+> | networkinterfaces | Да <br/><br/> Перемещение сетевых карт с помощью перемещения [ресурсов Azure](../../resource-mover/tutorial-move-region-virtual-machines.md) . | 
 > | networkprofiles | нет | 
-> | networksecuritygroups | Да | 
+> | networksecuritygroups | Да <br/><br/> Используйте перемещение [ресурсов Azure](../../resource-mover/tutorial-move-region-virtual-machines.md) для перемещения групп безопасности сети (нгсс). | 
 > | networkwatchers |  нет |  
 > | networkwatchers / connectionmonitors |  Нет | 
 > | нетворкватчерс/lenses |  нет | 
@@ -924,7 +924,7 @@ ms.locfileid: "88948119"
 > | privatednszones / virtualnetworklinks |  нет |  
 > | privateendpoints | Нет | 
 > | privatelinkservices | нет | 
-> | publicipaddresses | Да<br/><br/> Можно экспортировать существующую конфигурацию общедоступного IP-адреса в качестве шаблона и развернуть шаблон в новом регионе. Дополнительные [сведения](../../virtual-network/move-across-regions-publicip-portal.md) о перемещении общедоступного IP-адреса. |
+> | publicipaddresses | Да<br/><br/> Используйте перемещение [ресурсов Azure](../../resource-mover/tutorial-move-region-virtual-machines.md) для перемещения общедоступных IP-адресов. |
 > | publicipprefixes | Нет | 
 > | routefilters | нет | 
 > | routetables |  Нет | 
@@ -1134,11 +1134,11 @@ ms.locfileid: "88948119"
 > | Тип ресурса | Перемещение региона | 
 > | ------------- | ----------- |
 > | instancepools | нет | 
-> | managedinstances | Да | 
+> | managedinstances | Да <br/><br/> [Дополнительные сведения](/azure/azure-sql/database/move-resources-across-regions) о перемещении управляемых экземпляров между регионами. | 
 > | managedinstances / databases | Да | 
 > | servers | Да | 
-> | servers / databases | Да | 
-> | servers / elasticpools | Да | 
+> | servers / databases | Да <br/><br/> [Узнайте больше](/azure/azure-sql/database/move-resources-across-regions) о перемещении баз данных между регионами.<br/><br/> [Дополнительные сведения](../../resource-mover/tutorial-move-region-sql.md) об использовании средства перемещения ресурсов Azure для перемещения баз данных SQL Azure.  | 
+> | servers / elasticpools | Да <br/><br/> [Узнайте больше](/azure/azure-sql/database/move-resources-across-regions) о перемещении пулов эластичных БД по регионам.<br/><br/> [Узнайте больше](../../resource-mover/tutorial-move-region-sql.md) об использовании перемещения ресурсов Azure для перемещения эластичных ПУЛОВ Azure SQL.  | 
 > | virtualclusters | Да | 
 
 ## <a name="microsoftsqlvirtualmachine"></a>Microsoft.SqlVirtualMachine

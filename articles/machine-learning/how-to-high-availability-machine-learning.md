@@ -1,5 +1,5 @@
 ---
-title: Как повысить устойчивость
+title: Высокая доступность & устойчивости
 titleSuffix: Azure Machine Learning
 description: Узнайте, как повысить устойчивость Машинное обучение Azure ресурсов к простоям с помощью конфигурации высокого уровня доступности.
 services: machine-learning
@@ -9,13 +9,13 @@ ms.topic: conceptual
 ms.author: jhirono
 author: jhirono
 ms.reviewer: larryfr
-ms.date: 07/16/2020
-ms.openlocfilehash: 9b298e10d3eb95bcb0ef525eb973259a3ab1dbbb
-ms.sourcegitcommit: b33c9ad17598d7e4d66fe11d511daa78b4b8b330
+ms.date: 09/16/2020
+ms.openlocfilehash: abb24ef1cc6a693acbaf6561a185fd5ae536a66d
+ms.sourcegitcommit: 5d7f8c57eaae91f7d9cf1f4da059006521ed4f9f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88852544"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89668788"
 ---
 # <a name="increase-azure-machine-learning-resiliency"></a>Повышение устойчивости Машинное обучение Azure
 
@@ -50,15 +50,15 @@ ms.locfileid: "88852544"
 
 | Служба | Управляется | Высокий уровень доступности по умолчанию |
 | ----- | ----- | ----- |
-| **Инфраструктура Машинное обучение Azure** | пиринг Майкрософт. | |
+| **Инфраструктура Машинное обучение Azure** | Microsoft | |
 | **Связанные ресурсы** |
 | Хранилище Azure | Вы | |
 | Key Vault | Вы | ✓ |
 | Реестр контейнеров | Вы | |
 | Application Insights | Вы | Н/Д |
 | **вычислительные ресурсы;** |
-| Вычислительная операция | пиринг Майкрософт. |  |
-| Вычислительный кластер | пиринг Майкрософт. |  |
+| Вычислительная операция | Microsoft |  |
+| Вычислительный кластер | Microsoft |  |
 | Другие ресурсы вычислений, такие как AKS, <br>Azure Databricks, экземпляры контейнеров, HDInsight | Вы |  |
 | **Дополнительные хранилища данных** , такие как служба хранилища Azure, база данных SQL<br> База данных Azure для PostgreSQL, база данных Azure для MySQL, <br>Azure Databricks файловая система | Вы | |
 

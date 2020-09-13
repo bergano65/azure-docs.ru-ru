@@ -5,16 +5,16 @@ services: data-factory
 author: linda33wj
 ms.service: data-factory
 ms.topic: troubleshooting
-ms.date: 07/20/2020
+ms.date: 09/10/2020
 ms.author: jingwang
 ms.reviewer: craigg
 ms.custom: has-adal-ref
-ms.openlocfilehash: c8edb36345de4516077b3c857cff33389062cc7f
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 62a5f3b18d4b8329c4a15086bc23d09805b786ab
+ms.sourcegitcommit: 5d7f8c57eaae91f7d9cf1f4da059006521ed4f9f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87044541"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89668899"
 ---
 # <a name="troubleshoot-azure-data-factory-connectors"></a>Устранение неполадок с соединителями Фабрики данных Azure
 
@@ -22,7 +22,6 @@ ms.locfileid: "87044541"
 
 В этой статье рассматриваются распространенные методы устранения неполадок для соединителей Фабрики данных Azure.
   
-
 ## <a name="azure-blob-storage"></a>хранилище BLOB-объектов Azure
 
 ### <a name="error-code--azurebloboperationfailed"></a>Код ошибки:  AzureBlobOperationFailed
@@ -174,8 +173,7 @@ ms.locfileid: "87044541"
 
 - **Причина**: сбой проверки сертификата во время подтверждения TLS.
 
-- **Решение**. Используйте промежуточное копирование, чтобы пропустить проверку TLS для ADLS 1-го поколения. Необходимо воспроизвести эту неполадку и собрать трассировку NetMon, а затем обратиться в службу сети, чтобы проверить конфигурацию локальной сети, следуя [этой статье](self-hosted-integration-runtime-troubleshoot-guide.md#how-to-collect-netmon-trace).
-
+- **Решение**. Используйте промежуточное копирование, чтобы пропустить проверку TLS для ADLS 1-го поколения. Необходимо воспроизвести эту ошибку и собрать трассировку NetMon, а затем обратиться в сетевую группу, чтобы проверить конфигурацию локальной сети.
 
     ![Устранение неполадок ADLS 1-го поколения](./media/connector-troubleshoot-guide/adls-troubleshoot.png)
 
@@ -207,15 +205,15 @@ ms.locfileid: "87044541"
 - **Решение**. Повторите действие копирования через несколько минут.
                   
 
-## <a name="azure-sql-data-warehouseazure-sql-databasesql-server"></a>Хранилище данных SQL Azure, база данных SQL Azure или SQL Server
+## <a name="azure-synapse-analytics-formerly-sql-data-warehouseazure-sql-databasesql-server"></a>Azure синапсе Analytics (ранее хранилище данных SQL)/Азуре база данных SQL/SQL Server
 
 ### <a name="error-code--sqlfailedtoconnect"></a>Код ошибки:  SqlFailedToConnect
 
-- **Сообщение.** `Cannot connect to SQL Database: '%server;', Database: '%database;', User: '%user;'. Check the linked service configuration is correct, and make sure the SQL Database firewall allows the integration runtime to access.`
+- **Сообщение**: `Cannot connect to SQL Database: '%server;', Database: '%database;', User: '%user;'. Check the linked service configuration is correct, and make sure the SQL Database firewall allows the integration runtime to access.`
 
 - **Причина.** Если в сообщении об ошибке есть слово SqlException, база данных SQL выдает ошибку, указывающую на сбой определенной операции.
 
-- **Рекомендация**.  Для получения дополнительных сведений выполните поиск по коду ошибки SQL в этом справочном документе: https://docs.microsoft.com/sql/relational-databases/errors-events/database-engine-events-and-errors. Если вам нужна дополнительная помощь, обратитесь в службу поддержки Azure SQL.
+- **Рекомендация**: выполните поиск по коду ошибки SQL в этом справочном документе для получения дополнительных сведений: https://docs.microsoft.com/sql/relational-databases/errors-events/database-engine-events-and-errors . Если вам нужна дополнительная помощь, обратитесь в службу поддержки Azure SQL.
 
 - **Причина.** Если сообщение об ошибке содержит строку "Клиенту с IP-адресом "..." запрещен доступ к серверу" и вы пытаетесь подключиться к базе данных SQL Azure, обычно причиной является проблема с брандмауэром базы данных SQL Azure.
 
@@ -224,12 +222,13 @@ ms.locfileid: "87044541"
 
 ### <a name="error-code--sqloperationfailed"></a>Код ошибки:  SqlOperationFailed
 
-- **Сообщение.** `A database operation failed. Please search error to get more details.`
+- **Сообщение**: `A database operation failed. Please search error to get more details.`
 
 - **Причина.** Если в сообщении об ошибке есть слово SqlException, база данных SQL выдает ошибку, указывающую на сбой определенной операции.
 
-- **Рекомендация**.  Если ошибка SQL не ясна, попробуйте изменить уровень совместимости базы данных на последний (150). Могут возникнуть ошибки SQL последней версии. См. подробную документацию: https://docs.microsoft.com/sql/t-sql/statements/alter-database-transact-sql-compatibility-level?view=sql-server-ver15#backwardCompat.
-        Чтобы устранить неполадки SQL, выполните поиск по коду ошибки SQL в этом справочном документе: https://docs.microsoft.com/sql/relational-databases/errors-events/database-engine-events-and-errors. Если вам нужна дополнительная помощь, обратитесь в службу поддержки Azure SQL.
+- **Рекомендация**.  Если ошибка SQL не ясна, попробуйте изменить уровень совместимости базы данных на последний (150). Могут возникнуть ошибки SQL последней версии. См. [подробный документ](https://docs.microsoft.com/sql/t-sql/statements/alter-database-transact-sql-compatibility-level#backwardCompat).
+
+    Чтобы устранить неполадки SQL, выполните поиск по коду ошибки SQL в этом справочном документе: https://docs.microsoft.com/sql/relational-databases/errors-events/database-engine-events-and-errors. Если вам нужна дополнительная помощь, обратитесь в службу поддержки Azure SQL.
 
 - **Причина.** Если в сообщении об ошибке есть слово PdwManagedToNativeInteropException, обычно это вызвано несоответствием размеров столбца-источника и столбца-приемника.
 
@@ -243,7 +242,7 @@ ms.locfileid: "87044541"
 
 ### <a name="error-code--sqlunauthorizedaccess"></a>Код ошибки:  SqlUnauthorizedAccess
 
-- **Сообщение.** `Cannot connect to '%connectorName;'. Detail Message: '%message;'`
+- **Сообщение**: `Cannot connect to '%connectorName;'. Detail Message: '%message;'`
 
 - **Причина.** Учетные данные неверны, или учетная запись входа не может получить доступ к базе данных SQL.
 
@@ -252,16 +251,16 @@ ms.locfileid: "87044541"
 
 ### <a name="error-code--sqlopenconnectiontimeout"></a>Код ошибки:  SqlOpenConnectionTimeout
 
-- **Сообщение.** `Open connection to database timeout after '%timeoutValue;' seconds.`
+- **Сообщение**: `Open connection to database timeout after '%timeoutValue;' seconds.`
 
 - **Причина.** Мог произойти временный сбой базы данных SQL.
 
-- **Рекомендация**.  Повторите попытку, чтобы обновить строку подключения связанной службы, увеличив время ожидания подключения.
+- **Рекомендация**: повторите попытку обновления строки подключения связанной службы с большим значением времени ожидания соединения.
 
 
 ### <a name="error-code--sqlautocreatetabletypemapfailed"></a>Код ошибки:  SqlAutoCreateTableTypeMapFailed
 
-- **Сообщение.** `Type '%dataType;' in source side cannot be mapped to a type that supported by sink side(column name:'%columnName;') in autocreate table.`
+- **Сообщение**: `Type '%dataType;' in source side cannot be mapped to a type that supported by sink side(column name:'%columnName;') in autocreate table.`
 
 - **Причина.** Таблица автоматического создания не соответствует требованию к источнику.
 
@@ -301,7 +300,7 @@ ms.locfileid: "87044541"
 
 ### <a name="error-code--sqlinvalidcolumnname"></a>Код ошибки:  SqlInvalidColumnName
 
-- **Сообщение.** `Column '%column;' does not exist in the table '%tableName;', ServerName: '%serverName;', DatabaseName: '%dbName;'.`
+- **Сообщение**: `Column '%column;' does not exist in the table '%tableName;', ServerName: '%serverName;', DatabaseName: '%dbName;'.`
 
 - **Причина.** Не удается найти столбец. Возможно, конфигурация неправильна.
 
@@ -310,16 +309,16 @@ ms.locfileid: "87044541"
 
 ### <a name="error-code--sqlcolumnnamemismatchbycasesensitive"></a>Код ошибки:  SqlColumnNameMismatchByCaseSensitive
 
-- **Сообщение.** `Column '%column;' in DataSet '%dataSetName;' cannot be found in physical SQL Database. Column matching is case-sensitive. Column '%columnInTable;' appears similar. Check the DataSet(s) configuration to proceed further.`
+- **Сообщение**: `Column '%column;' in DataSet '%dataSetName;' cannot be found in physical SQL Database. Column matching is case-sensitive. Column '%columnInTable;' appears similar. Check the DataSet(s) configuration to proceed further.`
 
 
 ### <a name="error-code--sqlbatchwritetimeout"></a>Код ошибки:  SqlBatchWriteTimeout
 
-- **Сообщение.** `Timeouts in SQL write operation.`
+- **Сообщение**: `Timeouts in SQL write operation.`
 
 - **Причина.** Мог произойти временный сбой базы данных SQL.
 
-- **Рекомендация**.  Повторите попытку. Если проблема повторяется, обратитесь в службу поддержки Azure SQL.
+- **Рекомендация**: повторная попытка. Если проблема повторяется, обратитесь в службу поддержки Azure SQL.
 
 
 ### <a name="error-code--sqlbatchwritetransactionfailed"></a>Код ошибки:  SqlBatchWriteTransactionFailed
@@ -332,12 +331,12 @@ ms.locfileid: "87044541"
 
 - **Причина.** Если в сведениях об исключении периодически сообщается о нарушении соединения SQL, это может быть временным сбоем сети или проблемой на стороне базы данных SQL.
 
-- **Рекомендация**.  Повторите действие и проверьте метрики на стороне базы данных SQL.
+- **Рекомендация**: Повторите действие и проверьте метрики на стороне базы данных SQL.
 
 
 ### <a name="error-code--sqlbulkcopyinvalidcolumnlength"></a>Код ошибки:  SqlBulkCopyInvalidColumnLength
 
-- **Сообщение.** `SQL Bulk Copy failed due to receive an invalid column length from the bcp client.`
+- **Сообщение**: `SQL Bulk Copy failed due to receive an invalid column length from the bcp client.`
 
 - **Причина.** Не удалось выполнить массовое копирование SQL, так как от BCP-клиента получена недопустимая длина столбца.
 
@@ -350,7 +349,7 @@ ms.locfileid: "87044541"
 
 - **Причина.** Соединение SQL закрывается базой данных SQL при большом количестве параллельных выполнений и разрыве соединения сервером.
 
-- **Рекомендация**.  Удаленный сервер закрыл соединение SQL. Повторите попытку. Если проблема повторяется, обратитесь в службу поддержки Azure SQL.
+- **Рекомендация**.  Удаленный сервер закрыл соединение SQL. Повторная попытка. Если проблема повторяется, обратитесь в службу поддержки Azure SQL.
 
 
 ### <a name="error-code--sqlcreatetablefailedunsupportedtype"></a>Код ошибки:  SqlCreateTableFailedUnsupportedType
@@ -360,38 +359,38 @@ ms.locfileid: "87044541"
 
 ### <a name="error-message-conversion-failed-when-converting-from-a-character-string-to-uniqueidentifier"></a>Сообщение об ошибке: Ошибка при преобразовании строки символов в тип uniqueidentifier
 
-- **Проблема.** При копировании данных из табличного источника данных (например, SQL Server) в Хранилище данных SQL Azure с использованием промежуточного копирования и PolyBase возникает следующая ошибка:
+- **Симптомы**. при копировании данных из источника табличных данных (например, SQL Server) в Azure синапсе Analytics с помощью промежуточного копирования и polybase вы столкнулись со следующей ошибкой:
 
     ```
     ErrorCode=FailedDbOperation,Type=Microsoft.DataTransfer.Common.Shared.HybridDeliveryException,
-    Message=Error happened when loading data into SQL Data Warehouse.,
+    Message=Error happened when loading data into Azure Synapse Analytics.,
     Source=Microsoft.DataTransfer.ClientLibrary,Type=System.Data.SqlClient.SqlException,
     Message=Conversion failed when converting from a character string to uniqueidentifier...
     ```
 
-- **Причина.** Хранилище данных SQL Azure PolyBase не может преобразовать пустую строку в GUID.
+- **Причина**: Azure синапсе Analytics polybase не может преобразовать пустую строку в GUID.
 
 - **Решение**. В приемнике действия копирования в разделе параметров PolyBase задайте для параметра, определяющего **использование типа по умолчанию**, значение false.
 
 ### <a name="error-message-expected-data-type-decimalxx-offending-value"></a>Сообщение об ошибке: Ожидаемый тип данных: DECIMAL(x,x), ошибочное значение
 
-- **Проблема.** При копировании данных из табличного источника данных (например, SQL Server) в хранилище SQL с использованием промежуточного копирования и PolyBase возникает следующая ошибка:
+- **Симптомы**. при копировании данных из источника табличных данных (например, SQL Server) в Azure синапсе Analytics с помощью промежуточного копирования и polybase вы столкнулись со следующей ошибкой:
 
     ```
     ErrorCode=FailedDbOperation,Type=Microsoft.DataTransfer.Common.Shared.HybridDeliveryException,
-    Message=Error happened when loading data into SQL Data Warehouse.,
+    Message=Error happened when loading data into Azure Synapse Analytics.,
     Source=Microsoft.DataTransfer.ClientLibrary,Type=System.Data.SqlClient.SqlException,
     Message=Query aborted-- the maximum reject threshold (0 rows) was reached while reading from an external source: 1 rows rejected out of total 415 rows processed. (/file_name.txt) 
     Column ordinal: 18, Expected data type: DECIMAL(x,x), Offending value:..
     ```
 
-- **Причина.** Хранилищу данных SQL Azure PolyBase не удается вставить в десятичный столбец пустую строку (значение NULL).
+- **Причина**: Azure синапсе Analytics polybase не может вставить пустую строку (значение null) в десятичный столбец.
 
 - **Решение**. В приемнике действия копирования в разделе параметров PolyBase задайте для параметра, определяющего **использование типа по умолчанию**, значение false.
 
 ### <a name="error-message-java-exception-message-hdfsbridgecreaterecordreader"></a>Сообщение об ошибке: сообщение исключения Java: Хдфсбридже:: Креатерекордреадер
 
-- **Проблема.** Данные копируются в Хранилище данных SQL Azure с помощью PolyBase, и при этом возникает следующая ошибка:
+- **Симптомы**. вы копируете данные в Azure синапсе Analytics с помощью polybase и нажмем следующую ошибку:
 
     ```
     Message=110802;An internal DMS error occurred that caused this operation to fail. 
@@ -400,7 +399,7 @@ ms.locfileid: "87044541"
     Java exception message:HdfsBridge::CreateRecordReader - Unexpected error encountered creating the record reader.: Error [HdfsBridge::CreateRecordReader - Unexpected error encountered creating the record reader.] occurred while accessing external file.....
     ```
 
-- **Причина.** Возможная причина заключается в том, что схема (общая ширина столбца) слишком велика (больше 1 МБ). Проверьте схему целевой таблицы Хранилища данных SQL, добавив размер всех столбцов:
+- **Причина.** Возможная причина заключается в том, что схема (общая ширина столбца) слишком велика (больше 1 МБ). Проверьте схему целевой таблицы Azure синапсе Analytics, добавив размер всех столбцов:
 
     - Int -> 4 байта
     - Bigint -> 8 байт
@@ -424,15 +423,15 @@ ms.locfileid: "87044541"
 
 ### <a name="error-message-the-condition-specified-using-http-conditional-headers-is-not-met"></a>Сообщение об ошибке: Условие, указанное с помощью условных заголовков HTTP, не выполнено.
 
-- **Проблема.** Используйте SQL-запрос для извлечения данных из Хранилища данных SQL Azure и получите следующую ошибку:
+- **Симптомы**. вы используете SQL Query для извлечения данных из Azure синапсе Analytics и нажмем следующую ошибку:
 
     ```
     ...StorageException: The condition specified using HTTP conditional header(s) is not met...
     ```
 
-- **Причина.** При обращении Хранилища данных SQL Azure к внешней таблице в службе хранилища Azure произошла ошибка.
+- **Причина**: ошибка при обращении к Azure синапсе Analytics при выполнении запросов к внешней таблице в службе хранилища Azure.
 
-- **Решение**. Выполните тот же запрос в SSMS и проверьте, отображается ли тот же результат. Если да, отправьте запрос в службу поддержки для Хранилища данных SQL Azure и укажите имя сервера и базы данных Хранилища данных SQL, чтобы устранить неполадки.
+- **Решение**. Выполните тот же запрос в SSMS и проверьте, отображается ли тот же результат. Если да, отправьте запрос в службу поддержки в Azure синапсе Analytics и укажите имя сервера и базы данных Azure синапсе Analytics для дальнейшего устранения неполадок.
             
 
 ## <a name="delimited-text-format"></a>Формат текста с разделителями
@@ -448,11 +447,11 @@ ms.locfileid: "87044541"
 
 ### <a name="error-code--delimitedtextmorecolumnsthandefined"></a>Код ошибки:  DelimitedTextMoreColumnsThanDefined
 
-- **Сообщение.** `Error found when processing '%function;' source '%name;' with row number %rowCount;: found more columns than expected column count: %columnCount;.`
+- **Сообщение**: `Error found when processing '%function;' source '%name;' with row number %rowCount;: found more columns than expected column count: %columnCount;.`
 
 - **Причина.** Число столбцов в проблемной строке больше, чем в первой. Это может быть вызвано проблемой с данными или неправильными настройками разделителей столбцов или символов кавычек.
 
-- **Рекомендация**.  Узнайте число строк из сообщения об ошибке, проверьте столбцы строки и исправьте данные.
+- **Рекомендация**: получение количества строк в сообщении об ошибке, проверка столбца строки и исправление данных.
 
 - **Причина.** Если ожидаемое число столбцов равно 1 в сообщении об ошибке, возможно, указаны неправильные параметры сжатия или форматирования, что привело к неправильному анализу файлов Фабрикой данных Azure.
 
@@ -465,17 +464,17 @@ ms.locfileid: "87044541"
 
 ### <a name="error-code--delimitedtextincorrectrowdelimiter"></a>Код ошибки:  DelimitedTextIncorrectRowDelimiter
 
-- **Сообщение.** `The specified row delimiter %rowDelimiter; is incorrect. Cannot detect a row after parse %size; MB data.`
+- **Сообщение**: `The specified row delimiter %rowDelimiter; is incorrect. Cannot detect a row after parse %size; MB data.`
 
 
 ### <a name="error-code--delimitedtexttoolargecolumncount"></a>Код ошибки:  DelimitedTextTooLargeColumnCount
 
-- **Сообщение.** `Column count reaches limitation when deserializing csv file. Maximum size is '%size;'. Check the column delimiter and row delimiter provided. (Column delimiter: '%columnDelimiter;', Row delimiter: '%rowDelimiter;')`
+- **Сообщение**: `Column count reaches limitation when deserializing csv file. Maximum size is '%size;'. Check the column delimiter and row delimiter provided. (Column delimiter: '%columnDelimiter;', Row delimiter: '%rowDelimiter;')`
 
 
 ### <a name="error-code--delimitedtextinvalidsettings"></a>Код ошибки:  DelimitedTextInvalidSettings
 
-- **Сообщение.** `%settingIssues;`
+- **Сообщение**: `%settingIssues;`
 
 
 
@@ -483,7 +482,7 @@ ms.locfileid: "87044541"
 
 ### <a name="error-code--dynamicscreateserviceclienterror"></a>Код ошибки:  DynamicsCreateServiceClientError
 
-- **Сообщение.** `This is a transient issue on dynamics server side. Try to rerun the pipeline.`
+- **Сообщение**: `This is a transient issue on dynamics server side. Try to rerun the pipeline.`
 
 - **Причина.** Это временная проблема на стороне сервера Dynamics.
 
@@ -515,17 +514,17 @@ ms.locfileid: "87044541"
 
 ### <a name="error-code--jsonconflictpartitiondiscoveryschema"></a>Код ошибки:  JsonConflictPartitionDiscoverySchema
 
-- **Сообщение.** `Conflicting partition column names detected.'%schema;', '%partitionDiscoverySchema;'`
+- **Сообщение**: `Conflicting partition column names detected.'%schema;', '%partitionDiscoverySchema;'`
 
 
 ### <a name="error-code--jsoninvaliddataformat"></a>Код ошибки:  JsonInvalidDataFormat
 
-- **Сообщение.** `Error occurred when deserializing source JSON file '%fileName;'. Check if the data is in valid JSON object format.`
+- **Сообщение**: `Error occurred when deserializing source JSON file '%fileName;'. Check if the data is in valid JSON object format.`
 
 
 ### <a name="error-code--jsoninvaliddatamixedarrayandobject"></a>Код ошибки:  JsonInvalidDataMixedArrayAndObject
 
-- **Сообщение.** `Error occurred when deserializing source JSON file '%fileName;'. The JSON format doesn't allow mixed arrays and objects.`
+- **Сообщение**: `Error occurred when deserializing source JSON file '%fileName;'. The JSON format doesn't allow mixed arrays and objects.`
 
 
 
@@ -533,11 +532,11 @@ ms.locfileid: "87044541"
 
 ### <a name="error-code--parquetjavainvocationexception"></a>Код ошибки:  ParquetJavaInvocationException
 
-- **Сообщение.** `An error occurred when invoking java, message: %javaException;.`
+- **Сообщение**: `An error occurred when invoking java, message: %javaException;.`
 
 - **Причина.** Если в сообщении об ошибке есть строки "java.lang.OutOfMemory", "пространство кучи Java" и "doubleCapacity", обычно это ошибка управления памятью в старой версии среды выполнения интеграции.
 
-- **Рекомендация**.  Если вы используете локальную среду выполнения интеграции версии ниже 3.20.7159.1, рекомендуется обновить ее до последней версии.
+- **Рекомендация**. Если вы используете локально размещенную Integration Runtime и версия более ранняя, чем 3.20.7159.1, рекомендуется выполнить обновление до последней версии.
 
 - **Причина.** Если в сообщении об ошибке есть строка "java.lang.OutOfMemory", среда выполнения интеграции имеет недостаточно ресурсов для обработки файлов.
 
@@ -545,12 +544,12 @@ ms.locfileid: "87044541"
 
 - **Причина.** Если в сообщении об ошибке есть слово NullPointerReference, возможно, это временная ошибка.
 
-- **Рекомендация**.  Повторите попытку. Если проблема сохранится, обратитесь в службу поддержки.
+- **Рекомендация**: повторная попытка. Если проблема сохранится, обратитесь в службу поддержки.
 
 
 ### <a name="error-code--parquetinvalidfile"></a>Код ошибки:  ParquetInvalidFile
 
-- **Сообщение.** `File is not a valid parquet file.`
+- **Сообщение**: `File is not a valid parquet file.`
 
 - **Причина.** Ошибка в файле Parquet.
 
@@ -559,7 +558,7 @@ ms.locfileid: "87044541"
 
 ### <a name="error-code--parquetnotsupportedtype"></a>Код ошибки:  ParquetNotSupportedType
 
-- **Сообщение.** `Unsupported Parquet type. PrimitiveType: %primitiveType; OriginalType: %originalType;.`
+- **Сообщение**: `Unsupported Parquet type. PrimitiveType: %primitiveType; OriginalType: %originalType;.`
 
 - **Причина.** Формат Parquet не поддерживается в Фабрике данных Azure.
 
@@ -568,7 +567,7 @@ ms.locfileid: "87044541"
 
 ### <a name="error-code--parquetmisseddecimalprecisionscale"></a>Код ошибки:  ParquetMissedDecimalPrecisionScale
 
-- **Сообщение.** `Decimal Precision or Scale information is not found in schema for column: %column;.`
+- **Сообщение**: `Decimal Precision or Scale information is not found in schema for column: %column;.`
 
 - **Причина.** Была предпринята попытка проанализировать точность числа и количество знаков после запятой, но эти сведения не были предоставлены.
 
@@ -577,7 +576,7 @@ ms.locfileid: "87044541"
 
 ### <a name="error-code--parquetinvaliddecimalprecisionscale"></a>Код ошибки:  ParquetInvalidDecimalPrecisionScale
 
-- **Сообщение.** `Invalid Decimal Precision or Scale. Precision: %precision; Scale: %scale;.`
+- **Сообщение**: `Invalid Decimal Precision or Scale. Precision: %precision; Scale: %scale;.`
 
 - **Причина.** Недопустимая схема.
 
@@ -595,7 +594,7 @@ ms.locfileid: "87044541"
 
 ### <a name="error-code--parquetinvaliddataformat"></a>Код ошибки:  ParquetInvalidDataFormat
 
-- **Сообщение.** `Incorrect format of %srcValue; for converting to %dstType;.`
+- **Сообщение**: `Incorrect format of %srcValue; for converting to %dstType;.`
 
 - **Причина.** Невозможно преобразовать данные в тип, указанный в mappings.source.
 
@@ -604,7 +603,7 @@ ms.locfileid: "87044541"
 
 ### <a name="error-code--parquetdatacountnotmatchcolumncount"></a>Код ошибки:  ParquetDataCountNotMatchColumnCount
 
-- **Сообщение.** `The data count in a row '%sourceColumnCount;' does not match the column count '%sinkColumnCount;' in given schema.`
+- **Сообщение**: `The data count in a row '%sourceColumnCount;' does not match the column count '%sinkColumnCount;' in given schema.`
 
 - **Причина.** Несоответствие числа столбцов в источнике и приемнике
 
@@ -617,21 +616,21 @@ ms.locfileid: "87044541"
 
 - **Причина.** Невозможно преобразовать данные из источника в тип, определенный в приемнике.
 
-- **Рекомендация**.  Укажите правильный тип в mapping.sink.
+- **Рекомендация**: укажите правильный тип в сопоставлении. Sink.
 
 
 ### <a name="error-code--parquetbridgeinvaliddata"></a>Код ошибки:  ParquetBridgeInvalidData
 
-- **Сообщение.** `%message;`
+- **Сообщение**: `%message;`
 
 - **Причина.** Значение данных превысило ограничение.
 
-- **Рекомендация**.  Повторите попытку. Если проблема не исчезла, обратитесь к нам.
+- **Рекомендация**: повторная попытка. Если проблема не исчезла, обратитесь к нам.
 
 
 ### <a name="error-code--parquetunsupportedinterpretation"></a>Код ошибки:  ParquetUnsupportedInterpretation
 
-- **Сообщение.** `The given interpretation '%interpretation;' of parquet format is not supported.`
+- **Сообщение**: `The given interpretation '%interpretation;' of parquet format is not supported.`
 
 - **Причина.** Неподдерживаемый сценарий
 
@@ -640,7 +639,7 @@ ms.locfileid: "87044541"
 
 ### <a name="error-code--parquetunsupportfilelevelcompressionoption"></a>Код ошибки:  ParquetUnsupportFileLevelCompressionOption
 
-- **Сообщение.** `File level compression is not supported for Parquet.`
+- **Сообщение**: `File level compression is not supported for Parquet.`
 
 - **Причина.** Неподдерживаемый сценарий
 
@@ -652,7 +651,7 @@ ms.locfileid: "87044541"
 
 ### <a name="error-code--jrenotfound"></a>Код ошибки:  JreNotFound
 
-- **Сообщение.** `Java Runtime Environment cannot be found on the Self-hosted Integration Runtime machine. It is required for parsing or writing to Parquet/ORC files. Make sure Java Runtime Environment has been installed on the Self-hosted Integration Runtime machine.`
+- **Сообщение**: `Java Runtime Environment cannot be found on the Self-hosted Integration Runtime machine. It is required for parsing or writing to Parquet/ORC files. Make sure Java Runtime Environment has been installed on the Self-hosted Integration Runtime machine.`
 
 - **Причина.** Локальной среде выполнения интеграции не удается найти среду выполнения Java. Среда выполнения Java требуется для чтения определенного источника.
 
@@ -675,12 +674,12 @@ ms.locfileid: "87044541"
 
 ### <a name="error-code--mappinginvalidpropertywithnamepathandordinal"></a>Код ошибки:  MappingInvalidPropertyWithNamePathAndOrdinal
 
-- **Сообщение.** `Mixed properties are used to reference '%sourceOrSink;' columns/fields in copy activity mapping. Please only choose one of the three properties 'name', 'path' and 'ordinal'. The problematic mapping setting is 'name': '%name;', 'path': '%path;','ordinal': '%ordinal;'.`
+- **Сообщение**: `Mixed properties are used to reference '%sourceOrSink;' columns/fields in copy activity mapping. Please only choose one of the three properties 'name', 'path' and 'ordinal'. The problematic mapping setting is 'name': '%name;', 'path': '%path;','ordinal': '%ordinal;'.`
 
 
 ### <a name="error-code--mappingduplicatedordinal"></a>Код ошибки:  MappingDuplicatedOrdinal
 
-- **Сообщение.** `Copy activity 'mappings' has duplicated ordinal value "%Ordinal;". Fix the setting in 'mappings'.`
+- **Сообщение**: `Copy activity 'mappings' has duplicated ordinal value "%Ordinal;". Fix the setting in 'mappings'.`
 
 
 ### <a name="error-code--mappinginvalidordinalforsinkcolumn"></a>Код ошибки:  MappingInvalidOrdinalForSinkColumn

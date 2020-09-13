@@ -5,14 +5,14 @@ author: mayanknayar
 ms.service: virtual-machines-windows
 ms.workload: infrastructure
 ms.topic: how-to
-ms.date: 08/31/2020
+ms.date: 09/09/2020
 ms.author: manayar
-ms.openlocfilehash: 720f9dfc09d27a18460037bfbbd15ae4bfc88707
-ms.sourcegitcommit: d68c72e120bdd610bb6304dad503d3ea89a1f0f7
+ms.openlocfilehash: 47ac9fa91f391442691661a3ba03dd1f0d918601
+ms.sourcegitcommit: 5d7f8c57eaae91f7d9cf1f4da059006521ed4f9f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/01/2020
-ms.locfileid: "89236781"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89669066"
 ---
 # <a name="preview-automatic-vm-guest-patching-for-windows-vms-in-azure"></a>Предварительная версия: автоматическая установка исправлений гостевых виртуальных машин для виртуальных машин Windows в Azure
 
@@ -67,7 +67,7 @@ ms.locfileid: "89236781"
 
 В настоящее время поддерживаются следующие SKU платформы (и периодически добавляются дополнительные):
 
-| Издатель               | Предложение ОС      |  Sku               |
+| Publisher               | Предложение ОС      |  Sku               |
 |-------------------------|---------------|--------------------|
 | Корпорация Майкрософт   | WindowsServer | 2012-R2-Datacenter |
 | Корпорация Майкрософт   | WindowsServer | 2016-Datacenter    |
@@ -192,7 +192,7 @@ PUT on `/subscriptions/subscription_id/resourceGroups/myResourceGroup/providers/
 Используйте командлет [Set-азвмоператингсистем](/powershell/module/az.compute/set-azvmoperatingsystem) , чтобы включить автоматическое исправление ГОСТЕВЫХ виртуальных машин при создании или обновлении виртуальной машины.
 
 ```azurepowershell-interactive
-Set-AzVMOperatingSystem -VM $$VirtualMachine -Windows -ComputerName $ComputerName -Credential $Credential -ProvisionVMAgent -EnableAutoUpdate -PatchMode "AutomaticByPlatform"
+Set-AzVMOperatingSystem -VM $VirtualMachine -Windows -ComputerName $ComputerName -Credential $Credential -ProvisionVMAgent -EnableAutoUpdate -PatchMode "AutomaticByPlatform"
 ```
 
 ### <a name="azure-cli-20"></a>Azure CLI 2.0

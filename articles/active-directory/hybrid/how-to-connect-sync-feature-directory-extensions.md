@@ -16,18 +16,18 @@ ms.date: 11/12/2019
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d64bfe66f5fb871ff9f85a5d58d128ac44643846
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 4a0765f5279eb41324691c431c5973bb55a8b52d
+ms.sourcegitcommit: f8d2ae6f91be1ab0bc91ee45c379811905185d07
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87019767"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89662483"
 ---
 # <a name="azure-ad-connect-sync-directory-extensions"></a>Синхронизация Azure AD Connect: расширения каталогов
-Расширения каталогов можно использовать для расширения схемы в Azure Active Directory (Azure AD) с помощью собственных атрибутов из локального каталога Active Directory. Эта функция позволяет создавать бизнес-приложения с помощью атрибутов, которыми вы по-прежнему можете управлять локально. Эти атрибуты можно использовать с помощью [расширений](https://docs.microsoft.com/graph/extensibility-overview
+Расширения каталогов можно использовать для расширения схемы в Azure Active Directory (Azure AD) с помощью собственных атрибутов из локального каталога Active Directory. Эта функция позволяет создавать бизнес-приложения с помощью атрибутов, которыми вы по-прежнему можете управлять локально. Эти атрибуты можно использовать с помощью [расширений](/graph/extensibility-overview
 ). Доступные атрибуты можно просмотреть с помощью [обозревателя Microsoft Graph](https://developer.microsoft.com/graph/graph-explorer). Эту функцию также можно использовать для создания динамических групп в Azure AD.
 
-В настоящее время рабочие нагрузки Office 365 не используют эти атрибуты.
+В настоящее время никакие Microsoft 365 рабочие нагрузки не используют эти атрибуты.
 
 ## <a name="customize-which-attributes-to-synchronize-with-azure-ad"></a>Настройка атрибутов для синхронизации с Azure AD
 
@@ -69,11 +69,11 @@ ms.locfileid: "87019767"
 >[!NOTE]
 > В Microsoft Graph API необходимо запросить возвращаемые атрибуты. Явно выберите атрибуты следующим образом: `https://graph.microsoft.com/beta/users/abbie.spencer@fabrikamonline.com?$select=extension_9d98ed114c4840d298fad781915f27e4_employeeID,extension_9d98ed114c4840d298fad781915f27e4_division` .
 >
-> Дополнительные сведения см. в разделе [Параметр select](https://developer.microsoft.com/graph/docs/concepts/query_parameters#select-parameter).
+> Дополнительные сведения см. в разделе [Параметр select](/graph/query-parameters#select-parameter).
 
 ## <a name="use-the-attributes-in-dynamic-groups"></a>Использование атрибутов в динамических группах
 
-Одним из наиболее полезных сценариев является использование этих атрибутов в группах Dynamic Security или Office 365.
+Одним из наиболее полезных сценариев является использование этих атрибутов в динамической безопасности или группах Microsoft 365.
 
 1. Создайте новую группу в Azure AD. Присвойте ему хорошее имя и убедитесь, что **Тип членства** является **динамическим пользователем**.
 

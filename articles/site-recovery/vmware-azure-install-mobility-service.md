@@ -6,12 +6,12 @@ ms.service: site-recovery
 ms.topic: conceptual
 ms.date: 03/25/2019
 ms.author: ramamill
-ms.openlocfilehash: f75723aedae390a0d41956d63acadf6370f390d9
-ms.sourcegitcommit: d661149f8db075800242bef070ea30f82448981e
+ms.openlocfilehash: 0613af3d286a9c670d09b2e72c2807c018753455
+ms.sourcegitcommit: 5d7f8c57eaae91f7d9cf1f4da059006521ed4f9f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/19/2020
-ms.locfileid: "88606511"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89669237"
 ---
 # <a name="prepare-source-machine-for-push-installation-of-mobility-agent"></a>Подготовка исходного компьютера к принудительной установке агента Mobility Service
 
@@ -25,8 +25,12 @@ ms.locfileid: "88606511"
 1. Создайте учетную запись, с помощью которой сервер обработки сможет получить доступ к компьютеру. Этой учетной записи следует назначить права локального администратора или администратора домена. Используйте эту учетную запись только для принудительной установки и обновлений агента.
 2. Если учетная запись домена не используется, на локальном компьютере нужно отключить управление удаленным доступом пользователей.
     - В разделе реестра HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System добавьте параметр DWORD: **LocalAccountTokenFilterPolicy**. Присвойте ему значение **1**.
-    -  Для этого выполните в командной строке следующую команду:  
-   `REG ADD HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System /v LocalAccountTokenFilterPolicy /t REG_DWORD /d
+    -  Для этого выполните в командной строке следующую команду:
+    
+       ```
+       REG ADD HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System /v LocalAccountTokenFilterPolicy /t REG_DWORD /d 1 /f
+       ```
+
 3. В брандмауэре Windows на компьютере, который нужно защитить, выберите **Разрешить запуск программы или компонента через брандмауэр Windows**. Активируйте **общий доступ к файлам и принтерам** и **инструментарий управления Windows (WMI)**. Для компьютеров, принадлежащих домену, можно настроить политику брандмауэра с помощью объекта групповой политики.
 
    ![Параметры брандмауэра](./media/vmware-azure-install-mobility-service/mobility1.png)
