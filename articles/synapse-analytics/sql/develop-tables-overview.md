@@ -6,16 +6,16 @@ author: filippopovic
 manager: craigg
 ms.service: synapse-analytics
 ms.topic: conceptual
-ms.subservice: ''
+ms.subservice: sql
 ms.date: 04/15/2020
 ms.author: fipopovi
 ms.reviewer: jrasnick
-ms.openlocfilehash: 3bf180c2b70a686879082888e45e67936cdbec67
-ms.sourcegitcommit: c5021f2095e25750eb34fd0b866adf5d81d56c3a
+ms.openlocfilehash: d225511bb78a5773ce4ed5866f6ffc1257921e96
+ms.sourcegitcommit: 3fc3457b5a6d5773323237f6a06ccfb6955bfb2d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88799236"
+ms.lasthandoff: 09/11/2020
+ms.locfileid: "90032169"
 ---
 # <a name="design-tables-using-synapse-sql"></a>Разработка таблиц с помощью синапсе SQL
 
@@ -75,7 +75,7 @@ CREATE SCHEMA wwi;
 
 | Таблица WideWorldImportersDW  | Тип таблицы | Пул SQL |
 |:-----|:-----|:------|:-----|
-| Город | Измерение | wwi.DimCity |
+| City | Измерение | wwi.DimCity |
 | Порядок | Факты | wwi.FactOrder |
 
 ## <a name="table-persistence"></a>Сохраняемость таблицы
@@ -360,9 +360,6 @@ SELECT *
 FROM size
 ;
 ```
-
->[!TIP]
-> Для повышения производительности в синапсе SQL рассмотрите возможность использования представления **sys. pdw_permanent_table_mappings** вместо **sys. pdw_table_mappings** в постоянных пользовательских таблицах. Дополнительные сведения см. в разделе **[sys. pdw_permanent_table_mappings &#40;&#41;Transact-SQL ](/sql/relational-databases/system-catalog-views/sys-pdw-permanent-table-mappings-transact-sql?view=azure-sqldw-latest)** .
 
 ### <a name="table-space-summary"></a>Сводка табличного пространства
 

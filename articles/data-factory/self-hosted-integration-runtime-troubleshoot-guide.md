@@ -5,14 +5,14 @@ services: data-factory
 author: nabhishek
 ms.service: data-factory
 ms.topic: troubleshooting
-ms.date: 08/05/2020
+ms.date: 09/10/2020
 ms.author: abnarain
-ms.openlocfilehash: 49d173e0d0f2b96c385b4325335483d25e9a7c2d
-ms.sourcegitcommit: fbb66a827e67440b9d05049decfb434257e56d2d
+ms.openlocfilehash: a6a0a62bd857dff575e17f47f1e2394375b08c45
+ms.sourcegitcommit: 3fc3457b5a6d5773323237f6a06ccfb6955bfb2d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87800719"
+ms.lasthandoff: 09/11/2020
+ms.locfileid: "90033665"
 ---
 # <a name="troubleshoot-self-hosted-integration-runtime"></a>Устранение неполадок с локальной средой выполнения интеграции
 
@@ -190,7 +190,7 @@ ms.locfileid: "87800719"
 
 #### <a name="symptoms"></a>Симптомы
 
-Локальная среда выполнения интеграции внезапно переходит в автономный режим без ключа, в журнале событий отображается следующее сообщение об ошибке:`Authentication Key is not assigned yet`
+Локальная среда выполнения интеграции внезапно переходит в автономный режим без ключа, в журнале событий отображается следующее сообщение об ошибке: `Authentication Key is not assigned yet`
 
 ![Отсутствует ключ проверки подлинности](media/self-hosted-integration-runtime-troubleshoot-guide/key-missing.png)
 
@@ -351,7 +351,7 @@ ms.locfileid: "87800719"
 
 #### <a name="cause"></a>Причина
 
-С момента выпуска *Integration Runtime 3,0*кнопка **регистрация** на существующем Integration Runtime узле была удалена, чтобы обеспечить более надежную и безопасную среду. Если узел был зарегистрирован в некоторых Integration Runtime (в сети или нет), для повторной регистрации его в другой Integration Runtime необходимо удалить предыдущий узел, а затем установить и зарегистрировать узел.
+С момента выпуска *Integration Runtime 3,0*кнопка **регистрация** на существующем Integration Runtime узле была удалена, чтобы обеспечить более надежную и безопасную среду. Если узел был зарегистрирован в некоторых Integration Runtime (в сети или в автономном режиме), для его повторной регистрации в другой Integration Runtime необходимо удалить предыдущий узел, а затем установить и зарегистрировать узел.
 
 #### <a name="resolution"></a>Решение
 
@@ -366,7 +366,7 @@ ms.locfileid: "87800719"
 1. Установите MSI и зарегистрируйте Integration Runtime.
 
 
-### <a name="unable-to-register-the-self-hosted-ir-due-to-localhost"></a>Не удалось зарегистрировать локальную IR в связи с localhost    
+### <a name="unable-to-register-the-self-hosted-ir-due-to-localhost"></a>Не удалось зарегистрировать локальную среду IR из-за localhost    
 
 #### <a name="symptoms"></a>Симптомы
 
@@ -519,7 +519,7 @@ ms.locfileid: "87800719"
 
 ### <a name="connectivity-issue-between-self-hosted-ir-and-data-factory-or-self-hosted-ir-and-data-sourcesink"></a>Проблемы с подключением между локальным IR и фабрикой данных или автономным IR-кодом и приемником данных
 
-Чтобы устранить неполадки с сетевым подключением, необходимо знать, как [получить трассировку сети](#how-to-collect-netmon-trace), понять, как ее использовать, и [проанализировать трассировку Netmon](#how-to-analyze-netmon-trace) перед применением средств NetMon в реальных случаях из автономной среды IR.
+Чтобы устранить неполадки с сетевым подключением, необходимо знать, как получить трассировку сети, понять, как ее использовать, и [проанализировать трассировку Netmon](#how-to-analyze-netmon-trace) перед применением средств NetMon в реальных случаях из автономной среды IR.
 
 #### <a name="symptoms"></a>Симптомы
 
@@ -577,7 +577,7 @@ ms.locfileid: "87800719"
 
 ### <a name="how-to-collect-netmon-trace"></a>Как получить трассировку Netmon
 
-1.  Загрузите средства Netmon с [этого веб-сайта](https://www.microsoft.com/en-sg/download/details.aspx?id=4865)и установите его на компьютере сервера (на котором возникла проблема) и на клиенте (например, в автономном среде).
+1.  Загрузите средства Netmon с [этого веб-сайта](https://cnet-downloads.com/network-monitor)и установите его на компьютере сервера (на котором возникла проблема) и на клиенте (например, в автономном среде).
 
 2.  Создайте папку, например, в следующем пути: *д:\нетмон*. Убедитесь, что в нем достаточно места для сохранения журнала.
 
@@ -621,7 +621,10 @@ ms.locfileid: "87800719"
 
 ### <a name="how-to-analyze-netmon-trace"></a>Анализ трассировки Netmon
 
-При попытке установить Telnet **8.8.8.8 888** с помощью приведенной выше трассировки Netmon вы должны увидеть следующую трассировку:
+> [!NOTE] 
+> Приведенная ниже инструкция применима к трассировке Netmon. Так как трассировка NetMon в настоящее время не поддерживается, можно использовать Wireshark.
+
+При попытке выполнить Telnet **8.8.8.8 888** с собранной трассировкой Netmon вы должны увидеть следующую трассировку:
 
 ![Трассировка NetMon 1](media/self-hosted-integration-runtime-troubleshoot-guide/netmon-trace-1.png)
 

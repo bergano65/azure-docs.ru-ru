@@ -106,8 +106,6 @@
   items:
     - name: Вход на портал "Мои приложения" и его использование
       href: my-apps-portal-end-user-access.md
-    - name: Изменение или обновление данных профиля
-      href: my-apps-portal-end-user-update-profile.md
     - name: Обновление сведений о группах
       href: my-apps-portal-end-user-groups.md
     - name: Упорядочение приложений с использованием коллекций

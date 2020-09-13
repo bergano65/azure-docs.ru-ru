@@ -6,13 +6,13 @@ ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
 author: keferna
 ms.author: keferna
-ms.date: 07/22/2020
-ms.openlocfilehash: 28f8dd4be9e03af9f0b155d6e79949fe522cd7c2
-ms.sourcegitcommit: 3c66bfd9c36cd204c299ed43b67de0ec08a7b968
+ms.date: 09/11/2020
+ms.openlocfilehash: fa8ee205952d1bd39e932ca6c91e3cffe608bf95
+ms.sourcegitcommit: 3fc3457b5a6d5773323237f6a06ccfb6955bfb2d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "90007763"
+ms.lasthandoff: 09/11/2020
+ms.locfileid: "90032118"
 ---
 # <a name="common-questions-about-the-microsoft-commercial-marketplace"></a>Распространенные вопросы о коммерческом магазине Майкрософт
 
@@ -22,7 +22,7 @@ ms.locfileid: "90007763"
 
 ### <a name="what-is-the-microsoft-commercial-marketplace"></a>Что такое коммерческий магазин корпорации Майкрософт?
 
-Коммерческая платформа связывает бизнес и государственные органы с решениями, созданными нашими партнерами. Наши партнеры создают предложения и управляют ими в Центре партнеров. Клиенты могут находить и покупать решения с помощью встроенных возможностей, таких как Microsoft AppSource, Azure Marketplace, торговых посредников в программе поставщиков облачных решений и наших команд по продажам через программу совместной продажи.
+Коммерческая платформа связывает бизнес и государственные органы с решениями, созданными нашими партнерами. Наши партнеры создают предложения и управляют ими в центре партнеров, а клиенты могут находить и покупать решения с помощью встроенных возможностей, таких как Microsoft AppSource, Azure Marketplace, торговые посредники в программе поставщика облачных решений и наших групп продаж через программу совместной продажи.
 
 Дополнительные сведения см. в [Коммерческом центре Майкрософт](https://partner.microsoft.com/asset/collection/commercial-marketplace#/).
 
@@ -42,7 +42,7 @@ ms.locfileid: "90007763"
 
 Мы осуществляем налоговые платежи во многих странах и регионах и предоставляем доступ к нашей глобальной сети торговых посредников. Вы можете использовать клиентское соглашение Майкрософт или Соглашение Enterprise для продаж организациям без необходимости создания других торговых договоренностей.
 
-Дополнительные сведения см. в видео [Зачем продавать через Marketplace](https://partner.microsoft.com/asset/detail/why-sell-through-marketplace).
+Дополнительные сведения см. в [центре коммерческого рынка Майкрософт](https://aka.ms/commercialmarketplacehub).
 
 ### <a name="is-there-a-listing-fee-for-the-microsoft-commercial-marketplace"></a>Предусмотрена ли оплата за публикацию предложения на коммерческой платформе Майкрософт?
 
@@ -67,7 +67,7 @@ ms.locfileid: "90007763"
 
 После регистрации и принятия издательского соглашения вы получите доступ к странице коммерческой платформы в Центре партнеров. Здесь можно создавать предложения и управлять ими, а также просматривать аналитические отчеты. Для приложений Microsoft 365 также необходимо активировать программу Магазина Office в Центре партнеров.
 
-Дополнительные сведения см. на страницах [Вас приветствует коммерческая платформа](index.yml) и [Монетизация надстройки Office 365 через Microsoft Commercial Marketplace](https://docs.microsoft.com/office/dev/store/monetize-addins-through-microsoft-commercial-marketplace).
+Дополнительные сведения см. в статье [Добро пожаловать в коммерческий](index.yml) магазин и [монетизации свою надстройку Microsoft 365 с помощью коммерческого рынка Майкрософт](/office/dev/store/monetize-addins-through-microsoft-commercial-marketplace).
 
 ### <a name="how-do-i-get-support-assistance-for-the-commercial-marketplace"></a>Как получить техническую поддержку по коммерческой платформе?
 
@@ -329,7 +329,7 @@ Microsoft AppSource поддерживает платежи с помощью к
 
 ### <a name="where-can-i-learn-more-about-the-microsoft-admin-center"></a>Где можно узнать больше о Центре администрирования Майкрософт?
 
-Сведения о центре администрирования Майкрософт см. в статье [Управление подписками сторонних приложений для вашей организации](https://docs.microsoft.com/microsoft-365/commerce/manage-saas-apps?view=o365-worldwide).
+Сведения о центре администрирования Майкрософт см. в статье [Управление подписками сторонних приложений для вашей организации](/microsoft-365/commerce/manage-saas-apps).
 
 ### <a name="where-can-i-learn-more-about-azure-billing"></a>Где можно подробнее узнать о выставление счетов службами Azure?
 

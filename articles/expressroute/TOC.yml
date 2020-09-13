@@ -8,6 +8,7 @@
   items:
     - name: Создание канала ExpressRoute с помощью шаблона ARM
       href: quickstart-create-expressroute-vnet-template.md
+  expanded: true
 - name: Учебники
   items:
     - name: Создание и изменение канала

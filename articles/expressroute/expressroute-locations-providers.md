@@ -2,17 +2,17 @@
 title: Расположения и поставщики услуг подключения для Azure ExpressRoute | Документация Майкрософт
 description: В этой статье приведена подробная информация о расположениях, где предлагаются услуги, и способах подключения к регионам Azure. Эта таблица отсортирована по расположению.
 services: expressroute
-author: cherylmc
+author: duongau
 ms.service: expressroute
 ms.topic: conceptual
 ms.date: 08/26/2020
-ms.author: cherylmc
-ms.openlocfilehash: 30d41729aaf5301d28186c87ce3684c2fcd5d6f5
-ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
+ms.author: duau
+ms.openlocfilehash: e10d2c84be45b01cf2a3963d43606909ea7522e0
+ms.sourcegitcommit: 3fc3457b5a6d5773323237f6a06ccfb6955bfb2d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88927669"
+ms.lasthandoff: 09/11/2020
+ms.locfileid: "90032424"
 ---
 # <a name="expressroute-partners-and-peering-locations"></a>Партнеры и одноранговые расположения ExpressRoute
 
@@ -78,7 +78,7 @@ ms.locfileid: "88927669"
 | **Расположение** | **Адрес** | **Зона** | **Локальные регионы Azure** | **ER Direct** | **Поставщики услуг** |
 | --- | --- | --- | --- | --- | --- |
 | **Амстердам** | [Equinix AM5](https://www.equinix.com/locations/europe-colocation/netherlands-colocation/amsterdam-data-centers/am5/) | 1 | Западная Европа | 10G, 100G | Aryaka Networks, AT&T NetBond, British Telecom, Colt, Equinix, euNetworks, GÉANT, InterCloud, Interxion, KPN, IX Reach, Level 3 Communications, Megaport, NTT Communications, Orange, Tata Communications, Telefonica, Telenor, Telia Carrier, Verizon, Zayo |
-| **Амстердам 2** | [Interxion AMS8](https://www.interxion.com/Locations/amsterdam/schiphol/) | 1 | Западная Европа | 10G, 100G | CenturyLink Cloud Connect, Colt, DE-ЦИКС, Еунетворкс, ГÉАНТ, Interxion, серия, оранжевый, Vodafone |
+| **Амстердам 2** | [Interxion AMS8](https://www.interxion.com/Locations/amsterdam/schiphol/) | 1 | Западная Европа | 10G, 100G | Британская телекоммуникации, CenturyLink Cloud Connect, Colt, DE-ЦИКС, Еунетворкс, ГÉАНТ, Interxion, серия, оранжевый, Vodafone |
 | **Атланта** | [Equinix AT2](https://www.equinix.com/locations/americas-colocation/united-states-colocation/atlanta-data-centers/at2/) | 1 | Недоступно | 10G, 100G | Equinix, Megaport |
 | **Окленд** | [Vocus Group NZ Albany](https://www.vocus.co.nz/business/cloud-data-centres) | 2 | Недоступно | 10G | Devoli, Kordia, Megaport, Spark NZ, Vocus Group NZ |
 | **Бангкок** | [AIS](https://business.ais.co.th/solution/en/azure-expressroute.html) | 2 | Недоступно | 10G | AIS, УИХ |
@@ -96,14 +96,14 @@ ms.locfileid: "88927669"
 | **Дубаи** | [PCCS](https://www.pacificcontrols.net/cloudservices/index.html) | 3 | Северная часть ОАЭ; | Недоступно | Etisalat UAE |
 | **Дубаи 2** | [du datamena](http://datamena.com/solutions/data-centre) | 3 | Северная часть ОАЭ; | Недоступно | DE-ЦИКС, Du датамена, Orange, оранжевый, Орикском |
 | **Дублин** | [Equinix DB3](https://www.equinix.com/locations/europe-colocation/ireland-colocation/dublin-data-centers/db3/) | 1 | Северная Европа | 10G, 100G | Colt, еир, Equinix, ЖЕАНТ, Еунетворкс, Interxion, Orange |
-| **Франкфурт** | [Interxion FRA11](https://www.interxion.com/Locations/frankfurt/) | 1 | Центрально-Западная Германия | 10G, 100G | В&T NetBond, CenturyLink Cloud Connect, Colt, DE-ЦИКС, Equinix, Еунетворкс, ЖЕАНТ, Interxion, Orange, оранжевый, Телиа |
+| **Франкфурт** | [Interxion FRA11](https://www.interxion.com/Locations/frankfurt/) | 1 | Центрально-Западная Германия | 10G, 100G | В&T NetBond, CenturyLink Cloud Connect, Colt, DE-ЦИКС, Equinix, Еунетворкс, ЖЕАНТ, Interxion, Orange, оранжевый, Телиа перевозчик, T-Systems |
 | **Женева** | [Equinix GV2](https://www.equinix.com/locations/europe-colocation/switzerland-colocation/geneva-data-centers/gv2/) | 1 | Западная Швейцария | 10G, 100G | Equinix, Megaport |
 | **Специальный административный регион Гонконг** | [Equinix HK1](https://www.equinix.com/locations/asia-colocation/hong-kong-colocation/hong-kong-data-center/hk1/) | 2 | Восточная Азия | 10G | Aryaka Networks, British Telecom, CenturyLink Cloud Connect, Chief Telecom, China Telecom Global, Equinix, InterCloud, Megaport, NTT Communications, Orange, PCCW Global Limited, Tata Communications, Telia Carrier, Verizon |
 | **Гонконг 2** | [MEGA-i](https://www.iadvantage.net/index.php/locations/mega-i) | 2 | Восточная Азия | 10G | Китайская, Международная, Китайская, Глобальная, ПККВ, SingTel |
 | **Джакарта** | Telkom Indonesia | 4 | Недоступно | 10G | |
 | **Йоханнесбург** | [Teraco JB1](https://www.teraco.co.za/data-centre-locations/johannesburg/#jb1) | 3 | Северная часть ЮАР; | 10G | BCX, British Telecom, Internet Solutions — Cloud Connect, Liquid Telecom, Orange, Teraco |
 | **Куала-Лумпур** | [TIME dotCom Menara AIMS](https://www.time.com.my/enterprise/connectivity/direct-cloud) | 2 | Недоступно | Недоступно | TIME dotCom |
-| **Лас-Вегас** | [Switch LV](https://www.switch.com/las-vegas) | 1 | Недоступно | Недоступно | CenturyLink Cloud Connect, Megaport |
+| **Лас-Вегас** | [Switch LV](https://www.switch.com/las-vegas) | 1 | Недоступно | Недоступно | CenturyLink Cloud Connect, Orange, Паккетфабрик |
 | **Лондон** | [Equinix LD5](https://www.equinix.com/locations/europe-colocation/united-kingdom-colocation/london-data-centers/ld5/) | 1 | южная часть Соединенного Королевства | 10G, 100G | AT&T NetBond, British Telecom, Colt, Equinix, euNetworks, InterCloud, Internet Solutions - Cloud Connect, Interxion, Jisc, Level 3 Communications, Megaport, MTN, NTT Communications, Orange, PCCW Global Limited, Tata Communications, Telehouse - KDDI, Telenor, Telia Carrier, Verizon, Vodafone, Zayo |
 | **Лондон 2** | [Telehouse North Two](https://www.telehouse.net/data-centres/emea/uk-data-centres/london-data-centres/north-two) | 1 | южная часть Соединенного Королевства | 10G, 100G | CenturyLink Cloud Connect, Colt, ГТТ, IX REACH, Equinix, Orange, дом — KDDI |
 | **Лос-Анджелес** | [CoreSite LA1](https://www.coresite.com/data-centers/locations/los-angeles/one-wilshire) | 1 | Недоступно | 10G, 100G | CoreSite, Equinix, Megaport, Neutrona Networks, NTT, Zayo |
@@ -111,9 +111,9 @@ ms.locfileid: "88927669"
 | **Марсель** |[Interxion MRS1](https://www.interxion.com/Locations/marseille/) | 1 | Южная Франция | Недоступно | DE-CIX, GEANT, Interxion, Jaguar Network, Ooredoo Cloud Connect |
 | **Мельбурн** | [NextDC M1](https://www.nextdc.com/data-centres/m1-melbourne-data-centre) | 2 | Юго-Восточная часть Австралии | 10G, 100G | AARNet, Devoli, Equinix, Megaport, NEXTDC, Optus, Telstra Corporation, TPG Telecom |
 | **Майами** | [Equinix MI1](https://www.equinix.com/locations/americas-colocation/united-states-colocation/miami-data-centers/mi1/) | 1 | Недоступно | 10G, 100G | Claro, C3ntro, Equinix, Megaport, Neutrona Networks |
-| **Милан** | [IRIDEOS](https://irideos.it/en/data-centers/) | 1 | Недоступно | 10G | Equinix, Ретелит |
+| **Милан** | [IRIDEOS](https://irideos.it/en/data-centers/) | 1 | Недоступно | 10G | Colt, Equinix, Ретелит |
 | **Миннеаполисе** | [Кологикс MIN1](https://www.cologix.com/data-centers/minneapolis/min1/) | 1 | Недоступно | 10G, 100G | Cologix |
-| **Монреаль** | [Cologix MTL3](https://www.cologix.com/data-centers/montreal/mtl3/) | 1 | Недоступно | 10G, 100G | Bell Canada, Cologix, Megaport, Telus, Zayo |
+| **Монреаль** | [Cologix MTL3](https://www.cologix.com/data-centers/montreal/mtl3/) | 1 | Недоступно | 10G, 100G | Bell для Канады, Кологикс, Фибреноире, Orange, Телус, Zayo |
 | **Мумбай** | Tata Communications | 2 | Западная Индия | 10G | DE-ЦИКС, Global Клаудксчанже (ГККС), зависимость ЖИО, Сифи, Tata Communications, Verizon |
 | **Мумбаи 2** | Airtel | 2 | Западная Индия | 10G | Airtel, Sify, Vodafone Idea |
 | **Мюнхен** | [EdgeConneX](https://www.edgeconnex.com/locations/europe/munich/) | 1 | Недоступно | 10G | DE-CIX |

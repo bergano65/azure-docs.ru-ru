@@ -12,12 +12,12 @@ ms.workload: identity
 ms.date: 05/18/2020
 ms.author: jmprieur
 ms.custom: aaddev, devx-track-python
-ms.openlocfilehash: 0d1946862ec8af6a107ca4f5f963efbcb8912a5e
-ms.sourcegitcommit: bf1340bb706cf31bb002128e272b8322f37d53dd
+ms.openlocfilehash: ab6842fe6787b9e1a61b3c25fabb6c64c2597b9a
+ms.sourcegitcommit: 3fc3457b5a6d5773323237f6a06ccfb6955bfb2d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/03/2020
-ms.locfileid: "89440938"
+ms.lasthandoff: 09/11/2020
+ms.locfileid: "90032815"
 ---
 # <a name="desktop-app-that-calls-web-apis-acquire-a-token"></a>Классическое приложение, которое вызывает веб-API: Получение маркера
 
@@ -183,7 +183,7 @@ catch(MsalUiRequiredException)
 
 #### <a name="withparentactivityorwindow"></a>WithParentActivityOrWindow
 
-Пользовательский интерфейс важен, так как он является интерактивным. `AcquireTokenInteractive` имеет один конкретный необязательный параметр, который может указывать родительский пользовательский интерфейс для поддерживающих платформ. При использовании в классическом приложении `.WithParentActivityOrWindow` имеет другой тип, который зависит от платформы.
+Пользовательский интерфейс важен, так как он является интерактивным. `AcquireTokenInteractive` имеет один конкретный необязательный параметр, который может указывать родительский пользовательский интерфейс для поддерживающих платформ. При использовании в классическом приложении `.WithParentActivityOrWindow` имеет другой тип, который зависит от платформы. Кроме того, можно опустить необязательный параметр родительского окна, чтобы создать окно, если вы не хотите управлять тем, где на экране появится диалоговое окно входа. Это применимо к приложениям, которые являются командной строкой и используются для передачи вызовов в любую другую серверную службу и не требуют каких бы то ни было окон для взаимодействия с пользователем. 
 
 ```csharp
 // net45

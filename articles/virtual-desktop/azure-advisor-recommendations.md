@@ -6,12 +6,12 @@ ms.topic: conceptual
 ms.date: 08/28/2020
 ms.author: helohr
 manager: lizross
-ms.openlocfilehash: b14dd4aa44620f2b13891a18fc473acbcb0f3245
-ms.sourcegitcommit: 656c0c38cf550327a9ee10cc936029378bc7b5a2
+ms.openlocfilehash: 760e0212d2d863e6b869c23c2e523a0e056a28ed
+ms.sourcegitcommit: 3fc3457b5a6d5773323237f6a06ccfb6955bfb2d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89086518"
+ms.lasthandoff: 09/11/2020
+ms.locfileid: "90033036"
 ---
 # <a name="how-to-resolve-azure-advisor-recommendations"></a>Как разрешить рекомендации помощника по Azure
 
@@ -34,7 +34,7 @@ ms.locfileid: "89086518"
 
 2. Затем выберите пул узлов, который необходимо изменить, из рабочей среды в среду проверки.
 
-3. В пуле узлов выберите вкладку **Свойства** в столбце в правой части экрана. Прокрутите вниз до пункта "Среда проверки". Выберите **Да**, а затем нажмите кнопку **Применить**.
+3. В пуле узлов выберите **Свойства** в левом столбце. Прокрутите вниз до пункта "Среда проверки". Выберите **Да**, а затем нажмите кнопку **Применить**.
 
 >[!div class="mx-imgBorder"]
 >![Снимок экрана меню "Свойства". "Среда проверки" выделяется красным цветом, и выбирается пузырьковое "Да".](media/validation-yes.png)

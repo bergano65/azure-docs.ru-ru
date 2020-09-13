@@ -7,12 +7,12 @@ ms.date: 07/23/2020
 ms.topic: conceptual
 ms.service: iot-pnp
 services: iot-pnp
-ms.openlocfilehash: 4cdd6f63c9e5e717a533b88702b2886387fe3e39
-ms.sourcegitcommit: 5f7b75e32222fe20ac68a053d141a0adbd16b347
+ms.openlocfilehash: 9752589c8863cc911369225d268035d9f61c0273
+ms.sourcegitcommit: 3fc3457b5a6d5773323237f6a06ccfb6955bfb2d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/31/2020
-ms.locfileid: "87475249"
+ms.lasthandoff: 09/11/2020
+ms.locfileid: "90032033"
 ---
 # <a name="use-iot-plug-and-play-models-in-an-iot-solution"></a>Использование моделей Plug and Play IoT в решении IoT
 
@@ -40,7 +40,7 @@ ms.locfileid: "87475249"
 
 ### <a name="get-device-twin-api"></a>Получение API Двойникаа устройства
 
-Решение может использовать API [Get Device двойника](https://docs.microsoft.com/rest/api/iothub/service/twin/getdevicetwin) для получения идентификатора модели для устройства IOT Plug and Play.
+Решение может использовать API [Get Device двойника](https://docs.microsoft.com/java/api/com.microsoft.azure.sdk.iot.device.deviceclient.getdevicetwin?view=azure-java-stable) для получения идентификатора модели для устройства IOT Plug and Play.
 
 В следующем фрагменте ответа двойникаа устройства `modelId` СОДЕРЖИТСЯ идентификатор модели для устройства IoT Plug and Play:
 
@@ -142,4 +142,4 @@ content-encoding:utf-8
 
 - [Взаимодействие с устройством из вашего решения](quickstart-service-node.md)
 - [REST API IoT Digital двойника](https://docs.microsoft.com/rest/api/iothub/service/digitaltwin)
-- [Обозреватель Azure IoT](howto-use-iot-explorer.md)
+- [Обозреватель Интернета вещей Azure](howto-use-iot-explorer.md)

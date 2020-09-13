@@ -9,12 +9,12 @@ ms.topic: article
 ms.date: 11/01/2019
 tags: connectors
 ROBOTS: NOINDEX
-ms.openlocfilehash: 817c17b0e05180f5c7a616320a25c2bc3c21c5f8
-ms.sourcegitcommit: 3be3537ead3388a6810410dfbfe19fc210f89fec
+ms.openlocfilehash: cd2f8ce45ef9270866941cdedb7c768529c3175f
+ms.sourcegitcommit: 3fc3457b5a6d5773323237f6a06ccfb6955bfb2d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89651413"
+ms.lasthandoff: 09/11/2020
+ms.locfileid: "90033308"
 ---
 # <a name="monitor-create-and-manage-sftp-files-in-azure-logic-apps"></a>Мониторинг, создание файлов SFTP и управление ими в Azure Logic Apps
 
@@ -114,6 +114,10 @@ ms.locfileid: "89651413"
 ### <a name="sftp-action-get-content"></a>Действие SFTP: получить содержимое
 
 Это действие получает содержимое из файла на сервере SFTP. Например, вы можете добавить триггер из предыдущего примера и условие, которому должно соответствовать содержимое файла. Если оно соответствует условию, действие, которое получает содержимое, может выполняться.
+
+## <a name="connector-reference"></a>Справочник по соединителям
+
+Дополнительные технические сведения о триггерах, действиях и ограничениях, которые приведены в описании OpenAPI соединителя (прежнее название — Swagger), можно найти на [странице справки](/azure/data-factory/connector-sftp) соединителя.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

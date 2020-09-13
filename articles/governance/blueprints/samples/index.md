@@ -1,14 +1,14 @@
 ---
 title: Индекс примеров схем
 description: Индексы соответствия и стандартные примеры для развертывания сред, политик и базовых решений Cloud Adoption Framework с помощью Azure Blueprints.
-ms.date: 07/10/2020
+ms.date: 09/11/2020
 ms.topic: sample
-ms.openlocfilehash: cf8109dc8446fe1e3625e4f7c6fd0b5493c352d6
-ms.sourcegitcommit: de2750163a601aae0c28506ba32be067e0068c0c
+ms.openlocfilehash: 7ac95dee88cb244ecb4b60738daae26bb0d8831a
+ms.sourcegitcommit: 3fc3457b5a6d5773323237f6a06ccfb6955bfb2d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/04/2020
-ms.locfileid: "89488360"
+ms.lasthandoff: 09/11/2020
+ms.locfileid: "90031880"
 ---
 # <a name="azure-blueprints-samples"></a>Примеры для Azure Blueprints
 
@@ -18,8 +18,8 @@ ms.locfileid: "89488360"
 
 | Образец | Описание |
 |---------|---------|
-| [Australian Government ISM PROTECTED](./ism-protected/control-mapping.md) | В этом документе описаны средства защиты для обеспечения соответствия требованиям Australian Government ISM PROTECTED. |
-| [Общие сведения о Тесте производительности системы безопасности Azure](./azure-security-benchmark.md) | В этом документе описаны ограничения для обеспечения соответствия требованиям [тестов производительности системы безопасности Azure](../../../security/benchmarks/overview.md). |
+| [Australian Government ISM PROTECTED](./ism-protected/index.md) | В этом документе описаны средства защиты для обеспечения соответствия требованиям Australian Government ISM PROTECTED. |
+| [Решение для оценки безопасности Azure](./azure-security-benchmark.md) | В этом документе описаны ограничения для обеспечения соответствия требованиям [тестов производительности системы безопасности Azure](../../../security/benchmarks/overview.md). |
 | [Canada Federal PBMM](./canada-federal-pbmm/index.md) | В этом документе описаны средства защиты для обеспечения соответствия требованиям Canada Federal Protected B, Medium Integrity, Medium Availability (PBMM). |
 | [Тест производительности CIS для платформ Microsoft Azure](./cis-azure-1-1-0.md)| Набор политик, которые помогут обеспечить соответствие рекомендациям по использованию тестов производительности от CIS для платформ Microsoft Azure. |
 | [Уровень влияния DoD 4](./dod-impact-level-4/index.md) | Набор политик, которые помогут обеспечить соответствие требованиям уровня влияния DoD 4. |

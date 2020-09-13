@@ -8,12 +8,12 @@ ms.subservice: fhir
 ms.topic: conceptual
 ms.date: 02/07/2019
 ms.author: matjazl
-ms.openlocfilehash: 5b42d61d59a3c816c3b664297470cfbf91f17439
-ms.sourcegitcommit: 7fe8df79526a0067be4651ce6fa96fa9d4f21355
+ms.openlocfilehash: 706d7e081743f2bab1f593e00dc792f218a000ea
+ms.sourcegitcommit: 3fc3457b5a6d5773323237f6a06ccfb6955bfb2d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87851772"
+ms.lasthandoff: 09/11/2020
+ms.locfileid: "90033631"
 ---
 # <a name="find-identity-object-ids-for-authentication-configuration"></a>Поиск идентификаторов объектов удостоверений для конфигурации проверки подлинности
 
@@ -21,16 +21,16 @@ ms.locfileid: "87851772"
 
 ## <a name="find-user-object-id"></a>Найти идентификатор объекта пользователя
 
-Если у вас есть пользователь с именем пользователя `myuser@consoso.com` , вы можете выбрать его `ObjectId` с помощью следующей команды PowerShell:
+Если у вас есть пользователь с именем пользователя `myuser@contoso.com` , вы можете выбрать его `ObjectId` с помощью следующей команды PowerShell:
 
 ```azurepowershell-interactive
-$(Get-AzureADUser -Filter "UserPrincipalName eq 'myuser@consoso.com'").ObjectId
+$(Get-AzureADUser -Filter "UserPrincipalName eq 'myuser@contoso.com'").ObjectId
 ```
 
 также можно использовать Azure CLI:
 
 ```azurecli-interactive
-az ad user show --id myuser@consoso.com --query objectId --out tsv
+az ad user show --id myuser@contoso.com --query objectId --out tsv
 ```
 
 ## <a name="find-service-principal-object-id"></a>Поиск идентификатора объекта субъекта-службы
@@ -68,7 +68,7 @@ $(Get-AzureADGroup -Filter "DisplayName eq 'mygroup'").ObjectId
 az ad group show --group "mygroup" --query objectId --out tsv
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 В этой статье вы узнали, как найти идентификаторы объектов удостоверений, необходимые для настройки API Azure для FHIR на использование внешнего или дополнительного клиента Azure Active Directory. Далее прочитайте об использовании идентификаторов объектов для настройки локальных параметров RBAC.
  

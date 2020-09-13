@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.date: 08/17/2017
 ms.author: tagore
 ms.custom: devx-track-javascript
-ms.openlocfilehash: 489025d9cfdd6f1bdbc950e2bd1e7e4d835a4fff
-ms.sourcegitcommit: 2ffa5bae1545c660d6f3b62f31c4efa69c1e957f
+ms.openlocfilehash: c2d76ccd0c2e81147c39f81568fd1394cc1868b6
+ms.sourcegitcommit: 3fc3457b5a6d5773323237f6a06ccfb6955bfb2d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/11/2020
-ms.locfileid: "88079216"
+ms.lasthandoff: 09/11/2020
+ms.locfileid: "90032883"
 ---
 # <a name="build-and-deploy-a-nodejs-application-to-an-azure-cloud-service"></a>Построение и развертывание приложения Node.js в облачной службе Azure
 
@@ -32,12 +32,12 @@ ms.locfileid: "88079216"
 
 ![В окне браузера отображается веб-страница "Hello World"][A web browser displaying the Hello World web page]
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 > [!NOTE]
 > В этом учебнике используется Azure PowerShell, для которого требуется операционная система Windows.
 
 * Установите и настройте [Azure PowerShell].
-* Скачайте и установите [пакет SDK для Azure для .NET 2.7]. В параметрах установки выберите:
+* Скачайте и установите [пакет Azure SDK для .NET 2,7]. В параметрах установки выберите:
   * MicrosoftAzureAuthoringTools
   * MicrosoftAzureComputeEmulator
 
@@ -180,7 +180,7 @@ Publish-AzureServiceProject -ServiceName $ServiceName  -Location "East US" -Laun
 [веб-сайтами Azure, облачными службами и виртуальными машинами]: /azure/architecture/guide/technology-choices/compute-decision-tree
 [использовать упрощенное веб-приложение]: ../app-service/quickstart-nodejs.md
 [Azure PowerShell]: /powershell/azure/
-[пакет SDK для Azure для .NET 2.7]: https://www.microsoft.com/en-us/download/details.aspx?id=48178
+[Azure SDK for .NET 3.0]: https://www.microsoft.com/download/details.aspx?id=54917
 [Подключите PowerShell]: /powershell/azure/
 [nodejs.org]: https://nodejs.org/
 [общие сведения о создании размещенной службы для Azure]: https://azure.microsoft.com/documentation/services/cloud-services/

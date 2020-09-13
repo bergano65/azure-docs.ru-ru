@@ -1,0 +1,59 @@
+---
+title: При применении политики контроллеров домена по умолчанию виртуальная машина не отвечает
+titlesuffix: Azure Virtual Machines
+description: В этой статье приведены инструкции по устранению проблем, в которых политика контроллеров домена по умолчанию предотвращает загрузку виртуальной машины Azure.
+services: virtual-machines-windows, azure-resource-manager
+documentationcenter: ''
+author: v-miegge
+manager: dcscontentpm
+editor: ''
+tags: azure-resource-manager
+ms.assetid: 34e6b765-3496-46a1-b7d7-6def00884394
+ms.service: virtual-machines-windows
+ms.workload: na
+ms.tgt_pltfrm: vm-windows
+ms.topic: troubleshooting
+ms.date: 09/08/2020
+ms.author: v-miegge
+ms.openlocfilehash: 53e1daca47a2917a19cbc30db5348e4fcc06b325
+ms.sourcegitcommit: 3fc3457b5a6d5773323237f6a06ccfb6955bfb2d
+ms.translationtype: MT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 09/11/2020
+ms.locfileid: "90039154"
+---
+# <a name="vm-is-unresponsive-while-applying-default-domain-controllers-policy"></a>При применении политики контроллеров домена по умолчанию виртуальная машина не отвечает
+
+В этой статье приведены инструкции по устранению проблем, в которых политика контроллеров домена по умолчанию предотвращает загрузку виртуальной машины Azure.
+
+## <a name="symptom"></a>Симптом
+
+При использовании [диагностики загрузки](https://docs.microsoft.com/azure/virtual-machines/troubleshooting/boot-diagnostics) для просмотра снимка экрана виртуальной машины вы увидите, что на снимке экрана будет отображаться, что операционная система перестанет отвечать при загрузке с помощью **политики контроллеров домена по умолчанию**.
+
+  ![На рис. 1 показана ОС с сообщением "политика контроллеров домена по умолчанию"](./media/vm-unresponsive-domain-controllers-policy/1-default-domain-controllers-policy.png)
+
+## <a name="cause"></a>Причина
+
+Эта проблема может быть вызвана внесением последних изменений в политику контроллеров домена по умолчанию. В противном случае необходимо будет выполнить анализ файла дампа памяти, чтобы определить основную причину.
+
+## <a name="solution"></a>Решение
+
+Если вы недавно внесли изменения в политику контроллеров домена по умолчанию, вам может потребоваться отменить эти изменения, чтобы устранить проблему. Если вы не уверены причину проблемы, собирайте дамп памяти и отправьте запрос в службу поддержки.
+
+### <a name="collect-the-memory-dump-file"></a>Получение файла дампа памяти
+
+Чтобы устранить эту проблему, необходимо сначала собрать файл дампа памяти для сбоя, а затем обратиться в службу поддержки с файлом дампа памяти. Чтобы получить файл дампа, выполните следующие действия.
+
+### <a name="attach-the-os-disk-to-a-new-repair-vm"></a>Подключение диска ОС к новой виртуальной машине восстановления
+
+1. Выполните шаги 1–3 из списка [команд для восстановления виртуальной машины](https://docs.microsoft.com/azure/virtual-machines/troubleshooting/repair-windows-vm-using-azure-virtual-machine-repair-commands), чтобы подготовить виртуальную машину для восстановления.
+
+1. Используйте подключение к удаленному рабочему столу, чтобы подключиться к виртуальной машине для восстановления.
+
+### <a name="locate-the-dump-file-and-submit-a-support-ticket"></a>Размещение файла дампа и отправка запроса в службу поддержки
+
+1. На виртуальной машине восстановления перейдите в папку Windows на подключенном диске ОС. Если подключенному диску ОС присвоена буква `F`, то необходимо перейти в `F:\Windows`.
+
+1. Найдите файл Memory. dmp и отправьте запрос в [службу поддержки](https://portal.azure.com/?#blade/Microsoft_Azure_Support/HelpAndSupportBlade) с файлом дампа памяти.
+
+1. Если при поиске файла Memory. dmp возникают проблемы, можно использовать [вызовы прерываний (NMI) в последовательной консоли](https://docs.microsoft.com/azure/virtual-machines/troubleshooting/serial-console-windows#use-the-serial-console-for-nmi-calls) . Следуйте указаниям по [созданию файла аварийной копии памяти с помощью вызовов NMI](https://docs.microsoft.com/windows/client-management/generate-kernel-or-complete-crash-dump).

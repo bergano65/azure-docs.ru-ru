@@ -13,12 +13,12 @@ ms.assetid: 521180dc-2cc9-43f1-ae87-2701de7ca6b8
 ms.devlang: na
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.openlocfilehash: c4c7f82b729355e59ff05d5513e22fa143d53a5e
-ms.sourcegitcommit: 3541c9cae8a12bdf457f1383e3557eb85a9b3187
+ms.openlocfilehash: e36485b54f209b10f9a4e6b4e6a26248955b2275
+ms.sourcegitcommit: 3fc3457b5a6d5773323237f6a06ccfb6955bfb2d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/09/2020
-ms.locfileid: "86206855"
+ms.lasthandoff: 09/11/2020
+ms.locfileid: "90031404"
 ---
 # <a name="configure-and-customize-the-build-tasks"></a>Настройка и настройка задач сборки
 
@@ -143,7 +143,7 @@ ms.locfileid: "86206855"
 >
 >   Если новая задача выполняется на том же агенте, что и исходная задача, то выходные данные новой задачи перезапишут выход исходной задачи в папке источников *s* . Несмотря на то что выходные данные сборки одинаковы, мы советуем запустить MSBuild, скопировать выходные данные в каталог промежуточных артефактов, а затем запустить анализаторы Roslyn.
 
-Дополнительные ресурсы для задачи «анализаторы Roslyn» см. на Документация Майкрософтх [анализаторов на основе Roslyn](https://docs.microsoft.com/dotnet/standard/analyzers/) .
+Дополнительные ресурсы для задачи «анализаторы Roslyn» см. на Документация Майкрософтх [анализаторов на основе Roslyn](https://docs.microsoft.com/dotnet/standard/analyzers/api-analyzer) .
 
 Пакет анализатора, установленный и используемый этой задачей сборки, можно найти на странице NuGet [Microsoft. CodeAnalysis. фкскопанализерс](https://www.nuget.org/packages/Microsoft.CodeAnalysis.FxCopAnalyzers).
 
@@ -195,7 +195,7 @@ ms.locfileid: "86206855"
 
 Дополнительные сведения о настройке YAML для этой задачи см. в статье [параметры после анализа YAML](yaml-configuration.md#post-analysis-task) .
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Сведения о конфигурации на основе YAML см. в нашем [руководстве по настройке YAML](yaml-configuration.md).
 

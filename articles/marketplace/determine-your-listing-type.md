@@ -7,12 +7,12 @@ ms.topic: conceptual
 author: keferna
 ms.author: keferna
 ms.date: 09/04/2020
-ms.openlocfilehash: 7acfd5e1a1b1c44a9a109bb2b8bc38c7fcc57593
-ms.sourcegitcommit: de2750163a601aae0c28506ba32be067e0068c0c
+ms.openlocfilehash: 4acdd8bfd567a317b954d58629468fa8cd929669
+ms.sourcegitcommit: 3fc3457b5a6d5773323237f6a06ccfb6955bfb2d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/04/2020
-ms.locfileid: "89484873"
+ms.lasthandoff: 09/11/2020
+ms.locfileid: "90032390"
 ---
 # <a name="determine-your-publishing-option"></a>Выбор варианта публикации
 
@@ -45,7 +45,7 @@ ms.locfileid: "89484873"
 
 &#42; Предложения "Транзакция" для приложений SaaS в Microsoft AppSource в настоящее время предоставляются только по кредитным картам.
 
-&#42;&#42; Предложения Microsoft 365 можно устанавливать бесплатно и монетизировать через предложение SaaS в формате службы лицензирования. Дополнительные сведения см. в статье [Монетизация надстройки Office 365 через коммерческую платформу Майкрософт](/office/dev/store/monetize-addins-through-microsoft-commercial-marketplace).
+&#42;&#42; Предложения Microsoft 365 можно устанавливать бесплатно и монетизировать через предложение SaaS в формате службы лицензирования. Дополнительные сведения см. в [статье монетизации the Microsoft 365 вашей надстройке с помощью коммерческого рынка Майкрософт](/office/dev/store/monetize-addins-through-microsoft-commercial-marketplace).
 
 ## <a name="choose-a-listing-option"></a>Выбор параметра перечисления
 

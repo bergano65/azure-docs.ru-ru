@@ -9,16 +9,16 @@ ms.service: active-directory
 ms.subservice: user-help
 ms.workload: identity
 ms.topic: end-user-help
-ms.date: 01/04/2019
+ms.date: 08/31/2020
 ms.author: curtand
 ms.reviewer: jairoc
 ms.custom: user-help, seo-update-azuread-jan
-ms.openlocfilehash: b59ebe0bdab66a5ce6bdb1eefe6d9ae4b47bba0c
-ms.sourcegitcommit: c5021f2095e25750eb34fd0b866adf5d81d56c3a
+ms.openlocfilehash: 0435b99525c34eb72d7cc5315ccb4359859cd528
+ms.sourcegitcommit: 3fc3457b5a6d5773323237f6a06ccfb6955bfb2d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88799406"
+ms.lasthandoff: 09/11/2020
+ms.locfileid: "90033053"
 ---
 # <a name="register-your-personal-device-on-your-organizations-network"></a>Регистрация персонального устройства в сети организации
 Регистрация персонального устройства (в роли которого может выступать телефон или планшет) в сети организации. После регистрации устройства с него можно получать доступ к ограниченным ресурсам организации.
@@ -31,7 +31,7 @@ ms.locfileid: "88799406"
 
 - ОС Windows зарегистрирует устройство в сети организации.
 
-- В зависимости от выбранных организацией параметров может появиться запрос на настройку двухэтапной проверки подлинности с применением [Многофакторной идентификации](multi-factor-authentication-end-user-first-time.md) или метода на основе [сведений для защиты](./security-info-setup-signin.md).
+- При необходимости в зависимости от вариантов организации может быть предложено настроить двухфакторную проверку [подлинности](multi-factor-authentication-end-user-first-time.md) или [сведения о безопасности](./security-info-setup-signin.md).
 
 - В зависимости от выбранных организацией параметров вы можете быть автоматически зарегистрированы в службе управления мобильными устройствами, например в Microsoft Intune. Дополнительные сведения о регистрации в Microsoft Intune см. в статье [Регистрация устройства в Intune](/intune-user-help/enroll-your-device-in-intune-all).
 
