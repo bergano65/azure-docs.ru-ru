@@ -6,12 +6,12 @@ ms.author: jzim
 ms.service: container-service
 ms.topic: troubleshooting
 ms.date: 05/08/2019
-ms.openlocfilehash: ee032cdf4a3f72b2cd2e7da0658effe75b6fb1fa
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 55360ef295ff80b700b059d053203458f9f384db
+ms.sourcegitcommit: 4feb198becb7a6ff9e6b42be9185e07539022f17
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "76274929"
+ms.lasthandoff: 09/04/2020
+ms.locfileid: "89469088"
 ---
 # <a name="troubleshooting-for-azure-red-hat-openshift"></a>Устранение неполадок в Azure Red Hat OpenShift
 
@@ -30,9 +30,9 @@ ms.locfileid: "76274929"
 
 ## <a name="creating-a-cluster-results-in-error-that-no-registered-resource-provider-found"></a>Создание кластера приводит к ошибке, что зарегистрированный поставщик ресурсов не найден.
 
-Если при создании кластера возникает ошибка `No registered resource provider found for location '<location>' and API version '2019-04-30' for type 'openShiftManagedClusters'. The supported api-versions are '2018-09-30-preview` , то вы были частью предварительной версии и теперь должны [приобрести зарезервированные экземпляры виртуальных машин Azure](https://aka.ms/openshift/buy) для использования общедоступного продукта. Резервирование сокращает расходы за счет предварительной оплаты для полностью управляемых служб Azure. Дополнительные сведения о резервировании и способах экономии денег см. в разделе [*что такое резервирование Azure*](https://docs.microsoft.com/azure/billing/billing-save-compute-costs-reservations) .
+Если при создании кластера возникает ошибка `No registered resource provider found for location '<location>' and API version '2019-04-30' for type 'openShiftManagedClusters'. The supported api-versions are '2018-09-30-preview` , то вы были частью предварительной версии и теперь должны [приобрести зарезервированные экземпляры виртуальных машин Azure](https://aka.ms/openshift/buy) для использования общедоступного продукта. Резервирование сокращает расходы за счет предварительной оплаты для полностью управляемых служб Azure. Дополнительные сведения о резервировании и способах экономии денег см. в разделе [*что такое резервирование Azure*](../cost-management-billing/reservations/save-compute-costs-reservations.md) .
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Воспользуйтесь [центром справки Red Hat OpenShift](https://help.openshift.com/) для получения дополнительных сведений об устранении неполадок OpenShift.
 

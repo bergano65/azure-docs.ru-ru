@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 07/20/2020
 ms.author: damaerte
-ms.openlocfilehash: 766245dcfe42c16106df6beed938fe2f04af05cc
-ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
+ms.openlocfilehash: f824bddf833a1e2c01a3b779abc2c5252d8e0547
+ms.sourcegitcommit: 4feb198becb7a6ff9e6b42be9185e07539022f17
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87286682"
+ms.lasthandoff: 09/04/2020
+ms.locfileid: "89468663"
 ---
 # <a name="overview-of-azure-cloud-shell"></a>Обзор Azure Cloud Shell
 
@@ -33,7 +33,7 @@ Azure Cloud Shell — это интерактивная, аутентифици
 
     ![Значок запуска Cloud Shell из портал Azure](media/overview/portal-launch-icon.png)
 
-- **Фрагменты кода**: в [docs.Microsoft.com](https://docs.microsoft.com) и [Microsoft Learn](https://docs.microsoft.com/learn/)нажмите кнопку **попробовать** , которая появляется с Azure CLI и Azure PowerShell фрагментами кода:
+- **Фрагменты кода**: в [docs.Microsoft.com]() и [Microsoft Learn](/learn/)нажмите кнопку **попробовать** , которая появляется с Azure CLI и Azure PowerShell фрагментами кода:
 
     ```azurecli-interactive
     az account show
@@ -87,8 +87,8 @@ Cloud Shell представляет собой гибкий инструмен�
 
 * [portal.azure.com](https://portal.azure.com)
 * [shell.azure.com](https://shell.azure.com);
-* [документации по Azure CLI](https://docs.microsoft.com/cli/azure).
-* [Документация по Azure PowerShell](https://docs.microsoft.com/powershell/azure/)
+* [документации по Azure CLI](/cli/azure).
+* [Документация по Azure PowerShell](/powershell/azure/)
 * [Мобильное приложение Azure](https://azure.microsoft.com/features/azure-portal/mobile-app/)
 * [Расширение учетной записи Azure для Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=ms-vscode.azure-account).
 
@@ -111,13 +111,13 @@ Cloud Shell машины являются временными, но файлы 
 * Cloud Shell сохраняет каталог $Home с помощью образа размером 5 ГБ, размещенного в общей папке.
 * Разрешения задаются как для обычного пользователя Linux в Bash.
 
-Узнайте больше о возможностях [Bash в Cloud Shell](features.md) и [PowerShell в Cloud Shell](features-powershell.md).
+Узнайте больше о возможностях [Bash в Cloud Shell](features.md) и [PowerShell в Cloud Shell](./features.md).
 
 ## <a name="pricing"></a>Цены
 
 За использование компьютера, на котором размещена среда Cloud Shell, плата не взимается. На этом компьютере должен быть подключен файловый ресурс Azure. Применяются расходы на обычное хранение.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Краткое руководство по использованию Bash в Azure Cloud Shell](quickstart.md) <br>
 [Краткое руководство по использованию PowerShell в Azure Cloud Shell (предварительная версия)](quickstart-powershell.md)

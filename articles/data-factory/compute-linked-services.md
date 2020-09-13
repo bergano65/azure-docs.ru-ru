@@ -1,6 +1,6 @@
 ---
 title: Вычислительные среды, поддерживаемые фабрикой данных Azure
-description: Сведения о вычислительных средах, которые можно использовать в конвейерах фабрики данных Azure (например, Azure HDInsight) для преобразования или обработки данных.
+description: Вычислительные среды, которые можно использовать с конвейерами фабрики данных Azure (например, Azure HDInsight) для преобразования или обработки данных.
 services: data-factory
 documentationcenter: ''
 ms.service: data-factory
@@ -10,12 +10,12 @@ author: nabhishek
 ms.author: abnarain
 manager: anandsub
 ms.date: 05/08/2019
-ms.openlocfilehash: 98f3c96fe1d1e8dd0f73d0441db8319fc2241cd7
-ms.sourcegitcommit: 97a0d868b9d36072ec5e872b3c77fa33b9ce7194
+ms.openlocfilehash: 3d8e667cd96cc6d7091682a4530633588591d3a4
+ms.sourcegitcommit: de2750163a601aae0c28506ba32be067e0068c0c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/04/2020
-ms.locfileid: "87563744"
+ms.lasthandoff: 09/04/2020
+ms.locfileid: "89483195"
 ---
 # <a name="compute-environments-supported-by-azure-data-factory"></a>Вычислительные среды, поддерживаемые фабрикой данных Azure
 
@@ -33,7 +33,7 @@ ms.locfileid: "87563744"
 | [Машинное обучение Azure](#azure-machine-learning-linked-service) | [Выполнение конвейера в Машинном обучении Azure](transform-data-machine-learning-service.md) |
 | [Машинное обучение Azure](#azure-machine-learning-linked-service) | [Выполнение конвейера в Машинном обучении Azure](transform-data-machine-learning-service.md) |
 | [Azure Data Lake Analytics](#azure-data-lake-analytics-linked-service) | [Аналитика озера данных U-SQL](transform-data-using-data-lake-analytics.md) |
-| [Azure SQL](#azure-sql-database-linked-service), [хранилище данных Azure SQL](#azure-sql-data-warehouse-linked-service), [SQL Server](#sql-server-linked-service) | [Хранимая процедура](transform-data-using-stored-procedure.md) |
+| [Azure SQL](#azure-sql-database-linked-service), [Azure синапсе Analytics (ранее — хранилище данных SQL)](#azure-synapse-analytics-linked-service), [SQL Server](#sql-server-linked-service) | [Хранимая процедура](transform-data-using-stored-procedure.md) |
 | [Azure Databricks](#azure-databricks-linked-service)         | [Notebook](transform-data-databricks-notebook.md), [Jar](transform-data-databricks-jar.md), [Python](transform-data-databricks-python.md) |
 | [Функция Azure](#azure-function-linked-service)         | [Действия функции Azure](control-flow-azure-function-activity.md)
 >  
@@ -109,7 +109,7 @@ ms.locfileid: "87563744"
 > [!IMPORTANT]
 > Кластер HDInsight создает **контейнер по умолчанию** в хранилище BLOB-объектов, указанном в коде JSON (**linkedServiceName**). При удалении кластера HDInsight этот контейнер не удаляется. В этом весь замысел. Если используется связанная служба HDInsight по запросу, кластер HDInsight создается всякий раз, когда нужно обработать срез данных (если не используется динамический кластер**timeToLive**), после чего кластер удаляется. 
 >
-> По мере выполнения действий количество контейнеров в хранилище BLOB-объектов будет увеличиваться. Если эти контейнеры не используются для устранения неполадок с заданиями, удалите их — это позволит сократить расходы на хранение. Имена этих контейнеров указаны по шаблону `adf**yourdatafactoryname**-**linkedservicename**-datetimestamp`. Используйте такие средства, как [Обозреватель службы хранилища Microsoft Azure](https://storageexplorer.com/) , чтобы удалить контейнеры в хранилище BLOB-объектов Azure.
+> По мере выполнения действий количество контейнеров в хранилище BLOB-объектов будет увеличиваться. Если эти контейнеры не используются для устранения неполадок с заданиями, удалите их — это позволит сократить расходы на хранение. Имена этих контейнеров указаны по шаблону `adf**yourdatafactoryname**-**linkedservicename**-datetimestamp`. Для удаления контейнеров в хранилище BLOB-объектов Azure используйте такие инструменты, как [Обозреватель службы хранилища Microsoft Azure](https://storageexplorer.com/).
 
 #### <a name="properties"></a>Свойства
 
@@ -265,7 +265,7 @@ ms.locfileid: "87563744"
 * Пакетная служба Azure
 * Машинное обучение Azure
 * Аналитика озера данных Azure
-* База данных SQL Azure, хранилища данных SQL Azure, SQL Server
+* База данных SQL Azure, Azure синапсе Analytics, SQL Server
 
 ## <a name="azure-hdinsight-linked-service"></a>Связанная служба Azure HDInsight
 Чтобы зарегистрировать собственный кластер HDInsight в фабрике данных, вы можете создать связанную службу Azure HDInsight.
@@ -562,9 +562,9 @@ ms.locfileid: "87563744"
 
 Связанная служба SQL Azure создается и применяется к [действию хранимой процедуры](transform-data-using-stored-procedure.md) для вызова хранимой процедуры из конвейера фабрики данных. Дополнительную информацию см. в статье о [связанной службе SQL Azure](connector-azure-sql-database.md#linked-service-properties).
 
-## <a name="azure-sql-data-warehouse-linked-service"></a>Связанная служба хранилища данных SQL Azure
+## <a name="azure-synapse-analytics-linked-service"></a>Связанная служба Azure синапсе Analytics
 
-Связанная служба хранилища данных SQL Azure создается и применяется к [действию хранимой процедуры](transform-data-using-stored-procedure.md) для вызова хранимой процедуры из конвейера фабрики данных. Дополнительные сведения об этой связанной службе см. в соответствующем разделе статьи [Перемещение данных в хранилище данных Azure SQL и из него с помощью фабрики данных Azure](connector-azure-sql-data-warehouse.md#linked-service-properties).
+Вы создаете связанную службу Azure синапсе Analytics (ранее — хранилище данных SQL) и используете ее с [действием хранимой процедуры](transform-data-using-stored-procedure.md) для вызова хранимой процедуры из конвейера фабрики данных. Дополнительные сведения об этой связанной службе см. в статье о [соединителе Azure синапсе Analytics (ранее — хранилище данных SQL)](connector-azure-sql-data-warehouse.md#linked-service-properties) .
 
 ## <a name="sql-server-linked-service"></a>Связанная служба SQL Server
 

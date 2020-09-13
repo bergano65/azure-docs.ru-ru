@@ -5,16 +5,16 @@ keywords: локальные учетные данные проверки под
 author: msmbaldwin
 services: key-vault
 ms.author: mbaldwin
-ms.date: 08/08/2020
+ms.date: 09/04/2020
 ms.topic: how-to
 ms.service: key-vault
 ms.subservice: general
-ms.openlocfilehash: 860f9b0e49423b5d144d56ecd965153f7a362d87
-ms.sourcegitcommit: 3fb5e772f8f4068cc6d91d9cde253065a7f265d6
+ms.openlocfilehash: 00799f7c5239bfd744268f7353e1bac6cb038294
+ms.sourcegitcommit: de2750163a601aae0c28506ba32be067e0068c0c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89180921"
+ms.lasthandoff: 09/04/2020
+ms.locfileid: "89483343"
 ---
 # <a name="service-to-service-authentication-to-azure-key-vault-using-net"></a>Проверка подлинности с взаимодействием между службами в Azure Key Vault с помощью .NET
 
@@ -54,7 +54,7 @@ ms.locfileid: "89180921"
     string accessToken = await azureServiceTokenProvider2.GetAccessTokenAsync("https://management.azure.com/").ConfigureAwait(false);
     ```
 
-Не нужно проверять срок действия маркера перед вызовом `GetAccessTokenAsync` метода, так как `AzureServiceTokenProvider` он кэширует маркер в памяти и извлекает его из Azure AD непосредственно перед истечением срока действия. 
+Потокобезопасный `AzureServiceTokenProvider` класс кэширует маркер в памяти и извлекает его из Azure AD непосредственно перед истечением срока действия. Это означает, что вам никогда не нужно проверять срок действия маркера перед вызовом `GetAccessTokenAsync` метода. 
 
 Для метода `GetAccessTokenAsync` требуется наличие идентификатора ресурса. Дополнительные сведения о службах Microsoft Azure см. в статье [что такое управляемые удостоверения для ресурсов Azure](../../active-directory/msi-overview.md).
 
@@ -235,7 +235,7 @@ ms.locfileid: "89180921"
 
 Для управления процессом используйте строку подключения, переданную в конструктор `AzureServiceTokenProvider` или указанную в переменной среды *AzureServicesAuthConnectionString*.  Поддерживаются следующие варианты.
 
-| Параметр строки подключения | Сценарий | Примечания|
+| Параметр строки подключения | Сценарий | Комментарии|
 |:--------------------------------|:------------------------|:----------------------------|
 | `RunAs=Developer; DeveloperTool=AzureCli` | Локальная разработка | `AzureServiceTokenProvider` использует Azure CLI для получения токена. |
 | `RunAs=Developer; DeveloperTool=VisualStudio` | Локальная разработка | `AzureServiceTokenProvider` использует Visual Studio для получения токена. |

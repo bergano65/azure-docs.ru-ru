@@ -2,13 +2,13 @@
 title: Функции шаблонов — ресурсы
 description: Описывает функции, используемые в шаблоне Azure Resource Manager для получения значений ресурсов.
 ms.topic: conceptual
-ms.date: 06/18/2020
-ms.openlocfilehash: 7f485d258074959c4a0a17449c65c38fa9648502
-ms.sourcegitcommit: d18a59b2efff67934650f6ad3a2e1fe9f8269f21
+ms.date: 09/03/2020
+ms.openlocfilehash: 3f916be4431aa6b2b100967465450447ecc1d626
+ms.sourcegitcommit: 4feb198becb7a6ff9e6b42be9185e07539022f17
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/20/2020
-ms.locfileid: "88661407"
+ms.lasthandoff: 09/04/2020
+ms.locfileid: "89468680"
 ---
 # <a name="resource-functions-for-arm-templates"></a>Функции ресурсов для шаблонов ARM
 
@@ -16,6 +16,7 @@ Resource Manager предоставляет следующие функции д
 
 * [extensionResourceId](#extensionresourceid)
 * [list*](#list)
+* [пиккзонес](#pickzones)
 * [providers](#providers)
 * [reference](#reference)
 * [resourceGroup](#resourcegroup)
@@ -101,6 +102,12 @@ Resource Manager предоставляет следующие функции д
 }
 ```
 
+Определение пользовательской политики, развернутое в группе управления, реализуется как ресурс расширения. Чтобы создать и назначить политику, разверните следующий шаблон в группе управления.
+
+:::code language="json" source="~/quickstart-templates/managementgroup-deployments/mg-policy/azuredeploy.json":::
+
+Встроенные определения политик — это ресурсы уровня клиента. Пример развертывания встроенного определения политики см. в разделе [тенантресаурцеид](#tenantresourceid).
+
 <a id="listkeys"></a>
 <a id="list"></a>
 
@@ -130,9 +137,16 @@ Resource Manager предоставляет следующие функции д
 
 | Тип ресурса | Имя функции |
 | ------------- | ------------- |
+| Microsoft. надстройки/Суппортпровидерс | листсуппортпланинфо |
 | Microsoft.AnalysisServices/servers | [listGatewayStatus](/rest/api/analysisservices/servers/listgatewaystatus) |
+| Microsoft. ApiManagement/Service/Аусоризатионсерверс | [листсекретс](/rest/api/apimanagement/2019-12-01/authorizationserver/listsecrets) |
+| Microsoft. ApiManagement/служба/шлюзы | [listKeys](/rest/api/apimanagement/2019-12-01/gateway/listkeys) |
+| Microsoft. ApiManagement/Service/Идентитипровидерс | [листсекретс](/rest/api/apimanagement/2019-12-01/identityprovider/listsecrets) |
+| Microsoft. ApiManagement/Service/Намедвалуес | [Значение списка](/rest/api/apimanagement/2019-12-01/namedvalue/listvalue) |
+| Microsoft. ApiManagement/Service/Опенидконнектпровидерс | [листсекретс](/rest/api/apimanagement/2019-12-01/openidconnectprovider/listsecrets) |
 | Microsoft.AppConfiguration | [ListKeyValue](/rest/api/appconfiguration/configurationstores/listkeyvalue) |
-| Microsoft.AppConfiguration/configurationStores | ListKeys |
+| Microsoft.AppConfiguration/configurationStores | [ListKeys](/rest/api/appconfiguration/configurationstores/listkeys) |
+| Microsoft.AppPlatform/Spring | [листтесткэйс](/rest/api/azurespringclould/services/listtestkeys) |
 | Microsoft.Automation/automationAccounts | [listKeys](/rest/api/automation/keys/listbyautomationaccount) |
 | Microsoft.Batch/batchAccounts | [listkeys](/rest/api/batchmanagement/batchaccount/getkeys) |
 | Microsoft.BatchAI/workspaces/experiments/jobs | [listoutputfiles](/rest/api/batchai/jobs/listoutputfiles) |
@@ -144,10 +158,15 @@ Resource Manager предоставляет следующие функции д
 | Microsoft.ContainerRegistry/registries | [listBuildSourceUploadUrl](/rest/api/containerregistry/registries%20(tasks)/getbuildsourceuploadurl) |
 | Microsoft.ContainerRegistry/registries | [listCredentials](/rest/api/containerregistry/registries/listcredentials) |
 | Microsoft.ContainerRegistry/registries | [listUsages](/rest/api/containerregistry/registries/listusages) |
+| Microsoft. ContainerRegistry/реестров/ажентпулс | листкуеуестатус |
+| Microsoft. ContainerRegistry/реестров/Буилдтаскс | листсаурцерепоситорипропертиес |
+| Microsoft. ContainerRegistry/registrys/Буилдтаскс/шаги | листбуилдаргументс |
+| Microsoft. ContainerRegistry/реестров/таскрунс | listDetails |
 | Microsoft.ContainerRegistry/registries/webhooks | [listEvents](/rest/api/containerregistry/webhooks/listevents) |
 | Microsoft.ContainerRegistry/registries/runs | [listLogSasUrl](/rest/api/containerregistry/runs/getlogsasurl) |
 | Microsoft.ContainerRegistry/registries/tasks | [listDetails](/rest/api/containerregistry/tasks/getdetails) |
 | Microsoft.ContainerService/managedClusters | [listClusterAdminCredential](/rest/api/aks/managedclusters/listclusteradmincredentials) |
+| Microsoft.ContainerService/managedClusters | [листклустермониторингусеркредентиал](/rest/api/aks/managedclusters/listclustermonitoringusercredentials) |
 | Microsoft.ContainerService/managedClusters | [listClusterUserCredential](/rest/api/aks/managedclusters/listclusterusercredentials) |
 | Microsoft.ContainerService/managedClusters/accessProfiles | [listCredential](/rest/api/aks/managedclusters/getaccessprofile) |
 | Microsoft.DataBox/jobs | listCredentials |
@@ -168,6 +187,7 @@ Resource Manager предоставляет следующие функции д
 | Microsoft.DevTestLab/labs/virtualMachines | [ListApplicableSchedules](/rest/api/dtl/virtualmachines/listapplicableschedules) |
 | Microsoft.DocumentDB/databaseAccounts | [listConnectionStrings](/rest/api/cosmos-db-resource-provider/2020-06-01-preview/databaseaccounts/listconnectionstrings) |
 | Microsoft.DocumentDB/databaseAccounts | [listKeys](/rest/api/cosmos-db-resource-provider/2020-06-01-preview/databaseaccounts/listkeys) |
+| Microsoft.DocУментдб/databaseAccounts/Нотебукворкспацес | [листконнектионинфо](/rest/api/cosmos-db-resource-provider/2020-04-01/notebookworkspaces/listconnectioninfo) |
 | Microsoft.DomainRegistration | [listDomainRecommendations](/rest/api/appservice/domains/listrecommendations) |
 | Microsoft.DomainRegistration/topLevelDomains | [listAgreements](/rest/api/appservice/topleveldomains/listagreements) |
 | Microsoft.EventGrid/domains | [listKeys](/rest/api/eventgrid/version2020-06-01/domains/listsharedaccesskeys) |
@@ -206,7 +226,9 @@ Resource Manager предоставляет следующие функции д
 | Microsoft.NotificationHubs/Namespaces/authorizationRules | [listkeys](/rest/api/notificationhubs/namespaces/listkeys) |
 | Microsoft.NotificationHubs/Namespaces/NotificationHubs/authorizationRules | [listkeys](/rest/api/notificationhubs/notificationhubs/listkeys) |
 | Microsoft.OperationalInsights/workspaces | [list](/rest/api/loganalytics/workspaces/list) |
+| Microsoft.OperationalInsights/workspaces | listKeys |
 | Microsoft.PolicyInsights/remediations | [listDeployments](/rest/api/policy-insights/remediations/listdeploymentsatresourcegroup) |
+| Microsoft. Редхатопеншифт/Опеншифтклустерс | [listCredentials](/rest/api/openshift/openshiftclusters/listcredentials) |
 | Microsoft.Relay/namespaces/authorizationRules | [listkeys](/rest/api/relay/namespaces/listkeys) |
 | Microsoft.Relay/namespaces/disasterRecoveryConfigs/authorizationRules | listkeys |
 | Microsoft.Relay/namespaces/HybridConnections/authorizationRules | [listkeys](/rest/api/relay/hybridconnections/listkeys) |
@@ -225,6 +247,7 @@ Resource Manager предоставляет следующие функции д
 | Microsoft.StorSimple/managers/devices | [listFailoverTargets](/rest/api/storsimple/devices/listfailovertargets) |
 | Microsoft.StorSimple/managers | [listActivationKey](/rest/api/storsimple/managers/getactivationkey) |
 | Microsoft.StorSimple/managers | [listPublicEncryptionKey](/rest/api/storsimple/managers/getpublicencryptionkey) |
+| Microsoft. синапсе/workspaces/Интегратионрунтимес | [листаускэйс](/rest/api/synapse/integrationruntimeauthkeys/list) |
 | Microsoft.Web/connectionGateways | ListStatus |
 | microsoft.web/connections | listconsentlinks |
 | Microsoft.Web/customApis | listWsdlInterfaces |
@@ -315,6 +338,94 @@ Resource Manager предоставляет следующие функции д
 ```
 
 Пример listKeyValue см. в разделе [Краткое руководство. Автоматизированное развертывание виртуальной машины с помощью службы "Конфигурация приложений" и шаблона Resource Manager](../../azure-app-configuration/quickstart-resource-manager.md#deploy-vm-using-stored-key-values).
+
+## <a name="pickzones"></a>пиккзонес
+
+`pickZones(providerNamespace, resourceType, location, [numberOfZones], [offset])`
+
+Определяет, поддерживает ли тип ресурса зоны для региона.
+
+### <a name="parameters"></a>Параметры
+
+| Параметр | Обязательно | Тип | Описание |
+|:--- |:--- |:--- |:--- |
+| пространство_имен_поставщика | Да | строка | Пространство имен поставщика ресурсов для типа ресурса, для которого проверяется поддержка зоны. |
+| тип_ресурса | Да | строка | Тип ресурса для проверки поддержки зоны. |
+| location | Да | строка | Регион, в котором проверяется поддержка зоны. |
+| нумберофзонес | Нет | Целое число | Число возвращаемых логических зон. Значение по умолчанию — 1. Число должно быть целым положительным числом от 1 до 3.  Используйте 1 для ресурсов с одной зоной. Для ресурсов с несколькими зонами значение должно быть меньше или равно числу поддерживаемых зон. |
+| offset | Нет | Целое число | Смещение от начальной логической зоны. Функция возвращает ошибку, если смещение плюс Нумберофзонес превышает число поддерживаемых зон. |
+
+### <a name="return-value"></a>Возвращаемое значение
+
+Массив с поддерживаемыми зонами. При использовании значений по умолчанию для offset и Нумберофзонес тип ресурса и регион, поддерживающий зоны, возвращают следующий массив:
+
+```json
+[
+    "1"
+]
+```
+
+Если `numberOfZones` параметр имеет значение 3, он возвращает:
+
+```json
+[
+    "1",
+    "2",
+    "3"
+]
+```
+
+Если тип или регион ресурса не поддерживает зоны, возвращается пустой массив.
+
+```json
+[
+]
+```
+
+### <a name="pickzones-example"></a>Пример Пиккзонес
+
+В следующем шаблоне показаны три результата использования функции Пиккзонес.
+
+```json
+{
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {},
+    "functions": [],
+    "variables": {},
+    "resources": [],
+    "outputs": {
+        "supported": {
+            "type": "array",
+            "value": "[pickZones('Microsoft.Compute', 'virtualMachines', 'westus2')]"
+        },
+        "notSupportedRegion": {
+            "type": "array",
+            "value": "[pickZones('Microsoft.Compute', 'virtualMachines', 'northcentralus')]"
+        },
+        "notSupportedType": {
+            "type": "array",
+            "value": "[pickZones('Microsoft.Cdn', 'profiles', 'westus2')]"
+        }
+    }
+}
+```
+
+Выходные данные из предыдущих примеров возвращают три массива.
+
+| Имя | Тип | Значение |
+| ---- | ---- | ----- |
+| Поддерживается | массиве | ["1"] |
+| нотсуппортедрегион | массиве | [] |
+| нотсуппортедтипе | массиве | [] |
+
+Вы можете использовать ответ от Пиккзонес, чтобы определить, следует ли предоставить значение NULL для зон или назначить виртуальные машины разным зонам. В следующем примере задается значение для зоны на основе доступности зон.
+
+```json
+"zones": {
+    "value": "[if(not(empty(pickZones('Microsoft.Compute', 'virtualMachines', 'westus2'))), string(add(mod(copyIndex(),3),1)), json('null'))]"
+},
+```
 
 ## <a name="providers"></a>providers
 
@@ -740,23 +851,27 @@ Resource Manager предоставляет следующие функции д
 /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}
 ```
 
-При использовании в [развертывании на уровне подписки](deploy-to-subscription.md) идентификатор ресурса возвращается в следующем формате:
+Для других областей развертывания можно использовать функцию resourceId, но формат идентификатора изменится.
+
+Если при развертывании в подписке используется resourceId, идентификатор ресурса возвращается в следующем формате:
 
 ```json
 /subscriptions/{subscriptionId}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}
 ```
 
-При использовании в [развертывании на уровне группы управления](deploy-to-management-group.md) или на уровне клиента идентификатор ресурса возвращается в следующем формате:
+Если вы используете resourceId при развертывании в группе управления или клиенте, идентификатор ресурса возвращается в следующем формате:
 
 ```json
 /providers/{resourceProviderNamespace}/{resourceType}/{resourceName}
 ```
 
-Чтобы получить идентификатор в других форматах, см. следующие разделы:
+Во избежание путаницы рекомендуется не использовать resourceId при работе с ресурсами, развернутыми в подписке, группе управления или клиенте. Вместо этого используйте функцию ID, предназначенную для области.
 
-* [extensionResourceId](#extensionresourceid)
-* [subscriptionResourceId](#subscriptionresourceid)
-* [tenantResourceId](#tenantresourceid)
+Для [ресурсов уровня подписки](deploy-to-subscription.md)используйте функцию [субскриптионресаурцеид](#subscriptionresourceid) .
+
+Для [ресурсов уровня группы управления](deploy-to-management-group.md)используйте функцию [екстенсионресаурцеид](#extensionresourceid) для ссылки на ресурс, реализованный как расширение группы управления. Например, определения настраиваемой политики, развернутые в группе управления, являются расширениями группы управления. Используйте функцию [тенантресаурцеид](#tenantresourceid) для ссылки на ресурсы, развернутые в клиенте, но доступные в группе управления. Например, встроенные определения политик реализуются как ресурсы уровня клиента.
+
+Для [ресурсов на уровне клиента](deploy-to-tenant.md)используйте функцию [тенантресаурцеид](#tenantresourceid) . Используйте Тенантресаурцеид для встроенных определений политик, так как они реализуются на уровне клиента.
 
 ### <a name="remarks"></a>Remarks
 
@@ -1019,6 +1134,44 @@ Resource Manager предоставляет следующие функции д
 ### <a name="remarks"></a>Remarks
 
 Эта функция используется для получения идентификатора ресурса, развернутого в клиенте. Возвращенный идентификатор отличается от значений, возвращаемых другими функциями получения идентификаторов, тем, что он не включает значения группы ресурсов и подписки.
+
+### <a name="tenantresourceid-example"></a>Пример Тенантресаурцеид
+
+Встроенные определения политик — это ресурсы уровня клиента. Чтобы развернуть назначение политики, ссылающееся на определение встроенной политики, используйте функцию Тенантресаурцеид.
+
+```json
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "policyAssignmentName": {
+      "type": "string",
+      "defaultValue": "[guid(parameters('policyDefinitionID'), resourceGroup().name)]",
+      "metadata": {
+        "description": "Specifies the name of the policy assignment, can be used defined or an idempotent name as the defaultValue provides."
+      }
+    },
+    "policyDefinitionID": {
+      "type": "string",
+      "defaultValue": "0a914e76-4921-4c19-b460-a2d36003525a",
+      "metadata": {
+        "description": "Specifies the ID of the policy definition or policy set definition being assigned."
+      }
+    }
+  },
+  "resources": [
+    {
+      "type": "Microsoft.Authorization/policyAssignments",
+      "name": "[parameters('policyAssignmentName')]",
+      "apiVersion": "2019-09-01",
+      "properties": {
+        "scope": "[subscriptionResourceId('Microsoft.Resources/resourceGroups', resourceGroup().name)]",
+        "policyDefinitionId": "[tenantResourceId('Microsoft.Authorization/policyDefinitions', parameters('policyDefinitionID'))]"
+      }
+    }
+  ]
+}
+```
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

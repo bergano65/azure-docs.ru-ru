@@ -8,14 +8,14 @@ ms.workload: big-data
 ms.service: time-series-insights
 services: time-series-insights
 ms.topic: conceptual
-ms.date: 08/25/2020
+ms.date: 08/31/2020
 ms.custom: seodec18
-ms.openlocfilehash: a0f1e7789c0cebdd1cb5b22f21151020a0be09c9
-ms.sourcegitcommit: b33c9ad17598d7e4d66fe11d511daa78b4b8b330
+ms.openlocfilehash: c05de0462dde2b09e0e01919dfc691a85df153fa
+ms.sourcegitcommit: de2750163a601aae0c28506ba32be067e0068c0c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88855116"
+ms.lasthandoff: 09/04/2020
+ms.locfileid: "89483275"
 ---
 # <a name="data-storage"></a>Хранилище данных
 
@@ -24,7 +24,7 @@ ms.locfileid: "88855116"
 * Среда Gen2 "аналитика временных рядов Azure", которую можно настроить для резервного хранения данных.
 * Учетная запись хранения Azure для "холодного" хранилища данных.
 
-Данные в горячем хранилище доступны только через [API запросов временных рядов](./time-series-insights-update-tsq.md) и [Обозреватель TSI временных рядов Azure](./time-series-insights-update-explorer.md). Горячий магазин будет содержать последние данные в течение [срока хранения](./time-series-insights-update-plan.md#the-preview-environment) , выбранного при создании среды Gen2 "аналитика временных рядов Azure".
+Данные в горячем хранилище доступны только через [API запросов временных рядов](./time-series-insights-update-tsq.md) и обозреватель службы " [аналитика временных рядов Azure](./time-series-insights-update-explorer.md)". Горячий магазин будет содержать последние данные в течение [срока хранения](./time-series-insights-update-plan.md#the-preview-environment) , выбранного при создании среды Gen2 "аналитика временных рядов Azure".
 
 Gen2 "аналитика временных рядов Azure" сохраняет данные холодного магазина в хранилище BLOB-объектов Azure в [формате файлов Parquet](#parquet-file-format-and-folder-structure). Служба "аналитика временных рядов Azure" Gen2 управляет этим холодным хранением данных исключительно, но доступно для чтения непосредственно в виде стандартных файлов Parquet.
 
@@ -58,7 +58,7 @@ Gen2 "аналитика временных рядов Azure" позволяет
 
 #### <a name="accessing-cold-store-data"></a>Доступ к данным холодного хранения
 
-Помимо доступа к данным из [TSI Explorer](./time-series-insights-update-explorer.md) и [API-интерфейсов временных](./time-series-insights-update-tsq.md)рядов Azure, вы также можете получить доступ к данным непосредственно из файлов Parquet, хранящихся в холодном хранилище. Например, можно считывать, преобразовывать и очищать данные в записной книжке Jupyter, а затем использовать их для обучения модели Машинного обучения Azure в том же рабочем процессе Spark.
+Помимо доступа к данным из обозревателя службы " [аналитика временных рядов Azure](./time-series-insights-update-explorer.md) " и [API запросов временных рядов](./time-series-insights-update-tsq.md), вам также может потребоваться получить доступ к данным непосредственно из файлов Parquet, хранящихся в холодном хранилище. Например, можно считывать, преобразовывать и очищать данные в записной книжке Jupyter, а затем использовать их для обучения модели Машинного обучения Azure в том же рабочем процессе Spark.
 
 Для доступа к данным непосредственно из учетной записи хранения Azure необходим доступ на чтение к учетной записи, используемой для хранения данных Gen2 временных рядов Azure. Затем можно считывать выбранные данные на основе времени создания файла Parquet, расположенного в папке `PT=Time`, описанной ниже в разделе [Формат файла Parquet](#parquet-file-format-and-folder-structure).  Дополнительные сведения о включении доступа на чтение для учетной записи хранения см. в статье об [управлении доступом к ресурсам учетной записи хранения](../storage/blobs/storage-manage-access-to-resources.md).
 
