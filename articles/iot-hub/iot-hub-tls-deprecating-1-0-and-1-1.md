@@ -7,12 +7,12 @@ ms.service: iot-hub
 services: iot-hub
 ms.topic: conceptual
 ms.date: 04/14/2020
-ms.openlocfilehash: 5c717a02c2008436617d16f08625a1cecc204340
-ms.sourcegitcommit: 1f25aa993c38b37472cf8a0359bc6f0bf97b6784
+ms.openlocfilehash: fcf7620f53c9bfdb51eb62598f2c8b441574eca6
+ms.sourcegitcommit: 3c66bfd9c36cd204c299ed43b67de0ec08a7b968
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/26/2020
-ms.locfileid: "83849524"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "90006086"
 ---
 # <a name="deprecation-of-tls-10-and-11-in-iot-hub"></a>Устаревание протоколов TLS 1.0 и 1.1 в Центре Интернета вещей
 
@@ -38,9 +38,9 @@ ms.locfileid: "83849524"
 * `TLS_RSA_WITH_AES_128_CBC_SHA`
 * `TLS_RSA_WITH_3DES_EDE_CBC_SHA`
 
-## <a name="tls-12-ciphers"></a>Шифры TLS 1.2
+## <a name="tls-12-cipher-suites"></a>Комплекты шифров TLS 1,2
 
-См. раздел "Рекомендуемые шифры" из [этой статьи](iot-hub-tls-support.md#recommended-ciphers).
+См. раздел [пакеты шифрования TLS 1,2 для центра Интернета вещей](iot-hub-tls-support.md#cipher-suites).
  
 ## <a name="customer-feedback"></a>Отзывы пользователей
 

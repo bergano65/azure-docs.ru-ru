@@ -4,15 +4,15 @@ description: Узнайте, как настроить несколько хоз
 author: markjbrown
 ms.service: cosmos-db
 ms.topic: how-to
-ms.date: 12/02/2019
+ms.date: 09/10/2020
 ms.author: mjbrown
 ms.custom: devx-track-python, devx-track-javascript, devx-track-csharp
-ms.openlocfilehash: 94465e44a6cc2c4fa94ec8ea4504cbed80742f0f
-ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
+ms.openlocfilehash: 68f3beb0ee1c12aa06b6cce0f9ddd480b0ce5f2f
+ms.sourcegitcommit: 43558caf1f3917f0c535ae0bf7ce7fe4723391f9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89019153"
+ms.lasthandoff: 09/11/2020
+ms.locfileid: "90015251"
 ---
 # <a name="configure-multi-master-in-your-applications-that-use-azure-cosmos-db"></a>Настройка нескольких источников в приложениях, использующих Azure Cosmos DB
 
@@ -35,7 +35,7 @@ ConnectionPolicy policy = new ConnectionPolicy
 policy.SetCurrentLocation("West US 2");
 ```
 
-## <a name="net-sdk-v3"></a><a id="netv3"></a>Пакет SDK версии 3 для .NET
+## <a name="net-sdk-v3"></a><a id="netv3"></a>Пакет SDK для .NET v3
 
 Чтобы включить несколько источников в своем приложении, задайте для параметра `ApplicationRegion` регион, в котором развернуто приложение и реплицируется Cosmos DB:
 
@@ -128,7 +128,7 @@ client = cosmos_client.CosmosClient(self.account_endpoint, {
 * [Использование маркеров сеанса](how-to-manage-consistency.md#utilize-session-tokens)
 * [Типы конфликтов и политики их устранения](conflict-resolution-policies.md)
 * [Высокий уровень доступности в Azure Cosmos DB](high-availability.md)
-* [Уровни согласованности в Azure Cosmos DB](consistency-levels.md)
+* [Уровни согласованности для Azure Cosmos DB](consistency-levels.md)
 * [Choose the right consistency level](consistency-levels-choosing.md) (Выбор правильного уровня согласованности)
 * [Недостатки согласованности, доступности и производительности в Azure Cosmos DB](consistency-levels-tradeoffs.md)
 * [Достижение компромисса между доступностью и быстродействием для разных уровней согласованности](consistency-levels-tradeoffs.md)

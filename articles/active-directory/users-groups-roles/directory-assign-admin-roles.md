@@ -14,12 +14,12 @@ ms.author: curtand
 ms.reviewer: vincesm
 ms.custom: it-pro, fasttrack-edit
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 09664de9ab2040ad04127ee1556c21244ac6bc2d
-ms.sourcegitcommit: bcda98171d6e81795e723e525f81e6235f044e52
+ms.openlocfilehash: 62628e4b85af96fd9c9ba4174d22d3f1f7c6540a
+ms.sourcegitcommit: 3c66bfd9c36cd204c299ed43b67de0ec08a7b968
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/01/2020
-ms.locfileid: "89269681"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "90006029"
 ---
 # <a name="administrator-role-permissions-in-azure-active-directory"></a>Разрешения роли администратора в Azure Active Directory
 
@@ -130,7 +130,7 @@ ms.locfileid: "89269681"
 
 ### <a name="compliance-administrator"></a>[Администратор соответствия требованиям](#compliance-administrator-permissions)
 
-Пользователи с этой ролью имеют разрешения на управление возможностями, связанными с соответствием, в Центре соответствия требованиям Microsoft 365, Центре администрирования Microsoft 365, Azure и Центре безопасности и соответствия требованиям Office 365. Они также могут управлять всеми функциями в Центре администрирования Exchange и Центре администрирования Teams и Skype для бизнеса и создавать запросы в службу поддержки для Azure и Microsoft 365. Дополнительные сведения см. в статье [Роли администраторов в Office 365](https://support.office.com/article/About-Office-365-admin-roles-da585eea-f576-4f55-a1e0-87090b6aaa9d).
+Пользователи с этой ролью имеют разрешения на управление возможностями, связанными с соответствием, в Центре соответствия требованиям Microsoft 365, Центре администрирования Microsoft 365, Azure и Центре безопасности и соответствия требованиям Office 365. Они также могут управлять всеми функциями в Центре администрирования Exchange и Центре администрирования Teams и Skype для бизнеса и создавать запросы в службу поддержки для Azure и Microsoft 365. Дополнительные сведения см. в статье [Роли администраторов в Office 365](https://support.office.com/article/About-Office-365-admin-roles-da585eea-f576-4f55-a1e0-87090b6aaa9d). [Эта документация](https://docs.microsoft.com/microsoft-365/security/office-365-security/permissions-in-the-security-and-compliance-center?view=o365-worldwide#permissions-needed-to-use-features-in-the-security--compliance-center) содержит подробные сведения о различиях между администратором соответствия и администратором данных соответствия требованиям. 
 
 В | Может
 ----- | ----------
@@ -142,7 +142,7 @@ ms.locfileid: "89269681"
 
 ### <a name="compliance-data-administrator"></a>[Администратор данных соответствия](#compliance-data-administrator-permissions)
 
-Пользователи с этой ролью имеют разрешения на отслеживание данных в центре соответствия Microsoft 365, центре администрирования Microsoft 365 и Azure. Пользователи также могут отслеживать данные соответствия в центре администрирования Exchange, диспетчере соответствия требованиям и центре администрирования Teams и Skype для бизнеса и создавать запросы в службу поддержки для Azure и Microsoft 365.
+Пользователи с этой ролью имеют разрешения на отслеживание данных в центре соответствия Microsoft 365, центре администрирования Microsoft 365 и Azure. Пользователи также могут отслеживать данные соответствия в центре администрирования Exchange, диспетчере соответствия требованиям и центре администрирования Teams и Skype для бизнеса и создавать запросы в службу поддержки для Azure и Microsoft 365. [Эта документация](https://docs.microsoft.com/microsoft-365/security/office-365-security/permissions-in-the-security-and-compliance-center?view=o365-worldwide#permissions-needed-to-use-features-in-the-security--compliance-center) содержит подробные сведения о различиях между администратором соответствия и администратором данных соответствия требованиям.
 
 В | Может
 ----- | ----------
@@ -483,6 +483,10 @@ EDR и ATP в Защитнике Windows | Просмотр и анализ оп
 
 пользователи с этой ролью могут устранять неполадки со связью в Microsoft Teams и Skype для бизнеса с помощью соответствующих средств для пользовательских вызовов в центре администрирования Microsoft Teams и Skype для бизнеса. Пользователи с этой ролью могут просматривать сведения об определенном пользователе только при его вызове. Данная роль не обладает доступом для просмотра, создания или управления запросами в службу поддержки.
 
+### <a name="teams-devices-administrator"></a>[Администраторы устройств групп](#teams-devices-administrator-permissions)
+
+Пользователи с этой ролью могут управлять [устройствами, сертифицированными группами](https://www.microsoft.com/microsoft-365/microsoft-teams/across-devices/devices) , из центра администрирования команд. Эта роль позволяет просматривать все устройства на одном взгляде с возможностью поиска и фильтрации устройств. Пользователь может проверить сведения о каждом устройстве, включая учетную запись входа, Марка и модель устройства. Пользователь может изменить параметры на устройстве и обновить версии программного обеспечения. Эта роль не предоставляет разрешения на проверку активности команд и качество вызова для устройства. 
+
 ### <a name="teams-service-administrator"></a>[Администратор службы Teams](#teams-service-administrator-permissions)
 
 пользователи с этой ролью могут управлять всеми функциями рабочей нагрузки Microsoft Teams с помощью центра администрирования Microsoft Teams и Skype для бизнеса и соответствующих модулей PowerShell. Сюда входят, помимо прочего, все средства управления, связанные с телефонией, обменом сообщениями, собраниями и самими командами Teams. Эта роль дополнительно предоставляет возможность создания всех Microsoft 365 групп и управления ими, управления запросами в службу поддержки и наблюдения за работоспособностью служб.
@@ -560,7 +564,7 @@ EDR и ATP в Защитнике Windows | Просмотр и анализ оп
 | microsoft.directory/servicePrincipals/policies/update | Изменение свойства servicePrincipals.policies в Azure Active Directory. |
 | microsoft.directory/signInReports/allProperties/read | Чтение всех свойств (включая привилегированные) в signInReports в Azure Active Directory. |
 | microsoft.azure.serviceHealth/allEntities/allTasks | Чтение и настройка Работоспособности служб Azure. |
-| microsoft.azure.supportTickets/allEntities/allTasks | Создание запросов в службу поддержки Azure и управление ими. |
+| microsoft.azure.supportTickets/allEntities/allTasks | Создавайте билеты в службу поддержки Azure и управляйте ими для служб уровня каталога. |
 | microsoft.office365.serviceHealth/allEntities/allTasks | Чтение и настройка работоспособности служб Office 365. |
 | microsoft.office365.supportTickets/allEntities/allTasks | Создание запросов в службу поддержки Office 365 и управление ими. |
 
@@ -584,7 +588,7 @@ EDR и ATP в Защитнике Windows | Просмотр и анализ оп
 | microsoft.directory/users/invalidateAllRefreshTokens | Отмена всех маркеров обновления пользователей в Azure Active Directory. |
 | microsoft.directory/users/strongAuthentication/update | Изменение свойств строгой аутентификации, таких как сведения об учетных данных MFA. |
 | microsoft.azure.serviceHealth/allEntities/allTasks | Чтение и настройка Работоспособности служб Azure. |
-| microsoft.azure.supportTickets/allEntities/allTasks | Создание запросов в службу поддержки Azure и управление ими. |
+| microsoft.azure.supportTickets/allEntities/allTasks | Создавайте билеты в службу поддержки Azure и управляйте ими для служб уровня каталога. |
 | microsoft.office365.webPortal/allEntities/basic/read | Чтение базовых свойств для всех ресурсов в microsoft.office365.webPortal. |
 | microsoft.office365.serviceHealth/allEntities/allTasks | Чтение и настройка работоспособности служб Office 365. |
 | microsoft.office365.supportTickets/allEntities/allTasks | Создание запросов в службу поддержки Office 365 и управление ими. |
@@ -616,7 +620,7 @@ EDR и ATP в Защитнике Windows | Просмотр и анализ оп
 | --- | --- |
 | microsoft.azure.informationProtection/allEntities/allTasks | Управление всеми аспектами Azure Information Protection. |
 | microsoft.azure.serviceHealth/allEntities/allTasks | Чтение и настройка Работоспособности служб Azure. |
-| microsoft.azure.supportTickets/allEntities/allTasks | Создание запросов в службу поддержки Azure и управление ими. |
+| microsoft.azure.supportTickets/allEntities/allTasks | Создавайте билеты в службу поддержки Azure и управляйте ими для служб уровня каталога. |
 | microsoft.office365.serviceHealth/allEntities/allTasks | Чтение и настройка работоспособности служб Office 365. |
 | microsoft.office365.supportTickets/allEntities/allTasks | Создание запросов в службу поддержки Office 365 и управление ими. |
 
@@ -649,7 +653,7 @@ EDR и ATP в Защитнике Windows | Просмотр и анализ оп
 | --- | --- |
 | microsoft.directory/organization/basic/update | Обновление базовых свойств в организации в Azure Active Directory. |
 | microsoft.azure.serviceHealth/allEntities/allTasks | Чтение и настройка Работоспособности служб Azure. |
-| microsoft.azure.supportTickets/allEntities/allTasks | Создание запросов в службу поддержки Azure и управление ими. |
+| microsoft.azure.supportTickets/allEntities/allTasks | Создавайте билеты в службу поддержки Azure и управляйте ими для служб уровня каталога. |
 | microsoft.commerce.billing/allEntities/allTasks | Управление всеми аспектами выставления счетов. |
 | microsoft.office365.webPortal/allEntities/basic/read | Чтение базовых свойств для всех ресурсов в microsoft.office365.webPortal. |
 | microsoft.office365.serviceHealth/allEntities/allTasks | Чтение и настройка работоспособности служб Office 365. |
@@ -694,7 +698,7 @@ EDR и ATP в Защитнике Windows | Просмотр и анализ оп
 | microsoft.directory/servicePrincipals/policies/update | Изменение свойства servicePrincipals.policies в Azure Active Directory. |
 | microsoft.directory/signInReports/allProperties/read | Чтение всех свойств (включая привилегированные) в signInReports в Azure Active Directory. |
 | microsoft.azure.serviceHealth/allEntities/allTasks | Чтение и настройка Работоспособности служб Azure. |
-| microsoft.azure.supportTickets/allEntities/allTasks | Создание запросов в службу поддержки Azure и управление ими. |
+| microsoft.azure.supportTickets/allEntities/allTasks | Создавайте билеты в службу поддержки Azure и управляйте ими для служб уровня каталога. |
 | microsoft.office365.serviceHealth/allEntities/allTasks | Чтение и настройка работоспособности служб Office 365. |
 | microsoft.office365.supportTickets/allEntities/allTasks | Создание запросов в службу поддержки Office 365 и управление ими. |
 
@@ -762,7 +766,7 @@ EDR и ATP в Защитнике Windows | Просмотр и анализ оп
 | microsoft.azure.advancedThreatProtection/allEntities/read | Чтение всех ресурсов в microsoft.azure.advancedThreatProtection. |
 | microsoft.azure.informationProtection/allEntities/allTasks | Управление всеми аспектами Azure Information Protection. |
 | microsoft.azure.serviceHealth/allEntities/allTasks | Чтение и настройка Работоспособности служб Azure. |
-| microsoft.azure.supportTickets/allEntities/allTasks | Создание запросов в службу поддержки Azure и управление ими. |
+| microsoft.azure.supportTickets/allEntities/allTasks | Создавайте билеты в службу поддержки Azure и управляйте ими для служб уровня каталога. |
 | microsoft.commerce.billing/allEntities/allTasks | Управление всеми аспектами выставления счетов. |
 | microsoft.intune/allEntities/allTasks | Управление всеми аспектами Intune. |
 | microsoft.office365.complianceManager/allEntities/allTasks | Управление всеми аспектами Office 365 Compliance Manager. |
@@ -795,7 +799,7 @@ EDR и ATP в Защитнике Windows | Просмотр и анализ оп
 | **Действия** | **Описание** |
 | --- | --- |
 | microsoft.azure.serviceHealth/allEntities/allTasks | Чтение и настройка Работоспособности служб Azure. |
-| microsoft.azure.supportTickets/allEntities/allTasks | Создание запросов в службу поддержки Azure и управление ими. |
+| microsoft.azure.supportTickets/allEntities/allTasks | Создавайте билеты в службу поддержки Azure и управляйте ими для служб уровня каталога. |
 | microsoft.office365.complianceManager/allEntities/allTasks | Управление всеми аспектами Office 365 Compliance Manager. |
 | microsoft.office365.serviceHealth/allEntities/allTasks | Чтение и настройка работоспособности служб Office 365. |
 | microsoft.office365.supportTickets/allEntities/allTasks | Создание запросов в службу поддержки Office 365 и управление ими. |
@@ -815,7 +819,7 @@ EDR и ATP в Защитнике Windows | Просмотр и анализ оп
 | Microsoft. Directory. Клаудаппсекурити/Аллентитиес/Аллтаскс | Чтение и настройка параметров Microsoft Cloud App Security. |
 | microsoft.azure.informationProtection/allEntities/allTasks | Управление всеми аспектами Azure Information Protection. |
 | microsoft.azure.serviceHealth/allEntities/allTasks | Чтение и настройка Работоспособности служб Azure. |
-| microsoft.azure.supportTickets/allEntities/allTasks | Создание запросов в службу поддержки Azure и управление ими. |
+| microsoft.azure.supportTickets/allEntities/allTasks | Создавайте билеты в службу поддержки Azure и управляйте ими для служб уровня каталога. |
 | microsoft.office365.complianceManager/allEntities/allTasks | Управление всеми аспектами Office 365 Compliance Manager. |
 | microsoft.office365.serviceHealth/allEntities/allTasks | Чтение и настройка работоспособности служб Office 365. |
 | microsoft.office365.supportTickets/allEntities/allTasks | Создание запросов в службу поддержки Office 365 и управление ими. |
@@ -848,7 +852,7 @@ EDR и ATP в Защитнике Windows | Просмотр и анализ оп
 | **Действия** | **Описание** |
 | --- | --- |
 | microsoft.azure.serviceHealth/allEntities/allTasks | Чтение и настройка Работоспособности служб Azure. |
-| microsoft.azure.supportTickets/allEntities/allTasks | Создание запросов в службу поддержки Azure и управление ими. |
+| microsoft.azure.supportTickets/allEntities/allTasks | Создавайте билеты в службу поддержки Azure и управляйте ими для служб уровня каталога. |
 | microsoft.powerApps.dynamics365/allEntities/allTasks | Управление всеми аспектами Dynamics 365. |
 | microsoft.office365.webPortal/allEntities/basic/read | Чтение базовых свойств для всех ресурсов в microsoft.office365.webPortal. |
 | microsoft.office365.serviceHealth/allEntities/allTasks | Чтение и настройка работоспособности служб Office 365. |
@@ -880,7 +884,7 @@ EDR и ATP в Защитнике Windows | Просмотр и анализ оп
 | **Действия** | **Описание** |
 | --- | --- |
 | microsoft.azure.serviceHealth/allEntities/allTasks | Чтение и настройка Работоспособности служб Azure. |
-| microsoft.azure.supportTickets/allEntities/allTasks | Создание запросов в службу поддержки Azure и управление ими. |
+| microsoft.azure.supportTickets/allEntities/allTasks | Создавайте билеты в службу поддержки Azure и управляйте ими для служб уровня каталога. |
 | microsoft.office365.webPortal/allEntities/basic/read | Чтение базовых свойств для всех ресурсов в microsoft.office365.webPortal. |
 | microsoft.office365.desktopAnalytics/allEntities/allTasks | Управляет всеми аспектами аналитики классических приложений. |
 | microsoft.office365.serviceHealth/allEntities/allTasks | Чтение и настройка работоспособности служб Office 365. |
@@ -1031,7 +1035,7 @@ EDR и ATP в Защитнике Windows | Просмотр и анализ оп
 | **Действия** | **Описание** |
 | --- | --- |
 | microsoft.azure.serviceHealth/allEntities/allTasks | Чтение и настройка Работоспособности служб Azure. |
-| microsoft.azure.supportTickets/allEntities/allTasks | Создание запросов в службу поддержки Azure и управление ими. |
+| microsoft.azure.supportTickets/allEntities/allTasks | Создавайте билеты в службу поддержки Azure и управляйте ими для служб уровня каталога. |
 | microsoft.directory/groups/unified/appRoleAssignments/update | Обновление свойства groups.unified в Azure Active Directory. |
 | microsoft.directory/groups/unified/basic/update | Обновление основных свойств групп Microsoft 365. |
 | microsoft.directory/groups/unified/create | Создание групп Microsoft 365. |
@@ -1156,7 +1160,7 @@ EDR и ATP в Защитнике Windows | Просмотр и анализ оп
 | microsoft.directory/groups/restore | Восстановление групп в Azure Active Directory. |
 | microsoft.directory/groups/settings/update | Изменение свойства groups.settings в Azure Active Directory. |
 | microsoft.azure.serviceHealth/allEntities/allTasks | Чтение и настройка Работоспособности служб Azure. |
-| microsoft.azure.supportTickets/allEntities/allTasks | Создание запросов в службу поддержки Azure и управление ими. |
+| microsoft.azure.supportTickets/allEntities/allTasks | Создавайте билеты в службу поддержки Azure и управляйте ими для служб уровня каталога. |
 | microsoft.office365.messageCenter/messages/read | Чтение сообщений в microsoft.office365.messageCenter. |
 | microsoft.office365.serviceHealth/allEntities/allTasks | Чтение и настройка работоспособности служб Office 365. |
 | microsoft.office365.supportTickets/allEntities/allTasks | Создание запросов в службу поддержки Office 365 и управление ими. |
@@ -1187,7 +1191,7 @@ EDR и ATP в Защитнике Windows | Просмотр и анализ оп
 | microsoft.directory/users/invalidateAllRefreshTokens | Отмена всех маркеров обновления пользователей в Azure Active Directory. |
 | microsoft.directory/users/password/update | Обновление паролей для всех пользователей в Azure Active Directory. Дополнительные сведения см. в электронной документации. |
 | microsoft.azure.serviceHealth/allEntities/allTasks | Чтение и настройка Работоспособности служб Azure. |
-| microsoft.azure.supportTickets/allEntities/allTasks | Создание запросов в службу поддержки Azure и управление ими. |
+| microsoft.azure.supportTickets/allEntities/allTasks | Создавайте билеты в службу поддержки Azure и управляйте ими для служб уровня каталога. |
 | microsoft.office365.webPortal/allEntities/basic/read | Чтение базовых свойств для всех ресурсов в microsoft.office365.webPortal. |
 | microsoft.office365.serviceHealth/allEntities/allTasks | Чтение и настройка работоспособности служб Office 365. |
 | microsoft.office365.supportTickets/allEntities/allTasks | Создание запросов в службу поддержки Office 365 и управление ими. |
@@ -1199,7 +1203,7 @@ EDR и ATP в Защитнике Windows | Просмотр и анализ оп
 | **Действия** | **Описание** |
 | --- | --- |
 | microsoft.azure.serviceHealth/allEntities/allTasks | Чтение и настройка Работоспособности служб Azure. |
-| microsoft.azure.supportTickets/allEntities/allTasks | Создание запросов в службу поддержки Azure и управление ими. |
+| microsoft.azure.supportTickets/allEntities/allTasks | Создавайте билеты в службу поддержки Azure и управляйте ими для служб уровня каталога. |
 | microsoft.directory/applications/audience/update  | Изменение свойства applications.audience в Azure Active Directory. |
 | microsoft.directory/applications/authentication/update | Изменение свойства applications.authentication в Azure Active Directory.  |
 | microsoft.directory/applications/basic/update | Изменение базовых свойств приложений в Azure Active Directory. |
@@ -1242,7 +1246,7 @@ EDR и ATP в Защитнике Windows | Просмотр и анализ оп
 | **Действия** | **Описание** |
 | --- | --- |
 | microsoft.azure.serviceHealth/allEntities/allTasks | Чтение и настройка Работоспособности служб Azure. |
-| microsoft.azure.supportTickets/allEntities/allTasks | Создание запросов в службу поддержки Azure и управление ими. |
+| microsoft.azure.supportTickets/allEntities/allTasks | Создавайте билеты в службу поддержки Azure и управляйте ими для служб уровня каталога. |
 | Microsoft. Insights/Аллентитиес/Аллтаскс | Управление всеми аспектами аналитики. |
 | microsoft.office365.serviceHealth/allEntities/allTasks | Чтение и настройка работоспособности служб Office 365. |
 | microsoft.office365.supportTickets/allEntities/allTasks | Создание запросов в службу поддержки Office 365 и управление ими. |
@@ -1290,7 +1294,7 @@ EDR и ATP в Защитнике Windows | Просмотр и анализ оп
 | microsoft.directory/users/appRoleAssignments/update | Изменение свойства users.appRoleAssignments в Azure Active Directory. |
 | microsoft.directory/users/basic/update | Обновление базовых свойств пользователей в Azure Active Directory. |
 | microsoft.directory/users/manager/update | Изменение свойства users.manager в Azure Active Directory. |
-| microsoft.azure.supportTickets/allEntities/allTasks | Создание запросов в службу поддержки Azure и управление ими. |
+| microsoft.azure.supportTickets/allEntities/allTasks | Создавайте билеты в службу поддержки Azure и управляйте ими для служб уровня каталога. |
 | microsoft.intune/allEntities/allTasks | Управление всеми аспектами Intune. |
 | microsoft.office365.supportTickets/allEntities/allTasks | Создание запросов в службу поддержки Office 365 и управление ими. |
 | microsoft.office365.webPortal/allEntities/basic/read | Чтение базовых свойств для всех ресурсов в microsoft.office365.webPortal. |
@@ -1334,7 +1338,7 @@ EDR и ATP в Защитнике Windows | Просмотр и анализ оп
 | **Действия** | **Описание** |
 | --- | --- |
 | microsoft.azure.serviceHealth/allEntities/allTasks | Чтение и настройка Работоспособности служб Azure. |
-| microsoft.azure.supportTickets/allEntities/allTasks | Создание запросов в службу поддержки Azure и управление ими. |
+| microsoft.azure.supportTickets/allEntities/allTasks | Создавайте билеты в службу поддержки Azure и управляйте ими для служб уровня каталога. |
 | microsoft.office365.serviceHealth/allEntities/allTasks | Чтение и настройка работоспособности служб Office 365. |
 | microsoft.office365.skypeForBusiness/allEntities/allTasks | Управление всеми аспектами Skype для бизнеса Online |
 | microsoft.office365.supportTickets/allEntities/allTasks | Создание запросов в службу поддержки Office 365 и управление ими. |
@@ -1410,7 +1414,7 @@ EDR и ATP в Защитнике Windows | Просмотр и анализ оп
 | **Действия** | **Описание** |
 | --- | --- |
 | microsoft.azure.serviceHealth/allEntities/allTasks | Чтение и настройка Работоспособности служб Azure. |
-| microsoft.azure.supportTickets/allEntities/allTasks | Создание запросов в службу поддержки Azure и управление ими. |
+| microsoft.azure.supportTickets/allEntities/allTasks | Создавайте билеты в службу поддержки Azure и управляйте ими для служб уровня каталога. |
 | microsoft.office365.messageCenter/messages/read | Чтение сообщений в microsoft.office365.messageCenter. |
 | microsoft.office365.serviceHealth/allEntities/allTasks | Чтение и настройка работоспособности служб Office 365. |
 | microsoft.office365.supportTickets/allEntities/allTasks | Создание запросов в службу поддержки Office 365 и управление ими. |
@@ -1445,7 +1449,7 @@ EDR и ATP в Защитнике Windows | Просмотр и анализ оп
 | microsoft.directory/users/restore | Восстановление удаленных пользователей в Azure Active Directory. |
 | microsoft.directory/users/userPrincipalName/update | Изменение свойства users.userPrincipalName в Azure Active Directory. |
 | microsoft.azure.serviceHealth/allEntities/allTasks | Чтение и настройка Работоспособности служб Azure. |
-| microsoft.azure.supportTickets/allEntities/allTasks | Создание запросов в службу поддержки Azure и управление ими. |
+| microsoft.azure.supportTickets/allEntities/allTasks | Создавайте билеты в службу поддержки Azure и управляйте ими для служб уровня каталога. |
 | microsoft.office365.webPortal/allEntities/basic/read | Чтение базовых свойств для всех ресурсов в microsoft.office365.webPortal. |
 | microsoft.office365.serviceHealth/allEntities/allTasks | Чтение и настройка работоспособности служб Office 365. |
 | microsoft.office365.supportTickets/allEntities/allTasks | Создание запросов в службу поддержки Office 365 и управление ими. |
@@ -1480,7 +1484,7 @@ EDR и ATP в Защитнике Windows | Просмотр и анализ оп
 | microsoft.directory/users/restore | Восстановление удаленных пользователей в Azure Active Directory. |
 | microsoft.directory/users/userPrincipalName/update | Изменение свойства users.userPrincipalName в Azure Active Directory. |
 | microsoft.azure.serviceHealth/allEntities/allTasks | Чтение и настройка Работоспособности служб Azure. |
-| microsoft.azure.supportTickets/allEntities/allTasks | Создание запросов в службу поддержки Azure и управление ими. |
+| microsoft.azure.supportTickets/allEntities/allTasks | Создавайте билеты в службу поддержки Azure и управляйте ими для служб уровня каталога. |
 | microsoft.office365.webPortal/allEntities/basic/read | Чтение базовых свойств для всех ресурсов в microsoft.office365.webPortal. |
 | microsoft.office365.serviceHealth/allEntities/allTasks | Чтение и настройка работоспособности служб Office 365. |
 | microsoft.office365.supportTickets/allEntities/allTasks | Создание запросов в службу поддержки Office 365 и управление ими. |
@@ -1505,7 +1509,7 @@ EDR и ATP в Защитнике Windows | Просмотр и анализ оп
 | **Действия** | **Описание** |
 | --- | --- |
 | microsoft.azure.serviceHealth/allEntities/allTasks | Чтение и настройка Работоспособности служб Azure. |
-| microsoft.azure.supportTickets/allEntities/allTasks | Создание запросов в службу поддержки Azure и управление ими. |
+| microsoft.azure.supportTickets/allEntities/allTasks | Создавайте билеты в службу поддержки Azure и управляйте ими для служб уровня каталога. |
 | microsoft.powerApps.powerBI/allEntities/allTasks | Управление всеми аспектами Power BI. |
 | microsoft.office365.webPortal/allEntities/basic/read | Чтение базовых свойств для всех ресурсов в microsoft.office365.webPortal. |
 | microsoft.office365.serviceHealth/allEntities/allTasks | Чтение и настройка работоспособности служб Office 365. |
@@ -1523,7 +1527,7 @@ EDR и ATP в Защитнике Windows | Просмотр и анализ оп
 | **Действия** | **Описание** |
 | --- | --- |
 | microsoft.azure.serviceHealth/allEntities/allTasks | Чтение и настройка Работоспособности служб Azure. |
-| microsoft.azure.supportTickets/allEntities/allTasks | Создание запросов в службу поддержки Azure и управление ими. |
+| microsoft.azure.supportTickets/allEntities/allTasks | Создавайте билеты в службу поддержки Azure и управляйте ими для служб уровня каталога. |
 | microsoft.dynamics365/allEntities/allTasks | Управление всеми аспектами Dynamics 365. |
 | microsoft.flow/allEntities/allTasks | Управление всеми аспектами Microsoft Flow. |
 | microsoft.powerApps/allEntities/allTasks | Управление всеми аспектами PowerApps. |
@@ -1568,7 +1572,7 @@ EDR и ATP в Защитнике Windows | Просмотр и анализ оп
 | microsoft.directory/users/invalidateAllRefreshTokens | Отмена всех маркеров обновления пользователей в Azure Active Directory. |
 | microsoft.directory/users/strongAuthentication/update | Изменение свойств строгой аутентификации, таких как сведения об учетных данных MFA. |
 | microsoft.azure.serviceHealth/allEntities/allTasks | Чтение и настройка Работоспособности служб Azure. |
-| microsoft.azure.supportTickets/allEntities/allTasks | Создание запросов в службу поддержки Azure и управление ими. |
+| microsoft.azure.supportTickets/allEntities/allTasks | Создавайте билеты в службу поддержки Azure и управляйте ими для служб уровня каталога. |
 | microsoft.office365.webPortal/allEntities/basic/read | Чтение базовых свойств для всех ресурсов в microsoft.office365.webPortal. |
 | microsoft.office365.serviceHealth/allEntities/allTasks | Чтение и настройка работоспособности служб Office 365. |
 | microsoft.office365.supportTickets/allEntities/allTasks | Создание запросов в службу поддержки Office 365 и управление ими. |
@@ -1654,7 +1658,7 @@ EDR и ATP в Защитнике Windows | Просмотр и анализ оп
 | **Действия** | **Описание** |
 | --- | --- |
 | microsoft.azure.serviceHealth/allEntities/allTasks | Чтение и настройка Работоспособности служб Azure. |
-| microsoft.azure.supportTickets/allEntities/allTasks | Создание запросов в службу поддержки Azure и управление ими. |
+| microsoft.azure.supportTickets/allEntities/allTasks | Создавайте билеты в службу поддержки Azure и управляйте ими для служб уровня каталога. |
 | microsoft.directory/applications/policies/update | Изменение свойства applications.policies в Azure Active Directory. |
 | microsoft.directory/auditLogs/allProperties/read | Чтение всех свойств (включая привилегированные) в auditLogs в Azure Active Directory. |
 | microsoft.directory/devices/bitLockerRecoveryKeys/read | Чтение свойства devices.bitLockerRecoveryKeys в Azure Active Directory. |
@@ -1686,6 +1690,7 @@ EDR и ATP в Защитнике Windows | Просмотр и анализ оп
 | **Действия** | **Описание** |
 | --- | --- |
 | microsoft.azure.advancedThreatProtection/allEntities/read | Просмотр и настройка параметров Расширенной защиты от угроз Azure AD. |
+| microsoft.azure.supportTickets/allEntities/allTasks | Создавайте билеты в службу поддержки Azure и управляйте ими для служб уровня каталога. |
 | Microsoft. Directory/Клаудаппсекурити/Аллпропертиес/Аллтаскс | Чтение и настройка параметров Microsoft Cloud App Security. |
 | Microsoft. Directory/Идентитипротектион/Аллпропертиес/Read | Чтение всех ресурсов в microsoft.aad.identityProtection. |
 | Microsoft. Directory/Привилежедидентитиманажемент/Аллпропертиес/Read | Чтение всех ресурсов в microsoft.aad.privilegedIdentityManagement. |
@@ -1728,7 +1733,7 @@ EDR и ATP в Защитнике Windows | Просмотр и анализ оп
 | **Действия** | **Описание** |
 | --- | --- |
 | microsoft.azure.serviceHealth/allEntities/allTasks | Чтение и настройка Работоспособности служб Azure. |
-| microsoft.azure.supportTickets/allEntities/allTasks | Создание запросов в службу поддержки Azure и управление ими. |
+| microsoft.azure.supportTickets/allEntities/allTasks | Создавайте билеты в службу поддержки Azure и управляйте ими для служб уровня каталога. |
 | microsoft.office365.webPortal/allEntities/basic/read | Чтение базовых свойств для всех ресурсов в microsoft.office365.webPortal. |
 | microsoft.office365.serviceHealth/allEntities/allTasks | Чтение и настройка работоспособности служб Office 365. |
 | microsoft.office365.supportTickets/allEntities/allTasks | Создание запросов в службу поддержки Office 365 и управление ими. |
@@ -1745,7 +1750,7 @@ EDR и ATP в Защитнике Windows | Просмотр и анализ оп
 | **Действия** | **Описание** |
 | --- | --- |
 | microsoft.azure.serviceHealth/allEntities/allTasks | Чтение и настройка Работоспособности служб Azure. |
-| microsoft.azure.supportTickets/allEntities/allTasks | Создание запросов в службу поддержки Azure и управление ими. |
+| microsoft.azure.supportTickets/allEntities/allTasks | Создавайте билеты в службу поддержки Azure и управляйте ими для служб уровня каталога. |
 | microsoft.directory/groups/unified/appRoleAssignments/update | Обновление свойства groups.unified в Azure Active Directory. |
 | microsoft.directory/groups/unified/basic/update | Обновление основных свойств групп Microsoft 365. |
 | microsoft.directory/groups/unified/create | Создание групп Microsoft 365. |
@@ -1771,11 +1776,14 @@ EDR и ATP в Защитнике Windows | Просмотр и анализ оп
 | **Действия** | **Описание** |
 | --- | --- |
 | microsoft.azure.serviceHealth/allEntities/allTasks | Чтение и настройка Работоспособности служб Azure. |
-| microsoft.azure.supportTickets/allEntities/allTasks | Создание запросов в службу поддержки Azure и управление ими. |
+| microsoft.azure.supportTickets/allEntities/allTasks | Создавайте билеты в службу поддержки Azure и управляйте ими для служб уровня каталога. |
 | microsoft.office365.webPortal/allEntities/basic/read | Чтение базовых свойств для всех ресурсов в microsoft.office365.webPortal. |
 | microsoft.office365.serviceHealth/allEntities/allTasks | Чтение и настройка работоспособности служб Office 365. |
 | microsoft.office365.supportTickets/allEntities/allTasks | Создание запросов в службу поддержки Office 365 и управление ими. |
 | microsoft.office365.usageReports/allEntities/read | Чтение отчетов об использовании Office 365. |
+| Microsoft. Teams/meetings/Аллпропертиес/Аллтаскс | Управляйте собраниями, включая политики собрания, конфигурации и мосты. |
+| Microsoft. Teams/Voice/Аллпропертиес/Аллтаскс | Управление голосовыми данными, включая политики вызова и номер телефона и назначение. |
+| Microsoft. Teams/Каллкуалити/Аллпропертиес/Read | Чтение всех данных на панели мониторинга "качество вызовов" (ККД). |
 
 ### <a name="teams-communications-support-engineer-permissions"></a>Разрешения инженера службы поддержки связи Teams
 
@@ -1791,6 +1799,7 @@ EDR и ATP в Защитнике Windows | Просмотр и анализ оп
 | microsoft.azure.serviceHealth/allEntities/allTasks | Чтение и настройка Работоспособности служб Azure. |
 | microsoft.office365.webPortal/allEntities/basic/read | Чтение базовых свойств для всех ресурсов в microsoft.office365.webPortal. |
 | microsoft.office365.serviceHealth/allEntities/allTasks | Чтение и настройка работоспособности служб Office 365. |
+| Microsoft. Teams/Каллкуалити/Аллпропертиес/Read | Чтение всех данных на панели мониторинга "качество вызовов" (ККД). |
 
 ### <a name="teams-communications-support-specialist-permissions"></a>Разрешения специалиста службы поддержки связи Teams
 
@@ -1806,6 +1815,21 @@ EDR и ATP в Защитнике Windows | Просмотр и анализ оп
 | microsoft.azure.serviceHealth/allEntities/allTasks | Чтение и настройка Работоспособности служб Azure. |
 | microsoft.office365.webPortal/allEntities/basic/read | Чтение базовых свойств для всех ресурсов в microsoft.office365.webPortal. |
 | microsoft.office365.serviceHealth/allEntities/allTasks | Чтение и настройка работоспособности служб Office 365. |
+| Microsoft. Teams/Каллкуалити/Basic/Read | Чтение основных данных на панели мониторинга качества вызовов (ККД). |
+
+### <a name="teams-devices-administrator-permissions"></a>Группы устройств. разрешения администратора
+
+Может выполнять задачи, связанные с управлением, на сертифицированных для групп устройствах.
+
+> [!NOTE]
+> Эта роль имеет дополнительные разрешения за пределами Azure Active Directory. Дополнительные сведения см. в описании ролей выше.
+>
+>
+
+| **Действия** | **Описание** |
+| --- | --- |
+| microsoft.office365.webPortal/allEntities/basic/read | Чтение базовых свойств для всех ресурсов в microsoft.office365.webPortal. |
+| Microsoft. Teams/Devices/Basic/Read | Управляйте всеми аспектами сертифицированных групп устройств, включая политики конфигурации. |
 
 ### <a name="teams-service-administrator-permissions"></a>Разрешения администратора службы Teams
 
@@ -1819,7 +1843,7 @@ EDR и ATP в Защитнике Windows | Просмотр и анализ оп
 | **Действия** | **Описание** |
 | --- | --- |
 | microsoft.azure.serviceHealth/allEntities/allTasks | Чтение и настройка Работоспособности служб Azure. |
-| microsoft.azure.supportTickets/allEntities/allTasks | Создание запросов в службу поддержки Azure и управление ими. |
+| microsoft.azure.supportTickets/allEntities/allTasks | Создавайте билеты в службу поддержки Azure и управляйте ими для служб уровня каталога. |
 | microsoft.directory/groups/hiddenMembers/read | Чтение свойства roups.hiddenMembers в Azure Active Directory. |
 | microsoft.directory/groups/unified/appRoleAssignments/update | Обновление свойства groups.unified в Azure Active Directory. |
 | microsoft.directory/groups/unified/basic/update | Обновление основных свойств групп Microsoft 365. |
@@ -1832,6 +1856,7 @@ EDR и ATP в Защитнике Windows | Просмотр и анализ оп
 | microsoft.office365.supportTickets/allEntities/allTasks | Создание запросов в службу поддержки Office 365 и управление ими. |
 | microsoft.office365.usageReports/allEntities/read | Чтение отчетов об использовании Office 365. |
 | microsoft.office365.webPortal/allEntities/basic/read | Чтение базовых свойств для всех ресурсов в microsoft.office365.webPortal. |
+| Microsoft. Teams/Аллентитиес/Аллпропертиес/Аллтаскс | Управление всеми ресурсами в командах. |
 
 ### <a name="user-administrator-permissions"></a>Разрешения администратора пользователей
 Может контролировать все аспекты работы пользователей и групп, в том числе сбрасывать пароли администраторов с ограниченными правами.
@@ -1865,7 +1890,7 @@ EDR и ATP в Защитнике Windows | Просмотр и анализ оп
 | microsoft.directory/users/restore | Восстановление удаленных пользователей в Azure Active Directory. |
 | microsoft.directory/users/userPrincipalName/update | Изменение свойства users.userPrincipalName в Azure Active Directory. |
 | microsoft.azure.serviceHealth/allEntities/allTasks | Чтение и настройка Работоспособности служб Azure. |
-| microsoft.azure.supportTickets/allEntities/allTasks | Создание запросов в службу поддержки Azure и управление ими. |
+| microsoft.azure.supportTickets/allEntities/allTasks | Создавайте билеты в службу поддержки Azure и управляйте ими для служб уровня каталога. |
 | microsoft.office365.webPortal/allEntities/basic/read | Чтение базовых свойств для всех ресурсов в microsoft.office365.webPortal. |
 | microsoft.office365.serviceHealth/allEntities/allTasks | Чтение и настройка работоспособности служб Office 365. |
 | microsoft.office365.supportTickets/allEntities/allTasks | Создание запросов в службу поддержки Office 365 и управление ими. |
@@ -1940,6 +1965,7 @@ Device Users (Пользователи устройства) | Не рекоме
 Администратор связи Teams | Администратор связи Teams | baf37b3a-610e-45da-9e62-d9d1e5e8914b
 Инженер службы поддержки связи Teams | Инженер службы поддержки связи Teams | f70938a0-fc10-4177-9e90-2178f8765737
 Специалист службы поддержки связи Teams | Специалист службы поддержки связи Teams | fcf91098-03e3-41a9-b5ba-6f0ec8188a12
+Администраторы устройств групп | Администраторы устройств групп | 3d762c5a-1b6c-493f-843e-55a3b42923d4
 Администратор службы Teams | Администратор службы Teams | 69091246-20e8-4a56-aa4d-066075b2a7a8
 Пользователь | Не отображается, так как не может использоваться. | a0b1b346-4d3e-4e8b-98f8-753987be4970
 Администратор учетных записей | Администратор пользователей | fe930be7-5e62-47db-91af-98c3a49a38b1

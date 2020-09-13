@@ -14,12 +14,12 @@ ms.author: curtand
 ms.reviewer: krbain
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 46d692b81d24b6c5088ffc42644ed1dd7f45b2d2
-ms.sourcegitcommit: c5021f2095e25750eb34fd0b866adf5d81d56c3a
+ms.openlocfilehash: f056b34df0a70374e8bae909f210bfabf107ed4a
+ms.sourcegitcommit: 3c66bfd9c36cd204c299ed43b67de0ec08a7b968
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88795329"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "90005944"
 ---
 # <a name="assign-sensitivity-labels-to-microsoft-365-groups-in-azure-active-directory"></a>Назначение меток чувствительности группам Microsoft 365 в Azure Active Directory
 
@@ -68,7 +68,7 @@ Azure Active Directory (Azure AD) поддерживает применение 
     Set-AzureADDirectorySetting -Id $Setting.Id -DirectorySetting $Setting
     ```
 
-Вот и все. Вы включили функцию и можете применить опубликованные метки к группам.
+Кроме того, необходимо синхронизировать метки конфиденциальности с Azure AD. Инструкции см. [в разделе Включение меток чувствительности для контейнеров и синхронизация меток](https://docs.microsoft.com/microsoft-365/compliance/sensitivity-labels-teams-groups-sites?view=o365-worldwide#how-to-enable-sensitivity-labels-for-containers-and-synchronize-labels).
 
 ## <a name="assign-a-label-to-a-new-group-in-azure-portal"></a>Назначение метки новой группе в портал Azure
 
@@ -113,7 +113,8 @@ Azure Active Directory (Azure AD) поддерживает применение 
 Параметр метка конфиденциальности отображается только для групп при соблюдении всех следующих условий.
 
 1. Метки публикуются в центре соответствия Microsoft 365 для этой Организации Azure AD.
-1. Эта функция включена, в PowerShell для Енаблемиплабелс задано значение true.
+1. Эта функция включена, в модуле Azure AD PowerShell для Енаблемиплабелс задано значение true.
+1. Метка, которая синхронизируется с Azure AD с помощью командлета Execute-Азуреадлабелсинк в модуле PowerShell Security & соответствие.
 1. Группа является группой Microsoft 365.
 1. У Организации есть активная лицензия Azure Active Directory Premium P1.
 1. Текущий пользователь, выполнивший вход, имеет достаточные привилегии для назначения меток. Пользователь должен быть либо глобальным администратором, либо администратором группы, либо владельцем группы.
@@ -135,7 +136,7 @@ Azure Active Directory (Azure AD) поддерживает применение 
 1. Выберите **Группы**.
 1. На странице **все группы** выберите группу, для которой нужно добавить метку.
 1. На странице выбранной группы выберите **Свойства** и выберите в списке новую метку чувствительности.
-1. Нажмите кнопку **Сохранить**.
+1. Выберите **Сохранить**.
 
 ### <a name="group-setting-changes-to-published-labels-are-not-updated-on-the-groups"></a>Изменения параметров группы для опубликованных меток не обновлены в группах
 

@@ -10,12 +10,12 @@ ms.workload: identity
 ms.topic: article
 ms.date: 04/28/2020
 ms.author: jeedes
-ms.openlocfilehash: ea5a7a0cd89b9aad78ce789517aa8f75767955d8
-ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
+ms.openlocfilehash: 4b4953cbca4d08e911fd043413387a1602bd8e08
+ms.sourcegitcommit: 3c66bfd9c36cd204c299ed43b67de0ec08a7b968
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88526405"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "90006097"
 ---
 # <a name="tutorial-configure-workplace-by-facebook-for-automatic-user-provisioning"></a>Руководство по настройке Workplace by Facebook для автоматической подготовки пользователей
 
@@ -125,8 +125,16 @@ ms.locfileid: "88526405"
    |phoneNumbers[type eq "fax"].value|Строка|
    |externalId|Строка|
    |preferredLanguage|Строка|
-   |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:manager|Строка|
-   |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:department|Строка|
+   |urn: scim: схемы: расширение: Enterprise: 1.0. Manager|Строка|
+   |urn: scim: схемы: расширение: корпоративный: 1.0. Department|Строка|
+   |urn: scim: схемы: расширение: Enterprise: 1.0. деление|Строка|
+   |urn: scim: схемы: расширение: Enterprise: 1.0. Организация|Строка|
+   |urn: scim: схемы: расширение: Enterprise: 1.0. costCenter|Строка|
+   |urn: scim: схемы: расширение: Enterprise: 1.0. Емплойинумбер|Строка|
+   |urn: scim: schemas: расширение: Facebook: auth_method: 1.0: auth_method|Строка|
+   |urn: scim: schemas: расширение: Facebook: оказался: 1.0. is_frontline|Логическое значение|
+   |urn: scim: schemas: расширение: Facebook: старттермдатес: 1.0. startDate|Целое число|
+
 
 10. Чтобы настроить фильтры области, ознакомьтесь со следующими инструкциями, предоставленными в [руководстве по фильтрам области](../manage-apps/define-conditional-rules-for-provisioning-user-accounts.md).
 
@@ -153,6 +161,10 @@ ms.locfileid: "88526405"
 
 ## <a name="troubleshooting-tips"></a>Советы по устранению неполадок
 *  Если вы видите, что пользователь неудачно создал событие журнала аудита с кодом "1789003", это означает, что пользователь из непроверенного домена.
+
+## <a name="change-log"></a>Журнал изменений
+
+* 09/10/2020 — добавлена поддержка корпоративных атрибутов "деление", "Организация", "costCenter" и "Емплойинумбер". Добавлена поддержка пользовательских атрибутов "startDate", "auth_method" и "оказался"
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
