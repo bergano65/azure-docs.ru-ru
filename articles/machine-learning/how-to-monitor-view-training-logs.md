@@ -11,12 +11,12 @@ ms.subservice: core
 ms.date: 07/30/2020
 ms.topic: conceptual
 ms.custom: how-to
-ms.openlocfilehash: d06186b2ce4d8bb9143663d41f03b9508e4bd00e
-ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
+ms.openlocfilehash: 642186ef4af43127ba0d6eb6950f09e069eb79ca
+ms.sourcegitcommit: 3be3537ead3388a6810410dfbfe19fc210f89fec
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89005961"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89649279"
 ---
 # <a name="monitor-and-view-ml-run-logs-and-metrics"></a>Мониторинг и просмотр журналов и метрик выполнения машинного обучения
 
@@ -58,7 +58,7 @@ ms.locfileid: "89005961"
 
 ## <a name="monitor-runs-using-the-jupyter-notebook-widget"></a>Мониторинг запусков с помощью мини-приложения записной книжки Jupyter
 
-При использовании метода **скриптрунконфиг** для отправки запусков можно отслеживать ход выполнения с помощью мини-приложения [Jupyter](https://docs.microsoft.com/python/api/azureml-widgets/azureml.widgets?view=azure-ml-py). Подобно представлению запуска, мини-приложение является асинхронным и предоставляет обновления в реальном времени каждые 10–15 секунд до завершения задания.
+При использовании метода **скриптрунконфиг** для отправки запусков можно отслеживать ход выполнения с помощью мини-приложения [Jupyter](https://docs.microsoft.com/python/api/azureml-widgets/azureml.widgets?view=azure-ml-py&preserve-view=true). Подобно представлению запуска, мини-приложение является асинхронным и предоставляет обновления в реальном времени каждые 10–15 секунд до завершения задания.
 
 Просмотрите мини-приложения Jupyter во время ожидания завершения выполнения.
     

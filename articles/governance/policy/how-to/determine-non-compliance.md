@@ -3,12 +3,12 @@ title: Определение причин несоответствия треб
 description: Если ресурс не соответствует требованиям, возможных причин этого множество. Узнайте, как находить то, что привело к несоответствию.
 ms.date: 07/06/2020
 ms.topic: how-to
-ms.openlocfilehash: ee027ff0f2936dc3eb7153869c52d4e70c83918b
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.openlocfilehash: a666da4ecb97c24e7176e6c7cfbe2ee24f46f1b7
+ms.sourcegitcommit: 3be3537ead3388a6810410dfbfe19fc210f89fec
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86512033"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89648571"
 ---
 # <a name="determine-causes-of-non-compliance"></a>Определение причин несоответствия требованиям
 
@@ -30,17 +30,17 @@ ms.locfileid: "86512033"
 
 Чтобы просмотреть сведения о соответствии, выполните следующие действия.
 
-1. Запустите службу Политика Azure на портале Azure, щелкнув **Все службы**, а затем выполнив поиск и выбрав **Политика**.
+1. Запустите службу политики Azure в портал Azure, выбрав **все службы**, а затем выполнив поиск и выбрав пункт **Политика**.
 
 1. На странице **Обзор** или **Соответствие** выберите политику, с **состоянием соответствия** _Не соответствует_.
 
 1. На вкладке **Соответствие ресурса** страницы **Соответствие политике** щелкните правой кнопкой мыши или выберите многоточие ресурса с **состоянием соответствия** _Не соответствует_. Затем выберите **Просмотреть сведения о соответствии**.
 
-   :::image type="content" source="../media/determine-non-compliance/view-compliance-details.png" alt-text="Параметр просмотра сведений о соответствии" border="false":::
+   :::image type="content" source="../media/determine-non-compliance/view-compliance-details.png" alt-text="Снимок экрана со ссылкой "Просмотр сведений о соответствии" на вкладке "соответствие ресурсов"." border="false":::
 
 1. Панель **Сведения о соответствии** отображает информацию от последней оценки ресурса до назначения текущей политики. В этом примере поле **Microsoft. SQL/Servers/Version** содержит _12.0_, в то время как определение политики ожидало _14.0_. Если ресурс не соответствует требованиям по нескольким причинам, каждая из них отображается на этой панели.
 
-   :::image type="content" source="../media/determine-non-compliance/compliance-details-pane.png" alt-text="Область сведений о соответствии и причины несоответствия" border="false":::
+   :::image type="content" source="../media/determine-non-compliance/compliance-details-pane.png" alt-text="Снимок экрана с областью сведений о соответствии и причинами несоответствия, что текущее значение равно двенадцати, а целевое значение — четырнадцать." border="false":::
 
    Для определения политики **auditIfNotExists** или **deployIfNotExists** сведения включают в себя свойство **details.type** и любые дополнительные свойства. Список см. в разделах [свойства auditIfNotExists](../concepts/effects.md#auditifnotexists-properties) и [свойства deployIfNotExists](../concepts/effects.md#deployifnotexists-properties). **Последний оцененный ресурс** — это связанный ресурс из раздела **сведений** определения.
 
@@ -69,7 +69,7 @@ ms.locfileid: "86512033"
    }
    ```
 
-   :::image type="content" source="../media/determine-non-compliance/compliance-details-pane-existence.png" alt-text="Область сведений о соответствии — *ifNotExists" border="false":::
+   :::image type="content" source="../media/determine-non-compliance/compliance-details-pane-existence.png" alt-text="Снимок экрана области сведений о соответствии для Ифнотексистс, включая вычисленное количество ресурсов." border="false":::
 
 > [!NOTE]
 > Для защиты данных, если значение свойства является _секретом_, текущее значение отображает звездочки.
@@ -114,13 +114,13 @@ ms.locfileid: "86512033"
 
 Сначала выполните действия, описанные в предыдущем разделе, чтобы просмотреть сведения о соответствии политике.
 
-В представлении "Сведения о соответствии" щелкните ссылку **Последний оцененный ресурс**.
+В области сведения о соответствии выберите ссылку **последний оцененный ресурс**.
 
-:::image type="content" source="../media/determine-non-compliance/guestconfig-auditifnotexists-compliance.png" alt-text="Просмотрите сведения об определении auditIfNotExists" border="false":::
+:::image type="content" source="../media/determine-non-compliance/guestconfig-auditifnotexists-compliance.png" alt-text="Снимок экрана: Просмотр сведений о соответствии определения помощью параметров auditifnotexists." border="false":::
 
 На странице **Назначение гостей** отображаются все доступные сведения о соответствии. Каждая строка в представлении представляет собой оценку выполненную внутри виртуальной машины. В столбце **Причина** отображается фраза, в которой описывается, почему назначение гостя _Не соответствует_ требованиям. Например, при аудите политик паролей в столбце **Причина** будет отображаться текст, включающий текущее значение для каждого параметра.
 
-:::image type="content" source="../media/determine-non-compliance/guestconfig-compliance-details.png" alt-text="Просмотр сведений о соответствии" border="false":::
+:::image type="content" source="../media/determine-non-compliance/guestconfig-compliance-details.png" alt-text="Снимок экрана сведений о соответствии для назначения гостей." border="false":::
 
 ### <a name="azure-powershell"></a>Azure PowerShell
 
@@ -191,7 +191,7 @@ Audit that an application is installed inside Windows VMs                 NonCom
 
 В рамках новой **общедоступной предварительной версии** последние 14 дней в журнале изменений теперь доступны для всех ресурсов Azure, поддерживающих [полное удаление режимов](../../../azure-resource-manager/templates/complete-mode-deletion.md). Журнал изменений содержит подробные сведения о том, когда было обнаружено изменение и _отличия между визуальными элементами_ для каждого изменения. Обнаружение изменений активируется при добавлении, удалении или изменении свойств Azure Resource Manager.
 
-1. Запустите службу Политика Azure на портале Azure, щелкнув **Все службы**, а затем выполнив поиск и выбрав **Политика**.
+1. Запустите службу политики Azure в портал Azure, выбрав **все службы**, а затем выполнив поиск и выбрав пункт **Политика**.
 
 1. На странице **Обзор** или **Соответствие** выберите политику в любом **состоянии соответствия**.
 
@@ -199,11 +199,11 @@ Audit that an application is installed inside Windows VMs                 NonCom
 
 1. На странице **Соответствие ресурсов** выберите вкладку **Журнал изменений (предварительная версия)** . После этого отобразится список обнаруженных изменений (при наличии).
 
-   :::image type="content" source="../media/determine-non-compliance/change-history-tab.png" alt-text="Вкладка Журнал изменений политики Azure на странице Соответствие ресурсов" border="false":::
+   :::image type="content" source="../media/determine-non-compliance/change-history-tab.png" alt-text="Снимок экрана вкладки "журнал изменений" и обнаружено время изменения на странице соответствия ресурсов." border="false":::
 
 1. Выберите одно из обнаруженных изменений. _Отличия между визуальными элементами_ для ресурса представлены на странице **Журнал изменений**.
 
-   :::image type="content" source="../media/determine-non-compliance/change-history-visual-diff.png" alt-text="Отличия между визуальными элементами в Журнале изменений политики Azure на странице Журнал изменений" border="false":::
+   :::image type="content" source="../media/determine-non-compliance/change-history-visual-diff.png" alt-text="Снимок экрана: визуальное различие в журнале изменений для состояния "до" и "после" на странице "журнал изменений"." border="false":::
 
 _Отличия между визуальными элементами_ позволяют обнаружить изменения ресурса. Обнаруженные изменения могут не быть связаны с текущим состоянием соответствия ресурса.
 

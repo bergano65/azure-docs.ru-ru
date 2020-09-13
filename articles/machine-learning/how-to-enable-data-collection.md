@@ -11,12 +11,12 @@ author: lostmygithubaccount
 ms.date: 07/14/2020
 ms.topic: conceptual
 ms.custom: how-to
-ms.openlocfilehash: 3ece750ab63c2c8e33fbfb46739eec55de4f5d07
-ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
+ms.openlocfilehash: 72706a67e1798662ea0f40fa7843c32d8267e0d0
+ms.sourcegitcommit: 3be3537ead3388a6810410dfbfe19fc210f89fec
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87320193"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89646066"
 ---
 # <a name="collect-data-from-models-in-production"></a>Получение данных из моделей в рабочей среде
 
@@ -67,11 +67,11 @@ ms.locfileid: "87320193"
 
 - Необходим кластер AKS. Сведения о том, как создать и развернуть в нем, см. [в разделе Развертывание и размещение](how-to-deploy-and-where.md).
 
-- [Настройте среду](how-to-configure-environment.md) и установите [пакет SDK для машинное обучение Azure мониторинга](https://docs.microsoft.com/python/api/overview/azure/ml/install?view=azure-ml-py).
+- [Настройте среду](how-to-configure-environment.md) и установите [пакет SDK для машинное обучение Azure мониторинга](https://docs.microsoft.com/python/api/overview/azure/ml/install?view=azure-ml-py&preserve-view=true).
 
 ## <a name="enable-data-collection"></a>Включение сбора данных
 
-[Сбор данных](https://docs.microsoft.com/python/api/azureml-monitoring/azureml.monitoring.modeldatacollector.modeldatacollector?view=azure-ml-py) можно включить независимо от модели, развертываемой с помощью машинное обучение Azure или других средств.
+[Сбор данных](https://docs.microsoft.com/python/api/azureml-monitoring/azureml.monitoring.modeldatacollector.modeldatacollector?view=azure-ml-py&preserve-view=true) можно включить независимо от модели, развертываемой с помощью машинное обучение Azure или других средств.
 
 Чтобы включить сбор данных, необходимо выполнить следующие действия.
 
@@ -149,7 +149,7 @@ ms.locfileid: "87320193"
    # example: /modeldata/1a2b3c4d-5e6f-7g8h-9i10-j11k12l13m14/myresourcegrp/myWorkspace/aks-w-collv9/best_model/10/inputs/2018/12/31/data.csv
    ```
 
-### <a name="analyze-model-data-using-power-bi"></a><a id="powerbi"></a>Анализ данных модели с помощью Power BI
+### <a name="analyze-model-data-using-power-bi"></a><a id="powerbi"></a> Анализ данных модели с помощью Power BI
 
 1. Скачайте и откройте [Power BI Desktop](https://www.powerbi.com).
 
@@ -185,7 +185,7 @@ ms.locfileid: "87320193"
 
 1. Приступите к созданию пользовательских отчетов о данных модели.
 
-### <a name="analyze-model-data-using-azure-databricks"></a><a id="databricks"></a>Анализ данных модели с помощью Azure Databricks
+### <a name="analyze-model-data-using-azure-databricks"></a><a id="databricks"></a> Анализ данных модели с помощью Azure Databricks
 
 1. Создайте [рабочую область Azure Databricks](https://docs.microsoft.com/azure/azure-databricks/quickstart-create-databricks-workspace-portal).
 
@@ -199,7 +199,7 @@ ms.locfileid: "87320193"
 
     [![Создание таблицы кирпичей данных](./media/how-to-enable-data-collection/dbtable.PNG)](././media/how-to-enable-data-collection/dbtable.PNG#lightbox)
 
-1. Обновите расположение данных. Ниже приведен пример.
+1. Обновите расположение данных. Пример:
 
     ```
     file_location = "wasbs://mycontainer@storageaccountname.blob.core.windows.net/modeldata/1a2b3c4d-5e6f-7g8h-9i10-j11k12l13m14/myresourcegrp/myWorkspace/aks-w-collv9/best_model/10/inputs/2018/*/*/data.csv" 
