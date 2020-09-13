@@ -1,18 +1,18 @@
 ---
-title: Устранение распространенных ошибок проверки подлинности | Azure Marketplace
-description: Содержит информацию о распространенных ошибках аутентификации при использовании API-интерфейсов портала Cloud Partner.
+title: Устранение распространенных ошибок проверки подлинности, Azure Marketplace
+description: Предоставляет справку по распространенным ошибкам проверки подлинности при использовании Портал Cloud Partner API в Azure Marketplace.
 ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
-ms.topic: reference
+ms.topic: troubleshooting
 author: mingshen-ms
 ms.author: mingshen
 ms.date: 07/14/2020
-ms.openlocfilehash: aa4269d68a176db97e36e6fbae4eba32041d7e05
-ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
+ms.openlocfilehash: 01af5357e4ae2f4dfb317a0931a8d0bc2b2d54e1
+ms.sourcegitcommit: de2750163a601aae0c28506ba32be067e0068c0c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87271473"
+ms.lasthandoff: 09/04/2020
+ms.locfileid: "89487323"
 ---
 # <a name="troubleshooting-common-authentication-errors"></a>Устранение распространенных ошибок аутентификации
 
@@ -23,15 +23,10 @@ ms.locfileid: "87271473"
 
 ## <a name="unauthorized-error"></a>Ошибка авторизации
 
-Если постоянно возникают ошибки `401 unauthorized`, убедитесь, что у вас есть допустимый маркер доступа.  Если еще не сделали это, создайте базовое приложение Azure Active Directory (Azure AD) и субъект-службу как описано в [этой статье](../active-directory/develop/howto-create-service-principal-portal.md). Для проверки доступа используйте приложение или простой запрос HTTP POST.  Чтобы получить маркер доступа необходим идентификатор клиента, идентификатор приложения, идентификатор объекта и секретный ключ, как показано на изображении.
-
-![Устранение ошибки 401](./media/cloud-partner-portal-api-troubleshooting-authentication-errors/troubleshooting-401-error.jpg)
+Если постоянно возникают ошибки `401 unauthorized`, убедитесь, что у вас есть допустимый маркер доступа.  Если еще не сделали это, создайте базовое приложение Azure Active Directory (Azure AD) и субъект-службу как описано в [этой статье](../active-directory/develop/howto-create-service-principal-portal.md). Для проверки доступа используйте приложение или простой запрос HTTP POST.  Вы будете включать идентификатор клиента, идентификатор приложения, идентификатор объекта и секретный ключ для получения маркера доступа.
 
 ## <a name="forbidden-error"></a>Ошибка запрета на доступ
 
-Если вы получаете ошибку `403 forbidden`, убедитесь, что на портале Cloud Partner к вашей учетной записи издателя добавлена верная субъект-служба.
-Чтобы добавить субъект-службу на портал, выполните действия, описанные на странице [Предварительные требования](./cloud-partner-portal-api-prerequisites.md).
+Если вы получаете ошибку `403 forbidden`, убедитесь, что на портале Cloud Partner к вашей учетной записи издателя добавлена верная субъект-служба. Чтобы добавить субъект-службу на портал, выполните действия, описанные на странице [Предварительные требования](./cloud-partner-portal-api-prerequisites.md).
 
 Если субъект-служба была добавлена правильно, проверьте все остальные сведения. Обратите внимание на идентификатор объекта, который вводите на портале. На странице регистрации приложения Azure Active Directory существуют два идентификатора объектов, необходимо использовать локальный. Правильное значение можно найти, перейдя на страницу **Регистрация приложений**, а также если щелкнуть имя приложения в разделе **Управляемое приложение в локальном каталоге**. Это приведет к локальным свойствам приложения, где можно найти правильный идентификатор объекта на странице **Свойства**, как показано на рисунке ниже. Кроме того убедитесь, что при добавлении участника-службы и вызова API используется верный идентификатор издателя.
-
-![Устранение ошибки 403](./media/cloud-partner-portal-api-troubleshooting-authentication-errors/troubleshooting-403-error.jpg)

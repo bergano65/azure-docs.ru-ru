@@ -1,15 +1,15 @@
 ---
 title: Поддерживаемые типы ресурсов Azure Resource Manager
 description: Укажите список типов ресурсов Azure Resource Manager, поддерживаемых графиком ресурсов Azure и журналом изменений.
-ms.date: 08/10/2020
+ms.date: 09/04/2020
 ms.topic: reference
 ms.custom: generated
-ms.openlocfilehash: 91b8a88fd056db2fd8495c85dccbcc08f4a94fda
-ms.sourcegitcommit: d8b8768d62672e9c287a04f2578383d0eb857950
+ms.openlocfilehash: b81ffcdde074978a9a72c5ab651ec2c5556870bd
+ms.sourcegitcommit: de2750163a601aae0c28506ba32be067e0068c0c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/11/2020
-ms.locfileid: "88066004"
+ms.lasthandoff: 09/04/2020
+ms.locfileid: "89488326"
 ---
 # <a name="azure-resource-graph-table-and-resource-type-reference"></a>Таблица Azure Resource Graph и сведения о типах ресурсов
 
@@ -25,6 +25,10 @@ Azure Resource Graph поддерживает следующие **типы ре
 ## <a name="alertsmanagementresources"></a>alertsmanagementresources
 
 - microsoft.alertsmanagement/alerts
+
+## <a name="guestconfigurationresources"></a>гуестконфигуратионресаурцес
+
+- Microsoft. гуестконфигуратион/гуестконфигуратионассигнментс
 
 ## <a name="healthresources"></a>healthresources
 
@@ -56,6 +60,7 @@ Azure Resource Graph поддерживает следующие **типы ре
 - livearena.broadcast/services
 - mailjet.email/services
 - microsoft.aad/domainservices
+- Microsoft. аадиам/азуреадметрикс
 - microsoft.aadiam/privatelinkforazuread
 - microsoft.aadiam/tenants
 - microsoft.aisupercomputer/accounts
@@ -69,6 +74,9 @@ Azure Resource Graph поддерживает следующие **типы ре
 - microsoft.appplatform/spring
 - microsoft.archive/collections
 - microsoft.attestation/attestationproviders
+- Microsoft. Authorization/ресаурцеманажементпривателинкс
+- Microsoft. Управление и учетные записи
+- Microsoft. Manage/конфигуратионпрофилепреференцес
 - microsoft.automation/automationaccounts
 - microsoft.automation/automationaccounts/configurations
 - microsoft.automation/automationaccounts/runbooks
@@ -76,6 +84,7 @@ Azure Resource Graph поддерживает следующие **типы ре
 - microsoft.avs/privateclouds
 - microsoft.azconfig/configurationstores
 - microsoft.azureactivedirectory/b2cdirectories
+- Microsoft. azureactivedirectory/гуестусажес
 - microsoft.azuredata/datacontrollers
 - microsoft.azuredata/hybriddatamanagers
 - microsoft.azuredata/postgresinstances
@@ -84,6 +93,7 @@ Azure Resource Graph поддерживает следующие **типы ре
 - microsoft.azuredata/sqlmanagedinstances
 - microsoft.azuredata/sqlserverinstances
 - microsoft.azuredata/sqlserverregistrations
+- Microsoft. azurestack/еджесубскриптионс
 - microsoft.azurestack/registrations
 - microsoft.azurestackhci/clusters
 - microsoft.baremetal/consoleconnections
@@ -114,6 +124,10 @@ Azure Resource Graph поддерживает следующие **типы ре
 - microsoft.classicstorage/storageaccounts
 - microsoft.cloudes/accounts
 - microsoft.cloudsearch/indexes
+- Microsoft. клаудтест/учетные записи
+- Microsoft. клаудтест/Images
+- Microsoft. клаудтест/Pools
+- Microsoft. кодеспацес/планы
 - microsoft.cognition/syntheticsaccounts
 - microsoft.cognitiveservices/accounts
 - microsoft.compute/availabilitysets
@@ -141,6 +155,8 @@ Azure Resource Graph поддерживает следующие **типы ре
 - microsoft.compute/virtualmachines/extensions
 - microsoft.compute/virtualmachines/runcommands
 - microsoft.compute/virtualmachinescalesets
+- Microsoft. Fluent и Организации
+- Microsoft. коннектедкаче/каченодес
 - microsoft.containerinstance/containergroups
 - microsoft.containerregistry/registries
 - microsoft.containerregistry/registries/agentpools
@@ -155,11 +171,13 @@ Azure Resource Graph поддерживает следующие **типы ре
 - microsoft.contoso/employees
 - microsoft.costmanagement/connectors
 - microsoft.customproviders/resourceproviders
+- Microsoft. d365customerinsights/экземпляры
 - microsoft.databox/jobs
 - microsoft.databoxedge/databoxedgedevices
 - microsoft.databricks/workspaces
 - microsoft.datacatalog/catalogs
 - microsoft.datacatalog/datacatalogs
+- Microsoft. сотрудничество и рабочие области
 - microsoft.datadog/monitors
 - microsoft.datafactory/datafactories
 - microsoft.datafactory/factories
@@ -169,9 +187,12 @@ Azure Resource Graph поддерживает следующие **типы ре
 - microsoft.datamigration/services/projects
 - microsoft.datamigration/slots
 - microsoft.dataprotection/backupvaults
+- Microsoft. ресаурцеоператионгатекиперс/защита
 - microsoft.datashare/accounts
 - microsoft.dbformariadb/servers
+- Microsoft. дбформискл/флексиблесерверс
 - microsoft.dbformysql/servers
+- Microsoft. дбфорпостгрескл/флексиблесерверс
 - microsoft.dbforpostgresql/servergroups
 - microsoft.dbforpostgresql/servers
 - microsoft.dbforpostgresql/serversv2
@@ -189,6 +210,8 @@ Azure Resource Graph поддерживает следующие **типы ре
 - microsoft.devices/elasticpools/iothubtenants
 - microsoft.devices/iothubs
 - microsoft.devices/provisioningservices
+- Microsoft. девицеупдате/учетные записи
+- Microsoft. девицеупдате/Accounts/Instances
 - microsoft.devops/pipelines
 - microsoft.devspaces/controllers
 - microsoft.devtestlab/labcenters
@@ -209,7 +232,9 @@ Azure Resource Graph поддерживает следующие **типы ре
 - microsoft.eventhub/clusters
 - microsoft.eventhub/namespaces
 - microsoft.experimentation/experimentworkspaces
+- Microsoft. екстендедлокатион/кустомлокатионс
 - microsoft.falcon/namespaces
+- Microsoft. футпринтмониторинг/Profiles
 - microsoft.gaming/titles
 - microsoft.genomics/accounts
 - microsoft.guestconfiguration/automanagedaccounts
@@ -222,8 +247,13 @@ Azure Resource Graph поддерживает следующие **типы ре
 - microsoft.hybridcompute/machines
 - microsoft.hybridcompute/machines/extensions
 - microsoft.hybriddata/datamanagers
+- Microsoft. хибриднетворк/Devices
+- Microsoft. хибриднетворк/виртуалнетворкфунктионс
 - microsoft.importexport/jobs
+- Microsoft. индустридаталифецикле/кустодианколлаборативес
 - microsoft.industrydatalifecycle/derivedmodels
+- Microsoft. индустридаталифецикле/мемберколлаборативес
+- Microsoft. индустридаталифецикле/пипелинесетс
 - microsoft.insights/actiongroups
 - microsoft.insights/activitylogalerts
 - microsoft.insights/alertrules
@@ -239,9 +269,11 @@ Azure Resource Graph поддерживает следующие **типы ре
 - microsoft.insights/webtests
 - microsoft.insights/workbooks
 - microsoft.insights/workbooktemplates
+- Microsoft. интеллижентитдигиталтвин/дигиталтвинс
 - microsoft.iotcentral/iotapps
 - microsoft.iotspaces/graph
 - microsoft.keyvault/hsmpools
+- Microsoft. keyvault/манажедхсмс
 - microsoft.keyvault/vaults
 - microsoft.kubernetes/connectedclusters
 - microsoft.kusto/clusters
@@ -256,6 +288,8 @@ Azure Resource Graph поддерживает следующие **типы ре
 - microsoft.machinelearning/workspaces
 - microsoft.machinelearningcompute/operationalizationclusters
 - microsoft.machinelearningservices/workspaces
+- Microsoft. мачинелеарнингсервицес/workspaces/инференцеендпоинтс
+- Microsoft. мачинелеарнингсервицес/workspaces/инференцеендпоинтс/развертывания
 - microsoft.maintenance/maintenanceconfigurations
 - microsoft.maintenance/maintenancepolicies
 - microsoft.managedidentity/groups
@@ -294,9 +328,11 @@ Azure Resource Graph поддерживает следующие **типы ре
 - microsoft.network/azurefirewalls
 - microsoft.network/bastionhosts
 - microsoft.network/connections
+- Microsoft. Network/кустомиппрефиксес
 - microsoft.network/ddoscustompolicies
 - microsoft.network/ddosprotectionplans
 - microsoft.network/dnszones
+- Microsoft. Network/дскпконфигуратионс
 - microsoft.network/expressroutecircuits
 - microsoft.network/expressroutecrossconnections
 - microsoft.network/expressroutegateways
@@ -308,6 +344,7 @@ Azure Resource Graph поддерживает следующие **типы ре
 - microsoft.network/ipgroups
 - microsoft.network/loadbalancers
 - microsoft.network/localnetworkgateways
+- Microsoft. Network/мастеркустомиппрефиксес
 - microsoft.network/natgateways
 - microsoft.network/networkexperimentprofiles
 - microsoft.network/networkintentpolicies
@@ -346,6 +383,8 @@ Azure Resource Graph поддерживает следующие **типы ре
 - microsoft.network/vpnsites
 - microsoft.notificationhubs/namespaces
 - microsoft.notificationhubs/namespaces/notificationhubs
+- Microsoft. нутаникс/интерфейсы
+- Microsoft. нутаникс/nodes
 - microsoft.objectstore/osnamespaces
 - microsoft.offazure/hypervsites
 - microsoft.offazure/importsites
@@ -359,6 +398,8 @@ Azure Resource Graph поддерживает следующие **типы ре
 - microsoft.peering/peeringservices
 - microsoft.portal/dashboards
 - microsoft.portalsdk/rootresources
+- Microsoft. powerbi/привателинксервицесфорповерби
+- Microsoft. powerbi/клиенты
 - microsoft.powerbi/workspacecollections
 - microsoft.powerbidedicated/capacities
 - microsoft.projectbabylon/accounts
@@ -412,9 +453,13 @@ Azure Resource Graph поддерживает следующие **типы ре
 - microsoft.storagesyncdev/storagesyncservices
 - microsoft.storagesyncint/storagesyncservices
 - microsoft.storsimple/managers
+- Microsoft. streamanalytics/кластеры
 - microsoft.streamanalytics/streamingjobs
+- Microsoft. Свифтлет/virtualmachines
+- Microsoft. синапсе/привателинкхубс
 - microsoft.synapse/workspaces
 - microsoft.synapse/workspaces/bigdatapools
+- Microsoft. синапсе/workspaces/склдатабасес
 - microsoft.synapse/workspaces/sqlpools
 - microsoft.terraformoss/providerregistrations
 - microsoft.timeseriesinsights/environments
@@ -439,6 +484,7 @@ Azure Resource Graph поддерживает следующие **типы ре
 - microsoft.vmwarevirtustream/privateclouds
 - microsoft.vsonline/accounts
 - microsoft.vsonline/plans
+- Microsoft. Web/апиманажементаккаунтс
 - microsoft.web/apimanagementaccounts/apis
 - microsoft.web/certificates
 - microsoft.web/connectiongateways
@@ -453,6 +499,7 @@ Azure Resource Graph поддерживает следующие **типы ре
 - microsoft.web/staticsites
 - microsoft.windowsesu/multipleactivationkeys
 - microsoft.windowsiot/deviceservices
+- Microsoft. ворклоадбуилдер/рабочие нагрузки
 - myget.packagemanagement/services
 - paraleap.cloudmonix/services
 - pokitdok.platform/services
@@ -481,10 +528,13 @@ Azure Resource Graph поддерживает следующие **типы ре
 
 - microsoft.security/assessments
 - microsoft.security/assessments/subassessments
+- Microsoft. Security/Locations/Alerts
 - microsoft.security/pricings
 - microsoft.security/regulatorycompliancestandards
 - microsoft.security/regulatorycompliancestandards/regulatorycompliancecontrols
 - microsoft.security/regulatorycompliancestandards/regulatorycompliancecontrols/regulatorycomplianceassessments
+- Microsoft. Security/секурескорес
+- Microsoft. Security/секурескорес/секурескореконтролс
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

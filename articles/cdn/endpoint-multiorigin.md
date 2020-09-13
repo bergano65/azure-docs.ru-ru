@@ -1,21 +1,21 @@
 ---
-title: Azure CDN с несколькими источниками для конечной точки
+title: Azure CDN с несколькими источниками для конечной точки (Предварительная версия)
 description: Приступая к работе с Azure CDN конечной точкой несколько источников.
 services: cdn
 author: asudbring
 manager: KumudD
 ms.service: azure-cdn
 ms.topic: how-to
-ms.date: 8/20/2020
+ms.date: 9/06/2020
 ms.author: allensu
-ms.openlocfilehash: c7e6733079dbd867255e604f6f8d4459f647cc93
-ms.sourcegitcommit: 927dd0e3d44d48b413b446384214f4661f33db04
+ms.openlocfilehash: f9293206526778f8c3de8a368a1916a2cb3f88c2
+ms.sourcegitcommit: 59ea8436d7f23bee75e04a84ee6ec24702fb2e61
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88870474"
+ms.lasthandoff: 09/07/2020
+ms.locfileid: "89504679"
 ---
-# <a name="azure-cdn-endpoint-multi-origin"></a>Azure CDN с несколькими источниками для конечной точки
+# <a name="azure-cdn-endpoint-multi-origin-preview"></a>Azure CDN с несколькими источниками для конечной точки (Предварительная версия)
 
 Поддержка нескольких источников позволяет сократить время простоя и установить глобальную избыточность. 
 
@@ -25,6 +25,10 @@ ms.locfileid: "88870474"
 
 > [!NOTE]
 > Сейчас эта функция доступна только в Azure CDN от Майкрософт. 
+
+> [!IMPORTANT]
+> Многоядерная конечная точка Azure CDN в настоящее время доступна в общедоступной предварительной версии.
+> Эта предварительная версия предоставляется без соглашения об уровне обслуживания и не рекомендована для использования рабочей среде. Некоторые функции могут не поддерживаться или их возможности могут быть ограничены. Дополнительные сведения см. в статье [Дополнительные условия использования предварительных выпусков Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
 
 ## <a name="create-the-origin-group"></a>Создание группы происхождения
 
@@ -86,7 +90,7 @@ ms.locfileid: "88870474"
 
     :::image type="content" source="./media/endpoint-multiorigin/endpoint-multiorigin-7.png" alt-text="Настройка пути к источнику" border="true":::
 
-5. Нажмите кнопку **ОК**.
+5. Щелкните **ОК**.
 
 ## <a name="configure-origins-and-origin-group-settings"></a>Настройка источников и параметров исходной группы
 
@@ -144,7 +148,7 @@ ms.locfileid: "88870474"
 
 Для всех входящих запросов, если URL-путь содержит **/Images**, запрос будет назначен группе источника в разделе действия **(мйоригинграуп)**. 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Next Steps
 В этой статье вы включили Azure CDNную конечную точку с несколькими источниками.
 
 Дополнительные сведения о Azure CDN и других службах Azure, упомянутых в этой статье, см. в следующих статьях:

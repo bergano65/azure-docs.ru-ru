@@ -4,23 +4,23 @@ description: Описывает, как Azure Active Directory позволяе�
 services: active-directory
 documentationcenter: ''
 author: curtand
-manager: mtillman
+manager: daveba
 editor: ''
 ms.service: active-directory
 ms.workload: identity
 ms.subservice: users-groups-roles
 ms.topic: how-to
-ms.date: 08/01/2019
+ms.date: 09/02/2020
 ms.author: curtand
-ms.reviewer: jeffsta
+ms.reviewer: krbain
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: ba22720901cf4b7505d8d5b5295ca4e0c271953f
-ms.sourcegitcommit: c5021f2095e25750eb34fd0b866adf5d81d56c3a
+ms.openlocfilehash: 39eb637ae3da9c6a0a3ea066ad741845bad36d5d
+ms.sourcegitcommit: de2750163a601aae0c28506ba32be067e0068c0c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88798403"
+ms.lasthandoff: 09/04/2020
+ms.locfileid: "89489635"
 ---
 # <a name="sharing-accounts-with-azure-ad"></a>Совместное использование учетных записей в Azure AD
 

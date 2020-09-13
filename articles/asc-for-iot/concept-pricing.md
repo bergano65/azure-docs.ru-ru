@@ -13,14 +13,14 @@ ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 09/27/2019
+ms.date: 09/04/2020
 ms.author: mlottner
-ms.openlocfilehash: 98afd1eb1f8a73c2d6dd3f293a07cdb70780d238
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 2c76a79f09629b32767c1dcc78989dfa47c678fd
+ms.sourcegitcommit: 59ea8436d7f23bee75e04a84ee6ec24702fb2e61
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87004772"
+ms.lasthandoff: 09/07/2020
+ms.locfileid: "89504577"
 ---
 # <a name="pricing-and-associated-costs"></a>Цены и связанные затраты
 
@@ -48,9 +48,9 @@ ms.locfileid: "87004772"
 
 1. Откройте центр Интернета вещей.
 
-1. В разделе **Безопасность**щелкните **Обзор**.
+1. В разделе **Безопасность**щелкните **Параметры**.
 
-1. Щелкните **Настройки**.
+1. Щелкните **сбор данных**.
 
 В следующей таблице приводится сводка связанных затрат и последствий каждого из них.
 
@@ -73,7 +73,7 @@ ms.locfileid: "87004772"
 | | Подробные сведения об исследовании [предупреждений](concept-security-alerts.md) и [рекомендаций](concept-recommendations.md) недоступны |
 |
 
-## <a name="see-also"></a>См. также статью
+## <a name="see-also"></a>См. также раздел
 
 - Доступ к [необработанным данным безопасности](how-to-security-data-access.md)
 - [Исследование устройства](how-to-investigate-device.md)

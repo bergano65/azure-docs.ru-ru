@@ -11,14 +11,14 @@ ms.workload: data-services
 ms.topic: conceptual
 ms.custom: seo-lt-2019
 ms.date: 08/28/2020
-ms.openlocfilehash: cd14a183ae1434af83c96b7f8d6575186412b534
-ms.sourcegitcommit: 8a7b82de18d8cba5c2cec078bc921da783a4710e
+ms.openlocfilehash: 01e2a2db3757e8d13749faf53b47300c8188915e
+ms.sourcegitcommit: de2750163a601aae0c28506ba32be067e0068c0c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89051225"
+ms.lasthandoff: 09/04/2020
+ms.locfileid: "89484482"
 ---
-# <a name="copy-and-transform-data-in-azure-synapse-analytics-formerly-azure-sql-data-warehouse-by-using-azure-data-factory"></a>Копирование и преобразование данных в Azure Synapse Analytics (ранее — хранилище данных SQL Azure) с помощью Фабрики данных Azure
+# <a name="copy-and-transform-data-in-azure-synapse-analytics-formerly-sql-data-warehouse-by-using-azure-data-factory"></a>Копирование и преобразование данных в Azure синапсе Analytics (ранее — хранилище данных SQL) с помощью фабрики данных Azure
 
 > [!div class="op_single_selector" title1="Выберите используемую версию службы "Фабрика данных":"]
 >
@@ -42,7 +42,7 @@ ms.locfileid: "89051225"
 
 - копирование данных с использованием аутентификации SQL и аутентификации на основе маркеров приложения Azure Active Directory (Azure AD) с субъектом-службой или управляемыми удостоверениями ресурсов Azure;
 - извлечение данных с использованием SQL-запроса или хранимой процедуры (в качестве источника); Вы также можете выбрать параллельное копирование из источника Azure синапсе Analytics. Дополнительные сведения см. в разделе [Параллельное копирование из синапсе Analytics](#parallel-copy-from-synapse-analytics) .
-- загрузку данных с помощью технологии [PolyBase](#use-polybase-to-load-data-into-azure-sql-data-warehouse), [инструкции COPY](#use-copy-statement) (предварительная версия) или массовой вставки (в качестве приемника). Для повышения производительности копирования рекомендуется использовать PolyBase или инструкцию COPY (предварительная версия). Соединитель также поддерживает автоматическое создание целевой таблицы, если она не существует на основе исходной схемы.
+- загрузку данных с помощью технологии [PolyBase](#use-polybase-to-load-data-into-azure-synapse-analytics), [инструкции COPY](#use-copy-statement) (предварительная версия) или массовой вставки (в качестве приемника). Для повышения производительности копирования рекомендуется использовать PolyBase или инструкцию COPY (предварительная версия). Соединитель также поддерживает автоматическое создание целевой таблицы, если она не существует на основе исходной схемы.
 
 > [!IMPORTANT]
 > При копировании данных с помощью Integration Runtime фабрики данных Azure настройте [правило брандмауэра на уровне сервера](../azure-sql/database/firewall-configure.md) , чтобы службы Azure могли получить доступ к [ЛОГИЧЕСКОМу серверу SQL](../azure-sql/database/logical-servers.md)Server.
@@ -51,7 +51,7 @@ ms.locfileid: "89051225"
 ## <a name="get-started"></a>Начало работы
 
 > [!TIP]
-> Для обеспечения лучшей производительности загружайте данные в Azure Synapse Analytics с помощью PolyBase. Дополнительные сведения см. в разделе [Загрузка данных в Azure Synapse Analytics с помощью PolyBase](#use-polybase-to-load-data-into-azure-sql-data-warehouse). Пошаговое руководство и пример использования см. в статье [Загрузка 1 ТБ в Azure Synapse Analytics в течение 15 минут с помощью Фабрики данных Azure](load-azure-sql-data-warehouse.md).
+> Для обеспечения лучшей производительности загружайте данные в Azure Synapse Analytics с помощью PolyBase. Дополнительные сведения см. в разделе [Загрузка данных в Azure Synapse Analytics с помощью PolyBase](#use-polybase-to-load-data-into-azure-synapse-analytics). Пошаговое руководство и пример использования см. в статье [Загрузка 1 ТБ в Azure Synapse Analytics в течение 15 минут с помощью Фабрики данных Azure](load-azure-sql-data-warehouse.md).
 
 [!INCLUDE [data-factory-v2-connector-get-started](../../includes/data-factory-v2-connector-get-started.md)]
 
@@ -284,7 +284,7 @@ ms.locfileid: "89051225"
         "type": "Copy",
         "inputs": [
             {
-                "referenceName": "<Azure SQL DW input dataset name>",
+                "referenceName": "<Azure Synapse Analytics input dataset name>",
                 "type": "DatasetReference"
             }
         ],
@@ -316,7 +316,7 @@ ms.locfileid: "89051225"
         "type": "Copy",
         "inputs": [
             {
-                "referenceName": "<Azure SQL DW input dataset name>",
+                "referenceName": "<Azure Synapse Analytics input dataset name>",
                 "type": "DatasetReference"
             }
         ],
@@ -364,32 +364,32 @@ GO
 
 ### <a name="azure-synapse-analytics-as-sink"></a><a name="azure-sql-data-warehouse-as-sink"></a> Azure Synapse Analytics как приемник
 
-Фабрика данных Azure поддерживает три способа загрузки данных в хранилище данных SQL.
+Фабрика данных Azure поддерживает три способа загрузки данных в Azure синапсе Analytics.
 
-![Параметры копирования приемника хранилища данных SQL](./media/connector-azure-sql-data-warehouse/sql-dw-sink-copy-options.png)
+![Параметры копирования приемника Azure синапсе Analytics](./media/connector-azure-sql-data-warehouse/sql-dw-sink-copy-options.png)
 
-- [Использование PolyBase](#use-polybase-to-load-data-into-azure-sql-data-warehouse)
+- [Использование PolyBase](#use-polybase-to-load-data-into-azure-synapse-analytics)
 - [Использование инструкции COPY (предварительная версия)](#use-copy-statement)
 - Использование массовой вставки
 
 Самым быстрым и масштабируемым способом загрузки данных является использование [Polybase](https://docs.microsoft.com/sql/relational-databases/polybase/polybase-guide) или [инструкции COPY](https://docs.microsoft.com/sql/t-sql/statements/copy-into-transact-sql?view=azure-sqldw-latest) (предварительная версия).
 
-Чтобы скопировать данные в хранилище данных SQL Azure, задайте тип приемника **SqlDWSink** в действии копирования. В разделе **sink** действия копирования поддерживаются следующие свойства:
+Чтобы скопировать данные в Azure синапсе Analytics, задайте для параметра тип приемника в действии копирования значение **SqlDWSink**. В разделе **sink** действия копирования поддерживаются следующие свойства:
 
 | Свойство          | Описание                                                  | Обязательно                                      |
 | :---------------- | :----------------------------------------------------------- | :-------------------------------------------- |
 | type              | Свойство **type** приемника действия копирования должно иметь значение **SqlDWSink**. | Да                                           |
-| allowPolyBase     | Указывает, следует ли использовать PolyBase для загрузки данных в хранилище данных SQL. Свойства `allowCopyCommand` и `allowPolyBase` не могут одновременно иметь значение true. <br/><br/>Подробные сведения и ограничения приведены в разделе [Загрузка данных в хранилище данных SQL Azure с помощью PolyBase](#use-polybase-to-load-data-into-azure-sql-data-warehouse).<br/><br/>Допустимые значения: **true** и **false** (по умолчанию). | Нет.<br/>Применяется при использовании PolyBase.     |
+| allowPolyBase     | Указывает, следует ли использовать Polybase для загрузки данных в Azure синапсе Analytics. Свойства `allowCopyCommand` и `allowPolyBase` не могут одновременно иметь значение true. <br/><br/>Ограничения и сведения см. в разделе [Загрузка данных в Azure синапсе Analytics с помощью polybase](#use-polybase-to-load-data-into-azure-synapse-analytics) .<br/><br/>Допустимые значения: **true** и **false** (по умолчанию). | Нет.<br/>Применяется при использовании PolyBase.     |
 | polyBaseSettings  | Группа свойств, которые можно задать, если свойство `allowPolybase` имеет значение **true**. | Нет.<br/>Применяется при использовании PolyBase. |
-| allowCopyCommand | Указывает, следует ли использовать [инструкцию COPY](https://docs.microsoft.com/sql/t-sql/statements/copy-into-transact-sql?view=azure-sqldw-latest) (предварительная версия) для загрузки данных в хранилище данных SQL. Свойства `allowCopyCommand` и `allowPolyBase` не могут одновременно иметь значение true. <br/><br/>Подробные сведения и ограничения приведены в разделе [Загрузка данных в хранилище данных SQL Azure с помощью инструкции COPY](#use-copy-statement).<br/><br/>Допустимые значения: **true** и **false** (по умолчанию). | Нет.<br>Применяется при использовании инструкции COPY. |
+| allowCopyCommand | Указывает, следует ли использовать [инструкцию Copy](https://docs.microsoft.com/sql/t-sql/statements/copy-into-transact-sql?view=azure-sqldw-latest) (Предварительная версия) для загрузки данных в Azure синапсе Analytics. Свойства `allowCopyCommand` и `allowPolyBase` не могут одновременно иметь значение true. <br/><br/>Ограничения и сведения см. [в разделе Использование инструкции Copy для загрузки данных в Azure синапсе Analytics](#use-copy-statement) .<br/><br/>Допустимые значения: **true** и **false** (по умолчанию). | Нет.<br>Применяется при использовании инструкции COPY. |
 | copyCommandSettings | Группа свойств, которые можно задать, если свойство `allowCopyCommand` имеет значение TRUE. | Нет.<br/>Применяется при использовании инструкции COPY. |
 | writeBatchSize    | Число строк для вставки в таблицу SQL **в одном пакете**.<br/><br/>Допустимое значение: **целое число** (количество строк). По умолчанию Фабрика данных динамически определяет соответствующий размер пакета в зависимости от размера строки. | Нет.<br/>Применяется при использовании массовой вставки.     |
 | writeBatchTimeout | Время ожидания до выполнения операции пакетной вставки, пока не закончится срок ее действия.<br/><br/>Допустимое значение — **timespan**. Пример "00:30:00" (30 минут). | Нет.<br/>Применяется при использовании массовой вставки.        |
-| preCopyScript     | Укажите SQL-запрос для действия копирования, выполняемый перед записью данных в хранилище данных SQL Azure при каждом выполнении. Это свойство используется для очистки предварительно загруженных данных. | нет                                            |
+| preCopyScript     | Укажите SQL-запрос для выполнения действия копирования, прежде чем записывать данные в Azure синапсе Analytics при каждом запуске. Это свойство используется для очистки предварительно загруженных данных. | нет                                            |
 | tableOption | Указывает, следует ли [автоматически создавать таблицу приемника, если она](copy-activity-overview.md#auto-create-sink-tables) не существует на основе исходной схемы. Допустимые значения: `none` (по умолчанию), `autoCreate`. |нет |
-| disableMetricsCollection | Фабрика данных собирает такие метрики, как DWU хранилища данных SQL, для оптимизации производительности копирования и предоставления рекомендаций. Если вас не устраивает такое поведение, укажите `true`, чтобы отключить его. | Нет (значение по умолчанию — `false`) |
+| disableMetricsCollection | Фабрика данных собирает такие метрики, как Azure синапсе Analytics DWU для оптимизации производительности копирования и рекомендации. Если вас не устраивает такое поведение, укажите `true`, чтобы отключить его. | Нет (значение по умолчанию — `false`) |
 
-#### <a name="sql-data-warehouse-sink-example"></a>Пример приемника хранилища данных SQL
+#### <a name="azure-synapse-analytics-sink-example"></a>Пример приемника Azure синапсе Analytics
 
 ```json
 "sink": {
@@ -453,12 +453,12 @@ GO
 }
 ```
 
-## <a name="use-polybase-to-load-data-into-azure-sql-data-warehouse"></a>Загрузка данных в хранилище данных SQL Azure с помощью PolyBase.
+## <a name="use-polybase-to-load-data-into-azure-synapse-analytics"></a>Загрузка данных в Azure синапсе Analytics с помощью Polybase
 
 Применение [PolyBase](https://docs.microsoft.com/sql/relational-databases/polybase/polybase-guide) — это эффективный способ загрузки большого объема данных в Azure Synapse Analytics с высокой пропускной способностью. Используя PolyBase вместо стандартного механизма BULKINSERT, можно значительно увеличить пропускную способность. Пошаговое руководство и пример использования см. в статье [Загрузка 1 ТБ в Azure Synapse Analytics](v1/data-factory-load-sql-data-warehouse.md).
 
-- Если исходные данные находятся в **BLOB-объекте Azure, Azure Data Lake Storage 1-го поколения или Azure Data Lake Storage 2-го поколения**, а **формат совместим с Polybase**, можно использовать действие копирования для непосредственного вызова PolyBase, чтобы хранилище данных SQL Azure могло извлечь данные из источника. Дополнительные сведения см. в разделе **[Прямое копирование с помощью PolyBase](#direct-copy-by-using-polybase)** .
-- Если хранилище и формат исходных данных изначально не поддерживаются PolyBase, то можно использовать функцию **[промежуточного копирования с помощью PolyBase](#staged-copy-by-using-polybase)** . Промежуточное копирование также обеспечивает лучшую пропускную способность. Он автоматически преобразует данные в формат, совместимый с Polybase, сохраняет данные в хранилище BLOB-объектов Azure, а затем вызывает Polybase для загрузки данных в хранилище данных SQL.
+- Если исходные данные находятся в **большом двоичном объекте Azure, Azure Data Lake Storage 1-го поколения или Azure Data Lake Storage 2-го поколения**, а **Формат является совместимым с polybase**, можно использовать действие копирования для непосредственного вызова Polybase, чтобы позволить Azure синапсе Analytics получать данные из источника. Дополнительные сведения см. в разделе **[Прямое копирование с помощью PolyBase](#direct-copy-by-using-polybase)** .
+- Если хранилище и формат исходных данных изначально не поддерживаются PolyBase, то можно использовать функцию **[промежуточного копирования с помощью PolyBase](#staged-copy-by-using-polybase)** . Промежуточное копирование также обеспечивает лучшую пропускную способность. Он автоматически преобразует данные в формат, совместимый с Polybase, сохраняет данные в хранилище BLOB-объектов Azure, а затем вызывает Polybase для загрузки данных в Azure синапсе Analytics.
 
 > [!TIP]
 > Дополнительные сведения см. в разделе [Рекомендации по использованию PolyBase](#best-practices-for-using-polybase).
@@ -474,10 +474,10 @@ GO
 
 ### <a name="direct-copy-by-using-polybase"></a>Прямое копирование с помощью PolyBase
 
-PolyBase хранилища данных SQL напрямую поддерживает хранилище BLOB-объектов Azure, Azure Data Lake Storage 1-го поколения и Azure Data Lake Storage 2-го поколения. Если ваши исходные данные соответствуют условиям, описанным в этом разделе, используйте PolyBase, чтобы выполнять копирование напрямую из исходного хранилища данных в Azure Synapse Analytics. В противном случае см. сведения в разделе [Промежуточное копирование с помощью PolyBase](#staged-copy-by-using-polybase).
+Azure синапсе Analytics Polybase напрямую поддерживает большой двоичный объект Azure, Azure Data Lake Storage 1-го поколения и Azure Data Lake Storage 2-го поколения. Если ваши исходные данные соответствуют условиям, описанным в этом разделе, используйте PolyBase, чтобы выполнять копирование напрямую из исходного хранилища данных в Azure Synapse Analytics. В противном случае см. сведения в разделе [Промежуточное копирование с помощью PolyBase](#staged-copy-by-using-polybase).
 
 > [!TIP]
-> Дополнительные сведения об эффективном копировании данных в хранилище данных SQL см. в записи блога [Фабрика данных Azure позволяет гораздо проще и удобнее получать аналитические выводы из данных при использовании Data Lake Store с хранилищем данных SQL](https://blogs.msdn.microsoft.com/azuredatalake/2017/04/08/azure-data-factory-makes-it-even-easier-and-convenient-to-uncover-insights-from-data-when-using-data-lake-store-with-sql-data-warehouse/).
+> Чтобы эффективно копировать данные в Azure синапсе Analytics, Узнайте больше от [фабрики данных Azure, что упрощает и упрощает анализ данных при использовании Data Lake Store с Azure синапсе Analytics](https://blogs.msdn.microsoft.com/azuredatalake/2017/04/08/azure-data-factory-makes-it-even-easier-and-convenient-to-uncover-insights-from-data-when-using-data-lake-store-with-sql-data-warehouse/).
 
 Если требования не выполняются, фабрика данных Azure проверяет параметры и автоматически возвращается к механизму перемещения данных BULKINSERT.
 
@@ -545,7 +545,7 @@ PolyBase хранилища данных SQL напрямую поддержив
 
 ### <a name="staged-copy-by-using-polybase"></a>Промежуточное копирование с помощью PolyBase
 
-Если исходные данные исходно не совместимы с PolyBase, включите копирование данных через промежуточный экземпляр хранилища BLOB-объектов Azure (это не может быть хранилище Azure класса Premium). В таком случае Фабрика данных Azure автоматически преобразует данные, чтобы они соответствовали требованиям к формату данных PolyBase. Затем она вызывает PolyBase для загрузки данных в хранилище данных SQL. Наконец, она очищает ваши временные данные из хранилища BLOB-объектов. Подробные сведения о копировании данных через промежуточный экземпляр хранилища BLOB-объектов Azure см. в разделе [Промежуточное копирование](copy-activity-performance-features.md#staged-copy).
+Если исходные данные исходно не совместимы с PolyBase, включите копирование данных через промежуточный экземпляр хранилища BLOB-объектов Azure (это не может быть хранилище Azure класса Premium). В таком случае Фабрика данных Azure автоматически преобразует данные, чтобы они соответствовали требованиям к формату данных PolyBase. Затем он вызывает Polybase для загрузки данных в Azure синапсе Analytics. Наконец, она очищает ваши временные данные из хранилища BLOB-объектов. Подробные сведения о копировании данных через промежуточный экземпляр хранилища BLOB-объектов Azure см. в разделе [Промежуточное копирование](copy-activity-performance-features.md#staged-copy).
 
 Чтобы использовать эту функцию, создайте [связанную службу хранилища BLOB-объектов Azure](connector-azure-blob-storage.md#linked-service-properties), которая ссылается на учетную запись хранения Azure с промежуточным хранилищем BLOB-объектов. Затем укажите свойства `enableStaging` и `stagingSettings` для действия копирования, как показано в следующем коде.
 
@@ -595,25 +595,25 @@ PolyBase хранилища данных SQL напрямую поддержив
 
 #### <a name="required-database-permission"></a>Необходимые разрешения базы данных
 
-Чтобы отправить данные в хранилище данных SQL с помощью PolyBase, пользователь, загружающий данные в хранилище, должен иметь [разрешение CONTROL](https://msdn.microsoft.com/library/ms191291.aspx) в целевой базе данных. Это разрешение можно получить, добавив этого пользователя как участника роли **db_owner**. Чтобы узнать, как это сделать, ознакомьтесь со статьей [Защита базы данных в хранилище данных SQL](../synapse-analytics/sql-data-warehouse/sql-data-warehouse-overview-manage-security.md#authorization).
+Чтобы использовать Polybase, пользователь, загружающий данные в Azure синапсе Analytics, должен иметь [разрешение CONTROL](https://msdn.microsoft.com/library/ms191291.aspx) на целевую базу данных. Это разрешение можно получить, добавив этого пользователя как участника роли **db_owner**. Сведения о том, как это сделать, см. в [обзоре Azure синапсе Analytics](../synapse-analytics/sql-data-warehouse/sql-data-warehouse-overview-manage-security.md#authorization).
 
 #### <a name="row-size-and-data-type-limits"></a>Ограничение размера строки и типа данных
 
-Загрузки PolyBase ограничены записями размером менее 1 МБ. PolyBase нельзя использовать для загрузки в типы данных VARCHR(MAX), NVARCHAR(MAX) или VARBINARY(MAX). Дополнительные сведения см. в статье [Ограничения емкости хранилища данных SQL](../synapse-analytics/sql-data-warehouse/sql-data-warehouse-service-capacity-limits.md#loads).
+Загрузки PolyBase ограничены записями размером менее 1 МБ. PolyBase нельзя использовать для загрузки в типы данных VARCHR(MAX), NVARCHAR(MAX) или VARBINARY(MAX). Дополнительные сведения см. в статье [ограничения емкости службы аналитики Azure синапсе](../synapse-analytics/sql-data-warehouse/sql-data-warehouse-service-capacity-limits.md#loads).
 
 Если исходные данные имеют записи размером более 1 МБ, можно попробовать вертикально разбить исходные таблицы на несколько небольших. Убедитесь, что максимальный размер каждой записи не превышает предел. Затем эти небольшие таблицы можно загрузить с помощью PolyBase и слить вместе в Azure Synapse Analytics.
 
 Кроме того, для данных с такими широкими столбцами можно не использовать Polybase, а загружать их с помощью файла определения приложения, отключив параметр "allow PolyBase".
 
-#### <a name="sql-data-warehouse-resource-class"></a>Класс ресурсов хранилища данных SQL
+#### <a name="azure-synapse-analytics-resource-class"></a>Класс ресурсов Azure синапсе Analytics
 
-Чтобы получить наилучшую пропускную способность, присвойте более высокий класс ресурсов пользователю, который загружает данные в хранилище данных SQL через PolyBase.
+Чтобы добиться максимальной пропускной способности, назначьте пользователю больший класс ресурсов, который загружает данные в Azure синапсе Analytics через Polybase.
 
 #### <a name="polybase-troubleshooting"></a>Устранение неполадок c PolyBase
 
 **Загрузка в столбец с типом данных Decimal**
 
-Если исходные данные находятся в текстовых или других несовместимых с PolyBase хранилищах (используется промежуточное копирование и PolyBase) и в них содержится пустое значение, которое необходимо загрузить в столбец с типом данных Decimal в хранилище данных SQL, может возникнуть следующая ошибка:
+Если исходные данные имеют текстовый формат или другие совместимые с Polybase хранилища (с использованием промежуточного копирования и Polybase) и содержат пустое значение для загрузки в десятичный столбец аналитики Azure синапсе, может появиться следующее сообщение об ошибке:
 
 ```
 ErrorCode=FailedDbOperation, ......HadoopSqlException: Error converting data type VARCHAR to DECIMAL.....Detailed Message=Empty string can't be converted to DECIMAL.....
@@ -649,9 +649,9 @@ All columns of the table must be specified in the INSERT BULK statement.
 
 Значение NULL рассматривается как вариант значения по умолчанию. Если столбец допускает значение NULL, входные данные большого двоичного объекта для этого столбца могут быть пустыми. Но они не могут отсутствовать во входном наборе данных. Для отсутствующих значений PolyBase будет вставлять в Azure Synapse Analytics значения NULL.
 
-## <a name="use-copy-statement-to-load-data-into-azure-sql-data-warehouse-preview"></a><a name="use-copy-statement"></a> Загрузка данных в хранилище данных SQL Azure с помощью инструкции COPY (предварительная версия)
+## <a name="use-copy-statement-to-load-data-into-azure-synapse-analytics-preview"></a><a name="use-copy-statement"></a> Использование инструкции COPY для загрузки данных в Azure синапсе Analytics (Предварительная версия)
 
-[Инструкция COPY](https://docs.microsoft.com/sql/t-sql/statements/copy-into-transact-sql?view=azure-sqldw-latest) в хранилище данных SQL (предварительная версия) напрямую поддерживает загрузку данных из **BLOB-объекта Azure и Azure Data Lake Storage 2-го поколения**. Если исходные данные соответствуют условиям, описанным в этом разделе, можно выбрать использование инструкции COPY в ADF для загрузки данных в хранилище данных SQL Azure. Фабрика данных Azure проверяет параметры и не выполняет действие копирования, если условия не выполнены.
+[Инструкция копирования](https://docs.microsoft.com/sql/t-sql/statements/copy-into-transact-sql?view=azure-sqldw-latest) Azure синапсе Analytics (Предварительная версия) напрямую поддерживает загрузку данных из **большого двоичного объекта Azure и Azure Data Lake Storage 2-го поколения**. Если исходные данные соответствуют критериям, описанным в этом разделе, можно выбрать использование инструкции COPY в ADF для загрузки данных в Azure синапсе Analytics. Фабрика данных Azure проверяет параметры и не выполняет действие копирования, если условия не выполнены.
 
 >[!NOTE]
 >В настоящее время Фабрика данных поддерживает копирование только из источников, совместимых с инструкцией COPY, которые приведены ниже.
@@ -690,8 +690,8 @@ All columns of the table must be specified in the INSERT BULK statement.
 
 | Свойство          | Описание                                                  | Обязательно                                      |
 | :---------------- | :----------------------------------------------------------- | :-------------------------------------------- |
-| defaultValues | Задает значения по умолчанию для каждого целевого столбца в хранилище данных SQL.  Значения по умолчанию из этого свойства переопределяют ограничение DEFAULT, заданное в хранилище данных, а столбец идентификаторов не может иметь значение по умолчанию. | нет |
-| additionalOptions | Дополнительные параметры, которые будут переданы в инструкцию COPY хранилища данных SQL непосредственно в предложение "With" [инструкции COPY](https://docs.microsoft.com/sql/t-sql/statements/copy-into-transact-sql?view=azure-sqldw-latest). Значение необходимо заключать в кавычки для соответствия требованиям инструкции COPY. | нет |
+| defaultValues | Задает значения по умолчанию для каждого целевого столбца в Azure синапсе Analytics.  Значения по умолчанию из этого свойства переопределяют ограничение DEFAULT, заданное в хранилище данных, а столбец идентификаторов не может иметь значение по умолчанию. | нет |
+| additionalOptions | Дополнительные параметры, которые будут переданы в инструкцию COPY в Azure синапсе Analytics непосредственно в предложении WITH [инструкции Copy](https://docs.microsoft.com/sql/t-sql/statements/copy-into-transact-sql?view=azure-sqldw-latest). Значение необходимо заключать в кавычки для соответствия требованиям инструкции COPY. | нет |
 
 ```json
 "activities":[
@@ -800,7 +800,7 @@ All columns of the table must be specified in the INSERT BULK statement.
 При копировании данных в Azure Synapse Analytics и обратно используются следующие сопоставления между типами данных Azure Synapse Analytics и промежуточными типами данных Фабрики данных Azure. Дополнительные сведения о том, как действие копирования сопоставляет исходную схему и типы данных для приемника, см. в статье [Сопоставление схем в действии копирования](copy-activity-schema-and-type-mapping.md).
 
 >[!TIP]
->См. раздел "Обходные решения для неподдерживаемых типов данных" в статье [Типы данных таблиц в Azure Synapse Analytics](../synapse-analytics/sql/develop-tables-data-types.md).
+>См. статью [табличные типы данных в Azure синапсе Analytics](../synapse-analytics/sql/develop-tables-data-types.md) в статье Поддерживаемые типы данных Azure синапсе Analytics и обходные пути для неподдерживаемых.
 
 | Тип данных Azure Synapse Analytics    | Тип промежуточных данных фабрики данных |
 | :------------------------------------ | :----------------------------- |

@@ -9,12 +9,12 @@ author: SQLSourabh
 ms.author: sourabha
 ms.reviewer: sstein
 ms.date: 07/27/2020
-ms.openlocfilehash: d4ad11d156fd3a672e93b5e039c82d16b2aebdc3
-ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
+ms.openlocfilehash: 17783662ba91f227a7b0bf69203bf21dd8342277
+ms.sourcegitcommit: de2750163a601aae0c28506ba32be067e0068c0c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87321740"
+ms.lasthandoff: 09/04/2020
+ms.locfileid: "89489550"
 ---
 # <a name="create-external-stream-transact-sql"></a>CREATE EXTERNAL STREAM (Transact-SQL)
 
@@ -27,8 +27,8 @@ ms.locfileid: "87321740"
 | Тип источника данных | Входные данные | Выходные данные | Описание |
 |------------------|-------|--------|------------------|
 | Центр Azure IoT Edge | Да | Да | Источник данных для чтения и записи потоковых данных в центр Azure IoT Edge. Дополнительные сведения см. в разделе [центр IOT Edge](https://docs.microsoft.com/azure/iot-edge/iot-edge-runtime#iot-edge-hub).|
-| База данных SQL | N | Да | Соединение с источником данных для записи потоковых данных в Базу данных SQL. База данных может быть локальной базой данных в Azure SQL или удаленной базой данных в SQL Server или базе данных SQL Azure.|
-| Kafka | Да | N | Источник данных для чтения потоковых данных из раздела Kafka. Поддержка Kafka недоступна для ARM64 версии Azure SQL.|
+| База данных SQL | Нет | Да | Соединение с источником данных для записи потоковых данных в Базу данных SQL. База данных может быть локальной базой данных в Azure SQL или удаленной базой данных в SQL Server или базе данных SQL Azure.|
+| Kafka | Да | Нет | Источник данных для чтения потоковых данных из раздела Kafka. Поддержка Kafka недоступна для ARM64 версии Azure SQL.|
 
 
 
@@ -141,7 +141,7 @@ WITH  ( <with_options> )
   - MAXIMUM_BATCH_COUNT.  
     Максимальное количество событий, отправленных в функцию, на вызов для Функции Azure. Значение по умолчанию — 100. Для Базы данных SQL представляет максимальное число записей, отправленных с каждой транзакцией массовой вставки. По умолчанию — 10 000. 
     - Применяется ко всем выходам на основе SQL 
-  - STAGING_AREA. Объект EXTERNAL DATA SOURCE в хранилище BLOB-объектов. Промежуточная область для приема данных с высокой пропускной способностью в хранилище данных SQL. 
+  - STAGING_AREA: объект внешнего источника данных в хранилище BLOB-объектов промежуточная область для приема данных с высокой пропускной способностью в Azure синапсе Analytics 
     - Зарезервировано для использования в будущем. Не применяется к Azure SQL Server.
 
 

@@ -11,12 +11,12 @@ ms.service: data-factory
 ms.workload: data-services
 ms.topic: conceptual
 ms.date: 09/04/2018
-ms.openlocfilehash: ce63da745fb84ebccd57b246fc934f595dd7cda1
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: a756a3cec5702570751e0bea09a4f59152accafc
+ms.sourcegitcommit: de2750163a601aae0c28506ba32be067e0068c0c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "81418258"
+ms.lasthandoff: 09/04/2020
+ms.locfileid: "89484550"
 ---
 # <a name="copy-data-from-amazon-redshift-using-azure-data-factory"></a>Копирование данных из Amazon Redshift с помощью фабрики данных Azure
 > [!div class="op_single_selector" title1="Выберите используемую версию службы "Фабрика данных":"]
@@ -164,11 +164,11 @@ ms.locfileid: "81418258"
 
 [UNLOAD](https://docs.aws.amazon.com/redshift/latest/dg/r_UNLOAD.html) — это механизм, предоставляемый Amazon Redshift, позволяющий выгрузить результаты запроса в один или несколько файлов в Amazon Simple Storage Service (Amazon S3). Компания Amazon рекомендует использовать этот способ для копирования большого набора данных из Redshift.
 
-**Пример. Копирование данных из Amazon Redshift в хранилище данных SQL Azure с помощью UNLOAD, промежуточного копирования и PolyBase**
+**Пример. копирование данных из Amazon RedShift в Azure синапсе Analytics (ранее — хранилище данных SQL) с помощью выгрузки, промежуточного копирования и Polybase**
 
-В этом варианте использования действие копирования выгружает данные из Amazon Redshift в Amazon S3, как задано в redshiftUnloadSettings, а затем копирует данные из Amazon S3 в большой двоичный объект Azure, заданный в stagingSettings, и наконец, использует PolyBase для загрузки данных в хранилище данных SQL. Формат промежуточного хранения обрабатывается действием копирования должным образом.
+В этом примере вариант использования действие копирования отгружает данные из Amazon RedShift в Amazon S3, как настроено в "redshiftUnloadSettings", а затем копирует данные из Amazon S3 в BLOB-объект Azure, как указано в "stagingSettings", в последнем случае используйте Polybase для загрузки данных в Azure синапсе Analytics (ранее — хранилище данных SQL). Формат промежуточного хранения обрабатывается действием копирования должным образом.
 
-![Рабочий процесс копирования из Redshift в хранилище данных SQL](media/copy-data-from-amazon-redshift/redshift-to-sql-dw-copy-workflow.png)
+![Рабочий процесс копирования RedShift в Azure синапсе Analytics](media/copy-data-from-amazon-redshift/redshift-to-sql-dw-copy-workflow.png)
 
 ```json
 "activities":[
@@ -227,7 +227,7 @@ ms.locfileid: "81418258"
 | DECIMAL |Decimal |
 | DOUBLE PRECISION |Double |
 | INTEGER |Int32 |
-| ВЕЩЕСТВЕННОЕ ЧИСЛО |Один |
+| ВЕЩЕСТВЕННОЕ ЧИСЛО |Single |
 | SMALLINT |Int16 |
 | TEXT |Строка |
 | timestamp |Дата и время |

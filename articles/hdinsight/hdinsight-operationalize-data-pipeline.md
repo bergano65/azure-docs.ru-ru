@@ -1,19 +1,19 @@
 ---
 title: Ввод в эксплуатацию конвейера аналитики данных в Azure
 description: Узнайте, как установить и запустить пример конвейера данных, который активируется с помощью новых данных и возвращает точные результаты.
-author: ashishthaps
-ms.author: ashishth
+author: hrasheed-msft
+ms.author: hrasheed
 ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: how-to
 ms.custom: hdinsightactive
 ms.date: 12/25/2019
-ms.openlocfilehash: 03bd00ad6d0262aeea31b5d3e2c6dd1733090e32
-ms.sourcegitcommit: 124f7f699b6a43314e63af0101cd788db995d1cb
+ms.openlocfilehash: 1e73c403a03eef9a47bc0550b37769db302a599c
+ms.sourcegitcommit: 59ea8436d7f23bee75e04a84ee6ec24702fb2e61
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86082800"
+ms.lasthandoff: 09/07/2020
+ms.locfileid: "89504424"
 ---
 # <a name="operationalize-a-data-analytics-pipeline"></a>Ввод в эксплуатацию конвейера аналитики данных
 
@@ -604,6 +604,6 @@ sqlDatabaseTableName=dailyflights
 
     Каждое действие в этом списке соответствует экземпляру рабочего процесса, который обрабатывает данные за один день, и где начало дня обозначается номинальным временем.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Документация по Apache Oozie](https://oozie.apache.org/docs/4.2.0/index.html)

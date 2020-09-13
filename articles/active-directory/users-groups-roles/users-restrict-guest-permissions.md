@@ -5,7 +5,7 @@ services: active-directory
 author: curtand
 ms.author: curtand
 manager: daveba
-ms.date: 08/20/2020
+ms.date: 09/04/2020
 ms.topic: how-to
 ms.service: active-directory
 ms.subservice: users-groups-roles
@@ -13,12 +13,12 @@ ms.workload: identity
 ms.custom: it-pro
 ms.reviewer: krbain
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 28125ff55fe6ab3e68d56dc26a074d0498c2b413
-ms.sourcegitcommit: c5021f2095e25750eb34fd0b866adf5d81d56c3a
+ms.openlocfilehash: 6fb7a6654f5917c0651ffba6e672b41d14fdbe20
+ms.sourcegitcommit: de2750163a601aae0c28506ba32be067e0068c0c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88798437"
+ms.lasthandoff: 09/04/2020
+ms.locfileid: "89489652"
 ---
 # <a name="restrict-guest-access-permissions-preview-in-azure-active-directory"></a>Ограничение разрешений гостевого доступа (Предварительная версия) в Azure Active Directory
 
@@ -40,17 +40,14 @@ Azure Active Directory (Azure AD) позволяет ограничить воз
 
 Мы внесли изменения в существующие элементы управления портал Azure для разрешений гостевого пользователя.
 
-> [!IMPORTANT]
-> В течение короткого времени новые элементы управления портала для гостевых пользователей будут видны только с помощью URL-адреса [https://aka.ms/AADRestrictedGuestAccess](https://aka.ms/AADRestrictedGuestAccess) . PowerShell и Microsoft Graph можно по-прежнему использовать для установки элементов управления и изменения, которые будут учитываться на портале.
-
-1. Войдите в [центр администрирования Azure AD](https://aka.ms/AADRestrictedGuestAccess) с разрешениями глобального администратора.
+1. Войдите в [центр администрирования Azure AD](https://aad.portal.azure.com) с разрешениями глобального администратора.
 1. На странице Обзор **Azure Active Directory** для своей организации выберите **Параметры пользователя**.
 1. В разделе **внешние пользователи**выберите **Управление внешними параметрами совместной работы**.
 1. На странице **внешние параметры совместной работы** выберите параметр **доступ к гостевым пользователям ограничен свойствами и членством собственных объектов каталога** .
 
     ![Страница параметров внешней совместной работы Azure AD](./media/users-restrict-guest-permissions/external-collaboration-settings.png)
 
-1. Нажмите кнопку **Сохранить**. Изменения могут вступить в силу для гостевых пользователей до 15 минут.
+1. Выберите **Сохранить**. Изменения могут вступить в силу для гостевых пользователей до 15 минут.
 
 ## <a name="update-with-the-microsoft-graph-api"></a>Обновление с помощью Microsoft Graph API
 
@@ -150,7 +147,7 @@ PS C:\WINDOWS\system32> Set-AzureADMSAuthorizationPolicy -GuestUserRoleId '2af84
 - Формы
 - Планировщик в командах
 - Приложение планировщика
-- Проект
+- Project
 - Yammer
 
 ## <a name="frequently-asked-questions-faq"></a>Часто задаваемые вопросы

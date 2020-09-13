@@ -6,12 +6,12 @@ ms.suite: integration
 ms.reviewer: jonfan, logicappspm
 ms.topic: article
 ms.date: 06/11/2020
-ms.openlocfilehash: 1bd3cb1c18d1bac078ac1344f574914dba73d07b
-ms.sourcegitcommit: 927dd0e3d44d48b413b446384214f4661f33db04
+ms.openlocfilehash: 4876c5cb0490a96d5a77da9ced83e1650e98379a
+ms.sourcegitcommit: de2750163a601aae0c28506ba32be067e0068c0c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88871570"
+ms.lasthandoff: 09/04/2020
+ms.locfileid: "89488836"
 ---
 # <a name="connectors-for-azure-logic-apps"></a>Соединители для Azure Logic Apps
 
@@ -308,7 +308,7 @@ Logic Apps предоставляет эти соединители предпр
         [![Служебная шина Azure соединителя ИНТЕГРИРОВАНной шины Azure ][azure-service-bus-icon]<br> ** <br> **][azure-service-bus-doc]
     :::column-end:::
     :::column:::
-        [![Соединитель ИНТЕГРИРОВАНной среды хранилища данных SQL Azure ][azure-sql-data-warehouse-icon]<br> ** <br> хранилище данных SQL Azure**][azure-sql-data-warehouse-doc]
+        [![][azure-sql-data-warehouse-icon]<br>** <br> Хранилище данных SQL Azure** соединителя интегрированной среды сценариев Azure синапсе Analytics][azure-sql-data-warehouse-doc]
     :::column-end:::
     :::column:::
         [![Хранилище таблиц Azure. соединитель ИНТЕГРИРОВАНного хранилища таблиц ][azure-table-storage-icon]<br> **Azure <br> **][azure-table-storage-doc]
@@ -412,7 +412,7 @@ Logic Apps предоставляет эти соединители предпр
 
 Хотя подключения создаются в приложении логики, подключения представляют собой отдельные ресурсы Azure с собственными определениями ресурсов. Чтобы проверить эти определения ресурсов подключения, [скачайте приложение логики из Azure в Visual Studio](../logic-apps/manage-logic-apps-with-visual-studio.md). это самый простой способ создать допустимый параметризованный шаблон приложения логики, который в основном готов к развертыванию.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Просмотр [полного списка соединителей](/connectors)
 * [Создание первого приложения логики](../logic-apps/quickstart-create-first-logic-app-workflow.md)
@@ -572,7 +572,7 @@ Logic Apps предоставляет эти соединители предпр
 [azure-monitor-logs-doc]: /connectors/azuremonitorlogs/ "Выполнение запросов к журналам Azure Monitor в Log Analytics рабочих областях и компонентах Application Insights"
 [azure-queues-doc]: /connectors/azurequeues/ "Подключитесь к учетной записи хранения Azure, чтобы можно было создавать очереди и сообщения и управлять ими."
 [azure-service-bus-doc]: ./connectors-create-api-servicebus.md "Отправка сообщений из очередей и разделов служебной шины, а также получение сообщений из очередей и подписок служебной шины"
-[azure-sql-data-warehouse-doc]: /connectors/sqldw/ "Подключение к хранилищу данных SQL Azure для просмотра данных"
+[azure-sql-data-warehouse-doc]: /connectors/sqldw/ "Подключение к Azure синапсе Analytics для просмотра данных"
 [azure-table-storage-doc]: /connectors/azuretables/ "Подключитесь к учетной записи хранения Azure, чтобы можно было создавать, обновлять и запрашивать таблицы и многое другое."
 [biztalk-server-doc]: /connectors/biztalk/ "Подключитесь к BizTalk Server, чтобы вы могли запускать приложения на базе BizTalk параллельно с Azure Logic Apps"
 [file-system-doc]: ../logic-apps/logic-apps-using-file-connector.md "Подключение к локальной файловой системе"

@@ -7,14 +7,14 @@ ms.topic: reference
 ms.workload: identity
 author: rolyon
 ms.author: rolyon
-ms.date: 08/31/2020
+ms.date: 09/04/2020
 ms.custom: generated
-ms.openlocfilehash: 685fdf8180f54c87fe6677268bd289ee00912c96
-ms.sourcegitcommit: d68c72e120bdd610bb6304dad503d3ea89a1f0f7
+ms.openlocfilehash: cbf859baa79b6630dea44a23d2a0e6f9fb64b82a
+ms.sourcegitcommit: de2750163a601aae0c28506ba32be067e0068c0c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/01/2020
-ms.locfileid: "89227769"
+ms.lasthandoff: 09/04/2020
+ms.locfileid: "89489669"
 ---
 # <a name="azure-resource-provider-operations"></a>Операции с поставщиками ресурсов Azure
 
@@ -22,7 +22,7 @@ ms.locfileid: "89227769"
 
 Щелкните имя поставщика ресурсов в следующей таблице, чтобы просмотреть список операций.
 
-## <a name="all"></a>All
+## <a name="all"></a>Все
 
 | Общие сведения |
 | --- |
@@ -32,7 +32,7 @@ ms.locfileid: "89227769"
 | [Microsoft.MarketplaceOrdering](#microsoftmarketplaceordering) |
 | [Microsoft.ResourceHealth](#microsoftresourcehealth) |
 | [Microsoft. support](#microsoftsupport) |
-| **Службы вычислений** |
+| **Среда выполнения приложений** |
 | [Microsoft.ClassicCompute](#microsoftclassiccompute) |
 | [Microsoft.Compute](#microsoftcompute) |
 | [Microsoft.ServiceFabric](#microsoftservicefabric) |
@@ -106,7 +106,7 @@ ms.locfileid: "89227769"
 | [Microsoft.Logic](#microsoftlogic) |
 | [Microsoft.Relay](#microsoftrelay) |
 | [Microsoft.ServiceBus](#microsoftservicebus) |
-| **Идентификация** |
+| **Удостоверение** |
 | [Microsoft.AAD](#microsoftaad) |
 | [microsoft.aadiam](#microsoftaadiam) |
 | [Microsoft.ADHybridHealthService](#microsoftadhybridhealthservice) |
@@ -402,6 +402,23 @@ ms.locfileid: "89227769"
 > | Microsoft.Compute/availabilitySets/write | Создает новую группу доступности или обновляет существующую. |
 > | Microsoft.Compute/availabilitySets/delete | Удаляет группу доступности. |
 > | Microsoft.Compute/availabilitySets/vmSizes/read | Выводит список доступных размеров для создания или обновления виртуальной машины в группе доступности. |
+> | Microsoft. COMPUTE/Клаудсервицес/чтение | Получение свойств CloudService. |
+> | Microsoft. COMPUTE/Клаудсервицес/запись | Создал новый CloudService или обновить существующий. |
+> | Microsoft. COMPUTE/Клаудсервицес/удаление | Удаляет CloudService. |
+> | Microsoft. COMPUTE/Клаудсервицес/выключена/действие | Выключите CloudService. |
+> | Microsoft. COMPUTE/Клаудсервицес/запуск/действие | Запускает CloudService. |
+> | Microsoft. COMPUTE/Клаудсервицес/Restart/Action | Перезапускает один или несколько экземпляров роли в CloudService. |
+> | Microsoft. COMPUTE/Клаудсервицес, переобразировать/действие | Перестраивает все диски в экземплярах роли в CloudService. |
+> | Microsoft. COMPUTE/Клаудсервицес/Rebuild/Action | Повторное создание образа всех экземпляров роли в CloudService. |
+> | Microsoft. COMPUTE/Клаудсервицес/Удаление/действие | Удаляет экземпляры роли в CloudService. |
+> | Microsoft. COMPUTE/Клаудсервицес/instanceView/чтение | Возвращает состояние CloudService. |
+> | Microsoft. COMPUTE, Клаудсервицес/Ролеинстанцес/Delete | Удаляет RoleInstance из CloudService. |
+> | Microsoft. COMPUTE/Клаудсервицес/Ролеинстанцес/чтение | Возвращает RoleInstance из CloudService. |
+> | Microsoft. COMPUTE/Клаудсервицес/Ролеинстанцес/Restart/Action | Перезапуск экземпляра роли CloudService |
+> | Microsoft. COMPUTE/Клаудсервицес/Ролеинстанцес/переобраз/действие | Переобразировать экземпляр роли CloudService. |
+> | Microsoft. COMPUTE/Клаудсервицес/Ролеинстанцес/Rebuild/Action | Перестройте все диски в CloudService. |
+> | Microsoft. COMPUTE, Клаудсервицес/Ролеинстанцес/instanceView/Read | Возвращает состояние экземпляра роли из CloudService. |
+> | Microsoft. COMPUTE/Клаудсервицес/Упдатедомаинс/чтение | Возвращает список всех доменов обновления в CloudService. |
 > | Microsoft. COMPUTE/Дискакцессес/чтение | Получение свойств ресурса Дискакцесс |
 > | Microsoft. COMPUTE/Дискакцессес/запись | Создайте новый ресурс Дискакцесс или обновите существующий. |
 > | Microsoft. COMPUTE/Дискакцессес/удаление | Удаление ресурса Дискакцесс |
@@ -1387,21 +1404,22 @@ ms.locfileid: "89227769"
 > [!div class="mx-tableFixed"]
 > | Действие | Описание |
 > | --- | --- |
+> | Microsoft.DataBox/jobs/read | Выводит список заказов или получает их. |
+> | Microsoft.DataBox/jobs/delete | Удаляет заказы. |
+> | Microsoft.DataBox/jobs/write | Создает или обновляет заказы. |
+> | Microsoft. Датабокс/Locations/Аваилаблескус/Read | Перечисление или получение доступных номеров SKU |
+> | Microsoft.DataBox/locations/operationResults/read | Вывод списка или получение результатов операции. |
+> | Microsoft. Датабокс/операции/чтение | Перечисление или получение операций |
+> | **DataAction** | **Описание** |
 > | Microsoft.DataBox/register/action | Регистрация поставщика Microsoft.Databox. |
 > | Microsoft. Датабокс/отменить регистрацию или действие | Отмена регистрации поставщика Microsoft. Датабокс |
 > | Microsoft.DataBox/jobs/cancel/action | Отменяет выполняемый заказ. |
 > | Microsoft.DataBox/jobs/bookShipmentPickUp/action | Позволяет заказать прием посылки для обратной отправки. |
-> | Microsoft.DataBox/jobs/read | Выводит список заказов или получает их. |
-> | Microsoft.DataBox/jobs/delete | Удаляет заказы. |
-> | Microsoft.DataBox/jobs/write | Создает или обновляет заказы. |
 > | Microsoft.DataBox/jobs/listCredentials/action | Выводит список незашифрованных учетных данных, связанных с заказом. |
 > | Microsoft. Датабокс/Locations/Валидатеинпутс/Action | Этот метод выполняет все типы проверок. |
 > | Microsoft.DataBox/locations/validateAddress/action | Проверяет адрес доставки и предлагает альтернативные адреса, если они доступны. |
 > | Microsoft.DataBox/locations/availableSkus/action | Этот метод возвращает список доступных номеров SKU. |
 > | Microsoft. Датабокс/Locations/Регионконфигуратион/Action | Этот метод возвращает конфигурации для региона. |
-> | Microsoft. Датабокс/Locations/Аваилаблескус/Read | Перечисление или получение доступных номеров SKU |
-> | Microsoft.DataBox/locations/operationResults/read | Вывод списка или получение результатов операции. |
-> | Microsoft. Датабокс/операции/чтение | Перечисление или получение операций |
 > | Microsoft. Датабокс/Subscriptions/resourceGroups/Мовересаурцес/Action | Этот метод выполняет перемещение ресурса. |
 > | Microsoft. Датабокс/Subscriptions/resourceGroups/Валидатемовересаурцес/Action | Этот метод проверяет, разрешено ли перемещение ресурсов. |
 
@@ -3286,6 +3304,7 @@ ms.locfileid: "89227769"
 > [!div class="mx-tableFixed"]
 > | Действие | Описание |
 > | --- | --- |
+> | Microsoft. Дбформариадб/Приватиндпоинтконнектионсаппровал/действие | Определяет, разрешено ли пользователю утверждать подключение частной конечной точки |
 > | Microsoft. Дбформариадб/Register/действие | Регистрация поставщика ресурсов MariaDB |
 > | Microsoft. Дбформариадб/Чеккнамеаваилабилити/действие | Проверка того, доступно ли данное имя сервера для подготовки по всему миру для данной подписки. |
 > | Microsoft. Дбформариадб/Locations/Администраторазуреасинкоператион/Read | Возвращает выполняемые операции с администраторами сервера MariaDB. |
@@ -3304,10 +3323,11 @@ ms.locfileid: "89227769"
 > | Microsoft. Дбформариадб/Locations/Серверкэйоператионресултс/Read | Возвращает выполняемые операции с ключами сервера прозрачного шифрования данных |
 > | Microsoft. Дбформариадб/операции/чтение | Возвращает список операций MariaDB. |
 > | Microsoft.DBforMariaDB/performanceTiers/read | Получение списка доступных уровней производительности. |
-> | Microsoft. Дбформариадб/Servers/Куеритекстс/Action | Возврат текста для списка запросов |
-> | Microsoft. Дбформариадб/Servers/Куеритекстс/Action | Возвращает текст запроса. |
 > | Microsoft. Дбформариадб/серверы/запуск/действие | Запускает конкретный сервер. |
 > | Microsoft. Дбформариадб/Servers/останавливаем/Action | Останавливает указанный сервер. |
+> | Microsoft. Дбформариадб/Servers/Куеритекстс/Action | Возврат текста для списка запросов |
+> | Microsoft. Дбформариадб/Servers/Куеритекстс/Action | Возвращает текст запроса. |
+> | Microsoft. Дбформариадб/Servers/Приватиндпоинтконнектионсаппровал/Action | Определяет, разрешено ли пользователю утверждать подключение частной конечной точки |
 > | Microsoft.DBforMariaDB/servers/read | Возвращение списка серверов или получение свойств для указанного сервера. |
 > | Microsoft.DBforMariaDB/servers/write | Создание сервера с указанными параметрами либо обновление свойств или тегов указанного сервера. |
 > | Microsoft.DBforMariaDB/servers/delete | Удаление существующего сервера. |
@@ -3366,6 +3386,7 @@ ms.locfileid: "89227769"
 > [!div class="mx-tableFixed"]
 > | Действие | Описание |
 > | --- | --- |
+> | Microsoft. Дбформискл/Приватиндпоинтконнектионсаппровал/действие | Определяет, разрешено ли пользователю утверждать подключение частной конечной точки |
 > | Microsoft. Дбформискл/Register/действие | Регистрация поставщика ресурсов MySQL |
 > | Microsoft. Дбформискл/Чеккнамеаваилабилити/действие | Проверка того, доступно ли данное имя сервера для подготовки по всему миру для данной подписки. |
 > | Microsoft. Дбформискл/Locations/Администраторазуреасинкоператион/Read | Возвращает выполняемые операции с администраторами сервера MySQL. |
@@ -3386,9 +3407,9 @@ ms.locfileid: "89227769"
 > | Microsoft.DBforMySQL/performanceTiers/read | Получение списка доступных уровней производительности. |
 > | Microsoft. Дбформискл/серверы/запуск/действие | Запускает конкретный сервер. |
 > | Microsoft. Дбформискл/Servers/останавливаем/Action | Останавливает указанный сервер. |
-> | Microsoft. Дбформискл/серверы/экспорт/действие |  |
 > | Microsoft. Дбформискл/Servers/Куеритекстс/Action | Возврат текста для списка запросов |
 > | Microsoft. Дбформискл/Servers/Куеритекстс/Action | Возвращает текст запроса. |
+> | Microsoft. Дбформискл/Servers/Приватиндпоинтконнектионсаппровал/Action | Определяет, разрешено ли пользователю утверждать подключение частной конечной точки |
 > | Microsoft.DBforMySQL/servers/read | Возвращение списка серверов или получение свойств для указанного сервера. |
 > | Microsoft.DBforMySQL/servers/write | Создание сервера с указанными параметрами либо обновление свойств или тегов указанного сервера. |
 > | Microsoft.DBforMySQL/servers/delete | Удаление существующего сервера. |
@@ -3408,6 +3429,9 @@ ms.locfileid: "89227769"
 > | Microsoft. Дбформискл/Servers/databases/Read | Возврат списка баз данных MySQL или получение свойств для указанной базы данных. |
 > | Microsoft. Дбформискл/серверы/базы данных/запись | Создает базу данных MySQL с указанными параметрами или обновляет свойства указанной базы данных. |
 > | Microsoft. Дбформискл/Servers/databases/Delete | Удаляет существующую базу данных MySQL. |
+> | Microsoft. Дбформискл/Servers/EXPORTS/Write |  |
+> | Microsoft. Дбформискл/Servers/EXPORTS/Read |  |
+> | Microsoft. Дбформискл/Servers/EXPORTS/Read |  |
 > | Microsoft.DBforMySQL/servers/firewallRules/read | Возвращение списка правил брандмауэра для сервера или получение свойств для указанного правила брандмауэра. |
 > | Microsoft.DBforMySQL/servers/firewallRules/write | Создание правила брандмауэра с указанными параметрами или обновление существующего правила. |
 > | Microsoft.DBforMySQL/servers/firewallRules/delete | Удаление существующего правила брандмауэра. |
@@ -3447,8 +3471,16 @@ ms.locfileid: "89227769"
 > [!div class="mx-tableFixed"]
 > | Действие | Описание |
 > | --- | --- |
+> | Microsoft. Дбфорпостгрескл/Приватиндпоинтконнектионсаппровал/действие | Определяет, разрешено ли пользователю утверждать подключение частной конечной точки |
 > | Microsoft. Дбфорпостгрескл/Register/действие | Регистрация поставщика ресурсов PostgreSQL |
 > | Microsoft. Дбфорпостгрескл/Чеккнамеаваилабилити/действие | Проверка того, доступно ли данное имя сервера для подготовки по всему миру для данной подписки. |
+> | Microsoft. Дбфорпостгрескл/Флексиблесерверс/Read | Возвращение списка серверов или получение свойств для указанного сервера. |
+> | Microsoft. Дбфорпостгрескл/Флексиблесерверс/запись | Создание сервера с указанными параметрами либо обновление свойств или тегов указанного сервера. |
+> | Microsoft. Дбфорпостгрескл/Флексиблесерверс/Delete | Удаление существующего сервера. |
+> | Microsoft. Дбфорпостгрескл/Флексиблесерверс/providers/Microsoft. Insights/diagnosticSettings/Read | Получение параметра диагностики для ресурса. |
+> | Microsoft. Дбфорпостгрескл/Флексиблесерверс/providers/Microsoft. Insights/diagnosticSettings/запись | Создает или обновляет параметр диагностики для ресурса. |
+> | Microsoft. Дбфорпостгрескл/Флексиблесерверс/providers/Microsoft. Insights/Логдефинитионс/Read | Получение доступных журналов для серверов PostgreSQL. |
+> | Microsoft. Дбфорпостгрескл/Флексиблесерверс/providers/Microsoft. Insights/metricDefinitions/Read | Возвращает типы метрик, доступных для баз данных. |
 > | Microsoft. Дбфорпостгрескл/Locations/Администраторазуреасинкоператион/Read | Возвращает выполняемые операции с администраторами сервера PostgreSQL. |
 > | Microsoft. Дбфорпостгрескл/Locations/Администратороператионресултс/Read | Вернуть результаты операции администратора сервера PostgreSQL |
 > | Microsoft. Дбфорпостгрескл/Locations/Азуреасинкоператион/Read | Возврат результатов операции сервера PostgreSQL |
@@ -3466,6 +3498,7 @@ ms.locfileid: "89227769"
 > | Microsoft. Дбфорпостгрескл/операции/чтение | Возвращает список операций PostgreSQL. |
 > | Microsoft.DBforPostgreSQL/performanceTiers/read | Получение списка доступных уровней производительности. |
 > | Microsoft.DBforPostgreSQL/servers/queryTexts/action | Возвращает текст запроса. |
+> | Microsoft. Дбфорпостгрескл/Servers/Приватиндпоинтконнектионсаппровал/Action | Определяет, разрешено ли пользователю утверждать подключение частной конечной точки |
 > | Microsoft.DBforPostgreSQL/servers/read | Возвращение списка серверов или получение свойств для указанного сервера. |
 > | Microsoft.DBforPostgreSQL/servers/write | Создание сервера с указанными параметрами либо обновление свойств или тегов указанного сервера. |
 > | Microsoft.DBforPostgreSQL/servers/delete | Удаление существующего сервера. |
@@ -3765,7 +3798,7 @@ ms.locfileid: "89227769"
 
 ### <a name="microsoftsql"></a>Microsoft.Sql
 
-Служба Azure: [база данных SQL Azure](../azure-sql/database/index.yml), [управляемый экземпляр Azure SQL](../azure-sql/managed-instance/index.yml), [хранилище данных SQL](../sql-data-warehouse/index.yml)
+Служба Azure: [база данных SQL Azure](../azure-sql/database/index.yml), [Azure SQL управляемый экземпляр](../azure-sql/managed-instance/index.yml), [Azure синапсе Analytics (ранее — хранилище данных SQL)](../sql-data-warehouse/index.yml) .
 
 > [!div class="mx-tableFixed"]
 > | Действие | Описание |
@@ -3938,13 +3971,11 @@ ms.locfileid: "89227769"
 > | Microsoft.Sql/managedInstances/vulnerabilityAssessments/read | Получение политик оценки уязвимости для конкретного управляемого экземпляра |
 > | Microsoft.Sql/operations/read | Получение доступных операций REST. |
 > | Microsoft.Sql/servers/tdeCertificates/action | Создание или обновление сертификата TDE |
-> | Microsoft. SQL/Servers/Енаблеазуреадонляусентикатион/действие | Разрешить Azure Active Directory только проверку подлинности на логическом сервере |
-> | Microsoft. SQL/Servers/Дисаблеазуреадонляусентикатион/действие | Отключить проверку подлинности Azure Active Directory только на логическом сервере |
+> | Microsoft.Sql/servers/import/action | Импорт базы данных SQL Azure |
 > | Microsoft.Sql/servers/read | Возвращение списка серверов или получение свойств для указанного сервера. |
 > | Microsoft.Sql/servers/write | Создание сервера с указанными параметрами либо обновление свойств или тегов указанного сервера. |
 > | Microsoft.Sql/servers/delete | Удаление существующего сервера. |
 > | Microsoft. SQL/Servers/Приватиндпоинтконнектионсаппровал/действие | Определяет, разрешено ли пользователю утверждать подключение частной конечной точки |
-> | Microsoft.Sql/servers/import/action | Создает базу данных на сервере и развертывает схему и данные из пакета DACPAC. |
 > | Microsoft.Sql/servers/administratorOperationResults/read | Возвращение выполняемых операций администраторами серверов. |
 > | Microsoft.Sql/servers/administrators/read | Возвращает конкретный объект Azure Active Directory администратора |
 > | Microsoft.Sql/servers/administrators/write | Добавляет или обновляет указанный объект Azure Active Directory администратора |
@@ -3953,18 +3984,17 @@ ms.locfileid: "89227769"
 > | Microsoft.Sql/servers/advisors/write | Обновляет состояние автовыполнения Помощника на уровне сервера. |
 > | Microsoft.Sql/servers/advisors/recommendedActions/read | Возвращает список рекомендуемых действий указанного помощника для сервера. |
 > | Microsoft.Sql/servers/advisors/recommendedActions/write | Применяет рекомендуемое действие к серверу. |
-> | Microsoft.Sql/servers/auditingPolicies/read | Извлекает сведения о политике аудита таблиц по умолчанию, настроенной на заданном сервере. |
-> | Microsoft.Sql/servers/auditingPolicies/write | Изменяет политику аудита таблиц по умолчанию для заданного сервера. |
 > | Microsoft.Sql/servers/auditingSettings/read | Извлекает сведения о политике аудита больших двоичных объектов, настроенной на заданном сервере. |
 > | Microsoft.Sql/servers/auditingSettings/write | Изменяет политику аудита больших двоичных объектов для заданного сервера. |
 > | Microsoft.Sql/servers/auditingSettings/operationResults/read | Извлекает результат операции настройки политики аудита больших двоичных объектов на сервере. |
 > | Microsoft.Sql/servers/automaticTuning/read | Возвращение параметров автоматической настройки для сервера. |
 > | Microsoft.Sql/servers/automaticTuning/write | Обновление параметров автоматической настройки для сервера и возвращение обновленных параметров. |
+> | Microsoft. SQL/Servers/Азуреадонляусентикатионс/Read | Считывает конкретный сервер Azure Active Directory только объект проверки подлинности |
+> | Microsoft. SQL/Servers/Азуреадонляусентикатионс/Write | Добавляет или обновляет конкретный сервер Azure Active Directory только объект проверки подлинности |
+> | Microsoft. SQL/Servers/Азуреадонляусентикатионс/Delete | Удаляет конкретный сервер Azure Active Directory только объект проверки подлинности |
 > | Microsoft.Sql/servers/communicationLinks/read | Возвращение списка подключений для указанного сервера. |
 > | Microsoft.Sql/servers/communicationLinks/write | Создание или обновление подключения сервера. |
 > | Microsoft.Sql/servers/communicationLinks/delete | Удаление существующего подключения сервера. |
-> | Microsoft.Sql/servers/connectionPolicies/read | Возвращение списка политик подключений для указанного сервера. |
-> | Microsoft.Sql/servers/connectionPolicies/write | Создание или обновление политики подключения сервера. |
 > | Microsoft.Sql/servers/databases/read | Возвращение списка баз данных или возвращение свойств указанной базы данных. |
 > | Microsoft.Sql/servers/databases/write | Создание базы данных с указанными параметрами либо обновление свойств или тегов для указанной базы данных. |
 > | Microsoft.Sql/servers/databases/delete | Удаление имеющейся базы данных. |
@@ -3974,14 +4004,13 @@ ms.locfileid: "89227769"
 > | Microsoft.Sql/servers/databases/upgradeDataWarehouse/action | Обновление работы базы данных хранилища данных SQL Azure. |
 > | Microsoft.Sql/servers/databases/move/action | Изменение имени существующей базы данных. |
 > | Microsoft.Sql/servers/databases/restorePoints/action | Создает точку восстановления. |
+> | Microsoft. SQL/серверы/базы данных/импорт/действие | Импорт базы данных SQL Azure |
 > | Microsoft. SQL/серверы/базы данных/отработка отказа/действие | Отработка отказа базы данных, инициированная клиентом. |
 > | Microsoft.Sql/servers/databases/vulnerabilityAssessmentScans/action | Выполняет поиск уязвимостей базы данных. |
 > | Microsoft.Sql/servers/databases/advisors/read | Возвращает список доступных помощников для базы данных. |
 > | Microsoft.Sql/servers/databases/advisors/write | Обновляет состояние автовыполнения Помощника на уровне базы данных. |
 > | Microsoft.Sql/servers/databases/advisors/recommendedActions/read | Возвращает список рекомендуемых действий указанного помощника для базы данных. |
 > | Microsoft.Sql/servers/databases/advisors/recommendedActions/write | Применяет рекомендуемое действие к базе данных. |
-> | Microsoft.Sql/servers/databases/auditingPolicies/read | Извлекает сведения о политике аудита таблиц, настроенной для заданной базы данных. |
-> | Microsoft.Sql/servers/databases/auditingPolicies/write | Изменяет политику аудита таблиц для заданной базы данных. |
 > | Microsoft.Sql/servers/databases/auditingSettings/read | Извлекает сведения о политике аудита больших двоичных объектов, настроенной для заданной базы данных. |
 > | Microsoft.Sql/servers/databases/auditingSettings/write | Изменяет политику аудита больших двоичных объектов для заданной базы данных. |
 > | Microsoft.Sql/servers/databases/auditRecords/read | Извлекает записи аудита больших двоичных объектов для базы данных. |
@@ -3993,8 +4022,6 @@ ms.locfileid: "89227769"
 > | Microsoft. SQL/Servers/databases/БаккупшорттермретентионполиЦиес/Read | Возвращает политику краткосрочного хранения для базы данных. |
 > | Microsoft. SQL/Servers/databases/БаккупшорттермретентионполиЦиес/Write | Обновляет политику краткосрочного хранения для базы данных. |
 > | Microsoft. SQL/Servers/databases/Columns/Read | Возврат списка столбцов для базы данных |
-> | Microsoft.Sql/servers/databases/connectionPolicies/read | Извлекает сведения о политике подключений, настроенной для заданной базы данных. |
-> | Microsoft.Sql/servers/databases/connectionPolicies/write | Изменяет политику подключений для заданной базы данных. |
 > | Microsoft.Sql/servers/databases/currentSensitivityLabels/read | Получение списка меток конфиденциальности для конкретной базы данных. |
 > | Microsoft. SQL/Servers/databases/Куррентсенситивитилабелс/Write | Метки чувствительности пакетного обновления |
 > | Microsoft.Sql/servers/databases/dataMaskingPolicies/read | Получение списка политик маскировки данных базы данных. |
@@ -4012,6 +4039,7 @@ ms.locfileid: "89227769"
 > | Microsoft. SQL/Servers/databases/Extensions/Импортекстенсионоператионресултс/Read | Получает выполняющиеся операции импорта |
 > | Microsoft.Sql/servers/databases/geoBackupPolicies/read | Получение политик геоизбыточного резервного копирования для конкретной базы данных. |
 > | Microsoft.Sql/servers/databases/geoBackupPolicies/write | Создание или обновление политики геоизбыточного резервного копирования базы данных. |
+> | Microsoft. SQL/Servers/databases/Импортекспортазуреасинкоператион/Read | Получение выполняемых операций импорта и экспорта. |
 > | Microsoft.Sql/servers/databases/importExportOperationResults/read | Получение выполняемых операций импорта и экспорта. |
 > | Microsoft.Sql/servers/databases/maintenanceWindowOptions/read | Получает список доступных окон обслуживания для выбранной базы данных. |
 > | Microsoft.Sql/servers/databases/maintenanceWindows/read | Получает параметры окон обслуживания для выбранной базы данных. |
@@ -4965,6 +4993,39 @@ ms.locfileid: "89227769"
 > | Microsoft. CognitiveServices/Accounts/Иммерсивереадер/жетконтентмоделфорреадер/Action | Создает иммерсивное сеанс чтения |
 > | Microsoft. CognitiveServices/Accounts/Инкрекогнизер/Recognize/действие | Учитывая набор данных Stroke, анализирует содержимое и создает список распознаваемых сущностей, включая распознанный текст. |
 > | Microsoft. CognitiveServices/Accounts/LUIS/Predict/Action | Возвращает прогноз опубликованной конечной точки для данного запроса. |
+> | Microsoft. CognitiveServices/Accounts/Метриксадвисор/Alert/аномалия/конфигурации/запись | Создать или обновить конфигурацию предупреждений об аномалиях |
+> | Microsoft. CognitiveServices/Accounts/Метриксадвисор/Alert/аномалия/Configurations/Delete | Удаление конфигурации предупреждений об аномалиях |
+> | Microsoft. CognitiveServices/Accounts/Метриксадвисор/Alert/аномалия/конфигурации/чтение | Запрос конфигурации предупреждений об аномалии |
+> | Microsoft. CognitiveServices/Accounts/Метриксадвисор/Alert/аномалия/конфигурации/оповещения/запрос/действие | Предупреждения о запросах в конфигурации оповещений об аномалиях |
+> | Microsoft. CognitiveServices/Accounts/Метриксадвисор/Alert/аномалия/конфигурации/оповещения/аномалии/чтение | Запрос аномалий с указанным оповещением |
+> | Microsoft. CognitiveServices/Accounts/Метриксадвисор/Alert/аномалия/конфигурации/оповещения/инциденты/чтение | Запрос инцидентов с указанным оповещением |
+> | Microsoft. CognitiveServices/Accounts/Метриксадвисор/поток данных/запись | Создание или обновление веб-канала данных. |
+> | Microsoft. CognitiveServices/Accounts/Метриксадвисор/передачи данных/удаление | Удаление веб-канала данных |
+> | Microsoft. CognitiveServices/Accounts/Метриксадвисор/поток данных/чтение | Получение канала данных по его идентификатору или перечисление всех веб-каналов данных |
+> | Microsoft. CognitiveServices/Accounts/Метриксадвисор/передачи данных/инжестионпрогресс/чтение | Получение штампа времени последней успешной отправки данных по каналу данных |
+> | Microsoft. CognitiveServices/Accounts/Метриксадвисор/передачи данных/инжестионпрогресс/сброс/действие | Сброс состояния приема данных для канала данных в данные о обратных передачах |
+> | Microsoft. CognitiveServices/Accounts/Метриксадвисор/передачи данных/инжестионстатус/запрос/действие | Получение состояния приема данных по каналу данных |
+> | Microsoft. CognitiveServices/Accounts/Метриксадвисор/обогащение/anomalydetection/настройки/запись | Создать или обновить конфигурацию обнаружения аномалий |
+> | Microsoft. CognitiveServices/Accounts/Метриксадвисор/обогащение/anomalydetection/конфигурации/удаление | Удаление конфигурации обнаружения аномалий |
+> | Microsoft. CognitiveServices/Accounts/Метриксадвисор/обогащение/anomalydetection/конфигурации/чтение | Запрос конфигурации с одной аномалией |
+> | Microsoft. CognitiveServices/Accounts/Метриксадвисор/обогащение/anomalydetection/конфигурации/оповещение/аномалия/конфигурации/чтение | Запрос всех конфигураций предупреждений об аномалиях для конкретной конфигурации обнаружения аномалий |
+> | Microsoft. CognitiveServices/Accounts/Метриксадвисор/обогащение/anomalydetection/конфигурации/аномалии/запрос/действие | Запрос аномалий в конфигурации обнаружения аномалий |
+> | Microsoft. CognitiveServices/Accounts/Метриксадвисор/обогащение/anomalydetection/конфигурации/аномалии/измерение/запрос/действие | Запрос значений аномалий измерений |
+> | Microsoft. CognitiveServices/Accounts/Метриксадвисор/обогащение/anomalydetection/конфигурации/инциденты/запрос/действие | Запрос инцидентов с конфигурацией обнаружения аномалий |
+> | Microsoft. CognitiveServices/Accounts/Метриксадвисор/обогащение/anomalydetection/конфигурации/инциденты/rootcause/чтение | Основная причина запроса инцидента |
+> | Microsoft. CognitiveServices/Accounts/Метриксадвисор/обогащение/anomalydetection/конфигурации/ряд/действие | Ряд запросов, дополненный обнаружением аномалий |
+> | Microsoft. CognitiveServices/Accounts/Метриксадвисор/Feedback/метрика/запись | Создание нового отзыва метрики |
+> | Microsoft. CognitiveServices/Accounts/Метриксадвисор/Feedback/метрика/чтение | Получение отзывов метрик по идентификатору |
+> | Microsoft. CognitiveServices/Accounts/Метриксадвисор/Feedback/метрика/запрос/действие | Перечисление отзывов по заданной метрике |
+> | Microsoft. CognitiveServices/Accounts/Метриксадвисор/перехватчики/запись | Создание или обновление обработчика |
+> | Microsoft. CognitiveServices/Accounts/Метриксадвисор/перехватчики/удаление | Удаление обработчика |
+> | Microsoft. CognitiveServices/Accounts/Метриксадвисор/перехватчики/чтение | Получение обработчика по его идентификатору или списку всех обработчиков |
+> | Microsoft. CognitiveServices/Accounts/Метриксадвисор/метрики/данные/запрос/действие | Получение данных временных рядов из метрики |
+> | Microsoft. CognitiveServices/Accounts/Метриксадвисор/метрики/измерение/запрос/действие | Вывод списка измерений из определенной метрики |
+> | Microsoft. CognitiveServices/Accounts/Метриксадвисор/метрики/обогащение/anomalydetection/конфигурации/чтение | Запрос всех конфигураций обнаружения аномалий для определенной метрики |
+> | Microsoft. CognitiveServices/Accounts/Метриксадвисор/метрики/серия/запрос/действие | Перечисление рядов (комбинаций измерений) из метрики |
+> | Microsoft. CognitiveServices/Accounts/Метриксадвисор/метрики/состояние/обогащение/anomalydetection/запрос/действие | Состояние обнаружения аномалий запросов |
+> | Microsoft. CognitiveServices/Accounts/Метриксадвисор/stats/последняя/чтение | Получить последнюю статистику использования |
 > | Microsoft. CognitiveServices/Accounts/Невссеарч/категорисеарч/Action | Возвращает Новости для указанной категории. |
 > | Microsoft. CognitiveServices/Accounts/Невссеарч/Поиск/действие | Получение новостей статей, актуальных для данного запроса. |
 > | Microsoft. CognitiveServices/Accounts/Невссеарч/трендингтопикс/Action | Получение разделов о тенденциях, определяемых Bing. Это те же разделы, которые отображаются в баннере в нижней части домашней страницы Bing. |
@@ -5010,35 +5071,6 @@ ms.locfileid: "89227769"
 > | Microsoft. CognitiveServices/Accounts/Видеосеарч/Поиск/действие | Получение видеороликов, относящихся к определенному запросу. |
 > | Microsoft. CognitiveServices/Accounts/Висуалсеарч/Поиск/действие | Возвращает список тегов, относящихся к предоставленному изображению |
 > | Microsoft. CognitiveServices/Accounts/Search, Поиск/действие | Получение результатов поиска в Интернете, изображениях, новостях и & видео для заданного запроса. |
-
-### <a name="microsoftmachinelearning"></a>Microsoft.MachineLearning
-
-Служба Azure: [машинное обучение Studio](../machine-learning/studio/index.yml)
-
-> [!div class="mx-tableFixed"]
-> | Действие | Описание |
-> | --- | --- |
-> | Microsoft.MachineLearning/register/action | Регистрирует подписку для поставщика ресурсов веб-службы машинного обучения и позволяет создавать веб-службы. |
-> | Microsoft.MachineLearning/webServices/action | Создает свойства региональной веб-службы для поддерживаемых регионов. |
-> | Microsoft.MachineLearning/commitmentPlans/read | Считывает план предложения машинного обучения. |
-> | Microsoft.MachineLearning/commitmentPlans/write | Создает или обновляет план предложения машинного обучения. |
-> | Microsoft.MachineLearning/commitmentPlans/delete | Удаляет план предложения машинного обучения. |
-> | Microsoft.MachineLearning/commitmentPlans/join/action | Присоединяет план предложения машинного обучения. |
-> | Microsoft.MachineLearning/commitmentPlans/commitmentAssociations/read | Считывает связь плана предложения машинного обучения. |
-> | Microsoft.MachineLearning/commitmentPlans/commitmentAssociations/move/action | Перемещает связь плана предложения машинного обучения. |
-> | Microsoft.MachineLearning/locations/operationresults/read | Получение результата операции машинного обучения. |
-> | Microsoft.MachineLearning/locations/operationsstatus/read | Получение состояния текущей операции машинного обучения. |
-> | Microsoft.MachineLearning/operations/read | Получение операций машинного обучения. |
-> | Microsoft.MachineLearning/skus/read | Получение номеров SKU плана предложения машинного обучения. |
-> | Microsoft.MachineLearning/webServices/read | Считывает веб-службу машинного обучения. |
-> | Microsoft.MachineLearning/webServices/write | Создает или обновляет веб-службу машинного обучения. |
-> | Microsoft.MachineLearning/webServices/delete | Удаляет веб-службу машинного обучения. |
-> | Microsoft.MachineLearning/webServices/listkeys/read | Получает ключи к веб-службе машинного обучения. |
-> | Microsoft.MachineLearning/Workspaces/read | Считывает рабочую область машинного обучения. |
-> | Microsoft.MachineLearning/Workspaces/write | Создает или обновляет рабочую область машинного обучения. |
-> | Microsoft.MachineLearning/Workspaces/delete | Удаляет рабочую область машинного обучения. |
-> | Microsoft.MachineLearning/Workspaces/listworkspacekeys/action | Выводит список ключей для рабочей области машинного обучения. |
-> | Microsoft.MachineLearning/Workspaces/resyncstoragekeys/action | Повторно синхронизирует ключи учетной записи хранения, настроенной для рабочей области машинного обучения. |
 
 ### <a name="microsoftmachinelearningservices"></a>Microsoft.MachineLearningServices
 
@@ -5156,6 +5188,36 @@ ms.locfileid: "89227769"
 > | Microsoft. Мачинелеарнингсервицес/рабочие области/службы/AKS/listkeys/действие | Перечисление ключей для AKS Services в рабочих областях Службы машинного обучения |
 > | Microsoft. Мачинелеарнингсервицес/рабочие области/службы/AKS/Delete | Удаление AKS Services в рабочих областях Службы машинного обучения |
 > | Microsoft. Мачинелеарнингсервицес/рабочие области/службы/AKS/Оценка/действие | Оценки AKS Services в рабочих областях Службы машинного обучения |
+
+
+### <a name="microsoftmachinelearning"></a>Microsoft.MachineLearning
+
+Служба Azure: [машинное обучение Studio (классическая модель)](../machine-learning/studio/index.yml)
+
+> [!div class="mx-tableFixed"]
+> | Действие | Описание |
+> | --- | --- |
+> | Microsoft.MachineLearning/register/action | Регистрирует подписку для поставщика ресурсов веб-службы машинного обучения и позволяет создавать веб-службы. |
+> | Microsoft.MachineLearning/webServices/action | Создает свойства региональной веб-службы для поддерживаемых регионов. |
+> | Microsoft.MachineLearning/commitmentPlans/read | Считывает план предложения машинного обучения. |
+> | Microsoft.MachineLearning/commitmentPlans/write | Создает или обновляет план предложения машинного обучения. |
+> | Microsoft.MachineLearning/commitmentPlans/delete | Удаляет план предложения машинного обучения. |
+> | Microsoft.MachineLearning/commitmentPlans/join/action | Присоединяет план предложения машинного обучения. |
+> | Microsoft.MachineLearning/commitmentPlans/commitmentAssociations/read | Считывает связь плана предложения машинного обучения. |
+> | Microsoft.MachineLearning/commitmentPlans/commitmentAssociations/move/action | Перемещает связь плана предложения машинного обучения. |
+> | Microsoft.MachineLearning/locations/operationresults/read | Получение результата операции машинного обучения. |
+> | Microsoft.MachineLearning/locations/operationsstatus/read | Получение состояния текущей операции машинного обучения. |
+> | Microsoft.MachineLearning/operations/read | Получение операций машинного обучения. |
+> | Microsoft.MachineLearning/skus/read | Получение номеров SKU плана предложения машинного обучения. |
+> | Microsoft.MachineLearning/webServices/read | Считывает веб-службу машинного обучения. |
+> | Microsoft.MachineLearning/webServices/write | Создает или обновляет веб-службу машинного обучения. |
+> | Microsoft.MachineLearning/webServices/delete | Удаляет веб-службу машинного обучения. |
+> | Microsoft.MachineLearning/webServices/listkeys/read | Получает ключи к веб-службе машинного обучения. |
+> | Microsoft.MachineLearning/Workspaces/read | Считывает рабочую область машинного обучения. |
+> | Microsoft.MachineLearning/Workspaces/write | Создает или обновляет рабочую область машинного обучения. |
+> | Microsoft.MachineLearning/Workspaces/delete | Удаляет рабочую область машинного обучения. |
+> | Microsoft.MachineLearning/Workspaces/listworkspacekeys/action | Выводит список ключей для рабочей области машинного обучения. |
+> | Microsoft.MachineLearning/Workspaces/resyncstoragekeys/action | Повторно синхронизирует ключи учетной записи хранения, настроенной для рабочей области машинного обучения. |
 
 ## <a name="internet-of-things"></a>"Интернет вещей"
 
@@ -5578,9 +5640,9 @@ ms.locfileid: "89227769"
 > | Microsoft. ApiManagement/служба/политика/удаление | Удаление конфигурации политики на уровне клиента |
 > | Microsoft. ApiManagement/Service/Полицидескриптионс/Read | Список всех описаний политик. |
 > | Microsoft.ApiManagement/service/policySnippets/read | Список всех фрагментов политик. |
-> | Microsoft.ApiManagement/service/portalsettings/read | Содержит коллекцию параметров портала. или получите параметры входа для портала или получите параметры регистрации для портала или получите параметры делегирования для портала. |
-> | Microsoft.ApiManagement/service/portalsettings/write | Обновите параметры входа. или создайте или обновите параметры входа. или обновить параметры регистрации или обновить параметры регистрации или изменить параметры делегирования. или создайте или обновите параметры делегирования. |
-> | Microsoft. ApiManagement/Service/порталсеттингс/Листсекретс/Action | Возвращает ключ проверки параметров делегирования портала. |
+> | Microsoft. ApiManagement/Service/Порталсеттингс/Read | Содержит коллекцию параметров портала. или получите параметры входа для портала или получите параметры регистрации для портала или получите параметры делегирования для портала. |
+> | Microsoft. ApiManagement/Service/Порталсеттингс/Write | Обновите параметры входа. или создайте или обновите параметры входа. или обновить параметры регистрации или обновить параметры регистрации или изменить параметры делегирования. или создайте или обновите параметры делегирования. |
+> | Microsoft. ApiManagement/Service/Порталсеттингс/Листсекретс/Action | Возвращает ключ проверки параметров делегирования портала. или получите URI контейнера BLOB-объектов мультимедийного содержимого. |
 > | Microsoft.ApiManagement/service/products/read | Перечисляет коллекцию продуктов в указанном экземпляре службы. или возвращает сведения о продукте, указанном по его идентификатору. |
 > | Microsoft.ApiManagement/service/products/write | Создает или обновляет продукт. или обновить существующие сведения о продукте. |
 > | Microsoft.ApiManagement/service/products/delete | Удаление продукта. |
@@ -6204,7 +6266,6 @@ ms.locfileid: "89227769"
 > | Microsoft. аадиам/Привателинкфоразуреад/запись | Создание и обновление определения политики для частных ссылок |
 > | Microsoft. аадиам/Привателинкфоразуреад/Delete | Удаление определения политики для закрытых ссылок |
 > | Microsoft. аадиам/Привателинкфоразуреад/Приватиндпоинтконнектионпроксиес/Read | Чтение прокси-серверов частной связи |
-> | Microsoft. аадиам/Привателинкфоразуреад/Приватиндпоинтконнектионпроксиес/запись | Создание и обновление прокси-серверов закрытых ссылок |
 > | Microsoft. аадиам/Привателинкфоразуреад/Приватиндпоинтконнектионпроксиес/Delete | Удаление прокси-серверов с закрытыми ссылками |
 > | Microsoft. аадиам/Привателинкфоразуреад/Приватиндпоинтконнектионпроксиес/проверка/действие | Проверка прокси-серверов закрытых ссылок |
 > | Microsoft. аадиам/Привателинкфоразуреад/Приватиндпоинтконнектионс/Read | Чтение Приватиндпоинтконнектионс |
@@ -6559,6 +6620,14 @@ ms.locfileid: "89227769"
 > | Microsoft. Секуритинсигхтс/среатинтеллиженце/метрики/действие | Сбор метрик анализа угроз |
 > | Microsoft. Секуритинсигхтс/среатинтеллиженце/Булкделете/Action | Групповое удаление аналитики угроз |
 > | Microsoft. Секуритинсигхтс/среатинтеллиженце/Булктаг/Action | Аналитика больших тегов с анализом угроз |
+> | Microsoft. Секуритинсигхтс/среатинтеллиженце/индикаторы/чтение | Получение индикаторов аналитики угроз |
+> | Microsoft. Секуритинсигхтс/среатинтеллиженце/индикаторы/запись | Обновляет индикаторы аналитики угроз |
+> | Microsoft. Секуритинсигхтс/среатинтеллиженце/индикаторы/Удаление | Удаление индикаторов аналитики угроз |
+> | Microsoft. Секуритинсигхтс/среатинтеллиженце/индикаторы/запрос/действие | Запрос индикаторов аналитики угроз |
+> | Microsoft. Секуритинсигхтс/среатинтеллиженце/индикаторы/метрики/действие | Получение метрик индикатора для аналитики угроз |
+> | Microsoft. Секуритинсигхтс/среатинтеллиженце/индикаторы/Аппендтагс/действие | Добавление тегов к индикатору аналитики угроз |
+> | Microsoft. Секуритинсигхтс/среатинтеллиженце/индикаторы/Булкделете/действие | Групповое удаление индикаторов аналитики угроз |
+> | Microsoft. Секуритинсигхтс/среатинтеллиженце/индикаторы/Булктаг/действие | Групповые Теги индикаторы логики операций с угрозами |
 > | Microsoft. Секуритинсигхтс/Ватчлистс/Read | Возвращает Ватчлистс |
 > | Microsoft. Секуритинсигхтс/Ватчлистс/запись | Создание Ватчлистс |
 > | Microsoft. Секуритинсигхтс/Ватчлистс/Delete | Удаляет Ватчлистс |
@@ -7695,6 +7764,8 @@ ms.locfileid: "89227769"
 > | Microsoft. OperationalInsights/рабочие области/запрос/Адтевентраутесоператион/чтение | Чтение данных из таблицы Адтевентраутесоператион |
 > | Microsoft. OperationalInsights/рабочие области/запрос/Адтмоделсоператион/чтение | Чтение данных из таблицы Адтмоделсоператион |
 > | Microsoft. OperationalInsights/рабочие области/запрос/Адткуерйоператион/чтение | Чтение данных из таблицы Адткуерйоператион |
+> | Microsoft. OperationalInsights/рабочие области/запрос/Адкскомманд/чтение | Чтение данных из таблицы Адкскомманд |
+> | Microsoft. OperationalInsights/рабочие области/запрос/Адкскуери/чтение | Чтение данных из таблицы Адкскуери |
 > | Microsoft. OperationalInsights/рабочие области/запрос/Аегделиверифаилурелогс/чтение | Чтение данных из таблицы Аегделиверифаилурелогс |
 > | Microsoft. OperationalInsights/рабочие области/запрос/Аегпублишфаилурелогс/чтение | Чтение данных из таблицы Аегпублишфаилурелогс |
 > | Microsoft.OperationalInsights/workspaces/query/Alert/read | Чтение данных из таблицы Alert. |
@@ -8929,6 +9000,7 @@ ms.locfileid: "89227769"
 > | Microsoft. Полициинсигхтс/аттестации/чтение | Получение аттестаций состояния соответствия. |
 > | Microsoft. Полициинсигхтс/аттестации/запись | Создание или обновление аттестаций состояния соответствия. |
 > | Microsoft. Полициинсигхтс/аттестации/удаление | Удаление аттестаций состояния соответствия. |
+> | Microsoft. Полициинсигхтс/Чеккполицирестриктионс/Read | Получение сведений об ограничениях, которые политика будет применять к ресурсу. |
 > | Microsoft. Полициинсигхтс/операции/чтение | Получение поддерживаемых операций для пространства имен Microsoft. Полициинсигхтс |
 > | Microsoft.PolicyInsights/policyEvents/queryResults/action | Запрашивает сведения о событиях политики. |
 > | Microsoft.PolicyInsights/policyEvents/queryResults/read | Запрашивает сведения о событиях политики. |
@@ -9307,7 +9379,7 @@ ms.locfileid: "89227769"
 > | Microsoft.Intune/diagnosticsettings/delete | Удаление параметра диагностики. |
 > | Microsoft.Intune/diagnosticsettingscategories/read | Чтение категорий параметра диагностики. |
 
-## <a name="other"></a>Другое
+## <a name="other"></a>Другие
 
 ### <a name="microsoftbingmaps"></a>Microsoft.BingMaps
 

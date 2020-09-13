@@ -5,13 +5,13 @@ services: logic-apps
 ms.suite: integration
 ms.reviewer: estfan, logicappspm
 ms.topic: conceptual
-ms.date: 08/26/2020
-ms.openlocfilehash: e4f9fa554a7c0e45abe1e9686605c95bb79d1739
-ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
+ms.date: 09/04/2020
+ms.openlocfilehash: c8bc9e844687c85255be972011eba03e9c38de48
+ms.sourcegitcommit: de2750163a601aae0c28506ba32be067e0068c0c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88932956"
+ms.lasthandoff: 09/04/2020
+ms.locfileid: "89488309"
 ---
 # <a name="reference-guide-to-using-functions-in-expressions-for-azure-logic-apps-and-power-automate"></a>Справочное руководство по использованию функций в выражениях для Azure Logic Apps и Power Automate
 
@@ -85,6 +85,7 @@ ms.locfileid: "88932956"
 | [guid](../logic-apps/workflow-definition-language-functions-reference.md#guid) | Создает глобально уникальный идентификатор (GUID) в виде строки. |
 | [indexOf](../logic-apps/workflow-definition-language-functions-reference.md#indexof) | Возвращает начальную позицию подстроки. |
 | [lastIndexOf](../logic-apps/workflow-definition-language-functions-reference.md#lastindexof) | Возвращает начальную позицию последнего вхождения подстроки. |
+| [length](../logic-apps/workflow-definition-language-functions-reference.md#length) | Возвращает число элементов в строке или массиве. |
 | [replace](../logic-apps/workflow-definition-language-functions-reference.md#replace) | Заменяет подстроку указанной строкой и возвращает обновленную строку. |
 | [split](../logic-apps/workflow-definition-language-functions-reference.md#split) | Возвращает массив, содержащий подстроки, разделенные запятыми, из большей строки, основываясь на указанном символе разделителя в исходной строке. |
 | [startsWith](../logic-apps/workflow-definition-language-functions-reference.md#startswith) | Проверяет, начинается ли строка с определенной подстроки. |
@@ -1135,7 +1136,7 @@ bool(<value>)
 
 | Возвращаемое значение | Тип | Описание |
 | ------------ | ---- | ----------- |
-| `true` или `false` | Логическое | Логическая версия указанного значения. |
+| `true` или `false` | Логическое значение | Логическая версия указанного значения. |
 ||||
 
 *Выходные данные*
@@ -3914,8 +3915,7 @@ sub(10.3, .3)
 
 ### <a name="substring"></a>substring
 
-Возвращает символы из строки, начиная с указанной позиции или индекса.
-Значения индекса начинаются с числа 0.
+Возвращает символы из строки, начиная с указанной позиции или индекса. Значения индекса начинаются с числа 0.
 
 ```
 substring('<text>', <startIndex>, <length>)
@@ -3927,6 +3927,10 @@ substring('<text>', <startIndex>, <length>)
 | <*startIndex*> | Да | Целое число | Положительное число (или 0), которое следует использовать как начальную позицию или значение индекса. |
 | <*length*> | Да | Целое число | Положительное число символов для подстроки |
 |||||
+
+> [!NOTE]
+> Убедитесь, что сумма, из которой добавляются значения параметров *startIndex* и *length* , меньше длины строки, которую вы задаете для параметра *Text* .
+> В противном случае возникнет ошибка, в отличие от аналогичных функций на других языках, где результатом является подстрока от *startIndex* до конца строки.
 
 | Возвращаемое значение | Тип | Описание |
 | ------------ | ---- | ----------- |
