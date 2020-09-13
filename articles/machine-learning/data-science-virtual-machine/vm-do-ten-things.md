@@ -10,12 +10,12 @@ author: lobrien
 ms.author: laobri
 ms.topic: conceptual
 ms.date: 05/08/2020
-ms.openlocfilehash: dba0f22f1dfece7edd92a80ae1c3a91616a4236c
-ms.sourcegitcommit: d39f2cd3e0b917b351046112ef1b8dc240a47a4f
+ms.openlocfilehash: b570968a66a0cfd60ac4d6ce6dd7dc31a1003240
+ms.sourcegitcommit: bf1340bb706cf31bb002128e272b8322f37d53dd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88815935"
+ms.lasthandoff: 09/03/2020
+ms.locfileid: "89440462"
 ---
 # <a name="data-science-with-a-windows-data-science-virtual-machine"></a>Обработка и анализ данных с помощью виртуальной машины Windows для обработки и анализа данных
 
@@ -255,7 +255,7 @@ print 'the size of the data is: %d rows and  %d columns' % df1.shape
 ### <a name="azure-synapse-analytics-formerly-sql-dw-and-databases"></a>Azure синапсе Analytics (ранее SQL DW) и базы данных
 Azure синапсе Analytics (ранее SQL DW) — это хранилище эластичных данных как услуга с SQL Server корпоративного класса.
 
-Вы можете подготавливать Azure синапсе Analytics, выполнив инструкции, приведенные в [этой статье](../../sql-data-warehouse/sql-data-warehouse-get-started-provision.md). После подготовки хранилища данных SQL вы можете использовать [это пошаговое руководство](../team-data-science-process/sqldw-walkthrough.md) для передачи, просмотра и моделирования данных с помощью данных в хранилище данных SQL.
+Вы можете подготавливать Azure синапсе Analytics, выполнив инструкции, приведенные в [этой статье](../../sql-data-warehouse/sql-data-warehouse-get-started-provision.md). После того как вы подготавливаете Azure синапсе Analytics, вы можете использовать [это пошаговое руководство](../team-data-science-process/sqldw-walkthrough.md) для отправки, просмотра и моделирования данных с помощью данных в Azure синапсе Analytics.
 
 #### <a name="azure-cosmos-db"></a>Azure Cosmos DB
 Azure Cosmos DB — это база данных NoSQL в облаке. Его можно использовать для работы с документами, такими как JSON, а также для хранения и запроса документов.

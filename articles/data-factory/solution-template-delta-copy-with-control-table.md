@@ -12,12 +12,12 @@ ms.workload: data-services
 ms.topic: conceptual
 ms.custom: seo-lt-2019
 ms.date: 12/24/2018
-ms.openlocfilehash: 4da54318bea21daf9ec363be61bea18adaa2ce63
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 255e4085e24ee7520c603f8a00b3e46c23367a77
+ms.sourcegitcommit: bf1340bb706cf31bb002128e272b8322f37d53dd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "82629038"
+ms.lasthandoff: 09/03/2020
+ms.locfileid: "89442009"
 ---
 # <a name="delta-copy-from-a-database-with-a-control-table"></a>Разностное копирование из базы данных с помощью управляющей таблицы
 
@@ -140,7 +140,7 @@ ms.locfileid: "82629038"
 
     Вы увидите, что в назначение были скопированы только новые строки.
 
-15. Используемых Если вы выбрали Azure синапсе Analytics (ранее SQL DW) в качестве назначения данных, необходимо также предоставить подключение к хранилищу BLOB-объектов Azure для промежуточного хранения, которое требуется для polybase хранилища данных SQL. Шаблон создаст путь к контейнеру. После выполнения конвейера проверьте, создан ли контейнер в хранилище BLOB-объектов.
+15. Используемых При выборе Azure синапсе Analytics (прежнее название — SQL DW) в качестве назначения данных необходимо также предоставить подключение к хранилищу BLOB-объектов Azure для промежуточного хранения, которое требуется для Azure синапсе Analytics (ранее — хранилище данных SQL) polybase. Шаблон создаст путь к контейнеру. После выполнения конвейера проверьте, создан ли контейнер в хранилище BLOB-объектов.
     
     ![Настройка PolyBase](media/solution-template-delta-copy-with-control-table/DeltaCopyfromDB_with_ControlTable15.png)
     

@@ -11,12 +11,12 @@ author: djpmsft
 manager: anandsub
 ms.custom: seo-lt-2019
 ms.date: 01/04/2019
-ms.openlocfilehash: b5e4512030431b6d2e5d0f849e82a281c882b177
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 515de0fed987f412adb060a3ba58978f0400ae0d
+ms.sourcegitcommit: bf1340bb706cf31bb002128e272b8322f37d53dd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "82628952"
+ms.lasthandoff: 09/03/2020
+ms.locfileid: "89441975"
 ---
 # <a name="templates"></a>Шаблоны
 
@@ -56,7 +56,7 @@ ms.locfileid: "82628952"
 
     -   [Разностное копирование из базы данных](solution-template-delta-copy-with-control-table.md)
 
-    -   Копировать из \<source\> в\<destination\>
+    -   Копировать из \<source\> в \<destination\>
 
         -   [Из Amazon S3 в Azure Data Lake Store 2-го поколения](solution-template-migration-s3-azure.md)
 
@@ -68,9 +68,9 @@ ms.locfileid: "82628952"
 
         -   Из локального экземпляра SQL Server в Базу данных SQL Azure
 
-        -   Из локального экземпляра SQL Server в Хранилище данных SQL Azure
+        -   Из SQL Server локальной среды в Azure синапсе Analytics (ранее — хранилище данных SQL)
 
-        -   Из локального экземпляра Oracle в Хранилище данных SQL Azure
+        -   Из Oracle локально в Azure синапсе Analytics (ранее — хранилище данных SQL)
 
 -   Шаблоны SSIS
 

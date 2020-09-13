@@ -5,12 +5,12 @@ author: gundarev
 ms.topic: how-to
 ms.date: 05/06/2019
 ms.author: denisgun
-ms.openlocfilehash: 8a253723367681d947a9bd94c1505ab4cc156c08
-ms.sourcegitcommit: cd0a1ae644b95dbd3aac4be295eb4ef811be9aaa
+ms.openlocfilehash: 33b8d3f62ef45c6078f10535c6376f611472f5a2
+ms.sourcegitcommit: bf1340bb706cf31bb002128e272b8322f37d53dd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/19/2020
-ms.locfileid: "88612645"
+ms.lasthandoff: 09/03/2020
+ms.locfileid: "89441754"
 ---
 # <a name="configure-graphics-processing-unit-gpu-acceleration-for-windows-virtual-desktop"></a>Настройка ускорения графического процессора (GPU) для Виртуального рабочего стола Windows
 
@@ -67,7 +67,7 @@ Azure предоставляет несколько [размеров вирту
 
 2. Теперь, когда групповые политики изменены, принудительно обновите групповую политику. Откройте командную строку и введите:
 
-    ```batch
+    ```cmd
     gpupdate.exe /force
     ```
 
@@ -80,7 +80,7 @@ Azure предоставляет несколько [размеров вирту
 1. Выберите политику **Назначить приоритет графического режима H.264/AVC 444 для подключений к удаленному рабочему столу** и задайте для нее значение **Включено**, чтобы принудительно использовать кодек H.264/AVC 444 в удаленном сеансе.
 2. Теперь, когда групповые политики изменены, принудительно обновите групповую политику. Откройте командную строку и введите:
 
-    ```batch
+    ```cmd
     gpupdate.exe /force
     ```
 

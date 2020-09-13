@@ -11,12 +11,12 @@ ms.topic: article
 ms.date: 01/10/2020
 ms.author: tdsp
 ms.custom: seodec18, devx-track-python, previous-author=deguhath, previous-ms.author=deguhath
-ms.openlocfilehash: 21bede74ee265ffbe530c7697817186ac0e8dd3b
-ms.sourcegitcommit: 7fe8df79526a0067be4651ce6fa96fa9d4f21355
+ms.openlocfilehash: 59935d2659d27059617059c021fef9b6a2b552e0
+ms.sourcegitcommit: bf1340bb706cf31bb002128e272b8322f37d53dd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87845703"
+ms.lasthandoff: 09/03/2020
+ms.locfileid: "89440207"
 ---
 # <a name="the-team-data-science-process-in-action-using-azure-synapse-analytics"></a>Процесс обработки и анализа данных группы в действии: использование Azure синапсе Analytics
 В этом учебнике мы пошаговым руководством по созданию и развертыванию модели машинного обучения с помощью Azure синапсе Analytics для общедоступного набора данных — набора данных о [поездках в такси Нью](https://www.andresmh.com/nyctaxitrips/) . Созданная модель двоичной классификации прогнозирует, оплачивается ли TIP для поездки.  Модели включают в себя многоклассовую классификацию (будь то TIP) и регрессия (распределение для оплаченных сумм советов).
@@ -91,14 +91,14 @@ ms.locfileid: "87845703"
   * **Имя контейнера** (контейнер в хранилище BLOB-объектов Azure, где будут храниться данные)
 
 **Подготавливает экземпляр Azure синапсе Analytics.**
-Следуйте инструкциям в статье [Создание и запрос к хранилищу данных SQL Azure в портал Azure](../../synapse-analytics/sql-data-warehouse/create-data-warehouse-portal.md) для предоставления экземпляра Azure синапсе Analytics. Убедитесь, что вы захотите создать нотации на следующих учетных данных Azure синапсе Analytics, которые будут использоваться на последующих шагах.
+Следуйте указаниям в документации по [созданию и запросу Azure синапсе Analytics в портал Azure](../../synapse-analytics/sql-data-warehouse/create-data-warehouse-portal.md) для предоставления экземпляра Azure синапсе Analytics. Убедитесь, что вы захотите создать нотации на следующих учетных данных Azure синапсе Analytics, которые будут использоваться на последующих шагах.
 
 * **Имя сервера**: \<server Name> . Database.Windows.NET
 * **имя (базы данных) хранилища данных SQL;**
 * **Имя пользователя**
 * **Пароль**
 
-**Установите Visual Studio и SQL Server Data Tools.** Инструкции см. в статье [Приступая к работе с Visual Studio 2019 для хранилища данных SQL](../../synapse-analytics/sql-data-warehouse/sql-data-warehouse-install-visual-studio.md).
+**Установите Visual Studio и SQL Server Data Tools.** Инструкции см. в статье [Приступая к работе с Visual Studio 2019 для Azure синапсе Analytics](../../synapse-analytics/sql-data-warehouse/sql-data-warehouse-install-visual-studio.md).
 
 **Подключитесь к Azure синапсе Analytics с помощью Visual Studio.** Инструкции см. в разделе шаги 1 & 2 раздела [Подключение к аналитике SQL в Azure синапсе Analytics](../../synapse-analytics/sql/connect-overview.md).
 
@@ -1006,7 +1006,7 @@ pd.read_sql(query,conn)
 
 ![Публикация Машинного обучения Azure][11]
 
-## <a name="summary"></a>Итоги
+## <a name="summary"></a>Сводка
 Итак, в этом пошаговом руководстве мы создали среду обработки и анализа данных, работали с большим общедоступным набором данных на протяжении всего процесса обработки и анализа данных группы от получения данных до обучения модели и развертывания веб-службы машинного обучения Azure.
 
 ### <a name="license-information"></a>Сведения о лицензии
