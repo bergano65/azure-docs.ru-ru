@@ -7,13 +7,13 @@ ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: how-to
 ms.custom: seoapr2020
-ms.date: 04/21/2020
-ms.openlocfilehash: 383c64c585f05869e1d01b5c99693fcf560cdedc
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.date: 09/02/2020
+ms.openlocfilehash: b30a7822511dc6b4c3ae7e852cba49ebff6e24ad
+ms.sourcegitcommit: 5a3b9f35d47355d026ee39d398c614ca4dae51c6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87006677"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89400863"
 ---
 # <a name="customize-azure-hdinsight-clusters-by-using-script-actions"></a>Настройка кластеров Azure HDInsight с помощью действий сценариев
 
@@ -66,13 +66,15 @@ Azure HDInsight предоставляет метод настройки, наз
 
     Действия сохраняемых скриптов должны иметь уникальные имена. Сохраняемые сценарии применяются при настройке новых рабочих узлов, добавленных в кластер при операциях масштабирования. Сохраняемый сценарий может также применять изменения к узлу другого типа при операциях масштабирования. Примером является головной узел.
 
-    `Ad hoc`скрипты не сохраняются. Действия скриптов, используемые при создании кластера, автоматически сохраняются. Они не применяются на рабочих узлах, добавленных в кластер после выполнения сценария. Затем можно повысить уровень `ad hoc` скрипта до сохраненного скрипта или понизить сохраненный скрипт до `ad hoc` скрипта. Сценарии, в которых произошла ошибка, не сохраняются, даже если вы отдельно указали, что они должны быть сохранены.
+    `Ad hoc` скрипты не сохраняются. Действия скриптов, используемые при создании кластера, автоматически сохраняются. Они не применяются на рабочих узлах, добавленных в кластер после выполнения сценария. Затем можно повысить уровень `ad hoc` скрипта до сохраненного скрипта или понизить сохраненный скрипт до `ad hoc` скрипта. Сценарии, в которых произошла ошибка, не сохраняются, даже если вы отдельно указали, что они должны быть сохранены.
 
 * Действия сценария могут принимать параметры, используемые в процессе выполнения сценария.
 
 * Они выполняются с помощью прав привилегированного пользователя на узлах кластера.
 
 * Можно использовать с помощью пакета SDK .NET для портал Azure, Azure PowerShell, Azure CLI или HDInsight.
+
+* Действия сценария, которые удаляют или изменяют файлы службы на виртуальной машине, могут повлиять на работоспособность и доступность службы.
 
 В кластере ведется журнал всех сценариев, которые в нем выполнялись. Это позволяет определить идентификатор сценария для операций повышения или понижения уровня сценария.
 
@@ -124,14 +126,14 @@ Status            : Succeeded
 
 Сценарии действия сценария можно использовать с помощью следующих служебных программ:
 
-* портал Azure;
+* Портал Azure
 * Azure PowerShell
 * Azure CLI
 * Пакет SDK для HDInsight .NET
 
 В HDInsight доступны скрипты для установки следующих компонентов в кластерах HDInsight.
 
-| Имя | Скрипт |
+| Имя | Сценарий |
 | --- | --- |
 | добавление учетной записи хранения Azure; |`https://hdiconfigactions.blob.core.windows.net/linuxaddstorageaccountv01/add-storage-account-v01.sh`. Ознакомьтесь со статьей [Добавление дополнительных учетных записей хранения в HDInsight](hdinsight-hadoop-add-storage.md). |
 | установка Hue; |`https://hdiconfigactions.blob.core.windows.net/linuxhueconfigactionv02/install-hue-uber-v02.sh`. Ознакомьтесь со статьей [Установка и использование Hue на кластерах HDInsight Hadoop](hdinsight-hadoop-hue-linux.md). |
@@ -306,7 +308,7 @@ NodeTypes       : {HeadNode, WorkerNode}
 
 ### <a name="azure-powershell"></a>Azure PowerShell
 
-| командлет | Компонент |
+| командлет | Функция |
 | --- | --- |
 | `Get-AzHDInsightPersistedScriptAction` |Получение сведений о действиях сохраняемого сценария Этот командлет не отменяет действия, выполняемые сценарием, он удаляет только флаг PERSISTED.|
 | `Get-AzHDInsightScriptActionHistory` |Получение журнала действий сценариев, применяемых в кластере, или сведений о конкретном сценарии. |
@@ -319,7 +321,7 @@ NodeTypes       : {HeadNode, WorkerNode}
 
 ### <a name="azure-cli"></a>Azure CLI
 
-| Команда | Описание |
+| Get-Help | Описание |
 | --- | --- |
 | [`az hdinsight script-action delete`](https://docs.microsoft.com/cli/azure/hdinsight/script-action?view=azure-cli-latest#az-hdinsight-script-action-delete) |Удаляет указанное действие сохраненного скрипта в кластере. Эта команда не отменяет действия, выполненные сценарием, но удаляет только флаг PERSISTED.|
 |[`az hdinsight script-action execute`](https://docs.microsoft.com/cli/azure/hdinsight/script-action?view=azure-cli-latest#az-hdinsight-script-action-execute)|Для выполнения действий скриптов в указанном кластере HDInsight.|

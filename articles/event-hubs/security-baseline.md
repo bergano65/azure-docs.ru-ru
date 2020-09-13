@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 03/25/2020
 ms.author: mbaldwin
 ms.custom: subject-security-benchmark
-ms.openlocfilehash: a6beb1023b3c934cdbb4b7dc479d87e23a7c96be
-ms.sourcegitcommit: d68c72e120bdd610bb6304dad503d3ea89a1f0f7
+ms.openlocfilehash: f47e9cb93b90c8a2401d1dfe6c0ff7800b0bcf27
+ms.sourcegitcommit: 5a3b9f35d47355d026ee39d398c614ca4dae51c6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/01/2020
-ms.locfileid: "89230370"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89401135"
 ---
 # <a name="azure-security-baseline-for-event-hubs"></a>Базовый уровень безопасности Azure для концентраторов событий
 
@@ -882,9 +882,11 @@ https://azuremarketplace.microsoft.com/marketplace/?term=Firewall
 
 Интеграция с управляемыми удостоверениями Azure: https://docs.microsoft.com/azure/azure-app-configuration/howto-integrate-azure-managed-service-identity
 
-Создание Key Vault: https://docs.microsoft.com/azure/key-vault/quick-create-portal
+Создание Key Vault: https://docs.microsoft.com/azure/key-vault/general/quick-create-portal
 
-Проверка подлинности в Key Vault с помощью управляемого удостоверения: https://docs.microsoft.com/azure/key-vault/managed-identity
+Проверка подлинности в Key Vault: https://docs.microsoft.com/azure/key-vault/general/authentication
+
+Назначение политики доступа Key Vault. https://docs.microsoft.com/azure/key-vault/general/assign-access-policy-portal
 
 **Мониторинг Центра безопасности Azure**: Да
 
@@ -924,11 +926,11 @@ https://azuremarketplace.microsoft.com/marketplace/?term=Firewall
 
 ### <a name="81-use-centrally-managed-anti-malware-software"></a>8.1. Использование централизованно управляемого программного обеспечения для защиты от вредоносных программ
 
-**Руководство**: Неприменимо; эта рекомендация предназначена для вычислительных ресурсов.
+**Руководство**. Неприменимо; эта рекомендация предназначена для вычислительных ресурсов.
 
 Защита от вредоносных программ Майкрософт включена на базовом узле, поддерживающем службы Azure (например, служба приложений Azure), но не выполняется в содержимом клиента.
 
-**Мониторинг Центра безопасности Azure**: Неприменимо
+**Мониторинг центра безопасности Azure**: Неприменимо
 
 **Ответственность**: Неприменимо
 
@@ -944,7 +946,7 @@ https://azuremarketplace.microsoft.com/marketplace/?term=Firewall
 
 ### <a name="83-ensure-anti-malware-software-and-signatures-are-updated"></a>8.3. Своевременное обновление программного обеспечения для защиты от вредоносных программ и подписей
 
-**Рекомендации**. Неприменимо. Эта рекомендация предназначена для вычислительных ресурсов.
+**Руководство**. Неприменимо; эта рекомендация предназначена для вычислительных ресурсов.
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 

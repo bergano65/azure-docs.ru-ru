@@ -3,20 +3,20 @@ title: Мониторинг метрик и журналов в передней
 description: В этой статье описываются различные показатели и журналы доступа, поддерживаемые интерфейсом передней дверцы Azure.
 services: frontdoor
 documentationcenter: ''
-author: sharad4u
+author: duongau
 ms.service: frontdoor
 ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 09/18/2018
-ms.author: sharadag
-ms.openlocfilehash: 249b2406f048709fd7e4f76f8272b3158708e5bb
-ms.sourcegitcommit: 269da970ef8d6fab1e0a5c1a781e4e550ffd2c55
+ms.author: duau
+ms.openlocfilehash: 6f5051dd7dedcc49320557f17148bcdc9bf539ab
+ms.sourcegitcommit: 5a3b9f35d47355d026ee39d398c614ca4dae51c6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/10/2020
-ms.locfileid: "88056437"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89399758"
 ---
 # <a name="monitoring-metrics-and-logs-in-azure-front-door"></a>Мониторинг метрик и журналов в передней дверце Azure
 

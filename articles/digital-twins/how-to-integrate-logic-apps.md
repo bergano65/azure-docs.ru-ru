@@ -8,18 +8,18 @@ ms.date: 8/14/2020
 ms.topic: how-to
 ms.service: digital-twins
 ms.reviewer: baanders
-ms.openlocfilehash: 2fc2db54217756ba0f4f7d643b1bc12ad2668209
-ms.sourcegitcommit: ac7ae29773faaa6b1f7836868565517cd48561b2
+ms.openlocfilehash: 20959709854f8366cc067437fe86c245fcbc3ef0
+ms.sourcegitcommit: 5a3b9f35d47355d026ee39d398c614ca4dae51c6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88848836"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89401067"
 ---
 # <a name="integrate-with-logic-apps-using-a-custom-connector"></a>Интеграция с Logic Apps с помощью настраиваемого соединителя
 
 [Azure Logic Apps](../logic-apps/logic-apps-overview.md) — это облачная служба, которая помогает автоматизировать рабочие процессы в приложениях и службах. Подключив Logic Apps к API-интерфейсам Azure Digital двойников, вы можете создавать такие автоматизированные потоки в Azure Digital двойников и их данные.
 
-В Azure Digital двойников в настоящее время нет сертифицированного (предварительно созданного) соединителя для Logic Apps. Вместо этого текущий процесс использования Logic Apps с Azure Digital двойников заключается в создании [**настраиваемого соединителя Logic Apps**](../logic-apps/custom-connector-overview.md)с помощью [пользовательского файла Swagger цифрового двойникова Azure](https://github.com/Azure-Samples/digital-twins-custom-swaggers/blob/main/LogicApps/preview/2020-05-31-preview/digitaltwins.json) , который был изменен для работы с Logic Apps.
+В Azure Digital двойников в настоящее время нет сертифицированного (предварительно созданного) соединителя для Logic Apps. Вместо этого текущий процесс использования Logic Apps с Azure Digital двойников заключается в создании [**настраиваемого соединителя Logic Apps**](../logic-apps/custom-connector-overview.md)с помощью [настраиваемого цифрового Двойникова Swagger Azure](https://docs.microsoft.com/samples/azure-samples/digital-twins-custom-swaggers/azure-digital-twins-custom-swaggers/) , который был изменен для работы с Logic Apps.
 
 В этой статье вы будете использовать [портал Azure](https://portal.azure.com) , чтобы **создать настраиваемый соединитель** , который можно использовать для подключения Logic apps к экземпляру Digital двойников Azure. Затем вы **создадите приложение логики** , которое использует это подключение для примера сценария, в котором события, активируемые таймером, будут автоматически обновлять двойника в вашем экземпляре Azure Digital двойников. 
 
@@ -29,7 +29,7 @@ ms.locfileid: "88848836"
 
 Войдите в [портал Azure](https://portal.azure.com) с помощью этой учетной записи.
 
-### <a name="set-up-azure-digital-twins-instance"></a>Настройка экземпляра Azure Digital двойников
+### <a name="set-up-azure-digital-twins-instance"></a>Настройка экземпляра Azure Digital Twins
 
 Чтобы подключиться к двойников экземпляру Azure Digital для Logic Apps в этой статье, вам потребуется уже настроенный **экземпляр Azure Digital двойников** . 
 
@@ -46,7 +46,7 @@ ms.locfileid: "88848836"
 
 Нажмите *Сертификаты и секреты* в меню регистрации и выберите *+ новый секрет клиента*.
 
-:::image type="content" source="media/how-to-integrate-logic-apps/client-secret.png" alt-text="Представление портала регистрации приложения Azure AD. В меню ресурсов есть выделение сертификаты и секреты, а также выделение на странице новый секрет клиента.":::
+:::image type="content" source="media/how-to-integrate-logic-apps/client-secret.png" alt-text="Представление портала регистрации приложения Azure AD. В меню ресурсов есть выделение "сертификаты и секреты", а также выделение на странице "новый секрет клиента".":::
 
 Введите любые значения для описания и истечения срока действия, а затем нажмите кнопку *Добавить*.
 Секрет будет добавлен в список секретов клиента на странице *Сертификаты и секреты* . Запишите значение, которое будет использоваться позже (вы также можете скопировать его в буфер обмена с помощью значка копирования).
@@ -65,11 +65,11 @@ ms.locfileid: "88848836"
 
 Перейдите на страницу [Logic Apps настраиваемый соединитель](https://portal.azure.com/#blade/HubsExtension/BrowseResourceBlade/resourceType/Microsoft.Web%2FcustomApis) в портал Azure (эту ссылку можно использовать или найти на панели поиска портала). Нажмите *+ Добавить*.
 
-:::image type="content" source="media/how-to-integrate-logic-apps/logic-apps-custom-connector.png" alt-text="Страница Logic Apps пользовательский соединитель в портал Azure. Выделение вокруг кнопки Добавить":::
+:::image type="content" source="media/how-to-integrate-logic-apps/logic-apps-custom-connector.png" alt-text="Страница "Logic Apps пользовательский соединитель" в портал Azure. Выделение вокруг кнопки "Добавить"":::
 
 На следующей странице *создание Logic Apps пользовательского соединителя* выберите подписку и группу ресурсов, а также имя и расположение развертывания для нового соединителя. Нажмите кнопку " *Проверка" + "создать*". Откроется вкладка *Просмотр и создание* , где можно нажать кнопку *создать* внизу, чтобы создать ресурс.
 
-:::image type="content" source="media/how-to-integrate-logic-apps/create-logic-apps-custom-connector.png" alt-text="Вкладка Проверка и создание страницы Создание Logic Apps пользовательского соединителя в портал Azure. Выделение вокруг кнопки создать":::
+:::image type="content" source="media/how-to-integrate-logic-apps/create-logic-apps-custom-connector.png" alt-text="Вкладка "Проверка и создание" страницы "Создание Logic Apps пользовательского соединителя" в портал Azure. Выделение вокруг кнопки "создать"":::
 
 Откроется страница развертывания для соединителя. После завершения развертывания нажмите кнопку *Перейти к ресурсу* , чтобы просмотреть сведения о соединителе на портале.
 
@@ -77,17 +77,17 @@ ms.locfileid: "88848836"
 
 Далее вы настроите созданный соединитель для доступа к Azure Digital двойников.
 
-Сначала скачайте пользовательский файл Swagger Microsoft Azure Digital двойников, который был изменен для работы с Logic Apps. Скачайте *digitaltwins.jsпо* [этой ссылке](https://github.com/Azure-Samples/digital-twins-custom-swaggers/blob/main/LogicApps/preview/2020-05-31-preview/digitaltwins.json).
+Сначала скачайте пользовательский файл Swagger Microsoft Azure Digital двойников, который был изменен для работы с Logic Apps. Скачайте образец **пользовательских Swagger Azure Digital двойников** по [этой ссылке](https://docs.microsoft.com/samples/azure-samples/digital-twins-custom-swaggers/azure-digital-twins-custom-swaggers/) , нажав кнопку *скачать ZIP-файл* . Перейдите к скачанной папке *Azure_Digital_Twins_Custom_Swaggers.zip* и распакуйте ее. Пользовательский Swagger для этого учебника находится по адресу *Azure_Digital_Twins_Custom_Swaggers\LogicApps\preview\2020-05-31-preview\digitaltwins.js*.
 
-Затем на странице обзора вашего соединителя в портал Azure нажмите кнопку *изменить*.
+Затем перейдите на страницу обзора соединителя в [портал Azure](https://portal.azure.com) и нажмите кнопку *изменить*.
 
-:::image type="content" source="media/how-to-integrate-logic-apps/edit-connector.png" alt-text="Страница Обзор для соединителя, созданного на предыдущем шаге. Выделение вокруг кнопки Изменить":::
+:::image type="content" source="media/how-to-integrate-logic-apps/edit-connector.png" alt-text="Страница "Обзор" для соединителя, созданного на предыдущем шаге. Выделение вокруг кнопки "Изменить"":::
 
 На странице *изменение Logic Apps пользовательского соединителя* настройте следующие сведения:
 * **Настраиваемые соединители**
     - Конечная точка API: ОСТАВШАЯся (оставьте значение по умолчанию)
     - Режим импорта: OpenAPI-файл (оставьте значение по умолчанию)
-    - Файл. это будет пользовательский файл Swagger, скачанный ранее. Нажмите кнопку *Импорт*, выберите файл на компьютере и нажмите кнопку *Открыть*.
+    - Файл. это будет пользовательский файл Swagger, скачанный ранее. Нажмите кнопку *Импорт*, выберите файл на компьютере (*Azure_Digital_Twins_Custom_Swaggers\LogicApps\preview\2020-05-31-preview\digitaltwins.jsна*) и нажмите кнопку *Открыть*.
 * **Общие сведения**
     - Значок, цвет фона значка, описание: заполните все нужные значения.
     - Схема: HTTPS (оставьте значение по умолчанию)
@@ -96,7 +96,7 @@ ms.locfileid: "88848836"
 
 Затем нажмите кнопку *Безопасность* в нижней части окна, чтобы перейти к следующему шагу настройки.
 
-:::image type="content" source="media/how-to-integrate-logic-apps/configure-next.png" alt-text="Снимок экрана с нижней частью страницы изменение Logic Apps пользовательского соединителя. Выделить кнопку вокруг кнопки, чтобы перейти к безопасности":::
+:::image type="content" source="media/how-to-integrate-logic-apps/configure-next.png" alt-text="Снимок экрана с нижней частью страницы "изменение Logic Apps пользовательского соединителя". Выделить кнопку вокруг кнопки, чтобы перейти к безопасности":::
 
 На этапе безопасности нажмите кнопку *изменить* и настройте следующие сведения:
 * **Тип проверки подлинности**: OAuth 2,0
@@ -112,13 +112,13 @@ ms.locfileid: "88848836"
 
 Обратите внимание, что в поле URL-адрес перенаправления указано *Сохранение пользовательского соединителя для создания URL-адреса перенаправления*. Сделайте это сейчас, щелкнув *соединитель обновления* в верхней части панели, чтобы подтвердить параметры соединителя.
 
-:::image type="content" source="media/how-to-integrate-logic-apps/update-connector.png" alt-text="Снимок экрана с верхней частью страницы изменение Logic Apps пользовательского соединителя. Выделить кнопку обновить соединитель":::
+:::image type="content" source="media/how-to-integrate-logic-apps/update-connector.png" alt-text="Снимок экрана с верхней частью страницы "изменение Logic Apps пользовательского соединителя". Выделить кнопку "обновить соединитель"":::
 
 <!-- Success message? didn't see one -->
 
 Вернитесь в поле URL-адрес перенаправления и скопируйте созданное значение. Он будет использован на следующем шаге.
 
-:::image type="content" source="media/how-to-integrate-logic-apps/copy-redirect-url.png" alt-text="В поле URL-адрес перенаправления на странице изменить Logic Apps настраиваемый соединитель теперь имеется значение  https://logic-apis-westus2.consent.azure-apim.net/redirect . Кнопка для копирования значения выделяется.":::
+:::image type="content" source="media/how-to-integrate-logic-apps/copy-redirect-url.png" alt-text="В поле URL-адрес перенаправления на странице "изменить Logic Apps настраиваемый соединитель" теперь имеется значение " https://logic-apis-westus2.consent.azure-apim.net/redirect ". Кнопка для копирования значения выделяется.":::
 
 Это все сведения, необходимые для создания соединителя (нет необходимости продолжать предыдущую защиту на шаге определения). Вы можете закрыть панель *изменить Logic Apps пользовательский соединитель* .
 
@@ -133,11 +133,11 @@ ms.locfileid: "88848836"
 
 В разделе *Проверка подлинности* в меню регистрации Добавьте URI.
 
-:::image type="content" source="media/how-to-integrate-logic-apps/add-uri.png" alt-text="Страница проверки подлинности для регистрации приложения в портал Azure. Элемент Authentication в меню выделяется, и на странице выделяется кнопка обавить URI."::: 
+:::image type="content" source="media/how-to-integrate-logic-apps/add-uri.png" alt-text="Страница проверки подлинности для регистрации приложения в портал Azure. Элемент "Authentication" в меню выделяется, и на странице выделяется кнопка "добавить URI"."::: 
 
 Введите *URL-адрес перенаправления* пользовательского соединителя в новое поле и нажмите значок *сохранить* .
 
-:::image type="content" source="media/how-to-integrate-logic-apps/save-uri.png" alt-text="Страница проверки подлинности для регистрации приложения в портал Azure. Будет выделен новый URL-адрес перенаправления и кнопка Сохранить для этой страницы.":::
+:::image type="content" source="media/how-to-integrate-logic-apps/save-uri.png" alt-text="Страница проверки подлинности для регистрации приложения в портал Azure. Будет выделен новый URL-адрес перенаправления и кнопка "Сохранить" для этой страницы.":::
 
 Теперь вы настроили настраиваемый соединитель, который может получить доступ к API-интерфейсам цифровых двойников Azure. 
 
@@ -147,7 +147,7 @@ ms.locfileid: "88848836"
 
 Перейдите на страницу [Logic Apps](https://portal.azure.com/#blade/HubsExtension/BrowseResourceBlade/resourceType/Microsoft.Logic%2Fworkflows) в портал Azure (эту ссылку можно использовать или найти на панели поиска на портале). Нажмите *создать приложение логики*.
 
-:::image type="content" source="media/how-to-integrate-logic-apps/create-logic-app.png" alt-text="Страница Logic Apps в портал Azure. Выделить кнопку создать приложение логики":::
+:::image type="content" source="media/how-to-integrate-logic-apps/create-logic-app.png" alt-text="Страница "Logic Apps" в портал Azure. Выделить кнопку "создать приложение логики"":::
 
 На следующей странице *приложения логики* выберите подписку и группу ресурсов, а также имя и расположение развертывания для нового приложения логики. Нажмите кнопку " *Проверка" + "создать*". Откроется вкладка *Просмотр и создание* , где можно нажать кнопку *создать* внизу, чтобы создать ресурс.
 
@@ -157,7 +157,7 @@ ms.locfileid: "88848836"
 
 В *конструкторе Logic Apps*в разделе *Запуск с общим триггером*выберите _**повторение**_.
 
-:::image type="content" source="media/how-to-integrate-logic-apps/logic-apps-designer-recurrence.png" alt-text="Страница конструктора Logic Apps в портал Azure. Выделение общего триггера повторение":::
+:::image type="content" source="media/how-to-integrate-logic-apps/logic-apps-designer-recurrence.png" alt-text="Страница конструктора Logic Apps в портал Azure. Выделение общего триггера "повторение"":::
 
 На следующей странице *конструктора Logic Apps* измените частоту **повторений** до *секунды*, чтобы событие запускалось каждые 3 секунды. Это позволит легко увидеть результаты позже, не дожидаясь очень долго.
 
@@ -165,7 +165,7 @@ ms.locfileid: "88848836"
 
 Откроется окно *Выбор действия* . Перейдите на вкладку *Пользовательская* . Вы должны увидеть пользовательский соединитель с более ранней версии в верхнем поле.
 
-:::image type="content" source="media/how-to-integrate-logic-apps/custom-action.png" alt-text="Создание последовательности в конструкторе Logic Apps в портал Azure. В поле выберите действие выбрана вкладка Пользовательская. Пользовательский соединитель пользователя из более ранней версии отображается в поле с выделением вокруг него.":::
+:::image type="content" source="media/how-to-integrate-logic-apps/custom-action.png" alt-text="Создание последовательности в конструкторе Logic Apps в портал Azure. В поле "выберите действие" выбрана вкладка "Пользовательская". Пользовательский соединитель пользователя из более ранней версии отображается в поле с выделением вокруг него.":::
 
 Выберите его, чтобы отобразить список интерфейсов API, содержащихся в этом соединителе. Используйте панель поиска или прокрутите список, чтобы выбрать **DigitalTwins_Add**. (Это API, используемый в этой статье, но можно также выбрать любой другой API в качестве допустимого варианта подключения Logic Apps).
 
@@ -178,7 +178,7 @@ ms.locfileid: "88848836"
 
 Нажмите кнопку *сохранить* в конструкторе Logic Apps.
 
-:::image type="content" source="media/how-to-integrate-logic-apps/save-logic-app.png" alt-text="Завершено представление приложения в соединителе приложения логики. Поле Дигиталтвинсадд заполняется значениями, описанными выше, включая образец текста для исправления JSON. Будет выделена кнопка Сохранить для окна.":::
+:::image type="content" source="media/how-to-integrate-logic-apps/save-logic-app.png" alt-text="Завершено представление приложения в соединителе приложения логики. Поле Дигиталтвинсадд заполняется значениями, описанными выше, включая образец текста для исправления JSON. Будет выделена кнопка "Сохранить" для окна.":::
 
 ## <a name="query-twin-to-see-the-update"></a>Запрос двойника для просмотра обновления
 

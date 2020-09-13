@@ -3,12 +3,12 @@ title: Базовый план безопасности Azure для Azure DevTe
 description: Базовый план безопасности Azure для Azure DevTest Labs
 ms.topic: conceptual
 ms.date: 07/23/2020
-ms.openlocfilehash: dc53eacf456d1e7c1926c6d7f20e343b3a84340d
-ms.sourcegitcommit: 656c0c38cf550327a9ee10cc936029378bc7b5a2
+ms.openlocfilehash: 49b07242068df5d7c46c602140c8b3e1f778e90c
+ms.sourcegitcommit: 5a3b9f35d47355d026ee39d398c614ca4dae51c6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89078050"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89398329"
 ---
 # <a name="azure-security-baseline-for-azure-devtest-labs"></a>Базовый план безопасности Azure для Azure DevTest Labs
 
@@ -693,7 +693,8 @@ DevTest Labs не имеет концепции паролей по умолча
 - [Настройка управляемого удостоверения для развертывания сред Azure Resource Manager в DevTest Labs](use-managed-identities-environments.md)
 - [Настройка управляемого удостоверения для развертывания виртуальных машин в DevTest Labs](enable-managed-identities-lab-vms.md)
 - [Создание хранилища ключей](../key-vault/quick-create-portal.md)
-- [Как обеспечить проверку подлинности Key Vault с помощью управляемого удостоверения](../key-vault/managed-identity.md)
+- [Проверка подлинности в Key Vault](../key-vault/general/authentication.md)
+- [Назначение политики доступа Key Vault](../key-vault/general/assign-access-policy-portal.md)
 
 **Мониторинг центра безопасности Azure:** Да
 

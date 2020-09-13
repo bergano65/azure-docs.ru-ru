@@ -1,6 +1,6 @@
 ---
 title: Публикация удаленного рабочего стола с помощью прокси приложения Azure AD | Документация Майкрософт
-description: Основные сведения о соединителях прокси приложения Azure AD.
+description: Описывается настройка прокси приложения с помощью RDS.
 services: active-directory
 documentationcenter: ''
 author: kenwith
@@ -16,12 +16,12 @@ ms.author: kenwith
 ms.custom: it-pro
 ms.reviewer: japere
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 9cba74c773e1f141db14e06cf0cda8b31d06ba4f
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 7ffdccf9cf3b6de4ba15d6076d7a5b9e0a93f464
+ms.sourcegitcommit: 5a3b9f35d47355d026ee39d398c614ca4dae51c6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87019528"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89396766"
 ---
 # <a name="publish-remote-desktop-with-azure-ad-application-proxy"></a>Публикация удаленного рабочего стола с помощью прокси приложения Azure AD
 
@@ -101,7 +101,7 @@ ms.locfileid: "87019528"
    Set-RDSessionCollectionConfiguration -CollectionName "<yourcollectionname>" -CustomRdpProperty "pre-authentication server address:s:<proxyfrontendurl>`nrequire pre-authentication:i:1"
    ```
 
-   **Например:**
+   **Пример:**
    ```
    Set-RDSessionCollectionConfiguration -CollectionName "QuickSessionCollection" -CustomRdpProperty "pre-authentication server address:s:https://remotedesktoptest-aadapdemo.msappproxy.net/`nrequire pre-authentication:i:1"
    ```
@@ -135,7 +135,7 @@ ms.locfileid: "87019528"
 
 | Метод проверки подлинности | Поддерживаемая конфигурация клиента |
 | --------------------- | ------------------------------ |
-| Предварительная аутентификация    | RD Web — Windows 7/10 с использованием Internet Explorer + надстройка ActiveX RDS |
+| Предварительная аутентификация    | RD Web — Windows 7/10 с использованием Internet Explorer или [пограничной Chromium в режиме IE](https://docs.microsoft.com/deployedge/edge-ie-mode) и надстройки RDS ActiveX |
 | Предварительная аутентификация    | Веб-клиент RD — совместимый с HTML5 веб-браузер, такой как Microsoft ребр, Internet Explorer 11, Google Chrome, Safari или Mozilla Firefox (v 55.0 и более поздние версии) |
 | Сквозной режим | Любая другая операционная система, поддерживающая приложение "Удаленный рабочий стол (Майкрософт)" |
 

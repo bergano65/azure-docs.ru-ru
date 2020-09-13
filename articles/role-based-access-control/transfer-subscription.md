@@ -10,12 +10,12 @@ ms.topic: how-to
 ms.workload: identity
 ms.date: 08/31/2020
 ms.author: rolyon
-ms.openlocfilehash: 9873bd8f94c80caccd75033e2a8a4bc2cffcde03
-ms.sourcegitcommit: d68c72e120bdd610bb6304dad503d3ea89a1f0f7
+ms.openlocfilehash: ab004c11b46428c5fad28177b0d94edc04b95654
+ms.sourcegitcommit: 5a3b9f35d47355d026ee39d398c614ca4dae51c6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/01/2020
-ms.locfileid: "89227038"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89400550"
 ---
 # <a name="transfer-an-azure-subscription-to-a-different-azure-ad-directory-preview"></a>Перенос подписки Azure в другой каталог Azure AD (Предварительная версия)
 
@@ -31,7 +31,7 @@ ms.locfileid: "89227038"
 > [!NOTE]
 > Для подписок поставщиков облачных служб Azure (CSP) изменение каталога Azure AD для подписки не поддерживается.
 
-## <a name="overview"></a>Обзор
+## <a name="overview"></a>Overview
 
 Передача подписки Azure в другой каталог Azure AD — это сложный процесс, который должен тщательно планироваться и выполняться. Многие службы Azure используют субъекты безопасности (удостоверения) для нормальной работы и даже управления другими ресурсами Azure. Эта статья посвящена большинству служб Azure, которые сильно зависят от субъектов безопасности, но не являются исчерпывающими.
 
@@ -224,7 +224,7 @@ ms.locfileid: "89227038"
 > [!WARNING]
 > Если для ресурса, например учетной записи хранения или базы данных SQL, используется шифрование неактивных ресурсов, которое зависит от хранилища ключей, которое **не** находится в той же подписке, которое передается, это может привести к неустранимому сценарию. В этом случае следует предпринять действия по использованию другого хранилища ключей или временно отключить ключи, управляемые клиентом, чтобы избежать такого неисправимого сценария.
 
-- Если у вас есть хранилище ключей, используйте команду [AZ keyvault для вывода](https://docs.microsoft.com/cli/azure/keyvault#az-keyvault-show) списка политик доступа. Дополнительные сведения см. в статье [обеспечение Key Vaultной проверки подлинности с помощью политики управления доступом](../key-vault/key-vault-group-permissions-for-apps.md).
+- Если у вас есть хранилище ключей, используйте команду [AZ keyvault для вывода](https://docs.microsoft.com/cli/azure/keyvault#az-keyvault-show) списка политик доступа. Дополнительные сведения см. [в разделе Назначение политики доступа Key Vault](../key-vault/general/assign-access-policy-cli.md).
 
     ```azurecli
     az keyvault show --name MyKeyVault

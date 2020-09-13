@@ -3,20 +3,20 @@ title: Настройка многофакторной маршрутизаци�
 description: В этой статье объясняется, как настроить диспетчер трафика для маршрутизации трафика в конечные точки A/AAAA.
 services: traffic-manager
 documentationcenter: ''
-author: rohinkoul
+author: duongau
 ms.service: traffic-manager
 ms.devlang: na
 ms.topic: how-to
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 09/10/2018
-ms.author: rohink
-ms.openlocfilehash: 3ac6d20acf32be9678818483e5929dee225501b1
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.author: duau
+ms.openlocfilehash: 85e088dda767a6f6c80ac0a9f6eed84e8802e5ee
+ms.sourcegitcommit: 5a3b9f35d47355d026ee39d398c614ca4dae51c6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84706823"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89401050"
 ---
 # <a name="configure-multivalue-routing-method-in-traffic-manager"></a>Настройка метода маршрутизации MultiValue в диспетчере трафика
 
@@ -61,8 +61,8 @@ ms.locfileid: "84706823"
 
     | Параметр                 | Значение                                              |
     | ---                     | ---                                                |
-    | Type                    | Внешняя конечная точка                                   |
-    | name           | myEndpoint1                                        |
+    | Тип                    | Внешняя конечная точка                                   |
+    | Имя           | myEndpoint1                                        |
     | Полное доменное имя (FQDN) или IP-адрес           | Введите общедоступный IP-адрес конечной точки, которую необходимо добавить в этот профиль диспетчера трафика.                         |
     |        |           |
 
@@ -71,7 +71,7 @@ ms.locfileid: "84706823"
 
    ![Добавление конечной точки диспетчера трафика](./media/traffic-manager-multivalue-routing-method/add-endpoint.png)
  
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Узнайте о [методе взвешенной маршрутизации трафика](traffic-manager-configure-weighted-routing-method.md).
 - Узнайте о [методе маршрутизации по приоритету](traffic-manager-configure-priority-routing-method.md).

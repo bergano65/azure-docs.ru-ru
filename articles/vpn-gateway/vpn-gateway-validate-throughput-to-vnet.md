@@ -1,21 +1,21 @@
 ---
 title: Проверка пропускной способности VPN для виртуальная сеть Microsoft Azure
-description: Этот документ помогает пользователю проверить пропускную способность сети от своих локальных ресурсов до виртуальной машины Azure.
+description: Эта статья поможет вам проверить пропускную способность сети из локальных ресурсов на виртуальную машину Azure.
 titleSuffix: Azure VPN Gateway
 services: vpn-gateway
 author: cherylmc
 manager: dcscontentpm
 ms.service: vpn-gateway
 ms.topic: troubleshooting
-ms.date: 05/29/2019
+ms.date: 09/02/2020
 ms.author: radwiv
 ms.reviewer: chadmat;genli
-ms.openlocfilehash: 7d19cc4a474324ff3e88ec0c5353a47c157ec715
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: d2347c0688ca58698831019a193d03fe2c6721e9
+ms.sourcegitcommit: 5a3b9f35d47355d026ee39d398c614ca4dae51c6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86998482"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89398514"
 ---
 # <a name="how-to-validate-vpn-throughput-to-a-virtual-network"></a>Порядок проверки пропускной способности VPN для виртуальной сети
 
@@ -26,7 +26,7 @@ ms.locfileid: "86998482"
 > [!NOTE]
 > Эта статья помогает диагностировать и устранить распространенные проблемы. Если вам не удается решить проблему с помощью приведенных ниже сведений, [обратитесь в службу поддержки](https://portal.azure.com/?#blade/Microsoft_Azure_Support/HelpAndSupportBlade).
 
-## <a name="overview"></a>Обзор
+## <a name="overview"></a>Overview
 
 Подключение к VPN-шлюзу состоит из следующих компонентов:
 
@@ -127,7 +127,7 @@ ms.locfileid: "86998482"
 
 Скачайте последнюю версию [Latte.exe](https://gallery.technet.microsoft.com/Latte-The-Windows-tool-for-ac33093b)
 
-Рассмотрите возможность помещения Latte.exe в отдельную папку, например`c:\tools`
+Рассмотрите возможность помещения Latte.exe в отдельную папку, например `c:\tools`
 
 ### <a name="allow-latteexe-through-the-windows-firewall"></a>Разрешить Latte.exe через брандмауэр Windows
 
@@ -217,7 +217,7 @@ ms.locfileid: "86998482"
 
 > [!Note]
 > Убедитесь в отсутствии промежуточных прыжков (например, виртуального устройства) во время проверки пропускной способности между виртуальной машиной и шлюзом.
-> В случае неудовлетворительных результатов (с точки зрения общей пропускной способности), поступающих из предыдущих тестов iPERF/NTTTCP, ознакомьтесь со следующей статьей, чтобы понять основные факторы, которые следует учитывать при возникновении возможных корневых причин проблемы.https://docs.microsoft.com/azure/virtual-network/virtual-network-tcpip-performance-tuning
+> В случае неудовлетворительных результатов (с точки зрения общей пропускной способности), поступающих из предыдущих тестов iPERF/NTTTCP, ознакомьтесь со следующей статьей, чтобы понять основные факторы, которые следует учитывать при возникновении возможных корневых причин проблемы. https://docs.microsoft.com/azure/virtual-network/virtual-network-tcpip-performance-tuning
 
 В частности, анализ трассировок записи пакетов (Wireshark/сетевой монитор), собранных параллельно от клиента и сервера во время этих тестов, поможет в оценке неисправной производительности. Эти трассировки могут включать потери пакетов, высокую задержку, размер MTU. фрагментация, окно TCP 0, фрагменты неупорядоченного кода и т. д.
 
@@ -253,7 +253,7 @@ ms.locfileid: "86998482"
 
 * винмтр
 * ткптрацерауте
-* `ping`и `psping` (эти средства могут обеспечить хорошую оценку RTT, но их нельзя использовать во всех случаях).
+* `ping` и `psping` (эти средства могут обеспечить хорошую оценку RTT, но их нельзя использовать во всех случаях).
 
 ![Проверить задержку](./media/vpn-gateway-validate-throughput-to-vnet/08checkinglatency.png)
 

@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 03/16/2020
 ms.author: mbaldwin
 ms.custom: subject-security-benchmark
-ms.openlocfilehash: ea7460b3f997e0432ea0b987849eafccbe57b3b9
-ms.sourcegitcommit: d68c72e120bdd610bb6304dad503d3ea89a1f0f7
+ms.openlocfilehash: 3fcbc386c60611493912fdfb17226490549cdc53
+ms.sourcegitcommit: 5a3b9f35d47355d026ee39d398c614ca4dae51c6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/01/2020
-ms.locfileid: "89229180"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89396817"
 ---
 # <a name="azure-security-baseline-for-azure-container-registry"></a>Базовый план безопасности Azure для реестра контейнеров Azure
 
@@ -970,9 +970,11 @@ https://docs.microsoft.com/azure/firewall/threat-intel
 
 Как интегрироваться с управляемыми удостоверениями Azure:  https://docs.microsoft.com/azure/azure-app-configuration/howto-integrate-azure-managed-service-identity
 
-Создание Key Vault.  https://docs.microsoft.com/azure/key-vault/quick-create-portal
+Создание Key Vault: https://docs.microsoft.com/azure/key-vault/general/quick-create-portal
 
-Как обеспечить проверку подлинности Key Vault с помощью управляемого удостоверения:  https://docs.microsoft.com/azure/key-vault/managed-identity
+Проверка подлинности в Key Vault: https://docs.microsoft.com/azure/key-vault/general/authentication
+
+Назначение политики доступа Key Vault. https://docs.microsoft.com/azure/key-vault/general/assign-access-policy-portal
 
 Используйте управляемое Azure удостоверение в задачах реестра контейнеров Azure:  https://docs.microsoft.com/azure/container-registry/container-registry-tasks-authentication-managed-identity
 
