@@ -7,12 +7,12 @@ ms.topic: conceptual
 author: keferna
 ms.author: keferna
 ms.date: 08/25/2020
-ms.openlocfilehash: db2bae9d9e1c9658937e725a04d919743ff9999e
-ms.sourcegitcommit: b33c9ad17598d7e4d66fe11d511daa78b4b8b330
+ms.openlocfilehash: 2dca0ae02f2d079e98b51e1222114db1f2104b96
+ms.sourcegitcommit: 3fc3457b5a6d5773323237f6a06ccfb6955bfb2d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88855781"
+ms.lasthandoff: 09/11/2020
+ms.locfileid: "90030803"
 ---
 # <a name="use-azure-table-storage-to-manage-commercial-marketplace-leads"></a>Использование хранилища таблиц Azure для управления потенциальными клиентами на Marketplace для коммерческих клиентов
 
@@ -135,7 +135,7 @@ ms.locfileid: "88855781"
    Выполнив следующие шаги, вы зададите действие, которое будет выполняться в зависимости от значения условия.
 
    * Если условие возвращает **Если «нет»** , ничего не происходит.
-   * Если условие возвращает **Если "да"** , активируется действие подключения к учетной записи Office 365 для отправки сообщения электронной почты.
+   * Если условие разрешается в значение **Да**, активируйте действие, которое подключает рабочую или учебную учетную запись для отправки сообщения электронной почты. 
 
 1. Выберите **Добавить действие** в разделе **Если «да»** .
 

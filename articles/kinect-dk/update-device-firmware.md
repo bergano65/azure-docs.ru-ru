@@ -7,12 +7,12 @@ ms.prod: kinect-dk
 ms.date: 06/26/2019
 ms.topic: conceptual
 keywords: Kinect, встроенное по, обновление, восстановление
-ms.openlocfilehash: eb60003a4233110cb33208bcb8e9784737bb2a8b
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: ecfa4a18592d3bc70e3b7cdd66ff6464a54e560d
+ms.sourcegitcommit: 3fc3457b5a6d5773323237f6a06ccfb6955bfb2d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85277005"
+ms.lasthandoff: 09/11/2020
+ms.locfileid: "90030690"
 ---
 # <a name="update-azure-kinect-dk-firmware"></a>Обновление встроенного по Azure Kinect DK
 
@@ -41,7 +41,7 @@ Azure Kinect DK не обновляет встроенное по автомат
 
     `AzureKinectFirmwareTool.exe -u <device_firmware_file.bin>`
 
-    Пример.
+    Пример
 
     `AzureKinectFirmwareTool.exe -u firmware\AzureKinectDK_Fw_1.5.926614.bin`
 
@@ -57,15 +57,15 @@ Azure Kinect DK не обновляет встроенное по автомат
 
     ```console
        >AzureKinectFirmwareTool.exe -q
- == Azure Kinect DK Firmware Tool ==
-Device Serial Number: 000805192412
-Current Firmware Versions:
-  RGB camera firmware:      1.6.102
-  Depth camera firmware:    1.6.75
-  Depth config file:        6109.7
-  Audio firmware:           1.6.14
-  Build Config:             Production
-  Certificate Type:         Microsoft
+       == Azure Kinect DK Firmware Tool ==
+        Device Serial Number: 000805192412
+        Current Firmware Versions:
+        RGB camera firmware:      1.6.102
+        Depth camera firmware:    1.6.75
+        Depth config file:        6109.7
+        Audio firmware:           1.6.14
+        Build Config:             Production
+        Certificate Type:         Microsoft
     ```
 
 3. Если вы видите приведенный выше результат, встроенное по обновится.
@@ -84,7 +84,7 @@ Current Firmware Versions:
 
 Дополнительные сведения о дополнительных проблемах см. на [странице службы поддержки Майкрософт](https://aka.ms/kinectsupport) .
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 >[Средство встроенного по Azure Kinect](azure-kinect-firmware-tool.md)

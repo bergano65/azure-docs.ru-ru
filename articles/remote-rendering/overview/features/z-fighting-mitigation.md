@@ -6,12 +6,12 @@ ms.author: flborn
 ms.date: 02/06/2020
 ms.topic: article
 ms.custom: devx-track-csharp
-ms.openlocfilehash: dbe3af30963791891f0ceee4e18c34e078c0ac7a
-ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
+ms.openlocfilehash: 0e217676f5e1f4dcba24917cb140d9d4d8fcc422
+ms.sourcegitcommit: 70ee014d1706e903b7d1e346ba866f5e08b22761
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89013186"
+ms.lasthandoff: 09/11/2020
+ms.locfileid: "90024372"
 ---
 # <a name="z-fighting-mitigation"></a>Устранение Z-конфликтов
 
@@ -21,9 +21,9 @@ ms.locfileid: "89013186"
 
 |Ситуация                        | Результат                               |
 |---------------------------------|:-------------------------------------|
-|Обычный Z-конфликт               |![Z-конфликт](./media/zfighting-0.png)|
-|Устранение Z-конфликтов включено    |![Z-конфликт](./media/zfighting-1.png)|
-|Выделение мелкой клеткой включено|![Z-конфликт](./media/zfighting-2.png)|
+|Обычный Z-конфликт               |![Нет детерминированного приоритета между красными и зелеными четырьмя числами](./media/zfighting-0.png)|
+|Устранение Z-конфликтов включено    |![Приоритет красной четырехъядерности](./media/zfighting-1.png)|
+|Выделение мелкой клеткой включено|![Красная и зеленая параметры переключения переключателей в шаблоне шахматной доски](./media/zfighting-2.png)|
 
 Приведенный ниже код включает устранение Z-конфликтов.
 
@@ -53,7 +53,6 @@ void EnableZFightingMitigation(ApiHandle<AzureSession> session, bool highlight)
 }
 ```
 
-
 > [!NOTE]
 > Устранение Z-конфликтов — это глобальный параметр, влияющий на все отрисованные сетки.
 
@@ -76,6 +75,11 @@ Z-конфликты возникают в основном по двум при
 
 * Включение устранения Z-конфликтов практически не отражается на производительности.
 * Кроме того, включение наложения Z-конфликтов приводит к нетривиальным затратам на производительность, которые зависят от конкретной сцены.
+
+## <a name="api-documentation"></a>Документирование API
+
+* [C# Ремотеманажер. Зфигхтингмитигатионсеттингс, свойство](https://docs.microsoft.com/dotnet/api/microsoft.azure.remoterendering.remotemanager.zfightingmitigationsettings)
+* [C++ Ремотеманажер:: Зфигхтингмитигатионсеттингс ()](https://docs.microsoft.com/cpp/api/remote-rendering/remotemanager#zfightingmitigationsettings)
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

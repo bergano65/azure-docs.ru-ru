@@ -1,5 +1,5 @@
 ---
-title: Регистрация и вход с помощью настраиваемых политик (Предварительная версия)
+title: Регистрация и вход с помощью настраиваемых политик для телефона
 titleSuffix: Azure AD B2C
 description: Отправка одноразовых паролей (OTP) в текстовых сообщениях на телефоны пользователей приложения с помощью пользовательских политик в Azure Active Directory B2C.
 services: active-directory-b2c
@@ -8,29 +8,87 @@ manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: how-to
-ms.date: 02/25/2020
+ms.date: 09/01/2020
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: d432912cb0442744061500fc01bdd86a4c5d97ef
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 4a429314d4a992ea93f4c068203371cda769a4ff
+ms.sourcegitcommit: 3fc3457b5a6d5773323237f6a06ccfb6955bfb2d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85385354"
+ms.lasthandoff: 09/11/2020
+ms.locfileid: "90029168"
 ---
-# <a name="set-up-phone-sign-up-and-sign-in-with-custom-policies-in-azure-ad-b2c-preview"></a>Настройка регистрации и входа в систему с помощью настраиваемых политик в Azure AD B2C (Предварительная версия)
+# <a name="set-up-phone-sign-up-and-sign-in-with-custom-policies-in-azure-ad-b2c"></a>Настройка регистрации телефона и входа в систему с помощью пользовательских политик в Azure AD B2C
 
 Регистрация и вход в систему в Azure Active Directory B2C (Azure AD B2C) позволяет пользователям регистрироваться и входить в приложения с помощью одноразового пароля (OTP), отправленного в текстовом сообщении на телефон. Одноразовые пароли могут помочь в минимальном риске пользователей, которые забывают или нарушают свой пароль.
 
 Выполните действия, описанные в этой статье, чтобы использовать пользовательские политики, чтобы пользователи могли регистрироваться и входить в приложения с помощью одноразового пароля, отправленного на свой телефон.
 
-[!INCLUDE [b2c-public-preview-feature](../../includes/active-directory-b2c-public-preview.md)]
-
 ## <a name="pricing"></a>Цены
 
 Одноразовые пароли отправляются пользователям с помощью SMS-сообщений, и вам может потребоваться оплатить каждое отправленное сообщение. Сведения о ценах см. в разделе " **Специальные расходы** " статьи [Azure Active Directory B2C цены](https://azure.microsoft.com/pricing/details/active-directory-b2c/).
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="user-experience-for-phone-sign-up-and-sign-in"></a>Взаимодействие с пользователем при регистрации и входе в телефон
+
+При регистрации и входе с помощью телефона пользователь может зарегистрироваться в приложении, используя номер телефона в качестве основного идентификатора. Процесс регистрации и входа в систему конечного пользователя описан ниже.
+
+> [!NOTE]
+> Мы настоятельно рекомендуем включить сведения о согласии в процедуру регистрации и входа, как показано в приведенном ниже образце текста. Этот пример текста предназначен только для информационных целей. Ознакомьтесь с кратким руководством по мониторингу кода на [веб-сайте ктиа](https://www.ctia.org/programs) и обратитесь к своим юридическим или экспертам, чтобы получить рекомендации по окончательному тексту и настройке функций в соответствии с вашими требованиями.
+>
+> *Указав номер телефона, вы даете согласие на получение одноразового секретного кода, отправленного текстовым сообщением, для помощи при входе в систему для * &lt; вставки &gt; : имя приложения*. Могут применяться стандартные сообщения и скорости передачи данных.*
+>
+> *&lt;INSERT: ссылка на заявление о конфиденциальности&gt;*<br/>*&lt;INSERT: ссылка на условия предоставления услуг&gt;*
+
+Чтобы добавить собственные сведения о согласии, настройте следующий пример и включите его в LocalizedResources для Контентдефинитион, используемого на странице с автоматическим подтверждением, с помощью элемента управления отображением (файл Phone-Email-Base.xml на телефоне & войти в начальный пакет):
+
+```xml
+<LocalizedResources Id="phoneSignUp.en">        
+    <LocalizedStrings>
+    <LocalizedString ElementType="DisplayControl" ElementId="phoneControl" StringId="disclaimer_msg_intro">By providing your phone number, you consent to receiving a one-time passcode sent by text message to help you sign into {insert your application name}. Standard messsage and data rates may apply.</LocalizedString>          
+    <LocalizedString ElementType="DisplayControl" ElementId="phoneControl" StringId="disclaimer_link_1_text">Privacy Statement</LocalizedString>                
+    <LocalizedString ElementType="DisplayControl" ElementId="phoneControl" StringId="disclaimer_link_1_url">{insert your privacy statement URL}</LocalizedString>          
+    <LocalizedString ElementType="DisplayControl" ElementId="phoneControl" StringId="disclaimer_link_2_text">Terms and Conditions</LocalizedString>             
+    <LocalizedString ElementType="DisplayControl" ElementId="phoneControl" StringId="disclaimer_link_2_url">{insert your terms and conditions URL}</LocalizedString>          
+    <LocalizedString ElementType="UxElement" StringId="initial_intro">Please verify your country code and phone number</LocalizedString>        
+    </LocalizedStrings>      
+</LocalizedResources>
+   ```
+
+### <a name="phone-sign-up-experience"></a>Интерфейс регистрации телефона
+
+Если у пользователя еще нет учетной записи для своего приложения, его можно создать, выбрав ссылку **зарегистрироваться сейчас** . Появится страница регистрации, где пользователь выбирает **страну**, вводит свой номер телефона и выбирает **отправить код**.
+
+![Пользователь начинает регистрацию телефона](media/phone-authentication/phone-signup-start.png)
+
+Одноразовый код проверки отправляется на номер телефона пользователя. Пользователь вводит **код проверки** на странице регистрации, а затем выбирает команду **проверить код**. (Если пользователь не смог получить код, он может выбрать пункт **отправить новый код**.)
+
+![Пользователь проверяет код во время регистрации телефона](media/phone-authentication/phone-signup-verify-code.png)
+
+ Пользователь вводит любые другие сведения, запрашиваемые на странице регистрации, например **Отображаемое имя**, **имя**и **Фамилия** (страна и номер телефона остаются заполненными). Если пользователь хочет использовать другой номер телефона, он может выбрать **изменить номер** для перезапуска регистрации. По завершении пользователь нажмет кнопку **Continue (продолжить**).
+
+![Пользователь предоставляет дополнительные сведения](media/phone-authentication/phone-signup-additional-info.png)
+
+Затем пользователю предлагается ввести электронное сообщение для восстановления. Пользователь вводит свой адрес электронной почты, а затем выбирает **отправить код проверки**. Код отправляется в папку "Входящие" электронной почты пользователя, которую они могут получить и ввести в поле **код проверки** . Затем пользователь выбирает команду **проверить код**. 
+
+После проверки кода пользователь выбирает **создать** , чтобы создать свою учетную запись. Если пользователь хочет использовать другой адрес электронной почты, он может выбрать **изменить электронное письмо**.
+
+![Пользователь создает учетную запись](media/phone-authentication/email-verification.png)
+
+### <a name="phone-sign-in-experience"></a>Интерфейс входа с телефона
+
+Если у пользователя есть существующая учетная запись с номером телефона в качестве идентификатора, пользователь вводит свой номер телефона и выбирает **Continue (продолжить**). Они подтверждают страну и номер телефона, выбирая **Continue (продолжить**) и отправляют одноразовый код проверки на свой телефон. Пользователь вводит код проверки и выбирает **продолжение** входа.
+
+![Взаимодействие с пользователем при входе с телефона](media/phone-authentication/phone-signin-screens.png)
+
+## <a name="deleting-a-user-account"></a>Удаление учетной записи пользователя
+
+В некоторых случаях может потребоваться удалить пользователя и связанные с ним данные из каталога Azure AD B2C. Дополнительные сведения об удалении учетной записи пользователя с помощью портал Azure см. в [этих инструкциях](https://docs.microsoft.com/microsoft-365/compliance/gdpr-dsr-azure#step-5-delete). 
+
+[!INCLUDE [GDPR-related guidance](../../includes/gdpr-dsr-and-stp-note.md)]
+
+
+
+## <a name="prerequisites"></a>Предварительные требования
 
 Перед настройкой OTP вам потребуются следующие ресурсы.
 
@@ -94,12 +152,7 @@ GET https://graph.microsoft.com/v1.0/users?$filter=identities/any(c:c/issuerAssi
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Начальный пакет пользовательской политики регистрации и входа в систему можно найти на сайте GitHub:
-
-[Azure-Samples/Active-Directory-B2C-Custom-Policy-starterpack/сценарии/телефон — номер для пароля][starter-pack-phone]
-
-В файлах политики начального пакета используются технические профили многофакторной идентификации и преобразования заявок на телефонные номера:
-
+Начальный пакет и другие начальные пакеты пользовательской политики регистрации и входа в систему можно найти на сайте GitHub: [Azure-Samples/Active-Directory-B2C-Custom-Policy-starterpack/сценарии/Phone-No — без пароля][starter-pack-phone] . в файлах политики начального пакета используются технические профили многофакторной идентификации и преобразования заявок на телефонные номера.
 * [Определение технического профиля многофакторной идентификации Azure](multi-factor-auth-technical-profile.md)
 * [Определение преобразований заявок на телефонный номер](phone-number-claims-transformations.md)
 

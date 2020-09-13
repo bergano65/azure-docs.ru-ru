@@ -28,8 +28,6 @@
   items:
     - name: Azure PowerShell
       href: sample-powershell.md
-    - name: Журналы Azure Monitor
-      href: log-analytics-samples.md
 - name: Основные понятия
   items:
     - name: Функции службы "Брандмауэр Azure"
@@ -88,6 +86,8 @@
       href: dns-settings.md
     - name: Мониторинг журналов диагностики
       href: firewall-diagnostics.md
+    - name: Журналы Azure Monitor
+      href: log-analytics-samples.md
 - name: Справочник
   items:
     - name: Azure CLI

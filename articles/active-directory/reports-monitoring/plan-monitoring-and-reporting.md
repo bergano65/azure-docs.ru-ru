@@ -1,6 +1,6 @@
 ---
 title: Планирование отчетов & Мониторинг развертывания — Azure AD
-description: Описывает планирование и выполнение имплментатион отчетов и мониторинга.
+description: Описывает планирование и выполнение реализации отчетов и мониторинга.
 services: active-directory
 author: BarbaraSelden
 manager: daveba
@@ -12,12 +12,12 @@ ms.date: 11/13/2018
 ms.author: baselden
 ms.reviewer: plenzke
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 20b83291dc37c6248761214654f99d3ce214b551
-ms.sourcegitcommit: d68c72e120bdd610bb6304dad503d3ea89a1f0f7
+ms.openlocfilehash: a75cc77b45d41d7fd63eadce34265ca54b663e14
+ms.sourcegitcommit: 3fc3457b5a6d5773323237f6a06ccfb6955bfb2d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/01/2020
-ms.locfileid: "89229758"
+ms.lasthandoff: 09/11/2020
+ms.locfileid: "90030996"
 ---
 # <a name="plan-an-azure-active-directory-reporting-and-monitoring-deployment"></a>Планирование развертывания Azure Active Directory отчетов и мониторинга
 
@@ -133,7 +133,7 @@ ms.locfileid: "89229758"
 
 Журналы маршрутизации в концентратор событий Azure обеспечивают интеграцию со сторонними инструментами SIEM. Такая интеграция позволяет объединить данные из журнала действий Azure AD с другими данными, управляемыми средствами SIEM, что позволяет получать более подробные аналитические сведения о среде. 
 
-См. сведения о том, как [осуществлять потоковую передачу журналов в концентратор событий](//azure/active-directory/reports-monitoring/tutorial-azure-monitor-stream-logs-to-event-hub).
+См. сведения о том, как [осуществлять потоковую передачу журналов в концентратор событий](/azure/active-directory/reports-monitoring/tutorial-azure-monitor-stream-logs-to-event-hub).
 
 ## <a name="plan-operations-and-security-for-azure-ad-reporting-and-monitoring"></a>Планирование операций и безопасности для отчетов и мониторинга Azure AD
 

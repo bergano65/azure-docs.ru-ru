@@ -13,12 +13,12 @@ ms.custom:
 - mqtt
 - 'Role: Cloud Development'
 - 'Role: IoT Device'
-ms.openlocfilehash: 675f25107a2e4f0ddedf468dc06afea36ffc6151
-ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
+ms.openlocfilehash: 2f811c504f8871b06805d5578ed2d70c651be25d
+ms.sourcegitcommit: 3fc3457b5a6d5773323237f6a06ccfb6955bfb2d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87327758"
+ms.lasthandoff: 09/11/2020
+ms.locfileid: "90029840"
 ---
 # <a name="understand-the-identity-registry-in-your-iot-hub"></a>Общие сведения о реестре удостоверений в Центре Интернета вещей
 
@@ -84,7 +84,7 @@ ms.locfileid: "87327758"
 
 Дополнительные сведения об интерфейсах API импорта и экспорта см. в статье о [ресурсах Центра Интернета вещей](/rest/api/iothub/iothubresource). Дополнительные сведения о выполнении заданий импорта и экспорта см. в статье [Управление удостоверениями устройств Центра Интернета вещей в пакетном режиме](iot-hub-bulk-identity-mgmt.md).
 
-Удостоверения устройств также можно экспортировать и импортировать из центра Интернета вещей через API службы с помощью [REST API](/rest/api/iothub/service/jobclient/createimportexportjob) или одного из [пакетов SDK службы](/azure/iot-hub/iot-hub-devguide-sdks#azure-iot-hub-service-sdks)центра Интернета вещей.
+Удостоверения устройств также можно экспортировать и импортировать из центра Интернета вещей через API службы с помощью [REST API](/rest/api/iothub/service/jobs/createimportexportjob) или одного из [пакетов SDK службы](/azure/iot-hub/iot-hub-devguide-sdks#azure-iot-hub-service-sdks)центра Интернета вещей.
 
 ## <a name="device-provisioning"></a>Подготовка устройств
 
@@ -124,7 +124,7 @@ ms.locfileid: "87327758"
 |operationTimestamp | Отметка времени операции по стандарту ISO8601 |
 |iothub-message-schema | deviceLifecycleNotification |
 
-Текст: этот раздел имеет формат JSON и представляет двойник созданного удостоверения устройства. например следующие.
+Текст: этот раздел имеет формат JSON и представляет двойник созданного удостоверения устройства. Например, примененная к объекту директива
 
 ```json
 {
@@ -160,7 +160,7 @@ moduleId | Идентификатор модуля |
 operationTimestamp | Отметка времени операции по стандарту ISO8601 |
 iothub-message-schema | moduleLifecycleNotification |
 
-Текст: этот раздел имеет формат JSON и представляет двойник созданного удостоверения модуля. например следующие.
+Текст: этот раздел имеет формат JSON и представляет двойник созданного удостоверения модуля. Например, примененная к объекту директива
 
 ```json
 {

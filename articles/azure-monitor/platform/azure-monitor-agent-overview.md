@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 08/10/2020
-ms.openlocfilehash: 0fc9139e9456a62bf3586fb358046e7c868b834a
-ms.sourcegitcommit: 3c66bfd9c36cd204c299ed43b67de0ec08a7b968
+ms.openlocfilehash: ea2fae483da495bce9551899b9646868251f0454
+ms.sourcegitcommit: 3fc3457b5a6d5773323237f6a06ccfb6955bfb2d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "90005230"
+ms.lasthandoff: 09/11/2020
+ms.locfileid: "90030833"
 ---
 # <a name="azure-monitor-agent-overview-preview"></a>Общие сведения об агенте Azure Monitor (Предварительная версия)
 Агент Azure Monitor (АМА) собирает данные мониторинга из гостевой операционной системы виртуальных машин и доставляет их в Azure Monitor. В этой статье содержатся общие сведения об агенте Azure Monitor, включая инструкции по его установке и настройке сбора данных.
@@ -99,6 +99,8 @@ ms.locfileid: "90005230"
 ## <a name="security"></a>Безопасность
 Агенту Azure Monitor не требуются ключи, но вместо этого требуется [управляемое системой удостоверение](../../active-directory/managed-identities-azure-resources/qs-configure-portal-windows-vm.md#system-assigned-managed-identity). Перед развертыванием агента необходимо включить управляемое удостоверение, назначаемое системой на каждой виртуальной машине.
 
+## <a name="networking"></a>Сеть
+Агент Azure Monitor поддерживает теги служб Azure (Теги Азуремонитор и AzureResourceManager являются обязательными), но еще не работает с Azure Monitor областями частных ссылок или прямыми прокси.
 
 ## <a name="install-the-azure-monitor-agent"></a>Установка агента Azure Monitor
 Агент Azure Monitor реализуется как [расширение виртуальной машины Azure](../../virtual-machines/extensions/overview.md) и содержит сведения, приведенные в следующей таблице. 

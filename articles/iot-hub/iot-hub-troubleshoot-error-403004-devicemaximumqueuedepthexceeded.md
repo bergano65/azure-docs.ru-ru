@@ -11,12 +11,12 @@ ms.author: jlian
 ms.custom:
 - amqp
 - mqtt
-ms.openlocfilehash: 5cc8bae0f0245f5c4b45ca0cd446582b04788c21
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: fc5029f26e5d615502925c4def4e2973c118f38d
+ms.sourcegitcommit: 3fc3457b5a6d5773323237f6a06ccfb6955bfb2d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "81758758"
+ms.lasthandoff: 09/11/2020
+ms.locfileid: "90029993"
 ---
 # <a name="403004-devicemaximumqueuedepthexceeded"></a>403004 DeviceMaximumQueueDepthExceeded
 
@@ -26,7 +26,7 @@ ms.locfileid: "81758758"
 
 При попытке отправить сообщение из облака на устройство происходит сбой запроса с ошибкой **403004** или **девицемаксимумкуеуедепсексцеедед**.
 
-## <a name="cause"></a>Причина:
+## <a name="cause"></a>Причина
 
 Основная причина заключается в том, что количество сообщений, поставленных в очередь для устройства, превышает [ограничение очереди (50)](./iot-hub-devguide-quotas-throttling.md#other-limits).
 
@@ -38,4 +38,4 @@ ms.locfileid: "81758758"
 
 Кроме того, можно улучшить логику устройства, чтобы быстро завершить, отклонять или отменять сообщения в очереди, сократить время жизни или отсылать меньше сообщений. См. о [сроке жизни сообщений, отправляемых из облака на устройство](./iot-hub-devguide-messages-c2d.md#message-expiration-time-to-live).
 
-Наконец, рассмотрите возможность использования [API очистки очереди](https://docs.microsoft.com/rest/api/iothub/service/registrymanager/purgecommandqueue) для периодической очистки ожидающих сообщений до достижения предела.
+Наконец, рассмотрите возможность использования [API очистки очереди](https://docs.microsoft.com/azure/iot-hub/iot-c-sdk-ref/iothub-registrymanager-h/iothubregistrymanager-deletedevice) для периодической очистки ожидающих сообщений до достижения предела.

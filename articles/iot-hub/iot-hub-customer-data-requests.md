@@ -7,12 +7,12 @@ ms.date: 05/16/2018
 ms.topic: conceptual
 ms.service: iot-hub
 services: iot-hub
-ms.openlocfilehash: 0bb7b91cd31761b801ad469b8ce556b29e09fd3a
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: ebc73c75d9a23a53ac94f28208251dcff83e684a
+ms.sourcegitcommit: 3fc3457b5a6d5773323237f6a06ccfb6955bfb2d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87074714"
+ms.lasthandoff: 09/11/2020
+ms.locfileid: "90030707"
 ---
 # <a name="customer-data-request-features-for-azure-iot-hub-devices"></a>Функции запроса данных клиента для устройств центра Интернета вещей Azure
 
@@ -36,13 +36,13 @@ ms.locfileid: "87074714"
 
 Администраторы клиента могут использовать колонку устройств Интернета вещей расширения Центра Интернета вещей для удаления устройства. Эта операция также удалит все данные, связанные с этим устройством.
 
-Выполнять операции удаления для устройств можно также с помощью REST API. Дополнительные сведения см. в статье [Service - Delete Device](/rest/api/iothub/service/registrymanager/deletedevice) (Служба. Удаление устройства).
+Выполнять операции удаления для устройств можно также с помощью REST API. Дополнительные сведения см. в статье [Service - Delete Device](/azure/iot-hub/iot-c-sdk-ref/iothub-registrymanager-h/iothubregistrymanager-deletedevice) (Служба. Удаление устройства).
 
 ## <a name="exporting-customer-data"></a>Экспорт данных клиента
 
 Администраторы клиента могут использовать копирование и вставку в области устройства IoT в расширении центра Интернета вещей Azure в портал Azure для экспорта данных, связанных с устройством.
 
-Выполнять операции экспорта для устройств можно также с помощью REST API. Дополнительные сведения см. в [Service - Get Device](/rest/api/iothub/service/registrymanager/getdevice) (Служба. Получение сведений об устройстве).
+Выполнять операции экспорта для устройств можно также с помощью REST API. Дополнительные сведения см. в [Service - Get Device](/azure/iot-hub/iot-c-sdk-ref/iothub-registrymanager-h/iothubregistrymanager-getdevice) (Служба. Получение сведений об устройстве).
 
 > [!NOTE]
 > При использовании корпоративных служб корпорация Майкрософт создает некоторые данные, известные как создаваемые системой журналы. Некоторые создаваемые системой журналы Центра Интернета вещей недоступны и не подлежат экспорту администраторами клиента. Эти журналы содержат сведения о фактических действиях, выполненных в службе, и диагностические данные, связанные с отдельными устройствами.

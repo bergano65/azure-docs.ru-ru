@@ -7,12 +7,12 @@ ms.topic: conceptual
 author: keferna
 ms.author: keferna
 ms.date: 03/30/2020
-ms.openlocfilehash: 92f4bde31af2a7bb4c658141964f238a8c077eef
-ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
+ms.openlocfilehash: 31dba5489db3778d738fc2856cf6aacfd6987711
+ms.sourcegitcommit: 3fc3457b5a6d5773323237f6a06ccfb6955bfb2d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86120386"
+ms.lasthandoff: 09/11/2020
+ms.locfileid: "90030758"
 ---
 # <a name="configure-lead-management-for-dynamics-365-customer-engagement"></a>Настройка управления потенциальными клиентами в Dynamics 365 Customer Engagement
 
@@ -27,7 +27,7 @@ ms.locfileid: "86120386"
 
 * права администратора в экземпляре Dynamics 365 Customer Engagement для установки решения;
 * права администратора клиента на создание учетной записи службы для службы потенциальных клиентов, используемой для передачи потенциальных клиентов из предложений на коммерческой платформе;
-* доступ к порталу администрирования Office 365;
+* Доступ к порталу администрирования.
 * доступ к порталу Azure.
 
 ## <a name="install-the-solution"></a>Установка решения

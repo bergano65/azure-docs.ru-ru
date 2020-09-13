@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 10/08/2019
-ms.openlocfilehash: de381b4200e2ec3381f452ac0ec32e61a055a6ec
-ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
+ms.openlocfilehash: 70ab387018fc54b4dad9ee911d4c7557e1e7805c
+ms.sourcegitcommit: 3fc3457b5a6d5773323237f6a06ccfb6955bfb2d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87326177"
+ms.lasthandoff: 09/11/2020
+ms.locfileid: "90030350"
 ---
 # <a name="monitoring-azure-resources-with-azure-monitor"></a>Мониторинг ресурсов Azure с помощью Azure Monitor
 При наличии критически важных приложений и бизнес-процессов, использующих ресурсы Azure, необходимо отслеживать эти ресурсы на предмет их доступности, производительности и работы. В этой статье описаны данные мониторинга, созданные ресурсами Azure, а также анализ таких данных и оповещений о них с помощью функций Azure Monitor.
@@ -20,10 +20,7 @@ ms.locfileid: "87326177"
 > Эта статья относится ко всем службам в Azure, использующим Azure Monitor. Вычислительные ресурсы, включая виртуальные машины и службы приложений, создают те же данные мониторинга, которые описаны здесь, но также имеют гостевую операционную систему, которая может создавать журналы и метрики. Дополнительные сведения о том, как собираются и анализируются эти данные, см. в документации по мониторингу этих служб.
 
 ## <a name="what-is-azure-monitor"></a>Общие сведения об Azure Monitor
-Azure Monitor — это комплексная служба мониторинга в Azure, которая предоставляет полный набор функций для отслеживания ресурсов Azure в дополнение к ресурсам в других облаках и локальных средах. [Платформа данных Azure Monitor](../platform/data-platform.md) собирает данные в [журналы](../platform/data-platform-logs.md) и [метрики](../platform/data-platform-metrics.md), где их можно проанализировать вместе с помощью полного набора средств мониторинга, как описано в следующих разделах.
-
-- [Что можно делать с метриками Azure Monitor?](../platform/data-platform-metrics.md#what-can-you-do-with-azure-monitor-metrics)
-- [Что можно делать с журналами Azure Monitor?](../platform/data-platform-logs.md#what-can-you-do-with-azure-monitor-logs)
+Azure Monitor — это комплексная служба мониторинга в Azure, которая предоставляет полный набор функций для отслеживания ресурсов Azure в дополнение к ресурсам в других облаках и локальных средах. [Azure Monitor платформа данных](../platform/data-platform.md) собирает данные в [журналы](../platform/data-platform-logs.md) и [метрики](../platform/data-platform-metrics.md) , где их можно анализировать вместе с помощью полного набора средств мониторинга. См. полный список приложений и служб, которые можно отслеживать, Azure Monitor, [что отслеживается Azure Monitor?](../monitor-reference.md).
 
 После создания ресурса Azure Monitor включается и начинает сбор метрик и журналов действий, которые можно [просматривать и анализировать на портале Azure](#monitoring-in-the-azure-portal). В некоторых конфигурациях можно собирать дополнительные данные мониторинга и включать дополнительные функции. Дополнительные сведения о требованиях к конфигурации см. в разделе [Данные мониторинга](#monitoring-data) ниже.
 
@@ -100,7 +97,7 @@ Azure Monitor — это комплексная служба мониторин
 
 Если у службы есть аналитические сведения Azure Monitor, доступ к ним можно получить в разделе **Мониторинг** в меню каждого ресурса. Все аналитические сведения и решения доступны в меню **Azure Monitor**.
 
-![Аналитика](media/monitor-azure-resource/insights.png)
+![Аналитика в портал Azure](media/monitor-azure-resource/insights.png)
 
 ### <a name="metrics"></a>Метрики
 Анализируйте метрики на портале Azure с помощью [обозревателя метрик](../platform/metrics-getting-started.md), который доступен в пункте меню **Метрики** для большинства служб. Это средство позволяет работать с отдельными метриками или объединять несколько метрик для выявления корреляций и тенденций. 
@@ -108,7 +105,7 @@ Azure Monitor — это комплексная служба мониторин
 - Дополнительные сведения об обозревателе метрик см. в статье [Начало работы с обозревателем метрик Azure](../platform/metrics-getting-started.md).
 - Дополнительные возможности обозревателя метрик, такие как использование нескольких метрик и применение фильтров и разбиения, см. в разделе [Дополнительные возможности обозревателя метрик Azure](../platform/metrics-charts.md).
 
-![Метрики](media/monitor-azure-resource/metrics.png)
+![Обозреватель метрик в портал Azure](media/monitor-azure-resource/metrics.png)
 
 
 ### <a name="activity-log"></a>Журнал действий 
@@ -129,7 +126,7 @@ Azure Monitor — это комплексная служба мониторин
 - Описание структурирования данных журнала ресурсов в журналах Azure Monitor см. в разделе [Режим сбора](../platform/resource-logs.md#send-to-log-analytics-workspace).
 - Дополнительные сведения о таблице в журналах Azure Monitor см. в документации по каждой службе Azure.
 
-![Журналы](media/monitor-azure-resource/logs.png)
+![Log Analytics на портале Azure](media/monitor-azure-resource/logs.png)
 
 ## <a name="monitoring-from-command-line"></a>Мониторинг из командной строки
 Доступ к данным мониторинга, собранным из ресурса, можно получить из командной строки или включить в скрипт, используя [Azure PowerShell](/powershell/azure/) или [интерфейс командной строки Azure](/cli/azure/). 

@@ -12,12 +12,12 @@ ms.topic: end-user-help
 ms.date: 02/03/2020
 ms.author: curtand
 ms.custom: user-help
-ms.openlocfilehash: 8507a53959e7d28cbcec2dec6783b2470696d59b
-ms.sourcegitcommit: c5021f2095e25750eb34fd0b866adf5d81d56c3a
+ms.openlocfilehash: 993e75f6a5a39e076a9e7161b62abba85d9b0eab
+ms.sourcegitcommit: 3fc3457b5a6d5773323237f6a06ccfb6955bfb2d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88798114"
+ms.lasthandoff: 09/11/2020
+ms.locfileid: "90031098"
 ---
 # <a name="edit-or-revoke-application-permissions-in-the-my-apps-portal"></a>Изменение или отмена разрешений приложения на портале "Мои приложения"
 
@@ -28,9 +28,9 @@ ms.locfileid: "88798114"
 >[!Important]
 >Эти материалы предназначены для пользователей. Администраторы могут найти дополнительные сведения о настройке облачных приложений и управлении ими в [документации по управлению приложениями](../manage-apps/access-panel-collections.md).
 
-## <a name="manage-app-permissions"></a>Управление разрешениями приложения
+## <a name="manage-app-accounts"></a>Управление учетными записями приложений
 
-Чтобы просмотреть разрешения, предоставленные вами или администратором, наведите указатель мыши на приложение на портале **Мои приложения**, выберите **…** , а затем выберите **Управление приложением**.
+Чтобы просмотреть приложения, которые были предоставлены вам или администратором, выберите **...** при наведении указателя мыши на приложение на портале " **Мои приложения** " выберите **Управление приложением**:
 
 ![Управление приложением на портале "Мои приложения"](media/my-applications-portal-permissions-saved-accounts/manage-your-application.png)
 

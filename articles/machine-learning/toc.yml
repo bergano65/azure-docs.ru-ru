@@ -535,6 +535,9 @@
       href: reference-pipeline-yaml.md
     - name: Равенство национальных облаков
       href: reference-machine-learning-cloud-parity.md
+    - name: Встроенные компоненты Политики Azure
+      displayName: 'samples, policies, definitions'
+      href: ./policy-reference.md
 - name: Ресурсы
   items:
     - name: Заметки о выпуске

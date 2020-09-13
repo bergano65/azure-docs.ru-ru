@@ -11,12 +11,12 @@ ms.subservice: develop
 ms.custom: aaddev
 ms.service: active-directory
 ms.reviewer: lenalepa, manrath
-ms.openlocfilehash: 8be13a299de0fc3de0acaf0001722d8c96a460e6
-ms.sourcegitcommit: 4913da04fd0f3cf7710ec08d0c1867b62c2effe7
+ms.openlocfilehash: bd6f88db2b55a5f0f445659e4b5ef609d3e146e9
+ms.sourcegitcommit: 3fc3457b5a6d5773323237f6a06ccfb6955bfb2d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88205926"
+ms.lasthandoff: 09/11/2020
+ms.locfileid: "90030316"
 ---
 # <a name="redirect-uri-reply-url-restrictions-and-limitations"></a>Ограничения URI перенаправления (URL-адрес ответа)
 
@@ -66,6 +66,8 @@ URI перенаправления или URL-адрес ответа — это
 * Если необходимо зарегистрировать несколько URI перенаправления на localhost для тестирования различных потоков во время разработки, следует отличать их с помощью компонента *пути* URI. Например, `http://127.0.0.1/MyWebApp` не соответствует `http://127.0.0.1/MyNativeApp` .
 * В соответствии с руководством RFC не следует использовать `localhost` в URI перенаправления. Вместо этого используйте фактический IP-адрес замыкания на себя `127.0.0.1` . Это предотвращает разрыв приложения с помощью неправильно настроенных брандмауэров или переименованных сетевых интерфейсов.
 
+    Чтобы использовать `http` схему с адресом замыкания на себя (127.0.0.1) вместо localhost, необходимо изменить [манифест приложения](https://docs.microsoft.com/azure/active-directory/develop/reference-app-manifest#replyurls-attribute). 
+
     IPv6-адрес замыкания на себя ( `[::1]` ) в настоящее время не поддерживается.
 
 ## <a name="restrictions-on-wildcards-in-redirect-uris"></a>Ограничения для подстановочных знаков в URI перенаправления
@@ -93,6 +95,6 @@ URI перенаправления или URL-адрес ответа — это
 > [!WARNING]
 > Такой подход позволяет скомпрометированному клиенту изменять дополнительные параметры, отправляемые в параметре состояния, поэтому пользователь перенаправляется на другой URL-адрес, что является [угрозой открытого перенаправления](https://tools.ietf.org/html/rfc6819#section-4.2.4), как описано в стандарте RFC 6819. Таким образом, клиент должен защищать эти параметры, шифруя состояние или проверяя его с помощью других средств, таких как проверка доменного имени в URI перенаправления для маркера.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Сведения о [манифесте приложения](reference-app-manifest.md)регистрации приложений.

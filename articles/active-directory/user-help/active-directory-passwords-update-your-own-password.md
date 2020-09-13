@@ -9,14 +9,14 @@ ms.service: active-directory
 ms.workload: identity
 ms.subservice: user-help
 ms.topic: end-user-help
-ms.date: 05/28/2020
+ms.date: 09/10/2020
 ms.author: curtand
-ms.openlocfilehash: b83cdf0b069eac2e46cfdd54edc11a1aa5a41075
-ms.sourcegitcommit: c5021f2095e25750eb34fd0b866adf5d81d56c3a
+ms.openlocfilehash: c2bf4d5facc96a0876d4321a61ed6f414dfd78da
+ms.sourcegitcommit: 3fc3457b5a6d5773323237f6a06ccfb6955bfb2d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88799049"
+ms.lasthandoff: 09/11/2020
+ms.locfileid: "90029551"
 ---
 # <a name="reset-your-work-or-school-password-using-security-info"></a>Сброс пароля к рабочей или учебной учетной записи с использованием сведений для защиты
 
@@ -107,7 +107,7 @@ ms.locfileid: "88799049"
 
 ## <a name="how-to-change-your-password"></a>Изменение пароля
 
-Если вы просто хотите изменить свой пароль, это можно сделать с помощью портала Office 365, панели доступа Azure или страницы входа в Windows 10.
+Если вы просто хотите изменить пароль, это можно сделать на портале Office 365, на портале "Мои приложения" или на странице входа в Windows 10.
 
 ### <a name="to-change-your-password-using-the-office-365-portal"></a>Изменение пароля на портале Office 365
 
@@ -121,11 +121,11 @@ ms.locfileid: "88799049"
 
 4. Введите старый пароль, затем создайте и подтвердите новый пароль и щелкните **Отправить**.
 
-### <a name="to-change-your-password-from-the-azure-access-panel"></a>Изменение пароля на панели доступа Azure
+### <a name="to-change-your-password-from-the-my-apps-portal"></a>Изменение пароля с портала "Мои приложения"
 
-Используйте этот метод, если вы обычно получаете доступ к своим приложениям через панель доступа Azure (MyApps).
+Используйте этот метод, если вы обычно обращаетесь к приложениям с портала "Мои приложения":
 
-1. Войдите на [панель доступа Azure](https://myapps.microsoft.com/), используя существующий пароль.
+1. Войдите на портал " [Мои приложения](https://myapps.microsoft.com/)", используя существующий пароль.
 
 2. Щелкните свой профиль в верхнем правом углу, а затем выберите **Профиль**.
 
