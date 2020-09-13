@@ -11,17 +11,17 @@ ms.reviewer: jmartens, larryfr, vaidyas, laobri, tracych
 ms.author: trmccorm
 author: tmccrmck
 ms.date: 07/16/2020
-ms.openlocfilehash: 0b914059567e9a513b605ce733407465b625a909
-ms.sourcegitcommit: e69bb334ea7e81d49530ebd6c2d3a3a8fa9775c9
+ms.openlocfilehash: 8d357cea7ce809c2df6b35e08ac7da7e9d3795e9
+ms.sourcegitcommit: 3be3537ead3388a6810410dfbfe19fc210f89fec
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "88950023"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89650428"
 ---
 # <a name="debug-and-troubleshoot-parallelrunstep"></a>Отладка и устранение неполадок ParallelRunStep
 [!INCLUDE [applies-to-skus](../../includes/aml-applies-to-basic-enterprise-sku.md)]
 
-Из этой статьи вы узнаете, как выполнять отладку и устранение неполадок класса [ParallelRunStep](https://docs.microsoft.com/python/api/azureml-pipeline-steps/azureml.pipeline.steps.parallel_run_step.parallelrunstep?view=azure-ml-py) из [пакета SDL решения "Машинное обучение Azure"](https://docs.microsoft.com/python/api/overview/azure/ml/intro?view=azure-ml-py).
+Из этой статьи вы узнаете, как выполнять отладку и устранение неполадок класса [ParallelRunStep](https://docs.microsoft.com/python/api/azureml-pipeline-steps/azureml.pipeline.steps.parallel_run_step.parallelrunstep?view=azure-ml-py&preserve-view=true) из [пакета SDL решения "Машинное обучение Azure"](https://docs.microsoft.com/python/api/overview/azure/ml/intro?view=azure-ml-py&preserve-view=true).
 
 ## <a name="testing-scripts-locally"></a>Локальное тестирование сценариев
 
@@ -90,7 +90,7 @@ def run(mini_batch):
 
 Пользователь может передать ссылочные данные в скрипт, используя параметр side_inputs Параллерунстеп. Все наборы данных, предоставленные как side_inputs, будут подключены к каждому рабочему узлу. Пользователь может получить расположение Mount, передав аргумент.
 
-Создайте [набор данных](https://docs.microsoft.com/python/api/azureml-core/azureml.core.dataset.dataset?view=azure-ml-py) , содержащий эталонные данные, и зарегистрируйте его в рабочей области. Передайте его в параметр `side_inputs` вашего `ParallelRunStep`. Кроме того, можно добавить путь в раздел, `arguments` чтобы легко получить доступ к подключенному пути:
+Создайте [набор данных](https://docs.microsoft.com/python/api/azureml-core/azureml.core.dataset.dataset?view=azure-ml-py&preserve-view=true) , содержащий эталонные данные, и зарегистрируйте его в рабочей области. Передайте его в параметр `side_inputs` вашего `ParallelRunStep`. Кроме того, можно добавить путь в раздел, `arguments` чтобы легко получить доступ к подключенному пути:
 
 ```python
 label_config = label_ds.as_named_input("labels_input")
@@ -116,6 +116,6 @@ labels_path = args.labels_dir
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-* Сведения о пакете [azureml-Pipeline-пошаговые инструкции](https://docs.microsoft.com/python/api/azureml-pipeline-steps/azureml.pipeline.steps?view=azure-ml-py) см. в справочнике по пакету SDK. Просмотрите справочную [документацию](https://docs.microsoft.com/python/api/azureml-pipeline-steps/azureml.pipeline.steps.parallelrunstep?view=azure-ml-py) по классу параллелрунстеп.
+* Сведения о пакете [azureml-Pipeline-пошаговые инструкции](https://docs.microsoft.com/python/api/azureml-pipeline-steps/azureml.pipeline.steps?view=azure-ml-py&preserve-view=true) см. в справочнике по пакету SDK. Просмотрите справочную [документацию](https://docs.microsoft.com/python/api/azureml-pipeline-steps/azureml.pipeline.steps.parallelrunstep?view=azure-ml-py&preserve-view=true) по классу параллелрунстеп.
 
 * Ознакомьтесь с [дополнительным руководством](tutorial-pipeline-batch-scoring-classification.md) по использованию конвейеров с параллелрунстеп. В этом руководстве показано, как передать другой файл в качестве побочного входа. 

@@ -6,12 +6,12 @@ ms.suite: integration
 ms.reviewer: klam, logicappspm
 ms.topic: article
 ms.date: 01/05/2019
-ms.openlocfilehash: 8a72dff055f2733a07b6da705b66da939ad29bae
-ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
+ms.openlocfilehash: 5bd637f4e4a786cd4cba0f70c4b2349e354469fd
+ms.sourcegitcommit: f8d2ae6f91be1ab0bc91ee45c379811905185d07
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/31/2020
-ms.locfileid: "87495613"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89657471"
 ---
 # <a name="create-loops-that-repeat-workflow-actions-or-process-arrays-in-azure-logic-apps"></a>Создание циклов, которые повторяют действия рабочих процессов или обрабатывают массивы в Azure Logic Apps
 
@@ -45,7 +45,7 @@ ms.locfileid: "87495613"
 
 Этот пример приложения логики отправляет ежедневную сводку для RSS-канала веб-сайта. Приложение использует цикл for each, который отправляет сообщение электронной почты для каждого нового элемента.
 
-1. [Создайте этот пример приложения логики](../logic-apps/quickstart-create-first-logic-app-workflow.md), используя учетную запись Outlook.com или Office 365 Outlook.
+1. [Создайте этот пример приложения логики](../logic-apps/quickstart-create-first-logic-app-workflow.md) с учетной записью Outlook.com или рабочей или учебной учетной записью.
 
 2. Добавьте цикл for each между триггером RSS и действием отправки сообщения. 
 
@@ -189,7 +189,7 @@ ms.locfileid: "87495613"
 
    ![Определение свойств переменной](./media/logic-apps-control-flow-loops/do-until-loop-set-variable-properties.png)
 
-   | Свойство | Применение | Описание |
+   | Свойство | Значение | Описание |
    | -------- | ----- | ----------- |
    | **имя**; | Ограничение | Имя переменной | 
    | **Тип** | Целое число | Тип данных переменной | 
@@ -230,7 +230,7 @@ ms.locfileid: "87495613"
 
       ![Настройка свойств для сообщения электронной почты](./media/logic-apps-control-flow-loops/do-until-loop-send-email-settings.png)
 
-      | Свойство. | Значение | Описание |
+      | Свойство | Значение | Описание |
       | -------- | ----- | ----------- | 
       | **Чтобы** | *\<email-address\@domain>* | Адрес электронной почты получателя. Для тестировании используйте свой адрес электронной почты. | 
       | **Тема** | Текущее значение для переменной Limit — это **Limit**. | Укажите тему сообщения. Для этого примера обязательно добавьте переменную **Limit**. | 

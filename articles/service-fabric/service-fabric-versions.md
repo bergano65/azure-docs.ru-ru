@@ -3,12 +3,12 @@ title: Поддерживаемые версии кластера в Azure Servi
 description: Узнайте о версиях кластера в Azure Service Fabric, включая ссылку на последние выпуски из блога группы Service Fabric.
 ms.topic: troubleshooting
 ms.date: 06/15/2020
-ms.openlocfilehash: 9a2278769d75de19a3006e3a9f39b424dbc02b1f
-ms.sourcegitcommit: 4913da04fd0f3cf7710ec08d0c1867b62c2effe7
+ms.openlocfilehash: d6e9bbe3a1a99a8e4ee726cb88796dccb6f6ccbd
+ms.sourcegitcommit: 3be3537ead3388a6810410dfbfe19fc210f89fec
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88205892"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89652048"
 ---
 # <a name="supported-service-fabric-versions"></a>Поддерживаемые версии Service Fabric
 
@@ -47,6 +47,7 @@ ms.locfileid: "88205892"
 | 7.1.417. * | 7.0.466. * |Меньше или равно версии 4,1 |Текущая версия, без даты окончания |
 | 7.1.428. * | 7.0.466. * |Меньше или равно версии 4,1 |Текущая версия, без даты окончания |
 | 7.1.456. * | 7.0.466. * |Меньше или равно версии 4,1 |Текущая версия, без даты окончания |
+| 7.1.458. * | 7.0.466. * |Меньше или равно версии 4,1 |Текущая версия, без даты окончания |
 
 ## <a name="supported-operating-systems"></a>Поддерживаемые операционные системы
 
@@ -54,12 +55,12 @@ ms.locfileid: "88205892"
 
 | Операционная система | Самая ранняя поддерживаемая версия Service Fabric |
 | --- | --- |
-| Windows Server 2012 R2 | Все версии |
+| Windows Server 2012 R2 | Все версии |
 | Windows Server 2016 | Все версии |
 | Windows Server 1709 | 6,0 |
 | Windows Server 1803 | 6.4 |
 | Windows Server 1809 | 6.4.654.9590 |
-| Windows Server 2019 | 6.4.654.9590 |
+| Windows Server 2019 | 6.4.654.9590 |
 | Linux Ubuntu 16.04 | 6,0 |
 | Linux Ubuntu 18,04 | 7.1 |
 
@@ -119,4 +120,5 @@ ms.locfileid: "88205892"
 | 7,1 CU1 | 7.1.417.9590 | 7.1.418.1 |
 | 7,1 CU2 | 7.1.428.9590 | 7.1.428.1 |
 | 7,1 CU3 | 7.1.456.9590 | 7.1.452.1 |
+| 7,1 CU5 | 7.1.458.9590 | 7.1.454.1 |
 

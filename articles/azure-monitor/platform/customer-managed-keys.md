@@ -5,13 +5,13 @@ ms.subservice: logs
 ms.topic: conceptual
 author: yossi-y
 ms.author: yossiy
-ms.date: 07/05/2020
-ms.openlocfilehash: eec056cbe246f129fb78e15faa0027846c271181
-ms.sourcegitcommit: 5b8fb60a5ded05c5b7281094d18cf8ae15cb1d55
+ms.date: 09/09/2020
+ms.openlocfilehash: 5d44758ebf94c7487935ef47a17ad810dc5cf9f8
+ms.sourcegitcommit: f8d2ae6f91be1ab0bc91ee45c379811905185d07
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87382956"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89657304"
 ---
 # <a name="azure-monitor-customer-managed-key"></a>Ключ Azure Monitor, управляемый клиентом 
 
@@ -21,17 +21,15 @@ ms.locfileid: "87382956"
 
 ## <a name="customer-managed-key-cmk-overview"></a>Общие сведения о ключе, управляемом клиентом (CMK)
 
-[Шифрование неактивных данных](../../security/fundamentals/encryption-atrest.md) является стандартным требованием к конфиденциальности и безопасности в организациях. Вы можете позволить Azure полностью управлять шифрованием неактивных данных, при этом имея различные варианты для непосредственного управления шифрованием или ключами шифрования.
+[Шифрование неактивных](../../security/fundamentals/encryption-atrest.md) данных — это общие требования к конфиденциальности и безопасности в организациях.  Вы можете позволить Azure полностью управлять шифрованием неактивных данных, при этом имея различные варианты для непосредственного управления шифрованием или ключами шифрования.
 
-Azure Monitor гарантирует, что все данные и сохраненные запросы шифруются при хранении с помощью ключей, управляемых корпорацией Майкрософт (ММК). Azure Monitor также предоставляет возможность шифрования с помощью собственного ключа, хранящегося в [Azure Key Vault](../../key-vault/general/overview.md) и доступного для хранилища, с помощью [управляемой системой идентификации](../../active-directory/managed-identities-azure-resources/overview.md) с проверкой подлинности. Этот ключ (CMK) может быть как [программным, так и аппаратным — защищенным HSM](../../key-vault/general/overview.md).
+Azure Monitor гарантирует, что все данные и сохраненные запросы шифруются при хранении с помощью ключей, управляемых корпорацией Майкрософт (ММК). Azure Monitor также предоставляет возможность шифрования с помощью собственного ключа, хранящегося в [Azure Key Vault](../../key-vault/general/overview.md) и доступного для хранилища, с помощью [управляемой системой идентификации](../../active-directory/managed-identities-azure-resources/overview.md) с проверкой подлинности. Этот ключ (CMK) может быть как [программным, так и аппаратным — защищенным HSM](../../key-vault/general/overview.md). Azure Monitor использование шифрования идентично тому, как работает [Шифрование службы хранилища Azure](../../storage/common/storage-service-encryption.md#about-azure-storage-encryption) .
 
-Использование шифрования в Azure Monitor идентично использованию  [шифрования в службе хранилища Azure](../../storage/common/storage-service-encryption.md#about-azure-storage-encryption) .
+Возможность CMK предоставляется на выделенных кластерах Log Analytics и предоставляет элемент управления для отзыва доступа к данным в любое время и защищает его с помощью элемента управления [защищенным хранилищем](#customer-lockbox-preview) . Чтобы убедиться в наличии требуемой емкости для выделенного кластера в вашем регионе, необходимо, чтобы ваша подписка была разрешена заранее. Используйте свой контакт Майкрософт, чтобы получить доступ к подписке, прежде чем приступить к настройке CMK.
 
-CMK позволяет управлять доступом к данным и отзывать его в любое время. Хранилище Azure Monitor всегда учитывает изменения в разрешениях на доступ к ключам в пределах часа. Данные, полученные за последние 14 дней, также хранятся в кэше горячего уровня доступа (с поддержкой SSD) для эффективной работы обработчика запросов. Эти данные остаются зашифрованными с помощью ключей Майкрософт, независимо от конфигурации CMK, но ваш контроль над данными SSD должен соответствовать  [отзыву ключей](#cmk-kek-revocation). Мы работаем над тем, чтобы данные SSD были зашифрованы с помощью CMK во второй половине 2020 года.
+[Модель ценообразования log Analytics кластеров](./manage-cost-storage.md#log-analytics-dedicated-clusters) использует резервирование емкости, начиная с 1000 ГБ/день.
 
-Возможность CMK поставляется в выделенных кластерах Log Analytics. Чтобы убедиться, что у нас есть требуемая емкость в вашем регионе, необходимо, чтобы ваша подписка была разрешена заранее. Используйте свой контакт Майкрософт, чтобы получить доступ к подписке, прежде чем приступить к настройке CMK.
-
- [Кластерная модель ценообразования Log Analytics](./manage-cost-storage.md#log-analytics-dedicated-clusters) использует резервирования мощности, начиная с уровня 1000 ГБ/день.
+Данные, полученные за последние 14 дней, также хранятся в кэше горячего уровня доступа (с поддержкой SSD) для эффективной работы обработчика запросов. Эти данные остаются зашифрованными с помощью ключей Майкрософт независимо от конфигурации CMK, но ваш контроль над данными SSD соответствует [отзывам ключа](#cmk-kek-revocation). Мы работаем над тем, чтобы данные SSD были зашифрованы с помощью CMK во второй половине 2020 года.
 
 ## <a name="how-cmk-works-in-azure-monitor"></a>Как работает CMK в Azure Monitor
 
@@ -83,7 +81,7 @@ Azure Monitor использует назначаемое системой уп�
 Пример:
 
 ```rst
-GET https://management.azure.com/subscriptions/<subscription-id>/resourcegroups/<resource-group-name>/providers/Microsoft.OperationalInsights/workspaces/<workspace-name>?api-version=2020-03-01-preview
+GET https://management.azure.com/subscriptions/<subscription-id>/resourcegroups/<resource-group-name>/providers/Microsoft.OperationalInsights/workspaces/<workspace-name>?api-version=2020-08-01
 Authorization: Bearer eyJ0eXAiO....
 ```
 
@@ -102,12 +100,12 @@ Authorization: Bearer eyJ0eXAiO....
 
 Некоторые операции в этой процедуре конфигурации выполняются асинхронно, так как они не могут быть завершены быстро. При использовании запросов RESTFUL в конфигурации ответ сначала возвращает код состояния HTTP 200 (ОК) и заголовок с помощью свойства *Azure-AsyncOperation* , если оно принято:
 ```json
-"Azure-AsyncOperation": "https://management.azure.com/subscriptions/subscription-id/providers/Microsoft.OperationalInsights/locations/region-name/operationStatuses/operation-id?api-version=2020-03-01-preview"
+"Azure-AsyncOperation": "https://management.azure.com/subscriptions/subscription-id/providers/Microsoft.OperationalInsights/locations/region-name/operationStatuses/operation-id?api-version=2020-08-01"
 ```
 
 Затем можно проверить состояние асинхронной операции, отправив запрос GET в значение заголовка *Azure-AsyncOperation* :
 ```rst
-GET https://management.azure.com/subscriptions/subscription-id/providers/microsoft.operationalInsights/locations/region-name/operationstatuses/operation-id?api-version=2020-03-01-preview
+GET https://management.azure.com/subscriptions/subscription-id/providers/microsoft.operationalInsights/locations/region-name/operationstatuses/operation-id?api-version=2020-08-01
 Authorization: Bearer <token>
 ```
 
@@ -215,7 +213,7 @@ New-AzOperationalInsightsCluster -ResourceGroupName "resource-group-name" -Clust
 ```
 
 ```rst
-PUT https://management.azure.com/subscriptions/<subscription-id>/resourceGroups/<resource-group-name>/providers/Microsoft.OperationalInsights/clusters/<cluster-name>?api-version=2020-03-01-preview
+PUT https://management.azure.com/subscriptions/<subscription-id>/resourceGroups/<resource-group-name>/providers/Microsoft.OperationalInsights/clusters/<cluster-name>?api-version=2020-08-01
 Authorization: Bearer <token>
 Content-type: application/json
 
@@ -246,7 +244,7 @@ Content-type: application/json
 2. Отправьте запрос GET на ресурс *Кластер* и просмотрите значение *provisioningState*. *ProvisioningAccount* — во время подготовки и *Succeeded* — после завершения.
 
 ```rst
-GET https://management.azure.com/subscriptions/<subscription-id>/resourceGroups/<resource-group-name>/providers/Microsoft.OperationalInsights/clusters/<cluster-name>?api-version=2020-03-01-preview
+GET https://management.azure.com/subscriptions/<subscription-id>/resourceGroups/<resource-group-name>/providers/Microsoft.OperationalInsights/clusters/<cluster-name>?api-version=2020-08-01
 Authorization: Bearer <token>
 ```
 
@@ -309,7 +307,7 @@ Update-AzOperationalInsightsCluster -ResourceGroupName "resource-group-name" -Cl
 > Вы можете обновить *SKU*ресурса *кластера* , *КЭЙВАУЛТПРОПЕРТИЕС* или *биллингтипе* с помощью исправления.
 
 ```rst
-PATCH https://management.azure.com/subscriptions/<subscription-id>/resourceGroups/<resource-group-name>/providers/Microsoft.OperationalInsights/clusters/<cluster-name>?api-version=2020-03-01-preview
+PATCH https://management.azure.com/subscriptions/<subscription-id>/resourceGroups/<resource-group-name>/providers/Microsoft.OperationalInsights/clusters/<cluster-name>?api-version=2020-08-01
 Authorization: Bearer <token>
 Content-type: application/json
 
@@ -391,7 +389,7 @@ Set-AzOperationalInsightsLinkedService -ResourceGroupName "resource-group-name" 
 ```
 
 ```rst
-PUT https://management.azure.com/subscriptions/<subscription-id>/resourcegroups/<resource-group-name>/providers/microsoft.operationalinsights/workspaces/<workspace-name>/linkedservices/cluster?api-version=2020-03-01-preview 
+PUT https://management.azure.com/subscriptions/<subscription-id>/resourcegroups/<resource-group-name>/providers/microsoft.operationalinsights/workspaces/<workspace-name>/linkedservices/cluster?api-version=2020-08-01 
 Authorization: Bearer <token>
 Content-type: application/json
 
@@ -412,7 +410,7 @@ Content-type: application/json
 2. Отправьте запрос [Рабочие области — получение](/rest/api/loganalytics/workspaces/get) и оцените ответ. Связанная рабочая область будет иметь идентификатор clusterResourceId в пункте "компоненты".
 
 ```rest
-GET https://management.azure.com/subscriptions/<subscription-id>/resourcegroups/<resource-group-name>/providers/microsoft.operationalInsights/workspaces/<workspace-name>?api-version=2020-03-01-preview
+GET https://management.azure.com/subscriptions/<subscription-id>/resourcegroups/<resource-group-name>/providers/microsoft.operationalInsights/workspaces/<workspace-name>?api-version=2020-08-01
 Authorization: Bearer <token>
 ```
 
@@ -490,7 +488,7 @@ New-AzOperationalInsightsLinkedStorageAccount -ResourceGroupName "resource-group
 ```
 
 ```rst
-PUT https://management.azure.com/subscriptions/<subscription-id>/resourcegroups/<resource-group-name>/providers/Microsoft.OperationalInsights/workspaces/<workspace-name>/linkedStorageAccounts/Query?api-version=2020-03-01-preview
+PUT https://management.azure.com/subscriptions/<subscription-id>/resourcegroups/<resource-group-name>/providers/Microsoft.OperationalInsights/workspaces/<workspace-name>/linkedStorageAccounts/Query?api-version=2020-08-01
 Authorization: Bearer <token> 
 Content-type: application/json
  
@@ -517,7 +515,7 @@ New-AzOperationalInsightsLinkedStorageAccount -ResourceGroupName "resource-group
 ```
 
 ```rst
-PUT https://management.azure.com/subscriptions/<subscription-id>/resourcegroups/<resource-group-name>/providers/Microsoft.OperationalInsights/workspaces/<workspace-name>/linkedStorageAccounts/Alerts?api-version=2020-03-01-preview
+PUT https://management.azure.com/subscriptions/<subscription-id>/resourcegroups/<resource-group-name>/providers/Microsoft.OperationalInsights/workspaces/<workspace-name>/linkedStorageAccounts/Alerts?api-version=2020-08-01
 Authorization: Bearer <token> 
 Content-type: application/json
  
@@ -534,6 +532,13 @@ Content-type: application/json
 
 После настройки любой новый запрос на оповещение будет сохранен в хранилище.
 
+## <a name="customer-lockbox-preview"></a>Защищенное хранилище (Предварительная версия)
+Защищенное хранилище предоставляет элементу управления возможность утверждать или отклонять запросы инженера Майкрософт на доступ к данным во время запроса на поддержку.
+
+В Azure Monitor Вы можете управлять данными в рабочих областях, связанных с Log Analytics выделенным кластером. Элемент управления защищенного хранилища применяется к данным, хранящимся в Log Analytics выделенном кластере, где он хранится в учетных записях хранения кластера в защищенной подписке вашего абонента.  
+
+Дополнительные сведения о [защищенное хранилище для Microsoft Azure](https://docs.microsoft.com/azure/security/fundamentals/customer-lockbox-overview)
+
 ## <a name="cmk-management"></a>Управление CMK
 
 - **Получение всех ресурсов *Кластер* для группы ресурсов**
@@ -543,7 +548,7 @@ Content-type: application/json
   ```
 
   ```rst
-  GET https://management.azure.com/subscriptions/<subscription-id>/resourcegroups/<resource-group-name>/providers/Microsoft.OperationalInsights/clusters?api-version=2020-03-01-preview
+  GET https://management.azure.com/subscriptions/<subscription-id>/resourcegroups/<resource-group-name>/providers/Microsoft.OperationalInsights/clusters?api-version=2020-08-01
   Authorization: Bearer <token>
   ```
 
@@ -589,7 +594,7 @@ Content-type: application/json
   ```
 
   ```rst
-  GET https://management.azure.com/subscriptions/<subscription-id>/providers/Microsoft.OperationalInsights/clusters?api-version=2020-03-01-preview
+  GET https://management.azure.com/subscriptions/<subscription-id>/providers/Microsoft.OperationalInsights/clusters?api-version=2020-08-01
   Authorization: Bearer <token>
   ```
     
@@ -606,7 +611,7 @@ Content-type: application/json
   ```
 
   ```rst
-  PATCH https://management.azure.com/subscriptions/<subscription-id>/resourceGroups/<resource-group-name>/providers/Microsoft.OperationalInsights/clusters/<cluster-name>?api-version=2020-03-01-preview
+  PATCH https://management.azure.com/subscriptions/<subscription-id>/resourceGroups/<resource-group-name>/providers/Microsoft.OperationalInsights/clusters/<cluster-name>?api-version=2020-08-01
   Authorization: Bearer <token>
   Content-type: application/json
 
@@ -627,7 +632,7 @@ Content-type: application/json
   Следуйте разделу по [обновлению ресурса](#update-cluster-resource-with-key-identifier-details) *Кластер* и предоставьте новое значение billingType. Обратите внимание, что вы не обязаны предоставлять полный текст REST-запроса и должны включить в него *billingType*:
 
   ```rst
-  PATCH https://management.azure.com/subscriptions/<subscription-id>/resourceGroups/<resource-group-name>/providers/Microsoft.OperationalInsights/clusters/<cluster-name>?api-version=2020-03-01-preview
+  PATCH https://management.azure.com/subscriptions/<subscription-id>/resourceGroups/<resource-group-name>/providers/Microsoft.OperationalInsights/clusters/<cluster-name>?api-version=2020-08-01
   Authorization: Bearer <token>
   Content-type: application/json
 
@@ -649,7 +654,7 @@ Content-type: application/json
   ```
 
   ```rest
-  DELETE https://management.azure.com/subscriptions/<subscription-id>/resourcegroups/<resource-group-name>/providers/microsoft.operationalinsights/workspaces/<workspace-name>/linkedservices/cluster?api-version=2020-03-01-preview
+  DELETE https://management.azure.com/subscriptions/<subscription-id>/resourcegroups/<resource-group-name>/providers/microsoft.operationalinsights/workspaces/<workspace-name>/linkedservices/cluster?api-version=2020-08-01
   Authorization: Bearer <token>
   ```
 
@@ -681,7 +686,7 @@ Content-type: application/json
   ```
 
   ```rst
-  DELETE https://management.azure.com/subscriptions/<subscription-id>/resourceGroups/<resource-group-name>/providers/Microsoft.OperationalInsights/clusters/<cluster-name>?api-version=2020-03-01-preview
+  DELETE https://management.azure.com/subscriptions/<subscription-id>/resourceGroups/<resource-group-name>/providers/Microsoft.OperationalInsights/clusters/<cluster-name>?api-version=2020-08-01
   Authorization: Bearer <token>
   ```
 

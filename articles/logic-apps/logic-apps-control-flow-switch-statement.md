@@ -6,12 +6,12 @@ ms.suite: integration
 ms.reviewer: klam, logicappspm
 ms.topic: article
 ms.date: 10/08/2018
-ms.openlocfilehash: d2c8271f0bc33bc47e64c85846061a9b77bbe66f
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 62f147104cf9e0e1605b02a420cb6d20190361b8
+ms.sourcegitcommit: f8d2ae6f91be1ab0bc91ee45c379811905185d07
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87066220"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89657458"
 ---
 # <a name="create-switch-statements-that-run-workflow-actions-based-on-specific-values-in-azure-logic-apps"></a>Создание операторов switch, которые запускают действия рабочего процесса на основе определенных значений в Azure Logic Apps
 
@@ -27,7 +27,7 @@ ms.locfileid: "87066220"
 
 * Подписка Azure. Если у вас нет ее, вы можете [зарегистрироваться для получения бесплатной учетной записи Azure](https://azure.microsoft.com/free/).
 
-* Чтобы выполнить действия, указанные в данной статье, [создайте этот пример приложения логики](../logic-apps/quickstart-create-first-logic-app-workflow.md), используя учетную запись Outlook.com или Office 365 Outlook.
+* Чтобы выполнить пример в этой статье, [Создайте пример приложения логики](../logic-apps/quickstart-create-first-logic-app-workflow.md) с учетной записью Outlook.com или рабочей или учебной учетной записью.
 
   1. Когда вы добавляете действие для отправки сообщения, найдите и выберите действие **Send an approval email** (Отправить сообщение с утверждением).
 

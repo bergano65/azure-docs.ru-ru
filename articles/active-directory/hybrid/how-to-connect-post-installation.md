@@ -16,12 +16,12 @@ ms.date: 04/26/2019
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a859a10e02a5738ee023db5d653ea14403b9bcad
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 7d6689b4b67b8462e983ae9b111e0fbc60c422b7
+ms.sourcegitcommit: f8d2ae6f91be1ab0bc91ee45c379811905185d07
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85358452"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89657118"
 ---
 # <a name="next-steps-and-how-to-manage-azure-ad-connect"></a>Дальнейшие действия и управление Azure AD Connect
 Используйте рабочие процедуры, приведенные в этой статье, для настройки Azure Active Directory (Azure AD) Connect в соответствии с потребностями вашей организации.  
@@ -30,7 +30,7 @@ ms.locfileid: "85358452"
 По умолчанию только пользователь, выполнивший установку, и локальные администраторы могут управлять установленным модулем синхронизации. Чтобы предоставить дополнительным пользователям доступ к модулю синхронизации и возможность управлять им, найдите группу ADSyncAdmins на локальном сервере и добавьте их в эту группу.
 
 ## <a name="assign-licenses-to-azure-ad-premium-and-enterprise-mobility-suite-users"></a>Назначение пользователям лицензий Azure AD Premium и Enterprise Mobility Suite
-После синхронизации данных о пользователях с облаком необходимо назначить им лицензию, чтобы они могли приступить к работе с облачными приложениями, такими как Office 365.
+Теперь, когда пользователи были синхронизированы с облаком, необходимо назначить им лицензию, чтобы они могли работать с облачными приложениями, такими как Microsoft 365.
 
 ### <a name="to-assign-an-azure-ad-premium-or-enterprise-mobility-suite-license"></a>Назначение лицензии Azure AD Premium или Enterprise Mobility Suite
 
@@ -72,7 +72,7 @@ ms.locfileid: "85358452"
 
 ![Список дополнительных задач](./media/how-to-connect-post-installation/addtasks2.png)
 
-| Дополнительная задача | Описание: |
+| Дополнительная задача | Описание |
 | --- | --- |
 |**Параметры конфиденциальности**|Просмотр данных телеметрии, к которым предоставляется общий доступ Майкрософт.|
 |**Просмотр текущей конфигурации**|Просмотр текущего решения Azure AD Connect.  Включает общие параметры, синхронизированные каталоги и параметры синхронизации. |
@@ -84,5 +84,5 @@ ms.locfileid: "85358452"
 |**Управление интеграцией**|Управление инфраструктурой AD FS, продление сертификатов и добавление серверов AD FS|
 |**Устранение проблем**|Справка по устранению неполадок Azure AD Connect|
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 Дополнительные сведения об [интеграции локальных удостоверений с Azure Active Directory](whatis-hybrid-identity.md).

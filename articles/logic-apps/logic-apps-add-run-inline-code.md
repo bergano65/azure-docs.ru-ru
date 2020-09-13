@@ -7,12 +7,12 @@ ms.reviewer: deli, logicappspm
 ms.topic: article
 ms.date: 05/14/2019
 ms.custom: devx-track-javascript
-ms.openlocfilehash: a1c3828a4b1899ff4b22c0a9520f676add21fe02
-ms.sourcegitcommit: e71da24cc108efc2c194007f976f74dd596ab013
+ms.openlocfilehash: a1fca14035dd4a9af00ecfb8d1d01dc27ab0b8d0
+ms.sourcegitcommit: f8d2ae6f91be1ab0bc91ee45c379811905185d07
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87420130"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89658170"
 ---
 # <a name="add-and-run-code-snippets-by-using-inline-code-in-azure-logic-apps"></a>Добавление и выполнение фрагментов кода с помощью встроенного кода в Azure Logic Apps
 
@@ -29,7 +29,7 @@ ms.locfileid: "87420130"
 
 Это действие выполняет фрагмент кода и возвращает выходные данные из этого фрагмента в виде маркера с именем **result**, который можно использовать в последующих действиях в приложении логики. В других сценариях, где требуется создать функцию для кода, попробуйте создать [и вызвать функцию Azure](../logic-apps/logic-apps-azure-functions.md) в приложении логики.
 
-В этой статье пример приложения логики активируется при поступлении нового электронного письма в учетную запись Office 365 Outlook. Фрагмент кода извлекает и возвращает все адреса электронной почты, которые отображаются в тексте сообщения электронной почты.
+В этой статье пример приложения логики активируется при поступлении нового электронного письма в рабочую или учебную учетную запись. Фрагмент кода извлекает и возвращает все адреса электронной почты, которые отображаются в тексте сообщения электронной почты.
 
 ![Обзор примера](./media/logic-apps-add-run-inline-code/inline-code-example-overview.png)
 
