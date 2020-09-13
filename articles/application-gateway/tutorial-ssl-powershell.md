@@ -9,12 +9,12 @@ ms.topic: how-to
 ms.date: 11/14/2019
 ms.author: victorh
 ms.custom: mvc, devx-track-azurepowershell
-ms.openlocfilehash: 21e242d0a6a5aa2efa011289200654e71bd58662
-ms.sourcegitcommit: 656c0c38cf550327a9ee10cc936029378bc7b5a2
+ms.openlocfilehash: 67d22535f44d4d1b39b6c305fa0670d2d08be0c3
+ms.sourcegitcommit: 1b320bc7863707a07e98644fbaed9faa0108da97
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89071454"
+ms.lasthandoff: 09/09/2020
+ms.locfileid: "89595807"
 ---
 # <a name="create-an-application-gateway-with-tls-termination-using-azure-powershell"></a>Создание шлюза приложений с завершением TLS с помощью Azure PowerShell
 
@@ -22,13 +22,12 @@ Azure PowerShell можно использовать для создания [ш
 
 Вы узнаете, как выполнять следующие задачи:
 
-> [!div class="checklist"]
-> * Создание самозаверяющего сертификата
-> * настройка сети;
-> * создание шлюза приложений с сертификатом;
-> * создание масштабируемого набора виртуальных машин с серверным пулом, используемым по умолчанию.
+* Создание самозаверяющего сертификата
+* настройка сети;
+* создание шлюза приложений с сертификатом;
+* создание масштабируемого набора виртуальных машин с серверным пулом, используемым по умолчанию.
 
-Если у вас еще нет подписки Azure, создайте [бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
+Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 

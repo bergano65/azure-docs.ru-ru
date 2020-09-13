@@ -6,12 +6,12 @@ ms.author: jakras
 ms.date: 02/06/2020
 ms.topic: article
 ms.custom: devx-track-csharp
-ms.openlocfilehash: b92bfad99c854f75c945121d352a7122d8c6db89
-ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
+ms.openlocfilehash: d5de8374f58eaf8dc83f54f05557b0a125191c34
+ms.sourcegitcommit: f845ca2f4b626ef9db73b88ca71279ac80538559
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89011605"
+ms.lasthandoff: 09/09/2020
+ms.locfileid: "89613727"
 ---
 # <a name="cut-planes"></a>Вырезание плоскостей
 
@@ -56,7 +56,6 @@ void CreateCutPlane(ApiHandle<AzureSession> session, ApiHandle<Entity> ownerEnti
 }
 ```
 
-
 ### <a name="cutplanecomponent-properties"></a>Свойства CutPlaneComponent
 
 Компонент сечения имеет перечисленные ниже свойства.
@@ -68,6 +67,11 @@ void CreateCutPlane(ApiHandle<AzureSession> session, ApiHandle<Entity> ownerEnti
 * `FadeColor` и `FadeLength`:
 
   Если альфа-значение *FadeColor* не равно нулю, пиксели, находящиеся близко к сечению, будут выцветать в направлении компонента RGB FadeColor. Интенсивность альфа-канала определяет то, будут ли пиксели выцветать до выбранного цвета полностью или частично. *FadeLength* определяет расстояние, на котором будет происходить выцветание.
+
+## <a name="api-documentation"></a>Документирование API
+
+* [Класс C# Кутпланекомпонент](https://docs.microsoft.com/dotnet/api/microsoft.azure.remoterendering.cutplanecomponent)
+* [Класс C++ Кутпланекомпонент](https://docs.microsoft.com/cpp/api/remote-rendering/cutplanecomponent)
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

@@ -11,12 +11,12 @@ ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure-services
 ms.date: 02/10/2020
 ms.author: alsin
-ms.openlocfilehash: 641ac1f6a2cc98e48694c42ec1531f679621640d
-ms.sourcegitcommit: 927dd0e3d44d48b413b446384214f4661f33db04
+ms.openlocfilehash: dadfd3abfad0c588f53d47cb7ab1eb138d4f90ac
+ms.sourcegitcommit: f845ca2f4b626ef9db73b88ca71279ac80538559
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88869224"
+ms.lasthandoff: 09/09/2020
+ms.locfileid: "89612518"
 ---
 # <a name="red-hat-update-infrastructure-for-on-demand-red-hat-enterprise-linux-vms-in-azure"></a>Red Hat Update Infrastructure для предоставляемых по запросу виртуальных машин Red Hat Enterprise Linux в Azure
  [Red Hat Update Infrastructure](https://access.redhat.com/products/red-hat-update-infrastructure) (RHUI) позволяет поставщикам облачных служб (например, Azure) создавать зеркальные копии размещенного с помощью Red Hat содержимого репозитория, создавать пользовательские репозитории с содержимым для Azure и предоставлять пользовательским виртуальным машинам доступ к этому содержимому.
@@ -89,11 +89,11 @@ RedHat:RHEL:7.6:7.6.2019062116
 * RHEL 7,6 ЕУС поддержка заканчивается 31 мая 2021 г.
 * Поддержка EUS для версии RHEL 7.7 завершается 30 августа 2021 г.
 
-### <a name="switch-a-rhel-vm-to-eus-version-lock-to-a-specific-minor-version"></a>Перевод виртуальной машины RHEL на репозиторий EUS (фиксация определенного дополнительного номера версии)
-Ниже приведены инструкции по фиксации конкретного дополнительного номера версии для ВМ RHEL (команды нужно запускать из учетной записи root).
+### <a name="switch-a-rhel-vm-7x-to-eus-version-lock-to-a-specific-minor-version"></a>Переключение виртуальной машины RHEL 7. x на ЕУС (Блокировка версии на конкретную промежуточную версию)
+Используйте приведенные ниже инструкции, чтобы заблокировать виртуальную машину RHEL 7. x в определенный дополнительный выпуск (Запуск от имени root):
 
 >[!NOTE]
-> Это применяется только для версий RHEL, для которых доступна EUS. На момент написания этой статьи это версии RHEL 7.2–7.7. Дополнительные сведения можно найти на странице [Red Hat Enterprise Linux Life Cycle](https://access.redhat.com/support/policy/updates/errata) (Жизненный цикл Red Hat Enterprise Linux).
+> Это относится только к версиям RHEL 7. x, для которых доступна ЕУС. На момент написания этой статьи это версии RHEL 7.2–7.7. Дополнительные сведения можно найти на странице [Red Hat Enterprise Linux Life Cycle](https://access.redhat.com/support/policy/updates/errata) (Жизненный цикл Red Hat Enterprise Linux).
 
 1. Отключите репозитории без поддержки EUS:
     ```bash
@@ -111,14 +111,52 @@ RedHat:RHEL:7.6:7.6.2019062116
     ```
 
     >[!NOTE]
-    > Выполнив приведенные выше инструкции, вы зафиксируете текущий дополнительный номер версии в качестве дополнительного номера версии RHEL. Введите конкретный дополнительный номер версии, если вам нужно обновить систему и зафиксировать дополнительный номер версии, который не является последним. Например, команда `echo 7.5 > /etc/yum/vars/releasever` зафиксирует версию RHEL 7.5
+    > Выполнив приведенные выше инструкции, вы зафиксируете текущий дополнительный номер версии в качестве дополнительного номера версии RHEL. Введите конкретный дополнительный номер версии, если вам нужно обновить систему и зафиксировать дополнительный номер версии, который не является последним. Например, `echo 7.5 > /etc/yum/vars/releasever` будет блокировать версию RHEL до RHEL 7,5.
 
 1. Обновление виртуальной машины RHEL
     ```bash
     sudo yum update
     ```
 
-### <a name="switch-a-rhel-vm-back-to-non-eus-remove-a-version-lock"></a>Возврат виртуальной машины RHEL на репозиторий без поддержки EUS (отмена фиксации версии)
+### <a name="switch-a-rhel-vm-8x-to-eus-version-lock-to-a-specific-minor-version"></a>Переключение RHEL VM 8. x на ЕУС (Блокировка версии на конкретную промежуточную версию)
+Используйте приведенные ниже инструкции, чтобы заблокировать виртуальную машину RHEL 8. x в определенный дополнительный выпуск (Запуск от имени root):
+
+>[!NOTE]
+> Это относится только к версиям RHEL 8. x, для которых доступна ЕУС. На момент написания этой статьи сюда входит RHEL 8.1-8.2. Дополнительные сведения можно найти на странице [Red Hat Enterprise Linux Life Cycle](https://access.redhat.com/support/policy/updates/errata) (Жизненный цикл Red Hat Enterprise Linux).
+
+1. Отключите репозитории без поддержки EUS:
+    ```bash
+    yum --disablerepo='*' remove 'rhui-azure-rhel8'
+    ```
+
+1. Получите файл конфигурации ЕУС репозиториев:
+    ```bash
+    wget https://rhelimage.blob.core.windows.net/repositories/rhui-microsoft-azure-rhel8-eus.config
+    ```
+
+1. Добавьте репозитории EUS:
+    ```bash
+    yum --config=rhui-microsoft-azure-rhel8-eus.config install rhui-azure-rhel8-eus
+    ```
+
+1. Зафиксируйте переменную `releasever` (команда запускается из учетной записи root):
+    ```bash
+    echo $(. /etc/os-release && echo $VERSION_ID) > /etc/yum/vars/releasever
+    ```
+
+    >[!NOTE]
+    > Выполнив приведенные выше инструкции, вы зафиксируете текущий дополнительный номер версии в качестве дополнительного номера версии RHEL. Введите конкретный дополнительный номер версии, если вам нужно обновить систему и зафиксировать дополнительный номер версии, который не является последним. Например, `echo 8.1 > /etc/yum/vars/releasever` будет блокировать версию RHEL до RHEL 8,1.
+
+    >[!NOTE]
+    > При наличии проблем с разрешениями для доступа к релеасевер можно изменить файл с помощью "Nano/ЕТК/Юм/Варс/релеасеве" и добавить сведения о версии образа и сохранить ("Ctrl + o", а затем нажать клавишу ВВОД и "Ctrl + x").  
+
+1. Обновление виртуальной машины RHEL
+    ```bash
+    sudo yum update
+    ```
+
+
+### <a name="switch-a-rhel-7x-vm-back-to-non-eus-remove-a-version-lock"></a>Переключение виртуальной машины RHEL 7. x обратно на ЕУС (удалить блокировку версии)
 Запустите следующую команду из учетной записи root:
 1. Удалите файл `releasever`:
     ```bash
@@ -135,6 +173,33 @@ RedHat:RHEL:7.6:7.6.2019062116
     yum --config='https://rhelimage.blob.core.windows.net/repositories/rhui-microsoft-azure-rhel7.config' install 'rhui-azure-rhel7'
     ```
 
+1. Обновление виртуальной машины RHEL
+    ```bash
+    sudo yum update
+    ```
+
+### <a name="switch-a-rhel-8x-vm-back-to-non-eus-remove-a-version-lock"></a>Переключение виртуальной машины RHEL 8. x обратно на ЕУС (удалить блокировку версии)
+Запустите следующую команду из учетной записи root:
+1. Удалите файл `releasever`:
+    ```bash
+    rm /etc/yum/vars/releasever
+     ```
+
+1. Отключите репозитории EUS:
+    ```bash
+    yum --disablerepo='*' remove 'rhui-azure-rhel8-eus'
+   ```
+
+1. Получите обычный файл конфигурации репозиториев:
+    ```bash
+    wget https://rhelimage.blob.core.windows.net/repositories/rhui-microsoft-azure-rhel8.config
+    ```
+
+1. Добавьте репозитории EUS:
+    ```bash
+    yum --config=rhui-microsoft-azure-rhel8.config install rhui-azure-rhel8
+    ```
+    
 1. Обновление виртуальной машины RHEL
     ```bash
     sudo yum update

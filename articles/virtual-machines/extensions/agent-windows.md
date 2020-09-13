@@ -13,12 +13,12 @@ ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure-services
 ms.date: 07/20/2019
 ms.author: akjosh
-ms.openlocfilehash: 42470df5391a976e8023467758d2a3fd0890883e
-ms.sourcegitcommit: 1a0dfa54116aa036af86bd95dcf322307cfb3f83
+ms.openlocfilehash: d9939b706eb63e5681ddef438cde92f32786f889
+ms.sourcegitcommit: f845ca2f4b626ef9db73b88ca71279ac80538559
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/10/2020
-ms.locfileid: "88041482"
+ms.lasthandoff: 09/09/2020
+ms.locfileid: "89612836"
 ---
 # <a name="azure-virtual-machine-agent-overview"></a>Обзор агента виртуальной машины Azure
 Агент виртуальной машины Microsoft Azure — это защищенный упрощенный процесс, который управляет взаимодействием виртуальной машины с контроллером структуры Azure. Основная роль агента виртуальной машины — это включение и выполнение расширений виртуальной машины Azure. Расширения виртуальной машины позволяют выполнять дополнительные действия по настройке виртуальной машины после развертывания, например устанавливать и настраивать программное обеспечение. Они также предоставляют возможности восстановления, такие как сброс пароля администратора виртуальной машины. Расширения виртуальной машины не могут выполняться без агента виртуальной машины Azure.
@@ -70,7 +70,7 @@ $vm | Update-AzVM
 
 ### <a name="prerequisites"></a>Предварительные требования
 
-- Для запуска агента виртуальной машины Windows требуется по меньшей мере Windows Server 2008 (64-bit) с платформой .NET Framework 4,0. См. раздел [Минимальная поддержка версий для агентов виртуальных машин в Azure](https://support.microsoft.com/en-us/help/4049215/extensions-and-virtual-machine-agent-minimum-version-support) .
+- Для запуска агента виртуальной машины Windows требуется по меньшей мере Windows Server 2008 с пакетом обновления 2 64 (SP2) с версией .NET Framework 4,0. См. раздел [Минимальная поддержка версий для агентов виртуальных машин в Azure](https://support.microsoft.com/en-us/help/4049215/extensions-and-virtual-machine-agent-minimum-version-support) .
 
 - Убедитесь, что ваша виртуальная машина имеет доступ к IP-адресу 168.63.129.16. Дополнительные сведения см. в разделе [что такое IP-адрес 168.63.129.16](../../virtual-network/what-is-ip-address-168-63-129-16.md).
 

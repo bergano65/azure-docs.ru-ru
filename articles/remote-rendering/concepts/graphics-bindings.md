@@ -10,12 +10,12 @@ ms.date: 12/11/2019
 ms.topic: conceptual
 ms.service: azure-remote-rendering
 ms.custom: devx-track-csharp
-ms.openlocfilehash: f769036ac9e5a6945e7ecad30e021d377cabd358
-ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
+ms.openlocfilehash: 8d8dc4a3efb034c9428de32f0f975869e1044327
+ms.sourcegitcommit: f845ca2f4b626ef9db73b88ca71279ac80538559
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89020275"
+ms.lasthandoff: 09/09/2020
+ms.locfileid: "89613887"
 ---
 # <a name="graphics-binding"></a>Графическая привязка
 
@@ -115,7 +115,6 @@ if (*wmrBinding->UpdateUserCoordinateSystem(ptr) == Result::Success)
     //...
 }
 ```
-
 
 В примере выше `ptr` должен быть указателем на собственный объект `ABI::Windows::Perception::Spatial::ISpatialCoordinateSystem`, определяющий систему координат в абсолютном пространстве, в которой выражаются координаты в API.
 
@@ -231,6 +230,17 @@ else
     ...
 }
 ```
+
+## <a name="api-documentation"></a>Документирование API
+
+* [C# Ремотеманажерстатик. Стартупремотерендеринг ()](https://docs.microsoft.com/dotnet/api/microsoft.azure.remoterendering.remotemanagerstatic.startupremoterendering)
+* [Класс C# Графиксбиндинг](https://docs.microsoft.com/dotnet/api/microsoft.azure.remoterendering.graphicsbinding)
+* [Класс C# GraphicsBindingWmrD3d11](https://docs.microsoft.com/dotnet/api/microsoft.azure.remoterendering.graphicsbindingwmrd3d11)
+* [Класс C# GraphicsBindingSimD3d11](https://docs.microsoft.com/dotnet/api/microsoft.azure.remoterendering.graphicsbindingsimd3d11)
+* [Структура C++ Ремотерендерингинитиализатион](https://docs.microsoft.com/cpp/api/remote-rendering/remoterenderinginitialization)
+* [Класс C++ Графиксбиндинг](https://docs.microsoft.com/cpp/api/remote-rendering/graphicsbinding)
+* [Класс C++ GraphicsBindingWmrD3d11](https://docs.microsoft.com/cpp/api/remote-rendering/graphicsbindingwmrd3d11)
+* [Класс C++ GraphicsBindingSimD3d11](https://docs.microsoft.com/cpp/api/remote-rendering/graphicsbindingsimd3d11)
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

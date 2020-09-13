@@ -6,12 +6,12 @@ ms.author: jakras
 ms.date: 02/21/2020
 ms.topic: conceptual
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 74fae6a8aa0c59043db0ab816e09b16affb63580
-ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
+ms.openlocfilehash: 2e7f441a727bea8d1a5d401fb5e9757dee1044fc
+ms.sourcegitcommit: f845ca2f4b626ef9db73b88ca71279ac80538559
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89021839"
+ms.lasthandoff: 09/09/2020
+ms.locfileid: "89613805"
 ---
 # <a name="remote-rendering-sessions"></a>Сеансы Удаленной отрисовки
 
@@ -31,7 +31,7 @@ ms.locfileid: "89021839"
 
 ### <a name="managing-multiple-sessions-simultaneously"></a>Одновременное управление несколькими сеансами
 
-Невозможно полностью *подключиться* к нескольким сеансам с одного устройства. Тем не менее вы можете создавать, отслеживать и завершать любое количество сеансов из одного приложения. Если приложению не нужно подключаться к сеансу, его не нужно запускать на таком устройстве, как HoloLens 2. Такой вариант использования может быть реализован в том случае, если требуется управлять сеансами с помощью централизованного механизма. Например, можно создать веб-приложение, в которое может войти несколько планшетов и устройств HoloLense. Затем приложение может отображать на планшетах параметры, например для выбора отображаемой модели САПР. Если пользователь сделает выбор, эта информация будет передана на все устройства HoloLense, чтобы обеспечить общую среду.
+Невозможно полностью *подключиться* к нескольким сеансам с одного устройства. Тем не менее вы можете создавать, отслеживать и завершать любое количество сеансов из одного приложения. Если приложению не нужно подключаться к сеансу, его не нужно запускать на таком устройстве, как HoloLens 2. Такой вариант использования может быть реализован в том случае, если требуется управлять сеансами с помощью централизованного механизма. Например, можно создать веб-приложение, в котором несколько планшетов и устройств HoloLens могут войти в систему. Затем приложение может отображать на планшетах параметры, например для выбора отображаемой модели САПР. Если пользователь сделает выбор, эти сведения передаются на все устройства HoloLens для создания общего интерфейса.
 
 ## <a name="session-phases"></a>Этапы сеанса
 
@@ -146,6 +146,15 @@ RemoteManagerStatic.ShutdownRemoteRendering();
 Постоянный идентификатор сеанса можно запросить с помощью `AzureSession.SessionUUID()` и сохранить в локальный кэш. С помощью этого идентификатора приложение может вызвать `AzureFrontend.OpenSession` для привязки к этому сеансу.
 
 Если `AzureSession.IsConnected` имеет значение true, то `AzureSession.Actions` возвращает экземпляр `RemoteManager`, который содержит функции, позволяющие [загружать модели](models.md), управлять [сущностями](entities.md) и [запрашивать сведения](../overview/features/spatial-queries.md) об отрисованной сцене.
+
+## <a name="api-documentation"></a>Документирование API
+
+* [Класс C# Азуресессион](https://docs.microsoft.com/dotnet/api/microsoft.azure.remoterendering.azuresession)
+* [C# Азурефронтенд. Креатеневрендерингсессионасинк ()](https://docs.microsoft.com/dotnet/api/microsoft.azure.remoterendering.azurefrontend.createnewrenderingsessionasync)
+* [C# Азурефронтенд. Опенрендерингсессион ()](https://docs.microsoft.com/dotnet/api/microsoft.azure.remoterendering.azurefrontend.openrenderingsession)
+* [Класс C++ Азуресессион](https://docs.microsoft.com/cpp/api/remote-rendering/azuresession)
+* [C++ Азурефронтенд:: Креатеневрендерингсессионасинк](https://docs.microsoft.com/cpp/api/remote-rendering/azurefrontend#createnewrenderingsessionasync)
+* [C++ Азурефронтенд:: Опенрендерингсессион](https://docs.microsoft.com/cpp/api/remote-rendering/azurefrontend#openrenderingsession)
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

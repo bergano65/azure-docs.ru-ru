@@ -9,16 +9,17 @@ ms.reviewer: douglasl
 ms.service: data-factory
 ms.workload: data-services
 ms.topic: conceptual
-ms.date: 05/12/2020
+ms.date: 09/09/2020
 ms.author: jingwang
-ms.openlocfilehash: 9fbf4062304dda7112e89ecd4abd5288533f28ff
-ms.sourcegitcommit: fdec8e8bdbddcce5b7a0c4ffc6842154220c8b90
+ms.openlocfilehash: 16f7a1481b15f280995bb71fa9e30ed3a129ab6d
+ms.sourcegitcommit: f845ca2f4b626ef9db73b88ca71279ac80538559
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83635782"
+ms.lasthandoff: 09/09/2020
+ms.locfileid: "89612627"
 ---
 # <a name="copy-data-from-mysql-using-azure-data-factory"></a>Копирование данных из MySQL с помощью фабрики данных Azure
+
 > [!div class="op_single_selector" title1="Выберите используемую версию службы "Фабрика данных":"]
 > * [Версия 1](v1/data-factory-onprem-mysql-connector.md)
 > * [Текущая версия](connector-mysql.md)
@@ -66,7 +67,9 @@ ms.locfileid: "83635782"
 
 | Свойство | Описание | Параметры | Обязательно |
 |:--- |:--- |:--- |:--- |
-| SSLMode | Этот параметр указывает, использует ли драйвер TLS-шифрование и проверку при подключении к MySQL. Пример: `SSLMode=<0/1/2/3/4>`.| DISABLED (0) / PREFERRED (1) **(по умолчанию)** / REQUIRED (2) / VERIFY_CA (3) / VERIFY_IDENTITY (4) | нет |
+| SSLMode | Этот параметр указывает, использует ли драйвер TLS-шифрование и проверку при подключении к MySQL. Например,  `SSLMode=<0/1/2/3/4>` .| DISABLED (0) / PREFERRED (1) **(по умолчанию)** / REQUIRED (2) / VERIFY_CA (3) / VERIFY_IDENTITY (4) | нет |
+| SSLCert | Полный путь и имя PEM-файла, содержащего SSL-сертификат, используемый для подтверждения подлинности клиента. <br/> Чтобы указать закрытый ключ для шифрования этого сертификата перед его отправкой на сервер, используйте `SSLKey` свойство.| | Да, если используется двусторонняя проверка SSL. |
+| сслкэй | Полный путь и имя файла, содержащего закрытый ключ, используемый для шифрования сертификата на стороне клиента во время двухсторонней проверки SSL.|  | Да, если используется двусторонняя проверка SSL. |
 | useSystemTrustStore | Этот параметр указывает, следует ли использовать сертификат ЦС из доверенного системного хранилища или из указанного PEM-файла. Пример: `UseSystemTrustStore=<0/1>;`| Enabled (1) / Disabled (0) **(по умолчанию)** | нет |
 
 **Пример**.
@@ -168,7 +171,7 @@ ms.locfileid: "83635782"
 }
 ```
 
-Если вы использовали ранее типизированный набор данных `RelationalTable`, он по-прежнему поддерживается. Но мы рекомендуем в дальнейшем использовать более новую версию.
+Если вы ранее использовали типизированный набор данных `RelationalTable`, он пока поддерживается и не требует изменений, но мы рекомендуем при любом удобном случае перейти на новую версию.
 
 ## <a name="copy-activity-properties"></a>Свойства действия копирования
 
@@ -267,7 +270,7 @@ ms.locfileid: "83635782"
 
 ## <a name="lookup-activity-properties"></a>Свойства действия поиска
 
-Подробные сведения об этих свойствах см. в статье [о действии поиска](control-flow-lookup-activity.md).
+Подробные сведения об этих свойствах см. в разделе [Действие поиска](control-flow-lookup-activity.md).
 
 ## <a name="next-steps"></a>Дальнейшие действия
 В таблице [Поддерживаемые хранилища данных](copy-activity-overview.md#supported-data-stores-and-formats) приведен список хранилищ данных, которые поддерживаются в качестве источников и приемников для действия копирования в фабрике данных Azure.

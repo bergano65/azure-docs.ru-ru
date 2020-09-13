@@ -12,14 +12,14 @@ ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 08/13/2020
+ms.date: 09/09/2020
 ms.author: mbaldwin
-ms.openlocfilehash: 51d7cb32ef2d1d7750a0bb53cfa3ccc111bd1302
-ms.sourcegitcommit: d7352c07708180a9293e8a0e7020b9dd3dd153ce
+ms.openlocfilehash: 836e01d3cd8fb25dda1616803d8b6f3e9ff4e06f
+ms.sourcegitcommit: 3be3537ead3388a6810410dfbfe19fc210f89fec
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/30/2020
-ms.locfileid: "89143739"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89645756"
 ---
 # <a name="data-encryption-models"></a>Модели шифрования данных
 
@@ -60,7 +60,7 @@ ms.locfileid: "89143739"
 
 Модель шифрования клиентом — это шифрование, выполняемое службой или вызывающим приложением за пределами поставщика ресурсов или Azure. Это шифрование можно выполнить с помощью приложения службы в Azure или приложения, работающего в центре обработки данных пользователя. В любом случае при использовании этой модели шифрования поставщик ресурсов Azure принимает зашифрованный большой двоичный объект данных без возможности расшифровки этих данных каким-либо образом, а также без доступа к ключам шифрования. В этой модели ключами управляют вызывающие приложение или служба. Этот процесс является непрозрачным для службы Azure.
 
-![Клиент](./media/encryption-models/azure-security-encryption-atrest-fig2.png)
+![клиент](./media/encryption-models/azure-security-encryption-atrest-fig2.png)
 
 ## <a name="server-side-encryption-using-service-managed-keys"></a>Шифрование на стороне сервера с помощью управляемых службой ключей
 
@@ -157,14 +157,14 @@ ms.locfileid: "89143739"
 | QnA Maker                        | Да                | Да                | -                  |
 | Службы "Речь"                  | Да                | Да                | -                  |
 | Перевод текстов                  | Да                | Да                | -                  |
-| Power BI                         | Да                | 2048-разрядный RSA (предварительная версия) | -                  |
+| Power BI                         | Да                | Да, RSA 4096-bit  | -                  |
 | **Аналитика**                    |                    |                    |                    |
 | Azure Stream Analytics           | Да                | Недоступно\*              | -                  |
 | Центры событий                       | Да                | Да                | -                  |
 | Функции                        | Да                | Да                | -                  |
 | Службы Azure Analysis Services          | Да                | -                  | -                  |
 | Каталог данных Azure               | Да                | -                  | -                  |
-| Azure HDInsight                  | Да                | All                | -                  |
+| Azure HDInsight                  | Да                | Все                | -                  |
 | Azure Monitor Application Insights | Да                | Да                | -                  |
 | Azure Monitor Log Analytics      | Да                | Да                | -                  |
 | Azure Data Explorer              | Да                | Да                | -                  |
@@ -201,7 +201,7 @@ ms.locfileid: "89143739"
 | **DevOps**                       |                    |                    |                    |
 | Azure DevOps Services            | Да                | -                  | Да                |
 | Azure Repos                      | Да                | -                  | Да                |
-| **Идентификация**                     |                    |                    |                    |
+| **Удостоверение**                     |                    |                    |                    |
 | Azure Active Directory           | Да                | -                  | -                  |
 | Доменные службы Azure Active Directory | Да          | Да                | -                  |
 | **Интеграция**                  |                    |                    |                    |

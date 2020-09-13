@@ -5,12 +5,12 @@ author: florianborn71
 ms.author: flborn
 ms.date: 02/05/2020
 ms.topic: conceptual
-ms.openlocfilehash: b800272a538243d39a89e4eed64bc5cbc2d53ad8
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: eea43f48abef5e2b258251d46eca1061a2263519
+ms.sourcegitcommit: f845ca2f4b626ef9db73b88ca71279ac80538559
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "80681770"
+ms.lasthandoff: 09/09/2020
+ms.locfileid: "89613834"
 ---
 # <a name="meshes"></a>Сетки
 
@@ -37,6 +37,13 @@ ms.locfileid: "80681770"
 * **Материалы:** Массив материалов, указанный в самом компоненте сетки. Размер массива всегда будет такой же, как у массива *Materials* в ресурсе сетки. Материалы, которые не должны переопределяться из сетки по умолчанию, имеют значение *null* в этом массиве.
 
 * **Уседматериалс:** Массив фактически используемых материалов для каждой подсети. Будет совпадать с данными в массиве *Materials* для значений, отличных от NULL. В противном случае он содержит значение из массива *Materials* в экземпляре сетки.
+
+## <a name="api-documentation"></a>Документирование API
+
+* [Класс сетки C#](https://docs.microsoft.com/dotnet/api/microsoft.azure.remoterendering.mesh)
+* [Класс C# Мешкомпонент](https://docs.microsoft.com/dotnet/api/microsoft.azure.remoterendering.meshcomponent)
+* [Класс сетки C++](https://docs.microsoft.com/cpp/api/remote-rendering/mesh)
+* [Класс C++ Мешкомпонент](https://docs.microsoft.com/cpp/api/remote-rendering/meshcomponent)
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

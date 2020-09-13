@@ -6,12 +6,12 @@ ms.author: flborn
 ms.date: 02/03/2020
 ms.topic: conceptual
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 099b0175b906e48034e663b575517e49bce7e753
-ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
+ms.openlocfilehash: bd2b1026f69b5ec5814124a92d6a78d7f0225143
+ms.sourcegitcommit: f845ca2f4b626ef9db73b88ca71279ac80538559
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89021856"
+ms.lasthandoff: 09/09/2020
+ms.locfileid: "89613820"
 ---
 # <a name="object-bounds"></a>Границы объектов
 
@@ -58,6 +58,11 @@ void GetBounds(ApiHandle<Entity> entity)
     });
 }
 ```
+
+## <a name="api-documentation"></a>Документирование API
+
+* [C# Entity. Куерилокалбаундсасинк](https://docs.microsoft.com/dotnet/api/microsoft.azure.remoterendering.entity.querylocalboundsasync)
+* [Сущность C++:: Куерилокалбаундсасинк](https://docs.microsoft.com/cpp/api/remote-rendering/entity#querylocalboundsasync)
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

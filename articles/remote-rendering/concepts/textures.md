@@ -6,12 +6,12 @@ ms.author: flborn
 ms.date: 02/05/2020
 ms.topic: conceptual
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 20c2951b601690beb9ec64040cf650bb5208d0e4
-ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
+ms.openlocfilehash: dc38b53705c24cb12a001237a9a80ec66ec33e14
+ms.sourcegitcommit: f845ca2f4b626ef9db73b88ca71279ac80538559
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "88997716"
+ms.lasthandoff: 09/09/2020
+ms.locfileid: "89613793"
 ---
 # <a name="textures"></a>Текстуры
 
@@ -82,11 +82,19 @@ void LoadMyTexture(ApiHandle<AzureSession> session, std::string textureUri)
 }
 ```
 
-
 В зависимости от того, для чего предполагается использовать текстуру, могут существовать ограничения по типу и содержимому текстуры. Например, карты неровностей [материала PBR](../overview/features/pbr-materials.md) должны быть в оттенках серого.
 
 > [!CAUTION]
 > Все *асинхронные функции* в ARR возвращают объекты асинхронной операции. Ссылку на эти объекты необходимо хранить до завершения операции. В противном случае сборщик мусора C# может удалить операцию раньше, чем она завершится. В примере кода выше переменная-член «_textureLoad» используется, чтобы хранить ссылку до наступления события *Completed*.
+
+## <a name="api-documentation"></a>Документирование API
+
+* [Класс текстуры C#](https://docs.microsoft.com/dotnet/api/microsoft.azure.remoterendering.texture)
+* [C# Ремотеманажер. Лоадтекстуреасинк ()](https://docs.microsoft.com/dotnet/api/microsoft.azure.remoterendering.remotemanager.loadtextureasync)
+* [C# Ремотеманажер. Лоадтекстурефромсасасинк ()](https://docs.microsoft.com/dotnet/api/microsoft.azure.remoterendering.remotemanager.loadtexturefromsasasync)
+* [Класс текстуры C++](https://docs.microsoft.com/cpp/api/remote-rendering/texture)
+* [C++ Ремотеманажер:: Лоадтекстуреасинк ()](https://docs.microsoft.com/cpp/api/remote-rendering/remotemanager#loadtextureasync)
+* [C++ Ремотеманажер:: Лоадтекстурефромсасасинк ()](https://docs.microsoft.com/cpp/api/remote-rendering/remotemanager#loadtexturefromsasasync)
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
