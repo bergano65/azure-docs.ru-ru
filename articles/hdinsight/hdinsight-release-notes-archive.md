@@ -8,12 +8,12 @@ ms.service: hdinsight
 ms.topic: conceptual
 ms.custom: hdinsightactive
 ms.date: 08/09/2020
-ms.openlocfilehash: 29caccd666294add98882d080a2a0fd3bd9dd660
-ms.sourcegitcommit: bfeae16fa5db56c1ec1fe75e0597d8194522b396
+ms.openlocfilehash: 827871bdac689d1f5e8acb64d3565ca3c6da39be
+ms.sourcegitcommit: 58d3b3314df4ba3cabd4d4a6016b22fa5264f05a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/10/2020
-ms.locfileid: "88036629"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89292526"
 ---
 # <a name="archived-release-notes"></a>Архивные заметки о выпуске
 
@@ -779,7 +779,7 @@ HDInsight постоянно повышает надежность и произ
 
 -   [*HIVE-17621*](https://issues.apache.org/jira/browse/HIVE-17621): параметры Hive-site игнорируются во время вычисления разделения HCatInputFormat.
 
--   [*HIVE-17629*](https://issues.apache.org/jira/browse/HIVE-17629): CachedStore — создайте конфигурацию списка разрешений и запрещенного списка для обеспечения выборочного кэширования таблиц и разделов, а также чтения во время предварительных действий.
+-   [*Hive-17629*](https://issues.apache.org/jira/browse/HIVE-17629): Качедсторе: иметь утвержденную или неутвержденную конфигурацию, чтобы разрешить выборочное Кэширование таблиц и секций и разрешить чтение во время предварительной подготовки.
 
 -   [*HIVE-17636*](https://issues.apache.org/jira/browse/HIVE-17636): добавьте проверку multiple\_agg.q для хранилищ BLOB-объектов.
 
@@ -1167,7 +1167,7 @@ HDInsight постоянно повышает надежность и произ
 
 В этом выпуске содержатся сведения о Sqoop 1.4.6 без дополнительных исправлений Apache.
 
-#### <a name="storm"></a>Буря
+#### <a name="storm"></a>Storm
 
 В этом выпуске содержатся сведения о Storm 1.1.1 и следующие исправления Apache.
 
@@ -1690,9 +1690,9 @@ HDInsight постоянно повышает надежность и произ
 
 ### <a name="behavioral-changes"></a>Изменения поведения
 
-|**Компонент Apache**|**Apache JIRA**|**Сводка**|**Подробные сведения**|
+|**Компонент Apache**|**Apache JIRA**|**Сводка**|**Сведения**|
 |--|--|--|--|
-|**Spark 2.3** |**Н/Д** |**Изменения, описанные в заметках о выпуске Apache Spark** |— Документ "устаревшее" и "изменение поведения",https://spark.apache.org/releases/spark-release-2-3-0.html#deprecations<br /><br />-Для части SQL есть еще одно подробное пошаговое описание «миграция» (от 2,2 до 2,3).https://spark.apache.org/docs/latest/sql-programming-guide.html#upgrading-from-spark-sql-22-to-23|
+|**Spark 2.3** |**Н/Д** |**Изменения, описанные в заметках о выпуске Apache Spark** |— Документ "устаревшее" и "изменение поведения", https://spark.apache.org/releases/spark-release-2-3-0.html#deprecations<br /><br />-Для части SQL есть еще одно подробное пошаговое описание «миграция» (от 2,2 до 2,3). https://spark.apache.org/docs/latest/sql-programming-guide.html#upgrading-from-spark-sql-22-to-23|
 |Spark |[**HIVE-12505**](https://issues.apache.org/jira/browse/HIVE-12505) |Задание Spark завершается успешно, но есть ошибка квоты диска HDFS |**Сценарий:** выполнение команды **insert overwrite**, когда в папке "Корзина" пользователя, запустившего команду, задана квота.<br /><br />**Прежнее поведение:** задание выполняется успешно, даже если не удается переместить данные в корзину. Результат может ошибочно содержать некоторые данные, ранее представленные в таблице.<br /><br />**Новое поведение:** при сбое перемещения в папку "Корзина" файлы навсегда удаляются.|
 |**Kafka 1.0**|**Н/Д**|**Изменения, описанные в заметках о выпуске Apache Spark** |https://kafka.apache.org/10/documentation.html#upgrade_100_notable|
 |**Hive/Ranger** | |Дополнительные политики Ranger Hive, необходимые для выполнения команды INSERT OVERWRITE |**Сценарий:** дополнительные политики Ranger Hive, необходимые для выполнения команды **INSERT OVERWRITE**<br /><br />**Прежнее поведение:** запросы **INSERT OVERWRITE** Hive выполнялись в обычном режиме.<br /><br />**Новое поведение:** запросы **INSERT OVERWRITE** Hive неожиданно завершаются сбоем после обновления до HDP-2.6.x. Появляется следующая ошибка:<br /><br />Произошла ошибка при компиляции инструкции: сбой: отклонено разрешение исключения HiveAccessControlException: у пользователя jdoe нет привилегии WRITE в каталоге /tmp/\*(state=42000,code=40000).<br /><br />Начиная с HDP версии 2.6.0, запросам **INSERT OVERWRITE** Hive требуется, чтобы политика URI Ranger позволяла выполнять операции записи, даже если у пользователя есть привилегия на запись, предоставленная с помощью политики HDFS.<br /><br />**Возможное решение или ожидаемое действие пользователя:**<br /><br />1. Создайте новую политику в репозитории Hive.<br />2. в раскрывающемся списке, где отображается база данных, выберите URI.<br />3. Измените путь (например,/tmp/*).<br />4. Добавьте пользователей и группу и сохраните.<br />5. Повторите запрос INSERT.|

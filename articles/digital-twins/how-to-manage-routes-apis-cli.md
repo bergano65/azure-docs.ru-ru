@@ -7,18 +7,18 @@ ms.author: alkarche
 ms.date: 6/23/2020
 ms.topic: how-to
 ms.service: digital-twins
-ms.openlocfilehash: 6ae3e72dc6e79b252c79c78fd5fac27bff8d4740
-ms.sourcegitcommit: 4e5560887b8f10539d7564eedaff4316adb27e2c
+ms.openlocfilehash: 27b745353521a44733c46170a5f5952c194c2343
+ms.sourcegitcommit: 58d3b3314df4ba3cabd4d4a6016b22fa5264f05a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87905233"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89293512"
 ---
 # <a name="manage-endpoints-and-routes-in-azure-digital-twins-apis-and-cli"></a>Управление конечными точками и маршрутами в Azure Digital двойников (API и CLI)
 
 [!INCLUDE [digital-twins-route-selector.md](../../includes/digital-twins-route-selector.md)]
 
-В Azure Digital двойников можно маршрутизировать [уведомления о событиях](how-to-interpret-event-data.md) в подчиненные службы или подключенные ресурсы вычислений. Для этого сначала необходимо настроить **конечные точки** , которые могут принимать события. Затем можно создать [**маршруты событий**](concepts-route-events.md) , указывающие, какие события, создаваемые Azure Digital двойников, доставляются в конечные точки.
+В Azure Digital двойников можно маршрутизировать [уведомления о событиях](how-to-interpret-event-data.md) в подчиненные службы или подключенные ресурсы вычислений. Для этого сначала необходимо настроить **конечные точки** , которые могут принимать события. Затем можно создать  [**маршруты событий**](concepts-route-events.md) , указывающие, какие события, создаваемые Azure Digital двойников, доставляются в конечные точки.
 
 Управление конечными точками и маршрутами осуществляется с помощью [API евентраутес](how-to-use-apis-sdks.md), [пакета SDK для .NET (C#)](https://github.com/Azure/azure-sdk-for-net/tree/master/sdk/digitaltwins/Azure.DigitalTwins.Core)или [Azure Digital двойников CLI](how-to-use-cli.md). В этой статье описывается процесс создания конечных точек и маршрутов с помощью этих механизмов.
 
@@ -29,7 +29,7 @@ ms.locfileid: "87905233"
 * Вам потребуется **учетная запись Azure** (вы можете настроить ее [здесь](https://azure.microsoft.com/free/?WT.mc_id=A261C142F)бесплатно).
 * Вам потребуется **экземпляр Azure Digital двойников** в подписке Azure. Если у вас еще нет экземпляра, его можно создать, выполнив действия, описанные в разделе [*инструкции. Настройка экземпляра и проверки подлинности*](how-to-set-up-instance-scripted.md). Используйте следующие значения из программы установки, которые можно использовать далее в этой статье:
     - Имя экземпляра
-    - Группа ресурсов
+    - групп ресурсов;
     
 ## <a name="create-an-endpoint-for-azure-digital-twins"></a>Создание конечной точки для Azure Digital двойников
 
@@ -112,7 +112,7 @@ az dt endpoint create eventhub --endpoint-name <Event-Hub-endpoint-name> --event
 
 Один маршрут должен разрешать выбор нескольких уведомлений и типов событий. 
 
-`CreateEventRoute`— Это вызов пакета SDK, который используется для добавления маршрута события. Ниже приведен пример использования.
+`CreateEventRoute` — Это вызов пакета SDK, который используется для добавления маршрута события. Ниже приведен пример использования.
 
 ```csharp
 EventRoute er = new EventRoute("endpointName");
@@ -179,6 +179,8 @@ catch (RequestFailedException e)
 ## <a name="manage-endpoints-and-routes-with-cli"></a>Управление конечными точками и маршрутами с помощью интерфейса командной строки
 
 Также можно управлять конечными точками и маршрутами с помощью интерфейса командной строки Azure Digital двойников. Дополнительные сведения об использовании интерфейса командной строки и доступных команд см. в разделе [*как использовать интерфейс командной строки Azure Digital двойников*](how-to-use-cli.md).
+
+[!INCLUDE [digital-twins-known-issue-cloud-shell](../../includes/digital-twins-known-issue-cloud-shell.md)]
 
 [!INCLUDE [digital-twins-route-metrics](../../includes/digital-twins-route-metrics.md)]
 

@@ -8,16 +8,16 @@ manager: femila
 editor: ''
 ms.service: media-services
 ms.workload: ''
-ms.topic: article
+ms.topic: how-to
 ms.custom: devx-track-azurecli
 ms.date: 08/31/2020
 ms.author: inhenkel
-ms.openlocfilehash: f7b1f7a858c465629e075bcdb6d32bec29863f0a
-ms.sourcegitcommit: bcda98171d6e81795e723e525f81e6235f044e52
+ms.openlocfilehash: c61ac8c7cf85b1fae4c9b531f16b951dd2b80876
+ms.sourcegitcommit: 58d3b3314df4ba3cabd4d4a6016b22fa5264f05a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/01/2020
-ms.locfileid: "89267893"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89295791"
 ---
 # <a name="how-to-encode-with-a-custom-transform---azure-cli"></a>Как кодировать с помощью пользовательского преобразования Azure CLI
 
@@ -142,6 +142,6 @@ az ams transform create -a amsaccount -g amsResourceGroup -n customTransformName
 
 Чтобы службы мультимедиа применяли преобразование к указанному видео или аудио, необходимо отправить задание с этим преобразованием. Полный пример, демонстрирующий, как отправить задание под преобразованием, см. в разделе [Краткое руководство. Streaming Video Files-Azure CLI](stream-files-cli-quickstart.md).
 
-## <a name="see-also"></a>См. также
+## <a name="see-also"></a>См. также раздел
 
 [Azure CLI](/cli/azure/ams)

@@ -8,16 +8,16 @@ manager: femila
 editor: ''
 ms.service: media-services
 ms.workload: ''
-ms.topic: article
+ms.topic: how-to
 ms.date: 08/31/2020
 ms.author: inhenkel
 ms.custom: devx-track-csharp
-ms.openlocfilehash: c00729e236cb314f47df8f622db2e19438af61ab
-ms.sourcegitcommit: bcda98171d6e81795e723e525f81e6235f044e52
+ms.openlocfilehash: 916defd652ff9f4b3f372c609055d2a974126916
+ms.sourcegitcommit: 58d3b3314df4ba3cabd4d4a6016b22fa5264f05a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/01/2020
-ms.locfileid: "89267910"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89295722"
 ---
 # <a name="create-a-streaming-locator-and-build-urls"></a>Создание указателя потоковой передачи и формирование URL-адресов
 
@@ -27,7 +27,7 @@ ms.locfileid: "89267910"
 
 В этой статье показано, как создать указатель потоковой передачи и создать URL-адрес потоковой передачи с помощью пакетов SDK для Java и .NET.
 
-## <a name="prerequisite"></a>Предварительные требования 
+## <a name="prerequisite"></a>Предварительное требование 
 
 Предварительный просмотр [динамической упаковки](dynamic-packaging-overview.md)
 
@@ -163,7 +163,7 @@ private static async Task<IList<string>> GetStreamingUrlsAsync(
 
 См. полный пример кода: [енкодингвисмеспредефинедпресет](https://github.com/Azure-Samples/media-services-v3-dotnet/blob/master/VideoEncoding/EncodingWithMESPredefinedPreset/Program.cs)
 
-## <a name="see-also"></a>См. также
+## <a name="see-also"></a>См. также раздел
 
 * [Создание фильтров с помощью .NET](filters-dynamic-manifest-dotnet-howto.md)
 * [Создание фильтров с помощью REST](filters-dynamic-manifest-rest-howto.md)

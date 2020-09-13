@@ -16,12 +16,12 @@ ms.topic: article
 ms.date: 02/07/2017
 ms.author: jegeib
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 77964eed6960a79920f359a03c65102ad949a210
-ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
+ms.openlocfilehash: 51d8b740ba1275b23bc17a58284141dce0d48fe0
+ms.sourcegitcommit: 58d3b3314df4ba3cabd4d4a6016b22fa5264f05a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89004669"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89300006"
 ---
 # <a name="security-frame-authorization--mitigations"></a>Механизм безопасности. Авторизация | Устранение рисков 
 | Продукт или служба | Статья |
@@ -205,7 +205,7 @@ WHERE userID=:id < - session var
 | **Применимые технологии** | Универсальный шаблон |
 | **Атрибуты**              | Недоступно  |
 | **Справочные материалы**              | [Общие сведения о проверке подлинности в Центрах событий Azure и модели безопасности](https://azure.microsoft.com/documentation/articles/event-hubs-authentication-and-security-model-overview/) |
-| **Шаги** | Маркер, который предоставляет прямой доступ к концентратору событий, не должен предоставляться устройству. С помощью маркера с минимальными правами, который предоставляет доступ только издателю, можно определить несанкционированное или скомпрометированное устройство и поместить его в список блокировок.|
+| **Шаги** | Маркер, который предоставляет прямой доступ к концентратору событий, не должен предоставляться устройству. Использование маркера с минимальными правами доступа для устройства, предоставляющего доступ только к издателю, поможет определить и запретить его, если он будет незаконным или скомпрометированным устройством.|
 
 ## <a name="connect-to-event-hub-using-sas-keys-that-have-the-minimum-permissions-required"></a><a id="sas-minimum-permissions"></a>Подключайтесь к концентратору событий, используя ключи SAS с минимальными необходимыми разрешениями
 
