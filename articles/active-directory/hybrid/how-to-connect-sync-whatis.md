@@ -16,12 +16,12 @@ ms.date: 11/08/2017
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 4dc1754eb8818df894e67c1748517b2e2f4356d6
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: cea26cb119f64679807bc6c5eaadb41b341e5d5a
+ms.sourcegitcommit: f8d2ae6f91be1ab0bc91ee45c379811905185d07
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85356871"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89662390"
 ---
 # <a name="azure-ad-connect-sync-understand-and-customize-synchronization"></a>Службы синхронизации Azure AD Connect: общие сведений о синхронизации и ее настройка
 Службы синхронизации Azure Active Directory Connect (службы синхронизации Azure AD Connect) являются основным компонентом Azure AD Connect. Они отвечают за все операции, относящиеся к синхронизации идентификационных данных между локальной средой и Azure AD. Служба синхронизации Azure AD Connect — это преемник таких решений, как DirSync, Azure AD Sync и Forefront Identity Manager с настроенным соединителем Azure Active Directory.
@@ -52,13 +52,13 @@ ms.locfileid: "85356871"
 | [Реализация синхронизации хэшированных паролей в службе синхронизации Azure AD Connect](how-to-connect-password-hash-synchronization.md) |Описано, как работает синхронизация паролей, как реализовать и использовать эту функцию, а также как устранять связанные с ней неполадки. |
 | [Обратная запись устройств](how-to-connect-device-writeback.md) |Описывается, как работает обратная запись устройства в Azure AD Connect. |
 | [Расширения каталогов](how-to-connect-sync-feature-directory-extensions.md) |Описывается, как расширить схему Azure AD с помощью собственных пользовательских атрибутов. |
-| [Office 365 PreferredDataLocation](how-to-connect-sync-feature-preferreddatalocation.md) |Объясняется, как разместить ресурсы Office 365 пользователя в том же регионе, в котором находится пользователь. |
-| **Служба синхронизации** | |
+| [Microsoft 365 PreferredDataLocation](how-to-connect-sync-feature-preferreddatalocation.md) |Описывает, как разместить ресурсы Microsoft 365 пользователя в том же регионе, что и пользователь. |
+| **Служба синхронизации MIM** | |
 | [Функции службы синхронизации Azure AD Connect](how-to-connect-syncservice-features.md) |Описание компонента на стороне службы синхронизации и действий по изменению параметров синхронизации в Azure AD. |
 | [Устойчивость повторяющихся атрибутов](how-to-connect-syncservice-duplicate-attribute-resiliency.md) |Описание включения и применения функции устойчивости значений повторяющихся атрибутов **userPrincipalName** и **proxyAddresses**. |
 | **Операции и пользовательский интерфейс** | |
 | [Synchronization Service Manager](how-to-connect-sync-service-manager-ui.md) |Описание пользовательского интерфейса Synchronization Service Manager, включая вкладки [Operations](how-to-connect-sync-service-manager-ui-operations.md) (Операции), [Connectors](how-to-connect-sync-service-manager-ui-connectors.md) (Соединители), [Metaverse Designer](how-to-connect-sync-service-manager-ui-mvdesigner.md) (Конструктор метавселенной) и [Metaverse Search](how-to-connect-sync-service-manager-ui-mvsearch.md) (Поиск в метавселенной). |
-| [Службы синхронизации Azure AD Connect: рабочие задачи и рекомендации](how-to-connect-sync-operations.md) |Описание рабочих задач, например аварийного восстановления. |
+| [Службы синхронизации Azure AD Connect: рабочие задачи и рекомендации](./how-to-connect-sync-staging-server.md) |Описание рабочих задач, например аварийного восстановления. |
 | **Инструкции...** | |
 | [Сброс учетной записи Azure AD](how-to-connect-azureadaccount.md) |Как сбросить учетные данные учетной записи службы, используемые для подключения службы синхронизации Azure AD Connect к Azure AD. |
 | **Дополнительные сведения и ссылки** | |

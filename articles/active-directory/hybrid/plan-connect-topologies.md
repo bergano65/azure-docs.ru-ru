@@ -16,12 +16,12 @@ ms.date: 11/27/2018
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 47973a8444de64dc5c2bb75b5f0d65d1e6d35f6e
-ms.sourcegitcommit: 54d8052c09e847a6565ec978f352769e8955aead
+ms.openlocfilehash: 7616ceed812b21f471609d95f59a0d0270dd7f52
+ms.sourcegitcommit: f8d2ae6f91be1ab0bc91ee45c379811905185d07
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88509095"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89658508"
 ---
 # <a name="topologies-for-azure-ad-connect"></a>Топологии для Azure AD Connect
 В этой статье описываются различные локальные топологии и топологии Active Directory Azure (Azure AD), в которых служба синхронизации Azure AD Connect используется в качестве основного решения интеграции. Здесь описываются и поддерживаемые, и неподдерживаемые конфигурации.
@@ -37,7 +37,7 @@ ms.locfileid: "88509095"
 | Промежуточный режим сервера синхронизации Azure AD Connect |![Промежуточный режим сервера синхронизации Azure AD Connect](./media/plan-connect-topologies/LegendSync2.png) |
 | GALSync с Forefront Identity Manager (FIM) 2010 или Microsoft Identity Manager (MIM) 2016 |![GALSync с FIM 2010 или MIM 2016](./media/plan-connect-topologies/LegendSync3.png) |
 | Сервер синхронизации Azure AD Connect, подробно |![Сервер синхронизации Azure AD Connect, подробно](./media/plan-connect-topologies/LegendSync4.png) |
-| Azure AD |![Azure Active Directory](./media/plan-connect-topologies/LegendAAD.png) |
+| Azure AD |![Azure Active Directory](./media/plan-connect-topologies/LegendAAD.png) |
 | Неподдерживаемый сценарий |![Неподдерживаемый сценарий](./media/plan-connect-topologies/LegendUnsupported.png) |
 
 
@@ -117,15 +117,15 @@ ms.locfileid: "88509095"
 
 В этом сценарии один (или несколько) лес ресурсов доверяет всем лесам учетных записей. Обычно в лесу ресурсов используется расширенная схема Active Directory с Exchange и Lync. Все службы Exchange и Lync, а также другие общие службы находятся в этом лесу. У пользователей есть отключенные учетные записи в этом лесу. С лесом учетных записей связан почтовый ящик.
 
-## <a name="office-365-and-topology-considerations"></a>Аспекты топологии в Office 365.
-Некоторые рабочие нагрузки Office 365 налагают ряд ограничений на поддерживаемые топологии.
+## <a name="microsoft-365-and-topology-considerations"></a>Рекомендации по Microsoft 365 и топологии
+Некоторые Microsoft 365 рабочие нагрузки имеют определенные ограничения на поддерживаемые топологии:
 
 | Рабочая нагрузка | Ограничения |
 | --------- | --------- |
-| Exchange Online | Дополнительные сведения о гибридных топологиях, поддерживаемых Exchange Online, см. в разделе [Гибридные развертывания в нескольких лесах Active Directory](https://technet.microsoft.com/library/jj873754.aspx). |
-| Skype для бизнеса | При использовании нескольких локальных лесов единственной поддерживаемой топологией является лес ресурсов учетной записи. Дополнительные сведения см. в статье [Требования к среде Skype для бизнеса Server 2015](https://technet.microsoft.com/library/dn933910.aspx). |
+| Exchange Online | Дополнительные сведения о гибридных топологиях, поддерживаемых Exchange Online, см. в разделе [Гибридные развертывания в нескольких лесах Active Directory](/Exchange/hybrid-deployment/hybrid-with-multiple-forests). |
+| Skype для бизнеса | При использовании нескольких локальных лесов единственной поддерживаемой топологией является лес ресурсов учетной записи. Дополнительные сведения см. в статье [Требования к среде Skype для бизнеса Server 2015](/skypeforbusiness/plan-your-deployment/requirements-for-your-environment/environmental-requirements). |
 
-Более крупным организациям рекомендуется использовать компонент [Office 365 PreferredDataLocation](how-to-connect-sync-feature-preferreddatalocation.md). Он позволяет определить, в каком регионе центра обработки данных расположены ресурсы пользователя.
+Если вы являетесь более крупной организацией, то следует использовать функцию [Microsoft 365 PreferredDataLocation](how-to-connect-sync-feature-preferreddatalocation.md) . Он позволяет определить, в каком регионе центра обработки данных расположены ресурсы пользователя.
 
 ## <a name="staging-server"></a>промежуточного сервера
 ![Промежуточный сервер в топологии](./media/plan-connect-topologies/MultiForestStaging.png)
@@ -165,7 +165,7 @@ Azure AD Connect поддерживает установку второго се
 * устройство под управлением Windows 10 можно связать только с одним клиентом Azure AD;
 * параметр единого входа для синхронизации хэша паролей и сквозной аутентификации можно использовать только с одним клиентом Azure AD.
 
-Требование относительно взаимоисключающих наборов объектов также применяется и к обратной записи. Эта топология не будет поддерживать некоторые функции обратной записи, так как они предполагают наличие одной локальной конфигурации. Эти функции включают в себя следующие:
+Требование относительно взаимоисключающих наборов объектов также применяется и к обратной записи. Эта топология не будет поддерживать некоторые функции обратной записи, так как они предполагают наличие одной локальной конфигурации. Эти функции включают перечисленные ниже.
 
 * групповая обратная запись в конфигурации по умолчанию;
 * обратная запись устройств.

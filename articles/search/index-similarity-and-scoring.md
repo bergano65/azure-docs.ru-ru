@@ -7,13 +7,13 @@ author: luiscabrer
 ms.author: luisca
 ms.service: cognitive-search
 ms.topic: conceptual
-ms.date: 04/27/2020
-ms.openlocfilehash: 300da87ecff13fc160ec08684cf1d032f9a19f71
-ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
+ms.date: 09/08/2020
+ms.openlocfilehash: d980764b7151183b61657434afa6c472e5058d18
+ms.sourcegitcommit: f8d2ae6f91be1ab0bc91ee45c379811905185d07
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88924492"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89662265"
 ---
 # <a name="similarity-and-scoring-in-azure-cognitive-search"></a>Сходство и оценка в Когнитивном поиске Azure
 
@@ -40,7 +40,7 @@ ms.locfileid: "88924492"
 
 ## <a name="scoring-statistics-and-sticky-sessions"></a>Статистика оценки и закрепленные сеансы
 
-Для обеспечения масштабируемости Когнитивный поиск Azure распределяет каждый индекс горизонтально через процесс сегментирования. Это означает, что части индекса физически разделены.
+Для масштабируемости Azure Когнитивный поиск распределяет каждый индекс по горизонтали через процесс сегментирования, что означает [физическое разделение частей индекса](search-capacity-planning.md#concepts-search-units-replicas-partitions-shards).
 
 По умолчанию оценка документа вычисляется на основе статистических свойств данных *в сегменте*. Этот подход, как правило, не является проблемой для большого объема данных. Он обеспечивает лучшую производительность, чем вычисление оценки на основе информации по всем сегментам. Тем не менее, использование этой оптимизации производительности может привести к тому, что два очень похожих (или даже идентичных) документа будут иметь разные оценки релевантности, если они окажутся в разных сегментах.
 

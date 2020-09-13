@@ -12,14 +12,14 @@ ms.workload: storage
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 08/18/2020
+ms.date: 09/09/2020
 ms.author: b-juche
-ms.openlocfilehash: eeb22672829dca9ba342079183dcc5ed7c35393c
-ms.sourcegitcommit: 02ca0f340a44b7e18acca1351c8e81f3cca4a370
+ms.openlocfilehash: 9822d7bd769ea161ddcf195d695f27024351ca4b
+ms.sourcegitcommit: f8d2ae6f91be1ab0bc91ee45c379811905185d07
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/19/2020
-ms.locfileid: "88590376"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89662455"
 ---
 # <a name="faqs-about-azure-netapp-files"></a>Часто задаваемые вопросы о Azure NetApp Files
 
@@ -49,6 +49,10 @@ ms.locfileid: "88590376"
 ### <a name="can-i-set-or-select-my-own-ip-address-for-an-azure-netapp-files-volume"></a>Можно ли задать или выбрать собственный IP-адрес для Azure NetApp Filesного тома?  
 
 Нет. Назначение IP-адресов для Azure NetApp Files томов является динамическим. Назначение статических IP-адресов не поддерживается. 
+
+### <a name="does-azure-netapp-files-support-dual-stack-ipv4-and-ipv6-vnet"></a>Поддерживает ли Azure NetApp Files виртуальную сеть с двумя стеками (IPv4 и IPv6)?
+
+Нет, Azure NetApp Files в настоящее время не поддерживает виртуальную сеть с двумя стеками (IPv4 и IPv6).  
  
 ## <a name="security-faqs"></a>Часто задаваемые вопросы о безопасности
 
@@ -66,10 +70,9 @@ ms.locfileid: "88590376"
 
 Управление ключами для Azure NetApp Files обрабатывается службой. Для каждого тома создается уникальный ключ шифрования данных XTS-AES-256. Иерархия ключей шифрования используется для шифрования и защиты всех ключей томов. Эти ключи шифрования никогда не отображаются или не передаются в виде незашифрованного формата. Ключи шифрования немедленно удаляются при удалении тома.
 
-Поддержка управляемых пользователем ключей (использование собственных ключей) с помощью выделенного HSM-модуля Azure доступна на управляемом уровне в Восточная часть США, США West2 и Юго-Центральный регион США.  Доступ можно запросить по адресу **anffeedback@microsoft.com** . При наличии доступной емкости запросы будут утверждены.
+Поддержка управляемых клиентом ключей (создание собственных ключей) с помощью выделенного HSM-модуля Azure доступна на управляемом уровне в восточной части США, юго-центральном регионе США, Западная часть США 2 и в регионах US Gov (Вирджиния). Доступ можно запросить по адресу [anffeedback@microsoft.com](mailto:anffeedback@microsoft.com) . После того как емкость станет доступной, запросы будут утверждены.
 
 ### <a name="can-i-configure-the-nfs-export-policy-rules-to-control-access-to-the-azure-netapp-files-service-mount-target"></a>Можно ли настроить правила политики экспорта NFS для контроля доступа к целевому объекту подключения службы Azure NetApp Files?
-
 
 Да, можно настроить до пяти правил в одной политике экспорта NFS.
 

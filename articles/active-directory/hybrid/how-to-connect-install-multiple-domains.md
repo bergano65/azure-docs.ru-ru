@@ -1,6 +1,6 @@
 ---
 title: Поддержка нескольких доменов в Azure AD Connect
-description: В этом документе описываются процедуры установки и настройки нескольких доменов верхнего уровня в Office 365 и Azure AD.
+description: В этом документе описывается настройка и настройка нескольких доменов верхнего уровня с помощью Microsoft 365 и Azure AD.
 services: active-directory
 documentationcenter: ''
 author: billmath
@@ -16,15 +16,15 @@ ms.date: 05/31/2017
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 7a49abdea9d5b80687c53fbaa3d41480825ed504
-ms.sourcegitcommit: cec9676ec235ff798d2a5cad6ee45f98a421837b
+ms.openlocfilehash: f913199e0c0ed438d4b95b879d4defc072c615aa
+ms.sourcegitcommit: f8d2ae6f91be1ab0bc91ee45c379811905185d07
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85849948"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89662430"
 ---
 # <a name="multiple-domain-support-for-federating-with-azure-ad"></a>Поддержка нескольких доменов для федерации с Azure AD
-В следующей документации представлено руководство по использованию нескольких доменов верхнего уровня и поддоменов в федерации с Office 365 или доменами Azure AD.
+В следующей документации приводятся рекомендации по использованию нескольких доменов верхнего уровня и поддоменов при интеграции с Microsoft 365 или доменами Azure AD.
 
 ## <a name="multiple-top-level-domain-support"></a>Поддержка нескольких доменов верхнего уровня
 Для создания федерации нескольких доменов верхнего уровня с Azure AD необходимо выполнить некоторые дополнительные настройки, которые не требуются при создании федерации с одним доменом верхнего уровня.
@@ -42,7 +42,7 @@ ms.locfileid: "85849948"
 
 Проблема возникает при добавлении нескольких доменов верхнего уровня.  Предположим, что у вас настроена федерация между Azure AD и локальной средой.  В этом документе используется домен bmcontoso.com.  Теперь добавляется второй домен верхнего уровня, bmfabrikam.com.
 
-![Домены](./media/how-to-connect-install-multiple-domains/domains.png)
+![Снимок экрана, показывающий несколько доменов верхнего уровня](./media/how-to-connect-install-multiple-domains/domains.png)
 
 Пр попытке преобразовать домен bmfabrikam.com в федеративный домен происходит ошибка.  Причина в том, что в Azure AD существует ограничение, при котором свойство IssuerUri не может иметь одно и то же значение для нескольких доменов.  
 
@@ -67,7 +67,7 @@ ms.locfileid: "85849948"
 
 Параметр `-SupportMultipleDomain` также гарантирует, что система AD FS содержит правильное значение издателя для маркеров, выпущенных для Azure AD. Для задания этого значения извлекается доменная часть UPN пользователей и устанавливается в свойстве IssuerURI домена, т. е. https://{суффикс UPN}/adfs/services/trust.
 
-Таким образом, при проверке подлинности в Azure AD или Office 365 для обнаружения домена в Azure AD используется элемент IssuerUri в маркере пользователя.  Если совпадение не найдено, аутентификация завершится ошибкой.
+Поэтому во время проверки подлинности в Azure AD или Microsoft 365 элемент IssuerUri в маркере пользователя используется для нахождение домена в Azure AD. Если совпадение не найдено, аутентификация завершится ошибкой.
 
 Например, если UPN пользователя имеет значение bsimon@bmcontoso.com, элементу IssuerUri в маркере, который выпускается AD FS, будет присвоено значение `http://bmcontoso.com/adfs/services/trust`. Этот элемент будет соответствовать конфигурации Azure AD, и аутентификация пройдет успешно.
 
@@ -106,14 +106,14 @@ c:[Type == "http://schemas.xmlsoap.org/claims/UPN"] => issue(Type = "http://sche
 2. Разверните **Отношения доверия** и **Отношения доверия проверяющей стороны** слева.
 3. Удалите запись **Платформа идентификации Microsoft Office 365** справа.
    ![Удалить Microsoft Online](./media/how-to-connect-install-multiple-domains/trust4.png)
-4. На компьютере, на котором установлен [модуль Azure Active Directory для Windows PowerShell](https://msdn.microsoft.com/library/azure/jj151815.aspx), выполните следующую команду: `$cred=Get-Credential`.  
+4. На компьютере, на котором установлен [модуль Azure Active Directory для Windows PowerShell](/previous-versions/azure/jj151815(v=azure.100)), выполните следующую команду: `$cred=Get-Credential`.  
 5. Введите имя пользователя и пароль глобального администратора домена Azure AD, для которого настраивается федерация.
 6. В PowerShell введите `Connect-MsolService -Credential $cred`.
 7. В PowerShell введите `Update-MSOLFederatedDomain -DomainName <Federated Domain Name> -SupportMultipleDomain`.  Это изменение предназначено для исходного домена.  С приведенными выше доменами мы получим следующее: `Update-MsolFederatedDomain -DomainName bmcontoso.com -SupportMultipleDomain`.
 
 Выполните следующие действия для добавления нового домена верхнего уровня с помощью PowerShell.
 
-1. На компьютере, на котором установлен [модуль Azure Active Directory для Windows PowerShell](https://msdn.microsoft.com/library/azure/jj151815.aspx), выполните следующую команду: `$cred=Get-Credential`.  
+1. На компьютере, на котором установлен [модуль Azure Active Directory для Windows PowerShell](/previous-versions/azure/jj151815(v=azure.100)), выполните следующую команду: `$cred=Get-Credential`.  
 2. Введите имя пользователя и пароль глобального администратора домена Azure AD, для которого настраивается федерация.
 3. В PowerShell введите `Connect-MsolService -Credential $cred`.
 4. В PowerShell введите `New-MsolFederatedDomain –SupportMultipleDomain –DomainName`.
@@ -173,7 +173,7 @@ c:[Type == "http://schemas.xmlsoap.org/claims/UPN"] => issue(Type = "http://sche
 
 5. Нажмите кнопку "ОК".  Нажмите кнопку "Применить".  Нажмите кнопку "ОК".  Откройте оснастку управления AD FS.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 После установки Azure AD Connect можно [проверить установку и назначить лицензии](how-to-connect-post-installation.md).
 
 Дополнительные сведения о функциях, которые были включены в процессе установки, см. в следующих статьях: [Azure AD Connect: автоматическое обновление](how-to-connect-install-automatic-upgrade.md), [Синхронизация Azure AD Connect: предотвращение случайного удаления](how-to-connect-sync-feature-prevent-accidental-deletes.md) и [Использование Azure AD Connect Health для синхронизации](how-to-connect-health-sync.md).
