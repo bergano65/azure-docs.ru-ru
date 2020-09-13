@@ -2,18 +2,18 @@
 title: 'Создание и изменение канала ExpressRoute: Azure CLI'
 description: В этой статье описывается создание, подготовка, проверка, обновление, удаление и отзыв канала ExpressRoute с помощью CLI.
 services: expressroute
-author: cherylmc
+author: duongau
 ms.service: expressroute
 ms.topic: how-to
 ms.date: 11/13/2019
-ms.author: cherylmc
+ms.author: duau
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: 2d8ad6b90f533161835ab12a43865b177c24c14e
-ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
+ms.openlocfilehash: 5f3270bbed5042ef89d5818523005dfc31589945
+ms.sourcegitcommit: d0541eccc35549db6381fa762cd17bc8e72b3423
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/31/2020
-ms.locfileid: "87503588"
+ms.lasthandoff: 09/09/2020
+ms.locfileid: "89566149"
 ---
 # <a name="create-and-modify-an-expressroute-circuit-using-cli"></a>Создание и изменение канала ExpressRoute с помощью CLI
 
@@ -119,7 +119,7 @@ az network express-route list-service-providers
 
 Проверьте, указан ли в ответе ваш поставщик услуг подключения. Запишите следующие сведения, которые потребуются при создании канала:
 
-* name
+* Имя
 * PeeringLocations
 * BandwidthsOffered
 
@@ -142,7 +142,7 @@ az group create -n ExpressRouteResourceGroup -l "West US"
 
 Убедитесь, что указаны правильный уровень SKU и семейство SKU:
 
-* Уровень SKU определяет, является ли канал ExpressRoute [локальным](expressroute-faqs.md#expressroute-local), стандартным или [Premium](expressroute-faqs.md#expressroute-premium). Можно указать *Local*, *Standard* или *Premium*.
+* Уровень SKU определяет, является ли канал ExpressRoute [локальным](expressroute-faqs.md#expressroute-local), стандартным или [Premium](expressroute-faqs.md#expressroute-premium). Можно указать *Local*, *Standard* или *Premium*. Нельзя изменить номер SKU с *Standard/Premium* на *локальный*.
 * Семейство SKU определяет тип выставления счетов. Вы можете указать *Metereddata* для тарифного тарифного плана и *Unlimiteddata* для неограниченного тарифного плана данных. Тип выставления счетов можно изменить с *Metereddata* на *Unlimiteddata* но не наоборот. *Unlimiteddata* для *Metereddata* *Локальный* канал — только *Unlimiteddata* .
 
 
@@ -280,7 +280,7 @@ az network express-route show --resource-group ExpressRouteResourceGroup --name 
 
 Некоторые свойства канала ExpressRoute можно изменить, не повлияв на подключение. Можно вносить следующие изменения без простоя:
 
-* Включать и отключать надстройку ExpressRoute "Премиум" для канала ExpressRoute.
+* Включать и отключать надстройку ExpressRoute "Премиум" для канала ExpressRoute. Изменение номера SKU с *Standard/Premium* на *Local* не поддерживается.
 * Увеличивать пропускную способность канала ExpressRoute при условии, что в порту имеется доступная емкость. Однако снижение уровня пропускной способности канала не поддерживается.
 * Перейти с тарифного плана с оплатой за трафик на безлимитный тарифный план. Однако переход с безлимитного тарифного плана на тарифный план с оплатой за трафик не поддерживается.
 * Параметр *Allow Classic Operations*(Разрешить классические операции) можно включать и отключать.

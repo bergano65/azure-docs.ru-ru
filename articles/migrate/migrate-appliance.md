@@ -227,7 +227,7 @@ IPv6-адреса | vm.Guest.Net
 
 **Data**  | **Командлет PowerShell** | **Свойство**
 --- | --- | ---
-name  | Get-WindowsFeature  | name
+Имя  | Get-WindowsFeature  | Имя
 Тип функции | Get-WindowsFeature  | Объект featuretype
 Parent  | Get-WindowsFeature  | Parent
 
@@ -237,7 +237,7 @@ Parent  | Get-WindowsFeature  | Parent
 
 **Data**  | **Расположение реестра**  | **Key**
 --- | --- | ---
-name  | HKLM: \ SOFTWARE\Microsoft\Microsoft SQL сохраняет имена экземпляров  | инсталлединстанце
+Имя  | HKLM: \ SOFTWARE\Microsoft\Microsoft SQL сохраняет имена экземпляров  | инсталлединстанце
 Выпуск  | HKLM: \ SOFTWARE\Microsoft\Microsoft SQL Server \\ \<InstanceName> \setup  | Выпуск 
 Пакет обновления  | HKLM: \ SOFTWARE\Microsoft\Microsoft SQL Server \\ \<InstanceName> \setup  | SP
 Версия  | HKLM: \ SOFTWARE\Microsoft\Microsoft SQL Server \\ \<InstanceName> \setup  | Версия 
@@ -248,7 +248,7 @@ name  | HKLM: \ SOFTWARE\Microsoft\Microsoft SQL сохраняет имена �
 
 Данные  | класс WMI  | Свойство класса WMI
 --- | --- | ---
-name  | Win32_operatingsystem  | Caption
+Имя  | Win32_operatingsystem  | Caption
 Версия  | Win32_operatingsystem  | Версия
 Architecture  | Win32_operatingsystem  | OSArchitecture
 
@@ -258,7 +258,7 @@ Architecture  | Win32_operatingsystem  | OSArchitecture
 
 Данные  | Get-Help
 --- | --- 
-name | RPM, dpkg — запрос, привязка
+Имя | RPM, dpkg — запрос, привязка
 Версия | RPM, dpkg — запрос, привязка
 Поставщик | RPM, dpkg — запрос, привязка
 
@@ -268,7 +268,7 @@ name | RPM, dpkg — запрос, привязка
 
 **Data**  | **Команда** 
 --- | --- | ---
-name <br/> version | Собраны из одного или нескольких следующих файлов:<br/> <br/>/etc/os-release  <br> /usr/lib/os-release  <br> /etc/enterprise-release  <br> /etc/redhat-release  <br> /etc/oracle-release  <br> /etc/SuSE-release  <br> /etc/lsb-release  <br> /etc/debian_version 
+Имя <br/> version | Собраны из одного или нескольких следующих файлов:<br/> <br/>/etc/os-release  <br> /usr/lib/os-release  <br> /etc/enterprise-release  <br> /etc/redhat-release  <br> /etc/oracle-release  <br> /etc/SuSE-release  <br> /etc/lsb-release  <br> /etc/debian_version 
 Architecture | uname
 
 
