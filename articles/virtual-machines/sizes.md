@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.workload: infrastructure-services
 ms.date: 07/21/2020
 ms.author: jushiman
-ms.openlocfilehash: 234156186d045e21cc01cc4b407408f98268c790
-ms.sourcegitcommit: d8b8768d62672e9c287a04f2578383d0eb857950
+ms.openlocfilehash: d9377ba22f1461762e53b1004dfe5f06c2d7b972
+ms.sourcegitcommit: 9c262672c388440810464bb7f8bcc9a5c48fa326
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/11/2020
-ms.locfileid: "88065477"
+ms.lasthandoff: 09/03/2020
+ms.locfileid: "89420223"
 ---
 # <a name="sizes-for-virtual-machines-in-azure"></a>Размеры виртуальных машин в Azure
 
@@ -28,7 +28,7 @@ ms.locfileid: "88065477"
 | [GPU](sizes-gpu.md) | NC, NCv2, NCv3, NCasT4_v3 (Предварительная версия), ND, NDv2 (Предварительная версия), NV, NVv3, NVv4 | Специализированные виртуальные машины, предназначенные для ресурсоемкой отрисовки изображений и редактирования видео, а также для обучения моделей и формирования выводов с помощью глубокого обучения. Доступны виртуальные машины одним или несколькими GPU. |
 | [Для высокопроизводительных вычислений](sizes-hpc.md) | HB, HBv2, HC, H | Виртуальные машины с самыми быстрыми и мощными ЦП, для которых можно настроить сетевые интерфейсы с высокой пропускной способностью (RDMA). |
 
-- Сведения о ценах на различные размеры см. на страницах с ценами на [Linux](https://azure.microsoft.com/pricing/details/virtual-machines/#Linux) или [Windows](https://azure.microsoft.com/pricing/details/virtual-machines/#Windows).
+- Сведения о ценах на различные размеры см. на страницах с ценами на [Linux](https://azure.microsoft.com/pricing/details/virtual-machines/#Linux) или [Windows](https://azure.microsoft.com/pricing/details/virtual-machines/Windows/#Windows).
 - Доступность размеров виртуальных машин см. в статье [Доступность продуктов по регионам](https://azure.microsoft.com/regions/services/).
 - Сведения об общих ограничениях виртуальных машин Azure см. в статье [Подписка Azure, границы, квоты и ограничения службы](../azure-resource-manager/management/azure-subscription-service-limits.md).
 - Дополнительные сведения об именах виртуальных машин Azure см. в статье [соглашения об именовании размеров виртуальных машин Azure](./vm-naming-conventions.md).

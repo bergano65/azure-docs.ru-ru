@@ -8,12 +8,12 @@ ms.service: cognitive-services
 ms.topic: include
 ms.date: 04/24/2020
 ms.author: aahi
-ms.openlocfilehash: ac8e49c85147576e489b16a3a421c75d60ad4aee
-ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
+ms.openlocfilehash: ff039d6d5879e036aecc63b46359d84673f84a0e
+ms.sourcegitcommit: ac5cbef0706d9910a76e4c0841fdac3ef8ed2e82
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86104421"
+ms.lasthandoff: 09/03/2020
+ms.locfileid: "89424652"
 ---
 ### <a name="container-repositories-and-images"></a>Репозитории и образы контейнеров
 
@@ -73,4 +73,5 @@ ms.locfileid: "86104421"
 | [API службы "Речь"](../../speech-service/speech-container-howto.md?tab=cstt) | Пользовательское распознавание речи к тексту | `containerpreview.azurecr.io/microsoft/cognitive-services-custom-speech-to-text` |
 | [API службы "Речь"](../../speech-service/speech-container-howto.md?tab=tts) | Преобразование текста в речь | `containerpreview.azurecr.io/microsoft/cognitive-services-text-to-speech` |
 | [API службы "Речь"](../../speech-service/speech-container-howto.md?tab=ctts) | Пользовательский текст в речь | `containerpreview.azurecr.io/microsoft/cognitive-services-custom-text-to-speech` |
-| [Анализ текста для работоспособности](../../text-analytics/how-tos/text-analytics-how-to-install-containers.md?tabs=health) | Анализ текста для работоспособности | `containerpreview.azurecr.io/microsoft/cognitive-services-healthcare` |
+| [API службы "Речь"](../../speech-service/speech-container-howto.md?tab=ntts) | Преобразование текста в речь для нейронов | `containerpreview.azurecr.io/microsoft/cognitive-services-neural-text-to-speech` |
+| [Анализ текста для работоспособности](../../text-analytics/how-tos/text-analytics-how-to-install-containers.md?tabs=health) | Анализ текста для сферы здравоохранения | `containerpreview.azurecr.io/microsoft/cognitive-services-healthcare` |

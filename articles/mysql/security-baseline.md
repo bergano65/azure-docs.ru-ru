@@ -1,32 +1,32 @@
 ---
-title: Базовая конфигурация безопасности для базы данных Azure для MySQL (отдельный сервер)
-description: Базовая конфигурация безопасности для базы данных Azure для MySQL (отдельный сервер)
+title: Базовый план безопасности Azure для базы данных Azure для MySQL
+description: Базовый план безопасности базы данных Azure для MySQL содержит практические руководства и ресурсы для реализации рекомендаций по безопасности, указанных в статье о производительности системы безопасности Azure.
 author: msmbaldwin
-ms.service: security
+ms.service: mysql
 ms.topic: conceptual
-ms.date: 03/23/2020
+ms.date: 09/02/2020
 ms.author: mbaldwin
 ms.custom: subject-security-benchmark
-ms.openlocfilehash: 414c8dc0a9e6c7aa47287fe49a3f21ee28605f78
-ms.sourcegitcommit: d68c72e120bdd610bb6304dad503d3ea89a1f0f7
+ms.openlocfilehash: 80a7067b1d8d5417a6a448ee8a3be563344e9a72
+ms.sourcegitcommit: 9c262672c388440810464bb7f8bcc9a5c48fa326
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/01/2020
-ms.locfileid: "89244710"
+ms.lasthandoff: 09/03/2020
+ms.locfileid: "89420257"
 ---
-# <a name="azure-security-baseline-for-azure-database-for-mysql"></a>Базовая конфигурация безопасности для базы данных Azure для MySQL (отдельный сервер)
+# <a name="azure-security-baseline-for-azure-database-for-mysql"></a>Базовый план безопасности Azure для базы данных Azure для MySQL
 
 Базовая конфигурация безопасности для базы данных Azure для MySQL содержит рекомендации, которые помогут повысить уровень безопасности развертывания.
 
-Базовый план безопасности для этой службы взят из [Эталона безопасности Azure версии 1.0](https://docs.microsoft.com/azure/security/benchmarks/overview), содержащего рекомендации по обеспечению безопасности облачных решений в Azure с помощью наших практических рекомендаций.
+Базовый план безопасности для этой службы взят из [Эталона безопасности Azure версии 1.0](../security/benchmarks/overview.md), содержащего рекомендации по обеспечению безопасности облачных решений в Azure с помощью наших практических рекомендаций.
 
-Дополнительные сведения см. в статье [Обзор базовой конфигурации безопасности Azure](https://docs.microsoft.com/azure/security/benchmarks/security-baselines-overview).
+Дополнительные сведения см. в статье [Обзор базовой конфигурации безопасности Azure](../security/benchmarks/security-baselines-overview.md).
 
 ## <a name="network-security"></a>Безопасность сети
 
-*Дополнительные сведения см. в статье [Управление безопасностью: безопасность сети](https://docs.microsoft.com/azure/security/benchmarks/security-control-network-security).*
+*Дополнительные сведения см. в статье о [производительности системы безопасности Azure: безопасность сети](../security/benchmarks/security-control-network-security.md).*
 
-### <a name="11-protect-resources-using-network-security-groups-or-azure-firewall-on-your-virtual-network"></a>1.1. Защита ресурсов в виртуальной сети с помощью групп безопасности сети или Брандмауэра Azure
+### <a name="11-protect-azure-resources-within-virtual-networks"></a>1,1: защита ресурсов Azure в виртуальных сетях
 
 **Рекомендации**. Настройте приватный канал для базы данных Azure для MySQL с частными конечными точками. Приватный канал позволяет подключаться к различным службам PaaS в Azure через частную конечную точку. Приватный канал Azure, по сути, предоставляет службы Azure в частной виртуальной сети (VNet). Трафик между виртуальной сетью и экземпляром MySQL проходит через магистральную сеть Майкрософт.
 
@@ -34,25 +34,25 @@ ms.locfileid: "89244710"
 
 Вы можете обезопасить сервер базы данных Azure для MySQL правилами брандмауэра. Брандмауэр сервера запрещает любой доступ к серверу базы данных, пока вы не укажете компьютеры, у которых есть разрешение на доступ. Для настройки брандмауэра можно создать правила брандмауэра, которые указывают диапазон допустимых IP-адресов. Правила брандмауэра можно создавать на уровне сервера.
 
-Настройка приватного канала для базы данных Azure для MySQL: https://docs.microsoft.com/azure/mysql/howto-configure-privatelink-portal
+- [Настройка закрытой ссылки для базы данных Azure для MySQL](howto-configure-privatelink-portal.md)
 
-Настройка правил и конечных точек службы VNet и правил VNet в базе данных Azure для MySQL и управление ими: https://docs.microsoft.com/azure/sql-database/sql-database-vnet-service-endpoint-rule-overview
+- [Создание конечных точек службы виртуальной сети и правил виртуальной сети в базе данных Azure для MySQL и управление ими](/azure/sql-database/sql-database-vnet-service-endpoint-rule-overview)
 
-Настройка правил брандмауэра базы данных Azure для MySQL: https://docs.microsoft.com/azure/mysql/howto-manage-firewall-using-portal
+- [Настройка правил брандмауэра базы данных Azure для MySQL](howto-manage-firewall-using-portal.md)
 
 **Мониторинг Центра безопасности Azure**: Недоступно
 
 **Ответственность**: Customer
 
-### <a name="12-monitor-and-log-the-configuration-and-traffic-of-vnets-subnets-and-nics"></a>1.2. Мониторинг и запись конфигурации и трафика виртуальных сетей, подсетей и сетевых карт
+### <a name="12-monitor-and-log-the-configuration-and-traffic-of-virtual-networks-subnets-and-network-interfaces"></a>1,2. Мониторинг и запись конфигурации и трафика виртуальных сетей, подсетей и сетевых интерфейсов
 
 **Рекомендации**. Если экземпляр базы данных Azure для MySQL защищен частной конечной точкой, вы можете развернуть виртуальные машины в той же виртуальной сети. Чтобы снизить риск утечки данных, можно использовать группу безопасности сети (NSG). Включите журналы потоков NSG и отправьте журналы в учетную запись хранения для аудита трафика. Вы также можете отправить журналы потоков NSG в рабочую область Log Analytics и использовать аналитику трафика для получения ценных сведений о потоке трафика в облаке Azure. Некоторые преимущества Аналитики трафика — это возможность визуализировать сетевые активности и определять горячие участки, выявлять угрозы безопасности, анализировать шаблоны потоков трафика и выявлять некорректные сетевые настройки.
 
-Настройка приватного канала для базы данных Azure для MySQL: https://docs.microsoft.com/azure/mysql/howto-configure-privatelink-portal
+- [Настройка закрытой ссылки для базы данных Azure для MySQL](howto-configure-privatelink-portal.md)
 
-Включение журналов потоков NSG: https://docs.microsoft.com/azure/network-watcher/network-watcher-nsg-flow-logging-portal
+- [Как включить журналы потоков NSG](../network-watcher/network-watcher-nsg-flow-logging-portal.md)
 
-Включение и использование Аналитики трафика: https://docs.microsoft.com/azure/network-watcher/traffic-analytics
+- [Как включать и использовать Аналитику трафика](../network-watcher/traffic-analytics.md)
 
 **Мониторинг Центра безопасности Azure**: Да
 
@@ -66,37 +66,37 @@ ms.locfileid: "89244710"
 
 **Ответственность**: Недоступно
 
-### <a name="14-deny-communications-with-known-malicious-ip-addresses"></a>1.4. Запрет взаимодействия с известными опасными IP-адресами
+### <a name="14-deny-communications-with-known-malicious-ip-addresses"></a>1,4: запретите обмен данными с известными вредоносными IP-адресами
 
 **Рекомендации**. Используйте Расширенную защиту от угроз для базы данных Azure для MySQL. Расширенная защита от угроз позволяет выявить подозрительную активность, указывающую на необычные и потенциально опасные попытки получить доступ к базам данных или воспользоваться ими.
 
 Включите стандарт защиты от атак DDoS в виртуальных сетях, связанных с экземплярами базы данных Azure для MySQL, чтобы защититься от атак типа DDoS. Используйте интегрированную аналитику угроз Центра безопасности Azure, чтобы запретить обмен данными с известными вредоносными или неиспользуемыми IP-адресами Интернета.
 
-Настройка Расширенной защиты от угроз для базы данных Azure для MySQL: https://docs.microsoft.com/azure/mysql/howto-database-threat-protection-portal
+- [Настройка расширенной защиты от угроз для базы данных Azure для MySQL](howto-database-threat-protection-portal.md)
 
-Настройка защиты от атак DDoS: https://docs.microsoft.com/azure/virtual-network/manage-ddos-protection
+- [Настройка защиты от атак DDoS](../virtual-network/manage-ddos-protection.md)
 
 **Мониторинг Центра безопасности Azure**: Да
 
 **Ответственность**: Customer
 
-### <a name="15-record-network-packets-and-flow-logs"></a>1.5. Запись сетевых пакетов и журналов потоков
+### <a name="15-record-network-packets"></a>1,5: запись сетевых пакетов
 
 **Рекомендации**. Если экземпляр базы данных Azure для MySQL защищен частной конечной точкой, вы можете развернуть виртуальные машины в той же виртуальной сети. Чтобы снизить риск утечки данных, можно настроить группу безопасности сети (NSG). Включите журналы потоков NSG и отправьте журналы в учетную запись хранения для аудита трафика. Вы также можете отправить журналы потоков NSG в рабочую область Log Analytics и использовать аналитику трафика для получения ценных сведений о потоке трафика в облаке Azure. Некоторые преимущества Аналитики трафика — это возможность визуализировать сетевые активности и определять горячие участки, выявлять угрозы безопасности, анализировать шаблоны потоков трафика и выявлять некорректные сетевые настройки.
 
-Включение журналов потоков NSG: https://docs.microsoft.com/azure/network-watcher/network-watcher-nsg-flow-logging-portal
+- [Как включить журналы потоков NSG](../network-watcher/network-watcher-nsg-flow-logging-portal.md)
 
-Включение и использование Аналитики трафика: https://docs.microsoft.com/azure/network-watcher/traffic-analytics
+- [Как включать и использовать Аналитику трафика](../network-watcher/traffic-analytics.md)
 
 **Мониторинг Центра безопасности Azure**: Да
 
 **Ответственность**: Customer
 
-### <a name="16-deploy-network-based-intrusion-detectionintrusion-prevention-systems-idsips"></a>1.6. Развертывание сетевых систем обнаружения и предотвращения вторжений (IDS/IPS)
+### <a name="16-deploy-network-based-intrusion-detectionintrusion-prevention-systems-idsips"></a>1,6: развертывание системы обнаружения вторжений на основе сети и предотвращения вторжения (ИДЕНТИФИКАТОРы и IP-адреса)
 
 **Рекомендации**. Используйте Расширенную защиту от угроз для базы данных Azure для MySQL. Расширенная защита от угроз позволяет выявить подозрительную активность, указывающую на необычные и потенциально опасные попытки получить доступ к базам данных или воспользоваться ими.
 
-Настройка Расширенной защиты от угроз для базы данных Azure для MySQL: https://docs.microsoft.com/azure/mysql/howto-database-threat-protection-portal
+- [Настройка расширенной защиты от угроз для базы данных Azure для MySQL](howto-database-threat-protection-portal.md)
 
 **Мониторинг Центра безопасности Azure**: Да
 
@@ -116,9 +116,9 @@ ms.locfileid: "89244710"
 
 Примечание. База данных Azure для MySQL использует тег службы "Microsoft.Sql".
 
-Дополнительные сведения об использовании тегов служб: https://docs.microsoft.com/azure/virtual-network/service-tags-overview
+- [Дополнительные сведения об использовании тегов служб](../virtual-network/service-tags-overview.md)
 
-Общие сведения об использовании тегов службы для базы данных Azure для MySQL: https://docs.microsoft.com/azure/mysql/concepts-data-access-and-security-vnet#terminology-and-description
+- [Общие сведения об использовании тегов службы для базы данных Azure для MySQL](concepts-data-access-and-security-vnet.md#terminology-and-description)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -132,11 +132,11 @@ ms.locfileid: "89244710"
 
 - Для серверов баз данных MySQL должно быть включено принудительное использование SSL-соединения
 
-Настройка Политики SQL Azure и управление ею: https://docs.microsoft.com/azure/governance/policy/tutorials/create-and-manage
+- [Настройка Политики Azure и управление ею](../governance/policy/tutorials/create-and-manage.md)
 
-Примеры Политики Azure для работы с сетью: https://docs.microsoft.com/azure/governance/policy/samples/
+- [Примеры политик Azure для работы в сети](/azure/governance/policy/samples/)
 
-Создание схемы Azure: https://docs.microsoft.com/azure/governance/blueprints/create-blueprint-portal
+- [Создание схемы Azure](../governance/blueprints/create-blueprint-portal.md)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -146,11 +146,11 @@ ms.locfileid: "89244710"
 
 **Рекомендации**. Используйте теги для ресурсов, связанных с сетевой безопасностью и потоком трафика, для экземпляров базы данных Azure для MySQL, чтобы предоставить метаданные и логическую организацию.
 
-Используйте любые встроенные определения политик Azure, связанные с разметкой, например "требовать тег и его значение", чтобы обеспечить создание всех ресурсов с помощью тегов и уведомления о существующих непомеченных ресурсах.
+Используйте любые встроенные определения политик Azure, связанные с разметкой, например " **требовать тег" и его значение** , чтобы убедиться, что все ресурсы созданы с помощью тегов и уведомлять вас о существующих ресурсах без тегов.
 
 Вы можете использовать Azure PowerShell или Azure CLI для поиска или выполнения действий с ресурсами на основе их тегов.
 
-Создание и использование тегов: https://docs.microsoft.com/azure/azure-resource-manager/resource-group-using-tags
+- [Создание и использование тегов](/azure/azure-resource-manager/resource-group-using-tags)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -160,9 +160,9 @@ ms.locfileid: "89244710"
 
 **Рекомендации**. Используйте журнал действий Azure для мониторинга конфигураций сетевых ресурсов и обнаружения изменений для сетевых ресурсов, связанных с экземплярами базы данных Azure для MySQL. Создавайте оповещения в Azure Monitor, которые будут запускаться при изменении критических сетевых ресурсов.
 
-Просмотр и извлечение событий журнала действий Azure: https://docs.microsoft.com/azure/azure-monitor/platform/activity-log-view
+- [Как просматривать и извлекать события журнала действий Azure](/azure/azure-monitor/platform/activity-log-view)
 
-Создание оповещений в службе Azure Monitor: https://docs.microsoft.com/azure/azure-monitor/platform/alerts-activity-log
+- [Как создать оповещения в службе Azure Monitor](../azure-monitor/platform/alerts-activity-log.md)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -170,7 +170,7 @@ ms.locfileid: "89244710"
 
 ## <a name="logging-and-monitoring"></a>Ведение журналов и мониторинг
 
-*Дополнительные сведения см. в статье [Управление безопасностью: ведение журналов и мониторинг](https://docs.microsoft.com/azure/security/benchmarks/security-control-logging-monitoring).*
+*Дополнительные сведения см. в статье [производительность системы безопасности Azure: ведение журнала и мониторинг](../security/benchmarks/security-control-logging-monitoring.md).*
 
 ### <a name="21-use-approved-time-synchronization-sources"></a>2.1. Использование утвержденных источников синхронизации времени
 
@@ -184,9 +184,9 @@ ms.locfileid: "89244710"
 
 **Рекомендации**. Включите параметры диагностики и журналы сервера и включайте журналы для агрегирования данных безопасности, создаваемых экземплярами базы данных Azure для MySQL. В Azure Monitor используйте рабочие области Log Analytics для запроса и выполнения анализа, а учетные записи хранения Azure — для долгосрочного и архивного хранения. Кроме того, вы можете включить и подключить данные к Azure Sentinel или сторонним SIEM.
 
-Общие сведения о журналах сервера в службе "База данных Azure для MySQL": https://docs.microsoft.com/azure/mysql/concepts-monitoring#server-logs
+- [Общие сведения о журналах сервера для базы данных Azure для MySQL](concepts-monitoring.md#server-logs)
 
-Подключение Azure Sentinel: https://docs.microsoft.com/azure/sentinel/quickstart-onboard
+- [Подключение к Azure Sentinel](../sentinel/quickstart-onboard.md)
 
 **Мониторинг Центра безопасности Azure**: Недоступно
 
@@ -196,13 +196,13 @@ ms.locfileid: "89244710"
 
 **Рекомендации**. Включите параметры диагностики в экземплярах базы данных Azure для MySQL, чтобы получить доступ к журналам аудита, безопасности и ресурсов. Убедитесь, что вы включили именно журнал аудита MySQL. Автоматически доступны журналы действий, включающие источник событий, дату, пользователя, метку времени, исходные адреса, адреса назначения и другие полезные элементы. Вы также можете включить параметры диагностики журнала действий Azure и отправить журналы в ту же рабочую область Log Analytics или учетную запись хранения.
 
-Общие сведения о журналах сервера в службе "База данных Azure для MySQL": https://docs.microsoft.com/azure/mysql/concepts-monitoring#server-logs
+- [Общие сведения о журналах сервера для базы данных Azure для MySQL](concepts-monitoring.md#server-logs)
 
-Настройка и предоставление доступа к журналам медленных запросов для базы данных Azure для MySQL: https://docs.microsoft.com/azure/mysql/howto-configure-server-logs-in-portal
+- [Как настроить и получить доступ к журналам запросов для базы данных Azure для MySQL](howto-configure-server-logs-in-portal.md)
 
-Настройка и предоставление доступа к журналам аудита для базы данных Azure для MySQL: https://docs.microsoft.com/azure/mysql/howto-configure-audit-logs-portal
+- [Как настроить и получить доступ к журналам аудита для базы данных Azure для MySQL](howto-configure-audit-logs-portal.md)
 
-Настройка параметров диагностики для журнала действий Azure: https://docs.microsoft.com/azure/azure-monitor/platform/diagnostic-settings-legacy
+- [Настройка параметров диагностики для журнала действий Azure](/azure/azure-monitor/platform/diagnostic-settings-legacy)
 
 **Мониторинг Центра безопасности Azure**: Недоступно
 
@@ -220,45 +220,45 @@ ms.locfileid: "89244710"
 
 **Рекомендации**. В Azure Monitor для рабочей области Log Analytics, используемой для хранения журналов базы данных Azure для MySQL, задайте срок хранения согласно нормативным требованиям вашей организации. Используйте учетные записи хранения Azure для долгосрочного и архивного хранения.
 
-Задание параметров хранения журнала для рабочих областей Log Analytics: https://docs.microsoft.com/azure/azure-monitor/platform/manage-cost-storage#change-the-data-retention-period
+- [Задание параметров хранения журналов для рабочих областей Log Analytics](../azure-monitor/platform/manage-cost-storage.md#change-the-data-retention-period)
 
-Хранение журналов ресурсов в учетной записи хранения Azure: https://docs.microsoft.com/azure/azure-monitor/platform/resource-logs-collect-storage
+- [Хранение журналов ресурсов в учетной записи хранения Azure](/azure/azure-monitor/platform/resource-logs-collect-storage)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
 **Ответственность**: Customer
 
-### <a name="26-monitor-and-review-logs"></a>2.6. Мониторинг и просмотр журналов
+### <a name="26-monitor-and-review-logs"></a>2,6: мониторинг и просмотр журналов
 
 **Рекомендации**. Анализируйте и отслеживайте журналы экземпляров базы данных Azure для MySQL на предмет аномального поведения. Используйте аналитику журналов Azure Monitor для просмотра журналов и выполнения запросов к данным журнала. Кроме того, вы можете включить и подключить данные к Azure Sentinel или сторонним SIEM.
 
-Подключение Azure Sentinel: https://docs.microsoft.com/azure/sentinel/quickstart-onboard
+- [Подключение к Azure Sentinel](../sentinel/quickstart-onboard.md)
 
-Дополнительные сведения об аналитике журналов: https://docs.microsoft.com/azure/azure-monitor/log-query/get-started-portal
+- [Дополнительные сведения о Log Analytics](../azure-monitor/log-query/get-started-portal.md)
 
-Выполнение пользовательских запросов в Azure Monitor: https://docs.microsoft.com/azure/azure-monitor/log-query/get-started-queries
+- [Выполнение пользовательских запросов в Azure Monitor](../azure-monitor/log-query/get-started-queries.md)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
 **Ответственность**: Customer
 
-### <a name="27-enable-alerts-for-anomalous-activity"></a>2.7. Включение оповещений об аномальных действиях
+### <a name="27-enable-alerts-for-anomalous-activities"></a>2,7: Включение оповещений для аномальных действий
 
 **Рекомендации**. Включите Расширенную защиту от угроз для базы данных Azure для MySQL. Расширенная защита от угроз позволяет выявить подозрительную активность, указывающую на необычные и потенциально опасные попытки получить доступ к базам данных или воспользоваться ими.
 
 Кроме того, вы можете включить журналы сервера и параметры диагностики для MySQL и отправить журналы в рабочую область Log Analytics. Подключите рабочую область Log Analytics к Azure Sentinel, так как она предоставляет решение для оркестрации событий безопасности и автоматического реагирования (SOAR). Это позволяет создавать и использовать сборники схем (автоматизированные решения) для устранения проблем безопасности.
 
-Включение Расширенной защиты от угроз для базы данных Azure для MySQL (предварительная версия): https://docs.microsoft.com/azure/mysql/howto-database-threat-protection-portal
+- [Как включить расширенную защиту от угроз для базы данных Azure для MySQL (Предварительная версия)](howto-database-threat-protection-portal.md)
 
-Общие сведения о журналах сервера в службе "База данных Azure для MySQL": https://docs.microsoft.com/azure/mysql/concepts-monitoring#server-logs
+- [Общие сведения о журналах сервера для базы данных Azure для MySQL](concepts-monitoring.md#server-logs)
 
-Настройка и предоставление доступа к журналам медленных запросов для базы данных Azure для MySQL: https://docs.microsoft.com/azure/mysql/howto-configure-server-logs-in-portal
+- [Как настроить и получить доступ к журналам запросов для базы данных Azure для MySQL](howto-configure-server-logs-in-portal.md)
 
-Настройка и предоставление доступа к журналам аудита для базы данных Azure для MySQL: https://docs.microsoft.com/azure/mysql/howto-configure-audit-logs-portal
+- [Как настроить и получить доступ к журналам аудита для базы данных Azure для MySQL](howto-configure-audit-logs-portal.md)
 
-Настройка параметров диагностики для журнала действий Azure: https://docs.microsoft.com/azure/azure-monitor/platform/diagnostic-settings-legacy
+- [Настройка параметров диагностики для журнала действий Azure](/azure/azure-monitor/platform/diagnostic-settings-legacy)
 
-Подключение Azure Sentinel: https://docs.microsoft.com/azure/sentinel/quickstart-onboard
+- [Подключение к Azure Sentinel](../sentinel/quickstart-onboard.md)
 
 **Мониторинг Центра безопасности Azure**: Да
 
@@ -288,9 +288,9 @@ ms.locfileid: "89244710"
 
 **Ответственность**: Недоступно
 
-## <a name="identity-and-access-control"></a>Идентификатор и управление доступом
+## <a name="identity-and-access-control"></a>Идентификаторы и управление доступом
 
-*Дополнительные сведения см. в статье [Управление безопасностью: идентификаторы и управление доступом](https://docs.microsoft.com/azure/security/benchmarks/security-control-identity-access-control).*
+*Дополнительные сведения см. в статье о [производительности системы безопасности Azure: идентификация и управление доступом](../security/benchmarks/security-control-identity-access-control.md).*
 
 ### <a name="31-maintain-an-inventory-of-administrative-accounts"></a>3.1. Инвентаризация учетных записей администраторов
 
@@ -298,11 +298,11 @@ ms.locfileid: "89244710"
 
 База данных Azure для MySQL не поддерживает встроенные функции управления доступом на основе ролей, но можно создавать пользовательские роли на основе конкретных операций с поставщиками ресурсов.
 
-Общие сведения о пользовательских ролях для подписки Azure: https://docs.microsoft.com/azure/role-based-access-control/custom-roles 
+- [Общие сведения о пользовательских ролях для подписки Azure](../role-based-access-control/custom-roles.md) 
 
-Общие сведения об операциях поставщика ресурсов базы данных Azure для MySQL: https://docs.microsoft.com/azure/role-based-access-control/resource-provider-operations#microsoftdbformysql
+- [Общие сведения об операциях с поставщиком ресурсов MySQL в базе данных Azure](../role-based-access-control/resource-provider-operations.md#microsoftdbformysql)
 
-Общие сведения об управлении доступом для базы данных Azure для MySQL: https://docs.microsoft.com/azure/mysql/concepts-security#access-management
+- [Общие сведения об управлении доступом для базы данных Azure для MySQL](concepts-security.md#access-management)
 
 **Мониторинг Центра безопасности Azure**: Да
 
@@ -314,9 +314,9 @@ ms.locfileid: "89244710"
 
 После создания самого ресурса базы данных Azure для MySQL Azure заставляет создать пользователя с правами администратора с надежным паролем. Однако после создания экземпляра MySQL можно использовать учетную запись первого администратора сервера, предназначенную для создания дополнительных пользователей и предоставления им административного доступа. При создании этих учетных записей убедитесь, что для каждой учетной записи настроен отличающийся надежный пароль.
 
-Создание дополнительных учетных записей для базы данных Azure для MySQL: https://docs.microsoft.com/azure/mysql/howto-create-users
+- [Создание дополнительных учетных записей для базы данных Azure для MySQL](howto-create-users.md)
 
-Обновление пароля администратора: https://docs.microsoft.com/azure/mysql/howto-create-manage-server-portal#update-admin-password
+- [Обновление пароля администратора](howto-create-manage-server-portal.md#update-admin-password)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -326,57 +326,57 @@ ms.locfileid: "89244710"
 
 **Рекомендации**. Создайте стандартные операционные процедуры для использования выделенных административных учетных записей, имеющих доступ к вашим экземплярам базы данных Azure MySQL. Используйте учетную запись Центра безопасности Azure и управление доступом для мониторинга количества административных учетных записей.
 
-Общие сведения об идентификации и доступе в Центре безопасности Azure: https://docs.microsoft.com/azure/security-center/security-center-identity-access
+- [Общие сведения об удостоверениях и доступе центра безопасности Azure](../security-center/security-center-identity-access.md)
 
-Общие сведения о создании администраторов в базе данных Azure для MySQL: https://docs.microsoft.com/azure/mysql/howto-create-users
+- [Сведения о создании пользователей с правами администратора в базе данных Azure для MySQL](howto-create-users.md)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
 **Ответственность**: Customer
 
-### <a name="34-use-single-sign-on-sso-with-azure-active-directory"></a>3.4. Использование единого входа с Azure Active Directory
+### <a name="34-use-azure-active-directory-single-sign-on-sso"></a>3,4. Использование единого входа Azure Active Directory (SSO)
 
 **Рекомендации**. Вход в базу данных Azure для MySQL поддерживается как с помощью имени пользователя/пароля, настроенных непосредственно в базе данных, так и с помощью идентификации Azure Active Directory (AD) и использования токена Azure AD для подключения. При использовании токена Azure AD поддерживаются различные методы, например пользователь Azure AD, Группа Azure AD или приложение Azure AD, подключающееся к базе данных.
 
 Отдельный доступ к плоскости управления для MySQL доступен через REST API и поддерживает единый вход. Чтобы выполнить проверку подлинности, установите JSON Web Token, полученный из Azure Active Directory (AAD), в качестве заголовка авторизации.
 
-Использование Azure Active Directory для проверки подлинности в базе данных Azure для MySQL: https://docs.microsoft.com/azure/mysql/howto-configure-sign-in-azure-ad-authentication
+- [Использование Azure Active Directory для проверки подлинности в базе данных Azure для MySQL](howto-configure-sign-in-azure-ad-authentication.md)
 
-Общие сведения о REST API базы данных Azure для MySQL: https://docs.microsoft.com/rest/api/mysql/
+- [Общие сведения о базе данных Azure для MySQL REST API](/rest/api/mysql/)
 
-Общие сведения о едином входе в Azure AD: https://docs.microsoft.com/azure/active-directory/manage-apps/what-is-single-sign-on
+- [Общие сведения об использовании единого входа в Azure AD](../active-directory/manage-apps/what-is-single-sign-on.md)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
 **Ответственность**: Customer
 
-### <a name="35-use-multi-factor-authentication-for-all-azure-active-directory-based-access"></a>3.5. Использование многофакторной проверки подлинности для любого доступа на основе Azure Active Directory
+### <a name="35-use-multi-factor-authentication-for-all-azure-active-directory-based-access"></a>3,5: используйте многофакторную проверку подлинности для всех Azure Active Directory доступа
 
 **Рекомендации**. Включите многофакторную идентификацию (MFA) в Azure Active Directory и следуйте рекомендациям по управлению идентификацией и доступом в Центре безопасности Azure. При использовании маркеров Azure AD для входа в базу данных возможна многофакторная проверка подлинности для входа в базу данных.
 
-Включение MFA в Azure: https://docs.microsoft.com/azure/active-directory/authentication/howto-mfa-getstarted
+- [Включение MFA в Azure](../active-directory/authentication/howto-mfa-getstarted.md)
 
-Использование Azure Active Directory для проверки подлинности в базе данных Azure для MySQL: https://docs.microsoft.com/azure/mysql/howto-configure-sign-in-azure-ad-authentication
+- [Использование Azure Active Directory для проверки подлинности в базе данных Azure для MySQL](howto-configure-sign-in-azure-ad-authentication.md)
 
-Мониторинг идентификации и доступа в Центре безопасности Azure: https://docs.microsoft.com/azure/security-center/security-center-identity-access
+- [Мониторинг идентификации и доступа в Центре безопасности Azure](../security-center/security-center-identity-access.md)
 
 **Мониторинг Центра безопасности Azure**: Да
 
 **Ответственность**: Customer
 
-### <a name="36-use-dedicated-machines-privileged-access-workstations-for-all-administrative-tasks"></a>3.6. Использование выделенных компьютеров (рабочих станций с привилегированным доступом) для всех административных задач
+### <a name="36-use-secure-azure-managed-workstations-for-administrative-tasks"></a>3,6: используйте защищенные рабочие станции, управляемые Azure, для административных задач
 
 **Рекомендации**. Используйте рабочие станции привилегированного доступа (PAW) с настроенной многофакторной идентификацией (MFA) для входа в ресурсы Azure и их настройки.
 
-Сведения о рабочих станциях с привилегированным доступом: https://docs.microsoft.com/windows-server/identity/securing-privileged-access/privileged-access-workstations
+- [Использование рабочих станций с привилегированным доступом](/windows-server/identity/securing-privileged-access/privileged-access-workstations)
 
-Включение MFA в Azure: https://docs.microsoft.com/azure/active-directory/authentication/howto-mfa-getstarted
+- [Включение MFA в Azure](../active-directory/authentication/howto-mfa-getstarted.md)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
 **Ответственность**: Customer
 
-### <a name="37-log-and-alert-on-suspicious-activity-from-administrative-accounts"></a>3.7. Ведение журнала и создание оповещений по подозрительным действиям учетных записей администраторов
+### <a name="37-log-and-alert-on-suspicious-activities-from-administrative-accounts"></a>3,7: журналы и оповещения о подозрительных действиях учетных записей администраторов
 
 **Рекомендации**. Включите Расширенную защиту от угроз для базы данных Azure для MySQL, чтобы создавать оповещения при подозрительных действиях.
 
@@ -384,11 +384,11 @@ ms.locfileid: "89244710"
 
 Используйте обнаружение рисков Azure AD для просмотра предупреждений и отчетов об опасном поведении пользователя.
 
-Настройка Расширенной защиты от угроз для базы данных Azure для MySQL: https://docs.microsoft.com/azure/mysql/howto-database-threat-protection-portal
+- [Настройка расширенной защиты от угроз для базы данных Azure для MySQL](howto-database-threat-protection-portal.md)
 
-Развертывание Azure AD Privileged Identity Management (PIM): https://docs.microsoft.com/azure/active-directory/privileged-identity-management/pim-deployment-plan
+- [Развертывание Privileged Identity Management (PIM)](../active-directory/privileged-identity-management/pim-deployment-plan.md)
 
-Общие сведения об обнаружении рисков Azure AD: https://docs.microsoft.com/azure/active-directory/reports-monitoring/concept-risk-events
+- [Общие сведения об обнаружении рисков в Azure AD](/azure/active-directory/reports-monitoring/concept-risk-events)
 
 **Мониторинг Центра безопасности Azure**: Да
 
@@ -398,7 +398,7 @@ ms.locfileid: "89244710"
 
 **Рекомендации**. Используйте именованные расположения с условным доступом, чтобы разрешить порталу и Azure Resource Manager доступ только из конкретных логических групп диапазонов IP-адресов или стран и регионов.
 
-Настройка именованных расположений в Azure: https://docs.microsoft.com/azure/active-directory/reports-monitoring/quickstart-configure-named-locations
+- [Настройка именованных расположений в Azure](../active-directory/reports-monitoring/quickstart-configure-named-locations.md)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -412,7 +412,7 @@ ms.locfileid: "89244710"
 
 Учетные данные Azure AD также могут использоваться для администрирования на уровне управления (например, портал Azure), для управления учетными записями администратора MySQL.
 
-Использование Azure Active Directory для проверки подлинности в базе данных Azure для MySQL: https://docs.microsoft.com/azure/mysql/howto-configure-sign-in-azure-ad-authentication
+- [Использование Azure Active Directory для проверки подлинности в базе данных Azure для MySQL](howto-configure-sign-in-azure-ad-authentication.md)
 
 **Мониторинг Центра безопасности Azure**: Да
 
@@ -422,29 +422,29 @@ ms.locfileid: "89244710"
 
 **Рекомендации**. Проверьте журналы Azure Active Directory, чтобы обнаружить устаревшие учетные записи, которые могут включать в себя роли администраторов базы данных Azure для MySQL. Кроме того, используйте проверку доступа удостоверений Azure для эффективного управления членством в группах, доступа к корпоративным приложениям, которые могут использоваться для доступа к базе данных Azure для MySQL и назначения ролей. Доступ пользователей следует проверять регулярно, например раз в 90 дней, чтобы только у авторизованных пользователей был постоянный доступ.
 
-Основы отчетности Azure AD https://docs.microsoft.com/azure/active-directory/reports-monitoring/
+- [Общие сведения об отчетах Azure AD](/azure/active-directory/reports-monitoring/)
 
-Использование проверок доступа для идентификации Azure: https://docs.microsoft.com/azure/active-directory/governance/access-reviews-overview
+- [Использование проверок доступа для идентификации Azure](../active-directory/governance/access-reviews-overview.md)
 
 **Мониторинг Центра безопасности Azure**: Да
 
 **Ответственность**: Customer
 
-### <a name="311-monitor-attempts-to-access-deactivated-accounts"></a>3.11. Отслеживание попыток доступа к отключенным учетным записям
+### <a name="311-monitor-attempts-to-access-deactivated-credentials"></a>3,11: монитор пытается получить доступ к отключенным учетным данным
 
 **Рекомендации**. Включите параметры диагностики для базы данных Azure для MySQL и Azure Active Directory, отправив все журналы в рабочую область Log Analytics. Настройте необходимые оповещения (например, неудачные попытки проверки подлинности) в Log Analytics.
 
-Настройка и предоставление доступа к журналам медленных запросов для базы данных Azure для MySQL: https://docs.microsoft.com/Azure/mysql/howto-configure-server-logs-in-portal
+- [Как настроить и получить доступ к журналам запросов для базы данных Azure для MySQL](/Azure/mysql/howto-configure-server-logs-in-portal)
 
-Настройка и предоставление доступа к журналам аудита для базы данных Azure для MySQL: https://docs.microsoft.com/Azure/mysql/howto-configure-audit-logs-portal
+- [Как настроить и получить доступ к журналам аудита для базы данных Azure для MySQL](/Azure/mysql/howto-configure-audit-logs-portal)
 
-Интеграция журналов действий Azure в Azure Monitor: https://docs.microsoft.com/azure/active-directory/reports-monitoring/howto-integrate-activity-logs-with-log-analytics
+- [Как интегрировать журналы действий Azure в Azure Monitor](/azure/active-directory/reports-monitoring/howto-integrate-activity-logs-with-log-analytics)
 
 **Мониторинг Центра безопасности Azure**: Недоступно
 
 **Ответственность**: Customer
 
-### <a name="312-alert-on-account-login-behavior-deviation"></a>3.12. Предупреждение при подозрительном входе в учетную запись
+### <a name="312-alert-on-account-sign-in-behavior-deviation"></a>3,12: предупреждение об отклонении при входе в учетную запись
 
 **Рекомендации**. Включите Расширенную защиту от угроз для базы данных Azure для MySQL, чтобы создавать оповещения при подозрительных действиях.
 
@@ -452,13 +452,13 @@ ms.locfileid: "89244710"
 
 Вы также можете включить журналы в Azure Sentinel для дальнейшего изучения.
 
-Настройка Расширенной защиты от угроз для базы данных Azure для MySQL: https://docs.microsoft.com/azure/mysql/howto-database-threat-protection-portal
+- [Настройка расширенной защиты от угроз для базы данных Azure для MySQL](howto-database-threat-protection-portal.md)
 
-Общие сведения о Защите идентификации Azure AD: https://docs.microsoft.com/azure/active-directory/identity-protection/overview-identity-protection
+- [Общие сведения о Защите идентификации Azure AD](../active-directory/identity-protection/overview-identity-protection.md)
 
-Просмотр рискованных входов в Azure AD: https://docs.microsoft.com/azure/active-directory/reports-monitoring/concept-risky-sign-ins
+- [Просмотр рискованных входов в Azure AD](/azure/active-directory/reports-monitoring/concept-risky-sign-ins)
 
-Подключение Azure Sentinel: https://docs.microsoft.com/azure/sentinel/quickstart-onboard
+- [Подключение к Azure Sentinel](../sentinel/quickstart-onboard.md)
 
 **Мониторинг Центра безопасности Azure**: Недоступно
 
@@ -468,7 +468,7 @@ ms.locfileid: "89244710"
 
 **Рекомендации**. Недоступно. Защищенное хранилище еще не поддерживается для базы данных Azure для MySQL.
 
-Список поддерживаемых служб защищенного хранилища: https://docs.microsoft.com/azure/security/fundamentals/customer-lockbox-overview#supported-services-and-scenarios-in-general-availability
+- [Список поддерживаемых защищенное хранилище служб](../security/fundamentals/customer-lockbox-overview.md#supported-services-and-scenarios-in-general-availability)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -476,13 +476,13 @@ ms.locfileid: "89244710"
 
 ## <a name="data-protection"></a>Защита данных
 
-*Дополнительные сведения см. в статье [Управление безопасностью: защита данных](https://docs.microsoft.com/azure/security/benchmarks/security-control-data-protection).*
+*Дополнительные сведения см. в статье о [производительности системы безопасности Azure: защита данных](../security/benchmarks/security-control-data-protection.md).*
 
 ### <a name="41-maintain-an-inventory-of-sensitive-information"></a>4.1. Инвентаризация конфиденциальных данных
 
 **Рекомендации**. Используйте теги для пометки экземпляров базы данных Azure для MySQL или связанных ресурсов, в которых хранятся или обрабатываются конфиденциальные данные.
 
-Создание и использование тегов: https://docs.microsoft.com/azure/azure-resource-manager/resource-group-using-tags
+- [Создание и использование тегов](/azure/azure-resource-manager/resource-group-using-tags)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -492,16 +492,15 @@ ms.locfileid: "89244710"
 
 **Рекомендации**. Реализуйте отдельные подписки и группы управления для разработки, тестирования и производства. Используйте сочетание приватного канала, конечных точек службы и (или) правил брандмауэра, чтобы изолировать и ограничить сетевой доступ к экземплярам базы данных Azure для MySQL.
 
-Создание дополнительных подписок Azure: https://docs.microsoft.com/azure/billing/billing-create-subscription
+- [Создание дополнительных подписок Azure](/azure/billing/billing-create-subscription)
 
-Создание групп управления: https://docs.microsoft.com/azure/governance/management-groups/create
+- [Создание групп управления](/azure/governance/management-groups/create)
 
-Настройка приватного канала для базы данных Azure для MySQL: https://docs.microsoft.com/azure/mysql/concepts-data-access-security-private-link
+- [Настройка закрытой ссылки для базы данных Azure для MySQL](concepts-data-access-security-private-link.md)
 
-Настройка правил и конечных точек службы VNet и правил VNet в базе данных Azure для MySQL и управление ими: https://docs.microsoft.com/azure/sql-database/sql-database-vnet-service-endpoint-rule-overview
+- [Создание конечных точек службы виртуальной сети и правил виртуальной сети в базе данных Azure для MySQL и управление ими](/azure/sql-database/sql-database-vnet-service-endpoint-rule-overview)
 
-Настройка правил брандмауэра базы данных Azure для MySQL: https://docs.microsoft.com/azure/mysql/concepts-firewall-rules
-
+- [Настройка правил брандмауэра базы данных Azure для MySQL](concepts-firewall-rules.md)
 
 **Мониторинг Центра безопасности Azure**: Недоступно
 
@@ -513,9 +512,9 @@ ms.locfileid: "89244710"
 
 Корпорация Майкрософт управляет базовой инфраструктурой базы данных Azure для MySQL и реализовала надежные элементы управления для предотвращения потери или раскрытия данных клиента.
 
-Устранение утечки данных из базы данных Azure для MySQL: https://docs.microsoft.com/azure/mysql/concepts-data-access-security-private-link#data-exfiltration-prevention
+- [Как устранить утечка данных для базы данных Azure для MySQL](concepts-data-access-security-private-link.md#data-exfiltration-prevention)
 
-Общие сведения о защите данных клиентов в Azure: https://docs.microsoft.com/azure/security/fundamentals/protection-customer-data
+- [Общие сведения о защите данных клиентов в Azure](../security/fundamentals/protection-customer-data.md)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -527,7 +526,7 @@ ms.locfileid: "89244710"
 
 Сейчас для базы данных Azure для MySQL поддерживаются следующие версии TLS: TLS 1.0, TLS 1.1, TLS 1.2.
 
-Настройка шифрования передаваемых данных для базы данных Azure для MySQL: https://docs.microsoft.com/azure/mysql/concepts-ssl-connection-security
+- [Настройка шифрования при передаче для базы данных Azure для MySQL](concepts-ssl-connection-security.md)
 
 **Мониторинг Центра безопасности Azure**: Недоступно
 
@@ -539,19 +538,19 @@ ms.locfileid: "89244710"
 
 Для базовой платформы, управляемой корпорацией Майкрософт, корпорация Майкрософт считает все содержимое клиента конфиденциальным и предпринимает все возможные усилия для защиты клиентов от потери данных и раскрытия информации. Чтобы обеспечить безопасность данных клиентов в Azure, корпорация Майкрософт реализовала и поддерживает набор надежных элементов управления и возможностей защиты данных.
 
-Общие сведения о защите данных клиентов в Azure: https://docs.microsoft.com/azure/security/fundamentals/protection-customer-data
+- [Общие сведения о защите данных клиентов в Azure](../security/fundamentals/protection-customer-data.md)
 
 **Мониторинг Центра безопасности Azure**: Недоступно
 
 **Ответственность**: Совмещаемая блокировка
 
-### <a name="46-use-azure-rbac-to-control-access-to-resources"></a>4.6. Контроль доступа к ресурсам с помощью RBAC
+### <a name="46-use-role-based-access-control-to-control-access-to-resources"></a>4,6. Использование управления доступом на основе ролей для управления доступом к ресурсам
 
 **Руководство**. Использование управления доступом на основе ролей Azure (Azure RBAC) для управления доступом к базе данных Azure для плоскости управления MySQL (например, портал Azure). Для доступа к уровню данных (в самой базе данных) используйте SQL-запросы для создания пользователей и настройки разрешений пользователей. Azure RBAC не влияет на разрешения пользователей в базе данных.
 
-Как настроить Azure RBAC: https://docs.microsoft.com/azure/role-based-access-control/role-assignments-portal
+- [Настройка Azure RBAC](../role-based-access-control/role-assignments-portal.md)
 
-Настройка доступа пользователей с помощью SQL для базы данных Azure для MySQL: https://docs.microsoft.com/azure/mysql/howto-create-users
+- [Как настроить доступ пользователей с помощью SQL для базы данных Azure для MySQL](howto-create-users.md)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -563,7 +562,7 @@ ms.locfileid: "89244710"
 
 Корпорация Майкрософт управляет базовой инфраструктурой базы данных Azure для MySQL и реализовала надежные элементы управления для предотвращения потери или раскрытия данных клиента.
 
-Общие сведения о защите данных клиентов в Azure: https://docs.microsoft.com/azure/security/fundamentals/protection-customer-data
+- [Общие сведения о защите данных клиентов в Azure](../security/fundamentals/protection-customer-data.md)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -577,9 +576,9 @@ ms.locfileid: "89244710"
 
 AskAzureDBforMySQL@service.microsoft.com
 
-Общие сведения о шифровании хранимых данных в базе данных Azure для MySQL: https://docs.microsoft.com/azure/mysql/concepts-security
+- [Общие сведения о шифровании неактивных данных Azure для MySQL](concepts-security.md)
 
-Настройка управляемых клиентом ключей для базы данных Azure для MySQL: https://docs.microsoft.com/azure/mysql/concepts-data-encryption-mysql
+- [Как настроить управляемые пользователем ключи для базы данных Azure для MySQL](concepts-data-encryption-mysql.md)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -589,25 +588,29 @@ AskAzureDBforMySQL@service.microsoft.com
 
 **Рекомендации**. Используйте Azure Monitor с журналом действий Azure для создания оповещений об изменениях на коммерческих экземплярах базы данных Azure для MySQL и других важных и связанных с ними ресурсах.
 
-Создание оповещений для событий журнала действий Azure: https://docs.microsoft.com/azure/azure-monitor/platform/alerts-activity-log
+- [Как создать оповещения для событий журнала действий Azure](../azure-monitor/platform/alerts-activity-log.md)
 
-**Мониторинг Центра безопасности Azure**: Неприменимо
+**Мониторинг Центра безопасности Azure**. Неприменимо
 
 **Ответственность**: Customer
 
-## <a name="vulnerability-management"></a>Управление уязвимостями
+## <a name="vulnerability-management"></a>управление уязвимостями;
 
-*Дополнительные сведения см. в статье [Управление безопасностью: управление уязвимостями](https://docs.microsoft.com/azure/security/benchmarks/security-control-vulnerability-management).*
+*Дополнительные сведения см. в статье о [производительности системы безопасности Azure: Управление уязвимостью](../security/benchmarks/security-control-vulnerability-management.md).*
 
 ### <a name="51-run-automated-vulnerability-scanning-tools"></a>5.1. Выполнение автоматизированных средства анализа уязвимостей
 
-**Рекомендации**. В настоящее время недоступно. Центр безопасности Azure пока не поддерживает оценку уязвимостей для базы данных Azure для MySQL.
+**Рекомендации**. Следуйте рекомендациям центра безопасности Azure по защите базы данных Azure для MySQL и связанных ресурсов.
 
-Покрытие компонентов для служб Azure PaaS в Центре безопасности Azure: https://docs.microsoft.com/azure/security-center/features-paas
+Корпорация Майкрософт выполняет Управление уязвимостью в базовых системах, поддерживающих базу данных Azure для MySQL.
+
+- [Общие сведения о рекомендациях центра безопасности Azure](../security-center/recommendations-reference.md)
+
+- [Покрытие компонентов для служб Azure PaaS в центре безопасности Azure](../security-center/features-paas.md)
 
 **Мониторинг Центра безопасности Azure**: Да
 
-**Ответственность**: Customer
+**Ответственность**: Совмещаемая блокировка
 
 ### <a name="52-deploy-automated-operating-system-patch-management-solution"></a>5.2. Развертывание автоматизированного решения для управления исправлениями операционной системы
 
@@ -617,7 +620,7 @@ AskAzureDBforMySQL@service.microsoft.com
 
 **Ответственность**: Недоступно
 
-### <a name="53-deploy-automated-third-party-software-patch-management-solution"></a>5.3. Развертывание автоматизированного решения для управления исправлениями ПО сторонних производителей
+### <a name="53-deploy-automated-patch-management-solution-for-third-party-software-titles"></a>5,3: Развертывание автоматизированного решения по управлению исправлениями для программ сторонних разработчиков
 
 **Рекомендации**. Неприменимо. Эта рекомендация предназначена для вычислительных ресурсов.
 
@@ -637,24 +640,23 @@ AskAzureDBforMySQL@service.microsoft.com
 
 **Рекомендации**. Корпорация Майкрософт управляет уязвимостью в базовых системах, поддерживающих базу данных Azure для MySQL.
 
-
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
 **Ответственность**: Microsoft
 
 ## <a name="inventory-and-asset-management"></a>Инвентаризация и управление ресурсами
 
-*Дополнительные сведения см. в статье [Управление безопасностью: инвентаризация и управление ресурсами](https://docs.microsoft.com/azure/security/benchmarks/security-control-inventory-asset-management).*
+*Дополнительные сведения см. в статье о [производительности системы безопасности Azure: Инвентаризация и управление активами](../security/benchmarks/security-control-inventory-asset-management.md).*
 
-### <a name="61-use-azure-asset-discovery"></a>6.1. Использование обнаружения ресурсов Azure
+### <a name="61-use-automated-asset-discovery-solution"></a>6,1. Использование автоматизированного решения для обнаружения ресурсов
 
-**Рекомендации**. Используйте Azure Resource Graph для запроса и обнаружения всех ресурсов (включая экземпляры базы данных Azure для MySQL) в ваших подписках. Убедитесь, что у вас есть соответствующие разрешения (на чтение) в клиенте и вы можете перечислить все подписки Azure, а также ресурсы в ваших подписках.
+**Руководство**. Использование графа ресурсов Azure для запроса и обнаружения всех ресурсов (включая базу данных Azure для экземпляров MySQL) в подписках. Убедитесь, что у вас есть соответствующие разрешения (на чтение) в клиенте и вы можете перечислить все подписки Azure, а также ресурсы в ваших подписках.
 
-Создание запросов с помощью Azure Resource Graph: https://docs.microsoft.com/azure/governance/resource-graph/first-query-portal
+- [Как создавать запросы с помощью Azure Graph](../governance/resource-graph/first-query-portal.md)
 
-Просмотр подписок Azure: https://docs.microsoft.com/powershell/module/az.accounts/get-azsubscription?view=azps-3.0.0
+- [Как просматривать подписки Azure](https://docs.microsoft.com/powershell/module/az.accounts/get-azsubscription?view=azps-3.0.0)
 
-Общие сведения об Azure RBAC: https://docs.microsoft.com/azure/role-based-access-control/overview
+- [Общие сведения об Azure RBAC](../role-based-access-control/overview.md)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -664,7 +666,7 @@ AskAzureDBforMySQL@service.microsoft.com
 
 **Рекомендации**. Примените теги к экземплярам базы данных Azure для MySQL и другим связанным ресурсам, предоставив метаданные для логической организации их в таксономию.
 
-Создание и использование тегов: https://docs.microsoft.com/azure/azure-resource-manager/resource-group-using-tags
+- [Создание и использование тегов](/azure/azure-resource-manager/resource-group-using-tags)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -674,17 +676,17 @@ AskAzureDBforMySQL@service.microsoft.com
 
 **Рекомендации**. При необходимости используйте теги, группы управления и отдельные подписки, чтобы упорядочить и отслеживать экземпляры базы данных Azure для MySQL и связанные ресурсы. Регулярно сверяйте ресурсы, чтобы своевременно удалять неавторизованные ресурсы из подписки.
 
-Создание дополнительных подписок Azure: https://docs.microsoft.com/azure/billing/billing-create-subscription
+- [Создание дополнительных подписок Azure](/azure/billing/billing-create-subscription)
 
-Создание групп управления: https://docs.microsoft.com/azure/governance/management-groups/create
+- [Создание групп управления](/azure/governance/management-groups/create)
 
-Создание и использование тегов: https://docs.microsoft.com/azure/azure-resource-manager/resource-group-using-tags
+- [Создание и использование тегов](/azure/azure-resource-manager/resource-group-using-tags)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
 **Ответственность**: Customer
 
-### <a name="64-maintain-an-inventory-of-approved-azure-resources-and-software-titles"></a>6.4. Ведение каталога утвержденных ресурсов Azure и наименований программного обеспечения
+### <a name="64-define-and-maintain-inventory-of-approved-azure-resources"></a>6,4: определение и обслуживание инвентаризации утвержденных ресурсов Azure
 
 **Рекомендации**. Неприменимо. Эта рекомендация предназначена для вычислений с ресурсами, а также для Azure в целом.
 
@@ -694,17 +696,17 @@ AskAzureDBforMySQL@service.microsoft.com
 
 ### <a name="65-monitor-for-unapproved-azure-resources"></a>6.5. Отслеживание неутвержденных ресурсов Azure
 
-**Рекомендации**. Используйте политику Azure, чтобы ограничить тип ресурсов, которые могут быть созданы в подписках клиентов, используя следующие встроенные определения политик:
+**Руководство**. Использование политики Azure для ограничения типа ресурсов, которые могут быть созданы в клиентских подписках, с помощью следующих встроенных определений политик:
 
 - Недопустимые типы ресурсов
 
 - Допустимые типы ресурсов
 
-Кроме того, используйте Azure Resource Graph для запроса или обнаружения ресурсов в подписках.
+Кроме того, используйте граф ресурсов Azure для запроса и обнаружения ресурсов в подписках.
 
-Настройка Политики SQL Azure и управление ею: https://docs.microsoft.com/azure/governance/policy/tutorials/create-and-manage
+- [Настройка Политики Azure и управление ею](../governance/policy/tutorials/create-and-manage.md)
 
-Создание запросов с помощью Azure Graph: https://docs.microsoft.com/azure/governance/resource-graph/first-query-portal
+- [Как создавать запросы с помощью Azure Resource Graph](../governance/resource-graph/first-query-portal.md)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -736,21 +738,21 @@ AskAzureDBforMySQL@service.microsoft.com
 
 ### <a name="69-use-only-approved-azure-services"></a>6.9. Использование только утвержденных служб Azure
 
-**Руководство**. Используйте Политику Azure, чтобы ограничить тип ресурсов, которые могут быть созданы в подписках клиентов, используя следующие встроенные определения политик.
+**Руководство**. Использование политики Azure для ограничения типа ресурсов, которые могут быть созданы в клиентских подписках, с помощью следующих встроенных определений политик:
 
 - Недопустимые типы ресурсов
 
 - Допустимые типы ресурсов
 
-Настройка Политики SQL Azure и управление ею: https://docs.microsoft.com/azure/governance/policy/tutorials/create-and-manage
+- [Настройка Политики Azure и управление ею](../governance/policy/tutorials/create-and-manage.md)
 
-Отказ от определенного типа ресурса с помощью Политики Azure: https://docs.microsoft.com/azure/governance/policy/samples/not-allowed-resource-types
+- [Как отказаться от определенного типа ресурса с помощью Политики Azure](/azure/governance/policy/samples/not-allowed-resource-types)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
 **Ответственность**: Customer
 
-### <a name="610-implement-approved-application-list"></a>6.10. Реализация списка утвержденных приложений
+### <a name="610-maintain-an-inventory-of-approved-software-titles"></a>6,10: ведение инвентаризации утвержденных наименований программного обеспечения
 
 **Руководство**. Неприменимо; эта рекомендация предназначена для вычислительных ресурсов.
 
@@ -758,13 +760,13 @@ AskAzureDBforMySQL@service.microsoft.com
 
 **Ответственность**: Недоступно
 
-### <a name="611-limit-users-ability-to-interact-with-azure-resources-manager-via-scripts"></a>6.11. Ограничение возможности пользователей взаимодействовать с Azure Resources Manager с помощью сценариев
+### <a name="611-limit-users-ability-to-interact-with-azure-resource-manager"></a>6,11: ограничьте возможность пользователей работать с Azure Resource Manager
 
 **Рекомендации**. Используйте условный доступ Azure, чтобы ограничить возможность пользователей взаимодействовать с Azure Resource Manager путем настройки "Блокировать доступ" для приложения "Управление Microsoft Azure". Это может препятствовать созданию и изменению ресурсов в среде с высоким уровнем безопасности, например экземпляров базы данных Azure для MySQL, содержащих конфиденциальные сведения.
 
-Настройка условного доступа для блокировки доступа к Azure Resource Manager: https://docs.microsoft.com/azure/role-based-access-control/conditional-access-azure-management
+- [Как настроить условный доступ для блокировки доступа к Azure Resource Manager](../role-based-access-control/conditional-access-azure-management.md)
 
-**Мониторинг Центра безопасности Azure**: Неприменимо
+**Мониторинг Центра безопасности Azure**. Неприменимо
 
 **Ответственность**: Customer
 
@@ -784,19 +786,19 @@ AskAzureDBforMySQL@service.microsoft.com
 
 **Ответственность**: Недоступно
 
-## <a name="secure-configuration"></a>Настройка безопасности
+## <a name="secure-configuration"></a>Безопасная конфигурация
 
-*Дополнительные сведения см. в статье [Управление безопасностью: безопасная конфигурация](https://docs.microsoft.com/azure/security/benchmarks/security-control-secure-configuration).*
+*Дополнительные сведения см. в статье о [производительности системы безопасности Azure: безопасная конфигурация](../security/benchmarks/security-control-secure-configuration.md).*
 
 ### <a name="71-establish-secure-configurations-for-all-azure-resources"></a>7.1. Установка безопасных конфигураций для всех ресурсов Azure
 
-**Рекомендации**. Определите и реализуйте стандартные конфигурации безопасности для экземпляров базы данных Azure для MySQL с помощью Политики Azure. Используйте псевдонимы политик Azure в пространствах имен "Microsoft.DBforMySQL" для создания настраиваемых политик, предназначенных для аудита или принудительного применения конфигурации сети для экземпляров базы данных Azure для MySQL. Вы также можете использовать встроенные определения политик для ваших экземпляров базы данных Azure для MySQL, например:
+**Рекомендации**. Определите и реализуйте стандартные конфигурации безопасности для экземпляров базы данных Azure для MySQL с помощью Политики Azure. Используйте псевдонимы политик Azure в пространстве имен **Microsoft. дбформискл** , чтобы создать настраиваемые политики для аудита или принудительно применить конфигурацию сети для экземпляров базы данных Azure для MySQL. Вы также можете использовать встроенные определения политик, относящиеся к базе данных Azure для экземпляров MySQL, например:
 
 Для серверов баз данных MySQL должно быть включено принудительное использование SSL-соединения
 
-Просмотр доступных псевдонимов политик Azure: https://docs.microsoft.com/powershell/module/az.resources/get-azpolicyalias?view=azps-3.3.0
+- [Просмотр доступных псевдонимов политик Azure](https://docs.microsoft.com/powershell/module/az.resources/get-azpolicyalias?view=azps-3.3.0)
 
-Настройка Политики SQL Azure и управление ею: https://docs.microsoft.com/azure/governance/policy/tutorials/create-and-manage
+- [Настройка Политики Azure и управление ею](../governance/policy/tutorials/create-and-manage.md)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -814,9 +816,9 @@ AskAzureDBforMySQL@service.microsoft.com
 
 **Рекомендации**. Используйте Политику Azure [отказывать] и [развернуть, если не существует], чтобы обеспечить безопасность параметров в ресурсах Azure.
 
-Настройка Политики SQL Azure и управление ею: https://docs.microsoft.com/azure/governance/policy/tutorials/create-and-manage
+- [Настройка Политики Azure и управление ею](../governance/policy/tutorials/create-and-manage.md)
 
-Сведения о действии Политики Azure: https://docs.microsoft.com/azure/governance/policy/concepts/effects
+- [Сведения о действии Политик Azure](../governance/policy/concepts/effects.md)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -834,11 +836,11 @@ AskAzureDBforMySQL@service.microsoft.com
 
 **Рекомендации**. Если вы используете пользовательские определения Политики Azure для экземпляров базы данных Azure для MySQL и связанных ресурсов, используйте Azure Repos для безопасного хранения кода и управления им.
 
-Хранение кода в Azure DevOps: https://docs.microsoft.com/azure/devops/repos/git/gitworkflow?view=azure-devops
+- [Как хранить код в Azure DevOps](https://docs.microsoft.com/azure/devops/repos/git/gitworkflow?view=azure-devops)
 
-Документация по Azure Repos: https://docs.microsoft.com/azure/devops/repos/index?view=azure-devops
+- [Документация по Azure Repos](https://docs.microsoft.com/azure/devops/repos/index?view=azure-devops)
 
-**Мониторинг Центра безопасности Azure**: Неприменимо
+**Мониторинг Центра безопасности Azure**. Неприменимо
 
 **Ответственность**: Customer
 
@@ -850,17 +852,17 @@ AskAzureDBforMySQL@service.microsoft.com
 
 **Ответственность**: Недоступно
 
-### <a name="77-deploy-system-configuration-management-tools"></a>7.7. Развертывание инструментов управления конфигурацией системы
+### <a name="77-deploy-configuration-management-tools-for-azure-resources"></a>7,7: развертывание средств управления конфигурацией для ресурсов Azure
 
 **Рекомендации**. Используйте псевдонимы политик Azure в пространстве имен "Microsoft.DBforMySQL" для создания настраиваемых политик для оповещения, аудита и принудительного применения конфигураций системы. Кроме того, разрабатывайте процесс и конвейер для управления исключениями политик.
 
-Настройка Политики SQL Azure и управление ею: https://docs.microsoft.com/azure/governance/policy/tutorials/create-and-manage
+- [Настройка Политики Azure и управление ею](../governance/policy/tutorials/create-and-manage.md)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
 **Ответственность**: Customer
 
-### <a name="78-deploy-system-configuration-management-tools-for-operating-systems"></a>7.8. Развертывание средств управления конфигурацией системы для операционных систем
+### <a name="78-deploy-configuration-management-tools-for-operating-systems"></a>7,8: развертывание средств управления конфигурацией для операционных систем
 
 **Руководство**. Неприменимо; эта рекомендация предназначена для вычислительных ресурсов.
 
@@ -868,11 +870,11 @@ AskAzureDBforMySQL@service.microsoft.com
 
 **Ответственность**: Недоступно
 
-### <a name="79-implement-automated-configuration-monitoring-for-azure-services"></a>7.9. Реализация автоматизированного мониторинга конфигурации для служб Azure
+### <a name="79-implement-automated-configuration-monitoring-for-azure-resources"></a>7,9. Реализация автоматического мониторинга конфигурации для ресурсов Azure
 
-**Рекомендации**. Используйте псевдонимы политик Azure в пространстве имен "Microsoft.DBforMySQL" для создания настраиваемых политик для оповещения, аудита и принудительного применения конфигураций системы. Используйте Политику Azure [аудит], [запретить] и [развернуть, если не существует], чтобы автоматически применять конфигурации для экземпляров базы данных Azure для MySQL и связанных ресурсов.
+**Руководство**. Использование псевдонимов политик Azure в пространстве имен **Microsoft. дбформискл** для создания настраиваемых политик для оповещения, аудита и принудительного применения конфигураций системы. Используйте Политику Azure [аудит], [запретить] и [развернуть, если не существует], чтобы автоматически применять конфигурации для экземпляров базы данных Azure для MySQL и связанных ресурсов.
 
-Настройка Политики SQL Azure и управление ею: https://docs.microsoft.com/azure/governance/policy/tutorials/create-and-manage
+- [Настройка Политики Azure и управление ею](../governance/policy/tutorials/create-and-manage.md)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -890,11 +892,11 @@ AskAzureDBforMySQL@service.microsoft.com
 
 **Рекомендации**. Для виртуальных машин Azure или веб-приложений, работающих в службе приложений Azure, которые используются для доступа к экземплярам базы данных Azure для MySQL, используйте Управляемое удостоверение службы в сочетании с Azure Key Vault, чтобы упростить и защитить управление секретами базы данных Azure для MySQL. Убедитесь, что включено обратимое удаление в Azure Key Vault.
 
-Интеграция с управляемыми удостоверениями Azure: https://docs.microsoft.com/azure/azure-app-configuration/howto-integrate-azure-managed-service-identity
+- [Интеграция с управляемыми удостоверениями Azure](../azure-app-configuration/howto-integrate-azure-managed-service-identity.md)
 
-Создание Key Vault: https://docs.microsoft.com/azure/key-vault/quick-create-portal
+- [Создание Key Vault](../key-vault/general/quick-create-portal.md)
 
-Проверка подлинности в Key Vault с помощью управляемого удостоверения: https://docs.microsoft.com/azure/key-vault/managed-identity
+- [Как обеспечить проверку подлинности Key Vault с помощью управляемого удостоверения](/azure/key-vault/general/managed-identity)
 
 **Мониторинг Центра безопасности Azure**: Да
 
@@ -908,9 +910,9 @@ AskAzureDBforMySQL@service.microsoft.com
 
 Функция управляемых удостоверений предоставляет службам Azure автоматически управляемые удостоверения в Azure Active Directory (AD). Управляемое удостоверение можно использовать для проверки подлинности в любой службе, которая поддерживает проверку подлинности Azure AD, включая Key Vault, при этом не сохраняя каких-либо учетных данных в коде.
 
-Настройка управляемых удостоверений: https://docs.microsoft.com/azure/active-directory/managed-identities-azure-resources/qs-configure-portal-windows-vm
+- [Настройка управляемых удостоверений](../active-directory/managed-identities-azure-resources/qs-configure-portal-windows-vm.md)
 
-Интеграция с управляемыми удостоверениями Azure: https://docs.microsoft.com/azure/azure-app-configuration/howto-integrate-azure-managed-service-identity
+- [Интеграция с управляемыми удостоверениями Azure](../azure-app-configuration/howto-integrate-azure-managed-service-identity.md)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -920,7 +922,7 @@ AskAzureDBforMySQL@service.microsoft.com
 
 **Руководство**. Реализуйте сканер учетных данных для обнаружения учетных данных в коде. Сканер учетных данных также рекомендует перемещать обнаруженные учетные данные в более безопасные расположения, такие как Azure Key Vault.
 
-Настройка сканера учетных данных: https://secdevtools.azurewebsites.net/helpcredscan.html
+- [Как настроить сканер учетных данных](https://secdevtools.azurewebsites.net/helpcredscan.html)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -928,9 +930,9 @@ AskAzureDBforMySQL@service.microsoft.com
 
 ## <a name="malware-defense"></a>Защита от вредоносных программ
 
-*Дополнительные сведения см. в статье [Управление безопасностью: защита от вредоносных программ](https://docs.microsoft.com/azure/security/benchmarks/security-control-malware-defense).*
+*Дополнительные сведения см. в статье о [производительности системы безопасности Azure: защита от вредоносных программ](../security/benchmarks/security-control-malware-defense.md).*
 
-### <a name="81-use-centrally-managed-anti-malware-software"></a>8.1. Использование централизованно управляемого программного обеспечения для защиты от вредоносных программ
+### <a name="81-use-centrally-managed-anti-malware-software"></a>8,1. Использование централизованно управляемого программного обеспечения для защиты от вредоносных программ
 
 **Рекомендации**. Неприменимо. Эта рекомендация предназначена для вычислительных ресурсов.
 
@@ -962,36 +964,35 @@ AskAzureDBforMySQL@service.microsoft.com
 
 ## <a name="data-recovery"></a>Восстановление данных
 
-*Дополнительные сведения см. в статье [Управление безопасностью: восстановление данных](https://docs.microsoft.com/azure/security/benchmarks/security-control-data-recovery).*
+*Дополнительные сведения см. в статье о [производительности системы безопасности Azure: восстановление данных](../security/benchmarks/security-control-data-recovery.md).*
 
-### <a name="91-ensure-regular-automated-back-ups"></a>9.1. Обеспечение регулярного автоматического резервного копирования
+### <a name="91-ensure-regular-automated-back-ups"></a>9,1: Обеспечьте регулярное автоматическое резервное копирование
 
 **Рекомендации**. База данных Azure для MySQL создает резервные копии файлов данных и журнала транзакций. В зависимости от поддерживаемого максимального размера хранилища мы будем использовать полные и разностные резервные копии (максимум 4 ТБ на сервере) или моментальные снимки (до 16 ТБ на сервере). При помощи этих резервных копий вы можете восстановить сервер до любой точки во времени в пределах заданного срока хранения резервных копий. По умолчанию срок хранения резервных копий составляет 7 дней. При необходимости вы увеличить его вплоть до 35 дней. Все резервные копии шифруются с помощью 256-битового шифрования AES.
 
-Общие сведения о резервных копиях для базы данных Azure для MySQL: https://docs.microsoft.com/azure/mysql/concepts-backup
+- [Общие сведения о резервном копировании для базы данных Azure для MySQL](concepts-backup.md)
 
-Общие сведения о начальной конфигурации базы данных Azure для MySQL: https://docs.microsoft.com/azure/mysql/tutorial-design-database-using-portal
+- [Общие сведения о начальной конфигурации базы данных Azure для MySQL](tutorial-design-database-using-portal.md)
 
 **Мониторинг Центра безопасности Azure**: Да
 
 **Ответственность**: Совмещаемая блокировка
 
-### <a name="92-perform-complete-system-backups-and-backup-any-customer-managed-keys"></a>9.2. Выполнение полного резервного копирования системы и любых ключей, управляемых клиентом
+### <a name="92-perform-complete-system-backups-and-backup-any-customer-managed-keys"></a>9,2: выполните полное резервное копирование системы и резервное копирование ключей, управляемых клиентом
 
 **Рекомендации**. База данных Azure для MySQL автоматически создает резервные копии для сервера и сохраняет их в локальном избыточном или геоизбыточном хранилище — по выбору пользователя. Резервные копии можно использовать для восстановления сервера до точки во времени. Резервное копирование и восстановление данных являются важной частью любой стратегии непрерывности бизнес-процессов. Таким образом данные защищаются от случайного повреждения или удаления. 
 
 Если вы используете Azure Key Vault для хранения учетных данных для экземпляров базы данных Azure для MySQL, обеспечьте регулярное автоматическое резервное копирование ключей. 
 
-Общие сведения о резервных копиях для базы данных Azure для MySQL: https://docs.microsoft.com/azure/mysql/howto-restore-server-portal 
+- [Общие сведения о резервном копировании для базы данных Azure для MySQL](howto-restore-server-portal.md) 
 
-Резервное копирование ключей Key Vault: https://docs.microsoft.com/powershell/module/azurerm.keyvault/backup-azurekeyvaultkey
-
+- [Резервное копирование ключей Key Vault](/powershell/module/azurerm.keyvault/backup-azurekeyvaultkey)
 
 **Мониторинг Центра безопасности Azure**: Да
 
 **Ответственность**: Совмещаемая блокировка
 
-### <a name="93-validate-all-backups-including-customer-managed-keys"></a>9.3. Проверка всех резервных копий, включая управляемые клиентом ключи
+### <a name="93-validate-all-backups-including-customer-managed-keys"></a>9,3: Проверьте все резервные копии, включая управляемые клиентом ключи.
 
 **Рекомендации**. При восстановлении в службе "База данных Azure для MySQL" из резервных копий исходного сервера создается новый. Есть два типа восстановления: Восстановление на определенный момент времени и географическое восстановление. Восстановление на определенный момент времени доступно для любого типа избыточности резервного копирования. При таком восстановлении новый сервер создается в том же регионе, где расположен исходный сервер. Географическое восстановление доступно, если для сервера настроено геоизбыточное хранилище, и позволяет восстановить сервер в другом регионе.
 
@@ -999,37 +1000,37 @@ AskAzureDBforMySQL@service.microsoft.com
 
 Периодическое тестирование восстановления экземпляров базы данных Azure для MySQL.
 
-Общие сведения о резервном копировании и восстановление в базе данных Azure для MySQL: https://docs.microsoft.com/azure/mysql/concepts-backup
+- [Общие сведения о резервном копировании и восстановлении в базе данных Azure для MySQL](concepts-backup.md)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
 **Ответственность**: Customer
 
-### <a name="94-ensure-protection-of-backups-and-customer-managed-keys"></a>9.4. Обеспечение защиты резервных копий и управляемых клиентом ключей
+### <a name="94-ensure-protection-of-backups-and-customer-managed-keys"></a>9,4: Обеспечьте защиту резервных копий и ключей, управляемых клиентом
 
 **Рекомендации**. В службе "База данных Azure для MySQL" создаются полные и разностные резервные копии, а также резервные копии журналов. При помощи этих резервных копий вы можете восстановить сервер до любой точки во времени в пределах заданного срока хранения резервных копий. По умолчанию срок хранения резервных копий составляет 7 дней. При необходимости вы увеличить его вплоть до 35 дней. Все резервные копии шифруются с помощью 256-битового шифрования AES. Убедитесь, что включено обратимое удаление в Azure Key Vault.
 
-Общие сведения о резервном копировании и восстановление в базе данных Azure для MySQL: https://docs.microsoft.com/azure/mysql/concepts-backup
+- [Общие сведения о резервном копировании и восстановлении в базе данных Azure для MySQL](concepts-backup.md)
 
 **Мониторинг Центра безопасности Azure**: Да
 
 **Ответственность**: Customer
 
-## <a name="incident-response"></a>реагирование на инциденты.
+## <a name="incident-response"></a>Реагирование на инциденты
 
-*Дополнительные сведения см. в статье [Управление безопасностью: реагирование на инциденты](https://docs.microsoft.com/azure/security/benchmarks/security-control-incident-response).*
+*Дополнительные сведения см. в статье о [производительности системы безопасности Azure: реагирование на инциденты](../security/benchmarks/security-control-incident-response.md).*
 
 ### <a name="101-create-an-incident-response-guide"></a>10.1. Создание руководства по реагированию на инциденты
 
 **Руководство**. Создайте руководство по реагированию на инциденты для вашей организации. Убедитесь, что имеются письменные планы реагирования на инциденты, которые определяют все действия персонала, а также этапы обработки инцидентов и управления ими для проверки после инцидента.
 
-Настройка автоматизации рабочих процессов в Центре безопасности Azure: https://docs.microsoft.com/azure/security-center/security-center-planning-and-operations-guide
+- [Как настроить автоматизацию рабочих процессов в Центре безопасности Azure](../security-center/security-center-planning-and-operations-guide.md)
 
-Руководство по созданию собственного процесса реагирования на инциденты безопасности: https://msrc-blog.microsoft.com/2019/07/01/inside-the-msrc-building-your-own-security-incident-response-process/
+- [Руководство по созданию собственного процесса реагирования на инциденты безопасности](https://msrc-blog.microsoft.com/2019/07/01/inside-the-msrc-building-your-own-security-incident-response-process/)
 
-Анатомия инцидента Центра Майкрософт по реагированию на угрозы: https://msrc-blog.microsoft.com/2019/07/01/inside-the-msrc-building-your-own-security-incident-response-process/
+- [Анатомия инцидента Центра Майкрософт по реагированию на угрозы](https://msrc-blog.microsoft.com/2019/07/01/inside-the-msrc-building-your-own-security-incident-response-process/)
 
-Клиент может также использовать руководство по обработке инцидентов безопасности компьютера от NIST, чтобы разработать собственный план реагирования на инциденты: https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-61r2.pdf
+- [Клиент также может воспользоваться руководством по обработке инцидентов безопасности компьютера NIST, чтобы помочь в создании собственного плана реагирования на инциденты.](https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-61r2.pdf)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -1047,9 +1048,9 @@ AskAzureDBforMySQL@service.microsoft.com
 
 ### <a name="103-test-security-response-procedures"></a>10.3. Проверка процедур реагирования на угрозы
 
-**Рекомендации**. Выполните упражнения, чтобы периодически протестировать возможности ваших систем реагировать на угрозы. Выявите слабые точки и пробелов и пересмотрите план по мере необходимости.
+**Рекомендации**. Выполните упражнения, чтобы периодически протестировать возможности ваших систем реагировать на угрозы. Выявите слабые точки и пробелы и пересмотрите план по мере необходимости.
 
-См. публикацию NIST: Руководство по тестированию, обучению и выполнению программ для ИТ-планов и возможностей: https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-84.pdf
+- [См. публикацию NIST: руководство по тестированию, обучению и выполнению программ для ИТ-планов и возможностей](https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-84.pdf)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -1059,7 +1060,7 @@ AskAzureDBforMySQL@service.microsoft.com
 
 **Рекомендации**. Корпорация Майкрософт будет использовать информацию об инциденте безопасности для связи с вами, если центр Microsoft Security Response Center (MSRC) обнаружит, что к вашим пользовательским данным был получен незаконный или несанкционированный доступ.  Проверьте инциденты после факта обращения, чтобы убедиться, что проблемы устранены.
 
-Задание контакта безопасности Центра безопасности Azure: https://docs.microsoft.com/azure/security-center/security-center-provide-security-contact-details
+- [Как задать контакт безопасности Центра безопасности Azure](../security-center/security-center-provide-security-contact-details.md)
 
 **Мониторинг Центра безопасности Azure**: Да
 
@@ -1067,11 +1068,11 @@ AskAzureDBforMySQL@service.microsoft.com
 
 ### <a name="105-incorporate-security-alerts-into-your-incident-response-system"></a>10.5. Включение оповещений системы безопасности в систему реагирования на инциденты
 
-**Рекомендации**. Экспортируйте оповещения и рекомендации центра безопасности Azure с помощью функции непрерывного экспорта. Непрерывный экспорт позволяет экспортировать предупреждения и рекомендации как вручную, так и в постоянном, непрерывном режиме. Вы можете использовать соединитель данных центра безопасности Azure для потоковой передачи метки предупреждений.
+**Рекомендации**. Экспортируйте оповещения и рекомендации центра безопасности Azure с помощью функции непрерывного экспорта. Непрерывный экспорт позволяет экспортировать предупреждения и рекомендации как вручную, так и в постоянном, непрерывном режиме. Можно использовать соединитель данных Центра безопасности Azure для потоковой передачи оповещений Sentinel.
 
-Настройка непрерывного экспорта данных: https://docs.microsoft.com/azure/security-center/continuous-export
+- [Как настроить непрерывный экспорт данных](../security-center/continuous-export.md)
 
-Выполнение потоковой передачи предупреждений в Azure Sentinel: https://docs.microsoft.com/azure/sentinel/connect-azure-security-center
+- [Как выполнить потоковую передачу оповещений в Azure Sentinel](../sentinel/connect-azure-security-center.md)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -1079,9 +1080,9 @@ AskAzureDBforMySQL@service.microsoft.com
 
 ### <a name="106-automate-the-response-to-security-alerts"></a>10.6. Автоматизация реагирования на оповещения системы безопасности
 
-**Рекомендации**. Используйте функцию автоматизации рабочих процессов в центре безопасности Azure для автоматического запуска ответов с помощью "Logic Apps" в оповещениях и рекомендациях системы безопасности.
+**Руководство**. Используйте функцию автоматизации рабочих процессов в Центре безопасности Azure для автоматического запуска реагирования с помощью Logic Apps в оповещениях и рекомендациях системы безопасности.
 
-Настройка автоматизации рабочего процесса и Logic Apps: https://docs.microsoft.com/azure/security-center/workflow-automation
+- [Как настроить автоматизацию рабочего процесса и Logic Apps](../security-center/workflow-automation.md)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -1089,13 +1090,13 @@ AskAzureDBforMySQL@service.microsoft.com
 
 ## <a name="penetration-tests-and-red-team-exercises"></a>Тесты на проникновение и попытки нарушения безопасности "красной командой"
 
-*Дополнительные сведения см. в статье [Управление безопасностью: тесты на проникновение и попытки нарушения безопасности "красной командой"](https://docs.microsoft.com/azure/security/benchmarks/security-control-penetration-tests-red-team-exercises).*
+*Дополнительные сведения см. в статье [тесты производительности системы безопасности Azure: испытания на проникновение и команды красных команд](../security/benchmarks/security-control-penetration-tests-red-team-exercises.md).*
 
-### <a name="111-conduct-regular-penetration-testing-of-your-azure-resources-and-ensure-remediation-of-all-critical-security-findings-within-60-days"></a>11.1. Регулярное тестирование на проникновение ресурсов Azure и отслеживание исправлений всех критических точек безопасности в течение 60 дней
+### <a name="111-conduct-regular-penetration-testing-of-your-azure-resources-and-ensure-remediation-of-all-critical-security-findings"></a>11,1. Проведите регулярное тестирование на проникновение ресурсов Azure и обеспечьте исправление всех критических результатов безопасности.
 
 **Рекомендации**. Следуйте правилам взаимодействия Майкрософт, чтобы убедиться, что тесты на проникновение не нарушают политики Майкрософт: https://www.microsoft.com/msrc/pentest-rules-of-engagement?rtc=1
 
-Дополнительные сведения о стратегии корпорации Майкрософт и реализации "красной команды", а также о тестировании на основе уязвимости для облачной инфраструктуры, служб и приложений Майкрософт см. здесь: https://gallery.technet.microsoft.com/Cloud-Red-Teaming-b837392e
+- [Дополнительные сведения о стратегии корпорации Майкрософт и реализации "красной команды", а также о тестировании на основе уязвимости для облачной инфраструктуры, служб и приложений Майкрософт см. здесь](https://gallery.technet.microsoft.com/Cloud-Red-Teaming-b837392e)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -1103,5 +1104,5 @@ AskAzureDBforMySQL@service.microsoft.com
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- См. [Тесты производительности системы безопасности Azure](https://docs.microsoft.com/azure/security/benchmarks/overview).
-- Узнайте больше о [Базовой конфигурации безопасности Azure](https://docs.microsoft.com/azure/security/benchmarks/security-baselines-overview).
+- Ознакомьтесь со статьей [Тесты производительности системы безопасности Azure](/azure/security/benchmarks/overview).
+- Дополнительные сведения о [базовой конфигурации безопасности Azure](/azure/security/benchmarks/security-baselines-overview).
