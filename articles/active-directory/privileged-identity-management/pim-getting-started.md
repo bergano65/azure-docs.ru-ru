@@ -14,18 +14,18 @@ ms.date: 08/24/2020
 ms.author: curtand
 ms.custom: pim
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 8bad5b0256ee445767689ea2752e918a1fbf5fae
-ms.sourcegitcommit: d39f2cd3e0b917b351046112ef1b8dc240a47a4f
+ms.openlocfilehash: ea8bf2407fb533870495dc501a2d740bff9ee968
+ms.sourcegitcommit: d0541eccc35549db6381fa762cd17bc8e72b3423
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88816003"
+ms.lasthandoff: 09/09/2020
+ms.locfileid: "89567356"
 ---
 # <a name="start-using-privileged-identity-management"></a>Начало работы с управлением привилегированными пользователями
 
 В этой статье описывается, как включить управление привилегированными пользователями (PIM) и приступить к его использованию.
 
-Используйте управление привилегированными пользователями (PIM) для управления доступом, контроля и мониторинга доступа в вашей организации Azure Active Directory (Azure AD). С помощью PIM вы можете предоставить необходимые и своевременный доступ к ресурсам Azure, ресурсам Azure AD и другим веб-службы Майкрософт, таким как Office 365 или Microsoft Intune.
+Используйте управление привилегированными пользователями (PIM) для управления доступом, контроля и мониторинга доступа в вашей организации Azure Active Directory (Azure AD). С помощью PIM вы можете предоставить необходимые и своевременный доступ к ресурсам Azure, ресурсам Azure AD и другим веб-службы Майкрософт, таким как Microsoft 365 или Microsoft Intune.
 
 ## <a name="prerequisites"></a>Предварительные требования
 

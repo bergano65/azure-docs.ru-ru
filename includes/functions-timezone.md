@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: b4fbeb6baa4516ca4cf3ca6194195fae2c688b07
-ms.sourcegitcommit: 1e6c13dc1917f85983772812a3c62c265150d1e7
+ms.openlocfilehash: dba7a3cc7a68d360fd6e56511b71ae364f624646
+ms.sourcegitcommit: d0541eccc35549db6381fa762cd17bc8e72b3423
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/09/2020
-ms.locfileid: "86165670"
+ms.lasthandoff: 09/09/2020
+ms.locfileid: "89569290"
 ---
 Часовой пояс по умолчанию, используемый с выражениями CRON — время в формате UTC. Если нужно использовать другой часовой пояс в выражении CRON, создайте параметр приложения с именем `WEBSITE_TIME_ZONE` для приложения-функции. 
 
@@ -12,11 +12,11 @@ ms.locfileid: "86165670"
 
 |Операционная система |План |Значение |
 |-|-|-|
-| **Windows** |Все | Задайте в качестве значения имя нужного часового пояса, как показано в [Microsoft Time пояс index] ( https://docs.microsoft.com/previous-versions/windows/it-pro/windows-vista/cc749073(v=ws.10) . |
-| **Linux** |Премиум<br/>Выделенные |Задайте в качестве значения имя нужного часового пояса, как показано в [базе данных](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones)с параметром «версия». |
+| **Windows** |Все | В качестве значения задайте имя нужного часового пояса, как показано в статье [Microsoft Time Zone Index](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-vista/cc749073(v=ws.10)) (Индексы часовых поясов Майкрософт). |
+| **Linux** |Premium<br/>Выделенные |Задайте в качестве значения имя нужного часового пояса, как показано в [базе данных](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones)с параметром «версия». |
 
 > [!NOTE]
-> `WEBSITE_TIME_ZONE`Сейчас не поддерживается в плане потребления Linux.
+> `WEBSITE_TIME_ZONE` Сейчас не поддерживается в плане потребления Linux.
 
 Например, *восточное стандартное время* (Windows) или *America/New_York* (Linux) — UTC-05:00. Чтобы триггер таймера активировался в 10:00 часа EST ежедневно, используйте следующее выражение НКРОНТАБ, которое используется для часового пояса UTC:
 

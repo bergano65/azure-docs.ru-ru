@@ -7,12 +7,12 @@ services: monitoring
 ms.topic: conceptual
 ms.date: 8/20/2020
 ms.subservice: alerts
-ms.openlocfilehash: 05586f95de03b09b95eb589812935970126b12f2
-ms.sourcegitcommit: d18a59b2efff67934650f6ad3a2e1fe9f8269f21
+ms.openlocfilehash: 8a608e43ef41abfb7002811df5629eb789c3ae22
+ms.sourcegitcommit: 1b320bc7863707a07e98644fbaed9faa0108da97
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/20/2020
-ms.locfileid: "88661322"
+ms.lasthandoff: 09/09/2020
+ms.locfileid: "89595586"
 ---
 # <a name="supported-resources-for-metric-alerts-in-azure-monitor"></a>Поддерживаемые ресурсы для оповещений метрик в Azure Monitor
 
@@ -112,7 +112,7 @@ Azure Monitor теперь поддерживает [новый тип опов�
 |Microsoft.Web/sites | Да | Нет | [Службы приложений](./metrics-supported.md#microsoftwebsites-excluding-functions) и [Функции](./metrics-supported.md#microsoftwebsites-functions)|
 |Microsoft.Web/sites/slots | Да | Нет | [Слоты Службы приложений](./metrics-supported.md#microsoftwebsitesslots)|
 
-<sup>1</sup> поддерживается только для метрик платформы (не пользовательских метрик)
+<sup>1</sup> не поддерживается для метрик сети виртуальной машины (общая сеть, общий объем сети, входящие потоки, исходящие потоки, максимальная частота создания входящих потоков, максимальная скорость создания исходящих потоков) и пользовательские метрики.
 
 ## <a name="payload-schema"></a>Схема полезных данных
 
