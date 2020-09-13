@@ -1,5 +1,5 @@
 ---
-title: Включить файл
+title: включить файл
 description: включить файл для целевых страниц сценария конфиденциального клиента (управляющая программа, веб-приложение, веб-API)
 services: active-directory
 documentationcenter: dev-center-name

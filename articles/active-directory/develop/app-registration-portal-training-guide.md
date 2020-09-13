@@ -13,12 +13,12 @@ ms.date: 11/8/2019
 ms.author: marsma
 ms.reviewer: lenalepa, alamaral
 ms.custom: aaddev
-ms.openlocfilehash: 43ed0bfed1dbe48c4f66a820ecad6fedf11115fe
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 13242a41e1d10b0df031bf10fd646d9ec3cf47c3
+ms.sourcegitcommit: bf1340bb706cf31bb002128e272b8322f37d53dd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85478167"
+ms.lasthandoff: 09/03/2020
+ms.locfileid: "89437774"
 ---
 # <a name="the-new-azure-portal-app-registration-experience"></a>Новый процесс регистрации приложения портал Azure
 
@@ -77,12 +77,12 @@ ms.locfileid: "85478167"
 ## <a name="platformsauthentication-reply-urlsredirect-uris"></a>Платформы и аутентификация: URL-адреса ответа и URI перенаправления
 В старом интерфейсе приложение имело раздел "платформы" для веб-интерфейса, собственного веб-API, а также для настройки URL-адресов перенаправления, URL-адреса выхода и неявного потока.
 
-В новом интерфейсе URL-адреса ответов можно найти в \' разделе Проверка подлинности приложения. Кроме того, они называются URI перенаправления, и формат URI перенаправления изменился. Они должны быть связаны с типом приложения (веб-сайт или общедоступный клиент — Mobile и Desktop). [Подробнее](quickstart-configure-app-access-web-apis.md#add-redirect-uris-to-your-application)
+В новом интерфейсе URL-адреса ответов можно найти в \' разделе Проверка подлинности приложения. Кроме того, они называются URI перенаправления, и формат URI перенаправления изменился. Они должны быть связаны с типом приложения (веб-сайт или общедоступный клиент — Mobile и Desktop). [Дополнительные сведения](quickstart-register-app.md#add-a-redirect-uri)
 
 Веб-API настраиваются в, предоставляющих страницу API.
 
 > [!NOTE]
-> Ознакомьтесь с новым интерфейсом для настройки проверки подлинности, который позволяет указать для приложения параметры по критериям целевой платформы и (или) устройства. [Подробнее](quickstart-configure-app-access-web-apis.md#configure-platform-settings-for-your-application)
+> Ознакомьтесь с новым интерфейсом для настройки проверки подлинности, который позволяет указать для приложения параметры по критериям целевой платформы и (или) устройства. [Дополнительные сведения](quickstart-register-app.md#configure-platform-settings)
 
 ## <a name="microsoft-graph-permissionsapi-permissions"></a>Разрешения Microsoft Graph/API
 
@@ -121,6 +121,6 @@ ms.locfileid: "85478167"
    > [!NOTE]
    > Если вы являетесь личным учетная запись Майкрософтным пользователем в клиенте Azure AD, а администратор клиента ограничил доступ к портал Azure, вы можете получить отказ в доступе. Однако если вы набираете ярлык, введя Регистрация приложений в строке поиска или закрепите ее, вы сможете получить доступ к новому интерфейсу.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Чтобы приступить к работе с новым интерфейсом регистрации приложений, см. раздел [Краткое руководство по регистрации приложения на платформе Microsoft Identity](quickstart-register-app.md).

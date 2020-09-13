@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 06/05/2020
 ms.author: mbaldwin
 ms.custom: subject-security-benchmark
-ms.openlocfilehash: 57786aa343fd2ea863b17f65253e5d4a4a6b88ce
-ms.sourcegitcommit: d68c72e120bdd610bb6304dad503d3ea89a1f0f7
+ms.openlocfilehash: 515cfd5267917f88131571adcb1bea0db274157c
+ms.sourcegitcommit: bf1340bb706cf31bb002128e272b8322f37d53dd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/01/2020
-ms.locfileid: "89226834"
+ms.lasthandoff: 09/03/2020
+ms.locfileid: "89437944"
 ---
 # <a name="azure-security-baseline-for-azure-data-factory"></a>Базовый план безопасности Azure для фабрики данных Azure
 
@@ -207,7 +207,7 @@ ms.locfileid: "89226834"
 
 * [Начало работы с Azure Monitor и интеграция SIEM стороннего производителя](https://azure.microsoft.com/blog/use-azure-monitor-to-integrate-with-siem-tools/)
 
-* [Система управления версиями в Фабрике данных Azure](https://docs.microsoft.com/azure/data-factory/source-control)
+* [Система управления версиями в фабрике данных Azure](https://docs.microsoft.com/azure/data-factory/source-control)
 
 **Мониторинг Центра безопасности Azure**: Да
 
@@ -578,7 +578,7 @@ ms.locfileid: "89226834"
 
 **Рекомендации**. Если облачное хранилище данных поддерживает протокол HTTPS или TLS, все передачи данных между службами перемещения данных в фабрике данных и облачным хранилищем данных выполняются через защищенный канал HTTPS или TLS. Для TLS используется версия 1.2.
 
-Во время передачи данных в базу данных и из нее все подключения к Базе данных SQL Azure и хранилищу данных SQL Azure должны быть зашифрованы (с помощью SSL или TLS). Разрабатывая конвейер с помощью JSON, добавьте свойство "encryption" и в строке подключения задайте для него значение true. Для службы хранилища Azure вы можете использовать в строке подключения протокол HTTPS.
+Для всех подключений к базе данных SQL Azure и Azure синапсе Analytics (ранее — хранилище данных SQL) требуется шифрование (SSL/TLS), во время передачи данных в базу данных и из нее. Разрабатывая конвейер с помощью JSON, добавьте свойство "encryption" и в строке подключения задайте для него значение true. Для службы хранилища Azure вы можете использовать в строке подключения протокол HTTPS.
 
 * [Общие сведения о шифровании при передаче в фабрике данных Azure](https://docs.microsoft.com/azure/data-factory/data-movement-security-considerations)
 
@@ -1050,7 +1050,9 @@ ms.locfileid: "89226834"
 
 * [Создание Key Vault](https://docs.microsoft.com/azure/key-vault/quick-create-portal)
 
-* [Как обеспечить проверку подлинности Key Vault с помощью управляемого удостоверения](https://docs.microsoft.com/azure/key-vault/managed-identity)
+* [Проверка подлинности в Key Vault](https://docs.microsoft.com/azure/key-vault/general/authentication)
+
+* [Назначение политики доступа Key Vault](https://docs.microsoft.com/azure/key-vault/general/assign-access-policy-portal)
 
 * [Использование секретов Azure Key Vault в действиях конвейера](https://docs.microsoft.com/azure/data-factory/how-to-use-azure-key-vault-secrets-pipeline-activities)
 

@@ -13,12 +13,12 @@ ms.workload: infrastructure-services
 ms.date: 11/08/2019
 ms.author: sumi
 ms.custom: ''
-ms.openlocfilehash: 6935ea505643f253daf4c0b7d818137f52583682
-ms.sourcegitcommit: 0e8a4671aa3f5a9a54231fea48bcfb432a1e528c
+ms.openlocfilehash: 7d937542201792c0d1c0be69df9bd1c2b34edea3
+ms.sourcegitcommit: bf1340bb706cf31bb002128e272b8322f37d53dd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/24/2020
-ms.locfileid: "87132829"
+ms.lasthandoff: 09/03/2020
+ms.locfileid: "89434475"
 ---
 # <a name="virtual-network-service-endpoints"></a>Конечные точки служб для виртуальной сети
 
@@ -30,7 +30,7 @@ ms.locfileid: "87132829"
 
 - Служба **[хранилища Azure](../storage/common/storage-network-security.md?toc=%2fazure%2fvirtual-network%2ftoc.json#grant-access-from-a-virtual-network)** (*Microsoft. Storage*). общедоступна во всех регионах Azure.
 - **[База данных SQL Azure](../azure-sql/database/vnet-service-endpoint-rule-overview.md?toc=%2fazure%2fvirtual-network%2ftoc.json)** (*Microsoft. SQL*). общедоступна во всех регионах Azure.
-- **[Хранилище данных SQL Azure](../azure-sql/database/vnet-service-endpoint-rule-overview.md?toc=%2fazure%2fvirtual-network%2ftoc.json)** (*Microsoft. SQL*) — общедоступно во всех регионах Azure.
+- **[Azure синапсе Analytics](../azure-sql/database/vnet-service-endpoint-rule-overview.md?toc=%2fazure%2fvirtual-network%2ftoc.json)** (*Microsoft. SQL*). общедоступна во всех регионах Azure.
 - **[Сервер базы данных Azure для PostgreSQL](../postgresql/howto-manage-vnet-using-portal.md?toc=%2fazure%2fvirtual-network%2ftoc.json)** (*Microsoft. SQL*): общедоступный в регионах Azure, где доступна служба базы данных.
 - **[Сервер базы данных Azure для MySQL](../mysql/howto-manage-vnet-using-portal.md?toc=%2fazure%2fvirtual-network%2ftoc.json)** (*Microsoft. SQL*): общедоступный в регионах Azure, где доступна служба базы данных.
 - **[База данных Azure для MariaDB](https://docs.microsoft.com/azure/mariadb/concepts-data-access-security-vnet)** (*Microsoft. SQL*): общедоступная версия в регионах Azure, где доступна служба базы данных.
@@ -40,6 +40,7 @@ ms.locfileid: "87132829"
 - **[Концентраторы событий Azure](../event-hubs/event-hubs-service-endpoints.md?toc=%2fazure%2fvirtual-network%2ftoc.json)** (*Microsoft. EventHub*). общедоступно во всех регионах Azure.
 - **[Azure Data Lake Store Gen 1](../data-lake-store/data-lake-store-network-security.md?toc=%2fazure%2fvirtual-network%2ftoc.json)** (*Microsoft. AzureActiveDirectory*): общедоступная версия доступна во всех регионах Azure, где доступна ADLS 1-го поколения.
 - **[Служба приложений Azure](https://docs.microsoft.com/azure/app-service/app-service-ip-restrictions)** (*Microsoft. Web*): общедоступная версия доступна во всех регионах Azure, где доступна служба приложений.
+- **[Azure Cognitive Services](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-virtual-networks?tabs=portal)** (*Microsoft. CognitiveServices*). общедоступная версия доступна во всех регионах Azure, где доступны переработающие службы.
 
 **Общедоступная Предварительная версия**
 
@@ -139,7 +140,7 @@ ms.locfileid: "87132829"
 
 Политики конечной точки службы виртуальной сети позволяют фильтровать трафик виртуальной сети в службах Azure. Этот фильтр разрешает только определенные ресурсы службы Azure через конечные точки службы. Политики конечных точек служб предоставляют возможность детального контроля доступа трафика из виртуальной сети к службам Azure. Дополнительные сведения см. в статье [политики конечной точки службы виртуальной сети](https://docs.microsoft.com/azure/virtual-network/virtual-network-service-endpoint-policies-overview).
 
-## <a name="faqs"></a>Вопросы и ответы
+## <a name="faqs"></a>Часто задаваемые вопросы
 
 Часто задаваемые вопросы см. в разделе [вопросы и ответы о конечной точке службы виртуальной сети](https://docs.microsoft.com/azure/virtual-network/virtual-networks-faq#virtual-network-service-endpoints).
 
@@ -148,7 +149,7 @@ ms.locfileid: "87132829"
 - [Настройка конечных точек служб для виртуальной сети](tutorial-restrict-network-access-to-resources.md)
 - [Защита учетной записи хранения Azure в виртуальной сети](../storage/common/storage-network-security.md?toc=%2fazure%2fvirtual-network%2ftoc.json)
 - [Защита базы данных SQL Azure в виртуальной сети](../azure-sql/database/vnet-service-endpoint-rule-overview.md?toc=%2fazure%2fvirtual-network%2ftoc.json)
-- [Защита хранилища данных SQL Azure в виртуальной сети](../azure-sql/database/vnet-service-endpoint-rule-overview.md?toc=%2fazure%2fsql-data-warehouse%2ftoc.json)
+- [Защита Azure синапсе Analytics для виртуальной сети](../azure-sql/database/vnet-service-endpoint-rule-overview.md?toc=%2fazure%2fsql-data-warehouse%2ftoc.json)
 - [Интеграция служб Azure в виртуальные сети](virtual-network-for-azure-services.md)
 - [Политики конечных точек служб для виртуальной сети](https://docs.microsoft.com/azure/virtual-network/virtual-network-service-endpoint-policies-overview)
 - [Шаблон Azure Resource Manager](https://azure.microsoft.com/resources/templates/201-vnet-2subnets-service-endpoints-storage-integration)

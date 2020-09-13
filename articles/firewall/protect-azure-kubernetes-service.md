@@ -1,20 +1,20 @@
 ---
-title: Защита развертываний службы Azure Kubernetes Service (AKS) с помощью брандмауэра Azure
+title: Защита развертываний службы Azure Kubernetes Service (AKS) с помощью Брандмауэра Azure
 description: Узнайте, как использовать брандмауэр Azure для защиты развертываний Azure Kubernetes Service (AKS)
 author: vhorne
 ms.service: firewall
 services: firewall
 ms.topic: how-to
-ms.date: 07/29/2020
+ms.date: 09/03/2020
 ms.author: victorh
-ms.openlocfilehash: 602671f1052de2d9446f32946271cea2f9995044
-ms.sourcegitcommit: e71da24cc108efc2c194007f976f74dd596ab013
+ms.openlocfilehash: 43755b312a64c429b38a07c8c4fad8c85b08342a
+ms.sourcegitcommit: bf1340bb706cf31bb002128e272b8322f37d53dd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87412955"
+ms.lasthandoff: 09/03/2020
+ms.locfileid: "89437859"
 ---
-# <a name="use-azure-firewall-to-protect-azure-kubernetes-service-aks-deployments"></a>Защита развертываний службы Azure Kubernetes Service (AKS) с помощью брандмауэра Azure
+# <a name="use-azure-firewall-to-protect-azure-kubernetes-service-aks-deployments"></a>Защита развертываний службы Azure Kubernetes Service (AKS) с помощью Брандмауэра Azure
 
 Служба Azure Kubernetes Service (AKS) предлагает управляемый кластер Kubernetes в Azure. Это снижает сложность и эксплуатационные расходы на управление Kubernetes путем разгрузки значительных обязанностей в Azure. AKS обрабатывает критически важные задачи, такие как мониторинг работоспособности и обслуживание, а также обеспечивает безопасный и управляемый кластер корпоративного уровня с упрощенным управлением.
 
@@ -47,7 +47,13 @@ Kubernetes управляет кластерами виртуальных маш
    - TCP [*ипаддрофйоураписервер*]: 443 требуется, если у вас есть приложение, которое должно взаимодействовать с сервером API. Это значение можно изменить после создания кластера.
    - TCP-порт 9000 и UDP-порт 1194 для клиентского модуля туннелирования для взаимодействия с конечным сервером на сервере API.
 
-      Дополнительные сведения см. в разделе **. HCP. <location> . azmk8s.io* и адреса в следующей таблице.
+      Дополнительные сведения см. в разделе **. HCP. <location> . azmk8s.io* и адреса в следующей таблице:
+
+   | Целевая конечная точка                                                             | Протокол | Порт    | Использование  |
+   |----------------------------------------------------------------------------------|----------|---------|------|
+   | **`*:1194`** <br/> *Or* <br/> [сервицетаг](../virtual-network/service-tags-overview.md#available-service-tags) - **`AzureCloud.<Region>:1194`** <br/> *Or* <br/> [Региональные Цидрс](../virtual-network/service-tags-overview.md#discover-service-tags-by-using-downloadable-json-files) - **`RegionCIDRs:1194`** <br/> *Or* <br/> **`APIServerIP:1194`** `(only known after cluster creation)`  | UDP           | 1194      | Для туннелирования безопасного взаимодействия между узлами и плоскостью управления. |
+   | **`*:9000`** <br/> *Or* <br/> [сервицетаг](../virtual-network/service-tags-overview.md#available-service-tags) - **`AzureCloud.<Region>:9000`** <br/> *Or* <br/> [Региональные Цидрс](../virtual-network/service-tags-overview.md#discover-service-tags-by-using-downloadable-json-files) - **`RegionCIDRs:9000`** <br/> *Or* <br/> **`APIServerIP:9000`** `(only known after cluster creation)`  | TCP           | 9000      | Для туннелирования безопасного взаимодействия между узлами и плоскостью управления. |
+
    - UDP-порт 123 для синхронизации времени по протоколу NTP (узлы Linux).
    - UDP-порт 53 для DNS также является обязательным, если ваши pod напрямую обращаются к серверу API.
 
