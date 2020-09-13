@@ -9,12 +9,12 @@ ms.subservice: security-fundamentals
 ms.topic: article
 ms.date: 07/20/2020
 ms.author: mbaldwin
-ms.openlocfilehash: 5189270a7b9de9ff5a222ad76ce46254ae5d2ee3
-ms.sourcegitcommit: 8def3249f2c216d7b9d96b154eb096640221b6b9
+ms.openlocfilehash: d839ea042dec2224885f9ba4a0cb6adef5108568
+ms.sourcegitcommit: 4a7a4af09f881f38fcb4875d89881e4b808b369b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87542965"
+ms.lasthandoff: 09/04/2020
+ms.locfileid: "89458626"
 ---
 # <a name="azure-encryption-overview"></a>Общие сведения о шифровании в Azure
 
@@ -83,7 +83,7 @@ Azure поддерживает различные модели шифрован�
 
 #### <a name="transparent-data-encryption"></a>прозрачное шифрование данных.
 
-[TDE](https://docs.microsoft.com/sql/relational-databases/security/encryption/transparent-data-encryption-tde) используется для шифрования файлов данных [SQL Server](https://www.microsoft.com/sql-server/sql-server-2016), [Базы данных SQL Azure](../../azure-sql/database/sql-database-paas-overview.md) и [хранилища данных SQL Azure](../../synapse-analytics/sql-data-warehouse/sql-data-warehouse-overview-what-is.md) в режиме реального времени с помощью ключа шифрования базы данных (DEK), хранящегося в загрузочной записи базы данных для обеспечения доступности во время восстановления.
+[TDE](https://docs.microsoft.com/sql/relational-databases/security/encryption/transparent-data-encryption-tde) используется для шифрования [SQL Server](https://www.microsoft.com/sql-server/sql-server-2016), [базы данных SQL Azure](../../azure-sql/database/sql-database-paas-overview.md)и файлов данных [Azure синапсе Analytics](../../synapse-analytics/sql-data-warehouse/sql-data-warehouse-overview-what-is.md) в режиме реального времени с помощью ключа шифрования базы данных (DEK), который хранится в загрузочной записи базы данных для обеспечения доступности во время восстановления.
 
 TDE обеспечивает защиту данных и файлов журналов с помощью алгоритмов шифрования AES и 3DES. Шифрование файлов базы данных выполняется на уровне страницы. Страницы в зашифрованной базе данных шифруются перед записью на диск и расшифровываются во время чтения в память. В созданных базах данных Azure SQL TDE включено по умолчанию.
 

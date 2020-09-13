@@ -9,12 +9,12 @@ ms.service: cloud-services
 ms.topic: article
 ms.date: 5/21/2017
 ms.author: raiye
-ms.openlocfilehash: f08352d4a79b8c27b2c163516f44edf578fbe3a7
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: c930636f9af45edc66670c3f757333fef8e8756e
+ms.sourcegitcommit: 4a7a4af09f881f38fcb4875d89881e4b808b369b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87092649"
+ms.lasthandoff: 09/04/2020
+ms.locfileid: "89458830"
 ---
 # <a name="guest-os-family-1-retirement-notice"></a>Уведомление о прекращении использования семейства версий 1 гостевой ОС
 О прекращении использования семейства версий 1 операционной системы было впервые объявлено 1 июня 2013 г.
@@ -32,7 +32,7 @@ ms.locfileid: "87092649"
 2. Если не указано явным образом значение для osFamily в файле ServiceConfiguration.cscfg облачной службы. В настоящий момент в такой ситуации системой используется значение по умолчанию, равное "1".
 3. На портале Azure в качестве семейства операционных систем на виртуальной машине указано "Windows Server 2008".
 
-Чтобы узнать, какие облачные службы работают под управлением какого семейства ОС, можно запустить указанный ниже скрипт в Azure PowerShell, однако сначала необходимо [настроить Azure PowerShell](/powershell/azure/). Дополнительные сведения об этом скрипте см. в записи блога [Azure Guest OS Family 1 End of Life: June 2014](https://blogs.msdn.com/b/ryberry/archive/2014/04/02/azure-guest-os-family-1-end-of-life-june-2014.aspx) (Окончание срока жизни семейства версий 1 гостевой ОС Azure, июнь 2014 г.).
+Чтобы узнать, какие облачные службы работают под управлением какого семейства ОС, можно запустить указанный ниже скрипт в Azure PowerShell, однако сначала необходимо [настроить Azure PowerShell](/powershell/azure/). Дополнительные сведения об этом скрипте см. в записи блога [Azure Guest OS Family 1 End of Life: June 2014](https://docs.microsoft.com/archive/blogs/ryberry/azure-guest-os-family-1-end-of-life-june-2014) (Окончание срока жизни семейства версий 1 гостевой ОС Azure, июнь 2014 г.).
 
 ```Powershell
 foreach($subscription in Get-AzureSubscription) {

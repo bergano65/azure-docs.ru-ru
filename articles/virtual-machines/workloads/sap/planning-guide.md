@@ -11,12 +11,12 @@ ms.workload: infrastructure-services
 ms.date: 08/17/2020
 ms.author: juergent
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 63872f3d62bcf62562cef7fd4ee02e9a0535da67
-ms.sourcegitcommit: afa1411c3fb2084cccc4262860aab4f0b5c994ef
+ms.openlocfilehash: 3050d0c61b6278b32b8e9272f228a863c9a0a244
+ms.sourcegitcommit: 4a7a4af09f881f38fcb4875d89881e4b808b369b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/23/2020
-ms.locfileid: "88756883"
+ms.lasthandoff: 09/04/2020
+ms.locfileid: "89458694"
 ---
 # <a name="azure-virtual-machines-planning-and-implementation-for-sap-netweaver"></a>SAP NetWeaver на виртуальных машинах Windows. Руководство по планированию и внедрению
 
@@ -1255,7 +1255,9 @@ sudo service waagent restart
 
 #### <a name="configuration-of-the-sap-system-and-sap-gui-connectivity-over-the-internet"></a>Настройка подключения к системе SAP и графическому пользовательскому интерфейсу SAP через Интернет
 
-Дополнительные сведения см. в этой статье: <https://blogs.msdn.com/b/saponsqlserver/archive/2014/06/24/sap-gui-connection-closed-when-connecting-to-sap-system-in-azure.aspx>
+Дополнительные сведения см. в этой статье:
+
+<https://docs.microsoft.com/archive/blogs/saponsqlserver/sap-gui-connection-closed-when-connecting-to-sap-system-in-azure>
 
 #### <a name="changing-firewall-settings-within-vm"></a>Изменение параметров брандмауэра на виртуальной машине
 
@@ -1980,7 +1982,7 @@ SAProuter позволяет осуществлять взаимодействи
 
 С середины 2014 г. расширения для различных компонентов Hyper-V, System Center и Azure позволяют использовать Azure как сайт аварийного восстановления для локальных виртуальных машин Hyper-V.
 
-Здесь находится блог с подробными сведениями о развертывании этого решения: <https://blogs.msdn.com/b/saponsqlserver/archive/2014/11/19/protecting-sap-solutions-with-azure-site-recovery.aspx>.
+Здесь находится блог с подробными сведениями о развертывании этого решения: <https://docs.microsoft.com/archive/blogs/saponsqlserver/protecting-sap-solutions-with-azure-site-recovery>.
 
 ## <a name="summary"></a>Сводка
 
