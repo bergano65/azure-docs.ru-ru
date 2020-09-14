@@ -14,12 +14,12 @@ ms.author: curtand
 ms.reviewer: krbain
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: e2da67b9996156f136aa2eddb8aa3d2b1777a554
-ms.sourcegitcommit: c5021f2095e25750eb34fd0b866adf5d81d56c3a
+ms.openlocfilehash: c00c89e5f81bcb142c50e5f3438c1af2d72a9de5
+ms.sourcegitcommit: 814778c54b59169c5899199aeaa59158ab67cf44
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88794563"
+ms.lasthandoff: 09/13/2020
+ms.locfileid: "90056223"
 ---
 # <a name="azure-active-directory-version-2-cmdlets-for-group-management"></a>Командлеты Azure Active Directory версии 2 для управления группами
 
@@ -320,7 +320,7 @@ ms.locfileid: "88794563"
 * hostmaster
 * majordomo
 * postmaster
-* root
+* корневой
 * secure
 * security
 * ssl-admin
@@ -328,13 +328,13 @@ ms.locfileid: "88794563"
 
 ## <a name="group-writeback-to-on-premises-preview"></a>Обратная запись групп в локальную среду (Предварительная версия)
 
-Сегодня многие группы по-прежнему управляются в локальной Active Directory. Чтобы ответить на запросы на синхронизацию облачных групп обратно в локальную среду, теперь доступна предварительная версия функции обратной записи в группах Office 365 для Azure AD.
+Сегодня многие группы по-прежнему управляются в локальной Active Directory. Чтобы ответить на запросы на синхронизацию облачных групп обратно в локальную среду, теперь доступна предварительная версия функции обратной записи Microsoft 365 групп для Azure AD.
 
-Группы Office 365 создаются и управляются в облаке. Возможность обратной записи позволяет записывать резервные группы Office 365 в качестве групп рассылки в лес Active Directory с установленным Exchange. Пользователи с локальными почтовыми ящиками Exchange могут отправлять и получать сообщения электронной почты из этих групп. Функция обратной записи групп не поддерживает группы безопасности Azure AD или группы рассылки.
+Группы Microsoft 365 создаются и управляются в облаке. Возможность обратной записи позволяет записывать Microsoft 365 группы в качестве групп рассылки в Active Directoryный лес с установленным Exchange. Пользователи с локальными почтовыми ящиками Exchange могут отправлять и получать сообщения электронной почты из этих групп. Функция обратной записи групп не поддерживает группы безопасности Azure AD или группы рассылки.
 
 Дополнительные сведения см. в документации по [службе синхронизации Azure AD Connect](../hybrid/how-to-connect-syncservice-features.md).
 
-Обратная запись групп Office 365 — это общедоступная Предварительная версия функции Azure Active Directory (Azure AD) и доступна с любым платным планом лицензирования Azure AD. Некоторые юридические сведения о предварительных версиях см. в разделе Дополнительные [условия использования для предварительных версий Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
+Microsoft 365ная запись групп является общедоступной функцией предварительной версии Azure Active Directory (Azure AD) и доступна с любым платным планом лицензирования Azure AD. Некоторые юридические сведения о предварительных версиях см. в разделе Дополнительные [условия использования для предварительных версий Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

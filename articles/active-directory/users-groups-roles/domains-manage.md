@@ -14,12 +14,12 @@ ms.author: curtand
 ms.reviewer: elkuzmen
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 12193b469b6e1f014e6c948da7b2adb370e78d4b
-ms.sourcegitcommit: c5021f2095e25750eb34fd0b866adf5d81d56c3a
+ms.openlocfilehash: 48f924cef12db974faae8fb8ed73f01ff8c9a3f8
+ms.sourcegitcommit: 814778c54b59169c5899199aeaa59158ab67cf44
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88795331"
+ms.lasthandoff: 09/13/2020
+ms.locfileid: "90056257"
 ---
 # <a name="managing-custom-domain-names-in-your-azure-active-directory"></a>Управление личными доменными именами в Azure Active Directory
 
@@ -55,7 +55,7 @@ ms.locfileid: "88795331"
 
 ## <a name="what-to-do-if-you-change-the-dns-registrar-for-your-custom-domain-name"></a>Что делать, если вы изменили регистратор DNS для пользовательского доменного имени
 
-Если вы измените регистраторы DNS, в Azure AD нет дополнительных задач настройки. Вы можете продолжать использовать доменное имя с Azure AD без прерывания. Если личное доменное имя используется в Office 365, Intune или других службах, которым необходимы личные домены в Azure AD, обратитесь к документации для этих служб.
+Если вы измените регистраторы DNS, в Azure AD нет дополнительных задач настройки. Вы можете продолжать использовать доменное имя с Azure AD без прерывания. Если вы используете имя личного домена с Microsoft 365, Intune или другими службами, которые используют пользовательские доменные имена в Azure AD, см. документацию по этим службам.
 
 ## <a name="delete-a-custom-domain-name"></a>Удаление имени личного домена
 
@@ -75,7 +75,7 @@ ms.locfileid: "88795331"
 
 Чтобы вызвать **ForceDelete** на портале Azure, вы должны убедиться, что существует менее 1000 ссылок на доменное имя, а любые ссылки, в которых Exchange является службой подготовки, должны быть обновлены или удалены в [Центре администрирования Exchange](https://outlook.office365.com/ecp/). Сюда входят группы безопасности с поддержкой почты и распределенные списки Exchange. Дополнительные сведения см. в статье [Manage mail-enabled security groups in Exchange Server](/Exchange/recipients/mail-enabled-security-groups?view=exchserver-2019#Remove%20mail-enabled%20security%20groups) (Управление группами безопасности с поддержкой почты в Exchange Server). Кроме того, операция **ForceDelete** не будет выполнена, если выполняется любое из следующих условий:
 
-* Вы приобрели домен через службы подписки домена Office 365.
+* Вы приобрели домен с помощью служб подписки Microsoft 365 домена.
 * Вы являетесь партнером, управляющим от имени другой организации пользователя.
 
 Следующие действия выполняются как часть операции **ForceDelete**:

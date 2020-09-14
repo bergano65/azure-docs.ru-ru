@@ -1,19 +1,19 @@
 ---
 title: Просмотр состояния задания инструмента импорта и экспорта Azure версии 1 | Документация Майкрософт
 description: Узнайте, как использовать файлы журналов, созданные заданием импорта или экспорта, чтобы просмотреть состояние задания.
-author: twooley
+author: alkohli
 services: storage
 ms.service: storage
 ms.topic: how-to
 ms.date: 01/26/2017
-ms.author: twooley
+ms.author: alkohli
 ms.subservice: common
-ms.openlocfilehash: c9093af25e621b3ab9a60d9894f0a875340fda45
-ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
+ms.openlocfilehash: 2fa5cfcf0cb6c20a8a0b64651da0b365e12a3d05
+ms.sourcegitcommit: 814778c54b59169c5899199aeaa59158ab67cf44
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88525675"
+ms.lasthandoff: 09/13/2020
+ms.locfileid: "90056328"
 ---
 # <a name="reviewing-azure-importexport-job-status-with-copy-log-files"></a>Просмотр состояния задания импорта и экспорта Azure с помощью файлов журнала копирования
 Когда служба импорт и экспорт Microsoft Azure обрабатывает диски, связанные с заданием импорта или экспорта, записывает файлы журнала копирования в учетную запись хранения, которая использовалась для импорта или экспорта больших двоичных объектов. Файл журнала содержит подробные сведения о состоянии каждого импортируемого или экспортируемого файла. Служба возвращает URL-адрес для каждого файла журнала копирования при запросе состояния завершенного задания. Дополнительные сведения см. в разделе [получение задания](https://docs.microsoft.com/rest/api/storageimportexport/Jobs/Get).  
@@ -28,7 +28,7 @@ ms.locfileid: "88525675"
 
  Дополнительные сведения о формате журналов копирования и полный список кодов состояний см. в статье [Формат файла журнала службы импорта и экспорта Azure](../storage-import-export-file-format-log.md).  
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
  * [Настройка средства импорта и экспорта Azure](storage-import-export-tool-setup-v1.md)   
  * [Подготовка жестких дисков для задания импорта](../storage-import-export-tool-preparing-hard-drives-import-v1.md)   

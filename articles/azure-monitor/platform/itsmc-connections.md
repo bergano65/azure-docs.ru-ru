@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: nolavime
 ms.author: v-jysur
 ms.date: 05/12/2020
-ms.openlocfilehash: 57a981f4967bc58ca39067f94abdcf64d764ab87
-ms.sourcegitcommit: c52e50ea04dfb8d4da0e18735477b80cafccc2cf
+ms.openlocfilehash: 9d037fa0faa1419e4cd1b600eea1b3b3eb0a29c0
+ms.sourcegitcommit: 94c750edd4d755d6ecee50ac977328098a277479
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89536197"
+ms.lasthandoff: 09/13/2020
+ms.locfileid: "90058773"
 ---
 # <a name="connect-itsm-productsservices-with-it-service-management-connector"></a>Подключение продуктов и служб ITSM с помощью соединителя управления ИТ-службами
 В этой статье описывается, как настроить в Log Analytics связь между продуктами или службами ITSM и соединителем управления ИТ-службами (ITSM), чтобы централизованно управлять рабочими элементами ITSM. Дополнительные сведения об ITSMC см. в [этом обзоре](./itsmc-overview.md).
@@ -25,7 +25,8 @@ ms.locfileid: "89536197"
 
 > [!NOTE]
 > 
-> Соединитель ITSM позволяет подключаться только к облачным экземплярам ServiceNow. Локальные экземпляры ServiceNow сейчас не поддерживаются.
+> Начиная с 1-Oct-2020 Cherwell и Provance ITSM интеграция с оповещением Azure больше не будут включены для новых клиентов. Новые подключения ITSM не будут поддерживаться. 
+> Существующие подключения ITSM будут поддерживаться.
 
 ## <a name="connect-system-center-service-manager-to-it-service-management-connector-in-azure"></a>Подключение System Center Service Manager к соединителю управления ИТ-службами в Azure
 
@@ -40,6 +41,10 @@ ms.locfileid: "89536197"
 - Создайте и настройте гибридное подключение. Дополнительные сведения: [Настройка гибридного подключения](#configure-the-hybrid-connection).
 - Поддерживаемые версии Service Manager:  2012 R2 или 2016.
 - Роль пользователя:  [оператор с расширенными правами](/previous-versions/system-center/service-manager-2010-sp1/ff461054(v=technet.10)).
+
+> [!NOTE]
+> 
+> Соединитель ITSM позволяет подключаться только к облачным экземплярам ServiceNow. Локальные экземпляры ServiceNow сейчас не поддерживаются.
 
 ### <a name="connection-procedure"></a>Процедура подключения
 

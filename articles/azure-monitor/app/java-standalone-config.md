@@ -4,12 +4,12 @@ description: Наблюдение за производительностью п
 ms.topic: conceptual
 ms.date: 04/16/2020
 ms.custom: devx-track-java
-ms.openlocfilehash: ca3094197deb7c74ba9b51422a78ee0f5d3687d2
-ms.sourcegitcommit: f353fe5acd9698aa31631f38dd32790d889b4dbb
+ms.openlocfilehash: 561a6405a49d8f15affbf6d8d4de1a7f4886826a
+ms.sourcegitcommit: 814778c54b59169c5899199aeaa59158ab67cf44
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87374292"
+ms.lasthandoff: 09/13/2020
+ms.locfileid: "90056104"
 ---
 # <a name="configuration-options---java-standalone-agent-for-azure-monitor-application-insights"></a>Параметры конфигурации — автономный агент Java для Azure Monitor Application Insights
 
@@ -38,8 +38,8 @@ ms.locfileid: "87374292"
 
 Можно указать собственный путь к файлу конфигурации, используя либо
 
-* `APPLICATIONINSIGHTS_CONFIGURATION_FILE`переменная среды или
-* `applicationinsights.configurationFile`Системное свойство Java
+* `APPLICATIONINSIGHTS_CONFIGURATION_FILE` переменная среды или
+* `applicationinsights.configurationFile` Системное свойство Java
 
 Если указан относительный путь, он будет разрешаться относительно каталога, в котором находится `applicationinsights-agent-3.0.0-PREVIEW.5.jar` .
 
@@ -113,18 +113,18 @@ Application Insights Предварительная версия Java 3,0 авт
 
 Это допустимые `threshold` значения, которые можно указать в `ApplicationInsights.json` файле и их соответствие уровням ведения журнала в разных платформах ведения журналов.
 
-| `threshold`  | Log4j  | Logback | ИЮЛ     |
-|--------------|--------|---------|---------|
-| OFF          | OFF    | OFF     | OFF     |
-| АВАРИЙ        | АВАРИЙ  | ошибка   | SEVERE  |
-| ОШИБКА/СЕРЬЕЗНАЯ | ошибка  | ошибка   | SEVERE  |
-| ПРЕДУПРЕЖДАТЬ/ПРЕДУПРЕЖДЕНИЕ | ДАТЬ   | ДАТЬ    | ПРЕДУПРЕЖДЕНИЕ |
-| ИНФОРМАЦИЯ         | INFO   | INFO    | INFO    |
-| CONFIG       | DEBUG  | DEBUG   | CONFIG  |
-| ОТЛАДКА/ХОРОШЕЕ   | DEBUG  | DEBUG   | FINE    |
-| FINER        | DEBUG  | DEBUG   | FINER   |
-| ТРАССИРОВКА И FINEST | трассировка  | трассировка   | FINEST  |
-| ALL          | ALL    | ALL     | ALL     |
+| пороговое значение   | Log4j  | Logback | ИЮЛ     |
+|-------------------|--------|---------|---------|
+| OFF               | OFF    | OFF     | OFF     |
+| АВАРИЙ             | АВАРИЙ  | ошибка   | SEVERE  |
+| Ошибка (или СЕРЬЕЗная) | ошибка  | ошибка   | SEVERE  |
+| ПРЕДУПРЕЖДАть (или ПРЕДУПРЕЖДАть) | ДАТЬ   | ДАТЬ    | ПРЕДУПРЕЖДЕНИЕ |
+| ИНФОРМАЦИЯ              | INFO   | INFO    | INFO    |
+| CONFIG            | DEBUG  | DEBUG   | CONFIG  |
+| ОТЛАДКа (или Точная)   | DEBUG  | DEBUG   | FINE    |
+| FINER             | DEBUG  | DEBUG   | FINER   |
+| TRACE (или FINEST) | трассировка  | трассировка   | FINEST  |
+| ALL               | ALL    | ALL     | ALL     |
 
 ## <a name="jmx-metrics"></a>Метрики JMX
 
@@ -134,7 +134,7 @@ Application Insights Предварительная версия Java 3,0 авт
 {
   "instrumentationSettings": {
     "preview": {
-        "jmxMetrics": [
+      "jmxMetrics": [
         {
           "objectName": "java.lang:type=ClassLoading",
           "attribute": "LoadedClassCount",
@@ -181,9 +181,9 @@ Application Insights Предварительная версия Java 3,0 авт
 {
   "instrumentationSettings": {
     "preview": {
-        "heartbeat": {
-            "intervalSeconds": 60
-        }
+      "heartbeat": {
+        "intervalSeconds": 60
+      }
     }
   }
 }
@@ -205,13 +205,13 @@ Application Insights Предварительная версия Java 3,0 авт
 {
   "instrumentationSettings": {
     "preview": {
-        "sampling": {
-            "fixedRate": {
-                "percentage": 10
-            }
-          }
+      "sampling": {
+        "fixedRate": {
+          "percentage": 10
         }
+      }
     }
+  }
 }
 ```
 
@@ -244,10 +244,10 @@ Application Insights Предварительная версия Java 3,0 авт
 {
   "instrumentationSettings": {
     "preview": {
-        "selfDiagnostics": {
-            "destination": "console",
-            "level": "WARN"
-        }
+      "selfDiagnostics": {
+        "destination": "console",
+        "level": "WARN"
+      }
     }
   }
 }
@@ -261,12 +261,12 @@ Application Insights Предварительная версия Java 3,0 авт
 {
   "instrumentationSettings": {
     "preview": {
-        "selfDiagnostics": {
-            "destination": "file",
-            "directory": "/var/log/applicationinsights",
-            "level": "WARN",
-            "maxSizeMB": 10
-        }    
+      "selfDiagnostics": {
+        "destination": "file",
+        "directory": "/var/log/applicationinsights",
+        "level": "WARN",
+        "maxSizeMB": 10
+      }
     }
   }
 }

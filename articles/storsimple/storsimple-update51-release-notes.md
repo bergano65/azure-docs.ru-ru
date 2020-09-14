@@ -1,18 +1,18 @@
 ---
 title: Заметки о выпуске пакета StorSimple 8000 с обновлением 5,1
 description: Описание новых функций, проблем и решений для решения задач, связанных с обновлением для StorSimple 8000 Series 5,1.
-author: twooley
+author: alkohli
 ms.assetid: ''
 ms.service: storsimple
 ms.topic: conceptual
 ms.date: 03/05/2020
-ms.author: twooley
-ms.openlocfilehash: b706d702ad496d0526d02c4158123cc883505ddf
-ms.sourcegitcommit: 9c3cfbe2bee467d0e6966c2bfdeddbe039cad029
+ms.author: alkohli
+ms.openlocfilehash: a6a359888e782751892f2a034a8d92a014fd3a81
+ms.sourcegitcommit: 814778c54b59169c5899199aeaa59158ab67cf44
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/24/2020
-ms.locfileid: "88782351"
+ms.lasthandoff: 09/13/2020
+ms.locfileid: "90055849"
 ---
 # <a name="storsimple-8000-series-update-51-release-notes"></a>Заметки о выпуске пакета StorSimple 8000 с обновлением 5,1
 

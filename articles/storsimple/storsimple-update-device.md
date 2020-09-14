@@ -3,7 +3,7 @@ title: Обновление устройства StorSimple | Документа
 description: Описаны способы использования функции обновления StorSimple для установки обычных обновлений и исправлений и в режиме обслуживания.
 services: storsimple
 documentationcenter: NA
-author: twooley
+author: alkohli
 manager: carmonm
 editor: ''
 ms.assetid: 786059f5-2a38-4105-941d-0860ce4ac515
@@ -13,13 +13,13 @@ ms.topic: article
 ms.tgt_pltfrm: NA
 ms.workload: TBD
 ms.date: 01/23/2018
-ms.author: twooley
-ms.openlocfilehash: e591a6c1fbf91bb034ec57673f79c549bbec4672
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.author: alkohli
+ms.openlocfilehash: dec354767875d91c6062cdfbb0009e857dbe2636
+ms.sourcegitcommit: 814778c54b59169c5899199aeaa59158ab67cf44
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84170092"
+ms.lasthandoff: 09/13/2020
+ms.locfileid: "90056557"
 ---
 # <a name="update-your-storsimple-8000-series-device"></a>Обновление устройства StorSimple серии 8000
 > [!NOTE]
@@ -119,7 +119,7 @@ Windows PowerShell для StorSimple используется, чтобы при
 ## <a name="what-happens-to-updates-if-you-perform-a-factory-reset-of-the-device"></a>Что происходит с обновлениями при выполнении сброса параметров к значениям по умолчанию?
 Если для устройства выполнить сброс параметров к значениям по умолчанию, все обновления будут потеряны. После того как устройство, для которого выполнен сброс параметров, будет зарегистрировано и настроено, необходимо будет вручную установить обновления с помощью классического портала Azure или Windows PowerShell для StorSimple. Дополнительные сведения о сбросе параметров см. в разделе [Восстановление на устройстве заводских настроек](storsimple-8000-manage-device-controller.md#reset-the-device-to-factory-default-settings).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 * Узнайте больше об [использовании Windows PowerShell для администрирования устройства StorSimple](storsimple-windows-powershell-administration.md).
 * Узнайте больше об [использовании службы StorSimple Manager для администрирования устройства StorSimple](storsimple-manager-service-administration.md).
 

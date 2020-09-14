@@ -2,18 +2,18 @@
 title: Заметки о выпуске Azure Stack & Шлюз Azure Data Box 1911 | Документация Майкрософт
 description: Описание критических открытых проблем и способов их устранения для Azure Stack пограничных и Шлюз Data Box запуска выпуска 1911.
 services: databox
-author: twooley
+author: alkohli
 ms.service: databox
 ms.subservice: gateway
 ms.topic: article
 ms.date: 03/13/2020
-ms.author: twooley
-ms.openlocfilehash: 4c5c6b423c9013719a703b5112e2a897d35454d1
-ms.sourcegitcommit: 9c3cfbe2bee467d0e6966c2bfdeddbe039cad029
+ms.author: alkohli
+ms.openlocfilehash: 7dc2963717865157848dec3a1a0e8bddeff045ef
+ms.sourcegitcommit: 814778c54b59169c5899199aeaa59158ab67cf44
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/24/2020
-ms.locfileid: "88783966"
+ms.lasthandoff: 09/13/2020
+ms.locfileid: "90055900"
 ---
 # <a name="azure-stack-edge-and-azure-data-box-gateway-1911-release-notes"></a>Заметки о выпуске Azure Stack и Шлюз Azure Data Box 1911
 

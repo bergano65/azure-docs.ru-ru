@@ -12,12 +12,12 @@ ms.custom:
 - amqp
 - mqtt
 - 'Role: Cloud Development'
-ms.openlocfilehash: a5707ef266f3d49bdcbff9793a0b90e6c3f4cb68
-ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
+ms.openlocfilehash: c1dc3b5fe4eecea42baf7073b9c806eea1648cff
+ms.sourcegitcommit: 814778c54b59169c5899199aeaa59158ab67cf44
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87327656"
+ms.lasthandoff: 09/13/2020
+ms.locfileid: "90056172"
 ---
 # <a name="react-to-iot-hub-events-by-using-event-grid-to-trigger-actions"></a>Реагирование на события в Центре Интернета вещей с использованием службы "Сетка событий" для запуска действий
 
@@ -188,7 +188,7 @@ devices/{deviceId}
 
 ## <a name="limitations-for-device-connected-and-device-disconnected-events"></a>Ограничения для событий подключения и отключения устройства
 
-Чтобы получать события состояния подключения устройства, устройство должно выполнять операцию "s 2C Send телеметрии" или "C2D Receive Message" с центром Интернета вещей. Однако обратите внимание, что если устройство использует протокол AMQP для подключения к центру Интернета вещей, рекомендуется выполнить операцию "C2D Receive Message", иначе уведомления о состоянии подключения могут быть задержаны на несколько минут. Если ваше устройство использует протокол MQTT, связь C2D в Центре Интернета вещей будет открыта. Для AMQP можно открыть ссылку C2D, вызвав [асинхронный API получения](https://docs.microsoft.com/dotnet/api/microsoft.azure.devices.client.deviceclient.receiveasync?view=azure-dotnet)для пакета SDK для C# центра Интернета вещей или [клиента устройства для AMQP](iot-hub-amqp-support.md#device-client).
+Чтобы получать события состояния подключения устройства, устройство должно выполнять операцию "s 2C Send телеметрии" или "C2D Receive Message" с центром Интернета вещей. Однако обратите внимание, что если устройство использует протокол AMQP для подключения к центру Интернета вещей, рекомендуется выполнить операцию "C2D Receive Message", иначе уведомления о состоянии подключения могут быть задержаны на несколько минут. Если ваше устройство использует протокол MQTT, связь C2D в Центре Интернета вещей будет открыта. Для AMQP можно открыть ссылку C2D, вызвав интерфейс API получения Azure асинхронной функции для центра Интернета вещей или [клиент устройства для AMQP](iot-hub-amqp-support.md#device-client).
 
 Связь D2C открыта, если вы отправляете телеметрию. 
 
@@ -214,4 +214,4 @@ devices/{deviceId}
 
 * [Сравнение маршрутизации сообщений со службой "Сетка событий" и без нее для Центра Интернета вещей](iot-hub-event-grid-routing-comparison.md)
 
-* [Узнайте, как использовать события телеметрии IoT для реализации пространственного анализа IoT с помощью Azure Maps](../azure-maps/tutorial-iot-hub-maps.md#create-an-azure-function-and-add-an-event-grid-subscription)
+* [Узнайте, как использовать события телеметрии IoT для реализации пространственного анализа IoT с помощью Azure Maps](../azure-maps/tutorial-iot-hub-maps.md)
