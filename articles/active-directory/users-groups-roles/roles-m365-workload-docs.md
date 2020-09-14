@@ -14,12 +14,12 @@ ms.author: curtand
 ms.reviewer: vincesm
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 14d5b458aeccd2587f24b30548c4b5e76912bce1
-ms.sourcegitcommit: c5021f2095e25750eb34fd0b866adf5d81d56c3a
+ms.openlocfilehash: 6060bc286024183661024abd56567eeefed76430
+ms.sourcegitcommit: 814778c54b59169c5899199aeaa59158ab67cf44
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88798284"
+ms.lasthandoff: 09/13/2020
+ms.locfileid: "90053554"
 ---
 # <a name="administrator-roles-for-microsoft-365-services"></a>Роли администратора для служб Microsoft 365 Services
 
@@ -29,10 +29,10 @@ ms.locfileid: "88798284"
 
 Служба Microsoft 365 | Содержимое роли | API содержимого
 ---------------------- | ------------------ | -----------------
-Роли администратора в бизнес-планах Office 365 и Microsoft 365 | [Роли администраторов в Office 365](/office365/admin/add-users/about-admin-roles?view=o365-worldwide) | Недоступно
+Роли администратора в бизнес-планах Office 365 и Microsoft 365 | [Роли администратора Microsoft 365](/office365/admin/add-users/about-admin-roles?view=o365-worldwide) | Недоступно
 Azure Active Directory (Azure AD) и защита удостоверений Azure Active Directory| [Разрешения роли администратора в Azure Active Directory](directory-assign-admin-roles.md) | [API Graph](/graph/api/overview?view=graph-rest-1.0)<br>[Получение назначений ролей](/graph/api/directoryrole-list?view=graph-rest-1.0)
 Exchange Online| [Общие сведения об управлении доступом на основе ролей](/exchange/understanding-role-based-access-control-exchange-2013-help) |  [Add-ManagementRoleEntry](/powershell/module/exchange/role-based-access-control/add-managementroleentry?view=exchange-ps)<br>[Получение назначений ролей](/powershell/module/exchange/role-based-access-control/get-rolegroup?view=exchange-ps)
-SharePoint Online | [Разрешения роли администратора в Azure Active Directory](directory-assign-admin-roles.md)<br>Также [Роль администратора SharePoint Online](/sharepoint/sharepoint-admin-role) | [API Graph](/graph/api/overview?view=graph-rest-1.0)<br>[Получение назначений ролей](/graph/api/directoryrole-list?view=graph-rest-1.0)
+SharePoint Online | [Разрешения роли администратора в Azure Active Directory](directory-assign-admin-roles.md)<br>Также [о роли администратора SharePoint в Microsoft 365](/sharepoint/sharepoint-admin-role) | [API Graph](/graph/api/overview?view=graph-rest-1.0)<br>[Получение назначений ролей](/graph/api/directoryrole-list?view=graph-rest-1.0)
 Команды и Skype для бизнеса | [Разрешения роли администратора в Azure Active Directory](directory-assign-admin-roles.md) | [API Graph](/graph/api/overview?view=graph-rest-1.0)<br>[Получение назначений ролей](/graph/api/directoryrole-list?view=graph-rest-1.0)
 Центр безопасности и соответствия требованиям (Office 365 Advanced Threat Protection, Exchange Online Protection, защита информации) | [Роли администраторов в Office 365](/office365/SecurityCompliance/permissions-in-the-security-and-compliance-center) | [PowerShell для Exchange](/powershell/module/exchange/role-based-access-control/add-managementroleentry?view=exchange-ps)<br>[Получение назначений ролей](/powershell/module/exchange/role-based-access-control/get-rolegroup?view=exchange-ps)
 Оценка безопасности | [Разрешения роли администратора в Azure Active Directory](directory-assign-admin-roles.md) | [API Graph](/graph/api/overview?view=graph-rest-1.0)<br>[Получение назначений ролей](/graph/api/directoryrole-list?view=graph-rest-1.0)
@@ -41,7 +41,7 @@ Azure Information Protection | [Разрешения роли администр
 Microsoft Cloud App Security | [Управление доступом на основе ролей](/cloud-app-security/manage-admins) | [Справочник по API](/cloud-app-security/api-tokens) 
 Расширенная защита от угроз Azure | [Группы ролей Azure ATP](/azure-advanced-threat-protection/atp-role-groups) | Недоступно
 Advanced Threat Protection в Защитнике Windows | [Управление доступом к порталу с помощью элемента управления доступом на основе ролей](/windows/security/threat-protection/windows-defender-atp/rbac-windows-defender-advanced-threat-protection) | Недоступно
-Управление привилегированными пользователями | [Разрешения роли администратора в Azure Active Directory](directory-assign-admin-roles.md) | [API Graph](/graph/api/overview?view=graph-rest-1.0)<br>[Получение назначений ролей](/graph/api/directoryrole-list?view=graph-rest-1.0)
+Управление привилегированными пользователями (PIM) | [Разрешения роли администратора в Azure Active Directory](directory-assign-admin-roles.md) | [API Graph](/graph/api/overview?view=graph-rest-1.0)<br>[Получение назначений ролей](/graph/api/directoryrole-list?view=graph-rest-1.0)
 Intune | [Управление доступом на основе ролей (RBAC) с помощью Microsoft Intune](/intune/role-based-access-control) | [API Graph](/graph/api/resources/intune-rbac-conceptual?view=graph-rest-beta)<br>[Получение назначений ролей](/graph/api/intune-rbac-roledefinition-list?view=graph-rest-beta)
 Управляемый рабочий стол | [Разрешения роли администратора в Azure Active Directory](directory-assign-admin-roles.md) | [API Graph](/graph/api/overview?view=graph-rest-1.0)<br>[Получение назначений ролей](/graph/api/directoryrole-list?view=graph-rest-1.0)
 

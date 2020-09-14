@@ -3,7 +3,7 @@ title: Администрирование с помощью StorSimple Snapshot 
 description: Общие сведения и ссылки на дополнительную информацию о задачах администрирования и рабочих процессах, которые можно выполнять с помощью диспетчера моментальных снимков StorSimple.
 services: storsimple
 documentationcenter: NA
-author: twooley
+author: alkohli
 manager: timlt
 editor: ''
 ms.assetid: 1cdbb61d-bd16-4be4-ade2-ceab11508acb
@@ -13,13 +13,13 @@ ms.topic: how-to
 ms.tgt_pltfrm: NA
 ms.workload: TBD
 ms.date: 06/05/2016
-ms.author: twooley
-ms.openlocfilehash: f9a42a8f94f3e5cb63cd340b696a803d97491c76
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.author: alkohli
+ms.openlocfilehash: 16d782c6a25d8d2d8e1323b7cb683f41d8c99649
+ms.sourcegitcommit: 814778c54b59169c5899199aeaa59158ab67cf44
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85512830"
+ms.lasthandoff: 09/13/2020
+ms.locfileid: "90054982"
 ---
 # <a name="use-storsimple-snapshot-manager-to-administer-your-storsimple-solution"></a>Использование диспетчера моментальных снимков StorSimple для администрирования решения StorSimple
 
@@ -51,7 +51,7 @@ ms.locfileid: "85512830"
 | Получение дополнительных сведений о диспетчере моментальных снимков StorSimple |[Что такое Snapshot Manager в StorSimple?](storsimple-what-is-snapshot-manager.md) |
 | Установка диспетчера моментальных снимков StorSimple<br>Переустановка StorSimple Snapshot Manager<br>Удаление диспетчера моментальных снимков StorSimple |[Развертывание диспетчера моментальных снимков StorSimple](storsimple-snapshot-manager-deployment.md) |
 | Использование меню и компонентов диспетчера моментальных снимков StorSimple<ul><li>Строка меню</li><li>Панель инструментов</li><li>Панель "Область"</li><li>Панель "Результаты"</li><li>Панель "Действия"</li><li>Навигация с помощью клавиатуры и сочетания клавиш</li></ul> |[Пользовательский интерфейс диспетчера моментальных снимков StorSimple](storsimple-use-snapshot-manager.md) |
-| Использование распространенных компонентов MMC, включенных в диспетчер моментальных снимков StorSimple:<ul><li>Просмотр</li><li>Создать окно отсюда</li><li>Обновление</li><li>Экспорт списка</li><li>Справка</li></ul> |[Использование действий меню MMC в диспетчере моментальных снимков StorSimple](storsimple-snapshot-manager-mmc-menu.md) |
+| Использование распространенных компонентов MMC, включенных в диспетчер моментальных снимков StorSimple:<ul><li>Просмотр</li><li>Создать окно отсюда</li><li>Обновить</li><li>Экспорт списка</li><li>Справка</li></ul> |[Использование действий меню MMC в диспетчере моментальных снимков StorSimple](storsimple-snapshot-manager-mmc-menu.md) |
 | добавление или замена устройства;<br>Подключение устройства<br>Проверка импортированных групп томов<br>обновление подключенных устройств.<br>Проверка подлинности устройства<br>просмотр сведений об устройстве;<br>удаление конфигурации устройства;<br>изменение пароля устройства.<br>Замена неисправного устройства<br> |[Использование диспетчера моментальных снимков StorSimple для подключения устройств StorSimple и управления ими](storsimple-snapshot-manager-manage-devices.md) |
 | Подключение томов<br>просмотр сведений о томах;<br>Удаление тома<br>повторное сканирование томов;<br>Настройка и архивация основного тома<br>Настройка и архивация динамического зеркального тома |[Просмотр томов и управление ими с помощью диспетчера моментальных снимков StorSimple](storsimple-snapshot-manager-manage-volumes.md) |
 | Просмотр групп томов<br>создание группы томов;<br>архивация группы томов;<br>внесение изменений в группу томов;<br>удаление группы томов. |[Создание групп томов и управление ими с помощью диспетчера моментальных снимков StorSimple](storsimple-snapshot-manager-manage-volume-groups.md) |
@@ -59,6 +59,6 @@ ms.locfileid: "85512830"
 | Просмотр запланированных заданий архивации и управление ими<br>Просмотр недавних заданий архивации и управление ими<br>Просмотр текущих заданий архивации и управление ими |[Просмотр заданий архивации и управление ими с помощью диспетчера моментальных снимков StorSimple](storsimple-snapshot-manager-manage-backup-jobs.md) |
 | восстановление тома;<br>клонирование тома или группы томов;<br>удаление резервной копии;<br>восстановление файла;<br>восстановление базы данных диспетчера моментальных снимков StorSimple. |[Использование диспетчера моментальных снимков StorSimple для управления каталогом резервных копий](storsimple-snapshot-manager-manage-backup-catalog.md) |
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 [Скачать диспетчер моментальных снимков StorSimple](https://www.microsoft.com/download/details.aspx?id=44220).
 

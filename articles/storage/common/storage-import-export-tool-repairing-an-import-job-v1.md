@@ -1,19 +1,19 @@
 ---
 title: Восстановление задания импорта инструмента импорта и экспорта Azure версии 1 | Документация Майкрософт
 description: Узнайте, как восстановить задание импорта, созданное и выполняемое с помощью службы импорта и экспорта Azure.
-author: twooley
+author: alkohli
 services: storage
 ms.service: storage
 ms.topic: how-to
 ms.date: 01/23/2017
-ms.author: twooley
+ms.author: alkohli
 ms.subservice: common
-ms.openlocfilehash: b3ba9844bf8412e169322fd4953cbc259a94e174
-ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
+ms.openlocfilehash: d67046f799e60db3101dfeb27dee10f92f9aad79
+ms.sourcegitcommit: 814778c54b59169c5899199aeaa59158ab67cf44
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88525781"
+ms.lasthandoff: 09/13/2020
+ms.locfileid: "90052432"
 ---
 # <a name="repairing-an-import-job"></a>Исправление задания импорта
 Иногда службе импорта и экспорта Microsoft Azure не удается скопировать некоторые файлы или их части в службу BLOB-объектов Windows Azure. Это может происходить по следующим причинам:  
@@ -97,7 +97,7 @@ WAImportExport.exe RepairImport /r:C:\WAImportExport\9WM35C2V.rep /d:C:\Users\bo
   
 Сделав доступными необходимые файлы для средства (или обновив файл сопоставления пути), вы можете повторно запустить средство для завершения импорта.  
   
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
  
 * [Настройка средства импорта и экспорта Azure](storage-import-export-tool-setup-v1.md)   
 * [Подготовка жестких дисков для задания импорта](../storage-import-export-tool-preparing-hard-drives-import-v1.md)   

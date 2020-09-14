@@ -11,19 +11,19 @@ ms.workload: identity
 ms.date: 02/13/2020
 ms.author: davidmu
 ms.custom: aaddev
-ms.openlocfilehash: fb6f5c4840f127ac174b6b60359dd52a4797b3ec
-ms.sourcegitcommit: b8702065338fc1ed81bfed082650b5b58234a702
+ms.openlocfilehash: 13cbeca909b445d75fcbcf7b3751183421479d42
+ms.sourcegitcommit: 814778c54b59169c5899199aeaa59158ab67cf44
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/11/2020
-ms.locfileid: "88119680"
+ms.lasthandoff: 09/13/2020
+ms.locfileid: "90052568"
 ---
 # <a name="microsoft-graph-api"></a>API Microsoft Graph
 
 Microsoft Graph API — это веб-API RESTFUL, который позволяет получать доступ к Microsoft Cloud ресурсам службы. После регистрации приложения и получения маркеров проверки подлинности для пользователя или службы можно выполнить запросы к Microsoft Graph API. Дополнительные сведения см. в разделе Общие сведения о [Microsoft Graph](/graph/overview).
 
 Microsoft Graph предоставляет интерфейсы API и клиентские библиотеки для доступа к данным в следующих Microsoft 365 службах:
-- Office 365 Services: Delve, Excel, Microsoft Books, Microsoft Teams, OneDrive, OneNote, Outlook/Exchange, Planner и SharePoint
+- Microsoft 365 Services: Delve, Excel, Microsoft Books, Microsoft Teams, OneDrive, OneNote, Outlook/Exchange, Planner и SharePoint
 - Корпоративные мобильные службы и безопасность: Advanced Threat Analytics, Advanced Threat Protection, Azure Active Directory, Configuration Manager и Intune
 - Службы Windows 10: действия, устройства, уведомления
 - Dynamics 365 Business Central

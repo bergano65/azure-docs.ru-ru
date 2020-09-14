@@ -3,7 +3,7 @@ title: Развертывание StorSimple Snapshot Manager | Документ
 description: Узнайте, как скачать и установить диспетчер моментальных снимков StorSimple, который представляет собой оснастку MMC для управления функциями защиты и резервного копирования данных StorSimple.
 services: storsimple
 documentationcenter: NA
-author: twooley
+author: alkohli
 manager: timlt
 editor: ''
 ms.assetid: f0128f57-519e-49ec-9187-23575809cdbe
@@ -13,13 +13,13 @@ ms.topic: article
 ms.tgt_pltfrm: NA
 ms.workload: TBD
 ms.date: 06/05/2017
-ms.author: twooley
-ms.openlocfilehash: 6d3e3d6cdf7a831bf09d9c4709c1a60d27683438
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.author: alkohli
+ms.openlocfilehash: 5f94564c5e769d3cf0e0abbe92a309a1ee2117a1
+ms.sourcegitcommit: 814778c54b59169c5899199aeaa59158ab67cf44
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "75933381"
+ms.lasthandoff: 09/13/2020
+ms.locfileid: "90055084"
 ---
 # <a name="deploy-the-storsimple-snapshot-manager-mmc-snap-in"></a>Развертывание оснастки консоли управления диспетчера моментальных снимков StorSimple (необязательно)
 
@@ -53,7 +53,7 @@ ms.locfileid: "75933381"
    
    * Windows Server 2008 R2 (на серверах под управлением Windows 2008 R2 также необходимо установить Windows Server 2008 с пакетом обновления 1 (SP1) и Windows Management Framework 3.0)
    * Windows Server 2012
-   * Windows Server 2012 R2
+   * Windows Server 2012 R2
      
      Для виртуального устройства StorSimple в качестве узла необходимо использовать виртуальную машину Microsoft Azure.
 3. Убедитесь, что выполнены все требования к конфигурации Microsoft Azure StorSimple. Дополнительные сведения см. в разделе [Предварительные условия для развертывания](storsimple-8000-deployment-walkthrough-u2.md#deployment-prerequisites).
@@ -160,7 +160,7 @@ ms.locfileid: "75933381"
    > Если процессы MMC, такие как диспетчер моментальных снимков StorSimple или служебная программа "Управление дисками", выполняются в фоновом режиме, удаление завершится ошибкой. Вы получите сообщение с требованием закрыть все экземпляры MMC перед попыткой удалить программу. Выберите пункт **Автоматически закрывать приложения и перезапускать их после завершения установки** и нажмите кнопку **ОК**.
    > 
    > 
-5. После завершения процесса удаления появится сообщение **Установка завершена**. Нажмите кнопку **Закрыть**.
+5. После завершения процесса удаления появится сообщение **Установка завершена**. Щелкните **Закрыть**.
 
 ### <a name="step-2-back-up-the-storsimple-snapshot-manager-database"></a>Шаг 2. Архивация базы данных диспетчера моментальных снимков StorSimple
 Чтобы создать и сохранить копию базы данных диспетчера моментальных снимков StorSimple, выполните следующие действия.
@@ -211,7 +211,7 @@ ms.locfileid: "75933381"
    2. Выберите на странице **Службы** пункт **Служба управления Microsoft StorSimple**.
    3. Щелкните на правой панели в разделе **Служба управления Microsoft StorSimple** команду **Перезапустить службу**.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 * Дополнительные сведения о StorSimple Snapshot Manager см. в статье [Что такое диспетчер моментальных снимков StorSimple?](storsimple-what-is-snapshot-manager.md)
 * Чтобы узнать больше о пользовательском интерфейсе StorSimple Snapshot Manager, см. статью [Пользовательский интерфейс диспетчера моментальных снимков StorSimple](storsimple-use-snapshot-manager.md).
 * Чтобы узнать больше об использовании StorSimple Snapshot Manager см. статью [Использование диспетчера моментальных снимков StorSimple для администрирования решения StorSimple](storsimple-snapshot-manager-admin.md).

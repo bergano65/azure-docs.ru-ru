@@ -9,14 +9,14 @@ ms.service: active-directory
 ms.subservice: app-provisioning
 ms.workload: identity
 ms.topic: troubleshooting
-ms.date: 08/12/2020
+ms.date: 09/11/2020
 ms.reviewer: arvinh
-ms.openlocfilehash: 23c3dfc6670c96f44a10b2ad5d5bfeb3ff96382c
-ms.sourcegitcommit: 2bab7c1cd1792ec389a488c6190e4d90f8ca503b
+ms.openlocfilehash: 2f83679a39f919e5e9932303731560aedd796233
+ms.sourcegitcommit: 814778c54b59169c5899199aeaa59158ab67cf44
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88271011"
+ms.lasthandoff: 09/13/2020
+ms.locfileid: "90052395"
 ---
 # <a name="known-issues-application-provisioning"></a>Известные проблемы: Подготовка приложений
 Известные проблемы, с которыми следует помнить при работе с подготовкой приложений. Вы можете отправить отзыв о службе подготовки приложений в UserVoice. см. раздел [Azure AD Application подготавливать UserVoice](https://aka.ms/appprovisioningfeaturerequest). Мы внимательно отслеживаем UserVoice, чтобы мы могли улучшить службу. 
@@ -66,7 +66,13 @@ ms.locfileid: "88271011"
 - Подготовка вложенных групп не поддерживается. 
 - Подготовка к клиентам B2C не поддерживается из-за размера клиентов. 
 
-**Задан фиксированный интервал подготовки** [Время](https://docs.microsoft.com/azure/active-directory/app-provisioning/application-provisioning-when-will-provisioning-finish-specific-user#how-long-will-it-take-to-provision-users) между циклами подготовки в настоящее время не настраивается. 
+**Автоматическая подготовка недоступна в моем приложении на основе OIDC**
+
+При создании регистрации приложения соответствующий субъект-служба в корпоративных приложениях не будет включен для автоматической подготовки пользователей. Необходимо либо запросить Добавление приложения в коллекцию, если оно предназначено для использования несколькими организациями, либо создать второе приложение не из коллекции для подготовки. 
+
+**Задан фиксированный интервал подготовки**
+
+[Время](https://docs.microsoft.com/azure/active-directory/app-provisioning/application-provisioning-when-will-provisioning-finish-specific-user#how-long-will-it-take-to-provision-users) между циклами подготовки в настоящее время не настраивается. 
 
 **Изменения, не перемещаются из целевого приложения в Azure AD**
 

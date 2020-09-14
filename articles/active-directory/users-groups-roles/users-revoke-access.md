@@ -13,12 +13,12 @@ ms.reviewer: krbain
 ms.date: 07/15/2020
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 76a2e4cb170ca5bee41c0ae8f3e0557eab19562e
-ms.sourcegitcommit: d7352c07708180a9293e8a0e7020b9dd3dd153ce
+ms.openlocfilehash: a8d1b6d912cadb073251d72ee327f4b19950ab1b
+ms.sourcegitcommit: 814778c54b59169c5899199aeaa59158ab67cf44
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/30/2020
-ms.locfileid: "89147139"
+ms.lasthandoff: 09/13/2020
+ms.locfileid: "90055191"
 ---
 # <a name="revoke-user-access-in-azure-active-directory"></a>Отозвать доступ пользователей в Azure Active Directory
 
@@ -38,7 +38,7 @@ ms.locfileid: "89147139"
 
 Затем Azure AD переоценивает политики авторизации. Если пользователь все еще является полномочным, Azure AD выдает новый маркер доступа и маркер обновления.
 
-Маркеры доступа могут представлять проблему безопасности, если доступ должен быть отозван в течение времени, меньшего времени существования маркера, что обычно занимает около часа. По этой причине корпорация Майкрософт активно работает над обеспечением [непрерывного доступа](../conditional-access/concept-continuous-access-evaluation.md) к приложениям Office 365, что помогает обеспечить недействительность маркеров доступа практически в реальном времени.  
+Маркеры доступа могут представлять проблему безопасности, если доступ должен быть отозван в течение времени, меньшего времени существования маркера, что обычно занимает около часа. По этой причине корпорация Майкрософт активно работает над обеспечением [непрерывного доступа](../conditional-access/concept-continuous-access-evaluation.md) для Microsoft 365 приложений, что помогает обеспечить недействительность маркеров доступа практически в реальном времени.  
 
 ## <a name="session-tokens-cookies"></a>Токены сеансов (файлы cookie)
 

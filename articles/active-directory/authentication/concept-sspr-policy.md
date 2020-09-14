@@ -12,12 +12,12 @@ manager: daveba
 ms.reviewer: rhicock
 ms.collection: M365-identity-device-management
 ms.custom: contperfq4
-ms.openlocfilehash: 4cfeda0d06c1e6956c7bbc953f1082a3510e8712
-ms.sourcegitcommit: 3c66bfd9c36cd204c299ed43b67de0ec08a7b968
+ms.openlocfilehash: 4b729e975ddc9c184c1b0f39a6d3be548211cdfc
+ms.sourcegitcommit: 814778c54b59169c5899199aeaa59158ab67cf44
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "90005026"
+ms.lasthandoff: 09/13/2020
+ms.locfileid: "90052721"
 ---
 # <a name="password-policies-and-account-restrictions-in-azure-active-directory"></a>Политики паролей и ограничения учетных записей в Azure Active Directory
 
@@ -108,7 +108,7 @@ ms.locfileid: "90005026"
 
 Кроме того, можно использовать командлеты PowerShell, чтобы удалить конфигурацию с неистекшим сроком действия или определить, какие пароли пользователей не имеют срока действия.
 
-Эти указания применимы к другим поставщикам, таким как Intune и Office 365, которые используют Azure AD для служб идентификации и каталогов. Срок действия пароля — это единственное, что может быть изменено в политике.
+Это руководство относится к другим поставщикам, таким как Intune и Microsoft 365, которые также используют Azure AD для идентификации и служб каталогов. Срок действия пароля — это единственное, что может быть изменено в политике.
 
 > [!NOTE]
 > Только пароли для учетных записей пользователей, которые не синхронизированы с помощью Azure AD Connect, могут быть настроены на неограниченный срок действия. Дополнительные сведения о синхронизации каталогов см. в статье [Интеграция локальных каталогов с Azure Active Directory](../hybrid/whatis-hybrid-identity.md).

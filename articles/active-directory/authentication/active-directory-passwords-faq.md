@@ -11,12 +11,12 @@ author: iainfoulds
 manager: daveba
 ms.reviewer: rhicock
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 6e210a11dbcde17c8a5dfd16c46c0d3b3d5c6523
-ms.sourcegitcommit: 6fc156ceedd0fbbb2eec1e9f5e3c6d0915f65b8e
+ms.openlocfilehash: c1927cc103ba14b4b9b545eca82aee28cd32eeb2
+ms.sourcegitcommit: 814778c54b59169c5899199aeaa59158ab67cf44
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/21/2020
-ms.locfileid: "88716339"
+ms.lasthandoff: 09/13/2020
+ms.locfileid: "90052394"
 ---
 # <a name="self-service-password-reset-frequently-asked-questions"></a>Часто задаваемые вопросы о самостоятельном сбросе пароля
 
@@ -104,7 +104,7 @@ ms.locfileid: "88716339"
   > * Убедитесь, что данные для проверки подлинности в каталоге имеют правильный формат, например +1 4255551234 или *user\@contoso.com*. 
 * **Вопрос.  Какие языки поддерживает система сброса пароля?**
 
-  > **Ответ.** Пользовательский интерфейс, SMS-сообщения и голосовые вызовы для сброса пароля переведены на те же языки, что и служба Office 365:
+  > Ответ **.** Пользовательский интерфейс сброса пароля, SMS и голосовые вызовы локализуются на тех же языках, которые поддерживаются в Microsoft 365.
   >
   >
 * **Вопрос.  Если я настрою фирменную символику своей организации на вкладке настроек каталога, где именно появится эта символика?**

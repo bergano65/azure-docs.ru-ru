@@ -7,12 +7,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 05/15/2020
-ms.openlocfilehash: 8ace82147f17e6ee7e888553c58f32ec6e5ba271
-ms.sourcegitcommit: d0541eccc35549db6381fa762cd17bc8e72b3423
+ms.openlocfilehash: 4a5203a91ba528328dce7036d4690c6dea137c33
+ms.sourcegitcommit: 814778c54b59169c5899199aeaa59158ab67cf44
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/09/2020
-ms.locfileid: "89569209"
+ms.lasthandoff: 09/13/2020
+ms.locfileid: "90054268"
 ---
 # <a name="azure-monitor-frequently-asked-questions"></a>Azure Monitor: вопросы и ответы
 
@@ -785,7 +785,7 @@ LogEntry : ({"Hello": "This example has multiple lines:","Docker/Moby": "will no
 
 Это приближение хорошо работает для протоколов, основанных на механизме запросов и ответов, когда через подключение отправляется ровно один запрос и получается ровно один ответ. Это справедливо для HTTP(S) (без конвейеризации), но не для других протоколов.
 
-### <a name="are-their-limitations-if-i-am-on-the-log-analytics-free-pricing-plan"></a>Есть ли ограничения для Log Analytics ценовой категории "Бесплатный"?
+### <a name="are-there-limitations-if-i-am-on-the-log-analytics-free-pricing-plan"></a>Существуют ли ограничения, если я использую план бесплатного ценообразования Log Analytics?
 Если вы настроили Azure Monitor с рабочей областью Log Analytics в ценовой категории *Бесплатный*, функция сопоставления Azure Monitor для виртуальных машин будет поддерживать подключение только пяти машин к рабочей области. Если к бесплатной рабочей области подключено пять виртуальных машин, после отключения одной виртуальной машины и последующего подключения новой виртуальной машины эта новая виртуальная машина не будет отслеживаться и отображаться на странице сопоставления.  
 
 В этом случае отобразится предложение **Попробовать сейчас** при открытии виртуальной машины и выборе функции **Аналитические сведения** в области слева, даже если эта функция ранее была установлена на виртуальной машине.  Предложение не отобразится, если эта виртуальная машина не подключена к Azure Monitor для виртуальных машин. 

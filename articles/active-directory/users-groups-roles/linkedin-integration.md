@@ -13,12 +13,12 @@ ms.author: curtand
 ms.reviewer: beengen
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 08d6b12f897b8b7efb150b11ae4b3f5e2440f7c8
-ms.sourcegitcommit: c5021f2095e25750eb34fd0b866adf5d81d56c3a
+ms.openlocfilehash: d27cd30d6543d967cca2648597854a06f8ea4eb7
+ms.sourcegitcommit: 814778c54b59169c5899199aeaa59158ab67cf44
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88797995"
+ms.lasthandoff: 09/13/2020
+ms.locfileid: "90053979"
 ---
 # <a name="integrate-linkedin-account-connections-in-azure-active-directory"></a>Интеграция подключений учетных записей LinkedIn в Azure Active Directory
 
@@ -29,7 +29,7 @@ ms.locfileid: "88797995"
 >
 > Исключения:
 >
-> * Этот параметр недоступен для клиентов, использующих Microsoft Cloud for US Government, Microsoft Cloud Germany, а также служб Azure и Office 365, обслуживаемых 21Vianet в Китае.
+> * Этот параметр недоступен для клиентов, использующих Microsoft Cloud для государственных организаций США, Microsoft Cloud Германии или Azure и Microsoft 365, которыми управляет 21Vianet в Китае.
 > * По умолчанию этот параметр отключен для организаций Azure AD, подготовленных в Германии. Обратите внимание, что этот параметр недоступен для клиентов, использующих Microsoft Cloud Germany.
 > * По умолчанию этот параметр отключен для организаций, подготовленных во Франции.
 >
@@ -72,7 +72,7 @@ ms.locfileid: "88797995"
 1. Войдите в Microsoft 365 с помощью учетной записи администратора.
 1. Запустите PowerShell.
 1. Установите модуль Azure AD, выполнив `Install-Module AzureAD`
-1. Выполните следующий скрипт:
+1. Выполните следующий сценарий:
 
   ``` PowerShell
   $groupId = "GUID of the target group"
@@ -99,7 +99,7 @@ ms.locfileid: "88797995"
    **Enabled** | Параметр **Show LinkedIn features in Office applications** (Показывать функции LinkedIn в приложениях Office) в Office 2016 включен. Пользователи в вашей организации могут использовать функции LinkedIn в приложениях Office 2016.
    **Отключено** | Параметр **Show LinkedIn features in Office applications** (Показывать функции LinkedIn в приложениях Office) в Office 2016 отключен, и пользователи не могут изменить это. Пользователи в вашей организации не могут использовать функции LinkedIn в приложениях Office 2016.
 
-Эта групповая политика касается только приложений Office 2016 для локальных компьютеров. Если пользователи отключают LinkedIn в приложениях Office 2016, они по-прежнему смогут просматривать функции LinkedIn в Office 365.
+Эта групповая политика касается только приложений Office 2016 для локальных компьютеров. Если пользователи отключают LinkedIn в приложениях Office 2016, они по-прежнему могут просматривать функции LinkedIn в Microsoft 365.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

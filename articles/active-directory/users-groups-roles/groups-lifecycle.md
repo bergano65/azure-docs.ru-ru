@@ -15,12 +15,12 @@ ms.author: curtand
 ms.reviewer: krbain
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 0ed286cf2b11429d5f0f56b3a85f173c2a39bc81
-ms.sourcegitcommit: c5021f2095e25750eb34fd0b866adf5d81d56c3a
+ms.openlocfilehash: eb51f402cd7032358e6a9d2f9fad9aa64316b809
+ms.sourcegitcommit: 814778c54b59169c5899199aeaa59158ab67cf44
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88799304"
+ms.lasthandoff: 09/13/2020
+ms.locfileid: "90054557"
 ---
 # <a name="configure-the-expiration-policy-for-microsoft-365-groups"></a>Настройка политики срока действия для групп Microsoft 365
 
@@ -42,7 +42,7 @@ ms.locfileid: "88799304"
 
 ## <a name="activity-based-automatic-renewal"></a>Автоматическое продление на основе действий
 
-Благодаря Azure AD Intelligence теперь группы автоматически обновляются в зависимости от того, были ли они использованы недавно. Эта функция устраняет потребность в ручных действиях владельцами групп, поскольку она основана на действиях пользователей в группах по Office 365, например Outlook, SharePoint или командам. Например, если владелец или член группы выполняет такие действия, как отправка документа в SharePoint, доступ к каналу команд или отправка сообщения электронной почты группе в Outlook, группа автоматически обновляется, и владелец не получает уведомлений о продлении.
+Благодаря Azure AD Intelligence теперь группы автоматически обновляются в зависимости от того, были ли они использованы недавно. Эта функция устраняет потребность в ручных действиях владельцами групп, поскольку она основана на действиях пользователей в группах в Microsoft 365ных службах, таких как Outlook, SharePoint или Teams. Например, если владелец или член группы выполняет такие действия, как отправка документа в SharePoint, доступ к каналу команд или отправка сообщения электронной почты группе в Outlook, группа автоматически обновляется, и владелец не получает уведомлений о продлении.
 
 ### <a name="activities-that-automatically-renew-group-expiration"></a>Действия, которые автоматически возобновляют срок действия группы
 

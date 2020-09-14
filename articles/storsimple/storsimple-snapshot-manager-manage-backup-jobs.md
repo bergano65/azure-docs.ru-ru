@@ -3,7 +3,7 @@ title: Задания архивации StorSimple Snapshot Manager | Доку�
 description: Узнайте, как использовать оснастку консоли MMC "Диспетчер моментальных снимков StorSimple" для просмотра запланированных, выполняющихся и завершенных заданий архивации, а также управления ими.
 services: storsimple
 documentationcenter: NA
-author: twooley
+author: alkohli
 manager: timlt
 editor: ''
 ms.assetid: bf4dcff6-c819-4766-b9d9-9922831cb200
@@ -13,13 +13,13 @@ ms.topic: how-to
 ms.tgt_pltfrm: NA
 ms.workload: TBD
 ms.date: 06/05/2017
-ms.author: twooley
-ms.openlocfilehash: fb0d330b833c8841e65d650599d74211003843bc
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.author: alkohli
+ms.openlocfilehash: 3c26a84e32a17cba83b5ca895f146e561072fa62
+ms.sourcegitcommit: 814778c54b59169c5899199aeaa59158ab67cf44
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85511491"
+ms.lasthandoff: 09/13/2020
+ms.locfileid: "90054965"
 ---
 # <a name="use-storsimple-snapshot-manager-to-view-and-manage-backup-jobs"></a>Просмотр заданий архивации и управление ими с помощью диспетчера моментальных снимков StorSimple
 
@@ -84,7 +84,7 @@ ms.locfileid: "85511491"
      ![Выполняющиеся задания](./media/storsimple-snapshot-manager-manage-backup-jobs/HCS_SSM_Jobs_running.png)
 3. Чтобы выполнить дополнительные действия для конкретного задания, щелкните правой кнопкой мыши имя задания на панели **Результаты** и выберите необходимые параметры меню.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 * Узнайте, как [использовать диспетчер моментальных снимков StorSimple для администрирования решения StorSimple](storsimple-snapshot-manager-admin.md).
 * Узнайте об [использовании диспетчера моментальных снимков StorSimple для управления каталогом резервных копий](storsimple-snapshot-manager-manage-backup-catalog.md).
 

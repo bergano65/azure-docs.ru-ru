@@ -6,14 +6,14 @@ author: alkohli
 ms.service: databox
 ms.subservice: pod
 ms.topic: troubleshooting
-ms.date: 07/08/2020
+ms.date: 09/10/2020
 ms.author: alkohli
-ms.openlocfilehash: a632e753426def52bb260d7bf01875ec24e2ea9e
-ms.sourcegitcommit: 3541c9cae8a12bdf457f1383e3557eb85a9b3187
+ms.openlocfilehash: 2a40e908677a173862ad715f7024865ff728d0b9
+ms.sourcegitcommit: 814778c54b59169c5899199aeaa59158ab67cf44
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/09/2020
-ms.locfileid: "86200141"
+ms.lasthandoff: 09/13/2020
+ms.locfileid: "90053459"
 ---
 # <a name="troubleshoot-issues-related-to-azure-data-box-and-azure-data-box-heavy"></a>Устранение неполадок, связанных с Azure Data Box и Azure Data Box Heavy
 
@@ -33,7 +33,7 @@ ms.locfileid: "86200141"
 | Тип данных или файла | Формат данных или тип файла не поддерживаются. |Скачайте списки ошибок. <br> Для страничных BLOB-объектов или управляемых дисков убедитесь, что данные находятся в 512-байтах и скопированы в предварительно созданные папки. [Подробнее](#data-or-file-type-errors). |
 | Некритические ошибки BLOB-объекта или файла  | Имена BLOB-объектов или файлов не соответствуют правилам именования Azure, или тип файла не поддерживается. | Эти большие двоичные объекты или файлы не могут быть скопированы, или имена могут быть изменены. [Узнайте, как устранить эти ошибки](#non-critical-blob-or-file-errors). |
 
-\*Первые четыре категории ошибок являются критическими и должны быть исправлены, прежде чем можно будет приступить к подготовке к отправке.
+\* Первые четыре категории ошибок являются критическими и должны быть исправлены, прежде чем можно будет приступить к подготовке к отправке.
 
 
 ## <a name="container-or-share-name-errors"></a>Ошибки имени контейнера или общего ресурса
@@ -53,8 +53,8 @@ ms.locfileid: "86200141"
     - Имена могут содержать только буквы, цифры и дефисы.
     - Имена не могут начинаться или заканчиваться дефисами.
     - Имена не могут иметь последовательные дефисы.
-    - Примеры допустимых имен: `my-folder-1` ,`my-really-extra-long-folder-111`
-    - Примеры недопустимых имен: `my-folder_1` , `my` , `--myfolder` , `myfolder--` ,`myfolder!`
+    - Примеры допустимых имен: `my-folder-1` , `my-really-extra-long-folder-111`
+    - Примеры недопустимых имен: `my-folder_1` , `my` , `--myfolder` , `myfolder--` , `myfolder!`
 
     Дополнительные сведения см. в разделе соглашения об именовании Azure для [имен контейнеров](https://docs.microsoft.com/rest/api/storageservices/naming-and-referencing-containers--blobs--and-metadata#container-names) и [общих имен](https://docs.microsoft.com/rest/api/storageservices/naming-and-referencing-shares--directories--files--and-metadata#share-names).
 
@@ -72,8 +72,8 @@ ms.locfileid: "86200141"
     - Имена могут содержать только буквы, цифры и дефисы.
     - Имена не могут начинаться или заканчиваться дефисами.
     - Имена не могут иметь последовательные дефисы.
-    - Примеры допустимых имен: `my-folder-1` ,`my-really-extra-long-folder-111`
-    - Примеры недопустимых имен: `my-folder_1` , `my` , `--myfolder` , `myfolder--` ,`myfolder!`
+    - Примеры допустимых имен: `my-folder-1` , `my-really-extra-long-folder-111`
+    - Примеры недопустимых имен: `my-folder_1` , `my` , `--myfolder` , `myfolder--` , `myfolder!`
 
     Дополнительные сведения см. в разделе соглашения об именовании Azure для [имен контейнеров](https://docs.microsoft.com/rest/api/storageservices/naming-and-referencing-containers--blobs--and-metadata#container-names) и [общих имен](https://docs.microsoft.com/rest/api/storageservices/naming-and-referencing-shares--directories--files--and-metadata#share-names).
 
@@ -90,8 +90,8 @@ ms.locfileid: "86200141"
     - Имена могут содержать только буквы, цифры и дефисы.
     - Имена не могут начинаться или заканчиваться дефисами.
     - Имена не могут иметь последовательные дефисы.
-    - Примеры допустимых имен: `my-folder-1` ,`my-really-extra-long-folder-111`
-    - Примеры недопустимых имен: `my-folder_1` , `my` , `--myfolder` , `myfolder--` ,`myfolder!`
+    - Примеры допустимых имен: `my-folder-1` , `my-really-extra-long-folder-111`
+    - Примеры недопустимых имен: `my-folder_1` , `my` , `--myfolder` , `myfolder--` , `myfolder!`
 
     Дополнительные сведения см. в разделе соглашения об именовании Azure для [имен контейнеров](https://docs.microsoft.com/rest/api/storageservices/naming-and-referencing-containers--blobs--and-metadata#container-names) и [общих имен](https://docs.microsoft.com/rest/api/storageservices/naming-and-referencing-shares--directories--files--and-metadata#share-names).
     
@@ -112,13 +112,17 @@ ms.locfileid: "86200141"
 
 ### <a name="error_container_or_share_capacity_exceeded"></a>ERROR_CONTAINER_OR_SHARE_CAPACITY_EXCEEDED
 
-**Описание ошибки:** Файловый ресурс Azure ограничивает общую папку до 5 ТБ данных. Превышено ограничение для некоторых общих папок.
+**Описание ошибки:** Файловый ресурс Azure ограничивает общую папку до 5 Тиб данных, а большие файловые ресурсы не включаются в учетную запись хранения. Это ограничение было превышено для некоторых общих папок.
 
 **Предлагаемое решение:** На странице **подключение и копирование** локального веб-интерфейса Скачайте и проверьте файлы ошибок.
 
-Найдите папки с этой проблемой в журналах ошибок и убедитесь, что файлы в этой папке имеют значение менее 5 ТБ.
-
-
+- Найдите папки с этой проблемой из журналов ошибок и убедитесь, что файлы в этой папке имеют значение, равное 5 тиб.
+- Ограничение 5 Тиб не применяется к учетной записи хранения, которая разрешает большие файловые ресурсы. Однако при размещении заказа необходимо настроить большие файловые ресурсы. 
+  - Обратитесь в [Служба поддержки Майкрософт](data-box-disk-contact-microsoft-support.md) и запросите новую метку доставки.
+  - [Включите большие файловые ресурсы в учетной записи хранения.](../storage/files/storage-files-how-to-create-large-file-share.md#enable-large-files-shares-on-an-existing-account)
+  - [Разверните файловые ресурсы в учетной записи хранения](../storage/files/storage-files-how-to-create-large-file-share.md#expand-existing-file-shares) и установите квоту 100 тиб.
+  
+  
 ## <a name="object-or-file-size-limit-errors"></a>Ошибки предельного размера объектов или файлов
 
 Это ошибки, связанные с данными, превышающими максимальный размер объекта или файла, разрешенного в Azure. 

@@ -6,12 +6,12 @@ ms.author: manishku
 ms.service: mysql
 ms.topic: conceptual
 ms.date: 07/09/2020
-ms.openlocfilehash: ad255b2e03cdecd9a87f1af3ce780ae64535bfa2
-ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
+ms.openlocfilehash: 641ff13ec440bb8267e546c54b684ab4453f91a7
+ms.sourcegitcommit: 814778c54b59169c5899199aeaa59158ab67cf44
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/31/2020
-ms.locfileid: "87495086"
+ms.lasthandoff: 09/13/2020
+ms.locfileid: "90052942"
 ---
 # <a name="ssltls-connectivity-in-azure-database-for-mysql"></a>Подключение SSL/TLS в базе данных Azure для MySQL
 
@@ -19,6 +19,9 @@ ms.locfileid: "87495086"
 
 > [!NOTE]
 > Обновление `require_secure_transport` значения параметра сервера не влияет на поведение службы MySQL. Используйте функции принудительного применения SSL и TLS, описанные в этой статье, для защиты подключений к базе данных.
+
+> [!IMPORTANT] 
+> Срок действия корневого сертификата SSL истекает, начиная с октября 26th, 2020 (10/26/2020). Обновите приложение, чтобы использовать [новый сертификат](https://cacerts.digicert.com/DigiCertGlobalRootG2.crt.pem). Дополнительные сведения см. в разделе [запланированные обновления сертификатов](concepts-certificate-rotation.md) .
 
 ## <a name="ssl-default-settings"></a>Параметры SSL по умолчанию
 

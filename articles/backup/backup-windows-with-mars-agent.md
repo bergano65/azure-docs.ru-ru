@@ -3,12 +3,12 @@ title: Резервное копирование компьютеров Windows 
 description: Используйте агент Службы восстановления Microsoft Azure (MARS) для резервного копирования компьютеров Windows.
 ms.topic: conceptual
 ms.date: 03/03/2020
-ms.openlocfilehash: 55eb8bdf069fd1b5793468ae52f764eb4288f261
-ms.sourcegitcommit: 3fb5e772f8f4068cc6d91d9cde253065a7f265d6
+ms.openlocfilehash: d2cdd5d1fa98462a70d72fd9f8723685952b665a
+ms.sourcegitcommit: 814778c54b59169c5899199aeaa59158ab67cf44
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89182094"
+ms.lasthandoff: 09/13/2020
+ms.locfileid: "90052228"
 ---
 # <a name="back-up-windows-server-files-and-folders-to-azure"></a>Резервное копирование файлов и папок Windows Server в Azure
 

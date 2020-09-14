@@ -7,12 +7,12 @@ ms.topic: how-to
 ms.date: 05/28/2019
 ms.author: ramkris
 ms.reviewer: sngun
-ms.openlocfilehash: b2ebe07f5ae2846f48bc5762a49ad018610af73a
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 5d1251813486d4b7406f89ac9c09c49f985fa205
+ms.sourcegitcommit: 814778c54b59169c5899199aeaa59158ab67cf44
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85260616"
+ms.lasthandoff: 09/13/2020
+ms.locfileid: "90055288"
 ---
 # <a name="azure-cosmos-db-bulk-executor-library-overview"></a>Общие сведения о библиотеке массового исполнителя в Azure Cosmos DB
  
@@ -25,6 +25,9 @@ Azure Cosmos DB — это быстрая, гибкая и глобально р
 
 > [!NOTE] 
 > Сейчас библиотека массового исполнителя поддерживает операции импорта и обновления. Она может использоваться только учетными записями API SQL Azure Cosmos DB и API Gremlin.
+
+> [!IMPORTANT]
+> В настоящее время библиотека небольшого выполнителя не поддерживается для учетных записей без [сервера](serverless.md) . В .NET рекомендуется использовать [пакетную поддержку](https://devblogs.microsoft.com/cosmosdb/introducing-bulk-support-in-the-net-sdk/) , доступную в версии v3 пакета SDK.
  
 ## <a name="key-features-of-the-bulk-executor-library"></a>Основные возможности библиотеки массового исполнителя  
  
@@ -46,7 +49,7 @@ Azure Cosmos DB — это быстрая, гибкая и глобально р
 
 Библиотека операций с массовым исполнителем гарантирует максимальное использование пропускной способности, выделенной для коллекции. Она использует  [механизм управления перегрузкой в стиле AIMD](https://tools.ietf.org/html/rfc5681) для каждого диапазона ключей разделов Azure Cosmos DB, чтобы эффективно обрабатывать ограничения частоты запросов и время ожидания. 
 
-## <a name="next-steps"></a>Следующие шаги 
+## <a name="next-steps"></a>Next Steps 
   
 * Дополнительные сведения см. в примерах приложений, использующих библиотеку небольшого выполнителя в [.NET](bulk-executor-dot-net.md) и [Java](bulk-executor-java.md).  
 * Ознакомьтесь со сведениями и заметками о выпуске пакета SDK для массового исполнителя в статьях для [.NET](sql-api-sdk-bulk-executor-dot-net.md) и для [Java](sql-api-sdk-bulk-executor-java.md).

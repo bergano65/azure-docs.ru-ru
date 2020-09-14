@@ -11,12 +11,12 @@ author: iainfoulds
 manager: daveba
 ms.reviewer: michmcla
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: e294aa2580dd9f0cceb539a2696e7ebbf08c4afe
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 829a82cb94e5c2a7e7cbc9190047c368299612cd
+ms.sourcegitcommit: 814778c54b59169c5899199aeaa59158ab67cf44
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87051004"
+ms.lasthandoff: 09/13/2020
+ms.locfileid: "90052755"
 ---
 # <a name="features-and-licenses-for-azure-multi-factor-authentication"></a>Функции и лицензии для Многофакторной идентификации Azure
 
@@ -41,7 +41,7 @@ ms.locfileid: "87051004"
 
 Приведенная ниже таблица содержит список функций, доступных в различных версиях Многофакторной идентификации Azure. Спланируйте потребности в защите проверки подлинности пользователей, а затем определите, какой подход соответствует этим требованиям. Например, несмотря на то, что Azure AD Free предоставляет параметры безопасности по умолчанию с многофакторной идентификацией Azure, для запроса проверки подлинности можно использовать только мобильное приложение, а не телефонный звонок или SMS-сообщение. Этот подход может быть ограничением, если не удастся убедиться, что на персональном устройстве пользователя установлено мобильное приложение проверки подлинности.
 
-| Компонент | Параметры безопасности по умолчанию Azure AD Free | Глобальные администраторы Azure AD Free | Приложения Office 365 | Azure AD Premium (P1 или P2) |
+| Компонент | Параметры безопасности по умолчанию Azure AD Free | Глобальные администраторы Azure AD Free | Приложения Microsoft 365 | Azure AD Premium (P1 или P2) |
 | --- |:---:|:---:|:---:|:---:|
 | Защита учетных записей администратора клиента Azure AD с помощью MFA | ● | ● (только учетные записи *глобального администратора Azure AD*) | ● | ● |
 | Мобильное приложение в качестве второго фактора | ● | ● | ● | ● |
@@ -58,11 +58,11 @@ ms.locfileid: "87051004"
 
 ## <a name="purchase-and-enable-azure-multi-factor-authentication"></a>Приобретение и включение Многофакторной идентификации Azure
 
-Чтобы использовать Многофакторную идентификацию Azure, зарегистрируйтесь для использования соответственного уровня Azure AD или приобретите его. Azure AD поставляется в четырех выпусках — бесплатном, приложениях Office 365, Premium P1 и Premium P2.
+Чтобы использовать Многофакторную идентификацию Azure, зарегистрируйтесь для использования соответственного уровня Azure AD или приобретите его. Azure AD поставляется в четырех выпусках — бесплатном, Microsoft 365 приложениях, Premium P1 и Premium P2.
 
 Выпуск "Бесплатный" входит в состав подписки Azure. Сведения об использовании параметров безопасности по умолчанию или защите учетных записей с помощью роли *глобального администратора Azure AD* см. в [разделе ниже](#azure-ad-free-tier).
 
-Выпуски Azure AD Premium доступны через представителя корпорации Майкрософт, в [программе Open Volume License](https://www.microsoft.com/licensing/licensing-programs/open-license.aspx) и [программе поставщиков облачных решений](https://go.microsoft.com/fwlink/?LinkId=614968&clcid=0x409). Подписчики Azure и Microsoft 365 также могут покупать Azure Active Directory Premium P1 и P2 в сети. Для этого необходимо выполнить [вход в систему](https://portal.office.com/Commerce/Catalog.aspx).
+Выпуски Azure AD Premium доступны через представителя корпорации Майкрософт, в [программе Open Volume License](https://www.microsoft.com/licensing/licensing-programs/open-license.aspx) и [программе поставщиков облачных решений](https://go.microsoft.com/fwlink/?LinkId=614968&clcid=0x409). Подписчики Azure и Microsoft 365 могут приобрести Active Directory Premium P1 и P2 через Интернет. Для этого необходимо выполнить [вход в систему](https://portal.office.com/Commerce/Catalog.aspx).
 
 После приобретения требуемого уровня Azure AD [спланируйте и разверните Многофакторную идентификацию Azure](howto-mfa-getstarted.md).
 

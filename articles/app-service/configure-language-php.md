@@ -5,12 +5,12 @@ ms.devlang: php
 ms.topic: article
 ms.date: 06/02/2020
 zone_pivot_groups: app-service-platform-windows-linux
-ms.openlocfilehash: c510d6f1cc2aa4a7e71f64e0c296e14a9896614e
-ms.sourcegitcommit: 6fc156ceedd0fbbb2eec1e9f5e3c6d0915f65b8e
+ms.openlocfilehash: afac8273b5729bcf5470be471145214426dc7dab
+ms.sourcegitcommit: 814778c54b59169c5899199aeaa59158ab67cf44
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/21/2020
-ms.locfileid: "88717988"
+ms.lasthandoff: 09/13/2020
+ms.locfileid: "90055305"
 ---
 # <a name="configure-a-php-app-for-azure-app-service"></a>Настройка приложения PHP для службы приложений Azure
 
@@ -119,7 +119,7 @@ fi
 
 Если вы хотите, чтобы служба приложений выполняла популярные средства автоматизации во время развертывания, например grunt, Bower или gulp, необходимо предоставить [Пользовательский скрипт развертывания](https://github.com/projectkudu/kudu/wiki/Custom-Deployment-Script). Служба приложений запускает этот скрипт при развертывании с помощью Git или при [развертывании ZIP](deploy-zip.md) с включенной автоматизацией сборок. 
 
-Чтобы разрешить репозиторию запускать эти средства, необходимо добавить их в зависимости в *package.js.* Пример.
+Чтобы разрешить репозиторию запускать эти средства, необходимо добавить их в зависимости в *package.js.* Пример:
 
 ```json
 "dependencies": {
@@ -262,7 +262,7 @@ az resource update --name web --resource-group <group-name> --namespace Microsof
 ```
 <IfModule mod_rewrite.c>
     RewriteEngine on
-    RewriteCond %{REQUEST_URI} ^/$
+    RewriteCond %{REQUEST_URI} ^(.*)
     RewriteRule ^(.*)$ /public/$1 [NC,L,QSA]
 </IfModule>
 ```

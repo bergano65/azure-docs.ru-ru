@@ -11,12 +11,12 @@ author: iainfoulds
 manager: daveba
 ms.collection: M365-identity-device-management
 ms.custom: contperfq4
-ms.openlocfilehash: 40ea8c3d070d8895a6da063789279895f52189e3
-ms.sourcegitcommit: b8702065338fc1ed81bfed082650b5b58234a702
+ms.openlocfilehash: 08f3a3c17a5f6ea519eea04c4b8c5e7025adcbac
+ms.sourcegitcommit: 814778c54b59169c5899199aeaa59158ab67cf44
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/11/2020
-ms.locfileid: "88116773"
+ms.lasthandoff: 09/13/2020
+ms.locfileid: "90052364"
 ---
 # <a name="what-authentication-and-verification-methods-are-available-in-azure-active-directory"></a>Какие методы проверки подлинности и подтверждения доступны в Azure Active Directory?
 
@@ -212,7 +212,7 @@ Helga@contoso.com,1234567,1234567abcdef1234567abcdef,60,Contoso,HardwareKey
 
 ### <a name="predefined-questions"></a>Стандартные вопросы
 
-Следующие стандартные контрольные вопросы доступны для использования в качестве метода проверки во время SSPR. Все эти контрольные вопросы переведены и локализованы на все языки, поддерживаемые Office 365. Язык вопросов зависит от языкового стандарта браузера пользователя.
+Следующие стандартные контрольные вопросы доступны для использования в качестве метода проверки во время SSPR. Все эти контрольные вопросы переведены и локализованы в полный набор языков Microsoft 365, основанных на языковом стандарте браузера пользователя:
 
 * В каком городе вы познакомились с первой супругой или первым супругом?
 * В каком городе познакомились ваши родители?

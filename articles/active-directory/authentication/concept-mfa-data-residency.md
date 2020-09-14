@@ -11,16 +11,16 @@ author: iainfoulds
 manager: daveba
 ms.reviewer: sasubram
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: ee4b15311dfefecd9a533add9c5a028a9b7b22fd
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 8bed0f6cc32c25563d322da77193c5a3b6072902
+ms.sourcegitcommit: 814778c54b59169c5899199aeaa59158ab67cf44
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87051162"
+ms.lasthandoff: 09/13/2020
+ms.locfileid: "90052285"
 ---
 # <a name="data-residency-and-customer-data-for-azure-multi-factor-authentication"></a>Место расположения данных и данные клиентов для многофакторной идентификации Azure
 
-Azure AD хранит данные клиентов в географическом расположении на основе адреса, указанного вашей организацией при оформлении подписки на какую-либо службу Microsoft Online Services, например Office 365 или Azure. Чтобы узнать, где хранятся ваши данные клиентов, см. раздел [Где находятся ваши данные?](https://www.microsoft.com/trustcenter/privacy/where-your-data-is-located) Центра управления безопасностью Майкрософт.
+Данные клиентов хранятся в службе Azure AD в географическом расположении на основе адреса, предоставленного вашей организацией, при подписке на службу Microsoft Online Service, например Microsoft 365 и Azure. Чтобы узнать, где хранятся ваши данные клиентов, см. раздел [Где находятся ваши данные?](https://www.microsoft.com/trustcenter/privacy/where-your-data-is-located) Центра управления безопасностью Майкрософт.
 
 Облачная многофакторная идентификация Azure и сервер Многофакторной идентификации Azure обрабатывают и хранят некоторые персональные данные и данные организации. В этой статье рассказано, где хранятся те или иные данные.
 
