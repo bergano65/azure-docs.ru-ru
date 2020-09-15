@@ -2,26 +2,12 @@
   href: index.yml
 - name: API перевода
   items:
-    - name: Обзор
-      items:
-        - name: Что такое Переводчик?
-          href: translator-info-overview.md
-        - name: Поддержка языков
-          href: 'https://docs.microsoft.com/azure/cognitive-services/translator/language-support#customization'
-    - name: Краткие руководства
-      items:
-        - name: Перевод текста
-          href: quickstart-translate.md
-        - name: Транслитерация текста
-          href: quickstart-transliterate.md
-        - name: Определение языка
-          href: quickstart-detect.md
-        - name: Поиск вариантов перевода слова
-          href: quickstart-dictionary.md
-        - name: Получение сведений о поддерживаемых языках
-          href: quickstart-languages.md
-        - name: Определение длины предложения
-          href: quickstart-sentences.md
+    - name: Что такое Переводчик?
+      href: translator-info-overview.md
+    - name: Краткое руководство
+      href: quickstart-translator.md
+    - name: Поддержка языков
+      href: 'https://docs.microsoft.com/azure/cognitive-services/translator/language-support#customization'
     - name: Учебники
       items:
         - name: Создание приложения WPF для службы "Переводчик" (C#)
