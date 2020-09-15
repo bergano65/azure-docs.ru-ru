@@ -5,46 +5,43 @@ services: container-service
 ms.topic: article
 ms.date: 08/27/2020
 author: palma21
-ms.openlocfilehash: 4b5ccd2712a95f5f020daa0161f1b5908a38a62e
-ms.sourcegitcommit: 9c262672c388440810464bb7f8bcc9a5c48fa326
+ms.openlocfilehash: edb38b0884629ebddb646df9d12d8b2e8d07b403
+ms.sourcegitcommit: 07166a1ff8bd23f5e1c49d4fd12badbca5ebd19c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/03/2020
-ms.locfileid: "89422089"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90089553"
 ---
 # <a name="use-the-azure-disk-container-storage-interface-csi-drivers-in-azure-kubernetes-service-aks-preview"></a>Использование драйверов интерфейса хранилища контейнера дисков Azure (CSI) в службе Kubernetes Azure (AKS) (Предварительная версия)
-Драйвер CSI для дисков Azure — это драйвер, совместимый с [CSI спецификацией](https://github.com/container-storage-interface/spec/blob/master/spec.md) , используемый AKS для управления жизненным циклом дисков Azure. 
+Драйвер интерфейса хранилища контейнеров дисков Azure (CSI) — это драйвер, совместимый с [спецификациями CSI](https://github.com/container-storage-interface/spec/blob/master/spec.md), используемый службой Kubernetes Azure (AKS) для управления жизненным циклом дисков Azure.
 
-Интерфейс хранилища контейнера (CSI) является стандартом для предоставления произвольных блоков и систем хранения файлов в контейнерные рабочие нагрузки в Kubernetes. Принимая и используя CSI, служба Kubernetes Azure (AKS) может писать, развертывать и выполнять итерацию подключаемых модулей, предоставляя новые или улучшающие существующие системы хранения в Kubernetes без необходимости касаться основного кода Kubernetes и ожидания циклов выпуска.
+CSI является стандартом для предоставления произвольных блоков и систем хранения файлов в контейнерные рабочие нагрузки на Kubernetes. Принимая и используя CSI, AKS может писать, развертывать и выполнять итерацию подключаемых модулей, чтобы предоставлять новые или улучшать существующие системы хранения в Kubernetes, не переходя к основному коду Kubernetes и дожидаться циклов выхода.
 
 Сведения о создании кластера AKS с поддержкой драйвера CSI см. в статье [Включение драйверов CSI для дисков Azure и файлов Azure в AKS](csi-storage-drivers.md).
 
 >[!NOTE]
-> *"Драйверы в дереве"* относятся к текущим драйверам хранилища, которые являются частью основного кода kubernetes, и новыми ДРАЙВЕРами CSI, которые являются подключаемыми модулями.
+> *Драйверы в дереве* относятся к текущим драйверам хранилища, которые являются частью основного кода Kubernetes, а также новыми драйверами CSI, которые являются подключаемыми модулями.
 
-## <a name="use-csi-persistent-volumes-pv-with-azure-disks"></a>Использование постоянных томов CSI (ПС) с дисками Azure 
+## <a name="use-csi-persistent-volumes-with-azure-disks"></a>Использование постоянных томов CSI с дисками Azure
 
-[Постоянный том](concepts-storage.md#persistent-volumes) представляет собой часть хранилища, подготовленную для использования с Kubernetes Pod. Постоянный том может использоваться одним или несколькими модулями и может быть подготовлен динамически или статически. В этой статье описывается динамическое создание постоянных томов с дисками Azure, используемых одним модулем pod в кластере службы Azure Kubernetes (AKS). Сведения о статической подготовке см. [в статье Создание и использование тома с дисками Azure вручную](azure-disk-volume.md).
+[Постоянный том](concepts-storage.md#persistent-volumes) (ПС) представляет собой часть хранилища, подготовленную для использования с модулями Kubernetes. ПС может использоваться одним или несколькими модулями Pod и может быть динамическим или статически подготовленным. В этой статье показано, как динамически создать постоянного хранилища версий с дисками Azure для использования одним Pod в кластере AKS. Сведения о статической подготовке см. [в статье Создание и использование тома с дисками Azure вручную](azure-disk-volume.md).
 
 [!INCLUDE [preview features callout](./includes/preview/preview-callout.md)]
 
 Дополнительные сведения о томах Kubernetes см. в статье, [посвященной возможностям хранения данных приложений в AKS][concepts-storage].
 
-## <a name="dynamically-create-azure-disk-pvs-using-the-built-in-storage-classes"></a>Динамическое создание постоянного хранилища версий диска Azure с помощью встроенных классов хранения
+## <a name="dynamically-create-azure-disk-pvs-by-using-the-built-in-storage-classes"></a>Динамическое создание постоянного хранилища версий диска Azure с помощью встроенных классов хранения
 
-Класс хранения используется для определения того, как единица хранения создается динамически с помощью постоянного тома. Дополнительные сведения о классах хранения Kubernetes см. в разделе [Kubernetes Storage Classes][kubernetes-storage-classes] (Классы хранения Kubernetes). При использовании драйверов хранилища CSI в AKS существует 2 дополнительных встроенных `StorageClasses` , использующих **драйверы хранилища Azure CSI**. Дополнительные классы хранения CSI создаются с кластером наряду с классами хранения по умолчанию в дереве.
+Класс хранения используется для определения того, как единица хранения создается динамически с помощью постоянного тома. Дополнительные сведения о классах хранения Kubernetes см. в разделе [классы хранилища Kubernetes][kubernetes-storage-classes]. При использовании драйверов хранилища CSI в AKS есть два дополнительных встроенных `StorageClasses` драйвера, которые используют драйверы хранилища CSI для дисков Azure. Дополнительные классы хранения CSI создаются с кластером наряду с классами хранения по умолчанию в дереве.
 
->[!NOTE]
-> *"Драйверы в дереве"* относятся к текущим драйверам хранилища, которые являются частью основного кода kubernetes и драйверов CSI, которые являются подключаемыми модулями.
+- `managed-csi`: Использует Azure SSD (цен. категория "Стандартный") локально избыточное хранилище (LRS) для создания управляемого диска.
+- `managed-csi-premium`: Использует Azure Premium LRS для создания управляемого диска.
 
-- `managed-csi` — Использует локально избыточное хранилище Azure Стандардссд (LRS) для создания управляемого диска.
-- `managed-csi-premium` — Использует локально избыточное хранилище Azure Premium (LRS) для создания управляемого диска. 
+Политика reclaimа в обоих классах хранения гарантирует, что базовый диск Azure будет удален при удалении соответствующего PV. Классы хранения также настраивают постоянного хранилища версий для расширения. Вам нужно просто изменить постоянное утверждение тома (PVC) с новым размером.
 
-Политика reclaimа в обоих классах хранения гарантирует, что базовый диск Azure будет удален при удалении соответствующего постоянного тома. Классы хранения также настраивают постоянное создание расширяемых томов, поэтому нужно просто изменить утверждение Постоянного тома с новым размером.
+Чтобы использовать эти классы хранения, создайте [PVC](concepts-storage.md#persistent-volume-claims) и соответствующий модуль, который ссылается на них и использует их. PVC используется для автоматической инициализации хранилища на основе класса хранилища. PVC может использовать один из предварительно созданных классов хранения или определяемый пользователем класс хранения для создания диска, управляемого Azure, для требуемого номера SKU и размера. При создании определения Pod указывается PVC для запроса требуемого хранилища.
 
-Чтобы использовать эти классы хранения, нужно просто создать [постоянное требование к тому (PVC)](concepts-storage.md#persistent-volume-claims) и соответствующий модуль, который ссылается на них и использует их. Утверждение постоянного тома (PVC) используется для автоматической подготовки хранилища на основе класса хранения. PVC может использовать один из предварительно созданных классов хранения или определяемый пользователем класс хранения для создания диска, управляемого Azure, для требуемого номера SKU и размера. При создании определения pod указывается утверждение постоянного тома для запроса требуемого хранилища.
-
-Создайте пример Pod и соответствующее утверждение Постоянного тома с помощью команды [kubectl Apply][kubectl-apply] :
+Создайте пример Pod и соответствующую виртуальную цепь с помощью команды [kubectl Apply][kubectl-apply] :
 
 ```console
 $ kubectl apply -f https://raw.githubusercontent.com/kubernetes-sigs/azuredisk-csi-driver/master/deploy/example/pvc-azuredisk-csi.yaml
@@ -60,7 +57,7 @@ pod/nginx-azuredisk created
 $ kubectl exec nginx-azuredisk -- touch /mnt/azuredisk/test.txt
 ```
 
-Теперь можно проверить, правильно ли подключен диск, выполнив следующую команду и убедившись, что `test.txt` файл отображается в выходных данных: 
+Теперь можно проверить, правильно ли подключен диск, выполнив следующую команду и убедившись, что `test.txt` файл отображается в выходных данных:
 
 ```console
 $ kubectl exec nginx-azuredisk -- ls /mnt/azuredisk
@@ -72,14 +69,14 @@ test.txt
 
 ## <a name="create-a-custom-storage-class"></a>Создание пользовательского класса хранилища
 
-Классы хранения по умолчанию соответствуют наиболее распространенным сценариям, но не всем. В некоторых случаях может потребоваться настроить собственный класс хранения с собственными параметрами. Для проиллюстрировать существует сценарий, в котором может потребоваться изменить `volumeBindingMode` . 
+Классы хранения по умолчанию соответствуют наиболее распространенным сценариям, но не всем. В некоторых случаях может потребоваться настроить собственный класс хранения с собственными параметрами. Например, существует сценарий, в котором может потребоваться изменить `volumeBindingMode` класс.
 
-Классы хранения по умолчанию используют объект `volumeBindingMode: Immediate` , гарантирующий, что происходит сразу же после создания персистентволумеклаим. В случаях, когда пулы узлов ограничены топологией, например с помощью Зоны доступности, постоянные тома будут привязаны или подготовлены без знания требований к планированию Pod (в данном случае в определенной зоне).
+Классы хранения по умолчанию используют `volumeBindingMode: Immediate` класс, гарантирующий, что происходит сразу же после создания PVC. В случаях, когда пулы узлов ограничены топологией, например с помощью зон доступности, постоянного хранилища версий будет привязана или подготовлена без знания требований к планированию Pod (в данном случае в определенной зоне).
 
-Для решения этой ситуации можно использовать `volumeBindingMode: WaitForFirstConsumer` , который будет задерживать привязку и подготовку персистентволуме до тех пор, пока не будет создан модуль, использующий персистентволумеклаим. Таким образом, ПС будет соответствовать и подготовлен в зоне доступности (или другой топологии), указанной в ограничениях расписания Pod. 
+Для решения этой ситуации можно использовать `volumeBindingMode: WaitForFirstConsumer` , что откладывает привязку и подготовку PV до тех пор, пока не будет создан модуль, использующий PVC. Таким образом, ПС будет соответствовать и подготовлен в зоне доступности (или другой топологии), указанной в ограничениях расписания Pod.
 
-Создайте файл с именем `sc-azuredisk-csi-waitforfirstconsumer.yaml` и вставьте приведенный ниже манифест.
-Класс хранения совпадает `managed-csi` с классом хранения, но с другим `volumeBindingMode` . 
+Создайте файл с именем `sc-azuredisk-csi-waitforfirstconsumer.yaml` и вставьте следующий манифест.
+Класс хранения совпадает с классом хранения, `managed-csi` но с другим `volumeBindingMode` классом.
 
 ```yaml
 kind: StorageClass
@@ -104,13 +101,13 @@ storageclass.storage.k8s.io/azuredisk-csi-waitforfirstconsumer created
 
 ## <a name="volume-snapshots"></a>Моментальные снимки томов
 
-Драйвер CSI диска Azure поддерживает создание [моментальных снимков постоянных томов](https://kubernetes-csi.github.io/docs/snapshot-restore-feature.html). В рамках этой возможности драйвер может выполнять *полные* или [ *добавочные* моментальные снимки](../virtual-machines/windows/disks-incremental-snapshots.md) в зависимости от значения, заданного в `incremental` параметре (по умолчанию это значение равно true). 
+Драйвер CSI диска Azure поддерживает создание [моментальных снимков постоянных томов](https://kubernetes-csi.github.io/docs/snapshot-restore-feature.html). В рамках этой возможности драйвер может выполнять *полные* или [ *добавочные* моментальные снимки](../virtual-machines/windows/disks-incremental-snapshots.md) в зависимости от значения, заданного в `incremental` параметре (по умолчанию это значение равно true).
 
 Дополнительные сведения о всех параметрах см. в разделе [Параметры класса моментальных снимков тома](https://github.com/kubernetes-sigs/azuredisk-csi-driver/blob/master/docs/driver-parameters.md#volumesnapshotclass).
 
 ### <a name="create-a-volume-snapshot"></a>Создание моментального снимка тома
 
-Чтобы проиллюстрировать эту возможность, создайте [класс моментальных снимков томов](https://github.com/kubernetes-sigs/azuredisk-csi-driver/blob/master/deploy/example/snapshot/storageclass-azuredisk-snapshot.yaml) с помощью команды [kubectl Apply][kubectl-apply] :
+В качестве примера этой возможности создайте [класс моментальных снимков томов](https://github.com/kubernetes-sigs/azuredisk-csi-driver/blob/master/deploy/example/snapshot/storageclass-azuredisk-snapshot.yaml) с помощью команды [kubectl Apply][kubectl-apply] :
 
 ```console
 $ kubectl apply -f https://raw.githubusercontent.com/kubernetes-sigs/azuredisk-csi-driver/master/deploy/example/snapshot/storageclass-azuredisk-snapshot.yaml
@@ -118,7 +115,7 @@ $ kubectl apply -f https://raw.githubusercontent.com/kubernetes-sigs/azuredisk-c
 volumesnapshotclass.snapshot.storage.k8s.io/csi-azuredisk-vsc created
 ```
 
-Теперь создадим [моментальный снимок тома](https://github.com/kubernetes-sigs/azuredisk-csi-driver/blob/master/deploy/example/snapshot/azuredisk-volume-snapshot.yaml) из постоянной виртуальной цепи, [созданной динамически в начале этого руководства](#dynamically-create-azure-disk-pvs-using-the-built-in-storage-classes), `pvc-azuredisk` .
+Теперь создадим [моментальный снимок тома](https://github.com/kubernetes-sigs/azuredisk-csi-driver/blob/master/deploy/example/snapshot/azuredisk-volume-snapshot.yaml) из PVC, который [мы динамически создали в начале этого руководства](#dynamically-create-azure-disk-pvs-by-using-the-built-in-storage-classes), `pvc-azuredisk` .
 
 
 ```bash
@@ -127,7 +124,7 @@ $ kubectl apply -f https://raw.githubusercontent.com/kubernetes-sigs/azuredisk-c
 volumesnapshot.snapshot.storage.k8s.io/azuredisk-volume-snapshot created
 ```
 
-Проверьте, правильно ли создан моментальный снимок:
+Убедитесь, что моментальный снимок создан правильно:
 
 ```bash
 $ kubectl describe volumesnapshot azuredisk-volume-snapshot
@@ -187,8 +184,7 @@ test.txt
 
 Клонированный том определяется как дубликат существующего тома Kubernetes. Дополнительные сведения о клонировании томов в Kubernetes см. в концептуальной документации по [клонированию томов](https://kubernetes.io/docs/concepts/storage/persistent-volumes/#volume-cloning).
 
-Драйвер CSI для дисков Azure поддерживает клонирование томов. Чтобы продемонстрировать, создайте [клонированный том](https://github.com/kubernetes-sigs/azuredisk-csi-driver/blob/master/deploy/example/cloning/nginx-pod-restored-cloning.yaml) [ранее созданного](#dynamically-create-azure-disk-pvs-using-the-built-in-storage-classes) `azuredisk-pvc` и [нового Pod для использования](https://github.com/kubernetes-sigs/azuredisk-csi-driver/blob/master/deploy/example/cloning/nginx-pod-restored-cloning.yaml).
-
+Драйвер CSI для дисков Azure поддерживает клонирование томов. Чтобы продемонстрировать, создайте [клонированный том](https://github.com/kubernetes-sigs/azuredisk-csi-driver/blob/master/deploy/example/cloning/nginx-pod-restored-cloning.yaml) [ранее созданного](#dynamically-create-azure-disk-pvs-by-using-the-built-in-storage-classes) `azuredisk-pvc` и [нового Pod для использования](https://github.com/kubernetes-sigs/azuredisk-csi-driver/blob/master/deploy/example/cloning/nginx-pod-restored-cloning.yaml).
 
 
 ```console
@@ -200,7 +196,7 @@ persistentvolumeclaim/pvc-azuredisk-cloning created
 pod/nginx-restored-cloning created
 ```
 
-Теперь можно проверить содержимое клонированного тома, запустив ниже и убедившись, что мы по-прежнему видим `test.txt` созданный файл.
+Теперь можно проверить содержимое клонированного тома, выполнив следующую команду и убедившись, что созданный файл все еще отображается `test.txt` .
 
 ```console
 $ kubectl exec nginx-restored-cloning -- ls /mnt/azuredisk
@@ -210,14 +206,14 @@ outfile
 test.txt
 ```
 
-## <a name="resize-a-persistent-volume-pv"></a>Изменение размера постоянного тома (ПС)
+## <a name="resize-a-persistent-volume"></a>Изменение размера постоянного тома
 
-Вместо этого можно запросить больший объем для PVC. Измените объект PVC и укажите больший размер. Это изменение активирует расширение базового тома, который производит резервное копирование Персистентволуме. 
+Вместо этого можно запросить больший объем для PVC. Измените объект PVC и укажите больший размер. Это изменение активирует расширение базового тома, который производит резервное копирование PV.
 
-> [!NOTE] 
-> Новый Персистентволуме никогда не будет создан для удовлетворения утверждения. Вместо этого размер существующего тома изменяется.
+> [!NOTE]
+> Новый ПС никогда не будет создан для удовлетворения утверждения. Вместо этого размер существующего тома изменяется.
 
-В AKS встроенный `managed-csi` класс хранения уже допускает расширение, поэтому используйте [PVC, созданный ранее с этим классом хранения](#dynamically-create-azure-disk-pvs-using-the-built-in-storage-classes). Виртуальная цепь запросила постоянный том 10Gi. мы можем подтвердить это, выполнив команду:
+В AKS встроенный `managed-csi` класс хранения уже допускает расширение, поэтому используйте [PVC, созданный ранее с этим классом хранения](#dynamically-create-azure-disk-pvs-by-using-the-built-in-storage-classes). PVC запросил постоянный том объемом 10. Мы можем подтвердить, выполнив:
 
 ```console 
 $ kubectl exec -it nginx-azuredisk -- df -h /mnt/azuredisk
@@ -225,10 +221,11 @@ $ kubectl exec -it nginx-azuredisk -- df -h /mnt/azuredisk
 Filesystem      Size  Used Avail Use% Mounted on
 /dev/sdc        9.8G   42M  9.8G   1% /mnt/azuredisk
 ```
+
 > [!IMPORTANT]
 > В настоящее время драйвер CSI диска Azure поддерживает только изменение размера PVC без связанных модулей Pod (и том, не подключенный к определенному узлу).
 
-Таким образом можно удалить созданный ранее модуль:
+Таким образом, мы удалим созданный ранее модуль:
 
 ```console
 $ kubectl delete -f https://raw.githubusercontent.com/kubernetes-sigs/azuredisk-csi-driver/master/deploy/example/nginx-pod-azuredisk.yaml
@@ -254,7 +251,7 @@ pvc-391ea1a6-0191-4022-b915-c8dc4216174a   15Gi       RWO            Delete     
 (...)
 ```
 
-> [!NOTE] 
+> [!NOTE]
 > Виртуальная цепь не будет отражать новый размер, пока не будет снова связан с модулем Pod.
 
 Давайте создадим новый Pod:
@@ -265,7 +262,7 @@ $ kubectl apply -f https://raw.githubusercontent.com/kubernetes-sigs/azuredisk-c
 pod/nginx-azuredisk created
 ```
 
-И, наконец, подтвердите размер PVC и внутри модуля: 
+И, наконец, подтвердите размер PVC и внутри модуля:
 ```console
 $ kubectl get pvc pvc-azuredisk
 NAME            STATUS   VOLUME                                     CAPACITY   ACCESS MODES   STORAGECLASS   AGE
@@ -280,9 +277,9 @@ Filesystem      Size  Used Avail Use% Mounted on
 
 [Azure shared disks](../virtual-machines/windows/disks-shared.md) is an Azure managed disks feature that enables attaching an Azure disk to agent nodes simultaneously. Attaching a managed disk to multiple agent nodes allows you, for example, to deploy new or migrate existing clustered applications to Azure.
 
-> [!IMPORTANT] Currently, only raw block device (`volumeMode: Block`) is supported by the Azure disk CSI driver. Applications should manage the coordination and control of writes, reads, locks, caches, mounts and fencing on the shared disk which is exposed as raw block device.
+> [!IMPORTANT] Currently, only raw block device (`volumeMode: Block`) is supported by the Azure disk CSI driver. Applications should manage the coordination and control of writes, reads, locks, caches, mounts, and fencing on the shared disk, which is exposed as a raw block device.
 
-Let's create file called `shared-disk.yaml` by copying the below that contains the shared disk storage class and PVC:
+Let's create a file called `shared-disk.yaml` by copying the following command that contains the shared disk storage class and PVC:
 
 ```yaml
 apiVersion: storage.k8s.io/v1
@@ -310,7 +307,7 @@ spec:
   storageClassName: managed-csi-shared
 ```
 
-Create the storage class with the [kubectl apply][kubectl-apply] command and specify your `shared-disk.yaml` file:
+Create the storage class with the [kubectl apply][kubectl-apply] command, and specify your `shared-disk.yaml` file:
 
 ```console
 $ kubectl apply -f shared-disk.yaml
@@ -319,7 +316,7 @@ storageclass.storage.k8s.io/managed-csi-shared created
 persistentvolumeclaim/pvc-azuredisk-shared created
 ``` 
 
-Now let's create a file called `deployment-shared.yml` by copying the below:
+Now let's create a file called `deployment-shared.yml` by copying the following command:
 
 ```yaml
 apiVersion: apps/v1
@@ -351,7 +348,7 @@ spec:
             claimName: pvc-azuredisk-shared
 ```
 
-Create the deployment with the [kubectl apply][kubectl-apply] command and specify your `deployment-shared.yml` file:
+Create the deployment with the [kubectl apply][kubectl-apply] command, and specify your `deployment-shared.yml` file:
 
 ```console
 $ kubectl apply -f deployment-shared.yml
@@ -374,7 +371,7 @@ root@deployment-sharedisk-7454978bc6-xh7jp:/# dd if=/dev/zero of=/dev/sdx bs=102
 
 Драйвер CSI диска Azure также поддерживает узлы и контейнеры Windows. Если вы хотите использовать контейнеры Windows, следуйте указаниям в [учебнике по контейнерам Windows](windows-container-cli.md) , чтобы добавить пул узлов Windows.
 
-После создания пула узлов Windows теперь можно просто использовать встроенные классы хранения, такие как `managed-csi` . Вы можете развернуть пример [набора с отслеживанием состояния на основе Windows](https://github.com/kubernetes-sigs/azuredisk-csi-driver/blob/master/deploy/example/windows/statefulset.yaml) , который сохраняет метки времени в файл `data.txt` , развертывая приведенную ниже команду с помощью команды [kubectl Apply][kubectl-apply] :
+После создания пула узлов Windows теперь можно использовать встроенные классы хранения, такие как `managed-csi` . Вы можете развернуть пример [набора с отслеживанием состояния на основе Windows](https://github.com/kubernetes-sigs/azuredisk-csi-driver/blob/master/deploy/example/windows/statefulset.yaml) , который сохранит метки времени в файле `data.txt` , развернув следующую команду с помощью команды [kubectl Apply][kubectl-apply] :
 
  ```console
 $ kubectl apply -f https://raw.githubusercontent.com/kubernetes-sigs/azuredisk-csi-driver/master/deploy/example/windows/statefulset.yaml
@@ -394,10 +391,10 @@ $ kubectl exec -it busybox-azuredisk-0 -- cat c:\mnt\azuredisk\data.txt # on Win
 (...)
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
-- Сведения об использовании драйвера CSI для службы файлов Azure см. в статье [использование файлов Azure с](azure-files-csi.md)драйверами CSI.
-- Дополнительные сведения о рекомендациях по хранению см. в статье рекомендации [по хранению и резервному копированию в службе Azure Kubernetes Service (AKS)][operator-best-practices-storage] .
+- Сведения об использовании драйверов CSI для службы файлов Azure см. в статье [использование файлов Azure с драйверами CSI](azure-files-csi.md).
+- Дополнительные сведения о рекомендациях по хранению см. в статье рекомендации [по хранению и резервному копированию в службе Azure Kubernetes][operator-best-practices-storage].
 
 
 <!-- LINKS - external -->

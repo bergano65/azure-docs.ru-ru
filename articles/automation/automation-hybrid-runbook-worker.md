@@ -3,14 +3,14 @@ title: Обзор гибридной рабочей роли Runbook в служ
 description: Эта статья содержит общие сведения о гибридной рабочей роли Runbook, которую можно использовать для выполнения модулей runbook на компьютерах в локальном центре обработки данных или центре обработки данных поставщика облачных служб.
 services: automation
 ms.subservice: process-automation
-ms.date: 07/16/2020
+ms.date: 09/14/2020
 ms.topic: conceptual
-ms.openlocfilehash: 4d29979e28140b728478d405db934cb41783f4b0
-ms.sourcegitcommit: cee72954f4467096b01ba287d30074751bcb7ff4
+ms.openlocfilehash: f5dc9305df8ce0e26e13738d605849fa75cc53a7
+ms.sourcegitcommit: 07166a1ff8bd23f5e1c49d4fd12badbca5ebd19c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/30/2020
-ms.locfileid: "87448077"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90087900"
 ---
 # <a name="hybrid-runbook-worker-overview"></a>Обзор гибридной рабочей роли Runbook
 
@@ -51,9 +51,9 @@ ms.locfileid: "87448077"
 Для гибридной рабочей роли Runbook необходимы следующие порт и URL-адрес:
 
 * Порт: только исходящий интернет-трафик через TCP-порт 443.
-* Глобальный URL-адрес:`*.azure-automation.net`
-* Глобальный URL-адрес US Gov (Вирджиния):`*.azure-automation.us`
-* Служба агента:`https://<workspaceId>.agentsvc.azure-automation.net`
+* Глобальный URL-адрес: `*.azure-automation.net`
+* Глобальный URL-адрес US Gov (Вирджиния): `*.azure-automation.us`
+* Служба агента: `https://<workspaceId>.agentsvc.azure-automation.net`
 
 При наличии учетной записи службы автоматизации, определенной для конкретного региона, можно ограничить обмен данными гибридной рабочей роли Runbook соответствующим региональным центром обработки данных. Проверьте [записи DNS, используемые службой автоматизации Azure](how-to/automation-region-dns-records.md) для необходимых записей DNS.
 
@@ -63,11 +63,11 @@ ms.locfileid: "87448077"
 
 ### <a name="firewall-use"></a>Использование брандмауэра
 
-Если доступ к Интернету ограничивается брандмауэром, вам нужно изменить его настройки, чтобы разрешить доступ. Если в качестве прокси-сервера используется шлюз Log Analytics, он должен быть настроен для гибридных рабочих ролей Runbook. См. статью о [настройке шлюза Log Analytics для поддержки гибридных рабочих ролей службы автоматизации](../azure-monitor/platform/gateway.md).
+Если доступ к Интернету ограничивается брандмауэром, вам нужно изменить его настройки, чтобы разрешить доступ. Если в качестве прокси-сервера используется шлюз Log Analytics, он должен быть настроен для гибридных рабочих ролей Runbook. См. статью [Настройка шлюза log Analytics для гибридных рабочих ролей Runbook службы автоматизации](../azure-monitor/platform/gateway.md).
 
 ### <a name="service-tags"></a>Теги служб
 
-Служба автоматизации Azure поддерживает теги службы виртуальной сети Azure, начиная с тега службы [гуестандхибридманажемент](../virtual-network/service-tags-overview.md). Теги службы можно использовать для определения элементов управления доступом к сети для [групп безопасности сети](../virtual-network/security-overview.md#security-rules) или [брандмауэра Azure](../firewall/service-tags.md). Теги службы можно использовать вместо конкретных IP-адресов при создании правил безопасности. Указав имя тега службы **гуестандхибридманажемент** в соответствующем поле источника или назначения правила, можно разрешить или запретить трафик для службы автоматизации. Этот тег службы не поддерживает более детализированный контроль за счет ограниченного диапазона IP-адресов в определенном регионе.
+Служба автоматизации Azure поддерживает теги службы виртуальной сети Azure, начиная с тега службы [гуестандхибридманажемент](../virtual-network/service-tags-overview.md). Теги службы можно использовать для определения элементов управления доступом к сети для [групп безопасности сети](../virtual-network/security-overview.md#security-rules) или [брандмауэра Azure](../firewall/service-tags.md). Теги службы можно использовать вместо конкретных IP-адресов при создании правил безопасности. Указав имя тега службы **гуестандхибридманажемент**  в соответствующем поле источника или назначения правила, можно разрешить или запретить трафик для службы автоматизации. Этот тег службы не поддерживает более детализированный контроль за счет ограниченного диапазона IP-адресов в определенном регионе.
 
 Тег службы службы автоматизации Azure предоставляет только IP-адреса, используемые в следующих сценариях:
 
@@ -115,6 +115,20 @@ ms.locfileid: "87448077"
 ### <a name="runbook-permissions-for-a-hybrid-runbook-worker"></a>Разрешения runbook для гибридной рабочей роли Runbook
 
 Модули runbook, запущенные в гибридной рабочей роли Runbook, обращаются к ресурсам за пределами Azure, поэтому они не могут использовать стандартный метод аутентификации модулей runbook в Azure. Модуль runbook предоставляет собственную аутентификацию для локальных ресурсов или настраивает ее с помощью [управляемых удостоверений для ресурсов Azure](../active-directory/managed-identities-azure-resources/tutorial-windows-vm-access-arm.md#grant-your-vm-access-to-a-resource-group-in-resource-manager). Также вы можете указать учетную запись запуска от имени, чтобы предоставить контекст пользователя для всех модулей runbook.
+
+## <a name="view-hybrid-runbook-workers"></a>Просмотр гибридных рабочих ролей Runbook
+
+После включения функции Управление обновлениями на серверах или виртуальных машинах Windows можно выполнить инвентаризацию списка группы гибридных рабочих ролей Runbook в портал Azure. Вы можете просмотреть до 2 000 рабочих ролей на портале, выбрав **группу гибридные рабочие роли** на вкладке в **группе гибридные рабочие роли** в левой области для выбранной учетной записи службы автоматизации.
+
+:::image type="content" source="./media/automation-hybrid-runbook-worker/system-hybrid-workers-page.png" alt-text="Страница групп гибридных рабочих ролей системы учетных записей службы автоматизации" border="false" lightbox="./media/automation-hybrid-runbook-worker/system-hybrid-workers-page.png":::
+
+Если у вас более 2 000 гибридных рабочих ролей, чтобы получить их список, можно выполнить следующий сценарий PowerShell:
+
+```powershell
+"Get-AzSubscription -SubscriptionName "<subscriptionName>" | Set-AzContext
+$workersList = (Get-AzAutomationHybridWorkerGroup -ResourceGroupName "<resourceGroupName>" -AutomationAccountName "<automationAccountName>").Runbookworker
+$workersList | export-csv -Path "<Path>\output.csv" -NoClobber -NoTypeInformation"
+```
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

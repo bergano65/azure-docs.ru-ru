@@ -17,12 +17,12 @@ ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
 ms.custom: has-adal-ref
-ms.openlocfilehash: 7bc39e409d0ac10e41fae58c5e5216f386427e30
-ms.sourcegitcommit: 8def3249f2c216d7b9d96b154eb096640221b6b9
+ms.openlocfilehash: 897c0f3c51d6d9bea1f90a66ccf50aa51e22f118
+ms.sourcegitcommit: 07166a1ff8bd23f5e1c49d4fd12badbca5ebd19c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87541742"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90088312"
 ---
 # <a name="troubleshoot-azure-ad-connectivity"></a>Устранение неполадок с подключением к Azure AD
 В этой статье рассказывается, как работает подключение между Azure AD Connect и Azure AD и как устранять неполадки подключения. Как правило, проблемы возникают в среде с прокси-сервером.
@@ -33,7 +33,7 @@ Azure AD Connect использует для аутентификации сов
 В этой статье показано, как Fabrikam подключается к Azure AD через прокси-сервер. Прокси-сервер имеет имя fabrikamproxy и использует порт 8080.
 
 Сначала необходимо убедиться, что [**machine.config**](how-to-connect-install-prerequisites.md#connectivity) настроен правильно и после обновления файла machine.config **Microsoft Azure AD служба синхронизации** была перезапущена.
-![machineconfig](./media/tshoot-connect-connectivity/machineconfig.png)
+![На снимке экрана показана часть файла конфигурации Machine Dot.](./media/tshoot-connect-connectivity/machineconfig.png)
 
 > [!NOTE]
 > В некоторых сторонних блогах говорится, что вместо него изменения необходимо вносить в файл miiserver.exe.config. Однако при каждом обновлении этот файл перезаписывается, так что даже если при первичной установке все работает, то с первым же обновлением система работать перестанет. По этой причине рекомендуется обновлять файл machine.config.
@@ -60,7 +60,7 @@ Azure AD Connect использует для аутентификации сов
 
 ### <a name="the-installation-wizard-has-not-been-correctly-configured"></a>Неправильно настроен мастер установки
 Эта ошибка появляется в случае, если мастер не может связаться с прокси-сервером.
-![nomachineconfig](./media/tshoot-connect-connectivity/nomachineconfig.png)
+![На снимке экрана показана ошибка: не удалось проверить учетные данные.](./media/tshoot-connect-connectivity/nomachineconfig.png)
 
 * Если возникает эта ошибка, проверьте конфигурацию в файле [machine.config](how-to-connect-install-prerequisites.md#connectivity).
 * Если конфигурация выглядит нормально, выполните действия, описанные в разделе [Проверка подключения прокси-сервера](#verify-proxy-connectivity) , и убедитесь в том, что проблема возникает не только в мастере.
@@ -87,7 +87,7 @@ Azure AD Connect использует для аутентификации сов
 
 Если прокси-сервер настроен правильно, то вы должны получить успешное состояние: ![proxy200](./media/tshoot-connect-connectivity/invokewebrequest200.png).
 
-Если отображается сообщение **Невозможно соединиться с удаленным сервером**, то это означает, что PowerShell пытается передать прямой вызов, не используя прокси-сервер, или неправильно настроен DNS. Проверьте правильность настройки файла **machine.config** .
+Если вы получаете команду **не удается подключиться к удаленному серверу**, то PowerShell пытается выполнить прямой вызов без использования прокси-сервера или неправильно настроенной службы DNS. Убедитесь, что файл **machine.config** настроен правильно.
 ![unabletoconnect](./media/tshoot-connect-connectivity/invokewebrequestunable.png)
 
 Если прокси-сервер настроен неправильно, то появляется ошибка: ![proxy200](./media/tshoot-connect-connectivity/invokewebrequest403.png)
@@ -122,7 +122,7 @@ Azure AD Connect использует для аутентификации сов
 | 1/11/2016 8:33 |connect://provisioningapi.microsoftonline.com:443 |
 | 1/11/2016 8:33 |connect://*bwsc02-relay*.microsoftonline.com:443 |
 
-**Настройте**
+**Настройка**
 
 | Time | URL-адрес |
 | --- | --- |
@@ -225,14 +225,14 @@ Azure AD Connect использует для аутентификации сов
 Начиная с версии с номером сборки 1.1.105.0 (выпущенной в феврале 2016 г.) помощник по входу более не используется. Этот раздел и конфигурация больше не требуются, но хранятся для ссылки.
 
 Для работы помощника по единому входу необходимо настроить winhttp. Эту настройку можно сделать с помощью [**netsh**](how-to-connect-install-prerequisites.md#connectivity).
-![netsh](./media/tshoot-connect-connectivity/netsh.png)
+![На снимке экрана показано окно командной строки, в котором запускается средство Netsh для настройки прокси-сервера.](./media/tshoot-connect-connectivity/netsh.png)
 
 ### <a name="the-sign-in-assistant-has-not-been-correctly-configured"></a>Неправильно настроен помощник по входу
 Эта ошибка появляется, если помощник по входу не может связаться с прокси-сервером или прокси-сервер не пропускает запрос.
-![nonetsh](./media/tshoot-connect-connectivity/nonetsh.png)
+![На снимке экрана показана ошибка: не удается проверить учетные данные, проверьте сетевое подключение и параметры брандмауэра или прокси-сервера.](./media/tshoot-connect-connectivity/nonetsh.png)
 
 * Если возникает эта ошибка, проверьте конфигурацию прокси-сервера в [netsh](how-to-connect-install-prerequisites.md#connectivity) и убедитесь в правильности ее настройки.
-  ![netshshow](./media/tshoot-connect-connectivity/netshshow.png)
+  ![На снимке экрана показано окно командной строки, в котором запускается средство Netsh для отображения конфигурации прокси-сервера.](./media/tshoot-connect-connectivity/netshshow.png)
 * Если конфигурация выглядит нормально, выполните действия, описанные в разделе [Проверка подключения прокси-сервера](#verify-proxy-connectivity) , и убедитесь в том, что проблема возникает не только в мастере.
 
 ## <a name="next-steps"></a>Дальнейшие действия

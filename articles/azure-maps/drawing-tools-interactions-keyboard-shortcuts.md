@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.service: azure-maps
 services: azure-maps
 manager: cpendle
-ms.openlocfilehash: fb8a1e1a8c29086553500bdad2e4604d1e1ef471
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 429baa4d5dc85476192758e4500f4c1f14610e6d
+ms.sourcegitcommit: 07166a1ff8bd23f5e1c49d4fd12badbca5ebd19c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "77198298"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90089315"
 ---
 # <a name="interaction-types-and-keyboard-shortcuts-in-the-drawing-tools-module"></a>Типы взаимодействия и сочетания клавиш в модуле «средства рисования»
 
@@ -21,9 +21,9 @@ ms.locfileid: "77198298"
 
 Диспетчер рисунков поддерживает три разных способа взаимодействия с картой для рисования фигур.
 
-* `click`— Координаты добавляются при щелчке мышью или касанием.
-* `freehand `— Координаты добавляются при перетаскивании указателя мыши или касания на карту.
-* `hybrid`— Координаты добавляются при нажатии или перетаскивании мыши или касания.
+* `click` — Координаты добавляются при щелчке мышью или касанием.
+* `freehand ` — Координаты добавляются при перетаскивании указателя мыши или касания на карту.
+* `hybrid` — Координаты добавляются при нажатии или перетаскивании мыши или касания.
 
 ## <a name="how-to-draw-shapes"></a>Рисование фигур
 
@@ -131,7 +131,7 @@ ms.locfileid: "77198298"
 **Отменить Рисование**
  - Нажмите клавишу `Escape` .
 
-## <a name="keyboard-shortcuts"></a>сочетания клавиш
+## <a name="keyboard-shortcuts"></a>Сочетания клавиш
 
 Средства рисования поддерживают сочетания клавиш. Эти сочетания клавиш работают, когда схема находится в фокусе.
 
@@ -146,7 +146,7 @@ ms.locfileid: "77198298"
 Дополнительные сведения о классах в модуле средств рисования:
 
 > [!div class="nextstepaction"]
-> [Диспетчер рисунков](https://docs.microsoft.com/javascript/api/azure-maps-drawing-tools/atlas.drawing.drawingmanager?view=azure-node-latest)
+> [Диспетчер рисунков](https://docs.microsoft.com/javascript/api/azure-maps-drawing-tools/atlas.drawing.drawingmanager)
 
 > [!div class="nextstepaction"]
-> [Панель инструментов рисования](https://docs.microsoft.com/javascript/api/azure-maps-drawing-tools/atlas.control.drawingtoolbar?view=azure-node-latest)
+> [Панель инструментов рисования](https://docs.microsoft.com/javascript/api/azure-maps-drawing-tools/atlas.control.drawingtoolbar)

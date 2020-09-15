@@ -9,12 +9,12 @@ ms.service: azure-maps
 services: azure-maps
 manager: cpendle
 ms.custom: ''
-ms.openlocfilehash: f24a04db9317083fb47c0956174e649b5bd7ae10
-ms.sourcegitcommit: d39f2cd3e0b917b351046112ef1b8dc240a47a4f
+ms.openlocfilehash: 94ba4b159e0a7e52603e7c200c11828f996cf6d8
+ms.sourcegitcommit: 07166a1ff8bd23f5e1c49d4fd12badbca5ebd19c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88815697"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90090522"
 ---
 # <a name="azure-maps-community---open-source-projects"></a>Azure Maps сообщество — проекты с открытым исходным кодом
 
@@ -29,13 +29,19 @@ ms.locfileid: "88815697"
 | [Платформа Bot — навык интереса](https://github.com/microsoft/botframework-solutions/tree/488093ac2fddf16096171f6a926315aa45e199e7/skills/csharp/pointofinterestskill) | Навык по интересам предоставляет виртуальному помощнику достопримечательности связанные возможности, используя Azure Maps со службой Azure Bot и Bot Framework. |
 | [Расположение BotBuilder](https://github.com/Microsoft/BotBuilder-Location) | Элемент управления выбор расположения с открытым исходным кодом для платформы Microsoft Bot на платформе службы Bing Maps. |
 
+<a name="open-web-sdk-modules"></a>
+
 **Открытие модулей веб-пакета SDK**
 
 Ниже приведен список проектов с открытым исходным кодом, расширяющих возможности веб-пакета SDK для Azure Maps.
 
 | Имя проекта | Описание |
 |-|-|
-| [Модуль анимации Azure Maps](https://github.com/Azure-Samples/azure-maps-animations)| Обширная библиотека анимации для использования с веб-пакетом SDK для Azure Maps. |
+| [Модуль анимации Azure Maps](https://github.com/Azure-Samples/azure-maps-animations) | Обширная библиотека анимации для использования с веб-пакетом SDK для Azure Maps. |
+| [Модуль управления географом Azure Maps](https://github.com/Azure-Samples/azure-maps-geolocation-control) | Модуль веб-пакета SDK Azure Maps, который предоставляет элемент управления, который использует API географического расположения браузера для поиска пользователя на карте. |
+| [Azure Maps полноэкранный модуль управления](https://github.com/Azure-Samples/azure-maps-fullscreen-control) | Модуль веб-пакета SDK Azure Maps, который предоставляет элемент управления для отображения карт в полноэкранном режиме. |
+| [Модуль управления выбором Azure Maps](https://github.com/Azure-Samples/azure-maps-selection-control) | Модуль веб-пакета SDK Azure Maps, который предоставляет элементы управления для выбора данных в источнике данных с помощью средств рисования или запроса многоугольника диапазона маршрутов. |
+| [Модуль синхронизации Azure Maps](https://github.com/Azure-Samples/azure-maps-sync-maps) | Модуль веб-пакета SDK Azure Maps, который синхронизирует камеры двух или более карт. |
 | [Модуль пользовательского интерфейса Azure Maps Services](https://github.com/Azure-Samples/azure-maps-services-ui) | Набор элементов управления веб-ИНТЕРФЕЙСов, которые служат оболочкой для служб Azure Maps RESTFUL. |
 
 **Примеры**
@@ -69,7 +75,7 @@ ms.locfileid: "88815697"
 - Azure Maps проекты с открытым исходным кодом и примеры не являются продуктом, поэтому они не поддерживаются поддержка Premier или другими официальными каналами поддержки.
 - Azure Maps проекты с открытым исходным кодом и примеры поддерживаются аналогично другим проектам с открытым исходным кодом, осуществляемым корпорацией Майкрософт вместе со службой поддержки сообщества.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Найдите другие проекты Azure Maps с открытым кодом.
 

@@ -16,12 +16,12 @@ ms.date: 02/27/2018
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 18c982b09aa8a28d520c709c9b8db2c9be4c7bb4
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 48584fa4042cf53fa1084e519dca0e64f530ca59
+ms.sourcegitcommit: 07166a1ff8bd23f5e1c49d4fd12badbca5ebd19c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85356956"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90090131"
 ---
 # <a name="azure-ad-connect-staging-server-and-disaster-recovery"></a>Azure AD Connect: промежуточный сервер и аварийное восстановление
 Когда сервер работает в промежуточном режиме, вы можете вносить изменения в конфигурацию и просматривать их, прежде чем активировать сервер. Этот режим также позволяет запустить полный импорт и полную синхронизацию, чтобы проверить, все ли изменения имеют нужный вид, прежде чем вносить их в рабочую среду.
@@ -49,18 +49,18 @@ ms.locfileid: "85356956"
 ### <a name="verify-the-configuration-of-a-server"></a>Проверка конфигурации сервера
 Чтобы использовать этот метод, выполните следующие действия.
 
-1. [Подготовка.](#prepare)
+1. [Подготовка](#prepare)
 2. [Конфигурация](#configuration)
 3. [Импорт и синхронизация](#import-and-synchronize)
 4. [Проверка](#verify)
 5. [Переключение активного сервера](#switch-active-server)
 
-#### <a name="prepare"></a>Подготовка.
+#### <a name="prepare"></a>Подготовка
 1. Установите Azure AD Connect, выберите **промежуточный режим** и снимите флажок **Запустить синхронизацию** на последней странице мастера установки. В этом режиме можно вручную запустить модуль синхронизации.
-   ![ReadyToConfigure](./media/how-to-connect-sync-staging-server/readytoconfigure.png)
+   ![На снимке экрана показана страница все готово для настройки в диалоговом окне Azure AD Connect.](./media/how-to-connect-sync-staging-server/readytoconfigure.png)
 2. Выйдите из системы и снова войдите в нее, а затем в меню "Пуск" выберите пункт **Служба синхронизации**.
 
-#### <a name="configuration"></a>Параметр Configuration
+#### <a name="configuration"></a>Конфигурация
 Если вы внесли какие-либо изменения на сервере-источнике и хотите сравнить конфигурацию с промежуточным сервером, то воспользуйтесь [средством документирования конфигураций Azure AD Connect](https://github.com/Microsoft/AADConnectConfigDocumenter).
 
 #### <a name="import-and-synchronize"></a>Импорт и синхронизация
@@ -73,7 +73,7 @@ ms.locfileid: "85356956"
 
 #### <a name="verify"></a>Проверка
 1. Откройте командную строку и перейдите в каталог `%ProgramFiles%\Microsoft Azure AD Sync\bin`.
-2. Выполните команду `csexport "Name of Connector" %temp%\export.xml /f:x`. Имя соединителя можно найти в службе синхронизации. Это будет имя наподобие "contoso.com — AAD" для Azure AD.
+2. Выполните команду `csexport "Name of Connector" %temp%\export.xml /f:x`. Имя соединителя можно найти в службе синхронизации. Он имеет имя, похожее на "contoso.com — Azure AD" для Azure AD.
 3. Выполните команду `CSExportAnalyzer %temp%\export.xml > %temp%\export.csv`. Теперь в папке %temp% есть файл export.csv, который можно просмотреть в Microsoft Excel. Этот файл содержит все изменения, которые будут экспортированы.
 4. Внесите необходимые изменения в данные и конфигурацию и выполните описанные выше действия (импорт, синхронизация и проверка) повторно, чтобы привести изменения, которые предстоит экспортировать, в нужный вид.
 

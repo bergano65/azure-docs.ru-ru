@@ -9,12 +9,12 @@ ms.service: azure-maps
 services: azure-maps
 manager: ''
 ms.custom: codepen, devx-track-javascript
-ms.openlocfilehash: 5235b273ab45a2ece011f38bf363b33230101396
-ms.sourcegitcommit: bfeae16fa5db56c1ec1fe75e0597d8194522b396
+ms.openlocfilehash: c27f80e90447ad4b9053649350201c5180ccbfe6
+ms.sourcegitcommit: 07166a1ff8bd23f5e1c49d4fd12badbca5ebd19c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/10/2020
-ms.locfileid: "88036510"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90090777"
 ---
 # <a name="add-a-popup-to-the-map"></a>Добавление всплывающего окна на карту
 
@@ -22,7 +22,7 @@ ms.locfileid: "88036510"
 
 ## <a name="understand-the-code"></a>Изучение кода
 
-Следующий код добавляет функцию Point, которая имеет `name` `description` Свойства и, в карту с помощью слоя символов. Экземпляр [класса Popup](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.popup) создан, но не отображается. События мыши добавляются на слой символов для активации открытия и закрытия всплывающего окна. При наведении указателя мыши свойство всплывающего окна `position` обновляется с указанием позиции маркера, а `content` параметр обновляется с помощью HTML-кода, который заключает в оболочку `name` Свойства и `description` функции Point, на которую наведен указатель мыши. Затем всплывающее окно отображается на карте с помощью его `open` функции.
+Следующий код добавляет функцию Point, которая имеет `name` `description` Свойства и, в карту с помощью слоя символов. Экземпляр [класса Popup](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.popup) создан, но не отображается. События мыши добавляются на слой символов для активации открытия и закрытия всплывающего окна. При наведении указателя мыши свойство всплывающего окна `position` обновляется с указанием позиции маркера, а `content` параметр обновляется с помощью HTML-кода, который заключает в оболочку  `name` Свойства и `description` функции Point, на которую наведен указатель мыши. Затем всплывающее окно отображается на карте с помощью его `open` функции.
 
 ```javascript
 //Define an HTML template for a custom popup content laypout.
@@ -80,7 +80,7 @@ map.events.add('mouseleave', symbolLayer, function (){
 
 <br/>
 
-<iframe height='500' scrolling='no' title='Добавление всплывающего окна с помощью Azure Maps' src='//codepen.io/azuremaps/embed/MPRPvz/?height=500&theme-id=0&default-tab=result&embed-version=2&editable=true' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>Просмотрите фрагмент кода <a href='https://codepen.io/azuremaps/pen/MPRPvz/'>Добавление всплывающего окна с помощью Azure Maps</a> (<a href='https://codepen.io/azuremaps'>@azuremaps</a>) в <a href='https://codepen.io'>CodePen</a>.
+<iframe height='500' scrolling='no' title='Добавление всплывающего окна с помощью Azure Maps' src='//codepen.io/azuremaps/embed/MPRPvz/?height=500&theme-id=0&default-tab=result&embed-version=2&editable=true' frameborder='no' loading="lazy" allowtransparency='true' allowfullscreen='true' style='width: 100%;'>Просмотрите фрагмент кода <a href='https://codepen.io/azuremaps/pen/MPRPvz/'>Добавление всплывающего окна с помощью Azure Maps</a> (<a href='https://codepen.io/azuremaps'>@azuremaps</a>) в <a href='https://codepen.io'>CodePen</a>.
 </iframe>
 
 ## <a name="reusing-a-popup-with-multiple-points"></a>Повторное использование всплывающего окна с несколькими точками
@@ -89,7 +89,7 @@ map.events.add('mouseleave', symbolLayer, function (){
 
 <br/>
 
-<iframe height='500' scrolling='no' title='Повторное использование всплывающего окна с несколькими закреплениями' src='//codepen.io/azuremaps/embed/rQbjvK/?height=500&theme-id=0&default-tab=result&embed-version=2&editable=true' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>Просмотрите фрагмент кода для <a href='https://codepen.io/azuremaps/pen/rQbjvK/'>повторного использования всплывающего окна с несколькими закреплениями</a> службы Azure Maps (<a href='https://codepen.io/azuremaps'>@azuremaps</a>) на сайте <a href='https://codepen.io'>CodePen</a>.
+<iframe height='500' scrolling='no' title='Повторное использование всплывающего окна с несколькими закреплениями' src='//codepen.io/azuremaps/embed/rQbjvK/?height=500&theme-id=0&default-tab=result&embed-version=2&editable=true' frameborder='no' loading="lazy" allowtransparency='true' allowfullscreen='true' style='width: 100%;'>Просмотрите фрагмент кода для <a href='https://codepen.io/azuremaps/pen/rQbjvK/'>повторного использования всплывающего окна с несколькими закреплениями</a> службы Azure Maps (<a href='https://codepen.io/azuremaps'>@azuremaps</a>) на сайте <a href='https://codepen.io'>CodePen</a>.
 </iframe>
 
 ## <a name="customizing-a-popup"></a>Настройка всплывающего окна
@@ -98,7 +98,7 @@ map.events.add('mouseleave', symbolLayer, function (){
 
 <br/>
 
-<iframe height="500" style="width: 100%;" scrolling="no" title="Настраиваемое всплывающее окно" src="//codepen.io/azuremaps/embed/ymKgdg/?height=500&theme-id=0&default-tab=result" frameborder="no" allowtransparency="true" allowfullscreen="true">
+<iframe height="500" style="width: 100%;" scrolling="no" title="Настраиваемое всплывающее окно" src="//codepen.io/azuremaps/embed/ymKgdg/?height=500&theme-id=0&default-tab=result" frameborder='no' loading="lazy" allowtransparency="true" allowfullscreen="true">
 См. <a href='https://codepen.io/azuremaps/pen/ymKgdg/'>всплывающее окно, настроенное</a> пером, Azure Maps ( <a href='https://codepen.io/azuremaps'>@azuremaps</a> ) на <a href='https://codepen.io'>CodePen</a>.
 </iframe>
 
@@ -252,7 +252,7 @@ var popup = new atlas.Popup({
 
 <br/>
 
-<iframe height='500' scrolling='no' title='попуптемплатес' src='//codepen.io/azuremaps/embed/dyovrzL/?height=500&theme-id=0&default-tab=result&embed-version=2&editable=true' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>См. <a href='https://codepen.io/azuremaps/pen/dyovrzL/'>Попуптемплатес</a> пера by Azure Maps ( <a href='https://codepen.io/azuremaps'>@azuremaps</a> ) на <a href='https://codepen.io'>CodePen</a>.
+<iframe height='500' scrolling='no' title='попуптемплатес' src='//codepen.io/azuremaps/embed/dyovrzL/?height=500&theme-id=0&default-tab=result&embed-version=2&editable=true' frameborder='no' loading="lazy" allowtransparency='true' allowfullscreen='true' style='width: 100%;'>См. <a href='https://codepen.io/azuremaps/pen/dyovrzL/'>Попуптемплатес</a> пера by Azure Maps ( <a href='https://codepen.io/azuremaps'>@azuremaps</a> ) на <a href='https://codepen.io'>CodePen</a>.
 </iframe>
 
 ## <a name="reuse-popup-template"></a>Повторное использование шаблона всплывающего окна
@@ -261,7 +261,7 @@ var popup = new atlas.Popup({
 
 <br/>
 
-<iframe height='500' scrolling='no' title='реусепопуптемплате' src='//codepen.io/azuremaps/embed/WNvjxGw/?height=500&theme-id=0&default-tab=result&embed-version=2&editable=true' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>См. <a href='https://codepen.io/azuremaps/pen/WNvjxGw/'>Реусепопуптемплате</a> пера by Azure Maps ( <a href='https://codepen.io/azuremaps'>@azuremaps</a> ) на <a href='https://codepen.io'>CodePen</a>.
+<iframe height='500' scrolling='no' title='реусепопуптемплате' src='//codepen.io/azuremaps/embed/WNvjxGw/?height=500&theme-id=0&default-tab=result&embed-version=2&editable=true' frameborder='no' loading="lazy" allowtransparency='true' allowfullscreen='true' style='width: 100%;'>См. <a href='https://codepen.io/azuremaps/pen/WNvjxGw/'>Реусепопуптемплате</a> пера by Azure Maps ( <a href='https://codepen.io/azuremaps'>@azuremaps</a> ) на <a href='https://codepen.io'>CodePen</a>.
 </iframe>
 
 ## <a name="popup-events"></a>События всплывающего окна
@@ -270,7 +270,7 @@ var popup = new atlas.Popup({
 
 <br/>
 
-<iframe height="500" style="width: 100%;" scrolling="no" title="События всплывающего окна" src="//codepen.io/azuremaps/embed/BXrpvB/?height=500&theme-id=0&default-tab=result" frameborder="no" allowtransparency="true" allowfullscreen="true">
+<iframe height="500" style="width: 100%;" scrolling="no" title="События всплывающего окна" src="//codepen.io/azuremaps/embed/BXrpvB/?height=500&theme-id=0&default-tab=result" frameborder='no' loading="lazy" allowtransparency="true" allowfullscreen="true">
 См. <a href='https://codepen.io/azuremaps/pen/BXrpvB/'>события всплывающего окна</a> пера по Azure Maps ( <a href='https://codepen.io/azuremaps'>@azuremaps</a> ) в <a href='https://codepen.io'>CodePen</a>.
 </iframe>
 

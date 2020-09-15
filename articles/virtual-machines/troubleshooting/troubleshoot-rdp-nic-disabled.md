@@ -12,12 +12,12 @@ ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure
 ms.date: 11/12/2018
 ms.author: genli
-ms.openlocfilehash: 6bce1616ce0c7f7e42810a551acb2f02165ccf93
-ms.sourcegitcommit: 124f7f699b6a43314e63af0101cd788db995d1cb
+ms.openlocfilehash: 0e79efc9de43fc0a3044e9ae1e3959f63bb6e69f
+ms.sourcegitcommit: 07166a1ff8bd23f5e1c49d4fd12badbca5ebd19c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86078635"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90090276"
 ---
 #  <a name="cannot-remote-desktop-to-a-vm-because-the-network-interface-is-disabled"></a>Сбой подключения удаленного рабочего стола к виртуальной машине из-за отключенного сетевого интерфейса
 
@@ -28,6 +28,11 @@ ms.locfileid: "86078635"
 
 Вы не можете установить подключение RDP или любое другое подключение к другим портам виртуальной машины в Azure, так как сетевой интерфейс на виртуальной машине отключен.
 
+![Снимок экрана, на котором показана виртуальная машина, в которой сетевой интерфейс отключен.](./media/troubleshoot-rdp-nic-disabled/disconnected.png)
+
+![Снимок экрана, на котором показана виртуальная машина, в которой отключен сетевой интерфейс.](./media/troubleshoot-rdp-nic-disabled/disabled.png)
+
+
 ## <a name="solution"></a>Решение
 
 Прежде чем выполнять какие-либо действия, сделайте моментальный снимок диска ОС затронутой виртуальной машины в качестве резервной копии. Дополнительные сведения см. в статье [Создание моментального снимка](../windows/snapshot-copy-managed-disk.md).
@@ -36,8 +41,7 @@ ms.locfileid: "86078635"
 
 ### <a name="use-serial-control"></a>Использование последовательной консоли
 
-1. Подключитесь к [последовательной консоли и откройте экземпляр командной строки](./serial-console-windows.md#use-cmd-or-powershell-in-serial-console
-). Если последовательное консоль не включена на виртуальной машине, см. раздел [Сброс сетевого интерфейса](#reset-network-interface).
+1. Подключитесь к [последовательной консоли и откройте экземпляр командной строки](./serial-console-windows.md#use-cmd-or-powershell-in-serial-console). Если последовательное консоль не включена на виртуальной машине, см. раздел [Сброс сетевого интерфейса](#reset-network-interface).
 2. Проверьте состояние сетевого интерфейса:
 
     ```console

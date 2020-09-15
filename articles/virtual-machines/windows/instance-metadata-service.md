@@ -11,12 +11,12 @@ ms.workload: infrastructure-services
 ms.date: 03/30/2020
 ms.author: sukumari
 ms.reviewer: azmetadatadev
-ms.openlocfilehash: adeba1964ab802a903e82b3ea71bc3248b86cea9
-ms.sourcegitcommit: e0785ea4f2926f944ff4d65a96cee05b6dcdb792
+ms.openlocfilehash: 2e0788b6a7eb6f1d43185d8b484adddd76374ea3
+ms.sourcegitcommit: 07166a1ff8bd23f5e1c49d4fd12badbca5ebd19c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/21/2020
-ms.locfileid: "88705067"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90086714"
 ---
 # <a name="azure-instance-metadata-service"></a>Служба метаданных экземпляров Azure
 
@@ -517,10 +517,11 @@ caching | Требования к кэшированию
 createOption | Сведения о способе создания виртуальной машины
 diffDiskSettings | Параметры временного диска
 diskSizeGB | Размер диска (ГБ)
+encryptionSettings | Параметры шифрования для диска
 Изображение   | Виртуальный жесткий диск исходного образа пользователя
-lun     | Номер логического устройства диска (LUN)
 managedDisk | Параметры управляемого диска
 name    | Имя диска
+osType  | Тип ОС, добавленной на диск
 vhd     | Виртуальный жесткий диск
 writeAcceleratorEnabled | Включен ли параметр writeAccelerator на диске
 
@@ -532,11 +533,10 @@ caching | Требования к кэшированию
 createOption | Сведения о способе создания виртуальной машины
 diffDiskSettings | Параметры временного диска
 diskSizeGB | Размер диска (ГБ)
-encryptionSettings | Параметры шифрования для диска
 Изображение   | Виртуальный жесткий диск исходного образа пользователя
+lun     | Номер логического устройства диска (LUN)
 managedDisk | Параметры управляемого диска
 name    | Имя диска
-osType  | Тип ОС, добавленной на диск
 vhd     | Виртуальный жесткий диск
 writeAcceleratorEnabled | Включен ли параметр writeAccelerator на диске
 

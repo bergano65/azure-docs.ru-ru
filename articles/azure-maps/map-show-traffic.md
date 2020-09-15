@@ -9,12 +9,12 @@ ms.service: azure-maps
 services: azure-maps
 manager: ''
 ms.custom: codepen, devx-track-javascript
-ms.openlocfilehash: 063fbd2ad4f2f5d427fd2cb39b8ce9b231eba374
-ms.sourcegitcommit: bfeae16fa5db56c1ec1fe75e0597d8194522b396
+ms.openlocfilehash: cd59bb411a598603ccef215cd9a56b7619115e72
+ms.sourcegitcommit: 07166a1ff8bd23f5e1c49d4fd12badbca5ebd19c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/10/2020
-ms.locfileid: "88036431"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90090573"
 ---
 # <a name="show-traffic-on-the-map"></a>Отображение данных дорожного движения на карте
 
@@ -40,7 +40,7 @@ map.setTraffic({
 
 <br/>
 
-<iframe height='500' scrolling='no' title='Отображение данных дорожного движения на карте' src='//codepen.io/azuremaps/embed/WMLRPw/?height=500&theme-id=0&default-tab=js,result&embed-version=2&editable=true' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>Просмотрите фрагмент кода для <a href='https://codepen.io/azuremaps/pen/WMLRPw/'>отображения данных дорожного движения на карте</a> службы "Карты Azure" (<a href='https://codepen.io/azuremaps'>@azuremaps</a>) в <a href='https://codepen.io'>CodePen</a>.
+<iframe height='500' scrolling='no' title='Отображение данных дорожного движения на карте' src='//codepen.io/azuremaps/embed/WMLRPw/?height=500&theme-id=0&default-tab=js,result&embed-version=2&editable=true' frameborder='no' loading="lazy" allowtransparency='true' allowfullscreen='true' style='width: 100%;'>Просмотрите фрагмент кода для <a href='https://codepen.io/azuremaps/pen/WMLRPw/'>отображения данных дорожного движения на карте</a> службы "Карты Azure" (<a href='https://codepen.io/azuremaps'>@azuremaps</a>) в <a href='https://codepen.io'>CodePen</a>.
 </iframe>
 
 ## <a name="traffic-overlay-options"></a>Параметры наложения сведений о дорожном движении
@@ -49,9 +49,31 @@ map.setTraffic({
 
 <br/>
 
-<iframe height="700" style="width: 100%;" scrolling="no" title="Параметры наложения сведений о дорожном движении" src="//codepen.io/azuremaps/embed/RwbPqRY/?height=700&theme-id=0&default-tab=result" frameborder="no" allowtransparency="true" allowfullscreen="true">
+<iframe height="700" style="width: 100%;" scrolling="no" title="Параметры наложения сведений о дорожном движении" src="//codepen.io/azuremaps/embed/RwbPqRY/?height=700&theme-id=0&default-tab=result" frameborder='no' loading="lazy" loading="lazy" allowtransparency="true" allowfullscreen="true">
 Просмотрите фрагмент кода <a href='https://codepen.io/azuremaps/pen/RwbPqRY/'>Параметры наложения сведений о дорожном движении</a> Azure Maps (<a href='https://codepen.io/azuremaps'>@azuremaps</a>) в <a href='https://codepen.io'>CodePen</a>.
 </iframe>
+
+
+## <a name="add-traffic-controls"></a>Добавление элементов управления трафиком
+
+Существует два разных элемента управления трафиком, которые можно добавить на карту. Первый элемент управления, `TrafficControl` , добавляет выключатель, который можно использовать для включения и отключения входящего и исходящего трафика. Параметры этого элемента управления позволяют указать, когда следует использовать параметры трафика при отображении трафика. По умолчанию этот элемент управления будет отображать относительный поток трафика и данные об инциденте, однако можно изменить это значение, чтобы показать абсолютный поток трафика и при необходимости инциденты не будут. Второй элемент управления, `TrafficLegendControl` , добавляет к карте условные обозначения потока трафика, помогающие пользователю понять, что означает цветовой световой код цвета. Этот элемент управления отображается на карте, только когда данные потока трафика отображаются на карте и будут скрыты в любое другое время.
+
+В следующем коде показано, как добавить элементы управления трафиком на карту.
+
+```JavaScript
+//Att the traffic control toogle button to the top right corner of the map.
+map.controls.add(new atlas.control.TrafficControl(), { position: 'top-right' });
+
+//Att the traffic legend control to the bottom left corner of the map.
+map.controls.add(new atlas.control.TrafficLegendControl(), { position: 'bottom-left' });
+```
+
+<br/>
+
+<iframe height="500" style="width: 100%;" scrolling="no" title="Элементы управления трафиком" src="https://codepen.io/azuremaps/embed/ZEWaeLJ?height500&theme-id=0&default-tab=js,result&embed-version=2&editable=true" frameborder='no' loading="lazy" loading="lazy" allowtransparency="true" allowfullscreen="true">
+См. раздел <a href='https://codepen.io/azuremaps/pen/ZEWaeLJ'>Управление трафиком</a> пера с помощью Azure Maps ( <a href='https://codepen.io/azuremaps'>@azuremaps</a> ) в <a href='https://codepen.io'>CodePen</a>.
+</iframe>
+
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

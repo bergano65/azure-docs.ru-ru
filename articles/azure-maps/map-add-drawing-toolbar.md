@@ -9,16 +9,16 @@ ms.service: azure-maps
 services: azure-maps
 manager: philmea
 ms.custom: devx-track-javascript
-ms.openlocfilehash: 141ae90805e81d7269a12dcf465389d6a9dcaf55
-ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
+ms.openlocfilehash: a156896faff4262d9b8bd3cef10817a5b919749d
+ms.sourcegitcommit: 07166a1ff8bd23f5e1c49d4fd12badbca5ebd19c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87286965"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90086154"
 ---
 # <a name="add-a-drawing-tools-toolbar-to-a-map"></a>Добавление панели инструментов средств рисования на карту
 
-В этой статье показано, как использовать модуль средств рисования и отображать панель инструментов рисования на карте. Элемент управления [дравингтулбар](https://docs.microsoft.com/javascript/api/azure-maps-drawing-tools/atlas.control.drawingtoolbar?view=azure-node-latest) добавляет панель инструментов рисования на карте. Вы узнаете, как создавать карты с одним и всеми инструментами рисования, а также как настраивать отрисовку графических фигур в диспетчере рисунков.
+В этой статье показано, как использовать модуль средств рисования и отображать панель инструментов рисования на карте. Элемент управления [дравингтулбар](https://docs.microsoft.com/javascript/api/azure-maps-drawing-tools/atlas.control.drawingtoolbar) добавляет панель инструментов рисования на карте. Вы узнаете, как создавать карты с одним и всеми инструментами рисования, а также как настраивать отрисовку графических фигур в диспетчере рисунков.
 
 ## <a name="add-drawing-toolbar"></a>Добавление панели инструментов рисования
 
@@ -38,7 +38,7 @@ drawingManager = new atlas.drawing.DrawingManager(map, {
 
 <br/>
 
-<iframe height="500" style="width: 100%;" scrolling="no" title="Добавление панели инструментов рисования" src="//codepen.io/azuremaps/embed/ZEzLeRg/?height=265&theme-id=0&default-tab=js,result&editable=true" frameborder="no" allowtransparency="true" allowfullscreen="true">
+<iframe height="500" style="width: 100%;" scrolling="no" title="Добавление панели инструментов рисования" src="//codepen.io/azuremaps/embed/ZEzLeRg/?height=265&theme-id=0&default-tab=js,result&editable=true" frameborder='no' loading="lazy" allowtransparency="true" allowfullscreen="true">
 См. раздел <a href='https://codepen.io/azuremaps/pen/ZEzLeRg/'>Добавление панели инструментов рисования</a> с помощью Azure Maps ( <a href='https://codepen.io/azuremaps'>@azuremaps</a> ) на <a href='https://codepen.io'>CodePen</a>.
 </iframe>
 
@@ -62,7 +62,7 @@ drawingManager = new atlas.drawing.DrawingManager(map, {
 
 <br/>
 
-<iframe height="500" style="width: 100%;" scrolling="no" title="Добавление инструмента рисования многоугольников" src="//codepen.io/azuremaps/embed/OJLWWMy/?height=265&theme-id=0&default-tab=js,result&editable=true" frameborder="no" allowtransparency="true" allowfullscreen="true">
+<iframe height="500" style="width: 100%;" scrolling="no" title="Добавление инструмента рисования многоугольников" src="//codepen.io/azuremaps/embed/OJLWWMy/?height=265&theme-id=0&default-tab=js,result&editable=true" frameborder='no' loading="lazy" allowtransparency="true" allowfullscreen="true">
 Ознакомьтесь с пером <a href='https://codepen.io/azuremaps/pen/OJLWWMy/'>Добавление инструмента рисования многоугольника</a> Azure Maps ( <a href='https://codepen.io/azuremaps'>@azuremaps</a> ) на <a href='https://codepen.io'>CodePen</a>.
 </iframe>
 
@@ -122,7 +122,7 @@ drawingManager.setOptions({
 
 <br/>
 
-<iframe height="500" style="width: 100%;" scrolling="no" title="Изменить стиль отрисовки изображения" src="//codepen.io/azuremaps/embed/OJLWpyj/?height=265&theme-id=0&default-tab=js,result&editable=true" frameborder="no" allowtransparency="true" allowfullscreen="true">
+<iframe height="500" style="width: 100%;" scrolling="no" title="Изменить стиль отрисовки изображения" src="//codepen.io/azuremaps/embed/OJLWpyj/?height=265&theme-id=0&default-tab=js,result&editable=true" frameborder='no' loading="lazy" allowtransparency="true" allowfullscreen="true">
 См. раздел <a href='https://codepen.io/azuremaps/pen/OJLWpyj/'>изменение перьевого отображения рисунка</a> с помощью Azure Maps ( <a href='https://codepen.io/azuremaps'>@azuremaps</a> ) в <a href='https://codepen.io'>CodePen</a>.
 </iframe>
 
@@ -143,10 +143,10 @@ drawingManager.setOptions({
 Дополнительные сведения о классах и методах, которые используются в этой статье:
 
 > [!div class="nextstepaction"]
-> [Схема](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.map?view=azure-iot-typescript-latest)
+> [Схема](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.map)
 
 > [!div class="nextstepaction"]
-> [Панель инструментов рисования](https://docs.microsoft.com/javascript/api/azure-maps-drawing-tools/atlas.control.drawingtoolbar?view=azure-node-latest)
+> [Панель инструментов рисования](https://docs.microsoft.com/javascript/api/azure-maps-drawing-tools/atlas.control.drawingtoolbar)
 
 > [!div class="nextstepaction"]
-> [Диспетчер рисунков](https://docs.microsoft.com/javascript/api/azure-maps-drawing-tools/atlas.drawing.drawingmanager?view=azure-node-latest)
+> [Диспетчер рисунков](https://docs.microsoft.com/javascript/api/azure-maps-drawing-tools/atlas.drawing.drawingmanager)

@@ -9,12 +9,12 @@ ms.service: azure-maps
 services: azure-maps
 manager: ''
 ms.custom: codepen, devx-track-javascript
-ms.openlocfilehash: c834ae6061fce6f2fc2f4cd7c4d80e036775b156
-ms.sourcegitcommit: 98854e3bd1ab04ce42816cae1892ed0caeedf461
+ms.openlocfilehash: 11783ceae1b2a2f9782df74976d8ea6d66573a1c
+ms.sourcegitcommit: 07166a1ff8bd23f5e1c49d4fd12badbca5ebd19c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "88010214"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90086034"
 ---
 # <a name="add-a-line-layer-to-the-map"></a>Добавление на карту слоя линий
 
@@ -23,7 +23,7 @@ ms.locfileid: "88010214"
 > [!TIP]
 > Слои линий по умолчанию отображают координаты многоугольников, а также линий в источнике данных. Чтобы ограничить слой таким образом, чтобы он отображал только компоненты LineString, задайте для свойства `filter` слоя значение `['==', ['geometry-type'], 'LineString']` или `['any', ['==', ['geometry-type'], 'LineString'], ['==', ['geometry-type'], 'MultiLineString']]`, если требуется также включить функции MultiLineString.
 
-Ниже приведен код, создающий линию. Добавьте строку в источник данных, а затем отрисуйте ее с помощью слоя линий, используя класс [LineLayer](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.layer.linelayer?view=azure-iot-typescript-latest).
+Ниже приведен код, создающий линию. Добавьте строку в источник данных, а затем отрисуйте ее с помощью слоя линий, используя класс [LineLayer](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.layer.linelayer).
 
 ```javascript
 //Create a data source and add it to the map.
@@ -44,10 +44,10 @@ map.layers.add(new atlas.layer.LineLayer(dataSource, null, {
 
 <br/>
 
-<iframe height='500' scrolling='no' title='Добавление линии на карту' src='//codepen.io/azuremaps/embed/qomaKv/?height=500&theme-id=0&default-tab=js,result&embed-version=2&editable=true' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>Просмотрите фрагмент кода <a href='https://codepen.io/azuremaps/pen/qomaKv/'>Добавление линии на карту</a> службы "Карты Azure" (<a href='https://codepen.io/azuremaps'>@azuremaps</a>) в <a href='https://codepen.io'>CodePen</a>.
+<iframe height='500' scrolling='no' title='Добавление линии на карту' src='//codepen.io/azuremaps/embed/qomaKv/?height=500&theme-id=0&default-tab=js,result&embed-version=2&editable=true' frameborder='no' loading="lazy" allowtransparency='true' allowfullscreen='true' style='width: 100%;'>Просмотрите фрагмент кода <a href='https://codepen.io/azuremaps/pen/qomaKv/'>Добавление линии на карту</a> службы "Карты Azure" (<a href='https://codepen.io/azuremaps'>@azuremaps</a>) в <a href='https://codepen.io'>CodePen</a>.
 </iframe>
 
-Задать стиль слоев линий можно с помощью [LineLayerOptions](/javascript/api/azure-maps-control/atlas.linelayeroptions?view=azure-iot-typescript-latest) и раздела [Использование стилистических выражений на основе данных](data-driven-style-expressions-web-sdk.md).
+Задать стиль слоев линий можно с помощью [LineLayerOptions](/javascript/api/azure-maps-control/atlas.linelayeroptions) и раздела [Использование стилистических выражений на основе данных](data-driven-style-expressions-web-sdk.md).
 
 ## <a name="add-symbols-along-a-line"></a>Добавление символов вдоль линии
 
@@ -55,7 +55,7 @@ map.layers.add(new atlas.layer.LineLayer(dataSource, null, {
 
 <br/>
 
-<iframe height="500" style="width: 100%;" scrolling="no" title="Отображение стрелки вдоль линии" src="//codepen.io/azuremaps/embed/drBJwX/?height=500&theme-id=0&default-tab=js,result&editable=true" frameborder="no" allowtransparency="true" allowfullscreen="true">
+<iframe height="500" style="width: 100%;" scrolling="no" title="Отображение стрелки вдоль линии" src="//codepen.io/azuremaps/embed/drBJwX/?height=500&theme-id=0&default-tab=js,result&editable=true" frameborder='no' loading="lazy" loading="lazy" allowtransparency="true" allowfullscreen="true">
 Просмотрите фрагмент кода для <a href='https://codepen.io/azuremaps/pen/drBJwX/'>отображения стрелки вдоль линии</a> в Azure Maps (<a href='https://codepen.io/azuremaps'>@azuremaps</a>) в <a href='https://codepen.io'>CodePen</a>.
 </iframe>
 
@@ -70,7 +70,7 @@ map.layers.add(new atlas.layer.LineLayer(dataSource, null, {
 
 <br/>
 
-<iframe height="500" style="width: 100%;" scrolling="no" title="Линия с градиентом контура" src="//codepen.io/azuremaps/embed/wZwWJZ/?height=500&theme-id=0&default-tab=js,result&editable=true" frameborder="no" allowtransparency="true" allowfullscreen="true">
+<iframe height="500" style="width: 100%;" scrolling="no" title="Линия с градиентом контура" src="//codepen.io/azuremaps/embed/wZwWJZ/?height=500&theme-id=0&default-tab=js,result&editable=true" frameborder='no' loading="lazy" loading="lazy" allowtransparency="true" allowfullscreen="true">
 См. фрагмент кода <a href='https://codepen.io/azuremaps/pen/wZwWJZ/'>Линия с градиентом контура</a> в Azure Maps (<a href='https://codepen.io/azuremaps'>@azuremaps</a>) в <a href='https://codepen.io'>CodePen</a>.
 </iframe>
 
@@ -80,7 +80,7 @@ map.layers.add(new atlas.layer.LineLayer(dataSource, null, {
 
 <br/>
 
-<iframe height='700' scrolling='no' title='Параметры слоя линий' src='//codepen.io/azuremaps/embed/GwLrgb/?height=700&theme-id=0&default-tab=result' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>Просмотрите фрагмент кода с <a href='https://codepen.io/azuremaps/pen/GwLrgb/'>параметрами слоя линий</a> службы Azure Maps (<a href='https://codepen.io/azuremaps'>@azuremaps</a>) на сайте <a href='https://codepen.io'>CodePen</a>.
+<iframe height='700' scrolling='no' title='Параметры слоя линий' src='//codepen.io/azuremaps/embed/GwLrgb/?height=700&theme-id=0&default-tab=result' frameborder='no' loading="lazy" allowtransparency='true' allowfullscreen='true' style='width: 100%;'>Просмотрите фрагмент кода с <a href='https://codepen.io/azuremaps/pen/GwLrgb/'>параметрами слоя линий</a> службы Azure Maps (<a href='https://codepen.io/azuremaps'>@azuremaps</a>) на сайте <a href='https://codepen.io'>CodePen</a>.
 </iframe>
 
 ## <a name="next-steps"></a>Дальнейшие действия
@@ -88,10 +88,10 @@ map.layers.add(new atlas.layer.LineLayer(dataSource, null, {
 Дополнительные сведения о классах и методах, которые используются в этой статье:
 
 > [!div class="nextstepaction"]
-> [LineLayer](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.layer.linelayer?view=azure-iot-typescript-latest) 
+> [LineLayer](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.layer.linelayer) 
 
 > [!div class="nextstepaction"]
-> [LineLayerOptions](/javascript/api/azure-maps-control/atlas.linelayeroptions?view=azure-iot-typescript-latest)
+> [LineLayerOptions](/javascript/api/azure-maps-control/atlas.linelayeroptions)
 
 Дополнительные примеры кода для добавления в карты см. в следующих статьях:
 

@@ -10,12 +10,12 @@ ms.subservice: text-analytics
 ms.topic: conceptual
 ms.date: 07/30/2019
 ms.author: aahi
-ms.openlocfilehash: c6fbec35920c8afd08ab60fc380c9f816ae599b0
-ms.sourcegitcommit: 964af22b530263bb17fff94fd859321d37745d13
+ms.openlocfilehash: fec85a03b74155b5b18145bfaddc5d326c910bc9
+ms.sourcegitcommit: 07166a1ff8bd23f5e1c49d4fd12badbca5ebd19c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84561024"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90087309"
 ---
 # <a name="how-to-call-the-text-analytics-rest-api"></a>Как вызвать REST API службы "Анализ текста"
 
@@ -27,7 +27,7 @@ ms.locfileid: "84561024"
 
 [!INCLUDE [text-analytics-api-references](../includes/text-analytics-api-references.md)]
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Предварительные условия
 
 [!INCLUDE [cognitive-services-text-analytics-signup-requirements](../../../../includes/cognitive-services-text-analytics-signup-requirements.md)]
 
@@ -59,10 +59,10 @@ ms.locfileid: "84561024"
 
    Конечные точки ресурсов имеют такой вид (ваш регион может отличаться):
 
-   + `https://westus.api.cognitive.microsoft.com/text/analytics/v2.1/sentiment`
-   + `https://westus.api.cognitive.microsoft.com/text/analytics/v2.1/keyPhrases`
-   + `https://westus.api.cognitive.microsoft.com/text/analytics/v2.1/languages`
-   + `https://westus.api.cognitive.microsoft.com/text/analytics/v2.1/entities`
+   + `https://westus.api.cognitive.microsoft.com/text/analytics/v3.0/sentiment`
+   + `https://westus.api.cognitive.microsoft.com/text/analytics/v3.0/keyPhrases`
+   + `https://westus.api.cognitive.microsoft.com/text/analytics/v3.0/languages`
+   + `https://westus.api.cognitive.microsoft.com/text/analytics/v3.0/entities/recognition/general`
 
 2. Задайте три заголовка запроса:
 
@@ -90,12 +90,12 @@ ms.locfileid: "84561024"
 
    В Postman ответ отображается в следующем расположенном ниже окне как один документ JSON с элементом для каждого идентификатора документа, предоставленного в запросе.
 
-## <a name="see-also"></a>См. также 
+## <a name="see-also"></a>См. также раздел 
 
  [Обзор Анализ текста](../overview.md)  
  [Часто задаваемые вопросы](../text-analytics-resource-faq.md)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 > [!div class="nextstepaction"]
-> [Определение языка](text-analytics-how-to-language-detection.md)
+> [Пример. Как определить язык с помощью Анализа текста](text-analytics-how-to-language-detection.md)

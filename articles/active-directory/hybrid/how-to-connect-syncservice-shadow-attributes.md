@@ -16,12 +16,12 @@ ms.date: 07/13/2017
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c57ab03f72f0f59dd18a873ddc7cd98d3c36ef9c
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 128303cb51b39db8442fdda71f949db17923bfa2
+ms.sourcegitcommit: 07166a1ff8bd23f5e1c49d4fd12badbca5ebd19c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85356667"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90088976"
 ---
 # <a name="azure-ad-connect-sync-service-shadow-attributes"></a>Теневые атрибуты службы синхронизации Azure AD Connect
 Большинство атрибутов представляется в Azure AD так же, как и в локальной службе Active Directory. Однако некоторые атрибуты требуют особого обращения, их значение в Azure AD может отличаться от того, что синхронизирует Azure AD Connect.
@@ -32,13 +32,13 @@ ms.locfileid: "85356667"
 Теневые атрибуты невозможно просмотреть, используя портал Azure или PowerShell. Но понимание принципа помогает при устранении неполадок в определенных сценариях, когда атрибут имеет разные значения в локальной среде и в облаке.
 
 Чтобы лучше понять, как это работает, рассмотрим следующий пример от компании Fabrikam.  
-![Домены](./media/how-to-connect-syncservice-shadow-attributes/domains.png)  
+![На снимке экрана показан Active Directory суффикс имени участника-пользователя для нескольких примеров с соответствующим значением домена Azure AD, которое не было добавлено, не проверено и проверено.](./media/how-to-connect-syncservice-shadow-attributes/domains.png)  
 Они используют несколько суффиксов имени участника-пользователя в своей локальной службе Active Directory, но проверен только один из них.
 
 ### <a name="userprincipalname"></a>userPrincipalName
 У пользователя имеются следующие значения атрибутов в непроверенном домене.
 
-| Атрибут | Значение |
+| attribute | Значение |
 | --- | --- |
 | userPrincipalName для локальной среды | lee.sperry@fabrikam.com |
 | shadowUserPrincipalName для Azure AD | lee.sperry@fabrikam.com |
@@ -53,7 +53,7 @@ ms.locfileid: "85356667"
 
 Для пользователя почтового ящика, размещенного в локальной среде или Exchange Online, отображаются только значения для проверенных доменов. Это выглядит следующим образом.
 
-| Атрибут | Значение |
+| attribute | Значение |
 | --- | --- |
 | proxyAddresses для локальной среды | SMTP:abbie.spencer@fabrikamonline.com</br>smtp:abbie.spencer@fabrikam.com</br>smtp:abbie@fabrikamonline.com |
 | proxyAddresses для Exchange Online | SMTP:abbie.spencer@fabrikamonline.com</br>smtp:abbie@fabrikamonline.com</br>SIP:abbie.spencer@fabrikamonline.com |

@@ -9,12 +9,12 @@ ms.service: azure-maps
 services: azure-maps
 manager: cpendleton
 ms.custom: codepen, devx-track-javascript
-ms.openlocfilehash: ae3fa4684e4e71115d2d4ddce3c34ccb4f1cb703
-ms.sourcegitcommit: 98854e3bd1ab04ce42816cae1892ed0caeedf461
+ms.openlocfilehash: d6c7ba255b0dcec280d05eab36be71b8c9a726ae
+ms.sourcegitcommit: 07166a1ff8bd23f5e1c49d4fd12badbca5ebd19c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "88004662"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90086561"
 ---
 # <a name="how-to-use-image-templates"></a>Использование шаблонов образов
 
@@ -58,7 +58,7 @@ map.imageSprite.createFromTemplate('myTemplatedIcon', 'marker-flat', 'teal', '#f
 
 <br/>
 
-<iframe height="500" style="width: 100%;" scrolling="no" title="Слой символов с встроенным шаблоном значка" src="//codepen.io/azuremaps/embed/VoQMPp/?height=500&theme-id=0&default-tab=js,result&editable=true" frameborder="no" allowtransparency="true" allowfullscreen="true">
+<iframe height="500" style="width: 100%;" scrolling="no" title="Слой символов с встроенным шаблоном значка" src="//codepen.io/azuremaps/embed/VoQMPp/?height=500&theme-id=0&default-tab=js,result&editable=true" frameborder='no' loading="lazy" allowtransparency="true" allowfullscreen="true">
 См. раздел <a href='https://codepen.io/azuremaps/pen/VoQMPp/'>слой символов пера со встроенным шаблоном значка</a> Azure Maps ( <a href='https://codepen.io/azuremaps'>@azuremaps</a> ) на <a href='https://codepen.io'>CodePen</a>.
 </iframe>
 
@@ -70,7 +70,7 @@ map.imageSprite.createFromTemplate('myTemplatedIcon', 'marker-flat', 'teal', '#f
 
 <br/>
 
-<iframe height="500" style="width: 100%;" scrolling="no" title="Слой линий со встроенным шаблоном значка" src="//codepen.io/azuremaps/embed/KOQvJe/?height=500&theme-id=0&default-tab=js,result&editable=true" frameborder="no" allowtransparency="true" allowfullscreen="true">
+<iframe height="500" style="width: 100%;" scrolling="no" title="Слой линий со встроенным шаблоном значка" src="//codepen.io/azuremaps/embed/KOQvJe/?height=500&theme-id=0&default-tab=js,result&editable=true" frameborder='no' loading="lazy" allowtransparency="true" allowfullscreen="true">
 См. раздел <a href='https://codepen.io/azuremaps/pen/KOQvJe/'>слой линий пера со встроенным шаблоном значка</a> Azure Maps ( <a href='https://codepen.io/azuremaps'>@azuremaps</a> ) на <a href='https://codepen.io'>CodePen</a>.
 </iframe>
 
@@ -85,7 +85,7 @@ map.imageSprite.createFromTemplate('myTemplatedIcon', 'marker-flat', 'teal', '#f
 
 <br/>
 
-<iframe height="500" style="width: 100%;" scrolling="no" title="Заливка многоугольника с помощью встроенного шаблона значка" src="//codepen.io/azuremaps/embed/WVMEmz/?height=500&theme-id=0&default-tab=js,result&editable=true" frameborder="no" allowtransparency="true" allowfullscreen="true">
+<iframe height="500" style="width: 100%;" scrolling="no" title="Заливка многоугольника с помощью встроенного шаблона значка" src="//codepen.io/azuremaps/embed/WVMEmz/?height=500&theme-id=0&default-tab=js,result&editable=true" frameborder='no' loading="lazy" allowtransparency="true" allowfullscreen="true">
 См. раздел <a href='https://codepen.io/azuremaps/pen/WVMEmz/'>Заливка многоугольника с помощью встроенного шаблона значка</a> Azure Maps ( <a href='https://codepen.io/azuremaps'>@azuremaps</a> ) на <a href='https://codepen.io'>CodePen</a>.
 </iframe>
 
@@ -100,13 +100,13 @@ map.imageSprite.createFromTemplate('myTemplatedIcon', 'marker-flat', 'teal', '#f
 
 <br/>
 
-<iframe height="500" style="width: 100%;" scrolling="no" title="HTML-маркер со встроенным шаблоном значка" src="//codepen.io/azuremaps/embed/EqQvzq/?height=500&theme-id=0&default-tab=js,result&editable=true" frameborder="no" allowtransparency="true" allowfullscreen="true">
+<iframe height="500" style="width: 100%;" scrolling="no" title="HTML-маркер со встроенным шаблоном значка" src="//codepen.io/azuremaps/embed/EqQvzq/?height=500&theme-id=0&default-tab=js,result&editable=true" frameborder='no' loading="lazy" allowtransparency="true" allowfullscreen="true">
 Просмотрите HTML- <a href='https://codepen.io/azuremaps/pen/EqQvzq/'>маркер пера со встроенным шаблоном значка</a> Azure Maps ( <a href='https://codepen.io/azuremaps'>@azuremaps</a> ) на <a href='https://codepen.io'>CodePen</a>.
 </iframe>
 
 
 > [!TIP]
-> Шаблоны изображений можно использовать за пределами схемы. Жетимажетемплате масштабируются возвращает строку SVG, которая содержит заполнители. `{color}`, `{secondaryColor}`, `{scale}`, `{text}`. Замените эти значения заполнителей, чтобы создать допустимую строку SVG. Затем можно либо добавить строку SVG непосредственно в HTML DOM, либо преобразовать ее в универсальный код ресурса (URI) данных и вставить в тег Image. Например:
+> Шаблоны изображений можно использовать за пределами схемы. Жетимажетемплате масштабируются возвращает строку SVG, которая содержит заполнители. `{color}`, `{secondaryColor}`, `{scale}`, `{text}`. Замените эти значения заполнителей, чтобы создать допустимую строку SVG. Затем можно либо добавить строку SVG непосредственно в HTML DOM, либо преобразовать ее в универсальный код ресурса (URI) данных и вставить в тег Image. Пример:
 > ```JavaScript
 > //Retrieve an SVG template and replace the placeholder values.
 > var svg = atlas.getImageTemplate('marker').replace(/{color}/, 'red').replace(/{secondaryColor}/, 'white').replace(/{text}/, '').replace(/{scale}/, 1);
@@ -119,7 +119,7 @@ map.imageSprite.createFromTemplate('myTemplatedIcon', 'marker-flat', 'teal', '#f
 
 Если приложение использует один и тот же значок с разными значками или если вы создаете модуль, который добавляет дополнительные шаблоны изображений, вы можете легко добавлять и получать эти значки из веб-пакета SDK Azure Maps. Используйте следующие статические функции в `atlas` пространстве имен.
 
-| name | Возвращаемый тип | Описание | 
+| name | Тип возвращаемых данных | Описание | 
 |-|-|-|
 | `addImageTemplate(templateName: string, template: string, override: boolean)` | | Добавляет пользовательский шаблон изображения SVG в пространство имен Atlas. |
 |  `getImageTemplate(templateName: string, scale?: number)`| строка | Извлекает шаблон SVG по имени. |
@@ -138,7 +138,7 @@ map.imageSprite.createFromTemplate('myTemplatedIcon', 'marker-flat', 'teal', '#f
 
 <br/>
 
-<iframe height="500" style="width: 100%;" scrolling="no" title="Добавление пользовательского шаблона значка в пространство имен Atlas" src="//codepen.io/azuremaps/embed/NQyvEX/?height=500&theme-id=0&default-tab=js,result&editable=true" frameborder="no" allowtransparency="true" allowfullscreen="true">
+<iframe height="500" style="width: 100%;" scrolling="no" title="Добавление пользовательского шаблона значка в пространство имен Atlas" src="//codepen.io/azuremaps/embed/NQyvEX/?height=500&theme-id=0&default-tab=js,result&editable=true" frameborder='no' loading="lazy" allowtransparency="true" allowfullscreen="true">
 См. раздел <a href='https://codepen.io/azuremaps/pen/NQyvEX/'>Добавление пользовательского шаблона значка в пространство имен Atlas</a> с помощью Azure Maps ( <a href='https://codepen.io/azuremaps'>@azuremaps</a> ) в <a href='https://codepen.io'>CodePen</a>.
 </iframe>
 
@@ -505,7 +505,7 @@ map.imageSprite.createFromTemplate('myTemplatedIcon', 'marker-flat', 'teal', '#f
 
 <br/>
 
-<iframe height="500" style="width: 100%;" scrolling="no" title="Параметры шаблона значка" src="//codepen.io/azuremaps/embed/NQyaaO/?height=500&theme-id=0&default-tab=result" frameborder="no" allowtransparency="true" allowfullscreen="true">
+<iframe height="500" style="width: 100%;" scrolling="no" title="Параметры шаблона значка" src="//codepen.io/azuremaps/embed/NQyaaO/?height=500&theme-id=0&default-tab=result" frameborder='no' loading="lazy" allowtransparency="true" allowfullscreen="true">
 Сведения о <a href='https://codepen.io/azuremaps/pen/NQyaaO/'>параметрах шаблона значок</a> пера см. Azure Maps ( <a href='https://codepen.io/azuremaps'>@azuremaps</a> ) на <a href='https://codepen.io'>CodePen</a>.
 </iframe>
 
@@ -517,7 +517,7 @@ map.imageSprite.createFromTemplate('myTemplatedIcon', 'marker-flat', 'teal', '#f
 > [имажеспритеманажер](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.imagespritemanager)
 
 > [!div class="nextstepaction"]
-> [пространство имен Atlas](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas?view=azure-maps-typescript-latest#functions
+> [пространство имен Atlas](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas#functions
 )
 
 Дополнительные примеры кода, в которых можно использовать шаблоны изображений, см. в следующих статьях:

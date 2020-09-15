@@ -7,12 +7,12 @@ ms.author: baanders
 ms.date: 06/04/2020
 ms.topic: how-to
 ms.service: digital-twins
-ms.openlocfilehash: e97db598556d10538746242fa67449631394cd55
-ms.sourcegitcommit: 3fc3457b5a6d5773323237f6a06ccfb6955bfb2d
+ms.openlocfilehash: aac5c937ab2f80dcbe1567a3817b056a6285cf17
+ms.sourcegitcommit: 07166a1ff8bd23f5e1c49d4fd12badbca5ebd19c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/11/2020
-ms.locfileid: "90030656"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90086680"
 ---
 # <a name="use-the-azure-digital-twins-apis-and-sdks"></a>Использование интерфейсов API и пакетов SDK для Azure Digital Twins
 
@@ -59,7 +59,8 @@ API-интерфейсы плоскости данных — это API-инте
    - Вы можете просмотреть [справочную документацию по пакету SDK](https://docs.microsoft.com/dotnet/api/overview/azure/digitaltwins?view=azure-dotnet-preview&preserve-view=true).
    - подробные сведения и примеры использования можно просмотреть, перейдя к разделу [SDK .NET (C#) (панель данных)](#net-c-sdk-data-plane) этой статьи.
 * Вы можете использовать пакет SDK для **JavaScript** . Для использования пакета SDK для JavaScript...
-   - Вы можете просмотреть и установить пакет из NPM: [Клиентская библиотека Azure Azure Digital двойников для JavaScript](https://www.npmjs.com/package/@azure/digital-twins/v/1.0.0-preview.1) .
+   - Вы можете просмотреть и установить пакет из NPM: [Клиентская библиотека Azure Azure Digital двойников для JavaScript](https://www.npmjs.com/package/@azure/digital-twins/v/1.0.0-preview.1).
+   - Вы можете просмотреть [справочную документацию по пакету SDK](https://docs.microsoft.com/javascript/api/@azure/digital-twins/?view=azure-node-latest&preserve-view=true).
 * Вы можете создать пакет SDK для другого языка с помощью функции автоотдыха. Следуйте инструкциям в разделе [*инструкции по созданию настраиваемых пакетов SDK для Azure Digital двойников с помощью автоrestful*](how-to-create-custom-sdks.md).
 
 Вы также можете использовать API-интерфейсы плоскости с датами, взаимодействуя с Azure Digital двойников через интерфейс [командной строки](how-to-use-cli.md).
@@ -294,7 +295,7 @@ client.UpdateDigitalTwin("myTwin", uou.Serialize());
 
 Здесь можно просмотреть метрики для своего экземпляра и создать пользовательские представления.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Сведения об использовании API для настройки экземпляра и проверки подлинности Azure Digital двойников:
 * [*Пошаговое руководство. Настройка экземпляра и проверки подлинности*](how-to-set-up-instance-scripted.md)

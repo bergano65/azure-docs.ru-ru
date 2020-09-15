@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 03/31/2020
 ms.author: kumud
-ms.openlocfilehash: 7ec33a70e96ac9aa989eb898ca450696c589ef1b
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: d709bd1c68608720e5fa354b23d2b457e99b1ade
+ms.sourcegitcommit: 07166a1ff8bd23f5e1c49d4fd12badbca5ebd19c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84702986"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90087411"
 ---
 # <a name="deploy-an-ipv6-dual-stack-application-in-azure-virtual-network---cli"></a>Развертывание приложения двойного стека IPv6 в виртуальной сети Azure с помощью интерфейса командной строки
 
@@ -34,7 +34,7 @@ ms.locfileid: "84702986"
 
 Прежде чем можно будет создать виртуальную сеть с двумя стеками, необходимо создать группу ресурсов с помощью команды [AZ Group Create](/cli/azure/group). В следующем примере создается группа ресурсов с именем *DsResourceGroup01* в расположении *eastus* :
 
-```azurecli
+```azurecli-interactive
 az group create \
 --name DsResourceGroup01 \
 --location eastus
@@ -43,7 +43,7 @@ az group create \
 ## <a name="create-ipv4-and-ipv6-public-ip-addresses-for-load-balancer"></a>Создание общедоступных IP-адресов IPv4 и IPv6 для балансировщика нагрузки
 Для доступа к конечным точкам IPv4 и IPv6 в Интернете требуются общедоступные IP-адреса IPv4 и IPv6 для балансировщика нагрузки. Создайте общедоступный IP-адрес с помощью команды [az network public-ip create](/cli/azure/network/public-ip). В следующем примере создается общедоступный IP-адрес IPv4 и IPv6 с именем *dsPublicIP_v4* и *dsPublicIP_v6* в группе ресурсов *DsResourceGroup01* :
 
-```azurecli
+```azurecli-interactive
 # Create an IPV4 IP address
 az network public-ip create \
 --name dsPublicIP_v4  \
@@ -68,7 +68,7 @@ az network public-ip create \
 
 Для удаленного доступа к виртуальным машинам в Интернете требуются общедоступные IP-адреса IPv4 для виртуальных машин. Создайте общедоступный IP-адрес с помощью команды [az network public-ip create](/cli/azure/network/public-ip).
 
-```azurecli
+```azurecli-interactive
 az network public-ip create \
 --name dsVM0_remote_access  \
 --resource-group DsResourceGroup01 \
@@ -94,7 +94,7 @@ az network public-ip create \
 
 Создайте Load Balancer (цен. категория "Стандартный") с помощью команды [AZ Network фунтов Create](https://docs.microsoft.com/cli/azure/network/lb?view=azure-cli-latest) с именем **дслб** , которая включает интерфейсный пул с именем **dsLbFrontEnd_v4**, внутренний пул с именем **dsLbBackEndPool_v4** , связанный с общедоступным IP-адресом IPv4 **dsPublicIP_v4** , созданным на предыдущем шаге. 
 
-```azurecli
+```azurecli-interactive
 az network lb create \
 --name dsLB  \
 --resource-group DsResourceGroup01 \
@@ -109,7 +109,7 @@ az network lb create \
 
 Создайте интерфейсный IP-адрес IPV6 с помощью команды [AZ Network фунтов интерфейсного интерфейса-IP Create](https://docs.microsoft.com/cli/azure/network/lb/frontend-ip?view=azure-cli-latest#az-network-lb-frontend-ip-create). В следующем примере создается внешняя IP-конфигурация с именем *dsLbFrontEnd_v6* и присоединяется *dsPublicIP_v6* адрес.
 
-```azurepowershell-interactive
+```azurecli-interactive
 az network lb frontend-ip create \
 --lb-name dsLB  \
 --name dsLbFrontEnd_v6  \
@@ -120,9 +120,9 @@ az network lb frontend-ip create \
 
 ### <a name="configure-ipv6-back-end-address-pool"></a>Настройка пула адресов IPv6 для серверной части
 
-Создайте пулы внутренних адресов IPv6 с помощью команды [AZ Network фунтов Address-Pool Create](https://docs.microsoft.com/cli/azure/network/lb/address-pool?view=azure-cli-latest#az-network-lb-address-pool-create). В следующем примере создается пул адресов серверной части с именем *dsLbBackEndPool_v6* для включения виртуальных машин с КОНФИГУРАЦИЯМИ сетевых адаптеров IPv6:
+Создайте пулы внутренних адресов IPv6 с помощью команды [AZ Network фунтов Address-Pool Create](https://docs.microsoft.com/cli/azure/network/lb/address-pool?view=azure-cli-latest#az-network-lb-address-pool-create). В следующем примере создается пул адресов серверной части с именем *dsLbBackEndPool_v6*  для включения виртуальных машин с КОНФИГУРАЦИЯМИ сетевых адаптеров IPv6:
 
-```azurecli
+```azurecli-interactive
 az network lb address-pool create \
 --lb-name dsLB  \
 --name dsLbBackEndPool_v6  \
@@ -132,7 +132,7 @@ az network lb address-pool create \
 ### <a name="create-a-health-probe"></a>Создание пробы работоспособности
 Создайте зонд работоспособности с помощью команды [az network lb probe create](https://docs.microsoft.com/cli/azure/network/lb/probe?view=azure-cli-latest), чтобы отслеживать работоспособность виртуальных машин. 
 
-```azurecli
+```azurecli-interactive
 az network lb probe create -g DsResourceGroup01  --lb-name dsLB -n dsProbe --protocol tcp --port 3389
 ```
 
@@ -142,7 +142,7 @@ az network lb probe create -g DsResourceGroup01  --lb-name dsLB -n dsProbe --pro
 
 Создайте правило балансировщика нагрузки с помощью команды [az network lb rule create](https://docs.microsoft.com/cli/azure/network/lb/rule?view=azure-cli-latest#az-network-lb-rule-create). В следующем примере создаются правила балансировщика нагрузки с именами *dsLBrule_v4* и *dsLBrule_v6* и сбалансированный трафик по *TCP* -порту *80* в конфигурациях интерфейсов IPv4 и IPv6.
 
-```azurecli
+```azurecli-interactive
 az network lb rule create \
 --lb-name dsLB  \
 --name dsLBrule_v4  \
@@ -175,7 +175,7 @@ az network lb rule create \
 
 Создайте группу доступности с помощью команды [az vm availability-set create](https://docs.microsoft.com/cli/azure/vm/availability-set?view=azure-cli-latest). В следующем примере создается группа доступности с именем *дсавсет*:
 
-```azurecli
+```azurecli-interactive
 az vm availability-set create \
 --name dsAVset  \
 --resource-group DsResourceGroup01  \
@@ -193,7 +193,7 @@ az vm availability-set create \
 Создайте группу безопасности сети с помощью команды [AZ Network NSG Create](https://docs.microsoft.com/cli/azure/network/nsg?view=azure-cli-latest#az-network-nsg-create) .
 
 
-```azurecli
+```azurecli-interactive
 az network nsg create \
 --name dsNSG1  \
 --resource-group DsResourceGroup01  \
@@ -205,7 +205,7 @@ az network nsg create \
 
 Создайте правило группы безопасности сети, разрешающее подключения по протоколу RDP через порт 3389, подключение к Интернету через порт 80 и исходящие подключения с помощью команды [AZ Network NSG правило Create](https://docs.microsoft.com/cli/azure/network/nsg/rule?view=azure-cli-latest#az-network-nsg-rule-create).
 
-```azurecli
+```azurecli-interactive
 # Create inbound rule for port 3389
 az network nsg rule create \
 --name allowRdpIn  \
@@ -258,7 +258,7 @@ az network nsg rule create \
 
 Создайте виртуальную сеть с помощью команды [az network vnet create](https://docs.microsoft.com/cli/azure/network/vnet?view=azure-cli-latest#az-network-vnet-create). В следующем примере создается виртуальная сеть с именем *дсвнет* с подсетями *dsSubNET_v4* и *dsSubNET_v6*.
 
-```azurecli
+```azurecli-interactive
 # Create the virtual network
 az network vnet create \
 --name dsVNET \
@@ -280,7 +280,7 @@ az network vnet subnet create \
 
 Создайте виртуальные сетевые карты для каждой виртуальной машины с помощью команды [AZ Network NIC Create](https://docs.microsoft.com/cli/azure/network/nic?view=azure-cli-latest#az-network-nic-create). В следующем примере создается виртуальный сетевой адаптер для каждой виртуальной машины. Каждая сетевая карта имеет две конфигурации IP-адресов (1 Конфигурация IPv4, 1 Конфигурация IPv6). Создайте конфигурацию IPV6 с помощью команды [AZ Network NIC IP-config Create](https://docs.microsoft.com/cli/azure/network/nic/ip-config?view=azure-cli-latest#az-network-nic-ip-config-create).
  
-```azurecli
+```azurecli-interactive
 # Create NICs
 az network nic create \
 --name dsNIC0  \
@@ -333,7 +333,7 @@ az network nic ip-config create \
 
 Создайте виртуальную машину *dsVM0* следующим образом:
 
-```azurecli
+```azurecli-interactive
  az vm create \
 --name dsVM0 \
 --resource-group DsResourceGroup01 \
@@ -345,7 +345,7 @@ az network nic ip-config create \
 
 Создайте виртуальную машину *dsVM1* следующим образом:
 
-```azurecli
+```azurecli-interactive
 az vm create \
 --name dsVM1 \
 --resource-group DsResourceGroup01 \
@@ -366,7 +366,7 @@ az vm create \
 
 Вы можете удалить ставшие ненужными группу ресурсов, виртуальную машину и все связанные с ней ресурсы, выполнив команду [az group delete](/cli/azure/group#az-group-delete).
 
-```azurecli
+```azurecli-interactive
  az group delete --name DsResourceGroup01
 ```
 

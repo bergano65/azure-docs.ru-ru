@@ -8,15 +8,15 @@ ms.service: storage
 ms.topic: how-to
 ms.date: 09/08/2020
 ms.author: tamram
-ms.reviewer: ozgun
-ms.subservice: common
+ms.reviewer: ozguns
+ms.subservice: queues
 ms.custom: contperfq1
-ms.openlocfilehash: 82e92b672248e2a63f8b2bbf1fc651f617a7027f
-ms.sourcegitcommit: 43558caf1f3917f0c535ae0bf7ce7fe4723391f9
+ms.openlocfilehash: 32e78b3b8ccad791bc7b9bb11123dbe901df597f
+ms.sourcegitcommit: 07166a1ff8bd23f5e1c49d4fd12badbca5ebd19c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/11/2020
-ms.locfileid: "90020435"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90088677"
 ---
 # <a name="choose-how-to-authorize-access-to-queue-data-in-the-azure-portal"></a>Выберите способ авторизации доступа к данным очереди в портал Azure
 
@@ -92,7 +92,7 @@ ms.locfileid: "90020435"
 
 Если у вас нет доступа к ключам учетной записи, очереди не отображаются на портале. Щелкните ссылку **Переключение на учетную запись пользователя Azure AD** , чтобы снова использовать учетную запись Azure AD для проверки подлинности.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - [Проверка подлинности доступа к BLOB-объектам и очередям Azure с помощью Azure Active Directory](../common/storage-auth-aad.md)
 - [Предоставление доступа к контейнерам и очередям Azure с RBAC в портал Azure](../common/storage-auth-aad-rbac-portal.md)

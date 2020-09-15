@@ -9,12 +9,12 @@ ms.service: azure-maps
 services: azure-maps
 manager: ''
 ms.custom: codepen, devx-track-javascript
-ms.openlocfilehash: 4a804272a92d98156122397ee7427dcb467fbdf0
-ms.sourcegitcommit: 98854e3bd1ab04ce42816cae1892ed0caeedf461
+ms.openlocfilehash: 9bf34b9abd78b62a5ded16ae41b028bf61a3b51d
+ms.sourcegitcommit: 07166a1ff8bd23f5e1c49d4fd12badbca5ebd19c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "88010231"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90086102"
 ---
 # <a name="add-an-image-layer-to-a-map"></a>Добавление слоя изображений на карту
 
@@ -27,7 +27,7 @@ ms.locfileid: "88010231"
 * Лепестковые изображения погоды
 
 > [!TIP]
-> [Имажелайер](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.layer.imagelayer?view=azure-iot-typescript-latest) — это простой способ наложения изображения на карту. Обратите внимание, что обозреватели могут испытывать трудности при загрузке большого изображения. В этом случае рассмотрите возможность разбить изображение на плитки и загрузить их на карту как [тилелайер](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.layer.tilelayer?view=azure-iot-typescript-latest).
+> [Имажелайер](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.layer.imagelayer) — это простой способ наложения изображения на карту. Обратите внимание, что обозреватели могут испытывать трудности при загрузке большого изображения. В этом случае рассмотрите возможность разбить изображение на плитки и загрузить их на карту как [тилелайер](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.layer.tilelayer).
 
 Слой изображений поддерживает следующие форматы изображений:
 
@@ -38,7 +38,7 @@ ms.locfileid: "88010231"
 
 ## <a name="add-an-image-layer"></a>Добавление слоя изображений
 
-Следующий код накладывает изображение на карту [Ньюарке, Нью-Джерси, с 1922](https://www.lib.utexas.edu/maps/historical/newark_nj_1922.jpg) на карте. [Имажелайер](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.layer.imagelayer?view=azure-iot-typescript-latest) создается путем передачи URL-адреса изображению и координат для четырех углов в формате `[Top Left Corner, Top Right Corner, Bottom Right Corner, Bottom Left Corner]` .
+Следующий код накладывает изображение на карту [Ньюарке, Нью-Джерси, с 1922](https://www.lib.utexas.edu/maps/historical/newark_nj_1922.jpg) на карте. [Имажелайер](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.layer.imagelayer) создается путем передачи URL-адреса изображению и координат для четырех углов в формате `[Top Left Corner, Top Right Corner, Bottom Right Corner, Bottom Left Corner]` .
 
 ```javascript
 //Create an image layer and add it to the map.
@@ -57,18 +57,18 @@ map.layers.add(new atlas.layer.ImageLayer({
 
 <br/>
 
-<iframe height='500' scrolling='no' title='Простой слой изображений' src='//codepen.io/azuremaps/embed/eQodRo/?height=500&theme-id=0&default-tab=js,result&embed-version=2&editable=true' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>Изучите фрагмент кода <a href='https://codepen.io/azuremaps/pen/eQodRo/'>простого слоя карты</a>, опубликованный для Azure Maps (<a href='https://codepen.io/azuremaps'>@azuremaps</a>) в репозитории <a href='https://codepen.io'>CodePen</a>.
+<iframe height='500' scrolling='no' title='Простой слой изображений' src='//codepen.io/azuremaps/embed/eQodRo/?height=500&theme-id=0&default-tab=js,result&embed-version=2&editable=true' frameborder='no' loading="lazy" allowtransparency='true' allowfullscreen='true' style='width: 100%;'>Изучите фрагмент кода <a href='https://codepen.io/azuremaps/pen/eQodRo/'>простого слоя карты</a>, опубликованный для Azure Maps (<a href='https://codepen.io/azuremaps'>@azuremaps</a>) в репозитории <a href='https://codepen.io'>CodePen</a>.
 </iframe>
 
 ## <a name="import-a-kml-file-as-ground-overlay"></a>Импортировать файл КМЛ как наложение заземления
 
 В этом образце показано, как добавить сведения о наложении КМЛ на землю в виде слоя изображения на карте. Наложение заземления КМЛ предоставляет координаты Севера, Юг, Восток и Запад и поворот по часовой стрелке. Но уровень изображения ожидает координаты для каждого угла изображения. Наложение заземления КМЛ в этом примере предназначено для Чартрес Каседрал, а источник — из [некоммерческого](https://commons.wikimedia.org/wiki/File:Chartres.svg/overlay.kml).
 
-В коде используется статическая `getCoordinatesFromEdges` функция из класса [имажелайер](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.layer.imagelayer?view=azure-iot-typescript-latest) . Он вычисляет четыре угла изображения, используя сведения о севере, Южной, Восточной, Западной и повороте наложения заземления КМЛ.
+В коде используется статическая `getCoordinatesFromEdges` функция из класса [имажелайер](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.layer.imagelayer) . Он вычисляет четыре угла изображения, используя сведения о севере, Южной, Восточной, Западной и повороте наложения заземления КМЛ.
 
 <br/>
 
-<iframe height='500' scrolling='no' title='Наземное наложение KML как слоя изображений' src='//codepen.io/azuremaps/embed/EOJgpj/?height=500&theme-id=0&default-tab=js,result&embed-version=2&editable=true' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>Изучите фрагмент кода <a href='https://codepen.io/azuremaps/pen/EOJgpj/'>наземное наложение KML как слоя изображений</a>, опубликованный для Azure Maps (<a href='https://codepen.io/azuremaps'>@azuremaps</a>) в репозитории <a href='https://codepen.io'>CodePen</a>.
+<iframe height='500' scrolling='no' title='Наземное наложение KML как слоя изображений' src='//codepen.io/azuremaps/embed/EOJgpj/?height=500&theme-id=0&default-tab=js,result&embed-version=2&editable=true' frameborder='no' loading="lazy" allowtransparency='true' allowfullscreen='true' style='width: 100%;'>Изучите фрагмент кода <a href='https://codepen.io/azuremaps/pen/EOJgpj/'>наземное наложение KML как слоя изображений</a>, опубликованный для Azure Maps (<a href='https://codepen.io/azuremaps'>@azuremaps</a>) в репозитории <a href='https://codepen.io'>CodePen</a>.
 </iframe>
 
 ## <a name="customize-an-image-layer"></a>Настройка слоя изображений
@@ -77,7 +77,7 @@ map.layers.add(new atlas.layer.ImageLayer({
 
 <br/>
 
-<iframe height='700' scrolling='no' title='Параметры слоя изображений' src='//codepen.io/azuremaps/embed/RqOGzx/?height=700&theme-id=0&default-tab=result' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>Просмотрите фрагмент кода с <a href='https://codepen.io/azuremaps/pen/RqOGzx/'>параметрами слоя изображений</a>, опубликованный для Azure Maps (<a href='https://codepen.io/azuremaps'>@azuremaps</a>) на сайте <a href='https://codepen.io'>CodePen</a>.
+<iframe height='700' scrolling='no' title='Параметры слоя изображений' src='//codepen.io/azuremaps/embed/RqOGzx/?height=700&theme-id=0&default-tab=result' frameborder='no' loading="lazy" allowtransparency='true' allowfullscreen='true' style='width: 100%;'>Просмотрите фрагмент кода с <a href='https://codepen.io/azuremaps/pen/RqOGzx/'>параметрами слоя изображений</a>, опубликованный для Azure Maps (<a href='https://codepen.io/azuremaps'>@azuremaps</a>) на сайте <a href='https://codepen.io'>CodePen</a>.
 </iframe>
 
 ## <a name="next-steps"></a>Дальнейшие действия
@@ -85,10 +85,10 @@ map.layers.add(new atlas.layer.ImageLayer({
 Дополнительные сведения о классах и методах, которые используются в этой статье:
 
 > [!div class="nextstepaction"]
-> [Класс ImageLayer](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.layer.imagelayer?view=azure-iot-typescript-latest)
+> [Класс ImageLayer](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.layer.imagelayer)
 
 > [!div class="nextstepaction"]
-> [Интерфейс ImageLayerOptions](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.imagelayeroptions?view=azure-iot-typescript-latest)
+> [Интерфейс ImageLayerOptions](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.imagelayeroptions)
 
 Дополнительные примеры кода для добавления в карты см. в следующих статьях:
 

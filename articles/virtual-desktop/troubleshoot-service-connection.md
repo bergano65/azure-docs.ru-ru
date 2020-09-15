@@ -1,17 +1,17 @@
 ---
 title: Устранение неполадок с подключением к службе Виртуального рабочего стола Windows (Azure)
-description: Сведения об устранении проблем при настройке клиентских подключений в среде клиента Виртуального рабочего стола Windows.
+description: Устранение проблем при настройке подключений к службам в среде клиента виртуальных рабочих столов Windows.
 author: Heidilohr
 ms.topic: troubleshooting
-ms.date: 06/19/2020
+ms.date: 09/14/2020
 ms.author: helohr
 manager: lizross
-ms.openlocfilehash: c6d0360a4fe957f43e38fd892cef6b4ab0a2325a
-ms.sourcegitcommit: 98854e3bd1ab04ce42816cae1892ed0caeedf461
+ms.openlocfilehash: 5eb5602b8330906311df4a0d1f59bc5e5130237e
+ms.sourcegitcommit: 07166a1ff8bd23f5e1c49d4fd12badbca5ebd19c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "88009381"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90089910"
 ---
 # <a name="windows-virtual-desktop-service-connections"></a>Подключения к службе Виртуального рабочего стола Windows
 
@@ -39,6 +39,12 @@ ms.locfileid: "88009381"
 3. Если используется веб-клиент, проверьте возможные проблемы с кэшированием учетных данных.
 
 4. Если пользователь входит в группу пользователей Azure Active Directory (AD), убедитесь, что группа пользователей является группой безопасности, а не группой рассылки. Виртуальный рабочий стол Windows не поддерживает группы рассылки Azure AD.
+
+## <a name="user-loses-existing-feed-and-no-remote-resource-is-displayed-no-feed"></a>Пользователь теряет существующий веб-канал, и удаленный ресурс не отображается (канал отсутствует)
+
+Эта ошибка обычно возникает после того, как пользователь переместил подписку из одного клиента Azure AD в другой. В результате служба теряет свои назначения пользователей, так как они все еще привязаны к старому клиенту Azure AD.
+
+Чтобы устранить эту проблему, необходимо переназначить пользователей для их групп приложений.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

@@ -5,12 +5,12 @@ services: automation
 ms.subservice: process-automation
 ms.date: 03/20/2019
 ms.topic: conceptual
-ms.openlocfilehash: f2bf058ddce81ab9f04e97787a4dc93e44036b1b
-ms.sourcegitcommit: ec682dcc0a67eabe4bfe242fce4a7019f0a8c405
+ms.openlocfilehash: f90d88e49675681a7f73df838ca489a7193955b3
+ms.sourcegitcommit: 07166a1ff8bd23f5e1c49d4fd12badbca5ebd19c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/09/2020
-ms.locfileid: "86186118"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90087866"
 ---
 # <a name="use-runbooks-and-modules-in-powershell-gallery"></a>Поиск последовательностей runbook и модулей в коллекции PowerShell
 
@@ -39,7 +39,7 @@ ms.locfileid: "86186118"
    * [Update-ModulesInAutomationToLatestVersion](https://www.powershellgallery.com/packages/Update-ModulesInAutomationToLatestVersion/) — импортирует последние версии всех модулей в учетной записи автоматизации из коллекции PowerShell.
    * [Enable-AzureDiagnostics](https://www.powershellgallery.com/packages/Enable-AzureDiagnostics/) — настраивает Диагностику Azure и Log Analytics для получения журналов службы автоматизации Azure, содержащих сведения о состоянии заданий и потоки заданий.
    * [Copy-ItemFromAzureVM](https://www.powershellgallery.com/packages/Copy-ItemFromAzureVM/) — копирует удаленный файл из виртуальной машины Windows Azure.
-   * [Copy-ItemFromAzureVM](https://www.powershellgallery.com/packages/Copy-ItemToAzureVM/) — копирует локальный файл на виртуальную машину Azure.
+   * [Copy-итемтоазуревм](https://www.powershellgallery.com/packages/Copy-ItemToAzureVM/) — копирует локальный файл на виртуальную машину Azure.
 
 ## <a name="import-a-powershell-runbook-from-the-runbook-gallery-with-the-azure-portal"></a>Импорт модуля runbook из коллекции runbook с помощью портала Azure
 

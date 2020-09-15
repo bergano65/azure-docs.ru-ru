@@ -13,12 +13,12 @@ ms.tgt_pltfrm: vm-windows
 ms.topic: troubleshooting
 ms.date: 10/31/2018
 ms.author: genli
-ms.openlocfilehash: 62a30fada32a23546323dae34f875ab9c7da228c
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: c570c43560ad865b8bcc5161cbd0c6731ea4a237
+ms.sourcegitcommit: 07166a1ff8bd23f5e1c49d4fd12badbca5ebd19c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87028555"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90090658"
 ---
 # <a name="azure-performance-diagnostics-vm-extension-for-windows"></a>Расширение виртуальной машины для диагностики производительности Azure для Windows
 
@@ -27,9 +27,17 @@ ms.locfileid: "87028555"
 > [!NOTE]
 > Если вы хотите выполнить диагностику виртуальной машины на портале Azure, развернутой с помощью неклассической модели Azure, советуем использовать новый интерфейс. Дополнительные сведения см. в статье [Диагностика производительности для виртуальных машин Azure](performance-diagnostics.md). 
 
-## <a name="prerequisites"></a>Обязательные условия
+## <a name="prerequisites"></a>Предварительные условия
 
-Расширение можно установить на Windows Server 2008 R2, Windows Server 2012, Windows Server 2012 R2 и Windows Server 2016, а также в Windows 8.1 и Windows 10.
+Это расширение можно установить на
+* Windows Server 2019
+* Windows Server 2016
+* Windows Server 2012 R2
+* Windows Server 2012
+* Windows Server 2008 R2
+* Windows 10
+* Windows 8.1
+* Windows 8
 
 ## <a name="extension-schema"></a>Схема расширения
 В указанном ниже объекте JSON показана схема для расширения виртуальной машины для диагностики производительности Azure. Для этого расширения требуется имя и ключ для учетной записи хранения, чтобы хранить выходные данные и отчет диагностики. Эти значения конфиденциальные. Ключ учетной записи хранения должен храниться внутри защищенной конфигурации параметров. Данные защищенных параметров расширения виртуальной машины Azure зашифрованы. Они расшифровываются только на целевой виртуальной машине. Обратите внимание, что в **storageAccountName** и **storageAccountKey** учитывается регистр. Другие необходимые параметры указаны в следующем разделе.
@@ -66,11 +74,11 @@ ms.locfileid: "87028555"
 
 ### <a name="property-values"></a>Значения свойств
 
-|   **имя**;   |**Значение и пример**|       **Описание**      |
+|   **Имя**   |**Значение и пример**|       **Описание**      |
 |--------------|-------------------|----------------------------|
 |версия_API|2015-06-15|Версия API.
 |publisher|Microsoft.Azure.Performance.Diagnostics|Пространство имен издателя для расширения.
-|тип|AzurePerformanceDiagnostics|Тип расширения виртуальной машины.
+|type|AzurePerformanceDiagnostics|Тип расширения виртуальной машины.
 |typeHandlerVersion|1.0|Версия обработчика расширения.
 |performanceScenario|basic|Сценарий производительности, для которого требуется собрать данные. Допустимые значения: **basic**, **vmslow**, **azurefiles** и **custom**.
 |traceDurationInSeconds|300|Длительность трассировки, если выбран любой из параметров трассировки.

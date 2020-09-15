@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 09/12/2019
-ms.openlocfilehash: 7bdb0ae813600f53df44ee1a61a4cbbb56bb0bfe
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 4926e18aa6b00fe36608843ea5253903ace774e2
+ms.sourcegitcommit: 07166a1ff8bd23f5e1c49d4fd12badbca5ebd19c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87067495"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90089114"
 ---
 # <a name="simple-logs-experience-in-azure-monitor-preview"></a>Простой журнал в Azure Monitor (Предварительная версия)
 Azure Monitor предоставляет [широкие возможности](get-started-portal.md) для создания [запросов журналов](log-query-overview.md) с помощью языка ККЛ. Вы можете не требовать полной мощности ККЛ хотя и предпочесть упрощенный интерфейс для основных требований к запросам. Простая процедура работы с журналами позволяет создавать простые запросы без непосредственного взаимодействия с ККл. Можно также использовать простые журналы в качестве средства обучения для ККЛ, так как требуется более сложные запросы.
@@ -26,11 +26,11 @@ Azure Monitor предоставляет [широкие возможности]
 ## <a name="using-simple-logs"></a>Использование простых журналов
 Перейдите к любому Cosmos DB или Key Vault в подписке Azure с [параметрами диагностики, настроенными для получения журналов в рабочей области log Analytics](../platform/resource-logs.md#send-to-azure-storage). Щелкните **журналы** в меню **мониторинг** , чтобы открыть простой журнал.
 
-![Меню](media/simple-logs/menu.png)
+![На снимке экрана показано меню мониторинга с выбранными журналами.](media/simple-logs/menu.png)
 
 Выберите **поле** и **оператор** и укажите **значение** для сравнения. Щелкните **+** и укажите **и/или** , чтобы добавить дополнительные критерии.
 
-![Критерии](media/simple-logs/criteria.png)
+![На снимке экрана показан поиск в области журналы с выбранными простыми журналами.](media/simple-logs/criteria.png)
 
 Нажмите кнопку **выполнить** , чтобы просмотреть результаты запроса.
 
@@ -44,7 +44,7 @@ Azure Monitor предоставляет [широкие возможности]
 ![Изменить ККЛ](media/simple-logs/edit-kql.png)
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - Завершите [работу с руководством по использованию log Analytics в портал Azure](get-started-portal.md).
 - Заполните учебник по [написанию запросов к журналам](get-started-portal.md).

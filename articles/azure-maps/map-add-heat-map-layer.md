@@ -9,12 +9,12 @@ ms.service: azure-maps
 services: azure-maps
 manager: ''
 ms.custom: codepen, devx-track-javascript
-ms.openlocfilehash: a6235ee6bbb476c69114e6895403f05e69fd6e19
-ms.sourcegitcommit: 98854e3bd1ab04ce42816cae1892ed0caeedf461
+ms.openlocfilehash: 80299b66b614e3d31778902c86e8e43f9f1b95de
+ms.sourcegitcommit: 07166a1ff8bd23f5e1c49d4fd12badbca5ebd19c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "88010248"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90086119"
 ---
 # <a name="add-a-heat-map-layer"></a>Добавление слоя тепловой карты
 
@@ -60,7 +60,7 @@ map.layers.add(new atlas.layer.HeatMapLayer(datasource, null, {
 
 <br/>
 
-<iframe height='500' scrolling='no' title='Простой слой тепловой карты' src='//codepen.io/azuremaps/embed/gQqdQB/?height=500&theme-id=0&default-tab=js,result&embed-version=2&editable=true' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>Изучите фрагмент кода <a href='https://codepen.io/azuremaps/pen/gQqdQB/'>простого слоя тепловой карты</a>, опубликованный для Azure Maps (<a href='https://codepen.io/azuremaps'>@azuremaps</a>) в репозитории <a href='https://codepen.io'>CodePen</a>.
+<iframe height='500' scrolling='no' title='Простой слой тепловой карты' src='//codepen.io/azuremaps/embed/gQqdQB/?height=500&theme-id=0&default-tab=js,result&embed-version=2&editable=true' frameborder='no' loading="lazy" allowtransparency='true' allowfullscreen='true' style='width: 100%;'>Изучите фрагмент кода <a href='https://codepen.io/azuremaps/pen/gQqdQB/'>простого слоя тепловой карты</a>, опубликованный для Azure Maps (<a href='https://codepen.io/azuremaps'>@azuremaps</a>) в репозитории <a href='https://codepen.io'>CodePen</a>.
 </iframe>
 
 ## <a name="customize-the-heat-map-layer"></a>Настройка слоя тепловой карт
@@ -83,13 +83,13 @@ map.layers.add(new atlas.layer.HeatMapLayer(datasource, null, {
 - `weight`: По умолчанию все точки данных имеют вес 1 и имеют одинаковое взвешенное значение. Параметр Weight выступает в качестве множителя, и его можно задать в виде числа или выражения. Если в качестве веса задано число, то это эквивалентное размещение каждой точки данных на карте дважды. Например, если весовой коэффициент равен 2, то плотность удваивается. Фиксированное число в качестве значения параметра weight изменяет тепловую карту точно так же, как изменение параметра intensity. 
 
   Однако при использовании выражения весовые коэффициенты каждой точки данных могут основываться на свойствах каждой точки данных. Например, предположим, что каждая точка данных представляет землетрясения. Значение величины было важной метрикой для каждой точки данных землетрясения. Землетрясения выполняется все время, но большинство из них имеет низкую величину и не Заметится. Значение величины в выражении используется для назначения веса каждой точке данных. Используя значение величины для назначения веса, вы получаете лучшее представление о значимости землетрясения в тепловой карте.
-- `source`и `source-layer` : позволяют обновлять источник данных.
+- `source` и `source-layer` : позволяют обновлять источник данных.
 
 Ниже приведено средство для тестирования различных параметров слоя тепловой карт.
 
 <br/>
 
-<iframe height='700' scrolling='no' title='Параметры слоя тепловой карты' src='//codepen.io/azuremaps/embed/WYPaXr/?height=700&theme-id=0&default-tab=result' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>Просмотрите фрагмент кода с <a href='https://codepen.io/azuremaps/pen/WYPaXr/'>параметрами слоя тепловой карты</a> для службы Azure Maps (<a href='https://codepen.io/azuremaps'>@azuremaps</a>), размещенный в репозитории <a href='https://codepen.io'>CodePen</a>.
+<iframe height='700' scrolling='no' title='Параметры слоя тепловой карты' src='//codepen.io/azuremaps/embed/WYPaXr/?height=700&theme-id=0&default-tab=result' frameborder='no' loading="lazy" allowtransparency='true' allowfullscreen='true' style='width: 100%;'>Просмотрите фрагмент кода с <a href='https://codepen.io/azuremaps/pen/WYPaXr/'>параметрами слоя тепловой карты</a> для службы Azure Maps (<a href='https://codepen.io/azuremaps'>@azuremaps</a>), размещенный в репозитории <a href='https://codepen.io'>CodePen</a>.
 </iframe>
 
 ## <a name="consistent-zoomable-heat-map"></a>Последовательная тепловая схема масштабируемый
@@ -102,7 +102,7 @@ map.layers.add(new atlas.layer.HeatMapLayer(datasource, null, {
 
 <br/>
 
-<iframe height="500" style="width: 100%;" scrolling="no" title="Последовательная тепловая схема масштабируемый" src="//codepen.io/azuremaps/embed/OGyMZr/?height=500&theme-id=0&default-tab=js,result&editable=true" frameborder="no" allowtransparency="true" allowfullscreen="true">
+<iframe height="500" style="width: 100%;" scrolling="no" title="Последовательная тепловая схема масштабируемый" src="//codepen.io/azuremaps/embed/OGyMZr/?height=500&theme-id=0&default-tab=js,result&editable=true" frameborder='no' loading="lazy" loading="lazy" allowtransparency="true" allowfullscreen="true">
 См. Azure Maps () на CodePen с помощью <a href='https://codepen.io/azuremaps/pen/OGyMZr/'>масштабируемый</a> ( <a href='https://codepen.io/azuremaps'>@azuremaps</a> ) <a href='https://codepen.io'>CodePen</a>.
 </iframe>
 
@@ -120,10 +120,10 @@ map.layers.add(new atlas.layer.HeatMapLayer(datasource, null, {
 Дополнительные сведения о классах и методах, которые используются в этой статье:
 
 > [!div class="nextstepaction"]
-> [HeatMapLayer](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.htmlmarker?view=azure-iot-typescript-latest)
+> [HeatMapLayer](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.htmlmarker)
 
 > [!div class="nextstepaction"]
-> [HeatMapLayerOptions](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.heatmaplayeroptions?view=azure-iot-typescript-latest)
+> [HeatMapLayerOptions](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.heatmaplayeroptions)
 
 Дополнительные примеры кода для добавления в карты см. в следующих статьях:
 

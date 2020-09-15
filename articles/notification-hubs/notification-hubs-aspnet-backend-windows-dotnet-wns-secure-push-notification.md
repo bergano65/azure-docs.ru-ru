@@ -1,30 +1,28 @@
 ---
 title: Безопасное push-уведомление центра уведомлений Azure для Windows
 description: Узнайте, как отправлять безопасные push-уведомления в Azure. Примеры кода написаны на C# с использованием API .NET.
-documentationcenter: windows
 author: sethmanheim
 manager: femila
-editor: jwargo
+editor: thsomasu
 services: notification-hubs
-ms.assetid: 5aef50f4-80b3-460e-a9a7-7435001273bd
 ms.service: notification-hubs
 ms.workload: mobile
 ms.tgt_pltfrm: windows
 ms.devlang: dotnet
 ms.topic: article
-ms.date: 01/04/2019
+ms.date: 09/14/2020
 ms.author: sethm
-ms.reviewer: jowargo
+ms.reviewer: thsomasu
 ms.lastreviewed: 01/04/2019
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 4c75af054a342e74606696f09c227822f385e096
-ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
+ms.openlocfilehash: 98e587103e63cd5cc26eab5b00864d00e0b9007f
+ms.sourcegitcommit: 07166a1ff8bd23f5e1c49d4fd12badbca5ebd19c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89017997"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90089958"
 ---
-# <a name="securely-push-notifications-from-azure-notification-hubs"></a>Безопасная отправка push-уведомлений из Центров уведомлений Azure
+# <a name="send-secure-push-notifications-from-azure-notification-hubs"></a>Отправка безопасных push-уведомлений из центров уведомлений Azure
 
 > [!div class="op_single_selector"]
 > * [Windows Universal](notification-hubs-aspnet-backend-windows-dotnet-wns-secure-push-notification.md)
@@ -48,21 +46,22 @@ ms.locfileid: "89017997"
 
 Стоит отметить: в предыдущем потоке (и в этом учебнике) мы предположили, что устройство сохраняет маркер проверки подлинности в локальном хранилище после входа пользователя. Таким образом обеспечивается удобство работы, так как с помощью этого маркера устройство способно получать безопасные полезные данные уведомлений. Если приложение не сохраняет маркеры проверки подлинности на устройстве, или если истек срок действия маркеров, приложение устройства, после получения уведомления, должно отобразить общее уведомление, предлагая пользователю запустить приложение. Затем приложение выполняет проверку подлинности пользователя и отображает полезную нагрузку уведомления.
 
-В этом учебнике по безопасности push-уведомлений показано, как безопасно отправлять push-уведомление. Данное руководство является продолжением другого учебника под названием [Уведомление пользователей](notification-hubs-aspnet-backend-windows-dotnet-wns-notification.md) , поэтому необходимо сначала выполнить шаги в указанном учебнике.
+В этом руководстве показано, как безопасно отправить push-уведомление. Руководство построено в руководстве по [уведомлению пользователей](notification-hubs-aspnet-backend-windows-dotnet-wns-notification.md) , поэтому сначала необходимо выполнить действия, описанные в этом руководстве.
 
 > [!NOTE]
-> В этом учебнике подразумевается, что вы создали и настроили центр уведомлений в соответствии с описанием в руководстве [Приступая к работе с центрами уведомлений (Магазин Windows)](notification-hubs-windows-store-dotnet-get-started-wns-push-notification.md).
+> В этом учебнике предполагается, что вы создали и настроили центр уведомлений, как описано в разделе [Отправка уведомлений в универсальная платформа Windows приложения](notification-hubs-windows-store-dotnet-get-started-wns-push-notification.md).
 > Кроме того, обратите внимание, что для Windows Phone 8.1 требуются учетные данные Windows (не Windows Phone) и что фоновые задачи не работают на Windows Phone 8.0 и в Silverlight 8.1. При работе в приложениями из Магазина Windows уведомления можно получать через фоновую задачу только в том случае, если включен экран блокировки приложения (установите флажок в Appmanifest).
 
 [!INCLUDE [notification-hubs-aspnet-backend-securepush](../../includes/notification-hubs-aspnet-backend-securepush.md)]
 
-## <a name="modify-the-windows-phone-project"></a>Изменение проекта для Windows Phone
+## <a name="modify-the-windows-phone-project"></a>Изменение проекта Windows Phone
 
 1. В проекте **NotifyUserWindowsPhone** добавьте следующий код в App.xaml.cs, чтобы зарегистрировать фоновую задачу push-уведомления. В конце метода `OnLaunched()` добавьте следующую строку кода:
 
     ```csharp
     RegisterBackgroundTask();
     ```
+
 2. Находясь в App.xaml.cs, добавьте следующий код сразу после метода `OnLaunched()` :
 
     ```csharp
@@ -80,15 +79,17 @@ ms.locfileid: "89017997"
         }
     }
     ```
+
 3. Добавьте в начало файла App.xaml.cs следующие операторы `using` :
 
     ```csharp
     using Windows.Networking.PushNotifications;
     using Windows.ApplicationModel.Background;
     ```
+
 4. В меню **Файл** Visual Studio выберите **Сохранить все**.
 
-## <a name="create-the-push-background-component"></a>Создайте фоновый компонент push-уведомления
+## <a name="create-the-push-background-component"></a>Создание фонового компонента push-уведомлений
 
 Следующий шаг заключается в создании фонового компонента push-уведомления.
 
@@ -143,6 +144,7 @@ ms.locfileid: "89017997"
             }
         }
     ```
+
 5. В обозревателе решений щелкните правой кнопкой мыши проект **PushBackgroundComponent (Windows Phone 8.1)**, а затем щелкните **Управление пакетами NuGet**.
 6. В левой части окна выберите **В сети**.
 7. В текстовом поле **Поиск** введите **Клиент HTTP**.
@@ -160,6 +162,7 @@ ms.locfileid: "89017997"
     using Windows.UI.Notifications;
     using Windows.Data.Xml.Dom;
     ```
+
 11. В обозреватель решений в проекте **проекте notifyuserwindowsphone (Windows Phone 8,1)** щелкните правой кнопкой мыши элемент **ссылки**и выберите команду **Добавить ссылку...**. В диалоговом окне Диспетчер ссылок установите флажок **PushBackgroundComponent**и нажмите кнопку **ОК**.
 12. В обозревателе решений дважды щелкните **Package.appxmanifest** в проекте **NotifyUserWindowsPhone (Windows Phone 8.1)**. В поле **Уведомления** установите для параметра **Всплывающие уведомления** значение **Да**.
 

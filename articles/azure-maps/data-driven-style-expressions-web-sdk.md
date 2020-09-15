@@ -9,12 +9,12 @@ ms.service: azure-maps
 services: azure-maps
 manager: cpendleton
 ms.custom: codepen, devx-track-javascript
-ms.openlocfilehash: c8de7148e91f8fafa4a2b1f8a661964a77ead215
-ms.sourcegitcommit: 98854e3bd1ab04ce42816cae1892ed0caeedf461
+ms.openlocfilehash: ea88797a6423118cba40d117a37dc9df75b0b7a1
+ms.sourcegitcommit: 07166a1ff8bd23f5e1c49d4fd12badbca5ebd19c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "88009143"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90089451"
 ---
 # <a name="data-driven-style-expressions-web-sdk"></a>Выражения стиля на основе данных (веб-пакет SDK)
 
@@ -72,7 +72,12 @@ Azure Maps веб-пакет SDK поддерживает много типов 
         "subTitle": "Building 40", 
         "temperature": 72,
         "title": "Cafeteria", 
-        "zoneColor": "red"
+        "zoneColor": "red",
+        "abcArray": ['a', 'b', 'c'],
+        "array2d": [['a', 'b'], ['x', 'y']],
+        "_style": {
+            "fillColor": 'red'
+        }
     }
 }
 ```
@@ -85,12 +90,12 @@ Azure Maps веб-пакет SDK поддерживает много типов 
 |------------|-------------|-------------|
 | `['at', number, array]` | object | Извлекает элемент из массива. |
 | `['geometry-type']` | строка | Возвращает тип геометрии компонента: Point, MultiPoint, LineString, MultiLineString, многоугольник, Polygon. |
-| `['get', string]` | value | Возвращает значение свойства из свойств текущего компонента. Возвращает значение null, если запрошенное свойство отсутствует. |
-| `['get', string, object]` | value | Возвращает значение свойства из свойств указанного объекта. Возвращает значение null, если запрошенное свойство отсутствует. |
+| `['get', string]` | Значение | Возвращает значение свойства из свойств текущего компонента. Возвращает значение null, если запрошенное свойство отсутствует. |
+| `['get', string, object]` | Значение | Возвращает значение свойства из свойств указанного объекта. Возвращает значение null, если запрошенное свойство отсутствует. |
 | `['has', string]` | Логическое | Определяет, имеют ли свойства компонента указанное свойство. |
 | `['has', string, object]` | Логическое | Определяет, имеют ли свойства объекта указанное свойство. |
-| `['id']` | value | Возвращает идентификатор компонента, если он имеется. |
-| `['length', string | array]` | число | Возвращает длину строки или массива. |
+| `['id']` | Значение | Возвращает идентификатор компонента, если он имеется. |
+| `['length', string | array]` | number | Возвращает длину строки или массива. |
 | `['in', boolean | string | number, array]` | Логическое | Определяет, существует ли элемент в массиве |
 | `['in', substring, string]` | Логическое | Определяет, существует ли подстрока в строке |
 
@@ -137,38 +142,60 @@ var layer = new atlas.layer.BubbleLayer(datasource, null, {
 
 Точно так же контур многоугольников будет отображаться в слоях линий. Чтобы отключить это поведение на уровне линии, добавьте фильтр, допускающий только `LineString` функции и `MultiLineString` .  
 
+Ниже приведены некоторые дополнительные примеры использования выражений данных.
+
+```javascript
+//Get item [2] from an array "properties.abcArray[1]" = "c"
+['at', 2, ['get', 'abcArray']]
+
+//Get item [0][1] from a 2D array "properties.array2d[0][1]" = "b"
+['at', 1, ['at', 0, ['get', 'array2d']]]
+
+//Check to see if a value is in an array property "properties.abcArray.indexOf('a') !== -1" = true
+['in', 'a', ['get', 'abcArray']]
+
+//Get the length of an array "properties.abcArray.length" = 3
+['length', ['get', 'abcArray']]
+
+//Get the value of a subproperty "properties._style.fillColor" = "red"
+['get', 'fillColor', ['get', '_style']]
+
+//Check that "fillColor" exists as a subproperty of "_style".
+['has', 'fillColor', ['get', '_style']]
+```
+
 ## <a name="math-expressions"></a>Математические выражения
 
 Математические выражения предоставляют математические операторы для выполнения вычислений на основе данных в платформе выражений.
 
 | Выражение | Возвращаемый тип | Описание |
 |------------|-------------|-------------|
-| `['+', number, number, …]` | число | Вычисляет сумму указанных чисел. |
-| `['-', number]` | число | Вычитает 0 на указанное число. |
-| `['-', number, number]` | число | Вычитает первые цифры по второму числу. |
-| `['*', number, number, …]` | число | Умножает указанные числа вместе. |
-| `['/', number, number]` | число | Делит первое число на второе число. |
-| `['%', number, number]` | число | Вычисляет остаток при делении первого числа на второе число. |
-| `['^', number, number]` | число | Вычисляет значение первого значения, возведенного в степень второго числа. |
-| `['abs', number]` | число | Вычисляет абсолютное значение заданного числа. |
-| `['acos', number]` | число | Вычисляет арккосинус указанного числа. |
-| `['asin', number]` | число | Вычисляет арксинус указанного числа. |
-| `['atan', number]` | число | Вычисляет арктангенс указанного числа. |
-| `['ceil', number]` | число | Округляет число до следующего целого числа. |
-| `['cos', number]` | число | Вычисляет COS указанного числа. |
-| `['e']` | число | Возвращает математическую константу `e` . |
-| `['floor', number]` | число | Округляет число до предыдущего целого числа. |
-| `['ln', number]` | число | Вычисляет натуральный логарифм заданного числа. |
-| `['ln2']` | число | Возвращает математическую константу `ln(2)` . |
-| `['log10', number]` | число | Вычисляет десятичный логарифм указанного числа. |
-| `['log2', number]` | число | Вычисляет логарифм указанного числа с основанием 2. |
-| `['max', number, number, …]` | число | Вычисляет максимальное число в указанном наборе чисел. |
-| `['min', number, number, …]` | число | Вычисляет минимальное число в указанном наборе чисел. |
-| `['pi']` | число | Возвращает математическую константу `PI` . |
-| `['round', number]` | число | Округляет число до ближайшего целого. Среднее значение округляется с нуля. Например, `['round', -1.5]` принимает значение-2. |
-| `['sin', number]` | число | Вычисляет синус указанного числа. |
-| `['sqrt', number]` | число | Вычисляет квадратный корень заданного числа. |
-| `['tan', number]` | число | Вычисляет тангенс указанного числа. |
+| `['+', number, number, …]` | number | Вычисляет сумму указанных чисел. |
+| `['-', number]` | number | Вычитает 0 на указанное число. |
+| `['-', number, number]` | number | Вычитает первые цифры по второму числу. |
+| `['*', number, number, …]` | number | Умножает указанные числа вместе. |
+| `['/', number, number]` | number | Делит первое число на второе число. |
+| `['%', number, number]` | number | Вычисляет остаток при делении первого числа на второе число. |
+| `['^', number, number]` | number | Вычисляет значение первого значения, возведенного в степень второго числа. |
+| `['abs', number]` | number | Вычисляет абсолютное значение заданного числа. |
+| `['acos', number]` | number | Вычисляет арккосинус указанного числа. |
+| `['asin', number]` | number | Вычисляет арксинус указанного числа. |
+| `['atan', number]` | number | Вычисляет арктангенс указанного числа. |
+| `['ceil', number]` | number | Округляет число до следующего целого числа. |
+| `['cos', number]` | number | Вычисляет COS указанного числа. |
+| `['e']` | number | Возвращает математическую константу `e` . |
+| `['floor', number]` | number | Округляет число до предыдущего целого числа. |
+| `['ln', number]` | number | Вычисляет натуральный логарифм заданного числа. |
+| `['ln2']` | number | Возвращает математическую константу `ln(2)` . |
+| `['log10', number]` | number | Вычисляет десятичный логарифм указанного числа. |
+| `['log2', number]` | number | Вычисляет логарифм указанного числа с основанием 2. |
+| `['max', number, number, …]` | number | Вычисляет максимальное число в указанном наборе чисел. |
+| `['min', number, number, …]` | number | Вычисляет минимальное число в указанном наборе чисел. |
+| `['pi']` | number | Возвращает математическую константу `PI` . |
+| `['round', number]` | number | Округляет число до ближайшего целого. Среднее значение округляется с нуля. Например, `['round', -1.5]` принимает значение-2. |
+| `['sin', number]` | number | Вычисляет синус указанного числа. |
+| `['sqrt', number]` | number | Вычисляет квадратный корень заданного числа. |
+| `['tan', number]` | number | Вычисляет тангенс указанного числа. |
 
 ## <a name="aggregate-expression"></a>Статистическое выражение
 
@@ -181,14 +208,14 @@ var layer = new atlas.layer.BubbleLayer(datasource, null, {
 ```
 
 - Оператор: функция выражения, которая затем применяется к всем значениям, вычисленным `mapExpression` для каждой точки в кластере. Поддерживаемые операторы: 
-    - Для чисел: `+` , `*` , `max` ,`min`
-    - Для логических значений: `all` ,`any`
+    - Для чисел: `+` , `*` , `max` , `min`
+    - Для логических значений: `all` , `any`
 - Инитиалвалуе: начальное значение, для которого выполняется статистическая обработка первого вычисленного значения.
 - Мапекспрессион: выражение, применяемое к каждой точке в наборе данных.
 
 **Примеры**
 
-Если все компоненты в наборе данных имеют `revenue` свойство, которое является числом. Затем можно вычислить общий доход всех точек в кластере, созданных из набора данных. Это вычисление выполняется с помощью следующего статистического выражения:`['+', 0, ['get', 'revenue']]`
+Если все компоненты в наборе данных имеют `revenue` свойство, которое является числом. Затем можно вычислить общий доход всех точек в кластере, созданных из набора данных. Это вычисление выполняется с помощью следующего статистического выражения: `['+', 0, ['get', 'revenue']]`
 
 ## <a name="boolean-expressions"></a>Логические выражения
 
@@ -405,12 +432,12 @@ var layer = new atlas.layer.SymbolLayer(datasource, null, {
 | `['image', string]` | строка | Проверяет, загружен ли указанный идентификатор изображения в спрайт изображений Maps. Если значение равно, возвращается идентификатор, в противном случае возвращается значение null. |
 | `['to-boolean', value]` | Логическое | Преобразует входное значение в логическое. В результате `false` входные данные представляют собой пустую строку,,, `0` `false` `null` или `NaN` ; в противном случае — значение `true` . |
 | `['to-color', value]`<br/><br/>`['to-color', value1, value2…]` | color | Преобразует входное значение в цвет. Если указано несколько значений, каждый из них вычисляется по порядку, пока не будет получено первое успешное преобразование. Если ни один из входных данных не может быть преобразован, выражение является ошибкой. |
-| `['to-number', value]`<br/><br/>`['to-number', value1, value2, …]` | число | По возможности преобразует входное значение в число. Если входные данные имеют значение `null` или `false` , результат равен 0. Если входные данные имеют значение `true` , результат равен 1. Если входные данные являются строкой, она преобразуется в число с помощью функции строки [Тонумбер](https://tc39.github.io/ecma262/#sec-tonumber-applied-to-the-string-type) спецификации языка ECMAScript. Если указано несколько значений, каждый из них вычисляется по порядку, пока не будет получено первое успешное преобразование. Если ни один из входных данных не может быть преобразован, выражение является ошибкой. |
+| `['to-number', value]`<br/><br/>`['to-number', value1, value2, …]` | number | По возможности преобразует входное значение в число. Если входные данные имеют значение `null` или `false` , результат равен 0. Если входные данные имеют значение `true` , результат равен 1. Если входные данные являются строкой, она преобразуется в число с помощью функции строки [Тонумбер](https://tc39.github.io/ecma262/#sec-tonumber-applied-to-the-string-type) спецификации языка ECMAScript. Если указано несколько значений, каждый из них вычисляется по порядку, пока не будет получено первое успешное преобразование. Если ни один из входных данных не может быть преобразован, выражение является ошибкой. |
 | `['to-string', value]` | строка | Преобразует входное значение в строку. Если вход имеет значение `null` , то результатом будет `""` . Если входными данными является логическое значение, результатом является `"true"` или `"false"` . Если входные данные являются числом, оно преобразуется в строку с помощью функции [ToString](https://tc39.github.io/ecma262/#sec-tostring-applied-to-the-number-type) Number спецификации языка ECMAScript. Если входные данные являются цветом, они преобразуются в строку цвета объекта RGBA CSS `"rgba(r,g,b,a)"` . В противном случае входные данные преобразуются в строку с помощью функции [JSON. stringify](https://tc39.github.io/ecma262/#sec-json.stringify) спецификации языка ECMAScript. |
 | `['typeof', value]` | строка | Возвращает строку, описывающую тип данного значения. |
 
 > [!TIP]
-> Если в консоли браузера отображается сообщение об ошибке, похожее на, то это `Expression name must be a string, but found number instead. If you wanted a literal array, use ["literal", [...]].` означает, что в коде есть выражение, имеющее массив, в котором нет строки для ее первого значения. Если требуется, чтобы выражение возвращало массив, заключите массив в `literal` выражение. В следующем примере задается `offset` параметр Icon слоя символов, который должен быть массивом, содержащим два числа, с помощью `match` выражения для выбора между двумя значениями смещения, основанными на значении `entityType` Свойства функции Point.
+> Если в консоли браузера отображается сообщение об ошибке, похожее на, то это `Expression name must be a string, but found number instead. If you wanted a literal array, use ["literal", [...]].` означает, что в коде есть выражение, имеющее массив, в котором нет строки для ее первого значения. Если требуется, чтобы выражение возвращало массив, заключите массив в `literal` выражение. В следующем примере задается `offset` параметр Icon слоя символов, который должен быть массивом, содержащим два числа, с помощью `match` выражения для выбора между двумя значениями смещения, основанными на значении  `entityType` Свойства функции Point.
 >
 > ```javascript
 > var layer = new atlas.layer.SymbolLayer(datasource, null, {
@@ -490,7 +517,7 @@ var layer = new atlas.layer.SymbolLayer(datasource, null, {
 
 <center>
 
-![Пример ](media/how-to-expressions/string-operator-expression.png) выражения строкового оператора</center>
+![Пример ](media/how-to-expressions/string-operator-expression.png) выражения строкового оператора </center>
 
 ## <a name="interpolate-and-step-expressions"></a>Выражения интерполяции и шага
 
@@ -502,9 +529,9 @@ var layer = new atlas.layer.SymbolLayer(datasource, null, {
 
 Существует три типа методов интерполяции, которые можно использовать в `interpolate` выражении:
  
-* `['linear']`— Выполняет линейную интерполяцию между парой остановок.
-* `['exponential', base]`— Выполняет экспоненциальную интерполяцию между остановками. `base`Значение определяет скорость, с которой увеличивается вывод. Более высокие значения приводят к увеличению объема выходных данных в большую сторону диапазона. `base`Значение, близкое к 1, создает выходные данные, которые более линейно увеличиваются.
-* `['cubic-bezier', x1, y1, x2, y2]`— Выполняет интерполяцию с использованием [кривой Безье третьего порядка](https://developer.mozilla.org/docs/Web/CSS/timing-function) , определяемой заданными контрольными точками.
+* `['linear']` — Выполняет линейную интерполяцию между парой остановок.
+* `['exponential', base]` — Выполняет экспоненциальную интерполяцию между остановками. `base`Значение определяет скорость, с которой увеличивается вывод. Более высокие значения приводят к увеличению объема выходных данных в большую сторону диапазона. `base`Значение, близкое к 1, создает выходные данные, которые более линейно увеличиваются.
+* `['cubic-bezier', x1, y1, x2, y2]` — Выполняет интерполяцию с использованием [кривой Безье третьего порядка](https://developer.mozilla.org/docs/Web/CSS/timing-function) , определяемой заданными контрольными точками.
 
 Ниже приведен пример того, как выглядят эти различные типы интерполяций. 
 
@@ -553,7 +580,7 @@ var layer = new atlas.layer.BubbleLayer(datasource, null, {
  
 <center>
 
-![Пример ](media/how-to-expressions/interpolate-expression-example.png) выражения интерполяции</center>
+![Пример ](media/how-to-expressions/interpolate-expression-example.png) выражения интерполяции </center>
 
 ### <a name="step-expression"></a>Выражение шага
 
@@ -609,7 +636,7 @@ var layer = new atlas.layer.BubbleLayer(datasource, null, {
 
 ### <a name="heat-map-density-expression"></a>Выражение плотности тепловой карт
 
-Выражение плотности тепловой карт извлекает значение плотности тепловой карт для каждого пикселя на уровне тепловой карт и определяется как `['heatmap-density']` . Это значение является числом между `0` и `1` . Он используется в сочетании с `interpolation` `step` выражением или для определения цветового градиента, используемого для раскрашивания тепловой карт. Это выражение можно использовать только в [параметре Color](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.heatmaplayeroptions?view=azure-iot-typescript-latest#color) слоя тепловой карт.
+Выражение плотности тепловой карт извлекает значение плотности тепловой карт для каждого пикселя на уровне тепловой карт и определяется как `['heatmap-density']` . Это значение является числом между `0` и `1` . Он используется в сочетании с `interpolation` `step` выражением или для определения цветового градиента, используемого для раскрашивания тепловой карт. Это выражение можно использовать только в [параметре Color](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.heatmaplayeroptions#color) слоя тепловой карт.
 
 > [!TIP]
 > Цвет с индексом 0, в выражении интерполяции или цвет по умолчанию для цвета шага определяет цвет области, в которой нет данных. Цвет с индексом 0 можно использовать для определения цвета фона. Многие пользователи предпочитают использовать для этого прозрачный или полупрозрачный черный цвет.
@@ -653,7 +680,7 @@ var layer = new atlas.layer.HeatMapLayer(datasource, null, {
 
 ### <a name="line-progress-expression"></a>Выражение хода выполнения строки
 
-Выражение хода выполнения строки получает ход выполнения вдоль линии градиента в слое линий и определяется как `['line-progress']` . Это значение является числом от 0 до 1. Он используется в сочетании с `interpolation` `step` выражением или. Это выражение можно использовать только с [параметром строкеградиент]( https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.linelayeroptions?view=azure-iot-typescript-latest#strokegradient) слоя Line. 
+Выражение хода выполнения строки получает ход выполнения вдоль линии градиента в слое линий и определяется как `['line-progress']` . Это значение является числом от 0 до 1. Он используется в сочетании с `interpolation` `step` выражением или. Это выражение можно использовать только с [параметром строкеградиент]( https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.linelayeroptions#strokegradient) слоя Line. 
 
 > [!NOTE]
 > Для `strokeGradient` параметра уровня линии необходимо, чтобы `lineMetrics` параметр источника данных был установлен в значение `true` .
@@ -684,9 +711,9 @@ var layer = new atlas.layer.LineLayer(datasource, null, {
 
 Выражение формата текстового поля можно использовать с `textField` параметром свойства «слои символов» `textOptions` для обеспечения форматирования смешанного текста. Это выражение позволяет указать набор входных строк и параметров форматирования. Для каждой входной строки в этом выражении можно указать следующие параметры.
 
- * `'font-scale'`— Задает коэффициент масштабирования для размера шрифта. Если указано, это значение переопределит `size` свойство объекта `textOptions` для отдельной строки.
- * `'text-font'`— Указывает одно или несколько семейств шрифтов, которые должны использоваться для этой строки. Если указано, это значение переопределит `font` свойство объекта `textOptions` для отдельной строки.
- * `'text-color'`— Задает цвет, применяемый к тексту при подготовке к просмотру. 
+ * `'font-scale'` — Задает коэффициент масштабирования для размера шрифта. Если указано, это значение переопределит `size` свойство объекта `textOptions` для отдельной строки.
+ * `'text-font'` — Указывает одно или несколько семейств шрифтов, которые должны использоваться для этой строки. Если указано, это значение переопределит `font` свойство объекта `textOptions` для отдельной строки.
+ * `'text-color'` — Задает цвет, применяемый к тексту при подготовке к просмотру. 
 
 Следующий псевдокод определяет структуру выражения формата текстового поля. 
 
@@ -749,10 +776,10 @@ var layer = new atlas.layer.SymbolLayer(datasource, null, {
 
 `number-format`Выражение может использоваться только с `textField` параметром на уровне символов. Это выражение Преобразует предоставленное число в отформатированную строку. Это выражение заключает в оболочку функцию [Number. Толокалстринг](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number/toLocaleString) JavaScript и поддерживает следующий набор параметров.
 
- * `locale`— Укажите этот параметр для преобразования чисел в строки способом, который соответствует указанному языку. Передайте в этот параметр [тег языка BCP 47](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Intl#Locale_identification_and_negotiation) .
- * `currency`— Для преобразования числа в строку, представляющую валюту. Возможными значениями являются [коды валют ISO 4217](https://en.wikipedia.org/wiki/ISO_4217), например "USD" для доллара США, "EUR" для евро, или "КНИ" для китайского RMB.
- * `'min-fraction-digits'`— Указывает минимальное число десятичных разрядов для включения в строковую версию числа.
- * `'max-fraction-digits'`— Указывает максимальное число десятичных разрядов, включаемых в строковую версию числа.
+ * `locale` — Укажите этот параметр для преобразования чисел в строки способом, который соответствует указанному языку. Передайте в этот параметр [тег языка BCP 47](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Intl#Locale_identification_and_negotiation) .
+ * `currency` — Для преобразования числа в строку, представляющую валюту. Возможными значениями являются [коды валют ISO 4217](https://en.wikipedia.org/wiki/ISO_4217), например "USD" для доллара США, "EUR" для евро, или "КНИ" для китайского RMB.
+ * `'min-fraction-digits'` — Указывает минимальное число десятичных разрядов для включения в строковую версию числа.
+ * `'max-fraction-digits'` — Указывает максимальное число десятичных разрядов, включаемых в строковую версию числа.
 
 Следующий псевдокод определяет структуру выражения формата текстового поля. 
 
@@ -791,7 +818,7 @@ var layer = new atlas.layer.SymbolLayer(datasource, null, {
 
 <center>
 
-![Пример ](media/how-to-expressions/number-format-expression.png) выражения числового формата</center>
+![Пример ](media/how-to-expressions/number-format-expression.png) выражения числового формата </center>
 
 ### <a name="image-expression"></a>Выражение изображения
 
@@ -829,7 +856,7 @@ map.imageSprite.add('wifi-icon', 'wifi.png').then(function () {
 
 <center>
 
-![Пример ](media/how-to-expressions/image-expression.png) выражения изображения</center>
+![Пример ](media/how-to-expressions/image-expression.png) выражения изображения </center>
 
 ## <a name="zoom-expression"></a>Выражение масштаба
 
@@ -894,7 +921,7 @@ var layer = new atlas.layer.BubbleLayer(datasource, null, {
 });
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Дополнительные примеры кода, реализующие выражения, см. в следующих статьях:
 
@@ -916,16 +943,16 @@ var layer = new atlas.layer.BubbleLayer(datasource, null, {
 Дополнительные сведения о параметрах слоя, поддерживающих выражения:
 
 > [!div class="nextstepaction"] 
-> [BubbleLayerOptions](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.bubblelayeroptions?view=azure-iot-typescript-latest)
+> [BubbleLayerOptions](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.bubblelayeroptions)
 
 > [!div class="nextstepaction"] 
-> [HeatMapLayerOptions](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.heatmaplayeroptions?view=azure-iot-typescript-latest)
+> [HeatMapLayerOptions](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.heatmaplayeroptions)
 
 > [!div class="nextstepaction"] 
-> [LineLayerOptions](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.linelayeroptions?view=azure-iot-typescript-latest)
+> [LineLayerOptions](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.linelayeroptions)
 
 > [!div class="nextstepaction"] 
-> [PolygonLayerOptions](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.polygonlayeroptions?view=azure-iot-typescript-latest)
+> [PolygonLayerOptions](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.polygonlayeroptions)
 
 > [!div class="nextstepaction"] 
-> [SymbolLayerOptions interface](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.symbollayeroptions?view=azure-iot-typescript-latest) (Интерфейс SymbolLayerOptions)
+> [SymbolLayerOptions interface](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.symbollayeroptions) (Интерфейс SymbolLayerOptions)

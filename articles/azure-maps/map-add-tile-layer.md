@@ -9,25 +9,25 @@ ms.service: azure-maps
 services: azure-maps
 manager: ''
 ms.custom: codepen, devx-track-javascript
-ms.openlocfilehash: c96916c029c9c49ad7d4c493fed8859354508ebe
-ms.sourcegitcommit: 98854e3bd1ab04ce42816cae1892ed0caeedf461
+ms.openlocfilehash: 70fecc52832ab6b922d8177ec9c006613acf8aa8
+ms.sourcegitcommit: 07166a1ff8bd23f5e1c49d4fd12badbca5ebd19c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "88010180"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90090726"
 ---
 # <a name="add-a-tile-layer-to-a-map"></a>Добавление слоя фрагментов на карту
 
 В этой статье показано, как наложение мозаичного слоя на карте. Слои фрагментов позволяют накладывать изображения поверх фрагментов карты в Azure Maps. Дополнительные сведения о Azure Maps системе мозаичного заполнения см. в разделе [уровни масштабирования и сетка плиток](zoom-levels-and-tile-grid.md).
 
-Мозаичный слой загружает плитки с сервера. Эти образы можно предварительно визуализировать или отобразить в динамическом режиме. Предварительно подготовленные изображения сохраняются как любые другие изображения на сервере с использованием соглашения об именовании, которое понимается мозаичным слоем. Динамически визуализированные изображения используют службу для загрузки изображений близко к реальному времени. Существует три разных соглашения об именовании для службы плиток, поддерживаемых Azure Maps классом [тилелайер](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.layer.tilelayer?view=azure-iot-typescript-latest) : 
+Мозаичный слой загружает плитки с сервера. Эти образы можно предварительно визуализировать или отобразить в динамическом режиме. Предварительно подготовленные изображения сохраняются как любые другие изображения на сервере с использованием соглашения об именовании, которое понимается мозаичным слоем. Динамически визуализированные изображения используют службу для загрузки изображений близко к реальному времени. Существует три разных соглашения об именовании для службы плиток, поддерживаемых Azure Maps классом [тилелайер](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.layer.tilelayer) : 
 
 * X, Y, Zoom Notation-X — это столбец, Y — это расположение плитки в сетке плиток, а в записи масштаба — значение, основанное на уровне масштаба.
 * Нотация куадкэй. объединяет сведения о x, y и масштабе в одно строковое значение. Это строковое значение превращается в уникальный идентификатор для одной плитки.
 * Ограничивающий прямоугольник — укажите изображение в формате координат ограничивающего прямоугольника: `{west},{south},{east},{north}` . Этот формат обычно используется [службами веб-сопоставления (WMS)](https://www.opengeospatial.org/standards/wms).
 
 > [!TIP]
-> Класс [TileLayer](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.layer.tilelayer?view=azure-iot-typescript-latest) — отличный способ визуализировать большие объемы данных на карте. Можно не только создать мозаичный слой из изображения, но и векторные данные также можно визуализировать как мозаичный слой. При отрисовке векторных данных в виде мозаичного слоя элементу управления картой необходимо загрузить только плитки, размер которых меньше размера файла, чем представленные в них векторные данные. Этот метод обычно используется для визуализации миллионов строк данных на карте.
+> Класс [TileLayer](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.layer.tilelayer) — отличный способ визуализировать большие объемы данных на карте. Можно не только создать мозаичный слой из изображения, но и векторные данные также можно визуализировать как мозаичный слой. При отрисовке векторных данных в виде мозаичного слоя элементу управления картой необходимо загрузить только плитки, размер которых меньше размера файла, чем представленные в них векторные данные. Этот метод обычно используется для визуализации миллионов строк данных на карте.
 
 URL-адрес плитки, переданный в мозаичный слой, должен быть URL-адресом HTTP или HTTPS для ресурса Тилежсон или шаблоном URL-адреса плитки, который использует следующие параметры: 
 
@@ -36,8 +36,8 @@ URL-адрес плитки, переданный в мозаичный слой
 * `{z}` — уровень увеличения фрагмента. Также нужны `{x}` и `{y}`.
 * `{quadkey}` — идентификатор quadkey на основе соглашения об именовании системы фрагментов Bing Maps.
 * `{bbox-epsg-3857}` — строка ограничивающего прямоугольника в формате `{west},{south},{east},{north}` в системе пространственных ссылок 3857 EPSG.
-* `{subdomain}`— Заполнитель для значений поддомена, если он указан, `subdomain` будет добавлен.
-* `{azMapsDomain}`— Заполнитель для согласования домена и проверки подлинности запросов плитки с теми же значениями, которые используются картой.
+* `{subdomain}` — Заполнитель для значений поддомена, если он указан, `subdomain` будет добавлен.
+* `{azMapsDomain}` — Заполнитель для согласования домена и проверки подлинности запросов плитки с теми же значениями, которые используются картой.
 
 ## <a name="add-a-tile-layer"></a>Добавление слоя фрагментов
 
@@ -57,7 +57,7 @@ map.layers.add(new atlas.layer.TileLayer({
 
 <br/>
 
-<iframe height='500' scrolling='no' title='Слой фрагментов с X, Y и Z' src='//codepen.io/azuremaps/embed/BGEQjG/?height=500&theme-id=0&default-tab=js,result&embed-version=2&editable=true' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>Просмотрите фрагмент кода <a href='https://codepen.io/azuremaps/pen/BGEQjG/'>Слой фрагментов с X, Y и Z</a> в Azure Maps (<a href='https://codepen.io/azuremaps'>@azuremaps</a>) в <a href='https://codepen.io'>CodePen</a>.
+<iframe height='500' scrolling='no' title='Слой фрагментов с X, Y и Z' src='//codepen.io/azuremaps/embed/BGEQjG/?height=500&theme-id=0&default-tab=js,result&embed-version=2&editable=true' frameborder='no' loading="lazy" allowtransparency='true' allowfullscreen='true' style='width: 100%;'>Просмотрите фрагмент кода <a href='https://codepen.io/azuremaps/pen/BGEQjG/'>Слой фрагментов с X, Y и Z</a> в Azure Maps (<a href='https://codepen.io/azuremaps'>@azuremaps</a>) в <a href='https://codepen.io'>CodePen</a>.
 </iframe>
 
 ## <a name="customize-a-tile-layer"></a>Настройка слоя фрагментов
@@ -66,7 +66,7 @@ map.layers.add(new atlas.layer.TileLayer({
 
 <br/>
 
-<iframe height='700' scrolling='no' title='Параметры слоя фрагментов' src='//codepen.io/azuremaps/embed/xQeRWX/?height=700&theme-id=0&default-tab=result' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>Просмотрите фрагмент кода <a href='https://codepen.io/azuremaps/pen/xQeRWX/'>Параметры слоя фрагментов</a> Azure Maps (<a href='https://codepen.io/azuremaps'>@azuremaps</a>) в <a href='https://codepen.io'>CodePen</a>.
+<iframe height='700' scrolling='no' title='Параметры слоя фрагментов' src='//codepen.io/azuremaps/embed/xQeRWX/?height=700&theme-id=0&default-tab=result' frameborder='no' loading="lazy" allowtransparency='true' allowfullscreen='true' style='width: 100%;'>Просмотрите фрагмент кода <a href='https://codepen.io/azuremaps/pen/xQeRWX/'>Параметры слоя фрагментов</a> Azure Maps (<a href='https://codepen.io/azuremaps'>@azuremaps</a>) в <a href='https://codepen.io'>CodePen</a>.
 </iframe>
 
 ## <a name="next-steps"></a>Дальнейшие действия
@@ -74,10 +74,10 @@ map.layers.add(new atlas.layer.TileLayer({
 Дополнительные сведения о классах и методах, которые используются в этой статье:
 
 > [!div class="nextstepaction"]
-> [TileLayer](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.layer.tilelayer?view=azure-iot-typescript-latest)
+> [TileLayer](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.layer.tilelayer)
 
 > [!div class="nextstepaction"]
-> [TileLayerOptions](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.tilelayeroptions?view=azure-iot-typescript-latest)
+> [TileLayerOptions](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.tilelayeroptions)
 
 Дополнительные примеры кода для добавления в карты см. в следующих статьях:
 

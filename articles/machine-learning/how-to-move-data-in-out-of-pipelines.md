@@ -10,12 +10,12 @@ author: lobrien
 ms.date: 08/20/2020
 ms.topic: conceptual
 ms.custom: how-to, contperfq4, devx-track-python
-ms.openlocfilehash: 6744bbf2e77fa0ec275350678e75ff094eec82e0
-ms.sourcegitcommit: 3be3537ead3388a6810410dfbfe19fc210f89fec
+ms.openlocfilehash: 806b25fea208afae63ca6be704b22808578d5ba2
+ms.sourcegitcommit: 07166a1ff8bd23f5e1c49d4fd12badbca5ebd19c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89650388"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90090675"
 ---
 # <a name="moving-data-into-and-between-ml-pipeline-steps-python"></a>Перемещение данных в этапы конвейера машинного обучения и между ними (Python)
 
@@ -85,7 +85,7 @@ cats_dogs_dataset = Dataset.File.from_files(
 
 Чтобы передать набор данных на шаг конвейера, выполните следующие действия.
 
-1. `TabularDataset.as_named_inputs()` `FileDataset.as_named_input()` Чтобы создать объект, используйте оператор или (No "в конце)" `DatasetConsumptionConfig`
+1. `TabularDataset.as_named_input()` `FileDataset.as_named_input()` Чтобы создать объект, используйте оператор или (No "в конце)" `DatasetConsumptionConfig`
 1. Использование `as_mount()` или `as_download()` для установки режима доступа
 1. Передайте наборы данных в этапы конвейера, используя либо `arguments` аргумент, либо `inputs`
 
@@ -97,7 +97,7 @@ train_step = PythonScriptStep(
     name="train_data",
     script_name="train.py",
     compute_target=cluster,
-    inputs=[iris_dataset.as_named_inputs('iris').as_mount()]
+    inputs=[iris_dataset.as_named_input('iris').as_mount()]
 )
 ```
 
@@ -112,7 +112,7 @@ train_step = PythonScriptStep(
     name="train_data",
     script_name="train.py",
     compute_target=cluster,
-    inputs=[train.as_named_inputs('train').as_download(), test.as_named_inputs('test').as_download()]
+    inputs=[train.as_named_input('train').as_download(), test.as_named_input('test').as_download()]
 )
 ```
 
@@ -127,8 +127,8 @@ train_step = PythonScriptStep(
     name="train_data",
     script_name="train.py",
     compute_target=cluster,
-    arguments=['--training-folder', train.as_named_inputs('train').as_download()]
-    inputs=[test.as_named_inputs('test').as_download()]
+    arguments=['--training-folder', train.as_named_input('train').as_download()]
+    inputs=[test.as_named_input('test').as_download()]
 )
 
 # In pipeline script

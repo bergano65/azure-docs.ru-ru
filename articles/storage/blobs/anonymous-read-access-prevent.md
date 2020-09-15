@@ -9,12 +9,13 @@ ms.topic: how-to
 ms.date: 08/02/2020
 ms.author: tamram
 ms.reviewer: fryu
-ms.openlocfilehash: f46a7927c149009eaf5baddbad2758732d4da758
-ms.sourcegitcommit: 3d56d25d9cf9d3d42600db3e9364a5730e80fa4a
+ms.subservice: blobs
+ms.openlocfilehash: 0ed8b04353c50bff53d074ebdb1efa2a286c8e59
+ms.sourcegitcommit: 07166a1ff8bd23f5e1c49d4fd12badbca5ebd19c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87534292"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90086578"
 ---
 # <a name="prevent-anonymous-public-read-access-to-containers-and-blobs"></a>Запретить анонимный общий доступ на чтение к контейнерам и BLOB-объектам
 
@@ -278,7 +279,7 @@ resources
 
 :::image type="content" source="media/anonymous-read-access-prevent/deny-policy-error.png" alt-text="Снимок экрана, показывающий ошибку, возникающую при создании учетной записи хранения с нарушением политики":::
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - [Настройка анонимного общего доступа на чтение для контейнеров и больших двоичных объектов](anonymous-read-access-configure.md)
 - [Анонимный доступ к открытым контейнерам и BLOB-объектам с помощью .NET](anonymous-read-access-client.md)

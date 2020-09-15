@@ -5,53 +5,55 @@ services: container-service
 ms.topic: article
 ms.date: 08/27/2020
 author: palma21
-ms.openlocfilehash: 018275b6db4c2d2d1059f35077f74a6f45ec3ba9
-ms.sourcegitcommit: 9c262672c388440810464bb7f8bcc9a5c48fa326
+ms.openlocfilehash: 330c1b74a46b0f18af1068797d080e903f516ea6
+ms.sourcegitcommit: 07166a1ff8bd23f5e1c49d4fd12badbca5ebd19c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/03/2020
-ms.locfileid: "89422084"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90089876"
 ---
-# <a name="use-the-azure-files-container-storage-interface-csi-drivers-in-azure-kubernetes-service-aks-preview"></a>Использование драйверов интерфейса хранилища контейнера файлов Azure (CSI) в службе Kubernetes Azure (AKS) (Предварительная версия)
-Драйвер CSI файлов Azure — это драйвер, совместимый с [CSI спецификацией](https://github.com/container-storage-interface/spec/blob/master/spec.md) , используемый AKS для управления жизненным циклом файловых ресурсов Azure. 
+# <a name="use-azure-files-container-storage-interface-csi-drivers-in-azure-kubernetes-service-aks-preview"></a>Использование драйверов службы файлов хранилища контейнера Azure (CSI) в службе Kubernetes Azure (AKS) (Предварительная версия)
 
-Интерфейс хранилища контейнера (CSI) является стандартом для предоставления произвольных блоков и систем хранения файлов в контейнерные рабочие нагрузки в Kubernetes. Принимая и используя CSI, служба Kubernetes Azure (AKS) теперь может создавать, развертывать и перебирать подключаемые модули, предоставляя новые или улучшающие существующие системы хранения в Kubernetes без необходимости касаться основного кода Kubernetes и ожидания циклов выпуска.
+Драйвер интерфейса хранилища контейнера файлов Azure (CSI) — это драйвер, совместимый с [спецификацией CSI](https://github.com/container-storage-interface/spec/blob/master/spec.md), используемый службой Kubernetes Azure (AKS) для управления жизненным циклом файловых ресурсов Azure.
+
+CSI является стандартом для предоставления произвольных блоков и систем хранения файлов в контейнерные рабочие нагрузки на Kubernetes. Принимая и используя CSI, AKS теперь может писать, развертывать и выполнять итерацию подключаемых модулей, чтобы предоставлять новые или улучшать существующие системы хранения в Kubernetes, не прибегая к основному коду Kubernetes и дожидаться циклов выпуска.
 
 Сведения о создании кластера AKS с поддержкой драйвера CSI см. в статье [Включение драйверов CSI для дисков Azure и файлов Azure в AKS](csi-storage-drivers.md).
 
 >[!NOTE]
-> *"Драйверы в дереве"* относятся к текущим драйверам хранилища, которые являются частью основного кода kubernetes, и новыми ДРАЙВЕРами CSI, которые являются подключаемыми модулями.
+> *Драйверы в дереве* относятся к текущим драйверам хранилища, которые являются частью основного кода Kubernetes, а также новыми драйверами CSI, которые являются подключаемыми модулями.
 
-## <a name="use-a-persistent-volume-pv-with-azure-files"></a>Использование постоянного тома (ПС) с файлами Azure
+## <a name="use-a-persistent-volume-with-azure-files"></a>Использование постоянного тома с файлами Azure
 
-[Постоянный том](concepts-storage.md#persistent-volumes) представляет собой часть хранилища, подготовленную для использования с Kubernetes Pod. Постоянный том может использоваться одним или несколькими модулями и может быть подготовлен динамически или статически. Если несколько объектов pod требуют одновременный доступ в одно и то же хранилище, используйте службу Файлов Azure для подключения с помощью [протокола Server Message Block (SMB)][smb-overview]. В этой статье показано, как в кластере Службы Azure Kubernetes с помощью нескольких модулей pod предоставлять общий доступ к динамическому созданию файлов Azure. Сведения о статической подготовке см. [в статье Создание и использование тома с файловым ресурсом Azure вручную](azure-files-volume.md).
+[Постоянный том (ПС)](concepts-storage.md#persistent-volumes) представляет собой часть хранилища, подготовленную для использования с модулями Kubernetes. ПС может использоваться одним или несколькими модулями Pod и может быть динамическим или статически подготовленным. Если нескольким модулям Pod требуется одновременный доступ к тому же тому хранилища, можно использовать службу файлов Azure для подключения с помощью [протокола SMB][smb-overview]. В этой статье показано, как динамически создать файловый ресурс Azure для использования несколькими модулями Pod в кластере AKS. Сведения о статической подготовке см. [в статье Создание и использование тома с общей папкой Azure вручную](azure-files-volume.md).
 
 Дополнительные сведения о томах Kubernetes см. в статье, [посвященной возможностям хранения данных приложений в AKS][concepts-storage].
 
 [!INCLUDE [preview features callout](./includes/preview/preview-callout.md)]
 
-## <a name="dynamically-create-azure-files-pvs-using-the-built-in-storage-classes"></a>Динамическое создание файлов Azure постоянного хранилища версий с помощью встроенных классов хранения
-Класс хранения используется для определения того, как создается файловый ресурс Azure. Для хранения общих папок Azure учетная запись хранения создается автоматически в [группе ресурсов узла][node-resource-group] для использования с классом хранилища. Выберите один из следующих [вариантов избыточности хранилища Azure][storage-skus] для *skuName*:
+## <a name="dynamically-create-azure-files-pvs-by-using-the-built-in-storage-classes"></a>Динамическое создание файлов Azure постоянного хранилища версий с помощью встроенных классов хранения
 
-* *Standard_LRS* — стандартное локально избыточное хранилище
-* *Standard_GRS* — стандартное геоизбыточное хранилище
-* *Standard_ZRS* — хранилище, избыточное по стандартным зонам
-* *Standard_RAGRS* — стандартное геоизбыточное хранилище с доступом для чтения
-* Локально избыточное хранилище уровня "Премиум" *Premium_LRS*
+Класс хранения используется для определения способа создания общей папки службы файлов Azure. Учетная запись хранения автоматически создается в [группе ресурсов узла][node-resource-group] для использования с классом хранения для хранения общих папок службы файлов Azure. Выберите один из следующих [номеров SKU избыточности службы хранилища Azure][storage-skus] для *skuName*:
+
+* **Standard_LRS**: стандартное локально избыточное хранилище
+* **Standard_GRS**: стандартное геоизбыточное хранилище
+* **Standard_ZRS**: хранилище, избыточное в стандартном поясе
+* **Standard_RAGRS**: стандартное геоизбыточное хранилище с доступом для чтения
+* **Premium_LRS**: локально избыточное хранилище уровня "Премиум"
 
 > [!NOTE]
-> Служба файлов Azure поддерживает хранилище класса Premium, Минимальная общая папка Premium — 100 ГБ.
+> Служба файлов Azure поддерживает хранилище Azure класса Premium. Минимальная общая папка Premium составляет 100 ГБ.
 
-При использовании драйверов хранилища CSI на AKS существует 2 дополнительных встроенных `StorageClasses` , которые используют **драйверы хранилища CSI для службы файлов Azure**. Дополнительные классы хранения CSI создаются с кластером наряду с классами хранения по умолчанию в дереве.
+Если вы используете драйверы CSI хранилища в AKS, есть два дополнительных встроенных `StorageClasses` , которые используют драйверы службы хранилища файлов Azure CSI. Дополнительные классы хранения CSI создаются с кластером наряду с классами хранения по умолчанию в дереве.
 
-- `azurefile-csi` — Использует хранилище Azure уровня "Стандартный" для создания файлового ресурса Azure. 
-- `azurefile-csi-premium` — Использует хранилище Azure класса Premium для создания файлового ресурса Azure. 
+- `azurefile-csi`— Использует хранилище Azure уровня "Стандартный" для создания общей папки службы файлов Azure.
+- `azurefile-csi-premium`: Использует хранилище Azure класса Premium для создания общей папки службы файлов Azure.
 
-Политика reclaimа на оба класса хранения гарантирует, что базовый файловый ресурс Azure будет удален при удалении соответствующего постоянного тома. Классы хранения также настраивают файловые ресурсы для расширения, поэтому нужно просто изменить утверждение Постоянного тома с новым размером.
+Политика reclaimа на оба класса хранения гарантирует, что базовая папка файлов Azure будет удалена при удалении соответствующего PV. Классы хранения также настраивают файловые ресурсы, которые должны быть расширяемыми, нужно просто изменить устойчивое утверждение тома (PVC) с новым размером.
 
-Чтобы использовать эти классы хранения, создайте [постоянное утверждение тома (PVC)](concepts-storage.md#persistent-volume-claims) и соответствующий модуль, который ссылается на них и использует их. Утверждение постоянного тома (PVC) используется для автоматической подготовки хранилища на основе класса хранения. PVC может использовать один из предварительно созданных классов хранения или определяемый пользователем класс хранения для создания общего ресурса службы файлов Azure для требуемого номера SKU и размера. При создании определения pod указывается утверждение постоянного тома для запроса требуемого хранилища.
+Чтобы использовать эти классы хранения, создайте [PVC](concepts-storage.md#persistent-volume-claims) и соответствующий модуль, который ссылается на них и использует их. PVC используется для автоматической инициализации хранилища на основе класса хранилища. PVC может использовать один из предварительно созданных классов хранения или определяемый пользователем класс хранения для создания общего ресурса службы файлов Azure для требуемого номера SKU и размера. При создании определения Pod указывается PVC для запроса требуемого хранилища.
 
-Создайте [Пример постоянного тома и модуля Pod, который выводит текущую дату в `outfile` ](https://github.com/kubernetes-sigs/azurefile-csi-driver/blob/master/deploy/example/statefulset.yaml) с помощью команды [kubectl Apply][kubectl-apply] :
+Создайте [Пример PVC и Pod, который выводит текущую дату в `outfile` ](https://github.com/kubernetes-sigs/azurefile-csi-driver/blob/master/deploy/example/statefulset.yaml) с помощью команды [kubectl Apply][kubectl-apply] :
 
 ```console
 $ kubectl apply -f https://raw.githubusercontent.com/kubernetes-sigs/azurefile-csi-driver/master/deploy/example/pvc-azurefile-csi.yaml
@@ -61,7 +63,7 @@ persistentvolumeclaim/pvc-azurefile created
 pod/nginx-azurefile created
 ```
 
-После того как модуль Pod находится в состоянии выполняется, можно проверить, что файловый ресурс правильно подключен, выполнив приведенную ниже команду и убедившись, что выходные данные содержат `outfile` : 
+После того как модуль Pod находится в состоянии выполняется, можно проверить, что файловый ресурс правильно подключен, выполнив следующую команду и убедившись, что выходные данные содержат `outfile` :
 
 ```console
 $ kubectl exec nginx-azurefile -- ls -l /mnt/azurefile
@@ -76,7 +78,7 @@ total 29
 
 Значение по умолчанию для *fileMode* и *дирмоде* — *0777* для подключенных файловых ресурсов Kubernetes. Можно указать различные параметры монтирования для объекта класса хранения.
 
-Создайте файл с именем `azure-file-sc.yaml` и вставьте следующий пример манифеста: 
+Создайте файл с именем `azure-file-sc.yaml` и вставьте следующий пример манифеста:
 
 ```yaml
 kind: StorageClass
@@ -107,7 +109,7 @@ kubectl apply -f azure-file-sc.yaml
 storageclass.storage.k8s.io/my-azurefile created
 ```
 
-Драйвер CSI файлов Azure поддерживает создание [моментальных снимков постоянных томов](https://kubernetes-csi.github.io/docs/snapshot-restore-feature.html) и базовых файловых ресурсов. 
+Драйвер CSI файлов Azure поддерживает создание [моментальных снимков постоянных томов](https://kubernetes-csi.github.io/docs/snapshot-restore-feature.html) и базовых файловых ресурсов.
 
 Создайте [класс моментальных снимков томов](https://github.com/kubernetes-sigs/azurefile-csi-driver/blob/master/deploy/example/snapshot/volumesnapshotclass-azurefile.yaml) с помощью команды [kubectl Apply][kubectl-apply] :
 
@@ -117,7 +119,7 @@ $ kubectl apply -f https://raw.githubusercontent.com/kubernetes-sigs/azurefile-c
 volumesnapshotclass.snapshot.storage.k8s.io/csi-azurefile-vsc created
 ```
 
-Создайте [моментальный снимок тома](https://github.com/kubernetes-sigs/azurefile-csi-driver/blob/master/deploy/example/snapshot/volumesnapshot-azurefile.yaml) из постоянной виртуальной цепи, [созданной динамически в начале этого руководства](#dynamically-create-azure-files-pvs-using-the-built-in-storage-classes), `pvc-azurefile` .
+Создайте [моментальный снимок тома](https://github.com/kubernetes-sigs/azurefile-csi-driver/blob/master/deploy/example/snapshot/volumesnapshot-azurefile.yaml) из постоянной виртуальной цепи, [созданной динамически в начале этого руководства](#dynamically-create-azure-files-pvs-by-using-the-built-in-storage-classes), `pvc-azurefile` .
 
 
 ```bash
@@ -156,14 +158,14 @@ Status:
 Events:                                <none>
 ```
 
-## <a name="resize-a-persistent-volume-pv"></a>Изменение размера постоянного тома (ПС)
+## <a name="resize-a-persistent-volume"></a>Изменение размера постоянного тома
 
-Вы можете запросить больший объем для PVC. Измените объект PVC и укажите больший размер. Это изменение активирует расширение базового тома, который производит резервное копирование Персистентволуме. 
+Вы можете запросить больший объем для PVC. Измените объект PVC и укажите больший размер. Это изменение активирует расширение базового тома, который производит резервное копирование PV.
 
-> [!NOTE] 
-> Новый Персистентволуме никогда не будет создан для удовлетворения утверждения. Вместо этого размер существующего тома изменяется.
+> [!NOTE]
+> Новый ПС никогда не будет создан для удовлетворения утверждения. Вместо этого размер существующего тома изменяется.
 
-В AKS встроенный `azurefile-csi` класс хранения уже поддерживает расширение, поэтому используйте [PVC, созданный ранее с этим классом хранения](#dynamically-create-azure-files-pvs-using-the-built-in-storage-classes). PVC запросил общую папку 100Gi. мы можем подтвердить это, выполнив команду:
+В AKS встроенный `azurefile-csi` класс хранения уже поддерживает расширение, поэтому используйте [PVC, созданный ранее с этим классом хранения](#dynamically-create-azure-files-pvs-by-using-the-built-in-storage-classes). PVC запросил общую папку 100Gi. Мы можем подтвердить, выполнив:
 
 ```console 
 $ kubectl exec -it nginx-azurefile -- df -h /mnt/azurefile
@@ -180,7 +182,7 @@ $ kubectl patch pvc pvc-azurefile --type merge --patch '{"spec": {"resources": {
 persistentvolumeclaim/pvc-azurefile patched
 ```
 
-Убедитесь, что виртуальная цепь и файловая система в Pod отображают новый размер:
+Убедитесь, что виртуальная цепь и файловая система в модуле Pod показывают новый размер:
 
 ```console
 $ kubectl get pvc pvc-azurefile
@@ -194,9 +196,9 @@ Filesystem                                                                      
 
 ## <a name="windows-containers"></a>Контейнеры Windows
 
-Драйвер CSI файлов Azure также поддерживает узлы и контейнеры Windows. Если вы хотите использовать контейнеры Windows, следуйте указаниям в [учебнике по контейнерам Windows](windows-container-cli.md) , чтобы добавить пул узлов Windows.
+Драйвер CSI для файлов Azure также поддерживает узлы и контейнеры Windows. Если вы хотите использовать контейнеры Windows, следуйте указаниям в [учебнике по контейнерам Windows](windows-container-cli.md) , чтобы добавить пул узлов Windows.
 
-Создав пул узлов Windows, используйте встроенные классы хранения, например `azurefile-csi` или создайте пользовательские. Вы можете развернуть пример [набора с отслеживанием состояния на основе Windows](https://github.com/kubernetes-sigs/azurefile-csi-driver/blob/master/deploy/example/windows/statefulset.yaml) , который сохраняет метки времени в файл `data.txt` , развертывая приведенную ниже команду с помощью команды [kubectl Apply][kubectl-apply] :
+После создания пула узлов Windows используйте встроенные классы хранения, например `azurefile-csi` или создайте пользовательские. Можно развернуть пример набора с [отслеживанием состояния на основе Windows](https://github.com/kubernetes-sigs/azurefile-csi-driver/blob/master/deploy/example/windows/statefulset.yaml) , который сохраняет метки времени в файл `data.txt` , развернув следующую команду с помощью команды [kubectl Apply][kubectl-apply] :
 
  ```console
 $ kubectl apply -f https://raw.githubusercontent.com/kubernetes-sigs/azurefile-csi-driver/master/deploy/example/windows/statefulset.yaml
@@ -216,10 +218,10 @@ $ kubectl exec -it busybox-azurefile-0 -- cat c:\mnt\azurefile\data.txt # on Win
 (...)
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
-- Сведения об использовании драйвера CSI для дисков Azure см. в статье [Использование дисков Azure с драйверами CSI](azure-disk-csi.md).
-- Дополнительные сведения о рекомендациях по хранению см. в статье рекомендации [по хранению и резервному копированию в службе Azure Kubernetes Service (AKS)][operator-best-practices-storage] .
+- Сведения об использовании драйверов CSI для дисков Azure см. в статье [Использование дисков Azure с драйверами CSI](azure-disk-csi.md).
+- Дополнительные сведения о рекомендациях по хранению см. в статье рекомендации [по хранению и резервному копированию в службе Azure Kubernetes][operator-best-practices-storage].
 
 
 <!-- LINKS - external -->

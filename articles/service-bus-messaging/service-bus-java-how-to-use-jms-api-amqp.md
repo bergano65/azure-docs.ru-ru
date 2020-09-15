@@ -1,52 +1,56 @@
 ---
-title: Использование AMQP с API службы сообщений Java & служебной шины Azure
-description: Как использовать службу сообщений Java (JMS) со Служебной шиной Azure и Расширенным протоколом управления очередью сообщений (AMQP) 1.0.
+title: Использование AMQP с API службы сообщений Java и служебной шиной Azure
+description: Используйте службу сообщений Java (JMS) с служебной шиной Azure и Расширенный протокол управления очередью сообщений (AMQP) 1,0.
 ms.topic: article
 ms.date: 06/23/2020
 ms.custom: seo-java-july2019, seo-java-august2019, seo-java-september2019, devx-track-java
-ms.openlocfilehash: be6b5de7946fc54ab58087fccabed9f5ed09251d
-ms.sourcegitcommit: d8b8768d62672e9c287a04f2578383d0eb857950
+ms.openlocfilehash: 97031abaedaa3e5595e290fa0292646feb744d47
+ms.sourcegitcommit: 07166a1ff8bd23f5e1c49d4fd12badbca5ebd19c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/11/2020
-ms.locfileid: "88065783"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90086697"
 ---
-# <a name="use-the-java-message-service-jms-with-azure-service-bus-and-amqp-10"></a>Использование службы сообщений Java (JMS) с служебной шиной Azure и AMQP 1,0
+# <a name="use-the-java-message-service-with-azure-service-bus-and-amqp-10"></a>Использование службы сообщений Java с служебной шиной Azure и AMQP 1,0
 
 > [!WARNING]
-> Приведенное ниже краткое справочное по предназначено для **ограниченной поддержки** API 1,1 службы сообщений Java (JMS) и существует только для уровня "Стандартный" служебной шины Azure.
+> Эта статья посвящена *ограничению поддержки* API 1,1 службы сообщений Java (JMS) и существует только для уровня "Стандартный" служебной шины Azure.
 >
-> Полная поддержка API 2,0 службы сообщений Java (JMS) доступна только на уровне Premium для служебной [шины Azure в предварительной версии](how-to-use-java-message-service-20.md), что настоятельно рекомендуется.
+> Полная поддержка API 2,0 службы сообщений Java доступна только на [уровне Premium служебной шины Azure в предварительной версии](how-to-use-java-message-service-20.md). Мы рекомендуем использовать этот уровень.
 >
 
-В этой статье объясняется, как использовать функции обмена сообщениями служебной шины Azure (очереди и разделы публикации и подписки) из приложений Java с помощью популярного стандарта API службы сообщений Java (JMS). Есть [сопутствующая статья](service-bus-amqp-dotnet.md) , в которой объясняется, как сделать то же самое с помощью API .NET служебной шины Azure. Эти два руководства можно использовать совместно для изучения обмена сообщениями между различными платформами с помощью AMQP 1.0.
+В этой статье объясняется, как использовать функции обмена сообщениями служебной шины из приложений Java с помощью популярного стандарта API JMS. Эти функции обмена сообщениями включают очереди и публикацию или подписку на разделы. В [сопровождающей статье](service-bus-amqp-dotnet.md) объясняется, как выполнять те же действия с помощью API .NET служебной шины Azure. Вы можете использовать эти две статьи вместе, чтобы узнать об обмене сообщениями между различными платформами с помощью Расширенный протокол управления очередью сообщений (AMQP) 1,0.
 
-AMQP 1.0 — это эффективный и надежный протокол обмена сообщениями на уровне соединения, который можно использовать для создания надежных кроссплатформенных приложений для обмена сообщениями.
+AMQP 1,0 — это эффективный и надежный протокол обмена сообщениями на уровне сети, который можно использовать для создания надежных, кросс-платформенных приложений обмена сообщениями.
 
-Поддержка AMQP 1,0 в служебной шине Azure означает, что вы можете использовать возможности обмена сообщениями в очереди и публикации/подписки через посредника из различных платформ с помощью эффективного двоичного протокола. Кроме того, можно создавать приложения, содержащие компоненты, созданные с использованием разнообразных языков, платформ и операционных систем.
+Поддержка AMQP 1,0 в служебной шине означает, что вы можете использовать функции очереди и публикации или подписки через посредника из различных платформ с помощью эффективного двоичного протокола. Кроме того, можно создавать приложения, состоящие из компонентов, созданных с помощью различных языков, платформ и операционных систем.
 
 ## <a name="get-started-with-service-bus"></a>Приступая к работе со служебной шиной
-В этом учебнике предполагается, что у вас уже есть пространство имен служебной шины, содержащее очередь с именем `basicqueue` . Если этого не сделать, то можно [создать пространство имен и очередь](service-bus-create-namespace-portal.md) с помощью [портал Azure](https://portal.azure.com). Дополнительные сведения о создании пространства имен и очередей служебной шины см. в статье [Приступая к работе с очередями служебной шины](service-bus-dotnet-get-started-with-queues.md).
+
+В этой статье предполагается, что у вас уже есть пространство имен служебной шины, содержащее очередь с именем `basicqueue` . В противном случае можно [создать пространство имен и очередь](service-bus-create-namespace-portal.md) с помощью [портал Azure](https://portal.azure.com). Дополнительные сведения о создании пространства имен и очередей служебной шины см. в статье [Приступая к работе с очередями служебной шины](service-bus-dotnet-get-started-with-queues.md).
 
 > [!NOTE]
 > Секционированные очереди и разделы также поддерживают AMQP. Дополнительные сведения см. в статьях [Секционированные сущности обмена сообщениями](service-bus-partitioning.md) и [Поддержка AMQP 1.0 для секционированных очередей и разделов служебной шины](./service-bus-amqp-protocol-guide.md).
 > 
 > 
 
-## <a name="downloading-the-amqp-10-jms-client-library"></a>Загрузка клиентской библиотеки AMQP 1.0 JMS
-Сведения о том, где загрузить последнюю версию клиентской библиотеки Apache Qpid JMS AMQP 1,0, см. по адресу [https://qpid.apache.org/download.html](https://qpid.apache.org/download.html) .
+## <a name="download-the-amqp-10-jms-client-library"></a>Загрузка клиентской библиотеки AMQP 1,0 JMS
 
-При создании и запуске приложений JMS с помощью служебной шины необходимо добавить следующие JAR-файлы из архивного архива Apache Qpid JMS AMQP 1,0 в ПОДКАТАЛОГ классов Java.
+Сведения о том, где загрузить последнюю версию клиентской библиотеки Apache Qpid JMS AMQP 1,0, см. на [сайте загрузки Apache Qpid](https://qpid.apache.org/download.html).
+
+При создании и запуске приложений JMS с помощью служебной шины необходимо добавить следующие JAR-файлы из архивного архива Apache Qpid JMS AMQP 1,0 в переменную среды подкаталога Java.
 
 * geronimo-jms\_1.1\_spec-1.0.jar
 * qpid-jms-client-[version].jar
 
 > [!NOTE]
-> Имена и версии JMS JAR могли измениться. Дополнительные сведения см. в разделе [Qpid JMS — AMQP 1.0](https://qpid.apache.org/maven.html#qpid-jms-amqp-10).
+> Имена и версии JAR-файлов JMS могли измениться. Дополнительные сведения см. в статье [QPID JMS AMQP 1,0](https://qpid.apache.org/maven.html#qpid-jms-amqp-10).
 
-## <a name="coding-java-applications"></a>Создание приложений Java
-### <a name="java-naming-and-directory-interface-jndi"></a>Интерфейс JNDI
-JMS использует интерфейс JNDI для разделения логических и физических имен. С помощью JNDI разрешаются два типа объектов JMS: ConnectionFactory и Destination. JNDI использует модель поставщика, к которой можно подключить различные службы каталогов для обработки заданий разрешения имен. В библиотеку Apache Qpid JMS AMQP 1,0 входит простой поставщик JNDI на основе файлов, настроенный с помощью файла свойств в следующем формате:
+## <a name="code-java-applications"></a>Код приложений Java
+
+### <a name="java-naming-and-directory-interface"></a>Интерфейс именования и каталогов Java
+
+JMS использует интерфейс JNDI для разделения логических и физических имен. Два типа объектов JMS разрешаются с помощью JNDI: **ConnectionFactory** и **Destination**. JNDI использует модель поставщика, к которой можно подключить различные службы каталогов для обработки заданий разрешения имен. В библиотеку Apache Qpid JMS AMQP 1,0 входит простой поставщик JNDI на основе файлов, который настраивается с помощью файла свойств в следующем формате:
 
 ```TEXT
 # servicebus.properties - sample JNDI configuration
@@ -61,16 +65,17 @@ connectionfactory.SBCF = amqps://[SASPolicyName]:[SASPolicyKey]@[namespace].serv
 queue.QUEUE = queue1
 ```
 
-#### <a name="setup-jndi-context-and-configure-the-connectionfactory"></a>Установка контекста JNDI и настройка ConnectionFactory
+#### <a name="set-up-jndi-context-and-configure-the-connectionfactory-object"></a>Настройка контекста JNDI и настройка объекта ConnectionFactory
 
-Строка подключения **, указанная** в одной из доступных в "политиках общего доступа" в [портал Azure](https://portal.azure.com) в разделе **основной строки соединения**
+Строка подключения, на которую указывает ссылка, доступна в политиках общего доступа в [портал Azure](https://portal.azure.com) в разделе **Основная строка подключения**.
+
 ```java
 // The connection string builder is the only part of the azure-servicebus SDK library
 // we use in this JMS sample and for the purpose of robustly parsing the Service Bus 
 // connection string. 
 ConnectionStringBuilder csb = new ConnectionStringBuilder(connectionString);
         
-// set up JNDI context
+// Set up JNDI context
 Hashtable<String, String> hashtable = new Hashtable<>();
 hashtable.put("connectionfactory.SBCF", "amqps://" + csb.getEndpoint().getHost() + "?amqp.idleTimeout=120000&amqp.traceFrames=true");
 hashtable.put("queue.QUEUE", "BasicQueue");
@@ -83,10 +88,11 @@ ConnectionFactory cf = (ConnectionFactory) context.lookup("SBCF");
 Destination queue = (Destination) context.lookup("QUEUE");
 ```
 
-#### <a name="configure-producer-and-consumer-destination-queues"></a>Настройка производителя и очередей назначения потребителей
-Эта запись используется для определения назначения в поставщике JNDI файла свойств Qpid в следующем формате:
+#### <a name="configure-producer-and-consumer-destination-queues"></a>Настройка очередей назначения для производителя и потребителя
 
-Чтобы создать очередь назначения для производителя: 
+Запись, используемая для определения назначения в поставщике JNDI файла свойств Qpid, имеет следующий формат.
+
+Чтобы создать очередь назначения для производителя, сделайте следующее:
 ```java
 String queueName = "queueName";
 Destination queue = (Destination) queueName;
@@ -96,11 +102,11 @@ Connection connection - cf.createConnection(csb.getSasKeyName(), csb.getSasKey()
 
 Session session = connection.createSession(false, Session.CLIENT_ACKNOWLEDGE);
 
-// Create Producer
+// Create producer
 MessageProducer producer = session.createProducer(queue);
 ```
 
-Чтобы создать очередь назначения для потребителя: 
+Чтобы создать очередь назначения для потребителя, сделайте следующее:
 ```java
 String queueName = "queueName";
 Destination queue = (Destination) queueName;
@@ -110,18 +116,20 @@ Connection connection - cf.createConnection(csb.getSasKeyName(), csb.getSasKey()
 
 Session session = connection.createSession(false, Session.CLIENT_ACKNOWLEDGE);
 
-// Create Consumer
+// Create consumer
 MessageConsumer consumer = session.createConsumer(queue);
 ```
 
 ### <a name="write-the-jms-application"></a>Написание приложения JMS
-Не существует специальных API-интерфейсов или параметров для использования JMS с Service Bus. Однако существует несколько ограничений, которые будут рассмотрены ниже. Как и для любого приложения JMS, первое, что необходимо — это конфигурация среды JNDI, позволяющая разрешать **ConnectionFactory** и назначения.
 
-#### <a name="configure-the-jndi-initialcontext"></a>Настройка исходного контекста JNDI
-Для настройки среды JNDI хэш-таблица со сведениями о конфигурации передаются в конструктор класса javax.naming.InitialContext. Два обязательных элемента в хэш-таблице — это имя класса фабрики исходного контекста и URL-адрес поставщика. В следующем примере кода показано, как настроить среду JNDI для использования поставщика JNDI на основе файла свойств Qpid с именем **servicebus.properties**.
+При использовании JMS с служебной шиной специальные API или параметры не требуются. Существует несколько ограничений, которые будут рассмотрены позже. Как и в любом приложении JMS, первое, что требуется, — это настройка среды JNDI для разрешения объекта **ConnectionFactory** и назначений.
+
+#### <a name="configure-the-jndi-initialcontext-object"></a>Настройка объекта Инитиалконтекст JNDI
+
+Среда JNDI настраивается путем передачи хэш-таблицы сведений о конфигурации в конструктор класса javax.naming.IniТиалконтекст. Два обязательных элемента в хэш-таблице — это имя класса начальной фабрики контекста и URL-адрес поставщика. В следующем примере кода показано, как настроить среду JNDI для использования свойства Qpid на основе файлового поставщика JNDI с файлом свойств с именем **servicebus. Properties**.
 
 ```java
-// set up JNDI context
+// Set up JNDI context
 Hashtable<String, String> hashtable = new Hashtable<>();
 hashtable.put("connectionfactory.SBCF", "amqps://" + csb.getEndpoint().getHost() + \
 "?amqp.idleTimeout=120000&amqp.traceFrames=true");
@@ -130,10 +138,11 @@ hashtable.put(Context.INITIAL_CONTEXT_FACTORY, "org.apache.qpid.jms.jndi.JmsInit
 Context context = new InitialContext(hashtable);
 ``` 
 
-### <a name="a-simple-jms-application-using-a-service-bus-queue"></a>Простое приложение JMS, использующее очередь служебной шины
-Следующий пример программы отправляет текстовые сообщения JMS в очередь Service Bus с логическим JNDI-именем QUEUE и получает ответные сообщения.
+### <a name="a-simple-jms-application-that-uses-a-service-bus-queue"></a>Простое приложение JMS, использующее очередь служебной шины
 
-Вы можете получить доступ ко всем исходным коду и сведениям о конфигурации из [краткого руководства по использованию очереди JMS образцов служебной шины Azure](https://github.com/Azure/azure-service-bus/tree/master/samples/Java/qpid-jms-client/JmsQueueQuickstart) .
+В следующем примере программа отправляет текстовые сообщения JMS в очередь служебной шины с логическим именем JNDI в очереди и получает их обратно.
+
+Вы можете получить доступ ко всем исходным коду и сведениям о конфигурации из [краткого руководства по использованию очереди JMS образцов служебной шины Azure](https://github.com/Azure/azure-service-bus/tree/master/samples/Java/qpid-jms-client/JmsQueueQuickstart).
 
 ```java
 // Copyright (c) Microsoft. All rights reserved.
@@ -153,9 +162,9 @@ import java.util.concurrent.atomic.AtomicInteger;
 import java.util.function.Function;
 
 /**
- * This sample demonstrates how to send messages from a JMS Queue producer into
- * an Azure Service Bus Queue, and receive them with a JMS message consumer.
- * JMS Queue. 
+ * This sample demonstrates how to send messages from a JMS queue producer into
+ * an Azure Service Bus queue and receive them with a JMS message consumer.
+ * JMS queue. 
  */
 public class JmsQueueQuickstart {
 
@@ -173,7 +182,7 @@ public class JmsQueueQuickstart {
         // connection string. 
         ConnectionStringBuilder csb = new ConnectionStringBuilder(connectionString);
         
-        // set up JNDI context
+        // Set up JNDI context
         Hashtable<String, String> hashtable = new Hashtable<>();
         hashtable.put("connectionfactory.SBCF", "amqps://" + csb.getEndpoint().getHost() + "?amqp.idleTimeout=120000&amqp.traceFrames=true");
         hashtable.put("queue.QUEUE", "BasicQueue");
@@ -184,12 +193,12 @@ public class JmsQueueQuickstart {
         // Look up queue
         Destination queue = (Destination) context.lookup("QUEUE");
 
-        // we create a scope here so we can use the same set of local variables cleanly 
-        // again to show the receive side separately with minimal clutter
+        // We create a scope here so we can use the same set of local variables cleanly 
+        // again to show the receive side separately with minimal clutter.
         {
-            // Create Connection
+            // Create connection
             Connection connection = cf.createConnection(csb.getSasKeyName(), csb.getSasKey());
-            // Create Session, no transaction, client ack
+            // Create session, no transaction, client ack
             Session session = connection.createSession(false, Session.CLIENT_ACKNOWLEDGE);
 
             // Create producer
@@ -210,17 +219,17 @@ public class JmsQueueQuickstart {
         }
 
         {
-            // Create Connection
+            // Create connection
             Connection connection = cf.createConnection(csb.getSasKeyName(), csb.getSasKey());
             connection.start();
-            // Create Session, no transaction, client ack
+            // Create session, no transaction, client ack
             Session session = connection.createSession(false, Session.CLIENT_ACKNOWLEDGE);
             // Create consumer
             MessageConsumer consumer = session.createConsumer(queue);
-            // create a listener callback to receive the messages
+            // Create a listener callback to receive the messages
             consumer.setMessageListener(message -> {
                 try {
-                    // receives message is passed to callback
+                    // Received message is passed to callback
                     System.out.printf("Received message %d with sq#: %s\n",
                             totalReceived.incrementAndGet(), // increments the tracking counter
                             message.getJMSMessageID());
@@ -230,7 +239,7 @@ public class JmsQueueQuickstart {
                 }
             });
 
-            // wait on the main thread until all sent messages have been received
+            // Wait on the main thread until all sent messages have been received
             while (totalReceived.get() < totalSend) {
                 Thread.sleep(1000);
             }
@@ -265,7 +274,7 @@ public class JmsQueueQuickstart {
 
             String connectionString = null;
 
-            // parse connection string from command line
+            // Parse connection string from command line
             Options options = new Options();
             options.addOption(new Option("c", true, "Connection string"));
             CommandLineParser clp = new DefaultParser();
@@ -274,7 +283,7 @@ public class JmsQueueQuickstart {
                 connectionString = cl.getOptionValue("c");
             }
 
-            // get overrides from the environment
+            // Get overrides from the environment
             String env = System.getenv(SB_SAMPLES_CONNECTIONSTRING);
             if (env != null) {
                 connectionString = env;
@@ -294,9 +303,10 @@ public class JmsQueueQuickstart {
 }
 ```
 
-### <a name="run-the-application"></a>Выполнение приложения
+### <a name="run-the-application"></a>Запуск приложения
+
 Передайте **Строку подключения** из политики совместного доступа для запуска приложения.
-Ниже приведены следующие данные запуска приложения.
+Следующие выходные данные имеют форму запуска приложения:
 
 ```Output
 > mvn clean package
@@ -328,7 +338,8 @@ Closing queue client.
 ```
 
 ## <a name="amqp-disposition-and-service-bus-operation-mapping"></a>Расположение AMQP и сопоставление операции служебной шины
-Вот как расположение AMQP преобразовывается в операцию служебной шины.
+
+Ниже показано, как AMQPное расположение преобразуется в операцию служебной шины.
 
 ```Output
 ACCEPTED = 1; -> Complete()
@@ -339,48 +350,52 @@ MODIFIED_FAILED_UNDELIVERABLE = 5; -> Defer()
 ```
 
 ## <a name="jms-topics-vs-service-bus-topics"></a>Статьи о JMS и разделы служебной шины
-Использование разделов и подписок служебной шины Azure с помощью API-интерфейса службы сообщений Java (JMS) предоставляет базовые возможности отправки и получения. Это удобный вариант при переносе приложений от других брокеров сообщений с помощью интерфейсов API, совместимых с JMS, даже если разделы служебной шины отличаются от подразделов JMS и требует нескольких корректировок. 
 
-Разделы служебной шины Azure направляют сообщения в именованные, общие и устойчивые подписки, управляемые через интерфейс управления ресурсами Azure, программы командной строки Azure или с помощью портал Azure. Каждая подписка позволяет использовать до 2000 правил выбора, каждое из которых может иметь условие фильтра, а для фильтров SQL — также действие преобразования метаданных. Каждое соответствие условию фильтра выбирает входное сообщение, которое необходимо скопировать в подписку.  
+Использование разделов и подписок служебной шины с помощью API JMS обеспечивает базовые возможности отправки и получения. Это удобный вариант при переносе приложений из других брокеров сообщений в интерфейсы API, совместимые с JMS, даже если разделы служебной шины отличаются от подразделов JMS и требует нескольких корректировок.
 
-Получение сообщений из подписок идентично приему сообщений из очередей. Каждая подписка имеет связанную очередь недоставленных сообщений и возможность автоматически пересылать сообщения в другую очередь или темы. 
+Разделы служебной шины направляют сообщения в именованные, общие и устойчивые подписки, управляемые через интерфейс управления ресурсами Azure, программы командной строки Azure или портал Azure. Каждая подписка позволяет использовать до 2 000 правил выбора, каждое из которых может иметь условие фильтра, а для фильтров SQL — также действие преобразования метаданных. Каждое соответствие условию фильтра выбирает входное сообщение, которое необходимо скопировать в подписку.  
 
-Темы JMS позволяют клиентам динамически создавать неустойчивые и устойчивые подписчики, которые при необходимости позволяют фильтровать сообщения с помощью селекторов сообщений. Эти несовместно используемые сущности не поддерживаются служебной шиной. Однако синтаксис правила фильтрации SQL для служебной шины аналогичен синтаксису селектора сообщений, поддерживаемому JMS. 
+Получение сообщений из подписок идентично приему сообщений из очередей. Каждая подписка имеет связанную очередь недоставленных сообщений и возможность автоматически пересылать сообщения в другую очередь или темы.
 
-Сторона издателя раздела JMS совместима с служебной шиной, как показано в этом примере, но динамические подписчики нет. В служебной шине не поддерживаются следующие API-интерфейсы JMS, связанные с топологией. 
+Темы JMS позволяют клиентам динамически создавать неустойчивые и устойчивые подписчики, которые при необходимости позволяют фильтровать сообщения с помощью селекторов сообщений. Эти несовместно используемые сущности не поддерживаются служебной шиной. Синтаксис правил фильтрации SQL для служебной шины аналогичен синтаксису селектора сообщений, поддерживаемому JMS.
+
+Сторона издателя раздела JMS совместима с служебной шиной, как показано в этом примере, но динамические подписчики нет. В служебной шине не поддерживаются следующие API-интерфейсы JMS, связанные с топологией.
 
 ## <a name="unsupported-features-and-restrictions"></a>Неподдерживаемые возможности и ограничения
-При использовании JMS по протоколу AMQP 1.0 с Service Bus действуют следующие ограничения:
 
-* В каждом **сеансе**допускается только один **MessageProducer** или **MessageConsumer** . Если требуется создать несколько **MessageProducers** или **MessageConsumers** в приложении, создайте специальный **сеанс** для каждого из них.
+При использовании JMS через AMQP 1,0 с служебной шиной можно использовать следующие ограничения:
+
+* В каждом сеансе допускается только один объект **MessageProducer** или **MessageConsumer** . Если в приложении необходимо создать несколько объектов **MessageProducer** или **MessageConsumer** , создайте выделенный сеанс для каждого из них.
 * Подписки с временными разделами в настоящее время не поддерживаются.
-* **Мессажеселекторс** в настоящее время не поддерживаются.
+* Объекты **мессажеселектор** в настоящее время не поддерживаются.
 * Распределенные транзакции не поддерживаются, но поддерживаются сеансы транзакций.
 
-Кроме того, служебная шина Azure разделяет плоскость управления от плоскости данных и, следовательно, не поддерживает несколько функций динамической топологии JMS.
+Служебная шина разделяет плоскость управления с плоскости данных, поэтому она не поддерживает несколько функций динамической топологии JMS.
 
 | Неподдерживаемый метод          | Заменить на                                                                             |
 |-----------------------------|------------------------------------------------------------------------------------------|
-| createDurableSubscriber     | создать подписки на раздел для переноса селектора сообщений                                 |
-| createDurableConsumer       | создать подписки на раздел для переноса селектора сообщений                                 |
-| createSharedConsumer        | раздели служебной шины всегда общедоступны (см. выше)                                       |
-| createSharedDurableConsumer | раздели служебной шины всегда общедоступны (см. выше)                                       |
-| createTemporaryTopic        | создать раздел с помощью API управления, или инструментов, или портала с * AutoDeleteOnIdle *, установленным на срок действия |
-| createTopic                 | создать раздел с помощью API управления или инструментов или портала                                           |
-| unsubscribe                 | удалить раздел API управления, или инструментов, или портала                                             |
-| createBrowser               | не поддерживается. используйте функции Peek () API служебной шины                         |
-| createQueue                 | создать очередь с помощью API управления, или инструментов, или портала                                           | 
-| createTemporaryQueue        | создать очередь с помощью API управления или инструментов,или портала с * AutoDeleteOnIdle *, установленным на срок действия |
+| createDurableSubscriber     | Создайте подписку раздела, которая будет напортовать селектор сообщений.                                |
+| createDurableConsumer       | Создайте подписку раздела, которая будет напортовать селектор сообщений.                                |
+| createSharedConsumer        | Разделы служебной шины всегда являются общими. См. раздел "темы JMS и разделы служебной шины".                                    |
+| createSharedDurableConsumer | Разделы служебной шины всегда являются общими. См. раздел "темы JMS и разделы служебной шины".                                      |
+| createTemporaryTopic        | Создайте раздел с помощью API управления, инструментов или портала с *AutoDeleteOnIdle* , для которого задан срок действия. |
+| createTopic                 | Создайте раздел с помощью API управления, инструментов или портала.                                         |
+| unsubscribe                 | Удалите API управления разделами, инструменты или портал.                                            |
+| createBrowser               | Не поддерживается. Используйте функцию Peek () API служебной шины.                         |
+| createQueue                 | Создайте очередь с помощью API управления, инструментов или портала.                                           | 
+| createTemporaryQueue        | Создайте очередь с помощью API управления, инструментов или портала с *AutoDeleteOnIdle* , для которого задан срок действия. |
 | рецеивеноваит               | Используйте метод Receive (), предоставленный пакетом SDK служебной шины, и укажите очень низкое или нулевое время ожидания. |
 
 ## <a name="summary"></a>Сводка
-В этом практическом руководстве показано использование функций обмена сообщениями, выполняемых посредством служебной шины (очередей и разделов публикации/подписки), из Java с использованием популярного JMS API и протокола AMQP 1.0.
 
-Протокол AMQP 1.0 Service Bus можно также использовать из других языков, в числе которых .NET, C, Python и PHP. Компоненты, созданные с помощью этих языков, могут надежно и точно обмениваться сообщениями, используя AMQP 1.0 в Service Bus.
+В этой статье показано, как использовать функции обмена сообщениями через брокер служебной шины, такие как очереди и разделы публикации или подписки, из Java с помощью популярных API JMS и AMQP 1,0.
 
-## <a name="next-steps"></a>Дальнейшие действия
+Вы также можете использовать служебную шину AMQP 1,0 на других языках, таких как .NET, C, Python и PHP. Компоненты, созданные с помощью этих разных языков, могут надежно обмениваться сообщениями с помощью поддержки AMQP 1,0 в служебной шине.
+
+## <a name="next-steps"></a>Дальнейшие шаги
+
 * [Поддержка AMQP 1.0 в служебной шине](service-bus-amqp-overview.md)
-* [Как использовать AMQP 1.0 с API .NET служебной шины](./service-bus-amqp-dotnet.md)
-* [Инструкции для разработчиков служебной шины AMQP 1,0](service-bus-amqp-dotnet.md)
+* [Использование AMQP 1,0 с API .NET служебной шины](./service-bus-amqp-dotnet.md)
+* [Руководство разработчика AMQP 1.0 для служебной шины](service-bus-amqp-dotnet.md)
 * [Начало работы с очередями служебной шины](service-bus-dotnet-get-started-with-queues.md)
 * [Центр разработчиков Java](https://azure.microsoft.com/develop/java/)

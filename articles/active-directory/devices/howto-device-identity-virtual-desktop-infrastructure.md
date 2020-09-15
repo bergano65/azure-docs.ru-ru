@@ -5,18 +5,18 @@ services: active-directory
 ms.service: active-directory
 ms.subservice: devices
 ms.topic: conceptual
-ms.date: 10/15/2019
+ms.date: 09/14/2020
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: sandeo
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: f0313c27666cda785b24f23436f6ad727f337ca8
-ms.sourcegitcommit: bcda98171d6e81795e723e525f81e6235f044e52
+ms.openlocfilehash: a9020e364a5c8d7a59dad5549e88036dc9edaad7
+ms.sourcegitcommit: 07166a1ff8bd23f5e1c49d4fd12badbca5ebd19c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/01/2020
-ms.locfileid: "89259359"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90089672"
 ---
 # <a name="device-identity-and-desktop-virtualization"></a>Удостоверение устройств и виртуализация настольных систем
 
@@ -52,12 +52,12 @@ ms.locfileid: "89259359"
 |   |   | Текущие окна | Не постоянный | Да<sup>5</sup> |
 |   |   | Устройства Windows нижнего уровня | Не постоянный | Да<sup>6</sup> |
 |   | Управляемые<sup>4</sup> | Windows Current и Windows нижнего уровня | Постоянный | Да |
-|   |   | Текущие окна | Не постоянный | Нет |
+|   |   | Текущие окна | Не постоянный | нет |
 |   |   | Устройства Windows нижнего уровня | Не постоянный | Да<sup>6</sup> |
-| присоединение к Azure AD; | Федеративные | Текущие окна | Постоянный | Нет |
-|   |   |   | Не постоянный | Нет |
-|   | Управляемые | Текущие окна | Постоянный | Нет |
-|   |   |   | Не постоянный | Нет |
+| присоединение к Azure AD; | Федеративные | Текущие окна | Постоянный | нет |
+|   |   |   | Не постоянный | нет |
+|   | Управляемые | Текущие окна | Постоянный | нет |
+|   |   |   | Не постоянный | нет |
 | регистрация в Azure AD; | Федеративные и управляемые | Windows: текущая или Windows-уровень вниз | Постоянный/не постоянный | Н/Д |
 
 <sup>1</sup> **текущие устройства Windows** представляют собой Windows 10, Windows Server 2016 и Windows Server 2019.
@@ -94,6 +94,6 @@ ms.locfileid: "89259359"
    - Получив стратегию для определения непостоянных гибридных устройств, присоединенных к Azure AD (например, с помощью префикса "отображаемое имя компьютера"), вы должны быть более агрессивными для очистки этих устройств, чтобы гарантировать, что ваш каталог не будет использоваться с большим числом устаревших устройств.
    - Для неустойчивых развертываний VDI в Windows на текущий и более ранних уровнях следует удалить устройства с **аппроксимателастлогонтиместамп** старше 15 дней.
  
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 [Настройка гибридного Azure Active Directory Join для Федеративной среды](hybrid-azuread-join-federated-domains.md)

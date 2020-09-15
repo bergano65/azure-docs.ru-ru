@@ -9,18 +9,18 @@ ms.service: azure-maps
 services: azure-maps
 manager: philmea
 ms.custom: devx-track-javascript
-ms.openlocfilehash: e4309b3fdda1296aade19de2874e7f3423b9fc0f
-ms.sourcegitcommit: bfeae16fa5db56c1ec1fe75e0597d8194522b396
+ms.openlocfilehash: 7d45adc10a84af2cf1e5bfddd09c990e53a9f7e2
+ms.sourcegitcommit: 07166a1ff8bd23f5e1c49d4fd12badbca5ebd19c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/10/2020
-ms.locfileid: "88035966"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90086357"
 ---
 # <a name="use-the-azure-maps-map-control"></a>Использование элемента управления картой в Azure Maps
 
 Библиотека JavaScript на стороне клиента Map Control позволяет отображать карты и встроенные функции Azure Maps в веб-приложение или мобильном приложении.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Предварительные условия
 
 Для использования Map Control на веб-странице необходимо выполнить одно из следующих условий.
 
@@ -252,7 +252,16 @@ var searchURL = new atlas.service.SearchURL(pipeline, 'atlas.azure.us');
 
 При непосредственном доступе к службам Azure Maps RESTFUL измените домен URL-адреса на `atlas.azure.us` . Например, при использовании службы API поиска измените домен URL-адреса с `https://atlas.microsoft.com/search/` на `https://atlas.azure.us/search/` .
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="javascript-frameworks"></a>Платформы JavaScript
+
+При разработке с использованием платформы JavaScript может оказаться полезным один из следующих проектов с открытым исходным кодом:
+
+- [NG-Azure-Maps](https://github.com/arnaudleclerc/ng-azure-maps) -угловой 10 оболочка для карт Azure.
+- [Азуремапсконтрол. Components](https://github.com/arnaudleclerc/AzureMapsControl.Components) — компонент Azure Maps блазор.
+- [Azure Maps реагирующий компонент](https://github.com/WiredSolutions/react-azure-maps) — обертка для элемента управления Azure Maps.
+- [Vue Azure Maps](https://github.com/rickyruiz/vue-azure-maps) — компонент Azure Maps для приложения Vue.
+
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Узнайте, как создавать и взаимодействовать с картой:
 

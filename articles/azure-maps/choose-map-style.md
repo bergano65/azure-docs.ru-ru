@@ -9,12 +9,12 @@ ms.service: azure-maps
 services: azure-maps
 manager: philmea
 ms.custom: devx-track-javascript
-ms.openlocfilehash: 15224afac33a3e236c2d1ed9f60515bdc2f34c4f
-ms.sourcegitcommit: bfeae16fa5db56c1ec1fe75e0597d8194522b396
+ms.openlocfilehash: fe07d6d54296a3c55cb0b2cadb4d4ae0a311873b
+ms.sourcegitcommit: 07166a1ff8bd23f5e1c49d4fd12badbca5ebd19c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/10/2020
-ms.locfileid: "88036799"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90089570"
 ---
 # <a name="change-the-style-of-the-map"></a>Изменение стиля карты
 
@@ -82,7 +82,7 @@ var map = new atlas.Map('map', {
 map.setStyle({ style: 'satellite' });
 ```
 
-В следующем коде после загрузки экземпляра Map стиль схемы обновляется с `grayscale_dark` на с `satellite` помощью функции [SetStyle](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.map?view=azure-maps-typescript-latest#setstyle-styleoptions-) .
+В следующем коде после загрузки экземпляра Map стиль схемы обновляется с `grayscale_dark` на с `satellite` помощью функции [SetStyle](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.map#setstyle-styleoptions-) .
 
 <br/>
 
@@ -97,14 +97,14 @@ map.setStyle({ style: 'satellite' });
 
 На рисунке ниже показан элемент управления "Выбор стиля", отображаемый в `icon` макете.
 
-:::image type="content" source="./media/choose-map-style/style-picker-icon-layout.png" alt-text="Макет списка средств выбора стилей":::
+:::image type="content" source="./media/choose-map-style/style-picker-icon-layout.png" alt-text="Макет значка выбора стиля":::
 
 На рисунке ниже показан элемент управления "Выбор стиля", отображаемый в `list` макете.
 
 :::image type="content" source="./media/choose-map-style/style-picker-list-layout.png" alt-text="Макет списка средств выбора стилей":::
 
 > [!IMPORTANT]
->По умолчанию элемент управления Выбор стиля перечисляет все стили, доступные в ценовой категории S0 Azure Maps. Если требуется сократить число стилей в этом списке, передайте массив стилей, которые должны отображаться в списке, в `mapStyle` параметр выбора стиля. Если вы используете S1 и хотите отобразить все доступные стили, задайте `mapStyles` для параметра Выбор стиля значение `"all"` .
+> По умолчанию элемент управления Выбор стиля перечисляет все стили, доступные в ценовой категории S0 Azure Maps. Если требуется сократить число стилей в этом списке, передайте массив стилей, которые должны отображаться в списке, в `mapStyle` параметр выбора стиля. Если вы используете S1 и хотите отобразить все доступные стили, задайте `mapStyles` для параметра Выбор стиля значение `"all"` .
 
 В следующем коде показано, как переопределить `mapStyles` список базовых стилей по умолчанию. В этом примере мы задаете `mapStyles` параметр для перечисления базовых стилей, которые должны отображаться элементом управления "Выбор стиля".
 
@@ -113,7 +113,7 @@ map.setStyle({ style: 'satellite' });
 <iframe height='500' scrolling='no' title='Добавление элемента выбора стиля' src='//codepen.io/azuremaps/embed/OwgyvG/?height=265&theme-id=0&default-tab=js,result&embed-version=2&editable=true' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>См. фрагмент кода <a href='https://codepen.io/azuremaps/pen/OwgyvG/'>Добавление элемента выбора стиля</a> в службе Azure Maps (<a href='https://codepen.io/azuremaps'>@azuremaps</a>) на сайте <a href='https://codepen.io'>CodePen</a>.
 </iframe>
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Дополнительные сведения о классах и методах, используемых в этой статье.
 

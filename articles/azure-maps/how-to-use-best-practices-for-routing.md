@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.service: azure-maps
 services: azure-maps
 manager: philmea
-ms.openlocfilehash: b957453758b9b8e34989877516a9083f06a85ed8
-ms.sourcegitcommit: 5a3b9f35d47355d026ee39d398c614ca4dae51c6
+ms.openlocfilehash: 1c108c79cafb591dced6f6be0dd5c1b353ddac45
+ms.sourcegitcommit: 07166a1ff8bd23f5e1c49d4fd12badbca5ebd19c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89400792"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90086408"
 ---
 # <a name="best-practices-for-azure-maps-route-service"></a>Рекомендации для службы маршрутов Azure Maps
 
@@ -275,9 +275,9 @@ https://atlas.microsoft.com/route/directions/json?api-version=1.0&subscription-k
 
 ## <a name="use-the-routing-service-in-a-web-app"></a>Использование службы Routing Service в веб-приложении
 
-Веб-пакет SDK для Azure Maps предоставляет [модуль службы](https://docs.microsoft.com/javascript/api/azure-maps-rest/?view=azure-maps-typescript-latest). Этот модуль представляет собой вспомогательную библиотеку, которая упрощает использование Azure Maps интерфейсов API для Node.js приложений с помощью JavaScript или TypeScript. Модуль службы можно использовать для отображения возвращаемых маршрутов на карте. Модуль автоматически определяет, какой API следует использовать с запросами GET и POST.
+Веб-пакет SDK для Azure Maps предоставляет [модуль службы](https://docs.microsoft.com/javascript/api/azure-maps-rest/). Этот модуль представляет собой вспомогательную библиотеку, которая упрощает использование Azure Maps интерфейсов API для Node.js приложений с помощью JavaScript или TypeScript. Модуль службы можно использовать для отображения возвращаемых маршрутов на карте. Модуль автоматически определяет, какой API следует использовать с запросами GET и POST.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Дополнительные сведения см. в следующих статьях:
 

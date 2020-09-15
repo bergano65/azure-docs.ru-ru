@@ -4,12 +4,12 @@ description: Здесь описано, как применить теги, чт
 ms.topic: conceptual
 ms.date: 07/27/2020
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: 1eaf9b735e65811b242fa7198b3545c9c68a4d46
-ms.sourcegitcommit: ac5cbef0706d9910a76e4c0841fdac3ef8ed2e82
+ms.openlocfilehash: 3ffcb4a0f2f5dc64b165fcdec03f7c3ced258cc1
+ms.sourcegitcommit: 07166a1ff8bd23f5e1c49d4fd12badbca5ebd19c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/03/2020
-ms.locfileid: "89425999"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90086765"
 ---
 # <a name="use-tags-to-organize-your-azure-resources-and-management-hierarchy"></a>Использование тегов для Организации ресурсов Azure и иерархии управления
 
@@ -236,7 +236,7 @@ $subscription = (Get-AzSubscription -SubscriptionName "Example Subscription").Id
 Remove-AzTag -ResourceId "/subscriptions/$subscription"
 ```
 
-## <a name="azure-cli"></a>Azure CLI
+## <a name="azure-cli"></a>Azure CLI;
 
 ### <a name="apply-tags"></a>Применить Теги
 
@@ -307,7 +307,27 @@ az group list --tag Dept=IT
 
 ### <a name="handling-spaces"></a>Обработка пробелов
 
-Если имена или значения тегов содержат пробелы, необходимо выполнить несколько дополнительных действий. В следующем примере все теги из группы ресурсов применяются к его ресурсам, если теги могут содержать пробелы.
+Если имена или значения тегов содержат пробелы, необходимо выполнить несколько дополнительных действий. 
+
+`--tags`Параметры в Azure CLI могут принимать строку, состоящую из массива строк. В следующем примере выполняется перезапись тегов в группе ресурсов, в которой теги содержат пробелы и дефисы: 
+
+```azurecli-interactive
+TAGS=("Cost Center=Finance-1222" "Location=West US")
+az group update --name examplegroup --tags "${TAGS[@]}"
+```
+
+Такой же синтаксис можно использовать при создании или обновлении группы ресурсов или ресурсов с помощью `--tags` параметра.
+
+Чтобы обновить теги с помощью `--set` параметра, необходимо передать ключ и значение в виде строки. В следующем примере один тег добавляется в группу ресурсов:
+
+```azurecli-interactive
+TAG="Cost Center='Account-56'"
+az group update --name examplegroup --set tags."$TAG"
+```
+
+В этом случае значение тега помечается одинарными кавычками, поскольку оно имеет дефис.
+
+Также может потребоваться применить теги ко многим ресурсам. В следующем примере все теги из группы ресурсов применяются к своим ресурсам, если теги могут содержать пробелы:
 
 ```azurecli-interactive
 jsontags=$(az group show --name examplegroup --query tags -o json)
@@ -600,7 +620,7 @@ az deployment sub create --name tagresourcegroup --location westus2 --template-u
    >
    > Служба автоматизации Azure и Azure CDN поддерживают только 15 тегов для ресурсов.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * Не все типы ресурсов поддерживают теги. Сведения о возможности применения тегов к типу ресурса см. в статье о [поддержке тегов ресурсами Azure](tag-support.md).
 * Рекомендации по реализации стратегии тегов см. в разделе [руководство по именованию ресурсов и созданию тегов](/azure/cloud-adoption-framework/decision-guides/resource-tagging/?toc=/azure/azure-resource-manager/management/toc.json).

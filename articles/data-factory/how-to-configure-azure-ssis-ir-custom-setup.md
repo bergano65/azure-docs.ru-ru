@@ -11,13 +11,13 @@ ms.author: sawinark
 manager: mflasko
 ms.reviewer: douglasl
 ms.custom: seo-lt-2019
-ms.date: 08/11/2020
-ms.openlocfilehash: 18e1ff05d76937f8809408da0ed25f55120e456a
-ms.sourcegitcommit: bf1340bb706cf31bb002128e272b8322f37d53dd
+ms.date: 09/15/2020
+ms.openlocfilehash: ff56ef55066fd0f56b5b8dc7507bfb63b8b8baa0
+ms.sourcegitcommit: 07166a1ff8bd23f5e1c49d4fd12badbca5ebd19c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/03/2020
-ms.locfileid: "89440581"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90090607"
 ---
 # <a name="customize-the-setup-for-an-azure-ssis-integration-runtime"></a>Настройка среды выполнения интеграции Azure Integration Services
 
@@ -40,7 +40,7 @@ ms.locfileid: "89440581"
 
 Следующие ограничения применяются только к стандартным пользовательским установкам:
 
-- Если вы хотите использовать файл *gacutil.exe* в своем скрипте, чтобы установить сборки в глобальном кэше сборок, необходимо предоставить *gacutil.exe* как часть пользовательской установки. Кроме того, вы можете использовать копию, указанную в контейнере *общедоступной предварительной версии*, которая обсуждается далее в разделе "Инструкции".
+- Если вы хотите использовать файл *gacutil.exe* в своем скрипте, чтобы установить сборки в глобальном кэше сборок, необходимо предоставить *gacutil.exe* как часть пользовательской установки. Кроме того, вы можете использовать копию, указанную в папке *Sample* в *общедоступном контейнере предварительной версии* , см. раздел **стандартные примеры выборочной установки** ниже.
 
 - Если в скрипт нужно добавить ссылку на вложенную папку, не используйте *msiexec.exe*. Эта команда не поддерживает нотацию `.\` для ссылки на корневую папку. Используйте команду `msiexec /i "MySubfolder\MyInstallerx64.msi" ...` вместо `msiexec /i ".\MySubfolder\MyInstallerx64.msi" ...`.
 
@@ -343,7 +343,7 @@ ms.locfileid: "89440581"
 
 1. После завершения стандартной пользовательской установки и запуска Azure-SSIS IR можно найти все журналы настраиваемой установки в папке *Main. cmd. log* контейнера. Они включают стандартные выходные данные файла *Main. cmd* и другие журналы выполнения.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - [Настройка выпуска Enterprise Azure-SSIS IR](how-to-configure-azure-ssis-ir-enterprise-edition.md)
 - [Разработка платных или лицензированных компонентов для Azure-SSIS IR](how-to-develop-azure-ssis-ir-licensed-components.md)

@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 05/04/2018
-ms.openlocfilehash: b9d27e602062ff2638d8eea23fe64497fd66512d
-ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
+ms.openlocfilehash: dccd953d2a31b306994c06ae644959e18332f5da
+ms.sourcegitcommit: 07166a1ff8bd23f5e1c49d4fd12badbca5ebd19c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87322913"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90090182"
 ---
 # <a name="vmware-monitoring-deprecated-solution-in-azure-monitor"></a>Мониторинг VMware (не рекомендуется) решение в Azure Monitor
 
@@ -66,7 +66,7 @@ vSphere ESXi Host версий 5.5, 6.0 и 6.5
 
 1. В портал Azure выполните запрос журнала для `VMware_CL` . Когда Azure Monitor собирает данные системного журнала, он сохраняет формат системного журнала. На портале регистрируются некоторые поля, включая *Hostname* и *ProcessName*.  
 
-    ![type](./media/vmware/type.png)  
+    ![На снимке экрана показан запрос журнала для типа = VMware_CL с результатом с меткой времени.](./media/vmware/type.png)  
 
     Если представление с результатами поиска по журналам похоже на изображенное выше, это значит, что панель мониторинга для соответствующего решения для мониторинга VMware настроена.  
 
@@ -75,7 +75,7 @@ vSphere ESXi Host версий 5.5, 6.0 и 6.5
 
 В следующей таблице содержатся методы сбора данных и другие связанные сведения.
 
-| platform | Агент Log Analytics для Linux | Агент SCOM | Хранилище Azure | Нужен ли SCOM? | Отправка данных агента SCOM через группу управления | Частота сбора |
+| platform | Агент Log Analytics для Linux | Агент System Center Operations Manager | Хранилище Azure | Нужен ли Operations Manager? | Отправка данных агента Operations Manager через группу управления | Частота сбора |
 | --- | --- | --- | --- | --- | --- | --- |
 | Linux |&#8226; |  |  |  |  |Каждые 3 минуты |
 
@@ -105,7 +105,7 @@ vSphere ESXi Host версий 5.5, 6.0 и 6.5
 ## <a name="vmware-monitoring-solution-overview"></a>Обзор решения для мониторинга VMware
 Элемент "VMware" отображается в рабочей области Log Analytics. Решение отображает обобщенное представление ошибок. Щелкнув плитку, вы перейдете в представление панели мониторинга.
 
-![tile](./media/vmware/tile.png)
+![На снимке экрана показана плитка VMware, отображающая девять сбоев.](./media/vmware/tile.png)
 
 #### <a name="navigate-the-dashboard-view"></a>Навигация в представлении панели мониторинга
 В представлении панели мониторинга **VMware** колонки упорядочены по следующим категориям:
@@ -147,13 +147,13 @@ vSphere ESXi Host версий 5.5, 6.0 и 6.5
 #### <a name="common-log-queries"></a>Общие запросы журналов
 Решение включает и другие полезные запросы, которые помогают управлять узлами ESXi узлов. Сюда входят запросы к данным о переполнении дискового пространства, задержках хранилища и сбоях пути.
 
-![Запросы](./media/vmware/queries.png)
+![На снимке экрана показаны рекомендуемые ПОИСКовые запросы, которые полезны для хранения запросов.](./media/vmware/queries.png)
 
 
 #### <a name="save-queries"></a>Сохранение запросов
 Сохранение запросов журнала — это стандартная функция в Azure Monitor и может помочь в сохранении любых полезных запросов. Создав запрос, который вы считаете полезным, сохраните его, щелкнув **Избранное**. Сохранение запроса позволяет без труда использовать его позже на странице [Моя панель мониторинга](../learn/tutorial-logs-dashboards.md), где вы можете создавать собственные настраиваемые панели мониторинга.
 
-![DockerDashboardView](./media/vmware/dockerdashboardview.png)
+![На снимке экрана показана часть пользовательской панели мониторинга с метками Поиск по журналам со значками для отмены, экспорта, оповещения, сохранения, избранного и журнала.](./media/vmware/dockerdashboardview.png)
 
 #### <a name="create-alerts-from-queries"></a>Создание оповещений из запросов
 Созданные запросы можно использовать для оповещения при возникновении определенных событий. Подробные сведения о создании оповещений см. в статье [Оповещения в Log Analytics](../platform/alerts-overview.md). Примеры оповещающих и других запросов см. в записи блога [Monitor VMware using OMS Log Analytics](/archive/blogs/msoms/monitor-vmware-using-oms-log-analytics) (Мониторинг VMware с помощью OMS Log Analytics).
@@ -188,15 +188,15 @@ vSphere ESXi Host версий 5.5, 6.0 и 6.5
   1. Log Analytics ожидает передачи данных через порт 1514. Чтобы проверить, что он открыт, выполните следующую команду: `netstat -a | grep 1514`
   1. Вы увидите, что порт `1514/tcp` открыт. В противном случае проверьте, правильно ли установлен агент OMS. Если сведения о порте не отображаются, порт системного журнала не открыт на виртуальной машине.
 
-    а. Убедитесь, что агент Log Analytics запущен, с помощью `ps -ef | grep oms`. Если это не так, запустите его, выполнив команду `sudo /opt/microsoft/omsagent/bin/service_control start`
+    a. Убедитесь, что агент Log Analytics запущен, с помощью `ps -ef | grep oms`. Если это не так, запустите его, выполнив команду `sudo /opt/microsoft/omsagent/bin/service_control start`
 
-     b. Откройте файл `/etc/opt/microsoft/omsagent/conf/omsagent.d/vmware_esxi.conf`.
+     b. Откройте файл `/etc/opt/microsoft/omsagent/conf/omsagent.d/vmware_esxi.conf` .
 
      c. Убедитесь, что настройки пользователей и группы допустимы. Они должны выглядеть следующим образом: `-rw-r--r-- 1 omsagent omiusers 677 Sep 20 16:46 vmware_esxi.conf`
 
      d. Если файл не существует или настройки пользователя и группы неправильны, выполните действия по исправлению, приведенные в разделе [Подготовка сервера под управлением Linux](#prepare-a-linux-server).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 * Используйте [запросы журналов в Log Analytics](../log-query/log-query-overview.md) для просмотра подробных данных об узле VMware.
 * [Создавайте собственные панели мониторинга](../learn/tutorial-logs-dashboards.md), отображающие данные об узле VMware.
 * [Создавайте оповещения](../platform/alerts-overview.md), информирующие о возникновении определенных событий узла VMware.

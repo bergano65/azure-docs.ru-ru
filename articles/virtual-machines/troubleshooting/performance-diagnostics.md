@@ -13,12 +13,12 @@ ms.tgt_pltfrm: vm-windows
 ms.topic: troubleshooting
 ms.date: 9/20/2018
 ms.author: anandh
-ms.openlocfilehash: 16be3d1695608165405a3490b686a01ba6a2a62c
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 857d49fa579e7ea1a6e2c14ae8198cd8ac4fe228
+ms.sourcegitcommit: 07166a1ff8bd23f5e1c49d4fd12badbca5ebd19c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "70080599"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90090641"
 ---
 # <a name="performance-diagnostics-for-azure-virtual-machines"></a>Диагностика производительности для виртуальных машин Azure
 
@@ -33,11 +33,28 @@ ms.locfileid: "70080599"
 
 ### <a name="windows"></a>Windows
 
-Windows 10, Windows 8, Windows 8 Корпоративная, Windows 8 Профессиональная, Windows 8.1, Windows Server 2016, Windows Server 2012, Windows Server 2012 Datacenter, Windows Server 2012 R2, Windows Server 2012 R2 Datacenter, Windows Server 2012 R2 Standard, Windows Server 2012 Standard, Windows Server 2008 R2, Windows Server 2008 R2 Datacenter, Windows Server 2008 R2 Enterprise, Windows Server 2008 R2 Foundation, Windows Server 2008 R2 SP1, Windows Server 2008 R2 Standard.
+* Windows Server 2019
+* Windows Server 2016
+* Windows Server 2012 R2
+* Windows Server 2012
+* Windows Server 2008 R2
+* Windows 10
+* Windows 8.1
+* Windows 8
 
 ### <a name="linux"></a>Linux
 
-Oracle Linux Server 6,10 [ `*` ], 7,3, 7,6, 7,5 (Oracle-Database-Ee 13,8 Marketplace Image), CentOS 6,5 [ `*` ], 7,6, RHEL 7,2, 7,5, 8,0 [ `*` ], Ubuntu 14,04, 16,04, 18,04, Debian 8, 9, 10 [ `*` ], SLES 12 SP4 [ `*` ]
+- В настоящее время поддерживаются следующие дистрибутивы:
+
+    | Distribution               | Версия                                         |
+    |----------------------------|-------------------------------------------------|
+    | Сервер Oracle Linux        | 6,10 [ `*` ], 7,3, 7,6, 7,5 |
+    | CentOS                     | 6,5 [ `*` ], 7,6                                    |
+    | RHEL                       | 7,2, 7,5, 8,0 [ `*` ]                               |
+    | Ubuntu                     | 14,04, 16,04, 18,04, 20,04                               |
+    | Debian                     | 8, 9, 10 [ `*` ]                                    |
+    | SLES                       | 12 SP4 [ `*` ]                                      |
+    |                            |                                                   |
 
 >[!Note]
 >[ `*` ] См. [Известные проблемы](how-to-use-perfinsights-linux.md#known-issues)
@@ -197,7 +214,7 @@ Oracle Linux Server 6,10 [ `*` ], 7,3, 7,6, 7,5 (Oracle-Database-Ee 13,8 Marketp
 
 В настоящее время нет простого способа узнать, когда завершится установка расширения виртуальной машины. Обычно установка занимает от 45 секунд до 1 минуты. После установки расширения виртуальной машины можно выполнить шаги по воспроизведению проблемы, чтобы средство диагностики производительности записало правильный набор данных для устранения неполадок.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Если после просмотра аналитических сведений и отчета по диагностике производительности вы все еще не можете определить причину неполадки и вам нужна дополнительная помощь, можно создать запрос в службу поддержки Майкрософт.
 

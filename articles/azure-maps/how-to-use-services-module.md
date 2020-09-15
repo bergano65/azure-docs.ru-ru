@@ -9,12 +9,12 @@ ms.service: azure-maps
 services: azure-maps
 manager: cpendleton
 ms.custom: devx-track-javascript
-ms.openlocfilehash: 2f8d41c8248ab761c6d781263f3978937ad01e22
-ms.sourcegitcommit: 98854e3bd1ab04ce42816cae1892ed0caeedf461
+ms.openlocfilehash: 0daa56c03f2a841d59e73d5f47f67a84370ea972
+ms.sourcegitcommit: 07166a1ff8bd23f5e1c49d4fd12badbca5ebd19c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "88004141"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90086306"
 ---
 # <a name="use-the-azure-maps-services-module"></a>Использование модуля Azure Maps Services
 
@@ -160,7 +160,7 @@ ms.locfileid: "88004141"
 
 <br/>
 
-<iframe height="500" style="width: 100%;" scrolling="no" title="Использование модуля "службы"" src="//codepen.io/azuremaps/embed/zbXGMR/?height=500&theme-id=0&default-tab=js,result&editable=true" frameborder="no" allowtransparency="true" allowfullscreen="true">
+<iframe height="500" style="width: 100%;" scrolling="no" title="Использование модуля "службы"" src="//codepen.io/azuremaps/embed/zbXGMR/?height=500&theme-id=0&default-tab=js,result&editable=true" frameborder='no' loading="lazy" allowtransparency="true" allowfullscreen="true">
 Посмотрите перо <a href='https://codepen.io/azuremaps/pen/zbXGMR/'>с помощью модуля службы</a> , Azure Maps ( <a href='https://codepen.io/azuremaps'>@azuremaps</a> ) на <a href='https://codepen.io'>CodePen</a>.
 </iframe>
 
@@ -191,19 +191,19 @@ var searchURL = new atlas.service.SearchURL(pipeline, 'atlas.azure.us');
 Дополнительные сведения о классах и методах, которые используются в этой статье:
 
 > [!div class="nextstepaction"]
-> [мапсурл](https://docs.microsoft.com/javascript/api/azure-maps-rest/atlas.service.mapsurl?view=azure-maps-typescript-latest)
+> [мапсурл](https://docs.microsoft.com/javascript/api/azure-maps-rest/atlas.service.mapsurl)
 
 > [!div class="nextstepaction"]
-> [сеарчурл](https://docs.microsoft.com/javascript/api/azure-maps-rest/atlas.service.searchurl?view=azure-maps-typescript-latest)
+> [сеарчурл](https://docs.microsoft.com/javascript/api/azure-maps-rest/atlas.service.searchurl)
 
 > [!div class="nextstepaction"]
-> [RouteURL](https://docs.microsoft.com/javascript/api/azure-maps-rest/atlas.service.routeurl?view=azure-maps-typescript-latest)
+> [RouteURL](https://docs.microsoft.com/javascript/api/azure-maps-rest/atlas.service.routeurl)
 
 > [!div class="nextstepaction"]
-> [субскриптионкэйкредентиал](https://docs.microsoft.com/javascript/api/azure-maps-rest/atlas.service.subscriptionkeycredential?view=azure-maps-typescript-latest)
+> [субскриптионкэйкредентиал](https://docs.microsoft.com/javascript/api/azure-maps-rest/atlas.service.subscriptionkeycredential)
 
 > [!div class="nextstepaction"]
-> [токенкредентиал](https://docs.microsoft.com/javascript/api/azure-maps-rest/atlas.service.tokencredential?view=azure-maps-typescript-latest)
+> [токенкредентиал](https://docs.microsoft.com/javascript/api/azure-maps-rest/atlas.service.tokencredential)
 
 Дополнительные примеры кода, в которых используется модуль служб, см. в следующих статьях:
 

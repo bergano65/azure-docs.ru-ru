@@ -9,16 +9,16 @@ ms.service: azure-maps
 services: azure-maps
 manager: philmea
 ms.custom: devx-track-javascript
-ms.openlocfilehash: 4c00639c02f8834a24a3828ac5b8ba828d0e1733
-ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
+ms.openlocfilehash: 82c5d87be084e85b6de9f890bd042babca9df476
+ms.sourcegitcommit: 07166a1ff8bd23f5e1c49d4fd12badbca5ebd19c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87282829"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90090505"
 ---
 # <a name="use-the-drawing-tools-module"></a>Использование модуля средств рисования
 
-Веб-пакет SDK Azure Maps предоставляет *модуль средств рисования*. Этот модуль упрощает Рисование и изменение фигур на карте с помощью устройства ввода, такого как мышь или сенсорный экран. Основным классом этого модуля является [Диспетчер рисунков](https://docs.microsoft.com/javascript/api/azure-maps-drawing-tools/atlas.drawing.drawingmanager?view=azure-node-latest#setoptions-drawingmanageroptions-). Диспетчер рисунков предоставляет все возможности, необходимые для рисования и редактирования фигур на карте. Его можно использовать напрямую и интегрировать с настраиваемым пользовательским ИНТЕРФЕЙСом панели инструментов. Можно также использовать встроенный класс [панели инструментов рисования](https://docs.microsoft.com/javascript/api/azure-maps-drawing-tools/atlas.control.drawingtoolbar?view=azure-node-latest) . 
+Веб-пакет SDK Azure Maps предоставляет *модуль средств рисования*. Этот модуль упрощает Рисование и изменение фигур на карте с помощью устройства ввода, такого как мышь или сенсорный экран. Основным классом этого модуля является [Диспетчер рисунков](https://docs.microsoft.com/javascript/api/azure-maps-drawing-tools/atlas.drawing.drawingmanager#setoptions-drawingmanageroptions-). Диспетчер рисунков предоставляет все возможности, необходимые для рисования и редактирования фигур на карте. Его можно использовать напрямую и интегрировать с настраиваемым пользовательским ИНТЕРФЕЙСом панели инструментов. Можно также использовать встроенный класс [панели инструментов рисования](https://docs.microsoft.com/javascript/api/azure-maps-drawing-tools/atlas.control.drawingtoolbar) . 
 
 ## <a name="loading-the-drawing-tools-module-in-a-webpage"></a>Загрузка модуля средств рисования на веб-страницу
 
@@ -44,13 +44,13 @@ ms.locfileid: "87282829"
 
 ## <a name="use-the-drawing-manager-directly"></a>Использование диспетчера рисунков напрямую
 
-После загрузки модуля инструменты рисования в приложение можно включить возможности рисования и редактирования с помощью [диспетчера рисунков](https://docs.microsoft.com/javascript/api/azure-maps-drawing-tools/atlas.drawing.drawingmanager?view=azure-node-latest#setoptions-drawingmanageroptions-). Можно указать параметры для диспетчера рисунков при его создании или использовать `drawingManager.setOptions()` функцию.
+После загрузки модуля инструменты рисования в приложение можно включить возможности рисования и редактирования с помощью [диспетчера рисунков](https://docs.microsoft.com/javascript/api/azure-maps-drawing-tools/atlas.drawing.drawingmanager#setoptions-drawingmanageroptions-). Можно указать параметры для диспетчера рисунков при его создании или использовать `drawingManager.setOptions()` функцию.
 
 ### <a name="set-the-drawing-mode"></a>Установка режима рисования
 
 Следующий код создает экземпляр диспетчера рисунков и устанавливает параметр **режима** рисования. 
 
-```Javascript
+```javascript
 //Create an instance of the drawing manager and set drawing mode.
 drawingManager = new atlas.drawing.DrawingManager(map,{
     mode: "draw-polygon"
@@ -70,13 +70,13 @@ drawingManager = new atlas.drawing.DrawingManager(map,{
 
 Диспетчер рисунков поддерживает три разных способа взаимодействия с картой для рисования фигур.
 
-* `click`— Координаты добавляются при щелчке мышью или касанием.
-* `freehand `— Координаты добавляются при перетаскивании указателя мыши или касания на карту. 
-* `hybrid`— Координаты добавляются при нажатии или перетаскивании мыши или касания.
+* `click` — Координаты добавляются при щелчке мышью или касанием.
+* `freehand ` — Координаты добавляются при перетаскивании указателя мыши или касания на карту. 
+* `hybrid` — Координаты добавляются при нажатии или перетаскивании мыши или касания.
 
 Следующий код включает режим рисования многоугольника и задает тип взаимодействия рисования, которым должен соответствовать Диспетчер рисунков `freehand` . 
 
-```Javascript
+```javascript
 //Create an instance of the drawing manager and set drawing mode.
 drawingManager = new atlas.drawing.DrawingManager(map,{
     mode: "draw-polygon",
@@ -122,10 +122,10 @@ drawingManager = new atlas.drawing.DrawingManager(map,{
 Дополнительные сведения о классах и методах, которые используются в этой статье:
 
 > [!div class="nextstepaction"]
-> [Схема](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.map?view=azure-iot-typescript-latest)
+> [Схема](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.map)
 
 > [!div class="nextstepaction"]
-> [Диспетчер рисунков](https://docs.microsoft.com/javascript/api/azure-maps-drawing-tools/atlas.drawing.drawingmanager?view=azure-node-latest)
+> [Диспетчер рисунков](https://docs.microsoft.com/javascript/api/azure-maps-drawing-tools/atlas.drawing.drawingmanager)
 
 > [!div class="nextstepaction"]
-> [Панель инструментов рисования](https://docs.microsoft.com/javascript/api/azure-maps-drawing-tools/atlas.control.drawingtoolbar?view=azure-node-latest)
+> [Панель инструментов рисования](https://docs.microsoft.com/javascript/api/azure-maps-drawing-tools/atlas.control.drawingtoolbar)

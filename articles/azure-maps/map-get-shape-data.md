@@ -9,23 +9,23 @@ ms.service: azure-maps
 services: azure-maps
 manager: philmea
 ms.custom: devx-track-javascript
-ms.openlocfilehash: a10732790d52ac21ada53970ce2dd028f8d08f14
-ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
+ms.openlocfilehash: 6d647b81147f56d6eb81fd04cb562e34ac1497dd
+ms.sourcegitcommit: 07166a1ff8bd23f5e1c49d4fd12badbca5ebd19c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87282846"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90090709"
 ---
 # <a name="get-shape-data"></a>Получение данных о фигуре
 
-В этой статье показано, как получить данные фигур, рисуемых на карте. Мы используем функцию **дравингманажер.-Source ()** в [диспетчере рисунков](https://docs.microsoft.com/javascript/api/azure-maps-drawing-tools/atlas.drawing.drawingmanager?view=azure-node-latest#getsource--). Существуют различные сценарии, когда необходимо извлечь данные геообъектно-JSON рисуемой фигуры и использовать их в других местах.  
+В этой статье показано, как получить данные фигур, рисуемых на карте. Мы используем функцию **дравингманажер.-Source ()** в [диспетчере рисунков](https://docs.microsoft.com/javascript/api/azure-maps-drawing-tools/atlas.drawing.drawingmanager#getsource--). Существуют различные сценарии, когда необходимо извлечь данные геообъектно-JSON рисуемой фигуры и использовать их в других местах.  
 
 
 ## <a name="get-data-from-drawn-shape"></a>Получение данных из рисуемой фигуры
 
 Следующая функция получает исходные данные рисуемой фигуры и выводит их на экран. 
 
-```Javascript
+```javascript
 function getDrawnShapes() {
     var source = drawingManager.getSource();
 
@@ -37,7 +37,7 @@ function getDrawnShapes() {
 
 <br/>
 
-<iframe height="686" title="Получение данных о фигуре" src="//codepen.io/azuremaps/embed/xxKgBVz/?height=265&theme-id=0&default-tab=result" frameborder="no" allowtransparency="true" allowfullscreen="true" style='width: 100%;'>См. раздел <a href='https://codepen.io/azuremaps/pen/xxKgBVz/'>Получение данных формы</a> с помощью Azure Maps ( <a href='https://codepen.io/azuremaps'>@azuremaps</a> ) в <a href='https://codepen.io'>CodePen</a>.
+<iframe height="686" title="Получение данных о фигуре" src="//codepen.io/azuremaps/embed/xxKgBVz/?height=265&theme-id=0&default-tab=result" frameborder='no' loading="lazy" allowtransparency="true" allowfullscreen="true" style='width: 100%;'>См. раздел <a href='https://codepen.io/azuremaps/pen/xxKgBVz/'>Получение данных формы</a> с помощью Azure Maps ( <a href='https://codepen.io/azuremaps'>@azuremaps</a> ) в <a href='https://codepen.io'>CodePen</a>.
 </iframe>
 
 
@@ -54,10 +54,10 @@ function getDrawnShapes() {
 Дополнительные сведения о классах и методах, которые используются в этой статье:
 
 > [!div class="nextstepaction"]
-> [Схема](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.map?view=azure-iot-typescript-latest)
+> [Схема](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.map)
 
 > [!div class="nextstepaction"]
-> [Диспетчер рисунков](https://docs.microsoft.com/javascript/api/azure-maps-drawing-tools/atlas.drawing.drawingmanager?view=azure-node-latest)
+> [Диспетчер рисунков](https://docs.microsoft.com/javascript/api/azure-maps-drawing-tools/atlas.drawing.drawingmanager)
 
 > [!div class="nextstepaction"]
-> [Панель инструментов рисования](https://docs.microsoft.com/javascript/api/azure-maps-drawing-tools/atlas.control.drawingtoolbar?view=azure-node-latest)
+> [Панель инструментов рисования](https://docs.microsoft.com/javascript/api/azure-maps-drawing-tools/atlas.control.drawingtoolbar)

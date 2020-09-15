@@ -13,12 +13,12 @@ ms.date: 10/06/2018
 ms.reviewer: martincoetzer
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 3e2c09bcd43b08778324a32cc052fad5b85714c4
-ms.sourcegitcommit: c94a177b11a850ab30f406edb233de6923ca742a
+ms.openlocfilehash: 15bcb0f7ca30c343072da396abeac8d08dee03a9
+ms.sourcegitcommit: 07166a1ff8bd23f5e1c49d4fd12badbca5ebd19c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/01/2020
-ms.locfileid: "89279590"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90087015"
 ---
 # <a name="factors-influencing-the-performance-of-azure-ad-connect"></a>Факторы, влияющие на производительность Azure AD Connect
 
@@ -41,7 +41,7 @@ Azure AD Connect синхронизирует ваш Active Directory с Azure A
 
 На следующей схеме показана подробная архитектура модуля подготовки, подключенного к одному лесу, несмотря на то, что поддерживаются несколько лесов. В этой архитектуре показано, как различные компоненты взаимодействуют друг с другом.
 
-![AzureADConnentInternal](media/plan-connect-performance-factors/AzureADConnentInternal.png)
+![На схеме показано, как взаимодействуют подключенные каталоги и Azure AD Connect подсистемой подготовки, включая пространство соединителя и компоненты метавселенной в базе данных SQL. ](media/plan-connect-performance-factors/AzureADConnentInternal.png)
 
 Модуль подготовки подключается к каждому лесу Active Directory и Azure AD. Процесс считывания информации с каждого каталога называется "импорт". Экспорт относится к обновлению каталогов из модуля подготовки. Синхронизация оценивает правила передачи объектов в модуль подготовки. Более подробные сведения см. в статье [Синхронизация Azure AD Connect: общие сведения об архитектуре](./concept-azure-ad-connect-sync-architecture.md).
 

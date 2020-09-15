@@ -9,12 +9,12 @@ ms.service: azure-maps
 services: azure-maps
 manager: ''
 ms.custom: codepen
-ms.openlocfilehash: 678781ff4bade7484f28cc9ab14d960f2b24c323
-ms.sourcegitcommit: 0e8a4671aa3f5a9a54231fea48bcfb432a1e528c
+ms.openlocfilehash: be6d508da15b7c403259bd66c86c3b3e72ff2f12
+ms.sourcegitcommit: 07166a1ff8bd23f5e1c49d4fd12badbca5ebd19c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/24/2020
-ms.locfileid: "87130296"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90089279"
 ---
 # <a name="show-search-results-on-the-map"></a>Отображение результатов поиска на карте
 
@@ -24,25 +24,25 @@ ms.locfileid: "87130296"
 
 ## <a name="make-a-search-request-via-service-module"></a>Поисковой запрос через модуль службы
 
-<iframe height='500' scrolling='no' title='Отображение результатов поиска на карте (модуль службы)' src='//codepen.io/azuremaps/embed/zLdYEB/?height=265&theme-id=0&default-tab=js,result&embed-version=2&editable=true' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>Просмотрите фрагмент кода для <a href='https://codepen.io/azuremaps/pen/zLdYEB/'>отображения результатов поиска на карте (служебный модуль)</a> службы Azure Maps (<a href='https://codepen.io/azuremaps'>@azuremaps</a>) в <a href='https://codepen.io'>CodePen</a>.
+<iframe height='500' scrolling='no' title='Отображение результатов поиска на карте (модуль службы)' src='//codepen.io/azuremaps/embed/zLdYEB/?height=265&theme-id=0&default-tab=js,result&embed-version=2&editable=true' frameborder='no' loading="lazy" allowtransparency='true' allowfullscreen='true' style='width: 100%;'>Просмотрите фрагмент кода для <a href='https://codepen.io/azuremaps/pen/zLdYEB/'>отображения результатов поиска на карте (служебный модуль)</a> службы Azure Maps (<a href='https://codepen.io/azuremaps'>@azuremaps</a>) в <a href='https://codepen.io'>CodePen</a>.
 </iframe>
 
 В приведенном выше коде первый блок создает объект карты и настраивает механизм проверки подлинности на использование маркера доступа. См. инструкции по [созданию карты](./map-create.md).
 
-Второй блок кода создает `TokenCredential` для проверки подлинности HTTP-запросов к Azure Maps с маркером доступа. Затем он передает `TokenCredential` в `atlas.service.MapsURL.newPipeline()` и создает экземпляр [конвейера](https://docs.microsoft.com/javascript/api/azure-maps-rest/atlas.service.pipeline?view=azure-maps-typescript-latest). `searchURL` представляет собой URL-адрес к операциям [поиска](https://docs.microsoft.com/rest/api/maps/search) службы Azure Maps.
+Второй блок кода создает `TokenCredential` для проверки подлинности HTTP-запросов к Azure Maps с маркером доступа. Затем он передает `TokenCredential` в `atlas.service.MapsURL.newPipeline()` и создает экземпляр [конвейера](https://docs.microsoft.com/javascript/api/azure-maps-rest/atlas.service.pipeline). `searchURL` представляет собой URL-адрес к операциям [поиска](https://docs.microsoft.com/rest/api/maps/search) службы Azure Maps.
 
-В третьем блоке кода создается объект источника данных с помощью класса [DataSource](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.source.datasource?view=azure-iot-typescript-latest), к которому добавляются результаты поиска. В [слое символов](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.layer.symbollayer?view=azure-iot-typescript-latest) данные на основе точек в оболочке [DataSource](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.source.datasource?view=azure-iot-typescript-latest) преобразовываются для просмотра в качестве символов на карте с помощью текста или значков.  Затем создается слой символов. Источник данных добавляется в слой символов, который затем добавляется на карту.
+В третьем блоке кода создается объект источника данных с помощью класса [DataSource](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.source.datasource), к которому добавляются результаты поиска. В [слое символов](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.layer.symbollayer) данные на основе точек в оболочке [DataSource](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.source.datasource) преобразовываются для просмотра в качестве символов на карте с помощью текста или значков.  Затем создается слой символов. Источник данных добавляется в слой символов, который затем добавляется на карту.
 
 Четвертый блок кода использует метод [SearchFuzzy](/javascript/api/azure-maps-rest/atlas.service.models.searchgetsearchfuzzyoptionalparams) в [модуле службы](how-to-use-services-module.md). Он позволяет выполнять поиск текста произвольной формы с помощью [REST API поиска нечетких соответствий](https://docs.microsoft.com/rest/api/maps/search/getsearchfuzzy) для поиска точки интереса. Запросы GET к API поиска нечетких соответствий могут работать с любым сочетанием нечетких входных данных. Затем с помощью метода `geojson.getFeatures()` из ответа извлекается коллекция функций GeoJSON и добавляется к источнику данных, после чего данные автоматически отображаются на карте с помощью слоя символов.
 
-Последний блок кода корректирует границы камеры для карты с помощью свойства карты [setCamera](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.map?view=azure-iot-typescript-latest#setcamera-cameraoptions---cameraboundsoptions---animationoptions-).
+Последний блок кода корректирует границы камеры для карты с помощью свойства карты [setCamera](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.map#setcamera-cameraoptions---cameraboundsoptions---animationoptions-).
 
-Поисковый запрос, источник данных, слой символов и границы камеры находятся внутри [прослушивателя событий](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.map?view=azure-iot-typescript-latest#events) карты. Нам необходимо убедиться, что результаты отображаются после полной загрузки карты.
+Поисковый запрос, источник данных, слой символов и границы камеры находятся внутри [прослушивателя событий](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.map#events) карты. Нам необходимо убедиться, что результаты отображаются после полной загрузки карты.
 
 
 ## <a name="make-a-search-request-via-fetch-api"></a>Поиск через Fetch API
 
-<iframe height='500' scrolling='no' title='Отображение результатов поиска на карте' src='//codepen.io/azuremaps/embed/KQbaeM/?height=265&theme-id=0&default-tab=js,result&embed-version=2&editable=true' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>Просмотрите фрагмент кода для <a href='https://codepen.io/azuremaps/pen/KQbaeM/'>отображения результатов поиска на карте</a> службы "Карты Azure" (<a href='https://codepen.io/azuremaps'>@azuremaps</a>) в <a href='https://codepen.io'>CodePen</a>.
+<iframe height='500' scrolling='no' title='Отображение результатов поиска на карте' src='//codepen.io/azuremaps/embed/KQbaeM/?height=265&theme-id=0&default-tab=js,result&embed-version=2&editable=true' frameborder='no' loading="lazy" allowtransparency='true' allowfullscreen='true' style='width: 100%;'>Просмотрите фрагмент кода для <a href='https://codepen.io/azuremaps/pen/KQbaeM/'>отображения результатов поиска на карте</a> службы "Карты Azure" (<a href='https://codepen.io/azuremaps'>@azuremaps</a>) в <a href='https://codepen.io'>CodePen</a>.
 </iframe>
 
 В первом блоке приведенного выше кода создается объект карты. Он задает механизм проверки подлинности для использования маркера доступа. См. инструкции по [созданию карты](./map-create.md).
@@ -51,11 +51,11 @@ ms.locfileid: "87130296"
 
 В третьем блоке кода используется [Fetch API](https://fetch.spec.whatwg.org/). [Fetch API](https://fetch.spec.whatwg.org/) используется для выполнения запроса к [API поиска нечетких соответствий Azure Maps](https://docs.microsoft.com/rest/api/maps/search/getsearchfuzzy) для поиска точек интереса. API поиска нечетких соответствий может обрабатывать любую комбинацию нечетких входных данных. Затем он обрабатывает и анализирует ответ поиска и добавляет результирующие закрепления в массив searchPins.
 
-В четвертом блоке кода создается объект источника данных с помощью класса [DataSource](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.source.datasource?view=azure-iot-typescript-latest). В коде мы добавляем результаты поиска в исходный объект. В [слое символов](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.layer.symbollayer?view=azure-iot-typescript-latest) данные на основе точек в оболочке [DataSource](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.source.datasource?view=azure-iot-typescript-latest) преобразовываются для просмотра в качестве символов на карте с помощью текста или значков. Затем создается слой символов. Источник данных добавляется в слой символов, который затем добавляется на карту.
+В четвертом блоке кода создается объект источника данных с помощью класса [DataSource](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.source.datasource). В коде мы добавляем результаты поиска в исходный объект. В [слое символов](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.layer.symbollayer) данные на основе точек в оболочке [DataSource](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.source.datasource) преобразовываются для просмотра в качестве символов на карте с помощью текста или значков. Затем создается слой символов. Источник данных добавляется в слой символов, который затем добавляется на карту.
 
-Последний блок кода создает объект [BoundingBox](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.data.boundingbox?view=azure-iot-typescript-latest). Он использует массив результатов, а затем настраивает границы камеры для карты с помощью [setCamera](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.map?view=azure-iot-typescript-latest#setcamera-cameraoptions---cameraboundsoptions---animationoptions-) карты. Затем выполняется отрисовка результатов.
+Последний блок кода создает объект [BoundingBox](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.data.boundingbox). Он использует массив результатов, а затем настраивает границы камеры для карты с помощью [setCamera](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.map#setcamera-cameraoptions---cameraboundsoptions---animationoptions-) карты. Затем выполняется отрисовка результатов.
 
-Поисковый запрос, источник данных, слой символов и границы камеры задаются в [прослушивателе событий](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.map?view=azure-iot-typescript-latest#events) карты. Таким образом, результаты отображаются после полной загрузки карты.
+Поисковый запрос, источник данных, слой символов и границы камеры задаются в [прослушивателе событий](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.map#events) карты. Таким образом, результаты отображаются после полной загрузки карты.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
@@ -70,7 +70,7 @@ ms.locfileid: "87130296"
 Дополнительные сведения о классах и методах, которые используются в этой статье:
 
 > [!div class="nextstepaction"]
-> [Схема](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.map?view=azure-iot-typescript-latest)
+> [Схема](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.map)
 
 Полные примеры кода см. в следующих статьях:
 

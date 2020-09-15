@@ -5,24 +5,23 @@ services: notification-hubs
 documentationcenter: ''
 author: sethmanheim
 manager: femila
-editor: jwargo
-ms.assetid: 11d2131b-f683-47fd-a691-4cdfc696f62b
+editor: thsomasu
 ms.service: notification-hubs
 ms.workload: mobile
 ms.tgt_pltfrm: mobile-windows
 ms.devlang: multiple
 ms.topic: article
-ms.date: 09/30/2019
+ms.date: 09/14/2020
 ms.author: sethm
-ms.reviewer: jowargo
+ms.reviewer: thsomasu
 ms.lastreviewed: 10/02/2019
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 3acfc9e3a856ec777bfada68d535b6a1e9878a08
-ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
+ms.openlocfilehash: bf9670ae8fd22342a05f8d506f743c7a5c395e5f
+ms.sourcegitcommit: 07166a1ff8bd23f5e1c49d4fd12badbca5ebd19c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89017929"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90088142"
 ---
 # <a name="send-cross-platform-notifications-with-azure-notification-hubs"></a>Отправка межплатформенных уведомлений с помощью концентраторов уведомлений Azure
 
@@ -31,14 +30,14 @@ ms.locfileid: "89017929"
 В этой статье показано, как использовать шаблоны для отправки уведомлений, нацеленных на все платформы. В этой статье для отправки независимого от платформы уведомления используется один запрос. Более подробные сведения о шаблонах см. в разделе [Общие сведения о концентраторах уведомлений][Templates].
 
 > [!IMPORTANT]
-> Windows Phone проекты 8,1 и более ранних версий не поддерживаются в Visual Studio 2019. Дополнительные сведения см. в статье [Целевая платформа и совместимость для Visual Studio 2019](/visualstudio/releases/2019/compatibility).
+> Windows Phone проекты 8,1 и более ранних версий не поддерживаются в Visual Studio 2019. Дополнительные сведения см. в разделе [Целевая платформа и совместимость для Visual Studio 2019](/visualstudio/releases/2019/compatibility).
 
 > [!NOTE]
 > Центры уведомлений позволяют устройству зарегистрировать несколько шаблонов с помощью одного и того же тега. В этом случае входящее сообщение, предназначенное для этого тега, приводит к отправке на устройство нескольких уведомлений, по одному для каждого шаблона. Этот процесс дает возможность отобразить одно сообщение в нескольких визуальных уведомлениях, например в виде значка и в виде всплывающего уведомления в приложении Магазина Windows.
 
 ## <a name="send-cross-platform-notifications-using-templates"></a>Отправка кроссплатформенных уведомлений с использованием шаблонов
 
-В этом разделе используется пример кода, созданный в учебнике [Отправка уведомлений для конкретных пользователей с помощью центров уведомлений Azure] . Пример можно загрузить в репозитории [GitHub](https://github.com/Azure/azure-notificationhubs-dotnet/tree/master/Samples/NotifyUsers).
+В этом разделе используется пример кода, созданный в учебнике [Отправка уведомлений для конкретных пользователей с помощью центров уведомлений Azure] . [Полный пример можно скачать на сайте GitHub](https://github.com/Azure/azure-notificationhubs-dotnet/tree/master/Samples/NotifyUsers).
 
 Чтобы отправлять межплатформенные уведомления с помощью шаблонов, выполните следующие действия.
 
@@ -77,7 +76,7 @@ ms.locfileid: "89017929"
 
     Этот код вызывает метод, используемый на конкретной платформе для регистрации шаблонов вместо собственной регистрации. Регистрация шаблонов является производной от собственной регистрации. Поэтому существующие регистрации изменять не нужно.
 
-1. В **Обозреватель решений**в папке **Controllers** откройте файл *NotificationsController.CS* . Замените метод `Post` следующим кодом:
+1. В **Обозреватель решений**в папке **Controllers** откройте файл **NotificationsController.CS** . Замените метод `Post` следующим кодом:
 
     ```csharp
     public async Task<HttpResponseMessage> Post()
@@ -100,7 +99,7 @@ ms.locfileid: "89017929"
 
 1. При необходимости разверните клиентское приложение на втором устройстве, а затем запустите приложение. Уведомление отображается на каждом из устройств.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Теперь, когда вы завершили работу с этим руководством, Узнайте больше о концентраторах уведомлений и шаблонах в следующих статьях:
 

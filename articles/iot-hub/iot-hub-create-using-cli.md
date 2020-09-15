@@ -7,12 +7,12 @@ services: iot-hub
 ms.topic: conceptual
 ms.date: 08/23/2018
 ms.author: robinsh
-ms.openlocfilehash: e7253747d95917e34725cc7c6c034b1306f65e50
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 69372e4c212e2ce81bcd4c91d460aa191a1d3476
+ms.sourcegitcommit: 07166a1ff8bd23f5e1c49d4fd12badbca5ebd19c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84708082"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90087870"
 ---
 # <a name="create-an-iot-hub-using-the-azure-cli"></a>Создание Центра Интернета вещей с помощью Azure CLI
 
@@ -22,7 +22,7 @@ ms.locfileid: "84708082"
 
 ## <a name="prerequisites"></a>Предварительные условия
 
-Для работы с этим руководством вам потребуется подписка Azure. Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
+Для работы с этим руководством вам потребуется подписка Azure. Если у вас еще нет подписки Azure, создайте [бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
 [!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
 
@@ -44,21 +44,21 @@ ms.locfileid: "84708082"
 
 1. Создайте Центр Интернета вещей в группе ресурсов. Используйте имеющуюся группу ресурсов либо выполните следующую [команду для создания группы ресурсов](https://docs.microsoft.com/cli/azure/resource):
     
-   ```azurecli
+   ```azurecli-interactive
    az group create --name {your resource group name} --location westus
    ```
 
    > [!TIP]
    > В предыдущем примере создается группа ресурсов в расположении западной части США. Список доступных расположений можно просмотреть, выполнив эту команду: 
    >
-   >``` bash
-   >az account list-locations -o table
-   >```
+   > ```azurecli-interactive
+   > az account list-locations -o table
+   > ```
    >
 
 2. Выполните в своей группе ресурсов следующую [команду для создания Центра Интернета вещей](https://docs.microsoft.com/cli/azure/iot/hub#az-iot-hub-create), указав глобально уникальное имя своего Центра Интернета вещей:
     
-   ```azurecli
+   ```azurecli-interactive
    az iot hub create --name {your iot hub name} \
       --resource-group {your resource group name} --sku S1
    ```
@@ -74,14 +74,14 @@ ms.locfileid: "84708082"
 
 Чтобы [удалить Центр Интернета](https://docs.microsoft.com/cli/azure/iot/hub#az-iot-hub-delete) вещей, выполните следующую команду:
 
-```azurecli
+```azurecli-interactive
 az iot hub delete --name {your iot hub name} -\
   -resource-group {your resource group name}
 ```
 
 Чтобы [удалить группу ресурсов](https://docs.microsoft.com/cli/azure/group#az-group-delete) со всеми ресурсами, выполните следующую команду:
 
-```azurecli
+```azurecli-interactive
 az group delete --name {your resource group name}
 ```
 

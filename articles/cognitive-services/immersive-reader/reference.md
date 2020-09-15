@@ -10,12 +10,12 @@ ms.subservice: immersive-reader
 ms.topic: reference
 ms.date: 06/20/2019
 ms.author: metan
-ms.openlocfilehash: 6dfcd8d56232f893f881f310b33f3f849e2364a7
-ms.sourcegitcommit: 1d9f7368fa3dadedcc133e175e5a4ede003a8413
+ms.openlocfilehash: 73322cdee151969e6e765690284bbffc1c871f4e
+ms.sourcegitcommit: 07166a1ff8bd23f5e1c49d4fd12badbca5ebd19c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85475957"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90090199"
 ---
 # <a name="immersive-reader-javascript-sdk-reference-v11"></a>Справочник по SDK для Java Reader (v 1.1)
 
@@ -31,6 +31,8 @@ ms.locfileid: "85475957"
 
 - [`ImmersiveReader.renderButtons(options)`](#renderbuttons)
 
+<br>
+
 ## <a name="launchasync"></a>лаунчасинк
 
 Запускает иммерсивное средство чтения в `iframe` веб-приложении. Обратите внимание, что размер содержимого ограничен 50 МБ.
@@ -39,22 +41,24 @@ ms.locfileid: "85475957"
 launchAsync(token: string, subdomain: string, content: Content, options?: Options): Promise<LaunchResponse>;
 ```
 
-### <a name="parameters"></a>Параметры
+#### <a name="launchasync-parameters"></a>Параметры Лаунчасинк
 
-| Имя | Type | Описание: |
+| Имя | Тип | Описание |
 | ---- | ---- |------------ |
-| `token` | строка | Маркер проверки подлинности Azure AD. |
-| `subdomain` | строка | Пользовательский поддомен для иммерсивного ресурса чтения в Azure. |
+| `token` | строка | Маркер проверки подлинности Azure AD. Дополнительные сведения см. [в статье Создание иммерсивного ресурса для чтения](./how-to-create-immersive-reader.md) . |
+| `subdomain` | строка | Пользовательский поддомен для иммерсивного ресурса чтения в Azure. Дополнительные сведения см. [в статье Создание иммерсивного ресурса для чтения](./how-to-create-immersive-reader.md) . |
 | `content` | [Содержимое](#content) | Объект, содержащий содержимое, которое должно отображаться в иммерсивное средство чтения. |
-| `options` | [Параметры](#options) | Параметры для настройки определенного поведения иммерсивное средство чтения. Необязательный параметр. |
+| `options` | [Параметры](#options) | Параметры для настройки определенного поведения иммерсивное средство чтения. Необязательный элемент. |
 
-### <a name="returns"></a>Результаты
+#### <a name="returns"></a>Возвращаемое значение
 
 Возвращает объект `Promise<LaunchResponse>` , который разрешается при загрузке иммерсивное средство чтения. `Promise`Разрешается в [`LaunchResponse`](#launchresponse) объект.
 
-### <a name="exceptions"></a>Исключения
+#### <a name="exceptions"></a>Исключения
 
 Возвращенный `Promise` объект будет отклонен с [`Error`](#error) объектом, если не удается загрузить иммерсивное средство чтения. Дополнительные сведения см. в [кодах ошибок](#error-codes).
+
+<br>
 
 ## <a name="close"></a>close
 
@@ -66,47 +70,201 @@ launchAsync(token: string, subdomain: string, content: Content, options?: Option
 close(): void;
 ```
 
+<br>
+
+## <a name="immersive-reader-launch-button"></a>Кнопка запуска иммерсивного модуля чтения
+
+Пакет SDK предоставляет стиль по умолчанию для кнопки запуска иммерсивное средство чтения. `immersive-reader-button`Для включения этого стиля используйте атрибут класса. Дополнительные сведения см. в разделе [как настроить кнопку иммерсивного модуля чтения](./how-to-customize-launch-button.md) .
+
+```html
+<div class='immersive-reader-button'></div>
+```
+
+#### <a name="optional-attributes"></a>Необязательные атрибуты
+
+Используйте следующие атрибуты, чтобы настроить внешний вид и поведение кнопки.
+
+| attribute | Описание |
+| --------- | ----------- |
+| `data-button-style` | Задает стиль кнопки. Возможные значения: `icon`, `text` или `iconAndText`. По умолчанию — `icon`. |
+| `data-locale` | Задает языковой стандарт. Например, `en-US` или `fr-FR`. По умолчанию используется английский язык `en` . |
+| `data-icon-px-size` | Задает размер значка в пикселях. По умолчанию используется 20px. |
+
+<br>
+
 ## <a name="renderbuttons"></a>рендербуттонс
 
-Эта функция выменяет стили и обновляет элементы кнопки чтения в документе. Если указан ```options.elements``` , то эта функция будет отображать кнопки в ```options.elements``` . В противном случае кнопки будут отображены в элементах документа, имеющих класс ```immersive-reader-button``` .
+```renderButtons```Функция не нужна, если вы используете руководство по [настройке кнопки иммерсивного модуля чтения](./how-to-customize-launch-button.md) .
 
-Эта функция автоматически вызывается пакетом SDK при загрузке окна.
+Эта функция выменяет стили и обновляет элементы кнопки чтения в документе. Если указан ```options.elements``` , то кнопки будут подготавливаться к просмотру в каждом элементе, указанном в ```options.elements``` . Использование ```options.elements``` параметра полезно при наличии в документе нескольких разделов, на которых можно запустить иммерсивное средство чтения, и требуется упрощенный способ отображения нескольких кнопок с одинаковым стилем или отображения кнопок с простым и согласованным шаблоном разработки. Чтобы использовать эту функцию с параметром [рендербуттонс Options](#renderbuttons-options) , вызовите ```ImmersiveReader.renderButtons(options: RenderButtonsOptions);``` для загрузки страницы, как показано в приведенном ниже фрагменте кода. В противном случае кнопки будут отображены в элементах документа, имеющих класс ```immersive-reader-button``` , как показано в статье [как настроить кнопку иммерсивного модуля чтения](./how-to-customize-launch-button.md) .
 
-Дополнительные параметры отрисовки см. в разделе Дополнительные [атрибуты](#optional-attributes) .
+```typescript
+// This snippet assumes there are two empty div elements in
+// the page HTML, button1 and button2.
+const btn1: HTMLDivElement = document.getElementById('button1');
+const btn2: HTMLDivElement = document.getElementById('button2');
+const btns: HTMLDivElement[] = [btn1, btn2];
+ImmersiveReader.renderButtons({elements: btns});
+```
+
+Дополнительные параметры отрисовки см. в описании дополнительных [атрибутов](#optional-attributes) . Чтобы использовать эти параметры, добавьте любой атрибут параметра в каждый ```HTMLDivElement``` из HTML-страниц страницы.
 
 ```typescript
 renderButtons(options?: RenderButtonsOptions): void;
 ```
 
-### <a name="parameters"></a>Параметры
+#### <a name="renderbuttons-parameters"></a>Параметры Рендербуттонс
 
-| Имя | Type | Описание: |
+| Имя | Тип | Описание |
 | ---- | ---- |------------ |
-| `options` | [рендербуттонсоптионс](#renderbuttonsoptions) | Параметры для настройки определенного поведения функции Рендербуттонс. Необязательный параметр. |
+| `options` | [Параметры Рендербуттонс](#renderbuttons-options) | Параметры для настройки определенного поведения функции Рендербуттонс. Необязательный элемент. |
+
+### <a name="renderbuttons-options"></a>Параметры Рендербуттонс
+
+Параметры для отрисовки иммерсивного кнопок чтения.
+
+```typescript
+{
+    elements: HTMLDivElement[];
+}
+```
+
+#### <a name="renderbuttons-options-parameters"></a>Параметры параметров Рендербуттонс
+
+| Параметр | Тип | Описание |
+| ------- | ---- | ----------- |
+| элементы | Хтмлдивелемент [] | Элементы для отрисовки впечатляющих кнопок чтения в. |
+
+##### `-elements`
+```Parameters
+Type: HTMLDivElement[]
+Required: false
+```
+
+<br>
+
+## <a name="launchresponse"></a>лаунчреспонсе
+
+Содержит ответ от вызова `ImmersiveReader.launchAsync` . Обратите внимание, что доступ к ссылке `iframe` , содержащей иммерсивное средство чтения, можно получить с помощью `container.firstChild` .
+
+```typescript
+{
+    container: HTMLDivElement;
+    sessionId: string;
+}
+```
+
+#### <a name="launchresponse-parameters"></a>Параметры Лаунчреспонсе
+
+| Параметр | Тип | Описание |
+| ------- | ---- | ----------- |
+| контейнер | хтмлдивелемент | Элемент HTML, содержащий иммерсивное устройство чтения IFRAME. |
+| sessionID | Строка | Глобальный уникальный идентификатор для этого сеанса, используемый для отладки. |
+ 
+## <a name="error"></a>Ошибка
+
+Содержит сведения об ошибке.
+
+```typescript
+{
+    code: string;
+    message: string;
+}
+```
+
+#### <a name="error-parameters"></a>Параметры ошибок
+
+| Параметр | Тип | Описание |
+| ------- | ---- | ----------- |
+| code | Строка | Один из набора кодов ошибок. См. статью о [кодах ошибок](#error-codes). |
+| сообщение | Строка | Понятное представление ошибки. |
+
+#### <a name="error-codes"></a>Коды ошибок
+
+| Код | Описание |
+| ---- | ----------- |
+| BadArgument | Указан недопустимый аргумент, см `message` . параметр [ошибки](#error). |
+| Время ожидания | Не удалось загрузить иммерсивное средство чтения в течение указанного времени ожидания. |
+| TokenExpired | Срок действия заданного маркера истек. |
+| Ожидает повтора | Превышено ограничение скорости вызовов. |
+
+<br>
 
 ## <a name="types"></a>Типы
 
-### <a name="content"></a>Содержимое
+### <a name="content"></a>Content
 
 Содержит содержимое, отображаемое в иммерсивное средство чтения.
 
 ```typescript
 {
-    title?: string;    // Title text shown at the top of the Immersive Reader (optional)
-    chunks: Chunk[];   // Array of chunks
+    title?: string;
+    chunks: Chunk[];
 }
 ```
 
-### <a name="chunk"></a>Блок
+#### <a name="content-parameters"></a>Параметры содержимого
+
+| Имя | Тип | Описание |
+| ---- | ---- |------------ |
+| title | Строка | Текст заголовка, отображаемый в верхней части иммерсивное средство чтения (необязательно) |
+| блоки | [Фрагмент []](#chunk) | Массив фрагментов |
+
+##### `-title`
+```Parameters
+Type: String
+Required: false
+Default value: "Immersive Reader" 
+```
+
+##### `-chunks`
+```Parameters
+Type: Chunk[]
+Required: true
+Default value: null 
+```
+
+<br>
+
+### <a name="chunk"></a>Chunk
 
 Один блок данных, который будет передан в содержимое иммерсивное средство чтения.
 
 ```typescript
 {
-    content: string;        // Plain text string
-    lang?: string;          // Language of the text, e.g. en, es-ES (optional). Language will be detected automatically if not specified.
-    mimeType?: string;      // MIME type of the content (optional). Currently 'text/plain', 'application/mathml+xml', and 'text/html' are supported. Defaults to 'text/plain' if not specified.
+    content: string;
+    lang?: string;
+    mimeType?: string;
 }
+```
+
+#### <a name="chunk-parameters"></a>Параметры блока
+
+| Имя | Тип | Описание |
+| ---- | ---- |------------ |
+| содержимое | Строка | Строка, содержащая содержимое, отправленное в иммерсивное средство чтения. |
+| lang | Строка | Язык текста, значение находится в формате языкового тега IETF BCP 47, например en, ES-ES. Язык будет автоматически обнаружен, если он не указан. См. сведения о [поддерживаемых языках](#supported-languages). |
+| mimeType | строка | Поддерживаются обычный текст, Масмл, HTML & форматов Microsoft Word DOCX. Дополнительные сведения см. в разделе [Поддерживаемые типы MIME](#supported-mime-types) . |
+
+##### `-content`
+```Parameters
+Type: String
+Required: true
+Default value: null 
+```
+
+##### `-lang`
+```Parameters
+Type: String
+Required: false
+Default value: Automatically detected 
+```
+
+##### `-mimeType`
+```Parameters
+Type: String
+Required: false
+Default value: "text/plain"
 ```
 
 #### <a name="supported-mime-types"></a>Поддерживаемые типы MIME
@@ -114,125 +272,255 @@ renderButtons(options?: RenderButtonsOptions): void;
 | Тип MIME | Описание |
 | --------- | ----------- |
 | text/plain | Обычный текст. |
-| text/html | Содержимое в виде HTML. [Подробнее](#html-support)|
-| Application/масмл + XML | Язык математической разметки (Масмл). [Подробнее](./how-to/display-math.md).
+| text/html | Содержимое в виде HTML. [Дополнительные сведения](#html-support)|
+| Application/масмл + XML | Язык математической разметки (Масмл). [Подробнее.](./how-to/display-math.md)
 | приложение/vnd.openxmlformats-officedocument.wordprocessingml.docумент | Документ в формате Microsoft Word. docx.
 
-### <a name="options"></a>Параметры
+
+<br>
+
+## <a name="options"></a>Параметры
 
 Содержит свойства, которые настраивают определенное поведение иммерсивное средство чтения.
 
 ```typescript
 {
-    uiLang?: string;           // Language of the UI, e.g. en, es-ES (optional). Defaults to browser language if not specified.
-    timeout?: number;          // Duration (in milliseconds) before launchAsync fails with a timeout error (default is 15000 ms).
-    uiZIndex?: number;         // Z-index of the iframe that will be created (default is 1000).
-    useWebview?: boolean;      // Use a webview tag instead of an iframe, for compatibility with Chrome Apps (default is false).
-    onExit?: () => any;        // Executes when the Immersive Reader exits.
-    customDomain?: string;     // Reserved for internal use. Custom domain where the Immersive Reader webapp is hosted (default is null).
-    allowFullscreen?: boolean; // The ability to toggle fullscreen (default is true).
-    hideExitButton?: boolean;  // Whether or not to hide the Immersive Reader's exit button arrow (default is false). This should only be true if there is an alternative mechanism provided to exit the Immersive Reader (e.g a mobile toolbar's back arrow).
-    cookiePolicy?: CookiePolicy; // Setting for the Immersive Reader's cookie usage (default is CookiePolicy.Disable). It's the responsibility of the host application to obtain any necessary user consent in accordance with EU Cookie Compliance Policy.
-    disableFirstRun?: boolean; // Disable the first run experience.
-    readAloudOptions?: ReadAloudOptions; // Options to configure Read Aloud.
-    translationOptions?: TranslationOptions; // Options to configure translation.
-    displayOptions?: DisplayOptions; // Options to configure text size, font, etc.
-    preferences?: string; // String returned from onPreferencesChanged representing the user's preferences in the Immersive Reader.
-    onPreferencesChanged?: (value: string) => any; // Executes when the user's preferences have changed.
+    uiLang?: string;
+    timeout?: number;
+    uiZIndex?: number;
+    useWebview?: boolean;
+    onExit?: () => any;
+    allowFullscreen?: boolean;
+    hideExitButton?: boolean;
+    cookiePolicy?: CookiePolicy;
+    disableFirstRun?: boolean;
+    readAloudOptions?: ReadAloudOptions;
+    translationOptions?: TranslationOptions;
+    displayOptions?: DisplayOptions;
+    preferences?: string;
+    onPreferencesChanged?: (value: string) => any;
+    customDomain?: string;
 }
 ```
 
-```typescript
-enum CookiePolicy { Disable, Enable }
+#### <a name="options-parameters"></a>Параметры параметров
+
+| Имя | Тип | Описание |
+| ---- | ---- |------------ |
+| уиланг | Строка | Язык пользовательского интерфейса, значение находится в формате языкового тега IETF BCP 47, например en, ES-ES. По умолчанию используется язык браузера, если он не указан. |
+| timeout | Number | Длительность (в миллисекундах) до сбоя [лаунчасинк](#launchasync) с ошибкой времени ожидания (значение по умолчанию — 15000 МС). Это время ожидания применяется только к начальному запуску страницы читатель, где успешно отображается при открытии страницы читатель и запуске счетчика. Коррекция времени ожидания не требуется. |
+| уизиндекс | Number | Z-индекс создаваемого IFRAME (по умолчанию — 1000). |
+| усевебвиев | Логическое значение| Используйте тег WebView вместо iframe для совместимости с приложениями Chrome (значение по умолчанию — false). |
+| onExit | Функция | Выполняется при выходе из иммерсивного модуля чтения. |
+| алловфуллскрин | Логическое значение | Возможность полноэкранного режима (значение по умолчанию — true). |
+| хидикситбуттон | Логическое значение | Следует ли скрывать стрелку кнопки выхода в иммерсивное средство чтения (значение по умолчанию — false). Это должно быть справедливо, только если существует альтернативный механизм для выхода из иммерсивного средства чтения (например, стрелка обратной панели инструментов для мобильных устройств). |
+| кукиеполици | [кукиеполици](#cookiepolicy-options) | Параметр для использования файлов cookie иммерсивного модуля чтения (по умолчанию — *кукиеполици. Disable*). Ведущее приложение отвечает за получение любого необходимого согласия пользователя в соответствии с политикой соответствия файлов cookie ЕС. См. раздел [Параметры политики для файлов cookie](#cookiepolicy-options). |
+| дисаблефирструн | Логическое значение | Отключите первый интерфейс запуска. |
+| реадалаудоптионс | [реадалаудоптионс](#readaloudoptions) | Параметры для настройки чтения вслух. |
+| транслатионоптионс | [транслатионоптионс](#translationoptions) | Параметры для настройки перевода. |
+| displayOptions | [DisplayOptions](#displayoptions) | Параметры для настройки размера текста, шрифта и т. д. |
+| чувствительн | Строка | Строка, возвращаемая из Онпреференцесчанжед, представляющая предпочтения пользователя в иммерсивное средство чтения. Дополнительные [сведения см.](#settings-parameters) в статьях параметры и [инструкции по хранению пользовательских настроек](./how-to-store-user-preferences.md) . |
+| онпреференцесчанжед | Функция | Выполняется при изменении параметров пользователя. Дополнительные сведения см. [в статье как сохранить настройки пользователя](./how-to-store-user-preferences.md) . |
+| customDomain | Строка | Зарезервировано для внутреннего использования. Личный домен, в котором размещается иммерсивное средство чтения webapp (по умолчанию — NULL). |
+
+##### `-uiLang`
+```Parameters
+Type: String
+Required: false
+Default value: User's browser language 
 ```
+
+##### `-timeout`
+```Parameters
+Type: Number
+Required: false
+Default value: 15000
+```
+
+##### `-uiZIndex`
+```Parameters
+Type: Number
+Required: false
+Default value: 1000
+```
+
+##### `-onExit`
+```Parameters
+Type: Function
+Required: false
+Default value: null
+```
+
+##### `-preferences`
+
+> [!CAUTION]
+> **Важно!** Не пытайтесь программно изменить значения `-preferences` строки, отправленной в иммерсивное приложение чтения и из него, так как это может привести к непредвиденному поведению, что приводит к снижению производительности пользователей.
+
+```Parameters
+Type: String
+Required: false
+Default value: null
+```
+
+##### `-onPreferencesChanged`
+```Parameters
+Type: Function
+Required: false
+Default value: null
+```
+
+##### `-customDomain`
+```Parameters
+Type: String
+Required: false
+Default value: null
+```
+
+<br>
+
+## <a name="readaloudoptions"></a>реадалаудоптионс
 
 ```typescript
 type ReadAloudOptions = {
-    voice?: string;      // Voice, either 'male' or 'female'. Note that not all languages support both genders.
-    speed?: number;      // Playback speed, must be between 0.5 and 2.5, inclusive.
-    autoplay?: boolean;  // Automatically start Read Aloud when the Immersive Reader loads.
+    voice?: string;
+    speed?: number;
+    autoplay?: boolean;
 };
+```
+
+#### <a name="readaloudoptions-parameters"></a>Параметры Реадалаудоптионс
+
+| Имя | Тип | Описание |
+| ---- | ---- |------------ |
+| voice | Строка | Voice: "женщина" или "папа". Обратите внимание, что не все языки поддерживают оба пола. |
+| Скорость | Number | Скорость воспроизведения должна составлять от 0,5 до 2,5 включительно. |
+| Автозапуска | Логическое значение | Автоматически начать чтение вслух при загрузке иммерсивного модуля чтения. |
+
+##### `-voice`
+```Parameters
+Type: String
+Required: false
+Default value: "Female" or "Male" (determined by language) 
+Values available: "Female", "Male"
+```
+
+##### `-speed`
+```Parameters
+Type: Number
+Required: false
+Default value: 1
+Values available: 0.5, 0.75, 1, 1.25, 1.5, 1.75, 2, 2.25, 2.5
 ```
 
 > [!NOTE]
 > В связи с ограничениями браузера автозапуск не поддерживается в Safari.
 
+<br>
+
+## <a name="translationoptions"></a>транслатионоптионс
+
 ```typescript
 type TranslationOptions = {
-    language: string;                         // Set the translation language, e.g. fr-FR, es-MX, zh-Hans-CN. Required to automatically enable word or document translation.
-    autoEnableDocumentTranslation?: boolean;  // Automatically translate the entire document.
-    autoEnableWordTranslation?: boolean;      // Automatically enable word translation.
+    language: string;
+    autoEnableDocumentTranslation?: boolean;
+    autoEnableWordTranslation?: boolean;
 };
 ```
+
+#### <a name="translationoptions-parameters"></a>Параметры Транслатионоптионс
+
+| Имя | Тип | Описание |
+| ---- | ---- |------------ |
+| язык | Строка | Задает язык перевода, значение находится в формате языкового тега IETF BCP 47, например fr-FR, es-MX, zh-Ханс-CN. Требуется для автоматического включения перевода слов или документов. |
+| аутоенабледокументтранслатион | Логическое значение | Автоматическое преобразование всего документа. |
+| аутоенаблевордтранслатион | Логическое значение | Автоматическое включение перевода слов. |
+
+##### `-language`
+```Parameters
+Type: String
+Required: true
+Default value: null 
+Values available: See the Supported Languages section
+```
+
+<br>
+
+## <a name="displayoptions"></a>DisplayOptions
 
 ```typescript
 type DisplayOptions = {
-    textSize?: number;          // Valid values are 14, 20, 28, 36, 42, 48, 56, 64, 72, 84, 96.
-    increaseSpacing?: boolean;  // Set whether increased spacing is enabled.
-    fontFamily?: string;        // Valid values are 'Calibri', 'ComicSans', and 'Sitka'.
+    textSize?: number;
+    increaseSpacing?: boolean;
+    fontFamily?: string;
 };
 ```
 
-### <a name="launchresponse"></a>лаунчреспонсе
+#### <a name="displayoptions-parameters"></a>Параметры DisplayOptions
 
-Содержит ответ от вызова `ImmersiveReader.launchAsync` . Обратите внимание, что доступ к ссылке `iframe` , содержащей иммерсивное средство чтения, можно получить с помощью `container.firstChild` .
+| Имя | Тип | Описание |
+| ---- | ---- |------------ |
+| textSize | Number | Задает размер выбранного текста. |
+| инкреасеспаЦинг | Логическое значение | Задает, включается ли или выключается текстовый зазор. |
+| fontFamily | Строка | Задает выбранный шрифт ("Calibri", "Комиксанс" или "Ситка"). |
+
+##### `-textSize`
+```Parameters
+Type: Number
+Required: false
+Default value: 20, 36 or 42 (Determined by screen size)
+Values available: 14, 20, 28, 36, 42, 48, 56, 64, 72, 84, 96
+```
+
+##### `-fontFamily`
+```Parameters
+Type: String
+Required: false
+Default value: "Calibri"
+Values available: "Calibri", "Sitka", "ComicSans"
+```
+
+<br>
+
+## <a name="cookiepolicy-options"></a>Параметры Кукиеполици
 
 ```typescript
-{
-    container: HTMLDivElement;    // HTML element which contains the Immersive Reader iframe
-    sessionId: string;            // Globally unique identifier for this session, used for debugging
-}
-```
- 
-### <a name="error"></a>Ошибка
-
-Содержит сведения об ошибке.
-
-```typescript
-{
-    code: string;    // One of a set of error codes
-    message: string; // Human-readable representation of the error
-}
+enum CookiePolicy { Disable, Enable }
 ```
 
-#### <a name="error-codes"></a>Коды ошибок
+**Указанные ниже параметры предназначены только для информационных целей**. В "cookie" в иммерсивное средство чтения сохраняет свои параметры или предпочтения пользователя. Этот *cookiePolicy* параметр кукиеполици **отключает** использование файлов cookie по умолчанию, чтобы соответствовать законодательству соответствия файлов cookie в ЕС. Если вы хотите повторно включить файлы cookie и восстановить стандартные функции для пользователей в иммерсивное средство чтения, необходимо убедиться, что веб-сайт или приложение получат соответствующее согласие от пользователя, чтобы включить файлы cookie. Затем, чтобы повторно включить файлы cookie в иммерсивное средство чтения, необходимо явно задать для параметра *кукиеполици* значение *кукиеполици. Enable* при запуске иммерсивное средство чтения. В таблице ниже описано, какие параметры сохраняют иммерсивное средство чтения в своем файле cookie при включенном параметре *кукиеполици* .
 
-| Код | Описание |
-| ---- | ----------- |
-| BadArgument | Указан недопустимый аргумент, см `message` . Дополнительные сведения. |
-| Время ожидания | Не удалось загрузить иммерсивное средство чтения в течение указанного времени ожидания. |
-| TokenExpired | Срок действия заданного маркера истек. |
-| Ожидает повтора | Превышено ограничение скорости вызовов. |
+#### <a name="settings-parameters"></a>Параметры параметров
 
-### <a name="renderbuttonsoptions"></a>рендербуттонсоптионс
+| Параметр | Тип | Описание |
+| ------- | ---- | ----------- |
+| textSize | Number | Задает размер выбранного текста. |
+| fontFamily | Строка | Задает выбранный шрифт ("Calibri", "Комиксанс" или "Ситка"). |
+| текстспаЦинг | Number | Задает, включается ли или выключается текстовый зазор. |
+| formattingEnabled | Логическое значение | Задает включение или отключение форматирования HTML. |
+| тема | Строка | Задает выбранную тему (например, "светлая", "темная"...). |
+| силлабификатионенаблед | Логическое значение | Задает, включен ли параметр силлабификатион. |
+| наунхигхлигхтинженаблед | Логическое значение | , который задает включение или выключение выделения существительное. |
+| наунхигхлигхтингколор | Строка | Задает выбранный цвет для выделения существительных. |
+| вербхигхлигхтинженаблед | Логическое значение | Задает включение или выключение выделения глагола. |
+| вербхигхлигхтингколор | Строка | Задает цвет выделения для выбранного глагола. |
+| аджективехигхлигхтинженаблед | Логическое значение | Задает включение или выключение выделения прилагательного. |
+| аджективехигхлигхтингколор | Строка | Задает выбранный цвет выделения прилагательных. |
+| адвербхигхлигхтинженаблед | Логическое значение | Задает включение или выключение выделения модификаторов. |
+| адвербхигхлигхтингколор | Строка | Задает выбранный цвет выделения модификаторов. |
+| пиктуредиктионаренаблед | Логическое значение | Задает включение или выключение словаря рисунков. |
+| послабелсенаблед | Логическое значение | Задает, включается ли или выключается подпись нижнего знака для каждой выделенной части речи.  |
 
-Параметры для отрисовки иммерсивного кнопок чтения.
+<br>
 
-```typescript
-{
-    elements: HTMLDivElement[];    // Elements to render the Immersive Reader buttons in
-}
-```
+## <a name="supported-languages"></a>Поддерживаемые языки
 
-## <a name="launching-the-immersive-reader"></a>Запуск иммерсивное средство чтения
+Функция перевода иммерсивное средство чтения поддерживает множество языков. Дополнительные сведения см. в [этой статье](https://www.onenote.com/learningtools/languagesupport).
 
-Пакет SDK предоставляет стиль по умолчанию для кнопки запуска иммерсивное средство чтения. `immersive-reader-button`Для включения этого стиля используйте атрибут класса. Дополнительные сведения см. в [этой статье](./how-to-customize-launch-button.md).
-
-```html
-<div class='immersive-reader-button'></div>
-```
-
-### <a name="optional-attributes"></a>Необязательные атрибуты
-
-Используйте следующие атрибуты, чтобы настроить внешний вид и поведение кнопки.
-
-| Атрибут | Описание: |
-| --------- | ----------- |
-| `data-button-style` | Задает стиль кнопки. Возможные значения: `icon`, `text` или `iconAndText`. По умолчанию — `icon`. |
-| `data-locale` | Задает языковой стандарт. Например, `en-US` или `fr-FR`. По умолчанию используется английский язык `en` . |
-| `data-icon-px-size` | Задает размер значка в пикселях. По умолчанию используется 20px. |
+<br>
 
 ## <a name="html-support"></a>Поддержка HTML
+
+Если форматирование включено, следующее содержимое будет подготовлено к просмотру в виде HTML в иммерсивное средство чтения.
 
 | HTML | Поддерживаемое содержимое |
 | --------- | ----------- |
@@ -242,6 +530,8 @@ type DisplayOptions = {
 
 Неподдерживаемые теги будут подготовлены к просмотру сравнимо. Изображения и таблицы в настоящее время не поддерживаются.
 
+<br>
+
 ## <a name="browser-support"></a>Поддержка браузеров
 
 Используйте последние версии следующих браузеров, чтобы получить лучшие впечатления от работы с иммерсивное средство чтения.
@@ -250,9 +540,11 @@ type DisplayOptions = {
 * Internet Explorer 11;
 * Google Chrome
 * Mozilla Firefox
-* Apple Safari;
+* Apple Safari.
 
-## <a name="next-steps"></a>Следующие шаги
+<br>
+
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * Изучите [пакет SDK иммерсивного средства чтения на сайте GitHub](https://github.com/microsoft/immersive-reader-sdk).
 * [Краткое руководство. Создание веб-приложения, запускающего иммерсивное средство чтения (C#)](./quickstarts/client-libraries.md?pivots=programming-language-csharp)

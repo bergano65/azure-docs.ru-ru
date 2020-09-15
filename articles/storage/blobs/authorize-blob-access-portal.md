@@ -9,14 +9,14 @@ ms.topic: how-to
 ms.date: 09/08/2020
 ms.author: tamram
 ms.reviewer: ozgun
-ms.subservice: common
+ms.subservice: blobs
 ms.custom: contperfq1
-ms.openlocfilehash: 6b02f017e08b224f05c372aab834c5dec0cc077f
-ms.sourcegitcommit: 43558caf1f3917f0c535ae0bf7ce7fe4723391f9
+ms.openlocfilehash: 4a9f243ce32dee9948cd2f2410b5c7f1382bf7c8
+ms.sourcegitcommit: 07166a1ff8bd23f5e1c49d4fd12badbca5ebd19c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/11/2020
-ms.locfileid: "90020396"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90088856"
 ---
 # <a name="choose-how-to-authorize-access-to-blob-data-in-the-azure-portal"></a>Выберите способ авторизации доступа к данным BLOB-объектов в портал Azure
 
@@ -108,7 +108,7 @@ ms.locfileid: "90020396"
 
     :::image type="content" source="media/authorize-blob-access-portal/auth-blob-upload.png" alt-text="Снимок экрана, показывающий, как изменить метод авторизации при передаче BLOB-объекта":::
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - [Проверка подлинности доступа к BLOB-объектам и очередям Azure с помощью Azure Active Directory](../common/storage-auth-aad.md)
 - [Предоставление доступа к контейнерам и очередям Azure с RBAC в портал Azure](../common/storage-auth-aad-rbac-portal.md)
