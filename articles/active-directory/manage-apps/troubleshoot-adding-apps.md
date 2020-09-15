@@ -1,6 +1,6 @@
 ---
-title: Устранение распространенных неполадок при добавлении приложения в Azure Active Directory
-description: Устранение распространенных проблем, с которыми сталкиваются пользователи при добавлении приложения в Azure Active Directory.
+title: Устранение распространенных неполадок при добавлении или удалении приложения для Azure Active Directory
+description: Устранение распространенных проблем, с которыми сталкиваются пользователи при добавлении или удалении приложения для Azure Active Directory.
 services: active-directory
 author: kenwith
 manager: celestedg
@@ -10,15 +10,15 @@ ms.workload: identity
 ms.topic: troubleshooting
 ms.date: 09/11/2018
 ms.author: kenwith
-ms.openlocfilehash: 1502c97e625d3af128772451be8db4dd6187e3a7
-ms.sourcegitcommit: 5a3b9f35d47355d026ee39d398c614ca4dae51c6
+ms.openlocfilehash: e9e97aec66d99d149320938540c48b9ad68eaf0e
+ms.sourcegitcommit: 1fe5127fb5c3f43761f479078251242ae5688386
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89410450"
+ms.lasthandoff: 09/14/2020
+ms.locfileid: "90068036"
 ---
-# <a name="troubleshoot-common-problem-adding-an-application-to-azure-active-directory"></a>Устранение распространенных неполадок при добавлении приложения в Azure Active Directory
-Эта статья поможет вам понять распространенные проблемы, с которыми сталкиваются пользователи при добавлении приложения в Azure Active Directory.
+# <a name="troubleshoot-common-problem-adding-or-removing-an-application-to-azure-active-directory"></a>Устранение распространенных неполадок при добавлении или удалении приложения для Azure Active Directory
+Эта статья поможет вам понять распространенные проблемы, с которыми сталкиваются пользователи при добавлении или удалении приложения для Azure Active Directory.
 
 ## <a name="i-clicked-the-add-button-and-my-application-took-a-long-time-to-appear"></a>После нажатия кнопки "Добавить" приложение долго не отображается
 В некоторых случаях может потребоваться 1–2 минуты (или даже больше), чтобы отобразилось приложение, добавленное в каталог. Такое происходит довольно редко. Чтобы узнать, на каком этапе находится процесс добавления приложения, щелкните значок **Уведомления** (в форме колокольчика) в правом верхнем углу [портала Azure](https://portal.azure.com/) и найдите в списке уведомление с меткой **Добавление приложения**, которое будет иметь состояние **Выполняется** или **Завершено**.
@@ -34,6 +34,16 @@ ms.locfileid: "89410450"
 Если вам нужна помощь в изучении приложений, то лучше всего начать [работу со списком учебников по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list) статьей.
 
 Кроме того, статья [Управление приложениями с помощью Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-apps-index) поможет вам узнать о том, что такое единый вход Azure AD и как он работает.
+
+## <a name="i-want-to-delete-an-application-but-the-delete-button-is-disabled"></a>Я хочу удалить приложение, но кнопка "Удалить" отключена
+
+Кнопка Удалить будет отключена в следующих сценариях:
+
+- Для приложений в корпоративном приложении, если у вас нет одной из следующих ролей: глобальный администратор, администратор облачных приложений, администратор приложения или владелец субъекта-службы.
+
+- Для приложения Майкрософт вы не сможете удалить их из пользовательского интерфейса независимо от вашей роли.
+
+- Для свойства serviceprincipals, соответствующих управляемому удостоверению. Субъекты-службы управляемых удостоверений нельзя удалить в колонке "корпоративные приложения". Для управления им необходимо обратиться к ресурсу Azure. Подробнее об [управляемом удостоверении](https://docs.microsoft.com/azure/active-directory/managed-identities-azure-resources/overview)
 
 ## <a name="how-to-see-the-details-of-a-portal-notification"></a>Как просмотреть сведения об уведомлении на портале
 Чтобы просмотреть сведения об уведомлении на портале, выполните следующие действия:

@@ -3,12 +3,12 @@ title: Устройство службы "Миграция Azure"
 description: Общие сведения об устройстве Миграции Azure, используемом для оценки и миграции серверов.
 ms.topic: conceptual
 ms.date: 05/04/2020
-ms.openlocfilehash: f0bba2f2d200ffc84855ff8fc7f634bd8b71ceb6
-ms.sourcegitcommit: 7f62a228b1eeab399d5a300ddb5305f09b80ee14
+ms.openlocfilehash: 2092b03ee95349286b9e845689b5d9d55b61c772
+ms.sourcegitcommit: 51df05f27adb8f3ce67ad11d75cb0ee0b016dc5d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89514362"
+ms.lasthandoff: 09/14/2020
+ms.locfileid: "90060736"
 ---
 # <a name="azure-migrate-appliance"></a>Устройство службы "Миграция Azure"
 
@@ -101,12 +101,12 @@ ms.locfileid: "89514362"
 **URL-адрес** | **Сведения**  
 --- | --- |
 *.portal.azure.com  | Перейдите на портал Azure.
-*.windows.net <br/> *.msftauth.net <br/> *.msauth.net <br/> *.microsoft.com <br/> *.live.com | Войдите в свою подписку Azure.
+*.windows.net <br/> *.msftauth.net <br/> *.msauth.net <br/> *.microsoft.com <br/> *.live.com <br/> *. office.com | Войдите в свою подписку Azure.
 *.microsoftonline.com <br/> *.microsoftonline-p.com | Создание приложений Azure Active Directory (AD) для взаимодействия устройства с Миграцией Azure.
 management.azure.com | Создание приложений Azure AD для взаимодействия устройства с службой "Миграция Azure".
 *.services.visualstudio.com | Передача журналов приложений, используемых для внутреннего мониторинга.
 *.vault.azure.net | Управление секретами в Azure Key Vault. Примечание. Убедитесь, что компьютеры, для которых выполняется репликация, имеют доступ к этому адресу.
-aka.ms/* | Разрешение доступа к ссылкам AKA. Используется для обновления устройства Миграции Azure.
+aka.ms/* | Разрешение доступа к ссылкам aka. Используется для обновления устройства Миграции Azure.
 download.microsoft.com/download | Разрешение скачивания из Центра загрузки Майкрософт.
 *.servicebus.windows.net | Взаимодействие между устройством и службой "Миграция Azure".
 *.discoverysrv.windowsazure.com <br/> *.migration.windowsazure.com | Подключение к URL-адресам службы "Миграция Azure".

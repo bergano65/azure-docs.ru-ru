@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: article
 ms.date: 10/30/2019
 ms.author: Zhchia
-ms.openlocfilehash: fb990b5aa615e37d9893a891143cb04933b603bb
-ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
+ms.openlocfilehash: aaaa073f798998ed97be1bd3cd66795d7b3dfb23
+ms.sourcegitcommit: 1fe5127fb5c3f43761f479078251242ae5688386
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88542621"
+ms.lasthandoff: 09/14/2020
+ms.locfileid: "90069668"
 ---
 # <a name="tutorial-configure-ringcentral-for-automatic-user-provisioning"></a>Учебник. Настройка Рингцентрал для автоматической подготовки пользователей
 
@@ -113,7 +113,6 @@ ms.locfileid: "88542621"
    |userName|Строка|
    |externalId|Строка|
    |active|Логическое|
-   |displayName|Строка|
    |title|Строка|
    |emails[type eq "work"].value|Строка|
    |addresses[type eq "work"].country|Строка|
@@ -125,7 +124,6 @@ ms.locfileid: "88542621"
    |name.familyName|Строка|
    |phoneNumbers[type eq "mobile"].value|Строка|
    |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:department|Строка|
-   |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:manager|Справочник|
 
 10. Чтобы настроить фильтры области, ознакомьтесь со следующими инструкциями, предоставленными в [руководстве по фильтрам области](../manage-apps/define-conditional-rules-for-provisioning-user-accounts.md).
 
@@ -149,6 +147,10 @@ ms.locfileid: "88542621"
 1. Используйте [журналы подготовки](https://docs.microsoft.com/azure/active-directory/reports-monitoring/concept-provisioning-logs), чтобы определить, какие пользователи были подготовлены успешно или неудачно.
 2. Используйте [индикатор выполнения](https://docs.microsoft.com/azure/active-directory/app-provisioning/application-provisioning-when-will-provisioning-finish-specific-user), чтобы узнать состояние цикла подготовки и приблизительное время до его завершения.
 3. Если конфигурация подготовки, вероятно, находится в неработоспособном состоянии, приложение перейдет в карантин. Дополнительные сведения о режимах карантина см. [здесь](https://docs.microsoft.com/azure/active-directory/manage-apps/application-provisioning-quarantine-status).
+
+## <a name="change-log"></a>Журнал изменений
+
+* 09/10/2020-удалена поддержка атрибутов "displayName" и "Manager".
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

@@ -5,14 +5,14 @@ author: roygara
 ms.service: storage
 ms.subservice: files
 ms.topic: how-to
-ms.date: 06/22/2020
+ms.date: 09/13/2020
 ms.author: rogarana
-ms.openlocfilehash: 612584a71aa6be54d726ccdd74d9368ba9cddbc9
-ms.sourcegitcommit: 3d56d25d9cf9d3d42600db3e9364a5730e80fa4a
+ms.openlocfilehash: ce6325abf34813a9ca397f5bcbe2e774af3442d4
+ms.sourcegitcommit: 51df05f27adb8f3ce67ad11d75cb0ee0b016dc5d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87535082"
+ms.lasthandoff: 09/14/2020
+ms.locfileid: "90061484"
 ---
 # <a name="part-one-enable-ad-ds-authentication-for-your-azure-file-shares"></a>Часть 1. Включение проверки подлинности AD DS для файловых ресурсов Azure 
 
@@ -28,7 +28,7 @@ ms.locfileid: "87535082"
 
 ### <a name="download-azfileshybrid-module"></a>Скачать модуль Азфилешибрид
 
-- [Скачайте и Распакуйте модуль азфилешибрид](https://github.com/Azure-Samples/azure-files-samples/releases) (общедоступный модуль: v 0.2.0 +).
+- [Скачайте и Распакуйте модуль азфилешибрид (общедоступный модуль: v 0.2.0 +).](https://github.com/Azure-Samples/azure-files-samples/releases) Обратите внимание, что шифрование AES 256 Kerberos поддерживается на v 0.2.2 или более поздней версии. Если вы включили функцию с версией Азфилешибрид ниже v 0.2.2 и хотите обновить для поддержки шифрования AES 256 Kerberos, обратитесь к [этой статье](https://docs.microsoft.com/azure/storage/files/storage-troubleshoot-windows-file-connection-problems). 
 - Установите и выполните модуль на устройстве, присоединенном к локальному AD DS с учетными данными AD DS, имеющими разрешения на создание учетной записи входа в службу или учетной записи компьютера в целевом AD.
 -  Запустите скрипт, используя локальные учетные данные AD DS, которые синхронизируются с Azure AD. Локальные учетные данные AD DS должны иметь разрешения владельца учетной записи хранения или роли участника Azure.
 
@@ -151,7 +151,7 @@ $storageAccount.AzureFilesIdentityBasedAuth.DirectoryServiceOptions
 $storageAccount.AzureFilesIdentityBasedAuth.ActiveDirectoryProperties
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Вы успешно включили функцию в учетной записи хранения. Чтобы использовать эту функцию, необходимо назначить разрешения на уровне общего ресурса. Перейдите к следующему разделу.
 

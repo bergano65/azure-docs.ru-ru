@@ -1,18 +1,18 @@
 ---
 title: Группы безопасности сети и Azure Site Recovery | Документация Майкрософт
 description: Сведения об использовании групп безопасности сети и Azure Site Recovery для аварийного восстановления и миграции.
-author: mayurigupta13
+author: Harsha-CS
 manager: rochakm
 ms.service: site-recovery
 ms.topic: conceptual
 ms.date: 04/08/2019
-ms.author: mayg
-ms.openlocfilehash: eb5ba99133f5726c44164b0ba45b7ab5d94e292f
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.author: harshacs
+ms.openlocfilehash: 904bc63ed2a135cdcadad75e96acd6fe3ca39039
+ms.sourcegitcommit: 1fe5127fb5c3f43761f479078251242ae5688386
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "80292362"
+ms.lasthandoff: 09/14/2020
+ms.locfileid: "90069685"
 ---
 # <a name="network-security-groups-with-azure-site-recovery"></a>Группы безопасности сети и Azure Site Recovery
 
@@ -71,7 +71,7 @@ Azure Site Recovery позволяет выполнять аварийное в�
 
 После создания и настройки групп безопасности сети мы рекомендуем выполнить [тестовую отработку отказа](azure-to-azure-tutorial-dr-drill.md) для проверки сценариев связи NSG и подключение виртуальной машины после отработки отказа.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 -    Узнайте больше о [группах безопасности сети](../virtual-network/security-overview.md#network-security-groups).
 -    Дополнительные сведения о [правилах безопасности](../virtual-network/security-overview.md#security-rules) NSG.
 -    Дополнительные сведения об [эффективных правилах безопасности](../virtual-network/diagnose-network-traffic-filter-problem.md) для NSG.

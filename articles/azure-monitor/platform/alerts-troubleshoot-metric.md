@@ -4,14 +4,14 @@ description: Распространенные проблемы с Azure Monitor 
 author: harelbr
 ms.author: harelbr
 ms.topic: reference
-ms.date: 08/13/2020
+ms.date: 09/14/2020
 ms.subservice: alerts
-ms.openlocfilehash: 1c1fe613721ea2bc2d4b9665d6da73b094487efc
-ms.sourcegitcommit: 9ce0350a74a3d32f4a9459b414616ca1401b415a
+ms.openlocfilehash: b0e39982b3d62e0ef722a139024b499efc254f5f
+ms.sourcegitcommit: 1fe5127fb5c3f43761f479078251242ae5688386
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/13/2020
-ms.locfileid: "88190670"
+ms.lasthandoff: 09/14/2020
+ms.locfileid: "90068768"
 ---
 # <a name="troubleshooting-problems-in-azure-monitor-metric-alerts"></a>Устранение неполадок в Azure Monitor оповещениях метрик 
 
@@ -193,7 +193,7 @@ Azure Monitor оповещения заблаговременно уведомл
 - Командлеты PowerShell для оповещений метрик доступны в модуле [Az.Monitor](/powershell/module/az.monitor/?view=azps-3.6.1)
 - Обязательно используйте командлеты, которые заканчиваются на "v2", для новых (не классической) оповещений метрик (например, [Add-AzMetricAlertRuleV2](/powershell/module/az.monitor/add-azmetricalertrulev2?view=azps-3.6.1)).
 
-### <a name="azure-cli"></a>Azure CLI
+### <a name="azure-cli"></a>Azure CLI;
 
 Убедитесь, что вы используете команды CLI правой кнопкой мыши для оповещений метрик:
 
@@ -234,7 +234,7 @@ Azure Monitor оповещения заблаговременно уведомл
 - Имена правил генерации оповещений метрик не могут быть изменены (переименованы) после создания
 - Имена правил генерации оповещений метрик должны быть уникальными в пределах группы ресурсов
 - Имена правил генерации оповещений метрик не могут содержать следующие символы: * # & +:  < > ? @ % { } \ / 
-- Имена правил генерации оповещений метрик не могут заканчиваться следующим символом:.
+- Имена правил генерации оповещений метрик не могут заканчиваться пробелом или точкой
 
 
 ## <a name="restrictions-when-using-dimensions-in-a-metric-alert-rule-with-multiple-conditions"></a>Ограничения при использовании измерений в правиле генерации оповещений метрик с несколькими условиями

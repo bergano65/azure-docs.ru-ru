@@ -967,6 +967,8 @@
         - name: Использование шаблонов Resource Manager
           href: manage-sql-with-resource-manager.md
           displayName: ARM
+        - name: Переключение между регионами
+          href: how-to-move-regions.md
     - name: Глобальное распределение
       items:
         - name: Настройка нескольких источников

@@ -2,11 +2,37 @@
   href: index.yml
 - name: Введение
   href: introduction.md
-- name: Средства управления безопасностью
+- name: "Средства управления безопасностью (версии\_2)"
   expanded: true
   items:
     - name: Обзор элементов управления безопасностью Azure
       href: overview.md
+    - name: Безопасность сети
+      href: security-controls-v2-network-security.md
+    - name: Управление удостоверениями
+      href: security-controls-v2-identity-management.md
+    - name: Привилегированный доступ
+      href: security-controls-v2-privileged-access.md
+    - name: Защита данных
+      href: security-controls-v2-data-protection.md
+    - name: Управление ресурсами
+      href: security-controls-v2-asset-management.md
+    - name: Ведение журнала и обнаружение угроз
+      href: security-controls-v2-logging-threat-detection.md
+    - name: Реагирование на инциденты
+      href: security-controls-v2-incident-response.md
+    - name: Управление состоянием безопасности и уязвимостями
+      href: security-controls-v2-posture-vulnerability-management.md
+    - name: Безопасность конечной точки
+      href: security-controls-v2-endpoint-security.md
+    - name: Резервное копирование и восстановление
+      href: security-controls-v2-backup-recovery.md
+    - name: Система управления и стратегия
+      href: security-controls-v2-governance-strategy.md
+- name: "Средства управления безопасностью (версии\_1)"
+  items:
+    - name: "Обзор средств управления безопасностью Azure (версии\_1)"
+      href: overview-v1.md
     - name: Безопасность сети
       href: security-control-network-security.md
     - name: Ведение журналов и мониторинг

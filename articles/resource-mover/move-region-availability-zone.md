@@ -7,12 +7,12 @@ ms.service: resource-move
 ms.topic: how-to
 ms.date: 09/10/2020
 ms.author: raynew
-ms.openlocfilehash: fdd564618232ce7fde5a76fb9c37937113f179b2
-ms.sourcegitcommit: 5d7f8c57eaae91f7d9cf1f4da059006521ed4f9f
+ms.openlocfilehash: 315ea9b683ccd583f5c29c7527013f0d924336f4
+ms.sourcegitcommit: 51df05f27adb8f3ce67ad11d75cb0ee0b016dc5d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89670871"
+ms.lasthandoff: 09/14/2020
+ms.locfileid: "90061888"
 ---
 # <a name="move-azure-vms-to-an-availability-zone-in-another-region"></a>Перемещение виртуальных машин Azure в зону доступности в другом регионе
 
@@ -30,7 +30,7 @@ ms.locfileid: "89670871"
 
 Если вы хотите переместить виртуальные машины в другую зону доступности в том же регионе, [Ознакомьтесь с этой статьей](../site-recovery/azure-to-azure-how-to-enable-zone-to-zone-disaster-recovery.md).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Предварительные условия
 
 - Доступ *владельца* к подписке, в которой находятся ресурсы, которые требуется переместить.
     - При первом добавлении ресурса для определенного сопоставления источника и назначения в подписке Azure средство перемещения ресурсов создает [управляемое системой удостоверение](../active-directory/managed-identities-azure-resources/overview.md#managed-identity-types) (ранее известное как управляемая служба идентификации (MSI)), которому доверяет подписка.
@@ -71,8 +71,7 @@ ms.locfileid: "89670871"
     ![Кнопка для начала работы](./media/move-region-availability-zone/get-started.png)
 
 3. В пункте **Перемещение ресурсов**  >  **источник + назначение**выберите исходную подписку и регион.
-4. В поле **назначение**выберите регион, в который необходимо переместить виртуальные машины. 
-5. В **области Метаданные**выберите место хранения метаданных о ресурсах, которые вы перемещаете. Группа ресурсов создается специально для этой цели. Затем нажмите кнопку **Далее**.
+4. В поле **назначение**выберите регион, в который необходимо переместить виртуальные машины. Затем нажмите кнопку **Далее**.
 
      ![Страница для заполнения исходной и целевой подписки или региона](./media/move-region-availability-zone/source-target.png)
 
@@ -277,6 +276,6 @@ ms.locfileid: "89670871"
     - Имя учетной записи хранения кэша: ```resmovecache<guid>```
     - Имя хранилища — ```ResourceMove-<sourceregion>-<target-region>-GUID``` .
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 [Сведения о](about-move-process.md) процессе перемещения.

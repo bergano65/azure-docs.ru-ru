@@ -1,16 +1,16 @@
 ---
 title: Интеграция Apache Kafka подключение в концентраторах событий Azure (Предварительная версия) с Дебезиум для отслеживания измененных данных
-description: В этой статье рассказывается, как использовать приложение Apache Spark с поддержкой Kafka в Центрах событий Azure.
+description: В этой статье содержатся сведения об использовании Дебезиум с концентраторами событий Azure для Kafka.
 ms.topic: how-to
 author: abhirockzz
 ms.author: abhishgu
 ms.date: 08/11/2020
-ms.openlocfilehash: a11ec882a50d051a34758562ac84dcef5b799f5f
-ms.sourcegitcommit: 1aef4235aec3fd326ded18df7fdb750883809ae8
+ms.openlocfilehash: cac04bed797bb9956125bc1a38fdfa5c8285050e
+ms.sourcegitcommit: 51df05f27adb8f3ce67ad11d75cb0ee0b016dc5d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/12/2020
-ms.locfileid: "88137013"
+ms.lasthandoff: 09/14/2020
+ms.locfileid: "90061688"
 ---
 # <a name="integrate-apache-kafka-connect-support-on-azure-event-hubs-preview-with-debezium-for-change-data-capture"></a>Интеграция поддержки Apache Kafka Connect в концентраторы событий Azure (Предварительная версия) с Дебезиум для отслеживания измененных данных
 
@@ -21,7 +21,7 @@ ms.locfileid: "88137013"
 При работе с этим руководством вы выполните следующие задачи:
 
 > [!div class="checklist"]
-> * Создание пространства имен концентраторов событий
+> * Создание пространства имен в Центрах событий
 > * Установка и Настройка базы данных Azure для PostgreSQL
 > * Настройка и запуск Kafka Connect с помощью соединителя Дебезиум PostgreSQL
 > * Проверка отслеживания измененных данных
@@ -35,7 +35,7 @@ ms.locfileid: "88137013"
 - Выпуск Kafka (версии 1.1.1, Scala версии 2.11) доступен на сайте [kafka.apache.org](https://kafka.apache.org/downloads#1.1.1)
 - Ознакомьтесь со статьей [Центры событий Azure для Apache Kafka (предварительная версия)](./event-hubs-for-kafka-ecosystem-overview.md).
 
-## <a name="create-an-event-hubs-namespace"></a>Создание пространства имен концентраторов событий
+## <a name="create-an-event-hubs-namespace"></a>Создание пространства имен в Центрах событий
 Для отправки и получения данных из любой службы Центров событий требуется пространство имен Центров событий. Инструкции по созданию пространства имен и концентратора событий см. в разделе [Создание концентратора событий](event-hubs-create.md) . Получите строку подключения Центров событий и полное доменное имя (FQDN) для последующего использования. Инструкции см. в статье [Get an Event Hubs connection string](event-hubs-get-connection-string.md) (Получение строки подключения для Центров событий). 
 
 ## <a name="setup-and-configure-azure-database-for-postgresql"></a>Установка и Настройка базы данных Azure для PostgreSQL
@@ -51,7 +51,7 @@ ms.locfileid: "88137013"
 ### <a name="download-and-setup-debezium-connector"></a>Скачайте и настройте соединитель Дебезиум.
 Чтобы скачать и настроить соединитель, следуйте последним инструкциям в [документации по дебезиум](https://debezium.io/documentation/reference/1.2/connectors/postgresql.html#postgresql-deploying-a-connector) .
 
-- Скачайте архив подключаемого модуля соединителя. Например, чтобы скачать версию `1.2.0` соединителя, используйте эту ссылку.https://repo1.maven.org/maven2/io/debezium/debezium-connector-postgres/1.2.0.Final/debezium-connector-postgres-1.2.0.Final-plugin.tar.gz
+- Скачайте архив подключаемого модуля соединителя. Например, чтобы скачать версию `1.2.0` соединителя, используйте эту ссылку. https://repo1.maven.org/maven2/io/debezium/debezium-connector-postgres/1.2.0.Final/debezium-connector-postgres-1.2.0.Final-plugin.tar.gz
 - Извлеките JAR-файлы и скопируйте их в [подключаемый модуль Kafka Connect. Path](https://kafka.apache.org/documentation/#connectconfigs).
 
 
@@ -133,7 +133,7 @@ plugin.path={KAFKA.DIRECTORY}/libs # path to the libs directory within the Kafka
 ```
 
 > [!TIP]
-> `database.server.name`атрибут — это логическое имя, идентифицирующее и предоставляющее пространство имен для конкретного сервера базы данных PostgreSQL или наблюдаемого кластера. Подробные сведения см. в [документации по дебезиум](https://debezium.io/documentation/reference/1.2/connectors/postgresql.html#postgresql-property-database-server-name) .
+> `database.server.name` атрибут — это логическое имя, идентифицирующее и предоставляющее пространство имен для конкретного сервера базы данных PostgreSQL или наблюдаемого кластера. Подробные сведения см. в [документации по дебезиум](https://debezium.io/documentation/reference/1.2/connectors/postgresql.html#postgresql-property-database-server-name) .
 
 Чтобы создать экземпляр соединителя, используйте конечную точку Kafka Connect REST API.
 
@@ -275,7 +275,7 @@ tail -f /Users/foo/todos-cdc.txt
 ## <a name="cleanup"></a>Очистка
 Kafka Connect создает разделы Центра событий для хранения конфигураций, смещений и состояния, которые сохраняются даже после завершения работы кластера Connect. Если этого не требуется, рекомендуется удалить эти разделы. Также может потребоваться удалить `my-server.public.todos` концентратор событий, созданный в ходе этого руководства.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Дополнительные сведения о концентраторах событий для Kafka см. в следующих статьях:  
 

@@ -7,12 +7,12 @@ ms.service: resource-move
 ms.topic: how-to
 ms.date: 09/08/2020
 ms.author: raynew
-ms.openlocfilehash: 7d230ce068678bbc074b54ab361f3d70d9b102f8
-ms.sourcegitcommit: 5d7f8c57eaae91f7d9cf1f4da059006521ed4f9f
+ms.openlocfilehash: 716928761d23c2cf04ebcc72e253ad7884408065
+ms.sourcegitcommit: 51df05f27adb8f3ce67ad11d75cb0ee0b016dc5d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89670786"
+ms.lasthandoff: 09/14/2020
+ms.locfileid: "90061854"
 ---
 # <a name="move-resources-across-regions-from-resource-group"></a>Перемещение ресурсов между регионами (из группы ресурсов)
 
@@ -22,7 +22,7 @@ ms.locfileid: "89670786"
 > Сейчас для перемещения ресурсов Azure используется общедоступная Предварительная версия.
 
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Предварительные условия
 
 - Необходимо иметь права *владельца* на подписку, в которой находятся ресурсы, которые требуется переместить.
     - При первом добавлении ресурса для определенного сопоставления источника и назначения в подписке Azure средство перемещения ресурсов создает [управляемое системой удостоверение](../active-directory/managed-identities-azure-resources/overview.md#managed-identity-types) (ранее известное как управляемая служба идентификации (MSI)), которому доверяет подписка.
@@ -65,7 +65,6 @@ ms.locfileid: "89670786"
     ![Выбор для перемещения ресурсов в другой регион](./media/move-region-within-resource-group/select-move-region.png)
     
 4. В поле **источник + назначение**выберите целевой регион, в который необходимо переместить ресурсы. Затем щелкните **Далее**.
-5. В **области Метаданные**выберите место хранения метаданных о ресурсах, которые вы перемещаете.  Группа ресурсов создается специально для этой цели. Затем щелкните **Далее**.
 
 
     ![Исходная и целевая страницы для выбора целевой области](./media/move-region-within-resource-group/source-target.png)
@@ -265,7 +264,7 @@ ms.locfileid: "89670786"
     - Имя учетной записи хранения кэша: ```resmovecache<guid>```
     - Имя хранилища — ```ResourceMove-<sourceregion>-<target-region>-GUID``` .
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 
 [Сведения о](about-move-process.md) процессе перемещения.

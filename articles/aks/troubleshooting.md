@@ -4,12 +4,12 @@ description: Узнайте, как устранить распростране�
 services: container-service
 ms.topic: troubleshooting
 ms.date: 06/20/2020
-ms.openlocfilehash: 4a28ebd047e4d5e610ea0c895063eb87ce051d45
-ms.sourcegitcommit: 4a7a4af09f881f38fcb4875d89881e4b808b369b
+ms.openlocfilehash: 855e5e5e23371f600a7e73139f2e6da1eebc91d0
+ms.sourcegitcommit: 1fe5127fb5c3f43761f479078251242ae5688386
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/04/2020
-ms.locfileid: "89460326"
+ms.lasthandoff: 09/14/2020
+ms.locfileid: "90068835"
 ---
 # <a name="aks-troubleshooting"></a>Устранение неполадок с AKS
 
@@ -450,3 +450,15 @@ E1114 09:58:55.367731 1 static_autoscaler.go:239] Failed to fix node group sizes
 <!-- LINKS - internal -->
 [view-master-logs]: view-master-logs.md
 [cluster-autoscaler]: cluster-autoscaler.md
+
+### <a name="why-do-upgrades-to-kubernetes-116-fail-when-using-node-labels-with-a-kubernetesio-prefix"></a>Почему при использовании меток узлов с префиксом kubernetes.io происходит сбой обновления до Kubernetes 1,16
+
+Начиная с Kubernetes [1,16](https://v1-16.docs.kubernetes.io/docs/setup/release/notes/) , kubelet к узлам могут быть применены [только определенные подмножества меток с префиксом kubernetes.IO](https://github.com/kubernetes/enhancements/blob/master/keps/sig-auth/0000-20170814-bounding-self-labeling-kubelets.md#proposal) . AKS не может удалить активные метки от вашего имени без согласия, так как это может привести к простою рабочих нагрузок.
+
+В результате для устранения этой проблемы можно:
+
+1. Обновите плоскость управления кластером до 1,16 или более поздней версии.
+2. Добавление нового нодепуол в 1,16 или более поздней версии без неподдерживаемых меток kubernetes.io
+3. Удаление старого нодепул
+
+AKS изучает возможность изменения активных меток на нодепул, чтобы улучшить эту опасность.

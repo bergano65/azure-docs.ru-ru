@@ -1,24 +1,24 @@
 ---
 title: Сопоставление виртуальных сетей между двумя регионами в Azure Site Recovery
 description: Сведения о сопоставлении виртуальных сетей между двумя регионами Azure для аварийного восстановления виртуальных машин Azure с помощью Azure Site Recovery.
-author: mayurigupta13
+author: Harsha-CS
 manager: rochakm
 ms.service: site-recovery
 ms.topic: conceptual
 ms.date: 10/15/2019
-ms.author: mayg
-ms.openlocfilehash: 11cc71a05fb95453553223dcb34839e8a5fc6a3a
-ms.sourcegitcommit: e995f770a0182a93c4e664e60c025e5ba66d6a45
+ms.author: harshacs
+ms.openlocfilehash: b5ae68dea228e834b2449152bd3ef357f2a74e83
+ms.sourcegitcommit: 1fe5127fb5c3f43761f479078251242ae5688386
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86130432"
+ms.lasthandoff: 09/14/2020
+ms.locfileid: "90069498"
 ---
 # <a name="set-up-network-mapping-and-ip-addressing-for-vnets"></a>Настройка сетевого сопоставления и IP-адресации для виртуальных сетей
 
 В этой статье описан процесс сопоставления двух экземпляров виртуальной сети Azure, размещенных в разных регионах Azure, и настройки IP-адресации между ними. Сетевое сопоставление предоставляет поведение по умолчанию для выбора целевой сети на основе исходной сети во время включения репликации.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Предварительные условия
 
 Чтобы настроить сетевое сопоставление, у вас должны быть созданы [виртуальные сети Azure](../virtual-network/virtual-networks-overview.md) в исходном и целевом регионах Azure. 
 
@@ -92,7 +92,7 @@ ms.locfileid: "86130432"
 - Значение целевого IP-адреса можно изменить в параметрах **Вычисления и сеть** для виртуальной машины.
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - Изучите [рекомендации по управлению сетями](./azure-to-azure-about-networking.md) для аварийного восстановления виртуальных машин Azure.
 - [Изучите рекомендации](site-recovery-retain-ip-azure-vm-failover.md) по сохранению IP-адресов после отработки отказа.

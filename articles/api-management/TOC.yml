@@ -17,6 +17,8 @@
       href: get-started-create-service-instance.md
     - name: Создание экземпляра (PowerShell)
       href: powershell-create-service-instance.md
+    - name: "Создание экземпляра\_— Visual Studio Code"
+      href: vscode-create-service-instance.md
 - name: Учебники
   items:
     - name: 1. Импорт вашего первого API

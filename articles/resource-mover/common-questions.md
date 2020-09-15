@@ -5,14 +5,14 @@ author: rayne-wiselman
 manager: evansma
 ms.service: resource-move
 ms.topic: conceptual
-ms.date: 09/07/2020
+ms.date: 09/14/2020
 ms.author: raynew
-ms.openlocfilehash: 520c2d4fd258bfab5a5a1e0abf890d58bb98fbdc
-ms.sourcegitcommit: 3be3537ead3388a6810410dfbfe19fc210f89fec
+ms.openlocfilehash: a83191fd29e0cda4bc398f6a46a0d2ebf9631665
+ms.sourcegitcommit: 1fe5127fb5c3f43761f479078251242ae5688386
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89653183"
+ms.lasthandoff: 09/14/2020
+ms.locfileid: "90068053"
 ---
 # <a name="common-questions"></a>Часто задаваемые вопросы
 
@@ -24,7 +24,13 @@ ms.locfileid: "89653183"
 
 В настоящее время включена общедоступная Предварительная версия для перемещения ресурсов. Рабочие нагрузки поддерживаются.
 
-## <a name="region-move"></a>Перемещение региона
+
+
+## <a name="moving-across-regions"></a>Перемещение между регионами
+
+### <a name="can-i-move-resources-across-any-regions"></a>Можно ли перемещать ресурсы по любым регионам?
+
+Сейчас ресурсы можно перемещать из любого исходного общедоступного региона в любой целевой общедоступный регион в зависимости от [типов ресурсов, доступных в этом регионе](https://azure.microsoft.com/global-infrastructure/services/). Перемещение ресурсов в регионах Azure для государственных организаций сейчас не поддерживается.
 
 ### <a name="what-resources-can-i-move-across-regions-using-resource-mover"></a>Какие ресурсы можно перемещать по регионам с помощью перемещения ресурсов?
 
@@ -34,13 +40,19 @@ ms.locfileid: "89653183"
 - Сетевые карты
 - Группы доступности 
 - Виртуальные сети Azure 
-- Общедоступные IP-адреса группы безопасности сети (группы безопасности сети)
+- Общедоступные IP-адреса
+- Группы безопасности сети (NSG)
 - Внутренние и общедоступные подсистемы балансировки нагрузки 
 - Базы данных SQL Azure и эластичные пулы
 
+
+### <a name="can-i-move-resources-across-subscriptions-when-i-move-them-across-regions"></a>Можно ли перемещать ресурсы между подписками при их перемещении между регионами?
+
+Вы можете изменить подписку после перемещения ресурсов в целевой регион. Дополнительные [сведения](../azure-resource-manager/management/move-resource-group-and-subscription.md) о перемещении ресурсов в другую подписку. 
+
 ### <a name="where-is-the-metadata-about-a-region-move-stored"></a>Где хранятся метаданные о перемещении региона?
 
-Он хранится в базе данных [Azure Cosmos](../cosmos-db/database-encryption-at-rest.md) и в [хранилище BLOB-объектов Azure](../storage/common/storage-service-encryption.md)в подписке Майкрософт.
+Он хранится в базе данных [Azure Cosmos](../cosmos-db/database-encryption-at-rest.md) и в [хранилище BLOB-объектов Azure](../storage/common/storage-service-encryption.md)в подписке Майкрософт. В настоящее время метаданные хранятся в восточной части США 2 и Северной Европе. Это покрытие будет расширено в другие регионы. Это не ограничивает вас перемещением ресурсов в общедоступных регионах.
 
 ### <a name="is-the-collected-metadata-encrypted"></a>Зашифрованы ли собранные метаданные?
 
@@ -79,6 +91,6 @@ ms.locfileid: "89653183"
 Подписка была перемещена в другой клиент. | Отключите, а затем включите управляемое удостоверение для перемещения коллекции.
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 [Узнайте больше](about-move-process.md) о компонентах перемещения ресурсов и процессе перемещения.

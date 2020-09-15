@@ -12,12 +12,12 @@ ms.date: 11/04/2019
 ms.author: kenwith
 ms.reviewer: phsignor
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: aafaeb1143049b14f0a2fe2d867a951355d1ba61
-ms.sourcegitcommit: 0194a29a960e3615f96a2d9d8a7e681cf3e8f9ab
+ms.openlocfilehash: 68e40696c935adf6bef78636770b1add81255fa8
+ms.sourcegitcommit: 51df05f27adb8f3ce67ad11d75cb0ee0b016dc5d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89667609"
+ms.lasthandoff: 09/14/2020
+ms.locfileid: "90060923"
 ---
 # <a name="grant-tenant-wide-admin-consent-to-an-application"></a>Предоставление приложению согласия администратора на уровне арендатора
 
@@ -25,7 +25,7 @@ ms.locfileid: "89667609"
 
 Дополнительные сведения о предоставлении согласия для приложений см. в статье [Платформа предоставления согласия Azure Active Directory](../develop/consent-framework.md).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Предварительные условия
 
 Для предоставления согласия администратора на уровне клиента необходимо войти как [глобальный администратор](../users-groups-roles/directory-assign-admin-roles.md#global-administrator--company-administrator), [Администратор приложения](../users-groups-roles/directory-assign-admin-roles.md#application-administrator)или [Администратор облачных приложений](../users-groups-roles/directory-assign-admin-roles.md#cloud-application-administrator).
 
@@ -88,9 +88,9 @@ https://login.microsoftonline.com/{tenant-id}/adminconsent?client_id={client-id}
 Как всегда, внимательно просматривайте разрешения, запрашиваемые приложением, перед предоставлением согласия.
 
 > [!WARNING]
-> Предоставление согласия администратора на уровне клиента с помощью этого URL-адреса приведет к отмене всех разрешений, которые ранее были предоставлены для всего клиента. Разрешения, которые ранее были ггрантед пользователями от их собственных лиц, не затрагиваются. 
+> Предоставление согласия администратора на уровне клиента с помощью этого URL-адреса приведет к отмене всех разрешений, которые ранее были предоставлены для всего клиента. Разрешения, которые ранее были предоставлены пользователям от своего имени, не затрагиваются. 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 [Настройка согласия конечных пользователей для приложений](configure-user-consent.md)
 

@@ -3,12 +3,12 @@ title: Создание DHCP и управление им
 description: В этой статье объясняется, как управлять DHCP в решении Azure VMware.
 ms.topic: conceptual
 ms.date: 05/04/2020
-ms.openlocfilehash: 3fc3de228179925afdf1b7c1015c577fd9c4c924
-ms.sourcegitcommit: 62717591c3ab871365a783b7221851758f4ec9a4
+ms.openlocfilehash: ba7c3983f55ed729c77d2f24d3ef311a00522148
+ms.sourcegitcommit: 1fe5127fb5c3f43761f479078251242ae5688386
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/22/2020
-ms.locfileid: "88752169"
+ms.lasthandoff: 09/14/2020
+ms.locfileid: "90069566"
 ---
 # <a name="how-to-create-and-manage-dhcp-in-azure-vmware-solution"></a>Создание DHCP и управление им в решении Azure VMWare
 
@@ -56,7 +56,7 @@ ms.locfileid: "88752169"
 
 ## <a name="create-dhcp-relay-service"></a>Создание службы ретранслятора DHCP
 
-1. В окне NXT-T выберите вкладку **сеть** и в разделе **Управление IP-адресами**выберите **DHCP**. Выберите **Добавить сервер**. Выберите ретранслятор DHCP для **типа сервера** и введите имя сервера и IP-адрес сервера ретрансляции. Выберите **Сохранить**, чтобы сохранить изменения.
+1. В окне НСКС-T выберите вкладку **сети** и в разделе **Управление IP-адресами**выберите **DHCP**. Выберите **Добавить сервер**. Выберите ретранслятор DHCP для **типа сервера** и введите имя сервера и IP-адрес сервера ретрансляции. Выберите **Сохранить**, чтобы сохранить изменения.
 
    :::image type="content" source="./media/manage-dhcp/create-dhcp-relay.png" alt-text="Создание сервера ретранслятора DHCP" border="true":::
 

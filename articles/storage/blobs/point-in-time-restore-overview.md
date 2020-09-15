@@ -6,16 +6,16 @@ services: storage
 author: tamram
 ms.service: storage
 ms.topic: conceptual
-ms.date: 06/10/2020
+ms.date: 09/11/2020
 ms.author: tamram
 ms.subservice: blobs
 ms.custom: references_regions, devx-track-azurecli, devx-track-azurepowershell
-ms.openlocfilehash: 07a1e81f2fe63ea8d34f362627ad79ab6729f3f0
-ms.sourcegitcommit: d68c72e120bdd610bb6304dad503d3ea89a1f0f7
+ms.openlocfilehash: 1187b01fa623264055edecf21ea5c9d35d59a152
+ms.sourcegitcommit: 1fe5127fb5c3f43761f479078251242ae5688386
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/01/2020
-ms.locfileid: "89229129"
+ms.lasthandoff: 09/14/2020
+ms.locfileid: "90068308"
 ---
 # <a name="point-in-time-restore-for-block-blobs-preview"></a>Восстановление до точки во времени для блочных BLOB-объектов (Предварительная версия)
 
@@ -162,7 +162,7 @@ az feature list -o table --query "[?contains(name, 'Microsoft.Storage/Versioning
 
 Чтобы задать вопросы о предварительной версии восстановления на момент времени или оставить отзыв, обратитесь в корпорацию Майкрософт по адресу pitrdiscussion@microsoft.com .
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - [Включение и Управление восстановлением на момент времени для блочных BLOB-объектов (Предварительная версия)](point-in-time-restore-manage.md)
 - [Поддержка канала изменений в хранилище BLOB-объектов Azure (предварительная версия)](storage-blob-change-feed.md)
