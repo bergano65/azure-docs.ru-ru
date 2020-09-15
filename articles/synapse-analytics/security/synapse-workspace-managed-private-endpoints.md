@@ -8,12 +8,12 @@ ms.subservice: security
 ms.date: 04/15/2020
 ms.author: ronytho
 ms.reviewer: jrasnick
-ms.openlocfilehash: ecca67cab486c8f3524c8c8d4c221d52689cf62a
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: dedf0795e72c4bdace430ba2dd07ade9d792f13c
+ms.sourcegitcommit: 4a7a4af09f881f38fcb4875d89881e4b808b369b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87070111"
+ms.lasthandoff: 09/04/2020
+ms.locfileid: "89459545"
 ---
 # <a name="synapse-managed-private-endpoints-preview"></a>Управляемые частные конечные точки в Azure Synapse.
 
@@ -23,7 +23,7 @@ ms.locfileid: "87070111"
 
 Управляемые частные конечные точки — это частные конечные точки, созданные в управляемой рабочей области в виртуальной сети Microsoft Azure, через которую проходит частный канал доступа к ресурсам Azure. Azure Synapse управляет этими частными конечными точками от вашего имени.
 
-Azure Synapse поддерживает приватные каналы. Приватный канал обеспечивает безопасный доступ к службам Azure (таким как служба хранилища Azure, Azure Cosmos DB и хранилище данных SQL Azure), а также к службам Azure клиентов и партнеров в виртуальной сети Azure.
+Azure Synapse поддерживает приватные каналы. Приватный канал обеспечивает безопасный доступ к службам Azure (таким как служба хранилища Azure и Azure Cosmos DB), а также к службам Azure клиентов и партнеров в виртуальной сети Azure.
 
 При использовании частного канала трафик между виртуальной сетью и рабочей областью полностью проходит через магистральную сеть Майкрософт. Приватный канал обеспечивает защиту от угроз кражи данных. Чтобы установить приватный канал для ресурса, создайте частную конечную точку.
 

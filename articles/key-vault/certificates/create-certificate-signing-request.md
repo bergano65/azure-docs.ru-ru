@@ -10,12 +10,12 @@ ms.subservice: certificates
 ms.topic: tutorial
 ms.date: 06/17/2020
 ms.author: sebansal
-ms.openlocfilehash: 44d77c36b9aacb8a2f06fd7a0f167cffa06ae4eb
-ms.sourcegitcommit: 6fc156ceedd0fbbb2eec1e9f5e3c6d0915f65b8e
+ms.openlocfilehash: ad3dd64bb55ccd657b74bacff3e4441ce63f0cf7
+ms.sourcegitcommit: d0541eccc35549db6381fa762cd17bc8e72b3423
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/21/2020
-ms.locfileid: "88716118"
+ms.lasthandoff: 09/09/2020
+ms.locfileid: "89569379"
 ---
 # <a name="creating-and-merging-csr-in-key-vault"></a>Создание и слияние CSR в Key Vault
 
@@ -102,6 +102,9 @@ Azure Key Vault поддерживает хранение в хранилище 
 
 - **Тип ошибки The public key of the end-entity certificate in the specified X.509 certificate content does not match the public part of the specified private key. Please check if certificate is valid. (Открытый ключ сертификата конечного субъекта в указанном содержимом сертификата X.509 не соответствует открытой части указанного закрытого ключа. Проверьте, действителен ли сертификат.)** Эта ошибка может возникать, если не выполняется слияние CSR с тем же инициированным запросом CSR. При каждом создании CSR создается закрытый ключ, который должен быть сопоставлен при слиянии подписанного запроса.
     
+- При объединении CSR объединяется ли вся цепочка?
+    Да, вся цепочка будет объединена, если пользователь предоставит файл p7b для объединения.
+
 - Если выданный сертификат имеет состояние "отключено" на портале Azure, изучите инструкции по **работе с сертификатами**, чтобы просмотреть сообщение об ошибке, связанной с этим сертификатом.
 
 Дополнительные сведения о работе с сертификатами см. в [справочнике по работе с Azure Key Vault с помощью REST API](/rest/api/keyvault). Сведения об установке разрешений см. в статьях [Vaults — Create Or Update](/rest/api/keyvault/vaults/createorupdate) (Хранилища. Создание или обновление) и [Vaults — Update Access Policy](/rest/api/keyvault/vaults/updateaccesspolicy) (Хранилища. Обновление политики доступа).

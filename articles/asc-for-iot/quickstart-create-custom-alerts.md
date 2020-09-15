@@ -13,14 +13,14 @@ ms.devlang: na
 ms.topic: quickstart
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 1/27/2020
+ms.date: 09/04/2020
 ms.author: mlottner
-ms.openlocfilehash: 8ba81b669c25d91efa8ad1f07b1a7835b42c5cf4
-ms.sourcegitcommit: 7e04a51363de29322de08d2c5024d97506937a60
+ms.openlocfilehash: 7638ad070e8ac8bd99cbfb49b99bbb347a243a21
+ms.sourcegitcommit: 59ea8436d7f23bee75e04a84ee6ec24702fb2e61
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81310829"
+ms.lasthandoff: 09/07/2020
+ms.locfileid: "89505443"
 ---
 # <a name="quickstart-create-custom-alerts"></a>Краткое руководство. Создание настраиваемых оповещений
 
@@ -67,8 +67,8 @@ ms.locfileid: "81310829"
 
 ## <a name="customize-an-alert"></a>Настройка оповещения
 
-1. Откройте Центр Интернета вещей.
-1. Щелкните **Пользовательские оповещения** в разделе **Безопасность**.
+1. Откройте Центр Интернета вещей и выберите **Параметры** в меню **Безопасность**. 
+1. Щелкните **Настраиваемые оповещения**.
 1. Выберите группу безопасности, к которой нужно применить настройки.
 1. Щелкните **Add a custom alert** (Добавить настраиваемое оповещение).
 1. Выберите настраиваемое оповещение в раскрывающемся списке.

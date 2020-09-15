@@ -2,14 +2,14 @@
 title: Анализ видеотрансляций с помощью OpenVINO™ Model Server (расширение ИИ от Intel)
 description: В этом учебнике вы будете использовать сервер модели искусственного интеллекта от Intel для анализа веб-канала видеотрансляций с помощью IP-камеры (имитированной).
 ms.topic: tutorial
-ms.date: 07/24/2020
+ms.date: 09/08/2020
 titleSuffix: Azure
-ms.openlocfilehash: 102c54d8f738c3e8e62c7092d0df6ec7d12b8a0c
-ms.sourcegitcommit: e69bb334ea7e81d49530ebd6c2d3a3a8fa9775c9
+ms.openlocfilehash: 95dbf555cc6b8f8edb1bc9dca2e10d3ef72eb9db
+ms.sourcegitcommit: d0541eccc35549db6381fa762cd17bc8e72b3423
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "88950261"
+ms.lasthandoff: 09/09/2020
+ms.locfileid: "89567591"
 ---
 # <a name="tutorial-analyze-live-video-by-using-openvino-model-server--ai-extension-from-intel"></a>Руководство по Анализ видеотрансляций с помощью OpenVINO™ Model Server (расширение ИИ от Intel) 
 
@@ -30,6 +30,7 @@ ms.locfileid: "88950261"
 > Во время установки расширения Azure IoT Tools может появиться запрос на установку Docker. На него можно не обращать внимания.
 
 ## <a name="review-the-sample-video"></a>Просмотр примера видео
+
 При настройке ресурсов Azure на виртуальную машину Linux в Azure, используемую в качестве устройства IoT Edge, копируется короткое видео с изображением автостоянки. В этом кратком руководстве для имитации потока в реальном времени используется видеофайл.
 
 Откройте приложение, например [проигрыватель мультимедиа VLC](https://www.videolan.org/vlc/). Нажмите сочетание клавиш CTRL+N, а затем вставьте ссылку на [видео](https://lvamedia.blob.core.windows.net/public/lots_015.mkv), чтобы начать воспроизведение. Вы увидите видеоматериал с автомобилями на автостоянке, большинство из которых припарковано, а один движется.
@@ -38,7 +39,8 @@ ms.locfileid: "88950261"
 
 ## <a name="overview"></a>Обзор
 
-![Обзор](./media/use-intel-openvino-tutorial/topology.png)
+> [!div class="mx-imgBorder"]
+> :::image type="content" source="./media/use-intel-openvino-tutorial/topology.png" alt-text="Обзор":::
 
 На схеме показан порядок передачи сигналов в этом кратком руководстве. [Пограничный модуль](https://github.com/Azure/live-video-analytics/tree/master/utilities/rtspsim-live555) имитирует IP-камеру, на которой находится RTSP-сервер. Узел [источника RTSP](media-graph-concept.md#rtsp-source) извлекает видеопоток с этого сервера и отправляет видеокадры на узел [обработчика фильтра частоты кадров](media-graph-concept.md#frame-rate-filter-processor). Этот обработчик ограничивает частоту кадров видеопотока при достижении узла [обработчика расширения HTTP](media-graph-concept.md#http-extension-processor). 
 
@@ -46,7 +48,7 @@ ms.locfileid: "88950261"
 
 Изучив данный учебник, вы научитесь:
 
-1. Создание и развертывание графа мультимедиа и его изменение. 
+1. Создание и развертывание графа мультимедиа и его изменение.
 1. Интерпретация результатов.
 1. Очистка ресурсов.
 

@@ -2,20 +2,20 @@
 title: Общие сведения об Azure ExpressRoute. Соединение через частное подключение
 description: В этом техническом обзоре возможностей ExpressRoute показано, как работает подключение ExpressRoute при расширении локальной сети в Azure через частное подключение.
 services: expressroute
-author: mialdrid
+author: duongau
 ms.service: expressroute
 ms.topic: overview
 ms.date: 08/25/2020
-ms.author: mialdrid
-ms.openlocfilehash: 6621a9778025d67046722b7cd60e32a62b574ee5
-ms.sourcegitcommit: b33c9ad17598d7e4d66fe11d511daa78b4b8b330
+ms.author: duau
+ms.openlocfilehash: 40d84a4196a3cc104a29b4b9511bd627f3f8d40e
+ms.sourcegitcommit: d0541eccc35549db6381fa762cd17bc8e72b3423
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88852943"
+ms.lasthandoff: 09/09/2020
+ms.locfileid: "89566880"
 ---
 # <a name="what-is-azure-expressroute"></a>Что такое Azure ExpressRoute?
-ExpressRoute позволяет переносить локальные сети в Microsoft Cloud по частному подключению, которое обеспечивается поставщиком услуг подключения. ExpressRoute позволяет устанавливать подключения к облачным службам Майкрософт, таким как Microsoft Azure и Office 365.
+ExpressRoute позволяет переносить локальные сети в Microsoft Cloud по частному подключению, которое обеспечивается поставщиком услуг подключения. ExpressRoute позволяет устанавливать подключения к облачным службам Майкрософт, таким как Microsoft Azure и Microsoft 365.
 
 Это может быть подключение типа "любой к любому" (IP VPN), подключение Ethernet типа "точка-точка" или виртуальное кросс-подключение через поставщика услуг подключения на совместно используемом сервере. Подключения ExpressRoute не проходят через общедоступный Интернет. Это обеспечивает повышенный уровень безопасности, надежности и быстродействия подключений ExpressRoute и сопоставимый уровень задержек по сравнению с типовыми подключениями через Интернет. Сведения о том, как подключить сеть к облаку Майкрософт с помощью ExpressRoute, см. в статье [Модели подключения ExpressRoute](expressroute-connectivity-models.md).
 
@@ -44,7 +44,7 @@ ExpressRoute позволяет переносить локальные сети
 ### <a name="connectivity-to-microsoft-cloud-services"></a>Подключение к облачным службам Майкрософт
 Подключения ExpressRoute обеспечивают доступ к следующим службам:
 * Службы Microsoft Azure
-* Службы Microsoft Office 365
+* Службы Microsoft 365
 
 > [!NOTE]
 > [!INCLUDE [expressroute-office365-include](../../includes/expressroute-office365-include.md)]

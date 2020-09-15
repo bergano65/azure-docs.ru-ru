@@ -12,12 +12,12 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 09/10/2018
 ms.author: duau
-ms.openlocfilehash: f0d4ab9e3ecba8af1f6775389a4837e8c90eb14d
-ms.sourcegitcommit: 5a3b9f35d47355d026ee39d398c614ca4dae51c6
+ms.openlocfilehash: ee9a883cbd69826e30d6f2416d588792a8c17b1c
+ms.sourcegitcommit: 3be3537ead3388a6810410dfbfe19fc210f89fec
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89399775"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89648816"
 ---
 # <a name="tutorial-add-a-custom-domain-to-your-front-door"></a>Руководство по Добавление личного домена в службу Front Door
 В этом руководстве показано, как добавить личный домен в службу Front Door. При использовании службы Azure Front Door для доставки приложения, если вы хотите обеспечить видимость своего доменного имени в запросе пользователя, требуется личный домен. Видимое доменное имя удобно для клиентов и эффективно используется для популяризации бренда.
@@ -37,11 +37,11 @@ ms.locfileid: "89399775"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Прежде чем перейти к выполнению шагов в этом руководстве, создайте службу Front Door. Дополнительные сведения см. в [кратком руководстве Создание профиля Front Door для высокодоступного глобального веб-приложения](quickstart-create-front-door.md).
+* Прежде чем перейти к выполнению шагов в этом руководстве, создайте службу Front Door. Дополнительные сведения см. в [кратком руководстве Создание профиля Front Door для высокодоступного глобального веб-приложения](quickstart-create-front-door.md).
 
-Если у вас еще нет личного домена, сначала нужно приобрести его у поставщика доменов. Например, ознакомьтесь с руководством [Приобретение имени личного домена для веб-приложений Azure](https://docs.microsoft.com/azure/app-service/manage-custom-dns-buy-domain).
+* Если у вас еще нет личного домена, сначала нужно приобрести его у поставщика доменов. Например, ознакомьтесь с руководством [Приобретение имени личного домена для веб-приложений Azure](https://docs.microsoft.com/azure/app-service/manage-custom-dns-buy-domain).
 
-Если вы используете Azure для размещения [доменов DNS](https://docs.microsoft.com/azure/dns/dns-overview), вам следует делегировать систему доменного имени поставщика домена (DNS) в Azure DNS. Дополнительные сведения см. в статье [Делегирование домена в Azure DNS](https://docs.microsoft.com/azure/dns/dns-delegate-domain-azure-dns). В противном случае при использовании поставщика доменов для обработки домена DNS перейдите к разделу [создания записей CNAME DNS](#create-a-cname-dns-record).
+* Если вы используете Azure для размещения [доменов DNS](https://docs.microsoft.com/azure/dns/dns-overview), вам следует делегировать систему доменного имени поставщика домена (DNS) в Azure DNS. Дополнительные сведения см. в статье [Делегирование домена в Azure DNS](https://docs.microsoft.com/azure/dns/dns-delegate-domain-azure-dns). В противном случае при использовании поставщика доменов для обработки домена DNS перейдите к разделу [создания записей CNAME DNS](#create-a-cname-dns-record).
 
 
 ## <a name="create-a-cname-dns-record"></a>Создание записи CNAME DNS
@@ -202,7 +202,11 @@ ms.locfileid: "89399775"
 
 В этом руководстве вы узнали, как выполнять следующие задачи:
 
-> [!div class="checklist"]
-> - создание записи CNAME DNS;
-> - связывание личного домена с Front Door.
-> - проверка личного домена.
+* создание записи CNAME DNS;
+* связывание личного домена с Front Door.
+* проверка личного домена.
+
+Чтобы узнать, как включить протокол HTTPS для личного домена, перейдите к следующему руководству.
+
+> [!div class="nextstepaction"]
+> [Включение HTTPS для личного домена](front-door-custom-domain.md)

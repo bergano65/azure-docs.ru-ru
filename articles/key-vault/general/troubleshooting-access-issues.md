@@ -7,12 +7,12 @@ ms.date: 08/10/2020
 ms.service: key-vault
 ms.subservice: general
 ms.topic: how-to
-ms.openlocfilehash: 6884062bc5107ecb1e31fc6826a9d847e4d31e89
-ms.sourcegitcommit: 5a3b9f35d47355d026ee39d398c614ca4dae51c6
+ms.openlocfilehash: d77cc4cc65eb73aa85a1d54202627cd18d5747b3
+ms.sourcegitcommit: 1b320bc7863707a07e98644fbaed9faa0108da97
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89400438"
+ms.lasthandoff: 09/09/2020
+ms.locfileid: "89595994"
 ---
 # <a name="troubleshooting-azure-key-vault-access-policy-issues"></a>Устранение проблем с политикой доступа к хранилищу ключей Azure
 
@@ -25,6 +25,14 @@ ms.locfileid: "89400438"
 ### <a name="how-can-i-monitor-vault-availability-service-latency-periods-or-other-performance-metrics-for-key-vault"></a>Как отслеживать доступность хранилища, периоды задержки веб-службы или другие метрики производительности для хранилища ключей?
 
 После начала масштабирования службы количество запросов, отправленных в хранилище ключей, будет возрастать. Такое требование может привести к увеличению задержки запросов и в крайних случаях к их регулированию, что повлияет на производительность службы. Вы можете отслеживать метрики производительности хранилища ключей и получать оповещения по конкретным пороговым значениям. Пошаговые инструкции по настройке мониторинга см. в [этой статье](https://docs.microsoft.com/azure/key-vault/general/alert).
+
+### <a name="i-am-not-able-to-modify-access-policy-how-can-it-be-enabled"></a>Я не могу изменить политику доступа. Как ее включить?
+Для изменения политики доступа пользователю нужны достаточные разрешения AAD. В этом случае пользователю потребуется роль участника более высокого уровня.
+
+### <a name="i-am-seeing-unkwown-policy-error-what-does-that-mean"></a>Отображается ошибка "Неизвестная политика". Что это значит?
+Политика доступа в разделе "Неизвестные" может отображаться по двум причинам:
+* Возможно, был пользователь с правом доступа, но по какой-то причине этот пользователь больше не существует.
+* Политика доступа была добавлена для идентификатора объекта приложения, а не субъекта-службы, и с помощью PowerShell.
 
 ### <a name="how-can-i-assign-access-control-per-key-vault-object"></a>Как можно назначить управление доступом для каждого объекта хранилища ключей? 
 

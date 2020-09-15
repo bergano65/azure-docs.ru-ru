@@ -2,18 +2,18 @@
 title: Перемещение виртуальных машин IaaS Azure в другой регион с помощью Azure Site Recovery
 description: Используйте службу Azure Site Recovery для переноса виртуальных машин IaaS Azure из одного региона Azure в другой.
 services: site-recovery
-author: rajani-janaki-ram
+author: Sharmistha-Rai
 ms.service: site-recovery
 ms.topic: tutorial
 ms.date: 01/28/2019
-ms.author: rajanaki
+ms.author: sharrai
 ms.custom: MVC
-ms.openlocfilehash: 3cbf3eda97bd1ba6b71c4bc7910e942e39224e30
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: e8f14b86678f7d395f445438d7e869168b13e54b
+ms.sourcegitcommit: ac5cbef0706d9910a76e4c0841fdac3ef8ed2e82
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87076105"
+ms.lasthandoff: 09/03/2020
+ms.locfileid: "89425931"
 ---
 # <a name="move-azure-vms-to-another-region"></a>Перенос виртуальных машин Azure в другой регион
 
@@ -88,7 +88,7 @@ ms.locfileid: "87076105"
 1. В поле **Имя** укажите понятное имя **ContosoVMVault**. Если у вас есть несколько подписок, выберите нужную.
 1. Создайте группу ресурсов **ContosoRG**.
 1. Укажите регион Azure. Сведения о поддерживаемых регионах см. в разделе "Географическая доступность" на странице [цен на службу Azure Site Recovery](https://azure.microsoft.com/pricing/details/site-recovery/).
-1. Для **хранилища Служб восстановления** выберите действие **Обзор** > **ConsotoVMVault** >  **+Реплицировать**.
+1. В области **Хранилища Служб восстановления** выберите **Обзор** > **ConsotoVMVault** > **Реплицированные элементы** >  **+Реплицировать**.
 1. В поле **Источник** выберите **Azure**.
 1. В поле **Исходное расположение** выберите исходный регион Azure, в котором сейчас запущены виртуальные машины.
 1. Выберите модель развертывания Resource Manager. Затем выберите настройку **Исходная подписка** и **Исходная группа ресурсов**.

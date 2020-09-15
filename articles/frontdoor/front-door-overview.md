@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 09/02/2020
 ms.author: duau
-ms.openlocfilehash: 003903a941b0d9ce36f28ce5e4d640e5746a7de3
-ms.sourcegitcommit: 3246e278d094f0ae435c2393ebf278914ec7b97b
+ms.openlocfilehash: 5741e41e3c1474cef5cf49270fd40bbdf4fcaffb
+ms.sourcegitcommit: 5a3b9f35d47355d026ee39d398c614ca4dae51c6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 09/02/2020
-ms.locfileid: "89378191"
+ms.locfileid: "89399418"
 ---
 # <a name="what-is-azure-front-door"></a>Что такое Azure Front Door?
 Azure Front Door помогает определять, отслеживать и контролировать глобальную маршрутизацию для вашего веб-трафика. При этом оптимизация позволяет достичь наилучшей производительности, а мгновенная глобальная отработка отказа — высокой доступности. С помощью службы Front Door вы можете преобразовать глобальные (с поддержкой нескольких регионов) пользовательские и корпоративные приложения в современные, надежные, высокопроизводительные и персонализированные приложения, интерфейсы API и содержимое, которые охватывают глобальную аудиторию с помощью Azure.
@@ -84,7 +84,7 @@ Azure Front Door имеет встроенную поддержку сквозн
 
 ## <a name="whats-new"></a>Новые возможности
 
-Подпишитесь на RSS-канал и просматривайте последние обновления компонентов для Azure Load Balancer на странице [Обновления Azure](https://azure.microsoft.com/updates/?category=networking&query=Azure%20Front%20Door).
+Подпишитесь на RSS-канал и просматривайте последние обновления компонентов для Azure Front Door на странице [Обновления Azure](https://azure.microsoft.com/updates/?category=networking&query=Azure%20Front%20Door).
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

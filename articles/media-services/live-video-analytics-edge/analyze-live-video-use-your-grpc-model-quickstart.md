@@ -4,12 +4,12 @@ description: В этом кратком руководстве вы примен
 ms.topic: quickstart
 ms.date: 08/14/2020
 zone_pivot_groups: ams-lva-edge-programming-languages
-ms.openlocfilehash: ac11ced68ab8463da26b9978a5b0b02c4cd1a402
-ms.sourcegitcommit: 56cbd6d97cb52e61ceb6d3894abe1977713354d9
+ms.openlocfilehash: 907d402a4b0ef5d5e437322d02431a0ccd2d8da3
+ms.sourcegitcommit: 9c262672c388440810464bb7f8bcc9a5c48fa326
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/20/2020
-ms.locfileid: "88687369"
+ms.lasthandoff: 09/03/2020
+ms.locfileid: "89421543"
 ---
 # <a name="quickstart-analyze-live-video-by-using-your-own-grpc-model"></a>Краткое руководство. Анализ видеотрансляции с помощью собственной модели gRPC
 
@@ -56,11 +56,11 @@ ms.locfileid: "88687369"
 ## <a name="create-and-deploy-the-media-graph"></a>Создание и развертывание графа мультимедиа
 
 ::: zone pivot="programming-language-csharp"
-[!INCLUDE [create and deply the media graph](includes/analyze-live-video-your-grpc-model-quickstart/csharp/create-deploy-media-graph.md)]
+[!INCLUDE [create and deploy the media graph](includes/analyze-live-video-your-grpc-model-quickstart/csharp/create-deploy-media-graph.md)]
 ::: zone-end
 
 ::: zone pivot="programming-language-python"
-[!INCLUDE [create and deply the media graph](includes/analyze-live-video-your-grpc-model-quickstart/python/create-deploy-media-graph.md)]
+[!INCLUDE [create and deploy the media graph](includes/analyze-live-video-your-grpc-model-quickstart/python/create-deploy-media-graph.md)]
 ::: zone-end
 
 ## <a name="interpret-results"></a>Интерпретация результатов
@@ -79,4 +79,9 @@ ms.locfileid: "88687369"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Попробуйте выполнить различные топологии графа мультимедиа с помощью протокола gRPC.
+* Попробуйте выполнить различные топологии графа мультимедиа с помощью протокола gRPC.
+* **Создание и запуск примеров расширений службы "Аналитика видеотрансляций" (LVA)**
+<br/>Ознакомьтесь с примерами записных книжек Jupyter, которые позволяют создавать и запускать модели YOLO на базе [ONNX](http://onnx.ai/) в качестве расширения службы "Аналитика видеотрансляций".
+    * [Пример модели YOLOv3](https://github.com/Azure/live-video-analytics/tree/master/utilities/video-analysis/notebooks/Yolo/yolov3/yolov3-grpc-icpu-onnx/readme.md)
+    * [Пример модели YOLOv4](https://github.com/Azure/live-video-analytics/blob/master/utilities/video-analysis/notebooks/Yolo/yolov4/yolov4-grpc-icpu-onnx/readme.md)
+

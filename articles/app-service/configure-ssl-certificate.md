@@ -6,12 +6,12 @@ ms.topic: tutorial
 ms.date: 10/25/2019
 ms.reviewer: yutlin
 ms.custom: seodec18
-ms.openlocfilehash: d45852326a7f771b2cf79e20c784e2c441fef0d6
-ms.sourcegitcommit: 5a3b9f35d47355d026ee39d398c614ca4dae51c6
+ms.openlocfilehash: c8ede3c4a186b4b24d56651deb8172fdcde8e5ed
+ms.sourcegitcommit: 9c262672c388440810464bb7f8bcc9a5c48fa326
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89401492"
+ms.lasthandoff: 09/03/2020
+ms.locfileid: "89420886"
 ---
 # <a name="add-a-tlsssl-certificate-in-azure-app-service"></a>Добавление TLS/SSL-сертификата в Службу приложений Azure
 
@@ -188,6 +188,13 @@ ms.locfileid: "89401492"
 
 Если для управления сертификатами используется Azure Key Vault, то можно импортировать сертификат PKCS12 из Key Vault в Службу приложений, если он [соответствует требованиям](#private-certificate-requirements).
 
+### <a name="authorize-app-service-to-read-from-the-vault"></a>Авторизация Службы приложений на чтение из хранилища
+По умолчанию поставщик ресурсов Службы приложений не имеет доступ к Key Vault. Чтобы использовать Key Vault для развертывания сертификата, необходимо [авторизовать для поставщика ресурсов доступ на чтение к KeyVault](../key-vault/general/group-permissions-for-apps.md#grant-access-to-your-key-vault). 
+
+`abfa0a7c-a6b6-4736-8310-5855508787cd` — это имя субъекта-службы поставщика ресурсов для Службы приложений, одинаковое для всех подписок Azure. Для облачной среды Azure для государственных организаций используйте `6a02c803-dafd-4136-b4c3-5a6f318b4714` вместо имени субъекта-службы поставщика ресурсов.
+
+### <a name="import-a-certificate-from-your-vault-to-your-app"></a>Импорт сертификата из хранилища в приложение
+
 На <a href="https://portal.azure.com" target="_blank">портале Azure</a> в меню слева выберите **Службы приложений** >  **\<app-name>** .
 
 В левой области навигации приложения выберите **Параметры TLS/SSL** > **Сертификаты закрытых ключей (PFX)**  > **Импорт сертификата Key Vault**.
@@ -205,6 +212,9 @@ ms.locfileid: "89401492"
 По завершении операции вы увидите сертификат в списке **Сертификаты закрытых ключей**. Если импорт завершается ошибкой, сертификат не соответствует [требованиям для Службы приложений](#private-certificate-requirements).
 
 ![Импорт сертификата Key Vault завершен](./media/configure-ssl-certificate/import-app-service-cert-finished.png)
+
+> [!NOTE]
+> Если вы обновляете сертификат в Key Vault, используя новый сертификат, служба приложений автоматически синхронизирует его в течение 48 часов.
 
 > [!IMPORTANT] 
 > Чтобы защитить личный домен с помощью этого сертификата, необходимо создать привязку к сертификату. Следуйте инструкциям в разделе [Create binding](configure-ssl-bindings.md#create-binding) (Создание привязки).

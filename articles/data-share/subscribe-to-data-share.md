@@ -6,12 +6,12 @@ ms.author: jife
 ms.service: data-share
 ms.topic: tutorial
 ms.date: 08/14/2020
-ms.openlocfilehash: 104654a721912324cdc8ea636e8b4e75765e73f7
-ms.sourcegitcommit: bcda98171d6e81795e723e525f81e6235f044e52
+ms.openlocfilehash: ce47bc5e880f15eaa1bbf07477673d2475e5a10a
+ms.sourcegitcommit: de2750163a601aae0c28506ba32be067e0068c0c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/01/2020
-ms.locfileid: "89268899"
+ms.lasthandoff: 09/04/2020
+ms.locfileid: "89489924"
 ---
 # <a name="tutorial-accept-and-receive-data-using-azure-data-share"></a>Руководство по Прием и получение данных с помощью Azure Data Share  
 
@@ -41,7 +41,7 @@ ms.locfileid: "89268899"
 ### <a name="receive-data-into-a-sql-based-target"></a>Поступление данных в целевое расположение на основе SQL:
 
 * Разрешение на запись в базы данных на сервере SQL, которое присутствует в *Microsoft.Sql/servers/databases/write*. Это разрешение назначено роли участника. 
-* Разрешение на доступ управляемого удостоверения общего ресурса данных к Базе данных SQL Azure или Хранилищу данных SQL Azure. Это можно обеспечить следующим образом. 
+* Разрешение на доступ управляемого удостоверения общего ресурса данных к Базе данных SQL Azure или Azure Synapse Analytics. Это можно обеспечить следующим образом. 
     1. Укажите себя в качестве администратора Azure Active Directory для сервера SQL.
     1. Подключитесь к хранилищу данных SQL Azure или базе данных SQL Azure с использованием Azure Active Directory.
     1. Используйте редактор запросов (предварительная версия) для выполнения следующего сценария, чтобы добавить управляемое удостоверение Data Share в качестве роли "db_datareader, db_datawriter, db_ddladmin" Необходимо подключиться с помощью Active Directory, а не аутентификации SQL Server. 

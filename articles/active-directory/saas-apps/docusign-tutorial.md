@@ -9,14 +9,14 @@ ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
 ms.topic: tutorial
-ms.date: 04/21/2020
+ms.date: 08/31/2020
 ms.author: jeedes
-ms.openlocfilehash: 6736edd615f99ed987e7d1618c449ff7a819c497
-ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
+ms.openlocfilehash: c91f9d38922cc1bddf252fde59291c2f233e1aa2
+ms.sourcegitcommit: 3be3537ead3388a6810410dfbfe19fc210f89fec
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88536076"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89650208"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-docusign"></a>Руководство по интеграции единого входа Azure Active Directory с DocuSign
 
@@ -47,7 +47,7 @@ ms.locfileid: "88536076"
 * DocuSign поддерживает **JIT**-подготовку пользователей.
 
 * DocuSign поддерживает [автоматическую подготовку пользователей](https://docs.microsoft.com/azure/active-directory/saas-apps/docusign-provisioning-tutorial).
-* После настройки DocuSign можете применить функцию управления сеансом, которая защищает от хищения конфиденциальных данных вашей организации и несанкционированного доступа к ним в реальном времени. Управление сеансом является расширением функции условного доступа. [Узнайте, как применять управление сеансами с помощью Microsoft Cloud App Security](https://docs.microsoft.com/cloud-app-security/proxy-deployment-aad).
+* После настройки DocuSign вы можете применить управление сеансами, которое защищает от хищения конфиденциальных данных вашей организации и несанкционированного доступа к ним в реальном времени. Управление сеансом является расширением функции условного доступа. [Узнайте, как применять управление сеансами с помощью Microsoft Cloud App Security](https://docs.microsoft.com/cloud-app-security/proxy-deployment-aad).
 
 ## <a name="adding-docusign-from-the-gallery"></a>Добавление DocuSign из коллекции
 
@@ -61,7 +61,7 @@ ms.locfileid: "88536076"
 1. Выберите **DocuSign** в области результатов и добавьте это приложение. Подождите несколько секунд, пока приложение не будет добавлено в ваш клиент.
 
 
-## <a name="configure-and-test-azure-ad-single-sign-on-for-docusign"></a>Настройка и проверка единого входа Azure AD в DocuSign
+## <a name="configure-and-test-azure-ad-sso-for-docusign"></a>Настройка и проверка единого входа Azure AD для DocuSign
 
 Настройте и проверьте единый вход Azure AD в DocuSign с помощью тестового пользователя **B.Simon**. Для обеспечения работы единого входа необходимо установить связь между пользователем Azure AD и соответствующим пользователем в DocuSign.
 
@@ -94,9 +94,12 @@ ms.locfileid: "88536076"
 
     `https://<subdomain>.docusign.com/organizations/<OrganizationID>/saml2`
 
-    c. В текстовом поле **URL-адрес ответа** введите URL-адрес в следующем формате:
+    c. В текстовое поле **URL-адрес ответа** введите URL-адрес, используя один из следующих шаблонов:
     
-    `https://<subdomain>.docusign.com/organizations/<OrganizationID>/saml2/login`
+    | URL-адрес ответа |
+    |-------------|
+    |`https://<subdomain>.docusign.com/organizations/<OrganizationID>/saml2/login/<IDPID>`|
+    |`https://<subdomain>.docusign.net/SAML/`|
 
     > [!NOTE]
     > Эти значения в квадратных скобках — заполнители. Замените их значениями в фактическом URL-адресе входа, идентификаторе и URL-адресе ответа. Эти сведения описаны в подразделе "Просмотр конечных точек SAML 2.0" далее в этом руководстве.

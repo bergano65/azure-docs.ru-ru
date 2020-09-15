@@ -3,12 +3,12 @@ title: Руководство по записи видео в облако на 
 description: Из этого руководства можно узнать, как с помощью службы Аналитики видеотрансляций на платформе Azure IoT Edge записывать видео в облако на основе событий и воспроизводить его.
 ms.topic: tutorial
 ms.date: 05/27/2020
-ms.openlocfilehash: cbd00bf5737e9833a860e154c629bb344416b6ca
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 05ee34770cacdcda270afced13373a61ba83e13a
+ms.sourcegitcommit: d0541eccc35549db6381fa762cd17bc8e72b3423
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87011793"
+ms.lasthandoff: 09/09/2020
+ms.locfileid: "89568576"
 ---
 # <a name="tutorial-event-based-video-recording-to-the-cloud-and-playback-from-the-cloud"></a>Руководство. Запись видео в облако на основе событий и его воспроизведение
 
@@ -62,7 +62,8 @@ ms.locfileid: "87011793"
 
 Кроме того, запись может активироваться при обнаружении определенного события службой логического вывода. В этом руководстве мы используем видео автомобилей, проезжающих по трассе, и будем записывать видео каждый раз при появлении грузовика.
 
-![Граф мультимедиа](./media/event-based-video-recording-tutorial/overview.png)
+> [!div class="mx-imgBorder"]
+> :::image type="content" source="./media/event-based-video-recording-tutorial/overview.svg" alt-text="Граф мультимедиа":::
 
 Схема представляет собой изображение [графа мультимедиа](media-graph-concept.md) и дополнительных модулей, которые позволяют реализовать описанный сценарий. Используются четыре модуля IoT Edge:
 
@@ -80,7 +81,8 @@ ms.locfileid: "87011793"
 
 Прежде чем приступать к работе, убедитесь, что вы выполнили 3-й пункт из раздела [Предварительные требования](#prerequisites). После того, как скрипт подготовки ресурсов завершит свою работу, выберите фигурные скобки, чтобы раскрыть структуру папок. В каталоге ~/clouddrive/lva-sample будет создано несколько файлов.
 
-![Параметры приложения](./media/quickstarts/clouddrive.png)
+> [!div class="mx-imgBorder"]
+> :::image type="content" source="./media/quickstarts/clouddrive.png" alt-text="Параметры приложения":::
 
 В этом руководстве нас интересуют нижеперечисленные файлы:
 
@@ -152,7 +154,8 @@ ms.locfileid: "87011793"
 
 С помощью Visual Studio Code выполните [эти инструкции](../../iot-edge/tutorial-develop-for-linux.md#build-and-push-your-solution), чтобы войти в Docker. Потом выберите **Создание и отправка решения IoT Edge**. Используйте файл src/edge/deployment.objectCounter.template.json для этого шага.
 
-![Создание и отправка решения IoT Edge](./media/event-based-video-recording-tutorial/build-push.png)
+> [!div class="mx-imgBorder"]
+> :::image type="content" source="./media/event-based-video-recording-tutorial/build-push.png" alt-text="Создание и отправка решения IoT Edge":::
 
 Это действие создает модуль objectCounter для подсчета объектов и отправки изображения в Реестр контейнеров Azure.
 
@@ -160,7 +163,8 @@ ms.locfileid: "87011793"
 
 Этот шаг создает манифест развертывания IoT Edge в файле src/edge/config/deployment.objectCounter.amd64.json. Щелкните этот файл правой кнопкой и выберите **Create Deployment for Single Device** (Создание развертывания для одного устройства).
 
-![Создание развертывания для одного устройства](./media/quickstarts/create-deployment-single-device.png)
+> [!div class="mx-imgBorder"]
+> :::image type="content" source="./media/quickstarts/create-deployment-single-device.png" alt-text="Создание развертывания для одного устройства":::
 
 Если вы раньше не работали с руководством по аналитике видеотрансляций в IoT Edge, среда Visual Studio Code предложит вам ввести строку подключения к Центру Интернета вещей. Ее можно скопировать из файла appsettings.json.
 
@@ -169,7 +173,8 @@ ms.locfileid: "87011793"
 На этом этапе начинается развертывание пограничных модулей на устройстве IoT Edge.
 В течении 30 секунд обновите центр Интернета вещей Azure в левом нижнем углу раздела Visual Studio Code. Вы увидите, что разворачиваются четыре модуля с именами lvaEdge, rtspsim, yolov3, and objectCounter.
 
-![Четыре развернутых модуля](./media/event-based-video-recording-tutorial/iot-hub.png)
+> [!div class="mx-imgBorder"]
+> :::image type="content" source="./media/event-based-video-recording-tutorial/iot-hub.png" alt-text="Четыре развернутых модуля":::
 
 ## <a name="prepare-for-monitoring-events"></a>Подготовка к мониторингу событий
 
@@ -179,9 +184,10 @@ ms.locfileid: "87011793"
 1. Разверните узел **Devices** (Устройства).
 1. Щелкните правой кнопкой мыши на файл lva-sample-device и выберите **Start Monitoring Built-in Event Endpoint** (Запуск мониторинга встроенной конечной точки события).
 
-   ![Запуск мониторинга встроенной конечной точки события](./media/quickstarts/start-monitoring-iothub-events.png)
-
-## <a name="run-the-program"></a>Запуск программы
+    > [!div class="mx-imgBorder"]
+    > :::image type="content" source="./media/quickstarts/start-monitoring-iothub-events.png" alt-text="Запуск мониторинга встроенной конечной точки события":::
+    
+    ## <a name="run-the-program"></a>Запуск программы
 
 1. В Visual Studio Code перейдите к файлу src/cloud-to-device-console-app/operations.json.
 
@@ -390,13 +396,14 @@ ms.locfileid: "87011793"
 1. Найдите свою учетную запись Служб мультимедиа среди ресурсов в составе вашей подписки. Откройте панель учетной записи.
 1. Выберите **ресурсы** в списке **Служб мультимедиа**.
 
-    ![Активы](./media/continuous-video-recording-tutorial/assets.png)
+    > [!div class="mx-imgBorder"]
+    > :::image type="content" source="./media/continuous-video-recording-tutorial/assets.png" alt-text="Непрерывная запись видео":::
 1. Вы найдете ресурс с именем sampleAssetFromEVR-LVAEdge-{DateTime}. Это имя указанное в свойстве outputLocation события RecordingStarted. Алгоритм создания этого имени определяется свойством assetNamePattern топологии.
 1. Выберите ресурс.
 1. На странице подробных сведений о ресурсе выберите команду **Создать** под текстовым полем **URL-адрес потоковой передачи**.
 
-    ![Новый актив](./media/continuous-video-recording-tutorial/new-asset.png)
-
+    > [!div class="mx-imgBorder"]
+    > :::image type="content" source="./media/continuous-video-recording-tutorial/new-asset.png" alt-text="Новый актив":::
 1. В открывшемся мастере примите параметры по умолчанию и выберите **Добавить**. Дополнительные сведения см. в статье о [воспроизведении видео](video-playback-concept.md).
 
     > [!TIP]

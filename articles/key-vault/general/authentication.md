@@ -7,18 +7,18 @@ ms.date: 08/27/2020
 ms.service: key-vault
 ms.subservice: general
 ms.topic: how-to
-ms.openlocfilehash: 1ef5b2229aadc4be46361a7319351a1f27b28b63
-ms.sourcegitcommit: 3246e278d094f0ae435c2393ebf278914ec7b97b
+ms.openlocfilehash: d247e657e93afd0c43ecee1154c542398304d8dd
+ms.sourcegitcommit: de2750163a601aae0c28506ba32be067e0068c0c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89378986"
+ms.lasthandoff: 09/04/2020
+ms.locfileid: "89481381"
 ---
 # <a name="authenticate-to-azure-key-vault"></a>Проверка подлинности в Azure Key Vault
 
 Azure Key Vault позволяет хранить секреты и управлять их распределением в централизованном и защищенном облачном репозитории. При этом нет необходимости хранить учетные данные в приложениях. Для доступа к этим секретам во время выполнения приложению достаточно пройти проверку подлинности в Key Vault.
 
-## <a name="app-identity-and-service-principals"></a>Удостоверение приложения и субъекты-службы
+## <a name="app-identity-and-security-principals"></a>Удостоверение приложения и субъекты безопасности
 
 Проверка подлинности в Key Vault работает в сочетании со службой [Azure Active Directory (Azure AD)](/azure/active-directory/fundamentals/active-directory-whatis), которая отвечает за проверку подлинности удостоверений любого предоставленного **субъекта безопасности**.
 
@@ -40,7 +40,7 @@ Azure Key Vault позволяет хранить секреты и управл
 
 * Если вы не можете использовать управляемое удостоверение, **зарегистрируйте** приложение в клиенте Azure AD, как описано в статье [Краткое руководство. Регистрация приложения с помощью платформы удостоверений Майкрософт](/azure/active-directory/develop/quickstart-register-app). Кроме того, при регистрации создается второй объект приложения, который представляет это приложение для всех клиентов.
 
-## <a name="authorize-a-service-principal-to-access-key-vault"></a>Авторизация доступа к Key Vault для субъекта-службы
+## <a name="authorize-a-security-principal-to-access-key-vault"></a>Авторизация доступа к Key Vault для субъекта безопасности
 
 Key Vault поддерживает два отдельных уровня авторизации.
 

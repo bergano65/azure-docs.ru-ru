@@ -6,15 +6,15 @@ author: msmbaldwin
 tags: azure-resource-manager
 ms.service: key-vault
 ms.subservice: general
-ms.topic: overview
+ms.topic: reference
 ms.date: 07/27/2020
 ms.author: mbaldwin
-ms.openlocfilehash: b469ea0d0a91cc4ca7f0602dffbcc63b31c60855
-ms.sourcegitcommit: 02ca0f340a44b7e18acca1351c8e81f3cca4a370
+ms.openlocfilehash: 78d0f483bb18213fa7d6718f15dd77733a10049c
+ms.sourcegitcommit: 1fe5127fb5c3f43761f479078251242ae5688386
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/19/2020
-ms.locfileid: "88588370"
+ms.lasthandoff: 09/14/2020
+ms.locfileid: "90069362"
 ---
 # <a name="whats-new-for-azure-key-vault"></a>Новые возможности Azure Key Vault
 
@@ -36,6 +36,7 @@ ms.locfileid: "88588370"
 - Переход для служб Azure Active Directory (Azure AD) начнется 7 июля 2020 г.
 - Все новые конечные точки TLS/SSL Azure содержат обновленные сертификаты, связанные с новыми корневыми ЦС. 
 - Переход для существующих конечных точек Azure начнется 13 августа 2020 г. и будет завершен 26 октября 2020 г.
+- [Центр Интернета вещей Azure](https://azure.microsoft.com/services/iot-hub) и [DPS](/azure/iot-dps/) будут связаны с корневым ЦС Baltimore CyberTrust, но их промежуточные ЦС изменятся. [Щелкните здесь, чтобы узнать больше.](https://techcommunity.microsoft.com/t5/internet-of-things/azure-iot-tls-changes-are-coming-and-why-you-should-care/ba-p/1658456)
 
 > [!IMPORTANT]
 > Возможно, клиентам потребуется обновить свои приложения после этого изменения, чтобы предотвратить сбои при попытке подключения к службам Azure. 

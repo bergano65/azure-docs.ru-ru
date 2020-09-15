@@ -8,12 +8,12 @@ ms.subservice: edge
 ms.topic: how-to
 ms.date: 08/28/2020
 ms.author: alkohli
-ms.openlocfilehash: 464c0fee31f86ba6ffa1dbecc7b2dd659cd86685
-ms.sourcegitcommit: bcda98171d6e81795e723e525f81e6235f044e52
+ms.openlocfilehash: c633cc973cb9e4d4f0375dec638e278c48c6709c
+ms.sourcegitcommit: 206629373b7c2246e909297d69f4fe3728446af5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/01/2020
-ms.locfileid: "89255534"
+ms.lasthandoff: 09/06/2020
+ms.locfileid: "89500238"
 ---
 # <a name="deploy-vms-on-your-azure-stack-edge-gpu-device-using-azure-cli-and-python"></a>Развертывание виртуальных машин на устройстве GPU Azure Stack Edge с помощью Azure CLI и Python
 
@@ -60,13 +60,13 @@ ms.locfileid: "89255534"
 
     2. Включите службы вычислений на сетевом интерфейсе. Azure Stack Edge создает виртуальный коммутатор, соответствующий этому сетевому интерфейсу, и управляет им.
 
-    Если вы решили использовать другой сетевой интерфейс для служб вычислений, обязательно сделайте следующее:
+    <!--If you decide to use another network interface for compute, make sure that you:
 
-    - Удалите все виртуальные машины, развернутые с помощью Azure Resource Manager.
+    - Delete all the VMs that you have deployed using Azure Resource Manager.
 
-    - Удалите все виртуальные сетевые интерфейсы и виртуальную сеть, связанную с этим сетевым интерфейсом.
+    - Delete all virtual network interfaces and the virtual network associated with this network interface.
 
-    - Теперь вы можете включить другой сетевой интерфейс для служб вычислений.
+    - You can now enable another network interface for compute.-->
 
 3. Создайте и установите все сертификаты на устройстве Azure Stack Edge и в надежном хранилище клиента (см. раздел [Шаг 2. Создание и установка сертификатов](azure-stack-edge-j-series-connect-resource-manager.md#step-2-create-and-install-certificates)).
 
@@ -342,7 +342,8 @@ ms.locfileid: "89255534"
    ]
    PS C:\Program Files (x86)\Microsoft SDKs\Azure\CLI2>
    ```
-
+   Запишите значения `id` и `tenantId`, так как они соответствуют идентификатору подписки и идентификатору арендатора Azure Resource Manager соответственно и будут использоваться на следующем шаге.
+       
    Следующие переменные среды нужно настроить в качестве *субъекта-службы*:
 
    ```
@@ -352,7 +353,7 @@ ms.locfileid: "89255534"
    $ENV:ARM_SUBSCRIPTION_ID = "A4257FDE-B946-4E01-ADE7-674760B8D1A3"
    ```
 
-   Идентификатор арендатора Azure Resource Manager, идентификатор клиента Azure Resource Manager и идентификатор подписки Azure Resource Manager прописаны в коде и являются общими для всех устройств Azure Stack Edge. Секрет клиента Azure Resource Manager — это указанный пароль Azure Resource Manager.
+   Идентификатор клиента Azure Resource Manager задан непосредственно в коде. Идентификатор арендатора и идентификатор подписки Azure Resource Manager указаны в выходных данных команды `az login`, которую вы выполнили ранее. Секрет клиента Azure Resource Manager — это указанный пароль Azure Resource Manager.
 
    Дополнительные сведения см. в статье [Установка пароля Azure Resource Manager на устройстве GPU Azure Stack Edge](azure-stack-edge-j-series-set-azure-resource-manager-password.md).
 

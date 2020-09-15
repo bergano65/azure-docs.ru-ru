@@ -1,6 +1,6 @@
 ---
-title: С помощью этого шаблона Azure Resource Manager вы сможете развернуть закрытую конечную точку для веб-приложения.
-description: Узнайте, как с помощью шаблона ARM развернуть частную конечную точку для веб-приложения
+title: Использование шаблона Azure Resource Manager для развертывания частной конечной точки для веб-приложения
+description: Узнайте, как с помощью шаблона ARM развернуть частную конечную точку для веб-приложения.
 author: ericgre
 ms.assetid: 49e460d0-7759-4ceb-b5a4-f1357e4fde56
 ms.topic: sample
@@ -8,16 +8,16 @@ ms.date: 07/08/2020
 ms.author: ericg
 ms.service: app-service
 ms.workload: web
-ms.openlocfilehash: ff2d59ed569037f34e24a69ffafa0df237a3de34
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.openlocfilehash: acf7198477ce0c55f9321fd3f8e57294a60c0961
+ms.sourcegitcommit: 3be3537ead3388a6810410dfbfe19fc210f89fec
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86524843"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89652013"
 ---
-# <a name="create-an-app-service-app-and-deploy-private-endpoint-using-azure-resource-manager-template"></a>Создание приложения Службы приложений и развертывание частной конечной точки с помощью шаблона ARM
+# <a name="create-an-app-service-app-and-deploy-a-private-endpoint-by-using-an-azure-resource-manager-template"></a>Создание приложения Службы приложений и развертывание частной конечной точки с помощью шаблона Azure Resource Manager
 
-В рамках этого краткого руководства для создания веб-приложения и предоставления доступа к нему с помощью частной конечной точки используется шаблон Azure Resource Manager.
+В рамках этого краткого руководства для создания веб-приложения и предоставления доступа к нему с помощью частной конечной точки используется шаблон Azure Resource Manager (ARM).
 
 [!INCLUDE [About Azure Resource Manager](../../../includes/resource-manager-quickstart-introduction.md)]
 
@@ -37,13 +37,10 @@ ms.locfileid: "86524843"
 
 Ниже показано, как развернуть шаблон Azure Resource Manager в Azure.
 
-1. Выберите элемент **Развертывание в Azure**, чтобы войти в Azure и открыть шаблон. Этот шаблон создает виртуальную сеть, веб-приложение, частную конечную точку и частную зону DNS.
-
-   [Развертывание в Azure](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-quickstart-templates%2Fmaster%2F101-private-endpoint-webapp%2Fazuredeploy.json)
-
+1. Чтобы войти в Azure и открыть шаблон, щелкните эту ссылку:  [Развертывание в Azure](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-quickstart-templates%2Fmaster%2F101-private-endpoint-webapp%2Fazuredeploy.json). Этот шаблон создает виртуальную сеть, веб-приложение, частную конечную точку и частную зону DNS.
 2. Выберите или создайте группу ресурсов.
-3. Введите имя веб-приложения, план службы приложений и частную конечную точку.
-5. Ознакомьтесь с условиями. Если вы согласны с ними, выберите "Я принимаю указанные выше условия" > "Покупка". Развертывание может занять несколько минут.
+3. Укажите имя веб-приложения, план службы приложений и частную конечную точку.
+5. Ознакомьтесь с заявлением об условиях использования. Если вы согласны с ними, выберите **Я принимаю указанные выше условия** > **Покупка**. Развертывание может занять несколько минут.
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 
@@ -57,4 +54,4 @@ Remove-AzResourceGroup -Name <your resource group name>
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- Дополнительные шаблоны Azure Resource Manager для веб-приложений Службы приложений Azure можно найти на [странице примеров шаблонов ARM](../samples-resource-manager-templates.md).
+- Дополнительные шаблоны Azure Resource Manager для веб-приложений Службы приложений Azure можно найти в статье [Шаблоны Azure Resource Manager для Службы приложений](../samples-resource-manager-templates.md).

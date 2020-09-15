@@ -10,18 +10,18 @@ ms.subservice: general
 ms.topic: how-to
 ms.date: 11/11/2019
 ms.author: mbaldwin
-ms.openlocfilehash: c0121c42c5d498aa79109c874981b9de0f8f4b7c
-ms.sourcegitcommit: 02ca0f340a44b7e18acca1351c8e81f3cca4a370
+ms.openlocfilehash: 2781ef69ce85e82dab45a9f890ef5e6862949d98
+ms.sourcegitcommit: 07166a1ff8bd23f5e1c49d4fd12badbca5ebd19c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/19/2020
-ms.locfileid: "88588880"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90087989"
 ---
 # <a name="use-logic-apps-to-receive-email-about-status-changes-of-key-vault-secrets"></a>Настройка отправки сообщений об изменении состояния секретов в хранилище ключей с помощью Logic Apps
 
 В этом руководстве вы узнаете, как отвечать на события Azure Key Vault, получаемые через [Сетку событий Azure](../../event-grid/index.yml), с помощью [Azure Logic Apps](../../logic-apps/index.yml). По завершении работы с этим руководством у вас будет приложение логики Azure, настроенное на отправку уведомлений электронной почты каждый раз, когда в Azure Key Vault создается секрет.
 
-Общие сведения об интеграции Azure Key Vault и службы "Сетка событий Azure" см. в статье [Tutorial: Monitoring Key Vault with Azure Event Grid (preview)](event-grid-overview.md) (Учебник по мониторингу Key Vault с помощью службы "Сетка событий Azure" (предварительная версия)).
+См. сведения об интеграции Azure Key Vault с Сеткой событий Azure в статье [Мониторинг Key Vault с помощью службы Сетки событий Azure](event-grid-overview.md).
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -56,7 +56,7 @@ ms.locfileid: "88588880"
 1. Введите в строку поиска **электронная почта**. Найдите и выберите соединитель, соответствующий поставщику услуг электронной почты. В этом руководстве используется **Office 365 Outlook**. Шаги для других поставщиков услуг электронной почты схожи.
 1. Выберите действие **Отправка электронной почты (V2)**.
 
-   ![Конструктор Logic Apps — добавление сообщения](../media/eventgrid-logicappdesigner3.png)
+   ![Конструктор приложения логики — отправка электронной почты](../media/eventgrid-logicappdesigner3.png)
 
 1. Создайте шаблон сообщения:
     - **Кому.** Введите адрес электронной почты для получения электронных уведомлений. В этом уроке используйте учетную запись электронной почты, к которой у вас есть доступ для тестирования.
@@ -64,18 +64,18 @@ ms.locfileid: "88588880"
 
     Ваш шаблон сообщения может выглядеть следующим образом:
 
-    ![Конструктор Logic Apps — добавление сообщения](../media/eventgrid-logicappdesigner4.png)
+    ![Конструктор приложения логики — текст сообщения](../media/eventgrid-logicappdesigner4.png)
 
 8. Щелкните **Сохранить как**.
 9. Введите **имя** для нового приложения логики и щелкните **Создать**.
     
-    ![Конструктор Logic Apps — добавление сообщения](../media/eventgrid-logicappdesigner5.png)
+    ![Конструктор приложений логики — создание](../media/eventgrid-logicappdesigner5.png)
 
 ## <a name="test-and-verify"></a>Тестирование и проверка
 
 1.  Перейдите в хранилище ключей на портале Azure и выберите **События > Подписки на события**.  Проверка создания новой подписки
     
-    ![Конструктор Logic Apps — добавление сообщения](../media/eventgrid-logicapps-kvnewsubs.png)
+    ![Конструктор приложения логики — тестирование и проверка](../media/eventgrid-logicapps-kvnewsubs.png)
 
 1.  Перейдите в хранилище ключей, выберите **Секреты** и щелкните **+ Создать или импортировать**. Создайте секрет в целях тестирования, назовите ключ и оставьте для остальных параметров значения по умолчанию.
 
@@ -87,8 +87,8 @@ ms.locfileid: "88588880"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- Общие сведения. [Мониторинг Key Vault с помощью службы "Сетка событий Azure" (предварительная версия)](event-grid-overview.md)
+- Общие сведения. [Мониторинг Key Vault с помощью Сетки событий Azure](event-grid-overview.md)
 - Руководство. [Получение уведомлений хранилища ключей и реагирование на них с помощью Сетки событий Azure (предварительная версия)](event-grid-tutorial.md)
-- [Схема событий службы "Сетка событий Azure" для Azure Key Vault (предварительная версия)](../../event-grid/event-schema-key-vault.md)
+- [Схема событий Сетки событий Azure для Azure Key Vault](../../event-grid/event-schema-key-vault.md)
 - Дополнительные сведения о службе "Сетка событий" Azure см. [здесь](../../event-grid/index.yml).
 - Дополнительные сведения о компоненте Logic Apps службы приложений Azure см. [здесь](../../logic-apps/index.yml).

@@ -2,14 +2,14 @@
 author: tfitzmac
 ms.service: azure-resource-manager
 ms.topic: include
-ms.date: 02/24/2020
+ms.date: 09/01/2020
 ms.author: tomfitz
-ms.openlocfilehash: f0ab7c2efc499c43245680e56a7e5ca1b5261397
-ms.sourcegitcommit: 6fc156ceedd0fbbb2eec1e9f5e3c6d0915f65b8e
+ms.openlocfilehash: 949118214851c3eceffd8c1d638a4093bdf7f366
+ms.sourcegitcommit: 58d3b3314df4ba3cabd4d4a6016b22fa5264f05a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/21/2020
-ms.locfileid: "88748845"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89304079"
 ---
 | Ресурс | Ограничение |
 | --- | --- |
@@ -22,7 +22,7 @@ ms.locfileid: "88748845"
 | Длина ключа тега |512 |
 | Длина значения тега |256 |
 
-<sup>1</sup> Начиная с июня 2020 года развертывания будут автоматически удаляться из журнала, так как вы приближаетесь к ограничению. Удаление записи из журнала развертывания не влияет на развернутые ресурсы. См. статью [Автоматическое удаление из журнала развертывания](../articles/azure-resource-manager/templates/deployment-history-deletions.md).
+<sup>1</sup> Развертывания автоматически удаляются из журнала, когда вы приближаетесь к ограничению. Удаление записи из журнала развертывания не влияет на развернутые ресурсы. См. статью [Автоматическое удаление из журнала развертывания](../articles/azure-resource-manager/templates/deployment-history-deletions.md).
 
 #### <a name="template-limits"></a>Ограничения шаблонов
 

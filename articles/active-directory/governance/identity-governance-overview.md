@@ -16,12 +16,12 @@ ms.date: 06/18/2020
 ms.author: ajburnle
 ms.reviewer: markwahl-msft
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 711903b106bf6ff7d8f669e2b1d3489057e09fbc
-ms.sourcegitcommit: 9c3cfbe2bee467d0e6966c2bfdeddbe039cad029
+ms.openlocfilehash: 5c100c1b65b2af1201dfc3b52a6d90b2ed26d454
+ms.sourcegitcommit: 4a7a4af09f881f38fcb4875d89881e4b808b369b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/24/2020
-ms.locfileid: "88783303"
+ms.lasthandoff: 09/04/2020
+ms.locfileid: "89460820"
 ---
 # <a name="what-is-azure-ad-identity-governance"></a>Что такое Azure AD Identity Governance?
 
@@ -68,7 +68,7 @@ ms.locfileid: "88783303"
 
 ![Жизненный цикл привилегированного доступа](./media/identity-governance-overview/privileged-access-lifecycle.png)
 
-[Azure AD Privileged Identity Management (PIM)](../privileged-identity-management/pim-configure.md) предоставляет целый ряд средств управления, предназначенных для защиты прав доступа к ресурсам в Azure AD, Azure и других службах Microsoft Online Services.  JIT-доступ и оповещения об изменении ролей, реализованные Azure AD PIM, в сочетании с многофакторной проверкой подлинности и условным доступом, обеспечивают комплексный набор средств управления для защиты ресурсов компании (каталог, Office 365 и ролей ресурсов Azure). Как и для других видов доступа, с помощью проверок доступа можно настроить регулярные сертификации прав доступа для всех пользователей с ролями администратора.
+[Azure AD Privileged Identity Management (PIM)](../privileged-identity-management/pim-configure.md) предоставляет целый ряд средств управления, предназначенных для защиты прав доступа к ресурсам в Azure AD, Azure и других службах Microsoft Online Services.  JIT-доступ и оповещения об изменении ролей, реализованные Azure AD PIM, в сочетании с многофакторной проверкой подлинности и условным доступом, обеспечивают комплексный набор средств управления для защиты ресурсов компании (каталог, Microsoft 365 и ролей ресурсов Azure). Как и для других видов доступа, с помощью проверок доступа можно настроить регулярные сертификации прав доступа для всех пользователей с ролями администратора.
 
 ## <a name="getting-started"></a>Начало работы
 

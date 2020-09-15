@@ -1,6 +1,6 @@
 ---
 title: Краткое руководство. Создание Фабрики данных Azure с помощью Python
-description: Создайте фабрику данных Azure для копирования данных из одного расположения в хранилище BLOB-объектов Azure в другое.
+description: Использование Фабрики данных Azure для копирования данных из одного расположения в хранилище BLOB-объектов Azure в другое.
 services: data-factory
 documentationcenter: ''
 author: djpmsft
@@ -13,12 +13,12 @@ ms.devlang: python
 ms.topic: quickstart
 ms.date: 01/22/2018
 ms.custom: seo-python-october2019, devx-track-python
-ms.openlocfilehash: 7fd82e83c97c933173f168b7d79d5b6d6a3243b9
-ms.sourcegitcommit: dea88d5e28bd4bbd55f5303d7d58785fad5a341d
+ms.openlocfilehash: e511b8b5505f1fa8713d81d0ce959df32ef28503
+ms.sourcegitcommit: bf1340bb706cf31bb002128e272b8322f37d53dd
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87873302"
+ms.lasthandoff: 09/03/2020
+ms.locfileid: "89439118"
 ---
 # <a name="quickstart-create-a-data-factory-and-pipeline-using-python"></a>Краткое руководство. Создание фабрики данных и конвейера с помощью Python
 
@@ -32,7 +32,7 @@ ms.locfileid: "87873302"
 
 Фабрика данных Azure — это облачная служба интеграции данных, которая позволяет создавать управляемые данными рабочие процессы для оркестрации и автоматизации перемещения и преобразования данных. С помощью Фабрики данных Azure можно создавать и включать в расписание управляемые данными рабочие процессы, называемые конвейерами.
 
-Конвейеры могут принимать данные из разрозненных хранилищ данных. Конвейеры обрабатывают или преобразовывают эти данные с помощью служб вычислений (например, Azure HDInsight Hadoop, Spark, Azure Data Lake Analytics и машинного обучения Azure). Конвейеры публикуют выходные данные в хранилища данных (например, хранилище данных SQL Azure) для использования приложениями бизнес-аналитики.
+Конвейеры могут принимать данные из разрозненных хранилищ данных. Конвейеры обрабатывают или преобразовывают эти данные с помощью служб вычислений (например, Azure HDInsight Hadoop, Spark, Azure Data Lake Analytics и машинного обучения Azure). Конвейеры публикуют выходные данные в хранилища данных, например Azure Synapse Analytics (ранее — Хранилище данных SQL) для использования приложениями бизнес-аналитики.
 
 ## <a name="prerequisites"></a>Предварительные требования
 

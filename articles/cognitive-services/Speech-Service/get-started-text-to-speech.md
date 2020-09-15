@@ -1,5 +1,5 @@
 ---
-title: Краткое руководство. Синтез речи с помощью службы "Речь"
+title: Краткое руководство по преобразованию текста в речь. Служба "Речь"
 titleSuffix: Azure Cognitive Services
 description: Узнайте, как использовать пакет SDK службы "Речь" для преобразования текста в речь. Из этого краткого руководства вы узнаете о создании объектов и конструктивных шаблонах, поддерживаемых форматах выходного аудиопотока, CLI службы "Речь" и пользовательских параметрах конфигурации для синтеза речи.
 services: cognitive-services
@@ -8,18 +8,19 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: speech-service
 ms.topic: quickstart
-ms.date: 08/11/2020
+ms.date: 09/01/2020
 ms.author: trbye
-ms.custom: devx-track-python, devx-track-javascript, devx-track-csharp
+ms.custom: devx-track-python, devx-track-javascript, devx-track-csharp, cog-serv-seo-aug-2020
 zone_pivot_groups: speech-full-stack
-ms.openlocfilehash: 12ee7fbbd7699d09deae85971ffe411e115609ec
-ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
+keywords: Преобразование текста в речь
+ms.openlocfilehash: 79409f95d698e015d15d9131dcf1f27b34b03343
+ms.sourcegitcommit: 5a3b9f35d47355d026ee39d398c614ca4dae51c6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88934704"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89400924"
 ---
-# <a name="get-started-with-speech-synthesis"></a>Начало работы со службой синтеза речи
+# <a name="get-started-with-text-to-speech"></a>Начало работы с преобразованием текста в речь
 
 Из этого краткого руководства вы узнаете, как работать с распространенными конструктивными шаблонами для синтеза текста в речь, используя пакет SDK службы "Речь". Вы начнете с основных настроек и синтеза, а затем перейдете к более сложным примерам для разработки пользовательских приложений, в том числе к таким задачам:
 

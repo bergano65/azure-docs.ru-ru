@@ -4,16 +4,18 @@ description: Узнайте о новых и недавних обновлени
 ms.topic: overview
 ms.date: 04/19/2020
 ms.custom: mvc
-ms.openlocfilehash: e32c7433649cc6716a57a6aa2384c1e2d266e102
-ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
+ms.openlocfilehash: 019c04c5820a82b7910b6755ff69e5dfbe7eb66c
+ms.sourcegitcommit: 9c262672c388440810464bb7f8bcc9a5c48fa326
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88927177"
+ms.lasthandoff: 09/03/2020
+ms.locfileid: "89421617"
 ---
 # <a name="whats-new-in-azure-migrate"></a>Новые возможности в службе "Миграция Azure"
 
 С помощью [службы "Миграция Azure"](migrate-services-overview.md) можно обнаруживать, оценивать и переносить локальные серверы, приложения и данные в облако Microsoft Azure. В этой статье описаны новые выпуски и функции службы "Миграция Azure".
+## <a name="update-september-2020"></a>Обновление (сентябрь 2020 г.)
+- Теперь служба "Миграция Azure" позволяет переносить серверы в Зоны доступности
 
 ## <a name="update-august-2020"></a>Обновление (август 2020 г.)
 

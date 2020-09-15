@@ -2,15 +2,15 @@
 author: DCtheGeek
 ms.service: azure-policy
 ms.topic: include
-ms.date: 07/22/2020
+ms.date: 09/04/2020
 ms.author: dacoulte
 ms.custom: generated
-ms.openlocfilehash: 5cdecb302c57a98bbd629bca538169e9dc50a07c
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 640a70c2bb419e65620c19f6dc986b0c602bf1e7
+ms.sourcegitcommit: de2750163a601aae0c28506ba32be067e0068c0c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87093842"
+ms.lasthandoff: 09/04/2020
+ms.locfileid: "89481715"
 ---
 Заголовок каждого встроенного определения политики связан с определением политики на портале Azure. Перейдите по ссылке в столбце **Версия политики**, чтобы просмотреть исходный код в [репозитории GitHub для службы "Политика Azure"](https://github.com/Azure/azure-policy).
 

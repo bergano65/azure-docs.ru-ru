@@ -10,12 +10,12 @@ ms.subservice: general
 ms.topic: how-to
 ms.date: 08/12/2019
 ms.author: mbaldwin
-ms.openlocfilehash: e9507525dc2c52f584bd7883a12da401b5999f50
-ms.sourcegitcommit: 02ca0f340a44b7e18acca1351c8e81f3cca4a370
+ms.openlocfilehash: 0ed50b8d128386008a73eb4d1a8b412a42fdb945
+ms.sourcegitcommit: de2750163a601aae0c28506ba32be067e0068c0c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/19/2020
-ms.locfileid: "88585922"
+ms.lasthandoff: 09/04/2020
+ms.locfileid: "89485461"
 ---
 # <a name="azure-key-vault-logging"></a>Ведение журнала Azure Key Vault
 
@@ -36,7 +36,7 @@ ms.locfileid: "88585922"
 > В этой статье приведены инструкции по обновлению журнала ведения диагностики с помощью Azure PowerShell. Ведение таких журналов можно также настроить с помощью Azure Monitor в разделе **Журналы диагностики** на портале Azure. 
 >
 
-Общие сведения о Key Vault см. в статье [Что такое хранилище ключей Azure?](overview.md) Сведения о регионах доступности Key Vault можно узнать на [странице цен](https://azure.microsoft.com/pricing/details/key-vault/).
+Общие сведения о Key Vault см. в статье [Что такое хранилище ключей Azure?](overview.md) Сведения о регионах доступности Key Vault можно узнать на [странице цен](https://azure.microsoft.com/pricing/details/key-vault/). Сведения об использовании Azure Monitor для Key Vault см. [здесь](https://docs.microsoft.com/azure/azure-monitor/insights/key-vault-insights-overview).
 
 ## <a name="prerequisites"></a>Предварительные требования
 

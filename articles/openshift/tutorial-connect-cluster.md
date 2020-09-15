@@ -6,12 +6,12 @@ ms.author: suvetriv
 ms.topic: tutorial
 ms.service: container-service
 ms.date: 04/24/2020
-ms.openlocfilehash: 226cf29b1a94b4508a9d68f02b7400a18eba4bc2
-ms.sourcegitcommit: 02ca0f340a44b7e18acca1351c8e81f3cca4a370
+ms.openlocfilehash: 24990087507dee09bc38418f40c72911386e5efb
+ms.sourcegitcommit: 4feb198becb7a6ff9e6b42be9185e07539022f17
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/19/2020
-ms.locfileid: "88587860"
+ms.lasthandoff: 09/04/2020
+ms.locfileid: "89469122"
 ---
 # <a name="tutorial-connect-to-an-azure-red-hat-openshift-4-cluster"></a>Руководство по подключению к кластеру Azure Red Hat OpenShift 4
 
@@ -23,9 +23,9 @@ ms.locfileid: "88587860"
 
 ## <a name="before-you-begin"></a>Перед началом
 
-Создание кластера Azure Red Hat OpenShift описывалось в предыдущих учебниках. Если вы не выполнили эти действия, вы можете начать с руководства 1 [Создание кластера Azure Red Hat OpenShift](tutorial-create-cluster.md).
+Создание кластера Azure Red Hat OpenShift описывалось в предыдущих учебниках. Если вы не выполнили эти действия, вы можете начать с [руководства 1 по созданию кластера Azure Red Hat OpenShift 4](tutorial-create-cluster.md).
 
-Если вы решили установить и использовать интерфейс командной строки локально, то для работы с этим руководством вам понадобится Azure CLI 2.6.0 или более поздней версии. Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI 2.0](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest).
+Если вы решили установить и использовать интерфейс командной строки локально, то для работы с этим руководством вам понадобится Azure CLI 2.6.0 или более поздней версии. Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI 2.0](/cli/azure/install-azure-cli?view=azure-cli-latest).
 
 ## <a name="connect-to-the-cluster"></a>Подключение к кластеру
 
@@ -37,7 +37,7 @@ az aro list-credentials \
   --resource-group $RESOURCEGROUP
 ```
 
-В следующем примере вывода показано, что пароль будет находиться в `kubeadminPassword`.
+В следующем примере вывода показано, какой пароль будет указан в `kubeadminPassword`.
 
 ```json
 {
@@ -46,7 +46,7 @@ az aro list-credentials \
 }
 ```
 
-URL-адрес консоли кластера можно найти, выполнив следующую команду, которая будет выглядеть вот так: `https://console-openshift-console.apps.<random>.<region>.aroapp.io/`
+URL-адрес консоли кластера можно узнать, выполнив следующую команду. URL-адрес должен выглядеть вот так: `https://console-openshift-console.apps.<random>.<region>.aroapp.io/`.
 
 ```azurecli-interactive
  az aro show \

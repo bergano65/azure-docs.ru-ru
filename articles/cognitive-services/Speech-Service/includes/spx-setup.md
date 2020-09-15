@@ -5,12 +5,12 @@ ms.service: cognitive-services
 ms.topic: include
 ms.date: 05/15/2020
 ms.author: v-demjoh
-ms.openlocfilehash: c92d6569e3c92d3bad3575599283c7796bd78225
-ms.sourcegitcommit: d8b8768d62672e9c287a04f2578383d0eb857950
+ms.openlocfilehash: 2a0cb34c23ebee5ae16a8c0a272055880ceed388
+ms.sourcegitcommit: de2750163a601aae0c28506ba32be067e0068c0c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/11/2020
-ms.locfileid: "88068609"
+ms.lasthandoff: 09/04/2020
+ms.locfileid: "89494261"
 ---
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -22,9 +22,8 @@ ms.locfileid: "88068609"
 
 Вот как установить интерфейс командной строки службы "Речь" в Windows:
 
-1. Установите [.NET Framework 4.7](https://dotnet.microsoft.com/download/dotnet-framework/net471) или [.NET Core 3.0](https://dotnet.microsoft.com/download/dotnet-core/3.0).
-2. Скачайте и распакуйте [ZIP-архив](https://aka.ms/speech/spx-zips.zip) интерфейса командной строки службы "Речь".
-3. Перейдите в извлеченный корневой каталог `spx-zips` и извлеките необходимый подкаталог (`spx-net471` для .NET Framework 4.7 или `spx-netcore-win-x64` для .NET Core 3.0 на ЦП с архитектурой x64).
+1. Скачайте и распакуйте [ZIP-архив](https://aka.ms/speech/spx-zips.zip) интерфейса командной строки службы "Речь".
+2. Перейдите в извлеченный корневой каталог `spx-zips` и извлеките необходимый подкаталог (`spx-net471` для .NET Framework 4.7 или `spx-netcore-win-x64` для .NET Core 3.0 на ЦП с архитектурой x64).
 
 В командной строке измените каталог на это расположение, а затем введите `spx`, чтобы открыть справку по интерфейсу командной строки службы "Речь".
 
@@ -53,11 +52,13 @@ ms.locfileid: "88068609"
 
 #### <a name="docker-install"></a>[Установка Docker](#tab/dockerinstall)
 
+> [!NOTE]
+> Нужно установить <a href="https://www.docker.com/get-started" target="_blank">Docker Desktop для своей платформы <span class="docon docon-navigate-external x-hidden-focus"></span></a>.
+
 Выполните следующие действия, чтобы установить интерфейс командной строки службы "Речь" в контейнере Docker:
 
-1. Установите и запустите [Docker Desktop для платформы](https://www.docker.com/get-started).
 1. В новой командной строке или в терминале введите следующую команду: `docker pull msftspeech/spx`.
-1. Введите эту команду. Вы должны увидеть справочную информацию по интерфейсу командной строки службы "Речь": `docker run -it --rm msftspeech/spx help`.
+2. Введите эту команду. Вы должны увидеть справочную информацию по интерфейсу командной строки службы "Речь": `docker run -it --rm msftspeech/spx help`.
 
 ### <a name="mount-a-directory-in-the-container"></a>Подключение каталога в контейнере
 

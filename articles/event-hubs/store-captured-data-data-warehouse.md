@@ -1,26 +1,26 @@
 ---
-title: Руководство по Перенос данных о событиях в Хранилище данных SQL (Центры событий Azure)
-description: Руководство по В этом руководстве показано, как записать данные из концентратора событий в хранилище данных SQL с помощью функции Azure, активируемой службой "Сетка событий".
+title: Руководство по переносу данных о событиях в Azure Synapse Analytics (Центры событий Azure)
+description: Руководство по В этом учебнике показано, как записать данные из концентратора событий в Azure Synapse Analytics с помощью функции Azure, активируемой службой "Сетка событий".
 services: event-hubs
 ms.date: 06/23/2020
 ms.topic: tutorial
 ms.custom: devx-track-csharp
-ms.openlocfilehash: b6b6466675c8fa258af8370798cadd88e3b25a83
-ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
+ms.openlocfilehash: b2a35647422c91d6859e1889f906ae512ce41a56
+ms.sourcegitcommit: bf1340bb706cf31bb002128e272b8322f37d53dd
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "88997835"
+ms.lasthandoff: 09/03/2020
+ms.locfileid: "89436618"
 ---
-# <a name="tutorial-migrate-captured-event-hubs-data-to-a-sql-data-warehouse-using-event-grid-and-azure-functions"></a>Руководство по Перенос собранных данных из Центров событий Azure в Хранилище данных SQL с помощью служб "Сетка событий" и "Функции Azure"
+# <a name="tutorial-migrate-captured-event-hubs-data-to-azure-synapse-analytics-using-event-grid-and-azure-functions"></a>Руководство по переносу собранных данных из Центров событий Azure в Azure Synapse Analytics с помощью служб "Сетка событий" и "Функции Azure"
 
-Функция [Сбор](./event-hubs-capture-overview.md) в концентраторах событий Azure — это самый простой способ автоматически доставить данные потоковой передачи из концентраторов событий в хранилище BLOB-объектов Azure или Azure Data Lake Store. Вы можете последовательно обрабатывать и доставлять данные в любые другие назначения хранения по своему усмотрению, например в хранилище данных SQL или Cosmos DB. В этом руководстве показано, как записать данные из концентратора событий в хранилище данных SQL с помощью функции Azure, активируемой службой [Сетка событий](../event-grid/overview.md).
+Функция [Сбор](./event-hubs-capture-overview.md) в концентраторах событий Azure — это самый простой способ автоматически доставить данные потоковой передачи из концентраторов событий в хранилище BLOB-объектов Azure или Azure Data Lake Store. Вы можете последовательно обрабатывать и доставлять данные в любые другие назначения хранения по своему усмотрению, например в Azure Synapse Analytics или Cosmos DB. В этом учебнике показано, как записать данные из концентратора событий в Azure Synapse Analytics с помощью функции Azure, активируемой службой [Сетка событий](../event-grid/overview.md).
 
 ![Visual Studio](./media/store-captured-data-data-warehouse/EventGridIntegrationOverview.PNG)
 
 - Сначала необходимо создать концентратор событий с включенной функцией **Сбор** и задать хранилище BLOB-объектов Azure как место назначения. Данные, созданные WindTurbineGenerator, потоком передаются в концентратор событий и автоматически записываются в службу хранилища Azure как файлы AVRO.
 - Далее нужно создать подписку "Сетка событий Azure" с пространством имен концентраторов событий в качестве источника и конечной точкой функции Azure в качестве целевого назначения.
-- Каждый раз, когда новый файл AVRO доставляется в большой двоичный объект в службе хранилища Azure с помощью функции "Сбор" концентраторов событий, служба "Сетка событий" уведомляет функцию Azure, предоставляя универсальный код ресурса (URI) большого двоичного объекта. Функция затем переносит данные из большого двоичного объекта в хранилище данных SQL.
+- Каждый раз, когда новый файл AVRO доставляется в большой двоичный объект в службе хранилища Azure с помощью функции "Сбор" концентраторов событий, служба "Сетка событий" уведомляет функцию Azure, предоставляя универсальный код ресурса (URI) большого двоичного объекта. Функция затем переносит данные из большого двоичного объекта в Azure Synapse Analytics.
 
 Вот какие действия выполняются в этом руководстве:
 
@@ -30,7 +30,7 @@ ms.locfileid: "88997835"
 > - Публикация кода в приложение-функцию.
 > - Создание подписки "Сетка событий" из приложения-функции
 > - Потоковая передача примера данных в концентратор событий.
-> - Проверка собранных данных в хранилище данных SQL.
+> - Проверка собранных данных в Azure Synapse Analytics
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -40,7 +40,7 @@ ms.locfileid: "88997835"
 - Скачайте пример решения в [репозитории Git](https://github.com/Azure/azure-event-hubs/tree/master/samples/DotNet/Azure.Messaging.EventHubs/EventHubsCaptureEventGridDemo). Этот пример состоит из следующих компонентов:
 
   - *WindTurbineDataGenerator* — простой издатель, который отправляет образцы данных ветровой турбины в концентратор событий с поддержкой функции "Сбор".
-  - *FunctionDWDumper* — функция Azure, которая получает уведомление Сетки событий, когда файл AVRO записывается в большой двоичный объект в службе хранилища Azure. Она получает путь универсального кода ресурса (URI) большого двоичного объекта, считывает его содержимое и помещает эти данные в хранилище данных SQL.
+  - *FunctionDWDumper* — функция Azure, которая получает уведомление Сетки событий, когда файл AVRO записывается в большой двоичный объект в службе хранилища Azure. Она получает путь универсального кода ресурса (URI) большого двоичного объекта, считывает его содержимое и помещает эти данные в Azure Synapse Analytics.
 
   Для этого примера используется новый пакет Azure.Messaging.EventHubs. Старый пример, в котором используется пакет Microsoft.Azure.EventHubs, можно найти [здесь](https://github.com/Azure/azure-event-hubs/tree/master/samples/e2e/EventHubsCaptureEventGridDemo).
 
@@ -53,7 +53,7 @@ ms.locfileid: "88997835"
 - план службы приложений Azure для размещения приложения-функции;
 - приложение-функцию для обработки записанных файлов событий;
 - логический север SQL Server для размещения хранилища данных;
-- Хранилище данных SQL для хранения перенесенных данных.
+- Azure Synapse Analytics для хранения перенесенных данных.
 
 В следующих разделах представлены команды Azure CLI и Azure PowerShell для развертывания инфраструктуры, необходимой для этого руководства. Перед запуском команд обновите имена следующих объектов: 
 
@@ -91,9 +91,9 @@ New-AzResourceGroup -Name rgDataMigration -Location westcentralus
 New-AzResourceGroupDeployment -ResourceGroupName rgDataMigration -TemplateUri https://raw.githubusercontent.com/Azure/azure-docs-json-samples/master/event-grid/EventHubsDataMigration.json -eventHubNamespaceName <event-hub-namespace> -eventHubName hubdatamigration -sqlServerName <sql-server-name> -sqlServerUserName <user-name> -sqlServerDatabaseName <database-name> -storageName <unique-storage-name> -functionAppName <app-name>
 ```
 
-### <a name="create-a-table-in-sql-data-warehouse"></a>Создание таблицы в хранилище данных SQL
+### <a name="create-a-table-in-azure-synapse-analytics"></a>Создание таблицы в Azure Synapse Analytics
 
-Создайте таблицу в хранилище данных SQL, запустив сценарий [CreateDataWarehouseTable.sql](https://github.com/Azure/azure-event-hubs/blob/master/samples/e2e/EventHubsCaptureEventGridDemo/scripts/CreateDataWarehouseTable.sql) с помощью [Visual Studio](../synapse-analytics/sql-data-warehouse/sql-data-warehouse-query-visual-studio.md), [SQL Server Management Studio](../synapse-analytics/sql-data-warehouse/sql-data-warehouse-query-ssms.md) или редактора запроса на портале. 
+Создайте таблицу в Azure Synapse Analytics, запустив сценарий [CreateDataWarehouseTable.sql](https://github.com/Azure/azure-event-hubs/blob/master/samples/e2e/EventHubsCaptureEventGridDemo/scripts/CreateDataWarehouseTable.sql) с помощью [Visual Studio](../synapse-analytics/sql-data-warehouse/sql-data-warehouse-query-visual-studio.md), [SQL Server Management Studio](../synapse-analytics/sql-data-warehouse/sql-data-warehouse-query-ssms.md) или редактора запроса на портале. 
 
 ```sql
 CREATE TABLE [dbo].[Fact_WindTurbineMetrics] (
@@ -148,7 +148,7 @@ WITH (CLUSTERED COLUMNSTORE INDEX, DISTRIBUTION = ROUND_ROBIN);
    ![Создание подписки](./media/store-captured-data-data-warehouse/set-subscription-values.png)
 
 ## <a name="generate-sample-data"></a>Создание примера данных  
-Вы завершили настройку концентратора событий, хранилища данных SQL, приложения-функции Azure и подписки "Сетка событий". Вы можете запустить WindTurbineDataGenerator.exe для генерации потоков данных в концентратор событий после обновления строки подключения и имени своего концентратора событий в исходном коде. 
+Вы завершили настройку концентратора событий, Azure Synapse Analytics, приложения-функции Azure и подписки "Сетка событий". Вы можете запустить WindTurbineDataGenerator.exe для генерации потоков данных в концентратор событий после обновления строки подключения и имени своего концентратора событий в исходном коде. 
 
 1. На портале выберите пространство имен концентратора событий. Выберите **Строки подключения**.
 
@@ -174,9 +174,9 @@ WITH (CLUSTERED COLUMNSTORE INDEX, DISTRIBUTION = ROUND_ROBIN);
 6. Создайте решение, а затем запустите приложение WindTurbineGenerator.exe. 
 
 ## <a name="verify-captured-data-in-data-warehouse"></a>Проверка собранных данных в хранилище данных
-Через пару минут запросите таблицу в хранилище данных SQL. Обратите внимание, что данные, созданные WindTurbineDataGenerator, были переданы потоком в концентратор событий, записаны в контейнер службы хранилища Azure, а затем перенесены в таблицу хранилища данных SQL с помощью приложения-функции Azure.  
+Через пару минут запросите таблицу в Azure Synapse Analytics. Обратите внимание, что данные, созданные WindTurbineDataGenerator, были переданы потоком в концентратор событий, записаны в контейнер службы хранилища Azure, а затем перенесены в таблицу Azure Synapse Analytics с помощью приложения-функции Azure.  
 
 ## <a name="next-steps"></a>Дальнейшие действия 
 Вы можете использовать мощные инструменты визуализации данных в хранилище данных, чтобы получить аналитические сведения.
 
-В этой статье описано, как использовать [Power BI с хранилищем данных SQL](/power-bi/connect-data/service-azure-sql-data-warehouse-with-direct-connect).
+В этой статье описано, как использовать [Power BI с Azure Synapse Analytics](/power-bi/connect-data/service-azure-sql-data-warehouse-with-direct-connect).

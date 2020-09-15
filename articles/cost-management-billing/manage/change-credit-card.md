@@ -9,12 +9,12 @@ ms.subservice: billing
 ms.topic: conceptual
 ms.date: 08/20/2020
 ms.author: banders
-ms.openlocfilehash: e5adf007294ea4be0f5716a4614e0639f840fa75
-ms.sourcegitcommit: 56cbd6d97cb52e61ceb6d3894abe1977713354d9
+ms.openlocfilehash: c7622c4916b186a39aad9dafb54a1e2404458794
+ms.sourcegitcommit: d0541eccc35549db6381fa762cd17bc8e72b3423
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/20/2020
-ms.locfileid: "88684938"
+ms.lasthandoff: 09/09/2020
+ms.locfileid: "89569362"
 ---
 # <a name="add-update-or-remove-a-credit-card-for-azure"></a>Добавление, обновление или удаление кредитной карты для Azure
 
@@ -190,7 +190,7 @@ ms.locfileid: "88684938"
 
 ### <a name="how-do-i-change-the-tax-id"></a>Как изменить код налогоплательщика?
 
-Чтобы добавить или обновить идентификатор налогоплательщика, обновите свой профиль в [Центре управления учетной записью Azure](https://account.azure.com/Profile), а затем выберите **Налоговая информация**. Этот код налогоплательщика используется для расчета налоговых льгот и отображается в счете.
+Чтобы добавить или обновить идентификатор налогоплательщика, обновите свой профиль на [портале Azure](https://portal.azure.com), а затем выберите **Налоговая информация**. Этот код налогоплательщика используется для расчета налоговых льгот и отображается в счете.
 
 ## <a name="check-the-type-of-your-account"></a>Проверка типа учетной записи
 

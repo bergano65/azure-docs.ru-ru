@@ -7,12 +7,12 @@ ms.service: stream-analytics
 ms.topic: tutorial
 ms.custom: mvc
 ms.date: 06/03/2019
-ms.openlocfilehash: 577a80f04ad186ab1575fa78db3fa59402d6058f
-ms.sourcegitcommit: 62717591c3ab871365a783b7221851758f4ec9a4
+ms.openlocfilehash: a265bc2ed131dc0bb69d89f767ab60225d30ee8e
+ms.sourcegitcommit: f845ca2f4b626ef9db73b88ca71279ac80538559
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/22/2020
-ms.locfileid: "83697397"
+ms.lasthandoff: 09/09/2020
+ms.locfileid: "89612054"
 ---
 # <a name="tutorial-analyze-phone-call-data-with-stream-analytics-and-visualize-results-in-power-bi-dashboard"></a>Руководство по Анализа данных телефонных звонков с помощью Stream Analytics и визуализация результатов на панели мониторинга Power BI
 
@@ -185,7 +185,7 @@ ms.locfileid: "83697397"
 
    ![Настройка выходных данных Stream Analytics](media/stream-analytics-manage-job/configure-stream-analytics-output.png)
 
-4. Когда вы нажмете кнопку **Авторизовать**, откроется всплывающее окно и вам будет предложено ввести учетные данные для проверки подлинности учетной записи Power BI. Когда авторизация будет выполнена успешно, **сохраните** параметры.
+4. Когда вы нажмете кнопку **Авторизовать**, откроется всплывающее окно и вам будет предложено ввести учетные данные для проверки подлинности учетной записи Power BI. Когда авторизация будет выполнена успешно, **сохраните** параметры. Сведения об использовании управляемого удостоверения см. в статье [Использование управляемого удостоверения для проверки подлинности задач Azure Stream Analytics для вывода данных в Power BI](powerbi-output-managed-identity.md).
 
 ## <a name="define-a-query-to-analyze-input-data"></a>Определение запроса для анализа входных данных
 

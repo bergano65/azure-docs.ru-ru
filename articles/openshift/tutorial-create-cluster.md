@@ -6,12 +6,12 @@ ms.author: suvetriv
 ms.topic: tutorial
 ms.service: container-service
 ms.date: 04/24/2020
-ms.openlocfilehash: a581678fdd05dade336f7ca9fcbcf5ad4c92d49a
-ms.sourcegitcommit: 58d3b3314df4ba3cabd4d4a6016b22fa5264f05a
+ms.openlocfilehash: f4b43129db5288275434253545861f3eae218e82
+ms.sourcegitcommit: 59ea8436d7f23bee75e04a84ee6ec24702fb2e61
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89300176"
+ms.lasthandoff: 09/07/2020
+ms.locfileid: "89503794"
 ---
 # <a name="tutorial-create-an-azure-red-hat-openshift-4-cluster"></a>Руководство по созданию кластера Azure Red Hat OpenShift 4
 
@@ -22,9 +22,9 @@ ms.locfileid: "89300176"
 
 ## <a name="before-you-begin"></a>Перед началом
 
-Если вы решили установить и использовать интерфейс командной строки локально, то для работы с этим руководством вам понадобится Azure CLI 2.6.0 или более поздней версии. Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI 2.0](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest).
+Если вы решили установить и использовать интерфейс командной строки локально, то для работы с этим руководством вам понадобится Azure CLI 2.6.0 или более поздней версии. Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI 2.0](/cli/azure/install-azure-cli?view=azure-cli-latest).
 
-Для создания и запуска кластера OpenShift в Azure Red Hat OpenShift требуется не менее 40 ядер. Стандартная квота ресурсов Azure для новой подписки Azure не соответствует этому требованию. Чтобы запросить увеличение ограничений ресурсов, см. статью об [ увеличении ограничений для различных серий виртуальных машин](https://docs.microsoft.com/azure/azure-portal/supportability/per-vm-quota-requests).
+Для создания и запуска кластера OpenShift в Azure Red Hat OpenShift требуется не менее 40 ядер. Стандартная квота ресурсов Azure для новой подписки Azure не соответствует этому требованию. Чтобы запросить увеличение ограничений ресурсов, см. статью об [ увеличении ограничений для различных серий виртуальных машин](../azure-portal/supportability/per-vm-quota-requests.md).
 
 ### <a name="verify-your-permissions"></a>Проверка разрешений
 
@@ -35,13 +35,31 @@ ms.locfileid: "89300176"
 |**Администратор доступа пользователей**|X|X| |
 |**Участник**|X|X|X|
 
-### <a name="register-the-resource-provider"></a>Регистрация поставщика ресурсов
+### <a name="register-the-resource-providers"></a>Регистрация поставщиков ресурсов
 
-Затем необходимо зарегистрировать поставщик ресурсов `Microsoft.RedHatOpenShift` в подписке.
+1. Если у вас несколько подписок Azure, выберите нужный идентификатор подписки:
 
-```azurecli-interactive
-az provider register -n Microsoft.RedHatOpenShift --wait
-```
+    ```azurecli-interactive
+    az account set --subscription <SUBSCRIPTION ID>
+    ```
+
+1. Зарегистрируйте поставщик ресурсов `Microsoft.RedHatOpenShift`.
+
+    ```azurecli-interactive
+    az provider register -n Microsoft.RedHatOpenShift --wait
+    ```
+    
+1. Зарегистрируйте поставщик ресурсов `Microsoft.Compute`.
+
+    ```azurecli-interactive
+    az provider register -n Microsoft.Compute --wait
+    ```
+    
+1. Зарегистрируйте поставщик ресурсов `Microsoft.Storage`.
+
+    ```azurecli-interactive
+    az provider register -n Microsoft.Storage --wait
+    ```
 
 ### <a name="get-a-red-hat-pull-secret-optional"></a>Получение секрета для извлечения Red Hat (необязательно)
 
@@ -88,7 +106,7 @@ az provider register -n Microsoft.RedHatOpenShift --wait
 
 1. **Создайте группу ресурсов.**
 
-    Группа ресурсов Azure — это логическая группа, в которой развертываются и управляются ресурсы Azure. Во время создания группы ресурсов вам будет предложено указать расположение. В этом расположении сохраняются метаданные группы ресурсов, а также выполняется их работа в Azure, если во время создания ресурса вы не указали другой регион. Создайте группу ресурсов с помощью команды [az group create](https://docs.microsoft.com/cli/azure/group?view=azure-cli-latest#az-group-create).
+    Группа ресурсов Azure — это логическая группа, в которой развертываются и управляются ресурсы Azure. Во время создания группы ресурсов вам будет предложено указать расположение. В этом расположении сохраняются метаданные группы ресурсов, а также выполняется их работа в Azure, если во время создания ресурса вы не указали другой регион. Создайте группу ресурсов с помощью команды [az group create](/cli/azure/group?view=azure-cli-latest#az-group-create).
     
 > [!NOTE]
 > Платформа Azure Red Hat OpenShift доступна не во всех регионах, где поддерживается создание группы ресурсов Azure. Список регионов, где поддерживается Azure Red Hat OpenShift, см. в разделе [Available regions](https://docs.openshift.com/aro/4/welcome/index.html#available-regions) (Доступные регионы).
@@ -167,7 +185,7 @@ az provider register -n Microsoft.RedHatOpenShift --wait
     --service-endpoints Microsoft.ContainerRegistry
     ```
 
-5. **[Отключите политики частной конечной точки подсети](https://docs.microsoft.com/azure/private-link/disable-private-link-service-network-policy) в главной подсети.** Это необходимо для подключения к кластеру и управления им.
+5. **[Отключите политики частной конечной точки подсети](../private-link/disable-private-link-service-network-policy.md) в главной подсети.** Это необходимо для подключения к кластеру и управления им.
 
     ```azurecli-interactive
     az network vnet subnet update \

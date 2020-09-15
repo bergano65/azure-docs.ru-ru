@@ -6,14 +6,14 @@ author: ms-puneet-nagpal
 ms.service: healthcare-apis
 ms.subservice: iomt
 ms.topic: quickstart
-ms.date: 08/04/2020
+ms.date: 09/08/2020
 ms.author: punagpal
-ms.openlocfilehash: 55d072492a1d90c6964935f2a79f73aacdceff21
-ms.sourcegitcommit: 2ff0d073607bc746ffc638a84bb026d1705e543e
+ms.openlocfilehash: 3b6db74d637ac17ef5d09e1d9c5d3dac30ba8ba9
+ms.sourcegitcommit: 1b320bc7863707a07e98644fbaed9faa0108da97
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87826778"
+ms.lasthandoff: 09/09/2020
+ms.locfileid: "89594379"
 ---
 # <a name="quickstart-deploy-azure-iot-connector-for-fhir-preview-using-azure-portal"></a>Краткое руководство. Развертывание соединителя "Azure IoT для FHIR" (предварительная версия) на портале Azure
 
@@ -169,7 +169,10 @@ Azure предоставляет обширный набор продуктов 
 > Когда реальные устройства готовы, вы можете использовать одно приложение IoT Central для [подключения устройств](https://docs.microsoft.com/azure/iot-central/core/howto-set-up-template) и замены симуляторов устройств. Данные устройства будут автоматически поступать во FHIR. 
 
 ## <a name="connect-your-iot-data-with-the-azure-iot-connector-for-fhir-preview"></a>Подключение данных Интернета вещей Azure к соединителю "Azure IoT для FHIR" (предварительная версия)
-После развертывания приложения IoT Central два готовых виртуальных устройства начнут создавать данные телеметрии. В рамках этого учебника мы будем получать данные телеметрии из симулятора *Smart Vitals Patch* в FHIR через соединитель "Azure IoT для FHIR". Чтобы экспортировать данные Интернета вещей в соединитель "Azure IoT для FHIR", необходимо [настроить непрерывный экспорт данных в IoT Central](https://docs.microsoft.com/azure/iot-central/core/howto-export-data#set-up-data-export). На странице непрерывного экспорта данных выполните следующие действия:
+> [!WARNING]
+> Шаблон сопоставления устройств, предоставленный в этом руководстве, предназначен для работы с функцией экспорта данных (устарела) в IoT Central.
+
+После развертывания приложения IoT Central два готовых виртуальных устройства начнут создавать данные телеметрии. В рамках этого учебника мы будем получать данные телеметрии из симулятора *Smart Vitals Patch* в FHIR через соединитель "Azure IoT для FHIR". Чтобы экспортировать данные Интернета вещей в соединитель "Azure IoT для FHIR", необходимо [настроить непрерывный экспорт данных в IoT Central](https://docs.microsoft.com/azure/iot-central/core/howto-export-data-legacy). На странице непрерывного экспорта данных выполните следующие действия:
 - Выберите *Центры событий Azure* в качестве назначения экспорта.
 - Выберите значение *Использовать строку подключения* в поле **Пространство имен Центров событий**.
 - Укажите строку подключения к соединителю "Azure IoT для FHIR", полученную на предыдущем шаге, в поле **Строка подключения**.

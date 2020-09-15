@@ -5,15 +5,15 @@ services: event-hubs
 author: spelluru
 ms.service: event-hubs
 ms.topic: include
-ms.date: 05/22/2019
+ms.date: 09/10/2020
 ms.author: spelluru
 ms.custom: include file
-ms.openlocfilehash: 333f2317fcc834a10b7336bbda9a43ba16a7ad38
-ms.sourcegitcommit: 69156ae3c1e22cc570dda7f7234145c8226cc162
-ms.translationtype: MT
+ms.openlocfilehash: 8700bbfe697a6b5fb81380831950d704fcb1f5ff
+ms.sourcegitcommit: 5d7f8c57eaae91f7d9cf1f4da059006521ed4f9f
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/03/2020
-ms.locfileid: "84317479"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "90012860"
 ---
 В таблице ниже перечислены квоты и ограничения для [Центров событий Azure](https://azure.microsoft.com/services/event-hubs/). См. сведения о [ценах на Центры событий](https://azure.microsoft.com/pricing/details/event-hubs/).
 
@@ -39,8 +39,8 @@ ms.locfileid: "84317479"
 | Число групп потребителей на концентратор событий |Сущность | &nbsp; |1 |20 |
 | Число подключений AMQP на пространство имен |Пространство имен |Запросы на дополнительные соединения отклоняются, а вызывающий код получает исключение. |100 |5 000|
 | Максимальный срок хранения данных о событиях |Сущность | &nbsp; |1 день |1–7 дн. |
-|Пространство имен с поддержкой Apache Kafka|Пространство имен |Потоковая передача приложений из пространства имен Центров событий с использованием протокола Kafka |Нет | Да |
-|Сбор |Сущность | При включенной функции — передача микропакетов в пределах одного потока |Нет |Да |
+|Пространство имен с поддержкой Apache Kafka|Пространство имен |Потоковая передача приложений из пространства имен Центров событий с использованием протокола Kafka Дополнительные сведения см. в статье [Использование Центров событий Azure из приложений Apache Kafka](../articles/event-hubs/event-hubs-for-kafka-ecosystem-overview.md). |Нет | Да |
+|Сбор |Сущность | Если включить, обеспечивает передачу микропакетов в пределах одного потока. Дополнительные сведения см. в статье [Сбор событий из Центров событий Azure в Хранилище BLOB-объектов Azure или Azure Data Lake Storage](../articles/event-hubs/event-hubs-capture-overview.md). |Нет |Да |
 
 
 ### <a name="event-hubs-dedicated---quotas-and-limits"></a>Выделенные Центры событий: квоты и ограничения

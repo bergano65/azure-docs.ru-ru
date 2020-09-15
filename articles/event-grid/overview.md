@@ -3,12 +3,12 @@ title: Что такое служба "Сетка событий Azure"?
 description: Сведения об отправке данных событий из источника к обработчикам с помощью службы "Сетка событий Azure", а также о создании приложений на основе событий и интеграции со службами Azure.
 ms.topic: overview
 ms.date: 07/07/2020
-ms.openlocfilehash: 95deeddbd7ae3f5ee07bef0c4ac73559d208c352
-ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
+ms.openlocfilehash: 87ac29c2324c63977c57d60b11b3b930c23a4dd9
+ms.sourcegitcommit: bf1340bb706cf31bb002128e272b8322f37d53dd
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86116137"
+ms.lasthandoff: 09/03/2020
+ms.locfileid: "89436873"
 ---
 # <a name="what-is-azure-event-grid"></a>Что такое служба "Сетка событий Azure"?
 
@@ -118,6 +118,6 @@ ms.locfileid: "86116137"
 * [Отслеживание изменений виртуальной машины с помощью Azure Logic Apps и службы "Сетка событий Azure"](monitor-virtual-machine-changes-event-grid-logic-app.md)  
   Руководство по созданию приложения с помощью Logic Apps для реагирования на события, отправляемые службой "Сетка событий".
 * [Потоковая передача больших данных в хранилище данных](event-grid-event-hubs-integration.md)  
-  Руководство, в котором служба "Функции Azure" используется для потоковой передачи данных из Центров событий в хранилище данных SQL.
+  Руководство, в котором служба "Функции Azure" используется для потоковой передачи данных из Центров событий в Azure Synapse Analytics.
 * [Справочник по REST API службы "Сетка событий Azure"](/rest/api/eventgrid)  
   Содержит справочные материалы по управлению подписками на события, маршрутизацией и фильтрацией.

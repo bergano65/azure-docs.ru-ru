@@ -8,12 +8,12 @@ ms.topic: overview
 ms.date: 04/15/2020
 ms.author: vvasic
 ms.reviewer: jrasnick
-ms.openlocfilehash: 086c853b21301074cf35f13db52db1fdb145518c
-ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
+ms.openlocfilehash: c699186c77bba16e96de2dc8b5968f5a83a5a9ce
+ms.sourcegitcommit: 4a7a4af09f881f38fcb4875d89881e4b808b369b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/31/2020
-ms.locfileid: "87489577"
+ms.lasthandoff: 09/04/2020
+ms.locfileid: "89461771"
 ---
 # <a name="synapse-sql-resource-consumption"></a>Потребление ресурсов Synapse SQL
 
@@ -52,7 +52,7 @@ SQL по запросу — это служба с оплатой за запр
 Цель уровня обслуживания (SLO) — это параметр масштабируемости, который определяет уровень затрат и производительности хранилища данных. Уровни обслуживания для пула SQL 2-го поколения измеряются в DWU, например DW2000c.
 
 > [!NOTE]
-> Недавно для Хранилища данных SQL Azure 2-го поколения были расширены возможности масштабирования, и теперь оно поддерживает низкие уровни вычислительных ресурсов от 100 cDWU. Существующие хранилища данных 1-го поколения, которым необходима поддержка более низких уровней вычислительных ресурсов, можно обновить до 2-го поколения в регионах, где оно сейчас доступно, без дополнительной платы.  Если эта возможность пока не доступна для вашего региона, можно обновить хранилище, выполнив геовосстановление в поддерживаемый регион. Дополнительные сведения см. в статье [Оптимизация производительности путем обновления хранилища данных SQL](../sql-data-warehouse/upgrade-to-latest-generation.md?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json).
+> Недавно в Azure Synapse Analytics 2-го поколения были расширены возможности масштабирования, и теперь эта служба поддерживает низкие уровни вычислительных ресурсов от 100 cDWU. Существующие хранилища данных 1-го поколения, которым необходима поддержка более низких уровней вычислительных ресурсов, можно обновить до 2-го поколения в регионах, где оно сейчас доступно, без дополнительной платы.  Если эта возможность пока не доступна для вашего региона, можно обновить хранилище, выполнив геовосстановление в поддерживаемый регион. Дополнительные сведения см. в статье [Оптимизация производительности путем обновления хранилища данных SQL](../sql-data-warehouse/upgrade-to-latest-generation.md?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json).
 
 На T-SQL параметр SERVICE_OBJECTIVE определяет уровень обслуживания и уровень производительности для пула SQL.
 
@@ -140,7 +140,7 @@ JOIN    sys.databases                     AS db ON ds.database_id = db.database_
 Set-AzSqlDatabase -DatabaseName "MySQLDW" -ServerName "MyServer" -RequestedServiceObjectiveName "DW1000c"
 ```
 
-Дополнительные сведения см. в статье [Использование командлетов PowerShell и интерфейсов REST API при работе с хранилищем данных SQL](../sql-data-warehouse/sql-data-warehouse-reference-powershell-cmdlets.md?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json).
+Дополнительные сведения см. в статье [Использование командлетов PowerShell для Azure Synapse Analytics](../sql-data-warehouse/sql-data-warehouse-reference-powershell-cmdlets.md?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json).
 
 #### <a name="t-sql"></a>T-SQL
 
@@ -172,7 +172,7 @@ Content-Type: application/json; charset=UTF-8
 }
 ```
 
-Дополнительные примеры REST API см. в статье [REST API для хранилища данных Azure SQL](../sql-data-warehouse/sql-data-warehouse-manage-compute-rest-api.md?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json).
+Дополнительные примеры REST API см. в статье [REST API для хранилища данных Azure Synapse Analytics](../sql-data-warehouse/sql-data-warehouse-manage-compute-rest-api.md?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json).
 
 ### <a name="check-status-of-dwu-changes"></a>Проверка состояния изменений единиц DWU
 

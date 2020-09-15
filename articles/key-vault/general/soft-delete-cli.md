@@ -9,12 +9,12 @@ ms.subservice: general
 ms.topic: how-to
 ms.date: 08/11/2020
 ms.author: sudbalas
-ms.openlocfilehash: a86402fec698a299c7f233dcd8c7fde8270dd74d
-ms.sourcegitcommit: 02ca0f340a44b7e18acca1351c8e81f3cca4a370
+ms.openlocfilehash: 247f37a69cd8524339a3f5414230cca0f42fa22d
+ms.sourcegitcommit: f8d2ae6f91be1ab0bc91ee45c379811905185d07
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/19/2020
-ms.locfileid: "88585667"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89662039"
 ---
 # <a name="how-to-use-key-vault-soft-delete-with-cli"></a>Как использовать обратимое удаление в Key Vault с помощью интерфейса командной строки
 
@@ -58,7 +58,7 @@ az keyvault update -n ContosoVault --enable-soft-delete true
 
 ### <a name="new-key-vault"></a>Новое хранилище ключей
 
-Обратимое удаление по умолчанию включено автоматически для всех хранилищ ключей. После 31 декабря 2020 г. вы больше не сможете создать хранилище ключей без включенного обратимого удаления.
+Обратимое удаление по умолчанию включено автоматически для всех хранилищ ключей. После 31 декабря 2020 г. вы не сможете создавать хранилища ключей без включенного обратимого удаления.
 
 ### <a name="verify-soft-delete-enablement"></a>Проверка включения обратимого удаления
 
