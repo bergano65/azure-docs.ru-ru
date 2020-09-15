@@ -60,7 +60,7 @@
           href: troubleshoot-private-link-connectivity.md
 - name: Справочник
   items:
-    - name: Azure CLI
+    - name: Azure CLI;
       href: /cli/azure/network
     - name: Azure PowerShell
       href: /powershell/module/az.network

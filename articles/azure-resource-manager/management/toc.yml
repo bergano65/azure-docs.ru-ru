@@ -14,6 +14,8 @@
       href: deployment-models.md
     - name: Поставщики ресурсов по службам
       href: azure-services-resource-providers.md
+    - name: Плоскость управления и плоскость данных
+      href: control-plane-and-data-plane.md
     - name: Типы ресурсов расширения
       href: extension-resource-types.md
     - name: Ограничение количества экземпляров ресурса

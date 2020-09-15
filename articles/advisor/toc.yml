@@ -41,6 +41,8 @@
       href: advisor-quick-fix.md
     - name: Данные Помощника в Azure Resource Graph
       href: advisor-azure-resource-graph.md
+    - name: Использование оценки Помощника
+      href: azure-advisor-score.md
 - name: Справочник
   items:
     - name: Центр безопасности

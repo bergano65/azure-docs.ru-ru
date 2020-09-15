@@ -224,12 +224,10 @@
               href: log-query/get-started-queries.md
         - name: Данные журнала
           items:
-            - name: Структура данных журнала
-              href: log-query/logs-structure.md
             - name: Область запроса
               href: log-query/scope.md
-            - name: Стандартные свойства
-              href: platform/log-standard-properties.md
+            - name: Стандартные столбцы
+              href: platform/log-standard-columns.md
             - name: Группы компьютеров
               href: platform/computer-groups.md
         - name: Язык запросов

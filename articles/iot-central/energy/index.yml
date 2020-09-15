@@ -10,12 +10,12 @@ metadata:
   author: philmea
   ms.author: philmea
   ms.date: 10/25/2019
-  ms.openlocfilehash: bc856e9a6a20c262f49cb4c2a730d8ba5157530a
-  ms.sourcegitcommit: 46f8457ccb224eb000799ec81ed5b3ea93a6f06f
+  ms.openlocfilehash: e0f15382d61558e72dd9c1e4ecf108bdf1655160
+  ms.sourcegitcommit: 43558caf1f3917f0c535ae0bf7ce7fe4723391f9
   ms.translationtype: HT
   ms.contentlocale: ru-RU
-  ms.lasthandoff: 07/28/2020
-  ms.locfileid: "87337064"
+  ms.lasthandoff: 09/11/2020
+  ms.locfileid: "90017359"
 landingContent:
 - title: Создание решений для энергетики
   linkLists:
@@ -31,18 +31,32 @@ landingContent:
       text: Создания приложения для мониторинга "умных счетчиков"
     - url: tutorial-solar-panel-app.md
       text: Создание приложения для мониторинга солнечной панели
-- title: Подключение
+- title: Подключение и разработка устройств
   linkLists:
+  - linkListType: overview
+    links:
+    - text: Общие сведения для разработчиков устройств
+      url: ../core/overview-iot-central-developer.md
   - linkListType: tutorial
     links:
-    - text: Настройка шаблона устройства
-      url: ../core/howto-set-up-template.md
-    - text: Подключение устройства
-      url: ../core/tutorial-connect-device.md
+    - text: Подключение устройства (Node.js)
+      url: ../core/tutorial-connect-device-nodejs.md
+    - text: Подключение устройства (Python)
+      url: ../core/tutorial-connect-device-python.md
+  - linkListType: concept
+    links:
+    - text: Взаимодействие устройств
+      url: ../core/concepts-get-connected.md
+    - text: Шаблоны устройств
+      url: ../core/concepts-device-templates.md
   - linkListType: how-to-guide
     links:
-    - text: Подключение других облаков Интернета вещей
-      url: ../core/howto-build-iotc-device-bridge.md
+    - text: Настройка шаблона
+      url: ../core/howto-set-up-template.md
+    - text: Подключение устройства Azure Sphere
+      url: ../core/howto-connect-sphere.md
+    - text: Устранение неполадок с подключением устройств
+      url: ../core/troubleshoot-connection.md
 - title: Сохранение доступа
   linkLists:
   - linkListType: tutorial

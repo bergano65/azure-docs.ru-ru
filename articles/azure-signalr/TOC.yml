@@ -25,6 +25,8 @@
   items:
     - name: Создание бессерверного приложения в реальном времени с аутентификацией
       href: signalr-tutorial-authenticate-azure-functions.md
+    - name: Создание приложения чата Blazor Server
+      href: signalr-tutorial-build-blazor-server-chat-app.md
 - name: Примеры
   items:
     - name: Примеры кода

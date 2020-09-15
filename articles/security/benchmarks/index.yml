@@ -1,8 +1,8 @@
 ### YamlMime:Landing
-title: Документация по средствам для оценки системы безопасности Azure
+title: Документация по решению для оценки системы безопасности Azure
 summary: Узнайте, как защитить облачные решения в Azure, используя наши рекомендации и руководства.
 metadata:
-  title: Тесты производительности системы безопасности Azure
+  title: Тестирование безопасности Azure
   description: Решение для оценки системы безопасности Azure содержит рекомендации, которые помогут повысить безопасность приложений и данных в Azure.
   services: security
   ms.service: security
@@ -13,12 +13,12 @@ metadata:
   ms.author: mbaldwin
   manager: rkarlin
   ms.date: 12/23/2019
-  ms.openlocfilehash: 705757e3021ff7421dd88e3a2661b1b51f3f927a
-  ms.sourcegitcommit: 4913da04fd0f3cf7710ec08d0c1867b62c2effe7
+  ms.openlocfilehash: addc6aab30d23ab1aaca691e5d1ee1f0b9d12c39
+  ms.sourcegitcommit: 94c750edd4d755d6ecee50ac977328098a277479
   ms.translationtype: HT
   ms.contentlocale: ru-RU
-  ms.lasthandoff: 08/14/2020
-  ms.locfileid: "88213555"
+  ms.lasthandoff: 09/13/2020
+  ms.locfileid: "90058671"
 landingContent:
 - title: Общие средства о тестировании производительности системы безопасности Azure
   linkLists:
@@ -34,22 +34,22 @@ landingContent:
       url: ../../security-center/index.yml
     - text: Основы обеспечения безопасности в Azure
       url: ../fundamentals/index.yml
-- title: Элементы управления тестов производительности системы безопасности Azure
+- title: Элементы управления решения для оценки системы безопасности Azure (версия 2)
   linkLists:
   - linkListType: overview
     links:
     - text: Безопасность сети
-      url: security-control-network-security.md
-    - text: Ведение журналов и мониторинг
-      url: security-control-logging-monitoring.md
-    - text: Идентификаторы и управление доступом
-      url: security-control-identity-access-control.md
+      url: security-controls-v2-network-security.md
+    - text: Управление удостоверениями
+      url: security-controls-v2-identity-management.md
+    - text: Привилегированный доступ
+      url: security-controls-v2-privileged-access.md
     - text: Защита данных
-      url: security-control-data-protection.md
-    - text: управление уязвимостями;
-      url: security-control-vulnerability-management.md
+      url: security-controls-v2-data-protection.md
+    - text: Управление ресурсами
+      url: security-controls-v2-asset-management.md
     - text: Подробнее
-      url: security-control-inventory-asset-management.md
+      url: security-controls-v2-logging-threat-detection.md
 - title: Базовые показатели защиты вычислений
   linkLists:
   - linkListType: overview

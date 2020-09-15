@@ -20,6 +20,8 @@
       href: set-up-service-alerts.md
 - name: Практическое руководство
   items:
+    - name: Миграция вручную
+      href: manual-migration.md
     - name: Подключение к ресурсам Виртуального рабочего стола Windows
       items:
         - name: Подключение к клиенту Windows Desktop

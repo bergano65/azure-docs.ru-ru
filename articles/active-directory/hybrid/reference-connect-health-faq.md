@@ -16,12 +16,12 @@ ms.topic: reference
 ms.date: 07/18/2017
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 9a725831efe6b92ba522900fac67b317e42bc959
-ms.sourcegitcommit: 3fb5e772f8f4068cc6d91d9cde253065a7f265d6
+ms.openlocfilehash: d15b12b758adbf99ddabc88eb06be9daba1ece3e
+ms.sourcegitcommit: c94a177b11a850ab30f406edb233de6923ca742a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89182383"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89276207"
 ---
 # <a name="azure-ad-connect-health-frequently-asked-questions"></a>Часто задаваемые вопросы об Azure AD Connect Health
 Эта статья содержит ответы на часто задаваемые вопросы о расширении Azure Active Directory (Azure AD) Connect Health. Здесь представлены сведения об использовании службы, в частности о модели выставления счетов, возможностях, ограничениях и поддержке.
@@ -37,9 +37,9 @@ ms.locfileid: "89182383"
 
 |Роль| Версия операционной системы|
 |--|--|
-|Службы федерации Active Directory (AD FS)| <ul><li> Windows Server 2012  </li> <li>Windows Server 2012 R2 </li> <li> Windows Server 2016  </li> <li> Windows Server 2019  </li> </ul>|
+|Службы федерации Active Directory (AD FS)| <ul><li> Windows Server 2012  </li> <li>Windows Server 2012 R2 </li> <li> Windows Server 2016  </li> <li> Windows Server 2019  </li> </ul>|
 |Azure AD Connect | Версия 1.0.9125 или более поздняя|
-|Доменные службы Active Directory (AD DS)| <ul><li> Windows Server 2012  </li> <li>Windows Server 2012 R2 </li> <li> Windows Server 2016  </li> <li> Windows Server 2019  </li> </ul>|
+|Доменные службы Active Directory (AD DS)| <ul><li> Windows Server 2012  </li> <li>Windows Server 2012 R2 </li> <li> Windows Server 2016  </li> <li> Windows Server 2019  </li> </ul>|
 
 Установки Windows Server Core не поддерживаются.
 
@@ -190,18 +190,18 @@ CheckForMS17-010
 
 **Вопрос. Почему командлет PowerShell <i>Get-MsolDirSyncProvisioningError</i> показывает меньше ошибок синхронизации в результате?**
 
-Командлет <i>Get-MsolDirSyncProvisioningError</i> вернет только ошибки подготовки DirSync. Кроме этого, портал Connect Health также показывает другие типы ошибок синхронизации, такие как ошибки экспорта. Это согласуется с разностным результатом Azure AD Connect. Дополнительные сведения см. в статье [Ошибки синхронизации Azure AD Connect](https://docs.microsoft.com/azure/active-directory/connect/active-directory-aadconnect-troubleshoot-sync-errors).
+Командлет <i>Get-MsolDirSyncProvisioningError</i> вернет только ошибки подготовки DirSync. Кроме этого, портал Connect Health также показывает другие типы ошибок синхронизации, такие как ошибки экспорта. Это согласуется с разностным результатом Azure AD Connect. Дополнительные сведения см. в статье [Ошибки синхронизации Azure AD Connect](./tshoot-connect-sync-errors.md).
 
 **В. Почему не создаются журналы аудита ADFS?**
 
-Включите журналы аудита с помощью командлета PowerShell <i>Get-AdfsProperties -AuditLevel</i>. Дополнительные сведения см. в статье [журналы аудита ADFS](https://docs.microsoft.com/windows-server/identity/ad-fs/technical-reference/auditing-enhancements-to-ad-fs-in-windows-server#auditing-levels-in-ad-fs-for-windows-server-2016). Обратите внимание: если расширенные параметры аудита отправляются на сервер AD FS, все изменения, внесенные в файл auditpol.exe, перезаписываются (даже если созданное приложение не настроено). В этом случае настройте локальную политику безопасности для ведения журнала сбоев и успешных выполнений созданного приложения.
+Включите журналы аудита с помощью командлета PowerShell <i>Get-AdfsProperties -AuditLevel</i>. Дополнительные сведения см. в статье [журналы аудита ADFS](/windows-server/identity/ad-fs/technical-reference/auditing-enhancements-to-ad-fs-in-windows-server#auditing-levels-in-ad-fs-for-windows-server-2016). Обратите внимание: если расширенные параметры аудита отправляются на сервер AD FS, все изменения, внесенные в файл auditpol.exe, перезаписываются (даже если созданное приложение не настроено). В этом случае настройте локальную политику безопасности для ведения журнала сбоев и успешных выполнений созданного приложения.
 
 **Вопрос. когда будет автоматически продлен сертификат агента до истечения срока действия?**
 Сертификация агента будет автоматически продлена **6 месяцев** до даты окончания срока ее действия. Если он не продлен, убедитесь, что сетевое подключение агента стабильно. Может также решить проблему, перезапустить службы агента или обновить последнюю версию.
 
 
 ## <a name="related-links"></a>Связанные ссылки
-* [Azure AD Connect Health](whatis-hybrid-identity-health.md)
+* [Azure AD Connect Health](./whatis-azure-ad-connect.md)
 * [Установка агента Azure AD Connect Health](how-to-connect-health-agent-install.md)
 * [Azure AD Connect Health операции](how-to-connect-health-operations.md)
 * [Использование Azure AD Connect Health с AD FS](how-to-connect-health-adfs.md)

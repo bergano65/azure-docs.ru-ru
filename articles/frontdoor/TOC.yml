@@ -7,8 +7,10 @@
 - name: Краткие руководства
   expanded: true
   items:
-    - name: Создание профиля Front Door
+    - name: "Создание Front Door\_— портал"
       href: quickstart-create-front-door.md
+    - name: "Создание Front Door\_— шаблон ARM"
+      href: quickstart-create-front-door-template.md
 - name: Учебники
   items:
     - name: Добавление личного домена в службу Front Door

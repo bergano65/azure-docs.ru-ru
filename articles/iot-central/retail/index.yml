@@ -10,12 +10,12 @@ metadata:
   author: philmea
   ms.author: philmea
   ms.date: 10/25/2019
-  ms.openlocfilehash: f37f876db15e2722907669cd1c1d8390f771034b
-  ms.sourcegitcommit: 2ffa5bae1545c660d6f3b62f31c4efa69c1e957f
+  ms.openlocfilehash: 8469f67967f311d4aca98417e8a5a639665b4641
+  ms.sourcegitcommit: 43558caf1f3917f0c535ae0bf7ce7fe4723391f9
   ms.translationtype: HT
   ms.contentlocale: ru-RU
-  ms.lasthandoff: 08/11/2020
-  ms.locfileid: "88080649"
+  ms.lasthandoff: 09/11/2020
+  ms.locfileid: "90014928"
 landingContent:
 - title: Создание решений для розничной торговли
   linkLists:
@@ -43,18 +43,32 @@ landingContent:
     links:
     - text: Подключение Rigado Cascade 500
       url: ../core/howto-connect-rigado-cascade-500.md
-- title: Подключение
+- title: Подключение и разработка устройств
   linkLists:
+  - linkListType: overview
+    links:
+    - text: Общие сведения для разработчиков устройств
+      url: ../core/overview-iot-central-developer.md
   - linkListType: tutorial
     links:
-    - text: Настройка шаблона устройства
-      url: ../core/howto-set-up-template.md
-    - text: Подключение устройства
-      url: ../core/tutorial-connect-device.md
+    - text: Подключение устройства (Node.js)
+      url: ../core/tutorial-connect-device-nodejs.md
+    - text: Подключение устройства (Python)
+      url: ../core/tutorial-connect-device-python.md
+  - linkListType: concept
+    links:
+    - text: Взаимодействие устройств
+      url: ../core/concepts-get-connected.md
+    - text: Шаблоны устройств
+      url: ../core/concepts-device-templates.md
   - linkListType: how-to-guide
     links:
-    - text: Подключение других облаков Интернета вещей
-      url: ../core/howto-build-iotc-device-bridge.md
+    - text: Настройка шаблона
+      url: ../core/howto-set-up-template.md
+    - text: Подключение устройства Azure Sphere
+      url: ../core/howto-connect-sphere.md
+    - text: Устранение неполадок с подключением устройств
+      url: ../core/troubleshoot-connection.md
 - title: Сохранение доступа
   linkLists:
   - linkListType: tutorial

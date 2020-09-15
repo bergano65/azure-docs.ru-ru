@@ -4,7 +4,7 @@
   href: ./sql-data-warehouse/sql-data-warehouse-overview-what-is.md
 - name: Обзор
   items:
-    - name: Что такое Azure Synapse Analytics?
+    - name: Что такое Azure Synapse?
       href: overview-what-is.md
     - name: Приступая к работе
       items:
@@ -36,10 +36,10 @@
   items:
     - name: Создание рабочей области Synapse с помощью портала Azure
       href: quickstart-create-workspace.md
-    - name: Развертывание с помощью шаблона
-      href: quickstart-deployment-template-workspaces.md
     - name: Создание рабочей области Synapse с помощью Azure CLI
       href: quickstart-create-workspace-cli.md
+    - name: Развертывание с помощью шаблона
+      href: quickstart-deployment-template-workspaces.md
     - name: Использование Synapse Studio
       href: quickstart-synapse-studio.md
     - name: "Связывание рабочей области Power\_BI"
@@ -70,7 +70,7 @@
       href: quickstart-connect-synapse-link-cosmos-db.md
 - name: Учебники
   items:
-    - name: Запуск приложений Apache Spark для пулов Spark
+    - name: Запуск приложений Apache Spark
       href: ./spark/intellij-tool-synapse.md
     - name: Определения заданий Spark
       href: ./spark/apache-spark-job-definitions.md
@@ -84,7 +84,7 @@
           href: ./spark/apache-spark-machine-learning-mllib-notebook.md
     - name: Аналитик данных
       items:
-        - name: Использование SQL по запросу для анализа и Synapse Studio для визуализации
+        - name: Использование SQL по запросу для анализа данных
           href: ./sql/tutorial-data-analyst.md
 - name: Примеры
   href: 'https://github.com/Azure-Samples/Synapse'
@@ -372,9 +372,9 @@
           href: ../cosmos-db/synapse-link-use-cases.md?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json
     - name: 'Интеграция средств (искусственный интеллект; извлечение, преобразование и загрузка; бизнес-аналитика)'
       items:
-        - name: Устранение неполадок с Synapse Analytics Studio
+        - name: Устранение неполадок с Synapse Studio
           href: troubleshoot/troubleshoot-synapse-studio.md
-        - name: Устранение неполадок с Synapse Analytics Studio с помощью PowerShell
+        - name: Устранение проблем с подключением к Synapse Studio
           href: troubleshoot/troubleshoot-synapse-studio-powershell.md
 - name: Практическое руководство
   items:
@@ -422,7 +422,7 @@
                   href: ./sql-data-warehouse/sql-data-warehouse-how-to-manage-and-monitor-workload-importance.md?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json
             - name: Обновление до 2-го поколения
               href: ./sql-data-warehouse/upgrade-to-latest-generation.md?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json
-    - name: прием и подготовка данных;
+    - name: Прием и подготовка данных
       items:
         - name: Сведения о хранилище данных
           items:
@@ -869,7 +869,7 @@
               href: ../data-factory/copy-data-tool-troubleshoot-guide.md?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json
             - name: Устранение неполадок с локальными средами выполнения интеграции
               href: ../data-factory/self-hosted-integration-runtime-troubleshoot-guide.md?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json
-    - name: Подключение средств к Synapse Analytics
+    - name: Подключение средств к рабочим областям Synapse
       items:
         - name: Synapse SQL
           items:

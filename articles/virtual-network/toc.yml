@@ -91,6 +91,8 @@
           href: ipv6-public-ip-address-prefix.md
         - name: Предпочтение маршрутизации
           href: routing-preference-overview.md
+        - name: Базовые показатели безопасности общедоступных IP-адресов
+          href: public-ip-security-baseline.md
     - name: Безопасность
       items:
         - name: Группы безопасности сети

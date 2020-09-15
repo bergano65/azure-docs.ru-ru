@@ -9,14 +9,14 @@ ms.date: 05/19/2020
 ms.author: normesta
 ms.reviewer: fryu
 ms.custom: monitoring, devx-track-csharp
-ms.openlocfilehash: 2cc275028b64c3df06e2c0275bc0f4ac21fa0f6e
-ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
+ms.openlocfilehash: 0edb50fd72622d3d7d628e0e02ef2c3737f8713a
+ms.sourcegitcommit: 206629373b7c2246e909297d69f4fe3728446af5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89020156"
+ms.lasthandoff: 09/06/2020
+ms.locfileid: "89500425"
 ---
-# <a name="monitor-azure-storage"></a>Мониторинг службы хранилища Azure
+# <a name="monitoring-azure-storage"></a>Мониторинг службы хранилища Azure
 
 При наличии критически важных приложений и бизнес-процессов, использующих ресурсы Azure, необходимо отслеживать эти ресурсы на предмет их доступности, производительности и функционирования. В этой статье описаны данные мониторинга, создаваемые службой хранилища Azure, и способы использования функций Azure Monitor для анализа оповещений об этих данных.
 
@@ -30,7 +30,7 @@ ms.locfileid: "89020156"
 ## <a name="what-is-azure-monitor"></a>Общие сведения об Azure Monitor
 Служба хранилища Azure создает данные мониторинга с помощью [Azure Monitor](../../azure-monitor/overview.md), комплексной службы мониторинга стека в Azure. Azure Monitor предоставляет полный набор функций для мониторинга ресурсов Azure и ресурсов в других облаках, а также в локальной среде. 
 
-Дополнительные сведения об Azure Monitor см. на странице [Мониторинг ресурсов Azure с помощью Azure Monitor](../../azure-monitor/insights/monitor-azure-resource.md). В этой статье описаны следующие темы:
+Начните с статьи [мониторинг ресурсов Azure с помощью Azure Monitor](../../azure-monitor/insights/monitor-azure-resource.md) , который описывает следующее:
 
 - Общие сведения об Azure Monitor
 - затраты, связанные с мониторингом;
@@ -40,7 +40,7 @@ ms.locfileid: "89020156"
 
 В следующих разделах этой статьи описываются конкретные данные, собранные из службы хранилища Azure. В примерах показано, как настроить сбор данных и анализировать эти данные с помощью средств Azure.
 
-## <a name="monitor-data-from-azure-storage"></a>Мониторинг данных из службы хранилища Azure
+## <a name="monitoring-data-from-azure-storage"></a>Мониторинг данных из службы хранилища Azure
 
 Служба хранилища Azure собирает те же данные мониторинга, что и другие ресурсы Azure, описанные в [этом разделе](../../azure-monitor/insights/monitor-azure-resource.md#monitoring-data). Дополнительные сведения о журналах и метриках, созданных службой хранилища Azure, см. на [этой странице](monitor-storage-reference.md).
 
@@ -90,7 +90,7 @@ ms.locfileid: "89020156"
 | StorageWrite | Операции записи в объекты. |
 | StorageDelete | Удаление операций с объектами. |
 
-## <a name="analyze-metric-data"></a>Анализ данных метрик
+## <a name="analyzing-metric-data"></a>Анализ данных метрик
 
 Вы можете анализировать метрики для службы хранилища Azure с помощью метрик из других служб Azure, используя обозреватель метрик. Откройте обозреватель метрик, выбрав **Метрики** в меню **Azure Monitor**. Подробные сведения об использовании этого средства см. на странице [Начало работы с обозревателем метрик Azure](../../azure-monitor/platform/metrics-getting-started.md). 
 
@@ -115,7 +115,7 @@ ms.locfileid: "89020156"
 Список всех метрик поддержки Azure Monitor, включая службу хранилища Azure, см. в на странице [Поддерживаемые метрики Azure Monitor](https://docs.microsoft.com/azure/azure-monitor/platform/metrics-supported).
 
 
-### <a name="access-metrics"></a>Доступ к метрикам
+### <a name="accessing-metrics"></a>Доступ к метрикам
 
 > [!TIP]
 > Чтобы просмотреть примеры Azure CLI или .NET, выберите соответствующую вкладку ниже.
@@ -133,7 +133,7 @@ ms.locfileid: "89020156"
    Get-AzMetricDefinition -ResourceId $resourceId
 ```
 
-#### <a name="read-metric-values"></a>Считывание значений метрик
+#### <a name="reading-metric-values"></a>Считывание значений метрик
 
 Вы можете считать значения метрик на уровне учетной записи хранения или отдельной службы хранилища, например службы BLOB-объектов, файлов, таблиц или очередей. Используйте командлет [Get-AzMetric](https://docs.microsoft.com/powershell/module/Az.Monitor/Get-AzMetric?view=azps-3.3.0).
 
@@ -203,7 +203,7 @@ Azure Monitor предоставляет [пакет SDK для .NET](https://ww
 
 ```
 
-#### <a name="read-account-level-metric-values"></a>Считывание значений метрик на уровне учетной записи
+#### <a name="reading-account-level-metric-values"></a>Чтение значений метрик уровня учетной записи
 
 В приведенном ниже примере показано, как считать данные `UsedCapacity` на уровне учетной записи.
 
@@ -249,7 +249,7 @@ Azure Monitor предоставляет [пакет SDK для .NET](https://ww
 
 ```
 
-#### <a name="read-multidimensional-metric-values"></a>Считывание значений многомерных метрик
+#### <a name="reading-multidimensional-metric-values"></a>Считывание значений многомерных метрик
 
 Для многомерных метрик необходимо определить фильтры по метаданным, если требуется считать данные метрик для конкретных значений измерений.
 
@@ -304,7 +304,7 @@ Azure Monitor предоставляет [пакет SDK для .NET](https://ww
 
 ---
 
-## <a name="analyze-log-data"></a>Анализ данных журналов
+## <a name="analyzing-log-data"></a>Анализ данных журналов
 
 Доступ к журналам ресурсов можно получить с помощью большого двоичного объекта в учетной записи хранения, данных событий или запросов Log Analytic.
 
@@ -313,7 +313,7 @@ Azure Monitor предоставляет [пакет SDK для .NET](https://ww
 > [!NOTE]
 > Журналы службы хранилища Azure в Azure Monitor предоставляются в общедоступной предварительной версии. Они также доступны для предварительного тестирования во всех регионах общедоступного облака. Чтобы зарегистрироваться для использования предварительной версии, см. [эту страницу](https://forms.microsoft.com/Pages/ResponsePage.aspx?id=v4j5cvGGr0GRqy180BHbRxW65f1VQyNCuBHMIMBV8qlUM0E0MFdPRFpOVTRYVklDSE1WUTcyTVAwOC4u). Эта предварительная версия включает журналы для больших двоичных объектов (в том числе Azure Data Lake Storage 2-го поколения), файлов, очередей, таблиц, учетных записей хранения класса Premium общего назначения версии 1 и учетных записей хранения общего назначения версии 2. Классические учетные записи хранения не поддерживаются.
 
-### <a name="access-logs-in-a-storage-account"></a>Получение доступа к журналам в учетной записи хранения
+### <a name="accessing-logs-in-a-storage-account"></a>Доступ к журналам в учетной записи хранения
 
 Журналы отображаются как большие двоичные объекты, хранящиеся в контейнере в целевой учетной записи хранения. Данные собираются и хранятся внутри одного большого двоичного объекта в качестве полезных данных JSON с разделителем-строкой. Имя большого двоичного объекта соответствует следующему соглашению об именовании.
 
@@ -323,7 +323,7 @@ Azure Monitor предоставляет [пакет SDK для .NET](https://ww
 
 `https://mylogstorageaccount.blob.core.windows.net/insights-logs-storagewrite/resourceId=/subscriptions/`<br>`208841be-a4v3-4234-9450-08b90c09f4/resourceGroups/myresourcegroup/providers/Microsoft.Storage/storageAccounts/mystorageaccount/blobServices/default/y=2019/m=07/d=30/h=23/m=12/PT1H.json`
 
-### <a name="access-logs-in-an-event-hub"></a>Получение доступа к журналам в концентраторе событий
+### <a name="accessing-logs-in-an-event-hub"></a>Доступ к журналам в концентраторе событий
 
 Журналы, отправленные в концентратор событий, не сохраняются в виде файла, однако вы можете проверить, получил ли концентратор событий данные журнала. На портале Azure перейдите в концентратор событий и убедитесь, что количество **входящих сообщений** больше нуля. 
 
@@ -331,7 +331,7 @@ Azure Monitor предоставляет [пакет SDK для .NET](https://ww
 
 Вы можете получать доступ к данным журнала, отправляемым в концентратор событий, и считывать их, используя сведения о безопасности, а также средства мониторинга и управления событиями. Дополнительные сведения см. на [этой странице](https://docs.microsoft.com/azure/azure-monitor/platform/stream-monitoring-data-event-hubs#what-can-i-do-with-the-monitoring-data-being-sent-to-my-event-hub).
 
-### <a name="access-logs-in-a-log-analytics-workspace"></a>Получение доступа к журналам в рабочей области Log Analytics
+### <a name="accessing-logs-in-a-log-analytics-workspace"></a>Доступ к журналам в рабочей области Log Analytics
 
 Доступ к журналам, отправляемым в рабочую область Log Analytics, можно получить с помощью запросов журналов Azure Monitor.
 

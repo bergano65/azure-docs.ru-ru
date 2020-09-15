@@ -9,13 +9,13 @@ metadata:
   ms.topic: landing-page
   author: philmea
   ms.author: philmea
-  ms.date: 02/18/2020
-  ms.openlocfilehash: 6f8cabab3b2feaa219c52c4ed8c53d1cccb4b658
-  ms.sourcegitcommit: 46f8457ccb224eb000799ec81ed5b3ea93a6f06f
+  ms.date: 06/21/2020
+  ms.openlocfilehash: 870895980c90262a20cfd5ea95a4fdb01b39b4a3
+  ms.sourcegitcommit: 43558caf1f3917f0c535ae0bf7ce7fe4723391f9
   ms.translationtype: HT
   ms.contentlocale: ru-RU
-  ms.lasthandoff: 07/28/2020
-  ms.locfileid: "87337200"
+  ms.lasthandoff: 09/11/2020
+  ms.locfileid: "90015880"
 landingContent:
 - title: Сведения об Azure IoT Central
   linkLists:
@@ -25,8 +25,6 @@ landingContent:
       url: overview-iot-central.md
     - text: Обзор пользовательского интерфейса
       url: overview-iot-central-tour.md
-    - text: Разработка для устройств
-      url: overview-iot-central-developer.md
     - text: Последние обновления
       url: https://azure.microsoft.com/updates/?status=nowavailable&updateType=features&category=iot&query=azure%20iot%20central
   - linkListType: architecture
@@ -39,18 +37,34 @@ landingContent:
     links:
     - text: Создание приложения
       url: quick-deploy-iot-central.md
-- title: Подключение
+- title: Подключение и разработка устройств
   linkLists:
+  - linkListType: overview
+    links:
+    - text: Общие сведения для разработчиков устройств
+      url: overview-iot-central-developer.md
   - linkListType: tutorial
     links:
-    - text: Подключение устройства
-      url: tutorial-connect-device.md
+    - text: Подключение устройства (Node.js)
+      url: tutorial-connect-device-nodejs.md
+    - text: Подключение устройства (Python)
+      url: tutorial-connect-device-python.md
+  - linkListType: concept
+    links:
+    - text: Взаимодействие устройств
+      url: concepts-get-connected.md
+    - text: Шаблоны устройств
+      url: concepts-device-templates.md
+    - text: Полезные данные сообщения
+      url: concepts-telemetry-properties-commands.md
   - linkListType: how-to-guide
     links:
-    - text: Настройка шаблона устройства
+    - text: Настройка шаблона
       url: howto-set-up-template.md
-    - text: Подключение других облаков Интернета вещей
-      url: howto-build-iotc-device-bridge.md
+    - text: Подключение устройства Azure Sphere
+      url: howto-connect-sphere.md
+    - text: Устранение неполадок с подключением устройств
+      url: troubleshoot-connection.md
 - title: Сохранение доступа
   linkLists:
   - linkListType: tutorial

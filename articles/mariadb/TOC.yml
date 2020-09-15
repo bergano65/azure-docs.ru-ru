@@ -6,6 +6,10 @@
       href: overview.md
     - name: Какой вариант MariaDB следует выбрать?
       href: select-right-deployment-type.md
+    - name: Обновления службы
+      items:
+        - name: Срок действия корневого сертификата SSL
+          href: concepts-certificate-rotation.md
 - name: Краткие руководства
   expanded: true
   items:
@@ -30,7 +34,7 @@
       items:
         - name: Портал Azure
           href: tutorial-design-database-using-portal.md
-        - name: Azure CLI
+        - name: Azure CLI;
           href: tutorial-design-database-cli.md
         - name: Azure PowerShell
           href: tutorial-design-database-using-powershell.md
@@ -124,15 +128,15 @@
           href: howto-create-manage-server-portal.md
     - name: Правила брандмауэра
       items:
-        - name: Портал Azure
+        - name: портал Azure;
           href: howto-manage-firewall-portal.md
         - name: Azure CLI
           href: howto-manage-firewall-cli.md
     - name: Восстановление сервера
       items:
-        - name: Портал Azure
+        - name: портал Azure;
           href: howto-restore-server-portal.md
-        - name: Azure CLI
+        - name: Azure CLI;
           href: howto-restore-server-cli.md
         - name: Azure PowerShell
           href: howto-restore-server-powershell.md
@@ -158,17 +162,17 @@
           href: howto-redirection.md
     - name: Настройка параметров сервера
       items:
-        - name: Портал Azure
+        - name: портал Azure;
           href: howto-server-parameters.md
-        - name: Azure CLI
+        - name: Azure CLI;
           href: howto-configure-server-parameters-cli.md
         - name: Azure PowerShell
           href: howto-configure-server-parameters-using-powershell.md
     - name: Автоматическое увеличение хранилища
       items:
-        - name: Портал Azure
+        - name: портал Azure;
           href: howto-auto-grow-storage-portal.md
-        - name: Azure CLI
+        - name: Azure CLI;
           href: howto-auto-grow-storage-cli.md
         - name: Azure PowerShell
           href: howto-auto-grow-storage-powershell.md
@@ -180,13 +184,13 @@
       items:
         - name: Журналы медленных запросов
           items:
-            - name: Портал Azure
+            - name: портал Azure;
               href: howto-configure-server-logs-portal.md
             - name: Azure CLI
               href: howto-configure-server-logs-cli.md
         - name: Журналы аудита
           items:
-            - name: Портал Azure
+            - name: портал Azure;
               href: howto-configure-audit-logs-portal.md
             - name: Azure CLI
               href: howto-configure-audit-logs-cli.md
@@ -216,27 +220,27 @@
           href: howto-database-threat-protection-portal.md
     - name: Виртуальная сеть
       items:
-        - name: Портал Azure
+        - name: портал Azure;
           href: howto-manage-vnet-portal.md
         - name: Azure CLI
           href: howto-manage-vnet-cli.md
     - name: Приватный канал
       items:
-        - name: Портал Azure
+        - name: портал Azure;
           href: howto-configure-privatelink-portal.md
         - name: Azure CLI
           href: howto-configure-privatelink-cli.md
     - name: Перезапуск сервера
       items:
-        - name: Портал Azure
+        - name: портал Azure;
           href: howto-restart-server-portal.md
-        - name: Azure CLI
+        - name: Azure CLI;
           href: howto-restart-server-cli.md
         - name: Azure PowerShell
           href: howto-restart-server-powershell.md
 - name: Справочник
   items:
-    - name: Azure CLI
+    - name: Azure CLI;
       href: /cli/azure/mariadb
     - name: REST API
       href: /rest/api/mariadb
