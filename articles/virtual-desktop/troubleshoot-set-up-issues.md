@@ -3,15 +3,15 @@ title: Создание пула узлов среды виртуальных р
 description: Устранение неполадок и разрешение проблем с пулом клиентов и узлов во время установки среды виртуальных рабочих столов Windows.
 author: Heidilohr
 ms.topic: troubleshooting
-ms.date: 08/11/2020
+ms.date: 09/14/2020
 ms.author: helohr
 manager: lizross
-ms.openlocfilehash: 4d504c46288ebe2a8112586ce6be6449178df16a
-ms.sourcegitcommit: b8702065338fc1ed81bfed082650b5b58234a702
+ms.openlocfilehash: d02642b49951b4b116eaae6dbea490ef2720c15d
+ms.sourcegitcommit: 07166a1ff8bd23f5e1c49d4fd12badbca5ebd19c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/11/2020
-ms.locfileid: "88121380"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90084419"
 ---
 # <a name="host-pool-creation"></a>Создание пула узлов
 
@@ -46,6 +46,12 @@ ms.locfileid: "88121380"
 - Создайте новый пул узлов с теми же параметрами, но с меньшим числом виртуальных машин и ядер ВМ.
 
 - Откройте ссылку, которая отображается в поле statusMessage в браузере, чтобы отправить запрос на увеличение квоты для подписки Azure для указанного номера SKU виртуальной машины.
+
+### <a name="error-cant-see-user-assignments-in-app-groups"></a>Ошибка: не удается просмотреть назначения пользователей в группах приложений.
+
+Причина: Эта ошибка обычно возникает после перемещения подписки из клиента 1 Azure Active Directory (AD) в другой. Если старые назначения по-прежнему привязаны к старому клиенту Azure AD, портал Azure будет потерять их.
+
+Исправление. необходимо переназначить пользователей группам приложений.
 
 ## <a name="azure-resource-manager-template-errors"></a>Ошибки шаблона Azure Resource Manager
 
@@ -88,7 +94,7 @@ ms.locfileid: "88121380"
 3. Меню DNS-серверы должно отображаться в правой части экрана. В этом меню выберите **Пользовательский**.
 4. Убедитесь, что DNS-серверы, указанные в поле Пользовательский, соответствуют вашему контроллеру домена или домену Active Directory. Если DNS-сервер не отображается, его можно добавить, введя его значение в поле **добавить DNS-сервер** .
 
-### <a name="error-your-deployment-failedunauthorized"></a>Ошибка: сбой развертывания. ..\Унаусоризед
+### <a name="error-your-deployment-failedunauthorized"></a>Ошибка. Развертывание не выполнено… Не санкционировано.
 
 ```Error
 {"code":"DeploymentFailed","message":"At least one resource deployment operation failed. Please list deployment operations for details. Please see https://aka.ms/arm-debug for usage details.","details":[{"code":"Unauthorized","message":"{\r\n \"Code\": \"Unauthorized\",\r\n \"Message\": \"The scale operation is not allowed for this subscription in this region. Try selecting different region or scale option.\",\r\n \"Target\": null,\r\n \"Details\": [\r\n {\r\n \"Message\": \"The scale operation is not allowed for this subscription in this region. Try selecting different region or scale option.\"\r\n },\r\n {\r\n \"Code\": \"Unauthorized\"\r\n },\r\n {\r\n \"ErrorEntity\": {\r\n \"ExtendedCode\": \"52020\",\r\n \"MessageTemplate\": \"The scale operation is not allowed for this subscription in this region. Try selecting different region or scale option.\",\r\n \"Parameters\": [\r\n \"default\"\r\n ],\r\n \"Code\": \"Unauthorized\",\r\n \"Message\": \"The scale operation is not allowed for this subscription in this region. Try selecting different region or scale option.\"\r\n }\r\n }\r\n ],\r\n \"Innererror\": null\r\n}"}]}
@@ -98,7 +104,7 @@ ms.locfileid: "88121380"
 
 **Исправление:** Измените тип подписки или регион на другой, который может получить доступ к необходимым функциям.
 
-### <a name="error-vmextensionprovisioningerror"></a>Ошибка: Вмекстенсионпровисионинжеррор
+### <a name="error-vmextensionprovisioningerror"></a>Ошибка. VMExtensionProvisioningError
 
 > [!div class="mx-imgBorder"]
 > ![Снимок экрана развертывания: не удалось выполнить состояние подготовки терминала.](media/failure-vmextensionprovisioning.png)
@@ -109,7 +115,7 @@ ms.locfileid: "88121380"
 
 **Исправление:** Подтвердите работоспособность среды виртуальных рабочих столов Windows, выполнив вход с помощью PowerShell. Завершите регистрацию виртуальной машины вручную в окне [Создание пула узлов с помощью PowerShell](create-host-pools-powershell.md).
 
-### <a name="error-the-admin-username-specified-isnt-allowed"></a>Ошибка: указанное имя администратора не разрешено
+### <a name="error-the-admin-username-specified-isnt-allowed"></a>Ошибка. Указанное имя пользователя администратора не разрешено.
 
 > [!div class="mx-imgBorder"]
 > ![Снимок экрана развертывания, в котором указанное административное сообщение не разрешено.](media/failure-username.png)
@@ -127,7 +133,7 @@ ms.locfileid: "88121380"
 
 **Исправление:** Обновите имя пользователя или используйте других пользователей.
 
-### <a name="error-vm-has-reported-a-failure-when-processing-extension"></a>Ошибка: виртуальная машина сообщила об ошибке при обработке расширения
+### <a name="error-vm-has-reported-a-failure-when-processing-extension"></a>Ошибка. Виртуальная машина сообщила о сбое при обработке расширения.
 
 > [!div class="mx-imgBorder"]
 > ![Снимок экрана: операция с ресурсом завершена с состоянием подготовки терминала в развертывании.](media/failure-processing.png)

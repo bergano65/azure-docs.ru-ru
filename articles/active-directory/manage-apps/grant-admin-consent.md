@@ -12,12 +12,12 @@ ms.date: 11/04/2019
 ms.author: kenwith
 ms.reviewer: phsignor
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 68e40696c935adf6bef78636770b1add81255fa8
-ms.sourcegitcommit: 51df05f27adb8f3ce67ad11d75cb0ee0b016dc5d
+ms.openlocfilehash: 96b4cb6f751a5d2bc4259117007b3abec2e0598d
+ms.sourcegitcommit: 1fe5127fb5c3f43761f479078251242ae5688386
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 09/14/2020
-ms.locfileid: "90060923"
+ms.locfileid: "90069583"
 ---
 # <a name="grant-tenant-wide-admin-consent-to-an-application"></a>Предоставление приложению согласия администратора на уровне арендатора
 
@@ -69,6 +69,9 @@ ms.locfileid: "90060923"
 4. Выберите **разрешения API** и щелкните **предоставить согласие администратора**.
 5. Внимательно ознакомьтесь с разрешениями, которые требуются приложению.
 6. Если вы согласны с разрешениями, которые требуются приложению, предоставьте согласие. В противном случае нажмите кнопку **Отмена** или закройте окно.
+
+> [!WARNING]
+> Предоставление согласия администратора на уровне клиента с помощью **Регистрация приложений** приведет к отмене всех разрешений, которые ранее были предоставлены на уровне клиента. Разрешения, которые ранее были предоставлены пользователям от своего имени, не затрагиваются. 
 
 ## <a name="construct-the-url-for-granting-tenant-wide-admin-consent"></a>Создание URL-адреса для предоставления согласия администратора на уровне клиента
 

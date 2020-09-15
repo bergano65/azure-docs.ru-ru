@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 08/07/2020
-ms.openlocfilehash: 013d8b77a16a4c7cd0efdadce25fd141793070be
-ms.sourcegitcommit: 4a7a4af09f881f38fcb4875d89881e4b808b369b
+ms.openlocfilehash: d509862fe4dafff174ee03c3b5cc887fa9d9ff22
+ms.sourcegitcommit: 07166a1ff8bd23f5e1c49d4fd12badbca5ebd19c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/04/2020
-ms.locfileid: "89459527"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90086000"
 ---
 # <a name="monitoring-solutions-in-azure-monitor"></a>Решения мониторинга в Azure Monitor
 
@@ -26,7 +26,7 @@ ms.locfileid: "89459527"
 
 Используйте раскрывающиеся списки в верхней части экрана, чтобы менять рабочую область и диапазон времени, используемые для плиток. Щелкните плитку решения, чтобы открыть его представление с подробным анализом собранных данных.
 
-[![Обзор](media/solutions/overview.png)](media/solutions/overview.png#lightbox)
+[![На снимке экрана показано меню портал Azure с выбранными решениями и решениями, отображаемыми в области решения.](media/solutions/overview.png)](media/solutions/overview.png#lightbox)
 
 Решения мониторинга могут содержать несколько типов ресурсов Azure, и все ресурсы в составе решения можно просмотреть точно так же, как любой другой ресурс. Например, все включенные в решение запросы по журналам представлены в списке **Запросы решения** в [обозревателе запросов](../log-query/get-started-portal.md#load-queries). Эти запросы вы можете использовать при выполнении динамического анализа с помощью [запросов по журналам](../log-query/log-query-overview.md).
 
@@ -160,7 +160,7 @@ az monitor log-analytics solution create --resource-group MyResourceGroup \
 * Каждая установка решения может использовать только одну рабочую область Log Analytics и одну учетную запись службы автоматизации. Решение можно установить отдельно в нескольких рабочих областях.
 * Если для решения нужна учетная запись службы автоматизации, она должна быть связана с рабочей областью Log Analytics для этого же решения. Рабочая область Log Analytics может быть связана только с одной учетной записью службы автоматизации и наоборот.
 
-Если решение устанавливается из Azure Marketplace, вам предлагают указать рабочую область и учетную запись службы автоматизации. При необходимости связь между ними создается автоматически.
+При установке решения с помощью Azure Marketplace вам будет предложено ввести рабочую область и учетную запись службы автоматизации. При необходимости связь между ними создается автоматически.
 
 ### <a name="verify-the-link-between-a-log-analytics-workspace-and-automation-account"></a>Проверка связи между рабочей областью Log Analytics и учетной записью службы автоматизации
 

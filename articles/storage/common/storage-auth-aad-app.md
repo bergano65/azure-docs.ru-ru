@@ -6,20 +6,20 @@ services: storage
 author: tamram
 ms.service: storage
 ms.topic: how-to
-ms.date: 06/22/2020
+ms.date: 09/14/2020
 ms.author: tamram
 ms.subservice: common
-ms.custom: has-adal-ref, devx-track-csharp
-ms.openlocfilehash: d842974b0b53e0b0ce199334a07f11e5c998b18d
-ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
+ms.custom: devx-track-csharp
+ms.openlocfilehash: b5a39b08f34bec5ee1db42cde1fb171452d0efd3
+ms.sourcegitcommit: 1fe5127fb5c3f43761f479078251242ae5688386
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89018813"
+ms.lasthandoff: 09/14/2020
+ms.locfileid: "90069821"
 ---
 # <a name="acquire-a-token-from-azure-ad-for-authorizing-requests-from-a-client-application"></a>Получение маркера из Azure AD для авторизации запросов из клиентского приложения
 
-Ключевым преимуществом использования Azure Active Directory (Azure AD) с хранилищем BLOB-объектов Azure или хранилищем очередей является то, что ваши учетные данные больше не нужно хранить в коде. Вместо этого можно запросить маркер доступа OAuth 2,0 на платформе Microsoft Identity (прежнее название — Azure AD). Azure AD выполняет проверку подлинности субъекта безопасности (пользователя, группы или субъекта-службы), на котором выполняется приложение. Если проверка подлинности прошла удачно, Azure AD возвращает маркер доступа приложению, а приложение может использовать маркер доступа для авторизации запросов к хранилищу BLOB-объектов Azure или хранилищу очередей.
+Ключевым преимуществом использования Azure Active Directory (Azure AD) с хранилищем BLOB-объектов Azure или хранилищем очередей является то, что ваши учетные данные больше не нужно хранить в коде. Вместо этого можно запросить маркер доступа OAuth 2,0 на платформе Microsoft Identity. Azure AD выполняет проверку подлинности субъекта безопасности (пользователя, группы или субъекта-службы), на котором выполняется приложение. Если проверка подлинности прошла удачно, Azure AD возвращает маркер доступа приложению, а приложение может использовать маркер доступа для авторизации запросов к хранилищу BLOB-объектов Azure или хранилищу очередей.
 
 В этой статье показано, как настроить собственное приложение или веб-приложение для проверки подлинности с помощью Microsoft Identity Platform 2,0. В примерах кода используется .NET, но в других языках применяется аналогичный подход. Дополнительные сведения о платформе Microsoft Identity Platform 2,0 см. в статье [Обзор платформы Microsoft Identity Platform (v 2.0)](../../active-directory/develop/v2-overview.md).
 
@@ -27,7 +27,7 @@ ms.locfileid: "89018813"
 
 ## <a name="assign-a-role-to-an-azure-ad-security-principal"></a>Назначение роли субъекту безопасности Azure AD
 
-Чтобы обеспечить проверку подлинности субъекта безопасности из приложения службы хранилища Azure, нужно сначала настроить параметры управления доступом на основе ролей (RBAC) для этого субъекта безопасности. Служба хранилища Azure определяет встроенные роли Azure, охватывающие разрешения для контейнеров и очередей. Когда роль Azure назначается субъекту безопасности, этому субъекту безопасности предоставляется доступ к этому ресурсу. Дополнительные сведения см. в статье [Управление правами доступа к данным большого двоичного объекта Azure и очереди с помощью RBAC](storage-auth-aad-rbac.md).
+Чтобы обеспечить проверку подлинности субъекта безопасности из приложения службы хранилища Azure, нужно сначала настроить параметры управления доступом на основе ролей (RBAC) для этого субъекта безопасности. Служба хранилища Azure определяет встроенные роли, охватывающие разрешения для контейнеров и очередей. При назначении роли RBAC субъекту безопасности ему предоставляется доступ к соответствующему ресурсу. Дополнительные сведения см. в статье [Управление правами доступа к данным большого двоичного объекта Azure и очереди с помощью RBAC](storage-auth-aad-rbac.md).
 
 ## <a name="register-your-application-with-an-azure-ad-tenant"></a>Регистрация приложения в клиенте Azure AD
 
@@ -127,39 +127,78 @@ ms.locfileid: "89018813"
 
 В Visual Studio установите клиентскую библиотеку службы хранилища Azure. В меню **Сервис** выберите **Диспетчер пакетов NuGet**, а затем — **консоль диспетчера пакетов**. Введите следующие команды в окне консоли, чтобы установить необходимые пакеты из клиентской библиотеки службы хранилища Azure для .NET:
 
+# <a name="net-v12-sdk"></a>[NET (пакет SDK версии 12)](#tab/dotnet).
+
+```console
+Install-Package Azure.Storage.Blobs
+Install-Package Microsoft.Identity.Web -Version 0.4.0-preview
+```
+
+Затем добавьте следующие операторы using в файл HomeController.cs:
+
+```csharp
+using Microsoft.Identity.Web; //MSAL library for getting the access token
+using Azure.Storage.Blobs;
+```
+
+# <a name="net-v11-sdk"></a>[.NET (пакет SDK версии 11)](#tab/dotnet11).
+
 ```console
 Install-Package Microsoft.Azure.Storage.Blob
-Install-Package Microsoft.Azure.Storage.Common
+Install-Package Microsoft.Identity.Web -Version 0.4.0-preview
 ```
 
 Затем добавьте следующие операторы using в файл HomeController.cs:
 
 ```csharp
 using Microsoft.Identity.Client; //MSAL library for getting the access token
-using Microsoft.WindowsAzure.Storage.Auth;
-using Microsoft.WindowsAzure.Storage.Blob;
+using Microsoft.Azure.Storage.Auth;
+using Microsoft.Azure.Storage.Blob;
 ```
+
+---
 
 #### <a name="create-a-block-blob"></a>Создание блочного BLOB-объекта
 
 Добавьте следующий фрагмент кода для создания блочного BLOB-объекта:
 
+# <a name="net-v12-sdk"></a>[NET (пакет SDK версии 12)](#tab/dotnet).
+
+```csharp
+private static async Task<string> CreateBlob(TokenAcquisitionTokenCredential tokenCredential)
+{
+    Uri blobUri = new Uri("https://<storage-account>.blob.core.windows.net/<container>/Blob1.txt");
+    BlobClient blobClient = new BlobClient(blobUri, tokenCredential);
+
+    string blobContents = "Blob created by Azure AD authenticated user.";
+    byte[] byteArray = Encoding.ASCII.GetBytes(blobContents);
+
+    using (MemoryStream stream = new MemoryStream(byteArray))
+    {
+        await blobClient.UploadAsync(stream);
+    }
+    return "Blob successfully created";
+}
+```
+
+# <a name="net-v11-sdk"></a>[.NET (пакет SDK версии 11)](#tab/dotnet11).
+
 ```csharp
 private static async Task<string> CreateBlob(string accessToken)
 {
-    // Create a blob on behalf of the user
+    // Create a blob on behalf of the user.
     TokenCredential tokenCredential = new TokenCredential(accessToken);
     StorageCredentials storageCredentials = new StorageCredentials(tokenCredential);
 
-    // Replace the URL below with your storage account URL
-    CloudBlockBlob blob =
-        new CloudBlockBlob(
-            new Uri("https://<storage-account>.blob.core.windows.net/<container>/Blob1.txt"),
-            storageCredentials);
+    // Replace the URL below with the URL to your blob.
+    Uri blobUri = new Uri("https://<storage-account>.blob.core.windows.net/<container>/Blob1.txt");
+    CloudBlockBlob blob = new CloudBlockBlob(blobUri, storageCredentials);
     await blob.UploadTextAsync("Blob created by Azure AD authenticated user.");
     return "Blob successfully created";
 }
 ```
+
+---
 
 > [!NOTE]
 > Для авторизации операций BLOB-объектов и очередей с маркером OAuth 2,0 необходимо использовать протокол HTTPS.
@@ -175,69 +214,25 @@ x-ms-version: 2017-11-09
 Authorization: Bearer eyJ0eXAiOnJKV1...Xd6j
 ```
 
-#### <a name="get-an-oauth-token-from-azure-ad"></a>Получение токена OAuth из Azure AD
+#### <a name="get-an-access-token-from-azure-ad"></a>Получение токена доступа из Azure AD
 
 Затем добавьте метод, который запрашивает маркер из Azure AD от имени пользователя. Этот метод определяет область, для которой должны быть предоставлены разрешения. Дополнительные сведения о разрешениях и областях см. [в разделе разрешения и согласие в конечной точке платформы Microsoft Identity](../../active-directory/develop/v2-permissions-and-consent.md).
 
 Используйте идентификатор ресурса для создания области, для которой необходимо получить маркер. В примере область создается с использованием идентификатора ресурса вместе со встроенной `user_impersonation` областью, которая указывает на то, что маркер запрашивается от имени пользователя.
 
-Помните, что может потребоваться предоставить пользователю интерфейс, позволяющий пользователю получить согласие на запрос маркера от его имени. Когда требуется согласие, в примере перехватывается **мсалуирекуиредексцептион** и вызывается другой метод для упрощения запроса согласия:
+Помните, что может потребоваться предоставить пользователю интерфейс, позволяющий пользователю получить согласие на запрос маркера от его имени:
 
 ```csharp
+[AuthorizeForScopes(Scopes = new string[] { "https://storage.azure.com/user_impersonation" })]
 public async Task<IActionResult> Blob()
 {
-    var scopes = new string[] { "https://storage.azure.com/user_impersonation" };
-    try
-    {
-        var accessToken =
-            await _tokenAcquisition.GetAccessTokenOnBehalfOfUser(HttpContext, scopes);
-        ViewData["Message"] = await CreateBlob(accessToken);
-        return View();
-    }
-    catch (MsalUiRequiredException ex)
-    {
-        AuthenticationProperties properties =
-            BuildAuthenticationPropertiesForIncrementalConsent(scopes, ex);
-        return Challenge(properties);
-    }
+    string message = await CreateBlob(new TokenAcquisitionTokenCredential(_tokenAcquisition));
+    ViewData["Message"] = message;
+    return View();
 }
 ```
 
-Согласие — это процесс предоставления пользователем разрешения приложению получать доступ к защищенным ресурсам от имени пользователя. Платформа Microsoft Identity Platform 2,0 поддерживает последовательное согласие, а это значит, что участник безопасности может сначала запросить минимальный набор разрешений, а при необходимости добавить разрешения. Когда код запрашивает маркер доступа, укажите в параметре область разрешений, необходимых приложению в любое заданное время `scope` . Дополнительные сведения о последовательном согласии см. в разделе, посвященном **добавочному и динамическому согласию** по поводу [обновления платформы Microsoft Identity Platform (v 2.0)](../../active-directory/azuread-dev/azure-ad-endpoint-comparison.md#incremental-and-dynamic-consent).
-
-Следующий метод конструирует свойства проверки подлинности для запроса добавочного согласия:
-
-```csharp
-private AuthenticationProperties BuildAuthenticationPropertiesForIncrementalConsent(string[] scopes,
-                                                                                    MsalUiRequiredException ex)
-{
-    AuthenticationProperties properties = new AuthenticationProperties();
-
-    // Set the scopes, including the scopes that MSAL.NET needs for the token cache.
-    string[] additionalBuildInScopes = new string[] { "openid", "offline_access", "profile" };
-    properties.SetParameter<ICollection<string>>(OpenIdConnectParameterNames.Scope,
-                                                 scopes.Union(additionalBuildInScopes).ToList());
-
-    // Attempt to set the login_hint so that the logged-in user is not presented
-    // with an account selection dialog.
-    string loginHint = HttpContext.User.GetLoginHint();
-    if (!string.IsNullOrWhiteSpace(loginHint))
-    {
-        properties.SetParameter<string>(OpenIdConnectParameterNames.LoginHint, loginHint);
-
-        string domainHint = HttpContext.User.GetDomainHint();
-        properties.SetParameter<string>(OpenIdConnectParameterNames.DomainHint, domainHint);
-    }
-
-    // Specify any additional claims that are required (for instance, MFA).
-    if (!string.IsNullOrEmpty(ex.Claims))
-    {
-        properties.Items.Add("claims", ex.Claims);
-    }
-
-    return properties;
-}
-```
+Согласие — это процесс предоставления пользователем разрешения приложению получать доступ к защищенным ресурсам от имени пользователя. Платформа Microsoft Identity Platform 2,0 поддерживает последовательное согласие, а это значит, что участник безопасности может сначала запросить минимальный набор разрешений, а при необходимости добавить разрешения. Когда код запрашивает маркер доступа, укажите в параметре область разрешений, необходимых приложению в любое заданное время `scope` . Дополнительные сведения о последовательном согласии см. в разделе [добавочное и динамическое согласие](../../active-directory/azuread-dev/azure-ad-endpoint-comparison.md#incremental-and-dynamic-consent).
 
 ## <a name="view-and-run-the-completed-sample"></a>Просмотр и запуск завершенного примера
 
@@ -271,17 +266,15 @@ private AuthenticationProperties BuildAuthenticationPropertiesForIncrementalCons
 
 ### <a name="update-the-storage-account-and-container-name"></a>Обновление учетной записи хранения и имени контейнера
 
-В файле *HomeController.CS* обновите универсальный код ресурса (URI), который ссылается на блочный BLOB-объект, чтобы использовать имя учетной записи хранения и контейнера:
+В файле *HomeController.CS* обновите универсальный код ресурса (URI), который ссылается на блочный BLOB-объект, чтобы использовать имя вашей учетной записи хранения и контейнера, заменив значения в угловых скобках собственными значениями:
 
-```csharp
-CloudBlockBlob blob = new CloudBlockBlob(
-                      new Uri("https://<storage-account>.blob.core.windows.net/<container>/Blob1.txt"),
-                      storageCredentials);
+```html
+https://<storage-account>.blob.core.windows.net/<container>/Blob1.txt
 ```
 
 ### <a name="enable-implicit-grant-flow"></a>Включить неявный поток предоставления разрешений
 
-Чтобы запустить пример, может потребоваться настроить неявный поток предоставления для регистрации приложения. Выполните следующие действия:
+Чтобы запустить пример, может потребоваться настроить неявный поток предоставления для регистрации приложения. Выполните следующие действия.
 
 1. Перейдите к регистрации приложения в портал Azure.
 1. В разделе **Управление** выберите параметр **Проверка подлинности** .
@@ -299,7 +292,7 @@ CloudBlockBlob blob = new CloudBlockBlob(
 
     ![Снимок экрана, показывающий URI перенаправления для регистрации приложения](media/storage-auth-aad-app/redirect-uri.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - [Платформа удостоверений Майкрософт](https://docs.microsoft.com/azure/active-directory/develop/)
 - [Управление правами доступа к данным хранилища с помощью RBAC](storage-auth-aad-rbac.md)

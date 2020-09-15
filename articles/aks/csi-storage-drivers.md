@@ -1,34 +1,34 @@
 ---
 title: Включение драйверов интерфейса хранилища контейнера (CSI) в службе Kubernetes Azure (AKS)
-description: Узнайте, как включить драйверы интерфейса хранилища контейнера (CSI) для диска Azure и службы файлов Azure в кластере Azure Kubernetes Service (AKS).
+description: Узнайте, как включить драйверы интерфейса хранилища контейнера (CSI) для дисков Azure и службы файлов Azure в кластере Azure Kubernetes Service (AKS).
 services: container-service
 ms.topic: article
 ms.date: 08/27/2020
 author: palma21
-ms.openlocfilehash: bd5706d20496e1ff00843f761443d183cf7fcae3
-ms.sourcegitcommit: 9c262672c388440810464bb7f8bcc9a5c48fa326
+ms.openlocfilehash: 54764b16ba63d5656f61152cfe40ef50475192a5
+ms.sourcegitcommit: 07166a1ff8bd23f5e1c49d4fd12badbca5ebd19c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/03/2020
-ms.locfileid: "89422074"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90085674"
 ---
 # <a name="enable-container-storage-interface-csi-drivers-for-azure-disks-and-azure-files-on-azure-kubernetes-service-aks-preview"></a>Включение драйверов интерфейса хранилища контейнеров (CSI) для дисков Azure и службы файлов Azure в службе Kubernetes Azure (AKS) (Предварительная версия)
 
-Интерфейс хранилища контейнера (CSI) является стандартом для предоставления произвольных блоков и систем хранения файлов в контейнерные рабочие нагрузки в Kubernetes. Принимая и используя CSI, служба Kubernetes Azure (AKS) может писать, развертывать и выполнять итерацию подключаемых модулей, предоставляя новые или улучшающие существующие системы хранения в Kubernetes без необходимости касаться основного кода Kubernetes и ожидания циклов выпуска.
+Интерфейс хранилища контейнера (CSI) является стандартом для предоставления произвольных блоков и систем хранения файлов в контейнерные рабочие нагрузки в Kubernetes. Принимая и используя CSI, служба Kubernetes Azure (AKS) может создавать, развертывать и перебирать подключаемые модули, чтобы предоставлять новые или улучшать существующие системы хранения в Kubernetes без необходимости касаться основного кода Kubernetes и ожидать циклов выхода.
 
-Поддержка драйвера хранилища CSI в AKS позволяет использовать встроенные возможности.
-- [*Диски Azure*](azure-disk-csi.md) — можно использовать для *создания ресурса Kubernetes* . Диски могут использовать хранилище Azure класса Premium, на основе высокопроизводительных твердотельных накопителей или хранилища Azure уровня "Стандартный", поддерживающие обычные жесткие диски или стандартные твердотельные накопители. Для большинства производственных рабочих нагрузок и рабочих нагрузок разработки следует использовать службу хранилища ценовой категории "Премиум". Диски Azure монтируются как *реадвритеонце*, поэтому доступны только для одного Pod. Для томов хранилища, к которым несколько модулей памяти могут одновременно получить доступ, используйте службу файлов Azure.
-- Службы [*файлов Azure*](azure-files-csi.md) можно использовать для подключения общего ресурса SMB 3,0, поддерживаемого учетной записью хранения Azure, к модулям Pod. Служба файлов обеспечивает обмен данными между несколькими узлами и элементами pod. Файлы могут использовать хранилище Azure уровня "Стандартный", поддерживающее обычные жесткие диски или хранилище Azure класса Premium, с помощью высокопроизводительных твердотельных накопителей.
+Поддержка драйвера хранилища CSI в AKS позволяет изначально использовать:
+- [*Диски Azure*](azure-disk-csi.md), которые можно использовать для создания ресурса Kubernetes на *диске* . Диски могут использовать хранилище Azure класса Premium, на основе высокопроизводительных твердотельных накопителей или хранилища Azure уровня "Стандартный", поддерживающие обычные жесткие диски или стандартные твердотельные накопители. Для большинства рабочих нагрузок рабочей нагрузки и разработки используйте хранилище класса Premium. Диски Azure монтируются как *реадвритеонце*, поэтому доступны только для одного Pod. Для томов хранилища, к которым несколько модулей памяти могут одновременно получить доступ, используйте службу файлов Azure.
+- [*Файлы Azure*](azure-files-csi.md), которые можно использовать для подключения общего ресурса SMB 3,0, поддерживаемого учетной записью хранения Azure, к модулям Pod. С помощью службы файлов Azure можно обмениваться данными между несколькими узлами и модулями Pod. Служба файлов Azure может использовать хранилище Azure уровня "Стандартный", поддерживающее обычные жесткие диски или хранилище Azure класса Premium, с помощью высокопроизводительных твердотельных накопителей.
 
 > [!IMPORTANT]
-> Начиная с версии 1,21 Kubernetes, Kubernetes будет использовать только драйверы CSI и по умолчанию. Это будущее поддержки хранилища в Kubernetes.
+> Начиная с версии 1,21 Kubernetes, Kubernetes будет использовать только драйверы CSI и по умолчанию. Эти драйверы являются будущей частью поддержки хранилища в Kubernetes.
 >
-> *"Драйверы в дереве"* относятся к текущим драйверам хранилища, которые являются частью основного кода kubernetes, и новыми ДРАЙВЕРами CSI, которые являются подключаемыми модулями.
+> *Драйверы в дереве* относятся к текущим драйверам хранилища, которые являются частью основного кода Kubernetes, а также новыми драйверами CSI, которые являются подключаемыми модулями.
 
 ## <a name="limitations"></a>Ограничения
 
 - Этот компонент можно задать только во время создания кластера.
-- Минимальная kubernetes дополнительная версия, поддерживающая драйверы CSI, — v 1.17.
+- Минимальная Kubernetes дополнительная версия, поддерживающая драйверы CSI, — v 1.17.
 - Во время предварительной версии класс хранения по умолчанию по-прежнему будет иметь тот [же класс хранения в дереве](concepts-storage.md#storage-classes). После того как эта функция общедоступна, класс хранения по умолчанию будет содержать `managed-csi` класс хранения, а классы хранения в дереве будут удалены.
 - На первом этапе предварительной версии поддерживается только Azure CLI.
 
@@ -38,19 +38,19 @@ ms.locfileid: "89422074"
 
 Чтобы создать кластер AKS, который может использовать драйверы CSI для дисков Azure и файлов Azure, необходимо включить `EnableAzureDiskFileCSIDriver` флаг компонента в подписке.
 
-Зарегистрируйте `EnableAzureDiskFileCSIDriver` флаг функции с помощью команды [AZ Feature Register][az-feature-register] , как показано в следующем примере:
+Зарегистрируйте `EnableAzureDiskFileCSIDriver` флаг компонента с помощью команды [AZ Feature Register][az-feature-register] , как показано в следующем примере:
 
 ```azurecli-interactive
 az feature register --namespace "Microsoft.ContainerService" --name "EnableAzureDiskFileCSIDriver"
 ```
 
-Через несколько минут отобразится состояние *Registered* (Зарегистрировано). Проверьте состояние регистрации с помощью команды [AZ Feature List][az-feature-list] :
+Через несколько минут отобразится состояние *Registered* (Зарегистрировано). Проверьте состояние регистрации с помощью команды [AZ Feature List][az-feature-list] .
 
 ```azurecli-interactive
 az feature list -o table --query "[?contains(name, 'Microsoft.ContainerService/EnableAzureDiskFileCSIDriver')].{Name:name,State:properties.state}"
 ```
 
-Когда все будет готово, обновите регистрацию поставщика ресурсов *Microsoft.ContainerService* с помощью команды [az provider register][az-provider-register].
+Когда все будет готово, обновите регистрацию поставщика ресурсов *Microsoft. ContainerService* с помощью команды [AZ Provider Register][az-provider-register] :
 
 ```azurecli-interactive
 az provider register --namespace Microsoft.ContainerService
@@ -60,7 +60,7 @@ az provider register --namespace Microsoft.ContainerService
 
 ### <a name="install-aks-preview-cli-extension"></a>Установка расширения интерфейса командной строки предварительной версии AKS
 
-Чтобы создать кластер AKS или пул узлов, которые могут использовать драйверы хранилища CSI, необходимо установить последнее расширение CLI для *AKS-Preview* . Установите расширение Azure CLI *AKS-Preview* с помощью команды [AZ Extension Add][az-extension-add] или установите все доступные обновления с помощью команды [AZ Extension Update][az-extension-update] .
+Чтобы создать кластер AKS или пул узлов, которые могут использовать драйверы хранилища CSI, требуется новейшее расширение *AKS-preview* Azure CLI. Установите расширение Azure CLI *AKS-Preview* с помощью команды [AZ Extension Add][az-extension-add] . Или установите все доступные обновления с помощью команды [AZ Extension Update][az-extension-update] .
 
 ```azurecli-interactive
 # Install the aks-preview extension
@@ -82,14 +82,14 @@ az extension update --name aks-preview
 az group create --name myResourceGroup --location canadacentral
 ```
 
-Создайте кластер AKS с поддержкой драйверов хранилища CSI.
+Создайте кластер AKS с поддержкой драйверов хранилища CSI:
 
 ```azurecli-interactive
 # Create an AKS-managed Azure AD cluster
 az aks create -g MyResourceGroup -n MyManagedCluster --network-plugin azure -k 1.17.9 --aks-custom-headers EnableAzureDiskFileCSIDriver=true
 ```
 
-Если вы хотите создать кластеры с драйверами хранилища в виде дерева вместо драйверов хранилища CSI, это можно сделать, опустив пользовательский `--aks-custom-headers` параметр.
+Если вы хотите создать кластеры в драйверах хранилища дерева вместо драйверов хранилища CSI, это можно сделать, опустив пользовательский `--aks-custom-headers` параметр.
 
 
 Проверьте, сколько томов на диске Azure можно подключить к этому узлу, выполнив следующую команду:
@@ -104,11 +104,11 @@ $ echo $(kubectl get CSINode <NODE NAME> -o jsonpath="{.spec.drivers[1].allocata
 8
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
-- Использование диска CSI для дисков Azure см. в статье [Использование диска Azure с драйверами CSI](azure-disk-csi.md).
-- Использование диска CSI для файлов Azure см. в статье [использование файлов Azure с драйверами CSI](azure-files-csi.md).
-- Дополнительные сведения о рекомендациях по хранению см. в статье рекомендации [по хранению и резервному копированию в службе Azure Kubernetes Service (AKS)][operator-best-practices-storage] .
+- Чтобы использовать диск CSI для дисков Azure, см. статью [Использование дисков Azure с драйверами CSI](azure-disk-csi.md).
+- Чтобы использовать диск CSI для файлов Azure, см. статью [использование файлов Azure с драйверами CSI](azure-files-csi.md).
+- Дополнительные сведения о рекомендациях по хранению см. в статье рекомендации [по хранению и резервному копированию в службе Azure Kubernetes][operator-best-practices-storage].
 
 <!-- LINKS - external -->
 [access-modes]: https://kubernetes.io/docs/concepts/storage/persistent-volumes/#access-modes
@@ -132,8 +132,8 @@ $ echo $(kubectl get CSINode <NODE NAME> -o jsonpath="{.spec.drivers[1].allocata
 [operator-best-practices-storage]: operator-best-practices-storage.md
 [concepts-storage]: concepts-storage.md
 [storage-class-concepts]: concepts-storage.md#storage-classes
-[az-extension-add]: /cli/azure/extension?view=azure-cli-latest#az-extension-add
-[az-extension-update]: /cli/azure/extension?view=azure-cli-latest#az-extension-update
-[az-feature-register]: /cli/azure/feature?view=azure-cli-latest#az-feature-register
-[az-feature-list]: /cli/azure/feature?view=azure-cli-latest#az-feature-list
-[az-provider-register]: /cli/azure/provider?view=azure-cli-latest#az-provider-register
+[az-extension-add]: /cli/azure/extension?view=azure-cli-latest#az-extension-add&preserve-view=true
+[az-extension-update]: /cli/azure/extension?view=azure-cli-latest#az-extension-update&preserve-view=true
+[az-feature-register]: /cli/azure/feature?view=azure-cli-latest#az-feature-register&preserve-view=true
+[az-feature-list]: /cli/azure/feature?view=azure-cli-latest#az-feature-list&preserve-view=true
+[az-provider-register]: /cli/azure/provider?view=azure-cli-latest#az-provider-register&preserve-view=true

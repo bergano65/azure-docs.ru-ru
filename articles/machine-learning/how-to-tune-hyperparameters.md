@@ -11,12 +11,12 @@ ms.subservice: core
 ms.date: 03/30/2020
 ms.topic: conceptual
 ms.custom: how-to, devx-track-python
-ms.openlocfilehash: 84262427c6d5183fb803f3fc16d2e7b8021e9d5e
-ms.sourcegitcommit: 3be3537ead3388a6810410dfbfe19fc210f89fec
+ms.openlocfilehash: 52e419e970173ddaf3d4d6176f2dd26a1e8194e2
+ms.sourcegitcommit: 07166a1ff8bd23f5e1c49d4fd12badbca5ebd19c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89651802"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90084675"
 ---
 # <a name="tune-hyperparameters-for-your-model-with-azure-machine-learning"></a>Настройка параметров для модели с помощью Машинное обучение Azure
 [!INCLUDE [applies-to-skus](../../includes/aml-applies-to-basic-enterprise-sku.md)]
@@ -151,11 +151,9 @@ param_sampling = BayesianParameterSampling( {
 ```
 
 > [!NOTE]
-> Байесовская выборка сейчас не поддерживает политику досрочного завершения (см. раздел[Указание политики досрочного завершения](#specify-early-termination-policy)). При использовании байесовской выборки параметров установите `early_termination_policy = None` или оставьте отключенным параметр `early_termination_policy`.
+> Байесовская выборка сейчас не поддерживает политику досрочного завершения (см. раздел[Указание политики досрочного завершения](#early-termination)). При использовании байесовской выборки параметров установите `early_termination_policy = None` или оставьте отключенным параметр `early_termination_policy`.
 
-<a name='specify-primary-metric-to-optimize'/>
-
-## <a name="specify-primary-metric"></a>Настройка основной метрики
+## <a name="specify-primary-metric"></a><a name="specify-primary-metric-to-optimize"></a> Укажите основную метрику
 
 Укажите [основную метрику](https://docs.microsoft.com/python/api/azureml-train-core/azureml.train.hyperdrive.primarymetricgoal?view=azure-ml-py&preserve-view=true) , которую необходимо оптимизировать для эксперимента настройки параметров. Для основной метрики оценивается каждый учебный запуск. Запуски с низкой эффективностью (у которых основная метрика не соответствует критериям, установленным политикой досрочного завершения) прекращаются. Помимо названия основной метрики следует указать цель оптимизации — максимизация или минимизация основной метрики.
 
@@ -169,9 +167,7 @@ primary_metric_goal=PrimaryMetricGoal.MAXIMIZE
 
 Запуски оптимизируются для максимизации точности.  Не забудьте, что это значение нужно сохранять в скрипте обучения.
 
-<a name='log-metrics-for-hyperparameter-tuning'/>
-
-### <a name="log-metrics-for-hyperparameter-tuning"></a>Ведение журнала метрик для настройки гиперпараметров
+### <a name="specify-primary-metric"></a><a name="log-metrics-for-hyperparameter-tuning"></a> Укажите основную метрику
 
 Скрипт обучения для модели должен сохранять значения соответствующих метрик в процессе обучения модели. В конфигурации для настройки гиперпараметров вы указываете основную метрику, по которой будет оцениваться производительность выполнения. (См. раздел [Указание основной метрики для оптимизации](#specify-primary-metric-to-optimize).)  В сценарии обучения необходимо зарегистрировать эту метрику, чтобы она была доступна процессу настройки параметров.
 
@@ -184,8 +180,6 @@ run_logger.log("accuracy", float(val_accuracy))
 ```
 
 Скрипт обучения вычисляет значение `val_accuracy` и сохраняет его как значение "точности", которая настроена в качестве основной метрики. Каждое записанное значение метрики поступает на обработку в службу настройки гиперпараметров. Разработчик модели должен определить, как часто сообщать об этой метрике.
-
-<a name='specify-early-termination-policy'/>
 
 ## <a name="specify-early-termination-policy"></a><a name="early-termination"></a> Укажите политику раннего завершения
 
@@ -403,6 +397,6 @@ print('\n batch size:',parameter_values[7])
 
 [!INCLUDE [aml-clone-in-azure-notebook](../../includes/aml-clone-for-examples.md)]
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 * [Руководство по отслеживанию эксперимента](how-to-track-experiments.md)
 * [Развертывание обученной модели](how-to-deploy-and-where.md)

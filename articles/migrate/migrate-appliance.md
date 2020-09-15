@@ -1,14 +1,14 @@
 ---
 title: Устройство службы "Миграция Azure"
-description: Общие сведения об устройстве Миграции Azure, используемом для оценки и миграции серверов.
+description: Содержит сводку по поддержке устройства "миграция Azure".
 ms.topic: conceptual
 ms.date: 05/04/2020
-ms.openlocfilehash: 2092b03ee95349286b9e845689b5d9d55b61c772
-ms.sourcegitcommit: 51df05f27adb8f3ce67ad11d75cb0ee0b016dc5d
+ms.openlocfilehash: e2bd3f2fa40bbf31713393f18a04624d70cbd244
+ms.sourcegitcommit: 07166a1ff8bd23f5e1c49d4fd12badbca5ebd19c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/14/2020
-ms.locfileid: "90060736"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90084776"
 ---
 # <a name="azure-migrate-appliance"></a>Устройство службы "Миграция Azure"
 
@@ -71,7 +71,7 @@ ms.locfileid: "90060736"
 **Сценарий PowerShell** | Обратитесь к этой [статье](./deploy-appliance-script.md#set-up-the-appliance-for-hyper-v).<br/><br/> 
 **Программное и аппаратное обеспечение***   |  Устройство должно работать на компьютере с Windows Server 2016, 16 ГБ ОЗУ, 8 виртуальных ЦП, около 80 ГБ дискового накопителя и внешним виртуальным коммутатором.<br/> Устройству требуется статический или динамический IP-адрес, а также доступ к Интернету напрямую или через прокси-сервер.<br/><br/> Если вы запускаете устройство в качестве виртуальной машины Hyper-V, потребуется достаточно ресурсов на узле Hyper-V, чтобы выделить для виртуальной машины устройства 16 ГБ ОЗУ, 8 виртуальных ЦП, около 80 ГБ дискового хранилища и внешний коммутатор.<br/><br/> Если вы запускаете устройство на физическом компьютере, убедитесь, что он работает под управлением Windows Server 2016 и соответствует требованиям к оборудованию. 
 **Требования для Hyper-V** | Если вы развертываете устройство с помощью шаблона VHD, то Миграция Azure предоставляет виртуальную машину Hyper-V версии 5.0.<br/><br/> Узел Hyper-V должен работать под управлением Windows Server 2012 R2 или более поздней версии. 
-**Значение хэша VHD** | [Проверьте](tutorial-assess-hyper-v.md#verify-security) значения хэша шаблона VHD.
+**Значение хэша VHD** | Хэш-значения шаблона виртуального жесткого диска.
 **Значение хэша для сценария PowerShell** | [Проверьте](deploy-appliance-script.md#verify-file-security) значения хэша для сценария PowerShell.
 
 
@@ -84,7 +84,7 @@ ms.locfileid: "90060736"
 **Поддерживаемое развертывание** | Развертывание в качестве выделенного физического компьютера или виртуальной машины с помощью сценария установки PowerShell. Этот сценарий можно скачать с портала.
 **Поддержка проектов** |  Устройство может быть связано с одним проектом. <br/> С одним проектом можно связать любое количество устройств.<br/> 
 **Ограничения обнаружения** | Устройство может обнаруживать до 1000 физических серверов.
-**Сценарий PowerShell** | Скачайте сценарий (AzureMigrateInstaller.ps1) в ZIP-папку на портале или [отсюда](https://go.microsoft.com/fwlink/?linkid=2140334). [Подробнее](tutorial-assess-physical.md#set-up-the-azure-migrate-appliance).<br/><br/> Размер загрузки составляет 85 МБ.
+**Сценарий PowerShell** | Скачайте сценарий (AzureMigrateInstaller.ps1) в ZIP-папку на портале или [отсюда](https://go.microsoft.com/fwlink/?linkid=2140334). [Подробнее](tutorial-discover-physical.md).<br/><br/> Размер загрузки составляет 85 МБ.
 **Программное и аппаратное обеспечение** |  Устройство должно работать на компьютере с Windows Server 2016, 16 ГБ ОЗУ, 8 виртуальных ЦП, около 80 ГБ дискового накопителя и внешним виртуальным коммутатором.<br/> Устройству требуется статический или динамический IP-адрес, а также доступ к Интернету напрямую или через прокси-сервер.<br/><br/> Если вы запускаете устройство на физическом компьютере, убедитесь, что он работает под управлением Windows Server 2016 и соответствует требованиям к оборудованию.<br/> Запуск устройства на компьютере с Windows Server 2019 не поддерживается.
 **Значение хэша** | [Проверьте](deploy-appliance-script.md#verify-file-security) значения хэша для сценария PowerShell.
 
@@ -227,7 +227,7 @@ IPv6-адреса | vm.Guest.Net
 
 **Data**  | **Командлет PowerShell** | **Свойство**
 --- | --- | ---
-Имя  | Get-WindowsFeature  | Имя
+name  | Get-WindowsFeature  | name
 Тип функции | Get-WindowsFeature  | Объект featuretype
 Parent  | Get-WindowsFeature  | Parent
 
@@ -237,7 +237,7 @@ Parent  | Get-WindowsFeature  | Parent
 
 **Data**  | **Расположение реестра**  | **Key**
 --- | --- | ---
-Имя  | HKLM: \ SOFTWARE\Microsoft\Microsoft SQL сохраняет имена экземпляров  | инсталлединстанце
+name  | HKLM: \ SOFTWARE\Microsoft\Microsoft SQL сохраняет имена экземпляров  | инсталлединстанце
 Выпуск  | HKLM: \ SOFTWARE\Microsoft\Microsoft SQL Server \\ \<InstanceName> \setup  | Выпуск 
 Пакет обновления  | HKLM: \ SOFTWARE\Microsoft\Microsoft SQL Server \\ \<InstanceName> \setup  | SP
 Версия  | HKLM: \ SOFTWARE\Microsoft\Microsoft SQL Server \\ \<InstanceName> \setup  | Версия 
@@ -248,7 +248,7 @@ Parent  | Get-WindowsFeature  | Parent
 
 Данные  | класс WMI  | Свойство класса WMI
 --- | --- | ---
-Имя  | Win32_operatingsystem  | Caption
+name  | Win32_operatingsystem  | Caption
 Версия  | Win32_operatingsystem  | Версия
 Architecture  | Win32_operatingsystem  | OSArchitecture
 
@@ -258,7 +258,7 @@ Architecture  | Win32_operatingsystem  | OSArchitecture
 
 Данные  | Get-Help
 --- | --- 
-Имя | RPM, dpkg — запрос, привязка
+name | RPM, dpkg — запрос, привязка
 Версия | RPM, dpkg — запрос, привязка
 Поставщик | RPM, dpkg — запрос, привязка
 
@@ -268,7 +268,7 @@ Architecture  | Win32_operatingsystem  | OSArchitecture
 
 **Data**  | **Команда** 
 --- | --- | ---
-Имя <br/> version | Собраны из одного или нескольких следующих файлов:<br/> <br/>/etc/os-release  <br> /usr/lib/os-release  <br> /etc/enterprise-release  <br> /etc/redhat-release  <br> /etc/oracle-release  <br> /etc/SuSE-release  <br> /etc/lsb-release  <br> /etc/debian_version 
+name <br/> version | Собраны из одного или нескольких следующих файлов:<br/> <br/>/etc/os-release  <br> /usr/lib/os-release  <br> /etc/enterprise-release  <br> /etc/redhat-release  <br> /etc/oracle-release  <br> /etc/SuSE-release  <br> /etc/lsb-release  <br> /etc/debian_version 
 Architecture | uname
 
 

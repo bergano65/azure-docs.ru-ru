@@ -6,12 +6,12 @@ ms.topic: how-to
 ms.date: 08/21/2020
 ms.author: helohr
 manager: lizross
-ms.openlocfilehash: de495d18220500e5aa5653e89776c2634d5b1c85
-ms.sourcegitcommit: 6fc156ceedd0fbbb2eec1e9f5e3c6d0915f65b8e
+ms.openlocfilehash: fbc2aba21212a83bd73d5664f4fe288017954c0d
+ms.sourcegitcommit: 07166a1ff8bd23f5e1c49d4fd12badbca5ebd19c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/21/2020
-ms.locfileid: "88719157"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90084215"
 ---
 # <a name="add-language-packs-to-a-windows-10-multi-session-image"></a>Добавление языковых пакетов в многосеансовый образ Windows 10
 
@@ -24,13 +24,13 @@ ms.locfileid: "88719157"
 
 Последний метод является гораздо более эффективным и экономичным. Тем не менее, вам нужно решить, какой метод лучше подходит для ваших нужд. В этой статье показано, как настроить языки для образов.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Предварительные условия
 
 Чтобы настроить многосеансовые образы Windows 10 Enterprise для добавления нескольких языков, необходимо выполнить следующие действия.
 
 - Виртуальная машина Azure с многосеансовой поддержкой Windows 10 Enterprise, версия 1903 или более поздняя
 
-- Язык ISO и компонент по запросу (FOD) на диске 1 версии операционной системы, используемой в образе. Их можно загрузить здесь: 
+- ISO-файл языка ISO, функция по запросу (FOD) и папка "Входящие" для приложений версии ОС, используемой в образе. Их можно загрузить здесь: 
      
      - ISO-язык:
         - [Windows 10, версия 1903 или 1909 языковой пакет (ISO)](https://software-download.microsoft.com/download/pr/18362.1.190318-1202.19h1_release_CLIENTLANGPACKDVD_OEM_MULTI.iso)
@@ -39,6 +39,10 @@ ms.locfileid: "88719157"
      - FOD диск 1 ISO:
         - [Windows 10, версия 1903 или 1909 FOD диск 1 ISO](https://software-download.microsoft.com/download/pr/18362.1.190318-1202.19h1_release_amd64fre_FOD-PACKAGES_OEM_PT1_amd64fre_MULTI.iso)
         - [Windows 10, версия 2004 FOD диск 1 ISO](https://software-download.microsoft.com/download/pr/19041.1.191206-1406.vb_release_amd64fre_FOD-PACKAGES_OEM_PT1_amd64fre_MULTI.iso)
+        
+     - ISO-файл входящих приложений:
+        - [Windows 10, версия 1903 или 1909 Входящие приложения (ISO)](https://software-download.microsoft.com/download/pr/18362.1.190318-1202.19h1_release_amd64fre_InboxApps.iso)
+        - [Windows 10, версия 2004 Входящие приложения ISO](https://software-download.microsoft.com/download/pr/19041.1.191206-1406.vb_release_amd64fre_InboxApps.iso)
 
 - Общая папка службы файлов Azure или общая папка на виртуальной машине файлового сервера Windows
 
@@ -47,15 +51,16 @@ ms.locfileid: "88719157"
 
 ## <a name="create-a-content-repository-for-language-packages-and-features-on-demand"></a>Создание репозитория содержимого для языковых пакетов и компонентов по требованию
 
-Чтобы создать репозиторий содержимого для языковых пакетов и Фодс, выполните следующие действия.
+Чтобы создать репозиторий содержимого для языковых пакетов и Фодс, а также репозиторий для пакетов входящих приложений, выполните следующие действия.
 
-1. На виртуальной машине Azure Скачайте многоязыковые ISO-образы Windows 10 и Фодс для многосеансовых версий 1903, 1909 и 2004 для Windows 10 Корпоративная с помощью ссылок в [предварительных требованиях](#prerequisites).
+1. На виртуальной машине Azure Скачайте многоязыковые приложения для Windows 10, Фодс и входящие, для образов Windows 10 Корпоративная с несколькими сеансами, версии 1903/1909 и 2004, используя ссылки в [предварительных требованиях](#prerequisites).
 
 2. Откройте и подключите ISO-файлы на виртуальной машине.
 
 3. Перейдите к ISO-образу языкового пакета и скопируйте содержимое из папок **локалекспериенцепаккс** и **x64 \\ лангпаккс** , а затем вставьте содержимое в общую папку.
 
 4. Перейдите в **ISO-файл FOD**, скопируйте все его содержимое, а затем вставьте его в общую папку.
+5. Перейдите в папку **amd64fre** в формате ISO "Входящие приложения" и скопируйте содержимое в репозиторий для подготовленных Вами входящих вами приложений.
 
      >[!NOTE]
      > Если вы работаете с ограниченным объемом хранилища, копируйте файлы только для тех языков, которые вам нужны пользователям. Файлы можно указать отдельно, взглянув на коды языка в именах файлов. Например, французский файл содержит код "fr-FR" в его имени. Полный список кодов языков для всех доступных языков см. в разделе [Доступные языковые пакеты для Windows](/windows-hardware/manufacture/desktop/available-language-packs-for-windows).
@@ -66,7 +71,7 @@ ms.locfileid: "88719157"
      > [!div class="mx-imgBorder"]
      > ![Пример японских языковых пакетов с тегом языка "Жпан" в именах файлов.](media/language-pack-example.png)
 
-5. Задайте разрешения для общей папки репозитория содержимого языка, чтобы у вас был доступ на чтение с виртуальной машины, которая будет использоваться для создания пользовательского образа.
+6. Задайте разрешения для общей папки репозитория содержимого языка, чтобы у вас был доступ на чтение с виртуальной машины, которая будет использоваться для создания пользовательского образа.
 
 ## <a name="create-a-custom-windows-10-enterprise-multi-session-image-manually"></a>Создание пользовательского многосеансового образа Windows 10 Enterprise вручную
 
@@ -75,7 +80,7 @@ ms.locfileid: "88719157"
 1. Разверните виртуальную машину Azure, перейдите в коллекцию Azure и выберите текущую версию многосеансовой версии Windows 10 Enterprise, которую вы используете.
 2. После развертывания виртуальной машины подключитесь к ней, используя RDP в качестве локального администратора.
 3. Убедитесь, что на виртуальной машине установлены все последние обновления Windows. При необходимости скачайте обновления и перезапустите виртуальную машину.
-4. Подключитесь к языковому пакету и FOD в репозитории файловых ресурсов и подключите его к букве диска (например, на диске E).
+4. Подключитесь к репозиторию файлового пакета, FOD и папке "Входящие приложения" и подключите его к букве диска (например, на диске E).
 
 ## <a name="create-a-custom-windows-10-enterprise-multi-session-image-automatically"></a>Автоматическое создание пользовательского многосеансового образа Windows 10 Enterprise
 
@@ -161,6 +166,56 @@ Set-WinUserLanguageList $LanguageList -force
 
 После завершения выполнения скрипта убедитесь, что языковые пакеты правильно установлены, перейдя к **Start**  >  **параметру**  >  **время запуска &**  >  **язык**. Если языковые файлы установлены, все они будут установлены.
 
+После добавления дополнительных языков в образ Windows также необходимо обновить Входящие приложения для поддержки добавленных языков. Это можно сделать, обновив предварительно установленные приложения содержимым из ISO-файла входящих приложений. Чтобы выполнить это обновление в отключенной среде (нет доступа к Интернету из виртуальной машины), можно использовать следующий пример сценария PowerShell для автоматизации процесса.
+
+```powershell
+#########################################
+## Update Inbox Apps for Multi Language##
+#########################################
+##Set Inbox App Package Content Stores##
+[string]$InboxApps = "F:\"
+##Update Inbox Store Apps##
+$AllAppx = Get-Item $inboxapps\*.appx | Select-Object name
+$AllAppxBundles = Get-Item $inboxapps\*.appxbundle | Select-Object name
+$allAppxXML = Get-Item $inboxapps\*.xml | Select-Object name
+foreach ($Appx in $AllAppx) {
+    $appname = $appx.name.substring(0,$Appx.name.length-5)
+    $appnamexml = $appname + ".xml"
+    $pathappx = $InboxApps + "\" + $appx.Name
+    $pathxml = $InboxApps + "\" + $appnamexml
+    
+    if($allAppxXML.name.Contains($appnamexml)){
+    
+    Write-Host "Handeling with xml $appname"  
+  
+    Add-AppxProvisionedPackage -Online -PackagePath $pathappx -LicensePath $pathxml
+    } else {
+      
+      Write-Host "Handeling without xml $appname"
+      
+      Add-AppxProvisionedPackage -Online -PackagePath $pathappx -skiplicense
+    }
+}
+foreach ($Appx in $AllAppxBundles) {
+    $appname = $appx.name.substring(0,$Appx.name.length-11)
+    $appnamexml = $appname + ".xml"
+    $pathappx = $InboxApps + "\" + $appx.Name
+    $pathxml = $InboxApps + "\" + $appnamexml
+    
+    if($allAppxXML.name.Contains($appnamexml)){
+    Write-Host "Handeling with xml $appname"
+    
+    Add-AppxProvisionedPackage -Online -PackagePath $pathappx -LicensePath $pathxml
+    } else {
+       Write-Host "Handeling without xml $appname"
+      Add-AppxProvisionedPackage -Online -PackagePath $pathappx -skiplicense
+    }
+}
+```
+
+>[!IMPORTANT]
+>Входящие в состав ISO приложения не являются последними версиями предварительно установленных приложений Windows. Чтобы получить последнюю версию всех приложений, необходимо обновить приложения с помощью приложения для Магазина Windows и выполнить поиск обновлений вручную после установки дополнительных языков.
+
 Когда все будет готово, не забудьте отключить общую папку.
 
 ## <a name="finish-customizing-your-image"></a>Завершение настройки образа
@@ -177,15 +232,15 @@ Set-WinUserLanguageList $LanguageList -force
      C:\Windows\System32\Sysprep\sysprep.exe /oobe /generalize /shutdown
      ```
 
-2. Завершите работу виртуальной машины, а затем запишите ее в управляемом образе, следуя инструкциям в статье [Создание управляемого образа универсальной виртуальной машины в Azure](../virtual-machines/windows/capture-image-resource.md).
+2. Закройте виртуальную машину, а затем запишите ее в управляемом образе, следуя инструкциям в статье [Создание управляемого образа универсальной виртуальной машины в Azure](../virtual-machines/windows/capture-image-resource.md).
 
 3. Теперь можно использовать настроенный образ для развертывания пула узлов виртуальных рабочих столов Windows. Сведения о развертывании пула узлов см. в разделе [учебник. Создание пула узлов с портал Azure](create-host-pools-azure-marketplace.md).
 
 ## <a name="enable-languages-in-windows-settings-app"></a>Включение языков в приложении "Параметры Windows"
 
-Наконец, необходимо добавить язык в список языков каждого пользователя, чтобы они могли выбрать предпочитаемый язык в меню Параметры.
+Наконец, после развертывания пула узлов необходимо добавить язык в список языков каждого пользователя, чтобы он мог выбрать предпочитаемый язык в меню Параметры.
 
-Чтобы пользователи могли выбрать установленные языки, войдите в систему от имени пользователя, а затем выполните следующий командлет PowerShell, чтобы добавить установленные языковые пакеты в меню языки. Этот сценарий также можно настроить как автоматизированную задачу, которая активируется при входе пользователя в сеанс.
+Чтобы пользователи могли выбрать установленные языки, войдите в систему от имени пользователя, а затем выполните следующий командлет PowerShell, чтобы добавить установленные языковые пакеты в меню языки. Этот сценарий также можно настроить как автоматизированную задачу или сценарий входа, который активируется при входе пользователя в сеанс.
 
 ```powershell
 $LanguageList = Get-WinUserLanguageList
@@ -197,7 +252,7 @@ Set-WinUserLanguageList $LanguageList -force
 
 После того как пользователь изменит параметры языка, ему потребуется выйти из сеанса виртуальных рабочих столов Windows и снова войти, чтобы изменения вступили в силу. 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Если вы хотите узнать об известных проблемах, связанных с языковыми пакетами, см. статью [Добавление языковых пакетов в Windows 10, версия 1803 и более поздние версии: известные проблемы](/windows-hardware/manufacture/desktop/language-packs-known-issue).
 

@@ -16,12 +16,12 @@ ms.date: 07/12/2017
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 55270889c8c284335d5aa7b545718da419ba8d84
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 16d48cda87b8226ebc3bbab179c1034abf0a486f
+ms.sourcegitcommit: 07166a1ff8bd23f5e1c49d4fd12badbca5ebd19c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85357364"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90084615"
 ---
 # <a name="azure-ad-connect-sync-prevent-accidental-deletes"></a>Синхронизация Azure AD Connect: предотвращение случайного удаления
 В этом разделе описывается функция предотвращения случайного удаления в Azure AD Connect.
@@ -65,7 +65,7 @@ ms.locfileid: "85357364"
 
 1. Чтобы получить текущее пороговое значение удаления, выполните командлет PowerShell `Get-ADSyncExportDeletionThreshold`. Укажите имя учетной записи и пароль глобального администратора Azure AD. Значение по умолчанию — 500.
 2. Чтобы временно отключить защиту и выполнить удаление, запустите следующий командлет PowerShell: `Disable-ADSyncExportDeletionThreshold`. Укажите имя учетной записи и пароль глобального администратора Azure AD.
-   ![Учетные данные](./media/how-to-connect-sync-feature-prevent-accidental-deletes/credentials.png)
+   ![На снимке экрана показано диалоговое окно ввода имени пользователя и пароля глобального администратора Azure AD.](./media/how-to-connect-sync-feature-prevent-accidental-deletes/credentials.png)
 3. С выбранным соединителем Azure Active Directory укажите действие **Запустить** и затем выберите **Экспорт**.
 4. Чтобы повторно включить защиту, запустите командлет PowerShell: `Enable-ADSyncExportDeletionThreshold -DeletionThreshold 500`. Замените 500 значением, которое вы записали при получении текущего порогового значения удаления. Укажите имя учетной записи и пароль глобального администратора Azure AD.
 

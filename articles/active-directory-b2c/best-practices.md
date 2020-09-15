@@ -11,18 +11,18 @@ ms.topic: conceptual
 ms.date: 06/06/2020
 ms.author: vigunase
 ms.subservice: B2C
-ms.openlocfilehash: 6fee96354760e448de132f88918e9839c6220af3
-ms.sourcegitcommit: bcda98171d6e81795e723e525f81e6235f044e52
+ms.openlocfilehash: c8739da859c00a9caf08ac833f7b4ae7ae52e392
+ms.sourcegitcommit: 07166a1ff8bd23f5e1c49d4fd12badbca5ebd19c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/01/2020
-ms.locfileid: "89254497"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90084317"
 ---
 # <a name="recommendations-and-best-practices-for-azure-active-directory-b2c"></a>Рекомендации и рекомендации для Azure Active Directory B2C
 
 Следующие рекомендации и рекомендации охватывают некоторые основные аспекты интеграции Azure Active Directory (Azure AD) с B2C в существующие или новые среды приложений.
 
-## <a name="fundamentals"></a>Основные сведения
+## <a name="fundamentals"></a>Основы
 
 | Рекомендации | Описание |
 |--|--|
@@ -56,7 +56,6 @@ ms.locfileid: "89254497"
 | Узнайте, как устранять неполадки Azure AD B2C | Узнайте, как [устранять неполадки пользовательских политик](https://docs.microsoft.com/azure/active-directory-b2c/troubleshoot-custom-policies?tabs=applications) во время разработки. Узнайте, как выглядит нормальный поток проверки подлинности, и используйте средства для обнаружения аномалий и ошибок. Например, используйте [Application Insights](troubleshoot-with-application-insights.md) , чтобы просматривать выходные журналы пути взаимодействия пользователя. |
 | Использование нашей библиотеки проверенных шаблонов пользовательских политик | Найдите [примеры](https://github.com/azure-ad-b2c/samples) для нескольких улучшенных Azure AD B2C путей взаимодействия пользователей и управления доступом клиентов (CIAM). |
 
-
 ## <a name="testing"></a>Тестирование
 
 Тестирование и автоматизация реализации Azure AD B2C.
@@ -69,7 +68,7 @@ ms.locfileid: "89254497"
 | A/B-тестирование | Продавайте новые функции с помощью небольшого случайного набора пользователей, прежде чем развертывать всю генеральную совокупность. JavaScript, включенный в Azure AD B2C, можно интегрировать с такими инструментами тестирования и/B, как оптимизация, ясность и другие. |
 | Нагрузочное тестирование | Azure AD B2C может масштабироваться, но приложение может масштабироваться, только если все его зависимости могут масштабироваться. Нагрузочное тестирование интерфейсов API и CDN. |
 | Регулирование |  Azure AD B2C регулирует трафик, если слишком много запросов отправляются из одного источника в течение короткого периода времени. Используйте несколько источников трафика при нагрузочном тестировании и аккуратно обработайте `AADB2C90229` код ошибки в приложениях. |
-| Служба автоматизации | Используйте конвейеры непрерывной интеграции и доставки (CI/CD) для автоматизации тестирования и развертывания, например [Azure DevOps](deploy-custom-policies-devops.md). |
+| Автоматизация | Используйте конвейеры непрерывной интеграции и доставки (CI/CD) для автоматизации тестирования и развертывания, например [Azure DevOps](deploy-custom-policies-devops.md). |
 
 ## <a name="operations"></a>Операции
 
@@ -79,11 +78,10 @@ ms.locfileid: "89254497"
 |--|--|
 | Создание нескольких сред | Для упрощения операций и развертывания развертываний Создайте отдельные среды для разработки, тестирования, подготовки к производству и рабочей среде. Создайте клиенты Azure AD B2C для каждого из них. |
 | Использование системы управления версиями для пользовательских политик | Рассмотрите возможность использования GitHub, Azure Repos или другой облачной системы управления версиями для Azure AD B2C настраиваемых политик. |
-| Использование API Microsoft Graph для автоматизации управления клиентами B2C | Microsoft Graph API:<br/>Управление [инфраструктурой процедур идентификации](https://docs.microsoft.com/graph/api/resources/trustframeworkpolicy?view=graph-rest-beta) (пользовательские политики)<br/>[Ключи](https://docs.microsoft.com/graph/api/resources/trustframeworkkeyset?view=graph-rest-beta)<br/>[Средство "Маршруты пользователей"](https://docs.microsoft.com/graph/api/resources/identityuserflow?view=graph-rest-beta) |
+| Использование API Microsoft Graph для автоматизации управления клиентами B2C | Microsoft Graph API:<br/>Управление [инфраструктурой процедур идентификации](https://docs.microsoft.com/graph/api/resources/trustframeworkpolicy?view=graph-rest-beta&preserve-view=true) (пользовательские политики)<br/>[Ключи](https://docs.microsoft.com/graph/api/resources/trustframeworkkeyset?view=graph-rest-beta&preserve-view=true)<br/>[Средство "Маршруты пользователей"](https://docs.microsoft.com/graph/api/resources/identityuserflow?view=graph-rest-beta&preserve-view=true) |
 | Интеграция с Azure DevOps | [Конвейер CI/CD](deploy-custom-policies-devops.md) упрощает перемещение кода между разными средами и гарантирует готовность к работе в рабочей среде.   |
 | Интеграция с Azure Monitor | [События журнала аудита](view-audit-logs.md) хранятся только в течение семи дней. [Интегрируйтесь с Azure Monitor](azure-monitor.md) , чтобы хранить журналы для долгосрочного использования или интегрировать их со сторонними средствами управления сведениями о безопасности и событиями (SIEM) для получения ценной информации о вашей среде. |
 | Настройка активных предупреждений и мониторинга | [Следите за поведением пользователей](active-directory-b2c-custom-guide-eventlogger-appins.md) в Azure AD B2C с помощью Application Insights. |
-
 
 ## <a name="support-and-status-updates"></a>Поддержка и обновления состояния
 

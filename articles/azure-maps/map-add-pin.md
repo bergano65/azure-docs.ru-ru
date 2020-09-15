@@ -9,12 +9,12 @@ ms.service: azure-maps
 services: azure-maps
 manager: ''
 ms.custom: codepen, devx-track-javascript
-ms.openlocfilehash: d705a43da2b2db37c6601f5865ad6e569688b2a7
-ms.sourcegitcommit: 98854e3bd1ab04ce42816cae1892ed0caeedf461
+ms.openlocfilehash: 72ce95373df0a670179424d8e7ea95254941db1a
+ms.sourcegitcommit: 07166a1ff8bd23f5e1c49d4fd12badbca5ebd19c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "88010197"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90085932"
 ---
 # <a name="add-a-symbol-layer-to-a-map"></a>Добавление слоя символов на карту
 
@@ -59,13 +59,13 @@ dataSource.add(new atlas.data.Point([0, 0]));
 - Геометрическая точка в формате JSON. Этот объект содержит только координаты точки и ничего другого. `atlas.data.Point`Вспомогательный класс можно использовать для простого создания этих объектов.
 - Геометрическая геометрия MultiPoint — этот объект содержит координаты нескольких точек и ничего другого. `atlas.data.MultiPoint`Вспомогательный класс можно использовать для простого создания этих объектов.
 - Функция геоjson — этот объект состоит из любой геометрической фигуры и набора свойств, содержащих метаданные, связанные с геометрическим объектом. `atlas.data.Feature`Вспомогательный класс можно использовать для простого создания этих объектов.
-- `atlas.Shape`класс похож на функцию геоjson. Оба состоят из геометрической геометрии и набора свойств, содержащих метаданные, связанные с геометрическим объектом. Если объект геоjson добавляется в источник данных, его можно легко отобразить в слое. Однако при обновлении свойства координаты этого объекта геоjson источник данных и схема не изменяются. Это обусловлено тем, что в объекте JSON нет механизма для активации обновления. Класс Shape предоставляет функции для обновления содержащихся в ней данных. При внесении изменений источник данных и схема автоматически уведомляются и обновляются. 
+- `atlas.Shape` класс похож на функцию геоjson. Оба состоят из геометрической геометрии и набора свойств, содержащих метаданные, связанные с геометрическим объектом. Если объект геоjson добавляется в источник данных, его можно легко отобразить в слое. Однако при обновлении свойства координаты этого объекта геоjson источник данных и схема не изменяются. Это обусловлено тем, что в объекте JSON нет механизма для активации обновления. Класс Shape предоставляет функции для обновления содержащихся в ней данных. При внесении изменений источник данных и схема автоматически уведомляются и обновляются. 
 
 В следующем примере кода создается геометрическая точка в формате JSON, которая передается в `atlas.Shape` класс, чтобы упростить обновление. Центр схемы изначально используется для отрисовки символа. На карту добавляется событие щелчка, чтобы при его срабатывании координаты мыши использовались с функцией Shapes `setCoordinates` . Координаты мыши записываются во время события щелчка. Затем `setCoordinates` обновляет расположение символа на карте.
 
 <br/>
 
-<iframe height='500' scrolling='no' title='Переключение расположения маркера' src='//codepen.io/azuremaps/embed/ZqJjRP/?height=500&theme-id=0&default-tab=js,result&embed-version=2&editable=true' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>Просмотрите фрагмент кода <a href='https://codepen.io/azuremaps/pen/ZqJjRP/'>Переключение расположения маркера</a> от Azure Maps (<a href='https://codepen.io/azuremaps'>@azuremaps</a>) в <a href='https://codepen.io'>CodePen</a>.
+<iframe height='500' scrolling='no' title='Переключение расположения маркера' src='//codepen.io/azuremaps/embed/ZqJjRP/?height=500&theme-id=0&default-tab=js,result&embed-version=2&editable=true' frameborder='no' loading="lazy" allowtransparency='true' allowfullscreen='true' style='width: 100%;'>Просмотрите фрагмент кода <a href='https://codepen.io/azuremaps/pen/ZqJjRP/'>Переключение расположения маркера</a> от Azure Maps (<a href='https://codepen.io/azuremaps'>@azuremaps</a>) в <a href='https://codepen.io'>CodePen</a>.
 </iframe>
 
 > [!TIP]
@@ -77,7 +77,7 @@ dataSource.add(new atlas.data.Point([0, 0]));
 
 <br/>
 
-<iframe height='500' scrolling='no' title='Значок изображения пользовательских символов' src='//codepen.io/azuremaps/embed/WYWRWZ/?height=500&theme-id=0&default-tab=js,result&embed-version=2&editable=true' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>См. ручку <a href='https://codepen.io/azuremaps/pen/WYWRWZ/'>Custom Symbol Image Icon</a> (Значок изображения пользовательских символов) от Azure Maps (<a href='https://codepen.io/azuremaps'>@azuremaps</a>) в <a href='https://codepen.io'>CodePen</a>.
+<iframe height='500' scrolling='no' title='Значок изображения пользовательских символов' src='//codepen.io/azuremaps/embed/WYWRWZ/?height=500&theme-id=0&default-tab=js,result&embed-version=2&editable=true' frameborder='no' loading="lazy" allowtransparency='true' allowfullscreen='true' style='width: 100%;'>См. ручку <a href='https://codepen.io/azuremaps/pen/WYWRWZ/'>Custom Symbol Image Icon</a> (Значок изображения пользовательских символов) от Azure Maps (<a href='https://codepen.io/azuremaps'>@azuremaps</a>) в <a href='https://codepen.io'>CodePen</a>.
 </iframe>
 
 > [!TIP]
@@ -89,7 +89,7 @@ dataSource.add(new atlas.data.Point([0, 0]));
 
 <br/>
 
-<iframe height='700' scrolling='no' title='Параметры слоя символов' src='//codepen.io/azuremaps/embed/PxVXje/?height=700&theme-id=0&default-tab=result' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>Просмотрите ручку <a href='https://codepen.io/azuremaps/pen/PxVXje/'>Symbol Layer Options</a> (Параметры слоя символов) от Azure Maps (<a href='https://codepen.io/azuremaps'>@azuremaps</a>) в <a href='https://codepen.io'>CodePen</a>.
+<iframe height='700' scrolling='no' title='Параметры слоя символов' src='//codepen.io/azuremaps/embed/PxVXje/?height=700&theme-id=0&default-tab=result' frameborder='no' loading="lazy" allowtransparency='true' allowfullscreen='true' style='width: 100%;'>Просмотрите ручку <a href='https://codepen.io/azuremaps/pen/PxVXje/'>Symbol Layer Options</a> (Параметры слоя символов) от Azure Maps (<a href='https://codepen.io/azuremaps'>@azuremaps</a>) в <a href='https://codepen.io'>CodePen</a>.
 </iframe>
 
 > [!TIP]
@@ -100,16 +100,16 @@ dataSource.add(new atlas.data.Point([0, 0]));
 Дополнительные сведения о классах и методах, которые используются в этой статье:
 
 > [!div class="nextstepaction"]
-> [SymbolLayer class](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.layer.symbollayer?view=azure-iot-typescript-latest) (Класс SymbolLayer)
+> [SymbolLayer class](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.layer.symbollayer) (Класс SymbolLayer)
 
 > [!div class="nextstepaction"]
-> [SymbolLayerOptions interface](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.symbollayeroptions?view=azure-iot-typescript-latest) (Интерфейс SymbolLayerOptions)
+> [SymbolLayerOptions interface](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.symbollayeroptions) (Интерфейс SymbolLayerOptions)
 
 > [!div class="nextstepaction"]
-> [IconOptions interface](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.iconoptions?view=azure-iot-typescript-latest) (Интерфейс IconOptions)
+> [IconOptions interface](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.iconoptions) (Интерфейс IconOptions)
 
 > [!div class="nextstepaction"]
-> [текстоптионс](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.textoptions?view=azure-iot-typescript-latest)
+> [текстоптионс](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.textoptions)
 
 Дополнительные примеры кода для добавления в карты см. в следующих статьях:
 

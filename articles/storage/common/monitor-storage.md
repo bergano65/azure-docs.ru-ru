@@ -9,12 +9,12 @@ ms.date: 05/19/2020
 ms.author: normesta
 ms.reviewer: fryu
 ms.custom: monitoring, devx-track-csharp
-ms.openlocfilehash: 0edb50fd72622d3d7d628e0e02ef2c3737f8713a
-ms.sourcegitcommit: 206629373b7c2246e909297d69f4fe3728446af5
+ms.openlocfilehash: 0c4178513c5a6027b3261d6d7975d4ec7cc55c6a
+ms.sourcegitcommit: 07166a1ff8bd23f5e1c49d4fd12badbca5ebd19c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/06/2020
-ms.locfileid: "89500425"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90085796"
 ---
 # <a name="monitoring-azure-storage"></a>Мониторинг службы хранилища Azure
 
@@ -76,7 +76,11 @@ ms.locfileid: "89500425"
 
 ## <a name="configuration"></a>Конфигурация
 
-Метрики платформы и журнал действий собираются автоматически, но необходимо создать параметр диагностики для сбора журналов ресурсов или их переадресации за пределы Azure Monitor. Сведения о создании параметра диагностики с помощью портала Azure, Azure CLI или PowerShell см. на странице [Создание параметра диагностики для сбора журналов и метрик платформы в Azure](../../azure-monitor/platform/diagnostic-settings.md).
+Метрики платформы и журнал действий собираются автоматически, но необходимо создать параметр диагностики для сбора журналов ресурсов или их переадресации за пределы Azure Monitor. 
+
+Сведения о создании параметра диагностики с помощью портал Azure, Azure CLI или PowerShell см. в статье [Создание параметров диагностики для сбора журналов и метрик платформы в Azure](../../azure-monitor/platform/diagnostic-settings.md). 
+
+Чтобы просмотреть шаблон Azure Resource Manager, который создает параметр диагностики, см. раздел [параметр диагностики для службы хранилища Azure](https://docs.microsoft.com/azure/azure-monitor/samples/resource-manager-diagnostic-settings#diagnostic-setting-for-azure-storage).
 
 При создании параметра диагностики выберите тип хранилища, для которого необходимо включить журналы, например большой двоичный объект, очередь, таблица или файл. Data Lake Storage 2-го поколения не отображается как тип хранилища. Это связано с тем, что Data Lake Storage 2-го поколения — это набор возможностей, доступных для хранилища BLOB-объектов. 
 
@@ -124,7 +128,7 @@ ms.locfileid: "89500425"
 
 #### <a name="list-the-metric-definition"></a>Отображение определения метрики
 
-Вы можете отобразить определение метрик учетной записи хранения или отдельной службы хранилища, например службы BLOB-объектов, файлов, таблиц или очередей. Используйте командлет [Get-AzMetricDefinition](https://docs.microsoft.com/powershell/module/az.monitor/get-azmetricdefinition?view=azps-3.3.0).
+Вы можете отобразить определение метрик учетной записи хранения или отдельной службы хранилища, например службы BLOB-объектов, файлов, таблиц или очередей. Используйте командлет [Get-AzMetricDefinition](https://docs.microsoft.com/powershell/module/az.monitor/get-azmetricdefinition).
 
 В этом примере замените заполнитель `<resource-ID>` на ИД ресурса всей учетной записи хранения или ИД ресурса отдельной службы хранилища, например службы BLOB-объектов, файлов, таблиц или очередей. Эти ИД ресурса можно найти на странице **свойств** учетной записи хранения на портале Azure.
 
@@ -135,7 +139,7 @@ ms.locfileid: "89500425"
 
 #### <a name="reading-metric-values"></a>Считывание значений метрик
 
-Вы можете считать значения метрик на уровне учетной записи хранения или отдельной службы хранилища, например службы BLOB-объектов, файлов, таблиц или очередей. Используйте командлет [Get-AzMetric](https://docs.microsoft.com/powershell/module/Az.Monitor/Get-AzMetric?view=azps-3.3.0).
+Вы можете считать значения метрик на уровне учетной записи хранения или отдельной службы хранилища, например службы BLOB-объектов, файлов, таблиц или очередей. Используйте командлет [Get-AzMetric](https://docs.microsoft.com/powershell/module/Az.Monitor/Get-AzMetric).
 
 ```powershell
    $resourceId = "<resource-ID>"
@@ -146,7 +150,7 @@ ms.locfileid: "89500425"
 
 #### <a name="list-the-account-level-metric-definition"></a>Отображение определения метрик на уровне учетной записи
 
-Вы можете отобразить определение метрик учетной записи хранения или отдельной службы хранилища, например службы BLOB-объектов, файлов, таблиц или очередей. Используйте команду [az monitor metrics list-definitions](https://docs.microsoft.com/cli/azure/monitor/metrics?view=azure-cli-latest#az-monitor-metrics-list-definitions).
+Вы можете отобразить определение метрик учетной записи хранения или отдельной службы хранилища, например службы BLOB-объектов, файлов, таблиц или очередей. Используйте команду [az monitor metrics list-definitions](https://docs.microsoft.com/cli/azure/monitor/metrics#az-monitor-metrics-list-definitions).
  
 В этом примере замените заполнитель `<resource-ID>` на ИД ресурса всей учетной записи хранения или ИД ресурса отдельной службы хранилища, например службы BLOB-объектов, файлов, таблиц или очередей. Эти ИД ресурса можно найти на странице **свойств** учетной записи хранения на портале Azure.
 
@@ -156,7 +160,7 @@ ms.locfileid: "89500425"
 
 #### <a name="read-account-level-metric-values"></a>Считывание значений метрик на уровне учетной записи
 
-Вы можете считать значения метрик учетной записи хранения или отдельной службы хранилища, например службы BLOB-объектов, файлов, таблиц или очередей. Используйте команду [az monitor metrics list](https://docs.microsoft.com/cli/azure/monitor/metrics?view=azure-cli-latest#az-monitor-metrics-list).
+Вы можете считать значения метрик учетной записи хранения или отдельной службы хранилища, например службы BLOB-объектов, файлов, таблиц или очередей. Используйте команду [az monitor metrics list](https://docs.microsoft.com/cli/azure/monitor/metrics#az-monitor-metrics-list).
 
 ```azurecli-interactive
    az monitor metrics list --resource <resource-ID> --metric "UsedCapacity" --interval PT1H

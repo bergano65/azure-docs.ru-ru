@@ -9,12 +9,12 @@ ms.service: azure-maps
 services: azure-maps
 manager: philmea
 ms.custom: devx-track-javascript
-ms.openlocfilehash: 704cb43a31ff1dfcaf287f9af467f7d6e7d6c50d
-ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
+ms.openlocfilehash: e79135ccf672fa057d9e88fc91fa72b7826ba71e
+ms.sourcegitcommit: 07166a1ff8bd23f5e1c49d4fd12badbca5ebd19c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87282812"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90085201"
 ---
 # <a name="add-a-simple-data-layer"></a>Добавление простого уровня данных
 
@@ -57,7 +57,7 @@ map.layers.add(layer);
 
 <br/>
 
-<iframe height="500" style="width: 100%;" scrolling="no" title="Использование простого уровня данных" src="//codepen.io/azuremaps/embed/zYGzpQV/?height=500&theme-id=0&default-tab=js,result&editable=true" frameborder="no" allowtransparency="true" allowfullscreen="true"> Посмотрите, что перо <a href='https://codepen.io/azuremaps/pen/zYGzpQV/'>использует простой уровень данных</a> , Azure Maps ( <a href='https://codepen.io/azuremaps'>@azuremaps</a> ) на <a href='https://codepen.io'>CodePen</a>.
+<iframe height="500" style="width: 100%;" scrolling="no" title="Использование простого уровня данных" src="//codepen.io/azuremaps/embed/zYGzpQV/?height=500&theme-id=0&default-tab=js,result&editable=true" frameborder='no' loading="lazy" allowtransparency="true" allowfullscreen="true"> Посмотрите, что перо <a href='https://codepen.io/azuremaps/pen/zYGzpQV/'>использует простой уровень данных</a> , Azure Maps ( <a href='https://codepen.io/azuremaps'>@azuremaps</a> ) на <a href='https://codepen.io'>CodePen</a>.
 </iframe>
 
 Реальная мощь простого уровня данных приступает в следующих случаях:
@@ -70,7 +70,7 @@ map.layers.add(layer);
 
 <br/>
 
-<iframe height="700" style="width: 100%;" scrolling="no" title="Параметры простого уровня данных" src="//codepen.io/azuremaps/embed/gOpRXgy/?height=700&theme-id=0&default-tab=result" frameborder="no" allowtransparency="true" allowfullscreen="true"> Дополнительные сведения о <a href='https://codepen.io/azuremaps/pen/gOpRXgy/'>параметрах простого уровня данных</a> пера см <a href='https://codepen.io/azuremaps'>@azuremaps</a> . Azure Maps () в <a href='https://codepen.io'>CodePen</a>.
+<iframe height="700" style="width: 100%;" scrolling="no" title="Параметры простого уровня данных" src="//codepen.io/azuremaps/embed/gOpRXgy/?height=700&theme-id=0&default-tab=result" frameborder='no' loading="lazy" allowtransparency="true" allowfullscreen="true"> Дополнительные сведения о <a href='https://codepen.io/azuremaps/pen/gOpRXgy/'>параметрах простого уровня данных</a> пера см <a href='https://codepen.io/azuremaps'>@azuremaps</a> . Azure Maps () в <a href='https://codepen.io'>CodePen</a>.
 </iframe>
 
 
@@ -102,7 +102,7 @@ map.layers.add(layer);
 | `radius` | `size`<sup>1</sup>, `marker-size` <sup>2</sup>, `scale` <sup>1</sup> | `8` |
 | `strokeColor` | `strokeColor`, `stroke` | `'#FFFFFF'` |
 
-\[1 \] `size` значения и `scale` считаются скалярными значениями, и они будут умножены на`8`
+\[1 \] `size` значения и `scale` считаются скалярными значениями, и они будут умножены на `8`
 
 \[2 \] Если `marker-size` указан параметр GitHub, для радиуса будут использоваться следующие значения.
 
@@ -114,11 +114,11 @@ map.layers.add(layer);
 
 Кластеры также подготавливаются с помощью пузырькового слоя. По умолчанию для радиуса кластера задано значение `16` . Цвет кластера зависит от числа точек в кластере, как определено ниже.
 
-| число точек | Color    |
+| число точек | Цвет    |
 |-------------|----------|
 | &gt;= 100   | `red`    |
 | &gt;= 10    | `yellow` |
-| &lt;штук     | `green`  |
+| &lt; штук     | `green`  |
 
 ### <a name="symbol-style-properties"></a>Свойства стиля символов
 

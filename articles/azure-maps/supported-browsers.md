@@ -8,16 +8,16 @@ ms.topic: conceptual
 ms.service: azure-maps
 services: azure-maps
 manager: cpendle
-ms.openlocfilehash: e6d4ea19e5547adb7bee25f4bdce295eb9a76d44
-ms.sourcegitcommit: 98854e3bd1ab04ce42816cae1892ed0caeedf461
+ms.openlocfilehash: 73d875e32f4fcf22551cf6b0946e49c2f826e523
+ms.sourcegitcommit: 07166a1ff8bd23f5e1c49d4fd12badbca5ebd19c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "88002942"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90085031"
 ---
 # <a name="web-sdk-supported-browsers"></a>Браузеры, поддерживаемые в веб-пакетах SDK
 
-Веб-пакет SDK Azure Maps предоставляет вспомогательную функцию с именем [Atlas. support](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas?view=azure-iot-typescript-latest#issupported-boolean-). Эта функция определяет, имеет ли веб-браузер минимальный набор функций WebGL, необходимых для поддержки загрузки и отрисовки элемента управления картой. Ниже приведен пример использования функции.
+Веб-пакет SDK Azure Maps предоставляет вспомогательную функцию с именем [Atlas. support](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas#issupported-boolean-). Эта функция определяет, имеет ли веб-браузер минимальный набор функций WebGL, необходимых для поддержки загрузки и отрисовки элемента управления картой. Ниже приведен пример использования функции.
 
 ```JavaScript
 if (!atlas.isSupported()) {
@@ -40,7 +40,7 @@ if (!atlas.isSupported()) {
 
 См. также в разделе [устаревшие браузеры](#Target-Legacy-Browsers) ниже в этой статье.
 
-## <a name="mobile"></a>Мобильные службы
+## <a name="mobile"></a>Мобильные приложения
 
 Веб-пакет SDK Azure Maps поддерживает следующие мобильные браузеры:
 
@@ -63,7 +63,7 @@ if (!atlas.isSupported()) {
 
 ## <a name="target-legacy-browsers"></a><a name="Target-Legacy-Browsers"></a>Целевые браузеры прежних версий
 
-Вы можете использовать более старые браузеры, которые не поддерживают WebGL или имеют только ограниченную поддержку. В таких случаях рекомендуется использовать службы Azure Maps вместе с элементом управления картой с открытым кодом, например [леафлет](https://leafletjs.com/). Ниже приведен пример.
+Вы можете использовать более старые браузеры, которые не поддерживают WebGL или имеют только ограниченную поддержку. В таких случаях рекомендуется использовать службы Azure Maps вместе с элементом управления картой с открытым кодом, например [леафлет](https://leafletjs.com/). Пример:
 
 <br/>
 
@@ -72,7 +72,7 @@ if (!atlas.isSupported()) {
 </iframe>
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Дополнительные сведения о веб-пакете SDK для Azure Maps:
 

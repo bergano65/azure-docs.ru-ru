@@ -9,12 +9,12 @@ ms.service: azure-maps
 services: azure-maps
 manager: philmea
 ms.custom: devx-track-javascript
-ms.openlocfilehash: b094f63c075bdb8af225ff366343c60bc6818224
-ms.sourcegitcommit: d39f2cd3e0b917b351046112ef1b8dc240a47a4f
+ms.openlocfilehash: 7c588e1db7cbf35d2a5192805674f88905599e8e
+ms.sourcegitcommit: 07166a1ff8bd23f5e1c49d4fd12badbca5ebd19c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88816768"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90085148"
 ---
 # <a name="read-and-write-spatial-data"></a>Чтение и запись пространственных данных
 
@@ -174,10 +174,10 @@ GML — это спецификация пространственных XML-ф�
 > [спатиалдатасетстатс](https://docs.microsoft.com/javascript/api/azure-maps-spatial-io/atlas.spatialdatasetstats)
 
 > [!div class="nextstepaction"]
-> [гмлреадер](https://docs.microsoft.com/javascript/api/azure-maps-spatial-io/atlas.io.core.gmlreader?view=azure-maps-typescript-latest)
+> [гмлреадер](https://docs.microsoft.com/javascript/api/azure-maps-spatial-io/atlas.io.core.gmlreader)
 
 > [!div class="nextstepaction"]
-> [гмлвритер](https://docs.microsoft.com/javascript/api/azure-maps-spatial-io/atlas.io.core.gmlwriter?view=azure-maps-typescript-latest)
+> [гмлвритер](https://docs.microsoft.com/javascript/api/azure-maps-spatial-io/atlas.io.core.gmlwriter)
 
 > [!div class="nextstepaction"]
 > [функции Atlas. IO. OGC. WKT](https://docs.microsoft.com/javascript/api/azure-maps-spatial-io/atlas.io.ogc.wkt)
