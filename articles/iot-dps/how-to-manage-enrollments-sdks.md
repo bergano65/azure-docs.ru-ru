@@ -8,19 +8,19 @@ ms.topic: conceptual
 ms.service: iot-dps
 ms.custom: fasttrack-edit, iot
 services: iot-dps
-ms.openlocfilehash: 4a5e8b6f430f6af49ab79ca0f8cb2253bd0f2049
-ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
+ms.openlocfilehash: 1dc97f92e6139475d0d5ac5ea1201d6ff6b8d470
+ms.sourcegitcommit: 03662d76a816e98cfc85462cbe9705f6890ed638
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88520662"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90532330"
 ---
 # <a name="how-to-manage-device-enrollments-with-azure-device-provisioning-service-sdks"></a>Как управлять регистрациями устройств с помощью пакетов SDK службы подготовки устройств Azure
 При *регистрации устройства* создается запись одного устройства или группы устройств, которые можно в будущем зарегистрировать с помощью службы подготовки устройств. Запись регистрации содержит необходимую начальную конфигурацию устройств как часть регистрации, включая нужный Центр Интернета вещей. В этой статье показано, как управлять регистрацией устройств для подготовки службы программным способом с помощью пакетов SDK службы подготовки Интернета вещей Azure.  Пакеты SDK доступны в GitHub в том же хранилище, что и пакет SDK Интернета вещей Azure.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Предварительные условия
 * Получите строку подключения из экземпляра службы подготовки устройств.
-* Получите артефакты безопасности устройства для используемого [механизма аттестации](concepts-security.md#attestation-mechanism).
+* Получите артефакты безопасности устройства для используемого [механизма аттестации](concepts-service.md#attestation-mechanism).
     * [**Доверенный платформенный модуль (TPM) (доверенный платформенный модуль)**](/azure/iot-dps/concepts-security#trusted-platform-module):
         * Отдельная регистрация. Идентификатор регистрации и ключ подтверждения доверенного платформенного модуля (TPM) физического устройства или симулятора TPM.
         * Группа регистрации не применяется к аттестации TPM.

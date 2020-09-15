@@ -1,14 +1,14 @@
 ---
 title: Справочник по импорту и экспорту данных — QnA Maker
-description: Узнайте, как типы URL-адресов используются для импорта и создания пар QnA.
+description: Используйте этот справочник по импорту и экспорту, чтобы получить лучшие результаты для резервного копирования, хранения и замены базы знаний.
 ms.topic: reference
 ms.date: 01/02/2020
-ms.openlocfilehash: e4a423ef9478cd39181c6440801f9fe954dc896c
-ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
+ms.openlocfilehash: c77f51263206c3cc0d4b546e1728963211a186c6
+ms.sourcegitcommit: 03662d76a816e98cfc85462cbe9705f6890ed638
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "80804249"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90532160"
 ---
 # <a name="import-and-export-data-reference"></a>Справочник по импорту и экспорту данных
 

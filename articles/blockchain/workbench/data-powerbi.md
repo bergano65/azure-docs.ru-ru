@@ -4,12 +4,12 @@ description: Узнайте, как загружать и просматрива
 ms.date: 04/22/2020
 ms.topic: how-to
 ms.reviewer: sunri
-ms.openlocfilehash: 2a5e67a8416c57c1a0cb039733a93608a8919be6
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 7e0e585ce45616c2402972c725b502f4b704d1cd
+ms.sourcegitcommit: 03662d76a816e98cfc85462cbe9705f6890ed638
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85214236"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90532381"
 ---
 # <a name="using-azure-blockchain-workbench-data-with-microsoft-power-bi"></a>Использование данных Azure Blockchain Workbench с помощью Microsoft Power BI
 
@@ -23,10 +23,10 @@ Microsoft Power BI предоставляет возможность легко 
 
 ## <a name="connecting-power-bi-to-data-in-azure-blockchain-workbench"></a>Подключение к данным Power BI в Azure Blockchain Workbench
 
-1.  Откройте Power BI Desktop.
-2.  Выберите **Получение данных**.
+1.  Откройте Power BI Desktop.
+2.  Выберите **получить данные**.
 
-    ![Получить данные](./media/data-powerbi/get-data.png)
+    ![Получение данных](./media/data-powerbi/get-data.png)
 3.  Выберите **SQL Server** в списке типов источников данных.
 
 4.  В диалоговом окне укажите имя сервера и базы данных. Укажите, следует ли импортировать данные или выполнять **DirectQuery**. Нажмите кнопку **ОК**.
@@ -41,7 +41,7 @@ Microsoft Power BI предоставляет возможность легко 
 
 6.  После соединения с базой данных отобразится диалоговое окно **Навигатор**, в котором содержатся таблицы и представления, доступные в базе данных. Представления предназначены для создания отчетов. Их названия начинаются с префикса **vw**.
 
-    ![Navigator](./media/data-powerbi/navigator.png)
+    ![Снимок экрана Power BI Desktop с выбранным диалоговым окном навигатор с Ввконтрактактион.](./media/data-powerbi/navigator.png)
 
 7.  Выберите представления, которые нужно включить. В демонстрационных целях мы включили **vwContractAction**, который предоставляет подробные сведения о действиях, выполняемых в контракте.
 

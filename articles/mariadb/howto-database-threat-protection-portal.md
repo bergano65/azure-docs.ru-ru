@@ -1,17 +1,17 @@
 ---
 title: Расширенная защита от угроз — портал Azure — база данных Azure для MariaDB
-description: Система защиты от угроз обнаруживает подозрительные действия в базе данных, указывающие на наличие потенциальных угроз безопасности.
+description: Защита от угроз для базы данных Azure для MariaDB обнаруживает аномальные операции с базами данных, указывающие потенциальные угрозы безопасности для базы данных.
 author: ajlam
 ms.author: andrela
 ms.service: mariadb
 ms.topic: how-to
 ms.date: 3/18/2020
-ms.openlocfilehash: 5f419836b9e73e49ec510fc359487633523e0ef0
-ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
+ms.openlocfilehash: 0283688ca2de4e7978da69753d08dd4763d30a75
+ms.sourcegitcommit: 03662d76a816e98cfc85462cbe9705f6890ed638
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86104611"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90532313"
 ---
 # <a name="advanced-threat-protection-for-azure-database-for-mariadb"></a>Расширенная защита от угроз для базы данных Azure для MariaDB
 
@@ -60,7 +60,7 @@ ms.locfileid: "86104611"
    ![Оповещение об обнаружении угроз](./media/howto-database-threat-protection-portal/threat-detection-alert-asc.png)
    
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * Узнайте больше о [центре безопасности Azure](https://docs.microsoft.com/azure/security-center/security-center-intro).
 * Дополнительные сведения о ценах см. на [странице цен на базу данных Azure для MariaDB](https://azure.microsoft.com/pricing/details/mariadb/) .  

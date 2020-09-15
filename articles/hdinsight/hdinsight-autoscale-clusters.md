@@ -7,13 +7,13 @@ ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: how-to
 ms.custom: contperfq1
-ms.date: 08/21/2020
-ms.openlocfilehash: 7ce4580b366b57e2a1d4904b6ab63bf1834bdb65
-ms.sourcegitcommit: 07166a1ff8bd23f5e1c49d4fd12badbca5ebd19c
+ms.date: 09/14/2020
+ms.openlocfilehash: 08b7fe2b3e959536589cfd425541ad36e3bd1e78
+ms.sourcegitcommit: 03662d76a816e98cfc85462cbe9705f6890ed638
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 09/15/2020
-ms.locfileid: "90090114"
+ms.locfileid: "90532194"
 ---
 # <a name="autoscale-azure-hdinsight-clusters"></a>Автомасштабирование кластеров Azure HDInsight
 
@@ -68,7 +68,7 @@ ms.locfileid: "90090114"
 > [!Important]
 > Функция автомасштабирования Azure HDInsight появилась в общедоступной версии от 7 ноября 2019 года для кластеров Spark и Hadoop. В эту версию включены усовершенствования, недоступные в предварительной версии этой функции. Если вы создали кластер Spark до 7 ноября 2019 года и хотите использовать функцию автомасштабирования в этом кластере, рекомендуется создать новый кластер и включить автомасштабирование в этом новом кластере.
 >
-> Автомасштабирование для кластеров Interactive Query (LLAP) и HBase все еще доступно только в предварительной версии. Автомасштабирование доступно только в кластерах Spark, Hadoop, Interactive Query и HBase.
+> Автомасштабирование для интерактивного запроса (LLAP) выпущено для общедоступной версии 27 августа 2020. Кластеры HBase по-прежнему доступны в предварительной версии. Автомасштабирование доступно только в кластерах Spark, Hadoop, Interactive Query и HBase.
 
 В следующей таблице описаны типы и версии кластеров, совместимые с функцией автомасштабирования.
 

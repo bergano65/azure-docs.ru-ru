@@ -7,12 +7,12 @@ ms.topic: troubleshooting
 ms.date: 09/13/2019
 ms.author: jeffpatt
 ms.subservice: files
-ms.openlocfilehash: f167ffb652054b64098994d334eea6e1db6d2d14
-ms.sourcegitcommit: 51df05f27adb8f3ce67ad11d75cb0ee0b016dc5d
+ms.openlocfilehash: 549f9b03272accbe107c432f4929c5de250a6f6b
+ms.sourcegitcommit: 03662d76a816e98cfc85462cbe9705f6890ed638
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/14/2020
-ms.locfileid: "90061212"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90532398"
 ---
 # <a name="troubleshoot-azure-files-problems-in-windows"></a>Устранение неполадок службы файлов Azure в Windows
 
@@ -369,7 +369,7 @@ Debug-AzStorageAccountAuth -StorageAccountName $StorageAccountName -ResourceGrou
 
 ## <a name="azure-files-on-premises-ad-ds-authentication-support-for-aes-256-kerberos-encryption"></a>Локальная поддержка проверки подлинности AD DS файлов Azure для шифрования AES 256 Kerberos
 
-Мы предоставили поддержку шифрования Kerberos 256 для локальных AD DS аутентификации в службе файлов Azure с помощью [модуля азфилешибрид v 0.2.2](https://github.com/Azure-Samples/azure-files-samples/releases). Если вы включили AD DSную проверку подлинности с версией модуля ниже v 0.2.2, вам потребуется скачать последнюю версию модуля Азфилешибрид (v 0.2.2 +) и запустить PowerShell ниже. Если вы еще не включили проверку подлинности AD DS в учетной записи хранения, вы можете воспользоваться этим [руководством](https://docs.microsoft.com/azure/storage/files/storage-files-identity-ad-ds-enable#option-one-recommended-use-azfileshybrid-powershell-module) для включения. Если вы выполняете включение функции с помощью Азфилешибрид Module v 0.2.2 или выше, вам не нужно повторно запускать PowerShell ниже. 
+Мы предоставили поддержку шифрования Kerberos 256 для локальных AD DS аутентификации в службе файлов Azure с помощью [модуля азфилешибрид v 0.2.2](https://github.com/Azure-Samples/azure-files-samples/releases). Если вы включили AD DSную проверку подлинности с версией модуля ниже v 0.2.2, вам потребуется скачать последнюю версию модуля Азфилешибрид (v 0.2.2 +) и запустить PowerShell ниже. Если вы еще не включили проверку подлинности AD DS в учетной записи хранения, вы можете воспользоваться этим [руководством](https://docs.microsoft.com/azure/storage/files/storage-files-identity-ad-ds-enable#option-one-recommended-use-azfileshybrid-powershell-module) для включения. 
 
 ```PowerShell
 $ResourceGroupName = "<resource-group-name-here>"

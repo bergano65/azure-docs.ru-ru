@@ -1,9 +1,9 @@
 ---
-ms.openlocfilehash: 62645d38f85572f35b8382e385d32a8412880975
-ms.sourcegitcommit: bcda98171d6e81795e723e525f81e6235f044e52
+ms.openlocfilehash: 75fee1283692cc1aead87b72009d440e45037782
+ms.sourcegitcommit: 03662d76a816e98cfc85462cbe9705f6890ed638
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/01/2020
-ms.locfileid: "89270244"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90533340"
 ---
-<Token>**применимо к:** ![ Да Azure Data Lake Storage 1-го поколения "Да" для ](../media/applies-to/yes.png) хранилища BLOB-объектов Azure ![ ](../media/applies-to/yes.png) ![ ](../media/applies-to/yes.png) Azure Data Lake Storage 2-го поколения</Token> 
+<Token>**применимо к:** :::image type="icon" source="../media/applies-to/yes.png" border="false"::: Azure Data Lake Storage 2-го поколения Azure Data Lake Storage 1-го поколения хранилища BLOB-объектов Azure :::image type="icon" source="../media/applies-to/yes.png" border="false"::: :::image type="icon" source="../media/applies-to/yes.png" border="false":::</Token> 

@@ -8,12 +8,12 @@ ms.topic: how-to
 ms.date: 02/25/2019
 ms.author: duau
 ms.custom: devx-track-azurepowershell
-ms.openlocfilehash: 2b88fb32fd4bc07bbaaaf8834646e8d585491dc6
-ms.sourcegitcommit: 5a3b9f35d47355d026ee39d398c614ca4dae51c6
+ms.openlocfilehash: 460ea446fc6dfc43e81a1a57bbba032a61f3a72d
+ms.sourcegitcommit: 03662d76a816e98cfc85462cbe9705f6890ed638
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89395695"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90532551"
 ---
 # <a name="move-expressroute-circuits-from-classic-to-resource-manager-deployment-model-using-powershell"></a>Перемещение каналов ExpressRoute из классической модели развертывания в модель развертывания с помощью Resource Manager с использованием PowerShell
 
@@ -95,14 +95,14 @@ Move-AzExpressRouteCircuit -Name "MyCircuit" -ResourceGroupName "DemoRG" -Locati
 В классическом режиме для а ExpressRoute не предусмотрена привязка к региону. Но в Resource Manager каждый ресурс должен быть сопоставлен с регионом Azure. Регион, указанный в командлете Move-АзекспрессраутеЦиркуит, технически может быть любым регионом. В соответствии с задачами организации может потребоваться выбрать регион, который точно представляет ваше расположение пиринга.
 
 > [!NOTE]
-> После завершения перемещения новое имя, указанное в предыдущем командлете, будет использоваться для адресации ресурсов. По существу канал будет переименован.
-> 
+> * После перемещения классического канала ExpressRoute в модель развертывания диспетчер ресурсов он по умолчанию будет иметь доступ как к классической, так и по диспетчер ресурсов модели развертывания.
+> * Новое имя, указанное в предыдущем командлете, будет использоваться для адресации ресурса. По существу канал будет переименован.
 
 ## <a name="modify-circuit-access"></a>Изменение доступа к каналу
 
 ### <a name="to-enable-expressroute-circuit-access-for-both-deployment-models"></a>Включение доступа к каналу ExpressRoute для обеих моделей развертывания
 
-После перемещения классического канала ExpressRoute в модель развертывания Resource Manager его можно сделать доступным для обеих моделей развертывания. Выполните следующие командлеты, чтобы разрешить доступ для обеих моделей развертывания:
+Вы можете включить доступ к классической модели развертывания для каналов ExpressRoute, созданных в модели развертывания диспетчер ресурсов. Выполните следующие командлеты, чтобы разрешить доступ для обеих моделей развертывания:
 
 1. Получите сведения о канале.
 
@@ -155,7 +155,7 @@ Move-AzExpressRouteCircuit -Name "MyCircuit" -ResourceGroupName "DemoRG" -Locati
    Set-AzExpressRouteCircuit -ExpressRouteCircuit $ckt
    ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * [Создание и изменение маршрутизации для канала ExpressRoute](expressroute-howto-routing-arm.md)
 * [Связывание виртуальной сети с каналом ExpressRoute](expressroute-howto-linkvnet-arm.md)

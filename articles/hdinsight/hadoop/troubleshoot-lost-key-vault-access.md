@@ -1,28 +1,28 @@
 ---
 title: Кластеры Azure HDInsight с шифрованием дисков теряют Key Vault доступ
-description: Действия по устранению неполадок и возможные способы решения проблем при взаимодействии с кластерами Azure HDInsight.
+description: Действия по устранению неполадок и возможные способы устранения проблем с Key Vault доступом при взаимодействии с кластерами Azure HDInsight.
 author: hrasheed-msft
 ms.author: hrasheed
 ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: troubleshooting
 ms.date: 01/30/2020
-ms.openlocfilehash: b1d941fbf86d453a56a5157ed988a32173c614fc
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 1e34c1002be3dffb719490fee01e481e8df45901
+ms.sourcegitcommit: 03662d76a816e98cfc85462cbe9705f6890ed638
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "81461537"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90532568"
 ---
 # <a name="scenario-azure-hdinsight-clusters-with-disk-encryption-lose-key-vault-access"></a>Сценарий. потеря доступа к кластерам Azure HDInsight с шифрованием диска Key Vault доступ
 
 В этой статье описываются действия по устранению неполадок и возможные способы решения проблем при взаимодействии с кластерами Azure HDInsight.
 
-## <a name="issue"></a>Проблемы
+## <a name="issue"></a>Проблема
 
 Предупреждение Работоспособность ресурсов Center (RHC) `The HDInsight cluster is unable to access the key for BYOK encryption at rest` отображается для кластеров создание собственных ключей (BYOK), в которых узлы кластера потеряют доступ к клиентам Key Vault (KV). Аналогичные предупреждения также можно увидеть в пользовательском интерфейсе Apache Ambari.
 
-## <a name="cause"></a>Причина:
+## <a name="cause"></a>Причина
 
 Предупреждение гарантирует, что KV будет доступен с узлов кластера, таким образом обеспечивая подключение к сети, работоспособность KV и политику доступа для управляемого удостоверения, назначенного пользователем. Это оповещение является лишь предупреждением о некотором завершении работы компонента Service Broker при последующих перезагрузках узла. работа кластера будет продолжаться до перезагрузки узлов.
 
@@ -32,7 +32,7 @@ ms.locfileid: "81461537"
 
 ### <a name="kvaad-outage"></a>Сбой KV/AAD
 
-Дополнительные сведения см. на странице [Azure Key Vault доступность и избыточность](../../key-vault/general/disaster-recovery-guidance.md) и состояние Azure.https://status.azure.com/
+Дополнительные сведения см. на странице [Azure Key Vault доступность и избыточность](../../key-vault/general/disaster-recovery-guidance.md) и состояние Azure. https://status.azure.com/
 
 ### <a name="kv-accidental-deletion"></a>Случайное удаление KV
 
