@@ -7,12 +7,12 @@ ms.author: baanders
 ms.date: 9/1/2020
 ms.topic: how-to
 ms.service: digital-twins
-ms.openlocfilehash: 1a7ab90cccd78c3b005487938432a0f955d50738
-ms.sourcegitcommit: 3246e278d094f0ae435c2393ebf278914ec7b97b
+ms.openlocfilehash: efc507cb69b3368a2102b6de0b905657d5806ef2
+ms.sourcegitcommit: 6e1124fc25c3ddb3053b482b0ed33900f46464b3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89381106"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90561437"
 ---
 # <a name="auto-manage-devices-in-azure-digital-twins-using-device-provisioning-service-dps"></a>Автоматическое управление устройствами в цифровом двойников Azure с помощью службы подготовки устройств (DPS)
 
@@ -22,7 +22,7 @@ ms.locfileid: "89381106"
 
 Дополнительные сведения о стадиях _подготовки_ и _снятия с учета_ и ознакомлении с набором общих стадий управления устройствами, общих для всех корпоративных проектов IOT, см. в [разделе *жизненный цикл устройства* ](../iot-hub/iot-hub-device-management-overview.md#device-lifecycle) документации по управлению устройствами в центре Интернета вещей.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Перед настройкой подготовки необходимо иметь **экземпляр Digital двойников для Azure** , содержащий модели и двойников. Этот экземпляр также должен быть настроен с возможностью обновлять сведения о цифровом двойника на основе данных. 
 
@@ -71,7 +71,7 @@ ms.locfileid: "89381106"
 
 Следующая команда Azure CLI создаст службу подготовки устройств. Необходимо указать имя, группу ресурсов и регион. Команду можно выполнить в [Cloud Shell](https://shell.azure.com)или локально, если [на компьютере установлен](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest)Azure CLI.
 
-```azurecli-interactive
+```azurecli
 az iot dps create --name <Device Provisioning Service name> --resource-group <resource group name> --location <region; for example, eastus>
 ```
 
@@ -237,7 +237,7 @@ namespace Samples.AdtIothub
 
 Добавьте параметр с помощью следующей команды Azure CLI:
 
-```azurecli-interactive
+```azurecli
 az functionapp config appsettings set --settings "ADT_SERVICE_URL=https://<Azure Digital Twins instance _host name_>" -g <resource group> -n <your App Service (function app) name>
 ```
 
@@ -246,7 +246,7 @@ az functionapp config appsettings set --settings "ADT_SERVICE_URL=https://<Azure
 <!-- 
 * Azure AD app registration **_Application (client) ID_** ([find in portal](../articles/digital-twins/how-to-set-up-instance-portal.md#collect-important-values))
 
-```azurecli-interactive
+```azurecli
 az functionapp config appsettings set --settings "AdtAppId=<Application (client)" ID> -g <resource group> -n <your App Service (function app) name> 
 ``` -->
 
@@ -293,7 +293,7 @@ node .\adt_custom_register.js
 
 В результате выполнения последовательности, настроенной в этой статье, устройство будет автоматически зарегистрировано в Azure Digital двойников. С помощью следующей команды [интерфейса командной строки Azure Digital двойников](how-to-use-cli.md) найдите двойника устройства в созданном вами экземпляре Azure Digital двойников.
 
-```azurecli-interactive
+```azurecli
 az dt twin show -n <Digital Twins instance name> --twin-id <Device Registration ID>"
 ```
 
@@ -449,13 +449,13 @@ namespace Samples.AdtIothub
 
 Добавьте параметр с помощью этой команды Azure CLI. Команду можно выполнить в [Cloud Shell](https://shell.azure.com)или локально, если [на компьютере установлен](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest)Azure CLI.
 
-```azurecli-interactive
+```azurecli
 az functionapp config appsettings set --settings "ADT_SERVICE_URL=https://<Azure Digital Twins instance _host name_>" -g <resource group> -n <your App Service (function app) name>
 ```
 
 Далее необходимо настроить переменную среды функции для подключения к только что созданному концентратору событий.
 
-```azurecli-interactive
+```azurecli
 az functionapp config appsettings set --settings "EVENTHUB_CONNECTIONSTRING=<Event Hubs SAS connection string Listen>" -g <resource group> -n <your App Service (function app) name>
 ```
 
@@ -486,7 +486,7 @@ az functionapp config appsettings set --settings "EVENTHUB_CONNECTIONSTRING=<Eve
 
 Используйте следующую команду [Azure Digital ДВОЙНИКОВ CLI](how-to-use-cli.md) , чтобы проверить, был ли удален двойника устройства в экземпляре Digital двойников Azure.
 
-```azurecli-interactive
+```azurecli
 az dt twin show -n <Digital Twins instance name> --twin-id <Device Registration ID>"
 ```
 
@@ -502,7 +502,7 @@ az dt twin show -n <Digital Twins instance name> --twin-id <Device Registration 
 > [!IMPORTANT]
 > Удаление группы ресурсов — процесс необратимый. Группа ресурсов и все содержащиеся в ней ресурсы удаляются без возможности восстановления. Будьте внимательны, чтобы случайно не удалить не ту группу ресурсов или не те ресурсы. 
 
-```azurecli-interactive
+```azurecli
 az group delete --name <your-resource-group>
 ```
 <!-- 

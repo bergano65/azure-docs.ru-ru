@@ -7,12 +7,12 @@ ms.topic: reference
 ms.date: 09/08/2018
 ms.author: cshoe
 ms.custom: devx-track-csharp, devx-track-python
-ms.openlocfilehash: 88160d82cb7cc0a012d63445f101a1f2a3740da0
-ms.sourcegitcommit: d0541eccc35549db6381fa762cd17bc8e72b3423
+ms.openlocfilehash: 4b2d882e6956fa23464e620e9820b0616e13b6f6
+ms.sourcegitcommit: 6e1124fc25c3ddb3053b482b0ed33900f46464b3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/09/2020
-ms.locfileid: "89569291"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90563093"
 ---
 # <a name="timer-trigger-for-azure-functions"></a>Триггеры таймера для службы "Функции Azure" 
 
@@ -250,6 +250,7 @@ public void keepAlive(
 
 Значение свойства `IsPastDue` — `true`, когда текущая функция вызывается позже запланированного. Например перезапуск приложения-функции может привести к тому, что вызов будет пропущен.
 
+
 ## <a name="ncrontab-expressions"></a>Выражения НКРОНТАБ 
 
 Функции Azure используют библиотеку [нкронтаб](https://github.com/atifaziz/NCrontab) для интерпретации выражений нкронтаб. Выражение НКРОНТАБ аналогично выражению CRON, за исключением того, что оно включает в начало в начале использования для точности времени в секундах дополнительное шестое поле.
@@ -282,6 +283,8 @@ public void keepAlive(
 |`"0 30 9 * * 1-5"`|каждый рабочий день в 9:30|
 |`"0 30 9 * Jan Mon"`|в 9:30 каждый понедельник в январе|
 
+> [!NOTE]
+> Для выражения НКРОНТАБ требуется **шесть форматов полей** . В Azure не поддерживаются пять полей с выражениями cron.
 
 ### <a name="ncrontab-time-zones"></a>Часовые пояса НКРОНТАБ
 

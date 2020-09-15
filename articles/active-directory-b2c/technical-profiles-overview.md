@@ -8,15 +8,15 @@ manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: reference
-ms.date: 03/20/2020
+ms.date: 09/15/2020
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: 16fdc38d6235ddd0f72c7a35a3d71973ce01a4be
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 7417e2d39371066a5c5e8576040cbe22e7632043
+ms.sourcegitcommit: 6e1124fc25c3ddb3053b482b0ed33900f46464b3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85203220"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90562882"
 ---
 # <a name="about-technical-profiles-in-azure-active-directory-b2c-custom-policies"></a>Технические профили в пользовательских политиках Azure Active Directory B2C
 
@@ -32,6 +32,7 @@ ms.locfileid: "85203220"
 - [Azure Active Directory](active-directory-technical-profile.md): обеспечивает управление пользователями Azure Active Directory B2C.
 - [Многофакторная идентификация Azure](multi-factor-auth-technical-profile.md) . обеспечивает поддержку проверки номера телефона с помощью многофакторной идентификации Azure (MFA). 
 - [Преобразование утверждений](claims-transformation-technical-profile.md): вызов преобразований исходящих утверждений для изменения значений утверждений, их проверки или установки значений по умолчанию для набора исходящих утверждений.
+- [Указание токена идентификатора](id-token-hint.md) — проверяет `id_token_hint` подпись маркера JWT, имя издателя и аудиторию маркера и извлекает утверждение из входящего токена.
 - [Издатель маркеров безопасности JWT](jwt-issuer-technical-profile.md): выдает маркер безопасности JWT, который возвращается в приложение проверяющей стороны.
 - [OAuth1](oauth1-technical-profile.md): федерация с любым поставщиком удостоверений по протоколу OAuth 1.0.
 - [OAuth2](oauth2-technical-profile.md): федерация с любым поставщиком удостоверений по протоколу OAuth 2.0.
@@ -103,7 +104,7 @@ ms.locfileid: "85203220"
 </TechnicalProfile>
 ```
 
-Как **AAD-усерреадусингалтернативесекуритид-Error** , так и **AAD-усерреадусингалтернативесекуритид** не указывают требуемый элемент **протокола** , так как он указан в техническом профиле **AAD-Common** .
+Как **AAD-усерреадусингалтернативесекуритид-Error** , так и  **AAD-усерреадусингалтернативесекуритид** не указывают требуемый элемент **протокола** , так как он указан в техническом профиле **AAD-Common** .
 
 ```xml
 <TechnicalProfile Id="AAD-Common">

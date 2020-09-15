@@ -11,12 +11,12 @@ ms.author: jordane
 author: jpe316
 ms.reviewer: larryfr
 ms.date: 09/01/2020
-ms.openlocfilehash: edd4cc28c6d59f1d6e0c9cabfd5855c72bd3fe73
-ms.sourcegitcommit: f8d2ae6f91be1ab0bc91ee45c379811905185d07
+ms.openlocfilehash: cac14d5995042847bc98e47e50ea2d188382fd2a
+ms.sourcegitcommit: 6e1124fc25c3ddb3053b482b0ed33900f46464b3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89661835"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90564344"
 ---
 # <a name="create-and-attach-an-azure-kubernetes-service-cluster"></a>Создание и подключение кластера службы Kubernetes Azure
 [!INCLUDE [applies-to-skus](../../includes/aml-applies-to-basic-enterprise-sku.md)]
@@ -69,7 +69,84 @@ ms.locfileid: "89661835"
     - [Ручное масштабирование числа узлов в кластере AKS](../aks/scale-cluster.md)
     - [Настройка автомасштабирования кластера в AKS](../aks/cluster-autoscaler.md)
 
-## <a name="create-a-new-aks-cluster"></a>Создание нового кластера AKS
+## <a name="azure-kubernetes-service-version"></a>Версия службы Kubernetes Azure
+
+Служба Kubernetes Azure позволяет создавать кластеры с помощью различных версий Kubernetes. Дополнительные сведения о доступных версиях см. [в разделе Supported Kubernetes Versions in Azure Kubernetes Service](/azure/aks/supported-kubernetes-versions).
+
+При **создании** кластера службы Kubernetes Azure с помощью одного из следующих методов у вас нет *выбора в* создаваемой версии кластера:
+
+* Машинное обучение Azure Studio или раздел Машинное обучение Azure портал Azure.
+* Расширение Машинное обучение для Azure CLI.
+* Пакет SDK для Машинное обучение Azure.
+
+Эти методы создания кластера AKS используют версию кластера __по умолчанию__ . *Версия по умолчанию меняется со временем* , так как становятся доступны новые версии Kubernetes.
+
+При **присоединении** существующего кластера AKS поддерживаются все версии AKS, поддерживаемые в настоящее время.
+
+> [!NOTE]
+> Могут возникнуть граничные случаи, когда у вас более старая версия кластера, которая больше не поддерживается. В этом случае операция присоединения возвратит ошибку и перечислит версии, поддерживаемые в настоящее время.
+>
+> Вы можете присоединить **Предварительные** версии. Функции предварительной версии предоставляются без соглашения об уровне обслуживания и не рекомендуются для рабочих нагрузок. Некоторые функции могут не поддерживаться или их возможности могут быть ограничены. Поддержка использования предварительных версий может быть ограничена. Дополнительные сведения см. в статье [Дополнительные условия использования предварительных выпусков Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
+
+### <a name="available-and-default-versions"></a>Доступные и версии по умолчанию
+
+Для поиска доступных версий AKS и по умолчанию используйте команду [Azure CLI](/cli/azure/install-azure-cli?view=azure-cli-latest) [AZ AKS get-versions](/cli/azure/aks?view=azure-cli-latest#az_aks_get_versions). Например, следующая команда возвращает версии, доступные в регионе "Западная часть США":
+
+```azurecli-interactive
+az aks get-versions -l westus -o table
+```
+
+После выполнения этой команды вы должны увидеть текст, аналогичный приведенному ниже.
+
+```text
+KubernetesVersion    Upgrades
+-------------------  ----------------------------------------
+1.18.6(preview)      None available
+1.18.4(preview)      1.18.6(preview)
+1.17.9               1.18.4(preview), 1.18.6(preview)
+1.17.7               1.17.9, 1.18.4(preview), 1.18.6(preview)
+1.16.13              1.17.7, 1.17.9
+1.16.10              1.16.13, 1.17.7, 1.17.9
+1.15.12              1.16.10, 1.16.13
+1.15.11              1.15.12, 1.16.10, 1.16.13
+```
+
+Чтобы найти версию по умолчанию, используемую при **создании** кластера с помощью машинное обучение Azure, можно использовать `--query` параметр, чтобы выбрать версию по умолчанию:
+
+```azurecli-interactive
+az aks get-versions -l westus --query "orchestrators[?default == `true`].orchestratorVersion" -o table
+```
+
+После выполнения этой команды вы должны увидеть текст, аналогичный приведенному ниже.
+
+```text
+Result
+--------
+1.16.13
+```
+
+Если вы хотите **программно проверить доступные версии**, используйте REST APIные в [списке клиентов службы контейнеров](https://docs.microsoft.com/rest/api/container-service/container%20service%20client/listorchestrators) . Чтобы найти доступные версии, просмотрите записи, в которых `orchestratorType` есть `Kubernetes` . Связанные `orchestrationVersion` записи содержат доступные версии, которые можно **подключить** к рабочей области.
+
+Чтобы найти версию по умолчанию, используемую при **создании** кластера с помощью машинное обучение Azure, найдите запись, где `orchestratorType` имеет значение `Kubernetes` , а `default` — `true` . Связанное `orchestratorVersion` значение является версией по умолчанию. В следующем фрагменте кода JSON показан пример записи:
+
+```json
+...
+ {
+        "orchestratorType": "Kubernetes",
+        "orchestratorVersion": "1.16.13",
+        "default": true,
+        "upgrades": [
+          {
+            "orchestratorType": "",
+            "orchestratorVersion": "1.17.7",
+            "isPreview": false
+          }
+        ]
+      },
+...
+```
+
+## <a name="create-a-new-aks-cluster"></a>Создание кластера AKS.
 
 **Оценка времени**: приблизительно 10 минут.
 

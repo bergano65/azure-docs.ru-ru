@@ -12,16 +12,16 @@ ms.devlang: na
 ms.topic: how-to
 ms.tgt_pltfrm: na
 ms.workload: identity
-ms.date: 05/11/2020
+ms.date: 09/15/2020
 ms.author: curtand
 ms.custom: pim
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 6792fdc405d539a662c8dc20c04b2891fd036704
-ms.sourcegitcommit: e71da24cc108efc2c194007f976f74dd596ab013
+ms.openlocfilehash: 1aa0eb0988474a21fbf77ea08ce14a5fa9fb21bc
+ms.sourcegitcommit: 6e1124fc25c3ddb3053b482b0ed33900f46464b3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87421915"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90564123"
 ---
 # <a name="powershell-for-azure-ad-roles-in-privileged-identity-management"></a>PowerShell для ролей Azure AD в управление привилегированными пользователями
 
@@ -30,7 +30,7 @@ ms.locfileid: "87421915"
 > [!Note]
 > Официальная версия PowerShell поддерживается, только если вы используете новую версию Azure AD Privileged Identity Management. Перейдите в управление привилегированными пользователями и убедитесь, что в колонке быстрого запуска есть следующий баннер.
 > [![Проверка версии управление привилегированными пользователями](media/pim-how-to-add-role-to-user/pim-new-version.png "Выберите Azure AD > управление привилегированными пользователями")](media/pim-how-to-add-role-to-user/pim-new-version.png#lightbox) Если у вас нет этого баннера, подождите, пока идет развертывание этого обновленного процесса в течение следующих нескольких недель.
-> Командлеты PowerShell управление привилегированными пользователями поддерживаются в модуле предварительной версии Azure AD. Если вы использовали другой модуль и этот модуль теперь возвращает сообщение об ошибке, начните использовать этот новый модуль. Если у вас есть рабочие системы, созданные на основе другого модуля, обратитесь кpim_preview@microsoft.com
+> Командлеты PowerShell управление привилегированными пользователями поддерживаются в модуле предварительной версии Azure AD. Если вы использовали другой модуль и этот модуль теперь возвращает сообщение об ошибке, начните использовать этот новый модуль. Если у вас есть рабочие системы, созданные на основе другого модуля, обратитесь к [pim_preview@microsoft.com](mailto:pim_preview@microsoft.com) .
 
 ## <a name="installation-and-setup"></a>Установка и настройка
 
@@ -54,7 +54,7 @@ ms.locfileid: "87421915"
     ![Найдите идентификатор организации в свойствах для Организации Azure AD.](./media/powershell-for-azure-ad-roles/tenant-id-for-Azure-ad-org.png)
 
 > [!Note]
-> В следующих разделах приведены простые примеры, которые помогут вам приступить к работе. Более подробную документацию по следующим командлетам можно найти по адресу https://docs.microsoft.com/powershell/module/azuread/?view=azureadps-2.0-preview#privileged_role_management . Тем не менее, необходимо заменить "Азурересаурцес" в параметре providerID на "Аадролес". Кроме того, необходимо будет использовать идентификатор организации для вашей организации Azure AD в качестве параметра resourceId.
+> В следующих разделах приведены простые примеры, которые помогут вам приступить к работе. Более подробную документацию по следующим командлетам можно найти по адресу [https://docs.microsoft.com/powershell/module/azuread/?view=azureadps-2.0-preview#privileged_role_management&preserve-view=true](https://docs.microsoft.com/powershell/module/azuread/?view=azureadps-2.0-preview#privileged_role_management&preserve-view=true) . Однако необходимо заменить "Азурересаурцес" в параметре providerID на "Аадролес". Кроме того, необходимо забывать об использовании идентификатора клиента для вашей организации Azure AD в качестве параметра resourceId.
 
 ## <a name="retrieving-role-definitions"></a>Получение определений ролей
 
@@ -66,7 +66,7 @@ RoleDefinitionId зависит от вашей организации Azure AD 
 Get-AzureADMSPrivilegedRoleDefinition -ProviderId aadRoles -ResourceId 926d99e7-117c-4a6a-8031-0cc481e9da26
 ```
 
-Результат: ;
+Результат:
 
 ![Получение всех ролей для Организации Azure AD](./media/powershell-for-azure-ad-roles/get-all-roles-result.png)
 
@@ -92,7 +92,7 @@ Get-AzureADMSPrivilegedRoleAssignment -ProviderId "aadRoles" -ResourceId "926d99
 
 Командлеты приводят к отображению списка объектов назначения ролей, показанных ниже. ИДЕНТИФИКАТОР субъекта — это идентификатор пользователя, которому назначена роль. Состояние назначения может быть либо активным, либо допустимым. Если пользователь активен и в поле Линкеделигиблеролеассигнментид есть идентификатор, это означает, что роль в данный момент активирована.
 
-Результат: ;
+Результат:
 
 ![Получение всех назначений ролей для Организации Azure AD](./media/powershell-for-azure-ad-roles/get-all-role-assignments-result.png)
 
@@ -135,7 +135,7 @@ Open-AzureADMSPrivilegedRoleAssignmentRequest -ProviderId 'aadRoles' -ResourceId
 Используйте следующий командлет, чтобы получить все параметры роли в вашей организации Azure AD.
 
 ```powershell
-Get-AzureADMSPrivilegedRoleSetting -ProviderId 'aadRoles' -Filter "ResourceId eq '926d99e7-117c-4a6a-8031-0cc481e9da26'" 
+Get-AzureADMSPrivilegedRoleSetting -ProviderId 'aadRoles' -Filter "ResourceId eq '926d99e7-117c-4a6a-8031-0cc481e9da26'"
 ```
 
 В параметре имеется четыре основных объекта. В настоящее время PIM использует только три из этих объектов. Усермемберсеттингс — это параметры активации, Админелигиблесеттингс — параметры назначения для соответствующих назначений, а Админмемберсеттингс — параметры назначения для активных назначений.
@@ -145,8 +145,10 @@ Get-AzureADMSPrivilegedRoleSetting -ProviderId 'aadRoles' -Filter "ResourceId eq
 Чтобы обновить параметр роли, необходимо получить существующий объект параметров для конкретной роли и внести в него изменения:
 
 ```powershell
-$setting = Get-AzureADMSPrivilegedRoleSetting -ProviderId 'aadRoles' -Filter "roleDefinitionId eq 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx'"
-$setting.UserMemberSetting.justificationRule = '{"required":false}'
+Get-AzureADMSPrivilegedRoleSetting -ProviderId 'aadRoles' -Filter "ResourceId eq 'tenant id' and RoleDefinitionId eq 'role id'"
+$settinga = New-Object Microsoft.Open.MSGraph.Model.AzureADMSPrivilegedRuleSetting
+$settinga.RuleIdentifier = "JustificationRule"
+$settinga.Setting = '{"required":false}'
 ```
 
 Затем можно применить параметр к одному из объектов для конкретной роли, как показано ниже. ИДЕНТИФИКАТОРом является идентификатор параметра роли, который можно получить из результата выполнения командлета List Role Settings.

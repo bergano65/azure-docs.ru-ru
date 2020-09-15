@@ -6,17 +6,17 @@ ms.author: andrela
 ms.service: mariadb
 ms.topic: how-to
 ms.date: 3/18/2020
-ms.openlocfilehash: 196b1dda17de1c9430ab048ac90d1d10b6a595b4
-ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
+ms.openlocfilehash: 24481abb6606d9ce830e5b65285b31637417cbd7
+ms.sourcegitcommit: 6e1124fc25c3ddb3053b482b0ed33900f46464b3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86104696"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90562457"
 ---
 # <a name="manage-an-azure-database-for-mariadb-server-using-the-azure-portal"></a>Управление базой данных Azure для сервера MariaDB с помощью портал Azure
 В этой статье показано, как управлять базой данных Azure для серверов MariaDB. Задачи управления включают в себя вычисление и масштабирование хранилища, сброс пароля администратора и Просмотр сведений о сервере.
 
-## <a name="sign-in"></a>Войти
+## <a name="sign-in"></a>Вход
 Войдите на [портал Azure](https://portal.azure.com).
 
 ## <a name="create-a-server"></a>Создание сервера
@@ -34,7 +34,7 @@ ms.locfileid: "86104696"
 
 2. Выберите **общего назначения** или **оптимизировать память**в зависимости от того, что вы масштабируете. 
 
-    ![изменение ценовой категории](./media/howto-create-manage-server-portal/change-pricing-tier.png)
+    ![На снимке экрана показан портал Azure с выбранной ценовой категорией и выбранным значением оптимизированная для памяти.](./media/howto-create-manage-server-portal/change-pricing-tier.png)
 
     > [!NOTE]
     > Изменение уровней приводит к перезапуску сервера.
@@ -79,7 +79,7 @@ ms.locfileid: "86104696"
 
 2. Введите новый пароль и подтвердите его. В текстовом поле будет предложено ввести требования к сложности пароля.
 
-   ![Сброс пароля](./media/howto-create-manage-server-portal/reset-password.png)
+   ![На снимке экрана показано диалоговое окно Сброс пароля с паролем и подтверждением пароля.](./media/howto-create-manage-server-portal/reset-password.png)
 
 3. Нажмите кнопку **ОК** , чтобы сохранить новый пароль.
 
@@ -94,7 +94,7 @@ ms.locfileid: "86104696"
 
 2. Введите имя сервера в поле ввода, чтобы убедиться, что это сервер, который требуется удалить.
 
-    ![Подтверждение удаления](./media/howto-create-manage-server-portal/confirm-delete.png)
+    ![На снимке экрана показано диалоговое окно, проверяющее, нужно ли удалить базу данных, которая является необратимой.](./media/howto-create-manage-server-portal/confirm-delete.png)
 
     > [!NOTE]
     > Удаление сервера необратимо.

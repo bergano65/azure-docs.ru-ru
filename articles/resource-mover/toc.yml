@@ -18,9 +18,9 @@
   items:
     - name: Обзор средств перемещения
       href: about-move-process.md
-    - name: Таблица поддержки для перемещения виртуальных машин Azure между регионами
+    - name: Поддержка перемещения виртуальных машин Azure между регионами
       href: support-matrix-move-region-azure-vm.md
-    - name: Таблица поддержки для перемещения SQL Azure между регионами
+    - name: Поддержка перемещения ресурсов Azure SQL между регионами
       href: support-matrix-move-region-sql.md
 - name: Руководства
   items:
@@ -34,11 +34,11 @@
           href: move-region-within-resource-group.md
     - name: Управление перемещением между регионами
       items:
-        - name: Изменение целевых параметров для перемещения между регионами
+        - name: Изменение параметров назначения
           href: modify-target-settings.md
-        - name: Удаление ресурсов из коллекции для перемещения между регионами
+        - name: Удаление ресурсов из коллекции перемещения
           href: remove-move-resources.md
-        - name: 'Управление ресурсами, созданными в процессе перемещения между регионами'
+        - name: 'Управление ресурсами, созданными во время перемещения'
           href: manage-resources-created-move-process.md
 - name: Ресурсы
   items:

@@ -8,12 +8,12 @@ ms.subservice: pod
 ms.topic: article
 ms.date: 08/13/2019
 ms.author: alkohli
-ms.openlocfilehash: db6e2eadbf19d78a203a4d4ba6111ad88430b192
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: f4a0739eb1ab14155a98b17e2427c5b08c9db788
+ms.sourcegitcommit: 6e1124fc25c3ddb3053b482b0ed33900f46464b3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "68985943"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90564429"
 ---
 # <a name="safely-install-and-operate-your-azure-data-box"></a>Безопасная установка и эксплуатация устройства Azure Data Box
 ![Значок "Внимание!"](./media/data-box-safety/warning_icon.png)
@@ -120,7 +120,7 @@ ms.locfileid: "68985943"
 
 Это оборудование соответствует требованиям части 15 правил ФКС, а также промышленным стандартам Канады в области оборудования радиопередачи, не требующего лицензирования. Эксплуатация допускается при следующих двух условиях: 1) устройство не создает вредных помех; 2) устройство принимает любые помехи, включая помехи, которые могут привести к нарушению работы устройства.
 
-![Канада](./media/data-box-safety/canada.png)
+![На снимке экрана показано уведомление, необходимое для Канады.](./media/data-box-safety/canada.png)
 
 CAN ICES-3(A)/NMB-3(A)
 
@@ -154,7 +154,7 @@ Microsoft Ireland Sandyford Ind Est Dublin D18 KX32 IRL (Ирландия)
 
 **Япония**
 
-![Япония](./media/data-box-safety/japan.png)
+![На снимке экрана показано уведомление, необходимое для Японии.](./media/data-box-safety/japan.png)
 
 <!--**South Korea**
 
@@ -170,7 +170,7 @@ Microsoft Ireland Sandyford Ind Est Dublin D18 KX32 IRL (Ирландия)
 
 Ознакомившись с этими рекомендациями по безопасности, установите устройство и подключите все необходимые кабели.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Присоединение кабелей и подключение Azure Data Box](data-box-deploy-set-up.md)
 

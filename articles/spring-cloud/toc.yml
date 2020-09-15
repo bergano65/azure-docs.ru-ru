@@ -47,6 +47,8 @@
       href: spring-cloud-tutorial-managed-identities-key-vault.md
     - name: Развертывание Azure Spring Cloud в виртуальной сети
       href: spring-cloud-tutorial-deploy-in-azure-virtual-network.md
+    - name: Использование управляемого удостоверения для вызова Функций Azure из приложения Azure Spring Cloud
+      href: spring-cloud-tutorial-managed-identities-functions.md
 - name: Основные понятия
   items:
     - name: Общие сведения о приложении и развертывании

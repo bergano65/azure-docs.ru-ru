@@ -8,12 +8,12 @@ ms.service: application-gateway
 ms.topic: how-to
 ms.date: 04/16/2020
 ms.author: victorh
-ms.openlocfilehash: c7a0022c5cff405a993f30cdf2ab5900485c84a1
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 64dfe284772faf2a345b7959f1a1bd6f474cd1bf
+ms.sourcegitcommit: 6e1124fc25c3ddb3053b482b0ed33900f46464b3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84808112"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90562491"
 ---
 # <a name="configure-an-application-gateway-with-an-internal-load-balancer-ilb-endpoint"></a>Настройка шлюза приложений с конечной точкой внутренней подсистемы балансировки нагрузки (ILB)
 
@@ -90,7 +90,7 @@ ms.locfileid: "84808112"
 ### <a name="create-a-virtual-machine"></a>Создание виртуальной машины
 
 1. Выберите **Создать ресурс**.
-2. Выберите **Вычисление** и выберите **Виртуальная машина**.
+2. Нажмите **Вычисления**, а затем выберите вариант **Виртуальная машина**.
 4. Введите следующие значения для виртуальной машины:
    - Выберите *myResourceGroupAG* для **группы ресурсов**.
    - *myVM* — для **имени виртуальной машины**.
@@ -103,14 +103,14 @@ ms.locfileid: "84808112"
 8. Примите остальные значения по умолчанию и выберите **Далее: Управление**.
 9. Нажмите кнопку **Отключить**, чтобы выключить диагностику загрузки.
 10. Примите остальные значения по умолчанию и нажмите кнопку **Далее: дополнительно**.
-11. Нажмите кнопку **Далее: Теги**.
+11. Выберите **Далее: Теги**.
 12. Нажмите кнопку **Далее: Проверка и создание**.
 13. Просмотрите параметры на странице сводки и нажмите кнопку **Создать**. Создание виртуальной машины может занять несколько минут. Дождитесь успешного завершения развертывания перед переходом к следующему разделу.
 
 ### <a name="install-iis"></a>Установка служб IIS
 
 1. Откройте Cloud Shell и убедитесь, что для нее задано значение **PowerShell**.
-    ![частный — frontendip-3](./media/configure-application-gateway-with-private-frontend-ip/private-frontendip-3.png)
+    ![На снимке экрана показано открытое окно консоли Azure Cloud Shell, использующее PowerShell.](./media/configure-application-gateway-with-private-frontend-ip/private-frontendip-3.png)
 2. Чтобы установить службы IIS, выполните на виртуальной машине следующие команды:
 
    ```azurepowershell
@@ -142,17 +142,17 @@ ms.locfileid: "84808112"
 
 1. Выберите **Все ресурсы**, а затем — **myAppGateway**.
 2. Выберите **Серверные пулы**. Выберите **appGatewayBackendPool**.
-3. В разделе **тип целевого объекта** выберите **Виртуальная машина** и в разделе **целевой объект**выберите vNIC, связанный с myVM.
+3. В разделе **тип целевого объекта** выберите **Виртуальная машина**  и в разделе **целевой объект**выберите vNIC, связанный с myVM.
 4. Повторите, чтобы добавить MyVM2.
-   ![частный — frontendip-4](./media/configure-application-gateway-with-private-frontend-ip/private-frontendip-4.png)
+   ![Снимок экрана: панель изменения серверного пула с выделенными целевыми типами и целевыми объектами.](./media/configure-application-gateway-with-private-frontend-ip/private-frontendip-4.png)
 5. Нажмите кнопку **Сохранить.**
 
 ## <a name="test-the-application-gateway"></a>Тестирование шлюза приложений
 
 1. Проверьте назначенный интерфейсный IP-адрес, щелкнув страницу **конфигурации интерфейсных IP-** адресов на портале.
-    ![частный — frontendip-5](./media/configure-application-gateway-with-private-frontend-ip/private-frontendip-5.png)
+    ![На снимке экрана показана область внешних IP-конфигураций с выделенным закрытым типом.](./media/configure-application-gateway-with-private-frontend-ip/private-frontendip-5.png)
 2. Скопируйте частный IP-адрес и вставьте его в адресную строку браузера на виртуальной машине в той же виртуальной сети или в локальной среде, которая имеет подключение к этой виртуальной сети, и попытайтесь получить доступ к шлюзу приложений.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Если вы хотите отслеживать работоспособность серверной части, см. раздел [журналы работоспособности и диагностики для шлюза приложений](application-gateway-diagnostics.md).

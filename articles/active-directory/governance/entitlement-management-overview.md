@@ -12,17 +12,17 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: overview
 ms.subservice: compliance
-ms.date: 08/25/2020
+ms.date: 09/08/2020
 ms.author: barclayn
 ms.reviewer: markwahl-msft
 ms.collection: M365-identity-device-management
 ms.custom: contperfq1
-ms.openlocfilehash: dbcd8ab2f2825e18943436dcc1a9ca4ff38e2d8d
-ms.sourcegitcommit: 927dd0e3d44d48b413b446384214f4661f33db04
+ms.openlocfilehash: 2ce5f0c9b340e1b81fcf002ee70e7ec1cc74d38c
+ms.sourcegitcommit: 1b320bc7863707a07e98644fbaed9faa0108da97
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88871213"
+ms.lasthandoff: 09/09/2020
+ms.locfileid: "89594328"
 ---
 # <a name="what-is-azure-ad-entitlement-management"></a>Что собой представляет управление правами Azure AD?
 
@@ -153,7 +153,7 @@ ms.locfileid: "88871213"
 - Лицензии не требуются для пользователей, которым были делегированы административные задачи, такие как создатель каталога, владелец каталога и менеджер пакетов для доступа.
 - Для гостей, которые **могут** запрашивать пакеты для доступа, но **не** запрашивают пакет для доступа, лицензии не требуются.
 
-Для каждой платной лицензии Azure AD Premium P2, приобретенной для пользователей-участников (сотрудников), можно использовать Azure AD B2B, чтобы пригласить до пяти гостевых пользователей. Эти гостевые пользователи также могут использовать функции Azure AD Premium P2. Дополнительные сведения см. в статье [Руководство по лицензированию службы совместной работы Azure Active Directory B2B](../external-identities/licensing-guidance.md).
+Плата за внешние удостоверения Azure AD (гостевой пользователь) взимается как за ежемесячно активных пользователей (MAU). Это число уникальных пользователей с действиями проверки подлинности в пределах календарного месяца. Эта модель заменяет модель выставления счетов в соотношении 1:5, когда на каждую лицензию Azure AD Premium в клиенте разрешено до пяти гостевых пользователей. Если клиент связан с подпиской и вы используете возможности внешних удостоверений для совместной работы с гостевыми пользователями, вам автоматически будет выставляться счет с использованием модели на основе MAU. Дополнительные сведения см. в статье [Модель выставления счетов для внешних удостоверений Azure AD](../external-identities/external-identities-pricing.md).
 
 Дополнительные сведения о лицензиях см. в статье [Назначение или удаление лицензий с помощью портала Azure Active Directory](../fundamentals/license-users-groups.md).
 

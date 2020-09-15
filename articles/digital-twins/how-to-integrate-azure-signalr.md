@@ -7,12 +7,12 @@ ms.author: aymarqui
 ms.date: 09/02/2020
 ms.topic: how-to
 ms.service: digital-twins
-ms.openlocfilehash: 0931a7e344d6546bd62ceb7513c4aa540f5b9638
-ms.sourcegitcommit: bf1340bb706cf31bb002128e272b8322f37d53dd
+ms.openlocfilehash: 38e3526627eb4191643f8bc86b9ce5f49e41a71f
+ms.sourcegitcommit: 6e1124fc25c3ddb3053b482b0ed33900f46464b3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/03/2020
-ms.locfileid: "89447904"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90564412"
 ---
 # <a name="integrate-azure-digital-twins-with-azure-signalr-service"></a>Интеграция Azure Digital двойников со службой Azure SignalR
 
@@ -20,7 +20,7 @@ ms.locfileid: "89447904"
 
 Решение, описанное в этой статье, позволит отправлять данные телеметрии Digital двойника подключенным клиентам, таким как одна веб-страница или мобильное приложение. В результате клиенты обновляются с учетом метрик реального времени и состояния с устройств Интернета вещей без необходимости опрашивать сервер или отправлять новые HTTP-запросы на обновление.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Ниже приведены предварительные требования, которые необходимо выполнить перед продолжением.
 
@@ -147,7 +147,7 @@ ms.locfileid: "89447904"
 
 1. Наконец, добавьте **строку подключения** Azure SignalR из ранее в параметры приложения функции, используя следующую команду Azure CLI. Команду можно выполнить в [Azure Cloud Shell](https://shell.azure.com)или локально, если [на компьютере установлен](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest)Azure CLI.
  
-    ```azurecli-interactive
+    ```azurecli
     az functionapp config appsettings set -g <your-resource-group> -n <your-App-Service-(function-app)-name> --settings "AzureSignalRConnectionString=<your-Azure-SignalR-ConnectionString>"
     ```
 
@@ -242,7 +242,7 @@ npm start
 > [!IMPORTANT]
 > Удаление группы ресурсов — процесс необратимый. Группа ресурсов и все содержащиеся в ней ресурсы удаляются без возможности восстановления. Будьте внимательны, чтобы случайно не удалить не ту группу ресурсов или не те ресурсы. 
 
-```azurecli-interactive
+```azurecli
 az group delete --name <your-resource-group>
 ```
 

@@ -564,7 +564,7 @@
               href: platform/itsmc-overview.md
             - name: Подключения управления ИТ-услугами
               href: platform/itsmc-connections.md
-            - name: Интеграция безопасного экспорта
+            - name: Интеграция с Secure Export
               href: platform/it-service-management-connector-secure-webhook-connections.md
             - name: Создание веб-приложения Service Manager
               href: platform/itsmc-service-manager-script.md

@@ -446,7 +446,7 @@
                   items:
                     - name: Из виртуальной машины
                       href: ../image-version-vm-powershell.md
-                    - name: На основе VHD или моментального снимка
+                    - name: На основе управляемого диска или моментального снимка
                       href: ../image-version-snapshot-powershell.md
                     - name: Перенос из управляемого образа
                       href: ../image-version-managed-image-powershell.md
@@ -468,7 +468,7 @@
                   items:
                     - name: Из виртуальной машины
                       href: ../image-version-vm-cli.md
-                    - name: На основе VHD или моментального снимка
+                    - name: На основе управляемого диска или моментального снимка
                       href: ../image-version-snapshot-cli.md
                     - name: Перенос из управляемого образа
                       href: ../image-version-managed-image-cli.md
@@ -507,21 +507,33 @@
           items:
             - name: Обзор
               href: ../linux/image-builder-overview.md?toc=/azure/virtual-machines/windows/toc.json&bc=/azure/virtual-machines/windows/breadcrumb/toc.json
-            - name: Использование Azure CLI
-              href: image-builder.md
-            - name: Создание виртуальной машины с использованием VNET
+            - name: Использование Конструктора образов
+              items:
+                - name: CLI
+                  href: ../linux/image-builder.md?toc=/azure/virtual-machines/windows/toc.json&bc=/azure/virtual-machines/windows/breadcrumb/toc.json
+                - name: PowerShell
+                  href: image-builder-powershell.md
+            - name: Использование виртуальной сети
               href: image-builder-vnet.md
-            - name: Использование Azure PowerShell
-              href: image-builder-powershell.md
+            - name: Сетевые параметры
+              href: ../linux/image-builder-networking.md?toc=/azure/virtual-machines/windows/toc.json&bc=/azure/virtual-machines/windows/breadcrumb/toc.json
+            - name: Настройка разрешений
+              items:
+                - name: CLI
+                  href: ../linux/image-builder-permissions-cli.md?toc=/azure/virtual-machines/windows/toc.json&bc=/azure/virtual-machines/windows/breadcrumb/toc.json
+                - name: PowerShell
+                  href: ../linux/image-builder-permissions-powershell.md?toc=/azure/virtual-machines/windows/toc.json&bc=/azure/virtual-machines/windows/breadcrumb/toc.json
+            - name: Задание DevOps
+              href: ../linux/image-builder-devops-task.md?toc=/azure/virtual-machines/windows/toc.json&bc=/azure/virtual-machines/windows/breadcrumb/toc.json
+            - name: Справочник по шаблонам ARM
+              displayName: Azure Resource Manager
+              href: ../linux/image-builder-json.md?toc=/azure/virtual-machines/windows/toc.json&bc=/azure/virtual-machines/windows/breadcrumb/toc.json
             - name: Сборка для коллекций образов
               href: image-builder-gallery.md
             - name: Обновление существующего образа
               href: image-builder-gallery-update-image-version.md
             - name: Хранение скриптов
               href: ../linux/image-builder-user-assigned-identity.md?toc=/azure/virtual-machines/windows/toc.json&bc=/azure/virtual-machines/windows/breadcrumb/toc.json
-            - name: Справочник по шаблонам ARM
-              displayName: Azure Resource Manager
-              href: ../linux/image-builder-json.md?toc=/azure/virtual-machines/windows/toc.json&bc=/azure/virtual-machines/windows/breadcrumb/toc.json
             - name: Диагностика
               href: 'https://github.com/danielsollondon/azvmimagebuilder/blob/master/troubleshootingaib.md'
         - name: Поиск и использование образов
@@ -1027,7 +1039,7 @@
   href: ../troubleshooting/index.yml
 - name: Справочник
   items:
-    - name: Azure CLI
+    - name: Azure CLI;
       href: /cli/azure/vm
     - name: Azure PowerShell
       href: /powershell/azure/

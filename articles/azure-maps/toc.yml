@@ -33,6 +33,14 @@
           href: tutorial-ev-routing.md
         - name: Анализ данных о погоде с помощью Записных книжек Azure (Python)
           href: weather-service-tutorial.md
+    - name: Миграция из Карт Bing
+      items:
+        - name: Миграция из Карт Bing
+          href: migrate-from-bing-maps.md
+        - name: Миграция веб-приложения
+          href: migrate-from-bing-maps-web-app.md
+        - name: Миграция веб-службы
+          href: migrate-from-bing-maps-web-services.md
     - name: Миграция из Google Карт
       items:
         - name: Миграция из Google Карт

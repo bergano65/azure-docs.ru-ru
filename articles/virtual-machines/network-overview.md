@@ -9,12 +9,12 @@ ms.workload: infrastructure-services
 ms.topic: conceptual
 ms.date: 07/17/2017
 ms.author: cynthn
-ms.openlocfilehash: cc98a0703cf408194c4c3740938399b57a36d468
-ms.sourcegitcommit: 2ff0d073607bc746ffc638a84bb026d1705e543e
+ms.openlocfilehash: fe1cdf738162fe5c4492ff0585f057256153a838
+ms.sourcegitcommit: 6e1124fc25c3ddb3053b482b0ed33900f46464b3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87835618"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90561420"
 ---
 # <a name="virtual-networks-and-virtual-machines-in-azure"></a>Виртуальные сети и виртуальные машины в Azure 
 
@@ -147,7 +147,7 @@ ms.locfileid: "87835618"
 | Портал Azure | Вы можете [настроить балансировку нагрузки внутреннего трафика с помощью подсистемы балансировки нагрузки на портале Azure](../load-balancer/tutorial-load-balancer-standard-internal-portal.md). |
 | [Azure PowerShell](../load-balancer/load-balancer-get-started-ilb-arm-ps.md) | Используйте командлет [New-AzLoadBalancerFrontendIpConfig](/powershell/module/az.network/new-azloadbalancerfrontendipconfig) с параметром **-PrivateIpAddress**, чтобы указать частный IP-адрес в подсети сети. Используйте командлет [New-AzLoadBalancerBackendAddressPoolConfig](/powershell/module/az.network/new-azloadbalancerbackendaddresspoolconfig), чтобы создать конфигурацию пула внутренних адресов. Используйте командлет [New-AzLoadBalancerInboundNatRuleConfig](/powershell/module/az.network/new-azloadbalancerinboundnatruleconfig), чтобы создать правила преобразования сетевых адресов для входящих подключений, связанные с созданной конфигурацией внешних IP-адресов. Используйте командлет [New-AzLoadBalancerProbeConfig](/powershell/module/az.network/new-azloadbalancerprobeconfig), чтобы создать необходимые пробы. Используйте командлет [New-AzLoadBalancerRuleConfig](/powershell/module/az.network/new-azloadbalancerruleconfig), чтобы создать конфигурацию балансировщика нагрузки. Используйте командлет [New-AzLoadBalancer](/powershell/module/az.network/new-azloadbalancer), чтобы создать балансировщик нагрузки.|
 | [Azure CLI](../load-balancer/load-balancer-get-started-ilb-arm-cli.md) | Используйте команду [az network lb create](/cli/azure/network/lb), чтобы создать начальную конфигурацию балансировщика нагрузки, и команду [az network lb frontend-ip create](/cli/azure/network/lb/frontend-ip) с параметром **--private-ip-address**, чтобы определить частный IP-адрес. Команда [az network lb address-pool create](/cli/azure/network/lb/address-pool) позволяет добавить конфигурацию пула внутренних адресов, команда [az network lb inbound-nat-rule create](/cli/azure/network/lb/inbound-nat-rule) — правила преобразования сетевых адресов, команда [az network lb rule create](/cli/azure/network/lb/rule) — правила балансировщика нагрузки, а команда [az network lb probe create](/cli/azure/network/lb/probe) — пробы.|
-| [Шаблон](../load-balancer/load-balancer-get-started-ilb-arm-template.md) | Используйте шаблон [2 VMs in a Load Balancer and configure NAT rules on the LB](https://github.com/Azure/azure-quickstart-templates/tree/master/201-2-vms-internal-load-balancer) (2 виртуальные машины в балансировщике нагрузки и настройка правил преобразования сетевых адресов для балансировки нагрузки) в качестве руководства по развертыванию балансировщика нагрузки с помощью шаблона. |
+| [Шаблон](../load-balancer/quickstart-load-balancer-standard-internal-template.md) | Используйте шаблон [2 VMs in a Load Balancer and configure NAT rules on the LB](https://github.com/Azure/azure-quickstart-templates/tree/master/201-2-vms-internal-load-balancer) (2 виртуальные машины в балансировщике нагрузки и настройка правил преобразования сетевых адресов для балансировки нагрузки) в качестве руководства по развертыванию балансировщика нагрузки с помощью шаблона. |
 
 ### <a name="virtual-machine-scale-sets"></a>Масштабируемые наборы виртуальных машин
 

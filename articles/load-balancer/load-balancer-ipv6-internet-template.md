@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 09/25/2017
 ms.author: allensu
-ms.openlocfilehash: 65f378f52c464869217084c6f155b9d34c6fc092
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 415c95a441ac0cc6ed2dbf2d6a37f57d7a9e7341
+ms.sourcegitcommit: 6e1124fc25c3ddb3053b482b0ed33900f46464b3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84803733"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90562525"
 ---
 # <a name="deploy-an-internet-facing-load-balancer-solution-with-ipv6-using-a-template"></a>Развертывание решения балансировки нагрузки для Интернета с поддержкой IPv6 с помощью шаблона
 
@@ -38,7 +38,7 @@ Azure Load Balancer является балансировщиком нагруз
 
 На следующей схеме показано решение балансировки нагрузки, которое развертывается в этой статье с помощью примера шаблона.
 
-![Сценарий использования балансировщика нагрузки](./media/load-balancer-ipv6-internet-template/lb-ipv6-scenario.png)
+![На схеме показан пример сценария, используемого в этой статье, в том числе клиент рабочей станции, подключенный к Azure Load Balancer через Интернет, подключенный к двум виртуальным машинам.](./media/load-balancer-ipv6-internet-template/lb-ipv6-scenario.png)
 
 В этом сценарии вы создадите следующие ресурсы Azure:
 
@@ -55,43 +55,43 @@ Azure Load Balancer является балансировщиком нагруз
 1. Откройте портал Azure и выполните вход с помощью учетной записи, имеющей разрешения на создание виртуальных машин и сетевых ресурсов в рамках подписки Azure. Кроме того, учетной записи необходимы разрешения на создание группы ресурсов и учетной записи хранения (это не требуется, если вы используете существующие ресурсы).
 2. В меню щелкните "+ Создать", а затем введите в поле поиска "template". В результатах поиска выберите "Развертывание шаблона".
 
-    ![lb-ipv6-portal-step2](./media/load-balancer-ipv6-internet-template/lb-ipv6-portal-step2.png)
+    ![На снимке экрана показан портал Azure с выбранными новыми и Шаблоны развертывания.](./media/load-balancer-ipv6-internet-template/lb-ipv6-portal-step2.png)
 
 3. В колонке "Все" щелкните "Развертывание шаблона".
 
-    ![lb-ipv6-portal-step3](./media/load-balancer-ipv6-internet-template/lb-ipv6-portal-step3.png)
+    ![На снимке экрана показано, Шаблоны развертывания в Marketplace.](./media/load-balancer-ipv6-internet-template/lb-ipv6-portal-step3.png)
 
 4. Нажмите кнопку "Создать".
 
-    ![lb-ipv6-portal-step4](./media/load-balancer-ipv6-internet-template/lb-ipv6-portal-step4.png)
+    ![На снимке экрана показано описание Шаблоны развертывания в Marketplace.](./media/load-balancer-ipv6-internet-template/lb-ipv6-portal-step4.png)
 
 5. Щелкните "Изменить шаблон". Удалите имеющееся содержимое, затем скопируйте и вставьте все содержимое файла шаблона (включая начальный и конечный символы {}). Затем нажмите кнопку "Сохранить".
 
     > [!NOTE]
     > Если вы используете Microsoft Internet Explorer, то при вставке отображается диалоговое окно, запрашивающее разрешение на доступ к буферу обмена Windows. Нажмите кнопку "Разрешить доступ".
 
-    ![lb-ipv6-portal-step5](./media/load-balancer-ipv6-internet-template/lb-ipv6-portal-step5.png)
+    ![На снимке экрана показан этап запуска пользовательского развертывания, который является шаблоном Edit.](./media/load-balancer-ipv6-internet-template/lb-ipv6-portal-step5.png)
 
 6. Щелкните "Изменить параметры". В колонке "Параметры" укажите значения, которые приведены в разделе "Параметры шаблона", а затем нажмите кнопку "Сохранить", чтобы закрыть колонку "Параметры". В колонке "Настраиваемое развертывание" выберите подписку и существующую группу ресурсов (или создайте новую). Если вы создаете группу ресурсов, то выберите для нее расположение. Затем щелкните **Условия** и выберите **Приобрести**. Azure начнет развертывание ресурсов. Развертывание всех ресурсов займет несколько минут.
 
-    ![lb-ipv6-portal-step6](./media/load-balancer-ipv6-internet-template/lb-ipv6-portal-step6.png)
+    ![На снимке экрана показаны шаги, связанные с пользовательским развертыванием, начиная с ввода значений параметров шаблона.](./media/load-balancer-ipv6-internet-template/lb-ipv6-portal-step6.png)
 
     Дополнительные сведения об этих параметрах см. в разделе [Параметры и переменные шаблона](#template-parameters-and-variables) далее в этой статье.
 
 7. Чтобы просмотреть ресурсы, созданные с помощью шаблона, щелкните "Обзор", прокрутите список вниз до пункта "Группы ресурсов" и выберите его.
 
-    ![lb-ipv6-portal-step7](./media/load-balancer-ipv6-internet-template/lb-ipv6-portal-step7.png)
+    ![Снимок экрана показывает портал Azure с выбранными группами обзора и ресурсов.](./media/load-balancer-ipv6-internet-template/lb-ipv6-portal-step7.png)
 
 8. В колонке "Группы ресурсов" щелкните имя группы ресурсов, которое вы указали на шаге 6. Отобразится список всех развернутых ресурсов. Если все прошло успешно, то в разделе "Последнее развертывание" должно отобразиться "Выполнено". Если это не так, проверьте, имеет ли используемая вами учетная запись разрешения на создание необходимых ресурсов.
 
-    ![lb-ipv6-portal-step8](./media/load-balancer-ipv6-internet-template/lb-ipv6-portal-step8.png)
+    ![На снимке экрана показано состояние последнего развертывания группы ресурсов, в данном примере — успех.](./media/load-balancer-ipv6-internet-template/lb-ipv6-portal-step8.png)
 
     > [!NOTE]
     > Если просмотреть "Группы ресурсов" сразу после выполнения шага 6, то в разделе "Последнее развертывание" будет отображаться состояние "Идет развертывание", так как ресурсы еще развертываются.
 
 9. В список ресурсов выберите myIPv6PublicIP. Вы увидите, что в качестве IP-адреса указан IPv6-адрес, а значение DNS-имени соответствует тому, которое вы указали для параметра dnsNameforIPv6LbIP на шаге 6. Этот ресурс является общедоступным IPv6-адресом и именем узла, доступным для Интернет-клиентов.
 
-    ![lb-ipv6-portal-step9](./media/load-balancer-ipv6-internet-template/lb-ipv6-portal-step9.png)
+    ![На снимке экрана показан общедоступный адрес IPv6.](./media/load-balancer-ipv6-internet-template/lb-ipv6-portal-step9.png)
 
 ## <a name="validate-connectivity"></a>Проверка подключения
 
@@ -136,6 +136,6 @@ Azure Load Balancer является балансировщиком нагруз
 
 Остальные переменные в шаблоне содержат производные значения, которые назначаются, когда Azure создает ресурсы. Не изменяйте эти переменные.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Синтаксис JSON и свойства подсистемы балансировки нагрузки в шаблоне см. в справочнике по шаблону для ресурса [Microsoft.Network/loadBalancers](/azure/templates/microsoft.network/loadbalancers).

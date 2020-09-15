@@ -12,12 +12,12 @@ ms.tgt_pltfrm: NA
 ms.workload: na
 ms.date: 12/20/2019
 ms.author: mblythe
-ms.openlocfilehash: ad0d3a1bf2c293039df3bba3aa18da7d6e7dd0a5
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: b77c9cfd6e4d1721839acb9db5469b5f0ac73a48
+ms.sourcegitcommit: 6e1124fc25c3ddb3053b482b0ed33900f46464b3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "81459225"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90561607"
 ---
 # <a name="the-structure-of-azure-dashboards"></a>Структура панелей мониторинга Azure
 В этом документе описывается структура панели мониторинга Azure. В качестве примера используется следующая панель мониторинга Azure:
@@ -329,7 +329,7 @@ ms.locfileid: "81459225"
 
 `location: { x: 0, y: 0, rowSpan: 2, colSpan: 1 }`
 
-![единицы сетки](./media/azure-portal-dashboards-structure/grid-units.png)
+![На снимке экрана показано близкое к сетке, в которой выделена одна квадратная единица сетки.](./media/azure-portal-dashboards-structure/grid-units.png)
 
 ### <a name="the-metadata-object"></a>Объект metadata
 Каждая часть имеет свойство metadata, а объект имеет только одно требуемое свойство под названием __type__. Эта строка указывает порталу, какие плитки отображать. В нашем примере панели мониторинга используются такие типы плиток:

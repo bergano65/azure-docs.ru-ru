@@ -7,18 +7,21 @@ ms.topic: troubleshooting
 ms.date: 10/16/2018
 ms.author: jeffpatt
 ms.subservice: files
-ms.openlocfilehash: a01d9e90e87d1c23b9aefc5f2d9ba3ba84d0f59f
-ms.sourcegitcommit: 4e5560887b8f10539d7564eedaff4316adb27e2c
+ms.openlocfilehash: e4aa0cb2cc3ff623929222d83a560f66198f13c0
+ms.sourcegitcommit: 6e1124fc25c3ddb3053b482b0ed33900f46464b3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87904927"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90564276"
 ---
-# <a name="troubleshoot-azure-files-problems-in-linux"></a>Устранение неполадок службы файлов Azure в Linux
+# <a name="troubleshoot-azure-files-problems-in-linux-smb"></a>Устранение неполадок службы файлов Azure в Linux (SMB)
 
 В этой статье приведен список распространенных проблем, возникающих в службе файлов Azure при подключении из клиентов Linux. Кроме того, здесь представлены возможные причины этих проблем и способы их устранения. 
 
 Помимо действий по устранению неполадок, описываемых в этой статье, можно использовать [AzFileDiagnostics](https://github.com/Azure-Samples/azure-files-samples/tree/master/AzFileDiagnostics/Linux), чтобы обеспечить выполнение необходимых условий для клиента Linux. AzFileDiagnostics автоматизирует обнаружение большинства симптомов, упомянутых в этой статье. Это средство помогает настроить среду для оптимальной производительности. См. дополнительные сведения о [средстве устранения неполадок для общих файловых ресурсов Azure](https://support.microsoft.com/help/4022301/troubleshooter-for-azure-files-shares). Это средство предоставляет действия, которые помогут вам решить проблемы с подключением, сопоставлением и подключением общих файловых ресурсов Azure.
+
+> [!IMPORTANT]
+> Содержимое этой статьи относится только к общим ресурсам SMB.
 
 ## <a name="cannot-connect-to-or-mount-an-azure-file-share"></a>Не удается подключиться к файловому ресурсу Azure или подключить ее
 
@@ -80,7 +83,7 @@ ms.locfileid: "87904927"
 
 Работая в Linux, вы получаете сообщение об ошибке, которое имеет следующий вид.
 
-**\<filename>[отказано в разрешении] Превышена квота диска**
+**\<filename> [отказано в разрешении] Превышена квота диска**
 
 ### <a name="cause"></a>Причина
 
@@ -107,7 +110,7 @@ ms.locfileid: "87904927"
     - Используйте [AZCopy](../common/storage-use-azcopy.md?toc=%2fazure%2fstorage%2ffiles%2ftoc.json) для передачи данных между двумя файловыми ресурсами.
     - Использование CP или DD с параллельным использованием может повысить скорость копирования, количество потоков зависит от варианта использования и рабочей нагрузки. В следующих примерах используется шесть: 
     - Пример CP (CP будет использовать размер блока по умолчанию файловой системы в качестве размера блока): `find * -type f | parallel --will-cite -j 6 cp {} /mntpremium/ &` .
-    - Пример DD (Эта команда явно устанавливает размер блока в 1 MiB):`find * -type f | parallel --will-cite-j 6 dd if={} of=/mnt/share/{} bs=1M`
+    - Пример DD (Эта команда явно устанавливает размер блока в 1 MiB): `find * -type f | parallel --will-cite-j 6 dd if={} of=/mnt/share/{} bs=1M`
     - Средства сторонних разработчиков с открытым кодом, например:
         - [GNU Parallel](https://www.gnu.org/software/parallel/).
         - [Фпарт](https://github.com/martymac/fpart) — сортирует файлы и упаковывает их в разделы.
@@ -115,7 +118,7 @@ ms.locfileid: "87904927"
         - [Многопоточные](https://github.com/pkolano/mutil) CP и md5sum, основанные на GNU кореутилс.
 - Если задать размер файла заранее, вместо того, чтобы каждый раз писать расширенную запись, помогает повысить скорость копирования в сценариях, где известен размер файла. Если нужно избежать необходимости расширения операций записи, можно задать размер целевого файла с помощью `truncate - size <size><file>` команды. После этого `dd if=<source> of=<target> bs=1M conv=notrunc` команда скопирует исходный файл без необходимости повторного обновления размера целевого файла. Например, можно задать размер целевого файла для каждого копируемого файла (предположим, что общая папка подключена в/МНТ/шаре):
     - `$ for i in `` find * -type f``; do truncate --size ``stat -c%s $i`` /mnt/share/$i; done`
-    - а затем копировать файлы без расширения записи параллельно:`$find * -type f | parallel -j6 dd if={} of =/mnt/share/{} bs=1M conv=notrunc`
+    - а затем копировать файлы без расширения записи параллельно: `$find * -type f | parallel -j6 dd if={} of =/mnt/share/{} bs=1M conv=notrunc`
 
 <a id="error115"></a>
 ## <a name="mount-error115-operation-now-in-progress-when-you-mount-azure-files-by-using-smb-30"></a>Отображается ошибка "Mount error(115): Operation now in progress" (Ошибка подключения (115). Идет выполнение операции) при подключении службы файлов Azure с помощью SMB 3.0

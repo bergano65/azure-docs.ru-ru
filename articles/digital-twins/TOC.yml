@@ -160,6 +160,8 @@
               href: 'https://github.com/Azure/azure-sdk-for-net/tree/master/sdk/digitaltwins/Azure.DigitalTwins.Core'
             - name: Пакет SDK для JavaScript (npm)
               href: 'https://www.npmjs.com/package/@azure/digital-twins/v/1.0.0-preview.1'
+            - name: Справочник по пакету SDK для JavaScript
+              href: 'https://docs.microsoft.com/javascript/api/@azure/digital-twins/?view=azure-node-latest&preserve-view=true'
     - name: CLI Digital Twins
       items:
         - name: Справочник по CLI Digital Twins

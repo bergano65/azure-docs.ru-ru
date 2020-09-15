@@ -5,18 +5,18 @@ author: florianborn71
 ms.author: flborn
 ms.date: 02/05/2020
 ms.topic: conceptual
-ms.openlocfilehash: eea43f48abef5e2b258251d46eca1061a2263519
-ms.sourcegitcommit: f845ca2f4b626ef9db73b88ca71279ac80538559
+ms.openlocfilehash: 08d80a5ec2099147c12bcecd3b52d64429837285
+ms.sourcegitcommit: 6e1124fc25c3ddb3053b482b0ed33900f46464b3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/09/2020
-ms.locfileid: "89613834"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90563970"
 ---
 # <a name="meshes"></a>Сетки
 
 ## <a name="mesh-resource"></a>Ресурс сетки
 
-Сетки — это неизменяемый [общий ресурс](../concepts/lifetime.md), который можно создать только с помощью [преобразования модели](../how-tos/conversion/model-conversion.md). Сетки содержат одну или несколько вложенных *сеток*. Каждая подсеть ссылается на [материал](materials.md) , по умолчанию который должен быть визуализирован. Чтобы поместить сетку в трехмерное пространство, добавьте [мешкомпонент](#meshcomponent) в [сущность](entities.md).
+Сетки — это неизменяемый [общий ресурс](../concepts/lifetime.md), который можно создать только с помощью [преобразования модели](../how-tos/conversion/model-conversion.md). Сетки содержат одну или несколько вложенных *сеток* , а также физическое представление [запросов райкаст](../overview/features/spatial-queries.md). Каждая подсеть ссылается на [материал](materials.md) , по умолчанию который должен быть визуализирован. Чтобы поместить сетку в трехмерное пространство, добавьте [мешкомпонент](#meshcomponent) в [сущность](entities.md).
 
 ### <a name="mesh-resource-properties"></a>Свойства ресурса сетки
 
@@ -38,12 +38,46 @@ ms.locfileid: "89613834"
 
 * **Уседматериалс:** Массив фактически используемых материалов для каждой подсети. Будет совпадать с данными в массиве *Materials* для значений, отличных от NULL. В противном случае он содержит значение из массива *Materials* в экземпляре сетки.
 
+### <a name="sharing-of-meshes"></a>Совместное использование сеток
+
+`Mesh`Ресурс может совместно использоваться несколькими экземплярами компонентов сетки. Кроме того, `Mesh` ресурс, назначенный компоненту сетки, может быть изменен программным способом в любое время. В приведенном ниже коде показано, как клонировать сетку.
+
+```cs
+Entity CloneEntityWithModel(RemoteManager manager, Entity sourceEntity)
+{
+    MeshComponent meshComp = sourceEntity.FindComponentOfType<MeshComponent>();
+    if (meshComp != null)
+    {
+        Entity newEntity = manager.CreateEntity();
+        MeshComponent newMeshComp = manager.CreateComponent(ObjectType.MeshComponent, newEntity) as MeshComponent;
+        newMeshComp.Mesh = meshComp.Mesh; // share the mesh
+        return newEntity;
+    }
+    return null;
+}
+```
+
+```cpp
+ApiHandle<Entity> CloneEntityWithModel(ApiHandle<RemoteManager> manager, ApiHandle<Entity> sourceEntity)
+{
+    if (ApiHandle<MeshComponent> meshComp = sourceEntity->FindComponentOfType<MeshComponent>())
+    {
+        ApiHandle<Entity> newEntity = *manager->CreateEntity();
+        ApiHandle<MeshComponent> newMeshComp = manager->CreateComponent(ObjectType::MeshComponent, newEntity)->as<RemoteRendering::MeshComponent>();
+        newMeshComp->SetMesh(meshComp->GetMesh()); // share the mesh
+        return newEntity;
+    }
+    return nullptr;
+}
+```
+
 ## <a name="api-documentation"></a>Документирование API
 
 * [Класс сетки C#](https://docs.microsoft.com/dotnet/api/microsoft.azure.remoterendering.mesh)
 * [Класс C# Мешкомпонент](https://docs.microsoft.com/dotnet/api/microsoft.azure.remoterendering.meshcomponent)
 * [Класс сетки C++](https://docs.microsoft.com/cpp/api/remote-rendering/mesh)
 * [Класс C++ Мешкомпонент](https://docs.microsoft.com/cpp/api/remote-rendering/meshcomponent)
+
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

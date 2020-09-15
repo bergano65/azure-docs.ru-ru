@@ -6,12 +6,12 @@ author: azooinmyluggage
 ms.topic: article
 ms.date: 11/04/2019
 ms.author: atulmal
-ms.openlocfilehash: d4f8a41df64c3bcbbd85438e4d340d44d5f16351
-ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
+ms.openlocfilehash: 7743a3a8d6e77affd6229b648ab79b5b2f07a0af
+ms.sourcegitcommit: 6e1124fc25c3ddb3053b482b0ed33900f46464b3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2020
-ms.locfileid: "86255223"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90564106"
 ---
 # <a name="github-actions-for-deploying-to-kubernetes-service"></a>Действия GitHub для развертывания в службе Kubernetes
 
@@ -56,7 +56,7 @@ az ad sp create-for-rbac --name "myApp" --role contributor --scopes /subscriptio
 
 1. В [GitHub](https://github.com/)перейдите к репозиторию, выберите **параметры > секреты > добавить новый секрет**.
 
-    ![секретные коды](media/kubernetes-action/secrets.png)
+    ![На снимке экрана показана ссылка "добавить новый секрет" для репозитория.](media/kubernetes-action/secrets.png)
 
 2. Вставьте содержимое приведенной выше `az cli` команды в качестве значения переменной Secret. Например, `AZURE_CREDENTIALS`.
 
@@ -67,7 +67,7 @@ az ad sp create-for-rbac --name "myApp" --role contributor --scopes /subscriptio
 
 4. Вы увидите секреты, как показано ниже, после определения.
 
-    ![kubernetes — секреты](media/kubernetes-action/kubernetes-secrets.png)
+    ![На снимке экрана показаны существующие секреты для репозитория.](media/kubernetes-action/kubernetes-secrets.png)
 
 ##  <a name="build-a-container-image-and-deploy-to-azure-kubernetes-service-cluster"></a>Создание образа контейнера и развертывание в кластере службы Kubernetes Azure
 

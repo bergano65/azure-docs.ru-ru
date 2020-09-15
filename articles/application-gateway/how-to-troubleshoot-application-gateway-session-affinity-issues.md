@@ -8,12 +8,12 @@ ms.service: application-gateway
 ms.topic: troubleshooting
 ms.date: 11/14/2019
 ms.author: absha
-ms.openlocfilehash: 5acf4ac1ec75d5cec057e4b66e3c6cbd8a463271
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 02d1d78dae4f02ac53d535f6c404b15f8d98f008
+ms.sourcegitcommit: 6e1124fc25c3ddb3053b482b0ed33900f46464b3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84808019"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90563766"
 ---
 # <a name="troubleshoot-azure-application-gateway-session-affinity-issues"></a>Устранение проблем с сходством сеансов шлюза приложений Azure
 
@@ -44,11 +44,11 @@ ms.locfileid: "84808019"
 
 3. Выберите вкладку **Параметры HTTP** в разделе **Параметры**.
 
-   ![Устранение неполадок — проблемы с сходством сеансов — 1](./media/how-to-troubleshoot-application-gateway-session-affinity-issues/troubleshoot-session-affinity-issues-1.png)
+   ![Снимок экрана показывает параметры, для которых выбран параметр H t T P.](./media/how-to-troubleshoot-application-gateway-session-affinity-issues/troubleshoot-session-affinity-issues-1.png)
 
 4. Щелкните **appGatewayBackendHttpSettings** справа, чтобы проверить, выбрано ли для сопоставления **на основе** файлов cookie.
 
-   ![Устранение неполадок с сходством сеансов и проблем — 2](./media/how-to-troubleshoot-application-gateway-session-affinity-issues/troubleshoot-session-affinity-issues-2.jpg)
+   ![На снимке экрана показаны параметры шлюза для шлюза приложений, инлкуиднг, выбрано ли сходство на основе файлов cookie.](./media/how-to-troubleshoot-application-gateway-session-affinity-issues/troubleshoot-session-affinity-issues-2.jpg)
 
 
 
@@ -63,7 +63,7 @@ ms.locfileid: "84808019"
 
 ### <a name="the-application-cannot-handle-cookie-based-affinity"></a>Приложение не может управлять сходством на основе файлов cookie
 
-#### <a name="cause"></a>Причина:
+#### <a name="cause"></a>Причина
 
 Шлюз приложений может выполнять сходство на основе сеанса только с помощью файла cookie.
 
@@ -85,13 +85,13 @@ ms.locfileid: "84808019"
 2. Проверьте и Проанализируйте журналы сеансов, чтобы определить, имеют ли файлы cookie, предоставленные клиентом, сведения о Арраффинити. Если вы не нашли сведения о Арраффинити, например "**арраффинити =** *арраффинитивалуе*" в наборе файлов cookie, это означает, что клиент не отвечает на файл cookie Арра, который предоставляется шлюзом приложений.
     Пример:
 
-    ![Устранение неполадок с сходством сеансов и проблем-3](./media/how-to-troubleshoot-application-gateway-session-affinity-issues/troubleshoot-session-affinity-issues-3.png)
+    ![На снимке экрана показан журнал сеансов с выделенной одной записью.](./media/how-to-troubleshoot-application-gateway-session-affinity-issues/troubleshoot-session-affinity-issues-3.png)
 
-    ![Устранение неполадок с сходством сеансов и проблем — 4](./media/how-to-troubleshoot-application-gateway-session-affinity-issues/troubleshoot-session-affinity-issues-4.png)
+    ![На снимке экрана показаны заголовки запросов для H t T, включая сведения о файлах cookie.](./media/how-to-troubleshoot-application-gateway-session-affinity-issues/troubleshoot-session-affinity-issues-4.png)
 
 Приложение по-своему пытается задать файл cookie для каждого запроса, пока он не получит ответ.
 
-#### <a name="cause"></a>Причина:
+#### <a name="cause"></a>Причина
 
 Эта проблема возникает из-за того, что Internet Explorer и другие браузеры могут не хранить или использовать файл cookie с кратким именем.
 
@@ -115,25 +115,25 @@ ms.locfileid: "84808019"
 
 2. Чтобы начать получать данные, щелкните **включить диагностику**.
 
-   ![Устранение неполадок с сходством сеансов и проблем — 5](./media/how-to-troubleshoot-application-gateway-session-affinity-issues/troubleshoot-session-affinity-issues-5.png)
+   ![На снимке экрана показан шлюз приложений с выбранными журналами диагностики.](./media/how-to-troubleshoot-application-gateway-session-affinity-issues/troubleshoot-session-affinity-issues-5.png)
 
 3. В колонке **Параметры диагностики** представлены параметры журналов диагностики. В этом примере для хранения журналов используется Log Analytics. Щелкните **настроить** в разделе **log Analytics** , чтобы задать рабочую область. хранения журналов диагностики можно также использовать концентраторы событий и учетную запись хранения.
 
-   ![Устранение неполадок-сеанс-сходств-проблемы — 6](./media/how-to-troubleshoot-application-gateway-session-affinity-issues/troubleshoot-session-affinity-issues-6.png)
+   ![На снимке экрана показана панель параметров диагностики с выбранной Log Analytics настроить.](./media/how-to-troubleshoot-application-gateway-session-affinity-issues/troubleshoot-session-affinity-issues-6.png)
 
 4. Подтвердите параметры и нажмите кнопку **сохранить**.
 
-   ![Устранение неполадок с сходством сеансов и проблем — 7](./media/how-to-troubleshoot-application-gateway-session-affinity-issues/troubleshoot-session-affinity-issues-7.png)
+   ![На снимке экрана показана панель параметры диагностики с выбранным параметром сохранить.](./media/how-to-troubleshoot-application-gateway-session-affinity-issues/troubleshoot-session-affinity-issues-7.png)
 
 #### <a name="view-and-analyze-the-application-gateway-access-logs"></a>Просмотр и анализ журналов доступа к шлюзу приложений
 
 1. В портал Azure в представлении ресурсов шлюза приложений в разделе **мониторинг** выберите **журналы диагностики** .
 
-   ![Устранение неполадок с сходством сеансов и проблем — 8](./media/how-to-troubleshoot-application-gateway-session-affinity-issues/troubleshoot-session-affinity-issues-8.png)
+   ![На снимке экрана показан мониторинг с выбранными журналами диагностики.](./media/how-to-troubleshoot-application-gateway-session-affinity-issues/troubleshoot-session-affinity-issues-8.png)
 
 2. В правой части выберите "**ApplicationGatewayAccessLog**" в раскрывающемся списке **категории журналов.**  
 
-   ![Устранение неполадок с сходством сеансов и проблем — 9](./media/how-to-troubleshoot-application-gateway-session-affinity-issues/troubleshoot-session-affinity-issues-9.png)
+   ![На снимке экрана показан раскрывающийся список категорий журнала с выбранным ApplicationGatewayAccessLog.](./media/how-to-troubleshoot-application-gateway-session-affinity-issues/troubleshoot-session-affinity-issues-9.png)
 
 3. В списке журнал доступа к шлюзу приложений выберите журнал, который нужно проанализировать и экспортировать, а затем экспортируйте файл JSON.
 
@@ -149,7 +149,7 @@ ms.locfileid: "84808019"
 
   - **SERVER-STATUS** — код отклика HTTP, полученный шлюзом приложений из серверной части.
 
-  ![Устранение неполадок с сходством сеансов и проблем — 11](./media/how-to-troubleshoot-application-gateway-session-affinity-issues/troubleshoot-session-affinity-issues-11.png)
+  ![Снимок экрана показывает состояние сервера в виде обычного текста, в основном скрытое с помощью Клиентпорт и выделенного сервера.](./media/how-to-troubleshoot-application-gateway-session-affinity-issues/troubleshoot-session-affinity-issues-11.png)
 
 Если вы видите два элемента из одного и того же ClientIP и клиентского порта, и они отправляются на тот же сервер, это означает, что шлюз приложений настроен правильно.
 
@@ -168,23 +168,23 @@ ms.locfileid: "84808019"
 
 2. Щелкните исполняемый файл программы установки правой кнопкой мыши и выполните команду от имени администратора для установки.
 
-    ![Устранение неполадок — проблемы с сходством-сеансы — 12](./media/how-to-troubleshoot-application-gateway-session-affinity-issues/troubleshoot-session-affinity-issues-12.png)
+    ![На снимке экрана показана программа установки инструмента Fiddler с контекстным меню, выбранным с помощью команды Запуск от имени администратора.](./media/how-to-troubleshoot-application-gateway-session-affinity-issues/troubleshoot-session-affinity-issues-12.png)
 
 3. При открытии Fiddler должна автоматически запускаться запись трафика (Обратите внимание на запись в левом нижнем углу). Нажмите клавишу F12, чтобы запустить или отключить запись трафика.
 
-    ![Устранение неполадок с сходством сеансов-проблемы — 13](./media/how-to-troubleshoot-application-gateway-session-affinity-issues/troubleshoot-session-affinity-issues-13.png)
+    ![На снимке экрана показан веб-отладчик Fiddler с выделенным индикатором захвата.](./media/how-to-troubleshoot-application-gateway-session-affinity-issues/troubleshoot-session-affinity-issues-13.png)
 
 4. Скорее всего, вы захотите расшифровать трафик HTTPS, а также включить расшифровку HTTPS, выбрав **инструменты**  >  **Fiddler параметры**и установив флажок " **расшифровать HTTPS трафик**".
 
-    ![Устранение неполадок — проблемы с сходством-сеансы — 14](./media/how-to-troubleshoot-application-gateway-session-affinity-issues/troubleshoot-session-affinity-issues-14.png)
+    ![На снимке экрана показаны параметры в Fiddler с выбранным параметром H T T P и расшифровка трафика HTTPS.](./media/how-to-troubleshoot-application-gateway-session-affinity-issues/troubleshoot-session-affinity-issues-14.png)
 
-5. Вы можете удалить предыдущие несвязанные сеансы, прежде чем воспроизвести ошибку, нажав кнопку **X** (значок) > **удалить все** как на снимке экрана ниже. 
+5. Вы можете удалить предыдущие несвязанные сеансы, прежде чем воспроизвести ошибку, нажав кнопку  **X** (значок) > **удалить все** как на снимке экрана ниже. 
 
-    ![Устранение неполадок — проблемы с сходством-сеансы — 15](./media/how-to-troubleshoot-application-gateway-session-affinity-issues/troubleshoot-session-affinity-issues-15.png)
+    ![На снимке экрана показан выбранный значок X, в котором отображается параметр Удалить все.](./media/how-to-troubleshoot-application-gateway-session-affinity-issues/troubleshoot-session-affinity-issues-15.png)
 
 6. Когда вы воссоздаете ошибку, сохраните файл для проверки, выбрав **файл**  >  **сохранить**  >  **все сеансы..**. 
 
-    ![Устранение неполадок-сеанс-сходств-проблемы — 16](./media/how-to-troubleshoot-application-gateway-session-affinity-issues/troubleshoot-session-affinity-issues-16.png)
+    ![Снимок экрана с выбранным параметром сохранить все сеансы.](./media/how-to-troubleshoot-application-gateway-session-affinity-issues/troubleshoot-session-affinity-issues-16.png)
 
 7. Проверьте и Проанализируйте журналы сеансов, чтобы определить причину проблемы.
 
@@ -195,11 +195,11 @@ ms.locfileid: "84808019"
    > [!NOTE]
    > Это значение Арраффинити — это идентификатор файла cookie, который шлюз приложений задает клиенту для отправки на определенный сервер.
 
-   ![Устранение неполадок-сеанс-сходств-проблемы — 17](./media/how-to-troubleshoot-application-gateway-session-affinity-issues/troubleshoot-session-affinity-issues-17.png)
+   ![На снимке экрана показан пример сведений о записи журнала с выделенным значением Set-cookie.](./media/how-to-troubleshoot-application-gateway-session-affinity-issues/troubleshoot-session-affinity-issues-17.png)
 
 - **Пример б.** Следующий журнал сеанса, за которым следует предыдущий, — клиент, реагирующий обратно в шлюз приложений, который установил параметр АРРААФФИНИТИ. Если идентификатор cookie Арраффинити соответствует, пакет должен быть отправлен на тот же сервер, который использовался ранее. Проверьте следующие несколько строк связи HTTP, чтобы узнать, изменился ли файл cookie Арраффинити клиента.
 
-   ![Устранение неполадок — проблемы с сходством-сеансы — 18](./media/how-to-troubleshoot-application-gateway-session-affinity-issues/troubleshoot-session-affinity-issues-18.png)
+   ![На снимке экрана показан пример сведений о записи журнала с выделенным файлом cookie.](./media/how-to-troubleshoot-application-gateway-session-affinity-issues/troubleshoot-session-affinity-issues-18.png)
 
 > [!NOTE]
 > Для одного и того же сеанса связи файл cookie не должен изменяться. Установите флажок в верхнем поле справа, выберите вкладку "cookies", чтобы узнать, использует ли клиент файл cookie и отправляете его обратно в шлюз приложений. В противном случае браузер клиента не сохраняет и не использует файл cookie для диалогов. Иногда клиент может находиться в.

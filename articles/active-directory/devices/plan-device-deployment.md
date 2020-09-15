@@ -11,12 +11,12 @@ author: BarbaraSelden
 manager: daveba
 ms.reviewer: sandeo
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 3f17f6fd881243d91428c6025fd63469a38afa0f
-ms.sourcegitcommit: bcda98171d6e81795e723e525f81e6235f044e52
+ms.openlocfilehash: 60d3e3c174ad9a3372df084cac9eb67270779298
+ms.sourcegitcommit: 6e1124fc25c3ddb3053b482b0ed33900f46464b3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/01/2020
-ms.locfileid: "89268814"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90563902"
 ---
 # <a name="plan-your-azure-active-directory-device-deployment"></a>Планирование развертывания устройства Azure Active Directory
 
@@ -34,7 +34,7 @@ Azure Active Directory (Azure AD) позволяет Организации уд
 
 * [Создайте гибридное присоединение к Azure AD](concept-azure-ad-join-hybrid.md) между устройствами в локальной Active Directory и Azure AD. 
 
-## <a name="learn"></a>Обучение
+## <a name="learn"></a>Learn
 
 Перед началом работы убедитесь, что вы знакомы с [обзором управления удостоверениями устройств](overview.md).
 
@@ -105,24 +105,24 @@ Azure Active Directory (Azure AD) позволяет Организации уд
 | Рассматриваемый вопрос | регистрация в Azure AD;| присоединение к Azure AD;| гибридное присоединение к Azure AD; |
 | - | - | - | - |
 | **Клиентские операционные системы**| | |  |
-| Устройства под управлением Windows 10| ![проверка](./media/plan-device-deployment/check.png)| ![проверка](./media/plan-device-deployment/check.png)| ![проверка](./media/plan-device-deployment/check.png) |
-| Устройства Windows нижнего уровня (Windows 8.1 или Windows 7)| | | ![проверка](./media/plan-device-deployment/check.png) |
+| Устройства под управлением Windows 10| ![Флажок для этих значений.](./media/plan-device-deployment/check.png)| ![Флажок для этих значений.](./media/plan-device-deployment/check.png)| ![Флажок для этих значений.](./media/plan-device-deployment/check.png) |
+| Устройства Windows нижнего уровня (Windows 8.1 или Windows 7)| | | ![Флажок для этих значений.](./media/plan-device-deployment/check.png) |
 |**Параметры входа**| | |  |
-| Локальные учетные данные конечного пользователя| ![проверка](./media/plan-device-deployment/check.png)| |  |
-| Пароль| ![проверка](./media/plan-device-deployment/check.png)| ![проверка](./media/plan-device-deployment/check.png)| ![проверка](./media/plan-device-deployment/check.png) |
-| ПИН-код устройства| ![проверка](./media/plan-device-deployment/check.png)| |  |
-| Windows Hello| ![проверка](./media/plan-device-deployment/check.png)| |  |
-| Windows Hello для бизнеса| | ![проверка](./media/plan-device-deployment/check.png)| ![проверка](./media/plan-device-deployment/check.png) |
-| Ключи безопасности FIDO 2,0| | ![проверка](./media/plan-device-deployment/check.png)| ![проверка](./media/plan-device-deployment/check.png) |
-| Приложение Microsoft Authenticator (с паролем)| ![проверка](./media/plan-device-deployment/check.png)| ![проверка](./media/plan-device-deployment/check.png)| ![проверка](./media/plan-device-deployment/check.png) |
+| Локальные учетные данные конечного пользователя| ![Флажок для этих значений.](./media/plan-device-deployment/check.png)| |  |
+| Пароль| ![Флажок для этих значений.](./media/plan-device-deployment/check.png)| ![Флажок для этих значений.](./media/plan-device-deployment/check.png)| ![Флажок для этих значений.](./media/plan-device-deployment/check.png) |
+| ПИН-код устройства| ![Флажок для этих значений.](./media/plan-device-deployment/check.png)| |  |
+| Windows Hello| ![Флажок для этих значений.](./media/plan-device-deployment/check.png)| |  |
+| Windows Hello для бизнеса| | ![Флажок для этих значений.](./media/plan-device-deployment/check.png)| ![Флажок для этих значений.](./media/plan-device-deployment/check.png) |
+| Ключи безопасности FIDO 2,0| | ![Флажок для этих значений.](./media/plan-device-deployment/check.png)| ![Флажок для этих значений.](./media/plan-device-deployment/check.png) |
+| Приложение Microsoft Authenticator (с паролем)| ![Флажок для этих значений.](./media/plan-device-deployment/check.png)| ![Флажок для этих значений.](./media/plan-device-deployment/check.png)| ![Флажок для этих значений.](./media/plan-device-deployment/check.png) |
 |**Ключевые возможности**| | |  |
-| Единый вход для облачных ресурсов| ![проверка](./media/plan-device-deployment/check.png)| ![проверка](./media/plan-device-deployment/check.png)| ![проверка](./media/plan-device-deployment/check.png) |
-| Единый вход для доступа к локальным ресурсам| | ![проверка](./media/plan-device-deployment/check.png)| ![проверка](./media/plan-device-deployment/check.png) |
-| Условный доступ <br> (Требовать, чтобы устройства были помечены как соответствующие требованиям) <br> (Управление должно осуществляться с помощью MDM)| ![проверка](./media/plan-device-deployment/check.png) | ![проверка](./media/plan-device-deployment/check.png)|![проверка](./media/plan-device-deployment/check.png) |
-Условный доступ <br>(Требуются гибридные устройства, присоединенные к Azure AD)| | | ![проверка](./media/plan-device-deployment/check.png)
-| Самостоятельное восстановление пароля с экрана входа в Windows| | ![проверка](./media/plan-device-deployment/check.png)| ![проверка](./media/plan-device-deployment/check.png) |
-| Сброс ПИН-кода Windows Hello| | ![проверка](./media/plan-device-deployment/check.png)| ![проверка](./media/plan-device-deployment/check.png) |
-| Роуминг состояния предприятия на разных устройствах| | ![проверка](./media/plan-device-deployment/check.png)| ![проверка](./media/plan-device-deployment/check.png) |
+| Единый вход для облачных ресурсов| ![Флажок для этих значений.](./media/plan-device-deployment/check.png)| ![Флажок для этих значений.](./media/plan-device-deployment/check.png)| ![Флажок для этих значений.](./media/plan-device-deployment/check.png) |
+| Единый вход для доступа к локальным ресурсам| | ![Флажок для этих значений.](./media/plan-device-deployment/check.png)| ![Флажок для этих значений.](./media/plan-device-deployment/check.png) |
+| Условный доступ <br> (Требовать, чтобы устройства были помечены как соответствующие требованиям) <br> (Управление должно осуществляться с помощью MDM)| ![Флажок для этих значений.](./media/plan-device-deployment/check.png) | ![Флажок для этих значений.](./media/plan-device-deployment/check.png)|![Флажок для этих значений.](./media/plan-device-deployment/check.png) |
+Условный доступ <br>(Требуются гибридные устройства, присоединенные к Azure AD)| | | ![Флажок для этих значений.](./media/plan-device-deployment/check.png)
+| Самостоятельное восстановление пароля с экрана входа в Windows| | ![Флажок для этих значений.](./media/plan-device-deployment/check.png)| ![Флажок для этих значений.](./media/plan-device-deployment/check.png) |
+| Сброс ПИН-кода Windows Hello| | ![Флажок для этих значений.](./media/plan-device-deployment/check.png)| ![Флажок для этих значений.](./media/plan-device-deployment/check.png) |
+| Роуминг состояния предприятия на разных устройствах| | ![Флажок для этих значений.](./media/plan-device-deployment/check.png)| ![Флажок для этих значений.](./media/plan-device-deployment/check.png) |
 
 
 ## <a name="azure-ad-registration"></a>Регистрация в Azure AD 
@@ -239,9 +239,9 @@ BYOD и корпоративное мобильное устройство ре�
 
 | Средства управления устройствами| регистрация в Azure AD;| присоединение к Azure AD;| гибридное присоединение к Azure AD;|
 | - | - | - | - |
-| [Управление мобильными устройствами (MDM) ](/windows/client-management/mdm/azure-active-directory-integration-with-mdm) <br>Пример: Microsoft Intune| ![проверка](./media/plan-device-deployment/check.png)| ![проверка](./media/plan-device-deployment/check.png)| ![проверка](./media/plan-device-deployment/check.png)|  |
-| [Совместное управление с помощью Microsoft Intune и Configuration Manager конечных точек Майкрософт](/mem/configmgr/comanage/overview) <br>(Windows 10 и более поздние версии)| | ![проверка](./media/plan-device-deployment/check.png)| ![проверка](./media/plan-device-deployment/check.png)|  |
-| [Групповая политика](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831791(v=ws.11))<br>(Только для Windows)| | | ![проверка](./media/plan-device-deployment/check.png)|  |
+| [Управление мобильными устройствами (MDM) ](/windows/client-management/mdm/azure-active-directory-integration-with-mdm) <br>Пример: Microsoft Intune| ![Флажок для этих значений.](./media/plan-device-deployment/check.png)| ![Флажок для этих значений.](./media/plan-device-deployment/check.png)| ![Флажок для этих значений.](./media/plan-device-deployment/check.png)|  |
+| [Совместное управление с помощью Microsoft Intune и Configuration Manager конечных точек Майкрософт](/mem/configmgr/comanage/overview) <br>(Windows 10 и более поздние версии)| | ![Флажок для этих значений.](./media/plan-device-deployment/check.png)| ![Флажок для этих значений.](./media/plan-device-deployment/check.png)|  |
+| [Групповая политика](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831791(v=ws.11))<br>(Только для Windows)| | | ![Флажок для этих значений.](./media/plan-device-deployment/check.png)|  |
 
 
 

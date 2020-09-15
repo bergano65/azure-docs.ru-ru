@@ -8,12 +8,12 @@ ms.service: application-gateway
 ms.topic: how-to
 ms.date: 06/09/2020
 ms.author: absha
-ms.openlocfilehash: daf4c4ab56e23a212256c2629b7d0ae52a09e7c4
-ms.sourcegitcommit: 1b320bc7863707a07e98644fbaed9faa0108da97
+ms.openlocfilehash: dbaad0f6639d65d88da6847886d3aa3d39b93e82
+ms.sourcegitcommit: 6e1124fc25c3ddb3053b482b0ed33900f46464b3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/09/2020
-ms.locfileid: "89595716"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90563759"
 ---
 # <a name="configure-app-service-with-application-gateway"></a>Настройка службы приложений с помощью шлюза приложений
 
@@ -26,7 +26,7 @@ ms.locfileid: "89595716"
 - Создание внутреннего пула и добавление в него службы приложений
 - Создание параметров HTTP и пользовательской проверки с включенными коммутаторами "Выбор имени узла"
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 - Шлюз приложений. Если у вас нет шлюза приложений, см. раздел [Создание шлюза](https://docs.microsoft.com/azure/application-gateway/quick-create-portal) приложений.
 - Служба приложений. Если у вас нет существующей службы приложений, см. [документацию по службе приложений](https://docs.microsoft.com/azure/app-service/).
@@ -67,9 +67,9 @@ ms.locfileid: "89595716"
 
 5. Нажмите кнопку **ОК** , чтобы создать параметр HTTP.
 
-   ![HTTP-setting1](./media/configure-web-app-portal/http-setting1.png)
+   ![На снимке экрана показана панель параметров добавить H t T с параметром использовать для службы приложений и выбрано значение ОК.](./media/configure-web-app-portal/http-setting1.png)
 
-   ![HTTP-setting2](./media/configure-web-app-portal/http-setting2.png)
+   ![На снимке экрана показана проба работоспособности с выбранными параметрами HTTP Серверная часть "Выбор имени узла".](./media/configure-web-app-portal/http-setting2.png)
 
 
 
@@ -85,7 +85,7 @@ ms.locfileid: "89595716"
 
 5. Нажмите кнопку **ОК** , чтобы сохранить это правило.
 
-   ![Правило](./media/configure-web-app-portal/rule.png)
+   ![На снимке экрана показана панель Добавление базового правила с прослушивателем, внутренний пул и параметр H t T P.](./media/configure-web-app-portal/rule.png)
 
 ## <a name="additional-configuration-in-case-of-redirection-to-app-services-relative-path"></a>Дополнительная настройка в случае перенаправления в относительный путь службы приложений
 

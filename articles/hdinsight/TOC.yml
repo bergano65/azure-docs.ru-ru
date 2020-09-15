@@ -392,14 +392,20 @@
                   href: ./spark/apache-spark-analyze-application-insight-logs.md
         - name: Управление
           items:
+            - name: Управление зависимостями
+              items:
+                - name: Управление зависимостями приложений Spark
+                  href: ./spark/apache-spark-manage-dependencies.md
+                - name: Безопасное управление зависимостями JAR
+                  href: ./spark/safely-manage-jar-dependency.md
+                - name: Безопасное управление средой Python
+                  href: ./spark/apache-spark-python-package-installation.md
             - name: Управление ресурсами кластера
               href: ./spark/apache-spark-resource-manager.md
             - name: Управление приложениями Apache Spark с помощью расширенного сервера журнала
               href: ./spark/apache-azure-spark-history-server.md
             - name: Включение кэширования с помощью службы кэша операций ввода-вывода
               href: ./spark/apache-spark-improve-performance-iocache.md
-            - name: Управление зависимостями JAR
-              href: ./spark/manage-jar-dependency.md
             - name: Использование записных книжек с Apache Spark
               items:
                 - name: Использование локальной записной книжки Jupyter
@@ -408,8 +414,6 @@
                   href: ./spark/apache-spark-jupyter-notebook-kernels.md
                 - name: Использование внешних пакетов с записными книжками Jupyter с помощью волшебных команд
                   href: ./spark/apache-spark-jupyter-notebook-use-external-packages.md
-                - name: Безопасное управление средой Python в Azure HDInsight с помощью действия скрипта
-                  href: ./spark/apache-spark-python-package-installation.md
                 - name: Использование записных книжек Apache Zeppelin
                   href: ./spark/apache-spark-zeppelin-notebook.md
             - name: Использование с другими службами Azure

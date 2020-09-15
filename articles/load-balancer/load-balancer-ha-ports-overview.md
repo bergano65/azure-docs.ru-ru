@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 09/19/2019
 ms.author: allensu
-ms.openlocfilehash: ab11060924c29dbddc965aa94064d0091a7b348e
-ms.sourcegitcommit: 628be49d29421a638c8a479452d78ba1c9f7c8e4
+ms.openlocfilehash: 5115190d944e78d476f369442dccdbda394e46ba
+ms.sourcegitcommit: 6e1124fc25c3ddb3053b482b0ed33900f46464b3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/20/2020
-ms.locfileid: "88639857"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90564055"
 ---
 # <a name="high-availability-ports-overview"></a>Общие сведения о портах с высоким уровнем доступности
 
@@ -32,7 +32,7 @@ Azure Load Balancer уровня "Стандартный" помогает ра�
 
 ## <a name="why-use-ha-ports"></a>Зачем использовать порты с высоким уровнем доступности
 
-### <a name="network-virtual-appliances"></a><a name="nva"></a>Сетевые виртуальные устройства
+### <a name="network-virtual-appliances"></a><a name="nva"></a>Виртуальные сетевые модули
 
 Виртуальные сетевые модули можно использовать для защиты рабочей нагрузки Azure от различных угроз безопасности. Виртуальные сетевые модули, используемые в таких сценариях, должны быть надежными, высокодоступными и масштабируемыми по требованию.
 
@@ -99,5 +99,5 @@ Azure Load Balancer уровня "Стандартный" помогает ра�
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- [Узнайте, как настроить порты высокой доступности для ilB с помощью портала](tutorial-load-balancer-standard-internal-portal.md#create-a-load-balancer-rule), [PowerShell](load-balancer-get-started-ilb-arm-ps.md#create-the-configuration-rules-probe-and-load-balancer), [интерфейса командной строки](load-balancer-get-started-ilb-arm-cli.md#create-the-load-balancer-rule)или [шаблонов](load-balancer-get-started-ilb-arm-template.md).
+- [Узнайте, как настроить порты высокой доступности для ilB с помощью портала](tutorial-load-balancer-standard-internal-portal.md#create-a-load-balancer-rule), [PowerShell](load-balancer-get-started-ilb-arm-ps.md#create-the-configuration-rules-probe-and-load-balancer), [интерфейса командной строки](load-balancer-get-started-ilb-arm-cli.md#create-the-load-balancer-rule)или [шаблонов](quickstart-load-balancer-standard-internal-template.md).
 - [Дополнительные сведения о Load Balancer (цен. категория "Стандартный")](load-balancer-standard-overview.md)

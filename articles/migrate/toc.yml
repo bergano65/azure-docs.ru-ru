@@ -18,12 +18,32 @@
           href: common-questions-server-migration.md
 - name: Учебники
   items:
-    - name: Оценка и перенос виртуальных машин VMware
+    - name: Обнаружить
       items:
-        - name: Подготовка VMware к оценке и миграции
-          href: tutorial-prepare-vmware.md
-        - name: Оценка виртуальных машин VMware для миграции
-          href: tutorial-assess-vmware.md
+        - name: Обнаружение виртуальных машин VMware
+          href: tutorial-discover-vmware.md
+        - name: Обнаружение виртуальных машин Hyper-V
+          href: tutorial-discover-hyper-v.md
+        - name: Обнаружение физических серверов
+          href: tutorial-discover-physical.md
+        - name: Обнаружение экземпляров AWS
+          href: tutorial-discover-aws.md
+        - name: Обнаружение импортированных серверов
+          href: tutorial-discover-import.md
+    - name: Оценка
+      items:
+        - name: Оценка готовности виртуальных машин VMware к переносу на виртуальные машины Azure
+          href: tutorial-assess-vmware-azure-vm.md
+        - name: Оценка готовности виртуальных машин VMware к переносу в AVS
+          href: tutorial-assess-vmware-azure-vmware-solution.md
+        - name: Оценка виртуальных машин Hyper-V для переноса в Azure.
+          href: tutorial-assess-hyper-v.md
+        - name: Оценка готовности физических серверов к переносу в Azure
+          href: tutorial-assess-physical.md
+        - name: Оценка готовности экземпляров AWS к переносу в Azure
+          href: tutorial-assess-aws.md
+    - name: Миграция
+      items:
         - name: Перенос виртуальных машин VMware
           items:
             - name: Варианты миграции для виртуальных машин VMware
@@ -32,30 +52,12 @@
               href: tutorial-migrate-vmware.md
             - name: Перенос виртуальных машин VMware на основе агента
               href: tutorial-migrate-vmware-agent.md
-    - name: Оценка и перенос виртуальных машин Hyper-V
-      items:
-        - name: Подготовка Hyper-V к оценке и миграции
-          href: tutorial-prepare-hyper-v.md
-        - name: Оценка виртуальных машин Hyper-V для миграции
-          href: tutorial-assess-hyper-v.md
         - name: Перенос виртуальных машин Hyper-V
           href: tutorial-migrate-hyper-v.md
-    - name: Оценка и перенос физических серверов
-      items:
-        - name: Подготовка физических серверов к оценке и переносу
-          href: tutorial-prepare-physical.md
-        - name: Оценка физических серверов
-          href: tutorial-assess-physical.md
         - name: Перенос физических серверов
           href: tutorial-migrate-physical-virtual-machines.md
-    - name: Оценка и перенос виртуальных машин AWS
-      items:
-        - name: 'Обнаружение, оценка и перенос виртуальных машин Amazon Web Services (AWS) в Azure'
+        - name: Перенос экземпляров AWS
           href: tutorial-migrate-aws-virtual-machines.md
-    - name: Оценка импортированных серверов для миграции
-      items:
-        - name: Оценка импортированных серверов для миграции
-          href: tutorial-assess-import.md
 - name: Основные понятия
   items:
     - name: Создание плана миграции с помощью службы "Миграция Azure"

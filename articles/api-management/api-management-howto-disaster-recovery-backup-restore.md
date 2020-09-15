@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.topic: article
 ms.date: 02/03/2020
 ms.author: apimpm
-ms.openlocfilehash: 8c0af87dc8e38c6d5184cec4614b47d2ae4a24ca
-ms.sourcegitcommit: 4a7a4af09f881f38fcb4875d89881e4b808b369b
+ms.openlocfilehash: 489a1afd8e247b69761d521f51e16310176e31f5
+ms.sourcegitcommit: 6e1124fc25c3ddb3053b482b0ed33900f46464b3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/04/2020
-ms.locfileid: "89458286"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90564089"
 ---
 # <a name="how-to-implement-disaster-recovery-using-service-backup-and-restore-in-azure-api-management"></a>Реализация аварийного восстановления с помощью функций резервного копирования и восстановления службы в Azure API Management
 
@@ -185,6 +185,7 @@ POST https://management.azure.com/subscriptions/{subscriptionId}/resourceGroups/
 -   Конфигурация [управляемого удостоверения](api-management-howto-use-managed-service-identity.md) .
 -   [Диагностика Azure Monitor](api-management-howto-use-azure-monitor.md) Настройка.
 -   [Протоколы и параметры шифров](api-management-howto-manage-protocols-ciphers.md) .
+-   Содержимое [портала разработчика](api-management-howto-developer-portal.md#is-the-portals-content-saved-with-the-backuprestore-functionality-in-api-management) .
 
 Частота резервного копирования службы влияет на целевую точку восстановления. Чтобы максимально снизить этот показатель, мы советуем настроить регулярное резервное копирование, а также выполнять резервное копирование по требованию после внесения изменений в службу управления API.
 

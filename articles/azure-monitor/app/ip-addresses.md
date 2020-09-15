@@ -4,13 +4,13 @@ description: Исключения брандмауэра сервера, тре�
 ms.topic: conceptual
 author: mrbullwinkle
 ms.author: mbullwin
-ms.date: 06/18/2020
-ms.openlocfilehash: 7e935cd826992956d0f264d4cfb9806724a27ac4
-ms.sourcegitcommit: 70ee014d1706e903b7d1e346ba866f5e08b22761
+ms.date: 09/15/2020
+ms.openlocfilehash: 5a7110ed9ae656102ad097dc583ca85aa6df47bc
+ms.sourcegitcommit: 6e1124fc25c3ddb3053b482b0ed33900f46464b3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/11/2020
-ms.locfileid: "90023828"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90562641"
 ---
 # <a name="ip-addresses-used-by-application-insights-and-log-analytics"></a>IP-адреса, используемые Application Insights и Log Analytics
 Служба [Azure Application Insights](./app-insights-overview.md) использует несколько IP-адресов. Вам могут понадобиться эти адреса, если отслеживаемое приложение расположено за брандмауэром.

@@ -6,12 +6,12 @@ ms.author: aul
 ms.subservice: ''
 ms.topic: conceptual
 ms.date: 02/07/2020
-ms.openlocfilehash: fb53a966b0dc4959253ac0786ef09ef3c497e809
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 7614dd1d60bad5c124269ae2af02d30a5aacfe3e
+ms.sourcegitcommit: 6e1124fc25c3ddb3053b482b0ed33900f46464b3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "77658852"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90564038"
 ---
 # <a name="view-designer-to-workbooks-conversion-summary-and-access"></a>Конструктор представлений — сводка по преобразованию книг и доступ
 [Конструктор представлений](view-designer.md) — это функция Azure Monitor, которая позволяет создавать пользовательские представления, помогающие визуализировать данные в рабочей области log Analytics, с диаграммами, списками и временными шкалами. Они выводятся и заменяются книгами, которые предоставляют дополнительные функциональные возможности. В этой статье подробно описано, как создать общие сведения и разрешения, необходимые для доступа к книгам.
@@ -21,7 +21,7 @@ ms.locfileid: "77658852"
 
 Вы можете воспользоваться преимуществами высокого уровня возможностей настройки, предоставляемых на панелях мониторинга Azure, которые позволяют выполнять автоматическое обновление, перемещение, изменение размера и дополнительную фильтрацию закрепленных элементов и визуализаций. 
 
-![Панель мониторинга](media/view-designer-conversion-access/dashboard.png)
+![На снимке экрана показана настроенная панель мониторинга Azure сводка по рабочей области.](media/view-designer-conversion-access/dashboard.png)
 
 Создайте новую панель мониторинга Azure или выберите существующую, чтобы начать закрепление элементов в книгах.
 
@@ -45,6 +45,6 @@ ms.locfileid: "77658852"
 
 ![Доступ на основе подписки](media/view-designer-conversion-access/subscription-access.png)
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Стандартные задачи](view-designer-conversion-tasks.md)

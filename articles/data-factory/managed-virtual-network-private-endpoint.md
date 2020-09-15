@@ -9,14 +9,16 @@ ms.reviewer: douglasl
 ms.service: data-factory
 ms.workload: data-services
 ms.topic: conceptual
-ms.custom: seo-lt-2019
+ms.custom:
+- seo-lt-2019
+- references_regions
 ms.date: 07/15/2020
-ms.openlocfilehash: 0553cb47ba0119cf1bc5e744b689b6c510ba8396
-ms.sourcegitcommit: 1b320bc7863707a07e98644fbaed9faa0108da97
+ms.openlocfilehash: 5a40faa1feac20ae096dfe39a5b1d109d4a11d3d
+ms.sourcegitcommit: 6e1124fc25c3ddb3053b482b0ed33900f46464b3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/09/2020
-ms.locfileid: "89594362"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90564004"
 ---
 # <a name="azure-data-factory-managed-virtual-network-preview"></a>Управляемая виртуальная сеть фабрики данных Azure (Предварительная версия)
 
@@ -88,22 +90,26 @@ ms.locfileid: "89594362"
 - База данных Azure для PostgreSQL
 - База данных Azure для MariaDB
 
-### <a name="supported-regions"></a>Поддерживаемые регионы
+### <a name="azure-data-factory-managed-virtual-network-is-available-in-the-following-azure-regions"></a>Управляемая виртуальная сеть фабрики данных Azure доступна в следующих регионах Azure:
 - Восточная часть США
 - восточная часть США 2
 - центрально-западная часть США
-- Западная часть США 2
+- западная часть США 2
 - Центрально-южная часть США
 - Центральная часть США
 - Северная Европа
 - Западная Европа
 - южная часть Соединенного Королевства
-- Southeast Asia
+- Юго-Восточная Азия
 - Восточная Австралия
 
 ### <a name="outbound-communications-through-public-endpoint-from-adf-managed-virtual-network"></a>Исходящие подключения через общедоступную конечную точку от управляемой виртуальной сети ADF
 - Для исходящих подключений открыт только порт 443.
 - Служба хранилища Azure и Azure Data Lake Gen2 не поддерживают подключение через общедоступную конечную точку из управляемой виртуальной сети ADF.
+
+### <a name="linked-service-creation-of-azure-key-vault"></a>Создание Azure Key Vault для связанной службы 
+- При создании связанной службы для Azure Key Vault ссылка на Azure Integration Runtime отсутствует. Поэтому нельзя создать частную конечную точку во время создания связанной службы Azure Key Vault. Но когда вы создаете связанную службу для хранилищ данных, ссылающихся Azure Key Vault связанную службу, и эта связанная служба ссылается Azure Integration Runtime с включенной управляемой виртуальной сетью, вы можете создать частную конечную точку для связанной службы Azure Key Vault во время создания. 
+- **Проверка подключения** для связанной службы Azure Key Vault только проверяет формат URL-адреса, но не выполняет никаких сетевых операций.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

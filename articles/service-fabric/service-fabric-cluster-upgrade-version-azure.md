@@ -3,12 +3,12 @@ title: Обновление версии Service Fabric Azure кластера
 description: Обновление кода и (или) конфигурации Service Fabric, под управлением которой работает кластер Service Fabric, в том числе изменение режима обновления кластера, обновление сертификатов, добавление портов приложений, применение исправлений для ОС и т. д. Чего можно ожидать при выполнении обновлений?
 ms.topic: conceptual
 ms.date: 11/12/2018
-ms.openlocfilehash: b0fef612725d606f1415e7e8d004aacee025cedf
-ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
+ms.openlocfilehash: 01fe916f0ee78c8481ac6b17b8f7409b47c852ee
+ms.sourcegitcommit: 6e1124fc25c3ddb3053b482b0ed33900f46464b3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2020
-ms.locfileid: "86261056"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90564293"
 ---
 # <a name="upgrade-the-service-fabric-version-of-a-cluster"></a>Изменение версии Service Fabric в кластере
 
@@ -28,7 +28,7 @@ ms.locfileid: "86261056"
 ## <a name="set-the-upgrade-mode-in-the-azure-portal"></a>Настройка режима обновления на портале Azure
 При создании кластера вы можете выбрать режим обновления: автоматический или вручную.
 
-![Create_Manualmode][Create_Manualmode]
+![На снимке экрана показана панель Создание кластера Service Fabric с выбранным вариантом конфигурация кластера и областью конфигурации кластера.][Create_Manualmode]
 
 Эти варианты режима обновления можно также указать для работающего кластера, используя интерфейс управления. 
 
@@ -39,12 +39,12 @@ ms.locfileid: "86261056"
 
 Устранив проблемы, которые привели к откату, запустите обновление снова, выполнив те же действия.
 
-![Manage_Automaticmode][Manage_Automaticmode]
+![На снимке экрана показано окно Service Fabric кластеры с открытой панелью обновления структуры, а также выделены параметры обновления, включая автоматические и ручные.][Manage_Automaticmode]
 
 ## <a name="set-the-upgrade-mode-using-a-resource-manager-template"></a>Настройка режима обновления с помощью шаблона Resource Manager
 Добавьте параметр upgradeMode к определению ресурса Microsoft.ServiceFabric/clusters, а для параметра clusterCodeVersion установите значение одной из поддерживаемых версий Service Fabric, как показано ниже, а затем разверните шаблон. Для параметра upgradeMode поддерживаются значения Manual и Automatic.
 
-![ARMUpgradeMode][ARMUpgradeMode]
+![На снимке экрана показан шаблон, который является обычным текстом с отступом для отражения структуры, а clusterCodeVersion и upgradeMode выделены.][ARMUpgradeMode]
 
 ### <a name="upgrading-to-a-new-version-on-a-cluster-that-is-set-to-manual-mode-via-a-resource-manager-template"></a>Обновление кластера, для которого установлен режим обновления вручную, с помощью шаблона Resource Manager
 Чтобы обновить до новой версии кластер, для которого установлен режим обновления вручную, замените значение параметра clusterCodeVersion значением поддерживаемой версии и разверните шаблон. Развертывание шаблона автоматически запускает обновление Service Fabric. В ходе обновления соблюдаются все политики работоспособности кластера (политики, определяющие состояние работоспособности для узлов и всех приложений, выполняющихся в кластере).

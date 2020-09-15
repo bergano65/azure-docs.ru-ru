@@ -11,12 +11,12 @@ author: BarbaraSelden
 manager: daveba
 ms.reviewer: joflore
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 14612247d241aed420a76ff40e19d04164cbe150
-ms.sourcegitcommit: 8a7b82de18d8cba5c2cec078bc921da783a4710e
+ms.openlocfilehash: a26a7320cab20c769ddf8dd1f24cd6fda0cc7d64
+ms.sourcegitcommit: 6e1124fc25c3ddb3053b482b0ed33900f46464b3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89049933"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90561539"
 ---
 # <a name="plan-a-conditional-access-deployment"></a>Планирование развертывания условного доступа
 
@@ -448,7 +448,7 @@ Azure Active Directory позволяет создавать [именованн
 
 Используйте приведенные ниже параметры, чтобы контролировать политики условного доступа и управлять ими.
 
-![manage-access](media/plan-conditional-access/manage-access.png)
+![На снимке экрана показаны параметры управления для C политиками, включая именованные расположения, пользовательские элементы управления, подключение Условия использования, V P N и выбранные классические политики.](media/plan-conditional-access/manage-access.png)
 
 
 ### <a name="named-locations"></a>Именованные расположения
