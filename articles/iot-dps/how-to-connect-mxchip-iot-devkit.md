@@ -1,23 +1,23 @@
 ---
 title: Порядок использования автоподготовки в службе подготовки устройств к добавлению в Центр Интернета вещей для регистрации MXChip IoT DevKit в Центре Интернета вещей | Документация Майкрософт
 description: Как использовать автоматическую подготовку службы подготовки устройств к добавлению в центр Интернета вещей Azure для регистрации MXChip IoT DevKit с центром Интернета вещей.
-author: liydu
-ms.author: liydu
+author: wesmc7777
+ms.author: wesmc
 ms.date: 06/25/2019
 ms.topic: conceptual
 ms.service: iot-dps
 services: iot-dps
-manager: jeffya
-ms.openlocfilehash: f05e92f0452b1cfff23e2094354203fd7eaea48b
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+manager: eliotgra
+ms.openlocfilehash: 2a030d9ca5422e12856dcb81b29f8327e684c97e
+ms.sourcegitcommit: 03662d76a816e98cfc85462cbe9705f6890ed638
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "74975658"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90528659"
 ---
 # <a name="use-azure-iot-hub-device-provisioning-service-auto-provisioning-to-register-the-mxchip-iot-devkit-with-iot-hub"></a>Использование автоподготовки в службе подготовки устройств к добавлению в Центр Интернета вещей Azure для регистрации MXChip IoT DevKit в Центре Интернета вещей
 
-В этой статье описывается порядок использования [автоподготовки](concepts-auto-provisioning.md) в службе подготовки устройств к добавлению в Центр Интернета вещей Azure для регистрации MXChip IoT DevKit в Центре Интернета вещей. В этом руководстве вы узнаете, как:
+В этой статье описывается, как использовать службу подготовки устройств для центра Интернета вещей Azure для [подготовки](about-iot-dps.md#provisioning-process) DevKit MXChip IOT в центре Интернета вещей Azure. В этом руководстве вы узнаете, как:
 
 * настройка глобальной конечной точки службы подготовки устройств на устройстве;
 * создание сертификата X.509 с помощью уникального секрета устройства (UDS);
@@ -45,7 +45,7 @@ ms.locfileid: "74975658"
 
 ## <a name="save-a-unique-device-secret-on-device-security-storage"></a>Сохранение уникального секрета устройства в хранилище безопасности устройства
 
-Автоматическая подготовка может быть настроена на устройстве с учетом предусмотренного на нем [механизма аттестации](concepts-security.md#attestation-mechanism). MXChip IoT DevKit использует [обработчик композиций для удостоверения устройств](https://trustedcomputinggroup.org/wp-content/uploads/Foundational-Trust-for-IOT-and-Resource-Constrained-Devices.pdf) от [организации TCG](https://trustedcomputinggroup.org). **Уникальный секрет устройства**, хранимый в микросхеме обеспечения безопасности STSAFE ([STSAFE-A100](https://microsoft.github.io/azure-iot-developer-kit/docs/understand-security-chip/)) в DevKit, используется для генерации уникального сертификата устройства [X.509](concepts-security.md#x509-certificates). Сертификат используется далее при регистрации в службе подготовки устройств, а также для регистрации в среде выполнения.
+Автоматическая подготовка может быть настроена на устройстве с учетом предусмотренного на нем [механизма аттестации](concepts-service.md#attestation-mechanism). MXChip IoT DevKit использует [обработчик композиций для удостоверения устройств](https://trustedcomputinggroup.org/wp-content/uploads/Foundational-Trust-for-IOT-and-Resource-Constrained-Devices.pdf) от [организации TCG](https://trustedcomputinggroup.org). **Уникальный секрет устройства**, хранимый в микросхеме обеспечения безопасности STSAFE ([STSAFE-A100](https://microsoft.github.io/azure-iot-developer-kit/docs/understand-security-chip/)) в DevKit, используется для генерации уникального сертификата устройства [X.509](concepts-x509-attestation.md). Сертификат используется далее при регистрации в службе подготовки устройств, а также для регистрации в среде выполнения.
 
 Как указано в следующем примере, типичным уникальным секретом устройства является 64-символьная строка.
 

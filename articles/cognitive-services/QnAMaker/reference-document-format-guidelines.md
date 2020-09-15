@@ -1,14 +1,14 @@
 ---
 title: Рекомендации по формату импорта документов — QnA Maker
-description: Узнайте, как типы URL-адресов используются для импорта и создания пар QnA.
+description: Используйте эти рекомендации для импорта документов, чтобы получить лучшие результаты для вашего содержимого.
 ms.topic: reference
 ms.date: 04/06/2020
-ms.openlocfilehash: 799e85e2200d3caa29c9b76bc57a62fc883d246d
-ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
+ms.openlocfilehash: b94c8b3fd4d4c082e0bc49c6bd42d3b37e963988
+ms.sourcegitcommit: 03662d76a816e98cfc85462cbe9705f6890ed638
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "80804339"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90530783"
 ---
 # <a name="format-guidelines-for-imported-documents-and-urls"></a>Формат рекомендаций для импортированных документов и URL-адресов
 
@@ -16,7 +16,7 @@ ms.locfileid: "80804339"
 
 ## <a name="formatting-considerations"></a>Рекомендации по форматированию
 
-После импорта файла или URL-адреса QnA Maker преобразует и сохраняет содержимое в [формате Markdown](https://en.wikipedia.org/wiki/Markdown). В процессе преобразования в текст добавляются новые строки, например `\n\n`. Знание формата Markdown поможет вам разобраться с преобразованным содержимым и управлять содержанием базы знаний.
+После импорта файла или URL-адреса QnA Maker преобразует и сохраняет содержимое в [формате Markdown](https://en.wikipedia.org/wiki/Markdown). В процессе преобразования в текст добавляются новые строки, например `\n\n` . Знание формата Markdown поможет вам разобраться с преобразованным содержимым и управлять содержанием базы знаний.
 
 Если вы добавляете или изменяете содержимое непосредственно в своей базе знаний, используйте **Форматирование Markdown** для создания форматированного текста или изменения содержимого формата Markdown, которое уже находится в ответе. QnA Maker поддерживает большую часть формата Markdown, чтобы обеспечить широкие возможности работы с текстом в содержимом. Однако клиентское приложение, например Bot чата, может не поддерживать одинаковый набор форматов Markdown. Важно протестировать отображение ответов клиентского приложения.
 
@@ -110,10 +110,10 @@ Answer2
 
 * Используйте заголовки и подзаголовки для обозначения иерархии. Например, можно заметить, что в качестве родительского QnA и H2 вы можете обозначить QnA, который должен быть сделан запросом. Используйте Малый размер заголовка для обозначения последующей иерархии. Не используйте стиль, цвет или какой-либо другой механизм для включения структуры в документ, QnA Maker не извлекать многострочные запросы.
 * Первый символ заголовка должен быть прописным.
-* Не завершайте заголовок вопросительным знаком, `?`.
+* Не завершайте заголовок вопросительным знаком, `?` .
 
 **Образцы документов**:<br>[Surface Pro (DOCX)](https://github.com/Azure-Samples/cognitive-services-sample-data-files/blob/master/qna-maker/data-source-formats/multi-turn.docx)<br>[Преимущества Contoso (DOCX)](https://github.com/Azure-Samples/cognitive-services-sample-data-files/blob/master/qna-maker/data-source-formats/Multiturn-ContosoBenefits.docx)<br>[Преимущества Contoso (PDF)](https://github.com/Azure-Samples/cognitive-services-sample-data-files/blob/master/qna-maker/data-source-formats/Multiturn-ContosoBenefits.pdf)
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие шаги
 
 См. полный список [типов содержимого и примеры](./Concepts/content-types.md#file-and-url-data-types)

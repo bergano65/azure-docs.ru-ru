@@ -1,16 +1,16 @@
 ---
 title: Периодическое резервное копирование и восстановление в автономной Service Fabric Azure
-description: Использование функции периодического резервного копирования и восстановления Service Fabric для включения периодического резервного копирования данных приложения.
+description: Используйте функцию периодического резервного копирования и восстановления автономного Service Fabric для включения периодического резервного копирования данных приложения.
 author: hrushib
 ms.topic: conceptual
 ms.date: 5/24/2019
 ms.author: hrushib
-ms.openlocfilehash: 07a6260c176165af5ced5ce275b9e4b365707d77
-ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
+ms.openlocfilehash: dd91b8eb120de24d752073fd80157e9d2a663594
+ms.sourcegitcommit: 03662d76a816e98cfc85462cbe9705f6890ed638
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2020
-ms.locfileid: "86261236"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90531327"
 ---
 # <a name="periodic-backup-and-restore-in-a-standalone-service-fabric"></a>Периодическое резервное копирование и восстановление в автономной Service Fabric
 > [!div class="op_single_selector"]
@@ -44,7 +44,7 @@ Service Fabric предоставляет набор API для использо
 - Временная остановка резервного копирования.
 - Управление хранением резервных копий (предстоящих).
 
-## <a name="prerequisites"></a>Обязательные условия
+## <a name="prerequisites"></a>Предварительные условия
 * Service Fabric кластер с структурой версии 6,4 или более поздней. См. дополнительные сведения о [скачивании требуемого пакета](service-fabric-cluster-creation-for-windows-server.md).
 * Сертификат X.509 для шифрования секретов, необходимых для подключения к хранилищу резервных копий. Ознакомьтесь со [статьей](service-fabric-windows-cluster-x509-security.md) о том, как получить или создать самозаверяющий сертификат X.509.
 
@@ -286,7 +286,7 @@ FailureError            :
 - Командлеты PowerShell Service Fabric находятся в режиме предварительного просмотра.
 - Отсутствие поддержки кластеров Service Fabric в Linux.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 - [Основные сведения о настройке периодического резервного копирования](./service-fabric-backuprestoreservice-configure-periodic-backup.md)
 - [Backup restore REST API reference](/rest/api/servicefabric/sfclient-index-backuprestore) (Справочник по REST API службы резервного копирования и восстановления)
 

@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.service: iot-dps
 services: iot-dps
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 7733859c4ca4de8b580a228d8a73b899f0afa953
-ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
+ms.openlocfilehash: fc1154a3d4cefc84f223810a1972dd85673a6b3e
+ms.sourcegitcommit: 03662d76a816e98cfc85462cbe9705f6890ed638
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89001983"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90530902"
 ---
 # <a name="how-to-use-custom-allocation-policies"></a>Как использовать пользовательские политики выделения
 
@@ -44,7 +44,7 @@ ms.locfileid: "89001983"
 
 Приведенные ниже предварительные требования касаются среды разработки Windows. При использовании Linux или macOS ознакомьтесь с соответствующим разделом в статье [Подготовка среды разработки](https://github.com/Azure/azure-iot-sdk-c/blob/master/doc/devbox_setup.md) из документации к пакету SDK.
 
-* [Visual Studio 2019](https://visualstudio.microsoft.com/vs/) с включенной рабочей нагрузкой [Разработка классических приложений на C++](https://docs.microsoft.com/cpp/?view=vs-2019#pivot=workloads). Visual Studio 2015 или Visual Studio 2017 также поддерживаются.
+* [Visual Studio 2019](https://visualstudio.microsoft.com/vs/) с включенной рабочей нагрузкой [Разработка классических приложений на C++](https://docs.microsoft.com/cpp/ide/using-the-visual-studio-ide-for-cpp-desktop-development). Visual Studio 2015 или Visual Studio 2017 также поддерживаются.
 
 * Установите последнюю версию [Git](https://git-scm.com/download/).
 
@@ -298,7 +298,7 @@ ms.locfileid: "89001983"
 
 ## <a name="create-the-enrollment"></a>Создание регистрации
 
-В этом разделе вы создадите новую группу регистрации, которая использует пользовательскую политику распределения. Для удобства в этой статье используется [аттестация симметричного ключа](concepts-symmetric-key-attestation.md) с регистрацией. В качестве более безопасного решения рекомендуется использовать [аттестацию сертификатов X.509](concepts-security.md#x509-certificates) с цепочкой доверия.
+В этом разделе вы создадите новую группу регистрации, которая использует пользовательскую политику распределения. Для удобства в этой статье используется [аттестация симметричного ключа](concepts-symmetric-key-attestation.md) с регистрацией. В качестве более безопасного решения рекомендуется использовать [аттестацию сертификатов X.509](concepts-x509-attestation.md) с цепочкой доверия.
 
 1. По-прежнему на [портал Azure](https://portal.azure.com)откройте службу подготовки.
 

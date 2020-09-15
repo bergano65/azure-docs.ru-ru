@@ -6,12 +6,13 @@ ms.assetid: daedacf0-6546-4355-a65c-50873e74f66b
 ms.topic: reference
 ms.date: 02/19/2020
 ms.author: cshoe
-ms.openlocfilehash: 46660a0c8d20ab82c994a62b1c781108ea1070c1
-ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
+ms.custom: fasttrack-edit
+ms.openlocfilehash: 5e15dfec049197fa056cbd55fd839b3eb93be77c
+ms.sourcegitcommit: 03662d76a816e98cfc85462cbe9705f6890ed638
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86111207"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90530375"
 ---
 # <a name="azure-service-bus-bindings-for-azure-functions"></a>Привязки служебной шины Azure для службы "Функции Azure"
 
@@ -23,6 +24,9 @@ ms.locfileid: "86111207"
 | Отправка сообщений служебной шины Azure |[Выходная привязка](./functions-bindings-service-bus-output.md) |
 
 ## <a name="add-to-your-functions-app"></a>Добавление в приложение функций
+
+> [!NOTE]
+> Привязка служебной шины в настоящее время не поддерживает проверку подлинности с помощью управляемого удостоверения. Вместо этого следует использовать [подписанный URL-канал служебной шины](../service-bus-messaging/service-bus-authentication-and-authorization.md#shared-access-signature).
 
 ### <a name="functions-2x-and-higher"></a>Функции 2.x и более поздних версий
 
@@ -44,7 +48,7 @@ ms.locfileid: "86111207"
 
 Функции 1. x автоматически имеют ссылку на пакет NuGet [Microsoft. Azure. веб-задания](https://www.nuget.org/packages/Microsoft.Azure.WebJobs) , версия 2. x.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - [Выполнение функции при создании сообщения очереди или раздела служебной шины (триггер)](./functions-bindings-service-bus-trigger.md)
 - [Отправка сообщений служебной шины Azure из функций Azure (Выходная привязка)](./functions-bindings-service-bus-output.md)

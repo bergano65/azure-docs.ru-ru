@@ -3,12 +3,13 @@ title: Параметры сети для Функций Azure
 description: Обзор всех параметров сети, доступных в Функциях Azure.
 ms.topic: conceptual
 ms.date: 4/11/2019
-ms.openlocfilehash: 60258ef4aa3bbbbab69acd4f5106c774caa6f46f
-ms.sourcegitcommit: 5b8fb60a5ded05c5b7281094d18cf8ae15cb1d55
+ms.custom: fasttrack-edit
+ms.openlocfilehash: 271730e57a2d7ef8324420744b4bcd088b9809cc
+ms.sourcegitcommit: 03662d76a816e98cfc85462cbe9705f6890ed638
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87385948"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90530100"
 ---
 # <a name="azure-functions-networking-options"></a>Параметры сети для Функций Azure
 
@@ -86,7 +87,7 @@ ms.locfileid: "87385948"
 
 ### <a name="premium-plan-with-virtual-network-triggers"></a>План категории "Премиум" с триггерами виртуальной сети
 
-При запуске плана категории "Премиум" можно подключать функции триггеров, отличных от HTTP, к службам, выполняемым внутри виртуальной сети. Для этого необходимо включить поддержку триггеров виртуальной сети для приложения-функции. Параметр **Поддержка триггеров виртуальной сети** находится на [портале Azure](https://portal.azure.com) в разделе **Конфигурация** > **Параметры среды выполнения функции**.
+При запуске плана категории "Премиум" можно подключать функции триггеров, отличных от HTTP, к службам, выполняемым внутри виртуальной сети. Для этого необходимо включить поддержку триггеров виртуальной сети для приложения-функции. Параметр **мониторинга масштаба среды выполнения** находится в [портал Azure](https://portal.azure.com) в разделе **Configuration**  >  **Параметры среды выполнения функции**конфигурации.
 
 :::image type="content" source="media/functions-networking-options/virtual-network-trigger-toggle.png" alt-text="VNETToggle":::
 

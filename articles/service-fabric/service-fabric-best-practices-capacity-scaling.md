@@ -6,12 +6,12 @@ ms.topic: conceptual
 ms.date: 04/25/2019
 ms.author: pepogors
 ms.custom: devx-track-csharp
-ms.openlocfilehash: e6b6cebfd146ffe23bdc21751f86c71d14ea875e
-ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
+ms.openlocfilehash: 96cd460ddfea863eb27a1087ff59f3b87acf65d8
+ms.sourcegitcommit: 03662d76a816e98cfc85462cbe9705f6890ed638
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89002255"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90531310"
 ---
 # <a name="capacity-planning-and-scaling-for-azure-service-fabric"></a>Планирование емкости и масштабирование для Azure Service Fabric
 
@@ -36,6 +36,9 @@ ms.locfileid: "89002255"
 
 > [!NOTE]
 > Service Fabric с отслеживанием состояния Service Fabric:/System/Инфаструктуресервице/<NODE_TYPE_NAME> работает на каждом типе узла, который имеет серебряную или более высокую устойчивость. Это единственная системная служба, которая поддерживается в Azure на любом из типов узлов кластера.
+
+> [!IMPORTANT]
+> Service Fabric Автомасштабирование `Default` поддерживает `NewestVM` [конфигурации масштабирования](../virtual-machine-scale-sets/virtual-machine-scale-sets-scale-in-policy.md)масштабируемых наборов виртуальных машин.
 
 ## <a name="vertical-scaling-considerations"></a>Рекомендации по вертикальному масштабированию
 
@@ -167,8 +170,8 @@ scaleSet.Update().WithCapacity(newCapacity).Apply();
 ```
 
 > [!NOTE]
-> При масштабировании в кластере вы увидите, что удаленный экземпляр узла или виртуальной машины отображается в неработоспособном состоянии Service Fabric Explorer. Описание этого поведения см. [в разделе варианты поведения, которые могут возникнуть в Service Fabric Explorer](./service-fabric-cluster-scale-in-out.md#behaviors-you-may-observe-in-service-fabric-explorer). Вы можете:
-> * Вызовите [команду Remove-ServiceFabricNodeState](/powershell/module/servicefabric/remove-servicefabricnodestate?view=azureservicefabricps) с соответствующим именем узла.
+> При масштабировании в кластере вы увидите, что удаленный экземпляр узла или виртуальной машины отображается в неработоспособном состоянии Service Fabric Explorer. Описание этого поведения см. [в разделе варианты поведения, которые могут возникнуть в Service Fabric Explorer](./service-fabric-cluster-scale-in-out.md#behaviors-you-may-observe-in-service-fabric-explorer). Можно сделать следующее:
+> * Вызовите [команду Remove-ServiceFabricNodeState](/powershell/module/servicefabric/remove-servicefabricnodestate?view=azureservicefabricps&preserve-view=true) с соответствующим именем узла.
 > * Разверните в кластере [вспомогательное приложение автомасштабирования Service Fabric](https://github.com/Azure/service-fabric-autoscale-helper/) . Это приложение гарантирует, что масштабируемые узлы будут удалены из Service Fabric Explorer.
 
 ## <a name="reliability-levels"></a>Уровни надежности
@@ -225,7 +228,7 @@ scaleSet.Update().WithCapacity(newCapacity).Apply();
 ]
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * Создание кластера на виртуальных машинах или компьютерах под управлением Windows Server: [Создание кластера Service Fabric для Windows Server](service-fabric-cluster-creation-for-windows-server.md).
 * Создание кластера на виртуальных машинах или компьютерах под управлением Linux: [Создание кластера Linux](service-fabric-cluster-creation-via-portal.md).

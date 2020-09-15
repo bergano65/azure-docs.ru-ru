@@ -1,16 +1,16 @@
 ---
 title: Основные сведения о настройке периодического резервного копирования
-description: Использование функции периодического резервного копирования и восстановления Service Fabric для включения периодического резервного копирования данных приложения.
+description: Используйте функцию периодического резервного копирования и восстановления Service Fabric, чтобы настроить периодическую архивацию надежных служб с отслеживанием состояния или Reliable Actors.
 author: hrushib
 ms.topic: article
 ms.date: 2/01/2019
 ms.author: hrushib
-ms.openlocfilehash: c77f069d93e368652c30cd100b0f99ca55341882
-ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
+ms.openlocfilehash: 53f63f341fe614f2287a09f37fafd2eedc614be7
+ms.sourcegitcommit: 03662d76a816e98cfc85462cbe9705f6890ed638
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2020
-ms.locfileid: "86261222"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90530919"
 ---
 # <a name="understanding-periodic-backup-configuration-in-azure-service-fabric"></a>Основные сведения о настройке периодического резервного копирования в Azure Service Fabric
 
@@ -239,7 +239,7 @@ ms.locfileid: "86261222"
  
 - [Get Partition Backup List](/rest/api/servicefabric/sfclient-api-getpartitionbackuplist) (Получение списка резервного копирования раздела). Возвращает список резервных копий, доступных для данного раздела.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 - [Backup restore REST API reference](/rest/api/servicefabric/sfclient-index-backuprestore) (Справочник по REST API службы резервного копирования и восстановления)
 
 [0]: ./media/service-fabric-backuprestoreservice/backup-policy-association-example.png

@@ -8,18 +8,18 @@ ms.subservice: core
 ms.topic: conceptual
 ms.date: 07/31/2020
 ms.author: gopalv
-ms.openlocfilehash: 95d3570d93aa4966fcf6864838ec01735b8662db
-ms.sourcegitcommit: 3be3537ead3388a6810410dfbfe19fc210f89fec
+ms.openlocfilehash: c135d649feb42c8fa735e67ad6f3c3e51551d3e9
+ms.sourcegitcommit: 03662d76a816e98cfc85462cbe9705f6890ed638
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89650280"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90530290"
 ---
 # <a name="advanced-entry-script-authoring"></a>Разработка расширенных сценариев ввода
 
 В этой статье показано, как написать скрипты записи для специализированных вариантов использования.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Предварительные условия
 
 В этой статье предполагается, что у вас уже есть обученная модель машинного обучения, которую планируется развернуть с помощью Машинное обучение Azure. Дополнительные сведения о развертывании модели см. в [этом руководстве](how-to-deploy-and-where.md).
 
@@ -34,12 +34,16 @@ ms.locfileid: "89650280"
 * `pyspark`
 * Стандартный объект Python
 
-Чтобы использовать формирование схемы, включите пакет с открытым исходным кодом `inference-schema` в файл зависимостей. Дополнительные сведения об этом пакете см. в разделе [https://github.com/Azure/InferenceSchema](https://github.com/Azure/InferenceSchema) . Определите форматы входных и выходных данных в `input_sample` переменных и `output_sample` , которые представляют форматы запросов и ответов для веб-службы. Используйте эти примеры в декораторах входных и выходных функций `run()` функции. В следующем примере scikit-учиться используется создание схемы.
+Чтобы использовать формирование схемы, включите пакет с открытым исходным кодом `inference-schema` 1.1.0 или более поздней версии в файл зависимостей. Дополнительные сведения об этом пакете см. в разделе [https://github.com/Azure/InferenceSchema](https://github.com/Azure/InferenceSchema) . Чтобы создать соответствие для автоматического использования веб-службы Swagger, функция запуска скрипта оценки () должна иметь форму API:
+* Первый параметр типа "Стандардписонпараметертипе", именованные входные данные, вложенный, содержащий Пандасдатафрамепараметертипес.
+* Необязательный второй параметр типа "Стандардписонпараметертипе" с именем раскрывает, который не является вложенным.
+* Возврат словаря типа "Стандардписонпараметертипе", который, возможно, является вложенным, содержащим Пандасдатафрамепараметертипес.
+Определите форматы входных и выходных данных в `input_sample` переменных и `output_sample` , которые представляют форматы запросов и ответов для веб-службы. Используйте эти примеры в декораторах входных и выходных функций `run()` функции. В следующем примере scikit-учиться используется создание схемы.
 
 
 ## <a name="power-bi-compatible-endpoint"></a>Конечная точка, совместимая с Power BI 
 
-В следующем примере показано, как определить входные данные как словарь с помощью таблицы данных `<key: value>` . Этот метод поддерживается для использования развернутой веб-службы из Power BI. (Дополнительные[сведения об использовании веб-службы из Power BI](https://docs.microsoft.com/power-bi/service-machine-learning-integration).)
+В следующем примере показано, как определить форму API в соответствии с инструкциями выше. Этот метод поддерживается для использования развернутой веб-службы из Power BI. (Дополнительные[сведения об использовании веб-службы из Power BI](https://docs.microsoft.com/power-bi/service-machine-learning-integration).)
 
 ```python
 import json
@@ -48,9 +52,10 @@ import numpy as np
 import pandas as pd
 import azureml.train.automl
 from sklearn.externals import joblib
-from azureml.core.model import Model
+from sklearn.linear_model import Ridge
 
 from inference_schema.schema_decorators import input_schema, output_schema
+from inference_schema.parameter_types.standard_py_parameter_type import StandardPythonParameterType
 from inference_schema.parameter_types.numpy_parameter_type import NumpyParameterType
 from inference_schema.parameter_types.pandas_parameter_type import PandasParameterType
 
@@ -58,31 +63,32 @@ from inference_schema.parameter_types.pandas_parameter_type import PandasParamet
 def init():
     global model
     # Replace filename if needed.
-    model_path = os.path.join(os.getenv('AZUREML_MODEL_DIR'), 'model_file.pkl')
+    model_path = os.path.join(os.getenv('AZUREML_MODEL_DIR'), 'sklearn_regression_model.pkl')
     # Deserialize the model file back into a sklearn model.
     model = joblib.load(model_path)
 
+# providing 3 sample inputs for schema generation
+numpy_sample_input = NumpyParameterType(np.array([[1,2,3,4,5,6,7,8,9,10],[10,9,8,7,6,5,4,3,2,1]],dtype='float64'))
+pandas_sample_input = PandasParameterType(pd.DataFrame({'name': ['Sarah', 'John'], 'age': [25, 26]}))
+standard_sample_input = StandardPythonParameterType(0.0)
 
-input_sample = pd.DataFrame(data=[{
-    # This is a decimal type sample. Use the data type that reflects this column in your data.
-    "input_name_1": 5.1,
-    # This is a string type sample. Use the data type that reflects this column in your data.
-    "input_name_2": "value2",
-    # This is an integer type sample. Use the data type that reflects this column in your data.
-    "input_name_3": 3
-}])
+# This is a nested input sample, any item wrapped by `ParameterType` will be described by schema
+sample_input = StandardPythonParameterType({'input1': numpy_sample_input, 
+                                            'input2': pandas_sample_input, 
+                                            'input3': standard_sample_input})
 
-# This is an integer type sample. Use the data type that reflects the expected result.
-output_sample = np.array([0])
+sample_global_parameters = StandardPythonParameterType(1.0) #this is optional
+sample_output = StandardPythonParameterType([1.0, 1.0])
 
-# To indicate that we support a variable length of data input,
-# set enforce_shape=False
-@input_schema('data', PandasParameterType(input_sample, enforce_shape=False))
-@output_schema(NumpyParameterType(output_sample))
-def run(data):
+@input_schema('inputs', sample_input)
+@input_schema('global_parameters', sample_global_parameters) #this is optional
+@output_schema(sample_output)
+def run(inputs, global_parameters):
     try:
+        data = inputs['input1']
+        # data will be convert to target format
+        assert isinstance(data, np.ndarray)
         result = model.predict(data)
-        # You can return any data type, as long as it is JSON serializable.
         return result.tolist()
     except Exception as e:
         error = str(e)
@@ -264,7 +270,7 @@ second_model_path = os.path.join(os.getenv('AZUREML_MODEL_DIR'), second_model_na
 
 При регистрации модели ей присваивается имя. Имя соответствует месту размещения модели: локально или во время развертывания службы.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * [Устранение неполадок при развертывании](how-to-troubleshoot-deployment.md)
 * [развертывание в Службе Azure Kubernetes](how-to-deploy-azure-kubernetes-service.md).

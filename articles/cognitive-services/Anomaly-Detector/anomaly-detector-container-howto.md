@@ -1,7 +1,7 @@
 ---
 title: Установка и запуск контейнеров для использования API детектора аномалий
 titleSuffix: Azure Cognitive Services
-description: Используйте расширенные алгоритмы API Детектора аномалий для определения аномалий в данных временных рядов.
+description: Узнайте, как установить и использовать контейнер для использования расширенных алгоритмов API детектора аномалий.
 services: cognitive-services
 author: aahill
 manager: nitinme
@@ -10,12 +10,12 @@ ms.subservice: anomaly-detector
 ms.topic: conceptual
 ms.date: 05/07/2020
 ms.author: aahi
-ms.openlocfilehash: ee742f09f3fcc1bd283efbc346fea6a040e53f48
-ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
+ms.openlocfilehash: 0ae3b66d8093c0498011d9f93cd8d869b85f9003
+ms.sourcegitcommit: 03662d76a816e98cfc85462cbe9705f6890ed638
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88548537"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90530715"
 ---
 # <a name="install-and-run-anomaly-detector-containers-preview"></a>Установка и запуск контейнеров детекторов аномалий (Предварительная версия)
 
@@ -185,7 +185,7 @@ ApiKey={API_KEY}
 > [!IMPORTANT]
 > Контейнеры Cognitive Services не лицензируются для запуска без подключения к Azure для отслеживания использования. Клиенты должны разрешить контейнерам непрерывную передачу данных для выставления счетов в службу контроля потребления. Cognitive Services контейнеры не отправляют данные клиента (например, анализируемые данные временных рядов) в корпорацию Майкрософт.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * Ознакомьтесь со статьей о [конфигурации контейнеров](anomaly-detector-container-configuration.md).
 * [Развертывание контейнера детекторов аномалий в службе "экземпляры контейнеров Azure"](how-to/deploy-anomaly-detection-on-container-instances.md)

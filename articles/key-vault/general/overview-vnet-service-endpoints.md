@@ -9,12 +9,12 @@ ms.date: 01/02/2019
 ms.service: key-vault
 ms.subservice: general
 ms.topic: conceptual
-ms.openlocfilehash: 261d85c60473749719830c380d8a4866d7561874
-ms.sourcegitcommit: bf1340bb706cf31bb002128e272b8322f37d53dd
+ms.openlocfilehash: 3b1e71a5aadbe9e6a4fa89d4b3ec0fb6b1d9e6ce
+ms.sourcegitcommit: 03662d76a816e98cfc85462cbe9705f6890ed638
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/03/2020
-ms.locfileid: "89438046"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90530460"
 ---
 # <a name="virtual-network-service-endpoints-for-azure-key-vault"></a>Конечные точки служб для виртуальной сети для Azure Key Vault
 
@@ -85,7 +85,7 @@ ms.locfileid: "89438046"
 > [!NOTE]
 > Настройте политики доступа в Key Vault так, чтобы разрешить доступ к Key Vault соответствующим службам.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
-* [Обеспечение безопасности хранилища ключей](secure-your-key-vault.md)
+* [Защита хранилища ключей](secure-your-key-vault.md)
 * [Настройка брандмауэров и виртуальных сетей Azure Key Vault](network-security.md)

@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 08/07/2019
 ms.author: allensu
-ms.openlocfilehash: 2192531aec7800314c6748740262f8746da0c4fc
-ms.sourcegitcommit: 845a55e6c391c79d2c1585ac1625ea7dc953ea89
+ms.openlocfilehash: b24514ed477d1acd31dbc4ef0daa3aa89b8739f9
+ms.sourcegitcommit: 03662d76a816e98cfc85462cbe9705f6890ed638
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/05/2020
-ms.locfileid: "85956378"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90530834"
 ---
 # <a name="multiple-frontends-for-azure-load-balancer"></a>Несколько внешних интерфейсов для Azure Load Balancer
 
@@ -69,7 +69,7 @@ Azure Load Balancer позволяет сочетать оба типа прав
 
 Полное сопоставление в Azure Load Balancer теперь выглядит следующим образом:
 
-| Правило | Интерфейсный IP-адрес | protocol | порт | Destination | порт |
+| Правило | Интерфейсный IP-адрес | protocol | порт | Назначение | порт |
 | --- | --- | --- | --- | --- | --- |
 | ![правило зеленого интерфейса](./media/load-balancer-multivip-overview/load-balancer-rule-green.png) 1 |65.52.0.1 |TCP |80 |Выделенный IP-адрес (DIP) |80 |
 | ![правило сиреневого интерфейса](./media/load-balancer-multivip-overview/load-balancer-rule-purple.png) 2 |65.52.0.2 |TCP |80 |Выделенный IP-адрес (DIP) |81 |
@@ -148,7 +148,7 @@ netsh interface ipv4 set interface “interfacename” weakhostsend=enabled
 
 Следующая таблица демонстрирует полное сопоставление в балансировщике нагрузки:
 
-| Правило | Интерфейсный IP-адрес | protocol | порт | Destination | порт |
+| Правило | Интерфейсный IP-адрес | protocol | порт | Назначение | порт |
 | --- | --- | --- | --- | --- | --- |
 | ![правило зеленого интерфейса](./media/load-balancer-multivip-overview/load-balancer-rule-green.png) 1 |65.52.0.1 |TCP |80 |такое, как у внешнего интерфейса (65.52.0.1) |такое, как у внешнего интерфейса (80) |
 | ![правило сиреневого интерфейса](./media/load-balancer-multivip-overview/load-balancer-rule-purple.png) 2 |65.52.0.2 |TCP |80 |такое, как у внешнего интерфейса (65.52.0.2) |такое, как у внешнего интерфейса (80) |
@@ -163,6 +163,7 @@ netsh interface ipv4 set interface “interfacename” weakhostsend=enabled
 
 * Конфигурации с несколькими внешними интерфейсами поддерживаются только при использовании виртуальных машин IaaS.
 * При использовании правила с плавающим IP-адресом приложение должно использовать основную IP-конфигурацию для исходящих потоков SNAT. Если ваше приложение привязывается к интерфейсному IP-адресу, настроенному в интерфейсе замыкания на себя гостевой ОС, то исходящая SNAT Azure не будет доступна для перезаписи исходящего потока, и поток завершится ошибкой.  Проверьте [сценарии исходящего трафика](load-balancer-outbound-connections.md).
+* Плавающий IP-адрес в настоящее время не поддерживается во вторичных IP-конфигурациях для сценариев с использованием внутренней балансировки нагрузки.
 * Общедоступные IP-адреса оказывают влияние на выставление счетов. Дополнительные сведения см. в статье [Цены на IP-адреса](https://azure.microsoft.com/pricing/details/ip-addresses/).
 * Действуют ограничения подписки. Дополнительные сведения см. в разделе [Ограничения определенных служб](../azure-resource-manager/management/azure-subscription-service-limits.md#networking-limits).
 

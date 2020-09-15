@@ -7,12 +7,12 @@ ms.service: resource-move
 ms.topic: conceptual
 ms.date: 09/14/2020
 ms.author: raynew
-ms.openlocfilehash: a83191fd29e0cda4bc398f6a46a0d2ebf9631665
-ms.sourcegitcommit: 1fe5127fb5c3f43761f479078251242ae5688386
+ms.openlocfilehash: 18de210d817ee309ac4970ecea6b62f6ef03ef02
+ms.sourcegitcommit: 03662d76a816e98cfc85462cbe9705f6890ed638
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/14/2020
-ms.locfileid: "90068053"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90530409"
 ---
 # <a name="common-questions"></a>Часто задаваемые вопросы
 
@@ -50,7 +50,7 @@ ms.locfileid: "90068053"
 
 Вы можете изменить подписку после перемещения ресурсов в целевой регион. Дополнительные [сведения](../azure-resource-manager/management/move-resource-group-and-subscription.md) о перемещении ресурсов в другую подписку. 
 
-### <a name="where-is-the-metadata-about-a-region-move-stored"></a>Где хранятся метаданные о перемещении региона?
+### <a name="where-is-the-metadata-for-moving-across-regions-stored"></a>Где хранятся метаданные для перемещения между регионами?
 
 Он хранится в базе данных [Azure Cosmos](../cosmos-db/database-encryption-at-rest.md) и в [хранилище BLOB-объектов Azure](../storage/common/storage-service-encryption.md)в подписке Майкрософт. В настоящее время метаданные хранятся в восточной части США 2 и Северной Европе. Это покрытие будет расширено в другие регионы. Это не ограничивает вас перемещением ресурсов в общедоступных регионах.
 

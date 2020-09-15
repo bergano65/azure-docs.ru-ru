@@ -7,12 +7,12 @@ ms.service: site-recovery
 ms.topic: how-to
 ms.date: 04/10/2020
 ms.author: ramamill
-ms.openlocfilehash: 19d6933497b469148687dc9c5012513ab7d0314b
-ms.sourcegitcommit: 8a7b82de18d8cba5c2cec078bc921da783a4710e
+ms.openlocfilehash: 14f0eaee1ede4da3b80ddd94d5c915438e97f8f4
+ms.sourcegitcommit: 03662d76a816e98cfc85462cbe9705f6890ed638
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89047213"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90530069"
 ---
 # <a name="about-the-mobility-service-for-vmware-vms-and-physical-servers"></a>Сведения о службе Mobility Service на виртуальных машинах и физических серверах VMware
 
@@ -33,11 +33,11 @@ ms.locfileid: "89047213"
 
 Принудительная установка является неотъемлемой частью задания, которое запускается из портал Azure для [включения репликации](vmware-azure-enable-replication.md#enable-replication). После выбора набора виртуальных машин, которые требуется защитить, и включения репликации сервер конфигурации отправляет агент службы Mobility Service на серверы, устанавливает агент и завершает регистрацию агента на сервере конфигурации.
 
-### <a name="prerequisites"></a>Предварительные требования
+### <a name="prerequisites"></a>Предварительные условия
 
 - Убедитесь, что выполнены все [необходимые условия](vmware-azure-install-mobility-service.md) для принудительной установки.
 - Убедитесь, что все конфигурации сервера соответствуют критериям в [матрице поддержки для аварийного восстановления виртуальных машин VMware и физических серверов в Azure](vmware-physical-azure-support-matrix.md).
-- Начиная с [версии 9,36](https://support.microsoft.com/help/4578241/) и выше, для SuSE Linux Enterprise Server 11 SP4 убедитесь, что последний установщик [доступен на сервере конфигурации и на сервере обработки масштабирования](#download-latest-mobility-agent-installer-for-suse-11-sp3-server) .
+- Начиная с версии 9,36, для SUSE Linux Enterprise Server 11 SP3, RHEL 5, CentOS 5, Debian 7 убедитесь, что последний установщик [доступен на сервере конфигурации и на сервере обработки масштабирования](#download-latest-mobility-agent-installer-for-suse-11-sp3-rhel-5-debian-7-server) .
 
 Рабочий процесс принудительной установки описан в следующих разделах:
 
@@ -69,7 +69,7 @@ ms.locfileid: "89047213"
 
 ## <a name="install-the-mobility-service-using-ui"></a>Установка службы Mobility Service с помощью пользовательского интерфейса
 
-### <a name="prerequisites"></a>Предварительные требования
+### <a name="prerequisites"></a>Предварительные условия
 
 - Убедитесь, что все конфигурации сервера соответствуют критериям в [матрице поддержки для аварийного восстановления виртуальных машин VMware и физических серверов в Azure](vmware-physical-azure-support-matrix.md).
 - [Поиск установщика](#locate-installer-files) для операционной системы сервера.
@@ -97,7 +97,7 @@ ms.locfileid: "89047213"
 
 ## <a name="install-the-mobility-service-using-command-prompt"></a>Установка службы Mobility Service с помощью командной строки
 
-### <a name="prerequisites"></a>Предварительные требования
+### <a name="prerequisites"></a>Предварительные условия
 
 - Убедитесь, что все конфигурации сервера соответствуют критериям в [матрице поддержки для аварийного восстановления виртуальных машин VMware и физических серверов в Azure](vmware-physical-azure-support-matrix.md).
 - [Поиск установщика](#locate-installer-files) для операционной системы сервера.
@@ -202,31 +202,63 @@ ms.locfileid: "89047213"
 Файл установщика | Операционная система (только 64-разрядная версия)
 --- | ---
 `Microsoft-ASR_UA_version_Windows_GA_date_release.exe` | Windows Server 2016 </br> Windows Server 2012 R2 </br> Windows Server 2012 </br> Windows Server 2008 R2 с пакетом обновления 1 (SP1)
+[Загрузить и поместить в эту папку вручную](#rhel-5-or-centos-5-server) | Red Hat Enterprise Linux (RHEL) 5 </br> CentOS 5
 `Microsoft-ASR_UA_version_RHEL6-64_GA_date_release.tar.gz` | Red Hat Enterprise Linux (RHEL) 6 </br> CentOS 6
 `Microsoft-ASR_UA_version_RHEL7-64_GA_date_release.tar.gz` | Red Hat Enterprise Linux (RHEL) 7 </br> CentOS 7
+`Microsoft-ASR_UA_version_RHEL8-64_GA_date_release.tar.gz` | Red Hat Enterprise Linux (RHEL) 8 </br> CentOS 8
 `Microsoft-ASR_UA_version_SLES12-64_GA_date_release.tar.gz` | SUSE Linux Enterprise Server 12 SP1 </br> Включает пакет обновления 2 (SP2) и SP3.
-[Для загрузки и помещения в эту папку вручную](#download-latest-mobility-agent-installer-for-suse-11-sp3-server). | SUSE Linux Enterprise Server 11 SP3
+[Загрузить и поместить в эту папку вручную](#suse-11-sp3-server) | SUSE Linux Enterprise Server 11 SP3
 `Microsoft-ASR_UA_version_SLES11-SP4-64_GA_date_release.tar.gz` | SUSE Linux Enterprise Server 11 SP4
+`Microsoft-ASR_UA_version_SLES15-64_GA_date_release.tar.gz` | SUSE Linux Enterprise Server 15 
 `Microsoft-ASR_UA_version_OL6-64_GA_date_release.tar.gz` | Oracle Enterprise Linux 6,4 </br> Oracle Enterprise Linux 6,5
+`Microsoft-ASR_UA_version_OL7-64_GA_date_release.tar.gz` | Oracle Enterprise Linux 7 
+`Microsoft-ASR_UA_version_OL8-64_GA_date_release.tar.gz` | Oracle Enterprise Linux 8
 `Microsoft-ASR_UA_version_UBUNTU-14.04-64_GA_date_release.tar.gz` | Ubuntu Linux 14.04
 `Microsoft-ASR_UA_version_UBUNTU-16.04-64_GA_date_release.tar.gz` | Сервер Ubuntu Linux 16.04 LTS
-`Microsoft-ASR_UA_version_DEBIAN7-64_GA_date_release.tar.gz` | Debian 7
+`Microsoft-ASR_UA_version_UBUNTU-18.04-64_GA_date_release.tar.gz` | Ubuntu Linux 18,04 LTS Server
+`Microsoft-ASR_UA_version_UBUNTU-20.04-64_GA_date_release.tar.gz` | Ubuntu Linux 20,04 LTS Server
+[Загрузить и поместить в эту папку вручную](#debian-7-server) | Debian 7
 `Microsoft-ASR_UA_version_DEBIAN8-64_GA_date_release.tar.gz` | Debian 8
+`Microsoft-ASR_UA_version_DEBIAN9-64_GA_date_release.tar.gz` | Debian 9
 
-### <a name="download-latest-mobility-agent-installer-for-suse-11-sp3-server"></a>Скачайте последнюю версию установщика агента Mobility Server для SUSE 11 SP3
+## <a name="download-latest-mobility-agent-installer-for-suse-11-sp3-rhel-5-debian-7-server"></a>Скачайте последнюю версию установщика агента мобильности для SUSE 11 SP3, RHEL 5, Debian 7 Server
 
-В качестве **необходимого компонента для обновления или защиты SUSE Linux Enterprise Server 11 SP3 компьютеров** с [версии 9,36](https://support.microsoft.com/help/4578241/) и выше:
+### <a name="suse-11-sp3-server"></a>Сервер SUSE 11 SP3
+
+В качестве **необходимого компонента для обновления или защиты SUSE Linux Enterprise Server 11 SP3 компьютеров** с версии 9,36 и выше:
 
 1. Убедитесь, что последний установщик агента мобильности скачан из центра загрузки Майкрософт и размещен в репозитории Push Installer на сервере конфигурации и всех серверах обработки Scale out.
-2. [Скачайте](https://download.microsoft.com/download/0/3/4/0341b388-1ff5-4ead-b197-7cf6d2bb3e40/Microsoft-ASR_UA_9.36.0.0_SLES11-SP3-64_GA_06Aug2020_release.tar.gz) установщик агента SUSE Linux Enterprise Server 11 SP3.
-3. Перейдите к серверу конфигурации, скопируйте установщик агента SUSE Linux Enterprise Server 11 SP3 по следующим путям.
-    1. INSTALL_DIR \home\svsystems\pushinstallsvc\repository
-    1.  INSTALL_DIR папки \хоме\свсистемс\админ\веб\св
-4. Теперь перейдите к связанным серверам обработки масштабирования & скопируйте установщик по обоим путям, указанным в 3 шаге.
-5. **Например**, если путь установки — C:\Program Files (x86) \Microsoft Azure Site Recovery, то упомянутые выше каталоги будут
+2. [Скачайте](site-recovery-whats-new.md) последнюю версию установщика агента SUSE Linux Enterprise Server 11 SP3. Последняя версия агента мобильности — [9,37](https://support.microsoft.com/help/4582666/)
+3. Перейдите к серверу конфигурации, скопируйте установщик агента SUSE Linux Enterprise Server 11 SP3 на путь — INSTALL_DIR \home\svsystems\pushinstallsvc\repository
+1. После копирования последнего установщика перезапустите службу Inmage PushInstall Service. 
+1. Теперь перейдите к связанным серверам обработки масштабирования, повторите шаг 3 и шаг 4.
+1. **Например**, если путь установки — C:\Program Files (x86) \Microsoft Azure Site Recovery, то упомянутые выше каталоги будут
     1. C:\Program Files (x86) \Microsoft Azure site Recovery\home\svsystems\pushinstallsvc\repository
-    1. C:\Program Files (x86) \Microsoft Azure site Рековери\хоме\свсистемс\админ\веб\св путь
 
-## <a name="next-steps"></a>Дальнейшие действия
+### <a name="rhel-5-or-centos-5-server"></a>Сервер RHEL 5 или CentOS 5
+
+В качестве **необходимого компонента для обновления или защиты компьютеров RHEL 5** с версии 9,36 и выше:
+
+1. Убедитесь, что последний установщик агента мобильности скачан из центра загрузки Майкрософт и размещен в репозитории Push Installer на сервере конфигурации и всех серверах обработки Scale out.
+2. [Скачайте](site-recovery-whats-new.md) последнюю версию УСТАНОВЩИКА агента RHEL 5 или CentOS 5. Последняя версия агента мобильности — [9,37](https://support.microsoft.com/help/4582666/)
+3. Перейдите на сервер конфигурации, скопируйте установщик агента RHEL 5 или CentOS 5 на страницу Path-INSTALL_DIR \home\svsystems\pushinstallsvc\repository
+1. После копирования последнего установщика перезапустите службу Inmage PushInstall Service. 
+1. Теперь перейдите к связанным серверам обработки масштабирования, повторите шаг 3 и шаг 4.
+1. **Например**, если путь установки — C:\Program Files (x86) \Microsoft Azure Site Recovery, то упомянутые выше каталоги будут
+    1. C:\Program Files (x86) \Microsoft Azure site Recovery\home\svsystems\pushinstallsvc\repository
+
+## <a name="debian-7-server"></a>Сервер Debian 7
+
+В качестве **необходимого компонента для обновления или защиты компьютеров Debian 7** с версии 9,36 и выше:
+
+1. Убедитесь, что последний установщик агента мобильности скачан из центра загрузки Майкрософт и размещен в репозитории Push Installer на сервере конфигурации и всех серверах обработки Scale out.
+2. [Скачайте](site-recovery-whats-new.md) последнюю версию установщика агента Debian 7. Последняя версия агента мобильности — [9,37](https://support.microsoft.com/help/4582666/)
+3. Перейдите на сервер конфигурации, скопируйте установщик агента Debian 7 на путь-INSTALL_DIR \home\svsystems\pushinstallsvc\repository
+1. После копирования последнего установщика перезапустите службу Inmage PushInstall Service. 
+1. Теперь перейдите к связанным серверам обработки масштабирования, повторите шаг 3 и шаг 4.
+1. **Например**, если путь установки — C:\Program Files (x86) \Microsoft Azure Site Recovery, то упомянутые выше каталоги будут
+    1. C:\Program Files (x86) \Microsoft Azure site Recovery\home\svsystems\pushinstallsvc\repository
+
+## <a name="next-steps"></a>Дальнейшие шаги
 
 [Установка службы Mobility Service для аварийного восстановления виртуальных машин VMware и физических серверов](vmware-azure-install-mobility-service.md)

@@ -7,12 +7,12 @@ ms.service: expressroute
 ms.topic: conceptual
 ms.date: 07/23/2020
 ms.author: sukishen
-ms.openlocfilehash: b9bb3691901d551f63592bee60adec913ee437ca
-ms.sourcegitcommit: 3fc3457b5a6d5773323237f6a06ccfb6955bfb2d
+ms.openlocfilehash: b0b2e4953d135176fcebab59c040dbf162bc5cb8
+ms.sourcegitcommit: 03662d76a816e98cfc85462cbe9705f6890ed638
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/11/2020
-ms.locfileid: "90029653"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90531191"
 ---
 # <a name="about-azure-networking-msp-partners"></a>Сведения о партнерах программы для поставщиков сетевых устройств и служб Azure (MSP)
 
@@ -56,7 +56,7 @@ ms.locfileid: "90029653"
 |[Vigilant IT](https://vigilant.it/manage-cloud-service/)|[Проверка работоспособности Azure: оценка (5 дн.)](https://azuremarketplace.microsoft.com/en-us/marketplace/consulting-services/vigilant-it.ahc01)|[ExpressRoute: реализация (5 дн.)](https://azuremarketplace.microsoft.com/en-us/marketplace/consulting-services/vigilant-it.erd01)|||
 |[Vandis](https://www.vandis.com/microsoft-azure-practice/)||[Управляемая служба ExpressRoute от Vandis](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/vandis.vandis_managed_expressroute?tab=Overview)|[Управляемая глобальная виртуальная сеть Vandis от Fortinet](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/vandis.vandis_managed_vwan_powered_by_fortinet?tab=Overview); [Управляемая глобальная виртуальная сеть Vandis от Palo Alto Networks](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/vandis.vandis_managed_vwan_powered_by_palo_alto_networks?tab=Overview)|
 
-Azure Marketplace предлагает управляемые службы ExpressRoute, виртуальные глобальные сети, службы безопасности и зоны частных пограничных услуг со следующих партнеров по сети Azure для сетей MSP: [Амдокс](https://www.amdocs.com/);  [Подразделение Telekom](https://www.telekom.com/en/media/media-information/archive/deutsche-telekom-offers-managed-network-services-for-microsoft-azure-598406);  [Доступ IX](https://www.ixreach.com/services/sdn-cloud-connect/);  В  [облаке](https://intercloud.com/partners/microsoft-azure/);  [Кинкс](https://www.kinx.net/service/cloud/?lang=en); [Омниклаудс](https://omniclouds.com/); [Опенсистем](https://open-systems.com/solutions/cloud-enablement/); [Оранжевые бизнес-услуги](https://www.orange-business.com/en/partners/orange-business-services-become-microsoft-azure-networking-managed-services-provider); [Телекоммуникации Сежонг](https://www.sejongtelecom.net/en/pages/service/cloud_ms)
+Azure Marketplace предлагает управляемые службы ExpressRoute, виртуальные глобальные сети, службы безопасности и зоны частных пограничных услуг со следующих партнеров по сети Azure для сетей MSP: [Амдокс](https://www.amdocs.com/);  [Подразделение Telekom](https://www.telekom.com/en/media/media-information/archive/deutsche-telekom-offers-managed-network-services-for-microsoft-azure-598406);  [Доступ IX](https://www.ixreach.com/services/sdn-cloud-connect/);  В  [облаке](https://intercloud.com/partners/microsoft-azure/);  [Кинкс](https://www.kinx.net/service/cloud/?lang=en); [Омниклаудс](https://omniclouds.com/); [Опенсистемс](https://open-systems.com/solutions/microsoft-azure-virtual-wan); [Оранжевые бизнес-услуги](https://www.orange-business.com/en/partners/orange-business-services-become-microsoft-azure-networking-managed-services-provider); [Телекоммуникации Сежонг](https://www.sejongtelecom.net/en/pages/service/cloud_ms)
 
 ## <a name="expressroute-partners"></a><a name="expressroute"></a>Партнеры ExpressRoute
 

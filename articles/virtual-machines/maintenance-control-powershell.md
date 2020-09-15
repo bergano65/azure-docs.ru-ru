@@ -7,12 +7,12 @@ ms.topic: how-to
 ms.workload: infrastructure-services
 ms.date: 01/31/2020
 ms.author: cynthn
-ms.openlocfilehash: 3204de6ea497666108ce63b1a3cfa77c6faa6b59
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 5cb504e10c9a1b10c5bad201f4f599a3c00992fe
+ms.sourcegitcommit: 03662d76a816e98cfc85462cbe9705f6890ed638
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87028657"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90530766"
 ---
 # <a name="control-updates-with-maintenance-control-and-azure-powershell"></a>Управление обновлениями с помощью управления обслуживанием и Azure PowerShell
 
@@ -59,7 +59,7 @@ $config = New-AzMaintenanceConfiguration `
 
 Использование `-MaintenanceScope host` гарантирует, что конфигурация обслуживания будет использоваться для управления обновлениями узла.
 
-При попытке создать конфигурацию с тем же именем, но в другом расположении возникнет ошибка. Имена конфигураций должны быть уникальными для вашей подписки.
+При попытке создать конфигурацию с тем же именем, но в другом расположении возникнет ошибка. Имена конфигураций должны быть уникальными для группы ресурсов.
 
 Вы можете запросить доступные конфигурации обслуживания с помощью команды [Get-азмаинтенанцеконфигуратион](/powershell/module/az.maintenance/get-azmaintenanceconfiguration).
 
@@ -235,5 +235,5 @@ Remove-AzMaintenanceConfiguration `
    -Name $config.Name
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 Дополнительные сведения см. в разделе [обслуживание и обновления](maintenance-and-updates.md).

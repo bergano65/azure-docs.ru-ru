@@ -1,18 +1,18 @@
 ---
 title: Настройка аналитики угроз в брандмауэре Azure
-description: Фильтрация на основе Microsoft Threat Intelligence может быть включена в брандмауэре с целю создания оповещений и запрета трафика, поступающего с известных вредоносных IP-адресов и доменов, а также передающегося на них.
+description: Узнайте, как настроить фильтрацию на основе аналитики угроз для политики брандмауэра Azure, чтобы получать оповещения и отклонять трафик от известных вредоносных IP-адресов и доменов.
 services: firewall-manager
 author: vhorne
 ms.service: firewall-manager
 ms.topic: article
 ms.date: 06/30/2020
 ms.author: victorh
-ms.openlocfilehash: 136ceeb271bec29bdbfc4572626936ee67f05556
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: a663c5f3bcf3492c4a9bc74fe93c6ed6a86137ee
+ms.sourcegitcommit: 03662d76a816e98cfc85462cbe9705f6890ed638
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85568129"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90530647"
 ---
 # <a name="azure-firewall-threat-intelligence-configuration"></a>Настройка аналитики угроз в брандмауэре Azure
 

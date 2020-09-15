@@ -1,6 +1,6 @@
 ---
 title: Создание фильтров с помощью пакета SDK для .NET служб мультимедиа Azure
-description: В этом разделе описывается создание фильтров, с помощью которых клиент может передавать определенные секции потока. Для достижения такой выборочной потоковой передачи службы мультимедиа создают динамические манифесты.
+description: В этом разделе описывается создание фильтров, с помощью которых клиент может передавать определенные секции потока. Пакет SDK служб мультимедиа для .NET создает динамические манифесты для реализации этой выборочной потоковой передачи.
 services: media-services
 documentationcenter: ''
 author: Juliako
@@ -16,12 +16,12 @@ ms.date: 03/18/2019
 ms.author: juliako
 ms.reviewer: cenkdin
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 8db58da092858a3f18b56b82d245b04f768b2e35
-ms.sourcegitcommit: bcda98171d6e81795e723e525f81e6235f044e52
+ms.openlocfilehash: 862385d1117e0a1b5d2220c06885e0fd0ecfa4d7
+ms.sourcegitcommit: 03662d76a816e98cfc85462cbe9705f6890ed638
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/01/2020
-ms.locfileid: "89268707"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90531633"
 ---
 # <a name="creating-filters-with-media-services-net-sdk"></a>Создание фильтров с помощью пакета SDK Служб мультимедиа для .NET
 
@@ -139,5 +139,5 @@ ms.locfileid: "89268707"
 ## <a name="provide-feedback"></a>Отзывы
 [!INCLUDE [media-services-user-voice-include](../../../includes/media-services-user-voice-include.md)]
 
-## <a name="see-also"></a>См. также
+## <a name="see-also"></a>См. также:
 [Обзор динамических манифестов](media-services-dynamic-manifest-overview.md)

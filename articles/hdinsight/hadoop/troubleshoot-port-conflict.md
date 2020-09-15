@@ -1,28 +1,28 @@
 ---
 title: Конфликт портов при запуске служб в Azure HDInsight
-description: Действия по устранению неполадок и возможные способы решения проблем при взаимодействии с кластерами Azure HDInsight.
+description: Действия по устранению неполадок и возможные способы устранения проблем с конфликтом портов при взаимодействии с кластерами Azure HDInsight.
 author: hrasheed-msft
 ms.author: hrasheed
 ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: troubleshooting
 ms.date: 01/23/2020
-ms.openlocfilehash: 4cb0d464a82d8da0a09f5391eb1d06dfacd84290
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 0d39f31e9d52359d0c91317280a7f8db06c1c1b0
+ms.sourcegitcommit: 03662d76a816e98cfc85462cbe9705f6890ed638
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "76776226"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90530970"
 ---
 # <a name="scenario-port-conflict-when-starting-services-in-azure-hdinsight"></a>Сценарий: конфликт портов при запуске служб в Azure HDInsight
 
 В этой статье описываются действия по устранению неполадок и возможные способы решения проблем при взаимодействии с кластерами Azure HDInsight.
 
-## <a name="issue"></a>Проблемы
+## <a name="issue"></a>Проблема
 
 Не удается запустить службу.
 
-## <a name="cause"></a>Причина:
+## <a name="cause"></a>Причина
 
 Существует конфликт портов.
 

@@ -1,18 +1,18 @@
 ---
 title: Управление дисковым пространством в Azure HDInsight
-description: Действия по устранению неполадок и возможные способы решения проблем при взаимодействии с кластерами Azure HDInsight.
+description: Действия по устранению неполадок и возможные способы устранения проблем с дисковым пространством при взаимодействии с кластерами Azure HDInsight.
 author: hrasheed-msft
 ms.author: hrasheed
 ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: troubleshooting
 ms.date: 02/17/2020
-ms.openlocfilehash: 577bed7ce342be14a50077a3ffd841cd901b5b31
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 0628033ecf6f2e51cf18f61c6e5b36042557dc7b
+ms.sourcegitcommit: 03662d76a816e98cfc85462cbe9705f6890ed638
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "77473016"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90530167"
 ---
 # <a name="manage-disk-space-in-azure-hdinsight"></a>Управление дисковым пространством в Azure HDInsight
 
@@ -42,7 +42,7 @@ ms.locfileid: "77473016"
 
 * Убедитесь, что размер кластера соответствует рабочей нагрузке. Возможно, Рабочая нагрузка изменилась недавно или размер кластера был изменен. Увеличьте [масштаб](../hdinsight-scaling-best-practices.md) кластера в соответствии с более высокой рабочей нагрузкой.
 
-* `/mnt/resource`могут быть заполнены потерянными файлами (как в случае перезапуска Resource Manager). При необходимости вручную очистите `/mnt/resource/hadoop/yarn/log` и `/mnt/resource/hadoop/yarn/local` .
+* `/mnt/resource` могут быть заполнены потерянными файлами (как в случае перезапуска Resource Manager). При необходимости вручную очистите `/mnt/resource/hadoop/yarn/log` и `/mnt/resource/hadoop/yarn/local` .
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

@@ -3,19 +3,19 @@ title: Регионы Azure, в которых доступен Индексат
 titleSuffix: Azure Media Services
 description: В этой статье рассказывается о регионах Azure, в которых доступен индексатор видео служб мультимедиа Azure.
 services: media-services
-author: anikaz
-manager: johndeu
+author: Juliako
+manager: femila
 ms.service: media-services
 ms.subservice: video-indexer
 ms.topic: article
-ms.date: 09/08/2020
-ms.author: kumud
-ms.openlocfilehash: dd95f022e40b9ae6fa60a6536a87146049c53b68
-ms.sourcegitcommit: d0541eccc35549db6381fa762cd17bc8e72b3423
+ms.date: 09/14/2020
+ms.author: juliako
+ms.openlocfilehash: 6ebdb22f50efbefc695f9752c6e6fc333571828c
+ms.sourcegitcommit: 03662d76a816e98cfc85462cbe9705f6890ed638
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/09/2020
-ms.locfileid: "89565333"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90530949"
 ---
 # <a name="azure-regions-in-which-video-indexer-exists"></a>Регионы Azure, в которых доступен Индексатор видео
 
@@ -23,7 +23,18 @@ API Индексатора видео содержат параметр **locati
 
 ## <a name="locations"></a>Расположения
 
-`location`Параметру должно быть присвоено имя кода региона Azure в качестве значения. При использовании индексатора видео в режиме предварительного просмотра следует поместиться в `"trial"` качестве значения. `trial` значение по умолчанию для `location` параметра. В противном случае для получения имени кода региона Azure, в котором развернута ваша учетная запись и к которому должен быть направлен ваш вызов, выполните следующую строку в [Azure CLI](/cli/azure):
+`location`Параметру должно быть присвоено имя кода региона Azure в качестве значения. При использовании индексатора видео в режиме предварительного просмотра следует поместиться в `"trial"` качестве значения. `trial` значение по умолчанию для `location` параметра. В противном случае для получения имени кода региона Azure, в котором находится ваша учетная запись, а также для маршрутизации вызова, можно использовать портал Azure или выполнить команду [Azure CLI](/cli/azure) .
+
+### <a name="azure-portal"></a>Портал Azure
+
+1. Войдите на веб-сайт [Индексатора видео](https://www.videoindexer.ai/).
+1. Выберите **учетные записи пользователей** в правом верхнем углу страницы.
+1. Найдите расположение учетной записи в правом верхнем углу.  
+
+    > [!div class="mx-imgBorder"]
+    > :::image type="content" source="./media/location/location1.png" alt-text="Расположение":::
+    
+###  <a name="cli-command"></a>Команда CLI
 
 ```azurecli-interactive
 az account list-locations

@@ -3,12 +3,12 @@ title: Перемещение ресурсов службы приложений
 description: Используйте Azure Resource Manager, чтобы переместить ресурсы службы приложений в новую группу ресурсов или подписку.
 ms.topic: conceptual
 ms.date: 08/10/2020
-ms.openlocfilehash: 45f04cad27e175b471f4d6e07426787ca678e369
-ms.sourcegitcommit: 1a0dfa54116aa036af86bd95dcf322307cfb3f83
+ms.openlocfilehash: 27555a4616befca41c7e970e947afa1cd1ff7248
+ms.sourcegitcommit: 03662d76a816e98cfc85462cbe9705f6890ed638
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/10/2020
-ms.locfileid: "88042064"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90531378"
 ---
 # <a name="move-guidance-for-app-service-resources"></a>Руководство по перемещению ресурсов службы приложений
 
@@ -42,7 +42,7 @@ ms.locfileid: "88042064"
 
 Вы увидите Рекомендуемые действия, которые необходимо выполнить перед перемещением ресурсов. Эти сведения включают в себя исходную группу ресурсов для веб-приложения.
 
-![Рекомендации](./media/app-service-move-limitations/recommendations.png)
+![На снимке экрана показаны рекомендуемые шаги для перемещения веб-ресурсов Microsoft Dot.](./media/app-service-move-limitations/recommendations.png)
 
 ## <a name="move-support"></a>Поддержка перемещения
 

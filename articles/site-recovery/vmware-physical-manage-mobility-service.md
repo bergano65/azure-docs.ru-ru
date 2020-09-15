@@ -7,12 +7,12 @@ ms.service: site-recovery
 ms.topic: conceptual
 ms.date: 03/25/2019
 ms.author: ramamill
-ms.openlocfilehash: e65fecb70b7e3adf009396c0daa00fc50b81b519
-ms.sourcegitcommit: d661149f8db075800242bef070ea30f82448981e
+ms.openlocfilehash: d921bddf90c415cb244e2cc9ad98354392a537ee
+ms.sourcegitcommit: 03662d76a816e98cfc85462cbe9705f6890ed638
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/19/2020
-ms.locfileid: "88604530"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90530171"
 ---
 # <a name="manage-the-mobility-agent"></a>Управление агентом службы "Мобильность" 
 
@@ -26,7 +26,7 @@ ms.locfileid: "88604530"
 ## <a name="update-mobility-service-from-azure-portal"></a>Обновление службы Mobility Service с портал Azure
 
 1. Прежде чем приступать к обновлению службы Mobility Service на защищенных компьютерах, убедитесь, что серверы конфигурации, обработки масштабирования и все основные целевые серверы, входящие в состав вашего развертывания, обновлены.
-    1. Начиная с [версии 9,36](https://support.microsoft.com/help/4578241/) , для SuSE Linux Enterprise Server 11 SP4 убедитесь, что [на сервере конфигурации и на сервере обработки масштабирования доступен](vmware-physical-mobility-service-overview.md#download-latest-mobility-agent-installer-for-suse-11-sp3-server)последний установщик.
+    1. Начиная с версии 9,36, для SUSE Linux Enterprise Server 11 SP3, RHEL 5, CentOS 5, Debian 7 убедитесь, что последний установщик [доступен на сервере конфигурации и на сервере обработки масштабирования](vmware-physical-mobility-service-overview.md#download-latest-mobility-agent-installer-for-suse-11-sp3-rhel-5-debian-7-server).
 1. На портале откройте хранилище и выберите **Реплицированные элементы**.
 1. Если сервер конфигурации последней версии, отобразится уведомление: "Доступно обновление для агента репликации Site Recovery. Щелкните, чтобы установить его."
 
@@ -92,7 +92,7 @@ Update-AzRecoveryServicesAsrMobilityService -ReplicationProtectedItem $rpi -Acco
 3. Запустите скрипт InMageVSSProvider_Uninstall. cmd. Служба будет удалена, если она уже существует.
 4. Выполните скрипт InMageVSSProvider_Install. cmd, чтобы установить поставщик VSS вручную.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - [Настройка аварийного восстановления для виртуальных машин VMware](vmware-azure-tutorial.md)
 - [Настройка аварийного восстановления в Azure для локальных физических серверов](physical-azure-disaster-recovery.md)
