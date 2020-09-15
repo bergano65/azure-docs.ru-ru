@@ -11,12 +11,12 @@ author: iainfoulds
 manager: daveba
 ms.reviewer: librown, aakapo
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 9f20da2d2ecb4426c0deb1c01591ead5933090f6
-ms.sourcegitcommit: 6fc156ceedd0fbbb2eec1e9f5e3c6d0915f65b8e
+ms.openlocfilehash: 45e1e516986c32e203837f79c83290cc99049e7a
+ms.sourcegitcommit: 03662d76a816e98cfc85462cbe9705f6890ed638
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/21/2020
-ms.locfileid: "88717002"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90526975"
 ---
 # <a name="enable-passwordless-security-key-sign-in-to-on-premises-resources-with-azure-active-directory-preview"></a>Включение входа в систему с помощью ключа безопасности без пароля для локальных ресурсов с Azure Active Directory (Предварительная версия)
 
@@ -46,7 +46,7 @@ Azure Active Directory (AD) может выдавать билеты Kerberos н
 
 Организации должны также отвечать следующим требованиям к программному обеспечению.
 
-- Устройства должны работать под Windows 10 Insider Build 18945 или более поздней версии.
+- Устройства должны работать под управлением Windows 10 версии 2004 или более поздней.
 - Необходимо использовать версию 1.4.32.0 или более позднюю [Azure AD Connect](../hybrid/how-to-connect-install-roadmap.md#install-azure-ad-connect).
   - Дополнительные сведения о доступных параметрах гибридной проверки подлинности в Azure AD см. в статье [Выбор правильного метода проверки подлинности для Azure Active Directory гибридного решения для идентификации](../hybrid/choose-ad-authn.md) и [Выбор типа установки для Azure AD Connect](../hybrid/how-to-connect-install-select-installation.md).
 - На контроллерах домена Windows Server должны быть установлены следующие исправления:
@@ -197,6 +197,6 @@ Remove-AzureADKerberosServer -Domain $domain -CloudCredential $cloudCred -Domain
 
 Убедитесь, что все контроллеры домена исправлены на время ответа на обслуживание запроса ресурсов. Чтобы проверить, доступен ли контроллер домена, на котором работает эта функция, просмотрите выходные данные `nltest /dsgetdc:contoso /keylist /kdc` .
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 [Дополнительные сведения о пароле](concept-authentication-passwordless.md)

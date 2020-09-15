@@ -6,12 +6,12 @@ ms.service: site-recovery
 ms.topic: conceptual
 ms.date: 03/25/2019
 ms.author: ramamill
-ms.openlocfilehash: 0613af3d286a9c670d09b2e72c2807c018753455
-ms.sourcegitcommit: 5d7f8c57eaae91f7d9cf1f4da059006521ed4f9f
+ms.openlocfilehash: 78fddb5b4512883f8e78d6ed53f6e3dbbeba0e4f
+ms.sourcegitcommit: 03662d76a816e98cfc85462cbe9705f6890ed638
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89669237"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90525003"
 ---
 # <a name="prepare-source-machine-for-push-installation-of-mobility-agent"></a>Подготовка исходного компьютера к принудительной установке агента Mobility Service
 
@@ -63,13 +63,13 @@ ms.locfileid: "89669237"
 11. На вкладке **Управление учетными записями** щелкните **Добавить учетную запись**.
 12. Добавьте созданную учетную запись.
 13. Введите учетные данные, используемые при включении репликации для компьютера.
-1. Дополнительные действия по обновлению или защите компьютеров SUSE Linux Enterprise Server 11 SP3. [Убедитесь, что на сервере конфигурации доступна последняя версия](vmware-physical-mobility-service-overview.md#download-latest-mobility-agent-installer-for-suse-11-sp3-server).
+1. Дополнительный шаг для обновления или защиты SUSE Linux Enterprise Server 11 SP3 или RHEL 5 или CentOS 5 или Debian 7. [Убедитесь, что на сервере конфигурации доступна последняя версия](vmware-physical-mobility-service-overview.md#download-latest-mobility-agent-installer-for-suse-11-sp3-rhel-5-debian-7-server).
 
 ## <a name="anti-virus-on-replicated-machines"></a>Антивирусное ПО на реплицированных компьютерах
 
 Если на компьютерах, которые нужно реплицировать, запущено антивирусное ПО, обязательно исключите установочную папку службы Mobility в список исключений из антивирусной проверки (*C:\ProgramData\ASR\agent*). Это обеспечит правильную работу репликации.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 После установки службы Mobility Service на портале Azure выберите **+ Репликация**, чтобы приступить к защите виртуальных машин. Дополнительные сведения о включении репликации для [виртуальных машин VMware](vmware-azure-enable-replication.md) и [физических серверов](physical-azure-disaster-recovery.md#enable-replication).
 

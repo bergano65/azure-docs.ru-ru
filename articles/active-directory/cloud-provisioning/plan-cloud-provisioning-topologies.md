@@ -1,6 +1,6 @@
 ---
 title: Azure AD Connect поддерживаемые топологии и сценарии для подготовки облака
-description: В этом разделе описаны необходимые компоненты и требования к оборудованию для подготовки облака в облаке.
+description: Узнайте о различных локальных и Azure Active Directory (Azure AD) топологиях, использующих облачную подготовку Azure AD Connect.
 services: active-directory
 author: billmath
 manager: daveba
@@ -11,12 +11,12 @@ ms.date: 02/26/2020
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 386af46bbee623d37bc914d2ee9130c914c6c885
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: d442c980ad5bbe3b56eae127b6e9eaeddf380a4e
+ms.sourcegitcommit: 03662d76a816e98cfc85462cbe9705f6890ed638
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "77620870"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90526856"
 ---
 # <a name="azure-ad-connect-cloud-provisioning-supported-topologies-and-scenarios"></a>Azure AD Connect поддерживаемые топологии и сценарии для подготовки облака
 В этой статье описываются различные локальные и Azure Active Directory (Azure AD) топологии, в которых используется облачная подготовка Azure AD Connect. Эта статья содержит только поддерживаемые конфигурации и сценарии.

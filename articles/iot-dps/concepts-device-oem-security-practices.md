@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.service: iot-dps
 ms.custom: iot-p0-scenario, iot-devices-deviceOEM
 ms.reviewer: nberdy
-ms.openlocfilehash: 3854f353e4ea0b78c0162681e0b89d37419105d8
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 788738082cbf9995fb2f7282bc3f574903275528
+ms.sourcegitcommit: 03662d76a816e98cfc85462cbe9705f6890ed638
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "80529521"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90527213"
 ---
 # <a name="security-practices-for-azure-iot-device-manufacturers"></a>Рекомендации по безопасности для изготовителей устройств Azure IoT
 По мере того как другие производители выпускают устройства IoT, полезно найти рекомендации по распространенным методикам. В этой статье приводятся рекомендуемые рекомендации по обеспечению безопасности, которые следует учитывать при производстве устройств для использования со службой подготовки устройств Интернета вещей Azure (DPS).  
@@ -182,7 +182,7 @@ Pro для общего симметричного ключа:
 #### <a name="step-5-device-is-installed-into-the-location"></a>Шаг 5. устройство установлено в расположение
 После того как устройство поступит в свое окончательное расположение, оно проходит через автоматическую подготовку с помощью DPS.
 
-Дополнительные сведения см. в разделе [Основные понятия автоинициализации](concepts-auto-provisioning.md) и [аттестация доверенного платформенного модуля](concepts-tpm-attestation.md). 
+Дополнительные сведения см. в разделе [Подготовка](about-iot-dps.md#provisioning-process) и [аттестация доверенного платформенного модуля](concepts-tpm-attestation.md). 
 
 ## <a name="resources"></a>Ресурсы
 

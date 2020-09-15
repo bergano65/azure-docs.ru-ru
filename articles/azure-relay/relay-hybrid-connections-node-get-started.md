@@ -4,12 +4,12 @@ description: Написание консольного приложения Node
 ms.topic: conceptual
 ms.date: 06/23/2020
 ms.custom: devx-track-javascript
-ms.openlocfilehash: 8dc52c93d4b5cd6d50b66338350a41cf0e24daa0
-ms.sourcegitcommit: 5b8fb60a5ded05c5b7281094d18cf8ae15cb1d55
+ms.openlocfilehash: cf660d7a776c0dfa48b6c023fa0fa3516a3a0ea5
+ms.sourcegitcommit: 03662d76a816e98cfc85462cbe9705f6890ed638
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87386305"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90527417"
 ---
 # <a name="get-started-with-relay-hybrid-connections-websockets-in-nodejs"></a>Начало работы с гибридными подключениями Azure Relay с использованием WebSocket и Node.js
 
@@ -52,11 +52,11 @@ ms.locfileid: "87386305"
 2. Запустите клиентское приложение. Для этого в командной строке Node.js введите `node sender.js`, а затем любой текст.
 3. Убедитесь, что серверное консольное приложение выводит текст, введенный в клиентском приложении.
 
-    ![running-applications](./media/relay-hybrid-connections-node-get-started/running-applications.png)
+    ![Окна консоли, тестирующие серверные и клиентские приложения.](./media/relay-hybrid-connections-node-get-started/running-applications.png)
 
 Поздравляем, вы создали приложение для гибридных подключений с помощью Node.js!
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 В этом кратком руководстве описано, как создать клиентские и серверные приложения Node.js, которые отправляют и получают сообщения по протоколу WebSocket. Функция гибридных подключений службы Azure Relay также поддерживает использование протокола HTTP для отправки и получения сообщений. См. дополнительные сведения об [использовании протокола HTTP с Node.js и гибридными подключениями Azure Relay](relay-hybrid-connections-http-requests-node-get-started.md).
 
 В этом кратком руководстве описано, как использовать Node.js для создания клиентских и серверных приложений. Сведения о том, как создавать клиентские и серверные приложения с помощью .NET Framework, см. в руководствах по использованию [.NET и WebSocket](relay-hybrid-connections-dotnet-get-started.md) или [.NET и HTTP](relay-hybrid-connections-http-requests-dotnet-get-started.md).

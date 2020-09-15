@@ -1,6 +1,6 @@
 ---
 title: Создание фильтров с помощью пакета SDK для .NET в службах мультимедиа Azure v3
-description: В этом разделе описывается создание фильтров, с помощью которых клиент может передавать определенные секции потока. Для достижения такой выборочной потоковой передачи службы мультимедиа создают динамические манифесты.
+description: В этом разделе описывается создание фильтров, с помощью которых клиент может передавать определенные секции потока. Пакет SDK служб мультимедиа v3 для .NET создает динамические манифесты для реализации этой выборочной потоковой передачи.
 services: media-services
 documentationcenter: ''
 author: IngridAtMicrosoft
@@ -14,12 +14,12 @@ ms.topic: article
 ms.date: 08/31/2020
 ms.author: inhenkel
 ms.custom: devx-track-csharp
-ms.openlocfilehash: b2a392ab5301a51edff1df88596f2fe68d85ea63
-ms.sourcegitcommit: bcda98171d6e81795e723e525f81e6235f044e52
+ms.openlocfilehash: 9f54a505d63660fb7c97b3226df4c232e48125e1
+ms.sourcegitcommit: 03662d76a816e98cfc85462cbe9705f6890ed638
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/01/2020
-ms.locfileid: "89266720"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90527366"
 ---
 # <a name="create-filters-with-media-services-net-sdk"></a>Создание фильтров с помощью пакета SDK Служб мультимедиа для .NET
 
@@ -34,7 +34,7 @@ ms.locfileid: "89266720"
 > [!NOTE]
 > Обязательно ознакомьтесь с [пресентатионтимеранже](filters-concept.md#presentationtimerange).
 
-## <a name="prerequisites"></a>Предварительные требования 
+## <a name="prerequisites"></a>Предварительные условия 
 
 - См. дополнительные сведения о [фильтрах и динамических манифестах](filters-dynamic-manifest-overview.md).
 - [Создание учетной записи Служб мультимедиа](./create-account-howto.md). Обязательно запомните имя группы ресурсов и имя учетной записи Служб мультимедиа. 
@@ -119,6 +119,6 @@ StreamingLocator locator = await client.StreamingLocators.CreateAsync(
 |MPEG DASH|`https://amsv3account-usw22.streaming.media.azure.net/fecebb23-46f6-490d-8b70-203e86b0df58/bigbuckbunny.ism/manifest(format=mpd-time-csf,filter=myAssetFilter)`|
 |Smooth Streaming|`https://amsv3account-usw22.streaming.media.azure.net/fecebb23-46f6-490d-8b70-203e86b0df58/bigbuckbunny.ism/manifest(filter=myAssetFilter)`|
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 [Потоковая передача видео](stream-files-tutorial-with-api.md) 

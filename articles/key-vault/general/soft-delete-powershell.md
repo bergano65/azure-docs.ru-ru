@@ -10,12 +10,12 @@ ms.topic: how-to
 ms.date: 08/11/2020
 ms.author: sudbalas
 ms.custom: devx-track-azurepowershell
-ms.openlocfilehash: 251159c4fcf27ceb4d8b0dddeecbe501c7346e9e
-ms.sourcegitcommit: 656c0c38cf550327a9ee10cc936029378bc7b5a2
+ms.openlocfilehash: 05ff5d2f7ff87d2ce58f135330487f746cc5c1c7
+ms.sourcegitcommit: 03662d76a816e98cfc85462cbe9705f6890ed638
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89073239"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90528370"
 ---
 # <a name="how-to-use-key-vault-soft-delete-with-powershell"></a>Как использовать обратимое удаление в Key Vault с помощью PowerShell
 
@@ -47,7 +47,7 @@ ms.locfileid: "89073239"
 |Recover|Восстанавливает удаленное хранилище ключей.|Microsoft.KeyVault/vaults/write|
 |Purge|Окончательно удаляет удаленное хранилище ключей и все его содержимое.|Microsoft.KeyVault/locations/deletedVaults/purge/action|
 
-Дополнительные сведения о разрешениях и управлении доступом см. в статье [Безопасный доступ к хранилищу ключей](secure-your-key-vault.md).
+Дополнительные сведения о разрешениях и управлении доступом см. в разделе [Защита хранилища ключей](secure-your-key-vault.md).
 
 ## <a name="enabling-soft-delete"></a>Включение обратимого удаления
 
@@ -282,5 +282,5 @@ Set-AzResource -resourceid $resource.ResourceId -Properties $resource.Properties
 
 ## <a name="other-resources"></a>Другие ресурсы
 
-- Обзор функции обратимого удаления Key Vault см. в статье [Общие сведения об обратимом удалении в Azure Key Vault](soft-delete-overview.md).
+- Обзор функции обратимого удаления Key Vault см. в разделе [Общие сведения об обратимом удалении в Azure Key Vault](soft-delete-overview.md).
 - Общие сведения об использовании Azure Key Vault см. в [этой статье](overview.md).

@@ -7,12 +7,12 @@ ms.topic: how-to
 ms.workload: infrastructure-services
 ms.date: 04/20/2020
 ms.author: cynthn
-ms.openlocfilehash: 56f9873828e2f93008498beed986827a01872bf1
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 67e33732574d2a6c173675d5adf0a7d1c2050688
+ms.sourcegitcommit: 03662d76a816e98cfc85462cbe9705f6890ed638
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84675865"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90528182"
 ---
 # <a name="control-updates-with-maintenance-control-and-the-azure-cli"></a>Управление обновлениями с помощью управления обслуживанием и Azure CLI
 
@@ -37,7 +37,7 @@ az maintenance configuration create \
 
 Использование `--maintenanceScope host` гарантирует, что конфигурация обслуживания будет использоваться для управления обновлениями узла.
 
-При попытке создать конфигурацию с тем же именем, но в другом расположении возникнет ошибка. Имена конфигураций должны быть уникальными для вашей подписки.
+При попытке создать конфигурацию с тем же именем, но в другом расположении возникнет ошибка. Имена конфигураций должны быть уникальными для группы ресурсов.
 
 Можно запросить доступные конфигурации обслуживания с помощью `az maintenance configuration list` .
 

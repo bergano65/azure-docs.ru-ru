@@ -5,14 +5,14 @@ services: logic-apps
 ms.suite: integration
 ms.reviewer: jonfan, logicappspm
 ms.topic: conceptual
-ms.date: 08/27/2020
+ms.date: 09/14/2020
 tags: connectors
-ms.openlocfilehash: 9ed490dba1547db6ec3c0ddcff38aa3e0c393fcf
-ms.sourcegitcommit: d68c72e120bdd610bb6304dad503d3ea89a1f0f7
+ms.openlocfilehash: 5f6328144760b3c55c55fbef13917359fa9e1a62
+ms.sourcegitcommit: 03662d76a816e98cfc85462cbe9705f6890ed638
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/01/2020
-ms.locfileid: "89226435"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90526758"
 ---
 # <a name="call-service-endpoints-over-http-or-https-from-azure-logic-apps"></a>Вызов конечных точек службы по HTTP или HTTPS из Azure Logic Apps
 
@@ -168,6 +168,14 @@ ms.locfileid: "89226435"
 }
 ```
 
+## <a name="content-with-applicationx-www-form-urlencoded-type"></a>Содержимое с типом приложения/x-www-Form-UrlEncoded
+
+Чтобы предоставить данные формы-UrlEncoded в тексте для HTTP-запроса, необходимо указать, что данные имеют `application/x-www-form-urlencoded` тип содержимого. В триггере или действии HTTP добавьте `content-type` заголовок. Задайте для заголовка значение `application/x-www-form-urlencoded` .
+
+Например, предположим, что у вас есть приложение логики, которое отправляет запрос HTTP POST на веб-сайт, поддерживающий этот `application/x-www-form-urlencoded` тип. Вот как может выглядеть это действие:
+
+![Снимок экрана, на котором показан HTTP-запрос с заголовком Content-Type, установленным в "Application/x-www-Form-UrlEncoded"](./media/connectors-native-http/http-action-urlencoded.png)
+
 <a name="asynchronous-pattern"></a>
 
 ## <a name="asynchronous-request-response-behavior"></a>Асинхронное поведение запроса и ответа
@@ -259,8 +267,7 @@ ms.locfileid: "89226435"
 * [Параметры триггера HTTP](../logic-apps/logic-apps-workflow-actions-triggers.md#http-trigger)
 * [Параметры действия HTTP](../logic-apps/logic-apps-workflow-actions-triggers.md#http-action)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * [Безопасный доступ и доступ к данным для исходящих вызовов других служб и систем](../logic-apps/logic-apps-securing-a-logic-app.md#secure-outbound-requests)
 * [Соединители для Logic Apps](../connectors/apis-list.md)
-

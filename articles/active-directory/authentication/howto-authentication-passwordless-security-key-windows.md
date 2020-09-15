@@ -11,12 +11,12 @@ author: iainfoulds
 manager: daveba
 ms.reviewer: librown, aakapo
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d70fe8a1fbaee285843bfd76ad2a8076df96b49b
-ms.sourcegitcommit: 6fc156ceedd0fbbb2eec1e9f5e3c6d0915f65b8e
+ms.openlocfilehash: 66283e4965aea9e24da6041133e2d88e95df6755
+ms.sourcegitcommit: 03662d76a816e98cfc85462cbe9705f6890ed638
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/21/2020
-ms.locfileid: "88717971"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90526992"
 ---
 # <a name="enable-passwordless-security-key-sign-in-to-windows-10-devices-with-azure-active-directory-preview"></a>Включение входа с использованием ключа безопасности без пароля для устройств Windows 10 с Azure Active Directory (Предварительная версия)
 
@@ -32,8 +32,8 @@ ms.locfileid: "88717971"
 | [Многофакторная идентификация Azure](howto-mfa-getstarted.md) | X | X |
 | [Общая Предварительная версия регистрации сведений о безопасности](concept-registration-mfa-sspr-combined.md) | X | X |
 | Совместимые [ключи безопасности FIDO2](concept-authentication-passwordless.md#fido2-security-keys) | X | X |
-| Для WebAuthN требуется Windows 10 версии 1809 или более поздней. | X | X |
-| Для [устройств, присоединенных к Azure AD](../devices/concept-azure-ad-join.md) , требуется Windows 10 версии 1903 или более поздней. | X |   |
+| Для WebAuthN требуется Windows 10 версии 1903 или более поздней. | X | X |
+| Для [устройств, присоединенных к Azure AD](../devices/concept-azure-ad-join.md) , требуется Windows 10 версии 1909 или более поздней. | X |   |
 | Для [гибридных устройств, присоединенных к Azure AD](../devices/concept-azure-ad-join-hybrid.md) , требуется Windows 10 версии 2004 или более поздней. |   | X |
 | Полностью исправленные контроллеры домена Windows Server 2016/2019. |   | X |
 | [Azure AD Connect](../hybrid/how-to-connect-install-roadmap.md#install-azure-ad-connect) версии 1.4.32.0 или более поздней |   | X |
@@ -56,7 +56,7 @@ ms.locfileid: "88717971"
 
 ## <a name="prepare-devices-for-preview"></a>Подготовка устройств для предварительной версии
 
-Устройства, присоединенные к Azure AD, пилотные при предварительной версии функции, должны работать под управлением Windows 10 версии 1809 или более поздней. В Windows 10 версии 1903 или более поздней.
+Устройства, присоединенные к Azure AD, пилотные при предварительной версии функции, должны работать под управлением Windows 10 версии 1909 или более поздней.
 
 Гибридные устройства, присоединенные к Azure AD, должны работать под управлением Windows 10 версии 2004 или более поздней.
 
@@ -125,7 +125,7 @@ ms.locfileid: "88717971"
 1. Чтобы применить созданный пакет подготовки, см. статью [Применение пакета подготовки](/windows/configuration/provisioning-packages/provisioning-apply-package).
 
 > [!NOTE]
-> Устройства под управлением Windows 10 версии 1809 также должны включать режим общего компьютера (*енаблешаредпкмоде*). Дополнительные сведения о включении этой функции см. в разделе [Настройка общего или ГОСТЕВОГО компьютера с Windows 10](/windows/configuration/set-up-shared-or-guest-pc).
+> Устройства под управлением Windows 10 версии 1903 также должны включать режим общего компьютера (*енаблешаредпкмоде*). Дополнительные сведения о включении этой функции см. в разделе [Настройка общего или ГОСТЕВОГО компьютера с Windows 10](/windows/configuration/set-up-shared-or-guest-pc).
 
 ### <a name="enable-with-group-policy"></a>Включить с помощью групповая политика
 
@@ -158,7 +158,7 @@ ms.locfileid: "88717971"
    - Подкатегория: FIDO
 1. Для записи журналов используйте параметр, чтобы **повторно создать мою проблему**
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 [Разрешение доступа к локальным ресурсам для Azure AD и гибридных устройств, присоединенных к Azure AD](howto-authentication-passwordless-security-key-on-premises.md)
 

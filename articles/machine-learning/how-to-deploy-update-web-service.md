@@ -1,22 +1,25 @@
 ---
-title: Обновление развернутой WebService
-author: gvashishtha
+title: Обновление веб-служб
+titleSuffix: Azure Machine Learning
+description: Узнайте, как обновить веб-службу, которая уже развернута в Машинное обучение Azure
 ms.service: machine-learning
+ms.subservice: core
 ms.topic: conceptual
-ms.date: 07/31/2020
 ms.author: gopalv
-ms.openlocfilehash: 354d9b84c614447b6a957a6dba65984f4c97cac3
-ms.sourcegitcommit: 3be3537ead3388a6810410dfbfe19fc210f89fec
+author: gvashishtha
+ms.date: 07/31/2020
+ms.openlocfilehash: 52d7c42701e20c16272843a50c6c45847545d747
+ms.sourcegitcommit: 03662d76a816e98cfc85462cbe9705f6890ed638
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89645967"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90525173"
 ---
 # <a name="update-a-deployed-web-service"></a>Обновление развернутой веб-службы
 
-В этой статье показано, как развернуть веб-службу, развернутую с помощью Машинное обучение Azure.
+Из этой статьи вы узнаете, как обновить веб-службу, развернутую с помощью Машинное обучение Azure.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Предварительные условия
 
 В этом учебнике предполагается, что вы уже развернули веб-службу с Машинное обучение Azure. Если вам нужно узнать, как развернуть веб-службу, [выполните следующие действия](how-to-deploy-and-where.md).
 
@@ -83,7 +86,7 @@ az ml service update -n myservice --model-metadata-file modelinfo.json
 
 Дополнительные сведения см. в документации по [AZ ML Service Update](https://docs.microsoft.com/cli/azure/ext/azure-cli-ml/ml/service?view=azure-cli-latest#ext-azure-cli-ml-az-ml-service-update) .
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * [Устранение неполадок при развертывании](how-to-troubleshoot-deployment.md)
 * [развертывание в Службе Azure Kubernetes](how-to-deploy-azure-kubernetes-service.md).

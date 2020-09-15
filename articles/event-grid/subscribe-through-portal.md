@@ -3,12 +3,12 @@ title: Подписки на службу "Сетка событий Azure" че
 description: В этой статье описывается, как создать подписки на сетку событий для поддерживаемых источников, таких как хранилище BLOB-объектов Azure, с помощью портал Azure.
 ms.topic: conceptual
 ms.date: 07/07/2020
-ms.openlocfilehash: 2890f57e50e508f85579a2b1198de536fa9a9013
-ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
+ms.openlocfilehash: acbf83d6df0c7d74da5e561d98d0c3df23d5fbd5
+ms.sourcegitcommit: 03662d76a816e98cfc85462cbe9705f6890ed638
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86119996"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90526465"
 ---
 # <a name="subscribe-to-events-through-portal"></a>Подписка на события через портал
 
@@ -18,13 +18,13 @@ ms.locfileid: "86119996"
 
 Чтобы создать подписку на службу "Сетка событий" для любых из поддерживаемых [источников событий](overview.md#event-sources), выполните следующие действия. Эта статья показывает, как создать подписку на службу "Сетка событий" в подписке Azure.
 
-1. Выбор пункта **Все службы**.
+1. Выберите элемент **Все службы**.
 
    ![Выбор всех служб](./media/subscribe-through-portal/select-all-services.png)
 
 1. Выполните поиск по словосочетанию **подписки на Сетку событий** и выберите ее из доступных вариантов.
 
-   ![Поиск](./media/subscribe-through-portal/search.png)
+   ![Снимок экрана показывает Поиск в портал Azure с выбранными подписками на сетку событий.](./media/subscribe-through-portal/search.png)
 
 1. Выберите **+ Event Subscription** (+ Подписка на события).
 
@@ -60,7 +60,7 @@ ms.locfileid: "86119996"
 
 Портал предоставляет параметры для создания подписки на события, относящиеся к этому источнику.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * См. дополнительные сведения о [доставке сообщений и повторных попытках в Сетке событий](delivery-and-retry.md).
 * Общие сведения о службе "Сетка событий" см. в разделе [Общие сведения о службе "Сетка событий Azure"](overview.md).

@@ -1,6 +1,6 @@
 ---
 title: Создание фильтров с помощью служб мультимедиа Azure v3 REST API
-description: В этом разделе описывается создание фильтров, с помощью которых клиент может передавать определенные секции потока. Для достижения такой выборочной потоковой передачи службы мультимедиа создают динамические манифесты.
+description: В этом разделе описывается создание фильтров, с помощью которых клиент может передавать определенные секции потока. Службы мультимедиа v3 REST API создают динамические манифесты для реализации этой выборочной потоковой передачи.
 services: media-services
 documentationcenter: ''
 author: IngridAtMicrosoft
@@ -13,12 +13,12 @@ ms.devlang: ne
 ms.topic: how-to
 ms.date: 08/31/2020
 ms.author: inhenkel
-ms.openlocfilehash: f234c3e221c947443869d8ab472dc60ddf7317ea
-ms.sourcegitcommit: 58d3b3314df4ba3cabd4d4a6016b22fa5264f05a
+ms.openlocfilehash: c1d7bf933b487c40d571f1912341b5ef771e4e67
+ms.sourcegitcommit: 03662d76a816e98cfc85462cbe9705f6890ed638
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89297294"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90527332"
 ---
 # <a name="creating-filters-with-media-services-rest-api"></a>Создание фильтров с помощью REST API Служб мультимедиа
 
@@ -33,7 +33,7 @@ ms.locfileid: "89297294"
 > [!NOTE]
 > Обязательно ознакомьтесь с [пресентатионтимеранже](filters-concept.md#presentationtimerange).
 
-## <a name="prerequisites"></a>Предварительные требования 
+## <a name="prerequisites"></a>Предварительные условия 
 
 Чтобы выполнить действия, описанные в этом разделе, необходимо сделать следующее:
 
@@ -137,6 +137,6 @@ PUT https://management.azure.com/subscriptions/{subscriptionId}/resourceGroups/{
 |MPEG DASH|`https://amsv3account-usw22.streaming.media.azure.net/fecebb23-46f6-490d-8b70-203e86b0df58/bigbuckbunny.ism/manifest(format=mpd-time-csf,filter=myAssetFilter)`|
 |Smooth Streaming|`https://amsv3account-usw22.streaming.media.azure.net/fecebb23-46f6-490d-8b70-203e86b0df58/bigbuckbunny.ism/manifest(filter=myAssetFilter)`|
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 [Потоковая передача видео](stream-files-tutorial-with-rest.md) 

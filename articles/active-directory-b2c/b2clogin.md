@@ -11,16 +11,16 @@ ms.topic: how-to
 ms.date: 07/17/2020
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: 79807e8e0f798a73063576a00b8d0c32cdfe5a4b
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 53d41b5024b29a8c6c394d65a3ce36f8bb878fc2
+ms.sourcegitcommit: 03662d76a816e98cfc85462cbe9705f6890ed638
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87005350"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90524986"
 ---
 # <a name="set-redirect-urls-to-b2clogincom-for-azure-active-directory-b2c"></a>Установка b2clogin.com в качестве URL-адреса перенаправления для Azure Active Directory B2C
 
-При настройке поставщика удостоверений для регистрации и входа в приложение Azure Active Directory B2C (Azure AD B2C) необходимо указать URL-адрес перенаправления. Больше не следует ссылаться на *Login.microsoftonline.com* в приложениях и API. Вместо этого используйте *b2clogin.com* для всех новых приложений и перенесите существующие приложения из *Login.microsoftonline.com* в *b2clogin.com*.
+При настройке поставщика удостоверений для регистрации и входа в приложение Azure Active Directory B2C (Azure AD B2C) необходимо указать URL-адрес перенаправления. Больше не следует ссылаться на *Login.microsoftonline.com* в приложениях и API для проверки подлинности пользователей с помощью Azure AD B2C. Вместо этого используйте *b2clogin.com* для всех новых приложений и перенесите существующие приложения из *Login.microsoftonline.com* в *b2clogin.com*.
 
 ## <a name="deprecation-of-loginmicrosoftonlinecom"></a>Нерекомендуемость login.microsoftonline.com
 
@@ -31,6 +31,23 @@ ms.locfileid: "87005350"
 Прекращение использования login.microsoftonline.com действует для всех клиентов Azure AD B2C на 04 декабря 2020, предоставляя существующие клиенты в один (1) год для миграции на b2clogin.com. Новые клиенты, созданные после 04 декабря 2019, не будут принимать запросы от login.microsoftonline.com. Все функциональные возможности остаются неизменными в конечной точке b2clogin.com.
 
 Нерекомендуемое значение login.microsoftonline.com не влияет на Azure Active Directory клиентов. Это изменение затрагивает только Azure Active Directory B2C клиентов.
+
+## <a name="what-endpoints-does-this-apply-to"></a>Какие конечные точки применяются к
+Переход на b2clogin.com применяется только к конечным точкам проверки подлинности, которые используют политики Azure AD B2C (потоки пользователей или пользовательские политики) для проверки подлинности пользователей. Эти конечные точки имеют `<policy-name>` параметр, указывающий политику, которую Azure AD B2C следует использовать. Дополнительные [сведения о политиках Azure AD B2C](technical-overview.md#identity-experiences-user-flows-or-custom-policies). 
+
+Эти конечные точки могут выглядеть следующим образом:
+- <code>https://login.microsoft.com/\<tenant-name\>.onmicrosoft.com/<b>\<policy-name\></b>/oauth2/v2.0/authorize</code>
+
+- <code>https://login.microsoft.com/\<tenant-name\>.onmicrosoft.com/<b>\<policy-name\></b>/oauth2/v2.0/token</code>
+
+Кроме того, `<policy-name>` может передаваться как параметр запроса:
+- <code>https://login.microsoft.com/\<tenant-name\>.onmicrosoft.com/oauth2/v2.0/authorize?<b>p=\<policy-name\></b></code>
+- <code>https://login.microsoft.com/\<tenant-name\>.onmicrosoft.com/oauth2/v2.0/token?<b>p=\<policy-name\></b></code>
+
+> [!IMPORTANT]
+> Необходимо обновить конечные точки, использующие параметр "Policy", а также [URL-адреса перенаправления поставщика удостоверений](#change-identity-provider-redirect-urls).
+
+Некоторые Azure AD B2C клиенты используют общие возможности корпоративных клиентов Azure AD, такие как учетные данные клиента OAuth 2,0. Доступ к этим функциям осуществляется с помощью конечных точек login.microsoftonline.com Azure AD, *которые не содержат параметр политики*. __Эти конечные точки не затрагиваются__.
 
 ## <a name="benefits-of-b2clogincom"></a>Преимущества b2clogin.com
 
@@ -45,8 +62,15 @@ ms.locfileid: "87005350"
 Существует несколько изменений, которые может потребоваться выполнить для переноса приложений в *b2clogin.com*:
 
 * Измените URL-адрес перенаправления в приложениях поставщика удостоверений, чтобы он ссылался на *b2clogin.com*.
-* Обновите приложения Azure AD B2C, чтобы использовать *b2clogin.com* в своих потоках пользователей и ссылках на конечные точки маркеров.
+* Обновите приложения Azure AD B2C, чтобы использовать *b2clogin.com* в своих потоках пользователей и ссылках на конечные точки маркеров. Это может быть обновление использования библиотеки проверки подлинности, такой как библиотека проверки подлинности Майкрософт (MSAL).
 * Обновите все **Разрешенные источники** , определенные в параметрах CORS для [настройки пользовательского интерфейса](custom-policy-ui-customization.md).
+
+Старая конечная точка может выглядеть следующим образом:
+- <b><code>https://login.microsoft.com/</b>\<tenant-name\>.onmicrosoft.com/\<policy-name\>/oauth2/v2.0/authorize</code>
+
+Соответствующая обновленная конечная точка будет выглядеть следующим образом:
+- <code><b>https://\<tenant-name\>.b2clogin.com/</b>\<tenant-name\>.onmicrosoft.com/\<policy-name\>/oauth2/v2.0/authorize</code>
+
 
 ## <a name="change-identity-provider-redirect-urls"></a>Изменение URL-адресов перенаправления поставщика удостоверений
 
@@ -58,7 +82,7 @@ ms.locfileid: "87005350"
 https://{your-tenant-name}.b2clogin.com/{your-tenant-id}/oauth2/authresp
 ```
 
-Во втором варианте используется доменное имя клиента в формате `your-tenant-name.onmicrosoft.com` . Например.
+Во втором варианте используется доменное имя клиента в формате `your-tenant-name.onmicrosoft.com` . Пример:
 
 ```
 https://{your-tenant-name}.b2clogin.com/{your-tenant-name}.onmicrosoft.com/oauth2/authresp
@@ -129,7 +153,7 @@ this.clientApplication = new UserAgentApplication(
 );
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Сведения о миграции веб-приложений на основе OWIN в b2clogin.com см. в статье [Миграция веб-API на основе OWIN в b2clogin.com](multiple-token-endpoints.md).
 

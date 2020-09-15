@@ -3,12 +3,12 @@ title: Создание настраиваемой роли Azure Resource Manag
 description: В этой статье содержатся инструкции по созданию настраиваемой роли Azure Resource Manager и назначению субъекту-службе для службы Live Video Analytics на IoT Edge с помощью Azure CLI.
 ms.topic: how-to
 ms.date: 05/27/2020
-ms.openlocfilehash: eb4c9a1f90ab50f7070184fc9a394d9e6edb833a
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: a780ecbbf2530b15984c596281c4aa7e4f5dd520
+ms.sourcegitcommit: 03662d76a816e98cfc85462cbe9705f6890ed638
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87043167"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90526584"
 ---
 # <a name="create-custom-azure-resource-manager-role-and-assign-to-service-principal"></a>Создание настраиваемой роли Azure Resource Manager и назначение ее субъекту-службе
 
@@ -16,7 +16,7 @@ ms.locfileid: "87043167"
 
 В этой статье описаны действия по созданию пользовательской роли Azure Resource Manager с Azure Cloud Shell, которая затем используется для создания субъекта-службы.
 
-## <a name="prerequisites"></a>Обязательные условия  
+## <a name="prerequisites"></a>Предварительные условия  
 
 Ниже приведены необходимые условия для этой статьи.
 
@@ -43,7 +43,7 @@ ms.locfileid: "87043167"
 1. Перейдите к [Cloud Shell](https://shell.azure.com/).
 1. Выберите "bash" в качестве среды в раскрывающемся списке в левой части окна оболочки.
 
-    ![Bash](./media/create-custom-azure-resource-manager-role-how-to/bash.png)
+    ![На снимках экрана показана bash, выбранная из окна оболочки.](./media/create-custom-azure-resource-manager-role-how-to/bash.png)
 1. Задайте подписку Azure в качестве учетной записи по умолчанию, используя следующий шаблон команды:
     
     ```
@@ -163,7 +163,7 @@ az ad sp show --id "<appId>" | Select-String "objectId"
 ```
 
 > [!NOTE]
-> `<appId>`можно получить из выходных данных шага [создания субъекта-службы](#create-service-principal) .
+> `<appId>` можно получить из выходных данных шага [создания субъекта-службы](#create-service-principal) .
 
 Приведенная выше команда выведет на печать идентификатор objectId субъекта-службы. 
 
@@ -234,7 +234,7 @@ az role assignment list  --assignee < objectId>
 
 1. Вход с использованием субъекта-службы. Для этого нам потребуется 3 части информации для Azure Active Directory предоставить нам соответствующий маркер доступа, который можно получить из выходных данных шага [создания субъекта-службы](#create-service-principal) :
     1. аадклиентид 
-    1. аадсекрет
+    1. AadSecret
     1. AADTenantId
 1. Теперь попробуйте выполнить вход с помощью шаблона команды ниже:
     
@@ -253,12 +253,12 @@ az role assignment list  --assignee < objectId>
     The client '<AadClientId>' with object id '<AadClientId>' does not have authorization to perform action 'Microsoft.Resources/subscriptions/resourcegroups/write' over scope '/subscriptions/<yourSubscriptionId>/resourcegroups/testresourcegroup' or the scope is invalid. If access was recently granted, please refresh your credentials.
     ```
 
-## <a name="next-steps"></a>Дальнейшие действия  
+## <a name="next-steps"></a>Дальнейшие шаги  
 
 Обратите внимание на следующие значения из этой статьи. Эти значения будут необходимы для настройки свойств двойника в модуле Live Video Analytics для IoT Edge модуля. см. раздел [ДВОЙНИКА JSON Schema](module-twin-configuration-schema.md).
 
 | Переменная из этой статьи|Имя свойства двойника для функции Live Video Analytics на IoT Edge|
 |---|---|
-|аадсекрет |    аадсервицепринЦипалпассворд|
+|AadSecret |    аадсервицепринЦипалпассворд|
 |AADTenantId |  Aadtenantid и|
-|аадклиентид    |аадсервицепринЦипалаппид|
+|AadClientId    |аадсервицепринЦипалаппид|
