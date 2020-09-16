@@ -9,12 +9,12 @@ ms.subservice: general
 ms.topic: how-to
 ms.date: 08/11/2020
 ms.author: sudbalas
-ms.openlocfilehash: 247f37a69cd8524339a3f5414230cca0f42fa22d
-ms.sourcegitcommit: f8d2ae6f91be1ab0bc91ee45c379811905185d07
+ms.openlocfilehash: da821da08594180b9dd94728252e1a43c04fbde2
+ms.sourcegitcommit: 03662d76a816e98cfc85462cbe9705f6890ed638
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89662039"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90531667"
 ---
 # <a name="how-to-use-key-vault-soft-delete-with-cli"></a>Как использовать обратимое удаление в Key Vault с помощью интерфейса командной строки
 
@@ -39,7 +39,7 @@ ms.locfileid: "89662039"
 |Recover|Восстанавливает удаленное хранилище ключей.|Microsoft.KeyVault/vaults/write|
 |Purge|Окончательно удаляет удаленное хранилище ключей и все его содержимое.|Microsoft.KeyVault/locations/deletedVaults/purge/action|
 
-Дополнительные сведения о разрешениях и управлении доступом см. в статье [Безопасный доступ к хранилищу ключей](secure-your-key-vault.md).
+Дополнительные сведения о разрешениях и управлении доступом см. в разделе [Защита хранилища ключей](secure-your-key-vault.md).
 
 ## <a name="enabling-soft-delete"></a>Включение обратимого удаления
 
@@ -241,6 +241,6 @@ az keyvault update --name ContosoVault --resource-group ContosoRG --enable-purge
 
 ## <a name="other-resources"></a>Другие ресурсы
 
-- Обзор функции обратимого удаления Key Vault см. в статье [Общие сведения об обратимом удалении в Azure Key Vault](soft-delete-overview.md).
-- Общие сведения об использовании Azure Key Vault см. в [этой статье](overview.md).
+- Обзор функции обратимого удаления Key Vault см. в разделе [Общие сведения об обратимом удалении в Azure Key Vault](soft-delete-overview.md).
+- См. статью [Об Azure Key Vault](overview.md).
 

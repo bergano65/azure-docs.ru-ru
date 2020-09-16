@@ -9,14 +9,14 @@ ms.author: mbaldwin
 manager: rkarlin
 ms.date: 09/10/2019
 ms.custom: devx-track-csharp
-ms.openlocfilehash: afe7d5ce3dd1756ddb9e33fe402fb2eb699ce8f7
-ms.sourcegitcommit: 3c66bfd9c36cd204c299ed43b67de0ec08a7b968
+ms.openlocfilehash: 0f81ffb5279e10c71f7d7cccfb6b738bc12e5cf4
+ms.sourcegitcommit: 07166a1ff8bd23f5e1c49d4fd12badbca5ebd19c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "90007423"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90086782"
 ---
-# <a name="fetch-shared-access-signature-tokens-in-code"></a>Получение маркеров подписанного URL-адреса в коде
+# <a name="create-sas-definition-and-fetch-shared-access-signature-tokens-in-code"></a>Создание определения SAS и получение маркеров SAS в коде
 
 Вы можете управлять учетной записью хранения с помощью маркеров подписанного URL-адреса (SAS), хранящихся в хранилище ключей. Дополнительные сведения см. в статье [Предоставление ограниченного доступа к ресурсам службы хранилища Azure с помощью подписанных URL-адресов (SAS)](../../storage/common/storage-sas-overview.md).
 
@@ -41,9 +41,9 @@ ms.locfileid: "90007423"
 
 Если срок действия маркера подписанного URL-адреса истекает, можно снова получить тот же секрет, чтобы создать новый.
 
+Сведения об использовании полученных данных из маркера SAS Key Vault для доступа к службам хранилища Azure см. в разделе [Использование SAS учетной записи из клиента](https://docs.microsoft.com/azure/storage/common/storage-account-sas-create-dotnet#use-an-account-sas-from-a-client).
+
 ## <a name="next-steps"></a>Дальнейшие действия
 - [Предоставление ограниченного доступа к ресурсам службы хранилища Azure с помощью подписанных URL-адресов (SAS)](../../storage/common/storage-sas-overview.md)
 - Управление ключами учетной записи хранения с помощью [Key Vault и Azure CLI](overview-storage-keys.md) или с помощью [Key Vault и Azure PowerShell](overview-storage-keys-powershell.md)
-- См. [полный пример ShareLink](https://docs.microsoft.com/samples/azure/azure-sdk-for-net/share-link/).
-- См. [дополнительные примеры для Key Vault](https://docs.microsoft.com/samples/browse/?expanded=azure&products=azure-key-vault).
 - [Примеры ключей управляемой учетной записи хранения](https://github.com/Azure-Samples?utf8=%E2%9C%93&q=key+vault+storage&type=&language=)

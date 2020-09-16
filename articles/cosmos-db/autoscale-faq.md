@@ -6,12 +6,12 @@ ms.author: dech
 ms.service: cosmos-db
 ms.topic: conceptual
 ms.date: 05/10/2020
-ms.openlocfilehash: ca4e79977132586c619f323015f9d915e04707f1
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 0e6a502ae7ed71beaeefe603e0810264e62187ba
+ms.sourcegitcommit: 7374b41bb1469f2e3ef119ffaf735f03f5fad484
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84449521"
+ms.lasthandoff: 09/16/2020
+ms.locfileid: "90708008"
 ---
 # <a name="frequently-asked-questions-about-autoscale-provisioned-throughput-in-azure-cosmos-db"></a>Часто задаваемые вопросы об автомасштабировании подготовленной пропускной способности в Azure Cosmos DB
 
@@ -27,7 +27,7 @@ ms.locfileid: "84449521"
 
 Например, если ранее был выбран уровень с масштабированием от 400 и 4000 ЕЗ/с, то теперь база данных или контейнер будут показывать максимальную пропускную способность 4000 ЕЗ/с, что соответствует масштабированию от 400 до 4000 ЕЗ/с. Это максимальное значение EЗ/с можно изменить на любое пользовательское значение, соответствующее вашей рабочей нагрузке. 
 
-### <a name="how-quickly-will-autoscale-scale-up-and-down-based-on-spikes-in-traffic"></a>Как быстро автомасштабирование реагирует на пики трафика?
+### <a name="how-quickly-will-autoscale-scale-up-based-on-spikes-in-traffic"></a>Насколько быстро автоматически масштабируется масштаб в зависимости от пиков трафика?
 При использовании автомасштабирования система масштабирует пропускную способность (ЕЗ/с) `T` в диапазоне от `0.1 * Tmax` до `Tmax` в зависимости от входящего трафика. Поскольку масштабирование происходит автоматически и мгновенно, выполнение всех запросов в пределах подготовленной пропускной способности `Tmax` осуществляется без задержки. 
 
 ### <a name="how-do-i-determine-what-rus-the-system-is-currently-scaled-to"></a>Как определить, до какого уровня EЗ/c масштабирована система в текущий момент?

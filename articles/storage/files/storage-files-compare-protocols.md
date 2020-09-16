@@ -8,12 +8,12 @@ ms.date: 09/15/2020
 ms.author: rogarana
 ms.subservice: files
 ms.custom: references_regions
-ms.openlocfilehash: 90d51d7eb5425530ebad0fc9ac66ba2c95776076
-ms.sourcegitcommit: 6e1124fc25c3ddb3053b482b0ed33900f46464b3
+ms.openlocfilehash: 8082e694c4282759c9c38560c14eb3659fcd55ec
+ms.sourcegitcommit: 7374b41bb1469f2e3ef119ffaf735f03f5fad484
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90564975"
+ms.lasthandoff: 09/16/2020
+ms.locfileid: "90708144"
 ---
 # <a name="azure-file-share-protocols"></a>Протоколы файловых ресурсов Azure
 
@@ -55,7 +55,7 @@ ms.locfileid: "90564975"
 Служба NFS с файлами Azure идеально подходит для:
 
 - Рабочие нагрузки, требующие POSIX-совместимых файловых ресурсов, учет регистра или разрешений в стиле UNIX (UID/GID).
-- Рабочие нагрузки Linux, для которых не требуется доступ к SMB.
+- Рабочие нагрузки Linux, для которых не требуется доступ к Windows.
 
 ### <a name="security"></a>Безопасность
 

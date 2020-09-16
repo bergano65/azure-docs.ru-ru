@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 02/20/2019
 ms.author: spelluru
 ms.custom: include file
-ms.openlocfilehash: dc80141d796b66dd7e610342166f7b88df58f530
-ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
-ms.translationtype: MT
+ms.openlocfilehash: d2c309340155bc626d4da94d74aee9be51bde510
+ms.sourcegitcommit: 6e1124fc25c3ddb3053b482b0ed33900f46464b3
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "75927775"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90606591"
 ---
 ## <a name="create-a-namespace-in-the-azure-portal"></a>Создание пространства имен на портале Azure
 Чтобы приступить к использованию сущностей обмена сообщениями в служебной шине в Azure, сначала необходимо создать пространство имен с уникальным для Azure именем. Пространство имен предоставляет контейнер для адресации ресурсов служебной шины в вашем приложении.
@@ -53,10 +53,10 @@ ms.locfileid: "75927775"
 2. В окне пространства имен щелкните **Политики общего доступа**.
 3. В окне **Политики общего доступа** щелкните **RootManageSharedAccessKey**.
    
-    ![Сведения о подключении](./media/service-bus-create-namespace-portal/connection-info.png)
+    ![Снимок экрана: окно "Политики общего доступа" с выделенной политикой.](./media/service-bus-create-namespace-portal/connection-info.png)
 4. В окне **Policy: RootManageSharedAccessKey** (Политика: RootManageSharedAccessKey) нажмите кнопку копирования рядом с полем **Первичная строка подключения**, чтобы скопировать строку подключения в буфер обмена для последующего использования. Вставьте на время эти значения в Блокноте или любом другом месте.
    
-    ![Строка подключения](./media/service-bus-create-namespace-portal/connection-string.png)
+    ![Снимок экрана: политика SAS с именем RootManageSharedAccessKey, которая содержит ключи и строки подключения.](./media/service-bus-create-namespace-portal/connection-string.png)
 5. Повторите предыдущий шаг, скопировав и вставив значение **первичного ключа** во временное расположение для последующего использования.
 
 <!--Image references-->

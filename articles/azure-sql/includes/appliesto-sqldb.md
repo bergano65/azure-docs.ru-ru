@@ -1,9 +1,9 @@
 ---
-ms.openlocfilehash: f952bfb7cdda4629a4dc50723efb5e6e2bf22eb2
-ms.sourcegitcommit: 62717591c3ab871365a783b7221851758f4ec9a4
+ms.openlocfilehash: c3dbc32475eb6ee53ae716369f81290fc6fbcf93
+ms.sourcegitcommit: 03662d76a816e98cfc85462cbe9705f6890ed638
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/22/2020
-ms.locfileid: "86504342"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90533389"
 ---
-<Token>**ОБЛАСТЬ ПРИМЕНЕНИЯ:** ![да](../media/applies-to/yes.png)База данных SQL Azure</Token> 
+<Token>**ОБЛАСТЬ ПРИМЕНЕНИЯ:** :::image type="icon" source="../media/applies-to/yes.png" border="false":::База данных SQL Azure </Token> 
