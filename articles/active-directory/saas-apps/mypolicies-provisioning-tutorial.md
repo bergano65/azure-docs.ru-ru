@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: article
 ms.date: 07/26/2019
 ms.author: zhchia
-ms.openlocfilehash: ea9a0e52ce424459b6c402eb136d06dd370bab7d
-ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
+ms.openlocfilehash: fe85dfb39a9787376221cb9beeea11bec35293f4
+ms.sourcegitcommit: 80b9c8ef63cc75b226db5513ad81368b8ab28a28
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88548053"
+ms.lasthandoff: 09/16/2020
+ms.locfileid: "90604467"
 ---
 # <a name="tutorial-configure-mypolicies-for-automatic-user-provisioning"></a>Учебник. Настройка myPolicies для автоматической подготовки пользователей
 
@@ -101,7 +101,7 @@ ms.locfileid: "88548053"
 
 4. Для параметра **Режим подготовки к работе** выберите значение **Automatic** (Автоматически).
 
-    ![Вкладка "Подготовка"](common/provisioning-automatic.png)
+    ![Автоматическая вкладка подготовки](common/provisioning-automatic.png)
 
 5. В разделе **учетные данные администратора** введите `https://<myPoliciesCustomDomain>.mypolicies.com/scim` **URL-адрес клиента** , где `<myPoliciesCustomDomain>` — это пользовательский домен myPolicies. Вы можете получить домен клиента myPolicies из URL-адреса.
 Пример: `<demo0-qa>` . mypolicies.com.
@@ -122,7 +122,18 @@ ms.locfileid: "88548053"
 
 10. Проверьте атрибуты пользователя, которые синхронизированы из Azure AD в myPolicies в разделе **сопоставление атрибутов** . Атрибуты, выбранные как свойства **Matching** , используются для сопоставления учетных записей пользователей в myPolicies для операций обновления. Нажмите кнопку **Сохранить**, чтобы зафиксировать все изменения.
 
-    ![Сопоставления пользователей myPolicies](media/mypolicies-provisioning-tutorial/userattribute.png)
+   |attribute|Тип|
+   |---|---|
+   |userName|Строка|
+   |active|Логическое|
+   |emails[type eq "work"].value|Строка|
+   |name.givenName|Строка|
+   |name.familyName|Строка|
+   |name.formatted|Строка|
+   |externalId|Строка|
+   |addresses[type eq "work"].country|Строка|
+   |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:manager|Справочник|
+
 
 11. Чтобы настроить фильтры области, ознакомьтесь со следующими инструкциями, предоставленными в [руководстве по фильтрам области](../app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 
@@ -146,6 +157,10 @@ ms.locfileid: "88548053"
 
 * myPolicies всегда требует **имя пользователя**, **адрес электронной почты** и **externalId**.
 * myPolicies не поддерживает жесткие удаления для атрибутов пользователей.
+
+## <a name="change-log"></a>Журнал изменений
+
+* 09/15/2020 — добавлена поддержка атрибута Country для пользователей.
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

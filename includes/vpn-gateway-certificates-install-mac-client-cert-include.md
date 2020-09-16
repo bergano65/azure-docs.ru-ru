@@ -1,5 +1,5 @@
 ---
-title: Включить имя файла
+title: включить файл
 description: включить файл
 services: vpn-gateway
 author: cherylmc
@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 03/21/2018
 ms.author: cherylmc
 ms.custom: include file
-ms.openlocfilehash: b214932f43ce20480ee37a7b4edf942f080b38e8
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: ce39e23208398f6060103345a6c6cb3541834abc
+ms.sourcegitcommit: 6e1124fc25c3ddb3053b482b0ed33900f46464b3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "67185180"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90606599"
 ---
 При установке сертификата клиента потребуется пароль, созданный при экспорте сертификата клиента.
 
@@ -23,4 +23,4 @@ ms.locfileid: "67185180"
    ![Добавление сертификатов](./media/vpn-gateway-certificates-install-mac-client-cert-include/addcert.png)
 3. Введите пароль, созданный при экспорте сертификата клиента. Этот пароль защищает закрытый ключ сертификата. Чтобы завершить регистрацию, нажмите кнопку **ОК**.
 
-   ![Пароль](./media/vpn-gateway-certificates-install-mac-client-cert-include/password.png)
+   ![На снимке экрана отображается диалоговое окно с предложением ввести пароль.](./media/vpn-gateway-certificates-install-mac-client-cert-include/password.png)

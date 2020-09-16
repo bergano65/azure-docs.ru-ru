@@ -11,12 +11,12 @@ ms.topic: how-to
 ms.date: 02/21/2020
 ms.author: kenwith
 ms.reviewer: luleon
-ms.openlocfilehash: 763b5a9f4c471e338dd493c85ce93a67810b5134
-ms.sourcegitcommit: ac5cbef0706d9910a76e4c0841fdac3ef8ed2e82
+ms.openlocfilehash: f49377743521e27c2312e95491762ca48d8448c4
+ms.sourcegitcommit: 80b9c8ef63cc75b226db5513ad81368b8ab28a28
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/03/2020
-ms.locfileid: "89426305"
+ms.lasthandoff: 09/16/2020
+ms.locfileid: "90604331"
 ---
 # <a name="manage-user-assignment-for-an-app-in-azure-active-directory"></a>Управление назначением пользователей для приложения в Azure Active Directory
 
@@ -28,7 +28,7 @@ ms.locfileid: "89426305"
 > После назначения приложению группы, доступ будут иметь только пользователи из этой группы. Назначение не распространяется на вложенные группы.
 
 > [!NOTE]
-> Для назначения ролей на основе групп необходимо установить Azure Active Directory Premium P1 или P2. Назначение на основе группы поддерживается только для групп безопасности. Членство во вложенных группах и группы Office 365 в настоящее время не поддерживаются. Требования к лицензированию компонентов, рассматриваемых в этой статье, см. на странице [Цены на Azure Active Directory](https://azure.microsoft.com/pricing/details/active-directory). 
+> Для назначения ролей на основе групп необходимо установить Azure Active Directory Premium P1 или P2. Назначение на основе группы поддерживается только для групп безопасности. Членство в вложенных группах и группы Microsoft 365 в настоящее время не поддерживаются. Требования к лицензированию компонентов, рассматриваемых в этой статье, см. на странице [Цены на Azure Active Directory](https://azure.microsoft.com/pricing/details/active-directory). 
 
 ## <a name="configure-an-application-to-require-user-assignment"></a>Настройка приложения для требования назначения пользователей
 

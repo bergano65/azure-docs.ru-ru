@@ -6,14 +6,14 @@ services: site-recovery
 manager: rochakm
 ms.service: site-recovery
 ms.topic: conceptual
-ms.date: 03/06/2019
+ms.date: 09/15/2020
 ms.author: mayg
-ms.openlocfilehash: 281743268364b0e9d39c7bea28afc17d753db2f6
-ms.sourcegitcommit: e995f770a0182a93c4e664e60c025e5ba66d6a45
+ms.openlocfilehash: 1790ac666d77f14ccadfde56f7b86e05b2c563dd
+ms.sourcegitcommit: 80b9c8ef63cc75b226db5513ad81368b8ab28a28
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86130146"
+ms.lasthandoff: 09/16/2020
+ms.locfileid: "90604688"
 ---
 # <a name="install-a-linux-master-target-server-for-failback"></a>Установка главного целевого сервера Linux для восстановления размещения
 После отработки отказа виртуальных машин в Azure для них можно восстановить размещение на локальном сайте. Для восстановления размещения из Azure на локальном сайте необходимо повторно включить защиту виртуальной машины. Для этого понадобится локальный главный целевой сервер, который будет получать трафик. 
@@ -48,16 +48,7 @@ ms.locfileid: "86130146"
 - **Размер диска ОС**: 100 ГБ или больше (для установки ОС).
 - **Дополнительное пространство для диска хранения**: 1 TБ
 - **Ядра ЦП**: 4 ядра или больше.
-
-Поддерживаются следующие ядра Ubuntu.
-
-
-|Серии ядер  |Поддержка версий  |
-|---------|---------|
-|4.4.      |4.4.0-81-generic         |
-|4.8      |4.8.0-56-generic         |
-|4.10     |4.10.0-24-generic        |
-
+- **Ядро**: 4,16. *
 
 ## <a name="deploy-the-master-target-server"></a>Развертывание главного целевого сервера
 

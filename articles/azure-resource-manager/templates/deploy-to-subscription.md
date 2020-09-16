@@ -2,13 +2,13 @@
 title: Развертывание ресурсов в подписке
 description: В этой статье описывается создание группы ресурсов в шаблоне Azure Resource Manager. Здесь также показано, как развернуть ресурсы в области подписки Azure.
 ms.topic: conceptual
-ms.date: 09/04/2020
-ms.openlocfilehash: ef4f92d2e113e7cd393c50ba4eb8b47eb4ad9d08
-ms.sourcegitcommit: 4feb198becb7a6ff9e6b42be9185e07539022f17
+ms.date: 09/15/2020
+ms.openlocfilehash: 3889f5a06f138114dfe4511d0957558d6d803c8e
+ms.sourcegitcommit: 80b9c8ef63cc75b226db5513ad81368b8ab28a28
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/04/2020
-ms.locfileid: "89468646"
+ms.lasthandoff: 09/16/2020
+ms.locfileid: "90605181"
 ---
 # <a name="create-resource-groups-and-resources-at-the-subscription-level"></a>Создание групп ресурсов и ресурсов на уровне подписки
 
@@ -82,7 +82,7 @@ https://schema.management.azure.com/schemas/2019-04-01/deploymentParameters.json
 
 Команды, используемые для развертываний на уровне подписки, отличаются от команд для развертываний группы ресурсов.
 
-Для Azure CLI используйте [az deployment sub create](/cli/azure/deployment/sub?view=azure-cli-latest#az-deployment-sub-create). В следующем примере выполняется развертывание шаблона для создания группы ресурсов.
+Для Azure CLI используйте [az deployment sub create](/cli/azure/deployment/sub#az-deployment-sub-create). В следующем примере выполняется развертывание шаблона для создания группы ресурсов.
 
 ```azurecli-interactive
 az deployment sub create \
@@ -162,9 +162,7 @@ New-AzSubscriptionDeployment `
 
 * Функция [resourceGroup()](template-functions-resource.md#resourcegroup)**не** поддерживается.
 * Функции [reference()](template-functions-resource.md#reference) и [list()](template-functions-resource.md#list) поддерживаются.
-* Не используйте [resourceId ()](template-functions-resource.md#resourceid) , чтобы получить идентификатор ресурса для ресурсов, развернутых на уровне подписки.
-
-  Вместо этого используйте функцию [субскриптионресаурцеид ()](template-functions-resource.md#subscriptionresourceid) .
+* Не используйте [resourceId ()](template-functions-resource.md#resourceid) , чтобы получить идентификатор ресурса для ресурсов, развернутых на уровне подписки. Вместо этого используйте функцию [субскриптионресаурцеид ()](template-functions-resource.md#subscriptionresourceid) .
 
   Например, чтобы получить идентификатор ресурса для определения политики, развернутой в подписке, используйте:
 

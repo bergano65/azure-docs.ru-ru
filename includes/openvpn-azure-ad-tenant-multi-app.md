@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 05/21/2020
 ms.author: cherylmc
 ms.custom: include file
-ms.openlocfilehash: 2eb2dbc43c59f4f6301c7f5073a73462639d35b2
-ms.sourcegitcommit: a9784a3fd208f19c8814fe22da9e70fcf1da9c93
+ms.openlocfilehash: 8172e0e208d9a780c7676d7cb0e77dbc1c16f493
+ms.sourcegitcommit: 6e1124fc25c3ddb3053b482b0ed33900f46464b3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/22/2020
-ms.locfileid: "83797144"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90606734"
 ---
 ## <a name="1-create-the-azure-ad-tenant"></a><a name="tenant"></a>1. Создание клиента Azure AD
 
@@ -77,7 +77,7 @@ ms.locfileid: "83797144"
 
 6. Выберите **Принять** при появлении соответствующего запроса.
 
-    ![Принять](./media/openvpn-azure-ad-tenant-multi-app/accept.jpg)
+    ![На снимке экрана показано окно с разрешениями на сообщения, запрошенными для вашей организации, и сведениями о запросе.](./media/openvpn-azure-ad-tenant-multi-app/accept.jpg)
 
 7. В Azure AD в разделе **Корпоративные приложения** можно будет увидеть в списке **VPN Azure**.
 

@@ -1,5 +1,5 @@
 ---
-title: Включить имя файла
+title: включить файл
 description: включить файл
 services: vpn-gateway
 author: cherylmc
@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 03/12/2020
 ms.author: cherylmc
 ms.custom: include file
-ms.openlocfilehash: feaf72de1d2c578d2b2d0df9e86ec0fbe0b49445
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 594ad352d5fd8431ffaf6d681c891c967cf9d32a
+ms.sourcegitcommit: 6e1124fc25c3ddb3053b482b0ed33900f46464b3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "79371778"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90606544"
 ---
 Чтобы успешно установить туннель устройства, необходимо соблюдение следующих требований.
 
@@ -123,18 +123,18 @@ ms.locfileid: "79371778"
    PsExec64.exe Powershell for 64-bit Windows
    ```
 
-   ![powershell](./media/vpn-gateway-vwan-always-on-device/powershell.png)
+   ![На снимке экрана показано окно командной строки с командой для запуска 64-разрядной версии PowerShell.](./media/vpn-gateway-vwan-always-on-device/powershell.png)
 1. В PowerShell перейдите в папку, где находятся **devicecert.ps1** и **VPNProfile.xml** , и выполните следующую команду:
 
    ```powershell
    .\devicecert.ps1 .\VPNProfile.xml MachineCertTest
    ```
    
-   ![мачинецерттест](./media/vpn-gateway-vwan-always-on-device/machinecerttest.png)
+   ![На снимке экрана показано окно PowerShell, которое запускает Мачинецерттест с помощью скрипта девицесерт.](./media/vpn-gateway-vwan-always-on-device/machinecerttest.png)
 1. Запустите **Rasphone**.
 
-   ![Rasphone](./media/vpn-gateway-vwan-always-on-device/rasphone.png)
+   ![На снимке экрана показано диалоговое окно запуска с выбранной Rasphone.](./media/vpn-gateway-vwan-always-on-device/rasphone.png)
 1. Найдите запись **мачинецерттест** и нажмите кнопку **подключить**.
 
-   ![Подключение](./media/vpn-gateway-vwan-always-on-device/connect.png)
+   ![На снимке экрана показано диалоговое окно Сетевые подключения с выбранным Мачинецерттест и кнопкой подключиться.](./media/vpn-gateway-vwan-always-on-device/connect.png)
 1. Если подключение будет выполнено, перезагрузите компьютер. Туннель будет подключен автоматически.

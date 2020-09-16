@@ -13,12 +13,12 @@ ms.tgt_pltfrm: vm-windows-sql-server
 ms.workload: iaas-sql-server
 ms.date: 06/26/2020
 ms.author: mathoma
-ms.openlocfilehash: 8333de5b0139323b352d43a9259bde9d3b514fbe
-ms.sourcegitcommit: f845ca2f4b626ef9db73b88ca71279ac80538559
+ms.openlocfilehash: ddd6e08d9be36035b2db02ec5feb3ae4e957ec49
+ms.sourcegitcommit: 80b9c8ef63cc75b226db5513ad81368b8ab28a28
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/09/2020
-ms.locfileid: "89611790"
+ms.lasthandoff: 09/16/2020
+ms.locfileid: "90604450"
 ---
 # <a name="create-an-fci-with-azure-shared-disks-sql-server-on-azure-vms"></a>Создание FCI с общими дисками Azure (SQL Server на виртуальных машинах Azure)
 [!INCLUDE[appliesto-sqlvm](../../includes/appliesto-sqlvm.md)]
@@ -28,18 +28,18 @@ ms.locfileid: "89611790"
 Дополнительные сведения см. в обзоре [FCI с SQL Server на виртуальных машинах Azure и в](failover-cluster-instance-overview.md) разделе рекомендации по работе с [кластерами](hadr-cluster-best-practices.md). 
 
 
-## <a name="prerequisites"></a>Предварительные требования 
+## <a name="prerequisites"></a>предварительные требования 
 
 Перед выполнением инструкций, приведенных в этой статье, у вас уже должны быть:
 
 - Подписка Azure. Начните работу [бесплатно](https://azure.microsoft.com/free/). 
-- [Две или более западных виртуальных машин Windows Azure](failover-cluster-instance-prepare-vm.md) в одной и той же группе [доступности](../../../virtual-machines/linux/tutorial-availability-sets.md) и [группу размещения](../../../virtual-machines/windows/co-location.md#proximity-placement-groups), в которой группа доступности, созданная с доменом сбоя и доменом обновления, имеет значение **1**. 
+- [Две или более виртуальных машин Windows Azure](failover-cluster-instance-prepare-vm.md). Поддерживаются [наборы доступности](../../../virtual-machines/windows/tutorial-availability-sets.md) и [группы размещения](../../../virtual-machines/windows/co-location.md#proximity-placement-groups) с учетом расположения (ппгс). При использовании ППГ все узлы должны находиться в одной группе.
 - учетная запись с разрешениями на создание объектов как на виртуальных машинах Azure, так и в Active Directory;
 - Последняя версия [PowerShell](/powershell/azure/install-az-ps?view=azps-4.2.0). 
 
 
 ## <a name="add-azure-shared-disk"></a>Добавление общего диска Azure
-Развертывание управляемого SSD (цен. категория "Премиум") диска с включенным компонентом "общий диск". Задайте `maxShares` значение **2** , чтобы сделать диск общим для обоих узлов FCI. 
+Развертывание управляемого SSD (цен. категория "Премиум") диска с включенным компонентом "общий диск". Задайте `maxShares` для параметра значение **соответствует количеству узлов кластера** , чтобы сделать диск общим для всех узлов FCI. 
 
 Добавьте общий диск Azure, выполнив следующие действия. 
 
@@ -213,7 +213,7 @@ New-AzSqlVM -Name $vm.Name -ResourceGroupName $vm.ResourceGroupName -Location $v
 
 ## <a name="configure-connectivity"></a>Настройка подключения 
 
-Чтобы правильно направить трафик на текущий основной узел, настройте параметр подключения, подходящий для вашей среды. Вы можете создать [балансировщик нагрузки Azure](hadr-vnn-azure-load-balancer-configure.md) или, если вы используете SQL Server 2019 и Windows Server 2016 (или более поздней версии), вместо этого можно предварительно просмотреть функцию [имени распределенной сети](hadr-distributed-network-name-dnn-configure.md) . 
+Чтобы правильно направить трафик на текущий основной узел, настройте параметр подключения, подходящий для вашей среды. Вы можете создать [подсистему балансировки нагрузки Azure](hadr-vnn-azure-load-balancer-configure.md) или, если вы используете SQL Server 2019 Cu2 + и Windows Server 2016 (или более поздней версии), вместо этого можно предварительно просмотреть функцию [имени распределенной сети](hadr-distributed-network-name-dnn-configure.md) . 
 
 ## <a name="limitations"></a>Ограничения
 

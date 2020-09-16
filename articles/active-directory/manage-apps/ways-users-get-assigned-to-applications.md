@@ -10,12 +10,12 @@ ms.workload: identity
 ms.topic: conceptual
 ms.date: 07/11/2017
 ms.author: kenwith
-ms.openlocfilehash: 243e5ece0d0a14cb7e3ade409ee68510cef64a9c
-ms.sourcegitcommit: 5a3b9f35d47355d026ee39d398c614ca4dae51c6
+ms.openlocfilehash: 411e9a6e059075dfc2928ed09c0c604d600fd9be
+ms.sourcegitcommit: 80b9c8ef63cc75b226db5513ad81368b8ab28a28
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89397106"
+ms.lasthandoff: 09/16/2020
+ms.locfileid: "90604161"
 ---
 # <a name="understand-how-users-are-assigned-to-apps-in-azure-active-directory"></a>Узнайте, как пользователи назначаются приложениям в Azure Active Directory
 В этой статье представлены общие сведения о назначении пользователей для приложения в клиенте.
@@ -28,14 +28,14 @@ ms.locfileid: "89397106"
     * Группа, синхронизированная из локальной среды.
     * Статическая группа безопасности, созданная в облаке.
     * [Динамическая группа безопасности](https://docs.microsoft.com/azure/active-directory/active-directory-groups-dynamic-membership-azure-portal), созданная в облаке.
-    * Группа Office 365, созданная в облаке.
+    * Группа Microsoft 365, созданная в облаке
     * Группа ["Все пользователи"](https://docs.microsoft.com/azure/active-directory/active-directory-accessmanagement-dedicated-groups).
 *  Администратор включает [самостоятельный доступ к приложениям](https://docs.microsoft.com/azure/active-directory/active-directory-self-service-application-access) , позволяющий пользователю добавлять приложения с помощью функции " [Мои приложения](https://docs.microsoft.com/azure/active-directory/active-directory-saas-access-panel-introduction) " **добавить** приложение **без бизнес-утверждения** .
-*  Администратор включает [самостоятельный доступ к приложениям](https://docs.microsoft.com/azure/active-directory/active-directory-self-service-application-access) , позволяющий пользователю добавить приложение с помощью функции " **Добавление** приложения **" в "** [Мои приложения](https://docs.microsoft.com/azure/active-directory/active-directory-saas-access-panel-introduction) ".
+*  Администратор включает [самостоятельный доступ к приложениям](https://docs.microsoft.com/azure/active-directory/active-directory-self-service-application-access) , позволяющий пользователю добавлять приложения с помощью функции " [Мои приложения](https://docs.microsoft.com/azure/active-directory/active-directory-saas-access-panel-introduction) " **добавить** приложение, но только **при предыдущем утверждении от выбранного набора утверждающих бизнес-лиц**
 *  Администратор включает [самостоятельное управление группами](https://docs.microsoft.com/azure/active-directory/active-directory-accessmanagement-self-service-group-management), чтобы позволить пользователям присоединяться к группам, которым назначено приложение, **без бизнес-утверждения**.
 *  Администратор включает [самостоятельное управление группами](https://docs.microsoft.com/azure/active-directory/active-directory-accessmanagement-self-service-group-management), чтобы позволить пользователям присоединяться к группам, которым назначено приложение, только **с предварительного разрешения выбранных утверждающих лиц**.
-*  Администратор назначает пользователю лицензии напрямую для приложений Майкрософт, например [Microsoft Office 365](https://products.office.com/).
-*  Администратор назначает группе, в которую входит пользователь, лицензию на приложение Майкрософт, например [Microsoft Office 365](https://products.office.com/).
+*  Администратор назначает лицензию пользователю непосредственно для приложения первого разработчика, например [Microsoft 365](https://products.office.com/)
+*  Администратор назначает лицензию группе, членом которой является пользователь, в приложение первого разработчика, например [Microsoft 365](https://products.office.com/)
 *  [Администратор дает свое согласие на использование приложения](https://docs.microsoft.com/azure/active-directory/develop/active-directory-devhowto-multi-tenant-overview) всеми пользователями, а затем пользователь входит в это приложение.
 * Пользователь сам [дает согласие на использование приложения](https://docs.microsoft.com/azure/active-directory/develop/active-directory-devhowto-multi-tenant-overview) при входе в него.
 

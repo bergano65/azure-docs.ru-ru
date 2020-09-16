@@ -11,12 +11,12 @@ ms.topic: how-to
 ms.date: 05/19/2020
 ms.author: kenwith
 ms.reviewer: arvindh, luleon, phsignor
-ms.openlocfilehash: 0c9844d5e3f65dba5e51170367cfd16715a08883
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 433ff5498baeb4c31473e43fc4a5d24f4ba9fd1c
+ms.sourcegitcommit: 80b9c8ef63cc75b226db5513ad81368b8ab28a28
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84763471"
+ms.lasthandoff: 09/16/2020
+ms.locfileid: "90605164"
 ---
 # <a name="configure-how-end-users-consent-to-applications"></a>Настройка согласия конечных пользователей для приложений
 
@@ -32,7 +32,7 @@ ms.locfileid: "84763471"
 
 * **Отключить согласие пользователя** — пользователи не могут предоставлять приложениям разрешения. Пользователи могут входить в приложения, на которые они согласились ранее или на которые дал согласие администратор от их имени, но они не смогут согласиться на новые разрешения или приложения самостоятельно. Только пользователи, которым предоставлена роль каталога, включающая разрешение на предоставление согласия, смогут дать согласие на новые разрешения или новые приложения.
 
-* **Пользователи могут предоставлять согласие только приложениям от проверенных издателей, но давать только выбранные вами разрешения (предварительная версия)**  — все пользователи могут предоставлять согласие только приложениям, которые были опубликованы [проверенным издателем](../develop/publisher-verification-overview.md), и приложениям, зарегистрированным в вашем клиенте. Пользователи могут согласиться только на разрешения из категории "Низкое влияние".
+* **Пользователи могут предоставлять согласие только приложениям от проверенных издателей, но давать только выбранные вами разрешения (предварительная версия)**  — все пользователи могут предоставлять согласие только приложениям, которые были опубликованы [проверенным издателем](../develop/publisher-verification-overview.md), и приложениям, зарегистрированным в вашем клиенте. Пользователи могут согласиться только на те разрешения, которые классифицируются как "низкие последствия", а также называются "низким риском". Что считается низким риском для одной организации, например приложения, которое просматривает адрес электронной почты пользователей, может считаться высоким риском для другой организации. По этой причине права "низкий риск" задаются администратором клиента.
 
   Обязательно [разделите разрешения на категории](#configure-permission-classifications-preview), чтобы выбрать, какие разрешения могут предоставлять пользователи.
 
@@ -56,7 +56,7 @@ ms.locfileid: "84763471"
 
 ### <a name="configure-user-consent-settings-using-powershell"></a>Настройка параметров согласия пользователя с помощью PowerShell
 
-Вы можете использовать последний модуль предварительной версии Azure AD PowerShell, [AzureADPreview](https://docs.microsoft.com/powershell/azure/active-directory/install-adv2?view=azureadps-2.0-preview), чтобы выбрать политику согласия, определяющую согласие пользователей для приложений.
+Вы можете использовать последний модуль предварительной версии Azure AD PowerShell, [AzureADPreview](https://docs.microsoft.com/powershell/azure/active-directory/install-adv2?view=azureadps-2.0-preview&preserve-view=true), чтобы выбрать политику согласия, определяющую согласие пользователей для приложений.
 
 * **Отключить согласие пользователя**. Чтобы отключить согласие пользователя, установите пустые политики согласия, которые регулируют согласие пользователя:
 
@@ -109,7 +109,7 @@ ms.locfileid: "84763471"
 
 ### <a name="classify-permissions-using-powershell"></a>Классификация разрешений с помощью PowerShell
 
-Вы можете использовать последний модуль предварительной версии Azure AD PowerShell, [AzureADPreview](https://docs.microsoft.com/powershell/module/azuread/?view=azureadps-2.0-preview), чтобы классифицировать разрешения. Классификации разрешений настраиваются на объекте **ServicePrincipal** интерфейса API, который публикует разрешения.
+Вы можете использовать последний модуль предварительной версии Azure AD PowerShell, [AzureADPreview](https://docs.microsoft.com/powershell/module/azuread/?view=azureadps-2.0-preview&preserve-view=true), чтобы классифицировать разрешения. Классификации разрешений настраиваются на объекте **ServicePrincipal** интерфейса API, который публикует разрешения.
 
 #### <a name="to-read-the-current-permission-classifications-for-an-api"></a>Чтение текущей классификации разрешений для API:
 
@@ -196,9 +196,9 @@ ms.locfileid: "84763471"
 
 ### <a name="configure-group-owner-consent-using-powershell"></a>Настройка согласия владельца группы с помощью PowerShell
 
-Вы можете использовать модуль предварительной версии Azure AD PowerShell, [AzureADPreview](https://docs.microsoft.com/powershell/module/azuread/?view=azureadps-2.0-preview), чтобы разрешить или запретить владельцам групп предоставлять согласие приложениям, обращающимся к данным организации, для групп, которыми они владеют.
+Вы можете использовать модуль предварительной версии Azure AD PowerShell, [AzureADPreview](https://docs.microsoft.com/powershell/module/azuread/?view=azureadps-2.0-preview&preserve-view=true), чтобы разрешить или запретить владельцам групп предоставлять согласие приложениям, обращающимся к данным организации, для групп, которыми они владеют.
 
-1. Убедитесь, что используете модуль [AzureADPreview](https://docs.microsoft.com/powershell/module/azuread/?view=azureadps-2.0-preview). Этот важно, если вы установили модуль [AzureAD](https://docs.microsoft.com/powershell/module/azuread/?view=azureadps-2.0) и модуль [AzureADPreview](https://docs.microsoft.com/powershell/module/azuread/?view=azureadps-2.0-preview).
+1. Убедитесь, что используете модуль [AzureADPreview](https://docs.microsoft.com/powershell/module/azuread/?view=azureadps-2.0-preview&preserve-view=true). Этот важно, если вы установили модуль [AzureAD](https://docs.microsoft.com/powershell/module/azuread/?view=azureadps-2.0&preserve-view=true) и модуль [AzureADPreview](https://docs.microsoft.com/powershell/module/azuread/?view=azureadps-2.0-preview&preserve-view=true).
 
     ```powershell
     Remove-Module AzureAD
@@ -228,7 +228,7 @@ ms.locfileid: "84763471"
 
 1. Изучите значения параметров. Есть два значения параметров, которые определяют, какие пользователи смогут предоставлять приложению доступ к данным своей группы:
 
-    | Параметр       | Тип         | Описание  |
+    | Параметр       | Type         | Описание  |
     | ------------- | ------------ | ------------ |
     | _EnableGroupSpecificConsent_   | Логическое | Флаг, указывающий, разрешено ли владельцам групп предоставлять разрешения для конкретной группы. |
     | _ConstrainGroupSpecificConsentToMembersOfGroupId_ | Guid | Если параметр _EnableGroupSpecificConsent_ имеет значение "true", а для этого значения задан идентификатор объекта группы, члены этой группы будут иметь права на предоставление разрешений, относящихся к их группе. |
@@ -280,13 +280,13 @@ ms.locfileid: "84763471"
 
 ### <a name="disable-or-re-enable-risk-based-step-up-consent-using-powershell"></a>Отключение и повторное включение повышения уровня согласия на основе риска с помощью PowerShell
 
-Вы можете использовать модуль предварительной версии Azure AD PowerShell, [AzureADPreview](https://docs.microsoft.com/powershell/module/azuread/?view=azureadps-2.0-preview), чтобы отключить перенаправление согласия администратору в случаях, когда корпорация Майкрософт обнаружит риск, или повторно включить его, если оно было отключено.
+Вы можете использовать модуль предварительной версии Azure AD PowerShell, [AzureADPreview](https://docs.microsoft.com/powershell/module/azuread/?view=azureadps-2.0-preview&preserve-view=true), чтобы отключить перенаправление согласия администратору в случаях, когда корпорация Майкрософт обнаружит риск, или повторно включить его, если оно было отключено.
 
 Это можно сделать так же, как [вы настраивали согласие владельца группы с помощью PowerShell](#configure-group-owner-consent-using-powershell), но подставив другие значения параметров. Есть три различия: 
 
 1. Изучите значения параметров для повышения уровня согласия на основе рисков:
 
-    | Параметр       | Тип         | Описание  |
+    | Параметр       | Type         | Описание  |
     | ------------- | ------------ | ------------ |
     | _BlockUserConsentForRiskyApps_   | Логическое |  Флаг, указывающий, будет ли согласие пользователя блокироваться при обнаружении рискованного запроса. |
 

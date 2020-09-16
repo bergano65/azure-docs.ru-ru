@@ -103,9 +103,9 @@
           displayName: studio
           href: concept-designer.md
         - name: Памятка по алгоритмам
-          href: /azure/machine-learning/algorithm-cheat-sheet
+          href: algorithm-cheat-sheet.md
         - name: Выбор алгоритмов
-          href: /azure/machine-learning/how-to-select-algorithms
+          href: how-to-select-algorithms.md
     - name: Автоматическое Машинное обучение
       items:
         - name: Общие сведения об автоматизированном Машинном обучении

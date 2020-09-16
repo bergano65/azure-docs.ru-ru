@@ -7,19 +7,19 @@ ms.topic: how-to
 ms.date: 08/04/2020
 ms.author: tisande
 ms.custom: devx-track-python, devx-track-javascript, devx-track-azurecli, devx-track-csharp
-ms.openlocfilehash: 36107f69fb51e16ef8f8a6213afc9b153165ab4c
-ms.sourcegitcommit: 07166a1ff8bd23f5e1c49d4fd12badbca5ebd19c
+ms.openlocfilehash: 6a1848adfd61d9d8f6db0bb16fe75c04b4a22005
+ms.sourcegitcommit: 80b9c8ef63cc75b226db5513ad81368b8ab28a28
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90090594"
+ms.lasthandoff: 09/16/2020
+ms.locfileid: "90604280"
 ---
 # <a name="manage-indexing-policies-in-azure-cosmos-db"></a>Управление политиками индексирования в Azure Cosmos DB
 
 В Azure Cosmos DB данные индексируются с помощью приведенных ниже [политик индексирования](index-policy.md), определенных для каждого контейнера. Политика индексирования по умолчанию, задаваемая для только что созданных контейнеров, применяет диапазонные индексы для любых строк или чисел. Эту политику можно переопределить собственной политикой индексирования.
 
 > [!NOTE]
-> Метод обновления политик индексации, описанный в этой статье, применим только к API-интерфейсу SQL (Core) Azure Cosmos DB. Сведения об индексировании в [API Azure Cosmos DB для MongoDB](mongodb-indexing.md).
+> Метод обновления политик индексации, описанный в этой статье, применим только к API-интерфейсу SQL (Core) Azure Cosmos DB. Сведения об индексировании в [API Azure Cosmos DB для MongoDB](mongodb-indexing.md) и [дополнительного индексирования в Azure Cosmos DB API Cassandra.](cassandra-secondary-index.md)
 
 ## <a name="indexing-policy-examples"></a>Примеры политик индексирования
 
@@ -750,7 +750,7 @@ response = database_client.replace_container(container_client, container['partit
 ```
 ---
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения об индексировании см. по следующим ссылкам:
 

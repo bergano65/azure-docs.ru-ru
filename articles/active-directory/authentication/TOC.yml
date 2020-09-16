@@ -21,7 +21,19 @@
   expanded: true
   items:
     - name: Методы проверки подлинности
-      href: concept-authentication-methods.md
+      items:
+        - name: Обзор
+          href: concept-authentication-methods.md
+        - name: Приложение Microsoft Authenticator
+          href: concept-authentication-authenticator-app.md
+        - name: OATH-токены
+          href: concept-authentication-oath-tokens.md
+        - name: Вход без пароля
+          href: concept-authentication-passwordless.md
+        - name: Параметры телефона
+          href: concept-authentication-phone-options.md
+        - name: Контрольные вопросы
+          href: concept-authentication-security-questions.md
     - name: Самостоятельный сброс пароля
       items:
         - name: Принцип действия сброса пароля
@@ -46,8 +58,6 @@
           href: /office365/admin/security-and-compliance/set-up-multi-factor-authentication?view=o365-worldwide
         - name: ВОПРОСЫ И ОТВЕТЫ
           href: multi-factor-authentication-faq.md
-    - name: Проверка подлинности без пароля
-      href: concept-authentication-passwordless.md
     - name: Защита пароля
       items:
         - name: Исключение ненадежных паролей в облаке

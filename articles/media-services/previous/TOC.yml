@@ -318,33 +318,16 @@
               href: hybrid-design-drm-sybsystem.md
             - name: Пример структуры с несколькими подсистемами DRM
               href: media-services-cenc-with-multidrm-access-control.md
-    - name: Анализ
-      href: media-services-analytics-overview.md
-      items:
-        - name: Анализ мультимедиа с помощью портала Azure
-          href: media-services-portal-analyze.md
-        - name: Обработка с помощью индексатора 2
-          href: media-services-process-content-with-indexer2.md
         - name: Обработка с помощью индексатора
           href: media-services-index-content.md
           items:
             - name: Предустановка задачи
               href: indexer-task-preset.md
-        - name: Обработка с помощью Face Detector
-          href: media-services-face-and-emotion-detection.md
-        - name: Обработка с помощью Motion Detector
-          href: media-services-motion-detection.md
         - name: Обработка с помощью Media Redactor
           href: media-services-face-redaction.md
           items:
             - name: Пошаговое руководство по Media Redactor
               href: media-services-redactor-walkthrough.md
-        - name: Обработка с помощью эскизов видео
-          href: media-services-video-summarization.md
-        - name: Обработка с помощью распознавания текста
-          href: media-services-video-optical-character-recognition.md
-        - name: Обработка с помощью Content Moderator
-          href: media-services-content-moderation.md
     - name: Настройка телеметрии
       href: media-services-telemetry-overview.md
       items:

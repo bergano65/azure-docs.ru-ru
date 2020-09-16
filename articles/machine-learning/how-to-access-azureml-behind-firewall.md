@@ -11,12 +11,12 @@ author: aashishb
 ms.reviewer: larryfr
 ms.date: 07/17/2020
 ms.custom: how-to, devx-track-python
-ms.openlocfilehash: 443649826e821014e0e9918526a363a944b5eceb
-ms.sourcegitcommit: f8d2ae6f91be1ab0bc91ee45c379811905185d07
+ms.openlocfilehash: 081c07be49178be2415edccbfc2026336eb8a8a5
+ms.sourcegitcommit: 80b9c8ef63cc75b226db5513ad81368b8ab28a28
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89660007"
+ms.lasthandoff: 09/16/2020
+ms.locfileid: "90604416"
 ---
 # <a name="use-workspace-behind-a-firewall-for-azure-machine-learning"></a>Использование рабочей области за брандмауэром для Машинное обучение Azure
 
@@ -33,6 +33,10 @@ ms.locfileid: "89660007"
 >
 > Дополнительные сведения о настройке брандмауэра Azure см. в статье [развертывание и настройка брандмауэра Azure](../firewall/tutorial-firewall-deploy-portal.md#configure-an-application-rule).
 
+## <a name="routes"></a>Маршруты
+
+При настройке исходящего маршрута для подсети, содержащей ресурсы Машинное обучение Azure, воспользуйтесь инструкциями в разделе [принудительное туннелирование](how-to-secure-training-vnet.md#forced-tunneling) для обеспечения безопасности среды обучения.
+
 ## <a name="microsoft-hosts"></a>Узлы Майкрософт
 
 Если настройка не настроена должным образом, брандмауэр может вызвать проблемы с использованием рабочей области. Существует множество имен узлов, которые используются в рабочей области Машинное обучение Azure.
@@ -41,6 +45,8 @@ ms.locfileid: "89660007"
 
 | **Имя узла** | **Назначение** |
 | ---- | ---- |
+| **login.microsoftonline.com** | Аутентификация |
+| **management.azure.com** | Используется для получения сведений о рабочей области |
 | **\*. batchai.core.windows.net** | Учебные кластеры |
 | **ml.azure.com** | Студия машинного обучения Azure. |
 | **default.exp-tas.com** | Используется в Машинное обучение Azure Studio |
@@ -59,13 +65,16 @@ ms.locfileid: "89660007"
 | **\*. notebooks.azure.net** | Требуется для записных книжек в Машинное обучение Azure Studio. |
 | **graph.windows.net** | Требуется для записных книжек |
 
+> [!TIP]
+> Если вы планируете использовать федеративное удостоверение, следуйте рекомендациям [по обеспечению безопасности службы федерации Active Directory (AD FS)](/windows-server/identity/ad-fs/deployment/best-practices-securing-ad-fs) статье.
+
 ## <a name="python-hosts"></a>Узлы Python
 
 Узлы в этом разделе используются для установки пакетов Python. Они необходимы во время разработки, обучения и развертывания. 
 
 | **Имя узла** | **Назначение** |
 | ---- | ---- |
-| **anaconda.com** | Используется для установки пакетов по умолчанию. |
+| **anaconda.com**</br>**\*. anaconda.com** | Используется для установки пакетов по умолчанию. |
 | **\*. anaconda.org** | Используется для получения данных репозитория. |
 | **pypi.org** | Используется для перечисления зависимостей из индекса по умолчанию, если таковые имеются, а индекс не перезаписывается параметрами пользователя. Если индекс перезаписывается, необходимо также разрешить ** \* . pythonhosted.org**. |
 

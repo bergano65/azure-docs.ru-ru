@@ -4,6 +4,8 @@
   href: debug-rendering.md
 - name: Переопределение иерархического состояния
   href: override-hierarchical-state.md
+- name: Камера
+  href: camera.md
 - name: Промежуточное пространство
   href: stage-space.md
 - name: Перепроецирование на позднем этапе

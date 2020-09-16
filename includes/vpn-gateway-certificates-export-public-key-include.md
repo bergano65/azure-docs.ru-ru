@@ -1,5 +1,5 @@
 ---
-title: Включить имя файла
+title: включить файл
 description: включить файл
 services: vpn-gateway
 author: cherylmc
@@ -8,18 +8,18 @@ ms.topic: include
 ms.date: 03/19/2020
 ms.author: cherylmc
 ms.custom: include file
-ms.openlocfilehash: d2dba0f657b418267db90c07014dc8996ed12a10
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: f71703dcb6afb5ce7610bf1c5374de1cc98816b0
+ms.sourcegitcommit: 6e1124fc25c3ddb3053b482b0ed33900f46464b3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "80059925"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90606721"
 ---
 После создания самозаверяющего корневого сертификата экспортируйте CER-файл его открытого ключа (не закрытый ключ). В дальнейшем вы загрузите этот файл в Azure. Чтобы экспортировать CER-файл для самозаверяющего корневого сертификата, сделайте следующее:
 
 1. Чтобы получить из сертификата CER-файл, откройте раздел **Управление сертификатами пользователей**. Найдите корневой самозаверяющий сертификат (обычно он находится в папке Certificates - <текущий_пользователь>\Personal\Certificates) и щелкните его правой кнопкой мыши. Щелкните **Все задачи** > **Экспорт**. Откроется **мастера экспорта сертификатов**. Если не удается найти сертификат в разделе <текущий_пользователь>\Personal\Certificates, возможно, вы случайно открыли "Certificates — Local Computer"вместо "Certificates— <текущий_пользователь>". Если вы хотите открыть диспетчер сертификатов в области текущего пользователя с помощью PowerShell, выполните команду *certmgr* в окне консоли.
 
-   ![Экспорт](./media/vpn-gateway-certificates-export-public-key-include/export.png)
+   ![На снимке экрана отображается окно сертификатов для текущего пользователя с выбранными сертификатами и контекстное меню со всеми задачами, затем экспортируются выбранные.](./media/vpn-gateway-certificates-export-public-key-include/export.png)
 2. В окне мастера нажмите **Далее**.
 
    ![Экспорт сертификата](./media/vpn-gateway-certificates-export-public-key-include/exportwizard.png)
@@ -31,16 +31,16 @@ ms.locfileid: "80059925"
    ![Выбор параметра "Файлы X.509 (.CER) в кодировке Base-64"](./media/vpn-gateway-certificates-export-public-key-include/base64.png)
 5. На странице **Имя экспортируемого файла** нажмите кнопку **Обзор**, чтобы перейти в расположение для экспорта сертификата. В поле **Имя файла**введите имя для файла сертификата. Затем щелкните **Далее**.
 
-   ![Просмотреть](./media/vpn-gateway-certificates-export-public-key-include/browse.png)
+   ![На снимке экрана показан мастер экспорта сертификатов с текстовым полем Имя файла и параметром обзора.](./media/vpn-gateway-certificates-export-public-key-include/browse.png)
 6. Нажмите кнопку **Готово**, чтобы выполнить экспорт сертификата.
 
-   ![Готово](./media/vpn-gateway-certificates-export-public-key-include/finish.png)
+   ![На снимке экрана показана последняя страница мастера экспорта сертификатов с выбранными параметрами.](./media/vpn-gateway-certificates-export-public-key-include/finish.png)
 7. Сертификат успешно экспортирован.
 
-   ![Успех](./media/vpn-gateway-certificates-export-public-key-include/success.png)
+   ![На снимке экрана отображается сообщение о том, что экспорт выполнен успешно.](./media/vpn-gateway-certificates-export-public-key-include/success.png)
 8. Экспортированный сертификат выглядит примерно так:
 
-   ![Экспортированный сертификат](./media/vpn-gateway-certificates-export-public-key-include/exported.png)
+   ![На снимке экрана показан значок сертификата и имя файла с расширением c e r.](./media/vpn-gateway-certificates-export-public-key-include/exported.png)
 9. Если открыть экспортированный сертификат в Блокноте, результат будет приблизительно таким, как в приведенном ниже примере. Выделенный синим цветом раздел содержит сведения, которые загружены в Azure. Если при открытии сертификата в Блокноте он не выглядит, как приведенный ниже пример, как правило, это означает, что экспорт выполнен не в формате X.509 (.CER) с кодировкой Base64. Кроме того, при использовании другого текстового редактора следует учитывать, что в некоторых редакторах может выполняться непреднамеренное форматирование в фоновом режиме. Это может вызвать проблемы при передаче текста из этого сертификата в Azure.
 
    ![Открытие в Блокноте](./media/vpn-gateway-certificates-export-public-key-include/notepad.png)

@@ -12,18 +12,18 @@ ms.topic: conceptual
 ms.date: 10/30/2018
 ms.author: kenwith
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 1d662689d44bcdbd468c882de0679fd60c9ab4f4
-ms.sourcegitcommit: 628be49d29421a638c8a479452d78ba1c9f7c8e4
+ms.openlocfilehash: 6b24bd190eac9cb6c29ceab6eb597d8d1c48f2ff
+ms.sourcegitcommit: 80b9c8ef63cc75b226db5513ad81368b8ab28a28
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/20/2020
-ms.locfileid: "88640452"
+ms.lasthandoff: 09/16/2020
+ms.locfileid: "90605096"
 ---
 # <a name="develop-line-of-business-apps-for-azure-active-directory"></a>Разработка бизнес-приложений для Azure Active Directory
-Это руководство содержит сведения о разработке бизнес-приложений для Azure Active Directory (AD). Оно предназначено специально для глобальных администраторов Active Directory и Office 365.
+В этом разделе представлен обзор разработки бизнес-приложений для Azure Active Directory (AD). Предполагаемая аудитория — Active Directory и Microsoft 365 глобальных администраторов.
 
 ## <a name="overview"></a>Обзор
-Создание приложений, интегрированных с Azure AD, предоставляет пользователям в вашей организации возможность единого входа в Office 365. Помещение приложения в Azure AD позволяет управлять политикой аутентификации для этого приложения. Дополнительные сведения о условном доступе и защите приложений с помощью многофакторной проверки подлинности (MFA) см. в статье [Настройка правил доступа](../conditional-access/app-based-mfa.md).
+Создание приложений, интегрированных с Azure AD, дает пользователям в вашей организации единый вход с Microsoft 365. Помещение приложения в Azure AD позволяет управлять политикой аутентификации для этого приложения. Дополнительные сведения о условном доступе и защите приложений с помощью многофакторной проверки подлинности (MFA) см. в статье [Настройка правил доступа](../conditional-access/app-based-mfa.md).
 
 Зарегистрируйте свое приложение для использования Azure Active Directory. Регистрация приложения означает, что разработчики смогут использовать Azure AD для аутентификации пользователей и для запроса доступа к ресурсам пользователей, таким как электронная почта, календарь и документы.
 
