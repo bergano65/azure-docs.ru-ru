@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: tilarso
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 77c673ec52873d854647cf49c0efcbd650fb6aa8
-ms.sourcegitcommit: 5ed504a9ddfbd69d4f2d256ec431e634eb38813e
+ms.openlocfilehash: 8c319489fe4c884cd5de48ac2d3e47e7beb3026f
+ms.sourcegitcommit: 7374b41bb1469f2e3ef119ffaf735f03f5fad484
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89320653"
+ms.lasthandoff: 09/16/2020
+ms.locfileid: "90705492"
 ---
 # <a name="what-is-the-identity-secure-score-in-azure-active-directory"></a>Общие сведения об оценке безопасности удостоверений в Azure Active Directory
 
@@ -102,7 +102,7 @@ ms.locfileid: "89320653"
 
 Чтобы просмотреть историю оценки, перейдите в [Центр безопасности Microsoft 365](https://security.microsoft.com/) и просмотрите Общий рейтинг Microsoft Secure. Вы можете просмотреть изменения в общей оценке безопасности, щелкнув журнал просмотра. Выберите любую дату, чтобы просмотреть включенные в этот день элементы управления и количество начисленных баллов за каждый из них.
 
-### <a name="how-does-the-identity-secure-score-relate-to-the-office-365-secure-score"></a>Как оценка безопасности удостоверений согласуется с Оценкой безопасности Office 365?
+### <a name="how-does-the-identity-secure-score-relate-to-the-microsoft-365-secure-score"></a>Как оценка безопасности удостоверения связана с Microsoft 365 безопасным рейтингом?
 
 [Оценка Microsoft Secure](/office365/securitycompliance/microsoft-secure-score) содержит пять категорий элементов управления и оценок:
 

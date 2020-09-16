@@ -1,6 +1,6 @@
 ---
 title: Настройка приложений SaaS для службы совместной работы B2B в Azure AD
-description: Примеры кода и команд PowerShell для службы совместной работы Azure Active Directory B2B.
+description: Узнайте, как настроить приложения SaaS для службы совместной работы Azure Active Directory B2B и просмотреть дополнительные доступные ресурсы.
 services: active-directory
 ms.service: active-directory
 ms.subservice: B2B
@@ -12,12 +12,12 @@ manager: celestedg
 ms.reviewer: mal
 ms.custom: it-pro, seo-update-azuread-jan
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 9b8f38d42003645e6d6544d5c2064a0c8e692c0f
-ms.sourcegitcommit: 4e5560887b8f10539d7564eedaff4316adb27e2c
+ms.openlocfilehash: e0db5e609a5e6b7d74809810a50f86d72ae85675
+ms.sourcegitcommit: 7374b41bb1469f2e3ef119ffaf735f03f5fad484
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87910228"
+ms.lasthandoff: 09/16/2020
+ms.locfileid: "90705516"
 ---
 # <a name="configure-saas-apps-for-b2b-collaboration"></a>Настройка приложений SaaS для службы совместной работы B2B
 
@@ -81,7 +81,7 @@ ms.locfileid: "87910228"
 
    ![Снимок экрана, показывающий параметры конфигурации единого входа](media/configure-saas-apps/configure-box-sso.png)
 
-   а. Проверьте поле **URL-адрес для входа**, чтобы убедиться, что на портале Azure указан правильный URL-адрес для Box. Этот URL-адрес совпадает с URL-адресом вашего клиента Box.com. Оно должно соответствовать соглашению об именовании *https://.box.com* .  
+   a. Проверьте поле **URL-адрес для входа**, чтобы убедиться, что на портале Azure указан правильный URL-адрес для Box. Этот URL-адрес совпадает с URL-адресом вашего клиента Box.com. Оно должно соответствовать соглашению об именовании *https://.box.com* .  
    **Идентификатор** не применяется к этому приложению, но это поле по-прежнему отображается как обязательное.
 
    b. В поле **Идентификатор пользователя** введите **user.mail** (для единого входа для учетных записей гостей).
@@ -105,5 +105,5 @@ ms.locfileid: "87910228"
 - [Что такое служба совместной работы Azure AD B2B?](what-is-b2b.md)
 - [Динамические группы и служба совместной работы Azure Active Directory B2B](use-dynamic-groups.md)
 - [Сопоставление утверждений пользователя службы совместной работы B2B в Azure Active Directory](claims-mapping.md)
-- [Доступ внешних пользователей к Office 365](o365-external-user.md)
+- [Microsoft 365 внешний общий доступ](o365-external-user.md)
 

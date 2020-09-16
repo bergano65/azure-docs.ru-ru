@@ -1,6 +1,6 @@
 ---
-title: Office 365 внешний общий доступ и совместная работа B2B — Azure AD
-description: В этом документе описано общее использование ресурсов с внешними партнерами с помощью Office 365 и службы совместной работы Azure Active Directory B2B.
+title: Microsoft 365 внешний общий доступ и совместная работа B2B — Azure AD
+description: Обсуждение совместного использования ресурсов с внешними партнерами с помощью Microsoft 365 и Azure Active Directory службы совместной работы B2B.
 services: active-directory
 ms.service: active-directory
 ms.subservice: B2B
@@ -11,16 +11,16 @@ author: msmimart
 manager: celestedg
 ms.reviewer: mal
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: fcb407735cff5a0c43d3a584ff37a0eabc178381
-ms.sourcegitcommit: 4e5560887b8f10539d7564eedaff4316adb27e2c
+ms.openlocfilehash: 563d925aa3e0d6922756ab037226f5a86534b19f
+ms.sourcegitcommit: 7374b41bb1469f2e3ef119ffaf735f03f5fad484
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87909233"
+ms.lasthandoff: 09/16/2020
+ms.locfileid: "90705441"
 ---
-# <a name="office-365-external-sharing-and-azure-active-directory-azure-ad-b2b-collaboration"></a>Внешний общий доступ и Azure Active Directory (Azure AD) B2B совместное использование Office 365
+# <a name="microsoft-365-external-sharing-and-azure-active-directory-azure-ad-b2b-collaboration"></a>Microsoft 365 внешний общий доступ и Azure Active Directory (Azure AD) B2B для совместной работы
 
-В службе совместной работы Azure AD B2B и Office 365 External Sharing (OneDrive, SharePoint Online, Объединенные группы и т. д.) проверка подлинности внешних пользователей осуществляется с помощью Azure AD B2B.
+В службе совместной работы Azure AD B2B и Microsoft 365 внешнем совместном доступе (OneDrive, SharePoint Online, единые группы и т. д.) проверка подлинности внешних пользователей осуществляется с помощью Azure AD B2B.
 
 ## <a name="how-does-azure-ad-b2b-differ-from-external-sharing-in-sharepoint-online"></a>Чем использование Azure AD B2B отличается от внешнего общего доступа в SharePoint Online?
 
@@ -37,7 +37,7 @@ ms.locfileid: "87909233"
 Чтобы управлять внешним общим доступом в OneDrive и SharePoint Online с помощью службы совместной работы Azure AD B2B, задайте для параметра внешнего общего доступа OneDrive и SharePoint Online значение **Allow sharing only with the external users that already exist in your organization's directory** (Разрешить общий доступ только внешним пользователям, которые уже существуют в каталоге организации). Пользователи могут перейти на внешние сайты, предоставляющие общий доступ, и выбрать из внешних сотрудников, добавленных администратором. Администратор может добавлять внешних сотрудников с помощью интерфейсов API приглашения службы совместной работы B2B.
 
 
-![Настройка внешнего общего доступа в OneDrive и SharePoint Online](media/o365-external-user/odsp-sharing-setting.png)
+![Параметр внешнего общего доступа OneDrive или SharePoint](media/o365-external-user/odsp-sharing-setting.png)
 
 Когда вы включите предоставление общего доступа для внешних пользователей, возможность поиска существующих гостевых пользователей в средстве выбора пользователей SharePoint Online (SPO) отключена по умолчанию для согласования с поведением предыдущих версий.
 
