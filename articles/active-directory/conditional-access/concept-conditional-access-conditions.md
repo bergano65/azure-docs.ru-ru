@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: calebb
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: f8dfeb8a38e07d94671691bb797d26a32973c910
-ms.sourcegitcommit: 1a0dfa54116aa036af86bd95dcf322307cfb3f83
+ms.openlocfilehash: d0ea9259e701e2ad9a4026401f5aef39c0ecfa51
+ms.sourcegitcommit: 80b9c8ef63cc75b226db5513ad81368b8ab28a28
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/10/2020
-ms.locfileid: "88042485"
+ms.lasthandoff: 09/16/2020
+ms.locfileid: "90601832"
 ---
 # <a name="conditional-access-conditions"></a>Условный доступ. Условия
 
@@ -102,7 +102,7 @@ ms.locfileid: "88042485"
 
 Этот параметр работает со всеми браузерами. Но чтобы выполнить условия политики устройств, например требование соответствия, поддерживаются следующие операционные системы и браузеры:
 
-| Операционная система | Браузеры |
+| OS | Браузеры |
 | :-- | :-- |
 | Windows 10 | Microsoft ребро, Internet Explorer, Chrome |
 | Windows 8, Windows 8.1 | Internet Explorer, Chrome |
@@ -112,7 +112,7 @@ ms.locfileid: "88042485"
 | Windows Phone | Microsoft ребро, Internet Explorer |
 | Windows Server 2019 | Microsoft ребро, Internet Explorer, Chrome |
 | Windows Server 2016 | Internet Explorer |
-| Windows Server 2012 R2 | Internet Explorer |
+| Windows Server 2012 R2 | Internet Explorer |
 | Windows Server 2008 R2 | Internet Explorer |
 | MacOS | Chrome, Safari |
 
@@ -149,27 +149,27 @@ ms.locfileid: "88042485"
 | Клиентские приложения | Целевая служба | Платформа |
 | --- | --- | --- |
 | Приложение Dynamics CRM | Dynamics CRM | Windows 10, Windows 8.1, iOS и Android |
-| Приложения Почта, Календарь и Люди, Outlook 2016, Outlook 2013 (с современной аутентификацией)| Office 365 Exchange Online | Windows 10 |
+| Приложения Почта, Календарь и Люди, Outlook 2016, Outlook 2013 (с современной аутентификацией)| Exchange Online | Windows 10 |
 | MFA и политика расположения для приложений Политики на основе устройств не поддерживаются.| Все службы приложения "Мои приложения" | Android и iOS |
 | Microsoft Teams Services — контролируют все службы, которые поддерживают Microsoft Teams, и все их клиентские приложения: для Windows Desktop, iOS, Android, WP, а также веб-клиент. | Microsoft Teams | Windows 10, Windows 8.1, Windows 7, iOS, Android и macOS |
-| Приложения Office 2016, Office 2013 (с современной проверкой подлинности), [клиент синхронизации OneDrive](/onedrive/enable-conditional-access) | Office 365 SharePoint Online | Windows 8.1, Windows 7 |
-| Приложения Office 2016, универсальные приложения Office, Office 2013 (с современной проверкой подлинности), [клиент синхронизации OneDrive](/onedrive/enable-conditional-access) | Office 365 SharePoint Online | Windows 10 |
-| Office 2016 (только Word, Excel, PowerPoint, OneNote). | Office 365 SharePoint Online | MacOS |
-| Office 2019| Office 365 SharePoint Online | Windows 10, macOS |
-| Мобильные приложения Office | Office 365 SharePoint Online | Android, iOS |
-| Приложение Office Yammer | Office 365 Yammer | Windows 10, iOS, Android |
-| Outlook 2019 | Office 365 SharePoint Online | Windows 10, macOS |
-| Outlook 2016 (Office для macOS) | Office 365 Exchange Online | MacOS |
-| Outlook 2016, Outlook 2013 (с современной проверкой подлинности), Skype для бизнеса (с современной проверкой подлинности) | Office 365 Exchange Online | Windows 8.1, Windows 7 |
-| Мобильное приложение Outlook | Office 365 Exchange Online | Android, iOS |
+| Приложения Office 2016, Office 2013 (с современной проверкой подлинности), [клиент синхронизации OneDrive](/onedrive/enable-conditional-access) | SharePoint | Windows 8.1, Windows 7 |
+| Приложения Office 2016, универсальные приложения Office, Office 2013 (с современной проверкой подлинности), [клиент синхронизации OneDrive](/onedrive/enable-conditional-access) | SharePoint Online | Windows 10 |
+| Office 2016 (только Word, Excel, PowerPoint, OneNote). | SharePoint | MacOS |
+| Office 2019| SharePoint | Windows 10, macOS |
+| Мобильные приложения Office | SharePoint | Android, iOS |
+| Приложение Office Yammer | Yammer | Windows 10, iOS, Android |
+| Outlook 2019 | SharePoint | Windows 10, macOS |
+| Outlook 2016 (Office для macOS) | Exchange Online | MacOS |
+| Outlook 2016, Outlook 2013 (с современной проверкой подлинности), Skype для бизнеса (с современной проверкой подлинности) | Exchange Online | Windows 8.1, Windows 7 |
+| Мобильное приложение Outlook | Exchange Online | Android, iOS |
 | Приложение Power BI | Служба Power BI | Windows 10, Windows 8.1, Windows 7, Android и iOS |
-| Skype для бизнеса | Office 365 Exchange Online| Android, iOS |
+| Skype для бизнеса | Exchange Online| Android, iOS |
 | Приложение Visual Studio Team Services | Visual Studio Team Services | Windows 10, Windows 8.1, Windows 7, iOS и Android |
 
 ### <a name="exchange-activesync-clients"></a>Клиенты Exchange ActiveSync
 
 - Организации могут выбирать только клиенты Exchange ActiveSync при назначении политики пользователям или группам. Выбор **всех пользователей**, **всех гостевых и внешних пользователей**или **ролей каталога** приведет к блокировке всех пользователей.
-- При создании политики, назначенной клиентам Exchange ActiveSync, **Office 365 Exchange Online** должен быть единственным облачным приложением, назначенным политике. 
+- При создании политики, назначенной клиентам Exchange ActiveSync, **Exchange Online** должен быть единственным облачным приложением, назначенным политике. 
 - Организации могут ограничить область этой политики конкретными платформами с помощью условия **платформы устройства** .
 
 Если для управления доступом, назначенного политике, **требуется утвержденное клиентское приложение**, пользователь будет перенаправлен на установку и использование Outlook Mobile Client. Если требуется **многофакторная проверка подлинности** , затронутые пользователи блокируются, так как обычная проверка подлинности не поддерживает многофакторную проверку подлинности.

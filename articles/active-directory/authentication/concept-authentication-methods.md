@@ -5,18 +5,18 @@ services: active-directory
 ms.service: active-directory
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 09/09/2020
+ms.date: 09/15/2020
 ms.author: iainfou
 author: iainfoulds
 manager: daveba
 ms.collection: M365-identity-device-management
 ms.custom: contperfq4
-ms.openlocfilehash: dcbfd05df84e32423df425f3bdd231a26e4f3bca
-ms.sourcegitcommit: 03662d76a816e98cfc85462cbe9705f6890ed638
+ms.openlocfilehash: d4b44deda1bd17e65c3e2c2a9c46dddccd411996
+ms.sourcegitcommit: 80b9c8ef63cc75b226db5513ad81368b8ab28a28
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90527056"
+ms.lasthandoff: 09/16/2020
+ms.locfileid: "90602049"
 ---
 # <a name="what-authentication-and-verification-methods-are-available-in-azure-active-directory"></a>Какие методы проверки подлинности и подтверждения доступны в Azure Active Directory?
 
@@ -36,21 +36,18 @@ ms.locfileid: "90527056"
 
 В следующей таблице приведены рекомендации по обеспечению безопасности для доступных методов проверки подлинности. Доступность является указанием того, что пользователь может использовать метод проверки подлинности, а не доступность службы в Azure AD:
 
-| Метод проверки подлинности       | Безопасность | Удобство использования | Фисабле? | Розетка канала? | Доступность |
-|-----------------------------|:--------:|:---------:|:---------:|:-----------------:|:------------:|
-| Ключ безопасности FIDO2          | Высокий     | Высокий      | нет        | нет                | Высокий         |
-| Приложение Microsoft Authenticator | Высокий     | Высокий      | Да       | Нет <sup>1</sup>   | Высокий         |
-| Windows Hello для бизнеса  | Высокий     | Высокий      | нет        | нет                | Высокий         |
-| Аппаратные токены OATH        | Средн.   | Средн.    | Да       | нет                | Высокий         |
-| Токены OATH программного обеспечения        | Средн.   | Средн.    | Да       | Нет <sup>2</sup>   | Высокий         |
-| SMS                         | Средний   | Высокий      | Да       | Да               | Средний       |
-| Голосовая связь                       | Средн.   | Средн.    | Да       | Да               | Средний       |
-| Пароль                    | Низкий      | Высокий      | Да       | Да               | Высокий         |
+| Метод проверки подлинности          | Безопасность | Удобство использования | Доступность |
+|--------------------------------|:--------:|:---------:|:------------:|
+| Windows Hello для бизнеса     | Высокий     | Высокий      | Высокий         |
+| Приложение Microsoft Authenticator    | Высокий     | Высокий      | Высокий         |
+| Ключ безопасности FIDO2 (Предварительная версия)   | Высокий     | Высокий      | Высокий         |
+| Аппаратные маркеры OATH (предварительная версия) | Средн.   | Средн.    | Высокий         |
+| Программные маркеры OATH           | Средн.   | Средн.    | Высокий         |
+| SMS                            | Средний   | Высокий      | Средний       |
+| Голосовая связь                          | Средн.   | Средн.    | Средн.       |
+| Пароль                       | Низкий      | Высокий      | Высокий         |
 
-<sup>1</sup> в режиме с паролем, если приложение зарегистрировано на конкретном устройстве<br />
-<sup>2</sup> предполагая, что приложению требуется ПИН-код устройства для разблокировки
-
-Дополнительные сведения об уязвимостях и векторах атак см. в разделе [Фишинг-розетка и phishing в режиме реального времени](https://techcommunity.microsoft.com/t5/azure-active-directory-identity/all-your-creds-are-belong-to-us/ba-p/855124).
+Дополнительные сведения о безопасности см. в разделе [уязвимости проверки подлинности и направления атак](https://techcommunity.microsoft.com/t5/azure-active-directory-identity/all-your-creds-are-belong-to-us/ba-p/855124).
 
 > [!TIP]
 > Для обеспечения гибкости и удобства использования рекомендуется использовать приложение Microsoft Authenticator. Этот метод проверки подлинности обеспечивает лучшее взаимодействие с пользователем и несколько режимов, таких как безпарольное, Push-уведомления MFA и OATH-коды.
@@ -63,9 +60,9 @@ ms.locfileid: "90527056"
 
 | Метод                         | Основная проверка подлинности | Дополнительная проверка подлинности  |
 |--------------------------------|:----------------------:|:-------------------------:|
-| Ключи безопасности FIDO2 (предварительная версия)  | Да                    | MFA                       |
-| Приложение Microsoft Authenticator    | Да (предварительная версия)          | MFA и SSPR              |
 | Windows Hello для бизнеса     | Да                    | MFA                       |
+| Приложение Microsoft Authenticator    | Да (предварительная версия)          | MFA и SSPR              |
+| Ключ безопасности FIDO2 (Предварительная версия)   | Да                    | MFA                       |
 | Аппаратные маркеры OATH (предварительная версия) | нет                     | MFA                       |
 | Программные маркеры OATH           | нет                     | MFA                       |
 | SMS                            | Да (предварительная версия)          | MFA и SSPR              |
@@ -76,11 +73,11 @@ ms.locfileid: "90527056"
 
 Дополнительные сведения о том, как работает каждый метод проверки подлинности, см. в следующих статьях:
 
-* [Ключи безопасности FIDO2 (предварительная версия)](concept-authentication-passwordless.md#fido2-security-keys)
-* [Приложение Microsoft Authenticator](concept-authentication-authenticator-app.md)
 * [Windows Hello для бизнеса](/windows/security/identity-protection/hello-for-business/hello-overview)
-* [Программные маркеры OATH](concept-authentication-oath-tokens.md#oath-software-tokens)
+* [Приложение Microsoft Authenticator](concept-authentication-authenticator-app.md)
+* [Ключ безопасности FIDO2 (Предварительная версия)](concept-authentication-passwordless.md#fido2-security-keys)
 * [Аппаратные маркеры OATH (предварительная версия)](concept-authentication-oath-tokens.md#oath-hardware-tokens-preview)
+* [Программные маркеры OATH](concept-authentication-oath-tokens.md#oath-software-tokens)
 * [Вход в SMS (Предварительная версия)](howto-authentication-sms-signin.md) и [Проверка](concept-authentication-phone-options.md#mobile-phone-verification)
 * [Проверка речевого вызова](concept-authentication-phone-options.md)
 * Пароль

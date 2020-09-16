@@ -15,12 +15,12 @@ ms.workload: identity
 ms.date: 06/26/2018
 ms.author: barclayn
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: f04eb0eb3741a388b375cf7d8c6455bfd4a17b39
-ms.sourcegitcommit: bcda98171d6e81795e723e525f81e6235f044e52
+ms.openlocfilehash: 45c8694c90fedccbecee1fee09e7146bf2d0aaa6
+ms.sourcegitcommit: 80b9c8ef63cc75b226db5513ad81368b8ab28a28
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/01/2020
-ms.locfileid: "89266346"
+ms.lasthandoff: 09/16/2020
+ms.locfileid: "90601169"
 ---
 # <a name="create-list-or-delete-a-user-assigned-managed-identity-using-rest-api-calls"></a>Создание, перечисление или удаление назначенного пользователем управляемого удостоверения с помощью вызовов REST API
 
@@ -38,8 +38,6 @@ ms.locfileid: "89266346"
 - Если вы используете [подсистему Windows для Linux](/windows/wsl/about) или [дистрибутив Linux OS](/cli/azure/install-azure-cli-apt?view=azure-cli-latest), [установите локальную консоль Azure CLI](/cli/azure/install-azure-cli).
 - Если вы используете локальную консоль Azure CLI, войдите в Azure с помощью `az login` с учетной записью, привязанной к подписке Azure, в которой вы хотите развернуть управляемое удостоверение, назначаемое пользователем, или получить его.
 - Извлечение маркера доступа носителя с помощью `az account get-access-token` для выполнения следующих операций с управляемыми удостоверениями, назначаемыми пользователем.
-
-[!INCLUDE [cloud-shell-try-it.md](../../../includes/cloud-shell-try-it.md)]
 
 ## <a name="create-a-user-assigned-managed-identity"></a>Создание управляемого удостоверения, назначаемого пользователем 
 

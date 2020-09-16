@@ -10,12 +10,12 @@ ms.subservice: text-analytics
 ms.topic: conceptual
 ms.date: 07/30/2019
 ms.author: aahi
-ms.openlocfilehash: fec85a03b74155b5b18145bfaddc5d326c910bc9
-ms.sourcegitcommit: 07166a1ff8bd23f5e1c49d4fd12badbca5ebd19c
+ms.openlocfilehash: b2c994d23e63f9e2118cd3e6571c5dcc0449a367
+ms.sourcegitcommit: 80b9c8ef63cc75b226db5513ad81368b8ab28a28
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90087309"
+ms.lasthandoff: 09/16/2020
+ms.locfileid: "90601101"
 ---
 # <a name="how-to-call-the-text-analytics-rest-api"></a>Как вызвать REST API службы "Анализ текста"
 
@@ -27,7 +27,7 @@ ms.locfileid: "90087309"
 
 [!INCLUDE [text-analytics-api-references](../includes/text-analytics-api-references.md)]
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>предварительные требования
 
 [!INCLUDE [cognitive-services-text-analytics-signup-requirements](../../../../includes/cognitive-services-text-analytics-signup-requirements.md)]
 
@@ -46,6 +46,30 @@ ms.locfileid: "90087309"
 |`language` | Двухзначный код [ISO 639-1](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes) для [поддерживаемого языка](../text-analytics-supported-languages.md). | Различается | Требуется для анализа тональности, извлечения ключевых фраз и связывания сущностей. Необязательно для распознавания языка. Код можно исключить, и это не будет ошибкой, однако без него анализ будет менее точным. Код языка должен соответствовать предоставленному вами элементу `text`. |
 
 Дополнительные сведения см. в разделе [Ограничения данных](../overview.md#data-limits). 
+
+
+```json
+{
+  "documents": [
+    {
+      "language": "en",
+      "id": "1",
+      "text": "Sample text to be sent to the text analytics api."
+    },
+    {
+      "language": "en",
+      "id": "2",
+      "text": "It's incredibly sunny outside! I'm so happy."
+    },
+    {
+      "language": "en",
+      "id": "3",
+      "text": "Pike place market is my favorite Seattle attraction."
+    }
+  ]
+}
+```
+
 
 ## <a name="set-up-a-request-in-postman"></a>Настройка запроса в Postman
 
@@ -90,12 +114,12 @@ ms.locfileid: "90087309"
 
    В Postman ответ отображается в следующем расположенном ниже окне как один документ JSON с элементом для каждого идентификатора документа, предоставленного в запросе.
 
-## <a name="see-also"></a>См. также раздел 
+## <a name="see-also"></a>См. также 
 
  [Обзор Анализ текста](../overview.md)  
  [Часто задаваемые вопросы](../text-analytics-resource-faq.md)
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Пример. Как определить язык с помощью Анализа текста](text-analytics-how-to-language-detection.md)

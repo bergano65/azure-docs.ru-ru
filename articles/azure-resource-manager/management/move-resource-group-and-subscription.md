@@ -2,14 +2,14 @@
 title: Перемещение ресурсов в новую подписку или группу ресурсов
 description: Перемещайте ресурсы в новую группу ресурсов или новую подписку с помощью Azure Resource Manager.
 ms.topic: conceptual
-ms.date: 09/11/2020
+ms.date: 09/15/2020
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: 2b278dae956ec0bd17773badbeaa880b7bf901a5
-ms.sourcegitcommit: 814778c54b59169c5899199aeaa59158ab67cf44
+ms.openlocfilehash: 43b5cd8c9fa5947ff8f345bd0cd3ad26d9e61923
+ms.sourcegitcommit: 80b9c8ef63cc75b226db5513ad81368b8ab28a28
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/13/2020
-ms.locfileid: "90056673"
+ms.lasthandoff: 09/16/2020
+ms.locfileid: "90603158"
 ---
 # <a name="move-resources-to-a-new-resource-group-or-subscription"></a>Перемещение ресурсов в новую группу ресурсов или подписку
 
@@ -172,7 +172,7 @@ Authorization: Bearer <access-token>
 
 :::image type="content" source="./media/move-resource-group-and-subscription/move-first-view.png" alt-text="параметр MOVE отключен":::
 
-Чтобы включить параметр переместить, выберите ресурсы, которые требуется переместить. Чтобы выбрать все ресурсы, установите флажок в верхней части списка. Или выберите ресурсы по отдельности.
+Чтобы включить параметр переместить, выберите ресурсы, которые требуется переместить. Чтобы выбрать все ресурсы, установите флажок в верхней части списка. Или выберите ресурсы по отдельности. После выбора ресурсов параметр перемещение становится доступным.
 
 :::image type="content" source="./media/move-resource-group-and-subscription/select-resources.png" alt-text="Выбор ресурсов":::
 
@@ -194,7 +194,7 @@ Authorization: Bearer <access-token>
 
 После проверки возможности перемещения ресурсов вы увидите уведомление о том, что операция перемещения выполняется.
 
-:::image type="content" source="./media/move-resource-group-and-subscription/move-notification.png" alt-text="уведомлений":::
+:::image type="content" source="./media/move-resource-group-and-subscription/move-notification.png" alt-text="уведомление":::
 
 После ее завершения отобразится уведомление о результате.
 

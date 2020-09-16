@@ -7,12 +7,12 @@ ms.service: resource-move
 ms.topic: how-to
 ms.date: 09/10/2020
 ms.author: raynew
-ms.openlocfilehash: 4ff1905eb164d004af69ce5b0df3278bf3a46884
-ms.sourcegitcommit: 5d7f8c57eaae91f7d9cf1f4da059006521ed4f9f
+ms.openlocfilehash: 6d6f56fb47bfdaadc6704e2a13ebcf0e893b8b1c
+ms.sourcegitcommit: 80b9c8ef63cc75b226db5513ad81368b8ab28a28
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89670770"
+ms.lasthandoff: 09/16/2020
+ms.locfileid: "90602359"
 ---
 # <a name="manage-resources-created-for-the-vm-move"></a>Управление ресурсами, созданными для перемещения виртуальной машины
 
@@ -24,13 +24,13 @@ ms.locfileid: "89670770"
 
 Вручную удалите коллекцию перемещения и Site Recovery ресурсы, созданные для перемещения виртуальной машины.
 
-1. В исходном регионе, из которого вы переместили виртуальные машины, ознакомьтесь с ресурсами в группе ресурсов ```RegionMoveRG-<sourceregion>-<target-region>``` .
-2. Убедитесь, что виртуальная машина и все другие исходные ресурсы в коллекции перемещения перемещены или удалены. Это гарантирует, что у вас нет ресурсов, ожидающих их использования.
+1. Изучите ресурсы в группе ресурсов ```ResourceMoverRG-<sourceregion>-<target-region>``` .
+2. Убедитесь, что виртуальная машина и все другие исходные ресурсы в коллекции перемещения перемещены или удалены. Это гарантирует, что у вас отсутствуют ресурсы, ожидающие использования.
 2. Удалите эти ресурсы.
 
-    - Имя коллекции перемещения — ```movecollection-<sourceregion>-<target-region>``` .
-    - Имя учетной записи хранения кэша: ```resmovecache<guid>```
-    - Имя хранилища — ```ResourceMove-<sourceregion>-<target-region>-GUID``` .
+    - Имя перемещаемой коллекции — ```movecollection-<sourceregion>-<target-region>```.
+    - Имя учетной записи хранения — ```resmovecache<guid>```.
+    - Имя хранилища — ```ResourceMove-<sourceregion>-<target-region>-GUID```.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

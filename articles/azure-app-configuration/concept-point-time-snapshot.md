@@ -8,12 +8,12 @@ ms.author: lcozzens
 ms.service: azure-app-configuration
 ms.topic: conceptual
 ms.date: 02/20/2020
-ms.openlocfilehash: b1d559d82cb22d8a787785c6d8c6a5101d89793a
-ms.sourcegitcommit: 02ca0f340a44b7e18acca1351c8e81f3cca4a370
+ms.openlocfilehash: cbcfedc091fd111bceffe775cb337c118a87c767
+ms.sourcegitcommit: 80b9c8ef63cc75b226db5513ad81368b8ab28a28
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/19/2020
-ms.locfileid: "88586636"
+ms.lasthandoff: 09/16/2020
+ms.locfileid: "90601084"
 ---
 # <a name="point-in-time-snapshot"></a>Моментальный снимок на определенный момент времени
 
@@ -23,31 +23,29 @@ ms.locfileid: "88586636"
 
 Для извлечения прошлых значений ключа можно использовать портал Azure или CLI. В Azure CLI используйте `az appconfig revision list` , добавив соответствующие параметры для получения необходимых значений.  Укажите экземпляр конфигурации приложения Azure, указав имя хранилища ( `--name <app-config-store-name>` ) или с помощью строки подключения ( `--connection-string <your-connection-string>` ). Ограничьте вывод, указав конкретный момент времени ( `--datetime` ) и указав максимальное число возвращаемых элементов ( `--top` ).
 
-Если Azure CLI не установлен локально, можно также использовать Azure Cloud Shell.
-
-[!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
+Если Azure CLI не установлен локально, можно также использовать [Azure Cloud Shell](/azure/cloud-shell/overview).
 
 Извлеките все записанные изменения в значения ключей.
 
-```azurecli-interactive
+```azurecli
 az appconfig revision list --name <your-app-config-store-name>.
 ```
 
 Получение всех записанных изменений для ключа `environment` и меток `test` и `prod` .
 
-```azurecli-interactive
+```azurecli
 az appconfig revision list --name <your-app-config-store-name> --key environment --label test,prod
 ```
 
 Получение всех записанных изменений в иерархическом пространстве ключа `environment:prod` .
 
-```azurecli-interactive
+```azurecli
 az appconfig revision list --name <your-app-config-store-name> --key environment:prod:* 
 ```
 
 Получение всех записанных изменений для ключа `color` в заданный момент времени.
 
-```azurecli-interactive
+```azurecli
 az appconfig revision list --connection-string <your-app-config-connection-string> --key color --datetime "2019-05-01T11:24:12Z" 
 ```
 

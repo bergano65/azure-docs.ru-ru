@@ -12,12 +12,12 @@ author: jaszymas
 ms.author: jaszymas
 ms.reviewer: vanto
 ms.date: 03/18/2020
-ms.openlocfilehash: 04a3499da15bc226fe2cada2283d7a115036a48c
-ms.sourcegitcommit: 5ed504a9ddfbd69d4f2d256ec431e634eb38813e
+ms.openlocfilehash: 4e17af8289c68ded282a9c4a9ca2d400d31ca30d
+ms.sourcegitcommit: 80b9c8ef63cc75b226db5513ad81368b8ab28a28
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89318303"
+ms.lasthandoff: 09/16/2020
+ms.locfileid: "90602675"
 ---
 # <a name="azure-sql-transparent-data-encryption-with-customer-managed-key"></a>Прозрачное шифрование данных Azure SQL с ключом, управляемым клиентом
 [!INCLUDE[appliesto-sqldb-sqlmi-asa](../includes/appliesto-sqldb-sqlmi-asa.md)]
@@ -93,6 +93,10 @@ ms.locfileid: "89318303"
 - Ключ должен находиться в состоянии *Включено*.
 
 - При импорте существующего ключа в хранилище ключей обязательно укажите его в поддерживаемых форматах файлов (. pfx,. byok или. Backup).
+
+> [!NOTE]
+> Теперь SQL Azure поддерживает использование ключа RSA, хранящегося в управляемом HSM, как средство защиты TDE. Эта функция доступна в **общедоступной предварительной версии**. Azure Key Vault управляемым HSM — это полностью управляемая высокодоступная облачная служба с одним клиентом, которая позволяет защищать криптографические ключи для облачных приложений, используя проверенный HSM уровня 2 FIPS 140-2. Дополнительные сведения об [управляемых HSM](https://aka.ms/mhsm).
+
 
 ## <a name="recommendations-when-configuring-customer-managed-tde"></a>Рекомендации по настройке TDE, управляемой клиентом
 

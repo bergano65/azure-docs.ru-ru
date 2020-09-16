@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: calebb, dawoo
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a1973d45197044c325caf2d9938838f438d7755c
-ms.sourcegitcommit: 8a7b82de18d8cba5c2cec078bc921da783a4710e
+ms.openlocfilehash: ca9f4e290c5dad45e5bf87439ebcd1c88a7c540f
+ms.sourcegitcommit: 80b9c8ef63cc75b226db5513ad81368b8ab28a28
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89049542"
+ms.lasthandoff: 09/16/2020
+ms.locfileid: "90602009"
 ---
 # <a name="how-to-block-legacy-authentication-to-azure-ad-with-conditional-access"></a>Руководство. Блокировка устаревших методов аутентификации в Azure AD с помощью условного доступа   
 
@@ -125,4 +125,4 @@ AAD поддерживает несколько широко распростр�
 - [Определение влияния с помощью условного доступа в режиме "только отчет"](howto-conditional-access-insights-reporting.md)
 - Если вы плохо знакомы с настройкой политик условного доступа, ознакомьтесь со статьей [Руководство. Защита событий входа с помощью Многофакторной идентификации Azure](../authentication/tutorial-enable-azure-mfa.md).
 - Дополнительные сведения о современной аутентификации для клиентских приложений Office 2013 и Office 2016 см. в [этой статье](/office365/enterprise/modern-auth-for-office-2013-and-2016). 
-- [Как настроить отправку электронной почты с помощью Office 365 и Microsoft 365 на многофункциональном устройстве или в приложении](/exchange/mail-flow-best-practices/how-to-set-up-a-multifunction-device-or-application-to-send-email-using-office-3)
+- [Как настроить многофункциональное устройство или приложение для отправки электронной почты с помощью Microsoft 365](/exchange/mail-flow-best-practices/how-to-set-up-a-multifunction-device-or-application-to-send-email-using-office-3)

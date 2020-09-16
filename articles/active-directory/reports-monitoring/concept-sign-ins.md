@@ -17,12 +17,12 @@ ms.date: 03/24/2020
 ms.author: markvi
 ms.reviewer: dhanyahk
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: e84fb04d967311fede3be7f20b45f01fb442e69e
-ms.sourcegitcommit: d68c72e120bdd610bb6304dad503d3ea89a1f0f7
+ms.openlocfilehash: 99e15c6d1ca33623151b7a2d75e3e28878f673ef
+ms.sourcegitcommit: 80b9c8ef63cc75b226db5513ad81368b8ab28a28
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/01/2020
-ms.locfileid: "89228772"
+ms.lasthandoff: 09/16/2020
+ms.locfileid: "90603600"
 ---
 # <a name="sign-in-activity-reports-in-the-azure-active-directory-portal"></a>Отчеты о действиях входа на портале Azure Active Directory
 
@@ -37,7 +37,7 @@ ms.locfileid: "89228772"
 
 В этой статье приводятся общие сведения о отчете о входе в систему.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 ### <a name="who-can-access-the-data"></a>Кто имеет доступ к данным?
 
@@ -147,13 +147,13 @@ ms.locfileid: "89228772"
 |SMTP с проверкой подлинности| |Используется клиентом POP и IMAP для отправки сообщений электронной почты.|
 |Ошибоч| |Используется клиентами Outlook и EAS для поиска почтовых ящиков в Exchange Online и подключения к ним.|
 |Exchange ActiveSync| |Этот фильтр показывает все попытки входа в систему, в которых была предпринята попытка использования протокола EAS.|
-|Браузер|![службы "Функции Azure"](./media/concept-sign-ins/check.png)|Отображение всех попыток входа пользователей с помощью веб-браузеров|
-|Exchange ActiveSync| | Отображение всех попыток входа пользователей с клиентскими приложениями с помощью Exchange Актицесинк для подключения к Exchange Online|
+|Браузер|![Флажок](./media/concept-sign-ins/check.png)|Отображение всех попыток входа пользователей с помощью веб-браузеров|
+|Exchange ActiveSync| | Отображение всех попыток входа пользователей с клиентскими приложениями с помощью Exchange ActiveSync для подключения к Exchange Online|
 |Exchange Online PowerShell| |Используется для подключения к Exchange Online с помощью удаленной PowerShell. Если вы блокируете обычную проверку подлинности для Exchange Online PowerShell, для подключения необходимо использовать модуль Exchange Online PowerShell. Инструкции см. в статье [Подключение к PowerShell Exchange Online с помощью многофакторной проверки подлинности](/powershell/exchange/exchange-online/connect-to-exchange-online-powershell/mfa-connect-to-exchange-online-powershell).|
 |Веб-службы Exchange| |Программный интерфейс, используемый Outlook, Outlook для Mac и сторонние приложения.|
 |IMAP4| |Устаревший почтовый клиент, использующий IMAP для получения электронной почты.|
 |MAPI через HTTP| |Используется в Outlook 2010 и более поздних версиях.|
-|Мобильные приложения и настольные клиенты|![службы "Функции Azure"](./media/concept-sign-ins/check.png)|Показывает все попытки входа пользователей с помощью мобильных приложений и настольных клиентов.|
+|Мобильные приложения и настольные клиенты|![Синяя галочка](./media/concept-sign-ins/check.png)|Показывает все попытки входа пользователей с помощью мобильных приложений и настольных клиентов.|
 |Автономная адресная книга| |Копия коллекций списков адресов, которые загружаются и используются в Outlook.|
 |Мобильный Outlook (RPC через HTTP)| |Используется в Outlook 2016 и более ранних версиях.|
 |Служба Outlook| |Используется приложением "почта и календарь" для Windows 10.|
@@ -194,7 +194,7 @@ ms.locfileid: "89228772"
 
 Щелкните " **скачать** ", чтобы создать CSV-файл или формат JSON для последних 250 000 записей. Начните с [загрузки данных входа,](quickstart-download-sign-in-report.md) если вы хотите работать с ним за пределами портал Azure.  
 
-![Загрузить](./media/concept-sign-ins/71.png "Скачать")
+![Загрузить](./media/concept-sign-ins/71.png "Скачивание")
 
 > [!IMPORTANT]
 > На число записей, которые можно скачать, влияют особенности [политики хранения отчетов Azure Active Directory](reference-reports-data-retention.md).  
@@ -269,11 +269,11 @@ Azure AD и портал Azure предоставляют дополнитель
 
 С помощью параметра **Входов** можно полностью отобразить все события входа в ваши приложения.
 
-## <a name="office-365-activity-logs"></a>Журналы действий Office 365
+## <a name="microsoft-365-activity-logs"></a>Журналы действий Microsoft 365
 
-Журналы действий Office 365 можно просмотреть в [центре администрирования Microsoft 365](/office365/admin/admin-overview/about-the-admin-center). Рассмотрим тот момент, когда действия Office 365 и журналы действий Azure AD совместно используют значительное количество ресурсов каталога. Полный обзор журналов действий Office 365 предоставляется только в центре администрирования Microsoft 365. 
+Журналы действий Microsoft 365 можно просмотреть в [центре администрирования Microsoft 365](/office365/admin/admin-overview/about-the-admin-center). Рассмотрим тот момент, когда Microsoft 365 действия и журналы действий Azure AD совместно используют значительное количество ресурсов каталога. Только центр администрирования Microsoft 365 предоставляет полное представление журналов действий Microsoft 365. 
 
-Вы также можете получить доступ к журналам действий Office 365 программным путем с помощью [API-интерфейсов управления office 365](/office/office-365-management-api/office-365-management-apis-overview).
+Можно также программно получить доступ к журналам действий Microsoft 365 с помощью [API-интерфейсов управления Office 365](/office/office-365-management-api/office-365-management-apis-overview).
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

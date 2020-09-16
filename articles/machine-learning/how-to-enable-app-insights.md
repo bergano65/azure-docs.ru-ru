@@ -8,67 +8,47 @@ ms.subservice: core
 ms.reviewer: jmartens
 ms.author: larryfr
 author: blackmist
-ms.date: 07/23/2020
+ms.date: 09/15/2020
 ms.topic: conceptual
 ms.custom: how-to, devx-track-python
-ms.openlocfilehash: ae66447e128b07ce942b8c2fcc66347a31cfe83f
-ms.sourcegitcommit: 7fe8df79526a0067be4651ce6fa96fa9d4f21355
+ms.openlocfilehash: f497bf5374dd6f621a6b48bae245e5efb1505a19
+ms.sourcegitcommit: 80b9c8ef63cc75b226db5513ad81368b8ab28a28
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87848865"
+ms.lasthandoff: 09/16/2020
+ms.locfileid: "90603073"
 ---
 # <a name="monitor-and-collect-data-from-ml-web-service-endpoints"></a>Мониторинг и сбор данных из конечных точек веб-службы Машинного обучения
 [!INCLUDE [applies-to-skus](../../includes/aml-applies-to-basic-enterprise-sku.md)]
 
-Из этой статьи вы узнаете, как получать данные из и отслеживать модели, развернутые в конечных точках веб-службы в службе Azure Kubernetes Service (AKS), или службу "экземпляры контейнеров Azure" (ACI), запрашивая журналы и обеспечивая возможность Application Insights Azure с помощью 
-* [Пакет SDK Python для Машинного обучения Azure](#python)
-* [Машинное обучение Azure Studio](#studio) вhttps://ml.azure.com
-
-Помимо сбора выходных данных и ответов конечной точки, можно отслеживать:
-
+Из этой статьи вы узнаете, как выполнять получение данных из моделей, развернутых в конечных точках веб-службы в службе Kubernetes Azure (AKS) или экземплярах контейнеров Azure (ACI). Используйте [Application Insights Azure](../azure-monitor/app/app-insights-overview.md) , чтобы получить из конечной точки следующие данные:
+* Выходные данные
+* Ответы
 * Частоты запросов, времени отклика и частоты сбоев.
 * Частоты зависимостей, времени отклика и частоты сбоев.
 * Исключения
 
-Дополнительные [сведения об Azure Application Insights](../azure-monitor/app/app-insights-overview.md). 
+В записной книжке [Enable-App-Insights-in-Production-Service. ipynb](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/deployment/enable-app-insights-in-production-service/enable-app-insights-in-production-service.ipynb) описываются концепции, описанные в этой статье.
+ 
+[!INCLUDE [aml-clone-in-azure-notebook](../../includes/aml-clone-for-examples.md)]
+ 
+## <a name="prerequisites"></a>предварительные требования
 
+* Подписка Azure — попробуйте [бесплатную или платную версию машинное обучение Azure](https://aka.ms/AMLFree).
 
-## <a name="prerequisites"></a>Предварительные требования
+* Должны быть установлены рабочая область машинного обучения Azure, локальный каталог со скриптами и пакет SDK машинного обучения Azure для Python. Дополнительные сведения см. в разделе [Настройка среды разработки](how-to-configure-environment.md).
 
-* Если у вас еще нет подписки Azure, создайте бесплатную учетную запись, прежде чем начинать работу. Опробуйте [бесплатную или платную версию машинное обучение Azure](https://aka.ms/AMLFree) уже сегодня
-
-* Должны быть установлены рабочая область машинного обучения Azure, локальный каталог со скриптами и пакет SDK машинного обучения Azure для Python. Чтобы узнать, как выполнить эти предварительные требования, см. статью [Настройка среды разработки](how-to-configure-environment.md) .
-
-* Обученная модель машинного обучения для развертывания в службе Azure Kubernetes (AKS) или в экземпляре контейнера Azure (ACI). Если у вас ее нет, см. Руководство [обучение модели классификации изображений](tutorial-train-models-with-aml.md)
-
-## <a name="query-logs-for-deployed-models"></a>Журналы запросов для развернутых моделей
-
-Чтобы получить журналы из ранее развернутой веб-службы, загрузите службу и вызовите функцию `get_logs()`. Эти журналы могут содержать подробные сведения об ошибках, возникающих во время развертывания.
-
-```python
-from azureml.core.webservice import Webservice
-
-# load existing web service
-service = Webservice(name="service-name", workspace=ws)
-logs = service.get_logs()
-```
-
-## <a name="web-service-metadata-and-response-data"></a>Метаданные веб-службы и данные ответа
-
-> [!IMPORTANT]
-> Azure Application Insights записывает в журнал только полезные данные размером до 64 КБ. При достижении этого предела могут возникнуть ошибки, например нехваткой памяти, или нет сведений, которые могут быть занесены в журнал.
-
-Чтобы заносить в журнал сведения о запросе к веб-службе, добавьте `print` инструкции в файл Score.py. Каждая `print` инструкция приводит к одной записи в таблице трассировки в Application Insights, под сообщением `STDOUT` . Содержимое `print` инструкции будет находиться в разделе `customDimensions` , а затем `Contents` в таблице трассировки. При печати строки JSON она создает иерархическую структуру данных в выходных данных трассировки в разделе `Contents` .
-
-Вы можете запросить Azure Application Insights напрямую для доступа к этим данным или настроить [непрерывный экспорт](https://docs.microsoft.com/azure/azure-monitor/app/export-telemetry) в учетную запись хранения для более длительного хранения или дальнейшей обработки. Данные модели можно использовать в Машинное обучение Azure для настройки меток, переобучения, пояснения, анализа данных или других способов использования. 
-
+* Обученная модель машинного обучения. Дополнительные сведения см. в руководстве [обучение модели классификации изображений](tutorial-train-models-with-aml.md) .
 
 <a name="python"></a>
 
-## <a name="use-python-sdk-to-configure"></a>Использование пакета SDK для Python для настройки 
+## <a name="configure-logging-with-the-python-sdk"></a>Настройка ведения журнала с помощью пакета SDK для Python
+
+В этом разделе вы узнаете, как включить ведение журнала Application Insights с помощью пакета SDK для Python. 
 
 ### <a name="update-a-deployed-service"></a>Обновление развернутой службы
+
+Чтобы обновить существующую веб-службу, выполните следующие действия.
 
 1. Найдите службу в рабочей области. Значение для `ws` — это имя рабочей области.
 
@@ -84,12 +64,17 @@ logs = service.get_logs()
 
 ### <a name="log-custom-traces-in-your-service"></a>Трассировка пользовательских журналов в службе
 
-Если требуется вести журнал пользовательских трассировок, выполните инструкции из руководства по стандартному процессу развертывания для AKS или ACI, представленные в документе [Deploy models with the Azure Machine Learning service](how-to-deploy-and-where.md) (Развертывание моделей с помощью Службы машинного обучения Azure). Затем выполните следующие действия:
+> [!IMPORTANT]
+> Azure Application Insights записывает в журнал только полезные данные размером до 64 КБ. При достижении этого предела могут возникнуть ошибки, например нехваткой памяти, или нет сведений, которые могут быть занесены в журнал. Если данные, которые нужно заносить в журнал, имеют больший размер в 64 КБ, следует сохранить их в хранилище BLOB-объектов, используя сведения из раздела " [Получение данных для моделей в рабочей среде](how-to-enable-data-collection.md)".
+>
+> Для более сложных ситуаций, таких как отслеживание моделей в развертывании AKS, рекомендуется использовать сторонние библиотеки, например [опенценсус](https://opencensus.io).
 
-1. Чтобы отправить данные в Application Insights во время вывода, обновите файл оценки, добавив инструкции Print. Для записи более сложных сведений, например данных запроса и ответа, мы будем использовать структуру JSON. В следующем примере score.py файл регистрирует время инициализации модели, входные и выходные данные во время вывода, а также время возникновения ошибок.
+Чтобы зарегистрировать пользовательские трассировки, выполните стандартный процесс развертывания AKS или ACI в статье [развертывание и размещение](how-to-deploy-and-where.md) документа. Затем выполните следующие действия.
 
-    > [!IMPORTANT]
-    > Azure Application Insights записывает в журнал только полезные данные размером до 64 КБ. При достижении этого предела могут возникнуть ошибки, например нехваткой памяти, или нет сведений, которые могут быть занесены в журнал. Если данные, которые нужно заносить в журнал, имеют больший размер в 64 КБ, следует сохранить их в хранилище BLOB-объектов, используя сведения из раздела " [Получение данных для моделей в рабочей среде](how-to-enable-data-collection.md)".
+1. Обновите файл оценки, добавив инструкции Print для отправки данных в Application Insights во время вывода. Для получения более сложной информации, такой как данные запроса и ответ, используйте структуру JSON. 
+
+    Следующий пример `score.py` файла записывается в журнал при инициализации модели, вводе и выводе во время вывода, а также о времени возникновения ошибок.
+
     
     ```python
     import pickle
@@ -133,15 +118,14 @@ logs = service.get_logs()
             return error
     ```
 
-2. Обновление конфигурации службы
+2. Обновите конфигурацию службы и обязательно включите Application Insights.
     
     ```python
     config = Webservice.deploy_configuration(enable_app_insights=True)
     ```
 
-3. Создайте образ и разверните его в [AKS или ACI](how-to-deploy-and-where.md).
+3. Создайте образ и разверните его в AKS или ACI. Дополнительные сведения см. [в разделе Развертывание и размещение](how-to-deploy-and-where.md).
 
-Дополнительные сведения о ведении журналов и сборе данных см. [в разделе Включение ведения журнала в машинное обучение Azure](how-to-enable-logging.md) и [сбор данных из моделей в рабочей среде](how-to-enable-data-collection.md).
 
 ### <a name="disable-tracking-in-python"></a>Отключение наблюдения в Python
 
@@ -154,34 +138,47 @@ logs = service.get_logs()
 
 <a name="studio"></a>
 
-## <a name="use-azure-machine-learning-studio-to-configure"></a>Использование Машинное обучение Azure Studio для настройки
+## <a name="configure-logging-with-azure-machine-learning-studio"></a>Настройка ведения журналов с помощью Машинное обучение Azure Studio
 
-Вы также можете включить Azure Application Insights из Машинное обучение Azure Studio, когда будете готовы к развертыванию модели с помощью этих шагов.
+Application Insights Azure можно также включить из Машинное обучение Azure Studio. Когда вы будете готовы развернуть модель как веб-службу, выполните следующие действия, чтобы включить Application Insights:
 
-1. Войдите в рабочую область по адресуhttps://ml.azure.com/
-1. Перейдите к разделу **модели** и выберите модель, которую требуется развернуть.
-1. Выбрать **+ развернуть**
-1. Заполнение формы « **развертывание модели** »
-1. Развернуть меню " **Дополнительно** "
+1. Войдите в студию студии в https://ml.azure.com .
+1. Перейдите к пункту **модели** и выберите модель, которую требуется развернуть.
+1. Выберите  **+ развернуть**.
+1. Заполнение формы **развертывание модели** .
+1. Разверните меню **Дополнительно** .
 
     ![Форма развертывания](./media/how-to-enable-app-insights/deploy-form.png)
-1. Выберите **включить диагностику Application Insights и сбор данных**
+1. Выберите **включить Application Insights диагностику и сбор данных**.
 
     ![Включить App Insights](./media/how-to-enable-app-insights/enable-app-insights.png)
 
 ## <a name="view-metrics-and-logs"></a>Просмотр метрик и журналов
 
-Данные службы хранятся в учетной записи Azure Application Insights в той же группе ресурсов, что и Машинное обучение Azure.
-Чтобы их просмотреть:
+### <a name="query-logs-for-deployed-models"></a>Журналы запросов для развернутых моделей
+
+Функцию можно использовать `get_logs()` для получения журналов из ранее развернутой веб-службы. Эти журналы могут содержать подробные сведения об ошибках, возникающих во время развертывания.
+
+```python
+from azureml.core.webservice import Webservice
+
+# load existing web service
+service = Webservice(name="service-name", workspace=ws)
+logs = service.get_logs()
+```
+
+### <a name="view-logs-in-the-studio"></a>Просмотр журналов в студии
+
+Azure Application Insights хранит журналы службы в той же группе ресурсов, что и Рабочая область Машинное обучение Azure. Чтобы просмотреть данные с помощью студии, выполните следующие действия.
 
 1. Перейдите в рабочую область Машинное обучение Azure в [студии](https://ml.azure.com/).
 1. Выберите **Конечные точки**.
 1. Выберите развернутую службу.
-1. Прокрутите вниз, чтобы найти **URL-адрес Application Insights** , и выберите ссылку.
+1. Выберите ссылку **URL-адрес Application Insights** .
 
     [![Указать URL-адрес Application Insights](./media/how-to-enable-app-insights/appinsightsloc.png)](././media/how-to-enable-app-insights/appinsightsloc.png#lightbox)
 
-1. В Application Insights на вкладке **Обзор** или в разделе __мониторинг__ в списке слева выберите __журналы__.
+1. В Application Insights на вкладке **Обзор** или в разделе __мониторинг__ выберите __журналы__.
 
     [![Вкладка "Обзор" в разделе "Мониторинг"](./media/how-to-enable-app-insights/overview.png)](./media/how-to-enable-app-insights/overview.png#lightbox)
 
@@ -197,25 +194,29 @@ logs = service.get_logs()
 
 Дополнительные сведения об использовании Application Insights Azure см. в разделе [что такое Application Insights?](../azure-monitor/app/app-insights-overview.md).
 
-## <a name="export-data-for-further-processing-and-longer-retention"></a>Экспорт данных для дальнейшей обработки и более длительного хранения
+## <a name="web-service-metadata-and-response-data"></a>Метаданные веб-службы и данные ответа
+
+> [!IMPORTANT]
+> Azure Application Insights записывает в журнал только полезные данные размером до 64 КБ. При достижении этого предела могут возникнуть ошибки, например нехваткой памяти, или нет сведений, которые могут быть занесены в журнал.
+
+Чтобы зарегистрировать сведения о запросе веб-службы, добавьте `print` инструкции в файл Score.py. Каждая `print` инструкция приводит к одной записи в таблице трассировки Application Insights в сообщении `STDOUT` . Application Insights сохраняет `print` выходные данные инструкции в  `customDimensions` и в `Contents` таблице трассировки. Печать строк JSON создает иерархическую структуру данных в выходных данных трассировки в разделе `Contents` .
+
+## <a name="export-data-for-retention-and-processing"></a>Экспорт данных для хранения и обработки
 
 >[!Important]
-> Application Insights Azure поддерживает только экспорты в хранилище BLOB-объектов. Дополнительные ограничения этой возможности экспорта перечислены в окне [Экспорт данных телеметрии из App Insights](https://docs.microsoft.com/azure/azure-monitor/app/export-telemetry#continuous-export-advanced-storage-configuration).
+> Application Insights Azure поддерживает только экспорты в хранилище BLOB-объектов. Дополнительные сведения об ограничениях этой реализации см. в статье [Экспорт данных телеметрии из App Insights](https://docs.microsoft.com/azure/azure-monitor/app/export-telemetry#continuous-export-advanced-storage-configuration).
 
-Вы можете использовать [непрерывный экспорт](https://docs.microsoft.com/azure/azure-monitor/app/export-telemetry) Azure Application Insights для отправки сообщений в поддерживаемую учетную запись хранения, где можно задать более длительное хранение. Данные хранятся в формате JSON и могут быть легко проанализированы для извлечения данных модели. 
-
-Фабрика данных Azure, конвейеры машинного обучения Azure или другие средства обработки данных можно использовать для преобразования данных по мере необходимости. После преобразования данных их можно зарегистрировать в рабочей области Машинное обучение Azure в качестве набора данных. Дополнительные сведения см. в разделе [Создание и регистрация наборов данных](how-to-create-register-datasets.md).
+Используйте Application Insights " [непрерывный экспорт](https://docs.microsoft.com/azure/azure-monitor/app/export-telemetry) ", чтобы экспортировать данные в учетную запись хранения BLOB-объектов, где можно определить параметры хранения. Application Insights экспортирует данные в формате JSON. 
 
 :::image type="content" source="media/how-to-enable-app-insights/continuous-export-setup.png" alt-text="непрерывный экспорт.":::
 
-
-## <a name="example-notebook"></a>Пример записной книжки
-
-В записной книжке [Enable-App-Insights-in-Production-Service. ipynb](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/deployment/enable-app-insights-in-production-service/enable-app-insights-in-production-service.ipynb) описываются концепции, описанные в этой статье. 
- 
-[!INCLUDE [aml-clone-in-azure-notebook](../../includes/aml-clone-for-examples.md)]
-
 ## <a name="next-steps"></a>Дальнейшие действия
 
-* Узнайте, [как развернуть модель в кластере службы Azure Kubernetes](https://docs.microsoft.com/azure/machine-learning/how-to-deploy-azure-kubernetes-service) или [как развернуть модель в службе "экземпляры контейнеров Azure](https://docs.microsoft.com/azure/machine-learning/how-to-deploy-azure-container-instance) ", чтобы развернуть модели в конечных точках веб-службы и разрешить Azure Application Insights использовать сбор данных и мониторинг конечных точек.
-* Дополнительные сведения об использовании данных, собираемых из моделей в рабочей среде, см. в разделе [млопс. Управление, развертывание и мониторинг моделей с помощью машинное обучение Azure](https://docs.microsoft.com/azure/machine-learning/concept-model-management-and-deployment) . Такие данные позволяют постоянно улучшать процесс машинного обучения.
+В этой статье вы узнали, как включить ведение журнала и просмотреть журналы для конечных точек веб-службы. Выполните следующие действия в следующих статьях:
+
+
+* [Развертывание модели в кластере AKS](https://docs.microsoft.com/azure/machine-learning/how-to-deploy-azure-kubernetes-service)
+
+* [Развертывание модели в службе "экземпляры контейнеров Azure"](https://docs.microsoft.com/azure/machine-learning/how-to-deploy-azure-container-instance)
+
+* [Млопс: управление, развертывание и мониторинг моделей с помощью машинное обучение Azure](https://docs.microsoft.com/azure/machine-learning/concept-model-management-and-deployment) для получения дополнительных сведений об использовании данных, собираемых из моделей в рабочей среде. Такие данные позволяют постоянно улучшать процесс машинного обучения.

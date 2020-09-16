@@ -6,16 +6,20 @@ author: lgayhardt
 ms.custom: devx-track-java
 ms.author: lagayhar
 ms.date: 05/24/2019
-ms.openlocfilehash: 464bf650cbcaa99e947a21f5a87a5872f7b11178
-ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
+ms.openlocfilehash: f0583af05ae7d8e365b50610bfb812ac7764f223
+ms.sourcegitcommit: 80b9c8ef63cc75b226db5513ad81368b8ab28a28
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87326925"
+ms.lasthandoff: 09/16/2020
+ms.locfileid: "90602471"
 ---
 # <a name="quickstart-get-started-with-application-insights-in-a-java-web-project"></a>Краткое руководство. Начало работы с Application Insights в веб-проекте Java
 
-В этом кратком руководстве вы используете Application Insights для автоматического инструментирования запросов, мониторинга зависимостей и сбора счетчиков производительности, диагностики проблем производительности и исключений, а также для написания кода, который позволяет отслеживать действия пользователей с приложением.
+
+> [!IMPORTANT]
+> Для мониторинга приложений Java рекомендуется использовать автоматическое инструментирование без изменения кода. Следуйте указаниям для [Application Insights агента Java 3,0](https://docs.microsoft.com/azure/azure-monitor/app/java-in-process-agent).
+
+В этом кратком руководстве вы используете пакет SDK для Application Insights для инструментирования запросов, мониторинга зависимостей и сбора счетчиков производительности, диагностики проблем производительности и исключений, а также для написания кода, который позволяет отслеживать действия пользователей с приложением.
 
 Application Insights — это расширяемая служба аналитики для разработчиков веб-ресурсов, позволяющая оценивать производительность и использование работающего приложения. Надстройка Application Insights поддерживает приложения Java, работающие под управлением Linux, Unix или Windows.
 
@@ -77,9 +81,9 @@ Application Insights — это расширяемая служба аналит
 
 ### <a name="questions"></a>Вопросы
 * *Какова связь между `-web-auto` `-web` `-core` компонентами и?*
-  * `applicationinsights-web-auto`предоставляет метрики, которые отсчитываются количество запросов HTTP сервлета и время отклика путем автоматической регистрации фильтра Application Insights сервлета в среде выполнения.
-  * `applicationinsights-web`также предоставляет метрики, которые отсчитываются количество запросов HTTP сервлета и время ответа, но требуют ручной регистрации фильтра Application Insights сервлета в приложении.
-  * `applicationinsights-core`предоставляет только простой API, например, если приложение не основано на сервлета.
+  * `applicationinsights-web-auto` предоставляет метрики, которые отсчитываются количество запросов HTTP сервлета и время отклика путем автоматической регистрации фильтра Application Insights сервлета в среде выполнения.
+  * `applicationinsights-web` также предоставляет метрики, которые отсчитываются количество запросов HTTP сервлета и время ответа, но требуют ручной регистрации фильтра Application Insights сервлета в приложении.
+  * `applicationinsights-core` предоставляет только простой API, например, если приложение не основано на сервлета.
   
 * *Как обновить пакет SDK до последней версии?*
   * Если вы используете Gradle или Maven...
@@ -193,22 +197,10 @@ Application Insights — это расширяемая служба аналит
 
     (Сюда входят счетчики производительности).
 
-## <a name="azure-app-service-config-spring-boot"></a>Конфигурация службы приложений Azure (пружинная загрузка)
+## <a name="azure-app-service-aks-vms-config"></a>Служба приложений Azure, AKS, Конфигурация виртуальных машин
 
-Приложения с пружинной загрузкой, запущенные в Windows, нуждаются в дополнительной настройке для запуска в службах приложений Azure. Измените **web.config** и добавьте следующую конфигурацию:
+Лучший и самый простой подход к мониторингу приложений, работающих на любом из поставщиков ресурсов Azure, — использовать Application Insights автоматическое инструментирование с помощью [агента Java 3,0](https://docs.microsoft.com/azure/azure-monitor/app/java-in-process-agent).
 
-```xml
-<?xml version="1.0" encoding="UTF-8"?>
-<configuration>
-    <system.webServer>
-        <handlers>
-            <add name="httpPlatformHandler" path="*" verb="*" modules="httpPlatformHandler" resourceType="Unspecified"/>
-        </handlers>
-        <httpPlatform processPath="%JAVA_HOME%\bin\java.exe" arguments="-Djava.net.preferIPv4Stack=true -Dserver.port=%HTTP_PLATFORM_PORT% -jar &quot;%HOME%\site\wwwroot\AzureWebAppExample-0.0.1-SNAPSHOT.jar&quot;">
-        </httpPlatform>
-    </system.webServer>
-</configuration>
-```
 
 ## <a name="exceptions-and-request-failures"></a>Исключения и ошибки запросов
 Необработанные исключения и ошибки запросов автоматически собираются Application Insights веб-фильтром.
@@ -259,7 +251,7 @@ Application Insights — это расширяемая служба аналит
 * `displayName` — имя, отображаемое в портале Application Insights.
 * `objectName` — имя объекта JMX.
 * `attribute` — атрибут имени объекта JMX для выборки
-* `type`(необязательно) — тип атрибута объекта JMX:
+* `type` (необязательно) — тип атрибута объекта JMX:
   * по умолчанию: простой тип, такой как int или long;
   * `composite`— данные счетчика производительности имеют формат "Атрибут.Данные";
   * `tabular`— данные счетчика производительности имеют формат строки таблицы.
@@ -301,7 +293,7 @@ Application Insights может тестировать ваш веб-сайт ч
 
 [Дополнительные сведения о настройке веб-тестов доступности см. здесь.][availability]
 
-## <a name="questions-problems"></a>Есть вопросы? Проблемы?
+## <a name="questions-problems"></a>У вас появились вопросы? Проблемы?
 [Устранение неполадок Java](java-troubleshoot.md)
 
 ## <a name="next-steps"></a>Дальнейшие действия
@@ -309,7 +301,7 @@ Application Insights может тестировать ваш веб-сайт ч
 * [Отслеживайте счетчики производительности Unix.](java-collectd.md)
 * Добавляйте [мониторинг на веб-страницы](javascript.md), чтобы отслеживать время загрузки страниц, вызовы AJAX и исключения браузера.
 * Пишите [пользовательскую телеметрию](./api-custom-events-metrics.md) для отслеживания использования в браузере или на сервере.
-* Использование [аналитики](../log-query/log-query-overview.md) для мощных запросов телеметрии из приложения
+* Использование  [аналитики](../log-query/log-query-overview.md) для мощных запросов телеметрии из приложения
 * Дополнительные сведения см. в разделе [Azure for Java developers](/java/azure) (Azure для разработчиков Java).
 
 <!--Link references-->

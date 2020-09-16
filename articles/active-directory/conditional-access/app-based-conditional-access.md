@@ -11,20 +11,20 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: spunukol, rosssmi
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 2c9cd790edcb186ed2f80d467076512cd558ca40
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 1a3cdb851ca00300d995bcf2075252a360242197
+ms.sourcegitcommit: 80b9c8ef63cc75b226db5513ad81368b8ab28a28
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85253398"
+ms.lasthandoff: 09/16/2020
+ms.locfileid: "90601968"
 ---
 # <a name="how-to-require-approved-client-apps-for-cloud-app-access-with-conditional-access"></a>Как запросить утвержденные клиентские приложения для доступа к облачным приложениям с помощью условного доступа
 
 Сотрудники регулярно используют мобильные устройства как в личных целях, так и для выполнения рабочих задач. Организации хотят обеспечить продуктивность работы и при этом предотвратить потери данных в связи с потенциально небезопасными приложениями. С условным доступом организации могут ограничить доступ к утвержденным клиентским приложениям с поддержкой современной проверки подлинности.
 
-В этой статье представлены два сценария настройки политик условного доступа для таких ресурсов, как Office 365, Exchange Online и SharePoint Online.
+В этой статье представлены два сценария настройки политик условного доступа для таких ресурсов, как Microsoft 365, Exchange Online и SharePoint Online.
 
-- [Сценарий 1. для приложений Office 365 требуется одобренное клиентское приложение](#scenario-1-office-365-apps-require-an-approved-client-app)
+- [Сценарий 1. для Microsoft 365 приложений требуется утвержденное клиентское приложение](#scenario-1-microsoft-365-apps-require-an-approved-client-app)
 - [Сценарий 2. для Exchange Online и SharePoint Online требуется утвержденное клиентское приложение](#scenario-2-exchange-online-and-sharepoint-online-require-an-approved-client-app)
 
 В условном доступе эта функциональность называется запросом утвержденного клиентского приложения. Список утвержденных клиентских приложений приведен в разделе [Требование утвержденного клиентского приложения](concept-conditional-access-grant.md#require-approved-client-app).
@@ -32,9 +32,9 @@ ms.locfileid: "85253398"
 > [!NOTE]
 > Чтобы запросить утвержденные клиентские приложения для устройств iOS и Android, эти устройства должны сначала зарегистрироваться в Azure AD.
 
-## <a name="scenario-1-office-365-apps-require-an-approved-client-app"></a>Сценарий 1. для приложений Office 365 требуется одобренное клиентское приложение
+## <a name="scenario-1-microsoft-365-apps-require-an-approved-client-app"></a>Сценарий 1. для Microsoft 365 приложений требуется утвержденное клиентское приложение
 
-В этом сценарии компания Contoso решила, что пользователи, использующие мобильные устройства, могут получить доступ ко всем службам Office 365, если они используют утвержденные клиентские приложения, такие как Outlook Mobile, OneDrive и Microsoft Teams. Все пользователи уже выполнили вход с учетными данными Azure AD и имеют назначенные лицензии, в том числе Azure AD Premium P1, P2 и Microsoft Intune.
+В этом сценарии компания Contoso решила, что пользователи, использующие мобильные устройства, могут получить доступ ко всем Microsoft 365 службам, если они используют утвержденные клиентские приложения, такие как Outlook Mobile, OneDrive и Microsoft Teams. Все пользователи уже выполнили вход с учетными данными Azure AD и имеют назначенные лицензии, в том числе Azure AD Premium P1, P2 и Microsoft Intune.
 
 Организации должны выполнить следующие три шага, чтобы требовать использования утвержденного клиентского приложения на мобильных устройствах.
 

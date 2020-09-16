@@ -7,12 +7,12 @@ ms.service: resource-move
 ms.topic: conceptual
 ms.date: 09/14/2020
 ms.author: raynew
-ms.openlocfilehash: 18de210d817ee309ac4970ecea6b62f6ef03ef02
-ms.sourcegitcommit: 03662d76a816e98cfc85462cbe9705f6890ed638
+ms.openlocfilehash: 68e5f937b8ad8367abf488598bda311a39d462c6
+ms.sourcegitcommit: 80b9c8ef63cc75b226db5513ad81368b8ab28a28
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90530409"
+ms.lasthandoff: 09/16/2020
+ms.locfileid: "90600659"
 ---
 # <a name="common-questions"></a>Часто задаваемые вопросы
 
@@ -90,7 +90,10 @@ ms.locfileid: "90530409"
 Управляемое удостоверение для перемещения ресурсов было сброшено в " *нет*". | Повторно включите назначенное системой удостоверение в > **удостоверение**коллекции перемещения. Кроме того, снова добавьте ресурс в поле **Добавить ресурсы**, что делает то же самое.  
 Подписка была перемещена в другой клиент. | Отключите, а затем включите управляемое удостоверение для перемещения коллекции.
 
+### <a name="how-can-i-do-multiple-moves-together"></a>Как можно выполнить несколько перемещений одновременно?
 
-## <a name="next-steps"></a>Дальнейшие шаги
+При необходимости измените сочетания исходного и целевого объектов с помощью параметра изменить на портале.
+
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Узнайте больше](about-move-process.md) о компонентах перемещения ресурсов и процессе перемещения.

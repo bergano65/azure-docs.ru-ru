@@ -1,15 +1,15 @@
 ---
 title: Поддерживаемые типы ресурсов Azure Resource Manager
 description: Укажите список типов ресурсов Azure Resource Manager, поддерживаемых графиком ресурсов Azure и журналом изменений.
-ms.date: 09/04/2020
+ms.date: 09/15/2020
 ms.topic: reference
 ms.custom: generated
-ms.openlocfilehash: b81ffcdde074978a9a72c5ab651ec2c5556870bd
-ms.sourcegitcommit: de2750163a601aae0c28506ba32be067e0068c0c
+ms.openlocfilehash: a52378422c6ee740f30f155cdfb0839a3f281abe
+ms.sourcegitcommit: 80b9c8ef63cc75b226db5513ad81368b8ab28a28
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/04/2020
-ms.locfileid: "89488326"
+ms.lasthandoff: 09/16/2020
+ms.locfileid: "90600608"
 ---
 # <a name="azure-resource-graph-table-and-resource-type-reference"></a>Таблица Azure Resource Graph и сведения о типах ресурсов
 
@@ -63,6 +63,7 @@ Azure Resource Graph поддерживает следующие **типы ре
 - Microsoft. аадиам/азуреадметрикс
 - microsoft.aadiam/privatelinkforazuread
 - microsoft.aadiam/tenants
+- Microsoft. агфудплатформ/фармбеатс
 - microsoft.aisupercomputer/accounts
 - microsoft.aisupercomputer/accounts/jobgroups
 - microsoft.aisupercomputer/accounts/jobgroups/jobs
@@ -80,6 +81,7 @@ Azure Resource Graph поддерживает следующие **типы ре
 - microsoft.automation/automationaccounts
 - microsoft.automation/automationaccounts/configurations
 - microsoft.automation/automationaccounts/runbooks
+- Microsoft. аутономаусдевелопментплатформ/учетные записи
 - microsoft.autonomoussystems/workspaces
 - microsoft.avs/privateclouds
 - microsoft.azconfig/configurationstores
@@ -94,6 +96,7 @@ Azure Resource Graph поддерживает следующие **типы ре
 - microsoft.azuredata/sqlserverinstances
 - microsoft.azuredata/sqlserverregistrations
 - Microsoft. azurestack/еджесубскриптионс
+- Microsoft. azurestack/линкедсубскриптионс
 - microsoft.azurestack/registrations
 - microsoft.azurestackhci/clusters
 - microsoft.baremetal/consoleconnections
@@ -168,6 +171,7 @@ Azure Resource Graph поддерживает следующие **типы ре
 - microsoft.containerservice/containerservices
 - microsoft.containerservice/managedclusters
 - microsoft.containerservice/openshiftmanagedclusters
+- Microsoft. contoso/Clusters
 - microsoft.contoso/employees
 - microsoft.costmanagement/connectors
 - microsoft.customproviders/resourceproviders
@@ -250,6 +254,7 @@ Azure Resource Graph поддерживает следующие **типы ре
 - Microsoft. хибриднетворк/Devices
 - Microsoft. хибриднетворк/виртуалнетворкфунктионс
 - microsoft.importexport/jobs
+- Microsoft. индустридаталифецикле/басемоделс
 - Microsoft. индустридаталифецикле/кустодианколлаборативес
 - microsoft.industrydatalifecycle/derivedmodels
 - Microsoft. индустридаталифецикле/мемберколлаборативес
@@ -265,6 +270,7 @@ Azure Resource Graph поддерживает следующие **типы ре
 - microsoft.insights/notificationgroups
 - microsoft.insights/notificationrules
 - microsoft.insights/privatelinkscopes
+- Microsoft. Insights/куерипаккс
 - microsoft.insights/scheduledqueryrules
 - microsoft.insights/webtests
 - microsoft.insights/workbooks
@@ -414,6 +420,7 @@ Azure Resource Graph поддерживает следующие **типы ре
 - microsoft.resources/templatespecs/versions
 - microsoft.saas/applications
 - microsoft.scheduler/jobcollections
+- Microsoft. SCVMM/вммсерверс
 - microsoft.search/searchservices
 - microsoft.security/automations
 - microsoft.security/iotsecuritysolutions
@@ -523,6 +530,8 @@ Azure Resource Graph поддерживает следующие **типы ре
 - wandisco.fusion/fusiongroups/managedonpremzones
 - wandisco.fusion/fusiongroups/onpremzones
 - wandisco.fusion/fusiongroups/replicationrules
+- вандиско. Fusion/переносимость
+- вандиско. Fusion/переносимость/целевые объекты
 
 ## <a name="securityresources"></a>securityresources
 

@@ -12,12 +12,12 @@ manager: daveba
 ms.reviewer: calebb
 ms.collection: M365-identity-device-management
 ms.custom: has-adal-ref
-ms.openlocfilehash: 5e75f7214e3a9aa5b44a763cc3448583b47185f9
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: ed6beec63114f1f157bb24354d77e50ecdaa8255
+ms.sourcegitcommit: 80b9c8ef63cc75b226db5513ad81368b8ab28a28
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85253245"
+ms.lasthandoff: 09/16/2020
+ms.locfileid: "90601643"
 ---
 # <a name="azure-active-directory-conditional-access-faqs"></a>Azure Active Directory часто задаваемые вопросы о условном доступе
 
@@ -59,8 +59,8 @@ Microsoft Teams также поддерживается отдельно в ка
 
 После включения некоторых политик условного доступа в клиенте Microsoft Teams некоторые вкладки могут перестать работать на настольном клиенте, как и ожидалось. Однако затронутая функция вкладок при использовании веб-клиента Microsoft Teams. На затронутые вкладки могут входить Power BI, формы, VSTS, PowerApps и список SharePoint.
 
-Чтобы просмотреть затронутые вкладки, необходимо использовать веб-клиент Teams в Microsoft Windows, Internet Explorer или Chrome с установленным расширением Accounts. Некоторые вкладки зависят от веб-аутентификации, которая не работает в Microsoft Teams Desktop Client, если включен условный доступ. Корпорация Майкрософт работает с партнерами, чтобы включить эти сценарии. На сегодняшний день мы включили сценрариос, включающие планировщик, OneNote и Stream.
+Чтобы просмотреть затронутые вкладки, необходимо использовать веб-клиент Teams в Microsoft Windows, Internet Explorer или Chrome с установленным расширением Accounts. Некоторые вкладки зависят от веб-аутентификации, которая не работает в Microsoft Teams Desktop Client, если включен условный доступ. Корпорация Майкрософт работает с партнерами, чтобы включить эти сценарии. На сегодняшний день мы включили сценарии, включающие планировщик, OneNote и Stream.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Чтобы настроить политики условного доступа для своей среды, ознакомьтесь с [рекомендациями по условному доступу в Azure Active Directory](best-practices.md). 

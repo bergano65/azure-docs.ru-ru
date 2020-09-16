@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 03/31/2020
 ms.author: kumud
-ms.openlocfilehash: f2ff81c1f1989e28fa48e4307a13433a7b98e915
-ms.sourcegitcommit: 8a7b82de18d8cba5c2cec078bc921da783a4710e
+ms.openlocfilehash: 9c2ea7cae26ac00c9c647704de8de1f39ebce8f0
+ms.sourcegitcommit: 80b9c8ef63cc75b226db5513ad81368b8ab28a28
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89051055"
+ms.lasthandoff: 09/16/2020
+ms.locfileid: "90600843"
 ---
 # <a name="upgrade-an-ipv4-application-to-ipv6-in-azure-virtual-network---powershell"></a>Обновление приложения IPv4 до IPv6 в виртуальной сети Azure с помощью PowerShell
 
@@ -28,13 +28,11 @@ ms.locfileid: "89051055"
 - Виртуальные машины с сетевыми адаптерами с конфигурацией IPv4 и IPv6
 - Общедоступный IP-адрес IPv6, поэтому подсистема балансировки нагрузки использует IPv6-подключение к Интернету
 
-
-
 [!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
 
 Чтобы установить и использовать PowerShell локально для работы с этой статьей, вам понадобится модуль Azure PowerShell 6.9.0 или более поздней версии. Выполните командлет `Get-Module -ListAvailable Az`, чтобы узнать установленную версию. Если вам необходимо выполнить обновление, ознакомьтесь со статьей, посвященной [установке модуля Azure PowerShell](/powershell/azure/install-Az-ps). Если модуль PowerShell запущен локально, необходимо также выполнить командлет `Connect-AzAccount`, чтобы создать подключение к Azure.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 В этой статье предполагается, что вы развернули Load Balancer (цен. категория "Стандартный"), как описано в разделе [Краткое руководство по созданию Load Balancer (цен. категория "Стандартный") Azure PowerShell](../load-balancer/quickstart-load-balancer-standard-public-powershell.md).
 
@@ -42,17 +40,16 @@ ms.locfileid: "89051055"
 
 Прежде чем создавать виртуальную сеть с двумя стеками, необходимо получить группу ресурсов с помощью [Get-азресаурцеграуп](/powershell/module/az.resources/get-azresourcegroup).
 
-```azurepowershell
- $rg = Get-AzResourceGroup  -ResourceGroupName "myResourceGroupSLB"
+```azurepowershell-interactive
+$rg = Get-AzResourceGroup  -ResourceGroupName "myResourceGroupSLB"
 ```
 
 ## <a name="create-an-ipv6-ip-addresses"></a>Создание IP-адресов IPv6
 
 Создайте общедоступный адрес IPv6 с помощью [New-азпублиЦипаддресс](/powershell/module/az.network/new-azpublicipaddress) для Load Balancer (цен. Категория "Стандартный"). В следующем примере создается общедоступный IP-адрес IPv6 с именем *PublicIP_v6* в группе ресурсов *myResourceGroupSLB* :
 
-```azurepowershell
-  
-  $PublicIP_v6 = New-AzPublicIpAddress `
+```azurepowershell-interactive  
+$PublicIP_v6 = New-AzPublicIpAddress `
   -Name "PublicIP_v6" `
   -ResourceGroupName $rg.ResourceGroupName `
   -Location $rg.Location  `
@@ -65,13 +62,15 @@ ms.locfileid: "89051055"
 
 Извлеките существующую конфигурацию подсистемы балансировки нагрузки и добавьте новый IP-адрес IPv6 с помощью [Add-азлоадбаланцерфронтендипконфиг](/powershell/module/az.network/Add-AzLoadBalancerFrontendIpConfig) следующим образом:
 
-```azurepowershell
+```azurepowershell-interactive
 # Retrieve the load balancer configuration
 $lb = Get-AzLoadBalancer -ResourceGroupName $rg.ResourceGroupName -Name "MyLoadBalancer"
+
 # Add IPv6 components to the local copy of the load balancer configuration
 $lb | Add-AzLoadBalancerFrontendIpConfig `
   -Name "dsLbFrontEnd_v6" `
   -PublicIpAddress $PublicIP_v6
+
 #Update the running load balancer with the new frontend
 $lb | Set-AzLoadBalancer
 ```
@@ -80,8 +79,9 @@ $lb | Set-AzLoadBalancer
 
 Создайте внутренний пул в локальной копии конфигурации подсистемы балансировки нагрузки и обновите работающую подсистему балансировки нагрузки с помощью новой конфигурации серверного пула следующим образом:
 
-```azurepowershell
+```azurepowershell-interactive
 $lb | Add-AzLoadBalancerBackendAddressPoolConfig -Name "LbBackEndPool_v6"
+
 # Update the running load balancer with the new backend pool
 $lb | Set-AzLoadBalancer
 ```
@@ -89,10 +89,11 @@ $lb | Set-AzLoadBalancer
 ## <a name="configure-load-balancer-rules"></a>Настройка правил подсистемы балансировки нагрузки.
 Извлеките существующую конфигурацию внешнего интерфейса и внутреннего пула подсистемы балансировки нагрузки, а затем добавьте новые правила балансировки нагрузки с помощью [Add-азлоадбаланцеррулеконфиг](/powershell/module/az.network/Add-AzLoadBalancerRuleConfig).
 
-```azurepowershell
+```azurepowershell-interactive
 # Retrieve the updated (live) versions of the frontend and backend pool
 $frontendIPv6 = Get-AzLoadBalancerFrontendIpConfig -Name "dsLbFrontEnd_v6" -LoadBalancer $lb
 $backendPoolv6 = Get-AzLoadBalancerBackendAddressPoolConfig -Name "LbBackEndPool_v6" -LoadBalancer $lb
+
 # Create new LB rule with the frontend and backend
 $lb | Add-AzLoadBalancerRuleConfig `
   -Name "dsLBrule_v6" `
@@ -101,6 +102,7 @@ $lb | Add-AzLoadBalancerRuleConfig `
   -Protocol Tcp `
   -FrontendPort 80 `
   -BackendPort 80
+
 #Finalize all the load balancer updates on the running load balancer
 $lb | Set-AzLoadBalancer
 ```
@@ -108,53 +110,57 @@ $lb | Set-AzLoadBalancer
 
 Добавьте диапазоны IPv6-адресов в виртуальную сеть и подсеть, в которых размещаются виртуальные машины, следующим образом:
 
-```azurepowershell
+```azurepowershell-interactive
 #Add IPv6 ranges to the VNET and subnet
 #Retreive the VNET object
 $vnet = Get-AzVirtualNetwork  -ResourceGroupName $rg.ResourceGroupName -Name "myVnet" 
+
 #Add IPv6 prefix to the VNET
 $vnet.addressspace.addressprefixes.add("ace:cab:deca::/48")
+
 #Update the running VNET
 $vnet |  Set-AzVirtualNetwork
 
 #Retrieve the subnet object from the local copy of the VNET
 $subnet= $vnet.subnets[0]
+
 #Add IPv6 prefix to the Subnet (subnet of the VNET prefix, of course)
 $subnet.addressprefix.add("ace:cab:deca::/64")
+
 #Update the running VNET with the new subnet configuration
 $vnet |  Set-AzVirtualNetwork
-
 ```
+
 ## <a name="add-ipv6-configuration-to-nic"></a>Добавление конфигурации IPv6 к сетевой карте
 
 Настройте все сетевые карты виртуальных машин с IPv6-адресом с помощью [Add-азнетворкинтерфацеипконфиг](/powershell/module/az.network/Add-AzNetworkInterfaceIpConfig) следующим образом:
 
-```azurepowershell
-
+```azurepowershell-interactive
 #Retrieve the NIC objects
 $NIC_1 = Get-AzNetworkInterface -Name "myNic1" -ResourceGroupName $rg.ResourceGroupName
 $NIC_2 = Get-AzNetworkInterface -Name "myNic2" -ResourceGroupName $rg.ResourceGroupName
 $NIC_3 = Get-AzNetworkInterface -Name "myNic3" -ResourceGroupName $rg.ResourceGroupName
+
 #Add an IPv6 IPconfig to NIC_1 and update the NIC on the running VM
 $NIC_1 | Add-AzNetworkInterfaceIpConfig -Name MyIPv6Config -Subnet $vnet.Subnets[0]  -PrivateIpAddressVersion IPv6 -LoadBalancerBackendAddressPool $backendPoolv6 
 $NIC_1 | Set-AzNetworkInterface
+
 #Add an IPv6 IPconfig to NIC_2 and update the NIC on the running VM
 $NIC_2 | Add-AzNetworkInterfaceIpConfig -Name MyIPv6Config -Subnet $vnet.Subnets[0]  -PrivateIpAddressVersion IPv6 -LoadBalancerBackendAddressPool $backendPoolv6 
 $NIC_2 | Set-AzNetworkInterface
+
 #Add an IPv6 IPconfig to NIC_3 and update the NIC on the running VM
 $NIC_3 | Add-AzNetworkInterfaceIpConfig -Name MyIPv6Config -Subnet $vnet.Subnets[0]  -PrivateIpAddressVersion IPv6 -LoadBalancerBackendAddressPool $backendPoolv6 
 $NIC_3 | Set-AzNetworkInterface
-
 ```
 
 ## <a name="view-ipv6-dual-stack-virtual-network-in-azure-portal"></a>Просмотр двух виртуальных сетей IPv6 с двумя стеками в портал Azure
+
 Виртуальную сеть с двумя стеками IPv6 можно просмотреть в портал Azure следующим образом:
 1. На панели поиска портала введите *myVnet*.
 2. Когда в результатах поиска появится **myVnet** , выберите его. Откроется страница **обзора** для виртуальной сети с двумя стеками с именем *myVNet*. В виртуальной сети с двумя стеками показаны три сетевых адаптера с конфигурациями IPv4 и IPv6, расположенными в подсети с двойным стеком с именем *mySubnet*.
 
   ![Виртуальная сеть с двумя стеками IPv6 в Azure](./media/ipv6-add-to-existing-vnet-powershell/ipv6-dual-stack-vnet.png)
-
-
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 

@@ -17,12 +17,12 @@ ms.date: 07/17/2019
 ms.author: markvi
 ms.reviewer: dhanyahk
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 01c9449a996929eb20acf35897a100dfbb722e82
-ms.sourcegitcommit: d68c72e120bdd610bb6304dad503d3ea89a1f0f7
+ms.openlocfilehash: 86eec0cf7108e2d3b47f7b98dbdaffe76be8afd8
+ms.sourcegitcommit: 80b9c8ef63cc75b226db5513ad81368b8ab28a28
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/01/2020
-ms.locfileid: "89229928"
+ms.lasthandoff: 09/16/2020
+ms.locfileid: "90603517"
 ---
 # <a name="audit-activity-reports-in-the-azure-active-directory-portal"></a>Отчеты о действиях аудита на портале Azure Active Directory 
 
@@ -89,7 +89,7 @@ ms.locfileid: "89229928"
 
 Фильтр **службы** позволяет выбрать один из раскрывающегося списка следующих служб:
 
-- All
+- Все
 - Пользовательский интерфейс управления AAD
 - Проверки доступа
 - "Account Provisioning" (Подготовка учетных записей).
@@ -111,7 +111,7 @@ ms.locfileid: "89229928"
 
 Фильтр **категорий** позволяет выбрать один из следующих фильтров:
 
-- All
+- Все
 - AdministrativeUnit
 - ApplicationManagement
 - Аутентификация
@@ -138,7 +138,7 @@ ms.locfileid: "89229928"
 
 Фильтр **состояния** позволяет выполнять фильтрацию на основе состояния операции аудита. Состояние может быть одним из следующих:
 
-- All
+- Все
 - Успешно
 - Failure
 
@@ -208,11 +208,11 @@ ms.locfileid: "89229928"
 
 ![Журналы аудита](./media/concept-audit-logs/enterpriseapplications.png "Журналы аудита")
 
-## <a name="office-365-activity-logs"></a>Журналы действий Office 365
+## <a name="microsoft-365-activity-logs"></a>Журналы действий Microsoft 365
 
-Журналы действий Office 365 можно просмотреть в [центре администрирования Microsoft 365](/office365/admin/admin-overview/about-the-admin-center). Хотя действия Office 365 и журналы действий Azure AD совместно используют много ресурсов каталога, только центр администрирования Microsoft 365 предоставляет полное представление журналов действий Office 365. 
+Журналы действий Microsoft 365 можно просмотреть в [центре администрирования Microsoft 365](/office365/admin/admin-overview/about-the-admin-center). Несмотря на то, что Microsoft 365 действия и журналы действий Azure AD совместно используют много ресурсов каталога, только центр администрирования Microsoft 365 предоставляет полное представление журналов действий Microsoft 365. 
 
-Вы также можете получить доступ к журналам действий Office 365 программным путем с помощью [API-интерфейсов управления office 365](/office/office-365-management-api/office-365-management-apis-overview).
+Можно также программно получить доступ к журналам действий Microsoft 365 с помощью [API-интерфейсов управления Office 365](/office/office-365-management-api/office-365-management-apis-overview).
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
