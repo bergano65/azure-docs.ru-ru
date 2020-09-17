@@ -34,7 +34,7 @@ ms.locfileid: "90564412"
 
 Вы будете присоединить службу Azure SignalR к Azure Digital двойников по указанному ниже пути. Разделы A, B и C на схеме основаны на схеме архитектуры [комплексного требования учебника](tutorial-end-to-end.md). в этом пошаговом окне вы создадите это, добавив раздел D.
 
-:::image type="content" source="media/how-to-integrate-azure-signalr/signalr-integration-topology.png" alt-text="Обзор служб Azure в комплексном сценарии. Описание данных, передаваемых из устройства в центр Интернета вещей, с помощью функции Azure (стрелка б) в экземпляре Azure Digital двойников (раздел A), а затем из службы "Сетка событий" в другую функцию Azure для обработки (стрелка C). Раздел г показывает данные, передаваемые из одной и той же сетки событий с помощью стрелки C в функцию Azure с меткой "вещание". "Broadcast" обменивается данными с другой функцией Azure, обозначенной как "Negotiate", и "Broadcast" и "Negotiate" обмениваются данными с устройствами компьютера." lightbox="media/how-to-integrate-azure-signalr/signalr-integration-topology.png":::
+:::image type="content" source="media/how-to-integrate-azure-signalr/signalr-integration-topology.png" alt-text="Обзор служб Azure в комплексном сценарии. Описание данных, передаваемых из устройства в центр Интернета вещей, с помощью функции Azure (стрелка б) в экземпляре Azure Digital двойников (раздел A), а затем из службы Сетка событий в другую функцию Azure для обработки (стрелка C). Раздел г показывает данные, передаваемые из одной и той же сетки событий с помощью стрелки C в функцию Azure с меткой вещание. Broadcast обменивается данными с другой функцией Azure, обозначенной как Negotiate, и Broadcast и Negotiate обмениваются данными с устройствами компьютера." lightbox="media/how-to-integrate-azure-signalr/signalr-integration-topology.png":::
 
 ## <a name="download-the-sample-applications"></a>Загрузка примеров приложений
 
@@ -61,7 +61,7 @@ ms.locfileid: "90564412"
 
 1. Щелкните значок, чтобы скопировать основную строку подключения.
 
-    :::image type="content" source="media/how-to-integrate-azure-signalr/signalr-keys.png" alt-text="Снимок экрана портал Azure, на которой показана страница "ключи" для экземпляра SignalR. Будет выделен значок "Копировать в буфер обмена" рядом с основной СТРОКой подключения." lightbox="media/how-to-integrate-azure-signalr/signalr-keys.png":::
+    :::image type="content" source="media/how-to-integrate-azure-signalr/signalr-keys.png" alt-text="Снимок экрана портал Azure, на которой показана страница ключи для экземпляра SignalR. Будет выделен значок Копировать в буфер обмена рядом с основной СТРОКой подключения." lightbox="media/how-to-integrate-azure-signalr/signalr-keys.png":::
 
 Затем запустите Visual Studio (или другой редактор кода по своему усмотрению) и откройте решение Code в папке *Azure_Digital_Twins_samples > адтсамплеапп* . Затем выполните следующие действия, чтобы создать функции.
 
@@ -139,11 +139,11 @@ ms.locfileid: "90564412"
 Затем опубликуйте свою функцию в Azure, выполнив действия, описанные в [разделе " *Публикация приложения* ](tutorial-end-to-end.md#publish-the-app) " руководства *Подключение комплексного решения* . Вы можете опубликовать его в той же службе приложений или приложении-функции, которая использовалась в сквозном учебнике prereq, или создать новую, но вы можете использовать то же самое, чтобы избежать дублирования. Кроме того, завершите публикацию приложения, выполнив следующие действия:
 1. Собирайте **URL-адрес конечной точки HTTP**функции *Negotiate* . Для этого перейдите на страницу [приложений-функций](https://portal.azure.com/#blade/HubsExtension/BrowseResource/resourceType/Microsoft.Web%2Fsites/kind/functionapp) портал Azure и выберите приложение-функцию из списка. В меню приложение выберите *функции* и выберите функцию *согласовать* .
 
-    :::image type="content" source="media/how-to-integrate-azure-signalr/functions-negotiate.png" alt-text="Портал Azure представление приложения функции, в меню которого выделено "функции". Список функций отображается на странице, и функция "Negotiate" также выделяется.":::
+    :::image type="content" source="media/how-to-integrate-azure-signalr/functions-negotiate.png" alt-text="Портал Azure представление приложения функции, в меню которого выделено функции. Список функций отображается на странице, и функция Negotiate также выделяется.":::
 
     Нажмите *получить URL-адрес функции* и скопируйте значение **до _/API_ (не включайте последние _/неготиате?_)**. Он будет использоваться позже.
 
-    :::image type="content" source="media/how-to-integrate-azure-signalr/get-function-url.png" alt-text="Портал Azure представление функции "Negotiate". Кнопка "получить URL-адрес функции" выделена и часть URL-адреса с начала до "/API"":::
+    :::image type="content" source="media/how-to-integrate-azure-signalr/get-function-url.png" alt-text="Портал Azure представление функции Negotiate. Кнопка получить URL-адрес функции выделена и часть URL-адреса с начала до /API":::
 
 1. Наконец, добавьте **строку подключения** Azure SignalR из ранее в параметры приложения функции, используя следующую команду Azure CLI. Команду можно выполнить в [Azure Cloud Shell](https://shell.azure.com)или локально, если [на компьютере установлен](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest)Azure CLI.
  
@@ -153,7 +153,7 @@ ms.locfileid: "90564412"
 
     Выходные данные этой команды выводят все параметры приложения, настроенные для функции Azure. Найдите `AzureSignalRConnectionString` в нижней части списка, чтобы убедиться, что он был добавлен.
 
-    :::image type="content" source="media/how-to-integrate-azure-signalr/output-app-setting.png" alt-text="Фрагмент выходных данных в командном окне, отображающий элемент списка с именем "Азуресигналрконнектионстринг"":::
+    :::image type="content" source="media/how-to-integrate-azure-signalr/output-app-setting.png" alt-text="Фрагмент выходных данных в командном окне, отображающий элемент списка с именем Азуресигналрконнектионстринг":::
 
 #### <a name="connect-the-function-to-event-grid"></a>Подключение функции к Сетке событий
 
@@ -172,7 +172,7 @@ ms.locfileid: "90564412"
     - Заполните **подписку**, **группу ресурсов**, **приложение-функцию** и **функцию** (*вещание*). После выбора подписки некоторые из этих полей могут быть заполнены автоматически.
     - Нажмите кнопку **Подтвердить выбор**.
 
-:::image type="content" source="media/how-to-integrate-azure-signalr/create-event-subscription.png" alt-text="Портал Azure представление о создании подписки на события. Поля, указанные выше, заполнены, а кнопки "подтвердить выделение" и "создать" выделены.":::
+:::image type="content" source="media/how-to-integrate-azure-signalr/create-event-subscription.png" alt-text="Портал Azure представление о создании подписки на события. Поля, указанные выше, заполнены, а кнопки подтвердить выделение и создать выделены.":::
 
 Вернитесь на страницу *Создание подписки на события* и нажмите кнопку **Создать**.
 
