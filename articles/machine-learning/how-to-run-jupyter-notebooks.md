@@ -84,7 +84,7 @@ ms.locfileid: "89650922"
 
 1. Если значок не отображается, нажмите кнопку **...** справа от целевого объекта вычислений и выберите **Открыть терминал**.
 
-    :::image type="content" source="media/how-to-run-jupyter-notebooks/alt-open-terminal.png" alt-text="Открытие терминала с помощью меню "..."":::
+    :::image type="content" source="media/how-to-run-jupyter-notebooks/alt-open-terminal.png" alt-text="Открытие терминала с помощью меню ...":::
 
 
 Дополнительные сведения см. в разделе [Клонирование репозиториев Git в файловую систему рабочей области](concept-train-model-git-integration.md#clone-git-repositories-into-your-workspace-file-system).
@@ -132,7 +132,7 @@ ms.locfileid: "89650922"
 
 На панели инструментов записной книжки выберите меню, а затем **файл &gt; сохранить и контрольная точка** , чтобы вручную сохранить записную книжку, и она добавит файл контрольных точек, связанный с записной книжкой.
 
-:::image type="content" source="media/how-to-run-jupyter-notebooks/file-save.png" alt-text="Снимок экрана инструмента "сохранение" на панели инструментов записной книжки":::
+:::image type="content" source="media/how-to-run-jupyter-notebooks/file-save.png" alt-text="Снимок экрана инструмента сохранение на панели инструментов записной книжки":::
 
 Каждая Записная книжка автоматически сохраняется каждые 30 секунд.Функция автосохранения обновляет только исходный файл *ipynb*   , а не файл контрольных точек.
  
