@@ -140,13 +140,13 @@ ms.locfileid: "89280032"
 
 Вернитесь на страницу *разрешения API* и убедитесь, что теперь есть запись для Azure Digital двойников, отражающая разрешения на чтение и запись:
 
-:::image type="content" source="media/how-to-set-up-instance/portal/verify-api-permissions.png" alt-text="Представление портала с разрешениями API для регистрации приложения Azure AD с доступом "чтение и запись" для Azure Digital двойников":::
+:::image type="content" source="media/how-to-set-up-instance/portal/verify-api-permissions.png" alt-text="Представление портала с разрешениями API для регистрации приложения Azure AD с доступом чтение и запись для Azure Digital двойников":::
 
 Вы также можете проверить подключение к Azure Digital двойников в *manifest.js*регистрации приложения, которое автоматически обновлялось с помощью сведений о цифровой двойников Azure при добавлении разрешений API.
 
 Для этого в меню выберите *Манифест* , чтобы просмотреть код манифеста регистрации приложения. Прокрутите окно кода вниз и найдите эти поля в разделе `requiredResourceAccess` . Значения должны соответствовать приведенным на снимке экрана ниже:
 
-:::image type="content" source="media/how-to-set-up-instance/portal/verify-manifest.png" alt-text="Представление портала манифеста для регистрации приложения Azure AD. В разделе "requiredResourceAccess" вложено значение "Ресаурцеаппид" 0b07f429-9f4b-4714-9392-cc5e8e80c8b0 и значение "resourceAccess > ID" 4589bd03-58cb-4e6c-b17f-b580e39652f8":::
+:::image type="content" source="media/how-to-set-up-instance/portal/verify-manifest.png" alt-text="Представление портала манифеста для регистрации приложения Azure AD. В разделе requiredResourceAccess вложено значение Ресаурцеаппид 0b07f429-9f4b-4714-9392-cc5e8e80c8b0 и значение resourceAccess > ID 4589bd03-58cb-4e6c-b17f-b580e39652f8":::
 
 ### <a name="collect-important-values"></a>Получение важных значений
 
