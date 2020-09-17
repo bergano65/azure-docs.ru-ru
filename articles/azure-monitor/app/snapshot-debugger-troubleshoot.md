@@ -2,18 +2,18 @@
 title: Устранение неполадок Application Insights Azure Snapshot Debugger
 description: В этой статье представлены действия по устранению неполадок и сведения, помогающие разработчикам, которые могут столкнуться с проблемами при включении или использовании Application Insights Snapshot Debugger.
 ms.topic: conceptual
-author: brahmnes
+author: cweining
 ms.date: 03/07/2019
 ms.reviewer: mbullwin
-ms.openlocfilehash: 485f35ed249ab7f6bbb987d8c79afe20287cd25a
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 935e1832629827b0286a79ab8ea6d1dfbb143e1c
+ms.sourcegitcommit: 7374b41bb1469f2e3ef119ffaf735f03f5fad484
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "77671415"
+ms.lasthandoff: 09/16/2020
+ms.locfileid: "90707838"
 ---
-# <a name="troubleshoot-problems-enabling-application-insights-snapshot-debugger-or-viewing-snapshots"></a><a id="troubleshooting"></a>Устранение неполадок, связанных с включением Application Insights Snapshot Debugger или просмотром моментальных снимков
-Если вы включили Application Insights Snapshot Debugger для приложения, но не видите моментальные снимки для исключений, эти инструкции можно использовать для устранения неполадок. Создание моментальных снимков может быть вызвано множеством разных причин. Проверку работоспособности моментальных снимков можно выполнить для определения некоторых возможных распространенных причин.
+# <a name="troubleshoot-problems-enabling-application-insights-snapshot-debugger-or-viewing-snapshots"></a><a id="troubleshooting"></a> Устранение неполадок, связанных с включением Application Insights Snapshot Debugger или просмотром моментальных снимков
+Если вы включили Application Insights Snapshot Debugger для приложения, но не видите моментальные снимки для исключений, эти инструкции можно использовать для устранения неполадок. Существует множество причин, по которым моментальные снимки могут не создаваться. Проверку работоспособности моментальных снимков можно выполнить для определения некоторых возможных распространенных причин.
 
 ## <a name="use-the-snapshot-health-check"></a>Использование проверки работоспособности моментальных снимков
 Из-за некоторых распространенных проблем окно "Открыть моментальный снимок отладки" может не отображаться. Например, из-за использования устаревшего сборщика моментальных снимков, достижения ежедневного лимита отправки или длительного времени передачи моментального снимка. Для устранения распространенных неполадок можно использовать проверку работоспособности моментальных снимков.
@@ -31,6 +31,30 @@ ms.locfileid: "77671415"
 ## <a name="verify-the-instrumentation-key"></a>Проверка ключа инструментирования
 
 Убедитесь, что в опубликованном приложении используется правильный ключ инструментирования. Как правило, ключ инструментирования считывается из файла ApplicationInsights.config. Убедитесь, что его значение такое же, что и у ключа инструментирования для ресурса Application Insights, который отображается на портале.
+
+## <a name="check-ssl-client-settings-aspnet"></a><a id="SSL"></a>Проверка параметров клиента SSL (ASP.NET)
+
+Если у вас есть приложение ASP.NET, размещенное в службе приложений Azure или в службах IIS на виртуальной машине, приложение может не подключиться к службе Snapshot Debugger из-за отсутствия протокола безопасности SSL.
+[Для конечной точки snapshot Debugger требуется TLS версии 1,2](snapshot-debugger-upgrade.md?toc=/azure/azure-monitor/toc.json). Набор протоколов безопасности SSL — одна из особенностей, включенных в значение httpRuntime targetFramework в разделе System. Web web.config. Если параметр httpRuntime targetFramework имеет значение 4.5.2 или ниже, то TLS 1,2 не включается по умолчанию.
+
+> [!NOTE]
+> Значение httpRuntime targetFramework не зависит от целевой платформы, используемой при сборке приложения.
+
+Чтобы проверить этот параметр, откройте файл web.config и найдите раздел System. Web. Убедитесь, что `targetFramework` для параметра для задано `httpRuntime` значение 4,6 или выше.
+
+   ```xml
+   <system.web>
+      ...
+      <httpRuntime targetFramework="4.7.2" />
+      ...
+   </system.web>
+   ```
+
+> [!NOTE]
+> Изменение значения httpRuntime targetFramework изменяет особенности среды выполнения, применяемые к приложению, и может привести к другим незначительным изменениям в работе. После внесения этого изменения обязательно протестируйте приложение тщательно. Полный список изменений совместимости см. на https://docs.microsoft.com/dotnet/framework/migration-guide/application-compatibility#retargeting-changes
+
+> [!NOTE]
+> Если targetFramework имеет значение 4,7 или выше, Windows определяет доступные протоколы. В службе приложений Azure доступен TLS-1,2. Однако при использовании собственной виртуальной машины может потребоваться включить TLS 1,2 в ОС.
 
 ## <a name="preview-versions-of-net-core"></a>Предварительные версии .NET Core
 Если приложение использует предварительную версию .NET Core и Snapshot Debugger было включено через [панель Application Insights](snapshot-debugger-appservice.md?toc=/azure/azure-monitor/toc.json) на портале, Snapshot Debugger может не запуститься. Следуйте инструкциям в разделе [включение snapshot Debugger для других сред](snapshot-debugger-vm.md?toc=/azure/azure-monitor/toc.json) , чтобы включить пакет NuGet [Microsoft. ApplicationInsights. SnapshotCollector](https://www.nuget.org/packages/Microsoft.ApplicationInsights.SnapshotCollector) с приложением ***в дополнение*** к включению через [панель Application Insights](snapshot-debugger-appservice.md?toc=/azure/azure-monitor/toc.json).
@@ -84,7 +108,7 @@ SnapshotUploader.exe Information: 0 : Deleted D:\local\Temp\Dumps\c12a605e73c443
 В предыдущем примере, ключ инструментирования — это `c12a605e73c44346a984e00000000000`. Это значение должно соответствовать ключу инструментирования для вашего приложения.
 Минидамп связан с моментальным снимком с идентификатором `139e411a23934dc0b9ea08a626db16c5`. Позже этот идентификатор можно использовать для поиска связанной телеметрии исключений в аналитике Application Insights.
 
-Отправитель проверяет наличие новых PDB-файлов примерно один раз каждые 15 минут. Ниже приведен пример:
+Отправитель проверяет наличие новых PDB-файлов примерно один раз каждые 15 минут. Пример:
 
 ```
 SnapshotUploader.exe Information: 0 : PDB rescan requested.

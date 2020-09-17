@@ -6,14 +6,20 @@ author: lgayhardt
 ms.custom: devx-track-java
 ms.author: lagayhar
 ms.date: 11/01/2018
-ms.openlocfilehash: 2fbdf4e267e0f9a479a89d6f31e72f09d9e11bb0
-ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
+ms.openlocfilehash: b4042e65fb9f7dbff6566bd497f782c3e6d591cb
+ms.sourcegitcommit: 7374b41bb1469f2e3ef119ffaf735f03f5fad484
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87322573"
+ms.lasthandoff: 09/16/2020
+ms.locfileid: "90707855"
 ---
 # <a name="how-to-use-micrometer-with-azure-application-insights-java-sdk"></a>Как использовать Micrometer с пакетом SDK Azure Application Insights для Java
+
+> [!NOTE]
+> Application Insights пакет SDK для Java не поддерживает пружинные Вебфлукс. 
+>
+> Вебфлукс и Микрометер поддерживаются в [Application Insights агенте Java 3,0](https://docs.microsoft.com/azure/azure-monitor/app/java-on-premises) , не требующем инструментирования. 
+
 Мониторинг приложений Micrometer измеряет метрики для кода приложения на основе виртуальной машины Java и позволяет экспортировать данные в предпочитаемые системы мониторинга. В этой статье вы узнаете, как использовать Micrometer с Application Insights для приложений Spring Boot и других приложений.
 
 ## <a name="using-spring-boot-15x"></a>Использование Spring Boot 1.5x

@@ -6,12 +6,12 @@ ms.author: manishku
 ms.service: postgresql
 ms.topic: conceptual
 ms.date: 09/02/2020
-ms.openlocfilehash: ce1ef0257f2003c3af01d71b7da3924ebd9ed44f
-ms.sourcegitcommit: 80b9c8ef63cc75b226db5513ad81368b8ab28a28
+ms.openlocfilehash: 5b46dc0197022aa72b6ca4c206d1da4369234167
+ms.sourcegitcommit: 7374b41bb1469f2e3ef119ffaf735f03f5fad484
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 09/16/2020
-ms.locfileid: "90603923"
+ms.locfileid: "90707685"
 ---
 # <a name="understanding-the-changes-in-the-root-ca-change-for-azure-database-for-postgresql-single-server"></a>Основные сведения об изменениях в корневом ЦС для одного сервера базы данных Azure для PostgreSQL
 
@@ -28,10 +28,9 @@ ms.locfileid: "90603923"
 ## <a name="how-do-i-know-if-my-database-is-going-to-be-affected"></a>Разделы справки понять, будет ли затронута моя база данных?
 
 Все приложения, использующие SSL/TLS и проверяющие корневой сертификат, должны обновить корневой сертификат. Вы можете определить, проверяют ли ваши подключения корневой сертификат, просмотрев строку подключения.
--   Если строка подключения содержит значение `sslmode=verify-ca` или ""
--   Если строка подключения содержит `sslmode=disable` , то обновлять сертификаты не требуется.
--   Если строка подключения включает `sslmode=allow` , `sslmode=prefer` или `sslmode=require` , не требуется обновлять сертификаты. 
--   Если строка подключения не имеет особого sslmode, обновлять сертификаты не требуется.
+-   Если строка подключения включает `sslmode=verify-ca` или `sslmode=verify-full` , необходимо обновить сертификат.
+-   Если строка подключения включает `sslmode=disable` , `sslmode=allow` , `sslmode=prefer` или `sslmode=require` , не требуется обновлять сертификаты. 
+-   Если в строке подключения не указано sslmode, обновлять сертификаты не требуется.
 
 Если вы используете клиент, который абстрагирует строку подключения, изучите документацию клиента, чтобы понять, проверяется ли сертификат.
 

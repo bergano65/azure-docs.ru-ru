@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.date: 07/14/2020
 ms.author: kenwith
 ms.reviewer: japere
-ms.openlocfilehash: 82e984b629c8d838ba179b25a78262eccf078a04
-ms.sourcegitcommit: 3246e278d094f0ae435c2393ebf278914ec7b97b
+ms.openlocfilehash: 65e1b1b5e84c3344a082b73b7768935d788a3394
+ms.sourcegitcommit: 7374b41bb1469f2e3ef119ffaf735f03f5fad484
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89377868"
+ms.lasthandoff: 09/16/2020
+ms.locfileid: "90707413"
 ---
 # <a name="remote-access-to-on-premises-applications-through-azure-ad-application-proxy"></a>Удаленный доступ к локальным приложениям через Azure AD Application Proxy
 
@@ -24,7 +24,7 @@ Azure Active Directory Application Proxy обеспечивает безопас
 
 Характеристики Azure AD Application Proxy:
 
-- **Простота в использовании**. Пользователи могут обращаться к локальным приложениям точно так же, как к приложениям Office 365 и другим предложениям SaaS, интегрированным с Azure AD. Вам не нужно изменять или обновлять приложения для работы с Application Proxy.
+- **Простота в использовании**. Пользователи могут получить доступ к локальным приложениям так же, как к Microsoft 365 и другим приложениям SaaS, интегрированным с Azure AD. Вам не нужно изменять или обновлять приложения для работы с Application Proxy.
 
 - **Безопасность**. Локальные приложения могут использовать элементы управления авторизацией и аналитику безопасности Azure. Например, локальные приложения могут использовать условный доступ и двухфакторную проверку подлинности. Application Proxy не требует открывать входящие подключения через брандмауэр.
 

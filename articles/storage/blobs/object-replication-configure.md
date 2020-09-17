@@ -6,16 +6,16 @@ services: storage
 author: tamram
 ms.service: storage
 ms.topic: how-to
-ms.date: 09/10/2020
+ms.date: 09/15/2020
 ms.author: tamram
 ms.subservice: blobs
 ms.custom: devx-track-azurecli, devx-track-azurepowershell
-ms.openlocfilehash: 4fb616860cb1e85c6249329f3679de0d29b72e61
-ms.sourcegitcommit: 43558caf1f3917f0c535ae0bf7ce7fe4723391f9
+ms.openlocfilehash: e6e6c802da212294594f45d0545c6cf07694760b
+ms.sourcegitcommit: 7374b41bb1469f2e3ef119ffaf735f03f5fad484
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/11/2020
-ms.locfileid: "90018838"
+ms.lasthandoff: 09/16/2020
+ms.locfileid: "90707923"
 ---
 # <a name="configure-object-replication-for-block-blobs"></a>Настройка репликации объекта для блочных BLOB-объектов
 
@@ -150,9 +150,11 @@ Set-AzStorageObjectReplicationPolicy -ResourceGroupName $rgname `
 
 Чтобы создать политику репликации с Azure CLI, сначала установите Azure CLI версии 2.11.1 или более поздней. Дополнительные сведения см. в статье [Приступая к работе с Azure CLI](/cli/azure/get-started-with-azure-cli).
 
-Затем включите управление версиями BLOB-объектов в исходных и целевых учетных записях хранения и включите канал изменений в исходной учетной записи. Не забудьте заменить значения в угловых скобках собственными значениями.
+Затем включите управление версиями BLOB-объектов в исходных и целевых учетных записях хранения и включите канал изменений в исходной учетной записи, вызвав команду [AZ Storage Account BLOB-Service-Properties Update](/cli/azure/storage/account/blob-service-properties#az_storage_account_blob_service_properties_update) . Не забудьте заменить значения в угловых скобках собственными значениями.
 
 ```azurecli
+az login
+
 az storage account blob-service-properties update \
     --resource-group <resource-group> \
     --account-name <source-storage-account> \
@@ -174,24 +176,24 @@ az storage account blob-service-properties update \
 ```azurecli
 az storage container create \
     --account-name <source-storage-account> \
-    --name source-container3 \
+    --name source-container-1 \
     --auth-mode login
 az storage container create \
     --account-name <source-storage-account> \
-    --name source-container4 \
+    --name source-container-2 \
     --auth-mode login
 
 az storage container create \
     --account-name <dest-storage-account> \
-    --name source-container3 \
+    --name dest-container-1 \
     --auth-mode login
 az storage container create \
     --account-name <dest-storage-account> \
-    --name source-container4 \
+    --name dest-container-1 \
     --auth-mode login
 ```
 
-Создайте политику репликации и связанные с ней правила для целевой учетной записи.
+Создайте новую политику репликации и связанное с ней правило для целевой учетной записи, вызвав команду [AZ Storage Account или-Policy Create](/cli/azure/storage/account/or-policy#az_storage_account_or_policy_create).
 
 ```azurecli
 az storage account or-policy create \
@@ -199,21 +201,26 @@ az storage account or-policy create \
     --resource-group <resource-group> \
     --source-account <source-storage-account> \
     --destination-account <dest-storage-account> \
-    --source-container source-container3 \
-    --destination-container dest-container3 \
-    --min-creation-time '2020-05-10T00:00:00Z' \
+    --source-container source-container-1 \
+    --destination-container dest-container-1 \
+    --min-creation-time '2020-09-10T00:00:00Z' \
     --prefix-match a
 
+```
+
+Служба хранилища Azure задает идентификатор политики для новой политики при ее создании. Чтобы добавить дополнительные правила в политику, вызовите команду [AZ Storage Account или-Policy правило Add](/cli/azure/storage/account/or-policy/rule#az_storage_account_or_policy_rule_add) и укажите идентификатор политики.
+
+```azurecli
 az storage account or-policy rule add \
     --account-name <dest-storage-account> \
-    --destination-container dest-container4 \
-    --policy-id <policy-id> \
     --resource-group <resource-group> \
-    --source-container source-container4 \
+    --source-container source-container-2 \
+    --destination-container dest-container-2 \
+    --policy-id <policy-id> \
     --prefix-match b
 ```
 
-Создайте политику в исходной учетной записи, используя идентификатор политики.
+Затем создайте политику в исходной учетной записи, используя идентификатор политики.
 
 ```azurecli
 az storage account or-policy show \
@@ -229,16 +236,16 @@ az storage account or-policy show \
 
 ### <a name="configure-object-replication-when-you-have-access-only-to-the-destination-account"></a>Настройка репликации объектов при наличии доступа только к целевой учетной записи
 
-Если у вас нет разрешений на доступ к исходной учетной записи хранения, можно настроить репликацию объектов в конечной учетной записи и предоставить JSON-файл, содержащий определение политики для другого пользователя, чтобы создать ту же политику в исходной учетной записи. Например, если исходная учетная запись находится в другом клиенте Azure AD из целевой учетной записи, используйте этот подход для настройки репликации объектов. 
+Если у вас нет разрешений на доступ к исходной учетной записи хранения, можно настроить репликацию объектов в конечной учетной записи и предоставить JSON-файл, содержащий определение политики для другого пользователя, чтобы создать ту же политику в исходной учетной записи. Например, если исходная учетная запись находится в другом клиенте Azure AD из целевой учетной записи, то этот подход можно использовать для настройки репликации объектов.
 
 Помните, что для создания политики необходимо назначить роль **участника** Azure Resource Manager, область действия которой ограничена уровнем целевой учетной записи хранения или выше. Дополнительные сведения см. в статье [встроенные роли Azure](../../role-based-access-control/built-in-roles.md) в документации по управлению доступом на основе РОЛЕЙ (RBAC) в Azure.
 
-В следующей таблице перечислены значения, которые следует использовать для идентификатора политики в файле JSON в каждом сценарии.
+В следующей таблице перечислены значения, которые следует использовать для идентификатора политики и идентификаторов правил в файле JSON в каждом сценарии.
 
-| При создании JSON файла для этой учетной записи... | Задайте для идентификатора политики это значение... |
+| При создании JSON файла для этой учетной записи... | Задайте этому значению идентификатор политики и идентификаторы правил... |
 |-|-|
-| Целевая учетная запись | Строковое значение *по умолчанию*. Служба хранилища Azure создаст идентификатор политики. |
-| Исходная учетная запись | Идентификатор политики, возвращаемый при скачивании JSON-файла, содержащего правила, определенные в конечной учетной записи. |
+| Целевая учетная запись | Строковое значение *по умолчанию*. Служба хранилища Azure создаст идентификатор политики и идентификаторы правил. |
+| Исходная учетная запись | Значения идентификатора политики и идентификаторов правил, возвращаемых при скачивании политики, определенной в конечной учетной записи, в виде JSON-файла. |
 
 В следующем примере определяется политика репликации для целевой учетной записи с одним правилом, соответствующим префиксу *b* , и устанавливается минимальное время создания для реплицируемых больших двоичных объектов. Не забудьте заменить значения в угловых скобках собственными значениями.
 
@@ -307,7 +314,7 @@ $destPolicy = Get-AzStorageObjectReplicationPolicy -ResourceGroupName $rgname `
 $destPolicy | ConvertTo-Json -Depth 5 > c:\temp\json.txt
 ```
 
-Чтобы использовать JSON файл для определения политики репликации в исходной учетной записи с помощью PowerShell, извлеките локальный файл и преобразуйте его из JSON в объект. Затем вызовите команду [Set-азсторажеобжектрепликатионполици](/powershell/module/az.storage/set-azstorageobjectreplicationpolicy) , чтобы настроить политику в исходной учетной записи, как показано в следующем примере. Не забудьте заменить значения в угловых скобках и пути к файлам собственными значениями:
+Чтобы использовать JSON файл для настройки политики репликации в исходной учетной записи с помощью PowerShell, извлеките локальный файл и преобразуйте его из JSON в объект. Затем вызовите команду [Set-азсторажеобжектрепликатионполици](/powershell/module/az.storage/set-azstorageobjectreplicationpolicy) , чтобы настроить политику в исходной учетной записи, как показано в следующем примере. Не забудьте заменить значения в угловых скобках и пути к файлам собственными значениями:
 
 ```powershell
 $object = Get-Content -Path C:\temp\json.txt | ConvertFrom-Json
@@ -321,7 +328,24 @@ Set-AzStorageObjectReplicationPolicy -ResourceGroupName $rgname `
 
 # <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
 
-Недоступно
+Чтобы записать определение политики репликации для целевой учетной записи в JSON-файл из Azure CLI, вызовите команду [AZ Storage Account или-Policy показывать](/cli/azure/storage/account/or-policy#az_storage_account_or_policy_show) и выходные данные в файл.
+
+В следующем примере определение политики записывается в файл JSON с именем *policy.json*. Не забудьте заменить значения в угловых скобках и пути к файлам собственными значениями:
+
+```azurecli
+az storage account or-policy show \
+    --account-name <dest-account-name> \
+    --policy-id  <policy-id> > policy.json
+```
+
+Чтобы использовать JSON-файл для настройки политики репликации в исходной учетной записи с Azure CLI, вызовите команду [AZ Storage Account или-Policy Create](/cli/azure/storage/account/or-policy#az_storage_account_or_policy_create) и укажите ссылку на *policy.js* файла. Не забудьте заменить значения в угловых скобках и пути к файлам собственными значениями:
+
+```azurecli
+az storage account or-policy create \
+    -resource-group <resource-group> \
+    --source-account <source-account-name> \
+    --policy @policy.json
+```
 
 ---
 
@@ -360,12 +384,12 @@ Remove-AzStorageObjectReplicationPolicy -ResourceGroupName $rgname `
 
 ```azurecli
 az storage account or-policy delete \
-    --policy-id $policyid \
+    --policy-id <policy-id> \
     --account-name <source-storage-account> \
     --resource-group <resource-group>
 
 az storage account or-policy delete \
-    --policy-id $policyid \
+    --policy-id <policy-id> \
     --account-name <dest-storage-account> \
     --resource-group <resource-group>
 ```

@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: davidspo
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 8e0e0ad9086a7945201b1752126253f12eb751bf
-ms.sourcegitcommit: 5ed504a9ddfbd69d4f2d256ec431e634eb38813e
+ms.openlocfilehash: 4f4d9d1a2a4c88601e7dd7e0d6f56025b79aaac1
+ms.sourcegitcommit: 7374b41bb1469f2e3ef119ffaf735f03f5fad484
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89320041"
+ms.lasthandoff: 09/16/2020
+ms.locfileid: "90705373"
 ---
 # <a name="rapidly-respond-to-secure-identities-with-azure-ad"></a>Быстрое реагирование для защиты удостоверений с помощью Azure AD
 
@@ -34,21 +34,20 @@ ms.locfileid: "89320041"
 - Использование Cloud Intelligence
 - Включение возможности самообслуживания для конечных пользователей
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Предварительные условия
 
 В этом учебнике предполагается, что в Azure AD уже установлены только облачные или гибридные удостоверения. Чтобы получить справку по выбору типа удостоверения, см. статью [Выбор правильного метода проверки подлинности для Azure Active Directory гибридного решения для идентификации](../hybrid/choose-ad-authn.md) . 
 
-## <a name="summary"></a>Сводка
+## <a name="summary"></a>Итоги
 
 Существует множество аспектов безопасной инфраструктуры идентификации, но в этом контрольном списке основное внимание уделяется безопасной и безопасной инфраструктуре идентификации, позволяющей пользователям работать удаленно. Обеспечение безопасности удостоверений является лишь частью вашей истории, а также необходимо учитывать защиту данных, приложений и устройств.
 
-### <a name="guidance-for-azure-ad-free-or-office-365-customers"></a>Руководство для клиентов Azure AD Free или Office 365.
+### <a name="guidance-for-azure-ad-free-office-365-or-microsoft-365-customers"></a>Руководство для клиентов Azure AD Free, Office 365 и Microsoft 365.
 
-Существует ряд рекомендаций, которые Azure AD Free или пользователи приложения Office 365, которые необходимо предпринять для защиты удостоверений пользователей, приведенная ниже таблица предназначена для выделения ключевых действий для следующих подписок на лицензии:
+Существует ряд рекомендаций, которые Azure AD Free, Office 365 Microsoft 365 или пользователи приложений, которые должны быть необходимы для защиты удостоверений пользователей, приведенная ниже таблица предназначена для выделения ключевых действий для следующих подписок на лицензии:
 
-- Office 365 (O365 E1, E3, ячейка, F1, a1, A3, A5)
-- Office 365 Business (Essentials, Бизнес, Business Premium)
-- Microsoft 365 (M365 Business, a1)
+- Office 365 (Office 365 E1, E3, клавиша f, F1, a1, A3, A5)
+- Microsoft 365 (Business Basic, приложения для бизнеса, Бизнес-выпуск, Business Premium, a1)
 - Azure AD Free (входит в состав Azure, Dynamics 365, Intune и Power Platform)
 
 | Рекомендованное действие | Подробный сведения |

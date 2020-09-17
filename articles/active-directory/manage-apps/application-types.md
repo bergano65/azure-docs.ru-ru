@@ -10,12 +10,12 @@ ms.workload: identity
 ms.topic: conceptual
 ms.date: 07/11/2017
 ms.author: kenwith
-ms.openlocfilehash: 955efe45be27fa2f4e738066bb3b69b3604be33a
-ms.sourcegitcommit: 5a3b9f35d47355d026ee39d398c614ca4dae51c6
+ms.openlocfilehash: 5229b123986149903d562bc0b3d6902c0136f647
+ms.sourcegitcommit: 7374b41bb1469f2e3ef119ffaf735f03f5fad484
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89400727"
+ms.lasthandoff: 09/16/2020
+ms.locfileid: "90707889"
 ---
 # <a name="viewing-apps-using-your-azure-ad-tenant-for-identity-management"></a>Просмотр приложений с помощью клиента Azure AD для управления удостоверениями
 В [руководстве по управлению приложениями](view-applications-portal.md) представлены основные принципы. В нем вы узнаете, как просмотреть все приложения с помощью клиента Azure AD для управления удостоверениями. В этой статье более подробно подробно типы приложений.
@@ -27,7 +27,7 @@ ms.locfileid: "89400727"
    - **Azure AD — регистрация приложений** — приложения, добавленные в клиент с помощью параметра **Регистрация приложений** на портале Azure AD. Обычно это пользовательские разработанные приложения с использованием стандартов Open ID Connect и OAuth.
    - **Приложения прокси приложения** — приложения, работающее в локальной среде, которым необходимо предоставить безопасный единый вход извне.
 - При регистрации или входе в приложение стороннего разработчика, интегрированного с Azure Active Directory. Примерами таких приложений являются [Smartsheet](https://app.smartsheet.com/b/home) или [DocuSign](https://www.docusign.net/member/MemberLogin.aspx).
-- Такие приложения Майкрософт, как Microsoft 365 или Office 365.
+- Такие приложения Майкрософт, как Microsoft 365.
 - При добавлении новой регистрации приложения путем создания собственного приложения с помощью [реестра приложений](https://docs.microsoft.com/azure/active-directory/active-directory-app-registration).
 - При добавлении новой регистрации приложения путем создания собственного приложения с помощью [портала регистрации приложений версии 2.0](https://docs.microsoft.com/azure/active-directory/develop/active-directory-v2-app-registration).
 - При добавлении приложения вы разрабатываете с помощью [методов проверки Подлинности ASP.NET](https://www.asp.net/visual-studio/overview/2013/creating-web-projects-in-visual-studio#orgauthoptions) в Visual Studio или [подключенные службы](https://devblogs.microsoft.com/visualstudio/connecting-to-cloud-services/)

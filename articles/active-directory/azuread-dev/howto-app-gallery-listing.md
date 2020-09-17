@@ -13,12 +13,12 @@ ms.author: ryanwi
 ms.reviewer: jeedes
 ms.custom: aaddev
 ROBOTS: NOINDEX
-ms.openlocfilehash: 662bda03fc2d389ed316bd2c7141d5e6a30cef1a
-ms.sourcegitcommit: d39f2cd3e0b917b351046112ef1b8dc240a47a4f
+ms.openlocfilehash: 40d299049a0a1bbff81c412a5beb84f28e64ff46
+ms.sourcegitcommit: 7374b41bb1469f2e3ef119ffaf735f03f5fad484
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88814648"
+ms.lasthandoff: 09/16/2020
+ms.locfileid: "90706308"
 ---
 # <a name="list-your-application-in-the-azure-active-directory-application-gallery"></a>Добавление приложения в коллекцию приложений Azure Active Directory
 
@@ -35,7 +35,7 @@ ms.locfileid: "88814648"
 - Нашим общим клиентам предлагается пошаговое руководство по настройке.
 - Клиенты, использующие систему для управления идентификаторами в разных доменах ([scim](https://techcommunity.microsoft.com/t5/Identity-Standards-Blog/Provisioning-with-SCIM-getting-started/ba-p/880010)), могут использовать подготовку для одного и того же приложения.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Предварительные условия
 
 - Для федеративных приложений (Open ID и SAML/WS-подача) приложение должно поддерживать модель SaaS (программное обеспечение как услуга) для получения списка в коллекции приложений Azure AD. Приложения из коллекции предприятия должны поддерживать несколько пользовательских конфигураций, а не конкретных клиентов.
 - Для Open ID Connect приложение должно быть многоклиентским, а [инфраструктура согласия Azure AD](../develop/consent-framework.md?toc=/azure/active-directory/azuread-dev/toc.json&bc=/azure/active-directory/azuread-dev/breadcrumb/toc.json) должна быть правильно реализована для приложения. Пользователь может отправить запрос на вход в общую конечную точку, чтобы любой клиент мог предоставить согласие для приложения. Доступом пользователей можно управлять на основе идентификатора клиента и имени участника-пользователя, которые передаются в маркере.
@@ -124,7 +124,7 @@ ms.locfileid: "88814648"
 
 ## <a name="update-or-remove-an-existing-listing"></a>Обновление или удаление существующего списка
 
-Чтобы обновить или удалить существующее приложение в коллекции приложений Azure AD, сначала необходимо отправить запрос на [портале сети приложений](https://microsoft.sharepoint.com/teams/apponboarding/Apps). Если у вас есть учетная запись Office 365, используйте ее для входа на этот портал. В противном случае для входа используйте учетная запись Майкрософт, например Outlook или Hotmail.
+Чтобы обновить или удалить существующее приложение в коллекции приложений Azure AD, сначала необходимо отправить запрос на [портале сети приложений](https://microsoft.sharepoint.com/teams/apponboarding/Apps). Если у вас есть рабочая или учебная учетная запись, используйте ее для входа на этот портал. В противном случае для входа используйте учетная запись Майкрософт, например Outlook или Hotmail.
 
 - Выберите соответствующий параметр, как показано на следующем рисунке.
 

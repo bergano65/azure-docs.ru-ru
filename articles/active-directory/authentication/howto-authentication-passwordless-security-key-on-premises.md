@@ -11,12 +11,12 @@ author: iainfoulds
 manager: daveba
 ms.reviewer: librown, aakapo
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 45e1e516986c32e203837f79c83290cc99049e7a
-ms.sourcegitcommit: 03662d76a816e98cfc85462cbe9705f6890ed638
+ms.openlocfilehash: 23ce2f02ef96a88b6bf4471377ce97a529dbd1a9
+ms.sourcegitcommit: 7374b41bb1469f2e3ef119ffaf735f03f5fad484
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90526975"
+ms.lasthandoff: 09/16/2020
+ms.locfileid: "90706342"
 ---
 # <a name="enable-passwordless-security-key-sign-in-to-on-premises-resources-with-azure-active-directory-preview"></a>Включение входа в систему с помощью ключа безопасности без пароля для локальных ресурсов с Azure Active Directory (Предварительная версия)
 
@@ -40,7 +40,7 @@ Azure Active Directory (AD) может выдавать билеты Kerberos н
 1. Клиентский компьютер обращается к локальному контроллеру домена AD и задействует частичный TGT для полностью сформированного TGT.
 1. Теперь на клиентском компьютере имеется Azure AD PRT и полное Active Directory TGT, а также доступ к облачным и локальным ресурсам.
 
-## <a name="requirements"></a>Requirements (Требования)
+## <a name="requirements"></a>Требования
 
 Перед выполнением действий, описанных в этой статье, организации должны выполнить действия по [включению ключа безопасности без пароля для входа на устройства с Windows 10 (Предварительная версия)](howto-authentication-passwordless-security-key.md) .
 
@@ -57,7 +57,7 @@ Azure Active Directory (AD) может выдавать билеты Kerberos н
 
 Сценарий поддерживает единый вход (SSO) в обоих следующих сценариях.
 
-- Для облачных ресурсов, таких как Office 365 и других приложений с поддержкой SAML.
+- Для облачных ресурсов, таких как Microsoft 365 и других приложений с поддержкой SAML.
 - Для локальных ресурсов и встроенной проверки подлинности Windows для веб-сайтов. Ресурсы могут включать веб-сайты и сайты SharePoint, для которых требуется проверка подлинности IIS, а также ресурсы, использующие проверку подлинности NTLM.
 
 ### <a name="unsupported-scenarios"></a>Неподдерживаемые сценарии
@@ -197,6 +197,6 @@ Remove-AzureADKerberosServer -Domain $domain -CloudCredential $cloudCred -Domain
 
 Убедитесь, что все контроллеры домена исправлены на время ответа на обслуживание запроса ресурсов. Чтобы проверить, доступен ли контроллер домена, на котором работает эта функция, просмотрите выходные данные `nltest /dsgetdc:contoso /keylist /kdc` .
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Дополнительные сведения о пароле](concept-authentication-passwordless.md)
