@@ -103,7 +103,7 @@ PUT https://management.azure.com/providers/Microsoft.Management/managementGroups
 
 Действие [запрета назначений](../../../role-based-access-control/deny-assignments.md) RBAC применяется к ресурсам артефактов во время назначения схемы, если для назначения выбрано состояние **Только чтение** или **Do Not Delete** (Не удалять). Запрещающее действие добавляется управляемым удостоверением назначения схемы и может быть удалено из ресурсов артефактов только тем же управляемым удостоверением. Эта мера безопасности обеспечивает механизм блокировки и предотвращает снятие блокировки схемы за пределы чертежей Azure.
 
-:::image type="content" source="../media/resource-locking/blueprint-deny-assignment.png" alt-text="Снимок экрана со страницей управления доступом (I а) и вкладкой "отклонить назначения" для группы ресурсов." border="false":::
+:::image type="content" source="../media/resource-locking/blueprint-deny-assignment.png" alt-text="Снимок экрана со страницей управления доступом (I а) и вкладкой отклонить назначения для группы ресурсов." border="false":::
 
 Ниже перечислены [свойства назначения Deny](../../../role-based-access-control/deny-assignments.md#deny-assignment-properties) для каждого режима.
 
