@@ -38,7 +38,7 @@ ms.locfileid: "89401475"
 
 1. Начните с заполнения полей на странице **Основные сведения** .
 
-    :::image type="content" source="./media/how-to-expressroute-direct-portal/basics.png" alt-text="Страница "Основные"":::
+    :::image type="content" source="./media/how-to-expressroute-direct-portal/basics.png" alt-text="Страница Основные":::
 
     * **Подписка**. Подписка Azure, которую вы хотите использовать для создания нового канала ExpressRoute Direct. Ресурс ExpressRoute Direct и каналы ExpressRoute должны находиться в одной подписке.
     * **Группа ресурсов**. Группа ресурсов Azure, в которой будет создан новый прямой ресурс ExpressRoute. Если у вас нет группы ресурсов, можно создать новую.
@@ -47,7 +47,7 @@ ms.locfileid: "89401475"
 
 1. Затем заполните поля на странице **Конфигурация** .
 
-    :::image type="content" source="./media/how-to-expressroute-direct-portal/configuration.png" alt-text="Страница "Конфигурация"":::
+    :::image type="content" source="./media/how-to-expressroute-direct-portal/configuration.png" alt-text="Страница Конфигурация":::
 
     * **Расположение пиринга**. расположение пиринга, в котором будет подключаться к ресурсу непосредственных подключений ExpressRoute. Дополнительные сведения о расположении пиринга см. в статье [расположения ExpressRoute](expressroute-locations-providers.md).
    * **Пропускная**способность. пропускная способность для пары портов, которую требуется зарезервировать. ExpressRoute Direct поддерживает параметры пропускной способности 10 ГБ и 100 ГБ. Если требуемая пропускная способность недоступна в указанном расположении пиринга, [откройте запрос в службу поддержки в портал Azure](https://aka.ms/azsupt).
@@ -101,7 +101,7 @@ ms.locfileid: "89401475"
 
 1. Настройте параметры на странице **Конфигурация** .
 
-   :::image type="content" source="./media/how-to-expressroute-direct-portal/configuration2.png" alt-text="Страница "Конфигурация"":::
+   :::image type="content" source="./media/how-to-expressroute-direct-portal/configuration2.png" alt-text="Страница Конфигурация":::
 
 1. Чтобы проверить значения перед созданием ресурса, укажите все теги ресурсов, нажмите кнопку " **проверить и создать** ".
 
