@@ -80,7 +80,7 @@ URI перенаправления — это расположение, в ко
 1. В разделе **Конфигурации платформ** щелкните **Добавить платформу**.
 1. В разделе **Настройка платформ** выберите плитку типа приложения (платформу), чтобы настроить его параметры.
 
-    :::image type="content" source="media/quickstart-register-app/portal-04-app-reg-03-platform-config.png" alt-text="Снимок экрана панели "Конфигурация платформ" на портале Azure" border="false":::
+    :::image type="content" source="media/quickstart-register-app/portal-04-app-reg-03-platform-config.png" alt-text="Снимок экрана панели Конфигурация платформ на портале Azure" border="false":::
 
     | Платформа | Параметры конфигурации |
     | -------- | ---------------------- |
