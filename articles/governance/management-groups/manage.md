@@ -37,11 +37,11 @@ ms.locfileid: "89658763"
 
 1. Выберите параметр **Переименовать группу** в верхней части страницы.
 
-   :::image type="content" source="./media/detail_action_small.png" alt-text="Снимок экрана: панель действий и кнопка "переименовать группу" на странице группы управления." border="false":::
+   :::image type="content" source="./media/detail_action_small.png" alt-text="Снимок экрана: панель действий и кнопка переименовать группу на странице группы управления." border="false":::
 
 1. Когда откроется меню, введите новое имя.
 
-   :::image type="content" source="./media/rename_context.png" alt-text="Снимок экрана: окно "Переименование группы" и параметры для переименования группы управления." border="false":::
+   :::image type="content" source="./media/rename_context.png" alt-text="Снимок экрана: окно Переименование группы и параметры для переименования группы управления." border="false":::
 
 1. Щелкните **Сохранить**.
 
@@ -82,14 +82,14 @@ az account management-group update --name 'Contoso' --display-name 'Contoso Grou
 
 1. Выберите **Удалить**.
 
-   :::image type="content" source="./media/delete.png" alt-text="Снимок экрана: страница группы управления с выделенной кнопкой "Удалить"." border="false":::
+   :::image type="content" source="./media/delete.png" alt-text="Снимок экрана: страница группы управления с выделенной кнопкой Удалить." border="false":::
 
    > [!TIP]
    > Если значок неактивен, наведите указатель мыши на значок, чтобы узнать причину.
 
 1. Откроется окно, в котором нужно подтвердить удаление группы управления.
 
-   :::image type="content" source="./media/delete_confirm.png" alt-text="Снимок экрана с диалоговым окном подтверждения "Удаление группы" для удаления группы управления." border="false":::
+   :::image type="content" source="./media/delete_confirm.png" alt-text="Снимок экрана с диалоговым окном подтверждения Удаление группы для удаления группы управления." border="false":::
 
 1. Выберите **Да**.
 
@@ -123,7 +123,7 @@ az account management-group delete --name 'Contoso'
 
 1. Чтобы просмотреть сведения о группе управления, перейдите по ссылке **(подробности)** рядом с заголовком группы управления. Если ссылка недоступна, у вас нет разрешения на просмотр этой группы управления.
 
-   :::image type="content" source="./media/main.png" alt-text="Снимок экрана: страница "группы управления", в которой отображаются дочерние группы управления и подписки." border="false":::
+   :::image type="content" source="./media/main.png" alt-text="Снимок экрана: страница группы управления, в которой отображаются дочерние группы управления и подписки." border="false":::
 
 ### <a name="view-in-powershell"></a>Просмотр в PowerShell
 
@@ -229,7 +229,7 @@ az account management-group show --name 'Contoso' -e -r
 
 1. Выберите подписку в списке с правильным идентификатором.
 
-   :::image type="content" source="./media/add_context_sub.png" alt-text="Снимок экрана с параметрами "добавить подписку" для выбора существующей подписки, добавляемой в группу управления." border="false":::
+   :::image type="content" source="./media/add_context_sub.png" alt-text="Снимок экрана с параметрами добавить подписку для выбора существующей подписки, добавляемой в группу управления." border="false":::
 
 1. Щелкните "Сохранить".
 
@@ -243,13 +243,13 @@ az account management-group show --name 'Contoso' -e -r
 
 1. Выберите многоточие в конце строки подписки в списке, которую требуется переместить.
 
-   :::image type="content" source="./media/move_small.png" alt-text="Снимок экрана альтернативного меню подписки для выбора параметра "Переместить"." border="false":::
+   :::image type="content" source="./media/move_small.png" alt-text="Снимок экрана альтернативного меню подписки для выбора параметра Переместить." border="false":::
 
 1. Выберите **Переместить**.
 
 1. В открывшемся меню выберите **родительскую группу управления**.
 
-   :::image type="content" source="./media/move_small_context.png" alt-text="Снимок экрана: окно "Переместить" и параметры для перемещения подписки в другую группу управления." border="false":::
+   :::image type="content" source="./media/move_small_context.png" alt-text="Снимок экрана: окно Переместить и параметры для перемещения подписки в другую группу управления." border="false":::
 
 1. Щелкните **Сохранить**.
 
@@ -298,7 +298,7 @@ az account management-group subscription remove --name 'Contoso' --subscription 
    - Если вы выберете новую, то создадите новую группу управления.
    - Если вы выберете существующую, вы сможете выбрать доступную группу управления из раскрывающегося списка.  
 
-   :::image type="content" source="./media/add_context_MG.png" alt-text="Снимок экрана: параметры "добавить группу управления" для создания новой группы управления." border="false":::
+   :::image type="content" source="./media/add_context_MG.png" alt-text="Снимок экрана: параметры добавить группу управления для создания новой группы управления." border="false":::
 
 1. Щелкните **Сохранить**.
 
