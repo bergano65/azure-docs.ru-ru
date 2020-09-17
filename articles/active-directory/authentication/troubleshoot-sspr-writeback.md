@@ -122,7 +122,7 @@ Azure AD Connect требует разрешения AD DS **Сброс паро
 1. Во всплывающем окне **Advanced Security Settings for Administrator** (Дополнительные параметры безопасности для администратора) перейдите на вкладку **Действующие права доступа**.
 1. Выберите **выбрать пользователя**, выберите учетную запись AD DS, используемую Azure AD Connect, а затем выберите **Просмотреть эффективный доступ**.
 
-    :::image type="content" source="./media/troubleshoot-sspr-writeback/view-effective-access.png" alt-text="Демонстрация учетной записи синхронизации на вкладке "Действующие права доступа"" border="false":::
+    :::image type="content" source="./media/troubleshoot-sspr-writeback/view-effective-access.png" alt-text="Демонстрация учетной записи синхронизации на вкладке Действующие права доступа" border="false":::
   
 1. Прокрутите список вниз и найдите **Сброс пароля**. Если возле записи установлен флажок, учетная запись AD DS имеет разрешение на сброс пароля выбранной учетной записи пользователя Active Directory.  
 
