@@ -55,7 +55,7 @@ ms.locfileid: "90707447"
 1. Введите путь подключения, который вы хотите использовать, а затем скопируйте сценарий.
 1. Подключитесь к клиенту и используйте указанный сценарий подключения.
 
-    :::image type="content" source="media/storage-files-how-to-create-mount-nfs-shares/mount-nfs-file-share-script.png" alt-text="Снимок экрана: колонка "подключение к общей папке"":::
+    :::image type="content" source="media/storage-files-how-to-create-mount-nfs-shares/mount-nfs-file-share-script.png" alt-text="Снимок экрана: колонка подключение к общей папке":::
 
 Вы подключили общий ресурс NFS.
 
