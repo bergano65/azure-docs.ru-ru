@@ -3,15 +3,15 @@ title: Что такое Виртуальный рабочий стол Windows 
 description: Общие сведения о Виртуальном рабочем столе Windows.
 author: Heidilohr
 ms.topic: overview
-ms.date: 08/20/2020
+ms.date: 09/14/2020
 ms.author: helohr
 manager: lizross
-ms.openlocfilehash: cc5ad91c779a3445712db962fb97bab309eda973
-ms.sourcegitcommit: d18a59b2efff67934650f6ad3a2e1fe9f8269f21
+ms.openlocfilehash: 08455d3033040d14c85e4c4170ae34a6d05cfac1
+ms.sourcegitcommit: 03662d76a816e98cfc85462cbe9705f6890ed638
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/20/2020
-ms.locfileid: "88661118"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90527179"
 ---
 # <a name="what-is-windows-virtual-desktop"></a>Что такое Виртуальный рабочий стол Windows
 
@@ -110,12 +110,10 @@ ms.locfileid: "88661118"
 * [macOS](connect-macos.md)
 * [iOS](connect-ios.md)
 * [Android](connect-android.md)
+* Клиент Microsoft Store
 
 > [!IMPORTANT]
 > Виртуальный рабочий стол Windows не поддерживает клиент Подключения к удаленным рабочим столам и приложениям RemoteApp (RADC) или клиент Подключения к удаленному рабочему столу (MSTSC).
-
-> [!IMPORTANT]
-> Виртуальный рабочий стол Windows в настоящее время не поддерживает клиент Удаленного рабочего стола из Магазина Windows. Поддержка этого клиента будет добавлена в следующем выпуске.
 
 Дополнительные сведения об URL-адресах, которые нужно разблокировать для использования клиентов, см. в статье [Список надежных URL-адресов](safe-url-list.md).
 

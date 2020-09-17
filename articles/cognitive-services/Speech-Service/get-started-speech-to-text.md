@@ -8,17 +8,17 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: speech-service
 ms.topic: quickstart
-ms.date: 09/01/2020
+ms.date: 09/15/2020
 ms.author: trbye
 ms.custom: devx-track-python, devx-track-javascript, devx-track-csharp, cog-serv-seo-aug-2020
-zone_pivot_groups: speech-full-stack
+zone_pivot_groups: speech-full-stack-go
 keywords: преобразование речи в текст, программа для преобразования речи в текст
-ms.openlocfilehash: 5ce11a3ef50d8d1e36e506efbeacb19bc1e8e0af
-ms.sourcegitcommit: d0541eccc35549db6381fa762cd17bc8e72b3423
+ms.openlocfilehash: 08c42c383e114d404e5b3728fc264a70932aa915
+ms.sourcegitcommit: 7374b41bb1469f2e3ef119ffaf735f03f5fad484
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/09/2020
-ms.locfileid: "89570584"
+ms.lasthandoff: 09/16/2020
+ms.locfileid: "90706704"
 ---
 # <a name="get-started-with-speech-to-text"></a>Начало работы с преобразованием речи в текст
 
@@ -45,6 +45,10 @@ ms.locfileid: "89570584"
 
 ::: zone pivot="programming-language-python"
 [!INCLUDE [Python Basics include](./includes/how-to/speech-to-text-basics/speech-to-text-basics-python.md)]
+::: zone-end
+
+::: zone pivot="programming-language-go"
+[!INCLUDE [Go include](includes/how-to/speech-to-text-basics/speech-to-text-basics-go.md)]
 ::: zone-end
 
 ::: zone pivot="programming-language-spx"

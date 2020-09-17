@@ -8,12 +8,12 @@ ms.devlang: dotnet
 ms.custom: devx-track-csharp, mvc
 ms.topic: quickstart
 ms.date: 06/18/2020
-ms.openlocfilehash: bc045eba331c861801dceef7f00db42e851f8bb2
-ms.sourcegitcommit: 4913da04fd0f3cf7710ec08d0c1867b62c2effe7
+ms.openlocfilehash: 1cb35ce995a27030612499cc3147943112e1c50e
+ms.sourcegitcommit: f8d2ae6f91be1ab0bc91ee45c379811905185d07
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88211381"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89662369"
 ---
 # <a name="quickstart-use-azure-cache-for-redis-with-a-net-core-app"></a>Краткое руководство. Использование кэша Azure для Redis в приложениях .NET Core
 
@@ -23,7 +23,6 @@ ms.locfileid: "88211381"
 
 - Подписка Azure — [создайте бесплатную учетную запись](https://azure.microsoft.com/free/).
 - [Базовый пакет SDK для .NET](https://dotnet.microsoft.com/download)
-- [.NET Framework 4 или более поздней версии](https://www.microsoft.com/net/download/dotnet-framework-runtime) для работы клиента StackExchange.Redis.
 
 ## <a name="create-a-cache"></a>Создание кэша
 [!INCLUDE [redis-cache-create](../../includes/redis-cache-create.md)]
@@ -125,7 +124,7 @@ dotnet add package StackExchange.Redis
 using StackExchange.Redis;
 ```
 
-Подключение к кэшу Azure для Redis управляется с помощью класса `ConnectionMultiplexer`. Этот класс нужно сделать общим и повторно использовать в коде клиентского приложения. Не создавайте новое подключение для каждой операции. 
+Подключение к кэшу Azure для Redis управляется с помощью класса `ConnectionMultiplexer`. Этот класс нужно сделать общим и использовать во всех разделах клиентского приложения. Не создавайте новое подключение для каждой операции. 
 
 В файле *Program.cs* добавьте следующие члены в класс `Program` консольного приложения:
 
@@ -192,7 +191,7 @@ static void Main(string[] args)
 }
 ```
 
-Сохраните файл *Program.cs*.
+Сохраните *Program.cs*.
 
 В кэше Azure для Redis настраивается число баз данных (по умолчанию 16) для обеспечения логического разделения данных в нем. Этот код подключается к стандартной базе данных DB 0. Дополнительные сведения см. в разделах [What are Redis databases?](cache-configure.md#default-redis-server-configuration) (Что такое базы данных Redis) и [Конфигурация сервера Redis по умолчанию](cache-development-faq.md#what-are-redis-databases).
 

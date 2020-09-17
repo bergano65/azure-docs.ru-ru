@@ -4,16 +4,16 @@ description: Сведения о том, как использовать кли�
 author: mhopkins-msft
 ms.custom: devx-track-java
 ms.author: mhopkins
-ms.date: 12/4/2019
+ms.date: 09/10/2020
 ms.service: storage
 ms.subservice: queues
 ms.topic: quickstart
-ms.openlocfilehash: 753c245631d2fbdc8122f955c1db6562a1554031
-ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
+ms.openlocfilehash: 9b9f68737ca714c0661ffb008347149235886c68
+ms.sourcegitcommit: 43558caf1f3917f0c535ae0bf7ce7fe4723391f9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87319377"
+ms.lasthandoff: 09/11/2020
+ms.locfileid: "90015030"
 ---
 # <a name="quickstart-azure-queue-storage-client-library-v12-for-java"></a>Краткое руководство. Использование клиентской библиотеки Хранилища очередей Azure версии 12 для Java
 
@@ -30,17 +30,17 @@ ms.locfileid: "87319377"
 
 Дополнительные ресурсы:
 
-* [Справочная документация по API](https://azuresdkdocs.blob.core.windows.net/$web/java/azure-storage-queue/12.0.0/index.html)
+* [Справочная документация по API](/java/api/overview/azure/storage-queue-readme)
 * [Исходный код библиотеки](https://github.com/Azure/azure-sdk-for-java/tree/master/sdk/storage/azure-storage-queue)
 * [Пакет (Maven)](https://mvnrepository.com/artifact/com.azure/azure-storage-queue)
-* [Примеры](https://docs.microsoft.com/azure/storage/common/storage-samples-java?toc=%2fazure%2fstorage%2fqueues%2ftoc.json#queue-samples)
+* [Примеры](/azure/storage/common/storage-samples-java?toc=%2fazure%2fstorage%2fqueues%2ftoc.json#queue-samples)
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-* [Пакет разработчиков Java (JDK)](https://docs.microsoft.com/java/azure/jdk/?view=azure-java-stable) версии 8 или более поздней версии.
+* [Пакет разработчиков Java (JDK)](/java/azure/jdk/) версии 8 или более поздней версии.
 * [Apache Maven](https://maven.apache.org/download.cgi)
 * Подписка Azure — [создайте бесплатную учетную запись](https://azure.microsoft.com/free/).
-* Учетная запись хранения Azure — [создайте такую учетную запись](https://docs.microsoft.com/azure/storage/common/storage-quickstart-create-account).
+* Учетная запись хранения Azure — [создайте такую учетную запись](/azure/storage/common/storage-quickstart-create-account).
 
 ## <a name="setting-up"></a>Настройка
 
@@ -161,10 +161,10 @@ public class App
 
 Используйте следующие классы Java для взаимодействия с этими ресурсами.
 
-* [QueueClientBuilder](https://azuresdkdocs.blob.core.windows.net/$web/java/azure-storage-queue/12.0.0/com/azure/storage/queue/QueueClientBuilder.html). Класс `QueueClientBuilder` настраивает объект `QueueClient` и создает его экземпляр.
-* [QueueServiceClient](https://azuresdkdocs.blob.core.windows.net/$web/java/azure-storage-queue/12.0.0/com/azure/storage/queue/QueueServiceClient.html). `QueueServiceClient` позволяет управлять всеми очередями в учетной записи хранения.
-* [QueueClient](https://azuresdkdocs.blob.core.windows.net/$web/java/azure-storage-queue/12.0.0/com/azure/storage/queue/QueueClient.html). Класс `QueueClient` позволяет управлять отдельной очередью и сообщениями в ней.
-* [QueueMessageItem](https://azuresdkdocs.blob.core.windows.net/$web/java/azure-storage-queue/12.0.0/com/azure/storage/queue/models/QueueMessageItem.html). Класс `QueueMessageItem` представляет отдельные объекты, которые возвращаются при вызове [receiveMessages](https://azuresdkdocs.blob.core.windows.net/$web/java/azure-storage-queue/12.0.0/com/azure/storage/queue/QueueClient.html#receiveMessages-java.lang.Integer-) для очереди.
+* [QueueClientBuilder](/java/api/com.azure.storage.queue.queueclientbuilder). Класс `QueueClientBuilder` настраивает объект `QueueClient` и создает его экземпляр.
+* [QueueServiceClient](/java/api/com.azure.storage.queue.queueserviceclient). `QueueServiceClient` позволяет управлять всеми очередями в учетной записи хранения.
+* [QueueClient](/java/api/com.azure.storage.queue.queueclient). Класс `QueueClient` позволяет управлять отдельной очередью и сообщениями в ней.
+* [QueueMessageItem](/java/api/com.azure.storage.queue.models.queuemessageitem). Класс `QueueMessageItem` представляет отдельные объекты, которые возвращаются при вызове [receiveMessages](/java/api/com.azure.storage.queue.queueclient.receivemessages) для очереди.
 
 ## <a name="code-examples"></a>Примеры кода
 
@@ -204,7 +204,7 @@ String connectStr = System.getenv("AZURE_STORAGE_CONNECTION_STRING");
 > Имя очереди может содержать только строчные буквы, цифры и дефисы и должно начинаться с буквы или цифры. Перед каждым дефисом должен быть знак без дефиса. Количество символов в имени должно быть от 3 до 63. Дополнительные сведения см. в статье о [присвоении имен очередям и метаданным](/rest/api/storageservices/naming-queues-and-metadata).
 
 
-Создайте экземпляр класса [QueueClient](https://azuresdkdocs.blob.core.windows.net/$web/java/azure-storage-queue/12.0.0/com/azure/storage/queue/QueueClient.html). Затем вызовите метод [create](https://azuresdkdocs.blob.core.windows.net/$web/java/azure-storage-queue/12.0.0/com/azure/storage/queue/QueueClient.html#create--), чтобы создать очередь в своей учетной записи хранения.
+Создайте экземпляр класса [QueueClient](/java/api/com.azure.storage.queue.queueclient). Затем вызовите метод [create](/java/api/com.azure.storage.queue.queueclient.create), чтобы создать очередь в своей учетной записи хранения.
 
 Добавьте следующий код в конец метода `main`.
 
@@ -227,7 +227,7 @@ queueClient.create();
 
 ### <a name="add-messages-to-a-queue"></a>Добавление сообщений в очередь
 
-Следующий фрагмент кода добавляет сообщения в очередь, вызывая метод [sendMessage](https://azuresdkdocs.blob.core.windows.net/$web/java/azure-storage-queue/12.0.0/com/azure/storage/queue/QueueClient.html#sendMessage-java.lang.String-). Он также сохраняет [SendMessageResult](https://azuresdkdocs.blob.core.windows.net/$web/java/azure-storage-queue/12.0.0/com/azure/storage/queue/models/SendMessageResult.html), возвращенный вызовом `sendMessage`. Этот результат используется для обновления сообщения далее в коде программы.
+Следующий фрагмент кода добавляет сообщения в очередь, вызывая метод [sendMessage](/java/api/com.azure.storage.queue.queueclient.sendmessage). Он также сохраняет [SendMessageResult](/java/api/com.azure.storage.queue.models.sendmessageresult), возвращенный вызовом `sendMessage`. Этот результат используется для обновления сообщения далее в коде программы.
 
 Добавьте следующий код в конец метода `main`.
 
@@ -244,7 +244,7 @@ SendMessageResult result = queueClient.sendMessage("Third message");
 
 ### <a name="peek-at-messages-in-a-queue"></a>Просмотр сообщений из очереди
 
-Чтобы просмотреть сообщение в начале очереди, вызовите метод [peekMessages](https://azuresdkdocs.blob.core.windows.net/$web/java/azure-storage-queue/12.0.0/com/azure/storage/queue/QueueClient.html#peekMessages-java.lang.Integer-java.time.Duration-com.azure.core.util.Context-). Метод `peelkMessages` извлекает одно или несколько сообщений из начала очереди, не изменяя видимость этих сообщений.
+Чтобы просмотреть сообщение в начале очереди, вызовите метод [peekMessages](/java/api/com.azure.storage.queue.queueclient.peekmessages). Метод `peelkMessages` извлекает одно или несколько сообщений из начала очереди, не изменяя видимость этих сообщений.
 
 Добавьте следующий код в конец метода `main`.
 
@@ -258,7 +258,7 @@ queueClient.peekMessages(10, null, null).forEach(
 
 ### <a name="update-a-message-in-a-queue"></a>Обновление сообщений в очереди
 
-Чтобы обновить содержимое сообщения, вызовите метод [updateMessage](https://azuresdkdocs.blob.core.windows.net/$web/java/azure-storage-queue/12.0.0/com/azure/storage/queue/QueueClient.html#updateMessage-java.lang.String-java.lang.String-java.lang.String-java.time.Duration-). Метод `updateMessage` может изменить время видимости сообщения и (или) его содержимое. Содержимое сообщение должно иметь формат строки в кодировке UTF-8 длиной не более 64 КБ. Вместе с новым содержимым сообщения передайте идентификатор сообщения и подтверждение извлечения, используя сохраненный ранее `SendMessageResult`. Идентификатор сообщения и подтверждение извлечения указывают, какое сообщение следует обновить.
+Чтобы обновить содержимое сообщения, вызовите метод [updateMessage](/java/api/com.azure.storage.queue.queueclient.updatemessage). Метод `updateMessage` может изменить время видимости сообщения и (или) его содержимое. Содержимое сообщение должно иметь формат строки в кодировке UTF-8 длиной не более 64 КБ. Вместе с новым содержимым сообщения передайте идентификатор сообщения и подтверждение извлечения, используя сохраненный ранее `SendMessageResult`. Идентификатор сообщения и подтверждение извлечения указывают, какое сообщение следует обновить.
 
 ```java
 System.out.println("\nUpdating the third message in the queue...");
@@ -273,7 +273,7 @@ queueClient.updateMessage(result.getMessageId(),
 
 ### <a name="receive-and-delete-messages-from-a-queue"></a>Получение и удаление сообщений из очереди
 
-Чтобы скачать ранее добавленные сообщения, вызовите метод [receiveMessages](https://azuresdkdocs.blob.core.windows.net/$web/java/azure-storage-queue/12.0.0/com/azure/storage/queue/QueueClient.html#receiveMessages-java.lang.Integer-java.time.Duration-java.time.Duration-com.azure.core.util.Context-). Также этот пример кода удаляет из очереди сообщения, которые уже получены и обработаны. В нашем примере обработка сводится к выводу сообщения в консоль.
+Чтобы скачать ранее добавленные сообщения, вызовите метод [receiveMessages](/java/api/com.azure.storage.queue.queueclient.receivemessages). Также этот пример кода удаляет из очереди сообщения, которые уже получены и обработаны. В нашем примере обработка сводится к выводу сообщения в консоль.
 
 Перед получением и удалением сообщений приложение ожидает ввода от пользователя, вызывая метод `System.console().readLine();`. Перед удалением ресурсов убедитесь на [портале Azure](https://portal.azure.com), что они были правильно созданы. Все сообщения, которые не были удалены явным образом, снова становятся видимыми в очереди для новой попытки их обработать.
 
@@ -298,7 +298,7 @@ queueClient.receiveMessages(10).forEach(
 
 ### <a name="delete-a-queue"></a>Удаление очереди
 
-Следующий код очищает созданные приложением ресурсы, удаляя очередь с помощью метода [delete](https://azuresdkdocs.blob.core.windows.net/$web/java/azure-storage-queue/12.0.0/com/azure/storage/queue/QueueClient.html#delete--).
+Следующий код очищает созданные приложением ресурсы, удаляя очередь с помощью метода [delete](/java/api/com.azure.storage.queue.queueclient.delete).
 
 Добавьте следующий код в конец метода `main`.
 
@@ -372,6 +372,6 @@ Done
 Руководства, примеры, краткие руководства и другую документацию можно найти здесь:
 
 > [!div class="nextstepaction"]
-> [Azure для разработчиков облачных решений Java](https://docs.microsoft.com/azure/developer/java/)
+> [Azure для разработчиков облачных решений Java](/azure/developer/java/)
 
 * Дополнительные примеры приложений для пакета SDK Хранилища очередей Azure версии 12 для Java собраны [здесь](https://github.com/Azure/azure-sdk-for-java/tree/master/sdk/storage/azure-storage-queue/src/samples/java/com/azure/storage/queue).

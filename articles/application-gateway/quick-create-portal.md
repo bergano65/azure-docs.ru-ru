@@ -9,12 +9,12 @@ ms.topic: quickstart
 ms.date: 08/27/2020
 ms.author: victorh
 ms.custom: mvc
-ms.openlocfilehash: 4929836b7fb617884008fafea50a10e0212fbd58
-ms.sourcegitcommit: 648c8d250106a5fca9076a46581f3105c23d7265
+ms.openlocfilehash: 7c144ddac255087ae48ff2f1c5406ad66d670562
+ms.sourcegitcommit: 80b9c8ef63cc75b226db5513ad81368b8ab28a28
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "88961964"
+ms.lasthandoff: 09/16/2020
+ms.locfileid: "90601356"
 ---
 # <a name="quickstart-direct-web-traffic-with-azure-application-gateway---azure-portal"></a>Краткое руководство. Направление веб-трафика с помощью Шлюза приложений Azure на портале Azure
 
@@ -25,8 +25,6 @@ ms.locfileid: "88961964"
 Инструкции в этом кратком руководстве можно также выполнить с помощью [Azure PowerShell](quick-create-powershell.md) или [Azure CLI](quick-create-cli.md).
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
-
-
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -171,7 +169,7 @@ ms.locfileid: "88961964"
 
 2. Чтобы установить службы IIS, выполните на виртуальной машине приведенные ниже команды. При необходимости измените значение параметра *Расположение*. 
 
-    ```azurepowershell-interactive
+    ```azurepowershell
     Set-AzVMExtension `
       -ResourceGroupName myResourceGroupAG `
       -ExtensionName IIS `
@@ -196,7 +194,6 @@ ms.locfileid: "88961964"
 4. В разделе **Серверные целевые объекты**, **Тип целевого объекта** выберите **Виртуальная машина** из раскрывающегося списка.
 
 5. В столбце **Целевой объект** выберите виртуальные машины **myVM** и **myVM2**, а также связанные с ними сетевые интерфейсы из раскрывающихся списков.
-
 
    > [!div class="mx-imgBorder"]
    > ![Добавление внутренних серверов](./media/application-gateway-create-gateway-portal/application-gateway-backend.png)

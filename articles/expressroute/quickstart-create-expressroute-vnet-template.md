@@ -9,12 +9,12 @@ ms.topic: quickstart
 ms.custom: subject-armsq
 ms.date: 08/31/2020
 ms.author: duau
-ms.openlocfilehash: 2bc4c2a3ee7f1a1dbd85d46e49ec27e5276de159
-ms.sourcegitcommit: d68c72e120bdd610bb6304dad503d3ea89a1f0f7
+ms.openlocfilehash: f1dbb9623ddc87f9940fd97b05abbee113fd71c4
+ms.sourcegitcommit: 43558caf1f3917f0c535ae0bf7ce7fe4723391f9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/01/2020
-ms.locfileid: "89237151"
+ms.lasthandoff: 09/11/2020
+ms.locfileid: "90016560"
 ---
 # <a name="quickstart-create-an-expressroute-circuit-with-private-peering-using-an-arm-template"></a>Краткое руководство. Создание канала ExpressRoute с частным пирингом с помощью шаблона ARM
 
@@ -76,9 +76,9 @@ ms.locfileid: "89237151"
 
     Имя группы ресурсов — это имя проекта с добавлением **rg**.
 
-Развертывание шаблона занимает около 20 минут. По завершении выходные данные должны быть следующего вида:
+    Развертывание шаблона занимает около 20 минут. По завершении выходные данные должны быть следующего вида:
 
-:::image type="content" source="./media/quickstart-create-expressroute-vnet/expressroute-powershell-output.png" alt-text="Результаты развертывания шаблона Resource Manager ExpressRoute в PowerShell":::
+    :::image type="content" source="./media/quickstart-create-expressroute-vnet/expressroute-powershell-output.png" alt-text="Результаты развертывания шаблона Resource Manager ExpressRoute в PowerShell":::
 
 Для развертывания шаблона используется Azure PowerShell. В дополнение к Azure PowerShell можно также использовать портал Azure, Azure CLI и REST API. Дополнительные сведения о других методах развертывания см. в статье о [развертывании с использованием шаблонов](../azure-resource-manager/templates/deploy-portal.md).
 
