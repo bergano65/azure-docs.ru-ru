@@ -78,7 +78,7 @@ az dt role-assignment create --dt-name <your-Azure-Digital-Twins-instance> --ass
 >
 > Используйте [страницу портал Azure Azure Active Directory пользователей](https://portal.azure.com/#blade/Microsoft_AAD_IAM/UsersManagementMenuBlade/AllUsers) , чтобы выбрать учетную запись пользователя и открыть сведения о ней. Скопируйте *ObjectID*пользователя:
 >
-> :::image type="content" source="media/includes/user-id.png" alt-text="Представление страницы пользователя в портал Azure выделение идентификатора GUID в поле "идентификатор объекта"" lightbox="media/includes/user-id.png":::
+> :::image type="content" source="media/includes/user-id.png" alt-text="Представление страницы пользователя в портал Azure выделение идентификатора GUID в поле идентификатор объекта" lightbox="media/includes/user-id.png":::
 >
 > Затем повторите команду списка назначений ролей, используя *идентификатор объекта* пользователя для приведенного `assignee` выше параметра.
 
