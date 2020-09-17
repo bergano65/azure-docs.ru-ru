@@ -33,7 +33,7 @@ ms.locfileid: "89570493"
 
 1. Откройте рекомендацию, которой должны соответствовать новые ресурсы, и нажмите кнопку **Deny (запретить** ) в верхней части страницы.
 
-    :::image type="content" source="./media/security-center-remediate-recommendations/recommendation-deny-button.png" alt-text="Страница рекомендаций с выделенной кнопкой "запретить"":::
+    :::image type="content" source="./media/security-center-remediate-recommendations/recommendation-deny-button.png" alt-text="Страница рекомендаций с выделенной кнопкой запретить":::
 
     Откроется панель конфигурация с перечнем параметров области. 
 
@@ -49,7 +49,7 @@ ms.locfileid: "89570493"
 
 1. Откройте рекомендацию по развертыванию шаблона, если новые ресурсы не соответствуют требованиям, и нажмите кнопку **Применить** в верхней части страницы.
 
-    :::image type="content" source="./media/security-center-remediate-recommendations/recommendation-enforce-button.png" alt-text="Страница рекомендаций с выделенной кнопкой "Применить"":::
+    :::image type="content" source="./media/security-center-remediate-recommendations/recommendation-enforce-button.png" alt-text="Страница рекомендаций с выделенной кнопкой Применить":::
 
     Откроется панель конфигурация со всеми параметрами конфигурации политики. 
 
