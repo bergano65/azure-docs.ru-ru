@@ -91,7 +91,7 @@ ms.locfileid: "90707770"
 
 1. Если вы выбрали **ограничить большие двоичные объекты с фильтрами** на странице **сведений** , выберите **фильтр установить** , чтобы добавить необязательный фильтр. В следующем примере выполняется фильтрация больших двоичных объектов в контейнере *милифециклеконтаинер* , начинающихся с "log".
 
-   :::image type="content" source="media/storage-lifecycle-management-concepts/lifecycle-management-filter-set.png" alt-text="Страница "набор фильтров управления жизненным циклом" в портал Azure":::
+   :::image type="content" source="media/storage-lifecycle-management-concepts/lifecycle-management-filter-set.png" alt-text="Страница набор фильтров управления жизненным циклом в портал Azure":::
 
 1. Нажмите кнопку **Добавить** , чтобы добавить новую политику.
 
