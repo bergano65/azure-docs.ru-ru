@@ -50,7 +50,7 @@ ms.locfileid: "89442167"
 1. Выберите **Azure Active Directory** > **Регистрация приложений**, а затем — регистрацию приложения API.
 1. Выберите **Предоставление API** > **Добавить группу**.
 
-    :::image type="content" source="media/quickstart-configure-app-expose-web-apis/portal-02-expose-api.png" alt-text="Панель "Предоставление API" регистрации приложения на портале Azure":::
+    :::image type="content" source="media/quickstart-configure-app-expose-web-apis/portal-02-expose-api.png" alt-text="Панель Предоставление API регистрации приложения на портале Azure":::
 
 1. Вам будет предложено задать **URI идентификатора приложения**, если он еще не настроен.
 
@@ -95,7 +95,7 @@ ms.locfileid: "89442167"
 
 Если вы успешно добавили оба примера областей, описанные в предыдущих разделах, они отобразятся в области **Предоставление API** регистрации приложения веб-API, как показано на следующем рисунке:
 
-:::image type="content" source="media/quickstart-configure-app-expose-web-apis/portal-03-scopes-list.png" alt-text="Снимок экрана: панели "Предоставление API" с двумя предоставленными областями.":::
+:::image type="content" source="media/quickstart-configure-app-expose-web-apis/portal-03-scopes-list.png" alt-text="Снимок экрана: панели Предоставление API с двумя предоставленными областями.":::
 
 Как показано на рисунке, полной строкой области является объединение **URI идентификатора приложения** веб-API и **имени области**.
 
