@@ -40,7 +40,7 @@ ms.locfileid: "90706019"
 1. В разделе **Управление**выберите **Регистрация приложений**, а затем выберите приложение, в котором нужно определить роли приложения.
 1. Выбор **ролей приложения | Предварительная версия**, а затем выберите **создать роль приложения**.
 
-   :::image type="content" source="media/howto-add-app-roles-in-azure-ad-apps/app-roles-overview-pane.png" alt-text="Область "роли приложения регистрации приложения" в портал Azure":::
+   :::image type="content" source="media/howto-add-app-roles-in-azure-ad-apps/app-roles-overview-pane.png" alt-text="Область роли приложения регистрации приложения в портал Azure":::
 1. В области **Создание роли приложения** введите параметры роли. В таблице, следующей за изображением, описывается каждый параметр и их параметры.
 
     :::image type="content" source="media/howto-add-app-roles-in-azure-ad-apps/app-roles-create-context-pane.png" alt-text="Область контекста создания ролей приложения регистрации приложения в портал Azure":::
