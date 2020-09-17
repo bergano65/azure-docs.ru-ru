@@ -63,7 +63,7 @@ ms.locfileid: "89645598"
 
      1. Выберите **Присоединиться к предварительной версии** слева на странице Политики Azure.
 
-        :::image type="content" source="../media/policy-for-kubernetes/join-aks-preview.png" alt-text="Снимок экрана: узел "предварительный просмотр" в режиме "присоединение" на странице политики." border="false":::
+        :::image type="content" source="../media/policy-for-kubernetes/join-aks-preview.png" alt-text="Снимок экрана: узел предварительный просмотр в режиме присоединение на странице политики." border="false":::
 
      1. Выберите строку подписки, которую нужно добавить в предварительную версию.
 
@@ -126,11 +126,11 @@ ms.locfileid: "89645598"
 
   1. Выберите **Политики (предварительная версия)** в левой части страницы службы Kubernetes.
 
-     :::image type="content" source="../media/policy-for-kubernetes/policies-preview-from-aks-cluster.png" alt-text="Снимок экрана: узел "политики (Предварительная версия)" на странице службы Kubernetes." border="false":::
+     :::image type="content" source="../media/policy-for-kubernetes/policies-preview-from-aks-cluster.png" alt-text="Снимок экрана: узел политики (Предварительная версия) на странице службы Kubernetes." border="false":::
 
   1. На главной странице нажмите кнопку **Включить надстройку**.
 
-     :::image type="content" source="../media/policy-for-kubernetes/enable-policy-add-on.png" alt-text="Снимок экрана кнопки "включить надстройку" на странице "подключение к политике Azure для служб Azure Kubernetes Services (A K)".":::
+     :::image type="content" source="../media/policy-for-kubernetes/enable-policy-add-on.png" alt-text="Снимок экрана кнопки включить надстройку на странице подключение к политике Azure для служб Azure Kubernetes Services (A K).":::
 
      <a name="migrate-from-v1"></a>
      > [!NOTE]
@@ -466,11 +466,11 @@ kubectl logs <gatekeeper pod name> -n gatekeeper-system
 
   1. Выберите **Политики (предварительная версия)** в левой части страницы службы Kubernetes.
 
-     :::image type="content" source="../media/policy-for-kubernetes/policies-preview-from-aks-cluster.png" alt-text="Снимок экрана: узел "политики (Предварительная версия)" на странице службы Kubernetes." border="false":::
+     :::image type="content" source="../media/policy-for-kubernetes/policies-preview-from-aks-cluster.png" alt-text="Снимок экрана: узел политики (Предварительная версия) на странице службы Kubernetes." border="false":::
 
   1. На главной странице нажмите кнопку **Отключить надстройку**.
 
-     :::image type="content" source="../media/policy-for-kubernetes/disable-policy-add-on.png" alt-text="Снимок экрана кнопки "отключить надстройку" на странице "подключение к политике Azure для службы Kubernetes Services (A)"." border="false":::
+     :::image type="content" source="../media/policy-for-kubernetes/disable-policy-add-on.png" alt-text="Снимок экрана кнопки отключить надстройку на странице подключение к политике Azure для службы Kubernetes Services (A)." border="false":::
 
 - Azure CLI
 
