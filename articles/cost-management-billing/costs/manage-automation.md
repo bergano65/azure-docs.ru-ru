@@ -3,17 +3,17 @@ title: Автоматизация управления затратами Azure
 description: В этой статье объясняется, как можно управлять затратами Azure с помощью автоматизации.
 author: bandersmsft
 ms.author: banders
-ms.date: 08/19/2020
+ms.date: 09/14/2020
 ms.topic: conceptual
 ms.service: cost-management-billing
 ms.subservice: cost-management
-ms.reviewer: adwise
-ms.openlocfilehash: a5ab84794884cc0c87bd766be7a0fa2fe4c52aa9
-ms.sourcegitcommit: 56cbd6d97cb52e61ceb6d3894abe1977713354d9
+ms.reviewer: matrive
+ms.openlocfilehash: eb6ed73305d55b4f76464a4567c6b53715b10c3a
+ms.sourcegitcommit: 03662d76a816e98cfc85462cbe9705f6890ed638
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/20/2020
-ms.locfileid: "88684411"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90526652"
 ---
 # <a name="manage-costs-with-automation"></a>Автоматизация управления затратами
 
@@ -161,6 +161,70 @@ URL-адрес запроса: `PUT https://management.azure.com/{scope}/provide
 ### <a name="automate-budget-creation"></a>Автоматизация создания бюджета
 
 Вы можете автоматизировать создание бюджета с помощью [API бюджетов](/rest/api/consumption/budgets). Вы также можете создать бюджет с помощью [шаблона бюджета](quick-create-budget-template.md). Шаблоны позволяют с легкостью стандартизировать развертывания Azure, обеспечивая правильную настройку и принудительное применение управления затратами.
+
+#### <a name="supported-locales-for-budget-alert-emails"></a>Поддерживаемые языковые стандарты для сообщений электронной почты с оповещениями о бюджете
+
+При использовании бюджетов вы получите оповещение, если затраты превышают пороговое значение. Для каждого бюджета можно настроить до пяти получателей сообщений электронной почты. Получателям отправляется оповещение по электронной почте в течение 24 часов с момента превышения порогового значения. При этом получателю может потребоваться получить сообщение электронной почты на другом языке. С помощью API бюджетов можно использовать следующие коды языка и региональных параметров. Задайте код языка и региональных параметров с помощью параметра `locale`, как показано в следующем примере.
+
+```json
+{
+  "eTag": "\"1d681a8fc67f77a\"",
+  "properties": {
+    "timePeriod": {
+      "startDate": "2020-07-24T00:00:00Z",
+      "endDate": "2022-07-23T00:00:00Z"
+    },
+    "timeGrain": "BillingMonth",
+    "amount": 1,
+    "currentSpend": {
+      "amount": 0,
+      "unit": "USD"
+    },
+    "category": "Cost",
+    "notifications": {
+      "actual_GreaterThan_10_Percent": {
+        "enabled": true,
+        "operator": "GreaterThan",
+        "threshold": 20,
+        "locale": "en-us",
+        "contactEmails": [
+          "user@contoso.com"
+        ],
+        "contactRoles": [],
+        "contactGroups": [],
+        "thresholdType": "Actual"
+      }
+    }
+  }
+}
+
+```
+
+Языки, поддерживаемые кодом языка и региональных параметров:
+
+| Код языка и региональных параметров| Язык |
+| --- | --- |
+| ru-ru | Английский (США) |
+| ja-jp | Японский (Япония) |
+| zh-cn | Китайский (упрощенное письмо, Китай) |
+| de-de | Немецкий (Германия) |
+| es-es | Испанский (Испания, международный) |
+| fr-fr | Французский (Франция) |
+| it-it | Итальянский (Италия) |
+| ko-kr | корейский (Корея) |
+| pt-br | Португальский (Бразилия) |
+| ru-ru | Русский (Россия) |
+| zh-tw | Китайский (традиционный, Тайвань) |
+| cs-cz | Чешский (Чешская Республика) |
+| pl-pl | Польский (Польша) |
+| tr-tr | Турецкий (Турция) |
+| da-dk | Датский (Дания) |
+| dn-gb | Английский (Великобритания) |
+| hu-hu | Венгерский (Венгрия) |
+| nb-bo | Норвежский (букмол, Норвегия) |
+| nl-nl | Нидерландский (Нидерланды) |
+| pt-pt | Португальский (Португалия) |
+| sv-se | Шведский (Швеция) |
 
 #### <a name="common-budgets-api-configurations"></a>Общие конфигурации API бюджетов
 

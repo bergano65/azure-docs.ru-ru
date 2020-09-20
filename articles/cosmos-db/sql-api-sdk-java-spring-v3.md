@@ -9,12 +9,12 @@ ms.topic: reference
 ms.date: 08/18/2020
 ms.author: anfeldma
 ms.custom: devx-track-java
-ms.openlocfilehash: 4b2d474f25209034034db092ca971bff6b78d73a
-ms.sourcegitcommit: 1fe5127fb5c3f43761f479078251242ae5688386
+ms.openlocfilehash: 9e5b92918d93109183740be555bb805877862407
+ms.sourcegitcommit: 0fd1f3fe7817ad44d878d580ec167e1508051795
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/14/2020
-ms.locfileid: "90068748"
+ms.lasthandoff: 09/19/2020
+ms.locfileid: "90817876"
 ---
 # <a name="spring-data-azure-cosmos-db-v3-for-core-sql-api-release-notes-and-resources"></a>Пружинные данные Azure Cosmos DB v3 для API Core (SQL): заметки о выпуске и ресурсы
 > [!div class="op_single_selector"]
@@ -67,22 +67,10 @@ ms.locfileid: "90068748"
 
 ### <a name="configure-dependencies"></a>Настройка зависимостей
 
-Доступны два артефакта Maven версии 3 с пружинными Azure Cosmos DB данными.
-
-- Артефакт, зависящий от высококомпонентной платформы данных версии 2,2:
   ```xml
   <dependency>
       <groupId>com.azure</groupId>
-      <artifactId>azure-spring-data-2-2-cosmos</artifactId>
-      <version>latest</version>
-  </dependency>
-  ```
-
-- Артефакт, зависящий от высококомпонентной платформы данных версии 2,3:
-  ```xml
-  <dependency>
-      <groupId>com.azure</groupId>
-      <artifactId>azure-spring-data-2-3-cosmos</artifactId>
+      <artifactId>azure-spring-data-cosmos</artifactId>
       <version>latest</version>
   </dependency>
   ```
@@ -93,7 +81,7 @@ ms.locfileid: "90068748"
 
 Укажите учетную запись Azure Cosmos DB и сведения о контейнере. Пружинные данные Azure Cosmos DB автоматически создают клиент и подключаются к контейнеру.
 
-[приложение. свойства](https://github.com/Azure-Samples/azure-spring-data-cosmos-java-sql-api-getting-started/blob/main/azure-spring-data-2-2-cosmos-java-getting-started/src/main/resources/application.properties):
+[приложение. свойства](https://github.com/Azure-Samples/azure-spring-data-cosmos-java-sql-api-getting-started/blob/main/azure-spring-data-cosmos-java-getting-started/src/main/resources/application.properties):
 ```
 cosmos.uri=${ACCOUNT_HOST}
 cosmos.key=${ACCOUNT_KEY}
@@ -108,30 +96,46 @@ cosmos.queryMetricsEnabled=true
 
 ### <a name="document-operations"></a>Операции с документом
 
-[Создайте](https://github.com/Azure-Samples/azure-spring-data-cosmos-java-sql-api-getting-started/blob/main/azure-spring-data-2-3-cosmos-java-getting-started/src/main/java/com/azure/spring/data/cosmostutorial/SampleApplication.java): [!code-java[](~/spring-data-azure-cosmos-db-sql-tutorial/azure-spring-data-2-3-cosmos-java-getting-started/src/main/java/com/azure/spring/data/cosmostutorial/SampleApplication.java?name=Create)]
+Создание:
+:::code language="java" source="~/spring-data-azure-cosmos-db-sql-tutorial/azure-spring-data-cosmos-java-getting-started/src/main/java/com/azure/spring/data/cosmostutorial/SampleApplication.java" ID="Create":::
 
-[Удалить](https://github.com/Azure-Samples/azure-spring-data-cosmos-java-sql-api-getting-started/blob/main/azure-spring-data-2-3-cosmos-java-getting-started/src/main/java/com/azure/spring/data/cosmostutorial/SampleApplication.java): [!code-java[](~/spring-data-azure-cosmos-db-sql-tutorial/azure-spring-data-2-3-cosmos-java-getting-started/src/main/java/com/azure/spring/data/cosmostutorial/SampleApplication.java?name=Delete)]
+"Delete" (Удалить).
+:::code language="java" source="~/spring-data-azure-cosmos-db-sql-tutorial/azure-spring-data-cosmos-java-getting-started/src/main/java/com/azure/spring/data/cosmostutorial/SampleApplication.java" ID="Delete":::
 
 # <a name="query"></a>[Запрос](#tab/queries)
 
-[Запрос](https://github.com/Azure-Samples/azure-spring-data-cosmos-java-sql-api-getting-started/blob/main/azure-spring-data-2-3-cosmos-java-getting-started/src/main/java/com/azure/spring/data/cosmostutorial/SampleApplication.java): [!code-java[](~/spring-data-azure-cosmos-db-sql-tutorial/azure-spring-data-2-3-cosmos-java-getting-started/src/main/java/com/azure/spring/data/cosmostutorial/SampleApplication.java?name=Query)]
+Запрос:
+:::code language="java" source="~/spring-data-azure-cosmos-db-sql-tutorial/azure-spring-data-cosmos-java-getting-started/src/main/java/com/azure/spring/data/cosmostutorial/SampleApplication.java" ID="Query":::
 
 ---
 
 ## <a name="resources"></a>Ресурсы
 
-| Ресурс | Платформа данных пружины 2,2 | Платформа данных пружины 2,3 |
-|---|---|
-| **Скачивание пакета SDK** | [Maven](https://mvnrepository.com/artifact/com.azure/azure-spring-data-2-2-cosmos) | [Maven](https://mvnrepository.com/artifact/com.azure/azure-spring-data-2-3-cosmos) |
-|**Участие в пакете SDK** | [Репозиторий с пружинными данными Azure Cosmos DB на GitHub](https://github.com/Azure/azure-sdk-for-java/tree/master/sdk/cosmos/azure-spring-data-2-2-cosmos) | [Репозиторий с пружинными данными Azure Cosmos DB на GitHub](https://github.com/Azure/azure-sdk-for-java/tree/master/sdk/cosmos/azure-spring-data-2-3-cosmos) | 
-|**Руководство**| [Учебник Azure Cosmos DB данных пружины на GitHub](https://github.com/Azure-Samples/azure-spring-data-cosmos-java-sql-api-getting-started/tree/main/azure-spring-data-2-2-cosmos-java-getting-started) | [Учебник Azure Cosmos DB данных пружины на GitHub](https://github.com/Azure-Samples/azure-spring-data-cosmos-java-sql-api-getting-started/tree/main/azure-spring-data-2-3-cosmos-java-getting-started) |
+* **Участие в пакете SDK**: [пружинные данные Azure Cosmos DB репозиторий на GitHub](https://github.com/Azure/azure-sdk-for-java/tree/master/sdk/cosmos/azure-spring-data-cosmos)
+
+* **Учебник**. [Azure Cosmos DB "пружинные данные" в GitHub](https://github.com/Azure-Samples/azure-spring-data-cosmos-java-sql-api-getting-started) 
 
 ## <a name="release-history"></a>История выпусков
 
-### <a name="300-beta2-unreleased"></a>3.0.0-Beta. 2 (не выпущено)
+### <a name="300-beta2-september-17-2020"></a>3.0.0-Beta. 2 (17 сентября, 2020)
+
+#### <a name="new-features"></a>Новые функции
+
+* Идентификатор артефакта изменен на `azure-spring-data-cosmos` .
+* Изменена зависимость Azure-Cosmos на `4.5.0` .
+* `Query Annotation` поддержка собственных запросов.
+* Поддержка Java 11.
+* Добавлена поддержка вложенного ключа секции путем предоставления `partitionKeyPath` поля в `@Container` аннотации.
+* Добавлена поддержка `limit` типа запроса, позволяющая `top` и `first` использоваться при определении API репозитория.
+
+#### <a name="key-bug-fixes"></a>Исправления основных ошибок
+
+* Исправлена ошибка вложенного ключа секции при использовании с `@GeneratedValue` заметкой.
 
 ### <a name="300-beta1-august-17-2020"></a>3.0.0-Beta. 1 (17 августа, 2020)
+
 #### <a name="new-features"></a>Новые функции
+
 * Обновляет идентификатор группы `com.azure` .
 * Изменяет идентификатор артефакта на `azure-spring-data-2-3-cosmos` .
 * Обновляет зависимость пакета SDK для Azure-Cosmos `4.3.2-beta.2` .
@@ -143,7 +147,9 @@ cosmos.queryMetricsEnabled=true
 * Предоставляет `CosmosClientBuilder` из пакета SDK Azure Cosmos DB в качестве пружинного Bean к `@Configuration` классу.
 * Обновления `CosmosConfig` содержат метрики запросов и реализацию процессора диагностики ответов.
 * Добавляет поддержку для возврата `Optional` типа данных для отдельных результирующих запросов.
+
 #### <a name="renames"></a>Переименовывает
+
 * `CosmosDbFactory` в `CosmosFactory` .
 * `CosmosDBConfig` в `CosmosConfig` .
 * `CosmosDBAccessException` в `CosmosAccessException` .
@@ -151,7 +157,9 @@ cosmos.queryMetricsEnabled=true
 * `DocumentIndexingPolicy` Аннотация к `CosmosIndexingPolicy` заметке.
 * `DocumentQuery` в `CosmosQuery` .
 * Флаг приложения. Properties `populateQueryMetrics` `queryMetricsEnabled` .
+
 #### <a name="key-bug-fixes"></a>Исправления основных ошибок
+
 * Планирование задачи ведения журнала диагностики для `Parallel` потоков, чтобы избежать блокировки потоков ввода-вывода NETTY.
 * Исправляет оптимистическую блокировку при операции удаления.
 * Исправлены проблемы с экранированием запросов для `IN` предложения.
@@ -161,9 +169,11 @@ cosmos.queryMetricsEnabled=true
 * Удаляет значение единицы запроса по умолчанию 4 000 при создании контейнеров автоматически.
 
 ## <a name="faq"></a>ВОПРОСЫ И ОТВЕТЫ
+
 [!INCLUDE [cosmos-db-sdk-faq](../../includes/cosmos-db-sdk-faq.md)]
 
 ## <a name="next-steps"></a>Дальнейшие действия
+
 См. дополнительные сведения об [Azure Cosmos DB](https://azure.microsoft.com/services/cosmos-db/).
 
 Узнайте больше о [пружинной платформе](https://spring.io/projects/spring-framework).

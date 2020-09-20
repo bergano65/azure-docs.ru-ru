@@ -28,8 +28,6 @@
           href: tutorial-discover-physical.md
         - name: Обнаружение экземпляров AWS
           href: tutorial-discover-aws.md
-        - name: Обнаружение импортированных серверов
-          href: tutorial-discover-import.md
     - name: Оценка
       items:
         - name: Оценка готовности виртуальных машин VMware к переносу на виртуальные машины Azure
@@ -42,6 +40,8 @@
           href: tutorial-assess-physical.md
         - name: Оценка готовности экземпляров AWS к переносу в Azure
           href: tutorial-assess-aws.md
+        - name: Оценка импортированных серверов
+          href: tutorial-discover-import.md
     - name: Миграция
       items:
         - name: Перенос виртуальных машин VMware

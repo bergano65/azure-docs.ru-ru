@@ -1,14 +1,14 @@
 ---
 title: Индекс примеров схем
 description: Индексы соответствия и стандартные примеры для развертывания сред, политик и базовых решений Cloud Adoption Framework с помощью Azure Blueprints.
-ms.date: 09/11/2020
+ms.date: 09/14/2020
 ms.topic: sample
-ms.openlocfilehash: 7ac95dee88cb244ecb4b60738daae26bb0d8831a
-ms.sourcegitcommit: 3fc3457b5a6d5773323237f6a06ccfb6955bfb2d
+ms.openlocfilehash: def5e51a3db7e0733e0d7e1ef5c6895aedb7128d
+ms.sourcegitcommit: 03662d76a816e98cfc85462cbe9705f6890ed638
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/11/2020
-ms.locfileid: "90031880"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90530987"
 ---
 # <a name="azure-blueprints-samples"></a>Примеры для Azure Blueprints
 
@@ -19,7 +19,7 @@ ms.locfileid: "90031880"
 | Образец | Описание |
 |---------|---------|
 | [Australian Government ISM PROTECTED](./ism-protected/index.md) | В этом документе описаны средства защиты для обеспечения соответствия требованиям Australian Government ISM PROTECTED. |
-| [Решение для оценки безопасности Azure](./azure-security-benchmark.md) | В этом документе описаны ограничения для обеспечения соответствия требованиям [тестов производительности системы безопасности Azure](../../../security/benchmarks/overview.md). |
+| [Общие сведения о Тесте производительности системы безопасности Azure](./azure-security-benchmark.md) | В этом документе описаны ограничения для обеспечения соответствия требованиям [тестов производительности системы безопасности Azure](../../../security/benchmarks/overview.md). |
 | [Canada Federal PBMM](./canada-federal-pbmm/index.md) | В этом документе описаны средства защиты для обеспечения соответствия требованиям Canada Federal Protected B, Medium Integrity, Medium Availability (PBMM). |
 | [Тест производительности CIS для платформ Microsoft Azure](./cis-azure-1-1-0.md)| Набор политик, которые помогут обеспечить соответствие рекомендациям по использованию тестов производительности от CIS для платформ Microsoft Azure. |
 | [Уровень влияния DoD 4](./dod-impact-level-4/index.md) | Набор политик, которые помогут обеспечить соответствие требованиям уровня влияния DoD 4. |
@@ -42,7 +42,8 @@ ms.locfileid: "90031880"
 
 ## <a name="samples-strategy"></a>Стратегия использования примеров
 
-:::image type="content" source="../media/blueprint-samples-strategy.png" alt-text="Стратегия использования примеров схем" border="false":::
+:::image type="complex" source="../media/blueprint-samples-strategy.png" alt-text="Схема применимости примеров схем в аспектах архитектурной сложности и требований к соответствию." border="false":::
+   Описывает систему координат, в которой архитектурная сложность находится на оси X, а требования к соответствию — на оси Y.  По мере роста архитектурной сложности и требований к соответствию вы можете воспользоваться стандартными примерами схем на портале, назначенном в регионе E. Для клиентов, которые начинают работу с Azure, используйте схемы платформы и целевых зон на основе Cloud Adoption Framework (CAF), назначенных по регионам A и B. Остальное пространство связывается с настраиваемыми схемами, созданными клиентами и партнерами для регионов C, D и F. :::image-end:::
 
 При использовании схемы платформы CAF и схемы зоны размещения для миграции в соответствии с CAF предполагается, что клиент подготавливает существующую чистую подписку для переноса локальных ресурсов и рабочих нагрузок в Azure
 (области А и Б на рисунке).  

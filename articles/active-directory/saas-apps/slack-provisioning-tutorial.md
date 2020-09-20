@@ -1,5 +1,5 @@
 ---
-title: Учебник. подготовка пользователей для временного резерва — Azure AD
+title: Руководство по подготовке пользователей для Slack с помощью Azure AD
 description: Узнайте, как настроить Azure Active Directory для автоматической подготовки и отмены подготовки учетных записей пользователей в Slack.
 services: active-directory
 author: ArvindHarinder1
@@ -10,12 +10,12 @@ ms.workload: identity
 ms.topic: article
 ms.date: 05/06/2020
 ms.author: arvinh
-ms.openlocfilehash: 368d75ecffda49f688a7a5ce11b60693650014c6
-ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
-ms.translationtype: MT
+ms.openlocfilehash: 6caaba06dcc2fdeaeb672b5381b240cb3f676ca9
+ms.sourcegitcommit: 6e1124fc25c3ddb3053b482b0ed33900f46464b3
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88527831"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90563098"
 ---
 # <a name="tutorial-configure-slack-for-automatic-user-provisioning"></a>Руководство по настройке Slack для автоматической подготовки пользователей
 
@@ -24,40 +24,40 @@ ms.locfileid: "88527831"
 
 ## <a name="capabilities-supported"></a>Поддерживаемые возможности
 > [!div class="checklist"]
-> * Создание пользователей в резервном временном случае
-> * Удалять пользователей в случае временного резерва, когда им больше не нужен доступ
-> * Синхронизация атрибутов пользователей между Azure AD и резервным периодом
-> * Подготавливать группы и членство в группах в резервном времени
-> * [Единый вход](https://docs.microsoft.com/azure/active-directory/saas-apps/slack-tutorial) в резервный (рекомендуется)
+> * Создание пользователей в Slack.
+> * Удаление пользователей в Slack, когда доступ им больше не нужен.
+> * Синхронизация атрибутов пользователей между Azure AD и Slack.
+> * Подготовка групп и членства в группах в Slack.
+> * [Единый вход](https://docs.microsoft.com/azure/active-directory/saas-apps/slack-tutorial) в Slack (рекомендуется).
 
 
 ## <a name="prerequisites"></a>Предварительные требования
 
 Сценарий, описанный в этом учебнике, предполагает, что у вас уже имеется:
 
-* [Клиент Azure AD](https://docs.microsoft.com/azure/active-directory/develop/quickstart-create-new-tenant).
+* [Клиент Azure AD.](https://docs.microsoft.com/azure/active-directory/develop/quickstart-create-new-tenant)
 * Учетная запись пользователя в Azure AD с [разрешением](https://docs.microsoft.com/azure/active-directory/users-groups-roles/directory-assign-admin-roles) на настройку подготовки (например, администратор приложений, администратор облачных приложений, владелец приложения или глобальный администратор).
-* Резервный клиент с [планом "плюс](https://aadsyncfabric.slack.com/pricing) " или выше.
-* Учетная запись пользователя в резервном окне с разрешениями администратора команды.
+* Клиент Slack с включенным планом уровня [Plus](https://aadsyncfabric.slack.com/pricing) или выше.
+* Учетная запись пользователя в Slack с разрешениями администратора группы.
 
 ## <a name="step-1-plan-your-provisioning-deployment"></a>Шаг 1. Планирование развертывания для подготовки
 1. Узнайте, [как работает служба подготовки](https://docs.microsoft.com/azure/active-directory/manage-apps/user-provisioning).
 2. Определите, кто будет находиться в [области подготовки](https://docs.microsoft.com/azure/active-directory/manage-apps/define-conditional-rules-for-provisioning-user-accounts).
-3. Определите, какие данные должны [сопоставляться между Azure AD и резервным периодом](https://docs.microsoft.com/azure/active-directory/manage-apps/customize-application-attributes). 
+3. Определите, какие данные следует [сопоставлять между Azure AD и Slack](https://docs.microsoft.com/azure/active-directory/manage-apps/customize-application-attributes). 
 
-## <a name="step-2-add-slack-from-the-azure-ad-application-gallery"></a>Шаг 2. Добавление временного резерва из коллекции приложений Azure AD
+## <a name="step-2-add-slack-from-the-azure-ad-application-gallery"></a>Шаг 2. Добавление Slack из коллекции приложений Azure AD
 
-Добавьте временной резерв из коллекции приложений Azure AD, чтобы начать управление подготовкой к резервному времени. Если вы ранее настроили резервное время для единого входа, вы можете использовать то же приложение. Однако при первоначальном тестировании интеграции рекомендуется создать отдельное приложение. Дополнительные сведения о добавлении приложения из коллекции см. [здесь](https://docs.microsoft.com/azure/active-directory/manage-apps/add-gallery-app). 
+Добавьте Slack из коллекции приложений Azure AD, чтобы начать управление подготовкой в Slack. Если вы ранее настроили Slack для единого входа, можете использовать то же приложение. Однако при первоначальном тестировании интеграции рекомендуется создать отдельное приложение. Дополнительные сведения о добавлении приложения из коллекции см. [здесь](https://docs.microsoft.com/azure/active-directory/manage-apps/add-gallery-app). 
 
 ## <a name="step-3-define-who-will-be-in-scope-for-provisioning"></a>Шаг 3. Определение пользователей для включения в область подготовки 
 
 Служба подготовки Azure AD позволяет определить пользователей, которые будут подготовлены, на основе назначения приложению и (или) атрибутов пользователя или группы. Если вы решили указать, кто именно будет подготовлен к работе в приложении, на основе назначения, можно выполнить следующие [действия](../manage-apps/assign-user-or-group-access-portal.md), чтобы назначить пользователей и группы приложению. Если вы решили указать, кто именно будет подготовлен, на основе одних только атрибутов пользователя или группы, можете использовать фильтр задания области, как описано [здесь](https://docs.microsoft.com/azure/active-directory/manage-apps/define-conditional-rules-for-provisioning-user-accounts). 
 
-* При назначении пользователям и группам временного резерва необходимо выбрать роль, отличную от **доступа по умолчанию**. Пользователи с ролью "Доступ по умолчанию" исключаются из подготовки и будут помечены в журналах подготовки как не назначенные явно. Кроме того, если эта роль является единственной, доступной в приложении, можно [изменить манифест приложения](https://docs.microsoft.com/azure/active-directory/develop/howto-add-app-roles-in-azure-ad-apps), чтобы добавить дополнительные роли. 
+* При назначении пользователей и групп для Slack необходимо выбрать роль, отличную от роли **Доступ по умолчанию**. Пользователи с ролью "Доступ по умолчанию" исключаются из подготовки и будут помечены в журналах подготовки как не назначенные явно. Кроме того, если эта роль является единственной, доступной в приложении, можно [изменить манифест приложения](https://docs.microsoft.com/azure/active-directory/develop/howto-add-app-roles-in-azure-ad-apps), чтобы добавить дополнительные роли. 
 
 * Начните с малого. Протестируйте небольшой набор пользователей и групп, прежде чем выполнять развертывание для всех. Если в область подготовки включены назначенные пользователи и группы, проверьте этот механизм, назначив приложению одного или двух пользователей либо одну или две группы. Если в область включены все пользователи и группы, можно указать [фильтр области на основе атрибутов](https://docs.microsoft.com/azure/active-directory/manage-apps/define-conditional-rules-for-provisioning-user-accounts).
 
-## <a name="step-4-configure-automatic-user-provisioning-to-slack"></a>Шаг 4. Настройка автоматической подготовки пользователей к резервному времени 
+## <a name="step-4-configure-automatic-user-provisioning-to-slack"></a>Шаг 4. Настройка автоматической подготовки пользователей в Slack 
 
 В этом разделе описывается подключение к API подготовки учетной записи пользователя Azure AD в Slack и настройка подготовки службы для создания, обновления и отмены назначения учетных записей пользователей в Slack на основе назначения пользователей и групп в Azure AD.
 
@@ -81,7 +81,7 @@ ms.locfileid: "88527831"
 
 5. В разделе **Учетные данные администратора** щелкните **Авторизовать**. В новом окне браузера откроется диалоговое окно авторизации Slack.
 
-    ![Авторизация](media/slack-provisioning-tutorial/authorization.png)
+    ![Снимок экрана с кнопкой авторизации учетных данных администратора.](media/slack-provisioning-tutorial/authorization.png)
 
 
 6. В новом окне войдите в Slack с использованием учетной записи администратора группы. в открывшемся диалоговом окне авторизации выберите группу Slack, для которой необходимо включить подготовку, а затем выберите **Authorize** (Авторизовать). После завершения вернитесь на портал Azure для завершения настройки подготовки.
@@ -110,29 +110,29 @@ ms.locfileid: "88527831"
    |title|Строка|
    |emails[type eq "work"].value|Строка|
    |userName|Строка|
-   |Понят|Строка|
-   |адреса [тип EQ "нетипизированный"]. streetAddress|Строка|
-   |адреса [тип EQ "нетипизированный"]. локальность|Строка|
-   |адреса [тип EQ "нетипизированный"]. регион|Строка|
-   |адреса [тип EQ "нетипизированный"]. postalCode|Строка|
-   |адреса [тип EQ "нетипизированный"]. Country|Строка|
+   |nickName|Строка|
+   |addresses[type eq "untyped"].streetAddress|Строка|
+   |addresses[type eq "untyped"].locality|Строка|
+   |addresses[type eq "untyped"].region|Строка|
+   |addresses[type eq "untyped"].postalCode|Строка|
+   |addresses[type eq "untyped"].country|Строка|
    |phoneNumbers[type eq "mobile"].value|Строка|
    |phoneNumbers[type eq "work"].value|Строка|
-   |роли [первичный EQ "true"]. Value|Строка|
+   |roles[primary eq "True"].value|Строка|
    |локаль|Строка|
-   |имя. Хонорификпрефикс|Строка|
-   |фотографии [Введите EQ "Фото"]. Value|Строка|
-   |профилеурл|Строка|
+   |name.honorificPrefix|Строка|
+   |photos[type eq "photo"].value|Строка|
+   |profileUrl|Строка|
    |timezone|Строка|
    |userType|Строка|
-   |urn: scim: схемы: расширение: корпоративный: 1.0. Department|Строка|
-   |urn: scim: схемы: расширение: Enterprise: 1.0. Manager|Справочник|
-   |urn: scim: схемы: расширение: Enterprise: 1.0. Емплойинумбер|Строка|
-   |urn: scim: схемы: расширение: Enterprise: 1.0. costCenter|Строка|
-   |urn: scim: схемы: расширение: Enterprise: 1.0. Организация|Строка|
-   |urn: scim: схемы: расширение: Enterprise: 1.0. деление|Строка|
+   |urn:scim:schemas:extension:enterprise:1.0.department|Строка|
+   |urn:scim:schemas:extension:enterprise:1.0.manager|Справочник|
+   |urn:scim:schemas:extension:enterprise:1.0.employeeNumber|Строка|
+   |urn:scim:schemas:extension:enterprise:1.0.costCenter|Строка|
+   |urn:scim:schemas:extension:enterprise:1.0.organization|Строка|
+   |urn:scim:schemas:extension:enterprise:1.0.division|Строка|
 
-12. В разделе **сопоставления** выберите **синхронизировать Azure Active Directory группы к временной резерв**.
+12. В разделе **Mappings** (Сопоставления) выберите **Synchronize Azure Active Directory Groups to Slack** (Синхронизировать группы Azure Active Directory со Slack).
 
 13. В разделе **Attribute Mappings** (Сопоставления атрибутов) следует просмотреть атрибуты групп, которые будут синхронизированы из Azure AD в Slack. Обратите внимание, что атрибуты выбран в качестве **сопоставление** свойств будет использоваться для сопоставления групп в Slack для операции обновления. Нажмите кнопку "Сохранить", чтобы подтвердить все изменения.
 
@@ -147,7 +147,7 @@ ms.locfileid: "88527831"
 
     ![Состояние подготовки "Включено"](common/provisioning-toggle-on.png)
 
-16. Определите пользователей и (или) группы, которые вы хотите подготавливать к временной резерву, выбрав нужные значения в **области** в разделе **Параметры** .
+16. Определите пользователей и (или) группы для подготовки в Slack, выбрав нужные значения в поле **Область** в разделе **Параметры**.
 
     ![Область действия подготовки](common/provisioning-scope.png)
 
@@ -174,19 +174,19 @@ ms.locfileid: "88527831"
   
   * Допускаются следующие знаки пунктуации: точки, символы подчеркивания, дефисы, апострофы, скобки (например, **( [ { } ] )**) и разделители (например, **, / ;**).
   
-  * свойство displayName не может содержать символ "@". Если включен символ "@", то в журналах подготовки может найти пропущенное событие с описанием "Аттрибутевалидатионфаилед".
+  * Свойство displayName не должно включать символ @. При наличии символа @ в журналах подготовки вы можете обнаружить пропущенное событие с описанием "AttributeValidationFailed".
 
   * Обновление выполняется, только если в рабочей области или организации Slack **включена синхронизации профиля** и указано, что **пользователи не могут изменять свои отображаемые имена**.
 
 * Атрибут **userName** в Slack должен содержать до 21 символа и иметь уникальное значение.
 
-* Временной резерв допускает сопоставление только с атрибутами **username** и **Email**.  
+* Slack разрешает сопоставление только с атрибутами **userName** и **email**.  
   
-* Общие коды ерорр описаны в официальной документации по резервному времени. https://api.slack.com/scim#errors
+* Распространенные коды ошибок задокументированы в официальной документации Slack по адресу https://api.slack.com/scim#errors.
 
 ## <a name="change-log"></a>Журнал изменений
 
-* 06/16/2020-изменен атрибут DisplayName для обновления только во время создания нового пользователя.
+* 16.06.2020 — измененный атрибут DisplayName будет обновляться только при создании нового пользователя.
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

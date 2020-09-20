@@ -592,7 +592,7 @@
               href: disk-encryption-troubleshooting.md
             - name: Часто задаваемые вопросы о шифровании дисков
               href: disk-encryption-faq.md
-            - name: "Шифрование диска\_— предыдущая версия (AAD)"
+            - name: "Шифрование диска\_— предыдущая версия (Azure AD)"
               items:
                 - name: Обзор
                   href: disk-encryption-overview-aad.md
@@ -670,7 +670,7 @@
           href: nested-virtualization.md
         - name: Автоматизация исправлений гостевой системы виртуальной машины (предварительная версия)
           href: automatic-vm-guest-patching.md
-    - name: Обслуживание платформы
+    - name: Управление обслуживанием
       items:
         - name: Уведомления об обслуживании
           items:
@@ -682,7 +682,7 @@
               href: ../maintenance-notifications-portal.md?toc=/azure/virtual-machines/windows/toc.json&bc=/azure/virtual-machines/windows/breadcrumb/toc.json
             - name: PowerShell
               href: ../maintenance-notifications-powershell.md?toc=/azure/virtual-machines/windows/toc.json&bc=/azure/virtual-machines/windows/breadcrumb/toc.json
-        - name: Управление обслуживанием
+        - name: Обслуживание платформы
           items:
             - name: Обзор
               href: ../maintenance-control.md?toc=/azure/virtual-machines/windows/toc.json&bc=/azure/virtual-machines/windows/breadcrumb/toc.json
@@ -696,6 +696,16 @@
           href: scheduled-events.md
         - name: Служба запланированных событий Windows
           href: scheduled-event-service.md
+        - name: Обновления образов ОС масштабируемого набора виртуальных машин
+          items:
+            - name: Автоматические обновления ОС
+              href: ../../virtual-machine-scale-sets/virtual-machine-scale-sets-automatic-upgrade.md?toc=/azure/virtual-machines/windows/toc.json&bc=/azure/virtual-machines/windows/breadcrumb/toc.json
+            - name: Управление обслуживанием
+              items:
+                - name: Обзор (предварительная версия)
+                  href: ../virtual-machine-scale-sets-maintenance-control.md?toc=/azure/virtual-machines/windows/toc.json&bc=/azure/virtual-machines/windows/breadcrumb/toc.json
+                - name: PowerShell (предварительная версия)
+                  href: ../virtual-machine-scale-sets-maintenance-control-powershell.md?toc=/azure/virtual-machines/windows/toc.json&bc=/azure/virtual-machines/windows/breadcrumb/toc.json
     - name: Мониторинг виртуальных машин
       items:
         - name: Агенты
@@ -1039,7 +1049,7 @@
   href: ../troubleshooting/index.yml
 - name: Справочник
   items:
-    - name: Azure CLI;
+    - name: Azure CLI
       href: /cli/azure/vm
     - name: Azure PowerShell
       href: /powershell/azure/

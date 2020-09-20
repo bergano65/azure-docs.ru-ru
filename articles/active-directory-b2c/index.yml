@@ -12,122 +12,134 @@ metadata:
   author: msmimart
   ms.author: mimart
   ms.date: 01/28/2020
-  ms.openlocfilehash: fe0fc7f20a81d9b887a61ca382dafcb69fc420d2
-  ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+  ms.openlocfilehash: 34cb40d385b007f8a41a6700448a1591b714c096
+  ms.sourcegitcommit: 6e1124fc25c3ddb3053b482b0ed33900f46464b3
   ms.translationtype: HT
   ms.contentlocale: ru-RU
-  ms.lasthandoff: 03/24/2020
-  ms.locfileid: "78187718"
+  ms.lasthandoff: 09/15/2020
+  ms.locfileid: "90562763"
 landingContent:
-- title: Основные сведения
+- title: Azure AD B2C
   linkLists:
   - linkListType: overview
     links:
     - text: Что собой представляет Azure AD B2C?
       url: overview.md
+    - text: Сравнение решений для внешних удостоверений
+      url: https://docs.microsoft.com/azure/active-directory/b2b/compare-with-b2c?toc=/azure/active-directory-b2c/TOC.json&bc=/azure/active-directory-b2c/bread/toc.json
+    - text: Начало работы с Azure AD B2C
+      url: tutorial-create-tenant.md
     - text: Обзор технических возможностей и компонентов
       url: technical-overview.md
-  - linkListType: get-started
-    links:
-    - text: Создание клиента Azure AD B2C
-      url: tutorial-create-tenant.md
-    - text: Регистрация приложения
-      url: tutorial-register-applications.md
-    - text: Настройка потоков пользователей
-      url: tutorial-create-user-flows.md
-  - linkListType: video
-    links:
-    - text: Что собой представляет Azure AD B2C? (9:35)
-      url: https://www.youtube.com/watch?v=GmBKlXED9Ug
-- title: Добавление удостоверения в приложения ASP.NET
+    - text: Цены
+      url: https://azure.microsoft.com/pricing/details/active-directory-b2c/
+- title: Основы
   linkLists:
-  - linkListType: quickstart
+  - linkListType: learn
     links:
-    - text: Настройка входа
-      url: quickstart-web-app-dotnet.md
-  - linkListType: tutorial
-    links:
-    - text: Аутентификация пользователей в веб-приложении .NET
-      url: tutorial-web-app-dotnet.md
-    - text: Предоставление доступа API к веб-приложению .NET
-      url: tutorial-web-api-dotnet.md
-    - text: Включение входа в корпоративные и социальные приложения
-      url: tutorial-add-identity-providers.md
-  - linkListType: download
-    links:
-    - text: Примеры кода для веб-приложений и API
-      url: code-samples.md#web-apps-and-apis
-- title: Добавление удостоверений в одностраничные приложения
+    - text: Аутентификация и авторизация
+      url: https://docs.microsoft.com/azure/active-directory/develop/authentication-vs-authorization?toc=/azure/active-directory-b2c/TOC.json&bc=/azure/active-directory-b2c/bread/toc.json
+    - text: Токены
+      url: https://docs.microsoft.com/azure/active-directory/develop/security-tokens?toc=/azure/active-directory-b2c/TOC.json&bc=/azure/active-directory-b2c/bread/toc.json
+    - text: Протоколы
+      url: https://docs.microsoft.com/azure/active-directory/develop/v2-app-types?toc=/azure/active-directory-b2c/TOC.json&bc=/azure/active-directory-b2c/bread/toc.json
+    - text: Библиотека проверки подлинности
+      url: https://docs.microsoft.com/azure/active-directory/develop/msal-overview?toc=/azure/active-directory-b2c/TOC.json&bc=/azure/active-directory-b2c/bread/toc.json
+    - text: 'Создайте веб-сайт: HTML, CSS, JavaScript'
+      url: https://docs.microsoft.com/learn/modules/build-simple-website/
+- title: Распространенные варианты использования
   linkLists:
-  - linkListType: quickstart
+  - linkListType: how-to-guide
     links:
-    - text: Настройка входа
-      url: quickstart-single-page-app.md
-  - linkListType: tutorial
-    links:
-    - text: Аутентификация пользователей в одностраничном приложении
-      url: tutorial-single-page-app.md
-    - text: Предоставление доступа API к одностраничному приложению
-      url: tutorial-single-page-app-webapi.md
-    - text: Включение входа в корпоративные и социальные приложения
-      url: tutorial-add-identity-providers.md
-  - linkListType: download
-    links:
-    - text: Примеры кода для одностраничных приложений
-      url: code-samples.md#single-page-apps
-- title: Добавление удостоверения в классические приложения
-  linkLists:
-  - linkListType: quickstart
-    links:
-    - text: Настройка входа
-      url: quickstart-native-app-desktop.md
-  - linkListType: tutorial
-    links:
-    - text: Аутентификация пользователей в собственных клиентах
-      url: tutorial-desktop-app.md
-    - text: Предоставление доступа API к собственным клиентам
-      url: tutorial-desktop-app-webapi.md
-    - text: Включение входа в корпоративные и социальные приложения
-      url: tutorial-add-identity-providers.md
-  - linkListType: download
-    links:
-    - text: Примеры кода для мобильных и классических приложений
-      url: code-samples.md
-- title: Создание распространенных сценариев с использованием удостоверений
-  linkLists:
-  - linkListType: concept
-    links:
-    - text: Общие сведения о потоках пользователей
+    - text: Включите самостоятельный вход
       url: user-flow-overview.md
+    - text: 'Добавьте рабочие учетные записи и учетные записи социальных сетей: OIDC/OAuth2/SAML'
+      url: tutorial-add-identity-providers.md
+    - text: Включение единого входа (SSO)
+      url: session-overview.md
+    - text: Настройте пользовательский интерфейс и взаимодействие пользователей
+      url: customize-ui-overview.md
+    - text: Миграция пользователей и приложений
+      url: user-migration.md
+- title: Добавьте возможность входа в свои приложения
+  linkLists:
+  - linkListType: sample
+    links:
+    - text: Краткое руководство. Веб-приложение
+      url: quickstart-web-app-dotnet.md
+    - text: Собственное/мобильное приложение
+      url: code-samples.md#mobile-and-desktop-apps
+    - text: Одностраничное приложение
+      url: code-samples.md#single-page-apps
+    - text: Веб-приложение
+      url: code-samples.md#web-apps-and-apis
+- title: 'Авторизация: Обеспечьте вызов и защиту своих API'
+  linkLists:
   - linkListType: how-to-guide
     links:
-    - text: Регистрация и вход пользователей
-      url: tutorial-create-user-flows.md
-    - text: Настройка пользовательского интерфейса
-      url: customize-ui-overview.md
-    - text: Включение входа с помощью Facebook
-      url: identity-provider-facebook.md
-  - linkListType: video
-    links:
-    - text: Настройка основных политик (9:41)
-      url: https://www.youtube.com/watch?v=nWJ3m82536A
-- title: Создание сложных сценариев с использованием удостоверений
+    - text: Запрос маркера доступа
+      url: access-tokens.md
+    - text: Зарегистрируйте и защитите свои API
+      url: tutorial-web-api-dotnet.md
+    - text: 'Примеры: Веб-приложения и API'
+      url: code-samples.md#web-apps-and-apis
+    - text: Выполните интеграцию со шлюзом API
+      url: secure-api-management.md?tabs=app-reg-ga
+- title: Безопасность, конфиденциальность и соответствие
   linkLists:
   - linkListType: concept
     links:
-    - text: Основные сведения о пользовательских политиках
-      url: custom-policy-overview.md
+    - text: Обеспечьте управление угрозами
+      url: threat-management.md
+    - text: Узнайте, где хранятся данные пользователей
+      url: data-residency.md
+    - text: Нормативы
+      url: overview.md
+    - text: Доступ пользователей и условия использования
+      url: manage-user-access.md
+- title: Операции
+  linkLists:
   - linkListType: how-to-guide
     links:
-    - text: Регистрация и вход пользователей
-      url: custom-policy-get-started.md
-    - text: Настройка пользовательского интерфейса
-      url: custom-policy-ui-customization.md
-    - text: Включение входа с использованием нескольких клиентов Azure AD
-      url: identity-provider-azure-ad-multi-tenant-custom.md
-    - text: Добавление собственной бизнес-логики с использованием REST API
-      url: custom-policy-rest-api-claims-validation.md
-  - linkListType: video
+    - text: Конвейер CI/CD
+      url: deploy-custom-policies-devops.md
+    - text: Наблюдение
+      url: azure-monitor.md
+    - text: Доступ на основе ролей для администраторов
+      url: overview.md
+    - text: Управление пользователями
+      url: manage-user-accounts-graph-api.md
+    - text: Устранение неполадок
+      url: troubleshoot-custom-policies.md?tabs-app-reg-ga
+    - text: Рекомендации
+      url: best-practices.md
+- title: Ресурсы
+  linkLists:
+  - linkListType: overview
     links:
-    - text: Расширенные варианты использования Azure AD B2C (4:54)
-      url: https://www.youtube.com/watch?v=-ZmPBuMZY-Y
+    - text: Stack Overflow
+      url: https://stackoverflow.com/questions/tagged/azure-ad-b2c+identity-experience-framework
+    - text: GitHub
+      url: https://github.com/azure-ad-b2c/samples
+    - text: YouTube
+      url: https://www.youtube.com/results?search_query=azure+ad+b2c
+    - text: Обучение
+      url: solution-articles.md
+    - text: Обновления службы
+      url: https://azure.microsoft.com/updates/?product=active-directory-b2c
+    - text: Часто задаваемые вопросы
+      url: faq.md
+    - text: Служба поддержки Майкрософт
+      url: support-options.md
+- title: Общие интеграции
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: 'Azure Monitor: сохранение и анализ ваших журналов'
+      url: azure-monitor.md
+    - text: 'Azure DevOps Services: создайте свой конвейер CI/CD'
+      url: deploy-custom-policies-devops.md
+    - text: Application Insights. Устраняйте неполадки и получайте полезные сведения о пользователях
+      url: troubleshoot-with-application-insights.md
+    - text: Обеспечьте интеграцию с нашими технологическими партнерами
+      url: partner-gallery.md

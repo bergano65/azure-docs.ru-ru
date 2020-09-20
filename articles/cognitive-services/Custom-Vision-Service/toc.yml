@@ -4,7 +4,7 @@
   expanded: true
   items:
     - name: Что собой представляет Пользовательское визуальное распознавание
-      href: home.md
+      href: overview.md
     - name: Новые возможности
       href: whats-new.md
 - name: Краткие руководства
@@ -49,7 +49,11 @@
           href: custom-vision-onnx-windows-ml.md
         - name: Запуск модели TensorFlow в среде Python
           href: export-model-python.md
-    - name: Экспорт или удаление данных учетной записи
+    - name: Интеграция уведомлений хранилища
+      href: storage-integration.md
+    - name: Копирование и перемещение проектов
+      href: copy-move-projects.md
+    - name: Просмотр или удаление данных учетных записей
       href: ./export-delete-data.md
     - name: "Обновление приложения до API\_3.0"
       href: ./update-application-to-3.0-sdk.md

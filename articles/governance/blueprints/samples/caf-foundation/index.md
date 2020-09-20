@@ -1,14 +1,14 @@
 ---
 title: Краткое описание примера схемы CAF Foundation
 description: Обзор и описание архитектуры Cloud Adoption Framework (CAF) с примером схемы для Azure Foundation.
-ms.date: 04/15/2020
+ms.date: 09/14/2020
 ms.topic: sample
-ms.openlocfilehash: b8bd0015d5f95fc61806197ca21fdaeeb3452700
-ms.sourcegitcommit: 7fe8df79526a0067be4651ce6fa96fa9d4f21355
+ms.openlocfilehash: cce5ea001b32ae92542f38f8f11427e85075cee9
+ms.sourcegitcommit: 03662d76a816e98cfc85462cbe9705f6890ed638
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87852350"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90531701"
 ---
 # <a name="overview-of-the-microsoft-cloud-adoption-framework-for-azure-foundation-blueprint-sample"></a>Общие сведения об использовании Microsoft Cloud Adoption Framework с примером схемы CAF Foundation
 
@@ -18,7 +18,9 @@ ms.locfileid: "87852350"
 
 Пример схемы CAF Foundation развертывает рекомендуемые ресурсы инфраструктуры в Azure, которые организации могут использовать для настройки базовых элементов управления, требуемых для администрирования облачной инфраструктуры. В примере будут развернуты и применены ресурсы, политики и шаблоны, позволяющие организации уверенно приступить к работе с Azure.
 
-:::image type="content" source="../../media/caf-blueprints/caf-foundation-architecture.png" alt-text="CAF Foundation: на рисунке показаны компоненты, которые устанавливаются при работе с руководством CAF для создания базовой среды и начала работы с Azure" border="false":::
+:::image type="complex" source="../../media/caf-blueprints/caf-foundation-architecture.png" alt-text="Базовая среда CAF: на рисунке показаны компоненты, которые устанавливаются при работе с руководством CAF для создания базовой среды и начала работы с Azure." border="false":::
+   Описывает архитектуру Azure, которая реализуется путем развертывания схемы базовой среды CAF.  Она применяется к подписке с группами ресурсов, которая включает учетную запись хранения для хранения журналов и функцию анализа журналов, настроенную для хранения данных в учетной записи хранения. Она также представляет хранилище Azure Key Vault, настроенное со стандартной конфигурацией Центра безопасности Azure. Доступ к этим основным инфраструктурам осуществляется с помощью Azure Active Directory и регулируется Политикой Azure.     
+:::image-end:::
 
 Эта реализация содержит несколько служб Azure, которые обеспечивают защищенную, полностью отслеживаемую базовую среду корпоративного уровня. Эта среда включает следующие компоненты:
 

@@ -9,12 +9,12 @@ ms.service: cost-management-billing
 ms.subservice: cost-management
 ms.reviewer: adwise
 ms.custom: seodec18
-ms.openlocfilehash: fab6422300dd3db7dd0d02055721bd57354668bf
-ms.sourcegitcommit: 5ed504a9ddfbd69d4f2d256ec431e634eb38813e
+ms.openlocfilehash: 32aad7bc350c2ee8ca55d340623c3c3e44820d43
+ms.sourcegitcommit: 03662d76a816e98cfc85462cbe9705f6890ed638
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89322285"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90527145"
 ---
 # <a name="tutorial-create-and-manage-azure-budgets"></a>Руководство по Создание бюджетов Azure и управление ими
 
@@ -106,7 +106,7 @@ ms.locfileid: "89322285"
 
 Если вы хотите получать сообщения по электронной почте, добавьте azure-noreply@microsoft.com в список утвержденных отправителей, чтобы сообщения не отправлялись в папку спама. Дополнительные сведения об уведомлениях см. в статье [Use cost alerts to monitor usage and spending](../../cost-management/cost-mgt-alerts-monitor-usage-spending.md) (Мониторинг использования и расходов с помощью уведомлений о затратах).
 
-В приведенном ниже примере оповещение по электронной почте генерируется при достижении 90 % бюджета. При создании бюджета с помощью API бюджетов можно также назначать роли пользователям для получения оповещений. Назначение ролей пользователям не поддерживается на портале Azure. Дополнительные сведения об API бюджетов Azure см. в статье [Budgets](/rest/api/consumption/budgets) (Бюджеты).
+В приведенном ниже примере оповещение по электронной почте генерируется при достижении 90 % бюджета. При создании бюджета с помощью API бюджетов можно также назначать роли пользователям для получения оповещений. Назначение ролей пользователям не поддерживается на портале Azure. Дополнительные сведения об API бюджетов Azure см. в статье [Budgets](/rest/api/consumption/budgets) (Бюджеты). Если вы хотите отправить оповещение по электронной почте на другом языке, см. раздел [Поддерживаемые языковые стандарты для сообщений электронной почты с оповещениями о бюджете](manage-automation.md#supported-locales-for-budget-alert-emails).
 
 Ограничения оповещений поддерживают диапазон 0,01–1000 % от указанного порога бюджета.
 

@@ -27,6 +27,8 @@
       items:
         - name: Планирование развертывания службы файлов Azure
           href: storage-files-planning.md
+        - name: Доступные протоколы общих папок
+          href: storage-files-compare-protocols.md
         - name: Проверка подлинности и авторизация на основе удостоверений
           href: storage-files-active-directory-overview.md
         - name: Рекомендации по работе с сетями для обеспечения прямого доступа
@@ -79,12 +81,14 @@
   items:
     - name: Создание
       items:
-        - name: Создание общей папки
+        - name: Создание файлового ресурса SMB
           href: storage-how-to-create-file-share.md
         - name: Поддержка больших файловых ресурсов
           href: storage-files-how-to-create-large-file-share.md
         - name: Создание общей папки (цен. категория "Премиум")
           href: storage-how-to-create-premium-fileshare.md
+        - name: Создание общей папки NFS
+          href: storage-files-how-to-create-nfs-shares.md
     - name: Развертывание
       items:
         - name: Развертывание Файлов Azure
@@ -95,11 +99,13 @@
           href: ../../virtual-machines/windows/sql/virtual-machines-windows-portal-sql-create-failover-cluster-premium-file-share.md?toc=%2fazure%2fstorage%2ffiles%2ftoc.json
     - name: Подключение
       items:
-        - name: Использование Файлов Azure в Windows
+        - name: Подключение общей файловой папки SMB к Windows
           href: storage-how-to-use-files-windows.md
-        - name: Использование Файлов Azure в Linux
+        - name: Подключение общей файловой папки SMB к Linux
           href: storage-how-to-use-files-linux.md
-        - name: Использование Файлов Azure в macOS
+        - name: Подключение общей файловой папки NFS к Linux
+          href: storage-files-how-to-mount-nfs-shares.md
+        - name: Подключение общей файловой папки SMB к macOS
           href: storage-how-to-use-files-mac.md
     - name: Сеть
       items:
@@ -269,12 +275,14 @@
           href: ../common/storage-use-azcopy-configure.md?toc=%2fazure%2fstorage%2ffiles%2ftoc.json
     - name: Диагностика
       items:
-        - name: Устранение неполадок в работе службы "Файлы Azure" в Windows
+        - name: Устранение неполадок в работе службы "Файлы Azure" в Windows (SMB)
           href: storage-troubleshoot-windows-file-connection-problems.md
-        - name: Устранение неполадок в работе службы "Файлы Azure" в Linux
+        - name: Устранение неполадок в работе службы "Файлы Azure" в Linux (SMB)
           href: storage-troubleshoot-linux-file-connection-problems.md
         - name: Устранение неполадок с производительностью Файлов Azure
           href: storage-troubleshooting-files-performance.md
+        - name: Устранение неполадок с Файлами Azure в Linux (NFS)
+          href: storage-troubleshooting-files-nfs.md
         - name: Устранение неполадок службы "Синхронизация файлов Azure"
           href: storage-sync-files-troubleshoot.md
         - name: Устранение неполадок при удалении Файлов Azure

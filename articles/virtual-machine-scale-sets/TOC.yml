@@ -340,8 +340,16 @@
           href: virtual-machine-scale-sets-upgrade-scale-set.md
         - name: Работа в сети для масштабируемых наборов
           href: virtual-machine-scale-sets-networking.md
-        - name: Автоматические обновления ОС
-          href: virtual-machine-scale-sets-automatic-upgrade.md
+        - name: Обновления образов ОС
+          items:
+            - name: Автоматические обновления ОС
+              href: virtual-machine-scale-sets-automatic-upgrade.md
+            - name: Управление обслуживанием
+              items:
+                - name: Обзор (предварительная версия)
+                  href: ../virtual-machines/virtual-machine-scale-sets-maintenance-control.md
+                - name: PowerShell (предварительная версия)
+                  href: ../virtual-machines/virtual-machine-scale-sets-maintenance-control-powershell.md
         - name: Автоматические исправления экземпляра
           href: virtual-machine-scale-sets-automatic-instance-repairs.md
         - name: Защита экземпляров

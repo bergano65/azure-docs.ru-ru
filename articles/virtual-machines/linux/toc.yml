@@ -619,7 +619,7 @@
               href: disk-encryption-troubleshooting.md
             - name: Часто задаваемые вопросы о шифровании дисков
               href: disk-encryption-faq.md
-            - name: "Шифрование диска\_— предыдущая версия (AAD)"
+            - name: "Шифрование диска\_— предыдущая версия (Azure AD)"
               items:
                 - name: Обзор
                   href: disk-encryption-overview-aad.md
@@ -691,7 +691,7 @@
         - name: Использование удаленного рабочего стола
           href: use-remote-desktop.md
         - name: Присоединение виртуальной машины к Azure Active Directory
-          displayName: AAD
+          displayName: Azure AD
           items:
             - name: Red Hat Enterprise Linux
               href: ../../active-directory-domain-services/join-rhel-linux-vm.md
@@ -717,7 +717,7 @@
           href: instance-metadata-service.md
         - name: Получение метрик потребления с помощью REST
           href: metrics-vm-usage-rest.md
-    - name: Обслуживание платформы
+    - name: Управление обслуживанием
       items:
         - name: Уведомления об обслуживании
           items:
@@ -729,7 +729,7 @@
               href: ../maintenance-notifications-portal.md?toc=/azure/virtual-machines/linux/toc.json&bc=/azure/virtual-machines/linux/breadcrumb/toc.json
             - name: PowerShell
               href: ../maintenance-notifications-powershell.md?toc=/azure/virtual-machines/linux/toc.json&bc=/azure/virtual-machines/linux/breadcrumb/toc.json
-        - name: Управление обслуживанием
+        - name: Обслуживание платформы
           items:
             - name: Обзор
               href: ../maintenance-control.md?toc=/azure/virtual-machines/linux/toc.json&bc=/azure/virtual-machines/linux/breadcrumb/toc.json
@@ -741,6 +741,16 @@
               href: ../maintenance-control-portal.md?toc=/azure/virtual-machines/linux/toc.json&bc=/azure/virtual-machines/linux/breadcrumb/toc.json
         - name: Запланированные события
           href: scheduled-events.md
+        - name: Обновления образов ОС масштабируемого набора виртуальных машин
+          items:
+            - name: Автоматические обновления ОС
+              href: ../../virtual-machine-scale-sets/virtual-machine-scale-sets-automatic-upgrade.md?toc=/azure/virtual-machines/linux/toc.json&bc=/azure/virtual-machines/linux/breadcrumb/toc.json
+            - name: Управление обслуживанием
+              items:
+                - name: Обзор (предварительная версия)
+                  href: ../virtual-machine-scale-sets-maintenance-control.md?toc=/azure/virtual-machines/linux/toc.json&bc=/azure/virtual-machines/linux/breadcrumb/toc.json
+                - name: PowerShell (предварительная версия)
+                  href: ../virtual-machine-scale-sets-maintenance-control-powershell.md?toc=/azure/virtual-machines/linux/toc.json&bc=/azure/virtual-machines/linux/breadcrumb/toc.json
     - name: Мониторинг виртуальных машин
       items:
         - name: Агенты

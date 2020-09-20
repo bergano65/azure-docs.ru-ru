@@ -15,40 +15,52 @@
           href: quick-setup-auto-provision-cli.md
         - name: Шаблон Azure RM
           href: quick-setup-auto-provision-rm.md
-    - name: Подготовка отдельного устройства к работе
+    - name: Подготовка устройства с симметричным ключом
       items:
-        - name: Аттестация симметричного ключа
-          items:
-            - name: C
-              href: quick-create-simulated-device-symm-key.md
-            - name: Java
-              href: quick-create-simulated-device-symmetric-key-java.md
-            - name: Python
-              href: quick-create-device-symmetric-key-python.md
-        - name: Аттестация на основе сертификата X.509
-          items:
-            - name: C
-              href: quick-create-simulated-device-x509.md
-            - name: Java
-              href: quick-create-simulated-device-x509-java.md
-            - name: C#
-              href: quick-create-simulated-device-x509-csharp.md
-            - name: Node.js
-              href: quick-create-simulated-device-x509-node.md
-            - name: Python
-              href: quick-create-simulated-device-x509-python.md
-        - name: Аттестация имитированного устройства с TPM
-          items:
-            - name: C
-              href: quick-create-simulated-device.md
-            - name: Java
-              href: quick-create-simulated-device-tpm-java.md
-            - name: C#
-              href: quick-create-simulated-device-tpm-csharp.md
-            - name: Node.js
-              href: quick-create-simulated-device-tpm-node.md
-            - name: Python
-              href: quick-create-simulated-device-tpm-python.md
+        - name: C
+          href: quick-create-simulated-device-symm-key.md
+        - name: Java
+          href: quick-create-simulated-device-symmetric-key-java.md
+        - name: Python
+          href: quick-create-device-symmetric-key-python.md
+    - name: Подготовка устройства с сертификатом X.509
+      items:
+        - name: C
+          href: quick-create-simulated-device-x509.md
+        - name: Java
+          href: quick-create-simulated-device-x509-java.md
+        - name: C#
+          href: quick-create-simulated-device-x509-csharp.md
+        - name: Node.js
+          href: quick-create-simulated-device-x509-node.md
+        - name: Python
+          href: quick-create-simulated-device-x509-python.md
+- name: Учебники
+  items:
+    - name: 1. Подготовка наборов устройств с группами регистрации
+      href: how-to-legacy-device-symm-key.md
+    - name: 2. Подготовка устройств для нескольких центров
+      items:
+        - name: Связывание нескольких центров с DP
+          href: tutorial-provision-multiple-hubs.md
+        - name: Подготовка к мультитенантности
+          href: how-to-provision-multitenant.md
+        - name: Использование пользовательских политик распределения
+          href: how-to-use-custom-allocation-policies.md
+- name: Примеры
+  items:
+    - name: Пример аттестации имитированного устройства с доверенным платформенным модулем
+      items:
+        - name: C
+          href: quick-create-simulated-device.md
+        - name: Java
+          href: quick-create-simulated-device-tpm-java.md
+        - name: C#
+          href: quick-create-simulated-device-tpm-csharp.md
+        - name: Node.js
+          href: quick-create-simulated-device-tpm-node.md
+        - name: Python
+          href: quick-create-simulated-device-tpm-python.md
     - name: Регистрация устройств с помощью API DPS
       items:
         - name: Регистрация группы устройств с использованием аттестации на основе сертификата X.509
@@ -71,51 +83,33 @@
               href: quick-enroll-device-tpm-node.md
             - name: Python
               href: quick-enroll-device-tpm-python.md
-- name: Учебники
-  items:
-    - name: 1. Настройка облачных ресурсов
-      href: tutorial-set-up-cloud.md
-    - name: 2. Настройка устройства
-      href: tutorial-set-up-device.md
-    - name: 3. Подготовка устройства для центра Интернета вещей
-      items:
-        - name: C
-          href: tutorial-provision-device-to-hub.md
-        - name: C#
-          href: tutorial-net-provision-device-to-hub.md
-    - name: 4. Подготовка устройств для нескольких центров
-      href: tutorial-provision-multiple-hubs.md
-    - name: 5. Настройка регистрации группы устройств
-      href: tutorial-group-enrollments.md
 - name: Основные понятия
   items:
-    - name: Автоматическая подготовка
-      href: concepts-auto-provisioning.md
-    - name: Повторная подготовка
-      href: concepts-device-reprovision.md
-    - name: Устройства
-      href: concepts-device.md
-    - name: Безопасность
-      href: concepts-security.md
-    - name: Поддержка TLS
-      href: tls-support.md
-    - name: Поддержка виртуальных сетей
-      href: virtual-network-support.md
-    - name: Служба
+    - name: Терминология DPS
       href: concepts-service.md
-    - name: Основные сведения об IP-адресах DPS
-      href: iot-dps-understand-ip-address.md
-    - name: Аттестация доверенного платформенного модуля
-      href: concepts-tpm-attestation.md
     - name: Аттестация симметричных ключей
       href: concepts-symmetric-key-attestation.md
+    - name: Аттестация на основе сертификата X.509
+      href: concepts-x509-attestation.md
+    - name: Аттестация доверенного платформенного модуля
+      href: concepts-tpm-attestation.md
+    - name: Роли и операции
+      href: concepts-roles-operations.md
+    - name: Поддержка виртуальных сетей
+      href: virtual-network-support.md
+    - name: Повторная подготовка
+      href: concepts-device-reprovision.md
+    - name: Основные сведения об IP-адресах DPS
+      href: iot-dps-understand-ip-address.md
+    - name: Поддержка TLS
+      href: tls-support.md
     - name: Рекомендации по обеспечению безопасности для изготовителей устройств
       href: concepts-device-oem-security-practices.md
 - name: Практические руководства
   items:
     - name: Подключение MXChip IoT DevKit к Центру Интернета вещей
       href: how-to-connect-mxchip-iot-devkit.md
-    - name: Управление конфигурацией службы подготовки устройств
+    - name: Управление службой подготовки устройств
       items:
         - name: Управление регистрациями с помощью портала
           href: how-to-manage-enrollments.md
@@ -131,14 +125,12 @@
           href: how-to-revoke-device-access-portal.md
         - name: Управление отзывами
           href: how-to-unprovision-devices.md
-    - name: Управление службой подготовки устройств
-      items:
-        - name: Настройка службы подготовки устройств с помощью Azure CLI
-          href: how-to-manage-dps-with-cli.md
         - name: Управление доступом к API службы подготовки
           href: how-to-control-access.md
         - name: Настройка фильтрации IP
           href: iot-dps-ip-filtering.md
+        - name: Настройка службы подготовки устройств с помощью Azure CLI
+          href: how-to-manage-dps-with-cli.md
     - name: Подготовка устройств IoT Edge
       items:
         - name: Linux
@@ -149,12 +141,6 @@
           maintainContext: true
     - name: Использование механизмов аттестации и пакетов SDK
       href: use-hsm-with-sdk.md
-    - name: Подготовка к мультитенантности
-      href: how-to-provision-multitenant.md
-    - name: Использование пользовательских политик распределения
-      href: how-to-use-custom-allocation-policies.md
-    - name: Использование симметричных ключей с устаревшими устройствами
-      href: how-to-legacy-device-symm-key.md
     - name: Использование пакетов SDK для разработки
       href: how-to-use-sdk-tools.md
     - name: Как отправлять дополнительные данные с устройств

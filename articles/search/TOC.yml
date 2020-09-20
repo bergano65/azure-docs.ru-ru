@@ -3,9 +3,11 @@
 - name: Обзор
   expanded: true
   items:
-    - name: Что собой представляет Когнитивный поиск Azure?
+    - name: Что собой представляет Когнитивный поиск?
       href: search-what-is-azure-search.md
-    - name: Новые возможности
+    - name: Функции в Когнитивном поиске
+      href: search-features-list.md
+    - name: Новые возможности Когнитивного поиска
       href: whats-new.md
 - name: Краткие руководства
   items:
@@ -413,25 +415,27 @@
     - name: .NET
       items:
         - name: API поиска
-          href: /dotnet/api/overview/azure/search.documents-readme?view=azure-dotnet
+          href: /dotnet/api/overview/azure/search.documents-readme
         - name: API управления
-          href: /dotnet/api/overview/azure/search/management?view=azure-dotnet
+          href: /dotnet/api/overview/azure/search/management
     - name: Java
       items:
+        - name: API поиска
+          href: /java/api/overview/azure/search-documents-readme
         - name: API управления
-          href: /java/api/overview/azure/search/management?view=azure-java-stable
+          href: /java/api/overview/azure/search/management
     - name: JavaScript
       items:
         - name: API поиска
-          href: /javascript/api/overview/azure/search-documents-readme?view=azure-node-latest
+          href: /javascript/api/overview/azure/search-documents-readme
         - name: API управления
-          href: /javascript/api/overview/azure/search/management?view=azure-node-latest
+          href: /javascript/api/overview/azure/search/management
     - name: Python
       items:
         - name: API поиска
-          href: /python/api/overview/azure/search-documents-readme?view=azure-python
+          href: /python/api/overview/azure/search-documents-readme
         - name: API управления
-          href: /python/api/overview/azure/search/management?view=azure-python
+          href: /python/api/overview/azure/search/management
     - name: Справочник по языку OData
       items:
         - name: Обзор
