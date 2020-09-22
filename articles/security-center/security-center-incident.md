@@ -8,12 +8,12 @@ ms.service: security-center
 ms.topic: conceptual
 ms.date: 06/15/2020
 ms.author: memildin
-ms.openlocfilehash: 28a6ea4ed40df909b4d74ff52703babb8e8cd949
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: a6ddfa1f6db06c2ca06b94efec7f890c2a714b2a
+ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84791756"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90883858"
 ---
 # <a name="manage-security-incidents-in-azure-security-center"></a>Управление инцидентами безопасности в центре безопасности Azure
 
@@ -58,10 +58,9 @@ ms.locfileid: "84791756"
 1. Чтобы устранить угрозы в инциденте, выполните действия по исправлению, предоставленные вместе с каждым оповещением.
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 На этой странице описаны возможности по инцидентам безопасности центра безопасности. Связанные сведения см. на следующих страницах:
 
-* [Защита от угроз в центре безопасности](threat-protection.md)
-* [Оповещения системы безопасности в центре безопасности](security-center-alerts-overview.md)
-* [Управление оповещениями системы безопасности и реагирование на них](security-center-managing-and-responding-alerts.md)
+- [Оповещения системы безопасности в центре безопасности](security-center-alerts-overview.md)
+- [Управление оповещениями системы безопасности и реагирование на них](security-center-managing-and-responding-alerts.md)

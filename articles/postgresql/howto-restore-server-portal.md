@@ -6,12 +6,12 @@ ms.author: raagyema
 ms.service: postgresql
 ms.topic: how-to
 ms.date: 6/30/2020
-ms.openlocfilehash: 7683d3472d382707de538874035c8448f589bf82
-ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
+ms.openlocfilehash: 9ff62a568af4f60318ba0e5bdf2144bb43c9d2b1
+ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86110816"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90884310"
 ---
 # <a name="how-to-backup-and-restore-a-server-in-azure-database-for-postgresql---single-server-using-the-azure-portal"></a>Как выполнить резервное копирование и восстановление сервера в базе данных Azure для PostgreSQL — один сервер с помощью портал Azure
 
@@ -28,7 +28,7 @@ ms.locfileid: "86110816"
 
 Если вы создаете сервер на портале Azure, тип резервного копирования (**локально избыточное** или **геоизбыточное**) задается в окне **Ценовая категория**. Кроме того, в этом окне указывается **срок хранения резервных копий** — период (в днях), в течение которого должны храниться резервные копии.
 
-   ![Окно "Ценовая категория" — выбор типа избыточности для резервного копирования](./media/howto-restore-server-portal/pricing-tier.png)
+   :::image type="content" source="./media/howto-restore-server-portal/pricing-tier.png" alt-text="Окно "Ценовая категория" — выбор типа избыточности для резервного копирования":::
 
 Дополнительные сведения о настройке этих значений при создании см. в [кратком руководстве по серверам службы "База данных Azure для PostgreSQL"](quickstart-create-server-database-portal.md).
 
@@ -37,7 +37,7 @@ ms.locfileid: "86110816"
 2. Выберите сервер базы данных Azure для PostgreSQL. Откроется страница **Обзор**.
 3. В меню в разделе **Параметры** выберите **Ценовая категория**. С помощью ползунка можно изменить **срок хранения резервных копий** в диапазоне от 7 до 35 дней.
 На приведенном ниже снимке экрана он увеличен до 34 дней.
-![Увеличенный срок хранения резервных копий](./media/howto-restore-server-portal/3-increase-backup-days.png)
+:::image type="content" source="./media/howto-restore-server-portal/3-increase-backup-days.png" alt-text="Увеличенный срок хранения резервных копий":::
 
 4. Нажмите кнопку **ОК**, чтобы подтвердить изменение.
 
@@ -53,11 +53,11 @@ ms.locfileid: "86110816"
 
 2. На панели инструментов на странице **Обзор** для сервера выберите **Восстановить**.
 
-   ![База данных Azure для PostgreSQL: колонка "Восстановление" в колонке "Обзор"](./media/howto-restore-server-portal/2-server.png)
+   :::image type="content" source="./media/howto-restore-server-portal/2-server.png" alt-text="База данных Azure для PostgreSQL: колонка "Восстановление" в колонке "Обзор"":::
 
 3. Заполните форму "Восстановление", указав следующие сведения.
 
-   ![База данных Azure для PostgreSQL: информация для восстановления](./media/howto-restore-server-portal/3-restore.png)
+   :::image type="content" source="./media/howto-restore-server-portal/3-restore.png" alt-text="База данных Azure для PostgreSQL: информация для восстановления":::
    - **Точка восстановления.** Выберите точку во времени, до которой нужно восстановить сервер.
    - **Целевой сервер.** Укажите имя для нового сервера.
    - **Расположение.** Невозможно выбрать регион. По умолчанию он совпадает с исходным сервером.
@@ -75,7 +75,7 @@ ms.locfileid: "86110816"
 
 Если вы настроили сервер для геоизбыточного резервного копирования, из резервной копии можно создать новый сервер. Его можно создать в любом регионе, где доступна службы "База данных Azure для PostgreSQL".  
 
-1. Нажмите кнопку **создать ресурс** (+) в левом верхнем углу портала. Выберите **databases**  >  **база данных Azure для PostgreSQL**.
+1. Нажмите кнопку **Создать ресурс** (+) в левом верхнем углу окна портала. Выберите **Базы данных** > **База данных Azure для PostgreSQL**.
 
    :::image type="content" source="./media/howto-restore-server-portal/1-navigate-to-postgres.png" alt-text="Перейдите к базе данных Azure для PostgreSQL.":::
 
@@ -111,7 +111,7 @@ ms.locfileid: "86110816"
 
    :::image type="content" source="./media/howto-restore-server-portal/8-create.png" alt-text="Форма заливки."::: 
 
-9. Выберите **Просмотр и создание **, чтобы просмотреть выбранные элементы. 
+9. Выберите **Просмотр и создание** , чтобы просмотреть выбранные элементы. 
 
 10. Щелкните **Создать**, чтобы подготовить сервер. Это может занять несколько минут.
 

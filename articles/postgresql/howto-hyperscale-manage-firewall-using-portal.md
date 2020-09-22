@@ -7,12 +7,12 @@ ms.service: postgresql
 ms.subservice: hyperscale-citus
 ms.topic: how-to
 ms.date: 9/11/2020
-ms.openlocfilehash: 35d5b101f4ad5fe4498c0566227c5f0a9d102b60
-ms.sourcegitcommit: 3fc3457b5a6d5773323237f6a06ccfb6955bfb2d
+ms.openlocfilehash: d369614357bd62dc13073f650fbe5ce358d6dc6e
+ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/11/2020
-ms.locfileid: "90032581"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90884332"
 ---
 # <a name="manage-firewall-rules-for-azure-database-for-postgresql---hyperscale-citus"></a>Управление правилами брандмауэра базы данных Azure для PostgreSQL — гипермасштабирование (Citus)
 Правила брандмауэра уровня сервера можно использовать для управления доступом к узлу-координатору гипермасштабирования (Citus) с указанного IP-адреса или диапазона IP-адресов.
@@ -24,23 +24,24 @@ ms.locfileid: "90032581"
 ## <a name="create-a-server-level-firewall-rule-in-the-azure-portal"></a>Создание правила брандмауэра на уровне сервера с помощью портала Azure
 
 > [!NOTE]
-> Эти параметры также доступны во время создания группы серверов Базы данных Azure для PostgreSQL — гипермасштабирование (Citus). На вкладке **сети** щелкните **общий доступ**.
-> ![Портал Azure — вкладка "Сеть"](./media/howto-hyperscale-manage-firewall-using-portal/0-create-public-access.png)
+> Эти параметры также доступны во время создания группы серверов Базы данных Azure для PostgreSQL — гипермасштабирование (Citus). На вкладке **Сеть** щелкните **Общедоступная конечная точка**.
+
+> :::image type="content" source="./media/howto-hyperscale-manage-firewall-using-portal/0-create-public-access.png" alt-text="Портал Azure — вкладка "Сеть"":::
 
 1. На странице группы серверов PostgreSQL под заголовком "Безопасность" щелкните **Сети**, чтобы открыть правила брандмауэра.
 
-   ![Портал Azure: нажатие кнопки "Сети"](./media/howto-hyperscale-manage-firewall-using-portal/1-connection-security.png)
+   :::image type="content" source="./media/howto-hyperscale-manage-firewall-using-portal/1-connection-security.png" alt-text="Портал Azure: нажатие кнопки "Сети"":::
 
 2. Щелкните **Добавить текущий IP-адрес клиента** , чтобы создать правило брандмауэра с общедоступным IP-адресом компьютера, как показано в системе Azure.
 
-   ![Портал Azure: нажатие кнопки "Добавить IP-адрес клиента"](./media/howto-hyperscale-manage-firewall-using-portal/2-add-my-ip.png)
+   :::image type="content" source="./media/howto-hyperscale-manage-firewall-using-portal/2-add-my-ip.png" alt-text="Портал Azure: нажатие кнопки "Добавить IP-адрес клиента"":::
 
 Кроме того, вы можете нажать **+Добавить 0.0.0.0-255.255.255.255** (справа от варианта B), чтобы разрешить доступ к порту узла-координатора 5432 не только для вашего IP-адреса, но и для всего Интернета. В этом случае клиентам по-прежнему необходимо выполнить вход с правильным именем пользователя и паролем для использования кластера. Тем не менее мы рекомендуем предоставлять доступ для всего Интернета только на короткие периоды времени и только для нерабочих баз данных.
 
 3. Проверьте IP-адрес перед сохранением конфигурации. В некоторых случаях IP-адрес, определенный порталом Azure, может отличаться от IP-адреса, используемого для доступа к Интернету и серверам Azure. Поэтому может потребоваться изменить начальный IP-адрес и конечный IP-адрес для правила, чтобы оно функционировало ожидаемым образом.
    Используйте поисковую систему или другой сетевой инструмент, чтобы проверить собственный IP-адрес. Например, выполните поиск текста "какой у меня IP-адрес".
 
-   ![Поиск текста "what is my IP" в Bing](./media/howto-hyperscale-manage-firewall-using-portal/3-what-is-my-ip.png)
+   :::image type="content" source="./media/howto-hyperscale-manage-firewall-using-portal/3-what-is-my-ip.png" alt-text="Поиск текста "what is my IP" в Bing":::
 
 4. Добавьте дополнительные адресные пространства. В правилах брандмауэра можно указать отдельный IP-адрес или диапазон адресов. Если вы хотите ограничить правило, указав отдельный IP-адрес, введите его в полях начального и конечного IP-адресов. Открытие брандмауэра позволяет администраторам, пользователям и приложениям получать доступ к узлу-координатору через порт 5432.
 

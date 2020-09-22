@@ -6,12 +6,12 @@ ms.author: flborn
 ms.date: 02/10/2020
 ms.topic: article
 ms.custom: devx-track-csharp
-ms.openlocfilehash: a3f032ca973a188bf294155c73de3ca84f6ee30f
-ms.sourcegitcommit: 70ee014d1706e903b7d1e346ba866f5e08b22761
+ms.openlocfilehash: c098dc6b1d3b41a41246857f8a353dd4f5dfcef1
+ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/11/2020
-ms.locfileid: "90024406"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90884192"
 ---
 # <a name="hierarchical-state-override"></a>Переопределение иерархического состояния
 
@@ -45,6 +45,10 @@ ms.locfileid: "90024406"
   ![Параметр структуры, используемый для выделения выбранной части](./media/selection-outline.png)
 
 * **`DisableCollision`**: Геометрия исключена из [пространственных запросов](spatial-queries.md). **`Hidden`** Флаг не влияет на флаг состояния столкновений, поэтому эти два флага часто устанавливаются вместе.
+
+* **`UseCutPlaneFilterMask`**: Используйте отдельную битовую маску фильтра для управления выделением вырезанной плоскости. Этот флаг определяет, должна ли отдельная Маска фильтра использоваться или наследоваться от ее родителя. Сама битовая маска фильтра задается с помощью `CutPlaneFilterMask` Свойства. Подробные сведения о том, как работает фильтрация, см. в [абзаце Выборочная вырезание плоскостей](cut-planes.md#selective-cut-planes).
+![Выборочная вырезание плоскостей](./media/selective-cut-planes.png)
+
 
 > [!TIP]
 > В качестве альтернативы отключению и пространственному запросу для полной вложенной диаграммы `enabled` состояние игрового объекта можно переключить. Если иерархия отключена, это имеет приоритет над любым `HierarchicalStateOverrideComponent` .

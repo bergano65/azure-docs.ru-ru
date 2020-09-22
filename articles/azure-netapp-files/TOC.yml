@@ -33,6 +33,12 @@
       href: azure-netapp-files-cost-model.md
     - name: Рекомендации по планированию сети Azure NetApp Files
       href: azure-netapp-files-network-topologies.md
+    - name: Репликация между регионами
+      items:
+        - name: Общие сведения о репликации между регионами
+          href: cross-region-replication-introduction.md
+        - name: 'Требования и рекомендации, связанные с репликацией между регионами'
+          href: cross-region-replication-requirements-considerations.md
     - name: Решения
       items:
         - name: 'Архитектура решений, использующих Azure NetApp Files'
@@ -81,6 +87,16 @@
       href: azure-netapp-files-resize-capacity-pools-or-volumes.md
     - name: Динамическое изменение уровня обслуживания тома
       href: dynamic-change-volume-service-level.md
+    - name: Управление репликацией между регионами
+      items:
+        - name: Создание пиринга репликации
+          href: cross-region-replication-create-peering.md
+        - name: Отображение состояния работоспособности отношения репликации
+          href: cross-region-replication-display-health-status.md
+        - name: Управление аварийным восстановлением
+          href: cross-region-replication-manage-disaster-recovery.md
+        - name: Удаление репликации
+          href: cross-region-replication-delete.md
     - name: Разработка
       items:
         - name: REST API
@@ -91,6 +107,10 @@
           href: azure-netapp-files-sdk-cli.md
         - name: Устранение ошибок с поставщиком ресурсов Azure NetApp Files
           href: azure-netapp-files-troubleshoot-resource-provider-errors.md
+    - name: Устранение неполадок
+      items:
+        - name: Устранение неполадок с репликацией между регионами
+          href: troubleshoot-cross-region-replication.md
 - name: Справочник
   items:
     - name: REST
