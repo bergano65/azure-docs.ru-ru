@@ -1,0 +1,127 @@
+### YamlMime:Landing
+title: Документация по отдельному серверу Базы данных Azure для PostgreSQL
+summary: База данных Azure для PostgreSQL — это служба реляционных баз данных на основе СУБД PostgreSQL с открытым исходным кодом.  Отдельный сервер — это один из вариантов развертывания для создания сервера postgres. Узнайте, как использовать Отдельный сервер, изучив наши краткие руководства, рекомендации и примеры.
+metadata:
+  description: База данных Azure для PostgreSQL — это служба реляционных баз данных в облаке Майкрософт, созданная для разработчиков на основе СУБД PostgreSQL с открытым кодом.
+  author: rachel-msft
+  ms.author: raagyema
+  ms.date: 09/20/2020
+  ms.service: postgresql
+  ms.topic: landing-page
+  ms.openlocfilehash: 833b35b7a2f597186c69d95fc4ab8f2704b59c91
+  ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
+  ms.translationtype: HT
+  ms.contentlocale: ru-RU
+  ms.lasthandoff: 09/22/2020
+  ms.locfileid: "90929006"
+landingContent:
+- title: Сведения об Отдельном сервере
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Что такое Отдельный сервер?
+      url: ../concepts-servers.md
+  - linkListType: whats-new
+    links:
+    - text: Читайте наш блог
+      url: https://techcommunity.microsoft.com/t5/Azure-Database-for-PostgreSQL/bg-p/ADforPostgreSQL
+- title: Начало работы
+  linkLists:
+  - linkListType: quickstart
+    links:
+    - text: Создание сервера с помощью портала Azure
+      url: ../quickstart-create-server-database-portal.md
+    - text: Создание сервера с помощью Azure CLI
+      url: ../quickstart-create-server-database-azure-cli.md
+  - linkListType: learn
+    links:
+    - text: 'Модуль обучения: Создание сервера Базы данных Azure для PostgreSQL'
+      url: /learn/modules/create-azure-db-for-postgresql-server/
+  - linkListType: concept
+    links:
+    - text: Ценовые категории
+      url: ../concepts-pricing-tiers.md
+    - text: Ограничения
+      url: ../concepts-limits.md
+    - text: Версии PostgreSQL
+      url: ../concepts-supported-versions.md
+    - text: Расширения PostgreSQL — отдельный сервер
+      url: ../concepts-extensions.md
+  - linkListType: tutorial
+    links:
+    - text: Проектирование базы данных на Отдельном сервере
+      url: ../tutorial-design-database-using-azure-portal.md
+    - text: Создание веб-приложения с помощью Python (Django)
+      url: ../../app-service/tutorial-python-postgresql-app.md?toc=%2fazure%2fpostgresql%2ftoc.json
+- title: Подключение и выполнение запросов
+  linkLists:
+  - linkListType: concept
+    links:
+    - text: Общие сведения о брандмауэре
+      url: ../concepts-firewall-rules.md
+  - linkListType: how-to-guide
+    links:
+    - text: Создание правил брандмауэра
+      url: ../howto-manage-firewall-using-portal.md
+    - text: Настройка TLS
+      url: ../howto-tls-configurations.md
+  - linkListType: get-started
+    links:
+    - text: Подключение с использованием Python
+      url: ../connect-python.md
+    - text: Подключение с использованием Node.js
+      url: ../connect-nodejs.md
+    - text: Подключение с использованием Java
+      url: ../connect-java.md
+    - text: Подключение с использованием Ruby
+      url: ../connect-ruby.md
+    - text: Подключение с использованием PHP
+      url: ../connect-php.md
+    - text: Подключение с использованием .NET
+      url: ../connect-csharp.md
+    - text: Подключение с использованием Go
+      url: ../connect-go.md
+- title: Управление и миграция
+  linkLists:
+  - linkListType: concept
+    links:
+    - text: Общие сведения о виртуальных сетях
+      url: ../concepts-data-access-and-security-vnet.md
+    - text: Мониторинг и настройка службы
+      url: ../tutorial-monitor-and-tune.md
+  - linkListType: how-to-guide
+    links:
+    - text: Перенос базы данных с помощью pg_dump и pg_restore
+      url: ../howto-migrate-using-dump-and-restore.md
+    - text: Перенос базы данных с помощью pg_dump и psql
+      url: ../howto-migrate-using-export-and-import.md
+    - text: Миграция с помощью службы переноса данных
+      url: ../howto-migrate-online.md
+- title: Непрерывность бизнес-процессов
+  linkLists:
+  - linkListType: concept
+    links:
+    - text: Непрерывность бизнес-процессов
+      url: ../concepts-business-continuity.md
+    - text: Резервное копирование и восстановление
+      url: ../concepts-backup.md
+  - linkListType: how-to-guide
+    links:
+    - text: Создание реплики чтения
+      url: ../howto-read-replicas-portal.md
+    - text: Восстановление сервера
+      url: ../howto-restore-server-portal.md
+- title: Справочник
+  linkLists:
+  - linkListType: get-started
+    links:
+    - text: Скрипты Azure CLI для выполнения распространенных задач
+      url: /azure/postgresql/sample-scripts-azure-cli
+  - linkListType: reference
+    links:
+    - text: Справочник разработчика Azure CLI
+      url: /rest/api/postgresql/
+    - text: Справочник разработчика REST API
+      url: /cli/azure/postgres
+    - text: Шаблоны Azure Resource Manager
+      url: /azure/templates/microsoft.dbforpostgresql/allversions

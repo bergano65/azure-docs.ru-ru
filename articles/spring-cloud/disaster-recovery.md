@@ -7,14 +7,16 @@ ms.topic: conceptual
 ms.date: 10/24/2019
 ms.author: brendm
 ms.custom: devx-track-java
-ms.openlocfilehash: 6af23f566e8768dd1213095402b7af029d494476
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 19e022073f43548a91fad76cb380a75205237bbd
+ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87076036"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90892557"
 ---
 # <a name="azure-spring-cloud-disaster-recovery"></a>Аварийное восстановление Azure Spring Cloud
+
+**Эта статья относится к:** ✔️ Java ✔️ C #
 
 В этой статье объясняются некоторые стратегии, которые можно использовать для защиты облачных приложений Azure Spring Cloud от простоя.  Любой регион или центр обработки данных может столкнуться с простоями, вызванными региональными авариями, но тщательное планирование может снизить влияние на клиентов.
 
@@ -62,3 +64,8 @@ ms.locfileid: "87076036"
 4. Создайте запись CNAME в зоне DNS: bcdr-test.contoso.com CNAME asc-bcdr.trafficmanager.net. 
 
 5. Среда полностью настроена. Клиенты смогут получить доступ к приложению по адресу bcdr-test.contoso.com
+
+## <a name="next-steps"></a>Дальнейшие действия
+
+* [Краткое руководство. Развертывание первого приложения Azure Spring Cloud](spring-cloud-quickstart.md)
+ 

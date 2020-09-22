@@ -8,12 +8,12 @@ ms.service: security-center
 ms.topic: conceptual
 ms.date: 11/04/2019
 ms.author: memildin
-ms.openlocfilehash: c218b5dc8ca3bfa0358a9b6a0d4867696762a8d4
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 7a81b3016f86c6fd7de646ccbdbf533685471ac3
+ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "77430947"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90894792"
 ---
 # <a name="configure-a-security-policy-in-azure-policy-using-the-rest-api"></a>Настройка политики безопасности в политике Azure с помощью REST API
 
@@ -122,9 +122,9 @@ ms.locfileid: "77430947"
 |Шифрование SQL |Мониторинг баз данных SQL без шифрования в Центре безопасности Azure |sqlEncryptionMonitoringEffect| 
 |Аудит SQL |Мониторинг баз данных SQL без аудита в Центре безопасности Azure |sqlAuditingMonitoringEffect|
 |Обновление системы |Мониторинг отсутствия обновлений системы в Центре безопасности Azure |systemUpdatesMonitoringEffect|
-|Шифрование хранилища |Аудит отсутствия шифрования больших двоичных объектов для учетных записей хранения |storageEncryptionMonitoringEffect|
+|Шифрование хранилища |Аудит отсутствия шифрования BLOB-объектов в учетных записях хранения. |storageEncryptionMonitoringEffect|
 |JIT-доступ к сети |Мониторинг возможных JIT-доступа к сети в центре безопасности Azure |jitNetworkAccessMonitoringEffect |
-|Адаптивные элементы управления приложениями |Мониторинг возможных списков разрешенных приложений в Центре безопасности Azure |adaptiveApplicationControlsMonitoringEffect|
+|Адаптивные элементы управления приложениями |Мониторинг возможных списков разрешенных приложений в центре безопасности Azure |adaptiveApplicationControlsMonitoringEffect|
 |Группы безопасности сети |Мониторинг нестрогого доступа к сети в Центре безопасности Azure |networkSecurityGroupsMonitoringEffect| 
 |Конфигурации безопасности |Мониторинг уязвимостей ОС в Центре безопасности Azure |systemConfigurationsMonitoringEffect| 
 |Защита конечных точек |Мониторинг отсутствия Endpoint Protection в Центре безопасности Azure |endpointProtectionMonitoringEffect |
@@ -134,7 +134,7 @@ ms.locfileid: "77430947"
 |Брандмауэр следующего поколения |Мониторинг незащищенных сетевых конечных точек в Центре безопасности Azure| |
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Другие материалы на эту тему см. в следующих статьях:. 
 

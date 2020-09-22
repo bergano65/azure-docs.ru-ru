@@ -10,15 +10,15 @@ ms.subservice: core
 ms.topic: conceptual
 ms.custom: how-to, contperfq1
 ms.date: 08/20/2020
-ms.openlocfilehash: fc8e8de817c1b311e3252c7399a09ed1c9eb7031
-ms.sourcegitcommit: 3be3537ead3388a6810410dfbfe19fc210f89fec
+ms.openlocfilehash: 982c7a41f1e05c34ddf0fbae9f944df4a4d08fa5
+ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89651511"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90893365"
 ---
 # <a name="auto-train-a-time-series-forecast-model"></a>Автоматическое обучение прогнозной модели временных рядов
-[!INCLUDE [aml-applies-to-basic-enterprise-sku](../../includes/aml-applies-to-basic-enterprise-sku.md)]
+
 
 Из этой статьи вы узнаете, как настроить и обучить модель регрессии прогнозов временных рядов с помощью автоматического машинного обучения Аутомл в [пакете SDK для Python машинное обучение Azure](https://docs.microsoft.com/python/api/overview/azure/ml/?view=azure-ml-py&preserve-view=true). 
 
@@ -38,7 +38,7 @@ ms.locfileid: "89651511"
 
 * Рабочая область машинного обучения Azure. Дополнительные сведения см. в [инструкциях по созданию рабочей области Машинного обучения Azure](how-to-manage-workspace.md).
 
-* В этой статье предполагается, что вам известны основные принципы настройки эксперимента автоматизированного машинного обучения. Следуйте инструкциям [учебника](tutorial-auto-train-models.md) или [практического руководства](how-to-configure-auto-train.md), чтобы ознакомиться с основными конструктивными шаблонами экспериментов автоматизированного машинного обучения.
+* В этой статье предполагается, что вы настроили автоматический эксперимент машинного обучения. Следуйте указаниям [руководства](tutorial-auto-train-models.md) или [инструкции](how-to-configure-auto-train.md) , чтобы просмотреть основные шаблоны автоматического проектирования экспериментов машинного обучения.
 
 ## <a name="preparing-data"></a>Подготовка данных
 

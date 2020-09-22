@@ -6,12 +6,12 @@ ms.author: manishku
 ms.service: mysql
 ms.topic: conceptual
 ms.date: 05/20/2020
-ms.openlocfilehash: a8a5914b51b56fbe8b4b7b7ba331f58ec451f975
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 86933b324d7216a6097102cf237d0402d9f63234
+ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "82731889"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90882672"
 ---
 # <a name="prepay-for-azure-database-for-mysql-compute-resources-with-reserved-capacity"></a>Предоплата за расчетные ресурсы базы данных Azure для MySQL с зарезервированной емкостью
 
@@ -43,7 +43,7 @@ ms.locfileid: "82731889"
 4. Заполните поля, необходимые для заполнения полей. Существующие или новые базы данных, соответствующие выбранным атрибутам, будут получать зарезервированную скидку емкости. Фактическое число серверов базы данных Azure для MySQL, которые получают скидку, зависит от выбранной области и количества.
 
 
-![Общие сведения о зарезервированных ценах](media/concepts-reserved-pricing/mysql-reserved-price.png)
+:::image type="content" source="media/concepts-reserved-pricing/mysql-reserved-price.png" alt-text="Общие сведения о зарезервированных ценах":::
 
 
 В следующей таблице описываются обязательные поля.

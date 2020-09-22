@@ -1,0 +1,103 @@
+### YamlMime:Landing
+title: Документация по Гибкому серверу
+summary: База данных Azure для MySQL (Гибкий сервер) — это предложение полностью управляемой базы данных MySQL как услуги, которая может обслуживать критически важные рабочие нагрузки, обеспечивая прогнозируемую производительность и динамическое масштабирование. Разрабатывайте приложения на основе Базы данных Azure для MySQL, используя привычные средства с открытым кодом и платформу. Узнайте, как использовать Базу данных Azure для MySQL, ознакомившись с нашими шаблонами быстрого запуска, примерами и руководствами.
+metadata:
+  description: База данных Azure для MySQL (Гибкий сервер) — это служба реляционных баз данных в облаке Майкрософт, созданная для разработчиков на базе MySQL Community Edition.
+  author: mksuni
+  ms.author: sumuth
+  ms.date: 09/21/2020
+  ms.service: mysql
+  ms.topic: landing-page
+  ms.openlocfilehash: 09086af6cee517f9e30657802934d0f7fb1b14a9
+  ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
+  ms.translationtype: HT
+  ms.contentlocale: ru-RU
+  ms.lasthandoff: 09/22/2020
+  ms.locfileid: "90928910"
+landingContent:
+- title: Сведения о Гибком сервере (предварительная версия)
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Что такое Гибкий сервер?
+      url: overview.md
+  - linkListType: quickstart
+    links:
+    - text: Создание гибкого сервера
+      url: quickstart-create-server-portal.md
+  - linkListType: tutorial
+    links:
+    - text: Создание приложения PHP с использованием гибкого сервера
+      url: tutorial-php-database-app.md
+  - linkListType: whats-new
+    links:
+    - text: Читайте наш блог
+      url: https://techcommunity.microsoft.com/t5/Azure-Database-for-MySQL/bg-p/ADforMySQL
+- title: Управление
+  linkLists:
+  - linkListType: concept
+    links:
+    - text: Варианты вычислительных ресурсов и хранилищ
+      url: concepts-compute-storage.md
+    - text: Версии MySQL
+      url: concepts-supported-versions.md
+    - text: Сети
+      url: concepts-networking.md
+    - text: Azure Monitor
+      url: concepts-monitoring.md
+    - text: Журналы аудита
+      url: concepts-audit-logs.md
+  - linkListType: how-to-guide
+    links:
+    - text: Управление сервером
+      url: how-to-manage-server-portal.md
+    - text: Запуск и остановка сервера
+      url: how-to-stop-start-server-portal.md
+    - text: Настройка журналов и получение доступа к ним
+      url: how-to-configure-slow-query-logs-portal.md
+    - text: Планирование обслуживания
+      url: how-to-maintenance-portal.md
+- title: Непрерывность бизнес-процессов
+  linkLists:
+  - linkListType: concept
+    links:
+    - text: Общие сведения о непрерывности бизнес-процессов
+      url: concepts-business-continuity.md
+    - text: Высокий уровень доступности
+      url: concepts-high-availability.md
+    - text: Резервное копирование и восстановление
+      url: concepts-backup-restore.md
+  - linkListType: how-to-guide
+    links:
+    - text: Восстановление сервера
+      url: how-to-restore-server-portal.md
+- title: Подключение
+  linkLists:
+  - linkListType: quickstart
+    links:
+    - text: Подключение с использованием PHP
+      url: connect-php.md
+    - text: Подключение с помощью MySQL Workbench
+      url: connect-workbench.md
+    - text: Подключение с использованием Python
+      url: connect-python.md
+  - linkListType: tutorial
+    links:
+    - text: Подключение веб-приложения в виртуальной сети
+      url: tutorial-webapp-server-vnet.md
+- title: Миграция
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: Миграция по сети
+      url: ../howto-migrate-online.md
+- title: Справочник
+  linkLists:
+  - linkListType: reference
+    links:
+    - text: Справочник разработчика Azure CLI
+      url: /cli/azure/mysql
+    - text: Справочник разработчика REST API
+      url: /rest/api/mysql/
+    - text: Шаблоны Azure Resource Manager
+      url: /azure/templates/microsoft.dbformysql/allversions

@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 03/16/2020
 ms.author: memildin
-ms.openlocfilehash: 313f10c77da499f4c405134028b975900d2d2a9e
-ms.sourcegitcommit: 02ca0f340a44b7e18acca1351c8e81f3cca4a370
+ms.openlocfilehash: 042780c313c444062fd512ab0d9f38aaeb6cf170
+ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/19/2020
-ms.locfileid: "88590240"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90894556"
 ---
 # <a name="monitor-identity-and-access"></a>Мониторинг идентификации и доступа
 
@@ -66,6 +66,4 @@ ms.locfileid: "88590240"
 ## <a name="next-steps"></a>Дальнейшие действия
 Чтобы узнать больше о рекомендациях, применимых к другим типам ресурсов Azure, прочитайте следующие статьи:
 
-- [Защита виртуальных машин в центре безопасности Azure](security-center-virtual-machine-protection.md)
 - [Защита сети в центре безопасности Azure.](security-center-network-recommendations.md)
-- [Защита службы SQL Azure и данных в центре безопасности Azure](security-center-sql-service-recommendations.md)

@@ -2,19 +2,18 @@
 title: Часто задаваемые вопросы о служебной шине Azure | Документация Майкрософт
 description: В этой статье содержатся ответы на некоторые часто задаваемые вопросы о служебной шине Azure.
 ms.topic: article
-ms.date: 07/15/2020
-ms.openlocfilehash: e098b05dba25a51d5d6ef7c50a1b73730828357a
-ms.sourcegitcommit: 2ffa5bae1545c660d6f3b62f31c4efa69c1e957f
+ms.date: 09/16/2020
+ms.openlocfilehash: addd629f137c5f638cd32a639f79cdbbafc4a94d
+ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/11/2020
-ms.locfileid: "88080819"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90894530"
 ---
 # <a name="azure-service-bus---frequently-asked-questions-faq"></a>Служебная шина Azure — часто задаваемые вопросы
 
 В этой статье обсуждаются некоторые часто задаваемые вопросы о служебной шине Microsoft Azure. Вы также можете посетить страницу [Часто задаваемые вопросы о поддержке Azure](https://azure.microsoft.com/support/faq/), чтобы получить общие сведения о ценах и поддержке Azure.
 
-[!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
 ## <a name="general-questions-about-azure-service-bus"></a>Общие вопросы о служебной шине Azure
 ### <a name="what-is-azure-service-bus"></a>Что такое служебная шина Azure?
@@ -36,6 +35,9 @@ ms.locfileid: "88080819"
 
  Секционированные сущности больше не поддерживаются в [номере SKU уровня "Премиум"](service-bus-premium-messaging.md). 
 
+### <a name="where-does-azure-service-bus-store-customer-data"></a><a name="in-region-data-residency"></a>Где служебная шина Azure хранит данные клиента?
+Служебная шина Azure хранит данные клиента. Эти данные автоматически сохраняются служебной шиной в одном регионе, поэтому эта служба автоматически удовлетворяет требованиям местонахождение данных региона, включая те, которые указаны в [центре управления безопасностью](https://azuredatacentermap.azurewebsites.net/).
+
 ### <a name="what-ports-do-i-need-to-open-on-the-firewall"></a>Какие порты нужно открыть в брандмауэре? 
 Для отправки и получения сообщений можно использовать следующие протоколы со служебной шиной Azure.
 
@@ -48,7 +50,7 @@ ms.locfileid: "88080819"
 | Протокол | порты; | Сведения | 
 | -------- | ----- | ------- | 
 | AMQP | 5671 и 5672 | См. [Руководство по использованию протокола AMQP](service-bus-amqp-protocol-guide.md). | 
-| SBMP | от 9350 до 9354 | См. раздел [режим подключения](/dotnet/api/microsoft.servicebus.connectivitymode?view=azure-dotnet) |
+| SBMP | от 9350 до 9354 | См. раздел [режим подключения](/dotnet/api/microsoft.servicebus.connectivitymode?view=azure-dotnet&preserve-view=true) |
 | HTTP, HTTPS | 80, 443 | 
 
 ### <a name="what-ip-addresses-do-i-need-to-add-to-allow-list"></a>Какие IP-адреса нужно добавить в список разрешений?
@@ -59,9 +61,9 @@ ms.locfileid: "88080819"
     ```
     nslookup <YourNamespaceName>.servicebus.windows.net
     ```
-2. Запишите IP-адрес, возвращенный в `Non-authoritative answer`. Этот IP-адрес является статическим. Единственный случай, который может измениться, — восстановление пространства имен в другой кластер.
+2. Запишите IP-адрес, возвращенный в `Non-authoritative answer`. 
 
-При использовании избыточности зоны для пространства имен необходимо выполнить несколько дополнительных действий. 
+При использовании **избыточности зоны** для пространства имен необходимо выполнить несколько дополнительных действий. 
 
 1. Сначала следует запустить nslookup в пространстве имен.
 
@@ -76,6 +78,9 @@ ms.locfileid: "88080819"
     <name>-s3.cloudapp.net
     ```
 3. Выполните команду nslookup для каждого из них с суффиксами s1, s2 и s3, чтобы получить IP-адреса всех трех экземпляров, работающих в трех зонах доступности. 
+
+    > [!NOTE]
+    > IP-адрес, возвращенный `nslookup` командой, не является статическим IP-адресом. Однако он остается постоянным до тех пор, пока базовое развертывание не будет удалено или перемещено в другой кластер.
 
 ### <a name="where-can-i-find-the-ip-address-of-the-client-sendingreceiving-messages-tofrom-a-namespace"></a>Где можно найти IP-адрес клиента, отправляющего и принимающего сообщения в пространство имен? 
 Мы не будем регистрировать IP-адреса клиентов, отправляющих или получающих сообщения в пространство имен. Повторно создайте ключи, чтобы все существующие клиенты не могли пройти проверку подлинности и проверить параметры управления доступом на основе ролей ([RBAC](authenticate-application.md#azure-built-in-roles-for-azure-service-bus)), чтобы обеспечить доступ к пространству имен только пользователям или приложениям. 

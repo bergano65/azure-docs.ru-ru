@@ -11,12 +11,12 @@ author: aashishb
 ms.date: 07/07/2020
 ms.topic: conceptual
 ms.custom: how-to, devx-track-python, references_regions
-ms.openlocfilehash: 57746b833e238bbd0cc99ba103f710a9239ee5ba
-ms.sourcegitcommit: f8d2ae6f91be1ab0bc91ee45c379811905185d07
+ms.openlocfilehash: 36d3d84949e44719474656d07da9c7b7c46a4e98
+ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89665162"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90893184"
 ---
 # <a name="virtual-network-isolation-and-privacy-overview"></a>Общие сведения о изоляции и конфиденциальности виртуальной сети
 
@@ -63,22 +63,6 @@ ms.locfileid: "89665162"
 1. Обеспечьте безопасность [**окружения**](#secure-the-inferencing-environment).
 1. Дополнительно: [**Включение функциональных возможностей Studio**](#optional-enable-studio-functionality).
 1. Настройка [ **параметров брандмауэра**](#configure-firewall-settings)
-
-> [!TIP]
->  Для некоторых сочетаний виртуальной сети и служб Azure требуется рабочая область Enterprise Edition. Используйте следующую таблицу, чтобы понять, в каких сценариях требуется выпуск Enterprise.
->
-> | Сценарий | Enterprise</br>edition | Basic</br>edition |
-> | ----- |:-----:|:-----:| 
-> | Нет виртуальной сети или приватного канала | ✔ | ✔ |
-> | Рабочая область без приватного канала. Другие ресурсы (кроме реестра контейнеров Azure) в виртуальной сети | ✔ | ✔ |
-> | Рабочая область без приватного канала. Другие ресурсы с приватным каналом | ✔ | |
-> | Рабочая область с приватным каналом. Другие ресурсы (кроме реестра контейнеров Azure) в виртуальной сети | ✔ | ✔ |
-> | Рабочая область и другие ресурсы с приватным каналом | ✔ | |
-> | Рабочая область с приватным каналом. Другие ресурсы без приватного канала или виртуальной сети | ✔ | ✔ |
-> | Реестр контейнеров Azure в виртуальной сети | ✔ | |
-> | Управляемые клиентом ключи для рабочей области | ✔ | |
->
-
 
 ## <a name="secure-the-workspace-and-associated-resources"></a>Защита рабочей области и связанных ресурсов
 

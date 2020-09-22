@@ -1,6 +1,6 @@
 ---
-title: Замена устройства Azure Stack пограничной | Документация Майкрософт
-description: Описывает, как получить замену Azure Stack пограничном устройстве.
+title: Замена устройства Azure Stack пограничной Pro | Документация Майкрософт
+description: Описывает, как получить замену Azure Stack устройстве Pro.
 services: databox
 author: alkohli
 ms.service: databox
@@ -8,16 +8,16 @@ ms.subservice: edge
 ms.topic: how-to
 ms.date: 07/20/2020
 ms.author: alkohli
-ms.openlocfilehash: 5d5e8cc3a959c7800019107d2c682e144449b46c
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: ec16a2b42b818e96399b8fdbad4a0951f84ef825
+ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87098748"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90893889"
 ---
-# <a name="replace-your-azure-stack-edge-device"></a>Замена устройства Azure Stack пограничной
+# <a name="replace-your-azure-stack-edge-pro-device"></a>Замена устройства Azure Stack пограничной Pro
 
-В этой статье описывается, как получить замену Azure Stack пограничном устройстве. Устройство на замену необходимо, если на имеющемся устройстве произошел сбой оборудования или требуется обновление. 
+В этой статье описывается, как получить заменяющее устройство Pro Azure Stack. Устройство на замену необходимо, если на имеющемся устройстве произошел сбой оборудования или требуется обновление. 
 
 
 Вы узнаете, как выполнять следующие задачи:
@@ -33,7 +33,7 @@ ms.locfileid: "87098748"
 
 Если на имеющемся устройстве произошел сбой оборудования, отправьте запрос в службу поддержки. Служба поддержки Майкрософт определит, что компоненты для замены на месте (FRU) недоступен для этого экземпляра или требуется обновление оборудования. В обоих случаях служба поддержки закажет устройство на замену.
 
-1. Откройте запрос в службу поддержки Майкрософт и укажите, что хотите вернуть устройство. Выберите тип проблемы **Оборудование Azure Stack Edge**.
+1. Откройте запрос в службу поддержки Майкрософт и укажите, что хотите вернуть устройство. Выберите тип проблемы **Azure Stack пограничная оборудование Pro**.
 
     ![Открыть запрос в службу поддержки](media/azure-stack-edge-replace-device/open-support-ticket-1.png)  
 
@@ -47,7 +47,7 @@ ms.locfileid: "87098748"
 
 1. Выполните действия, описанные в разделе [Создание нового ресурса](azure-stack-edge-deploy-prep.md#create-a-new-resource) , чтобы создать ресурс для устройства замены. 
 
-2. Обязательно установите флажок для пункта **У меня есть устройство Azure Stack Edge**. 
+2. Убедитесь, что установлен флажок **у меня есть устройство Azure Stack пограничной Pro**. 
 
     ![Ресурс для замены устройства](media/azure-stack-edge-replace-device/replace-resource-1.png)  
 
@@ -71,4 +71,4 @@ ms.locfileid: "87098748"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- Узнайте, как [вернуть устройство Azure Stack пограничной](azure-stack-edge-return-device.md).
+- Узнайте, как [вернуть устройство Pro Azure Stack](azure-stack-edge-return-device.md).

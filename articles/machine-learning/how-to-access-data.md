@@ -11,15 +11,14 @@ author: MayMSFT
 ms.reviewer: nibaccam
 ms.date: 07/22/2020
 ms.custom: how-to, contperfq1, devx-track-python
-ms.openlocfilehash: 08685a6ebfcbfced91c3685635c40ff48030fe38
-ms.sourcegitcommit: 5d7f8c57eaae91f7d9cf1f4da059006521ed4f9f
+ms.openlocfilehash: 769b4d364412d3409ef95c4222197fe6f7ce222c
+ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89669574"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90893468"
 ---
 # <a name="connect-to-azure-storage-services"></a>Подключение к службам хранилища Azure
-[!INCLUDE [aml-applies-to-basic-enterprise-sku](../../includes/aml-applies-to-basic-enterprise-sku.md)]
 
 Из этой статьи вы узнаете, как **подключиться к службам хранилища Azure с помощью машинное обучение Azure хранилищ данных**. Хранилища данных безопасно подключаются к службе хранилища Azure, не заключая учетные данные проверки подлинности и целостность исходного источника. Они хранят сведения о подключении, такие как идентификатор подписки и авторизация маркера, в [Key Vault](https://azure.microsoft.com/services/key-vault/) , связанных с рабочей областью, чтобы обеспечить безопасный доступ к хранилищу без необходимости жесткого кодирования в скриптах. Для создания и регистрации хранилищ данных можно использовать [пакет SDK для машинное обучение Azure Python](#python) или [машинное обучение Azure Studio](#studio) .
 
@@ -54,7 +53,7 @@ ms.locfileid: "89669574"
     При создании рабочей области контейнер больших двоичных объектов Azure и файловый ресурс Azure автоматически регистрируются в качестве хранилищ данных в рабочей области. Они называются `workspaceblobstore` и `workspacefilestore`, соответственно. `workspaceblobstore`Используется для хранения артефактов рабочей области и журналов экспериментов машинного обучения. Он также задается в качестве **хранилища данных по умолчанию** и не может быть удален из рабочей области. `workspacefilestore`Используется для хранения записных книжек и скриптов R, авторизация которых осуществляется с помощью [вычислительного экземпляра](https://docs.microsoft.com/azure/machine-learning/concept-compute-instance#accessing-files).
     
     > [!NOTE]
-    > Конструктор машинного обучения Azure (предварительная версия) автоматически создаст хранилище данных с именем **azureml_globaldatasets** при открытии примера на домашней странице конструктора. В этом хранилище данных содержатся только примеры наборов данных. **Не** используйте это хранилище данных для доступа к конфиденциальным данным.
+    > Конструктор Машинное обучение Azure создаст хранилище данных с именем **azureml_globaldatasets** автоматически при открытии образца на домашней странице конструктора. В этом хранилище данных содержатся только примеры наборов данных. **Не** используйте это хранилище данных для доступа к конфиденциальным данным.
 
 <a name="matrix"></a>
 
@@ -125,7 +124,7 @@ ms.locfileid: "89669574"
 В этом разделе приведены примеры создания и регистрации хранилища данных с помощью пакета SDK для Python для следующих типов хранилищ. Параметры, приведенные в этих примерах, являются **обязательными** для создания и регистрации хранилища данных.
 
 * [Контейнер BLOB-объектов Azure](#azure-blob-container)
-* [Файловый ресурс Azure](#azure-file-share)
+* [Общая папка Azure](#azure-file-share)
 * [Azure Data Lake Storage 2-го поколения](#azure-data-lake-storage-generation-2)
 
  Сведения о создании хранилищ данных для других поддерживаемых служб хранилища см. в [справочной документации по соответствующим `register_azure_*` методам](https://docs.microsoft.com/python/api/azureml-core/azureml.core.datastore.datastore?view=azure-ml-py#&preserve-view=truemethods).

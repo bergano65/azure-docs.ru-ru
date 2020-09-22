@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.author: jordane
 author: jpe316
 ms.date: 03/05/2020
-ms.openlocfilehash: 6d9d9f2d7363217ef4e9b13b44d3665af33cb8ef
-ms.sourcegitcommit: f8d2ae6f91be1ab0bc91ee45c379811905185d07
+ms.openlocfilehash: bd77af133b88e1ba93054dbb7e0f896d8d418f89
+ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89661787"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90893560"
 ---
 # <a name="git-integration-for-azure-machine-learning"></a>Интеграция с Git для Машинное обучение Azure
 
@@ -70,12 +70,10 @@ ms.locfileid: "89661787"
 
 ### <a name="azure-portal"></a>Портал Azure
 
-1. В [портал Azure](https://portal.azure.com)выберите свою рабочую область.
+1. На [портале студии](https://ml.azure.com)выберите рабочую область.
 1. Выберите __эксперименты__и выберите один из экспериментов.
 1. Выберите один из запусков из столбца __номер запуска__ .
-1. Выберите __журналы__, а затем разверните __журналы__ и записи __azureml__ . Выберите ссылку, которая начинается с __ ### \_ Azure__.
-
-    ![Запись # # #_azure на портале](./media/concept-train-model-git-integration/azure-machine-learning-logs.png)
+1. Выберите __выходные данные + журналы__, а затем разверните __журналы__ и записи __azureml__ . Выберите ссылку, которая начинается с __ ### \_ Azure__.
 
 Записанные в журнал данные содержат текст, похожий на следующий код JSON:
 

@@ -8,12 +8,12 @@ ms.subservice: gateway
 ms.topic: how-to
 ms.date: 06/03/2019
 ms.author: alkohli
-ms.openlocfilehash: 98431e7a451aa54dfdee2126d4ce94b8b0b0fb84
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 1035b0afee9821020673acbc813b31cba3e2fd90
+ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84339218"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90893940"
 ---
 # <a name="manage-access-power-and-connectivity-mode-for-your-azure-data-box-gateway"></a>Управление доступом, питанием и режимом подключения для Шлюз Azure Data Box
 
@@ -57,16 +57,16 @@ ms.locfileid: "84339218"
 
 ## <a name="manage-resource-access"></a>Управление доступом к ресурсам
 
-Чтобы создать Azure Stack ребра/Шлюз Data Box, центр Интернета вещей и ресурс хранилища Azure, вам потребуются разрешения в качестве участника или выше на уровне группы ресурсов. Кроме того, необходимо зарегистрировать соответствующие поставщики ресурсов. Для любых операций, в которых задействованы ключ активации и учетные данные, также требуются разрешения на Azure Active Directory API Graph. Они описаны в следующих разделах.
+Чтобы создать Azure Stack границы Pro/Шлюз Data Box, центра Интернета вещей и ресурса хранилища Azure, вам потребуются разрешения в качестве участника или выше на уровне группы ресурсов. Кроме того, необходимо зарегистрировать соответствующие поставщики ресурсов. Для любых операций, в которых задействованы ключ активации и учетные данные, также требуются разрешения на Azure Active Directory API Graph. Они описаны в следующих разделах.
 
 ### <a name="manage-microsoft-graph-api-permissions"></a>Управление разрешениями API Microsoft Graph
 
-При создании ключа активации для Azure Stack пограничной устройства или выполнения любых операций, требующих учетных данных, необходимы разрешения для Microsoft Graph API. Операции, которым требуются учетные данные, могут быть:
+При создании ключа активации для устройства Azure Stack пограничной Pro или выполнения любых операций, требующих учетных данных, необходимы разрешения для Microsoft Graph API. Операции, которым требуются учетные данные, могут быть:
 
 -  Создание общего ресурса с соответствующей учетной записью хранения.
 -  Создание пользователя, который имеет доступ к общим папкам на устройстве.
 
-У вас должен `User` быть доступ к Active Directory клиенту, как вам нужно `Read all directory objects` . Вы не можете быть гостевым пользователем, так как у него нет разрешений на доступ к `Read all directory objects` . Если вы являетесь гостевым компьютером, то такие операции, как создание ключа активации, создание общей папки на Azure Stack пограничном устройстве, создание пользователя завершится сбоем.
+У вас должен `User` быть доступ к Active Directory клиенту, как вам нужно `Read all directory objects` . Вы не можете быть гостевым пользователем, так как у него нет разрешений на доступ к `Read all directory objects` . Если вы являетесь гостевым компьютером, то операции, такие как создание ключа активации, создание общей папки на устройстве Azure Stack пограничным Pro, создание пользователя завершится сбоем.
 
 Дополнительные сведения о том, как предоставить пользователям доступ к Microsoft Graph API, см. в разделе [Справочник по разрешениям Microsoft Graph](https://docs.microsoft.com/graph/permissions-reference).
 
@@ -89,7 +89,7 @@ ms.locfileid: "84339218"
 Get-AzResourceProvider -ListAvailable |where {$_.Registrationstate -eq "Registered"}
 ```
 
-Для устройства Azure Stack пограничных устройств `Microsoft.DataBoxEdge` необходимо зарегистрировать. Для регистрации `Microsoft.DataBoxEdge` Администратор подписки должен выполнить следующую команду:
+Для устройства Azure Stack пограничной Pro `Microsoft.DataBoxEdge` должно быть зарегистрировано. Для регистрации `Microsoft.DataBoxEdge` Администратор подписки должен выполнить следующую команду:
 
 ```PowerShell
 Register-AzResourceProvider -ProviderNamespace Microsoft.DataBoxEdge

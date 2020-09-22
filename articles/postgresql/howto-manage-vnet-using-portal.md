@@ -6,12 +6,12 @@ ms.author: raagyema
 ms.service: postgresql
 ms.topic: how-to
 ms.date: 5/6/2019
-ms.openlocfilehash: 5682213780f6b5c1bbbc02dfa947c48a4d2707de
-ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
+ms.openlocfilehash: 87f8c298345bb1d427163758974948bd8a841e2c
+ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86112465"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90882045"
 ---
 # <a name="create-and-manage-vnet-service-endpoints-and-vnet-rules-in-azure-database-for-postgresql---single-server-by-using-the-azure-portal"></a>Создание конечных точек службы виртуальной сети и правил виртуальной сети в базе данных Azure для PostgreSQL-Single Server и управление ими с помощью портал Azure
 Правила и конечные точки служб виртуальной сети расширяют частное адресное пространство виртуальной сети на сервер базы данных Azure для PostgreSQL. Общие сведения о конечных точках службы виртуальной сети базы данных Azure для PostgreSQL, включая ограничения, см. в [этой статье](concepts-data-access-and-security-vnet.md). Конечные точки службы виртуальной сети доступны во всех поддерживаемых регионах базы данных Azure для PostgreSQL.
@@ -32,11 +32,11 @@ ms.locfileid: "86112465"
 
 3. Затем щелкните **+ Добавляется существующая виртуальная сеть**. Если у вас нет виртуальной сети, щелкните **+ Создать виртуальную сеть** для ее создания. Дополнительные сведения см. в статье [Краткое руководство. Создание виртуальной сети с помощью портала Azure](../virtual-network/quick-create-portal.md).
 
-   ![Портал Azure: выбор пункта "Безопасность подключения"](./media/howto-manage-vnet-using-portal/1-connection-security.png)
+   :::image type="content" source="./media/howto-manage-vnet-using-portal/1-connection-security.png" alt-text="портал Azure безопасность подключения":::
 
 4. Введите имя правила виртуальной сети, выберите подписку, виртуальную сеть и имя подсети, а затем нажмите кнопку **Включить**. Это автоматически включает конечные точки службы виртуальной сети в подсети с использованием тега службы **Microsoft.SQL**.
 
-   ![Портал Azure. Настройка виртуальной сети](./media/howto-manage-vnet-using-portal/2-configure-vnet.png)
+   :::image type="content" source="./media/howto-manage-vnet-using-portal/2-configure-vnet.png" alt-text="Портал Azure. Настройка виртуальной сети":::
 
     Учетная запись должна предоставлять необходимые разрешения для создания виртуальной сети и конечной точки службы.
 
@@ -54,7 +54,7 @@ ms.locfileid: "86112465"
 
 5. Затем нажмите кнопку **ОК**, и вы увидите, что конечные точки службы виртуальной сети включены вместе с правилом виртуальной сети.
 
-   ![Включенные конечные точки службы виртуальной сети и созданное правило виртуальной сети](./media/howto-manage-vnet-using-portal/3-vnet-service-endpoints-enabled-vnet-rule-created.png)
+   :::image type="content" source="./media/howto-manage-vnet-using-portal/3-vnet-service-endpoints-enabled-vnet-rule-created.png" alt-text="Включенные конечные точки службы виртуальной сети и созданное правило виртуальной сети":::
 
 ## <a name="next-steps"></a>Дальнейшие действия
 - Аналогичным образом можно создать сценарий для [включения конечных точек службы виртуальной сети и создания правила виртуальной сети для базы данных Azure для PostgreSQL с помощью Azure CLI](howto-manage-vnet-using-cli.md).
