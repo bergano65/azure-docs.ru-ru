@@ -1,6 +1,6 @@
 ---
-title: Настройка репликации в SQL Azure для пограничных вычислений (предварительная версия)
-description: Узнайте, как настроить репликацию в Azure SQL (Предварительная версия).
+title: Настройка репликации на границе Azure SQL
+description: Узнайте, как настроить репликацию в Azure SQL.
 keywords: ''
 services: sql-edge
 ms.service: sql-edge
@@ -9,14 +9,14 @@ author: SQLSourabh
 ms.author: sourabha
 ms.reviewer: sstein
 ms.date: 05/19/2020
-ms.openlocfilehash: ad92f796205d84a372de610cb210bbf8878a6c9b
-ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
+ms.openlocfilehash: a748bf977e76357c710518e608c12ad19a8cd0be
+ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87282778"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90888415"
 ---
-# <a name="configure-replication-to-azure-sql-edge-preview"></a>Настройка репликации в SQL Azure для пограничных вычислений (предварительная версия) 
+# <a name="configure-replication-to-azure-sql-edge"></a>Настройка репликации на границе Azure SQL 
 
 Вы можете настроить экземпляр Azure SQL Server в качестве извещающего подписчика для односторонней репликации транзакций или репликации моментальных снимков. Этот экземпляр не может действовать в качестве издателя или распространителя для конфигурации репликации транзакций. Обратите внимание, что Azure SQL ребро не поддерживает репликацию слиянием, одноранговую репликацию или публикацию Oracle.
 

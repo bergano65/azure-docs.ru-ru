@@ -1,13 +1,13 @@
 ---
-ms.openlocfilehash: 97c21ca300ee070b2cebaa01a585c1618899b1eb
-ms.sourcegitcommit: 56cbd6d97cb52e61ceb6d3894abe1977713354d9
+ms.openlocfilehash: fa0c2f5bb00122b40fb4f4ea06b7cf55c0248904
+ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/20/2020
-ms.locfileid: "88687354"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "91025066"
 ---
 
-![Обзор](../../../media/quickstarts/overview-grpc.png)
+![Обзор](../../../media/quickstarts/gRPC-extension.svg)
 
 На схеме показан порядок передачи сигналов в этом кратком руководстве. [Пограничный модуль](https://github.com/Azure/live-video-analytics/tree/master/utilities/rtspsim-live555) имитирует IP-камеру, на которой находится RTSP-сервер. Узел [RTSP-источника](../../../media-graph-concept.md#rtsp-source) получает видеосигнал с этого сервера и передает видеокадры на узел [обработчика обнаружения движения](../../../media-graph-concept.md#motion-detection-processor). Этот процессор определяет движение и при обнаружении отправляет видеокадры в узел [процессора расширения gRPC](../../../media-graph-concept.md#grpc-extension-processor).
 

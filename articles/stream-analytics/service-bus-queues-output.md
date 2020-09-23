@@ -7,12 +7,12 @@ ms.reviewer: mamccrea
 ms.service: stream-analytics
 ms.topic: conceptual
 ms.date: 08/25/2020
-ms.openlocfilehash: aa9ec5454935816e733c1607e006ba1c30476cac
-ms.sourcegitcommit: 927dd0e3d44d48b413b446384214f4661f33db04
+ms.openlocfilehash: ba4b8f1d3aaa9b06f3bc24e9e267f6778734152a
+ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88875894"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90903746"
 ---
 # <a name="service-bus-queues-output-from-azure-stream-analytics"></a>Выходные данные очередей служебной шины из Azure Stream Analytics
 
@@ -54,9 +54,9 @@ ms.locfileid: "88875894"
 
 ## <a name="system-properties"></a>Свойства системы
 
-Столбцы запросов можно присоединять как [системные свойства](https://docs.microsoft.com/dotnet/api/microsoft.servicebus.messaging.brokeredmessage?view=azure-dotnet#properties) к исходящим сообщениям очереди или раздела служебной шины.
+Столбцы запросов можно присоединять как [системные свойства](https://docs.microsoft.com/dotnet/api/microsoft.servicebus.messaging.brokeredmessage?view=azure-dotnet#properties&preserve-view=true) к исходящим сообщениям очереди или раздела служебной шины.
 
-Эти столбцы не попадают в полезные данные, а соответствующее [системное свойство](https://docs.microsoft.com/dotnet/api/microsoft.servicebus.messaging.brokeredmessage?view=azure-dotnet#properties) BrokeredMessage заполняется значениями столбцов запроса.
+Эти столбцы не попадают в полезные данные, а соответствующее [системное свойство](https://docs.microsoft.com/dotnet/api/microsoft.servicebus.messaging.brokeredmessage?view=azure-dotnet#properties&preserve-view=true) BrokeredMessage заполняется значениями столбцов запроса.
 Эти системные свойства поддерживаются — `MessageId, ContentType, Label, PartitionKey, ReplyTo, SessionId, CorrelationId, To, ForcePersistence, TimeToLive, ScheduledEnqueueTimeUtc`.
 
 Строковые значения этих столбцов анализируются как соответствующие типы значений системных свойств, а все ошибки синтаксического анализа обрабатываются как ошибки данных.
@@ -83,4 +83,4 @@ ms.locfileid: "88875894"
 * [Краткое руководство. Создание задания Azure Stream Analytics с помощью шаблона ARM](quick-create-azure-resource-manager.md)
 * [Краткое руководство. Создание задания Stream Analytics с помощью Azure PowerShell](stream-analytics-quick-create-powershell.md)
 * [Краткое руководство. Создание задания Azure Stream Analytics с помощью Visual Studio](stream-analytics-quick-create-vs.md)
-* [Краткое руководство. Создание задания Azure Stream Analytics в Visual Studio Code](quick-create-vs-code.md)
+* [Краткое руководство. Создание задания Azure Stream Analytics в Visual Studio Code](quick-create-visual-studio-code.md)

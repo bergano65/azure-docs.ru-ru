@@ -1,6 +1,6 @@
 ---
-title: CREATE EXTERNAL STREAM (Transact-SQL) в SQL Azure для пограничных вычислений (предварительная версия)
-description: Сведения об инструкции CREATE EXTERNAL STREAM в SQL Azure для пограничных вычислений (предварительная версия)
+title: Создание внешнего потока (Transact-SQL) — Azure SQL ребро
+description: Сведения о инструкции CREATE EXTERNAL STREAM в Azure SQL ребро
 keywords: ''
 services: sql-edge
 ms.service: sql-edge
@@ -9,12 +9,12 @@ author: SQLSourabh
 ms.author: sourabha
 ms.reviewer: sstein
 ms.date: 07/27/2020
-ms.openlocfilehash: 17783662ba91f227a7b0bf69203bf21dd8342277
-ms.sourcegitcommit: de2750163a601aae0c28506ba32be067e0068c0c
+ms.openlocfilehash: e28ce4cd46cb802241e02e4060441747389d3989
+ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/04/2020
-ms.locfileid: "89489550"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90888162"
 ---
 # <a name="create-external-stream-transact-sql"></a>CREATE EXTERNAL STREAM (Transact-SQL)
 
@@ -100,7 +100,7 @@ WITH  ( <with_options> )
    - Для расположения объекта потока хранилища BLOB-объектов Azure ссылается на шаблон пути, используемый внутри контейнера больших двоичных объектов. Дополнительные сведения об этой функции см. в статье (/артиклес/стреам-Аналитикс/стреам-Аналитикс-дефине-аутпутс.МД # Blob-Storage-and-Azure-Data-Lake-Gen2).
 
 - **INPUT_OPTIONS**: укажите параметры в виде пар "ключ-значение" для таких служб, как Kafka, IOT Edge концентратора, которые являются входными для потоковых запросов.
-    - СЕКЦИИ: количество секций, определенных для раздела.
+    - PARTITIONs: количество секций, определенных для раздела. Максимальное число секций, которое можно использовать, ограничено 32.
       - Применяется к входным потокам Kafka
     - CONSUMER_GROUP. Концентратор событий и центры Интернета вещей ограничивают число читателей в одной группе потребителей (до пяти). Если оставить это поле пустым, будет использоваться группа потребителей $Default.
       - Зарезервировано для использования в будущем. Не применяется к Azure SQL Server.  
@@ -247,6 +247,5 @@ WITH
 
 ## <a name="see-also"></a>См. также раздел
 
-- [ALTER EXTERNAL STREAM (Transact-SQL)](alter-external-stream-transact-sql.md) 
 - [DROP EXTERNAL STREAM (Transact-SQL)](drop-external-stream-transact-sql.md) 
 

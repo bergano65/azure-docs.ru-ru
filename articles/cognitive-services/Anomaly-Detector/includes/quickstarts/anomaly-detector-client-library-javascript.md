@@ -6,24 +6,25 @@ author: aahill
 manager: nitinme
 ms.service: cognitive-services
 ms.topic: include
-ms.date: 06/30/2020
+ms.date: 09/10/2020
 ms.author: aahi
 ms.custom: devx-track-javascript
-ms.openlocfilehash: 836582003c4b4bd47d2b90b845ae414210d16edd
-ms.sourcegitcommit: c293217e2d829b752771dab52b96529a5442a190
+ms.openlocfilehash: 4a4b6d02845c9767b7ab668dd172da38150fc89e
+ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/15/2020
-ms.locfileid: "88246418"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "91025200"
 ---
 Приступите к работе с клиентской библиотекой Детектора аномалий для JavaScript. Выполните приведенные здесь действия, чтобы установить пакет и протестировать пример кода для выполнения базовых задач. Служба Детектора аномалий позволяет находить аномалии в данных временных рядов, автоматически применяя для них наиболее подходящие модели, независимо от отрасли, сценария или объема данных.
 
 Клиентскую библиотеку Детектора аномалий для JavaScript можно использовать для таких задач:
 
-* Обнаружение аномалий в наборе данных временного ряда с использованием пакетного запроса.
+* обнаружение аномалий в наборе данных временных рядов с использованием пакетного запроса;
 * Обнаружение состояния аномалии последней точки данных во временном ряду.
+* обнаружение точек изменения тенденций в наборе данных.
 
-[Справочная документация](https://docs.microsoft.com/javascript/api/@azure/cognitiveservices-anomalydetector/?view=azure-node-latest) | [Исходный код библиотеки](https://github.com/Azure/azure-sdk-for-net/tree/master/sdk/cognitiveservices/AnomalyDetector) | [Пакет (npm)](https://www.npmjs.com/package/@azure/cognitiveservices-anomalydetector) | [Поиск кода на GitHub](https://github.com/Azure-Samples/cognitive-services-quickstart-code/tree/master/javascript/AnomalyDetector)
+[Справочная документация по библиотеке](https://go.microsoft.com/fwlink/?linkid=2090788) | [Исходный код библиотеки](https://github.com/Azure/azure-sdk-for-net/tree/master/sdk/cognitiveservices/AnomalyDetector) | [Пакет (npm)](https://www.npmjs.com/package/%40azure/ai-anomaly-detector) | [Поиск кода на GitHub](https://github.com/Azure-Samples/cognitive-services-quickstart-code/tree/master/javascript/AnomalyDetector)
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -64,18 +65,18 @@ npm init
 Установите пакеты NPM `ms-rest-azure` и `azure-cognitiveservices-anomalydetector`. В этом кратком руководстве также используется библиотека анализа CSV-файла:
 
 ```console
-npm install  @azure/cognitiveservices-anomalydetector @azure/ms-rest-js csv-parse
+npm install @azure/ai-anomaly-detector @azure/ms-rest-js csv-parse
 ```
 
 Файл `package.json` этого приложения будет дополнен зависимостями.
 
 ## <a name="object-model"></a>Объектная модель
 
-Клиент Детектора аномалий — это объект [AnomalyDetectorClient](https://docs.microsoft.com/javascript/api/@azure/cognitiveservices-anomalydetector/anomalydetectorclient?view=azure-node-latest), который выполняет проверку подлинности в Azure с помощью вашего ключа. Клиент предоставляет два метода обнаружения аномалий: [entireDetect()](https://docs.microsoft.com/javascript/api/@azure/cognitiveservices-anomalydetector/anomalydetectorclient?view=azure-node-latest#entiredetect-request--servicecallback-entiredetectresponse--) для всего набора данных и [LastDetect()](https://docs.microsoft.com/javascript/api/@azure/cognitiveservices-anomalydetector/anomalydetectorclient?view=azure-node-latest#lastdetect-request--msrest-requestoptionsbase-) для последней точки данных. 
+Клиент Детектора аномалий — это объект [AnomalyDetectorClient](https://docs.microsoft.com/javascript/api/@azure/cognitiveservices-anomalydetector/anomalydetectorclient?view=azure-node-latest), который выполняет проверку подлинности в Azure с помощью вашего ключа. Клиент может выполнять обнаружение аномалий с использованием [entireDetect()](https://docs.microsoft.com/javascript/api/@azure/cognitiveservices-anomalydetector/anomalydetectorclient?view=azure-node-latest#entiredetect-request--servicecallback-entiredetectresponse--) для всего набора данных и [LastDetect()](https://docs.microsoft.com/javascript/api/@azure/cognitiveservices-anomalydetector/anomalydetectorclient?view=azure-node-latest#lastdetect-request--msrest-requestoptionsbase-) для последней точки данных. Метод [ChangePointDetectAsync](https://go.microsoft.com/fwlink/?linkid=2090788) обнаруживает точки, которые отмечают изменения тенденции. 
 
 Данные временного ряда отправляются в виде ряда [точек](https://docs.microsoft.com/javascript/api/@azure/cognitiveservices-anomalydetector/point?view=azure-node-latest) в объекте [запроса](https://docs.microsoft.com/javascript/api/@azure/cognitiveservices-anomalydetector/request?view=azure-node-latest). Объект `Request` содержит свойства для описания данных (например, [степень детализации](https://docs.microsoft.com/javascript/api/@azure/cognitiveservices-anomalydetector/request?view=azure-node-latest#granularity)) и параметры для обнаружения аномалий. 
 
-Ответ Детектора аномалий является объектом [EntireDetectResponse](https://docs.microsoft.com/javascript/api/@azure/cognitiveservices-anomalydetector/lastdetectresponse?view=azure-node-latest) или [LastDetectResponse](https://docs.microsoft.com/javascript/api/@azure/cognitiveservices-anomalydetector/entiredetectresponse?view=azure-node-latest) (в зависимости от используемого метода). 
+Ответ Детектора аномалий — это объект [LastDetectResponse](https://docs.microsoft.com/javascript/api/@azure/cognitiveservices-anomalydetector/lastdetectresponse?view=azure-node-latest), [EntireDetectResponse](https://docs.microsoft.com/javascript/api/@azure/cognitiveservices-anomalydetector/entiredetectresponse?view=azure-node-latest) или [ChangePointDetectResponse](https://go.microsoft.com/fwlink/?linkid=2090788) (в зависимости от используемого метода). 
 
 ## <a name="code-examples"></a>Примеры кода 
 
@@ -85,6 +86,7 @@ npm install  @azure/cognitiveservices-anomalydetector @azure/ms-rest-js csv-pars
 * [загрузка набора данных временного ряда из файла](#load-time-series-data-from-a-file);
 * [обнаружение аномалий во всем наборе данных](#detect-anomalies-in-the-entire-data-set); 
 * [обнаружение состояния аномалии последней точки данных](#detect-the-anomaly-status-of-the-latest-data-point).
+* [Обнаружение точек изменения в наборе данных](#detect-change-points-in-the-data-set)
 
 ## <a name="authenticate-the-client"></a>Аутентификация клиента
 
@@ -116,6 +118,12 @@ npm install  @azure/cognitiveservices-anomalydetector @azure/ms-rest-js csv-pars
 Вызовите API Детектора аномалий, чтобы определить, является ли последняя точка данных аномальной, с помощью метода [lastDetect()](https://docs.microsoft.com/javascript/api/@azure/cognitiveservices-anomalydetector/anomalydetectorclient?view=azure-node-latest#lastdetect-request--msrest-requestoptionsbase-) клиента и сохраните возвращенный объект [LastDetectResponse](https://docs.microsoft.com/javascript/api/@azure/cognitiveservices-anomalydetector/lastdetectresponse?view=azure-node-latest). Значение `isAnomaly` в ответе представляет собой логическое значение, указывающее состояние аномалий этой точки.  
 
 [!code-javascript[Last point detection function](~/cognitive-services-quickstart-code/javascript/AnomalyDetector/anomaly_detector_quickstart.js?name=lastDetection)]
+
+## <a name="detect-change-points-in-the-data-set"></a>Обнаружение точек изменения в наборе данных
+
+Вызовите API для обнаружения точек изменения во временном ряде с помощью метода [detectChangePoint()](https://go.microsoft.com/fwlink/?linkid=2090788) клиента. Сохраните полученный объект [ChangePointDetectResponse](https://go.microsoft.com/fwlink/?linkid=2090788). Выполните итерацию списка ответов `isChangePoint` и выведите индексы любых значений `true`. Эти значения соответствуют индексам точек изменения тенденции, если они были обнаружены.
+
+[!code-javascript[detect change points](~/cognitive-services-quickstart-code/javascript/AnomalyDetector/anomaly_detector_quickstart.js?name=changePointDetection)]
 
 ## <a name="run-the-application"></a>Выполнение приложения
 

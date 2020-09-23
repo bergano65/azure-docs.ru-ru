@@ -3,16 +3,16 @@ title: Политики и условия коммерческого рынка,
 description: Политики и условия коммерческого рынка Майкрософт применяются ко всем издателям и предложениям в Azure Marketplace.
 ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
-ms.topic: reference
+ms.topic: conceptual
 author: vikrambmsft
 ms.author: vikramb
 ms.date: 09/09/2020
-ms.openlocfilehash: cd936307eaacc7b2a46bac23c8fcfc9e2769135c
-ms.sourcegitcommit: 3c66bfd9c36cd204c299ed43b67de0ec08a7b968
+ms.openlocfilehash: 4ddf37d5f2e7f569e5447dfe321574e3f9ccc778
+ms.sourcegitcommit: bdd5c76457b0f0504f4f679a316b959dcfabf1ef
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "90006726"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90974853"
 ---
 # <a name="commercial-marketplace-policies-and-terms"></a>Политики и условия коммерческой платформы
 
@@ -25,12 +25,11 @@ ms.locfileid: "90006726"
 
 ## <a name="policies-and-terms"></a>Политики и условия
 
-* [Commercial marketplace certification policies](https://docs.microsoft.com/legal/marketplace/certification-policies) (Политики сертификации коммерческой платформы Marketplace)
+- [Commercial marketplace certification policies](/legal/marketplace/certification-policies?context=/azure/marketplace/context/context) (Политики сертификации коммерческой платформы Marketplace)
+- [Microsoft AppSource и политики проверки Azure Marketplace](/legal/marketplace/rating-review-policies?context=/azure/marketplace/context/context)
+- [Политики участия в Azure Marketplace](/legal/marketplace/participation-policy?context=/azure/marketplace/context/context)
+- [Условия Azure Marketplace](/legal/marketplace/terms?context=/azure/marketplace/context/context)
 
-* [Политики оценки и проверки](https://docs.microsoft.com/legal/marketplace/rating-review-policies)
+## <a name="next-step"></a>Дальнейшие действия
 
-* [Условия Azure Marketplace](https://docs.microsoft.com/legal/marketplace/terms)
-
-## <a name="next-step"></a>Следующий шаг
-
-Посетите страницу с [руководством по публикации коммерческого рынка](./marketplace-publishers-guide.md) .
+Посетите страницу с [руководством по публикации коммерческого рынка](marketplace-publishers-guide.md) .

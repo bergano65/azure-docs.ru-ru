@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 08/23/2019
-ms.openlocfilehash: c0f31ddb0e0aeabff06d14d40d254c2577b38b5c
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: ffe3d457d4827250418c9c2d838df35c11e01af7
+ms.sourcegitcommit: bdd5c76457b0f0504f4f679a316b959dcfabf1ef
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84906808"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90974704"
 ---
 # <a name="create-custom-fields-in-a-log-analytics-workspace-in-azure-monitor-preview"></a>Создание настраиваемых полей в рабочей области Log Analytics в Azure Monitor (Предварительная версия)
 
@@ -23,7 +23,7 @@ ms.locfileid: "84906808"
 
 Функция **настраиваемых полей** Azure Monitor позволяет расширять существующие записи в рабочей области log Analytics, добавляя собственные поля с возможностью поиска.  Настраиваемые поля автоматически заполняются на основе данных, извлеченных из других свойств в той же записи.
 
-![Обзор](media/custom-fields/overview.png)
+![На схеме показана исходная запись, связанная с измененной записью в Log Analytics рабочей области со парами значений свойств, добавленными к исходному свойству в измененной записи.](media/custom-fields/overview.png)
 
 Так, в примере записи ниже полезные данные содержатся в описании события. Извлечение этих данных в отдельное свойство делает их доступными для таких действий, как сортировка и фильтрация.
 
@@ -81,7 +81,7 @@ ms.locfileid: "84906808"
 
 Мы введем запрос, как на снимке экрана ниже, для возврата всех событий, созданных диспетчером служб, с идентификатором 7036, т. е. событий запуска или остановки службы.
 
-![Запрос](media/custom-fields/query.png)
+![На снимке экрана показан запрос для источника и идентификатора события.](media/custom-fields/query.png)
 
 Затем мы выбираем и развернув любую запись с ИДЕНТИФИКАТОРом события 7036.
 
@@ -127,7 +127,7 @@ ms.locfileid: "84906808"
 
 ![Группировка по запросу](media/custom-fields/query-group.png)
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 * Сведения о [запросах журнала](../log-query/log-query-overview.md) для построения запросов с помощью настраиваемых полей для критериев.
 * Отслеживайте [пользовательские файлы журналов](data-sources-custom-logs.md), которые можно анализировать с помощью настраиваемых полей.
 

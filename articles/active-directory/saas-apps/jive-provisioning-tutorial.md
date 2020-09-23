@@ -10,12 +10,12 @@ ms.workload: identity
 ms.topic: article
 ms.date: 01/26/2018
 ms.author: jeedes
-ms.openlocfilehash: fec959ee34f9491b6510390d4b390e652690897e
-ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
+ms.openlocfilehash: 351c7e21bfe59b22f451adddad8fed220c218358
+ms.sourcegitcommit: bdd5c76457b0f0504f4f679a316b959dcfabf1ef
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88547092"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90983126"
 ---
 # <a name="tutorial-configure-jive-for-automatic-user-provisioning"></a>Руководство по настройке Jive для автоматической подготовки пользователей
 
@@ -63,11 +63,11 @@ ms.locfileid: "88547092"
 
 1. Для параметра **Режим подготовки к работе** выберите значение **Automatic** (Автоматически). 
 
-    ![Подготовка](./media/jive-provisioning-tutorial/provisioning.png)
+    ![На снимке экрана показана страница подготовки Jive с режимом подготовки "автоматически" и другими значениями, которые можно задать.](./media/jive-provisioning-tutorial/provisioning.png)
 
 1. В разделе **Учетные данные администратора** укажите следующие параметры конфигурации.
    
-    а. В текстовом поле **Jive Admin User Name** (Имя пользователя администратора Jive) укажите имя учетной записи Jive, которой назначен профиль **System Administrator** (Системный администратор) на сайте Jive.com.
+    a. В текстовом поле **Jive Admin User Name** (Имя пользователя администратора Jive) укажите имя учетной записи Jive, которой назначен профиль **System Administrator** (Системный администратор) на сайте Jive.com.
    
     b. В текстовом поле **Jive Admin Password** (Пароль администратора Jive) введите пароль для этой учетной записи.
    

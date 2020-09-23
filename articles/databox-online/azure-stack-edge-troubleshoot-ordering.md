@@ -1,6 +1,6 @@
 ---
-title: Использование портал Azure для устранения проблем с порядком пограничных Azure Stack | Документация Майкрософт
-description: Описывает, как устранять неполадки, связанные с порядком Azure Stack.
+title: Использование портал Azure для устранения неполадок, связанных с заказами Azure Stack пограничных заказов | Документация Майкрософт
+description: В этой статье описано, как устранять неполадки Azure Stack пограничных проблем в заказах.
 services: databox
 author: alkohli
 ms.service: databox
@@ -8,18 +8,18 @@ ms.subservice: edge
 ms.topic: troubleshooting
 ms.date: 08/11/2020
 ms.author: alkohli
-ms.openlocfilehash: 8c42ee867bdd20de64fa1c603de47b5f1e7bdb39
-ms.sourcegitcommit: 814778c54b59169c5899199aeaa59158ab67cf44
+ms.openlocfilehash: 3087c209b844d691173edbbd8a993c1d0aae319b
+ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/13/2020
-ms.locfileid: "90055951"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90903635"
 ---
-# <a name="troubleshoot-your-azure-stack-edge-ordering-issues"></a>Устранение проблем с порядком пограничных Azure Stack
+# <a name="troubleshoot-your-azure-stack-edge-pro-ordering-issues"></a>Устранение неполадок, связанных с порядком Azure Stack пограничных заказов Pro
 
-В этой статье описывается, как устранять неполадки, связанные с порядком Azure Stack.
+В этой статье описывается, как устранять неполадки Azure Stack пограничных проблем в заказах.
 
-В этом руководстве вы узнаете, как:
+В этом руководстве описано следующее:
 
 > [!div class="checklist"]
 >
@@ -59,7 +59,7 @@ ms.locfileid: "90055951"
 
 ## <a name="microsoftdataboxedge-not-registered-for-subscription"></a>Microsoft. Датабокседже не зарегистрировано для подписки
 
-**Ошибка:** В портал Azure выберите подписку, которая будет использоваться для Azure Stack ребра или Шлюз Data Box и получите следующую ошибку:
+**Ошибка:** В портал Azure выберите подписку, которая будет использоваться для Azure Stack ребра Pro или Шлюз Data Box, и получите следующую ошибку:
 
 *Поставщики ресурсов: Microsoft. датабокседже не зарегистрировано для подписки на подписку &lt; &gt; , и у вас нет разрешений на регистрацию поставщика ресурсов для &lt; &gt; *подписки на имя подписки.
 
@@ -75,4 +75,4 @@ ms.locfileid: "90055951"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-* Узнайте больше о том, как [устранять неполадки Azure Stack пограничных проблем](azure-stack-edge-troubleshoot.md).
+* Узнайте больше о том, как [устранять неполадки Azure Stack пограничных Pro](azure-stack-edge-troubleshoot.md).

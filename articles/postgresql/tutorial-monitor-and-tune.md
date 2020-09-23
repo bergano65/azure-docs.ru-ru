@@ -6,12 +6,12 @@ ms.author: raagyema
 ms.service: postgresql
 ms.topic: tutorial
 ms.date: 5/6/2019
-ms.openlocfilehash: d1958c6ef0f7ed52e939967b5e82886fe1373ed8
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: 05435aae727c84a5f3eb886274f9d286627e399e
+ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "74774743"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90895094"
 ---
 # <a name="tutorial-monitor-and-tune-azure-database-for-postgresql---single-server"></a>Руководство по мониторингу и настройке отдельного сервера Базы данных Azure для PostgreSQL
 
@@ -40,7 +40,7 @@ ms.locfileid: "74774743"
 
 4. Присвойте параметру **pg_qs.query_capture_mode** значение **TOP**, чтобы запустить сбор данных по производительности запросов. Присвойте параметру **pgms_wait_sampling.query_capture_mode** значение **ALL**, чтобы запустить сбор статистики ожидания. Щелкните Save (Сохранить).
    
-   ![Параметры сервера хранилища запросов](./media/tutorial-performance-intelligence/query-store-parameters.png)
+   :::image type="content" source="./media/tutorial-performance-intelligence/query-store-parameters.png" alt-text="Параметры сервера хранилища запросов":::
 
 5. Подождите около 20 минут, пока первый набор данных не сохранится в базе данных **azure_sys**.
 
@@ -52,7 +52,7 @@ ms.locfileid: "74774743"
 
 2. На вкладке **Длительные запросы** отображаются 5 наиболее частых запросов, упорядоченных по средней продолжительности выполнения и объединенных в 15-минутные интервалы. 
    
-   ![Целевая страница анализа производительности запросов](./media/tutorial-performance-intelligence/query-performance-insight-landing-page.png)
+   :::image type="content" source="./media/tutorial-performance-intelligence/query-performance-insight-landing-page.png" alt-text="Целевая страница анализа производительности запросов":::
 
    Дополнительные запросы можно выбрать в раскрывающемся списке **Количество запросов**. При этом цвета, соответствующие тому или иному идентификатору запроса на графике, могут изменяться.
 
@@ -64,7 +64,7 @@ ms.locfileid: "74774743"
 
 6. Откройте вкладку **Статистика ожидания**, чтобы посмотреть визуализации ожидания на сервере.
    
-   ![Статистика ожидания в анализе производительности запросов](./media/tutorial-performance-intelligence/query-performance-insight-wait-statistics.png)
+   :::image type="content" source="./media/tutorial-performance-intelligence/query-performance-insight-wait-statistics.png" alt-text="Статистика ожидания в анализе производительности запросов":::
 
 ### <a name="permissions"></a>Разрешения
 Чтобы просматривать текст запросов в анализе производительности запросов, требуются разрешения **Владельца** или **Участника**. **Модуль чтения** может просматривать графики и таблицы, но не текст запросов.
@@ -75,7 +75,7 @@ ms.locfileid: "74774743"
 
 1. Откройте **рекомендации по повышению производительности** из раздела **Поддержка и устранение неполадок** в строке меню на странице портала Azure для сервера PostgreSQL.
    
-   ![Целевая страница рекомендаций по повышению производительности](./media/tutorial-performance-intelligence/performance-recommendations-landing-page.png)
+   :::image type="content" source="./media/tutorial-performance-intelligence/performance-recommendations-landing-page.png" alt-text="Целевая страница рекомендаций по повышению производительности":::
 
 2. Выберите **Анализ** и базу данных. После этого начнется анализ.
 
@@ -85,7 +85,7 @@ ms.locfileid: "74774743"
 
 5. Рекомендации будут содержать сведения о соответствующей **базе данных**, **таблице**, **столбце** и **размере индекса**.
 
-   ![Результат рекомендаций по производительности](./media/tutorial-performance-intelligence/performance-recommendations-result.png)
+   :::image type="content" source="./media/tutorial-performance-intelligence/performance-recommendations-result.png" alt-text="Результат рекомендаций по производительности":::
 
 6. Чтобы применить рекомендацию, скопируйте текст запроса и выполните его в клиенте по своему выбору.
 

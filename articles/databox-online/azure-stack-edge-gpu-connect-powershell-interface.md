@@ -1,23 +1,23 @@
 ---
-title: Подключение к Microsoft Azure Stack пограничному устройству и управление им с помощью интерфейса Windows PowerShell | Документация Майкрософт
-description: Описывает подключение к Azure Stack границе и управление ей с помощью интерфейса Windows PowerShell.
+title: Подключение к устройству Pro с помощью интерфейса Windows PowerShell и управление им Microsoft Azure Stack Документация Майкрософт
+description: Описывает, как подключиться к Azure Stack пограничному Pro через интерфейс Windows PowerShell и затем управлять им.
 services: databox
 author: alkohli
 ms.service: databox
 ms.subservice: edge
 ms.topic: how-to
-ms.date: 08/28/2020
+ms.date: 09/10/2020
 ms.author: alkohli
-ms.openlocfilehash: b58c38dd0257a65bad6021b6152c14a37f905e0a
-ms.sourcegitcommit: 4a7a4af09f881f38fcb4875d89881e4b808b369b
+ms.openlocfilehash: b0c2b547391efd37fc667b84548d99f1e7385cfb
+ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/04/2020
-ms.locfileid: "89461839"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90903526"
 ---
-# <a name="manage-an-azure-stack-edge-gpu-device-via-windows-powershell"></a>Управление устройством GPU Azure Stack ребра с помощью Windows PowerShell
+# <a name="manage-an-azure-stack-edge-pro-gpu-device-via-windows-powershell"></a>Управление устройством GPU Azure Stack с помощью Windows PowerShell
 
-Azure Stack пограничных решений позволяет обрабатывать данные и передавать их по сети в Azure. В этой статье описываются некоторые задачи по настройке и управлению для устройства Azure Stack. Для управления устройством можно использовать портал Azure, локальный веб-интерфейс или интерфейс Windows PowerShell.
+Azure Stack пограничных решений Pro позволяет обрабатывать данные и передавать их по сети в Azure. В этой статье описываются некоторые задачи по настройке и управлению для устройства на Azure Stack пограничной Pro. Для управления устройством можно использовать портал Azure, локальный веб-интерфейс или интерфейс Windows PowerShell.
 
 В этой статье рассматриваются способы подключения к интерфейсу PowerShell устройства и задачи, которые можно выполнять с помощью этого интерфейса. 
 
@@ -84,11 +84,11 @@ For more information on certificates, go to [Azure IoT Edge certificates](https:
 
 ## <a name="enable-multi-process-service-mps"></a>Включение многопроцессной службы (MPS)
 
-Многопроцессная служба (MPS) на видеопроцессорах NVIDIA предоставляет механизм, в котором графические процессоры могут совместно использоваться несколькими заданиями, в которых каждому заданию выделяется некоторый процент ресурсов GPU. Чтобы включить MPS на Azure Stack пограничном устройстве, выполните следующие действия.
+Многопроцессная служба (MPS) на видеопроцессорах NVIDIA предоставляет механизм, в котором графические процессоры могут совместно использоваться несколькими заданиями, в которых каждому заданию выделяется некоторый процент ресурсов GPU. MPS — это предварительная версия функции на устройстве с Azure Stack ребра Pro GPU. Чтобы включить MPS на устройстве, выполните следующие действия.
 
 1. Прежде чем начать, убедитесь, что 
 
-    1. Вы настроили и [активировали устройство Azure Stack погранично](azure-stack-edge-gpu-deploy-activate.md) с помощью Azure Stackного ресурса шлюз Data Box в Azure.
+    1. Вы настроили и [активировали устройство Azure Stack пограничной Pro](azure-stack-edge-gpu-deploy-activate.md) с помощью Azure Stackного ресурса pro/шлюз Data Box в Azure.
     1. Вы [настроили вычисление на этом устройстве в портал Azure](azure-stack-edge-deploy-configure-compute.md#configure-compute).
     
 1. [Подключитесь к интерфейсу PowerShell](#connect-to-the-powershell-interface).
@@ -187,7 +187,7 @@ users:
 ```
 -->
 
-На Azure Stack пограничном устройстве с настроенной ролью вычислений можно устранить неполадки и отслеживать устройство с помощью двух разных наборов команд.
+На устройстве Azure Stack пограничной Pro с настроенной ролью вычислений можно устранить неполадки и отслеживать устройство с помощью двух разных наборов команд.
 
 - Использование `iotedge` команд. Эти команды доступны для основных операций с устройством.
 - Использование `kubectl` команд. Эти команды доступны для обширного набора операций с устройством.
@@ -241,7 +241,7 @@ webserverapp           Running Up 10 days  nginx:stable                         
 
 ### <a name="use-kubectl-commands"></a>Использование команд kubectl
 
-На Azure Stack пограничном устройстве с настроенной ролью вычислений `kubectl` доступны все команды для мониторинга и устранения неполадок модулей. Чтобы просмотреть список доступных команд, выполните `kubectl --help` команду из командного окна.
+На устройстве Azure Stack пограничной Pro с настроенной ролью вычислений `kubectl` доступны все команды для мониторинга и устранения неполадок модулей. Чтобы просмотреть список доступных команд, выполните `kubectl --help` команду из командного окна.
 
 ```PowerShell
 C:\Users\myuser>kubectl --help
@@ -433,4 +433,4 @@ DEBUG 2020-05-14T20:42:14Z: loop process - 0 events, 0.000s
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- Разверните [Azure Stack Edge](azure-stack-edge-gpu-deploy-prep.md) на портале Azure.
+- Разверните [Azure Stack Edge Pro](azure-stack-edge-gpu-deploy-prep.md) на портале Azure.

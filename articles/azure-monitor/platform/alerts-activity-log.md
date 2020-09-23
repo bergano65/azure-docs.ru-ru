@@ -4,12 +4,12 @@ description: Создавайте оповещения журнала дейст
 ms.topic: conceptual
 ms.subservice: alerts
 ms.date: 06/25/2019
-ms.openlocfilehash: b202e3d47b98c5e395b3a8b525b9b8c0a04c0f76
-ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
+ms.openlocfilehash: 7914f3ee57d014de2f34fca301b587c6297bebe3
+ms.sourcegitcommit: bdd5c76457b0f0504f4f679a316b959dcfabf1ef
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87322420"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90983085"
 ---
 # <a name="create-view-and-manage-activity-log-alerts-by-using-azure-monitor"></a>Создание, просмотр оповещений журнала действий и управление ими с помощью Azure Monitor  
 
@@ -111,7 +111,7 @@ ms.locfileid: "87322420"
 
 1. На портале Azure выберите **Монитор** > **Оповещения**. Выберите **Управление правилами генерации оповещений** в левом верхнем углу окна.
 
-    ![Управление правилами генерации оповещений](media/alerts-activity-log/manage-alert-rules.png)
+    ![На снимке экрана показан журнал действий с выделенным полем поиска.](media/alerts-activity-log/manage-alert-rules.png)
 
     Откроется список доступных правил.
 

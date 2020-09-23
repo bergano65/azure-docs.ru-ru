@@ -2,28 +2,32 @@
 title: Развертывание Live Video Analytics на IoT Edge устройстве в Azure
 description: В этой статье перечислены действия, которые помогут вам развернуть службу Live Video Analytics на устройстве IoT Edge. Это можно сделать, например, при наличии доступа к локальной виртуальной машине Linux и (или) ранее созданной учетной записи служб мультимедиа Azure.
 ms.topic: how-to
-ms.date: 04/27/2020
-ms.openlocfilehash: 30a3bda4069bb8c07d7c9be3fd8a3a2b1171eba2
-ms.sourcegitcommit: 03662d76a816e98cfc85462cbe9705f6890ed638
+ms.date: 09/09/2020
+ms.openlocfilehash: 211dd0d61bbca39c4f4ec2f388d950c4615bb023
+ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90526329"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90887233"
 ---
 # <a name="deploy-live-video-analytics-on-an-iot-edge-device"></a>Развертывание Live Video Analytics на устройстве IoT Edge
 
 В этой статье перечислены действия, которые помогут вам развернуть службу Live Video Analytics на устройстве IoT Edge. Это можно сделать, например, при наличии доступа к локальной виртуальной машине Linux и (или) ранее созданной учетной записи служб мультимедиа Azure.
 
-## <a name="prerequisites"></a>Предварительные условия
+> [!NOTE]
+> Поддержка устройств ARM64 доступна в функции Live Video Analytics на IoT Edge сборках `1.0.4` и более новых версиях.
+> Поддержка для запуска среды выполнения Azure IoT Edge на устройствах ARM64 предоставляется в [общедоступной предварительной версии](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
 
-* Компьютер Linux, который соответствует ограничениям HW/SW для службы Live Video Analytics
+## <a name="prerequisites"></a>Предварительные требования
+
+* Устройство с архитектурой x86-64 или ARM64, работающее под управлением одной из [поддерживаемых операционных систем Linux](https://docs.microsoft.com/azure/iot-edge/support#operating-systems)
 * Подписка Azure, к которой у вас есть [права владельца](../../role-based-access-control/built-in-roles.md#owner)
 * [Создание и настройка центра Интернета вещей](../../iot-hub/iot-hub-create-through-portal.md)
 * [Регистрация IoT Edge устройства](../../iot-edge/how-to-register-device.md)
 * [Установка среды выполнения Azure IoT Edge в системах Linux на основе Debian](../../iot-edge/how-to-install-iot-edge-linux.md)
 * [Создание учетной записи служб мультимедиа Azure](../latest/create-account-howto.md)
 
-    * Используйте один из следующих регионов: Восточная часть США 2, Центральная часть США, северо-центральная часть США, Восточная Япония, Западная часть США 2, Западная Центральная часть США, Восточная Канада, южная часть Соединенного Королевства, Центральная Франция, Южная французская, Северная Швейцария, Западная Швейцария и Западная Япония.
+    * Используйте одну из следующих регионов: Восточная часть США 2, Восточная часть США, Центральная часть US, Северо-центральный регион США, Восточная Япония, Запад США, Западная часть США 2, Западная Центральная часть США, Восточная Канада, южная часть Соединенного Королевства, Центральная Франция, Южная французская, Северная Швейцария, Западная Швейцария и Западная Япония.
     * Рекомендуется использовать учетные записи хранения общего назначения v2 (GPv2).
 
 ## <a name="configuring-azure-resources-for-using-live-video-analytics"></a>Настройка ресурсов Azure для использования функции Live Video Analytics
@@ -81,7 +85,6 @@ sudo chown -R edgeuser /var/media
 
 ## <a name="deploy-live-video-analytics-edge-module"></a>Развернуть модуль Live Video Analytics ребра
 
-<!-- (To JuliaKo: this is similar to https://docs.microsoft.com/azure/iot-edge/how-to-deploy-blob)-->
 Интерактивная аналитика видео на IoT Edge предоставляет свойства двойникаа модуля, описанные в [схеме конфигурации модуля двойника](module-twin-configuration-schema.md). 
 
 ### <a name="deploy-using-the-azure-portal"></a>развертывание с помощью портала Azure;
@@ -247,9 +250,9 @@ sudo chown -R edgeuser /var/media
 
     ![Сообщение о состоянии 200](./media/deploy-iot-edge-device/connection-timeout.png) 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Краткое руководство по началу работы: интерактивная аналитика видео на IOT Edge](get-started-detect-motion-emit-events-quickstart.md#deploy-modules-on-your-edge-device)
 
 > [!TIP]
-> В команде вы выполните команду Далее, используйте `device-id` вместо значения по умолчанию `lva-sample-device` .
+> Если продолжить выполнение приведенного выше краткого руководства, при вызове прямых методов с помощью Visual Studio Code Вы будете использовать устройство, добавленное в центр Интернета вещей, в этой статье, а не по умолчанию `lva-sample-device` .

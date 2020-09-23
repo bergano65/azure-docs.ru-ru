@@ -6,22 +6,22 @@ author: su-jie
 ms.author: sujie
 ms.date: 11/10/2019
 ms.topic: how-to
-ms.openlocfilehash: a47b641f4f5049beb605490122a33d407ac3e222
-ms.sourcegitcommit: e132633b9c3a53b3ead101ea2711570e60d67b83
+ms.openlocfilehash: 0122e67714efb201584a52f1cb763528dbb0b925
+ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "86044368"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90903783"
 ---
 # <a name="test-stream-analytics-queries-locally-with-sample-data-using-visual-studio-code"></a>Локальное тестирование запросов Stream Analytics с использованием примера данных и Visual Studio Code
 
 Вы можете использовать средства Azure Stream Analytics для Visual Studio Code для локального тестирования заданий Stream Analytics с помощью примеров данных. Результаты запроса можно найти в файлах JSON в папке **локалрунаутпутс** проекта.
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 * Установите [пакет SDK для .NET Core](https://dotnet.microsoft.com/download) и перезапустите Visual Studio Code.
 
-* Используйте это [Краткое руководство](quick-create-vs-code.md) , чтобы узнать, как создать задание Stream Analytics с помощью Visual Studio Code.
+* Используйте это [Краткое руководство](quick-create-visual-studio-code.md) , чтобы узнать, как создать задание Stream Analytics с помощью Visual Studio Code.
 
 ## <a name="prepare-sample-data"></a>Подготовка примера данных
 
@@ -31,17 +31,17 @@ ms.locfileid: "86044368"
 
 2. После отображения данных нажмите кнопку **Сохранить как** , чтобы сохранить данные в локальный файл.
 
- ![Просмотр динамических входных данных](./media/quick-create-vs-code/preview-live-input.png)
+ ![Просмотр динамических входных данных](./media/quick-create-visual-studio-code/preview-live-input.png)
 
 ## <a name="define-a-local-input"></a>Определить локальный вход
 
 1. Щелкните **input.js** в разделе Папка входных данных в проекте Stream Analytics. Затем выберите **Добавить локальный вход** в верхней строке.
 
-    ![Добавить локальный вход из проекта](./media/quick-create-vs-code/add-input-from-project.png)
+    ![Добавить локальный вход из проекта](./media/quick-create-visual-studio-code/add-input-from-project.png)
 
     Можно также нажать **клавиши CTRL + SHIFT + P** , чтобы открыть палитру команд и ввести **ASA: Add input**.
 
-   ![Добавление входных данных Stream Analytics в VS Code](./media/quick-create-vs-code/add-input.png)
+   ![Добавление входных данных Stream Analytics в VS Code](./media/quick-create-visual-studio-code/add-input.png)
 
 2. Выберите **локальный вход**.
 
@@ -79,7 +79,7 @@ ms.locfileid: "86044368"
 
 ![Просмотреть результат локального запуска](./media/vscode-local-run/run-locally-result.png)
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Тестирование Azure Stream Analytics заданий локально с входными данными в режиме реального времени с помощью Visual Studio Code](visual-studio-code-local-run-live-input.md)
 

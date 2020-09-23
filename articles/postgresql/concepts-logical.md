@@ -6,12 +6,12 @@ ms.author: raagyema
 ms.service: postgresql
 ms.topic: conceptual
 ms.date: 06/22/2020
-ms.openlocfilehash: 363c003a915763a7ab1165c2e0d8f945bc3dd510
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: bd886bea90c1092e38fac191a60a118aab0bef1f
+ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85213692"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90903886"
 ---
 # <a name="logical-decoding"></a>Логическое декодирование
  
@@ -50,13 +50,13 @@ ms.locfileid: "85213692"
 
 ### <a name="using-azure-portal"></a>Использование портала Azure
 
-1. Задайте для параметра Поддержка репликации Azure значение **логический**. Нажмите кнопку **Сохранить**.
+1. Задайте для параметра Поддержка репликации Azure значение **логический**. Щелкните **Сохранить**.
 
-   ![База данных Azure для PostgreSQL — репликация — поддержка репликации Azure](./media/concepts-logical/replication-support.png)
+   :::image type="content" source="./media/concepts-logical/replication-support.png" alt-text="База данных Azure для PostgreSQL — репликация — поддержка репликации Azure":::
 
 2. Перезапустите сервер, чтобы применить изменение, выбрав **Да**.
 
-   ![База данных Azure для PostgreSQL-Replication-подтверждение перезапуска](./media/concepts-logical/confirm-restart.png)
+   :::image type="content" source="./media/concepts-logical/confirm-restart.png" alt-text="База данных Azure для PostgreSQL-Replication-подтверждение перезапуска":::
 
 
 ## <a name="start-logical-decoding"></a>Начать логическое декодирование
@@ -162,7 +162,7 @@ SELECT pg_drop_replication_slot('test_slot');
 > Если вы перестаете использовать логическое декодирование, измените Azure. replication_support обратно на `replica` или `off` . Сведения о WAL, сохраняемые с помощью, `logical` являются более подробными и должны быть отключены, если не используется логическое декодирование. 
 
  
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Дополнительные [сведения о логическом декодировании](https://www.postgresql.org/docs/current/logicaldecoding-explanation.html)см. в документации по postgres.
 * Если у вас возникли вопросы о логическом декодировании, обратитесь к [нашей команде](mailto:AskAzureDBforPostgreSQL@service.microsoft.com) .
