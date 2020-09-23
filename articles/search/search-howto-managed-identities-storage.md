@@ -1,25 +1,22 @@
 ---
-title: Настройка подключения к учетной записи хранения с использованием управляемого удостоверения (предварительная версия)
+title: Настройка подключения к учетной записи хранения с помощью управляемого удостоверения
 titleSuffix: Azure Cognitive Search
-description: Сведения о том, как настроить подключение индексатора к учетной записи хранения Azure с использованием управляемого удостоверения (предварительная версия)
+description: Узнайте, как настроить подключение индексатора к учетной записи хранения Azure с помощью управляемого удостоверения.
 manager: luisca
 author: markheff
 ms.author: maheff
 ms.devlang: rest-api
 ms.service: cognitive-search
 ms.topic: conceptual
-ms.date: 05/18/2020
-ms.openlocfilehash: 30305607ea291587f7751b7e8048924f995251e9
-ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
+ms.date: 09/22/2020
+ms.openlocfilehash: c1168602ccb527d8ffb3b64d5437a26490b44a21
+ms.sourcegitcommit: bdd5c76457b0f0504f4f679a316b959dcfabf1ef
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88917981"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90971505"
 ---
-# <a name="set-up-a-connection-to-an-azure-storage-account-using-a-managed-identity-preview"></a>Настройка подключения к учетной записи хранения Azure с использованием управляемого удостоверения (предварительная версия)
-
-> [!IMPORTANT] 
-> Поддержка настройки подключения к источнику данных с помощью управляемого удостоверения в настоящее время доступна в общедоступной предварительной версии. Для предварительной версии функции соглашение об уровне обслуживания не предусмотрено. Мы не рекомендуем использовать ее в рабочей среде.
+# <a name="set-up-a-connection-to-an-azure-storage-account-using-a-managed-identity"></a>Настройка подключения к учетной записи хранения Azure с помощью управляемого удостоверения
 
 На этой странице описывается, как настроить подключение индексатора к учетной записи хранения Azure с использованием управляемого удостоверения вместо того, чтобы добавлять учетные данные в строку подключения к объекту источника данных.
 
@@ -68,7 +65,7 @@ ms.locfileid: "88917981"
 
 ### <a name="3---create-the-data-source"></a>3\. Создание источника данных
 
-[REST API](/rest/api/searchservice/create-data-source), портал Azure и [пакет SDK для .NET](/dotnet/api/microsoft.azure.search.models.datasource?view=azure-dotnet) поддерживают строку подключения управляемого удостоверения. Ниже приведен пример создания источника данных для индексации данных из учетной записи хранения с помощью [REST API](/rest/api/searchservice/create-data-source) и строки подключения управляемой идентификации. Формат строки подключения управляемого удостоверения одинаков для REST API, пакета SDK для .NET и портал Azure.
+[REST API](/rest/api/searchservice/create-data-source), портал Azure и [пакет SDK для .NET](/dotnet/api/microsoft.azure.search.models.datasource) поддерживают строку подключения управляемого удостоверения. Ниже приведен пример создания источника данных для индексации данных из учетной записи хранения с помощью [REST API](/rest/api/searchservice/create-data-source) и строки подключения управляемой идентификации. Формат строки подключения управляемого удостоверения одинаков для REST API, пакета SDK для .NET и портал Azure.
 
 Если индексация выполняется по учетной записи хранения, источник данных должен иметь следующие обязательные свойства:
 
@@ -150,6 +147,7 @@ api-key: [admin key]
 ## <a name="see-also"></a>См. также раздел
 
 Дополнительные сведения об индексаторах службы хранилища Azure:
+
 * [Индексатор BLOB-объектов](search-howto-indexing-azure-blob-storage.md)
 * [Индексатор Azure Data Lake Storage 2-го поколения](search-howto-index-azure-data-lake-storage.md)
 * [Индексатор таблиц Azure](search-howto-indexing-azure-tables.md)

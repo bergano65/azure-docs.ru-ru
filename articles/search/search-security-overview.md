@@ -9,12 +9,12 @@ ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 08/01/2020
 ms.custom: references_regions
-ms.openlocfilehash: c9f0f496bfdb31e0c7cb45a07c87ea238d031e34
-ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
+ms.openlocfilehash: 24e631b3ddb25cc8bed20b432ff2ba31fd331f37
+ms.sourcegitcommit: bdd5c76457b0f0504f4f679a316b959dcfabf1ef
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88928774"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90979613"
 ---
 # <a name="security-in-azure-cognitive-search---overview"></a>Безопасность в Azure Когнитивный поиск — обзор
 
@@ -60,7 +60,7 @@ ms.locfileid: "88928774"
 
 В настоящее время в новых службах, созданных в этих регионах после 1 августа, доступно двойное шифрование.
 
-+ Западная часть США 2
++ западная часть США 2
 + Восточная часть США
 + Центрально-южная часть США
 + US Gov (Вирджиния)
@@ -94,7 +94,7 @@ ms.locfileid: "88928774"
 
 Для [настройки входящего доступа](service-configure-firewall.md)можно использовать портал.
 
-Кроме того, можно использовать API-интерфейсы RESTFUL для управления. API версии 2020-03-13 с параметром [ипруле](/rest/api/searchmanagement/2019-10-01-preview/createorupdate-service#IpRule) позволяет ограничить доступ к службе, определив IP-адреса, по отдельности или в пределах диапазона, которым вы хотите предоставить доступ к службе поиска.
+Кроме того, можно использовать API-интерфейсы RESTFUL для управления. Начиная с API версии 2020-03-13 с параметром [ипруле](/rest/api/searchmanagement/services/createorupdate#iprule) можно ограничить доступ к службе, определив IP-адреса, по отдельности или в пределах диапазона, который будет предоставлять доступ к службе поиска.
 
 ### <a name="private-endpoint-no-internet-traffic"></a>Частная конечная точка (без трафика Интернета)
 
@@ -120,10 +120,10 @@ ms.locfileid: "88928774"
 
 Если требуется детальный контроль над результатами поиска, можно создать фильтры безопасности для запросов, возвращая документы, связанные с данным удостоверением безопасности. Вместо предопределенных ролей и назначений ролей управление доступом на основе удостоверений реализуется как *фильтр*, обрезающий результаты поиска документов и содержимого на основе удостоверений. В следующей таблице описаны два подхода к обрезке результатов поиска несанкционированного содержимого.
 
-| Подход | Description |
+| Подход | Описание |
 |----------|-------------|
 |[Security filters for trimming results in Azure Search](search-security-trimming-for-azure-search.md) (Фильтры безопасности для обрезки результатов Поиска Azure)  | Документирует базовый рабочий процесс для реализации управления доступом на основе удостоверений пользователей. Описывает добавление удостоверений безопасности в индекс, а также объясняет фильтрацию этого поля для усечения результатов запрещенного содержимого. |
-|[Security filters for trimming Azure Search results using Active Directory identities](search-security-trimming-for-azure-search-with-aad.md) (Фильтры безопасности для обрезки результатов Поиска Azure с использованием удостоверений Active Directory)  | Эта статья дополняет предыдущую статью, в ней приведены действия для получения удостоверений из Azure Active Directory (AAD), одной из [бесплатных служб](https://azure.microsoft.com/free/) на облачной платформе Azure. |
+|[Security filters for trimming Azure Search results using Active Directory identities](search-security-trimming-for-azure-search-with-aad.md) (Фильтры безопасности для обрезки результатов Поиска Azure с использованием удостоверений Active Directory)  | Эта статья дополняет предыдущую статью, предоставляя действия по извлечению удостоверений из Azure Active Directory (Azure AD), одной из [бесплатных служб](https://azure.microsoft.com/free/) на облачной платформе Azure. |
 
 ## <a name="administrative-rights"></a>Права администратора
 
@@ -144,7 +144,7 @@ ms.locfileid: "88928774"
 
 Для Когнитивный поиск Azure в настоящее время имеется встроенное определение. Он предназначен для ведения журнала диагностики. С помощью этого встроенного средства можно назначить политику, определяющую любую службу поиска, в которой отсутствует Диагностическое протоколирование, а затем включить ее. Дополнительные сведения см. в статье [Управление соответствием нормативным требованиям политики Azure для когнитивный Поиск Azure](security-controls-policy.md).
 
-## <a name="see-also"></a>См. также
+## <a name="see-also"></a>См. также раздел
 
 + [Основы обеспечения безопасности в Azure](../security/fundamentals/index.yml)
 + [Безопасность Azure](https://azure.microsoft.com/overview/security)

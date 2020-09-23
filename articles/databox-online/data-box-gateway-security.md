@@ -8,12 +8,12 @@ ms.subservice: gateway
 ms.topic: article
 ms.date: 08/21/2019
 ms.author: alkohli
-ms.openlocfilehash: 2711160534270f38845ab7b48234f4a441c236b4
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 45506b87bf13b44e035655dbdf0fac03ea50612c
+ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84195868"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90893870"
 ---
 # <a name="azure-data-box-gateway-security-and-data-protection"></a>Шлюз Azure Data Box безопасность и защита данных
 
@@ -38,7 +38,7 @@ ms.locfileid: "84195868"
 
 Устройство Шлюз Data Box — это виртуальное устройство, подготовленное в низкоуровневой оболочке локальной системы, которую вы предоставляете. Устройство помогает отправить данные в Azure. Устройство:
 
-- Требуется ключ активации для доступа к службе Azure Stack ребра/Шлюз Data Box.
+- Требуется ключ активации для доступа к службе Azure Stack ребра Pro/Шлюз Data Box.
 - В любое время защищается паролем устройства.
 <!---  secure boot enabled.
 - Runs Windows Defender Device Guard. Device Guard allows you to run only trusted applications that you define in your code integrity policies.-->
@@ -55,7 +55,7 @@ ms.locfileid: "84195868"
 
 Пароли гарантируют, что только полномочные пользователи могут получить доступ к вашим данным. Шлюз Data Box устройства загружаются в заблокированном состоянии.
 
-Вы можете:
+Можно сделать следующее.
 
 - Подключитесь к локальному веб-ИНТЕРФЕЙСу устройства через браузер, а затем укажите пароль для входа на устройство.
 - Удаленное подключение к интерфейсу PowerShell устройства через HTTP. Удаленное управление включено по умолчанию. Затем можно указать пароль устройства для входа на устройство. Дополнительные сведения см. [в статье удаленное подключение к устройству шлюз Data Box](data-box-gateway-connect-powershell-interface.md#connect-to-the-powershell-interface).
@@ -98,6 +98,6 @@ ms.locfileid: "84195868"
 
 Для получения дополнительных сведений ознакомьтесь с политикой конфиденциальности Майкрософт в [центре управления безопасностью](https://www.microsoft.com/trustcenter).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Развертывание устройства Шлюз Data Box](data-box-gateway-deploy-prep.md)

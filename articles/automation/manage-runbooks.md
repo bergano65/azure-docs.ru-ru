@@ -5,12 +5,12 @@ services: automation
 ms.subservice: process-automation
 ms.date: 06/10/2020
 ms.topic: conceptual
-ms.openlocfilehash: 62b60afb7dc4adb70a0963984ee7848ab056e823
-ms.sourcegitcommit: cee72954f4467096b01ba287d30074751bcb7ff4
+ms.openlocfilehash: 023864e23c0cd23df0de603e76acac651bd2458e
+ms.sourcegitcommit: bdd5c76457b0f0504f4f679a316b959dcfabf1ef
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/30/2020
-ms.locfileid: "87447831"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90987578"
 ---
 # <a name="manage-runbooks-in-azure-automation"></a>Управление модулями runbook в службе автоматизации Azure
 
@@ -293,7 +293,7 @@ Publish-AzAutomationRunbook -AutomationAccountName $automationAccountName `
 
 Щелкните плитку, чтобы открылась страница "Задания", на которой представлен сводный список всех выполненных заданий. На этой странице отображаются сведения о состоянии, имени runbook, времени запуска и времени выполнения каждого задания.
 
-![Страница "Задания" учетной записи службы автоматизации](./media/manage-runbooks/automation-account-jobs-status-blade.png)
+:::image type="content" source="./media/manage-runbooks/automation-account-jobs-status-blade.png" alt-text="Снимок экрана со страницей "задания".":::
 
 Список заданий можно отфильтровать, выбрав **Фильтровать задания**. Отфильтруйте список по определенной последовательности runbook или состоянию задания либо выберите вариант из раскрывающегося списка и укажите диапазон времени для поиска.
 
@@ -301,7 +301,7 @@ Publish-AzAutomationRunbook -AutomationAccountName $automationAccountName `
 
 Кроме того, для просмотра сводных данных о состоянии заданий определенной последовательности runbook можно выбрать ее модуль на странице "Модули Runbook" учетной записи службы автоматизации, а затем выбрать элемент **Задания**. При выполнении этого действия отображается страница "Задания". Здесь можно щелкнуть запись задания, чтобы просмотреть сведения о ней и ее выходные данные.
 
-![Страница "Задания" учетной записи службы автоматизации](./media/manage-runbooks/automation-runbook-job-summary-blade.png)
+:::image type="content" source="./media/manage-runbooks/automation-runbook-job-summary-blade.png" alt-text="Снимок экрана со страницей "задания" с выделенной кнопкой "ошибки".":::
 
 ### <a name="retrieve-job-statuses-using-powershell"></a>Получение данных о состоянии заданий с помощью PowerShell
 

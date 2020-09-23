@@ -3,12 +3,12 @@ title: Автоматизация процессов Application Insights Azure 
 description: Узнайте, как можно быстро автоматизировать повторяющиеся процессы, добавив соединитель Application Insights в приложение логики.
 ms.topic: conceptual
 ms.date: 03/11/2019
-ms.openlocfilehash: d023d774c130a9db513fbcf9452b05fa030a967a
-ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
+ms.openlocfilehash: f6406c2e6fb933c561a8ae54009499768c81a204
+ms.sourcegitcommit: bdd5c76457b0f0504f4f679a316b959dcfabf1ef
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87323202"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90970863"
 ---
 # <a name="automate-application-insights-processes-by-using-logic-apps"></a>Автоматизация процессов Application Insights с помощью Logic Apps
 
@@ -36,7 +36,7 @@ ms.locfileid: "87323202"
 
     ![Окно конструктора приложений логики](./media/automate-with-logic-apps/2logicappdesigner.png)
 
-1. В поле **Interval (интервал** ) введите **1** , а затем — поле**Frequency (периодичность** ) и выберите Day ( **день**).
+1. В поле  **Interval (интервал** ) введите **1** , а затем — поле**Frequency (периодичность** ) и выберите Day ( **день**).
 
     ![Окно "Повторение" в конструкторе приложений логики](./media/automate-with-logic-apps/3recurrence.png)
 
@@ -53,7 +53,7 @@ ms.locfileid: "87323202"
 
 Чтобы выполнить этот шаг, необходим идентификатор приложения и ключ API для ресурса. Их можно получить на портале Azure, как показано ниже.
 
-![Идентификатор приложения на портале Azure](./media/automate-with-logic-apps/5apiaccess.png)
+![На снимке экрана показана страница доступа к API в портал Azure с выбранной кнопкой "создать ключ API".](./media/automate-with-logic-apps/5apiaccess.png)
 
 ![Идентификатор приложения на портале Azure](./media/automate-with-logic-apps/6apikey.png)
 
@@ -95,7 +95,7 @@ ms.locfileid: "87323202"
 
 1. В окне **Отправка сообщения электронной почты** выполните следующие действия:
 
-   а. Введите адрес электронной почты получателя.
+   a. Введите адрес электронной почты получателя.
 
    b. Введите тему сообщения.
 
@@ -103,13 +103,13 @@ ms.locfileid: "87323202"
     
    d. Щелкните раскрывающийся список **Добавить новый параметр** и выберите вложения, а — HTML.
 
-      ![Конфигурация Office 365 Outlook](./media/automate-with-logic-apps/10emailbody.png)
+      ![На снимке экрана показано окно "Отправка сообщения электронной почты" с выделенным полем текста, а также меню динамического содержимого с выделенным текстом в правой части.](./media/automate-with-logic-apps/10emailbody.png)
 
       ![Конфигурация Office 365 Outlook](./media/automate-with-logic-apps/11emailparameter.png)
 
 1. В меню динамического содержимого выполните следующее.
 
-    а. Выберите **Имя вложения**.
+    a. Выберите **Имя вложения**.
 
     b. Выберите **Содержимое вложения**.
     

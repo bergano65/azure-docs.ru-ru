@@ -6,12 +6,12 @@ ms.suite: integration
 ms.reviewer: klam, logicappspm
 ms.topic: article
 ms.date: 07/26/2019
-ms.openlocfilehash: 07fb91f081719a2e51cff45be67bbe9f362123f6
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 4535e6bf11f8c2abf20b1b323925c3fc3299d362
+ms.sourcegitcommit: bdd5c76457b0f0504f4f679a316b959dcfabf1ef
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87066064"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90971780"
 ---
 # <a name="create-azure-resource-manager-templates-to-automate-deployment-for-azure-logic-apps"></a>Создание шаблонов Azure Resource Manager для автоматизации развертываний для Azure Logic Apps
 
@@ -60,14 +60,14 @@ Azure Logic Apps предоставляет [готовый шаблон при�
 
 1. Чтобы самый простой способ установить модуль Логикапптемплате из [коллекция PowerShell](https://www.powershellgallery.com/packages/LogicAppTemplate), выполните следующую команду:
 
-   ```text
-   PS> Install-Module -Name LogicAppTemplate
+   ```powershell
+   Install-Module -Name LogicAppTemplate
    ```
 
    Чтобы выполнить обновление до последней версии, выполните следующую команду:
 
-   ```text
-   PS> Update-Module -Name LogicAppTemplate
+   ```powershell
+   Update-Module -Name LogicAppTemplate
    ```
 
 Или для установки вручную выполните действия, описанные в GitHub для [создателя шаблона приложения логики](https://github.com/jeffhollan/LogicAppTemplateCreator).
@@ -80,28 +80,43 @@ Azure Logic Apps предоставляет [готовый шаблон при�
 
 ### <a name="generate-template-with-powershell"></a>Создание шаблона с помощью PowerShell
 
-Чтобы создать шаблон после установки модуля Логикапптемплате и [Azure CLI](/cli/azure/?view=azure-cli-latest), выполните следующую команду PowerShell:
+Чтобы создать шаблон после установки модуля Логикапптемплате и [Azure CLI](/cli/azure/), выполните следующую команду PowerShell:
 
-```text
-PS> Get-LogicAppTemplate -Token (az account get-access-token | ConvertFrom-Json).accessToken -LogicApp <logic-app-name> -ResourceGroup <Azure-resource-group-name> -SubscriptionId $SubscriptionId -Verbose | Out-File C:\template.json
+```powershell
+$parameters = @{
+    Token = (az account get-access-token | ConvertFrom-Json).accessToken
+    LogicApp = '<logic-app-name>'
+    ResourceGroup = '<Azure-resource-group-name>'
+    SubscriptionId = $SubscriptionId
+    Verbose = $true
+}
+
+Get-LogicAppTemplate @parameters | Out-File C:\template.json
 ```
 
 Чтобы следовать рекомендациям по конвейеру в маркере из [средства клиента Azure Resource Manager](https://github.com/projectkudu/ARMClient), выполните следующую команду, где `$SubscriptionId` — это идентификатор подписки Azure:
 
-```text
-PS> armclient token $SubscriptionId | Get-LogicAppTemplate -LogicApp <logic-app-name> -ResourceGroup <Azure-resource-group-name> -SubscriptionId $SubscriptionId -Verbose | Out-File C:\template.json
+```powershell
+$parameters = @{
+    LogicApp = '<logic-app-name>'
+    ResourceGroup = '<Azure-resource-group-name>'
+    SubscriptionId = $SubscriptionId
+    Verbose = $true
+}
+
+armclient token $SubscriptionId | Get-LogicAppTemplate @parameters | Out-File C:\template.json
 ```
 
 После извлечения можно создать файл параметров из шаблона, выполнив следующую команду:
 
-```text
-PS> Get-ParameterTemplate -TemplateFile $filename | Out-File '<parameters-file-name>.json'
+```powershell
+Get-ParameterTemplate -TemplateFile $filename | Out-File '<parameters-file-name>.json'
 ```
 
 Для извлечения со ссылками Azure Key Vault (только статические) выполните следующую команду:
 
-```text
-PS> Get-ParameterTemplate -TemplateFile $filename -KeyVault Static | Out-File $fileNameParameter
+```powershell
+Get-ParameterTemplate -TemplateFile $filename -KeyVault Static | Out-File $fileNameParameter
 ```
 
 | Параметры | Обязательно | Описание |

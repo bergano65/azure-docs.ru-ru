@@ -1,6 +1,6 @@
 ---
-title: Руководство по подготовке портала Azure и среды центра обработки данных к развертыванию Azure Stack Edge | Документация Майкрософт
-description: Первое руководство по развертыванию Azure Stack Edge включает подготовку портала Azure.
+title: Руководство. Подготовка портала Azure и среды центра обработки данных к развертыванию Azure Stack Edge Pro | Документация Майкрософт
+description: Первое руководство по развертыванию Azure Stack Edge Pro включает подготовку портала Azure.
 services: databox
 author: alkohli
 ms.service: databox
@@ -8,17 +8,17 @@ ms.subservice: edge
 ms.topic: tutorial
 ms.date: 07/22/2020
 ms.author: alkohli
-Customer intent: As an IT admin, I need to understand how to prepare the portal to deploy Azure Stack Edge so I can use it to transfer data to Azure.
-ms.openlocfilehash: c8f64bc81afb941e13dd310a7efd9432639ec281
-ms.sourcegitcommit: 0e8a4671aa3f5a9a54231fea48bcfb432a1e528c
+Customer intent: As an IT admin, I need to understand how to prepare the portal to deploy Azure Stack Edge Pro so I can use it to transfer data to Azure.
+ms.openlocfilehash: 224131d1b17c4ed34ee847638633a5a1a494ccaf
+ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/24/2020
-ms.locfileid: "87131843"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90894132"
 ---
-# <a name="tutorial-prepare-to-deploy-azure-stack-edge"></a>Руководство по подготовке к развертыванию Azure Stack Edge  
+# <a name="tutorial-prepare-to-deploy-azure-stack-edge-pro"></a>Руководство по подготовке к развертыванию Azure Stack Edge Pro  
 
-Это первое руководство из серии руководств по развертыванию, необходимых для полного развертывания Azure Stack Edge. В этом учебнике содержатся сведения о подготовке портала Azure для развертывания ресурса Azure Stack Edge.
+Это первое руководство из серии руководств по развертыванию, необходимых для полного развертывания Azure Stack Edge Pro. В этом учебнике содержатся сведения о подготовке портала Azure для развертывания ресурса Azure Stack Edge.
 
 Чтобы завершить процесс установки и настройки, вам потребуются права администратора. Подготовка портала займет менее 10 минут.
 
@@ -33,21 +33,21 @@ ms.locfileid: "87131843"
 
 ## <a name="get-started"></a>Начало работы
 
-Чтобы развернуть Azure Stack Edge, ознакомьтесь с руководствами, приведенными ниже, в заданной последовательности.
+Чтобы развернуть Azure Stack Edge Pro, ознакомьтесь с приведенными ниже руководствами в указанной последовательности.
 
 | **#** | **Шаг** | **Документы для изучения** |
 | --- | --- | --- | 
-| 1. |**[Руководство по подготовке к развертыванию Azure Stack Edge](azure-stack-edge-deploy-prep.md)** |Создайте и настройте ресурсы Azure Stack Edge, прежде чем устанавливать физическое устройство Azure Stack Box Edge. |
-| 2. |**[Руководство по установке Azure Stack Edge](azure-stack-edge-deploy-install.md)**|Распаковка, установка в стойку и подключение физического устройства Azure Stack Edge.  |
-| 3. |**[Руководство по подключению, настройке и активации Azure Stack Edge](azure-stack-edge-deploy-connect-setup-activate.md)** |Подключитесь к локальному пользовательскому веб-интерфейсу, выполните настройку устройства и активируйте устройство. Устройство готово к настройке общих папок SMB или NFS.  |
-| 4. |**[Руководство по передаче данных с помощью Azure Stack Edge](azure-stack-edge-deploy-add-shares.md)** |Добавление общих папок и подключение к ним через SMB или NFS. |
-| 5. |**[Руководство по преобразованию данных с помощью Azure Stack Edge](azure-stack-edge-deploy-configure-compute.md)** |Настройте модули вычислений на устройстве, чтобы преобразовать данные при их перемещении в Azure. |
+| 1. |**[Подготовка портала Azure для Azure Stack Edge Pro](azure-stack-edge-deploy-prep.md)** |Создайте и настройте ресурсы Azure Stack Edge, прежде чем устанавливать физическое устройство Azure Stack Box Edge. |
+| 2. |**[Установка Azure Stack Edge Pro](azure-stack-edge-deploy-install.md)**|Распаковка, установка в стойку и подключение физического устройства Azure Stack Edge Pro.  |
+| 3. |**[Руководство по подключению, настройке и активации Azure Stack Edge Pro](azure-stack-edge-deploy-connect-setup-activate.md)** |Подключитесь к локальному пользовательскому веб-интерфейсу, выполните настройку устройства и активируйте устройство. Устройство готово к настройке общих папок SMB или NFS.  |
+| 4. |**[Передача данных с помощью Azure Stack Edge Pro](azure-stack-edge-deploy-add-shares.md)** |Добавление общих папок и подключение к ним через SMB или NFS. |
+| 5. |**[Преобразование данных с помощью Azure Stack Edge Pro](azure-stack-edge-deploy-configure-compute.md)** |Настройте модули вычислений на устройстве, чтобы преобразовать данные при их перемещении в Azure. |
 
 Теперь можно приступать к настройке портала Azure.
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Ниже расположены настройки, необходимые для вашего ресурса Azure Stack Edge, устройства Azure Stack Edge и сети центров обработки данных.
+Ниже перечислены настройки, которые нужно указать для вашего ресурса Azure Stack Edge, устройства Azure Stack Edge Pro и сети в центре обработки данных.
 
 ### <a name="for-the-azure-stack-edge-resource"></a>Для ресурса Azure Stack Edge
 
@@ -66,7 +66,7 @@ ms.locfileid: "87131843"
 * Имеется учетная запись хранения Microsoft Azure и данные для доступа к ней.
 * Вас не блокирует ни одна политика Azure, настроенная системным администратором. Дополнительные сведения о политиках см. в разделе [Краткое руководство. Создание назначения политики для идентификации ресурсов, не соответствующих требованиям](https://docs.microsoft.com/azure/governance/policy/assign-policy-portal).
 
-### <a name="for-the-azure-stack-edge-device"></a>Для устройства Azure Stack Edge
+### <a name="for-the-azure-stack-edge-pro-device"></a>Для устройства Azure Stack Edge Pro
 
 Перед развертыванием физического устройства убедитесь, что:
 
@@ -80,9 +80,9 @@ ms.locfileid: "87131843"
 
 Перед тем как начать, убедитесь в следующем.
 
-* Сеть в центре обработки данных настроена в соответствии с требованиями к сетевым характеристикам устройства Azure Stack Edge. Дополнительные сведения см. в статье [Требования к системе для Azure Stack Edge](azure-stack-edge-system-requirements.md).
+* Сеть в центре обработки данных настроена в соответствии с требованиями к сетевым характеристикам устройства Azure Stack Edge Pro. Дополнительные сведения см. в статье [Требования к системе для Azure Stack Edge Pro](azure-stack-edge-system-requirements.md).
 
-* Для нормальных рабочих условий Azure Stack Edge у вас должна быть:
+* Для нормальных рабочих условий Azure Stack Edge Pro нужно обеспечить следующее:
 
   * пропускная способность не менее 10 Мбит/с для скачивания, чтобы обеспечить обновление данных на устройстве;
   * выделенная пропускная способность не менее 20 Мбит/с для передачи и скачивания файлов.
@@ -99,11 +99,11 @@ ms.locfileid: "87131843"
     - или на портал Azure для государственных организаций по URL-адресу [https://portal.azure.us](https://portal.azure.us). Дополнительные сведения см. в статье о [ подключении к Azure для государственных организаций с помощью портала](https://docs.microsoft.com/azure/azure-government/documentation-government-get-started-connect-with-portal).
 
 2. В левой области выберите **+ Создать ресурс**. Найдите и выберите **Azure Stack Edge или Шлюз Azure Data Box**. Нажмите кнопку **создания**.
-3. Выберите подписку, которую вы хотите использовать для устройства Azure Stack Edge. Выберите регион, в котором вы хотите развернуть ресурс Azure Stack Edge. Список всех регионов, в которых доступны ресурсы Azure Stack Edge, приведен на странице [Доступность продуктов по регионам](https://azure.microsoft.com/global-infrastructure/services/?products=databox&regions=all).
+3. Выберите подписку, которую вы хотите использовать для устройства Azure Stack Edge Pro. Выберите регион, в котором вы хотите развернуть ресурс Azure Stack Edge. Список всех регионов, в которых доступны ресурсы Azure Stack Edge, приведен на странице [Доступность продуктов по регионам](https://azure.microsoft.com/global-infrastructure/services/?products=databox&regions=all).
 
     Выберите расположение, ближайшее к географическому региону, в котором вы хотите развернуть устройство. В регионе хранятся только метаданные для управления устройством. Фактические данные могут храниться в любой учетной записи хранения.
     
-    В параметрах **Azure Stack Edge** выберите **Создать**.
+    В разделе **Azure Stack Edge Pro** выберите **Создать**.
 
     ![Поиск службы Azure Stack Edge](media/azure-stack-edge-deploy-prep/data-box-edge-sku.png)
 
@@ -125,7 +125,7 @@ ms.locfileid: "87131843"
 
 5. По завершении выберите **Next: Shipping address** (Далее. Адрес доставки).
 
-    - Если у вас уже есть устройство, установите флажок **У меня есть устройство Azure Stack Edge**.
+    - Если у вас уже есть устройство, установите флажок **I have a Azure Stack Edge Pro device** (У меня есть устройство Azure Stack Edge Pro).
     - Если вы заказываете новое устройство, введите имя контактного лица, компании, адрес для отправки устройства и контактные данные.
 
     ![Адрес доставки для нового устройства](media/azure-stack-edge-deploy-prep/data-box-edge-resource1.png)
@@ -144,11 +144,11 @@ ms.locfileid: "87131843"
 
 После того как вы разместите заказ, корпорация Майкрософт просмотрит его и отправит вам сведения о доставке (по электронной почте).
 
-![Уведомление для проверки заказа Azure Stack Edge](media/azure-stack-edge-deploy-prep/data-box-edge-resource4.png)
+![Уведомление для проверки заказа Azure Stack Edge Pro](media/azure-stack-edge-deploy-prep/data-box-edge-resource4.png)
 
 ## <a name="get-the-activation-key"></a>Получение ключа активации.
 
-После того как ресурс Azure Stack Edge будет настроен и запущен, вам потребуется получить ключ активации. Этот ключ используется для активации устройства Azure Stack Edge и его подключения к ресурсу. Этот ключ можно получить, пока вы находитесь на портале Azure.
+После того как ресурс Azure Stack Edge будет настроен и запущен, вам потребуется получить ключ активации. Этот ключ используется для активации устройства Azure Stack Edge Pro и его подключения к ресурсу. Этот ключ можно получить, пока вы находитесь на портале Azure.
 
 1. Выберите созданный ресурс. Выберите **Обзор**, а затем — **Настройка устройства**.
 
@@ -165,14 +165,14 @@ ms.locfileid: "87131843"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-В этом руководстве были освещены следующие темы относительно Azure Stack Edge.
+В этом руководстве освещены следующие темы относительно Azure Stack Edge Pro:
 
 > [!div class="checklist"]
 >
 > * Создать новый ресурс
 > * Получение ключа активации.
 
-Перейдите к следующему руководству, чтобы узнать, как установить службу Azure Stack Edge.
+Перейдите к следующему руководству, чтобы узнать, как установить Azure Stack Edge Pro.
 
 > [!div class="nextstepaction"]
-> [Руководство по установке Azure Stack Edge](./azure-stack-edge-deploy-install.md)
+> [Установка Azure Stack Edge Pro](./azure-stack-edge-deploy-install.md)

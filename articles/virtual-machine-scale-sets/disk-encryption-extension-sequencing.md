@@ -1,6 +1,6 @@
 ---
 title: Последовательное шифрование дисков Azure и масштабируемых наборов виртуальных машин Azure
-description: В этой статье приведены инструкции по включению шифрования дисков Microsoft Azure для виртуальных машин IaaS под управлением Linux.
+description: Из этой статьи вы узнаете, как включить шифрование дисков Microsoft Azure для виртуальных машин IaaS под управлением Linux.
 author: ju-shim
 ms.author: jushiman
 ms.topic: how-to
@@ -9,12 +9,12 @@ ms.subservice: disks
 ms.date: 10/10/2019
 ms.reviewer: mimckitt
 ms.custom: mimckitt
-ms.openlocfilehash: 1c93359486379ecfc8bf6df1f29978ba369f551a
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 1aff05e51bcbc99f33325efb905ade819ae22e02
+ms.sourcegitcommit: bdd5c76457b0f0504f4f679a316b959dcfabf1ef
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "83117263"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90988026"
 ---
 # <a name="use-azure-disk-encryption-with-virtual-machine-scale-set-extension-sequencing"></a>Use Azure Disk Encryption with virtual machine scale set extension sequencing (Использование шифрования дисков Azure с помощью виртуализации расширения масштабируемого набора виртуальных машин)
 
@@ -158,10 +158,10 @@ ms.locfileid: "83117263"
 * Примените расширение шифрования дисков Azure после пользовательского скрипта оболочки, который форматирует диск (Linux): [deploy-extseq-linux-ADE-after-customscript.jsна](https://github.com/Azure-Samples/compute-automation-configurations/blob/master/ade-vmss/deploy-extseq-linux-ADE-after-customscript.json)
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 - Дополнительные сведения о виртуализации расширений: [Подготовка расширения последовательности в масштабируемых наборах виртуальных машин](virtual-machine-scale-sets-extension-sequencing.md).
 - Подробнее о `provisionAfterExtensions` свойстве: [ссылка на шаблон Microsoft. COMPUTE virtualMachineScaleSets/Extensions](/azure/templates/microsoft.compute/2018-10-01/virtualmachinescalesets/extensions).
 - [Azure Disk Encryption for Virtual Machine Scale Sets](disk-encryption-overview.md) (Шифрование дисков Azure для масштабируемых наборов виртуальных машин)
 - [Encrypt OS and attached data disks in a virtual machine scale set with the Azure CLI](disk-encryption-cli.md) (Шифрование ОС и подключенных дисков данных в масштабируемом наборе виртуальных машин с помощью Azure CLI)
 - [Encrypt OS and attached data disks in a virtual machine scale set with Azure PowerShell](disk-encryption-powershell.md) (Шифрование ОС и подключенных дисков данных в масштабируемом наборе виртуальных машин с помощью Azure PowerShell)
-- [Creating and configuring a key vault for Azure Disk Encryption](disk-encryption-key-vault.md) (Создание и настройка хранилища ключей для шифрования дисков Azure)
+- [Создание и настройка хранилища ключей для шифрования дисков Azure](disk-encryption-key-vault.md)

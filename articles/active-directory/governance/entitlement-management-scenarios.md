@@ -16,12 +16,12 @@ ms.date: 06/18/2020
 ms.author: ajburnle
 ms.reviewer: mwahl
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 59b66511720966ff978c8460b9ac69ad133b7501
-ms.sourcegitcommit: 7374b41bb1469f2e3ef119ffaf735f03f5fad484
+ms.openlocfilehash: 7f8a8f76ce7d46c0a44dd86ef1490c1c74a7992a
+ms.sourcegitcommit: bdd5c76457b0f0504f4f679a316b959dcfabf1ef
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/16/2020
-ms.locfileid: "90707226"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90979502"
 ---
 # <a name="common-scenarios-in-azure-ad-entitlement-management"></a>Распространенные сценарии в управлении назначениями Azure AD
 
@@ -119,24 +119,24 @@ ms.locfileid: "90707226"
 1. [Просмотр видео: Управление повседневными задачами. изменения](https://www.microsoft.com/videoplayer/embed/RE3LD4Z)
 1. Открытие пакета Access
 1. [Открытие параметров жизненного цикла](entitlement-management-access-package-lifecycle-policy.md#open-lifecycle-settings)
-1. [Обновление параметров срока действия](entitlement-management-access-package-lifecycle-policy.md#lifecycle)
+1. [Обновление параметров срока действия](entitlement-management-access-package-lifecycle-policy.md#lifecycle) 
 
 ### <a name="access-package-manager-update-how-access-is-approved-for-a-project"></a>Доступ к диспетчеру пакетов: обновление порядка утверждения доступа для проекта
 
 1. [Просмотр видео: Управление повседневными задачами. изменения](https://www.microsoft.com/videoplayer/embed/RE3LD4Z)
-1. [Открытие существующей политики параметров запросов и утверждений](entitlement-management-access-package-request-policy.md#open-an-existing-policy-of-request-and-approval-settings)
-1. [Обновление параметров утверждения](entitlement-management-access-package-request-policy.md#approval)
+1. [Открытие существующей политики параметров запроса](entitlement-management-access-package-request-policy.md#open-an-existing-access-package-and-add-a-new-policy-of-request-settings)
+1. [Обновление параметров утверждения](entitlement-management-access-package-approval-policy.md#change-approval-settings-of-an-existing-access-package)
 
 ### <a name="access-package-manager-update-the-people-for-a-project"></a>Доступ к диспетчеру пакетов: Обновление пользователей для проекта
 
 1. [Просмотр видео: Управление повседневными задачами. изменения](https://www.microsoft.com/videoplayer/embed/RE3LD4Z)
 1. [Удаление пользователей, которым больше не нужен доступ](entitlement-management-access-package-assignments.md)
-1. [Открытие существующей политики параметров запросов и утверждений](entitlement-management-access-package-request-policy.md#open-an-existing-policy-of-request-and-approval-settings)
+1. [Открытие существующей политики параметров запроса](entitlement-management-access-package-request-policy.md#open-an-existing-access-package-and-add-a-new-policy-of-request-settings)
 1. [Добавление пользователей, которым требуется доступ](entitlement-management-access-package-request-policy.md#for-users-in-your-directory)
 
 ### <a name="access-package-manager-directly-assign-specific-users-to-an-access-package"></a>Доступ к диспетчеру пакетов: непосредственно назначить конкретных пользователей для пакета Access
 
-1. [Если пользователям требуются другие параметры жизненного цикла, добавьте новую политику в пакет Access.](entitlement-management-access-package-request-policy.md#add-a-new-policy-of-request-and-approval-settings)
+1. [Если пользователям требуются другие параметры жизненного цикла, добавьте новую политику в пакет Access.](entitlement-management-access-package-request-policy.md#open-an-existing-access-package-and-add-a-new-policy-of-request-settings)
 1. [Прямое назначение конкретных пользователей пакету доступа](entitlement-management-access-package-assignments.md#directly-assign-a-user)
 
 ## <a name="assignments-and-reports"></a>Назначения и отчеты

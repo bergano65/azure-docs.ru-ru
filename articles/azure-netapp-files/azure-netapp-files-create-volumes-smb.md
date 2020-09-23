@@ -12,14 +12,14 @@ ms.workload: storage
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: how-to
-ms.date: 08/26/2020
+ms.date: 09/16/2020
 ms.author: b-juche
-ms.openlocfilehash: 9ac30bdcb137afb26a8461f98a36b568ebe179b0
-ms.sourcegitcommit: 4a7a4af09f881f38fcb4875d89881e4b808b369b
+ms.openlocfilehash: 6a90a4ad44bff392b5fe6cd0af13313bd98ce2a6
+ms.sourcegitcommit: bdd5c76457b0f0504f4f679a316b959dcfabf1ef
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/04/2020
-ms.locfileid: "89459017"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90988369"
 ---
 # <a name="create-an-smb-volume-for-azure-netapp-files"></a>Создание тома SMB для Azure NetApp Files
 
@@ -74,15 +74,17 @@ Azure NetApp Files поддерживает создание томов с по�
 
     Сведения сайтах и службах Active Directory см. в разделе [Проектирование топологии сайта](https://docs.microsoft.com/windows-server/identity/ad-ds/plan/designing-the-site-topology). 
     
-<!--
-* Azure NetApp Files supports DES, Kerberos AES 128, and Kerberos AES 256 encryption types (from the least secure to the most secure). The user credentials used to join Active Directory must have the highest corresponding account option enabled that matches the capabilities enabled for your Active Directory.   
+* Чтобы включить шифрование AES для тома SMB, установите флажок **шифрование AES** в окне [Присоединение Active Directory](#create-an-active-directory-connection) . Azure NetApp Files поддерживает типы шифрования DES, Kerberos AES 128 и Kerberos AES 256 (от минимального уровня безопасности до наиболее безопасного). При включении шифрования AES учетные данные пользователя, используемые для приподключения Active Directory, должны иметь включенный параметр с наивысшей соответствующей учетной записью, соответствующий возможностям, включенным для Active Directory.    
 
-    For example, if your Active Directory has only the AES-128 capability, you must enable the AES-128 account option for the user credentials. If your Active Directory has the AES-256 capability, you must enable the AES-256 account option (which also supports AES-128). If your Active Directory does not have any Kerberos encryption capability, Azure NetApp Files uses DES by default.  
+    Например, если Active Directory имеет только возможность AES-128, необходимо включить параметр учетной записи AES-128 для учетных данных пользователя. Если Active Directory имеет возможность AES-256, необходимо включить параметр учетной записи AES-256 (который также поддерживает AES-128). Если у Active Directory нет функции шифрования Kerberos, Azure NetApp Files по умолчанию использует DES.  
 
-    You can enable the account options in the properties of the Active Directory Users and Computers Microsoft Management Console (MMC):   
+    Параметры учетной записи можно включить в свойствах Active Directory "пользователи и компьютеры" консоли управления (MMC):   
 
-    ![Active Directory Users and Computers MMC](../media/azure-netapp-files/ad-users-computers-mmc.png)
--->
+    ![Active Directory MMC "пользователи и компьютеры"](../media/azure-netapp-files/ad-users-computers-mmc.png)
+
+* Azure NetApp Files поддерживает [Подписывание LDAP](https://docs.microsoft.com/troubleshoot/windows-server/identity/enable-ldap-signing-in-windows-server), что обеспечивает безопасную передачу трафика LDAP между службой Azure NetApp Files и целевыми [контроллерами домена Active Directory](https://docs.microsoft.com/windows-server/identity/ad-ds/get-started/virtual-dc/active-directory-domain-services-overview). Если вы используете рекомендации Microsoft консультационных [ADV190023](https://portal.msrc.microsoft.com/en-us/security-guidance/advisory/ADV190023) для подписывания LDAP, то следует включить функцию подписывания ldap в Azure NetApp Files, установив флажок **Подписывание LDAP** в окне [присоединиться Active Directory](#create-an-active-directory-connection) . 
+
+    Конфигурация [привязки канала LDAP](https://support.microsoft.com/help/4034879/how-to-add-the-ldapenforcechannelbinding-registry-entry) не влияет на службу Azure NetApp Files. 
 
 Дополнительные сведения об Active Directory см. в [часто задаваемых вопросах об SMB](https://docs.microsoft.com/azure/azure-netapp-files/azure-netapp-files-faqs#smb-faqs) Azure NetApp Files. 
 
@@ -144,7 +146,7 @@ Azure NetApp Files поддерживает создание томов с по�
     * **Имя DNS-домена AD**  
         Это доменное имя доменных служб Active Directory, которые необходимо присоединить.
     * **Имя сайта AD**  
-        Это имя сайта, которым будет ограничено обнаружение контроллера домена.
+        Это имя сайта, которое будет ограничено для обнаружения контроллера домена.
     * **Префикс SMB-сервера (учетная запись компьютера)**  
         Это префикс именования для учетной записи компьютера в Active Directory, который Azure NetApp Files будет использовать для создания новых учетных записей.
 
@@ -160,8 +162,56 @@ Azure NetApp Files поддерживает создание томов с по�
 
         При использовании Azure NetApp Files с доменными службами Azure Active Directory путь подразделения при настройке Active Directory для учетной записи NetApp будет `OU=AADDC Computers`.
 
+    ![Присоединение каталога Active Directory](../media/azure-netapp-files/azure-netapp-files-join-active-directory.png)
+
+    * **Шифрование AES**   
+        Установите этот флажок, чтобы включить шифрование AES для тома SMB. Требования см. [в разделе Требования для Active Directory подключений](#requirements-for-active-directory-connections) . 
+
+        ![Active Directory шифрование AES](../media/azure-netapp-files/active-directory-aes-encryption.png)
+
+        Функция **шифрования AES** в настоящее время доступна в предварительной версии. Если вы впервые используете эту функцию, зарегистрируйте эту функцию, прежде чем использовать ее: 
+
+        ```azurepowershell-interactive
+        Register-AzProviderFeature -ProviderNamespace Microsoft.NetApp -FeatureName ANFAesEncryption
+        ```
+
+        Проверьте состояние регистрации компонента: 
+
+        > [!NOTE]
+        > **RegistrationState** может находиться в состоянии до `Registering` 60 минут до перехода на `Registered` . Прежде чем продолжить, подождите, пока состояние не будет **зарегистрировано** .
+
+        ```azurepowershell-interactive
+        Get-AzProviderFeature -ProviderNamespace Microsoft.NetApp -FeatureName ANFAesEncryption
+        ```
+        
+        Вы также можете использовать [Azure CLI команды](https://docs.microsoft.com/cli/azure/feature?view=azure-cli-latest&preserve-view=true) `az feature register` , `az feature show` чтобы зарегистрировать эту функцию и отобразить состояние регистрации. 
+
+    * **Подписывание LDAP**   
+        Установите этот флажок, чтобы включить подписывание LDAP. Эта функция обеспечивает безопасный поиск LDAP между службой Azure NetApp Files и указанными пользователем [контроллерами домена служб домен Active Directory Services](https://docs.microsoft.com/windows/win32/ad/active-directory-domain-services). Дополнительные сведения см. в разделе [ADV190023 | Руководство Майкрософт по включению привязки каналов LDAP и подписывания LDAP](https://portal.msrc.microsoft.com/en-us/security-guidance/advisory/ADV190023).  
+
+        ![Active Directory подписывания LDAP](../media/azure-netapp-files/active-directory-ldap-signing.png) 
+
+        Функция **подписывания LDAP** сейчас доступна в предварительной версии. Если вы впервые используете эту функцию, зарегистрируйте эту функцию, прежде чем использовать ее: 
+
+        ```azurepowershell-interactive
+        Register-AzProviderFeature -ProviderNamespace Microsoft.NetApp -FeatureName ANFLdapSigning
+        ```
+
+        Проверьте состояние регистрации компонента: 
+
+        > [!NOTE]
+        > **RegistrationState** может находиться в состоянии до `Registering` 60 минут до перехода на `Registered` . Прежде чем продолжить, подождите, пока состояние не будет **зарегистрировано** .
+
+        ```azurepowershell-interactive
+        Get-AzProviderFeature -ProviderNamespace Microsoft.NetApp -FeatureName ANFLdapSigning
+        ```
+        
+        Вы также можете использовать [Azure CLI команды](https://docs.microsoft.com/cli/azure/feature?view=azure-cli-latest&preserve-view=true) `az feature register` , `az feature show` чтобы зарегистрировать эту функцию и отобразить состояние регистрации. 
+
      * **Пользователи политики резервного копирования**  
         Можно включить дополнительные учетные записи, требующие повышенных прав доступа к учетной записи компьютера, созданной для использования с Azure NetApp Files. Указанным учетным записям можно будет изменять разрешения NTFS на уровне файлов и папок. Например, можно указать непривилегированную учетную запись службы, используемую для переноса данных в общую папку SMB в Azure NetApp Files.  
+
+        ![Пользователи политики резервного копирования Active Directory](../media/azure-netapp-files/active-directory-backup-policy-users.png)
 
         Функция " **Пользователи политики резервного копирования** " сейчас доступна в предварительной версии. Если вы впервые используете эту функцию, зарегистрируйте эту функцию, прежде чем использовать ее: 
 
@@ -178,11 +228,11 @@ Azure NetApp Files поддерживает создание томов с по�
         Get-AzProviderFeature -ProviderNamespace Microsoft.NetApp -FeatureName ANFBackupOperator
         ```
         
-        Вы также можете использовать Azure CLI команды [`az feature register`](https://docs.microsoft.com/cli/azure/feature?view=azure-cli-latest#az-feature-register) , [`az feature show`](https://docs.microsoft.com/cli/azure/feature?view=azure-cli-latest#az-feature-show) чтобы зарегистрировать эту функцию и отобразить состояние регистрации. 
+        Вы также можете использовать [Azure CLI команды](https://docs.microsoft.com/cli/azure/feature?view=azure-cli-latest&preserve-view=true) `az feature register` , `az feature show` чтобы зарегистрировать эту функцию и отобразить состояние регистрации. 
 
     * Учетные данные, включая **имя пользователя** и **пароль**.
 
-    ![Присоединение каталога Active Directory](../media/azure-netapp-files/azure-netapp-files-join-active-directory.png)
+        ![Учетные данные Active Directory](../media/azure-netapp-files/active-directory-credentials.png)
 
 3. Щелкните **Соединить**.  
 

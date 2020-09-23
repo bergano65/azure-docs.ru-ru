@@ -10,12 +10,12 @@ ms.author: sacartac
 ms.reviewer: nibaccam
 author: cartacioS
 ms.date: 07/10/2020
-ms.openlocfilehash: bbd6f2021a20ff488402bb9d1367feb57c34f582
-ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
+ms.openlocfilehash: 6ad3e0f3077e6f65642496d4da097fa713bddd53
+ms.sourcegitcommit: bdd5c76457b0f0504f4f679a316b959dcfabf1ef
 ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 09/22/2020
-ms.locfileid: "90896691"
+ms.locfileid: "90979079"
 ---
 # <a name="tutorial-forecast-demand-with-automated-machine-learning"></a>Руководство по Прогнозирование спроса с помощью автоматизированного машинного обучения
 
@@ -236,7 +236,7 @@ ms.locfileid: "90896691"
 + Дополнительные сведения [об автоматическом машинном обучении](concept-automated-ml.md).
 + Дополнительные сведения о классификационных метриках и графиках см. в статье [Общие сведения об автоматических результатах машинного обучения](how-to-understand-automated-ml.md#classification).
 + Подробная информация о [добавлении признаков](how-to-configure-auto-features.md#featurization).
-+ Подробная информация [о профилировании данных](how-to-use-automated-ml-for-ml-models.md#profile).
++ Подробная информация [о профилировании данных](how-to-connect-data-ui.md#profile).
 
 >[!NOTE]
 > Набор данных о прокате велосипедов был изменен для этого руководства. Этот набор данных был представлен в рамках [конкурса Kaggle](https://www.kaggle.com/c/bike-sharing-demand/data) и изначально был доступен на сайте [Capital Bikeshare](https://www.capitalbikeshare.com/system-data). Его также можно найти в [базе данных машинного обучения UCI](http://archive.ics.uci.edu/ml/datasets/Bike+Sharing+Dataset).<br><br>

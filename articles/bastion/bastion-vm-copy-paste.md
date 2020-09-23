@@ -7,12 +7,12 @@ ms.service: bastion
 ms.topic: how-to
 ms.date: 05/04/2020
 ms.author: charwen
-ms.openlocfilehash: 4e818617b70e874153e026bcf40b6dfee8a8e04e
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: ad1476847874f7cea53c6e9c0c3d9f142c949dac
+ms.sourcegitcommit: bdd5c76457b0f0504f4f679a316b959dcfabf1ef
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84744244"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90987714"
 ---
 # <a name="copy-and-paste-to-a-virtual-machine-azure-bastion"></a>Копирование и вставка на виртуальную машину: Azure бастиона
 
@@ -37,7 +37,7 @@ ms.locfileid: "84744244"
 
    ![Палитра инструментов](./media/bastion-vm-manage/left.png)
 
-   ![буфер обмена](./media/bastion-vm-manage/clipboard.png)
+   ![На снимке экрана показан буфер обмена для текста, скопированного в бастиона.](./media/bastion-vm-manage/clipboard.png)
 1. Как правило, скопированный текст автоматически отображается в палитре «бастиона Copy Вклеить». Если текст отсутствует, вставьте текст в текстовое поле палитры.
 1. После того как текст появится в текстовой области, его можно вставить в удаленный сеанс.
 

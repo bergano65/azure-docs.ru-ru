@@ -10,12 +10,12 @@ ms.subservice: general
 ms.topic: tutorial
 ms.date: 06/22/2020
 ms.author: jalichwa
-ms.openlocfilehash: b9478d3b171189decb4e2cca7fc93ba2fa75e32e
-ms.sourcegitcommit: de2750163a601aae0c28506ba32be067e0068c0c
+ms.openlocfilehash: 904355b28af93d4a277f2158b1548517118a67ba
+ms.sourcegitcommit: 03662d76a816e98cfc85462cbe9705f6890ed638
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/04/2020
-ms.locfileid: "89482788"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90529423"
 ---
 # <a name="automate-the-rotation-of-a-secret-for-resources-with-two-sets-of-authentication-credentials"></a>Автоматизация смены секретов для ресурсов с двумя наборами учетных данных для аутентификации
 
@@ -80,7 +80,7 @@ akvrotationstorage2    akvrotation      eastus      Microsoft.Storage/storageAcc
 
 1. Щелкните ссылку для развертывания шаблона в Azure: 
 
-   [![Изображение с кнопкой "Развернуть в Azure".](https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/1-CONTRIBUTION-GUIDE/images/deploytoazure.png)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fjlichwa%2FKeyVault-Rotation-StorageAccountKey-PowerShell%2Fmaster%2Farm-templates%2FInitial-Setup%2Fazuredeploy.json)
+   [![Изображение с кнопкой "Развернуть в Azure".](https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/1-CONTRIBUTION-GUIDE/images/deploytoazure.png)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fjlichwa%2FKeyVault-Rotation-StorageAccountKey-PowerShell%2Fmaster%2Farm-templates%2FFunction%2Fazuredeploy.json)
 
 1. В списке **Группа ресурсов** выберите **avkrotation**.
 1. В поле **Имя учетной записи хранения** введите имя учетной записи хранения, в которой нужно сменить ключи доступа.
@@ -204,7 +204,7 @@ az storage account keys list -n akvrotationstorage
 - [Кэш Redis](https://github.com/jlichwa/KeyVault-Rotation-RedisCacheKey-PowerShell)
 
 ## <a name="learn-more"></a>Дополнительные сведения
-- Общие сведения. [Мониторинг Key Vault с помощью службы "Сетка событий Azure" (предварительная версия)](../general/event-grid-overview.md)
+- Общие сведения. [Мониторинг Key Vault с помощью Сетки событий Azure](../general/event-grid-overview.md)
 - Руководство. [Создание первой функции на портале Azure](../../azure-functions/functions-create-first-azure-function.md)
 - Руководство. [Получение сообщения электронной почты при изменении секрета в хранилище ключей](../general/event-grid-logicapps.md)
-- [Схема событий службы "Сетка событий Azure" для Azure Key Vault (предварительная версия)](../../event-grid/event-schema-key-vault.md)
+- [Схема событий Сетки событий Azure для Azure Key Vault](../../event-grid/event-schema-key-vault.md)

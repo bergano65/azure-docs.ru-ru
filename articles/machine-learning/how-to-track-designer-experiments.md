@@ -1,5 +1,5 @@
 ---
-title: Метрики журнала в конструкторе (Предварительная версия)
+title: Метрики журнала в конструкторе
 titleSuffix: Azure Machine Learning
 description: Отслеживайте эксперименты в конструкторе машинного обучения Azure. Включите ведение журнала с помощью модуля выполнение скрипта Python и просмотрите зарегистрированные результаты в студии.
 services: machine-learning
@@ -11,15 +11,15 @@ ms.subservice: core
 ms.date: 07/30/2020
 ms.topic: conceptual
 ms.custom: how-to
-ms.openlocfilehash: 20845a6f1238095b40c9b05b5f5d8d85217b6db5
-ms.sourcegitcommit: e69bb334ea7e81d49530ebd6c2d3a3a8fa9775c9
+ms.openlocfilehash: bffbf32cf5faa936a00444f1f39facaf226b8ef2
+ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "88950414"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90885972"
 ---
-# <a name="enable-logging-in-azure-machine-learning-designer-preview-pipelines"></a>Включение ведения журнала в конвейерах Машинное обучение Azure конструктора (Предварительная версия)
-[!INCLUDE [applies-to-skus](../../includes/aml-applies-to-basic-enterprise-sku.md)]
+# <a name="enable-logging-in-azure-machine-learning-designer-pipelines"></a>Включение ведения журнала в конвейерах конструктора Машинное обучение Azure
+
 
 В этой статье вы узнаете, как добавить код ведения журнала в конвейеры конструктора. Вы также узнаете, как просматривать эти журналы с помощью веб-портала Машинное обучение Azure Studio.
 
@@ -74,9 +74,10 @@ ms.locfileid: "88950414"
 
     ![Просмотр метрик выполнения в студии](./media/how-to-track-experiments/experiment-page-metrics-across-runs.png)
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 В этой статье вы узнали, как использовать журналы в конструкторе. Дальнейшие действия см. в соответствующих статьях:
 
-* Сведения об устранении неполадок конвейеров конструктора см. в разделе [отладка & устранение неполадок конвейеров машинного обучения](how-to-debug-pipelines.md#logging-in-azure-machine-learning-designer-preview).
+
+* Сведения об устранении неполадок конвейеров конструктора см. в разделе [отладка & устранение неполадок конвейеров машинного обучения](how-to-debug-pipelines.md#azure-machine-learning-designer).
 * Узнайте, как использовать пакет SDK для Python для записи метрик в процесс создания пакета SDK. см. раздел [Включение ведения журнала в Azure ML Training](how-to-track-experiments.md).
