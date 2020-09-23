@@ -9,12 +9,12 @@ ms.service: iot-dps
 services: iot-dps
 ms.devlang: java
 ms.custom: mvc, devx-track-java
-ms.openlocfilehash: 43ae9bd0e844a23adabf52e7fbb4b8cd077d23bd
-ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
+ms.openlocfilehash: 80efd92560bc7fb5c8bf16b524752e7dbfcdc74b
+ms.sourcegitcommit: 03662d76a816e98cfc85462cbe9705f6890ed638
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87326721"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90526669"
 ---
 # <a name="tutorial-create-and-provision-a-simulated-x509-device-using-java-device-and-service-sdk-and-group-enrollments-for-iot-hub-device-provisioning-service"></a>Руководство по Создание и подготовка имитированного устройства X.509 с помощью Java устройства, SDK службы и групп регистрации для службы подготовки устройств Центра Интернета вещей
 
@@ -260,4 +260,4 @@ ms.locfileid: "87326721"
 В ходе работы с этим руководством вы создали имитированное устройство X.509 на компьютере с ОС Windows и подготовили его для Центра Интернета вещей с помощью службы подготовки устройств Центра Интернета вещей и групп регистрации. Дополнительные сведения об устройстве X.509 см. в статье с основными понятиями. 
 
 > [!div class="nextstepaction"]
-> [Понятия устройства в контексте подготовки устройств в Центре Интернета вещей](concepts-device.md)
+> [Понятия службы подготовки устройств для Центра Интернета вещей](concepts-service.md)

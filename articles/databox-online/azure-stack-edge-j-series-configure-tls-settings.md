@@ -1,6 +1,6 @@
 ---
-title: Настройка TLS 1,2 на клиентах Windows, обращающихся к Azure Stack пограничному устройству GPU
-description: Описание настройки TLS 1,2 на клиентах Windows, обращающихся к Azure Stack пограничному устройству GPU.
+title: Настройка TLS 1,2 на клиентах Windows, обращающихся к Azure Stack устройстве GPU Pro
+description: Описание настройки TLS 1,2 на клиентах Windows, обращающихся к Azure Stack устройства GPU с пограничными устройствами.
 services: databox
 author: alkohli
 ms.service: databox
@@ -8,18 +8,18 @@ ms.subservice: edge
 ms.topic: how-to
 ms.date: 08/28/2020
 ms.author: alkohli
-ms.openlocfilehash: bf6b591ef3158a5944b1ebeb37dd0ef5935f7215
-ms.sourcegitcommit: bcda98171d6e81795e723e525f81e6235f044e52
+ms.openlocfilehash: 9a6b0910fcfd2a632f2520a2fe683b15592017cf
+ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/01/2020
-ms.locfileid: "89268508"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90891184"
 ---
-# <a name="configure-tls-12-on-windows-clients-accessing-azure-stack-edge-device"></a>Настройка TLS 1,2 на клиентах Windows, обращающихся к Azure Stack пограничному устройству
+# <a name="configure-tls-12-on-windows-clients-accessing-azure-stack-edge-pro-device"></a>Настройка TLS 1,2 на клиентах Windows, обращающихся к Azure Stack пограничному устройству Pro
 
 <!--[!INCLUDE [applies-to-skus](../../includes/azure-stack-edge-applies-to-all-sku.md)]-->
 
-Если вы используете клиент Windows для доступа к устройству Azure Stack пограничным, вам потребуется настроить TLS 1,2 на клиенте. В этой статье содержатся ресурсы и рекомендации по настройке TLS 1,2 в клиенте Windows. 
+Если вы используете клиент Windows для доступа к устройству Azure Stack погранично Pro, вам потребуется настроить TLS 1,2 на клиенте. В этой статье содержатся ресурсы и рекомендации по настройке TLS 1,2 в клиенте Windows. 
 
 Приведенные здесь рекомендации основаны на тестировании, выполняемом на клиенте под управлением Windows Server 2016.
 
@@ -74,4 +74,4 @@ ms.locfileid: "89268508"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-[Подключение к Azure Resource Manager](azure-stack-edge-j-series-connect-resource-manager.md)
+[Подключение к Azure Resource Manager.](azure-stack-edge-j-series-connect-resource-manager.md)

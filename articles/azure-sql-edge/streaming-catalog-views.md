@@ -1,6 +1,6 @@
 ---
-title: Представления каталога потоковой передачи (Transact-SQL) — SQL Azure для пограничных вычислений (предварительная версия)
-description: Сведения о доступных представлениях каталога потоковой передачи и динамических административных представлениях в SQL Azure для пограничных вычислений (предварительная версия)
+title: Представления каталога потоковой передачи (Transact-SQL) — Azure SQL ребро
+description: Сведения о доступных представлениях каталога потоковой передачи и динамических административных представлениях в Azure SQL Server
 keywords: sys.external_streams, SQL для пограничных вычислений
 services: sql-edge
 ms.service: sql-edge
@@ -9,12 +9,12 @@ author: SQLSourabh
 ms.author: sourabha
 ms.reviewer: sstein
 ms.date: 05/19/2019
-ms.openlocfilehash: 5b1cd58b8947e376ac70ee307041ae7864ed7e24
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 4a8f037cd9923564e2e214e9727ff87d63cca547
+ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84233113"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90900522"
 ---
 # <a name="streaming-catalog-views-transact-sql"></a>Представления каталога потоковой передачи (Transact-SQL)
 

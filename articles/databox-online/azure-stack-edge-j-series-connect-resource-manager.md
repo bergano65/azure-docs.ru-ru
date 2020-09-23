@@ -1,6 +1,6 @@
 ---
-title: Подключение к Azure Resource Manager на устройстве с ПРОЦЕССОРом Azure Stack ребра
-description: В этой статье описывается, как подключиться к Azure Resource Manager, работающей на графическом процессоре Azure Stack ребра, с помощью Azure PowerShell.
+title: Подключение к Azure Resource Manager на устройстве Azure Stack ребра Pro GPU
+description: В этой статье описывается, как подключиться к Azure Resource Manager, работающей на графическом процессоре Azure Stack ребра Pro, с помощью Azure PowerShell.
 services: databox
 author: alkohli
 ms.service: databox
@@ -8,37 +8,37 @@ ms.subservice: edge
 ms.topic: how-to
 ms.date: 08/28/2020
 ms.author: alkohli
-ms.openlocfilehash: cf57d81c2ef56662abbd529a5de90e03c00e091a
-ms.sourcegitcommit: bcda98171d6e81795e723e525f81e6235f044e52
+ms.openlocfilehash: 5cf406dc0577f477858dd8a6570f7975747112e0
+ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/01/2020
-ms.locfileid: "89269817"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90891264"
 ---
-# <a name="connect-to-azure-resource-manager-on-your-azure-stack-edge-device"></a>Подключение к Azure Resource Manager на устройстве Azure Stackного периметра
+# <a name="connect-to-azure-resource-manager-on-your-azure-stack-edge-pro-device"></a>Подключение к Azure Resource Manager на устройстве Azure Stack ребра Pro
 
 <!--[!INCLUDE [applies-to-skus](../../includes/azure-stack-edge-applies-to-all-sku.md)]-->
 
-Azure Resource Manager предоставляет слой управления, позволяющий создавать, обновлять и удалять ресурсы в подписке Azure. Устройство Azure Stack погранично поддерживает те же интерфейсы API Azure Resource Manager для создания, обновления и удаления виртуальных машин в локальной подписке. Эта поддержка позволяет управлять устройством способом, согласованным с облаком. 
+Azure Resource Manager предоставляет слой управления, позволяющий создавать, обновлять и удалять ресурсы в подписке Azure. Устройство Azure Stack пограничной Pro поддерживает те же интерфейсы API Azure Resource Manager для создания, обновления и удаления виртуальных машин в локальной подписке. Эта поддержка позволяет управлять устройством способом, согласованным с облаком. 
 
-В этом руководстве описывается, как подключиться к локальным API на Azure Stack пограничном устройстве с помощью Azure Resource Manager Azure PowerShell.
+В этом руководстве описывается, как подключиться к локальным API на устройстве Azure Stack ребра Pro с помощью Azure Resource Manager Azure PowerShell.
 
 ## <a name="about-azure-resource-manager"></a>Общие сведения об Azure Resource Manager
 
-Azure Resource Manager предоставляет последовательный уровень управления для вызова API Azure Stack пограничных устройств и выполнения таких операций, как создание, обновление и удаление виртуальных машин. Архитектура Azure Resource Manager подробно описана на следующей схеме.
+Azure Resource Manager предоставляет последовательный уровень управления для вызова API-интерфейса устройства Azure Stack ребра и выполнения таких операций, как создание, обновление и удаление виртуальных машин. Архитектура Azure Resource Manager подробно описана на следующей схеме.
 
 ![Схема для Azure Resource Manager](media/azure-stack-edge-j-series-connect-resource-manager/edge-device-flow.svg)
 
 
-## <a name="endpoints-on-azure-stack-edge-device"></a>Конечные точки на Azure Stack пограничном устройстве
+## <a name="endpoints-on-azure-stack-edge-pro-device"></a>Конечные точки на устройстве Pro Azure Stack
 
 В следующей таблице перечислены различные конечные точки, предоставляемые на устройстве, Поддерживаемые протоколы и порты для доступа к этим конечным точкам. На протяжении всей статьи вы найдете ссылки на эти конечные точки.
 
-| # | Конечная точка | Поддерживаемые протоколы | Используемый порт | Используется для |
+| # | Конечная точка | Поддерживаемые протоколы | Используемый порт | Назначение |
 | --- | --- | --- | --- | --- |
-| 1. | Azure Resource Manager | HTTPS | 443 | Подключение к Azure Resource Manager для автоматизации |
-| 2. | Служба маркеров безопасности | HTTPS | 443 | Проверка подлинности с помощью маркеров доступа и обновления |
-| 3. | BLOB-объект | HTTPS | 443 | Подключение к хранилищу BLOB-объектов с помощью протокола RESTFUL |
+| 1. | Azure Resource Manager | https | 443 | Подключение к Azure Resource Manager для автоматизации |
+| 2. | Служба маркеров безопасности | https | 443 | Проверка подлинности с помощью маркеров доступа и обновления |
+| 3. | BLOB-объект | https | 443 | Подключение к хранилищу BLOB-объектов с помощью протокола RESTFUL |
 
 
 ## <a name="connecting-to-azure-resource-manager-workflow"></a>Подключение к рабочему процессу Azure Resource Manager
@@ -47,7 +47,7 @@ Azure Resource Manager предоставляет последовательны
 
 | Номер шага | Вы выполните этот шаг... | .. в этом расположении. |
 | --- | --- | --- |
-| 1. | [Настройка устройства Azure Stack пограничной Организации](#step-1-configure-azure-stack-edge-device) | Локальный пользовательский веб-интерфейс |
+| 1. | [Настройка устройства Azure Stack ребра Pro](#step-1-configure-azure-stack-edge-pro-device) | Локальный пользовательский веб-интерфейс |
 | 2. | [Создание и установка сертификатов](#step-2-create-and-install-certificates) | Клиентский или локальный веб-интерфейс Windows |
 | 3. | [Проверка и настройка необходимых компонентов](#step-3-install-powershell-on-the-client) | Клиент Windows |
 | 4. | [Настройка Azure PowerShell на клиенте](#step-4-set-up-azure-powershell-on-the-client) | Клиент Windows |
@@ -59,13 +59,13 @@ Azure Resource Manager предоставляет последовательны
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Прежде чем начать, убедитесь, что клиент, используемый для подключения к устройству через Azure Resource Manager, использует TLS 1,2. Дополнительные сведения см. в подразделах [Настройка TLS 1,2 на клиенте Windows, обращающемся к Azure Stack пограничному устройству](azure-stack-edge-j-series-configure-tls-settings.md).
+Прежде чем начать, убедитесь, что клиент, используемый для подключения к устройству через Azure Resource Manager, использует TLS 1,2. Дополнительные сведения см. в подразделах [Настройка TLS 1,2 на клиенте Windows, обращающемся к Azure Stack пограничном устройстве Pro](azure-stack-edge-j-series-configure-tls-settings.md).
 
-## <a name="step-1-configure-azure-stack-edge-device"></a>Шаг 1. Настройка Azure Stack пограничной устройства 
+## <a name="step-1-configure-azure-stack-edge-pro-device"></a>Шаг 1. Настройка устройства Azure Stack ребра Pro 
 
-Выполните следующие действия в локальном веб-ИНТЕРФЕЙСе вашего Azure Stack пограничной устройства.
+Выполните следующие действия в локальном веб-ИНТЕРФЕЙСе устройства Azure Stack ребра Pro.
 
-1. Заполните параметры сети для устройства Azure Stack пограничным. 
+1. Заполните параметры сети для устройства Azure Stack ребра Pro. 
 
     ![Страница "Параметры сети" в локальном веб-интерфейсе](./media/azure-stack-edge-gpu-deploy-configure-network-compute-web-proxy/compute-network-2.png)
 
@@ -74,7 +74,7 @@ Azure Resource Manager предоставляет последовательны
 
 2. Настройте имя устройства и домен DNS на странице **устройства** . Запишите имя устройства и домен DNS, которые будут использоваться позже.
 
-    ![Страница "устройство" локального веб-интерфейса](./media/azure-stack-edge-gpu-deploy-set-up-device-update-time/device-2.png)
+    ![Страница "Устройство" в локальном пользовательском веб-интерфейсе](./media/azure-stack-edge-gpu-deploy-set-up-device-update-time/device-2.png)
 
     > [!IMPORTANT]
     > Имя устройства, домен DNS будет использоваться для формирования конечных точек, которые предоставляются.
@@ -83,7 +83,7 @@ Azure Resource Manager предоставляет последовательны
 
 ## <a name="step-2-create-and-install-certificates"></a>Шаг 2. Создание и установка сертификатов
 
-Сертификаты гарантируют, что ваш обмен данными является доверенным. На Azure Stack пограничном устройстве автоматически создаются самозаверяющие устройства, BLOB-объекты и Azure Resource Manager сертификаты. При необходимости можно также включить собственный подписанный BLOB-объект и Azure Resource Manager сертификаты.
+Сертификаты гарантируют, что ваш обмен данными является доверенным. На устройстве Azure Stack пограничной Pro автоматически создаются самозаверяющие устройства, BLOB-объекты и Azure Resource Manager сертификаты. При необходимости можно также включить собственный подписанный BLOB-объект и Azure Resource Manager сертификаты.
 
 Если вы понесете собственный подписанный сертификат, вам также потребуется соответствующая цепочка подписывания сертификата. Для цепочки подписывания Azure Resource Manager и сертификатов больших двоичных объектов на устройстве потребуются также соответствующие сертификаты на клиентском компьютере для проверки подлинности и взаимодействия с устройством.
 
@@ -183,7 +183,7 @@ Azure Resource Manager предоставляет последовательны
 
 1. На клиенте будут установлены модули Azure PowerShell, которые будут работать с устройством.
 
-    а. Откройте сеанс PowerShell от имени администратора. Вам нужен доступ к коллекции PowerShell. 
+    a. Откройте сеанс PowerShell от имени администратора. Вам нужен доступ к коллекции PowerShell. 
 
 
     b. Чтобы установить необходимые модули Azure PowerShell из коллекция PowerShell, выполните следующую команду:
@@ -249,19 +249,19 @@ Binary     1.48.204.0 AzureInformationProtection          {Clear-RMSAuthenticati
 
 Теперь вы добавите в Azure виртуальный IP-адрес, который вы определили в локальном пользовательском интерфейсе устройства, в следующее:
 
-- Файл узла на клиенте или,
-- Конфигурация DNS-сервера
+- файл узла на клиенте ИЛИ
+- конфигурацию DNS-сервера.
 
 > [!IMPORTANT]
 > Рекомендуется изменить конфигурацию DNS-сервера для разрешения имен конечных точек.
 
-В клиенте Windows, который используется для подключения к устройству, выполните следующие действия.
+В клиенте Windows, который используется для подключения к устройству, выполните приведенные ниже действия.
 
 1. Запустите **Блокнот** с правами администратора, а затем откройте файл **hosts** , расположенный по адресу C:\Windows\System32\Drivers\etc.
 
-    ![Файл hosts проводника Windows](media/azure-stack-edge-j-series-connect-resource-manager/hosts-file.png)
+    ![Файл hosts в проводнике](media/azure-stack-edge-j-series-connect-resource-manager/hosts-file.png)
 
-2. Добавьте следующие записи в файл **hosts** , заменив соответствующими значениями для вашего устройства: 
+2. Добавьте следующие записи в файл **hosts**, указав соответствующие значения для вашего устройства: 
 
     ```
     <Device IP> login.<appliance name>.<DNS domain>
@@ -278,7 +278,7 @@ Binary     1.48.204.0 AzureInformationProtection          {Clear-RMSAuthenticati
 
 3. Для ссылки используйте следующее изображение. Сохраните файл **hosts**.
 
-    ![файл hosts в блокноте](media/azure-stack-edge-j-series-connect-resource-manager/hosts-file-notepad.png)
+    ![Файл hosts в Блокноте](media/azure-stack-edge-j-series-connect-resource-manager/hosts-file-notepad.png)
 
 ## <a name="step-6-verify-endpoint-name-resolution-on-the-client"></a>Шаг 6. Проверка разрешения имени конечной точки на клиенте
 
@@ -319,7 +319,7 @@ Binary     1.48.204.0 AzureInformationProtection          {Clear-RMSAuthenticati
     AzDBE https://management.dbe-n6hugc2ra.microsoftdatabox.com https://login.dbe-n6hugc2ra.microsoftdatabox.com/adfs/
     ```
 
-2. Задайте среду как Azure Stack границе и порт, который будет использоваться для Azure Resource Manager вызовов как 443. Среду можно определить двумя способами:
+2. Задайте окружение в качестве Azure Stack пограничной Pro и порт, который будет использоваться для Azure Resource Manager вызовов как 443. Среду можно определить двумя способами:
 
     - Настройте среду. Введите следующую команду:
 
@@ -329,7 +329,7 @@ Binary     1.48.204.0 AzureInformationProtection          {Clear-RMSAuthenticati
     
     Дополнительные сведения см. в подразделе [Set-AzureRMEnvironment](https://docs.microsoft.com/powershell/module/azurerm.profile/set-azurermenvironment?view=azurermps-6.13.0).
 
-    - Определите встроенную среду для каждого выполняемого командлета. Это гарантирует, что все вызовы API будут проходить через правильную среду. По умолчанию вызовы будут проходить через общедоступный Azure, но вы хотите, чтобы они перейдут в среду, настроенную для Azure Stack устройства пограничных устройств.
+    - Определите встроенную среду для каждого выполняемого командлета. Это гарантирует, что все вызовы API будут проходить через правильную среду. По умолчанию вызовы будут проходить через общедоступную версию Azure, но вы хотите, чтобы они перейдут в среду, настроенную для Azure Stack устройства Pro.
 
     - См. Дополнительные сведения о [том, как переключить среды AzureRM](#switch-environments).
 
@@ -376,7 +376,7 @@ Binary     1.48.204.0 AzureInformationProtection          {Clear-RMSAuthenticati
 
 
 > [!IMPORTANT]
-> Срок действия подключения к Azure Resource Manager истекает каждые 1,5 часов или при перезапуске Azure Stack пограничных устройств. В этом случае все выполняемые командлеты будут возвращать сообщения об ошибках, которые больше не подключены к Azure. Вам потребуется снова войти в систему.
+> Срок действия подключения к Azure Resource Manager истекает каждые 1,5 часов или при перезапуске устройства Azure Stack с пограничным Pro. В этом случае все выполняемые командлеты будут возвращать сообщения об ошибках, которые больше не подключены к Azure. Вам потребуется снова войти в систему.
 
 ## <a name="switch-environments"></a>Переключение сред
 
@@ -460,4 +460,4 @@ ExtendedProperties : {}
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-[Развертывание виртуальных машин на пограничном устройстве Azure Stack](azure-stack-edge-j-series-deploy-virtual-machine-powershell.md).
+[Развертывание виртуальных машин на устройстве Azure Stack пограничной Pro](azure-stack-edge-j-series-deploy-virtual-machine-powershell.md).
