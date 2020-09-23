@@ -6,12 +6,12 @@ ms.author: andrela
 ms.service: mysql
 ms.topic: conceptual
 ms.date: 07/17/2020
-ms.openlocfilehash: c677b0278d29c499d4369967c1c76132a1ae9d21
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.openlocfilehash: 63b3fd64526f45994919267a2f4ddc730d0b2fd7
+ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86519853"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90882656"
 ---
 # <a name="azure-database-for-mysql-server-firewall-rules"></a>Правила брандмауэра сервера базы данных Azure для MySQL
 Брандмауэр запрещает любой доступ к серверу базы данных, пока вы не укажете компьютеры, у которых есть разрешение на доступ. Брандмауэр предоставляет доступ к серверу на основе исходного IP-адреса каждого запроса.
@@ -25,7 +25,7 @@ ms.locfileid: "86519853"
 
 Запросы на подключение из Интернета и Azure должны сначала обрабатываться брандмауэром и только потом достигать базы данных Azure для MySQL, как показано на следующей схеме:
 
-![Пример рабочего потока брандмауэра](./media/concepts-firewall-rules/1-firewall-concept.png)
+:::image type="content" source="./media/concepts-firewall-rules/1-firewall-concept.png" alt-text="Пример рабочего потока брандмауэра":::
 
 ## <a name="connecting-from-the-internet"></a>Подключение через Интернет
 Правила брандмауэра уровня сервера применяются ко всем базам данных на сервере базы данных Azure для MySQL.
@@ -43,7 +43,7 @@ ms.locfileid: "86519853"
 > Параметр **Разрешить доступ к службам Azure** позволяет настроить брандмауэр для разрешения всех подключений из Azure, включая подключения из подписок других клиентов. При выборе этого параметра убедитесь, что используемое имя для входа и разрешения пользователя предоставляют доступ только авторизованным пользователям.
 > 
 
-![Настройка разрешения доступа к службам Azure на портале](./media/concepts-firewall-rules/allow-azure-services.png)
+:::image type="content" source="./media/concepts-firewall-rules/allow-azure-services.png" alt-text="Настройка разрешения доступа к службам Azure на портале":::
 
 ### <a name="connecting-from-a-vnet"></a>Подключение из виртуальной сети
 Чтобы безопасно подключиться к серверу базы данных Azure для MySQL из виртуальной сети, рассмотрите возможность использования [конечных точек службы виртуальной сети](./concepts-data-access-and-security-vnet.md). 
@@ -68,7 +68,7 @@ ms.locfileid: "86519853"
 
 * **Не удается подключиться из ресурса Azure с разрешенным IP-адресом:** Проверьте, включена ли конечная точка службы **Microsoft. SQL** для подсети, из которой вы подключаетесь. Если **Microsoft. SQL** включен, то это означает, что для этой подсети нужно использовать только [правила конечной точки службы VNet](concepts-data-access-and-security-vnet.md) .
 
-   Например, если вы подключаетесь из виртуальной машины Azure в подсети с включенным **Microsoft. SQL** , но не имеет соответствующего правила виртуальной сети, может появиться следующее сообщение об ошибке:`FATAL: Client from Azure Virtual Networks is not allowed to access the server`
+   Например, если вы подключаетесь из виртуальной машины Azure в подсети с включенным **Microsoft. SQL** , но не имеет соответствующего правила виртуальной сети, может появиться следующее сообщение об ошибке:  `FATAL: Client from Azure Virtual Networks is not allowed to access the server`
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

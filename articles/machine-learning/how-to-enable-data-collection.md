@@ -11,16 +11,16 @@ author: lostmygithubaccount
 ms.date: 07/14/2020
 ms.topic: conceptual
 ms.custom: how-to
-ms.openlocfilehash: 72706a67e1798662ea0f40fa7843c32d8267e0d0
-ms.sourcegitcommit: 3be3537ead3388a6810410dfbfe19fc210f89fec
+ms.openlocfilehash: 195fc6100229fca2a05198ffa80108057ad8ad65
+ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89646066"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90897580"
 ---
 # <a name="collect-data-from-models-in-production"></a>Получение данных из моделей в рабочей среде
 
-[!INCLUDE [applies-to-skus](../../includes/aml-applies-to-basic-enterprise-sku.md)]
+
 
 В этой статье показано, как получить данные из Машинное обучение Azureной модели, развернутой в кластере Azure Kubernetes Service (AKS). Собранные данные затем хранятся в хранилище BLOB-объектов Azure.
 
@@ -199,7 +199,7 @@ ms.locfileid: "89646066"
 
     [![Создание таблицы кирпичей данных](./media/how-to-enable-data-collection/dbtable.PNG)](././media/how-to-enable-data-collection/dbtable.PNG#lightbox)
 
-1. Обновите расположение данных. Пример:
+1. Обновите расположение данных. Например:
 
     ```
     file_location = "wasbs://mycontainer@storageaccountname.blob.core.windows.net/modeldata/1a2b3c4d-5e6f-7g8h-9i10-j11k12l13m14/myresourcegrp/myWorkspace/aks-w-collv9/best_model/10/inputs/2018/*/*/data.csv" 

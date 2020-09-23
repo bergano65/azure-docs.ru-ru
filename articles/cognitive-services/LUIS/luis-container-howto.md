@@ -11,14 +11,17 @@ ms.subservice: language-understanding
 ms.topic: conceptual
 ms.date: 04/01/2020
 ms.author: aahi
-ms.openlocfilehash: f5409fea1cdbbc35e9068fae6b3ba7fbc2a95580
-ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
+ms.openlocfilehash: bec96f45de69ab2698f3f0cf26f08222e4595ea5
+ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88547398"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90889514"
 ---
 # <a name="install-and-run-luis-docker-containers"></a>Установка и запуск контейнеров Docker в LUIS
+
+[!INCLUDE [container image location note](../containers/includes/image-location-note.md)]
+
 
 Контейнер Language Understanding (LUIS) загружает подготовленную или опубликованную модель Language Understanding. Как [Luis приложение](https://www.luis.ai)контейнер DOCKER предоставляет доступ к прогнозам запросов из конечных точек API контейнера. Вы можете получать журналы запросов из контейнера и отправлять их обратно в Language Understandingное приложение, чтобы улучшить точность прогнозов приложения.
 
@@ -66,10 +69,10 @@ ms.locfileid: "88547398"
 
 ## <a name="get-the-container-image-with-docker-pull"></a>Получение образа контейнера с помощью `docker pull`
 
-Используйте [`docker pull`](https://docs.docker.com/engine/reference/commandline/pull/) команду, чтобы скачать образ контейнера из `mcr.microsoft.com/azure-cognitive-services/luis` репозитория:
+Используйте [`docker pull`](https://docs.docker.com/engine/reference/commandline/pull/) команду, чтобы скачать образ контейнера из `mcr.microsoft.com/azure-cognitive-services/language/luis` репозитория:
 
 ```
-docker pull mcr.microsoft.com/azure-cognitive-services/luis:latest
+docker pull mcr.microsoft.com/azure-cognitive-services/language/luis:latest
 ```
 
 Полное описание доступных тегов, таких как `latest` из предыдущей команды, см. в разделе [LUIS](https://go.microsoft.com/fwlink/?linkid=2043204) на сайте Docker Hub.
@@ -108,8 +111,8 @@ docker pull mcr.microsoft.com/azure-cognitive-services/luis:latest
 |Тип пакета|Запрос API конечной точки|Запрос доступности|Формат имени файла пакета|
 |--|--|--|--|
 |Версиями|GET, POST|Только контейнер|`{APP_ID}_v{APP_VERSION}.gz`|
-|Промежуточный процесс|GET, POST|Azure и контейнер|`{APP_ID}_STAGING.gz`|
-|Производство|GET, POST|Azure и контейнер|`{APP_ID}_PRODUCTION.gz`|
+|Промежуточная|GET, POST|Azure и контейнер|`{APP_ID}_STAGING.gz`|
+|Рабочая среда|GET, POST|Azure и контейнер|`{APP_ID}_PRODUCTION.gz`|
 
 > [!IMPORTANT]
 > Не переименовывайте, не изменяйте, перезаписывают или распаковывает файлы пакетов LUIS.
@@ -118,7 +121,7 @@ docker pull mcr.microsoft.com/azure-cognitive-services/luis:latest
 
 Перед упаковкой приложения LUIS потребуется следующее:
 
-|Требования к упаковке|Сведения|
+|Требования к упаковке|Подробнее|
 |--|--|
 |Экземпляр ресурса _Cognitive Services_ Azure|Поддерживаемые регионы:<br><br>Западная часть США (`westus`)<br>Западная Европа (`westeurope`)<br>Восточная Австралия (`australiaeast`)|
 |Обученное или опубликованное приложение LUIS|Без [неподдерживаемых зависимостей][unsupported-dependencies]. |
@@ -206,7 +209,7 @@ docker run --rm -it -p 5000:5000 ^
 --cpus 2 ^
 --mount type=bind,src=c:\input,target=/input ^
 --mount type=bind,src=c:\output\,target=/output ^
-mcr.microsoft.com/azure-cognitive-services/luis ^
+mcr.microsoft.com/azure-cognitive-services/language/luis ^
 Eula=accept ^
 Billing={ENDPOINT_URI} ^
 ApiKey={API_KEY}
@@ -355,7 +358,7 @@ curl -X GET \
 
 Чтобы завершить работу контейнера, в среде командной строки, где выполняется контейнер, нажмите клавиши **CTRL+C**.
 
-## <a name="troubleshooting"></a>Устранение неполадок
+## <a name="troubleshooting"></a>Диагностика
 
 Если контейнер запускается с выходным [подключением](luis-container-configuration.md#mount-settings) и включенным ведением журнала, контейнер создает файлы журнала, которые удобно использовать для устранения неполадок, возникающих во время запуска или работы контейнера.
 
@@ -372,7 +375,7 @@ curl -X GET \
 <!--blogs/samples/video courses -->
 [!INCLUDE [Discoverability of more container information](../../../includes/cognitive-services-containers-discoverability.md)]
 
-## <a name="summary"></a>Итоги
+## <a name="summary"></a>Сводка
 
 В этой статье описаны основные понятия и рабочий процесс для скачивания, установки и выполнения контейнеров Интеллектуальной службы распознавания речи (LUIS). В разделе "Сводка" сделайте следующее.
 

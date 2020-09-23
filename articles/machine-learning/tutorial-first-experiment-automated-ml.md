@@ -10,12 +10,12 @@ author: cartacioS
 ms.author: sacartac
 ms.reviewer: nibaccam
 ms.date: 07/10/2020
-ms.openlocfilehash: f68867a7b24e9c5d8dafa0da65209e14eeae5210
-ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
+ms.openlocfilehash: ebc3899c98a09b64443b129dde52cb597fac9eff
+ms.sourcegitcommit: bdd5c76457b0f0504f4f679a316b959dcfabf1ef
 ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 09/22/2020
-ms.locfileid: "90896483"
+ms.locfileid: "90976653"
 ---
 # <a name="tutorial-create-a-classification-model-with-automated-ml-in-azure-machine-learning"></a>Руководство по Создание модели классификации с использованием автоматизированного машинного обучения в службе "Машинное обучение Azure".
 
@@ -242,7 +242,7 @@ ms.locfileid: "90896483"
 + Дополнительные сведения [об автоматическом машинном обучении](concept-automated-ml.md).
 + Дополнительные сведения о классификационных метриках и графиках см. в статье [Общие сведения об автоматических результатах машинного обучения](how-to-understand-automated-ml.md#classification).
 + Подробная информация о [добавлении признаков](how-to-configure-auto-features.md#featurization).
-+ Подробная информация [о профилировании данных](how-to-use-automated-ml-for-ml-models.md#profile).
++ Подробная информация [о профилировании данных](how-to-connect-data-ui.md#profile).
 
 
 >[!NOTE]

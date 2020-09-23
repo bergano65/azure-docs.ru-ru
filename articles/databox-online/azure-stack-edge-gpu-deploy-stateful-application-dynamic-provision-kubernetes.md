@@ -1,6 +1,6 @@
 ---
-title: Использование kubectl для развертывания приложения с отслеживанием состояния Kubernetes с помощью динамически подготовленного общего ресурса на Azure Stack пограничном устройстве GPU | Документация Майкрософт
-description: Описывает создание Kubernetes развертывания приложений с отслеживанием состояния с помощью динамически подготовленного общего ресурса с использованием kubectl на устройстве Microsoft Azure Stack пограничной GPU.
+title: Использование kubectl для развертывания приложения с отслеживанием состояния Kubernetes с помощью динамически подготовленного общего ресурса на устройстве Azure Stack ребра Pro GPU | Документация Майкрософт
+description: Описывает создание Kubernetes развертывания приложений с отслеживанием состояния с помощью динамически подготовленного общего ресурса с использованием kubectl на устройстве Microsoft Azure Stack с ГРАФИЧЕСКИм стандартом Pro.
 services: databox
 author: alkohli
 ms.service: databox
@@ -8,18 +8,18 @@ ms.subservice: edge
 ms.topic: how-to
 ms.date: 08/26/2020
 ms.author: alkohli
-ms.openlocfilehash: c787fc4c37c8fc3b4b8f007b1a84a5989a15fbc4
-ms.sourcegitcommit: bcda98171d6e81795e723e525f81e6235f044e52
+ms.openlocfilehash: d37152f7dec78d5f5db21fdde9a8ec25c36c4e05
+ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/01/2020
-ms.locfileid: "89254327"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90899474"
 ---
-# <a name="use-kubectl-to-run-a-kubernetes-stateful-application-with-storageclass-on-your-azure-stack-edge-gpu-device"></a>Использование kubectl для запуска приложения Kubernetes с отслеживанием состояния с помощью Сторажекласс на устройстве с Azure Stack пограничном GPU
+# <a name="use-kubectl-to-run-a-kubernetes-stateful-application-with-storageclass-on-your-azure-stack-edge-pro-gpu-device"></a>Использование kubectl для запуска приложения Kubernetes с отслеживанием состояния с помощью Сторажекласс на устройстве Azure Stack ребра Pro GPU
 
 В этой статье показано, как развернуть приложение с отслеживанием состояния с одним экземпляром в Kubernetes с помощью Сторажекласс, чтобы динамически подготавливать хранилище и развертывание. Развертывание использует `kubectl` команды в существующем кластере Kubernetes и развертывает приложение MySQL. 
 
-Эта процедура предназначена для тех, кто проверил [хранилище Kubernetes на Azure Stack пограничном устройстве](azure-stack-edge-gpu-kubernetes-storage.md) и знаком с концепциями [хранилища Kubernetes](https://kubernetes.io/docs/concepts/storage/).
+Эта процедура предназначена для тех, кто проверил [хранилище Kubernetes на устройстве с Azure Stack пограничным Pro](azure-stack-edge-gpu-kubernetes-storage.md) и знаком с концепциями [хранилища Kubernetes](https://kubernetes.io/docs/concepts/storage/).
 
 
 ## <a name="prerequisites"></a>Предварительные требования
@@ -28,30 +28,30 @@ ms.locfileid: "89254327"
 
 ### <a name="for-device"></a>Для устройств
 
-- У вас есть учетные данные для входа на 1 узел Azure Stack пограничной устройство.
+- У вас есть учетные данные для входа на 1 узел Azure Stack пограничным устройством Pro.
     - Устройство активировано. См. раздел [Активация устройства](azure-stack-edge-gpu-deploy-activate.md).
     - Устройство имеет роль вычислений, настроенную через портал Azure и имеющую кластер Kubernetes. См. раздел [Настройка вычислений](azure-stack-edge-gpu-deploy-configure-compute.md).
 
 ### <a name="for-client-accessing-the-device"></a>Для клиента, обращающегося к устройству
 
-- У вас есть клиентская система Windows, которая будет использоваться для доступа к Azure Stack пограничному устройству.
+- У вас есть клиентская система Windows, которая будет использоваться для доступа к устройству Azure Stack погранично Pro.
     - Клиент работает под управлением Windows PowerShell 5,0 или более поздней версии. Чтобы скачать последнюю версию Windows PowerShell, перейдите к разделу [Установка Windows PowerShell](https://docs.microsoft.com/powershell/scripting/install/installing-windows-powershell?view=powershell-7).
     
     - Также можно использовать любой другой клиент с [поддерживаемой операционной системой](azure-stack-edge-gpu-system-requirements.md#supported-os-for-clients-connected-to-device) . В этой статье описывается процедура использования клиента Windows. 
     
-    - Вы завершили процедуру, описанную в статье [доступ к кластеру Kubernetes на пограничном устройстве Azure Stack](azure-stack-edge-gpu-create-kubernetes-cluster.md). Вы выполнили следующие задачи:
+    - Вы выполнили процедуру, описанную в статье [доступ к кластеру Kubernetes на устройстве с Azure Stack ребр Pro](azure-stack-edge-gpu-create-kubernetes-cluster.md). Вы выполнили следующие задачи:
       - Создание `userns1` пространства имен с помощью `New-HcsKubernetesNamespace` команды. 
       - Создание пользователя с `user1` помощью `New-HcsKubernetesUser` команды. 
       - Предоставлен `user1` доступ к `userns1` через `Grant-HcsKubernetesNamespaceAccess` команду.       
       - Установлен `kubectl` на клиенте и сохранил `kubeconfig` файл с пользовательской конфигурацией в C: \\ Users \\ &lt; &gt; \\ . KUBE. 
     
-    - Убедитесь, что `kubectl` версия клиента отклонена, но не имеет более одной версии из главной версии Kubernetes, работающей на устройстве Azure Stack пограничном. 
+    - Убедитесь, что `kubectl` версия клиента отклонена, но не имеет более одной версии из главной версии Kubernetes, работающей на устройстве Azure Stack погранично Pro. 
         - Используйте `kubectl version` для проверки версии kubectl, работающей на клиенте. Запишите полную версию.
-        - В локальном пользовательском интерфейсе устройства Azure Stack пограничных устройств перейдите к разделу **Обзор** и запишите номер программного обеспечения Kubernetes. 
+        - В локальном пользовательском интерфейсе устройства Azure Stack ребра Pro перейдите к **обзору** и запишите номер Kubernetes Software. 
         - Проверьте эти две версии на совместимость с сопоставлением, указанным в поддерживаемой версии Kubernetes.<!-- insert link-->. 
 
 
-Вы готовы к развертыванию приложения с отслеживанием состояния на Azure Stack пограничном устройстве. 
+Вы готовы к развертыванию приложения с отслеживанием состояния на устройстве Azure Stack ребра Pro. 
 
 
 ## <a name="deploy-mysql"></a>Развертывание MySQL
@@ -78,7 +78,7 @@ ms.locfileid: "89254327"
 
 1. Вы будете использовать следующие файлы YAML. В этом `mysql-deployment.yml` файле описывается развертывание, которое запускает MySQL и ссылается на PVC. Файл определяет подключение тома для `/var/lib/mysql` , а затем создает PVC, который выполняет поиск тома размером 20 ГБ. Динамический ПС подготавливается, а PVC привязан к этой ПС.
 
-    Скопируйте и сохраните следующий `mysql-deployment.yml` файл в папке в клиенте Windows, используемом для доступа к Azure Stack пограничному устройству.
+    Скопируйте и сохраните следующий `mysql-deployment.yml` файл в папке клиента Windows, который используется для доступа к устройству Azure Stack погранично Pro.
     
     ```yml
     apiVersion: v1
@@ -126,7 +126,7 @@ ms.locfileid: "89254327"
               claimName: mysql-pv-claim-sc
     ```
     
-2. Скопируйте и сохраните в виде `mysql-pvc.yml` файла в той же папке, где был сохранен `mysql-deployment.yml` . Чтобы использовать встроенные Сторажекласс, Azure Stack пограничное устройство на подключенном диске данных, установите `storageClassName` поле в ОБЪЕКТЕ PVC в значение `ase-node-local` и акцессмодес `ReadWriteOnce` . 
+2. Скопируйте и сохраните в виде `mysql-pvc.yml` файла в той же папке, где был сохранен `mysql-deployment.yml` . Чтобы использовать встроенные Сторажекласс, Azure Stack Device Pro на подключенном диске данных, задайте `storageClassName` для поля в ОБЪЕКТЕ PVC значение `ase-node-local` и акцессмодес `ReadWriteOnce` . 
 
     > [!NOTE] 
     > Убедитесь, что YAML файлы имеют правильный отступ. Проверить и сохранить можно с помощью [YAML Lint](http://www.yamllint.com/) .
@@ -326,4 +326,4 @@ C:\Users\user>
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Сведения о настройке сети с помощью kubectl см. в статье [развертывание приложения без отслеживания состояния на Azure Stack пограничном устройстве](azure-stack-edge-gpu-deploy-stateless-application-iot-edge-module.md) .
+Сведения о настройке сети с помощью kubectl см. в статье [развертывание приложения без отслеживания состояния на устройстве Azure Stack пограничной Pro](azure-stack-edge-gpu-deploy-stateless-application-iot-edge-module.md) .

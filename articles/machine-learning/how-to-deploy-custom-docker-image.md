@@ -11,15 +11,15 @@ ms.reviewer: larryfr
 ms.date: 09/09/2020
 ms.topic: conceptual
 ms.custom: how-to, devx-track-python
-ms.openlocfilehash: 2164f6d6b346eda185e8a38720677ad50f2e8c89
-ms.sourcegitcommit: 3be3537ead3388a6810410dfbfe19fc210f89fec
+ms.openlocfilehash: f69ba6e1c5fdfc04fac6fed8487b246f9af72fa2
+ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89650686"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90889943"
 ---
 # <a name="deploy-a-model-using-a-custom-docker-base-image"></a>Развертывание модели с помощью пользовательского базового образа DOCKER
-[!INCLUDE [applies-to-skus](../../includes/aml-applies-to-basic-enterprise-sku.md)]
+
 
 Узнайте, как использовать пользовательский базовый образ DOCKER при развертывании обученных моделей с помощью Машинное обучение Azure.
 
@@ -184,7 +184,7 @@ ms.locfileid: "89650686"
 
 Чтобы использовать пользовательский образ, вам потребуются следующие сведения:
 
-* __Имя образа__. Например, `mcr.microsoft.com/azureml/o16n-sample-user-base/ubuntu-miniconda:latest` — это путь к базовому образу DOCKER, предоставляемому корпорацией Майкрософт.
+* __Имя образа__. Например, `mcr.microsoft.com/azureml/o16n-sample-user-base/ubuntu-miniconda:latest` — это путь к простому образу DOCKER, предоставляемому корпорацией Майкрософт.
 
     > [!IMPORTANT]
     > Для пользовательских образов, которые вы создали, обязательно включите все теги, которые использовались вместе с изображением. Например, если образ был создан с помощью определенного тега, например `:v1` . Если при создании изображения не использовался конкретный тег, `:latest` был применен тег.
@@ -202,7 +202,7 @@ ms.locfileid: "89650686"
 
 | Изображение | Описание |
 | ----- | ----- |
-| `mcr.microsoft.com/azureml/o16n-sample-user-base/ubuntu-miniconda` | Базовый образ для Машинное обучение Azure |
+| `mcr.microsoft.com/azureml/o16n-sample-user-base/ubuntu-miniconda` | Основной образ для Машинное обучение Azure |
 | `mcr.microsoft.com/azureml/onnxruntime:latest` | Содержит среду выполнения ONNX для загрузки ЦП |
 | `mcr.microsoft.com/azureml/onnxruntime:latest-cuda` | Содержит среду выполнения ONNX и CUDA для GPU |
 | `mcr.microsoft.com/azureml/onnxruntime:latest-tensorrt` | Содержит среду выполнения ONNX и Тенсоррт для GPU |
