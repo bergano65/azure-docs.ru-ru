@@ -12,12 +12,12 @@ ms.workload: data-services
 ms.custom: seo-lt-2019
 ms.topic: article
 ms.date: 08/04/2020
-ms.openlocfilehash: 5bd78f2db8ea1f2a26d26269822ec78978a3cfde
-ms.sourcegitcommit: 1b2d1755b2bf85f97b27e8fbec2ffc2fcd345120
+ms.openlocfilehash: ce63d86c3256646782775c84636c4d248e0a6735
+ms.sourcegitcommit: bdd5c76457b0f0504f4f679a316b959dcfabf1ef
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/04/2020
-ms.locfileid: "87553314"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90984337"
 ---
 # <a name="tutorial-migrate-sql-server-to-an-azure-sql-managed-instance-online-using-dms"></a>Руководство. Миграция SQL Server в Azure SQL Управляемый экземпляр Online с помощью DMS
 
@@ -35,7 +35,7 @@ Azure Database Migration Service можно использовать для пе
 
 > [!IMPORTANT]
 > Для оперативной миграции с SQL Server на SQL Управляемый экземпляр с помощью Azure Database Migration Service необходимо предоставить полную резервную копию базы данных и последующие резервные копии журналов в сетевой общей папке SMB, которую служба может использовать для переноса баз данных. Azure Database Migration Service не инициирует создание резервных копий, вместо этого он использует для миграции существующие резервные копии, которые уже могли быть созданы в рамках плана аварийного восстановления.
-> Выбирайте [резервные копии, используя параметр WITH CHECKSUM](https://docs.microsoft.com/sql/relational-databases/backup-restore/enable-or-disable-backup-checksums-during-backup-or-restore-sql-server?view=sql-server-2017). Также убедитесь, что не добавили несколько резервных копий (например, полную копию и журнал транзакций) на один носитель резервных копий. Сохраняйте каждую резервную копию в отдельный файл. Наконец, чтобы снизить вероятность возникновения потенциальных проблем, связанных с миграцией больших объемов резервных копий, можно использовать сжатые резервные копии.
+> Выбирайте [резервные копии, используя параметр WITH CHECKSUM](https://docs.microsoft.com/sql/relational-databases/backup-restore/enable-or-disable-backup-checksums-during-backup-or-restore-sql-server?view=sql-server-2017&preserve-view=true). Также убедитесь, что не добавили несколько резервных копий (например, полную копию и журнал транзакций) на один носитель резервных копий. Сохраняйте каждую резервную копию в отдельный файл. Наконец, чтобы снизить вероятность возникновения потенциальных проблем, связанных с миграцией больших объемов резервных копий, можно использовать сжатые резервные копии.
 
 > [!NOTE]
 > Чтобы выполнить сетевую миграцию с помощью Azure Database Migration Service, требуется создать экземпляр ценовой категории "Премиум".
@@ -245,7 +245,7 @@ Azure Database Migration Service можно использовать для пе
 
     Далее можно развернуть категории баз данных и имен для входа, чтобы отслеживать состояние переноса соответствующих объектов сервера.
 
-   ![Выполняется действие миграции](media/tutorial-sql-server-to-managed-instance-online/dms-monitor-migration-extend2.png)
+   ![Состояние действия миграции](media/tutorial-sql-server-to-managed-instance-online/dms-monitor-migration-extend2.png)
 
 ## <a name="performing-migration-cutover"></a>Выполнение прямой миграции
 
@@ -264,7 +264,7 @@ Azure Database Migration Service можно использовать для пе
     ![Подготовка к выполнению прямой миграции](media/tutorial-sql-server-to-managed-instance-online/dms-complete-cutover.png)
 
     > [!IMPORTANT]
-    > После прямую миграцию доступность SQL Управляемый экземпляр с уровнем служб критически важный для бизнеса может занять значительно больше времени, чем общего назначения так как три вторичных реплики должны быть заполнены для группы высокой доступности AlwaysOn. Эта длительность операции зависит от размера данных. Дополнительные сведения см. в разделе [длительность операций управления](../azure-sql/managed-instance/management-operations-overview.md#management-operations-duration).
+    > После прямую миграцию доступность SQL Управляемый экземпляр с уровнем служб критически важный для бизнеса может занять значительно больше времени, чем общего назначения так как три вторичных реплики должны быть заполнены для группы высокой доступности AlwaysOn. Эта длительность операции зависит от размера данных. Дополнительные сведения см. в разделе [длительность операций управления](../azure-sql/managed-instance/management-operations-overview.md#duration).
 
 5. Когда состояние переноса базы данных изменится на **завершено**, Подключите свои приложения к новому целевому экземпляру SQL управляемый экземпляр.
 

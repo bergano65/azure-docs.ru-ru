@@ -1,6 +1,6 @@
 ---
-title: Azure Stack пограничных GPU Управление пользователями | Документация Майкрософт
-description: Описывает, как использовать портал Azure для управления пользователями на графическом процессоре Azure Stack ребра.
+title: Azure Stack графического процессора с краевым управлением для управления пользователями | Документация Майкрософт
+description: Описывает, как использовать портал Azure для управления пользователями на графическом процессоре Azure Stack ребра Pro.
 services: databox
 author: alkohli
 ms.service: databox
@@ -8,18 +8,18 @@ ms.subservice: edge
 ms.topic: how-to
 ms.date: 08/28/2020
 ms.author: alkohli
-ms.openlocfilehash: 8400f134c7a2b9da32c04e15e42a54f697b9cea6
-ms.sourcegitcommit: bcda98171d6e81795e723e525f81e6235f044e52
+ms.openlocfilehash: 5f7e8c09a09084b28278667cdeaf94f7e38908cd
+ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/01/2020
-ms.locfileid: "89254191"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90904504"
 ---
-# <a name="use-the-azure-portal-to-manage-users-on-your-azure-stack-edge"></a>Использование портал Azure для управления пользователями на стороне Azure Stack
+# <a name="use-the-azure-portal-to-manage-users-on-your-azure-stack-edge-pro"></a>Использование портал Azure для управления пользователями на Azure Stack крае Pro
 
 <!--[!INCLUDE [applies-to-skus](../../includes/azure-stack-edge-applies-to-all-sku.md)]-->
 
-В этой статье описывается, как управлять пользователями на Azure Stack пограничных устройствах. Вы можете управлять Azure Stack ребром с помощью портал Azure или через локальный веб-интерфейс. Используйте портал Azure, чтобы добавлять, изменять или удалять пользователей.
+В этой статье описывается, как управлять пользователями на Azure Stack пограничным Pro. Вы можете управлять Azure Stack пограничным Pro через портал Azure или через локальный веб-интерфейс. Используйте портал Azure, чтобы добавлять, изменять или удалять пользователей.
 
 Вы узнаете, как выполнять следующие задачи:
 
@@ -42,7 +42,7 @@ ms.locfileid: "89254191"
 
 Выполните на портале Azure шаги ниже, чтобы добавить пользователя.
 
-1. В портал Azure перейдите к ресурсу Azure Stackного периметра и перейдите к **обзору > пользователей**. На панели команд выберите **+ Добавить пользователя**.
+1. В портал Azure перейдите к ресурсу Azure Stackного периметра и перейдите к **обзору > пользователей**. На панели команд выберите **+ Добавить пользователя** .
 
     ![Добавление пользователя](media/azure-stack-edge-j-series-manage-users/add-user-1.png)
 

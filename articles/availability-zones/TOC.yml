@@ -95,6 +95,10 @@
       items:
         - name: Что такое Пограничные зоны?
           href: ../networking/edge-zones-overview.md
+    - name: Документация по Azure Orbital
+      items:
+        - name: Что собой представляет Azure Orbital?
+          href: ../networking/azure-orbital-overview.md
 - name: Аварийное восстановление
   items:
     - name: Использование Azure Site Recovery

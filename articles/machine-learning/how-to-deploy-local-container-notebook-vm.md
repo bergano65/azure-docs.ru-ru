@@ -11,16 +11,16 @@ ms.author: mnark
 author: MrudulaN
 ms.reviewer: larryfr
 ms.date: 03/05/2020
-ms.openlocfilehash: e4a62b9892af661f74df5b49ff4a451fb673b4e1
-ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
+ms.openlocfilehash: 7992283c1652199d665aad07c027b88e9489ddf0
+ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87325769"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90889828"
 ---
 # <a name="deploy-a-model-to-azure-machine-learning-compute-instances"></a>Развертывание модели для Машинное обучение Azureных экземпляров вычислений
 
-[!INCLUDE [applies-to-skus](../../includes/aml-applies-to-basic-enterprise-sku.md)]
+
 
 Узнайте, как использовать Машинное обучение Azure для развертывания модели в качестве веб-службы на Машинное обучение Azure вычислительного экземпляра. Используйте COMPUTE Instances, если выполняется одно из следующих условий.
 
@@ -52,9 +52,9 @@ ms.locfileid: "87325769"
     * Виртуальная машина записной книжки: `https://<vm_name>-<local_service_port>.<azure_region_of_workspace>.notebooks.azureml.net/score` . 
     * Вычислительный экземпляр: `https://<vm_name>-<local_service_port>.<azure_region_of_workspace>.instances.azureml.net/score` . 
 
-    например следующие. 
-    * Виртуальная машина записной книжки:`https://vm-name-6789.northcentralus.notebooks.azureml.net/score` 
-    * Вычислительный экземпляр:`https://vm-name-6789.northcentralus.instances.azureml.net/score`
+    Например, примененная к объекту директива 
+    * Виртуальная машина записной книжки: `https://vm-name-6789.northcentralus.notebooks.azureml.net/score` 
+    * Вычислительный экземпляр: `https://vm-name-6789.northcentralus.instances.azureml.net/score`
 
 ## <a name="test-the-service"></a>Тестирование службы
 

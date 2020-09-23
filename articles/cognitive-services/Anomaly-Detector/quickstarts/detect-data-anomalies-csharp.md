@@ -8,26 +8,27 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: anomaly-detector
 ms.topic: quickstart
-ms.date: 06/30/2020
+ms.date: 09/03/2020
 ms.author: aahi
 ms.custom: devx-track-csharp
-ms.openlocfilehash: a364588d77fb24e96c831ce541c5bb4e63d93e98
-ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
+ms.openlocfilehash: a5a3757a33beebb6e688dbea13259723da9280cc
+ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88922350"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90904573"
 ---
 # <a name="quickstart-detect-anomalies-in-your-time-series-data-using-the-anomaly-detector-rest-api-and-c"></a>Краткое руководство. Обнаружение аномалий в данных временных рядов с использованием REST API Детектора аномалий и C#
 
-Используйте это краткое руководство, чтобы узнать, как начать использовать две модели API Детектора аномалий для обнаружения аномалий в данных временных рядов. Это приложение C# отправляет два запроса API, содержащие данные временных рядов в формате JSON, и получает ответы.
+В этом кратком руководстве показано, как начать использовать API Детектора аномалий для обнаружения аномалий в данных временных рядов. Это приложение C# отправляет запросы API, которые содержат данные временных рядов в формате JSON, и получает ответы.
 
 | Запрос API                                        | Выходные данные приложения                                                                                                                                         |
 |----------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Обнаружение аномалий в пакетном режиме                        | Ответ в формате JSON содержит информацию о состоянии аномалий (и другие данные) для каждой точки в данных временного ряда, а также положения всех обнаруженных аномалий. |
-| Обнаружение состояний аномалии последней точки данных | В ответе JSON содержится состояние аномалии (и другие данные) для последней точки данных в данных временных рядов.                                        |
+| Обнаружение состояний аномалии последней точки данных | В ответе JSON содержится состояние аномалии (и другие данные) для последней точки данных в данных временных рядов. |
+| Обнаружение точек изменения, отмечающих новые тенденции в данных | Ответ JSON, содержащий обнаруженные точки изменения в данных временных рядов. |
 
- Хотя это приложение создается на языке C#, API представляет собой веб-службу RESTful, совместимую с большинством языков программирования. Исходный код для этого краткого руководства можно найти на портале [GitHub](https://github.com/Azure-Samples/AnomalyDetector/blob/master/quickstarts/csharp-detect-anomalies.cs).
+Хотя это приложение создается на языке C#, API представляет собой веб-службу RESTful, совместимую с большинством языков программирования. Исходный код для этого краткого руководства можно найти на портале [GitHub](https://github.com/Azure-Samples/AnomalyDetector/blob/master/quickstarts/csharp-detect-anomalies.cs).
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -61,6 +62,7 @@ ms.locfileid: "88922350"
     |------------------------------------|--------------------------------------------------|
     | Пакетное обнаружение                    | `/anomalydetector/v1.0/timeseries/entire/detect` |
     | Обнаружение в последней точке данных | `/anomalydetector/v1.0/timeseries/last/detect`   |
+    | Обнаружение точек изменений | `/anomalydetector/v1.0/timeseries/changepoint/detect`   |
 
     [!code-csharp[initial variables for endpoint, key and data file](~/samples-anomaly-detector/quickstarts/csharp-detect-anomalies.cs?name=vars)]
 
@@ -95,6 +97,18 @@ ms.locfileid: "88922350"
 
     [!code-csharp[Detect anomalies latest](~/samples-anomaly-detector/quickstarts/csharp-detect-anomalies.cs?name=detectAnomaliesLatest)]
 
+## <a name="detect-change-points-in-the-data"></a>Обнаружение точек изменения в данных
+
+1. Создайте новую функцию с именем `detectChangePoints()`. Создайте запрос и отправьте его, вызвав функцию `Request()` с указанием вашей конечной точки, URL-адреса для пакетного обнаружения аномалий, ключа подписки и данных временных рядов.
+
+2. Десериализируйте объект JSON и выведите его в консоль.
+
+3. Если ответ содержит поле `code`, выведите код ошибки и сообщение об ошибке.
+
+4. В противном случае найдите положения точек изменения в наборе данных. Поле `isChangePoint` ответа содержит массив логических значений, каждое из которых указывает, определена ли точка данных как точка изменения. Преобразуйте его в строковый массив с помощью функции `ToObject<bool[]>()` объекта ответа. Пройдите по массиву, а затем выведите перечень всех `true` значений. Эти значения соответствуют индексам точек изменения тенденций, если они были обнаружены.
+
+    [!code-csharp[Detect change points](~/samples-anomaly-detector/quickstarts/csharp-detect-anomalies.cs?name=detectChangePoints)]
+
 ## <a name="load-your-time-series-data-and-send-the-request"></a>Загрузка данных временных рядов и отправка запроса
 
 1. В методе main приложения загрузите данные временного ряда в формате JSON с помощью `File.ReadAllText()`.
@@ -108,5 +122,6 @@ ms.locfileid: "88922350"
 Успешный ответ возвращается в формате JSON. Перейдите по ссылками ниже, чтобы просмотреть ответ JSON на GitHub:
 * [Пример ответа при пакетном обнаружении](https://github.com/Azure-Samples/anomalydetector/blob/master/example-data/batch-response.json)
 * [Пример ответа при обнаружении последней точки](https://github.com/Azure-Samples/anomalydetector/blob/master/example-data/latest-point-response.json)
+* [Пример ответа при обнаружении точки изменения](https://github.com/Azure-Samples/anomalydetector/blob/master/example-data/change-point-sample.json)
 
 [!INCLUDE [anomaly-detector-next-steps](../includes/quickstart-cleanup-next-steps.md)]

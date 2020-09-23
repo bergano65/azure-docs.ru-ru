@@ -1,7 +1,7 @@
 ---
-title: Преобразование данных в конструкторе (Предварительная версия)
+title: Преобразование данных в конструкторе
 titleSuffix: Azure Machine Learning
-description: Узнайте, как преобразовать данные в конструктор Машинное обучение Azure (Предварительная версия), чтобы создать собственные наборы данных.
+description: Сведения о преобразовании данных в конструкторе Машинного обучения Azure для создания собственных наборов данных.
 services: machine-learning
 ms.service: machine-learning
 ms.subservice: core
@@ -10,15 +10,15 @@ ms.author: peterlu
 ms.date: 06/28/2020
 ms.topic: conceptual
 ms.custom: how-to, designer
-ms.openlocfilehash: 05a21ce10db2822c963f1b375842e9a7233e0816
-ms.sourcegitcommit: f988fc0f13266cea6e86ce618f2b511ce69bbb96
+ms.openlocfilehash: 9124bbfc7300f3a5116c572d569b41e15356ab8f
+ms.sourcegitcommit: bdd5c76457b0f0504f4f679a316b959dcfabf1ef
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/31/2020
-ms.locfileid: "87457827"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90983844"
 ---
-# <a name="transform-data-in-azure-machine-learning-designer-preview"></a>Преобразование данных в конструкторе Машинного обучения Azure (предварительная версия)
-[!INCLUDE [applies-to-skus](../../includes/aml-applies-to-enterprise-sku.md)]
+# <a name="transform-data-in-azure-machine-learning-designer"></a>Преобразование данных в конструкторе Машинное обучение Azure
+
 
 Из этой статьи вы узнаете, как преобразовывать и сохранять наборы данных в конструкторе Машинного обучения Azure для подготовки собственных данных для машинного обучения.
 
@@ -112,7 +112,7 @@ ms.locfileid: "87457827"
     **Формат файла**: CSV.
 
     > [!NOTE]
-    > В этой статье предполагается, что у вас есть доступ к хранилищу данных, зарегистрированному в текущей рабочей области Машинного обучения Azure. Инструкции по настройке хранилища данных см. в статье [Подключение к службам хранилища Azure](how-to-access-data.md#studio).
+    > В этой статье предполагается, что у вас есть доступ к хранилищу данных, зарегистрированному в текущей рабочей области Машинного обучения Azure. Инструкции по настройке хранилища данных см. в статье [Подключение к службам хранилища Azure](how-to-connect-data-ui.md#create-datastores).
 
     Если у вас нет хранилища данных, его можно создать. Например, в этой статье наборы данных сохраняются в учетной записи хранения BLOB-объектов по умолчанию, связанной с рабочей областью. Наборы данных будут сохранены в контейнер `azureml` в новой папке с именем `data`.
 

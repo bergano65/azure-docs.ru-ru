@@ -6,12 +6,12 @@ ms.author: andrela
 ms.service: mysql
 ms.topic: how-to
 ms.date: 4/13/2020
-ms.openlocfilehash: 51b05ea016880d04fd6a2123962afefbdb229be1
-ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
+ms.openlocfilehash: 69368500a99b47238e74a960fdd5381c0339430a
+ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86101789"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90905867"
 ---
 # <a name="configure-and-access-slow-query-logs-from-the-azure-portal"></a>Настройка и доступ к журналам запросов с высокой занесением портал Azure
 
@@ -28,7 +28,7 @@ ms.locfileid: "86101789"
 2. Выберите сервер базы данных Azure для MySQL.
 
 3. В разделе **мониторинг** на боковой панели выберите **журналы сервера**. 
-   ![Снимок экрана параметров журналов сервера](./media/howto-configure-server-logs-in-portal/1-select-server-logs-configure.png)
+   :::image type="content" source="./media/howto-configure-server-logs-in-portal/1-select-server-logs-configure.png" alt-text="Снимок экрана параметров журналов сервера":::
 
 4. Чтобы просмотреть параметры сервера, выберите **щелкните здесь, чтобы включить журналы и настроить параметры журнала**.
 
@@ -53,7 +53,7 @@ ms.locfileid: "86101789"
 
 3. В разделе **мониторинг** на боковой панели выберите **журналы сервера**. На странице отображается список файлов журнала.
 
-   ![Снимок экрана: страница "журналы сервера" с выделенным списком журналов](./media/howto-configure-server-logs-in-portal/4-server-logs-list.png)
+   :::image type="content" source="./media/howto-configure-server-logs-in-portal/4-server-logs-list.png" alt-text="Снимок экрана: страница "журналы сервера" с выделенным списком журналов":::
 
    > [!TIP]
    > Действует следующее соглашение об именовании журналов: **mysql-slow-<имя_вашего_сервера>-ггггммддчч.log**. Дата и время, используемые в имени файла, — это время, когда был выдан журнал. Файлы журнала поворачиваются каждые 24 часа или 7,5 ГБ, в зависимости от того, что происходит раньше. 
@@ -62,23 +62,23 @@ ms.locfileid: "86101789"
 
 5. Чтобы загрузить отдельные файлы журналов, щелкните значок со стрелкой вниз рядом с каждым файлом журнала в строке таблицы.
 
-   ![Снимок экрана: страница "журналы сервера" с выделенным значком "стрелка вниз"](./media/howto-configure-server-logs-in-portal/5-download.png)
+   :::image type="content" source="./media/howto-configure-server-logs-in-portal/5-download.png" alt-text="Снимок экрана: страница "журналы сервера" с выделенным значком "стрелка вниз"":::
 
 ## <a name="set-up-diagnostic-logs"></a>Настройка журналов диагностики
 
 1. В разделе **мониторинг** на боковой панели выберите **параметры диагностики**  >  **Добавить параметры диагностики**.
 
-   ![Снимок экрана параметров параметров диагностики](./media/howto-configure-server-logs-in-portal/add-diagnostic-setting.png)
+   :::image type="content" source="./media/howto-configure-server-logs-in-portal/add-diagnostic-setting.png" alt-text="Снимок экрана параметров параметров диагностики":::
 
 1. Укажите имя параметра диагностики.
 
 1. Укажите, какие приемники данных должны отправлять журналы запросов с высокой загрузкой (учетная запись хранения, концентратор событий или Рабочая область Log Analytics).
 
 1. В качестве типа журнала выберите **мисклсловлогс** .
-![Снимок экрана параметров конфигурации параметров диагностики](./media/howto-configure-server-logs-in-portal/configure-diagnostic-setting.png)
+:::image type="content" source="./media/howto-configure-server-logs-in-portal/configure-diagnostic-setting.png" alt-text="Снимок экрана параметров конфигурации параметров диагностики":::
 
 1. После настройки приемников данных для передачи журналов запросов с задержкой нажмите кнопку **сохранить**.
-![Снимок экрана параметров конфигурации параметров диагностики с выделенным сохранением](./media/howto-configure-server-logs-in-portal/save-diagnostic-setting.png)
+:::image type="content" source="./media/howto-configure-server-logs-in-portal/save-diagnostic-setting.png" alt-text="Снимок экрана параметров конфигурации параметров диагностики с выделенным сохранением":::
 
 1. Получите доступ к журналам запросов с задержкой, изучив их в настроенных приемниках данных. Для отображения журналов может потребоваться до 10 минут.
 

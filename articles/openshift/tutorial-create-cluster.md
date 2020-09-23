@@ -6,12 +6,12 @@ ms.author: suvetriv
 ms.topic: tutorial
 ms.service: container-service
 ms.date: 04/24/2020
-ms.openlocfilehash: f4b43129db5288275434253545861f3eae218e82
-ms.sourcegitcommit: 59ea8436d7f23bee75e04a84ee6ec24702fb2e61
+ms.openlocfilehash: 1ba383b99b8265e01cf757bfb1589a86a934e0e3
+ms.sourcegitcommit: 814778c54b59169c5899199aeaa59158ab67cf44
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/07/2020
-ms.locfileid: "89503794"
+ms.lasthandoff: 09/13/2020
+ms.locfileid: "90053877"
 ---
 # <a name="tutorial-create-an-azure-red-hat-openshift-4-cluster"></a>Руководство по созданию кластера Azure Red Hat OpenShift 4
 
@@ -104,20 +104,22 @@ ms.locfileid: "89503794"
    CLUSTER=cluster                 # the name of your cluster
    ```
 
-1. **Создайте группу ресурсов.**
+2. **Создайте группу ресурсов.**
 
-    Группа ресурсов Azure — это логическая группа, в которой развертываются и управляются ресурсы Azure. Во время создания группы ресурсов вам будет предложено указать расположение. В этом расположении сохраняются метаданные группы ресурсов, а также выполняется их работа в Azure, если во время создания ресурса вы не указали другой регион. Создайте группу ресурсов с помощью команды [az group create](/cli/azure/group?view=azure-cli-latest#az-group-create).
+Группа ресурсов Azure — это логическая группа, в которой развертываются и управляются ресурсы Azure. Во время создания группы ресурсов вам будет предложено указать расположение. В этом расположении сохраняются метаданные группы ресурсов, а также выполняется их работа в Azure, если во время создания ресурса вы не указали другой регион. Создайте группу ресурсов с помощью команды [az group create](/cli/azure/group?view=azure-cli-latest#az-group-create).
     
-> [!NOTE]
+> [!NOTE] 
 > Платформа Azure Red Hat OpenShift доступна не во всех регионах, где поддерживается создание группы ресурсов Azure. Список регионов, где поддерживается Azure Red Hat OpenShift, см. в разделе [Available regions](https://docs.openshift.com/aro/4/welcome/index.html#available-regions) (Доступные регионы).
 
-    ```azurecli-interactive
-    az group create --name $RESOURCEGROUP --location $LOCATION
-    ```
+```azurecli-interactive
+az group create \
+  --name $RESOURCEGROUP \
+  --location $LOCATION
+```
 
-    The following example output shows the resource group created successfully:
+В следующем примере выходных данных показано, что группа ресурсов успешно создана:
 
-    ```json
+```json
     {
     "id": "/subscriptions/<guid>/resourceGroups/aro-rg",
     "location": "eastus",
@@ -128,24 +130,24 @@ ms.locfileid: "89503794"
     },
     "tags": null
     }
-    ```
+```
 
-2. **Создайте виртуальную сеть.**
+3. **Создайте виртуальную сеть.**
 
-    Для кластеров Azure Red Hat OpenShift с OpenShift 4 требуется виртуальная сеть с двумя пустыми подсетями для главного и рабочего узлов.
+Для кластеров Azure Red Hat OpenShift с OpenShift 4 требуется виртуальная сеть с двумя пустыми подсетями для главного и рабочего узлов.
 
-    Создайте виртуальную сеть в той же группе ресурсов, которая была создана ранее:
+Создайте виртуальную сеть в той же группе ресурсов, которая была создана ранее:
 
-    ```azurecli-interactive
-    az network vnet create \
-    --resource-group $RESOURCEGROUP \
-    --name aro-vnet \
-    --address-prefixes 10.0.0.0/22
-    ```
+```azurecli-interactive
+az network vnet create \
+   --resource-group $RESOURCEGROUP \
+   --name aro-vnet \
+   --address-prefixes 10.0.0.0/22
+```
 
-    В следующем примере выходных данных показано, что виртуальная сеть успешно создана:
+В следующем примере выходных данных показано, что виртуальная сеть успешно создана:
 
-    ```json
+```json
     {
     "newVNet": {
         "addressSpace": {
@@ -161,9 +163,9 @@ ms.locfileid: "89503794"
         "type": "Microsoft.Network/virtualNetworks"
     }
     }
-    ```
+```
 
-3. **Добавьте пустую подсеть для главных узлов.**
+4. **Добавьте пустую подсеть для главных узлов.**
 
     ```azurecli-interactive
     az network vnet subnet create \
@@ -174,7 +176,7 @@ ms.locfileid: "89503794"
     --service-endpoints Microsoft.ContainerRegistry
     ```
 
-4. **Добавьте пустую подсеть для рабочих узлов.**
+5. **Добавьте пустую подсеть для рабочих узлов.**
 
     ```azurecli-interactive
     az network vnet subnet create \
@@ -185,7 +187,7 @@ ms.locfileid: "89503794"
     --service-endpoints Microsoft.ContainerRegistry
     ```
 
-5. **[Отключите политики частной конечной точки подсети](../private-link/disable-private-link-service-network-policy.md) в главной подсети.** Это необходимо для подключения к кластеру и управления им.
+6. **[Отключите политики частной конечной точки подсети](../private-link/disable-private-link-service-network-policy.md) в главной подсети.** Это необходимо для подключения к кластеру и управления им.
 
     ```azurecli-interactive
     az network vnet subnet update \

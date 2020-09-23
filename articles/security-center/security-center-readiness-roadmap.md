@@ -13,14 +13,14 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 04/03/2018
 ms.author: memildin
-ms.openlocfilehash: 4a62520a9807cd99b5c353c32bb13058fc471a84
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 3a3dd1c0df32e7d6a67e63c9e148327d30f0082c
+ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84771365"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90904724"
 ---
-# <a name="azure-security-center-readiness-roadmap"></a>План подготовки к работе с центром безопасности Azure
+# <a name="azure-security-center-readiness-roadmap"></a>План готовности центра безопасности Azure
 Этот документ содержит план подготовки, который поможет вам приступить к работе с центром безопасности Azure.
 
 ## <a name="understanding-security-center"></a>Основные сведения о центре безопасности
@@ -29,12 +29,12 @@ ms.locfileid: "84771365"
 Используйте следующие ресурсы для начала работы с центром безопасности.
 
 Статьи
-* [Введение в Центр безопасности Azure](https://docs.microsoft.com/azure/security-center/security-center-intro)
-* [Краткое руководство по центру безопасности Azure](https://docs.microsoft.com/azure/security-center/security-center-get-started)
+- [Введение в Центр безопасности Azure](https://docs.microsoft.com/azure/security-center/security-center-intro)
+- [Краткое руководство по центру безопасности Azure](https://docs.microsoft.com/azure/security-center/security-center-get-started)
 
 Видео
-* [Introduction to Azure Security Center](https://azure.microsoft.com/resources/videos/introduction-to-azure-security-center/) (Ознакомительное видео о центре безопасности Azure)
-* [Overview of Security Center Prevention, Detection and Response Capabilities](https://azure.microsoft.com/resources/videos/azurecon-2015-new-azure-security-center-helps-you-prevent-detect-and-respond-to-threats/) (Видеообзор возможностей предотвращения, обнаружения и ответных действий центра безопасности)
+- [Introduction to Azure Security Center](https://azure.microsoft.com/resources/videos/introduction-to-azure-security-center/) (Ознакомительное видео о центре безопасности Azure)
+- [Overview of Security Center Prevention, Detection and Response Capabilities](https://azure.microsoft.com/resources/videos/azurecon-2015-new-azure-security-center-helps-you-prevent-detect-and-respond-to-threats/) (Видеообзор возможностей предотвращения, обнаружения и ответных действий центра безопасности)
 
 ## <a name="planning-and-operations"></a>Планирование и эксплуатация
 
@@ -42,20 +42,16 @@ ms.locfileid: "84771365"
 
 Следующие ресурсы пригодятся вам в процессе планирования и эксплуатации.
 
-Статья
-* [Руководство по планированию использования центра безопасности Azure и работе в нем](https://docs.microsoft.com/azure/security-center/security-center-planning-and-operations-guide)
+- [Руководство по планированию использования центра безопасности Azure и работе в нем](https://docs.microsoft.com/azure/security-center/security-center-planning-and-operations-guide)
 
 
 ### <a name="onboarding-computers-to-security-center"></a>Подключение компьютеров к центру безопасности
-Центр безопасности автоматически обнаруживает подписки и рабочие области Azure, не включенные в центр безопасности уровня "Стандартный". Сюда входят подписки Azure, использующие версию центра безопасности уровня "Бесплатный" и рабочие нагрузки без включенного решения безопасности.
+Центр безопасности автоматически обнаруживает все подписки или рабочие области Azure, не защищенные защитником Azure. Сюда входят подписки Azure, использующие бесплатный центр безопасности и рабочие области, на которых не включено решение для обеспечения безопасности.
 
 Следующие ресурсы пригодятся вам в процессе подключения.
 
-Статья
-* [Подключение к центру безопасности Azure уровня "Стандартный" для повышения уровня безопасности](https://docs.microsoft.com/azure/security-center/security-center-onboarding)
-
-Видеоролик
-* [Azure Security Center Hybrid - Overview](https://youtu.be/NMa4L_M597k) (Видеообзор гибридных ресурсов центра безопасности Azure)
+- [Подключение компьютеров, которые не относятся к Azure](quickstart-onboard-machines.md)
+- [Azure Security Center Hybrid - Overview](https://youtu.be/NMa4L_M597k) (Видеообзор гибридных ресурсов центра безопасности Azure)
 
 ## <a name="mitigating-security-issues-using-security-center"></a>Устранение проблем безопасности с помощью центра безопасности
 Центр безопасности автоматически собирает, анализирует и объединяет данные журналов, поступающие от ресурсов Azure, сети и подключенных решений партнеров, таких как брандмауэры и решения для защиты конечных точек, для выявления реальных угроз и сокращения ложных срабатываний.
@@ -63,14 +59,13 @@ ms.locfileid: "84771365"
 Следующие ресурсы помогут вам управлять предупреждениями безопасности и защищать ресурсы.
 
 Статьи    
-* [Наблюдение за работоспособностью системы безопасности в Центре безопасности Azure](https://docs.microsoft.com/azure/security-center/security-center-monitoring)
-* [Защита виртуальных машин в центре безопасности Azure](security-center-virtual-machine-protection.md)
-* [Защита сети в центре безопасности Azure.](https://docs.microsoft.com/azure/security-center/security-center-network-recommendations)
-* [Защита службы SQL Azure и данных в центре безопасности Azure](https://docs.microsoft.com/azure/security-center/security-center-sql-service-recommendations)
+- [Наблюдение за работоспособностью системы безопасности в Центре безопасности Azure](https://docs.microsoft.com/azure/security-center/security-center-monitoring)
+- [Защита сети в центре безопасности Azure.](https://docs.microsoft.com/azure/security-center/security-center-network-recommendations)
+- [Защита службы SQL Azure и данных в центре безопасности Azure](https://docs.microsoft.com/azure/security-center/security-center-sql-service-recommendations)
 
 
 Видеоролик    
-* [Устранение проблем безопасности с помощью центра безопасности Azure](https://channel9.msdn.com/Blogs/Azure-Security-Videos/Mitigating-Security-Issues-using-Azure-Security-Center)
+- [Устранение проблем безопасности с помощью центра безопасности Azure](https://channel9.msdn.com/Blogs/Azure-Security-Videos/Mitigating-Security-Issues-using-Azure-Security-Center)
 
 ### <a name="security-center-for-incident-response"></a>Реагирование на инциденты с помощью центра безопасности
 Чтобы минимизировать затраты и риски, важно составить план реагирования до обнаружения атаки. Центр безопасности Azure можно использовать на разных этапах реагирования на инциденты.
@@ -119,6 +114,4 @@ ms.locfileid: "84771365"
 ## <a name="community-resources"></a>Ресурсы сообщества
 
 * [UserVoice центра безопасности](https://feedback.azure.com/forums/347535-azure-security-center)
-* [Страница вопросов и ответов Майкрософт для центра безопасности](https://docs.microsoft.com/answers/topics/azure-security-center.html)
-
-
+* [Вопрос.&страницу для центра безопасности](https://docs.microsoft.com/answers/topics/azure-security-center.html)
