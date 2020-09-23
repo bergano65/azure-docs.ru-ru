@@ -6,12 +6,12 @@ ms.author: andrela
 ms.service: mysql
 ms.topic: how-to
 ms.date: 6/30/2020
-ms.openlocfilehash: c6a35d9ba2d2f1c762f44b3792792401565c4804
-ms.sourcegitcommit: 9c262672c388440810464bb7f8bcc9a5c48fa326
+ms.openlocfilehash: 7c9e7cda862fe1112cce7ed8cff270843f0a8475
+ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/03/2020
-ms.locfileid: "89421090"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90902780"
 ---
 # <a name="how-to-backup-and-restore-a-server-in-azure-database-for-mysql-using-the-azure-portal"></a>Как создать резервную копию сервера в службе "База данных Azure для MySQL" и восстановить его с помощью портала Azure
 
@@ -32,7 +32,7 @@ ms.locfileid: "89421090"
 
 Если вы создаете сервер на портале Azure, тип резервного копирования (**локально избыточное** или **геоизбыточное**) задается в окне **Ценовая категория**. Кроме того, в этом окне указывается **срок хранения резервных копий** — период (в днях), в течение которого должны храниться резервные копии.
 
-   ![Окно "Ценовая категория" — выбор типа избыточности для резервного копирования](./media/howto-restore-server-portal/pricing-tier.png)
+   :::image type="content" source="./media/howto-restore-server-portal/pricing-tier.png" alt-text="Окно "Ценовая категория" — выбор типа избыточности для резервного копирования":::
 
 Дополнительные сведения о настройке этих значений при создании см. в кратком руководстве [Создание базы данных Azure для сервера MySQL с помощью портала Azure](quickstart-create-mysql-server-database-using-azure-portal.md).
 
@@ -41,7 +41,7 @@ ms.locfileid: "89421090"
 2. Выберите сервер базы данных Azure для MySQL. Откроется страница **Обзор**.
 3. В меню в разделе **Параметры** выберите **Ценовая категория**. С помощью ползунка можно изменить **срок хранения резервных копий** в диапазоне от 7 до 35 дней.
 На приведенном ниже снимке экрана он увеличен до 34 дней.
-![Увеличенный срок хранения резервных копий](./media/howto-restore-server-portal/3-increase-backup-days.png)
+:::image type="content" source="./media/howto-restore-server-portal/3-increase-backup-days.png" alt-text="Увеличенный срок хранения резервных копий":::
 
 4. Нажмите кнопку **ОК**, чтобы подтвердить изменение.
 
@@ -57,11 +57,11 @@ ms.locfileid: "89421090"
 
 2. На панели инструментов на странице **Обзор** для сервера выберите **Восстановить**.
 
-   ![База данных Azure для MySQL: кнопка "Восстановление" на странице "Обзор"](./media/howto-restore-server-portal/2-server.png)
+   :::image type="content" source="./media/howto-restore-server-portal/2-server.png" alt-text="База данных Azure для MySQL: кнопка "Восстановление" на странице "Обзор"":::
 
 3. Заполните форму "Восстановление", указав следующие сведения.
 
-   ![База данных Azure для MySQL: информация для восстановления](./media/howto-restore-server-portal/3-restore.png)
+   :::image type="content" source="./media/howto-restore-server-portal/3-restore.png" alt-text="База данных Azure для MySQL: информация для восстановления":::
    - **Точка восстановления.** Выберите точку во времени, до которой нужно восстановить сервер.
    - **Целевой сервер.** Укажите имя для нового сервера.
    - **Расположение.** Невозможно выбрать регион. По умолчанию он совпадает с исходным сервером.

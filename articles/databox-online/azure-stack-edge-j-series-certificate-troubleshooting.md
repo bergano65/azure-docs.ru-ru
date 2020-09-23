@@ -1,6 +1,6 @@
 ---
-title: Устранение неполадок с сертификатами с помощью Azure Stackного периметра с помощью GPU | Документация Майкрософт
-description: Описывает устранение ошибок сертификатов с помощью устройства GPU Azure Stack.
+title: Устранение неполадок с сертификатами с помощью Azure Stack ребра Pro с помощью GPU | Документация Майкрософт
+description: Описание устранения неполадок с сертификатами с помощью устройства GPU Azure Stack с пограничными устройствами.
 services: databox
 author: alkohli
 ms.service: databox
@@ -8,16 +8,16 @@ ms.subservice: edge
 ms.topic: troubleshooting
 ms.date: 08/28/2020
 ms.author: alkohli
-ms.openlocfilehash: 05338fb70bfa390ff3bd9e14e938edeb40938aeb
-ms.sourcegitcommit: bcda98171d6e81795e723e525f81e6235f044e52
+ms.openlocfilehash: a0918c6cebd50231a9664811bb467e04d2d2bfd9
+ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/01/2020
-ms.locfileid: "89269443"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90891332"
 ---
 # <a name="troubleshooting-certificate-errors"></a>Устранение ошибок сертификата
 
-В этой статье содержатся сведения об устранении распространенных ошибок сертификата при установке сертификатов на устройство Azure Stackного периметра.
+В этой статье содержатся сведения об устранении распространенных ошибок сертификата при установке сертификатов на устройство Azure Stack пограничной Pro.
 
 ## <a name="common-certificate-errors"></a>Распространенные ошибки сертификатов
 

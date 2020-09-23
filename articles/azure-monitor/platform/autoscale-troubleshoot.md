@@ -4,12 +4,12 @@ description: Отслеживание проблем с автомасштаби
 ms.topic: conceptual
 ms.date: 11/4/2019
 ms.subservice: autoscale
-ms.openlocfilehash: 9780cf88070110c4efc13c477d65307aa3985fe5
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: a29b5d11a6ea06af9d5b6a8b5120c6f0caa6601e
+ms.sourcegitcommit: bdd5c76457b0f0504f4f679a316b959dcfabf1ef
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "75751333"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90979044"
 ---
 # <a name="troubleshooting-azure-autoscale"></a>Устранение неполадок автоматического масштабирования Azure
  
@@ -47,7 +47,7 @@ Azure Monitor Автомасштабирование позволяет полу
 
 Давайте рассмотрим метрики из службы автомасштабирования.
  
-![Пример масштабируемого набора виртуальных машин в процентах](media/autoscale-troubleshoot/autoscale-vmss-CPU-ex-full-1.png)
+![На снимке экрана показан пример масштабируемого набора ЦП виртуальной машины в процентах.](media/autoscale-troubleshoot/autoscale-vmss-CPU-ex-full-1.png)
 
 ![Пример масштабируемого набора виртуальных машин в процентах](media/autoscale-troubleshoot/autoscale-vmss-CPU-ex-full-2.png)
 
@@ -72,7 +72,7 @@ Azure Monitor Автомасштабирование позволяет полу
 
 В этом случае наблюдаемое значение метрики механизма автомасштабирования вычисляется как фактическое значение метрики, деленное на количество экземпляров. Если наблюдаемое значение метрики меньше порогового значения, действие масштабирования не инициируется. 
  
-![Пример диаграмм метрик автомасштабирования для масштабируемого набора виртуальных машин](media/autoscale-troubleshoot/autoscale-vmss-metric-chart-ex-1.png)
+![На снимке экрана показана страница среднее количество исходящих потоков с примером диаграмм метрик автомасштабирования для масштабируемого набора виртуальных машин.](media/autoscale-troubleshoot/autoscale-vmss-metric-chart-ex-1.png)
 
 ![Пример диаграмм метрик автомасштабирования для масштабируемого набора виртуальных машин](media/autoscale-troubleshoot/autoscale-vmss-metric-chart-ex-2.png)
 
@@ -205,5 +205,5 @@ AutoscaleScaleActionsLog
 
 Дополнительные сведения см. в статье [Автомасштабирование журналов ресурсов](autoscale-resource-log-schema.md) .
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 Ознакомьтесь со сведениями о рекомендациях по [автомасштабированию](autoscale-best-practices.md). 

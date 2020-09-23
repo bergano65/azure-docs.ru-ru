@@ -10,12 +10,12 @@ ms.topic: article
 ms.workload: identity
 ms.date: 05/26/2020
 ms.author: chmutali
-ms.openlocfilehash: 0a025ad7857594b3117b1703a0e19ae47407d0fd
-ms.sourcegitcommit: 43558caf1f3917f0c535ae0bf7ce7fe4723391f9
+ms.openlocfilehash: 87085d4a4911801933993720ae0ab23aeb19956d
+ms.sourcegitcommit: bdd5c76457b0f0504f4f679a316b959dcfabf1ef
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/11/2020
-ms.locfileid: "90018107"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90974363"
 ---
 # <a name="tutorial-configure-workday-for-automatic-user-provisioning"></a>Руководство по Настройка Workday для автоматической подготовки пользователей
 
@@ -258,7 +258,7 @@ ms.locfileid: "90018107"
 > Если вы хотите ограничить агент подготовки только созданием и чтением пользователей из определенного подразделения для целей тестирования, мы рекомендуем делегировать элемент управления на соответствующем уровне подразделения во время выполнения теста.
 
 4. На экране приветствия нажмите кнопку **Далее** . 
-5. На экране **Выбор пользователей или групп** добавьте пользователя домена, созданного на шаге 2. Нажмите кнопку **Далее**.
+5. На экране **Выбор пользователей или групп** добавьте пользователя домена, созданного на шаге 2. Щелкните **Далее**.
    >[!div class="mx-imgBorder"]
    >![Добавить экран](./media/workday-inbound-tutorial/delegation-wizard-01.png "Добавить экран")
 
@@ -373,7 +373,7 @@ ms.locfileid: "90018107"
 1. Проверьте установку агента и убедитесь, что он работает, открыв оснастку "Службы" и обнаружив службу под именем "Microsoft Azure AD Connect Provisioning Agent"
 
    >[!div class="mx-imgBorder"]
-   >![Снимок экрана: агент подготовки Microsoft Azure AD Connect, выполняющийся в службах](./media/workday-inbound-tutorial/services.png)
+   >![Снимок экрана: агент подготовки Microsoft Azure AD Connect, выполняющийся в службах.](./media/workday-inbound-tutorial/services.png)
 
 ### <a name="part-3-in-the-provisioning-app-configure-connectivity-to-workday-and-active-directory"></a>Часть 3. В приложении подготовки настройте подключения к Workday и Active Directory
 На этом шаге мы устанавливаем подключение с Workday и Active Directory на портале Azure. 

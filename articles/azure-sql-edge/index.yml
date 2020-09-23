@@ -1,21 +1,21 @@
 ### YamlMime:Landing
-title: Документация по SQL Azure для пограничных вычислений (предварительная версия)
+title: Документация по SQL Azure для пограничных вычислений
 summary: SQL Azure для пограничных вычислений — это оптимизированное ядро реляционной СУБД, предназначенное для развертываний в Интернете вещей и пограничных средах.
 metadata:
-  title: Документация по SQL Azure для пограничных вычислений (предварительная версия)
-  meta.description: Learn how to use Azure SQL Edge (Preview).
+  title: Документация по SQL Azure для пограничных вычислений
+  meta.description: Learn how to use Azure SQL Edge.
   services: sql-edge
   ms.service: sql-edge
   ms.topic: landing-page
   author: stevestein
   ms.author: sstein
   ms.date: 05/19/2020
-  ms.openlocfilehash: 97595cd74fa5a584d5d1943ed88ac617fc742569
-  ms.sourcegitcommit: f1132db5c8ad5a0f2193d751e341e1cd31989854
+  ms.openlocfilehash: 3a043b3e29352abd44d1b880f366d9fa8ccea4d2
+  ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
   ms.translationtype: HT
   ms.contentlocale: ru-RU
-  ms.lasthandoff: 05/31/2020
-  ms.locfileid: "84233201"
+  ms.lasthandoff: 09/22/2020
+  ms.locfileid: "90894469"
 landingContent:
 - title: SQL для пограничных вычислений
   linkLists:
@@ -25,8 +25,14 @@ landingContent:
       url: overview.md
   - linkListType: deploy
     links:
-    - text: Развертывание SQL для пограничных вычислений
+    - text: Развертывание SQL для пограничных вычислений с помощью портала
       url: deploy-portal.md
+    - text: Развертывание SQL для пограничных вычислений с помощью Docker
+      url: disconnected-deployment.md
+  - linkListType: tutorial
+    links:
+    - text: Развертывание в Kubernetes
+      url: deploy-kubernetes.md
 - title: Синхронизация данных
   linkLists:
   - linkListType: tutorial
@@ -43,6 +49,8 @@ landingContent:
       url: stream-data.md
     - text: Представления каталога потоковой передачи
       url: streaming-catalog-views.md
+    - text: Создание заданий потоковой передачи и управление ими
+      url: create-stream-analytics-job.md
 - title: Машинное обучение
   linkLists:
   - linkListType: concept
@@ -53,3 +61,21 @@ landingContent:
     links:
     - text: Развертывание ONNX в SQL для пограничных вычислений
       url: deploy-onnx.md
+- title: Обработка данных временных рядов
+  linkLists:
+  - linkListType: concept
+    links:
+    - text: Добавление пропущенных значений
+      url: imputing-missing-values.md
+    - text: Политика хранения данных
+      url: data-retention-overview.md
+    - text: Date_Bucket (Transact-SQL)
+      url: date-bucket-tsql.md
+- title: Настройка SQL для пограничных вычислений
+  linkLists:
+  - linkListType: concept
+    links:
+    - text: Настройка SQL для пограничных вычислений
+      url: configure.md
+    - text: Настройка репликации
+      url: configure-replication.md

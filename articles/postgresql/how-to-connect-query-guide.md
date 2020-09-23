@@ -1,0 +1,55 @@
+---
+title: Подключение и запрос — PostgreSQL на одном сервере
+description: Ссылки на краткие руководства по базе данных SQL Azure, в которых показано, как подключиться к серверу и выполнить запросы.
+services: postgresql
+ms.service: postgresql
+ms.topic: how-to
+author: mksuni
+ms.author: sumuth
+ms.date: 09/21/2020
+ms.openlocfilehash: 924dbadc07f57e5928ecc63a24bf5e57d6213670
+ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
+ms.translationtype: MT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90938809"
+---
+# <a name="connect-and-query-overview-for-azure-database-for-postgresql--single-server"></a>Общие сведения о подключении и запросах для базы данных Azure для PostgreSQL — один сервер
+
+В следующем документе приведены ссылки на примеры, демонстрирующие подключение и выполнение запросов к серверу базы данных Azure для PostgreSQL. В этом руководством также содержатся рекомендации и расширения TLS, которые можно использовать для подключения к серверу на поддерживаемых языках.
+
+## <a name="quickstarts"></a>Краткие руководства
+
+| Краткое руководство | Описание |
+|---|---|
+|[PgAdmin](https://www.pgadmin.org/)|PgAdmin можно использовать для подключения к серверу, что упрощает создание, Обслуживание и использование объектов базы данных.|
+|[psql в Azure Cloud Shell](quickstart-create-server-database-azure-cli.md#connect-to-the-azure-database-for-postgresql-server-by-using-psql)|В этой статье показано, как запустить [**psql**](https://www.postgresql.org/docs/current/static/app-psql.html) в [Azure Cloud Shell](https://docs.microsoft.com/azure/cloud-shell/overview) для подключения к серверу, а затем выполнить инструкции для запроса, вставки, обновления и удаления данных в базе данных. Вы можете запустить **psql** , если он установлен в среде разработки.|
+|[PostgreSQL с VS Code](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-cosmosdb)|Расширение баз данных Azure для VS Code (Предварительная версия) позволяет просматривать и запрашивать сервер PostgreSQL как локально, так и в облаке с помощью скрапбукс с богатыми функциями IntelliSense. |
+|[PHP](connect-php.md)|В этом кратком руководстве показано, как использовать PHP для создания программы для подключения к базе данных и использования работы с объектами базы данных для запроса данных.|
+|[Java](connect-java.md)|В этом кратком руководстве показано, как использовать Java для подключения к базе данных, а затем использовать работу с объектами базы данных для запроса данных.|
+|[Node.js](connect-nodejs.md)|В этом кратком руководстве показано, как использовать Node.js для создания программы для подключения к базе данных и использования работы с объектами базы данных для запроса данных.|
+|[.NET (C#)](connect-csharp.md)|В этом кратком руководстве показано, как use.NET (C#) создать программу на C# для подключения к базе данных и использовать работу с объектами базы данных для запроса данных.|
+|[GO](connect-go.md)|В этом кратком руководстве показано, как использовать Go для подключения к базе данных. Также демонстрируется применение инструкций Transact-SQL для запроса и изменения данных.|
+|[Python](connect-python.md)|В этом кратком руководстве показано, как использовать Python для подключения к базе данных и использования работы с объектами базы данных для запроса данных. |
+|[Ruby](connect-ruby.md)|В этом кратком руководстве показано, как использовать Ruby для создания программы для подключения к базе данных и использования работы с объектами базы данных для запроса данных.|
+
+
+## <a name="tls-considerations-for-database-connectivity"></a>Рекомендации по использованию протокола TLS для подключения к базе данных
+
+Протокол TLS используется всеми драйверами, предоставляемыми или поддерживаемыми корпорацией Майкрософт для подключения к базам данных Azure для PostgreSQL. Специальная настройка не требуется, но необходимо применить TLS 1,2 для вновь созданных серверов. Мы рекомендуем использовать TLS 1,0 и 1,1, а затем обновить версию TLS для серверов. См. раздел [Настройка TLS](howto-tls-configurations.md) .
+
+
+## <a name="postgresql-extensions"></a>Расширения PostgreSQL
+PostgreSQL предоставляет возможность расширить функциональность базы данных с помощью расширений. Расширения позволяют объединить несколько связанных объектов SQL в один пакет, чтобы загружать и удалять их из базы данных одной командой. После загрузки в базу данных расширения действуют как встроенные функции.
+
+- [Расширения postgres 11](https://docs.microsoft.com/azure/postgresql/concepts-extensions#postgres-11-extensions)
+- [Расширения postgres 10](https://docs.microsoft.com/azure/postgresql/concepts-extensions#postgres-10-extensions)
+- [Расширения postgres 9,6](https://docs.microsoft.com/azure/postgresql/concepts-extensions#postgres-96-extensions)
+- [Расширения postgres 9,5](https://docs.microsoft.com/azure/postgresql/concepts-extensions#postgres-95-extensions)
+
+Дополнительные сведения см. [в разделе Использование расширений PostgreSQL на одном сервере](concepts-extensions.md).
+
+## <a name="next-steps"></a>Next Steps 
+
+- [Перенос данных с помощью дампа и восстановления](howto-migrate-using-dump-and-restore.md)
+- [Перенос данных с помощью импорта и экспорта](howto-migrate-using-export-and-import.md)

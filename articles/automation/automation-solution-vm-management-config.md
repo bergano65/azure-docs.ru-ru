@@ -5,12 +5,12 @@ services: automation
 ms.subservice: process-automation
 ms.date: 06/01/2020
 ms.topic: conceptual
-ms.openlocfilehash: 3fbd6292f654071f74b4dfccc5e4de393ccfff02
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: b0bc23d515bebdd0d943bbad33c5ebba35a35605
+ms.sourcegitcommit: bdd5c76457b0f0504f4f679a316b959dcfabf1ef
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84266722"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90987211"
 ---
 # <a name="configure-startstop-vms-during-off-hours"></a>Настройка запуска и остановки виртуальных машин в нерабочее время
 
@@ -139,17 +139,17 @@ ms.locfileid: "84266722"
 
 1. На портале Azure выберите **Монитор** > **Группы действий**. Выберите группу действий под названием **StartStop_VM_Notication**.
 
-    ![Страница "Управление обновлениями" службы автоматизации](media/automation-solution-vm-management/azure-monitor.png)
+    :::image type="content" source="media/automation-solution-vm-management/azure-monitor.png" alt-text="Снимок экрана со страницей "монитор — группы действий".":::
 
 2. На странице StartStop_VM_Notification в разделе **Сведения** щелкните **Изменить сведения**. Откроется страница "Электронная почта, SMS, push-уведомление, голосовой вызов". Измените адрес электронной почты и нажмите кнопку **ОК**, чтобы сохранить изменения.
 
-    ![Страница "Управление обновлениями" службы автоматизации](media/automation-solution-vm-management/change-email.png)
+    :::image type="content" source="media/automation-solution-vm-management/change-email.png" alt-text="Снимок экрана: страница электронной почты, SMS/Push/Voice с примером обновленного адреса электронной почты.":::
 
     Кроме того, можно добавить дополнительные действия в группу действий. Дополнительные сведения о группах действий см. в статье [Группы действий](../azure-monitor/platform/action-groups.md)
 
 Ниже приведен пример сообщения электронной почты, которое отправляется, когда функция завершает работу виртуальных машин.
 
-![Страница "Управление обновлениями" службы автоматизации](media/automation-solution-vm-management/email.png)
+:::image type="content" source="media/automation-solution-vm-management/email.png" alt-text="Снимок экрана примера сообщения электронной почты, отправленного при завершении работы компонента виртуальными машинами.":::
 
 ## <a name="add-or-exclude-vms"></a><a name="add-exclude-vms"></a>Добавление и исключение виртуальных машин
 

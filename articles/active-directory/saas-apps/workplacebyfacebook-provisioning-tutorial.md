@@ -10,12 +10,12 @@ ms.workload: identity
 ms.topic: article
 ms.date: 04/28/2020
 ms.author: jeedes
-ms.openlocfilehash: 4b4953cbca4d08e911fd043413387a1602bd8e08
-ms.sourcegitcommit: 3c66bfd9c36cd204c299ed43b67de0ec08a7b968
+ms.openlocfilehash: ae13e062f50e1e8eefeaa886c67c636cf6230c18
+ms.sourcegitcommit: bdd5c76457b0f0504f4f679a316b959dcfabf1ef
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "90006097"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90973884"
 ---
 # <a name="tutorial-configure-workplace-by-facebook-for-automatic-user-provisioning"></a>Руководство по настройке Workplace by Facebook для автоматической подготовки пользователей
 
@@ -89,7 +89,7 @@ ms.locfileid: "90006097"
 
 5. В разделе **учетные данные администратора** щелкните **авторизовать**. Вы будете перенаправлены на страницу авторизации Facebook на рабочем месте. Введите имя вашего рабочего места в Facebook и нажмите кнопку **продолжить** . Нажмите кнопку **проверить подключение** , чтобы убедиться, что Azure AD может подключаться к рабочему месту с помощью Facebook. В случае сбоя подключения убедитесь, что учетная запись вашего рабочего места имеет разрешения администратора, и повторите попытку.
 
-    ![Подготовка](./media/workplacebyfacebook-provisioning-tutorial/provisioning.png)
+    ![На снимке экрана отображается диалоговое окно учетных данных администратора с параметром авторизовать.](./media/workplacebyfacebook-provisioning-tutorial/provisioning.png)
 
     ![Авторизация](./media/workplacebyfacebook-provisioning-tutorial/workplacelogin.png)
 
@@ -125,15 +125,15 @@ ms.locfileid: "90006097"
    |phoneNumbers[type eq "fax"].value|Строка|
    |externalId|Строка|
    |preferredLanguage|Строка|
-   |urn: scim: схемы: расширение: Enterprise: 1.0. Manager|Строка|
-   |urn: scim: схемы: расширение: корпоративный: 1.0. Department|Строка|
-   |urn: scim: схемы: расширение: Enterprise: 1.0. деление|Строка|
-   |urn: scim: схемы: расширение: Enterprise: 1.0. Организация|Строка|
-   |urn: scim: схемы: расширение: Enterprise: 1.0. costCenter|Строка|
-   |urn: scim: схемы: расширение: Enterprise: 1.0. Емплойинумбер|Строка|
-   |urn: scim: schemas: расширение: Facebook: auth_method: 1.0: auth_method|Строка|
+   |urn:scim:schemas:extension:enterprise:1.0.manager|Строка|
+   |urn:scim:schemas:extension:enterprise:1.0.department|Строка|
+   |urn:scim:schemas:extension:enterprise:1.0.division|Строка|
+   |urn:scim:schemas:extension:enterprise:1.0.organization|Строка|
+   |urn:scim:schemas:extension:enterprise:1.0.costCenter|Строка|
+   |urn:scim:schemas:extension:enterprise:1.0.employeeNumber|Строка|
+   |urn: scim: schemas: расширение: Facebook: auth_method: 1.0: auth_method|Тип String|
    |urn: scim: schemas: расширение: Facebook: оказался: 1.0. is_frontline|Логическое значение|
-   |urn: scim: schemas: расширение: Facebook: старттермдатес: 1.0. startDate|Целое число|
+   |urn: scim: schemas: расширение: Facebook: старттермдатес: 1.0. startDate|Тип Integer|
 
 
 10. Чтобы настроить фильтры области, ознакомьтесь со следующими инструкциями, предоставленными в [руководстве по фильтрам области](../manage-apps/define-conditional-rules-for-provisioning-user-accounts.md).

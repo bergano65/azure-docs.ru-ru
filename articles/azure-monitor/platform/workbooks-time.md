@@ -1,6 +1,6 @@
 ---
 title: Параметры времени Azure Monitor книг
-description: Упростите создание сложных отчетов с помощью готовых настраиваемых параметризованных книг
+description: Узнайте, как задать параметры времени, чтобы разрешить пользователям задавать контекст времени анализа. Параметры времени используются почти всеми отчетами.
 services: azure-monitor
 author: mrbullwinkle
 manager: carmonm
@@ -9,12 +9,12 @@ ms.tgt_pltfrm: ibiza
 ms.topic: conceptual
 ms.date: 10/23/2019
 ms.author: mbullwin
-ms.openlocfilehash: 380b8a7ce286ab06b6935bf63bf3a0e82f371c2f
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: c84133d5728f7b6593e0606dda2eef28b8167e43
+ms.sourcegitcommit: bdd5c76457b0f0504f4f679a316b959dcfabf1ef
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "77658019"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90972869"
 ---
 # <a name="workbook-time-parameters"></a>Параметры времени книги
 
@@ -25,9 +25,9 @@ ms.locfileid: "77658019"
 2. Выберите _Добавить параметры_ из ссылок в книге.
 3. Нажмите синюю кнопку _Добавить параметр_ .
 4. В новой области параметров, которая появляется на экране, введите:
-    1. Имя параметра:`TimeRange`
-    2. Тип параметра:`Time range picker`
-    3. Обязательно:`checked`
+    1. Имя параметра: `TimeRange`
+    2. Тип параметра: `Time range picker`
+    3. Обязательно: `checked`
     4. Доступные диапазоны времени: последний час, последние 12 часов, последние 24 часа, последние 48 часов, последние 3 дня, последние 7 дней и разрешить выбор настраиваемого диапазона времени.
 5. Нажмите кнопку "Сохранить" на панели инструментов, чтобы создать параметр.
 
@@ -48,7 +48,7 @@ ms.locfileid: "77658019"
 
 ### <a name="in-kql"></a>В ККЛ
 1. Добавьте в книгу элемент управления запроса и выберите ресурс Application Insights.
-2. В ККЛ введите фильтр области времени с помощью параметра:`| where timestamp {TimeRange}`
+2. В ККЛ введите фильтр области времени с помощью параметра: `| where timestamp {TimeRange}`
 3. Это увеличивает время оценки запроса до `| where timestamp > ago(1d)` , которое представляет собой значение диапазона времени для параметра.
 4. Выполнение запроса для просмотра результатов
 
@@ -56,7 +56,7 @@ ms.locfileid: "77658019"
 
 ### <a name="in-text"></a>В тексте 
 1. Добавьте в книгу элемент управления "текст".
-2. В Markdown введите`The chosen time range is {TimeRange:label}`
+2. В Markdown введите `The chosen time range is {TimeRange:label}`
 3. Выбор _выполненного редактирования_
 4. В элементе управления "текст" отображается текст: _выбранный диапазон времени — за последние 24 часа_
 
@@ -78,7 +78,7 @@ requests
 | make-series Requests = count() default = 0 on timestamp from {TimeRange:start} to {TimeRange:end} step {TimeRange:grain}
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Узнайте](workbooks-visualizations.md) больше о книгах с множеством разнообразных вариантов визуализации.
 * [Управление](workbooks-access-control.md) доступом к ресурсам книги и предоставление общего доступа к ним.
