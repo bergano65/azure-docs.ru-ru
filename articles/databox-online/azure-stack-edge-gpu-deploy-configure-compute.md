@@ -1,6 +1,6 @@
 ---
-title: Учебник по фильтрации и анализу данных с помощью вычислений в GPU Azure Stack Edge | Документация Майкрософт
-description: Узнайте, как настроить роль вычислений в GPU Azure Stack Edge и использовать ее для преобразования данных перед отправкой в Azure.
+title: Учебник. Фильтрация и анализ данных с помощью вычислений на устройстве Azure Stack Edge Pro с GPU | Документация Майкрософт
+description: Сведения о том, как настроить роль вычислений в Azure Stack Edge Pro с GPU и использовать ее для преобразования данных перед их отправкой в Azure.
 services: databox
 author: alkohli
 ms.service: databox
@@ -8,19 +8,19 @@ ms.subservice: edge
 ms.topic: tutorial
 ms.date: 08/28/2020
 ms.author: alkohli
-Customer intent: As an IT admin, I need to understand how to configure compute on Azure Stack Edge so I can use it to transform the data before sending it to Azure.
-ms.openlocfilehash: f4a8786c8d86f43d3433dd51fe7696fd523025a9
-ms.sourcegitcommit: 58d3b3314df4ba3cabd4d4a6016b22fa5264f05a
+Customer intent: As an IT admin, I need to understand how to configure compute on Azure Stack Edge Pro so I can use it to transform the data before sending it to Azure.
+ms.openlocfilehash: 95c59cff1f47fe720e2dbc65c5b0a69a09be2f2f
+ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89293572"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90903184"
 ---
-# <a name="tutorial-configure-compute-on-azure-stack-edge-gpu-device"></a>Руководство по настройке вычислений на устройстве GPU Azure Stack Edge
+# <a name="tutorial-configure-compute-on-azure-stack-edge-pro-gpu-device"></a>Руководство по Настройка вычислений на устройстве Azure Stack Edge Pro с GPU
 
 <!--[!INCLUDE [applies-to-skus](../../includes/azure-stack-edge-applies-to-all-sku.md)]-->
 
-В этом учебнике описывается, как настроить роль вычислений и создать кластер Kubernetes на устройстве Azure Stack Edge. 
+В этом учебнике описывается, как настроить роль вычислений и создать кластер Kubernetes на устройстве Azure Stack Edge Pro. 
 
 Эта процедура может занять от 20 до 30 минут.
 
@@ -34,16 +34,16 @@ ms.locfileid: "89293572"
  
 ## <a name="prerequisites"></a>Предварительные требования
 
-Прежде чем вы настроите роль вычисления на устройстве Azure Stack Edge, убедитесь, что:
+Прежде чем вы настроите роль вычислений на устройстве Azure Stack Edge Pro, убедитесь, что:
 
-- Устройство Azure Stack Edge активировано, как описано в статье [Учебник по активации Azure Stack Edge с помощью GPU](azure-stack-edge-gpu-deploy-activate.md).
+- Устройство Azure Stack Edge Pro активировано, как описано в статье [Активация Azure Stack Edge Pro](azure-stack-edge-gpu-deploy-activate.md).
 - Убедитесь, что вы выполнили инструкции, приведенные в разделе [Включение сети вычислений](azure-stack-edge-gpu-deploy-configure-network-compute-web-proxy.md#enable-compute-network), и сделали следующее:
     - включили сетевой интерфейс для служб вычислений;
     - назначили IP-адреса узлов Kubernetes и внешних служб Kubernetes.
 
 ## <a name="configure-compute"></a>настройка вычислений;
 
-Чтобы настроить вычисления в Azure Stack Edge, необходимо создать ресурс Центра Интернета вещей на портале Azure.
+Чтобы настроить вычисления в Azure Stack Edge Pro, необходимо создать ресурс Центра Интернета вещей на портале Azure.
 
 1. На портале Azure своего ресурса Azure Stack Edge перейдите к разделу **Обзор**. В области справа на плитке **Вычисления** щелкните **Начало работы**.
 
@@ -72,17 +72,17 @@ ms.locfileid: "89293572"
     ![Начало работы с вычислениями](./media/azure-stack-edge-j-series-deploy-configure-compute/configure-compute-5.png)
 
     > [!NOTE]
-    > Если диалоговое окно **Настройка вычислений** закрыть прежде, чем устройство Azure Stack Edge будет сопоставлено с Центром Интернета вещей, Центр Интернета вещей будет создан, но не отобразится в настройках вычислений. 
+    > Если диалоговое окно **Настройка вычислений** закрыть, прежде чем устройство Azure Stack Edge Pro будет связано с Центром Интернета вещей, Центр Интернета вещей будет создан, но не отобразится в настройках вычислений. 
     
 При настройке роли вычислений Edge на устройстве Edge создается два устройства — устройство Интернета вещей и устройство IoT Edge. Оба устройства можно просмотреть в ресурсе Центра Интернета вещей. На этом устройстве IoT Edge также запущена среда выполнения IoT Edge. На данный момент доступна только платформа Linux для устройства IoT Edge.
 
 Настройка вычислений может занять 20–30 минут, так как в фоновом режиме создаются виртуальные машины и кластер Kubernetes. 
 
-После успешной настройки вычислений на портале Azure имеются кластер Kubernetes и пользователь по умолчанию, связанный с пространством имен Интернета вещей (системное пространство имен, контролируемое Azure Stack Edge). 
+После успешной настройки вычислений на портале Azure вам будут доступны кластер Kubernetes и пользователь по умолчанию, связанный с пространством имен Интернета вещей (системное пространство имен, контролируемое Azure Stack Edge Pro). 
 
 ## <a name="get-kubernetes-endpoints"></a>Получение конечных точек Kubernetes
 
-Чтобы настроить клиент для доступа к кластеру Kubernetes, вам понадобится конечная точка Kubernetes. Выполните приведенные ниже действия, чтобы получить конечную точку API Kubernetes из локального пользовательского интерфейса устройства Azure Stack Edge.
+Чтобы настроить клиент для доступа к кластеру Kubernetes, вам понадобится конечная точка Kubernetes. Выполните приведенные ниже действия, чтобы получить конечную точку API Kubernetes из локального пользовательского интерфейса устройства Azure Stack Edge Pro.
 
 1. Перейдите на страницу **Устройства** в локальном пользовательском веб-интерфейсе устройства.
 2. В разделе **Device endpoints** (Конечные точки устройства) скопируйте конечную точку **службы API Kubernetes**. Эта конечная точка представляет собой строку в следующем формате: `https://compute.<device-name>.<DNS-domain>[Kubernetes-cluster-IP-address]`. 
@@ -117,7 +117,7 @@ ms.locfileid: "89293572"
 > * Получение конечных точек Kubernetes
 
 
-Чтобы узнать, как администрировать устройство Azure Stack Edge, перейдите к следующему руководству.
+Сведения об администрировании устройства Azure Stack Edge Pro см. в следующей статье:
 
 > [!div class="nextstepaction"]
-> [Использование локального пользовательского веб-интерфейса для администрирования Azure Stack Edge](azure-stack-edge-manage-access-power-connectivity-mode.md)
+> [Использование локального пользовательского веб-интерфейса для администрирования Azure Stack Edge Pro](azure-stack-edge-manage-access-power-connectivity-mode.md)

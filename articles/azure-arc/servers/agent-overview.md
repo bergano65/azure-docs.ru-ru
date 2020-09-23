@@ -1,18 +1,18 @@
 ---
 title: Общие сведения об агенте Connected Machine для Windows
-description: В этой статье представлен подробный обзор доступного агента серверов с поддержкой ARC (Предварительная версия), который поддерживает мониторинг виртуальных машин, размещенных в гибридных средах.
-ms.date: 08/06/2020
+description: В этой статье представлен подробный обзор доступного агента серверов с поддержкой Arc Azure, который поддерживает мониторинг виртуальных машин, размещенных в гибридных средах.
+ms.date: 09/02/2020
 ms.topic: conceptual
-ms.openlocfilehash: d922652537034bef258c5bcde78fb178b092ed16
-ms.sourcegitcommit: 4913da04fd0f3cf7710ec08d0c1867b62c2effe7
+ms.openlocfilehash: 990b5999a8483c6417049ac5ab965843c2b13659
+ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88212978"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90908178"
 ---
-# <a name="overview-of-azure-arc-enabled-servers-preview-agent"></a>Обзор агента серверов с поддержкой Arc Azure (Предварительная версия)
+# <a name="overview-of-azure-arc-enabled-servers-agent"></a>Обзор агента серверов с поддержкой ARC в Azure
 
-Агент подключенного компьютера с поддержкой Arc Azure (Предварительная версия) позволяет управлять компьютерами Windows и Linux, размещенными за пределами Azure, в корпоративной сети или другом поставщике облачных служб. В этой статье предоставлен подробный обзор требований к агенту, системе и сети, а также различных методов развертывания.
+Агент подключенного компьютера с поддержкой Arc Azure позволяет управлять компьютерами Windows и Linux, размещенными за пределами Azure, в корпоративной сети или другом поставщике облачных служб. В этой статье предоставлен подробный обзор требований к агенту, системе и сети, а также различных методов развертывания.
 
 ## <a name="agent-component-details"></a>Сведения о компоненте агента
 
@@ -47,15 +47,11 @@ ms.locfileid: "88212978"
 Агент Azure Connected Machine официально поддерживают следующие версии операционных систем Windows и Linux: 
 
 - Windows Server 2012 R2 или более поздние версии (в том числе Windows Server Core)
-- Ubuntu 16,04 и 18,04 (x64)
+- Ubuntu 16,04 и 18,04 LTS (x64)
 - CentOS Linux 7 (x64)
 - SUSE Linux Enterprise Server (SLES) 15 (x64)
 - Red Hat Enterprise Linux (RHEL) 7 (x64)
 - Amazon Linux 2 (x64)
-
->[!NOTE]
->Этот предварительный выпуск агента подключенного компьютера для Windows поддерживает только англоязычную версию Windows Server.
->
 
 ### <a name="required-permissions"></a>Необходимые разрешения
 
@@ -65,7 +61,7 @@ ms.locfileid: "88212978"
 
 ### <a name="azure-subscription-and-service-limits"></a>Ограничения подписки и служб Azure
 
-Перед настройкой компьютеров с помощью серверов с поддержкой ARC (Предварительная версия) просмотрите [ограничения для подписок](../../azure-resource-manager/management/azure-subscription-service-limits.md#subscription-limits) на Azure Resource Manager и [групп ресурсов](../../azure-resource-manager/management/azure-subscription-service-limits.md#resource-group-limits) , чтобы спланировать число подключенных компьютеров.
+Перед настройкой компьютеров с серверами с поддержкой Arc Azure проверьте Azure Resource Manager [ограничения подписки](../../azure-resource-manager/management/azure-subscription-service-limits.md#subscription-limits) и [ограничения группы ресурсов](../../azure-resource-manager/management/azure-subscription-service-limits.md#resource-group-limits) , чтобы спланировать число подключенных компьютеров.
 
 ### <a name="transport-layer-security-12-protocol"></a>Протокол безопасности транспортного уровня 1,2
 
@@ -105,7 +101,7 @@ URL-адреса в предыдущей таблице необходимы в 
 
 ### <a name="register-azure-resource-providers"></a>Регистрация поставщиков ресурсов Azure
 
-Серверы с поддержкой ARC в Azure (Предварительная версия) зависят от следующих поставщиков ресурсов Azure в подписке для использования этой службы:
+Серверы с поддержкой Arc Azure зависят от следующих поставщиков ресурсов Azure в подписке для использования этой службы:
 
 * **Microsoft.HybridCompute**
 * **Microsoft.GuestConfiguration**
@@ -246,6 +242,6 @@ az provider register --namespace 'Microsoft.GuestConfiguration'
     * /var/opt/azcmagent
     * /opt/logs
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
-Чтобы начать оценку серверов с поддержкой дуги Azure (Предварительная версия), следуйте указаниям в статье [подключение гибридных компьютеров к Azure из портал Azure](onboard-portal.md).
+Чтобы начать оценку серверов с поддержкой Arc Azure, следуйте указаниям в статье [подключение гибридных компьютеров к Azure из портал Azure](onboard-portal.md).

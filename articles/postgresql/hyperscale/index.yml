@@ -1,0 +1,94 @@
+### YamlMime:Landing
+title: Документация по Базе данных Azure для PostgreSQL — Гипермасштабирование (Citus)
+summary: База данных Azure для PostgreSQL — это полностью управляемая служба баз данных на основе реляционной СУБД PostgreSQL с открытым кодом. Гипермасштабирование (Citus) — это вариант развертывания, который позволяет горизонтально масштабировать запросы между несколькими компьютерами с использованием сегментирования. Это решение предназначено для приложений, которым требуется более высокая масштабируемость и производительность.
+metadata:
+  description: База данных Azure для PostgreSQL — это служба реляционных баз данных в облаке Майкрософт, созданная для разработчиков на основе СУБД PostgreSQL с открытым кодом.
+  author: jonels-msft
+  ms.author: jonels
+  ms.date: 09/27/2020
+  ms.service: postgresql
+  ms.subservice: hyperscale-citus
+  ms.topic: landing-page
+  ms.openlocfilehash: 20e99db5f380ee24cf88987a7884292ca47f7e1e
+  ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
+  ms.translationtype: HT
+  ms.contentlocale: ru-RU
+  ms.lasthandoff: 09/22/2020
+  ms.locfileid: "90929023"
+landingContent:
+- title: Начало работы
+  linkLists:
+  - linkListType: quickstart
+    links:
+    - text: Создание группы серверов с помощью портала Azure
+      url: ../quickstart-create-hyperscale-portal.md
+  - linkListType: concept
+    links:
+    - text: Узлы и таблицы группы серверов
+      url: ../concepts-hyperscale-nodes.md
+  - linkListType: tutorial
+    links:
+    - text: Проектирование мультитенантной базы данных
+      url: ../tutorial-design-database-hyperscale-multi-tenant.md
+    - text: Разработка панели мониторинга для аналитики в реальном времени
+      url: ../tutorial-design-database-hyperscale-realtime.md
+- title: Подключение и выполнение запросов
+  linkLists:
+  - linkListType: concept
+    links:
+    - text: Общие сведения о брандмауэре
+      url: ../concepts-hyperscale-firewall-rules.md
+    - text: Настройка TLS
+      url: ../concepts-hyperscale-ssl-connection-security.md
+  - linkListType: how-to-guide
+    links:
+    - text: Правила брандмауэра
+      url: ../howto-hyperscale-manage-firewall-using-portal.md
+    - text: Устранение неполадок с подключением
+      url: ../howto-hyperscale-troubleshoot-common-connection-issues.md
+- title: Масштаб
+  linkLists:
+  - linkListType: concept
+    links:
+    - text: Узлы и таблицы
+      url: ../concepts-hyperscale-nodes.md
+    - text: Выбор столбцов распределения
+      url: ../concepts-hyperscale-choose-distribution-column.md
+  - linkListType: how-to-guide
+    links:
+    - text: Размер группы серверов
+      url: ../howto-hyperscale-scaling.md
+    - text: Распределение таблиц
+      url: ../howto-hyperscale-modify-distributed-tables.md
+    - text: Создание оповещений на основе метрик
+      url: ../howto-hyperscale-alert-on-metric.md
+- title: Администрирование
+  linkLists:
+  - linkListType: concept
+    links:
+    - text: Резервное копирование и восстановление
+      url: ../concepts-hyperscale-backup.md
+    - text: Мониторинг и настройка
+      url: ../concepts-hyperscale-monitoring.md
+    - text: Высокий уровень доступности
+      url: ../concepts-hyperscale-high-availability.md
+    - text: Зарезервированная емкость
+      url: ../concepts-hyperscale-reserved-pricing.md
+  - linkListType: how-to-guide
+    links:
+    - text: Создание пользователей базы данных
+      url: ../howto-hyperscale-create-users.md
+    - text: Настройка высокой доступности
+      url: ../howto-hyperscale-high-availability.md
+    - text: Журналы баз данных Access
+      url: ../howto-hyperscale-logging.md
+- title: Справочник
+  linkLists:
+  - linkListType: reference
+    links:
+    - text: Функции API SQL
+      url: ../reference-hyperscale-functions.md
+    - text: Параметры сервера
+      url: ../reference-hyperscale-parameters.md
+    - text: Системные таблицы
+      url: ../reference-hyperscale-metadata.md

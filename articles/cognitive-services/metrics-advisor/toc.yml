@@ -1,0 +1,55 @@
+- name: Помощник по метрикам
+  href: index.yml
+- name: Обзор
+  expanded: true
+  items:
+    - name: Что такое Помощник по метрикам?
+      href: overview.md
+- name: Краткие руководства
+  items:
+    - name: Изучение демонстрационного сайта
+      href: quickstarts/explore-demo.md
+    - name: Использование веб-портала
+      href: quickstarts/web-portal.md
+    - name: Использование REST API
+      href: quickstarts/rest-api.md
+- name: Практические руководства
+  items:
+    - name: Подключение данных
+      href: how-tos/onboard-your-data.md
+    - name: Подключение разных источников веб-каналов данных
+      href: data-feeds-from-different-sources.md
+    - name: Управление веб-каналами данных
+      href: how-tos/manage-data-feeds.md
+    - name: Настройка метрик и детальная настройка конфигурации обнаружения
+      href: how-tos/configure-metrics.md
+    - name: Настройка уведомлений и получение уведомлений с использованием перехватчика
+      href: how-tos/alerts.md
+    - name: Диагностика инцидента
+      href: how-tos/diagnose-incident.md
+    - name: Настройка обнаружения аномалий с помощью обратной связи
+      href: how-tos/anomaly-feedback.md
+    - name: Создание графа метрик
+      href: how-tos/metrics-graph.md
+- name: Справочник
+  items:
+    - name: Глоссарий
+      href: glossary.md
+    - name: ВОПРОСЫ И ОТВЕТЫ
+      href: faq.md
+    - name: API "Помощник по метрикам"
+      href: 'https://go.microsoft.com/fwlink/?linkid=2141634'
+    - name: Справочник по Azure CLI
+      href: 'https://docs.microsoft.com/cli/azure/cognitiveservices?view=azure-cli-latest#az_cognitiveservices_list'
+    - name: Справочник по PowerShell
+      href: 'https://aka.ms/azure-powershell-cognitiveservices'
+- name: Ресурсы
+  items:
+    - name: Цены
+      href: 'http://go.microsoft.com/fwlink/?LinkID=761229'
+    - name: Доступность по регионам
+      href: 'https://azure.microsoft.com/global-infrastructure/services/?products=cognitive-services'
+    - name: Соответствие нормативным требованиям
+      href: 'https://azure.microsoft.com/support/legal/cognitive-services-compliance-and-privacy/'
+    - name: Шифрование
+      href: encryption.md

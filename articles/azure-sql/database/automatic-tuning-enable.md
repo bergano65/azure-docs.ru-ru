@@ -11,12 +11,12 @@ author: danimir
 ms.author: danil
 ms.reviewer: jrasnik, carlrab
 ms.date: 12/03/2019
-ms.openlocfilehash: 94ffe2852380d238e9829a8ab0cc69ebe82b74fe
-ms.sourcegitcommit: f353fe5acd9698aa31631f38dd32790d889b4dbb
+ms.openlocfilehash: e7a3dd1c58f2bddb767dcac4ac2b5e354be77f65
+ms.sourcegitcommit: bdd5c76457b0f0504f4f679a316b959dcfabf1ef
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87373510"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90981451"
 ---
 # <a name="enable-automatic-tuning-in-the-azure-portal-to-monitor-queries-and-improve-workload-performance"></a>Включение автоматической настройки в портал Azure для отслеживания запросов и повышения производительности рабочей нагрузки
 [!INCLUDE[appliesto-sqldb-sqlmi](../includes/appliesto-sqldb-sqlmi.md)]
@@ -51,7 +51,7 @@ ms.locfileid: "87373510"
 
 Чтобы включить автоматическую настройку на [сервере](logical-servers.md) в базе данных SQL Azure, перейдите к серверу в портал Azure а затем в меню выберите пункт **Автоматическая настройка** .
 
-![Сервер](./media/automatic-tuning-enable/server.png)
+![На снимке экрана показана автоматическая настройка в портал Azure, где можно применить параметры для сервера.](./media/automatic-tuning-enable/server.png)
 
 > [!NOTE]
 > Обратите внимание, что параметр **DROP_INDEX** в настоящее время не совместим с приложениями, использующими переключение секций и указаниями индекса, и в таких случаях включать не следует. Удаление неиспользуемых индексов не поддерживается для уровней обслуживания "Премиум" и "критически важный для бизнеса".
@@ -77,7 +77,7 @@ ms.locfileid: "87373510"
 
 Отдельные параметры автоматической настройки можно настроить отдельно для каждой базы данных. Можно вручную настроить отдельные параметры автоматической настройки или указать, что параметр наследует параметры с сервера.
 
-![База данных](./media/automatic-tuning-enable/database.png)
+![На снимке экрана показана автоматическая настройка в портал Azure, где можно применить параметры для отдельной базы данных.](./media/automatic-tuning-enable/database.png)
 
 Обратите внимание, что параметр DROP_INDEX сейчас не поддерживается в приложениях, использующих переключения секций и подсказки индекса. В этих случаях его следует отключить.
 

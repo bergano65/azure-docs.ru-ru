@@ -101,6 +101,8 @@
     - name: Встроенные компоненты Политики Azure
       displayName: 'samples, policies, definitions'
       href: ./samples/policy-reference.md
+    - name: Terraform
+      href: 'https://www.terraform.io/docs/providers/azurerm/r/lighthouse_assignment.html'
 - name: Ресурсы
   items:
     - name: Раздел вопросов и ответов об Azure Lighthouse на сайте Майкрософт

@@ -15,10 +15,15 @@
   items:
     - name: Развертывание SQL для пограничных вычислений
       href: deploy-portal.md
+    - name: Развертывание с использованием Docker
+      href: disconnected-deployment.md
     - name: Развертывание моделей ONNX в SQL для пограничных вычислений
       href: deploy-onnx.md
 - name: Учебники
+  expanded: true
   items:
+    - name: Развертывание в Kubernetes
+      href: deploy-kubernetes.md
     - name: Синхронизация данных с помощью Фабрики данных Azure
       href: tutorial-sync-data-factory.md
     - name: Синхронизация данных с помощью Синхронизации данных SQL
@@ -31,36 +36,42 @@
           href: tutorial-set-up-iot-edge-modules.md
         - name: Развертывание модели в SQL для пограничных вычислений
           href: tutorial-run-ml-model-on-sql-edge.md
-- name: Практическое руководство
-  items:
-    - name: Развертывание заданий Stream Analytics
-      href: stream-analytics.md
-    - name: Настройка репликации
-      href: configure-replication.md
-    - name: Отслеживание изменений данных
-      href: track-data-changes.md
-    - name: Управление заданиями потоковой передачи T-SQL
-      href: create-stream-analytics-job.md
-    - name: Подключение к SQL для пограничных вычислений
-      href: connect.md
-    - name: Настройка SQL для пограничных вычислений
-      href: configure.md
-    - name: Развертывание пакета приложения уровня данных
-      href: deploy-dacpac.md
 - name: Основные понятия
   items:
-    - name: Использование Машинного обучения и ИИ с ONNX
-      href: onnx-overview.md
-    - name: Резервное копирование и восстановление
-      href: backup-restore.md
-    - name: Потоковая передача данных в SQL для пограничных вычислений
+    - name: Развертывание
+      items:
+        - name: развертывание с помощью портала Azure;
+          href: deploy-portal.md
+        - name: Развертывание с использованием Docker
+          href: disconnected-deployment.md
+        - name: Развертывание в Kubernetes
+          href: deploy-kubernetes.md
+        - name: Средства SQL
+          href: 'https://docs.microsoft.com/en-us/sql/tools/overview-sql-tools?toc=/azure/azure-sql-edge/toc.json'
+    - name: Машинное обучение
+      items:
+        - name: Использование Машинного обучения и ИИ с ONNX
+          href: onnx-overview.md
+        - name: Развертывание моделей ONNX
+          href: deploy-onnx.md
+    - name: Производительность
+      items:
+        - name: Рекомендации по повышению производительности
+          href: performance-best-practices.md
+    - name: Настройка непрерывности бизнес-процессов
+      items:
+        - name: Резервное копирование и восстановление
+          href: backup-restore.md
+        - name: Высокий уровень доступности для контейнеров
+          href: high-availability-sql-edge-containers.md
+    - name: Потоковая передача данных
       items:
         - name: Потоковая передача данных
           href: stream-data.md
+        - name: Создание заданий потоковой передачи и управление ими
+          href: create-stream-analytics-job.md
         - name: Создание внешнего потока (Transact-SQL)
           href: create-external-stream-transact-sql.md
-        - name: Изменение внешнего потока (Transact-SQL)
-          href: alter-external-stream-transact-sql.md
         - name: Удаление внешнего потока (Transact-SQL)
           href: drop-external-stream-transact-sql.md
         - name: Потоковые представления и динамические административные представления
@@ -69,14 +80,20 @@
               href: streaming-catalog-views.md
             - name: sys.external_job_streams (Transact-SQL)
               href: sys-external-job-streams.md
-            - name: sys.external-streaming_jobs (Transact-SQL)
+            - name: sys.external_streaming_jobs (Transact-SQL)
               href: sys-external-streaming-jobs.md
             - name: sys.external_streams (Transact-SQL)
               href: sys-external-streams.md
     - name: Обработка данных временных рядов
       items:
-        - name: Date_Bucket (Transact-SQL)
+        - name: Паузы и отсутствующие значения
+          href: imputing-missing-values.md
+        - name: DATE_BUCKET (Transact-SQL)
           href: date-bucket-tsql.md
+        - name: FIRST_VALUE (Transact-SQL)
+          href: 'https://docs.microsoft.com/sql/t-sql/functions/first-value-transact-sql?toc=/azure/azure-sql-edge/toc.json'
+        - name: LAST_VALUE (Transact-SQL)
+          href: 'https://docs.microsoft.com/sql/t-sql/functions/last-value-transact-sql?toc=/azure/azure-sql-edge/toc.json'
         - name: Хранение и очистка данных
           items:
             - name: Общие сведения о хранении данных
@@ -85,3 +102,43 @@
               href: data-retention-enable-disable.md
             - name: Очистка данных в рамках политики их хранения
               href: data-retention-cleanup.md
+            - name: sys.sp_cleanup_data_retention (Transact-SQL)
+              href: sys-sp-cleanup-data-retention.md
+    - name: Безопасность
+      items:
+        - name: Общие сведения о безопасности
+          href: security-overview.md
+        - name: Функции безопасности
+          href: 'https://docs.microsoft.com/sql/linux/sql-server-linux-security-get-started?toc=/azure/azure-sql-edge/toc.json'
+        - name: Шифрование подключений
+          href: 'https://docs.microsoft.com/sql/linux/sql-server-linux-encrypted-connections?toc=/azure/azure-sql-edge/toc.json'
+        - name: Центр безопасности Azure для Интернета вещей
+          href: 'https://docs.microsoft.com/azure/asc-for-iot/overview?toc=/azure/azure-sql-edge/toc.json&bc=/azure/azure-sql-edge/breadcrumb/toc.json'
+- name: Практическое руководство
+  items:
+    - name: Настройка SQL для пограничных вычислений
+      items:
+        - name: Настройка с использованием переменных среды
+          href: configure.md#configure-by-using-environment-variables
+        - name: Настройка с помощью файла mssql.conf
+          href: configure.md#configure-by-using-an-mssqlconf-file
+        - name: Запуск от имени непривилегированного пользователя
+          href: configure.md#run-azure-sql-edge-as-non-root-user
+        - name: Сохранение данных
+          href: configure.md#persist-your-data
+        - name: Настройка репликации
+          href: configure-replication.md
+    - name: Подключение к SQL для пограничных вычислений
+      href: connect.md
+    - name: Развертывание пакета приложения уровня данных
+      href: deploy-dacpac.md
+    - name: Отслеживание изменений данных
+      href: track-data-changes.md
+    - name: Управление заданиями потоковой передачи T-SQL
+      href: create-stream-analytics-job.md
+    - name: Устранение неполадок развертывания
+      href: troubleshoot.md
+- name: Справочник
+  items:
+    - name: Справочник по Transact-SQL (T-SQL)
+      href: 'https://docs.microsoft.com/sql/t-sql/language-reference'

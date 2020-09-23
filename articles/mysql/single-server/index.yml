@@ -1,0 +1,143 @@
+### YamlMime:Landing
+title: Документация по Отдельному серверу
+summary: База данных Azure для MySQL (Отдельный сервер) — это служба реляционных баз данных на базе MySQL Community Edition.  Это полностью управляемая база данных как услуга, которая может обслуживать критически важные рабочие нагрузки, обеспечивая прогнозируемую производительность и динамическое масштабирование. Узнайте, как использовать Отдельный сервер, изучив наши краткие руководства, рекомендации и примеры.
+metadata:
+  description: База данных Azure для MySQL (Отдельный сервер) — это служба реляционных баз данных в облаке Майкрософт, созданная для разработчиков на базе MySQL Community Edition.
+  author: mksuni
+  ms.author: sumuth
+  ms.date: 09/20/2020
+  ms.service: mysql
+  ms.topic: landing-page
+  ms.openlocfilehash: a9ddd354a97578c5b83455fc6d709d5c2d60494f
+  ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
+  ms.translationtype: HT
+  ms.contentlocale: ru-RU
+  ms.lasthandoff: 09/22/2020
+  ms.locfileid: "90928942"
+landingContent:
+- title: Сведения об Отдельном сервере
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Что такое Отдельный сервер?
+      url: ../concepts-servers.md
+  - linkListType: whats-new
+    links:
+    - text: Читайте наш блог
+      url: https://techcommunity.microsoft.com/t5/Azure-Database-for-MySQL/bg-p/ADforMySQL
+- title: Начало работы
+  linkLists:
+  - linkListType: quickstart
+    links:
+    - text: Создание сервера с помощью портала Azure
+      url: ../quickstart-create-mysql-server-database-using-azure-portal.md
+    - text: Создание сервера с помощью Azure CLI
+      url: ../quickstart-create-mysql-server-database-using-azure-cli.md
+  - linkListType: concept
+    links:
+    - text: Общие сведения о ценовых категориях
+      url: ../concepts-pricing-tiers.md
+    - text: Изучение ограничений
+      url: ../concepts-limits.md
+    - text: Общие сведения о поддерживаемых версиях MySQL
+      url: ../concepts-supported-versions.md
+    - text: Планирование высокой доступности
+      url: ../concepts-high-availability.md
+  - linkListType: tutorial
+    links:
+    - text: Проектирование базы данных для Отдельного сервера
+      url: ../tutorial-design-database-using-portal.md
+    - text: Развертывание WordPress в Веб-приложении для контейнеров с помощью MySQL
+      url: ../../app-service/tutorial-multi-container-app.md?toc=%2fazure%2fmysql%2ftoc.json&bc=%2Fazure%2Fbread%2Ftoc.json
+    - text: Создание веб-приложения PHP (Laravel) с использованием MySQL
+      url: ../../app-service/tutorial-php-mysql-app.md?toc=%2fazure%2fmysql%2ftoc.json&bc=%2Fazure%2Fbread%2Ftoc.json
+- title: Подключение и выполнение запросов
+  linkLists:
+  - linkListType: concept
+    links:
+    - text: Общие сведения о брандмауэре
+      url: ../concepts-firewall-rules.md
+    - text: Общие сведения об SSL
+      url: ../concepts-ssl-connection-security.md
+  - linkListType: how-to-guide
+    links:
+    - text: Создание правил брандмауэра
+      url: ../howto-manage-firewall-using-portal.md
+    - text: Настройка SSL-подключения
+      url: ../howto-configure-ssl.md
+    - text: Устранение неполадок с подключением
+      url: ../howto-troubleshoot-common-connection-issues.md
+  - linkListType: get-started
+    links:
+    - text: Подключение с помощью MySQL Workbench
+      url: ../connect-workbench.md
+    - text: Подключение с использованием PHP
+      url: ../connect-php.md
+    - text: Подключение с использованием Java
+      url: ../connect-java.md
+    - text: Подключение с использованием .NET
+      url: ../connect-csharp.md
+    - text: Подключение с использованием Python
+      url: ../connect-python.md
+    - text: Подключение с использованием Node.js
+      url: ../connect-nodejs.md
+- title: Администрирование и перенос данных
+  linkLists:
+  - linkListType: concept
+    links:
+    - text: Основные сведения о параметрах сервера
+      url: ../concepts-server-parameters.md
+    - text: Общие сведения о виртуальных сетях
+      url: ../concepts-data-access-and-security-vnet.md
+    - text: Включение мониторинга
+      url: ../concepts-monitoring.md
+  - linkListType: how-to-guide
+    links:
+    - text: Настройка параметров сервера
+      url: ../howto-server-parameters.md
+    - text: Миграция с помощью службы переноса данных
+      url: ../howto-migrate-online.md
+    - text: Миграция с использованием дампа и восстановления
+      url: ../concepts-migrate-dump-restore.md
+    - text: Миграция с помощью функций импорта и экспорта
+      url: ../concepts-migrate-import-export.md
+- title: Непрерывность бизнес-процессов
+  linkLists:
+  - linkListType: concept
+    links:
+    - text: Непрерывность бизнес-процессов
+      url: ../concepts-business-continuity.md
+    - text: Резервное копирование и восстановление
+      url: ../concepts-backup.md
+    - text: Репликация входных данных
+      url: ../concepts-data-in-replication.md
+  - linkListType: how-to-guide
+    links:
+    - text: Настройка репликации входных данных
+      url: ../howto-data-in-replication.md
+    - text: Восстановление сервера с помощью портала Azure
+      url: ../howto-restore-server-portal.md
+    - text: Восстановление сервера с помощью портала Azure
+      url: ../howto-restore-server-cli.md
+- title: Справочник
+  linkLists:
+  - linkListType: download
+    links:
+    - text: MySQL Workbench
+      url: https://www.mysql.com/products/workbench
+    - text: Соединитель MySQL для .NET
+      url: https://dev.mysql.com/doc/connector-net/en/
+  - linkListType: deploy
+    links:
+    - text: Скрипты Azure CLI для выполнения распространенных задач
+      url: /azure/mysql/sample-scripts-azure-cli
+    - text: Шаблоны Azure Resource Manager
+      url: /azure/templates/microsoft.dbformysql/allversions
+  - linkListType: reference
+    links:
+    - text: Справочник разработчика Azure CLI
+      url: /cli/azure/mysql
+    - text: Справочник разработчика REST API
+      url: /rest/api/mysql/
+    - text: PowerShell
+      url: https://docs.microsoft.com/powershell/module/az.mysql

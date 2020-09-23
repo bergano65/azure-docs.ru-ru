@@ -10,21 +10,20 @@ author: saachigopal
 ms.date: 08/11/2020
 ms.topic: conceptual
 ms.custom: how-to
-ms.openlocfilehash: 2289a761d4e266c305c2868e9f234871624ae528
-ms.sourcegitcommit: f8d2ae6f91be1ab0bc91ee45c379811905185d07
+ms.openlocfilehash: d90b56366cb22e80162983c982e861de608e4e9e
+ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89661311"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90893114"
 ---
 # <a name="train-a-model-using-a-custom-docker-image"></a>Обучение модели с помощью пользовательского образа DOCKER
-[!INCLUDE [applies-to-skus](../../includes/aml-applies-to-basic-enterprise-sku.md)]
 
 Из этой статьи вы узнаете, как использовать пользовательский образ DOCKER при обучении моделей с Машинное обучение Azure. 
 
 Примеры сценариев в этой статье используются для классификации образов Pet путем создания свертки нейронной сети. 
 
-Хотя Машинное обучение Azure предоставляет базовый образ DOCKER по умолчанию, можно также использовать Машинное обучение Azure среды, чтобы указать конкретный базовый образ, например один из набора обслуживаемых [базовых образов машинного обучения Azure](https://github.com/Azure/AzureML-Containers) или собственного [пользовательского образа](https://docs.microsoft.com/azure/machine-learning/how-to-deploy-custom-docker-image#create-a-custom-base-image). Пользовательские базовые образы позволяют тесно управлять зависимостями и поддерживать более строгий контроль версий компонентов при выполнении заданий обучения. 
+Хотя Машинное обучение Azure предоставляет базовый образ DOCKER по умолчанию, можно также использовать Машинное обучение Azure среды, чтобы указать конкретный базовый образ, например один из набора обслуживаемых [базовых образов машинного обучения Azure](https://github.com/Azure/AzureML-Containers) или собственного [пользовательского образа](how-to-deploy-custom-docker-image.md#create-a-custom-base-image). Пользовательские базовые образы позволяют тесно управлять зависимостями и поддерживать более строгий контроль версий компонентов при выполнении заданий обучения. 
 
 ## <a name="prerequisites"></a>Предварительные требования 
 Запустите этот код в любой из этих сред:
@@ -101,11 +100,11 @@ fastai_env.docker.base_dockerfile = "./Dockerfile"
 ```
 
 ### <a name="create-or-attach-existing-amlcompute"></a>Создание или присоединение существующего Амлкомпуте
-Вам потребуется создать [целевой объект вычислений](https://docs.microsoft.com/azure/machine-learning/concept-azure-machine-learning-architecture#compute-target) для обучения модели. В этом руководстве вы создадите Амлкомпуте в качестве обучающего ресурса для учебных вычислений.
+Вам потребуется создать [целевой объект вычислений](concept-azure-machine-learning-architecture.md#compute-targets) для обучения модели. В этом руководстве вы создадите Амлкомпуте в качестве обучающего ресурса для учебных вычислений.
 
 Создание Амлкомпуте занимает примерно 5 минут. Если Амлкомпуте с таким именем уже находится в рабочей области, этот код пропустит процесс создания.
 
-Как и в случае с другими службами Azure, существуют ограничения на определенные ресурсы (например, Амлкомпуте), связанные со службой Машинное обучение Azure. Ознакомьтесь с ограничениями по умолчанию [и сведениями](https://docs.microsoft.com/azure/machine-learning/how-to-manage-quotas) о том, как запросить дополнительную квоту. 
+Как и в случае с другими службами Azure, существуют ограничения на определенные ресурсы (например, Амлкомпуте), связанные со службой Машинное обучение Azure. Ознакомьтесь с ограничениями по умолчанию [и сведениями](how-to-manage-quotas.md) о том, как запросить дополнительную квоту. 
 
 ```python
 from azureml.core.compute import ComputeTarget, AmlCompute
@@ -132,7 +131,7 @@ print(compute_target.get_status().serialize())
 ```
 
 ### <a name="create-a-scriptrunconfig"></a>Создание Скриптрунконфиг
-Эта Скриптрунконфиг настроит задание для выполнения на нужном [целевом объекте вычислений](https://docs.microsoft.com/azure/machine-learning/how-to-set-up-training-targets#compute-targets-for-training).
+Эта Скриптрунконфиг настроит задание для выполнения на нужном [целевом объекте вычислений](how-to-set-up-training-targets.md).
 
 ```python
 from azureml.core import ScriptRunConfig
@@ -160,4 +159,4 @@ run.wait_for_completion(show_output=True)
 ## <a name="next-steps"></a>Дальнейшие действия
 В этой статье вы обучили модель с помощью пользовательского образа DOCKER. Дополнительные сведения о Машинное обучение Azure см. в других статьях.
 * [Мониторинг метрик выполнения](how-to-track-experiments.md) во время обучения
-* [Развертывание модели](https://docs.microsoft.com/azure/machine-learning/how-to-deploy-custom-docker-image) с помощью пользовательского образа DOCKER.
+* [Развертывание модели](how-to-deploy-custom-docker-image.md) с помощью пользовательского образа DOCKER.

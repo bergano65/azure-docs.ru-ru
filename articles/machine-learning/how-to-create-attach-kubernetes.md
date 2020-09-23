@@ -11,15 +11,14 @@ ms.author: jordane
 author: jpe316
 ms.reviewer: larryfr
 ms.date: 09/01/2020
-ms.openlocfilehash: cac14d5995042847bc98e47e50ea2d188382fd2a
-ms.sourcegitcommit: 6e1124fc25c3ddb3053b482b0ed33900f46464b3
+ms.openlocfilehash: 034fbf991c97ba7b9f51b5508c35df1889280562
+ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90564344"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90897891"
 ---
 # <a name="create-and-attach-an-azure-kubernetes-service-cluster"></a>Создание и подключение кластера службы Kubernetes Azure
-[!INCLUDE [applies-to-skus](../../includes/aml-applies-to-basic-enterprise-sku.md)]
 
 Машинное обучение Azure можете развернуть обученные модели машинного обучения в службе Azure Kubernetes. Однако сначала необходимо __создать__ кластер Azure Kubernetes Service (AKS) из рабочей области машинного обучения Azure или __ПОДКЛЮЧИТЬ__ существующий кластер AKS. В этой статье приводятся сведения о создании кластера и подключении к нему.
 
