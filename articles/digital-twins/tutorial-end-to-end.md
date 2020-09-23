@@ -7,12 +7,12 @@ ms.author: baanders
 ms.date: 4/15/2020
 ms.topic: tutorial
 ms.service: digital-twins
-ms.openlocfilehash: b22505d5152b005a054d36fafb965006d04b201e
-ms.sourcegitcommit: 5a3b9f35d47355d026ee39d398c614ca4dae51c6
+ms.openlocfilehash: 0b7e277518337072659bf5ccddd3436c05ff5201
+ms.sourcegitcommit: 6e1124fc25c3ddb3053b482b0ed33900f46464b3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89401781"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90563817"
 ---
 # <a name="tutorial-build-out-an-end-to-end-solution"></a>Руководство по Создание комплексного решения
 
@@ -162,13 +162,13 @@ Query
 
 В Azure Cloud Shell установите параметр приложения, который будет использоваться вашим приложением-функцией для обращения к экземпляру Azure Digital Twins, с помощью следующей команды.
 
-```azurecli-interactive
+```azurecli
 az functionapp config appsettings set -g <your-resource-group> -n <your-App-Service-(function-app)-name> --settings "ADT_SERVICE_URL=<your-Azure-Digital-Twins-instance-URL>"
 ```
 
 С помощью следующей команды создайте управляемое системой удостоверение. Запишите значение поля *principalId* в выходных данных команды.
 
-```azurecli-interactive
+```azurecli
 az functionapp identity assign -g <your-resource-group> -n <your-App-Service-(function-app)-name>
 ```
 
@@ -203,7 +203,7 @@ az dt role-assignment create --dt-name <your-Azure-Digital-Twins-instance> --ass
 
 Чтобы создать новый Центр Интернета вещей, в Azure Cloud Shell выполните следующую команду:
 
-```azurecli-interactive
+```azurecli
 az iot hub create --name <name-for-your-IoT-hub> -g <your-resource-group> --sku S1
 ```
 
@@ -242,7 +242,7 @@ az iot hub create --name <name-for-your-IoT-hub> -g <your-resource-group> --sku 
 
 В Azure Cloud Shell создайте устройство в Центре Интернета вещей с помощью следующей команды:
 
-```azurecli-interactive
+```azurecli
 az iot hub device-identity create --device-id thermostat67 --hub-name <your-IoT-hub-name> -g <your-resource-group>
 ```
 
@@ -330,7 +330,7 @@ ObserveProperties thermostat67 Temperature
 
 Чтобы создать раздел Сетки событий, выполните в Azure Cloud Shell следующую команду:
 
-```azurecli-interactive
+```azurecli
 az eventgrid topic create -g <your-resource-group> --name <name-for-your-event-grid-topic> -l <region>
 ```
 
@@ -441,7 +441,7 @@ ObserveProperties thermostat67 Temperature room21 Temperature
 > [!IMPORTANT]
 > Удаление группы ресурсов — процесс необратимый. Группа ресурсов и все содержащиеся в ней ресурсы удаляются без возможности восстановления. Будьте внимательны, чтобы случайно не удалить не ту группу ресурсов или не те ресурсы. 
 
-```azurecli-interactive
+```azurecli
 az group delete --name <your-resource-group>
 ```
 

@@ -6,23 +6,24 @@ author: aahill
 manager: nitinme
 ms.service: cognitive-services
 ms.topic: include
-ms.date: 06/30/2020
+ms.date: 09/10/2020
 ms.author: aahi
-ms.openlocfilehash: 8d66b653f78de5b2dee1a42227fe64152ccc6fe9
-ms.sourcegitcommit: 4a7a4af09f881f38fcb4875d89881e4b808b369b
+ms.openlocfilehash: 98f68af11cf21cb795e7741585e55c195c066995
+ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/04/2020
-ms.locfileid: "89464235"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "91024852"
 ---
 Приступите к работе с клиентской библиотекой Детектора аномалий для Python. Выполните приведенные здесь действия, чтобы установить пакет и протестировать пример кода для выполнения базовых задач. Служба Детектора аномалий позволяет находить аномалии в данных временных рядов, автоматически применяя для них наиболее подходящие модели, независимо от отрасли, сценария или объема данных.
 
 Клиентскую библиотеку Детектора аномалий для Python можно использовать для таких задач:
 
-* Обнаружение аномалий в наборе данных временного ряда с использованием пакетного запроса.
+* обнаружение аномалий в наборе данных временных рядов с использованием пакетного запроса;
 * Обнаружение состояния аномалии последней точки данных во временном ряду.
+* обнаружение точек изменения тенденций в наборе данных.
 
-[Справочная документация по библиотеке](https://docs.microsoft.com/python/api/azure-cognitiveservices-anomalydetector/azure.cognitiveservices.anomalydetector?view=azure-python) | [Исходный код библиотеки](https://github.com/Azure/azure-sdk-for-python/tree/master/sdk/cognitiveservices/azure-cognitiveservices-anomalydetector) | [Пакет (PyPi)](https://pypi.org/project/azure-cognitiveservices-anomalydetector/) | [Поиск примера кода на GitHub](https://github.com/Azure-Samples/AnomalyDetector/blob/master/quickstarts/sdk/python-sdk-sample.py)
+[Справочная документация по библиотеке](https://go.microsoft.com/fwlink/?linkid=2090370) | [Исходный код библиотеки](https://github.com/Azure/azure-sdk-for-python/tree/master/sdk/cognitiveservices/azure-cognitiveservices-anomalydetector) | [Пакет (PyPi)](https://pypi.org/project/azure-ai-anomalydetector/) | [Поиск примера кода на GitHub](https://github.com/Azure-Samples/AnomalyDetector/blob/master/quickstarts/sdk/python-sdk-sample.py)
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -44,7 +45,7 @@ ms.locfileid: "89464235"
 
 [!code-python[import declarations](~/samples-anomaly-detector/quickstarts/sdk/python-sdk-sample.py?name=imports)]
 
-Создайте переменные для ключа в качестве переменной среды, путь к файлу данных временного ряда, а также расположение Azure для вашей подписки. Например, `westus2`.
+Создайте переменные для ключа в качестве переменной среды, путь к файлу данных временных рядов, а также расположение Azure для вашей подписки. Например, `westus2`.
 
 [!code-python[Vars for the key, path location and data path](~/samples-anomaly-detector/quickstarts/sdk/python-sdk-sample.py?name=initVars)]
 
@@ -53,16 +54,16 @@ ms.locfileid: "89464235"
 После установки Python вы можете установить клиентскую библиотеку с помощью следующей команды:
 
 ```console
-pip install --upgrade azure-cognitiveservices-anomalydetector
+pip install --upgrade azure-ai-anomalydetector
 ```
 
 ## <a name="object-model"></a>Объектная модель
 
-Клиент Детектора аномалий — это объект [AnomalyDetectorClient](https://docs.microsoft.com/python/api/azure-cognitiveservices-anomalydetector/azure.cognitiveservices.anomalydetector.anomalydetectorclient?view=azure-python), который выполняет проверку подлинности в Azure с помощью вашего ключа. Клиент предоставляет два метода обнаружения аномалий: [entire_detect()](https://docs.microsoft.com/python/api/azure-cognitiveservices-anomalydetector/azure.cognitiveservices.anomalydetector.anomalydetectorclient?view=azure-python#entire-detect-body--custom-headers-none--raw-false----operation-config-) для всего набора данных и [Last_detect()](https://docs.microsoft.com/python/api/azure-cognitiveservices-anomalydetector/azure.cognitiveservices.anomalydetector.anomalydetectorclient?view=azure-python#last-detect-body--custom-headers-none--raw-false----operation-config-) для последней точки данных.
+Клиент Детектора аномалий — это объект [AnomalyDetectorClient](https://docs.microsoft.com/python/api/azure-cognitiveservices-anomalydetector/azure.cognitiveservices.anomalydetector.anomalydetectorclient?view=azure-python), который выполняет проверку подлинности в Azure с помощью вашего ключа. Клиент может выполнять обнаружение аномалий с использованием [entire_detect()](https://docs.microsoft.com/python/api/azure-cognitiveservices-anomalydetector/azure.cognitiveservices.anomalydetector.anomalydetectorclient?view=azure-python#entire-detect-body--custom-headers-none--raw-false----operation-config-) для всего набора данных и [Last_detect()](https://docs.microsoft.com/python/api/azure-cognitiveservices-anomalydetector/azure.cognitiveservices.anomalydetector.anomalydetectorclient?view=azure-python#last-detect-body--custom-headers-none--raw-false----operation-config-) для последней точки данных. Функция [ChangePointDetectAsync](https://go.microsoft.com/fwlink/?linkid=2090370) обнаруживает точки, которые отмечают изменения тенденции.
 
 Данные временного ряда отправляются в виде ряда [точек](https://docs.microsoft.com/python/api/azure-cognitiveservices-anomalydetector/azure.cognitiveservices.anomalydetector.models.point?view=azure-python) в объекте [запроса](https://docs.microsoft.com/python/api/azure-cognitiveservices-anomalydetector/azure.cognitiveservices.anomalydetector.models.request?view=azure-python). Объект `Request` содержит свойства для описания данных (например, [степень детализации](https://docs.microsoft.com/python/api/azure-cognitiveservices-anomalydetector/azure.cognitiveservices.anomalydetector.models.granularity?view=azure-python)) и параметры для обнаружения аномалий.
 
-Ответ Детектора аномалий является объектом [EntireDetectResponse](https://docs.microsoft.com/python/api/azure-cognitiveservices-anomalydetector/azure.cognitiveservices.anomalydetector.models.lastdetectresponse?view=azure-python) или [LastDetectResponse](https://docs.microsoft.com/python/api/azure-cognitiveservices-anomalydetector/azure.cognitiveservices.anomalydetector.models.entiredetectresponse?view=azure-python) (в зависимости от используемого метода).
+Ответ Детектора аномалий — это объект [LastDetectResponse](https://docs.microsoft.com/python/api/azure-cognitiveservices-anomalydetector/azure.cognitiveservices.anomalydetector.models.lastdetectresponse?view=azure-python), [EntireDetectResponse](https://docs.microsoft.com/python/api/azure-cognitiveservices-anomalydetector/azure.cognitiveservices.anomalydetector.models.entiredetectresponse?view=azure-python) или [ChangePointDetectResponse](https://go.microsoft.com/fwlink/?linkid=2090370) (в зависимости от используемого метода).
 
 ## <a name="code-examples"></a>Примеры кода
 
@@ -72,6 +73,7 @@ pip install --upgrade azure-cognitiveservices-anomalydetector
 * [загрузка набора данных временного ряда из файла](#load-time-series-data-from-a-file);
 * [обнаружение аномалий во всем наборе данных](#detect-anomalies-in-the-entire-data-set);
 * [обнаружение состояния аномалии последней точки данных](#detect-the-anomaly-status-of-the-latest-data-point).
+* [Обнаружение точек изменения в наборе данных](#detect-change-points-in-the-data-set)
 
 ## <a name="authenticate-the-client"></a>Аутентификация клиента
 
@@ -107,6 +109,12 @@ pip install --upgrade azure-cognitiveservices-anomalydetector
 Вызовите API Детектора аномалий, чтобы определить, является ли последняя точка данных аномальной, с помощью метода [last_detect()](https://docs.microsoft.com/python/api/azure-cognitiveservices-anomalydetector/azure.cognitiveservices.anomalydetector.anomalydetectorclient?view=azure-python#last-detect-body--custom-headers-none--raw-false----operation-config-) клиента и сохраните возвращенный объект [LastDetectResponse](https://docs.microsoft.com/python/api/azure-cognitiveservices-anomalydetector/azure.cognitiveservices.anomalydetector.models.lastdetectresponse?view=azure-python). Значение `is_anomaly` в ответе представляет собой логическое значение, указывающее состояние аномалий этой точки.  
 
 [!code-python[Batch anomaly detection sample](~/samples-anomaly-detector/quickstarts/sdk/python-sdk-sample.py?name=latestPointDetection)]
+
+## <a name="detect-change-points-in-the-data-set"></a>Обнаружение точек изменения в наборе данных
+
+Вызовите API для обнаружения точек изменения в данных временных рядов с помощью метода [detect_change_point()](https://go.microsoft.com/fwlink/?linkid=2090370) клиента. Сохраните полученный объект [ChangePointDetectResponse](https://go.microsoft.com/fwlink/?linkid=2090370). Выполните итерацию списка ответов `is_change_point` и выведите индексы любых значений `true`. Эти значения соответствуют индексам точек изменения тенденций, если они были обнаружены.
+
+[!code-python[detect change points](~/samples-anomaly-detector/quickstarts/sdk/python-sdk-sample.py?name=changePointDetection)]
 
 ## <a name="run-the-application"></a>Выполнение приложения
 

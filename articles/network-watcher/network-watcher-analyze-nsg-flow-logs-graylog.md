@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 09/19/2017
 ms.author: damendo
-ms.openlocfilehash: 7a4aa4cc545d6941f144ce0657ede7199d4f8f57
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.openlocfilehash: 62f4a06ec729d896dc11a290bc7a5ccc7c321683
+ms.sourcegitcommit: bdd5c76457b0f0504f4f679a316b959dcfabf1ef
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86497120"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90984054"
 ---
 # <a name="manage-and-analyze-network-security-group-flow-logs-in-azure-using-network-watcher-and-graylog"></a>Анализ журналов потоков для групп безопасности сети и управление ими в Azure с помощью Наблюдателя за сетями и Graylog
 
@@ -186,7 +186,7 @@ sudo ./logstash-plugin install logstash-input-azureblob
 
    Обязательно привяжите вход к IP-адресу, на котором вы настроили сервер Greylog. Этот IP-адрес должен совпадать со значением в поле **host** (Узел), указанным в свойствах выхода UDP в файле конфигурации Logstash. По умолчанию используется порт *12201*. Убедитесь, что номер порта совпадает со значением в поле **port** (Порт), указанным в свойствах выхода UDP в файле конфигурации Logstash.
 
-   ![Входные данные](./media/network-watcher-analyze-nsg-flow-logs-graylog/inputs.png)
+   ![На снимке экрана показаны входные данные Graylog с параметрами для запуска и поиска входных данных.](./media/network-watcher-analyze-nsg-flow-logs-graylog/inputs.png)
 
    Сразу после активации входа сведения о нем отобразятся в разделе **Local inputs** (Локальные входы), как показано на следующем изображении.
 
@@ -200,11 +200,11 @@ sudo ./logstash-plugin install logstash-input-azureblob
 
 Подождите, пока сервер Graylog накопит сообщения, а затем попробуйте выполнить по ним поиск. Чтобы проверить, поступают ли сообщения на сервер Graylog, на странице настройки **Inputs** (Входы) нажмите кнопку **Show received messages** (Показать полученные сообщения) для созданного входа GELF UDP. Откроется примерно такой экран: 
 
-![Гистограмма](./media/network-watcher-analyze-nsg-flow-logs-graylog/histogram.png)
+![На снимке экрана показан сервер Graylog, отображающий результаты поиска, гистограмму и сообщения.](./media/network-watcher-analyze-nsg-flow-logs-graylog/histogram.png)
 
 Щелкнув синюю ссылку %{Message}, можно развернуть любое сообщение и просмотреть сведения о кортежах этого потока, как показано на следующем изображении:
 
-![Сообщения](./media/network-watcher-analyze-nsg-flow-logs-graylog/messages.png)
+![На снимке экрана показаны подробные сведения о сообщении с сервера Graylog.](./media/network-watcher-analyze-nsg-flow-logs-graylog/messages.png)
 
 Если вы не выберете конкретное поле, по умолчанию в поиск включаются данные из всех полей сообщения. Если вам нужны сложные параметры поиска (например, кортежи потоков с конкретного IP-адреса источника), можно использовать язык поисковых запросов Graylog, который [описан здесь](https://docs.graylog.org/en/2.2/pages/queries.html).
 
@@ -218,7 +218,7 @@ sudo ./logstash-plugin install logstash-input-azureblob
 
 2. Затем нажмите зеленую кнопку **Create dashboard** (Создать панель мониторинга) и заполните небольшую форму. В ней нужно ввести заголовок и описание панели мониторинга. Нажмите кнопку **Save** (Сохранить), чтобы создать новую панель мониторинга. Созданная панель мониторинга будет выглядеть так, как показано на следующем изображении:
 
-    ![Панели мониторинга](./media/network-watcher-analyze-nsg-flow-logs-graylog/dashboards.png)
+    ![На снимке экрана показаны панели мониторинга сервера Graylog с параметрами для создания и изменения панелей мониторинга.](./media/network-watcher-analyze-nsg-flow-logs-graylog/dashboards.png)
 
 ### <a name="add-widgets"></a>Добавление мини-приложений
 

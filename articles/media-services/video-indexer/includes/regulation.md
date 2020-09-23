@@ -4,11 +4,11 @@ ms.service: media-services
 ms.topic: include
 ms.date: 09/01/2020
 ms.author: juliako
-ms.openlocfilehash: ead8b68030d1f0df1a774acfe5ecd4534d29cfff
-ms.sourcegitcommit: 4a7a4af09f881f38fcb4875d89881e4b808b369b
+ms.openlocfilehash: 3de260e0e5fc68f1495e7a37def06a2289b548c7
+ms.sourcegitcommit: bdd5c76457b0f0504f4f679a316b959dcfabf1ef
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/04/2020
-ms.locfileid: "89464229"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "91025253"
 ---
-![Banner](../media/banner/banner.svg)
+![11 июня 2020 г. корпорация Майкрософт объявила о том, что она не будет продавать технологию распознавания лиц полицейским управлениям в США до тех пор, пока не вступят силу строгие правовые нормы, гарантирующие защиту прав человека. Таким образом, клиенты не смогут использовать возможности по распознаванию лиц или функции, включенные в службы Azure, такие как Распознавание лиц или Индексатор видео, если клиент является сотрудником полицейского управления США или разрешает использование таких служб управлением или для управления.](../media/banner/banner.svg)

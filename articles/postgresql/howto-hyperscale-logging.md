@@ -7,12 +7,12 @@ ms.service: postgresql
 ms.subservice: hyperscale-citus
 ms.topic: conceptual
 ms.date: 7/13/2020
-ms.openlocfilehash: 4ca64a7793d229e7910fb122fb33996b1ac0c4fe
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 1dc7bc8e119de7c8fdcf09713286be2633457486
+ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87099047"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90895861"
 ---
 # <a name="logs-in-azure-database-for-postgresql---hyperscale-citus"></a>Журналы в базе данных Azure для PostgreSQL — масштабирование (Цитус)
 
@@ -22,15 +22,15 @@ ms.locfileid: "87099047"
 
 Чтобы получить доступ к журналам PostgreSQL для координатора Цитус или рабочего узла, откройте узел в портал Azure:
 
-![список узлов](media/howto-hyperscale-logging/choose-node.png)
+:::image type="content" source="media/howto-hyperscale-logging/choose-node.png" alt-text="список узлов":::
 
 Для выбранного узла откройте **параметры диагностики**и щелкните **+ Добавить параметр диагностики**.
 
-![Кнопка добавления параметров диагностики](media/howto-hyperscale-logging/diagnostic-settings.png)
+:::image type="content" source="media/howto-hyperscale-logging/diagnostic-settings.png" alt-text="Кнопка добавления параметров диагностики":::
 
 Выберите имя для новых параметров диагностики и установите флажок **постгрескллогс** .  Выберите назначения, которые должны получить журналы.
 
-![Выбор журналов PostgreSQL](media/howto-hyperscale-logging/diagnostic-create-setting.png)
+:::image type="content" source="media/howto-hyperscale-logging/diagnostic-create-setting.png" alt-text="Выбор журналов PostgreSQL":::
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

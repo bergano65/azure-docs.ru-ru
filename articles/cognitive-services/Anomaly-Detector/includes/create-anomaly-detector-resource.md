@@ -6,14 +6,14 @@ author: aahill
 manager: nitinme
 ms.service: cognitive-services
 ms.topic: include
-ms.date: 04/01/2020
+ms.date: 09/10/2020
 ms.author: aahi
-ms.openlocfilehash: 8dbe36693e551bd03022f4a00044b75b912c834a
-ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
+ms.openlocfilehash: 8f93e0ffe74ade79059fc845788faf36ab5b4f13
+ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "80875141"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "91025215"
 ---
 ## <a name="create-an-anomaly-detector-resource"></a>Создание ресурса "Детектор аномалий"
 
@@ -28,15 +28,14 @@ ms.locfileid: "80875141"
     |Расположение|Выберите доступное поблизости расположение|
     |Ценовая категория|`F0` — минимальная ценовая категория|
     |Группа ресурсов|Выберите доступную группу ресурсов|
-    |Флажок подтверждения предварительного просмотра (обязательно)|Прочитано ли уведомление **предварительной версии**|
 
 1. Щелкните **Создать** и дождитесь создания ресурса. После создания перейдите на страницу ресурсов.
-1. Собираются `endpoint` настройки и ключ API:
+1. Собираются настройки `endpoint` и ключ API:
 
-    |Вкладка ресурсов на портале|Параметр|Применение|
+    |Вкладка ресурсов на портале|Параметр|Значение|
     |--|--|--|
-    |**Обзор**|Конечная точка|Скопируйте конечную точку. Он выглядит примерно так.`https://westus2.api.cognitive.microsoft.com/`|
-    |**Ключи**|Ключ API|Скопируйте 1 из двух ключей. Это строка, `xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx`состоящая из 32 буквенно-цифровых символов без пробелов или дефисов.|
+    |**Обзор**|Конечная точка|Скопируйте конечную точку. Он выглядит примерно так. `https://westus2.api.cognitive.microsoft.com/`|
+    |**Ключи**|Ключ API|Скопируйте 1 из двух ключей. Это строка, состоящая из 32 буквенно-цифровых символов без пробелов или дефисов `xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx` .|
 
 
 
