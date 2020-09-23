@@ -1,7 +1,7 @@
 ---
-title: Часто задаваемые вопросы
+title: Вопросы и ответы
 titleSuffix: Azure SQL Managed Instance
-description: SQL Azure Управляемый экземпляр часто задаваемые вопросы
+description: Часто задаваемые вопросы об Управляемом экземпляре SQL Azure
 services: sql-database
 ms.service: sql-managed-instance
 ms.subservice: operations
@@ -10,16 +10,16 @@ ms.devlang: ''
 ms.topic: conceptual
 author: jovanpop-msft
 ms.author: jovanpop
-ms.reviewer: sstein, carlrab
-ms.date: 03/17/2020
-ms.openlocfilehash: fe779ebf8bb041fb90b8eb38a9469a783127ffd3
-ms.sourcegitcommit: d18a59b2efff67934650f6ad3a2e1fe9f8269f21
+ms.reviewer: sstein
+ms.date: 09/21/2020
+ms.openlocfilehash: 2e3bf8251cfb5da20cade65831ef34dbc6709b1b
+ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/20/2020
-ms.locfileid: "88661424"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90887378"
 ---
-# <a name="azure-sql-managed-instance-frequently-asked-questions-faq"></a>SQL Azure Управляемый экземпляр часто задаваемые вопросы
+# <a name="azure-sql-managed-instance-frequently-asked-questions-faq"></a>Часто задаваемые вопросы об Управляемом экземпляре SQL Azure
 [!INCLUDE[appliesto-sqlmi](../includes/appliesto-sqlmi.md)]
 
 Эта статья содержит наиболее распространенные вопросы о [управляемый экземпляр Azure SQL](sql-managed-instance-paas-overview.md).
@@ -72,7 +72,7 @@ ms.locfileid: "88661424"
 
 Сведения о дефектах продукта и известных проблемах см. в статье [Известные проблемы](../database/doc-changes-updates-release-notes.md#known-issues).
 
-## <a name="new-features"></a>новые функции;
+## <a name="new-features"></a>Новые функции
 
 **Где можно найти новейшие функции и функции в общедоступной предварительной версии?**
 
@@ -82,7 +82,7 @@ ms.locfileid: "88661424"
 
 **Как можно подготавливать SQL Управляемый экземпляр?**
 
-Вы можете подготавливать экземпляр на [портале Azure](instance-create-quickstart.md), [PowerShell](scripts/create-configure-managed-instance-powershell.md), [Azure CLI](https://techcommunity.microsoft.com/t5/azure-sql-database/create-azure-sql-managed-instance-using-azure-cli/ba-p/386281) и [шаблонах ARM](https://docs.microsoft.com/archive/blogs/sqlserverstorageengine/creating-azure-sql-managed-instance-using-arm-templates).
+Экземпляр можно подготавливать на основе шаблонов [портал Azure](instance-create-quickstart.md), [PowerShell](scripts/create-configure-managed-instance-powershell.md), [Azure CLI](https://techcommunity.microsoft.com/t5/azure-sql-database/create-azure-sql-managed-instance-using-azure-cli/ba-p/386281) и [ARM](https://docs.microsoft.com/archive/blogs/sqlserverstorageengine/creating-azure-sql-managed-instance-using-arm-templates).
 
 **Можно ли подготавливать управляемые экземпляры в существующей подписке?**
 
@@ -94,7 +94,7 @@ ms.locfileid: "88661424"
 
 **Как масштабировать управляемый экземпляр?**
 
-Вы можете масштабировать управляемый экземпляр с помощью [портала Azure](../database/service-tiers-vcore.md?tabs=azure-portal#selecting-a-hardware-generation), [PowerShell](https://docs.microsoft.com/archive/blogs/sqlserverstorageengine/change-size-azure-sql-managed-instance-using-powershell), [Azure CLI](https://docs.microsoft.com/cli/azure/sql/mi?view=azure-cli-latest#az-sql-mi-update) или [шаблонов ARM](https://docs.microsoft.com/archive/blogs/sqlserverstorageengine/updating-azure-sql-managed-instance-properties-using-arm-templates).
+Вы можете масштабировать управляемый экземпляр на основе шаблонов [портал Azure](../database/service-tiers-vcore.md?tabs=azure-portal#selecting-a-hardware-generation), [PowerShell](https://docs.microsoft.com/archive/blogs/sqlserverstorageengine/change-size-azure-sql-managed-instance-using-powershell), [Azure CLI](https://docs.microsoft.com/cli/azure/sql/mi?view=azure-cli-latest#az-sql-mi-update) или [ARM](https://docs.microsoft.com/archive/blogs/sqlserverstorageengine/updating-azure-sql-managed-instance-properties-using-arm-templates).
 
 **Можно ли переместить Управляемый экземпляр из одного региона в другой?**
 
@@ -102,7 +102,7 @@ ms.locfileid: "88661424"
 
 **Как удалить Управляемый экземпляр?**
 
-Вы можете удалить управляемые экземпляры с помощью портала Azure, [PowerShell](https://docs.microsoft.com/powershell/module/az.sql/remove-azsqlinstance?view=azps-4.3.0), [Azure CLI](https://docs.microsoft.com/cli/azure/sql/mi?view=azure-cli-latest#az-sql-mi-delete) или [Диспетчер ресурсов интерфейсов API](https://docs.microsoft.com/rest/api/sql/managedinstances/delete).
+Вы можете удалить управляемые экземпляры с помощью портал Azure, [PowerShell](https://docs.microsoft.com/powershell/module/az.sql/remove-azsqlinstance?view=azps-4.3.0), [Azure CLI](https://docs.microsoft.com/cli/azure/sql/mi?view=azure-cli-latest#az-sql-mi-delete) или [Диспетчер ресурсов интерфейсов API](https://docs.microsoft.com/rest/api/sql/managedinstances/delete).
 
 **Сколько времени занимает создание или обновление экземпляра или восстановление базы данных?**
 
@@ -299,7 +299,7 @@ SQL Управляемый экземпляр отвечает за настро
 
 Нет. Сейчас мы не поддерживаем размещение Управляемый экземпляр в подсети, которая уже содержит другие типы ресурсов.
 
-## <a name="connectivity"></a>Соединение 
+## <a name="connectivity"></a>Подключение 
 
 **Можно ли подключиться к управляемому экземпляру по IP-адресу?**
 
@@ -326,7 +326,7 @@ SQL Управляемый экземпляр отвечает за настро
 
 **Можно ли использовать общедоступную конечную точку для доступа к данным в Управляемый экземпляр базах данных?**
 
-Да. Клиент должен включить доступ к данным общедоступной конечной точки на [портале Azure](public-endpoint-configure.md#enabling-public-endpoint-for-a-managed-instance-in-the-azure-portal)  /  [PowerShell](public-endpoint-configure.md#enabling-public-endpoint-for-a-managed-instance-using-powershell) /ARM и настроить NSG для блокировки доступа к порту данных (номер порта 3342). Дополнительные сведения см. в статьях [Настройка общедоступной конечной точки в Azure sql управляемый экземпляр](public-endpoint-configure.md) и [Использование управляемый экземпляр SQL Azure безопасно с общедоступной конечной точкой](public-endpoint-overview.md). 
+Да. Клиенту необходимо включить доступ к данным общедоступной конечной точки из [портал Azure](public-endpoint-configure.md#enabling-public-endpoint-for-a-managed-instance-in-the-azure-portal)  /  [PowerShell](public-endpoint-configure.md#enabling-public-endpoint-for-a-managed-instance-using-powershell) /ARM и настроить NSG для блокировки доступа к порту данных (номер порта 3342). Дополнительные сведения см. в статьях [Настройка общедоступной конечной точки в Azure sql управляемый экземпляр](public-endpoint-configure.md) и [Использование управляемый экземпляр SQL Azure безопасно с общедоступной конечной точкой](public-endpoint-overview.md). 
 
 **Можно ли указать пользовательский порт для конечных точек данных SQL?**
 
@@ -350,7 +350,7 @@ SQL Управляемый экземпляр отвечает за настро
 - Получите доступ к экземпляру с учетной записью администратора базы данных с низким уровнем привилегий.
 - Настройка доступа к JIT-Jumpbox для учетной записи sysadmin.
 - Включите [аудит SQL](https://docs.microsoft.com/sql/relational-databases/security/auditing/sql-server-audit-database-engine)и интегрируйте его с механизмами предупреждений.
-- Включите [обнаружение угроз](https://docs.microsoft.com/azure/sql-database/sql-database-threat-detection) в пакете [расширенной защиты данных (ADS)](https://docs.microsoft.com/azure/sql-database/sql-database-advanced-data-security) .
+- Включите [обнаружение угроз](https://docs.microsoft.com/azure/sql-database/sql-database-threat-detection) в [защитнике Azure для SQL](https://docs.microsoft.com/azure/azure-sql/database/azure-defender-for-sql) Suite.
 
 ## <a name="dns"></a>DNS
 
@@ -450,7 +450,7 @@ SQL Управляемый экземпляр предлагает [модель
 
 **Как можно отслеживать затраты на использование хранилища резервных копий?**
 
-Вы можете отслеживать затраты на хранение резервных копий с помощью портала Azure. Инструкции см. в разделе [мониторинг затрат для автоматически создаваемых резервных копий](https://docs.microsoft.com/azure/azure-sql/database/automated-backups-overview?tabs=managed-instance#monitor-costs). 
+Вы можете отслеживать затраты на хранилище резервных копий с помощью портал Azure. Инструкции см. в разделе [мониторинг затрат для автоматически создаваемых резервных копий](https://docs.microsoft.com/azure/azure-sql/database/automated-backups-overview?tabs=managed-instance#monitor-costs). 
 
 **Как оптимизировать затраты на хранение резервных копий на управляемом экземпляре?**
 

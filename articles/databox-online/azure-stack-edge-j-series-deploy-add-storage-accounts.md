@@ -1,6 +1,6 @@
 ---
-title: Учебник по передаче данных в учетную запись хранения с помощью GPU Azure Stack Edge | Документация Майкрософт
-description: Узнайте, как добавить локальные учетные записи хранения и учетные записи хранения Edge и подключиться к ним на устройстве GPU Azure Stack Edge.
+title: Учебник. Передача данных в учетную запись хранения с помощью Azure Stack Edge Pro с GPU | Документация Майкрософт
+description: Сведения о том, как добавить локальные учетные записи хранения и учетные записи хранения Edge и подключиться к ним на устройстве Azure Stack Edge Pro с GPU.
 services: databox
 author: alkohli
 ms.service: databox
@@ -8,19 +8,19 @@ ms.subservice: edge
 ms.topic: tutorial
 ms.date: 08/31/2020
 ms.author: alkohli
-Customer intent: As an IT admin, I need to understand how to add and connect to storage accounts on Azure Stack Edge so I can use it to transfer data to Azure.
-ms.openlocfilehash: 66c09b7fa0eb8fbf709441da5996fb2237b3e284
-ms.sourcegitcommit: bcda98171d6e81795e723e525f81e6235f044e52
+Customer intent: As an IT admin, I need to understand how to add and connect to storage accounts on Azure Stack Edge Pro so I can use it to transfer data to Azure.
+ms.openlocfilehash: c24970b30e522d593a491194dbbabb0421ad7f4b
+ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/01/2020
-ms.locfileid: "89256402"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90891051"
 ---
-# <a name="tutorial-transfer-data-via-storage-accounts-with-azure-stack-edge-gpu"></a>Руководство по передаче данных через учетные записи хранения с помощью GPU Azure Stack Edge 
+# <a name="tutorial-transfer-data-via-storage-accounts-with-azure-stack-edge-pro-gpu"></a>Руководство по Передача данных через учетные записи хранения с помощью Azure Stack Edge Pro с GPU 
 
 <!--[!INCLUDE [applies-to-skus](../../includes/azure-stack-edge-applies-to-all-sku.md)]-->
 
-В этом учебнике описывается, как добавить учетные записи хранения на устройство Azure Stack Edge и подключиться к ним. После добавления учетных записей хранения устройство Azure Stack Edge может выполнять передачу данных в Azure.
+В этом учебнике описывается, как добавить учетные записи хранения на устройство Azure Stack Edge Pro и подключиться к ним. После добавления учетных записей хранения устройство Azure Stack Edge Pro может выполнять передачу данных в Azure.
 
 Эта процедура может занять около 30 минут.
 
@@ -33,11 +33,11 @@ ms.locfileid: "89256402"
  
 ## <a name="prerequisites"></a>Предварительные требования
 
-Прежде чем добавлять учетные записи хранения в службу Azure Stack Edge, убедитесь, что:
+Прежде чем добавлять учетные записи хранения в Azure Stack Edge Pro, убедитесь, что:
 
-- установлено физическое устройство, как описано в статье [Руководство по установке Azure Stack Edge](azure-stack-edge-gpu-deploy-install.md).
+- Вы установили физическое устройство, как описано в статье [Установка Azure Stack Edge Pro](azure-stack-edge-gpu-deploy-install.md).
 
-- активировано физическое устройство, как описано в статье [Учебник. Активация Azure Stack Edge с GPU](azure-stack-edge-gpu-deploy-activate.md).
+- Физическое устройство активировано, как описано в статье [Активация Azure Stack Edge Pro](azure-stack-edge-gpu-deploy-activate.md).
 
 
 ## <a name="add-an-edge-storage-account"></a>Добавление учетной записи хранения Edge
@@ -135,7 +135,7 @@ key2    6VANuHzHcJV04EFeyPiWRsFWnHPkgmX1+a3bt5qOQ2qIzohyskIF/2gfNMqp9rlNC/w+mBqQ
 
 ### <a name="get-certificate"></a>Получение сертификата
 
-Для доступа к хранилищу BLOB-объектов по протоколу HTTPS требуется SSL-сертификат для устройства. Этот сертификат также будет отправлен на устройство Azure Stack Edge в качестве *PFX*-файла с прикрепленным закрытым ключом. Дополнительные сведения о создании (только в целях тестирования и разработки) и передаче этих сертификатов на устройстве Azure Stack Edge см. в следующих ресурсах:
+Для доступа к хранилищу BLOB-объектов по протоколу HTTPS требуется SSL-сертификат для устройства. Этот сертификат также будет отправлен на устройство Azure Stack Edge Pro в качестве *PFX*-файла с прикрепленным закрытым ключом. Дополнительные сведения о создании (только в целях тестирования и разработки) и передаче этих сертификатов на устройство Azure Stack Edge Pro см. в следующих ресурсах:
 
 - [Создание сертификата конечной точки большого двоичного объекта](azure-stack-edge-j-series-manage-certificates.md#create-certificates-optional).
 - [Передача сертификата конечной точки большого двоичного объекта](azure-stack-edge-j-series-manage-certificates.md#upload-certificates).
@@ -167,15 +167,15 @@ key2    6VANuHzHcJV04EFeyPiWRsFWnHPkgmX1+a3bt5qOQ2qIzohyskIF/2gfNMqp9rlNC/w+mBqQ
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-В этом руководстве были освещены такие темы относительно Azure Stack Edge:
+В этом учебнике были рассмотрены такие темы относительно Azure Stack Edge Pro:
 
 > [!div class="checklist"]
 > * добавление учетной записи хранения;
 > * подключение к учетной записи хранения
 
-Чтобы узнать о преобразовании данных с помощью Azure Stack Edge, перейдите к следующему руководству.
+Чтобы узнать о преобразовании данных с помощью Azure Stack Edge Pro, перейдите к следующему учебнику:
 
 > [!div class="nextstepaction"]
-> [Руководство по преобразованию данных с помощью Azure Stack Edge](./azure-stack-edge-j-series-deploy-configure-compute.md)
+> [Преобразование данных с помощью Azure Stack Edge Pro](./azure-stack-edge-j-series-deploy-configure-compute.md)
 
 

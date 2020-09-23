@@ -12,12 +12,12 @@ ms.topic: tutorial
 ms.custom: seo-lt-2019
 ms.date: 05/15/2020
 ms.author: jingwang
-ms.openlocfilehash: b2e666419a702832243c69bdb059f4447b02d756
-ms.sourcegitcommit: 656c0c38cf550327a9ee10cc936029378bc7b5a2
+ms.openlocfilehash: 953dae3c264e76b1e40f0dc07ccea0c00a7464c8
+ms.sourcegitcommit: 70ee014d1706e903b7d1e346ba866f5e08b22761
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89079461"
+ms.lasthandoff: 09/11/2020
+ms.locfileid: "90024423"
 ---
 # <a name="copy-data-securely-from-azure-blob-storage-to-a-sql-database-by-using-private-endpoints"></a>Безопасное копирование данных из Хранилища BLOB-объектов Azure в Базу данных SQL с помощью частных конечных точек
 
@@ -57,7 +57,7 @@ ms.locfileid: "89079461"
 
 #### <a name="create-a-sink-sql-table"></a>Создание таблицы-приемника SQL
 
-1. Используйте следующий скрипт SQL, чтобы создать таблицу **dbo.emp** в базе данных SQL.
+Используйте следующий скрипт SQL, чтобы создать таблицу **dbo.emp** в базе данных SQL.
 
     ```sql
     CREATE TABLE dbo.emp
@@ -70,8 +70,6 @@ ms.locfileid: "89079461"
 
     CREATE CLUSTERED INDEX IX_emp_ID ON dbo.emp (ID);
     ```
-
-1. Предоставьте службам Azure доступ к серверу SQL Server. Убедитесь, что параметр **Разрешить доступ к службам Azure** имеет состояние **Вкл.** для вашего сервера SQL Server, чтобы фабрика данных могла записывать данные на него. Чтобы проверить и при необходимости включить этот параметр, выберите **Azure SQL Server** > **Обзор** > **Настройка брандмауэра для сервера**. Задайте для параметра **Разрешить доступ к службам Azure** значение **Вкл.**
 
 ## <a name="create-a-data-factory"></a>Создание фабрики данных
 На этом этапе вы создадите фабрику данных и запустите пользовательский интерфейс службы "Фабрика данных" для создания конвейера в фабрике данных.

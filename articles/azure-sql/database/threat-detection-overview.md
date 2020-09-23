@@ -11,23 +11,23 @@ ms.topic: conceptual
 author: monhaber
 ms.author: ronmat
 ms.reviewer: vanto, carlrab
-ms.date: 02/05/2020
+ms.date: 09/21/2020
 tags: azure-synapse
-ms.openlocfilehash: 07a39edcb7a5605759ae70a014549863a038de1c
-ms.sourcegitcommit: bf1340bb706cf31bb002128e272b8322f37d53dd
+ms.openlocfilehash: 0f0dde0da69ad225e39292681fc079aba4b81203
+ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/03/2020
-ms.locfileid: "89437060"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90885138"
 ---
 # <a name="advanced-threat-protection-for-azure-sql-database-sql-managed-instance-and-azure-synapse-analytics"></a>Расширенная защита от угроз для базы данных SQL Azure, SQL Управляемый экземпляр и Azure синапсе Analytics
 [!INCLUDE[appliesto-sqldb-sqlmi-asa](../includes/appliesto-sqldb-sqlmi-asa.md)]
 
 Расширенная защита от угроз для [базы данных SQL](sql-database-paas-overview.md)azure, [управляемый экземпляр Azure SQL](../managed-instance/sql-managed-instance-paas-overview.md) и [Azure синапсе Analytics](../../synapse-analytics/sql-data-warehouse/sql-data-warehouse-overview-what-is.md) обнаруживает аномальные действия, указывающие на необычные и потенциально опасные попытки доступа к базам данных или их использования.
 
-Расширенная защита от угроз входит в состав [расширенного предложения по обеспечению безопасности данных](advanced-data-security.md) , который является единым пакетом для расширенных возможностей обеспечения безопасности SQL. Доступ к расширенной защите от угроз можно получить через центральный портал SQL ADS. Там же ею можно управлять.
+Расширенная защита от угроз является частью предложения ["защитник Azure для SQL"](azure-defender-for-sql.md) , которое является единым пакетом для расширенных возможностей обеспечения безопасности SQL. Вы можете получить доступ к расширенной защите от угроз и управлять ими с помощью центрального портала Azure Defender для SQL.
 
-## <a name="overview"></a>Overview
+## <a name="overview"></a>Обзор
 
 Расширенная защита от угроз обеспечивает новый уровень безопасности, который позволяет клиентам обнаруживать потенциальные угрозы и реагировать на них по мере их возникновения, предоставляя оповещения системы безопасности о аномальных действиях. Пользователи получают оповещения о подозрительных действиях с базами данных, потенциальных уязвимостях, атаках путем внедрения кода SQL и аномальных закономерностей в доступе к базам данных и шаблонам запросов. Расширенная защита от угроз интегрирует оповещения в [центре безопасности Azure](https://azure.microsoft.com/services/security-center/), включая сведения о подозрительных действиях и рекомендуемые действия по исследованию и снижению угрозы. Расширенная защита от угроз упрощает устранение потенциальных угроз для базы данных, не требуя эксперта по безопасности или управления расширенными системами мониторинга безопасности.
 
@@ -55,19 +55,15 @@ ms.locfileid: "89437060"
 
 ## <a name="explore-alerts-in-the-azure-portal"></a>Просмотр оповещений в портал Azure
 
-Расширенная защита от угроз интегрирует свои оповещения с [центром безопасности Azure](https://azure.microsoft.com/services/security-center/). Интерактивные плитки расширенной защиты от угроз SQL в колонках базы данных и ADS SQL в портал Azure отслеживании состояния активных угроз.
+Расширенная защита от угроз интегрирует свои оповещения с [центром безопасности Azure](https://azure.microsoft.com/services/security-center/). Интерактивные плитки с расширенной защитой угроз SQL в базе данных и SQL Azure в колонках защитника в портал Azure отслеживание состояния активных угроз.
 
 Щелкните **оповещение Advanced Threat protection** , чтобы открыть страницу оповещений центра безопасности Azure и получить обзор активных угроз SQL, обнаруженных в базе данных.
-
-   ![Оповещение о повышенной защите от угроз](./media/threat-detection-overview/threat_detection_alert.png)
-
-   ![Alert2 Advanced Threat protection](./media/threat-detection-overview/threat_detection_alert_atp.png)
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
 - Дополнительные сведения о [расширенной защите от угроз в базе данных SQL azure & Azure синапсе](threat-detection-configure.md).
 - Дополнительные сведения о [расширенной защите от угроз в Azure SQL управляемый экземпляр](../managed-instance/threat-detection-configure.md).
-- Дополнительные сведения о [расширенной защите данных](advanced-data-security.md).
+- Дополнительные сведения о [защитнике Azure для SQL](azure-defender-for-sql.md).
 - Дополнительные сведения об [аудите базы данных SQL Azure](../../azure-sql/database/auditing-overview.md)
 - Дополнительные сведения о [центре безопасности Azure](https://docs.microsoft.com/azure/security-center/security-center-intro)
 - Дополнительные сведения о ценах см. на [странице цен на базу данных SQL Azure](https://azure.microsoft.com/pricing/details/sql-database/) .  

@@ -1,6 +1,6 @@
 ---
-title: DROP EXTERNAL STREAM (Transact-SQL) — SQL Azure для пограничных вычислений (предварительная версия)
-description: Сведения об инструкции DROP EXTERNAL STREAM в SQL Azure для пограничных вычислений (предварительная версия)
+title: DROP EXTERNAL STREAM (Transact-SQL) — Azure SQL ребро
+description: Сведения об инструкции DROP EXTERNAL STREAM в Azure SQL ребро
 keywords: ''
 services: sql-edge
 ms.service: sql-edge
@@ -9,12 +9,12 @@ author: SQLSourabh
 ms.author: sourabha
 ms.reviewer: sstein
 ms.date: 05/19/2020
-ms.openlocfilehash: d5ff5d74db4ad89744c0b42b188a916173b4d864
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: ec516b99eb619c12a2031f87fb3fbd5f5b04b08e
+ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84233225"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90886628"
 ---
 # <a name="drop-external-stream-transact-sql"></a>DROP EXTERNAL STREAM (Transact-SQL)
 
@@ -29,4 +29,3 @@ DROP EXTERNAL STREAM {external_stream_name}
 ## <a name="see-also"></a>См. также раздел
 
 - [CREATE EXTERNAL STREAM (Transact-SQL)](create-external-stream-transact-sql.md) 
-- [ALTER EXTERNAL STREAM (Transact-SQL)](alter-external-stream-transact-sql.md) 

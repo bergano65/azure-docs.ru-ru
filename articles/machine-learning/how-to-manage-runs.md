@@ -12,15 +12,15 @@ ms.reviewer: nibaccam
 ms.date: 01/09/2020
 ms.topic: conceptual
 ms.custom: how-to, devx-track-python
-ms.openlocfilehash: 6d0d626fe0720500b436aea73d6df7c8bb08e004
-ms.sourcegitcommit: 3be3537ead3388a6810410dfbfe19fc210f89fec
+ms.openlocfilehash: fc9dee3d4ace5f70c4238cdce5c57696b131bfa9
+ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89649378"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90897313"
 ---
 # <a name="start-monitor-and-cancel-training-runs-in-python"></a>Запуск, отслеживание и отмена обучающих запусков в Python
-[!INCLUDE [applies-to-skus](../../includes/aml-applies-to-basic-enterprise-sku.md)]
+
 
 [Пакет SDK машинное обучение Azure для Python](https://docs.microsoft.com/python/api/overview/azure/ml/intro?view=azure-ml-py&preserve-view=true), [Машинное обучение CLI](reference-azure-machine-learning-cli.md)и [машинное обучение Azure Studio](https://ml.azure.com) предоставляют различные методы для мониторинга, Организации и управления запусками для обучения и экспериментирования.
 
@@ -110,7 +110,7 @@ notebook_run.log(name="message", value="Hello from run!")
 
 ### <a name="using-azure-machine-learning-studio"></a>Использование Машинное обучение Azure Studio
 
-Чтобы запустить отправку конвейера в конструкторе (Предварительная версия), выполните следующие действия.
+Чтобы запустить отправку конвейера в конструкторе, выполните следующие действия.
 
 1. Задайте целевой объект вычислений по умолчанию для конвейера.
 
@@ -384,7 +384,7 @@ list(exp.get_runs(properties={"author":"azureml-user"},tags="worth another look"
 
 #### <a name="using-the-cli"></a>Использование интерфейса командной строки
 
-Azure CLI поддерживает запросы [JMESPath](http://jmespath.org) , которые можно использовать для фильтрации запусков на основе свойств и тегов. Чтобы использовать запрос JMESPath с Azure CLI, укажите его с помощью `--query` параметра. В следующих примерах показаны основные запросы, использующие свойства и теги.
+Azure CLI поддерживает запросы [JMESPath](http://jmespath.org) , которые можно использовать для фильтрации запусков на основе свойств и тегов. Чтобы использовать запрос JMESPath с Azure CLI, укажите его с помощью `--query` параметра. В следующих примерах показаны некоторые запросы, использующие свойства и теги.
 
 ```azurecli-interactive
 # list runs where the author property = 'azureml-user'

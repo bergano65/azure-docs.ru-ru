@@ -6,12 +6,12 @@ ms.author: manishku
 ms.service: mysql
 ms.topic: conceptual
 ms.date: 01/13/2020
-ms.openlocfilehash: 8fca0195c2941e4ed1a859c3201adfc2a4a0a2ed
-ms.sourcegitcommit: d8b8768d62672e9c287a04f2578383d0eb857950
+ms.openlocfilehash: 71657d45ce9c4cc6fb103b61235a282b3005b924
+ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/11/2020
-ms.locfileid: "88067449"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90884923"
 ---
 # <a name="azure-database-for-mysql-data-encryption-with-a-customer-managed-key"></a>Шифрование данных в Базе данных Azure для MySQL с помощью управляемого клиентом ключа
 
@@ -44,7 +44,7 @@ Key Vault — это облачная внешняя система управ
 
 ## <a name="how-data-encryption-with-a-customer-managed-key-work"></a>Шифрование данных с помощью управляемого клиентом ключа
 
-![Схема, на которой показан обзор подхода "Создание собственных ключей"](media/concepts-data-access-and-security-data-encryption/mysqloverview.png)
+:::image type="content" source="media/concepts-data-access-and-security-data-encryption/mysqloverview.png" alt-text="Схема, на которой показан обзор подхода "Создание собственных ключей"":::
 
 Чтобы сервер MySQL мог использовать управляемые клиентом и хранящиеся в Key Vault ключи для шифрования ключа DEK, администратор Key Vault предоставляет следующие права доступа.
 
@@ -80,7 +80,7 @@ Key Vault — это облачная внешняя система управ
 * Убедитесь, что Key Vault и База данных Azure для MySQL находятся в одном регионе, чтобы обеспечить быстрый доступ к операциям упаковки или распаковки ключа DEK.
 * Сделайте Azure KeyVault доступным только для **частной конечной точки и ряда определенных сетей** и используйте для защиты ресурсов только *доверенные службы Майкрософт*.
 
-    ![trusted-service-with-AKV](media/concepts-data-access-and-security-data-encryption/keyvault-trusted-service.png)
+    :::image type="content" source="media/concepts-data-access-and-security-data-encryption/keyvault-trusted-service.png" alt-text="trusted-service-with-AKV":::
 
 Ниже приведены рекомендации по настройке ключа, управляемого клиентом.
 

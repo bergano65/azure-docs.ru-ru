@@ -9,12 +9,12 @@ ms.author: laobri
 author: lobrien
 ms.date: 08/17/2020
 ms.custom: devx-track-python
-ms.openlocfilehash: 2232aa46b0586ca62e80c8b9002271a67e4021c1
-ms.sourcegitcommit: 3be3537ead3388a6810410dfbfe19fc210f89fec
+ms.openlocfilehash: b0217766c92ddcd1907eca2c6702d91b02e06c03
+ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89651125"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90893637"
 ---
 # <a name="what-are-azure-machine-learning-pipelines"></a>Что такое Машинное обучение Azure конвейеров?
 
@@ -38,8 +38,8 @@ ms.locfileid: "89651125"
 
 | Сценарий | Первичный персонаж | Предложение Azure | Предложение OSS | Канонический канал | Преимущества | 
 | -------- | --------------- | -------------- | ------------ | -------------- | --------- | 
-| Оркестрации модели (машинное обучение) | специалист по анализу и обработке данных; | Конвейеры Машинного обучение Azure | Конвейеры Kubeflow | Модель > данных | Распространение, кэширование, сначала код, повторное использование | 
-| Оркестрации данных (подготовка данных) | Инженер по анализу и обработке данных | [Конвейеры Фабрики данных Azure](https://docs.microsoft.com/azure/data-factory/concepts-pipelines-activities) | Apache Airflow | Данные > данных | Строго типизированное перемещение, действия, ориентированные на данные |
+| Оркестрации модели (машинное обучение) | Специалист по обработке и анализу данных | Конвейеры Машинного обучение Azure | Конвейеры Kubeflow | Модель > данных | Распространение, кэширование, сначала код, повторное использование | 
+| Оркестрации данных (подготовка данных) | Инженер данных | [Конвейеры Фабрики данных Azure](https://docs.microsoft.com/azure/data-factory/concepts-pipelines-activities) | Apache Airflow | Данные > данных | Строго типизированное перемещение, действия, ориентированные на данные |
 | Согласование кода & приложений (CI/CD) | Разработка и Ops приложения | [Конвейеры Azure DevOps](https://azure.microsoft.com/services/devops/pipelines/) | Jenkins | Код + модель — > приложения или службы | Поддержка наиболее открытых и гибких действий, очереди утверждений, фазы с ограничением | 
 
 ## <a name="what-can-azure-ml-pipelines-do"></a>Что могут выполнять конвейеры машинного обучения Azure?
@@ -95,7 +95,7 @@ ms.locfileid: "89651125"
 
 ### <a name="a-simple-python-pipeline"></a>Простой конвейер Python
 
-В этом фрагменте кода показаны объекты и вызовы, необходимые для создания и запуска базового `Pipeline` :
+В этом фрагменте кода показаны объекты и вызовы, необходимые для создания и выполнения `Pipeline` :
 
 ```python
 ws = Workspace.from_config() 

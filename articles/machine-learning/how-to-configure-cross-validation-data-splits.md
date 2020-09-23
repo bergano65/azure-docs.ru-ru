@@ -11,12 +11,12 @@ ms.author: cesardl
 author: CESARDELATORRE
 ms.reviewer: nibaccam
 ms.date: 06/16/2020
-ms.openlocfilehash: 7a7b603efe376250607b4a48ff3ef2833f40a2bd
-ms.sourcegitcommit: 3be3537ead3388a6810410dfbfe19fc210f89fec
+ms.openlocfilehash: 3e2711243d7c093d3ab8aa5f0e7ebac0a5ec95f9
+ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89650728"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90886196"
 ---
 # <a name="configure-data-splits-and-cross-validation-in-automated-machine-learning"></a>Настройка разбиения данных и перекрестной проверки в автоматизированном машинном обучении
 
@@ -37,7 +37,7 @@ ms.locfileid: "89650728"
 
 * Рабочая область машинного обучения Azure. Дополнительные сведения см. в [инструкциях по созданию рабочей области Машинного обучения Azure](how-to-manage-workspace.md).
 
-* Знакомство с настройкой автоматизированного эксперимента машинного обучения с помощью пакета SDK для Машинное обучение Azure. Следуйте инструкциям [учебника](tutorial-auto-train-models.md) или [практического руководства](how-to-configure-auto-train.md), чтобы ознакомиться с основными конструктивными шаблонами экспериментов автоматизированного машинного обучения.
+* Знакомство с настройкой автоматизированного эксперимента машинного обучения с помощью пакета SDK для Машинное обучение Azure. Следуйте указаниям [учебника](tutorial-auto-train-models.md) или [инструкции](how-to-configure-auto-train.md) , чтобы ознакомиться с основными конструктивными шаблонами для экспериментов машинного обучения.
 
 * Анализ данных о перекрестной проверке и обучении и проверке разбивается как основные понятия ML. Подробное описание
 

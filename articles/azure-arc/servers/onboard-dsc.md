@@ -1,26 +1,26 @@
 ---
 title: Установка агента подключенного компьютера с помощью Windows PowerShell DSC
-description: Из этой статьи вы узнаете, как подключить компьютеры к Azure с помощью серверов с поддержкой ARC (Предварительная версия) с помощью Windows PowerShell DSC.
-ms.date: 03/12/2020
+description: Из этой статьи вы узнаете, как подключить компьютеры к Azure с помощью серверов с поддержкой ARC в Azure с помощью Windows PowerShell DSC.
+ms.date: 09/02/2020
 ms.topic: conceptual
-ms.openlocfilehash: 675258ff95829c2dc9922571db5014b2ba93d336
-ms.sourcegitcommit: d0541eccc35549db6381fa762cd17bc8e72b3423
+ms.openlocfilehash: 5349ff870be324c0137d2adcaf201ecdac286cbc
+ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/09/2020
-ms.locfileid: "89565826"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90887638"
 ---
 # <a name="how-to-install-the-connected-machine-agent-using-windows-powershell-dsc"></a>Установка агента подключенного компьютера с помощью Windows PowerShell DSC
 
-С помощью [настройки требуемого состояния Windows PowerShell](/powershell/scripting/dsc/getting-started/winGettingStarted?view=powershell-7) (DSC) можно автоматизировать установку и настройку программного обеспечения для компьютера Windows. В этой статье описывается, как использовать DSC для установки агента подключенного компьютера с поддержкой ARC (Предварительная версия) Azure на гибридных компьютерах Windows.
+С помощью [настройки требуемого состояния Windows PowerShell](/powershell/scripting/dsc/getting-started/winGettingStarted) (DSC) можно автоматизировать установку и настройку программного обеспечения для компьютера Windows. В этой статье описывается, как с помощью DSC установить на гибридных компьютерах Windows Агент подключенных виртуальных машин для серверов с поддержкой дуги Azure.
 
 ## <a name="requirements"></a>Требования
 
 - Windows PowerShell версии 4,0 или более поздней
 
-- Модуль DSC [азуреконнектедмачинедск](https://www.powershellgallery.com/packages/AzureConnectedMachineDsc/1.0.1.0)
+- Модуль DSC [азуреконнектедмачинедск](https://www.powershellgallery.com/packages/AzureConnectedMachineDsc)
 
-- Субъект-служба для подключения компьютеров к серверам с поддержкой ARC в Azure (Предварительная версия) в неинтерактивном режиме. Выполните действия, описанные в разделе [Создание субъекта-службы для адаптации в масштабе](onboard-service-principal.md#create-a-service-principal-for-onboarding-at-scale) , если вы еще не создали субъект-службу для серверов с поддержкой ARC (Предварительная версия).
+- Субъект-служба для подключения компьютеров к серверам с поддержкой ARC в Azure в неинтерактивном режиме. Выполните действия, описанные в разделе [Создание субъекта-службы для адаптации в масштабе](onboard-service-principal.md#create-a-service-principal-for-onboarding-at-scale) , если вы еще не создали субъект-службу для серверов с поддержкой ARC.
 
 ## <a name="install-the-connectedmachine-dsc-module"></a>Установка модуля DSC Коннектедмачине
 
@@ -44,7 +44,7 @@ ms.locfileid: "89565826"
 
 Ресурсы в этом модуле предназначены для управления конфигурацией агента подключенного компьютера Azure. Также включен сценарий PowerShell `AzureConnectedMachineAgent.ps1` , находящийся в `AzureConnectedMachineDsc\examples` папке. Он использует ресурсы сообщества для автоматизации загрузки и установки и установления подключения к службе "Дуга Azure". Этот сценарий выполняет аналогичные действия, описанные в статье [портал Azure подключение гибридных компьютеров к Azure](onboard-portal.md) .
 
-Если компьютеру необходимо взаимодействовать через прокси-сервер со службой, после установки агента необходимо выполнить команду, описанную [здесь](manage-agent.md#update-or-remove-proxy-settings). Она задает переменную системной среды для прокси-сервера `https_proxy`. Вместо выполнения команды вручную можно выполнить этот шаг с DSC с помощью модуля [компутеманажементдск](https://www.powershellgallery.com/packages/ComputerManagementDsc/6.0.0.0) .
+Если компьютеру необходимо взаимодействовать через прокси-сервер со службой, после установки агента необходимо выполнить команду, описанную [здесь](manage-agent.md#update-or-remove-proxy-settings). Она задает переменную системной среды для прокси-сервера `https_proxy`. Вместо выполнения команды вручную можно выполнить этот шаг с DSC с помощью модуля [компутеманажементдск](https://www.powershellgallery.com/packages/ComputerManagementDsc) .
 
 >[!NOTE]
 >Чтобы разрешить выполнение DSC, Windows необходимо настроить на получение удаленных команд PowerShell, даже если используется конфигурация localhost. Чтобы правильно настроить среду, запустите `Set-WsManQuickConfig -Force` в терминале PowerShell с повышенными привилегиями.
@@ -64,11 +64,11 @@ ms.locfileid: "89565826"
 
 - `Tags`: Строковый массив тегов, которые должны применяться к ресурсу подключенного компьютера.
 
-- `Credential`: Объект учетных данных PowerShell с идентификатором **applicationId** и **Password** , используемый для регистрации компьютеров в масштабе с помощью [субъекта-службы](onboard-service-principal.md). 
+- `Credential`: Объект учетных данных PowerShell с идентификатором **applicationId** и **Password** , используемый для регистрации компьютеров в масштабе с помощью [субъекта-службы](onboard-service-principal.md).
 
 1. В консоли PowerShell перейдите к папке, в которую был сохранен `.ps1` файл.
 
-2. Выполните следующие команды PowerShell для компиляции документа MOF (дополнительные сведения о компиляции конфигураций DSC см. в разделе [Конфигурации DSC](/powershell/scripting/dsc/configurations/configurations?view=powershell-7)).
+2. Выполните следующие команды PowerShell для компиляции документа MOF (дополнительные сведения о компиляции конфигураций DSC см. в разделе [Конфигурации DSC](/powershell/scripting/dsc/configurations/configurations)).
 
     ```powershell
     .\`AzureConnectedMachineAgent.ps1 -TenantId <TenantId GUID> -SubscriptionId <SubscriptionId GUID> -ResourceGroup '<ResourceGroupName>' -Location '<LocationName>' -Tags '<Tag>' -Credential <psCredential>
@@ -76,13 +76,13 @@ ms.locfileid: "89565826"
 
 3. Будет создан `localhost.mof file` в новой папке с именем `C:\dsc` .
 
-После установки агента и его настройки для подключения к серверам с поддержкой ARC (Предварительная версия) перейдите к портал Azure, чтобы убедиться, что сервер успешно подключен. Просмотрите свои компьютеры на [портале Azure](https://aka.ms/hybridmachineportal).
+После установки агента и его настройки для подключения к серверам с поддержкой Arc Azure перейдите к портал Azure, чтобы убедиться, что сервер успешно подключен. Просмотрите свои компьютеры на [портале Azure](https://aka.ms/hybridmachineportal).
 
 ## <a name="adding-to-existing-configurations"></a>Добавление в существующие конфигурации
 
 Этот ресурс можно добавить в существующие конфигурации DSC, чтобы представить комплексную конфигурацию для компьютера. Например, может потребоваться добавить этот ресурс в конфигурацию, которая задает параметры безопасности операционной системы.
 
-Модуль [компоситересаурце](https://www.powershellgallery.com/packages/compositeresource/0.4.0) из коллекция PowerShell можно использовать для создания [составного ресурса](/powershell/scripting/dsc/resources/authoringResourceComposite?view=powershell-7) в примере конфигурации для дальнейшего упрощения объединения конфигураций.
+Модуль [компоситересаурце](https://www.powershellgallery.com/packages/compositeresource) из коллекция PowerShell можно использовать для создания [составного ресурса](/powershell/scripting/dsc/resources/authoringResourceComposite) в примере конфигурации для дальнейшего упрощения объединения конфигураций.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

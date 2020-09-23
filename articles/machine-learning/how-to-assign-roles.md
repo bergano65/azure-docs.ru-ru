@@ -11,15 +11,14 @@ ms.author: nigup
 author: nishankgu
 ms.date: 07/24/2020
 ms.custom: how-to, seodec18
-ms.openlocfilehash: 235135cbbcc7c622f4dd23c2e4f29cc3636dc1ea
-ms.sourcegitcommit: f8d2ae6f91be1ab0bc91ee45c379811905185d07
+ms.openlocfilehash: d36c0ab78f9f96a051e6cb0a53b756c7409ca142
+ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89661935"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90893395"
 ---
 # <a name="manage-access-to-an-azure-machine-learning-workspace"></a>Управление доступом к рабочей области Машинного обучения Azure
-[!INCLUDE [aml-applies-to-basic-enterprise-sku](../../includes/aml-applies-to-basic-enterprise-sku.md)]
 
 Из этой статьи вы узнаете, как управлять доступом к рабочей области Машинное обучение Azure. Управление [доступом на основе ролей Azure (Azure RBAC)](/azure/role-based-access-control/overview) используется для управления доступом к ресурсам Azure. Пользователям в Azure Active Directory назначаются определенные роли, которые предоставляют доступ к ресурсам. Azure предоставляет встроенные роли и возможность создания пользовательских ролей.
 
@@ -135,7 +134,6 @@ az ml workspace share -w my_workspace -g my_resource_group --role "Data Scientis
 | Действие | Область действия уровня подписки | Область действия уровня группы ресурсов | Область уровня рабочей области |
 | ----- | ----- | ----- | ----- |
 | Создать рабочую область | Не требуется | Владелец или участник | Н/д (владелец или наследует роль более высокого уровня после создания) |
-| Обновление выпуска рабочей области | Не требуется | Не требуется | Владелец, участник или пользовательская роль, которая позволяет: `/workspaces/write` |
 | Запросить квоту на уровне подписки Амлкомпуте или задать квоту на уровне рабочей области | Владелец, участник или пользовательская роль </br>позволяя `/locations/updateQuotas/action`</br> в области действия подписки | Не санкционировано | Не санкционировано |
 | Создать новый кластер вычислений | Не требуется | Не требуется | Владелец, участник или пользовательская роль, которая позволяет: `/workspaces/computes/write` |
 | Создание нового вычислительного экземпляра | Не требуется | Не требуется | Владелец, участник или пользовательская роль, которая позволяет: `/workspaces/computes/write` |
@@ -301,7 +299,6 @@ az ml workspace share -w my_workspace -g my_resource_group --role "Data Scientis
 
     * Создание новой рабочей области
     * Назначение квот уровня подписки или рабочей области
-    * Обновление выпуска рабочей области
 
     Администратор рабочей области также не может создать новую роль. Он может назначать существующие встроенные или пользовательские роли в области действия рабочей области.
 
@@ -415,11 +412,7 @@ az role definition update --role-definition update_def.json --subscription <sub-
 
 > [!NOTE]
 > Обновление ролей может занять от 15 до часа, чтобы применить их во всех назначениях ролей в этой области.
-### <a name="q-can-i-define-a-role-that-prevents-updating-the-workspace-edition"></a>У. Можно ли определить роль, запрещающую обновление выпуска рабочей области? 
 
-Да, можно определить роль, запрещающую обновлять выпуск рабочей области. Так как обновление рабочей области является вызовом исправления для объекта рабочей области, это делается путем размещения следующего действия в `"NotActions"` массиве в определении JSON: 
-
-`"Microsoft.MachineLearningServices/workspaces/write"`
 
 ### <a name="q-what-permissions-are-needed-to-perform-quota-operations-in-a-workspace"></a>У. Какие разрешения требуются для выполнения операций с квотами в рабочей области? 
 

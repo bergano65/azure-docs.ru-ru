@@ -1,5 +1,5 @@
 ---
-title: Выполнение пакетных прогнозов с помощью конструктора Машинного обучения Azure (предварительная версия)
+title: Выполнение пакетных прогнозов с помощью конструктора Машинного обучения Azure
 titleSuffix: Azure Machine Learning
 description: Узнайте, как обучить модель и настроить конвейер пакетного прогнозирования с помощью конструктора. Разверните конвейер как параметризованную веб-службу, которая может быть активирована из любой библиотеки HTTP.
 services: machine-learning
@@ -10,15 +10,15 @@ author: likebupt
 ms.date: 09/09/2020
 ms.topic: conceptual
 ms.custom: how-to, designer
-ms.openlocfilehash: e4ca191e50f4ca8aa5a11a36ec44e737cc2ef6bc
-ms.sourcegitcommit: f8d2ae6f91be1ab0bc91ee45c379811905185d07
+ms.openlocfilehash: 21dad66670da7a538039ae795d6be87cc4dbce96
+ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89661517"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90883091"
 ---
-# <a name="run-batch-predictions-using-azure-machine-learning-designer-preview"></a>Выполнение пакетных прогнозов с помощью конструктора Машинного обучения Azure (предварительная версия)
-[!INCLUDE [applies-to-skus](../../includes/aml-applies-to-enterprise-sku.md)]
+# <a name="run-batch-predictions-using-azure-machine-learning-designer"></a>Выполнение пакетных прогнозов с помощью конструктора Машинного обучения Azure
+
 
 Из этой статьи вы узнаете, как использовать конструктор для создания конвейера пакетного прогнозирования. Пакетное прогнозирование позволяет постоянно оценивать большие наборы данных по запросу с помощью веб-службы, которую можно активировать из любой библиотеки HTTP.
 
