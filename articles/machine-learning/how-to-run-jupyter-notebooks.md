@@ -11,15 +11,15 @@ ms.subservice: core
 ms.topic: conceptual
 ms.custom: how-to
 ms.date: 06/27/2020
-ms.openlocfilehash: a59905c1d410ae0ffd4520f3b61fd37e649012e7
-ms.sourcegitcommit: 3be3537ead3388a6810410dfbfe19fc210f89fec
+ms.openlocfilehash: b310f195477f4cba83ef30c6fb5ea2fd24c4df9a
+ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89650922"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90897375"
 ---
 # <a name="how-to-run-jupyter-notebooks-in-your-workspace"></a>Выполнение веб-приложений Jupyter Notebook в рабочей области
-[!INCLUDE [applies-to-skus](../../includes/aml-applies-to-basic-enterprise-sku.md)]
+
 
 Узнайте, как использовать веб-приложения Jupyter Notebook прямо в рабочей области Студии машинного обучения Azure. Работать с записными книжками можно не только в [Jupyter](https://jupyter.org/) или [JupyterLab](https://jupyterlab.readthedocs.io), но и прямо в рабочей области.
 
@@ -84,7 +84,7 @@ ms.locfileid: "89650922"
 
 1. Если значок не отображается, нажмите кнопку **...** справа от целевого объекта вычислений и выберите **Открыть терминал**.
 
-    :::image type="content" source="media/how-to-run-jupyter-notebooks/alt-open-terminal.png" alt-text="Открытие терминала с помощью меню ...":::
+    :::image type="content" source="media/how-to-run-jupyter-notebooks/alt-open-terminal.png" alt-text="Открытие терминала с помощью меню "..."":::
 
 
 Дополнительные сведения см. в разделе [Клонирование репозиториев Git в файловую систему рабочей области](concept-train-model-git-integration.md#clone-git-repositories-into-your-workspace-file-system).
@@ -132,7 +132,7 @@ ms.locfileid: "89650922"
 
 На панели инструментов записной книжки выберите меню, а затем **файл &gt; сохранить и контрольная точка** , чтобы вручную сохранить записную книжку, и она добавит файл контрольных точек, связанный с записной книжкой.
 
-:::image type="content" source="media/how-to-run-jupyter-notebooks/file-save.png" alt-text="Снимок экрана инструмента сохранение на панели инструментов записной книжки":::
+:::image type="content" source="media/how-to-run-jupyter-notebooks/file-save.png" alt-text="Снимок экрана инструмента "сохранение" на панели инструментов записной книжки":::
 
 Каждая Записная книжка автоматически сохраняется каждые 30 секунд.Функция автосохранения обновляет только исходный файл *ipynb*   , а не файл контрольных точек.
  

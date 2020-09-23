@@ -372,6 +372,8 @@
       href: /azure/cloud-adoption-framework/get-started/
     - name: Центр архитектуры
       href: /azure/architecture/
+    - name: Преимущество гибридного использования Azure
+      href: azure-hybrid-benefit-linux.md
 - name: Практические руководства
   items:
     - name: Создание виртуальных машин

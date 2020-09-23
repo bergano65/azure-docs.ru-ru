@@ -10,17 +10,16 @@ ms.author: laobri
 ms.date: 08/28/2020
 ms.topic: conceptual
 ms.custom: troubleshooting, devx-track-python
-ms.openlocfilehash: cad1c8b7250ddf1e675145e764abcc90b4db9d86
-ms.sourcegitcommit: f8d2ae6f91be1ab0bc91ee45c379811905185d07
+ms.openlocfilehash: 616cdb1d0940ea6f64c3be3d687adaa9c2a98cc2
+ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89661716"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90889966"
 ---
 # <a name="debug-and-troubleshoot-machine-learning-pipelines"></a>Отладка и устранение неполадок в конвейерах машинного обучения
-[!INCLUDE [applies-to-skus](../../includes/aml-applies-to-basic-enterprise-sku.md)]
 
-Из этой статьи вы узнаете, как устранять неполадки и отлаживать [конвейеры машинного обучения](concept-ml-pipelines.md) в [машинное обучение Azure SDK](https://docs.microsoft.com/python/api/overview/azure/ml/intro?view=azure-ml-py&preserve-view=true) и [конструкторе машинное обучение Azure (Предварительная версия)](https://docs.microsoft.com/azure/machine-learning/concept-designer). 
+Из этой статьи вы узнаете, как выполнять отладку и устранение неполадок в [конвейерах машинного обучения](concept-ml-pipelines.md) в [машинное обучение Azure SDK](https://docs.microsoft.com/python/api/overview/azure/ml/intro?view=azure-ml-py&preserve-view=true) и [конструкторе машинное обучение Azure](https://docs.microsoft.com/azure/machine-learning/concept-designer). Сведения приведены в следующих руководствах:
 
 ## <a name="troubleshooting-tips"></a>Советы по устранению неполадок
 
@@ -108,31 +107,7 @@ logger.warning("I am an OpenCensus warning statement, find me in Application Ins
 logger.error("I am an OpenCensus error statement with custom dimensions", {'step_id': run.id})
 ``` 
 
-### <a name="finding-and-reading-pipeline-log-files"></a>Поиск и чтение файлов журнала конвейера
-
-Файл журнала `70_driver_log.txt` содержит: 
-
-* Все печатные инструкции во время выполнения сценария
-* Трассировка стека для скрипта 
-
-Чтобы найти этот и другие файлы журнала на портале, сначала щелкните Запуск конвейера в рабочей области.
-
-![Страница списка запусков конвейера](./media/how-to-debug-pipelines/pipelinerun-01.png)
-
-Перейдите на страницу сведений о выполнении конвейера.
-
-![Страница сведений о запуске конвейера](./media/how-to-debug-pipelines/pipelinerun-02.png)
-
-Щелкните модуль для конкретного шага. Перейдите на вкладку **журналы** . Другие журналы включают сведения о процессе сборки образа среды и сценарии подготовки к выполнению.
-
-![Вкладка журнала страницы сведений о запуске конвейера](./media/how-to-debug-pipelines/pipelinerun-03.png)
-
-> [!TIP]
-> Запуски для *опубликованных конвейеров* можно найти на вкладке " **конечные точки** " в рабочей области. Запуски для *неопубликованных конвейеров* можно найти в **экспериментах** или **конвейерах**.
-
-Дополнительные сведения о ведении журналов и трассировки из `ParallelRunStep` см. в разделе [Отладка и устранение неполадок параллелрунстеп](how-to-debug-parallel-run-step.md).
-
-## <a name="logging-in-azure-machine-learning-designer-preview"></a>Ведение журнала в Машинное обучение Azure конструкторе (Предварительная версия)
+## <a name="azure-machine-learning-designer"></a>Конструктор Машинного обучения Azure
 
 Для конвейеров, созданных в конструкторе, файл **70_driver_log** можно найти либо на странице Создание, либо на странице сведения о выполнении конвейера.
 

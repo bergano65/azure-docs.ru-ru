@@ -3,12 +3,12 @@ title: Резервное копирование виртуальных маши
 description: Описание резервного копирования виртуальных машин Azure в хранилище Служб восстановления с помощью Azure Backup
 ms.topic: conceptual
 ms.date: 07/28/2020
-ms.openlocfilehash: 29895c0358547679a9db7b2f4da203e2b546d67f
-ms.sourcegitcommit: d7352c07708180a9293e8a0e7020b9dd3dd153ce
+ms.openlocfilehash: 28cc995afc131e747314032c1363f73531e6915c
+ms.sourcegitcommit: bdd5c76457b0f0504f4f679a316b959dcfabf1ef
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/30/2020
-ms.locfileid: "89145660"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90986509"
 ---
 # <a name="back-up-azure-vms-in-a-recovery-services-vault"></a>Резервное копирование виртуальных машин Azure в хранилище Служб восстановления
 
@@ -41,10 +41,11 @@ ms.locfileid: "89145660"
 
 ### <a name="modify-storage-replication"></a>Изменение репликации хранилища
 
-По умолчанию в хранилищах используется [геоизбыточное хранилище (GRS)](../storage/common/storage-redundancy.md).
+По умолчанию в хранилищах используется [геоизбыточное хранилище (GRS)](../storage/common/storage-redundancy.md#geo-redundant-storage).
 
 * Если хранилище является основным механизмом резервного копирования, рекомендуется использовать GRS.
-* Для более дешевого варианта можно использовать [локально избыточное хранилище (LRS)](../storage/common/storage-redundancy.md?toc=/azure/storage/blobs/toc.json) .
+* Для более дешевого варианта можно использовать [локально избыточное хранилище (LRS)](../storage/common/storage-redundancy.md#locally-redundant-storage) .
+* [Хранилище, избыточное в пределах зоны (ZRS)](../storage/common/storage-redundancy.md#zone-redundant-storage) , реплицирует данные в [зонах доступности](https://docs.microsoft.com/azure/availability-zones/az-overview#availability-zones), гарантируя местонахождение данных и устойчивость в одном регионе.
 
 Измените тип репликации хранилища следующим образом.
 

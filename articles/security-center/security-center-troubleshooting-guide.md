@@ -8,12 +8,12 @@ ms.service: security-center
 ms.topic: conceptual
 ms.date: 09/10/2019
 ms.author: memildin
-ms.openlocfilehash: f5e71697ca6ce9e2585bbb903ad8c46744e05e13
-ms.sourcegitcommit: 4a7a4af09f881f38fcb4875d89881e4b808b369b
+ms.openlocfilehash: e2922d19dbcad7da2808a86896e39d21420e73d5
+ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/04/2020
-ms.locfileid: "89462400"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90904742"
 ---
 # <a name="azure-security-center-troubleshooting-guide"></a>Руководство по устранению неполадок в центре безопасности Azure
 
@@ -132,7 +132,7 @@ ms.locfileid: "89462400"
 
 ## <a name="contacting-microsoft-support"></a>Обращение в службу технической поддержки Майкрософт
 
-Некоторые проблемы можно определить с помощью этого руководства. Другие доступны на общедоступной [странице вопросов (раздел вопросов и ответов на сайте Майкрософт)](https://docs.microsoft.com/answers/topics/azure-security-center.html), посвященной Центру безопасности. Если требуется дальнейшее устранение неполадок, вы можете обратиться в службу поддержки на **портале Azure**, как показано ниже.
+Некоторые проблемы можно определить с помощью рекомендаций, приведенных в этой статье, а также ознакомиться с документацией по центру безопасности общедоступная [страница Microsoft Q&A](https://docs.microsoft.com/answers/topics/azure-security-center.html). Если требуется дальнейшее устранение неполадок, вы можете обратиться в службу поддержки на **портале Azure**, как показано ниже.
 
 ![Служба технической поддержки Майкрософт](./media/security-center-troubleshooting-guide/security-center-troubleshooting-guide-fig2.png)
 

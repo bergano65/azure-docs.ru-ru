@@ -7,12 +7,12 @@ ms.service: mysql
 ms.custom: mvc
 ms.topic: quickstart
 ms.date: 5/26/2020
-ms.openlocfilehash: 1b1249fe7159e2a3a8d2a74d22f274a9766e7922
-ms.sourcegitcommit: faeabfc2fffc33be7de6e1e93271ae214099517f
+ms.openlocfilehash: 5ec6aab8aaa63b848131d44f78867100f154d251
+ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/13/2020
-ms.locfileid: "88185831"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90896322"
 ---
 # <a name="quickstart-use-mysql-workbench-to-connect-and-query-data-in-azure-database-for-mysql"></a>Краткое руководство. Подключение к Базе данных Azure для MySQL и запрос данных с помощью MySQL Workbench
 
@@ -40,7 +40,7 @@ ms.locfileid: "88185831"
 3. Щелкните имя сервера.
 
 4. Запишите **имя сервера** и **имя для входа администратора сервера** с панели сервера **Обзор**. Если вы забыли свой пароль, можно также сбросить пароль с помощью этой панели.
- ![Имя сервера базы данных Azure для MySQL](./media/connect-php/1_server-overview-name-login.png)
+ :::image type="content" source="./media/connect-php/1_server-overview-name-login.png" alt-text="Имя сервера базы данных Azure для MySQL":::
 
 ## <a name="connect-to-the-server-by-using-mysql-workbench"></a>Подключение к серверу с помощью MySQL Workbench 
 Чтобы подключиться к серверу MySQL Azure с помощью инструмента графического интерфейса MySQL Workbench, сделайте следующее.
@@ -49,7 +49,7 @@ ms.locfileid: "88185831"
 
 2.    В диалоговом окне **настройки нового подключения** на вкладке **Параметры** введите следующие сведения:
 
-![Настройка нового подключения](./media/connect-workbench/2-setup-new-connection.png)
+:::image type="content" source="./media/connect-workbench/2-setup-new-connection.png" alt-text="Настройка нового подключения":::
 
 | **Параметр** | **Рекомендуемое значение** | **Описание поля** |
 |---|---|---|
@@ -103,7 +103,7 @@ ms.locfileid: "88185831"
 
     На снимке экрана показан пример кода SQL в SQL Workbench и выходные данные после его выполнения.
     
-    ![MySQL Workbench: вкладка SQL для выполнения примера кода SQL](media/connect-workbench/3-workbench-sql-tab.png)
+    :::image type="content" source="media/connect-workbench/3-workbench-sql-tab.png" alt-text="MySQL Workbench: вкладка SQL для выполнения примера кода SQL":::
 
 2. Чтобы выполнить пример кода SQL, щелкните значок молнии на панели инструментов вкладки **SQL File** (Файл SQL).
 3. Обратите внимание на три вкладки с результатами, которые отображаются в разделе **Сетка результатов** посередине страницы. 

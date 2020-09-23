@@ -12,12 +12,12 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 09/09/2020
 ms.author: duau
-ms.openlocfilehash: bbd45a4190cfa1199568c23cc346b9ccacc20ac5
-ms.sourcegitcommit: 3be3537ead3388a6810410dfbfe19fc210f89fec
+ms.openlocfilehash: bac1d1e41cab4aa3be10fb226df57277db20c78e
+ms.sourcegitcommit: 3fc3457b5a6d5773323237f6a06ccfb6955bfb2d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89648884"
+ms.lasthandoff: 09/11/2020
+ms.locfileid: "90030282"
 ---
 # <a name="tutorial-configure-https-on-a-front-door-custom-domain"></a>Руководство по Настройка протокола HTTPS на личном домене Front Door
 
@@ -241,7 +241,7 @@ We encountered an unexpected error while processing your HTTPS request. Please t
 
     Нет, в настоящее время не требуется запись авторизации центра сертификации. Однако если у вас она есть, она должна включать DigiCert в качестве действительного центра сертификации.
 
-## <a name="clean-up-resources---disable-https"></a>Очистка ресурсов и отключение HTTPS
+## <a name="clean-up-resources"></a>Очистка ресурсов
 
 Выше объяснялось, как включить протокол HTTPS для личного домена. Если вам больше не нужно использовать личный домен с протоколом HTTPS, его можно отключить, сделав следующее.
 

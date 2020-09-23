@@ -10,325 +10,513 @@
       items:
         - name: Срок действия корневого сертификата SSL
           href: concepts-certificate-rotation.md
-- name: Краткие руководства
+- name: Общая документация
+  items:
+    - name: Миграция
+      items:
+        - name: Перенос данных с помощью mysqldump или phpmyadmin
+          href: concepts-migrate-dump-restore.md
+          displayName: 'migrate, mysqldump'
+        - name: Перенос данных с помощью MySQL Workbench
+          href: concepts-migrate-import-export.md
+          displayName: 'import , migrate, export'
+        - name: Миграция с минимальным временем простоя с использованием DMS
+          href: howto-migrate-online.md
+          displayName: 'migrate, dms, database migration service'
+    - name: Создание баз данных и пользователей
+      href: howto-create-users.md
+      displayName: users
+    - name: Устранение повреждений базы данных
+      href: how-to-fix-corrupt-database.md
+      displayName: corrupt data
+- name: Одиночный сервер
   expanded: true
   items:
-    - name: Создание базы данных
+    - name: Документация по Отдельному серверу
+      href: single-server/index.yml
+      displayName: single server
+    - name: Обзор
       items:
-        - name: Создание базы данных с помощью портала
-          href: quickstart-create-mysql-server-database-using-azure-portal.md
-        - name: Создание базы данных с помощью Azure CLI
-          href: quickstart-create-mysql-server-database-using-azure-cli.md
-        - name: "Создание базы данных с помощью команды az mysql up в Azure\_CLI"
-          href: quickstart-create-server-up-azure-cli.md
-        - name: Создание базы данных с помощью Azure PowerShell
-          href: quickstart-create-mysql-server-database-using-azure-powershell.md
-        - name: Создание базы данных с помощью шаблона ARM
-          href: quickstart-create-mysql-server-database-using-arm-template.md
-          displayName: deploy azure resource manager template
-    - name: Подключение и запросы
+        - name: Что такое Отдельный сервер?
+          href: single-server-overview.md
+    - name: Краткие руководства
+      expanded: true
       items:
-        - name: PHP
-          href: connect-php.md
-        - name: Java
-          href: connect-java.md
-        - name: Java с JDBC Spring Data
-          href: /azure/developer/java/spring-framework/configure-spring-data-jdbc-with-azure-mysql?toc=/azure/mysql/toc.json&bc=/azure/bread/toc.json
-        - name: Java с JPA Spring Data
-          href: /azure/developer/java/spring-framework/configure-spring-data-jpa-with-azure-mysql?toc=/azure/mysql/toc.json&bc=/azure/bread/toc.json
-        - name: Java с R2DBC Spring Data
-          href: /azure/developer/java/spring-framework/configure-spring-data-r2dbc-with-azure-mysql?toc=/azure/mysql/toc.json&bc=/azure/bread/toc.json
-        - name: .NET
-          href: connect-csharp.md
-        - name: Python
-          href: connect-python.md
-        - name: Node.js
-          href: connect-nodejs.md
-        - name: Ruby
-          href: connect-ruby.md
-        - name: C++
-          href: connect-cpp.md
-        - name: Go
-          href: connect-go.md
-        - name: MySQL Workbench
-          href: connect-workbench.md
-- name: Учебники
-  items:
-    - name: "1.\_Проектирование базы данных"
+        - name: Создание сервера
+          items:
+            - name: Портал Azure
+              href: quickstart-create-mysql-server-database-using-azure-portal.md
+              displayName: 'portal, create, server'
+            - name: Azure CLI
+              href: quickstart-create-mysql-server-database-using-azure-cli.md
+              displayName: 'cli, create, server'
+            - name: Команда up в Azure CLI
+              href: quickstart-create-server-up-azure-cli.md
+              displayName: 'cli, up command, create, server'
+            - name: Azure PowerShell
+              href: quickstart-create-mysql-server-database-using-azure-powershell.md
+              displayName: 'powershell, create, server'
+            - name: Шаблон ARM
+              href: quickstart-create-mysql-server-database-using-arm-template.md
+              displayName: deploy azure resource manager template
+        - name: Подключение и выполнение запросов
+          items:
+            - name: MySQL Workbench
+              href: connect-workbench.md
+            - name: PHP
+              href: connect-php.md
+            - name: Java
+              href: connect-java.md
+            - name: Java с JDBC Spring Data
+              href: /azure/developer/java/spring-framework/configure-spring-data-jdbc-with-azure-mysql?toc=/azure/mysql/toc.json&bc=/azure/bread/toc.json
+            - name: Java с JPA Spring Data
+              href: /azure/developer/java/spring-framework/configure-spring-data-jpa-with-azure-mysql?toc=/azure/mysql/toc.json&bc=/azure/bread/toc.json
+            - name: Java с R2DBC Spring Data
+              href: /azure/developer/java/spring-framework/configure-spring-data-r2dbc-with-azure-mysql?toc=/azure/mysql/toc.json&bc=/azure/bread/toc.json
+            - name: .NET
+              href: connect-csharp.md
+            - name: Python
+              href: connect-python.md
+            - name: Node.js
+              href: connect-nodejs.md
+            - name: Ruby
+              href: connect-ruby.md
+            - name: C++
+              href: connect-cpp.md
+            - name: Go
+              href: connect-go.md
+    - name: Учебники
       items:
-        - name: портал Azure;
-          href: tutorial-design-database-using-portal.md
-        - name: Azure CLI;
-          href: tutorial-design-database-using-cli.md
-        - name: Azure PowerShell
-          href: tutorial-design-database-using-powershell.md
-        - name: Шаблон Azure Resource Manager
-          href: tutorial-provision-mysql-server-using-Azure-Resource-Manager-templates.md
-    - name: "2.\_Создание веб-приложения"
+        - name: Проектирование базы данных
+          items:
+            - name: Портал Azure
+              href: tutorial-design-database-using-portal.md
+            - name: Azure CLI
+              href: tutorial-design-database-using-cli.md
+            - name: Azure PowerShell
+              href: tutorial-design-database-using-powershell.md
+            - name: Шаблон Azure Resource Manager
+              href: tutorial-provision-mysql-server-using-Azure-Resource-Manager-templates.md
+        - name: Создание веб-приложения PHP с использованием MySQL
+          items:
+            - name: 'Контейнеры, WordPress и MySQL'
+              href: ../app-service/containers/tutorial-multi-container-app.md
+              maintainContext: true
+            - name: PHP с MySQL
+              href: ../app-service/app-service-web-tutorial-php-mysql.md
+              maintainContext: true
+    - name: Примеры
       items:
-        - name: 'Контейнеры, WordPress и MySQL'
-          href: ../app-service/tutorial-multi-container-app.md
-          maintainContext: true
-        - name: PHP с MySQL
-          href: ../app-service/tutorial-php-mysql-app.md
-          maintainContext: true
-- name: Примеры
-  items:
-    - name: Azure CLI
-      href: sample-scripts-azure-cli.md
-    - name: Пулы подключений Java
-      href: sample-scripts-java-connection-pooling.md
-- name: Основные понятия
-  items:
-    - name: Серверы и базы данных
+        - name: Azure CLI
+          href: sample-scripts-azure-cli.md
+        - name: Пулы подключений Java
+          href: sample-scripts-java-connection-pooling.md
+        - name: Встроенные компоненты Политики Azure
+          href: ./policy-samples.md
+    - name: Основные понятия
       items:
         - name: Серверы
           href: concepts-servers.md
         - name: Поддерживаемые версии
           href: concepts-supported-versions.md
-        - name: Высокий уровень доступности
-          href: concepts-high-availability.md
-    - name: Ресурсы
-      items:
-        - name: Ценовые категории
-          href: concepts-pricing-tiers.md
-        - name: Предварительная оплата резервной мощности
-          href: concept-reserved-pricing.md
         - name: Ограничения
           href: concepts-limits.md
-    - name: Доступ к данным и безопасность
-      items:
-        - name: Общие сведения о безопасности
-          href: concepts-security.md
-        - name: Настройка SSL
-          href: concepts-ssl-connection-security.md
-        - name: Архитектура подключения
-          href: concepts-connectivity-architecture.md
-        - name: Правила брандмауэра
-          href: concepts-firewall-rules.md
-        - name: Виртуальная сеть
-          href: concepts-data-access-and-security-vnet.md
-        - name: Расширенная защита от угроз
-          href: concepts-data-access-and-security-threat-protection.md
-        - name: Приватный канал
-          href: concepts-data-access-security-private-link.md
-        - name: Шифрование данных
-          href: concepts-data-encryption-mysql.md
-        - name: "Аутентификация Azure\_AD"
-          href: concepts-azure-ad-authentication.md
-        - name: Двойное шифрование инфраструктуры
-          href: concepts-infrastructure-double-encryption.md
-        - name: Элементы управления безопасностью службы "Политика Azure"
-          displayName: 'regulatory, compliance, standards, domains'
-          href: ./security-controls-policy.md
-        - name: Базовые средства безопасности
-          href: security-baseline.md
-    - name: Непрерывность бизнес-процессов
-      items:
-        - name: Общие сведения о непрерывности бизнес-процессов
-          displayName: 'backup, restore, backups, restores, georestore, geo-restore, outage'
-          href: concepts-business-continuity.md
-        - name: Резервное копирование и восстановление
-          href: concepts-backup.md
-    - name: Мониторинг и настройка
-      items:
+        - name: Ценовые категории
+          items:
+            - name: Ценовые категории
+              href: concepts-pricing-tiers.md
+            - name: Предварительная оплата резервной мощности
+              href: concept-reserved-pricing.md
+        - name: Сети
+          items:
+            - name: Использование виртуальной сети
+              href: concepts-data-access-and-security-vnet.md
+            - name: Включить частного доступа с помощью Приватного канала
+              href: concepts-data-access-security-private-link.md
+        - name: Безопасность
+          items:
+            - name: Общие сведения о безопасности
+              href: concepts-security.md
+            - name: Настройка SSL
+              href: concepts-ssl-connection-security.md
+            - name: Архитектура подключения
+              href: concepts-connectivity-architecture.md
+            - name: Правила брандмауэра
+              href: concepts-firewall-rules.md
+            - name: Расширенная защита от угроз
+              href: concepts-data-access-and-security-threat-protection.md
+            - name: Шифрование данных
+              href: concepts-data-encryption-mysql.md
+            - name: "Аутентификация Azure\_AD"
+              href: concepts-azure-ad-authentication.md
+            - name: Двойное шифрование инфраструктуры
+              href: concepts-infrastructure-double-encryption.md
+            - name: Базовые средства безопасности
+              href: security-baseline.md
+        - name: Непрерывность бизнес-процессов
+          items:
+            - name: Общие сведения о непрерывности бизнес-процессов
+              displayName: 'backup, restore, backups, restores, georestore, geo-restore, outage'
+              href: concepts-business-continuity.md
+            - name: Высокий уровень доступности
+              href: concepts-high-availability.md
+              displayName: 'backup, restore,high availability'
+            - name: Резервное копирование и восстановление
+              href: concepts-backup.md
+              displayName: 'backup, restore, backups, restores, georestore, geo-restore, outage'
         - name: Мониторинг и настройка
-          href: concepts-monitoring.md
-        - name: Журналы медленных запросов
-          href: concepts-server-logs.md
-        - name: Журналы аудита
-          href: concepts-audit-logs.md
-        - name: Хранилище запросов
-          href: concepts-query-store.md
-        - name: Анализ производительности запросов
-          href: concepts-query-performance-insight.md
-        - name: Рекомендации по производительности
-          href: concepts-performance-recommendations.md
-        - name: Параметры сервера
-          href: concepts-server-parameters.md
-    - name: Разработка
-      items:
-        - name: Рекомендации по работе с приложениями
-          href: app-development-best-practices.md
-        - name: Совместимость драйверов и инструментов
-          href: concepts-compatibility.md
+          items:
+            - name: Общие сведения о мониторинге
+              href: concepts-monitoring.md
+              displayName: 'monitor, alerts, audit log, slow query log'
+            - name: Параметры сервера
+              href: concepts-server-parameters.md
+              displayName: server parameters
+            - name: Журналы медленных запросов
+              href: concepts-server-logs.md
+              displayName: 'monitor, slow query log, alert'
+            - name: Журналы аудита
+              href: concepts-audit-logs.md
+              displayName: 'monitor, alerts, audit log'
+            - name: Хранилище запросов
+              href: concepts-query-store.md
+              displayName: 'performance, query store'
+            - name: Анализ производительности процессов
+              href: concepts-query-performance-insight.md
+              displayName: query performance insights
+            - name: Рекомендации по производительности
+              href: concepts-performance-recommendations.md
+              displayName: recommendation
         - name: Разработка приложений
-          href: concepts-database-application-development.md
-        - name: Устойчивость подключения
-          href: concepts-connectivity.md
-        - name: Разработка с помощью службы Azure Kubernetes (AKS)
-          href: concepts-aks.md
-        - name: Java
           items:
-            - name: Использование Java и JDBC
-              href: connect-java.md
-            - name: Использование JDBC Spring Data
-              href: /azure/developer/java/spring-framework/configure-spring-data-jdbc-with-azure-mysql?toc=/azure/mysql/toc.json&bc=/azure/bread/toc.json
-            - name: Использование JPA Spring Data
-              href: /azure/developer/java/spring-framework/configure-spring-data-jpa-with-azure-mysql?toc=/azure/mysql/toc.json&bc=/azure/bread/toc.json
-            - name: Использование R2DBC Spring Data
-              href: /azure/developer/java/spring-framework/configure-spring-data-r2dbc-with-azure-mysql?toc=/azure/mysql/toc.json&bc=/azure/bread/toc.json
-    - name: Репликация
-      items:
-        - name: Репликация входных данных
-          href: concepts-data-in-replication.md
-        - name: Реплики чтения
-          href: concepts-read-replicas.md
-- name: Практические руководства
-  items:
-    - name: Управление сервером
-      items:
-        - name: Портал Azure
-          href: howto-create-manage-server-portal.md
-    - name: Правила брандмауэра
-      items:
-        - name: портал Azure;
-          href: howto-manage-firewall-using-portal.md
-        - name: Azure CLI
-          href: howto-manage-firewall-using-cli.md
-    - name: Восстановление сервера
-      items:
-        - name: портал Azure;
-          href: howto-restore-server-portal.md
-        - name: Azure CLI;
-          href: howto-restore-server-cli.md
-        - name: Azure PowerShell
-          href: howto-restore-server-powershell.md
-    - name: Перенос базы данных
-      items:
-        - name: Дамп и восстановление
-          href: concepts-migrate-dump-restore.md
-        - name: Импорт и экспорт
-          href: concepts-migrate-import-export.md
-        - name: Миграция с минимальным временем простоя
-          href: howto-migrate-online.md
-    - name: Подключение приложений
-      items:
-        - name: Создание пользователей
-          href: howto-create-users.md
-        - name: Строки подключения
+            - name: Общие сведения о разработке приложений
+              href: concepts-database-application-development.md
+            - name: Совместимость драйверов и инструментов
+              href: concepts-compatibility.md
+              displayName: 'drivers, tools'
+            - name: Рекомендации по работе с приложениями
+              href: app-development-best-practices.md
+              displayName: application
+            - name: Устойчивость подключения
+              href: concepts-connectivity.md
+              displayName: 'connection, resiliency'
+        - name: Репликация
           items:
-            - name: Подключение приложений
-              href: howto-connection-string.md
+            - name: Репликация входных данных
+              href: concepts-data-in-replication.md
+              displayName: 'replication, read replica'
+            - name: Реплики чтения
+              href: concepts-read-replicas.md
+              displayName: 'replication, read replica'
+    - name: Практические руководства
+      items:
+        - name: Управление сервером и его масштабирование
+          items:
+            - name: Портал Azure
+              href: howto-create-manage-server-portal.md
+              displayName: 'manage, reset password, scale'
+            - name: Azure CLI
+              href: how-to-manage-single-server-cli.md
+              displayName: 'manage, reset password, scale'
+            - name: Правила брандмауэра
+              items:
+                - name: Портал Azure
+                  href: howto-manage-firewall-using-portal.md
+                  displayName: firewall
+                - name: Azure CLI
+                  href: howto-manage-firewall-using-cli.md
+                  displayName: firewall
+        - name: Аутентификация
+          items:
+            - name: Настройка интеграции Azure AD
+              href: howto-configure-sign-in-azure-ad-authentication.md
+              displayName: active directory
+            - name: Подключение с использованием управляемого удостоверения
+              href: howto-connect-with-managed-identity.md
+              displayName: 'managed identity, msi'
+        - name: Восстановление сервера
+          items:
+            - name: Портал Azure
+              href: howto-restore-server-portal.md
+              displayName: 'restore server,backup'
+            - name: Azure CLI
+              href: howto-restore-server-cli.md
+              displayName: 'restore server, backup'
             - name: Azure PowerShell
-              href: howto-connection-string-powershell.md
-        - name: Настройка SSL
-          href: howto-configure-ssl.md
-        - name: Настройка TLS
-          href: howto-tls-configurations.md
-        - name: Веб-приложения
-          href: howto-connect-webapp.md
-        - name: Подключение с перенаправлением
-          href: howto-redirection.md
-    - name: Настройка параметров сервера
-      items:
-        - name: портал Azure;
-          href: howto-server-parameters.md
-        - name: Azure CLI;
-          href: howto-configure-server-parameters-using-cli.md
-        - name: Azure PowerShell
-          href: howto-configure-server-parameters-using-powershell.md
-    - name: Автоматическое увеличение хранилища
-      items:
-        - name: портал Azure;
-          href: howto-auto-grow-storage-portal.md
-        - name: Azure CLI;
-          href: howto-auto-grow-storage-cli.md
-        - name: Azure PowerShell
-          href: howto-auto-grow-storage-powershell.md
-    - name: Доступ к журналам сервера
-      items:
+              href: howto-restore-server-powershell.md
+              displayName: 'restore server, backup, geo-restore powershell'
+        - name: Подключение приложений
+          items:
+            - name: Настройка SSL
+              href: howto-configure-ssl.md
+              displayName: 'ssl, security, application'
+            - name: Настройка TLS
+              href: howto-tls-configurations.md
+              displayName: 'TLS, security, developement'
+            - name: Руководство по подключению и отправке запросов
+              href: how-to-connect-overview-single-server.md
+              displayName: 'connect , query , libraries, TLS, runtime'
+            - name: Веб-приложения
+              href: howto-connect-webapp.md
+              displayName: 'azure web app, security, web app, app service'
+            - name: Подключение с перенаправлением
+              href: howto-redirection.md
+              displayName: 'development, redirection , php'
+        - name: Настройка параметров сервера
+          items:
+            - name: Портал Azure
+              href: howto-server-parameters.md
+              displayName: server parameters
+            - name: Azure CLI
+              href: howto-configure-server-parameters-using-cli.md
+              displayName: 'server parameters, cli'
+            - name: Azure PowerShell
+              href: howto-configure-server-parameters-using-powershell.md
+              displayName: 'server parameters, powershell'
+        - name: Автоматическое увеличение хранилища
+          items:
+            - name: Портал Azure
+              href: howto-auto-grow-storage-portal.md
+              displayName: 'storage, business continuity , downtime, portal'
+            - name: Azure CLI
+              href: howto-auto-grow-storage-cli.md
+              displayName: 'storage, business continuity , downtime, cli'
+            - name: Azure PowerShell
+              href: howto-auto-grow-storage-powershell.md
+              displayName: 'storage, business continuity , downtime, powershell'
         - name: Журналы медленных запросов
           items:
-            - name: портал Azure;
+            - name: Портал Azure
               href: howto-configure-server-logs-in-portal.md
+              displayName: 'debug, slow query log , performance'
             - name: Azure CLI
               href: howto-configure-server-logs-in-cli.md
+              displayName: 'debug, slow query log , performance'
         - name: Журналы аудита
           items:
-            - name: портал Azure;
+            - name: Портал Azure
               href: howto-configure-audit-logs-portal.md
+              displayName: 'debug, audit log'
             - name: Azure CLI
               href: howto-configure-audit-logs-cli.md
-    - name: Монитор
+              displayName: 'debug, audit log'
+        - name: Монитор
+          items:
+            - name: Создание оповещений на основе метрик
+              href: howto-alert-on-metric.md
+              displayName: 'debug, monitor, alerts, metrics'
+        - name: Репликация
+          items:
+            - name: Настройка репликации входных данных
+              href: howto-data-in-replication.md
+              displayName: 'data-in replication, replica, failover'
+            - name: Создание реплик чтения с помощью портала Azure
+              href: howto-read-replicas-portal.md
+              displayName: 'data-in replication, replica, failover'
+            - name: Создание реплик чтения с помощью Azure CLI и REST API
+              href: howto-read-replicas-cli.md
+              displayName: 'data-in replication, replica, failover'
+            - name: Создание реплик чтения с помощью Azure PowerShell
+              href: howto-read-replicas-powershell.md
+              displayName: 'data-in replication, replica, failover'
+            - name: Диагностика
+              items:
+                - name: Устранение ошибок подключения
+                  href: howto-troubleshoot-common-connection-issues.md
+                  displayName: 'debug, connection issues, connectivity, cannot connect'
+                - name: Решение проблем с производительностью запросов
+                  href: howto-troubleshoot-query-performance.md
+                  displayName: 'debug, performance issues, query performance'
+                - name: Как использовать представления в схеме sys
+                  href: howto-troubleshoot-sys-schema.md
+                  displayName: 'sys schema, views'
+                - name: Устранение неполадок с шифрованием данных
+                  href: howto-data-encryption-troubleshoot.md
+                  displayName: 'encryption, security'
+        - name: Дополнительная защита от угроз
+          items:
+            - name: Портал Azure
+              href: howto-database-threat-protection-portal.md
+              displayName: 'atp, advanced thread, security'
+            - name: Виртуальная сеть
+              items:
+                - name: Портал Azure
+                  href: howto-manage-vnet-using-portal.md
+                  displayName: 'vnet, virtual network, service endpoint'
+                - name: Azure CLI
+                  href: howto-manage-vnet-using-cli.md
+                  displayName: 'vnet, virtual network, service endpoint'
+        - name: Приватный канал
+          items:
+            - name: Портал Azure
+              href: howto-configure-privatelink-portal.md
+              displayName: 'private link, private endpoint'
+            - name: Azure CLI
+              href: howto-configure-privatelink-cli.md
+              displayName: 'private link, private endpoint'
+        - name: Шифрование данных
+          items:
+            - name: Портал Azure
+              href: howto-data-encryption-portal.md
+              displayName: 'encryption, security'
+            - name: Azure CLI
+              href: howto-data-encryption-cli.md
+              displayName: 'encryption, security'
+            - name: Проверка шифрования данных
+              href: howto-data-encryption-validation.md
+              displayName: 'encryption, security'
+        - name: Двойное шифрование инфраструктуры
+          items:
+            - name: Настройка двойного шифрования инфраструктуры
+              href: howto-double-encryption.md
+              displayName: 'infrastructure encryption, security'
+        - name: Запрет доступа к общедоступной сети
+          items:
+            - name: Портал Azure
+              href: howto-deny-public-network-access.md
+              displayName: 'security, public access'
+        - name: Перезапуск сервера
+          items:
+            - name: Портал Azure
+              href: howto-restart-server-portal.md
+              displayName: restart
+            - name: Azure CLI
+              href: howto-restart-server-cli.md
+              displayName: restart
+            - name: Azure PowerShell
+              href: howto-restart-server-powershell.md
+              displayName: restart
+        - name: Переключение между регионами
+          items:
+            - name: Портал Azure
+              href: howto-move-regions-portal.md
+              displayName: move servers across regions
+- name: Гибкий сервер (предварительная версия)
+  items:
+    - name: Документация по Гибкому серверу
+      href: flexible-server/index.yml
+    - name: Обзор
       items:
-        - name: Создание оповещений на основе метрик
-          href: howto-alert-on-metric.md
-    - name: Репликация
+        - name: Что такое Гибкий сервер?
+          href: flexible-server/overview.md
+    - name: Краткие руководства
+      expanded: true
       items:
-        - name: Настройка репликации входных данных
-          href: howto-data-in-replication.md
-        - name: Создание реплик чтения с помощью портала Azure
-          href: howto-read-replicas-portal.md
-        - name: Создание реплик чтения с помощью Azure CLI и REST API
-          href: howto-read-replicas-cli.md
-        - name: Создание реплик чтения с помощью Azure PowerShell
-          href: howto-read-replicas-powershell.md
-    - name: Диагностика
+        - name: Создание сервера
+          expanded: true
+          items:
+            - name: Портал Azure
+              href: flexible-server/quickstart-create-server-portal.md
+            - name: Azure CLI
+              href: flexible-server/quickstart-create-server-cli.md
+            - name: Шаблон ARM
+              href: flexible-server/quickstart-create-arm-template.md
+        - name: Подключение и выполнение запросов
+          items:
+            - name: PHP
+              href: flexible-server/connect-php.md
+            - name: MySQL Workbench
+              href: flexible-server/connect-workbench.md
+            - name: Python
+              href: flexible-server/connect-python.md
+    - name: Учебники
       items:
-        - name: Устранение неполадок при распространенных ошибках
-          href: howto-troubleshoot-common-errors.md
-        - name: Устранение ошибок подключения
-          href: howto-troubleshoot-common-connection-issues.md
-        - name: Решение проблем с производительностью запросов
-          href: howto-troubleshoot-query-performance.md
-        - name: Как использовать представления в схеме sys
-          href: howto-troubleshoot-sys-schema.md
-        - name: Устранение неполадок с шифрованием данных
-          href: howto-data-encryption-troubleshoot.md
-    - name: Расширенная защита от угроз
+        - name: Создание приложения PHP (Laravel) с базой данных
+          href: flexible-server/tutorial-php-database-app.md
+        - name: Подключение к частному веб-приложению
+          href: flexible-server/tutorial-webapp-server-vnet.md
+    - name: Основные понятия
       items:
-        - name: Портал Azure
-          href: howto-database-threat-protection-portal.md
-    - name: Виртуальная сеть
+        - name: Серверы
+          href: flexible-server/concept-servers.md
+        - name: Поддерживаемые версии
+          href: flexible-server/concepts-supported-versions.md
+        - name: Ограничения
+          href: flexible-server/concepts-limitations.md
+        - name: Вычислительные ресурсы и ресурсы хранилища
+          href: flexible-server/concepts-compute-storage.md
+        - name: Сети
+          href: flexible-server/concepts-networking.md
+          displayName: 'virtual network, IP address, public access'
+        - name: Обслуживание
+          href: flexible-server/concepts-maintenance.md
+        - name: Непрерывность бизнес-процессов
+          items:
+            - name: Общие сведения о непрерывности бизнес-процессов
+              href: flexible-server/concepts-business-continuity.md
+            - name: Резервное копирование и восстановление
+              href: flexible-server/concepts-backup-restore.md
+            - name: Высокий уровень доступности
+              href: flexible-server/concepts-high-availability.md
+        - name: Мониторинг и журналы
+          items:
+            - name: Журналы медленных запросов
+              href: flexible-server/concepts-slow-query-logs.md
+            - name: Журналы аудита
+              href: flexible-server/concepts-audit-logs.md
+            - name: Метрики
+              href: flexible-server/concepts-monitoring.md
+    - name: Практические руководства
       items:
-        - name: портал Azure;
-          href: howto-manage-vnet-using-portal.md
-        - name: Azure CLI
-          href: howto-manage-vnet-using-cli.md
-    - name: Приватный канал
-      items:
-        - name: портал Azure;
-          href: howto-configure-privatelink-portal.md
-        - name: Azure CLI
-          href: howto-configure-privatelink-cli.md
-    - name: Шифрование данных
-      items:
-        - name: портал Azure;
-          href: howto-data-encryption-portal.md
-        - name: Azure CLI
-          href: howto-data-encryption-cli.md
-        - name: Проверка шифрования данных
-          href: howto-data-encryption-validation.md
-    - name: Двойное шифрование инфраструктуры
-      items:
-        - name: Настройка двойного шифрования инфраструктуры
-          href: howto-double-encryption.md
-    - name: "Интеграция с Azure\_AD"
-      items:
-        - name: Настройка интеграции Azure AD
-          href: howto-configure-sign-in-azure-ad-authentication.md
-        - name: Подключение с использованием управляемого удостоверения
-          href: howto-connect-with-managed-identity.md
-    - name: Запрет доступа к общедоступной сети
-      items:
-        - name: Портал Azure
-          href: howto-deny-public-network-access.md
-    - name: Перезапуск сервера
-      items:
-        - name: портал Azure;
-          href: howto-restart-server-portal.md
-        - name: Azure CLI;
-          href: howto-restart-server-cli.md
-        - name: Azure PowerShell
-          href: howto-restart-server-powershell.md
-    - name: Переключение между регионами
-      items:
-        - name: Портал Azure
-          href: howto-move-regions-portal.md
+        - name: Управление сервером
+          items:
+            - name: Портал Azure
+              href: flexible-server/how-to-manage-server-portal.md
+            - name: Azure CLI
+              href: flexible-server/how-to-manage-server-cli.md
+        - name: Обслуживание
+          items:
+            - name: Портал Azure
+              href: flexible-server/how-to-maintenance-portal.md
+        - name: Запуск и остановка сервера
+          items:
+            - name: Портал Azure
+              href: flexible-server/how-to-stop-start-server-portal.md
+        - name: Восстановление сервера
+          items:
+            - name: Портал Azure
+              href: flexible-server/how-to-restore-server-portal.md
+        - name: Высокий уровень доступности
+          items:
+            - name: Портал Azure
+              href: flexible-server/how-to-configure-high-availability.md
+        - name: Сеть
+          items:
+            - name: Закрытый доступ (интеграция виртуальной сети)
+              items:
+                - name: Портал Azure
+                  href: flexible-server/how-to-manage-virtual-network-portal.md
+                - name: Azure CLI
+                  href: flexible-server/how-to-manage-virtual-network-cli.md
+            - name: Открытый доступ (разрешенные IP-адреса)
+              items:
+                - name: Портал Azure
+                  href: flexible-server/how-to-manage-firewall-portal.md
+                - name: Azure CLI
+                  href: flexible-server/how-to-manage-firewall-cli.md
+            - name: TLS и SSL
+              items:
+                - name: Подключение с использованием TLS или SSL
+                  href: flexible-server/how-to-connect-tls-ssl.md
+        - name: Мониторинг и журналы
+          items:
+            - name: Создание оповещений на основе метрик
+              href: flexible-server/how-to-alert-on-metric.md
+            - name: Журналы медленных запросов
+              items:
+                - name: Портал Azure
+                  href: flexible-server/how-to-configure-slow-query-logs-portal.md
+            - name: Журналы аудита
+              items:
+                - name: Портал Azure
+                  href: flexible-server/how-to-configure-audit-logs-portal.md
+        - name: Диагностика
+          items:
+            - name: Ошибки подключения
+              href: flexible-server/how-to-troubleshoot-common-connection-issues.md
 - name: Справочник
   items:
-    - name: Azure CLI;
+    - name: Azure CLI
       href: /cli/azure/mysql
     - name: REST API
       href: /rest/api/mysql
@@ -336,9 +524,6 @@
       href: /azure/templates/microsoft.dbformysql/allversions
     - name: Управление хранимыми процедурами
       href: reference-stored-procedures.md
-    - name: Встроенные компоненты Политики Azure
-      displayName: 'samples, policies, definitions'
-      href: ./policy-reference.md
 - name: Ресурсы
   items:
     - name: Шаблоны развертывания
@@ -363,8 +548,6 @@
               href: 'https://aka.ms/mysql-migrate-vid'
             - name: Создание и развертывание веб-приложений
               href: 'https://aka.ms/mysql-webapps-vid'
-            - name: Подключение контейнеров с помощью OSBA
-              href: 'https://aka.ms/mysql-osba-vid'
     - name: Запрашивание функции
       href: 'https://feedback.azure.com/forums/597982-azure-database-for-mysql'
     - name: Доступность по регионам

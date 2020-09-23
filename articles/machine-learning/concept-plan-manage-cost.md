@@ -10,12 +10,12 @@ ms.service: machine-learning
 ms.subservice: core
 ms.topic: conceptual
 ms.date: 05/08/2020
-ms.openlocfilehash: f20abffa429add8edcbffba16529c467cb9506fe
-ms.sourcegitcommit: 3be3537ead3388a6810410dfbfe19fc210f89fec
+ms.openlocfilehash: 21153d3c914864966106bf66edccb3c549398bc7
+ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89651107"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90898226"
 ---
 # <a name="plan-and-manage-costs-for-azure-machine-learning"></a>Планирование и управление затратами для Машинное обучение Azure
 
@@ -49,7 +49,7 @@ ms.locfileid: "89651107"
 
 Когда вы добавляете новые ресурсы в рабочую область, вернитесь к этому калькулятору и добавьте в него тот же ресурс, чтобы обновить оценки затрат.
 
-Пока выпуск Enterprise Edition находится на этапе предварительной версии, дополнительная плата за МАШИНное обучение не взимается. Если выпуск Enterprise Edition становится общедоступным, у него будет плата (для обучения и появления).  Дополнительные сведения см. в разделе [цены на машинное обучение Azure](https://azure.microsoft.com/pricing/details/machine-learning/).
+Дополнительные сведения см. в разделе [цены на машинное обучение Azure](https://azure.microsoft.com/pricing/details/machine-learning/).
 
 ## <a name="get-cost-alerts"></a>Получение оповещений о затратах
 

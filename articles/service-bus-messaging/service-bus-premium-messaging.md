@@ -3,12 +3,12 @@ title: Уровни Premium и Standard служебной шины Azure
 description: В этой статье описываются уровни Standard и Premium служебной шины Azure. Сравнивает эти уровни и предоставляет технические различия.
 ms.topic: conceptual
 ms.date: 07/28/2020
-ms.openlocfilehash: 82f8dbce7c48cb6efea67de4297239915e46eac8
-ms.sourcegitcommit: 5b8fb60a5ded05c5b7281094d18cf8ae15cb1d55
+ms.openlocfilehash: 31c53a1375078cd5d185945cba55a6e5a6dd5ffb
+ms.sourcegitcommit: bdd5c76457b0f0504f4f679a316b959dcfabf1ef
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87386356"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90966785"
 ---
 # <a name="service-bus-premium-and-standard-messaging-tiers"></a>Уровни обмена сообщениями через служебную шину Premium и Standard
 
@@ -72,7 +72,7 @@ ms.locfileid: "87386356"
     - Если загрузка ЦП ***ниже 20%***, вы можете ***уменьшить*** количество единиц обмена сообщениями, выделенных для пространства имен.
     - Если загрузка ЦП превышает ***70%***, ваше приложение будет выгодно ***масштабировать*** количество единиц обмена сообщениями, выделенных для пространства имен.
 
-Процесс масштабирования ресурсов, выделенных для пространства имен служебной шины, можно автоматизировать с помощью [модулей Runbook службы автоматизации Azure](../automation/automation-quickstart-create-runbook.md).
+Сведения о настройке пространства имен служебной шины для автоматического масштабирования (увеличение или уменьшение количества единиц обмена сообщениями) см. в разделе [Автоматическое обновление единиц обмена сообщениями](automate-update-messaging-units.md).
 
 > [!NOTE]
 > **Масштабирование** ресурсов, выделенных для пространства имен, может быть либо вытесненным, либо реактивным.
@@ -96,10 +96,9 @@ ms.locfileid: "87386356"
 
 Дополнительные сведения об обмене сообщениями через служебную шину см. в следующих статьях:
 
-* [Общие сведения о обмене сообщениями служебной шины Azure Premium (запись блога)](https://azure.microsoft.com/blog/introducing-azure-service-bus-premium-messaging/)
-* [Introducing Azure Service Bus Premium Messaging (Channel9)](https://channel9.msdn.com/Blogs/Subscribe/Introducing-Azure-Service-Bus-Premium-Messaging) (Общие сведения об обмене сообщениями через служебную шину Azure уровня "Премиум" (Channel9))
-* [Обзор обмена сообщениями служебной шины](service-bus-messaging-overview.md)
-* [Начало работы с очередями служебной шины](service-bus-dotnet-get-started-with-queues.md)
+- [Автоматическое обновление единиц обмена сообщениями](automate-update-messaging-units.md).
+- [Общие сведения о обмене сообщениями служебной шины Azure Premium (запись блога)](https://azure.microsoft.com/blog/introducing-azure-service-bus-premium-messaging/)
+- [Introducing Azure Service Bus Premium Messaging (Channel9)](https://channel9.msdn.com/Blogs/Subscribe/Introducing-Azure-Service-Bus-Premium-Messaging) (Общие сведения об обмене сообщениями через служебную шину Azure уровня "Премиум" (Channel9))
 
 <!--Image references-->
 

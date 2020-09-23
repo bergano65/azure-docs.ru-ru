@@ -6,12 +6,12 @@ ms.author: andrela
 ms.service: mysql
 ms.topic: how-to
 ms.date: 8/7/2020
-ms.openlocfilehash: f8dbdf87eef193540fd5c1bf9d9e7f3794ae46ce
-ms.sourcegitcommit: c28fc1ec7d90f7e8b2e8775f5a250dd14a1622a6
+ms.openlocfilehash: 8ebb524a5297380fca575ce6849fe4c5f15507cb
+ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/13/2020
-ms.locfileid: "88168224"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90904002"
 ---
 # <a name="how-to-configure-azure-database-for-mysql-data-in-replication"></a>Настройка Базы данных Azure для MySQL для репликации входных данных
 
@@ -23,7 +23,7 @@ ms.locfileid: "88168224"
 > Корпорация Майкрософт поддерживает различные и включенные среды. Эта статья содержит ссылки на слово _Slave_. В соответствии с [руководством по стилю Майкрософт для обмена данными без](https://github.com/MicrosoftDocs/microsoft-style-guide/blob/master/styleguide/bias-free-communication.md) пересчета этот термин распознается как исключение. Это слово используется в этой статье для обеспечения согласованности, так как в настоящее время это слово, которое отображается в программном обеспечении. При обновлении программного обеспечения для удаления слова эта статья будет обновлена для выравнивания.
 >
 
-Чтобы создать реплику в службе "база данных Azure для MySQL", [репликация входных данных](concepts-data-in-replication.md) синхронизирует данные с главного сервера MySQL в локальной среде, на виртуальных машинах или в облачных службах баз данных. Репликация входных данных основана на функции собственной репликации в MySQL на основе позиции файла двоичного журнала (binlog). Дополнительные сведения о репликации binlog MySQL см. в [этой статье](https://dev.mysql.com/doc/refman/5.7/en/binlog-replication-configuration-overview.html).
+Чтобы создать реплику в службе "база данных Azure для MySQL", [репликация входных данных](concepts-data-in-replication.md)  синхронизирует данные с главного сервера MySQL в локальной среде, на виртуальных машинах или в облачных службах баз данных. Репликация входных данных основана на функции собственной репликации в MySQL на основе позиции файла двоичного журнала (binlog). Дополнительные сведения о репликации binlog MySQL см. в [этой статье](https://dev.mysql.com/doc/refman/5.7/en/binlog-replication-configuration-overview.html).
 
 Перед выполнением действий, описанных в этой статье, ознакомьтесь с [ограничениями и требованиями к](concepts-data-in-replication.md#limitations-and-considerations) репликации данных.
 
@@ -105,15 +105,15 @@ ms.locfileid: "88168224"
 
    Чтобы создать роль репликации в MySQL Workbench, откройте панель **Users and Privileges** (Пользователи и привилегии) с панели **Management** (Управление). Затем нажмите **Add Account** (Добавить учетную запись). 
  
-   ![Пользователи и привилегии](./media/howto-data-in-replication/users_privileges.png)
+   :::image type="content" source="./media/howto-data-in-replication/users_privileges.png" alt-text="Пользователи и привилегии":::
 
    Введите имя пользователя в поле **Login Name** (Имя входа). 
 
-   ![Синхронизация пользователя](./media/howto-data-in-replication/syncuser.png)
+   :::image type="content" source="./media/howto-data-in-replication/syncuser.png" alt-text="Синхронизация пользователя":::
  
    Щелкните панель **Administrative Roles** (Роли администрирования), а затем выберите **Replication Slave** (Ведомая роль репликации) из списка **Global Privileges** (Глобальные привилегии). Затем щелкните **Apply** (Применить), чтобы создать роль репликации.
 
-   ![Ведомая роль репликации](./media/howto-data-in-replication/replicationslave.png)
+   :::image type="content" source="./media/howto-data-in-replication/replicationslave.png" alt-text="Ведомая роль репликации":::
 
 1. Настройте главный сервер в режиме только для чтения.
 
@@ -133,7 +133,7 @@ ms.locfileid: "88168224"
    ```
    Результаты должны выглядеть так, как показано ниже. Не забудьте записать имя двоичного файла, так как оно будет использоваться на последующих этапах.
 
-   ![Результаты состояния основного сервера](./media/howto-data-in-replication/masterstatus.png)
+   :::image type="content" source="./media/howto-data-in-replication/masterstatus.png" alt-text="Результаты состояния основного сервера":::
  
 ## <a name="dump-and-restore-master-server"></a>Выгрузка и восстановление главного сервера
 

@@ -6,12 +6,12 @@ ms.author: manishku
 ms.service: mysql
 ms.topic: how-to
 ms.date: 04/28/2020
-ms.openlocfilehash: 9cd1db0365cdc4f834516fd4efb0d80dacc75eca
-ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
+ms.openlocfilehash: e7b747bd2babeeccb210bb30c3eb28f22d4befe7
+ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86118534"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90905797"
 ---
 # <a name="validating-data-encryption-for-azure-database-for-mysql"></a>Проверка шифрования данных для базы данных Azure для MySQL
 
@@ -19,7 +19,7 @@ ms.locfileid: "86118534"
 
 ## <a name="check-the-encryption-status"></a>Проверка состояния шифрования
 
-### <a name="from-portal"></a>С портала
+### <a name="from-portal"></a>На портале:
 
 1. Если вы хотите убедиться, что ключ клиента используется для шифрования, выполните следующие действия.
 
@@ -37,7 +37,7 @@ ms.locfileid: "86118534"
 
 2. Если в портал Azure можно убедиться, что ключ шифрования установлен, данные шифруются с помощью ключа Customers, используемого в портал Azure.
 
-  ![Общие сведения о политике доступа](media/concepts-data-access-and-security-data-encryption/byok-validate.png)
+  :::image type="content" source="media/concepts-data-access-and-security-data-encryption/byok-validate.png" alt-text="Общие сведения о политике доступа":::
 
 ### <a name="from-cli"></a>Из CLI
 
