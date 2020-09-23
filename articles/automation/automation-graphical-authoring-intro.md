@@ -5,12 +5,12 @@ services: automation
 ms.subservice: process-automation
 ms.date: 03/16/2018
 ms.topic: conceptual
-ms.openlocfilehash: c5d611ddffedc2f69cfc4f2b5600a158b0be9680
-ms.sourcegitcommit: ec682dcc0a67eabe4bfe242fce4a7019f0a8c405
+ms.openlocfilehash: 161272fe35ee9ea1e0880b991273e5d1a79eafb4
+ms.sourcegitcommit: bdd5c76457b0f0504f4f679a316b959dcfabf1ef
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/09/2020
-ms.locfileid: "86186339"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90987324"
 ---
 # <a name="author-graphical-runbooks-in-azure-automation"></a>Создание графических модулей Runbook в службе автоматизации Azure
 
@@ -61,7 +61,7 @@ ms.locfileid: "86186339"
 
 Набор параметров определяет обязательные и необязательные параметры, которые принимают значения для определенного командлета. У каждого командлета имеется по крайней мере один набор параметров, а у некоторых их несколько. Если у командлета несколько наборов параметров, перед настройкой параметров необходимо выбрать, какой из них использовать. Можно изменить набор параметров, используемый действием, щелкнув **Набор параметров** и выбрав другой набор. В этом случае все уже настроенные значения параметров будут потеряны.
 
-В следующем примере у командлета [Get-AzVM](/powershell/module/az.compute/get-azvm?view=azps-3.5.0) три набора параметров. В этом примере используется один набор **ListVirtualMachineInResourceGroupParamSet** для возврата всех виртуальных машин в группе ресурсов. В набор входит один необязательный параметр. В примере также используется набор параметров **GetVirtualMachineInResourceGroupParamSet** для указания возвращаемой виртуальной машины. Этот набор содержит два обязательных параметра и один необязательный параметр.
+В следующем примере у командлета [Get-AzVM](/powershell/module/az.compute/get-azvm?view=azps-3.5.0&preserve-view=true) три набора параметров. В этом примере используется один набор **ListVirtualMachineInResourceGroupParamSet** для возврата всех виртуальных машин в группе ресурсов. В набор входит один необязательный параметр. В примере также используется набор параметров **GetVirtualMachineInResourceGroupParamSet** для указания возвращаемой виртуальной машины. Этот набор содержит два обязательных параметра и один необязательный параметр.
 
 ![Набор параметров](media/automation-graphical-authoring-intro/get-azvm-parameter-sets.png)
 
@@ -91,11 +91,11 @@ ms.locfileid: "86186339"
 
 Включая для действия режим повтора, можно задать условие и значение задержки. Задержка — это время (в секундах или минутах) ожидания модуля runbook перед повторным выполнением действия. Если задержка не указана, действие выполняется снова сразу же после завершения.
 
-![Задержка повтора действия](media/automation-graphical-authoring-intro/retry-delay.png)
+:::image type="content" source="media/automation-graphical-authoring-intro/retry-delay.png" alt-text="Снимок экрана: включение параметров функции "включить повторы".":::
 
 Условие повтора — это выражение PowerShell, которое вычисляется после каждого выполнения действия. Если выражение возвращает значение True, действие выполняется повторно. Если выражение возвращает значение False, действие не выполняется повторно, а модуль Runbook переходит к следующему действию.
 
-![Задержка повтора действия](media/automation-graphical-authoring-intro/retry-condition.png)
+:::image type="content" source="media/automation-graphical-authoring-intro/retry-condition.png" alt-text="Снимок экрана, показывающий повторную попытку до наступления этого условия, и примеры выражений PowerShell, которые могут использоваться в условии повтора.":::
 
 В качестве условия повтора может использоваться переменная с именем `RetryData`, которая предоставляет доступ к сведениям о попытках выполнить действие. У этой переменной есть свойства, приведенные в таблице ниже.
 
@@ -435,4 +435,4 @@ $h
 * Чтобы начать работу с графическими модулями Runbook, см. инструкции в статье [Учебник. Создание графического модуля Runbook](learn/automation-tutorial-runbook-graphical.md).
 * См. сведения о типах runbook, их преимуществах и ограничениях в описании [типов последовательностей runbook в службе автоматизации Azure](automation-runbook-types.md)
 * Сведения о том, как выполнять аутентификацию с помощью учетной записи запуска от имени службы автоматизации см. в [этой статье](automation-security-overview.md#run-as-account).
-* Справочник по командлетам PowerShell см. в документации по [Az.Automation](/powershell/module/az.automation/?view=azps-3.7.0#automation).
+* Справочник по командлетам PowerShell см. в документации по [Az.Automation](/powershell/module/az.automation/?view=azps-3.7.0&preserve-view=true#automation).

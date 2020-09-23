@@ -5,12 +5,12 @@ ms.date: 03/24/2020
 ms.topic: conceptual
 description: Описание процессов выполнения кода в службе Azure Kubernetes с Azure Dev Spaces
 keywords: аздс. YAML, Azure Dev Spaces, пространства разработки, Docker, Kubernetes, Azure, AKS, служба Azure Kubernetes, контейнеры
-ms.openlocfilehash: 9dbc1f0f21c2883e5caadbdae268a515eb94d145
-ms.sourcegitcommit: 4913da04fd0f3cf7710ec08d0c1867b62c2effe7
+ms.openlocfilehash: a189b26264f3e22a69acb3e3c0410203f9822c31
+ms.sourcegitcommit: bdd5c76457b0f0504f4f679a316b959dcfabf1ef
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88208681"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90981296"
 ---
 # <a name="how-running-your-code-with-azure-dev-spaces-works"></a>Как работает код с Azure Dev Spaces
 
@@ -195,16 +195,16 @@ ingress:
   enabled: true
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о сетях и способах маршрутизации запросов в Azure Dev Spaces см. в статье [как маршрутизация работает с Azure dev Spaces][how-it-works-routing].
 
-Дополнительные сведения об использовании Azure Dev Spaces для быстрого выполнения итераций и разработки см. в статье [как локальный процесс с Kubernetes работает][how-it-works-local-process-kubernetes] и [как выполняется удаленная отладка кода с Azure dev Spaces][how-it-works-remote-debugging].
+Дополнительные сведения о быстром переборе и разработке с помощью Kubernetes см. в статье [как работают мосты в Kubernetes][how-it-works-bridge-to-kubernetes] и [как выполняется удаленная отладка кода с Azure dev Spaces][how-it-works-remote-debugging].
 
 
 [azds-yaml-section]: #how-running-your-code-is-configured
 [helm-upgrade]: https://helm.sh/docs/intro/using_helm/#helm-upgrade-and-helm-rollback-upgrading-a-release-and-recovering-on-failure
-[how-it-works-local-process-kubernetes]: /visualstudio/containers/overview-local-process-kubernetes
+[how-it-works-bridge-to-kubernetes]: /visualstudio/containers/overview-bridge-to-kubernetes
 [how-it-works-prep]: how-dev-spaces-works-prep.md
 [how-it-works-remote-debugging]: how-dev-spaces-works-remote-debugging.md
 [how-it-works-routing]: how-dev-spaces-works-routing.md

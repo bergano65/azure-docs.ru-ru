@@ -3,12 +3,12 @@ title: Использование PowerShell для архивации Windows S
 description: Из этой статьи вы узнаете, как использовать PowerShell для настройки Azure Backup в Windows Server или на клиенте Windows, а также управлять резервным копированием и восстановлением.
 ms.topic: conceptual
 ms.date: 12/2/2019
-ms.openlocfilehash: 47c8fc39626d3bca3355c1d1e46f1634327748a8
-ms.sourcegitcommit: c6b9a46404120ae44c9f3468df14403bcd6686c1
+ms.openlocfilehash: 582d8123f16b2d5a543d862b8eb3e45895087e4a
+ms.sourcegitcommit: bdd5c76457b0f0504f4f679a316b959dcfabf1ef
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88892377"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90987107"
 ---
 # <a name="deploy-and-manage-backup-to-azure-for-windows-serverwindows-client-using-powershell"></a>Развертывание резервного копирования в Azure для Windows Server или клиента Windows и управление им с помощью PowerShell
 
@@ -42,10 +42,10 @@ ms.locfileid: "88892377"
     New-AzRecoveryServicesVault -Name "testvault" -ResourceGroupName " test-rg" -Location "WestUS"
     ```
 
-4. Укажите необходимый тип избыточности хранилища: Можно использовать [локально избыточное хранилище (LRS)](../storage/common/storage-redundancy.md) или [геоизбыточное хранилище (GRS)](../storage/common/storage-redundancy.md). В следующем примере показан параметр **-BackupStorageRedundancy** для *testvault задано* имеет значение **геоизбыточность**.
+4. Укажите необходимый тип избыточности хранилища: Можно использовать [локально избыточное хранилище (LRS)](../storage/common/storage-redundancy.md#locally-redundant-storage), [геоизбыточное хранилище (GRS)](../storage/common/storage-redundancy.md#geo-redundant-storage) или [хранилище, избыточное в виде зоны (ZRS)](../storage/common/storage-redundancy.md#zone-redundant-storage). В следующем примере показан параметр **-BackupStorageRedundancy** для *testvault задано* , для которого задано значение " **геоизбыточность**".
 
    > [!TIP]
-   > Для многих командлетов службы архивации Azure требуется объект хранилища служб восстановления в качестве входных данных. Поэтому в переменной удобно хранить объект хранилища служб восстановления резервных копий.
+   > Для многих командлетов службы архивации Azure требуется объект хранилища служб восстановления в качестве входных данных. По этой причине объект хранилища Служб восстановления резервных копий удобно хранить в переменной.
    >
    >
 

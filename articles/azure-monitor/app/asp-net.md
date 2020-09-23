@@ -3,12 +3,12 @@ title: Настройка аналитики веб-приложения для 
 description: Настройка средств аналитики производительности, доступности и поведения пользователей для веб-сайта ASP.NET, размещенного локально или в Azure.
 ms.topic: conceptual
 ms.date: 05/08/2019
-ms.openlocfilehash: acfba63cba520631831888a1480929be3b1897f0
-ms.sourcegitcommit: 5f7b75e32222fe20ac68a053d141a0adbd16b347
+ms.openlocfilehash: c07e7c8e7bd710cb591719fe8d53a3bad6ca2ee0
+ms.sourcegitcommit: bdd5c76457b0f0504f4f679a316b959dcfabf1ef
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/31/2020
-ms.locfileid: "87475538"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90973791"
 ---
 # <a name="set-up-application-insights-for-your-aspnet-website"></a>Настройка Application Insights для веб-сайта ASP.NET
 
@@ -42,7 +42,7 @@ ms.locfileid: "87475538"
 
 Выберите **Начать**.
 
-![Снимок экрана с окном страницы "Зарегистрировать приложение в Application Insights"](./media/asp-net/00004-start-free.png)
+![На снимке экрана показана страница Application Insights и кнопка "Начало работы".](./media/asp-net/00004-start-free.png)
 
 Если вы хотите задать группу ресурсов или расположение, где будут храниться данные, щелкните **Настроить параметры**. Группы ресурсов используются для управления доступом к данным. Например, если имеется несколько приложений, которые являются частью одной системы, вы можете поместить их данные Application Insights в одну группу ресурсов.
 

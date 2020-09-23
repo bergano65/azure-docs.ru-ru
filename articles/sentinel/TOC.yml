@@ -29,6 +29,10 @@
       href: fusion.md
     - name: Расширение Azure Sentinel между рабочими областями и арендаторами
       href: extend-sentinel-across-workspaces-tenants.md
+    - name: Выявление дополнительных угроз с помощью UEBA
+      href: identify-threats-with-entity-behavior-analytics.md
+    - name: Импорт аналитики угроз в Azure Sentinel
+      href: import-threat-intelligence.md
     - name: Нормализация данных в разных таблицах
       href: normalization.md
     - name: Безопасность
@@ -162,6 +166,8 @@
           href: connect-threat-intelligence.md
         - name: Подключение виртуальных машин Azure Stack
           href: connect-azure-stack.md
+    - name: Включение аналитики поведения пользователей и сущностей
+      href: enable-entity-behavior-analytics.md
     - name: Использование нескольких клиентов (MSSP)
       href: multiple-tenants-service-providers.md
     - name: Работа с инцидентами в нескольких рабочих областях

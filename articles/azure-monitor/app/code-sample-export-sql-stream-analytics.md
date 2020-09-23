@@ -3,12 +3,12 @@ title: Экспорт в SQL из Azure Application Insights | Документ�
 description: Осуществляйте непрерывный экспорт данных Application Insights в SQL с использованием Stream Analytics.
 ms.topic: conceptual
 ms.date: 09/11/2017
-ms.openlocfilehash: 9c559a61794b36ea1bc33abc14271151fbea9d4c
-ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
+ms.openlocfilehash: 90aab1794a9b412de2498edcc4d221f4bcc86968
+ms.sourcegitcommit: bdd5c76457b0f0504f4f679a316b959dcfabf1ef
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87311234"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90979455"
 ---
 # <a name="walkthrough-export-to-sql-from-application-insights-using-stream-analytics"></a>Пошаговое руководство. Экспорт в SQL из Application Insights с использованием Stream Analytics
 В этой статье показано, как переместить данные телеметрии из [Application Insights Azure][start] в базу данных SQL Azure с помощью [непрерывного экспорта][export] и [Azure Stream Analytics](https://azure.microsoft.com/services/stream-analytics/). 
@@ -133,21 +133,21 @@ CREATE CLUSTERED INDEX [pvTblIdx] ON [dbo].[PageViewsTable]
 ## <a name="create-an-azure-stream-analytics-instance"></a>Создание экземпляра Azure Stream Analytics
 На [портале Azure](https://portal.azure.com/) выберите службу Azure Stream Analytics и создайте новое задание Stream Analytics:
 
-![Параметры Stream Analytics](./media/code-sample-export-sql-stream-analytics/SA001.png)
+![На снимке экрана показана страница задания Stream Analytics с выделенной кнопкой "создать".](./media/code-sample-export-sql-stream-analytics/SA001.png)
 
 ![Новое задание Stream Analytics](./media/code-sample-export-sql-stream-analytics/SA002.png)
 
 Создав новое задание, выберите **Перейти к ресурсу**.
 
-![Параметры Stream Analytics](./media/code-sample-export-sql-stream-analytics/SA003.png)
+![На снимке экрана показано сообщение Развертывание прошло, и нажмите кнопку ресурс.](./media/code-sample-export-sql-stream-analytics/SA003.png)
 
 #### <a name="add-a-new-input"></a>Добавление новых входных данных
 
-![Параметры Stream Analytics](./media/code-sample-export-sql-stream-analytics/SA004.png)
+![На снимке экрана показана страница входные данные с выбранной кнопкой "Добавить".](./media/code-sample-export-sql-stream-analytics/SA004.png)
 
 Задайте расположение для приема входных данных из большого двоичного объекта непрерывного экспорта:
 
-![Параметры Stream Analytics](./media/code-sample-export-sql-stream-analytics/SA0005.png)
+![На снимке экрана показано новое окно ввода с выбранными параметрами "псевдоним входа", "источник" и "учетная запись хранения".](./media/code-sample-export-sql-stream-analytics/SA0005.png)
 
 Теперь потребуется первичный ключ доступа из вашей учетной записи хранения, указанной ранее. Задайте его в качестве ключа учетной записи хранения.
 

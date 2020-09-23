@@ -10,12 +10,12 @@ ms.date: 09/08/2020
 ms.author: tamram
 ms.subservice: blobs
 ms.custom: devx-track-azurecli, devx-track-azurepowershell
-ms.openlocfilehash: 0d03b2708bfd4aac2565b303ddce44f50be65ef9
-ms.sourcegitcommit: f845ca2f4b626ef9db73b88ca71279ac80538559
+ms.openlocfilehash: ee76c1692049d5b25e85b6780fbcf78f7ebfdd2f
+ms.sourcegitcommit: bdd5c76457b0f0504f4f679a316b959dcfabf1ef
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/09/2020
-ms.locfileid: "89612342"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90987044"
 ---
 # <a name="object-replication-for-block-blobs"></a>Репликация объектов для блочных BLOB-объектов
 
@@ -68,7 +68,7 @@ ms.locfileid: "89612342"
 
 Оба контейнера, исходный и целевой, должны существовать, прежде чем их можно будет указать в правиле. После создания политики репликации целевой контейнер станет доступен только для чтения. Любые попытки записи в целевой контейнер завершатся ошибкой с кодом 409 (конфликт). Тем не менее можно вызвать операцию [установить уровень BLOB](/rest/api/storageservices/set-blob-tier) -объекта в конечном контейнере, чтобы переместить его на уровень архива. Дополнительные сведения о уровне архива см. в статье [хранилище BLOB-объектов Azure: горячий, холодный и архивный уровни доступа](storage-blob-storage-tiers.md#archive-access-tier).
 
-## <a name="billing"></a>Выставление счетов 
+## <a name="billing"></a>Выставление счетов
 
 Репликация объектов требует дополнительных затрат на чтение и запись транзакций с исходными и целевыми учетными записями, а также за исходящий трафик для репликации данных из исходной учетной записи в целевую учетную запись и расходов на чтение канала изменений обработки.
 

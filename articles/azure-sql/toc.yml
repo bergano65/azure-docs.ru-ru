@@ -51,8 +51,8 @@
               href: database/security-baseline.md
             - name: Атрибуты безопасности
               href: database/security-controls.md
-            - name: Расширенная защита данных
-              href: database/advanced-data-security.md
+            - name: Azure Defender для SQL
+              href: database/azure-defender-for-sql.md
             - name: Расширенная защита от угроз
               href: database/threat-detection-overview.md
             - name: Обнаружение и классификация данных
@@ -712,6 +712,10 @@
           items:
             - name: Обзор
               href: managed-instance/management-operations-overview.md
+            - name: Мониторинг операций
+              href: managed-instance/management-operations-monitor.md
+            - name: Отмена операций
+              href: managed-instance/management-operations-cancel.md
             - name: Справочник по API
               href: managed-instance/api-references-create-manage-instance.md
         - name: Служба машинного обучения

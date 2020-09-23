@@ -10,24 +10,34 @@
       items:
         - name: Введение
           href: get-started.md
+          displayName: 'get, started'
         - name: 1. Создание рабочей области Synapse
           href: get-started-create-workspace.md
+          displayName: 'get, started'
         - name: 2. Анализ с использованием пула SQL
           href: get-started-analyze-sql-pool.md
+          displayName: 'get, started'
         - name: 3. Анализ с использованием Spark
           href: get-started-analyze-spark.md
+          displayName: 'get, started'
         - name: 4. Анализ с использованием SQL по запросу
           href: get-started-analyze-sql-on-demand.md
+          displayName: 'get, started'
         - name: 5. Анализ данных в учетной записи хранения
           href: get-started-analyze-storage.md
+          displayName: 'get, started'
         - name: 6. Оркестрация с использованием конвейеров
           href: get-started-pipelines.md
+          displayName: 'get, started'
         - name: 7. Визуализация с помощью Power BI
           href: get-started-visualize-power-bi.md
+          displayName: 'get, started'
         - name: 8. Мониторинг
           href: get-started-monitor.md
+          displayName: 'get, started'
         - name: 9. Знакомство с центром знаний
           href: get-started-knowledge-center.md
+          displayName: 'get, started'
     - name: Краткий справочник
       href: overview-cheat-sheet.md
     - name: ВОПРОСЫ И ОТВЕТЫ
@@ -48,16 +58,16 @@
       href: quickstart-power-bi.md
     - name: Создание пулов
       items:
-        - name: Создание записной книжки Apache Spark с помощью веб-средств
-          href: quickstart-apache-spark-notebook.md
-        - name: Создание пула Apache Spark с помощью портала Azure
-          href: quickstart-create-apache-spark-pool-portal.md
-        - name: Создание пула Apache Spark с помощью Synapse Studio
-          href: quickstart-create-apache-spark-pool-studio.md
-        - name: Создание пула SQL с помощью портала Azure
-          href: quickstart-create-sql-pool-portal.md
         - name: Создание пула SQL с помощью Synapse Studio
           href: quickstart-create-sql-pool-studio.md
+        - name: Создание пула SQL с помощью портала Azure
+          href: quickstart-create-sql-pool-portal.md
+        - name: Создание записной книжки
+          href: quickstart-apache-spark-notebook.md
+        - name: Создание пула Spark с помощью портала Azure
+          href: quickstart-create-apache-spark-pool-portal.md
+        - name: Создание пула Spark с помощью Synapse Studio
+          href: quickstart-create-apache-spark-pool-studio.md
     - name: Загрузка данных с помощью пулов SQL
       items:
         - name: Инструкция COPY

@@ -6,14 +6,14 @@ services: virtual-wan
 author: cherylmc
 ms.service: virtual-wan
 ms.topic: how-to
-ms.date: 05/21/2020
+ms.date: 09/22/2020
 ms.author: cherylmc
-ms.openlocfilehash: f20ed76a72eecce59a7b8795a42b033230a2f7e0
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 577340e485550e84941a33d82b58aa6ff1c933d3
+ms.sourcegitcommit: bdd5c76457b0f0504f4f679a316b959dcfabf1ef
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84753683"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90983661"
 ---
 # <a name="configure-azure-firewall-in-a-virtual-wan-hub"></a>Настройка брандмауэра Azure в концентраторе виртуальной глобальной сети
 
@@ -32,20 +32,20 @@ ms.locfileid: "84753683"
 
 На странице **Обзор** виртуальной глобальной сети отображается список виртуальных концентраторов и защищенных концентраторов. На следующем рисунке показана виртуальная глобальная сеть без защищенных концентраторов.
 
-[ ![обзор](./media/howto-firewall/overview.png)](./media/howto-firewall/overview.png#lightbox)
+[![На снимке экрана показана страница обзора виртуальной глобальной сети со списком виртуальных концентраторов.](./media/howto-firewall/overview.png)](./media/howto-firewall/overview.png#lightbox)
 
 ## <a name="convert-to-secured-hub"></a>Преобразование в защищенный концентратор
 
 1. На странице **Обзор** виртуальной глобальной сети выберите концентратор, который требуется преобразовать в защищенный концентратор. На странице виртуального концентратора вы увидите два варианта развертывания брандмауэра Azure в этом концентраторе. Выберите один из них.
 
-   [ ![безопасность](./media/howto-firewall/security.png)](./media/howto-firewall/security.png#lightbox)
+   [![На снимке экрана показана страница обзора виртуальной глобальной сети, где можно выбрать вариант преобразовать в защищенный центр или брандмауэр Azure.](./media/howto-firewall/security.png)](./media/howto-firewall/security.png#lightbox)
 
 1. Выбрав один из параметров, вы увидите страницу **Преобразовать в защищенный концентратор**. Выберите концентратор для преобразования, а затем выберите **Далее: брандмауэр Azure** в нижней части страницы.
 
    [ ![выбор концентратора](./media/howto-firewall/select-hub.png)](./media/howto-firewall/select-hub.png#lightbox)
 1. После завершения рабочего процесса выберите **Подтвердить**.
 
-   [ ![подтверждение](./media/howto-firewall/confirm.png)](./media/howto-firewall/confirm.png#lightbox)
+   [![На снимке экрана показана панель "преобразовать в центр безопасности" с выбранным подтверждением.](./media/howto-firewall/confirm.png)](./media/howto-firewall/confirm.png#lightbox)
 
 1. После преобразования концентратора в защищенный концентратор его можно просмотреть на странице **Обзор** виртуальной глобальной сети.
 

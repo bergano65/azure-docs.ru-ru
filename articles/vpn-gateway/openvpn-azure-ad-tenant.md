@@ -1,18 +1,18 @@
 ---
 title: 'VPN-шлюз: клиент Azure AD для VPN-подключений P2S: проверка подлинности Azure AD'
-description: VPN-подключение P2S можно использовать для подключения к виртуальной сети с помощью проверки подлинности Azure AD.
+description: Узнайте, как настроить клиент Azure AD для проверки подлинности P2S Open VPN.
 services: vpn-gateway
 author: cherylmc
 ms.service: vpn-gateway
 ms.topic: how-to
 ms.date: 09/03/2020
 ms.author: alzam
-ms.openlocfilehash: 01fe9331d4063ae45a5d30aa3546d6338d30822d
-ms.sourcegitcommit: 206629373b7c2246e909297d69f4fe3728446af5
+ms.openlocfilehash: 74df878baa6ed4e2ba902a73a7830c0b075c58ce
+ms.sourcegitcommit: bdd5c76457b0f0504f4f679a316b959dcfabf1ef
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/06/2020
-ms.locfileid: "89499966"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90981531"
 ---
 # <a name="create-an-azure-active-directory-tenant-for-p2s-openvpn-protocol-connections"></a>Создание клиента Azure Active Directory для подключений "точка — сеть" по протоколу OpenVPN
 
@@ -85,7 +85,7 @@ ms.locfileid: "89499966"
 
 6. Выберите **Принять** при появлении соответствующего запроса.
 
-    ![Принять](./media/openvpn-create-azure-ad-tenant/accept.jpg)
+    ![На снимке экрана показаны разрешения на сообщения, запрошенные для вашей организации, с подробностями и параметром для принятия.](./media/openvpn-create-azure-ad-tenant/accept.jpg)
 
 7. В Azure AD в разделе **корпоративные приложения**вы увидите список **VPN Azure** .
 

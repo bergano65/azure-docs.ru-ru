@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: article
 ms.date: 12/10/2019
 ms.author: jeedes
-ms.openlocfilehash: 218a3ad04d4f7366604784e06c558a9c568ad77e
-ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
+ms.openlocfilehash: b4ee17ba6587c38efb6da15117a5c55dc5abb873
+ms.sourcegitcommit: bdd5c76457b0f0504f4f679a316b959dcfabf1ef
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88528069"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90979721"
 ---
 # <a name="tutorial-configure-servicenow-for-automatic-user-provisioning"></a>Руководство по Настройка ServiceNow для автоматической подготовки пользователей
 
@@ -101,7 +101,7 @@ ms.locfileid: "88528069"
 
 5. В разделе **Учетные данные администратора** введите учетные данные администратора ServiceNow и имя пользователя. Щелкните **Проверить подключение**, чтобы убедиться, что Azure AD может подключиться к ServiceNow. Если установить подключение не удалось, убедитесь, что у учетной записи ServiceNow есть разрешения администратора, и повторите попытку.
 
-    ![Подготовка](./media/servicenow-provisioning-tutorial/provisioning.png)
+    ![На снимке экрана показана страница подготовки службы, на которой можно ввести учетные данные администратора.](./media/servicenow-provisioning-tutorial/provisioning.png)
 
 6. В поле **Почтовое уведомление** введите адрес электронной почты пользователя или группы, которые должны получать уведомления об ошибках подготовки, а также установите флажок **Отправить уведомление по электронной почте при сбое**.
 

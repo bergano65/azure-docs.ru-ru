@@ -4,12 +4,12 @@ description: Резервное копирование и восстановле
 ms.topic: conceptual
 ms.date: 03/15/2019
 ms.assetid: 57854626-91f9-4677-b6a2-5d12b6a866e1
-ms.openlocfilehash: b355aaa465132e86c636c68552f3d650b51b08f1
-ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
+ms.openlocfilehash: 37e2336b262311ea00e833ad91fe5e8c5c1ddf1e
+ms.sourcegitcommit: bdd5c76457b0f0504f4f679a316b959dcfabf1ef
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89004992"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90975185"
 ---
 # <a name="back-up-and-restore-sql-databases-in-azure-vms-with-powershell"></a>Резервное копирование и восстановление баз данных SQL на виртуальных машинах Azure с помощью PowerShell
 
@@ -102,7 +102,7 @@ ms.locfileid: "89004992"
 
 3. Укажите тип избыточности, используемый для хранения хранилища.
 
-    * [локально избыточное](../storage/common/storage-redundancy.md) или [геоизбыточное](../storage/common/storage-redundancy.md).
+    * Вы можете использовать [локально избыточное хранилище](../storage/common/storage-redundancy.md#locally-redundant-storage), [геоизбыточное хранилище](../storage/common/storage-redundancy.md#geo-redundant-storage) или [хранилище, избыточное](../storage/common/storage-redundancy.md#zone-redundant-storage) в виде зоны.
     * В следующем примере задается параметр **-BackupStorageRedundancy** для командлета[Set-азрековерисервицесбаккуппроперти](/powershell/module/az.recoveryservices/set-azrecoveryservicesbackupproperty) cmd для **testvault задано** , установленного в значение " **геоизбыточность**".
 
     ```powershell
