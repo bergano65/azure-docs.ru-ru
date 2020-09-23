@@ -1,7 +1,7 @@
 ---
-title: Устранение ошибок модуля конструктора (Предварительная версия)
+title: Устранение ошибок модуля конструктора
 titleSuffix: Azure Machine Learning
-description: Устранение неполадок с кодами ошибок модуля в Машинное обучение Azure конструкторе (Предварительная версия)
+description: Устранение неполадок с кодами ошибок модуля в конструкторе Машинное обучение Azure
 services: machine-learning
 ms.service: machine-learning
 ms.subservice: core
@@ -10,16 +10,16 @@ ms.custom: troubleshooting
 author: likebupt
 ms.author: keli19
 ms.date: 04/16/2020
-ms.openlocfilehash: 023a28c6f1d89d0975ff8ecac2466c51c05fa9da
-ms.sourcegitcommit: dea88d5e28bd4bbd55f5303d7d58785fad5a341d
+ms.openlocfilehash: c0a55780687b4c03d6809d1d740bf0b0afcd63fd
+ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87876926"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90908084"
 ---
-# <a name="exceptions-and-error-codes-for-the-designer-preview"></a>Исключения и коды ошибок для конструктора (предварительная версия)
+# <a name="exceptions-and-error-codes-for-the-designer"></a>Исключения и коды ошибок для конструктора
 
-В этой статье описываются сообщения об ошибках и коды исключений в конструкторе Машинного обучения Azure (предварительная версия), которые помогут устранить неполадки в конвейерах машинного обучения.
+В этой статье описываются сообщения об ошибках и коды исключений в Машинное обучение Azure Designer, помогающие устранять неполадки в конвейерах машинного обучения.
 
 Сообщение об ошибке можно найти в конструкторе, выполнив следующие действия.  
 

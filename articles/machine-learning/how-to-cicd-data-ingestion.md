@@ -12,12 +12,12 @@ author: eedorenko
 manager: davete
 ms.reviewer: larryfr
 ms.date: 06/23/2020
-ms.openlocfilehash: 7a52dcabb448c39d9ae4e4edb4f5b7f701be6603
-ms.sourcegitcommit: d68c72e120bdd610bb6304dad503d3ea89a1f0f7
+ms.openlocfilehash: 47b41e807c4d7b9a9fce6591da6655db74f483f3
+ms.sourcegitcommit: bdd5c76457b0f0504f4f679a316b959dcfabf1ef
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/01/2020
-ms.locfileid: "89228891"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90971264"
 ---
 # <a name="devops-for-a-data-ingestion-pipeline"></a>DevOps для конвейера приема данных
 
@@ -168,11 +168,11 @@ labels = np.array(data['target'])
 
 Это имя отличается для сред ***разработки***, ***QA***, ***UAT***и ***производственных*** . В сложном конвейере с несколькими действиями может быть несколько пользовательских свойств. Рекомендуется объединить все эти значения в одном месте и определить их как ***переменные***конвейера:
 
-![ADF-переменные](media/how-to-cicd-data-ingestion/adf-variables.png)
+![На снимке экрана показана Записная книжка, которая называется Препаредата и M L. Выполните конвейер с именем M L Execute конвейер в верхней части со вкладкой переменные, выбранной ниже, с возможностью добавления новых переменных, каждая с именем, типом и значением по умолчанию.](media/how-to-cicd-data-ingestion/adf-variables.png)
 
 Действия конвейера могут ссылаться на переменные конвейера при их фактическом использовании:
 
-![ADF-Notebook-параметры](media/how-to-cicd-data-ingestion/adf-notebook-parameters.png)
+![На снимке экрана показана Записная книжка с именем Препаредата и M L. Выполните конвейер с именем M L Execute конвейер в верхней части с вкладкой Settings (параметры), выбранной ниже.](media/how-to-cicd-data-ingestion/adf-notebook-parameters.png)
 
 В рабочей области фабрики данных Azure ***не*** предоставляются переменные конвейера по умолчанию в качестве параметров шаблонов Azure Resource Manager. В рабочей области используется [шаблон параметризации по умолчанию](https://docs.microsoft.com/azure/data-factory/continuous-integration-deployment#default-parameterization-template) , определяющий, какие свойства конвейера должны быть предоставлены как параметры шаблона Azure Resource Manager. Чтобы добавить в список переменные конвейера, обновите `"Microsoft.DataFactory/factories/pipelines"` раздел [шаблона параметризации по умолчанию](https://docs.microsoft.com/azure/data-factory/continuous-integration-deployment#default-parameterization-template) , используя следующий фрагмент кода, и поместите файл result JSON в корень исходной папки:
 
@@ -480,6 +480,6 @@ stages:
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-* [Система управления версиями в фабрике данных Azure](https://docs.microsoft.com/azure/data-factory/source-control)
+* [Система управления версиями в Фабрике данных Azure](https://docs.microsoft.com/azure/data-factory/source-control)
 * [Непрерывные интеграция и поставка в Фабрике данных Azure](https://docs.microsoft.com/azure/data-factory/continuous-integration-deployment)
 * [DevOps для Azure Databricks](https://marketplace.visualstudio.com/items?itemName=riserrad.azdo-databricks)

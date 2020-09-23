@@ -6,12 +6,12 @@ ms.author: andrela
 ms.service: mysql
 ms.topic: how-to
 ms.date: 3/18/2020
-ms.openlocfilehash: ef39d04b980d4f9c7f5baf11bc047acf6239f803
-ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
+ms.openlocfilehash: 43b85ba58ed7163a896054ab9e77ddf82e3461a3
+ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86118551"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90902796"
 ---
 # <a name="advanced-threat-protection-for-azure-database-for-mysql"></a>Расширенная защита от угроз для Базы данных Azure для MySQL
 
@@ -34,7 +34,7 @@ ms.locfileid: "86118551"
    - Включите расширенную защиту от угроз на сервере.
    - В **параметрах расширенной защиты от угроз** в текстовом поле **Кому отправлять оповещения** предоставьте список адресов электронной почты пользователей, которым будут отправляться оповещения системы безопасности об обнаружении аномальных действий в базе данных.
   
-   ![Настройка обнаружения угроз](./media/howto-database-threat-protection-portal/set-up-threat-protection.png)
+   :::image type="content" source="./media/howto-database-threat-protection-portal/set-up-threat-protection.png" alt-text="Настройка обнаружения угроз":::
 
 ## <a name="explore-anomalous-database-activities"></a>Анализ подозрительной активности в базе данных
 
@@ -42,15 +42,15 @@ ms.locfileid: "86118551"
  
 1. Щелкните ссылку **View recent alerts** (Просмотреть последние оповещения) в электронном сообщении, чтобы запустить портал Azure и открыть страницу оповещений центра безопасности Azure. На этой странице содержится обзор активных угроз, обнаруженных в базе данных SQL.
     
-    ![Отчеты об аномальных действиях](./media/howto-database-threat-protection-portal/anomalous-activity-report.png)
+    :::image type="content" source="./media/howto-database-threat-protection-portal/anomalous-activity-report.png" alt-text="Отчеты об аномальных действиях":::
 
     Просмотрите активные угрозы:
 
-    ![Активные угрозы](./media/howto-database-threat-protection-portal/active-threats.png)
+    :::image type="content" source="./media/howto-database-threat-protection-portal/active-threats.png" alt-text="Активные угрозы":::
 
 2. Щелкните определенное оповещение, чтобы отобразить дополнительные сведения и действия для изучения этой угрозы и устранения будущих угроз.
     
-    ![Определенное оповещение](./media/howto-database-threat-protection-portal/specific-alert.png)
+    :::image type="content" source="./media/howto-database-threat-protection-portal/specific-alert.png" alt-text="Определенное оповещение":::
 
 ## <a name="explore-threat-detection-alerts"></a>Анализ оповещений об обнаружении угроз
 
@@ -58,7 +58,7 @@ ms.locfileid: "86118551"
 
 Щелкните **Threat detection alert** (Оповещение об обнаружении угроз), чтобы запустить страницу оповещений центра безопасности Azure и получить обзор активных угроз SQL, обнаруженных в базе данных.
 
-   ![Оповещение об обнаружении угроз](./media/howto-database-threat-protection-portal/threat-detection-alert-asc.png)
+   :::image type="content" source="./media/howto-database-threat-protection-portal/threat-detection-alert-asc.png" alt-text="Оповещение об обнаружении угроз":::
    
 
 ## <a name="next-steps"></a>Дальнейшие действия

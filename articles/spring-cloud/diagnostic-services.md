@@ -7,14 +7,16 @@ ms.topic: conceptual
 ms.date: 01/06/2020
 ms.author: brendm
 ms.custom: devx-track-java
-ms.openlocfilehash: 56f392210aac6045a9dc8cc3522d36092162f26c
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: ce8dbe017e3cc80588cd1aa37ad02a82199ccc10
+ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87086121"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90892576"
 ---
 # <a name="analyze-logs-and-metrics-with-diagnostics-settings"></a>Анализ журналов и метрик с помощью параметров диагностики
+
+**Эта статья относится к:** ✔️ Java ✔️ C #
 
 Используя функции диагностики в Azure Веснного облака, можно анализировать журналы и метрики с помощью любой из следующих служб:
 
@@ -25,7 +27,7 @@ ms.locfileid: "87086121"
 Выберите категорию журнала и категорию метрик, которые требуется отслеживать.
 
 > [!TIP]
-> Просто хотите выполнить потоковую передачу журналов? Ознакомьтесь с этой [командой Azure CLI](https://docs.microsoft.com/cli/azure/ext/spring-cloud/spring-cloud/app?view=azure-cli-latest#ext-spring-cloud-az-spring-cloud-app-logs)!
+> Просто хотите выполнить потоковую передачу журналов? Ознакомьтесь с этой [командой Azure CLI](https://docs.microsoft.com/cli/azure/ext/spring-cloud/spring-cloud/app?view=azure-cli-latest&preserve-view=true#ext-spring-cloud-az-spring-cloud-app-logs)!
 
 ## <a name="logs"></a>Журналы
 
@@ -106,7 +108,7 @@ ms.locfileid: "87086121"
     | limit 50
     ```
 > [!NOTE]
-> `==`учитывает регистр, но `=~` не имеет.
+> `==` учитывает регистр, но `=~` не имеет.
 
 Дополнительные сведения о языке запросов, который используется в Log Analytics, см. в разделе [Azure Monitor запросы журналов](../azure-monitor/log-query/query-language.md).
 
@@ -176,7 +178,7 @@ AppPlatformLogsforSpring
 
 Azure Monitor предоставляет обширную поддержку для запросов журналов приложений с помощью Log Analytics. Дополнительные сведения об этой службе см. в разделе Начало [работы с запросами журналов в Azure Monitor](../azure-monitor/log-query/get-started-queries.md). Дополнительные сведения о создании запросов для анализа журналов приложений см. в разделе [Обзор запросов журналов в Azure Monitor](../azure-monitor/log-query/log-query-overview.md).
 
-## <a name="frequently-asked-questions-faq"></a>Часто задаваемые вопросы
+## <a name="frequently-asked-questions-faq"></a>Вопросы и ответы
 
 ### <a name="how-to-convert-multi-line-java-stack-traces-into-a-single-line"></a>Как преобразовать многострочные трассировки стека Java в одну строку?
 
@@ -203,3 +205,7 @@ AppPlatformLogsforSpring
 | extend Log = array_strcat(split(Log, '\\n'), '\n')
 ```
 Вы можете использовать ту же стратегию для других библиотек журналов Java.
+
+## <a name="next-steps"></a>Дальнейшие действия
+
+* [Краткое руководство. Развертывание первого приложения Azure Spring Cloud](spring-cloud-quickstart.md)

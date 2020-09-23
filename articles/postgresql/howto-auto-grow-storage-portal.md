@@ -6,12 +6,12 @@ ms.author: ambhatna
 ms.service: postgresql
 ms.topic: how-to
 ms.date: 5/29/2019
-ms.openlocfilehash: 24ca9d84e8e05b2ffe093dc54963c1ac39464105
-ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
+ms.openlocfilehash: 1853bbb0e44526988b34ed23126664c5a2285a7f
+ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86119622"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90907514"
 ---
 # <a name="auto-grow-storage-using-the-azure-portal-in-azure-database-for-postgresql---single-server"></a>Автоматическое расширение хранилища с помощью портал Azure в базе данных Azure для PostgreSQL — один сервер
 В этой статье описывается, как можно настроить расширение хранилища базы данных Azure для PostgreSQL, не влияя на рабочую нагрузку.
@@ -32,13 +32,13 @@ ms.locfileid: "86119622"
 
 3. В разделе **Автоматическое увеличение** выберите **Да** , чтобы включить автоматическое увеличение размера хранилища.
 
-    ![База данных Azure для PostgreSQL-Settings_Pricing_tier — автоматическое увеличение](./media/howto-auto-grow-storage-portal/3-auto-grow.png)
+    :::image type="content" source="./media/howto-auto-grow-storage-portal/3-auto-grow.png" alt-text="База данных Azure для PostgreSQL-Settings_Pricing_tier — автоматическое увеличение":::
 
-4. Чтобы сохранить изменения, нажмите кнопку **ОК**.
+4. Нажмите кнопку **OK**, чтобы сохранить изменения.
 
 5. В уведомлении будет подтверждено, что автоматическое увеличение размера было успешно включено.
 
-    ![База данных Azure для PostgreSQL — успешное выполнение автоматического роста](./media/howto-auto-grow-storage-portal/5-auto-grow-successful.png)
+    :::image type="content" source="./media/howto-auto-grow-storage-portal/5-auto-grow-successful.png" alt-text="База данных Azure для PostgreSQL — успешное выполнение автоматического роста":::
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

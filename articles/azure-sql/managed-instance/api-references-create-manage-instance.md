@@ -11,12 +11,12 @@ author: stevestein
 ms.author: sstein
 ms.reviewer: carlrab
 ms.date: 03/12/2019
-ms.openlocfilehash: 8cc2930422bf644f217737d0f0ba585c243575ee
-ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
+ms.openlocfilehash: 4627c094c3913d01f06c237b133e1ed0ea4ed2e0
+ms.sourcegitcommit: bdd5c76457b0f0504f4f679a316b959dcfabf1ef
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/31/2020
-ms.locfileid: "87503010"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90969795"
 ---
 # <a name="managed-api-reference-for-azure-sql-managed-instance"></a>Справочник по управляемому API для Управляемый экземпляр Azure SQL
 [!INCLUDE[appliesto-sqlmi](../includes/appliesto-sqlmi.md)]
@@ -44,6 +44,8 @@ ms.locfileid: "87503010"
 |[Get-AzSqlInstance](https://docs.microsoft.com/powershell/module/az.sql/get-azsqlinstance)|Возвращает сведения об управляемом экземпляре.|
 |[Set-AzSqlInstance](https://docs.microsoft.com/powershell/module/az.sql/set-azsqlinstance)|Задает свойства для управляемого экземпляра.|
 |[Remove-Азсклинстанце](https://docs.microsoft.com/powershell/module/az.sql/remove-azsqlinstance)|Удаляет управляемый экземпляр.|
+|[Get-Азсклинстанцеоператион](https://docs.microsoft.com/powershell/module/az.sql/get-azsqlinstanceoperation)|Возвращает список операций управления, выполняемых в управляемом экземпляре или конкретной операции.|
+|[Азсклинстанцеоператион](https://docs.microsoft.com/powershell/module/az.sql/stop-azsqlinstanceoperation)|Отменяет определенную операцию управления, выполненную на управляемом экземпляре.|
 |[New-Азсклинстанцедатабасе](https://docs.microsoft.com/powershell/module/az.sql/new-azsqlinstancedatabase)|Создает базу данных SQL Управляемый экземпляр.|
 |[Get-Азсклинстанцедатабасе](https://docs.microsoft.com/powershell/module/az.sql/get-azsqlinstancedatabase)|Возвращает сведения о базе данных SQL Управляемый экземпляр.|
 |[Remove-Азсклинстанцедатабасе](https://docs.microsoft.com/powershell/module/az.sql/remove-azsqlinstancedatabase)|Удаляет базу данных SQL Управляемый экземпляр.|
@@ -63,6 +65,9 @@ ms.locfileid: "87503010"
 |[az sql mi show](https://docs.microsoft.com/cli/azure/sql/mi#az-sql-mi-show)|Возвращает сведения об управляемом экземпляре.|
 |[az sql mi update](https://docs.microsoft.com/cli/azure/sql/mi#az-sql-mi-update)|Обновляет управляемый экземпляр.|
 |[az sql mi delete](https://docs.microsoft.com/cli/azure/sql/mi#az-sql-mi-delete)|Удаляет управляемый экземпляр.|
+|[AZ SQL MI, список операций](https://docs.microsoft.com/cli/azure/sql/mi/op#az_sql_mi_op_list)|Возвращает список операций управления, выполненных на управляемом экземпляре.|
+|[AZ SQL MI Op, демонстрация](https://docs.microsoft.com/cli/azure/sql/mi/op#az_sql_mi_op_show)|Возвращает конкретную операцию управления, выполняемую в управляемом экземпляре.|
+|[AZ SQL MI Op Cancel](https://docs.microsoft.com/cli/azure/sql/mi/op#az_sql_mi_op_cancel)|Отменяет определенную операцию управления, выполненную на управляемом экземпляре.|
 |[az sql midb create](https://docs.microsoft.com/cli/azure/sql/midb#az-sql-midb-create) |Создает управляемую базу данных.|
 |[az sql midb list](https://docs.microsoft.com/cli/azure/sql/midb#az-sql-midb-list)|Выводит список доступных управляемых баз данных.|
 |[az sql midb restore](https://docs.microsoft.com/cli/azure/sql/midb#az-sql-midb-restore)|Восстанавливает управляемую базу данных.|
@@ -80,8 +85,8 @@ ms.locfileid: "87503010"
 
 | Команда | Описание |
 | --- | --- |
-|[CREATE DATABASE](https://docs.microsoft.com/sql/t-sql/statements/create-database-transact-sql?view=azuresqldb-mi-current)|Создает новую базу данных экземпляра в SQL Управляемый экземпляр. Для создания новой базы данных необходимо подключение к базе данных master.|
-| [ALTER DATABASE](https://docs.microsoft.com/sql/t-sql/statements/alter-database-transact-sql?view=azuresqldb-mi-current) |Изменяет экземпляр базы данных в Управляемый экземпляр SQL.|
+|[CREATE DATABASE](https://docs.microsoft.com/sql/t-sql/statements/create-database-transact-sql?view=azuresqldb-mi-current&preserve-view=true)|Создает новую базу данных экземпляра в SQL Управляемый экземпляр. Для создания новой базы данных необходимо подключение к базе данных master.|
+| [ALTER DATABASE](https://docs.microsoft.com/sql/t-sql/statements/alter-database-transact-sql?view=azuresqldb-mi-current&preserve-view=true) |Изменяет экземпляр базы данных в Управляемый экземпляр SQL.|
 
 ## <a name="rest-api-create-and-configure-managed-instances"></a>REST API: создание и Настройка управляемых экземпляров
 
@@ -95,6 +100,9 @@ ms.locfileid: "87503010"
 |[Управляемые экземпляры. Перечисление](https://docs.microsoft.com/rest/api/sql/managedinstances/list)|Возвращает список управляемых экземпляров в подписке.|
 |[Управляемые экземпляры. Перечисление по группе ресурсов](https://docs.microsoft.com/rest/api/sql/managedinstances/listbyresourcegroup)|Возвращает список управляемых экземпляров в группе ресурсов.|
 |[Управляемые экземпляры. Обновление](https://docs.microsoft.com/rest/api/sql/managedinstances/update)|Обновляет управляемый экземпляр.|
+|[Управляемый экземпляр операций — список по Управляемый экземпляр](https://docs.microsoft.com/rest/api/sql/managedinstanceoperations/listbymanagedinstance)|Возвращает список операций управления, выполненных на управляемом экземпляре.|
+|[Операции Управляемый экземпляр — получение](https://docs.microsoft.com/rest/api/sql/managedinstanceoperations/get)|Возвращает конкретную операцию управления, выполняемую в управляемом экземпляре.|
+|[Управляемый экземпляр операции — отмена](https://docs.microsoft.com/rest/api/sql/managedinstanceoperations/cancel)|Отменяет определенную операцию управления, выполненную на управляемом экземпляре.|
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

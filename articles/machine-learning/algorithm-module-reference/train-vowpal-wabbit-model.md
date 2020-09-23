@@ -8,15 +8,15 @@ ms.topic: reference
 author: likebupt
 ms.author: keli19
 ms.date: 07/02/2020
-ms.openlocfilehash: 34caefba5bae660ca150f6e447b1d59b7174c768
-ms.sourcegitcommit: 9b5c20fb5e904684dc6dd9059d62429b52cb39bc
+ms.openlocfilehash: 6bc9f69440be772910ea8200b5ccf7d5a5122ae6
+ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85857756"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90907808"
 ---
 # <a name="train-vowpal-wabbit-model"></a>Обучение модели Vowpal Wabbit
-В этой статье описывается, как использовать модуль " **обучение модели Vowpal Wabbit** " в конструкторе машинное обучение Azure (Предварительная версия) для создания модели машинного обучения с помощью Vowpal Wabbit.  
+В этой статье описывается, как использовать модуль " **обучение Vowpal Wabbit Model** " в конструкторе машинное обучение Azure для создания модели машинного обучения с помощью Vowpal Wabbit.  
 
 Чтобы использовать Vowpal Wabbit для машинного обучения, отформатируйте введенные данные в соответствии с требованиями Vowpal Wabbit и подготовьте данные в требуемом формате. Этот модуль используется для указания аргументов командной строки Vowpal Wabbit. 
 
@@ -112,7 +112,7 @@ Vowpal Wabbit преобразует в хэш все данные — не то
 
 Следующие параметры не поддерживаются:
 
--   Параметры ввода-вывода, указанные в[https://github.com/JohnLangford/vowpal_wabbit/wiki/Command-line-arguments](https://github.com/JohnLangford/vowpal_wabbit/wiki/Command-line-arguments)  
+-   Параметры ввода-вывода, указанные в [https://github.com/JohnLangford/vowpal_wabbit/wiki/Command-line-arguments](https://github.com/JohnLangford/vowpal_wabbit/wiki/Command-line-arguments)  
   
      Эти свойства уже настроены автоматически модулем.  
   

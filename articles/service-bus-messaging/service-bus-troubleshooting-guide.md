@@ -1,14 +1,14 @@
 ---
 title: Руководство по устранению неполадок в служебной шине Azure | Документация Майкрософт
-description: В этой статье представлен список исключений обмена сообщениями служебной шины Azure и предлагаемых действий, которые необходимо выполнить при возникновении исключения.
+description: В этой статье содержатся советы и рекомендации по устранению некоторых проблем, которые могут возникнуть при использовании служебной шины Azure.
 ms.topic: article
-ms.date: 07/15/2020
-ms.openlocfilehash: 822a97a230a8646ddadde21eedc6c23d5e3efbd6
-ms.sourcegitcommit: d8b8768d62672e9c287a04f2578383d0eb857950
+ms.date: 09/16/2020
+ms.openlocfilehash: 39d2bf14f88e8efabcddda98268a187009cf029e
+ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/11/2020
-ms.locfileid: "88067058"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90885724"
 ---
 # <a name="troubleshooting-guide-for-azure-service-bus"></a>Руководство по устранению неполадок в служебной шине Azure
 В этой статье содержатся советы и рекомендации по устранению некоторых проблем, которые могут возникнуть при использовании служебной шины Azure. 
@@ -64,7 +64,7 @@ ms.locfileid: "88067058"
 ### <a name="cause"></a>Причина
 Обновление и перезапуск серверной службы могут вызвать эти проблемы в приложениях.
 
-### <a name="resolution"></a>Разрешение
+### <a name="resolution"></a>Решение
 Если в коде приложения используется пакет SDK, то политика повторных попыток уже встроена и активна. Приложение будет повторно подключено без значительного влияния на приложение или рабочий процесс.
 
 ## <a name="unauthorized-access-send-claims-are-required"></a>Несанкционированный доступ: требуется отправка утверждений
@@ -79,7 +79,7 @@ Service Bus Error: Unauthorized access. 'Send' claim\(s\) are required to perfor
 ### <a name="cause"></a>Причина
 Удостоверение не имеет разрешений на доступ к разделу служебной шины. 
 
-### <a name="resolution"></a>Разрешение
+### <a name="resolution"></a>Решение
 Чтобы устранить эту ошибку, установите библиотеку [Microsoft. Azure. Services. AppAuthentication](https://www.nuget.org/packages/Microsoft.Azure.Services.AppAuthentication/) .  Дополнительные сведения см. в статье [Проверка подлинности локальной разработки](../key-vault/general/service-to-service-authentication.md#local-development-authentication). 
 
 Сведения о назначении разрешений ролям см. в статье [Проверка подлинности управляемого удостоверения с Azure Active Directory для доступа к ресурсам служебной шины Azure](service-bus-managed-service-identity.md).
@@ -94,7 +94,7 @@ Service Bus Error: Unauthorized access. 'Send' claim\(s\) are required to perfor
 ### <a name="cause"></a>Причина
 Существует ограничение на количество токенов, используемых для отправки и получения сообщений с помощью одного соединения с пространством имен служебной шины. Это 1000. 
 
-### <a name="resolution"></a>Разрешение
+### <a name="resolution"></a>Решение
 Откройте новое подключение к пространству имен служебной шины, чтобы отправить дополнительные сообщения.
 
 ## <a name="next-steps"></a>Дальнейшие действия

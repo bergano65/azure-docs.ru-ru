@@ -6,18 +6,18 @@ ms.author: andrela
 ms.service: mysql
 ms.topic: troubleshooting
 ms.date: 3/30/2020
-ms.openlocfilehash: d2ed06041e8ee0e2993289cdde5fe92f7664b476
-ms.sourcegitcommit: 0b80a5802343ea769a91f91a8cdbdf1b67a932d3
+ms.openlocfilehash: 62a34a2dba459c6f65729cd5c6804378ee7f8b52
+ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/25/2020
-ms.locfileid: "83829521"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90902776"
 ---
 # <a name="how-to-use-sys_schema-for-performance-tuning-and-database-maintenance-in-azure-database-for-mysql"></a>Как использовать sys_schema для настройки производительности и обслуживания базы данных в службе "База данных Azure для MySQL"
 
 Схема performance_schema MySQL, которая стала впервые доступна в MySQL 5.5, предоставляет способ инструментирования многих важных ресурсов серверов, таких как выделение памяти, хранимые программы, блокировка метаданных и т. д. Однако performance_schema содержит более 80 таблиц. Для получения необходимой информации часто требуется объединение таблиц в performance_schema, а также таблицы из information_schema. Созданная на основе performance_schema и information_schema схема sys_schema предоставляет большую коллекцию [понятных представлений](https://dev.mysql.com/doc/refman/5.7/en/sys-schema-views.html) в базе данных только для чтения и полностью поддерживается в службе "База данных Azure для MySQL" версии 5.7.
 
-![Представления sys_schema](./media/howto-troubleshoot-sys-schema/sys-schema-views.png)
+:::image type="content" source="./media/howto-troubleshoot-sys-schema/sys-schema-views.png" alt-text="Представления sys_schema":::
 
 В sys_schema есть 52 представления, каждое из которых имеет один из следующих префиксов:
 
@@ -37,23 +37,23 @@ ms.locfileid: "83829521"
 
 Операции ввода-вывода являются наиболее ресурсоемкими операциями в базе данных. Мы можем узнать среднюю задержку операций ввода-вывода, запросив представление *sys.user_summary_by_file_io*. При использовании подготовленного хранилища по умолчанию размером 125 ГБ задержка ввода-вывода составляет около 15 секунд.
 
-![Задержка ввода-вывода: 125 ГБ](./media/howto-troubleshoot-sys-schema/io-latency-125GB.png)
+:::image type="content" source="./media/howto-troubleshoot-sys-schema/io-latency-125GB.png" alt-text="Задержка ввода-вывода: 125 ГБ":::
 
 Так как База данных Azure для MySQL масштабирует операции ввода-вывода в соответствии с хранилищем, после увеличения объема подготовленного хранилища до 1 ТБ задержка операций ввода-вывода уменьшается до 571 мс.
 
-![Задержка ввода-вывода: 1 ТБ](./media/howto-troubleshoot-sys-schema/io-latency-1TB.png)
+:::image type="content" source="./media/howto-troubleshoot-sys-schema/io-latency-1TB.png" alt-text="Задержка ввода-вывода: 1 ТБ":::
 
 ### <a name="sysschema_tables_with_full_table_scans"></a>*sys.schema_tables_with_full_table_scans*
 
 Несмотря на тщательное планирование, многие запросы могут по-прежнему привести к сканированию всей таблицы. Дополнительные сведения о типах индексов и способах их оптимизации см. в следующей статье: [Решение проблем с производительностью запросов](./howto-troubleshoot-query-performance.md). Полное сканирование таблиц является ресурсоемким и снижает производительность вашей базы данных. Самый быстрый способ поиска таблиц с полным сканированием — запросить представление *sys.schema_tables_with_full_table_scans*.
 
-![Сканирование всей таблицы](./media/howto-troubleshoot-sys-schema/full-table-scans.png)
+:::image type="content" source="./media/howto-troubleshoot-sys-schema/full-table-scans.png" alt-text="Сканирование всей таблицы":::
 
 ### <a name="sysuser_summary_by_statement_type"></a>*sys.user_summary_by_statement_type*
 
 Чтобы устранить проблемы с производительностью базы данных, может быть полезно просто выявить события, происходящие внутри базы данных, а представление *sys.user_summary_by_statement_type* выведет необходимые сведения по типу инструкций.
 
-![Сводка по инструкциям](./media/howto-troubleshoot-sys-schema/summary-by-statement.png)
+:::image type="content" source="./media/howto-troubleshoot-sys-schema/summary-by-statement.png" alt-text="Сводка по инструкциям":::
 
 В этом примере База данных Azure для MySQL потратила 53 минуты на сканирование журнала подробных поисковых запросов 44 579 раз. Это занимает много времени и требует множества операций ввода-вывода. Вы можете уменьшить эту активность, отключив журнал медленных запросов либо уменьшив частоту внесения в него записей на портале Azure.
 
@@ -66,7 +66,7 @@ ms.locfileid: "83829521"
 
 Буферный пул InnoDB находится в памяти и является основным механизмом кэширования между СУБД и хранилищем. Размер буферного пула привязан к уровню производительности. Его можно изменить, только выбрав другой номер SKU продукта. Как и с памятью в операционной системе, старые страницы выгружаются, чтобы освободить место для новых данных. Чтобы узнать, какие таблицы используют больше всего памяти буферного пула InnoDB, можно запросить представление *sys.innodb_buffer_stats_by_table*.
 
-![Состояние буфера InnoDB](./media/howto-troubleshoot-sys-schema/innodb-buffer-status.png)
+:::image type="content" source="./media/howto-troubleshoot-sys-schema/innodb-buffer-status.png" alt-text="Состояние буфера InnoDB":::
 
 На рисунке выше видно, что, за исключением системных таблиц и представлений, каждая таблица базы данных mysqldatabase033, которая размещает один из сайтов WordPress, занимает 16 КБ или 1 страницу данных в памяти.
 
@@ -74,9 +74,9 @@ ms.locfileid: "83829521"
 
 Индексы являются эффективным инструментом повышения производительности чтения, однако они влекут дополнительные затраты, связанные с операциями вставки и хранением. *sys.schema_unused_indexes* и *sys.schema_redundant_indexes* предоставляют сведения об неиспользуемых или повторяющихся индексах.
 
-![Неиспользуемые индексы](./media/howto-troubleshoot-sys-schema/unused-indexes.png)
+:::image type="content" source="./media/howto-troubleshoot-sys-schema/unused-indexes.png" alt-text="Неиспользуемые индексы":::
 
-![Избыточные индексы](./media/howto-troubleshoot-sys-schema/redundant-indexes.png)
+:::image type="content" source="./media/howto-troubleshoot-sys-schema/redundant-indexes.png" alt-text="Избыточные индексы":::
 
 ## <a name="conclusion"></a>Заключение
 

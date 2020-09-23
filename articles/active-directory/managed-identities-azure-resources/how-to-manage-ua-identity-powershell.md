@@ -15,12 +15,12 @@ ms.workload: identity
 ms.date: 04/16/2018
 ms.author: barclayn
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 1211245786bbb734e0338be1b79030f5f9552793
-ms.sourcegitcommit: bcda98171d6e81795e723e525f81e6235f044e52
+ms.openlocfilehash: 8649c9faf3905e69232cdc15bbba6607abe3e9c4
+ms.sourcegitcommit: bdd5c76457b0f0504f4f679a316b959dcfabf1ef
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/01/2020
-ms.locfileid: "89266397"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90969515"
 ---
 # <a name="create-list-or-delete-a-user-assigned-managed-identity-using-azure-powershell"></a>Создание, перечисление или удаление назначенного пользователем управляемого удостоверения с помощью Azure PowerShell
 
@@ -36,12 +36,35 @@ ms.locfileid: "89266397"
 
 - Если вы не работали с управляемыми удостоверениями для ресурсов Azure, изучите [общие сведения](overview.md). **Обратите внимание на [различие между управляемыми удостоверениями, назначаемыми системой и назначаемыми пользователями](overview.md#managed-identity-types)**.
 - Если у вас нет учетной записи Azure, [зарегистрируйтесь для получения бесплатной пробной учетной записи](https://azure.microsoft.com/free/), прежде чем продолжать.
-- Установите [последнюю версию Azure PowerShell](/powershell/azure/install-az-ps), если это еще не сделано.
-- Если модуль PowerShell запущен локально, необходимо также выполнить следующие действия. 
-    - Выполните команду `Connect-AzAccount`, чтобы создать подключение к Azure.
-    - Установите [PowerShellGet последней версии](/powershell/scripting/gallery/installing-psget#for-systems-with-powershell-50-or-newer-you-can-install-the-latest-powershellget).
-    - Выполните `Install-Module -Name PowerShellGet -AllowPrerelease`, чтобы получить предварительную версию модуля `PowerShellGet` (может потребоваться `Exit` из текущего сеанса PowerShell после выполнения этой команды для установки модуля `Az.ManagedServiceIdentity`).
-    - В этой статье необходимо выполнить `Install-Module -Name Az.ManagedServiceIdentity -AllowPrerelease`, чтобы установить предварительную версию модуля `Az.ManagedServiceIdentity` для выполнения операций с управляемыми удостоверениями, назначаемыми пользователем.
+- Для выполнения примеров сценариев существует два варианта.
+    - Используйте [Azure Cloud Shell](../../cloud-shell/overview.md), которую можно открыть с помощью кнопки **попробовать** в верхнем правом углу блоков кода.
+    - Запускайте сценарии локально с Azure PowerShell, как описано в следующем разделе.
+
+### <a name="configure-azure-powershell-locally"></a>Локальная настройка Azure PowerShell
+
+Чтобы использовать Azure PowerShell локально для этой статьи (вместо использования Cloud Shell), выполните следующие действия.
+
+1. Установите [последнюю версию Azure PowerShell](/powershell/azure/install-az-ps), если это еще не сделано.
+
+1. Войдите в Azure.
+
+    ```azurepowershell
+    Connect-AzAccount
+    ```
+
+1. Установите [PowerShellGet последней версии](/powershell/scripting/gallery/installing-psget#for-systems-with-powershell-50-or-newer-you-can-install-the-latest-powershellget).
+
+    ```azurepowershell
+    Install-Module -Name PowerShellGet -AllowPrerelease
+    ```
+
+    `Exit`После выполнения этой команды для следующего шага может потребоваться выйти из текущего сеанса PowerShell.
+
+1. Установите предварительную версию `Az.ManagedServiceIdentity` модуля, чтобы выполнить управляемые пользователем операции идентификации в этой статье:
+
+    ```azurepowershell
+    Install-Module -Name Az.ManagedServiceIdentity -AllowPrerelease
+    ```
 
 ## <a name="create-a-user-assigned-managed-identity"></a>Создание управляемого удостоверения, назначаемого пользователем
 

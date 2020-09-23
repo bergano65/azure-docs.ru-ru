@@ -7,12 +7,12 @@ ms.reviewer: mamccrea
 ms.service: stream-analytics
 ms.topic: conceptual
 ms.date: 8/07/2020
-ms.openlocfilehash: e11d5b14bdf6b134fefea79a1f709ec73499bd20
-ms.sourcegitcommit: d39f2cd3e0b917b351046112ef1b8dc240a47a4f
+ms.openlocfilehash: 0020efea69fc684ff6ebebf286718aa2a720910e
+ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88815714"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90900792"
 ---
 # <a name="azure-stream-analytics-preview-features"></a>Предварительная версия функций Azure Stream Analytics
 
@@ -25,10 +25,6 @@ ms.locfileid: "88815714"
 ### <a name="authenticate-to-sql-database-output-with-managed-identities"></a>Проверка подлинности в выходных данных Базы данных SQL с управляемыми удостоверениями
 
 Azure Stream Analytics поддерживает [проверку подлинности управляемого удостоверения](../active-directory/managed-identities-azure-resources/overview.md) для приемников выходных данных Базы данных SQL Azure. Управляемые удостоверения устраняют ограничения методов проверки подлинности на основе пользователей, например необходимость повторной проверки подлинности из-за изменения пароля. 
-
-### <a name="output-to-azure-synapse-analytics"></a>Вывод в Azure Synapse Analytics
-
-Задания Azure Stream Analytics могут выводиться в таблицу пула SQL в [Azure Synapse Analytics](https://azure.microsoft.com/services/synapse-analytics) и обрабатывать пропускную способность до 200 МБ/сек. Это удовлетворяет самые ресурсоемкие требования аналитики в режиме реального времени и обработку данных по горячим путям для таких рабочих нагрузок, как составление отчетов и панель мониторинга.  
 
 ### <a name="real-time-high-performance-scoring-with-custom-ml-models-managed-by-azure-machine-learning"></a>Высокопроизводительная оценка в режиме реального времени с помощью пользовательских моделей ML, управляемых Машинным обучением Azure.
 
@@ -52,7 +48,7 @@ Azure Stream Analytics поддерживает высокопроизводит
 
 ### <a name="visual-studio-code-for-azure-stream-analytics"></a>Visual Studio Code для Azure Stream Analytics
 
-Задания Azure Stream Analytics можно создать в Visual Studio Code. Дополнительные сведения см. в [руководстве по началу работы в VS Code](https://docs.microsoft.com/azure/stream-analytics/quick-create-vs-code).
+Задания Azure Stream Analytics можно создать в Visual Studio Code. Дополнительные сведения см. в [руководстве по началу работы в VS Code](https://docs.microsoft.com/azure/stream-analytics/quick-create-visual-studio-code).
 
 ### <a name="local-testing-with-live-data-in-visual-studio-code"></a>Локальное тестирование с фактическими данными в Visual Studio Code
 

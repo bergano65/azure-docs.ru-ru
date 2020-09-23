@@ -1,6 +1,6 @@
 ---
-title: Мониторинг изменений данных в Azure SQL (Предварительная версия)
-description: Сведения об отслеживании изменений и системе отслеживания измененных данных в Azure SQL (Предварительная версия).
+title: Отслеживание изменений данных в Azure SQL ребро
+description: Сведения об отслеживании изменений и системе отслеживания измененных данных в Azure SQL Server.
 keywords: ''
 services: sql-edge
 ms.service: sql-edge
@@ -9,14 +9,14 @@ author: SQLSourabh
 ms.author: sourabha
 ms.reviewer: sstein
 ms.date: 05/19/2020
-ms.openlocfilehash: 6d0a081f2b0adb143a6b37a647a00014846f8fe2
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: f7d5d5f74a816bf745faf5decf761cd453f40123
+ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84669602"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90900067"
 ---
-# <a name="track-data-changes-in-azure-sql-edge-preview"></a>Мониторинг изменений данных в Azure SQL (Предварительная версия)
+# <a name="track-data-changes-in-azure-sql-edge"></a>Отслеживание изменений данных в Azure SQL ребро
 
 Azure SQL ребро поддерживает две функции SQL Server, которые отслеживают изменения в данных в базе данных: [Отслеживание изменений](https://docs.microsoft.com/sql/relational-databases/track-changes/track-data-changes-sql-server#Tracking) и [запись измененных данных](https://docs.microsoft.com/sql/relational-databases/track-changes/track-data-changes-sql-server#Capture). Эти функции позволяют приложениям определять изменения языка модификации данных (операции вставки, обновления и удаления), внесенные в пользовательские таблицы в базе данных. В одной базе данных можно включить функцию отслеживания измененных данных и отслеживание изменений. Никаких особых предосторожностей не требуется.
 
@@ -36,7 +36,7 @@ Azure SQL ребро поддерживает две функции SQL Server, 
 
 Сведения о том, как выполнять запросы и работать с измененными данными, см. в разделе [Работа с данными изменений](https://docs.microsoft.com/sql/relational-databases/track-changes/work-with-change-data-sql-server).
 
-## <a name="change-tracking"></a>Change tracking
+## <a name="change-tracking"></a>отслеживание изменений
 
 Сведения о том, как работает эта функция, см. в разделе [об отслеживании изменений](https://docs.microsoft.com/sql/relational-databases/track-changes/about-change-tracking-sql-server).
 
@@ -58,12 +58,12 @@ Azure SQL ребра также поддерживает функцию врем
 
 Дополнительные сведения см. в разделе [временные таблицы](https://docs.microsoft.com/sql/relational-databases/tables/temporal-tables).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
-- [Потоковая передача данных в Azure SQL (Предварительная версия)](stream-data.md)
-- [Машинное обучение и ИИ с применением ONNX в SQL для пограничных вычислений (предварительная версия)](onnx-overview.md)
-- [Настройка репликации в Azure SQL (Предварительная версия)](configure-replication.md)
-- [Резервное копирование и восстановление баз данных в Azure SQL ребро (Предварительная версия)](backup-restore.md)
+- [Потоковая передача данных в Azure SQL ребро ](stream-data.md)
+- [Машинное обучение и AI с ONNX в Azure SQL ребр ](onnx-overview.md)
+- [Настройка репликации на границе Azure SQL](configure-replication.md)
+- [Резервное копирование и восстановление баз данных в Azure SQL ребро](backup-restore.md)
 
 
 
