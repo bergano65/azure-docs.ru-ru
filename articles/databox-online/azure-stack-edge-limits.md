@@ -1,6 +1,6 @@
 ---
-title: Пределы Azure Stack границ | Документация Майкрософт
-description: Сведения об ограничениях и рекомендуемых размерах при развертывании и эксплуатации Azure Stack, включая ограничения службы, ограничения устройств и ограничения хранилища.
+title: Пределы Azure Stack границы Pro | Документация Майкрософт
+description: Сведения об ограничениях и рекомендуемых размерах при развертывании и эксплуатации Azure Stack пограничных Pro, включая ограничения службы, ограничения устройств и ограничения хранилища.
 services: databox
 author: alkohli
 ms.service: databox
@@ -8,24 +8,24 @@ ms.subservice: edge
 ms.topic: article
 ms.date: 08/28/2020
 ms.author: alkohli
-ms.openlocfilehash: e21f5a89d9f1f21eb99071a141794f99c07a8dfa
-ms.sourcegitcommit: 656c0c38cf550327a9ee10cc936029378bc7b5a2
+ms.openlocfilehash: 5f3c39ce7334145d3ffc1d54badb1f7b766da70f
+ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89079818"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90904454"
 ---
-# <a name="azure-stack-edge-limits"></a>Ограничения Azure Stack Edge
+# <a name="azure-stack-edge-pro-limits"></a>Ограничения Azure Stack Edge Pro
 
-Эти ограничения следует учитывать при развертывании и эксплуатации решения Microsoft Azure Stack пограничной Организации. 
+Эти ограничения следует учитывать при развертывании и эксплуатации решения Microsoft Azure Stack пограничной Pro. 
 
 ## <a name="azure-stack-edge-service-limits"></a>Ограничения службы Azure Stack ребра
 
 [!INCLUDE [data-box-edge-gateway-service-limits](../../includes/data-box-edge-gateway-service-limits.md)]
 
-## <a name="azure-stack-device-limits"></a>Ограничения для устройств Azure Stack
+## <a name="azure-stack-edge-device-limits"></a>Ограничения пограничных устройств Azure Stack
 
-В следующей таблице описаны ограничения для устройства Azure Stack пограничных устройств. 
+В следующей таблице описаны ограничения для устройства Pro Azure Stack. 
 
 | Описание | Значение |
 |---|---|
@@ -53,4 +53,4 @@ ms.locfileid: "89079818"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- [Подготовка к развертыванию Azure Stack пограничных устройств](azure-stack-edge-deploy-prep.md)
+- [Подготовка к развертыванию Azure Stack пограничных Pro](azure-stack-edge-deploy-prep.md)

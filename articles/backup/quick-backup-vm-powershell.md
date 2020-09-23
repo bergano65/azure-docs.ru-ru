@@ -5,12 +5,12 @@ ms.devlang: azurecli
 ms.topic: quickstart
 ms.date: 04/16/2019
 ms.custom: mvc, devx-track-azurepowershell
-ms.openlocfilehash: 4a97a084b11b34f97e0c020f367ec730d8dfb079
-ms.sourcegitcommit: 656c0c38cf550327a9ee10cc936029378bc7b5a2
+ms.openlocfilehash: 5e83c599ceed76927f2a313f78c83638d708f1bb
+ms.sourcegitcommit: bdd5c76457b0f0504f4f679a316b959dcfabf1ef
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89075738"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90985123"
 ---
 # <a name="back-up-a-virtual-machine-in-azure-with-powershell"></a>Резервное копирование виртуальной машины в Azure с помощью PowerShell
 
@@ -46,7 +46,7 @@ ms.locfileid: "89075738"
 
 - Укажите расположение и группу ресурсов виртуальной машины, для которой необходимо создать резервную копию.
 - Если вы создали виртуальную машину с помощью этого [примера скрипта](../virtual-machines/scripts/virtual-machines-windows-powershell-sample-create-vm.md?toc=%2fpowershell%2fmodule%2ftoc.json), группой ресурсов будет **myResourceGroup**, виртуальной машиной — **myVM**, а ресурсы будут находиться в регионе **Западная Европа**.
-- Azure Backup автоматически обрабатывает хранилище для резервных копий данных. По умолчанию используется [геоизбыточное хранилище (GRS)](../storage/common/storage-redundancy.md). Геоизбыточность гарантирует, что данные резервного копирования реплицируются во вторичный регион, который находится в сотнях километров от основного.
+- Azure Backup автоматически обрабатывает хранилище для резервных копий данных. По умолчанию используется [геоизбыточное хранилище (GRS)](../storage/common/storage-redundancy.md#geo-redundant-storage). Геоизбыточность гарантирует, что данные резервного копирования реплицируются во вторичный регион, который находится в сотнях километров от основного.
 
 Теперь создайте хранилище:
 

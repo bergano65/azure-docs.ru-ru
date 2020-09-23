@@ -1,7 +1,7 @@
 ---
-title: Руководство по развертыванию моделей машинного обучения с помощью конструктора (предварительная версия)
+title: Руководство по Развертывание моделей Машинного обучения с помощью конструктора
 titleSuffix: Azure Machine Learning
-description: Сведения о том, как создавать решения для прогнозной аналитики в конструкторе Машинного обучения Azure (предварительная версия). Обучение, оценка и развертывание модели машинного обучения с помощью модулей перетаскивания.
+description: Сведения о том, как создавать решения для прогнозной аналитики в конструкторе Машинного обучения Azure. Обучение, оценка и развертывание модели машинного обучения с помощью модулей перетаскивания.
 author: peterclu
 ms.author: peterlu
 services: machine-learning
@@ -10,15 +10,15 @@ ms.subservice: core
 ms.topic: tutorial
 ms.date: 06/28/2020
 ms.custom: designer
-ms.openlocfilehash: 453971d776a0953a344d147bca387a81f65ac73c
-ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
+ms.openlocfilehash: a4923e48c890a50d642d937f014e466e998171cf
+ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87288000"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90896628"
 ---
-# <a name="tutorial-deploy-a-machine-learning-model-with-the-designer-preview"></a>Руководство по развертыванию модели машинного обучения с помощью конструктора (предварительная версия)
-[!INCLUDE [applies-to-skus](../../includes/aml-applies-to-enterprise-sku.md)]
+# <a name="tutorial-deploy-a-machine-learning-model-with-the-designer"></a>Руководство по развертыванию модели машинного обучения с помощью конструктора
+
 
 Чтобы другие пользователи могли применить модель прогнозирования, которую вы создали по инструкциям из [первой части этого руководства](tutorial-designer-automobile-price-train-score.md), разверните модель. В первой части вы обучили модель. Теперь пора создать прогнозы на основе вводимых пользователем данных. В этой части руководства вы выполните следующее:
 

@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 07/02/2020
 ms.author: memildin
-ms.openlocfilehash: e5728b220f12c3305aa896e64010fc7e5828d6fb
-ms.sourcegitcommit: d8b8768d62672e9c287a04f2578383d0eb857950
+ms.openlocfilehash: ed73c4781b9fd9926e12910ca1eb2f71d2b99245
+ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/11/2020
-ms.locfileid: "88067228"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90904823"
 ---
 # <a name="permissions-in-azure-security-center"></a>Разрешения в центре безопасности Azure
 
@@ -44,7 +44,7 @@ ms.locfileid: "88067228"
 |:--- |:---:|:---:|:---:|:---:|:---:|
 |Изменение политики безопасности|-|✔|-|-|✔|
 |Добавление и назначение инициатив (включая) нормативные стандарты соответствия требованиям)|-|-|-|-|✔|
-|Изменить ценовую категорию подписки|-|✔|-|-|✔|
+|Включение и отключение защитника Azure|-|✔|-|-|✔|
 |Включить или отключить автоматическую подготовку|-|✔|-|✔|✔|
 |Применение рекомендаций по безопасности к ресурсу</br> (и используйте [Быстрое исправление!](security-center-remediate-recommendations.md#quick-fix-remediation))|-|-|✔|✔|✔|
 |Отклонить оповещения|-|✔|-|✔|✔|

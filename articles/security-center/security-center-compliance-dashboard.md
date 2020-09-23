@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 11/12/2019
 ms.author: memildin
-ms.openlocfilehash: a636acab42d14925f507568e8a9fff4693c8f71c
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.openlocfilehash: 7f235f9255df49c096e224e1754ad2bbdf664423
+ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86519649"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90895811"
 ---
 # <a name="tutorial-improve-your-regulatory-compliance"></a>Руководство по Обеспечение соответствия нормативным требованиям на высоком уровне
 ---
@@ -35,8 +35,7 @@ ms.locfileid: "86519649"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Для выполнения инструкций из этого руководства требуется Центр безопасности ценовой категории "Стандартный". Вы можете бесплатно опробовать центр безопасности ценовой категории "Стандартный".
-Дополнительные сведения см. на [странице с ценами](https://azure.microsoft.com/pricing/details/security-center/). Следуйте инструкциям в [кратком руководстве по центру безопасности Azure](https://docs.microsoft.com/azure/security-center/security-center-get-started), чтобы обновить ценовую категорию до уровня "Стандартный".
+Для выполнения инструкций из этого руководства необходимо включить [Azure Defender](azure-defender.md). Вы можете поработать с Azure Defender бесплатно в течение 30 дней.
 
 ##  <a name="assess-your-regulatory-compliance"></a>Доступ к соответствию нормативным требованиям
 
@@ -72,13 +71,13 @@ ms.locfileid: "86519649"
 
 1.  Вы можете выбрать определенный ресурс для просмотра дополнительных сведений и выполнить рекомендацию для него. <br>Например, на вкладке **Azure CIS standard** (Стандарт Azure CIS) вы можете щелкнуть рекомендацию **Обязательная безопасная передача в учетную запись хранения**.
 
-    ![рекомендация соответствия](./media/security-center-compliance-dashboard/compliance-recommendation.png)
+    ![Выбор рекомендации **Обязательная безопасная передача данных в учетную запись хранения**](./media/security-center-compliance-dashboard/compliance-recommendation.png)
 
 1. После того как вы просмотрите сведения о рекомендации и выберите неработоспособный ресурс, вы перейдете непосредственно к интерфейсу включения **безопасного перемещения хранилища** на портале Azure.
 
     Дополнительные сведения о том, как применить рекомендации, см. в разделе [Внедрение рекомендаций по безопасности в центре безопасности Azure](security-center-recommendations.md).
 
-    ![рекомендация соответствия](./media/security-center-compliance-dashboard/compliance-remediate-recommendation.png)
+    ![Конфигурация учетной записи хранения Azure](./media/security-center-compliance-dashboard/compliance-remediate-recommendation.png)
 
 1.  Предприняв действие для выполнения рекомендаций, вы увидите результат в отчете на панели мониторинга соответствия, так как оценка соответствия улучшится.
 

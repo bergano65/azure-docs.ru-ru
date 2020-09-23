@@ -9,18 +9,18 @@ ms.service: azure-sentinel
 ms.subservice: azure-sentinel
 ms.topic: quickstart
 ms.date: 04/27/2020
-ms.openlocfilehash: 3efd0303b447242c0229bc71720e55c8aa3a2f2d
-ms.sourcegitcommit: 37afde27ac137ab2e675b2b0492559287822fded
+ms.openlocfilehash: e9d7c99a123bd92bf55a33c8d1faaf7da55d3e36
+ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88566256"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90889033"
 ---
 # <a name="quickstart-on-board-azure-sentinel"></a>Краткое руководство. Подключение к Azure Sentinel
 
 В этом кратком руководстве приведены сведения о том, как подключиться к Azure Sentinel. 
 
-Чтобы подключиться к Azure Sentinel, сначала необходимо включить это решение, а затем подключиться к источникам данных. Azure Sentinel поставляется с несколькими соединителями для решений Майкрософт, включая Microsoft Threat Protection, источники Microsoft 365, Office 365, Azure AD, Azure ATP, Microsoft Cloud App Security и др. Эти соединители доступны по умолчанию и обеспечивают интеграцию в режиме реального времени. Кроме того, доступны встроенные соединители для более широкой экосистемы безопасности для решений сторонних разработчиков. Чтобы подключить источники данных к Azure Sentinel, вы можете использовать Common Event Format (CEF), Syslog или REST API.  
+Чтобы подключиться к Azure Sentinel, сначала необходимо включить это решение, а затем подключиться к источникам данных. Azure Sentinel поставляется с несколькими соединителями для решений Майкрософт, которые доступны по умолчанию и обеспечивают интеграцию в режиме реального времени, включая решения Microsoft 365 Defender (ранее Microsoft Threat Protection), источники Microsoft 365 (в том числе Office 365), Azure AD, Microsoft Defender для удостоверений (ранее Azure ATP), Microsoft Cloud App Security, оповещения Azure Defender из Центра безопасности Azure и многое другое. Кроме того, доступны встроенные соединители для более широкой экосистемы безопасности для решений сторонних разработчиков. Чтобы подключить источники данных к Azure Sentinel, вы можете использовать Common Event Format (CEF), Syslog или REST API. 
 
 После подключения источников вы можете выбрать из коллекции созданные экспертами книги, которые позволяют просматривать аналитические сведения на основе имеющихся данных. Эти книги можно легко настроить в соответствии со своими потребностями.
 
@@ -45,13 +45,13 @@ ms.locfileid: "88566256"
 
 1. Найдите и выберите **Azure Sentinel**.
 
-   ![поиск](./media/quickstart-onboard/search-product.png)
+   ![Поиск служб](./media/quickstart-onboard/search-product.png)
 
 1. Выберите **Добавить**.
 
 1. Выберите имеющуюся рабочую область или создайте другую. Запускать Azure Sentinel можно в нескольких рабочих областях, но данные можно использовать в одной.
 
-   ![поиск](./media/quickstart-onboard/choose-workspace.png)
+   ![Выбор рабочей области](./media/quickstart-onboard/choose-workspace.png)
 
    >[!NOTE] 
    > - Рабочие области по умолчанию, созданные Центром безопасности Azure, не будут отображаться в списке. Установить Azure Sentinel в них нельзя.
@@ -64,7 +64,6 @@ ms.locfileid: "88566256"
    >   Если рабочая область уже перемещена, отключите все активные правила в разделе **Аналитика** и включите их повторно через пять минут. Хотя в большинстве случаев это позволит получить нужный результат, но помните, что такая возможность не поддерживается и может создать риски.
 
 1. Щелкните **Добавить Azure Sentinel**.
-  
 
 ## <a name="connect-data-sources"></a>Подключение источников данных
 

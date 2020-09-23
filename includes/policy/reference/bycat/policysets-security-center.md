@@ -2,17 +2,17 @@
 author: DCtheGeek
 ms.service: azure-policy
 ms.topic: include
-ms.date: 09/10/2020
+ms.date: 09/16/2020
 ms.author: dacoulte
 ms.custom: generated
-ms.openlocfilehash: 41013b6a034291140f3ff5fcf73db7c8c86e326e
-ms.sourcegitcommit: 43558caf1f3917f0c535ae0bf7ce7fe4723391f9
+ms.openlocfilehash: 6d7e7ecc3ee1b1a1848c479775736bcd4d6e9f61
+ms.sourcegitcommit: bdd5c76457b0f0504f4f679a316b959dcfabf1ef
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/11/2020
-ms.locfileid: "90022320"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90984493"
 ---
 |Имя |Описание |Политики |Версия |
 |---|---|---|---|
 |[\[Предварительная версия\]. включить Data Protection Suite](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policySetDefinitions/Security%20Center/ASC_DataProtection.json) |Включение защиты данных для серверов SQL Server. Эта инициатива автоматически назначается при использовании уровня "Стандартный" Центра безопасности Azure. |1 |1.0.0 (предварительная версия) |
-|[Включение мониторинга в Центре безопасности Azure](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policySetDefinitions/Security%20Center/AzureSecurityCenter.json) |Мониторинг всех доступных рекомендаций по безопасности в Центре безопасности Azure. Это политика по умолчанию для Центра безопасности Azure. |118 |13.0.1 |
+|[Включение мониторинга в Центре безопасности Azure](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policySetDefinitions/Security%20Center/AzureSecurityCenter.json) |Мониторинг всех доступных рекомендаций по безопасности в Центре безопасности Azure. Это политика по умолчанию для Центра безопасности Azure. |122 |15.0.0 |

@@ -7,14 +7,17 @@ ms.service: spring-cloud
 ms.topic: how-to
 ms.date: 05/29/2020
 ms.custom: devx-track-java
-ms.openlocfilehash: d8f3b4d57f00ef33bbf566c36babafd83be9a5df
-ms.sourcegitcommit: 58d3b3314df4ba3cabd4d4a6016b22fa5264f05a
+ms.openlocfilehash: 9d572545f589475dc2b460db90329fe8b0a838c2
+ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89299632"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90904306"
 ---
 # <a name="how-to-self-diagnose-and-solve-problems-in-azure-spring-cloud"></a>Самостоятельное устранение неполадок и решение проблем в Azure Веснного облака
+
+**Эта статья относится к:** ✔️ Java ✔️ C #
+
 Служба диагностики Azure весны в облаке — это интерактивный интерфейс, помогающий устранять неполадки в приложении. Настройка не требуется. При обнаружении проблем в облачной диагностике Azure можно обнаружить ошибки и ознакомиться с информацией, помогающей устранить проблему и устранить ее.
 
 ## <a name="prerequisites"></a>Предварительные требования

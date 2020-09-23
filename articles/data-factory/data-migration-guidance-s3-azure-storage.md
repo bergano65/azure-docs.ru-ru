@@ -11,12 +11,12 @@ ms.workload: data-services
 ms.topic: conceptual
 ms.custom: seo-lt-2019
 ms.date: 8/04/2019
-ms.openlocfilehash: 3f40ad7346219b48a38ade38b2a75ddf71940875
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 5de1ef97050f37bb44d87ebae1d95df365952ace
+ms.sourcegitcommit: bdd5c76457b0f0504f4f679a316b959dcfabf1ef
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "81416419"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90984885"
 ---
 # <a name="use-azure-data-factory-to-migrate-data-from-amazon-s3-to-azure-storage"></a>Миграция данных из Amazon S3 в службу хранилища Azure с помощью Фабрики данных Azure 
 
@@ -37,7 +37,7 @@ ms.locfileid: "81416419"
 
 Клиенты успешно выполнили перенос сотен миллионов файлов, общий объем которых измеряется петабайтами, из Amazon S3 в Хранилище BLOB-объектов Azure со стабильной пропускной способностью 2 Гбит/с и выше. 
 
-![производительность](media/data-migration-guidance-s3-to-azure-storage/performance.png)
+![На схеме показано несколько файловых секций в хранилище S3 W S с соответствующими действиями копирования в хранилище BLOB-объектов Azure A D L S Gen2.](media/data-migration-guidance-s3-to-azure-storage/performance.png)
 
 На рисунке выше показано, как можно обеспечить высокую скорость перемещения данных с помощью различных уровней параллелизма.
  
@@ -61,7 +61,7 @@ ms.locfileid: "81416419"
 
 Перенос данных через общедоступный Интернет:
 
-![solution-architecture-public-network](media/data-migration-guidance-s3-to-azure-storage/solution-architecture-public-network.png)
+![На схеме показана миграция через Интернет с помощью H T T P из магазина S3 с с использованием Azure Integration Runtime в D F в службе хранилища Azure. Среда выполнения имеет канал управления с фабрикой данных.](media/data-migration-guidance-s3-to-azure-storage/solution-architecture-public-network.png)
 
 - В этой архитектуре данные безопасно передаются по протоколу HTTPS через общедоступный Интернет. 
 - Как исходная служба Amazon S3, так и целевое Хранилище BLOB-объектов Azure или Azure Data Lake Storage 2-го поколения настроены так, чтобы трафик был разрешен со всех сетевых IP-адресов.  Если вам нужно ограничить сетевой доступ определенным диапазоном IP-адресов, см. вторую архитектуру ниже. 
@@ -70,7 +70,7 @@ ms.locfileid: "81416419"
 
 Перенос данных через частный канал: 
 
-![solution-architecture-private-network](media/data-migration-guidance-s3-to-azure-storage/solution-architecture-private-network.png)
+![На схеме показан перенос через подключение частного пиринга из магазина W S S3 с помощью локальной среды выполнения интеграции на виртуальных машинах Azure в конечные точки сетевой службы в службе хранилища Azure. Среда выполнения имеет канал управления с фабрикой данных.](media/data-migration-guidance-s3-to-azure-storage/solution-architecture-private-network.png)
 
 - В этой архитектуре перенос данных осуществляется через канал частного пиринга между AWS Direct Connect и Azure Express Route, так что данные никогда не передаются через общедоступный Интернет.  Для этого требуется использовать AWS VPC и виртуальную сеть Azure. 
 - Для реализации этой архитектуры необходимо установить локальную среду выполнения интеграции Фабрики данных Azure на виртуальной машине Windows в виртуальной сети Azure.  Вы можете вручную масштабировать виртуальные машины локальной среды выполнения интеграции по вертикали или масштабировать среду до нескольких виртуальных машин (до 4 узлов), чтобы полностью использовать возможности ввода-вывода и пропускную способность сети и хранилища. 
@@ -122,7 +122,7 @@ ms.locfileid: "81416419"
 
 Рассмотрим следующий конвейер, созданный для переноса данных из S3 в Хранилище BLOB-объектов Azure: 
 
-![pricing-pipeline](media/data-migration-guidance-s3-to-azure-storage/pricing-pipeline.png)
+![На схеме показан конвейер для переноса данных с перетеканием вручную триггеров для уточняющего запроса, передаваемым в ForEach, передаваемым в подконвейер для каждой секции, содержащей копирование в хранимую процедуру. За пределами конвейера хранимая процедура передается в Azure SQL D B, который передается в подстановку, а также в потоки S3 (W S), которые поступают в хранилище BLOB-объектов.](media/data-migration-guidance-s3-to-azure-storage/pricing-pipeline.png)
 
 Предположим следующее. 
 
@@ -135,7 +135,7 @@ ms.locfileid: "81416419"
 
 Ниже приведена оценочная цена на основе указанных выше допущений: 
 
-![pricing-table](media/data-migration-guidance-s3-to-azure-storage/pricing-table.png)
+![Снимок экрана таблицы показывает оценочную цену.](media/data-migration-guidance-s3-to-azure-storage/pricing-table.png)
 
 ### <a name="additional-references"></a>Дополнительные ссылки 
 - [Соединитель Amazon Simple Storage Service](https://docs.microsoft.com/azure/data-factory/connector-amazon-simple-storage-service)

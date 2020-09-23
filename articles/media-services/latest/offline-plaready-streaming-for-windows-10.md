@@ -1,6 +1,6 @@
 ---
 title: Настройка автономной потоковой передачи PlayReady с помощью служб мультимедиа Azure v3
-description: В этой статье показано, как настроить учетную запись Служб мультимедиа Azure для автономной потоковой передачи содержимого с технологией PlayReady для Windows 10.
+description: В этой статье показано, как настроить учетную запись служб мультимедиа Azure версии 3 для потоковой передачи PlayReady для Windows 10 в автономном режиме.
 services: media-services
 keywords: DASH, DRM, режим автономной работы Widevine, ExoPlayer, Android
 documentationcenter: ''
@@ -15,12 +15,12 @@ ms.topic: article
 ms.date: 08/31/2020
 ms.author: willzhan
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 9e0c4daeae9884bdb5feaceccc23046866f0d59c
-ms.sourcegitcommit: bcda98171d6e81795e723e525f81e6235f044e52
+ms.openlocfilehash: 19c930915de20d7f3a8938570e074458b32a8efb
+ms.sourcegitcommit: bdd5c76457b0f0504f4f679a316b959dcfabf1ef
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/01/2020
-ms.locfileid: "89266686"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90975684"
 ---
 # <a name="offline-playready-streaming-for-windows-10-with-media-services-v3"></a>Автономная потоковая передача PlayReady для Windows 10 с помощью служб мультимедиа v3
 
