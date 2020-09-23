@@ -6,12 +6,12 @@ ms.author: manishku
 ms.service: postgresql
 ms.topic: how-to
 ms.date: 06/30/2020
-ms.openlocfilehash: 6612fe38adcd3c8002dd4a11122b5bb2e797a4dd
-ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
+ms.openlocfilehash: 362c051cf1dd7e97430bd6afaf4821a9c960b71d
+ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86102180"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90901545"
 ---
 # <a name="infrastructure-double-encryption-for-azure-database-for-postgresql"></a>Двойное шифрование инфраструктуры для базы данных Azure для PostgreSQL
 
@@ -27,21 +27,21 @@ ms.locfileid: "86102180"
 
 1. Выберите **Создать ресурс** (+) в левом верхнем углу страницы портала.
 
-2. Выберите **databases**  >  **база данных Azure для PostgreSQL**. Можно также ввести PostgreSQL в поле поиска, чтобы найти службу. Включен параметр развертывания с **одиночным сервером** .
+2. Выберите **Базы данных** > **База данных Azure для PostgreSQL**. Можно также ввести PostgreSQL в поле поиска, чтобы найти службу. Включен параметр развертывания с **одиночным сервером** .
 
-   ![Служба "База данных Azure для PostgreSQL" в меню](./media/quickstart-create-database-portal/1-create-database.png)
+   :::image type="content" source="./media/quickstart-create-database-portal/1-create-database.png" alt-text="База данных Azure для PostgreSQL в меню":::
 
 3. Укажите основные сведения о сервере. Выберите **Дополнительные параметры** и включите флажок **двойное шифрование инфраструктуры** , чтобы задать параметр.
 
-    ![Параметры базы данных Azure для PostgreSQL](./media/howto-infrastructure-double-encryption/infrastructure-encryption-selected.png)
+    :::image type="content" source="./media/howto-infrastructure-double-encryption/infrastructure-encryption-selected.png" alt-text="Параметры базы данных Azure для PostgreSQL":::
 
-4. Выберите **Проверка + создать** , чтобы подготавливает сервер.
+4. Щелкните **Просмотр и создание**, чтобы подготовить сервер.
 
-    ![Сводка по базе данных Azure для PostgreSQL](./media/howto-infrastructure-double-encryption/infrastructure-encryption-summary.png)
+    :::image type="content" source="./media/howto-infrastructure-double-encryption/infrastructure-encryption-summary.png" alt-text="Сводка по базе данных Azure для PostgreSQL":::
 
 5. После создания сервера можно проверить двойное шифрование инфраструктуры, проверив состояние в колонке "сервер **шифрования данных** ".
 
-    ![Проверка базы данных Azure для MySQL](./media/howto-infrastructure-double-encryption/infrastructure-encryption-validation.png)
+    :::image type="content" source="./media/howto-infrastructure-double-encryption/infrastructure-encryption-validation.png" alt-text="Проверка базы данных Azure для MySQL":::
 
 ## <a name="create-an-azure-database-for-postgresql-server-with-infrastructure-double-encryption---cli"></a>Создание базы данных Azure для сервера PostgreSQL с помощью двойного шифрования инфраструктуры — CLI
 

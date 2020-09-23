@@ -7,12 +7,12 @@ ms.reviewer: mamccrea
 ms.service: stream-analytics
 ms.topic: conceptual
 ms.date: 08/25/2020
-ms.openlocfilehash: 0fc4e9a794429e7f1c1609fac287e67dabb3c878
-ms.sourcegitcommit: 927dd0e3d44d48b413b446384214f4661f33db04
+ms.openlocfilehash: d398cfe063dbbb2bc87a3debf1669afa6a16b43e
+ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88875947"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90891998"
 ---
 # <a name="power-bi-output-from-azure-stream-analytics"></a>Power BI выходные данные Azure Stream Analytics
 
@@ -20,7 +20,7 @@ ms.locfileid: "88875947"
 
 Выходные данные Power BI из Stream Analytics в настоящее время недоступны в регионах Azure для Китая (21Vianet) и Azure для Германии (T-Systems International).
 
-## <a name="ouput-configuration"></a>Конфигурация выходные данные
+## <a name="output-configuration"></a>Конфигурация выходных данных
 
 В таблице ниже перечислены имена свойств и их описания для настройки выходных данных Power BI.
 
@@ -82,4 +82,4 @@ Datetime | Строка | Строка |  Datetime | Строка
 * [Краткое руководство. Создание задания Azure Stream Analytics с помощью шаблона ARM](quick-create-azure-resource-manager.md)
 * [Краткое руководство. Создание задания Stream Analytics с помощью Azure PowerShell](stream-analytics-quick-create-powershell.md)
 * [Краткое руководство. Создание задания Azure Stream Analytics с помощью Visual Studio](stream-analytics-quick-create-vs.md)
-* [Краткое руководство. Создание задания Azure Stream Analytics в Visual Studio Code](quick-create-vs-code.md)
+* [Краткое руководство. Создание задания Azure Stream Analytics в Visual Studio Code](quick-create-visual-studio-code.md)

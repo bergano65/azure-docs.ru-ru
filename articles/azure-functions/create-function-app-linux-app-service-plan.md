@@ -1,14 +1,14 @@
 ---
 title: Создание приложения-функции на платформе Linux с помощью портала Azure
-description: Узнайте, как создать первую функцию Azure, выполняемую без сервера, с помощью портала Azure.
+description: Узнайте, как создать свою первую функцию Azure в Linux с помощью портал Azure.
 ms.topic: how-to
 ms.date: 04/29/2020
-ms.openlocfilehash: 5aae60900a61c28f6c53f89b8e273daccb047eef
-ms.sourcegitcommit: bb0afd0df5563cc53f76a642fd8fc709e366568b
+ms.openlocfilehash: 53edee15d9c9dfa66e57bb1eb03b1d8f66aa1ee2
+ms.sourcegitcommit: bdd5c76457b0f0504f4f679a316b959dcfabf1ef
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83116207"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90970732"
 ---
 # <a name="create-a-function-app-on-linux-in-an-azure-app-service-plan"></a>Создание приложения-функции на платформе Linux в плане службы приложений Azure
 
@@ -44,7 +44,7 @@ ms.locfileid: "83116207"
     |**Версия**| номер версии; | Выберите версию установленной среды выполнения.  |
     |**Регион**| Предпочтительный регион | Выберите ближайший [регион](https://azure.microsoft.com/regions/) или регион рядом с другими службами, к которому получают доступ ваши функции. |
 
-    :::image type="content" source="./media/create-function-app-linux-app-service-plan/function-app-create-basics-linux.png" alt-text="Страница Основные":::
+    :::image type="content" source="./media/create-function-app-linux-app-service-plan/function-app-create-basics-linux.png" alt-text="Страница "Основные"":::
 
 1. Выберите **Далее: Размещение**. Введите следующие параметры на странице **Размещение**.
 
@@ -62,7 +62,7 @@ ms.locfileid: "83116207"
     | ------------ | ---------------- | ----------- |
     | **[Application Insights](../azure-functions/functions-monitoring.md)** | **Да** (по умолчанию) | Создает ресурс Application Insights с таким же *именем приложения* в ближайшем поддерживаемом регионе. Развернув этот параметр или выбрав **Создать новый**, можно изменить имя Application Insights или выбрать другое расположение в [географическом регионе Azure](https://azure.microsoft.com/global-infrastructure/geographies/), где будут хранится данные. |
 
-   :::image type="content" source="./media/create-function-app-linux-app-service-plan/function-app-create-monitoring-linux.png" alt-text="Страница Мониторинг":::
+   :::image type="content" source="./media/create-function-app-linux-app-service-plan/function-app-create-monitoring-linux.png" alt-text="Страница "Мониторинг"":::
 
 1. Выберите **Просмотр и создание** , чтобы просмотреть выбранные параметры конфигурации приложения.
 

@@ -4,15 +4,15 @@ description: Базовый уровень безопасности Azure для
 author: msmbaldwin
 ms.service: security
 ms.topic: conceptual
-ms.date: 04/09/2020
+ms.date: 09/21/2020
 ms.author: mbaldwin
 ms.custom: subject-security-benchmark
-ms.openlocfilehash: 846d66a1cf1bb1d97f7ab9d7dfd7bbcf43d3f8d6
-ms.sourcegitcommit: d68c72e120bdd610bb6304dad503d3ea89a1f0f7
+ms.openlocfilehash: ce297b436ce79a4a0a14d0f6e9ad900de61a8dc9
+ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/01/2020
-ms.locfileid: "89231033"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90885210"
 ---
 # <a name="azure-security-baseline-for-azure-sql-database--sql-managed-instance"></a>Базовый план безопасности Azure для базы данных SQL Azure & SQL Управляемый экземпляр
 [!INCLUDE[appliesto-sqldb-sqlmi](../includes/appliesto-sqldb-sqlmi.md)]
@@ -285,15 +285,15 @@ https://docs.microsoft.com/azure/sql-database/sql-database-insights-alerts-porta
 
 ### <a name="27-enable-alerts-for-anomalous-activity"></a>2.7. Включение оповещений об аномальных действиях
 
-**Руководство**. Использование расширенной защиты от угроз Azure Security Center для базы данных SQL Azure для мониторинга и оповещения о аномальных действиях. Включите расширенную защиту данных для баз данных SQL. Расширенная защита данных включает в себя функции для обнаружения и классификации конфиденциальных данных, отображая и устранения потенциальных уязвимостей баз данных, а также обнаружения аномальных действий, которые могут указывать на угрозу для базы данных.
+**Руководство**. Использование расширенной защиты от угроз Azure Security Center для базы данных SQL Azure для мониторинга и оповещения о аномальных действиях. Включите защитник Azure для SQL для баз данных SQL. Защитник Azure для SQL включает в себя функции для отображая и устранения потенциальных уязвимостей баз данных, а также обнаружения аномальных действий, которые могут указывать на угрозу для базы данных.
 
 Общие сведения о расширенной защите от угроз и предупреждениях для базы данных SQL Azure:
 
 https://docs.microsoft.com/azure/sql-database/sql-database-threat-detection-overview
 
-Как включить расширенную защиту данных для базы данных SQL Azure:
+Как включить защитник Azure для SQL для базы данных SQL Azure:
 
-https://docs.microsoft.com/azure/sql-database/sql-database-advanced-data-security
+https://docs.microsoft.com/azure/azure-sql/database/azure-defender-for-sql
 
 Управление оповещениями в центре безопасности Azure:
 
@@ -333,7 +333,7 @@ https://docs.microsoft.com/azure/security-center/security-center-managing-and-re
 
 ### <a name="31-maintain-an-inventory-of-administrative-accounts"></a>3.1. Инвентаризация учетных записей администраторов
 
-**Руководство**. Azure Active Directory (AAD) имеет встроенные роли, которые должны быть явно назначены и доступны для запросов. Используйте модуль AAD PowerShell для выполнения специальных запросов для обнаружения учетных записей, входящих в группы администраторов.
+**Руководство**. Azure Active Directory (Azure AD) содержит встроенные роли, которые должны быть явно назначены и доступны для запросов. Используйте модуль Azure AD PowerShell для выполнения специальных запросов для обнаружения учетных записей, входящих в группы администраторов.
 
 Как получить роль каталога в Azure AD с помощью PowerShell:
 
@@ -381,7 +381,7 @@ https://docs.microsoft.com/azure/security-center/security-center-identity-access
 
 ### <a name="35-use-multi-factor-authentication-for-all-azure-active-directory-based-access"></a>3.5. Использование многофакторной проверки подлинности для любого доступа на основе Azure Active Directory
 
-**Руководство**. Включение многофакторной идентификации (MFA) Azure Active Directory (AAD) и следование рекомендациям по управлению удостоверениями и доступом в центре безопасности Azure.
+**Руководство**. Включение многофакторной идентификации (MFA) для Azure Active Directory (Azure AD) и следование рекомендациям по управлению удостоверениями и доступом в центре безопасности Azure.
 
 Как включить MFA в Azure:
 
@@ -445,13 +445,13 @@ https://docs.microsoft.com/azure/sql-database/sql-database-threat-detection-over
 
 ### <a name="39-use-azure-active-directory"></a>3.9. Использование Azure Active Directory
 
-**Руководство**. создание администратора Azure Active Directory (AAD) для сервера.
+**Руководство**. создание администратора Azure Active Directory (Azure AD) для сервера.
 
 Как настроить проверку подлинности Azure Active Directory и управлять ею с помощью Azure SQL:
 
 https://docs.microsoft.com/azure/azure-sql/database/authentication-aad-configure
 
-Создание и настройка экземпляра AAD:
+Как создать и настроить экземпляр Azure AD:
 
 https://docs.microsoft.com/azure/active-directory-domain-services/tutorial-create-instance
 
@@ -461,7 +461,7 @@ https://docs.microsoft.com/azure/active-directory-domain-services/tutorial-creat
 
 ### <a name="310-regularly-review-and-reconcile-user-access"></a>3.10. Регулярная проверка и согласование доступа пользователей
 
-**Руководство**. Azure Active Directory (AAD) предоставляет журналы для облегчения поиска устаревших учетных записей. Кроме того, используйте проверку доступа удостоверений Azure, чтобы эффективно управлять членством в группах, доступом к корпоративным приложениям и назначениями ролей. Доступ пользователей можно регулярно проверять, чтобы убедиться, что доступ к ним имеют только нужные пользователи.
+**Руководство**. Azure Active Directory (Azure AD) предоставляет журналы для облегчения поиска устаревших учетных записей. Кроме того, используйте проверку доступа удостоверений Azure, чтобы эффективно управлять членством в группах, доступом к корпоративным приложениям и назначениями ролей. Доступ пользователей можно регулярно проверять, чтобы убедиться, что доступ к ним имеют только нужные пользователи.
 
 Использование проверок доступа для идентификации Azure:
 
@@ -473,7 +473,7 @@ https://docs.microsoft.com/azure/active-directory/governance/access-reviews-over
 
 ### <a name="311-monitor-attempts-to-access-deactivated-accounts"></a>3.11. Отслеживание попыток доступа к отключенным учетным записям
 
-**Руководство**. Настройка проверки подлинности Azure Active Directory (AAD) с помощью Azure SQL и создание параметров диагностики для Azure Active Directory учетных записей пользователей, отправка журналов аудита и журналов входа в рабочую область log Analytics. Настройте нужные оповещения в Log Analytics рабочей области.
+**Руководство**. Настройка проверки подлинности Azure Active Directory (Azure AD) с помощью Azure SQL и создание параметров диагностики для Azure Active Directory учетных записей пользователей, отправка журналов аудита и журналов входа в рабочую область log Analytics. Настройте нужные оповещения в Log Analytics рабочей области.
 
 Как настроить проверку подлинности Azure Active Directory и управлять ею с помощью Azure SQL:
 
@@ -489,7 +489,7 @@ https://docs.microsoft.com/azure/active-directory/reports-monitoring/howto-integ
 
 ### <a name="312-alert-on-account-login-behavior-deviation"></a>3.12. Предупреждение при подозрительном входе в учетную запись
 
-**Руководство**. Использование Azure Active Directory (AAD) для защиты идентификации и обнаружения рисков для настройки автоматических ответов на обнаруженные подозрительные действия, связанные с удостоверениями пользователей. Кроме того, вы можете принимать данные в метку Azure для дальнейшего изучения.
+**Руководство**. Использование Azure Active Directory (Azure AD) для защиты идентификации и выявления рисков для настройки автоматических ответов на обнаруженные подозрительные действия, связанные с удостоверениями пользователей. Кроме того, вы можете принимать данные в метку Azure для дальнейшего изучения.
 
 Как просмотреть события входа в систему с рисками Azure AD:
 
@@ -599,7 +599,7 @@ https://docs.microsoft.com/azure/sql-database/sql-database-data-discovery-and-cl
 
 ### <a name="46-use-azure-rbac-to-control-access-to-resources"></a>4.6. Контроль доступа к ресурсам с помощью RBAC
 
-**Руководство**. Использование Azure Active Directory (AAD) для проверки подлинности и управления доступом к экземплярам базы данных SQL Azure.
+**Руководство**. Использование Azure Active Directory (Azure AD) для проверки подлинности и управления доступом к экземплярам базы данных SQL Azure.
 
 Как интегрировать базу данных SQL Azure с Azure Active Directory для проверки подлинности:
 
@@ -655,15 +655,15 @@ https://docs.microsoft.com/azure/azure-monitor/platform/alerts-activity-log
 
 ### <a name="51-run-automated-vulnerability-scanning-tools"></a>5.1. Выполнение автоматизированных средства анализа уязвимостей
 
-**Рекомендации**. включите расширенную защиту данных для базы данных SQL Azure и следуйте рекомендациям центра безопасности Azure по выполнению оценки уязвимостей на серверах.
+**Руководство**. Включение защитника Azure для SQL для базы данных SQL Azure и соблюдение рекомендаций центра безопасности Azure по выполнению оценки уязвимостей на серверах.
 
 Как запустить оценку уязвимостей в базе данных SQL Azure:
 
 https://docs.microsoft.com/azure/sql-database/sql-vulnerability-assessment
 
-Включение расширенной защиты данных.
+Как включить защитник Azure для SQL:
 
-https://docs.microsoft.com/azure/sql-database/sql-database-advanced-data-security
+https://docs.microsoft.com/azure/azure-sql/database/azure-defender-for-sql
 
 Как реализовать рекомендации по оценке уязвимостей центра безопасности Azure:
 
@@ -993,7 +993,7 @@ https://docs.microsoft.com/azure/sql-database/sql-database-always-encrypted-azur
 
 ### <a name="712-manage-identities-securely-and-automatically"></a>7.12. Безопасное и автоматическое управление удостоверениями
 
-**Руководство**. Использование управляемых удостоверений для предоставления служб Azure с автоматически управляемым удостоверением в Azure Active Directory (AAD). Управляемые удостоверения позволяют проходить проверку подлинности в любой службе, поддерживающей проверку подлинности AAD, включая Azure Key Vault без каких бы то ни было учетных данных в коде.
+**Руководство**. Использование управляемых удостоверений для предоставления служб Azure с автоматически управляемым удостоверением в Azure Active Directory (Azure AD). Управляемые удостоверения позволяют проходить проверку подлинности в любой службе, поддерживающей проверку подлинности Azure AD, включая Azure Key Vault без каких бы то ни было учетных данных в коде.
 
 Учебник. использование управляемого удостоверения, назначенного системой виртуальной машины Windows, для доступа к Azure SQL:
 

@@ -8,12 +8,12 @@ ms.custom: mvc
 ms.devlang: go
 ms.topic: quickstart
 ms.date: 5/6/2019
-ms.openlocfilehash: e8a44de5b6da4c9a125b5c035d0344115930cfe2
-ms.sourcegitcommit: faeabfc2fffc33be7de6e1e93271ae214099517f
+ms.openlocfilehash: 21ae18b239eaa5f9e894d76bc143161b2d536638
+ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/13/2020
-ms.locfileid: "88182907"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90902021"
 ---
 # <a name="quickstart-use-go-language-to-connect-and-query-data-in-azure-database-for-postgresql---single-server"></a>Краткое руководство. Подключение к службе "База данных Azure для PostgreSQL — отдельный сервер" и выполнение запроса данных с помощью Go
 
@@ -83,7 +83,7 @@ ms.locfileid: "88182907"
 2. В меню слева на портале Azure щелкните **Все ресурсы** и выполните поиск по имени созданного сервера (например, **mydemoserver**).
 3. Щелкните имя сервера.
 4. Запишите **имя сервера** и **имя для входа администратора сервера** с панели сервера **Обзор**. Если вы забыли свой пароль, можно также сбросить пароль с помощью этой панели.
- ![Имя сервера службы "База данных Azure для PostgreSQL"](./media/connect-go/1-connection-string.png)
+ :::image type="content" source="./media/connect-go/1-connection-string.png" alt-text="Имя сервера службы "База данных Azure для PostgreSQL"":::
 
 ## <a name="build-and-run-go-code"></a>Сборка и выполнение кода Go 
 1. Для написания кода на Golang можно использовать обычный текстовый редактор, например Блокнот в Microsoft Windows, [vi](https://manpages.ubuntu.com/manpages/xenial/man1/nvi.1.html#contenttoc5) или [Nano](https://www.nano-editor.org/) в Ubuntu, а также TextEdit в macOS. Если вы предпочитаете использовать полнофункциональную интегрированную среду разработки, попробуйте [GoLand](https://www.jetbrains.com/go/) от JetBrains, [Visual Studio Code](https://code.visualstudio.com/) от корпорации Майкрософт или [Atom](https://atom.io/).

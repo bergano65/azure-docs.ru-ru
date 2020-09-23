@@ -8,14 +8,14 @@ ms.custom: sqldbrb=2
 author: VanMSFT
 ms.author: vanto
 ms.topic: article
-ms.date: 02/20/2020
+ms.date: 09/21/2020
 ms.reviewer: ''
-ms.openlocfilehash: e720a95007ff06a954affe03f43f386be3bed39f
-ms.sourcegitcommit: bf1340bb706cf31bb002128e272b8322f37d53dd
+ms.openlocfilehash: e418e64fe9fbe98fbd8da4e75a81c05d5e3d118d
+ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/03/2020
-ms.locfileid: "89442111"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90885174"
 ---
 # <a name="playbook-for-addressing-common-security-requirements-with-azure-sql-database-and-azure-sql-managed-instance"></a>Сборник тренировочных заданий для решения общих требований к безопасности базы данных SQL Azure и Azure SQL Управляемый экземпляр
 [!INCLUDE[appliesto-sqldb-sqlmi](../includes/appliesto-sqldb-sqlmi.md)]
@@ -231,7 +231,7 @@ ms.locfileid: "89442111"
        - [СОЗДАНИЕ РОЛИ](https://docs.microsoft.com/sql/t-sql/statements/create-role-transact-sql)
        - [CREATE SERVER ROLE](https://docs.microsoft.com/sql/t-sql/statements/create-server-role-transact-sql)
     1. Создание необходимых пользователей
-       - [CREATE USER](https://docs.microsoft.com/sql/t-sql/statements/create-user-transact-sql)
+       - [СОЗДАНИЕ ПОЛЬЗОВАТЕЛЯ](https://docs.microsoft.com/sql/t-sql/statements/create-user-transact-sql)
     1. Добавление пользователей в качестве членов ролей
        - [ALTER ROLE](https://docs.microsoft.com/sql/t-sql/statements/alter-role-transact-sql)
        - [ALTER SERVER ROLE](https://docs.microsoft.com/sql/t-sql/statements/alter-server-role-transact-sql)
@@ -266,7 +266,7 @@ ms.locfileid: "89442111"
 - Помните, что разрешения в ядре СУБД могут быть применены в следующих областях (чем меньше область, тем меньше воздействие предоставленных разрешений):
   - Сервер (специальные роли в базе данных master) в Azure
   - База данных
-  - схема
+  - Схема
     - Рекомендуется использовать схемы для предоставления разрешений внутри базы данных. (см. также раздел [Schema-Design: рекомендации по проектированию схем с учетом безопасности.](http://andreas-wolter.com/en/schema-design-for-sql-server-recommendations-for-schema-design-with-security-in-mind/))
   - Объект (таблица, представление, процедура и т. д.)
 
@@ -647,7 +647,7 @@ ms.locfileid: "89442111"
 
 **Рекомендации:**
 
-- Настройка [расширенной системы безопасности данных (ADS)](advanced-data-security.md#getting-started-with-ads)   для конкретного сервера или управляемого экземпляра. Вы также можете настроить БАННЕРы для всех серверов и управляемых экземпляров в подписке, перейдя на [уровень "Стандартный" центра безопасности Azure](../../security-center/security-center-pricing.md).
+- Настройка [защитника Azure для SQL](azure-defender-for-sql.md)   для конкретного сервера или управляемого экземпляра. Вы также можете настроить защитник Azure для SQL для всех серверов и управляемых экземпляров в подписке, перейдя на [уровень "Стандартный" центра безопасности Azure](../../security-center/security-center-pricing.md).
 
 - Для полного исследования рекомендуется включить [Аудит базы данных SQL](../../azure-sql/database/auditing-overview.md). С помощью аудита можно отслеживать события базы данных и записывать их в журнал аудита в учетной записи хранения Azure или в рабочей области Azure Log Analytics.
 

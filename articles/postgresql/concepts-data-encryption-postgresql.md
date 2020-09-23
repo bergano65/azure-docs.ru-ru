@@ -6,12 +6,12 @@ ms.author: manishku
 ms.service: postgresql
 ms.topic: conceptual
 ms.date: 01/13/2020
-ms.openlocfilehash: f444ff4e884e50ed75b02328bfbe4d4117bc4cc9
-ms.sourcegitcommit: d8b8768d62672e9c287a04f2578383d0eb857950
+ms.openlocfilehash: 1be04c0617dc4ed235cc3f3bc29aa58f4c2cb1d2
+ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/11/2020
-ms.locfileid: "88064797"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90902144"
 ---
 # <a name="azure-database-for-postgresql-single-server-data-encryption-with-a-customer-managed-key"></a>Шифрование данных с помощью управляемых клиентом ключей для отдельного сервера базы данных Azure для PostgreSQL
 
@@ -43,7 +43,7 @@ Key Vault — это облачная внешняя система управ
 
 ## <a name="how-data-encryption-with-a-customer-managed-key-work"></a>Шифрование данных с помощью управляемого клиентом ключа
 
-![Схема, на которой показан обзор подхода "Создание собственных ключей"](media/concepts-data-access-and-security-data-encryption/postgresql-data-encryption-overview.png)
+:::image type="content" source="media/concepts-data-access-and-security-data-encryption/postgresql-data-encryption-overview.png" alt-text="Схема, на которой показан обзор подхода "Создание собственных ключей"":::
 
 Чтобы сервер PostgreSQL мог использовать управляемые клиентом и хранящиеся в Key Vault ключи для шифрования ключа DEK, администратор Key Vault предоставляет следующие права доступа.
 
@@ -79,7 +79,7 @@ Key Vault — это облачная внешняя система управ
 * Убедитесь, что Key Vault и отдельный сервер базы данных Azure для PostgreSQL находятся в одном регионе, чтобы обеспечить быстрый доступ к операциям упаковки или распаковки ключа DEK.
 * Сделайте Azure KeyVault доступным только для **частной конечной точки и ряда определенных сетей** и используйте для защиты ресурсов только *доверенные службы Майкрософт*.
 
-    ![trusted-service-with-AKV](media/concepts-data-access-and-security-data-encryption/keyvault-trusted-service.png)
+    :::image type="content" source="media/concepts-data-access-and-security-data-encryption/keyvault-trusted-service.png" alt-text="trusted-service-with-AKV":::
 
 Ниже приведены рекомендации по настройке ключа, управляемого клиентом.
 

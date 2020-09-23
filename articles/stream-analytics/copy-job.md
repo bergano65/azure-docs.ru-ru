@@ -7,12 +7,12 @@ ms.reviewer: mamccrea
 ms.service: stream-analytics
 ms.topic: how-to
 ms.date: 09/11/2019
-ms.openlocfilehash: 2c6b6af46ae89f794e05c3aa80716250c566257e
-ms.sourcegitcommit: e132633b9c3a53b3ead101ea2711570e60d67b83
+ms.openlocfilehash: e0214cb9515a5974f1de9a27760dc037f7593f30
+ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "86037228"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90892289"
 ---
 # <a name="copy-or-back-up-azure-stream-analytics-jobs"></a>Копирование или архивация Azure Stream Analytics заданий
 
@@ -23,7 +23,7 @@ ms.locfileid: "86037228"
 
 * Войдите на [портал Azure](https://portal.azure.com/).
 
-* Установите [расширение Azure Stream Analytics для средств Visual Studio Code](quick-create-vs-code.md#install-the-azure-stream-analytics-tools-extension) или [Azure Stream Analytics для Visual Studio](quick-create-vs-code.md#install-the-azure-stream-analytics-tools-extension).  
+* Установите [расширение Azure Stream Analytics для средств Visual Studio Code](quick-create-visual-studio-code.md#install-the-azure-stream-analytics-tools-extension) или [Azure Stream Analytics для Visual Studio](quick-create-visual-studio-code.md#install-the-azure-stream-analytics-tools-extension).  
 
 ## <a name="visual-studio-code"></a>Visual Studio Code
 
@@ -33,7 +33,7 @@ ms.locfileid: "86037228"
 
 2. Чтобы экспортировать задание в локальный проект, в Visual Studio Code в **обозревателе Stream Analytics** выберите задание, которое необходимо экспортировать. Затем выберите папку для проекта.
 
-    ![Экспорт задания ASA в Visual Studio Code](./media/vscode-explore-jobs/export-job.png)
+    ![Обнаружение задания ASA в Visual Studio Code](./media/vscode-explore-jobs/export-job.png)
 
     Проект будет экспортирован в выбранную папку и добавлен в текущую рабочую область.
 
@@ -41,7 +41,7 @@ ms.locfileid: "86037228"
 
 3. Чтобы опубликовать задание в другом регионе или резервной копии с другим именем, выберите **выбрать из подписок для публикации** в редакторе запросов ( \* . asaql) и следуйте инструкциям.
 
-    ![Публикация в Azure в Visual Studio Code](./media/quick-create-vs-code/submit-job.png)
+    ![Публикация в Azure в Visual Studio Code](./media/quick-create-visual-studio-code/submit-job.png)
 
 ## <a name="visual-studio"></a>Visual Studio
 
@@ -49,8 +49,8 @@ ms.locfileid: "86037228"
 
 2. Откройте \* файл. asaql в редакторе запросов, выберите **отправить в Azure** в редакторе скриптов и следуйте инструкциям, чтобы опубликовать задание в другом регионе или резервной копии с новым именем.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
-* [Краткое руководство. Создание Stream Analytics задания с помощью Visual Studio Code](quick-create-vs-code.md)
+* [Краткое руководство. Создание Stream Analytics задания с помощью Visual Studio Code](quick-create-visual-studio-code.md)
 * [Краткое руководство. Создание задания Stream Analytics с помощью Visual Studio](stream-analytics-quick-create-vs.md)
 * [Развертывание заданий Azure Stream Analytics с помощью CI/CD и Azure Pipelines](stream-analytics-tools-visual-studio-cicd-vsts.md)

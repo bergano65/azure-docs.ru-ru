@@ -1,14 +1,14 @@
 ---
 title: Шифрование неактивных источников приложения
-description: Зашифруйте данные приложения в службе хранилища Azure и развертывайте их как файл пакета.
+description: Узнайте, как зашифровать данные приложения в службе хранилища Azure и развернуть их в виде файла пакета.
 ms.topic: article
 ms.date: 03/06/2020
-ms.openlocfilehash: 7e5e809fe8b670ae6ec5bfd15e54f9a8019e76d1
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 62bb1e51bada155b98fe46740662b86b753d44fa
+ms.sourcegitcommit: bdd5c76457b0f0504f4f679a316b959dcfabf1ef
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "79408749"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90978476"
 ---
 # <a name="encryption-at-rest-using-customer-managed-keys"></a>Шифрование неактивных с помощью управляемых клиентом ключей
 
@@ -117,7 +117,7 @@ az webapp config appsettings set --name <app-name> --resource-group <resource-gr
 - Форматы TAR и GZIP не поддерживаются.
 - Эта функция несовместима с локальным кэшем.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Key Vault ссылки для службы приложений](app-service-key-vault-references.md)
 - [Шифрование службы хранилища Azure для неактивных данных](../storage/common/storage-service-encryption.md)

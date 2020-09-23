@@ -7,12 +7,12 @@ ms.service: postgresql
 ms.subservice: hyperscale-citus
 ms.topic: conceptual
 ms.date: 9/12/2019
-ms.openlocfilehash: 127840738d8fb8db00a7efc0b0d8fe393138488d
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 559c5eca6fa8a6eceb37ade003d4f1983c0a1a1b
+ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "82580933"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90902082"
 ---
 # <a name="firewall-rules-in-azure-database-for-postgresql---hyperscale-citus"></a>Правила брандмауэра в базе данных Azure для PostgreSQL — масштабирование (Цитус)
 Брандмауэр сервера базы данных Azure для PostgreSQL предотвращает доступ к узлу координатора масштабирования (Цитус), пока вы не укажете, какие компьютеры имеют разрешение. Брандмауэр предоставляет доступ к серверу на основе исходного IP-адреса каждого запроса.
@@ -24,7 +24,7 @@ ms.locfileid: "82580933"
 По умолчанию доступ ко всем базам данных к узлу координатора блокируется брандмауэром. Чтобы использовать сервер с другого компьютера, сначала необходимо указать одно или несколько правил брандмауэра уровня сервера для обеспечения доступа к этому серверу. Используйте правила брандмауэра, чтобы определить разрешенные диапазоны IP-адресов из Интернета. Правила брандмауэра не повлияют на доступ к самому веб-сайту портала Azure.
 Запросы на подключение из Интернета и Azure должны сначала обрабатываться брандмауэром и только потом достигать базы данных PostgreSQL, как показано на следующей схеме:
 
-![Пример рабочего потока брандмауэра](media/concepts-hyperscale-firewall-rules/1-firewall-concept.png)
+:::image type="content" source="media/concepts-hyperscale-firewall-rules/1-firewall-concept.png" alt-text="Пример рабочего потока брандмауэра":::
 
 ## <a name="connecting-from-the-internet-and-from-azure"></a>Подключение из Интернета и из Azure
 

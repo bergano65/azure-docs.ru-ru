@@ -1,18 +1,18 @@
 ---
 title: 'Виртуальная глобальная сеть: клиент Azure AD для разных групп пользователей: проверка подлинности Azure AD'
-description: VPN-подключение P2S можно использовать для подключения к виртуальной сети с помощью проверки подлинности Azure AD.
+description: Настройте клиент Azure AD для проверки подлинности P2S Опенвпн, а затем создайте и зарегистрируйте несколько приложений в Azure AD, чтобы разрешить разные права доступа для разных пользователей и групп.
 services: virtual-wan
-author: kumudD
+author: cherylmc
 ms.service: virtual-wan
 ms.topic: how-to
-ms.date: 03/19/2020
+ms.date: 09/22/2020
 ms.author: alzam
-ms.openlocfilehash: 5ca57ccc40669a607cd0541dc738e3a3eacf3e88
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.openlocfilehash: 57fd36366eef284e2975633fbb34549f4316cde6
+ms.sourcegitcommit: bdd5c76457b0f0504f4f679a316b959dcfabf1ef
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86507698"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90988262"
 ---
 # <a name="create-an-azure-active-directory-ad-tenant-for-p2s-openvpn-protocol-connections"></a>Создание клиента Azure Active Directory (AD) для подключений по протоколу Опенвпн P2S
 
@@ -123,11 +123,11 @@ ms.locfileid: "86507698"
 
 1. Нажмите кнопку с многоточием (...) рядом с удаляемым профилем клиента. Затем щелкните **Remove** (Удалить).
 
-    ![delete](./media/openvpn-azure-ad-tenant-multi-app/delete/delete1.jpg)
+    ![удалить](./media/openvpn-azure-ad-tenant-multi-app/delete/delete1.jpg)
 
 2. Выберите **Remove** (Удалить), чтобы выполнить удаление.
 
-    ![delete](./media/openvpn-azure-ad-tenant-multi-app/delete/delete2.jpg)
+    ![удалить](./media/openvpn-azure-ad-tenant-multi-app/delete/delete2.jpg)
 
 #### <a name="to-diagnose-connection-issues"></a><a name="diagnose"></a>Диагностика проблем с подключением
 
