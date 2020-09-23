@@ -6,12 +6,12 @@ ms.topic: article
 ms.date: 03/20/2020
 ms.reviewer: dariac
 ms.custom: seodec18
-ms.openlocfilehash: fa30c6c2c3ecd9c9c119fee80b7ef90999e42d30
-ms.sourcegitcommit: 648c8d250106a5fca9076a46581f3105c23d7265
+ms.openlocfilehash: b7730558e2a660b0cf00a5b6962d1e2275dd472c
+ms.sourcegitcommit: bdd5c76457b0f0504f4f679a316b959dcfabf1ef
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "88962627"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90984404"
 ---
 # <a name="continuous-deployment-to-azure-app-service"></a>Непрерывное развертывание в службе приложений Azure
 
@@ -23,7 +23,7 @@ ms.locfileid: "88962627"
 
 ## <a name="authorize-azure-app-service"></a>Авторизация службы приложений Azure 
 
-Чтобы использовать Azure Repos, убедитесь, что ваша организация Azure DevOps связана с вашей подпиской Azure. Дополнительные сведения см. [в статье Настройка учетной записи Azure DevOps Services для ее развертывания в веб-приложении](/azure/devops/pipelines/apps/cd/deploy-webdeploy-webapps?view=azure-devops).
+Чтобы использовать Azure Repos, убедитесь, что ваша организация Azure DevOps связана с вашей подпиской Azure. Дополнительные сведения см. [в статье Настройка учетной записи Azure DevOps Services для ее развертывания в веб-приложении](/azure/devops/pipelines/apps/cd/deploy-webdeploy-webapps?view=azure-devops&preserve-view=true).
 
 Для BitBucket или GitHub разрешите службе приложений Azure подключиться к репозиторию. Только один раз вы должны авторизоваться в службе системы управления версиями. 
 
@@ -58,7 +58,7 @@ ms.locfileid: "88962627"
 1. Выберите свой Полномочный поставщик системы управления версиями на странице **центр развертывания** и нажмите кнопку **продолжить**. Для GitHub или BitBucket можно также выбрать **изменить учетную запись** , чтобы изменить разрешенную учетную запись. 
    
    > [!NOTE]
-   > Чтобы использовать Azure Repos, убедитесь, что ваша организация Azure DevOps Services связана с вашей подпиской Azure. Дополнительные сведения см. [в статье Настройка учетной записи Azure DevOps Services для ее развертывания в веб-приложении](/azure/devops/pipelines/apps/cd/deploy-webdeploy-webapps?view=azure-devops).
+   > Чтобы использовать Azure Repos, убедитесь, что ваша организация Azure DevOps Services связана с вашей подпиской Azure. Дополнительные сведения см. [в статье Настройка учетной записи Azure DevOps Services для ее развертывания в веб-приложении](/azure/devops/pipelines/apps/cd/deploy-webdeploy-webapps?view=azure-devops&preserve-view=true).
    
 1. Для GitHub или Azure Repos на странице **поставщик сборки** выберите **Служба сборок службы приложений**, а затем нажмите кнопку **продолжить**. BitBucket всегда использует службу сборки службы приложений.
    
@@ -76,7 +76,7 @@ ms.locfileid: "88962627"
    - Для Azure Repos выберите **организацию Azure DevOps**, **проект**, **репозиторий**и **ветвь** , которые нужно развернуть непрерывно.
      
      > [!NOTE]
-     > Если ваша организация Azure DevOps отсутствует в списке, убедитесь, что она связана с вашей подпиской Azure. Дополнительные сведения см. [в статье Настройка учетной записи Azure DevOps Services для ее развертывания в веб-приложении](/azure/devops/pipelines/apps/cd/deploy-webdeploy-webapps?view=azure-devops).
+     > Если ваша организация Azure DevOps отсутствует в списке, убедитесь, что она связана с вашей подпиской Azure. Дополнительные сведения см. [в статье Настройка учетной записи Azure DevOps Services для ее развертывания в веб-приложении](/azure/devops/pipelines/apps/cd/deploy-webdeploy-webapps?view=azure-devops&preserve-view=true).
      
 1. Выберите **Continue** (Продолжить).
    
@@ -110,11 +110,11 @@ ms.locfileid: "88962627"
 
 1. Выберите **GitHub** в качестве поставщика системы управления версиями на странице **центра развертывания** и нажмите кнопку **продолжить**. Для **GitHub**можно выбрать **изменить учетную запись** , чтобы изменить разрешенную учетную запись.
 
-    ![система управления версиями](media/app-service-continuous-deployment/deployment-center-src-control.png)
+    :::image type="content" source="media/app-service-continuous-deployment/deployment-center-src-control.png" alt-text="Снимок экрана со страницей центра развертывания службы приложений.":::
    
 1. На странице **поставщик сборки** выберите **Azure pipelines (Предварительная версия)** и нажмите кнопку **продолжить**.
 
-    ![Поставщик сборки](media/app-service-continuous-deployment/select-build-provider.png)
+    :::image type="content" source="media/app-service-continuous-deployment/select-build-provider.png" alt-text="Снимок экрана, на котором отображается страница центра развертывания с выбранным Azure Pipelines (Предварительная версия).":::
    
 1. На странице **Настройка** в разделе **код** выберите **организацию**, **репозиторий**и **ветвь** , которые нужно развернуть непрерывно, и выберите **продолжить**.
      
@@ -123,11 +123,11 @@ ms.locfileid: "88962627"
        
     В разделе **Build (сборка** ) укажите организацию Azure DevOps, проект, языковую платформу, которую Azure pipelines следует использовать для выполнения задач сборки, а затем нажмите кнопку **продолжить**.
 
-   ![Поставщик сборки](media/app-service-continuous-deployment/build-configure.png)
+   :::image type="content" source="media/app-service-continuous-deployment/build-configure.png" alt-text="Снимок экрана раздела Build с примером текста в полях.":::
 
 1. После настройки поставщика сборки просмотрите параметры на странице **Сводка** и нажмите кнопку **Готово**.
 
-   ![Поставщик сборки](media/app-service-continuous-deployment/summary.png)
+   :::image type="content" source="media/app-service-continuous-deployment/summary.png" alt-text="Снимок экрана: страница центра развертывания, на которой показаны фиксации и развертывания с выделенной кнопкой "Обновить".":::
    
 1. Новые фиксации в выбранном репозитории и ветви теперь непрерывно развертываются в службе приложений. Фиксации и развертывания можно отслеживать на странице **Центра развертывания**.
    
@@ -141,11 +141,11 @@ ms.locfileid: "88962627"
 
 1. Выберите **Azure Repos** в качестве поставщика системы управления версиями на странице **центра развертывания** и нажмите кнопку **продолжить**.
 
-    ![система управления версиями](media/app-service-continuous-deployment/deployment-center-src-control.png)
+    :::image type="content" source="media/app-service-continuous-deployment/deployment-center-src-control.png" alt-text="Снимок экрана со страницей центра развертывания, отображающей элементы непрерывного развертывания (CI/CD).":::
 
 1. На странице **поставщик сборки** выберите **Azure pipelines (Предварительная версия)** и нажмите кнопку **продолжить**.
 
-    ![система управления версиями](media/app-service-continuous-deployment/azure-pipelines.png)
+    :::image type="content" source="media/app-service-continuous-deployment/azure-pipelines.png" alt-text="Снимок экрана: центр развертывания показывает Azure Pipelines (Предварительная версия).":::
 
 1. На странице **Настройка** в разделе **код** выберите **организацию**, **репозиторий**и **ветвь** , которые нужно развернуть непрерывно, и выберите **продолжить**.
 
@@ -154,11 +154,11 @@ ms.locfileid: "88962627"
 
    В разделе **Build (сборка** ) укажите организацию Azure DevOps, проект, языковую платформу, которую Azure pipelines следует использовать для выполнения задач сборки, а затем нажмите кнопку **продолжить**.
 
-   ![Поставщик сборки](media/app-service-continuous-deployment/build-configure.png)
+   :::image type="content" source="media/app-service-continuous-deployment/build-configure.png" alt-text="Снимок экрана: раздел "сборка" с полями "Организация и проект Azure DevOps", заполненными примерами.":::
 
 1. После настройки поставщика сборки просмотрите параметры на странице **Сводка** и нажмите кнопку **Готово**.  
      
-   ![Поставщик сборки](media/app-service-continuous-deployment/summary-azure-pipelines.png)
+   :::image type="content" source="media/app-service-continuous-deployment/summary-azure-pipelines.png" alt-text="Снимок экрана, показывающий выбранные параметры на странице "Сводка".":::
 
 1. Новые фиксации в выбранном репозитории и ветви теперь непрерывно развертываются в службе приложений. Фиксации и развертывания можно отслеживать на странице **Центра развертывания**.
 

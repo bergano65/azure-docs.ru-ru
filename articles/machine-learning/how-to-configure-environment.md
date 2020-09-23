@@ -11,15 +11,15 @@ ms.reviewer: larryfr
 ms.date: 12/27/2019
 ms.topic: conceptual
 ms.custom: how-to, devx-track-python
-ms.openlocfilehash: 8ad22abdf17c68c93a6189db839fe357e7acc91e
-ms.sourcegitcommit: 3be3537ead3388a6810410dfbfe19fc210f89fec
+ms.openlocfilehash: 4ccf89a4dcb2c91cfdd96b20d74b7f31596b6249
+ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89650828"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90898286"
 ---
 # <a name="configure-a-development-environment-for-azure-machine-learning"></a>Настройка среды разработки для Машинного обучения Azure
-[!INCLUDE [applies-to-skus](../../includes/aml-applies-to-basic-enterprise-sku.md)]
+
 
 Из этой статьи вы узнаете, как настроить среду разработки для работы с Машинное обучение Azure. Машинное обучение Azure не зависит от платформы. Единственным жестким требованием для среды разработки является Python 3. Также рекомендуется использовать изолированную среду, например Anaconda или Virtualenv.
 
@@ -61,7 +61,7 @@ ms.locfileid: "89650828"
 
 Дополнительные сведения об экземплярах вычислений, включая установку пакетов, см. в разделе [COMPUTE Instances](concept-compute-instance.md).
 
-Чтобы приостанавливаться к выплатам за вычислительные ресурсы, необходимо [Отключить вычислительный экземпляр](tutorial-1st-experiment-sdk-train.md#clean-up-resources).
+Чтобы приостанавливаться к выплатам за вычислительные ресурсы, необходимо [Отключить вычислительный экземпляр](tutorial-1st-experiment-bring-data.md#clean-up-resources).
 
 ## <a name="data-science-virtual-machine"></a><a id="dsvm"></a>Виртуальная машина для обработки и анализа данных
 

@@ -1,6 +1,6 @@
 ---
-title: Установка Azure Resource Manager пароля на устройстве GPU Azure Stack
-description: В этой статье описывается, как подключиться к Azure Resource Manager, работающей на графическом процессоре Azure Stack ребра, с помощью Azure PowerShell.
+title: Установка Azure Resource Manager пароля на устройстве Azure Stack с графическим процессором Pro
+description: В этой статье описывается, как подключиться к Azure Resource Manager, работающей на графическом процессоре Azure Stack ребра Pro, с помощью Azure PowerShell.
 services: databox
 author: alkohli
 ms.service: databox
@@ -8,14 +8,14 @@ ms.subservice: edge
 ms.topic: how-to
 ms.date: 08/28/2020
 ms.author: alkohli
-ms.openlocfilehash: 6a59510b342f7ebd3969a4bb4fcfd75fffd04804
-ms.sourcegitcommit: bcda98171d6e81795e723e525f81e6235f044e52
+ms.openlocfilehash: df5fea8101834dae089ab97354c438363321a707
+ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/01/2020
-ms.locfileid: "89254157"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90904480"
 ---
-# <a name="set-azure-resource-manager-password-on-azure-stack-edge-gpu-device"></a>Установка Azure Resource Manager пароля на устройстве GPU Azure Stack
+# <a name="set-azure-resource-manager-password-on-azure-stack-edge-pro-gpu-device"></a>Задание Azure Resource Manager пароля для устройства GPU Pro на Azure Stack
 
 <!--[!INCLUDE [applies-to-skus](../../includes/azure-stack-edge-applies-to-all-sku.md)]-->
 
@@ -122,7 +122,7 @@ ms.locfileid: "89254157"
     $pass = ConvertTo-SecureString $password -AsPlainText -Force
     $key = ConvertTo-SecureString $cik -AsPlainText -Force
     ```
-    Используйте указанные выше защищенные строки в качестве параметров командлета Set-Аздатабокседжеусер, чтобы сбросить пароль. Используйте ту же группу ресурсов, которая использовалась при создании Azure Stackного ресурса или Шлюз Data Box.
+    Используйте указанные выше защищенные строки в качестве параметров командлета Set-Аздатабокседжеусер, чтобы сбросить пароль. Используйте ту же группу ресурсов, которая использовалась при создании ресурса Azure Stack ребра Pro/Шлюз Data Box.
 
     ```azurepowershell
     Set-AzDataBoxEdgeUser -ResourceGroupName $resourceGroup -DeviceName $devicename -Name EdgeARMUser  -Password $pass -EncryptionKey $key
@@ -148,4 +148,4 @@ ms.locfileid: "89254157"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-[Подключение к Azure Resource Manager](azure-stack-edge-j-series-connect-resource-manager.md)
+[Подключение к Azure Resource Manager.](azure-stack-edge-j-series-connect-resource-manager.md)

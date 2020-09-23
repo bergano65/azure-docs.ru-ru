@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 03/24/2020
 ms.author: yelevin
-ms.openlocfilehash: 6be2805cab1bcaadb7878be69399e14ffe59d7b0
-ms.sourcegitcommit: f8d2ae6f91be1ab0bc91ee45c379811905185d07
+ms.openlocfilehash: 5c67f517ffd3704644fbe8041f3ac1e7b0d1f09c
+ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89659735"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90904554"
 ---
 # <a name="connect-data-from-microsoft-cloud-app-security"></a>Подключение данных из Microsoft Cloud App Security 
 
@@ -48,7 +48,7 @@ ms.locfileid: "89659735"
 
 1. Щелкните **Применить изменения**.
 
-1. Вы можете выбрать, должны ли оповещения из защитника Azure (прежнее название — центр безопасности Azure) автоматически создавать инциденты в Azure Sentinel. В разделе **Создание инцидентов**выберите **включено** , чтобы включить правило аналитики по умолчанию, которое автоматически создает инциденты на основе оповещений. Затем можно изменить это правило в разделе **аналитика**на вкладке  **активные правила** .
+1. Вы можете выбрать, будут ли оповещения Azure Defender из центра безопасности Azure автоматически создавать инциденты в Azure Sentinel. В разделе **Создание инцидентов**выберите **включено** , чтобы включить правило аналитики по умолчанию, которое автоматически создает инциденты на основе оповещений. Затем можно изменить это правило в разделе **аналитика**на вкладке  **активные правила** .
 
 1. Чтобы использовать соответствующую схему в Log Analytics для Cloud App Security предупреждений, введите `SecurityAlert` в окне запроса. Для схемы Cloud Discovery журналов введите `McasShadowItReporting` .
 

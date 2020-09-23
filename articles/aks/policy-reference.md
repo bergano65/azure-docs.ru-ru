@@ -1,15 +1,15 @@
 ---
 title: Встроенные определения политик для Службы Azure Kubernetes
 description: Здесь приведены встроенные определения политик в Политике Azure для Службы Azure Kubernetes. Эти встроенные определения политик предоставляют популярные подходы к управлению ресурсами Azure.
-ms.date: 09/10/2020
+ms.date: 09/16/2020
 ms.topic: reference
 ms.custom: subject-policy-reference
-ms.openlocfilehash: 72c04993b08186e333f79bff0f3110b394ab61e3
-ms.sourcegitcommit: 3c66bfd9c36cd204c299ed43b67de0ec08a7b968
+ms.openlocfilehash: d9910cff487ba6df42730fe7134361902441cd08
+ms.sourcegitcommit: bdd5c76457b0f0504f4f679a316b959dcfabf1ef
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "90007780"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90983917"
 ---
 # <a name="azure-policy-built-in-definitions-for-azure-kubernetes-service"></a>Встроенные определения в Политике Azure для Службы Azure Kubernetes
 

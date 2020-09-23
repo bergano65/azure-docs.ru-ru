@@ -7,12 +7,12 @@ ms.author: mamccrea
 ms.service: stream-analytics
 ms.topic: how-to
 ms.date: 03/10/2020
-ms.openlocfilehash: 76c2cf7164c3e2d683a9294cb500ed05381811b6
-ms.sourcegitcommit: e132633b9c3a53b3ead101ea2711570e60d67b83
+ms.openlocfilehash: c421c730321213a9adbf0a0043874a21ba26bb05
+ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "86043535"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90906238"
 ---
 # <a name="export-an-azure-stream-analytics-job-azure-resource-manager-template"></a>Экспорт шаблона Azure Resource Manager задания Azure Stream Analytics
 
@@ -28,7 +28,7 @@ ms.locfileid: "86043535"
 
 ![Открыть задание Stream Analytics в Visual Studio Code](./media/resource-manager-export/open-job-vs-code.png)
 
-Дополнительные сведения об использовании Visual Studio Code для управления заданиями Stream Analytics см. в [руководстве по Visual Studio Code](quick-create-vs-code.md).
+Дополнительные сведения об использовании Visual Studio Code для управления заданиями Stream Analytics см. в [руководстве по Visual Studio Code](quick-create-visual-studio-code.md).
 
 ## <a name="compile-the-script"></a>Компиляция скрипта 
 
@@ -66,7 +66,7 @@ ms.locfileid: "86043535"
 New-AzResourceGroupDeployment -ResourceGroupName "<your resource group>" -TemplateFile "<path to JobTemplate.json>" -TemplateParameterFile "<path to JobTemplate.parameters.json>"
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Тестирование Azure Stream Analytics заданий локально с входными данными в режиме реального времени с помощью Visual Studio Code](visual-studio-code-local-run-live-input.md)
 

@@ -9,15 +9,15 @@ ms.topic: conceptual
 ms.author: larryfr
 author: BlackMist
 ms.date: 07/08/2020
-ms.openlocfilehash: 773a05b911bc8e785957b5cf93700a361dc621ef
-ms.sourcegitcommit: 3be3537ead3388a6810410dfbfe19fc210f89fec
+ms.openlocfilehash: a37a09d971ee80d05f9e028ece1adc7962c0c1a0
+ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89651138"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90905710"
 ---
 # <a name="what-are-azure-machine-learning-environments"></a>Что такое Машинное обучение Azure среды?
-[!INCLUDE [applies-to-skus](../../includes/aml-applies-to-basic-enterprise-sku.md)]
+
 
 Машинное обучение Azure средах — это инкапсуляция среды, в которой выполняется обучение машинного обучения. Они указывают пакеты Python, переменные среды и параметры программного обеспечения для сценариев обучения и оценки. Они также указывают время выполнения (Python, Spark или DOCKER). Среды — это управляемые и версии сущностей в рабочей области Машинное обучение, которые позволяют воспроизводимые, отслеживаемые и переносимые рабочие процессы машинного обучения в различных целевых объектах вычислений.
 

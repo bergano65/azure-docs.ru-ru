@@ -1,14 +1,14 @@
 ---
 title: Обзор службы "Работоспособность ресурсов Azure"
-description: Обзор службы "Работоспособность ресурсов Azure"
+description: Узнайте, как Работоспособность ресурсов Azure помогает диагностировать и получать поддержку проблем служб, влияющих на ресурсы Azure.
 ms.topic: conceptual
 ms.date: 05/10/2019
-ms.openlocfilehash: f0d2fdb8e1c8b92dba526650405405db8ae8a776
-ms.sourcegitcommit: e132633b9c3a53b3ead101ea2711570e60d67b83
+ms.openlocfilehash: 25425eadfaf54ba56cde3b377a44cd85c2b68959
+ms.sourcegitcommit: bdd5c76457b0f0504f4f679a316b959dcfabf1ef
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "86041580"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90967877"
 ---
 # <a name="resource-health-overview"></a>Обзор Работоспособность ресурсов
  
@@ -32,7 +32,7 @@ ms.locfileid: "86041580"
 
 ![Состояние * доступно * для виртуальной машины с уведомлением "Недавно устраненные"](./media/resource-health-overview/Available.png)
 
-### <a name="unavailable"></a>Рекомендации недоступны
+### <a name="unavailable"></a>Недоступно
 
 *Недоступно* означает, что Служба обнаружила текущую платформу или событие, не связанное с платформой, которое влияет на работоспособность ресурса.
 
@@ -94,7 +94,7 @@ ms.locfileid: "86041580"
 
 ![Открытие службы работоспособности ресурсов из пункта меню "Все службы"](./media/resource-health-overview/FromOtherServices.png)
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Ознакомьтесь со следующими ссылками, чтобы узнать больше о Работоспособность ресурсов.
 -  [Типы ресурсов и проверки работоспособности в Работоспособность ресурсов Azure](resource-health-checks-resource-types.md)

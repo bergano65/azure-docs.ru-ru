@@ -7,12 +7,12 @@ ms.service: postgresql
 ms.subservice: hyperscale-citus
 ms.topic: conceptual
 ms.date: 07/17/2020
-ms.openlocfilehash: 0daed8e9bba247ae3d4e320e4a02cc2b1b26dbec
-ms.sourcegitcommit: 1aef4235aec3fd326ded18df7fdb750883809ae8
+ms.openlocfilehash: 92333857177d33307d6997bfcbdf79787d3ab127
+ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/12/2020
-ms.locfileid: "88137065"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90895945"
 ---
 # <a name="determining-application-type"></a>Определение типа приложения
 
@@ -53,6 +53,6 @@ ms.locfileid: "88137065"
 
 Если ситуация похожа на приведенный выше, то следующим шагом является выбор способа сегментирования данных в группе серверов. Выбор столбцов распределения администратором базы данных \' должен соответствовать шаблонам доступа типовых запросов для обеспечения производительности.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Выберите столбец распределения](concepts-hyperscale-choose-distribution-column.md) для таблиц в приложении, чтобы эффективно распределять данные

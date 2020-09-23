@@ -9,16 +9,16 @@ ms.topic: reference
 author: likebupt
 ms.author: keli19
 ms.date: 11/19/2019
-ms.openlocfilehash: c29baf3cdda998a2ab78c84f3311b84d37086bcd
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 0dfde6fef7cc91edf2101095018bc031d392c4ed
+ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "79477431"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90898186"
 ---
 # <a name="train-clustering-model"></a>Обучение модели кластеризации
 
-В этой статье описывается модуль в конструкторе Машинного обучения Azure (предварительная версия).
+В этой статье описывается модуль в конструкторе Машинное обучение Azure.
 
 Используйте этот модуль для обучения модели кластеризации.
 

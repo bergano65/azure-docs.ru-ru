@@ -11,16 +11,16 @@ ms.subservice: core
 ms.date: 07/30/2020
 ms.topic: conceptual
 ms.custom: how-to
-ms.openlocfilehash: 642186ef4af43127ba0d6eb6950f09e069eb79ca
-ms.sourcegitcommit: 3be3537ead3388a6810410dfbfe19fc210f89fec
+ms.openlocfilehash: 6f557ac8476224cdb8414b2a45952d8f7d34513d
+ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89649279"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90905022"
 ---
 # <a name="monitor-and-view-ml-run-logs-and-metrics"></a>Мониторинг и просмотр журналов и метрик выполнения машинного обучения
 
-[!INCLUDE [applies-to-skus](../../includes/aml-applies-to-basic-enterprise-sku.md)]
+
 
 В этой статье вы узнаете, как отслеживать запуски Машинное обучение Azure и просматривать их журналы. Прежде чем можно будет просматривать журналы, необходимо сначала включить их. Дополнительные сведения см. [в статье Включение ведения журнала в учебных курсах машинного обучения Azure](how-to-track-experiments.md).
 
@@ -129,7 +129,7 @@ RunDetails(run).show()
 
 Выполните следующие действия, чтобы узнать, как использовать Машинное обучение Azure.
 
-* Сведения об [отслеживании экспериментов и включении журналов в машинное обучение Azureном конструкторе (Предварительная версия)](how-to-track-designer-experiments.md).
+* Сведения об [отслеживании экспериментов и включении журналов в конструкторе машинное обучение Azure](how-to-track-designer-experiments.md).
 
 * Пример регистрации оптимальных моделей и их развертывания см. в руководстве [Руководство № 1. Обучение модели классификации изображений с помощью Машинного обучения Azure](tutorial-train-models-with-aml.md).
 

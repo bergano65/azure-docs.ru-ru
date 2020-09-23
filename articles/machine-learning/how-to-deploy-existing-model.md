@@ -11,15 +11,15 @@ ms.reviewer: larryfr
 ms.date: 07/17/2020
 ms.topic: conceptual
 ms.custom: how-to, devx-track-python
-ms.openlocfilehash: 006aab66eb220c3bb74794ba78bf1495583b653e
-ms.sourcegitcommit: 3be3537ead3388a6810410dfbfe19fc210f89fec
+ms.openlocfilehash: 0dcede7e6c15fbc0bae39370431d14696cb4026e
+ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89648320"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90905653"
 ---
 # <a name="deploy-your-existing-model-with-azure-machine-learning"></a>Развертывание существующей модели с помощью Машинное обучение Azure
-[!INCLUDE [applies-to-skus](../../includes/aml-applies-to-basic-enterprise-sku.md)]
+
 
 Из этой статьи вы узнаете, как зарегистрировать и развернуть модель машинного обучения, обученную за пределами Машинное обучение Azure. Можно развернуть как веб-службу или на устройство IoT Edge.  После развертывания можно отслеживать модель и обнаруживать смещение данных в Машинное обучение Azure. 
 
@@ -274,7 +274,7 @@ az ml model deploy -n myservice -m sentiment:1 --ic inferenceConfig.json --dc de
 
 ## <a name="request-response-consumption"></a>Использование запросов и ответов
 
-После развертывания отображается URI оценки. Этот универсальный код ресурса (URI) может использоваться клиентами для отправки запросов в службу. Ниже приведен пример базового клиента Python, который отправляет данные в службу и отображает ответ:
+После развертывания отображается URI оценки. Этот универсальный код ресурса (URI) может использоваться клиентами для отправки запросов в службу. В следующем примере показан простой клиент Python, который отправляет данные в службу и отображает ответ:
 
 ```python
 import requests

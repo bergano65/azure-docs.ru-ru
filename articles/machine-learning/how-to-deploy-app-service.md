@@ -11,15 +11,15 @@ ms.reviewer: larryfr
 ms.date: 06/23/2020
 ms.topic: conceptual
 ms.custom: how-to, devx-track-python
-ms.openlocfilehash: 73769a5f8a677f5e08610560db1e5d90dd5b7c3a
-ms.sourcegitcommit: 3be3537ead3388a6810410dfbfe19fc210f89fec
+ms.openlocfilehash: 7c98bfe4adb9cbbcc1009c530ba875511ea9ec01
+ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89645615"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90905124"
 ---
 # <a name="deploy-a-machine-learning-model-to-azure-app-service-preview"></a>Развертывание модели машинного обучения в службе приложений Azure (Предварительная версия)
-[!INCLUDE [applies-to-skus](../../includes/aml-applies-to-basic-enterprise-sku.md)]
+
 
 Узнайте, как развернуть модель из Машинное обучение Azure как веб-приложение в службе приложений Azure.
 
@@ -54,7 +54,7 @@ ms.locfileid: "89645615"
 
 ## <a name="prepare-for-deployment"></a>Подготовка к развертыванию
 
-Перед развертыванием необходимо определить, что нужно для запуска модели в качестве веб-службы. В следующем списке описаны основные элементы, необходимые для развертывания.
+Перед развертыванием необходимо определить, что нужно для запуска модели в качестве веб-службы. В следующем списке описываются основные элементы, необходимые для развертывания.
 
 * __Скрипт записи__. Этот скрипт принимает запросы, оценивает запрос с помощью модели и возвращает результаты.
 

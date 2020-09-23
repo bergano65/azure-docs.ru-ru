@@ -9,12 +9,12 @@ ms.service: cognitive-services
 ms.topic: include
 ms.date: 04/01/2020
 ms.author: aahi
-ms.openlocfilehash: db5d0cfecde32d3dd6afe181d67a6ce6c0826eda
-ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
+ms.openlocfilehash: 02dde8a27b9687e58bf1a09c1a951f306937f0d6
+ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "80877123"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90906075"
 ---
 #### <a name="docker-pull-for-the-key-phrase-extraction-container"></a>Извлечение DOCKER для контейнера извлечение ключевых фраз
 
@@ -23,5 +23,5 @@ ms.locfileid: "80877123"
 Полное описание доступных тегов для Анализ текста контейнеров см. в разделе контейнер [Извлечение ключевых фраз](https://go.microsoft.com/fwlink/?linkid=2018757) в центре DOCKER.
 
 ```
-docker pull mcr.microsoft.com/azure-cognitive-services/keyphrase:latest
+docker pull mcr.microsoft.com/azure-cognitive-services/textanalytics/keyphrase:latest
 ```

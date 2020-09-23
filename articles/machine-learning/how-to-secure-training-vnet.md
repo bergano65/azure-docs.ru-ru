@@ -11,15 +11,14 @@ ms.author: aashishb
 author: aashishb
 ms.date: 07/16/2020
 ms.custom: contperfq4, tracking-python
-ms.openlocfilehash: 5a71476db6f57841a0057de5b8c95f07ef5d90ad
-ms.sourcegitcommit: 80b9c8ef63cc75b226db5513ad81368b8ab28a28
+ms.openlocfilehash: cf2c19297fdd56fb376a54b231bbb021c53b25bd
+ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/16/2020
-ms.locfileid: "90603090"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90882979"
 ---
 # <a name="secure-an-azure-machine-learning-training-environment-with-virtual-networks"></a>Защита Машинное обучение Azureной среды обучения с помощью виртуальных сетей
-[!INCLUDE [applies-to-skus](../../includes/aml-applies-to-basic-enterprise-sku.md)]
 
 Из этой статьи вы узнаете, как защитить среды обучения с помощью виртуальной сети в Машинное обучение Azure.
 
@@ -37,7 +36,7 @@ ms.locfileid: "90603090"
 > - Виртуальная машина
 > - Кластер HDInsight
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 + Ознакомьтесь со статьей [Обзор сетевой безопасности](how-to-network-security-overview.md) , чтобы ознакомиться с общими сценариями виртуальной сети и общей архитектурой виртуальной сети.
 

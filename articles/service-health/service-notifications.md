@@ -1,14 +1,14 @@
 ---
 title: Просмотр уведомлений о работоспособности служб на портале Azure
-description: Уведомления о работоспособности служб позволяют просматривать соответствующие сообщения, публикуемые Microsoft Azure.
+description: Просмотрите уведомления о работоспособности службы в портал Azure. Уведомления о работоспособности службы публикуются инфраструктурой Azure в журнале действий Azure.
 ms.topic: conceptual
 ms.date: 6/27/2019
-ms.openlocfilehash: 9f8297ae708d3f4e7921221f2c4bacee12a7a2b1
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 615d08b6a04aef9e8ef2033154da8ff8caeebe04
+ms.sourcegitcommit: bdd5c76457b0f0504f4f679a316b959dcfabf1ef
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87089572"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90967778"
 ---
 # <a name="view-service-health-notifications-by-using-the-azure-portal"></a>Просмотр уведомлений о работоспособности служб на портале Azure
 

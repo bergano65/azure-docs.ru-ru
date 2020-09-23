@@ -3,12 +3,12 @@ title: Как отключить мониторинг гибридного кл�
 description: В этой статье описывается, как можно отключить мониторинг гибридного кластера Kubernetes с помощью Azure Monitor для контейнеров.
 ms.topic: conceptual
 ms.date: 06/16/2020
-ms.openlocfilehash: 8369c82b83cfbaa7128383c6203aaf584916cae9
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 2754649cd990b015162be158effa2b85aa1fe27e
+ms.sourcegitcommit: bdd5c76457b0f0504f4f679a316b959dcfabf1ef
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87091204"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90986043"
 ---
 # <a name="how-to-stop-monitoring-your-hybrid-cluster"></a>Как отключить мониторинг гибридного кластера
 
@@ -44,7 +44,7 @@ ms.locfileid: "87091204"
 
     `helm delete <releaseName>`
 
-    Пример.
+    Пример:
 
     `helm delete azmon-containers-release-1`
 
@@ -84,7 +84,26 @@ ms.locfileid: "87091204"
     .\disable-monitoring.ps1 -clusterResourceId $azureArcClusterResourceId -kubeContext $kubeContext
     ```
 
-### <a name="using-bash"></a>Использование bash
+#### <a name="using-service-principal"></a>Использование субъекта-службы
+В *disable-monitoring.ps1* сценария используется имя входа интерактивного устройства. Если вы предпочитаете неинтерактивное имя входа, можно использовать существующий субъект-службу или создать новый, имеющий необходимые разрешения, как описано в разделе [Предварительные требования](container-insights-enable-arc-enabled-clusters.md#prerequisites). Чтобы использовать субъект-службу, необходимо передать параметры $servicePrincipalClientId, $servicePrincipalClientSecret и $tenantId, указав значения субъекта-службы, которые будут использоваться для enable-monitoring.ps1 сценария.
+
+```powershell
+$subscriptionId = "<subscription Id of the Azure Arc connected cluster resource>"
+$servicePrincipal = New-AzADServicePrincipal -Role Contributor -Scope "/subscriptions/$subscriptionId"
+
+$servicePrincipalClientId =  $servicePrincipal.ApplicationId.ToString()
+$servicePrincipalClientSecret = [System.Net.NetworkCredential]::new("", $servicePrincipal.Secret).Password
+$tenantId = (Get-AzSubscription -SubscriptionId $subscriptionId).TenantId
+```
+
+Пример:
+
+```powershell
+\disable-monitoring.ps1 -clusterResourceId $azureArcClusterResourceId -kubeContext $kubeContext -servicePrincipalClientId $servicePrincipalClientId -servicePrincipalClientSecret $servicePrincipalClientSecret -tenantId $tenantId
+```
+
+
+### <a name="using-bash"></a>Использование Bash
 
 1. Скачайте и сохраните скрипт в локальной папке, которая настраивает кластер с помощью надстройки мониторинга, используя следующие команды:
 
@@ -117,6 +136,24 @@ ms.locfileid: "87091204"
     ```bash
     bash disable-monitoring.sh --resource-id $azureArcClusterResourceId --kube-context $kubeContext
     ```
+
+#### <a name="using-service-principal"></a>Использование субъекта-службы
+В скрипте Bash *Disable-Monitoring.sh* используется имя входа интерактивного устройства. Если вы предпочитаете неинтерактивное имя входа, можно использовать существующий субъект-службу или создать новый, имеющий необходимые разрешения, как описано в разделе [Предварительные требования](container-insights-enable-arc-enabled-clusters.md#prerequisites). Чтобы использовать субъект-службу, необходимо передать значения типа "Client-ID", "--Client-Secret" и "--Клиент-ID" субъекта службы, который будет использоваться для *Enable-Monitoring.sh* Bash-скрипта.
+
+```bash
+subscriptionId="<subscription Id of the Azure Arc connected cluster resource>"
+servicePrincipal=$(az ad sp create-for-rbac --role="Contributor" --scopes="/subscriptions/${subscriptionId}")
+servicePrincipalClientId=$(echo $servicePrincipal | jq -r '.appId')
+
+servicePrincipalClientSecret=$(echo $servicePrincipal | jq -r '.password')
+tenantId=$(echo $servicePrincipal | jq -r '.tenant')
+```
+
+Пример:
+
+```bash
+bash disable-monitoring.sh --resource-id $azureArcClusterResourceId --kube-context $kubeContext --client-id $servicePrincipalClientId --client-secret $servicePrincipalClientSecret  --tenant-id $tenantId
+```
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

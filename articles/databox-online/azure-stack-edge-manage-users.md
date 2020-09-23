@@ -1,6 +1,6 @@
 ---
-title: Azure Stack пограничным пользователям управлять пользователями | Документация Майкрософт
-description: Описывает, как использовать портал Azure для управления пользователями на стороне Azure Stack.
+title: Azure Stack пограничных Pro Управление пользователями | Документация Майкрософт
+description: Описывает, как использовать портал Azure для управления пользователями на Azure Stack крае Pro.
 services: databox
 author: alkohli
 ms.service: databox
@@ -8,21 +8,21 @@ ms.subservice: edge
 ms.topic: how-to
 ms.date: 03/11/2019
 ms.author: alkohli
-ms.openlocfilehash: 1012ce417fb4952878dada29a9080c70954ed21f
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 3fb82e95d9d7dcfdf59bd05f91beff8e1184955e
+ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84339643"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90904389"
 ---
-# <a name="use-the-azure-portal-to-manage-users-on-your-azure-azure-stack-edge"></a>Использование портал Azure для управления пользователями на стороне Azure Stack Azure
+# <a name="use-the-azure-portal-to-manage-users-on-your-azure-azure-stack-edge-pro"></a>Использование портал Azure для управления пользователями в Azure Azure Stack ребра Pro
 
-В этой статье описывается, как управлять пользователями на Azure Stack пограничных устройствах. Вы можете управлять Azure Stack ребром с помощью портал Azure или через локальный веб-интерфейс. Используйте портал Azure, чтобы добавлять, изменять или удалять пользователей.
+В этой статье описывается, как управлять пользователями на Azure Stack пограничным Pro. Вы можете управлять Azure Stack пограничным Pro через портал Azure или через локальный веб-интерфейс. Используйте портал Azure, чтобы добавлять, изменять или удалять пользователей.
 
 Вы узнаете, как выполнять следующие задачи:
 
 > [!div class="checklist"]
-> * Добавление пользователей
+> * Добавление пользователя
 > * Изменение пользователя
 > * Удаление пользователя
 
@@ -35,11 +35,11 @@ ms.locfileid: "84339643"
 
 Сначала разрешения пользователя определяются при его создании во время создания общей папки. Изменение разрешений на уровне общего ресурса сейчас не поддерживается.
 
-## <a name="add-a-user"></a>Добавление пользователей
+## <a name="add-a-user"></a>Добавление пользователя
 
 Выполните на портале Azure шаги ниже, чтобы добавить пользователя.
 
-1. В портал Azure перейдите к ресурсу Azure Stackного периметра и перейдите к **обзору > пользователей**. На панели команд выберите **+ Добавить пользователя**.
+1. В портал Azure перейдите к ресурсу Azure Stackного периметра и перейдите к **обзору > пользователей**. На панели команд выберите **+ Добавить пользователя** .
 
     ![Добавление пользователя](media/azure-stack-edge-manage-users/add-user-1.png)
 
