@@ -1,6 +1,6 @@
 ---
-title: Использование портал Azure для устранения неполадок Azure Stack пограничных устройств | Документация Майкрософт
-description: Узнайте, как устранять неполадки на Azure Stack пограничных устройствах. Можно выполнять диагностику, получать сведения о поддержке и использовать журналы для устранения неполадок.
+title: Использование портал Azure для устранения неполадок Azure Stack ребра Pro | Документация Майкрософт
+description: Узнайте, как устранять неполадки на Azure Stack пограничных Pro. Можно выполнять диагностику, получать сведения о поддержке и использовать журналы для устранения неполадок.
 services: databox
 author: alkohli
 ms.service: databox
@@ -8,16 +8,16 @@ ms.subservice: edge
 ms.topic: troubleshooting
 ms.date: 08/11/2020
 ms.author: alkohli
-ms.openlocfilehash: f9dabdfd9df77822f06c41fa4355a1657bceb76c
-ms.sourcegitcommit: 1aef4235aec3fd326ded18df7fdb750883809ae8
+ms.openlocfilehash: bc4afa0d26f6ba256354d3802a0c4f9b9b04088e
+ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/12/2020
-ms.locfileid: "88134570"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90903647"
 ---
-# <a name="troubleshoot-your-azure-stack-edge-issues"></a>Устранение неполадок Azure Stack пограничных проблем
+# <a name="troubleshoot-your-azure-stack-edge-pro-issues"></a>Устранение неполадок Azure Stack пограничных Pro
 
-В этой статье описывается, как устранять неполадки на Azure Stack пограничных устройствах. 
+В этой статье описывается, как устранять неполадки на Azure Stack пограничных Pro. 
 
 Вы узнаете, как выполнять следующие задачи:
 
@@ -65,7 +65,7 @@ ms.locfileid: "88134570"
 
       ![Подключение к общей папке и просмотр ее содержимого](media/azure-stack-edge-troubleshoot/troubleshoot-logs-1.png)
 
-2. Выберите _папку Microsoft Azure Stack ребра_. Эта папка содержит две вложенные папки:
+2. Выберите _папку Microsoft Azure Stack ребра Pro_. Эта папка содержит две вложенные папки:
 
     * Отправьте папку, содержащую файлы журнала для ошибок отправки.
     * Обновите папку для ошибок во время обновления.
@@ -82,6 +82,6 @@ ms.locfileid: "88134570"
 
     [!INCLUDE [data-box-edge-edge-upload-error-reference](../../includes/data-box-edge-gateway-upload-error-reference.md)]
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Дополнительные сведения об [известных проблемах в этом выпуске](data-box-gateway-release-notes.md).

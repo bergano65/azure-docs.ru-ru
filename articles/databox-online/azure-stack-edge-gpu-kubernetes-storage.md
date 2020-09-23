@@ -1,6 +1,6 @@
 ---
-title: Общие сведения об управлении хранилищем Kubernetes на Azure Stack пограничном устройстве | Документация Майкрософт
-description: Описывает, как осуществляется управление хранилищем Kubernetes на пограничном устройстве Azure Stack.
+title: Общие сведения об управлении хранилищем Kubernetes на устройстве с Azure Stack ребра Pro | Документация Майкрософт
+description: Описывает, как осуществляется управление хранилищем Kubernetes на устройстве с Azure Stack пограничным Pro.
 services: databox
 author: alkohli
 ms.service: databox
@@ -8,18 +8,18 @@ ms.subservice: edge
 ms.topic: conceptual
 ms.date: 08/27/2020
 ms.author: alkohli
-ms.openlocfilehash: 57574b66ddb20e592a5979a4b827347f7c8e09af
-ms.sourcegitcommit: bcda98171d6e81795e723e525f81e6235f044e52
+ms.openlocfilehash: ff2a473ca008e9b283d03ebb05f35122473d778a
+ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/01/2020
-ms.locfileid: "89268097"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90899276"
 ---
-# <a name="kubernetes-storage-management-on-your-azure-stack-edge-gpu-device"></a>Управление хранилищем Kubernetes на устройстве GPU Azure Stack ребра
+# <a name="kubernetes-storage-management-on-your-azure-stack-edge-pro-gpu-device"></a>Управление хранилищем Kubernetes на устройстве GPU для Azure Stack ребра
 
-На Azure Stack пограничном устройстве создается кластер Kubernetes при настройке роли вычислений. После создания кластера Kubernetes контейнерные приложения можно развернуть в кластере Kubernetes в модулях Pod. Существует несколько различных способов предоставления хранилища для модулей Pod в кластере Kubernetes. 
+На устройстве Azure Stack пограничной Pro создается кластер Kubernetes при настройке роли вычислений. После создания кластера Kubernetes контейнерные приложения можно развернуть в кластере Kubernetes в модулях Pod. Существует несколько различных способов предоставления хранилища для модулей Pod в кластере Kubernetes. 
 
-В этой статье описываются методы подготовки хранилища в кластере Kubernetes в целом, а именно в контексте устройства Azure Stack пограничной системы. 
+В этой статье описаны методы для подготовки хранилища в кластере Kubernetes в целом, а именно в контексте устройства Azure Stack пограничной Pro. 
 
 ## <a name="storage-requirements-for-kubernetes-pods"></a>Требования к хранилищу для модулей Kubernetes
 
@@ -75,9 +75,9 @@ ms.locfileid: "89268097"
 1. **Подключение PVC к контейнеру**. После привязки PVC к ПС можно подключить PVC к контейнеру так же, как статическая подготовка и чтение или запись в общую папку.
 
 
-## <a name="storage-provisioning-on-azure-stack-edge"></a>Подготовка хранилища на Azure Stack границе
+## <a name="storage-provisioning-on-azure-stack-edge-pro"></a>Подготовка хранилища на Azure Stack пограничных Pro
 
-На Azure Stack пограничном устройстве создаются статически подготовленные `PersistentVolumes` с помощью возможностей хранилища устройства. При подготовке общей папки и включении параметра **общий доступ с помощью вычислений с границей** , это действие автоматически создает ресурс ПС в кластере Kubernetes.
+На устройстве Azure Stack пограничной Pro создаются статически подготовленные `PersistentVolumes` с помощью возможностей хранилища устройства. При подготовке общей папки и включении параметра **общий доступ с помощью вычислений с границей** , это действие автоматически создает ресурс ПС в кластере Kubernetes.
 
 ![Создание локальной общей папки в портал Azure для статической подготовки](./media/azure-stack-edge-gpu-kubernetes-storage/static-provisioning-azure-portal-2.png)
 
@@ -85,7 +85,7 @@ ms.locfileid: "89268097"
 
 ![Создание облачного ресурса в портал Azure для статической подготовки](./media/azure-stack-edge-gpu-kubernetes-storage/static-provisioning-azure-portal-1.png)
 
-Вы можете создать общие папки SMB и NFS для статической инициализации постоянного хранилища версий на Azure Stack пограничном устройстве. После подготовки ПС вы отправите PVC, чтобы затребовать это хранилище. Ниже приведен пример развертывания PVC `yaml` , который заявляет хранилище и использует подготовленные вами общие ресурсы.
+Вы можете создать общие папки SMB и NFS для статической инициализации постоянного хранилища версий на устройстве с Azure Stack пограничным Pro. После подготовки ПС вы отправите PVC, чтобы затребовать это хранилище. Ниже приведен пример развертывания PVC `yaml` , который заявляет хранилище и использует подготовленные вами общие ресурсы.
 
 
 ```yml
@@ -103,13 +103,13 @@ spec:
   storageClassName: ""
 ```
 
-Дополнительные сведения см. [в статье Развертывание приложения с отслеживанием состояния с помощью статической подготовки на Azure Stack пограничных устройствах с помощью kubectl](azure-stack-edge-gpu-deploy-stateful-application-static-provision-kubernetes.md).
+Дополнительные сведения см. [в статье Развертывание приложения с отслеживанием состояния с помощью статической подготовки на Azure Stack пограничных Pro через kubectl](azure-stack-edge-gpu-deploy-stateful-application-static-provision-kubernetes.md).
 
-Azure Stack ребро также имеет встроенный `StorageClass` `ase-node-local` , который использует хранилище диска данных, подключенное к узлу Kubernetes. `StorageClass`Поддерживает динамическую подготовку. Вы можете создать `StorageClass` ссылку в приложениях Pod, а ПС — автоматически. Дополнительные сведения см. в разделе [панель мониторинга Kubernetes](azure-stack-edge-gpu-monitor-kubernetes-dashboard.md) для запроса `ase-node-local StorageClass` .
+Azure Stack пограничной Pro также имеет встроенный `StorageClass` метод `ase-node-local` , который использует хранилище диска данных, подключенное к узлу Kubernetes. `StorageClass`Поддерживает динамическую подготовку. Вы можете создать `StorageClass` ссылку в приложениях Pod, а ПС — автоматически. Дополнительные сведения см. в разделе [панель мониторинга Kubernetes](azure-stack-edge-gpu-monitor-kubernetes-dashboard.md) для запроса `ase-node-local StorageClass` .
 
 ![Встроенный класс хранения на панели мониторинга Kubernetes](./media/azure-stack-edge-gpu-kubernetes-storage/dynamic-provisioning-builtin-storage-class-1.png)
 
-Дополнительные сведения см. [в статье Развертывание приложения с отслеживанием состояния с помощью динамической подготовки на Azure Stack пограничной с помощью куебктл](azure-stack-edge-gpu-deploy-stateful-application-dynamic-provision-kubernetes.md).
+Дополнительные сведения см. [в статье Развертывание приложения с отслеживанием состояния с помощью динамической подготовки на Azure Stack пограничных Pro через куебктл](azure-stack-edge-gpu-deploy-stateful-application-dynamic-provision-kubernetes.md).
 
 ## <a name="choose-storage-type"></a>Выбор типа хранилища
 
@@ -127,8 +127,8 @@ Azure Stack ребро также имеет встроенный `StorageClass`
 
 Чтобы понять, как можно статически подготавливать `PersistentVolume` , см.:
 
-- [Развертывание приложения с отслеживанием состояния с помощью статической подготовки на Azure Stack пограничной с помощью kubectl](azure-stack-edge-gpu-deploy-stateful-application-static-provision-kubernetes.md).
+- [Развертывание приложения с отслеживанием состояния с помощью статической подготовки на Azure Stack пограничной Pro через kubectl](azure-stack-edge-gpu-deploy-stateful-application-static-provision-kubernetes.md).
 
 Чтобы узнать, как можно динамически подготавливать `StorageClass` , см.:
 
-- [Развертывание приложения с отслеживанием состояния с помощью динамической подготовки на Azure Stack пограничным через куебктл](azure-stack-edge-gpu-deploy-stateful-application-dynamic-provision-kubernetes.md).
+- [Развертывание приложения с отслеживанием состояния с помощью динамической подготовки на Azure Stack пограничных Pro через куебктл](azure-stack-edge-gpu-deploy-stateful-application-dynamic-provision-kubernetes.md).

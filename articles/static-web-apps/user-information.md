@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 05/08/2020
 ms.author: cshoe
 ms.custom: devx-track-javascript
-ms.openlocfilehash: 7e1f56fc4601b271bf4a0718a944741016509ce4
-ms.sourcegitcommit: 0b8320ae0d3455344ec8855b5c2d0ab3faa974a3
+ms.openlocfilehash: f966492dd8a231db92f607438bb9ba2d3be71389
+ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/30/2020
-ms.locfileid: "87430516"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90906760"
 ---
 # <a name="accessing-user-information-in-azure-static-web-apps-preview"></a>Доступ к сведениям о пользователе в предварительной версии службы "Статические веб-приложения Azure"
 
@@ -64,6 +64,10 @@ console.log(getUserInfo());
 
 ## <a name="api-functions"></a>Функции API
 
+Функции API, доступные в статических веб-приложениях через серверную часть функций Azure, имеют доступ к тем же данным пользователя, что и клиентское приложение. Хотя API получает сведения, определяемые пользователем, он не выполняет собственных проверок, если пользователь прошел проверку подлинности или соответствует требуемой роли. Правила управления доступом определяются в [`routes.json`](routes.md) файле.
+
+# <a name="javascript"></a>[JavaScript](#tab/javascript)
+
 Данные субъекта клиента передаются в функции API в заголовке запроса `x-ms-client-principal`. Данные субъекта клиента отправляются в виде строки в кодировке [Base64](https://www.wikipedia.org/wiki/Base64), содержащей сериализованный объект JSON.
 
 В следующем примере функции показано, как считывать и возвращать сведения о пользователе.
@@ -92,8 +96,49 @@ async function getUser() {
   return clientPrincipal;
 }
 
-console.log(getUser());
+console.log(await getUser());
 ```
+
+# <a name="c"></a>[C#](#tab/csharp)
+
+В функции C# сведения о пользователе доступны из `x-ms-client-principal` заголовка, который может быть десериализован в `ClaimsPrincipal` объект, или пользовательского типа. В следующем коде показано, как распаковать заголовок в промежуточный тип, `ClientPrincipal` который затем превращается в `ClaimsPrincipal` экземпляр.
+
+```csharp
+  public static class StaticWebAppsAuth
+  {
+    private class ClientPrincipal
+    {
+        public string IdentityProvider { get; set; }
+        public string UserId { get; set; }
+        public string UserDetails { get; set; }
+        public IEnumerable<string> UserRoles { get; set; }
+    }
+
+    public static ClaimsPrincipal Parse(HttpRequest req)
+    {
+        var header = req.Headers["x-ms-client-principal"];
+        var data = header.Value[0];
+        var decoded = System.Convert.FromBase64String(data);
+        var json = System.Text.ASCIIEncoding.ASCII.GetString(decoded);
+        var principal = JsonSerializer.Deserialize<ClientPrincipal>(json, new JsonSerializerOptions { PropertyNameCaseInsensitive = true });
+  
+        principal.UserRoles = principal.UserRoles.Except(new string[] { "anonymous" }, StringComparer.CurrentCultureIgnoreCase);
+  
+        if (!principal.UserRoles.Any())
+        {
+            return new ClaimsPrincipal();
+        }
+  
+        var identity = new ClaimsIdentity(principal.IdentityProvider);
+        identity.AddClaim(new Claim(ClaimTypes.NameIdentifier, principal.UserId));
+        identity.AddClaim(new Claim(ClaimTypes.Name, principal.UserDetails));
+        identity.AddClaims(principal.UserRoles.Select(r => new Claim(ClaimTypes.Role, r)));
+        return new ClaimsPrincipal(identity);
+    }
+  }
+```
+
+---
 
 <sup>1</sup> API-интерфейс [fetch](https://caniuse.com/#feat=fetch) и оператор [await](https://caniuse.com/#feat=mdn-javascript_operators_await) не поддерживаются в Internet Explorer.
 

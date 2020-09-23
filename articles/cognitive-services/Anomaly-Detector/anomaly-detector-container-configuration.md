@@ -10,12 +10,12 @@ ms.subservice: anomaly-detector
 ms.topic: conceptual
 ms.date: 05/07/2020
 ms.author: aahi
-ms.openlocfilehash: 29e790959e941abc133f95297dc09c951152a503
-ms.sourcegitcommit: bb0afd0df5563cc53f76a642fd8fc709e366568b
+ms.openlocfilehash: c0bf08ae0b2d26b2f4992181d2e300e9dbeed818
+ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83593313"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90903530"
 ---
 # <a name="configure-anomaly-detector-containers"></a>Настройка контейнеров Детектора аномалий
 
@@ -25,7 +25,7 @@ ms.locfileid: "83593313"
 
 К контейнеру применяются следующие параметры конфигурации.
 
-|Обязательный|Параметр|Назначение|
+|Обязательно|Параметр|Назначение|
 |--|--|--|
 |Да|[ApiKey](#apikey-configuration-setting)|Используется для отслеживания данных для выставлении счетов.|
 |Нет|[ApplicationInsights](#applicationinsights-setting)|Позволяет добавить в контейнер поддержку телеметрии [Azure Application Insights](https://docs.microsoft.com/azure/application-insights).|
@@ -33,7 +33,7 @@ ms.locfileid: "83593313"
 |Да|[Лицензионное соглашение](#eula-setting)| Указывает, что вы приняли условия лицензии для контейнера.|
 |Нет|[Fluentd](#fluentd-settings)|Записывает данные в журнал и (необязательно) передает метрики на сервер Fluentd.|
 |Нет|[Прокси-сервер HTTP](#http-proxy-credentials-settings)|Настраивает прокси-сервер HTTP для исходящих запросов.|
-|Нет|[Ведение журнала](#logging-settings)|Обеспечивает поддержку ведения журнала ASP.NET Core для вашего контейнера. |
+|Нет|[Logging](#logging-settings)|Обеспечивает поддержку ведения журнала ASP.NET Core для вашего контейнера. |
 |Нет|[Подключения](#mount-settings)|Читает и записывает данные с главного компьютера в контейнер и обратно.|
 
 > [!IMPORTANT]
@@ -57,9 +57,9 @@ ms.locfileid: "83593313"
 
 Этот параметр можно найти в следующем месте.
 
-* Портал Azure: обзор **детектора аномалий** , помеченный`Endpoint`
+* Портал Azure: обзор **детектора аномалий** , помеченный `Endpoint`
 
-|Обязательный| name | Тип данных | Описание |
+|Обязательно| Имя | Тип данных | Описание |
 |--|------|-----------|-------------|
 |Да| `Billing` | Строка | URI конечной точки выставления счетов. Дополнительные сведения о получении URI выставления счетов см. в разделе [сбор обязательных параметров](anomaly-detector-container-howto.md#gathering-required-parameters). Дополнительные сведения и полный список региональных конечных точек см. в статье [Custom subdomain names for Cognitive Services](../cognitive-services-custom-subdomains.md) (Пользовательские имена поддоменов для Cognitive Services). |
 
@@ -88,10 +88,10 @@ ms.locfileid: "83593313"
 
 Точный синтаксис расположения подключения к узлу зависит от операционной системы узла. Кроме того, расположение подключения [главного компьютера](anomaly-detector-container-howto.md#the-host-computer)может быть недоступно из-за конфликта между разрешениями, используемыми учетной записью службы DOCKER, и разрешениями на расположение для подключения к узлу. 
 
-|Необязательный| name | Тип данных | Описание |
+|Необязательно| Имя | Тип данных | Описание |
 |-------|------|-----------|-------------|
-|Нельзя использовать| `Input` | Строка | В контейнерах детекторов аномалий это не используется.|
-|Необязательный| `Output` | Строка | Цель выходного подключения. Значение по умолчанию — `/output`. Это расположение файлов журналов. Сюда входят журналы контейнера. <br><br>Пример.<br>`--mount type=bind,src=c:\output,target=/output`|
+|Не разрешено| `Input` | Тип String | В контейнерах детекторов аномалий это не используется.|
+|Необязательный| `Output` | Строка | Цель выходного подключения. Значение по умолчанию — `/output`. Это расположение файлов журналов. Сюда входят журналы контейнера. <br><br>Пример:<br>`--mount type=bind,src=c:\output,target=/output`|
 
 ## <a name="example-docker-run-commands"></a>Примеры команд docker run 
 
@@ -121,7 +121,7 @@ ms.locfileid: "83593313"
 
   ```Docker
   docker run --rm -it -p 5000:5000 --memory 4g --cpus 1 \
-  mcr.microsoft.com/azure-cognitive-services/anomaly-detector \
+  mcr.microsoft.com/azure-cognitive-services/decision/anomaly-detector \
   Eula=accept \
   Billing={ENDPOINT_URI} \
   ApiKey={API_KEY} 
@@ -131,7 +131,7 @@ ms.locfileid: "83593313"
 
   ```Docker
   docker run --rm -it -p 5000:5000 --memory 4g --cpus 1 \
-  mcr.microsoft.com/azure-cognitive-services/anomaly-detector \
+  mcr.microsoft.com/azure-cognitive-services/decision/anomaly-detector \
   Eula=accept \
   Billing={ENDPOINT_URI} ApiKey={API_KEY} \
   Logging:Console:LogLevel:Default=Information

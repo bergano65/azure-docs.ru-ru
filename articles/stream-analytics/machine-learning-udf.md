@@ -8,12 +8,12 @@ ms.service: stream-analytics
 ms.topic: conceptual
 ms.date: 03/19/2020
 ms.custom: devx-track-javascript
-ms.openlocfilehash: e2277e2088a8cb386d6f19799b235d96e08959b0
-ms.sourcegitcommit: 8def3249f2c216d7b9d96b154eb096640221b6b9
+ms.openlocfilehash: e9496dc70d847d0e9e830a216e8f435b1c48d878
+ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87543441"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90900990"
 ---
 # <a name="integrate-azure-stream-analytics-with-azure-machine-learning-preview"></a>Интеграция Azure Stream Analytics со службой "Машинное обучение Azure" (предварительная версия)
 
@@ -33,23 +33,39 @@ ms.locfileid: "87543441"
 
 ## <a name="add-a-machine-learning-model-to-your-job"></a>Добавление модели машинного обучения к заданию
 
-Вы можете добавить функции Машинного обучения Azure в задание Stream Analytics непосредственно из портала Misrosoft Azure.
+Вы можете добавить функции Машинное обучение Azure в задание Stream Analytics непосредственно из портал Azure или Visual Studio Code.
 
-1. Перейдите к заданию Stream Analytics в портале Azure и выберите **Функции** в разделе **Топология задания**. Затем выберите **Служба машинного обучения Azure** из раскрывающегося меню **+Add** (Добавить).
+### <a name="azure-portal"></a>Портал Azure
 
-   ![Добавление пользовательской функции Машинного обучения Azure](./media/machine-learning-udf/add-azureml-udf.png)
+1. Перейдите к заданию Stream Analytics в портале Azure и выберите **Функции** в разделе **Топология задания**. Затем в раскрывающемся меню **Добавить** выберите пункт **машинное обучение Azure служба** .
+
+   ![Добавление Машинное обучение Azure UDF](./media/machine-learning-udf/add-azure-machine-learning-udf.png)
 
 2. Заполните форму **Функция службы машинного обучение Azure** следующими значениями свойств:
 
-   ![Настройка определяемой пользователем функции Машинного обучения Azure](./media/machine-learning-udf/configure-azureml-udf.png)
+   ![Настройка Машинное обучение Azure UDF](./media/machine-learning-udf/configure-azure-machine-learning-udf.png)
 
-В следующей таблице описаны все свойства функций службы машинного обучения Azure в Stream Analytics.
+### <a name="visual-studio-code"></a>Visual Studio Code
+
+1. Откройте проект Stream Analytics в Visual Studio Code и щелкните правой кнопкой мыши папку **функции** . Затем нажмите кнопку **Добавить функцию**. Выберите **машинное обучение UDF** из раскрывающегося списка.
+
+   :::image type="content" source="media/machine-learning-udf/visual-studio-code-machine-learning-udf-add-function.png" alt-text="Добавление определяемой пользователем функции в VS Code":::
+
+   :::image type="content" source="media/machine-learning-udf/visual-studio-code-machine-learning-udf-add-function-2.png" alt-text="Добавление Машинное обучение Azure UDF в VS Code":::
+
+2. Введите имя функции и заполните параметры в файле конфигурации, используя **SELECT из подписок** в CodeLens.
+
+   :::image type="content" source="media/machine-learning-udf/visual-studio-code-machine-learning-udf-function-name.png" alt-text="Выберите Машинное обучение Azure UDF в VS Code":::
+
+   :::image type="content" source="media/machine-learning-udf/visual-studio-code-machine-learning-udf-configure-settings.png" alt-text="Настройка Машинное обучение Azure UDF в VS Code":::
+
+В следующей таблице описаны все свойства Машинное обучение Azure функций службы в Stream Analytics.
 
 |Свойство|Описание|
 |--------|-----------|
 |Псевдоним функции|Введите имя для вызова функции в запросе.|
 |Подписка|Ваша подписка Azure.|
-|Рабочая область машинного обучения Azure|Рабочая область машинного обучения Azure, используемая для развертывания модели как веб-службы.|
+|Рабочая область службы "Машинное обучение Azure"|Рабочая область машинного обучения Azure, используемая для развертывания модели как веб-службы.|
 |Развернутые приложения|Веб-служба, в которой размещается ваша модель.|
 |Сигнатура функции|Сигнатура веб-службы выводится из спецификации схемы API. Если не удается загрузить сигнатуру, убедитесь, что вы предоставили пример входных и выходных данных в сценарии оценки для автоматического создания схемы.|
 |Число параллельных запросов на секцию|Это параметр расширенной конфигурации для оптимизации пропускной способности при большом масштабе. Это число представляет параллельные запросы, отправляемые из каждой секции задания в веб-службу. Задания с шестью единицами потоковой передачи (SU) и ниже имеют одну секцию. Задания с 12 SU имеют две секции, 18 — три секции и т. д.<br><br> Например, если в задании две секции и этот параметр установлен на 4, то в веб-службе будет содержаться восемь одновременных запросов от задания. Сейчас в общедоступной предварительной версии это значение по умолчанию равно 20 и его нельзя изменять.|
@@ -168,4 +184,3 @@ FROM input
 
 * [Руководство. Определяемые пользователем функции JavaScript в Azure Stream Analytics](stream-analytics-javascript-user-defined-functions.md)
 * [Масштабирование заданий Stream Analytics с помощью функции Студии машинного обучения Azure (классической)](stream-analytics-scale-with-machine-learning-functions.md)
-

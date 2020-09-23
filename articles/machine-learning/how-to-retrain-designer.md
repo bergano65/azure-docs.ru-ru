@@ -1,7 +1,7 @@
 ---
-title: Переобучение моделей с использованием конструктора Машинного обучения Azure (предварительная версия)
+title: Повторное обучение моделей с помощью конструктора Машинное обучение Azure
 titleSuffix: Azure Machine Learning
-description: Узнайте, как переобучить модели с помощью опубликованных конвейеров в конструкторе Машинного обучения Azure (предварительная версия).
+description: Узнайте, как переучить модели с опубликованными конвейерами в конструкторе Машинное обучение Azure.
 services: machine-learning
 ms.service: machine-learning
 ms.subservice: core
@@ -10,15 +10,15 @@ author: likebupt
 ms.date: 04/06/2020
 ms.topic: conceptual
 ms.custom: how-to, designer
-ms.openlocfilehash: 11e04d0aa313a005cfd13bca134c75bb712fd234
-ms.sourcegitcommit: f8d2ae6f91be1ab0bc91ee45c379811905185d07
+ms.openlocfilehash: d43bea855d9ac3dc34b8e72adcd9577e5933e52c
+ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89661627"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90905680"
 ---
-# <a name="retrain-models-with-azure-machine-learning-designer-preview"></a>Переобучение моделей с помощью конструктора Машинного обучения Azure (предварительная версия)
-[!INCLUDE [applies-to-skus](../../includes/aml-applies-to-enterprise-sku.md)]
+# <a name="retrain-models-with-azure-machine-learning-designer"></a>Повторное обучение моделей с помощью конструктора Машинное обучение Azure
+
 
 Из этой статьи вы узнаете, как использовать конструктор Машинного обучения Azure для переобучения модели машинного обучения. Для обучения модели новым данным будут использоваться опубликованные конвейеры для автоматизации рабочего процесса и установки параметров. 
 
@@ -32,12 +32,12 @@ ms.locfileid: "89661627"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-* Рабочая область Машинного обучения Azure с номером SKU Enterprise.
-* Завершите часть 1 этой серии статей [Преобразование данных в конструкторе Машинного обучения Azure (предварительная версия)](how-to-designer-transform-data.md).
+* Рабочая область машинного обучения Azure
+* Выполните часть 1 из этой серии "практические руководства [", преобразуйте данные в конструкторе](how-to-designer-transform-data.md)
 
 [!INCLUDE [machine-learning-missing-ui](../../includes/machine-learning-missing-ui.md)]
 
-В этой статье также предполагается, что у вас есть базовые знания о создании конвейеров в конструкторе. Вводные сведения о конструкторе вы можете найти в этом [учебнике](tutorial-designer-automobile-price-train-score.md). 
+В этой статье также предполагается, что у вас есть опыт создания конвейеров в конструкторе. Вводные сведения о конструкторе вы можете найти в этом [учебнике](tutorial-designer-automobile-price-train-score.md). 
 
 ### <a name="sample-pipeline"></a>Пример конвейера
 

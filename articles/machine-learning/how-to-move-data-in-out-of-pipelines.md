@@ -10,16 +10,16 @@ author: lobrien
 ms.date: 08/20/2020
 ms.topic: conceptual
 ms.custom: how-to, contperfq4, devx-track-python
-ms.openlocfilehash: 806b25fea208afae63ca6be704b22808578d5ba2
-ms.sourcegitcommit: 07166a1ff8bd23f5e1c49d4fd12badbca5ebd19c
+ms.openlocfilehash: fa78ab00e337ee6f2a42e23a2899d79a09a7ea3d
+ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90090675"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90904985"
 ---
 # <a name="moving-data-into-and-between-ml-pipeline-steps-python"></a>Перемещение данных в этапы конвейера машинного обучения и между ними (Python)
 
-[!INCLUDE [applies-to-skus](../../includes/aml-applies-to-basic-enterprise-sku.md)]
+
 
 В этой статье представлен код для импорта, преобразования и перемещения данных между шагами в конвейере Машинное обучение Azure. Общие сведения о работе с данными в Машинное обучение Azure см. [в статье доступ к данным в службах хранилища Azure](how-to-access-data.md). Преимущества и структура конвейеров Машинное обучение Azure см. в разделе [что такое конвейеры машинное обучение Azure?](concept-ml-pipelines.md).
 

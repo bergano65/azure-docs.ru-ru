@@ -6,12 +6,12 @@ ms.author: andrela
 ms.service: mysql
 ms.topic: how-to
 ms.date: 3/18/2020
-ms.openlocfilehash: aa79d1ba2cba86bf3f381ff78fd630ce455128d9
-ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
+ms.openlocfilehash: d885cc64eeebd4873ad5993b39b48845d1365c23
+ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86107875"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90902746"
 ---
 # <a name="restart-azure-database-for-mysql-server-using-azure-portal"></a>Перезапуск Базы данных Azure для MySQL с помощью портала Azure
 В этой статье объясняется, как перезапустить сервер в Базе данных Azure для MySQL. Возможно, вам потребуется перезапустить сервер в целях обслуживания, что приводит к кратковременному отключению во время выполнения операции.
@@ -32,19 +32,19 @@ ms.locfileid: "86107875"
 
 2. На панели инструментов страницы **Обзор** сервера нажмите кнопку **Восстановить**.
 
-   ![База данных Azure для MySQL: кнопка "Перезапуск" на странице "Обзор"](./media/howto-restart-server-portal/2-server.png)
+   :::image type="content" source="./media/howto-restart-server-portal/2-server.png" alt-text="База данных Azure для MySQL: кнопка "Перезапуск" на странице "Обзор"":::
 
 3. Нажмите кнопку **Да**, чтобы подтвердить перезапуск сервера.
 
-   ![База данных Azure для MySQL — подтверждение перезапуска](./media/howto-restart-server-portal/3-restart-confirm.png)
+   :::image type="content" source="./media/howto-restart-server-portal/3-restart-confirm.png" alt-text="База данных Azure для MySQL — подтверждение перезапуска":::
 
 4. Убедитесь, что состояние сервера изменилось на "Идет перезапуск".
 
-   ![База данных Azure для MySQL — состояние перезапуска](./media/howto-restart-server-portal/4-restarting-status.png)
+   :::image type="content" source="./media/howto-restart-server-portal/4-restarting-status.png" alt-text="База данных Azure для MySQL — состояние перезапуска":::
 
 5. Убедитесь, что сервер перезапущен.
 
-   ![База данных Azure для MySQL — перезапуск выполнен](./media/howto-restart-server-portal/5-restart-success.png)
+   :::image type="content" source="./media/howto-restart-server-portal/5-restart-success.png" alt-text="База данных Azure для MySQL — перезапуск выполнен":::
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

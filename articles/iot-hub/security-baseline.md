@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 09/03/2020
 ms.author: mbaldwin
 ms.custom: subject-security-benchmark
-ms.openlocfilehash: 314004d2b62d5616c1d7925b82fd9f050d0a1fd0
-ms.sourcegitcommit: bf1340bb706cf31bb002128e272b8322f37d53dd
+ms.openlocfilehash: 31a3bfbc174ca9c4c46005a26cde65db1ff74b65
+ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/03/2020
-ms.locfileid: "89441805"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90906911"
 ---
 # <a name="azure-security-baseline-for-azure-iot-hub"></a>Базовый план безопасности Azure для центра Интернета вещей Azure
 
@@ -71,7 +71,7 @@ ms.locfileid: "89441805"
 
 - [IP-фильтр центра Интернета вещей](iot-hub-ip-filtering.md)
 
-- [Центр безопасности Azure для связи подозрительных IP-адресов Интернета вещей](../asc-for-iot/concept-security-alerts.md)
+- [Центр безопасности Azure для связи подозрительных IP-адресов Интернета вещей](../defender-for-iot/concept-security-alerts.md)
 
 - [Управление Azure от атак DDoS Protection Basic](../virtual-network/ddos-protection-overview.md)
 
@@ -234,7 +234,7 @@ ms.locfileid: "89441805"
 
 - [Мониторинг работоспособности центра Интернета вещей Azure](iot-hub-monitor-resource-health.md)
 - [Подключение к Azure Sentinel](../sentinel/quickstart-onboard.md)
-- [Центр безопасности Azure для оповещений IoT](../asc-for-iot/concept-security-alerts.md)
+- [Центр безопасности Azure для оповещений IoT](../defender-for-iot/concept-security-alerts.md)
 
 - [Как оповещать данные журнала Log Analytics](../azure-monitor/learn/tutorial-response.md)
 

@@ -11,16 +11,16 @@ author: jpe316
 ms.date: 06/03/2020
 ms.topic: conceptual
 ms.custom: how-to, contperfq4, devx-track-python
-ms.openlocfilehash: a5f56beb179f7c72fe66c7423999201f3460b143
-ms.sourcegitcommit: 3be3537ead3388a6810410dfbfe19fc210f89fec
+ms.openlocfilehash: 7637cc911ea2fbb950a18c2c8d91f5c3eaf02c23
+ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89646300"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90905077"
 ---
 # <a name="what-are-field-programmable-gate-arrays-fpga-and-how-to-deploy"></a>Что такое программируемые массивы вентиля (FPGA) и как развернуть
 
-[!INCLUDE [applies-to-skus](../../includes/aml-applies-to-basic-enterprise-sku.md)]
+
 
 В этой статье содержатся общие сведения о программируемых массивах шлюзов (FPGA) и показано, как развертывать модели с помощью [машинное обучение Azure](overview-what-is-azure-ml.md) в Azure FPGA.
 
@@ -67,7 +67,7 @@ FPGA в Azure поддерживает:
   
 FPGA доступны в следующих регионах Azure:
   - Восточная часть США
-  - Southeast Asia
+  - Юго-Восточная Азия
   - Западная Европа
   - западная часть США 2
 

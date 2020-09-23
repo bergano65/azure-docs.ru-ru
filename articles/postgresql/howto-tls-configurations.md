@@ -6,12 +6,12 @@ ms.author: manishku
 ms.service: postgresql
 ms.topic: how-to
 ms.date: 06/02/2020
-ms.openlocfilehash: 4cf491a27fbe53a5f5bf0e8351e5bb684b3492f1
-ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
+ms.openlocfilehash: 26470709b37c2623c581499ec55572da402e96cb
+ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86101993"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90906457"
 ---
 # <a name="configuring-tls-settings-in-azure-database-for-postgresql-single---server-using-azure-portal"></a>Настройка параметров TLS в базе данных Azure для PostgreSQL на одном сервере с помощью портал Azure
 
@@ -35,13 +35,13 @@ ms.locfileid: "86101993"
 
 1. В **минимальной версии TLS**выберите **1,2** , чтобы запретить подключения с использованием протокола tls версии ниже TLS 1,2 для одного сервера PostgreSQL.
 
-    ![Конфигурация TLS для одного сервера базы данных Azure для PostgreSQL](./media/howto-tls-configurations/setting-tls-value.png)
+    :::image type="content" source="./media/howto-tls-configurations/setting-tls-value.png" alt-text="Конфигурация TLS для одного сервера базы данных Azure для PostgreSQL":::
 
-1. Щелкните **Сохранить** , чтобы сохранить изменения.
+1. **Сохраните** изменения.
 
 1. Уведомление подтверждает успешное включение параметра безопасности подключения.
 
-    ![База данных Azure для PostgreSQL — Настройка TLS для одного сервера успешно выполнена](./media/howto-tls-configurations/setting-tls-value-success.png)
+    :::image type="content" source="./media/howto-tls-configurations/setting-tls-value-success.png" alt-text="База данных Azure для PostgreSQL — Настройка TLS для одного сервера успешно выполнена":::
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

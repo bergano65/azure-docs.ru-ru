@@ -6,12 +6,12 @@ ms.author: raagyema
 ms.service: postgresql
 ms.topic: conceptual
 ms.date: 08/21/2019
-ms.openlocfilehash: a30af0c8bef47a37fe3439e885d3895a2c826225
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: f0ce3843752ebd6ed56281f6699783181b52fdc6
+ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "74768475"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90903880"
 ---
 # <a name="performance-recommendations-in-azure-database-for-postgresql---single-server"></a>Рекомендации по производительности в базе данных Azure для PostgreSQL — один сервер
 
@@ -27,13 +27,13 @@ ms.locfileid: "74768475"
 
 Откройте **рекомендации по повышению производительности** в разделе **Интеллектуальная производительность** строки меню на странице портал Azure сервера PostgreSQL.
 
-![Целевая страница рекомендаций по повышению производительности](./media/concepts-performance-recommendations/performance-recommendations-page.png)
+:::image type="content" source="./media/concepts-performance-recommendations/performance-recommendations-page.png" alt-text="Целевая страница рекомендаций по повышению производительности":::
 
 Щелкните **Анализировать** и выберите базу данных, с которой начнется анализ. В зависимости от рабочей нагрузки, выполнение анализа может занять несколько минут. По окончании анализа на портале появится уведомление. При анализе выполняется глубокое изучение базы данных. Рекомендуется выполнять анализ в периоды наименьшей нагрузки. 
 
 В окне **рекомендации** отобразится список рекомендаций, если они были найдены.
 
-![Новая страница рекомендаций по производительности](./media/concepts-performance-recommendations/performance-recommendations-result.png)
+:::image type="content" source="./media/concepts-performance-recommendations/performance-recommendations-result.png" alt-text="Новая страница рекомендаций по производительности":::
 
 Найденные рекомендации не применяются автоматически. Чтобы применить рекомендацию, скопируйте текст запроса и выполните его в клиенте по своему выбору. Не забудьте протестировать и отследить результаты применения рекомендации, чтобы оценить ее. 
 
@@ -47,8 +47,8 @@ ms.locfileid: "74768475"
 ### <a name="drop-index-recommendations"></a>Рекомендации по удалению индексов
 Помимо обнаружения отсутствующих индексов, база данных Azure для PostgreSQL анализирует производительность существующих индексов. Если индекс редко используется или избыточен, анализатор рекомендует удалить его.
 
-## <a name="considerations"></a>Особенности
+## <a name="considerations"></a>Рекомендации
 * Рекомендации по производительности недоступны для [реплик чтения](concepts-read-replicas.md).
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 - Дополнительные сведения о [мониторинге и настройке](concepts-monitoring.md) см. в базе данных Azure для PostgreSQL.
 

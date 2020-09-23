@@ -11,15 +11,14 @@ author: aashishb
 ms.date: 07/07/2020
 ms.topic: conceptual
 ms.custom: how-to, contperfq4, tracking-python
-ms.openlocfilehash: e718ed13cfd67092b50b42584d861a2bcf5dacc5
-ms.sourcegitcommit: f8d2ae6f91be1ab0bc91ee45c379811905185d07
+ms.openlocfilehash: 4dc1f86ce7dbb060c747c4433f0c2b871ce5582d
+ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89665142"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90907646"
 ---
 # <a name="secure-an-azure-machine-learning-workspace-with-virtual-networks"></a>Защита рабочей области Машинное обучение Azure с помощью виртуальных сетей
-[!INCLUDE [applies-to-skus](../../includes/aml-applies-to-basic-enterprise-sku.md)]
 
 Из этой статьи вы узнаете, как защитить рабочую область Машинное обучение Azure и связанные с ней ресурсы в виртуальной сети.
 
@@ -173,8 +172,6 @@ validate=False)
 
 Чтобы использовать реестр контейнеров Azure в виртуальной сети, необходимо соблюдать следующие требования.
 
-* Рабочая область Машинного обучения Azure (выпуск Enterprise). Сведения об обновлении см. в разделе [Обновление до выпуска Enterprise](how-to-manage-workspace.md#upgrade).
-
 * Реестр контейнеров Azure должен иметь версию Premium. Дополнительные сведения об обновлении см. в разделе [Изменение SKU](/azure/container-registry/container-registry-skus#changing-skus).
 
 * Реестр контейнеров Azure должен находиться в той же виртуальной сети и подсети, что и учетная запись хранения и целевые объекты вычислений, используемые для обучения или аналитики.
@@ -256,8 +253,8 @@ validate=False)
             "type": "SystemAssigned"
         },
         "sku": {
-            "tier": "enterprise",
-            "name": "enterprise"
+            "tier": "basic",
+            "name": "basic"
         },
         "properties": {
             "sharedPrivateLinkResources":

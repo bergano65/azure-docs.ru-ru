@@ -6,12 +6,12 @@ ms.author: raagyema
 ms.service: postgresql
 ms.topic: conceptual
 ms.date: 06/25/2020
-ms.openlocfilehash: 506bd79a512a5d8d143f582ee84d292dff86d9df
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: c5515c21d89b01576bb6aae8c9d480b439dc1507
+ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85392817"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90902699"
 ---
 # <a name="logs-in-azure-database-for-postgresql---single-server"></a>Журналы в базе данных Azure для PostgreSQL — один сервер
 
@@ -23,7 +23,7 @@ ms.locfileid: "85392817"
 ## <a name="configure-logging"></a>Настройка журнала 
 Вы можете настроить стандартное ведение журнала Postgres на сервере с помощью параметров сервера ведения журнала. На каждом сервере базы данных Azure для PostgreSQL `log_checkpoints` и `log_connections` включены по умолчанию. Чтобы ведение журнала соответствовало вашим требования, можно изменить дополнительные параметры. 
 
-![База данных Azure для PostgreSQL. Параметры ведения журнала](./media/concepts-server-logs/log-parameters.png)
+:::image type="content" source="./media/concepts-server-logs/log-parameters.png" alt-text="База данных Azure для PostgreSQL. Параметры ведения журнала":::
 
 Дополнительные сведения о параметрах журнала postgres см. в разделах о [времени](https://www.postgresql.org/docs/current/runtime-config-logging.html#RUNTIME-CONFIG-LOGGING-WHEN) и [журналах](https://www.postgresql.org/docs/current/runtime-config-logging.html#RUNTIME-CONFIG-LOGGING-WHAT) документации по postgres. Большинство, но не все параметры ведения журнала postgres доступны для настройки в базе данных Azure для PostgreSQL.
 
@@ -103,10 +103,10 @@ AzureDiagnostics
 | TenantId | Идентификатор клиента |
 | SourceSystem | `Azure` |
 | TimeGenerated [UTC] | Метка времени, когда журнал был записан в формате UTC |
-| Type | Тип журнала Всегда `AzureDiagnostics` |
+| Тип | Тип журнала Всегда `AzureDiagnostics`. |
 | SubscriptionId | Идентификатор GUID для подписки, принадлежащей серверу |
 | ResourceGroup | Имя группы ресурсов, принадлежащей серверу |
-| ResourceProvider | Имя поставщика ресурсов. Всегда `MICROSOFT.DBFORPOSTGRESQL` |
+| ResourceProvider | Имя поставщика ресурсов. Всегда `MICROSOFT.DBFORPOSTGRESQL`. |
 | ResourceType | `Servers` |
 | ResourceId | Универсальный код ресурса (URI) |
 | Ресурс | Имя сервера |
@@ -124,7 +124,7 @@ AzureDiagnostics
 | Prefix | Префикс строки журнала |
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 - Дополнительные сведения о доступе к журналам см. в статье [Настройка журналов сервера и получение к ним доступа с помощью портала Azure](howto-configure-server-logs-in-portal.md) или [Настройка журналов сервера и получение к ним доступа с помощью Azure CLI](howto-configure-server-logs-using-cli.md).
-- Дополнительные сведения см. в статье [Цены на Azure Monitor](https://azure.microsoft.com/pricing/details/monitor/).
+- Дополнительные сведения о [ценах на Azure Monitor](https://azure.microsoft.com/pricing/details/monitor/).
 - Дополнительные сведения о [журналах аудита](concepts-audit.md)

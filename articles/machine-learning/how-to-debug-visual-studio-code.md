@@ -9,16 +9,16 @@ ms.topic: conceptual
 author: luisquintanilla
 ms.author: luquinta
 ms.date: 08/06/2020
-ms.openlocfilehash: 08859eb87431b59e8be68369ce8f3876aa7d9f21
-ms.sourcegitcommit: 03662d76a816e98cfc85462cbe9705f6890ed638
+ms.openlocfilehash: 3c2934c92be668d4b4c05f97a98395e2e219b7dc
+ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90530307"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90907612"
 ---
 # <a name="interactive-debugging-with-visual-studio-code"></a>Интерактивная Отладка с помощью Visual Studio Code
 
-[!INCLUDE [applies-to-skus](../../includes/aml-applies-to-basic-enterprise-sku.md)]
+
 
 Узнайте, как выполнять интерактивную отладку Машинное обучение Azure конвейеров и развертываний с помощью Visual Studio Code (VS Code) и [депугпи](https://github.com/microsoft/debugpy/).
 
@@ -26,7 +26,7 @@ ms.locfileid: "90530307"
 
 В некоторых случаях может потребоваться интерактивно отлаживать код Python, используемый в конвейере машинного обучения. С помощью VS Code и дебугпи можно присоединяться к коду, как он выполняется в среде обучения.
 
-### <a name="prerequisites"></a>Предварительные условия
+### <a name="prerequisites"></a>Предварительные требования
 
 * __Рабочая область машинное обучение Azure__ , настроенная для использования __виртуальной сети Azure__.
 * __Конвейер машинное обучение Azure__ , использующий скрипты Python в рамках этапов конвейера. Например, Писонскриптстеп.
@@ -109,7 +109,7 @@ ms.locfileid: "90530307"
         print(f'Debugger attached = {debugpy.is_client_connected()}')
     ```
 
-В следующем примере кода Python показан базовый `train.py` файл, позволяющий выполнять отладку:
+В следующем примере кода Python показан простой `train.py` файл, позволяющий выполнять отладку:
 
 ```python
 # Copyright (c) Microsoft. All rights reserved.

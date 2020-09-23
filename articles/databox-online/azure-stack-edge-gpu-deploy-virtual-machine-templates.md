@@ -1,6 +1,6 @@
 ---
-title: Развертывание виртуальных машин на Azure Stack пограничных устройствах с помощью шаблонов
-description: Описание создания виртуальных машин и управления ими на Azure Stack пограничном устройстве с помощью шаблонов.
+title: Развертывание виртуальных машин на устройстве Azure Stack ребра Pro с помощью шаблонов
+description: В этой статье описывается создание виртуальных машин и управление ими на устройстве Azure Stack пограничной Pro с помощью шаблонов.
 services: databox
 author: alkohli
 ms.service: databox
@@ -8,16 +8,16 @@ ms.subservice: edge
 ms.topic: how-to
 ms.date: 08/04/2020
 ms.author: alkohli
-ms.openlocfilehash: 4f5fb02239fa48d96b0b779af7c970fc67fbcb99
-ms.sourcegitcommit: 9c262672c388440810464bb7f8bcc9a5c48fa326
+ms.openlocfilehash: eeefbcdc080620c60f7cd49b8f749375e23ddd02
+ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/03/2020
-ms.locfileid: "89419832"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90899712"
 ---
-# <a name="deploy-vms-on-your-azure-stack-edge-gpu-device-via-templates"></a>Развертывание виртуальных машин на устройстве с Azure Stack ребра с помощью шаблонов
+# <a name="deploy-vms-on-your-azure-stack-edge-pro-gpu-device-via-templates"></a>Развертывание виртуальных машин на устройстве с Azure Stack ребра Pro GPU с помощью шаблонов
 
-В этом учебнике описывается создание виртуальной машины на Azure Stack пограничном устройстве и управление ею с помощью шаблонов. Эти шаблоны являются файлами нотация объектов JavaScript (JSON), которые определяют инфраструктуру и конфигурацию для виртуальной машины. В этих шаблонах указываются развертываемые ресурсы и свойства этих ресурсов.
+В этом учебнике описано, как создать виртуальную машину на устройстве Azure Stack пограничной Pro и управлять ею с помощью шаблонов. Эти шаблоны являются файлами нотация объектов JavaScript (JSON), которые определяют инфраструктуру и конфигурацию для виртуальной машины. В этих шаблонах указываются развертываемые ресурсы и свойства этих ресурсов.
 
 Шаблоны являются гибкими в разных средах, так как они могут принимать параметры в качестве входных данных в среде выполнения из файла. Стандартная структура именования предназначена `TemplateName.json` для шаблона и `TemplateName.parameters.json` для файла параметров. Дополнительные сведения о шаблонах ARM см. в [разделе что такое Azure Resource Manager Templates?](../azure-resource-manager/templates/overview.md).
 
@@ -25,7 +25,7 @@ ms.locfileid: "89419832"
 
 ## <a name="vm-deployment-workflow"></a>Рабочий процесс развертывания виртуальной машины
 
-Для развертывания Azure Stack пограничных виртуальных машин на нескольких устройствах можно использовать один виртуальный жесткий диск Sysprep для полного резерва, один и тот же шаблон для развертывания, а также внести незначительные изменения в параметры этого шаблона для каждого расположения развертывания (эти изменения могут быть внесены вручную, так как мы делаем это с помощью программного обеспечения). 
+Для развертывания Azure Stack пограничных виртуальных машинах Pro на нескольких устройствах можно использовать один виртуальный жесткий диск Sysprep для полного резерва, один и тот же шаблон для развертывания, а также внести незначительные изменения в параметры для каждого расположения развертывания (эти изменения могут быть произведены вручную, так как мы делаем это с помощью программного обеспечения). 
 
 Общая сводка по рабочему процессу развертывания с использованием шаблонов выглядит следующим образом:
 
@@ -57,13 +57,13 @@ ms.locfileid: "89419832"
 
 ## <a name="device-prerequisites"></a>Предварительные требования для устройства
 
-Настройте эти компоненты на Azure Stack пограничном устройстве.
+Настройте эти компоненты на устройстве Azure Stack пограничной Pro.
 
 [!INCLUDE [azure-stack-edge-gateway-deploy-virtual-machine-prerequisites](../../includes/azure-stack-edge-gateway-deploy-virtual-machine-prerequisites.md)]
 
 ## <a name="client-prerequisites"></a>Требования к клиенту
 
-Настройте эти компоненты на клиенте, которые будут использоваться для доступа к Azure Stack пограничному устройству.
+Настройте эти компоненты на клиенте, которые будут использоваться для доступа к устройству Azure Stack ребра Pro.
 
 1. [Скачайте обозреватель службы хранилища](https://azure.microsoft.com/features/storage-explorer/) , если вы используете его для отправки виртуального жесткого диска. Кроме того, можно скачать AzCopy для отправки виртуального жесткого диска. При работе с предыдущими версиями AzCopy может потребоваться настроить TLS 1,2 на клиентском компьютере. 
 1. [Скачайте шаблоны виртуальных машин и файлы параметров](https://aka.ms/ase-vm-templates) на клиентский компьютер. Распакуйте его в каталог, который будет использоваться в качестве рабочего каталога.
@@ -74,7 +74,7 @@ ms.locfileid: "89419832"
 Настройте эти компоненты, чтобы создать ресурсы, которые понадобятся для создания виртуальной машины. 
 
     
-### <a name="create-a-resource-group"></a>Создание группы ресурсов
+### <a name="create-a-resource-group"></a>Создание группы ресурсов.
 
 Создайте группу ресурсов Azure с помощью командлета [New-AzureRmResourceGroup](https://docs.microsoft.com/powershell/module/az.resources/new-azresourcegroup). Группа ресурсов — это логический контейнер, в который развертываются и управляются ресурсы Azure, такие как учетная запись хранения, диск, управляемый диск.
 
@@ -108,7 +108,7 @@ New-AzureRmStorageAccount -Name <Storage account name> -ResourceGroupName <Resou
 ```
 
 > [!NOTE]
-> Только локальные учетные записи хранения, такие как локально избыточное хранилище (Standard_LRS или Premium_LRS), можно создавать с помощью Azure Resource Manager. Чтобы создать многоуровневые учетные записи хранения, см. действия в разделе [Добавление и подключение к учетным записям хранения на Azure Stack пограничных](azure-stack-edge-j-series-deploy-add-storage-accounts.md)устройствах.
+> Только локальные учетные записи хранения, такие как локально избыточное хранилище (Standard_LRS или Premium_LRS), можно создавать с помощью Azure Resource Manager. Чтобы создать многоуровневые учетные записи хранения, см. действия в разделе [Добавление и подключение к учетным записям хранения на Azure Stack пограничных Pro](azure-stack-edge-j-series-deploy-add-storage-accounts.md).
 
 Результат выполнения команды показан ниже.
 
@@ -145,7 +145,7 @@ key2 7vnVMJUwJXlxkXXOyVO4NfqbW5e/5hZ+VOs+C/h/ReeoszeV+qoyuBitgnWjiDPNdH4+lSm1/Zj
 
 `<Device IP> <storage account name>.blob.<Device name>.<DNS domain>`
 
-В типичной среде DNS настроена таким образом, чтобы все учетные записи хранения указывали на Azure Stack пограничных устройств с `*.blob.devicename.domainname.com` записью.
+В типичной среде DNS настроена таким образом, что все учетные записи хранения будут указывать на устройство Azure Stack пограничной Pro с `*.blob.devicename.domainname.com` записью.
 
 ### <a name="optional-install-certificates"></a>Используемых Установка сертификатов
 
@@ -215,7 +215,7 @@ key2 7vnVMJUwJXlxkXXOyVO4NfqbW5e/5hZ+VOs+C/h/ReeoszeV+qoyuBitgnWjiDPNdH4+lSm1/Zj
 
 <!--### Use AzCopy for upload
 
-Before you use AzCopy, make sure that the [AzCopy is configured correctly](#configure-azcopy) for use with the blob storage REST API version that you are using with your Azure Stack Edge device.
+Before you use AzCopy, make sure that the [AzCopy is configured correctly](#configure-azcopy) for use with the blob storage REST API version that you are using with your Azure Stack Edge Pro device.
 
 
 ```powershell
@@ -269,7 +269,7 @@ AzCopy /Source:\\hcsfs\scratch\vm_vhds\linux\ /Dest:http://sa191113014333.blob.d
     }
 ```
 
-Измените файл, `CreateImageAndVnet.parameters.json` включив в него следующие сведения для Azure Stack пограничной устройства:
+Измените файл, `CreateImageAndVnet.parameters.json` включив в него следующие сведения для устройства Azure Stack ребра Pro:
 
 1. Укажите тип операционной системы, соответствующий загружаемому виртуальному жесткому диску. Типом операционной системы может быть Windows или Linux.
 
@@ -341,7 +341,7 @@ AzCopy /Source:\\hcsfs\scratch\vm_vhds\linux\ /Dest:http://sa191113014333.blob.d
 Разверните шаблон `CreateImageAndVnet.json` . Этот шаблон развертывает ресурсы виртуальной сети и образа, которые будут использоваться для создания виртуальных машин на следующем шаге.
 
 > [!NOTE]
-> При развертывании шаблона при возникновении ошибки проверки подлинности учетные данные Azure для этого сеанса могли быть просрочены. Повторно выполните `login-AzureRM` команду, чтобы снова подключиться к Azure Resource Manager на устройстве Azure Stack.
+> При развертывании шаблона при возникновении ошибки проверки подлинности учетные данные Azure для этого сеанса могли быть просрочены. Повторно выполните `login-AzureRM` команду, чтобы снова подключиться к Azure Resource Manager на устройстве Azure Stack ребра Pro.
 
 1. Выполните следующую команду: 
     
@@ -437,7 +437,7 @@ AzCopy /Source:\\hcsfs\scratch\vm_vhds\linux\ /Dest:http://sa191113014333.blob.d
         }
 ```    
 
-Назначьте соответствующие параметры в `CreateVM.parameters.json` для устройства Azure Stack пограничной.
+Назначьте соответствующие параметры в `CreateVM.parameters.json` для устройства Azure Stack ребра Pro.
 
 1. Укажите уникальное имя, имя сетевого интерфейса и имя ipconfig. 
 1. Введите имя пользователя, пароль и поддерживаемый размер виртуальной машины.
@@ -594,7 +594,7 @@ AzCopy /Source:\\hcsfs\scratch\vm_vhds\linux\ /Dest:http://sa191113014333.blob.d
 
 <!--## Manage VM
 
-The following section describes some of the common operations around the VM that you will create on your Azure Stack Edge device.
+The following section describes some of the common operations around the VM that you will create on your Azure Stack Edge Pro device.
 
 [!INCLUDE [azure-stack-edge-gateway-manage-vm](../../includes/azure-stack-edge-gateway-manage-vm.md)]-->
 
@@ -609,9 +609,9 @@ The following section describes some of the common operations around the VM that
 
 <!--## Configure AzCopy
 
-When you install the latest version of AzCopy, you will need to configure AzCopy to ensure that it matches the blob storage REST API version of your Azure Stack Edge device.
+When you install the latest version of AzCopy, you will need to configure AzCopy to ensure that it matches the blob storage REST API version of your Azure Stack Edge Pro device.
 
-On the client used to access your Azure Stack Edge device, set up a global variable to match the blob storage REST API version.
+On the client used to access your Azure Stack Edge Pro device, set up a global variable to match the blob storage REST API version.
 
 ### On Windows client 
 

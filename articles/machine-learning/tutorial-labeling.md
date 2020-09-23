@@ -10,15 +10,15 @@ ms.author: sgilley
 author: sdgilley
 ms.reviewer: ranku
 ms.date: 04/09/2020
-ms.openlocfilehash: 60dd9631df0b997ce39134002bdb6ed9f69336ed
-ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
+ms.openlocfilehash: 9e24a652bb4e577ff9b604b6b4f5284883723ee5
+ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87319275"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90906709"
 ---
 # <a name="tutorial-create-a-labeling-project-for-multi-class-image-classification"></a>Руководство по Создание проекта маркировки для многоклассовой классификации изображений 
-[!INCLUDE [applies-to-skus](../../includes/aml-applies-to-basic-enterprise-sku.md)]
+
 
 В этом руководстве показано, как управлять процессом маркировки (добавления меток) при подготовке данных для создания моделей машинного обучения. Маркировка данных в Машинном обучении Azure предоставляется в общедоступной предварительной версии.
 
@@ -130,7 +130,7 @@ ms.locfileid: "87319275"
 
 1. Выберите **Далее**.
 
-1. Если вы используете корпоративную рабочую область, вы увидите раздел **ML assisted labeling** (Маркировка с использованием машинного обучения).  Не устанавливайте флажок. Для маркировки с помощью Машинного обучения требуется больше данных, чем мы используем в этом руководстве.
+1. В разделе **Маркировка с помощью Машинного обучения** ничего не указывайте. Для маркировки с помощью Машинного обучения требуется больше данных, чем мы используем в этом руководстве.
 
 1. Щелкните **Создать проект**.
 
