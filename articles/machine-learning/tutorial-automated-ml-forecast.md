@@ -10,20 +10,17 @@ ms.author: sacartac
 ms.reviewer: nibaccam
 author: cartacioS
 ms.date: 07/10/2020
-ms.openlocfilehash: a244372168cb34f190bd584634bf108f2b5215a5
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: bbd6f2021a20ff488402bb9d1367feb57c34f582
+ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87092301"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90896691"
 ---
 # <a name="tutorial-forecast-demand-with-automated-machine-learning"></a>Руководство по Прогнозирование спроса с помощью автоматизированного машинного обучения
-[!INCLUDE [applies-to-skus](../../includes/aml-applies-to-enterprise-sku.md)]
+
 
 Во время работы с этим руководством вы создадите в Студии машинного обучения Azure с помощью автоматизированного машинного обучения модель прогнозирования временных рядов для прогнозирования спроса для службы проката велосипедов.
-
->[!IMPORTANT]
-> Интерфейс автоматизированного ML в Студии машинного обучения Azure предоставляется в режиме предварительной версии. Некоторые функции могут не поддерживаться или их возможности могут быть ограничены.
 
 Пример модели классификации см. в руководстве [по созданию модели классификации с использованием автоматизированного машинного обучения в службе "Машинное обучение Azure"](tutorial-first-experiment-automated-ml.md).
 
@@ -38,8 +35,8 @@ ms.locfileid: "87092301"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-* Рабочая область машинного обучения Azure (выпуск Enterprise). Если у вас ее нет, [создайте рабочую область (выпуск Enterprise)](how-to-manage-workspace.md). 
-    * Автоматизированное машинное обучение в Студии машинного обучения Azure доступно только для рабочих областей выпуска Enterprise. 
+* Рабочая область машинного обучения Azure. См. сведения о [создании рабочей области машинного обучения Azure](how-to-manage-workspace.md). 
+
 * Файл данных [bike-no.csv](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/automated-machine-learning/forecasting-bike-share/bike-no.csv).
 
 ## <a name="get-started-in-azure-machine-learning-studio"></a>Начало работы в Студии машинного обучения Azure
@@ -116,7 +113,7 @@ ms.locfileid: "87092301"
         Поле | Описание | Значение для руководства
         ----|---|---
         Имя вычислительной среды |Уникальное имя для идентификации контекста вычислительной среды.|bike-compute
-        Virtual&nbsp;machine&nbsp;type|Выберите тип виртуальной машины для вычислительной среды.|ЦП (Центральный процессор)
+        Virtual&nbsp;machine&nbsp;type|Выберите тип виртуальной машины для вычислительной среды.|ЦП (центральный процессор)
         Virtual&nbsp;machine&nbsp;size| Выберите размер виртуальной машины для вычислительной среды.|Standard_DS12_V2
         Min/Max nodes (Минимальное и максимальное количество узлов)| Для профилирования данных необходимо указать один или больше узлов.|Min nodes (Минимум узлов): 1<br>Max nodes (Максимум узлов): 6
         Время до уменьшения масштаба (сек) | Время простоя перед автоматическим уменьшением масштаба кластера до минимального количества узлов.|120 (по умолчанию)

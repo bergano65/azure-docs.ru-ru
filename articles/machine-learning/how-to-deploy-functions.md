@@ -11,15 +11,15 @@ ms.reviewer: larryfr
 ms.date: 03/06/2020
 ms.topic: conceptual
 ms.custom: how-to, racking-python
-ms.openlocfilehash: ff327372a0ec22ca6291615ca64f01a4aa5807be
-ms.sourcegitcommit: 3be3537ead3388a6810410dfbfe19fc210f89fec
+ms.openlocfilehash: 239fc9de991066ec0603247abafae36a618d534f
+ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89646227"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90889873"
 ---
 # <a name="deploy-a-machine-learning-model-to-azure-functions-preview"></a>Развертывание модели машинного обучения в функциях Azure (Предварительная версия)
-[!INCLUDE [applies-to-skus](../../includes/aml-applies-to-basic-enterprise-sku.md)]
+
 
 Узнайте, как развернуть модель из Машинное обучение Azure как приложения-функции в службе "функции Azure".
 
@@ -45,7 +45,7 @@ ms.locfileid: "89646227"
 
 ## <a name="prepare-for-deployment"></a>Подготовка к развертыванию
 
-Перед развертыванием необходимо определить, что нужно для запуска модели в качестве веб-службы. В следующем списке описаны основные элементы, необходимые для развертывания.
+Перед развертыванием необходимо определить, что нужно для запуска модели в качестве веб-службы. В следующем списке описываются основные элементы, необходимые для развертывания.
 
 * __Скрипт записи__. Этот скрипт принимает запросы, оценивает запрос с помощью модели и возвращает результаты.
 

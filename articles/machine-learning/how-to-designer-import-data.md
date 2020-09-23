@@ -1,7 +1,7 @@
 ---
-title: Импорт данных в конструктор (Предварительная версия)
+title: Импорт данных в конструктор
 titleSuffix: Azure Machine Learning
-description: Узнайте, как импортировать данные в конструктор Машинное обучение Azure (Предварительная версия) из различных источников данных.
+description: Узнайте, как импортировать данные в конструктор Машинное обучение Azure из различных источников данных.
 services: machine-learning
 ms.service: machine-learning
 ms.subservice: core
@@ -10,14 +10,14 @@ ms.author: keli19
 ms.date: 09/09/2020
 ms.topic: conceptual
 ms.custom: how-to, designer
-ms.openlocfilehash: a7d0a1604b3bea1f11532639dbbc5102f4a243a6
-ms.sourcegitcommit: 3c66bfd9c36cd204c299ed43b67de0ec08a7b968
+ms.openlocfilehash: 15fca48327c46480546764be1b2ab40c1635e874
+ms.sourcegitcommit: bdd5c76457b0f0504f4f679a316b959dcfabf1ef
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "90006990"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90985599"
 ---
-# <a name="import-data-into-azure-machine-learning-designer-preview"></a>Импорт данных в конструктор Машинное обучение Azure (Предварительная версия)
+# <a name="import-data-into-azure-machine-learning-designer"></a>Импорт данных в конструктор Машинное обучение Azure
 
 Из этой статьи вы узнаете, как импортировать собственные данные в конструктор, чтобы создавать пользовательские решения. Импортировать данные в конструктор можно двумя способами. 
 
@@ -32,7 +32,7 @@ ms.locfileid: "90006990"
 
 ### <a name="register-a-dataset"></a>Регистрация набора данных
 
-Имеющиеся наборы данных можно зарегистрировать [программно с помощью пакета SDK](how-to-create-register-datasets.md#datasets-sdk) или [вручную в Студии машинного обучения Azure](how-to-create-register-datasets.md#datasets-ui).
+Имеющиеся наборы данных можно зарегистрировать [программно с помощью пакета SDK](how-to-create-register-datasets.md#datasets-sdk) или [вручную в Студии машинного обучения Azure](how-to-connect-data-ui.md#create-datasets).
 
 Можно также зарегистрировать в качестве набора данных выходные данные любого модуля конструктора.
 
@@ -68,7 +68,7 @@ ms.locfileid: "90006990"
 Подробные сведения об использовании модуля импорта данных см. на странице [справочных материалов по импорту данных](algorithm-module-reference/import-data.md).
 
 > [!NOTE]
-> Если набор данных содержит слишком много столбцов, может возникнуть следующая ошибка: "Сбой проверки из-за ограничения размера". Чтобы избежать этой ошибки, [зарегистрируйте набор данных в интерфейсе наборов данных](how-to-create-register-datasets.md#datasets-ui).
+> Если набор данных содержит слишком много столбцов, может возникнуть следующая ошибка: "Сбой проверки из-за ограничения размера". Чтобы избежать этой ошибки, [зарегистрируйте набор данных в интерфейсе наборов данных](how-to-connect-data-ui.md#create-datasets).
 
 ## <a name="supported-sources"></a>Поддерживаемые источники
 
@@ -107,4 +107,4 @@ ms.locfileid: "90006990"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Изучите основы работы с конструктором: [Учебник. Прогнозирование цен на автомобили с помощью конструктора](tutorial-designer-automobile-price-train-score.md).
+Изучите основы конструктора с помощью этого [руководства: прогнозирование цены автомобилей с помощью конструктора](tutorial-designer-automobile-price-train-score.md).

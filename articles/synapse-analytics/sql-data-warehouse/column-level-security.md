@@ -12,12 +12,12 @@ ms.author: jrasnick
 ms.reviewer: igorstan, carlrab
 ms.custom: seo-lt-2019
 tags: azure-synapse
-ms.openlocfilehash: a4da74c01f732f3a62d29847d5f61934dede9778
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 1364da4849a07100ac28644a51409837012f93cc
+ms.sourcegitcommit: bdd5c76457b0f0504f4f679a316b959dcfabf1ef
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85208099"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90986214"
 ---
 # <a name="column-level-security"></a>Безопасность на уровне столбцов
 
@@ -28,9 +28,9 @@ ms.locfileid: "85208099"
 
 Безопасность на уровне столбцов упрощает проектирование и реализацию безопасности в приложении, позволяя ограничивать доступ к столбцам для защиты конфиденциальных данных. Например, можно предоставить конкретным пользователям доступ только к определенным столбцам таблицы, имеющей отношение к их отделу. Логика ограничения находится на уровне базы данных, а не на отдалении от данных на другом уровне приложения. База данных применяет ограничения доступа при каждой попытке получения доступа к данным независимо от уровня. Это ограничение делает систему безопасности более надежной и устойчивой за счет уменьшения ее контактной зоны. Кроме того, безопасность на уровне столбцов также позволяет отказаться от ввода представлений для фильтрации столбцов с целью наложения на пользователей ограничений доступа.
 
-Реализовать безопасность на уровне столбцов можно с помощью инструкции T-SQL [GRANT](/sql/t-sql/statements/grant-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest). При использовании этого механизма поддерживаются проверки подлинности SQL и Azure Active Directory (AAD).
+Реализовать безопасность на уровне столбцов можно с помощью инструкции T-SQL [GRANT](/sql/t-sql/statements/grant-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest). При использовании этого механизма поддерживается проверка подлинности SQL и Azure Active Directory (Azure AD).
 
-![cls](./media/column-level-security/cls.png)
+![На схеме показана схематическое таблица с первым столбцом, который направляется закрытым замком, и его ячейками — оранжевым цветом, тогда как остальные столбцы — это белые ячейки.](./media/column-level-security/cls.png)
 
 ## <a name="syntax"></a>Синтаксис
 

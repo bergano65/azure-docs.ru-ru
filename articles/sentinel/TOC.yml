@@ -29,6 +29,8 @@
       href: fusion.md
     - name: Расширение Azure Sentinel между рабочими областями и арендаторами
       href: extend-sentinel-across-workspaces-tenants.md
+    - name: Нормализация данных в разных таблицах
+      href: normalization.md
     - name: Безопасность
       items:
         - name: Базовые средства безопасности
@@ -54,17 +56,19 @@
               href: connect-azure-ad-identity-protection.md
             - name: Azure Information Protection
               href: connect-azure-information-protection.md
-            - name: ATP в Microsoft Defender
+            - name: Microsoft 365 Defender
+              href: connect-microsoft-365-defender.md
+            - name: "Microsoft Defender для конечной точки (ранее\_— MDATP)"
               href: connect-microsoft-defender-advanced-threat-protection.md
-            - name: Azure ATP
+            - name: "Защитник Майкрософт для идентификации (прежнее название\_— Azure\_ATP)"
               href: connect-azure-atp.md
             - name: Защита от атак DDoS Azure
               href: connect-azure-ddos-protection.md
             - name: Брандмауэр Azure
               href: connect-azure-firewall.md
-            - name: Центр безопасности Azure
+            - name: Оповещения от ASC в Защитнике Azure
               href: connect-azure-security-center.md
-            - name: Центр безопасности Azure для Интернета вещей
+            - name: "Защитник Azure (прежнее название\_— ASC) для Интернета вещей"
               href: connect-asc-iot.md
             - name: Брандмауэр веб-приложения Azure (WAF)
               href: connect-azure-waf.md
@@ -118,6 +122,8 @@
               href: connect-vmware-carbon-black.md
             - name: Zimperium Mobile Threat Defense
               href: connect-zimperium-mtd.md
+            - name: Подключение с использованием Logstash
+              href: connect-logstash.md
             - name: Решения на основе CEF
               href: connect-common-event-format.md
               items:
@@ -181,6 +187,8 @@
   items:
     - name: Интерфейсы REST API
       href: 'https://docs.microsoft.com/rest/api/securityinsights/'
+    - name: Схема нормализации сети
+      href: normalization-schema.md
 - name: Ресурсы
   items:
     - name: Полезные ресурсы

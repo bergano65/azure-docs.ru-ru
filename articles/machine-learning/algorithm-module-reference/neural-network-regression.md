@@ -9,12 +9,12 @@ ms.topic: reference
 author: likebupt
 ms.author: keli19
 ms.date: 04/22/2020
-ms.openlocfilehash: c260643d7d553e407d0758f286aac76c91ae08d8
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 403576454615effeb53651b51679681422b08e9e
+ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "82137694"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90890366"
 ---
 # <a name="neural-network-regression-module"></a>Модуль регрессии нейронной сети
 
@@ -24,7 +24,7 @@ ms.locfileid: "82137694"
   
 ## <a name="module-overview"></a>Обзор модуля  
 
-В этой статье описывается модуль в конструкторе Машинного обучения Azure (предварительная версия).
+В этой статье описывается модуль в конструкторе Машинное обучение Azure.
 
 Этот модуль используется для создания модели регрессии с помощью настраиваемого алгоритма нейронной сети.
   
@@ -50,7 +50,7 @@ ms.locfileid: "82137694"
     
     Этот вариант лучше, если вы уже знакомы с нейронными сетями. Для определения сетевой архитектуры используется язык NET #.  
 
-##  <a name="create-a-neural-network-model-using-the-default-architecture"></a><a name="bkmk_DefaultArchitecture"></a>Создание модели нейронной сети с использованием архитектуры по умолчанию
+##  <a name="create-a-neural-network-model-using-the-default-architecture"></a><a name="bkmk_DefaultArchitecture"></a> Создание модели нейронной сети с использованием архитектуры по умолчанию
 
 1.  Добавьте модуль **регрессии нейронной сети** в конвейер в конструкторе. Этот модуль можно найти в разделе **машинное обучение**, **Инициализация**в категории **регрессии** . 
   

@@ -1,6 +1,6 @@
 ---
-title: Синхронизация данных из SQL Azure для пограничных вычислений (предварительная версия) с помощью Синхронизации данных SQL
-description: Сведения о синхронизации данных из SQL Azure для пограничных вычислений (предварительная версия) с помощью Синхронизации данных SQL Azure
+title: Синхронизация данных из SQL Azure для пограничных вычислений с помощью Синхронизации данных SQL
+description: Сведения о синхронизации данных из SQL Azure для пограничных вычислений с помощью Синхронизации данных SQL Azure
 keywords: SQL Azure для пограничных вычислений, синхронизация данных из SQL Azure для пограничных вычислений, синхронизация данных SQL Azure для пограничных вычислений
 services: sql-edge
 ms.service: sql-edge
@@ -9,12 +9,12 @@ author: SQLSourabh
 ms.author: sourabha
 ms.reviewer: sstein
 ms.date: 05/19/2020
-ms.openlocfilehash: 6c0518e12a2c654b8f971db3a6733b0e64f80a1f
-ms.sourcegitcommit: bf99428d2562a70f42b5a04021dde6ef26c3ec3a
+ms.openlocfilehash: 5830cedfdce54c4cd91eb60a5cd2145309e965b0
+ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/23/2020
-ms.locfileid: "85254056"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90904113"
 ---
 # <a name="tutorial-sync-data-from-sql-edge-to-azure-sql-database-by-using-sql-data-sync"></a>Руководство по синхронизации данных из SQL Azure для пограничных вычислений с Базой данных SQL Azure с помощью Синхронизации данных SQL
 

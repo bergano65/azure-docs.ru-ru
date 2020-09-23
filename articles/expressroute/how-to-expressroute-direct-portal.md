@@ -7,12 +7,12 @@ ms.service: expressroute
 ms.topic: how-to
 ms.date: 08/06/2020
 ms.author: duau
-ms.openlocfilehash: 09d3723224f9c678e41a6cbc86b5f8f9655173c8
-ms.sourcegitcommit: 5a3b9f35d47355d026ee39d398c614ca4dae51c6
+ms.openlocfilehash: 52aba71ba289a1b5479a6a9eaef7e07418b563fd
+ms.sourcegitcommit: bdd5c76457b0f0504f4f679a316b959dcfabf1ef
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89401475"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90986377"
 ---
 # <a name="create-expressroute-direct-using-the-azure-portal"></a>Создание ExpressRoute Direct с помощью портал Azure
 
@@ -38,7 +38,7 @@ ms.locfileid: "89401475"
 
 1. Начните с заполнения полей на странице **Основные сведения** .
 
-    :::image type="content" source="./media/how-to-expressroute-direct-portal/basics.png" alt-text="Страница Основные":::
+    :::image type="content" source="./media/how-to-expressroute-direct-portal/basics.png" alt-text="Страница "Основные"":::
 
     * **Подписка**. Подписка Azure, которую вы хотите использовать для создания нового канала ExpressRoute Direct. Ресурс ExpressRoute Direct и каналы ExpressRoute должны находиться в одной подписке.
     * **Группа ресурсов**. Группа ресурсов Azure, в которой будет создан новый прямой ресурс ExpressRoute. Если у вас нет группы ресурсов, можно создать новую.
@@ -47,7 +47,7 @@ ms.locfileid: "89401475"
 
 1. Затем заполните поля на странице **Конфигурация** .
 
-    :::image type="content" source="./media/how-to-expressroute-direct-portal/configuration.png" alt-text="Страница Конфигурация":::
+    :::image type="content" source="./media/how-to-expressroute-direct-portal/configuration.png" alt-text="Страница "Конфигурация"":::
 
     * **Расположение пиринга**. расположение пиринга, в котором будет подключаться к ресурсу непосредственных подключений ExpressRoute. Дополнительные сведения о расположении пиринга см. в статье [расположения ExpressRoute](expressroute-locations-providers.md).
    * **Пропускная**способность. пропускная способность для пары портов, которую требуется зарезервировать. ExpressRoute Direct поддерживает параметры пропускной способности 10 ГБ и 100 ГБ. Если требуемая пропускная способность недоступна в указанном расположении пиринга, [откройте запрос в службу поддержки в портал Azure](https://aka.ms/azsupt).
@@ -97,11 +97,11 @@ ms.locfileid: "89401475"
 
 1. В разделе **Параметры** прямого подключения к ExpressRoute выберите **каналы**, а затем щелкните **+ добавить**. 
 
-    :::image type="content" source="./media/how-to-expressroute-direct-portal/add.png" alt-text="Добавление" lightbox="./media/how-to-expressroute-direct-portal/add-expand.png":::
+    :::image type="content" source="./media/how-to-expressroute-direct-portal/add.png" alt-text="На снимке экрана показаны параметры ExpressRoute с выбранными каналами и добавлены выделенными." lightbox="./media/how-to-expressroute-direct-portal/add-expand.png":::
 
 1. Настройте параметры на странице **Конфигурация** .
 
-   :::image type="content" source="./media/how-to-expressroute-direct-portal/configuration2.png" alt-text="Страница Конфигурация":::
+   :::image type="content" source="./media/how-to-expressroute-direct-portal/configuration2.png" alt-text="Страница "Конфигурация"":::
 
 1. Чтобы проверить значения перед созданием ресурса, укажите все теги ресурсов, нажмите кнопку " **проверить и создать** ".
 

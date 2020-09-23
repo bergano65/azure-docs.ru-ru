@@ -1,6 +1,6 @@
 ---
 title: Основные отчеты Verizon | Документация Майкрософт
-description: 'Вы можете просмотреть статистику по использованию CDN в следующих отчетах: "Пропускная способность", "Переданные данные", "Попадания", "Состояния кэша", "Коэффициент попадания в кэш", "Данные, переданные по протоколам IPV4/IPV6".'
+description: Узнайте, как получить доступ к Verizon основным отчетам и просматривать их с помощью портала управление для профилей Verizon.
 services: cdn
 documentationcenter: ''
 author: zhangmanling
@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: how-to
 ms.date: 01/23/2017
 ms.author: mazha
-ms.openlocfilehash: 3dc7547dbcf2bde7dd7db0d3f0db3f163a5910ef
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 5353fa70be4705b28dab9350fcdf7819b22faf54
+ms.sourcegitcommit: bdd5c76457b0f0504f4f679a316b959dcfabf1ef
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84888438"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90985540"
 ---
 # <a name="core-reports-from-verizon"></a>Основные отчеты Verizon
 
@@ -132,6 +132,6 @@ ms.locfileid: "84888438"
 
 ![Переданные данные по протоколам IPV4/IPV6](./media/cdn-reports/cdn-ipv4-ipv6.png)
 
-## <a name="considerations"></a>Особенности
+## <a name="considerations"></a>Рекомендации
 Отчеты могут формироваться только за последние 18 месяцев.
 

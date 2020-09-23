@@ -11,12 +11,12 @@ ms.subservice: core
 ms.topic: conceptual
 ms.custom: how-to
 ms.date: 09/03/2020
-ms.openlocfilehash: 06fc929e0149c48aa75aa87a12e3747ef1df1bf2
-ms.sourcegitcommit: bf1340bb706cf31bb002128e272b8322f37d53dd
+ms.openlocfilehash: abdd04f59ee820585d58817297d161f68bd952f0
+ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/03/2020
-ms.locfileid: "89440124"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90897398"
 ---
 # <a name="manage-azure-machine-learning-resources-with-the-vs-code-extension-preview"></a>Управление ресурсами Машинное обучение Azure с помощью расширения VS Code (Предварительная версия)
 
@@ -44,7 +44,6 @@ ms.locfileid: "89440124"
     1. Выберите подписку Azure.
     1. Выберите или создайте новую группу ресурсов для создания рабочей области в
     1. Выберите расположение, в которое нужно подготавливать рабочую область.
-    1. Выберите выпуск *Basic* и *Enterprise* Edition. Дополнительные сведения о различных [выпусках машинное обучение Azure](concept-editions.md).
 
 Ниже перечислены альтернативные методы создания рабочей области.
 

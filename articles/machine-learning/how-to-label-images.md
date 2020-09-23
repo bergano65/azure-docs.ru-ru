@@ -8,12 +8,12 @@ ms.service: machine-learning
 ms.subservice: core
 ms.topic: tutorial
 ms.date: 07/27/2020
-ms.openlocfilehash: a71b4096e791221057fdcc5d14351ceccab720fb
-ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
+ms.openlocfilehash: e34fa4af08be898785acbc6f00aa735c1412ec47
+ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87307205"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90897563"
 ---
 # <a name="tag-images-in-a-labeling-project"></a>Теги для изображений в проекте маркировки 
 
@@ -111,7 +111,7 @@ Azure включает кнопку **Отправить** только посл
 1. Выберите средство **Rectangular box** (Прямоугольник) ![Средство определения прямоугольника](./media/how-to-label-images/rectangular-box-tool.png) или нажмите клавишу R.
 3. Щелкните и перетащите указатель мыши, чтобы приближенно задать диагональ ограничивающего прямоугольника. Скорректируйте размер и/или положение ограничивающего прямоугольника, перетаскивая его края или углы.
 
-![Снимок экрана с созданием базового ограничивающего прямоугольника](./media/how-to-label-images/bounding-box-sequence.png)
+![Создание ограничивающего прямоугольника](./media/how-to-label-images/bounding-box-sequence.png)
 
 Чтобы удалить ограничивающий прямоугольник, щелкните значок с изображением креста (X), который отображается рядом с ограничивающим прямоугольником после его создания.
 

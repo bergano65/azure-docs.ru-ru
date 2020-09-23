@@ -4,8 +4,8 @@
   items:
     - name: Что такое Stream Analytics?
       href: stream-analytics-introduction.md
-    - name: Шаблоны комплексных решений
-      href: stream-analytics-solution-patterns.md
+    - name: "Кластер Stream\_Analytics"
+      href: cluster-overview.md
 - name: Краткие руководства
   expanded: true
   items:
@@ -23,7 +23,11 @@
         - name: Visual Studio
           href: stream-analytics-quick-create-vs.md
         - name: Visual Studio Code
-          href: quick-create-vs-code.md
+          href: quick-create-visual-studio-code.md
+    - name: Создание кластера
+      items:
+        - name: Портал Azure
+          href: create-cluster.md
 - name: Учебники
   items:
     - name: 1. Создание и администрирование задания
@@ -42,6 +46,8 @@
       href: 'https://azure.microsoft.com/resources/samples/?service=stream-analytics'
 - name: Основные понятия
   items:
+    - name: Шаблоны комплексных решений
+      href: stream-analytics-solution-patterns.md
     - name: Выбор технологии анализа потоковой передачи
       href: streaming-technologies.md
     - name: Выбор средства разработки для заданий
@@ -145,6 +151,14 @@
   items:
     - name: Управление
       items:
+        - name: Кластеры
+          items:
+            - name: Создание и удаление частных конечных точек
+              href: private-endpoints.md
+            - name: Добавление и удаление заданий
+              href: manage-jobs-cluster.md
+            - name: Изменение масштаба кластера
+              href: scale-cluster.md
         - name: Задания автомасштабирования
           href: stream-analytics-autoscale.md
         - name: Обновление учетных данных
@@ -234,6 +248,14 @@
           href: stream-analytics-cicd-api.md
         - name: Экспортирование и развертывание с помощью Azure Resource Manager
           href: resource-manager-export.md
+    - name: Непрерывная интеграция и развертывание
+      items:
+        - name: Общие сведения о CI/CD
+          href: cicd-overview.md
+        - name: 'Сборка, тестирование и развертывание с помощью PowerShell'
+          href: cicd-tools.md
+        - name: Настройка конвейера данных с помощью Azure DevOps
+          href: set-up-cicd-pipeline.md
     - name: Visual Studio
       items:
         - name: Средства установки
@@ -260,8 +282,6 @@
           href: visual-studio-code-local-run-live-input.md
         - name: Отладка запросов с использованием схемы заданий
           href: debug-locally-using-job-diagram-vs-code.md
-        - name: Настройка конвейера CI/CD
-          href: setup-cicd-vs-code.md
         - name: Обзор заданий
           href: visual-studio-code-explore-jobs.md
         - name: Поля JobConfig.json
@@ -652,7 +672,7 @@
       href: /azure/templates/microsoft.streamanalytics/allversions
     - name: Azure CLI
       href: /cli/azure/ext/stream-analytics/stream-analytics
-    - name: Встроенные политики службы "Политика Azure"
+    - name: Встроенные компоненты Политики Azure
       displayName: 'samples, policies, definitions'
       href: ./policy-reference.md
 - name: Ресурсы

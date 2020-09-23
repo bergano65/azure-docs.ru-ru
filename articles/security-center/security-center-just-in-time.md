@@ -8,12 +8,12 @@ ms.service: security-center
 ms.topic: conceptual
 ms.date: 07/12/2020
 ms.author: memildin
-ms.openlocfilehash: 88f1924f69aed350b39f953cb7503a0dde9ca9ad
-ms.sourcegitcommit: 269da970ef8d6fab1e0a5c1a781e4e550ffd2c55
+ms.openlocfilehash: 5b2446aa62b16dcf9773c367d87faac65d79fa0b
+ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/10/2020
-ms.locfileid: "88056320"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90904869"
 ---
 # <a name="secure-your-management-ports-with-just-in-time-access"></a>Защита портов управления с помощью JIT-доступа
 
@@ -31,17 +31,17 @@ ms.locfileid: "88056320"
 
 ## <a name="availability"></a>Доступность
 
-|Аспект|Сведения|
+|Аспект|Подробнее|
 |----|:----|
-|Состояние выпуска:|Общедоступная версия|
-|Цены|Уровень служб "Стандартный"|
+|Состояние выпуска:|Общедоступная версия (GA)|
+|Цены|Требуется [защитник Azure для серверов](defender-for-servers-introduction.md)|
 |Поддерживаемые виртуальные машины:|![Да ](./media/icons/yes-icon.png) , виртуальные машины развернуты с помощью Azure Resource Manager.<br>![Нет ](./media/icons/no-icon.png) виртуальных машин, развернутых с помощью классических моделей развертывания. Дополнительные [сведения об этих моделях развертывания](../azure-resource-manager/management/deployment-models.md).<br>![Нет ](./media/icons/no-icon.png) виртуальных машин, защищенных брандмауэрами Azure, которыми управляет [Диспетчер брандмауэра Azure](https://docs.microsoft.com/azure/firewall-manager/overview)|
 |Необходимые роли и разрешения:|Роли **Reader** и **секуритиреадер** могут просматривать состояние JIT и параметры.<br>Сведения о создании настраиваемых ролей, которые могут работать с JIT-компилятором, см. в разделе [какие разрешения необходимы для настройки и использования JIT?](just-in-time-explained.md#what-permissions-are-needed-to-configure-and-use-jit).<br>Чтобы создать роль с минимальными привилегиями для пользователей, которым требуется запросить JIT-доступ к виртуальной машине, и не выполнять другие операции JIT, используйте [Скрипт Set-житлеастпривилежедроле](https://github.com/Azure/Azure-Security-Center/tree/master/Powershell%20scripts/JIT%20Custom%20Role) на страницах сообщества центра безопасности GitHub.|
 |Облако.|![Да](./media/icons/yes-icon.png) Коммерческие облака<br>![Да](./media/icons/yes-icon.png) National/независимых (US Gov, Китай gov, другое gov)|
 |||
 
 
-## <a name="enable-jit-vm-access"></a>Включить JIT-доступ к виртуальной машине<a name="jit-configure"></a>
+## <a name="enable-jit-vm-access"></a>Включить JIT-доступ к виртуальной машине <a name="jit-configure"></a>
 
 Вы можете включить JIT-доступ к виртуальным машинам с собственными пользовательскими параметрами для одной или нескольких виртуальных машин с помощью центра безопасности или программно. 
 
@@ -51,13 +51,13 @@ ms.locfileid: "88056320"
 
 ### <a name="azure-security-center"></a>[**Центр безопасности Azure**](#tab/jit-config-asc)
 
-### <a name="enable-jit-on-your-vms-from-azure-security-center"></a>Включение JIT на виртуальных машинах из центра безопасности Azure<a name="jit-asc"></a>
+### <a name="enable-jit-on-your-vms-from-azure-security-center"></a>Включение JIT на виртуальных машинах из центра безопасности Azure <a name="jit-asc"></a>
 
-![Настройка JIT-доступа к виртуальным машинам в центре безопасности Azure](./media/security-center-just-in-time/jit-config-security-center.gif)
+:::image type="content" source="./media/security-center-just-in-time/jit-config-security-center.gif" alt-text="Настройка JIT-доступа к виртуальным машинам в центре безопасности Azure":::
 
 В центре безопасности можно включить и настроить JIT-доступ к виртуальной машине.
 
-1. В меню центра безопасности выберите JIT- **доступ к виртуальной машине**.
+1. Откройте панель мониторинга защитника Azure и в области Расширенная защита выберите **JIT-доступ к виртуальной машине**.
 
     Откроется страница **JIT-доступа к виртуальной машине** с виртуальными машинами, сгруппированными в следующие вкладки:
 
@@ -101,13 +101,13 @@ ms.locfileid: "88056320"
 
 
 
-### <a name="edit-the-jit-configuration-on-a-jit-enabled-vm-using-security-center"></a>Изменение JIT-конфигурации на виртуальной машине с поддержкой JIT с помощью центра безопасности<a name="jit-modify"></a>
+### <a name="edit-the-jit-configuration-on-a-jit-enabled-vm-using-security-center"></a>Изменение JIT-конфигурации на виртуальной машине с поддержкой JIT с помощью центра безопасности <a name="jit-modify"></a>
 
 Настроить JIT-конфигурацию виртуальной машины можно, добавив и настроив новый порт для защиты этой виртуальной машины или изменив любой другой параметр, связанный с уже защищенным портом.
 
 Чтобы изменить существующие правила JIT для виртуальной машины, выполните следующие действия.
 
-1. В меню центра безопасности выберите JIT- **доступ к виртуальной машине**.
+1. Откройте панель мониторинга защитника Azure и в области Расширенная защита выберите **адаптивные элементы управления приложениями**.
 
 1. На вкладке **настроенный** щелкните правой кнопкой мыши виртуальную машину, к которой нужно добавить порт, и выберите Изменить. 
 
@@ -241,7 +241,7 @@ ms.locfileid: "88056320"
 
 Если на виртуальной машине включен JIT-компилятор, необходимо запросить доступ для подключения к ней. Доступ можно запросить любым из поддерживаемых способов, независимо от того, как вы включили JIT.
 
-![Запрос JIT-доступа из центра безопасности](./media/security-center-just-in-time/jit-request-security-center.gif)
+:::image type="content" source="./media/security-center-just-in-time/jit-request-security-center.gif" alt-text="Запрос JIT-доступа из центра безопасности":::
 
 1. На странице **JIT-доступ к виртуальной машине** выберите **настроенную** вкладку.
 

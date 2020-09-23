@@ -11,12 +11,12 @@ ms.service: data-factory
 ms.workload: data-services
 ms.topic: conceptual
 ms.date: 4/15/2020
-ms.openlocfilehash: c9da25a7d7521108195d3183f52b914e13105e8d
-ms.sourcegitcommit: 124f7f699b6a43314e63af0101cd788db995d1cb
+ms.openlocfilehash: 2bdfdd31e2cc9bc964abc040d0631c4760fca283
+ms.sourcegitcommit: bdd5c76457b0f0504f4f679a316b959dcfabf1ef
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86082290"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90984878"
 ---
 # <a name="use-azure-sql-managed-instance-with-sql-server-integration-services-ssis-in-azure-data-factory"></a>Использование Управляемый экземпляр Azure SQL с SQL Server Integration Services (SSIS) в фабрике данных Azure
 
@@ -141,7 +141,7 @@ ms.locfileid: "86082290"
 
     Имя узла общедоступной конечной точки имеет формат <mi_name>.public.<dns_zone>.database.windows.net и порт, используемый для соединения, — 3342.  
 
-    ![catalog-public-endpoint](./media/how-to-use-sql-managed-instance-with-ir/catalog-public-endpoint.png)
+    ![На снимке экрана показана программа установки среды выполнения интеграции с выбранным каталогом s s Catalog и введенная конечная точка сервера базы данных каталога.](./media/how-to-use-sql-managed-instance-with-ir/catalog-public-endpoint.png)
 
 1. При применении параметров выберите проверку подлинности Azure AD.
 
@@ -157,7 +157,7 @@ ms.locfileid: "86082290"
 
     Дополнительные сведения см. в статье [Присоединение среды выполнения интеграции Azure SSIS к виртуальной сети](join-azure-ssis-integration-runtime-virtual-network.md).
 
-    ![join-virtual-network](./media/how-to-use-sql-managed-instance-with-ir/join-virtual-network.png)
+    ![На снимке экрана показаны дополнительные параметры программы установки среды выполнения интеграции, где можно выбрать виртуальную сеть для приподключения среды выполнения.](./media/how-to-use-sql-managed-instance-with-ir/join-virtual-network.png)
 
 Дополнительные сведения о создании Azure-SSIS IR см. в статье [Создание среды выполнения интеграции Azure-SSIS в Фабрике данных Azure](create-azure-ssis-integration-runtime.md#provision-an-azure-ssis-integration-runtime).
 

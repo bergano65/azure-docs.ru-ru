@@ -9,16 +9,16 @@ ms.topic: reference
 author: likebupt
 ms.author: keli19
 ms.date: 02/11/2020
-ms.openlocfilehash: 4aec156821a7d38907602cc1def0459dbf996b24
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: e3080836e8b9ed38e99c691c66e71a4620829c90
+ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84447566"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90890215"
 ---
 # <a name="train-model-module"></a>Модуль "Обучение модели"
 
-В этой статье описывается модуль в конструкторе Машинного обучения Azure (предварительная версия).
+В этой статье описывается модуль в конструкторе Машинное обучение Azure.
 
 Используйте этот модуль для обучения модели классификации или регрессии. Обучение выполняется после определения модели и установки ее параметров и требует наличия данных с тегами. Можно также использовать **обучение модели** для переобучения существующей модели новыми данными. 
 
