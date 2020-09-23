@@ -16,12 +16,12 @@ ms.date: 11/29/2018
 ms.author: barclayn
 ms.collection: M365-identity-device-management
 ms.custom: devx-track-azurepowershell
-ms.openlocfilehash: a9da4689a1b5579f90a1df0feb487e50d57a9d98
-ms.sourcegitcommit: bcda98171d6e81795e723e525f81e6235f044e52
+ms.openlocfilehash: 2f9ac119a3365eff39fe1a65ff8b553d3900b117
+ms.sourcegitcommit: bdd5c76457b0f0504f4f679a316b959dcfabf1ef
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/01/2020
-ms.locfileid: "89269222"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90969320"
 ---
 # <a name="view-the-service-principal-of-a-managed-identity-using-powershell"></a>Просмотр субъекта-службы управляемого удостоверения с помощью PowerShell
 
@@ -36,13 +36,15 @@ ms.locfileid: "89269222"
 - Если вы не работали с управляемыми удостоверениями для ресурсов Azure, изучите [общие сведения](overview.md).
 - Если у вас нет учетной записи Azure, зарегистрируйтесь для получения [бесплатной пробной версии](https://azure.microsoft.com/free/).
 - [Включите назначенное системой удостоверение в виртуальной машине](./qs-configure-portal-windows-vm.md#system-assigned-managed-identity) или [приложении](../../app-service/overview-managed-identity.md#add-a-system-assigned-identity).
-- Установите последнюю версию [Azure PowerShell](/powershell/azure/install-az-ps)
+- Для выполнения примеров сценариев существует два варианта.
+    - Используйте [Azure Cloud Shell](../../cloud-shell/overview.md), которую можно открыть с помощью кнопки **попробовать** в верхнем правом углу блоков кода.
+    - Выполните сценарии локально, установив последнюю версию [Azure PowerShell](/powershell/azure/install-az-ps), а затем войдите в Azure с помощью `Connect-AzAccount` .
 
 ## <a name="view-the-service-principal"></a>Просмотр субъекта-службы
 
 Следующая команда позволяет просмотреть субъект-службу виртуальной машины или приложения с включенным управляемым удостоверением, назначаемым системой. Замените `<VM or application name>` собственными значениями.
 
-```powershell
+```azurepowershell-interactive
 Get-AzADServicePrincipal -DisplayName <VM or application name>
 ```
 

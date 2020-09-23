@@ -11,12 +11,12 @@ ms.topic: tutorial
 ms.date: 01/26/2020
 ms.author: mbaldwin
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 5adc2a91df5d394fbed3ff10b0ebc5cb543a3ba3
-ms.sourcegitcommit: 3246e278d094f0ae435c2393ebf278914ec7b97b
+ms.openlocfilehash: c2d1a46a35ef38791b6a3b47c300aa1b47f70324
+ms.sourcegitcommit: 07166a1ff8bd23f5e1c49d4fd12badbca5ebd19c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89378021"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90086917"
 ---
 # <a name="automate-the-rotation-of-a-secret-for-resources-that-use-one-set-of-authentication-credentials"></a>Автоматизация смены секретов для ресурсов с одним набором учетных данных для аутентификации
 
@@ -24,7 +24,7 @@ ms.locfileid: "89378021"
 
 В этом учебнике описано, как автоматизировать периодическую смену секретов для баз данных и служб, которые используют один набор учетных данных для аутентификации. В частности, в этом учебнике выполняется смена паролей SQL Server, хранящихся в Azure Key Vault. Для ротации используется функция, запускаемая уведомлением Сетки событий Azure:
 
-![Схема решения ротации](../media/rotate1.png)
+![Схема решения ротации](../media/rotate-1.png)
 
 1. За 30 дней до истечения срока действия секрета Key Vault публикует в Сетке событий событие "Срок действия скоро истекает".
 1. Сетка событий проверяет подписки на события и с помощью HTTP-запроса методом POST вызывает конечную точку приложения-функции, подписанную на это событие.
@@ -49,7 +49,7 @@ ms.locfileid: "89378021"
 1. Выберите **Review + create** (Просмотреть и создать).
 1. Нажмите кнопку **Создать**
 
-    ![Создание группы ресурсов](../media/rotate2.png)
+    ![Создание группы ресурсов](../media/rotate-2.png)
 
 Теперь у вас есть Key Vault и экземпляр SQL Server. Вы можете проверить эту установку в Azure CLI, выполнив следующую команду:
 
@@ -91,7 +91,7 @@ akvrotation-sql/master  akvrotation      eastus      Microsoft.Sql/servers/datab
 1. Выберите **Review + create** (Просмотреть и создать).
 1. Нажмите кнопку **создания**.
 
-   ![Выбор параметра Review+create (Просмотр и создание)](../media/rotate3.png)
+   ![Выбор параметра Review+create (Просмотр и создание)](../media/rotate-3.png)
 
 Выполнив описанные выше действия, вы создадите учетную запись хранения, ферму серверов и приложение-функцию. Вы можете проверить эту установку в Azure CLI, выполнив следующую команду:
 
@@ -207,11 +207,11 @@ az keyvault secret set --name sqlPassword --vault-name akvrotation-kv --value "S
 
 Чтобы убедиться в ротации секрета, перейдите в раздел **Key Vault** > **Секреты**:
 
-![Переход к секретам](../media/rotate8.png)
+![Переход к секретам](../media/rotate-8.png)
 
 Откройте секрет **sqlPassword** и просмотрите исходную и измененную версию.
 
-![Открытие секрета sqluser](../media/rotate9.png)
+![Открытие секрета sqluser](../media/rotate-9.png)
 
 ### <a name="create-a-web-app"></a>Создание веб-приложения
 
@@ -245,6 +245,6 @@ https://akvrotation-app.azurewebsites.net/
 ## <a name="learn-more"></a>Дополнительные сведения
 
 - Руководство по [смене учетных данных для ресурсов, которые используют два набора учетных данных](tutorial-rotation-dual.md)
-- Общие сведения. [Мониторинг Key Vault с помощью службы "Сетка событий Azure" (предварительная версия)](../general/event-grid-overview.md)
+- Общие сведения. [Мониторинг Key Vault с помощью Сетки событий Azure](../general/event-grid-overview.md)
 - Руководство. [Получение сообщения электронной почты при изменении секрета в хранилище ключей](../general/event-grid-logicapps.md)
-- [Схема событий службы "Сетка событий Azure" для Azure Key Vault (предварительная версия)](../../event-grid/event-schema-key-vault.md)
+- [Схема событий Сетки событий Azure для Azure Key Vault](../../event-grid/event-schema-key-vault.md)

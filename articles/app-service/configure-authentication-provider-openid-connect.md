@@ -4,14 +4,14 @@ description: Узнайте, как настроить поставщик OpenID
 ms.topic: article
 ms.date: 07/08/2020
 ms.reviewer: mahender
-ms.openlocfilehash: 89164061a968e37f928f8c21f5323c418e85361f
-ms.sourcegitcommit: e71da24cc108efc2c194007f976f74dd596ab013
+ms.openlocfilehash: e8112f2dc20175e81cfa8388440b2d9aef6a419c
+ms.sourcegitcommit: bdd5c76457b0f0504f4f679a316b959dcfabf1ef
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87413924"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90983864"
 ---
-# <a name="configure-your-app-service-or-azure-functions-app-to-login-using-an-openid-connect-provider-preview"></a>Настройка службы приложений или приложения функций Azure для входа с помощью поставщика OpenID Connect Connect (Предварительная версия)
+# <a name="configure-your-app-service-or-azure-functions-app-to-login-using-an-openid-connect-provider-preview"></a>Настройка Службы приложений или службы "Функции Azure" для входа с помощью поставщика OpenID Connect (предварительная версия)
 
 [!INCLUDE [app-service-mobile-selector-authentication](../../includes/app-service-mobile-selector-authentication.md)]
 
@@ -53,7 +53,7 @@ ms.locfileid: "87413924"
 В этом разделе описано, как обновить конфигурацию, включив в нее новый IDP. Ниже приведен пример конфигурации.
 
 1. В `identityProviders` объекте добавьте `openIdConnectProviders` объект, если он еще не существует.
-1. В `openIdConnectProviders` объекте добавьте ключ для нового поставщика. Это понятное имя, используемое для ссылки на поставщик в оставшейся части конфигурации. Например, если требуется, чтобы все запросы проходили проверку подлинности с помощью этого поставщика, необходимо установить значение `globalValidation.unauthenticatedClientAction` "редиректтологинпаже" и задать `globalValidation.unauthenticatedClientAction` это же понятное имя.
+1. В `openIdConnectProviders` объекте добавьте ключ для нового поставщика. Это понятное имя, используемое для ссылки на поставщик в оставшейся части конфигурации. Например, если требуется, чтобы все запросы проходили проверку подлинности с помощью этого поставщика, необходимо установить значение `globalValidation.unauthenticatedClientAction` "редиректтологинпаже" и задать `redirectToProvider` это же понятное имя.
 1. Назначьте объект этому ключу с помощью `registration` объекта внутри него и при необходимости `login` объект:
     
     ```json

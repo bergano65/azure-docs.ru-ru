@@ -1,16 +1,16 @@
 ---
 title: Настройка материалов PBR в 3ds Max
 description: Сведения о настройке физически корректной отрисовки материалов в 3ds Max и экспорте результатов в формат FBX.
-author: muxanickms
-ms.author: misams
+author: FlorianBorn71
+ms.author: flborn
 ms.date: 06/16/2020
 ms.topic: tutorial
-ms.openlocfilehash: ac0f4ee8f06982126d2ae30bed01716b287e8993
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: e77379be863f4527081eeec6a0ee1f426d526527
+ms.sourcegitcommit: 07166a1ff8bd23f5e1c49d4fd12badbca5ebd19c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87078048"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90084470"
 ---
 # <a name="tutorial-set-up-physically-based-rendering-materials-in-3ds-max"></a>Руководство по настройке физически корректной отрисовки материалов в 3ds Max
 

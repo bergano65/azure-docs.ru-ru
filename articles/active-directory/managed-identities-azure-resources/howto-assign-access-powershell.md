@@ -15,12 +15,12 @@ ms.workload: identity
 ms.date: 12/06/2018
 ms.author: barclayn
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 8ae2da130f61d31db4904ed2dd5ac18444929950
-ms.sourcegitcommit: 3fb5e772f8f4068cc6d91d9cde253065a7f265d6
+ms.openlocfilehash: b66567275bf2c7454a2d4bb87dcd4c14bb1fb9b4
+ms.sourcegitcommit: bdd5c76457b0f0504f4f679a316b959dcfabf1ef
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89177505"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90969286"
 ---
 # <a name="assign-a-managed-identity-access-to-a-resource-using-powershell"></a>Назначение доступа на основе управляемого удостоверения к ресурсу с помощью PowerShell
 
@@ -34,20 +34,17 @@ ms.locfileid: "89177505"
 
 - Если вы не работали с управляемыми удостоверениями для ресурсов Azure, изучите [общие сведения](overview.md). **Обратите внимание на [различие между управляемыми удостоверениями, назначаемыми системой и назначаемыми пользователями](overview.md#managed-identity-types)**.
 - Если у вас нет учетной записи Azure, [зарегистрируйтесь для получения бесплатной пробной учетной записи](https://azure.microsoft.com/free/), прежде чем продолжать.
-- Установите [последнюю версию Azure PowerShell](/powershell/azure/install-az-ps), если это еще не сделано.
+- Для выполнения примеров сценариев существует два варианта.
+    - Используйте [Azure Cloud Shell](../../cloud-shell/overview.md), которую можно открыть с помощью кнопки **попробовать** в верхнем правом углу блоков кода.
+    - Выполните сценарии локально, установив последнюю версию [Azure PowerShell](/powershell/azure/install-az-ps), а затем войдите в Azure с помощью `Connect-AzAccount` . 
 
 ## <a name="use-azure-rbac-to-assign-a-managed-identity-access-to-another-resource"></a>Назначение управляемому удостоверению доступа к другому ресурсу с помощью Azure RBAC
 
-После включения управляемого удостоверения для ресурса Azure, [например виртуальной машины Azure](qs-configure-powershell-windows-vm.md), сделайте следующее.
+1. Включите управляемое удостоверение в ресурсе Azure, [например на виртуальной машине Azure](qs-configure-powershell-windows-vm.md).
 
-1. Войдите в Azure с помощью командлета `Connect-AzAccount`. Используйте учетную запись, связанную с подпиской Azure, с помощью которой было настроено управляемое удостоверение.
+1. В этом примере мы предоставляем виртуальной машине Azure доступ к учетной записи хранения. Сначала с помощью [Get-AzVM](/powershell/module/az.compute/get-azvm) получите для виртуальной машины с именем `myVM` субъект-службу, который был создан при включении управляемого удостоверения. Затем с помощью [New-AzRoleAssignment](/powershell/module/Az.Resources/New-AzRoleAssignment) предоставьте этой виртуальной машине доступ для **чтения** к учетной записи хранения с именем `myStorageAcct`.
 
-   ```powershell
-   Connect-AzAccount
-   ```
-2. В этом примере мы предоставляем виртуальной машине Azure доступ к учетной записи хранения. Сначала с помощью [Get-AzVM](/powershell/module/az.compute/get-azvm) получите для виртуальной машины с именем `myVM` субъект-службу, который был создан при включении управляемого удостоверения. Затем с помощью [New-AzRoleAssignment](/powershell/module/Az.Resources/New-AzRoleAssignment) предоставьте этой виртуальной машине доступ для **чтения** к учетной записи хранения с именем `myStorageAcct`.
-
-    ```powershell
+    ```azurepowershell-interactive
     $spID = (Get-AzVM -ResourceGroupName myRG -Name myVM).identity.principalid
     New-AzRoleAssignment -ObjectId $spID -RoleDefinitionName "Reader" -Scope "/subscriptions/<mySubscriptionID>/resourceGroups/<myResourceGroup>/providers/Microsoft.Storage/storageAccounts/<myStorageAcct>"
     ```

@@ -9,12 +9,12 @@ ms.service: azure-maps
 services: azure-maps
 manager: timlt
 ms.custom: mvc, devx-track-javascript
-ms.openlocfilehash: 1ec4dbb1ce55919fda6c73d198100db34f5f57ea
-ms.sourcegitcommit: b8702065338fc1ed81bfed082650b5b58234a702
+ms.openlocfilehash: 61c085cb721f9e1a8d9c44146a9d96cd5a08562c
+ms.sourcegitcommit: 07166a1ff8bd23f5e1c49d4fd12badbca5ebd19c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/11/2020
-ms.locfileid: "88121261"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90085320"
 ---
 # <a name="tutorial-create-a-store-locator-by-using-azure-maps"></a>Руководство по Создание указателя магазинов с помощью Azure Maps
 
@@ -385,7 +385,7 @@ ms.locfileid: "88121261"
     var map, popup, datasource, iconLayer, centerMarker, searchURL;
     ```
 
-1. Добавьте код в *index.js*. Следующий код инициализирует карту. Мы добавили [прослушиватель событий](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.map?view=azure-iot-typescript-latest#events)для ожидания до окончания загрузки страницы. Затем мы связали события, чтобы отслеживать загрузку карты, и предоставили функции кнопке поиска и кнопке "Мое местоположение".
+1. Добавьте код в *index.js*. Следующий код инициализирует карту. Мы добавили [прослушиватель событий](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.map#events)для ожидания до окончания загрузки страницы. Затем мы связали события, чтобы отслеживать загрузку карты, и предоставили функции кнопке поиска и кнопке "Мое местоположение".
 
    Когда пользователь нажимает кнопку поиска или вводит в поле поиска данные расположения, а затем нажимает клавишу ВВОД, инициируется поиск нечетких соответствий по запросу пользователя. Передайте массив значений ISO-2 для стран и регионов в параметре `countrySet`, чтобы ограничить результаты поиска этими странами и регионами. Ограничив список стран и регионов для поиска, можно получить более точные результаты. 
   
@@ -935,7 +935,7 @@ ms.locfileid: "88121261"
 > * Добавьте возможность [настраивать фильтры](https://azuremapscodesamples.azurewebsites.net/?sample=Filter%20Symbols%20by%20Property). 
 > * Добавьте возможность указывать исходное значение поиска с помощью строки запроса. Если включить этот параметр в указатель магазинов, пользователи смогут создавать закладки для поисковых запросов и совместно использовать их. Кроме того, это обеспечит простой способ передачи поисковых запросов к определенной странице с другой страницы.  
 > * Разверните свой указатель магазинов как [веб-приложение Службы приложений Azure](https://docs.microsoft.com/azure/app-service/quickstart-html). 
-> * Храните свои данные в базе данных и выполняйте поиск ближайших расположений. Дополнительные сведения см. в статьях [Основные сведения о типах пространственных данных](https://docs.microsoft.com/sql/relational-databases/spatial/spatial-data-types-overview?view=sql-server-2017) и [Запросы пространственных данных для ближайшего соседа](https://docs.microsoft.com/sql/relational-databases/spatial/query-spatial-data-for-nearest-neighbor?view=sql-server-2017).
+> * Храните свои данные в базе данных и выполняйте поиск ближайших расположений. Дополнительные сведения см. в статьях [Основные сведения о типах пространственных данных](https://docs.microsoft.com/sql/relational-databases/spatial/spatial-data-types-overview) и [Запросы пространственных данных для ближайшего соседа](https://docs.microsoft.com/sql/relational-databases/spatial/query-spatial-data-for-nearest-neighbor).
 
 > [!div class="nextstepaction"]
 > [Просмотр полного исходного кода](https://github.com/Azure-Samples/AzureMapsCodeSamples/tree/master/AzureMapsCodeSamples/Tutorials/Simple%20Store%20Locator)

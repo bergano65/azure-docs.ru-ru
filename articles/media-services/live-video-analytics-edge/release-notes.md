@@ -3,12 +3,12 @@ title: Заметки о выпуске Live Video Analytics в IoT Edge. Azure
 description: В этом разделе содержатся заметки о выпуске Live Video Analytics на IoT Edge выпусках, улучшениях, исправлениях ошибок и известных проблемах.
 ms.topic: conceptual
 ms.date: 08/19/2020
-ms.openlocfilehash: feab7755dea69a932fe40df59e0dd35f3f826553
-ms.sourcegitcommit: 3be3537ead3388a6810410dfbfe19fc210f89fec
+ms.openlocfilehash: 0bdf11cd99d99067dc53dde7d55fd37b96a382c9
+ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89645822"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90882733"
 ---
 # <a name="live-video-analytics-on-iot-edge-release-notes"></a>Заметки о выпуске Live Video Analytics в IoT Edge
 
@@ -21,6 +21,31 @@ ms.locfileid: "89645822"
 * Исправления ошибок
 * Нерекомендуемые функции.
 
+<hr width=100%>
+
+## <a name="september-22-2020"></a>22 сентября 2020 г.
+
+Этот тег выпуска для обновления модуля в сентябре 2020:
+
+```
+mcr.microsoft.com/media/live-video-analytics:1.0.4
+```
+
+> [!NOTE]
+> В кратком руководстве и учебниках в манифестах развертывания используется тег 1 (Live-Video-Analytics: 1). Поэтому простое повторное развертывание таких манифестов должно обновить модуль на пограничном > устройствах.
+
+### <a name="module-updates"></a>Обновления модулей
+
+* Новый узел расширения графа, [медиаграфкогнитивесервицесвисионекстенсион](custom-vision-tutorial.md) можно интегрировать с [модулем пространственного анализа](spatial-analysis-tutorial.md)(Предварительная версия) из Cognitive Services.
+* Добавлена поддержка для устройств Linux ARM64. для развертывания на таких устройствах выполните [действия вручную](deploy-iot-edge-device.md) .
+
+### <a name="documentation-updates"></a>Обновления документации
+
+* [Инструкции](deploy-azure-stack-edge-how-to.md) по использованию функции Live Video Analytics на IoT Edge на Azure Stack пограничных устройствах.
+* Новый учебник по разработке моделей компьютерных концепций на основе сценария с помощью [службы пользовательское визуальное распознавание Service](https://azure.microsoft.com/services/cognitive-services/custom-vision-service/) и его использования для [анализа реального видео](custom-vision-tutorial.md) в реальном времени.
+
+<hr width=100%>
+
 ## <a name="august-19-2020"></a>19 августа 2020 г.
 
 Этот тег выпуска для обновления 2020 августа:
@@ -32,7 +57,7 @@ mcr.microsoft.com/media/live-video-analytics:1.0.3
 > [!NOTE]
 > В кратком руководстве и учебниках в манифестах развертывания используется тег 1 (Live-Video-Analytics: 1). Поэтому простое повторное развертывание таких манифестов должно обновить модуль на пограничном > устройствах.
 
-### <a name="new-features"></a>Новые функции 
+### <a name="module-updates"></a>Обновления модулей
 
 * Теперь вы можете получить высокую производительность передачи содержимого данных между интерактивной аналитикой видео на IoT Edge и пользовательским расширением с помощью gRPC Framework. Чтобы приступить к [работе, см](analyze-live-video-use-your-grpc-model-quickstart.md) . раздел.
 * Обновлено Расширенное региональное развертывание для аналитики в реальном времени и только облачная служба.  
@@ -43,6 +68,8 @@ mcr.microsoft.com/media/live-video-analytics:1.0.3
 ### <a name="bug-fixes"></a>Исправления ошибок 
 
 * Снятие использования устаревшего расширения Azure в скрипте настройки
+
+<hr width=100%>
 
 ## <a name="july-13-2020"></a>13 июля 2020 г.
 
@@ -55,11 +82,15 @@ mcr.microsoft.com/media/live-video-analytics:1.0.2
 > [!NOTE]
 > В кратком руководстве и учебниках в манифестах развертывания используется тег 1 (Live-Video-Analytics: 1). Поэтому простое повторное развертывание таких манифестов должно обновить модуль на пограничном > устройствах.
 
-### <a name="new-features"></a>Новые функции
+### <a name="module-updates"></a>Обновления модулей
+
 * Теперь можно создавать топологии графов, которые имеют узел приемника ресурса, а также узел приемника файлов, расположенный на узле процессора сигнального шлюза. См. пример в [этом](https://github.com/Azure/live-video-analytics/tree/master/MediaGraph/topologies/evr-motion-assets-files) разделе.
 
 ### <a name="bug-fixes"></a>Исправления ошибок
+
 * Улучшения проверки требуемых свойств
+
+<hr width=100%>
 
 ## <a name="june-1-2020"></a>1 июня 2020 г.
 
@@ -70,6 +101,7 @@ mcr.microsoft.com/media/live-video-analytics:1.0.2
 ```
 
 ### <a name="supported-functionalities"></a>Поддерживаемые функциональные возможности
+
 * Анализ потоков видео в реальном времени с помощью выбранных модулей AI и при необходимости запись видео на пограничном устройстве или в облаке
 * Использование в операционных системах Linux AMD64, [поддерживаемых](../../iot-edge/support.md) IOT Edge
 * Развертывание и Настройка модуля через центр Интернета вещей с помощью портал Azure или Visual Studio Code
@@ -83,7 +115,6 @@ mcr.microsoft.com/media/live-video-analytics:1.0.2
     *   графинстанцесет
     *   графинстанцеделете
     *   графинстанцелист
-
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

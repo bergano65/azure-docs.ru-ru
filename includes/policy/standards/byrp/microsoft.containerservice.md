@@ -2,15 +2,15 @@
 author: DCtheGeek
 ms.service: azure-policy
 ms.topic: include
-ms.date: 09/10/2020
+ms.date: 09/16/2020
 ms.author: dacoulte
 ms.custom: generated
-ms.openlocfilehash: d59014421adc8a9d7def4d2ec997832125c9de42
-ms.sourcegitcommit: 43558caf1f3917f0c535ae0bf7ce7fe4723391f9
+ms.openlocfilehash: de9d69c9f9a2f97d1e09924050a842143e8d92e4
+ms.sourcegitcommit: bdd5c76457b0f0504f4f679a316b959dcfabf1ef
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/11/2020
-ms.locfileid: "90019361"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90977035"
 ---
 ## <a name="azure-security-benchmark"></a>Azure Security Benchmark
 
@@ -23,8 +23,6 @@ ms.locfileid: "90019361"
 |Безопасность сети |1,1 |Защита ресурсов в виртуальной сети с помощью групп безопасности сети или Брандмауэра Azure |[В службах Kubernetes нужно определить разрешенные диапазоны IP-адресов](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F0e246bcf-5f6f-4f87-bc6f-775d4712c7ea) |[2.0.1](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Security%20Center/ASC_EnableIpRanges_KubernetesService_Audit.json) |
 |Защита данных |4.6 |Контроль доступа к ресурсам с помощью RBAC |[В службах Kubernetes следует использовать управление доступом на основе ролей (RBAC)](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2Fac4a19c2-fa67-49b4-8ae5-0b2e78c49457) |[1.0.2](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Security%20Center/ASC_EnableRBAC_KubernetesService_Audit.json) |
 |Управление уязвимостями |5,3 |Развертывание автоматизированного решения для управления исправлениями ПО сторонних производителей |[Службы Kubernetes должны быть обновлены до версии с устраненными уязвимостями](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2Ffb893a29-21bb-418c-a157-e99480ec364c) |[1.0.2](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Security%20Center/ASC_UpgradeVersion_KubernetesService_Audit.json) |
-|Настройка безопасности |7.3 |Сохранение безопасных конфигураций для ресурсов Azure |[ [предварительная версия]: Нужно определить политики безопасности объекта pod в службах Kubernetes](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F3abeb944-26af-43ee-b83d-32aaf060fb94) |[1.0.0 (предварительная версия)](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Security%20Center/ASC_EnablePSP_KubernetesService_Audit.json) |
-|Настройка безопасности |7.9 |Реализация автоматизированного мониторинга конфигурации для служб Azure |[ [предварительная версия]: Нужно определить политики безопасности объекта pod в службах Kubernetes](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F3abeb944-26af-43ee-b83d-32aaf060fb94) |[1.0.0 (предварительная версия)](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Security%20Center/ASC_EnablePSP_KubernetesService_Audit.json) |
 
 ## <a name="cis-microsoft-azure-foundations-benchmark"></a>Тест производительности CIS для платформ Microsoft Azure
 
