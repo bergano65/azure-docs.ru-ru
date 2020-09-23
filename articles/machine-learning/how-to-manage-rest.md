@@ -10,16 +10,16 @@ ms.subservice: core
 ms.date: 01/31/2020
 ms.topic: conceptual
 ms.custom: how-to, devx-track-python
-ms.openlocfilehash: 8c97ee9782f728e39175ed2517b64020ca4169f4
-ms.sourcegitcommit: 3be3537ead3388a6810410dfbfe19fc210f89fec
+ms.openlocfilehash: 39000a34d1d19026ce406eeb996f89d1acc7ea04
+ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89649408"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90897366"
 ---
 # <a name="create-run-and-delete-azure-ml-resources-using-rest"></a>Создание, запуск и удаление ресурсов машинного обучения Azure с помощью функции "ОСТАВШАЯся"
 
-[!INCLUDE [applies-to-skus](../../includes/aml-applies-to-basic-enterprise-sku.md)]
+
 
 Существует несколько способов управления ресурсами машинного обучения Azure. Можно использовать [портал](https://portal.azure.com/), [интерфейс командной строки](https://docs.microsoft.com/cli/azure/?view=azure-cli-latest)или [пакет SDK для Python](https://docs.microsoft.com/python/api/overview/azure/ml/intro?view=azure-ml-py&preserve-view=true). Также можно выбрать REST API. REST API использует глаголы HTTP для создания, извлечения, обновления и удаления ресурсов. REST API работает с любым языком или инструментом, который может выполнять HTTP-запросы. Простая структура RESTFUL часто делает ее хорошим выбором в средах создания сценариев и для автоматизации Млопс. 
 
@@ -202,7 +202,7 @@ providers/Microsoft.MachineLearningServices/workspaces/{your-workspace-name}/mod
 
 Обратите внимание, что для перечисления экспериментов путь начинается с `history/v1.0` , когда для вывода списка моделей путь начинается с `modelmanagement/v1.0` . REST API разделена на несколько операционных групп, каждый из которых имеет отдельный путь. 
 
-|Область|путь|
+|Область|Путь|
 |-|-|
 |Artifacts|/рест/апи/азуремл|
 |Хранилища данных|/азуре/мачине-леарнинг/хов-то-акцесс-дата|
@@ -423,5 +423,5 @@ providers/Microsoft.Storage/storageAccounts/{your-storage-account-name}"
 ## <a name="next-steps"></a>Дальнейшие действия
 
 - Ознакомьтесь с полным [справочником по AzureML REST API](https://docs.microsoft.com/rest/api/azureml/).
-- Узнайте, как использовать конструктор & Studio для [прогнозирования стоимости автомобилей с помощью конструктора (Предварительная версия)](https://docs.microsoft.com/azure/machine-learning/tutorial-designer-automobile-price-train-score).
+- Узнайте, как использовать конструктор для [прогнозирования цены автомобилей с помощью конструктора](https://docs.microsoft.com/azure/machine-learning/tutorial-designer-automobile-price-train-score).
 - Изучите [машинное обучение Azure с записными книжками Jupyter](https://docs.microsoft.com/azure//machine-learning/samples-notebooks).

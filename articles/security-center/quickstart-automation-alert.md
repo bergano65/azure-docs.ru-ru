@@ -8,12 +8,12 @@ ms.topic: quickstart
 ms.custom: subject-armqs
 ms.author: memildin
 ms.date: 08/20/2020
-ms.openlocfilehash: ecef318978194ac3773c54e2d9c960781086de65
-ms.sourcegitcommit: 56cbd6d97cb52e61ceb6d3894abe1977713354d9
+ms.openlocfilehash: 6c8a3d6c291435a379a637707a42f9ad7fe8dc00
+ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/20/2020
-ms.locfileid: "88687215"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90906354"
 ---
 # <a name="quickstart-create-an-automatic-response-to-a-specific-security-alert-using-an-azure-resource-manager-template-arm-template"></a>Краткое руководство. Создание автоматического ответа на определенное оповещение системы безопасности с помощью шаблона Azure Resource Manager (ARM)
 
@@ -73,9 +73,7 @@ ms.locfileid: "88687215"
 1. На [портале Azure](https://portal.azure.com) откройте **Центр безопасности**.
 1. В верхней строке меню выберите значок фильтра и конкретную подписку, в которой развернута новая служба автоматизации рабочего процесса.
 1. На боковой панели Центра безопасности откройте раздел **автоматизации рабочего процесса** и проверьте наличие новой службы автоматизации.
-
-    :::image type="content" source="./media/quickstart-automation-alert/validating-template-run.png" alt-text="Замещающий текст изображения." lightbox="./media/quickstart-automation-alert/validating-template-run.png":::
-
+    :::image type="content" source="./media/quickstart-automation-alert/validating-template-run.png" alt-text="Список настроенных автоматизаций" lightbox="./media/quickstart-automation-alert/validating-template-run.png":::
     >[!TIP]
     > Если в подписке имеется много служб автоматизации рабочих процессов, используйте параметр **фильтрации по имени**. 
 
@@ -86,11 +84,9 @@ ms.locfileid: "88687215"
 1. На [портале Azure](https://portal.azure.com) откройте **Центр безопасности**.
 1. В верхней строке меню выберите значок фильтра и конкретную подписку, в которой развернута новая служба автоматизации рабочего процесса.
 1. На боковой панели Центра безопасности откройте раздел **автоматизации рабочего процесса** и найдите службу автоматизации, которую необходимо удалить.
-
-    :::image type="content" source="./media/quickstart-automation-alert/deleting-workflow-automation.png" alt-text="Замещающий текст изображения." lightbox="./media/quickstart-automation-alert/deleting-workflow-automation.png":::
-
+    :::image type="content" source="./media/quickstart-automation-alert/deleting-workflow-automation.png" alt-text="Действия по удалению автоматизации рабочих процессов" lightbox="./media/quickstart-automation-alert/deleting-workflow-automation.png":::
 1. Установите флажок рядом с удаляемым элементом.
-1. На панели инструментов нажмите кнопку "Удалить".
+1. На панели инструментов выберите **Удалить**.
 
 
 ## <a name="next-steps"></a>Дальнейшие действия

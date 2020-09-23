@@ -1,5 +1,5 @@
 ---
-title: Создание моделей ML с помощью конструктора (Предварительная версия)
+title: Создание моделей ML с помощью конструктора
 titleSuffix: Azure Machine Learning
 description: Узнайте о терминах, понятиях и рабочем процессе в конструкторе для Машинного обучения Azure.
 services: machine-learning
@@ -10,15 +10,15 @@ ms.author: peterlu
 author: peterclu
 ms.date: 06/28/2020
 ms.custom: designer
-ms.openlocfilehash: 788eebaf28a768acbdb5b1eb778f196fe05dc3e3
-ms.sourcegitcommit: 3be3537ead3388a6810410dfbfe19fc210f89fec
+ms.openlocfilehash: c92351131a60b571a102b85f7d11b79ab29d939e
+ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89651215"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90883117"
 ---
-# <a name="what-is-azure-machine-learning-designer-preview"></a>Что такое конструктор Машинного обучения Azure (предварительная версия)? 
-[!INCLUDE [applies-to-skus](../../includes/aml-applies-to-enterprise-sku.md)]
+# <a name="what-is-azure-machine-learning-designer"></a>Что такое конструктор Машинное обучение Azure? 
+
 
 Конструктор Машинного обучения Azure позволяет визуально соединять [наборы данных](#datasets) и [модули](#module) на интерактивном холсте для создания моделей машинного обучения. Сведения о начале работы с конструктором см. в [руководстве по прогнозированию цены на автомобили с помощью конструктора](tutorial-designer-automobile-price-train-score.md).
 

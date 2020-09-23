@@ -9,20 +9,25 @@ ms.service: cognitive-services
 ms.topic: include
 ms.date: 07/07/2020
 ms.author: aahi
-ms.openlocfilehash: 4c33952ed56399b94a7db1088cb60919a4f88137
-ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
+ms.openlocfilehash: b9452baf0301233a1cd6e05621a89d013d32c9e0
+ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86108985"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90906011"
 ---
 Заполните и отправьте [форму запроса Cognitive Services контейнеров](https://aka.ms/cognitivegate) , чтобы запросить доступ к контейнеру.
+В форме нужно указать сведения о себе, компании и пользовательском сценарии, для которого будет использоваться контейнер. После отправки формы команда Azure Cognitive Services просматривает ее и проверяет, соответствуете ли вы критериям доступа к частному реестру контейнеров.
 
-[!INCLUDE [Request access to the container registry](../../../../includes/cognitive-services-containers-request-access-only.md)]
+> [!IMPORTANT]
+> * В форме необходимо использовать адрес электронной почты, связанный с ИДЕНТИФИКАТОРом подписки Azure.
+> * Ресурс Azure, используемый для запуска контейнера, должен быть создан с утвержденным ИДЕНТИФИКАТОРом подписки Azure. 
+> * Проверьте электронную почту (папки "Входящие" и "спам") на наличие обновлений для приложения от корпорации Майкрософт.
 
 Используйте команду DOCKER login с учетными данными, предоставленными в электронной почте для подключения к закрытому реестру контейнеров для Cognitive Services контейнеров.
 
-```bash
+
+```Docker
 docker login containerpreview.azurecr.io -u <username> -p <password>
 ```
 

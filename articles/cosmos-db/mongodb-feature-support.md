@@ -7,12 +7,12 @@ ms.topic: overview
 ms.date: 10/16/2019
 author: sivethe
 ms.author: sivethe
-ms.openlocfilehash: 7c5164a032e77d85c995384473935b134ff528e5
-ms.sourcegitcommit: 98854e3bd1ab04ce42816cae1892ed0caeedf461
+ms.openlocfilehash: 5db25f993fa006fa635ac12c1be5ff1c3eb92f68
+ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "88009313"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90883455"
 ---
 # <a name="azure-cosmos-dbs-api-for-mongodb-32-version-supported-features-and-syntax"></a>API Azure Cosmos DB для MongoDB (версии 3.2) — поддержка возможностей и синтаксиса
 
@@ -25,7 +25,9 @@ Azure Cosmos DB — это глобально распределенная мн
 
 ## <a name="protocol-support"></a>Поддержка протоколов
 
-Все новые учетные записи API Azure Cosmos DB для MongoDB совместимы с сервером MongoDB версии **3.6**. В этой статье рассматривается MongoDB версии 3.2. Ниже перечислены поддерживаемые операторы, а также ограничения и исключения. Любой драйвер клиента, который распознает эти протоколы, должен иметь возможность подключения к API Azure Cosmos DB для MongoDB.
+Все новые учетные записи API Azure Cosmos DB для MongoDB совместимы с сервером MongoDB версии **3.6**. В этой статье рассматривается MongoDB версии 3.2. Ниже перечислены поддерживаемые операторы, а также ограничения и исключения. Любой драйвер клиента, который распознает эти протоколы, должен иметь возможность подключения к API Azure Cosmos DB для MongoDB. 
+
+API Azure Cosmos DB для MongoDB также обеспечивает простое обновление для удовлетворяющих требованиям учетных записей. Дополнительные сведения см. в [руководстве по обновлению версии MongoDB](mongodb-version-upgrade.md).
 
 ## <a name="query-language-support"></a>Поддержка языка запросов
 

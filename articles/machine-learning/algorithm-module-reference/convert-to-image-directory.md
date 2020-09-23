@@ -9,16 +9,16 @@ ms.topic: reference
 author: likebupt
 ms.author: keli19
 ms.date: 05/26/2020
-ms.openlocfilehash: b29b5fa1beb19bc055f94c56b064ae2c0ae175b5
-ms.sourcegitcommit: 1e6c13dc1917f85983772812a3c62c265150d1e7
+ms.openlocfilehash: 677cf60ff3e614fd1486445786154fbf026b7cd9
+ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/09/2020
-ms.locfileid: "86171148"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90898698"
 ---
 # <a name="convert-to-image-directory"></a>Преобразование в каталог изображений
 
-В этой статье описывается, как использовать модуль Convert to Image Directory для преобразования набора данных изображений в тип данных "Каталог изображений", который представляет собой стандартизированный формат данных в задачах, связанных с изображениями, таких как классификация изображений в Машинное обучение Azure конструкторе (Предварительная версия).
+В этой статье описывается использование модуля Convert to Image Directory для преобразования набора данных изображений в тип данных "Каталог изображений", который является стандартизированным форматом данных в задачах, связанных с образами, таких как классификация изображений в конструкторе Машинное обучение Azure.
 
 ## <a name="how-to-use-convert-to-image-directory"></a>Использование Convert to Image Directory  
 

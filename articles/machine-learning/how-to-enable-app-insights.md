@@ -11,15 +11,15 @@ author: blackmist
 ms.date: 09/15/2020
 ms.topic: conceptual
 ms.custom: how-to, devx-track-python
-ms.openlocfilehash: f497bf5374dd6f621a6b48bae245e5efb1505a19
-ms.sourcegitcommit: 80b9c8ef63cc75b226db5513ad81368b8ab28a28
+ms.openlocfilehash: a36f69c9956dd05c5fbd85d7e37b90c0b1e4c21e
+ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/16/2020
-ms.locfileid: "90603073"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90897650"
 ---
 # <a name="monitor-and-collect-data-from-ml-web-service-endpoints"></a>Мониторинг и сбор данных из конечных точек веб-службы Машинного обучения
-[!INCLUDE [applies-to-skus](../../includes/aml-applies-to-basic-enterprise-sku.md)]
+
 
 Из этой статьи вы узнаете, как выполнять получение данных из моделей, развернутых в конечных точках веб-службы в службе Kubernetes Azure (AKS) или экземплярах контейнеров Azure (ACI). Используйте [Application Insights Azure](../azure-monitor/app/app-insights-overview.md) , чтобы получить из конечной точки следующие данные:
 * Выходные данные
@@ -32,7 +32,7 @@ ms.locfileid: "90603073"
  
 [!INCLUDE [aml-clone-in-azure-notebook](../../includes/aml-clone-for-examples.md)]
  
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 * Подписка Azure — попробуйте [бесплатную или платную версию машинное обучение Azure](https://aka.ms/AMLFree).
 

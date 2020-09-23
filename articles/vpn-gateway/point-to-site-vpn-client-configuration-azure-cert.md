@@ -1,19 +1,19 @@
 ---
 title: 'Создание & установка файлов конфигурации VPN-клиента P2S: проверка подлинности сертификата'
 titleSuffix: Azure VPN Gateway
-description: Создание и установка файлов конфигурации VPN-клиента Windows, Linux, Linux (strongSwan) и Mac OS X для использования аутентификации на основе сертификата для подключения "точка — сеть".
+description: Создание и установка файлов конфигурации VPN-клиента Windows, Linux, Linux (strongSwan) и macOS X для проверки подлинности с помощью сертификата P2S.
 services: vpn-gateway
 author: cherylmc
 ms.service: vpn-gateway
 ms.topic: how-to
 ms.date: 09/02/2020
 ms.author: cherylmc
-ms.openlocfilehash: 17a9339fff27a0fbd7fa389933d21ef85e29248b
-ms.sourcegitcommit: 9c262672c388440810464bb7f8bcc9a5c48fa326
+ms.openlocfilehash: 3a7a9711f04a4b54459d57a05ae65b4eedf1d6b6
+ms.sourcegitcommit: bdd5c76457b0f0504f4f679a316b959dcfabf1ef
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/03/2020
-ms.locfileid: "89420784"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90986640"
 ---
 # <a name="create-and-install-vpn-client-configuration-files-for-native-azure-certificate-authentication-p2s-configurations"></a>Создание и установка файлов конфигурации VPN-клиента для настройки подключений типа "точка — сеть" с использованием собственной аутентификации Azure на основе сертификата
 
@@ -96,7 +96,7 @@ ms.locfileid: "89420784"
 
    Установите следующие значения: для параметра **Interface** (Интерфейс) — VPN, для **VPN Type** (Тип VPN) — IKEv2. Укажите имя профиля в поле **Service Name** (Имя службы), а затем нажмите кнопку **Create** (Создать), чтобы создать профиль подключения VPN-клиента.
 
-   ![network](./media/point-to-site-vpn-client-configuration-azure-cert/network.png)
+   ![На снимке экрана показано окно сети с возможностью выбора интерфейса, выбора типа VPN и ввода имени службы.](./media/point-to-site-vpn-client-configuration-azure-cert/network.png)
 4. В папке **Generic** из файла **VpnSettings.xml** скопируйте значение тега **VpnServer**. Вставьте это значение в поля профиля **Server Address** (Адрес сервера) и **Remote ID** (Удаленный ИД).
 
    ![Сведения о сервере](./media/point-to-site-vpn-client-configuration-azure-cert/server.png)
@@ -106,14 +106,14 @@ ms.locfileid: "89420784"
 
    * Для Catalina выберите **нет** и **сертификат**. **Выберите** правильный сертификат:
    
-   ![Catalina](./media/point-to-site-vpn-client-configuration-azure-cert/catalina.png)
+   ![На снимке экрана показано окно сети, для которого выбран параметр Проверка подлинности и сертификат выбрано.](./media/point-to-site-vpn-client-configuration-azure-cert/catalina.png)
 
 6. Нажмите кнопку **выбрать...** чтобы выбрать сертификат клиента, который будет использоваться для аутентификации. Это сертификат, установленный на шаге 2.
 
-   ![сертификат](./media/point-to-site-vpn-client-configuration-azure-cert/certificate.png)
+   ![На снимке экрана показано окно сети с параметрами проверки подлинности, где можно выбрать сертификат.](./media/point-to-site-vpn-client-configuration-azure-cert/certificate.png)
 7. В окне **Choose An Identity** (Выбор удостоверения) отобразится список доступных сертификатов. Выберите нужный сертификат, а затем щелкните **Continue** (Продолжить).
 
-   ![удостоверение](./media/point-to-site-vpn-client-configuration-azure-cert/identity.png)
+   ![На снимке экрана показано диалоговое окно Выбор удостоверения, в котором можно выбрать нужный сертификат.](./media/point-to-site-vpn-client-configuration-azure-cert/identity.png)
 8. В поле **Local ID** (Локальный идентификатор) укажите имя сертификата (из шага 6). В нашем примере это ikev2Client.com. Щелкните **Apply** (Применить), чтобы сохранить изменения.
 
    ![apply](./media/point-to-site-vpn-client-configuration-azure-cert/applyconnect.png)
@@ -213,4 +213,4 @@ ms.locfileid: "89420784"
 Сведения об устранении неполадок с подключениями "точка — сеть" см. в следующий статьях:
 
   * [Устранение неполадок подключения типа "точка — сеть" Azure](vpn-gateway-troubleshoot-vpn-point-to-site-connection-problems.md)
-  * [Устранение неполадок VPN-подключений "точка — сеть" для клиентов Mac OS X](vpn-gateway-troubleshoot-point-to-site-osx-ikev2.md)
+  * [Устранение неполадок VPN-подключений из VPN-клиентов macOS X](vpn-gateway-troubleshoot-point-to-site-osx-ikev2.md)

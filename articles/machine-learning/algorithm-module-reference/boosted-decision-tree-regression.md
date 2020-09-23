@@ -9,16 +9,16 @@ ms.topic: reference
 author: likebupt
 ms.author: keli19
 ms.date: 08/24/2020
-ms.openlocfilehash: 171c53aa36ecc854cf32a64f9f2639a7086c24e5
-ms.sourcegitcommit: 9c3cfbe2bee467d0e6966c2bfdeddbe039cad029
+ms.openlocfilehash: 21cd1491da4374babaff8b5b4b451a3cce874368
+ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/24/2020
-ms.locfileid: "88782589"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90898851"
 ---
 # <a name="boosted-decision-tree-regression-module"></a>Модуль регрессии повышенного дерева принятия решений
 
-В этой статье описывается модуль в конструкторе Машинного обучения Azure (предварительная версия).
+В этой статье описывается модуль в конструкторе Машинное обучение Azure.
 
 Этот модуль используется для создания ансамблей деревьев регрессии с помощью повышения. *Повышение* означает, что каждое дерево зависит от предыдущих деревьев. Алгоритм узнает, как подставить остаток к дереву, предшествующему этому. Таким образом, бустинг в наборе деревьев принятия решений обычно обеспечивает повышение точности с небольшим риском снижения покрытия.  
 

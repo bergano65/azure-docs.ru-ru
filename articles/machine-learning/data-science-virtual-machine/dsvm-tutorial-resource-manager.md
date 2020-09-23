@@ -10,16 +10,14 @@ ms.date: 06/10/2020
 ms.service: machine-learning
 ms.subservice: data-science-vm
 ms.topic: quickstart
-ms.openlocfilehash: 9b89c0a4135bf595991439dd47e57a870ea2b0d1
-ms.sourcegitcommit: b33c9ad17598d7e4d66fe11d511daa78b4b8b330
+ms.openlocfilehash: 8f83cdb09b94fb7eda1f8f700390be8b2c2147e0
+ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88855065"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90883147"
 ---
 # <a name="quickstart-create-an-ubuntu-data-science-virtual-machine-using-an-arm-template"></a>Краткое руководство. Создание виртуальной машины для анализа данных на платформе Ubuntu с помощью шаблона ARM
-
-[!INCLUDE [applies-to-skus](../../../includes/aml-applies-to-basic-enterprise-sku.md)]
 
 В этом кратком руководстве показано, как создать виртуальную машину Ubuntu 18.04 для обработки и анализа данных с помощью шаблона Azure Resource Manager (ARM). Виртуальные машины для обработки и анализа данных — это облачные виртуальные машины, предварительно загруженные с помощью набора платформ и средств для обработки и анализа данных и машинного обучения. При развертывании на основе ресурсов вычислений на платформе GPU все средства и библиотеки настраиваются на использование GPU.
 

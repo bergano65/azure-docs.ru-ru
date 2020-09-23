@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.custom: devx-track-csharp
 ms.date: 03/01/2019
 ms.author: kenchen
-ms.openlocfilehash: 71bcb72b645c574eedd24ff868751f366738e73d
-ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
+ms.openlocfilehash: b1cb48d1ae858dbcd0df80780b4c3cee3deac75b
+ms.sourcegitcommit: bdd5c76457b0f0504f4f679a316b959dcfabf1ef
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88935693"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90976494"
 ---
 # <a name="resiliency-and-disaster-recovery-in-azure-signalr-service"></a>Устойчивость и аварийное восстановление Службы Azure SignalR
 
@@ -42,7 +42,7 @@ ms.locfileid: "88935693"
 
 На схеме ниже показан пример такой топологии сети:
 
-![Топология](media/signalr-concept-disaster-recovery/topology.png)
+![На схеме показаны два региона, каждый из которых имеет сервер приложений и службу SignalR, где каждый сервер связан со службой SignalR в своем регионе как основной и со службой в другом регионе как вторичная.](media/signalr-concept-disaster-recovery/topology.png)
 
 ## <a name="configure-app-servers-with-multiple-signalr-service-instances"></a>Настройка серверов приложений с несколькими экземплярами Службы SignalR
 

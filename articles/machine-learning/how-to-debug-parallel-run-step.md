@@ -11,15 +11,15 @@ ms.reviewer: jmartens, larryfr, vaidyas, laobri, tracych
 ms.author: trmccorm
 author: tmccrmck
 ms.date: 07/16/2020
-ms.openlocfilehash: 8d357cea7ce809c2df6b35e08ac7da7e9d3795e9
-ms.sourcegitcommit: 3be3537ead3388a6810410dfbfe19fc210f89fec
+ms.openlocfilehash: 010843f4249909e23ffac3b41fb3acaf9c91eb17
+ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89650428"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90890006"
 ---
 # <a name="debug-and-troubleshoot-parallelrunstep"></a>Отладка и устранение неполадок ParallelRunStep
-[!INCLUDE [applies-to-skus](../../includes/aml-applies-to-basic-enterprise-sku.md)]
+
 
 Из этой статьи вы узнаете, как выполнять отладку и устранение неполадок класса [ParallelRunStep](https://docs.microsoft.com/python/api/azureml-pipeline-steps/azureml.pipeline.steps.parallel_run_step.parallelrunstep?view=azure-ml-py&preserve-view=true) из [пакета SDL решения "Машинное обучение Azure"](https://docs.microsoft.com/python/api/overview/azure/ml/intro?view=azure-ml-py&preserve-view=true).
 
@@ -29,7 +29,7 @@ ms.locfileid: "89650428"
 
 ## <a name="debugging-scripts-from-remote-context"></a>Отладка сценариев из удаленного контекста
 
-Переход от локальной отладки сценария оценки к отладке сценария оценки в фактическом конвейере может оказаться сложной задачей. Сведения о поиске журналов на портале см. в разделе о [конвейерах машинного обучения для сценариев отладки из удаленного контента](how-to-debug-pipelines.md#finding-and-reading-pipeline-log-files). Сведения в этом разделе также применимы к классу ParallelRunStep.
+Переход от локальной отладки сценария оценки к отладке сценария оценки в фактическом конвейере может оказаться сложной задачей. Сведения о поиске журналов на портале см. в разделе о [конвейерах машинного обучения для сценариев отладки из удаленного контента](how-to-debug-pipelines.md). Сведения в этом разделе также применимы к классу ParallelRunStep.
 
 Например, файл журнала `70_driver_log.txt` содержит сведения о контроллере, который запускает код ParallelRunStep.
 

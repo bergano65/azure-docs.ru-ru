@@ -11,15 +11,15 @@ ms.reviewer: larryfr
 ms.date: 06/17/2020
 ms.topic: conceptual
 ms.custom: how-to, devx-track-python, devx-track-csharp
-ms.openlocfilehash: 3e6b5e2e06e6cd87295b2faf2a426b75b5f6bf10
-ms.sourcegitcommit: 3be3537ead3388a6810410dfbfe19fc210f89fec
+ms.openlocfilehash: 5427d62f93eb6284ecda9a0762e3d8c4e99c06e2
+ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89650756"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90890089"
 ---
 # <a name="consume-an-azure-machine-learning-model-deployed-as-a-web-service"></a>Использование модели Машинного обучения Azure, развернутой в качестве веб-службы
-[!INCLUDE [applies-to-skus](../../includes/aml-applies-to-basic-enterprise-sku.md)]
+
 
 При развертывании модели Машинное обучение Azure в качестве веб-службы создается конечная точка REST API. Вы можете отправить данные в эту конечную точку и получить прогноз, возвращенный моделью. В этом документе описано, как создать клиенты для работы с веб-службой на языках C#, Go, Java и Python.
 

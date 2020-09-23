@@ -9,16 +9,16 @@ ms.topic: reference
 author: likebupt
 ms.author: keli19
 ms.date: 09/09/2019
-ms.openlocfilehash: 6466cea9fe04bb308a670cb03fd3de5314758142
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 99fb41542dff28997438881abad71da11e927a78
+ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "79456613"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90898809"
 ---
 # <a name="clip-values"></a>Обрезка значений
 
-В этой статье описывается модуль Машинное обучение Azure конструктора (Предварительная версия).
+В этой статье описывается модуль конструктора Машинное обучение Azure.
 
 Используйте модуль «значения Clip», чтобы указать и при необходимости заменить значения данных, превышающие или ниже заданного порогового значения, на среднее, константу или другое заменяющее значение.  
 
@@ -116,7 +116,7 @@ ms.locfileid: "79456613"
   
 |Исходные данные|Замена на отсутствие значения|Замена пороговым значением|  
 |-------------------|--------------------------|----------------------------|  
-|1<br /><br /> 2<br /><br /> 3<br /><br /> 4<br /><br /> 5<br /><br /> 6<br /><br /> 7<br /><br /> 8<br /><br /> 9<br /><br /> 10|TRUE<br /><br /> TRUE<br /><br /> 3, FALSE<br /><br /> 4, ЛОЖЬ<br /><br /> 5, ЛОЖЬ<br /><br /> 6, ЛОЖЬ<br /><br /> 7, ЛОЖЬ<br /><br /> 8, ЛОЖЬ<br /><br /> 9, ЛОЖЬ<br /><br /> TRUE|4, TRUE<br /><br /> 4, TRUE<br /><br /> 4, TRUE<br /><br /> 4, TRUE<br /><br /> 5, ЛОЖЬ<br /><br /> 6, ЛОЖЬ<br /><br /> 7, TRUE<br /><br /> 7, TRUE<br /><br /> 7, TRUE<br /><br /> 7, TRUE| 
+|1<br /><br /> 2<br /><br /> 3<br /><br /> 4<br /><br /> 5<br /><br /> 6<br /><br /> 7<br /><br /> 8<br /><br /> 9<br /><br /> 10|TRUE<br /><br /> TRUE<br /><br /> 3, FALSE<br /><br /> 4, ЛОЖЬ<br /><br /> 5, ЛОЖЬ<br /><br /> 6, ЛОЖЬ<br /><br /> 7, ЛОЖЬ<br /><br /> 8, ЛОЖЬ<br /><br /> 9, ЛОЖЬ<br /><br /> true|4, TRUE<br /><br /> 4, TRUE<br /><br /> 4, TRUE<br /><br /> 4, TRUE<br /><br /> 5, ЛОЖЬ<br /><br /> 6, ЛОЖЬ<br /><br /> 7, TRUE<br /><br /> 7, TRUE<br /><br /> 7, TRUE<br /><br /> 7, TRUE| 
  
 ## <a name="next-steps"></a>Дальнейшие действия
 

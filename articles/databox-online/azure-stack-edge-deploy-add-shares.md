@@ -1,6 +1,6 @@
 ---
-title: Руководство по передаче данных в общие папки с помощью Azure Stack Edge | Документация Майкрософт
-description: Из этого руководства вы узнаете, как добавить общие папки на устройство Azure Stack Edge и подключиться к ним, чтобы обеспечить передачу данных с этого устройства в Azure.
+title: Руководство. Передача данных в общие папки с помощью Azure Stack Edge Pro | Документация Майкрософт
+description: Из этого руководства вы узнаете, как добавить общие папки на устройство Azure Stack Edge Pro и подключиться к ним, чтобы обеспечить передачу данных с этого устройства в Azure.
 services: databox
 author: alkohli
 ms.service: databox
@@ -8,17 +8,17 @@ ms.subservice: edge
 ms.topic: tutorial
 ms.date: 03/21/2019
 ms.author: alkohli
-Customer intent: As an IT admin, I need to understand how to add and connect to shares on Azure Stack Edge so I can use it to transfer data to Azure.
-ms.openlocfilehash: fc47497eeceff20e8357195226c2d44cea64fa88
-ms.sourcegitcommit: 4f1c7df04a03856a756856a75e033d90757bb635
+Customer intent: As an IT admin, I need to understand how to add and connect to shares on Azure Stack Edge Pro so I can use it to transfer data to Azure.
+ms.openlocfilehash: aeb5bceca11f595c1582596aeea401fe5f9b239f
+ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87926116"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90883481"
 ---
-# <a name="tutorial-transfer-data-with-azure-stack-edge"></a>Руководство по передаче данных с помощью Azure Stack Edge
+# <a name="tutorial-transfer-data-with-azure-stack-edge-pro"></a>Руководство по Передача данных с помощью Azure Stack Edge Pro
 
-В этом учебнике описывается, как добавить общие папки на устройство Azure Stack Edge и подключиться к ним. После добавления общих папок устройство Azure Stack Edge может выполнять передачу данных в Azure.
+В этом руководстве описывается, как добавить общие папки на устройство Azure Stack Edge Pro и подключиться к ним. После добавления общих папок устройство Azure Stack Edge Pro может выполнять передачу данных в Azure.
 
 Эта процедура может занять около 10 минут.
 
@@ -31,11 +31,11 @@ ms.locfileid: "87926116"
  
 ## <a name="prerequisites"></a>Предварительные требования
 
-Прежде чем добавлять общие папки в службу Azure Stack Edge, убедитесь, что:
+Прежде чем добавлять общие папки в Azure Stack Edge Pro, убедитесь, что:
 
-- установлено физическое устройство, как описано в статье [Руководство по установке Azure Stack Edge](azure-stack-edge-deploy-install.md).
+- Вы установили физическое устройство, как описано в статье [Установка Azure Stack Edge Pro](azure-stack-edge-deploy-install.md).
 
-- Физическое устройство активировано, как описано в статье [Руководство по подключению, настройке и активации Azure Stack Edge](azure-stack-edge-deploy-connect-setup-activate.md).
+- Физическое устройство активировано, как описано в статье [Подключение, настройка и активация Azure Stack Edge Pro](azure-stack-edge-deploy-connect-setup-activate.md).
 
 
 ## <a name="add-a-share"></a>Добавление общей папки
@@ -62,7 +62,7 @@ ms.locfileid: "87926116"
     c. Предоставьте учетную запись хранения, где будет размещена общая папка. 
 
     > [!IMPORTANT]
-    > Убедитесь, что требуемая учетная запись хранения Azure не имеет определенных политик неизменяемости, если она используется с устройством Azure Stack Edge или Шлюз Data Box. См. сведения об [определении и администрировании политик неизменяемости для хранилища BLOB-объектов](https://docs.microsoft.com/azure/storage/blobs/storage-blob-immutability-policies-manage).
+    > Убедитесь, что требуемая учетная запись хранения Azure не имеет определенных политик неизменяемости, если она используется с устройством Azure Stack Edge Pro или Шлюза Data Box. См. сведения об [определении и администрировании политик неизменяемости для хранилища BLOB-объектов](https://docs.microsoft.com/azure/storage/blobs/storage-blob-immutability-policies-manage).
     
     d. В раскрывающемся списке **службы хранилища** выберите **Блочный BLOB-объект**, **Страничный BLOB-объект** или **Файлы**.  
     Тип выбранной службы зависит от формата данных, который вы хотите использовать в Azure. Так как мы хотим хранить данные в блочных BLOB-объектах, в этом примере мы выбрали **Блочный BLOB-объект**. Если вы выбрали **Страничный BLOB-объект**, убедитесь, что данные выровнены по размеру 512 байт. Например, VHDX всегда выравнивается по размеру 512 байт.
@@ -92,7 +92,7 @@ ms.locfileid: "87926116"
 
 ### <a name="connect-to-an-smb-share"></a>Подключение к общей папке типа SMB
 
-В клиенте Windows Server, подключенном к устройству Azure Stack Edge, подключитесь к общей папке SMB, введя следующие команды:
+На клиентском компьютере Windows Server, подключенном к устройству Azure Stack Edge Pro, подключитесь к общей папке SMB, введя следующие команды:
 
 
 1. В командной строке введите следующую команду:
@@ -125,7 +125,7 @@ ms.locfileid: "87926116"
 
 ### <a name="connect-to-an-nfs-share"></a>Подключение к общей папке типа NFS
 
-На клиентском компьютере Linux, подключенном к устройству Azure Stack Edge, выполните такие действия:
+На клиентском компьютере Linux, подключенном к устройству Azure Stack Edge Pro, выполните следующие действия:
 
 1. Убедитесь, что на этом клиенте установлен клиент NFSv4. Используйте следующую команду для установки NFS-клиента:
 
@@ -133,7 +133,7 @@ ms.locfileid: "87926116"
 
     Дополнительные сведения см. в разделе об [установке клиента NFSv4](https://help.ubuntu.com/community/SettingUpNFSHowTo#NFSv4_client).
 
-2. После установки NFS-клиента используйте следующую команду, чтобы подключить общую папку типа NFS, созданную на устройстве Azure Stack Edge:
+2. После установки NFS-клиента используйте следующую команду, чтобы подключить общую папку NFS, созданную на устройстве Azure Stack Edge Pro:
 
    `sudo mount -t nfs -o sec=sys,resvport <device IP>:/<NFS shares on device> /home/username/<Folder on local Linux computer>`
 
@@ -141,7 +141,7 @@ ms.locfileid: "87926116"
     > Использование параметра `sync` при подключении общих папок ускоряет передачу больших файлов.
     > Прежде чем подключать общие папки, создайте каталоги, которые будут действовать как точки подключения на локальном компьютере. Эти каталоги не должны содержать никаких файлов или вложенных папок.
 
-    В следующем примере показано, как выполнить подключение к папке на устройстве Azure Stack Edge через NFS. `10.10.10.60` — IP-адрес устройства. Общая папка `mylinuxshare2` подключена на виртуальной машине ubuntuVM. `/home/databoxubuntuhost/edge` представляет собой точку подключения общей папки.
+    В следующем примере показано, как выполнить подключение к папке на устройстве Azure Stack Edge Pro через NFS. `10.10.10.60` — IP-адрес устройства. Общая папка `mylinuxshare2` подключена на виртуальной машине ubuntuVM. `/home/databoxubuntuhost/edge` представляет собой точку подключения общей папки.
 
     `sudo mount -t nfs -o sec=sys,resvport 10.10.10.60:/mylinuxshare2 /home/databoxubuntuhost/Edge`
 
@@ -152,15 +152,15 @@ ms.locfileid: "87926116"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-В этом руководстве были освещены такие темы относительно Azure Stack Edge:
+В этом руководстве были рассмотрены такие темы относительно Azure Stack Edge Pro:
 
 > [!div class="checklist"]
 > * Добавление общей папки
 > * Подключение к общей папке.
 
-Чтобы узнать о преобразовании данных с помощью Azure Stack Edge, перейдите к следующему руководству.
+Чтобы узнать о преобразовании данных с помощью Azure Stack Edge Pro, перейдите к следующему руководству:
 
 > [!div class="nextstepaction"]
-> [Руководство по преобразованию данных с помощью Azure Stack Edge](./azure-stack-edge-deploy-configure-compute.md)
+> [Преобразование данных с помощью Azure Stack Edge Pro](./azure-stack-edge-deploy-configure-compute.md)
 
 

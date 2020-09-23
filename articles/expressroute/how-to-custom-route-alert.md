@@ -7,12 +7,12 @@ ms.service: expressroute
 ms.topic: how-to
 ms.date: 05/29/2020
 ms.author: duau
-ms.openlocfilehash: f29f43234f1541abeb448e722d0b72ef7c0221c9
-ms.sourcegitcommit: 5a3b9f35d47355d026ee39d398c614ca4dae51c6
+ms.openlocfilehash: 4a116d06f5feb3fe402e7f64b9bccd5531b210c1
+ms.sourcegitcommit: bdd5c76457b0f0504f4f679a316b959dcfabf1ef
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89401730"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90986576"
 ---
 # <a name="configure-custom-alerts-to-monitor-advertised-routes"></a>Настройка пользовательских оповещений для отслеживания объявляемых маршрутов
 
@@ -235,7 +235,7 @@ Write-Output  $jsonResults
 
 При запуске скрипта PowerShell выполняется сбор списка значений:
  
-* групп ресурсов;
+* Группа ресурсов
 
 * Имя шлюза ExpressRoute
 
@@ -299,7 +299,7 @@ Azure Logic Apps — это Orchestrator для всех процессов сб
 
 В конце конфигурации рабочего процесса можно проверить согласованность периодичности повторения, запустив рабочий процесс несколько раз, а затем проверив результат в **журнале выполнения**.
 
-:::image type="content" source="./media/custom-route-alert-portal/recurrence.png" alt-text="Периодичность" lightbox="./media/custom-route-alert-portal/recurrence-expand.png":::
+:::image type="content" source="./media/custom-route-alert-portal/recurrence.png" alt-text="На снимке экрана показан интервал повторения и значения частоты." lightbox="./media/custom-route-alert-portal/recurrence-expand.png":::
 
 ### <a name="3-create-a-job"></a><a name="job"></a>3. Создание задания
 
@@ -320,7 +320,7 @@ Azure Logic Apps — это Orchestrator для всех процессов сб
 
 5. На странице **Создание задания** субъект-служба должен иметь роль "читатель" в **группе ресурсов** , в которой размещается учетная запись службы автоматизации, и "оператор задания службы автоматизации" для **учетной записи службы автоматизации**. Кроме того, убедитесь, что **имя Runbook** было добавлено в качестве нового параметра.
 
-   :::image type="content" source="./media/custom-route-alert-portal/roles.png" alt-text="Роли" lightbox="./media/custom-route-alert-portal/roles-expand.png":::
+   :::image type="content" source="./media/custom-route-alert-portal/roles.png" alt-text="На снимке экрана показано, как создать значения заданий в периодичности, где можно проверить имя Runbook." lightbox="./media/custom-route-alert-portal/roles-expand.png":::
 
 ### <a name="4-get-the-job-output"></a><a name="output"></a>4. получение выходных данных задания
 
@@ -343,7 +343,7 @@ Azure Logic Apps — это Orchestrator для всех процессов сб
 
 3. Щелкните внутри поля **содержимое** . Когда появится список динамического содержимого, выберите **содержимое**.
 
-   :::image type="content" source="./media/custom-route-alert-portal/content.png" alt-text="Содержимое" lightbox="./media/custom-route-alert-portal/content-expand.png":::
+   :::image type="content" source="./media/custom-route-alert-portal/content.png" alt-text="Снимок экрана: диалоговое окно "анализ JSON" с выбранным содержимым." lightbox="./media/custom-route-alert-portal/content-expand.png":::
 
 4. Для синтаксического анализа JSON требуется схема. Схему можно создать с помощью выходных данных модуля Runbook службы автоматизации. Откройте новый сеанс веб-браузера, запустите модуль Runbook службы автоматизации и возьмите выходные данные. Вернитесь к действию **операций Logic Apps анализ данных JSON** . В нижней части страницы выберите **использовать образец полезных данных для создания схемы**.
 
@@ -363,7 +363,7 @@ Azure Logic Apps — это Orchestrator для всех процессов сб
 
 1. В **действии получение выходных данных задания**выберите **новый шаг**. В поле поиска найдите и выберите **переменные**.
 
-   :::image type="content" source="./media/custom-route-alert-portal/variables.png" alt-text="Переменные":::
+   :::image type="content" source="./media/custom-route-alert-portal/variables.png" alt-text="На снимке экрана показано диалоговое окно Выбор действия с переменной в поле поиска и выбранными переменными.":::
 
 2. В списке **действия** выберите действие **Инициализация переменной** .
 
@@ -371,7 +371,7 @@ Azure Logic Apps — это Orchestrator для всех процессов сб
 
 3. Укажите имя переменной. В качестве **типа**выберите **строка**. **Значение** переменной будет присвоено позже в рабочем процессе.
 
-   :::image type="content" source="./media/custom-route-alert-portal/string.png" alt-text="String" lightbox="./media/custom-route-alert-portal/string-expand.png":::
+   :::image type="content" source="./media/custom-route-alert-portal/string.png" alt-text="На снимке экрана показан анализ JSON, связанный с переменной Initialize, где можно ввести имя, тип и значение." lightbox="./media/custom-route-alert-portal/string-expand.png":::
 
 ### <a name="7-create-a-for-each-action"></a><a name="cycles-json"></a>7. Создание действия "для каждого"
 
@@ -379,7 +379,7 @@ Azure Logic Apps — это Orchestrator для всех процессов сб
 
 1. В разделе **инициализировать переменную**выберите **Добавить действие**. В поле поиска введите for each в качестве условия фильтрации.
 
-   :::image type="content" source="./media/custom-route-alert-portal/control.png" alt-text="Управление":::
+   :::image type="content" source="./media/custom-route-alert-portal/control.png" alt-text="На снимке экрана показано диалоговое окно Выбор действия с параметром для каждого в поле поиска и выбранным элементом управления.":::
 
 2. В списке **действия** выберите действие **для каждого элемента управления**.
 
@@ -387,7 +387,7 @@ Azure Logic Apps — это Orchestrator для всех процессов сб
 
 3. Щелкните текстовое поле **выберите выходные данные из предыдущих шагов** . Когда появится список **динамического содержимого** , выберите **текст**, который выводится из проанализированного JSON.
 
-   :::image type="content" source="./media/custom-route-alert-portal/body.png" alt-text="Текст":::
+   :::image type="content" source="./media/custom-route-alert-portal/body.png" alt-text="На снимке экрана показана инициализированная переменная, связанная с для каждой из них, которая содержит текстовое поле выберите выходные данные из предыдущих шагов.":::
 
 4. Для каждого элемента тела JSON необходимо задать условие. В группе Действие выберите **элемент Управление**.
 
