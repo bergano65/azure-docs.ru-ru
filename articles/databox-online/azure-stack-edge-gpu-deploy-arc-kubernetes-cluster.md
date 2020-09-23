@@ -1,6 +1,6 @@
 ---
-title: Включение службы "Дуга Azure" на Kubernetes на устройстве "GPU" на Azure Stack ребра | Документация Майкрософт
-description: В этой статье описывается, как включить дугу Azure в существующем кластере Kubernetes на устройстве с Azure Stack пограничным GPU.
+title: Включение дуги Azure на Kubernetes на устройстве Azure Stack ребра Pro GPU | Документация Майкрософт
+description: В этой статье описывается, как включить дугу Azure в существующем кластере Kubernetes на устройстве с Azure Stack ребра Pro GPU.
 services: databox
 author: alkohli
 ms.service: databox
@@ -8,27 +8,27 @@ ms.subservice: edge
 ms.topic: how-to
 ms.date: 09/01/2020
 ms.author: alkohli
-ms.openlocfilehash: 3405f28d5f306e8370bae72eb5f3f3c406235c3d
-ms.sourcegitcommit: 5ed504a9ddfbd69d4f2d256ec431e634eb38813e
+ms.openlocfilehash: 423345739ca5c078fbff4f267e1e8a118abf107c
+ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89322030"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90903191"
 ---
-# <a name="enable-azure-arc-on-kubernetes-cluster-on-your-azure-stack-edge-gpu-device"></a>Включение дуги Azure в кластере Kubernetes на устройстве с Azure Stack ребра
+# <a name="enable-azure-arc-on-kubernetes-cluster-on-your-azure-stack-edge-pro-gpu-device"></a>Включение службы "Дуга Azure" в кластере Kubernetes на устройстве с Azure Stack ребра Pro GPU
 
-В этой статье показано, как включить дугу Azure на существующем кластере Kubernetes на пограничном устройстве Azure Stack. 
+В этой статье показано, как включить дугу Azure в существующем кластере Kubernetes на устройстве с Azure Stack погранично Pro. 
 
-Эта процедура предназначена для тех, кто ознакомился с [Kubernetes рабочими нагрузками на Azure Stack пограничном устройстве](azure-stack-edge-gpu-kubernetes-workload-management.md) и знаком с концепциями того, [что такое служба Arc Azure Kubernetes (Предварительная версия)](https://docs.microsoft.com/azure/azure-arc/kubernetes/overview).
+Эта процедура предназначена для тех, кто ознакомился с [Kubernetes рабочими нагрузками на устройстве на Azure Stack пограничной Pro](azure-stack-edge-gpu-kubernetes-workload-management.md) и знаком с концепциями того, [что такое служба "Дуга Azure Kubernetes (Предварительная версия)"](https://docs.microsoft.com/azure/azure-arc/kubernetes/overview).
 
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Прежде чем включать службу "Дуга Azure" в кластере Kubernetes, убедитесь, что выполнены следующие необходимые условия на устройстве Azure Stack пограничной Организации и клиенте, который будет использоваться для доступа к устройству:
+Прежде чем включать службу "Дуга Azure" в кластере Kubernetes, убедитесь, что выполнены следующие предварительные требования на устройстве Azure Stack пограничной Pro и на клиенте, который будет использоваться для доступа к устройству:
 
 ### <a name="for-device"></a>Для устройств
 
-1. У вас есть учетные данные для входа на 1 узел Azure Stack пограничной устройство.
+1. У вас есть учетные данные для входа на 1 узел Azure Stack пограничным устройством Pro.
     1. Устройство активировано. См. раздел [Активация устройства](azure-stack-edge-gpu-deploy-activate.md).
     1. Устройство имеет роль вычислений, настроенную через портал Azure и имеющую кластер Kubernetes. См. раздел [Настройка вычислений](azure-stack-edge-gpu-deploy-configure-compute.md).
 
@@ -37,19 +37,19 @@ ms.locfileid: "89322030"
 
 ### <a name="for-client-accessing-the-device"></a>Для клиента, обращающегося к устройству
 
-1. У вас есть клиентская система Windows, которая будет использоваться для доступа к Azure Stack пограничному устройству.
+1. У вас есть клиентская система Windows, которая будет использоваться для доступа к устройству Azure Stack погранично Pro.
   
     - Клиент работает под управлением Windows PowerShell 5,0 или более поздней версии. Чтобы скачать последнюю версию Windows PowerShell, перейдите к разделу [Установка Windows PowerShell](https://docs.microsoft.com/powershell/scripting/install/installing-windows-powershell?view=powershell-7).
     
     - Также можно использовать любой другой клиент с [поддерживаемой операционной системой](azure-stack-edge-gpu-system-requirements.md#supported-os-for-clients-connected-to-device) . В этой статье описывается процедура использования клиента Windows. 
     
-1. Вы завершили процедуру, описанную в статье [доступ к кластеру Kubernetes на пограничном устройстве Azure Stack](azure-stack-edge-gpu-create-kubernetes-cluster.md). Вы выполнили следующие задачи:
+1. Вы выполнили процедуру, описанную в статье [доступ к кластеру Kubernetes на устройстве с Azure Stack ребр Pro](azure-stack-edge-gpu-create-kubernetes-cluster.md). Вы выполнили следующие задачи:
     
     - Установлено `kubectl` на клиенте  <!--and saved the `kubeconfig` file with the user configuration to C:\\Users\\&lt;username&gt;\\.kube. -->
     
-    - Убедитесь, что `kubectl` версия клиента отклонена, но не имеет более одной версии из главной версии Kubernetes, работающей на устройстве Azure Stack пограничном. 
+    - Убедитесь, что `kubectl` версия клиента отклонена, но не имеет более одной версии из главной версии Kubernetes, работающей на устройстве Azure Stack погранично Pro. 
       - Используйте `kubectl version` для проверки версии kubectl, работающей на клиенте. Запишите полную версию.
-      - В локальном пользовательском интерфейсе устройства Azure Stack пограничных устройств перейдите в раздел **Обновление программного обеспечения** и запишите номер версии сервера Kubernetes. 
+      - В локальном пользовательском интерфейсе устройства Azure Stack ребра Pro перейдите в раздел **Обновление программного обеспечения** и запишите номер версии сервера Kubernetes. 
     
         ![Проверка номера версии сервера Kubernetes](media/azure-stack-edge-gpu-connect-powershell-interface/verify-kubernetes-version-1.png)      
       
@@ -142,9 +142,9 @@ ms.locfileid: "89322030"
 
     `Set-HcsKubernetesAzureArcAgent -SubscriptionId "<Your Azure Subscription Id>" -ResourceGroupName "<Resource Group Name>" -ResourceName "<Azure Arc resource name (shouldn't exist already)>" -Location "<Region associated with resource group>" -TenantId "<Tenant Id of service principal>" -ClientId "<App id of service principal>" -ClientSecret "<Password of service principal>"`
 
-    Чтобы развернуть дугу Azure на Azure Stack пограничном устройстве, убедитесь, что вы используете [поддерживаемый регион для дуги Azure](../azure-arc/kubernetes/overview.md#supported-regions). В настоящее время доступна предварительная версия Azure ARC. Кроме того, можно определить точное имя региона для передачи в командлет с помощью `az account list-locations` команды.
+    Чтобы развернуть дугу Azure на устройстве Azure Stack пограничной Pro, убедитесь, что вы используете [поддерживаемый регион для дуги Azure](../azure-arc/kubernetes/overview.md#supported-regions). В настоящее время доступна предварительная версия Azure ARC. Кроме того, можно определить точное имя региона для передачи в командлет с помощью `az account list-locations` команды.
     
-    Пример:
+    Например:
    
     ```powershell
     [10.128.44.240]: PS>Set-HcsKubernetesAzureArcAgent -SubscriptionId "062c67a6-019b-40af-a775-c4dc1abe56ed" -ResourceGroupName "myaserg1" -ResourceName "myasetestresarc" -Location "westeurope" -TenantId "72f988bf-86f1-41af-91ab-2d7cd011db47" -ClientId "aa8a082e-0fa1-4a82-b51c-e8b2a9fdaa8b" -ClientSecret "<password>"
@@ -224,4 +224,4 @@ ms.locfileid: "89322030"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Сведения о том, как запустить развертывание Azure Arc, см. в статье [развертывание приложения Redis в режиме без отслеживания состояния с помощью гитопс на пограничном устройстве Azure Stack](azure-stack-edge-gpu-deploy-stateless-application-git-ops-guestbook.md) .
+Сведения о том, как запустить развертывание Azure Arc, см. в статье [развертывание приложения Redis в режиме без отслеживания состояния с помощью гитопс на устройстве Pro на Azure Stack](azure-stack-edge-gpu-deploy-stateless-application-git-ops-guestbook.md) .

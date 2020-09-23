@@ -1,6 +1,6 @@
 ---
-title: Date_Bucket (Transact-SQL). База данных SQL Azure для пограничных вычислений (предварительная версия)
-description: Сведения об использовании Date_Bucket в SQL Azure для пограничных вычислений (предварительная версия)
+title: Date_Bucket (Transact-SQL) — Azure SQL ребро
+description: Дополнительные сведения об использовании Date_Bucket в Azure SQL ребр
 keywords: Date_Bucket, SQL Azure для пограничных вычислений
 services: sql-edge
 ms.service: sql-edge
@@ -9,12 +9,12 @@ author: SQLSourabh
 ms.author: sourabha
 ms.reviewer: sstein
 ms.date: 09/03/2020
-ms.openlocfilehash: 63b7ad84b0866c91e84007a188b82de65983790f
-ms.sourcegitcommit: 4a7a4af09f881f38fcb4875d89881e4b808b369b
+ms.openlocfilehash: 896caae2dfd79c4678ffb34c531fb56835e9bd66
+ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/04/2020
-ms.locfileid: "89458856"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90886846"
 ---
 # <a name="date_bucket-transact-sql"></a>Date_Bucket (Transact-SQL)
 

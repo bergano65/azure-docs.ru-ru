@@ -10,12 +10,12 @@ ms.workload: identity
 ms.topic: article
 ms.date: 01/26/2018
 ms.author: jeedes
-ms.openlocfilehash: 158b66d63292a1ffb503f3f87eddfd33a2b09b71
-ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
+ms.openlocfilehash: b428ffc0122f13ef15f870ce734b54fe6707f582
+ms.sourcegitcommit: bdd5c76457b0f0504f4f679a316b959dcfabf1ef
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88554487"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90983958"
 ---
 # <a name="tutorial-configuring-netsuite-for-automatic-user-provisioning"></a>Руководство по настройке Netsuite для автоматической подготовки пользователей
 
@@ -62,11 +62,11 @@ ms.locfileid: "88554487"
 
 1. Для параметра **Режим подготовки к работе** выберите значение **Automatic** (Автоматически). 
 
-    ![Подготовка](./media/netsuite-provisioning-tutorial/provisioning.png)
+    ![На снимке экрана показана страница подготовки NetSuite с режимом подготовки, настроенным на автоматический и другие значения, которые можно задать.](./media/netsuite-provisioning-tutorial/provisioning.png)
 
 1. В разделе **Учетные данные администратора** укажите следующие параметры конфигурации.
    
-    а. В текстовом поле **Имя пользователя администратора** введите имя учетной записи Netsuite, которой на сайте Netsuite.com назначен профиль **System Administrator** (Системный администратор).
+    a. В текстовом поле **Имя пользователя администратора** введите имя учетной записи Netsuite, которой на сайте Netsuite.com назначен профиль **System Administrator** (Системный администратор).
    
     b. В текстовом поле **Пароль администратора** введите пароль для этой учетной записи.
       

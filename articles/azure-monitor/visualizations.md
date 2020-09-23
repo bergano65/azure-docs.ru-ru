@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 03/17/2020
-ms.openlocfilehash: 195e606a66b1b49821fc1b46381fdc551f142a6a
-ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
+ms.openlocfilehash: 4c9f74f5a9950a299b34e22c1e86dd91f8c82364
+ms.sourcegitcommit: bdd5c76457b0f0504f4f679a316b959dcfabf1ef
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87325531"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90983602"
 ---
 # <a name="visualizing-data-from-azure-monitor"></a>Визуализация данных из Azure Monitor
 В этой статье приводится обзор доступных методов для визуализации метрик и данных журналов, хранящихся в Azure Monitor.
@@ -21,7 +21,7 @@ ms.locfileid: "87325531"
 ## <a name="workbooks"></a>Workbooks
 [Книги](./platform/workbooks-overview.md) — это интерактивные документы, которые дают полное представление о данных и позволяют проводить анализ и выполнять совместную работу в группе. Конкретными примерами, в которых книги могут оказаться весьма полезными источниками данных, являются руководства по устранению неполадок и инцидентов.
 
-![Книга](media/visualizations/workbook.png)
+![На схеме показаны снимки экрана нескольких страниц из книги, включая анализ просмотров страниц, использование и время, потраченное на страницу.](media/visualizations/workbook.png)
 
 ### <a name="advantages"></a>Преимущества
 - Поддержка метрик и журналов.
@@ -39,7 +39,7 @@ ms.locfileid: "87325531"
 ## <a name="azure-dashboards"></a>Панели мониторинга Azure
 [Панели мониторинга Azure](../azure-portal/azure-portal-dashboards.md) являются основной технологией представления данных в Azure. Они особенно полезны тем, что централизованно отображают сведения об инфраструктуре и службах Azure, позволяя быстро выявлять серьезные проблемы.
 
-![Панель мониторинга](media/visualizations/dashboard.png)
+![На снимке экрана показан пример панели мониторинга Azure с настраиваемой информацией.](media/visualizations/dashboard.png)
 
 Ниже приведено видео пошаговое руководство по созданию панелей мониторинга.
 
@@ -88,7 +88,7 @@ ms.locfileid: "87325531"
 ## <a name="grafana"></a>Grafana
 [Grafana](https://grafana.com/) — это открытая платформа, которая отличается операционными панелями мониторинга. Она особенно полезна для обнаружения, изоляции и приоритизации производственных инцидентов. Добавьте [подключаемый модуль источника данных Grafana для Azure Monitor](platform/grafana-plugin.md) в подписку Azure, чтобы с его помощью визуализировать данные метрик Azure.
 
-![Grafana](media/visualizations/grafana.png)
+![На снимке экрана показаны визуализации Grafana.](media/visualizations/grafana.png)
 
 ### <a name="advantages"></a>Преимущества
 - Широкие возможности визуализации.
@@ -120,7 +120,7 @@ ms.locfileid: "87325531"
 [Представления в Azure Monitor](platform/view-designer.md) позволяют создавать пользовательские визуализации на основе данных журналов. Они используются в [решениях для мониторинга](insights/solutions.md) для представления собираемых данных.
 
 
-![Представление](media/visualizations/view.png)
+![На снимке экрана показана плитка решения для мониторинга контейнеров и подробное Azure Monitor представление, которое открывается при выборе.](media/visualizations/view.png)
 
 ### <a name="advantages"></a>Преимущества
 - Широкие возможности визуализации данных журналов.

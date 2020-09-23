@@ -1,6 +1,6 @@
 ---
 title: Руководство по Проектирование мультитенантной базы данных с помощью Базы данных Azure для PostgreSQL с решением "Гипермасштабирование (Citus)"
-description: В этом учебнике показано, как создавать и заполнять распределенные таблицы и выполнять к ним запрос с помощью решения "Гипермасштабирование (Citus)" в Базе данных Azure для PostgreSQL.
+description: В этом учебнике демонстрируется, как расширить возможности масштабируемого мультитенантного приложения с помощью Базы данных Azure для PostgreSQL с Гипермасштабированием (Citus).
 author: jonels-msft
 ms.author: jonels
 ms.service: postgresql
@@ -9,12 +9,12 @@ ms.custom: mvc
 ms.devlang: azurecli
 ms.topic: tutorial
 ms.date: 05/14/2019
-ms.openlocfilehash: bc7891e157bbffa386396a352fd1d48e4559ecdc
-ms.sourcegitcommit: 5b8fb60a5ded05c5b7281094d18cf8ae15cb1d55
+ms.openlocfilehash: ef0f542a27f378b6132d8ef19b55f386d4102d53
+ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87386404"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90895249"
 ---
 # <a name="tutorial-design-a-multi-tenant-database-by-using-azure-database-for-postgresql--hyperscale-citus"></a>Учебник по проектированию мультитенантной базы данных с помощью Базы данных Azure для PostgreSQL с решением "Гипермасштабирование (Citus)"
 
@@ -275,6 +275,5 @@ SELECT id
 
 Из этого руководства вы узнали, как подготовить к работе группу серверов с подключенным решением Hyperscale (Citus). Вы подключились к ней с помощью psql, создали схему и выполнили распределение данных. Вы научились запрашивать данные по одному или нескольким клиентам, а также настраивать схему для каждого клиента.
 
-Теперь ознакомьтесь с основными понятиями гипермасштабирования.
-> [!div class="nextstepaction"]
-> [Типы гипермасштабируемых узлов](https://aka.ms/hyperscale-concepts)
+- Подробнее о [типах узлов](https://aka.ms/hyperscale-concepts) группы сервера.
+- Определите оптимальный [первоначальный размер](howto-hyperscale-scaling.md#picking-initial-size) для своей группы серверов.

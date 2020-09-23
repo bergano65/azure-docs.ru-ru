@@ -1,9 +1,9 @@
 ### YamlMime:Landing
 title: Документация по Azure Stack и Шлюзу Azure Data Box. Передача данных через Интернет
-summary: Используйте Шлюз Azure Data Box и устройства Azure Stack Edge для высокопроизводительной передачи данных по сети. Выберите Шлюз Data Box для отправки данных, чтобы выполнять их архивацию, аварийное восстановление, а также обработку в масштабе облака. Используйте Azure Stack Edge для фильтрации, анализа и преобразования данных перед их перемещением в Azure. Недавно мы переименовали Azure Data Box Edge на Azure Stack Edge.
+summary: Используйте Azure Stack Edge и устройства Шлюза Azure Data Box для высокопроизводительной передачи данных по сети. Устройства Azure Stack Edge Pro, оснащенные оборудованием для ускорения вычислений, позволяют фильтровать, анализировать и преобразовывать данные перед их перемещением в Azure. Выберите Шлюз Data Box для отправки данных, чтобы выполнять их архивацию, аварийное восстановление, а также обработку в масштабе облака.
 metadata:
   title: Документация по Azure Stack и Шлюзу Azure Data Box. Передача данных через Интернет
-  description: Документация по Шлюзу Data Box и Azure Stack Edge (прежнее название — Data Box Edge) для обеспечения высокопроизводительной передачи данных по сети в Azure.
+  description: Документация по Шлюзу Data Box и Azure Stack Edge. Высокопроизводительная передача данных по сети в Azure.
   services: databox
   ms.service: databox
   ms.subservice: edge
@@ -11,22 +11,28 @@ metadata:
   ms.collection: collection
   author: alkohli
   ms.author: alkohli
-  ms.date: 11/04/2019
-  ms.openlocfilehash: bf4f5d7589bdf9ae9b456f7dbe24c8d5fc02afaf
-  ms.sourcegitcommit: 856db17a4209927812bcbf30a66b14ee7c1ac777
+  ms.date: 09/08/2020
+  ms.openlocfilehash: 2995a94f1b56144afd191bc3e8eb97c2da4593ef
+  ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
   ms.translationtype: HT
   ms.contentlocale: ru-RU
-  ms.lasthandoff: 04/29/2020
-  ms.locfileid: "82562361"
+  ms.lasthandoff: 09/22/2020
+  ms.locfileid: "90902986"
 landingContent:
 - title: Сведения об Azure Stack Edge и Шлюзе Data Box
   linkLists:
   - linkListType: overview
     links:
+    - text: Что собой представляет GPU Azure Stack Edge Pro?
+      url: azure-stack-edge-gpu-overview.md
+    - text: Что собой представляет ППВМ Azure Stack Edge Pro?
+      url: azure-stack-edge-overview.md
+    - text: Что собой представляет Azure Stack Edge R?
+      url: azure-stack-edge-j-series-overview.md
+    - text: Что собой представляет Azure Stack Edge Mini?
+      url: azure-stack-edge-k-series-overview.md
     - text: Общие сведения о Шлюзе Data Box
       url: data-box-gateway-overview.md
-    - text: Что такое Azure Stack Edge?
-      url: azure-stack-edge-overview.md
   - linkListType: architecture
     links:
     - text: Выбор вариантов передачи данных в Azure
@@ -35,28 +41,36 @@ landingContent:
       url: /azure/storage/common/storage-solution-large-dataset-low-network#offline-transfer-or-network-transfer
   - linkListType: whats-new
     links:
-    - text: Заметки о выпуске 1905
-      url: data-box-gateway-1905-release-notes.md
+    - text: Заметки о выпуске для 2009
+      url: azure-stack-edge-gpu-2008-release-notes.md
 - title: Требования и ограничения
   linkLists:
   - linkListType: concept
     links:
+    - text: Требования GPU Azure Stack Edge Pro
+      url: azure-stack-edge-gpu-system-requirements.md
+    - text: Требования ППВМ Azure Stack Edge Pro
+      url: azure-stack-edge-gpu-system-requirements.md
     - text: Требования Шлюза Data Box
       url: data-box-gateway-system-requirements.md
-    - text: Требования Azure Stack Edge
-      url: azure-stack-edge-system-requirements.md
+    - text: Ограничения Azure Stack Edge Pro
+      url: azure-stack-edge-limits.md
     - text: Ограничения Шлюза Data Box
       url: data-box-gateway-limits.md
-    - text: Ограничения Azure Stack Edge
-      url: azure-stack-edge-limits.md
 - title: Развертывание
   linkLists:
   - linkListType: tutorial
     links:
+    - text: Просмотр контрольного списка для подготовки к развертыванию
+      url: azure-stack-edge-gpu-deploy-checklist.md
+    - text: GPU Azure Stack Edge Pro
+      url: azure-stack-edge-gpu-deploy-prep.md
     - text: Шлюз Data Box
       url: data-box-gateway-deploy-prep.md
-    - text: Azure Stack Edge
-      url: azure-stack-edge-deploy-prep.md
+    - text: Модуля GPU, полученный через Marketplace
+      url: azure-stack-edge-gpu-deploy-sample-module-marketplace.md
+    - text: Выполнение рабочей нагрузки Kubernetes с использованием IoT Edge
+      url: azure-stack-edge-gpu-deploy-stateless-application-iot-edge-module.md
 - title: Разработка
   linkLists:
   - linkListType: how-to-guide
@@ -65,31 +79,31 @@ landingContent:
       url: azure-stack-edge-create-iot-edge-module.md
   - linkListType: download
     links:
-    - text: Примеры C# для Azure Stack Edge
+    - text: Примеры C# для GPU Azure Stack Edge Pro
       url: https://docs.microsoft.com/samples/azure-samples/data-box-edge-csharp-modules/data-box-edge-csharp-modules/
 - title: Управление
   linkLists:
   - linkListType: how-to-guide
     links:
+    - text: Общие папки Azure Stack Edge Pro
+      url: azure-stack-edge-manage-shares.md
     - text: Общие папки Шлюза Data Box
       url: data-box-gateway-manage-shares.md
-    - text: Общие папки Azure Stack Edge
-      url: azure-stack-edge-manage-shares.md
     - text: Пограничные вычисления
       url: azure-stack-edge-manage-compute.md
-    - text: Сеть пограничных вычислений
-      url: azure-stack-edge-extend-compute-access-modules.md
+    - text: Учетные записи хранения для пограничной среды
+      url: azure-stack-edge-j-series-manage-storage-accounts.md
 - title: Диагностика
   linkLists:
   - linkListType: how-to-guide
     links:
+    - text: GPU Azure Stack Edge
+      url: azure-stack-edge-gpu-troubleshoot.md
     - text: Шлюз Data Box
       url: data-box-gateway-troubleshoot.md
-    - text: Azure Stack Edge
-      url: azure-stack-edge-troubleshoot.md
     - text: Модули пограничных вычислений
-      url: azure-stack-edge-connect-powershell-interface.md#monitor-and-troubleshoot-compute-modules
-    - text: Возврат или замена Azure Stack Edge
+      url: azure-stack-edge-gpu-connect-powershell-interface.md#debug-kubernetes-issues-related-to-iot-edge
+    - text: Возврат GPU Azure Stack Edge
       url: azure-stack-edge-return-device.md
     - text: Открыть запрос в службу поддержки
       url: azure-stack-edge-contact-microsoft-support.md

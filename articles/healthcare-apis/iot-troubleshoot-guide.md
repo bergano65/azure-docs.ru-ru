@@ -6,14 +6,14 @@ author: msjasteppe
 ms.service: healthcare-apis
 ms.subservice: iomt
 ms.topic: troubleshooting
-ms.date: 08/07/2020
+ms.date: 09/16/2020
 ms.author: jasteppe
-ms.openlocfilehash: 088d1e409f14fdba02311d1ff17eb655f6e41ad3
-ms.sourcegitcommit: 269da970ef8d6fab1e0a5c1a781e4e550ffd2c55
+ms.openlocfilehash: 64056ef2f63331686553c52040af9e10ee0ac468
+ms.sourcegitcommit: bdd5c76457b0f0504f4f679a316b959dcfabf1ef
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/10/2020
-ms.locfileid: "88053462"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90982996"
 ---
 # <a name="azure-iot-connector-for-fhir-preview-troubleshooting-guide"></a>Руководство по устранению неполадок в соединителе Azure IoT для FHIR (Предварительная версия)
 
@@ -26,9 +26,37 @@ ms.locfileid: "88053462"
 > [!TIP]
 > Если вы откроете запрос в службу [технической поддержки Azure](https://azure.microsoft.com/support/create-ticket/) для соединителя Azure IOT для FHIR, обязательно включите копии формата JSON сопоставления преобразования, чтобы помочь в процессе устранения неполадок.
 
+## <a name="device-and-fhir-conversion-mapping-json-template-validations-for-azure-iot-connector-for-fhir-preview"></a>Преобразование шаблонов JSON для сопоставления устройств и FHIR для соединителя Azure IoT для FHIR (Предварительная версия)
+В этом разделе вы узнаете о процессе проверки того, что соединитель Azure IoT для FHIR выполняет проверку шаблонов JSON сопоставления устройств и FHIR, прежде чем разрешить их сохранение для использования.  Эти элементы необходимы в формате JSON сопоставления устройства и преобразования FHIR.
+
+**Сопоставление устройств**
+
+|Элемент|Обязательно|
+|:-------|:------|
+|TypeName|Да|
+|типематчекспрессион|Да|
+|девицеидекспрессион|Да|
+|тиместампекспрессион|Да|
+|Values []. ValueName|Да|
+|Values []. ValueExpression|Да|
+
+> [!NOTE]
+> Values []. ValueName и значения []. ValueExpression
+>
+> Эти элементы необходимы только в том случае, если в массиве есть запись значения, но не сопоставлено значений. Используется, если отправляемая телеметрии является событием. Например, когда устройство носимого пользователем Иомт будет размещено или удалено. Элементы не имеют значений, кроме имени, которое соединитель Azure IoT для FHIR соответствует и выдает. При преобразовании FHIR соединитель Azure IoT для FHIR сопоставляет его с концепцией кода, основанной на семантическом типе. фактические значения не заполняются.
+
+**Сопоставление FHIR**
+
+|Элемент|Обязательно|
+|:------|:-------|
+|TypeName|Да|
+
+> [!NOTE]
+> Это единственный обязательный элемент сопоставления FHIR, проверенный в данный момент.
+
 ## <a name="error-messages-and-fixes-for-azure-iot-connector-for-fhir-preview"></a>Сообщения об ошибках и исправления для соединителя Azure IoT для FHIR (Предварительная версия)
 
-|Сообщение|Отображаем|Условие|Исправление| 
+|Сообщение|Отображаем|Условие|Fix| 
 |-------|---------|---------|---|
 |Недопустимое имя сопоставления, имя сопоставления должно быть Device или FHIR.|API|Указанный тип сопоставления не является устройством или FHIR.|Используйте один из двух поддерживаемых типов сопоставления (например, Device или FHIR).|
 |Проверка завершена с ошибкой. Необходимые сведения отсутствуют или являются недопустимыми.|API и портал Azure|При попытке сохранить в сопоставлении преобразования отсутствует необходимая информация или элемент.|Добавьте недостающие сведения о сопоставлении преобразования или элемент и попытайтесь сохранить сопоставление преобразования еще раз.|
@@ -42,8 +70,8 @@ ms.locfileid: "88053462"
 
 ##  <a name="why-is-my-azure-iot-connector-for-fhir-preview-data-not-showing-up-in-azure-api-for-fhir"></a>Почему мой соединитель Azure IoT для FHIR (Предварительная версия) не отображается в API Azure для FHIR?
 
-|Потенциальные проблемы  |Исправления            |
-|------------------|-----------------|
+|Возможные проблемы|Исправления|
+|----------------|-----|
 |Данные все еще обрабатываются.|Данные егрессед в API Azure для FHIR в пакетах (каждые 15 минут).  Возможно, данные все еще обрабатываются и требуется дополнительное время, чтобы данные сохранялись в API Azure для FHIR.|
 |Преобразование JSON сопоставления устройств не настроено.|Настройка и сохранение согласования преобразования устройств JSON сопоставления.|
 |Формат JSON сопоставления преобразования FHIR не настроен.|Настройка и сохранение согласования FHIR сопоставления преобразования JSON.|
@@ -67,22 +95,22 @@ ms.locfileid: "88053462"
 
 1. Выберите **"соединитель IOT (Предварительная версия)"** в левой нижней части панели мониторинга ресурсов API Azure для FHIR в разделе **"надстройки"** .
 
-   :::image type="content" source="media/iot-troubleshoot/map-files-main-with-box.png" alt-text="Соединитель IoT" lightbox="media/iot-troubleshoot/map-files-main-with-box.png":::
+   :::image type="content" source="media/iot-troubleshoot/map-files-main-with-box.png" alt-text="Connector1 IoT" lightbox="media/iot-troubleshoot/map-files-main-with-box.png":::
 
 2. Выберите **соединитель** , из которого будет скопировано преобразование JSON сопоставления преобразования.
 
-   :::image type="content" source="media/iot-troubleshoot/map-files-select-connector-with-box.png" alt-text="Соединитель IoT" lightbox="media/iot-troubleshoot/map-files-select-connector-with-box.png":::
+   :::image type="content" source="media/iot-troubleshoot/map-files-select-connector-with-box.png" alt-text="Connector2 IoT" lightbox="media/iot-troubleshoot/map-files-select-connector-with-box.png":::
 
 > [!NOTE]
 > Этот процесс также может использоваться для копирования и сохранения содержимого JSON **"Configure FHIR Mapping"** .
 
 3. Выберите **"настроить сопоставление устройств"**.
 
-    :::image type="content" source="media/iot-troubleshoot/map-files-select-device-with-box.png" alt-text="Соединитель IoT" lightbox="media/iot-troubleshoot/map-files-select-device-with-box.png":::
+    :::image type="content" source="media/iot-troubleshoot/map-files-select-device-with-box.png" alt-text="Connector3 IoT" lightbox="media/iot-troubleshoot/map-files-select-device-with-box.png":::
 
 4. Выберите содержимое JSON и выполните операцию копирования (например, нажмите клавиши Ctrl + c). 
 
-   :::image type="content" source="media/iot-troubleshoot/map-files-select-device-json-with-box.png" alt-text="Соединитель IoT" lightbox="media/iot-troubleshoot/map-files-select-device-json-with-box.png":::
+   :::image type="content" source="media/iot-troubleshoot/map-files-select-device-json-with-box.png" alt-text="Connector4 IoT" lightbox="media/iot-troubleshoot/map-files-select-device-json-with-box.png":::
 
 5. Выполните операцию вставки (например, выберите CTRL + v) в новый файл в редакторе (например, Visual Studio Code, Notepad) и сохраните файл с расширением *. JSON.
 

@@ -9,12 +9,12 @@ author: j-martens
 ms.author: jmartens
 ms.date: 11/04/2019
 ms.custom: devx-track-python
-ms.openlocfilehash: 233eb06714dc8ac614cceef157f87d175c3f455b
-ms.sourcegitcommit: 4a7a4af09f881f38fcb4875d89881e4b808b369b
+ms.openlocfilehash: f8be403a9aa095a24ec4802aad0364b535ed7c5a
+ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/04/2020
-ms.locfileid: "89462468"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90902909"
 ---
 # <a name="what-is-azure-machine-learning"></a>Что такое служба "Машинное обучение Microsoft Azure"?
 
@@ -41,7 +41,7 @@ ms.locfileid: "89462468"
 ## <a name="machine-learning-tools-to-fit-each-task"></a>Средства машинного обучения для любой задачи 
 
 Служба "Машинное обучение Microsoft Azure" предоставляет разработчикам и специалистам по обработке и анализу данных все средства, необходимые для рабочих процессов машинного обучения, в том числе:
-+ [Конструктор Машинного обучения Azure](tutorial-designer-automobile-price-train-score.md) (предварительная версия). Перетащите модули, чтобы создать эксперименты, а затем разверните конвейеры.
++ [Конструктор Машинного обучения Azure.](tutorial-designer-automobile-price-train-score.md) Перетащите модули, чтобы создать эксперименты, а затем разверните конвейеры.
 
 + Записные книжки Jupyter. Используйте наши [примеры записных книжек](https://github.com/Azure/MachineLearningNotebooks) или создайте свои записные книжки, чтобы использовать для машинного обучения наши примеры для <a href="https://docs.microsoft.com/python/api/overview/azure/ml/intro?view=azure-ml-py" target="_blank">пакета SDK для Python</a>. 
 
@@ -71,7 +71,7 @@ ms.locfileid: "89462468"
 
 [Студия Машинного обучения Azure](https://studio.azureml.net) — это веб-портал в службе "Машинное обучение Azure" для обучения моделей, развертывания и управления активами с написанием минимального количества кода или без него. Для удобства работы студия интегрируется с пакетом SDK для Машинного обучения Azure. Дополнительные сведения см. в статье [Что такое студия Машинного обучения Azure](overview-what-is-machine-learning-studio.md).
 
-+ **Конструктор Машинного обучения Azure (предварительная версия).**
++ **Конструктор Машинного обучения Azure**
 
   Используйте [конструктор](concept-designer.md) для обучения и развертывания моделей машинного обучения без написания кода. Чтобы приступить к работе, ознакомьтесь с [учебником по конструктору](tutorial-designer-automobile-price-train-score.md). 
 
@@ -92,7 +92,7 @@ ms.locfileid: "89462468"
 ## <a name="mlops-deploy--lifecycle-management"></a>MLOps: развертывание и управление жизненным циклом
 Имея подходящую модель, вы легко сможете использовать ее в веб-службе, устройстве Интернета вещей или в Power BI. См. дополнительные сведения о [развертывании](how-to-deploy-and-where.md).
 
-Для управления развернутыми моделями можно использовать [пакет SDK Машинного обучения Azure для Python](https://docs.microsoft.com/python/api/overview/azure/ml/?view=azure-ml-py), [Студию машинного обучения Azure](https://ml.azure.com) или [CLI машинного обучения](reference-azure-machine-learning-cli.md).
+Для управления развернутыми моделями можно использовать [пакет SDK Машинного обучения Azure для Python](https://docs.microsoft.com/python/api/overview/azure/ml/?view=azure-ml-py&preserve-view=true), [Студию машинного обучения Azure](https://ml.azure.com) или [CLI машинного обучения](reference-azure-machine-learning-cli.md).
 
 Эти модели могут использоваться, а также они могут возвращать прогнозы [в реальном времени](how-to-consume-web-service.md) или [асинхронно](how-to-use-parallel-run-step.md) на больших объемах данных.
 
@@ -115,7 +115,7 @@ ms.locfileid: "89462468"
 + __Сетка событий Azure__. Дополнительную информацию см. в статье [Consume Azure Machine Learning events (Preview)](concept-event-grid-integration.md) (Использование событий Машинного обучения Azure (предварительная версия)).
 + __Azure Monitor__. Дополнительную информацию см. в статье [Monitoring Azure Machine Learning](monitor-azure-machine-learning.md) (Мониторинг Машинного обучения Azure).
 + Хранилища данных, такие как __учетные записи хранения Azure__, __Azure Data Lake Storage__, __База данных SQL Azure__, __База данных Azure для PostgreSQL__, а также __Открытые наборы данных Azure__. Дополнительные сведения см. в статье [Access data in Azure storage services](how-to-access-data.md) (Доступ к данным в службах хранилища Azure) и разделе [Create datasets with Azure Open Datasets](how-to-create-register-datasets.md) (Создание наборов данных с помощью Открытых наборов данных Azure).
-+ __Виртуальные сети Azure__ Дополнительные сведения см. в статье [Secure Azure ML experimentation and inference jobs within an Azure Virtual Network](how-to-enable-virtual-network.md) (Защита заданий экспериментирования и вывода Машинного обучения Azure в виртуальной сети Azure).
++ __Виртуальные сети Azure__ Дополнительные сведения см. в статье [Обзор изоляции и конфиденциальности в виртуальной сети](how-to-network-security-overview.md).
 + __Azure Pipelines__. Дополнительные сведения см. в статье [Train and deploy machine learning models](/azure/devops/pipelines/targets/azure-machine-learning) (Обучение и развертывание моделей машинного обучения).
 + __Журналы репозитория Git__. Дополнительные сведения см. в статье [Git integration for Azure Machine Learning](concept-train-model-git-integration.md) (Интеграция с Git для Машинного обучения Azure).
 + __MLflow__ Дополнительные сведения см. в статье [Track metrics and deploy models with MLflow and Azure Machine Learning (preview)](how-to-use-mlflow.md) (Отслеживание метрик и развертывание моделей с помощью MLflow и Машинного обучения Azure (предварительная версия)). 
@@ -123,16 +123,7 @@ ms.locfileid: "89462468"
 
 ### <a name="secure-communications"></a>Безопасное соединение
 
-Учетную запись хранения Azure, целевые объекты вычислений и другие ресурсы можно безопасно использовать в виртуальной сети для обучения моделей и выполнения их вывода. Дополнительные сведения см. в статье [Secure Azure ML experimentation and inference jobs within an Azure Virtual Network](how-to-enable-virtual-network.md) (Защита заданий экспериментирования и вывода Машинного обучения Azure в виртуальной сети Azure).
-
-## <a name="basic--enterprise-editions"></a><a name="sku"></a>Выпуски "Базовый" и "Корпоративный"
-
-Служба "Машинное обучение Microsoft Azure" предлагает два выпуска, предназначенных для ваших потребностей машинного обучения:
-+ **Базовый**. Отлично подходит для разработки решений с открытым кодом в масштабе облака с использованием подхода code-first.
-
-+ **Корпоративные решения**. Все возможности выпуска "Базовый", поддержка веб-интерфейса (студия), а также безопасное и комплексное управление жизненным циклом машинного обучения для всех уровней навыков.
-
-Дополнительные сведения об этих выпусках и доступных в них возможностях см. в статье [Выпуски службы "Машинное обучение Azure"](concept-editions.md).
+Учетную запись хранения Azure, целевые объекты вычислений и другие ресурсы можно безопасно использовать в виртуальной сети для обучения моделей и выполнения их вывода. Дополнительные сведения см. в статье [Обзор изоляции и конфиденциальности в виртуальной сети](how-to-network-security-overview.md).
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
