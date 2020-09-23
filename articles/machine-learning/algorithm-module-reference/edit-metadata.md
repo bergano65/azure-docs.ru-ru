@@ -9,16 +9,16 @@ ms.topic: reference
 author: likebupt
 ms.author: keli19
 ms.date: 06/10/2020
-ms.openlocfilehash: 5078e625f86affb8d16ffab538d11b839d2d7bda
-ms.sourcegitcommit: 845a55e6c391c79d2c1585ac1625ea7dc953ea89
+ms.openlocfilehash: e279a7c9f6810ece482b043284f0be0719a3dafe
+ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/05/2020
-ms.locfileid: "85965014"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90908037"
 ---
 # <a name="edit-metadata-module"></a>Изменить модуль метаданных
 
-В этой статье описывается модуль, который входит в Машинное обучение Azure Designer (Предварительная версия).
+В этой статье описывается модуль, входящий в Машинное обучение Azure Designer.
 
 Используйте модуль изменение метаданных для изменения метаданных, связанных со столбцами в наборе данных. Значение и тип данных набора данных изменятся после использования модуля редактирования метаданных.
 

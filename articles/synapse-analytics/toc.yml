@@ -26,6 +26,8 @@
           href: get-started-visualize-power-bi.md
         - name: 8. Мониторинг
           href: get-started-monitor.md
+        - name: 9. Знакомство с центром знаний
+          href: get-started-knowledge-center.md
     - name: Краткий справочник
       href: overview-cheat-sheet.md
     - name: ВОПРОСЫ И ОТВЕТЫ
@@ -462,27 +464,31 @@
               href: ../cosmos-db/configure-synapse-link.md?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json
             - name: "Подключение к Azure Synapse Link для Cosmos\_DB"
               href: ./synapse-link/how-to-connect-synapse-link-cosmos-db.md
-            - name: Отправка запросов к аналитическому хранилищу Azure Cosmos DB с помощью Apache Spark для Azure Synapse Analytics
+            - name: "Отправка запросов в аналитическое хранилище Azure Cosmos\_DB с помощью Apache Spark"
               href: ./synapse-link/how-to-query-analytical-store-spark.md
             - name: Копирование данных из Synapse Link в пул SQL с помощью Apache Spark
               href: ./synapse-link/how-to-copy-to-sql-pool.md
+            - name: "Отправка запросов в аналитическое хранилище Azure Cosmos\_DB с помощью SQL по запросу"
+              href: sql/query-cosmos-db-analytical-store.md?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json
         - name: Synapse SQL
           items:
-            - name: Запрашивание данных в хранилище
+            - name: Запрос внешних данных
               items:
                 - name: Обзор
                   href: sql/query-data-storage.md?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json
-                - name: Запрашивание CSV-файлов
+                - name: Запросы к CSV-файлам
                   href: sql/query-single-csv-file.md?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json
                 - name: Запрашивание файлов Parquet
                   href: sql/query-parquet-files.md?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json
-                - name: Запрашивание вложенных типов Parquet
-                  href: sql/query-parquet-nested-types.md?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json
                 - name: Запрашивание файлов JSON
                   href: sql/query-json-files.md?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json
+                - name: "Запрос БД Azure Cosmos\_DB"
+                  href: sql/query-cosmos-db-analytical-store.md?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json
+                - name: Запрашивание вложенных типов
+                  href: sql/query-parquet-nested-types.md?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json
                 - name: Запрашивание папок и нескольких файлов
                   href: sql/query-folders-multiple-csv-files.md?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json
-                - name: Использование метаданных файла
+                - name: Запрос секционированных файлов с помощью метаданных файлов
                   href: sql/query-specific-files.md?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json
                 - name: Создание и использование представлений
                   href: sql/create-use-views.md?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json

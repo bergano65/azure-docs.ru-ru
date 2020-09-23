@@ -8,18 +8,18 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: computer-vision
 ms.topic: overview
-ms.date: 08/31/2020
+ms.date: 09/11/2020
 ms.author: pafarley
 ms.custom:
 - seodec18
 - cog-serv-seo-aug-2020
 keywords: Компьютерное зрение, приложения Компьютерного зрения, служба "Компьютерное зрение"
-ms.openlocfilehash: f613080ec24fdfc4c739d4d0494aa2f3c36705cd
-ms.sourcegitcommit: 5ed504a9ddfbd69d4f2d256ec431e634eb38813e
+ms.openlocfilehash: fa00265f3c591578f9970b77770fbf7290d87510
+ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89323124"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90907072"
 ---
 # <a name="what-is-computer-vision"></a>Что собой представляет Компьютерное зрение
 
@@ -92,7 +92,11 @@ API компьютерного зрения можно использовать 
 
 ## <a name="use-containers"></a>Использование контейнеров
 
-[Контейнеры Компьютерного зрения](computer-vision-how-to-install-containers.md) можно использовать для распознавания печатного и рукописного текста на локальном компьютере, установив стандартные контейнер Docker в непосредственной близости к данным.
+Используйте контейнеры Docker Компьютерного зрения, чтобы использовать локальную службу. Сейчас доступны два контейнера:
+
+* [Контейнер чтения Компьютерного зрения](computer-vision-how-to-install-containers.md) позволяет распознавать печатный и рукописный текст в изображениях.
+
+* [Контейнер пространственного анализа Компьютерного зрения](spatial-analysis-container.md) позволяет анализировать потоковую передачу видео в реальном времени для распознавания пространственных связей между людьми и их движением в физических средах.
 
 ## <a name="image-requirements"></a>Требования к образам
 

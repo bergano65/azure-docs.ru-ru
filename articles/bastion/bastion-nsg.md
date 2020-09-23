@@ -7,12 +7,12 @@ ms.service: bastion
 ms.topic: conceptual
 ms.date: 07/07/2020
 ms.author: charwen
-ms.openlocfilehash: 563c12f91e9553f802d4cf26519da0550880dfcd
-ms.sourcegitcommit: 2bab7c1cd1792ec389a488c6190e4d90f8ca503b
+ms.openlocfilehash: a69aa8d8a6dc324d6fe28219316c36ac2ec816a5
+ms.sourcegitcommit: bdd5c76457b0f0504f4f679a316b959dcfabf1ef
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88270535"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90987699"
 ---
 # <a name="working-with-nsg-access-and-azure-bastion"></a>Работа с NSG Access и Azure бастиона
 
@@ -42,7 +42,7 @@ Azure бастиона развертывается специально для 
    * **Входящий трафик из плоскости управления бастиона Azure:** Для подключения плоскости управления включите порт 443 для входящего трафика из тега службы **гатевайманажер** . Это позволяет плоскости управления, то есть, диспетчером шлюзов взаимодействовать с Azure бастиона.
 
 
-   :::image type="content" source="./media/bastion-nsg/inbound.png" alt-text="Входящий трафик":::
+   :::image type="content" source="./media/bastion-nsg/inbound.png" alt-text="На снимке экрана показаны правила безопасности для входящего трафика для подключения к Azure бастиона.":::
 
 * **Исходящий трафик:**
 
@@ -50,7 +50,7 @@ Azure бастиона развертывается специально для 
    * **Исходящий трафик к другим общедоступным конечным точкам в Azure:** Azure бастиона должен иметь возможность подключения к различным общедоступным конечным точкам в Azure (например, для хранения журналов диагностики и журналов отслеживания использования). По этой причине Azure бастиона требуется исходящий трафик от 443 к тегу службы **AzureCloud** .
 
 
-   :::image type="content" source="./media/bastion-nsg/outbound.png" alt-text="Исходящее":::
+   :::image type="content" source="./media/bastion-nsg/outbound.png" alt-text="На снимке экрана показаны правила безопасности для исходящего трафика для подключения к Azure бастиона.":::
 
 ### <a name="target-vm-subnet"></a>Целевая подсеть виртуальной машины
 Это подсеть, содержащая целевую виртуальную машину, к которой необходимо подключиться по протоколу RDP или SSH.

@@ -6,12 +6,12 @@ ms.author: andrela
 ms.service: mysql
 ms.topic: how-to
 ms.date: 3/18/2020
-ms.openlocfilehash: a3f3daa56c782d84cf6ba07223f8cfea15daa8a4
-ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
+ms.openlocfilehash: deb99ea4f674c901974ca219a0e1bf831f5b4e51
+ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86101630"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90905846"
 ---
 # <a name="connect-an-existing-azure-app-service-to-azure-database-for-mysql-server"></a>Подключение существующей службы приложений Azure к базе данных Azure для сервера MySQL
 В этом разделе объясняется, как подключить имеющуюся службу приложений Azure к базе данных Azure для сервера MySQL.
@@ -26,21 +26,21 @@ ms.locfileid: "86101630"
 
 1. В колонке сервера MySQL в разделе "Параметры" щелкните **Безопасность подключения**, чтобы открыть колонку "Безопасность подключения" базы данных Azure для MySQL.
 
-   ![Портал Azure: щелчок пункта "Безопасность подключения"](./media/howto-connect-webapp/1-connection-security.png)
+   :::image type="content" source="./media/howto-connect-webapp/1-connection-security.png" alt-text="Портал Azure: щелчок пункта "Безопасность подключения"":::
 
 2. Выберите значение **ВКЛ.** для параметра **Разрешить доступ к службам Azure**, а затем нажмите кнопку **Сохранить**.
-   ![Портал Azure: параметр "Разрешить доступ к службам Azure"](./media/howto-connect-webapp/allow-azure.png)
+   :::image type="content" source="./media/howto-connect-webapp/allow-azure.png" alt-text="Портал Azure: параметр "Разрешить доступ к службам Azure"":::
 
 ## <a name="solution-2---create-a-firewall-rule-to-explicitly-allow-outbound-ips"></a>Решение 2. Создание правила брандмауэра, явно разрешающего исходящие IP-адреса
 Вы можете явно добавить все исходящие IP-адреса службы приложений Azure.
 
 1. В колонке "Свойства службы приложений" обратите внимание на поле **ИСХОДЯЩИЙ IP-АДРЕС**.
 
-   ![Портал Azure — просмотр исходящих IP-адресов](./media/howto-connect-webapp/2_1-outbound-ip-address.png)
+   :::image type="content" source="./media/howto-connect-webapp/2_1-outbound-ip-address.png" alt-text="Портал Azure — просмотр исходящих IP-адресов":::
 
 2. В колонке "Безопасность подключения" для MySQL добавьте исходящие IP-адреса по одному.
 
-   ![Портал Azure — добавление явных IP-адресов](./media/howto-connect-webapp/2_2-add-explicit-ips.png)
+   :::image type="content" source="./media/howto-connect-webapp/2_2-add-explicit-ips.png" alt-text="Портал Azure — добавление явных IP-адресов":::
 
 3. Не забывайте **сохранять** правила брандмауэра.
 

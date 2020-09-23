@@ -8,12 +8,12 @@ ms.service: security-center
 ms.topic: how-to
 ms.date: 09/08/2020
 ms.author: memildin
-ms.openlocfilehash: ceafbe1fd1682fc5e92ab3048ed09866fb9ebbdf
-ms.sourcegitcommit: d0541eccc35549db6381fa762cd17bc8e72b3423
+ms.openlocfilehash: 19e9a33350b6a1a67986dc35a372f737e45ab39a
+ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/09/2020
-ms.locfileid: "89570493"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90906397"
 ---
 # <a name="prevent-misconfigurations-with-enforcedeny-recommendations"></a>Предотвращение невыполненных настроек с помощью рекомендаций принудительного применения или запрета
 
@@ -24,16 +24,15 @@ ms.locfileid: "89570493"
 Применение безопасной конфигурации на основе определенной рекомендации предлагается в двух режимах:
 
 - С помощью **отклонения** от политики Azure можно предотвратить создание неработоспособных ресурсов
-
 - С помощью параметра **принудительно** можно воспользоваться преимуществами **деплойифнотексист** политики Azure и автоматически исправлять несоответствующие ресурсы после создания
- 
-Эта возможность доступна для выбранных рекомендаций по безопасности. ее можно найти в верхней части страницы сведений о ресурсах.
+
+Его можно найти в верхней части страницы сведений о ресурсах для выбранных рекомендаций по безопасности (см. раздел [рекомендации с параметрами Deny/принудительно](#recommendations-with-denyenforce-options)).
 
 ## <a name="prevent-resource-creation"></a>Запретить создание ресурсов
 
 1. Откройте рекомендацию, которой должны соответствовать новые ресурсы, и нажмите кнопку **Deny (запретить** ) в верхней части страницы.
 
-    :::image type="content" source="./media/security-center-remediate-recommendations/recommendation-deny-button.png" alt-text="Страница рекомендаций с выделенной кнопкой запретить":::
+    :::image type="content" source="./media/security-center-remediate-recommendations/recommendation-deny-button.png" alt-text="Страница рекомендаций с выделенной кнопкой "запретить"":::
 
     Откроется панель конфигурация с перечнем параметров области. 
 
@@ -49,7 +48,7 @@ ms.locfileid: "89570493"
 
 1. Откройте рекомендацию по развертыванию шаблона, если новые ресурсы не соответствуют требованиям, и нажмите кнопку **Применить** в верхней части страницы.
 
-    :::image type="content" source="./media/security-center-remediate-recommendations/recommendation-enforce-button.png" alt-text="Страница рекомендаций с выделенной кнопкой Применить":::
+    :::image type="content" source="./media/security-center-remediate-recommendations/recommendation-enforce-button.png" alt-text="Страница рекомендаций с выделенной кнопкой "Применить"":::
 
     Откроется панель конфигурация со всеми параметрами конфигурации политики. 
 

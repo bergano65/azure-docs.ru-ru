@@ -9,16 +9,16 @@ ms.topic: reference
 author: likebupt
 ms.author: keli19
 ms.date: 10/22/2019
-ms.openlocfilehash: 68bf47f370a57fe277d4ab9679af0b920a0d81ec
-ms.sourcegitcommit: f8d2ae6f91be1ab0bc91ee45c379811905185d07
+ms.openlocfilehash: 85a54ce7c8b3beea102fad7c3adb58f92c8574dd
+ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89658124"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90907946"
 ---
 # <a name="import-data-module"></a>Модуль импорта данных
 
-В этой статье описывается модуль в конструкторе Машинного обучения Azure (предварительная версия).
+В этой статье описывается модуль в конструкторе Машинное обучение Azure.
 
 Этот модуль используется для загрузки данных в конвейер машинного обучения из существующих облачных служб данных. 
 

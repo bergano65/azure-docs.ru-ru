@@ -1,6 +1,6 @@
 ---
-title: Руководство. Подключение, настройка и активация устройства Azure Stack Edge с GPU на портале Azure | Документация Майкрософт
-description: В руководстве по развертыванию Azure Stack Edge с GPU вам предлагается подключить, настроить и активировать физическое устройство.
+title: Учебник. Подключение, настройка и активация устройства Azure Stack Edge Pro с GPU на портале Azure | Документация Майкрософт
+description: Сведения о том, как подключиться к устройству Azure Stack Edge со встроенным GPU с помощью локального пользовательского веб-интерфейса.
 services: databox
 author: alkohli
 ms.service: databox
@@ -8,17 +8,17 @@ ms.subservice: edge
 ms.topic: tutorial
 ms.date: 08/29/2020
 ms.author: alkohli
-Customer intent: As an IT admin, I need to understand how to connect and activate Azure Stack Edge so I can use it to transfer data to Azure.
-ms.openlocfilehash: 3b500a7d93d19bcc0cd9c23d64ad079f0abfd353
-ms.sourcegitcommit: 9c262672c388440810464bb7f8bcc9a5c48fa326
+Customer intent: As an IT admin, I need to understand how to connect and activate Azure Stack Edge Pro so I can use it to transfer data to Azure.
+ms.openlocfilehash: f069f711ccf5672041ea6f3b15a52fa2b3ba2022
+ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/03/2020
-ms.locfileid: "89421362"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90900028"
 ---
-# <a name="tutorial-connect-to-azure-stack-edge-with-gpu"></a>Руководство по подключению к Azure Stack Edge с GPU
+# <a name="tutorial-connect-to-azure-stack-edge-pro-with-gpu"></a>Руководство по Подключение к Azure Stack Edge Pro с GPU
 
-В этом руководстве описывается, как активировать устройство Azure Stack Edge со встроенным GPU, используя локальный пользовательский веб-интерфейс.
+В этом учебнике описывается, как подключиться к устройству Azure Stack Edge Pro со встроенным GPU с помощью локального пользовательского веб-интерфейса.
 
 Процесс подключения может занять около 5 минут.
 
@@ -32,14 +32,14 @@ ms.locfileid: "89421362"
 
 ## <a name="prerequisites"></a>Предварительные условия
 
-Перед установкой и настройкой устройства Azure Stack Edge с GPU проверьте следующие условия:
+Перед установкой и настройкой устройства Azure Stack Edge Pro с GPU проверьте следующие условия.
 
-* Вы установили физическое устройство, как описано в статье [Руководство по установке Azure Stack Edge](azure-stack-edge-gpu-deploy-install.md).
+* Вы установили физическое устройство, как описано в статье [Установка Azure Stack Edge Pro](azure-stack-edge-gpu-deploy-install.md).
 
 
 ## <a name="connect-to-the-local-web-ui-setup"></a>Подключение к настройке локального пользовательского веб-интерфейса
 
-1. Настройте адаптер Ethernet на компьютере, который используется для подключения к устройству Azure Stack Edge, указав статический IP-адрес 192.168.100.5 и подсеть 255.255.255.0.
+1. Настройте адаптер Ethernet на компьютере, который используется для подключения к устройству Azure Stack Edge Pro, указав статический IP-адрес 192.168.100.5 и подсеть 255.255.255.0.
 
 2. Подключите компьютер к порту 1 на вашем устройстве. При подключении компьютера к устройству напрямую (без коммутатора) используйте перекрестный кабель или USB-адаптер Ethernet. С помощью иллюстрации ниже определите порт 1 устройства.
 
@@ -60,7 +60,7 @@ ms.locfileid: "89421362"
 
 5. Войдите в пользовательский веб-интерфейс устройства. Пароль по умолчанию — *Password1*. 
    
-    ![Страница входа в устройство Azure Stack Edge](./media/azure-stack-edge-deploy-connect-setup-activate/image3.png)
+    ![Страница входа в устройство Azure Stack Edge Pro](./media/azure-stack-edge-deploy-connect-setup-activate/image3.png)
 
 6. При появлении подсказки измените пароль администратора устройства.  
     Новый пароль должен состоять из 8–16 знаков. Пароль должен содержать три знака из следующих категорий: прописные буквы, строчные буквы, цифры и специальные знаки.
@@ -77,7 +77,7 @@ ms.locfileid: "89421362"
 > * подключение к физическому устройству;
 
 
-Сведения о настройке параметров сети на устройстве Azure Stack Edge см. в следующей статье:
+Сведения о настройке параметров сети на устройстве Azure Stack Edge Pro см. в следующей статье:
 
 > [!div class="nextstepaction"]
 > [Настройка сети](./azure-stack-edge-gpu-deploy-configure-network-compute-web-proxy.md)

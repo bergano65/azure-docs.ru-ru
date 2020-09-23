@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 04/15/2020
 ms.author: travisw
-ms.openlocfilehash: b9cbb873066131264732d6f46320461bae8c3188
-ms.sourcegitcommit: 55b2bbbd47809b98c50709256885998af8b7d0c5
+ms.openlocfilehash: a9fe083818c5850ad05556b18911c19fe19e0e72
+ms.sourcegitcommit: bdd5c76457b0f0504f4f679a316b959dcfabf1ef
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84981767"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90987388"
 ---
 # <a name="privacy-guidelines-for-voice-assistants-on-windows"></a>Рекомендации по конфиденциальности для речевых помощников в Windows
 
@@ -31,7 +31,7 @@ ms.locfileid: "84981767"
 Пользователи Windows могут видеть и контролировать доступность приложений помощника в **`Settings > Privacy > Voice activation`** .
 
  > [!div class="mx-imgBorder"]
- > [![конфиденциальность — список приложений](media/voice-assistants/windows_voice_assistant/privacy-app-listing.png "Запись настройки конфиденциальности для активации голоса Windows для приложения помощника")](media/voice-assistants/windows_voice_assistant/privacy-app-listing.png#lightbox)
+ > [![На снимке экрана показаны параметры для управления доступность Кортаны. ](media/voice-assistants/windows_voice_assistant/privacy-app-listing.png "Запись настройки конфиденциальности для активации голоса Windows для приложения помощника")](media/voice-assistants/windows_voice_assistant/privacy-app-listing.png#lightbox)
 
 Чтобы получить право на включение в этот список, обратитесь в корпорацию Майкрософт по адресу, winvoiceassistants@microsoft.com чтобы приступить к работе. По умолчанию пользователям необходимо явно включить активацию речи для нового помощника в **`Settings > Privacy > Voice Activation`** , который приложение может связать с `ms-settings:privacy-voiceactivation` . Разрешенное приложение появится в списке после его запуска и использования `Windows.ApplicationModel.ConversationalAgent` интерфейсов API. Параметры активации голоса будут изменены после получения приложением согласия микрофона от пользователя.
 

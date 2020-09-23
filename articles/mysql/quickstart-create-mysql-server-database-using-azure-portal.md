@@ -7,12 +7,12 @@ ms.service: mysql
 ms.custom: mvc
 ms.topic: quickstart
 ms.date: 7/15/2020
-ms.openlocfilehash: 840e7769e8a242314b10562684c942a2468ea5ad
-ms.sourcegitcommit: e0785ea4f2926f944ff4d65a96cee05b6dcdb792
+ms.openlocfilehash: cdddd9a90911499421351adf0f41ef90f0e2f9a5
+ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/21/2020
-ms.locfileid: "88705152"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90906563"
 ---
 # <a name="quickstart-create-an-azure-database-for-mysql-server-in-the-azure-portal"></a>Краткое руководство. Создание базы данных Azure для сервера MySQL с помощью портала Azure
 
@@ -34,12 +34,12 @@ ms.locfileid: "88705152"
 
   
 >[!div class="mx-imgBorder"]
-> ![Параметр базы данных Azure для MySQL](./media/quickstart-create-mysql-server-database-using-azure-portal/2_navigate-to-mysql.png)
+> :::image type="content" source="./media/quickstart-create-mysql-server-database-using-azure-portal/2_navigate-to-mysql.png" alt-text="Параметр базы данных Azure для MySQL":::
 
 3. Заполните форму для создания сервера, указав следующую информацию:
     
 >[!div class="mx-imgBorder"]
-> ![Форма для создания сервера](./media/quickstart-create-mysql-server-database-using-azure-portal/4-create-form.png)
+> :::image type="content" source="./media/quickstart-create-mysql-server-database-using-azure-portal/4-create-form.png" alt-text="Форма для создания сервера":::
 
 **Параметр** | **Рекомендуемое значение** | **Описание поля** 
 ---|---|---
@@ -67,7 +67,7 @@ ms.locfileid: "88705152"
 По умолчанию созданный сервер защищен с помощью брандмауэра и не является общедоступным. Чтобы предоставить разрешение на доступ с IP-адреса, перейдите к ресурсу сервера на портале Azure и выберите **Безопасность подключения** в левой части меню для этого ресурса сервера. Если вы не знаете, как найти ресурс, см. раздел об [открытии ресурса](https://docs.microsoft.com/azure/azure-resource-manager/management/manage-resources-portal#open-resources).
 
 >[!div class="mx-imgBorder"]
-> ![Безопасность подключения — правила брандмауэра](./media/quickstart-create-mysql-server-database-using-azure-portal/add-current-ip-firewall.png)
+> :::image type="content" source="./media/quickstart-create-mysql-server-database-using-azure-portal/add-current-ip-firewall.png" alt-text="Безопасность подключения — правила брандмауэра":::
    
 Теперь выберите **Добавить текущий IP-адрес клиента** и щелкните **Сохранить**. Вы можете добавить дополнительные IP-адреса или указать диапазон адресов, чтобы подключаться к серверу с любого из этих IP-адресов. Дополнительные сведения см. в статье об [управлении правилами брандмауэра для сервера Базы данных Azure для MySQL](./concepts-firewall-rules.md).
 
@@ -83,7 +83,7 @@ ms.locfileid: "88705152"
     >Если вы запускаете Cloud Shell первый раз, отобразится запрос на создание группы ресурсов и учетной записи хранения. Это одноразовое действие, которое автоматически применяется для всех сеансов. 
 
    >[!div class="mx-imgBorder"]
-   > ![Полное представление портала Cloud Shell](./media/quickstart-create-mysql-server-database-using-azure-portal/use-in-cloud-shell.png)
+   > :::image type="content" source="./media/quickstart-create-mysql-server-database-using-azure-portal/use-in-cloud-shell.png" alt-text="Полное представление портала Cloud Shell":::
 2. Выполните эту команду в терминале Azure Cloud Shell. Замените предложенные значения реальными именами сервера и администратора. Для имени администратора требуется указать "@\<servername>", как показано ниже для службы "База данных Azure для MySQL".  
 
   ```azurecli-interactive
@@ -136,7 +136,7 @@ ms.locfileid: "88705152"
 
 Чтобы удалить сервер, можно нажать кнопку **Удалить** на странице **Обзор** для этого сервера, как показано ниже.
 > [!div class="mx-imgBorder"]
-> ![Удаление ресурсов](media/quickstart-create-mysql-server-database-using-azure-portal/delete-server.png)
+> :::image type="content" source="media/quickstart-create-mysql-server-database-using-azure-portal/delete-server.png" alt-text="Удаление ресурсов":::
 
 ## <a name="next-steps"></a>Дальнейшие действия
 > [!div class="nextstepaction"]

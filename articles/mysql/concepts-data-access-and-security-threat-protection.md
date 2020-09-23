@@ -6,12 +6,12 @@ ms.author: andrela
 ms.service: mysql
 ms.topic: conceptual
 ms.date: 3/18/2020
-ms.openlocfilehash: 834083b0f472de6ac1fd157ee966ebb021286cff
-ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
+ms.openlocfilehash: ccee3b52b0f204561ca790ce364308f81a1db6f6
+ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87290191"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90906590"
 ---
 # <a name="azure-database-for-mysql-advanced-threat-protection"></a>Расширенная защита от угроз для Базы данных Azure для MySQL
 
@@ -30,7 +30,7 @@ ms.locfileid: "87290191"
 
 Отображая оповещения системы безопасности о подозрительных действиях, Расширенная защита от угроз Azure для Базы данных Azure для MySQL предоставляет дополнительный уровень защиты, позволяя клиентам определять потенциальные угрозы по мере возникновения и реагировать на них. Пользователи получают оповещения о подозрительных действиях с базами данных, потенциальных уязвимостях и аномальных закономерностях в доступе к базам данных и шаблонам запросов. Служба "Расширенная защита от угроз" для Базы данных Azure для MySQL интегрирует оповещения с [центром безопасности Azure](https://azure.microsoft.com/services/security-center/), который предоставляет сведения о подозрительных операциях и дает рекомендации о том, как определить причину угрозы и устранить ее. Служба "Расширенная защита от угроз" для Базы данных Azure для MySQL упрощает устранение потенциальных угроз безопасности базы данных, не требуя от пользователя экспертных навыков в сфере безопасности либо умения работать в сложных системах отслеживания угроз. 
 
-![Общее представление о службе "Расширенная защита от угроз"](media/concepts-data-access-and-security-threat-protection/advanced-threat-protection-concept.png)
+:::image type="content" source="media/concepts-data-access-and-security-threat-protection/advanced-threat-protection-concept.png" alt-text="Общее представление о службе "Расширенная защита от угроз"":::
 
 ## <a name="advanced-threat-protection-alerts"></a>Оповещения Расширенной защиты от угроз 
 Служба "Расширенная защита от угроз" для Базы данных Azure для MySQL позволяет выявить подозрительную активность, указывающую на необычные и потенциально опасные попытки получить доступ к базам данных или воспользоваться ими и она может активировать следующие оповещения.

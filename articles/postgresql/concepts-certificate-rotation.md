@@ -6,12 +6,12 @@ ms.author: manishku
 ms.service: postgresql
 ms.topic: conceptual
 ms.date: 09/02/2020
-ms.openlocfilehash: 5b46dc0197022aa72b6ca4c206d1da4369234167
-ms.sourcegitcommit: 7374b41bb1469f2e3ef119ffaf735f03f5fad484
+ms.openlocfilehash: 576ff4eb3a189b27a4c7743966ced0676ec67a9d
+ms.sourcegitcommit: bdd5c76457b0f0504f4f679a316b959dcfabf1ef
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/16/2020
-ms.locfileid: "90707685"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90978903"
 ---
 # <a name="understanding-the-changes-in-the-root-ca-change-for-azure-database-for-postgresql-single-server"></a>Основные сведения об изменениях в корневом ЦС для одного сервера базы данных Azure для PostgreSQL
 
@@ -126,5 +126,8 @@ ms.locfileid: "90707685"
 ### <a name="12-do-we-have-server-side-query-to-verify-if-ssl-is-being-used"></a>12. у нас есть запрос на стороне сервера, чтобы проверить, используется ли протокол SSL?
 Чтобы проверить, используется ли SSL-соединение для подключения к серверу, обратитесь к [проверке SSL](concepts-ssl-connection-security.md#applications-that-require-certificate-verification-for-tls-connectivity).
 
-### <a name="13-what-if-i-have-further-questions"></a>13. что делать, если у меня возникнут дополнительные вопросы?
+### <a name="13-is-there-an-action-needed-if-i-already-have-the-digicertglobalrootg2-in-my-certificate-file"></a>13. требуется ли действие, если в файле сертификата уже есть DigiCertGlobalRootG2?
+Нет. Если файл сертификата уже содержит **DigiCertGlobalRootG2**, никаких действий не требуется.
+
+### <a name="14-what-if-i-have-further-questions"></a>14. что делать, если у меня возникнут дополнительные вопросы?
 Если у вас есть вопросы, получите ответы от экспертов сообщества в [Microsoft Q&а](mailto:AzureDatabaseforPostgreSQL@service.microsoft.com). Если у вас есть план поддержки и вам нужна техническая помощь,  [свяжитесь с нами](mailto:AzureDatabaseforPostgreSQL@service.microsoft.com)

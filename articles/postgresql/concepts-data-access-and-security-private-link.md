@@ -6,12 +6,12 @@ ms.author: manishku
 ms.service: postgresql
 ms.topic: conceptual
 ms.date: 03/10/2020
-ms.openlocfilehash: 773815cd64af2a398001bac91e14cca0b204ca8e
-ms.sourcegitcommit: 2ff0d073607bc746ffc638a84bb026d1705e543e
+ms.openlocfilehash: 84c68125ab7e8256b8ca949a0f4b49c5ccd5162f
+ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87832078"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90884645"
 ---
 # <a name="private-link-for-azure-database-for-postgresql-single-server"></a>Частная ссылка для базы данных Azure для PostgreSQL — один сервер
 
@@ -68,25 +68,25 @@ Data ex-фильтрация в базе данных Azure для PostgreSQL Si
     * Отображает список всех подключений к частным конечным точкам (ПЕКС)
     * Соответствующая частная конечная точка (PE) создана
 
-![Выбор закрытого портала конечной точки](media/concepts-data-access-and-security-private-link/select-private-link-portal.png)
+:::image type="content" source="media/concepts-data-access-and-security-private-link/select-private-link-portal.png" alt-text="Выбор закрытого портала конечной точки":::
 
 * Выберите отдельное PEC из списка, щелкнув его.
 
-![Выберите закрытую конечную точку, ожидающие утверждения](media/concepts-data-access-and-security-private-link/select-private-link.png)
+:::image type="content" source="media/concepts-data-access-and-security-private-link/select-private-link.png" alt-text="Выберите закрытую конечную точку, ожидающие утверждения":::
 
 * Администратор сервера PostgreSQL может одобрить или отклонить PEC и при необходимости добавить короткий текст ответа.
 
-![Выберите сообщение частной конечной точки](media/concepts-data-access-and-security-private-link/select-private-link-message.png)
+:::image type="content" source="media/concepts-data-access-and-security-private-link/select-private-link-message.png" alt-text="Выберите сообщение частной конечной точки":::
 
 * После утверждения или отклонения список будет отражать соответствующее состояние вместе с текстом ответа.
 
-![выберите конечное состояние частной конечной точки](media/concepts-data-access-and-security-private-link/show-private-link-approved-connection.png)
+:::image type="content" source="media/concepts-data-access-and-security-private-link/show-private-link-approved-connection.png" alt-text="выберите конечное состояние частной конечной точки":::
 
 ## <a name="use-cases-of-private-link-for-azure-database-for-postgresql"></a>Варианты использования частной ссылки для базы данных Azure для PostgreSQL
 
 Клиенты могут подключаться к частной конечной точке из той же виртуальной сети, одноранговой виртуальной сети в том же регионе или через подключение между виртуальными сетями в разных регионах. Кроме того, клиенты могут подключаться из локальной среды с помощью ExpressRoute, частного пиринга или VPN-туннелирования. Ниже приведена упрощенная схема, на которой показаны распространенные варианты использования.
 
-![Выберите Общие сведения о конечной точке частного назначения](media/concepts-data-access-and-security-private-link/show-private-link-overview.png)
+:::image type="content" source="media/concepts-data-access-and-security-private-link/show-private-link-overview.png" alt-text="Выберите Общие сведения о конечной точке частного назначения":::
 
 ### <a name="connecting-from-an-azure-vm-in-peered-virtual-network-vnet"></a>Подключение из виртуальной машины Azure в одноранговой виртуальной сети (VNet)
 Настройте [пиринг виртуальных сетей](https://docs.microsoft.com/azure/virtual-network/tutorial-connect-virtual-networks-powershell) , чтобы установить подключение к базе данных Azure для PostgreSQL-Single Server из виртуальной машины Azure в одноранговой виртуальной сети.

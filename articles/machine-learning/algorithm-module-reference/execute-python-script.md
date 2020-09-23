@@ -10,16 +10,16 @@ ms.custom: devx-track-python
 author: likebupt
 ms.author: keli19
 ms.date: 07/27/2020
-ms.openlocfilehash: 330c7e01b33cfdf48687c492d09fb7aab8a5e779
-ms.sourcegitcommit: 3be3537ead3388a6810410dfbfe19fc210f89fec
+ms.openlocfilehash: 3a39b12afb715cf091ff1af1dcc7cc702769bed3
+ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89648741"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90908031"
 ---
 # <a name="execute-python-script-module"></a>Выполнить модуль скрипта Python
 
-В этой статье описывается модуль выполнение скрипта Python в Машинное обучение Azure Designer (Предварительная версия).
+В этой статье описывается модуль выполнение скрипта Python в конструкторе Машинное обучение Azure.
 
 Используйте этот модуль для выполнения кода Python. Дополнительные сведения об архитектуре и принципах проектирования Python см. [в статье выполнение кода Python в конструкторе машинное обучение Azure](../how-to-designer-python.md).
 

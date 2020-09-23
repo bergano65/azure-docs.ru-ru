@@ -6,12 +6,12 @@ ms.author: manishku
 ms.service: mysql
 ms.topic: how-to
 ms.date: 3/18/2020
-ms.openlocfilehash: 843bb32a4b5b5e29c4ab7c1dc9ff254a8424ae86
-ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
+ms.openlocfilehash: 61b08514f8d2989736ff2505f0446937757ddb99
+ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86118687"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90884688"
 ---
 # <a name="create-and-manage-azure-database-for-mysql-vnet-service-endpoints-and-vnet-rules-by-using-the-azure-portal"></a>Создание правил виртуальных сетей и конечных точек службы виртуальной сети базы данных Azure для MySQL и управление ими с помощью портала Azure
 Правила и конечные точки служб виртуальной сети расширяют частное адресное пространство виртуальной сети на сервер базы данных Azure для MySQL. Общие сведения о конечных точках службы виртуальной сети базы данных Azure для MySQL, включая ограничения, см. в [этой статье](concepts-data-access-and-security-vnet.md). Конечные точки службы виртуальной сети доступны во всех поддерживаемых регионах Базы данных Azure для MySQL.
@@ -32,11 +32,11 @@ ms.locfileid: "86118687"
 
 3. Затем щелкните **+ Добавляется существующая виртуальная сеть**. Если у вас нет виртуальной сети, щелкните **+ Создать виртуальную сеть** для ее создания. Дополнительные сведения см. в статье [Краткое руководство. Создание виртуальной сети с помощью портала Azure](../virtual-network/quick-create-portal.md).
 
-   ![Портал Azure: выбор пункта "Безопасность подключения"](./media/howto-manage-vnet-using-portal/1-connection-security.png)
+   :::image type="content" source="./media/howto-manage-vnet-using-portal/1-connection-security.png" alt-text="портал Azure безопасность подключения":::
 
 4. Введите имя правила виртуальной сети, выберите подписку, виртуальную сеть и имя подсети, а затем нажмите кнопку **Включить**. Это автоматически включает конечные точки службы виртуальной сети в подсети с использованием тега службы **Microsoft.SQL**.
 
-   ![Портал Azure. Настройка виртуальной сети](./media/howto-manage-vnet-using-portal/2-configure-vnet.png)
+   :::image type="content" source="./media/howto-manage-vnet-using-portal/2-configure-vnet.png" alt-text="Портал Azure. Настройка виртуальной сети":::
 
    Учетная запись должна предоставлять необходимые разрешения для создания виртуальной сети и конечной точки службы.
 
@@ -54,7 +54,7 @@ ms.locfileid: "86118687"
 
 5. Затем нажмите кнопку **ОК**, и вы увидите, что конечные точки службы виртуальной сети включены вместе с правилом виртуальной сети.
 
-   ![Включенные конечные точки службы виртуальной сети и созданное правило виртуальной сети](./media/howto-manage-vnet-using-portal/3-vnet-service-endpoints-enabled-vnet-rule-created.png)
+   :::image type="content" source="./media/howto-manage-vnet-using-portal/3-vnet-service-endpoints-enabled-vnet-rule-created.png" alt-text="Включенные конечные точки службы виртуальной сети и созданное правило виртуальной сети":::
 
 ## <a name="next-steps"></a>Дальнейшие действия
 - Аналогичным образом можно создать сценарий для [включения конечных точек службы виртуальной сети и создания правила виртуальной сети для базы данных Azure для MySQL с помощью Azure CLI](howto-manage-vnet-using-cli.md).

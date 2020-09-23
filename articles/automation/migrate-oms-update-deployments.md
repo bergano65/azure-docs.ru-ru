@@ -5,12 +5,12 @@ services: automation
 ms.subservice: update-management
 ms.date: 07/16/2018
 ms.topic: conceptual
-ms.openlocfilehash: 9c8238e6e0b52a625c76f79fa0dd5a91dd640fb8
-ms.sourcegitcommit: cee72954f4467096b01ba287d30074751bcb7ff4
+ms.openlocfilehash: dabe914ffd4e84e8ded5c0e3b519036479fe33ec
+ms.sourcegitcommit: bdd5c76457b0f0504f4f679a316b959dcfabf1ef
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/30/2020
-ms.locfileid: "87447843"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90987607"
 ---
 # <a name="migrate-azure-monitor-logs-update-deployments-to-azure-portal"></a>Перенос развертываний обновлений журналов Azure Monitor на портал Azure
 
@@ -33,7 +33,7 @@ ms.locfileid: "87447843"
 
 3. В учетной записи службы автоматизации щелкните **Управление обновлениями**.
 
-    ![Управление обновлениями](media/migrate-oms-update-deployments/azure-automation.png)
+    :::image type="content" source="media/migrate-oms-update-deployments/azure-automation.png" alt-text="Снимок экрана со страницей управления обновлениями.":::
 
 4. На портале Azure выберите **Учетные записи службы автоматизации** в разделе **Все службы**. 
 
@@ -43,7 +43,7 @@ ms.locfileid: "87447843"
 
 У всех развертываний обновлений, созданных на портале OMS есть [сохраненный поиск](../azure-monitor/platform/computer-groups.md), известный как группа компьютеров, с тем же именем что и существующее развертывание обновлений. Сохраненный поиск содержит список компьютеров, запланированных в развертывании обновлений.
 
-![Управление обновлениями](media/migrate-oms-update-deployments/oms-deployment.png)
+:::image type="content" source="media/migrate-oms-update-deployments/oms-deployment.png" alt-text="Снимок экрана страницы "развертывания обновлений" с выделенными полями "имя" и "серверы".":::
 
 Для использования существующего сохраненного поиска, выполните перечисленные ниже действия.
 
