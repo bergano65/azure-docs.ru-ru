@@ -4,26 +4,72 @@ description: CI/CD для Azure Веснного облака
 author: bmitchell287
 ms.service: spring-cloud
 ms.topic: conceptual
-ms.date: 10/04/2019
+ms.date: 09/08/2020
 ms.author: brendm
 ms.custom: devx-track-java, devx-track-azurecli
-ms.openlocfilehash: d31be45f5cf608b7dfd727741de68544574d7f8a
-ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
+zone_pivot_groups: programming-languages-spring-cloud
+ms.openlocfilehash: 40e674594c80a076fc9775fd4315aee938a43593
+ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/31/2020
-ms.locfileid: "87496463"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90888695"
 ---
 # <a name="cicd-for-azure-spring-cloud"></a>CI/CD для Azure Веснного облака
 
-Средства непрерывной интеграции и непрерывной поставки позволяют разработчикам быстро развертывать обновления для существующих приложений с минимальными усилиями и рисками. Azure DevOps помогает организовывать и контролировать эти ключевые задания. Сейчас Azure Веснного облака не предлагает конкретный подключаемый модуль Azure DevOps.  Однако вы можете интегрировать приложения с пружинным облаком с DevOps, используя [задачу Azure CLI](https://docs.microsoft.com/azure/devops/pipelines/tasks/deploy/azure-cli?view=azure-devops). В этой статье показано, как использовать задачу Azure CLI с Azure "Весна Cloud" для интеграции с Azure DevOps.
+Средства непрерывной интеграции и непрерывной поставки позволяют быстро развертывать обновления для существующих приложений с минимальными усилиями и рисками. Azure DevOps помогает организовывать и контролировать эти ключевые задания. Сейчас Azure Веснного облака не предлагает конкретный подключаемый модуль Azure DevOps.  Однако вы можете интегрировать приложения с пружинным облаком с DevOps, используя [задачу Azure CLI](https://docs.microsoft.com/azure/devops/pipelines/tasks/deploy/azure-cli?view=azure-devops&preserve-view=true).
+
+В этой статье показано, как использовать задачу Azure CLI с Azure "Весна Cloud" для интеграции с Azure DevOps.
 
 ## <a name="create-an-azure-resource-manager-service-connection"></a>Создание подключения к службе Azure Resource Manager
 
-Ознакомьтесь с [этой статьей](https://docs.microsoft.com/azure/devops/pipelines/library/connect-to-azure?view=azure-devops) , чтобы узнать, как создать подключение службы Azure Resource Manager к проекту Azure DevOps. Не забудьте выбрать ту же подписку, которую вы используете для своего экземпляра облачной службы Azure весны.
+Ознакомьтесь с [этой статьей](https://docs.microsoft.com/azure/devops/pipelines/library/connect-to-azure?view=azure-devops&preserve-view=true) , чтобы узнать, как создать подключение службы Azure Resource Manager к проекту Azure DevOps. Не забудьте выбрать ту же подписку, которую вы используете для своего экземпляра облачной службы Azure весны.
 
 ## <a name="azure-cli-task-templates"></a>Azure CLI шаблонов задач
+::: zone pivot="programming-language-csharp"
+### <a name="deploy-artifacts"></a>Развертывание артефактов
 
+Вы можете создавать и развертывать проекты с помощью серии `tasks` . Этот фрагмент кода определяет переменные, задачу .NET Core для сборки приложения и задачу Azure CLI для развертывания *ZIP* -файла.
+
+```yaml
+variables:
+  workingDirectory: './steeltoe-sample'
+  planetMainEntry: 'Microsoft.Azure.SpringCloud.Sample.PlanetWeatherProvider.dll'
+  solarMainEntry: 'Microsoft.Azure.SpringCloud.Sample.SolarSystemWeather.dll'
+  planetAppName: 'planet-weather-provider'
+  solarAppName: 'solar-system-weather'
+  serviceName: '<your service name>'
+  resourceGroupName: '<your resource group name>'
+
+steps:
+# Restore, build, publish and package the zipped planet app
+- task: DotNetCoreCLI@2
+  inputs:
+    command: 'publish'
+    publishWebProjects: false
+    arguments: '--configuration Release'
+    zipAfterPublish: false
+    modifyOutputPath: false
+    workingDirectory: $(workingDirectory)
+
+# Configure Azure CLI and install spring-cloud extension
+- task: AzureCLI@1
+  inputs:
+    azureSubscription: '<your subscription>'
+    scriptLocation: 'inlineScript'
+    inlineScript: |
+      az extension add --name spring-cloud --y
+      az configure --defaults group=${{ variables.resourceGroupName }}
+      az configure --defaults spring-cloud=${{ variables.serviceName }}
+      az spring-cloud app deploy -n ${{ variables.planetAppName }} --runtime-version NetCore_31 --main-entry ${{ variables.planetMainEntry }} --artifact-path ./${{ variables.planetAppName }}/publish-deploy-planet.zip
+      az spring-cloud app deploy -n ${{ variables.solarAppName }} --runtime-version NetCore_31 --main-entry ${{ variables.solarMainEntry }} --artifact-path ./${{ variables.solarAppName }}/publish-deploy-solar.zip
+      az spring-cloud app update -n ${{ variables.solarAppName }} --is-public true
+      az spring-cloud app show -n ${{ variables.solarAppName }} -o table
+    workingDirectory: '${{ variables.workingDirectory }}/src'
+```
+
+::: zone-end
+::: zone pivot="programming-language-java"
 ### <a name="deploy-artifacts"></a>Развертывание артефактов
 
 Вы можете создавать и развертывать проекты с помощью серии `tasks` . Сначала этот фрагмент кода определяет задачу Maven для создания приложения, а затем — вторую задачу, которая развертывает JAR-файл с помощью расширения Azure "Весна Cloud" Azure CLI.
@@ -59,3 +105,8 @@ steps:
       # or if it is a multi-module project
       az spring-cloud app deploy --resource-group <your-resource-group> --service <your-spring-cloud-service> --name <app-name> --target-module relative/path/to/module
 ```
+::: zone-end
+
+## <a name="next-steps"></a>Дальнейшие действия
+
+* [Краткое руководство. Развертывание первого приложения Azure Spring Cloud](spring-cloud-quickstart.md)

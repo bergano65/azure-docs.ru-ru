@@ -15,12 +15,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 09/08/2020
 ms.author: yelevin
-ms.openlocfilehash: 4618bb4ba65c48808bc738b51c90a6fd04f0eca3
-ms.sourcegitcommit: f8d2ae6f91be1ab0bc91ee45c379811905185d07
+ms.openlocfilehash: 63acffd16fa4374d4f8541a9d3327b29a3641f71
+ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89659637"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90895806"
 ---
 # <a name="connect-data-sources"></a>Подключение источников данных
 
@@ -38,6 +38,7 @@ ms.locfileid: "89659637"
 
    ![Дальнейшие действия для соединителей](./media/collect-data/data-insights.png)
  
+
 ## <a name="data-connection-methods"></a>Методы подключения к данным
 
 Azure Sentinel поддерживает следующие методы подключения к данным:
@@ -49,7 +50,7 @@ Azure Sentinel поддерживает следующие методы подк
     - [Защита идентификации Azure AD](connect-azure-ad-Identity-protection.md)
     - [Защитник Майкрософт для идентификации](connect-azure-atp.md) (ранее — Azure Advanced Threat protection)
     - [Azure Information Protection](connect-azure-information-protection.md)
-    - [Защитник Azure](connect-azure-security-center.md) (прежнее название — центр безопасности Azure)
+    - [Центр безопасности Azure](connect-azure-security-center.md) — оповещения от решений защитника Azure
     - [Cloud App Security](connect-cloud-app-security.md)
     - [Сервер доменных имен](connect-dns.md)
     - [Office 365](connect-office-365.md)
@@ -135,7 +136,7 @@ Azure Sentinel поддерживает следующие методы подк
 | WindowsFirewall | [Подключение брандмауэра Windows](connect-windows-firewall.md) | &#10003; | |
 | SecurityAlert службы "Защита идентификации Azure AD"  | [Подключения Защиты идентификации Azure AD](connect-azure-ad-identity-protection.md)  | &#10003; | |
 | AATP SecurityAlert  | [Подключение защитника Майкрософт для идентификации](connect-azure-atp.md) (ранее — Azure ATP) | &#10003; | |
-| SecurityAlert сертификатов службы приложений  | [Подключение к службе "защитник Azure"](connect-azure-security-center.md) (прежнее название — центр безопасности Azure)  | &#10003; | |
+| SecurityAlert сертификатов службы приложений  | [Подключение оповещений защитника Azure](connect-azure-security-center.md) из центра безопасности Azure  | &#10003; | |
 | MCAS SecurityAlert  | [Подключение Microsoft Cloud App Security](connect-cloud-app-security.md)  | &#10003; | |
 | SecurityAlert | | | |
 | Sysmon (событие) | [Подключение Sysmon](https://azure.microsoft.com/blog/detecting-in-memory-attacks-with-sysmon-and-azure-security-center)<br> [Подключение событий Windows](../azure-monitor/platform/data-sources-windows-events.md) <br> [Получение средства синтаксического анализа Sysmon](https://github.com/Azure/Azure-Sentinel/blob/master/Parsers/Sysmon/Sysmon-v10.42-Parser.txt)| &#10007; | По умолчанию на виртуальных машинах не установлена коллекция Sysmon. Дополнительные сведения об установке агента Sysmon см. в разделе [Sysmon](https://docs.microsoft.com/sysinternals/downloads/sysmon). |

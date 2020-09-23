@@ -8,12 +8,12 @@ ms.custom: mvc
 ms.devlang: cpp
 ms.topic: quickstart
 ms.date: 5/26/2020
-ms.openlocfilehash: 6aa550a9c3f58fc7101e632bcd56800b27efc84e
-ms.sourcegitcommit: faeabfc2fffc33be7de6e1e93271ae214099517f
+ms.openlocfilehash: 8119cbbb6619b923068723a6c855c04a8de48876
+ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/13/2020
-ms.locfileid: "88185984"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90904036"
 ---
 # <a name="quickstart-use-connectorc-to-connect-and-query-data-in-azure-database-for-mysql"></a>Краткое руководство. Подключение к Базе данных Azure для MySQL и запрос данных с помощью Connector/C++
 
@@ -57,7 +57,7 @@ ms.locfileid: "88185984"
 2. В меню слева на портале Azure щелкните **Все ресурсы** и выполните поиск по имени созданного сервера (например, **mydemoserver**).
 3. Щелкните имя сервера.
 4. Запишите **имя сервера** и **имя для входа администратора сервера** с панели сервера **Обзор**. Если вы забыли свой пароль, можно также сбросить пароль с помощью этой панели.
- ![Имя сервера базы данных Azure для MySQL](./media/connect-cpp/1_server-overview-name-login.png)
+ :::image type="content" source="./media/connect-cpp/1_server-overview-name-login.png" alt-text="Имя сервера базы данных Azure для MySQL":::
 
 ## <a name="connect-create-table-and-insert-data"></a>Подключение, создание таблицы и вставка данных
 Используйте приведенный ниже код для подключения и загрузки данных с помощью инструкций SQL **CREATE TABLE** и **INSERT INTO**. В коде используется класс sql::Driver с методом connect(), чтобы установить подключение к MySQL. Затем код использует методы createStatement() и execute() для выполнения команд базы данных. 

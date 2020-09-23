@@ -4,15 +4,16 @@ description: Руководство по устранению неполадок
 author: bmitchell287
 ms.service: spring-cloud
 ms.topic: troubleshooting
-ms.date: 11/04/2019
+ms.date: 09/08/2020
 ms.author: brendm
 ms.custom: devx-track-java
-ms.openlocfilehash: b34bd51e9d84629682565592c733b23a320597aa
-ms.sourcegitcommit: 5d7f8c57eaae91f7d9cf1f4da059006521ed4f9f
+zone_pivot_groups: programming-languages-spring-cloud
+ms.openlocfilehash: d3094a8cca317e53dd3b8bc8e9b32b956c89a376
+ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89669753"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90904206"
 ---
 # <a name="troubleshoot-common-azure-spring-cloud-issues"></a>Устранение распространенных проблем с пружинным облаком Azure
 
@@ -20,6 +21,7 @@ ms.locfileid: "89669753"
 
 ## <a name="availability-performance-and-application-issues"></a>Проблемы с доступностью, производительностью и приложениями
 
+::: zone pivot="programming-language-java"
 ### <a name="my-application-cant-start-for-example-the-endpoint-cant-be-connected-or-it-returns-a-502-after-a-few-retries"></a>Не удается запустить приложение (например, не удается подключиться к конечной точке или возвращается 502 после нескольких попыток)
 
 Экспортируйте журналы в Azure Log Analytics. Таблица для журналов приложений с пружинами называется *аппплатформлогсфорспринг*. Дополнительные сведения см. в разделе [Анализ журналов и метрик с помощью параметров диагностики](diagnostic-services.md).
@@ -67,6 +69,7 @@ ms.locfileid: "89669753"
 
 
 Дополнительные сведения об Azure Log Analytics см. [в статье Приступая к работе с log Analytics в Azure Monitor](https://docs.microsoft.com/azure/azure-monitor/log-query/get-started-portal).
+::: zone-end
 
 ### <a name="my-application-experiences-high-cpu-usage-or-high-memory-usage"></a>В приложении наблюдается высокая загрузка ЦП или интенсивное потребление памяти
 
@@ -90,6 +93,7 @@ ms.locfileid: "89669753"
 
 Дополнительные сведения об Azure Log Analytics см. [в статье Приступая к работе с log Analytics в Azure Monitor](https://docs.microsoft.com/azure/azure-monitor/log-query/get-started-portal). Запросите журналы с помощью [языка запросов Kusto](https://docs.microsoft.com/azure/kusto/query/).
 
+::: zone pivot="programming-language-java"
 ### <a name="checklist-for-deploying-your-spring-application-to-azure-spring-cloud"></a>Контрольный список для развертывания пружинного приложения в Azure Веснного облака
 
 Прежде чем приступить к подключению приложения, убедитесь, что оно соответствует следующим критериям.
@@ -101,6 +105,7 @@ ms.locfileid: "89669753"
 * Параметры ВИРТУАЛЬНОЙ машины Java имеют ожидаемые значения.
 * Рекомендуется отключить или удалить внедренный _сервер конфигурации_ и службы _реестра пружинной службы_ из пакета приложения.
 * Если к любым ресурсам Azure нужно применить _привязку службы_, убедитесь, что целевые ресурсы работают.
+::: zone-end
 
 ## <a name="configuration-and-management"></a>Настройка и управление
 
@@ -119,6 +124,17 @@ ms.locfileid: "89669753"
 
 Имя экземпляра облачной службы Azure весны будет использоваться для запроса имени поддомена в `azureapps.io` , поэтому установка завершится ошибкой, если имя конфликтует с существующим. Дополнительные сведения можно найти в журналах действий.
 
+::: zone pivot="programming-language-java"
+### <a name="i-cant-deploy-a-net-core-app"></a>Не удается развернуть приложение .NET Core
+
+Нельзя передать *ZIP* -файл для приложения .NET Core стилтое с помощью портал Azure или шаблона диспетчер ресурсов.
+
+При развертывании пакета приложения с помощью [Azure CLI](https://docs.microsoft.com/cli/azure/get-started-with-azure-cli)Azure CLI периодически опрашивает ход развертывания и в итоге отображает результат развертывания.
+
+Убедитесь, что приложение упаковано в правильном формате *ZIP* -файла. Если пакет не упакован должным образом, процесс зависает или появится сообщение об ошибке.
+::: zone-end
+
+::: zone pivot="programming-language-java"
 ### <a name="i-cant-deploy-a-jar-package"></a>Не удается развернуть JAR-пакет
 
 Невозможно отправить пакет/Source (JAR) файла архива Java с помощью портал Azure или шаблона диспетчер ресурсов.
@@ -164,7 +180,7 @@ ms.locfileid: "89669753"
 > [!WARNING]
 > Эта процедура предоставляет переменные среды с помощью конечной точки теста.  Не продолжайте, если тестовая конечная точка является общедоступной или если приложению назначено доменное имя.
 
-1. Перейдите в расположение `https://<your application test endpoint>/actuator/health`.  
+1. Перейдите по адресу `https://<your application test endpoint>/actuator/health`.  
     - Ответ, аналогичный `{"status":"UP"}`, указывает, что конечная точка включена.
     - Если ответ отрицательный, включите следующую зависимость в файл *POM.xml* :
 
@@ -216,3 +232,8 @@ ms.locfileid: "89669753"
 ```
 
 Если журналы приложения можно архивировать в учетную запись хранения, но не отправляются в Azure Log Analytics, проверьте, правильно ли [настроена Рабочая область](https://docs.microsoft.com/azure/azure-monitor/learn/quick-create-workspace). Если вы используете бесплатный уровень Log Analytics Azure, обратите внимание, что [уровень Free не обеспечивает соглашения об уровне обслуживания (SLA)](https://azure.microsoft.com/support/legal/sla/log-analytics/v1_3/).
+::: zone-end
+
+## <a name="next-steps"></a>Дальнейшие действия
+
+* [Самостоятельное устранение неполадок и решение проблем в Azure Веснного облака](spring-cloud-howto-self-diagnose-solve.md)

@@ -6,12 +6,12 @@ ms.author: manishku
 ms.service: mysql
 ms.topic: how-to
 ms.date: 03/10/2020
-ms.openlocfilehash: f8156b01244012d78214f2ba8c49ed76dbceed6d
-ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
+ms.openlocfilehash: eb5c4e4c4dfb73b2f7c9dc9f2629296790790885
+ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86118789"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90896140"
 ---
 # <a name="deny-public-network-access-in-azure-database-for-mysql-using-azure-portal"></a>Запрет доступа к общедоступной сети в базе данных Azure для MySQL с помощью портал Azure
 
@@ -33,13 +33,13 @@ ms.locfileid: "86118789"
 
 1. В списке **запретить доступ к общедоступной сети**выберите **Да** , чтобы включить запрет общего доступа для сервера MySQL.
 
-    ![Служба "база данных Azure для MySQL" запрещает доступ к сети](./media/howto-deny-public-network-access/setting-deny-public-network-access.PNG)
+    :::image type="content" source="./media/howto-deny-public-network-access/setting-deny-public-network-access.PNG" alt-text="Служба "база данных Azure для MySQL" запрещает доступ к сети":::
 
-1. Щелкните **Сохранить** , чтобы сохранить изменения.
+1. **Сохраните** изменения.
 
 1. Уведомление подтверждает успешное включение параметра безопасности подключения.
 
-    ![Служба "база данных Azure для MySQL" запрещает доступ к сети](./media/howto-deny-public-network-access/setting-deny-public-network-access-success.png)
+    :::image type="content" source="./media/howto-deny-public-network-access/setting-deny-public-network-access-success.png" alt-text="Служба "база данных Azure для MySQL" запрещает доступ к сети":::
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

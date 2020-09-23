@@ -6,20 +6,20 @@ services: virtual-wan
 author: cherylmc
 ms.service: virtual-wan
 ms.topic: how-to
-ms.date: 06/22/2020
+ms.date: 09/22/2020
 ms.author: cherylmc
-ms.openlocfilehash: 7adeb9682336b19cc87d8c73a7f9ad8bda5e7828
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: e814487cb4dab9c8c19daab2ea3bb81391d4a98f
+ms.sourcegitcommit: bdd5c76457b0f0504f4f679a316b959dcfabf1ef
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85564069"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90983683"
 ---
 # <a name="configure-an-always-on-vpn-device-tunnel-for-virtual-wan"></a>Настройка туннеля VPN-устройства Always On для виртуальной глобальной сети
 
 [!INCLUDE [intro](../../includes/vpn-gateway-vwan-always-on-intro.md)]
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Необходимо создать конфигурацию типа "точка — сеть" и изменить назначение виртуального концентратора. Инструкции см. в следующих разделах:
 
@@ -34,7 +34,7 @@ ms.locfileid: "85564069"
 
 Чтобы удалить профиль, выполните следующую команду:
 
-![Очистка](./media/howto-always-on-device-tunnel/cleanup.png)
+![На снимке экрана показано окно PowerShell, в котором выполняется команда Remove-VpnConnection-Name Мачинецерттест.](./media/howto-always-on-device-tunnel/cleanup.png)
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

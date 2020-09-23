@@ -10,15 +10,15 @@ author: Blackmist
 ms.date: 07/28/2020
 ms.topic: conceptual
 ms.custom: how-to
-ms.openlocfilehash: cd9b891212010d7e61c4a4eb64d8bf0660bbd69a
-ms.sourcegitcommit: f8d2ae6f91be1ab0bc91ee45c379811905185d07
+ms.openlocfilehash: cd9af35e5b616f3f4d72405078782e1e88414c98
+ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89661633"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90897339"
 ---
 # <a name="create-a-workspace-for-azure-machine-learning-with-azure-cli"></a>Создание рабочей области для Машинного обучения Azure с помощью Azure CLI
-[!INCLUDE [applies-to-skus](../../includes/aml-applies-to-basic-enterprise-sku.md)]
+
 
 В этой статье вы узнаете, как создавать рабочие области Машинного обучения Azure с помощью Azure CLI. Azure CLI предоставляет команды для управления ресурсами Azure. Расширение машинного обучения для интерфейса командной строки предоставляет команды для работы с ресурсами Машинного обучения Azure.
 
@@ -109,9 +109,6 @@ az group create --name <resource-group-name> --location <location>
 
 Чтобы создать новую рабочую область, в которой __службы создаются автоматически__, используйте следующую команду:
 
-> [!TIP]
-> Команды в этом разделе создают рабочую область выпуска "Базовый". Чтобы создать корпоративную рабочую область, используйте параметр `--sku enterprise` с командой `az ml workspace create`. Дополнительные сведения о выпусках Машинного обучения Azure см. в соответствующем разделе статьи [Что такое служба "Машинное обучение Microsoft Azure"?](overview-what-is-azure-ml.md#sku).
-
 ```azurecli-interactive
 az ml workspace create -w <workspace-name> -g <resource-group-name>
 ```
@@ -161,7 +158,7 @@ az ml workspace create -w <workspace-name> -g <resource-group-name>
 
 По умолчанию метрики и метаданные для рабочей области хранятся в экземпляре Azure Cosmos DB, который обслуживает Корпорация Майкрософт. Эти данные шифруются с помощью ключей, управляемых корпорацией Майкрософт. 
 
-При создании __корпоративной__ версии машинное обучение Azure можно использовать собственный ключ. При этом создается экземпляр Azure Cosmos DB, в котором хранятся метрики и метаданные в подписке Azure. Используйте `--cmk-keyvault` параметр, чтобы указать Azure Key Vault, содержащую ключ, и `--resource-cmk-uri` указать URL-адрес ключа в хранилище.
+Вместо использования ключа, управляемого корпорацией Майкрософт, можно использовать собственный ключ. При этом создается экземпляр Azure Cosmos DB, в котором хранятся метрики и метаданные в подписке Azure. Используйте `--cmk-keyvault` параметр, чтобы указать Azure Key Vault, содержащую ключ, и `--resource-cmk-uri` указать URL-адрес ключа в хранилище.
 
 > [!IMPORTANT]
 > Перед использованием `--cmk-keyvault` параметров и `--resource-cmk-uri` необходимо сначала выполнить следующие действия.

@@ -51,6 +51,10 @@
         - name: Использование OVMS через расширение HTTP
           displayName: 'intel, OpenVINO'
           href: use-intel-openvino-tutorial.md
+        - name: Использование Пользовательского визуального распознавания
+          href: custom-vision-tutorial.md
+        - name: Использование Пространственного анализа
+          href: spatial-analysis-tutorial.md
 - name: Примеры
   items:
     - name: Примеры прямых методов C#
@@ -89,6 +93,8 @@
       href: manage-recording-policy-how-to.md
     - name: Вызов прямых методов с помощью портала
       href: use-azure-portal-to-invoke-direct-methods.md
+    - name: Развертывание в Azure Stack Edge
+      href: deploy-azure-stack-edge-how-to.md
     - name: Диагностика
       href: troubleshoot-how-to.md
 - name: Справочник

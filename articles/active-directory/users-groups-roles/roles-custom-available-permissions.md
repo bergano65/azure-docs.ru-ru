@@ -1,6 +1,6 @@
 ---
-title: Доступные настраиваемые разрешения роли администратора — Azure AD | Документация Майкрософт
-description: Разрешения настраиваемой роли администратора для делегирования управления удостоверениями.
+title: Пользовательские разрешения роли для регистрации приложения в Azure AD | Документация Майкрософт
+description: Делегирование разрешений настраиваемой роли администратора для управления регистрацией приложений.
 services: active-directory
 author: curtand
 manager: daveba
@@ -8,27 +8,27 @@ ms.service: active-directory
 ms.workload: identity
 ms.subservice: users-groups-roles
 ms.topic: how-to
-ms.date: 11/08/2019
+ms.date: 09/22/2020
 ms.author: curtand
 ms.reviewer: vincesm
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 0c11723efe3fac236fce49c1f92fa338d4e58b59
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 624489033097c0da4d85488b7ae376c5e0f3a56b
+ms.sourcegitcommit: bdd5c76457b0f0504f4f679a316b959dcfabf1ef
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84732112"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90967682"
 ---
-# <a name="application-registration-subtypes-and-permissions-in-azure-active-directory"></a>Подтипы регистрации приложений и разрешения в Azure Active Directory
+# <a name="application-registration-permissions-for-custom-roles-in-azure-active-directory"></a>Разрешения на регистрацию приложений для пользовательских ролей в Azure Active Directory
 
 Эта статья содержит доступные в настоящее время разрешения регистрации приложений для пользовательских определений ролей в Azure Active Directory (Azure AD).
 
-## <a name="permissions-for-managing-single-directory-applications"></a>Разрешения для управления приложениями с одним каталогом
+## <a name="permissions-for-managing-single-tenant-applications"></a>Разрешения для управления приложениями с одним клиентом
 
-При выборе разрешений для настраиваемой роли вы можете предоставить доступ для управления только приложениями с одним каталогом. Приложения с одним каталогом доступны только пользователям в Организации Azure AD, в которой зарегистрировано приложение. Приложения с одним каталогом определяются как имеющие **Поддерживаемые типы учетных** записей "учетные записи только в этом каталоге организации". В API Graph для приложений с одним каталогом свойство Сигнинаудиенце имеет значение "Азуреадмйорг".
+При выборе разрешений для пользовательской роли вы можете предоставить доступ для управления только приложениями с одним клиентом. приложения с одним клиентом доступны только пользователям в Организации Azure AD, в которой зарегистрировано приложение. приложения с одним клиентом определяются как имеющие **Поддерживаемые типы учетных** записей "учетные записи только в этом каталоге организации". В API Graph для приложений с одним клиентом свойство Сигнинаудиенце имеет значение "Азуреадмйорг".
 
-Чтобы предоставить доступ для управления только приложениями с одним каталогом, используйте приведенные ниже разрешения с подтипом **Applications. myOrganization**. Например, Microsoft. Directory/Applications. myOrganization/Basic/Update.
+Чтобы предоставить доступ для управления только приложениями с одним клиентом, используйте приведенные ниже разрешения с подтипом **Applications. myOrganization**. Например, Microsoft. Directory/Applications. myOrganization/Basic/Update.
 
 В [обзоре пользовательских ролей](roles-custom-overview.md) приведены пояснения о том, что означают общие условия, разрешения и набор свойств. Следующие сведения относятся к регистрации приложений.
 
@@ -95,7 +95,7 @@ ms.locfileid: "84732112"
 
 #### <a name="microsoftdirectoryapplicationsallpropertiesupdate"></a>Microsoft. Directory/Applications/Аллпропертиес/Update
 
-Возможность обновления всех свойств в приложениях с одним каталогом и несколькими каталогами.
+Возможность обновления всех свойств в приложениях с одним клиентом и несколькими клиентами.
 
 #### <a name="microsoftdirectoryapplicationsmyorganizationallpropertiesupdate"></a>Microsoft. Directory/Applications. myOrganization/Аллпропертиес/Update
 
@@ -103,7 +103,7 @@ ms.locfileid: "84732112"
 
 #### <a name="microsoftdirectoryapplicationsaudienceupdate"></a>microsoft.directory/applications/audience/update
 
-Возможность обновления свойства поддерживаемого типа учетной записи (Сигнинаудиенце) в приложениях с одним каталогом и несколькими каталогами.
+Возможность обновления свойства поддерживаемого типа учетной записи (Сигнинаудиенце) в приложениях с одним клиентом и несколькими клиентами.
 
 ![Это разрешение предоставляет доступ к свойству типа учетной записи, поддерживаемой регистрацией приложения на странице проверки подлинности](./media/roles-custom-available-permissions/supported-account-types.png)
 
@@ -139,7 +139,7 @@ ms.locfileid: "84732112"
 
 #### <a name="microsoftdirectoryapplicationsmyorganizationcredentialsupdate"></a>Microsoft. Directory/Applications. myOrganization/учетные данные/обновление
 
-Предоставляет те же разрешения, что и Microsoft. Directory/Applications/Credentials/Update, но только для приложений с одним каталогом.
+Предоставляет те же разрешения, что и Microsoft. Directory/Applications/Credentials/Update, но только для приложений с одним клиентом.
 
 #### <a name="microsoftdirectoryapplicationsownersupdate"></a>microsoft.directory/applications/owners/update
 
