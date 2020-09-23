@@ -10,12 +10,12 @@ ms.topic: article
 ms.workload: identity
 ms.date: 08/05/2020
 ms.author: chmutali
-ms.openlocfilehash: 62716d5061d7c5e6ed8c64a0ce00a780f35c10be
-ms.sourcegitcommit: 43558caf1f3917f0c535ae0bf7ce7fe4723391f9
+ms.openlocfilehash: e305795f4f45a0ea858eb8d74880aedca8ec538d
+ms.sourcegitcommit: bdd5c76457b0f0504f4f679a316b959dcfabf1ef
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/11/2020
-ms.locfileid: "90018005"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90979848"
 ---
 # <a name="tutorial-configure-sap-successfactors-to-active-directory-user-provisioning"></a>Руководство. Настройка SAP SuccessFactors для Active Directory подготовки пользователей 
 Цель этого учебника — продемонстрировать шаги, которые необходимо выполнить, чтобы подготовить пользователей из SuccessFactors Employee Central к Active Directory (AD) и Azure AD с дополнительным адресом электронной почты для SuccessFactors. 
@@ -234,7 +234,7 @@ SuccessFactors решение Active Directory для подготовки по�
    
 1. Проверьте установку агента и убедитесь, что он работает, открыв оснастку "Службы" и обнаружив службу под именем "Microsoft Azure AD Connect Provisioning Agent"
   
-   ![Снимок экрана: агент подготовки Microsoft Azure AD Connect, выполняющийся в службах](./media/workday-inbound-tutorial/services.png)
+   ![Снимок экрана: агент подготовки Microsoft Azure AD Connect, выполняющийся в службах.](./media/workday-inbound-tutorial/services.png)
 
 ### <a name="part-3-in-the-provisioning-app-configure-connectivity-to-successfactors-and-active-directory"></a>Часть 3. Настройка подключения к SuccessFactors и Active Directory в приложении подготовки
 На этом шаге мы устанавливаем подключение к SuccessFactors и Active Directory в портал Azure. 

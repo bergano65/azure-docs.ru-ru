@@ -1,0 +1,110 @@
+### YamlMime:Landing
+title: Документация по Гибкому серверу (предварительная версия)
+summary: Предварительная версия Базы данных Azure для PostgreSQL (Гибкий сервер) — это предложение полностью управляемой базы данных PostgreSQL как услуги, которая может обслуживать критически важные рабочие нагрузки, обеспечивая прогнозируемую производительность и динамическое масштабирование. Разрабатывайте приложения на основе Базы данных Azure для PostgreSQL, используя привычные средства с открытым исходным кодом и платформу. Узнайте, как работать с Гибкими серверам, изучив наши краткие руководства, рекомендации и примеры.
+metadata:
+  title: База данных Azure для PostgreSQL — Гибкий сервер (предварительная версия)
+  description: Предварительная версия База данных Azure для PostgreSQL (Гибкий сервер) — это служба реляционных баз данных в облаке Майкрософт, созданная для разработчиков на базе MySQL Community Edition.
+  author: rachel-msft
+  ms.author: raagyema
+  ms.date: 09/22/2020
+  ms.service: postgresql
+  ms.topic: landing-page
+  ms.openlocfilehash: 7c214662a37083708b0a38148382e16b553145c4
+  ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
+  ms.translationtype: HT
+  ms.contentlocale: ru-RU
+  ms.lasthandoff: 09/22/2020
+  ms.locfileid: "90929077"
+landingContent:
+- title: Сведения о Гибком сервере (предварительная версия)
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Что такое Гибкий сервер?
+      url: overview.md
+  - linkListType: quickstart
+    links:
+    - text: Создание гибкого сервера
+      url: quickstart-create-server-portal.md
+  - linkListType: tutorial
+    links:
+    - text: Создание приложения Django с использованием гибкого сервера
+      url: tutorial-django-app-service-postgres.md
+  - linkListType: whats-new
+    links:
+    - text: Читайте наш блог
+      url: https://techcommunity.microsoft.com/t5/Azure-Database-for-PostgreSQL/bg-p/ADforPostgreSQL
+- title: Управление
+  linkLists:
+  - linkListType: concept
+    links:
+    - text: Варианты вычислительных ресурсов и хранилищ
+      url: concepts-compute-storage.md
+    - text: Сети
+      url: concepts-networking.md
+    - text: Версии Postgres
+      url: concepts-supported-versions.md
+    - text: Модули
+      url: concepts-extensions.md
+    - text: Azure Monitor
+      url: concepts-monitoring.md
+    - text: Логическая репликация
+      url: concepts-logical.md
+  - linkListType: how-to-guide
+    links:
+    - text: Управление сервером
+      url: how-to-manage-server-portal.md
+    - text: Запуск и остановка сервера
+      url: how-to-stop-start-server-portal.md
+    - text: Увеличение масштаба
+      url: how-to-scale-compute-storage-portal.md
+    - text: Перезапуск сервера
+      url: how-to-restart-server-portal.md
+    - text: Настройка журналов и получение доступа к ним
+      url: howto-configure-and-access-logs.md
+    - text: Планирование обслуживания
+      url: how-to-maintenance-portal.md
+- title: Непрерывность бизнес-процессов
+  linkLists:
+  - linkListType: concept
+    links:
+    - text: Общие сведения о непрерывности бизнес-процессов
+      url: concepts-business-continuity.md
+    - text: Высокий уровень доступности
+      url: concepts-high-availability.md
+    - text: Резервное копирование и восстановление
+      url: concepts-backup-restore.md
+  - linkListType: how-to-guide
+    links:
+    - text: Управление высоким уровнем доступности
+      url: how-to-manage-high-availability-portal.md
+    - text: Восстановление сервера
+      url: how-to-restore-server-portal.md
+- title: Подключение
+  linkLists:
+  - linkListType: quickstart
+    links:
+    - text: Подключение с использованием Python
+      url: connect-python.md
+  - linkListType: tutorial
+    links:
+    - text: Подключение веб-приложения в виртуальной сети
+      url: tutorial-webapp-server-vnet.md
+- title: Миграция
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: Перенос базы данных с помощью pg_dump и pg_restore
+      url: ../howto-migrate-using-dump-and-restore.md
+    - text: Миграция по сети
+      url: ../howto-migrate-online.md
+- title: Справочник
+  linkLists:
+  - linkListType: reference
+    links:
+    - text: Справочник разработчика Azure CLI
+      url: /cli/azure/postgres
+    - text: Справочник разработчика REST API
+      url: /rest/api/postgresql/
+    - text: Шаблоны Azure Resource Manager
+      url: /azure/templates/microsoft.dbforpostgresql/allversions

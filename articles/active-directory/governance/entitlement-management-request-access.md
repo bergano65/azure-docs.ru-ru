@@ -16,12 +16,12 @@ ms.date: 06/18/2020
 ms.author: ajburnle
 ms.reviewer: mamkumar
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 527255653bf2779b36e0e463cd32a0b334c00f96
-ms.sourcegitcommit: fbb66a827e67440b9d05049decfb434257e56d2d
+ms.openlocfilehash: 726507fa6ea0651b23d46424bda669a2d8ad41e0
+ms.sourcegitcommit: bdd5c76457b0f0504f4f679a316b959dcfabf1ef
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87798500"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90979914"
 ---
 # <a name="request-access-to-an-access-package-in-azure-ad-entitlement-management"></a>Запрос доступа к пакету Access в управлении назначением Azure AD
 
@@ -81,6 +81,12 @@ ms.locfileid: "87798500"
 
 ![Мой портал доступа — запрос доступа — несколько политик](./media/entitlement-management-request-access/my-access-multiple-policies.png)
 
+### <a name="fill-out-requestor-information"></a>Заполнить сведения о запрашивающей стороны
+
+Вы можете запросить доступ к пакету Access, который требует Делового обоснования и дополнительных сведений о запрашивающем, прежде чем предоставлять доступ к пакету Access. Заполните все сведения запрашивающей стороны, необходимые для доступа к пакету Access.
+
+![Мой портал доступа — запрос на получение сведений о запросе на заполнение](./media/entitlement-management-request-access/my-access-requestor-information.png)
+
 ## <a name="resubmit-a-request"></a>Повторная отправка запроса
 
 При запросе доступа к пакету Access запрос может быть отклонен, или срок действия запроса может истечь, если утверждающие не отвечают вовремя. Если вам требуется доступ, повторите попытку и отправьте запрос повторно. В следующей процедуре объясняется, как повторно отправить запрос на доступ.
@@ -121,7 +127,7 @@ ms.locfileid: "87798500"
 
 1. Щелкните **журнал запросов** , чтобы подтвердить отмену запроса.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Утверждение или отклонение запросов на доступ](entitlement-management-request-approve.md)
 - [Обработка запросов и уведомления по электронной почте](entitlement-management-process.md)

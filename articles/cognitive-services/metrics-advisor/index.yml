@@ -1,0 +1,68 @@
+### YamlMime:Landing
+title: Документация по Помощнику по метрикам
+summary: Помощник по метрикам — это платформа для мониторинга временных рядов, предоставляющая набор API для приема данных, обнаружения аномалий и диагностики без необходимости в знаниях в области машинного обучения.
+metadata:
+  title: Документация по Помощнику по метрикам. Руководства и справочные материалы по API — Azure Cognitive Services | Документация Майкрософт
+  titleSuffix: Azure Cognitive Services
+  services: cognitive-services
+  description: Помощник по метрикам — это платформа для мониторинга временных рядов, предоставляющая набор API для приема данных, обнаружения аномалий и диагностики без необходимости в знаниях в области машинного обучения.
+  author: aahill
+  manager: nitinme
+  ms.service: cognitive-services
+  ms.subservice: metrics-advisor
+  ms.topic: landing-page
+  ms.date: 08/13/2020
+  ms.author: aahi
+  ms.openlocfilehash: f30f45b8a683d9403973517ee4558be9cd4be664
+  ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
+  ms.translationtype: HT
+  ms.contentlocale: ru-RU
+  ms.lasthandoff: 09/22/2020
+  ms.locfileid: "90928990"
+landingContent:
+- title: Сведения о Помощнике по метрикам
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Что такое Помощник по метрикам?
+      url: overview.md
+  - linkListType: quickstart
+    links:
+    - text: Изучение демонстрационного сайта
+      url: quickstarts/explore-demo.md
+    - text: Мониторинг первой метрики в Интернете
+      url: quickstarts/web-portal.md
+    - text: Используйте интерфейсы REST API для настройки собственного решения
+      url: quickstarts/rest-api.md
+- title: Статьи с инструкциями
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: Подключение данных
+      url: how-tos/onboard-your-data.md
+    - text: Подключение разных источников веб-каналов данных
+      url: data-feeds-from-different-sources.md
+    - text: Управление веб-каналами данных
+      url: how-tos/manage-data-feeds.md
+    - text: Настройка метрик и детальная настройка конфигурации обнаружения
+      url: how-tos/configure-metrics.md
+    - text: Настройка уведомлений и получение уведомлений с использованием перехватчика
+      url: how-tos/alerts.md
+    - text: Диагностика инцидента
+      url: how-tos/diagnose-incident.md
+    - text: Настройка обнаружения аномалий с помощью обратной связи
+      url: how-tos/anomaly-feedback.md
+    - text: Создание графа метрик
+      url: how-tos/metrics-graph.md
+- title: Справочник
+  linkLists:
+  - linkListType: reference
+    links:
+    - text: Глоссарий
+      url: glossary.md
+    - text: API "Помощник по метрикам"
+      url: https://go.microsoft.com/fwlink/?linkid=2141634
+    - text: Azure PowerShell
+      url: https://docs.microsoft.com/powershell/module/az.cognitiveservices
+    - text: Azure CLI
+      url: https://docs.microsoft.com/cli/azure/cognitiveservices?view=azure-cli-latest

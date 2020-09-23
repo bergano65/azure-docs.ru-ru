@@ -1,0 +1,63 @@
+### YamlMime:Landing
+title: Службы данных с поддержкой Azure Arc
+summary: Запускайте службы данных Azure локально, в пограничной среде и средах с несколькими облаками, используя Kubernetes в любой инфраструктуре.
+metadata:
+  title: Службы данных с поддержкой Azure Arc (предварительная версия)
+  description: Запускайте службы данных Azure локально, в пограничной среде и средах с несколькими облаками, используя Kubernetes в любой инфраструктуре.
+  ms.service: azure-arc
+  ms.subservice: azure-arc-data
+  ms.topic: landing-page
+  author: MikeRayMSFT
+  ms.author: mikeray
+  ms.date: 09/22/2020
+  ms.openlocfilehash: 3ef94bfc9d3870c4c91116fb2aaf26387999a8da
+  ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
+  ms.translationtype: HT
+  ms.contentlocale: ru-RU
+  ms.lasthandoff: 09/22/2020
+  ms.locfileid: "90928926"
+landingContent:
+- title: Сведения
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Что такое службы данных с поддержкой Azure Arc?
+      url: overview.md
+  - linkListType: concept
+    links:
+    - text: Режимы подключения и требования
+      url: connectivity.md
+    - text: Конфигурация хранилища
+      url: storage-configuration.md
+- title: Начало работы
+  linkLists:
+  - linkListType: quickstart
+    links:
+    - text: Создание контроллера данных
+      url: create-data-controller.md
+    - text: Установка клиентских средств
+      url: install-client-tools.md
+- title: Гипермасштабирование для PostgreSQL с поддержкой Azure Arc (предварительная версия)
+  linkLists:
+  - linkListType: quickstart
+    links:
+    - text: Создание
+      url: create-postgresql-hyperscale-server-group.md
+    - text: Подключение
+      url: get-connection-endpoints-and-connection-strings-postgres-hyperscale.md
+    - text: Миграция
+      url: migrate-postgresql-data-into-postgresql-hyperscale-server-group.md
+    - text: Восстановить
+      url: restore-adventureworks-sample-db-into-postgresql-hyperscale-server-group.md
+- title: Управляемый экземпляр SQL с поддержкой Azure Arc (предварительная версия)
+  linkLists:
+  - linkListType: quickstart
+    links:
+    - text: Создание
+      url: create-sql-managed-instance.md
+    - text: Подключение
+      url: connect-managed-instance.md
+    - text: Миграция
+      url: migrate-to-managed-instance.md
+    - text: Восстановить
+      url: restore-adventureworks-sample-db.md

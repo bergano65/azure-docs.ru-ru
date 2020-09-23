@@ -16,12 +16,12 @@ ms.date: 06/18/2020
 ms.author: barclayn
 ms.reviewer: hanki
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d0b8e107fb377a30b35f0941b89c490e11fc458c
-ms.sourcegitcommit: 9c3cfbe2bee467d0e6966c2bfdeddbe039cad029
+ms.openlocfilehash: cf6e02ebad2ac5150be4775ad0ff6069fe3db89f
+ms.sourcegitcommit: bdd5c76457b0f0504f4f679a316b959dcfabf1ef
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/24/2020
-ms.locfileid: "88783541"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90980043"
 ---
 # <a name="create-and-manage-a-catalog-of-resources-in-azure-ad-entitlement-management"></a>Создание каталога ресурсов и управление им в управлении назначением Azure AD
 
@@ -101,6 +101,7 @@ ms.locfileid: "88783541"
 
 1. Нажмите кнопку **Удалить** (или нажмите кнопку с многоточием (**...**) и выберите **Удалить ресурс**).
 
+
 ## <a name="add-additional-catalog-owners"></a>Добавление дополнительных владельцев каталога
 
 Пользователь, создавший каталог, станет первым владельцем каталога. Для делегирования управления каталогом необходимо добавить пользователей в роль владельца каталога. Это помогает совместно использовать обязанности по управлению каталогом. 
@@ -137,7 +138,7 @@ ms.locfileid: "88783541"
 
     ![Изменить параметры каталога](./media/entitlement-management-shared/catalog-edit.png)
 
-1. Щелкните **Сохранить**.
+1. Нажмите **Сохранить**.
 
 ## <a name="delete-a-catalog"></a>Удаление каталога
 

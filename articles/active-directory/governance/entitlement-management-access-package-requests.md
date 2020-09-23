@@ -16,12 +16,12 @@ ms.date: 06/18/2020
 ms.author: barclayn
 ms.reviewer: ''
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 086623378b64aecb91c4e70e6e69bb13453f7681
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: be03996f3f88efeb02893f815162a04d6a1e8aa6
+ms.sourcegitcommit: bdd5c76457b0f0504f4f679a316b959dcfabf1ef
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85078638"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90979940"
 ---
 # <a name="view-requests-for-an-access-package-in-azure-ad-entitlement-management"></a>Просмотр запросов для пакета Access в управлении назначениями Azure AD
 
@@ -29,7 +29,7 @@ ms.locfileid: "85078638"
 
 ## <a name="view-requests"></a>Просмотр запросов
 
-**Требуемая роль:** Глобальный администратор, Администратор пользователей, Владелец каталога или Диспетчер пакетов для доступа.
+**Предварительная роль:** Глобальный администратор, администратор пользователей, владелец каталога, доступ к диспетчеру пакетов или диспетчер назначения пакетов Access
 
 1. На портале Azure щелкните **Azure Active Directory** и выберите **Управление удостоверениями**.
 
@@ -41,7 +41,7 @@ ms.locfileid: "85078638"
 
     ![Список запросов для пакета Access](./media/entitlement-management-access-package-requests/requests-list.png)
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Изменение параметров запроса и утверждения для пакета Access](entitlement-management-access-package-request-policy.md)
 - [Просмотр, Добавление и удаление назначений для пакета Access](entitlement-management-access-package-assignments.md)
