@@ -6,12 +6,12 @@ ms.author: raagyema
 ms.service: postgresql
 ms.topic: conceptual
 ms.date: 07/17/2020
-ms.openlocfilehash: 56b2fd7d78d95978b2e822f2d18160013d17eb15
-ms.sourcegitcommit: bf1340bb706cf31bb002128e272b8322f37d53dd
+ms.openlocfilehash: d7ad1116f7c0168181dbf5b43f8f1595ce250949
+ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/03/2020
-ms.locfileid: "89433625"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90903932"
 ---
 # <a name="use-virtual-network-service-endpoints-and-rules-for-azure-database-for-postgresql---single-server"></a>Использование конечных точек службы и правил виртуальной сети для базы данных Azure для PostgreSQL — один сервер
 
@@ -19,7 +19,7 @@ ms.locfileid: "89433625"
 
 Чтобы создать правило виртуальной сети, требуется [виртуальная сеть][vm-virtual-network-overview] и [конечная точка службы для виртуальной сети][vm-virtual-network-service-endpoints-overview-649d], используемая для ссылки. На следующем рисунке показано, как конечная точка службы для виртуальной сети работает с Базой данных Azure для PostgreSQL.
 
-![Пример того, как работает конечная точка службы виртуальной сети](media/concepts-data-access-and-security-vnet/vnet-concept.png)
+:::image type="content" source="media/concepts-data-access-and-security-vnet/vnet-concept.png" alt-text="Пример того, как работает конечная точка службы виртуальной сети":::
 
 > [!NOTE]
 > Эта функция доступна во всех облаках общедоступного облака Azure, где База данных Azure для PostgreSQL развернута для серверов общего назначения и оптимизирована для операций в памяти.

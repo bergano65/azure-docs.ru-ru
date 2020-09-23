@@ -12,12 +12,12 @@ ms.reviewer: larryfr
 ms.date: 03/01/2020
 ms.topic: conceptual
 ms.custom: how-to, devx-track-python
-ms.openlocfilehash: b756e83f1d810007e9e9ef6cf2987c3cf60b7f7d
-ms.sourcegitcommit: 7fe8df79526a0067be4651ce6fa96fa9d4f21355
+ms.openlocfilehash: ad04566699b2eebb0cbd7a9f242de38bc75e2015
+ms.sourcegitcommit: bdd5c76457b0f0504f4f679a316b959dcfabf1ef
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87852860"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90986399"
 ---
 # <a name="data-ingestion-with-azure-data-factory"></a>Прием данных с помощью Фабрики данных Azure
 
@@ -35,7 +35,7 @@ ms.locfileid: "87852860"
 
 ## <a name="adf-with-azure-functions"></a>ADF с функциями Azure
 
-![Функция ADF](media/how-to-data-ingest-adf/adf-function.png)
+![На схеме показан конвейер фабрики данных Azure с помощью функции Azure и выполнения конвейера M L, а также конвейер Машинное обучение Azure, с обучением модели и их взаимодействия с необработанными данными и подготовленными данными.](media/how-to-data-ingest-adf/adf-function.png)
 
 Функции Azure позволяют запускать небольшие фрагменты кода (функции), не беспокоясь о инфраструктуре приложений. В этом случае данные обрабатываются с помощью пользовательского кода Python, упакованного в функцию Azure. 
 
@@ -51,7 +51,7 @@ ms.locfileid: "87852860"
 
 ## <a name="adf-with-custom-component-activity"></a>ADF с действием настраиваемого компонента
 
-![ADF-кустомкомпонент](media/how-to-data-ingest-adf/adf-customcomponent.png)
+![На схеме показан конвейер фабрики данных Azure с пользовательским компонентом и запуск конвейера M L, а также конвейер Машинное обучение Azure, с обучением модели и способ взаимодействия с необработанными данными и подготовленными данными.](media/how-to-data-ingest-adf/adf-customcomponent.png)
 
 В этом случае данные обрабатываются с помощью пользовательского кода Python, упакованного в исполняемый файл. Он вызывается с помощью [действия настраиваемого компонента ADF](https://docs.microsoft.com/azure/data-factory/transform-data-using-dotnet-custom-activity). Этот подход лучше подходит для больших данных, чем предыдущий метод.
 
@@ -64,7 +64,7 @@ ms.locfileid: "87852860"
 
 ## <a name="adf-with-azure-databricks-python-notebook"></a>Файл ADF с записной книжкой Azure Databricks Python
 
-![ADF — кирпичы](media/how-to-data-ingest-adf/adf-databricks.png)
+![На схеме показан конвейер фабрики данных Azure с Azure Databricks Python и выполнением конвейера M L, а также конвейером Машинное обучение Azure, с обучением модели и способом взаимодействия с необработанными данными и подготовленными данными.](media/how-to-data-ingest-adf/adf-databricks.png)
 
 [Azure Databricks](https://azure.microsoft.com/services/databricks/) — это платформа аналитики на основе Apache Spark в Microsoft Cloud.
 
@@ -82,7 +82,7 @@ ms.locfileid: "87852860"
 
 ## <a name="consuming-data-in-azure-machine-learning-pipelines"></a>Использование данных в конвейерах Машинное обучение Azure
 
-![AML — набор данных](media/how-to-data-ingest-adf/aml-dataset.png)
+![На схеме показан конвейер фабрики данных Azure и конвейер Машинное обучение Azure, а также взаимодействие с необработанными данными и подготовленными данными. Конвейер фабрики данных передает данные в подготовленную базу данных, которая передает данные в хранилище данных, которые являются каналами в рабочей области Машинное обучение.](media/how-to-data-ingest-adf/aml-dataset.png)
 
 Преобразованные данные из конвейера ADF сохраняются в хранилище данных (например, в большом двоичном объекте Azure). Машинное обучение Azure может получать доступ к этим данным с помощью [хранилищ](https://docs.microsoft.com/azure/machine-learning/how-to-access-data#create-and-register-datastores) данных и [DataSets](https://docs.microsoft.com/azure/machine-learning/how-to-create-register-datasets).
 
@@ -95,7 +95,7 @@ ms.locfileid: "87852860"
 
 Так как наборы данных поддерживают управление версиями, и каждый запуск из конвейера создает новую версию, легко понять, какая версия используется для обучения модели.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Запуск записной книжки кирпичей в фабрике данных Azure](https://docs.microsoft.com/azure/data-factory/transform-data-using-databricks-notebook)
 * [Доступ к данным в службах хранилища Azure](https://docs.microsoft.com/azure/machine-learning/how-to-access-data#create-and-register-datastores)

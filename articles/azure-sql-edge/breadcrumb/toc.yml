@@ -1,0 +1,14 @@
+- name: Azure
+  tocHref: /azure/
+  topicHref: /azure/index
+  items:
+    - name: SQL Azure для пограничных вычислений
+      tocHref: /azure/azure-sql-edge/
+      topicHref: /azure/azure-sql-edge/index
+      items:
+        - name: ASC для Интернета вещей
+          tocHref: /azure/asc-for-iot/
+          topicHref: /azure/azure-sql-edge/index
+        - name: Безопасность
+          tocHref: 'https://docs.microsoft.com/sql/linux/'
+          topicHref: /azure/azure-sql-edge/index

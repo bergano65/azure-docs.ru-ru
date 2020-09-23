@@ -7,12 +7,12 @@ ms.service: postgresql
 ms.subservice: hyperscale-citus
 ms.topic: conceptual
 ms.date: 05/06/2019
-ms.openlocfilehash: 7e4073ec45f4c21f33d20924a9948e72f961c7f8
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 842563319e09a001fd6e85403d8aee6fb14690ee
+ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "74967343"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90884431"
 ---
 # <a name="table-colocation-in-azure-database-for-postgresql--hyperscale-citus"></a>Совместное размещение таблиц в базе данных Azure для PostgreSQL — масштабирование (Цитус)
 
@@ -22,7 +22,7 @@ ms.locfileid: "74967343"
 
 В службе "база данных Azure для PostgreSQL — масштабирование" (Цитус) строка хранится в сегменте, если хэш значения в столбце распределения попадает в диапазон хэша сегмента. Сегменты с одинаковым диапазоном хэша всегда размещаются на одном узле. Строки с одинаковыми значениями столбца распределения всегда находятся на одном узле в разных таблицах.
 
-![Сегментов](media/concepts-hyperscale-colocation/colocation-shards.png)
+:::image type="content" source="media/concepts-hyperscale-colocation/colocation-shards.png" alt-text="Сегментов":::
 
 ## <a name="a-practical-example-of-colocation"></a>Практичный пример совместного размещения
 
@@ -96,7 +96,7 @@ GROUP BY page_id ORDER BY count DESC LIMIT 10;
 
 Выполнение запросов должно обращаться к данным в сегментах, разбросанных по узлам.
 
-![Неэффективные запросы](media/concepts-hyperscale-colocation/colocation-inefficient-queries.png)
+:::image type="content" source="media/concepts-hyperscale-colocation/colocation-inefficient-queries.png" alt-text="Неэффективные запросы":::
 
 В этом случае распределение данных создает существенные недостатки.
 
@@ -134,10 +134,10 @@ GROUP BY page_id;
 
 Из-за фильтрации и объединения в tenant_id, Цитуса, чтобы получить ответ на весь запрос, можно использовать набор соразмещенных сегментов, содержащих данные для конкретного клиента. Один PostgreSQL узел может ответить на запрос за один шаг.
 
-![Улучшенный запрос](media/concepts-hyperscale-colocation/colocation-better-query.png)
+:::image type="content" source="media/concepts-hyperscale-colocation/colocation-better-query.png" alt-text="Улучшенный запрос":::
 
 В некоторых случаях необходимо изменить запросы и схемы таблиц, чтобы включить идентификатор клиента в ограничения UNIQUE и условия JOIN. Это изменение обычно является простым.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Узнайте, как данные клиента сохранятся в [учебнике по нескольким клиентам](tutorial-design-database-hyperscale-multi-tenant.md).

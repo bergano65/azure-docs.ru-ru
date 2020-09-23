@@ -1,25 +1,22 @@
 ---
-title: Настройка подключения к базе данных SQL Azure с помощью управляемого удостоверения (Предварительная версия)
+title: Настройка подключения к базе данных SQL Azure с помощью управляемого удостоверения
 titleSuffix: Azure Cognitive Search
-description: Узнайте, как настроить подключение индексатора к базе данных SQL Azure с помощью управляемого удостоверения (Предварительная версия)
+description: Узнайте, как настроить подключение индексатора к базе данных SQL Azure с помощью управляемого удостоверения.
 manager: luisca
 author: markheff
 ms.author: maheff
 ms.devlang: rest-api
 ms.service: cognitive-search
 ms.topic: conceptual
-ms.date: 05/18/2020
-ms.openlocfilehash: 8dabf69af8628bb0b168bfea94af5333df341423
-ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
+ms.date: 09/22/2020
+ms.openlocfilehash: 9f90125edeee453dc9e8b8b80f8eb09d9fc6e84c
+ms.sourcegitcommit: bdd5c76457b0f0504f4f679a316b959dcfabf1ef
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88924135"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90971538"
 ---
-# <a name="set-up-an-indexer-connection-to-azure-sql-database-using-a-managed-identity-preview"></a>Настройка подключения индексатора к базе данных SQL Azure с помощью управляемого удостоверения (Предварительная версия)
-
-> [!IMPORTANT] 
-> Поддержка настройки подключения к источнику данных с помощью управляемого удостоверения в настоящее время доступна в общедоступной предварительной версии. Для предварительной версии функции соглашение об уровне обслуживания не предусмотрено. Мы не рекомендуем использовать ее в рабочей среде.
+# <a name="set-up-an-indexer-connection-to-azure-sql-database-using-a-managed-identity"></a>Настройка подключения индексатора к базе данных SQL Azure с помощью управляемого удостоверения
 
 На этой странице описывается, как настроить подключение индексатора к базе данных SQL Azure с помощью управляемого удостоверения вместо предоставления учетных данных в строке подключения к объекту источника данных.
 
@@ -97,7 +94,7 @@ ms.locfileid: "88924135"
 
 ### <a name="5---create-the-data-source"></a>5\. Создание источника данных
 
-[REST API](/rest/api/searchservice/create-data-source), портал Azure и [пакет SDK для .NET](/dotnet/api/microsoft.azure.search.models.datasource?view=azure-dotnet) поддерживают строку подключения управляемого удостоверения. Ниже приведен пример создания источника данных для индексации данных из базы данных SQL Azure с помощью [REST API](/rest/api/searchservice/create-data-source) и строки подключения управляемой идентификации. Формат строки подключения управляемого удостоверения одинаков для REST API, пакета SDK для .NET и портал Azure.
+[REST API](/rest/api/searchservice/create-data-source), портал Azure и [пакет SDK для .NET](/dotnet/api/microsoft.azure.search.models.datasource) поддерживают строку подключения управляемого удостоверения. Ниже приведен пример создания источника данных для индексации данных из базы данных SQL Azure с помощью [REST API](/rest/api/searchservice/create-data-source) и строки подключения управляемой идентификации. Формат строки подключения управляемого удостоверения одинаков для REST API, пакета SDK для .NET и портал Azure.
 
 При создании источника данных с помощью [REST API](/rest/api/searchservice/create-data-source)источник данных должен иметь следующие обязательные свойства:
 

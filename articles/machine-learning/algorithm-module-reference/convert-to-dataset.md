@@ -9,16 +9,16 @@ ms.topic: reference
 author: likebupt
 ms.author: keli19
 ms.date: 10/10/2019
-ms.openlocfilehash: 7df783f15280d9f5ba3330afaf504f3259aeccf3
-ms.sourcegitcommit: 3be3537ead3388a6810410dfbfe19fc210f89fec
+ms.openlocfilehash: 9b2d003ef4938681229317b625aae4526787ac15
+ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89646257"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90898702"
 ---
 # <a name="convert-to-dataset"></a>Преобразование в набор данных
 
-В этой статье описывается, как использовать модуль преобразовать в набор данных в конструкторе Машинное обучение Azure (Предварительная версия) для преобразования любых данных конвейера в внутренний формат конструктора.
+В этой статье описывается использование модуля Convert to DataSet в Машинное обучение Azure Designer для преобразования любых данных конвейера в внутренний формат конструктора.
   
 В большинстве случаев преобразование не требуется. Машинное обучение Azure неявно преобразует данные в собственный формат набора данных при выполнении любой операции с данными. 
 

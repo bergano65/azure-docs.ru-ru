@@ -1,5 +1,5 @@
 ---
-title: Развертывание приложения PHP гостевой книги в Arc с включенной Kubernetes Azure Stack на пограничном устройстве GPU | Документация Майкрософт
+title: Развертывание приложения PHP гостевой книги в Arc с включенной Kubernetes на устройстве Azure Stack ребра Pro GPU | Документация Майкрософт
 description: В этой статье описывается, как развернуть незащищенное от Redis приложение PHP без отслеживания состояния с помощью Гитопс на Azure Stack кластере Kubernetes с поддержкой ARC.
 services: databox
 author: alkohli
@@ -8,14 +8,14 @@ ms.subservice: edge
 ms.topic: how-to
 ms.date: 08/25/2020
 ms.author: alkohli
-ms.openlocfilehash: 7fdd9b8ca0fd62d55f5a9412af9486bfb2b942c1
-ms.sourcegitcommit: 5ed504a9ddfbd69d4f2d256ec431e634eb38813e
+ms.openlocfilehash: 3200cfe290cbba208c61e914b17ffa6cd65e6eee
+ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89319298"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90899566"
 ---
-# <a name="deploy-a-php-guestbook-stateless-application-with-redis-on-arc-enabled-kubernetes-cluster-on-azure-stack-edge-gpu"></a>Развертывание приложения с нештатной книгой (Redis) для PHP с поддержкой ARC в кластере Kubernetes на Azure Stack ребра
+# <a name="deploy-a-php-guestbook-stateless-application-with-redis-on-arc-enabled-kubernetes-cluster-on-azure-stack-edge-pro-gpu"></a>Развертывание приложения PHP без отслеживания состояния с помощью Redis на ARC с включенным кластером Kubernetes на Azure Stack ребра Pro GPU
 
 В этой статье показано, как создать и развернуть простое многоуровневое веб-приложение с помощью Kubernetes и дуги Azure. Этот пример состоит из следующих компонентов:
 
@@ -23,9 +23,9 @@ ms.locfileid: "89319298"
 - Несколько реплицируемых экземпляров Redis для обслуживания операций чтения
 - Несколько экземпляров веб-интерфейсов
 
-Развертывание выполняется с помощью Гитопс в кластере Kubernetes с поддержкой Arc на пограничном устройстве Azure Stack. 
+Развертывание выполняется с помощью Гитопс в кластере Kubernetes с поддержкой Arc на устройстве Azure Stack ребра Pro. 
 
-Эта процедура предназначена для тех, кто ознакомился с [Kubernetes рабочими нагрузками на Azure Stack пограничном устройстве](azure-stack-edge-gpu-kubernetes-workload-management.md) и знаком с концепциями того, [что такое служба Arc Azure Kubernetes (Предварительная версия)](https://docs.microsoft.com/azure/azure-arc/kubernetes/overview).
+Эта процедура предназначена для тех, кто ознакомился с [Kubernetes рабочими нагрузками на устройстве на Azure Stack пограничной Pro](azure-stack-edge-gpu-kubernetes-workload-management.md) и знаком с концепциями того, [что такое служба Arc Kubernetes (Предварительная версия)](https://docs.microsoft.com/azure/azure-arc/kubernetes/overview).
 
 
 ## <a name="prerequisites"></a>Предварительные требования
@@ -34,30 +34,30 @@ ms.locfileid: "89319298"
 
 ### <a name="for-device"></a>Для устройств
 
-1. У вас есть учетные данные для входа на 1 узел Azure Stack пограничной устройство.
+1. У вас есть учетные данные для входа на 1 узел Azure Stack пограничным устройством Pro.
     1. Устройство активировано. См. раздел [Активация устройства](azure-stack-edge-gpu-deploy-activate.md).
     1. Устройство имеет роль вычислений, настроенную через портал Azure и имеющую кластер Kubernetes. См. раздел [Настройка вычислений](azure-stack-edge-gpu-deploy-configure-compute.md).
 
-1. Вы включили дугу Azure в существующем кластере Kubernetes на устройстве, и у вас есть соответствующий ресурс Arc Azure в портал Azure. Подробные инструкции см. [в разделе Включение дуги Azure на Azure Stack пограничном устройстве](azure-stack-edge-gpu-deploy-arc-kubernetes-cluster.md).
+1. Вы включили дугу Azure в существующем кластере Kubernetes на устройстве, и у вас есть соответствующий ресурс Arc Azure в портал Azure. Подробные инструкции см. [в статье Включение дуги Azure на устройстве Azure Stack ребра Pro](azure-stack-edge-gpu-deploy-arc-kubernetes-cluster.md).
 
 ### <a name="for-client-accessing-the-device"></a>Для клиента, обращающегося к устройству
 
-1. У вас есть клиентская система Windows, которая будет использоваться для доступа к Azure Stack пограничному устройству.
+1. У вас есть клиентская система Windows, которая будет использоваться для доступа к устройству Azure Stack погранично Pro.
   
     - Клиент работает под управлением Windows PowerShell 5,0 или более поздней версии. Чтобы скачать последнюю версию Windows PowerShell, перейдите к разделу [Установка Windows PowerShell](https://docs.microsoft.com/powershell/scripting/install/installing-windows-powershell?view=powershell-7).
     
     - Также можно использовать любой другой клиент с [поддерживаемой операционной системой](azure-stack-edge-gpu-system-requirements.md#supported-os-for-clients-connected-to-device) . В этой статье описывается процедура использования клиента Windows. 
     
-1. Вы завершили процедуру, описанную в статье [доступ к кластеру Kubernetes на пограничном устройстве Azure Stack](azure-stack-edge-gpu-create-kubernetes-cluster.md). Вы выполнили следующие задачи:
+1. Вы выполнили процедуру, описанную в статье [доступ к кластеру Kubernetes на устройстве с Azure Stack ребр Pro](azure-stack-edge-gpu-create-kubernetes-cluster.md). Вы выполнили следующие задачи:
     
     - Установлено `kubectl` на клиенте  <!--and saved the `kubeconfig` file with the user configuration to C:\\Users\\&lt;username&gt;\\.kube. -->
     
-    - Убедитесь, что `kubectl` версия клиента отклонена, но не имеет более одной версии из главной версии Kubernetes, работающей на устройстве Azure Stack пограничном. 
+    - Убедитесь, что `kubectl` версия клиента отклонена, но не имеет более одной версии из главной версии Kubernetes, работающей на устройстве Azure Stack погранично Pro. 
       - Используйте `kubectl version` для проверки версии kubectl, работающей на клиенте. Запишите полную версию.
-      - В локальном пользовательском интерфейсе устройства Azure Stack пограничных устройств перейдите к разделу **Обзор** и запишите номер программного обеспечения Kubernetes. 
+      - В локальном пользовательском интерфейсе устройства Azure Stack ребра Pro перейдите к **обзору** и запишите номер Kubernetes Software. 
       - Проверьте эти две версии на совместимость с сопоставлением, указанным в поддерживаемой версии Kubernetes. <!--insert link-->.
 
-1. У вас есть [Конфигурация гитопс, которую можно использовать для запуска развертывания Azure Arc](https://github.com/kagoyal/dbehaikudemo). В этом примере `yaml` для развертывания на Azure Stack пограничном устройстве будут использоваться следующие файлы.
+1. У вас есть [Конфигурация гитопс, которую можно использовать для запуска развертывания Azure Arc](https://github.com/kagoyal/dbehaikudemo). В этом примере вы будете использовать следующие `yaml` файлы для развертывания на устройстве Azure Stack ребра Pro.
 
     - `frontend-deployment.yaml`<!-- - The guestbook application has a web frontend serving the HTTP requests written in PHP. It is configured to connect to the redis-master Service for write requests and the redis-slave service for Read requests. This file describes a deployment that runs the frontend of the guestbook application.-->
     - `frontend-service.yaml` <!-- - This allows you to configure an externally visible frontend Service that can be accessed from outside the Kubernetes cluster on your device.-->
@@ -176,4 +176,4 @@ C:\Users\user>
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Узнайте, как [использовать панель мониторинга Kubernetes для мониторинга развертываний на устройстве Azure Stack пограничных устройств](azure-stack-edge-gpu-monitor-kubernetes-dashboard.md)
+Узнайте, как [использовать панель мониторинга Kubernetes для мониторинга развертываний на устройстве Azure Stack ребра Pro](azure-stack-edge-gpu-monitor-kubernetes-dashboard.md) .

@@ -10,28 +10,40 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 09/02/2020
 ms.author: aahi
-ms.openlocfilehash: b242530b09f399a84f10a40ea35e21c1119f52b1
-ms.sourcegitcommit: 5ed504a9ddfbd69d4f2d256ec431e634eb38813e
+ms.openlocfilehash: b51319716035cc4f59d50922846b067f4eda31d3
+ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89321053"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90900472"
 ---
-# <a name="install-and-run-speech-service-containers-preview"></a>Установка и запуск контейнеров речевых служб (Предварительная версия)
+# <a name="install-and-run-speech-service-containers"></a>Установка и запуск контейнеров речевых служб 
 
 Контейнеры позволяют запускать некоторые API-интерфейсы службы "Речь" в собственной среде. Контейнеры соответствуют конкретным требованиям к безопасности и управлению данными. В этой статье содержатся сведения о скачивании, установке и запуске контейнера службы "Речь".
 
-Речевые контейнеры позволяют клиентам создавать архитектуру приложений для распознавания речи, оптимизированную как для надежных облачных решений, так и для пограничных локальных сред. Доступно пять разных контейнеров. Два стандартных контейнера — преобразование **речи в текст**и преобразование **текста в речь**. Два пользовательских контейнера — это **пользовательское распознавание речи** и **Пользовательский текст в речь**. Преобразование **текста нейронной части в речь** также обеспечивает более естественную фразы продолжительностью с помощью более сложной модели. В речевых контейнерах действуют те же [цены](https://azure.microsoft.com/pricing/details/cognitive-services/speech-services/) , что и в облачных службах Azure для распознавания речи.
+Речевые контейнеры позволяют клиентам создавать архитектуру приложений для распознавания речи, оптимизированную как для надежных облачных решений, так и для пограничных локальных сред. Доступно несколько контейнеров, которые используют те же [цены](https://azure.microsoft.com/pricing/details/cognitive-services/speech-services/) , что и облачные службы распознавания речи Azure.
+
 
 > [!IMPORTANT]
-> Все контейнеры речи в настоящее время предоставляются как часть [общедоступного "условного" предварительного просмотра](../cognitive-services-container-support.md#container-availability-in-azure-cognitive-services). Объявление будет создано, когда речевые контейнеры переводятся в общедоступную версию.
+> Теперь общедоступны следующие контейнеры речи:
+> * Стандартные преобразования речи в текст
+> * Пользовательское распознавание речи к тексту
+> * Стандартный текст в речь
+> 
+> Следующие контейнеры распознавания речи находятся в предварительной версии.
+> * Пользовательский текст в речь
+> * Речь распознавание языка 
+> * Преобразование текста в речь для нейронов
+>
+> Чтобы использовать контейнеры распознавания речи, необходимо отправить онлайн-запрос и утвердить его. Дополнительные сведения см. в разделе **Утверждение запроса для запуска контейнера** ниже.
 
 | Функция | Компоненты | Последняя версия |
 |--|--|--|
-| Преобразование речи в текст | Анализирует тональности и расшифровывает непрерывную голосовую или пакетную звукозапись в реальном времени с промежуточными результатами.  | 2.4.0 |
-| Пользовательское распознавание речи к тексту | Используя настраиваемую модель на [портале пользовательское распознавание речи](https://speech.microsoft.com/customspeech), расшифровывает непрерывную голосовую или пакетную звукозапись в режиме реального времени в текст с промежуточными результатами. | 2.4.0 |
-| Преобразование текста в речь | Преобразует текст в голосовую речь с помощью обычного текстового ввода или языка разметки речи (SSML). | 1.6.0 |
-| Пользовательский текст в речь | С помощью настраиваемой модели [пользовательского голосового портала](https://aka.ms/custom-voice-portal)преобразует текст в голосовую речь с помощью обычного текстового ввода или языка разметки речи (SSML). | 1.6.0 |
+| Преобразование речи в текст | Анализирует тональности и расшифровывает непрерывную голосовую или пакетную звукозапись в реальном времени с промежуточными результатами.  | 2.3.1 |
+| Пользовательское распознавание речи к тексту | Используя настраиваемую модель на [портале пользовательское распознавание речи](https://speech.microsoft.com/customspeech), расшифровывает непрерывную голосовую или пакетную звукозапись в режиме реального времени в текст с промежуточными результатами. | 2.3.1 |
+| Преобразование текста в речь | Преобразует текст в голосовую речь с помощью обычного текстового ввода или языка разметки речи (SSML). | 1.5.0 |
+| Пользовательский текст в речь | С помощью настраиваемой модели [пользовательского голосового портала](https://aka.ms/custom-voice-portal)преобразует текст в голосовую речь с помощью обычного текстового ввода или языка разметки речи (SSML). | 1.5.0 |
+| Речь распознавание языка | Определение языка, произнесенного в звуковых файлах. | 1.0 |
 | Преобразование текста в речь для нейронов | Преобразует текст в голосовую речь с помощью технологии глубокой нейронной сети, обеспечивая более естественную синтезированную речь. | 1.1.0 |
 
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/cognitive-services/), прежде чем начинать работу.
@@ -45,16 +57,6 @@ ms.locfileid: "89321053"
 | Модуль Docker | На [главном компьютере](#the-host-computer) должен быть установлен модуль Docker. Docker предоставляет пакеты, которые настраивают среду с Docker для [macOS](https://docs.docker.com/docker-for-mac/), [Windows](https://docs.docker.com/docker-for-windows/) и [Linux](https://docs.docker.com/engine/installation/#supported-platforms). Ознакомьтесь с [общими сведениями о Docker и контейнерах](https://docs.docker.com/engine/docker-overview/).<br><br> Docker нужно настроить таким образом, чтобы контейнеры могли подключать и отправлять данные о выставлении счетов в Azure. <br><br> **В ОС Windows** для Docker нужно также настроить поддержку контейнеров Linux.<br><br> |
 | Опыт работы с Docker | Требуется базовое представление о понятиях Docker, включая реестры, репозитории, контейнеры и образы контейнеров, а также знание основных команд `docker`. |
 | Речевой ресурс | Для использования контейнеров необходимо следующее:<br><br>Ресурс _речи_ Azure для получения связанного ключа API и URI конечной точки. Оба значения доступны на страницах "Обзор **речи** " и "ключи" портал Azure. Они необходимы для запуска контейнера.<br><br>**{API_KEY}**: один из двух доступных ключей ресурсов на странице " **ключи** "<br><br>**{ENDPOINT_URI}**: конечная точка, указанная на странице **обзора** |
-
-
-## <a name="request-access-to-the-container-registry"></a>Запрос доступа к реестру контейнеров
-
-Заполните [форму запроса](https://aka.ms/cognitivegate) и отправьте ее, чтобы запросить доступ к контейнеру. 
-
-
-[!INCLUDE [Request access to the container registry](../../../includes/cognitive-services-containers-request-access-only.md)]
-
-[!INCLUDE [Authenticate to the container registry](../../../includes/cognitive-services-containers-access-registry.md)]
 
 [!INCLUDE [Gathering required parameters](../containers/includes/container-gathering-required-parameters.md)]
 
@@ -82,6 +84,7 @@ grep -q avx2 /proc/cpuinfo && echo AVX2 supported || echo No AVX2 support detect
 | Пользовательское распознавание речи к тексту | 2 ядра, 2 ГБ памяти | 4 ядра, 4 ГБ памяти |
 | Преобразование текста в речь | 1 ядро, 2 ГБ памяти | 2 ядра, 3 ГБ памяти |
 | Пользовательский текст в речь | 1 ядро, 2 ГБ памяти | 2 ядра, 3 ГБ памяти |
+| Речь распознавание языка | 1 ядро, 1 ГБ памяти | 1 ядро, 1 ГБ памяти |
 | Преобразование текста в речь для нейронов | 6 ядер, 12 ГБ памяти | 8 ядер, 16 ГБ памяти |
 
 * Частота каждого ядра должна быть минимум 2,6 ГГц.
@@ -91,6 +94,13 @@ grep -q avx2 /proc/cpuinfo && echo AVX2 supported || echo No AVX2 support detect
 > [!NOTE]
 > Минимальное и рекомендуемое значение основано на ограничениях DOCKER, а *не* на ресурсах компьютера размещения. Например, контейнеры преобразования речи в текст отображают части модели больших языков, и *рекомендуется* , чтобы весь файл поместился в память, что является дополнительным 4-6 ГБ. Кроме того, первый запуск любого контейнера может занять больше времени, так как модели разбиваются на страницы в памяти.
 
+## <a name="request-approval-to-the-run-the-container"></a>Запросить утверждение для запуска контейнера
+
+Заполните [форму запроса](https://aka.ms/cognitivegate) и отправьте ее, чтобы запросить доступ к контейнеру. 
+
+[!INCLUDE [Request access to public preview](../../../includes/cognitive-services-containers-request-access.md)]
+
+
 ## <a name="get-the-container-image-with-docker-pull"></a>Получение образа контейнера с помощью `docker pull`
 
 Образы контейнеров для речи доступны в следующем реестре контейнеров.
@@ -99,31 +109,37 @@ grep -q avx2 /proc/cpuinfo && echo AVX2 supported || echo No AVX2 support detect
 
 | Контейнер | Хранилище |
 |-----------|------------|
-| Преобразование речи в текст | `containerpreview.azurecr.io/microsoft/cognitive-services-speech-to-text:latest` |
+| Преобразование речи в текст | `mcr.microsoft.com/azure-cognitive-services/speechservices/speech-to-text:latest` |
 
 # <a name="custom-speech-to-text"></a>[Пользовательское распознавание речи к тексту](#tab/cstt)
 
 | Контейнер | Хранилище |
 |-----------|------------|
-| Пользовательское распознавание речи к тексту | `containerpreview.azurecr.io/microsoft/cognitive-services-custom-speech-to-text:latest` |
+| Пользовательское распознавание речи к тексту | `mcr.microsoft.com/azure-cognitive-services/speechservices/custom-speech-to-text:latest` |
 
 # <a name="text-to-speech"></a>[Преобразование текста в речь](#tab/tts)
 
 | Контейнер | Хранилище |
 |-----------|------------|
-| Преобразование текста в речь | `containerpreview.azurecr.io/microsoft/cognitive-services-text-to-speech:latest` |
+| Преобразование текста в речь | `mcr.microsoft.com/azure-cognitive-services/speechservices/text-to-speech:latest` |
 
 # <a name="neural-text-to-speech"></a>[Преобразование текста в речь для нейронов](#tab/ntts)
 
 | Контейнер | Хранилище |
 |-----------|------------|
-| Преобразование текста в речь для нейронов | `containerpreview.azurecr.io/microsoft/cognitive-services-neural-text-to-speech:latest` |
+| Преобразование текста в речь для нейронов | `mcr.microsoft.com/azure-cognitive-services/speechservices/neural-text-to-speech:latest` |
 
 # <a name="custom-text-to-speech"></a>[Пользовательский текст в речь](#tab/ctts)
 
 | Контейнер | Хранилище |
 |-----------|------------|
-| Пользовательский текст в речь | `containerpreview.azurecr.io/microsoft/cognitive-services-custom-text-to-speech:latest` |
+| Пользовательский текст в речь | `mcr.microsoft.com/azure-cognitive-services/speechservices/custom-text-to-speech:latest` |
+
+# <a name="speech-language-detection"></a>[Речь распознавание языка](#tab/lid)
+
+| Контейнер | Хранилище |
+|-----------|------------|
+| Речь распознавание языка | `mcr.microsoft.com/azure-cognitive-services/speechservices/language-detection:latest` |
 
 ***
 
@@ -138,7 +154,7 @@ grep -q avx2 /proc/cpuinfo && echo AVX2 supported || echo No AVX2 support detect
 Используйте команду [DOCKER Pull](https://docs.docker.com/engine/reference/commandline/pull/) , чтобы скачать образ контейнера из реестра предварительного просмотра контейнера.
 
 ```Docker
-docker pull containerpreview.azurecr.io/microsoft/cognitive-services-speech-to-text:latest
+docker pull mcr.microsoft.com/azure-cognitive-services/speechservices/speech-to-text:latest
 ```
 
 > [!IMPORTANT]
@@ -167,7 +183,7 @@ docker pull containerpreview.azurecr.io/microsoft/cognitive-services-speech-to-t
 Используйте команду [DOCKER Pull](https://docs.docker.com/engine/reference/commandline/pull/) , чтобы скачать образ контейнера из реестра предварительного просмотра контейнера.
 
 ```Docker
-docker pull containerpreview.azurecr.io/microsoft/cognitive-services-custom-speech-to-text:latest
+docker pull mcr.microsoft.com/azure-cognitive-services/speechservices/custom-speech-to-text:latest
 ```
 
 > [!NOTE]
@@ -180,7 +196,7 @@ docker pull containerpreview.azurecr.io/microsoft/cognitive-services-custom-spee
 Используйте команду [DOCKER Pull](https://docs.docker.com/engine/reference/commandline/pull/) , чтобы скачать образ контейнера из реестра предварительного просмотра контейнера.
 
 ```Docker
-docker pull containerpreview.azurecr.io/microsoft/cognitive-services-text-to-speech:latest
+docker pull mcr.microsoft.com/azure-cognitive-services/speechservices/text-to-speech:latest
 ```
 
 > [!IMPORTANT]
@@ -212,7 +228,7 @@ docker pull containerpreview.azurecr.io/microsoft/cognitive-services-text-to-spe
 Используйте команду [DOCKER Pull](https://docs.docker.com/engine/reference/commandline/pull/) , чтобы скачать образ контейнера из реестра предварительного просмотра контейнера.
 
 ```Docker
-docker pull containerpreview.azurecr.io/microsoft/cognitive-services-neural-text-to-speech:latest
+docker pull mcr.microsoft.com/azure-cognitive-services/speechservices/neural-text-to-speech:latest
 ```
 
 > [!IMPORTANT]
@@ -244,11 +260,21 @@ docker pull containerpreview.azurecr.io/microsoft/cognitive-services-neural-text
 Используйте команду [DOCKER Pull](https://docs.docker.com/engine/reference/commandline/pull/) , чтобы скачать образ контейнера из реестра предварительного просмотра контейнера.
 
 ```Docker
-docker pull containerpreview.azurecr.io/microsoft/cognitive-services-custom-text-to-speech:latest
+docker pull mcr.microsoft.com/azure-cognitive-services/speechservices/custom-text-to-speech:latest
 ```
 
 > [!NOTE]
 > `locale` `voice` Пользовательские контейнеры и для пользовательских речевых контейнеров определяются настраиваемой моделью, принимаемой контейнером.
+
+# <a name="speech-language-detection"></a>[Речь распознавание языка](#tab/lid)
+
+#### <a name="docker-pull-for-the-speech-language-detection-container"></a>Извлечение DOCKER для контейнера распознавание языка речи
+
+Используйте команду [DOCKER Pull](https://docs.docker.com/engine/reference/commandline/pull/) , чтобы скачать образ контейнера из реестра предварительного просмотра контейнера.
+
+```Docker
+docker pull mcr.microsoft.com/azure-cognitive-services/speechservices/language-detection:latest
+```
 
 ***
 
@@ -269,7 +295,7 @@ docker pull containerpreview.azurecr.io/microsoft/cognitive-services-custom-text
 
 ```bash
 docker run --rm -it -p 5000:5000 --memory 4g --cpus 4 \
-containerpreview.azurecr.io/microsoft/cognitive-services-speech-to-text \
+mcr.microsoft.com/azure-cognitive-services/speechservices/speech-to-text \
 Eula=accept \
 Billing={ENDPOINT_URI} \
 ApiKey={API_KEY}
@@ -295,7 +321,7 @@ ApiKey={API_KEY}
 
 ```bash
 docker run -it --rm -p 5000:5000 \
-containerpreview.azurecr.io/microsoft/cognitive-services-speech-to-text:latest \
+mcr.microsoft.com/azure-cognitive-services/speechservices/speech-to-text:latest \
 Eula=accept \
 Billing={ENDPOINT_URI} \
 ApiKey={API_KEY} \
@@ -344,7 +370,7 @@ CloudAI:SentimentAnalysisSettings:SentimentAnalysisApiKey={SENTIMENT_APIKEY}
 ```bash
 docker run --rm -it -p 5000:5000 --memory 4g --cpus 4 \
 -v {VOLUME_MOUNT}:/usr/local/models \
-containerpreview.azurecr.io/microsoft/cognitive-services-custom-speech-to-text \
+mcr.microsoft.com/azure-cognitive-services/speechservices/custom-speech-to-text \
 ModelId={MODEL_ID} \
 Eula=accept \
 Billing={ENDPOINT_URI} \
@@ -367,7 +393,7 @@ ApiKey={API_KEY}
 
 ```bash
 docker run --rm -it -p 5000:5000 --memory 2g --cpus 1 \
-containerpreview.azurecr.io/microsoft/cognitive-services-text-to-speech \
+mcr.microsoft.com/azure-cognitive-services/speechservices/text-to-speech \
 Eula=accept \
 Billing={ENDPOINT_URI} \
 ApiKey={API_KEY}
@@ -386,7 +412,7 @@ ApiKey={API_KEY}
 
 ```bash
 docker run --rm -it -p 5000:5000 --memory 12g --cpus 6 \
-containerpreview.azurecr.io/microsoft/cognitive-services-neural-text-to-speech \
+mcr.microsoft.com/azure-cognitive-services/speechservices/neural-text-to-speech \
 Eula=accept \
 Billing={ENDPOINT_URI} \
 ApiKey={API_KEY}
@@ -425,7 +451,7 @@ ApiKey={API_KEY}
 ```bash
 docker run --rm -it -p 5000:5000 --memory 2g --cpus 1 \
 -v {VOLUME_MOUNT}:/usr/local/models \
-containerpreview.azurecr.io/microsoft/cognitive-services-custom-text-to-speech \
+mcr.microsoft.com/azure-cognitive-services/speechservices/custom-text-to-speech \
 ModelId={MODEL_ID} \
 Eula=accept \
 Billing={ENDPOINT_URI} \
@@ -442,6 +468,34 @@ ApiKey={API_KEY}
 * Если пользовательская модель была ранее скачана, параметр `ModelId` игнорируется.
 * автоматически удаляет контейнер после завершения его работы. Образ контейнера остается доступным на главном компьютере.
 
+# <a name="language-detection"></a>[распознавание языка](#tab/lid);
+
+Чтобы запустить контейнер *распознавание языка речи* , выполните следующую `docker run` команду.
+
+```bash
+docker run --rm -it -p 5003:5003 --memory 1g --cpus 1 \
+mcr.microsoft.com/azure-cognitive-services/speechservices/language-detection \
+Eula=accept \
+Billing={ENDPOINT_URI} \
+ApiKey={API_KEY}
+```
+
+Эта команда: 
+
+* Запускает контейнер обнаружения языка распознавания речи из образа контейнера.
+* Выделяет 1 ядро ЦП и 1 гигабайт (ГБ) памяти.
+* Предоставляет TCP-порт 5003 и выделяет псевдо-TTY для контейнера.
+* автоматически удаляет контейнер после завершения его работы. Образ контейнера остается доступным на главном компьютере.
+
+Если вы хотите запустить этот контейнер с контейнером преобразования речи в текст, можно использовать этот [образ DOCKER](https://hub.docker.com/r/antsu/on-prem-client). После запуска обоих контейнеров используйте команду DOCKER Run для выполнения `speech-to-text-with-languagedetection-client` .
+
+```Docker
+docker run --rm -v ${HOME}:/root -ti antsu/on-prem-client:latest ./speech-to-text-with-languagedetection-client ./audio/LanguageDetection_en-us.wav --host localhost --lport 5003 --sport 5000
+```
+
+> [!NOTE]
+> Увеличение числа одновременных вызовов может повлиять на надежность и задержку. Для определения языка рекомендуется не более 4 одновременных вызовов, использующих 1 ЦП, а также память объемом ОЗУ. Для узлов с двумя процессорами и 2 ГБ памяти рекомендуется не более 6 одновременных вызовов.
+
 ***
 
 > [!IMPORTANT]
@@ -455,7 +509,7 @@ ApiKey={API_KEY}
 | Контейнеры | URL-адрес узла SDK | Протокол |
 |--|--|--|
 | Стандартные преобразования речи в текст и Пользовательское распознавание речи в текст | `ws://localhost:5000` | WS |
-| Преобразование текста в речь (включая стандартные, пользовательские и нейронные) | `http://localhost:5000` | HTTP |
+| Преобразование текста в речь (включая стандартные, пользовательские и нейронные), определение языка | `http://localhost:5000` | HTTP |
 
 Дополнительные сведения об использовании протоколов WSS и HTTPS см. в разделе [Безопасность контейнера](../cognitive-services-container-support.md#azure-cognitive-services-container-security).
 
@@ -596,7 +650,7 @@ speech_config.set_service_property(
 
 [!INCLUDE [How to stop the container](../../../includes/cognitive-services-containers-stop.md)]
 
-## <a name="troubleshooting"></a>Устранение неполадок
+## <a name="troubleshooting"></a>Диагностика
 
 При запуске или запуске контейнера могут возникнуть проблемы. Используйте [Подключение](speech-container-configuration.md#mount-settings) к выходным данным и включите ведение журнала. Это позволит контейнеру создавать файлы журналов, которые полезны при устранении неполадок.
 
@@ -624,6 +678,7 @@ speech_config.set_service_property(
   * *Преобразование текста в речь*
   * *Пользовательский текст в речь*
   * *Преобразование текста в речь для нейронов*
+  * *Речь распознавание языка*
 * Образы контейнеров загружаются из реестра контейнеров в Azure.
 * Образы контейнеров выполняются в Docker.
 * Независимо от того, используете ли вы REST API (только преобразование текста в речь) или пакет SDK (преобразование речи в текст или преобразование текста в речь), укажите URI узла контейнера. 
