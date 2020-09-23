@@ -1,6 +1,6 @@
 ---
-title: Технические характеристики кабеля питания Microsoft Azure Stack Edge на основе расположения | Документация Майкрософт
-description: Узнайте о технических характеристиках кабелей питания Azure Stack Edge.
+title: Технические спецификации шнура питания Pro Microsoft Azure Stack в зависимости от расположения | Документация Майкрософт
+description: Узнайте о технических характеристиках кабелей питания Pro для Azure Stack.
 services: databox
 author: alkohli
 ms.service: databox
@@ -8,16 +8,16 @@ ms.subservice: edge
 ms.topic: article
 ms.date: 04/16/2020
 ms.author: alkohli
-ms.openlocfilehash: 34f5b578581c5a11b3dbfba76f68819c2ed706d0
-ms.sourcegitcommit: 814778c54b59169c5899199aeaa59158ab67cf44
+ms.openlocfilehash: 76d8c84fd1dd403c88e8261cf49e3620f3a6ec14
+ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/13/2020
-ms.locfileid: "90055934"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90903613"
 ---
-# <a name="azure-stack-edge-power-cord-specifications"></a>Характеристики кабелей питания Azure Stack Edge
+# <a name="azure-stack-edge-pro-power-cord-specifications"></a>Спецификации кабелей питания Pro Azure Stack
 
-Для устройства Azure Stack Edge потребуется кабель питания, требования к которому зависят от региона Azure.
+На устройстве Pro Azure Stack потребуются кабели питания, которые будут зависеть от региона Azure.
 
 ## <a name="supported-power-cords"></a>Поддерживаемые кабели питания
 
@@ -158,4 +158,4 @@ ms.locfileid: "90055934"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-[Технические характеристики Azure Stack Edge](data-box-edge-technical-specifications-compliance.md)
+[Технические спецификации Azure Stack пограничных Pro](data-box-edge-technical-specifications-compliance.md)

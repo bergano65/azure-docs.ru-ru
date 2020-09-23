@@ -8,22 +8,24 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: anomaly-detector
 ms.topic: conceptual
-ms.date: 05/07/2020
+ms.date: 09/10/2020
 ms.author: aahi
-ms.openlocfilehash: 0ae3b66d8093c0498011d9f93cd8d869b85f9003
-ms.sourcegitcommit: 03662d76a816e98cfc85462cbe9705f6890ed638
+ms.openlocfilehash: 2a4ff7da16524e0706601e43dff39325952990ff
+ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90530715"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90903551"
 ---
-# <a name="install-and-run-anomaly-detector-containers-preview"></a>Установка и запуск контейнеров детекторов аномалий (Предварительная версия)
+# <a name="install-and-run-anomaly-detector-containers"></a>Установка и запуск контейнеров Детектора аномалий 
+
+[!INCLUDE [container image location note](../containers/includes/image-location-note.md)]
 
 Средство обнаружения аномалий имеет следующие функциональные возможности контейнера.
 
 | Функция | Компоненты |
 |--|--|
-| Детектор аномалий; | <li> Обнаруживает аномалии по мере их возникновения в режиме реального времени. <li> Обнаруживает аномалии во всем наборе данных как пакет. <li> Выводит ожидаемый нормальный диапазон данных. <li> Поддерживает настройку чувствительности к обнаружению аномалий, чтобы лучше соответствовать вашим данным. |
+| Детектор аномалий; | <li> Обнаруживает аномалии по мере их возникновения в режиме реального времени. <li> Обнаруживает аномалии во всем наборе данных как пакет. <li> Обнаруживает точки изменения тенденций в наборе данных как пакет.<li> Выводит ожидаемый нормальный диапазон данных. <li> Поддерживает настройку чувствительности к обнаружению аномалий, чтобы лучше соответствовать вашим данным. |
 
 Подробные сведения об API см. в следующих статьях:
 * [Дополнительные сведения о службе API детектора аномалий](https://go.microsoft.com/fwlink/?linkid=2080698&clcid=0x409)
@@ -67,7 +69,7 @@ ms.locfileid: "90530715"
 
 | Контейнер | Хранилище |
 |-----------|------------|
-| обнаружение аномалий-службы-детектор | `mcr.microsoft.com/azure-cognitive-services/anomaly-detector:latest` |
+| обнаружение аномалий-службы-детектор | `mcr.microsoft.com/azure-cognitive-services/decision/anomaly-detector:latest` |
 
 <!--
 For a full description of available tags, such as `latest` used in the preceding command, see [anomaly-detector](https://go.microsoft.com/fwlink/?linkid=2083827&clcid=0x409) on Docker Hub.
@@ -95,7 +97,7 @@ docker pull mcr.microsoft.com/azure-cognitive-services/anomaly-detector:latest
 
 ```bash
 docker run --rm -it -p 5000:5000 --memory 4g --cpus 1 \
-mcr.microsoft.com/azure-cognitive-services/anomaly-detector:latest \
+mcr.microsoft.com/azure-cognitive-services/decision/anomaly-detector:latest \
 Eula=accept \
 Billing={ENDPOINT_URI} \
 ApiKey={API_KEY}
@@ -154,7 +156,7 @@ ApiKey={API_KEY}
 
 [!INCLUDE [How to stop the container](../../../includes/cognitive-services-containers-stop.md)]
 
-## <a name="troubleshooting"></a>Устранение неполадок
+## <a name="troubleshooting"></a>Диагностика
 
 Если контейнер запускается с выходным [подключением](anomaly-detector-container-configuration.md#mount-settings) и включенным ведением журнала, контейнер создает файлы журнала, которые удобно использовать для устранения неполадок, возникающих во время запуска или работы контейнера.
 
@@ -172,12 +174,12 @@ ApiKey={API_KEY}
 
 [!INCLUDE [Discoverability of more container information](../../../includes/cognitive-services-containers-discoverability.md)]
 
-## <a name="summary"></a>Итоги
+## <a name="summary"></a>Сводка
 
 В этой статье вы узнали основные понятия и рабочий процесс по скачиванию, установке и запуску контейнеров детекторов аномалий. В разделе "Сводка" сделайте следующее.
 
 * Детектор аномалий предоставляет один контейнер Linux для DOCKER, инкапсуляцию обнаружения аномалий с помощью пакетной и потоковой передачи, ожидаемого определения диапазона и настройки чувствительности.
-* Образы контейнеров загружаются из закрытого реестра контейнеров Azure, выделенного для предварительной версии контейнеров.
+* Образы контейнеров загружаются из закрытого реестра контейнеров Azure, выделенного для контейнеров.
 * Образы контейнеров выполняются в Docker.
 * Вы можете использовать REST API или пакет SDK для вызова операций в контейнерах детектора аномалий, указав универсальный код ресурса (URI) узла контейнера.
 * При создании экземпляра контейнера нужно указать данные для выставления счетов.
@@ -185,7 +187,7 @@ ApiKey={API_KEY}
 > [!IMPORTANT]
 > Контейнеры Cognitive Services не лицензируются для запуска без подключения к Azure для отслеживания использования. Клиенты должны разрешить контейнерам непрерывную передачу данных для выставления счетов в службу контроля потребления. Cognitive Services контейнеры не отправляют данные клиента (например, анализируемые данные временных рядов) в корпорацию Майкрософт.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Ознакомьтесь со статьей о [конфигурации контейнеров](anomaly-detector-container-configuration.md).
 * [Развертывание контейнера детекторов аномалий в службе "экземпляры контейнеров Azure"](how-to/deploy-anomaly-detection-on-container-instances.md)

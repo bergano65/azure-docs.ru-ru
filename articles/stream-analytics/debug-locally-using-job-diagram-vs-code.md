@@ -7,12 +7,12 @@ ms.reviewer: mamccrea
 ms.service: stream-analytics
 ms.topic: how-to
 ms.date: 06/23/2020
-ms.openlocfilehash: c31f3c998df918466e707c95f041592051e8251c
-ms.sourcegitcommit: e132633b9c3a53b3ead101ea2711570e60d67b83
+ms.openlocfilehash: f8885229c8ab6784c6c0bf45487812fcc43f9b22
+ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "86045320"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90903825"
 ---
 # <a name="debug-azure-stream-analytics-queries-locally-using-job-diagram-in-visual-studio-code"></a>Отладка запросов Azure Stream Analytics локально с помощью схемы заданий в Visual Studio Code
 
@@ -27,7 +27,7 @@ ms.locfileid: "86045320"
 
 ### <a name="start-local-testing"></a>Запуск локального тестирования
 
-Используйте это [Краткое руководство](quick-create-vs-code.md) , чтобы узнать, как создать задание Stream Analytics с помощью Visual Studio Code или [экспортировать существующее задание в локальный проект](visual-studio-code-explore-jobs.md). Учетные данные для входных и выходных данных автоматически заполняются для экспортированных заданий.
+Используйте это [Краткое руководство](quick-create-visual-studio-code.md) , чтобы узнать, как создать задание Stream Analytics с помощью Visual Studio Code или [экспортировать существующее задание в локальный проект](visual-studio-code-explore-jobs.md). Учетные данные для входных и выходных данных автоматически заполняются для экспортированных заданий.
 
 Если вы хотите протестировать запрос с локальными входными данными, выполните следующие [инструкции](visual-studio-code-local-run.md). Если вы хотите протестировать с помощью Live input, [Настройте входные данные](stream-analytics-add-inputs.md) , чтобы перейти к следующему шагу. 
 
@@ -59,7 +59,7 @@ ms.locfileid: "86045320"
 3. Выберите имя источника входных данных из раскрывающегося списка, чтобы просмотреть входные метрики. Источник входных данных на следующем снимке экрана называется *кавычками*. Дополнительные сведения о входных метриках см. в статьях сведения о [мониторинге Stream Analytics заданий и наблюдении за запросами](stream-analytics-monitoring.md).
 
    > [!div class="mx-imgBorder"]
-   > ![Метрики схемы заданий](./media/debug-locally-using-job-diagram-vs-code/input-metrics.png)
+   > ![Метрики входных данных схемы заданий](./media/debug-locally-using-job-diagram-vs-code/input-metrics.png)
 
 4. Выберите шаг запроса на схеме задания или выберите имя шага из раскрывающегося списка, чтобы просмотреть метрики уровня шага. Единственная доступная метрика шага — задержка водяного знака.
 
@@ -106,9 +106,9 @@ ms.locfileid: "86045320"
 
 * Только облачные входные параметры имеют поддержку [политик времени](stream-analytics-out-of-order-and-late-events.md) , а локальные параметры ввода — нет.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
-* [Краткое руководство. Создание задания Stream Analytics с помощью Visual Studio Code](quick-create-vs-code.md)
+* [Краткое руководство. Создание задания Stream Analytics с помощью Visual Studio Code](quick-create-visual-studio-code.md)
 * [Изучение Azure Stream Analytics с Visual Studio Code](visual-studio-code-explore-jobs.md)
 * [Локальное тестирование запросов Stream Analytics с использованием примера данных и Visual Studio Code](visual-studio-code-local-run.md)
 * [Тестирование Azure Stream Analytics заданий локально с входными данными в режиме реального времени с помощью Visual Studio Code](visual-studio-code-local-run-live-input.md)

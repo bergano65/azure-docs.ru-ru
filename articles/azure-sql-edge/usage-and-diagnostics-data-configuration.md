@@ -8,12 +8,12 @@ author: SQLSourabh
 ms.author: sourabha
 ms.reviewer: sstein
 ms.date: 08/04/2020
-ms.openlocfilehash: af4353e5b0991f7ce2f6fe8ff940e916717b0579
-ms.sourcegitcommit: 3be3537ead3388a6810410dfbfe19fc210f89fec
+ms.openlocfilehash: 130e23c290ce493d3fb92f6dd0be4cd7c61a86fd
+ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89650480"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90888055"
 ---
 # <a name="azure-sql-edge-usage-and-diagnostics-data-configuration"></a>Конфигурация данных об использовании и диагностике Azure SQL
 
@@ -61,6 +61,9 @@ group by data_source_type
 
 Сбор данных об использовании и диагностике в Azure SQL Server можно отключить с помощью любого из приведенных ниже методов.
 
+> [!NOTE]
+> Данные об использовании и диагностике не могут быть отключены для версии разработчика.
+
 ### <a name="disable-usage-and-diagnostics-using-environment-variables"></a>Отключение использования и диагностики с помощью переменных среды
 
 Чтобы отключить сбор данных об использовании и диагностике на границе Azure SQL, добавьте следующую переменную среды и задайте для нее значение `*False*` . Дополнительные сведения о настройке Azure SQL с помощью переменных среды см. в разделе [Настройка с помощью переменных среды](configure.md#configure-by-using-environment-variables).
@@ -68,7 +71,7 @@ group by data_source_type
 `MSSQL_TELEMETRY_ENABLED = TRUE | FALSE`
 
 - TRUE — включает сбор данных об использовании и диагностике. Это конфигурация по умолчанию.
-- FALSE — отключает сбор данных об использовании и диагностике
+- FALSE — отключает сбор данных об использовании и диагностике.
 
 ### <a name="disable-usage-and-diagnostics-using-mssqlconf-file"></a>Отключение использования и диагностики с помощью файла MSSQL. conf
 

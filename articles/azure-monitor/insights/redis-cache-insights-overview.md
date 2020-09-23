@@ -1,20 +1,20 @@
 ---
-title: Возможности Azure Monitor для Кэша Azure для Redis (предварительная версия) | Документация Майкрософт
+title: Azure Monitor для кэша Azure для Redis | Документация Майкрософт
 description: Узнайте, как возможность Azure Monitor для Кэша Azure для Redis позволяет владельцам кэша быстро разобраться в проблемах с производительностью и потреблением ресурсов.
 ms.topic: conceptual
 author: mrbullwinkle
 ms.author: mbullwin
-ms.date: 05/21/2020
-ms.openlocfilehash: 70bf39011761bcf59c8270ecdcc0542e326aef42
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.date: 09/10/2020
+ms.openlocfilehash: e7b8a8e131cf7e0aae051f42043abf0640c927e4
+ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87045862"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90887010"
 ---
-# <a name="explore-azure-monitor-for-azure-cache-for-redis-preview"></a>Узнайте об Azure Monitor для Кэша Azure для Redis (предварительная версия)
+# <a name="explore-azure-monitor-for-azure-cache-for-redis"></a>Изучение Azure Monitor кэша Azure для Redis
 
-Azure Monitor для Кэша Azure для Redis (предварительная версия) предоставляет для любых ресурсов Кэша Azure для Redis единое интерактивное представление следующих данных:
+Для всех кэшей Azure для ресурсов Redis Azure Monitor для кэша Azure для Redis предоставляет единое интерактивное представление:
 
 - общая производительность;
 - Сбои
@@ -50,7 +50,7 @@ Azure Monitor для Кэша Azure для Redis (предварительная
 
     ![Поле поиска со словом Monitor и результатом поиска по службам с отображаемым элементом Monitor и символом спидометра](./media/cosmosdb-insights-overview/search-monitor.png)
 
-1. Выберите **Кэш Azure для Redis (предварительная версия)** . Если этот элемент отсутствует, выберите **Дополнительно** > **Кэш Azure для Redis**.
+1. Выберите **кэш Azure для Redis**. Если этот элемент отсутствует, выберите **Дополнительно** > **Кэш Azure для Redis**.
 
 ### <a name="overview"></a>Обзор
 
@@ -128,9 +128,9 @@ Azure Monitor для Кэша Azure для Redis (предварительная
 
 1. На портала Azure выберите "Кэш Azure для Redis".
 
-2. В списке результатов выберите нужный ресурс Кэша Azure для Redis. В разделе "Мониторинг" выберите "Аналитика" (предварительная версия).
+2. В списке результатов выберите нужный ресурс Кэша Azure для Redis. В разделе Мониторинг выберите аналитика.
 
-    ![Снимок экрана: элементы меню, где красным прямоугольником выделен пункт "Аналитика (предварительная версия)"](./media/redis-cache-insights-overview/insights.png)
+    ![Снимок экрана параметров меню с словами "Insights", выделенными в красном прямоугольнике](./media/redis-cache-insights-overview/insights.png)
 
 В эти представления также можно перейти, выбрав имя ресурса Кэша Azure для Redis в книге на уровне Azure Monitor.
 
@@ -168,7 +168,7 @@ Azure Monitor для Кэша Azure для Redis (предварительная
 
 ![Выделенный символ развертывания книги](./media/cosmosdb-insights-overview/expand.png)
 
-## <a name="customize-azure-monitor-for-azure-cache-for-redis-preview"></a>Настройка возможности Azure Monitor для Кэша Azure для Redis (предварительная версия)
+## <a name="customize-azure-monitor-for-azure-cache-for-redis"></a>Настройка Azure Monitor для кэша Azure для Redis
 
 Так как эта возможность основана на шаблонах книг Azure Monitor, вы можете выбрать **Настройка** > **Изменить** > **Сохранить**, чтобы сохранить измененную копию в виде пользовательской книги.
 

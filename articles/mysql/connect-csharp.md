@@ -8,12 +8,12 @@ ms.custom: mvc, devx-track-csharp
 ms.devlang: csharp
 ms.topic: quickstart
 ms.date: 5/26/2020
-ms.openlocfilehash: b5e024536cdd0829435b9676501b21bc99fff49a
-ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
+ms.openlocfilehash: 6c1cc658708a8429e635d23a058a784f6fc4ef05
+ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89020054"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90904006"
 ---
 # <a name="quickstart-use-net-c-to-connect-and-query-data-in-azure-database-for-mysql"></a>Краткое руководство. Подключение к Базе данных Azure для MySQL и запрос данных с помощью .NET (C#)
 
@@ -49,7 +49,7 @@ dotnet add package MySqlConnector
 2. В меню слева на портале Azure щелкните **Все ресурсы** и выполните поиск по имени созданного сервера (например, **mydemoserver**).
 3. Щелкните имя сервера.
 4. Запишите **имя сервера** и **имя для входа администратора сервера** с панели сервера **Обзор**. Если вы забыли свой пароль, можно также сбросить пароль с помощью этой панели.
- ![Имя сервера базы данных Azure для MySQL](./media/connect-csharp/1_server-overview-name-login.png)
+ :::image type="content" source="./media/connect-csharp/1_server-overview-name-login.png" alt-text="Имя сервера базы данных Azure для MySQL":::
 
 ## <a name="connect-create-table-and-insert-data"></a>Подключение, создание таблицы и вставка данных
 Используйте указанный ниже код для подключения и скачивания данных с помощью инструкций SQL `CREATE TABLE` и `INSERT INTO`. В этом коде используется класс `MySqlConnection` с методом [OpenAsync()](https://docs.microsoft.com/dotnet/api/system.data.common.dbconnection.openasync#System_Data_Common_DbConnection_OpenAsync), чтобы установить подключение к MySQL. Затем код использует метод [CreateCommand()](https://docs.microsoft.com/dotnet/api/system.data.common.dbconnection.createcommand), устанавливает свойство CommandText и вызывает метод [ExecuteNonQueryAsync()](https://docs.microsoft.com/dotnet/api/system.data.common.dbcommand.executenonqueryasync), чтобы выполнить команды базы данных. 

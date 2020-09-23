@@ -9,12 +9,12 @@ author: VasiyaKrishnan
 ms.author: vakrishn
 ms.reviewer: sstein
 ms.date: 05/19/2020
-ms.openlocfilehash: f38a973611cb1ab18eead4ec51e6be91ada2cc40
-ms.sourcegitcommit: 01cd19edb099d654198a6930cebd61cae9cb685b
+ms.openlocfilehash: abd1bc9b53c303d094d74683da0d6e3fad4d715f
+ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/24/2020
-ms.locfileid: "85318647"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90887475"
 ---
 # <a name="deploy-ml-model-on-azure-sql-edge-using-onnx"></a>Развертывание модели ML в SQL Azure для пограничных вычислений с помощью ONNX 
 
@@ -225,4 +225,4 @@ ms.locfileid: "85318647"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Дополнительные сведения об использовании моделей ONNX в SQL Azure для пограничных вычислений см. в статье [Машинное обучение и искусственный интеллект с ONNX в SQL Azure для пограничных вычислений (предварительная версия)](onnx-overview.md).
+Дополнительные сведения об использовании моделей ONNX в SQL Azure для пограничных вычислений см. в статье [Машинное обучение и искусственный интеллект с ONNX в SQL Azure для пограничных вычислений](onnx-overview.md).

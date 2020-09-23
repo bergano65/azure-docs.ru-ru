@@ -6,12 +6,12 @@ ms.author: andrela
 ms.service: mysql
 ms.topic: how-to
 ms.date: 6/11/2020
-ms.openlocfilehash: 8a988895cd8999d15c32d7056d35abf40aeaba7e
-ms.sourcegitcommit: 9c262672c388440810464bb7f8bcc9a5c48fa326
+ms.openlocfilehash: a37fbee4361d4a87c43a42cae66c425eba1e0877
+ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/03/2020
-ms.locfileid: "89420699"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90887050"
 ---
 # <a name="configure-server-parameters-in-azure-database-for-mysql-using-the-azure-portal"></a>Настройка параметров сервера в базе данных Azure для MySQL с помощью портал Azure
 
@@ -21,13 +21,13 @@ ms.locfileid: "89420699"
 
 1. Войдите на портал Azure, а затем найдите свою базу данных Azure для MySQL.
 2. В разделе **Параметры** щелкните **Параметры сервера**, чтобы открыть страницу параметров сервера для сервера Базы данных Azure для MySQL.
-![Страница параметров сервера на портале Azure](./media/howto-server-parameters/auzre-portal-server-parameters.png)
+:::image type="content" source="./media/howto-server-parameters/auzre-portal-server-parameters.png" alt-text="Страница параметров сервера на портале Azure":::
 3. Найдите все параметры, которые необходимо настроить. Просмотрите столбец **Описание**, чтобы понять назначение и допустимые значения.
-![Раскрывающийся список для перечисляемого типа](./media/howto-server-parameters/3-toggle_parameter.png)
+:::image type="content" source="./media/howto-server-parameters/3-toggle_parameter.png" alt-text="Раскрывающийся список для перечисляемого типа":::
 4. Нажмите кнопку  **сохранить** , чтобы сохранить изменения.
-![Сохранение или отмена изменений](./media/howto-server-parameters/4-save_parameters.png)
+:::image type="content" source="./media/howto-server-parameters/4-save_parameters.png" alt-text="Сохранение или отмена изменений":::
 5. Если вы сохранили новые значения параметров, всегда можно восстановить значения по умолчанию, выбрав **Сбросить все к значениям по умолчанию**.
-![Сбросить все к значениям по умолчанию](./media/howto-server-parameters/5-reset_parameters.png)
+:::image type="content" source="./media/howto-server-parameters/5-reset_parameters.png" alt-text="Сбросить все к значениям по умолчанию":::
 
 ## <a name="setting-parameters-not-listed"></a>Параметры настройки не указаны
 
@@ -41,7 +41,7 @@ ms.locfileid: "89420699"
 4. Нажмите кнопку **Сохранить**, чтобы сохранить изменения.
 
 >[!Note]
-> `init_connect` можно использовать для изменения параметров, которые не нуждаются в правах СУПЕРПОЛЬЗОВАТЕЛЯ на уровне сеанса. Чтобы проверить, можно ли задать параметр с помощью `init_connect` команды, выполните `set session parameter_name=YOUR_DESIRED_VALUE;` команду и, если она выдает **отказ в доступе, вам потребуются ошибки суперпользователя** , поэтому нельзя задать параметр с помощью "init_connect".
+> `init_connect` можно использовать для изменения параметров, которым не нужны привилегии SUPER на уровне сеанса. Чтобы проверить, можно ли задать параметр с помощью `init_connect`, выполните команду `set session parameter_name=YOUR_DESIRED_VALUE;`. Если отображается сообщение об ошибке **Access denied; you need SUPER privileges(s)** (Отказано в доступе. Для выполнения этого действия необходимо иметь привилегии SUPER.), то параметр нельзя задать с помощью init_connect.
 
 ## <a name="working-with-the-time-zone-parameter"></a>Работа с параметром часового пояса
 
@@ -69,7 +69,7 @@ SELECT name FROM mysql.time_zone_name;
 
 Часовой пояс глобального уровня можно задать на странице **Параметры сервера** на портале Azure. Ниже приведен пример, который задает глобальный часовой пояс "US/Pacific" (США, Тихоокеанский регион).
 
-![Настройка параметра часового пояса](./media/howto-server-parameters/timezone.png)
+:::image type="content" source="./media/howto-server-parameters/timezone.png" alt-text="Настройка параметра часового пояса":::
 
 ### <a name="setting-the-session-level-time-zone"></a>Настройка часового пояса уровня сеанса
 

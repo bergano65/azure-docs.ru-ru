@@ -4,12 +4,12 @@ description: Руководство по службе "Экземпляры ко
 ms.topic: tutorial
 ms.date: 12/18/2019
 ms.custom: seodec18, mvc
-ms.openlocfilehash: 1a5b9555572264b6a00b4ce73eaa0719d94fd99b
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: 44a7f21c067897b046413851ef5a2c73bfccc24f
+ms.sourcegitcommit: 7374b41bb1469f2e3ef119ffaf735f03f5fad484
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "78252156"
+ms.lasthandoff: 09/16/2020
+ms.locfileid: "90708042"
 ---
 # <a name="tutorial-create-an-azure-container-registry-and-push-a-container-image"></a>Руководство по Создание реестра контейнеров Azure и отправка образа контейнера
 
@@ -28,72 +28,13 @@ ms.locfileid: "78252156"
 
 [!INCLUDE [container-instances-tutorial-prerequisites](../../includes/container-instances-tutorial-prerequisites.md)]
 
-## <a name="create-azure-container-registry"></a>Создание реестра контейнеров Azure
-
-Перед созданием реестра контейнеров необходимо создать *группу ресурсов*, куда он будет развернут. Группа ресурсов — это логическая коллекция, в которой выполняется развертывание и администрирование всех ресурсов Azure.
-
-Создайте группу ресурсов с помощью команды [az group create][az-group-create]. В следующем примере создается группа ресурсов с именем *myResourceGroup* в регионе *eastus*.
-
-```azurecli
-az group create --name myResourceGroup --location eastus
-```
-
-После создания группы ресурсов создайте реестр контейнеров Azure с помощью команды [az acr create][az-acr-create]. Имя реестра контейнеров должно быть уникальным в пределах Azure и содержать от 5 до 50 буквенно-цифровых знаков. Замените `<acrName>` уникальным именем реестра.
-
-```azurecli
-az acr create --resource-group myResourceGroup --name <acrName> --sku Basic
-```
-
-Ниже приведен пример выходных данных для нового реестра контейнеров Azure с именем *mycontainerregistry082* (показаны в сокращенном виде).
-
-```output
-...
-{
-  "creationDate": "2018-03-16T21:54:47.297875+00:00",
-  "id": "/subscriptions/<Subscription ID>/resourceGroups/myResourceGroup/providers/Microsoft.ContainerRegistry/registries/mycontainerregistry082",
-  "location": "eastus",
-  "loginServer": "mycontainerregistry082.azurecr.io",
-  "name": "mycontainerregistry082",
-  "provisioningState": "Succeeded",
-  "resourceGroup": "myResourceGroup",
-  "sku": {
-    "name": "Basic",
-    "tier": "Basic"
-  },
-  "status": null,
-  "storageAccount": null,
-  "tags": {},
-  "type": "Microsoft.ContainerRegistry/registries"
-}
-```
-
-В остальной части руководства `<acrName>` используется как заполнитель для имени реестра контейнеров, выбранного на этом шаге.
-
-## <a name="log-in-to-container-registry"></a>Вход в реестр контейнеров
-
-Войдите в экземпляр реестра контейнеров Azure, прежде чем передавать в него образы. Используйте команду [az acr login][az-acr-login], чтобы выполнить операцию. Укажите уникальное имя реестра контейнеров, выбранное при его создании.
-
-```azurecli
-az acr login --name <acrName>
-```
-
-Пример:
-
-```azurecli
-az acr login --name mycontainerregistry082
-```
-
-По завершении команда возвращает `Login Succeeded`.
-
-```output
-Login Succeeded
-```
+[!INCLUDE [container-instances-create-registry](../../includes/container-instances-create-registry.md)]
 
 ## <a name="tag-container-image"></a>Добавление тега к образу контейнера
 
 Чтобы отправить образ контейнера в частный реестр, например в реестр контейнеров Azure, сначала необходимо добавить для образа тег с полным именем сервера входа в реестр.
 
-Сначала получите полное имя сервера входа в реестр для реестра контейнеров Azure. Выполните следующую команду [az acr show][az-acr-show] и замените `<acrName>` именем только что созданного реестра:
+Сначала получите полное имя сервера входа в реестр для реестра контейнеров Azure. Выполните следующую команду [az acr show][az-acr-show] и замените `<acrName>` на имя только что созданного реестра.
 
 ```azurecli
 az acr show --name <acrName> --query loginServer --output table
@@ -111,7 +52,7 @@ Result
 mycontainerregistry082.azurecr.io
 ```
 
-Теперь с помощью команды [docker images][docker-images] отобразите список локальных образов:
+Теперь с помощью команды [docker images][docker-images] отобразите список локальных образов.
 
 ```bash
 docker images
@@ -164,7 +105,7 @@ v1: digest: sha256:ed67fff971da47175856505585dcd92d1270c3b37543e8afd46014d328f05
 
 ## <a name="list-images-in-azure-container-registry"></a>Получение списка образов в реестре контейнеров Azure
 
-Чтобы проверить, находится ли отправленный образ в реестре контейнеров Azure, выведите список образов в реестре с помощью команды [az acr repository list][az-acr-repository-list]. Замените `<acrName>` именем реестра контейнеров.
+Чтобы проверить, находится ли отправлений образ в реестре контейнеров Azure, выведите список образов в реестре с помощью команды [az acr repository list][az-acr-repository-list]. Замените `<acrName>` именем реестра контейнеров.
 
 ```azurecli
 az acr repository list --name <acrName> --output table
@@ -182,13 +123,13 @@ Result
 aci-tutorial-app
 ```
 
-Чтобы просмотреть *теги* для конкретного образа, воспользуйтесь командой [az acr repository show-tags][az-acr-repository-show-tags].
+Чтобы увидеть *теги* для конкретного образа, используйте команду [az acr repository show-tags][az-acr-repository-show-tags].
 
 ```azurecli
 az acr repository show-tags --name <acrName> --repository aci-tutorial-app --output table
 ```
 
-Выходные данные должны иметь следующий вид.
+Вы должны увидеть результат, аналогичный приведенному ниже:
 
 ```console
 az acr repository show-tags --name mycontainerregistry082 --repository aci-tutorial-app --output table

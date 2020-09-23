@@ -1,6 +1,6 @@
 ---
 title: Руководство по Проектирование панели мониторинга для отображения данных в реальном времени — Гипермасштабирование (Citus) — База данных Azure для PostgreSQL
-description: В этом учебнике показано, как создавать и заполнять распределенные таблицы и выполнять к ним запрос с помощью решения "Гипермасштабирование (Citus)" в Базе данных Azure для PostgreSQL.
+description: В этом учебнике демонстрируется, как обеспечить параллельное выполнение запросов панели мониторинга в реальном времени с помощью Базы данных Azure для PostgreSQL с Гипермасштабированием (Citus).
 author: jonels-msft
 ms.author: jonels
 ms.service: postgresql
@@ -8,12 +8,12 @@ ms.subservice: hyperscale-citus
 ms.custom: mvc
 ms.topic: tutorial
 ms.date: 05/14/2019
-ms.openlocfilehash: db3cd95c5a833b299ee85c1e68b15644ae0e0226
-ms.sourcegitcommit: 5b8fb60a5ded05c5b7281094d18cf8ae15cb1d55
+ms.openlocfilehash: 41ac1cb856011d9730f7b49bbf85350f4dbccdbd
+ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87387580"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90895245"
 ---
 # <a name="tutorial-design-a-real-time-analytics-dashboard-by-using-azure-database-for-postgresql--hyperscale-citus"></a>Руководство по проектированию панели мониторинга для отображения данных в реальном времени с помощью Базы данных Azure для PostgreSQL с решением "Гипермасштабирование (Citus)"
 
@@ -226,6 +226,5 @@ DELETE FROM http_request_1min WHERE ingest_time < now() - interval '1 month';
 
 Из этого руководства вы узнали, как подготовить к работе группу серверов с подключенным решением Hyperscale (Citus). Вы подключились к ней с помощью psql, создали схему и выполнили распределение данных. Вы научились выполнять запросы к необработанным данным и регулярно агрегировать их, выполнять запрос к таблице агрегированных данных и удалять устаревшие данные.
 
-Теперь ознакомьтесь с основными понятиями гипермасштабирования.
-> [!div class="nextstepaction"]
-> [Типы гипермасштабируемых узлов](https://aka.ms/hyperscale-concepts)
+- Подробнее о [типах узлов](https://aka.ms/hyperscale-concepts) группы сервера.
+- Определите оптимальный [первоначальный размер](howto-hyperscale-scaling.md#picking-initial-size) для своей группы серверов.

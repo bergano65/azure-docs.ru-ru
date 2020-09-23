@@ -1,6 +1,6 @@
 ---
 title: Развертывание и создание прогнозов с помощью ONNX
-description: Узнайте, как обучить модель, преобразовать ее в ONNX, развернуть в Azure SQL (Предварительная версия) или Управляемый экземпляр Azure SQL (Предварительная версия), а затем запустить машинный прогноз на основе данных с помощью переданной модели ONNX.
+description: Узнайте, как обучить модель, преобразовать ее в ONNX, развернуть в Azure SQL или Azure SQL Управляемый экземпляр (Предварительная версия), а затем запустить машинный прогноз на основе данных с помощью переданной модели ONNX.
 keywords: Развертывание SQL для пограничных вычислений
 ms.prod: sql
 ms.technology: machine-learning
@@ -8,22 +8,22 @@ ms.topic: conceptual
 author: dphansen
 ms.author: davidph
 ms.date: 07/14/2020
-ms.openlocfilehash: eeb50f682c8b3b225c6574b5276722b79465a511
-ms.sourcegitcommit: 6fc156ceedd0fbbb2eec1e9f5e3c6d0915f65b8e
+ms.openlocfilehash: 1e70b48e4c28cdc74c5079e492b0266ea60900ad
+ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/21/2020
-ms.locfileid: "88718787"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90886817"
 ---
 # <a name="deploy-and-make-predictions-with-an-onnx-model"></a>Развертывание и создание прогнозов с помощью модели ONNX
 
-В этом кратком руководстве вы узнаете, как обучить модель, преобразовать ее в ONNX, развернуть в [Azure SQL (Предварительная версия)](onnx-overview.md) или [Azure SQL управляемый экземпляр (Предварительная версия)](../azure-sql/managed-instance/machine-learning-services-overview.md), а затем запустить машинный прогноз на основе данных с помощью переданной модели ONNX.
+В этом кратком руководстве вы узнаете, как обучить модель, преобразовать ее в ONNX, развернуть в [Azure SQL](onnx-overview.md) или [Azure SQL управляемый экземпляр (Предварительная версия)](../azure-sql/managed-instance/machine-learning-services-overview.md), а затем запустить машинный прогноз на основе данных с помощью переданной модели ONNX.
 
 Это краткое руководство основано на библиотеке машинного обучения **scikit-learn** и в нем используется [набор данных о жилье в Бостоне](https://scikit-learn.org/stable/modules/generated/sklearn.datasets.load_boston.html).
 
 ## <a name="before-you-begin"></a>Перед началом
 
-* Если вы используете Azure SQL Server и вы еще не развернули модуль Azure SQL, выполните действия, описанные в разделе [развертывание SQL Server (Предварительная версия) с помощью портал Azure](deploy-portal.md).
+* Если вы используете Azure SQL Server и вы еще не развернули модуль Azure SQL, выполните действия, описанные в разделе [развертывание SQL Server с помощью портал Azure](deploy-portal.md).
 
 * Установите [Azure Data Studio](https://docs.microsoft.com/sql/azure-data-studio/download).
 
