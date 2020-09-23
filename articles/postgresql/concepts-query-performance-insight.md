@@ -6,12 +6,12 @@ ms.author: raagyema
 ms.service: postgresql
 ms.topic: conceptual
 ms.date: 08/21/2019
-ms.openlocfilehash: dd5b4ec53d82421ddd9d680ca41e48eeecc43c2c
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: a7573e99de96e3d13509056c49bc24be7fe166bf
+ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "74768390"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90906531"
 ---
 # <a name="query-performance-insight"></a>Анализ производительности запросов 
 
@@ -30,7 +30,7 @@ ms.locfileid: "74768390"
 
 На странице портал сервера базы данных Azure для PostgreSQL выберите пункт анализ **производительности запросов** в разделе **Интеллектуальная производительность** в строке меню.
 
-![Анализ производительности медленно выполняющихся запросов](./media/concepts-query-performance-insight/query-performance-insight-landing-page.png)
+:::image type="content" source="./media/concepts-query-performance-insight/query-performance-insight-landing-page.png" alt-text="Анализ производительности медленно выполняющихся запросов":::
 
 На вкладке **длительные запросы** отображаются пять первых запросов по среднему времени выполнения, агрегированных за 15-минутные интервалы. Можно просмотреть дополнительные запросы, выбрав из раскрывающегося списка **число запросов** . При этом цвета, соответствующие тому или иному идентификатору запроса на графике, могут изменяться.
 
@@ -40,12 +40,12 @@ ms.locfileid: "74768390"
 
 Откройте вкладку **Статистика ожидания**, чтобы посмотреть визуализации ожидания на сервере.
 
-![Статистика ожидания в анализе производительности запросов](./media/concepts-query-performance-insight/query-performance-insight-wait-statistics.png)
+:::image type="content" source="./media/concepts-query-performance-insight/query-performance-insight-wait-statistics.png" alt-text="Статистика ожидания в анализе производительности запросов":::
 
-## <a name="considerations"></a>Особенности
+## <a name="considerations"></a>Рекомендации
 * Анализ производительности запросов недоступна для [реплик чтения](concepts-read-replicas.md).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 - Дополнительные сведения о [мониторинге и настройке](concepts-monitoring.md) см. в базе данных Azure для PostgreSQL.
 
 

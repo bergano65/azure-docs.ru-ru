@@ -3,12 +3,12 @@ title: Мониторинг приложений Docker в Azure Application Ins
 description: Счетчики производительности, события и исключения Docker могут отображаться в Application Insights вместе с данными телеметрии из контейнерных приложений.
 ms.topic: conceptual
 ms.date: 03/14/2019
-ms.openlocfilehash: 1cbb2968fec68eb750ce3c9b6cac09f23a1d36c5
-ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
+ms.openlocfilehash: 272b4e8af7b1ed3d01d8af0979b56954585f795d
+ms.sourcegitcommit: bdd5c76457b0f0504f4f679a316b959dcfabf1ef
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87324426"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90977590"
 ---
 # <a name="monitor-docker-applications-in-application-insights-deprecated"></a>Мониторинг приложений DOCKER в Application Insights (не рекомендуется)
 
@@ -61,7 +61,7 @@ ms.locfileid: "87324426"
     <Add type="com.microsoft.applicationinsights.extensibility.initializer.docker.DockerContextInitializer"/> 
 ```
 
-Это добавляет сведения телеметрии Docker, такие как контейнер и идентификатор узла, в каждый элемент, отправляемый из приложения.
+Это добавляет сведения DOCKER, такие как контейнер и идентификатор узла, в каждый элемент телеметрии, отправленный из приложения.
 
 ## <a name="view-your-telemetry"></a>Просмотр телеметрии
 Вернитесь к ресурсу Application Insights на портале Azure.
@@ -71,12 +71,12 @@ ms.locfileid: "87324426"
 Вскоре вы увидите данные, поступающие из приложения Docker, особенно при наличии других контейнеров, работающих в модуле Docker.
 
 ### <a name="docker-container-events"></a>События контейнера Docker
-![пример](./media/docker/13.png)
+![Снимок экрана: выбор поиска, диагностического окна результатов поиска со стрелкой, указывающей на пользовательское событие в окно с пользовательскими данными.](./media/docker/13.png)
 
 Для анализа отдельных событий щелкните [Поиск](./diagnostic-search.md). Найдите и отфильтруйте нужные вам события. Щелкните любое событие, чтобы просмотреть подробные данные.
 
 ### <a name="exceptions-by-container-name"></a>Исключения по имени контейнера
-![пример](./media/docker/14.png)
+![На снимке экрана показана страница обозреватель метрик с выбранной диаграммой, а в правой части — окно сведения о диаграмме.](./media/docker/14.png)
 
 ### <a name="docker-context-added-to-app-telemetry"></a>Добавление контекста Docker в телеметрию приложения
 Запрос данных телеметрии, отправленный из приложения, инструментированного с помощью пакета SDK AI, с дополнительной контекстной информацией Docker:

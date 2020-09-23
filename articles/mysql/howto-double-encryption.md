@@ -6,12 +6,12 @@ ms.author: manishku
 ms.service: mysql
 ms.topic: how-to
 ms.date: 06/30/2020
-ms.openlocfilehash: d3076f2591718931bdab4dba9510d25fe07b2d02
-ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
+ms.openlocfilehash: eafad5edf9dcac5745986d09060baf7e4278762d
+ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86118766"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90903972"
 ---
 # <a name="infrastructure-double-encryption-for-azure-database-for-mysql"></a>Двойное шифрование инфраструктуры для базы данных Azure для MySQL
 
@@ -29,19 +29,19 @@ ms.locfileid: "86118766"
 
 2. Выберите **Базы данных** > **База данных Azure для MySQL**. Чтобы найти службу, вы также можете ввести в поле поиска **MySQL**.
 
-   ![Пункт "База данных Azure для MySQL"](./media/quickstart-create-mysql-server-database-using-azure-portal/2_navigate-to-mysql.png)
+   :::image type="content" source="./media/quickstart-create-mysql-server-database-using-azure-portal/2_navigate-to-mysql.png" alt-text="Параметр базы данных Azure для MySQL":::
 
 3. Укажите основные сведения о сервере. Выберите **Дополнительные параметры** и включите флажок **двойное шифрование инфраструктуры** , чтобы задать параметр.
 
-    ![Параметры базы данных Azure для MySQL](./media/howto-double-encryption/infrastructure-encryption-selected.png)
+    :::image type="content" source="./media/howto-double-encryption/infrastructure-encryption-selected.png" alt-text="Параметры базы данных Azure для MySQL":::
 
-4. Выберите **Проверка + создать** , чтобы подготавливает сервер.
+4. Щелкните **Просмотр и создание**, чтобы подготовить сервер.
 
-    ![Сводка по базе данных Azure для MySQL](./media/howto-double-encryption/infrastructure-encryption-summary.png)
+    :::image type="content" source="./media/howto-double-encryption/infrastructure-encryption-summary.png" alt-text="Сводка по базе данных Azure для MySQL":::
 
 5. После создания сервера можно проверить двойное шифрование инфраструктуры, проверив состояние в колонке "сервер **шифрования данных** ".
 
-    ![Проверка базы данных Azure для MySQL](./media/howto-double-encryption/infrastructure-encryption-validation.png)
+    :::image type="content" source="./media/howto-double-encryption/infrastructure-encryption-validation.png" alt-text="Проверка базы данных Azure для MySQL":::
 
 ## <a name="create-an-azure-database-for-mysql-server-with-infrastructure-double-encryption---cli"></a>Создание базы данных Azure для сервера MySQL с помощью двойного шифрования инфраструктуры — CLI
 

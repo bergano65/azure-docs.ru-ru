@@ -86,12 +86,18 @@
     - name: Общие сведения о действиях
       displayName: 'order, evaluation'
       href: ./concepts/effects.md
+    - name: Область
+      displayName: 'location, notScope, exemption, waiver, save'
+      href: ./concepts/scope.md
     - name: Структура инициативы
       displayName: 'parameters, groups, domains, policies'
       href: ./concepts/initiative-definition-structure.md
     - name: Структура назначения
       displayName: 'parameters, enforcementmode, policyDefinitionId'
       href: ./concepts/assignment-structure.md
+    - name: Структура исключения
+      displayName: 'waiver, mitigated, compliance'
+      href: ./concepts/exemption-structure.md
     - name: Оценка влияния новой политики
       displayName: 'audit, enforcementmode, compliance'
       href: ./concepts/evaluate-impact.md

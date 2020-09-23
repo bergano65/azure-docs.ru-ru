@@ -8,12 +8,12 @@ ms.service: virtual-wan
 ms.topic: how-to
 ms.date: 06/05/2020
 ms.author: cherylmc
-ms.openlocfilehash: 4ce5bc3b4e5ccd26ec3f6b35c995ebe2274042c5
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: f0ff647581447ad4436daf6c8b1d2ecbf817f7f8
+ms.sourcegitcommit: bdd5c76457b0f0504f4f679a316b959dcfabf1ef
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84749722"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90983633"
 ---
 # <a name="azure-virtual-wan-logs-and-metrics"></a>Журналы и метрики виртуальной глобальной сети Azure
 
@@ -60,9 +60,9 @@ ms.locfileid: "84749722"
 
 2. Выберите **VPN (сайт-сайт)** , чтобы выбрать шлюз типа "сеть — сеть", **expressroute** , чтобы узнать шлюз ExpressRoute, или **VPN-подключение пользователя ("точка — сеть")** , чтобы выбрать шлюз "точка — сеть". На странице можно просмотреть сведения о шлюзе. Скопируйте эти сведения. Он будет использоваться позже для просмотра диагностики с помощью Azure Monitor.
 
-3. Выберите **метрики**.
+3. Выберите **Метрики**.
 
-   :::image type="content" source="./media/logs-metrics/metrics.png" alt-text="метрики":::
+   :::image type="content" source="./media/logs-metrics/metrics.png" alt-text="На снимке экрана показана панель "сайт-сайт" P N с представлением Azure Monitor выбрано.":::
 
 4. На странице **метрики** можно просмотреть интересующие вас метрики.
 
@@ -121,7 +121,7 @@ ms.locfileid: "84749722"
 
 Записи **журнала действий** собираются по умолчанию и могут быть просмотрены в портал Azure. Журналы действий Azure (ранее известные как *Операционные журналы* и *журналы аудита*) можно использовать для просмотра всех операций, отправленных в подписку Azure.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * См. дополнительные сведения об [отслеживании метрик и журналов Брандмауэра Azure](../firewall/tutorial-diagnostics.md).
 * Дополнительные сведения о метриках в Azure Monitor см. в разделе [метрики в Azure Monitor](../azure-monitor/platform/data-platform-metrics.md).

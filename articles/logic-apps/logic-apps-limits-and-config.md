@@ -6,12 +6,12 @@ ms.suite: integration
 ms.reviewer: jonfan, logicappspm
 ms.topic: article
 ms.date: 08/03/2020
-ms.openlocfilehash: 46f7c7185de559fb6b6545eb8f1b2113aa0ec4b2
-ms.sourcegitcommit: 07166a1ff8bd23f5e1c49d4fd12badbca5ebd19c
+ms.openlocfilehash: d5db970d4ed3c3988c96a2c0c33775bcbfb00d92
+ms.sourcegitcommit: bdd5c76457b0f0504f4f679a316b959dcfabf1ef
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90085014"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90986022"
 ---
 # <a name="limits-and-configuration-information-for-azure-logic-apps"></a>Ограничения и сведения о конфигурации для Azure Logic Apps
 
@@ -31,12 +31,13 @@ ms.locfileid: "90085014"
 | Триггеров для каждого рабочего процесса | 10 | При работе в представлении кода, а не в конструкторе |
 | Ограничение вариантов области параметров | 25 | |
 | Количество переменных на рабочий процесс | 250 | |
-| Максимальное число символов в выражении | 8192 | |
-| Максимальный размер `trackedProperties` | 16 000 символов |
 | Имя для `action` или `trigger` | 80 символов | |
+| Максимальное число символов в выражении | 8192 | |
 | Длина `description` | 256 символов | |
-| Не более `parameters` | 50 | |
-| Не более `outputs` | 10 | |
+| Максимальное число `parameters` | 50 | |
+| Максимальное число `outputs` | 10 | |
+| Максимальный размер `trackedProperties` | 16 000 символов |
+| Действие встроенного кода — максимальное число символов в коде | 1 024 символов <p>Чтобы ограничить 100 000 символов, создайте приложения логики с помощью Visual Studio Code и [расширения **Azure Logic Apps** предварительной версии](../logic-apps/create-stateful-stateless-workflows-visual-studio-code.md). |
 
 <a name="run-duration-retention-limits"></a>
 

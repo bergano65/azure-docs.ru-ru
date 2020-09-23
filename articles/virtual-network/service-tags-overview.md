@@ -13,12 +13,12 @@ ms.workload: infrastructure-services
 ms.date: 05/18/2020
 ms.author: kumud
 ms.reviewer: kumud
-ms.openlocfilehash: ce4c44ef17f456a776fde3addc5ec4ed29c8ebbd
-ms.sourcegitcommit: bf1340bb706cf31bb002128e272b8322f37d53dd
+ms.openlocfilehash: fd6894ea90dc6cb3cc721438ba73a94b43c36a5b
+ms.sourcegitcommit: bdd5c76457b0f0504f4f679a316b959dcfabf1ef
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/03/2020
-ms.locfileid: "89434458"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90983697"
 ---
 # <a name="virtual-network-service-tags"></a>Теги службы виртуальной сети
 <a name="network-service-tags"></a>
@@ -67,7 +67,7 @@ ms.locfileid: "89434458"
 | **AzureInformationProtection** | Azure Information Protection.<br/><br/>*Примечание.* Этот тег зависит от тегов **AzureActiveDirectory**, **AzureFrontDoor.Frontend** и **AzureFrontDoor.FirstParty**. | Исходящие | Нет | Нет |
 | **AzureIoTHub** | Центр Интернета вещей Azure. | Исходящие | Нет | Нет |
 | **AzureKeyVault** | Azure Key Vault.<br/><br/>*Примечание.* Этот тег зависит от тега **AzureActiveDirectory**. | Исходящие | Да | Да |
-| **AzureLoadBalancer**. | Подсистема балансировки нагрузки инфраструктуры Azure. Этот тег преобразуется в [виртуальный IP-адрес узла](security-overview.md#azure-platform-considerations) (168.63.129.16), из которого поступают пробы работоспособности Azure. Это не включает трафик к ресурсу Azure Load Balancer. Если Azure Load Balancer не используется, это правило можно переопределить. | both | Нет | Нет |
+| **AzureLoadBalancer**. | Подсистема балансировки нагрузки инфраструктуры Azure. Этот тег преобразуется в [виртуальный IP-адрес узла](security-overview.md#azure-platform-considerations) (168.63.129.16), из которого поступают пробы работоспособности Azure. Сюда входит только пробный трафик, а не реальный трафик к внутреннему ресурсу. Если Azure Load Balancer не используется, это правило можно переопределить. | both | Нет | Нет |
 | **AzureMachineLearning** | Машинное обучение Azure. | both | Нет | Да |
 | **AzureMonitor** | Log Analytics, Application Insights, AzMon и настраиваемые метрики (конечные точки GiG).<br/><br/>*Примечание.* Для Log Analytics этот тег зависит от тега **Storage**. | Исходящие | Нет | Да |
 | **AzureOpenDatasets** | Открытые наборы данных Azure.<br/><br/>*Примечание.* Этот тег зависит от тегов **AzureFrontDoor.Frontend** и **Storage**. | Исходящие | Нет | Нет |

@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: identity
 ms.date: 02/25/2018
 ms.author: barclayn
-ms.openlocfilehash: 5b298767f9814f76dd606bab29bd0b245dad6937
-ms.sourcegitcommit: bcda98171d6e81795e723e525f81e6235f044e52
+ms.openlocfilehash: 84a262cae17a4e26724ab06da397e699e09468db
+ms.sourcegitcommit: bdd5c76457b0f0504f4f679a316b959dcfabf1ef
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/01/2020
-ms.locfileid: "89260192"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90969206"
 ---
 # <a name="how-to-stop-using-the-virtual-machine-managed-identities-extension-and-start-using-the-azure-instance-metadata-service"></a>Как отключить использование расширения управляемых удостоверений виртуальной машины и начать использовать службу метаданных экземпляра Azure
 
@@ -37,8 +37,8 @@ ms.locfileid: "89260192"
 
 Если для виртуальной машины или масштабируемого набора виртуальных машин настроено управляемое удостоверение, при необходимости вы можете выбрать подготовку управляемых удостоверений для расширения виртуальной машины ресурсов Azure с помощью `-Type` параметра командлета [Set-азвмекстенсион](/powershell/module/az.compute/set-azvmextension) . Вы можете передать значение `ManagedIdentityExtensionForWindows` или `ManagedIdentityExtensionForLinux` , в зависимости от типа виртуальной машины, и присвоить ему имя с помощью `-Name` параметра. В параметре `-Settings` указан порт, используемый конечной точкой токена OAuth для получения токена:
 
-```powershell
-   $settings = @{ "port" = 50342 }
+```azurepowershell-interactive
+$settings = @{ "port" = 50342 }
    Set-AzVMExtension -ResourceGroupName myResourceGroup -Location WestUS -VMName myVM -Name "ManagedIdentityExtensionForWindows" -Type "ManagedIdentityExtensionForWindows" -Publisher "Microsoft.ManagedIdentity" -TypeHandlerVersion "1.0" -Settings $settings 
 ```
 
@@ -68,7 +68,7 @@ ms.locfileid: "89260192"
     
 При работе с масштабируемыми наборами виртуальных машин можно также подготавливать управляемые удостоверения для расширения масштабируемого набора виртуальных машин Azure Resources с помощью командлета [Add-азвмссекстенсион](/powershell/module/az.compute/add-azvmssextension) . Вы можете передать значение `ManagedIdentityExtensionForWindows` или `ManagedIdentityExtensionForLinux` , в зависимости от типа масштабируемого набора виртуальных машин, и присвоить ему имя с помощью `-Name` параметра. В параметре `-Settings` указан порт, используемый конечной точкой токена OAuth для получения токена:
 
-   ```powershell
+   ```azurepowershell-interactive
    $setting = @{ "port" = 50342 }
    $vmss = Get-AzVmss
    Add-AzVmssExtension -VirtualMachineScaleSet $vmss -Name "ManagedIdentityExtensionForWindows" -Type "ManagedIdentityExtensionForWindows" -Publisher "Microsoft.ManagedIdentity" -TypeHandlerVersion "1.0" -Setting $settings 
@@ -106,7 +106,7 @@ az vm identity --resource-group myResourceGroup --vm-name myVm -n ManagedIdentit
 az vmss extension delete -n ManagedIdentityExtensionForWindows -g myResourceGroup -vmss-name myVMSS
 ```
 
-```powershell
+```azurepowershell-interactive
 Remove-AzVMExtension -ResourceGroupName myResourceGroup -Name "ManagedIdentityExtensionForWindows" -VMName myVM
 ```
 
@@ -162,7 +162,7 @@ Content-Type: application/json
 
 При завершении работы расширения в Windows и некоторых версиях Linux вы можете перезапустить его вручную с помощью следующего командлета:
 
-```powershell
+```azurepowershell-interactive
 Set-AzVMExtension -Name <extension name>  -Type <extension Type>  -Location <location> -Publisher Microsoft.ManagedIdentity -VMName <vm name> -ResourceGroupName <resource group name> -ForceRerun <Any string different from any last value used>
 ```
 
@@ -209,7 +209,7 @@ Set-AzVMExtension -Name <extension name>  -Type <extension Type>  -Location <loc
 По этим причинам служба IMDS Azure является нерекомендуемым способом запроса токенов, как только расширение виртуальной машины будет признано устаревшим. 
 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Next Steps
 
 * [Использование управляемых удостоверений для ресурсов Azure на виртуальной машине Azure для получения маркера доступа](how-to-use-vm-token.md)
 * [Служба метаданных экземпляров Azure](../../virtual-machines/windows/instance-metadata-service.md)

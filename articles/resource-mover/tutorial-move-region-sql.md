@@ -8,12 +8,12 @@ ms.topic: tutorial
 ms.date: 09/09/2020
 ms.author: raynew
 ms.custom: mvc
-ms.openlocfilehash: 0718151039d88ffb76a07ce082c08fb011dab88b
-ms.sourcegitcommit: 3be3537ead3388a6810410dfbfe19fc210f89fec
+ms.openlocfilehash: e3e2c9aa42ff3189e90f57d7c6e92b2a71f46639
+ms.sourcegitcommit: 51df05f27adb8f3ce67ad11d75cb0ee0b016dc5d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89652519"
+ms.lasthandoff: 09/14/2020
+ms.locfileid: "90061616"
 ---
 # <a name="tutorial-move-azure-sql-database-resources-to-another-region"></a>Руководство по Перемещение ресурсов Базы данных SQL Azure в другой регион
 
@@ -77,7 +77,6 @@ ms.locfileid: "89652519"
 
 3. В разделе **Перемещение ресурсов** > **Источник и назначение** выберите исходную подписку и регион.
 4. В разделе **Назначение** выберите регион, в который необходимо переместить ресурсы. Затем нажмите кнопку **Далее**.
-5. В разделе **Metadata region** (Регион метаданных) выберите место хранения метаданных ресурсов, которые вы перемещаете. Группа ресурсов создается специально для этой цели. Затем нажмите кнопку **Далее**.
 
     ![Страница для выбора исходного и целевого региона](./media/tutorial-move-region-sql/source-target.png)
 

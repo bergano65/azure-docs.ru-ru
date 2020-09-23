@@ -11,15 +11,15 @@ author: lostmygithubaccount
 ms.date: 06/25/2020
 ms.topic: conceptual
 ms.custom: how-to
-ms.openlocfilehash: 4b2b435be2a39b6e31a7f44fa6acbe7e1bc9c2c0
-ms.sourcegitcommit: f8d2ae6f91be1ab0bc91ee45c379811905185d07
+ms.openlocfilehash: d60a963f8ad4b29d3c282d30e6aca9973208860b
+ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89661670"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90905151"
 ---
 # <a name="detect-data-drift-preview-on-datasets"></a>Обнаружение смещения данных (Предварительная версия) в наборах
-[!INCLUDE [applies-to-skus](../../includes/aml-applies-to-basic-enterprise-sku.md)]
+
 
 > [!IMPORTANT]
 > В настоящее время в общедоступной предварительной версии обнаружение данных о смещении в них не осуществляется.
@@ -37,9 +37,6 @@ ms.locfileid: "89661670"
 Для создания монитора используется [набор данных машинного обучения Azure](how-to-create-register-datasets.md) . Набор данных должен включать столбец timestamp.
 
 Метрики смещения данных можно просмотреть с помощью пакета SDK для Python или в Машинное обучение Azure Studio.  Другие метрики и аналитические сведения доступны в ресурсе [Azure Application Insights](https://docs.microsoft.com/azure/azure-monitor/app/app-insights-overview) , связанном с рабочей областью машинное обучение Azure.
-
-> [!Important]
-> Отслеживание смещения данных с помощью пакета SDK доступно во всех выпусках. Однако отслеживание данных с помощью студии в Интернете является только Enterprise Edition.
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -135,7 +132,6 @@ dset = dset.register(ws, 'target')
 Полный пример использования `timeseries` наборов данных см. в [примере записной книжки](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/work-with-data/datasets-tutorial/timeseries-datasets/tabular-timeseries-dataset-filtering.ipynb) или в [документации по пакету SDK для наборов данных](https://docs.microsoft.com/python/api/azureml-core/azureml.data.tabulardataset?view=azure-ml-py#&preserve-view=truewith-timestamp-columns-timestamp-none--partition-timestamp-none--validate-false----kwargs-).
 
 ### <a name="azure-machine-learning-studio"></a><a name="studio-dataset"></a>Студия машинного обучения Azure.
-[!INCLUDE [applies-to-skus](../../includes/aml-applies-to-enterprise-sku-inline.md)]
 
 При создании набора данных с помощью Машинное обучение Azure Studio убедитесь, что путь к данным содержит сведения о метке времени, включает все вложенные папки с данными и задает формат раздела.
 
@@ -209,15 +205,13 @@ monitor = monitor.enable_schedule()
 Полный пример настройки `timeseries` набора данных и средства обнаружения смещения данных см. в нашем [примере записной книжки](https://aka.ms/datadrift-notebook).
 
 ### <a name="azure-machine-learning-studio"></a><a name="studio-monitor"></a> Машинное обучение Azure Studio
-[!INCLUDE [applies-to-skus](../../includes/aml-applies-to-enterprise-sku-inline.md)]
 
-Чтобы настроить оповещения в мониторе набора данных, Рабочая область, содержащая набор данных, для которого необходимо создать монитор, должен иметь возможности выпуска Enterprise Edition.
+1. Перейдите на [домашнюю страницу Studio](https://ml.azure.com).
+1. Выберите вкладку **наборы данных** слева. 
+1. Выберите **мониторы набора данных**.
+   ![Список мониторов](./media/how-to-monitor-datasets/monitor-list.png)
 
-После подтверждения функциональности рабочей области перейдите на [домашнюю страницу Studio](https://ml.azure.com) и выберите вкладку **наборы данных** слева. Выберите **мониторы набора данных**.
-
-![Список мониторов](./media/how-to-monitor-datasets/monitor-list.png)
-
-Нажмите кнопку **+ Создать монитор** и продолжайте работу с мастером, нажав кнопку **Далее**.  
+1. Нажмите кнопку **+ Создать монитор** и продолжайте работу с мастером, нажав кнопку **Далее**.  
 
 :::image type="content" source="media/how-to-monitor-datasets/wizard.png" alt-text="Мастер создания монитора":::
 

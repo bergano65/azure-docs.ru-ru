@@ -3,12 +3,12 @@ title: Настройка кластера Kubernetes с включенной с
 description: В этой статье описывается, как настроить мониторинг с помощью Azure Monitor для контейнеров в кластерах Kubernetes с включенной службой ARC.
 ms.topic: conceptual
 ms.date: 06/23/2020
-ms.openlocfilehash: 54a8fea6ddb46dc00fff29ad83a2a348d9218380
-ms.sourcegitcommit: 07166a1ff8bd23f5e1c49d4fd12badbca5ebd19c
+ms.openlocfilehash: 44512acbd09df449dbba2177bb10f22f480b82d6
+ms.sourcegitcommit: bdd5c76457b0f0504f4f679a316b959dcfabf1ef
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90090624"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90977523"
 ---
 # <a name="enable-monitoring-of-azure-arc-enabled-kubernetes-cluster"></a>Включение мониторинга кластера Kubernetes с включенной службой "Дуга Azure"
 
@@ -32,7 +32,7 @@ Azure Monitor для контейнеров поддерживает монит�
 
 - Поддерживается выпуск ОС Linux для основных и рабочих узлов: Ubuntu (18,04 LTS и 16,04 LTS).
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы начать, у вас должны быть следующие компоненты:
 
@@ -63,7 +63,7 @@ Azure Monitor для контейнеров поддерживает монит�
     >[!IMPORTANT]
     >Минимальная версия агента, поддерживаемая для мониторинга кластеров Kubernetes с поддержкой Arc, — это ciprod04162020 или более поздней версии.
 
-- При включении мониторинга с помощью метода PowerShell необходимо использовать [PowerShell Core](/powershell/scripting/install/installing-powershell?view=powershell-6) .
+- При включении мониторинга с помощью метода PowerShell необходимо использовать [PowerShell Core](/powershell/scripting/install/installing-powershell?view=powershell-6&preserve-view=true) .
 
 - При включении мониторинга с помощью метода Bash в скрипте требуется [Версия 4 Bash](https://www.gnu.org/software/bash/) .
 
@@ -137,6 +137,33 @@ Azure Monitor для контейнеров поддерживает монит�
 
 После включения мониторинга может пройти около 15 минут, прежде чем вы сможете просмотреть метрики работоспособности кластера.
 
+### <a name="using-service-principal"></a>Использование субъекта-службы
+В *enable-monitoring.ps1* сценария используется имя входа интерактивного устройства. Если вы предпочитаете неинтерактивное имя входа, можно использовать существующий субъект-службу или создать новый, имеющий необходимые разрешения, как описано в разделе [Предварительные требования](#prerequisites). Чтобы использовать субъект-службу, необходимо передать параметры $servicePrincipalClientId, $servicePrincipalClientSecret и $tenantId, указав значения субъекта-службы, которые будут использоваться для *enable-monitoring.ps1* сценария.
+
+```powershell
+$subscriptionId = "<subscription Id of the Azure Arc connected cluster resource>"
+$servicePrincipal = New-AzADServicePrincipal -Role Contributor -Scope "/subscriptions/$subscriptionId"
+```
+
+Приведенные ниже назначения ролей применимы только при использовании существующей рабочей области Log Analytics в другой подписке Azure, чем кластерный ресурс Arc K8s.
+
+```powershell
+$logAnalyticsWorkspaceResourceId = "<Azure Resource Id of the Log Analytics Workspace>" # format of the Azure Log Analytics workspace should be /subscriptions/<subId>/resourcegroups/<rgName>/providers/microsoft.operationalinsights/workspaces/<workspaceName>
+New-AzRoleAssignment -RoleDefinitionName 'Log Analytics Contributor'  -ObjectId $servicePrincipal.Id -Scope  $logAnalyticsWorkspaceResourceId
+
+$servicePrincipalClientId =  $servicePrincipal.ApplicationId.ToString()
+$servicePrincipalClientSecret = [System.Net.NetworkCredential]::new("", $servicePrincipal.Secret).Password
+$tenantId = (Get-AzSubscription -SubscriptionId $subscriptionId).TenantId
+```
+
+Пример:
+
+```powershell
+.\enable-monitoring.ps1 -clusterResourceId $azureArcClusterResourceId -servicePrincipalClientId $servicePrincipalClientId -servicePrincipalClientSecret $servicePrincipalClientSecret -tenantId $tenantId -kubeContext $kubeContext -workspaceResourceId $logAnalyticsWorkspaceResourceId -proxyEndpoint $proxyEndpoint
+```
+
+
+
 ## <a name="enable-using-bash-script"></a>Включить использование Bash скрипта
 
 Чтобы включить мониторинг с помощью предоставленного скрипта bash, выполните следующие действия.
@@ -162,7 +189,7 @@ Azure Monitor для контейнеров поддерживает монит�
 4. Если вы хотите использовать существующую рабочую область Azure Monitor Log Analytics, настройте переменную `logAnalyticsWorkspaceResourceId` с соответствующим значением, представляющим идентификатор ресурса рабочей области. В противном случае задайте для переменной значение `""` , и скрипт создаст рабочую область по умолчанию в группе ресурсов по умолчанию подписки на кластер, если она еще не существует в регионе. Созданная Рабочая область по умолчанию напоминает формат *DefaultWorkspace- \<SubscriptionID> - \<Region> *.
 
     ```bash
-    export logAnalyticsWorkspaceResourceId=“/subscriptions/<subscriptionId>/resourceGroups/<resourceGroup>/providers/microsoft.operationalinsights/workspaces/<workspaceName>”
+    export logAnalyticsWorkspaceResourceId="/subscriptions/<subscriptionId>/resourceGroups/<resourceGroup>/providers/microsoft.operationalinsights/workspaces/<workspaceName>"
     ```
 
 5. Если кластер Kubernetes с поддержкой Arc взаимодействует через прокси-сервер, настройте переменную `proxyEndpoint` URL-адресом прокси-сервера. Если кластер не обменивается данными через прокси-сервер, можно задать для него значение `""` . Дополнительные сведения см. в разделе [Настройка конечной точки прокси-сервера](#configure-proxy-endpoint) далее в этой статье.
@@ -195,6 +222,31 @@ Azure Monitor для контейнеров поддерживает монит�
 
 После включения мониторинга может пройти около 15 минут, прежде чем вы сможете просмотреть метрики работоспособности кластера.
 
+### <a name="using-service-principal"></a>Использование субъекта-службы
+В скрипте Bash *Enable-Monitoring.sh* используется имя входа интерактивного устройства. Если вы предпочитаете неинтерактивное имя входа, можно использовать существующий субъект-службу или создать новый, имеющий необходимые разрешения, как описано в разделе [Предварительные требования](#prerequisites). Чтобы использовать субъект-службу, необходимо передать значения типа "Client-ID", "--Client-Secret" и "--Клиент-ID" субъекта службы, который будет использоваться для *Enable-Monitoring.sh* Bash-скрипта.
+
+```bash
+subscriptionId="<subscription Id of the Azure Arc connected cluster resource>"
+servicePrincipal=$(az ad sp create-for-rbac --role="Contributor" --scopes="/subscriptions/${subscriptionId}")
+servicePrincipalClientId=$(echo $servicePrincipal | jq -r '.appId')
+```
+
+Приведенные ниже назначения ролей применимы только при использовании существующей рабочей области Log Analytics в другой подписке Azure, чем кластерный ресурс Arc K8s.
+
+```bash
+logAnalyticsWorkspaceResourceId="<Azure Resource Id of the Log Analytics Workspace>" # format of the Azure Log Analytics workspace should be /subscriptions/<subId>/resourcegroups/<rgName>/providers/microsoft.operationalinsights/workspaces/<workspaceName>
+az role assignment create --role 'Log Analytics Contributor' --assignee $servicePrincipalClientId --scope $logAnalyticsWorkspaceResourceId
+
+servicePrincipalClientSecret=$(echo $servicePrincipal | jq -r '.password')
+tenantId=$(echo $servicePrincipal | jq -r '.tenant')
+```
+
+Пример:
+
+```bash
+bash enable-monitoring.sh --resource-id $azureArcClusterResourceId --client-id $servicePrincipalClientId --client-secret $servicePrincipalClientSecret  --tenant-id $tenantId --kube-context $kubeContext  --workspace-id $logAnalyticsWorkspaceResourceId --proxy $proxyEndpoint
+```
+
 ## <a name="configure-proxy-endpoint"></a>Настройка конечной точки прокси-сервера
 
 С контейнерным агентом для Azure Monitor для контейнеров можно настроить конечную точку прокси, чтобы разрешить ей взаимодействовать через прокси-сервер. Обмен данными между контейнерным агентом и Azure Monitor может быть прокси-сервером HTTP или HTTPS, и анонимная и обычная проверка подлинности (имя пользователя и пароль) поддерживаются.
@@ -212,7 +264,7 @@ Azure Monitor для контейнеров поддерживает монит�
 |proxyhost | Адрес или полное доменное имя прокси-сервера |
 |порт | Необязательный номер порта прокси-сервера |
 
-Пример: `http://user01:password@proxy01.contoso.com:3128`
+Например: `http://user01:password@proxy01.contoso.com:3128`
 
 Если указать протокол как **http**, HTTP-запросы создаются с помощью защищенного соединения SSL/TLS. Прокси-сервер должен поддерживать протоколы SSL/TLS.
 

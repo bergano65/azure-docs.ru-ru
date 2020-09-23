@@ -1,6 +1,6 @@
 ---
 title: Общие сведения о книгах Azure Monitor
-description: Упростите создание сложных отчетов с помощью готовых настраиваемых параметризованных книг
+description: Узнайте, как книги предоставляют гибкий холст для анализа данных и создания сложных визуальных отчетов в портал Azure.
 author: mrbullwinkle
 manager: carmonm
 services: azure-monitor
@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ibiza
 ms.topic: conceptual
 ms.date: 07/23/2020
 ms.author: mbullwin
-ms.openlocfilehash: 18e757ccac56d2165a1b46bb73a698ac754177b7
-ms.sourcegitcommit: f8d2ae6f91be1ab0bc91ee45c379811905185d07
+ms.openlocfilehash: d6ac552640b4a557c51b674624e6a4493241e0ed
+ms.sourcegitcommit: bdd5c76457b0f0504f4f679a316b959dcfabf1ef
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89657952"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90977567"
 ---
 # <a name="azure-monitor-workbooks"></a>Azure Monitor книги
 
@@ -129,7 +129,7 @@ ms.locfileid: "89657952"
 
 Создав собственные шаблоны книг, вы можете поделиться им с более широким сообществом. Чтобы узнать больше, а также просмотреть другие шаблоны, которые не входят в представление коллекции по умолчанию Azure Monitor, посетите наш [репозиторий GitHub](https://github.com/Microsoft/Application-Insights-Workbooks/blob/master/README.md). Чтобы просмотреть существующие книги, посетите [библиотеку книг](https://github.com/microsoft/Application-Insights-Workbooks/tree/master/Workbooks) на сайте GitHub.
 
-## <a name="next-step"></a>Следующий шаг
+## <a name="next-step"></a>Дальнейшие действия
 
 * [Узнайте](workbooks-visualizations.md) больше о книгах с множеством разнообразных вариантов визуализации.
 * [Управление](workbooks-access-control.md) доступом к ресурсам книги и предоставление общего доступа к ним.

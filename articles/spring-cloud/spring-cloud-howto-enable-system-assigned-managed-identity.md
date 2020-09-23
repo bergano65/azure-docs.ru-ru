@@ -7,14 +7,17 @@ ms.service: spring-cloud
 ms.topic: how-to
 ms.date: 05/13/2020
 ms.custom: devx-track-java
-ms.openlocfilehash: 0c092052e05f355838f3853fa7376b46ef743de7
-ms.sourcegitcommit: 58d3b3314df4ba3cabd4d4a6016b22fa5264f05a
+ms.openlocfilehash: bff98ea3470110bc29f75361fb3a2adc685e2602
+ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89299651"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90888568"
 ---
 # <a name="how-to-enable-system-assigned-managed-identity-for-azure-spring-cloud-application"></a>Как включить управляемое удостоверение, назначенное системой, для приложения Azure Spring Cloud
+
+**Эта статья относится к:** ✔️ Java ✔️ C #
+
 Управляемые удостоверения для ресурсов Azure предоставляют автоматически управляемое удостоверение в Azure Active Directory к ресурсу Azure, например к облачному приложению Azure весны. Это удостоверение можно использовать для аутентификации в любой службе, которая поддерживает аутентификацию Azure AD, не храня какие-либо учетные данные в коде.
 
 В этой статье показано, как включить и отключить назначенные системой управляемые удостоверения для облачного приложения Azure весны с помощью портал Azure и CLI (доступно в версии 0.2.4).
@@ -81,7 +84,8 @@ az spring-cloud app identity remove -n app_name -s service_name -g resource_grou
 ```
 
 ## <a name="next-steps"></a>Дальнейшие действия
-* [Использование управляемых удостоверений с пакетом SDK для Java](https://github.com/Azure-Samples/Azure-Spring-Cloud-Samples)
+
 * [Доступ к Azure Key Vault с управляемыми удостоверениями в пружинной заначальной загрузке](https://github.com/Azure/azure-sdk-for-java/blob/master/sdk/spring/azure-spring-boot-starter-keyvault-secrets/README.md#use-msi--managed-identities)
 * [Дополнительные сведения об управляемых удостоверениях для ресурсов Azure](https://github.com/MicrosoftDocs/azure-docs/blob/master/articles/active-directory/managed-identities-azure-resources/overview.md)
+* [Использование управляемых удостоверений с пакетом SDK для Java](https://github.com/Azure-Samples/Azure-Spring-Cloud-Samples)
 

@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 06/12/2020
 ms.author: bwren
 ms.subservice: logs
-ms.openlocfilehash: e6fb2f09200e42f7ad7781716bb83ab418134509
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.openlocfilehash: 089c53c72ae2c4cf6216937e8977b64a7abf80fc
+ms.sourcegitcommit: bdd5c76457b0f0504f4f679a316b959dcfabf1ef
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86516147"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90983215"
 ---
 # <a name="azure-activity-log"></a>Журнал действий Azure
 Журнал действий — это [Журнал платформы](platform-logs-overview.md) в Azure, который предоставляет подробные сведения о событиях уровня подписки. например об изменении ресурса или запуске виртуальной машины. Вы можете просмотреть журнал действий на портале Azure или получить записи с помощью PowerShell и CLI. Для дополнительной функциональности следует создать параметр диагностики для отправки журнала действий в [журналы Azure Monitor](data-platform-logs.md), в концентраторы событий Azure для пересылки за пределы Azure или в службу хранилища Azure для архивации. Эта статья содержит сведения о просмотре журнала действий и его отправке в различные назначения.
@@ -156,7 +156,7 @@ insights-logs-networksecuritygrouprulecounter/resourceId=/SUBSCRIPTIONS/00000000
 
 Каждый большой двоичный объект PT1H.json содержит большой двоичный объект JSON с событиями, произошедшими в течение часа, указанного в URL-адресе этого объекта (например, h=12). В течение заданного часа события добавляются в файл PT1H.json по мере возникновения. Значение минуты (m = 00) всегда равно 00, так как события журнала ресурсов разбиваются на отдельные большие двоичные объекты в час.
 
-Каждое событие хранится в PT1H.jsв файле со следующим форматом, который использует общую схему верхнего уровня, но для каждой категории в ином случае уникален, как описано в [схеме журнала действий](activity-log-schema.md).
+Каждое событие хранится в PT1H.jsв файле со следующим форматом, который использует общую схему верхнего уровня, но для каждой категории в ином случае уникален, как описано в  [схеме журнала действий](activity-log-schema.md).
 
 ``` JSON
 { "time": "2020-06-12T13:07:46.766Z", "resourceId": "/SUBSCRIPTIONS/00000000-0000-0000-0000-000000000000/RESOURCEGROUPS/MY-RESOURCE-GROUP/PROVIDERS/MICROSOFT.COMPUTE/VIRTUALMACHINES/MV-VM-01", "correlationId": "0f0cb6b4-804b-4129-b893-70aeeb63997e", "operationName": "Microsoft.Resourcehealth/healthevent/Updated/action", "level": "Information", "resultType": "Updated", "category": "ResourceHealth", "properties": {"eventCategory":"ResourceHealth","eventProperties":{"title":"This virtual machine is starting as requested by an authorized user or process. It will be online shortly.","details":"VirtualMachineStartInitiatedByControlPlane","currentHealthStatus":"Unknown","previousHealthStatus":"Unknown","type":"Downtime","cause":"UserInitiated"}}}
@@ -259,7 +259,7 @@ insights-logs-networksecuritygrouprulecounter/resourceId=/SUBSCRIPTIONS/00000000
 1. В разделе **Источники данных рабочей области** в меню рабочей области выберите **Журнал действий Azure**.
 1. Щелкните подписку, которую нужно подключить.
 
-    ![Рабочие области](media/activity-log-collect/workspaces.png)
+    ![На снимке экрана показана Log Analytics Рабочая область с выбранным журналом действий Azure.](media/activity-log-collect/workspaces.png)
 
 1. Нажмите кнопку **подключить** , чтобы подключить журнал действий в подписке к выбранной рабочей области. Если подписка уже подключена к другой рабочей области, нажмите кнопку **Отключить** сначала, чтобы отключить ее.
 
