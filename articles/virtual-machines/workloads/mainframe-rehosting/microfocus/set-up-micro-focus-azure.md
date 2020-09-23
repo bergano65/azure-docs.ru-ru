@@ -1,6 +1,6 @@
 ---
 title: Установка Micro Focus Enterprise Server 5,0 и Enterprise Developer 5,0 в Azure | Документация Майкрософт
-description: Перемещайте рабочие нагрузки мэйнфреймов IBM z/OS с помощью среды разработки и тестирования Micro Focus на виртуальных машинах Azure.
+description: Из этой статьи вы узнаете, как установить Micro Focus Enterprise Server 5,0 и Enterprise Developer 5,0 на Microsoft Azure.
 services: virtual-machines-linux
 documentationcenter: ''
 author: maggsl
@@ -12,12 +12,12 @@ ms.date: 06/29/2020
 tags: ''
 keywords: ''
 ms.service: multiple
-ms.openlocfilehash: 59566fc051b1e84d8e271b3c9d061f2481dcc58f
-ms.sourcegitcommit: c293217e2d829b752771dab52b96529a5442a190
+ms.openlocfilehash: 11fde4480f4e2ed9feda00fa2af0e5937a77b9ad
+ms.sourcegitcommit: bdd5c76457b0f0504f4f679a316b959dcfabf1ef
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/15/2020
-ms.locfileid: "88245321"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90986881"
 ---
 # <a name="install-micro-focus-enterprise-server-50-and-enterprise-developer-50-on-azure"></a>Установка Micro Focus Enterprise Server 5,0 и Enterprise Developer 5,0 в Azure
 
@@ -29,7 +29,7 @@ ms.locfileid: "88245321"
 
 Соответствующей средой разработки для Enterprise Server является корпоративный разработчик, работающий на Microsoft Visual Studio 2017 или более поздней версии, Visual Studio Community (бесплатная для загрузки) или Eclipse. В этой статье показано, как развернуть ее с помощью виртуальной машины Windows Server 2016, поставляемой с Visual Studio 2017 или более поздней версии.
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Прежде чем приступить к работе, ознакомьтесь с этими предварительными условиями.
 

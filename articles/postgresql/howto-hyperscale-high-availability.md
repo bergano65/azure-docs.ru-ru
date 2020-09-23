@@ -7,12 +7,12 @@ ms.service: postgresql
 ms.subservice: hyperscale-citus
 ms.topic: how-to
 ms.date: 07/27/2020
-ms.openlocfilehash: f08fb01cf26ddf73d31b575242b27d7d8b4017d9
-ms.sourcegitcommit: 3fc3457b5a6d5773323237f6a06ccfb6955bfb2d
+ms.openlocfilehash: 46b842994cbcf7efe66d5992c79246d77626e268
+ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/11/2020
-ms.locfileid: "90033287"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90907402"
 ---
 # <a name="configure-hyperscale-citus-high-availability"></a>Настройка высокой доступности Цитус
 
@@ -23,13 +23,13 @@ ms.locfileid: "90033287"
 
 Включение HA возможно во время создания группы серверов или на вкладке " **Вычисление и хранение** " для группы серверов в портал Azure. В любом случае пользовательский интерфейс выглядит аналогичным образом. Перетащите ползунок для обеспечения **высокой доступности** с "нет" на "Да":
 
-![ползунок высокой доступности](./media/howto-hyperscale-high-availability/01-ha-slider.png)
+:::image type="content" source="./media/howto-hyperscale-high-availability/01-ha-slider.png" alt-text="ползунок высокой доступности":::
 
 Нажмите кнопку **сохранить** , чтобы применить выбранные элементы. Включение HA может занять некоторое время, так как группа серверов подготавливает резервные данные и передает к ним потоки данных.
 
 На вкладке **Обзор** группы серверов будут перечислены все узлы и их резервы, а также столбец с **высоким уровнем доступности** , указывающий, успешно ли включен уровень доступности для каждого узла.
 
-![столбец ha в обзоре группы серверов](./media/howto-hyperscale-high-availability/02-ha-column.png)
+:::image type="content" source="./media/howto-hyperscale-high-availability/02-ha-column.png" alt-text="столбец ha в обзоре группы серверов":::
 
 ### <a name="next-steps"></a>Дальнейшие действия
 

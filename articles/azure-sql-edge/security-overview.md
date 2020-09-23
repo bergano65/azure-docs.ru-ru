@@ -1,0 +1,115 @@
+---
+title: Обеспечение безопасности SQL Azure ребро
+description: Дополнительные сведения о безопасности в Azure SQL Server
+keywords: SQL ребро, безопасность
+services: sql-edge
+ms.service: sql-edge
+ms.topic: conceptual
+author: SQLSourabh
+ms.author: sourabha
+ms.reviewer: sstein
+ms.date: 09/22/2020
+ms.openlocfilehash: 17e3e8dca1c03f9783c0ca94350bb8a4ba5aca64
+ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
+ms.translationtype: MT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90938648"
+---
+# <a name="securing-azure-sql-edge"></a>Обеспечение безопасности SQL Azure ребро
+
+Благодаря увеличению внедрения Интернета вещей и пограничных вычислений в разных отраслях увеличивается количество устройств и данных, созданных на этих устройствах. Увеличенный объем данных и количество конечных точек устройств являются серьезной проблемой в плане безопасности данных и устройств. 
+
+Azure SQL Server предлагает несколько функций и возможностей, которые упрощают защиту данных Интернета вещей в SQL Serverных базах данных. Azure SQL Server строится с использованием того же ядра SQL, что и Microsoft SQL Server и SQL Azure, совместно используя те же возможности безопасности, что упрощает расширение тех же политик и методов безопасности из облака в сторону.
+
+Как и в случае с Microsoft SQL Server и SQL Azure, обеспечение безопасности развертываний Azure SQL пограничных приложений можно просмотреть в виде серии шагов, в которых рассматриваются четыре области: платформа, проверка подлинности, объекты (включая данные) и приложения, обращающиеся к системе. 
+
+## <a name="platform-and-system-security"></a>Безопасность платформы и системы
+
+Платформа для Azure SQL ребра включает физический узел DOCKER, операционную систему на узле и сетевые системы, соединяющие физическое устройство с приложениями и клиентами. 
+
+Внедрение безопасности платформы начинается с несанкционированных пользователей из сети. Ниже приведены некоторые рекомендации, которые не ограничиваются:
+- Реализация правил брандмауэра для обеспечения политики безопасности Организации. 
+- Убедитесь, что в операционной системе на физическом устройстве установлены все последние обновления для системы безопасности. 
+- Указание и запрещение портов узлов, используемых для Azure SQL ребро
+- Обеспечение правильного контроля доступа ко всем томам данных, на которых размещаются данные Azure SQL. 
+
+Дополнительные сведения о сетевых протоколах Azure SQL и конечных точках TDS см. в разделе [Сетевые протоколы и конечные точки TDS](https://docs.microsoft.com//previous-versions/sql/sql-server-2008-r2/ms191220(v=sql.105)).
+
+## <a name="authentication-and-authorization"></a>Аутентификация и авторизация 
+
+### <a name="authentication"></a>Аутентификация  
+Аутентификацией называют процесс подтверждения личности пользователя. Azure SQL ребр в настоящее время поддерживает только этот `SQL Authentication` механизм.
+
+- *Проверка подлинности SQL*:
+
+    Проверка подлинности SQL означает проверку подлинности пользователя при подключении к Azure SQL с помощью имени пользователя и пароля. Пароль для входа **SA** SQL должен быть указан во время развертывания SQL Server. После этого администратор сервера сможет создать дополнительные имена входа и пользователей SQL, чтобы позволить пользователям подключаться с выделенными для них именами пользователей и паролями.
+
+    Дополнительные сведения о создании имен входа и пользователей в SQL Server и управлении ими см. в разделе [Создание имени входа](https://docs.microsoft.com/sql/relational-databases/security/authentication-access/create-a-login) и [Создание пользователя базы данных](https://docs.microsoft.com/sql/relational-databases/security/authentication-access/create-a-database-user).
+
+### <a name="authorization"></a>Авторизация   
+
+Авторизация относится к разрешениям, назначенным пользователю в базе данных в Azure SQL ребро, и определяет, что разрешено выполнять пользователю. Управление разрешениями осуществляется путем добавления учетных записей пользователей в [роли базы данных](https://docs.microsoft.com/sql/relational-databases/security/authentication-access/database-level-roles) и назначения им разрешений уровня базы данных для этих ролей или предоставления пользователю определенных [разрешений на уровне объектов](https://docs.microsoft.com/sql/relational-databases/security/permissions-database-engine). Дополнительные сведения см. в разделе [имена входа и пользователи](https://docs.microsoft.com/azure/azure-sql/database/logins-create-manage).
+
+Рекомендуется создавать пользовательские роли при необходимости. Добавьте пользователей к роли с минимальными привилегиями, необходимыми для работы их функций. Не назначайте разрешения пользователям напрямую. Учетная запись администратора сервера является членом встроенной роли db_owner, которая обладает широкими разрешениями и должна предоставляться только некоторым пользователям с административными обязанностями. Для приложений используйте [инструкцию EXECUTE AS](https://docs.microsoft.com/sql/t-sql/statements/execute-as-clause-transact-sql) , чтобы указать контекст выполнения вызванного модуля или использовать [роли приложения](https://docs.microsoft.com/sql/relational-databases/security/authentication-access/application-roles) с ограниченными разрешениями. Такой подход гарантирует, что приложение, которое подключается к базе данных, имеет минимальные привилегии, необходимые для приложения. Следующие рекомендации также способствуют разделению обязанностей.
+
+## <a name="database-object-security"></a>Безопасность объектов базы данных
+
+Участники — это частные лица, группы и процессы, которым предоставлен доступ к SQL Server. Защищаемые объекты — это сервер, база данных и объекты, которые содержит база данных. Каждый имеет набор разрешений, которые можно настроить для сокращения контактной зоны. Следующая таблица содержит сведения об участниках и защищаемых объектах.
+
+|Сведения о|См.|  
+|---------------------------|---------|  
+|Пользователи, роли и процессы сервера и базы данных|[Участники ядро СУБД](https://docs.microsoft.com/sql/relational-databases/security/authentication-access/principals-database-engine)|  
+|Безопасность объектов сервера и базы данных|[Защищаемые объекты](https://docs.microsoft.com/sql/relational-databases/security/securables)|
+| &nbsp; | &nbsp; |
+
+### <a name="encryption-and-certificates"></a>Шифрование и сертификаты  
+ 
+Шифрование не решает проблемы управления доступом. Однако оно повышает безопасность, ограничивая потерю данных даже в тех редких случаях, когда средства управления доступом удается обойти. Например, если главный компьютер, на котором установлена база данных, был настроен неправильно, и злонамеренный пользователь смог получить конфиденциальные данные (например, номера кредитных карточек), то украденная информация будет бесполезна, если она была предварительно зашифрована. В следующей таблице приведены дополнительные сведения о шифровании в Azure SQL.  
+  
+|Сведения о|См.|  
+|---------------------------|---------|  
+|Реализация безопасных соединений|[Шифрование подключений](https://docs.microsoft.com/sql/linux/sql-server-linux-encrypted-connections)|  
+|Функции шифрования|[Криптографические функции (Transact-SQL)](https://docs.microsoft.com/sql/t-sql/functions/cryptographic-functions-transact-sql)|
+|Шифрование неактивных данных|[прозрачное шифрование данных.](https://docs.microsoft.com/sql/relational-databases/security/encryption/transparent-data-encryption)|
+|Always Encrypted|[Always Encrypted](https://docs.microsoft.com/sql/relational-databases/security/encryption/always-encrypted-database-engine)|
+| &nbsp; | &nbsp; |
+
+> [!NOTE]
+> Ограничения безопасности, описанные в [SQL Server на Linux](https://docs.microsoft.com/sql/linux/sql-server-linux-security-overview) , также применяются к Azure SQL Server. 
+
+
+> [!NOTE]
+> Azure SQL Server не включает в себя служебную программу MSSQL-CONF. Все конфигурации, включая конфигурацию, связанную с шифрованием, необходимо выполнять с помощью [файла MSSQL. conf](configure.md#configure-by-using-an-mssqlconf-file) или [переменных среды](configure.md#configure-by-using-environment-variables). 
+
+
+Как и в случае с Azure SQL и Microsoft SQL Server, Azure SQL Server предоставляет тот же механизм создания и использования сертификатов для повышения безопасности объектов и соединений. Дополнительные сведения см. в разделе [Создание сертификата (TRANSACT-SQL)](https://docs.microsoft.com/sql/t-sql/statements/create-certificate-transact-sql).
+
+
+## <a name="application-security"></a>Защита приложений
+
+### <a name="client-programs"></a>Клиентские программы
+
+Рекомендации по обеспечению безопасности в Azure SQL с границами включают написание защищенных клиентских приложений. Дополнительные сведения об обеспечении безопасности клиентских приложений на сетевом уровне см. в разделе [Client Network Configuration](https://docs.microsoft.com/sql/database-engine/configure-windows/client-network-configuration).
+
+### <a name="sql-server-security-catalog-views-and-functions"></a>SQL Server представлений и функций каталога безопасности  
+ Сведения о безопасности предоставляются в нескольких представлениях и функциях, оптимизированных для производительности и служебной программы. Следующая таблица содержит сведения о представлениях и функциях безопасности.  
+  
+|Функции и представления|Создание ссылок|  
+|---------------------------|---------|  
+|Представления каталога безопасности, которые возвращают сведения о разрешениях уровня базы данных и уровня сервера, участниках, ролях и т. д. Кроме того, существуют представления каталога, содержащие сведения о ключах шифрования, сертификатах и учетных данных.|[Представления каталога безопасности (Transact-SQL)](https://docs.microsoft.com/sql/relational-databases/system-catalog-views/security-catalog-views-transact-sql)|  
+|Функции безопасности, возвращающие сведения о текущем пользователе, разрешениях и схемах.|[Функции безопасности &#40;Transact-SQL&#41;](https://docs.microsoft.com/sql/t-sql/functions/security-functions-transact-sql)|  
+|Динамические административные представления безопасности.|[Динамические представления управления и функции, связанные с безопасностью (Transact-SQL)](https://docs.microsoft.com/sql/relational-databases/system-dynamic-management-views/security-related-dynamic-management-views-and-functions-transact-sql)|  
+| &nbsp; | &nbsp; |
+
+### <a name="auditing"></a>Аудит 
+
+Azure SQL ребр предоставляет те же механизмы аудита, что и SQL Server. Дополнительные сведения см. в разделе [SQL Server Audit (ядро СУБД)](https://docs.microsoft.com/sql/relational-databases/security/auditing/sql-server-audit-database-engine).
+
+
+## <a name="next-steps"></a>Дальнейшие действия
+
+- [начало работы с функциями безопасности](https://docs.microsoft.com/sql/linux/sql-server-linux-security-get-started)
+- [Запуск Azure SQL Server с правами привилегированного пользователя](configure.md#run-azure-sql-edge-as-non-root-user)
+- [Центр безопасности Azure для Интернета вещей](https://docs.microsoft.com/azure/asc-for-iot/overview)
+

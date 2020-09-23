@@ -5,12 +5,12 @@ services: automation
 ms.subservice: process-automation
 ms.date: 01/15/2019
 ms.topic: conceptual
-ms.openlocfilehash: ea0970a672ac8fb15c2e7c6bbb65edf33bd25f04
-ms.sourcegitcommit: ec682dcc0a67eabe4bfe242fce4a7019f0a8c405
+ms.openlocfilehash: 40654926b2998b3ba1c4ce1a5607a768f2c32340
+ms.sourcegitcommit: bdd5c76457b0f0504f4f679a316b959dcfabf1ef
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/09/2020
-ms.locfileid: "86186594"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90987281"
 ---
 # <a name="create-a-standalone-azure-automation-account"></a>Создание автономной учетной записи службы автоматизации Azure
 
@@ -59,7 +59,7 @@ ms.locfileid: "86186594"
    > [!NOTE]
    > Если учетная запись не является участником роли "Администраторы подписки" и соадминистратором подписки, в колонке "Добавление учетной записи службы автоматизации" отобразится следующее сообщение.
    >
-   > ![Предупреждение в области "Добавление учетной записи службы автоматизации"](media/automation-create-standalone-account/create-account-without-perms.png)
+   > :::image type="content" source="media/automation-create-standalone-account/create-account-without-perms.png" alt-text="Снимок экрана запроса "у вас нет разрешений на создание учетной записи запуска от имени в Azure Active Directory".":::
 
 1. В области "Добавление учетной записи службы автоматизации" в поле **Имя** введите имя новой учетной записи службы автоматизации. После установки имени его нельзя изменить. 
 
@@ -74,7 +74,7 @@ ms.locfileid: "86186594"
    > [!NOTE]
    > Если вы решили не создавать учетную запись запуска от имени и выбрали значение **Нет** для параметра **Создать учетную запись запуска от имени**, в области "Добавление учетной записи службы автоматизации" появится сообщение. Хотя учетная запись и создается на портале Azure, она не содержит соответствующее удостоверение проверки подлинности в службе каталогов подписки классической модели развертывания или подписки Azure Resource Manager. Поэтому у учетной записи службы автоматизации не будет доступа к ресурсам в вашей подписке. Из-за этого модули Runbook, ссылающиеся на эту учетную запись, не смогут проходить проверку подлинности и выполнять задачи, используя ресурсы в соответствующих моделях развертывания.
    >
-   > ![Предупреждение в области "Добавление учетной записи службы автоматизации"](media/automation-create-standalone-account/create-account-decline-create-runas-msg.png)
+   > :::image type="content" source="media/automation-create-standalone-account/create-account-decline-create-runas-msg.png" alt-text="Снимок экрана запроса с сообщением "вы решили не создавать учетную запись запуска от имени".":::
    >
    > Если субъект-служба не создан, роль участника не назначается.
    >
@@ -105,4 +105,4 @@ ms.locfileid: "86186594"
 * Чтобы начать работу с модулями runbook PowerShell, изучите документ [Руководство. Создание модуля runbook PowerShell](learn/automation-tutorial-runbook-textual-powershell.md).
 * Чтобы начать работу с модулями runbook рабочих процессов PowerShell, изучите документ [Руководство. Создание модуля runbook рабочего процесса PowerShell](learn/automation-tutorial-runbook-textual.md).
 * Чтобы начать работу с модулями runbook Python 2, изучите документ [Руководство. Создание модуля runbook в Python 2](learn/automation-tutorial-runbook-textual-python2.md).
-* Справочник по командлетам PowerShell см. в документации по [Az.Automation](/powershell/module/az.automation/?view=azps-3.7.0#automation).
+* Справочник по командлетам PowerShell см. в документации по [Az.Automation](/powershell/module/az.automation/?view=azps-3.7.0&preserve-view=true#automation).

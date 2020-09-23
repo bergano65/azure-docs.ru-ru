@@ -6,12 +6,12 @@ ms.author: raagyema
 ms.service: postgresql
 ms.topic: how-to
 ms.date: 11/20/2019
-ms.openlocfilehash: 908a61a00f0e33016074a6f985271ac94157fdf4
-ms.sourcegitcommit: b33c9ad17598d7e4d66fe11d511daa78b4b8b330
+ms.openlocfilehash: 02a50a94b0b07d1755abe78c567df7ff5c7eda92
+ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88854998"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90907446"
 ---
 # <a name="manage-an-azure-database-for-postgresql-server-using-the-azure-portal"></a>Управление базой данных Azure для сервера PostgreSQL с помощью портал Azure
 
@@ -37,7 +37,7 @@ ms.locfileid: "88854998"
 
 2. Выберите **общего назначения** или **оптимизировать память**в зависимости от того, что вы масштабируете.
 
-   ![Снимок экрана портал Azure для выбора уровня "базовый", "общего назначения" или "оптимизировано для памяти" в базе данных Azure для PostgreSQL](./media/howto-create-manage-server-portal/change-pricing-tier.png)
+   :::image type="content" source="./media/howto-create-manage-server-portal/change-pricing-tier.png" alt-text="Снимок экрана портал Azure для выбора уровня "базовый", "общего назначения" или "оптимизировано для памяти" в базе данных Azure для PostgreSQL":::
 
    > [!NOTE]
    > Изменение уровней приводит к перезапуску сервера.
@@ -50,7 +50,7 @@ ms.locfileid: "88854998"
 
 2. Измените параметр **Виртуальное ядро**, переместив ползунок на нужное значение.
 
-   ![Снимок экрана портал Azure выбор параметра Виртуальное ядро в базе данных Azure для PostgreSQL](./media/howto-create-manage-server-portal/scaling-compute.png)
+   :::image type="content" source="./media/howto-create-manage-server-portal/scaling-compute.png" alt-text="Снимок экрана портал Azure выбор параметра Виртуальное ядро в базе данных Azure для PostgreSQL":::
 
    > [!NOTE]
    > Масштабирование виртуальных ядер приводит к перезапуску сервера.
@@ -63,7 +63,7 @@ ms.locfileid: "88854998"
 
 2. Измените параметр **хранилища** , переместив ползунок вверх до нужного значения.
 
-   ![Снимок экрана портал Azure выбор масштаба хранилища в базе данных Azure для PostgreSQL](./media/howto-create-manage-server-portal/scaling-storage.png)
+   :::image type="content" source="./media/howto-create-manage-server-portal/scaling-storage.png" alt-text="Снимок экрана портал Azure выбор масштаба хранилища в базе данных Azure для PostgreSQL":::
 
    > [!NOTE]
    > Невозможно масштабировать хранилище.
@@ -76,11 +76,11 @@ ms.locfileid: "88854998"
 
 1. Выберите сервер в портал Azure. В окне **обзора** выберите **Сброс пароля**.
 
-   ![Снимок экрана портал Azure сброс пароля в базе данных Azure для PostgreSQL](./media/howto-create-manage-server-portal/overview-reset-password.png)
+   :::image type="content" source="./media/howto-create-manage-server-portal/overview-reset-password.png" alt-text="Снимок экрана портал Azure сброс пароля в базе данных Azure для PostgreSQL":::
 
 2. Введите новый пароль и подтвердите его. В текстовом поле будет предложено ввести требования к сложности пароля.
 
-   ![Снимок экрана портал Azure сброс пароля и сохранение в базе данных Azure для PostgreSQL](./media/howto-create-manage-server-portal/reset-password.png)
+   :::image type="content" source="./media/howto-create-manage-server-portal/reset-password.png" alt-text="Снимок экрана портал Azure сброс пароля и сохранение в базе данных Azure для PostgreSQL":::
 
 3. Нажмите кнопку **ОК** , чтобы сохранить новый пароль.
 
@@ -90,11 +90,11 @@ ms.locfileid: "88854998"
 
 1. Выберите сервер в портал Azure. В окне **обзора** выберите **Удалить**.
 
-   ![Снимок экрана портал Azure для удаления сервера в базе данных Azure для PostgreSQL](./media/howto-create-manage-server-portal/overview-delete.png)
+   :::image type="content" source="./media/howto-create-manage-server-portal/overview-delete.png" alt-text="Снимок экрана портал Azure для удаления сервера в базе данных Azure для PostgreSQL":::
 
 2. Введите имя сервера в поле ввода, чтобы убедиться, что это сервер, который требуется удалить.
 
-   ![Снимок экрана портал Azure для подтверждения удаления сервера в базе данных Azure для PostgreSQL](./media/howto-create-manage-server-portal/confirm-delete.png)
+   :::image type="content" source="./media/howto-create-manage-server-portal/confirm-delete.png" alt-text="Снимок экрана портал Azure для подтверждения удаления сервера в базе данных Azure для PostgreSQL":::
 
    > [!NOTE]
    > Удаление сервера необратимо.

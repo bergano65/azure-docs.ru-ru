@@ -7,12 +7,12 @@ ms.service: postgresql
 ms.topic: how-to
 ms.date: 01/13/2020
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: 831c50fe608e3f7de18b4d8917bb2f98a0e78308
-ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
+ms.openlocfilehash: 0db0a705d97743bb199550bc74ade8e270c7472c
+ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/31/2020
-ms.locfileid: "87502007"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90907479"
 ---
 # <a name="data-encryption-for-azure-database-for-postgresql-single-server-by-using-the-azure-portal"></a>Шифрование данных для одного сервера базы данных Azure для PostgreSQL с помощью портал Azure
 
@@ -44,11 +44,11 @@ ms.locfileid: "87502007"
 
 1. В Key Vault выберите **политики доступа**  >  **Добавить политику доступа**.
 
-   ![Снимок экрана Key Vault с выделенными политиками доступа и добавлением политики доступа](media/concepts-data-access-and-security-data-encryption/show-access-policy-overview.png)
+   :::image type="content" source="media/concepts-data-access-and-security-data-encryption/show-access-policy-overview.png" alt-text="Снимок экрана Key Vault с выделенными политиками доступа и добавлением политики доступа":::
 
 2. Выберите **разрешения ключа**и выберите **получить**, **обернуть**, **распереносить**, а также имя **участника**, который является именем сервера PostgreSQL. Если участник сервера не найден в списке существующих участников, его необходимо зарегистрировать. Вам будет предложено зарегистрировать сервер-участник при первой попытке настроить шифрование данных и выполнить его не удастся.  
 
-   ![Общие сведения о политике доступа](media/concepts-data-access-and-security-data-encryption/access-policy-wrap-unwrap.png)
+   :::image type="content" source="media/concepts-data-access-and-security-data-encryption/access-policy-wrap-unwrap.png" alt-text="Общие сведения о политике доступа":::
 
 3. Щелкните **Сохранить**.
 
@@ -56,11 +56,11 @@ ms.locfileid: "87502007"
 
 1. В базе данных Azure для PostgreSQL выберите **Шифрование данных** , чтобы настроить ключ, управляемый клиентом.
 
-   ![Снимок экрана базы данных Azure для PostgreSQL с выделенным шифрованием данных](media/concepts-data-access-and-security-data-encryption/data-encryption-overview.png)
+   :::image type="content" source="media/concepts-data-access-and-security-data-encryption/data-encryption-overview.png" alt-text="Снимок экрана базы данных Azure для PostgreSQL с выделенным шифрованием данных":::
 
 2. Можно выбрать хранилище ключей и пару ключей или ввести идентификатор ключа.
 
-   ![Снимок экрана базы данных Azure для PostgreSQL с выделенными параметрами шифрования данных](media/concepts-data-access-and-security-data-encryption/setting-data-encryption.png)
+   :::image type="content" source="media/concepts-data-access-and-security-data-encryption/setting-data-encryption.png" alt-text="Снимок экрана базы данных Azure для PostgreSQL с выделенными параметрами шифрования данных":::
 
 3. Щелкните **Сохранить**.
 
@@ -72,28 +72,28 @@ ms.locfileid: "87502007"
 
 1. На сервере выберите **Обзор**  >  **восстановить**.
 
-   ![Снимок экрана базы данных Azure для PostgreSQL с выделенным обзором и восстановлением](media/concepts-data-access-and-security-data-encryption/show-restore.png)
+   :::image type="content" source="media/concepts-data-access-and-security-data-encryption/show-restore.png" alt-text="Снимок экрана базы данных Azure для PostgreSQL с выделенным обзором и восстановлением":::
 
    Или для сервера с поддержкой репликации в разделе **Параметры** выберите **репликация**.
 
-   ![Снимок экрана базы данных Azure для PostgreSQL с выделенной репликацией](media/concepts-data-access-and-security-data-encryption/postgresql-replica.png)
+   :::image type="content" source="media/concepts-data-access-and-security-data-encryption/postgresql-replica.png" alt-text="Снимок экрана базы данных Azure для PostgreSQL с выделенной репликацией":::
 
 2. После завершения операции восстановления новый созданный сервер шифруется с помощью ключа основного сервера. Однако функции и параметры на сервере отключены, и сервер недоступен. Это предотвращает обработку любых данных, так как удостоверению нового сервера еще не было предоставлено разрешение на доступ к хранилищу ключей.
 
-   ![Снимок экрана базы данных Azure для PostgreSQL с выделенным состоянием "недоступно"](media/concepts-data-access-and-security-data-encryption/show-restore-data-encryption.png)
+   :::image type="content" source="media/concepts-data-access-and-security-data-encryption/show-restore-data-encryption.png" alt-text="Снимок экрана базы данных Azure для PostgreSQL с выделенным состоянием "недоступно"":::
 
 3. Чтобы сделать сервер доступным, повторно проверьте ключ на восстановленном сервере. Выберите ключ повторной проверки **шифрования данных**  >  **Revalidate key**.
 
    > [!NOTE]
    > Первая попытка повторной проверки завершится ошибкой, так как субъекту-службе нового сервера необходимо предоставить доступ к хранилищу ключей. Чтобы создать субъект-службу, выберите повторно **проверить ключ**, в котором будет отображаться сообщение об ошибке, но создается субъект-служба. После этого ознакомьтесь с [этими действиями](#set-the-right-permissions-for-key-operations) ранее в этой статье.
 
-   ![Снимок экрана базы данных Azure для PostgreSQL с выделенным шагом повторной проверки](media/concepts-data-access-and-security-data-encryption/show-revalidate-data-encryption.png)
+   :::image type="content" source="media/concepts-data-access-and-security-data-encryption/show-revalidate-data-encryption.png" alt-text="Снимок экрана базы данных Azure для PostgreSQL с выделенным шагом повторной проверки":::
 
    Необходимо предоставить хранилищу ключей доступ к новому серверу.
 
 4. После регистрации субъекта-службы повторно проверьте ключ, и сервер возобновит нормальную работу.
 
-   ![Снимок экрана базы данных Azure для PostgreSQL с восстановленной функциональностью](media/concepts-data-access-and-security-data-encryption/restore-successful.png)
+   :::image type="content" source="media/concepts-data-access-and-security-data-encryption/restore-successful.png" alt-text="Снимок экрана базы данных Azure для PostgreSQL с восстановленной функциональностью":::
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

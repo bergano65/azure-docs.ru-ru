@@ -3,14 +3,14 @@ title: Развертывание гибридной рабочей роли Run
 description: В этой статье рассказывается, как установить гибридную рабочую роль Runbook службы автоматизации Azure для запуска модулей Runbook на компьютерах под управлением Linux в локальном центре обработки данных или в облачной среде.
 services: automation
 ms.subservice: process-automation
-ms.date: 06/24/2020
+ms.date: 09/15/2020
 ms.topic: conceptual
-ms.openlocfilehash: 7f19aec65ed2616d757718116ac948473dd4b0ed
-ms.sourcegitcommit: cee72954f4467096b01ba287d30074751bcb7ff4
+ms.openlocfilehash: fb975305e18315fa8d0a39e4fe0ab6902c98b7e7
+ms.sourcegitcommit: bdd5c76457b0f0504f4f679a316b959dcfabf1ef
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/30/2020
-ms.locfileid: "87448013"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90987219"
 ---
 # <a name="deploy-a-linux-hybrid-runbook-worker"></a>Развертывание гибридной рабочей роли Runbook для Linux
 
@@ -56,7 +56,7 @@ ms.locfileid: "87448013"
 * Red Hat Enterprise Linux Server 5, 6 и 7 (x86/x64)
 * Debian GNU/Linux 6, 7 и 8 (x86/x64)
 * Ubuntu 12.04 LTS, 14.04 LTS, 16.04 LTS и 18.04 (x86/x64)
-* SUSE Linux Enterprise Server 11 и 12 (x86/x64)
+* SUSE Linux Enterprise Server 12 (x86 и x64)
 
 ### <a name="minimum-requirements"></a>Минимальные требования
 
@@ -75,6 +75,12 @@ ms.locfileid: "87448013"
 |PAM | Подключаемые модули аутентификации|
 | **Дополнительный пакет** | **Описание** | **Минимальная версия**|
 | PowerShell Core | Для запуска модулей Runbook PowerShell необходимо установить PowerShell Core. Подробные сведения об установке см. в статье [Установка PowerShell Core в Linux](/powershell/scripting/install/installing-powershell-core-on-linux). | 6.0.0 |
+
+## <a name="supported-linux-hardening"></a>Поддерживаемые усиление защиты Linux
+
+Следующие еще не поддерживаются:
+
+* СОСТОЯНИИ
 
 ## <a name="supported-runbook-types"></a>Поддерживаемые типы runbook
 

@@ -1,6 +1,6 @@
 ---
-title: Развертывание виртуальных машин на Azure Stack пограничном устройстве GPU с помощью Azure PowerShell
-description: Описание создания виртуальных машин и управления ими на Azure Stack пограничном устройстве с помощью Azure PowerShell.
+title: Развертывание виртуальных машин на устройстве с Azure Stack ребра Pro GPU с помощью Azure PowerShell
+description: Описание создания виртуальных машин и управления ими на устройстве Azure Stack пограничной Pro с помощью Azure PowerShell.
 services: databox
 author: alkohli
 ms.service: databox
@@ -8,53 +8,53 @@ ms.subservice: edge
 ms.topic: how-to
 ms.date: 08/28/2020
 ms.author: alkohli
-ms.openlocfilehash: ab303dd42d9064a9fa1392e27adc361d5b761cf0
-ms.sourcegitcommit: bcda98171d6e81795e723e525f81e6235f044e52
+ms.openlocfilehash: 5ed6de28f1e1b0545ebd675c30249e2f2b4747e9
+ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/01/2020
-ms.locfileid: "89256129"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90890641"
 ---
-# <a name="deploy-vms-on-your-azure-stack-edge-gpu-device-via-azure-powershell-script"></a>Развертывание виртуальных машин на Azure Stack пограничном устройстве GPU с помощью скрипта Azure PowerShell
+# <a name="deploy-vms-on-your-azure-stack-edge-pro-gpu-device-via-azure-powershell-script"></a>Развертывание виртуальных машин на устройстве с Azure Stack ребра Pro GPU с помощью скрипта Azure PowerShell
 
 <!--[!INCLUDE [applies-to-skus](../../includes/azure-stack-edge-applies-to-all-sku.md)]-->
 
-В этом руководстве описывается, как создать виртуальную машину на Azure Stack пограничном устройстве и управлять ею с помощью скрипта Azure PowerShell.
+В этом учебнике описано, как создать виртуальную машину на устройстве Azure Stack пограничной Pro и управлять ею с помощью скрипта Azure PowerShell.
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Прежде чем приступить к созданию виртуальной машины на Azure Stack пограничном устройстве и управлении ею с помощью этого скрипта, необходимо убедиться, что выполнены предварительные требования, перечисленные в следующих шагах.
+Прежде чем приступить к созданию виртуальной машины и управлению ею на устройстве Azure Stack пограничной Pro с помощью этого сценария, необходимо убедиться, что выполнены предварительные требования, перечисленные в следующих шагах.
 
-### <a name="for-azure-stack-edge-device-via-the-local-web-ui"></a>Для Azure Stack пограничных устройств через локальный веб-интерфейс
+### <a name="for-azure-stack-edge-pro-device-via-the-local-web-ui"></a>Для Azure Stack устройства Pro с помощью локального пользовательского веб-интерфейса
 
-1. Вы завершили настройку сети на Azure Stack пограничном устройстве, как описано в разделе [Шаг 1. настройка Azure Stack пограничных устройств](azure-stack-edge-j-series-connect-resource-manager.md#step-1-configure-azure-stack-edge-device).
+1. Параметры сети на устройстве Azure Stack погранично Pro завершены, как описано в разделе [Шаг 1. настройка Azure Stack ребра Pro Device](azure-stack-edge-j-series-connect-resource-manager.md#step-1-configure-azure-stack-edge-pro-device).
 
-2. Включен сетевой интерфейс для вычислений. Этот IP-адрес сетевого интерфейса используется для создания виртуального коммутатора для развертывания виртуальной машины. Следующие шаги описывают процесс:
+2. Включите сетевой интерфейс для служб вычислений. IP-адрес этого сетевого интерфейса используется для создания виртуального коммутатора для развертывания виртуальной машины. Это можно сделать следующим образом:
 
     1. Перейдите к **параметрам вычислений**. Выберите сетевой интерфейс, который будет использоваться для создания виртуального коммутатора.
 
         > [!IMPORTANT] 
-        > Для вычислений можно настроить только один порт.
+        > Для служб вычислений можно настроить только один порт.
 
-    2. Включите вычисление на сетевом интерфейсе. Azure Stack ребро создает виртуальный коммутатор, соответствующий этому сетевому интерфейсу, и управляет им.
+    2. Включите службы вычислений на сетевом интерфейсе. Azure Stack пограничной Pro создает и управляет виртуальным коммутатором, соответствующим этому сетевому интерфейсу.
 
-3. Вы создали и установили все сертификаты на Azure Stack пограничном устройстве и в доверенном корневом хранилище клиента. Выполните процедуру, описанную в разделе [Шаг 2. Создание и установка сертификатов](azure-stack-edge-j-series-connect-resource-manager.md#step-2-create-and-install-certificates).
+3. Вы создали и установили все сертификаты на устройстве Azure Stack ребра Pro и в доверенном корневом хранилище клиента. (см. раздел [Шаг 2. Создание и установка сертификатов](azure-stack-edge-j-series-connect-resource-manager.md#step-2-create-and-install-certificates)).
 
 ### <a name="for-your-windows-client"></a>Для клиента Windows
 
 1. Вы определили виртуальный IP-адрес (VIP) служб Azure на странице **сети** в локальном интерфейсе пользователя на устройстве. Этот виртуальный IP-адрес необходимо добавить в:
 
-    - Файл узла на клиенте или,
-    - Конфигурация DNS-сервера
+    - файл узла на клиенте ИЛИ
+    - конфигурацию DNS-сервера.
     
     > [!IMPORTANT]
     > Рекомендуется изменить конфигурацию DNS-сервера для разрешения имен конечных точек.
 
-    1. Запустите **Блокнот** от имени администратора (для сохранения файла требуются права администратора), а затем откройте файл **hosts** , расположенный по адресу `C:\Windows\System32\Drivers\etc` .
+    1. Откройте **Блокнот** от имени администратора (для сохранения файла требуются привилегии администратора), а затем откройте файл **hosts**, расположенный в `C:\Windows\System32\Drivers\etc`.
     
-        ![Файл hosts проводника Windows](media/azure-stack-edge-j-series-connect-resource-manager/hosts-file.png)
+        ![Файл hosts в проводнике](media/azure-stack-edge-j-series-connect-resource-manager/hosts-file.png)
     
-    2. Добавьте следующие записи в файл **hosts** , заменив соответствующими значениями для вашего устройства:
+    2. Добавьте следующие записи в файл **hosts**, указав соответствующие значения для вашего устройства:
     
         ```
         <Azure consistent services VIP> login.<appliance name>.<DNS domain>
@@ -63,9 +63,9 @@ ms.locfileid: "89256129"
         ```
         Для учетной записи хранения можно указать имя, которое сценарий будет использовать позже для создания новой учетной записи хранения. Сценарий не проверяет, существует ли эта учетная запись хранения.
 
-    3. Используйте следующий образ для справки. Сохраните файл **hosts**.
+    3. Для справки используйте следующее изображение. Сохраните файл **hosts**.
 
-        ![файл hosts в блокноте](media/azure-stack-edge-j-series-deploy-virtual-machine-cli-python/hosts-screenshot-boxed.png)
+        ![Файл hosts в Блокноте](media/azure-stack-edge-j-series-deploy-virtual-machine-cli-python/hosts-screenshot-boxed.png)
 
 2. [Скачайте скрипт PowerShell,](https://aka.ms/ase-vm-powershell) используемый в этой процедуре.
 

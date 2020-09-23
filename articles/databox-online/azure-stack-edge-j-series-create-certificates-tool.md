@@ -1,29 +1,29 @@
 ---
 title: Создание сертификатов с помощью средства проверки готовности центра Microsoft Azure Stack | Документация Майкрософт
-description: Описание создания запросов на сертификаты, а также получения и установки сертификатов на устройстве Azure Stack ребра с помощью средства проверки готовности центра Azure Stack.
-services: Azure Stack Edge
+description: В этой статье описывается, как создавать запросы на сертификаты, а затем получать и устанавливать сертификаты на устройстве Azure Stack с помощью средства проверки готовности центра Azure Stack.
+services: Azure Stack Edge Pro
 author: alkohli
 ms.service: databox
 ms.subservice: edge
 ms.topic: how-to
 ms.date: 08/28/2020
 ms.author: alkohli
-ms.openlocfilehash: 7a6cf265f0be177aab436d544e694c5d59cfffd5
-ms.sourcegitcommit: bcda98171d6e81795e723e525f81e6235f044e52
+ms.openlocfilehash: 544625fe9fd2dbd87ad7330d7277494cbfbe6eb9
+ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/01/2020
-ms.locfileid: "89267383"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90891085"
 ---
-# <a name="create-certificates-for-your-azure-stack-edge-using-azure-stack-hub-readiness-checker-tool"></a>Создание сертификатов для Azure Stack пограничных устройств с помощью средства проверки готовности центра Azure Stack 
+# <a name="create-certificates-for-your-azure-stack-edge-pro-using-azure-stack-hub-readiness-checker-tool"></a>Создание сертификатов для Azure Stack ребра Pro с помощью средства проверки готовности центра Azure Stack 
 
 <!--[!INCLUDE [applies-to-skus](../../includes/azure-stack-edge-applies-to-all-sku.md)]-->
 
-В этой статье описывается, как создать сертификаты для Azure Stack ребра с помощью средства проверки готовности центра Azure Stack. 
+В этой статье описывается, как создать сертификаты для Azure Stack пограничной Pro с помощью средства проверки готовности центра Azure Stack. 
 
 ## <a name="using-azure-stack-hub-readiness-checker-tool"></a>Использование средства проверки готовности центра Azure Stack
 
-Используйте средство проверки готовности концентратора Azure Stack для создания запросов подписи сертификатов (представители по обслуживанию клиентов) для развертывания устройства Azure Stackного пограничных устройств. Эти запросы можно создать после того, как будет размещен заказ на Azure Stack пограничных устройств и ждать, пока устройство будет доставлено. 
+Используйте средство проверки готовности центра Azure Stack для создания запросов на подписывание сертификатов (представители по обслуживанию клиентов) для развертывания устройств с Azure Stackм пограничным Pro. Эти запросы можно создать после того, как будет размещен заказ на устройство Azure Stack пограничной Pro и ожидаются поступления устройства. 
 
 > [!NOTE]
 > Используйте это средство только для целей тестирования и разработки, а не для рабочих устройств. 
@@ -39,10 +39,10 @@ ms.locfileid: "89267383"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Чтобы создать представители по обслуживанию клиентов для Azure Stack развертывания устройств, убедитесь в том, что: 
+Чтобы создать специалиста по обслуживанию Azure Stack для развертывания устройств с пограничным назначением, убедитесь в том, что: 
 
 - У вас есть клиент под управлением Windows 10 или Windows Server 2016 или более поздней версии. 
-- Вы скачали средство проверки готовности Microsoft Azure Stack Hub 1.2002.1133.85 [из коллекция PowerShell](https://aka.ms/AzsReadinessChecker) в этой системе. Может потребоваться выполнить поиск этого пакета. Только эта версия средства может создавать сертификаты для Azure Stack пограничных устройств.
+- Вы скачали средство проверки готовности Microsoft Azure Stack Hub 1.2002.1133.85 [из коллекция PowerShell](https://aka.ms/AzsReadinessChecker) в этой системе. Может потребоваться выполнить поиск этого пакета. Только эта версия средства может создавать сертификаты для устройств Azure Stack пограничной Pro.
 - Для сертификатов имеются следующие сведения.
   - Имя устройства
   - Серийный номер узла
@@ -50,7 +50,7 @@ ms.locfileid: "89267383"
 
 ## <a name="generate-certificate-signing-requests"></a>Создание запросов на подпись сертификата
 
-Выполните следующие действия, чтобы подготовить сертификаты Azure Stack пограничных устройств:
+Выполните следующие действия, чтобы подготовить сертификаты устройств для Azure Stack пограничной Pro:
 
 1. Запустите PowerShell от имени администратора (5,1 или более поздней версии).
 2. Установите средство проверки готовности центра Azure Stack. В командной строке PowerShell введите следующую команду: 
@@ -121,15 +121,15 @@ ms.locfileid: "89267383"
     Вы также видите папку INF. Он содержит файл сведений об управлении. <ребр-DeviceName> в виде открытого текста, поясняющего сведения о сертификате.  
 
 
-6. Отправьте эти файлы в центр сертификации (как внутренний, так и общедоступный). Убедитесь, что ваш ЦС создает сертификаты с помощью созданного запроса, удовлетворяющего требованиям к сертификатам [узла](azure-stack-edge-j-series-manage-certificates.md#node-certificates), [конечным точкам](azure-stack-edge-j-series-manage-certificates.md#endpoint-certificates)и сертификатам [локального пользовательского интерфейса](azure-stack-edge-j-series-manage-certificates.md#local-ui-certificates), которые удовлетворяют требования к Azure Stackу сертификатов.
+6. Отправьте эти файлы в центр сертификации (как внутренний, так и общедоступный). Убедитесь, что ваш ЦС создает сертификаты с помощью созданного запроса, который соответствует требованиям к сертификатам для [узлов](azure-stack-edge-j-series-manage-certificates.md#node-certificates), сертификатам [конечных точек](azure-stack-edge-j-series-manage-certificates.md#endpoint-certificates)и [локальным сертификатам пользовательского интерфейса](azure-stack-edge-j-series-manage-certificates.md#local-ui-certificates)в соответствии с требованиями сертификатов на основе Azure Stack.
 
 ## <a name="prepare-certificates-for-deployment"></a>Подготовка сертификатов к развертыванию
 
-Файлы сертификатов, получаемые от центра сертификации (ЦС), должны быть импортированы и экспортированы с помощью свойств, соответствующих требованиям к сертификатам пограничных устройств Azure Stack. Выполните следующие действия в той же системе, в которой были созданы запросы подписи сертификата.
+Файлы сертификатов, получаемые из центра сертификации (ЦС), должны быть импортированы и экспортированы с помощью свойств, Azure Stack соответствующих требованиям к сертификатам на устройстве Pro. Выполните следующие действия в той же системе, в которой были созданы запросы подписи сертификата.
 
-- Чтобы импортировать сертификаты, выполните действия, описанные в статье [Импорт сертификатов на клиентах, обращающихся к Azure Stack пограничному устройству](azure-stack-edge-j-series-manage-certificates.md#import-certificates-on-the-client-accessing-the-device).
+- Чтобы импортировать сертификаты, выполните действия, описанные в статье [Импорт сертификатов на клиентах, обращающихся к устройству Azure Stack ребра Pro](azure-stack-edge-j-series-manage-certificates.md#import-certificates-on-the-client-accessing-the-device).
 
-- Чтобы экспортировать сертификаты, выполните действия, описанные в разделе [Экспорт сертификатов с клиента, обращающегося к Azure Stack пограничному устройству](azure-stack-edge-j-series-manage-certificates.md#import-certificates-on-the-client-accessing-the-device).
+- Чтобы экспортировать сертификаты, выполните действия, описанные в разделе [Экспорт сертификатов с клиента, обращающегося к устройству Azure Stack ребра Pro](azure-stack-edge-j-series-manage-certificates.md#import-certificates-on-the-client-accessing-the-device).
 
 
 ## <a name="validate-certificates"></a>Проверка сертификатов
@@ -152,4 +152,4 @@ ms.locfileid: "89267383"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-[Развертывание Azure Stack пограничной устройства](azure-stack-edge-gpu-deploy-prep.md)
+[Развертывание устройства Azure Stack пограничной Pro](azure-stack-edge-gpu-deploy-prep.md)

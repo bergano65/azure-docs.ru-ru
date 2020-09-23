@@ -7,12 +7,12 @@ ms.service: postgresql
 ms.subservice: hyperscale-citus
 ms.topic: how-to
 ms.date: 1/8/2019
-ms.openlocfilehash: 8a1b38b9f673669adb0b5fcf67d9d560c24d5c2a
-ms.sourcegitcommit: 2ff0d073607bc746ffc638a84bb026d1705e543e
+ms.openlocfilehash: 84f5a8f638e4a9525b330277ff1eaa26ba035e1a
+ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87825962"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90907412"
 ---
 # <a name="create-users-in-azure-database-for-postgresql---hyperscale-citus"></a>Создание пользователей в базе данных Azure для PostgreSQL — масштабирование (Цитус)
 
@@ -48,11 +48,11 @@ ms.locfileid: "87825962"
 
 1. Перейдите на страницу **роли** для группы масштабируемых серверов и нажмите кнопку **+ Добавить**:
 
-   ![Страница «роли»](media/howto-hyperscale-create-users/1-role-page.png)
+   :::image type="content" source="media/howto-hyperscale-create-users/1-role-page.png" alt-text="Страница «роли»":::
 
 2. Введите имя и пароль роли. Щелкните **Сохранить**.
 
-   ![Добавление роли](media/howto-hyperscale-create-users/2-add-user-fields.png)
+   :::image type="content" source="media/howto-hyperscale-create-users/2-add-user-fields.png" alt-text="Добавление роли":::
 
 Пользователь будет создан на узле координатора группы серверов и распространен на все рабочие узлы. Роли, созданные с помощью портал Azure `LOGIN` , имеют атрибут, что означает, что они являются настоящими пользователями, которые могут входить в базу данных.
 
@@ -77,7 +77,7 @@ GRANT SELECT ON ALL TABLES IN SCHEMA public TO db_user;
 
 Чтобы обновить пользователя, перейдите на страницу **роли** для группы масштабируемых серверов и нажмите кнопку с многоточием **...** рядом с пользователем. С многоточием откроется меню для удаления пользователя или сброса пароля.
 
-   ![Изменение роли](media/howto-hyperscale-create-users/edit-role.png)
+   :::image type="content" source="media/howto-hyperscale-create-users/edit-role.png" alt-text="Изменение роли":::
 
 `citus`Роль является привилегированной и не может быть удалена.
 

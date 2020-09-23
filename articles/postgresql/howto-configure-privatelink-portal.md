@@ -6,18 +6,18 @@ ms.author: manishku
 ms.service: postgresql
 ms.topic: how-to
 ms.date: 01/09/2020
-ms.openlocfilehash: 92d4fb638e41c668c557ef9e618d30677481585d
-ms.sourcegitcommit: 2ff0d073607bc746ffc638a84bb026d1705e543e
+ms.openlocfilehash: 7d2bdb96485a811ea9b3dde5320084f666508622
+ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87829855"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90907489"
 ---
 # <a name="create-and-manage-private-link-for-azure-database-for-postgresql---single-server-using-portal"></a>Создание и управление частной связью для базы данных Azure для PostgreSQL — один сервер с помощью портала
 
 Частная конечная точка — ключевой компонент для построения частной ссылки в Azure. Это позволяет ресурсам Azure, таким как виртуальные машины (VM), обмениваться данными в частном порядке с ресурсами частной ссылки.  В этой статье вы узнаете, как использовать портал Azure для создания виртуальной машины в виртуальной сети Azure и базы данных Azure для PostgreSQL с помощью частной конечной точки Azure.
 
-Если у вас еще нет подписки Azure, создайте [бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
+Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
 > [!NOTE]
 > Функция "Частная связь" доступна только для серверов базы данных Azure для PostgreSQL в общего назначения или ценовых категориях, оптимизированных для памяти. Убедитесь, что сервер базы данных находится в одной из этих ценовых категорий.
@@ -117,7 +117,7 @@ ms.locfileid: "87829855"
     | Имя администратора| Введите выбранное имя администратора. |
     | Пароль | Введите выбранный пароль. Пароль должен включать минимум 8 символов и соответствовать определенным требованиям. |
     | Расположение | Выберите регион Azure, в котором должен находиться сервер PostgreSQL. |
-    |Version  | Выберите необходимую версию базы данных сервера PostgreSQL.|
+    |Версия  | Выберите необходимую версию базы данных сервера PostgreSQL.|
     | Вычисления и хранение| Выберите ценовую категорию, необходимую для сервера в зависимости от рабочей нагрузки. |
     |||
  
@@ -133,7 +133,7 @@ ms.locfileid: "87829855"
 1. В верхней левой части экрана портал Azure выберите **создать ресурс**  >  **Сетевая**  >  **Частная ссылка**.
 2. В окне **Private Link Center — Overview** (Центр приватных каналов — общие сведения) для варианта **Build a private connection to a service** (Создание частного подключения к службе) выберите **Начать**.
 
-    ![Общие сведения о частной ссылке](media/concepts-data-access-and-security-private-link/privatelink-overview.png)
+    :::image type="content" source="media/concepts-data-access-and-security-private-link/privatelink-overview.png" alt-text="Общие сведения о частной ссылке":::
 
 1. В статье **Создание частной конечной точки — основные**сведения введите или выберите следующую информацию:
 
@@ -176,7 +176,7 @@ ms.locfileid: "87829855"
 1. Выберите **Review + create** (Просмотреть и создать). Вы будете перенаправлены на страницу **Просмотр и создание**, где Azure проверит вашу конфигурацию. 
 2. При появлении сообщения **Проверка пройдена** нажмите кнопку **Создать**. 
 
-    ![Закрытая ссылка создана](media/concepts-data-access-and-security-private-link/show-postgres-private-link.png)
+    :::image type="content" source="media/concepts-data-access-and-security-private-link/show-postgres-private-link.png" alt-text="Закрытая ссылка создана":::
 
     > [!NOTE] 
     > Полное доменное имя в параметре DNS клиента не разрешается в настроенный частный IP-адрес. Вам потребуется настроить зону DNS для настроенного FQDN, как показано [ниже](../dns/dns-operations-recordsets-portal.md).
