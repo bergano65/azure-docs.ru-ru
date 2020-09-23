@@ -8,3 +8,7 @@
   href: ./servers/overview.md
 - name: "Kubernetes с поддержкой Arc\_>"
   href: ./kubernetes/overview.md
+- name: "Службы данных с поддержкой Arc (предварительная версия)\_>"
+  href: ./data/overview.md
+- name: "SQL Server с поддержкой Arc (предварительная версия)\_>"
+  href: 'https://docs.microsoft.com/sql/sql-server/azure-arc/overview'

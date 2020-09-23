@@ -5,12 +5,12 @@ ms.date: 09/25/2019
 ms.topic: troubleshooting
 description: Узнайте, как устранять распространенные неполадки при включении и использовании Azure Dev Spaces
 keywords: 'Docker, Kubernetes, Azure, AKS, Azure Kubernetes Service, containers, Helm, service mesh, service mesh routing, kubectl, k8s '
-ms.openlocfilehash: e26f066294cb0a6a48c5a3299213206fe4226ad0
-ms.sourcegitcommit: 4913da04fd0f3cf7710ec08d0c1867b62c2effe7
+ms.openlocfilehash: d697a11f3087c31a49d9b88e99b18bab686a2b59
+ms.sourcegitcommit: bdd5c76457b0f0504f4f679a316b959dcfabf1ef
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88210837"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90981060"
 ---
 # <a name="azure-dev-spaces-troubleshooting"></a>Устранение неполадок с Azure Dev Spaces
 
@@ -27,14 +27,6 @@ ms.locfileid: "88210837"
 В CLI вы можете выводить больше сведений во время выполнения команды, используя параметр `--verbose`. Вы также можете просмотреть более подробные журналы в `%TEMP%\Azure Dev Spaces`. На компьютере Mac каталог *TEMP* можно найти, выполнив команду `echo $TMPDIR` в окне терминала. На компьютере с ОС Linux каталог *TEMP* обычно размещается здесь: `/tmp`. Кроме того, убедитесь, что в [файле конфигурации Azure CLI](/cli/azure/azure-cli-configuration?view=azure-cli-latest#cli-configuration-values-and-environment-variables) включено ведение журнала.
 
 Azure Dev Spaces лучше всего использовать для отладки одного экземпляра или pod. Файл `azds.yaml` содержит параметр *replicaCount*, который определяет количество pod, которые будут выполняться в Kubernetes для службы. Если вы измените значение *replicaCount* для выполнения в приложении нескольких pod для указанной службы, отладчик присоединится к первой группе pod (в алфавитном порядке имен). Отладчик присоединяется к другому модулю pod при перезапуске оригинального модуля pod, что может привести к непредвиденному поведению.
-
-## <a name="common-issues-when-using-local-process-with-kubernetes"></a>Распространенные проблемы при использовании локального процесса с Kubernetes
-
-### <a name="fail-to-restore-original-configuration-of-deployment-on-cluster"></a>Не удалось восстановить исходную конфигурацию развертывания в кластере
-
-При использовании локального процесса с Kubernetes, если локальный процесс с Kubernetes клиентом завершается аварийно или внезапно завершается, то служба, в которой локальный процесс с Kubernetes является перенаправлением, может быть не восстановлена до исходного состояния до того, как локальный процесс с Kubernetes подключен к нему.
-
-Чтобы устранить эту проблему, повторно разверните службу в кластере.
 
 ## <a name="common-issues-when-enabling-azure-dev-spaces"></a>Распространенные проблемы при включении Azure Dev Spaces
 
@@ -265,7 +257,7 @@ Service cannot be started.
 
 ### <a name="network-traffic-is-not-forwarded-to-your-aks-cluster-when-connecting-your-development-machine"></a>Сетевой трафик не перенаправляется в кластер AKS при подключении компьютера разработки
 
-При использовании [Azure Dev Spaces для подключения кластера AKS к компьютеру разработки](https://code.visualstudio.com/docs/containers/local-process-kubernetes) может возникнуть ситуация, когда сетевой трафик не пересылается между компьютером разработки и кластером AKS.
+При использовании [Azure Dev Spaces для подключения кластера AKS к компьютеру разработки](https://code.visualstudio.com/docs/containers/bridge-to-kubernetes) может возникнуть ситуация, когда сетевой трафик не пересылается между компьютером разработки и кластером AKS.
 
 При подключении кластера AKS к компьютеру разработки Azure Dev Spaces перенаправляет сетевой трафик между кластером AKS и компьютером разработки, изменяя файл `hosts` на компьютере разработки. Azure Dev Spaces создает в `hosts` запись с адресом заменяемой службы Kubernetes в качестве имени узла. Эта запись используется для перенаправления портов, чтобы перенаправлять сетевой трафик между компьютером разработки и кластером AKS. Если служба на компьютере разработки конфликтует с портом службы Kubernetes, которую вы заменяете, Azure Dev Spaces не сможет перенаправить сетевой трафик для службы Kubernetes. Например, служба *Windows BranchCache* обычно привязана к адресу *0.0.0.0:80*, что приводит к конфликту порта 80 на всех локальных IP-адресах.
 

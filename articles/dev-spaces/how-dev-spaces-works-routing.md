@@ -5,12 +5,12 @@ ms.date: 03/24/2020
 ms.topic: conceptual
 description: Описывает процессы, работающие с Power Azure Dev Spaces и принцип работы маршрутизации.
 keywords: Azure Dev Spaces, Dev Spaces, Docker, Kubernetes, Azure, AKS, Служба Azure Kubernetes, контейнеры
-ms.openlocfilehash: abdd8a573b7e120c5494b8878c2eb19813fc9507
-ms.sourcegitcommit: 4913da04fd0f3cf7710ec08d0c1867b62c2effe7
+ms.openlocfilehash: 6987bbaaebe342b571d5b19fe0e37bebd5b8b6e1
+ms.sourcegitcommit: bdd5c76457b0f0504f4f679a316b959dcfabf1ef
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88213404"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90981306"
 ---
 # <a name="how-routing-works-with-azure-dev-spaces"></a>Как работает маршрутизация с Azure Dev Spaces
 
@@ -62,13 +62,9 @@ Azure Dev Spaces предоставляет несколько способов
 
 При использовании *azureuser*все запросы к *Service* a будут направляться в обновленную версию в *azureuser*. Запрос к *serviceB* сначала попытается направляться в *azureuser* версию *serviceB*. Так как она не существует, она будет направляться в версию *serviceB* *по умолчанию* . При удалении версии *azureuser* *Service* a все запросы к *Service* a будут возвращаться к использованию версии *Service*a *по умолчанию* .
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
-Вот несколько примеров того, как Azure Dev Spaces использует маршрутизацию для обеспечения быстрой итерации и разработки, Узнайте, как [работает локальный процесс с Kubernetes][how-it-works-local-process-kubernetes], [как выполняется удаленная отладка кода с Azure dev Spaces][how-it-works-remote-debugging]и [действия GitHub & службы Kubernetes Azure][pr-flow].
+Пример того, как Azure Dev Spaces использует маршрутизацию для обеспечения быстрой итерации и разработки, см. в статье [как выполнять удаленную отладку кода с Azure dev Spaces][how-it-works-remote-debugging].
 
 
-[helm-upgrade]: https://helm.sh/docs/intro/using_helm/#helm-upgrade-and-helm-rollback-upgrading-a-release-and-recovering-on-failure
-[how-it-works-local-process-kubernetes]: /visualstudio/containers/overview-local-process-kubernetes
 [how-it-works-remote-debugging]: how-dev-spaces-works-remote-debugging.md
-[pr-flow]: how-to/github-actions.md
-[troubleshooting]: troubleshooting.md

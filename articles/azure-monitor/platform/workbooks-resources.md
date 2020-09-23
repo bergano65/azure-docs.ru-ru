@@ -1,6 +1,6 @@
 ---
 title: Параметры ресурсов Azure Monitor книг
-description: Упростите создание сложных отчетов с помощью готовых настраиваемых параметризованных книг
+description: Узнайте, как использовать параметры ресурсов, чтобы разрешить подбор ресурсов в книгах. Используйте параметры ресурса, чтобы задать область, из которой следует получать данные.
 services: azure-monitor
 author: mrbullwinkle
 manager: carmonm
@@ -9,12 +9,12 @@ ms.tgt_pltfrm: ibiza
 ms.topic: conceptual
 ms.date: 10/23/2019
 ms.author: mbullwin
-ms.openlocfilehash: b5822c1af4f3bc5d9519af93054a01c3cdc82001
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.openlocfilehash: a4d4e095e065e9f505ba1b9b46f0d31fb1783eb2
+ms.sourcegitcommit: bdd5c76457b0f0504f4f679a316b959dcfabf1ef
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86504997"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90972856"
 ---
 # <a name="workbook-resource-parameters"></a>Параметры ресурса книги
 
@@ -27,12 +27,12 @@ ms.locfileid: "86504997"
 2. Выберите _Добавить параметры_ из ссылок в книге.
 3. Нажмите синюю кнопку _Добавить параметр_ .
 4. В новой области параметров, которая появляется на экране, введите:
-    1. Имя параметра:`Applications`
-    2. Тип параметра:`Resource picker`
-    3. Обязательно:`checked`
-    4. Разрешить множественный набор элементов:`checked`
-5. Получить данные из:`Workbook Resources`
-6. Включать только типы ресурсов:`Application Insights`
+    1. Имя параметра: `Applications`
+    2. Тип параметра: `Resource picker`
+    3. Обязательно: `checked`
+    4. Разрешить множественный набор элементов: `checked`
+5. Получить данные из: `Workbook Resources`
+6. Включать только типы ресурсов: `Application Insights`
 7. Нажмите кнопку "Сохранить" на панели инструментов, чтобы создать параметр.
 
 ![Изображение, показывающее создание параметра ресурса с помощью ресурсов книги](./media/workbooks-resources/resource-create.png)
@@ -42,13 +42,13 @@ ms.locfileid: "86504997"
 2. Выберите _Добавить параметры_ из ссылок в книге.
 3. Нажмите синюю кнопку _Добавить параметр_ .
 4. В новой области параметров, которая появляется на экране, введите:
-    1. Имя параметра:`Applications`
-    2. Тип параметра:`Resource picker`
-    3. Обязательно:`checked`
-    4. Разрешить множественный набор элементов:`checked`
-5. Получить данные из:`Query`
-    1. Тип запроса:`Azure Resource Graph`
-    2. Оформления`Use default subscriptions`
+    1. Имя параметра: `Applications`
+    2. Тип параметра: `Resource picker`
+    3. Обязательно: `checked`
+    4. Разрешить множественный набор элементов: `checked`
+5. Получить данные из: `Query`
+    1. Тип запроса: `Azure Resource Graph`
+    2. Оформления `Use default subscriptions`
     3. В элементе управления запросом добавьте этот фрагмент кода.
     ```kusto
     where type == 'microsoft.insights/components'
@@ -68,11 +68,11 @@ ms.locfileid: "86504997"
 2. Выберите _Добавить параметры_ из ссылок в книге.
 3. Нажмите синюю кнопку _Добавить параметр_ .
 4. В новой области параметров, которая появляется на экране, введите:
-    1. Имя параметра:`Applications`
-    2. Тип параметра:`Resource picker`
-    3. Обязательно:`checked`
-    4. Разрешить множественный набор элементов:`checked`
-5. Получить данные из:`JSON`
+    1. Имя параметра: `Applications`
+    2. Тип параметра: `Resource picker`
+    3. Обязательно: `checked`
+    4. Разрешить множественный набор элементов: `checked`
+5. Получить данные из: `JSON`
     1. Добавьте этот фрагмент JSON в элемент управления содержимым
     ```json
     [

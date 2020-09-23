@@ -1,6 +1,6 @@
 ---
 title: Запуск Micro Focus Enterprise Server 5,0 в контейнере DOCKER в Azure | Документация Майкрософт
-description: Перемещайте рабочие нагрузки мэйнфреймов IBM z/OS с помощью среды разработки и тестирования Micro Focus на виртуальных машинах Azure.
+description: Из этой статьи вы узнаете, как запустить Micro Focus Enterprise Server 5,0 в контейнере DOCKER на Microsoft Azure.
 services: virtual-machines-linux
 documentationcenter: ''
 author: maggsl
@@ -12,12 +12,12 @@ ms.date: 06/29/2020
 tags: ''
 keywords: ''
 ms.service: multiple
-ms.openlocfilehash: d266dbd0ee908c41a7d29ddbb6d9c73fcfdc7c9e
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 3c4afc6c0adb8d499e38abf3d709a951774dda4e
+ms.sourcegitcommit: bdd5c76457b0f0504f4f679a316b959dcfabf1ef
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87083469"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90974068"
 ---
 # <a name="run-micro-focus-enterprise-server-50-in-a-docker-container-on-azure"></a>Запуск Micro Focus Enterprise Server 5,0 в контейнере DOCKER в Azure
 
@@ -27,7 +27,7 @@ DOCKER добавляет в приложения переносимость и 
 
 В этом руководстве мы устанавливаем **Windows 2016 Datacenter с контейнерами** виртуальных машин из Azure Marketplace. Эта виртуальная машина включает **DOCKER 18.09.0**. В следующих шагах показано, как развернуть контейнер, запустить его, а затем подключиться к нему с помощью эмулятора 3270.
 
-## <a name="prerequisites"></a>Обязательные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Прежде чем приступить к работе, ознакомьтесь с этими предварительными условиями.
 
@@ -137,7 +137,7 @@ DOCKER добавляет в приложения переносимость и 
     docker inspect \<containerID\> --format="{{range.NetworkSettings.Networks}}{{.IPAddress}}{{end}}"
     ~~~
 
-    Например.
+    Пример:
 
     ~~~
     docker inspect 22a0fe3159d0 --format="{{range.NetworkSettings.Networks}}{{.IPAddress}}{{end}}"

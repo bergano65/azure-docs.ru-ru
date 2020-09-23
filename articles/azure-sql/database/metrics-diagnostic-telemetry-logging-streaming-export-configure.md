@@ -11,12 +11,12 @@ author: danimir
 ms.author: danil
 ms.reviewer: jrasnik, carlrab
 ms.date: 04/06/2020
-ms.openlocfilehash: efb99e23466e4615dfa1f4a429addcd8c4ac68f5
-ms.sourcegitcommit: 124f7f699b6a43314e63af0101cd788db995d1cb
+ms.openlocfilehash: 51d86e51d89bdaf83be4a722d0350b35d2146cff
+ms.sourcegitcommit: bdd5c76457b0f0504f4f679a316b959dcfabf1ef
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86085622"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90973038"
 ---
 # <a name="configure-streaming-export-of-azure-sql-database-and-sql-managed-instance-diagnostic-telemetry"></a>Настройка потокового экспорта для базы данных SQL Azure и телеметрии диагностики SQL Управляемый экземпляр
 [!INCLUDE[appliesto-sqldb-sqlmi](../includes/appliesto-sqldb-sqlmi.md)]
@@ -72,7 +72,7 @@ ms.locfileid: "86085622"
 
 Это диагностическая данные телеметрии, переданные в одно из этих назначений, можно использовать для оценки статистики использования ресурсов и выполнения запросов для упрощения мониторинга производительности.
 
-![Architecture](./media/metrics-diagnostic-telemetry-logging-streaming-export-configure/architecture.png)
+![На схеме показано множество баз данных и баз данных SQL в управляемых экземплярах, отправляющих данные телеметрии в система диагностики Azure, которые пересылают сведения Аналитика SQL Azure, концентратору событий и хранилищу.](./media/metrics-diagnostic-telemetry-logging-streaming-export-configure/architecture.png)
 
 ## <a name="enable-and-configure-the-streaming-export-of-diagnostic-telemetry"></a>Включение и настройка потоковой трансляции телеметрии диагностики
 
@@ -127,7 +127,7 @@ ms.locfileid: "86085622"
 7. Установите флажок для телеметрии диагностики эластичного пула: **основные** метрики.
    ![Настройка диагностики для эластичных пулов](./media/metrics-diagnostic-telemetry-logging-streaming-export-configure/diagnostics-settings-container-elasticpool-selection.png)
 
-8. Нажмите кнопку **Сохранить**.
+8. Щелкните **Сохранить**.
 9. Кроме того, настройте потоковую передачу телеметрии диагностики для каждой базы данных в эластичном пуле, который необходимо отслеживать, выполнив действия, описанные в следующем разделе.
 
 > [!IMPORTANT]
@@ -156,7 +156,7 @@ ms.locfileid: "86085622"
 8. Чтобы получить дополнительные возможности мониторинга на основе одной минуты, установите флажок для **основных** метрик.
 
    ![Настройка диагностики для базы данных SQL Azure](./media/metrics-diagnostic-telemetry-logging-streaming-export-configure/diagnostics-settings-database-sql-selection.png)
-9. Нажмите кнопку **Сохранить**.
+9. Щелкните **Сохранить**.
 10. Повторите эти действия для каждой базы данных, которую необходимо отслеживать.
 
 > [!TIP]
@@ -192,7 +192,7 @@ ms.locfileid: "86085622"
 
    ![Настройка диагностики для управляемого экземпляра](./media/metrics-diagnostic-telemetry-logging-streaming-export-configure/diagnostics-settings-container-mi-selection.png)
 
-8. Нажмите кнопку **Сохранить**.
+8. Щелкните **Сохранить**.
 9. Кроме того, настройте потоковую передачу телеметрии диагностики для каждой базы данных экземпляра в управляемом экземпляре, за которым вы хотите наблюдать, выполнив действия, описанные в следующем разделе.
 
 > [!IMPORTANT]
@@ -220,7 +220,7 @@ ms.locfileid: "86085622"
 5. Выберите целевой ресурс для данных диагностики потоковой передачи: **архивировать в учетную запись хранения**, **передавать в концентратор событий**или **отправить в log Analytics**.
 6. Установите флажки для телеметрии диагностики базы данных: **SQLInsights**, **QueryStoreRuntimeStatistics**, **QueryStoreWaitStatistics**и **Errors**.
    ![Настройка диагностики для баз данных экземпляров](./media/metrics-diagnostic-telemetry-logging-streaming-export-configure/diagnostics-settings-database-mi-selection.png)
-7. Нажмите кнопку **Сохранить**.
+7. Щелкните **Сохранить**.
 8. Повторите эти действия для каждой базы данных экземпляра, которую необходимо отслеживать.
 
 > [!TIP]
@@ -471,12 +471,12 @@ insights-{metrics|logs}-{category name}/resourceId=/SUBSCRIPTIONS/{subscription 
 
 #### <a name="resource-usage-stats-for-managed-instances"></a>Статистика использования ресурсов для управляемых экземпляров
 
-|Свойство.|Описание:|
+|Свойство|Описание|
 |---|---|
 |TenantId|Идентификатор клиента |
 |SourceSystem|Всегда: Azure.|
 |TimeGenerated [UTC]|Метка времени, когда был записан журнал |
-|Type|Всегда: AzureDiagnostics. |
+|Тип|Всегда: AzureDiagnostics. |
 |ResourceProvider|Имя поставщика ресурсов. Всегда: MICROSOFT.SQL. |
 |Категория|Имя категории. Всегда: ResourceUsageStats |
 |Ресурс|Имя ресурса. |
@@ -496,12 +496,12 @@ insights-{metrics|logs}-{category name}/resourceId=/SUBSCRIPTIONS/{subscription 
 
 #### <a name="query-store-runtime-statistics"></a>Статистика среды выполнения хранилища запросов
 
-|Свойство.|Описание:|
+|Свойство|Описание|
 |---|---|
 |TenantId|Идентификатор клиента |
 |SourceSystem|Всегда: Azure. |
 |TimeGenerated [UTC]|Метка времени, когда был записан журнал |
-|Type|Всегда: AzureDiagnostics. |
+|Тип|Всегда: AzureDiagnostics. |
 |ResourceProvider|Имя поставщика ресурсов. Всегда: MICROSOFT.SQL. |
 |Категория|Имя категории. Всегда: QueryStoreRuntimeStatistics. |
 |OperationName|Имя операции. Всегда: QueryStoreRuntimeStatisticsEvent. |
@@ -547,12 +547,12 @@ insights-{metrics|logs}-{category name}/resourceId=/SUBSCRIPTIONS/{subscription 
 
 #### <a name="query-store-wait-statistics"></a>Статистика времени ожидания хранилища запросов
 
-|Свойство.|Описание:|
+|Свойство|Описание|
 |---|---|
 |TenantId|Идентификатор клиента |
 |SourceSystem|Всегда: Azure. |
 |TimeGenerated [UTC]|Метка времени, когда был записан журнал |
-|Type|Всегда: AzureDiagnostics. |
+|Тип|Всегда: AzureDiagnostics. |
 |ResourceProvider|Имя поставщика ресурсов. Всегда: MICROSOFT.SQL. |
 |Категория|Имя категории. Всегда: QueryStoreWaitStatistics. |
 |OperationName|Имя операции. Всегда: QueryStoreWaitStatisticsEvent. |
@@ -585,12 +585,12 @@ insights-{metrics|logs}-{category name}/resourceId=/SUBSCRIPTIONS/{subscription 
 
 #### <a name="errors-dataset"></a>Набор данных ошибок
 
-|Свойство.|Описание:|
+|Свойство|Описание|
 |---|---|
 |TenantId|Идентификатор клиента |
 |SourceSystem|Всегда: Azure. |
 |TimeGenerated [UTC]|Метка времени, когда был записан журнал |
-|Type|Всегда: AzureDiagnostics. |
+|Тип|Всегда: AzureDiagnostics. |
 |ResourceProvider|Имя поставщика ресурсов. Всегда: MICROSOFT.SQL. |
 |Категория|Имя категории. Всегда: Errors. |
 |OperationName|Имя операции. Всегда: ErrorEvent. |
@@ -605,7 +605,7 @@ insights-{metrics|logs}-{category name}/resourceId=/SUBSCRIPTIONS/{subscription 
 |Сообщение|Сообщение об ошибке в виде обычного текста. |
 |user_defined_b|Указывает, установлен ли бит ошибки пользователем. |
 |error_number_d|Код ошибки |
-|Серьезность|Серьезность ошибки. |
+|Уровень серьезности|Серьезность ошибки. |
 |state_d|Состояние ошибки. |
 |query_hash_s|Хэш запроса, завершившегося сбоем (при наличии) |
 |query_plan_hash_s|Хэш плана запроса для запроса, завершившегося сбоем (при наличии) |
@@ -614,12 +614,12 @@ insights-{metrics|logs}-{category name}/resourceId=/SUBSCRIPTIONS/{subscription 
 
 #### <a name="database-wait-statistics-dataset"></a>Набор данных статистики времени ожидания базы данных
 
-|Свойство.|Описание:|
+|Свойство|Описание|
 |---|---|
 |TenantId|Идентификатор клиента |
 |SourceSystem|Всегда: Azure. |
 |TimeGenerated [UTC]|Метка времени, когда был записан журнал |
-|Type|Всегда: AzureDiagnostics. |
+|Тип|Всегда: AzureDiagnostics. |
 |ResourceProvider|Имя поставщика ресурсов. Всегда: MICROSOFT.SQL. |
 |Категория|Имя категории. Всегда: DatabaseWaitStatistics. |
 |OperationName|Имя операции. Всегда: DatabaseWaitStatisticsEvent. |
@@ -643,12 +643,12 @@ insights-{metrics|logs}-{category name}/resourceId=/SUBSCRIPTIONS/{subscription 
 
 #### <a name="time-outs-dataset"></a>Набор данных времени ожидания
 
-|Свойство.|Описание:|
+|Свойство|Описание|
 |---|---|
 |TenantId|Идентификатор клиента |
 |SourceSystem|Всегда: Azure. |
 |TimeGenerated [UTC]|Метка времени, когда был записан журнал |
-|Type|Всегда: AzureDiagnostics. |
+|Тип|Всегда: AzureDiagnostics. |
 |ResourceProvider|Имя поставщика ресурсов. Всегда: MICROSOFT.SQL. |
 |Категория|Имя категории. Всегда: Timeouts. |
 |OperationName|Имя операции. Всегда: TimeoutEvent. |
@@ -666,12 +666,12 @@ insights-{metrics|logs}-{category name}/resourceId=/SUBSCRIPTIONS/{subscription 
 
 #### <a name="blockings-dataset"></a>Набор данных блокировки
 
-|Свойство.|Описание:|
+|Свойство|Описание|
 |---|---|
 |TenantId|Идентификатор клиента |
 |SourceSystem|Всегда: Azure. |
 |TimeGenerated [UTC]|Метка времени, когда был записан журнал |
-|Type|Всегда: AzureDiagnostics. |
+|Тип|Всегда: AzureDiagnostics. |
 |ResourceProvider|Имя поставщика ресурсов. Всегда: MICROSOFT.SQL. |
 |Категория|Имя категории. Всегда: Blocks. |
 |OperationName|Имя операции. Всегда: BlockEvent. |
@@ -690,12 +690,12 @@ insights-{metrics|logs}-{category name}/resourceId=/SUBSCRIPTIONS/{subscription 
 
 #### <a name="deadlocks-dataset"></a>Набор данных взаимоблокировки
 
-|Свойство.|Описание:|
+|Свойство|Описание|
 |---|---|
 |TenantId|Идентификатор клиента |
 |SourceSystem|Всегда: Azure. |
 |TimeGenerated [UTC] |Метка времени, когда был записан журнал |
-|Type|Всегда: AzureDiagnostics. |
+|Тип|Всегда: AzureDiagnostics. |
 |ResourceProvider|Имя поставщика ресурсов. Всегда: MICROSOFT.SQL. |
 |Категория|Имя категории. Всегда: Deadlocks. |
 |OperationName|Имя операции. Всегда: DeadlockEvent. |
@@ -711,12 +711,12 @@ insights-{metrics|logs}-{category name}/resourceId=/SUBSCRIPTIONS/{subscription 
 
 #### <a name="automatic-tuning-dataset"></a>Набор данных автоматической настройки
 
-|Свойство.|Описание:|
+|Свойство|Описание|
 |---|---|
 |TenantId|Идентификатор клиента |
 |SourceSystem|Всегда: Azure. |
 |TimeGenerated [UTC]|Метка времени, когда был записан журнал |
-|Type|Всегда: AzureDiagnostics. |
+|Тип|Всегда: AzureDiagnostics. |
 |ResourceProvider|Имя поставщика ресурсов. Всегда: MICROSOFT.SQL. |
 |Категория|Имя категории. Всегда: AutomaticTuning. |
 |Ресурс|Имя ресурса. |
@@ -743,7 +743,7 @@ insights-{metrics|logs}-{category name}/resourceId=/SUBSCRIPTIONS/{subscription 
 
 Дополнительные сведения о [формате журнала Intelligent Insights](intelligent-insights-use-diagnostics-log.md).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Чтобы научиться включать ведение журнала и узнать, какие метрики и категории журналов поддерживаются различными службами Azure, ознакомьтесь со следующими статьями:
 
