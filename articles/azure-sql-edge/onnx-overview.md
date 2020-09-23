@@ -1,6 +1,6 @@
 ---
-title: Машинное обучение и ИИ с применением ONNX в SQL Azure для пограничных вычислений (предварительная версия)
-description: Машинное обучение в SQL Azure для пограничных вычислений (предварительная версия) поддерживает модели в формате Open Neural Network Exchange (ONNX). ONNX — это открытый формат, который можно использовать для обмена моделями между различными платформами и инструментами машинного обучения.
+title: Машинное обучение и AI с ONNX в Azure SQL ребр
+description: Машинное обучение в Azure SQL ребро поддерживает модели в формате Open нейронной сети (ONNX). ONNX — это открытый формат, который можно использовать для обмена моделями между различными платформами и инструментами машинного обучения.
 keywords: Развертывание SQL для пограничных вычислений
 services: sql-edge
 ms.service: sql-edge
@@ -9,16 +9,16 @@ ms.topic: conceptual
 author: dphansen
 ms.author: davidph
 ms.date: 05/19/2020
-ms.openlocfilehash: 2db6c728ac35c6fc2f1fee1a602725371e448104
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 47c040b0fad0211af413141a5b16b587d41d3b08
+ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85368062"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90907138"
 ---
-# <a name="machine-learning-and-ai-with-onnx-in-sql-edge-preview"></a>Машинное обучение и ИИ с применением ONNX в SQL для пограничных вычислений (предварительная версия)
+# <a name="machine-learning-and-ai-with-onnx-in-sql-edge"></a>Машинное обучение и ИИ с применением ONNX в SQL для пограничных вычислений
 
-Машинное обучение в SQL Azure для пограничных вычислений (предварительная версия) поддерживает модели в формате [Open Neural Network Exchange (ONNX)](https://onnx.ai/). ONNX — это открытый формат, который можно использовать для обмена моделями между различными [платформами и инструментами машинного обучения](https://onnx.ai/supported-tools).
+Машинное обучение в Azure SQL ребро поддерживает модели в формате [Open нейронной сети (ONNX)](https://onnx.ai/) . ONNX — это открытый формат, который можно использовать для обмена моделями между различными [платформами и инструментами машинного обучения](https://onnx.ai/supported-tools).
 
 ## <a name="overview"></a>Обзор
 
@@ -55,4 +55,4 @@ ms.locfileid: "85368062"
 ## <a name="next-steps"></a>Дальнейшие действия
 
 - [Развертывание SQL Azure для пограничных вычислений с помощью портала Azure](deploy-portal.md)
-- [Развертывание модели ONNX в SQL Azure для пограничных вычислений (предварительная версия) ](deploy-onnx.md)
+- [Развертывание модели ONNX на границе Azure SQL ](deploy-onnx.md)

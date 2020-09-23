@@ -6,12 +6,12 @@ ms.author: andrela
 ms.service: postgresql
 ms.topic: how-to
 ms.date: 5/6/2019
-ms.openlocfilehash: 4bd5b2d3715376aaca689c4589c3aab41a78f514
-ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
+ms.openlocfilehash: d25c8908b46608ac64bcf135404a070740413fe0
+ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86120914"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90907382"
 ---
 # <a name="restart-azure-database-for-postgresql---single-server-using-the-azure-portal"></a>Перезапустите базу данных Azure для PostgreSQL — один сервер с помощью портал Azure
 В этой статье объясняется, как перезапустить сервер в Базе данных Azure для PostgreSQL. Возможно, вам потребуется перезапустить сервер в целях обслуживания, что приводит к кратковременному отключению во время выполнения операции.
@@ -32,19 +32,19 @@ ms.locfileid: "86120914"
 
 2. На панели инструментов страницы **Обзор** сервера нажмите кнопку **Восстановить**.
 
-   ![База данных Azure для PostgreSQL — "Обзор" — кнопка "Восстановить"](./media/howto-restart-server-portal/2-server.png)
+   :::image type="content" source="./media/howto-restart-server-portal/2-server.png" alt-text="База данных Azure для PostgreSQL — "Обзор" — кнопка "Восстановить"":::
 
 3. Нажмите кнопку **Да**, чтобы подтвердить перезапуск сервера.
 
-   ![База данных Azure для PostgreSQL — подтверждение восстановления](./media/howto-restart-server-portal/3-restart-confirm.png)
+   :::image type="content" source="./media/howto-restart-server-portal/3-restart-confirm.png" alt-text="База данных Azure для PostgreSQL — подтверждение восстановления":::
 
 4. Убедитесь, что состояние сервера изменилось на "Идет перезапуск".
 
-   ![База данных Azure для PostgreSQL — состояние перезапуска](./media/howto-restart-server-portal/4-restarting-status.png)
+   :::image type="content" source="./media/howto-restart-server-portal/4-restarting-status.png" alt-text="База данных Azure для PostgreSQL — состояние перезапуска":::
 
 5. Убедитесь, что сервер перезапущен.
 
-   ![База данных Azure для PostgreSQL — перезапуск выполнен](./media/howto-restart-server-portal/5-restart-success.png)
+   :::image type="content" source="./media/howto-restart-server-portal/5-restart-success.png" alt-text="База данных Azure для PostgreSQL — перезапуск выполнен":::
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

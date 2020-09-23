@@ -1,6 +1,6 @@
 ---
-title: Развертывание виртуальных машин на Azure Stack пограничном устройстве GPU с помощью Azure PowerShell
-description: Описание создания виртуальных машин и управления ими на Azure Stack пограничном устройстве GPU с помощью Azure PowerShell.
+title: Развертывание виртуальных машин на устройстве с Azure Stack ребра Pro GPU с помощью Azure PowerShell
+description: В этой статье описывается создание виртуальных машин и управление ими на устройстве Azure Stack ребра Pro GPU с помощью Azure PowerShell.
 services: databox
 author: alkohli
 ms.service: databox
@@ -8,18 +8,18 @@ ms.subservice: edge
 ms.topic: how-to
 ms.date: 08/28/2020
 ms.author: alkohli
-ms.openlocfilehash: aa35111a2fa26b3e4fd5e80a8227b7c244f30e9f
-ms.sourcegitcommit: 4a7a4af09f881f38fcb4875d89881e4b808b369b
+ms.openlocfilehash: aa492acdedc2d131d28c894031de2181e87a2f3e
+ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/04/2020
-ms.locfileid: "89461720"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90890697"
 ---
-# <a name="deploy-vms-on-your-azure-stack-edge-gpu-device-via-azure-powershell"></a>Развертывание виртуальных машин на Azure Stack пограничном устройстве GPU с помощью Azure PowerShell
+# <a name="deploy-vms-on-your-azure-stack-edge-pro-gpu-device-via-azure-powershell"></a>Развертывание виртуальных машин на устройстве с Azure Stack ребра Pro GPU с помощью Azure PowerShell
 
 <!--[!INCLUDE [azure-stack-edge-gateway-deploy-vm-overview](../../includes/azure-stack-edge-gateway-deploy-virtual-machine-overview.md)]-->
 
-В этом руководстве описывается, как создать виртуальную машину на Azure Stack пограничном устройстве и управлять ею с помощью Azure PowerShell.
+В этом учебнике описывается, как создать виртуальную машину на устройстве Azure Stack пограничной Pro и управлять ею с помощью Azure PowerShell.
 
 ## <a name="vm-deployment-workflow"></a>Рабочий процесс развертывания виртуальной машины
 
@@ -101,7 +101,7 @@ ms.locfileid: "89461720"
     ZoneMappings      :
     ```
     
-## <a name="create-a-resource-group"></a>Создание группы ресурсов
+## <a name="create-a-resource-group"></a>Создание группы ресурсов.
 
 Создайте группу ресурсов Azure с помощью командлета [New-AzureRmResourceGroup](https://docs.microsoft.com/powershell/module/az.resources/new-azresourcegroup). Группа ресурсов — это логический контейнер, в который развертываются и управляются ресурсы Azure, такие как учетная запись хранения, диск, управляемый диск.
 
@@ -128,7 +128,7 @@ New-AzureRmStorageAccount -Name <Storage account name> -ResourceGroupName <Resou
 ```
 
 > [!NOTE]
-> Только локальные учетные записи хранения, такие как локально избыточное хранилище (Standard_LRS или Premium_LRS), можно создавать с помощью Azure Resource Manager. Чтобы создать многоуровневые учетные записи хранения, см. действия в разделе [Добавление и подключение к учетным записям хранения на Azure Stack пограничных](azure-stack-edge-j-series-deploy-add-storage-accounts.md)устройствах.
+> Только локальные учетные записи хранения, такие как локально избыточное хранилище (Standard_LRS или Premium_LRS), можно создавать с помощью Azure Resource Manager. Чтобы создать многоуровневые учетные записи хранения, см. действия в разделе [Добавление и подключение к учетным записям хранения на Azure Stack пограничных Pro](azure-stack-edge-j-series-deploy-add-storage-accounts.md).
 
 Результат выполнения команды показан ниже.
 
@@ -193,7 +193,7 @@ key2 gd34TcaDzDgsY9JtDNMUgLDOItUU0Qur3CBo6Q...
 
 Скопируйте все образы дисков, которые будут использоваться, в страничные BLOB-объекты в локальной учетной записи хранения, созданной на предыдущих шагах. Для отправки виртуального жесткого диска в учетную запись хранения, созданную на предыдущих шагах, можно использовать такой инструмент, как [AzCopy](../storage/common/storage-use-azcopy-v10.md) . 
 
-Прежде чем использовать AzCopy, убедитесь, что [AzCopy правильно настроен](#configure-azcopy) для использования с REST API версией хранилища BLOB-объектов, используемой с устройством Azure Stackного периметра.
+Прежде чем использовать AzCopy, убедитесь, что [AzCopy правильно настроен](#configure-azcopy) для использования с REST API версией хранилища BLOB-объектов, используемой с устройством Azure Stack. Pro.
 
 ```powershell
 AzCopy /Source:<sourceDirectoryForVHD> /Dest:<blobContainerUri> /DestKey:<storageAccountKey> /Y /S /V /NC:32  /BlobType:page /destType:blob 
@@ -445,11 +445,11 @@ The public IP in this case will be the same as the private IP that you passed du
 
 ## <a name="manage-vm"></a>Управление виртуальной машиной
 
-В следующем разделе описаны некоторые из распространенных операций, связанных с виртуальной машиной, которые будут созданы на устройстве Azure Stack пограничном.
+В следующем разделе описаны некоторые из распространенных операций, связанных с виртуальной машиной, которые будут созданы на устройстве Azure Stack ребра Pro.
 
 ### <a name="list-vms-running-on-the-device"></a>Вывод списка виртуальных машин, работающих на устройстве
 
-Чтобы получить список всех виртуальных машин, работающих на Azure Stack пограничном устройстве, выполните следующую команду.
+Чтобы получить список всех виртуальных машин, запущенных на устройстве Azure Stack пограничной Pro, выполните следующую команду.
 
 
 `Get-AzureRmVM -ResourceGroupName <String> -Name <String>`
@@ -502,7 +502,7 @@ Remove-AzureRmVM [-Name] <String> [-ResourceGroupName] <String>
 
 Размер виртуальной машины определяет количество выделяемых ей вычислительных ресурсов, таких как ЦП, GPU и память. Размер создаваемых виртуальных машин должен соответствовать ожидаемой рабочей нагрузке. Несмотря на то, что все компьютеры будут работать на одном и том же оборудовании, размеры компьютеров имеют разные ограничения на доступ к диску, что помогает управлять общим доступом к диску на виртуальных машинах. При увеличении рабочей нагрузки размер существующей виртуальной машины может быть изменен.
 
-Следующие стандартные виртуальные машины серии Dv2 поддерживаются для создания на Azure Stack пограничном устройстве.
+Следующие стандартные виртуальные машины серии Dv2 поддерживаются для создания на устройстве Azure Stack пограничной Pro.
 
 ### <a name="dv2-series"></a>Серия Dv2
 |Размер     |vCPU     |Память, ГиБ | Временное хранилище, Гиб  | Максимальная пропускная способность дисков ОС, операций ввода-вывода в секунду | Максимальная пропускная способность временного хранилища, операций ввода-вывода в секунду | Максимальное число дисков данных/пропускная способность: операций ввода-вывода в секунду | Максимальное число сетевых адаптеров |
@@ -547,9 +547,9 @@ Remove-AzureRmVM [-Name] <String> [-ResourceGroupName] <String>
 
 ## <a name="configure-azcopy"></a>Настройка AzCopy
 
-При установке последней версии AzCopy необходимо настроить AzCopy, чтобы убедиться, что она соответствует версии REST API хранилища BLOB-объектов для устройства Azure Stackного периметра.
+При установке последней версии AzCopy необходимо настроить AzCopy, чтобы убедиться, что она совпадает с версией хранилища BLOB-объектов REST API версии устройства Azure Stack ребры Pro.
 
-На клиенте, используемом для доступа к Azure Stack пограничному устройству, настройте глобальную переменную в соответствии с версией REST API хранилища BLOB-объектов.
+На клиенте, используемом для доступа к устройству Azure Stack ребра Pro, настройте глобальную переменную в соответствии с версией REST API хранилища BLOB-объектов.
 
 ### <a name="on-windows-client"></a>В клиенте Windows 
 

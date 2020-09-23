@@ -6,12 +6,12 @@ ms.author: manishku
 ms.service: mysql
 ms.topic: conceptual
 ms.date: 09/02/2020
-ms.openlocfilehash: 971554443e5b420cf759f86013445a6ff9069dea
-ms.sourcegitcommit: 7374b41bb1469f2e3ef119ffaf735f03f5fad484
+ms.openlocfilehash: 4599346cd4538151f6c758253f1f1bf29bafdcbf
+ms.sourcegitcommit: bdd5c76457b0f0504f4f679a316b959dcfabf1ef
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/16/2020
-ms.locfileid: "90706869"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90985776"
 ---
 # <a name="understanding-the-changes-in-the-root-ca-change-for-azure-database-for-mysql"></a>Основные сведения об изменениях в корневом ЦС для базы данных Azure для MySQL
 
@@ -122,8 +122,28 @@ ms.locfileid: "90706869"
 ### <a name="11-if-i-am-using-read-replicas-do-i-need-to-perform-this-update-only-on-master-server-or-the-read-replicas"></a>11. Если я использую для чтения реплики, нужно ли выполнять это обновление только на главном сервере или репликах чтения?
 Так как это обновление является изменением на стороне клиента, если клиент использовался для считывания данных с сервера реплики, необходимо также применить изменения для этих клиентов.
 
-### <a name="12-do-we-have-server-side-query-to-verify-if-ssl-is-being-used"></a>12. у нас есть запрос на стороне сервера, чтобы проверить, используется ли протокол SSL?
+### <a name="12-if-i-am-using-data-in-replication-do-i-need-to-perform-any-action"></a>12. Если я использую репликацию данных, нужно ли выполнять какие-либо действия?
+Если вы используете [репликацию данных](concepts-data-in-replication.md) для подключения к базе данных Azure для MySQL, необходимо учитывать два фактора.
+*   Если репликация данных выполняется из виртуальной машины (локальной или виртуальной машины Azure) в базу данных Azure для MySQL, необходимо проверить, используется ли SSL для создания реплики. Выполните команду **ОТОБРАЗИТЬ состояние Slave** и проверьте следующий параметр.  
+
+    ```azurecli-interactive
+    Master_SSL_Allowed            : Yes
+    Master_SSL_CA_File            : ~\azure_mysqlservice.pem
+    Master_SSL_CA_Path            :
+    Master_SSL_Cert               : ~\azure_mysqlclient_cert.pem
+    Master_SSL_Cipher             :
+    Master_SSL_Key                : ~\azure_mysqlclient_key.pem
+    ```
+
+    Если вы видите сертификат для CA_file, SSL_Cert и SSL_Key, необходимо будет обновить файл, добавив [новый сертификат](https://cacerts.digicert.com/DigiCertGlobalRootG2.crt.pem).
+
+*   Если репликация данных выполняется между двумя базами данных Azure для MySQL, потребуется сбросить реплику, выполнив **вызов MySQL. az_replication_change_master** и указав новый двойной корневой сертификат в качестве последнего параметра [master_ssl_ca](howto-data-in-replication.md#link-master-and-replica-servers-to-start-data-in-replication)
+
+### <a name="13-do-we-have-server-side-query-to-verify-if-ssl-is-being-used"></a>13. у нас есть запрос на стороне сервера, чтобы проверить, используется ли протокол SSL?
 Чтобы проверить, используется ли SSL-соединение для подключения к серверу, обратитесь к [проверке SSL](howto-configure-ssl.md#step-4-verify-the-ssl-connection).
 
-### <a name="13-what-if-i-have-further-questions"></a>13. что делать, если у меня возникнут дополнительные вопросы?
-Если у вас есть вопросы, получите ответы от экспертов сообщества в [Microsoft Q&а](mailto:AzureDatabaseforMySQL@service.microsoft.com). Если у вас есть план поддержки и вам нужна техническая помощь,  [свяжитесь с нами](mailto:AzureDatabaseforMySQL@service.microsoft.com)
+### <a name="14-is-there-an-action-needed-if-i-already-have-the-digicertglobalrootg2-in-my-certificate-file"></a>14. требуется ли действие, если у меня уже есть DigiCertGlobalRootG2 в файле сертификата?
+Нет. Если файл сертификата уже содержит **DigiCertGlobalRootG2**, никаких действий не требуется.
+
+### <a name="15-what-if-i-have-further-questions"></a>15. что делать, если у меня возникнут дополнительные вопросы?
+Если у вас есть вопросы, получите ответы от экспертов сообщества в [Microsoft Q&а](mailto:AzureDatabaseforMySQL@service.microsoft.com). Если у вас есть план поддержки и вам нужна техническая помощь, [свяжитесь с нами](mailto:AzureDatabaseforMySQL@service.microsoft.com).

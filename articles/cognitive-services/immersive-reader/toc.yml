@@ -1,14 +1,9 @@
 - name: Документация по Иммерсивному средству чтения
   href: index.yml
-- name: Обзор
-  items:
-    - name: Что собой представляет Иммерсивное средство чтения?
-      href: Overview.md
-- name: Краткие руководства
-  expanded: true
-  items:
-    - name: Использование клиентской библиотеки
-      href: ./quickstarts/client-libraries.md
+- name: Что собой представляет Иммерсивное средство чтения?
+  href: Overview.md
+- name: Краткое руководство
+  href: ./quickstarts/client-libraries.md
 - name: Учебники
   items:
     - name: Запуск иммерсивного средства чтения (Android)

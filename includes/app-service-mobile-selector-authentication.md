@@ -15,7 +15,7 @@ ms.locfileid: "86206146"
 > * [Azure Active Directory](../articles/app-service/configure-authentication-provider-aad.md)
 > * [Facebook](../articles/app-service/configure-authentication-provider-facebook.md)
 > * [Google](../articles/app-service/configure-authentication-provider-google.md)
-> * [учетная запись Майкрософт](../articles/app-service/configure-authentication-provider-microsoft.md)
+> * [Учетная запись Майкрософт](../articles/app-service/configure-authentication-provider-microsoft.md)
 > * [Twitter](../articles/app-service/configure-authentication-provider-twitter.md)
 > * [Поставщик OpenID Connect Connect (Предварительная версия)](../articles/app-service/configure-authentication-provider-openid-connect.md)
 > 

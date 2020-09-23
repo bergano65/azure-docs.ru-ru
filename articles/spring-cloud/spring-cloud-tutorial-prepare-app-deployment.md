@@ -1,21 +1,90 @@
 ---
-title: Как подготовить пружинное приложение Java для развертывания в Azure Веснного облака
-description: Узнайте, как подготовить пружинное приложение Java для развертывания в Azure Веснного облака.
+title: Как подготовить приложение к развертыванию в Azure Веснного облака
+description: Узнайте, как подготовить приложение к развертыванию в Azure Веснного облака.
 author: bmitchell287
 ms.service: spring-cloud
 ms.topic: how-to
-ms.date: 02/03/2020
+ms.date: 09/08/2020
 ms.author: brendm
 ms.custom: devx-track-java
-ms.openlocfilehash: 59318cca33ba1607498546161764aa3aaaaea13e
-ms.sourcegitcommit: 43558caf1f3917f0c535ae0bf7ce7fe4723391f9
+zone_pivot_groups: programming-languages-spring-cloud
+ms.openlocfilehash: ff0582e3c4f654ed2a7f5efdc9ce8fd7a226595a
+ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/11/2020
-ms.locfileid: "90014945"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90906841"
 ---
-# <a name="prepare-a-java-spring-application-for-deployment-in-azure-spring-cloud"></a>подготовке приложения Java Spring для развертывания в Azure Spring Cloud
+# <a name="prepare-an-application-for-deployment-in-azure-spring-cloud"></a>Подготовка приложения к развертыванию в Azure Веснного облака
 
+::: zone pivot="programming-language-csharp"
+Azure Веснное облако предоставляет надежные службы для размещения, мониторинга, масштабирования и обновления приложения Стилтое. В этой статье показано, как подготовить существующее приложение Стилтое для развертывания в Azure Веснного облака. 
+
+В этой статье объясняются зависимости, конфигурация и код, необходимые для запуска приложения .NET Core Стилтое в Azure Веснного облака. Сведения о том, как развернуть приложение в Azure Веснного облака, см. в статье [развертывание первого облачного приложения Azure весны](spring-cloud-quickstart.md).
+
+>[!Note]
+> В настоящее время в качестве общедоступной предварительной версии предоставляется поддержка стилтое для Azure Веснного облака. Предложения общедоступной предварительной версии позволяют клиентам экспериментировать с новыми функциями до официального выпуска.  Общедоступные предварительные версии функций и служб не предназначены для использования в рабочей среде.  Дополнительные сведения о поддержке во время предварительных версий см. в разделе [часто задаваемые вопросы](https://azure.microsoft.com/support/faq/) или в файле a [Поддержка](https://docs.microsoft.com/azure/azure-portal/supportability/how-to-create-azure-support-request).
+
+##  <a name="supported-versions"></a>Поддерживаемые версии
+
+Azure Веснного облака поддерживает:
+
+* .NET Core 3.1
+* Стилтое 2,4
+
+## <a name="dependencies"></a>Зависимости
+
+Установите пакет [Microsoft. Azure. спрингклауд. Client](https://www.nuget.org/packages/Microsoft.Azure.SpringCloud.Client/) .
+
+## <a name="update-programcs"></a>Обновление Program.cs
+
+В `Program.Main` методе вызовите `UseAzureSpringCloudService` метод:
+
+```csharp
+public static IHostBuilder CreateHostBuilder(string[] args) =>
+    Host.CreateDefaultBuilder(args)
+        .ConfigureWebHostDefaults(webBuilder =>
+        {
+            webBuilder.UseStartup<Startup>();
+        })
+        .UseAzureSpringCloudService();
+```
+
+## <a name="enable-eureka-server-service-discovery"></a>Включить обнаружение службы Еурека Server
+
+В источнике конфигурации, который будет использоваться при запуске приложения в Azure Веснного облака, укажите `spring.application.name` то же имя, что и облачное приложение Azure весны, в котором будет развернут проект.
+
+Например, при развертывании проекта .NET с именем `EurekaDataProvider` в облачном приложении Azure весны с `planet-weather-provider` именем *appSettings.jsдля* файла должен быть указан следующий код JSON:
+
+```json
+"spring": {
+  "application": {
+    "name": "planet-weather-provider"
+  }
+}
+```
+
+## <a name="use-service-discovery"></a>Использовать обнаружение служб
+
+Чтобы вызвать службу с помощью обнаружения службы Еурека Server, выполните HTTP-запросы к, `http://<app_name>` где `app_name` — это значение `spring.application.name` целевого приложения. Например, следующий код вызывает `planet-weather-provider` службу:
+
+```csharp
+using (var client = new HttpClient(discoveryHandler, false))
+{
+    var responses = await Task.WhenAll(
+        client.GetAsync("http://planet-weather-provider/weatherforecast/mercury"),
+        client.GetAsync("http://planet-weather-provider/weatherforecast/saturn"));
+    var weathers = await Task.WhenAll(from res in responses select res.Content.ReadAsStringAsync());
+    return new[]
+    {
+        new KeyValuePair<string, string>("Mercury", weathers[0]),
+        new KeyValuePair<string, string>("Saturn", weathers[1]),
+    };
+}
+```
+::: zone-end
+
+::: zone pivot="programming-language-java"
 В этой статье рассказывается, как подготовить имеющееся приложение Java Spring к развертыванию в Azure Spring Cloud. При правильной настройке Azure Spring Cloud предоставляет надежные службы для мониторинга, масштабирования и обновления приложения Java Spring Cloud.
 
 Перед выполнением этого примера вы можете ознакомиться с [базовым кратким руководством](spring-cloud-quickstart.md).
@@ -244,3 +313,4 @@ public class GatewayApplication {
 Из этой статьи вы узнали, как настроить приложение Java Spring для развертывания в Azure Spring Cloud. Сведения о настройке экземпляра сервера конфигурации см. в разделе [Настройка экземпляра сервера конфигурации](spring-cloud-tutorial-config-server.md).
 
 Дополнительные примеры доступны на GitHub: [Примеры для Azure Spring Cloud](https://github.com/Azure-Samples/Azure-Spring-Cloud-Samples).
+::: zone-end

@@ -7,12 +7,12 @@ ms.service: static-web-apps
 ms.topic: overview
 ms.date: 05/08/2020
 ms.author: cshoe
-ms.openlocfilehash: 884aa18b1a29b1c4f1bbf1159a5d48870529c72b
-ms.sourcegitcommit: 37afde27ac137ab2e675b2b0492559287822fded
+ms.openlocfilehash: 086feb3aa7c9a38756fded58538eb22e094a5960
+ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88565712"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90906798"
 ---
 # <a name="what-is-azure-static-web-apps-preview"></a>Что такое Статические веб-приложения Azure (предварительная версия)?
 
@@ -24,7 +24,7 @@ ms.locfileid: "88565712"
 
 При создании ресурса "Статическое веб-приложение Azure" Azure настраивает рабочий процесс GitHub Actions в репозитории исходного кода приложения, который отслеживает выбранную ветвь. При каждой фиксации или принятии запросов на включение внесенных изменений в отслеживаемой ветви действие GitHub автоматически создает и развертывает приложение и его API в Azure.
 
-Статические веб-приложения обычно строятся с помощью библиотек и платформ, например Angular, React, Svelte или Vue. К этим приложениям относятся ресурсы HTML, CSS и JavaScript, а также ресурсы изображений, из которых состоит приложение. При использовании традиционного веб-сервера эти ресурсы обрабатываются с одного сервера вместе со всеми необходимыми конечными точками API.
+Статические веб-приложения обычно создаются с использованием библиотек и платформ, например Angular, React, Svelte, Vue или Blazor. К этим приложениям относятся ресурсы HTML, CSS и JavaScript, а также ресурсы изображений, из которых состоит приложение. При использовании традиционного веб-сервера эти ресурсы обрабатываются с одного сервера вместе со всеми необходимыми конечными точками API.
 
 В случае Статических веб-приложений статические ресурсы отделены от традиционного веб-сервера и обрабатываются из точек, географически распределенных по всему миру. Это распределение значительно ускоряет обработку файлов, так как эти файлы физически ближе к конечным пользователям. Кроме того, конечные точки API размещаются с использованием [бессерверной архитектуры](../azure-functions/functions-overview.md), что, в свою очередь, избавляет от необходимости использовать полноценный внутренний сервер.
 
@@ -44,7 +44,7 @@ ms.locfileid: "88565712"
 
 ## <a name="what-you-can-do-with-static-web-apps"></a>Возможности использования статических веб-приложений
 
-- **Создание современных приложений JavaScript** с использованием платформ и библиотек, например [Angular](getting-started.md?tabs=angular), [React](getting-started.md?tabs=react), [Svelte](https://docs.microsoft.com/learn/modules/publish-app-service-static-web-app-api/), [Vue](getting-started.md?tabs=react) с серверной частью [Функций Azure](apis.md).
+- **Создание современных веб-приложений** с использованием платформ и библиотек JavaScript, например [Angular](getting-started.md?tabs=angular), [React](getting-started.md?tabs=react), [Svelte](https://docs.microsoft.com/learn/modules/publish-app-service-static-web-app-api/), [Vue](getting-started.md?tabs=react) или [Blazor](https://dotnet.microsoft.com/apps/aspnet/web-apps/blazor) для разработки приложений WebAssembly с серверной частью [Функций Azure](apis.md).
 - **Публикация статических сайтов** с использованием таких платформ, как [Gatsby](publish-gatsby.md), [Hugo](publish-hugo.md), [VuePress](publish-vuepress.md).
 - **Развертывайте веб-приложений** с помощью таких платформ, как [Next.js](deploy-nextjs.md) и [Nuxt.js](deploy-nuxtjs.md).
 

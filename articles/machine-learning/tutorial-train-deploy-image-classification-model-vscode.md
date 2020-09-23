@@ -10,12 +10,12 @@ author: luisquintanilla
 ms.author: luquinta
 ms.date: 07/09/2020
 ms.custom: contperfq4
-ms.openlocfilehash: 7d209b3434eae20b4c9a7b328f5c15032315b178
-ms.sourcegitcommit: 3541c9cae8a12bdf457f1383e3557eb85a9b3187
+ms.openlocfilehash: a13bec5fa557bed1b9ce84836588e6a3e501ddf5
+ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/09/2020
-ms.locfileid: "86203553"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90906699"
 ---
 # <a name="train-and-deploy-an-image-classification-tensorflow-model-using-the-azure-machine-learning-visual-studio-code-extension-preview"></a>Обучение и развертывание модели TensorFlow для классификации изображений с использованием расширения Машинного обучения Azure для Visual Studio Code (предварительная версия)
 
@@ -61,7 +61,7 @@ ms.locfileid: "86203553"
 1. Выберите команду **Создать группу ресурсов**. 
 1. Укажите имя TeamWorkspace-rg для группы ресурсов и нажмите клавишу **ВВОД**. 
 1. Выберите расположение для рабочей области. Мы рекомендуем выбрать расположение, ближайшее к расположению развертывания модели. Например, "Западная часть США 2".
-1. Когда появится запрос на выбор типа рабочей области, выберите **Базовый**, чтобы создать область этой ценовой категории. См. сведения о других предложениях рабочей области в руководстве по [машинному обучению Azure](./overview-what-is-azure-ml.md#sku).
+1. При появлении запроса на выбор типа рабочей области выберите **базовая**.
 
 На этом этапе выполняется запрос к Azure для создания новой рабочей области в учетной записи. Через несколько минут в узле подписки появится новая рабочая область. 
 

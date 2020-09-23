@@ -8,12 +8,12 @@ ms.subservice: hyperscale-citus
 ms.custom: mvc
 ms.topic: quickstart
 ms.date: 08/17/2020
-ms.openlocfilehash: 977082b7f9055b90ee5c93913154934741d93772
-ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
+ms.openlocfilehash: 1a16283f3d04c9ad331a04c3a36b49055635d76e
+ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88547704"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90906498"
 ---
 # <a name="quickstart-create-a-hyperscale-citus-server-group-in-the-azure-portal"></a>Краткое руководство. Создание серверной группы Гипермасштабирования (Citus) на портале Azure
 
@@ -138,6 +138,5 @@ SELECT gu.login, count(*)
 
 Из этого краткого руководства вы узнали, как подготовить к работе группу серверов Hyperscale (Citus). Вы подключились к ней с помощью psql, создали схему и выполнили распределение данных.
 
-Далее ознакомьтесь с руководством по созданию масштабируемых приложений с несколькими клиентами.
-> [!div class="nextstepaction"]
-> [Проектирование мультитенантной базы данных](https://aka.ms/hyperscale-tutorial-multi-tenant)
+- Ознакомьтесь с учебником по [созданию мультитенантных масштабируемых приложений](https://aka.ms/hyperscale-tutorial-multi-tenant).
+- Определите оптимальный [первоначальный размер](howto-hyperscale-scaling.md#picking-initial-size) для своей группы серверов.

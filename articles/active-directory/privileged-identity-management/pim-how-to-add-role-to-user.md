@@ -10,15 +10,15 @@ ms.service: active-directory
 ms.topic: how-to
 ms.workload: identity
 ms.subservice: pim
-ms.date: 07/01/2020
+ms.date: 09/16/2020
 ms.author: curtand
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a3370ea52c5bd189f929c0f81a0aa9b59cc77b97
-ms.sourcegitcommit: e71da24cc108efc2c194007f976f74dd596ab013
+ms.openlocfilehash: 919585d557a668e44f229451ab202fb8bcab9079
+ms.sourcegitcommit: bdd5c76457b0f0504f4f679a316b959dcfabf1ef
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87421388"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90985179"
 ---
 # <a name="assign-azure-ad-roles-in-privileged-identity-management"></a>Назначение ролей Azure AD в управление привилегированными пользователями
 
@@ -75,6 +75,30 @@ ms.locfileid: "87421388"
 
     ![Новое назначение — уведомление](./media/pim-how-to-add-role-to-user/assignment-notification.png)
 
+## <a name="assign-a-role-with-restricted-scope"></a>Назначение роли с ограниченной областью действия
+
+Для некоторых ролей область действия предоставленных разрешений может быть ограничена одной административной единицей, субъектом-службой или приложением. Эта процедура является примером, если назначить роль с областью административной единицы. Список ролей, поддерживающих область действия через административную единицу, см. в разделе [назначение ограниченных ролей административной единице](../users-groups-roles/roles-admin-units-assign-roles.md). В настоящее время эта функция развернута в организациях Azure AD.
+
+1. Войдите в [центр администрирования Azure Active Directory](https://aad.portal.azure.com) с правами администратора привилегированных ролей.
+
+1. Выберите **Azure Active Directory**  >  **роли и администраторы**.
+
+1. Выберите **администратора пользователей**.
+
+    ![Команда добавить назначение доступна при открытии роли на портале.](./media/pim-how-to-add-role-to-user/add-assignment.png)
+
+1. Выберите **добавить назначения**.
+
+    ![Если роль поддерживает область, можно выбрать область](./media/pim-how-to-add-role-to-user/add-scope.png)
+
+1. На странице **Добавление назначений** можно выполнить следующие действия.
+
+   - Выберите пользователя или группу, которым будет назначена роль
+   - Выберите область роли (в данном случае административные единицы).
+   - Выберите административную единицу для области
+
+Дополнительные сведения о создании административных единиц см. в разделе [Добавление и удаление административных единиц](../users-groups-roles/roles-admin-units-manage.md).
+
 ## <a name="update-or-remove-an-existing-role-assignment"></a>Обновление или удаление существующего назначения роли
 
 Выполните следующие действия, чтобы обновить или удалить существующее назначение роли.
@@ -101,7 +125,7 @@ ms.locfileid: "87421388"
 
 1. Выберите **роли** или **члены**.
 
-    ![Роли Azure AD](./media/pim-how-to-add-role-to-user/pim-directory-roles.png)
+    ![Открытие ролей Azure AD](./media/pim-how-to-add-role-to-user/pim-directory-roles.png)
 
 1. Выберите **Добавить участника** , чтобы открыть **добавить управляемые члены**.
 
@@ -111,7 +135,7 @@ ms.locfileid: "87421388"
 
 1. Щелкните **выбрать участников**, выберите пользователей, которых нужно назначить роли, а затем нажмите **кнопку Выбрать**.
 
-    ![Выбор роли](./media/pim-how-to-add-role-to-user/pim-select-members.png)
+    ![Выберите пользователя или группу для назначения](./media/pim-how-to-add-role-to-user/pim-select-members.png)
 
 1. В окне **Добавление управляемых членов**нажмите кнопку **ОК** , чтобы добавить пользователя к роли.
 
@@ -169,7 +193,7 @@ ms.locfileid: "87421388"
 
 1. В сообщении с запросом на подтверждение нажмите кнопку **Да**.
 
-    ![Удаление роли](./media/pim-how-to-add-role-to-user/pim-remove-role-confirm.png)
+    ![Подтверждение удаления](./media/pim-how-to-add-role-to-user/pim-remove-role-confirm.png)
 
     Назначение роли удалено.
 
