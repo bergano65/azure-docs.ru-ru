@@ -5,12 +5,12 @@ ms.assetid: ba50ee47-58e0-4972-b67b-828f2dc48701
 ms.topic: how-to
 ms.date: 04/16/2020
 ms.custom: mvc, cc996988-fb4f-47
-ms.openlocfilehash: be539efdb66b0a9bda583960484f40fae1e18235
-ms.sourcegitcommit: a8ee9717531050115916dfe427f84bd531a92341
+ms.openlocfilehash: 9e542c493c02174364072f91d092f05ad9ec69cf
+ms.sourcegitcommit: bdd5c76457b0f0504f4f679a316b959dcfabf1ef
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83123501"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90973098"
 ---
 # <a name="create-a-function-in-azure-that-is-triggered-by-a-timer"></a>Создание в Azure функции, активируемой по таймеру
 
@@ -44,7 +44,7 @@ ms.locfileid: "83123501"
 
 1. Настройте новый триггер с параметрами, как указано в таблице под изображением, и нажмите **Создать функцию**.
 
-    :::image type="content" source="./media/functions-create-scheduled-function/function-configure-timer-trigger.png" alt-text="Выберите триггер таймера на портале Azure." border="true":::
+    :::image type="content" source="./media/functions-create-scheduled-function/function-configure-timer-trigger.png" alt-text="На снимке экрана показана страница Новая функция с выбранным шаблоном триггера таймера." border="true":::
     
     | Параметр | Рекомендуемое значение | Описание |
     |---|---|---|

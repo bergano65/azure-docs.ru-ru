@@ -7,13 +7,16 @@ ms.date: 07/07/2020
 ms.topic: tutorial
 ms.service: iot-central
 services: iot-central
-ms.custom: mqtt, devx-track-javascript
-ms.openlocfilehash: 92b28b89d181de368ef1e39eb695be2e1fad6c37
-ms.sourcegitcommit: e71da24cc108efc2c194007f976f74dd596ab013
+ms.custom:
+- mqtt
+- device-developer
+- devx-track-javascript
+ms.openlocfilehash: 7eba6adffcdd3dab3263e82faf51ac90bae79b89
+ms.sourcegitcommit: bdd5c76457b0f0504f4f679a316b959dcfabf1ef
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87423529"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90968168"
 ---
 # <a name="tutorial-create-and-connect-a-client-application-to-your-azure-iot-central-application-nodejs"></a>Руководство по Создание клиентского приложения и его подключение к приложению Azure IoT Central (Node.js)
 
@@ -335,12 +338,12 @@ node environmentalSensor.js
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Теперь, когда вы как разработчик устройства узнали о принципах создания устройств с помощью Node.js, ознакомьтесь со следующими руководствами:
-
-* Прочитайте статью [Что такое шаблоны устройств?](./concepts-device-templates.md), чтобы узнать больше о роли шаблонов устройств при реализации кода устройства.
-* Узнайте о [регистрации устройств с помощью IoT Central и безопасном подключении устройств к Azure IoT Central](./concepts-get-connected.md).
-
 Если вы хотите продолжать работу с набором руководств по IoT Central, чтобы узнать больше о создании решении IoT Central, ознакомьтесь со следующим руководством:
 
 > [!div class="nextstepaction"]
 > [Создайте шаблон устройства шлюза](./tutorial-define-gateway-device-type.md)
+
+Теперь, когда вы как разработчик устройства узнали о принципах создания устройств с помощью Node.js, ознакомьтесь со следующими руководствами:
+
+* Прочитайте статью [Что такое шаблоны устройств?](./concepts-device-templates.md), чтобы узнать больше о роли шаблонов устройств при реализации кода устройства.
+* Узнайте о [регистрации устройств с помощью IoT Central и безопасном подключении устройств к Azure IoT Central](./concepts-get-connected.md).

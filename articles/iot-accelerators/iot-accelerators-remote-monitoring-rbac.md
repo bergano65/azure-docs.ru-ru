@@ -9,12 +9,12 @@ services: iot-accelerators
 ms.date: 03/08/2019
 ms.topic: conceptual
 ms.custom: has-adal-ref, devx-track-csharp
-ms.openlocfilehash: b32e0a60e099b5ad184f8919be3f93646c3a68b3
-ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
+ms.openlocfilehash: 817bc7624bb3a6b69d56265e40681287b7fc09fa
+ms.sourcegitcommit: bdd5c76457b0f0504f4f679a316b959dcfabf1ef
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89018150"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90969584"
 ---
 # <a name="configure-role-based-access-control-in-the-remote-monitoring-solution-accelerator"></a>Настройка управления доступом на основе ролей в акселераторе решений для удаленного мониторинга
 
@@ -62,7 +62,7 @@ ms.locfileid: "89018150"
 
 1. Проверьте, являетесь ли вы владельцем приложения, щелкнув приложение, а затем — **Владельцы**. На следующем снимке экрана владельцем приложения **contoso-rm4** является **администратор Contoso**:
 
-    ![Владельцы](media/iot-accelerators-remote-monitoring-rbac/owners.png)
+    ![Снимок экрана с выбранным параметром Управление владельцами, в котором отображаются владельцы приложения Contoso r m 4.](media/iot-accelerators-remote-monitoring-rbac/owners.png)
 
     Если вы не являетесь владельцем, вам необходимо попросить существующего владельца добавить вас в список. Только владельцы могут назначать другим пользователям роли приложения, такие как **Администратор** или **Только чтение**.
 

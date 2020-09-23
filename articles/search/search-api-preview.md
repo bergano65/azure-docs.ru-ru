@@ -7,13 +7,13 @@ author: HeidiSteen
 ms.author: heidist
 ms.service: cognitive-search
 ms.topic: conceptual
-ms.date: 07/09/2020
-ms.openlocfilehash: 0e83f63e3c39f2aa20cd46f098185aba523e2478
-ms.sourcegitcommit: e69bb334ea7e81d49530ebd6c2d3a3a8fa9775c9
+ms.date: 09/22/2020
+ms.openlocfilehash: ac0b04db783571b6ef31161adaf18b4220244c6a
+ms.sourcegitcommit: bdd5c76457b0f0504f4f679a316b959dcfabf1ef
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "88950482"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90969820"
 ---
 # <a name="preview-features-in-azure-cognitive-search"></a>Предварительные версии функций в Azure Когнитивный поиск
 
@@ -23,9 +23,8 @@ ms.locfileid: "88950482"
 
 |Функция&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  | Категория | Описание | Доступность  |
 |---------|------------------|-------------|---------------|
-| [**Навык Машинное обучение Azure (AML)**](cognitive-search-aml-skill.md) | Обогащение данных с помощью средств ИИ| Новый тип навыка для интеграции конечной точки с точкой Машинное обучение Azure. Начните с [этого руководства](cognitive-search-tutorial-aml-custom-skill.md). | Используйте [поиск REST API 2020-06-30-Preview](/rest/api/searchservice/) или 2019-05-06-Preview. Кроме того, на портале в проекте набора навыков при условии Когнитивный поиск и служб машинного обучения Azure развертываются в одной подписке. |
-| [**Феатуресмоде, параметр**](/rest/api/searchservice/search-documents#featuresmode) | Релевантность (оценка) | Расширение оценки релевантности для включения подробностей: Оценка сходства полей, частота терминов поля и число совпадающих уникальных токенов для каждого поля. Эти точки данных можно использовать в [пользовательских решениях оценки](https://github.com/Azure-Samples/search-ranking-tutorial). | Добавьте этот параметр запроса, используя [Поиск документов (остальные)](/rest/api/searchservice/search-documents) с помощью API-Version = 2020 – 06 -30-preview или 2019-05-06-Preview. |
-| [**Управляемое удостоверение службы**](search-howto-managed-identities-data-sources.md) | Индексаторы, безопасность| Зарегистрируйте службу поиска с Azure Active Directory, чтобы сделать ее доверенной, а затем используйте разрешения RBAC для источников данных Azure, чтобы разрешить индексатору доступ только для чтения. | Для доступа к этой возможности используйте портал или [Создайте источник данных (остальные)](/rest/api/searchservice/create-data-source) с помощью API-Version = 2020-06 -30-Preview или API-Version = 2019-05 -06-Preview. |
+| [**Навык Машинное обучение Azure (AML)**](cognitive-search-aml-skill.md) | Обогащение данных с помощью средств ИИ| Новый тип навыка для интеграции конечной точки с точкой Машинное обучение Azure. Начните с [этого руководства](cognitive-search-tutorial-aml-custom-skill.md). | Используйте [поиск REST API 2020-06-30-Preview](https://docs.microsoft.com/rest/api/searchservice/) или 2019-05-06-Preview. Кроме того, на портале в проекте набора навыков при условии Когнитивный поиск и служб машинного обучения Azure развертываются в одной подписке. |
+| [**Феатуресмоде, параметр**](https://docs.microsoft.com/rest/api/searchservice/search-documents#featuresmode) | Релевантность (оценка) | Расширение оценки релевантности для включения подробностей: Оценка сходства полей, частота терминов поля и число совпадающих уникальных токенов для каждого поля. Эти точки данных можно использовать в [пользовательских решениях оценки](https://github.com/Azure-Samples/search-ranking-tutorial). | Добавьте этот параметр запроса, используя [Поиск документов (остальные)](https://docs.microsoft.com/rest/api/searchservice/search-documents) с помощью API-Version = 2020 – 06 -30-preview или 2019-05-06-Preview. |
 | [**Сеансы отладки**](cognitive-search-debug-session.md) | Портал, обогащение искусственного интеллекта (набор навыков) | Редактор набора навыков в сеансах, используемый для исследования и устранения проблем с набором навыков. Исправления, применяемые во время сеанса отладки, можно сохранить в наборе навыков в службе. | Только на портале, используя ссылки на промежуточные страницы на странице обзора для открытия сеанса отладки. |
 | [**Обратимое удаление собственного BLOB-объекта**](search-howto-indexing-azure-blob-storage.md#incremental-indexing-and-deletion-detection) | Индексаторы, большие двоичные объекты Azure| Индексатор хранилища BLOB-объектов Azure в Когнитивный поиске Azure будет распознавать большие двоичные объекты, которые находятся в обратимо удаленном состоянии, и удалять соответствующий документ поиска во время индексирования. | Добавьте этот параметр конфигурации, используя [CREATE индексатор (RESTful)](/rest/api/searchservice/create-indexer) с API-Version = 2020-06 -30-Preview или API-Version = 2019 – 05 -06-Preview. |
 | [**Навык поиска настраиваемой сущности**](cognitive-search-skill-custom-entity-lookup.md ) | Обогащение искусственного интеллекта (набор навыков) | Квалифицированный навык, который ищет текст из пользовательского списка слов и фраз, определяемых пользователем. Затем он помечает все документы, в которых есть совпадения с любыми сущностями из этого списка. Также этот навык поддерживает определенный уровень нечеткого соответствия, что позволяет искать похожие, но не точно совпадающие фрагменты. | Сослаться на этот предварительный навык, используя редактор набора навыков на портале или [создавайте знания (остальные)](/rest/api/searchservice/create-skillset) с помощью API-Version = 2020-06 -30-Preview или API-Version = 2019 – 05 -06-Preview. |
@@ -59,7 +58,7 @@ POST https://[service name].search.windows.net/indexes/hotels-idx/docs/search?ap
 
 Служба Когнитивный поиск Azure доступна в нескольких версиях. Дополнительные сведения см. в разделе [Версии API](search-api-versions.md).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Ознакомьтесь с справочной документацией по API поиска по поиску в ОСТАВШЕЙся версии. При возникновении проблем попросите помощь по [Stack overflow](https://stackoverflow.com/) или [обратитесь в службу поддержки](https://azure.microsoft.com/support/community/?product=search).
 

@@ -2,13 +2,13 @@
 title: Типы ресурсов расширения
 description: Список типов ресурсов Azure, используемых для расширения возможностей других типов ресурсов.
 ms.topic: conceptual
-ms.date: 07/28/2020
-ms.openlocfilehash: 84de9b66f9001985b8c7b92882f03ff8c7cbf431
-ms.sourcegitcommit: f353fe5acd9698aa31631f38dd32790d889b4dbb
+ms.date: 09/22/2020
+ms.openlocfilehash: 8b80c63d361f3ad8199fd669178f7bf88dabe02e
+ms.sourcegitcommit: bdd5c76457b0f0504f4f679a316b959dcfabf1ef
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87374020"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90969743"
 ---
 # <a name="resource-types-that-extend-capabilities-of-other-resources"></a>Типы ресурсов, расширяющие возможности других ресурсов
 
@@ -21,6 +21,8 @@ ms.locfileid: "87374020"
 - Microsoft. Advisor и подавления
 - Microsoft. Алертсманажемент/Alerts
 - Microsoft. Алертсманажемент/Алертссуммари
+- Microsoft. Authorization/Акцессревиевсчедуледефинитионс
+- Microsoft. Authorization/Акцессревиевсчедулесеттингс
 - Microsoft. Authorization/checkAccess
 - Microsoft. Authorization/Деняссигнментс
 - Microsoft. Authorization/Финдорфанролеассигнментс
@@ -34,6 +36,7 @@ ms.locfileid: "87374020"
 - Microsoft.Authorization/roleAssignments
 - Microsoft. Authorization/Ролеассигнментсусажеметрикс
 - Microsoft. Authorization/roleDefinitions
+- Microsoft. Manage/Конфигуратионпрофилеассигнментс
 - Microsoft. Billing/Биллингпериодс
 - Microsoft. Billing/Биллингпермиссионс
 - Microsoft. Billing/Биллингролеассигнментс
@@ -47,24 +50,24 @@ ms.locfileid: "87374020"
 - Microsoft. потребление/бюджеты
 - Microsoft. потребление/расходы
 - Microsoft. потребление/Косттагс
+- Microsoft. потребление/кредиты
+- Microsoft. потребление/события
 - Microsoft. потребление/прогнозы
+- Microsoft. потребление/лоты
 - Microsoft. потребление/Marketplace
 - Microsoft. потребление/Оператионресултс
 - Microsoft. потребление/значение operationstatus
 - Microsoft. потребление/Прицешитс
+- Microsoft. потребление/продукты
 - Microsoft. потребление/Ресерватиондетаилс
 - Microsoft. потребление/Ресерватионрекоммендатиондетаилс
 - Microsoft. потребление/Ресерватионрекоммендатионс
 - Microsoft. потребление/Ресерватионсуммариес
 - Microsoft. потребление/Ресерватионтрансактионс
 - Microsoft. потребление/Теги
+- Microsoft. потребление/клиенты
 - Microsoft. потребление/условия
 - Microsoft. потребление/UsageDetails
-- Microsoft. потребление/кредиты
-- Microsoft. потребление/события
-- Microsoft. потребление/лоты
-- Microsoft. потребление/продукты
-- Microsoft. потребление/клиенты
 - Microsoft. Контаинеринстанце/СервицеассоЦиатионлинкс
 - Microsoft. Костманажемент/Alerts
 - Microsoft. Костманажемент/бюджеты
@@ -73,6 +76,7 @@ ms.locfileid: "87374020"
 - Microsoft. Костманажемент/EXPORTS
 - Microsoft. Костманажемент/Екстерналсубскриптионс
 - Microsoft. Костманажемент/прогноз
+- Microsoft. Костманажемент/Insights
 - Microsoft. Костманажемент/запрос
 - Microsoft. Костманажемент/Репортконфигс
 - Microsoft. Костманажемент/отчеты
@@ -93,17 +97,19 @@ ms.locfileid: "87374020"
 - Microsoft. Insights/Диагностиксеттингскатегориес
 - Microsoft. Insights/евенттипес
 - Microsoft. Insights/Екстендеддиагностиксеттингс
+- Microsoft. Insights/Женерателиветокен
 - Microsoft. Insights/ГуестдиагностиксеттингсассоЦиатион
 - Microsoft. Insights/Логдефинитионс
 - Microsoft. Insights/журналы
+- Microsoft. Insights/метрикбаселинес
 - Microsoft. Insights/metricDefinitions
 - Microsoft. Insights/Метрикнамеспацес
-- Microsoft. Insights/метрикбаселинес
 - Microsoft. Insights/метрики
 - Microsoft. Insights/Миворкбукс
 - Microsoft. Insights/топология
 - Microsoft. Insights/Transactions
 - Microsoft. Insights/Вминсигхтсонбоардингстатусес
+- Microsoft. Кубернетесконфигуратион/Extensions
 - Microsoft. Кубернетесконфигуратион/Саурцеконтролконфигуратионс
 - Microsoft. Maintenance/Апплюпдатес
 - Microsoft. Maintenance/Конфигуратионассигнментс
@@ -128,20 +134,22 @@ ms.locfileid: "87374020"
 - Microsoft. Ресаурцехеалс/уведомления
 - Microsoft. Resources/Links
 - Microsoft. Resources/Tags
-- Microsoft. Security/соответствие требованиям
-- Microsoft. Security/ИнформатионпротектионполиЦиес
 - Microsoft. Security/Адаптивенетворкхарденингс
 - Microsoft. Security/Адванцедсреатпротектионсеттингс
 - Microsoft. Security/Ассессментметадата
 - Microsoft. Security/оценки
 - Microsoft. Security/Комплианцересултс
+- Microsoft. Security/соответствие требованиям
 - Microsoft. Security/Датаколлектионажентс
 - Microsoft. Security/Девицесекуритиграупс
+- Microsoft. Security/ИнформатионпротектионполиЦиес
+- Microsoft. Security/Иотсенсорс
 - Microsoft. Security/ЖитполиЦиес
 - Microsoft. Security/Сервервулнерабилитяссессментс
+- Microsoft. Security/Склвулнерабилитяссессментс
 - Microsoft. Секуритинсигхтс/агрегаты
-- Microsoft. Секуритинсигхтс/Алертрулетемплатес
 - Microsoft. Секуритинсигхтс/alertRules
+- Microsoft. Секуритинсигхтс/Алертрулетемплатес
 - Microsoft. Секуритинсигхтс/Аутоматионрулес
 - Microsoft. Секуритинсигхтс/закладки
 - Microsoft. Секуритинсигхтс/cases
@@ -153,6 +161,7 @@ ms.locfileid: "87374020"
 - Microsoft. Секуритинсигхтс/Оффицеконсентс
 - Microsoft. Секуритинсигхтс/параметры
 - Microsoft. Секуритинсигхтс/Среатинтеллиженце
+- Microsoft. Секуритинсигхтс/ватчлистс
 - Microsoft. Софтвареплан/Хибридусебенефитс
 - Microsoft. Subscription/Креатесубскриптион
 - Microsoft. support/суппорттиккетс

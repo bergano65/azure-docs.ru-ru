@@ -15,21 +15,28 @@
 - name: Учебники
   expanded: true
   items:
-    - name: Пакет SDK для Python
+    - name: "Python (день\_1)"
       expanded: true
       items:
-        - name: Создание первого эксперимента машинного обучения
-          items:
-            - name: 1. Настройка рабочей области и среды разработки
-              href: tutorial-1st-experiment-sdk-setup.md
-            - name: 2. Обучение первой модели
-              href: tutorial-1st-experiment-sdk-train.md
+        - name: 1. Настройка локального компьютера
+          href: tutorial-1st-experiment-sdk-setup-local.md
+        - name: '2. Здравствуй, мир'
+          href: tutorial-1st-experiment-hello-world.md
+        - name: 3. Обучение модели
+          href: tutorial-1st-experiment-sdk-train.md
+        - name: 4. Предоставление своих данных
+          href: tutorial-1st-experiment-bring-data.md
+    - name: Jupyter Notebook
+      expanded: true
+      items:
         - name: Классификация изображений (данные MNIST)
           items:
-            - name: 1. Обучение модели
+            - name: 1. Настройка вычислительного экземпляра
+              href: tutorial-1st-experiment-sdk-setup.md
+            - name: 2. Обучение модели
               displayName: build modeling
               href: tutorial-train-models-with-aml.md
-            - name: 2. Развертывание модели
+            - name: 3. Развертывание модели
               href: tutorial-deploy-models-with-aml.md
         - name: Регрессия с использованием автоматизированного машинного обучения (данные о такси Нью-Йорка)
           items:
@@ -92,8 +99,6 @@
       href: /azure/open-datasets/samples?context=azure/machine-learning/context/ml-context
 - name: Основные понятия
   items:
-    - name: Выпуски Enterprise и Basic
-      href: concept-editions.md
     - name: Планирование затрат и управление ими
       displayName: low priority VM
       href: concept-plan-manage-cost.md
@@ -201,6 +206,9 @@
         - name: Написание безопасного кода
           href: concept-secure-code-best-practice.md
           displayName: security threat
+        - name: Аудит соответствия и управление им
+          href: how-to-integrate-azure-policy.md
+          displayName: policy
     - name: Ответственный подход к машинному обучению
       items:
         - name: Общие сведения об ответственном подходе к машинному обучению
@@ -287,12 +295,15 @@
               href: how-to-designer-import-data.md
         - name: Доступ к данным
           items:
-            - name: Подключение к службе хранилища Azure
+            - name: Подключение к службе хранилища Azure (Python)
               displayName: 'blob, get, fileshare, access, mount, download, data lake, datastore'
               href: how-to-access-data.md
-            - name: Получение данных из хранилища данных
+            - name: Получение данных из хранилища данных (Python)
               displayName: 'data, data set, register, access data'
               href: how-to-create-register-datasets.md
+            - name: Подключение к данным (пользовательский интерфейс)
+              displayName: 'blob, get, fileshare, access, mount, download, data lake, datastore, dataset, data set'
+              href: how-to-connect-data-ui.md
         - name: Управление данными и их использование
           items:
             - name: Обучение с наборами данных
@@ -448,6 +459,9 @@
         - name: Профилирование моделей
           displayName: profile resource requirement
           href: how-to-deploy-profile-model.md
+        - name: Развертывание моделей конструктора
+          displayName: 'designer, studio'
+          href: how-to-deploy-model-designer.md
         - name: (Предварительная версия) Без развертывания кода
           displayName: no code
           href: how-to-deploy-no-code-deployment.md

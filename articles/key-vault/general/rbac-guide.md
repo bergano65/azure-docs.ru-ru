@@ -9,14 +9,17 @@ ms.subservice: general
 ms.topic: how-to
 ms.date: 8/30/2020
 ms.author: mbaldwin
-ms.openlocfilehash: 9b7abc39bf50a61b7b52bc4027c6d845728c3874
-ms.sourcegitcommit: 9c262672c388440810464bb7f8bcc9a5c48fa326
+ms.openlocfilehash: b80b3cf1712fab17b8f626bae5fef97849e44e20
+ms.sourcegitcommit: bdd5c76457b0f0504f4f679a316b959dcfabf1ef
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/03/2020
-ms.locfileid: "89419271"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90972254"
 ---
 # <a name="provide-access-to-key-vault-keys-certificates-and-secrets-with-an-azure-role-based-access-control-preview"></a>Предоставление доступа к ключам, сертификатам и секретам Key Vault с помощью управления доступом на основе ролей Azure (Предварительная версия)
+
+> [!NOTE]
+> Поставщик ресурсов Key Vault поддерживает два типа ресурсов: **хранилища** и **управляемый HSM**. Управление доступом, описанное в этой статье, применимо только к **хранилищам**. Дополнительные сведения об управлении доступом для управляемого модуля HSM см. в разделе [управляемый контроль доступа HSM](../managed-hsm/access-control.md).
 
 Управление доступом на основе ролей в Azure (Azure RBAC) — это система авторизации, основанная на [Azure Resource Manager](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-overview) , которая обеспечивает детальное управление доступом к ресурсам Azure.
 
@@ -61,10 +64,6 @@ Azure RBAC позволяет пользователям управлять ра
 Новая модель разрешений RBAC в Azure для хранилища ключей предоставляет альтернативу модели разрешений политики доступа к хранилищу. 
 
 ### <a name="enable-azure-rbac-permissions-on-key-vault"></a>Включение разрешений RBAC в Azure на Key Vault
-
-Во время действия предварительной версии необходимо использовать тег компонента Azure RBAC (Microsoft_Azure_KeyVault_RBACEnabled = true), чтобы просмотреть новые параметры модели разрешений.
-
-https://portal.azure.com/?Microsoft_Azure_KeyVault_RBACEnabled=true#home
 
 > [!IMPORTANT]
 > Настройка модели разрешений Azure RBAC делает недействительными все разрешения политик доступа. Это может привести к простоям, если эквивалентные роли Azure не назначены.

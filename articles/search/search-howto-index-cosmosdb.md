@@ -9,18 +9,19 @@ ms.devlang: rest-api
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 07/11/2020
-ms.openlocfilehash: db6dfb36c579f57f9cef66fa00a07b0d1dc2bc03
-ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
+ms.openlocfilehash: 9402b1d38457c979f00d05f56b8ed45d2d37dfca
+ms.sourcegitcommit: bdd5c76457b0f0504f4f679a316b959dcfabf1ef
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88929675"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90971683"
 ---
 # <a name="how-to-index-cosmos-db-data-using-an-indexer-in-azure-cognitive-search"></a>How to index Cosmos DB data using an indexer in Azure Cognitive Search (Индексирование данных Cosmos DB с помощью индексатора в службе "Когнитивный поиск Azure") 
 
 > [!IMPORTANT] 
 > API SQL общедоступен.
-> API MongoDB, API Gremlin и поддержка API Cassandra в настоящее время доступны в общедоступной предварительной версии. Для предварительной версии функции соглашение об уровне обслуживания не предусмотрено. Мы не рекомендуем использовать ее в рабочей среде. Дополнительные сведения см. в статье [Дополнительные условия использования предварительных выпусков Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/). Вы можете запросить доступ к предварительным просмотрам, заполнив [эту форму](https://aka.ms/azure-cognitive-search/indexer-preview). [REST API версия 2020-06-30-Preview](search-api-preview.md) предоставляет функции предварительной версии. Сейчас доступна ограниченная поддержка портала. Поддержка пакета SDK для .NET пока не реализована.
+> API MongoDB, API Gremlin и поддержка API Cassandra в настоящее время доступны в общедоступной предварительной версии. Для предварительной версии функции соглашение об уровне обслуживания не предусмотрено. Мы не рекомендуем использовать ее в рабочей среде. Дополнительные сведения см. в статье [Дополнительные условия использования предварительных выпусков Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/). Вы можете запросить доступ к предварительным просмотрам, заполнив [эту форму](https://aka.ms/azure-cognitive-search/indexer-preview). 
+> [REST API предварительные версии](search-api-preview.md) предоставляют эти функции. Сейчас доступна ограниченная поддержка портала. Поддержка пакета SDK для .NET пока не реализована.
 
 > [!WARNING]
 > Когнитивный поиск Azure поддерживает только Cosmos DB коллекции с [политикой индексирования](/azure/cosmos-db/index-policy) , для которой задано значение [consistent](/azure/cosmos-db/index-policy#indexing-mode) . Индексирование коллекций с политикой отложенной индексации не рекомендуется и может привести к отсутствующим данным. Коллекции с отключенным индексированием не поддерживаются.
@@ -31,7 +32,7 @@ ms.locfileid: "88929675"
 
 Индексатор Cosmos DB в Azure Когнитивный поиск может выполнять обход [Azure Cosmos DB элементов](../cosmos-db/databases-containers-items.md#azure-cosmos-items) , доступ к которым осуществляется через различные протоколы. 
 
-+ Для [API SQL](../cosmos-db/sql-query-getting-started.md), который является общедоступным, можно использовать [портал](#cosmos-indexer-portal), [REST API](/rest/api/searchservice/indexer-operations)или [пакет SDK для .NET](/dotnet/api/microsoft.azure.search.models.indexer?view=azure-dotnet) , чтобы создать источник данных и индексатор.
++ Для [API SQL](../cosmos-db/sql-query-getting-started.md), который является общедоступным, можно использовать [портал](#cosmos-indexer-portal), [REST API](/rest/api/searchservice/indexer-operations)или [пакет SDK для .NET](/dotnet/api/microsoft.azure.search.models.indexer) , чтобы создать источник данных и индексатор.
 
 + Для [MONGODB API (Предварительная версия)](../cosmos-db/mongodb-introduction.md)можно создать источник данных и индексатор с помощью [портала](#cosmos-indexer-portal) или [REST API версии 2020-06-30-Preview](search-api-preview.md) .
 
@@ -271,11 +272,11 @@ SELECT c.id, c.userId, tag, c._ts FROM c JOIN tag IN c.tags WHERE c._ts >= @High
 | Bool |Edm.Boolean, Edm.String |
 | Числа, которые выглядят как целые числа |Edm.Int32, Edm.Int64, Edm.String |
 | Числа, которые выглядят как числа с плавающей запятой |Edm.Double, Edm.String |
-| Строка |Edm.String |
+| Тип String |Edm.String |
 | Массивы типов-примитивов, например [a, b, c] |Collection(Edm.String) |
 | Строки, которые выглядят как даты |Edm.DateTimeOffset, Edm.String |
 | Геообъекты JSON, например { "тип": "Точка", "координаты": [ долгота, широта ] } |Edm.GeographyPoint |
-| Другие объекты JSON |н/д |
+| Другие объекты JSON |Недоступно |
 
 ### <a name="4---configure-and-run-the-indexer"></a>4. Настройка и запуск индексатора
 
@@ -304,10 +305,10 @@ SELECT c.id, c.userId, tag, c._ts FROM c JOIN tag IN c.tags WHERE c._ts >= @High
 
 Общедоступный пакет SDK для .NET имеет полное соответствие с общедоступной REST API. Мы рекомендуем прочитать предыдущий раздел о REST API, чтобы ознакомиться с концепциями, рабочим процессом и требованиями. Используйте следующую справочную документацию по .NET API для реализации индексатора JSON в управляемом коде.
 
-+ [microsoft.azure.search.models.datasource](/dotnet/api/microsoft.azure.search.models.datasource?view=azure-dotnet)
-+ [microsoft.azure.search.models.datasourcetype](/dotnet/api/microsoft.azure.search.models.datasourcetype?view=azure-dotnet) 
-+ [microsoft.azure.search.models.index](/dotnet/api/microsoft.azure.search.models.index?view=azure-dotnet) 
-+ [microsoft.azure.search.models.indexer](/dotnet/api/microsoft.azure.search.models.indexer?view=azure-dotnet)
++ [microsoft.azure.search.models.datasource](/dotnet/api/microsoft.azure.search.models.datasource)
++ [microsoft.azure.search.models.datasourcetype](/dotnet/api/microsoft.azure.search.models.datasourcetype)
++ [microsoft.azure.search.models.index](/dotnet/api/microsoft.azure.search.models.index)
++ [microsoft.azure.search.models.indexer](/dotnet/api/microsoft.azure.search.models.indexer)
 
 <a name="DataChangeDetectionPolicy"></a>
 

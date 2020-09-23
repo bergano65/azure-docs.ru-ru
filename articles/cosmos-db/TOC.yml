@@ -768,6 +768,8 @@
                   href: ../dms/tutorial-mongodb-cosmos-db.md?toc=/azure/cosmos-db/toc.json&bc=/azure/cosmos-db/breadcrumb/toc.json
                 - name: Руководство по действиям после миграции
                   href: mongodb-post-migration.md
+            - name: Обновление с MongoDB 3.2 до 3.6
+              href: mongodb-version-upgrade.md
             - name: Получение строки подключения
               href: connect-mongodb-account.md
             - name: "Подключение с помощью Studio\_3T"
@@ -1072,6 +1074,8 @@
               href: troubleshoot-not-found.md
             - name: Устранение проблемы при несанкционированном доступе
               href: troubleshoot-unauthorized.md
+            - name: Доступность пакета SDK в средах с поддержкой нескольких регионов
+              href: troubleshoot-sdk-availability.md
         - name: .NET
           items:
             - name: Общие действия по устранению неполадок для пакета SDK .NET
@@ -1106,7 +1110,7 @@
           href: how-to-migrate-from-change-feed-library.md
         - name: "Канал изменений\_— пример Async Java"
           href: create-sql-api-java-changefeed.md
-    - name: Аналитика с использованием Azure Synapse Link
+    - name: Аналитика и бизнес-аналитика с использованием Azure Synapse Link
       items:
         - name: Настройка Azure Synapse Link
           href: configure-synapse-link.md
@@ -1114,6 +1118,8 @@
           href: ../synapse-analytics/synapse-link/how-to-connect-synapse-link-cosmos-db.md?toc=/azure/cosmos-db/toc.json&bc=/azure/cosmos-db/breadcrumb/toc.json
         - name: Отправка запросов с помощью Azure Synapse Spark
           href: ../synapse-analytics/synapse-link/how-to-query-analytical-store-spark.md?toc=/azure/cosmos-db/toc.json&bc=/azure/cosmos-db/breadcrumb/toc.json
+        - name: Использование Power BI с Synapse Link
+          href: synapse-link-power-bi.md
     - name: Встроенная аналитика с помощью Apache Spark
       items:
         - name: Соединитель Spark для Azure Databricks
@@ -1196,12 +1202,16 @@
           href: monitor-cosmos-db-reference.md
         - name: Вход в приложения с помощью Logic Apps
           href: ../logic-apps/logic-apps-scenario-error-and-exception-handling.md?toc=/azure/cosmos-db/toc.json&bc=/azure/cosmos-db/breadcrumb/toc.json
-    - name: Разработка в локальной среде
+    - name: Разработка в локальной среде с помощью эмулятора
       items:
-        - name: Использование эмулятора
+        - name: Установка и использование эмулятора
           href: local-emulator.md
-        - name: Экспорт сертификатов
+        - name: Экспорт сертификатов в эмуляторе
           href: local-emulator-export-ssl-certificates.md
+        - name: Параметры командной строки эмулятора
+          href: emulator-command-line-parameters.md
+        - name: Устранение неполадок с эмулятором
+          href: troubleshoot-local-emulator.md
         - name: Расширение Visual Studio Code
           href: 'https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-cosmosdb'
     - name: Настройка конвейера CI/CD Azure DevOps

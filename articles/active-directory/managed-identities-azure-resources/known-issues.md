@@ -17,12 +17,12 @@ ms.date: 08/06/2020
 ms.author: barclayn
 ms.collection: M365-identity-device-management
 ms.custom: has-adal-ref
-ms.openlocfilehash: 4bcd36a1ce38d4d9eb6a0faec470f7427852894b
-ms.sourcegitcommit: bcda98171d6e81795e723e525f81e6235f044e52
+ms.openlocfilehash: 0d8c835cdc501061607dc05d0b40ebf95deb36a8
+ms.sourcegitcommit: bdd5c76457b0f0504f4f679a316b959dcfabf1ef
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/01/2020
-ms.locfileid: "89260226"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90969156"
 ---
 # <a name="faqs-and-known-issues-with-managed-identities-for-azure-resources"></a>Часто задаваемые вопросы об управляемых удостоверениях для ресурсов Azure, а также известные проблемы в их работе
 
@@ -33,15 +33,13 @@ ms.locfileid: "89260226"
 > [!NOTE]
 > Управляемые удостоверения для ресурсов Azure — это новое название службы "Управляемое удостоверение службы" (MSI).
 
-
 ### <a name="how-can-you-find-resources-that-have-a-managed-identity"></a>Как можно найти ресурсы с управляемым удостоверением?
 
 Список ресурсов, которым назначено системное управляемое удостоверение, можно найти с помощью следующей команды Azure CLI: 
 
-`az resource list --query "[?identity.type=='SystemAssigned'].{Name:name,  principalId:identity.principalId}" --output table`
-
-
-
+```azurecli-interactive
+az resource list --query "[?identity.type=='SystemAssigned'].{Name:name,  principalId:identity.principalId}" --output table
+```
 
 ### <a name="do-managed-identities-have-a-backing-app-object"></a>Есть ли управляемые удостоверения с резервным объектом приложения?
 
@@ -72,8 +70,6 @@ ms.locfileid: "89260226"
 - Если такое удостоверение не включено и существует только одно управляемое удостоверение, назначаемое пользователем, по умолчанию в IMDS будет использоваться это управляемое удостоверение, назначаемое пользователем. 
 - Если управляемое удостоверение не включено и существует несколько управляемых удостоверений, назначаемых пользователем, то указание конкретного удостоверения в запросе является обязательным.
 
-
-
 ### <a name="will-managed-identities-be-recreated-automatically-if-i-move-a-subscription-to-another-directory"></a>Воссоздаются ли управляемые удостоверения автоматически, если подписка перемещена в другой каталог?
 
 Нет. Если вы перемещаете подписку в другой каталог, потребуется вручную повторно создать ее и снова предоставить назначения ролей Azure.
@@ -88,7 +84,6 @@ ms.locfileid: "89260226"
 
 - Управляемое удостоверение, назначаемое системой: необходимо разрешение на запись для ресурса. Например, для виртуальных машин необходимо разрешение Microsoft.Compute/virtualMachines/write. Это действие включено во встроенные роли для конкретных ресурсов, например [Участник виртуальных машин](../../role-based-access-control/built-in-roles.md#virtual-machine-contributor).
 - Управляемое удостоверение, назначаемое пользователем: необходимо разрешение на запись для ресурса. Например, для виртуальных машин необходимо разрешение Microsoft.Compute/virtualMachines/write. Вдобавок к назначению роли [Оператора управляемого удостоверения](../../role-based-access-control/built-in-roles.md#managed-identity-operator) для управляемого удостоверения.
-
 
 
 ## <a name="known-issues"></a>Известные проблемы
@@ -112,7 +107,7 @@ ms.locfileid: "89260226"
 Активируйте обновление на виртуальной машине, чтобы она могла получить правильные значения управляемых удостоверений для ресурсов Azure. Можно изменить свойства виртуальной машины, чтобы обновить ссылку на ресурс управляемых удостоверений для ресурсов Azure. Например, можно задать новое значение тега виртуальной машины с помощью следующей команды.
 
 ```azurecli-interactive
- az  vm update -n <VM Name> -g <Resource Group> --set tags.fixVM=1
+az vm update -n <VM Name> -g <Resource Group> --set tags.fixVM=1
 ```
  
 Эта команда задает новый тег fixVM со значением 1 для виртуальной машины. 
@@ -124,8 +119,6 @@ ms.locfileid: "89260226"
 ```azurecli-interactive
 az vm update -n <VM Name> -g <Resource Group> --remove tags.fixVM
 ```
-
-
 
 ### <a name="transferring-a-subscription-between-azure-ad-directories"></a>Передача подписки между каталогами Azure AD
 

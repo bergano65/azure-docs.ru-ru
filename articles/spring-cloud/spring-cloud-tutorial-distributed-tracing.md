@@ -7,18 +7,76 @@ ms.topic: how-to
 ms.date: 10/06/2019
 ms.author: brendm
 ms.custom: devx-track-java
-ms.openlocfilehash: 1ff76c38031ac367bf81f6d152642a4d9a209bb7
-ms.sourcegitcommit: 58d3b3314df4ba3cabd4d4a6016b22fa5264f05a
+zone_pivot_groups: programming-languages-spring-cloud
+ms.openlocfilehash: 97926d5bdf3123ae50714d36ad0234872f67aa96
+ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89294005"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90908292"
 ---
 # <a name="use-distributed-tracing-with-azure-spring-cloud"></a>Использование распределенной трассировки в Azure Spring Cloud
 
 Инструменты распределенной трассировки в Azure Spring Cloud позволяют легко выполнять отладку и мониторинг сложных проблем. Azure Spring Cloud интегрирует [Spring Cloud Sleuth](https://spring.io/projects/spring-cloud-sleuth) с Azure [Application Insights](https://docs.microsoft.com/azure/azure-monitor/app/app-insights-overview). Эта интеграция предоставляет мощные возможности распределенной трассировки через портал Azure.
 
-В этой статье раскрываются следующие темы:
+::: zone pivot="programming-language-csharp"
+Из этой статьи вы узнаете, как разрешить приложению .NET Core Стилтое использовать распределенную трассировку.
+
+## <a name="prerequisites"></a>Предварительные требования
+
+Для выполнения этих процедур требуется приложение Стилтое, которое уже [подготовлено к развертыванию в Azure веснного облака](spring-cloud-tutorial-prepare-app-deployment.md).
+
+## <a name="dependencies"></a>Зависимости
+
+Установить следующие пакеты NuGet
+
+* [Стилтое. Management. ТраЦингкоре](https://www.nuget.org/packages/Steeltoe.Management.TracingCore/)
+* [Стилтое. Management. Експортеркоре](https://www.nuget.org/packages/Microsoft.Azure.SpringCloud.Client/)
+
+## <a name="update-startupcs"></a>Обновление Startup.cs
+
+1. В `ConfigureServices` методе вызовите `AddDistributedTracing` методы и `AddZipkinExporter` .
+
+   ```csharp
+   public void ConfigureServices(IServiceCollection services)
+   {
+       services.AddDistributedTracing(Configuration);
+       services.AddZipkinExporter(Configuration);
+   }
+   ```
+
+1. В `Configure` методе вызовите `UseTracingExporter` метод.
+
+   ```csharp
+   public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+   {
+        app.UseTracingExporter();
+   }
+   ```
+
+## <a name="update-configuration"></a>Обновление конфигурации
+
+Добавьте следующие параметры в источник конфигурации, который будет использоваться при запуске приложения в Azure Веснного облака:
+
+1. `management.tracing.alwaysSample` — присвойте значение True.
+
+2. Если вы хотите просмотреть диапазоны трассировки, отправляемые между сервером Еурека, сервером конфигурации и пользовательскими приложениями: значение `management.tracing.egressIgnorePattern` "/API/v2/spans |/v2/Apps/.* /пермиссионс |/Еурека/.*| /оаус/. * ".
+
+Например, *appsettings.jsв* будет содержать следующие свойства:
+ 
+```json
+"management": {
+    "tracing": {
+      "alwaysSample": true,
+      "egressIgnorePattern": "/api/v2/spans|/v2/apps/.*/permissions|/eureka/.*|/oauth/.*"
+    }
+  }
+```
+
+Дополнительные сведения о распределенной трассировке в приложениях .NET Core Стилтое см. в разделе [Распределенная трассировка](https://steeltoe.io/docs/3/tracing/distributed-tracing) в документации по стилтое.
+::: zone-end
+::: zone pivot="programming-language-java"
+Вы узнаете, как выполнять следующие задачи:
 
 > [!div class="checklist"]
 > * Включение распределенной трассировки на портале Azure.
@@ -28,8 +86,8 @@ ms.locfileid: "89294005"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Чтобы выполнить процедуры из этого учебника, вам потребуется подготовленная и запущенная служба Azure Spring Cloud. Выполните [краткое руководство по развертыванию приложения с помощью Azure CLI](spring-cloud-quickstart.md), чтобы подготовить и запустить службу Azure Spring Cloud.
-    
+Чтобы выполнить процедуры из этого учебника, вам потребуется подготовленная и запущенная служба Azure Spring Cloud. Выполните инструкции из руководства по [развертыванию первого облачного приложения Azure весны](spring-cloud-quickstart.md) , чтобы подготавливать и запускать облачную службу Azure весны.
+
 ## <a name="add-dependencies"></a>Добавление зависимостей
 
 1. Добавьте следующую строку в конец файла application.properties.
@@ -73,6 +131,7 @@ spring.sleuth.sampler.probability=0.5
 ```
 
 Вы можете изменить частоту выборки, даже если уже скомпилировали и развернули приложение. Для этого добавьте указанную выше строку в переменную среды с помощью Azure CLI или портала Azure.
+::: zone-end
 
 ## <a name="enable-application-insights"></a>Включение Application Insights
 

@@ -1,18 +1,18 @@
 ---
 title: Встроенные определения политик для Центра Интернета вещей Azure
 description: Здесь приведены встроенные определения политик в Политике Azure для Центра Интернета вещей Azure. Эти встроенные определения политик предоставляют популярные подходы к управлению ресурсами Azure.
-ms.date: 09/10/2020
+ms.date: 09/16/2020
 ms.topic: reference
 author: robinsh
 ms.author: robinsh
 ms.service: iot-hub
 ms.custom: subject-policy-reference
-ms.openlocfilehash: f319feae195c1bb538e3696d4c20642d86dd8801
-ms.sourcegitcommit: 3c66bfd9c36cd204c299ed43b67de0ec08a7b968
+ms.openlocfilehash: 22b1a7769918b125cbbd3cbca9003d0904053b16
+ms.sourcegitcommit: bdd5c76457b0f0504f4f679a316b959dcfabf1ef
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "90007067"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90973135"
 ---
 # <a name="azure-policy-built-in-definitions-for-azure-iot-hub"></a>Встроенные определения в Политике Azure для Центра Интернета вещей
 
