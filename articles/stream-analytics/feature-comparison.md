@@ -6,16 +6,16 @@ ms.author: mamccrea
 ms.service: stream-analytics
 ms.topic: conceptual
 ms.date: 06/27/2019
-ms.openlocfilehash: b169a067f05de422b714e18a4d7ebb9c9e7f0428
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 2ba7dc3b0f2bc4f62234c480da0af1061dea1f91
+ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "82133501"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90885562"
 ---
 # <a name="azure-stream-analytics-feature-comparison"></a>Сравнение возможностей Azure Stream Analytics
 
-С помощью Azure Stream Analytics можно создавать решения потоковой передачи в облаке и в IoT Edge с использованием [портал Azure](stream-analytics-quick-create-portal.md), [Visual Studio](stream-analytics-quick-create-vs.md)и [Visual Studio Code](quick-create-vs-code.md). В таблицах этой статьи показано, какие функции поддерживаются каждой платформой для обоих типов заданий.
+С помощью Azure Stream Analytics можно создавать решения потоковой передачи в облаке и в IoT Edge с использованием [портал Azure](stream-analytics-quick-create-portal.md), [Visual Studio](stream-analytics-quick-create-vs.md)и [Visual Studio Code](quick-create-visual-studio-code.md). В таблицах этой статьи показано, какие функции поддерживаются каждой платформой для обоих типов заданий.
 
 > [!NOTE]
 > Средства Visual Studio и Visual Studio Code не поддерживают выполнение заданий в регионах "Восточный Китай", "Северный Китай", "Центральная Германия" и "Северо-Восточная Германия".
@@ -42,10 +42,10 @@ ms.locfileid: "82133501"
 |Журналы ресурсов     |Да         |Нет         |Нет         |
 |Свойства настраиваемого сообщения     |Да         |Да         |Нет       |
 |Функция пользовательского кода C# и десериализатор|Режим только для чтения|Да|Нет|
-|Определяемые пользователем функции JavaScript и UDA     |Да         |Да         |Только Windows         |
+|Определяемые пользователем функции JavaScript и UDA     |Да         |Да         |Только в Windows         |
 |Служба машинного обучения     |Да        |Да         |Нет         |
 |Студия машинного обучения     |Да, но запрос не может быть проверен        |Да |Нет         |
-|Уровень совместимости     |1.0</br>1.1</br>1,2 (по умолчанию)         |1.0</br>1.1</br>1,2 (по умолчанию)           |1.0</br>1.1</br>1,2 (по умолчанию)           |
+|Уровень совместимости     |1.0</br>1,1</br>1,2 (по умолчанию)         |1.0</br>1,1</br>1,2 (по умолчанию)           |1.0</br>1,1</br>1,2 (по умолчанию)           |
 |Встроенные функции обнаружения аномалий на основе машинного обучения     |Да         |Да         |Да         |
 |Встроенные геопространственные функции     |Да         |Да         |Да         |
 

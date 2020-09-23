@@ -3,12 +3,12 @@ title: Экспорт в Power BI из Azure Application Insights | Докуме
 description: Аналитические запросы можно просматривать в Power BI.
 ms.topic: conceptual
 ms.date: 08/10/2018
-ms.openlocfilehash: 51a553452643fc979846ab4604762f11c5b7ff68
-ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
+ms.openlocfilehash: 804da7d3aaa2fd1b7973a686bc9ca5cb5ee973a2
+ms.sourcegitcommit: bdd5c76457b0f0504f4f679a316b959dcfabf1ef
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87324375"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90979171"
 ---
 # <a name="feed-power-bi-from-application-insights"></a>Использование данных Application Insights в Power BI
 [Power BI](https://www.powerbi.com/) — это набор бизнес-инструментов для анализа данных и обмена сведениями. На каждом устройстве доступны панели мониторинга с широкими возможностями. Вы можете объединять данные из различных источников, в том числе аналитические запросы из [ Application Insights](./app-insights-overview.md).
@@ -67,17 +67,17 @@ ms.locfileid: "87324375"
 
    Вставьте экспортированный сценарий на языке M в расширенный редактор. 
 
-   ![Снимок экрана Power BI Desktop, на котором выделен расширенный редактор](./media/export-power-bi/advancedquery.png)
+   ![Снимок экрана показывает Power BI Desktop с выделенным Расширенный редактор](./media/export-power-bi/advancedquery.png)
 
 4. Выберите элементы запроса, а затем — визуализацию "Воронка".
 
-   ![Снимок экрана параметров визуализации в Power BI Desktop](./media/export-power-bi/selectsequence.png)
+   ![Снимок экрана показывает Power BI Desktop параметры визуализации воронки](./media/export-power-bi/selectsequence.png)
 
 5. Замените заголовок на информативный и опубликуйте отчет в облачной рабочей области Power BI. 
 
    ![Снимок экрана Power BI Desktop, на котором выделен измененный заголовок](./media/export-power-bi/changetitle.png)
 
-## <a name="troubleshooting"></a>Устранение неполадок
+## <a name="troubleshooting"></a>Диагностика
 
 Могут возникнуть ошибки, относящиеся к учетным данным или размеру набора данных. Ниже приведены сведения о том, что нужно делать в случае возникновения таких ошибок.
 
@@ -86,7 +86,7 @@ ms.locfileid: "87324375"
 
 1. Войдите в портал Azure и убедитесь, что вы можете получить доступ к ресурсу.
 2. Попробуйте обновить учетные данные для панели мониторинга.
-3. Попробуйте очистить кэш на рабочем столе PowerBI.
+3. Попробуйте очистить кэш от Power BI Desktop.
 
 
    Если у вас есть доступ, но обновление учетных данных не выполняется, обратитесь в службу поддержки.
@@ -121,14 +121,14 @@ ms.locfileid: "87324375"
 1. Войдите в [Power BI](https://app.powerbi.com/).
 2. Откройте **Получить данные** ![Снимок экрана значка "Получить данные" в левом нижнем углу](./media/export-power-bi/001.png), **Службы**.
 
-    ![Снимки экрана получения данных из источника данных Application Insights](./media/export-power-bi/002.png)
+    ![На снимках экрана в окне "службы" отображается кнопка "получить".](./media/export-power-bi/002.png)
 
 3. Выберите **Получить** в разделе Application Insights.
 
    ![Снимки экрана получения данных из источника данных Application Insights](./media/export-power-bi/003.png)
 4. Укажите сведения о ресурсе Application Insights, а затем **Войдите**.
 
-    ![Снимок экрана получения данных из источника данных Application Insights](./media/export-power-bi/005.png)
+    ![На снимке экрана показано подключение к Application Insights окну.](./media/export-power-bi/005.png)
 
      Эти сведения можно найти на панели обзора Application Insights.
 

@@ -6,12 +6,12 @@ ms.author: ambhatna
 ms.service: mysql
 ms.topic: how-to
 ms.date: 3/18/2020
-ms.openlocfilehash: 2c028bff80856f7edcb34688ffa5c3320a66ccc9
-ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
+ms.openlocfilehash: d4dc5c2690be7b9abbda685e78ea562878626b5c
+ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86112618"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90902861"
 ---
 # <a name="auto-grow-storage-in-azure-database-for-mysql-using-the-azure-portal"></a>Автоматическое увеличение объема хранилища в базе данных Azure для MySQL с помощью портал Azure
 В этой статье описывается, как можно настроить расширение хранилища базы данных Azure для MySQL, не влияя на рабочую нагрузку.
@@ -32,13 +32,13 @@ ms.locfileid: "86112618"
 
 3. В разделе Автоматическое увеличение выберите **Да** , чтобы включить автоматическое увеличение размера хранилища.
 
-    ![База данных Azure для MySQL — Settings_Pricing_tier — автоматическое увеличение](./media/howto-auto-grow-storage-portal/3-auto-grow.png)
+    :::image type="content" source="./media/howto-auto-grow-storage-portal/3-auto-grow.png" alt-text="База данных Azure для MySQL — Settings_Pricing_tier — автоматическое увеличение":::
 
-4. Чтобы сохранить изменения, нажмите кнопку **ОК**.
+4. Нажмите кнопку **OK**, чтобы сохранить изменения.
 
 5. В уведомлении будет подтверждено, что автоматическое увеличение размера было успешно включено.
 
-    ![База данных Azure для MySQL — успешное выполнение автоматического роста](./media/howto-auto-grow-storage-portal/5-auto-grow-success.png)
+    :::image type="content" source="./media/howto-auto-grow-storage-portal/5-auto-grow-success.png" alt-text="База данных Azure для MySQL — успешное выполнение автоматического роста":::
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

@@ -3,12 +3,12 @@ title: Экспорт из Azure Application Insights с помощью Stream A
 description: Stream Analytics может непрерывно преобразовывать, фильтровать и маршрутизировать данные, экспортируемые из Application Insights.
 ms.topic: conceptual
 ms.date: 01/08/2019
-ms.openlocfilehash: d90b965ca65af0acf7032067c77591a2ac4d4b02
-ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
+ms.openlocfilehash: e90daf2516b00f7a27ac47e34cfc4ace03fee6e2
+ms.sourcegitcommit: bdd5c76457b0f0504f4f679a316b959dcfabf1ef
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87324358"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90979182"
 ---
 # <a name="use-stream-analytics-to-process-exported-data-from-application-insights"></a>Обработка данных, экспортированных из Application Insights, при помощи Stream Analytics
 [Azure Stream Analytics](https://azure.microsoft.com/services/stream-analytics/) — идеальное средство для обработки данных, [экспортированных из Application Insights](export-telemetry.md). Stream Analytics может извлекать данные из различных источников. Это средство может преобразовывать и фильтровать данные и затем отправлять их в различные приемники.
@@ -196,7 +196,7 @@ FROM flat
 
 Теперь этот набор данных можно использовать в отчетах и панелях мониторинга в [Power BI](https://powerbi.microsoft.com).
 
-![Выбор набора данных и полей в Power BI.](./media/export-stream-analytics/210.png)
+![На снимке экрана показан пример отчета из набора данных в Power BI.](./media/export-stream-analytics/210.png)
 
 ## <a name="no-data"></a>Данные отсутствуют?
 * Проверьте правильность [формата даты](#set-path-prefix-pattern) — ГГГГ-ММ-ДД (с дефисами).

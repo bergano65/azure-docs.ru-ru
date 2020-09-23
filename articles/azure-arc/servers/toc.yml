@@ -47,12 +47,12 @@
       items:
         - name: Проблемы с подключением агента
           href: troubleshoot-agent-onboard.md
-    - name: Справочник
-      items:
-        - name: Доступность в регионах и место расположения данных
-          href: data-residency.md
-        - name: REST
-          href: /rest/api/hybridcompute
-        - name: Встроенные компоненты Политики Azure
-          displayName: 'samples, policies, definitions'
-          href: policy-reference.md
+- name: Справочник
+  items:
+    - name: Местонахождение данных
+      href: data-residency.md
+    - name: REST
+      href: /rest/api/hybridcompute
+    - name: Встроенные компоненты Политики Azure
+      displayName: 'samples, policies, definitions'
+      href: policy-reference.md

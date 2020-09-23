@@ -10,12 +10,12 @@ ms.subservice: computer-vision
 ms.topic: conceptual
 ms.date: 09/01/2020
 ms.author: aahi
-ms.openlocfilehash: 3d419268302ac8fd55559c6af9cd328f22bd2404
-ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
+ms.openlocfilehash: b17e2618cd87c0689fa531e893149a1b2fab8d20
+ms.sourcegitcommit: bdd5c76457b0f0504f4f679a316b959dcfabf1ef
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 09/22/2020
-ms.locfileid: "90938409"
+ms.locfileid: "90987197"
 ---
 # <a name="install-and-run-the-spatial-analysis-container-preview"></a>Установка и запуск контейнера пространственного анализа (Предварительная версия)
 
@@ -69,9 +69,9 @@ Azure Stack ребро — это решение "оборудование ка�
 | ОС Linux | На главном компьютере должен быть установлен [Ubuntu Desktop 18,04 LTS](http://releases.ubuntu.com/18.04/) .  |
 
 
-## <a name="request-access-to-the-spatial-analysis-functionality"></a>Запрос доступа к функциям пространственного анализа
+## <a name="request-approval-to-run-the-container"></a>Запросить утверждение для запуска контейнера
 
-Заполните [форму запроса](https://aka.ms/cognitivegate) и отправьте ее, чтобы запросить доступ к контейнеру. 
+Заполните [форму запроса](https://aka.ms/cognitivegate) и отправьте ее, чтобы запросить утверждение для запуска контейнера. 
 
 В форме нужно указать сведения о себе, компании и пользовательском сценарии, для которого будет использоваться контейнер. После отправки формы команда Azure Cognitive Services будет просматривать ее и отправлять вам решение.
 
@@ -208,7 +208,8 @@ sudo systemctl restart docker
 ## <a name="enable-nvidia-mps-on-the-host-computer"></a>Включение системы NVIDIA MPS на главном компьютере
 
 > [!TIP]
-> Запустите инструкции MPS из окна терминала на главном компьютере. Не внутри экземпляра контейнера DOCKER.
+> * Не устанавливайте MPS, если функция вычислений GPU меньше 7. x (до Волта). См. раздел [Совместимость CUDA](https://docs.nvidia.com/deploy/cuda-compatibility/index.html#support-title) для справки. 
+> * Запустите инструкции MPS из окна терминала на главном компьютере. Не внутри экземпляра контейнера DOCKER.
 
 Для лучшей производительности и использования настройте GPU главного компьютера для [службы многопроцессной обработки NVIDIA (MPS)](https://docs.nvidia.com/deploy/pdf/CUDA_Multi_Process_Service_Overview.pdf). Запустите инструкции MPS из окна терминала на главном компьютере.
 
@@ -262,7 +263,9 @@ az iot hub device-identity create --hub-name "test-iot-hub-123" --device-id "my-
 Если главный компьютер не является Azure Stack пограничным устройством, необходимо установить [Azure IOT Edge](https://docs.microsoft.com/azure/iot-edge/how-to-install-iot-edge-linux) версии 1.0.8. Чтобы скачать правильную версию, выполните следующие действия: Ubuntu Server 18,04:
 ```bash
 curl https://packages.microsoft.com/config/ubuntu/18.04/multiarch/prod.list > ./microsoft-prod.list
-Copy the generated list.
+```
+
+Скопируйте созданный список.
 
 ```bash
 sudo cp ./microsoft-prod.list /etc/apt/sources.list.d/
@@ -335,7 +338,8 @@ sudo systemctl restart iotedge
 ```azurecli
 az login
 az extension add --name azure-iot
-az iot edge deployment create --deployment-id "<deployment name>" --hub-name "<IoT Hub name>" --content DeploymentManifest.json --target-condition "deviceId='<IoT Edge device name>'" -–subscription "<subscriptionId>"
+az iot edge set-modules --hub-name "<IoT Hub name>" --device-id "<IoT Edge device name>" --content DeploymentManifest.json -–subscription "<subscriptionId>"
+
 ```
 
 |Параметр  |Описание  |

@@ -7,12 +7,12 @@ ms.service: postgresql
 ms.custom: mvc
 ms.topic: quickstart
 ms.date: 06/27/2020
-ms.openlocfilehash: 9b3e1916301d6346defd6ebeab2f3784882f2d5f
-ms.sourcegitcommit: c5021f2095e25750eb34fd0b866adf5d81d56c3a
+ms.openlocfilehash: 0c390c64db8c5833f5bc5bf2be3367cb63127a0f
+ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88798862"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90902646"
 ---
 # <a name="quickstart-create-an-azure-database-for-postgresql-server-by-using-the-azure-portal"></a>Краткое руководство. Создание сервера Базы данных Azure для PostgreSQL с помощью портала Azure
 
@@ -34,17 +34,17 @@ ms.locfileid: "88798862"
 2. Выберите **Базы данных** > **База данных Azure для PostgreSQL**.
 
    > [!div class="mx-imgBorder"]
-   > ![Снимок экрана, на котором показан пункт меню "База данных Azure для PostgreSQL".](./media/quickstart-create-database-portal/1-create-database.png)
+   > :::image type="content" source="./media/quickstart-create-database-portal/1-create-database.png" alt-text="Снимок экрана, на котором показан пункт меню "База данных Azure для PostgreSQL".":::
 
 3. Выберите вариант развертывания **Отдельный сервер**.
 
    > [!div class="mx-imgBorder"]
-   > ![Снимок экрана, на котором показан выбор варианта развертывания с одним сервером для Базы данных Azure для PostgreSQL.](./media/quickstart-create-database-portal/select-deployment-option.png)
+   > :::image type="content" source="./media/quickstart-create-database-portal/select-deployment-option.png" alt-text="Снимок экрана, на котором показан выбор варианта развертывания с одним сервером для Базы данных Azure для PostgreSQL.":::
 
 4. Заполните форму **Основные данные** , указав следующую информацию:
 
    > [!div class="mx-imgBorder"]
-   > ![Снимок экрана, на котором показана вкладка "Основные сведения" для создания одного сервера.](./media/quickstart-create-database-portal/create-basics.png)
+   > :::image type="content" source="./media/quickstart-create-database-portal/create-basics.png" alt-text="Снимок экрана, на котором показана вкладка "Основные сведения" для создания одного сервера.":::
 
    Параметр|Рекомендуемое значение|Описание
    ---|---|---
@@ -71,7 +71,7 @@ ms.locfileid: "88798862"
 По умолчанию создаваемый сервер не является общедоступным. Поэтому для доступа к IP-адресу необходимо предоставить разрешения. Перейдите к ресурсу сервера на портале Azure и выберите **Безопасность подключения** в левой части меню для этого ресурса сервера. Если вы не знаете, как найти ресурс, ознакомьтесь с разделом [Открытие ресурсов](https://docs.microsoft.com/azure/azure-resource-manager/management/manage-resources-portal#open-resources).
 
 > [!div class="mx-imgBorder"]
-> ![Снимок экрана, на котором показаны правила брандмауэра для обеспечения безопасности подключения.](./media/quickstart-create-database-portal/add-current-ip-firewall.png)
+> :::image type="content" source="./media/quickstart-create-database-portal/add-current-ip-firewall.png" alt-text="Снимок экрана, на котором показаны правила брандмауэра для обеспечения безопасности подключения.":::
   
 Выберите **Добавить текущий IP-адрес клиента** и щелкните **Сохранить**. Вы можете добавить дополнительные IP-адреса или указать диапазон адресов, чтобы подключаться к серверу с любого из этих IP-адресов. Дополнительные сведения см. в статье [Правила брандмауэра в Базе данных Azure для PostgreSQL](./concepts-firewall-rules.md).
    
@@ -90,7 +90,7 @@ ms.locfileid: "88798862"
    > Если вы открываете Cloud Shell первый раз, отобразится запрос на создание группы ресурсов и учетной записи хранения. Это одноразовое действие, которое автоматически применяется для всех сеансов. 
 
    > [!div class="mx-imgBorder"]
-   > ![Снимок экрана, на котором показаны сведения о сервере и значок для открытия Azure Cloud Shell.](media/quickstart-create-database-portal/use-in-cloud-shell.png)
+   > :::image type="content" source="media/quickstart-create-database-portal/use-in-cloud-shell.png" alt-text="Снимок экрана, на котором показаны сведения о сервере и значок для открытия Azure Cloud Shell.":::
 
 3. Воспользуйтесь следующей командой в терминале Azure Cloud Shell. Замените предложенные значения реальными именами сервера и администратора. Используйте пустую базу данных **postgres** от имени администратора в следующем формате: `<admin-username>@<servername>`.
 
@@ -143,7 +143,7 @@ ms.locfileid: "88798862"
 Чтобы удалить сервер, нажмите кнопку **Удалить** на его странице **Обзор**.
 
 > [!div class="mx-imgBorder"]
-> ![Снимок экрана, на котором показана кнопка для удаления сервера.](media/quickstart-create-database-portal/12-delete.png)
+> :::image type="content" source="media/quickstart-create-database-portal/12-delete.png" alt-text="Снимок экрана, на котором показана кнопка для удаления сервера.":::
 
 ## <a name="next-steps"></a>Дальнейшие шаги
 > [!div class="nextstepaction"]

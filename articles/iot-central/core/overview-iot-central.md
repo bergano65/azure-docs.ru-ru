@@ -8,12 +8,12 @@ ms.topic: overview
 ms.service: iot-central
 services: iot-central
 ms.custom: mvc
-ms.openlocfilehash: 1af549feb551eca02bb1ef8df6481eceb959f6d1
-ms.sourcegitcommit: 1a0dfa54116aa036af86bd95dcf322307cfb3f83
+ms.openlocfilehash: 4ad1bcabc2e30e9e636883219d42f96335e32e78
+ms.sourcegitcommit: bdd5c76457b0f0504f4f679a316b959dcfabf1ef
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/10/2020
-ms.locfileid: "88042723"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90987369"
 ---
 # <a name="what-is-azure-iot-central"></a>Сведения об Azure IoT Central
 
@@ -152,9 +152,8 @@ IoT Central — это платформа приложений IoT, котор�
 Теперь, когда вы ознакомились с IoT Central, предлагаем сделать следующее:
 
 - Ознакомьтесь с доступными [технологиями и службами Azure для создания решений Интернета вещей](../../iot-fundamentals/iot-services-and-technologies.md).
+- Если вы являетесь разработчиком устройства и хотите ознакомиться с кодом, [создайте и подключите клиентское приложение к приложению Azure IoT Central](./tutorial-connect-device-nodejs.md).
 - Ознакомьтесь с [пользовательским интерфейсом Azure IoT Central](overview-iot-central-tour.md).
 - [Создайте приложение Azure IoT Central](quick-deploy-iot-central.md).
 - Дополнительные сведения см. в статье [Tutorial: Add an Azure IoT Edge device to your Azure IoT Central application](./tutorial-add-edge-as-leaf-device.md) (Учебник. Добавление устройства Azure IoT Edge в приложение Azure IoT Central).
 - Дополнительные сведения см. в статье [Технологии и службы Azure для создания решений Интернета вещей](../../iot-fundamentals/iot-services-and-technologies.md).
-
-Если вы являетесь разработчиком устройства и хотите ознакомиться с кодом, [создайте и подключите клиентское приложение к приложению Azure IoT Central](./tutorial-connect-device-nodejs.md).

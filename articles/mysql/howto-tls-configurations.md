@@ -6,12 +6,12 @@ ms.author: manishku
 ms.service: mysql
 ms.topic: how-to
 ms.date: 06/02/2020
-ms.openlocfilehash: 46eaa6a3b97967da9c4743d0cf1f6edc8f90b1ce
-ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
+ms.openlocfilehash: d94e589a19b29e68883c0217b62b883f9d026789
+ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86119790"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90902739"
 ---
 # <a name="configuring-tls-settings-in-azure-database-for-mysql-using-azure-portal"></a>Настройка параметров TLS в базе данных Azure для MySQL с помощью портал Azure
 
@@ -35,13 +35,13 @@ ms.locfileid: "86119790"
 
 1. В **минимальной версии TLS**выберите **1,2** , чтобы запретить подключения с использованием протокола tls версии ниже TLS 1,2 для сервера MySQL.
 
-    ![Конфигурация TLS базы данных Azure для MySQL](./media/howto-tls-configurations/setting-tls-value.png)
+    :::image type="content" source="./media/howto-tls-configurations/setting-tls-value.png" alt-text="Конфигурация TLS базы данных Azure для MySQL":::
 
-1. Щелкните **Сохранить** , чтобы сохранить изменения.
+1. **Сохраните** изменения.
 
 1. Уведомление подтверждает успешное включение параметра безопасности подключения.
 
-    ![Настройка TLS для базы данных Azure для MySQL](./media/howto-tls-configurations/setting-tls-value-success.png)
+    :::image type="content" source="./media/howto-tls-configurations/setting-tls-value-success.png" alt-text="Настройка TLS для базы данных Azure для MySQL":::
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

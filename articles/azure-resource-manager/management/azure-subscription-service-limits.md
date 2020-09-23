@@ -3,12 +3,12 @@ title: Ограничения и квоты подписки Azure
 description: В этой статье приводится перечень наиболее распространенных ограничений, относящихся к подписке Azure и различным службам, квот и границ. Эта статья содержит сведения о том, как увеличить пределы и максимальное значение.
 ms.topic: conceptual
 ms.date: 09/02/2020
-ms.openlocfilehash: b9b2b7217b854153f03d61713d8b4a1bcf5bfd9d
-ms.sourcegitcommit: 4feb198becb7a6ff9e6b42be9185e07539022f17
+ms.openlocfilehash: fcbca4a1e3152dfa36d71031c2f69e8a40125380
+ms.sourcegitcommit: bdd5c76457b0f0504f4f679a316b959dcfabf1ef
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/04/2020
-ms.locfileid: "89470176"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90971021"
 ---
 # <a name="azure-subscription-and-service-limits-quotas-and-constraints"></a>Подписка Azure, границы, квоты и ограничения службы
 
@@ -78,7 +78,7 @@ ms.locfileid: "89470176"
 
 [!INCLUDE [automation-limits](../../../includes/azure-automation-service-limits.md)]
 
-## <a name="azure-app-configuration"></a>конфигурация приложения Azure;
+## <a name="azure-app-configuration"></a>Конфигурация приложений Azure
 
 [!INCLUDE [app-configuration-limits](../../../includes/app-configuration-limits.md)]
 
@@ -239,10 +239,6 @@ ms.locfileid: "89470176"
 
 [!INCLUDE [azure-servicebus-limits](../../../includes/event-hubs-limits.md)]
 
-## <a name="identity-manager-limits"></a>Ограничения диспетчера удостоверений
-
-[!INCLUDE [automation-limits](~/includes/managed-identity-limits.md)]
-
 ## <a name="iot-central-limits"></a>Ограничения IoT Central
 [!INCLUDE [iot-central-limits](../../../includes/iot-central-limits.md)]
 
@@ -257,6 +253,11 @@ ms.locfileid: "89470176"
 ## <a name="key-vault-limits"></a>Ограничения хранилища ключей
 
 [!INCLUDE [key-vault-limits](../../../includes/key-vault-limits.md)]
+
+## <a name="managed-identity-limits"></a>Ограничения управляемого удостоверения
+
+[!INCLUDE [Managed-Identity-Limits](../../../includes/managed-identity-limits.md)]
+
 
 ## <a name="media-services-limits"></a>Ограничения служб мультимедиа
 

@@ -6,12 +6,12 @@ ms.author: andrela
 ms.service: mysql
 ms.topic: how-to
 ms.date: 3/18/2020
-ms.openlocfilehash: c20177b3dceca3b32cf8f2e2f8f60fa4227e2082
-ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
+ms.openlocfilehash: b7054b520d31c6c5363c8784bb9a4839e9249c88
+ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86112723"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90902867"
 ---
 # <a name="use-the-azure-portal-to-set-up-alerts-on-metrics-for-azure-database-for-mysql"></a>Настройка оповещений на основе метрик для базы данных Azure для MySQL на портале Azure 
 
@@ -27,32 +27,32 @@ ms.locfileid: "86112723"
 Для настройки правил генерации оповещений и получения сведений о них можно использовать:
 * [Портал Azure](../azure-monitor/platform/alerts-metric.md#create-with-azure-portal)
 * [Azure CLI](../azure-monitor/platform/alerts-metric.md#with-azure-cli)
-* [Azure Monitor REST API](https://docs.microsoft.com/rest/api/monitor/metricalerts)
+* [REST API Azure Monitor](https://docs.microsoft.com/rest/api/monitor/metricalerts)
 
 ## <a name="create-an-alert-rule-on-a-metric-from-the-azure-portal"></a>Создание правила генерации оповещений на основе метрики на портале Azure
 1. На [портале Azure](https://portal.azure.com/) выберите сервер базы данных Azure для MySQL, который нужно отследить.
 
 2. В разделе боковой панели **Мониторинг** выберите **Оповещения**, как показано ниже:
 
-   ![Выбор "Правила оповещения"](./media/howto-alert-on-metric/2-alert-rules.png)
+   :::image type="content" source="./media/howto-alert-on-metric/2-alert-rules.png" alt-text="Выбор правил оповещений":::
 
 3. Выберите значок **Добавить оповещение метрики** (+).
 
 4. Откроется страница **Создание правила**, как показано ниже. Заполните необходимые сведения:
 
-   ![Форма добавления оповещения для метрики](./media/howto-alert-on-metric/4-add-rule-form.png)
+   :::image type="content" source="./media/howto-alert-on-metric/4-add-rule-form.png" alt-text="Форма добавления оповещения для метрики":::
 
 5. В разделе **Условие** выберите **Добавить условие**.
 
 6. Выберите из списка сигналов метрику, для которой необходимо создать оповещение. В этом примере выберите Storage percent (Процент хранилища).
    
-   ![Выбор метрики](./media/howto-alert-on-metric/6-configure-signal-logic.png)
+   :::image type="content" source="./media/howto-alert-on-metric/6-configure-signal-logic.png" alt-text="Выбор метрики":::
 
 7. Настройте логику оповещения, в том числе **условие** (например, "Больше чем"), **пороговое значение** (например, 85 %), **агрегат времени**, **период**, в течение которого должно быть выполнено правило метрики, прежде чем будет активировано оповещение (например, "За последние 30 минут") и **частотой**.
    
    По завершении нажмите кнопку **Готово**.
 
-   ![Выбор метрики](./media/howto-alert-on-metric/7-set-threshold-time.png)
+   :::image type="content" source="./media/howto-alert-on-metric/7-set-threshold-time.png" alt-text="Выбор метрики":::
 
 8. В разделе **Группы действий** выберите **Создать**, чтобы создать группу для получения уведомлений об оповещении.
 
@@ -66,11 +66,11 @@ ms.locfileid: "86112723"
 
     По завершении нажмите кнопку **ОК**.
 
-    ![Группа действий](./media/howto-alert-on-metric/10-action-group-type.png)
+    :::image type="content" source="./media/howto-alert-on-metric/10-action-group-type.png" alt-text="Группа действий":::
 
 11. Укажите имя правила генерации оповещений, описание и уровень серьезности.
 
-    ![Группа действий](./media/howto-alert-on-metric/11-name-description-severity.png) 
+    :::image type="content" source="./media/howto-alert-on-metric/11-name-description-severity.png" alt-text="Группа действий"::: 
 
 12. Выберите **Создать правило генерации оповещений**, чтобы создать оповещение.
 
