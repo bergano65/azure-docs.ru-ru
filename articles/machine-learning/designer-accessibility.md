@@ -1,5 +1,5 @@
 ---
-title: Использование функций специальных возможностей в конструкторе (предварительная версия)
+title: Использование специальных возможностей в конструкторе
 titleSuffix: Azure Machine Learning
 description: Узнайте о сочетаниях клавиш и функциях специальных возможностей средства чтения с экрана, доступных в конструкторе.
 services: machine-learning
@@ -10,14 +10,14 @@ ms.author: peterlu
 author: peterclu
 ms.date: 01/09/2020
 ms.custom: designer
-ms.openlocfilehash: 5d91dc212eb2f856f0252261f2ddfc8a5a4d70ee
-ms.sourcegitcommit: 4913da04fd0f3cf7710ec08d0c1867b62c2effe7
+ms.openlocfilehash: 86cb5260a59f864658fbb7ac1c1da2d943c6253e
+ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88210371"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90893421"
 ---
-# <a name="use-a-keyboard-to-use-azure-machine-learning-designer-preview"></a>Использование клавиатуры для работы в конструкторе Машинного обучения Azure (предварительная версия)
+# <a name="use-a-keyboard-to-use-azure-machine-learning-designer"></a>Использование клавиатуры для использования конструктора Машинное обучение Azure
 
 Узнайте, как использовать клавиатуру и средство чтения с экрана для работы в конструкторе Машинного обучения Azure. Список сочетаний клавиш, которые работают везде на портале Azure, приведен в разделе [Сочетания клавиш на портале Azure](../azure-portal/azure-portal-keyboard-shortcuts.md).
 

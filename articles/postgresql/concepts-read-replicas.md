@@ -6,12 +6,12 @@ ms.author: raagyema
 ms.service: postgresql
 ms.topic: conceptual
 ms.date: 08/10/2020
-ms.openlocfilehash: 608740ea52cf82485bae073d9679107ac52baa28
-ms.sourcegitcommit: cd0a1ae644b95dbd3aac4be295eb4ef811be9aaa
+ms.openlocfilehash: f093d9b1a67d5e6836fc7f760b0336c9923f5186
+ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/19/2020
-ms.locfileid: "88611132"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90902070"
 ---
 # <a name="read-replicas-in-azure-database-for-postgresql---single-server"></a>Чтение реплик в базе данных Azure для PostgreSQL — один сервер
 
@@ -38,7 +38,7 @@ ms.locfileid: "88611132"
 
 Главный сервер можно использовать в любом [регионе базы данных Azure для PostgreSQL](https://azure.microsoft.com/global-infrastructure/services/?products=postgresql). Главный сервер может иметь реплику в парном регионе или в универсальных регионах реплики. На изображении ниже представлена доступность регионов реплики в зависимости от региона главного сервера.
 
-[ ![Регионы для реплики чтения](media/concepts-read-replica/read-replica-regions.png)](media/concepts-read-replica/read-replica-regions.png#lightbox)
+[:::image type="content" source="media/concepts-read-replica/read-replica-regions.png" alt-text="Чтение регионов реплики":::](media/concepts-read-replica/read-replica-regions.png#lightbox)
 
 ### <a name="universal-replica-regions"></a>Универсальные регионы реплики
 Вы всегда можете создать реплику чтения в любом из следующих регионов, независимо от того, где находится главный сервер. Это регионы универсальной реплики:

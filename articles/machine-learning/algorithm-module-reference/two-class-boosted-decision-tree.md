@@ -9,16 +9,16 @@ ms.topic: reference
 author: likebupt
 ms.author: keli19
 ms.date: 08/24/2020
-ms.openlocfilehash: 1e66774d4239bdad6c8af426a28af6081bb0da3c
-ms.sourcegitcommit: 9c3cfbe2bee467d0e6966c2bfdeddbe039cad029
+ms.openlocfilehash: 833caa0cf264fb49d8b32255f429132cd888c6c0
+ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/24/2020
-ms.locfileid: "88782181"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90907731"
 ---
 # <a name="two-class-boosted-decision-tree-module"></a>Модуль высококлассного дерева принятия решений с двумя классами
 
-В этой статье описывается модуль в конструкторе Машинного обучения Azure (предварительная версия).
+В этой статье описывается модуль в конструкторе Машинное обучение Azure.
 
 Этот модуль используется для создания модели машинного обучения на основе алгоритма повышенного дерева принятия решений. 
 

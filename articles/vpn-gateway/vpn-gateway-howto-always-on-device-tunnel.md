@@ -8,12 +8,12 @@ ms.service: vpn-gateway
 ms.topic: how-to
 ms.date: 09/03/2020
 ms.author: cherylmc
-ms.openlocfilehash: ab951375fdf9c5317e2c3a2f67271666d0987142
-ms.sourcegitcommit: bf1340bb706cf31bb002128e272b8322f37d53dd
+ms.openlocfilehash: 7688e42175b2b4e35b63979f5df25702f3bb869d
+ms.sourcegitcommit: bdd5c76457b0f0504f4f679a316b959dcfabf1ef
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/03/2020
-ms.locfileid: "89435853"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90986599"
 ---
 # <a name="configure-an-always-on-vpn-device-tunnel"></a>Настройка туннеля Always On VPN для устройства
 
@@ -31,7 +31,7 @@ ms.locfileid: "89435853"
 
 Чтобы удалить профиль, выполните следующую команду:
 
-![Очистка](./media/vpn-gateway-howto-always-on-device-tunnel/cleanup.png)
+![На снимке экрана показано окно PowerShell, в котором выполняется команда Remove-VpnConnection-Name Мачинецерттест.](./media/vpn-gateway-howto-always-on-device-tunnel/cleanup.png)
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

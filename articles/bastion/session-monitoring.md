@@ -7,12 +7,12 @@ ms.service: bastion
 ms.topic: how-to
 ms.date: 05/21/2020
 ms.author: charwen
-ms.openlocfilehash: 5974ebe7960eec1ca3bb8610f66061395fea64d6
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: beb4f8fc5b9e22bc3e2bdd4732c8321dfcd70780
+ms.sourcegitcommit: bdd5c76457b0f0504f4f679a316b959dcfabf1ef
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84744108"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90980726"
 ---
 # <a name="session-monitoring-and-management-for-azure-bastion"></a>Мониторинг и управление сеансами для Бастиона Azure
 
@@ -22,13 +22,13 @@ ms.locfileid: "84744108"
 
 1. На [портале Azure](https://portal.azure.com) перейдите к ресурсу Бастиона Azure и выберите **Сеансы** на странице Бастиона Azure.
 
-   ![сеансы](./media/session-monitoring/sessions.png)
+   ![Снимок экрана показывает параметры меню портал Azure с выбранными сеансами.](./media/session-monitoring/sessions.png)
 2. На странице **Сеансы** справа показаны текущие удаленные сеансы.
 
    ![Просмотр сеанса](./media/session-monitoring/view-session.png)
 3. Щелкните **Обновить**, чтобы просмотреть обновленный список удаленных сеансов. При выборе действия "Обновить" Бастион Azure получает последние данные мониторинга и обновляет их на портале.
 
-   ![refresh](./media/session-monitoring/refresh.png)
+   ![На снимке экрана показан сеанс, использующий Azure бастиона с выделенным параметром обновления.](./media/session-monitoring/refresh.png)
 
 
 ## <a name="delete-or-force-disconnect-an-ongoing-remote-session"></a><a name="view"></a>Удаление или принудительное отключение текущего удаленного сеанса
@@ -37,16 +37,16 @@ ms.locfileid: "84744108"
 
 1. Перейдите к ресурсу Бастиона Azure и выберите **Сеансы** на странице Бастиона Azure.
 
-   ![Переход](./media/session-monitoring/navigate.png)
+   ![Снимок экрана показывает портал Azure с сеансами, выбранными в разделе "Параметры".](./media/session-monitoring/navigate.png)
 2. Выбрав "Сеансы", вы увидите список удаленных сеансов.
 
    ![Список сеансов](./media/session-monitoring/list.png)
 3. Выберите нужный сеанс, щелкните символ многоточия справа от его строки и выберите действие **Удалить**.
 
-   ![удалить](./media/session-monitoring/delete.png)
+   ![На снимке экрана показано, портал Azure отображается сеанс с выбранным значком удаления.](./media/session-monitoring/delete.png)
 4. При этом удаленный сеанс будет отключен, а пользователь получит сообщение "You have been disconnected" (Вы отключены).
 
-   ![Отключение](./media/session-monitoring/disconnect.png)
+   ![На снимке экрана показано сообщение о том, что вы отключили.](./media/session-monitoring/disconnect.png)
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

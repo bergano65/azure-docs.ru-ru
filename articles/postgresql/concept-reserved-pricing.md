@@ -6,12 +6,12 @@ ms.author: manishku
 ms.service: postgresql
 ms.topic: conceptual
 ms.date: 06/16/2020
-ms.openlocfilehash: 9c5d6359ce0e79fce2e80911ff78d19cc88162b1
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 81180cc0d9cc7754e5a3e935c09441995f16c56a
+ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85208711"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90907572"
 ---
 # <a name="prepay-for-azure-database-for-postgresql---single-server-compute-resources-with-reserved-capacity"></a>Предоплата за базу данных Azure для PostgreSQL — расчетные ресурсы с одним сервером с зарезервированной емкостью
 
@@ -46,7 +46,7 @@ ms.locfileid: "85208711"
 4. Заполните обязательные поля. Существующие или новые базы данных, соответствующие выбранным атрибутам, будут получать зарезервированную скидку емкости. Фактическое число серверов базы данных Azure для PostgreSQL, которые получают скидку, зависит от выбранной области и количества.
 
 
-![Общие сведения о зарезервированных ценах](media/concepts-reserved-pricing/postgresql-reserved-price.png)
+:::image type="content" source="media/concepts-reserved-pricing/postgresql-reserved-price.png" alt-text="Общие сведения о зарезервированных ценах":::
 
 
 В следующей таблице описываются обязательные поля.

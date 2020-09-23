@@ -5,15 +5,15 @@ author: ealsur
 ms.author: maquaran
 ms.service: cosmos-db
 ms.topic: tutorial
-ms.date: 11/04/2019
+ms.date: 09/21/2020
 ms.reviewer: sngun
 ms.custom: devx-track-csharp
-ms.openlocfilehash: b16402f809da18588b26995e7129d2f27575b48d
-ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
+ms.openlocfilehash: cfab8ba88c7da84efb3f6aed6f95bb100507f8da
+ms.sourcegitcommit: bdd5c76457b0f0504f4f679a316b959dcfabf1ef
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89019255"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90981933"
 ---
 # <a name="bulk-import-data-to-azure-cosmos-db-sql-api-account-by-using-the-net-sdk"></a>Массовый импорт данных в учетную запись API SQL Azure Cosmos DB с помощью пакета SDK для .NET
 
@@ -86,7 +86,7 @@ ms.locfileid: "89019255"
 1.  Перейдите к своей учетной записи Azure Cosmos.
 1.  Откройте панель **Ключи** и скопируйте **URI** и **первичный ключ** своей учетной записи.
 
-Если вы используете эмулятор Azure Cosmos DB, получите [учетные данные эмулятора из этой статьи](local-emulator.md#authenticating-requests).
+Если вы используете эмулятор Azure Cosmos DB, получите [учетные данные эмулятора из этой статьи](local-emulator.md#authenticate-requests).
 
 ## <a name="step-5-initialize-the-cosmosclient-object-with-bulk-execution-support"></a>Шаг 5. Инициализация объекта CosmosClient с поддержкой массового выполнения
 

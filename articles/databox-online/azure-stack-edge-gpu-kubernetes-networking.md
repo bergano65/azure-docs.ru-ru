@@ -1,6 +1,6 @@
 ---
-title: Общие сведения о Kubernetes Network on Azure Stack пограничном устройстве | Документация Майкрософт
-description: Описание работы Kubernetes Networking на Azure Stack пограничном устройстве.
+title: Общие сведения о Kubernetes Network on Azure Stack погранично Pro Device | Документация Майкрософт
+description: Описывает, как Kubernetes Networking работает на устройстве с Azure Stack пограничном Pro.
 services: databox
 author: alkohli
 ms.service: databox
@@ -8,18 +8,18 @@ ms.subservice: edge
 ms.topic: conceptual
 ms.date: 08/21/2020
 ms.author: alkohli
-ms.openlocfilehash: 4eab89710e031ead0a3758afd2367e60d26f395b
-ms.sourcegitcommit: bcda98171d6e81795e723e525f81e6235f044e52
+ms.openlocfilehash: 001304ad6eda27db2285aaa9ad8b28929e2a04f8
+ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/01/2020
-ms.locfileid: "89268131"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90899316"
 ---
-# <a name="kubernetes-networking-in-your-azure-stack-edge-gpu-device"></a>Kubernetes сети на устройстве GPU Azure Stack ребра
+# <a name="kubernetes-networking-in-your-azure-stack-edge-pro-gpu-device"></a>Kubernetes Networking на устройстве GPU Azure Stack с пограничными устройствами
 
-На Azure Stack пограничном устройстве создается кластер Kubernetes при настройке роли вычислений. После создания кластера Kubernetes контейнерные приложения можно развернуть в кластере Kubernetes в модулях Pod. Существует несколько различных способов использования сети для модулей Pod в кластере Kubernetes. 
+На устройстве Azure Stack пограничной Pro создается кластер Kubernetes при настройке роли вычислений. После создания кластера Kubernetes контейнерные приложения можно развернуть в кластере Kubernetes в модулях Pod. Существует несколько различных способов использования сети для модулей Pod в кластере Kubernetes. 
 
-В этой статье описывается сеть в кластере Kubernetes в целом, а именно в контексте устройства Azure Stack пограничных устройств. 
+В этой статье описывается сеть в кластере Kubernetes в целом, а именно в контексте устройства Azure Stack пограничной Pro. 
 
 ## <a name="networking-requirements"></a>Требования к сети
 
@@ -59,9 +59,9 @@ For discovery of applications within the cluster, Kubernetes cluster has a
 When an application or the end user would first use the IP address associated with the service of type load balancer to discover the service. Then it would use the label select `app = WS` to discover the pods associated with the application. The `kube-proxy` component would then distribute the traffic and ensure that it hits one of the web server application pods. If the web server app wanted to talk to the database app, then it would simply use the name of the service and using the name and the DNS server pod, resolve the name to an IP address. Again using labels and label selector, it would discover the pods associated with the database application. The `kube-proxy` would then distribute the traffic across each of the database app nodes.-->
 
 
-## <a name="kubernetes-networking-on-azure-stack-edge"></a>Kubernetes сети на границе Azure Stack
+## <a name="kubernetes-networking-on-azure-stack-edge-pro"></a>Kubernetes сети на Azure Stack пограничных Pro
 
-Калико, Металлб и Core DNS — это все компоненты, которые устанавливаются для работы в сети на Azure Stack. 
+Калико, Металлб и Core DNS — это все компоненты, устанавливаемые для работы в сети на Azure Stack пограничных Pro. 
 
 - **Калико** назначает IP-адрес из диапазона частных IP-адресов каждому модулю Pod и настраивает сеть для этих модулей, чтобы модуль Pod на одном узле мог взаимодействовать с модулем на другом узле. 
 - **Металлб** работает в модуле Pod в кластере и назначает IP-адрес службам с типом балансировщика нагрузки. IP-адреса балансировщика нагрузки выбираются из диапазона IP-адресов служб, предоставленного через локальный пользовательский интерфейс. 
@@ -80,8 +80,8 @@ IP-адреса, используемые для узлов Kubernetes и вне
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Чтобы настроить сеть Kubernetes на Azure Stack ребра, см.:
+Чтобы настроить Kubernetes Network на Azure Stack пограничных Pro, см.:
 
-- [Предоставление приложения без отслеживания состояния извне на Azure Stack пограничных устройств с помощью IOT Edge](azure-stack-edge-gpu-deploy-stateless-application-iot-edge-module.md).
+- [Предоставление приложения без отслеживания состояния извне на Azure Stack пограничных Pro с помощью IOT Edge](azure-stack-edge-gpu-deploy-stateless-application-iot-edge-module.md).
 
-- [Предоставление приложения без отслеживания состояния извне на Azure Stack пограничным через куебктл](azure-stack-edge-j-series-deploy-stateless-application-kubernetes.md).
+- [Предоставление приложения без отслеживания состояния извне на Azure Stack пограничных Pro через куебктл](azure-stack-edge-j-series-deploy-stateless-application-kubernetes.md).

@@ -1,6 +1,6 @@
 ---
-title: Включение и отключение политик хранения данных в Azure SQL (Предварительная версия)
-description: Узнайте, как включить и отключить политики хранения данных в Azure SQL (Предварительная версия).
+title: Включение и отключение политик хранения данных с помощью Azure SQL ребр
+description: Узнайте, как включить и отключить политики хранения данных в Azure SQL Server.
 keywords: SQL Server, хранение данных
 services: sql-edge
 ms.service: sql-edge
@@ -9,12 +9,12 @@ author: SQLSourabh
 ms.author: sourabha
 ms.reviewer: sstein
 ms.date: 09/04/2020
-ms.openlocfilehash: 9787f2cfa87a16d9e7dd1753e4389977c6753b81
-ms.sourcegitcommit: c52e50ea04dfb8d4da0e18735477b80cafccc2cf
+ms.openlocfilehash: ee2d65d66caef5cd9405d6e3d0e094de2e30ae87
+ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89550728"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90902490"
 ---
 # <a name="enable-and-disable-data-retention-policies"></a>Включение и отключение политик хранения данных
 
@@ -23,9 +23,6 @@ ms.locfileid: "89550728"
 ## <a name="enable-data-retention-for-a-database"></a>Включение хранения данных для базы данных
 
 В следующем примере показано, как включить хранение данных с помощью [инструкции ALTER DATABASE](https://docs.microsoft.com/sql/t-sql/statements/alter-database-transact-sql-set-options).
-
-> [!NOTE]
-> Чтобы включить функцию хранения данных в Azure SQL ребра (Предварительная версия), включите TF 12825 в качестве параметра запуска или используйте команду DBCC TRACEON. Дополнительные сведения о том, как включить флаги трассировки с помощью файла MSSQL. conf, см. в разделе [Настройка с помощью файла MSSQL. conf](configure.md#configure-by-using-an-mssqlconf-file). 
 
 ```sql
 ALTER DATABASE [<DatabaseName>] SET DATA_RETENTION  ON;
@@ -64,7 +61,7 @@ CONSTRAINT [pk_current_data_retention_table] PRIMARY KEY CLUSTERED ([product_cod
     - Дата и время
     - datetime2
     - DateTimeOffset
-- RETENTION_PERIOD — целочисленное значение, за которым следует дескриптор единицы. Допустимые единицы — день, неделя, месяц и год.
+- RETENTION_PERIOD — целочисленное значение, за которым следует дескриптор единицы. Допустимые единицы: день, дни, неделя, недели, месяц, месяцы, год и годы.
 
 В следующем примере показано, как включить хранение данных для таблицы с помощью [инструкции ALTER TABLE](https://docs.microsoft.com/sql/t-sql/statements/alter-table-transact-sql).  
 
@@ -98,9 +95,9 @@ and object_id = object_id(N'dbo.data_retention_table', N'U')
 |Параметр базы данных | Параметр таблицы | Поведение |
 |----------------|--------------|----------|
 | OFF | OFF | Политика хранения данных отключена, и автоматическая и ручная очистка устаревших записей отключена.|
-| OFF | ON  | Политика хранения данных включена для таблицы, однако автоматическая и ручная очистка устаревших записей отключена. |
+| OFF | ON  | Политика хранения данных включена для таблицы. Автоматическая очистка устаревших записей отключена, однако для очистки устаревших записей можно использовать метод очистки вручную. |
 | ON | OFF | Политика хранения данных включена на уровне базы данных. Однако, поскольку этот параметр отключен на уровне таблицы, очистка устаревших строк на основе удержания отсутствует.|
-| ON | ON | Политика хранения данных включена как для базы данных, так и для таблиц. Включена автоматическая или ручная очистка устаревших записей |
+| ON | ON | Политика хранения данных включена как для базы данных, так и для таблиц. Автоматическая очистка устаревших записей включена. |
 
 ## <a name="disable-data-retention-on-a-table"></a>Отключение хранения данных в таблице 
 

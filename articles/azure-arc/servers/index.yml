@@ -1,20 +1,20 @@
 ### YamlMime:Landing
-title: Серверы Azure Arc (предварительная версия)
-summary: Серверы Azure Arc
+title: Серверы с поддержкой Azure Arc
+summary: Серверы с поддержкой Azure Arc
 metadata:
-  title: Серверы Azure Arc
+  title: Серверы с поддержкой Azure Arc
   description: Узнайте, как управлять локальными компьютерами в Azure
   author: mgoedtel
   ms.service: azure-arc
   ms.topic: landing-page
   ms.date: 06/26/2020
   ms.author: magoedte
-  ms.openlocfilehash: 9080f5bb770f5cb86284b5816c340a614843038c
-  ms.sourcegitcommit: e2b36c60a53904ecf3b99b3f1d36be00fbde24fb
+  ms.openlocfilehash: f03e869e884fff8a1d196817b658c28bbdc55ca9
+  ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
   ms.translationtype: HT
   ms.contentlocale: ru-RU
-  ms.lasthandoff: 08/24/2020
-  ms.locfileid: "88763819"
+  ms.lasthandoff: 09/22/2020
+  ms.locfileid: "90908103"
 landingContent:
 - title: Подключение компьютеров к Azure с помощью серверов с поддержкой Azure Arc
   linkLists:
@@ -22,7 +22,7 @@ landingContent:
     links:
     - text: Что такое серверы с поддержкой Azure Arc?
       url: overview.md
-  - linkListType: quickstart
+  - linkListType: get-started
     links:
     - text: Подключение компьютеров к Azure Arc на портале Azure
       url: onboard-portal.md
@@ -30,3 +30,9 @@ landingContent:
       url: onboard-service-principal.md
     - text: Подключение компьютеров к Azure с помощью PowerShell DSC
       url: onboard-dsc.md
+- title: 10-минутные руководства по началу работы
+  linkLists:
+  - linkListType: quickstart
+    links:
+    - text: Развертывание агента серверов с поддержкой Arc
+      url: ./learn/quick-enable-hybrid-vm.md
