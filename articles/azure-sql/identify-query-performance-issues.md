@@ -9,14 +9,14 @@ ms.devlang: ''
 ms.topic: conceptual
 author: jovanpop-msft
 ms.author: jovanpop
-ms.reviewer: jrasnick, carlrab
+ms.reviewer: jrasnick, sstein
 ms.date: 03/10/2020
-ms.openlocfilehash: b33d8db9d43b151cb0405ea24e0bea87e21cbdc9
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 0a7cd807de7e723d48faaa0944ea55b1887c9721
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84345348"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91284118"
 ---
 # <a name="detectable-types-of-query-performance-bottlenecks-in-azure-sql-database"></a>Обнаруживаемые типы узких мест производительности запросов в базе данных SQL Azure
 [!INCLUDE[appliesto-sqldb-sqlmi](includes/appliesto-sqldb-sqlmi.md)]
@@ -58,7 +58,7 @@ ms.locfileid: "84345348"
 
 В следующих разделах описывается, как разрешать запросы с неоптимальным планом выполнения запроса.
 
-### <a name="queries-that-have-parameter-sensitive-plan-psp-problems"></a><a name="ParamSniffing"></a>Запросы с проблемами плана с учетом параметров (PSP)
+### <a name="queries-that-have-parameter-sensitive-plan-psp-problems"></a><a name="ParamSniffing"></a> Запросы с проблемами плана с учетом параметров (PSP)
 
 Проблема с зависящим от параметра планом (PSP) возникает, когда оптимизатор запросов формирует план выполнения запроса, оптимальный только для определенного значения параметра (или набора значений), а кэшированный план не оптимальен для значений параметров, используемых в последовательных выполнениях. Неоптимальные планы могут привести к проблемам с производительностью запросов и снизить общую пропускную способность рабочей нагрузки.
 
@@ -166,7 +166,7 @@ ORDER BY count (distinct p.query_id) DESC
 - Являются ли запросы из приложения причиной проблемы с высокой производительностью ЦП?
 - Для [запросов с наибольшим потреблением ресурсов ЦП, которые можно выявление](database/monitoring-with-dmvs.md#the-cpu-issue-occurred-in-the-past):
 
-  - Связаны ли несколько планов выполнения с одним и тем же запросом? Если да, зачем?
+  - Связаны ли несколько планов выполнения с одним и тем же запросом? Если да, почему?
   - Для запросов с одним и тем же планом выполнения были выполнены единообразные времена выполнения? Увеличится ли количество выполнений? В таком случае увеличение рабочей нагрузки, скорее всего, приведет к проблемам с производительностью.
 
 Если план выполнения запроса не выполнялся по-разному, но загрузка ЦП увеличилась вместе со счетчиком выполнения, то проблема с производительностью скорее всего связана с увеличением рабочей нагрузки.
@@ -220,6 +220,6 @@ ORDER BY count (distinct p.query_id) DESC
 > - [Тижертулбокс ожидания и кратковременные блокировки](https://github.com/Microsoft/tigertoolbox/tree/master/Waits-and-Latches)
 > - [Тижертулбокс usp_whatsup](https://github.com/Microsoft/tigertoolbox/tree/master/usp_WhatsUp)
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Общие сведения о мониторинге и настройке базы данных SQL](database/monitor-tune-overview.md)

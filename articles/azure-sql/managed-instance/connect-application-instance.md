@@ -10,14 +10,14 @@ ms.devlang: ''
 ms.topic: conceptual
 author: srdan-bozovic-msft
 ms.author: srbozovi
-ms.reviewer: sstein, bonova, carlrab, vanto
+ms.reviewer: sstein, bonova, vanto
 ms.date: 11/09/2018
-ms.openlocfilehash: a04f4879bbd06c2fa6c1af921d7adafdef9417d6
-ms.sourcegitcommit: 927dd0e3d44d48b413b446384214f4661f33db04
+ms.openlocfilehash: 9d58a8c1dc79c10ed42fd1675115eb14f2ad4d3e
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88871451"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91283740"
 ---
 # <a name="connect-your-application-to-azure-sql-managed-instance"></a>Connect your application to Azure SQL Managed Instance (Подключение приложения к управляемому экземпляру SQL Azure)
 [!INCLUDE[appliesto-sqlmi](../includes/appliesto-sqlmi.md)]
@@ -152,9 +152,9 @@ ms.locfileid: "88871451"
 |Драйвер Node.js| 2.1.1 |
 |Драйвер OLEDB| 18.0.2.0 |
 |SSMS| 18,0 или [более поздней версии](https://docs.microsoft.com/sql/ssms/download-sql-server-management-studio-ssms) |
-|[ОБЪЕКТАХ](https://docs.microsoft.com/sql/relational-databases/server-management-objects-smo/sql-server-management-objects-smo-programming-guide) | [150](https://www.nuget.org/packages/Microsoft.SqlServer.SqlManagementObjects) или более поздней версии |
+|[SMO](https://docs.microsoft.com/sql/relational-databases/server-management-objects-smo/sql-server-management-objects-smo-programming-guide) | [150](https://www.nuget.org/packages/Microsoft.SqlServer.SqlManagementObjects) или более поздней версии |
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Дополнительные сведения о SQL Управляемый экземпляр см. в статье [что такое sql управляемый экземпляр?](sql-managed-instance-paas-overview.md).
 - Руководство, в котором показано, как создать управляемый экземпляр, см. в разделе [Создание управляемого экземпляра](instance-create-quickstart.md).

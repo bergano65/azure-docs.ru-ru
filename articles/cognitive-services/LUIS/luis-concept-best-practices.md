@@ -1,15 +1,17 @@
 ---
 title: Рекомендации по созданию приложения LUIS
 description: Ознакомьтесь с рекомендациями по получению лучших результатов из модели приложения LUIS.
+ms.service: cognitive-services
+ms.subservice: language-understanding
 ms.topic: conceptual
 ms.date: 05/17/2020
 ms.author: diberry
-ms.openlocfilehash: 9c22256f6fac3647108b7078b774338d7f22d29a
-ms.sourcegitcommit: 50673ecc5bf8b443491b763b5f287dde046fdd31
+ms.openlocfilehash: 6ab7b8db3e1bc1b1134c0e7ab6c14bd17f819935
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/20/2020
-ms.locfileid: "83683755"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91324881"
 ---
 # <a name="best-practices-for-building-a-language-understanding-luis-app"></a>Рекомендации по созданию приложения для понимания языка (LUIS)
 Создайте приложение LUIS с помощью процесса создания приложений:
@@ -65,7 +67,7 @@ ms.locfileid: "83683755"
 |Book a flight (забронировать авиабилет)|
 |Book a hotel (забронировать гостиницу)|
 
-`Book a flight`и `Book a hotel` используют тот же словарь `book a ` . Этот формат одинаков, поэтому он должен быть таким же, `flight` `hotel` как и извлеченные сущности.
+`Book a flight` и `Book a hotel` используют тот же словарь `book a ` . Этот формат одинаков, поэтому он должен быть таким же, `flight` `hotel` как и извлеченные сущности.
 
 ## <a name="do-add-features-to-intents"></a>Добавление функций к способам
 

@@ -11,12 +11,12 @@ author: lobrien
 ms.date: 8/25/2020
 ms.topic: conceptual
 ms.custom: how-to, contperfq1
-ms.openlocfilehash: ddc8186e85001a2a3ed2ed9f57b8f025133ef16a
-ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
+ms.openlocfilehash: 46a5f4036be2d670689f7e936a31dc63e0690ddc
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "90897762"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91302389"
 ---
 # <a name="publish-and-track-machine-learning-pipelines"></a>Публикация и мониторинг конвейеров машинного обучения
 
@@ -84,6 +84,74 @@ response = requests.post(published_pipeline1.endpoint,
                          json={"ExperimentName": "My_Pipeline",
                                "ParameterAssignments": {"pipeline_arg": 20}})
 ```
+
+`json`Аргумент для запроса POST должен содержать, для `ParameterAssignments` ключа, словарь, содержащий параметры конвейера и их значения. Кроме того, `json` аргумент может содержать следующие ключи:
+
+| Ключ | Описание |
+| --- | --- | 
+| `ExperimentName` | Имя эксперимента, связанного с этой конечной точкой |
+| `Description` | Произвольный текст, описывающий конечную точку | 
+| `Tags` | Произвольные пары "ключ-значение", которые могут использоваться для добавления меток и создания заметок к запросам  |
+| `DataSetDefinitionValueAssignments` | Словарь, используемый для изменения наборов данных без повторного обучения (см. обсуждение ниже) | 
+| `DataPathAssignments` | Словарь, используемый для изменения путей к контурам без повторного обучения (см. обсуждение ниже) | 
+
+### <a name="changing-datasets-and-datapaths-without-retraining"></a>Изменение наборов данных и путей к ним без повторного обучения
+
+Может потребоваться обучение и вывод для различных наборов данных и путей к ним. Например, вы можете пожелать обучить меньший, более плотный набор данных, но выводить его в полном наборе данных. Вы можете переключать наборы данных с помощью `DataSetDefinitionValueAssignments` ключа в `json` аргументе запроса. Пути к данным переключаются с помощью `DataPathAssignments` . Метод для обоих методов аналогичен:
+
+1. В скрипте определения конвейера создайте `PipelineParameter` для набора данных. Создайте `DatasetConsumptionConfig` или `DataPath` из `PipelineParameter` :
+
+    ```python
+    tabular_dataset = Dataset.Tabular.from_delimited_files('https://dprepdata.blob.core.windows.net/demo/Titanic.csv')
+    tabular_pipeline_param = PipelineParameter(name="tabular_ds_param", default_value=tabular_dataset)
+    tabular_ds_consumption = DatasetConsumptionConfig("tabular_dataset", tabular_pipeline_param)
+    ```
+
+1. В скрипте ML получите доступ к динамически заданному набору данных с помощью `Run.get_context().input_datasets` :
+
+    ```python
+    from azureml.core import Run
+    
+    input_tabular_ds = Run.get_context().input_datasets['tabular_dataset']
+    dataframe = input_tabular_ds.to_pandas_dataframe()
+    # ... etc ...
+    ```
+
+    Обратите внимание, что скрипт ML обращается к значению, заданному для `DatasetConsumptionConfig` ( `tabular_dataset` ), а не к значению `PipelineParameter` ( `tabular_ds_param` ).
+
+1. В скрипте определения конвейера присвойте `DatasetConsumptionConfig` параметру значение `PipelineScriptStep` :
+
+    ```python
+    train_step = PythonScriptStep(
+        name="train_step",
+        script_name="train_with_dataset.py",
+        arguments=["--param1", tabular_ds_consumption],
+        inputs=[tabular_ds_consumption],
+        compute_target=compute_target,
+        source_directory=source_directory)
+    
+    pipeline = Pipeline(workspace=ws, steps=[train_step])
+    ```
+
+1. Чтобы динамически переключать наборы данных в вызове RESTFUL, используйте `DataSetDefinitionValueAssignments` :
+    
+    ```python
+    tabular_ds1 = Dataset.Tabular.from_delimited_files('path_to_training_dataset')
+    tabular_ds2 = Dataset.Tabular.from_delimited_files('path_to_inference_dataset')
+    ds1_id = tabular_ds1.id
+    d22_id = tabular_ds2.id
+    
+    response = requests.post(rest_endpoint, 
+                             headers=aad_token, 
+                             json={
+                                "ExperimentName": "MyRestPipeline",
+                               "DataSetDefinitionValueAssignments": {
+                                    "tabular_ds_param": {
+                                        "SavedDataSetReference": {"Id": ds1_id #or ds2_id
+                                    }}}})
+    ```
+
+В записных книжках, демонстрирующих [набор данных и пипелинепараметер](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/machine-learning-pipelines/intro-to-pipelines/aml-pipelines-showcasing-dataset-and-pipelineparameter.ipynb) и демонстрирующих [пути к](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/machine-learning-pipelines/intro-to-pipelines/aml-pipelines-showcasing-datapath-and-pipelineparameter.ipynb) данным и пипелинепараметер, приведены полные примеры этого метода.
 
 ## <a name="create-a-versioned-pipeline-endpoint"></a>Создание конечной точки конвейера с версией
 

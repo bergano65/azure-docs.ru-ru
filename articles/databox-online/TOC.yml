@@ -7,6 +7,10 @@
       items:
         - name: Что такое Azure Stack Edge Pro с GPU?
           href: azure-stack-edge-gpu-overview.md
+    - name: Краткие руководства
+      items:
+        - name: Начало работы
+          href: azure-stack-edge-gpu-quickstart.md
     - name: Учебники
       items:
         - name: "0.\_Получение контрольного списка"

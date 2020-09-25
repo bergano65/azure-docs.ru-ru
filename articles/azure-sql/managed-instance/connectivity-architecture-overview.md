@@ -10,14 +10,14 @@ ms.devlang: ''
 ms.topic: conceptual
 author: srdan-bozovic-msft
 ms.author: srbozovi
-ms.reviewer: sstein, bonova, carlrab
+ms.reviewer: sstein, bonova
 ms.date: 03/17/2020
-ms.openlocfilehash: 059828336288eeadc0567fed060db07e323f885c
-ms.sourcegitcommit: f1b18ade73082f12fa8f62f913255a7d3a7e42d6
+ms.openlocfilehash: 81d0731f6ea77325b3f33f91bf8d5d1386dab2fb
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/24/2020
-ms.locfileid: "88761871"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91283383"
 ---
 # <a name="connectivity-architecture-for-azure-sql-managed-instance"></a>Архитектура подключения к Управляемому экземпляру SQL Azure
 [!INCLUDE[appliesto-sqlmi](../includes/appliesto-sqlmi.md)]
@@ -43,7 +43,7 @@ SQL Управляемый экземпляр — это предложение 
 
 SQL Управляемый экземпляр зависит от служб Azure, таких как хранилище Azure для резервного копирования, концентраторов событий Azure для телеметрии, Azure Active Directory (Azure AD) для проверки подлинности, Azure Key Vault для прозрачное шифрование данных (TDE) и нескольких служб платформы Azure, предоставляющих функции обеспечения безопасности и поддержки. SQL Управляемый экземпляр устанавливает подключения к этим службам.
 
-Все сообщения шифруются и подписываются с помощью сертификатов. Чтобы проверить надежность взаимодействующих сторон, SQL Управляемый экземпляр постоянно проверяет эти сертификаты с помощью списков отзыва сертификатов. Если сертификаты отозваны, SQL Управляемый экземпляр закрывает подключения для защиты данных.
+Все взаимодействия шифруются и подписываются с использованием сертификатов. Чтобы проверить надежность взаимодействующих сторон, SQL Управляемый экземпляр постоянно проверяет эти сертификаты с помощью списков отзыва сертификатов. Если сертификаты отозваны, SQL Управляемый экземпляр закрывает подключения для защиты данных.
 
 ## <a name="high-level-connectivity-architecture"></a>Высокоуровневая архитектура подключения
 

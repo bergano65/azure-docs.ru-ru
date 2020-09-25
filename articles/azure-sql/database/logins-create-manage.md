@@ -11,14 +11,14 @@ ms.devlang: ''
 ms.topic: conceptual
 author: VanMSFT
 ms.author: vanto
-ms.reviewer: carlrab
+ms.reviewer: sstein
 ms.date: 03/23/2020
-ms.openlocfilehash: 891d5907ee8c964ebe7e281f6298205712ce1186
-ms.sourcegitcommit: bf1340bb706cf31bb002128e272b8322f37d53dd
+ms.openlocfilehash: 7be78a0c05942aebb9e3154a79035d71f87becd3
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/03/2020
-ms.locfileid: "89441176"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91334919"
 ---
 # <a name="authorize-database-access-to-sql-database-sql-managed-instance-and-azure-synapse-analytics"></a>Авторизация доступа к базе данных SQL, SQL Управляемый экземпляр и Azure синапсе Analytics
 [!INCLUDE[appliesto-sqldb-sqlmi-asa](../includes/appliesto-sqldb-sqlmi-asa.md)]
@@ -105,7 +105,7 @@ ms.locfileid: "89441176"
 
 Учетные записи для пользователей, не имеющих прав администратора, можно создать одним из двух способов:
 
-- **Создает вход**
+- **Создание имени входа**
 
   Создайте имя входа SQL в базе данных master. Затем создайте учетную запись пользователя в каждой базе данных, к которой пользователю требуется доступ, и свяжите учетную запись пользователя с этим именем входа. Этот подход предпочтителен, если пользователь должен получить доступ к нескольким базам данных и вы хотите синхронизировать пароли. Однако этот подход имеет сложности при использовании георепликации, так как имя входа должно быть создано как на сервере-источнике, так и на вторичном сервере (серверах). Дополнительные сведения см. в статье [Настройка безопасности базы данных SQL Azure для геовосстановления или отработки отказа](active-geo-replication-security-configure.md).
 - **Создание учетной записи пользователя**

@@ -10,12 +10,12 @@ ms.author: aashishb
 author: aashishb
 ms.reviewer: larryfr
 ms.date: 09/09/2020
-ms.openlocfilehash: af32be357899090e0df96e2c67910a4f9ad5194d
-ms.sourcegitcommit: bdd5c76457b0f0504f4f679a316b959dcfabf1ef
+ms.openlocfilehash: 35b39ceb7ef54b0e00eaa53dad821c9336ea88ca
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "90988075"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91302627"
 ---
 # <a name="enterprise-security-for-azure-machine-learning"></a>Корпоративная безопасность для Машинного обучения Azure
 
@@ -118,7 +118,7 @@ ms.locfileid: "90988075"
 ### <a name="encryption-at-rest"></a>Шифрование при хранении
 
 > [!IMPORTANT]
-> Если рабочая область будет содержать конфиденциальные данные, рекомендуем при ее создании установить [флаг hbi_workspace](https://docs.microsoft.com/python/api/azureml-core/azureml.core.workspace(class)?view=azure-ml-py#&preserve-view=truecreate-name--auth-none--subscription-id-none--resource-group-none--location-none--create-resource-group-true--sku--basic---friendly-name-none--storage-account-none--key-vault-none--app-insights-none--container-registry-none--cmk-keyvault-none--resource-cmk-uri-none--hbi-workspace-false--default-cpu-compute-target-none--default-gpu-compute-target-none--exist-ok-false--show-output-true-). `hbi_workspace`Флаг можно задать только при создании рабочей области. Его нельзя изменить для существующей рабочей области.
+> Если рабочая область будет содержать конфиденциальные данные, рекомендуем при ее создании установить [флаг hbi_workspace](https://docs.microsoft.com/python/api/azureml-core/azureml.core.workspace%28class%29?view=azure-ml-py&preserve-view=true#&preserve-view=truecreate-name--auth-none--subscription-id-none--resource-group-none--location-none--create-resource-group-true--sku--basic---friendly-name-none--storage-account-none--key-vault-none--app-insights-none--container-registry-none--cmk-keyvault-none--resource-cmk-uri-none--hbi-workspace-false--default-cpu-compute-target-none--default-gpu-compute-target-none--exist-ok-false--show-output-true-). `hbi_workspace`Флаг можно задать только при создании рабочей области. Его нельзя изменить для существующей рабочей области.
 
 Этот `hbi_workspace` флаг управляет объемом [данных, собираемых корпорацией Майкрософт в целях диагностики](#microsoft-collected-data) , и обеспечивает [дополнительное шифрование в средах, управляемых корпорацией Майкрософт](../security/fundamentals/encryption-atrest.md). Кроме того, он включает следующие действия:
 
@@ -156,7 +156,7 @@ __Сменить или отменить__ ключ можно в любое в�
     * `cmk_keyvault`: Этот параметр является ИД ресурса хранилища ключей в подписке. Это хранилище ключей должно находиться в одном регионе с подпиской, которая будет использоваться для рабочей области Машинного обучения Azure. 
     
         > [!NOTE]
-        > Этот экземпляр хранилища ключей может отличаться от хранилища ключей, созданного Машинным обучением Azure при подготовке к работе рабочей области. Если вы хотите использовать один и тот же экземпляр хранилища ключей для рабочей области, передайте это же хранилище ключей при подготовке рабочей области с помощью [параметра key_vault](https://docs.microsoft.com/python/api/azureml-core/azureml.core.workspace(class)?view=azure-ml-py#&preserve-view=truecreate-name--auth-none--subscription-id-none--resource-group-none--location-none--create-resource-group-true--sku--basic---friendly-name-none--storage-account-none--key-vault-none--app-insights-none--container-registry-none--cmk-keyvault-none--resource-cmk-uri-none--hbi-workspace-false--default-cpu-compute-target-none--default-gpu-compute-target-none--exist-ok-false--show-output-true-). 
+        > Этот экземпляр хранилища ключей может отличаться от хранилища ключей, созданного Машинным обучением Azure при подготовке к работе рабочей области. Если вы хотите использовать один и тот же экземпляр хранилища ключей для рабочей области, передайте это же хранилище ключей при подготовке рабочей области с помощью [параметра key_vault](https://docs.microsoft.com/python/api/azureml-core/azureml.core.workspace%28class%29?view=azure-ml-py&preserve-view=true#&preserve-view=truecreate-name--auth-none--subscription-id-none--resource-group-none--location-none--create-resource-group-true--sku--basic---friendly-name-none--storage-account-none--key-vault-none--app-insights-none--container-registry-none--cmk-keyvault-none--resource-cmk-uri-none--hbi-workspace-false--default-cpu-compute-target-none--default-gpu-compute-target-none--exist-ok-false--show-output-true-). 
 
 Этот Cosmos DB экземпляр создается в группе ресурсов, управляемой корпорацией Майкрософт, в вашей подписке вместе с любыми нужными ресурсами. Имя управляемой группы ресурсов указано в формате `<AML Workspace Resource Group Name><GUID>`. Если Рабочая область Машинное обучение Azure использует закрытую конечную точку, для экземпляра Cosmos DB также создается виртуальная сеть. Эта виртуальная сеть используется для защиты обмена данными между Cosmos DB и Машинное обучение Azure.
 
@@ -197,7 +197,7 @@ __Сменить или отменить__ ключ можно в любое в�
 
 Дополнительные сведения о создании и использовании конфигурации развертывания см. в следующих статьях:
 
-* Справочник по [AciWebservice.deploy_configuration()](https://docs.microsoft.com/python/api/azureml-core/azureml.core.webservice.aci.aciwebservice?view=azure-ml-py#&preserve-view=truedeploy-configuration-cpu-cores-none--memory-gb-none--tags-none--properties-none--description-none--location-none--auth-enabled-none--ssl-enabled-none--enable-app-insights-none--ssl-cert-pem-file-none--ssl-key-pem-file-none--ssl-cname-none--dns-name-label-none--primary-key-none--secondary-key-none--collect-model-data-none--cmk-vault-base-url-none--cmk-key-name-none--cmk-key-version-none-)
+* Справочник по [AciWebservice.deploy_configuration()](https://docs.microsoft.com/python/api/azureml-core/azureml.core.webservice.aci.aciwebservice?view=azure-ml-py&preserve-view=true#&preserve-view=truedeploy-configuration-cpu-cores-none--memory-gb-none--tags-none--properties-none--description-none--location-none--auth-enabled-none--ssl-enabled-none--enable-app-insights-none--ssl-cert-pem-file-none--ssl-key-pem-file-none--ssl-cname-none--dns-name-label-none--primary-key-none--secondary-key-none--collect-model-data-none--cmk-vault-base-url-none--cmk-key-name-none--cmk-key-version-none-)
 * [Где и как развернуть службы](how-to-deploy-and-where.md)
 * [Развертывание веб-служб в Экземплярах контейнеров Azure](how-to-deploy-azure-container-instance.md).
 
@@ -291,6 +291,10 @@ Azure Databricks можно использовать в конвейерах М�
 >
 > Некоторые из этих действий отображаются в области **Действия** рабочей области, но эти уведомления не указывают на инициатора действия.
 
+### <a name="vulnerability-scanning"></a>Сканирование уязвимостей
+
+Центр безопасности Azure обеспечивает унифицированное управление безопасностью и расширенную защиту от угроз для гибридных облачных рабочих нагрузок. Для машинного обучения Azure необходимо включить проверку ресурсов реестра контейнеров Azure и ресурсов службы Azure Kubernetes. См. статью Просмотр [изображений реестра контейнеров Azure по центру безопасности](https://docs.microsoft.com/azure/security-center/azure-container-registry-integration) и [интеграции Azure Kubernetes Services с центром безопасности](https://docs.microsoft.com/azure/security-center/azure-kubernetes-service-integration).
+
 ## <a name="data-flow-diagrams"></a>Схемы потока данных
 
 ### <a name="create-workspace"></a>Создание рабочей области
@@ -362,7 +366,7 @@ Azure Databricks можно использовать в конвейерах М�
 
 [![Рабочий процесс вывода](media/concept-enterprise-security/inferencing.png)](media/concept-enterprise-security/inferencing.png#lightbox)
 
-## <a name="audit-and-manage-compliance"></a>Аудит и Управление соответствием
+## <a name="audit-and-manage-compliance"></a>Аудит соответствия и управление им
 
 [Политика Azure](/azure/governance/policy) — это средство управления, которое позволяет обеспечить соответствие ресурсов Azure политикам. С помощью Машинное обучение Azure можно назначить следующие политики:
 

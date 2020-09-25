@@ -80,7 +80,7 @@
     - name: Экспорт данных
       expanded: false
       items:
-        - name: Обезличенный экспорт
+        - name: Экспорт данных
           href: export-data.md
     - name: Поиск идентификаторов объектов удостоверений
       href: find-identity-object-ids.md

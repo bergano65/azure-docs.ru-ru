@@ -9,14 +9,14 @@ ms.devlang: ''
 ms.topic: conceptual
 author: anosov1960
 ms.author: sashan
-ms.reviewer: mathoma, carlrab
+ms.reviewer: mathoma, sstein
 ms.date: 02/13/2019
-ms.openlocfilehash: 1346fed738bb9afa595b63c91064a481e2ee2b51
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 8645e8c1f1f371f1416a998af41104ebb6867eea
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84031945"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91334890"
 ---
 # <a name="manage-rolling-upgrades-of-cloud-applications-by-using-sql-database-active-geo-replication"></a>Управление последовательными обновлениями для облачных приложений с помощью активной георепликации базы данных SQL
 [!INCLUDE[appliesto-sqldb](../includes/appliesto-sqldb.md)]
@@ -149,7 +149,7 @@ REMOVE SECONDARY ON SERVER <Partner-Server>
 
 Два описанных здесь метода обновления отличаются по сложности и стоимости, но они оба позволяют минимизировать период, в течение которого пользователь сможет выполнять только операции чтения. Это время напрямую зависит от длительности выполнения сценария обновления. Оно не зависит от размера базы данных, выбранного уровня служб, конфигурации веб-сайта и других факторов, которыми нелегко управлять. Подготовительные действия отделены от действий по обновлению и не влияют на рабочее приложение. Эффективность сценария обновления — ключевой фактор, определяющий взаимодействие с пользователем во время обновления. Поэтому для улучшения всей процедуры рекомендуется сосредоточиться на повышении эффективности сценария обновления.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Общие сведения о непрерывности бизнес-процессов и сценарии см. в статье [Обзор непрерывности бизнес-процессов](business-continuity-high-availability-disaster-recover-hadr-overview.md).
 * Дополнительные сведения об активной георепликации базы данных SQL Azure см. в статье [Создание считываемых баз данных-получателей с помощью активной георепликации](active-geo-replication-overview.md).

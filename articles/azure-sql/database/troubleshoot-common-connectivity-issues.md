@@ -1,5 +1,5 @@
 ---
-title: Работа с временными ошибками
+title: Устранение временных ошибок
 description: Узнайте, как устранять, диагностировать и предотвращать ошибки подключения SQL или временные ошибки при подключении к базе данных SQL Azure, Управляемый экземпляр Azure SQL и Azure синапсе Analytics.
 keywords: подключение sql,строка подключения,проблемы с подключением, временная ошибка,ошибка подключения
 services: sql-database
@@ -10,14 +10,14 @@ ms.devlang: ''
 ms.topic: conceptual
 author: dalechen
 ms.author: ninarn
-ms.reviewer: carlrab, vanto
+ms.reviewer: sstein, vanto
 ms.date: 01/14/2020
-ms.openlocfilehash: 0b28fa788e7b35e94482104d807c228db21f49b4
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 7fff2fdc4f1f8a39a807ceb6e7c33f3acf388df1
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87003922"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91284199"
 ---
 # <a name="troubleshoot-transient-connection-errors-in-sql-database-and-sql-managed-instance"></a>Устранение временных ошибок подключения в базе данных SQL и Управляемый экземпляр SQL
 

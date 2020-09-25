@@ -7,12 +7,12 @@ ms.reviewer: jdaly, logicappspm
 ms.topic: conceptual
 ms.date: 05/08/2020
 tags: connectors
-ms.openlocfilehash: 8cce90a8a65a7f070459e220e6d92ef0be57e909
-ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
+ms.openlocfilehash: de85a61cbd699ec9ac2669f8abb6217254038de9
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87284121"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91334588"
 ---
 # <a name="create-and-manage-records-in-common-data-service-by-using-azure-logic-apps"></a>Создание записей и управление ими в Common Data Service с помощью Azure Logic Apps
 
@@ -53,7 +53,7 @@ ms.locfileid: "87284121"
    |----------|----------|-------------|
    | **Среда** | Да | Наблюдаемая среда, например "Fabrikam Sales Production". Дополнительные сведения см. в разделе [Power Platform-](/power-platform/admin/environments-overview)Environments Overview. |
    | **Имя сущности** | Да | Сущность для отслеживания, например "интересы" |
-   | **Область** | Да | Источник, создавший новую запись, например пользователь в подразделении или любой пользователь в Организации. В этом примере используется "бизнес-единица". |
+   | **Область действия** | Да | Источник, создавший новую запись, например пользователь в подразделении или любой пользователь в Организации. В этом примере используется "бизнес-единица". |
    ||||
 
 ## <a name="add-common-data-service-action"></a>Добавить Common Data Service действие
@@ -87,7 +87,7 @@ ms.locfileid: "87284121"
 
       ![Выбор выходных данных триггера для использования в записи задачи](./media/connect-common-data-service/create-new-record-action-select-trigger-outputs.png)
 
-      | Выходные данные триггера | Описание: |
+      | Выходные данные триггера | Описание |
       |----------------|-------------|
       | **First Name** | Первое имя из записи интереса для использования в качестве основного контакта в записи задачи |
       | **Фамилия** | Фамилия из записи интереса для использования в качестве основного контакта в записи задачи |
@@ -108,7 +108,7 @@ ms.locfileid: "87284121"
 
 1. В триггере в списке **Добавить новый параметр** выберите **Фильтры атрибутов**.
 
-   ![Добавить свойство "Фильтры атрибутов"](./media/connect-common-data-service/when-record-updated-trigger-add-attribute-filters.png)
+   ![Снимок экрана, показывающий действие "при обновлении записи" и открытого списка "добавить новый параметр" с выбранным свойством "Фильтры атрибутов".](./media/connect-common-data-service/when-record-updated-trigger-add-attribute-filters.png)
 
 1. Для каждого **элемента фильтрации атрибутов**выберите атрибут, который требуется отслеживать для обновлений, например:
 
@@ -122,7 +122,7 @@ ms.locfileid: "87284121"
 
    ![Добавить свойство "фильтровать запрос"](./media/connect-common-data-service/list-records-action-filter-query.png)
 
-1. В свойстве **запрос фильтра** , которое теперь отображается в действии, введите этот запрос фильтра ODATA:`statuscode eq 1`
+1. В свойстве **запрос фильтра** , которое теперь отображается в действии, введите этот запрос фильтра ODATA: `statuscode eq 1`
 
    ![Введите запрос фильтра ODATA для фильтрации записей](./media/connect-common-data-service/list-records-action-filter-query-value.png)
 
@@ -136,7 +136,7 @@ ms.locfileid: "87284121"
 
    ![Добавить свойство "Order By"](./media/connect-common-data-service/list-records-action-order-by.png)
 
-1. В свойстве **ORDER BY** , которое теперь отображается в действии, введите этот запрос фильтра ODATA:`name`
+1. В свойстве **ORDER BY** , которое теперь отображается в действии, введите этот запрос фильтра ODATA: `name`
 
    ![Введите запрос фильтра ODATA для упорядочения записей](./media/connect-common-data-service/list-records-action-order-by-value.png)
 

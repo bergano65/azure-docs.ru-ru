@@ -7,12 +7,12 @@ ms.reviewer: plarsen, logicappspm
 ms.topic: conceptual
 ms.date: 08/23/2018
 tags: connectors
-ms.openlocfilehash: bd85155f932d57319f5f27081b44b48e5540bfb2
-ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
+ms.openlocfilehash: 6c9c54450788a89a7b1aadbb0b4682a60619c061
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87284053"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91334605"
 ---
 # <a name="access-and-manage-ibm-db2-resources-by-using-azure-logic-apps"></a>Доступ к ресурсам IBM DB2 и управление ими с помощью Azure Logic Apps
 
@@ -157,7 +157,7 @@ ms.locfileid: "87284053"
    | **Идентификатор области** | Да | Идентификатор нужной записи (в этом примере — 99999) |
    ||||
 
-   ![Выбор таблицы](./media/connectors-create-api-db2/db2-get-row-action-select-table.png)
+   ![Снимок экрана, показывающий действие "получить строку (Предварительная версия)" с открытым списком "имя таблицы" и выбранным значением "область".](./media/connectors-create-api-db2/db2-get-row-action-select-table.png)
 
 1. Завершив работу, нажмите кнопку **Сохранить** на панели инструментов конструктора.
 
@@ -192,7 +192,7 @@ ms.locfileid: "87284053"
 
 1. Откройте список **Имя таблицы** и выберите нужную таблицу (в этом примере — "AREA"):
 
-   ![Выбор таблицы](./media/connectors-create-api-db2/db2-get-rows-action-select-table.png)
+   ![Снимок экрана, показывающий действие "получить строку (Предварительная версия)" со значением "область", выбранным в списке "имя таблицы".](./media/connectors-create-api-db2/db2-get-rows-action-select-table.png)
 
 1. Чтобы задать фильтр или запросить результаты, нажмите **Показать расширенные параметры**.
 
@@ -241,7 +241,7 @@ ms.locfileid: "87284053"
 
    Пример:
 
-   ![Выбор таблицы](./media/connectors-create-api-db2/db2-insert-row-action-select-table.png)
+   ![Снимок экрана, на котором показан конструктор Logic Apps с действием "вставить строку (Предварительная версия)" и значениями свойств.](./media/connectors-create-api-db2/db2-insert-row-action-select-table.png)
 
 1. Завершив работу, нажмите кнопку **Сохранить** на панели инструментов конструктора.
 
@@ -289,7 +289,7 @@ ms.locfileid: "87284053"
 
    Пример:
 
-   ![Выбор таблицы](./media/connectors-create-api-db2/db2-update-row-action-select-table.png)
+   ![Снимок экрана, на котором показан конструктор Logic Apps с действием "обновить строку (Предварительная версия)", в котором выбирается таблица.](./media/connectors-create-api-db2/db2-update-row-action-select-table.png)
 
 1. Завершив работу, нажмите кнопку **Сохранить** на панели инструментов конструктора.
 
@@ -334,7 +334,7 @@ ms.locfileid: "87284053"
 
    Пример:
 
-   ![Выбор таблицы](./media/connectors-create-api-db2/db2-delete-row-action-select-table.png)
+   ![Снимок экрана, на котором показан конструктор Logic Apps с действием "удалить строку (Предварительная версия)", в котором выбирается таблица для удаления.](./media/connectors-create-api-db2/db2-delete-row-action-select-table.png)
 
 1. Завершив работу, нажмите кнопку **Сохранить** на панели инструментов конструктора.
 

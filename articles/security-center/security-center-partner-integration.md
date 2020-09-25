@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 04/19/2020
 ms.author: memildin
-ms.openlocfilehash: 40b96cac4c9ad638373fbb75f736dc7eded42b43
-ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
+ms.openlocfilehash: 9a781fd48b30ccb32b0a733e5aa1ac054b96dc12
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "90883929"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91323661"
 ---
 # <a name="integrate-security-solutions-in-azure-security-center"></a>Интеграция решений по обеспечению безопасности в центре безопасности Azure
 В этом документе описана процедура управления решениями по обеспечению безопасности, подключенными к центру безопасности Azure, и добавления новых решений.
@@ -40,7 +40,7 @@ ms.locfileid: "90883929"
 Центр безопасности также позволяет выполнить анализ уязвимостей для:
 
 * Баз данных SQL — см. раздел [Просмотр отчетов об оценке уязвимостей](defender-for-sql-usage.md#explore-vulnerability-assessment-reports).
-* Образы реестра контейнеров Azure. см. раздел [Интеграция реестра контейнеров Azure с центром безопасности (Предварительная версия)](azure-container-registry-integration.md) .
+* Образы реестра контейнеров Azure. см. раздел [Использование защитника Azure для реестров контейнеров для проверки образов на наличие уязвимостей](defender-for-container-registries-usage.md) .
 
 ## <a name="how-security-solutions-are-integrated"></a>Как интегрируются решения по обеспечению безопасности
 Решения по обеспечению безопасности Azure, развертываемые из центра безопасности, подключены автоматически. Кроме того, можно подключать другие источники данных безопасности, включая компьютеры, работающие локально или в других облаках.

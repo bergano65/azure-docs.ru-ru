@@ -8,15 +8,15 @@ ms.subservice: data-movement
 author: stevestein
 ms.custom: sqldbrb=2
 ms.author: sstein
-ms.reviewer: carlrab
+ms.reviewer: ''
 ms.date: 07/16/2019
 ms.topic: conceptual
-ms.openlocfilehash: 10d10ccfbd04a52f6d522700d66d2c959fed24ee
-ms.sourcegitcommit: 93462ccb4dd178ec81115f50455fbad2fa1d79ce
+ms.openlocfilehash: 9fb638feb254d5789d26cd854c0dcb3ae70da472
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/06/2020
-ms.locfileid: "85982424"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91284356"
 ---
 # <a name="export-to-a-bacpac-file---azure-sql-database-and-azure-sql-managed-instance"></a>Экспорт в файл BACPAC — база данных SQL Azure и Azure SQL Управляемый экземпляр
 
@@ -24,7 +24,7 @@ ms.locfileid: "85982424"
 
 Если нужно экспортировать базу данных для создания архива или для перехода на другую платформу, можно экспортировать схему и данные базы данных в [BACPAC](https://msdn.microsoft.com/library/ee210546.aspx#Anchor_4)-файл. BACPAC-файл — это ZIP-файл с расширением BACPAC, содержащим метаданные и данные из базы данных. BACPAC-файл можно хранить в хранилище BLOB-объектов Azure или локально в локальном расположении, а затем импортировать обратно в базу данных SQL Azure, Управляемый экземпляр Azure SQL или экземпляр SQL Server.
 
-## <a name="considerations"></a>Особенности
+## <a name="considerations"></a>Рекомендации
 
 - Чтобы экспорт был транзакционно согласованным, необходимо убедиться в том, что во время экспорта не происходит ни одной операции записи, или что вы экспортируете из [транзакционно согласованной копии](database-copy.md) базы данных.
 - Максимальный размер BACPAC-файла при экспорте в хранилище BLOB-объектов составляет 200 ГБ. Для архивации BACPAC-файла большего размера выполняйте экспорт в локальное хранилище.
@@ -104,7 +104,7 @@ while ($exportStatus.Status -eq "InProgress")
 $exportStatus
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Дополнительные сведения о долгосрочном хранении резервных копий отдельной базы данных и баз данных в составе пула в качестве альтернативы экспорту базы данных для архивации см. в статье [долгосрочное хранение резервных копий](long-term-retention-overview.md). Задания агентов SQL можно использовать для планирования [резервных копий только для копирования базы данных](https://docs.microsoft.com/sql/relational-databases/backup-restore/copy-only-backups-sql-server) как альтернативу долгосрочному хранению архивных копий.
 - Сведения о миграции из SQL Server в Базу данных SQL Azure с использованием BACPAC-файлов см. в [блоге группы консультирования клиентов SQL Server](https://blogs.msdn.microsoft.com/sqlcat/2016/10/20/migrating-from-sql-server-to-azure-sql-database-using-bacpac-files/).

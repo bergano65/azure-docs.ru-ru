@@ -1,14 +1,16 @@
 ---
 title: Добавление метки к сущности в речевом фрагменте
 description: Узнайте, как пометить сущность машинного обучения подсущностями в примере utterance на странице сведений о намерениях на портале LUIS.
+ms.service: cognitive-services
+ms.subservice: language-understanding
 ms.topic: conceptual
 ms.date: 05/20/2020
-ms.openlocfilehash: f576f42f46930d81212ff754a14ee30c75b79624
-ms.sourcegitcommit: 32592ba24c93aa9249f9bd1193ff157235f66d7e
+ms.openlocfilehash: ffbaa2e40d5924ba61e548398e63295cf7dba2b0
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85610495"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91303732"
 ---
 # <a name="label-machine-learning-entity-in-an-example-utterance"></a>Пометка сущности машинного обучения в примере utterance
 
@@ -53,7 +55,7 @@ ms.locfileid: "85610495"
 3. В примере речевого фрагмента _нарисуйте_ сущность с помощью курсора.
 
     > [!div class="mx-imgBorder"]
-    > ![Палитра сущностей для сущности машинного обучения](media/label-utterances/example-1-label-machine-learned-entity-palette-label-action.png)
+    > ![На снимке экрана показана сущность, окрашенная в курсор.](media/label-utterances/example-1-label-machine-learned-entity-palette-label-action.png)
 
 ## <a name="adding-entity-as-a-feature-from-the-entity-palette"></a>Добавление сущности в качестве функции из палитры сущностей
 
