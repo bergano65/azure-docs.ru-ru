@@ -1,7 +1,7 @@
 ---
 title: Проверка областей и ролей приложений в защищенном веб-API | Azure
 titleSuffix: Microsoft identity platform
-description: Узнайте, как создать защищенный веб-API и настроить код своего приложения.
+description: Убедитесь, что API вызывается только приложениями от имени пользователей, которые имеют правильные области действия и управляющие приложения, имеющие правильные роли приложений.
 services: active-directory
 author: jmprieur
 manager: CelesteDG
@@ -12,12 +12,12 @@ ms.workload: identity
 ms.date: 07/15/2020
 ms.author: jmprieur
 ms.custom: aaddev
-ms.openlocfilehash: c3cf8bfd2810e9c26a6f65c50c1a22baeec892af
-ms.sourcegitcommit: b33c9ad17598d7e4d66fe11d511daa78b4b8b330
+ms.openlocfilehash: 1e5c8b788f1abbfbd46c4dfe6c7bb9d87adcee86
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88855478"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91257272"
 ---
 # <a name="protected-web-api-verify-scopes-and-app-roles"></a>Защищенный веб-API: проверка областей и ролей приложений
 
@@ -100,7 +100,7 @@ public class TodoListController : Controller
 
 Теперь необходимо, чтобы ваш API проверял, что полученный маркер содержит утверждение `roles` и что это утверждение имеет ожидаемое значение. Код проверки аналогичен коду, который проверяет делегированные разрешения, за исключением того, что действие контроллера проверяет роли, а не области.
 
-### <a name="aspnet-core"></a>ASP.NET Core
+### <a name="aspnet-core"></a>ASP.NET Core
 
 ```csharp
 [Authorize]

@@ -13,12 +13,12 @@ ms.tgt_pltfrm: vm-linux
 ms.topic: conceptual
 ms.date: 08/02/2020
 ms.author: guybo
-ms.openlocfilehash: 0b3a598213545bbad833e9b8036f65b999df1c76
-ms.sourcegitcommit: d661149f8db075800242bef070ea30f82448981e
+ms.openlocfilehash: f945c58b256c2a024a62b15a1bca1841483e1849
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/19/2020
-ms.locfileid: "88607005"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91279439"
 ---
 # <a name="endorsed-linux-distributions-on-azure"></a>Рекомендуемые дистрибутивы Linux в Azure
 
@@ -37,7 +37,7 @@ ms.locfileid: "88607005"
 | CentOS по мошенническому звуковому программному обеспечению |CentOS 6. x, 7. x, 8. x |CentOS 6,3: [скачивание LIS](https://www.microsoft.com/download/details.aspx?id=55106)<p>CentOS 6.4 и более поздних версий: в ядре |Пакет: в [репозитории](http://olcentgbl.trafficmanager.net/openlogic/6/openlogic/x86_64/RPMS/) в разделе "WALinuxAgent" <br/>Исходный код: [GitHub](https://github.com/Azure/WALinuxAgent) |
 | [CoreOS](https://coreos.com/docs/running-coreos/cloud-providers/azure/)<p> CoreOS теперь имеет [окончание жизни](https://coreos.com/os/eol/) от 26 мая 2020 г. |Больше не доступно | | |
 | Debian от Credativ |8.x, 9.x |В ядре |Пакет: в репозитории в разделе WAAgent  <br/>Исходный код: [GitHub](https://github.com/Azure/WALinuxAgent) |
-|Контейнер флаткар Linux от Кинволк| Stable, Edge| | |
+|Контейнер флаткар Linux от Кинволк| Стабильный, бета-версия| В ядре | WA-Linux-агент уже установлен в/УСР/шаре/ОЕМ/бин/ваажент |
 | Oracle Linux по Oracle |6.x, 7.x, 8.x |В ядре |Пакет: в репозитории в разделе WALinuxAgent  <br/>Исходный код: [GitHub](https://go.microsoft.com/fwlink/p/?LinkID=250998) |
 | [Red Hat Enterprise Linux с помощью Red Hat](https://docs.microsoft.com/azure/virtual-machines/workloads/redhat/overview) |6.x, 7.x, 8.x |В ядре |Пакет: в репозитории в разделе WALinuxAgent  <br/>Исходный код: [GitHub](https://github.com/Azure/WALinuxAgent) |
 | SUSE Linux Enterprise по SUSE |SLES/SLES для SAP 11. x, 12. x, 15. x <br/> [Жизненный цикл образа общедоступного облака SUSE](https://www.suse.com/c/suse-public-cloud-image-life-cycle/) |В ядре |Пакет:<p> для версии 11: в репозитории [Cloud:Tools](https://build.opensuse.org/project/show/Cloud:Tools);<br>для версии 12: входит в состав модуля Public Cloud в python-azure-agent.<br/>Исходный код: [GitHub](https://go.microsoft.com/fwlink/p/?LinkID=250998) |

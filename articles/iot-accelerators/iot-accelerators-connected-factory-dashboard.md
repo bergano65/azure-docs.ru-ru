@@ -8,14 +8,17 @@ services: iot-accelerators
 ms.topic: conceptual
 ms.date: 07/10/2018
 ms.author: dobett
-ms.openlocfilehash: b53177d578768428665891704269e63bd8edb09e
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 797bd97940aa49db87b4ca4dd96f140208cd69b6
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "73820179"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91261878"
 ---
 # <a name="use-features-in-the-connected-factory-solution-accelerator-dashboard"></a>Использование функций панели мониторинга акселератора решений для подключенной фабрики
+
+> [!IMPORTANT]
+> Пока мы обновляем эту статью, ознакомьтесь с наиболее актуальными материалами в [Azure для промышленного центра Интернета вещей](https://azure.github.io/Industrial-IoT/) .
 
 Из краткого руководства [Развертывание облачного решения для управления промышленными устройствами Интернета вещей](quickstart-connected-factory-deploy.md) вы узнали, как использовать панель мониторинга и реагировать на оповещения. В этом пошаговом руководстве описаны дополнительные функции панели мониторинга, которые можно использовать для мониторинга промышленных устройств Интернета вещей и управления ими.
 
@@ -107,7 +110,7 @@ ms.locfileid: "73820179"
 > [!NOTE]
 > Полностью удалить все ресурсы, связанные с акселератором решений, можно на сайте [azureiotsolutions.com](https://www.azureiotsolutions.com/Accelerators#dashboard). Не удаляйте группу ресурсов на портале.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Теперь, когда вы развернули рабочей акселератор решений, можно продолжить знакомство с акселератором решений Интернета вещей. Для этого ознакомьтесь со следующими статьями:
 

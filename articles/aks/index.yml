@@ -9,12 +9,12 @@ metadata:
   author: laurenhughes
   ms.author: lahugh
   ms.date: 07/21/2020
-  ms.openlocfilehash: 35138e4e5569ddfa46cb60c742e7ae0b3868c8cd
-  ms.sourcegitcommit: 97a0d868b9d36072ec5e872b3c77fa33b9ce7194
+  ms.openlocfilehash: 98d96c36e8ec801c2a8a5a87d0075f2d9b57bd98
+  ms.sourcegitcommit: bdd5c76457b0f0504f4f679a316b959dcfabf1ef
   ms.translationtype: HT
   ms.contentlocale: ru-RU
-  ms.lasthandoff: 08/04/2020
-  ms.locfileid: "87563336"
+  ms.lasthandoff: 09/22/2020
+  ms.locfileid: "90984954"
 landingContent:
 - title: Сведения о Службе Azure Kubernetes (AKS)
   linkLists:
@@ -36,7 +36,7 @@ landingContent:
       url: concepts-security.md
     - text: Сеть
       url: concepts-network.md
-    - text: Хранилище
+    - text: Память
       url: concepts-storage.md
     - text: Масштабирование
       url: concepts-scale.md
@@ -50,14 +50,14 @@ landingContent:
       url: kubernetes-walkthrough-portal.md
     - text: Шаблон Resource Manager
       url: kubernetes-walkthrough-rm-template.md
-- title: Разработка и отладка приложений с помощью функции "Локальный процесс с Kubernetes"
+- title: Узнайте, как разрабатывать приложения и выполнять их отладку с помощью Моста с Kubernetes
   linkLists:
   - linkListType: how-to-guide
     links:
-    - text: Использование Локального процесса с Kubernetes в Visual Studio Code (предварительная версия)
-      url: https://code.visualstudio.com/docs/containers/local-process-kubernetes
-    - text: Использование Локального процесса с Kubernetes в Visual Studio (предварительная версия)
-      url: /visualstudio/containers/local-process-kubernetes
+    - text: Использование Моста с Kubernetes в Visual Studio Code
+      url: https://code.visualstudio.com/docs/containers/bridge-to-kubernetes
+    - text: Использование Моста с Kubernetes в Visual Studio
+      url: /visualstudio/containers/bridge-to-kubernetes
 - title: Развертывание и обновление приложений, а также управление ими
   linkLists:
   - linkListType: tutorial

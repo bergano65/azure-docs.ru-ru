@@ -11,25 +11,20 @@ ms.workload: identity
 ms.date: 07/14/2020
 ms.author: jmprieur
 ms.custom: aaddev
-ms.openlocfilehash: 0c4bef25a0be12c0335a82345ec998274f1faa67
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 174db339079de91a87cef9551bc79e6f03701605
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87058412"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91257135"
 ---
 # <a name="scenario-a-web-app-that-calls-web-apis"></a>Сценарий: веб-приложение, вызывающее веб-API
 
 Узнайте, как создать веб-приложение, которое подписывает пользователей на платформу Microsoft Identity, а затем вызывает веб-API от имени пользователя, выполнившего вход.
 
-## <a name="prerequisites"></a>Обязательные условия
+## <a name="prerequisites"></a>Предварительные требования
 
-[!INCLUDE [Prerequisites](../../../includes/active-directory-develop-scenarios-prerequisites.md)]
-
-В этом сценарии предполагается, что вы уже выполнили следующие сценарии:
-
-> [!div class="nextstepaction"]
-> [Веб-приложение, которое поддерживает вход пользователей](scenario-web-app-sign-user-overview.md)
+В этом сценарии предполагается, что вы уже выполнили [сценарий: веб-приложение, которое входит в систему пользователей](scenario-web-app-sign-user-overview.md).
 
 ## <a name="overview"></a>Обзор
 
@@ -51,6 +46,10 @@ ms.locfileid: "87058412"
 
 - Во время [регистрации приложения](scenario-web-app-call-api-app-registration.md)необходимо предоставить универсальный код ресурса (URI) ответа, секрет или сертификат для совместного использования с Azure AD. При развертывании приложения в нескольких расположениях вы предоставляете универсальный код ресурса (URI) ответа для каждого расположения.
 - [Конфигурация приложения](scenario-web-app-call-api-app-configuration.md) должна предоставлять учетные данные клиента, которые были предоставлены для общего доступа к Azure AD во время регистрации приложения.
+
+## <a name="recommended-reading"></a>Рекомендуемые материалы
+
+[!INCLUDE [recommended-topics](../../../includes/active-directory-develop-scenarios-prerequisites.md)]
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
