@@ -16,12 +16,12 @@ ms.date: 06/09/2020
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: dcc6de1ce50e86f177023a0a66c436633c8d502c
-ms.sourcegitcommit: 269da970ef8d6fab1e0a5c1a781e4e550ffd2c55
+ms.openlocfilehash: 9c8dcc8766b21551f3cd62289805fe735ef0f333
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/10/2020
-ms.locfileid: "88053292"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91317622"
 ---
 # <a name="azure-ad-connect-automatic-upgrade"></a>Azure AD Connect выполняет следующие функции: Автоматическое обновление
 Эта функция появилась в сборке [1.1.105.0 (выпущенной в феврале 2016 года)](reference-connect-version-history.md).  Эта функция была обновлена в [сборке 1.1.561](reference-connect-version-history.md) и теперь поддерживает дополнительные, ранее не поддерживаемые, сценарии.
@@ -63,8 +63,8 @@ ms.locfileid: "88053292"
 
 Затем убедитесь, что вы открыли нужные URL-адреса на прокси-сервере или в брандмауэре. Автоматическое обновление использует Azure AD Connect Health, как описано в [обзоре](#overview). При использовании прокси-сервера убедитесь, что служба Health настроена для работы с [прокси-сервером](how-to-connect-health-agent-install.md#configure-azure-ad-connect-health-agents-to-use-http-proxy). Кроме того, проверьте [подключение Health](how-to-connect-health-agent-install.md#test-connectivity-to-azure-ad-connect-health-service) к Azure AD.
 
-После проверки подключения к Azure AD можно изучить журналы событий. Запустите средство просмотра событий и найдите журнал событий **Приложение** . Добавьте фильтр журнала событий для источника **Azure AD Connect Upgrade** и диапазона идентификаторов событий **300-399**.  
-![Фильтр журнала событий для автоматического обновления](./media/how-to-connect-install-automatic-upgrade/eventlogfilter.png)  
+После проверки подключения к Azure AD можно изучить журналы событий. Запустите средство просмотра событий и найдите журнал событий **Приложение** . Добавьте фильтр EventLog для источника **Azure AD Connect обновление** и идентификатор события **300-399**.  
+![Снимок экрана, показывающий окно "Фильтрация текущего журнала" с "источниками событий" и выделенное поле "включить/исключить" идентификаторы событий.](./media/how-to-connect-install-automatic-upgrade/eventlogfilter.png)  
 
 Откроется список журналов событий, связанных с состоянием автоматического обновления.  
 ![Фильтр журнала событий для автоматического обновления](./media/how-to-connect-install-automatic-upgrade/eventlogresult.png)  

@@ -7,12 +7,12 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.topic: conceptual
 ms.date: 02/02/2020
-ms.openlocfilehash: 40ce2844e33c9a71f87e434a6a3e9f8e0f7e3cc6
-ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
+ms.openlocfilehash: 360578a36b92711c55b1fc65befa1b3df7927aad
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87322114"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91330899"
 ---
 # <a name="unify-multiple-azure-monitor-application-insights-resources"></a>Объединение нескольких ресурсов Azure Monitor Application Insights 
 В этой статье описывается, как запрашивать и просматривать все данные журнала Application Insights в одном месте, даже если они находятся в разных подписках Azure, в качестве замены нерекомендуемых Соединитель Application Insights. Количество Application Insights ресурсов, которые можно включить в один запрос, ограничено 100.
@@ -57,7 +57,7 @@ applicationsScoping
 ![Пример результатов по нескольким запросам](media/unify-app-resource-data/app-insights-query-results.png)
 
 >[!NOTE]
->[Запрос между разными ресурсами](./cross-workspace-query.md) в оповещениях журнала поддерживается в новом API [правил запросов по расписанию](/rest/api/monitor/scheduledqueryrules). По умолчанию Azure Monitor использует [устаревшие API оповещения Log Analytics](../platform/api-alerts.md) для создания любого нового правила генерации оповещений на портале Azure, пока вы не переключаетесь с [устаревших API оповещений журнала](../platform/alerts-log-api-switch.md#process-of-switching-from-legacy-log-alerts-api). После переключения новый API используется по умолчанию для новых правил генерации оповещений на портале Azure и позволяет создавать правила генерации оповещений журнала запроса между разными ресурсами. Правила генерации оповещений журнала [запросов между ресурсами](./cross-workspace-query.md) можно создавать без выполнения переключателя с помощью [шаблона ARM для API счедуледкуерирулес](../platform/alerts-log.md#log-alert-with-cross-resource-query-using-azure-resource-template) , но это правило может управляться хотя [счедуледкуерирулес API](/rest/api/monitor/scheduledqueryrules) , а не портал Azure.
+>[Запросы перекрестных ресурсов](./cross-workspace-query.md) в оповещениях журнала поддерживаются только в текущем [API счедуледкуерирулес](/rest/api/monitor/scheduledqueryrules). Если вы используете API устаревших Log Analyticsных предупреждений, необходимо [переключиться на текущий API](../platform/alerts-log-api-switch.md). [См. Примеры шаблонов](../platform/alerts-log-create-templates.md).
 
 ## <a name="application-insights-and-log-analytics-workspace-schema-differences"></a>Различия схем рабочей области Application Insights и Log Analytics
 В следующей таблице показаны различия схем Log Analytics и Application Insights.  
@@ -70,16 +70,16 @@ applicationsScoping
 | ApplicationTypeVersion | application_Version |
 | AvailabilityCount | itemCount |
 | AvailabilityDuration | длительность |
-| AvailabilityMessage | message |
+| AvailabilityMessage | сообщение |
 | AvailabilityRunLocation | location |
 | AvailabilityTestId | идентификатор |
 | AvailabilityTestName | name |
 | AvailabilityTimestamp | TIMESTAMP |
 | Браузер | client_browser |
-| Город | client_city |
+| City | client_city |
 | ClientIP | client_IP |
 | Компьютер | cloud_RoleInstance | 
-| Страна или регион | client_CountryOrRegion | 
+| Country | client_CountryOrRegion | 
 | CustomEventCount | itemCount | 
 | CustomEventDimensions | customDimensions |
 | CustomEventName | name | 
@@ -87,11 +87,11 @@ applicationsScoping
 | DeviceType | client_Type | 
 | ExceptionCount | itemCount | 
 | ExceptionHandledAt | handledAt |
-| ExceptionMessage | message | 
-| ExceptionType | type |
+| ExceptionMessage | сообщение | 
+| ExceptionType | тип |
 | OperationID | operation_id |
 | OperationName | operation_Name | 
-| Операционная система | client_OS | 
+| OS | client_OS | 
 | PageViewCount | itemCount |
 | PageViewDuration | длительность | 
 | PageViewName | name | 
@@ -106,7 +106,7 @@ applicationsScoping
 | RoleInstance | cloud_RoleInstance |
 | SessionId | session_Id | 
 | SourceSystem | operation_SyntheticSource |
-| TelemetryTYpe | type |
+| TelemetryTYpe | тип |
 | URL-адрес | url |
 | UserAccountId | user_AccountId |
 

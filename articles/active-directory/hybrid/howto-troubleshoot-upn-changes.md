@@ -11,12 +11,12 @@ author: barbaraselden
 manager: daveba
 ms.reviewer: jsimmons
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: caf0fdf5fd167987ea0fd7111a05b04bd5bf848f
-ms.sourcegitcommit: c94a177b11a850ab30f406edb233de6923ca742a
+ms.openlocfilehash: 6a1acdbeb29091bae0be214b740023f13928506a
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/01/2020
-ms.locfileid: "89279794"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91319849"
 ---
 # <a name="plan-and-troubleshoot-user-principal-name-changes-in-azure-active-directory"></a>Планирование и устранение неполадок при изменении имени субъекта-пользователя в Azure Active Directory
 
@@ -57,9 +57,9 @@ Bsimon@contoso.comдляBritta.Simon@contoso.com
 
     Например, если пользователь изменил подразделения, вы можете изменить его домен: 
 
-   * Britta.Simon@contoso.com — Britta.Simon@contosolabs.com <br>
-     Или<br>
-    * Britta.Simon@corp.contoso.com — Britta.Simon@labs.contoso.com 
+   * Запустите командлет Britta.Simon@contoso.com для установки по пути Britta.Simon@contosolabs.com. <br>
+     либо<br>
+    * Запустите командлет Britta.Simon@corp.contoso.com для установки по пути Britta.Simon@labs.contoso.com. 
 
 Рекомендуется изменять UPN пользователя каждый раз при обновлении своего основного адреса электронной почты.
 
@@ -94,7 +94,7 @@ username@labs.contoso.com.
 
 При синхронизации учетных записей пользователей из Active Directory в Azure AD убедитесь, что имена участников домена в Active Directory сопоставляются с проверенными доменами в Azure AD.
 
-![Снимок экрана проверенных доменов](./media/howto-troubleshoot-upn-changes/verified-domains.png)
+![Снимок экрана, на котором показаны примеры имен участников-пользователей, сопоставленных проверенным доменам Azure A D.](./media/howto-troubleshoot-upn-changes/verified-domains.png)
 
 Если значение атрибута userPrincipalName не соответствует проверенному домену в Azure AD, то процесс синхронизации заменяет суффикс на значение Default. onmicrosoft.com.
 
@@ -140,7 +140,7 @@ username@labs.contoso.com.
 ![Снимок экрана проверенных доменов](./media/howto-troubleshoot-upn-changes/other-user.png)
 
 
-### <a name="hybrid-azure-ad-joined-devices"></a>Устройства с гибридным присоединением к Azure AD
+### <a name="hybrid-azure-ad-joined-devices"></a>Гибридные устройства, присоединенные к Azure AD
 
 [Гибридные устройства, присоединенные к Azure AD](../devices/concept-azure-ad-join-hybrid.md) , присоединяются к Active Directory и Azure AD. Гибридное присоединение к Azure AD можно реализовать, если в вашей среде используется локальная Active Directory и вы также хотите воспользоваться преимуществами, предоставляемыми Azure AD.
 
@@ -237,7 +237,7 @@ Microsoft Authenticator приложение предлагает вариант
 ## <a name="security-key-fido2-known-issues-and-workarounds"></a>Известные проблемы и решения для ключа безопасности (FIDO2)
 
 **Известные проблемы** <br>
-При регистрации нескольких пользователей в одном и том же ключе на экране входа отображается страница выбора учетной записи, где отображается старое имя участника-пользователя. Операции входа, использующие ключи безопасности, не затрагиваются изменением имени участника-пользователя.  
+При регистрации нескольких пользователей в одном и том же ключе на экране входа отображается страница выбора учетной записи, где отображается старое имя участника-пользователя. При входе в систему с помощью ключей безопасности изменения имени участника-пользователя не затрагиваются.  
 
 **Обходное решение**<br>
 Чтобы удалить ссылки на старые имена участников-пользователей, необходимо [сбросить ключ безопасности и повторно зарегистрировать его](../authentication/howto-authentication-passwordless-security-key.md#known-issues).

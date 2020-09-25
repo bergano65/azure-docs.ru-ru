@@ -5,12 +5,12 @@ author: jakrams
 ms.author: jakras
 ms.date: 02/04/2020
 ms.topic: how-to
-ms.openlocfilehash: 49d3fd953d069f4368d28e26265114e574e8100a
-ms.sourcegitcommit: 655e4b75fa6d7881a0a410679ec25c77de196ea3
+ms.openlocfilehash: e899b249261ea3238695a2e2be6001cb6a9bc763
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/07/2020
-ms.locfileid: "89506667"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91318064"
 ---
 # <a name="convert-models"></a>Преобразование моделей
 
@@ -21,9 +21,8 @@ ms.locfileid: "89506667"
 
 Служба преобразования поддерживает следующие форматы:
 
-- **FBX**  (версия 2011 и более поздние)
-- **Глтф** (версия 2. x)
-- **GLBA**  (версия 2. x)
+- **FBX**  (версия 2011 до версии 2020)
+- **Глтф** / **GLBA** (версия 2. x)
 
 Существуют небольшие различия между форматами для преобразования свойства материала, как указано в разделе [сопоставление материалов для форматов модели](../../reference/material-mapping.md).
 

@@ -1,14 +1,14 @@
 ---
 title: Проектирование базы знаний — QnA Maker
-description: База знаний QnA Maker состоит из набора пар вопросов и ответов (QnA) и необязательных метаданных, связанных с каждой парой QnA.
+description: Сведения о проектировании базы знаний — QnA Maker.
 ms.topic: conceptual
 ms.date: 01/27/2020
-ms.openlocfilehash: e75a9313f02a6b5cc4235cdcccb381585d2192ae
-ms.sourcegitcommit: fc718cc1078594819e8ed640b6ee4bef39e91f7f
+ms.openlocfilehash: 86e176a378d02d294e0123aba0d2e08d99b044fe
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "83993003"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91330661"
 ---
 # <a name="question-and-answer-pair-concepts"></a>Концепции пары вопросов и ответов
 

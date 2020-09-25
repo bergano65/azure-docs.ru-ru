@@ -2,18 +2,18 @@
 title: Разработка и отладка модулей в Visual Studio — Azure IoT Edge
 description: Используйте Visual Studio с инструментами Azure IoT для разработки модуля IoT Edge C или C# и отправки его из центра Интернета вещей на устройство IoT, настроенное манифестом развертывания.
 services: iot-edge
-author: shizn
+author: kgremban
 manager: philmea
-ms.author: xshi
+ms.author: kgremban
 ms.date: 3/27/2020
 ms.topic: conceptual
 ms.service: iot-edge
-ms.openlocfilehash: 9722c7dec3a066d8f776424cb599be0d463416d9
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 823b16dcaf113136b10fdaa054da20840b99f02d
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "80384863"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91297051"
 ---
 # <a name="use-visual-studio-2019-to-develop-and-debug-modules-for-azure-iot-edge"></a>Использование Visual Studio 2019 для разработки и отладки модулей для Azure IoT Edge
 
@@ -230,7 +230,7 @@ ms.locfileid: "80384863"
 
 1. Нажмите кнопку обновить, чтобы просмотреть новые модули, работающие с модулем **симулатедтемпературесенсор** , а также **$edgeAgent** и **$edgeHub**.
 
-## <a name="view-generated-data"></a>Просмотр сформированных данных
+## <a name="view-generated-data"></a>просмотр сформированных данных.
 
 1. Чтобы отслеживать сообщение D2C для конкретного устройства IoT-погранично, выберите его в центре Интернета вещей в **Cloud Explorer** а затем в окне **действия** выберите команду **начать мониторинг встроенной конечной точки события** .
 

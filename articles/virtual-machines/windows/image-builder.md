@@ -7,12 +7,12 @@ ms.date: 05/05/2020
 ms.topic: how-to
 ms.service: virtual-machines-windows
 ms.subservice: imaging
-ms.openlocfilehash: f0d8a37f0edc161cbd73bf7438dc1c9486c4251b
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 62d80426dec6f5d63d8fa5d67d64d6aafb881110
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87027943"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91320019"
 ---
 # <a name="preview-create-a-windows-vm-with-azure-image-builder"></a>Предварительная версия: создание виртуальной машины Windows с помощью Azure Image Builder
 
@@ -161,7 +161,7 @@ vi helloImageTemplateWin.json
 ```
 
 > [!NOTE]
-> Для исходного образа необходимо всегда [указывать версию](https://github.com/danielsollondon/azvmimagebuilder/blob/master/troubleshootingaib.md#image-version-failure), но нельзя использовать `latest` .
+> Для исходного образа необходимо всегда [указывать версию](../linux/image-builder-troubleshoot.md#build--step-failed-for-image-version), но нельзя использовать `latest` .
 > При добавлении или изменении группы ресурсов, в которую распространяется изображение, необходимо [установить разрешения](#create-a-user-assigned-identity-and-set-permissions-on-the-resource-group) для группы ресурсов.
  
 ## <a name="create-the-image"></a>Создание образа
@@ -179,13 +179,13 @@ az resource create \
 
 По завершении это приведет к возврату сообщения об успешном выполнении в консоль и созданию `Image Builder Configuration Template` в `$imageResourceGroup` . Этот ресурс можно увидеть в группе ресурсов в портал Azure, если включить параметр "Показать скрытые типы".
 
-В фоновом режиме построитель образов также создаст группу промежуточных ресурсов в подписке. Эта группа ресурсов используется для сборки образа. Он будет иметь следующий формат:`IT_<DestinationResourceGroup>_<TemplateName>`
+В фоновом режиме построитель образов также создаст группу промежуточных ресурсов в подписке. Эта группа ресурсов используется для сборки образа. Он будет иметь следующий формат: `IT_<DestinationResourceGroup>_<TemplateName>`
 
 > [!Note]
 > Не следует удалять промежуточную группу ресурсов напрямую. Сначала удалите артефакт шаблона образа. это приведет к удалению промежуточной группы ресурсов.
 
 Если служба сообщает о сбое во время отправки шаблона конфигурации образа:
--  Ознакомьтесь с этими действиями по [устранению неполадок](https://github.com/danielsollondon/azvmimagebuilder/blob/master/troubleshootingaib.md#template-submission-errors--troubleshooting) . 
+-  Ознакомьтесь с этими действиями по [устранению неполадок](../linux/image-builder-troubleshoot.md#troubleshoot-image-template-submission-errors) . 
 - Перед повторной попыткой отправки необходимо удалить шаблон с помощью следующего фрагмента кода.
 
 ```azurecli-interactive
@@ -208,7 +208,7 @@ az resource invoke-action \
 
 Дождитесь завершения сборки. Это может занять около 15 минут.
 
-При возникновении ошибок ознакомьтесь с этими действиями по [устранению неполадок](https://github.com/danielsollondon/azvmimagebuilder/blob/master/troubleshootingaib.md#image-build-errors--troubleshooting) .
+При возникновении ошибок ознакомьтесь с этими действиями по [устранению неполадок](../linux/image-builder-troubleshoot.md#troubleshoot-common-build-errors) .
 
 
 ## <a name="create-the-vm"></a>Создание виртуальной машины

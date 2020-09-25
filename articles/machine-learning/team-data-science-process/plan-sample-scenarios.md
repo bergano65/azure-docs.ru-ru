@@ -11,12 +11,12 @@ ms.topic: article
 ms.date: 01/10/2020
 ms.author: tdsp
 ms.custom: seodec18, previous-author=deguhath, previous-ms.author=deguhath
-ms.openlocfilehash: d462f146f3f094602835d88e48815d5537c58665
-ms.sourcegitcommit: 124f7f699b6a43314e63af0101cd788db995d1cb
+ms.openlocfilehash: afbc16f0fb30c1ada22b668771525288602cda44
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86078788"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91296643"
 ---
 # <a name="scenarios-for-advanced-analytics-in-azure-machine-learning"></a>Сценарии для расширенной аналитики в Машинном обучении Azure
 В этой статье описаны различные источники примеров данных и типовые сценарии, в которых можно использовать [процесс обработки и анализа данных группы (TDSP)](overview.md). Процесс TDSP предоставляет систематический подход для совместной работы групп над созданием интеллектуальных приложений. В представленных сценариях продемонстрированы варианты рабочих процессов обработки данных на основе характеристик данных, исходных расположений и целевых репозиториев в Azure.
@@ -31,7 +31,7 @@ ms.locfileid: "86078788"
 > 
 > * [создать учетную запись хранения;](../../storage/common/storage-account-create.md)
 >   <br/>
-> * [Создание рабочей области машинного обучения Azure](../studio/create-workspace.md)
+> * [Создание рабочей области машинного обучения Azure](../classic/create-workspace.md)
 > 
 > 
 
@@ -184,7 +184,7 @@ ms.locfileid: "86078788"
 1. В окне проводника Windows или командной строки Windows скопируйте файлы отсоединенной базы данных и файлы журнала в целевое расположение на виртуальной машине SQL Server в Azure.
 1. Присоедините скопированные файлы к целевому экземпляру SQL Server. Дополнительные сведения см. в статье [Attach a Database](https://technet.microsoft.com/library/ms190209\(v=sql.110\).aspx).
 
-[Перенос базы данных путем отсоединения и присоединения (язык Transact-SQL)](https://technet.microsoft.com/library/ms187858\(v=sql.110\).aspx)
+[Перемещение базы данных с помощью отсоединения и присоединения (Transact-SQL)](https://technet.microsoft.com/library/ms187858\(v=sql.110\).aspx)
 
 ## <a name="scenario-7-big-data-in-local-files-target-hive-database-in-azure-hdinsight-hadoop-clusters"></a><a name="largedbtohive"></a>Сценарий \# №7. Данные большого размера в локальных файлах, загружаемые в базу данных Hive в кластерах Azure HDInsight Hadoop
 ![Данные большого размера в локальных файлах для базы данных Hive][9]

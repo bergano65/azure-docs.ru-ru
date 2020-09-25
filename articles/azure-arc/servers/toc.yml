@@ -47,6 +47,8 @@
       items:
         - name: Проблемы с подключением агента
           href: troubleshoot-agent-onboard.md
+        - name: Проблемы с расширением виртуальной машины
+          href: troubleshoot-vm-extensions.md
 - name: Справочник
   items:
     - name: Местонахождение данных

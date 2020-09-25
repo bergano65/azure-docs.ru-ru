@@ -1,18 +1,18 @@
 ---
 title: Анализ системы показателей | Документация Майкрософт
-description: Вопросы и ответы по Azure Internet Analyzer.
+description: Узнайте, как интерпретировать систему показателей. Вкладка система показателей содержит объединенные и проанализированные результаты тестов.
 services: internet-analyzer
 author: mattcalder
 ms.service: internet-analyzer
 ms.topic: how-to
 ms.date: 10/16/2019
 ms.author: mebeatty
-ms.openlocfilehash: 5ed8621fbfd1528bfffeaa986fa9c2e17c19f82b
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: f43d094193fb266d1ecec7089b44d8b3fd5e9b43
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84744040"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91330219"
 ---
 # <a name="interpreting-your-scorecard"></a>Интерпретация системы показателей
 
@@ -55,6 +55,6 @@ ms.locfileid: "84744040"
 Временные ряды показывают, как изменяется метрика со временем. В Интернете существует много временных факторов, влияющих на производительность, например пиковые периоды трафика, разницу в будние дни и праздники.
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения см. в нашем [обзоре Internet Analyzer](internet-analyzer-overview.md).

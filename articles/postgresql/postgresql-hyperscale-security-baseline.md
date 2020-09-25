@@ -1,22 +1,22 @@
 ---
-title: Базовый план безопасности Azure для базы данных Azure для PostgreSQL — масштабирование
-description: Базовый план безопасности базы данных Azure для PostgreSQL — это руководство по использованию процедур и ресурсов для реализации рекомендаций по безопасности, указанных в статье о производительности системы безопасности Azure.
+title: Базовый план безопасности Azure для базы данных Azure для PostgreSQL — масштабирование (Цитус)
+description: Базовый план безопасности базы данных Azure для PostgreSQL-Scale (Цитус) содержит руководство по использованию процедур и ресурсов для реализации рекомендаций по безопасности, указанных в тестовом плане безопасности Azure.
 author: msmbaldwin
 ms.service: postgresql
 ms.topic: conceptual
 ms.date: 08/04/2020
 ms.author: mbaldwin
 ms.custom: subject-security-benchmark
-ms.openlocfilehash: 37ebd1702ed8ef059b38378b89f5a5cb61748568
-ms.sourcegitcommit: d68c72e120bdd610bb6304dad503d3ea89a1f0f7
+ms.openlocfilehash: c82451ca9f1f974aba7578b0dfc4f6f0eb99ac16
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/01/2020
-ms.locfileid: "89231305"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91318132"
 ---
-# <a name="azure-security-baseline-for-azure-database-for-postgresql---hyperscale"></a>Базовый план безопасности Azure для базы данных Azure для PostgreSQL — масштабирование
+# <a name="azure-security-baseline-for-azure-database-for-postgresql---hyperscale-citus"></a>Базовый план безопасности Azure для базы данных Azure для PostgreSQL — масштабирование (Цитус)
 
-Базовый план безопасности Azure для базы данных Azure для PostgreSQL-"масштабирование" содержит рекомендации, которые помогут повысить уровень безопасности развертывания.
+Базовый план безопасности Azure для базы данных Azure для PostgreSQL-Scale (Цитус) содержит рекомендации, которые помогут повысить уровень безопасности развертывания.
 
 Базовая конфигурация безопасности для этой службы взята из [теста производительности системы Azure версии 1.0](https://docs.microsoft.com/azure/security/benchmarks/overview), содержащего рекомендации по обеспечению безопасности облачных решений в Azure с помощью наших практических рекомендаций.
 

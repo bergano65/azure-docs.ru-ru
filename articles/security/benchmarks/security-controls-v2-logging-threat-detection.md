@@ -4,17 +4,17 @@ description: Ведение журнала и обнаружение угроз 
 author: msmbaldwin
 ms.service: security
 ms.topic: conceptual
-ms.date: 09/13/2020
+ms.date: 09/20/2020
 ms.author: mbaldwin
 ms.custom: security-benchmark
-ms.openlocfilehash: 24ddca37a729a459382fc96a2f6e0ef1a7832f37
-ms.sourcegitcommit: 94c750edd4d755d6ecee50ac977328098a277479
+ms.openlocfilehash: 9ada1956af2dabdb8e5deff33722af7a8691dd19
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/13/2020
-ms.locfileid: "90059409"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91295470"
 ---
-# <a name="security-control-logging-and-threat-detection"></a>Контроль безопасности: ведение журнала и обнаружение угроз
+# <a name="security-control-v2-logging-and-threat-detection"></a>Управление безопасностью v2: ведение журнала и обнаружение угроз
 
 Ведение журналов и обнаружение угроз охватывает элементы управления для обнаружения угроз в Azure и включения, сбора и хранения журналов аудита для служб Azure. Сюда входят процессы обнаружения, исследования и исправления с помощью элементов управления для создания высококачественных оповещений с помощью встроенного обнаружения угроз в службах Azure. Кроме того, он включает сбор журналов с Azure Monitor, централизованный анализ безопасности с помощью маркеров Azure, синхронизации времени и срока хранения журнала. 
 
@@ -40,11 +40,11 @@ ms.locfileid: "90059409"
 
 **Ответственность**: Customer
 
-**Заинтересованные лица по безопасности клиентов**:
+**Заинтересованные лица по безопасности клиентов** (дополнительные[сведения](/azure/cloud-adoption-framework/organize/cloud-security#security-functions)):
 
 - [Безопасность инфраструктуры и конечных точек](/azure/cloud-adoption-framework/organize/cloud-security-infrastructure-endpoint)
 
-- [Операции безопасности (SecOps)](/azure/cloud-adoption-framework/organize/cloud-security-operations-center)
+- [Операции безопасности](/azure/cloud-adoption-framework/organize/cloud-security-operations-center)
 
 - [Управление состоянием](/azure/cloud-adoption-framework/organize/cloud-security-posture-management)   
 
@@ -56,7 +56,7 @@ ms.locfileid: "90059409"
 
 | Идентификатор Azure | ИДЕНТИФИКАТОРы элементов управления CIS v 7.1 | ИДЕНТИФИКАТОРы для директивы NIST SP800-53 |
 |--|--|--|--|
-| LT – 2 | 6.8 | AU-3, AU-6, AU-12, SI-4 |
+| LT – 2 | 6,8 | AU-3, AU-6, AU-12, SI-4 |
 
 Azure AD предоставляет следующие журналы пользователей, которые можно просмотреть в службе отчетов Azure AD или интегрировать с Azure Monitor, Sentinel или другими средствами SIEM и мониторинга для более сложных вариантов использования в целях мониторинга и анализа. 
 -   Входы. Отчет о входах содержит информацию об использовании управляемых приложений и входах пользователей.
@@ -77,11 +77,11 @@ Azure AD предоставляет следующие журналы польз
 
 **Ответственность**: Customer
 
-**Заинтересованные лица по безопасности клиентов**:
+**Заинтересованные лица по безопасности клиентов** (дополнительные[сведения](/azure/cloud-adoption-framework/organize/cloud-security#security-functions)):
 
 - [Безопасность инфраструктуры и конечных точек](/azure/cloud-adoption-framework/organize/cloud-security-infrastructure-endpoint)
 
-- [Операции безопасности (SecOps)](/azure/cloud-adoption-framework/organize/cloud-security-operations-center)
+- [Операции безопасности](/azure/cloud-adoption-framework/organize/cloud-security-operations-center)
 
 - [Управление состоянием](/azure/cloud-adoption-framework/organize/cloud-security-posture-management)   
 
@@ -111,11 +111,11 @@ Azure AD предоставляет следующие журналы польз
 
 **Ответственность**: Customer
 
-**Заинтересованные лица по безопасности клиентов**:
+**Заинтересованные лица по безопасности клиентов** (дополнительные[сведения](/azure/cloud-adoption-framework/organize/cloud-security#security-functions)):
 
 - [Безопасность инфраструктуры и конечных точек](/azure/cloud-adoption-framework/organize/cloud-security-infrastructure-endpoint)
 
-- [Операции безопасности (SecOps)](/azure/cloud-adoption-framework/organize/cloud-security-operations-center)
+- [Операции безопасности](/azure/cloud-adoption-framework/organize/cloud-security-operations-center)
 
 - [Управление состоянием](/azure/cloud-adoption-framework/organize/cloud-security-posture-management)   
 
@@ -129,7 +129,7 @@ Azure AD предоставляет следующие журналы польз
 |--|--|--|--|
 | LT – 4 | 6,2, 6,3, 8,8 | AU-3, AU-12 |
 
-Включите ведение журнала для ресурсов Azure, чтобы удовлетворить требования к соответствию, обнаружению угроз и исследованию угроз. 
+Включите ведение журнала для ресурсов Azure в соответствии с требованиями к соответствию, обнаружению угроз, поиску и исследованию инцидентов. 
 
 Вы можете использовать центр безопасности Azure и политику Azure, чтобы включить журналы ресурсов и сбор данных журналов в ресурсах Azure для доступа к журналам аудита, безопасности и ресурсов. Автоматически доступны журналы действий, включающие источник событий, дату, пользователя, метку времени, исходные адреса, адреса назначения и другие полезные элементы. 
 
@@ -141,9 +141,9 @@ Azure AD предоставляет следующие журналы польз
 
 **Ответственность**: Совмещаемая блокировка
 
-**Заинтересованные лица по безопасности клиентов**:
+**Заинтересованные лица по безопасности клиентов** (дополнительные[сведения](/azure/cloud-adoption-framework/organize/cloud-security#security-functions)):
 
-- [Операции безопасности (SecOps)](/azure/cloud-adoption-framework/organize/cloud-security-operations-center)
+- [Операции безопасности](/azure/cloud-adoption-framework/organize/cloud-security-operations-center)
 
 Безопасность инфраструктуры и конечных точек 
 
@@ -171,7 +171,7 @@ Azure AD предоставляет следующие журналы польз
 
 **Ответственность**: Customer
 
-**Заинтересованные лица по безопасности клиентов**:
+**Заинтересованные лица по безопасности клиентов** (дополнительные[сведения](/azure/cloud-adoption-framework/organize/cloud-security#security-functions)):
 
 - [Архитектура безопасности](/azure/cloud-adoption-framework/organize/cloud-security-architecture)
 
@@ -185,25 +185,25 @@ Azure AD предоставляет следующие журналы польз
 |--|--|--|--|
 | LT – 6 | 6.4 | AU-3, AU-11 |
 
-Настройте срок хранения журнала в соответствии с требованиями, нормативным и другим требованиям. 
+Настройте срок хранения журнала в соответствии с требованиями, нормативным требованиям и бизнес-потребностями. 
 
 В Azure Monitor можно задать срок хранения Log Analytics рабочей области в соответствии с нормативными требованиями Организации. Используйте службы хранилища Azure, Data Lake или Log Analytics учетные записи рабочих областей для долгосрочного и архивного хранения.
 
 - [Изменение срока хранения данных в Log Analytics](../../azure-monitor/platform/manage-cost-storage.md#change-the-data-retention-period)
 
-Как настроить политику хранения для журналов учетных записей хранения Azure: ttps://docs.microsoft.com/azure/storage/common/storage-monitor-storage-account#configure-logging
+- [Настройка политики хранения для журналов учетных записей хранения Azure](../../storage/common/storage-monitor-storage-account.md#configure-logging)
 
 - [Экспорт оповещений и рекомендаций центра безопасности Azure](../../security-center/continuous-export.md)
 
 **Ответственность**: Customer
 
-**Заинтересованные лица по безопасности клиентов**:
+**Заинтересованные лица по безопасности клиентов** (дополнительные[сведения](/azure/cloud-adoption-framework/organize/cloud-security#security-functions)):
 
 - [Архитектура безопасности](/azure/cloud-adoption-framework/organize/cloud-security-architecture)
 
 - [Безопасность приложений и DevOps](/azure/cloud-adoption-framework/organize/cloud-security-application-security-devsecops) 
 
-- [Операции безопасности (SecOps)](/azure/cloud-adoption-framework/organize/cloud-security-operations-center) 
+- [Операции безопасности](/azure/cloud-adoption-framework/organize/cloud-security-operations-center) 
 
 - [Управление соответствием требованиям безопасности](/azure/cloud-adoption-framework/organize/cloud-security-compliance-management)
 
@@ -225,7 +225,7 @@ Azure AD предоставляет следующие журналы польз
 
 **Ответственность**: Совмещаемая блокировка
 
-**Заинтересованные лица по безопасности клиентов**:
+**Заинтересованные лица по безопасности клиентов** (дополнительные[сведения](/azure/cloud-adoption-framework/organize/cloud-security#security-functions)):
 
 - [Политика и стандарты](/azure/cloud-adoption-framework/organize/cloud-security-policy-standards)
 

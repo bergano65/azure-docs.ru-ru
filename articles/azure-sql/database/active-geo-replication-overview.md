@@ -9,14 +9,14 @@ ms.devlang: ''
 ms.topic: conceptual
 author: anosov1960
 ms.author: sashan
-ms.reviewer: mathoma, carlrab
+ms.reviewer: mathoma, sstein
 ms.date: 08/27/2020
-ms.openlocfilehash: a269796c072a235e4ecd47731ca37a774750a3cf
-ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
+ms.openlocfilehash: 3526510e4cbd77ffe1f468512e1128dcebe9b1da
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89018388"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91330848"
 ---
 # <a name="creating-and-using-active-geo-replication---azure-sql-database"></a>Создание и использование активной георепликации в базе данных SQL Azure
 [!INCLUDE[appliesto-sqldb](../includes/appliesto-sqldb.md)]
@@ -216,7 +216,7 @@ ms.locfileid: "89018388"
 > Если вы создали базу данных-получатель как часть конфигурации группы отработки отказа, понижение ее уровня не рекомендуется. Это необходимо, чтобы обеспечить достаточную емкость уровня данных для обработки регулярных рабочих нагрузок после активации отработки отказа.
 
 > [!IMPORTANT]
-> База данных-источник в группе отработки отказа не может масштабироваться до более высокого уровня, если база данных-получатель сначала не масштабируется до более высокого уровня. Если вы попытаетесь масштабировать базу данных-источник до масштабирования базы данных-получателя, может появиться следующее сообщение об ошибке:
+> База данных-источника в группе отработки отказа не может масштабироваться до более высокого уровня без предварительного масштабирования базы данных-получателя до более высокого уровня. Если вы попытаетесь масштабировать базу данных-источник до масштабирования базы данных-получателя, может появиться следующее сообщение об ошибке:
 >
 > `Error message: The source database 'Primaryserver.DBName' cannot have higher edition than the target database 'Secondaryserver.DBName'. Upgrade the edition on the target before upgrading the source.`
 >
@@ -248,9 +248,9 @@ ms.locfileid: "89018388"
 
 | Команда | Описание |
 | --- | --- |
-| [ALTER DATABASE](https://docs.microsoft.com/sql/t-sql/statements/alter-database-transact-sql?view=azuresqldb-current) |Используйте аргумент ADD SECONDARY ON SERVER, чтобы создать базу данных-получатель для существующей базы данных и начать репликацию данных. |
-| [ALTER DATABASE](https://docs.microsoft.com/sql/t-sql/statements/alter-database-transact-sql?view=azuresqldb-current) |Используйте аргумент FAILOVER или FORCE_FAILOVER_ALLOW_DATA_LOSS, чтобы задать базу данных-получатель в качестве базы данных-источника для запуска отработки отказа. |
-| [ALTER DATABASE](https://docs.microsoft.com/sql/t-sql/statements/alter-database-transact-sql?view=azuresqldb-current) |Используйте аргумент REMOVE SECONDARY ON SERVER, чтобы завершить репликацию данных между базой данных SQL и указанной базой данных-получателем. |
+| [ALTER DATABASE](https://docs.microsoft.com/sql/t-sql/statements/alter-database-transact-sql?view=azuresqldb-current&preserve-view=true) |Используйте аргумент ADD SECONDARY ON SERVER, чтобы создать базу данных-получатель для существующей базы данных и начать репликацию данных. |
+| [ALTER DATABASE](https://docs.microsoft.com/sql/t-sql/statements/alter-database-transact-sql?view=azuresqldb-current&preserve-view=true) |Используйте аргумент FAILOVER или FORCE_FAILOVER_ALLOW_DATA_LOSS, чтобы задать базу данных-получатель в качестве базы данных-источника для запуска отработки отказа. |
+| [ALTER DATABASE](https://docs.microsoft.com/sql/t-sql/statements/alter-database-transact-sql?view=azuresqldb-current&preserve-view=true) |Используйте аргумент REMOVE SECONDARY ON SERVER, чтобы завершить репликацию данных между базой данных SQL и указанной базой данных-получателем. |
 | [sys.geo_replication_links](/sql/relational-databases/system-dynamic-management-views/sys-geo-replication-links-azure-sql-database) |Возвращает сведения обо всех существующих каналах репликации для каждой базы данных на сервере. |
 | [sys.dm_geo_replication_link_status](/sql/relational-databases/system-dynamic-management-views/sys-dm-geo-replication-link-status-azure-sql-database) |Возвращает время последней репликации, запаздывание последней репликации и другие сведения о канале репликации для заданной базы данных. |
 | [sys.dm_operation_status](/sql/relational-databases/system-dynamic-management-views/sys-dm-operation-status-azure-sql-database) |Показывает состояние всех операций с базой данных, включая состояние связей репликации. |

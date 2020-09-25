@@ -2,13 +2,13 @@
 title: Развертывание ресурсов в группе управления
 description: Описывает развертывание ресурсов в области группы управления в шаблоне Azure Resource Manager.
 ms.topic: conceptual
-ms.date: 09/15/2020
-ms.openlocfilehash: 2325e9f5a03f7451492c9b9b8e929df95ddc3852
-ms.sourcegitcommit: 80b9c8ef63cc75b226db5513ad81368b8ab28a28
+ms.date: 09/24/2020
+ms.openlocfilehash: 0c5ed8d2427a9e0329db6ebd7f0aa48aa4912a48
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/16/2020
-ms.locfileid: "90605232"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91284828"
 ---
 # <a name="create-resources-at-the-management-group-level"></a>Создание ресурсов на уровне группы управления
 
@@ -45,7 +45,7 @@ ms.locfileid: "90605232"
 
 * [теги](/azure/templates/microsoft.resources/tags)
 
-### <a name="schema"></a>схема
+## <a name="schema"></a>схема
 
 Схема, используемая для развертываний группы управления, отличается от схемы развертываний группы ресурсов.
 
@@ -60,6 +60,30 @@ https://schema.management.azure.com/schemas/2019-08-01/managementGroupDeployment
 ```json
 https://schema.management.azure.com/schemas/2019-04-01/deploymentParameters.json#
 ```
+
+## <a name="deployment-scopes"></a>Области развертывания
+
+При развертывании в группе управления можно ориентироваться на группу управления, указанную в команде развертывания, или можно выбрать другие группы управления в клиенте.
+
+Ресурсы, определенные в разделе ресурсов шаблона, применяются к группе управления из команды развертывания.
+
+:::code language="json" source="~/resourcemanager-templates/azure-resource-manager/scope/default-mg.json" highlight="5":::
+
+Чтобы выбрать другую группу управления, добавьте вложенное развертывание и укажите `scope` свойство. Задайте `scope` для свойства значение в формате `Microsoft.Management/managementGroups/<mg-name>` .
+
+:::code language="json" source="~/resourcemanager-templates/azure-resource-manager/scope/scope-mg.json" highlight="10,17,22":::
+
+Вы также можете ориентироваться на подписки или группы ресурсов в группе управления. Пользователь, развертывающий шаблон, должен иметь доступ к указанной области.
+
+Чтобы назначить подписку в группе управления, используйте вложенное развертывание и `subscriptionId` свойство.
+
+:::code language="json" source="~/resourcemanager-templates/azure-resource-manager/scope/mg-to-subscription.json" highlight="10,18":::
+
+Чтобы назначить группу ресурсов в рамках этой подписки, добавьте еще одно вложенное развертывание и `resourceGroup` свойство.
+
+:::code language="json" source="~/resourcemanager-templates/azure-resource-manager/scope/mg-to-resource-group.json" highlight="10,21,25":::
+
+Сведения об использовании развертывания группы управления для создания группы ресурсов в подписке и развертывании учетной записи хранения в этой группе ресурсов см. в статье [развертывание в подписке и группе ресурсов](#deploy-to-subscription-and-resource-group).
 
 ## <a name="deployment-commands"></a>Команды развертывания
 
@@ -94,97 +118,6 @@ New-AzManagementGroupDeployment `
 Можно указать имя развертывания или использовать имя развертывания по умолчанию. Имя по умолчанию — это имя файла шаблона. Например, развернув шаблон с именем **azuredeploy.json** создается имя развертывания по умолчанию **azuredeploy**.
 
 Для каждого имени развертывания расположение остается неизменным. Нельзя создать развертывание в одном расположении, если в другом уже есть развертывание с таким же именем. Если появится код ошибки `InvalidDeploymentLocation`, используйте другое имя или то же расположение, что и для предыдущего развертывания с этим именем.
-
-## <a name="deployment-scopes"></a>Области развертывания
-
-При развертывании в группе управления можно выбрать целевую группу управления, указанную в команде развертывания или в других группах управления в клиенте. Вы также можете ориентироваться на подписки или группы ресурсов в группе управления. Пользователь, развертывающий шаблон, должен иметь доступ к указанной области.
-
-Ресурсы, определенные в разделе ресурсов шаблона, применяются к группе управления из команды развертывания.
-
-```json
-{
-    "$schema": "https://schema.management.azure.com/schemas/2019-08-01/managementGroupDeploymentTemplate.json#",
-    "contentVersion": "1.0.0.0",
-    "resources": [
-        management-group-level-resources
-    ],
-    "outputs": {}
-}
-```
-
-Чтобы выбрать другую группу управления, добавьте вложенное развертывание и укажите `scope` свойство.
-
-```json
-{
-    "$schema": "https://schema.management.azure.com/schemas/2019-08-01/managementGroupDeploymentTemplate.json#",
-    "contentVersion": "1.0.0.0",
-    "parameters": {
-        "mgName": {
-            "type": "string"
-        }
-    },
-    "variables": {
-        "mgId": "[concat('Microsoft.Management/managementGroups/', parameters('mgName'))]"
-    },
-    "resources": [
-        {
-            "type": "Microsoft.Resources/deployments",
-            "apiVersion": "2019-10-01",
-            "name": "nestedDeployment",
-            "scope": "[variables('mgId')]",
-            "location": "eastus",
-            "properties": {
-                "mode": "Incremental",
-                "template": {
-                    nested-template-with-resources-in-different-mg
-                }
-            }
-        }
-    ],
-    "outputs": {}
-}
-```
-
-Чтобы назначить подписку в группе управления, используйте вложенное развертывание и `subscriptionId` свойство. Чтобы назначить группу ресурсов в рамках этой подписки, добавьте еще одно вложенное развертывание и `resourceGroup` свойство.
-
-```json
-{
-  "$schema": "https://schema.management.azure.com/schemas/2019-08-01/managementGroupDeploymentTemplate.json#",
-  "contentVersion": "1.0.0.0",
-  "resources": [
-    {
-      "type": "Microsoft.Resources/deployments",
-      "apiVersion": "2020-06-01",
-      "name": "nestedSub",
-      "location": "westus2",
-      "subscriptionId": "00000000-0000-0000-0000-000000000000",
-      "properties": {
-        "mode": "Incremental",
-        "template": {
-          "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
-          "contentVersion": "1.0.0.0",
-          "resources": [
-            {
-              "type": "Microsoft.Resources/deployments",
-              "apiVersion": "2020-06-01",
-              "name": "nestedRG",
-              "resourceGroup": "rg2",
-              "properties": {
-                "mode": "Incremental",
-                "template": {
-                  nested-template-with-resources-in-resource-group
-                }
-              }
-            }
-          ]
-        }
-      }
-    }
-  ]
-}
-```
-
-Сведения об использовании развертывания группы управления для создания группы ресурсов в подписке и развертывании учетной записи хранения в этой группе ресурсов см. в статье [развертывание в подписке и группе ресурсов](#deploy-to-subscription-and-resource-group).
 
 ## <a name="use-template-functions"></a>Использование функций шаблонов
 

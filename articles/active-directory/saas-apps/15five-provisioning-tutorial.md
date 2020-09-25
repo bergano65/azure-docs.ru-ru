@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: article
 ms.date: 07/26/2019
 ms.author: zhchia
-ms.openlocfilehash: b42833056d6c9c0e6053dbf34c7de17b4136a797
-ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
+ms.openlocfilehash: 40fd048e1ace56af7a9198088d6129925033be93
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88539187"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91331222"
 ---
 # <a name="tutorial-configure-15five-for-automatic-user-provisioning"></a>Учебник. Настройка 15Five для автоматической подготовки пользователей
 
@@ -96,11 +96,11 @@ ms.locfileid: "88539187"
 
 3. Выберите вкладку **Подготовка**.
 
-    ![Вкладка "Подготовка"](common/provisioning.png)
+    ![Снимок экрана параметров управления с вызываемым параметром подготовки.](common/provisioning.png)
 
 4. Для параметра **Режим подготовки к работе** выберите значение **Automatic** (Автоматически).
 
-    ![Вкладка "Подготовка"](common/provisioning-automatic.png)
+    ![Снимок экрана: раскрывающийся список режима подготовки с вызываемым автоматическим параметром.](common/provisioning-automatic.png)
 
 5.  В разделе Учетные данные администратора введите **базовый URL-адрес SCIM 2,0 и значения маркера доступа** , полученные ранее в полях **URL-адрес клиента** и **секретный токен** соответственно. Щелкните **проверить подключение** , чтобы убедиться, что Azure AD может подключиться к 15Five. Если подключение не выполняется, убедитесь, что у учетной записи 15Five есть разрешения администратора, и повторите попытку.
 
@@ -110,7 +110,7 @@ ms.locfileid: "88539187"
 
     ![Почтовое уведомление](common/provisioning-notification-email.png)
 
-7. Нажмите **Сохранить**.
+7. Выберите команду **Сохранить**.
 
 8. В разделе **сопоставления** выберите **синхронизировать Azure Active Directory пользователей с 15Five**.
 

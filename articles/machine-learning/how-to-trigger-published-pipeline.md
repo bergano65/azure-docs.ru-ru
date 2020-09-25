@@ -11,12 +11,12 @@ ms.workload: data-services
 ms.date: 02/07/2020
 ms.topic: conceptual
 ms.custom: how-to, contperfq4
-ms.openlocfilehash: 6d54945ce026f91b27ce31ba82ada1b0cc49a260
-ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
+ms.openlocfilehash: 2e3544bee5158a855467f8cb142f176df2187ef5
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87324256"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91318302"
 ---
 # <a name="trigger-a-run-of-a-machine-learning-pipeline-from-a-logic-app"></a>Запуск конвейера Машинное обучение из приложения логики
 
@@ -94,3 +94,14 @@ ms.locfileid: "87324256"
     > ![Параметры HTTP](media/how-to-trigger-published-pipeline/http-settings.png)
 
 1. Выберите **сохранить** , и ваше расписание теперь готово.
+
+## <a name="next-steps"></a>Дальнейшие действия
+
+Дополнительные сведения см. в разделе:
+
+> [!div class="nextstepaction"]
+> [Использование конвейеров Машинного обучения Azure для пакетной оценки](tutorial-pipeline-batch-scoring-classification.md)
+
+* Дополнительные сведения о [конвейерах](concept-ml-pipelines.md)
+* Дополнительные сведения об [исследовании машинное обучение Azure с помощью Jupyter](samples-notebooks.md)
+

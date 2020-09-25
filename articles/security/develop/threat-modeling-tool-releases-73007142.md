@@ -1,23 +1,23 @@
 ---
 title: Microsoft Threat Modeling Tool выпуск 07/14/2020 — Azure
-description: Документирование заметок о выпуске средства моделирования угроз
+description: Документирование заметок о выпуске для 7.3.00714.2 выпуска средства моделирования угроз.
 author: jegeib
 ms.author: jegeib
 ms.service: security
 ms.topic: article
 ms.date: 07/14/2020
-ms.openlocfilehash: 741d8c96059d379ae453f7ac1da1d5a02127a680
-ms.sourcegitcommit: 2ff0d073607bc746ffc638a84bb026d1705e543e
+ms.openlocfilehash: 8cea0ab15b79a94f76350c2264b24e6c258490a3
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87839916"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91317877"
 ---
 # <a name="threat-modeling-tool-update-release-73007142---07142020"></a>Threat Modeling Tool обновления выпуска 7.3.00714.2 — 07/14/2020
 
 Версия 7.3.00714.2 Microsoft Threat Modeling Tool (ТМТ) была выпущена 14 2020 июля и содержит следующие изменения:
 
-- Улучшение специальных возможностей
+- Улучшения специальных возможностей
 
 ## <a name="system-requirements"></a>Требования к системе
 

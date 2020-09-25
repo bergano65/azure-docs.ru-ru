@@ -8,12 +8,12 @@ ms.date: 06/22/2020
 ms.author: rogarana
 ms.subservice: files
 ms.custom: devx-track-azurepowershell
-ms.openlocfilehash: 485a054a91bd3db9b116cf80a4e457d013c20ea1
-ms.sourcegitcommit: 656c0c38cf550327a9ee10cc936029378bc7b5a2
+ms.openlocfilehash: c8a1d1c0f8de742bdafa130cce6927a472efd8f7
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89071080"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91329352"
 ---
 # <a name="use-an-azure-file-share-with-windows"></a>Использование общей папки Azure в Windows
 [Файлы Azure](storage-files-introduction.md) — это простая в использовании облачная файловая система от корпорации Майкрософт. Общие папки Azure можно легко использовать в Windows и Windows Server. В этой статье рассматриваются рекомендации по использованию общей папки Azure в Windows и Windows Server.
@@ -32,10 +32,10 @@ ms.locfileid: "89071080"
 | Windows Server 2012 R2 | SMB 3.0 | Да | Да |
 | Windows Server 2012 | SMB 3.0 | Да | Да |
 | Windows 7<sup>3</sup>. | SMB 2.1 | Да | нет |
-| Windows Server 2008 R2<sup>3</sup> | SMB 2.1 | Да | нет |
+| Windows Server 2008 R2<sup>3</sup> | SMB 2.1 | Да | Нет |
 
-<sup>1</sup>Windows 10, версий 1507, 1607, 1709, 1803, 1809, 1903, и 1909.  
-<sup>2</sup>Windows Server, версий 1809, 1903, и 1909.  
+<sup>1</sup> Windows 10, версии 1507, 1607, 1803, 1809, 1903, 1909 и 2004.  
+<sup>2</sup> Windows Server, версии 1809, 1903, 1909, 2004.  
 <sup>3</sup>Обычная поддержка Майкрософт для Windows 7 и Windows Server 2008 R2 закончилась. Дополнительную поддержку обновлений для системы безопасности можно приобрести только с помощью программы [Расширенные обновления для системы безопасности (ESU)](https://support.microsoft.com/help/4497181/lifecycle-faq-extended-security-updates). Мы настоятельно рекомендуем отказаться от этих операционных систем.
 
 > [!Note]  
@@ -65,7 +65,7 @@ ms.locfileid: "89071080"
 
     :::image type="content" source="media/storage-how-to-use-files-windows/select-file-shares.png" alt-text="Например":::
 
-1. Выберите **Подключиться**.
+1. Щелкните **Подключить**.
 
     :::image type="content" source="media/storage-how-to-use-files-windows/file-share-connect-icon.png" alt-text="Снимок экрана с значком подключения для файлового ресурса.":::
 

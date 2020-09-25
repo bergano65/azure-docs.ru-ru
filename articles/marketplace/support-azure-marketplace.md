@@ -7,12 +7,12 @@ ms.topic: conceptual
 author: keferna
 ms.author: keferna
 ms.date: 04/14/2020
-ms.openlocfilehash: 62f30d8a0fe1b2f2397fc16161929279a148aaa2
-ms.sourcegitcommit: bfeae16fa5db56c1ec1fe75e0597d8194522b396
+ms.openlocfilehash: 741bea5129e5fa9660e198a74e23f0ef6c67dc23
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/10/2020
-ms.locfileid: "88037513"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91329760"
 ---
 # <a name="support-for-the-microsoft-commercial-marketplace"></a>Поддержка коммерческого рынка Майкрософт
 
@@ -38,8 +38,7 @@ ms.locfileid: "88037513"
 ## <a name="marketing-resources"></a>Маркетинговые ресурсы  
 
 | Канал поддержки | Описание | Доступность |  
-|:--- |:--- |:--- |  
-| Эл. адрес: [cosell@microsoft.com](mailto:cosell@microsoft.com) | Поддержка для процессов подключения и ответы на вопросы, связанные с программой сопутствующих продаж. | Работает по тихоокеанскому времени. |  
+|:--- |:--- |:--- |
 | Эл. адрес: [gtm@microsoft.com](mailto:gtm@microsoft.com) | Поддержка преимуществ выхода на рынок по программе GTM и ответы на вопросы о программе. | Рабочие часы: тихоокеанский часовой пояс. |  
 | Эл. адрес: [cebrand@microsoft.com](mailto:cebrand@microsoft.com) | Ответы на вопросы об использовании торгового логотипа и фирменной символики Azure. |  |  
 

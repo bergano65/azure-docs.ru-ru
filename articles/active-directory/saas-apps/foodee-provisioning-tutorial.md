@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: article
 ms.date: 08/30/2019
 ms.author: Zhchia
-ms.openlocfilehash: 40549fa8880fb4dc4d29046b0037621610f0b130
-ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
+ms.openlocfilehash: 1d3ea609cda37c3bb0de28d8eb1a19944809980d
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88544189"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91331171"
 ---
 # <a name="tutorial-configure-foodee-for-automatic-user-provisioning"></a>Учебник. Настройка пищи для автоматической подготовки пользователей
 
@@ -75,7 +75,7 @@ Azure AD использует концепцию, называемую *назн
 
     ![Команда Azure Active Directory](common/select-azuread.png)
 
-1. Выберите **корпоративные приложения**  >  **все приложения**.
+1. Щелкните **Корпоративные приложения** > **Все приложения**.
 
     ![Область "Корпоративные приложения"](common/enterprise-applications.png)
 
@@ -106,11 +106,11 @@ Azure AD использует концепцию, называемую *назн
 
 1. Выберите вкладку **Подготовка**.
 
-    ![Вкладка "Подготовка"](common/provisioning.png)
+    ![Снимок экрана параметров управления с вызываемым параметром подготовки.](common/provisioning.png)
 
 1. В раскрывающемся списке **режим подготовки** выберите значение **автоматически**.
 
-    ![Вкладка "Подготовка"](common/provisioning-automatic.png)
+    ![Снимок экрана: раскрывающийся список режима подготовки с вызываемым автоматическим параметром.](common/provisioning-automatic.png)
 
 1. В разделе **учетные данные администратора**выполните следующие действия.
 

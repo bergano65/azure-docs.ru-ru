@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 07/12/2020
 ms.author: memildin
-ms.openlocfilehash: db0c5890add303d85bdec76e00b8377567226a38
-ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
+ms.openlocfilehash: cece53544bfc8287f6ef542575d92b05032991f0
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "90904706"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91318047"
 ---
 # <a name="feature-coverage-for-machines"></a>Покрытие компонентов для компьютеров
 
@@ -28,7 +28,7 @@ ms.locfileid: "90904706"
 
 ### <a name="windows-machines"></a>[**Компьютеры Windows**](#tab/features-windows)
 
-|**Компонент**|**Виртуальные машины Azure**|**Масштабируемые наборы виртуальных машин Azure**|**Компьютеры, не относящиеся к Azure**|**Требуется защитник Azure**
+|**Возможность**|**Виртуальные машины Azure**|**Масштабируемые наборы виртуальных машин Azure**|**Компьютеры, не относящиеся к Azure**|**Требуется защитник Azure**
 |----|:----:|:----:|:----:|:----:|
 |[Интеграция ATP в защитнике Майкрософт](security-center-wdatp.md)|✔</br>(в поддерживаемых версиях)|✔</br>(в поддерживаемых версиях)|✔|Да|
 |[Аналитика поведения виртуальных машин (и оповещения системы безопасности)](alerts-reference.md)|✔|✔|✔|Да|
@@ -45,14 +45,14 @@ ms.locfileid: "90904706"
 |Оценка отсутствующих исправлений ОС|✔|✔|✔|Azure: Бесплатная<br><br>Не в Azure: Да|
 |Оценка ненастроек безопасности|✔|✔|✔|Azure: нет<br><br>Не в Azure: Да|
 |[Оценка Endpoint Protection](security-center-services.md#supported-endpoint-protection-solutions-)|✔|✔|✔|Azure: нет<br><br>Не в Azure: Да|
-|Оценка шифрования диска|✔|✔|-|Free|
+|Оценка шифрования диска|✔</br>(для [поддерживаемых сценариев](../virtual-machines/windows/disk-encryption-windows.md#unsupported-scenarios))|✔|-|Free|
 |Оценка уязвимостей сторонних производителей|✔|-|-|Free|
 |[Оценка сетевой безопасности](security-center-network-recommendations.md)|✔|✔|-|Free|
 
 
 ### <a name="linux-machines"></a>[**Компьютеры Linux**](#tab/features-linux)
 
-|**Компонент**|**Виртуальные машины Azure**|**Масштабируемые наборы виртуальных машин Azure**|**Компьютеры, не относящиеся к Azure**|**Требуется защитник Azure**
+|**Возможность**|**Виртуальные машины Azure**|**Масштабируемые наборы виртуальных машин Azure**|**Компьютеры, не относящиеся к Azure**|**Требуется защитник Azure**
 |----|:----:|:----:|:----:|:----:|
 |[Интеграция ATP в защитнике Майкрософт](security-center-wdatp.md)|-|-|-|Да|
 |[Аналитика поведения виртуальных машин (и оповещения системы безопасности)](security-center-alerts-iaas.md)|✔</br>(в поддерживаемых версиях)|✔</br>(в поддерживаемых версиях)|✔|Да|
@@ -69,7 +69,7 @@ ms.locfileid: "90904706"
 |Оценка отсутствующих исправлений ОС|✔|✔|✔|Azure: Бесплатная<br><br>Не в Azure: Да|
 |Оценка ненастроек безопасности|✔|✔|✔|Azure: Бесплатная<br><br>Не в Azure: Да|
 |[Оценка Endpoint Protection](security-center-services.md#supported-endpoint-protection-solutions-)|-|-|-|Free|
-|Оценка шифрования диска|✔|✔|-|Free|
+|Оценка шифрования диска|✔</br>(для [поддерживаемых сценариев](../virtual-machines/windows/disk-encryption-windows.md#unsupported-scenarios))|✔|-|Free|
 |Оценка уязвимостей сторонних производителей|✔|-|-|Free|
 |[Оценка сетевой безопасности](security-center-network-recommendations.md)|✔|✔|-|Free|
 

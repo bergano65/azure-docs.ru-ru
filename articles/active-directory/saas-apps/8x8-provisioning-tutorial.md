@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: article
 ms.date: 05/15/2020
 ms.author: Zhchia
-ms.openlocfilehash: 7aaa87691f1ebfa79cd58dae56bf9bd1b979131b
-ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
+ms.openlocfilehash: 41ffd7606cb4c01cd8c2da56898b67cf177c358e
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88538609"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91329182"
 ---
 # <a name="tutorial-configure-8x8-for-automatic-user-provisioning"></a>Руководство по Настройка 8x8 для автоматической подготовки пользователей
 
@@ -94,13 +94,13 @@ ms.locfileid: "88538609"
 
 3. Выберите вкладку **Подготовка**. Нажмите кнопку **Начало работы**.
 
-    ![Вкладка "Подготовка"](common/provisioning.png)
+    ![Снимок экрана параметров управления с вызываемым параметром подготовки.](common/provisioning.png)
 
    ![Колонка "Начало работы"](./media/8x8-provisioning-tutorial/get-started.png)
 
 4. Для параметра **Режим подготовки к работе** выберите значение **Automatic** (Автоматически).
 
-    ![Вкладка "Подготовка"](common/provisioning-automatic.png)
+    ![Снимок экрана: раскрывающийся список режима подготовки с вызываемым автоматическим параметром.](common/provisioning-automatic.png)
 
 5. В разделе **Учетные данные администратора** скопируйте **URL-адрес 8x8** из Configuration Manager в поле **URL-адрес клиента**. Скопируйте **маркер API 8x8** из Configuration Manager в поле **Секретный маркер**. Щелкните **Проверить подключение**, чтобы убедиться, что Azure AD может подключиться к 8x8. Если установить подключение не удалось, убедитесь, что у учетной записи 8x8 есть разрешения администратора, и повторите попытку.
 

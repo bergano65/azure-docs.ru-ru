@@ -78,7 +78,7 @@
     - name: Создание конечной точки SCIM и настройка подготовки
       href: use-scim-to-provision-users-and-groups.md
     - name: Автоматизация настройки с помощью MS Graph
-      href: application-provisioning-configure-api.md
+      href: 'https://docs.microsoft.com/graph/application-provisioning-configure-api'
 - name: Справочник
   items:
     - name: "Соответствие протоколу SCIM\_2.0"
