@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: article
 ms.date: 05/07/2019
 ms.author: jeedes
-ms.openlocfilehash: 5165c3f03d51403a978ad3574306bc27d931e1d7
-ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
+ms.openlocfilehash: 37a446d721b7353c647d7d7e26de79e7038d1a3f
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88536899"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91300004"
 ---
 # <a name="tutorial-configure-comeet-recruiting-software-for-automatic-user-provisioning"></a>Учебник. Настройка сопоставлений по найму сотрудников для автоматической подготовки пользователей
 
@@ -90,11 +90,11 @@ ms.locfileid: "88536899"
 
 3. Выберите вкладку **Подготовка**.
 
-    ![Вкладка "Подготовка"](common/provisioning.png)
+    ![Снимок экрана параметров управления с вызываемым параметром подготовки.](common/provisioning.png)
 
 4. Для параметра **Режим подготовки к работе** выберите значение **Automatic** (Автоматически).
 
-    ![Вкладка "Подготовка"](common/provisioning-automatic.png)
+    ![Снимок экрана: раскрывающийся список режима подготовки с вызываемым автоматическим параметром.](common/provisioning-automatic.png)
 
 5. В разделе **учетные данные администратора** введите **URL-адрес клиента** и **маркер секрета** учетной записи по сопоставлению набора сотрудников, как описано в шаге 6.
 
@@ -110,7 +110,7 @@ ms.locfileid: "88536899"
 
     ![Почтовое уведомление](common/provisioning-notification-email.png)
 
-9. Нажмите **Сохранить**.
+9. Выберите команду **Сохранить**.
 
 10. В разделе **сопоставления** выберите **синхронизировать Azure Active Directory пользователей с сопоставленными**.
 

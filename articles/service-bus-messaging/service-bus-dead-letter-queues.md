@@ -4,12 +4,12 @@ description: В статье рассматриваются очереди не�
 ms.topic: article
 ms.date: 06/23/2020
 ms.custom: fasttrack-edit, devx-track-csharp
-ms.openlocfilehash: 5f7fb65a2a1a6d6529177cd20a85a6d845c119d4
-ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
+ms.openlocfilehash: 4dbd1216d3ff81e785f16ebed6ceabfa5d5897db
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89021686"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91301029"
 ---
 # <a name="overview-of-service-bus-dead-letter-queues"></a>Обзор очередей недоставленных сообщений служебной шины
 
@@ -62,7 +62,7 @@ ms.locfileid: "89021686"
 
 ## <a name="errors-while-processing-subscription-rules"></a>Ошибки при обработке правил подписки
 
-Когда для подписки активировано свойство [SubscriptionDescription.EnableDeadLetteringOnFilterEvaluationExceptions](/dotnet/api/microsoft.servicebus.messaging.subscriptiondescription), любые ошибки, возникающие при исполнении правила SQL-фильтрации подписки, фиксируются в очереди DLQ вместе с сообщением, вызвавшим ошибку.
+Когда для подписки активировано свойство [SubscriptionDescription.EnableDeadLetteringOnFilterEvaluationExceptions](/dotnet/api/microsoft.servicebus.messaging.subscriptiondescription), любые ошибки, возникающие при исполнении правила SQL-фильтрации подписки, фиксируются в очереди DLQ вместе с сообщением, вызвавшим ошибку. Не используйте этот параметр в рабочей среде, в которой не все типы сообщений имеют подписчиков.
 
 ## <a name="application-level-dead-lettering"></a>Недоставленные сообщения на уровне приложения
 

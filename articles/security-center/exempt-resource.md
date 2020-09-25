@@ -3,16 +3,16 @@ title: Исключение ресурса из рекомендаций по б
 description: Узнайте, как исключить ресурс из рекомендаций по безопасности и оценки безопасности
 author: memildin
 ms.author: memildin
-ms.date: 9/12/2020
+ms.date: 9/22/2020
 ms.topic: how-to
 ms.service: security-center
 manager: rkarlin
-ms.openlocfilehash: b4d043812800bec1070624382755aeb355ea595a
-ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
+ms.openlocfilehash: f3ac2f82882dfd7eb1e15e9a5287cf1d6f5b32d2
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "90940259"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91301539"
 ---
 # <a name="exempt-a-resource-from-recommendations-and-secure-score"></a>Исключение ресурса из рекомендаций и безопасной оценки
 
@@ -28,7 +28,7 @@ ms.locfileid: "90940259"
 
 ## <a name="availability"></a>Доступность
 
-|Аспект|Подробнее|
+|Аспект|Подробности|
 |----|:----|
 |Состояние выпуска:|Предварительный просмотр|
 |Цены|Это функция политики Azure уровня "Премиум", предлагаемая для клиентов защитника Azure без дополнительных затрат. В будущем может взиматься плата за использование других пользователей.|
@@ -62,7 +62,7 @@ ms.locfileid: "90940259"
 
     :::image type="content" source="./media/exempt-resource/modifying-exemption.png" alt-text="Изменение исключения":::
 
-    Причина каждого исключения включается в таблицу. 
+    Причина каждого исключения включается в таблицу (1).
 
     Чтобы изменить или удалить исключение, выберите меню с многоточием (...), как показано (2).
 

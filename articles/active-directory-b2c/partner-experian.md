@@ -11,12 +11,12 @@ ms.topic: how-to
 ms.date: 07/22/2020
 ms.author: gasinh
 ms.subservice: B2C
-ms.openlocfilehash: 5c2fb330149d3e6530e7cb0fc3350d5db3fa24cf
-ms.sourcegitcommit: 56cbd6d97cb52e61ceb6d3894abe1977713354d9
+ms.openlocfilehash: a88894bb7462e9ac3afd16d69ae820dd98543a5f
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/20/2020
-ms.locfileid: "88683884"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91259379"
 ---
 # <a name="tutorial-for-configuring-experian-with-azure-active-directory-b2c"></a>Руководство по настройке Experian с помощью Azure Active Directory B2C
 
@@ -30,7 +30,7 @@ ms.locfileid: "88683884"
 - Второе имя
 - Surname
 - Почтовый адрес
-- Город
+- City
 - Область, республика, край, округ
 - Почтовый индекс
 - Страна или регион
@@ -77,7 +77,7 @@ ms.locfileid: "88683884"
 
 ### <a name="part-1---deploy-the-api"></a>Часть 1. Развертывание API
 
-Разверните предоставленный код API в службе Azure. Код можно опубликовать из Visual Studio, следуя этим [инструкциям](https://docs.microsoft.com/visualstudio/deployment/quickstart-deploy-to-azure?view=vs-2019).
+Разверните предоставленный [код API](https://github.com/azure-ad-b2c/partner-integrations/blob/master/samples/Experian/CrossCoreIntegrationApi/CrossCoreIntegrationApi.sln) в службе Azure. Код можно опубликовать из Visual Studio, следуя этим [инструкциям](https://docs.microsoft.com/visualstudio/deployment/quickstart-deploy-to-azure?view=vs-2019).
 
 >[!NOTE]
 >Вам потребуется URL-адрес развернутой службы, чтобы настроить Azure AD с использованием требуемых параметров.
@@ -94,7 +94,7 @@ ms.locfileid: "88683884"
 
 Параметры приложения можно [настроить в службе приложений в Azure](https://docs.microsoft.com/azure/app-service/configure-common#configure-app-settings). С помощью этого метода параметры можно безопасно настроить без их возврата в репозиторий. Необходимо предоставить следующие параметры для API-интерфейса RESTful:
 
-| Параметры приложения | Источник | Примечания |
+| Параметры приложений | Источник | Примечания |
 | :-------- | :------------| :-----------|
 |Кросскореконфиг: TenantId | Конфигурация учетной записи Experian |     |
 |Кросскореконфиг: Оргкоде | Конфигурация учетной записи Experian |     |
@@ -117,7 +117,7 @@ ms.locfileid: "88683884"
 
 ### <a name="part-5---replace-the-configuration-values"></a>Часть 5. Замена значений конфигурации
 
-В предоставленных пользовательских политиках найдите следующие заполнители и замените их соответствующими значениями из своего экземпляра.
+В предоставленных [пользовательских политиках](https://github.com/azure-ad-b2c/partner-integrations/tree/master/samples/Experian/policy)найдите следующие заполнители и замените их соответствующими значениями из своего экземпляра.
 
 |                      Заполнитель                       |                                   Замена значением                                 |                   Пример                    |
 | ------------------------------------------------------ | -------------------------------------------------------------------------------- | -------------------------------------------- |

@@ -11,20 +11,16 @@ ms.workload: identity
 ms.date: 01/31/2020
 ms.author: jmprieur
 ms.custom: aaddev, identityplatformtop40
-ms.openlocfilehash: df5755c585d99333bf0c64ca08705309b4d4fc58
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 8c01724340df7e0efffe9847b49e1fe9d444ee01
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85253126"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91257628"
 ---
 # <a name="scenario-daemon-application-that-calls-web-apis"></a>Сценарий: управляющее приложение, вызывающее веб-API
 
 Изучите все, что нужно для создания управляющего приложения, вызывающего веб-API.
-
-## <a name="prerequisites"></a>Предварительные требования
-
-[!INCLUDE [Pre-requisites](../../../includes/active-directory-develop-scenarios-prerequisites.md)]
 
 ## <a name="overview"></a>Обзор
 
@@ -59,7 +55,11 @@ ms.locfileid: "85253126"
 - При регистрации приложения в [конфигурации приложения](./scenario-daemon-app-configuration.md) необходимо предоставить учетные данные клиента совместно с Azure AD.
 - [Область](scenario-daemon-acquire-token.md#scopes-to-request) , используемая для получения маркера с помощью потока учетных данных клиента, должна быть статической областью.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="recommended-reading"></a>Рекомендуемые материалы
+
+[!INCLUDE [recommended-topics](../../../includes/active-directory-develop-scenarios-prerequisites.md)]
+
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Приложение управляющей программы — регистрация приложения](./scenario-daemon-app-registration.md)

@@ -1,14 +1,16 @@
 ---
 title: Тип сущности List — LUIS
 description: Сущности списка представляют фиксированный, закрытый набор связанных слов вместе с их синонимами. LUIS не обнаруживает дополнительные значения для сущностей списка. Посмотреть предложения для новых слов на основе текущего списка можно с помощью функции Рекомендовать.
+ms.service: cognitive-services
+ms.subservice: language-understanding
 ms.topic: reference
 ms.date: 04/14/2020
-ms.openlocfilehash: 339fb832ef4af069b6f040c5264426002189f93f
-ms.sourcegitcommit: bb0afd0df5563cc53f76a642fd8fc709e366568b
+ms.openlocfilehash: 29f0f0c3fd48920990519aecfe5ae58c32b43db9
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83588893"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91253842"
 ---
 # <a name="list-entity"></a>Сущность списка
 

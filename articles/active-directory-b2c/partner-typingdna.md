@@ -10,12 +10,12 @@ ms.topic: reference
 ms.date: 06/25/2020
 ms.author: gasinh
 ms.subservice: B2C
-ms.openlocfilehash: dcf80ffa26ecaeb0f4481b3997146c07bd89be10
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: f7d89942ad5209b854b8df486ad3e59a3976edfc
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85398007"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91259057"
 ---
 # <a name="tutorial-for-configuring-typingdna-with-azure-active-directory-b2c"></a>Руководство по настройке Типингдна с помощью Azure Active Directory B2C
 
@@ -36,9 +36,9 @@ ms.locfileid: "85398007"
 
 2. Когда пользователь отправляет страницу, Библиотека Типингдна вычислит характеристики ввода для пользователя. После этого вставьте данные в скрытое текстовое поле, которое Azure AD B2C отобразить. Это поле скрыто с помощью CSS.  
 
-    Пример содержит HTML-файлы с изменениями JavaScript и CSS, на которые ссылаются `api.selfasserted.tdnasignin` `api.selfasserted.tdnasignup` определения содержимого и. Сведения об размещении HTML-файлов см. в разделе [Размещение содержимого страницы](https://docs.microsoft.com/azure/active-directory-b2c/custom-policy-ui-customization#hosting-the-page-content) .
+    [Пример содержит HTML-файлы](https://github.com/azure-ad-b2c/partner-integrations/blob/master/samples/TypingDNA/source-code/selfAssertedSignUp.cshtml) с изменениями JavaScript и CSS, на которые ссылаются `api.selfasserted.tdnasignin` `api.selfasserted.tdnasignup` определения содержимого и. Сведения об размещении HTML-файлов см. в разделе [Размещение содержимого страницы](https://docs.microsoft.com/azure/active-directory-b2c/custom-policy-ui-customization#hosting-the-page-content) .
 
-3. Azure AD B2C теперь имеет шаблон ввода в контейнере утверждений, когда пользователь отправляет свои учетные данные. Он должен вызвать API (Your) для передачи этих данных в конечную точку REST API Типингдна. Этот API включен в пример (Типингдна-API-Interface).
+3. Azure AD B2C теперь имеет шаблон ввода в контейнере утверждений, когда пользователь отправляет свои учетные данные. Он должен вызвать API (Your) для передачи этих данных в конечную точку REST API Типингдна. Этот API включен в [пример (типингдна-API-Interface)](https://github.com/azure-ad-b2c/partner-integrations/tree/master/samples/TypingDNA/source-code/TypingDNA-API-Interface).
 4. Затем API среднего уровня передает данные шаблона ввода в Типингдна REST API. При регистрации вызывается [Пользовательская конечная точка проверки](https://api.typingdna.com/index.html#api-API_Services-GetUser) , чтобы подтвердить, что пользователь не существовал, а затем вызывается конечная точка [сохранения шаблона](https://api.typingdna.com/index.html#api-API_Services-saveUserPattern) , чтобы сохранить первый шаблон ввода пользователя.
 
 > [!NOTE]
@@ -61,7 +61,7 @@ REST APIные вызовы моделируются `validationTechnicalProfile
 
 ### <a name="sign-in"></a>Вход
 
-При последующем входе пользовательский шаблон будет вычисляться точно так же, как при регистрации с помощью пользовательского HTML. После того, как профиль ввода находится в Azure AD B2C контейнере утверждений, Azure AD B2C вызовет API для вызова конечной точки REST API в Типингдна. Для подтверждения существования пользователя вызывается конечная точка [пользователя Check](https://api.typingdna.com/index.html#api-API_Services-GetUser) . Затем вызывается проверка конечной точки [шаблона](https://api.typingdna.com/index.html#api-API_Services-verifyTypingPattern) для возврата `net_score` . Это `net_score` указывает, как закрывать шаблон ввода в первоначальной момент при регистрации.
+При последующем входе пользовательский шаблон будет вычисляться точно так же, как при регистрации с помощью [ПОЛЬЗОВАТЕЛЬСКОГО HTML](https://github.com/azure-ad-b2c/partner-integrations/blob/master/samples/TypingDNA/source-code/selfAssertedSignIn.cshtml). После того, как профиль ввода находится в Azure AD B2C контейнере утверждений, Azure AD B2C вызовет API для вызова конечной точки REST API в Типингдна. Для подтверждения существования пользователя вызывается конечная точка [пользователя Check](https://api.typingdna.com/index.html#api-API_Services-GetUser) . Затем вызывается проверка конечной точки [шаблона](https://api.typingdna.com/index.html#api-API_Services-verifyTypingPattern) для возврата `net_score` . Это `net_score` указывает, как закрывать шаблон ввода в первоначальной момент при регистрации.
 
 Этот шаблон ввода моделируется `validationTechnicalProfiles` в `SelfAsserted-LocalAccountSignin-Email-TDNA` :
 
@@ -99,7 +99,7 @@ REST APIные вызовы моделируются `validationTechnicalProfile
 
  Если пользователь получает слишком большой шаблон ввода `net_score` , его можно сохранить с помощью конечной точки типингдна [сохранить шаблон ввода](https://api.typingdna.com/index.html#api-API_Services-saveUserPattern) .  
 
-API должен возвращать утверждение, `saveTypingPattern` Если вы хотите, чтобы конечная точка шаблона ввода типингдна была вызвана с помощью Azure AD B2C (через API).
+API должен возвращать утверждение,  `saveTypingPattern` Если вы хотите, чтобы конечная точка шаблона ввода типингдна была вызвана с помощью Azure AD B2C (через API).
 
 Пример в репозитории содержит API (Типингдна-API-Interface), который настроен со следующими свойствами.
 
@@ -158,14 +158,14 @@ API должен возвращать утверждение, `saveTypingPattern
 
 ## <a name="integrate-typingdna-with-azure-ad-b2c"></a>Интеграция Типингдна с Azure AD B2C
 
-1. Размещение интерфейса Типингдна-API на выбранном поставщике услуг размещения
-2. Замените все экземпляры `apiKey` и `apiSecret` в решении ТИПИНГДНА-API-Interface на учетные данные из панели мониторинга типингдна.
+1. Размещение [интерфейса типингдна-API](https://github.com/azure-ad-b2c/partner-integrations/tree/master/samples/TypingDNA/source-code/TypingDNA-API-Interface) на выбранном поставщике услуг размещения
+2. Замените все экземпляры `apiKey` и `apiSecret` в решении [типингдна-API-Interface](https://github.com/azure-ad-b2c/partner-integrations/tree/master/samples/TypingDNA/source-code/TypingDNA-API-Interface) на учетные данные из панели мониторинга типингдна.
 3. Разместите HTML-файлы поставщика по своему усмотрению, следуя требованиям CORS [здесь](https://docs.microsoft.com/azure/active-directory-b2c/custom-policy-ui-customization#3-configure-cors) .
 4. Замените элементы LoadURI для `api.selfasserted.tdnasignup` `api.selfasserted.tdnasignin` определений содержимого и в `TrustFrameworkExtensions.xml` файле на URI размещенных HTML-файлов соответственно.
 5. Создайте ключ политики B2C в разделе Инфраструктура процедур идентификации в колонке Azure AD в **портал Azure**. Используйте `Generate` параметр и назовите этот ключ `tdnaHashedId` .
 6. Замена TenantId в файлах политики
-7. Замените Сервицеурлс во всех технических профилях Типингдна REST API (RESTFUL-ТДНА-Верифюсер, RESTFUL-ТДНА-Савеусер, RESTFUL-ТДНА-Чеккусер) конечной точкой для API-интерфейса Типингдна-API.
-8. Отправьте файлы политики в клиент.
+7. Замените Сервицеурлс во всех технических профилях Типингдна REST API (RESTFUL-ТДНА-Верифюсер, RESTFUL-ТДНА-Савеусер, RESTFUL-ТДНА-Чеккусер) конечной точкой для [API-интерфейса типингдна-API](https://github.com/azure-ad-b2c/partner-integrations/tree/master/samples/TypingDNA/source-code/TypingDNA-API-Interface).
+8. Отправьте [файлы политики](https://github.com/azure-ad-b2c/partner-integrations/tree/master/samples/TypingDNA/policy) в клиент.
 
 ## <a name="test-the-user-flow"></a>Тестирование потока пользователя
 
@@ -190,7 +190,7 @@ API должен возвращать утверждение, `saveTypingPattern
 
 • Зарегистрируйтесь [здесь](https://b2cprod.b2clogin.com/b2cprod.onmicrosoft.com/oauth2/v2.0/authorize?p=B2C_1A_SU_TDNA&client_id=51d907f8-db14-4460-a1fd-27eaeb2a74da&nonce=defaultNonce&redirect_uri=https://jwt.ms/&scope=openid&response_type=id_token&prompt=login) и войдите [здесь](https://b2cprod.b2clogin.com/b2cprod.onmicrosoft.com/oauth2/v2.0/authorize?p=B2C_1A_SI_TDNA&client_id=51d907f8-db14-4460-a1fd-27eaeb2a74da&nonce=defaultNonce&redirect_uri=https://jwt.ms/&scope=openid&response_type=id_token&prompt=login)
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения см. в следующих статьях:
 

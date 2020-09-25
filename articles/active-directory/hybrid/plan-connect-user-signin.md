@@ -16,12 +16,12 @@ ms.date: 05/31/2018
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: fd198a132f64c26f775a8212c22b77201d579260
-ms.sourcegitcommit: f8d2ae6f91be1ab0bc91ee45c379811905185d07
+ms.openlocfilehash: 3365a58a0c667ca55b74a5120cdd7a78ad0abc79
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89657151"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91299916"
 ---
 # <a name="azure-ad-connect-user-sign-in-options"></a>Параметры входа в Azure AD Connect
 Служба Azure Active Directory (Azure AD) Connect позволяет входить в облачные и локальные ресурсы, используя те же пароли. В этой статье рассматриваются основные сведения о каждой модели идентификации, с помощью которых вы можете выбрать удостоверение для входа в Azure AD.
@@ -68,7 +68,7 @@ Azure AD поддерживает следующие методы проверк
 Кроме того, можно также включить единый вход для пользователей на компьютерах, присоединенных к домену, которые входят в корпоративную сеть. Используя единый вход, пользователи с необходимыми разрешениями могут просто ввести имя пользователя, чтобы получить защищенный доступ к ресурсам в облаке.
 ![Сквозная проверка подлинности](./media/plan-connect-user-signin/pta.png)
 
-Дополнительные сведения см. в разделе:
+Дополнительные сведения можно найти в разделе
 - [Сквозная проверка подлинности](how-to-connect-pta.md)
 - [Единый вход](how-to-connect-sso.md)
 
@@ -179,7 +179,7 @@ Azure AD поддерживает следующие методы проверк
 
 На следующей странице вам будет предложено ввести учетные данные для Azure AD.
 
-![Подключение к Azure AD](./media/plan-connect-user-signin/changeusersignin2.png)
+![Снимок экрана, на котором показано, где следует вводить учетные данные для Azure AD.](./media/plan-connect-user-signin/changeusersignin2.png)
 
 На странице **Вход пользователя** выберите нужный вариант входа в систему.
 

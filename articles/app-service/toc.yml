@@ -146,7 +146,7 @@
           href: configure-language-java.md
         - name: Настройка Ruby
           href: configure-language-ruby.md
-        - name: Настройка пользовательского контейнера Linux
+        - name: Настройка пользовательского контейнера
           href: configure-custom-container.md
         - name: Подключение к локальным ресурсам
           href: web-sites-integrate-with-vnet.md

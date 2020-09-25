@@ -3,17 +3,17 @@ title: Защитник Azure для SQL — преимущества и воз�
 description: Узнайте о преимуществах и возможностях защитника Azure для SQL.
 author: memildin
 ms.author: memildin
-ms.date: 9/12/2020
+ms.date: 9/22/2020
 ms.topic: conceptual
 ms.service: security-center
 ms.custom: references_regions
 manager: rkarlin
-ms.openlocfilehash: e76fd33ccca73394c4ee48b3737db8b93a990659
-ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
+ms.openlocfilehash: dcdbc3efba53f78890816721b6659aa69553d6ea
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "90940306"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91301617"
 ---
 # <a name="introduction-to-azure-defender-for-sql"></a>Введение в защитник Azure для SQL
 
@@ -21,7 +21,7 @@ ms.locfileid: "90940306"
 
 ## <a name="availability"></a>Доступность
 
-|Аспект|Подробнее|
+|Аспект|Подробности|
 |----|:----|
 |Состояние выпуска:|**Azure Defender для серверов базы данных SQL Azure** — общедоступная версия<br>**Azure Defender для серверов SQL Server на виртуальных машинах** — Предварительная версия|
 |Цены|Счета за два плана, которые формируют **защитник Azure для SQL** , выставляются, как показано на [странице с ценами](security-center-pricing.md) .|

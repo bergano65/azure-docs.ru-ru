@@ -1,14 +1,14 @@
 ---
 title: Включение вложенной виртуализации на виртуальной машине шаблона в службах лаборатории Azure (скрипт) | Документация Майкрософт
-description: Узнайте, как создать шаблон виртуальной машины с несколькими вложенными виртуальными машинами.  Иначе говоря, получите сведения о поддержке вложенной виртуализацией для шаблона виртуальной машины в Службах лабораторий Azure.
+description: Узнайте, как создать шаблон виртуальной машины с несколькими виртуальными машинами в с помощью скрипта.  Иначе говоря, получите сведения о поддержке вложенной виртуализацией для шаблона виртуальной машины в Службах лабораторий Azure.
 ms.topic: article
 ms.date: 06/26/2020
-ms.openlocfilehash: a45257dffffc98c3f650c5b1753158edd9bfbede
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 5ae50bd11ab9a8adb769920f6d473a2ff2ce9342
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85445752"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91251501"
 ---
 # <a name="enable-nested-virtualization-on-a-template-virtual-machine-in-azure-lab-services-using-a-script"></a>Включение вложенной виртуализации на виртуальной машине шаблона в службах лаборатории Azure с помощью скрипта
 
@@ -29,7 +29,7 @@ ms.locfileid: "85445752"
 
         ![Надежные сайты](./media/how-to-enable-nested-virtualization-template-vm-using-script/trusted-sites-dialog.png)
 1. Скачайте файлы репозитория Git, как описано в следующих шагах.
-    1. Перейдите по адресу [https://github.com/Azure/azure-devtestlab/](https://github.com/Azure/azure-devtestlab/) .
+    1. Перейдите по адресу  [https://github.com/Azure/azure-devtestlab/](https://github.com/Azure/azure-devtestlab/) .
     1. Нажмите кнопку **клонировать или скачать** .
     1. Щелкните **скачать ZIP-файл**.
     1. Извлеките ZIP-файл
@@ -63,7 +63,7 @@ ms.locfileid: "85445752"
 
 Теперь ваш компьютер шаблона готов к созданию виртуальных машин Hyper-V. Инструкции по созданию виртуальных машин Hyper-V см. [в статье Создание виртуальной машины в Hyper-v](/windows-server/virtualization/hyper-v/get-started/create-a-virtual-machine-in-hyper-v) . См. также раздел [Центр оценки Майкрософт](https://www.microsoft.com/evalcenter/) для извлечения доступных операционных систем и программного обеспечения.  
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дальнейшие действия являются общими для настройки любой лаборатории.
 

@@ -5,18 +5,18 @@ services: active-directory
 ms.service: active-directory
 ms.subservice: conditional-access
 ms.topic: conceptual
-ms.date: 05/04/2020
+ms.date: 09/21/2020
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: calebb
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 578f1e97c8a53604edca7b803933139362a763a7
-ms.sourcegitcommit: e71da24cc108efc2c194007f976f74dd596ab013
+ms.openlocfilehash: c6592add5e33ba240c0f1d9fdbd23d82adfe5229
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87419739"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91258614"
 ---
 # <a name="what-are-service-dependencies-in-azure-active-directory-conditional-access"></a>Что такое зависимости служб в Azure Active Directory условном доступе? 
 
@@ -25,7 +25,7 @@ ms.locfileid: "87419739"
 При непосредственном доступе к сайту или службе влияние связанной политики обычно легко оценивается. Например, если имеется политика, для которой требуется многофакторная проверка подлинности (MFA) для SharePoint Online, для каждого входа на веб-портал SharePoint применяется сервер MFA. Однако это не всегда прямо вперед, чтобы оценить влияние политики, поскольку существуют облачные приложения с зависимостями от других облачных приложений. Например, Microsoft Teams может предоставить доступ к ресурсам в SharePoint Online. Таким образом, при обращении к Microsoft Teams в нашем текущем сценарии вы также налагаетесь на политику MFA SharePoint. 
 
 > [!TIP]
-> Использование приложения [office 365 (Предварительная версия)](concept-conditional-access-cloud-apps.md#office-365-preview) предназначено для всех приложений Office во избежание проблем с зависимостями служб в стеке Office.
+> Использование приложения [office 365](concept-conditional-access-cloud-apps.md#office-365) будет нацелено на все приложения Office, чтобы избежать проблем с зависимостями служб в стеке Office.
 
 ## <a name="policy-enforcement"></a>Принудительное применение политики 
 
@@ -40,7 +40,7 @@ ms.locfileid: "87419739"
 
 Рекомендуется устанавливать общие политики для связанных приложений и служб везде, где это возможно. Обеспечение единообразного уровня безопасности обеспечивает оптимальное взаимодействие с пользователем. Например, при настройке общей политики для Exchange Online, SharePoint Online, Microsoft Teams и Skype для бизнеса значительно сокращается количество непредвиденных запросов, которые могут возникнуть из-за применения различных политик к подчиненным службам. 
 
-Отличный способ добиться этого с помощью приложений в стеке Office — использовать [Office 365 (Предварительная версия)](concept-conditional-access-cloud-apps.md#office-365-preview) вместо назначения отдельных приложений.
+Отличный способ добиться этого с помощью приложений в стеке Office — использовать [приложение Office 365](concept-conditional-access-cloud-apps.md#office-365) , а не нацеливание на отдельные приложения.
 
 В таблице ниже перечислены дополнительные зависимости служб, которые должны соответствовать клиентским приложениям.  
 
@@ -60,7 +60,7 @@ ms.locfileid: "87419739"
 |                     | SharePoint                                  | Раннее связывание |
 | PowerApps           | Управление Microsoft Azure (портал и API) | Раннее связывание |
 |                     | Microsoft Azure Active Directory              | Раннее связывание |
-| Проект             | Dynamics CRM                                | Раннее связывание |
+| Project             | Dynamics CRM                                | Раннее связывание |
 | Skype для бизнеса  | Exchange                                    | Раннее связывание |
 | Visual Studio       | Управление Microsoft Azure (портал и API) | Раннее связывание |
 | Microsoft Forms     | Exchange                                    | Раннее связывание |

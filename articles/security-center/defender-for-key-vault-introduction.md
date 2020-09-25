@@ -3,17 +3,17 @@ title: Защитник Azure для Key Vault — преимущества и �
 description: Узнайте о преимуществах и возможностях защитника Azure для Key Vault.
 author: memildin
 ms.author: memildin
-ms.date: 9/12/2020
+ms.date: 9/22/2020
 ms.topic: conceptual
 ms.service: security-center
 ms.custom: references_regions
 manager: rkarlin
-ms.openlocfilehash: 06818e443568918e2ee87bbfbec81836ea85648b
-ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
+ms.openlocfilehash: 78a522922f8580003e2d2ff588cbf10dbf5fff9d
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "90939875"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91301777"
 ---
 # <a name="introduction-to-azure-defender-for-key-vault"></a>Общие сведения о защитнике Azure для Key Vault
 
@@ -23,7 +23,7 @@ Azure Key Vault — это облачная служба, которая обе
 
 ## <a name="availability"></a>Доступность
 
-|Аспект|Подробнее|
+|Аспект|Подробности|
 |----|:----|
 |Состояние выпуска:|Общедоступная версия (GA)|
 |Цены|Плата **за использование защитника Azure для Key Vault** оплачивается, как показано на [странице с ценами](security-center-pricing.md) .|
@@ -42,6 +42,11 @@ Azure Key Vault — это облачная служба, которая обе
 Оповещения отображаются на странице **безопасность** Key Vault, на панели мониторинга защитника Azure и на странице оповещений центра безопасности.
 
 :::image type="content" source="./media/defender-for-key-vault-intro/key-vault-security-page.png" alt-text="Страница безопасности Azure Key Vault":::
+
+
+> [!TIP]
+> Вы можете имитировать службу "защитник Azure" для Key Vault предупреждений, следуя инструкциям в разделе [Проверка обнаружения угроз Azure Key Vault в центре безопасности Azure](https://techcommunity.microsoft.com/t5/azure-security-center/validating-azure-key-vault-threat-detection-in-azure-security/ba-p/1220336).
+
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

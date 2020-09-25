@@ -13,31 +13,24 @@ ms.date: 05/07/2019
 ms.author: jmprieur
 ms.reviewer: brandwe
 ms.custom: aaddev, identityplatformtop40
-ms.openlocfilehash: 1f90f7f23fbdf10b91d8dfc7cd00cca83cd32fbc
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 70ddc2191cc06a1bede87adc5940e0f7dea63384
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "80882579"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91257543"
 ---
 # <a name="scenario-mobile-application-that-calls-web-apis"></a>Сценарий: мобильное приложение, вызывающее веб-API
 
 Узнайте, как создать мобильное приложение, вызывающее веб-API.
 
-## <a name="prerequisites"></a>Предварительные требования
-
-[!INCLUDE [Prerequisites](../../../includes/active-directory-develop-scenarios-prerequisites.md)]
-
 ## <a name="getting-started"></a>Начало работы
 
-Создайте свое первое мобильное приложение и попробуйте воспользоваться кратким руководством.
+Если вы еще этого не сделали, создайте свое первое приложение, выполнив краткое руководство.
 
-> [!div class="nextstepaction"]
-> [Краткое руководство. получение маркера и вызов Microsoft Graph API из приложения Android](./quickstart-v2-android.md)
->
-> [Краткое руководство. получение маркера и вызов Microsoft Graph API из приложения iOS](./quickstart-v2-ios.md)
->
-> [Краткое руководство. получение маркера и вызов Microsoft Graph API из приложения Xamarin iOS и Android](https://github.com/Azure-Samples/active-directory-xamarin-native-v2)
+- [Краткое руководство. получение маркера и вызов Microsoft Graph API из приложения Android](./quickstart-v2-android.md)
+- [Краткое руководство. получение маркера и вызов Microsoft Graph API из приложения iOS](./quickstart-v2-ios.md)
+- [Краткое руководство. получение маркера и вызов Microsoft Graph API из приложения Xamarin iOS и Android](https://github.com/Azure-Samples/active-directory-xamarin-native-v2) (GitHub)
 
 ## <a name="overview"></a>Обзор
 
@@ -60,7 +53,11 @@ ms.locfileid: "80882579"
 - В iOS и Android MSAL может использовать внешний браузер для входа пользователей. Внешний браузер может отображаться поверх приложения.
 - Никогда не используйте секрет в мобильном приложении. В этих приложениях секреты доступны для всех пользователей.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="recommended-reading"></a>Рекомендуемые материалы
+
+[!INCLUDE [recommended-topics](../../../includes/active-directory-develop-scenarios-prerequisites.md)]
+
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Регистрация приложения](scenario-mobile-app-registration.md)

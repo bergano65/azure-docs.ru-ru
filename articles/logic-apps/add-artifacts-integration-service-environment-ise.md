@@ -6,12 +6,12 @@ ms.suite: integration
 ms.reviewer: klam, logicappspm
 ms.topic: conceptual
 ms.date: 02/28/2020
-ms.openlocfilehash: d8fe945b028b574e71ae24b1483ad8e7fd67b01d
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: dc4798df05b760074ff06d95d9712204a3cf3e5a
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87078729"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91269749"
 ---
 # <a name="add-resources-to-your-integration-service-environment-ise-in-azure-logic-apps"></a>Добавление ресурсов в среду службы интеграции (ISE) в Azure Logic Apps
 
@@ -20,7 +20,7 @@ ms.locfileid: "87078729"
 > [!IMPORTANT]
 > Чтобы приложения логики и учетные записи интеграции работали вместе в среде службы интеграции, они должны использовать *ту же среду службы интеграции*, что и их расположение.
 
-## <a name="prerequisites"></a>Обязательные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 * Подписка Azure. Если у вас еще нет подписки Azure, [зарегистрируйтесь для получения бесплатной учетной записи Azure](https://azure.microsoft.com/free/).
 
@@ -40,11 +40,11 @@ ms.locfileid: "87078729"
 
 1. Укажите сведения о приложении логики, которое необходимо создать, например:
 
-   ![Выбор среды службы интеграции](./media/add-artifacts-integration-service-environment-ise/create-logic-app-integration-service-environment.png)
+   ![Снимок экрана, показывающий окно создания "приложение логики" с указанными сведениями о примере.](./media/add-artifacts-integration-service-environment-ise/create-logic-app-integration-service-environment.png)
 
    | Свойство | Обязательно | Описание |
    |----------|----------|-------------|
-   | **имя**; | Да | Имя создаваемого приложения логики |
+   | **Имя** | Да | Имя создаваемого приложения логики |
    | **Подписка** | Да | Имя подписки Azure, которую нужно использовать. |
    | **Группа ресурсов** | Да | Имя для группы ресурсов Azure (новой или существующей) для использования |
    | **Расположение** | Да | В разделе **среды службы Integration**Services выберите интегрированную среду сценариев, если она еще не выбрана. <p><p> **Важно**. для использования приложений логики с учетной записью интеграции необходимо использовать одну интегрированную среду сценариев. |
@@ -76,7 +76,7 @@ ms.locfileid: "87078729"
 
    | Свойство | Обязательно | Описание |
    |----------|----------|-------------|
-   | **имя**; | Да | Имя создаваемой учетной записи интеграции |
+   | **Имя** | Да | Имя создаваемой учетной записи интеграции |
    | **Подписка** | Да | Имя подписки Azure, которую вы хотите использовать. |
    | **Группа ресурсов** | Да | Имя для группы ресурсов Azure (новой или существующей) для использования |
    | **Ценовая категория** | Да | Ценовая категория, используемая для учетной записи интеграции |
@@ -121,7 +121,7 @@ ms.locfileid: "87078729"
 
 1. В списке **Расположение** в разделе **среды службы Integration** Services выберите ту же интегрированную среду сценариев, которую используют приложения логики, и выберите **создать**, например:
 
-   ![Выбор среды службы интеграции](./media/add-artifacts-integration-service-environment-ise/create-custom-connector-integration-service-environment.png)
+   ![Снимок экрана, показывающий окно "Создание Logic Apps пользовательского соединителя" с выбранными сведениями о примере.](./media/add-artifacts-integration-service-environment-ise/create-custom-connector-integration-service-environment.png)
 
 1. Выберите новый настраиваемый соединитель, а затем щелкните **изменить**, например:
 

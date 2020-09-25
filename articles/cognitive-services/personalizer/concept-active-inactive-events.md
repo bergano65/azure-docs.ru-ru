@@ -1,14 +1,16 @@
 ---
 title: Активные и неактивные события — Персонализация
 description: В этой статье рассматривается использование активных и неактивных событий в службе персонализации.
+ms.service: cognitive-services
+ms.subservice: personalizer
 ms.topic: conceptual
 ms.date: 02/20/2020
-ms.openlocfilehash: a8f27542208965e2b820b9fc45cfcc5353a7f193
-ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
+ms.openlocfilehash: 7d1044d02ceba1f3d0996b1fe1c8a9a44b31049b
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "77624256"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91253655"
 ---
 # <a name="active-and-inactive-events"></a>Активные и неактивные события
 
@@ -37,10 +39,10 @@ ms.locfileid: "77624256"
 
 ## <a name="inactive-events"></a>Неактивные события
 
-Чтобы отключить обучение для события, вызовите Rank с помощью `learningEnabled = False`.
+Чтобы отключить обучение для события, вызовите Rank с помощью `learningEnabled = False` .
 
 Для неактивного события обучение неявно активируется, если вы отправляете вознаграждение на событие eventId или вызываете `activate` API для этого EventID.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Узнайте, [как определить оценку вознаграждений и какие данные следует учитывать](concept-rewards.md).

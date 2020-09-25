@@ -12,12 +12,12 @@ ms.date: 05/19/2020
 ms.author: ryanwi
 ms.reviewer: saeeda, jmprieur
 ms.custom: aaddev, fasttrack-edit
-ms.openlocfilehash: f8906c5fb934546ac8b1a95f817874f91f6c3b95
-ms.sourcegitcommit: 43558caf1f3917f0c535ae0bf7ce7fe4723391f9
+ms.openlocfilehash: c468ecb390a3ad321f9fe0619204994dfbf3fbb4
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/11/2020
-ms.locfileid: "90015812"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91256762"
 ---
 # <a name="application-types-for-microsoft-identity-platform"></a>Типы приложений для платформы удостоверений Microsoft
 
@@ -117,6 +117,9 @@ Accept: application/json
 В этом потоке приложение получает код авторизации от конечной точки платформы удостоверений Microsoft при входе пользователя в систему. Код авторизации представляет собой разрешение, полученное от приложения, на вызов внутренних служб от имени пользователя, выполнившего вход. Приложение может передать код авторизации в фоновом режиме, чтобы получить маркер доступа OAuth 2.0 и маркер обновления. Приложение может использовать маркер доступа для аутентификации в интерфейсах веб-API в HTTP-запросах и использовать маркер обновления, чтобы получать новые маркеры доступа после истечения срока действия старых маркеров.
 
 ![Показывает поток аутентификации собственного приложения](./media/v2-app-types/convergence-scenarios-native.svg)
+
+> [!NOTE]
+> Если приложение использует System WebView по умолчанию, ознакомьтесь со сведениями о функции "подтверждение входа в систему" и кодом ошибки AADSTS50199 в [кодах ошибок проверки подлинности и авторизации Azure AD](reference-aadsts-error-codes.md).
 
 ## <a name="daemons-and-server-side-apps"></a>Управляющие программы и серверные приложения
 

@@ -12,12 +12,12 @@ ms.workload: identity
 ms.date: 07/15/2020
 ms.author: jmprieur
 ms.custom: aaddev
-ms.openlocfilehash: 7e0701cc5a9bb14800a48e2281dba1eb6ea0cf72
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: ab0b74ffbcd8167613c6a8470e2f9102566edc60
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87026464"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91257237"
 ---
 # <a name="a-web-api-that-calls-web-apis-acquire-a-token-for-the-app"></a>Веб-API, вызывающий веб-API: получение маркера для приложения
 
@@ -27,7 +27,10 @@ ms.locfileid: "87026464"
 
 # <a name="aspnet-core"></a>[ASP.NET Core](#tab/aspnetcore)
 
-Ниже приведен пример кода с использованием Microsoft. Identity. Web, который вызывается в действиях контроллеров API. Он вызывает нисходящий API с именем *ToDoList*. Чтобы получить маркер для вызова подчиненного API, необходимо внедрить `ITokenAcquisition` службу путем внедрения зависимостей в конструктор контроллера (или конструктор страницы при использовании блазор) и использовать его в действиях контроллера, получая маркер для пользователя ( `GetAccessTokenForUserAsync` ) или самого приложения ( `GetAccessTokenForAppAsync` ) в случае сценария управляющей программы.
+*Microsoft. Identity. Web* добавляет методы расширения, которые предоставляют удобные службы для вызова Microsoft Graph или нисходящего веб-API. Эти методы подробно описаны в [веб-API, который вызывает веб-API: вызов API](scenario-web-api-call-api-call-api.md). При использовании этих вспомогательных методов вам не нужно вручную получать маркер.
+
+Однако если вы хотите вручную получить маркер, в следующем коде показан пример использования *Microsoft. Identity. Web* для этого в контроллере API. Он вызывает нисходящий API с именем *ToDoList*.
+Чтобы получить маркер для вызова подчиненного API, необходимо внедрить `ITokenAcquisition` службу путем внедрения зависимостей в конструктор контроллера (или конструктор страницы при использовании блазор) и использовать его в действиях контроллера, получая маркер для пользователя ( `GetAccessTokenForUserAsync` ) или самого приложения ( `GetAccessTokenForAppAsync` ) в случае сценария управляющей программы.
 
 ```csharp
 [Authorize]
@@ -58,7 +61,7 @@ public class MyApiController : Controller
 }
 ```
 
-Дополнительные сведения о `callTodoListService` методе см. [в веб-API, который вызывает веб-API: вызов API](scenario-web-api-call-api-call-api.md).
+Дополнительные сведения о `callTodoListService` методе см.  [в веб-API, который вызывает веб-API: вызов API](scenario-web-api-call-api-call-api.md).
 
 # <a name="java"></a>[Java](#tab/java)
 Ниже приведен пример кода, который вызывается в действиях контроллеров API. Он вызывает нисходящий Microsoft Graph API.
@@ -83,7 +86,7 @@ public class ApiController {
 
 # <a name="python"></a>[Python](#tab/python)
 
-Веб-API Python должен использовать некоторое по промежуточного слоя для проверки токена носителя, полученного от клиента. Затем веб-API может получить маркер доступа для подчиненного API с помощью библиотеки MSAL Python, вызвав [`acquire_token_on_behalf_of`](https://msal-python.readthedocs.io/en/latest/?badge=latest#msal.ConfidentialClientApplication.acquire_token_on_behalf_of) метод. Пример, демонстрирующий этот поток с помощью MSAL Python, пока недоступен.
+Веб-API Python требует использования по промежуточного слоя для проверки токена носителя, полученного от клиента. Затем веб-API может получить маркер доступа для нисходящих API с помощью библиотеки MSAL Python, вызвав [`acquire_token_on_behalf_of`](https://msal-python.readthedocs.io/en/latest/?badge=latest#msal.ConfidentialClientApplication.acquire_token_on_behalf_of) метод. Пример, демонстрирующий этот поток с помощью MSAL Python, пока недоступен.
 
 ---
 

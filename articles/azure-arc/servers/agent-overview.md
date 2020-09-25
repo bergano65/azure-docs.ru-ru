@@ -1,14 +1,14 @@
 ---
 title: Общие сведения об агенте Connected Machine для Windows
 description: В этой статье представлен подробный обзор доступного агента серверов с поддержкой Arc Azure, который поддерживает мониторинг виртуальных машин, размещенных в гибридных средах.
-ms.date: 09/02/2020
+ms.date: 09/24/2020
 ms.topic: conceptual
-ms.openlocfilehash: 990b5999a8483c6417049ac5ab965843c2b13659
-ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
+ms.openlocfilehash: 01f1b291fee57d94b95bdeeef5f9f24b011e9fca
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "90908178"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91255049"
 ---
 # <a name="overview-of-azure-arc-enabled-servers-agent"></a>Обзор агента серверов с поддержкой ARC в Azure
 
@@ -48,8 +48,8 @@ ms.locfileid: "90908178"
 
 - Windows Server 2012 R2 или более поздние версии (в том числе Windows Server Core)
 - Ubuntu 16,04 и 18,04 LTS (x64)
-- CentOS Linux 7 (x64)
-- SUSE Linux Enterprise Server (SLES) 15 (x64)
+- CentOS Linux 7 (x64);
+- SUSE Linux Enterprise Server (SLES) 15 (x64).
 - Red Hat Enterprise Linux (RHEL) 7 (x64)
 - Amazon Linux 2 (x64)
 
@@ -130,6 +130,9 @@ az provider register --namespace 'Microsoft.GuestConfiguration'
 ## <a name="installation-and-configuration"></a>Установка и настройка
 
 Подключение компьютеров в гибридной среде напрямую к Azure может осуществляться разными способами в зависимости от требований. В следующей таблице описан каждый метод. Эти данные помогут вам определить, какой из методов самый подходящий для вашей организации.
+
+> [!IMPORTANT]
+> Агент подключенного компьютера не может быть установлен на виртуальной машине Azure Windows. При попытке установки обнаруживает это и выполняет откат.
 
 | Метод | Описание |
 |--------|-------------|
@@ -228,7 +231,7 @@ az provider register --namespace 'Microsoft.GuestConfiguration'
     |/opt/logs/dsc.log |Записывает сведения о действиях службы DSC,<br> в частности о взаимодействии между службой himds и Политикой Azure.|
     |/opt/logs/dsc.telemetry.txt |Записывает сведения о телеметрии службы DSC и подробном протоколировании.|
     |/Вар/либ/гуестконфиг/ext_mgr_logs |Записывает сведения о компоненте агента расширения.|
-    |/Вар/лог/гуестконфиг/extension_logs|Записывает сведения об установленном расширении.|
+    |/Вар/либ/гуестконфиг/extension_logs|Записывает сведения об установленном расширении.|
 
 * Во время установки агента создаются указанные ниже переменные среды. В `/lib/systemd/system.conf.d/azcmagent.conf` задаются указанные ниже переменные.
 
@@ -244,4 +247,6 @@ az provider register --namespace 'Microsoft.GuestConfiguration'
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Чтобы начать оценку серверов с поддержкой Arc Azure, следуйте указаниям в статье [подключение гибридных компьютеров к Azure из портал Azure](onboard-portal.md).
+* Чтобы начать оценку серверов с поддержкой Arc Azure, следуйте указаниям в статье [подключение гибридных компьютеров к Azure из портал Azure](onboard-portal.md).
+
+* Сведения об устранении неполадок можно найти в разделе [руководство по устранению неполадок подключенного компьютера](troubleshoot-agent-onboard.md).

@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: article
 ms.date: 10/01/2019
 ms.author: Zhchia
-ms.openlocfilehash: 305a369733ce0435b5f892efd0d447b0940143fc
-ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
+ms.openlocfilehash: dd5a0e05b303d6fc7a5cfa012f49fab99828e8a2
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88547755"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91300077"
 ---
 # <a name="tutorial-configure-brivo-onair-identity-connector-for-automatic-user-provisioning"></a>Учебник. Настройка соединителя удостоверений Бриво Онаир для автоматической подготовки пользователей
 
@@ -54,7 +54,7 @@ ms.locfileid: "88547755"
 
    ![Консоль администрирования соединителя удостоверений бриво Онаир](media/brivo-onair-identity-connector-provisioning-tutorial/admin.png)
 
-2. Щелкните вкладку **Azure AD** . На странице сведений **Azure AD** повторно введите пароль для своей старшей учетной записи администратора. Щелкните **Отправить**.
+2. Щелкните вкладку **Azure AD** . На странице сведений **Azure AD** повторно введите пароль для своей старшей учетной записи администратора. Нажмите кнопку **Submit** (Отправить).
 
    ![Бриво Онаир удостоверение Azure](media/brivo-onair-identity-connector-provisioning-tutorial/azuread.png)
 
@@ -100,11 +100,11 @@ ms.locfileid: "88547755"
 
 3. Выберите вкладку **Подготовка**.
 
-    ![Вкладка "Подготовка"](common/provisioning.png)
+    ![Снимок экрана параметров управления с вызываемым параметром подготовки.](common/provisioning.png)
 
 4. Для параметра **Режим подготовки к работе** выберите значение **Automatic** (Автоматически).
 
-    ![Вкладка "Подготовка"](common/provisioning-automatic.png)
+    ![Снимок экрана: раскрывающийся список режима подготовки с вызываемым автоматическим параметром.](common/provisioning-automatic.png)
 
 5. В разделе **учетные данные администратора** введите `https://scim.brivo.com/ActiveDirectory/v2/` **URL-адрес клиента**. Введите значение **маркера проверки подлинности scim** , полученное ранее в **маркере секрета**. Нажмите кнопку **проверить подключение** , чтобы убедиться, что Azure AD может подключиться к соединителю удостоверений бриво онаир. В случае сбоя подключения убедитесь, что учетная запись соединителя удостоверений Бриво Онаир имеет разрешения администратора, и повторите попытку.
 
@@ -114,7 +114,7 @@ ms.locfileid: "88547755"
 
     ![Почтовое уведомление](common/provisioning-notification-email.png)
 
-7. Нажмите **Сохранить**.
+7. Выберите команду **Сохранить**.
 
 8. В разделе **сопоставления** выберите **синхронизировать Azure Active Directory пользователей с Бриво онаир Identity Connector**.
 

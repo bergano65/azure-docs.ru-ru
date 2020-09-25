@@ -3,16 +3,16 @@ title: Использование защитника Azure для реестро
 description: Сведения об использовании защитника Azure для реестров контейнеров для сканирования изображений в реестре
 author: memildin
 ms.author: memildin
-ms.date: 9/12/2020
+ms.date: 9/22/2020
 ms.topic: conceptual
 ms.service: security-center
 manager: rkarlin
-ms.openlocfilehash: 18fa1b14bb20bbb2805eee2ec663d1316f787950
-ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
+ms.openlocfilehash: 04a7b7f40e1591a919668e940a883dde9a6f4689
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "90940331"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91302015"
 ---
 # <a name="use-azure-defender-for-container-registries-to-scan-your-images-for-vulnerabilities"></a>Использование защитника Azure для реестров контейнеров для проверки образов на наличие уязвимостей
 
@@ -24,7 +24,7 @@ ms.locfileid: "90940331"
 
 ## <a name="availability"></a>Доступность
 
-|Аспект|Подробнее|
+|Аспект|Подробности|
 |----|:----|
 |Состояние выпуска:|Общедоступная версия (GA)|
 |Цены|Счет **за защитником Azure для реестров контейнеров** выставляется, как показано на [странице с ценами](security-center-pricing.md) .|

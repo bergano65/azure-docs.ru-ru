@@ -6,12 +6,12 @@ ms.suite: integration
 ms.reviewer: klam, logicappspm
 ms.topic: conceptual
 ms.date: 07/20/2018
-ms.openlocfilehash: ae0abe288edda2ce01311d8533b1f104409efce0
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 3a71c78dcbaa5fb02927e9a2cfdea40cd5b26130
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "75666879"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91269103"
 ---
 # <a name="handle-content-types-in-azure-logic-apps"></a>Обработка типов содержимого в Azure Logic Apps
 
@@ -61,7 +61,7 @@ ms.locfileid: "75666879"
   
   2. В разделе **Введение или вставка примера полезных данных JSON** предоставьте пример полезных данных, а затем выберите **Готово**. Пример: 
 
-     ![Предоставление примера полезных данных JSON](./media/logic-apps-content-type/request-trigger.png)
+     ![Снимок экрана, показывающий окно "при получении HTTP-запроса" с примером полезных данных JSON.](./media/logic-apps-content-type/request-trigger.png)
 
      Созданная схема теперь отображается в триггере.
 
@@ -141,8 +141,8 @@ ms.locfileid: "75666879"
 * `binary()`: Приводит данные к `application/octet-stream`
 * `string()`: Приводит данные к `text/plain`
 * `base64()`: Преобразует содержимое в строку в кодировке Base64
-* `base64toString()`: Преобразует строку в кодировке Base64 в`text/plain`
-* `base64toBinary()`: Преобразует строку в кодировке Base64 в`application/octet-stream`
+* `base64toString()`: Преобразует строку в кодировке Base64 в `text/plain`
+* `base64toBinary()`: Преобразует строку в кодировке Base64 в `application/octet-stream`
 * `dataUri()`: Преобразует строку в универсальный код ресурса (URI) данных
 * `dataUriToBinary()`: Преобразует универсальный код ресурса (URI) данных в двоичную строку
 * `dataUriToString()`: Преобразует универсальный код ресурса (URI) данных в строку

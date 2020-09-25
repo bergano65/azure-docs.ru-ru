@@ -11,14 +11,14 @@ ms.devlang: na
 ms.topic: how-to
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 09/12/2020
+ms.date: 09/22/2020
 ms.author: memildin
-ms.openlocfilehash: 76015602cbf949b166c4067ad72bace5d355d70b
-ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
+ms.openlocfilehash: ea0df1fb68697ceee55614510cc0295c73fec00e
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "90938309"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91301658"
 ---
 # <a name="azure-defender-for-sql-servers-on-machines"></a>Защитник Azure для серверов SQL Server на компьютерах 
 
@@ -28,7 +28,7 @@ ms.locfileid: "90938309"
 
 ## <a name="availability"></a>Доступность
 
-|Аспект|Подробнее|
+|Аспект|Подробности|
 |----|:----|
 |Состояние выпуска:|Предварительный просмотр|
 |Цены|Счета **за использование защитника Azure для серверов SQL Server на компьютерах** выставляются, как показано на [странице с ценами](security-center-pricing.md) .|
@@ -79,7 +79,7 @@ ms.locfileid: "90938309"
 
 
 1. При необходимости настройте уведомления по электронной почте для оповещений системы безопасности. 
-    Вы можете задать список получателей уведомлений по электронной почте при создании оповещений центра безопасности. Сообщение электронной почты содержит прямую ссылку на оповещение в центре безопасности Azure со всеми релевантными сведениями. Дополнительные сведения см. в разделе [Настройка уведомлений по электронной почте для оповещений системы безопасности](https://docs.microsoft.com/azure/security-center/security-center-provide-security-contact-details).
+    Вы можете задать список получателей уведомлений по электронной почте при создании оповещений центра безопасности. Сообщение электронной почты содержит прямую ссылку на оповещение в центре безопасности Azure со всеми релевантными сведениями. Дополнительные сведения см. в разделе [Настройка уведомлений по электронной почте для оповещений системы безопасности](security-center-provide-security-contact-details.md).
 
 
 
@@ -121,7 +121,7 @@ ms.locfileid: "90938309"
     * Включите функцию аудита SQL Server для дальнейшего исследования. Если вы являетесь пользователем-Sentinel Azure, вы можете отправить журналы аудита SQL из событий журнала безопасности Windows в метку и наслаждаться богатыми возможностями расследования. Дополнительные [сведения об аудите SQL Server](https://docs.microsoft.com/sql/relational-databases/security/auditing/create-a-server-audit-and-server-audit-specification?view=sql-server-ver15).
     * Чтобы повысить уровень безопасности, используйте рекомендации центра безопасности для главного компьютера, указанного в каждом оповещении. Это снизит риски, возникающие в будущих атаках. 
 
-    [Дополнительные сведения об управлении оповещениями и реагировании на них](https://docs.microsoft.com/azure/security-center/security-center-managing-and-responding-alerts).
+    [Дополнительные сведения об управлении оповещениями и реагировании на них](security-center-managing-and-responding-alerts.md).
 
 
 ## <a name="next-steps"></a>Дальнейшие действия

@@ -6,13 +6,13 @@ ms.service: cosmos-db
 ms.topic: how-to
 ms.date: 06/16/2020
 ms.author: tisande
-ms.custom: devx-track-javascript
-ms.openlocfilehash: 17cde20d69fbf7d135fe48c9e285ccf348b4b58c
-ms.sourcegitcommit: e71da24cc108efc2c194007f976f74dd596ab013
+ms.custom: devx-track-js
+ms.openlocfilehash: bc7bc677fb44600721b580ac9efc42feea4d98da
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87420164"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91252958"
 ---
 # <a name="how-to-write-stored-procedures-triggers-and-user-defined-functions-in-azure-cosmos-db"></a>Как писать хранимые процедуры, триггеры и определяемые пользователем функции в Azure Cosmos DB
 
@@ -386,7 +386,7 @@ function tax(income) {
 
 Примеры регистрации и использования определяемой пользователем функции см. в разделе о [работе с такой функцией](how-to-use-stored-procedures-triggers-udfs.md#udfs).
 
-## <a name="logging"></a>Ведение журнала 
+## <a name="logging"></a>Logging 
 
 При использовании хранимой процедуры, триггеров или определяемых пользователем функций можно регистрировать шаги с помощью `console.log()` команды. Эта команда повлияет на строку для отладки, если `EnableScriptLogging` для задано значение true, как показано в следующем примере:
 

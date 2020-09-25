@@ -1,6 +1,6 @@
 ---
 title: Установка обновления 0.5 на виртуальный массив StorSimple | Документация Майкрософт
-description: В этой статье объясняется, как установить обновления на виртуальный массив StorSimple с помощью локального пользовательского веб-интерфейса и портала Azure.
+description: Описывает, как использовать веб-интерфейс виртуального массива StorSimple для применения обновления 0,5 с помощью метода портал Azure и горячего исправления.
 services: storsimple
 documentationcenter: NA
 author: alkohli
@@ -14,12 +14,12 @@ ms.tgt_pltfrm: NA
 ms.workload: TBD
 ms.date: 05/10/2017
 ms.author: alkohli
-ms.openlocfilehash: 9b95593dd7ce7e10300ecef9b3636073a3096a7f
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: fa5524525aa76279cdcceaf0f5fd2a74753786ea
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85513659"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91300605"
 ---
 # <a name="install-update-05-on-your-storsimple-virtual-array"></a>Установка обновления 0.5 на виртуальный массив StorSimple
 
@@ -117,7 +117,7 @@ ms.locfileid: "85513659"
 
 Теперь обновление завершено.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения см. в статье [Использование пользовательского веб-интерфейса для администрирования виртуального массива StorSimple](storsimple-ova-web-ui-admin.md).
 

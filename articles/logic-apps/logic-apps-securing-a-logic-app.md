@@ -5,13 +5,13 @@ services: logic-apps
 ms.suite: integration
 ms.reviewer: rarayudu, logicappspm
 ms.topic: conceptual
-ms.date: 09/08/2020
-ms.openlocfilehash: 75c434b5c1927251940a691a16069425b4cc88a3
-ms.sourcegitcommit: 206629373b7c2246e909297d69f4fe3728446af5
+ms.date: 09/19/2020
+ms.openlocfilehash: 8023f3d7730a617ec502c8f181bad1fc27627694
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/06/2020
-ms.locfileid: "89500408"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91269171"
 ---
 # <a name="secure-access-and-data-in-azure-logic-apps"></a>Безопасный доступ и данные в Azure Logic Apps
 
@@ -32,7 +32,7 @@ Azure Logic Apps использует [хранилище Azure](../storage/inde
 
 * [Общие сведения о шифровании в Azure](../security/fundamentals/encryption-overview.md)
 * [Шифрование неактивных данных в Azure](../security/fundamentals/encryption-atrest.md)
-* [Решение для оценки безопасности Azure](../security/benchmarks/overview.md)
+* [Общие сведения о Тесте производительности системы безопасности Azure](../security/benchmarks/overview.md)
 
 <a name="secure-inbound-requests"></a>
 
@@ -74,6 +74,8 @@ Azure Logic Apps использует [хранилище Azure](../storage/inde
 | `sv` | Указывает версию SAS, используемую для создания подписи. |
 | `sig` | Указывает подпись, используемую для проверки подлинности доступа к триггеру. Эта подпись создается с использованием алгоритма SHA256 с секретным ключом доступа для всех URL-путей и свойств. Этот секретный ключ хранится как часть приложения логики в зашифрованном виде,он никогда не раскрывается и не публикуется. Приложение логики авторизует только те триггеры, которые содержат действительную подпись, созданную с помощью секретного ключа. |
 |||
+
+Входящие вызовы к конечной точке запроса могут использовать только одну схему авторизации: SAS или [Azure Active Directory Open authentication](#enable-oauth). Хотя использование одной схемы не отключает другую схему, одновременное использование обеих схем приводит к ошибке, так как служба не знает, какую схему выбрать.
 
 Дополнительные сведения о защите доступа с помощью SAS см. в следующих разделах этой статьи:
 
@@ -121,62 +123,62 @@ POST /subscriptions/<Azure-subscription-ID>/resourceGroups/<Azure-resource-group
 
 ### <a name="enable-azure-active-directory-open-authentication-azure-ad-oauth"></a>включение открытой проверки подлинности Azure Active Directory (Azure AD OAuth);
 
-Если приложение логики запускается с помощью [триггера запроса](../connectors/connectors-native-reqres.md), можно включить [Azure Active Directory Open authentication (Azure AD OAuth)](../active-directory/develop/index.yml) , определив или добавив политику авторизации для входящих вызовов триггера запроса.
+Для входящих вызовов к конечной точке, созданной триггером на основе запроса, можно включить [Azure Active Directory Open authentication (Azure AD OAuth)](../active-directory/develop/index.yml) , определив или добавив политику авторизации для приложения логики. Таким образом, входящие вызовы используют [маркеры доступа](../active-directory/develop/access-tokens.md) OAuth для авторизации.
 
-Перед включением этой проверки подлинности ознакомьтесь с приведенными ниже замечаниями.
+Когда приложение логики получает входящий запрос, включающий маркер доступа OAuth, служба Azure Logic Apps сравнивает утверждения токена с утверждениями, указанными в каждой политике авторизации. Если существует совпадение между утверждениями маркера и всеми утверждениями по крайней мере одной политики, авторизация для входящего запроса будет выполнена. Маркер может иметь больше утверждений, чем указано в политике авторизации.
 
-* Входящий вызов триггера запроса может использовать только одну схему авторизации Azure AD OAuth с помощью маркера проверки подлинности, который поддерживается только для триггера запроса или с помощью [URL-адреса подписи общего доступа (SAS)](#sas) , которая не позволяет использовать обе схемы.
+Прежде чем включить Azure AD OAuth, ознакомьтесь с приведенными ниже замечаниями.
 
-  Хотя использование одной схемы не отключает другую схему, одновременное использование обоих способов приводит к ошибке, поскольку служба не знает, какую схему выбрать. Кроме того, для маркеров проверки подлинности OAuth поддерживаются только схемы авторизации [типа носителя](../active-directory/develop/active-directory-v2-protocols.md#tokens) , которые поддерживаются только для триггера запроса. Токен проверки подлинности должен указываться `Bearer-type` в заголовке авторизации.
+* Входящий вызов конечной точки запроса может использовать только одну схему авторизации: Azure AD OAuth или [подписанный URL-адрес (SAS)](#sas). Хотя использование одной схемы не отключает другую схему, одновременное использование обеих схем приводит к ошибке, так как служба Logic Apps не знает, какую схему выбрать.
+
+* Для маркеров доступа OAuth Azure AD поддерживаются только схемы авторизации [типа носителя](../active-directory/develop/active-directory-v2-protocols.md#tokens) . Это означает, что `Authorization` заголовок маркера доступа должен указывать `Bearer` тип.
 
 * Приложение логики ограничено максимальным количеством политик авторизации. Каждая политика авторизации также имеет максимальное количество [утверждений](../active-directory/develop/developer-glossary.md#claim). Дополнительные сведения см. в статье [Ограничения и сведения о конфигурации для Azure Logic Apps](../logic-apps/logic-apps-limits-and-config.md#authentication-limits).
 
-* Политика авторизации должна включать по крайней мере утверждение **издателя** , которое имеет значение, начинающееся с `https://sts.windows.net/` или `https://login.microsoftonline.com/` (OAuth v2) в качестве идентификатора издателя Azure AD. Дополнительные сведения о маркерах доступа см. в [статье маркеры доступа платформы удостоверений Майкрософт](../active-directory/develop/access-tokens.md).
+* Политика авторизации должна включать по крайней мере утверждение **издателя** , которое имеет значение, которое начинается с `https://sts.windows.net/` или `https://login.microsoftonline.com/` (OAuth v2) в качестве идентификатора издателя Azure AD.
 
-Когда приложение логики получает входящий запрос, включающий маркер проверки подлинности OAuth, Azure Logic Apps сравнивает утверждения токена с утверждениями в каждой политике авторизации. Если существует совпадение между утверждениями маркера и всеми утверждениями по крайней мере одной политики, авторизация для входящего запроса будет выполнена. Маркер может иметь больше утверждений, чем указано в политике авторизации.
+  Например, предположим, что приложение логики имеет политику авторизации, для которой требуются два типа утверждений: **аудитория** и **Издатель**. Этот пример [раздела полезных данных](../active-directory/develop/access-tokens.md#payload-claims) для декодированного маркера доступа включает в себя оба типа утверждений, где `aud` — это значение **аудитории** , а `iss` — значение **издателя** :
 
-Например, предположим, что приложение логики имеет политику авторизации, для которой требуются два типа утверждений: **Издатель** и **аудитория**. В этом примере декодированный [маркер доступа](../active-directory/develop/access-tokens.md) включает оба типа утверждений.
-
-```json
-{
-   "aud": "https://management.core.windows.net/",
-   "iss": "https://sts.windows.net/<Azure-AD-issuer-ID>/",
-   "iat": 1582056988,
-   "nbf": 1582056988,
-   "exp": 1582060888,
-   "_claim_names": {
-      "groups": "src1"
-   },
-   "_claim_sources": {
-      "src1": {
-         "endpoint": "https://graph.windows.net/7200000-86f1-41af-91ab-2d7cd011db47/users/00000-f433-403e-b3aa-7d8406464625d7/getMemberObjects"
-    }
-   },
-   "acr": "1",
-   "aio": "AVQAq/8OAAAA7k1O1C2fRfeG604U9e6EzYcy52wb65Cx2OkaHIqDOkuyyr0IBa/YuaImaydaf/twVaeW/etbzzlKFNI4Q=",
-   "amr": [
-      "rsa",
-      "mfa"
-   ],
-   "appid": "c44b4083-3bb0-00001-b47d-97400853cbdf3c",
-   "appidacr": "2",
-   "deviceid": "bfk817a1-3d981-4dddf82-8ade-2bddd2f5f8172ab",
-   "family_name": "Sophia Owen",
-   "given_name": "Sophia Owen (Fabrikam)",
-   "ipaddr": "167.220.2.46",
-   "name": "sophiaowen",
-   "oid": "3d5053d9-f433-00000e-b3aa-7d84041625d7",
-   "onprem_sid": "S-1-5-21-2497521184-1604012920-1887927527-21913475",
-   "puid": "1003000000098FE48CE",
-   "scp": "user_impersonation",
-   "sub": "KGlhIodTx3XCVIWjJarRfJbsLX9JcdYYWDPkufGVij7_7k",
-   "tid": "72f988bf-86f1-41af-91ab-2d7cd011db47",
-   "unique_name": "SophiaOwen@fabrikam.com",
-   "upn": "SophiaOwen@fabrikam.com",
-   "uti": "TPJ7nNNMMZkOSx6_uVczUAA",
-   "ver": "1.0"
-}
-```
+  ```json
+  {
+      "aud": "https://management.core.windows.net/",
+      "iss": "https://sts.windows.net/<Azure-AD-issuer-ID>/",
+      "iat": 1582056988,
+      "nbf": 1582056988,
+      "exp": 1582060888,
+      "_claim_names": {
+         "groups": "src1"
+      },
+      "_claim_sources": {
+         "src1": {
+            "endpoint": "https://graph.windows.net/7200000-86f1-41af-91ab-2d7cd011db47/users/00000-f433-403e-b3aa-7d8406464625d7/getMemberObjects"
+         }
+      },
+      "acr": "1",
+      "aio": "AVQAq/8OAAAA7k1O1C2fRfeG604U9e6EzYcy52wb65Cx2OkaHIqDOkuyyr0IBa/YuaImaydaf/twVaeW/etbzzlKFNI4Q=",
+      "amr": [
+         "rsa",
+         "mfa"
+      ],
+      "appid": "c44b4083-3bb0-00001-b47d-97400853cbdf3c",
+      "appidacr": "2",
+      "deviceid": "bfk817a1-3d981-4dddf82-8ade-2bddd2f5f8172ab",
+      "family_name": "Sophia Owen",
+      "given_name": "Sophia Owen (Fabrikam)",
+      "ipaddr": "167.220.2.46",
+      "name": "sophiaowen",
+      "oid": "3d5053d9-f433-00000e-b3aa-7d84041625d7",
+      "onprem_sid": "S-1-5-21-2497521184-1604012920-1887927527-21913475",
+      "puid": "1003000000098FE48CE",
+      "scp": "user_impersonation",
+      "sub": "KGlhIodTx3XCVIWjJarRfJbsLX9JcdYYWDPkufGVij7_7k",
+      "tid": "72f988bf-86f1-41af-91ab-2d7cd011db47",
+      "unique_name": "SophiaOwen@fabrikam.com",
+      "upn": "SophiaOwen@fabrikam.com",
+      "uti": "TPJ7nNNMMZkOSx6_uVczUAA",
+      "ver": "1.0"
+   }
+   ```
 
 <a name="define-authorization-policy-portal"></a>
 
@@ -190,14 +192,14 @@ POST /subscriptions/<Azure-subscription-ID>/resourceGroups/<Azure-resource-group
 
    ![Выберите "Авторизация" > "Добавить политику"](./media/logic-apps-securing-a-logic-app/add-azure-active-directory-authorization-policies.png)
 
-1. Укажите сведения о политике авторизации, указав [типы утверждений](../active-directory/develop/developer-glossary.md#claim) и значения, которые приложение логики будет ожидать в маркере проверки подлинности в каждом входящем вызове триггера запроса.
+1. Предоставьте сведения о политике авторизации, указав [типы утверждений](../active-directory/develop/developer-glossary.md#claim) и значения, которые приложение логики должно использовать в маркере доступа, представленном каждым входящим вызовом триггера запроса:
 
    ![Предоставление сведений для политики авторизации](./media/logic-apps-securing-a-logic-app/set-up-authorization-policy.png)
 
    | Свойство | Обязательно | Описание |
    |----------|----------|-------------|
    | **Имя политики** | Да | Имя, которое будет использоваться для политики авторизации |
-   | **Утверждения** | Да | Типы утверждений и значения, принимаемые приложением логики из входящих вызовов. Доступные типы утверждений: <p><p>- **Издатель** <br>- **Аудитория** <br>- **Тема** <br>- **Идентификатор JWT** (идентификатор JSON Web Token) <p><p>Как минимум, список **утверждений** должен включать утверждение **издателя** , которое имеет значение, начинающееся с или в `https://sts.windows.net/` `https://login.microsoftonline.com/` качестве идентификатора издателя Azure AD. Дополнительные сведения об этих типах утверждений см. в разделе [Утверждения в маркерах безопасности Azure AD](../active-directory/azuread-dev/v1-authentication-scenarios.md#claims-in-azure-ad-security-tokens). Можно также указать собственный тип и значение утверждения. |
+   | **Утверждения** | Да | Типы утверждений и значения, принимаемые приложением логики из входящих вызовов. Доступные типы утверждений: <p><p>- **Издатель** <br>- **Аудитория** <br>- **Тема** <br>- **Идентификатор JWT** (идентификатор JSON Web Token) <p><p>Список **утверждений** должен содержать как минимум утверждение **издателя** , которое имеет значение, начинающееся с `https://sts.windows.net/` или в `https://login.microsoftonline.com/` качестве идентификатора издателя Azure AD. Дополнительные сведения об этих типах утверждений см. в разделе [Утверждения в маркерах безопасности Azure AD](../active-directory/azuread-dev/v1-authentication-scenarios.md#claims-in-azure-ad-security-tokens). Можно также указать собственный тип и значение утверждения. |
    |||
 
 1. Чтобы добавить еще одно утверждение, выберите один из следующих вариантов.
@@ -210,14 +212,27 @@ POST /subscriptions/<Azure-subscription-ID>/resourceGroups/<Azure-resource-group
 
 1. Когда все будет готово, нажмите кнопку **Сохранить**.
 
+1. Чтобы включить `Authorization` заголовок из маркера доступа в выходные данные триггера на основе запроса, см. раздел [включение заголовка авторизации в выходные данные триггера запроса](#include-auth-header).
+
 <a name="define-authorization-policy-template"></a>
 
 #### <a name="define-authorization-policy-in-azure-resource-manager-template"></a>Определение политики авторизации в шаблоне Azure Resource Manager
 
-Чтобы включить Azure AD OAuth в шаблоне ARM для развертывания приложения логики, в `properties` разделе [определения ресурса приложения логики](../logic-apps/logic-apps-azure-resource-manager-templates-overview.md#logic-app-resource-definition)добавьте `accessControl` объект, если он не существует, который содержит `triggers` объект. В `triggers` объекте добавьте объект, в `openAuthenticationPolicies` котором вы определили одну или несколько политик авторизации, выполнив следующий синтаксис:
+Чтобы включить Azure AD OAuth в шаблоне ARM для развертывания приложения логики, выполните следующие действия и приведенный ниже синтаксис.
 
-> [!NOTE]
-> Как минимум, `claims` массив должен включать `iss` утверждение, которое имеет значение, начинающееся с `https://sts.windows.net/` или в `https://login.microsoftonline.com/` качестве идентификатора издателя Azure AD. Дополнительные сведения об этих типах утверждений см. в разделе [Утверждения в маркерах безопасности Azure AD](../active-directory/azuread-dev/v1-authentication-scenarios.md#claims-in-azure-ad-security-tokens). Можно также указать собственный тип и значение утверждения.
+1. В `properties` разделе [определения ресурса приложения логики](../logic-apps/logic-apps-azure-resource-manager-templates-overview.md#logic-app-resource-definition)добавьте `accessControl` объект, если он не существует, который содержит `triggers` объект.
+
+   Дополнительные сведения об `accessControl` объекте см. в разделе [ограничение диапазона входящих IP-адресов в шаблоне Azure Resource Manager](#restrict-inbound-ip-template) и [справочнике по шаблону рабочих процессов Microsoft. Logic](/azure/templates/microsoft.logic/2019-05-01/workflows).
+
+1. В `triggers` объекте добавьте `openAuthenticationPolicies` объект, содержащий объект, в `policies` котором определена одна или несколько политик авторизации.
+
+1. Укажите имя для политики авторизации, установите тип политики `AAD` и включите массив, в `claims` котором указывается один или несколько типов утверждений.
+
+   Как минимум, `claims` массив должен включать тип утверждения издателя, в котором для свойства утверждения задается значение `name` `iss` , а в `value` `https://sts.windows.net/` `https://login.microsoftonline.com/` качестве идентификатора издателя Azure AD — значение. Дополнительные сведения об этих типах утверждений см. в разделе [Утверждения в маркерах безопасности Azure AD](../active-directory/azuread-dev/v1-authentication-scenarios.md#claims-in-azure-ad-security-tokens). Можно также указать собственный тип и значение утверждения.
+
+1. Чтобы включить `Authorization` заголовок из маркера доступа в выходные данные триггера на основе запроса, см. раздел [включение заголовка авторизации в выходные данные триггера запроса](#include-auth-header).
+
+Ниже приведен синтаксис:
 
 ```json
 "resources": [
@@ -256,7 +271,30 @@ POST /subscriptions/<Azure-subscription-ID>/resourceGroups/<Azure-resource-group
 ],
 ```
 
-Дополнительные сведения `accessControl` см. в разделе [ограничение диапазона входящих IP-адресов в шаблоне Azure Resource Manager](#restrict-inbound-ip-template) и [справочнике по шаблону рабочих процессов Microsoft. Logic](/azure/templates/microsoft.logic/2019-05-01/workflows).
+<a name="include-auth-header"></a>
+
+#### <a name="include-authorization-header-in-request-trigger-outputs"></a>Включить заголовок "Authorization" в выходные данные триггера запроса
+
+Для приложений логики, которые [обеспечивают Azure Active Directory открытой аутентификации (Azure AD OAuth)](#enable-oauth) для авторизации входящих вызовов к триггерам на основе запросов, можно включить триггер запроса или выходные данные триггера веб-перехватчика HTTP, чтобы включить `Authorization` заголовок из маркера доступа OAuth. В базовом определении JSON триггера добавьте и присвойте `operationOptions` свойству значение `IncludeAuthorizationHeadersInOutputs` . Ниже приведен пример триггера запроса:
+
+```json
+"triggers": {
+   "manual": {
+      "inputs": {
+         "schema": {}
+      },
+      "kind": "Http",
+      "type": "Request",
+      "operationOptions": "IncludeAuthorizationHeadersInOutputs"
+   }
+}
+```
+
+Дополнительные сведения см. в следующих статьях:
+
+* [Справочник по схемам для триггеров и типов действий — триггер запроса](../logic-apps/logic-apps-workflow-actions-triggers.md#request-trigger)
+* [Справочник по схемам для типов триггеров и действий — триггер веб-перехватчика HTTP](../logic-apps/logic-apps-workflow-actions-triggers.md#http-webhook-trigger)
+* [Справочник по схемам для типов триггеров и действий — параметры операций](../logic-apps/logic-apps-workflow-actions-triggers.md#operation-options)
 
 <a name="azure-api-management"></a>
 
@@ -896,7 +934,7 @@ POST /subscriptions/<Azure-subscription-ID>/resourceGroups/<Azure-resource-group
 | Свойство (конструктор) | Свойство (JSON) | Обязательно | Значение | Описание |
 |---------------------|-----------------|----------|-------|-------------|
 | **Аутентификация** | `type` | Да | **Active Directory OAuth** <br>или диспетчер конфигурации служб <br>`ActiveDirectoryOAuth` | Тип проверки подлинности. В настоящее время Logic Apps следует требованиям [протокола OAuth 2.0](../active-directory/develop/v2-overview.md). |
-| **Центр авторизации** | `authority` | нет | <*URL-адрес для поставщика токена*> | URL-адрес центра, предоставляющего токен проверки подлинности. По умолчанию это значение равно `https://login.windows.net`. |
+| **Центр авторизации** | `authority` | нет | <*URL-адрес для поставщика токена*> | URL-адрес центра, предоставляющего маркер доступа. По умолчанию это значение равно `https://login.windows.net`. |
 | **Клиент** | `tenant` | Да | <*ИД клиента*> | Идентификатор клиента Azure Active Directory. |
 | **Аудитория** | `audience` | Да | <*ресурс для авторизации*> | Ресурс, который нужно использовать для авторизации, например `https://management.core.windows.net/`. |
 | **Идентификатор клиента** | `clientId` | Да | <*ИД клиента*> | Идентификатор клиента для приложения, запрашивающего авторизацию. |

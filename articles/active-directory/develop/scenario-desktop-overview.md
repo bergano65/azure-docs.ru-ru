@@ -12,38 +12,28 @@ ms.workload: identity
 ms.date: 05/18/2020
 ms.author: jmprieur
 ms.custom: aaddev, identityplatformtop40
-ms.openlocfilehash: 92f0909660427e414264442523dba3ed2abe0142
-ms.sourcegitcommit: 318d1bafa70510ea6cdcfa1c3d698b843385c0f6
+ms.openlocfilehash: a6cbb574245c7b11d2437693d60fd952becedba3
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/21/2020
-ms.locfileid: "83771865"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91257560"
 ---
 # <a name="scenario-desktop-app-that-calls-web-apis"></a>Сценарий: Классическое приложение, которое вызывает веб-API
 
 Узнайте все необходимое, чтобы создать классическое приложение, которое вызывает веб-API.
 
-## <a name="prerequisites"></a>Предварительные требования
-
-[!INCLUDE [Pre-requisites](../../../includes/active-directory-develop-scenarios-prerequisites.md)]
-
 ## <a name="get-started"></a>Начало работы
 
-Если вы еще этого не сделали, создайте свое первое приложение, следуя краткому руководству по классическим приложениям .NET, универсальной платформе Windows (UWP) или собственным приложениям macOS:
+Если вы еще этого не сделали, создайте свое первое приложение, выполнив краткое руководство.
 
-> [!div class="nextstepaction"]
-> [Краткое руководство. Получение маркера безопасности и вызов API Microsoft Graph из классического приложения Windows](./quickstart-v2-windows-desktop.md)
-
-
-> [!div class="nextstepaction"]
-> [Краткое руководство. Получение маркера и вызов API Microsoft Graph из приложения UWP](./quickstart-v2-uwp.md)
-
-> [!div class="nextstepaction"]
-> [Краткое руководство. Получение маркера и вызов API Microsoft Graph из собственного приложения macOS](./quickstart-v2-ios.md)
+- [Краткое руководство. Получение маркера безопасности и вызов API Microsoft Graph из классического приложения Windows](./quickstart-v2-windows-desktop.md)
+- [Краткое руководство. Получение маркера и вызов API Microsoft Graph из приложения UWP](./quickstart-v2-uwp.md)
+- [Краткое руководство. Получение маркера и вызов API Microsoft Graph из собственного приложения macOS](./quickstart-v2-ios.md)
 
 ## <a name="overview"></a>Обзор
 
-Вы создаете классическое приложение и хотите, чтобы пользователи входили в приложение и вызывали веб-API, такие как Microsoft Graph, другие API Майкрософт или собственный веб-API. У вас есть несколько возможностей.
+Вы создаете классическое приложение и хотите, чтобы пользователи входили в приложение и вызывали веб-API, такие как Microsoft Graph, другие API Майкрософт или собственный веб-API. Доступно несколько параметров.
 
 - Вы можете использовать интерактивное получение маркера.
 
@@ -64,6 +54,10 @@ ms.locfileid: "83771865"
 ## <a name="specifics"></a>Особенности
 
 Классические приложения имеют ряд особенностей. Они в основном зависят от того, использует ли ваше приложение интерактивную проверку подлинности или нет.
+
+## <a name="recommended-reading"></a>Рекомендуемые материалы
+
+[!INCLUDE [recommended-topics](../../../includes/active-directory-develop-scenarios-prerequisites.md)]
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

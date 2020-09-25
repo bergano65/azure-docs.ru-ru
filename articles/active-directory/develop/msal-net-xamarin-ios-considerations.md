@@ -13,12 +13,12 @@ ms.date: 09/09/2020
 ms.author: marsma
 ms.reviewer: saeeda
 ms.custom: devx-track-csharp, aaddev
-ms.openlocfilehash: f550cb4e9069055da6569492b35fc7fe75d70980
-ms.sourcegitcommit: 1b320bc7863707a07e98644fbaed9faa0108da97
+ms.openlocfilehash: 70ab4a151fe73b59663fd8fa16170b2e507c2511
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/09/2020
-ms.locfileid: "89594056"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91258065"
 ---
 # <a name="considerations-for-using-xamarin-ios-with-msalnet"></a>Рекомендации по использованию Xamarin iOS с MSAL.NET
 
@@ -81,7 +81,7 @@ var builder = PublicClientApplicationBuilder
 
 ### <a name="enable-token-cache-sharing-across-ios-applications"></a>Включение общего доступа к кэшу маркеров в приложениях iOS
 
-Начиная с MSAL 2. x можно указать группу доступа к цепочке ключей, чтобы сохранить кэш маркеров в нескольких приложениях. Этот параметр позволяет использовать кэш маркеров в нескольких приложениях с одной группой доступа к цепочке ключей. Вы можете поделиться наличными маркерами между [ADAL.NET](https://aka.ms/adal-net) приложениями, MSAL.NET приложениями Xamarin. iOS и собственными приложениями iOS, разработанными в [ADAL. ObjC](https://github.com/AzureAD/azure-activedirectory-library-for-objc) или [MSAL. ObjC](https://github.com/AzureAD/microsoft-authentication-library-for-objc).
+Начиная с MSAL 2. x можно указать группу доступа к цепочке ключей, чтобы сохранить кэш маркеров в нескольких приложениях. Этот параметр позволяет использовать кэш маркеров в нескольких приложениях с одной группой доступа к цепочке ключей. Кэш маркеров можно совместно использовать в приложениях [ADAL.NET](https://aka.ms/adal-net) , MSAL.NET Xamarin. iOS и в собственных приложениях iOS, разработанных в [ADAL. ObjC](https://github.com/AzureAD/azure-activedirectory-library-for-objc) или [MSAL. ObjC](https://github.com/AzureAD/microsoft-authentication-library-for-objc).
 
 При совместном использовании кэша маркеров вы разрешаете единый вход (SSO) для всех приложений, использующих одну группу доступа к цепочке ключей.
 
@@ -151,7 +151,7 @@ var builder = PublicClientApplicationBuilder
 
 Дополнительные сведения о свойствах для Xamarin iOS см. в разделе [рекомендации для iOS](https://github.com/Azure-Samples/active-directory-xamarin-native-v2/tree/master/1-Basic#ios-specific-considerations) в следующем примере файла readme.md:
 
-Образец | Платформа | Описание
+Пример | Платформа | Описание
 ------ | -------- | -----------
 [https://github.com/Azure-Samples/active-directory-xamarin-native-v2](https://github.com/azure-samples/active-directory-xamarin-native-v2) | Xamarin iOS, Android, универсальная платформа Windows (UWP) | Простое приложение Xamarin Forms, которое показывает, как использовать MSAL для проверки подлинности личных учетных записей Майкрософт и Azure AD через конечную точку Azure AD 2,0. В приложении также показано, как использовать полученный маркер для доступа к Microsoft Graph.
 

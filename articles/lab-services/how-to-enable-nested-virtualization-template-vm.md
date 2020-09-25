@@ -1,14 +1,14 @@
 ---
 title: Реализация вложенной виртуализации для шаблона виртуальной машины в Службах лабораторий Azure | Документация Майкрософт
-description: Узнайте, как создать шаблон виртуальной машины с несколькими вложенными виртуальными машинами.  Иначе говоря, получите сведения о поддержке вложенной виртуализацией для шаблона виртуальной машины в Службах лабораторий Azure.
+description: Из этой статьи вы узнаете, как настроить вложенную виртуализацию на компьютере шаблона в службах лаборатории Azure.
 ms.topic: article
 ms.date: 06/26/2020
-ms.openlocfilehash: a2f045cbf7c107e7f5dbeff0d78bf5e8d9d8fba6
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 319695088e967dc3156ecab5c1b9458e77fcc186
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85445242"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91251480"
 ---
 # <a name="enable-nested-virtualization-on-a-template-virtual-machine-in-azure-lab-services"></a>Реализация вложенной виртуализации для шаблона виртуальной машины в Службах лабораторий Azure
 

@@ -9,23 +9,23 @@ ms.service: active-directory
 ms.subservice: develop
 ms.topic: conceptual
 ms.workload: identity
-ms.date: 04/12/2019
+ms.date: 09/18/2019
 ms.author: marsma
 ms.reviewer: saeeda
 ms.custom: devx-track-csharp, aaddev
-ms.openlocfilehash: 30f9f1998ee133c2546c9f4de7a99c51feb8740f
-ms.sourcegitcommit: c28fc1ec7d90f7e8b2e8775f5a250dd14a1622a6
+ms.openlocfilehash: 5ec419be5c7549553788d009f09fa3e0fb8655e4
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/13/2020
-ms.locfileid: "88166201"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91258291"
 ---
 # <a name="initialize-client-applications-using-msalnet"></a>Инициализация клиентских приложений с помощью MSAL.NET
 В этой статье описывается инициализация общедоступного клиента и конфиденциальных клиентских приложений с помощью библиотеки проверки подлинности Майкрософт для .NET (MSAL.NET).  Дополнительные сведения о типах клиентских приложений и параметрах конфигурации приложений см. в [обзоре](msal-client-applications.md).
 
 При использовании MSAL.NET 3. x рекомендуемым способом создания экземпляра приложения является использование построителей приложений: `PublicClientApplicationBuilder` и `ConfidentialClientApplicationBuilder` . Они предлагают мощный механизм настройки приложения либо из кода, либо из файла конфигурации, либо путем смешивания обоих подходов.
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 Перед инициализацией приложения необходимо сначала [зарегистрировать его](quickstart-register-app.md) , чтобы приложение можно было интегрировать с платформой Microsoft Identity.  После регистрации может потребоваться следующая информация (которую можно найти в портал Azure):
 
 - Идентификатор клиента (строка, представляющая GUID)
@@ -98,7 +98,7 @@ IConfidentialClientApplication app = ConfidentialClientApplicationBuilder.Create
 
 |Модификатор | Описание|
 |--------- | --------- |
-|`.WithAuthority()`7 переопределений | Устанавливает центр по умолчанию для центра приложений Azure AD с возможностью выбора облака Azure, аудитории, клиента (идентификатора клиента или имени домена) или непосредственного URI центра.|
+|`.WithAuthority()` 7 переопределений | Устанавливает центр по умолчанию для центра приложений Azure AD с возможностью выбора облака Azure, аудитории, клиента (идентификатора клиента или имени домена) или непосредственного URI центра.|
 |`.WithAdfsAuthority(string)` | Задает центр по умолчанию приложения в качестве центра ADFS.|
 |`.WithB2CAuthority(string)` | Задает центр по умолчанию приложения как центр Azure AD B2C.|
 |`.WithClientId(string)` | Переопределяет идентификатор клиента.|
@@ -137,7 +137,7 @@ IConfidentialClientApplication app = ConfidentialClientApplicationBuilder.Create
 ```csharp
 IPublicClientApplication app;
 app = PublicClientApplicationBuilder.Create(clientId)
-        .WithAadAuthority(AzureCloudInstance.AzurePublic, tenantId)
+        .WithAuthority(AzureCloudInstance.AzurePublic, tenantId)
         .Build();
 ```
 
@@ -146,7 +146,7 @@ app = PublicClientApplicationBuilder.Create(clientId)
 ```csharp
 IPublicClientApplication app;
 app = PublicClientApplicationBuilder.Create(clientId)
-        .WithAadAuthority(AzureCloudInstance.AzureUsGovernment, AadAuthorityAudience.AzureAdMultipleOrgs)
+        .WithAuthority(AzureCloudInstance.AzureUsGovernment, AadAuthorityAudience.AzureAdMultipleOrgs)
         .Build();
 ```
 

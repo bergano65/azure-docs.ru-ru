@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: article
 ms.date: 01/27/2020
 ms.author: Zhchia
-ms.openlocfilehash: 7cb83b53b6516de58c99859f3a0d4c9122b78322
-ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
+ms.openlocfilehash: e3814c753a182ce11d9062a665adc137f80c206f
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88542179"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91255644"
 ---
 # <a name="tutorial-configure-teamviewer-for-automatic-user-provisioning"></a>Руководство. Настройка TeamViewer для автоматической подготовки пользователей
 
@@ -91,11 +91,11 @@ ms.locfileid: "88542179"
 
 3. Выберите вкладку **Подготовка**.
 
-    ![Вкладка "Подготовка"](common/provisioning.png)
+    ![Снимок экрана параметров управления с вызываемым параметром подготовки.](common/provisioning.png)
 
 4. Для параметра **Режим подготовки к работе** выберите значение **Automatic** (Автоматически).
 
-    ![Вкладка "Подготовка"](common/provisioning-automatic.png)
+    ![Снимок экрана: раскрывающийся список режима подготовки с вызываемым автоматическим параметром.](common/provisioning-automatic.png)
 
 5. В разделе **учетные данные администратора** введите `ttps://webapi.teamviewer.com/scim/v2`  в поле **URL-адрес домика** и введите созданный ранее маркер скрипта в **секретном токене**. Нажмите кнопку **проверить подключение** , чтобы убедиться, что Azure AD может подключиться к TeamViewer. В случае сбоя подключения убедитесь, что у учетной записи TeamViewer есть разрешения администратора, и повторите попытку.
 

@@ -1,6 +1,6 @@
 ---
 title: Телефонные звонки из Twilio (.NET) | Документация Майкрософт
-description: Узнайте, как осуществлять телефонные вызовы и отправку SMS-сообщений с помощью службы Twilio API в Azure. Примеры программного кода написаны в .NET.
+description: Узнайте, как позвонить через службу API Twilio в Azure. Примеры программного кода написаны в .NET.
 services: ''
 documentationcenter: .net
 author: mimckitt
@@ -14,12 +14,12 @@ ms.topic: article
 ms.date: 05/04/2016
 ms.author: mimckitt
 ms.custom: devx-track-dotnet
-ms.openlocfilehash: 90e7bafab3fb9658cd9e11d0417f84269adcfa13
-ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
+ms.openlocfilehash: 536a28801193cdbb4204ca1432892abdc7fb297e
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89022349"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91268491"
 ---
 # <a name="how-to-make-a-phone-call-using-twilio-in-a-web-role-on-azure"></a>Осуществление телефонных звонков с использованием Twilio в веб-роли Azure
 В этом руководстве описывается, как выполнять телефонные звонки с веб-страницы, размещенной в Azure, с помощью службы Twilio. Полученное приложение предлагает пользователю осуществить звонок, указав номер и сообщение, как показано на следующем снимке экрана.

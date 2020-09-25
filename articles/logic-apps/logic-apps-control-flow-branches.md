@@ -6,12 +6,12 @@ ms.suite: integration
 ms.reviewer: klam, logicappspm
 ms.topic: article
 ms.date: 10/10/2018
-ms.openlocfilehash: 9dafb702117a7e171ff88b3c77d7b8b79503636f
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 3514ce966e1de9af1741de6b966964aca2599610
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87066455"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91269239"
 ---
 # <a name="create-or-join-parallel-branches-for-workflow-actions-in-azure-logic-apps"></a>Создание или присоединение параллельных ветвей для действий рабочих процессов в Azure Logic Apps
 
@@ -47,7 +47,7 @@ ms.locfileid: "87066455"
 
 1. В поле поиска найдите и выберите необходимое действие.
 
-   ![Поиск и выбор нужных действий](media/logic-apps-control-flow-branches/find-select-parallel-action.png)
+   ![Снимок экрана, показывающий окно "Выбор действия" в конструкторе приложений логики.](media/logic-apps-control-flow-branches/find-select-parallel-action.png)
 
    Теперь выбранное действие отображается в параллельной ветви, как показано ниже:
 
@@ -59,7 +59,7 @@ ms.locfileid: "87066455"
 
 1. В поле поиска найдите и выберите необходимое действие.
 
-   ![Поиск и выбор последующего действия](media/logic-apps-control-flow-branches/find-select-sequential-action.png)
+   ![Снимок экрана, показывающий окно "Выбор действия" и поле поиска в конструкторе приложений логики.](media/logic-apps-control-flow-branches/find-select-sequential-action.png)
 
    Теперь выбранное действие отображается в текущей ветви, как показано ниже:
 

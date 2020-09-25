@@ -4,14 +4,14 @@ description: Узнайте, как запрашивать вложенные с
 author: timsander1
 ms.service: cosmos-db
 ms.topic: conceptual
-ms.date: 05/19/2020
+ms.date: 09/19/2020
 ms.author: tisande
-ms.openlocfilehash: a569b0122f9122b141b64ded21dbd9be1d766a41
-ms.sourcegitcommit: 595cde417684e3672e36f09fd4691fb6aa739733
+ms.openlocfilehash: 355f73d46215aa9e05f4ea6d91bb173c77509b63
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/20/2020
-ms.locfileid: "83699128"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91270860"
 ---
 # <a name="working-with-json-in-azure-cosmos-db"></a>Работа с JSON в Azure Cosmos DB
 
@@ -138,6 +138,34 @@ WHERE EXISTS(
     WHERE n.checkingAccount < 0
 )
 ```
+
+## <a name="difference-between-null-and-undefined"></a>Разница между NULL и undefine
+
+Если свойство не определено в элементе, то его значение равно `undefined` . Свойство со значением `null` должно быть явно определено и присвоено `null` значение.
+
+Например, рассмотрим этот пример элемента:
+
+```json
+{
+  "id": "AndersenFamily",
+  "lastName": "Andersen",
+  "address": {
+      "state": "WA",
+      "county": "King",
+      "city": "Seattle"
+      },
+  "creationDate": null
+}
+```
+
+В этом примере свойство `isRegistered` имеет значение, `undefined` так как оно пропущено в элементе. Свойство `creationDate` имеет `null` значение.
+
+Azure Cosmos DB поддерживает два полезных системных функции проверки типов для `null` `undefined` свойств и:
+
+* [IS_NULL](sql-query-is-null.md) — проверяет, является ли значение свойства `null`
+* [IS_DEFINED](sql-query-is-defined.md) — проверяет, определено ли значение свойства
+
+Вы можете узнать о [поддерживаемых операторах](sql-query-operators.md) и их поведении для `null` `undefined` значений и.
 
 ## <a name="reserved-keywords-and-special-characters-in-json"></a>Зарезервированные ключевые слова и специальные символы в JSON
 

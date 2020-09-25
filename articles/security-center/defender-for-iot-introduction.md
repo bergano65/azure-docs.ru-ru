@@ -3,16 +3,16 @@ title: Azure Defender для Интернета вещей
 description: Сведения о защитнике Azure для IoT
 author: memildin
 ms.author: memildin
-ms.date: 9/12/2020
+ms.date: 9/22/2020
 ms.topic: conceptual
 ms.service: security-center
 manager: rkarlin
-ms.openlocfilehash: 67bb01092cb6171ae56b8ab8b308e0c2ea3bece0
-ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
+ms.openlocfilehash: 307916680d9a05a5083aea057b2ef4b855a4ff57
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "90939886"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91301811"
 ---
 # <a name="introduction-to-azure-defender-for-iot"></a>Общие сведения о защитнике Azure для IoT
 
@@ -27,7 +27,7 @@ ms.locfileid: "90939886"
 Полные сведения доступны в [специальной документации](https://docs.microsoft.com/azure/asc-for-iot/overview).
 
 ## <a name="availability"></a>Доступность
-|Аспект|Подробнее|
+|Аспект|Подробности|
 |----|:----|
 |Состояние выпуска:|Общедоступная версия (GA)|
 |Цены|Требуется [защитник Azure](security-center-pricing.md)|

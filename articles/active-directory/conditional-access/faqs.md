@@ -12,12 +12,12 @@ manager: daveba
 ms.reviewer: calebb
 ms.collection: M365-identity-device-management
 ms.custom: has-adal-ref
-ms.openlocfilehash: ed6beec63114f1f157bb24354d77e50ecdaa8255
-ms.sourcegitcommit: 80b9c8ef63cc75b226db5513ad81368b8ab28a28
+ms.openlocfilehash: 9694dd06b67219e0f02c3fe1c7c53d1fc103a0c2
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/16/2020
-ms.locfileid: "90601643"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91258631"
 ---
 # <a name="azure-active-directory-conditional-access-faqs"></a>Azure Active Directory часто задаваемые вопросы о условном доступе
 
@@ -31,11 +31,11 @@ ms.locfileid: "90601643"
 
 ## <a name="does-a-sharepoint-online-policy-also-apply-to-onedrive-for-business"></a>Распространяется ли политика SharePoint Online на OneDrive для бизнеса?
 
-Да. Политика SharePoint Online также распространяется на OneDrive для бизнеса. Дополнительные сведения см. в статье [зависимости службы условного доступа](service-dependencies.md) и рассмотрите политики назначения для [приложения Office 365](concept-conditional-access-cloud-apps.md#office-365-preview) .
+Да. Политика SharePoint Online также распространяется на OneDrive для бизнеса. Дополнительные сведения см. в статье [зависимости службы условного доступа](service-dependencies.md) и рассмотрите политики назначения для [приложения Office 365](concept-conditional-access-cloud-apps.md#office-365) .
 
 ## <a name="why-cant-i-set-a-policy-directly-on-client-apps-like-word-or-outlook"></a>Почему не удается задать политику непосредственно в клиентских приложениях, например Word или Outlook?
 
-Политика условного доступа устанавливает требования к доступу к службе. Она применяется, когда происходит проверка подлинности для этой службы. Политика не устанавливается напрямую в клиентском приложении. Вместо этого она применяется, когда клиент вызывает службу. Например, политика, заданная в SharePoint, применяется к клиентам, вызывающим SharePoint. Политика, заданная в Exchange, применяется к Outlook. Дополнительные сведения см. в статье [зависимости службы условного доступа](service-dependencies.md) и рассмотрите политики назначения для [приложения Office 365](concept-conditional-access-cloud-apps.md#office-365-preview) .
+Политика условного доступа устанавливает требования к доступу к службе. Она применяется, когда происходит проверка подлинности для этой службы. Политика не устанавливается напрямую в клиентском приложении. Вместо этого она применяется, когда клиент вызывает службу. Например, политика, заданная в SharePoint, применяется к клиентам, вызывающим SharePoint. Политика, заданная в Exchange, применяется к Outlook. Дополнительные сведения см. в статье [зависимости службы условного доступа](service-dependencies.md) и рассмотрите политики назначения для [приложения Office 365](concept-conditional-access-cloud-apps.md#office-365) .
 
 ## <a name="does-a-conditional-access-policy-apply-to-service-accounts"></a>Применяется ли политика условного доступа к учетным записям служб?
 
@@ -53,7 +53,7 @@ Microsoft Teams также поддерживается отдельно в ка
 
 Клиенты рабочего стола Microsoft Teams для Windows и Mac поддерживают современные методы проверки подлинности. Современные методы проверки подлинности используют вход на основе библиотеки проверки подлинности Active Directory (ADAL) для клиентских приложений Microsoft Office на всех платформах.
 
-Дополнительные сведения см. в статье [зависимости службы условного доступа](service-dependencies.md) и рассмотрите политики назначения для [приложения Office 365](concept-conditional-access-cloud-apps.md#office-365-preview) .
+Дополнительные сведения см. в статье [зависимости службы условного доступа](service-dependencies.md) и рассмотрите политики назначения для [приложения Office 365](concept-conditional-access-cloud-apps.md#office-365) .
 
 ## <a name="why-are-some-tabs-not-working-in-microsoft-teams-after-enabling-conditional-access-policies"></a>Почему некоторые вкладки не работают в Microsoft Teams после включения политик условного доступа?
 

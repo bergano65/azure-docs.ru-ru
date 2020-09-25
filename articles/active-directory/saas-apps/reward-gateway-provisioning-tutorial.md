@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: article
 ms.date: 07/26/2019
 ms.author: zhchia
-ms.openlocfilehash: 298ca69a659bec2d5262b344c274fac7371390f1
-ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
+ms.openlocfilehash: f908e37c7785744c2f26b6a9cd542ccde228eb38
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88534359"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91255748"
 ---
 # <a name="tutorial-configure-reward-gateway-for-automatic-user-provisioning"></a>Учебник. Настройка шлюза наград для автоматической подготовки пользователей
 
@@ -53,15 +53,15 @@ ms.locfileid: "88534359"
 
 1. Войдите в [консоль администратора шлюза наград](https://rewardgateway.photoshelter.com/login/). Щелкните **Integrations**(Интеграция).
 
-    ![Консоль администратора шлюза наград](media/reward-gateway-provisioning-tutorial/image00.png)
+    ![Снимок экрана консоли администрирования шлюза наград с вызываемым параметром Integrations.](media/reward-gateway-provisioning-tutorial/image00.png)
 
 2.  Выберите **Моя интеграция**.
 
-    ![Консоль администратора шлюза наград](media/reward-gateway-provisioning-tutorial/image001.png)
+    ![Снимок экрана двух вариантов интеграции с вызываемым параметром "Мои интеграции".](media/reward-gateway-provisioning-tutorial/image001.png)
 
 3.  Скопируйте значения **URL-адреса scim (v2)** и **токен носителя OAuth**. Эти значения будут указаны в поле URL-адрес клиента и секретный токен на вкладке Подготовка приложения шлюза наград в портал Azure.
 
-    ![Консоль администратора шлюза наград](media/reward-gateway-provisioning-tutorial/image03.png)
+    ![Снимок экрана панели "Мои интеграции" с текстом маркера носителя OAuth "вызываемый".](media/reward-gateway-provisioning-tutorial/image03.png)
 
 ## <a name="add-reward-gateway-from-the-gallery"></a>Добавление Reward Gateway из коллекции
 
@@ -104,11 +104,11 @@ ms.locfileid: "88534359"
 
 3. Выберите вкладку **Подготовка**.
 
-    ![Вкладка "Подготовка"](common/provisioning.png)
+    ![Снимок экрана параметров управления с вызываемым параметром подготовки.](common/provisioning.png)
 
 4. Для параметра **Режим подготовки к работе** выберите значение **Automatic** (Автоматически).
 
-    ![Вкладка "Подготовка"](common/provisioning-automatic.png)
+    ![Снимок экрана: раскрывающийся список режима подготовки с вызываемым автоматическим параметром.](common/provisioning-automatic.png)
 
 5. В разделе **учетные данные администратора** введите **URL-адрес scim (v2)** и значения **токена носителя OAuth** , полученные ранее в поле **URL-адрес клиента** и **секретный токен** соответственно. Нажмите кнопку **проверить подключение** , чтобы убедиться, что Azure AD может подключиться к шлюзу наград. Если подключение не выполняется, убедитесь, что учетная запись шлюза имеет разрешения администратора, и повторите попытку.
 
@@ -118,15 +118,15 @@ ms.locfileid: "88534359"
 
     ![Почтовое уведомление](common/provisioning-notification-email.png)
 
-7. Нажмите **Сохранить**.
+7. Выберите команду **Сохранить**.
 
 8. В разделе **сопоставления** выберите **синхронизировать Azure Active Directory пользователей, чтобы получить шлюз**.
 
-    ![Консоль администратора шлюза наград](media/reward-gateway-provisioning-tutorial/user-mappings.png)
+    ![Снимок экрана раздела "сопоставления" с вызываемым параметром "синхронизировать Azure Active Directory пользователей в качестве шлюза".](media/reward-gateway-provisioning-tutorial/user-mappings.png)
 
 9. Проверьте пользовательские атрибуты, которые синхронизированы из Azure AD, чтобы получить шлюз в разделе **сопоставления атрибутов** . Атрибуты, выбранные как свойства **Matching** , используются для сопоставления учетных записей пользователей в шлюзе наград для операций обновления. Нажмите кнопку **Сохранить**, чтобы зафиксировать все изменения.
 
-    ![Консоль администратора шлюза наград](media/reward-gateway-provisioning-tutorial/user-attributes.png)
+    ![Снимок экрана раздела "сопоставления атрибутов" с шестью отображаемыми сопоставлениями.](media/reward-gateway-provisioning-tutorial/user-attributes.png)
 
 10. Чтобы настроить фильтры области, ознакомьтесь со следующими инструкциями, предоставленными в [руководстве по фильтрам области](../app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 

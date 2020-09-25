@@ -1,14 +1,14 @@
 ---
 title: Подключение гибридных компьютеров к Azure в большом масштабе
 description: Из этой статьи вы узнаете, как подключить компьютеры к Azure с помощью серверов с поддержкой ARC в Azure с помощью субъекта-службы.
-ms.date: 09/02/2020
+ms.date: 09/24/2020
 ms.topic: conceptual
-ms.openlocfilehash: 545d8abd6dd17e1e413852735c096ddc9261b972
-ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
+ms.openlocfilehash: 5976e2ff9aef5f68d119a5fdf5f7d4d4345287a4
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "90908324"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91254947"
 ---
 # <a name="connect-hybrid-machines-to-azure-at-scale"></a>Подключение гибридных компьютеров к Azure в большом масштабе
 
@@ -139,6 +139,8 @@ azcmagent connect \
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
+* Сведения об устранении неполадок можно найти в разделе [руководство по устранению неполадок подключенного компьютера](troubleshoot-agent-onboard.md).
+
 - Узнайте, как управлять компьютером с помощью [Политики Azure](../../governance/policy/overview.md), например для [гостевой конфигурации](../../governance/policy/concepts/guest-configuration.md) виртуальной машины, проверять отправку отчетов с компьютера в ожидаемую рабочую область Log Analytics, включать мониторинг с помощью [Azure Monitor с виртуальными машинами](../../azure-monitor/insights/vminsights-enable-policy.md) и т. д.
 
-- Дополнительные сведения о [[агенте log Analytics]](../../azure-monitor/platform/log-analytics-agent.md). Агент Log Analytics для Windows и Linux необходим, если требуется получить данные мониторинга операционной системы и рабочей нагрузки, управлять ими с помощью модулей Runbook или функций автоматизации, таких как Управление обновлениями, или использовать другие службы Azure, такие как [Центр безопасности Azure](../../security-center/security-center-intro.md).
+- Узнайте больше об [агенте Log Analytics](../../azure-monitor/platform/log-analytics-agent.md). Агент Log Analytics для Windows и Linux необходим, если требуется получить данные мониторинга операционной системы и рабочей нагрузки, управлять ими с помощью модулей Runbook или функций автоматизации, таких как Управление обновлениями, или использовать другие службы Azure, такие как [Центр безопасности Azure](../../security-center/security-center-intro.md).

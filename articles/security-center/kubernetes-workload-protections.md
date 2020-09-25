@@ -8,12 +8,12 @@ ms.service: security-center
 ms.topic: conceptual
 ms.date: 09/12/2020
 ms.author: memildin
-ms.openlocfilehash: 332c33ce46298e5338587cd4d001466d30c1a9e6
-ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
+ms.openlocfilehash: 138b3b35633b432193a1972421f05d0a8e52b90a
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "90937190"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91301371"
 ---
 # <a name="protect-your-kubernetes-workloads"></a>Защита рабочих нагрузок Kubernetes
 
@@ -33,7 +33,7 @@ ms.locfileid: "90937190"
 
 ## <a name="availability"></a>Доступность
 
-|Аспект|Подробнее|
+|Аспект|Подробности|
 |----|:----|
 |Состояние выпуска:|Предварительный просмотр|
 |Цены|Free|
@@ -95,11 +95,15 @@ ms.locfileid: "90937190"
     1. Щелкните **Сохранить**.
 
 
-1. Чтобы применить какие либо рекомендации, задайте для параметра **запретить** в центре безопасности вкладку **Параметры** политики безопасности:
+1. Чтобы применить любые рекомендации, 
 
-    :::image type="content" source="./media/defender-for-kubernetes-usage/enforce-workload-protection-example.png" alt-text="Параметр Deny для параметра политики Azure":::
+    1. Откройте страницу сведений об рекомендации и выберите **запретить**:
 
-    Это приведет к отказу любого несовместимого запроса в кластерах AKS.
+        :::image type="content" source="./media/defender-for-kubernetes-usage/enforce-workload-protection-example.png" alt-text="Параметр Deny для параметра политики Azure":::
+
+        Откроется область, где задается область. 
+
+    1. Завершив настройку области, выберите Изменить, **чтобы запретить**.
 
 1. Чтобы узнать, какие рекомендации применяются к кластерам:
 

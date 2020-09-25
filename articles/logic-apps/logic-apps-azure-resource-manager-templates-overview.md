@@ -6,12 +6,12 @@ ms.suite: integration
 ms.reviewer: logicappspm
 ms.topic: article
 ms.date: 08/17/2020
-ms.openlocfilehash: 9d3c5a914fe472dd7e4f797cb633e65951bf07e7
-ms.sourcegitcommit: 927dd0e3d44d48b413b446384214f4661f33db04
+ms.openlocfilehash: a3d7386e976551d70fbbc08930b2ab5603aa5d50
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88871468"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91269052"
 ---
 # <a name="overview-automate-deployment-for-azure-logic-apps-by-using-azure-resource-manager-templates"></a>Обзор: Автоматизация развертывания для Azure Logic Apps с помощью шаблонов Azure Resource Manager
 
@@ -34,12 +34,14 @@ ms.locfileid: "88871468"
 * [Рекомендации по работе с шаблонами Azure Resource Manager](../azure-resource-manager/templates/template-best-practices.md)
 * [Разработка шаблонов Azure Resource Manager для обеспечения согласованности с облаком](../azure-resource-manager/templates/templates-cloud-consistency.md)
 
+Сведения о ресурсах шаблонов, связанных с приложениями логики, учетными записями интеграции, артефактами учетной записи интеграции и средами службы интеграции, см. в разделе [типы ресурсов Microsoft. Logic](/azure/templates/microsoft.logic/allversions).
+
 Примеры шаблонов приложений логики см. в следующих примерах:
 
 * [Полный шаблон](#full-example-template) , используемый для примеров этого раздела
 * [Пример шаблона учебного приложения логики](https://github.com/Azure/azure-quickstart-templates/blob/master/101-logic-app-create) в GitHub
 
-Сведения о ресурсах шаблонов, связанных с приложениями логики, учетными записями интеграции и артефактами учетной записи интеграции, см. в разделе [типы ресурсов Microsoft. Logic](/azure/templates/microsoft.logic/allversions).
+Для Logic Apps REST API Начните с [обзора Azure Logic Apps REST API](/rest/api/logic).
 
 <a name="template-structure"></a>
 
@@ -61,7 +63,7 @@ ms.locfileid: "88871468"
 
 Для шаблона приложения логики вы в основном работаете с этими объектами шаблона:
 
-| Атрибут | Описание |
+| attribute | Описание |
 |-----------|-------------|
 | `parameters` | Объявляет [Параметры шаблона](../azure-resource-manager/templates/template-syntax.md#parameters) для приема значений, используемых при создании и настройке ресурсов для развертывания в Azure. Например, эти параметры принимают значения для имени и расположения приложения логики, а также подключения и другие ресурсы, необходимые для развертывания. Эти значения параметров можно сохранить в [файле параметров](#template-parameter-files), который описывается далее в этом разделе. Общие сведения см. в разделе [Parameters-диспетчер ресурсов структура шаблона и синтаксис](../azure-resource-manager/templates/template-syntax.md#parameters). |
 | `resources` | Определяет [ресурсы](../azure-resource-manager/templates/template-syntax.md#resources) для создания или обновления и развертывания в группе ресурсов Azure, такие как приложение логики, подключения, учетные записи хранения Azure и т. д. Общие сведения см. в разделе [ресурсы-Диспетчер ресурсов структура шаблона и синтаксис](../azure-resource-manager/templates/template-syntax.md#resources). |
@@ -280,7 +282,7 @@ ms.locfileid: "88871468"
 
 ### <a name="logic-app-resource-definition"></a>Определение ресурса приложения логики
 
-Определение ресурса приложения логики начинается с `properties` объекта, который содержит следующие сведения:
+[Определение ресурса рабочего процесса приложения логики в шаблоне](/azure/templates/microsoft.logic/workflows) начинается с `properties` объекта, который содержит следующие сведения:
 
 * Состояние приложения логики при развертывании
 * Идентификатор любой учетной записи интеграции, используемой приложением логики
@@ -325,7 +327,7 @@ ms.locfileid: "88871468"
 
 Ниже приведены атрибуты, относящиеся к определению ресурса приложения логики.
 
-| Атрибут | Обязательно | Тип | Описание |
+| attribute | Обязательно | Тип | Описание |
 |-----------|----------|------|-------------|
 | `state` | Да | Строка | Состояние приложения логики при развертывании `Enabled` . Это означает, что приложение логики работает в реальном времени и `Disabled` означает, что приложение логики неактивно. Например, если вы не готовы к работе с приложением логики, но хотите развернуть черновую версию, можно использовать `Disabled` параметр. |
 | `integrationAccount` | Нет | Объект | Если приложение логики использует учетную запись интеграции, которая хранит артефакты для сценариев "бизнес — бизнес" (B2B), этот объект включает `id` атрибут, указывающий идентификатор для учетной записи интеграции. |
@@ -334,7 +336,31 @@ ms.locfileid: "88871468"
 | `accessControl` | Нет | Объект | Для указания атрибутов безопасности приложения логики, таких как ограниченный доступ по протоколу IP к триггерам запросов или входные и выходные данные журнала выполнения. Дополнительные сведения см. [в статье безопасный доступ к Logic Apps](../logic-apps/logic-apps-securing-a-logic-app.md). |
 ||||
 
-Сведения о ресурсах шаблонов, связанных с приложениями логики, учетными записями интеграции и артефактами учетной записи интеграции, см. в разделе [типы ресурсов Microsoft. Logic](/azure/templates/microsoft.logic/allversions).
+Дополнительные сведения об определениях ресурсов для этих Logic Apps объектов см. в разделе [типы ресурсов Microsoft. Logic](/azure/templates/microsoft.logic/allversions):
+
+* [Определение ресурса рабочего процесса](/azure/templates/microsoft.logic/workflows)
+* [Определение ресурса среды службы интеграции](/azure/templates/microsoft.logic/integrationserviceenvironments)
+* [Определение ресурса управляемого API среды службы интеграции](/azure/templates/microsoft.logic/integrationserviceenvironments/managedapis)
+
+* [Определение ресурса для учетной записи интеграции](/azure/templates/microsoft.logic/integrationaccounts)
+
+* Артефакты учетной записи интеграции:
+
+  * [Определение ресурса соглашения](/azure/templates/microsoft.logic/integrationaccounts/agreements)
+
+  * [Определение ресурса сборки](/azure/templates/microsoft.logic/integrationaccounts/assemblies)
+
+  * [Определение ресурса конфигурации пакетной службы](/azure/templates/microsoft.logic/integrationaccounts/batchconfigurations)
+
+  * [Определение ресурса сертификата](/azure/templates/microsoft.logic/integrationaccounts/certificates)
+
+  * [Определение ресурса Map](/azure/templates/microsoft.logic/integrationaccounts/maps)
+
+  * [Определение ресурса партнера](/azure/templates/microsoft.logic/integrationaccounts/partners)
+
+  * [Определение ресурса схемы](/azure/templates/microsoft.logic/integrationaccounts/schemas)
+
+  * [Определение ресурса сеанса](/azure/templates/microsoft.logic/integrationaccounts/sessions)
 
 <a name="workflow-definition-parameters"></a>
 
@@ -944,7 +970,7 @@ ms.locfileid: "88871468"
 }
 ```
 
-| Атрибут | Описание |
+| attribute | Описание |
 |-----------|-------------|
 | `token:clientId` | Идентификатор приложения или клиента, связанный с субъектом-службой. |
 | `token:clientSecret` | Значение ключа, связанное с субъектом-службой |
@@ -1251,7 +1277,7 @@ ms.locfileid: "88871468"
 }
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Создание шаблонов приложений логики](../logic-apps/logic-apps-create-azure-resource-manager-templates.md)

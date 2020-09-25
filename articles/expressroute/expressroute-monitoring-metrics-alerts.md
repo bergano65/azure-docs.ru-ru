@@ -7,12 +7,12 @@ ms.service: expressroute
 ms.topic: how-to
 ms.date: 08/25/2020
 ms.author: duau
-ms.openlocfilehash: fc83e5e8d14250ed163a56830311533144bbe344
-ms.sourcegitcommit: 5a3b9f35d47355d026ee39d398c614ca4dae51c6
+ms.openlocfilehash: 6f502b8ad8ac268cc937150f4effdf9edf8eef15
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89395440"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91252635"
 ---
 # <a name="expressroute-monitoring-metrics-and-alerts"></a>Мониторинг, метрики и оповещения в ExpressRoute
 
@@ -36,14 +36,14 @@ ms.locfileid: "89395440"
 |Доступность BGP|Доступность|<ui><li> Одноранговый (основной или дополнительный маршрутизатор ExpressRoute)</ui></li><ui><li> Тип пиринга</ui></li>|ExpressRoute|
 |BitsInPerSecond|Трафик|<ui><li> Тип пиринга (ExpressRoute)</ui></li><ui><li>Ссылка (с ExpressRoute Direct)</ui></li>|<li>ExpressRoute</li><li>ExpressRoute Direct|
 |BitsOutPerSecond|Трафик| <ui><li>Тип пиринга (ExpressRoute)</ui></li><ui><li> Ссылка (с ExpressRoute Direct) |<ui><li>ExpressRoute<ui><li>ExpressRoute Direct</ui></li> |
-|Загрузка ЦП|Производительность| <ui><li>Экземпляр</ui></li>|Шлюз виртуальной сети ExpressRoute|
-|Пакетов в секунду|Производительность| <ui><li>Экземпляр</ui></li>|Шлюз виртуальной сети ExpressRoute|
+|Загрузка ЦП|Производительность| <ui><li>Вхождение</ui></li>|Шлюз виртуальной сети ExpressRoute|
+|Пакетов в секунду|Производительность| <ui><li>Вхождение</ui></li>|Шлюз виртуальной сети ExpressRoute|
 |GlobalReachBitsInPerSecond|Трафик|<ui><li>Скэйная цепь (ключ службы)</ui></li>|Global Reach|
 |GlobalReachBitsOutPerSecond|Трафик|<ui><li>Скэйная цепь (ключ службы)</ui></li>|Global Reach|
 |AdminState|Физическое подключение|Ссылка|ExpressRoute Direct|
 |LineProtocol|Физическое подключение|Ссылка|ExpressRoute Direct|
-|RxLightLevel|Физическое подключение|<ui><li>Ссылку</ui></li><ui><li>Lane</ui></li>|ExpressRoute Direct|
-|TxLightLevel|Физическое подключение|<ui><li>Ссылку</ui></li><ui><li>Lane</ui></li>|ExpressRoute Direct|
+|RxLightLevel|Физическое подключение|<ui><li>Ссылка</ui></li><ui><li>Lane</ui></li>|ExpressRoute Direct|
+|TxLightLevel|Физическое подключение|<ui><li>Ссылка</ui></li><ui><li>Lane</ui></li>|ExpressRoute Direct|
 >[!NOTE]
 >Использование *глобалглобалреачбитсинперсеконд* и *глобалглобалреачбитсаутперсеконд* будет видимым, только если установлено хотя бы одно Global REACH соединение.
 >
@@ -154,6 +154,19 @@ ms.locfileid: "89395440"
 В раскрывающемся списке **Критерии оповещения** можно выбрать **Журнал действий** для определенного типа сигнала и указать сигнал.
 
 :::image type="content" source="./media/expressroute-monitoring-metrics-alerts/alertshowto6activitylog.jpg" alt-text="журналы действий":::
+
+## <a name="additional-metrics-in-log-analytics"></a>Дополнительные метрики в Log Analytics
+
+Метрики ExpressRoute также можно просмотреть, перейдя к ресурсу канала ExpressRoute и выбрав вкладку *журналы* . Для всех метрик, которые вы запрашиваете, выходные данные будут содержать следующие столбцы.
+
+|**Столбец**|**Тип**|**Описание**|
+| --- | --- | --- |
+|TimeGrain|строка|PT1M (значения метрик отправляются каждую минуту)|
+|Счетчик|real|Обычно равно 2 (каждый MSEE отправляет одно значение метрики каждую минуту).|
+|Минимальные|real|Минимальное из двух значений метрик, помещаемых двумя MSEE|
+|Максимум|real|Встраивания двух значений метрик, помещаемых двумя MSEE|
+|Среднее|real|Равно (минимум + максимум)/2|
+|Итог|real|Сумма двух значений метрики из обоих MSEE (основное значение, на которое нужно сосредоточиться для запрошенной метрики)|
   
 ## <a name="next-steps"></a>Дальнейшие действия
 

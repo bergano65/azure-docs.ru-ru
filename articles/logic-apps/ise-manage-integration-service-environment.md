@@ -6,12 +6,12 @@ ms.suite: integration
 ms.reviewer: estfan, jonfan, logicappspm
 ms.topic: conceptual
 ms.date: 04/29/2020
-ms.openlocfilehash: 41e511bce3599dd341ccf8192612e3f08111245a
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 41dc4e97e847e9e7d9863631cdb20b72d3f35d9b
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "82598425"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91269375"
 ---
 # <a name="manage-your-integration-service-environment-ise-in-azure-logic-apps"></a>Управление средой службы интеграции в Azure Logic Apps
 
@@ -122,7 +122,7 @@ ms.locfileid: "82598425"
    * [**Масштабирование вручную**](#manual-scale). масштабирование на основе числа единиц обработки, которые вы хотите использовать.
    * [**Настраиваемое Автомасштабирование**](#custom-autoscale): масштабирование на основе метрик производительности путем выбора из различных критериев и указания пороговых условий для удовлетворения этих условий.
 
-   ![Выберите нужный тип масштабирования](./media/ise-manage-integration-service-environment/select-scale-out-options.png)
+   ![Снимок экрана, на котором показана страница "горизонтальное масштабирование" с выбранным параметром "масштабировать вручную".](./media/ise-manage-integration-service-environment/select-scale-out-options.png)
 
 <a name="manual-scale"></a>
 
@@ -136,7 +136,7 @@ ms.locfileid: "82598425"
 
 <a name="custom-autoscale"></a>
 
-### <a name="custom-autoscale"></a>Настраиваемое Автомасштабирование
+### <a name="custom-autoscale"></a>Пользовательское автомасштабирование
 
 1. После выбора параметра **Настраиваемый Автомасштабирование**в **поле Имя параметров автомасштабирования**укажите имя для параметра и при необходимости выберите группу ресурсов Azure, в которой он указан.
 

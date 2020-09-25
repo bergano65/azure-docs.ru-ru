@@ -1,6 +1,6 @@
 ---
 title: Установка обновлений на виртуальный массив StorSimple | Документация Майкрософт
-description: В этой статье объясняется, как установить обновления на виртуальный массив StorSimple с помощью локального пользовательского веб-интерфейса и портала Azure.
+description: Описывает, как использовать веб-интерфейс виртуального массива StorSimple для применения обновления 0,4 с помощью метода портал Azure и горячего исправления.
 services: storsimple
 documentationcenter: NA
 author: alkohli
@@ -14,12 +14,12 @@ ms.tgt_pltfrm: NA
 ms.workload: TBD
 ms.date: 02/07/2017
 ms.author: alkohli
-ms.openlocfilehash: f68abf6315c1ca344f90dec55bf8cdc813e58823
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 529b93e7754df7aa0a981f4389108b8f53b4be2f
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85513694"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91300570"
 ---
 # <a name="install-update-04-on-your-storsimple-virtual-array"></a>Установка обновления 0.4 на виртуальный массив StorSimple
 
@@ -106,7 +106,7 @@ ms.locfileid: "85513694"
 После окончания установки (об этом свидетельствует состояние задания "100 %") перейдите к службе диспетчера устройств StorSimple. Перейдите к **устройствам** и в списке устройств, подключенных к службе, выберите то, которое требуется обновить. В колонке **Параметры** щелкните **Управление** и выберите **Обновления устройства**. Отображаемая версия программного обеспечения должна быть следующей: **10.0.10289.0**.
 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения см. в статье [Использование пользовательского веб-интерфейса для администрирования виртуального массива StorSimple](storsimple-ova-web-ui-admin.md).
 

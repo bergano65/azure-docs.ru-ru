@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: article
 ms.date: 01/16/2020
 ms.author: Zhchia
-ms.openlocfilehash: 0c3d68698621fe963074c7216e4636208d93deca
-ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
+ms.openlocfilehash: 7efe58081604708ff090d28f7274c738406c5007
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88543879"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91255929"
 ---
 # <a name="tutorial-configure-oracle-cloud-infrastructure-console-for-automatic-user-provisioning"></a>Руководство. Настройка консоли облачной инфраструктуры Oracle для автоматической подготовки пользователей
 
@@ -100,11 +100,11 @@ ms.locfileid: "88543879"
 
 3. Выберите вкладку **Подготовка**.
 
-    ![Вкладка "Подготовка"](common/provisioning.png)
+    ![Снимок экрана параметров управления с вызываемым параметром подготовки.](common/provisioning.png)
 
 4. Для параметра **Режим подготовки к работе** выберите значение **Automatic** (Автоматически).
 
-    ![Вкладка "Подготовка"](common/provisioning-automatic.png)
+    ![Снимок экрана: раскрывающийся список режима подготовки с вызываемым автоматическим параметром.](common/provisioning-automatic.png)
 
 5. В разделе **учетные данные администратора** введите **URL-адрес клиента** в формате `https://<IdP ID>.identity.oraclecloud.com/admin/v1` . Например, `https://idcs-0bfd023ff2xx4a98a760fa2c31k92b1d.identity.oraclecloud.com/admin/v1`. Введите значение секретного токена, полученное ранее на шаге **Секретный токен**. Нажмите кнопку **проверить подключение** , чтобы убедиться, что Azure AD может подключиться к консоли облачной инфраструктуры Oracle. В случае сбоя подключения убедитесь, что учетная запись консоли облачной инфраструктуры Oracle имеет разрешения администратора, и повторите попытку.
 
@@ -142,8 +142,8 @@ ms.locfileid: "88543879"
       |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:division|Строка|
       |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:manager|Справочник|
       |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:organization|Строка|
-      |urn: IETF: params: scim: схемы: Oracle: идкс: Extension: пользователь: пользователь: Бипасснотификатион|Логическое значение|
-      |urn: IETF: params: scim: схемы: Oracle: идкс: Extension: пользователь: пользователь: Исфедератедусер|Логическое значение|
+      |urn: IETF: params: scim: схемы: Oracle: идкс: Extension: пользователь: пользователь: Бипасснотификатион|Логическое|
+      |urn: IETF: params: scim: схемы: Oracle: идкс: Extension: пользователь: пользователь: Исфедератедусер|Логическое|
 
 10. В разделе **сопоставления** выберите **синхронизировать Azure Active Directory группы с консолью облачной инфраструктуры Oracle**.
 

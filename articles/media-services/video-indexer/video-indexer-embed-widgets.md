@@ -10,13 +10,13 @@ ms.subservice: video-indexer
 ms.topic: article
 ms.date: 08/10/2020
 ms.author: juliako
-ms.custom: devx-track-javascript
-ms.openlocfilehash: 5f418384d4ec1272600df2488dc71d2102d6a24d
-ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
+ms.custom: devx-track-js
+ms.openlocfilehash: 1bc751ae293abbb7aa330a99a4b66a917d150906
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89011809"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91268627"
 ---
 # <a name="embed-video-indexer-widgets-in-your-apps"></a>Внедрение графических мини-приложений индексатора видео в приложения
 
@@ -34,7 +34,7 @@ ms.locfileid: "89011809"
 |---|---|---|
 |`widgets` | Строки, разделенные запятыми. | Позволяет управлять аналитическими сведениями, которые необходимо визуализировать.<br/>Пример: `https://www.videoindexer.ai/embed/insights/<accountId>/<videoId>/?widgets=people,keywords` визуализирует только пользователей и ключевые слова UI Insights.<br/>Доступные варианты: люди, Аниматедчарактерс, ключевые слова, метки, тональности, эмоции, темы, опорные кадры, транскрипция, OCR, динамики, сцены и Намедентитиес.|
 |`controls`|Строки, разделенные запятыми.|Позволяет управлять элементами управления, которые необходимо визуализировать.<br/>Пример: `https://www.videoindexer.ai/embed/insights/<accountId>/<videoId>/?controls=search,download` отображает только параметры поиска и кнопку Скачать.<br/>Доступные параметры: Поиск, скачивание, предустановка, язык.|
-|`language`|Короткий код языка (имя языка)|Язык управления аналитикой.<br/>Пример: `https://www.videoindexer.ai/embed/insights/<accountId>/<videoId>/?language=es-es` <br/>или `https://www.videoindexer.ai/embed/insights/<accountId>/<videoId>/?language=spanish`|
+|`language`|Короткий код языка (имя языка)|Язык управления аналитикой.<br/>Например, `https://www.videoindexer.ai/embed/insights/<accountId>/<videoId>/?language=es-es`. <br/>или `https://www.videoindexer.ai/embed/insights/<accountId>/<videoId>/?language=spanish`|
 |`locale` | Короткий код языка | Управляет языком пользовательского интерфейса. Значение по умолчанию — `en`. <br/>Например, `locale=de`.|
 |`tab` | Выбранная по умолчанию вкладка | Управляет вкладкой **Insights** , которая отображается по умолчанию. <br/>Пример: `tab=timeline` подготавливает аналитику к выбранной вкладке **временной шкалы** .|
 |`location` ||`location`Параметр должен быть включен во внедренные ссылки. см. раздел [как получить имя вашего региона](regions.md). Если ваша учетная запись находится на этапе предварительной версии, `trial` следует использовать для значения Location. `trial` значение по умолчанию для `location` параметра.| 
@@ -70,7 +70,7 @@ ms.locfileid: "89011809"
 
 В этом разделе обсуждается внедрение открытого и закрытого содержимого в приложения.
 
-`location`Параметр должен быть включен во внедренные ссылки. см. раздел [как получить имя вашего региона](regions.md). Если ваша учетная запись находится на этапе предварительной версии, `trial` следует использовать для значения Location. `trial` значение по умолчанию для `location` параметра. Например: `https://www.videoindexer.ai/accounts/00000000-0000-0000-0000-000000000000/videos/b2b2c74b8e/?location=trial`.
+`location`Параметр должен быть включен во внедренные ссылки. см. раздел [как получить имя вашего региона](regions.md). Если ваша учетная запись находится на этапе предварительной версии, `trial` следует использовать для значения Location. `trial` значение по умолчанию для `location` параметра. Например, так: `https://www.videoindexer.ai/accounts/00000000-0000-0000-0000-000000000000/videos/b2b2c74b8e/?location=trial`.
 
 > [!IMPORTANT]
 > Совместное использование ссылки на мини-приложение **Player** или **Insights** будет включать маркер доступа и предоставлять учетной записи разрешения только для чтения.

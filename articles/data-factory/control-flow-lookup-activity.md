@@ -10,13 +10,13 @@ ms.reviewer: douglasl
 ms.service: data-factory
 ms.workload: data-services
 ms.topic: conceptual
-ms.date: 09/09/2020
-ms.openlocfilehash: e75921e5ee5b148d81c637800f46403d3d410f42
-ms.sourcegitcommit: f845ca2f4b626ef9db73b88ca71279ac80538559
+ms.date: 09/23/2020
+ms.openlocfilehash: fd345f0eed5bd7140047b12a3c1a7471872c8bb7
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/09/2020
-ms.locfileid: "89613478"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91270446"
 ---
 # <a name="lookup-activity-in-azure-data-factory"></a>Действие поиска в фабрике данных Azure
 
@@ -31,7 +31,7 @@ ms.locfileid: "89613478"
 
 Для действия поиска поддерживаются следующие источники данных. 
 
-Действие поиска может возвращать до 5000 строк. Если результирующий набор содержит больше записей, будут возвращены первые 5000 строк. Выходные данные действия поиска поддерживают до 2 МБ памяти. Если размер превышает установленный предел, действие завершится ошибкой. Сейчас максимальная продолжительность действия поиска до истечения времени составляет один час.
+Действие поиска может возвращать до 5000 строк. Если результирующий набор содержит больше записей, будут возвращены первые 5000 строк. Выходные данные действия поиска поддерживают до 4 МБ в размере. Если размер превышает ограничение, действие завершится ошибкой. Сейчас максимальная продолжительность действия поиска до истечения времени составляет один час.
 
 [!INCLUDE [data-factory-v2-supported-data-stores](../../includes/data-factory-v2-supported-data-stores-for-lookup-activity.md)]
 

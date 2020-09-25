@@ -11,12 +11,12 @@ ms.topic: how-to
 ms.date: 06/08/2020
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: 840d2afa72de290d5534adc766f8634efa6926e8
-ms.sourcegitcommit: 1e6c13dc1917f85983772812a3c62c265150d1e7
+ms.openlocfilehash: 953653a758577ed3d48ca2d81403b4cb363ea294
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/09/2020
-ms.locfileid: "86170060"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91259074"
 ---
 # <a name="integrating-twilio-verify-app-with-azure-active-directory-b2c"></a>Интеграция Twilio проверка приложения с Azure Active Directory B2C
 
@@ -34,8 +34,8 @@ ms.locfileid: "86170060"
 
 Решение Twilio состоит из следующих компонентов:
 
-- Демонстрационное веб-приложение .NET PSD2, которое предоставляет возможность входа или регистрации и выполнения фиктивной транзакции с высоким риском.
-- Azure AD B2C объединенную политику входа и регистрации.
+- [Демонстрационное веб-приложение .NET PSD2](https://github.com/azure-ad-b2c/partner-integrations/tree/master/samples/Twilio-VerifyAPI/source-code/PSD2%20Demo%20App), которое предоставляет возможность входа или регистрации и выполнения фиктивной транзакции с высоким риском.
+- Azure AD B2C объединенную [политику входа и регистрации](https://github.com/azure-ad-b2c/partner-integrations/tree/master/samples/Twilio-VerifyAPI/policy).
 - Azure AD B2Cная политика, интегрированная с API Twilio для проверки с помощью `id_token_hint` .
 - Веб-приложение .NET, которое размещает `.well-known` конечную точку OpenIdConnect, чтобы разрешить проверку `id_token_hint` .
 
@@ -73,7 +73,7 @@ ms.locfileid: "86170060"
    <add key="ida:RedirectUri" value="https://your hosted psd2 demo app url/" />
    ```
 
-2. В веб-приложении также размещается генератор указания маркера идентификации и конечная точка метаданных.
+2. В [веб-приложении](https://github.com/azure-ad-b2c/partner-integrations/tree/master/samples/Twilio-VerifyAPI/source-code/PSD2%20Demo%20App) также размещается генератор указания маркера идентификации и конечная точка метаданных.
    - Создайте сертификат для подписи, как описано в описании этого [образца](https://github.com/azure-ad-b2c/samples/tree/master/policies/invite#creating-a-signing-certificate).
    - Обновите следующие строки на основе сертификата в web.config:
    
@@ -86,7 +86,7 @@ ms.locfileid: "86170060"
 
 4. Обновите регистрацию приложения Azure AD B2C, добавив URL-адрес ответа, эквивалентный URL-адресу, по которому размещено приложение.
 
-5. Откройте файлы политики и замените все экземпляры  `contoso` именем своего клиента.
+5. Откройте [файлы политики](https://github.com/azure-ad-b2c/partner-integrations/tree/master/samples/Twilio-VerifyAPI/policy) и замените все экземпляры  `contoso` именем своего клиента.
 
 6. Найдите Twilio REST API технический профиль **Custom-SMS-регистрация**. Обновите  `ServiceURL`   с помощью Twilio AccountSID и номера отсчета на приобретенный номер телефона.
 
@@ -116,7 +116,7 @@ ms.locfileid: "86170060"
 
 * Перейдите к приложению и протестируйте действия входа, регистрации и отправки денег.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения см. в следующих статьях:
 

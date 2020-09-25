@@ -6,14 +6,14 @@ author: memildin
 manager: rkarlin
 ms.service: security-center
 ms.topic: conceptual
-ms.date: 03/13/2020
+ms.date: 09/13/2020
 ms.author: memildin
-ms.openlocfilehash: cf8fdd8d91c035d374277c4752fb761c0c4e72c7
-ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
+ms.openlocfilehash: 416968229e37fe6474da38df5402b0cebf02d54c
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "90905619"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91301981"
 ---
 # <a name="export-security-alerts-and-recommendations"></a>Экспорт оповещений о безопасности и рекомендаций
 
@@ -31,7 +31,7 @@ ms.locfileid: "90905619"
 
 ## <a name="availability"></a>Доступность
 
-|Аспект|Подробнее|
+|Аспект|Подробности|
 |----|:----|
 |Состояние выпуска:|Общедоступная версия (GA)|
 |Цены|Free|
@@ -187,6 +187,6 @@ Azure Monitor предоставляет унифицированный инте
 Связанные материалы см. в следующей документации: 
 
 - [Документация по Центрам событий Azure](https://docs.microsoft.com/azure/event-hubs/)
-- [Документация по Azure Sentinel](https://docs.microsoft.com/azure/sentinel/)
+- [Документация Azure Sentinel](https://docs.microsoft.com/azure/sentinel/)
 - [Документация по Azure Monitor](https://docs.microsoft.com/azure/azure-monitor/)
 - [Схемы автоматизации рабочих процессов и непрерывного экспорта типов данных](https://aka.ms/ASCAutomationSchemas)

@@ -8,15 +8,15 @@ ms.service: active-directory
 ms.subservice: develop
 ms.topic: conceptual
 ms.workload: identity
-ms.date: 08/08/2020
+ms.date: 09/19/2020
 ms.author: jmprieur
 ms.custom: aaddev, devx-track-python
-ms.openlocfilehash: ad5c2ad76f9ab98a6ad284a0bb50f3a611dc9a00
-ms.sourcegitcommit: 4913da04fd0f3cf7710ec08d0c1867b62c2effe7
+ms.openlocfilehash: 8e065651a5527c0ab425614197ce128325454942
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88206028"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91257679"
 ---
 # <a name="daemon-app-that-calls-web-apis---code-configuration"></a>Управляющее приложение, вызывающее веб-API — конфигурация кода
 
@@ -51,16 +51,13 @@ ms.locfileid: "88206028"
 
 Файл конфигурации определяет:
 
-- Центр или облачный экземпляр и идентификатор клиента.
+- Облачный экземпляр и идентификатор клиента, которые вместе образуют *центр*.
 - Идентификатор клиента, полученный при регистрации приложения.
 - Секрет клиента или сертификат.
 
-> [!NOTE]
-> Фрагменты кода .NET в оставшейся части статьи эталонная [Конфигурация](https://github.com/Azure-Samples/active-directory-dotnetcore-daemon-v2/blob/master/1-Call-MSGraph/daemon-console/AuthenticationConfig.cs) из образца [Active-Directory-команда dotnetcore-DAEMON-v2](https://github.com/Azure-Samples/active-directory-dotnetcore-daemon-v2) .
-
 # <a name="net"></a>[.NET](#tab/dotnet)
 
-В примере [консоли .NET Core](https://github.com/Azure-Samples/active-directory-dotnetcore-daemon-v2) [appsettings.json](https://github.com/Azure-Samples/active-directory-dotnetcore-daemon-v2/blob/master/1-Call-MSGraph/daemon-console/appsettings.json) .
+Ниже приведен пример определения конфигурации в [*appsettings.js*](https://github.com/Azure-Samples/active-directory-dotnetcore-daemon-v2/blob/master/1-Call-MSGraph/daemon-console/appsettings.json) файла. Этот пример взят из примера кода [управляющей программы консоли .NET Core](https://github.com/Azure-Samples/active-directory-dotnetcore-daemon-v2) на сайте GitHub.
 
 ```json
 {
@@ -124,9 +121,9 @@ ms.locfileid: "88206028"
 
 # <a name="net"></a>[.NET](#tab/dotnet)
 
-Добавьте пакет NuGet [Microsoft. идентитиклиент](https://www.nuget.org/packages/Microsoft.Identity.Client) в приложение.
+Добавьте в приложение пакет NuGet [Microsoft. Identity. Client](https://www.nuget.org/packages/Microsoft.Identity.Client) , а затем добавьте `using` в код директиву для ссылки на него.
+
 В MSAL.NET конфиденциальное клиентское приложение представлено `IConfidentialClientApplication` интерфейсом.
-Используйте пространство имен MSAL.NET в исходном коде.
 
 ```csharp
 using Microsoft.Identity.Client;
@@ -167,6 +164,23 @@ app = ConfidentialClientApplicationBuilder.Create(config.ClientId)
            .WithClientSecret(config.ClientSecret)
            .WithAuthority(new Uri(config.Authority))
            .Build();
+```
+
+`Authority`— Это объединение облачного экземпляра и идентификатора клиента, например `https://login.microsoftonline.com/contoso.onmicrosoft.com` или `https://login.microsoftonline.com/eb1ed152-0000-0000-0000-32401f3f9abd` . В файле *appsettings.js* , показанном в разделе [файл конфигурации](#configuration-file) , они представлены `Instance` `Tenant` значениями и соответственно.
+
+В образце кода, взятом из предыдущего фрагмента, `Authority` является свойством класса  [аусентикатионконфиг](https://github.com/Azure-Samples/active-directory-dotnetcore-daemon-v2/blob/ffc4a9f5d9bdba5303e98a1af34232b434075ac7/1-Call-MSGraph/daemon-console/AuthenticationConfig.cs#L61-L70) и определяется следующим образом:
+
+```csharp
+/// <summary>
+/// URL of the authority
+/// </summary>
+public string Authority
+{
+    get
+    {
+        return String.Format(CultureInfo.InvariantCulture, Instance, Tenant);
+    }
+}
 ```
 
 # <a name="python"></a>[Python](#tab/python)
@@ -334,7 +348,7 @@ ConfidentialClientApplication cca =
 
 ---
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 # <a name="net"></a>[.NET](#tab/dotnet)
 

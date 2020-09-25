@@ -1,6 +1,6 @@
 ---
 title: Настройка поведения сеанса — Azure Active Directory B2C | Документация Майкрософт
-description: Настройка поведения сеанса в Azure Active Directory B2C.
+description: Узнайте, как настроить поведение сеанса в Azure Active Directory B2C.
 services: active-directory-b2c
 author: msmimart
 manager: celestedg
@@ -10,12 +10,12 @@ ms.topic: how-to
 ms.date: 07/30/2020
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: c47b0249824a3683b8f24cc01cc5eea5ccf32585
-ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
+ms.openlocfilehash: f2d6d00ea06bb362d82b5fbdff658b729eed17cd
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/31/2020
-ms.locfileid: "87482674"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91258990"
 ---
 # <a name="configure-session-behavior-in-azure-active-directory-b2c"></a>Настройка поведения сеанса в Azure Active Directory B2C
 
@@ -35,7 +35,7 @@ ms.locfileid: "87482674"
 
 ## <a name="configure-the-properties"></a>Настройка свойств
 
-1. Войдите на [портал Microsoft Azure](https://portal.azure.com).
+1. Войдите на [портал Azure](https://portal.azure.com).
 2. Убедитесь, что вы используете каталог, содержащий клиент Azure AD B2C, выбрав фильтр " **каталог и подписка** " в верхнем меню и выбрав Каталог, содержащий ваш клиент Azure AD B2C.
 3. Выберите **Все службы** в левом верхнем углу окна портала Azure, а затем найдите и выберите **Azure AD B2C**.
 4. Выберите **Потоки пользователей**.

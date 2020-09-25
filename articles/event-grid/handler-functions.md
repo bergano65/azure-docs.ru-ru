@@ -2,13 +2,13 @@
 title: Использование функции Azure как обработчика событий Сетки событий Azure
 description: Узнайте, как можно использовать функции Azure в качестве обработчиков событий Сетки событий Azure.
 ms.topic: conceptual
-ms.date: 07/07/2020
-ms.openlocfilehash: 8e48949bb5fecdf370fdf23146209ad757ffa062
-ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
+ms.date: 09/18/2020
+ms.openlocfilehash: 87aeb78729dcc7bec9f193fab389e5c0952e63d5
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86105767"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91270336"
 ---
 # <a name="azure-function-as-an-event-handler-for-event-grid-events"></a>Использование функции Azure как обработчика событий Сетки событий
 
@@ -39,14 +39,40 @@ ms.locfileid: "86105767"
             "properties": 
             {
                 "resourceId": "/subscriptions/<AZURE SUBSCRIPTION ID>/resourceGroups/<RESOURCE GROUP NAME>/providers/Microsoft.Web/sites/<FUNCTION APP NAME>/functions/<FUNCTION NAME>",
-                "maxEventsPerBatch": 1,
-                "preferredBatchSizeInKilobytes": 64
+                "maxEventsPerBatch": 10,
+                "preferredBatchSizeInKilobytes": 6400
             }
         },
         "eventDeliverySchema": "EventGridSchema"
     }
 }
 ```
+
+## <a name="enable-batching"></a>Включить пакетную обработку
+Для более высокой пропускной способности включите пакетную обработку в подписке. При использовании портал Azure можно задать максимальное количество событий в пакете и предпочтительный размер пакета в килобайтах байт во время создания подписки или после ее создания. 
+
+Параметры пакетной службы можно настроить с помощью шаблона портал Azure, PowerShell, CLI или диспетчер ресурсов. 
+
+### <a name="azure-portal"></a>Портал Azure
+Когда вы создаете подписку в пользовательском интерфейсе, на странице **Создание подписки на события** перейдите на вкладку **Дополнительные функции** и задайте для параметра **Максимальное число событий в пакете** и **предпочтительный размер пакета в килобайтах**. 
+    
+:::image type="content" source="./media/custom-event-to-function/enable-batching.png" alt-text="Включить пакетную обработку во время создания подписки":::
+
+Вы можете обновить эти значения для существующей подписки на вкладке " **функции** " страницы **раздела "Сетка событий** ". 
+
+:::image type="content" source="./media/custom-event-to-function/features-batch-settings.png" alt-text="Включить пакетную обработку после создания":::
+
+### <a name="azure-resource-manager-template"></a>Шаблон Azure Resource Manager
+**Максевентспербатч** и **преферредбатчсизеинкилобитес** можно задать в шаблоне Azure Resource Manager. Дополнительные сведения см. в [справочнике по шаблонам Microsoft. EventGrid eventSubscriptions](https://docs.microsoft.com/azure/templates/microsoft.eventgrid/eventsubscriptions).
+
+### <a name="azure-cli"></a>Azure CLI
+Для настройки параметров, связанных с пакетной службой, можно использовать команду [AZ eventgrid Event-Subscription Create](https://docs.microsoft.com/cli/azure/eventgrid/event-subscription?view=azure-cli-latest#az_eventgrid_event_subscription_create&preserve-view=true) или [AZ eventgrid Event-Subscription Update](https://docs.microsoft.com/cli/azure/eventgrid/event-subscription?view=azure-cli-latest#az_eventgrid_event_subscription_update&preserve-view=true) . для этого используйте следующие параметры: `--max-events-per-batch` или `--preferred-batch-size-in-kilobytes` .
+
+### <a name="azure-powershell"></a>Azure PowerShell
+С помощью командлета [New-азевентгридсубскриптион](https://docs.microsoft.com/powershell/module/az.eventgrid/new-azeventgridsubscription) или [Update-азевентгридсубскриптион](https://docs.microsoft.com/powershell/module/az.eventgrid/update-azeventgridsubscription) можно настроить параметры, связанные с пакетной службой, используя следующие параметры: `-MaxEventsPerBatch` или `-PreferredBatchSizeInKiloBytes` .
+
+> [!NOTE]
+> Доставка событий в функцию Azure в **другом клиенте** не поддерживается. 
 
 ## <a name="next-steps"></a>Дальнейшие действия
 См. список поддерживаемых обработчиков событий в статье [Обработчики событий](event-handlers.md). 

@@ -3,59 +3,18 @@ title: Обратимое удаление для SQL Server на виртуал
 description: Узнайте, как обратимое удаление для SQL Server на виртуальной машине Azure и SAP HANA в рабочих нагрузках виртуальных машин Azure делает резервные копии более безопасными.
 ms.topic: conceptual
 ms.date: 04/27/2020
-ms.openlocfilehash: 26525ec758b3a27d6e0e1b9754b11041bd1fa0d2
-ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
+ms.openlocfilehash: 2a442997d426ff0bf4c74b0b45f7657cc0593b82
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89022298"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91254301"
 ---
 # <a name="soft-delete-for-sql-server-in-azure-vm-and-sap-hana-in-azure-vm-workloads"></a>Обратимое удаление для SQL Server на виртуальной машине Azure и SAP HANA в рабочих нагрузках виртуальных машин Azure
 
 Azure Backup теперь обеспечивает обратимое удаление для SQL Server на виртуальной машине Azure и SAP HANA в рабочих нагрузках виртуальных машин Azure. Это дополнение к уже поддерживаемому [сценарию обратимого удаления виртуальной машины Azure](soft-delete-virtual-machines.md).
 
 [Обратимое удаление](backup-azure-security-feature-cloud.md) — это функция безопасности, позволяющая защитить данные резервных копий даже после удаления. При обратимом удалении, даже если вредоносный субъект удаляет резервную копию базы данных (или данные резервной копии случайно удаляются), данные резервной копии сосохранены в течение 14 дополнительных дней. Это позволяет восстановить этот элемент резервного копирования без потери данных. Это дополнительное хранение данных резервных копий в течение 14 дней в состоянии "обратимого" удаления не влечет за собой никаких затрат на клиент.
-
->[!NOTE]
->После включения предварительной версии для подписки невозможно отключить обратимое удаление только для SQL Server или SAP HANA баз данных, сохранив его для виртуальных машин в том же хранилище. Для детального управления можно создавать отдельные хранилища.
-
-## <a name="steps-to-enroll-in-preview"></a>Действия для регистрации в предварительной версии
-
-1. Войдите в учетную запись Azure.
-
-   ```powershell
-   Login-AzureRmAccount
-   ```
-
-2. Выберите подписку, которую вы хотите зарегистрировать в предварительной версии:
-
-   ```powershell
-   Get-AzureRmSubscription –SubscriptionName "Subscription Name" | Select-AzureRmSubscription
-   ```
-
-3. Зарегистрируйте эту подписку в программе предварительной версии:
-
-   ```powershell
-   Register-AzureRMProviderFeature -FeatureName WorkloadBackupSoftDelete -ProviderNamespace Microsoft.RecoveryServices
-   ```
-
-4. Подождите 30 минут, пока подписка не будет зарегистрирована в предварительной версии.
-
-5. Чтобы проверить состояние, выполните следующие командлеты:
-
-   ```powershell
-   Get-AzureRmProviderFeature -FeatureName WorkloadBackupSoftDelete -ProviderNamespace Microsoft.RecoveryServices
-   ```
-
-6. После того как подписка отобразится как зарегистрированная, выполните следующую команду:
-
-   ```powershell
-   Register-AzureRmResourceProvider -ProviderNamespace Microsoft.RecoveryServices
-   ```
-
->[!NOTE]
->Каждый раз, когда в подписке с поддержкой обратимого удаления создаются новые хранилища или хранилища, необходимо повторно запустить следующую команду, чтобы включить эту функцию для вновь созданных хранилищ.<BR>
-> `Register-AzureRmResourceProvider -ProviderNamespace Microsoft.RecoveryServices`
 
 ## <a name="soft-delete-for-sql-server-in-azure-vm-using-azure-portal"></a>Обратимое удаление для SQL Server на виртуальной машине Azure с помощью портал Azure
 

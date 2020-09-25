@@ -7,12 +7,12 @@ ms.service: postgresql
 ms.subservice: hyperscale-citus
 ms.topic: reference
 ms.date: 08/10/2020
-ms.openlocfilehash: eaada1981929cec890ce3c8ca89fe47393730b05
-ms.sourcegitcommit: 1aef4235aec3fd326ded18df7fdb750883809ae8
+ms.openlocfilehash: 16c3a45e0d88a0546772b3fdc855c90f2e450d14
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/12/2020
-ms.locfileid: "88137026"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91250337"
 ---
 # <a name="functions-in-the-hyperscale-citus-sql-api"></a>Функции в API SQL для масштабирования (Цитус)
 
@@ -20,7 +20,7 @@ ms.locfileid: "88137026"
 
 > [!NOTE]
 >
-> Группы серверов масштаба, работающие в более старых версиях Цитус Engine, могут не предлагать все перечисленные ниже функции.
+> Группы серверов масштаба (Цитус), работающие под управлением старых версий подсистемы Цитус, могут не предлагать все перечисленные ниже функции.
 
 ## <a name="table-and-shard-ddl"></a>DDL таблиц и сегментов
 
@@ -363,7 +363,7 @@ pg_size_pretty
 
 #### <a name="return-value"></a>Возвращаемое значение
 
-Нет
+None
 
 ## <a name="server-group-management-and-repair"></a>Управление группами серверов и восстановление
 
@@ -735,7 +735,7 @@ SELECT isolate_tenant_to_new_shard('lineitem', 135);
 └─────────────────────────────┘
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Многие из функций, описанных в этой статье, изменяют системные [таблицы метаданных](reference-hyperscale-metadata.md) .
 * [Параметры сервера](reference-hyperscale-parameters.md) Настройка поведения некоторых функций

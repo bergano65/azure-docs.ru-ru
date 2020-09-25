@@ -1,6 +1,6 @@
 ---
 title: Вызов веб-API из управляющего приложения — платформа Microsoft Identity | Службы
-description: Узнайте, как создать управляющее приложение, вызывающее веб-API
+description: Узнайте, как создать управляющее приложение, вызывающее веб-API.
 services: active-directory
 author: jmprieur
 manager: CelesteDG
@@ -11,12 +11,12 @@ ms.workload: identity
 ms.date: 10/30/2019
 ms.author: jmprieur
 ms.custom: aaddev
-ms.openlocfilehash: 7319aacabd2c479c578fbb71ae0bc9fbb2dee9f2
-ms.sourcegitcommit: b8702065338fc1ed81bfed082650b5b58234a702
+ms.openlocfilehash: 576eaf2ad9350651e4400d980e6fedce236dfa57
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/11/2020
-ms.locfileid: "88119136"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91257611"
 ---
 # <a name="daemon-app-that-calls-web-apis---call-a-web-api-from-the-app"></a>Управляющее приложение, вызывающее веб-API — вызов веб-API из приложения
 

@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: article
 ms.date: 07/26/2019
 ms.author: zhchia
-ms.openlocfilehash: 5959ccd2699ef1162779a4a1d90ab6bb8af1bbbf
-ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
+ms.openlocfilehash: 0a72ea413e7298c8e6cb622cb985e6516435b451
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88544855"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91255874"
 ---
 # <a name="tutorial-configure-theorgwiki-for-automatic-user-provisioning"></a>Учебник. Настройка Сеоргвики для автоматической подготовки пользователей
 
@@ -55,23 +55,23 @@ ms.locfileid: "88544855"
 
 1. Войдите в [консоль администратора сеоргвики](https://www.theorgwiki.com/login/). Щелкните **консоль администрирования**.
 
-    ![Сеоргвики добавить SCIM](media/theorgwiki-provisioning-tutorial/login.png)
+    ![Снимок экрана вики-сайта Организации с именем аватара пользователя и консолью администрирования.](media/theorgwiki-provisioning-tutorial/login.png)
 
 2. В консоли администрирования щелкните **вкладку Параметры**. 
 
-    ![Сеоргвики добавить SCIM](media/theorgwiki-provisioning-tutorial/settings.png)
+    ![Снимок экрана консоли администрирования вики-сайта Организации с вызываемой вкладкой "Параметры".](media/theorgwiki-provisioning-tutorial/settings.png)
     
 3. Перейдите к разделу **учетные записи служб**.
 
-    ![Сеоргвики добавить SCIM](media/theorgwiki-provisioning-tutorial/serviceaccount.png)
+    ![Снимок экрана: страница "учетные записи службы" в консоли администрирования "вики-сайт".](media/theorgwiki-provisioning-tutorial/serviceaccount.png)
 
-4. Щелкните **+ учетная запись службы**. В разделе **тип учетной записи службы**выберите **токен на основе маркеров**. Нажмите **Сохранить**.
+4. Щелкните **+ учетная запись службы**. В разделе **тип учетной записи службы**выберите **токен на основе маркеров**. Выберите команду **Сохранить**.
 
-    ![Сеоргвики добавить SCIM](media/theorgwiki-provisioning-tutorial/auth.png)
+    ![Снимок экрана: диалоговое окно создания учетной записи службы с вызываемыми параметрами "тип учетной записи службы", "на основе токена" и "Сохранить".](media/theorgwiki-provisioning-tutorial/auth.png)
 
 5.  Скопируйте **Активные токены**. Это значение будет указано в поле Секретный токен на вкладке Подготовка приложения Сеоргвики в портал Azure.
      
-    ![Сеоргвики добавить SCIM](media/theorgwiki-provisioning-tutorial/token.png)
+    ![Снимок экрана с диалоговым окном "Управление токенами" для "a I M".](media/theorgwiki-provisioning-tutorial/token.png)
 
 ## <a name="add-theorgwiki-from-the-gallery"></a>Добавление Сеоргвики из коллекции
 
@@ -95,15 +95,15 @@ ms.locfileid: "88544855"
 
 5. Выберите кнопку **Регистрация для сеоргвики** , которая перенаправит вас на страницу входа сеоргвики. 
 
-    ![Сеоргвики добавить SCIM](media/theorgwiki-provisioning-tutorial/image00.png)
+    ![Снимок экрана со страницей входа вики-сайта Организации с вызываемым URL](media/theorgwiki-provisioning-tutorial/image00.png)
 
 6.  В правом верхнем углу выберите **имя входа**.
 
-    ![Сеоргвики добавить SCIM](media/theorgwiki-provisioning-tutorial/image02.png)
+    ![Снимок экрана: правый верхний угол страницы входа с вызываемым параметром "вход".](media/theorgwiki-provisioning-tutorial/image02.png)
 
 7. Так как Сеоргвики — это приложение OpenIDConnect, выберите вход в Оргвики с помощью рабочей учетной записи Майкрософт.
 
-    ![Сеоргвики добавить SCIM](media/theorgwiki-provisioning-tutorial/image03.png)
+    ![Снимок экрана со страницей входа на вики-сайт Организации с вызываемым параметром Войдите с помощью учетной записи Майкрософт.](media/theorgwiki-provisioning-tutorial/image03.png)
     
 8. После успешной проверки подлинности приложение будет автоматически добавлено в клиент, и вы будете перенаправлены в учетную запись Сеоргвики.
 
@@ -126,11 +126,11 @@ ms.locfileid: "88544855"
 
 3. Выберите вкладку **Подготовка**.
 
-    ![Вкладка "Подготовка"](common/provisioning.png)
+    ![Снимок экрана параметров управления с вызываемым параметром подготовки.](common/provisioning.png)
 
 4. Для параметра **Режим подготовки к работе** выберите значение **Automatic** (Автоматически).
 
-    ![Вкладка "Подготовка"](common/provisioning-automatic.png)
+    ![Снимок экрана: раскрывающийся список режима подготовки с вызываемым автоматическим параметром.](common/provisioning-automatic.png)
 
 5. В разделе **учетные данные администратора** введите `https://<TheOrgWiki Subdomain        value>.theorgwiki.com/api/v2/scim/v2/` **URL-адрес клиента**. 
 
@@ -147,7 +147,7 @@ ms.locfileid: "88544855"
 
     ![Почтовое уведомление](common/provisioning-notification-email.png)
 
-8. Нажмите **Сохранить**.
+8. Выберите команду **Сохранить**.
 
 9. В разделе **сопоставления** выберите **синхронизировать Azure Active Directory пользователей с сеоргвики**.
 

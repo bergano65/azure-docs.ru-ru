@@ -7,12 +7,12 @@ ms.topic: how-to
 ms.service: service-bus
 ms.date: 07/02/2020
 ms.author: alvidela
-ms.openlocfilehash: 373629c86f2d842ad2e02dd2b66739f3963bf7ed
-ms.sourcegitcommit: d8b8768d62672e9c287a04f2578383d0eb857950
+ms.openlocfilehash: 6366824b8dc7f63f99ebda2a542d95d3eb1c6146
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/11/2020
-ms.locfileid: "88064559"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91301207"
 ---
 # <a name="how-to-integrate-rabbitmq-with-azure-service-bus"></a>Как интегрировать RabbitMQ с служебной шиной Azure
 
@@ -34,7 +34,7 @@ ms.locfileid: "88064559"
 
 В портал Azure нажмите большую кнопку плюса, чтобы добавить новый ресурс.
 
-:::image type="content" source="./media/service-bus-integrate-with-rabbitmq/create-resource.png" alt-text="Создайте ресурс":::
+:::image type="content" source="./media/service-bus-integrate-with-rabbitmq/create-resource.png" alt-text="Создание ресурса":::
 
 Затем выберите интеграция и щелкните служебная шина Azure, чтобы создать пространство имен обмена сообщениями:
 
@@ -112,7 +112,7 @@ amqps://rabbitmq-shovel:StringOfRandomChars@rabbitmq.servicebus.windows.net:5671
 
 :::image type="content" source="./media/service-bus-integrate-with-rabbitmq/first-message.png" alt-text="Опубликовать первое сообщение":::
 
-Вернитесь в Azure и проверьте очередь. Щелкните `Service Bus Explorer` на левой панели. Если все прошло успешно, вы увидите, что ваша очередь теперь содержит одно сообщение. Ура, Поздравляем!
+Вернитесь в Azure и проверьте очередь. Щелкните `Service Bus Explorer` на левой панели, а затем нажмите кнопку _просмотра_ . Если все прошло успешно, вы увидите, что ваша очередь теперь содержит одно сообщение. Ура, Поздравляем!
 
 :::image type="content" source="./media/service-bus-integrate-with-rabbitmq/service-bus-queue.png" alt-text="Очередь служебной шины Azure":::
 
@@ -136,3 +136,8 @@ amqps://rabbitmq-shovel:StringOfRandomChars@rabbitmq.servicebus.windows.net:5671
 Следуя приведенным выше шагам, вы интегрируете области вашей организации за пределами Azure. Подключаемый модуль Шовел допускает доставку сообщений из RabbitMQ в служебную шину Azure. Это дает огромные преимущества, так как теперь вы можете разрешить надежным сторонним лицам подключаться к своим приложениям с помощью развертывания Azure.
 
 В итоге система обмена сообщениями посвящена включению подключений. при этом мы просто открыли новый метод.
+
+## <a name="next-steps"></a>Дальнейшие действия
+
+- Дополнительные сведения о [служебной шине Azure](./service-bus-messaging-overview.md).
+- Дополнительные сведения о [поддержке AMQP 1,0 в служебной шине](./service-bus-amqp-overview.md)

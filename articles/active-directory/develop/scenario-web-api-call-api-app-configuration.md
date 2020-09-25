@@ -12,12 +12,12 @@ ms.workload: identity
 ms.date: 08/05/2020
 ms.author: jmprieur
 ms.custom: aaddev
-ms.openlocfilehash: e9faea3462ae953e474b5053b651808b03f07c23
-ms.sourcegitcommit: b33c9ad17598d7e4d66fe11d511daa78b4b8b330
+ms.openlocfilehash: c1c882694f6ae3d8a3b217ed5e7e3d6050189135
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88855453"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91257199"
 ---
 # <a name="a-web-api-that-calls-web-apis-code-configuration"></a>Веб-API, вызывающий веб-API: конфигурация кода
 
@@ -27,9 +27,18 @@ ms.locfileid: "88855453"
 
 # <a name="aspnet-core"></a>[ASP.NET Core](#tab/aspnetcore)
 
+## <a name="microsoftidentityweb"></a>Microsoft. Identity. Web
+
+Корпорация Майкрософт рекомендует использовать пакет NuGet [Microsoft. Identity. Web](https://www.nuget.org/packages/Microsoft.Identity.Web) при разработке ASP.NET Core ЗАЩИЩЕНного API, вызывающего нисходящие веб-API. См [. раздел защищенный веб-API: конфигурация кода | Microsoft. Identity. Web](scenario-protected-web-api-app-configuration.md#microsoftidentityweb) для быстрого представления этой библиотеки в контексте веб-API.
+
 ## <a name="client-secrets-or-client-certificates"></a>Секреты клиента или сертификаты клиента
 
-Учитывая, что веб-API теперь вызывает нисходящий веб-API, необходимо предоставить секрет клиента или сертификат клиента в *appsettings.js* в файле.
+Учитывая, что веб-API теперь вызывает нисходящий веб-API, необходимо предоставить секрет клиента или сертификат клиента в *appsettings.js* в файле. Можно также добавить раздел, который указывает:
+
+- URL-адрес подчиненного веб-API
+- Области, необходимые для вызова API
+
+В следующем примере `GraphBeta` эти параметры задаются в разделе.
 
 ```JSON
 {
@@ -37,12 +46,16 @@ ms.locfileid: "88855453"
     "Instance": "https://login.microsoftonline.com/",
     "ClientId": "[Client_id-of-web-api-eg-2ec40e65-ba09-4853-bcde-bcb60029e596]",
     "TenantId": "common"
-  
+
    // To call an API
    "ClientSecret": "[Copy the client secret added to the app from the Azure portal]",
    "ClientCertificates": [
   ]
- }
+ },
+ "GraphBeta": {
+    "BaseUrl": "https://graph.microsoft.com/beta",
+    "Scopes": "user.read"
+    }
 }
 ```
 
@@ -54,7 +67,7 @@ ms.locfileid: "88855453"
     "Instance": "https://login.microsoftonline.com/",
     "ClientId": "[Client_id-of-web-api-eg-2ec40e65-ba09-4853-bcde-bcb60029e596]",
     "TenantId": "common"
-  
+
    // To call an API
    "ClientCertificates": [
       {
@@ -62,8 +75,12 @@ ms.locfileid: "88855453"
         "KeyVaultUrl": "https://msidentitywebsamples.vault.azure.net",
         "KeyVaultCertificateName": "MicrosoftIdentitySamplesCert"
       }
-  ]
- }
+   ]
+  },
+  "GraphBeta": {
+    "BaseUrl": "https://graph.microsoft.com/beta",
+    "Scopes": "user.read"
+  }
 }
 ```
 
@@ -71,28 +88,88 @@ Microsoft. Identity. Web предоставляет несколько спос�
 
 ## <a name="startupcs"></a>Startup.cs
 
-Используя Microsoft. Identity. Web, если вы хотите, чтобы веб-API вызывал нисходящие веб-API, добавьте `.EnableTokenAcquisitionToCallDownstreamApi()` строку после `.AddMicrosoftIdentityWebApi(Configuration)` , а затем выберите реализацию кэша маркеров, например `.AddInMemoryTokenCaches()` в *Startup.CS*:
+Веб-API должен получить маркер для подчиненного API. Его можно указать, добавив `.EnableTokenAcquisitionToCallDownstreamApi()` строку после `.AddMicrosoftIdentityWebApi(Configuration)` . Эта строка предоставляет `ITokenAcquisition` службу, которую можно использовать в действиях контроллера или страниц. Однако, как вы увидите в следующих двух маркированных точках, вы можете сделать еще более простым. Также необходимо выбрать реализацию кэша маркеров, например `.AddInMemoryTokenCaches()` в *Startup.CS*:
 
 ```csharp
 using Microsoft.Identity.Web;
 
 public class Startup
 {
-  ...
+  // ...
   public void ConfigureServices(IServiceCollection services)
   {
-   // ...
-    services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
-            .AddMicrosoftIdentityWebApi(Configuration, "AzureAd")
-                .EnableTokenAcquisitionToCallDownstreamApi()
-                .AddInMemoryTokenCaches();
   // ...
+  services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+          .AddMicrosoftIdentityWebApi(Configuration, Configuration.GetSection("AzureAd"))
+            .EnableTokenAcquisitionToCallDownstreamApi()
+            .AddInMemoryTokenCaches();
+   // ...
   }
   // ...
 }
 ```
 
-Как и в случае с веб-приложениями, можно выбрать различные реализации кэша маркеров. Дополнительные сведения см. в [статье сериализация кэша маркеров](https://aka.ms/ms-id-web/token-cache-serialization) на сайте GitHub с веб-сайта Microsoft Identity.
+Если вы не хотите самостоятельно получать маркер, *Microsoft. Identity. Web* предоставляет два механизма вызова подчиненного веб-API из другого API. Выбор варианта зависит от того, требуется ли вызывать Microsoft Graph или другой API.
+
+### <a name="option-1-call-microsoft-graph"></a>Вариант 1. вызов Microsoft Graph
+
+Если вы хотите вызвать Microsoft Graph, Microsoft. Identity. Web позволяет напрямую использовать `GraphServiceClient` (предоставляется Microsoft Graph SDK) в действиях API. Чтобы предоставить Microsoft Graph:
+
+1. Добавьте в проект пакет NuGet [Microsoft. Identity. Web. MicrosoftGraph](https://www.nuget.org/packages/Microsoft.Identity.Web.MicrosoftGraph) .
+1. Добавьте `.AddMicrosoftGraph()` после `.EnableTokenAcquisitionToCallDownstreamApi()` в файл *Startup.CS* . `.AddMicrosoftGraph()` имеет несколько переопределений. При использовании переопределения, которое принимает раздел конфигурации в качестве параметра, код становится следующим:
+
+```csharp
+using Microsoft.Identity.Web;
+
+public class Startup
+{
+  // ...
+  public void ConfigureServices(IServiceCollection services)
+  {
+  // ...
+  services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+          .AddMicrosoftIdentityWebApi(Configuration, Configuration.GetSection("AzureAd"))
+            .EnableTokenAcquisitionToCallDownstreamApi()
+               .AddMicrosoftGraph(Configuration.GetSection("GraphBeta"))
+            .AddInMemoryTokenCaches();
+   // ...
+  }
+  // ...
+}
+```
+
+### <a name="option-2-call-a-downstream-web-api-other-than-microsoft-graph"></a>Вариант 2. вызов подчиненного веб-интерфейса API, отличного от Microsoft Graph
+
+Для вызова подчиненного API, отличного от Microsoft Graph, *Microsoft. Identity. Web* предоставляет `.AddDownstreamWebApi()` , который запрашивает маркеры и вызывает нисходящий веб-API.
+
+```csharp
+using Microsoft.Identity.Web;
+
+public class Startup
+{
+  // ...
+  public void ConfigureServices(IServiceCollection services)
+  {
+  // ...
+  services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+          .AddMicrosoftIdentityWebApi(Configuration, "AzureAd")
+            .EnableTokenAcquisitionToCallDownstreamApi()
+               .AddDownstreamWebApi("MyApi", Configuration.GetSection("GraphBeta"))
+            .AddInMemoryTokenCaches();
+   // ...
+  }
+  // ...
+}
+```
+
+Как и в случае с веб-приложениями, можно выбрать различные реализации кэша маркеров. Дополнительные сведения см. в [статье сериализация кэша веб-маркеров Microsoft Identity](https://aka.ms/ms-id-web/token-cache-serialization) на сайте GitHub.
+
+На следующем рисунке показаны различные возможности *Microsoft. Identity. Web* и их влияние на файл *Startup.CS* :
+
+:::image type="content" source="media/scenarios/microsoft-identity-web-startup-cs.png" alt-text="При создании веб-API можно выбрать вызов нисходящего API и реализаций кэша маркеров.":::
+
+> [!NOTE]
+> Чтобы полностью понять эти примеры кода, ознакомьтесь с [основами ASP.NET Core](/aspnet/core/fundamentals), в частности со сведениями о [параметрах](/aspnet/core/fundamentals/configuration/options) и [внедрении зависимостей](/aspnet/core/fundamentals/dependency-injection).
 
 # <a name="java"></a>[Java](#tab/java)
 

@@ -6,13 +6,13 @@ ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
 author: vamahtan
 ms.author: vamahtan
-ms.date: 09/15/2020
-ms.openlocfilehash: 41dd683bb0ff5be4a48cd05f24663dd51c66a15b
-ms.sourcegitcommit: bdd5c76457b0f0504f4f679a316b959dcfabf1ef
+ms.date: 09/23/2020
+ms.openlocfilehash: f0996ba6cd914043ad31500934141ad8770a1c50
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "90984640"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91268729"
 ---
 # <a name="co-sell-partner-engagement"></a>Участие партнеров в совместных продажах
 
@@ -36,7 +36,7 @@ ms.locfileid: "90984640"
 * Плата за обслуживание службы Marketplace уменьшается с 20 до 10%. Эта скидка относится к предложению IaaS или SaaS, которое продается через коммерческий рынок. Дополнительные сведения см. в разделе [Сокращенная плата за обслуживание](marketplace-commercial-transaction-capabilities-and-considerations.md#reduced-service-fee) .
 * Партнеры поставщика облачных решений (CSP) получают стимул на 10% для продажи предложения IaaS или SaaS. Узнайте больше о программе CSP в [программе поставщика облачных решений](cloud-solution-providers.md).
 * Продажи вашего предложения в коммерческом магазине повлияют на обязательства по потреблению клиентов в Azure. Соответствующие клиенты увидят предложение, помеченное как **"преимущества Azure для получения льгот"** на портале Azure. Дополнительные сведения см. в статье [преимущества обязательств по потреблению Azure](azure-consumption-commitment-benefit.md) .
-* Ваше предложение получит значок **"предпочтительные решения"** в витринах. Значок обеспечивает качество, производительность и способность удовлетворить потребности клиентов в определенной отрасли по вертикали или в области решения. Дополнительные сведения о [предпочтительных решениях см. в Microsoft AppSource и Azure Marketplace](preferred-solutions.md).
+* Предложения, обеспечивающие **выгодно Azure для совместной продажи** , или **Business Applications Co-продавать выгодно** статус, получат значок **"предпочтительные решения"** в витринах. Эмблема повышает качество, производительность и способность клиентов в определенных отраслевых вертикальных областях или решениях. Дополнительные сведения о [предпочтительных решениях см. в Microsoft AppSource и Azure Marketplace](preferred-solutions.md).
 
 ## <a name="co-sell-publishing-steps-and-requirements"></a>Этапы и требования к публикации для совместной продажи
 

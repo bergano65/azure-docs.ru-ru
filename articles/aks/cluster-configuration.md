@@ -3,28 +3,30 @@ title: Настройка кластера в Службе Azure Kubernetes (AKS
 description: Сведения о том, как настроить кластер в Службе Kubernetes Azure (AKS)
 services: container-service
 ms.topic: conceptual
-ms.date: 08/06/2020
+ms.date: 09/21/2020
 ms.author: jpalma
 author: palma21
-ms.openlocfilehash: 5b26054ae8dfb73dea8d064292beb73220be5e09
-ms.sourcegitcommit: bf1340bb706cf31bb002128e272b8322f37d53dd
+ms.openlocfilehash: 6446e138df1fe744d70be085d0aecac58e2c1c45
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/03/2020
-ms.locfileid: "89433455"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91255304"
 ---
 # <a name="configure-an-aks-cluster"></a>Настройка кластера AKS.
 
 При создании кластера AKS, возможно, потребуется изменить его конфигурацию для выполнения определенных задач. В этой статье описаны некоторые возможности персонализации кластера AKS.
 
-## <a name="os-configuration-preview"></a>Конфигурация ОС (предварительная версия)
+## <a name="os-configuration"></a>Конфигурация ОС
 
-Теперь AKS поддерживает Ubuntu 18.04 в качестве операционной системы узла (предварительная версия). В период действия предварительной версии доступны Ubuntu 16.04 и Ubuntu 18.04.
+AKS теперь поддерживает Ubuntu 18,04 в качестве операционной системы узла (ОС) в общем доступе для кластеров в kubernetes версиях выше, чем 1.18.8. Для версий ниже 18E. x AKS Ubuntu 16,04 по-прежнему является базовым образом по умолчанию. Начиная с kubernetes v 18E. x и наоборот, база по умолчанию — AKS Ubuntu 18,04.
 
 > [!IMPORTANT]
-> Пулы узлов, созданные по умолчанию в Kubernetes v 18E или более поздней версии, имеют требуемый `AKS Ubuntu 18.04` образ узла. Пулы узлов в поддерживаемой версии Kubernetes меньше, чем 1,18, получают `AKS Ubuntu 16.04` как образ узла, но будут обновлены до, `AKS Ubuntu 18.04` когда версия Kubernetes пула узлов обновится до версии v 18E или выше.
+> Пулы узлов, созданные в Kubernetes v 18E или более поздней версии по умолчанию для `AKS Ubuntu 18.04` образа узла. Пулы узлов в поддерживаемой версии Kubernetes меньше, чем 1,18, получают `AKS Ubuntu 16.04` как образ узла, но будут обновлены до, `AKS Ubuntu 18.04` когда версия Kubernetes пула узлов обновится до версии v 18E или выше.
 > 
 > Настоятельно рекомендуется протестировать рабочие нагрузки в пулах узлов AKS Ubuntu 18,04, прежде чем использовать кластеры на 1,18 или более поздней версии. Узнайте о том, как [тестировать пулы узлов Ubuntu 18,04](#use-aks-ubuntu-1804-existing-clusters-preview).
+
+В следующем разделе объясняется, как использовать и тестировать AKS Ubuntu 18,04 в кластерах, которые еще не используют kubernetes версии 18E. x или выше, или были созданы до того, как эта функция стала общедоступной, с помощью предварительной версии конфигурации ОС.
 
 Нужно установить следующие ресурсы:
 
@@ -44,13 +46,13 @@ az extension list
 az feature register --name UseCustomizedUbuntuPreview --namespace Microsoft.ContainerService
 ```
 
-Состояние **Registered** (Зарегистрировано) может появиться через несколько минут. Состояние регистрации можно проверить с помощью команды [az feature list](/cli/azure/feature?view=azure-cli-latest#az-feature-list):
+Состояние **Registered** (Зарегистрировано) может появиться через несколько минут. Состояние регистрации можно проверить с помощью команды [az feature list](/cli/azure/feature?view=azure-cli-latest#az-feature-list&preserve-view=true):
 
 ```azurecli
 az feature list -o table --query "[?contains(name, 'Microsoft.ContainerService/UseCustomizedUbuntuPreview')].{Name:name,State:properties.state}"
 ```
 
-Когда отобразится правильный статус, обновите регистрацию поставщика ресурсов `Microsoft.ContainerService` с помощью команды [az provider register](/cli/azure/provider?view=azure-cli-latest#az-provider-register):
+Когда отобразится правильный статус, обновите регистрацию поставщика ресурсов `Microsoft.ContainerService` с помощью команды [az provider register](/cli/azure/provider?view=azure-cli-latest#az-provider-register&preserve-view=true):
 
 ```azurecli
 az provider register --namespace Microsoft.ContainerService
@@ -122,14 +124,14 @@ az feature register --name UseCustomizedUbuntuPreview --namespace Microsoft.Cont
 
 ```
 
-Состояние **Registered** (Зарегистрировано) может появиться через несколько минут. Состояние регистрации можно проверить с помощью команды [az feature list](/cli/azure/feature?view=azure-cli-latest#az-feature-list):
+Состояние **Registered** (Зарегистрировано) может появиться через несколько минут. Состояние регистрации можно проверить с помощью команды [az feature list](/cli/azure/feature?view=azure-cli-latest#az-feature-list&preserve-view=true):
 
 ```azurecli
 az feature list -o table --query "[?contains(name, 'Microsoft.ContainerService/UseCustomizedContainerRuntime')].{Name:name,State:properties.state}"
 az feature list -o table --query "[?contains(name, 'Microsoft.ContainerService/UseCustomizedUbuntuPreview')].{Name:name,State:properties.state}"
 ```
 
-Когда отобразится правильный статус, обновите регистрацию поставщика ресурсов `Microsoft.ContainerService` с помощью команды [az provider register](/cli/azure/provider?view=azure-cli-latest#az-provider-register):
+Когда отобразится правильный статус, обновите регистрацию поставщика ресурсов `Microsoft.ContainerService` с помощью команды [az provider register](/cli/azure/provider?view=azure-cli-latest#az-provider-register&preserve-view=true):
 
 ```azurecli
 az provider register --namespace Microsoft.ContainerService
@@ -179,7 +181,7 @@ Azure поддерживает [виртуальные машины версии
 Виртуальные машины 2-го поколения используют новую архитектуру загрузки на основе UEFI, а не архитектуру на основе BIOS, используемую виртуальными машинами 1-го поколения.
 Виртуальные машины Gen2 поддерживают только определенные номера SKU и размеры. Проверьте [список поддерживаемых размеров](../virtual-machines/windows/generation-2.md#generation-2-vm-sizes), чтобы узнать, поддерживает ли SKU или требует Gen2.
 
-Кроме того, не все образы виртуальных машин поддерживают Gen2, на виртуальных машинах AKS Gen2 будет использоваться новый [образ AKS Ubuntu 18,04](#os-configuration-preview). Этот образ поддерживает все номера SKU и размеры Gen2.
+Кроме того, не все образы виртуальных машин поддерживают Gen2, на виртуальных машинах AKS Gen2 будет использоваться новый [образ AKS Ubuntu 18,04](#os-configuration). Этот образ поддерживает все номера SKU и размеры Gen2.
 
 Чтобы использовать виртуальные машины Gen2 в режиме предварительной версии, вам потребуется:
 - `aks-preview`Установленное расширение CLI.
@@ -191,13 +193,13 @@ Azure поддерживает [виртуальные машины версии
 az feature register --name Gen2VMPreview --namespace Microsoft.ContainerService
 ```
 
-Состояние **Registered** (Зарегистрировано) может появиться через несколько минут. Состояние регистрации можно проверить с помощью команды [az feature list](/cli/azure/feature?view=azure-cli-latest#az-feature-list):
+Состояние **Registered** (Зарегистрировано) может появиться через несколько минут. Состояние регистрации можно проверить с помощью команды [az feature list](/cli/azure/feature?view=azure-cli-latest#az-feature-list&preserve-view=true):
 
 ```azurecli
 az feature list -o table --query "[?contains(name, 'Microsoft.ContainerService/Gen2VMPreview')].{Name:name,State:properties.state}"
 ```
 
-Когда отобразится правильный статус, обновите регистрацию поставщика ресурсов `Microsoft.ContainerService` с помощью команды [az provider register](/cli/azure/provider?view=azure-cli-latest#az-provider-register):
+Когда отобразится правильный статус, обновите регистрацию поставщика ресурсов `Microsoft.ContainerService` с помощью команды [az provider register](/cli/azure/provider?view=azure-cli-latest#az-provider-register&preserve-view=true):
 
 ```azurecli
 az provider register --namespace Microsoft.ContainerService
@@ -248,17 +250,19 @@ az aks nodepool add --name gen2 --cluster-name myAKSCluster --resource-group myR
 az feature register --name EnableEphemeralOSDiskPreview --namespace Microsoft.ContainerService
 ```
 
-Состояние **Registered** (Зарегистрировано) может появиться через несколько минут. Состояние регистрации можно проверить с помощью команды [az feature list](/cli/azure/feature?view=azure-cli-latest#az-feature-list):
+Состояние **Registered** (Зарегистрировано) может появиться через несколько минут. Состояние регистрации можно проверить с помощью команды [az feature list](/cli/azure/feature?view=azure-cli-latest#az-feature-list&preserve-view=true):
 
 ```azurecli
 az feature list -o table --query "[?contains(name, 'Microsoft.ContainerService/EnableEphemeralOSDiskPreview')].{Name:name,State:properties.state}"
 ```
 
-Когда отобразится правильный статус, обновите регистрацию поставщика ресурсов `Microsoft.ContainerService` с помощью команды [az provider register](/cli/azure/provider?view=azure-cli-latest#az-provider-register):
+Когда отобразится правильный статус, обновите регистрацию поставщика ресурсов `Microsoft.ContainerService` с помощью команды [az provider register](/cli/azure/provider?view=azure-cli-latest#az-provider-register&preserve-view=true):
 
 ```azurecli
 az provider register --namespace Microsoft.ContainerService
 ```
+
+Для эфемерной ОС требуется как минимум версия 0.4.63 расширения CLI AKS-Preview.
 
 Чтобы установить расширение CLI AKS-Preview, используйте следующие Azure CLI команды:
 
@@ -274,25 +278,25 @@ az extension update --name aks-preview
 
 ### <a name="use-ephemeral-os-on-new-clusters-preview"></a>Использование эфемерной ОС в новых кластерах (Предварительная версия)
 
-Настройте кластер для использования временных дисков ОС при создании кластера. Используйте `--aks-custom-headers` флаг, чтобы задать эфемерную ОС в качестве типа диска ОС для нового кластера.
+Настройте кластер для использования временных дисков ОС при создании кластера. Используйте `--node-osdisk-type` флаг, чтобы задать эфемерную ОС в качестве типа диска ОС для нового кластера.
 
 ```azurecli
-az aks create --name myAKSCluster --resource-group myResourceGroup -s Standard_DS3_v2 --aks-custom-headers EnableEphemeralOSDisk=true
+az aks create --name myAKSCluster --resource-group myResourceGroup -s Standard_DS3_v2 --node-osdisk-type Ephemeral
 ```
 
-Если вы хотите создать обычный кластер с подключенными к сети дисками ОС, это можно сделать, опустив пользовательский `--aks-custom-headers` тег. Вы также можете добавить дополнительные пулы временных узлов ОС, как описано ниже.
+Если вы хотите создать обычный кластер с подключенными к сети дисками ОС, это можно сделать, опустив пользовательский `--node-osdisk-type` тег или указав `--node-osdisk-type=Managed` . Вы также можете добавить дополнительные пулы временных узлов ОС, как описано ниже.
 
 ### <a name="use-ephemeral-os-on-existing-clusters-preview"></a>Использование эфемерной ОС в существующих кластерах (Предварительная версия)
-Настройте новый пул узлов для использования временных дисков ОС. Используйте `--aks-custom-headers` флаг, чтобы задать в качестве типа диска ОС в качестве типа диска ОС для пула узлов.
+Настройте новый пул узлов для использования временных дисков ОС. Используйте `--node-osdisk-type` флаг, чтобы задать в качестве типа диска ОС в качестве типа диска ОС для пула узлов.
 
 ```azurecli
-az aks nodepool add --name ephemeral --cluster-name myAKSCluster --resource-group myResourceGroup -s Standard_DS3_v2 --aks-custom-headers EnableEphemeralOSDisk=true
+az aks nodepool add --name ephemeral --cluster-name myAKSCluster --resource-group myResourceGroup -s Standard_DS3_v2 --node-osdisk-type Ephemeral
 ```
 
 > [!IMPORTANT]
 > При использовании эфемерной ОС можно развернуть образы виртуальных машин и экземпляров вплоть до размера кэша виртуальной машины. В случае AKS в конфигурации диска с ОС узла по умолчанию используется 100GiB, что означает, что вам потребуется размер виртуальной машины с кэшем, превышающим 100 гиб. Standard_DS2_v2 по умолчанию имеет размер кэша 86 гиб, который недостаточно велик. Standard_DS3_v2 имеет размер кэша 172 гиб, который достаточно большой. Можно также уменьшить размер диска ОС по умолчанию с помощью `--node-osdisk-size` . Минимальный размер AKS изображений — 30GiB. 
 
-Если вы хотите создать пулы узлов с подключенными к сети дисками ОС, это можно сделать, опустив пользовательский `--aks-custom-headers` тег.
+Если вы хотите создать пулы узлов с подключенными к сети дисками ОС, это можно сделать, опустив пользовательский `--node-osdisk-type` тег.
 
 ## <a name="custom-resource-group-name"></a>Пользовательское имя группы ресурсов
 

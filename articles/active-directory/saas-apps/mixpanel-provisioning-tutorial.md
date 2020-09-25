@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: article
 ms.date: 01/24/2020
 ms.author: Zhchia
-ms.openlocfilehash: c17d0d927fab86774f25a3ada1fbb3e675957af8
-ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
+ms.openlocfilehash: 00e5f750c1acfa49aea2caadbc95fd75cef0b24b
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88552515"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91256052"
 ---
 # <a name="tutorial-configure-mixpanel-for-automatic-user-provisioning"></a>Учебник. Настройка Mixpanel для автоматической подготовки пользователей
 
@@ -80,11 +80,11 @@ ms.locfileid: "88552515"
 
 3. Выберите вкладку **Подготовка**.
 
-    ![Вкладка "Подготовка"](common/provisioning.png)
+    ![Снимок экрана параметров управления с вызываемым параметром подготовки.](common/provisioning.png)
 
 4. Для параметра **Режим подготовки к работе** выберите значение **Automatic** (Автоматически).
 
-    ![Вкладка "Подготовка"](common/provisioning-automatic.png)
+    ![Снимок экрана: раскрывающийся список режима подготовки с вызываемым автоматическим параметром.](common/provisioning-automatic.png)
 
 5. В разделе **учетные данные администратора** введите **URL-адрес клиента** Mixpanel и **маркер секрета**. Щелкните **проверить подключение** , чтобы убедиться, что Azure AD может подключиться к Mixpanel. Если подключение не выполняется, убедитесь, что у учетной записи Mixpanel есть разрешения администратора, и повторите попытку.
 
