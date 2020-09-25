@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 12/05/2019
 ms.author: cherylmc
 ms.custom: include file
-ms.openlocfilehash: f7134d0e8087d17e78a13c958298006e321bd192
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
-ms.translationtype: MT
+ms.openlocfilehash: 754a47b3692847957de7f3d666f4dc09dc309d25
+ms.sourcegitcommit: bdd5c76457b0f0504f4f679a316b959dcfabf1ef
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84346328"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "91025287"
 ---
 ### <a name="is-custom-ipsecike-policy-supported-on-all-azure-vpn-gateway-skus"></a>Поддерживается ли политика IPsec/IKE во всех номерах SKU VPN-шлюзов Azure?
 Пользовательская политика IPsec/IKE поддерживается во всех SKU Azure, за исключением SKU "Базовый".
@@ -31,7 +31,7 @@ ms.locfileid: "84346328"
 | ---              | ---                                                                           |
 | Шифрование IKEv2 | AES256, AES192, AES128, DES3, DES                                             |
 | Проверка целостности IKEv2  | SHA384, SHA256, SHA1, MD5                                                     |
-| Группа DH         | DHGroup24, ECP384, ECP256, DHGroup14 (DHGroup2048), DHGroup2, DHGroup1, нет |
+| Группа DH         | DHGroup24, ECP384, ECP256, DHGroup14 (DHGroup2048), DHGroup2, DHGroup1, нет  |
 | Шифрование IPsec | GCMAES256, GCMAES192, GCMAES128, AES256, AES192, AES128, DES3, DES, нет      |
 | Целостность IPsec  | GCMAES256, GCMAES192, GCMAES128, SHA256, SHA1, MD5                            |
 | Группа PFS        | PFS24, ECP384, ECP256, PFS2048, PFS2, PFS1, нет                              |
@@ -100,11 +100,14 @@ ms.locfileid: "84346328"
 ### <a name="do-i-need-to-specify-the-same-policy-on-both-vnet-to-vnet-connection-resources"></a>Нужно ли указывать одну и ту же политику для обоих ресурсов при подключении между виртуальными сетями?
 Да. Туннель подключения между виртуальными сетями состоит из двух ресурсов Azure: для каждого направления используется один ресурс. Обоим ресурсам подключения следует назначить одну и ту же политику, иначе подключение между виртуальными сетями не будет установлено.
 
+### <a name="what-is-the-default-dpd-timeout-value-can-i-specify-a-different-dpd-timeout"></a>Какое значение времени ожидания DPD по умолчанию? Можно ли указать другое время ожидания DPD?
+Время ожидания DPD по умолчанию составляет 45 секунд. Можно указать другое значение времени ожидания DPD для каждого подключения IPsec или виртуальной сети в диапазоне от 9 до 3600 секунд.
+
 ### <a name="does-custom-ipsecike-policy-work-on-expressroute-connection"></a>Работает ли настраиваемая политика IPsec/IKE для подключения ExpressRoute?
 Нет. Политика IPsec/IKE работает только для VPN-подключений типа "сеть — сеть" или "виртуальная сеть — виртуальная сеть" через VPN-шлюзы Azure.
 
 ### <a name="how-do-i-create-connections-with-ikev1-or-ikev2-protocol-type"></a>Как создавать подключения с типом протокола IKEv1 или IKEv2?
-Подключения IKEv1 могут создаваться для всех номеров SKU типа RouteBased VPN, кроме SKU "базовый", "Стандартный" и другого [номера](https://docs.microsoft.com/azure/vpn-gateway/vpn-gateway-about-skus-legacy#gwsku)SKU. При создании подключения можно указать тип протокола IKEv1 или IKEv2. Если тип протокола не указан, по умолчанию используется тип IKEv2 (там, где это применимо). Дополнительные сведения см. в документации по [командлетам PowerShell](https://docs.microsoft.com/powershell/module/az.network/new-azvirtualnetworkgatewayconnection?). Сведения о типах SKU и поддержке протоколов IKEv1 и IKEv2 см. в статье о [подключении шлюзов к VPN-устройствам на базе политик](../articles/vpn-gateway/vpn-gateway-connect-multiple-policybased-rm-ps.md).
+Подключения IKEv1 можно создавать во всех SKU с VPN типа RouteBased, кроме SKU уровня "Базовый" и "Стандартный" и других [устаревших SKU](https://docs.microsoft.com/azure/vpn-gateway/vpn-gateway-about-skus-legacy#gwsku). При создании подключения можно указать тип протокола IKEv1 или IKEv2. Если тип протокола не указан, по умолчанию используется тип IKEv2 (там, где это применимо). Дополнительные сведения см. в документации по [командлетам PowerShell](https://docs.microsoft.com/powershell/module/az.network/new-azvirtualnetworkgatewayconnection?). Сведения о типах SKU и поддержке протоколов IKEv1 и IKEv2 см. в статье о [подключении шлюзов к VPN-устройствам на базе политик](../articles/vpn-gateway/vpn-gateway-connect-multiple-policybased-rm-ps.md).
 
 ### <a name="is-transit-between-between-ikev1-and-ikev2-connections-allowed"></a>Можно ли перейти с подключения типа IKEv1 на IKEv2 и обратно?
 Да. Переход между типами подключений IKEv1 и IKEv2 поддерживается.

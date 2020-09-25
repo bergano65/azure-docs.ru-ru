@@ -7,14 +7,14 @@ ms.service: sql-edge
 ms.topic: tutorial
 author: VasiyaKrishnan
 ms.author: vakrishn
-ms.reviewer: sstein
-ms.date: 05/19/2020
-ms.openlocfilehash: a4087ef56712e098443009bd0457029394ea7b51
-ms.sourcegitcommit: f1132db5c8ad5a0f2193d751e341e1cd31989854
+ms.reviewer: sourabha, sstein
+ms.date: 09/22/2020
+ms.openlocfilehash: 7b2432fda70e8f9a5fa8bc64ede846d977672e9e
+ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/31/2020
-ms.locfileid: "84235027"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90886481"
 ---
 # <a name="set-up-iot-edge-modules-and-connections"></a>Настройка модулей и подключений IoT Edge
 
@@ -22,39 +22,6 @@ ms.locfileid: "84235027"
 
 - SQL Azure для пограничных вычислений
 - Модуль генератора данных IoT Edge
-
-## <a name="create-azure-stream-analytics-module"></a>Создание модуля Azure Stream Analytics
-
-Создайте модуль Azure Stream Analytics, который будет использоваться в этом руководстве. Дополнительные сведения об использовании заданий потоковой передачи с SQL для пограничных вычислений см. [здесь](stream-analytics.md).
-
-После создания задания Azure Stream Analytics с помощью среды размещения, установленной в качестве Edge, настройте для учебника входные и выходные данные.
-
-1. Чтобы создать **входные данные**, щелкните **+ Добавить потоковый вход**. Заполните раздел сведений, используя следующие сведения:
-
-   Поле|Значение
-   -----|-----
-   Формат сериализации событий|JSON
-   Кодирование|UTF-8
-   Тип сжатия событий|None
-
-2. Чтобы создать **Выходные данные**, щелкните **+ Добавить** и выберите "База данных SQL". Заполните раздел сведений, используя приведенную ниже информацию.
-
-   > [!NOTE]
-   > При развертывании модуля SQL Azure для пограничных вычислений в разделе **"Развертывание модуля SQL Azure для пограничных вычислений"** пароль, указанный в этом разделе, необходимо указать в качестве пароль системного администратора SQL.
-
-   Поле|Значение
-   -----|-----
-   База данных|IronOreSilicaPrediction
-   Имя сервера|tcp:.,1433
-   Имя пользователя|sa
-   Пароль|Укажите надежный пароль
-   Таблица|IronOreMeasurements1
-
-3. Перейдите к разделу **Запрос** и настройте запрос следующим образом:
-
-   `SELECT * INTO <name_of_your_output_stream> FROM <name_of_your_input_stream>`
-   
-4. В разделе **Настройка** выберите **Опубликовать**, а затем нажмите кнопку **Опубликовать**. Сохраните URI SAS, чтобы использовать его с модулем Базы данных SQL для пограничных вычислений.
 
 ## <a name="specify-container-registry-credentials"></a>Указание учетных данных реестра контейнеров
 
@@ -84,10 +51,12 @@ ms.locfileid: "84235027"
   
 ## <a name="deploy-the-data-generator-module"></a>Развертывание модуля генератора данных
 
-1. В разделе **Модули IoT Edge** щелкните **+ Добавить** и выберите **Модуль IoT Edge**.
+1. В подразделе **IoT Edge** в разделе **Автоматическое управление устройствами** щелкните **Идентификатор устройства**. В этом руководстве идентификатором является `IronOrePredictionDevice`. Затем выберите **Задание модулей**.
 
-2. Укажите имя модуля IoT Edge и URI образа.
-   Универсальный код ресурса (URI) образа можно найти в реестре контейнеров в группе ресурсов. В разделе **Службы** выберите **Репозитории**. Для работы с этим руководством выберите репозиторий с именем `silicaprediction`. Выберите соответствующий тег. URI изображения будет иметь формат:
+2.  В разделе **Модули IoT Edge** на странице **Настройка модулей на устройстве:** щелкните **+ Добавить** и выберите **Модуль IoT Edge**.
+
+3. Укажите допустимое имя и универсальный код ресурса (URI) изображения для модуля IoT Edge.
+   Универсальный код ресурса (URI) изображения можно найти в реестре контейнеров в группе ресурсов, созданной в первой части этого учебника. В разделе **Службы** выберите **Репозитории**. Для работы с этим руководством выберите репозиторий с именем `silicaprediction`. Выберите соответствующий тег. URI изображения будет иметь формат:
 
    *сервер входа containerregistry*/*имя репозитория*:*имя тега*
 
@@ -97,36 +66,142 @@ ms.locfileid: "84235027"
    ASEdemocontregistry.azurecr.io/silicaprediction:amd64
    ```
 
-3. Нажмите кнопку **Добавить**.
+4. Оставьте поля *Политика перезапуска* и *Желательный статус* как есть.
+
+5. Нажмите кнопку **Добавить**.
+
 
 ## <a name="deploy-the-azure-sql-edge-module"></a>Развертывание модуля SQL Azure для пограничных вычислений
 
-1. Разверните модуль SQL Azure для пограничных вычислений, выполнив действия, описанные в статье [Развертывание SQL Azure для пограничных вычислений (предварительная версия)](https://docs.microsoft.com/azure/azure-sql-edge/deploy-portal).
+1. Разверните модуль SQL Azure для пограничных вычислений, щелкнув **+ Добавить**, а затем **Модуль Marketplace**. 
 
-2. На странице **Выбор модулей** в разделе **Specify Route** (Задание маршрута) укажите маршруты для связи модуля с центром IoT Edge следующим образом. 
+2. В колонке **Модуль IoT Edge в Marketplace** найдите *SQL Azure для пограничных вычислений* и выберите *Azure SQL Edge Developer* (Разработчик SQL Azure для пограничных вычислений). 
+
+3. Щелкните добавленный модуль *SQL Azure для пограничных вычислений* в разделе **Модули Azure IoT Edge**, чтобы настроить модуль SQL Azure для пограничных вычислений. Дополнительные сведения о параметрах конфигурации см. в статье [Развертывание SQL Azure для пограничных вычислений](https://docs.microsoft.com/azure/azure-sql-edge/deploy-portal).
+
+4. Добавьте переменную среды `MSSQL_PACKAGE` в развертывание модуля *SQL Azure для пограничных вычислений* и укажите URL-адрес SAS DACPAC-файла базы данных, созданного на шаге 8 в [первой части](tutorial-deploy-azure-resources.md) этого учебника.
+
+5. Нажмите кнопку **Update**(Обновить).
+
+6. На странице **Настройка модулей на устройстве** щелкните **Далее: Маршруты >** .
+
+7. В области "Маршруты" на странице **Настройка модулей на устройстве:** укажите маршруты для связи модуля с центром IoT Edge, как описано ниже. Обязательно обновите имена модулей в определениях маршрутов ниже.
 
    ```
-   FROM /messages/modules/<your_data_generator_module>/outputs/<your_output_stream_name> INTO
-   BrokeredEndpoint("/modules/<your_azure_sql_edge_module>/inputs/<your_input_stream_name>")
+   FROM /messages/modules/<your_data_generator_module>/outputs/IronOreMeasures INTO
+   BrokeredEndpoint("/modules/<your_azure_sql_edge_module>/inputs/IronOreMeasures")
    ```
 
    Пример:
 
    ```
-   FROM /messages/modules/ASEDataGenerator/outputs/IronOreMeasures INTO BrokeredEndpoint("/modules/AzureSQLEdge/inputs/Input1")
+   FROM /messages/modules/ASEDataGenerator/outputs/IronOreMeasures INTO BrokeredEndpoint("/modules/AzureSQLEdge/inputs/IronOreMeasures")
    ```
 
-3. В параметрах **двойник модуля** убедитесь, что SQLPackage и ASAJonInfo обновлены с помощью соответствующих URL-адресов SAS, сохраненных ранее в этом руководстве.
 
-   ```json
-       {
-         "properties.desired":
-         {
-           "SqlPackage": "<Optional_DACPAC_ZIP_SAS_URL>",
-           "ASAJobInfo": "<Optional_ASA_Job_ZIP_SAS_URL>"
-         }
-       }
+7. На странице **Настройка модулей на устройстве** щелкните **Далее: Просмотр и создание >**
+
+8. На странице **Настройка модулей на устройстве** щелкните **Создать**
+
+## <a name="create-and-start-the-t-sql-streaming-job-in-azure-sql-edge"></a>Создайте и запустите задание потоковой передачи T-SQL в SQL Azure для пограничных вычислений.
+
+1. Откройте Azure Data Studio.
+
+2. На вкладке **Приветствие** запустите новое подключение со следующими сведениями:
+
+   |_Поле_|_Значение_|
+   |-------|-------|
+   |Тип соединений| Microsoft SQL Server|
+   |Сервер|Общедоступный IP-адрес, упомянутый в виртуальной машине, созданной для этой демо-версии|
+   |Имя пользователя|sa|
+   |Пароль|Надежный пароль, который использовался при создании экземпляра SQL Azure для пограничных вычислений.|
+   |База данных|По умолчанию|
+   |Группа серверов|По умолчанию|
+   |Имя (необязательно)|Укажите необязательное имя|
+
+3. Добавьте новый отчет, щелкнув **Подключить**
+
+4. На вкладке меню **Файл** откройте новую записную книжку или используйте сочетание клавиш Ctrl+N.
+
+5. В новом окне запроса выполните приведенный ниже скрипт, чтобы создать задание потоковой передачи T-SQL. Прежде чем выполнять скрипт, необходимо изменить следующие переменные. 
+   - *SQL_SA_Password:* Значение MSSQL_SA_PASSWORD, указанное при развертывании модуля SQL Azure для пограничных вычислений. 
+   
+   ```sql
+   Use IronOreSilicaPrediction
+   Go
+
+   Declare @SQL_SA_Password varchar(200) = '<SQL_SA_Password>'
+   declare @query varchar(max) 
+
+   /*
+   Create Objects Required for Streaming
+   */
+
+   CREATE MASTER KEY ENCRYPTION BY PASSWORD = 'MyStr0ng3stP@ssw0rd';
+
+   If NOT Exists (select name from sys.external_file_formats where name = 'JSONFormat')
+   Begin
+      CREATE EXTERNAL FILE FORMAT [JSONFormat]  
+      WITH ( FORMAT_TYPE = JSON)
+   End 
+
+
+   If NOT Exists (select name from sys.external_data_sources where name = 'EdgeHub')
+   Begin
+      Create EXTERNAL DATA SOURCE [EdgeHub] 
+      With(
+         LOCATION = N'edgehub://'
+      )
+   End 
+
+   If NOT Exists (select name from sys.external_streams where name = 'IronOreInput')
+   Begin
+      CREATE EXTERNAL STREAM IronOreInput WITH 
+      (
+         DATA_SOURCE = EdgeHub,
+         FILE_FORMAT = JSONFormat,
+         LOCATION = N'IronOreMeasures'
+       )
+   End
+
+
+   If NOT Exists (select name from sys.database_scoped_credentials where name = 'SQLCredential')
+   Begin
+       set @query = 'CREATE DATABASE SCOPED CREDENTIAL SQLCredential
+                 WITH IDENTITY = ''sa'', SECRET = ''' + @SQL_SA_Password + ''''
+       Execute(@query)
+   End 
+
+   If NOT Exists (select name from sys.external_data_sources where name = 'LocalSQLOutput')
+   Begin
+      CREATE EXTERNAL DATA SOURCE LocalSQLOutput WITH (
+      LOCATION = 'sqlserver://tcp:.,1433',CREDENTIAL = SQLCredential)
+   End
+
+   If NOT Exists (select name from sys.external_streams where name = 'IronOreOutput')
+   Begin
+      CREATE EXTERNAL STREAM IronOreOutput WITH 
+      (
+         DATA_SOURCE = LocalSQLOutput,
+         LOCATION = N'IronOreSilicaPrediction.dbo.IronOreMeasurements'
+      )
+   End
+
+   EXEC sys.sp_create_streaming_job @name=N'IronOreData',
+   @statement= N'Select * INTO IronOreOutput from IronOreInput'
+
+   exec sys.sp_start_streaming_job @name=N'IronOreData'
    ```
+
+6. Используйте следующий запрос, чтобы убедиться, что данные модуля создания данных передаются в базу данных. 
+
+   ```sql
+   Select Top 10 * from dbo.IronOreMeasurements
+   order by timestamp desc
+   ```
+
+
+В этом руководстве мы развернули модуль генератора данных и модуль SQL Azure для пограничных вычислений. Затем мы создали задание потоковой передачи, чтобы передать данные, созданные модулем создания данных, в SQL. 
 
 ## <a name="next-steps"></a>Next Steps
 

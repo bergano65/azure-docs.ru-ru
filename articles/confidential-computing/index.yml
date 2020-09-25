@@ -1,0 +1,115 @@
+### YamlMime:Landing
+title: Документация по конфиденциальным вычислениям Azure
+summary: Конфиденциальные вычисления в Azure — это решения, которые позволяют изолировать конфиденциальные данные во время их обработки в облаке. Узнайте, как создать и развернуть приложения на основе инфраструктуры конфиденциальных вычислений. Для этого ознакомьтесь с соответствующими концепциями, изучите учебники и воспользуйтесь примерами кода. Обеспечьте максимальную защиту своих рабочих нагрузок с помощью продуктов Майкрософт, созданных на основе конфиденциальных вычислений.
+metadata:
+  title: Конфиденциальные вычисления Azure
+  description: Узнайте, как конфиденциальные вычисления Azure защищают используемые данные, а также как создать конфиденциальные рабочие нагрузки в облаке.
+  ms.service: virtual-machines
+  ms.subservice: workloads
+  ms.topic: landing-page
+  author: JBCook
+  ms.author: jencook
+  ms.date: 09/22/2020
+  ms.openlocfilehash: abe5104ff5425103baaca72efdc960a34ffc6a73
+  ms.sourcegitcommit: bdd5c76457b0f0504f4f679a316b959dcfabf1ef
+  ms.translationtype: HT
+  ms.contentlocale: ru-RU
+  ms.lasthandoff: 09/22/2020
+  ms.locfileid: "90992029"
+landingContent:
+- title: Сведения о конфиденциальных вычислениях Azure
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Что собой представляют конфиденциальные вычисления Azure?
+      url: overview.md
+    - text: Сценарии
+      url: use-cases-scenarios.md
+  - linkListType: concept
+    links:
+    - text: Виртуальные машины
+      url: confidential-computing-enclaves.md
+    - text: Контейнерные вычисления в AKS
+      url: confidential-containers.md
+    - text: Разработка приложений
+      url: application-development.md
+    - text: Аттестация
+      url: attestation.md
+  - linkListType: reference
+    links:
+    - text: Виртуальные машины Intel SGX
+      url: ../virtual-machines/dcv2-series.md
+- title: Виртуальные машины
+  linkLists:
+  - linkListType: get-started
+    links:
+    - text: Виртуальные машины Intel SGX
+      url: confidential-computing-enclaves.md
+  - linkListType: concept
+    links:
+    - text: Решения на виртуальных машинах
+      url: virtual-machine-solutions.md
+  - linkListType: quickstart
+    links:
+    - text: Развертывание на портале Azure
+      url: quick-create-portal.md
+    - text: Развертывание в Azure Marketplace
+      url: quick-create-marketplace.md
+  - linkListType: reference
+    links:
+    - text: Часто задаваемые вопросы по виртуальным машинам с конфиденциальными вычислениями
+      url: faq.md
+    - text: Цены
+      url: https://azure.microsoft.com/pricing/details/virtual-machines/linux/#DC1s-C8s%20v2
+    - text: Доступность
+      url: https://azure.microsoft.com/global-infrastructure/services/?products=virtual-machines
+- title: Вычислительные ресурсы контейнера
+  linkLists:
+  - linkListType: get-started
+    links:
+    - text: Узлы конфиденциальных вычислений для Службы Azure Kubernetes (AKS) (предварительная версия)
+      url: confidential-nodes-aks-overview.md
+  - linkListType: concept
+    links:
+    - text: Конфиденциальные контейнеры
+      url: confidential-containers.md
+    - text: Контейнеры с поддержкой анклавов
+      url: enclave-aware-containers.md
+    - text: Аттестация вне процесса
+      url: confidential-nodes-out-of-proc-attestation.md
+  - linkListType: quickstart
+    links:
+    - text: Простое контейнерное приложение анклава в AKS
+      url: confidential-nodes-aks-get-started.md
+  - linkListType: sample
+    links:
+    - text: Примеры конфиденциальных контейнеров (неизмененные контейнеры в SGX)
+      url: https://github.com/Azure-Samples/confidential-container-samples
+    - text: Примеры контейнеров с поддержкой анклавов
+      url: https://github.com/Azure-Samples/enclave-aware-container-samples
+  - linkListType: reference
+    links:
+    - text: Часто задаваемые вопросы о конфиденциальных узлах в AKS
+      url: confidential-nodes-aks-overview.md
+    - text: Сведения о Службе Azure Kubernetes (AKS)
+      url: ../aks/intro-kubernetes.md
+- title: Конфиденциальные облачные службы
+  linkLists:
+  - linkListType: reference
+    links:
+    - text: Аттестация Microsoft Azure
+      url: ../attestation/overview.md
+    - text: Среда выполнения ONNX с конфиденциальным выводом
+      url: https://aka.ms/confidentialinference
+- title: Разработка с конфиденциальными вычислениями
+  linkLists:
+  - linkListType: tutorial
+    links:
+    - text: Демонстрация конфиденциальных решений для здравоохранения в AKS
+      url: https://github.com/Azure-Samples/confidential-container-samples
+    - text: Аттестованная взаимная поддержка TLS с Open Enclave в AKS
+      url: https://github.com/Azure-Samples/enclave-aware-container-samples
+  - linkListType: reference
+    links:
+    - text: Пакет SDK Open Enclave (OE)
+      url: https://aka.ms/oesdkGitHubRepo

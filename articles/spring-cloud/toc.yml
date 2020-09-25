@@ -13,7 +13,7 @@
     - name: Создание и запуск микрослужб
       expanded: true
       items:
-        - name: Общие сведения о примерах приложений
+        - name: Общие сведения о примере приложения
           href: spring-cloud-quickstart-sample-app-introduction.md
         - name: Подготовка службы Azure Spring Cloud
           href: spring-cloud-quickstart-provision-service-instance.md
@@ -37,8 +37,6 @@
       href: spring-cloud-tutorial-circuit-breaker.md
     - name: Пользовательское DNS-имя
       href: spring-cloud-tutorial-custom-domain.md
-    - name: Развертывание приложений Azure Spring Cloud с помощью IntelliJ
-      href: spring-cloud-tutorial-intellij-deploy-apps.md
     - name: Подготовка экземпляра Azure Spring Cloud с помощью Terraform
       href: spring-cloud-tutorial-provision-azure-spring-cloud-instance-terraform.md
     - name: Использование CI/CD с Jenkins

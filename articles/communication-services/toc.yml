@@ -1,0 +1,88 @@
+- name: Документация по Службам коммуникации Azure
+  href: index.yml
+- name: Обзор
+  expanded: true
+  items:
+    - name: Что собой представляют Службы коммуникации Azure?
+      href: overview.md
+- name: Краткие руководства
+  expanded: true
+  items:
+    - name: Создание ресурса Служб коммуникации
+      href: quickstarts/create-communication-resource.md
+    - name: Создание маркеров доступа и управление ими
+      href: quickstarts/access-tokens.md
+    - name: Чат
+      items:
+        - name: Добавление чата в приложение
+          href: quickstarts/chat/get-started.md
+    - name: Телефония и SMS
+      items:
+        - name: Получение номера телефона
+          href: quickstarts/telephony-sms/get-phone-number.md
+        - name: Отправка SMS-сообщения
+          href: quickstarts/telephony-sms/send.md
+        - name: Обработка событий SMS
+          href: quickstarts/telephony-sms/handle-sms-events.md
+    - name: Голосовая и видеосвязь
+      items:
+        - name: Добавление в приложение функции голосового звонка
+          href: quickstarts/voice-video-calling/getting-started-with-calling.md
+        - name: Использование клиентской библиотеки для вызовов
+          href: quickstarts/voice-video-calling/calling-client-samples.md
+- name: Учебники
+  expanded: false
+  items:
+    - name: Создание доверенной службы проверки подлинности с помощью Функций Azure
+      href: tutorials/trusted-service-tutorial.md
+- name: Основные понятия
+  expanded: false
+  items:
+    - name: Чат
+      items:
+        - name: Общие сведения о клиентской библиотеке для чата
+          href: concepts/chat/sdk-features.md
+        - name: Основные понятия чата
+          href: concepts/chat/concepts.md
+    - name: Телефония и SMS
+      items:
+        - name: Общие сведения о клиентской библиотеке для текстовых сообщений
+          href: concepts/telephony-sms/sdk-features.md
+        - name: Основные понятия обмена SMS
+          href: concepts/telephony-sms/concepts.md
+        - name: Планирование решения для телефонии и SMS
+          href: concepts/telephony-sms/plan-solution.md
+    - name: Голосовая и видеосвязь
+      items:
+        - name: Общие сведения о клиентской библиотеке для вызовов
+          href: concepts/voice-video-calling/calling-sdk-features.md
+        - name: Основные понятия голосовой связи и видеосвязи
+          href: concepts/voice-video-calling/about-call-types.md
+    - name: Клиентская и серверная архитектура
+      href: concepts/client-and-server-architecture.md
+    - name: Потоки вызовов
+      href: concepts/call-flows.md
+    - name: "Клиентские библиотеки и интерфейсы REST\_API"
+      href: concepts/sdk-options.md
+    - name: Модель ценообразования
+      href: concepts/pricing.md
+    - name: Аутентификация
+      href: concepts/authentication.md
+    - name: Обработка событий
+      href: concepts/event-handling.md
+    - name: Уведомления
+      href: concepts/notifications.md
+- name: Примеры
+  items:
+    - name: Главный пример функции группового вызова
+      href: samples/calling-hero-sample.md
+    - name: Главный пример функции группового чата
+      href: samples/chat-hero-sample.md
+- name: Ссылки
+  items:
+    - name: Документация по REST API
+      href: 'https://docs.microsoft.com/rest/api/azure/'
+- name: Ресурсы
+  items:
+    - name: Заметки о выпуске
+      href: release-notes.md

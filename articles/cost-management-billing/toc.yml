@@ -180,6 +180,8 @@
               href: manage/grant-access-to-create-subscription.md
             - name: Экспорт сведений о подписке
               href: manage/export-subscriptions.md
+            - name: Удаление метода оплаты для выставления счетов в Azure
+              href: manage/delete-azure-payment-method.md
             - name: Изменение кредитной карты
               href: manage/change-credit-card.md
             - name: Изменение администратора

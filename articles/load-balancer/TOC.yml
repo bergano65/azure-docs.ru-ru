@@ -39,6 +39,10 @@
       href: powershell-samples.md
 - name: Основные понятия
   items:
+    - name: Подсистема балансировки нагрузки между регионами
+      href: cross-region-overview.md
+    - name: Новые возможности
+      href: whats-new.md
     - name: Components
       href: components.md
     - name: Основные понятия

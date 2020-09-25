@@ -70,7 +70,7 @@
     - name: Шифрование неактивных данных
       href: ../common/storage-service-encryption.md?toc=%2fazure%2fstorage%2ffiles%2ftoc.json
     - name: Шифрование неактивных данных с помощью управляемых клиентом ключей
-      href: ../common/encryption-customer-managed-keys.md?toc=%2fazure%2fstorage%2ffiles%2ftoc.json
+      href: ../common/customer-managed-keys-overview.md?toc=%2fazure%2fstorage%2ffiles%2ftoc.json
     - name: Целевые показатели масштабируемости и производительности хранилища
       href: storage-files-scale-targets.md
     - name: Предложения для соответствия требованиям
@@ -243,18 +243,16 @@
           items:
             - name: Проверка модели ключа шифрования для учетной записи
               href: ../common/storage-encryption-key-model-get.md?toc=%2fazure%2fstorage%2ffiles%2ftoc.json
-            - name: Настройка управляемых пользователем ключей шифрования
+            - name: 'Настройка шифрования с использованием ключей, управляемых клиентом'
               items:
-                - name: Портал
-                  href: ../common/storage-encryption-keys-portal.md?toc=%2fazure%2fstorage%2ffiles%2ftoc.json
-                - name: PowerShell
-                  href: ../common/storage-encryption-keys-powershell.md?toc=%2fazure%2fstorage%2ffiles%2ftoc.json
-                - name: Azure CLI
-                  href: ../common/storage-encryption-keys-cli.md?toc=%2fazure%2fstorage%2ffiles%2ftoc.json
-        - name: Включение шифрования инфраструктуры для учетной записи хранения
+                - name: 'Хранение ключа, управляемого клиентом, в хранилище ключей'
+                  href: ../common/customer-managed-keys-configure-key-vault.md?toc=%2fazure%2fstorage%2ffiles%2ftoc.json
+                - name: 'Хранение ключа, управляемого клиентом, в службе "Управляемое устройство HSM"'
+                  href: ../common/customer-managed-keys-configure-key-vault-hsm.md?toc=%2fazure%2fstorage%2ffiles%2ftoc.json
+        - name: Включение шифрования инфраструктуры для учетной записи
           href: ../common/infrastructure-encryption-enable.md?toc=%2fazure%2fstorage%2ffiles%2ftoc.json
-        - name: Дополнительная защита от угроз
-          href: ../common/storage-advanced-threat-protection.md?toc=%2fazure%2fstorage%2ffiles%2ftoc.json
+        - name: Настройка Azure Defender для защиты от угроз
+          href: ../common/azure-defender-storage-configure.md?toc=%2fazure%2fstorage%2ffiles%2ftoc.json
         - name: Настройка брандмауэров и виртуальных сетей
           href: ../common/storage-network-security.md?toc=%2fazure%2fstorage%2ffiles%2ftoc.json
         - name: Требование безопасной передачи

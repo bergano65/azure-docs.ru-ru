@@ -11,6 +11,8 @@
           href: get-started-netcore-visualstudio.md
     - name: Основные понятия
       items:
+        - name: Переход на Мост с Kubernetes
+          href: migrate-to-bridge-to-kubernetes.md
         - name: Принцип работы Dev Spaces
           items:
             - name: Обзор

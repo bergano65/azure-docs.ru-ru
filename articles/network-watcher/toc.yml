@@ -31,6 +31,8 @@
       href: connection-monitor-preview.md
     - name: Диагностика проблем с фильтрацией трафика виртуальной машины
       href: network-watcher-ip-flow-verify-overview.md
+    - name: Диагностика правил NSG и фильтрация трафика
+      href: network-watcher-network-configuration-diagnostics-overview.md
     - name: Диагностика проблем с маршрутизацией трафика виртуальной машины
       href: network-watcher-next-hop-overview.md
     - name: Диагностика проблем с исходящими подключениями виртуальной машины

@@ -137,14 +137,14 @@
             - name: Шифрование неактивных данных в службе хранилища Azure
               href: ../common/storage-service-encryption.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
               items:
-                - name: Управляемые клиентом ключи с использованием Azure Key Vault
-                  href: ../common/encryption-customer-managed-keys.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
-                - name: 'Ключи, предоставляемые клиентом по запросу'
-                  href: ../common/encryption-customer-provided-keys.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
+                - name: 'Шифрование с использованием ключей, управляемых клиентом'
+                  href: ../common/customer-managed-keys-overview.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
+                - name: Шифрование по запросу с использованием предоставляемых клиентом ключей
+                  href: encryption-customer-provided-keys.md
+                - name: Области шифрования
+                  href: encryption-scope-overview.md
             - name: Неизменяемые большие двоичные объекты
               href: storage-blob-immutable-storage.md
-            - name: Дополнительная защита от угроз
-              href: ../common/storage-advanced-threat-protection.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
             - name: Встроенные средства управления безопасностью
               href: ../common/storage-security-controls.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
             - name: Использование частных конечных точек Azure
@@ -380,19 +380,17 @@
                   items:
                     - name: Проверка модели ключа шифрования для учетной записи
                       href: ../common/storage-encryption-key-model-get.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
-                    - name: Настройка управляемых пользователем ключей шифрования
+                    - name: 'Настройка шифрования с использованием ключей, управляемых клиентом'
                       items:
-                        - name: Портал
-                          href: ../common/storage-encryption-keys-portal.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
-                        - name: PowerShell
-                          href: ../common/storage-encryption-keys-powershell.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
-                        - name: Azure CLI
-                          href: ../common/storage-encryption-keys-cli.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
+                        - name: 'Хранение ключа, управляемого клиентом, в хранилище ключей'
+                          href: ../common/customer-managed-keys-configure-key-vault.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
+                        - name: 'Хранение ключа, управляемого клиентом, в службе "Управляемое устройство HSM"'
+                          href: ../common/customer-managed-keys-configure-key-vault-hsm.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
                 - name: Предоставление ключа шифрования по запросу
                   href: storage-blob-customer-provided-key.md
                 - name: Управление областями шифрования
                   href: encryption-scope-manage.md
-                - name: Включение шифрования инфраструктуры для учетной записи хранения
+                - name: Включение шифрования инфраструктуры для учетной записи
                   href: ../common/infrastructure-encryption-enable.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
             - name: Настройка шифрования на стороне клиента
               items:
@@ -414,6 +412,8 @@
                       href: ../common/transport-layer-security-configure-minimum-version.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
                     - name: Настройка версии TLS для клиентского приложения
                       href: ../common/transport-layer-security-configure-client-version.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
+            - name: Настройка Azure Defender для защиты от угроз
+              href: ../common/azure-defender-storage-configure.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
             - name: Настройка и администрирование политик неизменяемости
               href: storage-blob-immutability-policies-manage.md
         - name: Управление избыточностью данных

@@ -7,14 +7,17 @@ ms.service: spring-cloud
 ms.topic: tutorial
 ms.date: 07/22/2020
 ms.custom: devx-track-java
-ms.openlocfilehash: 6e4494762c4652d3db66940dddebb13c3ab03af3
-ms.sourcegitcommit: cee72954f4467096b01ba287d30074751bcb7ff4
+ms.openlocfilehash: 5ca0c498e9fd03ce6397824465f9e1e006eeccc1
+ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/30/2020
-ms.locfileid: "87449500"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90905383"
 ---
 # <a name="tutorial-set-up-autoscale-for-microservice-applications"></a>Руководство по Настройка автомасштабирования для приложений, состоящих из микрослужб
+
+**Эта статья применима к:** ✔️ Java ✔️ C#
+
 Автомасштабирование — это встроенная функция Azure Spring Cloud, которая обеспечивает оптимальную работу приложений для микрослужб при изменении нагрузки. Например, при изменении числа виртуальных ЦП, памяти и экземпляров приложений. В этой статье описывается, как настроить автомасштабирование для приложений с помощью портала Microsoft Azure или Azure CLI.
 
 ## <a name="prerequisites"></a>Предварительные требования
@@ -68,4 +71,4 @@ ms.locfileid: "87449500"
 ## <a name="next-steps"></a>Дальнейшие действия
 
 * [Общие сведения об автомасштабировании в Microsoft Azure](https://docs.microsoft.com/azure/azure-monitor/platform/autoscale-overview)
-* [Автомасштабирование Azure Monitor](https://docs.microsoft.com/cli/azure/monitor/autoscale?view=azure-cli-latest)
+* [Автомасштабирование Azure Monitor](https://docs.microsoft.com/cli/azure/monitor/autoscale?view=azure-cli-latest&preserve-view=true)

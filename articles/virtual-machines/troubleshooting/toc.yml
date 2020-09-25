@@ -234,6 +234,12 @@
           items:
             - name: Как использовать PerfInsights
               href: how-to-use-perfinsights-linux.md
+- name: Устранение неполадок c Общей коллекцией образов
+  items:
+    - name: 'Устранение неполадок c Общей коллекцией образов: Windows'
+      href: ../windows/troubleshooting-shared-images.md
+    - name: 'Устранение неполадок c Общей коллекцией образов: Linux'
+      href: ../linux/troubleshooting-shared-images.md
 - name: Проблемы с расширением виртуальной машины
   items:
     - name: Обзор расширений Azure

@@ -1,6 +1,7 @@
 ---
-title: Добавление единого входа Майкрософт в веб-приложения ASP.NET Core — Платформа удостоверений Майкрософт | Azure
-description: Узнайте, как реализовать вход с помощью учетной записи Майкрософт в веб-приложении ASP.NET Core с помощью OpenID Connect.
+title: Добавление возможности входа в веб-приложение ASP.NET Core с помощью учетной записи Майкрософт | Azure
+titleSuffix: Microsoft identity platform
+description: Узнайте, как реализовать вход с помощью учетной записи Майкрософт в веб-приложении ASP.NET Core с помощью OpenID Connect
 services: active-directory
 author: jmprieur
 manager: CelesteDG
@@ -8,18 +9,20 @@ ms.service: active-directory
 ms.subservice: develop
 ms.topic: quickstart
 ms.workload: identity
-ms.date: 04/11/2019
+ms.date: 09/11/2020
 ms.author: jmprieur
 ms.custom: devx-track-csharp, aaddev, identityplatformtop40, scenarios:getting-started, languages:aspnet-core
-ms.openlocfilehash: fdc1f0db956d0f64938b6a0433fda21dc4462ced
-ms.sourcegitcommit: 56cbd6d97cb52e61ceb6d3894abe1977713354d9
+ms.openlocfilehash: 1d31fc70aaf8449ed8bdafe4e290113e20865906
+ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/20/2020
-ms.locfileid: "88691332"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90902363"
 ---
 # <a name="quickstart-add-sign-in-with-microsoft-to-an-aspnet-core-web-app"></a>Краткое руководство. Добавление возможности входа в веб-приложение ASP.NET Core с помощью учетной записи Майкрософт
+
 В этом кратком руководстве вы на конкретном примере кода изучите, как веб-приложение ASP.NET Core позволяет войти в личные учетные записи (hotmail.com, outlook.com и т. д.), а также рабочие и учебные учетные записи из любого экземпляра Azure Active Directory (Azure AD). (Иллюстрацию см. в разделе [Как работает этот пример](#how-the-sample-works).)
+
 > [!div renderon="docs"]
 > ## <a name="register-and-download-your-quickstart-app"></a>Регистрация и скачивание приложения, используемого в этом кратком руководстве
 > У вас есть два варианта запуска приложения, используемого в этом кратком руководстве:
@@ -37,18 +40,18 @@ ms.locfileid: "88691332"
 > #### <a name="step-1-register-your-application"></a>Шаг 1. Регистрация приложения
 > Чтобы зарегистрировать приложение и добавить сведения о его регистрации в решение вручную, сделайте следующее:
 >
-> 1. Войдите на [портал Azure](https://portal.azure.com) с помощью личной учетной записи Майкрософт либо рабочей или учебной учетной записи.
-> 1. Если учетная запись предоставляет доступ нескольким клиентам, выберите свою учетную запись в правом верхнем углу и нужный клиент Azure AD для этого сеанса портала.
-> 1. Перейдите на страницу [Регистрация приложений](https://go.microsoft.com/fwlink/?linkid=2083908) Платформы удостоверений Майкрософт для разработчиков.
-> 1. Выберите **Новая регистрация**.
-> 1. После появления страницы **Регистрация приложения** введите сведения о регистрации приложения:
->    - В разделе **Имя** введите понятное имя приложения, которое будет отображаться пользователям приложения, например `AspNetCore-Quickstart`.
->    - В поле **URI перенаправления** добавьте `https://localhost:44321/` и выберите **Зарегистрировать**.
-> 1. Выберите меню **Проверка подлинности**, а затем добавьте следующие сведения:
->    - В поле **URI перенаправления** добавьте `https://localhost:44321/signin-oidc` и выберите **Сохранить**.
->    - В разделе **Дополнительные параметры** задайте для параметра **URL-адрес выхода** значение `https://localhost:44321/signout-oidc`.
->    - В разделе **Неявное предоставление** установите флажок **Токен идентификатора**.
->    - Щелкните **Сохранить**.
+> 1. Войдите на [портал Azure](https://portal.azure.com).
+> 1. Если у вас есть доступ к нескольким клиентам, в верхнем меню используйте фильтр **Каталог и подписка** :::image type="icon" source="./media/common/portal-directory-subscription-filter.png" border="false":::, чтобы выбрать клиент, в котором следует зарегистрировать приложение.
+> 1. Найдите и выберите **Azure Active Directory**.
+> 1. В разделе **Управление** щелкните **Регистрация приложений** и выберите пункт **Новая регистрация**.
+> 1. Введите **имя** приложения, например `AspNetCore-Quickstart`. Пользователи приложения могут видеть это имя. Вы можете изменить его позже.
+> 1. Введите **URI перенаправления** `https://localhost:44321/`
+> 1. Выберите **Зарегистрировать**.
+> 1. В разделе **Управление** выберите **Проверка подлинности**.
+> 1. В разделе **URI перенаправления** выберите **Добавить URI** и введите `https://localhost:44321/signin-oidc`
+> 1. Введите **URL-адрес выхода** `https://localhost:44321/signout-oidc`
+> 1. В разделе **Неявное предоставление разрешения** установите флажок **Токены идентификатора**.
+> 1. Щелкните **Сохранить**.
 
 > [!div class="sxs-lookup" renderon="portal"]
 > #### <a name="step-1-configure-your-application-in-the-azure-portal"></a>Шаг 1. Настройка приложения на портале Azure
@@ -62,12 +65,13 @@ ms.locfileid: "88691332"
 #### <a name="step-2-download-your-aspnet-core-project"></a>Шаг 2. Скачивание проекта ASP.NET Core
 
 > [!div renderon="docs"]
-> [Скачивание решения ASP.NET Core](https://github.com/Azure-Samples/active-directory-aspnetcore-webapp-openidconnect-v2/archive/aspnetcore2-2.zip)
+> [Скачивание решения ASP.NET Core](https://github.com/Azure-Samples/active-directory-aspnetcore-webapp-openidconnect-v2/archive/aspnetcore3-1.zip)
 
-> [!div class="sxs-lookup" renderon="portal"]
+> [!div renderon="portal" class="sxs-lookup"]
 > Запустите проект.
-> [!div renderon="portal" id="autoupdate" class="nextstepaction"]
-> [Скачивание примера кода](https://github.com/Azure-Samples/active-directory-aspnetcore-webapp-openidconnect-v2/archive/aspnetcore2-2.zip)
+
+> [!div renderon="portal" class="sxs-lookup" id="autoupdate" class="nextstepaction"]
+> [Скачивание примера кода](https://github.com/Azure-Samples/active-directory-aspnetcore-webapp-openidconnect-v2/archive/aspnetcore3-1.zip)
 
 > [!div class="sxs-lookup" renderon="portal"]
 > #### <a name="step-3-your-app-is-configured-and-ready-to-run"></a>Шаг 3. Приложение настроено и готово к запуску
@@ -76,28 +80,35 @@ ms.locfileid: "88691332"
 > > [!NOTE]
 > > `Enter_the_Supported_Account_Info_Here`
 > [!div renderon="docs"]
-> #### <a name="step-3-run-your-aspnet-core-project"></a>Шаг 3. Запуск проекта ASP.NET Core
-> 1. Извлеките ZIP-файл в локальную папку, расположенную в корневой папке (например, **C:\Azure-Samples**).
-> 1. Откройте решение в интегрированной среде разработки.
-> 1. Измените файл **appsettings.json**. Найти `ClientId` и измените значение `ClientId` на **идентификатор зарегистрированного приложения (клиента)** .
+> #### <a name="step-3-configure-your-aspnet-core-project"></a>Шаг 3. Настройка проекта ASP.NET Core
+> 1. Извлеките ZIP-архив в локальную папку рядом с корнем диска. Например, в папку *C:\Azure-Samples*.
+> 1. Откройте решение в Visual Studio 2019.
+> 1. Откройте файл *appsettings.json* и измените следующие значения:
 >
 >    ```json
->    "ClientId": "Enter_the_Application_Id_here"
->    "TenantId": "Enter_the_Tenant_Info_Here"
+>    "ClientId": "Enter_the_Application_Id_here",
+>    "TenantId": "common",
 >    ```
-
-
-
-> [!div renderon="docs"]
-> Где:
-> - `Enter_the_Application_Id_here` — **идентификатор приложения (клиента)** , зарегистрированного на портале Azure. **Идентификатор приложения (клиента)** можно найти на странице **Обзор** приложения.
-> - `Enter_the_Tenant_Info_Here` — один из следующих вариантов:
->   - Если приложение поддерживает **учетные записи только в этом каталоге организации**, замените это значение **идентификатором клиента** или **именем клиента** (например, contoso.microsoft.com).
->   - Если ваше приложение поддерживает вариант **Учетные записи в любом каталоге организации**, замените это значение на `organizations`.
->   - Если приложение поддерживает вариант **Все пользователи с учетными записями Майкрософт**, замените это значение на `common`.
 >
-> > [!TIP]
-> > Чтобы найти значения параметров **Идентификатор приложения (клиента)** , **Идентификатор каталога (клиента)** и **Поддерживаемые типы учетных записей**, на портале Azure перейдите на страницу **Обзор**.
+>    - Замените `Enter_the_Application_Id_here`  **идентификатором приложения (клиента)** , зарегистрированного на портале Azure. **Идентификатор приложения (клиента)** можно найти на странице **Обзор** приложения.
+>    - Замените `common` одним из следующих элементов:
+>       - Если приложение поддерживает вариант **Учетные записи только в этом каталоге организации**, замените это значение **идентификатором каталога (клиента)** (GUID) или **именем клиента** (например, `contoso.onmicrosoft.com`). Вы можете найти **идентификатор каталога (клиента)** на странице **Обзор** приложения.
+>       - Если ваше приложение поддерживает вариант **Учетные записи в любом каталоге организации**, замените это значение на `organizations`.
+>       - Если приложение поддерживает вариант **Все пользователи с учетными записями Майкрософт**, оставьте это значение как `common`
+>
+> Для целей этого руководства изменение других значений в файле *appsettings.json* не требуется.
+>
+> #### <a name="step-4-build-and-run-the-application"></a>Шаг 4. Сборка и запуск приложения
+>
+> Выполните сборку и запустите приложение в Visual Studio, выбрав меню **Отладка** > **Начать отладку** или нажав кнопку `F5`.
+>
+> Вы увидите запрос на ввод учетных данных, а затем запрос на предоставление согласия на разрешения, необходимые вашему приложению. Выберите **Принять** в запросе на согласие.
+>
+> :::image type="content" source="media/quickstart-v2-aspnet-core-webapp/webapp-01-consent.png" alt-text="Диалоговое окно согласия с разрешениями, запрашиваемыми приложением от > пользователя":::
+>
+> После предоставления согласия на запрошенные разрешения в приложении отобразится оповещение об успешном входе с использованием учетных данных Azure Active Directory.
+>
+> :::image type="content" source="media/quickstart-v2-aspnet-core-webapp/webapp-02-signed-in.png" alt-text="Веб-браузер, отображающий работающее веб-приложение и вошедшего в него пользователя":::
 
 ## <a name="more-information"></a>Дополнительные сведения
 
@@ -108,64 +119,46 @@ ms.locfileid: "88691332"
 
 ### <a name="startup-class"></a>Класс Startup
 
-ПО промежуточного слоя *Microsoft.AspNetCore.Authentication* использует класс Startup, который выполняется при инициализации хост-процесса:
+ПО промежуточного слоя *Microsoft.AspNetCore.Authentication* использует класс `Startup`, который выполняется при инициализации хост-процесса:
 
 ```csharp
-public void ConfigureServices(IServiceCollection services)
-{
-  services.Configure<CookiePolicyOptions>(options =>
+  public void ConfigureServices(IServiceCollection services)
   {
-    // This lambda determines whether user consent for non-essential cookies is needed for a given request.
-    options.CheckConsentNeeded = context => true;
-    options.MinimumSameSitePolicy = SameSiteMode.None;
-  });
+      services.AddAuthentication(OpenIdConnectDefaults.AuthenticationScheme)
+          .AddMicrosoftIdentityWebApp(Configuration.GetSection("AzureAd"));
 
-  services.AddAuthentication(AzureADDefaults.AuthenticationScheme)
-          .AddAzureAD(options => Configuration.Bind("AzureAd", options));
-
-  services.Configure<OpenIdConnectOptions>(AzureADDefaults.OpenIdScheme, options =>
-  {
-    options.Authority = options.Authority + "/v2.0/";         // Microsoft identity platform
-
-    options.TokenValidationParameters.ValidateIssuer = false; // accept several tenants (here simplified)
-  });
-
-  services.AddMvc(options =>
-  {
-     var policy = new AuthorizationPolicyBuilder()
-                     .RequireAuthenticatedUser()
-                     .Build();
-     options.Filters.Add(new AuthorizeFilter(policy));
-  })
-  .SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
-}
+      services.AddControllersWithViews(options =>
+      {
+          var policy = new AuthorizationPolicyBuilder()
+              .RequireAuthenticatedUser()
+              .Build();
+          options.Filters.Add(new AuthorizeFilter(policy));
+      });
+      services.AddRazorPages()
+          .AddMicrosoftIdentityUI();
+  }
 ```
 
-Метод `AddAuthentication` настраивает службу для добавления аутентификации на основе файлов cookie, которая используется при работе с браузером, и определения запроса для OpenID Connect.
+Метод `AddAuthentication()` настраивает службу для добавления аутентификации на основе файлов cookie, которая используется при работе с браузером, и определения запроса для OpenID Connect.
 
-Строка, содержащая `.AddAzureAd`, добавляет в ваше приложение функцию аутентификации платформы удостоверений Майкрософт. Затем выполняется настройка для входа с помощью конечной точки платформы удостоверений Майкрософт.
+Строка, содержащая `.AddMicrosoftIdentityWebApp`, добавляет в ваше приложение функцию аутентификации платформы удостоверений Майкрософт. Затем она настраивается для входа с использованием конечной точки платформы удостоверений Майкрософт на основе сведений в разделе `AzureAD` файла конфигурации *appsettings.json*:
 
-> |Where | Описание |
-> |---------|---------|
-> | ClientId  | Идентификатор приложения (клиента), зарегистрированного на портале Azure. |
-> | Authority | Конечная точка службы токенов безопасности для проверки подлинности пользователей. Обычно это `https://login.microsoftonline.com/{tenant}/v2.0` для общедоступного облака, где {tenant} — имя вашего клиента, идентификатор клиента или *common* для ссылки на общую конечную точку (используется для мультитенантных приложений). |
-> | TokenValidationParameters | Список параметров для проверки маркеров. В этом случае для `ValidateIssuer` задано значение `false`, чтобы указать, что приложение может принимать операции входа с любых типов личных, рабочих или учебных учетных записей. |
+| Ключ *appsettings.json* | Описание                                                                                                                                                          |
+|------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `ClientId`             | **Идентификатор приложения (клиента)** , зарегистрированного на портале Azure.                                                                                       |
+| `Instance`             | Конечная точка службы токенов безопасности для проверки подлинности пользователей. Обычно это значение `https://login.microsoftonline.com/`, указывающее на общедоступное облако Azure. |
+| `TenantId`             | Имя клиента, идентификатор клиента (GUID) или *общие* пользователи с рабочими или учебными учетными записями или личными учетными записями Майкрософт.                             |
 
-
-> [!NOTE]
-> Параметр `ValidateIssuer = false` приводится в этом кратком руководстве для упрощения. В реальных приложениях необходимо проверить издателя.
-> См. примеры кода, чтобы узнать, как это сделать.
->
-> Также обратите внимание на метод `Configure`, который содержит два важных метода: `app.UseCookiePolicy()` и `app.UseAuthentication()`.
+Метод `Configure()` содержит два важных метода: `app.UseCookiePolicy()` и `app.UseAuthentication()`, которые обеспечивают упомянутые функциональные возможности.
 
 ```csharp
 // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
 public void Configure(IApplicationBuilder app, IHostingEnvironment env)
 {
-    // more core
-    app.UseCookiePolicy();
+    // more code
     app.UseAuthentication();
-    // more core
+    app.UseAuthorization();
+    // more code
 }
 ```
 
@@ -177,7 +170,12 @@ public void Configure(IApplicationBuilder app, IHostingEnvironment env)
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Извлеките репозиторий GitHub для работы с этим руководством по ASP.NET Core. Вы узнаете, как добавлять аутентификацию для нового веб-приложения ASP.NET Core, вызывать API Microsoft Graph и другие API Майкрософт, вызывать собственные API, добавлять авторизацию, реализовать вход пользователей в национальных облаках или с использованием удостоверений социальных сетей и многое другое:
+В репозитории GitHub, содержащем это руководство ASP.NET Core, есть также инструкции и дополнительные примеры кода, демонстрирующие выполнение следующих действий.
+
+- Добавление проверки подлинности в новое веб-приложение ASP.NET Core
+- Вызов Microsoft Graph, других API Майкрософт или собственных веб-API
+- Добавление авторизации
+- Вход пользователей в национальные облака или вход с помощью удостоверений социальных сетей
 
 > [!div class="nextstepaction"]
-> [Руководство. Веб-приложение ASP.NET Core](https://github.com/Azure-Samples/active-directory-aspnetcore-webapp-openidconnect-v2/)
+> [Учебники по веб-приложениям ASP.NET Core в GitHub](https://github.com/Azure-Samples/active-directory-aspnetcore-webapp-openidconnect-v2/)

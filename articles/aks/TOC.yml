@@ -132,6 +132,8 @@
       items:
         - name: Масштабирование кластера AKS
           href: scale-cluster.md
+        - name: Остановка кластера AKS (предварительная версия)
+          href: start-stop-cluster.md
         - name: Обновление кластера AKS
           href: upgrade-cluster.md
         - name: Использование соглашения об уровне обслуживания с гарантией времени непрерывной работы
@@ -307,8 +309,10 @@
           href: /virtualization/windowscontainers/manage-docker/optimize-windows-dockerfile?context=/azure/aks/context/aks-context
     - name: Разработка и запуск приложений
       items:
-        - name: Использование Локального процесса с Kubernetes в Visual Studio Code (предварительная версия)
-          href: 'https://code.visualstudio.com/docs/containers/local-process-kubernetes'
+        - name: Использование Моста с Kubernetes в Visual Studio Code
+          href: 'https://code.visualstudio.com/docs/containers/bridge-to-kubernetes'
+        - name: Использование Моста с Kubernetes в Visual Studio
+          href: /visualstudio/containers/bridge-to-kubernetes
         - name: Установка существующих приложений с помощью Helm
           href: kubernetes-helm.md
         - name: С помощью OpenFaaS

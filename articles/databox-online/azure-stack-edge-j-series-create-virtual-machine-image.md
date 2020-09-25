@@ -1,6 +1,6 @@
 ---
-title: Создание образов виртуальных машин для устройства GPU Azure Stack Edge
-description: Узнайте, как создавать образы виртуальных машин Linux и Windows для использования с устройством GPU Azure Stack Edge.
+title: Создание образов виртуальных машин для устройства GPU Azure Stack Edge Pro
+description: Узнайте, как создавать образы виртуальных машин Linux и Windows для использования с устройством GPU Azure Stack Edge Pro.
 services: databox
 author: alkohli
 ms.service: databox
@@ -8,24 +8,24 @@ ms.subservice: edge
 ms.topic: how-to
 ms.date: 09/04/2020
 ms.author: alkohli
-ms.openlocfilehash: fd87cbef4c667d9da1f93b448a2a67e6e90307b7
-ms.sourcegitcommit: 206629373b7c2246e909297d69f4fe3728446af5
+ms.openlocfilehash: 745d0df07b6d0d01acf0d564df8c242e16f3f56d
+ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/06/2020
-ms.locfileid: "89500289"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90890991"
 ---
-# <a name="create-custom-vm-images-for-your-azure-stack-edge-device"></a>Создание пользовательских образов виртуальных машин для устройства Azure Stack Edge
+# <a name="create-custom-vm-images-for-your-azure-stack-edge-pro-device"></a>Создание пользовательских образов виртуальных машин для устройства Azure Stack Edge Pro
 
 <!--[!INCLUDE [applies-to-skus](../../includes/azure-stack-edge-applies-to-all-sku.md)]-->
 
-Для развертывания виртуальных машин на устройстве Azure Stack Edge требуется возможность создавать пользовательские образы виртуальных машин, которые можно использовать для создания виртуальных машин. В этой статье показано, как создавать пользовательские образы виртуальных машин Linux и Windows, которые можно использовать для развертывания виртуальных машин на устройстве Azure Stack Edge.
+Для развертывания виртуальных машин на устройстве Azure Stack Edge Pro требуется возможность создавать пользовательские образы виртуальных машин, которые можно использовать для создания виртуальных машин. В этой статье показано, как создавать пользовательские образы виртуальных машин Linux и Windows, которые можно использовать для развертывания виртуальных машин на устройстве Azure Stack Edge Pro.
 
 ## <a name="vm-image-workflow"></a>Рабочий процесс создания образа виртуальной машины
 
-Рабочий процесс предусматривает создание виртуальной машины в Azure, ее настройку и подготовку к использованию, а также скачивание виртуального жесткого диска, соответствующего этой виртуальной машине. Этот подготовленный виртуальный жесткий диск передается в Azure Stack Edge. Затем на его основе создается управляемый диск, а на его основе — образ, из которого в конечном итоге создаются виртуальные машины.   
+Рабочий процесс предусматривает создание виртуальной машины в Azure, ее настройку и подготовку к использованию, а также скачивание виртуального жесткого диска, соответствующего этой виртуальной машине. Этот подготовленный виртуальный жесткий диск передается в Azure Stack Edge Pro. Затем на его основе создается управляемый диск, а на его основе — образ, из которого в конечном итоге создаются виртуальные машины.   
 
-Дополнительные сведения см. в статье [Развертывание виртуальных машин на устройстве GPU Azure Stack Edge с помощью Azure PowerShell](azure-stack-edge-j-series-deploy-virtual-machine-powershell.md).
+Дополнительные сведения см. в статье [Развертывание виртуальных машин на устройстве GPU Azure Stack Edge Pro с помощью Azure PowerShell](azure-stack-edge-j-series-deploy-virtual-machine-powershell.md).
 
 
 ## <a name="create-a-windows-custom-vm-image"></a>Создание пользовательского образа виртуальной машины Windows
@@ -44,7 +44,7 @@ ms.locfileid: "89500289"
    
        См. статью [Обзор Sysprep (подготовка системы)](https://docs.microsoft.com/windows-hardware/manufacture/desktop/sysprep--system-preparation--overview).
 
-Используйте этот виртуальный жесткий диск, чтобы создать и развернуть виртуальную машину на устройстве Azure Stack Edge.
+Используйте этот виртуальный жесткий диск, чтобы создать и развернуть виртуальную машину на устройстве Azure Stack Edge Pro.
 
 ## <a name="create-a-linux-custom-vm-image"></a>Создание пользовательского образа виртуальной машины Linux
 
@@ -69,7 +69,7 @@ ms.locfileid: "89500289"
 
 1. [Скачайте существующий диск ОС.](../virtual-machines/linux/download-vhd.md)
 
-Используйте этот виртуальный жесткий диск, чтобы создать и развернуть виртуальную машину на устройстве Azure Stack Edge. Для создания пользовательских образов Linux можно использовать следующие два образа Azure Marketplace:
+Используйте этот виртуальный жесткий диск, чтобы создать и развернуть виртуальную машину на устройстве Azure Stack Edge Pro. Для создания пользовательских образов Linux можно использовать следующие два образа Azure Marketplace:
 
 |Имя элемента.  |Описание  |Издатель  |
 |---------|---------|---------|
@@ -81,4 +81,4 @@ ms.locfileid: "89500289"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-[Развертывание виртуальных машин на устройстве Azure Stack Edge](azure-stack-edge-j-series-deploy-virtual-machine-powershell.md)
+[Развертывание виртуальных машин на устройстве Azure Stack Edge Pro](azure-stack-edge-j-series-deploy-virtual-machine-powershell.md)

@@ -1,0 +1,28 @@
+- name: Автоматическое управление Azure
+  href: automanage-virtual-machines.md
+- name: Краткие руководства
+  expanded: true
+  items:
+    - name: Включение на виртуальных машинах на портале Azure
+      href: quick-create-virtual-machines-portal.md
+- name: Основные понятия
+  expanded: true
+  items:
+    - name: Виртуальные машины
+      href: automanage-virtual-machines.md
+    - name: Рекомендации по виртуальным машинам
+      href: virtual-machines-best-practices.md
+- name: Практическое руководство
+  expanded: true
+  items:
+    - name: Создание пользовательских настроек
+      href: virtual-machines-custom-preferences.md
+    - name: Включение на виртуальных машинах с помощью Политики Azure
+      href: virtual-machines-policy-enable.md
+- name: Ресурсы
+  expanded: true
+  items:
+    - name: ВОПРОСЫ И ОТВЕТЫ
+      href: faq.md
+    - name: Cloud Adoption Framework
+      href: 'https://docs.microsoft.com/azure/cloud-adoption-framework/manage/azure-server-management'

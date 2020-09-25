@@ -7,14 +7,18 @@ ms.service: spring-cloud
 ms.topic: tutorial
 ms.date: 04/06/2020
 ms.custom: devx-track-java
-ms.openlocfilehash: 8cc8f347330904bfab980b79cf5c5f351ce16629
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: fa66f17c6f96ac7f70188c5a28c0b180ed2f03e0
+ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87089487"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90906879"
 ---
 # <a name="use-circuit-breaker-dashboard-with-azure-spring-cloud"></a>использованию панели мониторинга размыкателя цепи в Azure Spring Cloud
+
+**Эта статья применима к:** ✔️ Java
+
+::: zone pivot="programming-language-java"
 Spring [Cloud Netflix Turbine](https://github.com/Netflix/Turbine) часто используется для объединения нескольких потоков метрик [Hystrix](https://github.com/Netflix/Hystrix), чтобы потоки можно было отслеживать в одном представлении с помощью панели мониторинга Hystrix. В этом учебнике показано, как использовать их в Azure Spring Cloud.
 > [!NOTE]
 > Netflix Hystrix широко используется во многих имеющихся приложениях Spring Cloud, но больше не находится в активной разработке. Если вы разрабатываете новый проект, используйте вместо размыкателя цепи Spring Cloud реализации, такие как [resilience4j](https://github.com/resilience4j/resilience4j). В отличие от Turbine, показанного в этом учебнике, новая платформа размыкателя цепи Spring Cloud объединяет все реализации своего конвейера данных метрик в Micrometer. Мы все еще работаем над поддержкой Micrometer в Azure Spring Cloud, поэтому он не рассматривается в этом учебнике.
@@ -80,3 +84,4 @@ az spring-cloud app deploy -n hystrix-turbine --jar-path hystrix-turbine/target/
 ## <a name="next-steps"></a>Дальнейшие действия
 * [Подготовка экземпляра службы к работе в Azure CLI](https://docs.microsoft.com/azure/spring-cloud/spring-cloud-quickstart-launch-app-cli#provision-a-service-instance-on-the-azure-cli)
 * [Подготовка приложения Java Spring для развертывания в Azure Spring Cloud](https://docs.microsoft.com/azure/spring-cloud/spring-cloud-tutorial-prepare-app-deployment)
+::: zone-end

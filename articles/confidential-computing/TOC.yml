@@ -1,27 +1,65 @@
 - name: Конфиденциальные вычисления Azure
-  href: overview.md
+  href: ./index.yml
+- name: Обзор
+  expanded: true
+  items:
+    - name: Приветствуем в службе конфиденциальных вычислений Azure
+      href: overview.md
+    - name: Варианты использования и сценарии
+      href: use-cases-scenarios.md
 - name: Краткие руководства
   expanded: true
   items:
-    - name: Создание с помощью портала Azure
-      href: quick-create-portal.md
-    - name: Создание с помощью Marketplace
-      href: quick-create-marketplace.md
+    - name: Виртуальные машины
+      items:
+        - name: Создание с помощью портала Azure
+          href: quick-create-portal.md
+        - name: Создание с помощью Marketplace
+          href: quick-create-marketplace.md
+    - name: Службы Azure Kubernetes (AKS)
+      items:
+        - name: Общие сведения о конфиденциальных узлах в AKS
+          href: confidential-nodes-aks-overview.md
+        - name: "Конфиденциальные узлы и Azure\_CLI"
+          href: confidential-nodes-aks-get-started.md
+        - name: Часто задаваемые вопросы о конфиденциальных узлах в AKS
+          href: confidential-nodes-aks-faq.md
 - name: Основные понятия
   expanded: true
   items:
-    - name: Решения в Виртуальных машинах
-      href: virtual-machine-solutions.md
+    - name: Виртуальные машины
+      items:
+        - name: Виртуальные машины с поддержкой анклавов
+          href: confidential-computing-enclaves.md
+        - name: Решения на виртуальных машинах
+          href: virtual-machine-solutions.md
+        - name: Часто задаваемые вопросы о конфиденциальных вычислениях на виртуальных машинах
+          href: faq.md
+    - name: Вычислительные ресурсы контейнера
+      expanded: true
+      items:
+        - name: Конфиденциальные контейнеры (lift-and-shift)
+          items:
+            - name: Начало работы
+              href: confidential-containers.md
+        - name: Контейнеры с поддержкой анклавов
+          items:
+            - name: Начало работы
+              href: enclave-aware-containers.md
+    - name: Аттестация
+      href: attestation.md
+    - name: Разработка приложений
+      href: application-development.md
 - name: Инструкции
-  expanded: true
   items:
     - name: Fortanix Enclave Manager
       href: how-to-fortanix-enclave-manager.md
-- name: Ресурсы
-  expanded: true
+- name: Ссылки
   items:
-    - name: ВОПРОСЫ И ОТВЕТЫ
-      href: faq.md
+    - name: Вспомогательная функция цитирования SGX
+      href: confidential-nodes-out-of-proc-attestation.md
+- name: Ресурсы
+  items:
     - name: Отзывы о конфиденциальных вычислениях
       href: 'https://feedback.azure.com/forums/919792-azure-confidential-compute'
     - name: StackOverflow

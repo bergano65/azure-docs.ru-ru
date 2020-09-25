@@ -102,6 +102,9 @@
         - name: Мобильные приложения
           tocHref: /azure/app-service-mobile/
           topicHref: /azure/app-service-mobile/
+    - name: Автоматическое управление Azure
+      tocHref: /azure/automanage/
+      topicHref: /azure/automanage/
     - name: Статические веб-приложения
       tocHref: /azure/static-web-apps/
       topicHref: /azure/static-web-apps/
@@ -429,6 +432,9 @@
         - name: Иммерсивное средство чтения
           tocHref: /azure/cognitive-services/immersive-reader/
           topicHref: /azure/cognitive-services/immersive-reader/
+    - name: Службы коммуникации
+      tocHref: /azure/communication-services/
+      topicHref: /azure/communication-services/
     - name: Соединители
       tocHref: /azure/connectors/
       topicHref: /azure/connectors/
@@ -564,6 +570,9 @@
         - name: Секреты
           tocHref: /azure/key-vault/secrets/
           topicHref: /azure/key-vault/secrets/
+        - name: Управляемое устройство HSM
+          tocHref: /azure/key-vault/managed-hsm/
+          topicHref: /azure/key-vault/managed-hsm/
     - name: Azure Kinect DK
       tocHref: /azure/kinect-dk/
       topicHref: /azure/kinect-dk/

@@ -50,6 +50,8 @@
       items:
         - name: Таблица поддержки Azure Backup
           href: backup-support-matrix.md
+        - name: Таблица поддержки Центра резервного копирования
+          href: backup-center-support-matrix.md
         - name: Таблица поддержки резервного копирования виртуальных машин Azure
           href: backup-support-matrix-iaas.md
         - name: Таблица поддержки DPM и Azure Backup Server (MABS)
@@ -68,6 +70,8 @@
       items:
         - name: 'Вопросы и ответы: хранилища Служб восстановления'
           href: backup-azure-backup-faq.md
+        - name: Часто задаваемые вопросы о Центре резервного копирования
+          href: backup-center-faq.md
         - name: 'Вопросы и ответы: резервное копирование виртуальных машин Azure'
           href: backup-azure-vm-backup-faq.md
         - name: 'Вопросы и ответы: агент Служб восстановления Microsoft Azure'
@@ -88,18 +92,36 @@
       href: guidance-best-practices.md
 - name: Практические руководства
   items:
-    - name: Хранилище Служб восстановления
+    - name: Хранилища
+      items:
+        - name: Хранилище Служб восстановления
+          items:
+            - name: Обзор
+              href: backup-azure-recovery-services-vault-overview.md
+            - name: Создание
+              href: backup-create-rs-vault.md
+            - name: DELETE
+              href: backup-azure-delete-vault.md
+            - name: Переместить
+              href: backup-azure-move-recovery-services-vault.md
+            - name: Управление
+              href: backup-azure-manage-windows-server.md
+        - name: Хранилище службы архивации
+          items:
+            - name: Обзор
+              href: backup-vault-overview.md
+    - name: Центр резервного копирования
       items:
         - name: Обзор
-          href: backup-azure-recovery-services-vault-overview.md
-        - name: Создание
-          href: backup-create-rs-vault.md
-        - name: DELETE
-          href: backup-azure-delete-vault.md
-        - name: Переместить
-          href: backup-azure-move-recovery-services-vault.md
-        - name: Управление
-          href: backup-azure-manage-windows-server.md
+          href: backup-center-overview.md
+        - name: Мониторинг и эксплуатация
+          href: backup-center-monitor-operate.md
+        - name: Получение аналитических сведений
+          href: backup-center-obtain-insights.md
+        - name: Управление средой
+          href: backup-center-govern-environment.md
+        - name: Выполнение действий
+          href: backup-center-actions.md
     - name: Резервное копирование виртуальных машин Azure
       items:
         - name: Обзор
@@ -150,6 +172,10 @@
           href: restore-sql-database-azure-vm.md
         - name: Управление
           href: manage-monitor-sql-database-backup.md
+    - name: Резервное копирование Базы данных Azure для PostgreSQL
+      items:
+        - name: Backup
+          href: backup-azure-database-postgresql.md
     - name: Резервное копирование ОС Windows с помощью агента MARS
       items:
         - name: Обзор

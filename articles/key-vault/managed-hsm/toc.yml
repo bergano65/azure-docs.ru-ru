@@ -1,0 +1,80 @@
+- name: Документация по службе "Управляемое устройство HSM"
+  href: index.yml
+- name: Обзор
+  items:
+    - name: Сведения о службе "Управляемое устройство HSM"
+      href: overview.md
+- name: Краткие руководства
+  expanded: true
+  items:
+    - name: CLI
+      href: quick-create-cli.md
+    - name: Шаблон Azure Resource Manager
+      href: quick-create-template.md
+- name: Учебники
+  items:
+    - name: Управление с помощью Azure CLI
+      href: key-management.md
+    - name: Управление ролями в службе "Управляемое устройство HSM"
+      href: role-management.md
+    - name: Безопасный доступ к управляемому устройству HSM
+      href: secure-your-managed-hsm.md
+    - name: Настройка ведения журнала управляемого устройства HSM
+      href: logging.md
+    - name: Аварийное восстановление
+      href: disaster-recovery-guide.md
+    - name: Импорт защищенных модулем HSM ключей в службу "Управляемое устройство HSM"
+      href: hsm-protected-keys-byok.md
+    - name: Резервное копирование и восстановление
+      href: backup-restore.md
+- name: Основные понятия
+  items:
+    - name: Домен безопасности
+      href: security-domain.md
+    - name: Рекомендации
+      href: best-practices.md
+    - name: Управление доступом
+      href: access-control.md
+    - name: Встроенные роли локальной системы управления доступом на основе ролей
+      href: built-in-roles.md
+- name: Практические руководства
+  items: null
+- name: Справочник
+  items:
+    - name: Azure PowerShell
+      href: /powershell/module/distaster-recoveryeyvault/?view=azps-1.2.0#key_vault
+    - name: Azure CLI
+      href: /cli/azure/keyvault
+    - name: .NET
+      href: /dotnet/api/overview/azure/key-vault?view=azure-dotnet
+    - name: Java
+      href: /java/api/overview/azure/keyvault?view=azure-java-stable
+    - name: Node.js
+      href: /javascript/api/overview/azure/key-vault?view=azure-node-latest
+    - name: Python
+      href: /python/api/overview/azure/key-vault?view=azure-python
+    - name: REST
+      href: /rest/api/keyvault
+    - name: Шаблон Resource Manager
+      href: /azure/templates/microsoft.keyvault/allversions
+      displayName: ARM
+- name: Ресурсы
+  items:
+    - name: Развитие навыков с помощью Microsoft Learn
+      href: /learn/browse/?products=azure-key-vault
+    - name: Цены
+      href: 'https://azure.microsoft.com/pricing/details/key-vault/'
+    - name: Доступность по регионам
+      href: 'https://azure.microsoft.com/global-infrastructure/services/?products=key-vault'
+    - name: Соглашение об уровне обслуживания
+      href: 'https://azure.microsoft.com/support/legal/sla/key-vault/'
+    - name: Ограничения службы
+      href: ../general/service-limits.md
+    - name: Состояние службы
+      href: 'https://azure.microsoft.com/status/'
+    - name: Обновления службы
+      href: 'https://azure.microsoft.com/updates/?product=key-vault'
+    - name: Блог
+      href: 'https://blogs.technet.com/b/kv/'
+    - name: Отзыв о продукте
+      href: 'https://feedback.azure.com/forums/906355-azure-key-vault'

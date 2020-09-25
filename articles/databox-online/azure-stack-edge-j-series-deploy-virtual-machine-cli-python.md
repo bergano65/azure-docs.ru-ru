@@ -1,27 +1,27 @@
 ---
-title: Развертывание виртуальных машин на устройстве GPU Azure Stack Edge с помощью Azure CLI и Python
-description: Узнайте, как создавать виртуальные машины на устройстве GPU Azure Stack Edge и управлять ими с помощью Azure CLI и Python.
+title: Развертывание виртуальных машин на устройстве GPU Azure Stack Edge Pro с помощью Azure CLI и Python
+description: Узнайте, как создавать виртуальные машины на устройстве GPU Azure Stack Edge Pro и управлять ими с помощью Azure CLI и Python.
 services: databox
 author: alkohli
 ms.service: databox
 ms.subservice: edge
 ms.topic: how-to
-ms.date: 08/28/2020
+ms.date: 09/07/2020
 ms.author: alkohli
-ms.openlocfilehash: c633cc973cb9e4d4f0375dec638e278c48c6709c
-ms.sourcegitcommit: 206629373b7c2246e909297d69f4fe3728446af5
+ms.openlocfilehash: c27f6ef47b8e4db83ceb63e308e318803800f8a5
+ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/06/2020
-ms.locfileid: "89500238"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90890720"
 ---
-# <a name="deploy-vms-on-your-azure-stack-edge-gpu-device-using-azure-cli-and-python"></a>Развертывание виртуальных машин на устройстве GPU Azure Stack Edge с помощью Azure CLI и Python
+# <a name="deploy-vms-on-your-azure-stack-edge-pro-gpu-device-using-azure-cli-and-python"></a>Развертывание виртуальных машин на устройстве GPU Azure Stack Edge Pro с помощью Azure CLI и Python
 
 <!--[!INCLUDE [applies-to-skus](../../includes/azure-stack-edge-applies-to-all-sku.md)]-->
 
 [!INCLUDE [azure-stack-edge-gateway-deploy-virtual-machine-overview](../../includes/azure-stack-edge-gateway-deploy-virtual-machine-overview.md)]
 
-В этом руководстве показано, как создать виртуальную машину на устройстве Azure Stack Edge и управлять ею с помощью интерфейса командной строки Azure (CLI) и Python.
+В этом руководстве показано, как создать виртуальную машину на устройстве Azure Stack Edge Pro и управлять ею с помощью интерфейса командной строки Azure (CLI) и Python.
 
 ## <a name="vm-deployment-workflow"></a>Рабочий процесс развертывания виртуальной машины
 
@@ -43,13 +43,13 @@ ms.locfileid: "89500238"
 10. Создание виртуальной сети
 11. Создание виртуальной сетевой карты с использованием идентификатора подсети виртуальной сети.
 
-Подробное описание схемы рабочего процесса см. в статье [Развертывание виртуальных машин на устройстве GPU Azure Stack Edge с помощью Azure PowerShell](azure-stack-edge-j-series-deploy-virtual-machine-powershell.md). См. статью [Подключение к Azure Resource Manager на устройстве Azure Stack Edge](azure-stack-edge-j-series-connect-resource-manager.md).
+Подробное описание схемы рабочего процесса см. в статье [Развертывание виртуальных машин на устройстве Azure Stack Edge Pro с помощью Azure PowerShell](azure-stack-edge-j-series-deploy-virtual-machine-powershell.md). См. статью [Подключение к Azure Resource Manager на устройстве Azure Stack Edge](azure-stack-edge-j-series-connect-resource-manager.md).
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Прежде чем приступать к созданию виртуальной машины на устройстве Azure Stack Edge и управлению ею с помощью Azure CLI и Python, необходимо выполнить следующие предварительные требования:
+Прежде чем приступать к созданию виртуальной машины на устройстве Azure Stack Edge Pro и управлению ею с помощью Azure CLI и Python, необходимо выполнить следующие предварительные требования:
 
-1. Настройте параметры сети на устройстве Azure Stack Edge (см. раздел [Шаг 1. Настройка устройства Azure Stack Edge](azure-stack-edge-j-series-connect-resource-manager.md#step-1-configure-azure-stack-edge-device)).
+1. Настройте параметры сети на устройстве Azure Stack Edge Pro (см. раздел [Шаг 1. Настройка устройства Azure Stack Edge Pro](azure-stack-edge-j-series-connect-resource-manager.md#step-1-configure-azure-stack-edge-pro-device)).
 
 2. Включите сетевой интерфейс для служб вычислений. IP-адрес этого сетевого интерфейса используется для создания виртуального коммутатора для развертывания виртуальной машины. Это можно сделать следующим образом:
 
@@ -58,7 +58,7 @@ ms.locfileid: "89500238"
         > [!IMPORTANT] 
         > Для служб вычислений можно настроить только один порт.
 
-    2. Включите службы вычислений на сетевом интерфейсе. Azure Stack Edge создает виртуальный коммутатор, соответствующий этому сетевому интерфейсу, и управляет им.
+    2. Включите службы вычислений на сетевом интерфейсе. Azure Stack Edge Pro создает виртуальный коммутатор, соответствующий этому сетевому интерфейсу, и управляет им.
 
     <!--If you decide to use another network interface for compute, make sure that you:
 
@@ -68,9 +68,9 @@ ms.locfileid: "89500238"
 
     - You can now enable another network interface for compute.-->
 
-3. Создайте и установите все сертификаты на устройстве Azure Stack Edge и в надежном хранилище клиента (см. раздел [Шаг 2. Создание и установка сертификатов](azure-stack-edge-j-series-connect-resource-manager.md#step-2-create-and-install-certificates)).
+3. Создайте и установите все сертификаты на устройстве Azure Stack Edge Pro и в надежном хранилище клиента (см. раздел [Шаг 2. Создание и установка сертификатов](azure-stack-edge-j-series-connect-resource-manager.md#step-2-create-and-install-certificates)).
 
-4. Создайте сертификат с расширением *.cer* в кодировке Base-64 (формат PEM) для устройства Azure Stack Edge. Он уже отправлен как цепочка подписывания на устройство и установлен в доверенном корневом хранилище на клиенте. Этот сертификат в формате *PEM* также обеспечивает поддержку Python на этом клиенте.
+4. Создайте сертификат с расширением *CER* в кодировке Base-64 (формат PEM) для устройства Azure Stack Edge Pro. Он уже отправлен как цепочка подписывания на устройство и установлен в доверенном корневом хранилище на клиенте. Этот сертификат в формате *PEM* также обеспечивает поддержку Python на этом клиенте.
 
     Преобразуйте этот сертификат в формат PEM с помощью команды `certutil`. Эту команду необходимо выполнить в каталоге, содержащем сертификат.
 
@@ -199,7 +199,7 @@ ms.locfileid: "89500238"
     PS C:\Program Files (x86)\Microsoft SDKs\Azure\CLI2>
     ```
 
-### <a name="trust-the-azure-stack-edge-ca-root-certificate"></a>Настройка доверия для корневого сертификата ЦС Azure Stack Edge
+### <a name="trust-the-azure-stack-edge-pro-ca-root-certificate"></a>Настройка доверия для корневого сертификата ЦС Azure Stack Edge Pro
 
 1. Найдите расположение сертификата на своем компьютере. Это расположение зависит от того, куда вы установили `az cli`. Откройте Windows PowerShell как администратор. Перейдите по пути, куда с помощью `az cli` вы установили Python: `C:\Program Files (x86)\Microsoft SDKs\Azure\CLI2\python.exe`.
 
@@ -219,7 +219,7 @@ ms.locfileid: "89500238"
       
     Запишите это расположение, так как оно понадобится вам позже: `C:\Program Files (x86)\Microsoft SDKs\Azure\CLI2\lib\site-packages\certifi\cacert.pem`.
 
-2. Чтобы настроить доверие для корневого сертификата ЦС Azure Stack Edge, добавьте его к существующему сертификату Python. Нужно указать расположение, где сохранен сертификат PEM.
+2. Чтобы настроить доверие для корневого сертификата ЦС Azure Stack Edge Pro, добавьте его к существующему сертификату Python. Нужно указать расположение, где сохранен сертификат PEM.
 
     ```powershell
     $pemFile = "<Path to the pem format certificate>"
@@ -252,12 +252,12 @@ ms.locfileid: "89500238"
     Write-Host "Adding the certificate content to Python Cert store"
     Add-Content "${env:ProgramFiles(x86)}\Microsoft SDKs\Azure\CLI2\Lib\site-packages\certifi\cacert.pem" $rootCertEntry
     
-    Write-Host "Python Cert store was updated to allow the Azure Stack Edge CA root certificate"
+    Write-Host "Python Cert store was updated to allow the Azure Stack Edge Pro CA root certificate"
     ```
     
-### <a name="connect-to-azure-stack-edge"></a>Подключение к Azure Stack Edge
+### <a name="connect-to-azure-stack-edge-pro"></a>Подключение к Azure Stack Edge Pro
 
-1. Зарегистрируйте среду Azure Stack Edge, выполнив команду `az cloud register`.
+1. Зарегистрируйте среду Azure Stack Edge Pro, выполнив команду `az cloud register`.
 
     В некоторых сценариях прямое исходящее подключение к Интернету маршрутизируется через прокси-сервер или брандмауэр, который принудительно использует перехват SSL. В этих случаях команда az cloud register может вернуть ошибку, например \"Unable to get endpoints from the cloud\" (Не удалось получить конечные точки из облака). Чтобы избежать этой ошибки, задайте следующие переменные среды в Windows PowerShell:
 
@@ -266,7 +266,7 @@ ms.locfileid: "89500238"
     $ENV:ADAL_PYTHON_SSL_NO_VERIFY = 1
     ```
 
-2. Задайте переменные среды для скрипта для конечной точки Azure Resource Manager, расположение, в котором создаются ресурсы, и путь к исходному виртуальному жесткому диску. Расположение ресурсов является общим на всех устройствах Azure Stack Edge: `dbelocal`. Вам также нужно указать префиксы адресов и частный IP-адрес. Все следующие переменные среды представляют значения на основе ваших значений, кроме переменной `AZURE_RESOURCE_LOCATION` со значением `"dbelocal"`, которое нужно прописать в коде.
+2. Задайте переменные среды для скрипта для конечной точки Azure Resource Manager, расположение, в котором создаются ресурсы, и путь к исходному виртуальному жесткому диску. Расположение ресурсов является общим на всех устройствах Azure Stack Edge Pro: `dbelocal`. Вам также нужно указать префиксы адресов и частный IP-адрес. Все следующие переменные среды представляют значения на основе ваших значений, кроме переменной `AZURE_RESOURCE_LOCATION` со значением `"dbelocal"`, которое нужно прописать в коде.
 
     ```powershell
     $ENV:ARM_ENDPOINT = "https://management.team3device.teatraining1.com"
@@ -308,7 +308,7 @@ ms.locfileid: "89500238"
     PS C:\Program Files (x86)\Microsoft SDKs\Azure\CLI2>
     ```
 
-4. Войдите в среду Azure Stack Edge с помощью команды `az login`. Вы можете войти в среду Azure Stack Edge от имени пользователя или [субъекта-службы](https://docs.microsoft.com/azure/active-directory/develop/app-objects-and-service-principals).
+4. Войдите в среду Azure Stack Edge Pro с помощью команды `az login`. Вы можете войти в среду Azure Stack Edge Pro от имени пользователя или [субъекта-службы](https://docs.microsoft.com/azure/active-directory/develop/app-objects-and-service-principals).
 
    Чтобы войти от имени *пользователя*, сделайте следующее.
 

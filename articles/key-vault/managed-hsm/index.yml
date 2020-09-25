@@ -1,0 +1,84 @@
+### YamlMime:Landing
+title: Документация по управляемому устройству HSM в Azure Key Vault
+summary: Узнайте, как использовать управляемое устройство HSM для создания и обслуживания ключей, используемых для доступа к облачным ресурсам, приложениям и решениям, а также их шифрования. Учебники, справочники по API и другие документы.
+metadata:
+  title: Документация по управляемому устройству HSM Azure
+  description: Узнайте, как использовать управляемое устройство HSM для создания и обслуживания ключей, используемых для доступа к облачным ресурсам, приложениям и решениям, а также их шифрования. Учебники, справочники по API и другие документы.
+  services: key-vault
+  ms.service: key-vault
+  ms.topic: landing-page
+  author: msmbaldwin
+  ms.author: mbaldwin
+  manager: rkarlin
+  ms.date: 09/15/2020
+  ms.openlocfilehash: d17d119528c04b270e9dffe5b824bafcc89472dc
+  ms.sourcegitcommit: bdd5c76457b0f0504f4f679a316b959dcfabf1ef
+  ms.translationtype: HT
+  ms.contentlocale: ru-RU
+  ms.lasthandoff: 09/22/2020
+  ms.locfileid: "90992015"
+landingContent:
+- title: Сведения об управляемом устройстве HSM в Azure Key Vault (предварительная версия)
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Что собой представляет управляемое устройство HSM в Azure Key Vault?
+      url: overview.md
+    - text: Обзор REST API
+      url: ../general/about-keys-secrets-certificates.md
+    - text: Поддерживаемые ключи и алгоритмы
+      url: ../keys/about-keys.md
+- title: Концепция
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Рекомендации по использованию управляемого устройства HSM
+      url: best-practices.md
+    - text: Управление доступом к управляемому устройству HSM
+      url: access-control.md
+    - text: Домен безопасности
+      url: security-domain.md
+    - text: Встроенные роли локальной системы управления доступом на основе ролей
+      url: built-in-roles.md
+- title: Начало работы
+  linkLists:
+  - linkListType: quickstart
+    links:
+    - text: Azure CLI
+      url: quick-create-cli.md
+    - text: Azure Resource Manager
+      url: quick-create-template.md
+- title: Руководства
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: Управление с помощью Azure CLI
+      url: key-management.md
+    - text: Управление ролями в службе "Управляемое устройство HSM"
+      url: role-management.md
+    - text: Безопасный доступ к управляемому устройству HSM
+      url: secure-your-managed-hsm.md
+- title: Учебники
+  linkLists:
+  - linkListType: tutorial
+    links:
+    - text: Резервное копирование и восстановление
+      url: backup-restore.md
+    - text: Аварийное восстановление
+      url: disaster-recovery-guide.md
+    - text: Импорт защищенных модулем HSM ключей (общие сведения)
+      url: hsm-protected-keys-byok.md
+    - text: Настройка ведения журналов для управляемых устройств HSM
+      url: logging.md
+- title: Дополнительные сведения о Key Vault
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Общие сведения о Key Vault
+      url: ../general/overview.md
+    - text: Основные понятия о Key Vault
+      url: ../general/basic-concepts.md
+    - text: Общие сведения об обратимом удалении
+      url: ../general/soft-delete-overview.md
+    - text: Общие сведения о безопасности
+      url: ../general/overview-security.md

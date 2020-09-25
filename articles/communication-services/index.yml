@@ -1,0 +1,102 @@
+### YamlMime:Landing
+title: Службы коммуникации Azure
+summary: Службы коммуникации Azure — это облачные службы коммуникации, которые позволяют вам добавлять возможности работы с голосовой связью, видеосвязью, чатом и телефоном в свои приложения. Обратите внимание, что в настоящее время Службы коммуникации Azure предоставляются в общедоступной предварительной версии.
+metadata:
+  title: Службы коммуникации Azure
+  description: Службы коммуникации Azure — это облачные службы коммуникации, которые позволяют вам добавлять возможности работы с голосовой связью, видеосвязью, чатом и телефоном в свои приложения. Обратите внимание, что в настоящее время Службы коммуникации Azure предоставляются в общедоступной предварительной версии.
+  ms.service: azure-communication-services
+  ms.topic: landing-page
+  author: mikben
+  ms.author: mikben
+  ms.date: 08/10/2020
+  ms.openlocfilehash: 6081063605439982e29984cc4378ec3aee7ac08a
+  ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
+  ms.translationtype: HT
+  ms.contentlocale: ru-RU
+  ms.lasthandoff: 09/22/2020
+  ms.locfileid: "90929041"
+landingContent:
+- title: Сведения о Службах коммуникации Azure
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Что собой представляют Службы коммуникации Azure?
+      url: overview.md
+  - linkListType: concept
+    links:
+    - text: Варианты клиентской библиотеки
+      url: concepts/sdk-options.md
+- title: Начало работы
+  linkLists:
+  - linkListType: quickstart
+    links:
+    - text: Создание ресурса Служб коммуникации
+      url: quickstarts/create-communication-resource.md
+    - text: Создание маркеров доступа пользователей и управление ими
+      url: quickstarts/access-tokens.md
+  - linkListType: concept
+    links:
+    - text: Клиентская и серверная архитектура
+      url: concepts/client-and-server-architecture.md
+    - text: Аутентификация и авторизация
+      url: concepts/authentication.md
+    - text: Обработка событий
+      url: concepts/event-handling.md
+    - text: Уведомления
+      url: concepts/notifications.md
+- title: Голосовая и видеосвязь
+  linkLists:
+  - linkListType: quickstart
+    links:
+    - text: Добавление функций голосовой и видеосвязи в приложение
+      url: quickstarts/voice-video-calling/getting-started-with-calling.md
+    - text: Использование клиентской библиотеки для вызовов
+      url: quickstarts/voice-video-calling/calling-client-samples.md
+  - linkListType: concept
+    links:
+    - text: Основные понятия голосовой связи и видеосвязи
+      url: concepts/voice-video-calling/about-call-types.md
+    - text: Общие сведения о клиентской библиотеке для вызовов
+      url: concepts/voice-video-calling/calling-sdk-features.md
+    - text: Потоки вызовов
+      url: concepts/call-flows.md
+- title: Телефония и SMS
+  linkLists:
+  - linkListType: quickstart
+    links:
+    - text: Получение номера телефона
+      url: quickstarts/telephony-sms/get-phone-number.md
+    - text: Отправка SMS-сообщения
+      url: quickstarts/telephony-sms/send.md
+    - text: Обработка событий SMS
+      url: quickstarts/telephony-sms/handle-sms-events.md
+  - linkListType: concept
+    links:
+    - text: Основные понятия обмена SMS
+      url: concepts/telephony-sms/concepts.md
+    - text: Общие сведения о клиентской библиотеке для текстовых сообщений
+      url: concepts/telephony-sms/sdk-features.md
+    - text: Общие сведения о вызовах
+      url: concepts/voice-video-calling/calling-sdk-features.md
+    - text: Планирование решения для телефонии и SMS
+      url: concepts/telephony-sms/plan-solution.md
+- title: Чат
+  linkLists:
+  - linkListType: quickstart
+    links:
+    - text: Добавление чата в приложение
+      url: quickstarts/chat/get-started.md
+  - linkListType: concept
+    links:
+    - text: Основные понятия чата
+      url: concepts/chat/concepts.md
+    - text: Общие сведения о клиентской библиотеке для чата
+      url: concepts/chat/sdk-features.md
+- title: Примеры
+  linkLists:
+  - linkListType: get-started
+    links:
+    - text: Начало работы с главным примером функции группового вызова
+      url: samples/calling-hero-sample.md
+    - text: Начало работы с главным примером чата
+      url: samples/chat-hero-sample.md

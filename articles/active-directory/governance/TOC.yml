@@ -60,7 +60,7 @@
               href: entitlement-management-catalog-create.md
             - name: Делегирование управления диспетчерам пакетов для доступа
               href: entitlement-management-delegate-managers.md
-        - name: Диспетчеры пакетов для доступа
+        - name: Диспетчеры пакетов для доступа и диспетчеры назначения пакетов для доступа
           items:
             - name: Создание пакета для доступа
               href: entitlement-management-access-package-create.md
@@ -68,8 +68,10 @@
               href: entitlement-management-access-package-settings.md
             - name: Изменение ролей ресурсов
               href: entitlement-management-access-package-resources.md
-            - name: Изменение параметров запроса и утверждения
+            - name: Параметры запроса на изменение
               href: entitlement-management-access-package-request-policy.md
+            - name: Параметры утверждения изменения
+              href: entitlement-management-access-package-approval-policy.md
             - name: Изменение параметров жизненного цикла
               href: entitlement-management-access-package-lifecycle-policy.md
             - name: Просмотр запросов

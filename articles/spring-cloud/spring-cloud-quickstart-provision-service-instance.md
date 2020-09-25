@@ -5,23 +5,94 @@ author: MikeDodaro
 ms.author: brendm
 ms.service: spring-cloud
 ms.topic: quickstart
-ms.date: 08/03/2020
+ms.date: 09/08/2020
 ms.custom: devx-track-java
-ms.openlocfilehash: c91237e3a14c60e477f58be0bf62f634b462960b
-ms.sourcegitcommit: e69bb334ea7e81d49530ebd6c2d3a3a8fa9775c9
+zone_pivot_groups: programming-languages-spring-cloud
+ms.openlocfilehash: 16d40c334d51a66df4a4d2d56e2fa2379dda3726
+ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "88951676"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90905401"
 ---
 # <a name="quickstart-provision-azure-spring-cloud-service"></a>Краткое руководство. Подготовка службы Azure Spring Cloud
 
+::: zone pivot="programming-language-csharp"
+В этом кратком руководстве для подготовки экземпляра Azure Spring Cloud используется Azure CLI.
+
+## <a name="prerequisites"></a>Предварительные требования
+
+* Учетная запись Azure с активной подпиской. [Создайте учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) бесплатно.
+* [Пакет SDK для .NET Core 3.1](https://dotnet.microsoft.com/download/dotnet-core/3.1). Служба Azure Spring Cloud поддерживает .NET Core 3.1 и более поздние версии.
+* [Azure CLI версии 2.0.67 или выше](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest&preserve-view=true).
+* [Git](https://git-scm.com/).
+
+## <a name="install-azure-cli-extension"></a>Установка расширения Azure CLI
+
+Убедитесь в наличии Azure CLI версии 2.0.67 или более поздней.
+
+```azurecli
+az --version
+```
+
+Установите расширение Azure Spring Cloud для Azure CLI с помощью следующей команды:
+
+```azurecli
+az extension add --name spring-cloud
+```
+
+## <a name="log-in-to-azure"></a>Вход в Azure
+
+1. Войдите в интерфейс командной строки Azure.
+
+    ```azurecli
+    az login
+    ```
+
+1. Если у вас есть несколько подписок, выберите ту, которую будете использовать для изучения этого краткого руководства.
+
+   ```azurecli
+   az account list -o table
+   ```
+
+   ```azurecli
+   az account set --subscription <Name or ID of a subscription from the last step>
+   ```
+
+## <a name="provision-an-instance-of-azure-spring-cloud"></a>Подготовка к работе экземпляра Azure Spring Cloud
+
+1. Создайте [группу ресурсов](../azure-resource-manager/management/overview.md), которая будет содержать службу Azure Spring Cloud. Имя группы ресурсов может содержать буквы, цифры, символ подчеркивания, круглые скобки, дефис и точку (но не в конце имени), а также символы Юникода.
+
+   ```azurecli
+   az group create --location eastus --name <resource group name>
+   ```
+
+1. Подготовьте к работе экземпляра службы Azure Spring Cloud. Его имя должно быть уникальным и содержать от 4 до 32 знаков (только строчные буквы, цифры и дефисы). Первым символом в имени службы должна быть буква, а последним — буква или цифра.
+
+    ```azurecli
+    az spring-cloud create -n <service instance name> -g <resource group name>
+    ```
+
+    Выполнение этой команды может занять несколько минут.
+
+1. Задайте имена по умолчанию для группы ресурсов и экземпляра службы, чтобы не нужно было указывать эти значения в последующих командах.
+
+   ```azurecli
+   az configure --defaults group=<resource group name>
+   ```
+
+   ```azurecli
+   az configure --defaults spring-cloud=<service instance name>
+   ```
+::: zone-end
+
+::: zone pivot="programming-language-java"
 Вы можете создать экземпляр Azure Spring Cloud с помощью портала Azure или Azure CLI.  Оба метода описаны в следующих процедурах.
 ## <a name="prerequisites"></a>Предварительные требования
 
-* [установите JDK версии 8](https://docs.microsoft.com/java/azure/jdk/?view=azure-java-stable);
+* [установите JDK версии 8](https://docs.microsoft.com/java/azure/jdk/?view=azure-java-stable&preserve-view=true);
 * [Регистрация для получения подписки Azure](https://azure.microsoft.com/free/)
-* (Необязательно.) [Установите Azure CLI версии 2.0.67 или более поздней](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest) и расширение Azure Spring Cloud с помощью команды `az extension add --name spring-cloud`.
+* (Необязательно.) [Установите Azure CLI версии 2.0.67 или более поздней](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest&preserve-view=true) и расширение Azure Spring Cloud с помощью команды `az extension add --name spring-cloud`.
 * (Необязательно.) [Установите Azure Toolkit for IntelliJ](https://plugins.jetbrains.com/plugin/8053-azure-toolkit-for-intellij/) и [выполните вход](https://docs.microsoft.com/azure/developer/java/toolkit-for-intellij/create-hello-world-web-app#installation-and-sign-in).
 
 ## <a name="provision-an-instance-of-azure-spring-cloud"></a>Подготовка к работе экземпляра Azure Spring Cloud
@@ -59,7 +130,7 @@ ms.locfileid: "88951676"
 
 Следующая процедура подготавливает экземпляр Azure Spring Cloud с помощью расширения Azure CLI.
 
-1. Войдите в Azure CLI и выберите активную подписку. Выбранная активная подписка должна быть добавлена в список разрешений для Azure Spring Cloud.
+1. Войдите в Azure CLI и выберите активную подписку.
 
     ```azurecli
     az login
@@ -85,9 +156,25 @@ ms.locfileid: "88951676"
 
     Развертывание экземпляра службы займет около пяти минут.
 ---
+::: zone-end
+
+## <a name="clean-up-resources"></a>Очистка ресурсов
+
+Если вы планируете перейти к следующему краткому руководству из этой серии, пропустите этот шаг.
+
+При прохождении этого краткого руководства вы создали ресурсы Azure, за которые будет взиматься плата, если вы оставите их в своей подписке. Если вы не планируете продолжать работу со следующим кратким руководством или работать с этими ресурсами в будущем, вы можете удалить группу ресурсов с помощью портала, или выполнив следующую команду в Cloud Shell:
+
+```azurecli
+az group delete --name <your resource group name; for example: helloworld-1558400876966-rg> --yes
+```
+
+При прохождении этого краткого руководства вы также задали имя группы ресурсов по умолчанию. Если вы не планируете перейти к следующему краткому руководству, очистите это значение по умолчанию, выполнив такую команду CLI:
+
+```azurecli
+az configure --defaults group=
+```
 
 ## <a name="next-steps"></a>Дальнейшие действия
+
 > [!div class="nextstepaction"]
 > [Настройка сервера конфигурации](spring-cloud-quickstart-setup-config-server.md)
-
-

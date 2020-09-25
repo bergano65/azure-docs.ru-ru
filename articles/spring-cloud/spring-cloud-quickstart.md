@@ -4,18 +4,324 @@ description: В этом кратком руководстве описывае�
 author: bmitchell287
 ms.service: spring-cloud
 ms.topic: quickstart
-ms.date: 08/05/2020
+ms.date: 09/08/2020
 ms.author: brendm
 ms.custom: devx-track-java, devx-track-azurecli
-ms.openlocfilehash: 245516e0a54865d3a6097c4bb566b850cb738ad6
-ms.sourcegitcommit: bcda98171d6e81795e723e525f81e6235f044e52
+zone_pivot_groups: programming-languages-spring-cloud
+ms.openlocfilehash: 464879f5962b240ec82fb80957d146cadbf2b1bd
+ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/01/2020
-ms.locfileid: "89260556"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90904318"
 ---
 # <a name="quickstart-deploy-your-first-azure-spring-cloud-application"></a>Краткое руководство. Развертывание первого приложения Azure Spring Cloud
 
+::: zone pivot="programming-language-csharp"
+В этом кратком руководстве объясняется, как развернуть простое приложение микрослужбы Azure Spring Cloud для запуска в Azure.
+
+>[!NOTE]
+> В настоящее время поддержка Steeltoe для Azure Spring Cloud предлагается в качестве общедоступной предварительной версии. Предложения общедоступной предварительной версии позволяют клиентам экспериментировать с новыми функциями до официального выпуска.  Общедоступные предварительные версии функций и служб не предназначены для использования в рабочей среде.  Чтобы получить дополнительные сведения о поддержке на этапе использования предварительных версий, ознакомьтесь с разделом [Вопросы и ответы](https://azure.microsoft.com/support/faq/) или оформите [запрос на поддержку](https://docs.microsoft.com/azure/azure-portal/supportability/how-to-create-azure-support-request).
+
+Из этого краткого руководства вы узнаете, как выполнить следующие задачи:
+
+> [!div class="checklist"]
+> * создание базового проекта Steeltoe .NET Core;
+> * подготовка экземпляра службы Azure Spring Cloud;
+> * сборка и развертывание приложения с общедоступной конечной точкой;
+> * Потоковая передача журналов в режиме реального времени
+
+Код приложения, используемый в этом кратком руководстве, представляет собой простое приложение, созданное с помощью шаблона проекта веб-API .NET Core. После завершения работы с этим примером приложение будет доступно через Интернет, и вы сможете управлять им с помощью портала Azure и Azure CLI.
+
+## <a name="prerequisites"></a>Предварительные требования
+
+* Учетная запись Azure с активной подпиской. [Создайте учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) бесплатно.
+* [Пакет SDK для .NET Core 3.1](https://dotnet.microsoft.com/download/dotnet-core/3.1). Служба Azure Spring Cloud поддерживает .NET Core 3.1 и более поздние версии.
+* [Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest&preserve-view=true) версии 2.0.67 или более поздней.
+* [Git](https://git-scm.com/).
+
+## <a name="install-azure-cli-extension"></a>Установка расширения Azure CLI
+
+Убедитесь в наличии Azure CLI версии 2.0.67 или более поздней.
+
+```azurecli
+az --version
+```
+
+Установите расширение Azure Spring Cloud для Azure CLI с помощью следующей команды:
+
+```azurecli
+az extension add --name spring-cloud
+```
+
+## <a name="log-in-to-azure"></a>Вход в Azure
+
+1. Войдите в систему Azure CLI.
+
+    ```azurecli
+    az login
+    ```
+
+1. Если у вас есть несколько подписок, выберите ту, которую будете использовать для изучения этого краткого руководства.
+
+   ```azurecli
+   az account list -o table
+   ```
+
+   ```azurecli
+   az account set --subscription <Name or ID of a subscription from the last step>
+   ```
+
+## <a name="generate-a-steeltoe-net-core-project"></a>Создание проекта Steeltoe .NET Core
+
+В Visual Studio создайте веб-приложение ASP.NET Core с именем hello-world с помощью шаблона проекта API. Обратите внимание, что в дальнейшем WeatherForecastController будет создаваться автоматически и станет нашей конечной точкой для тестирования.
+
+1. Создайте папку для исходного кода проекта и сам проект.
+ 
+   ```console
+   mkdir source-code
+   ```
+
+   ```console
+   cd source-code
+   ```
+
+   ```dotnetcli
+   dotnet new webapi -n hello-world --framework netcoreapp3.1
+   ```
+
+1. Перейдите в каталог проекта.
+
+   ```console
+   cd hello-world
+   ```
+
+1. Измените файл *appSettings.json* , чтобы добавить следующие параметры:
+
+   ```json
+   "spring": {
+     "application": {
+       "name": "hello-world"
+     }
+   },
+   "eureka": {
+     "client": {
+       "shouldFetchRegistry": true,
+       "shouldRegisterWithEureka": true
+     }
+   }
+   ```
+
+1. Кроме того, в файле *appsettings.json* измените уровень ведения журнала для категории `Microsoft` с `Warning` на `Information`. Это изменение гарантирует, что журналы будут создаваться при просмотре журналов потоковой передачи на более позднем этапе.
+
+   Файл *appsettings.json* теперь выглядит как в следующем примере:
+
+   ```json
+   {
+     "Logging": {
+       "LogLevel": {
+         "Default": "Information",
+         "Microsoft": "Information",
+         "Microsoft.Hosting.Lifetime": "Information"
+       }
+     },
+     "AllowedHosts": "*",
+     "spring": {
+       "application": {
+         "name": "hello-world"
+       }
+     },
+     "eureka": {
+       "client": {
+         "shouldFetchRegistry": true,
+         "shouldRegisterWithEureka": true
+       }
+     }
+   }
+   ```
+   
+1. Добавьте зависимости и задачу `Zip` в файл *.csproj*:
+
+   ```xml
+   <ItemGroup>
+     <PackageReference Include="Steeltoe.Discovery.ClientCore" Version="2.4.4" />
+     <PackageReference Include="Microsoft.Azure.SpringCloud.Client" Version="1.0.0-alpha.1" />
+   </ItemGroup>
+   <Target Name="Publish-Zip" AfterTargets="Publish">
+     <ZipDirectory SourceDirectory="$(PublishDir)" DestinationFile="$(MSBuildProjectDirectory)/deploy.zip" Overwrite="true" />
+   </Target>
+   ```
+
+   Пакеты предназначены для обнаружения службы Steeltoe и клиентской библиотеки Azure Spring Cloud. Задача `Zip` предназначена для развертывания в Azure. При выполнении команды `dotnet publish` создаются двоичные файлы в папке *publish*, и эта задача архивирует папку *publish* в файл *.zip*, который вы отправляете в Azure.
+
+3. В файле *Program.cs* добавьте директиву `using` и код, который использует клиентскую библиотеку Azure Spring Cloud:
+
+   ```csharp
+   using Microsoft.Azure.SpringCloud.Client;
+   ```
+
+   ```csharp
+   public static IHostBuilder CreateHostBuilder(string[] args) =>
+               Host.CreateDefaultBuilder(args)
+                   .ConfigureWebHostDefaults(webBuilder =>
+                   {
+                       webBuilder.UseStartup<Startup>();
+                   })
+                   .UseAzureSpringCloudService();
+   ```
+
+4. В файле *Startup.cs* добавьте директиву `using` и код, который использует обнаружение службы Steeltoe, в конце методов `ConfigureServices` и `Configure`:
+
+   ```csharp
+   using Steeltoe.Discovery.Client;
+   ```
+
+   ```csharp
+   public void ConfigureServices(IServiceCollection services)
+   {
+       // Template code not shown.
+
+       services.AddDiscoveryClient(Configuration);
+   }
+   ```
+
+   ```csharp
+   public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+   {
+       // Template code not shown.
+
+       app.UseDiscoveryClient();
+   }
+   ```
+
+1. Выполните сборку проекта и убедитесь в отсутствии ошибок компиляции.
+
+   ```dotnetcli
+   dotnet build
+   ```
+ 
+## <a name="provision-a-service-instance"></a>подготовка экземпляра службы к работе;
+
+Следующая процедура создает экземпляр Azure Spring Cloud с помощью портала Azure.
+
+1. Откройте [портал Azure](https://ms.portal.azure.com/). 
+
+1. В поле поиска сверху введите *Azure Spring Cloud*.
+
+1. Выберите пункт *Azure Spring Cloud* в списке результатов.
+
+   ![Значок ASC — запуск](media/spring-cloud-quickstart-launch-app-portal/find-spring-cloud-start.png)
+
+1. На странице Azure Spring Cloud выберите элемент **+ Добавить**.
+
+   ![Значок ASC — добавление](media/spring-cloud-quickstart-launch-app-portal/spring-cloud-add.png)
+
+1. Заполните форму на странице **создания** Azure Spring Cloud.  Ознакомьтесь со следующими рекомендациями:
+
+   * **Подписка**: Выберите подписку, на которую будет выставляться счет за этот ресурс.
+   * **Группа ресурсов.** Создайте новую группу ресурсов. Введенное здесь имя будет использоваться в дальнейших шагах как **\<resource group name\>** .
+   * **Сведения о службе или ее название.** Укажите **\<service instance name\>** .  Его длина должна быть от 4 до 32 знаков. Имя может содержать только строчные буквы, цифры и дефисы.  Первым символом в имени службы должна быть буква, а последним — буква или цифра.
+   * **Регион**. Выберите регион для экземпляра службы.
+
+   ![Начальная страница портала ASC](media/spring-cloud-quickstart-launch-app-portal/portal-start.png)
+
+6. Выберите **Просмотреть и создать**.
+
+## <a name="build-and-deploy-the-app"></a>Создание и развертывание приложения
+
+Следующая процедура используется для сборки и развертывания созданного ранее проекта.
+
+1. Убедитесь, что командная строка все еще находится в папке проекта.
+
+1. Запустите приведенную ниже команду, чтобы выполнить сборку проекта, опубликовать двоичные файлы и сохранить их в файле *.zip* в папке проекта.
+
+   ```dotnetcorecli
+   dotnet publish -c release -o ./publish
+   ```
+
+1. Создайте приложение в экземпляре Azure Spring Cloud с назначенной общедоступной конечной точкой. Используйте то же имя приложения hello-world, указанное в *appsettings.json*.
+
+   ```console
+   az spring-cloud app create -n hello-world -s <service instance name> -g <resource group name> --is-public
+   ```
+
+1. Разверните в приложении файл *.zip*.
+
+   ```azurecli
+   az spring-cloud app deploy -n hello-world -s <service instance name> -g <resource group name> --runtime-version NetCore_31 --main-entry hello-world.dll --artifact-path ./deploy.zip
+   ```
+
+   Параметр `--main-entry` определяет файл *.dll*, содержащий точку входа приложения. После того как служба загрузит файл *.zip*, она извлекает все файлы и папки и пытается выполнить точку входа в указанном `--main-entry` файле *.dll*.
+
+   Для завершения развертывания приложения потребуется несколько минут. Чтобы убедиться, что оно развернуто, перейдите в колонку **Приложения** на портале Azure.
+
+## <a name="test-the-app"></a>Тестирование приложения
+
+По завершении развертывания получите доступ к приложению по следующему URL-адресу:
+
+```http
+https://<service instance name>-hello-world.azuremicroservices.io/weatherforecast
+```
+
+Приложение вернет данные JSON, как в следующем примере:
+
+```json
+[{"date":"2020-09-08T21:01:50.0198835+00:00","temperatureC":14,"temperatureF":57,"summary":"Bracing"},{"date":"2020-09-09T21:01:50.0200697+00:00","temperatureC":-14,"temperatureF":7,"summary":"Bracing"},{"date":"2020-09-10T21:01:50.0200715+00:00","temperatureC":27,"temperatureF":80,"summary":"Freezing"},{"date":"2020-09-11T21:01:50.0200717+00:00","temperatureC":18,"temperatureF":64,"summary":"Chilly"},{"date":"2020-09-12T21:01:50.0200719+00:00","temperatureC":16,"temperatureF":60,"summary":"Chilly"}]
+```
+
+## <a name="stream-logs-in-real-time"></a>Потоковая передача журналов в режиме реального времени
+
+Используйте следующую команду, чтобы получать журналы в режиме реального времени из приложения.
+
+```azurecli
+az spring-cloud app logs -n hello-world -s <service instance name> -g <resource group name> --lines 100 -f
+```
+
+Журналы отображаются в выходных данных:
+
+```output
+[Azure Spring Cloud] The following environment variables are loaded:
+2020-09-08 20:58:42,432 INFO supervisord started with pid 1
+2020-09-08 20:58:43,435 INFO spawned: 'event-gather_00' with pid 9
+2020-09-08 20:58:43,436 INFO spawned: 'dotnet-app_00' with pid 10
+2020-09-08 20:58:43 [Warning] No managed processes are running. Wait for 30 seconds...
+2020-09-08 20:58:44,843 INFO success: event-gather_00 entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2020-09-08 20:58:44,843 INFO success: dotnet-app_00 entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+←[40m←[32minfo←[39m←[22m←[49m: Steeltoe.Discovery.Eureka.DiscoveryClient[0]
+      Starting HeartBeat
+info: Microsoft.Hosting.Lifetime[0]
+      Now listening on: http://[::]:1025
+info: Microsoft.Hosting.Lifetime[0]
+      Application started. Press Ctrl+C to shut down.
+info: Microsoft.Hosting.Lifetime[0]
+      Hosting environment: Production
+info: Microsoft.Hosting.Lifetime[0]
+      Content root path: /netcorepublish/6e4db42a-b160-4b83-a771-c91adec18c60
+2020-09-08 21:00:13 [Information] [10] Start listening...
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/1.1 GET http://asc-svc-hello-world.azuremicroservices.io/weatherforecast
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[0]
+      Executing endpoint 'hello_world.Controllers.WeatherForecastController.Get (hello-world)'
+info: Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker[3]
+      Route matched with {action = "Get", controller = "WeatherForecast"}. Executing controller action with signature System.Collections.Generic.IEnumerable`1[hello_world.WeatherForecast] Get() on controller hello_world.Controllers.WeatherForecastController (hello-world).
+info: Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor[1]
+      Executing ObjectResult, writing value of type 'hello_world.WeatherForecast[]'.
+info: Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker[2]
+      Executed action hello_world.Controllers.WeatherForecastController.Get (hello-world) in 1.8902ms
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[1]
+      Executed endpoint 'hello_world.Controllers.WeatherForecastController.Get (hello-world)'
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished in 4.2591ms 200 application/json; charset=utf-8
+```
+
+> [!TIP]
+> Используйте `az spring-cloud app logs -h` для просмотра дополнительных параметров и функциональных возможностей потоковой передачи журналов.
+
+Чтобы получить дополнительные возможности анализа журналов, перейдите на вкладку **Журналы** в меню на [портале Azure](https://portal.azure.com/). Журналы отображаются с задержкой в несколько минут.
+[ ![Аналитика журналов](media/spring-cloud-quickstart-java/logs-analytics.png) ](media/spring-cloud-quickstart-java/logs-analytics.png#lightbox)
+::: zone-end
+
+::: zone pivot="programming-language-java"
 В этом кратком руководстве объясняется, как развернуть простое приложение микрослужбы Azure Spring Cloud для запуска в Azure. 
 
 Код приложения, используемый в этом учебнике, — это простое приложение, созданное с помощью Spring Initializr. После завершения работы с этим примером приложение будет доступно через Интернет и им можно управлять с помощью портала Azure.
@@ -32,9 +338,9 @@ ms.locfileid: "89260556"
 
 Для работы с этим кратким руководством сделайте следующее:
 
-* [установите JDK версии 8](https://docs.microsoft.com/java/azure/jdk/?view=azure-java-stable);
+* [установите JDK версии 8](https://docs.microsoft.com/java/azure/jdk/?view=azure-java-stable&preserve-view=true);
 * [Регистрация для получения подписки Azure](https://azure.microsoft.com/free/)
-* (необязательно) [установите Azure CLI версии 2.0.67 или более поздней](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest) и расширение Azure Spring Cloud с помощью команды `az extension add --name spring-cloud`;
+* (необязательно) [установите Azure CLI версии 2.0.67 или более поздней](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest&preserve-view=true) и расширение Azure Spring Cloud с помощью команды `az extension add --name spring-cloud`;
 * (необязательно) [установите Azure Toolkit for IntelliJ](https://plugins.jetbrains.com/plugin/8053-azure-toolkit-for-intellij/) и [выполните вход](https://docs.microsoft.com/azure/developer/java/toolkit-for-intellij/create-hello-world-web-app#installation-and-sign-in).
 
 ## <a name="generate-a-spring-cloud-project"></a>Создание проекта Spring Cloud
@@ -190,12 +496,17 @@ az spring-cloud app logs -n hellospring -s <service instance name> -g <resource 
 Чтобы получить дополнительные возможности аналитики журналов, перейдите на вкладку **Журналы** в меню [портал Azure](https://portal.azure.com/). Журналы отображаются с задержкой в несколько минут.
 
 [ ![Аналитика журналов](media/spring-cloud-quickstart-java/logs-analytics.png) ](media/spring-cloud-quickstart-java/logs-analytics.png#lightbox)
+::: zone-end
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
-На предыдущем шаге вы создали ресурсы Azure в группе ресурсов. Если эти ресурсы вам не понадобятся в будущем, вы можете удалить группу ресурсов из портала, или выполнив приведенную ниже команду в Cloud Shell.
+
+На предыдущих шагах вы создали ресурсы Azure, за которые будет взиматься плата, если вы оставите их в своей в подписке. Если эти ресурсы вам не понадобятся в будущем, вы можете удалить группу ресурсов на портале или с помощью приведенной ниже команды в Azure CLI:
+
 ```azurecli
 az group delete --name <your resource group name; for example: hellospring-1558400876966-rg> --yes
 ```
+
+## <a name="next-steps"></a>Дальнейшие действия
 
 В этом кратком руководстве рассматривались следующие темы:
 
@@ -203,9 +514,11 @@ az group delete --name <your resource group name; for example: hellospring-15584
 > * создание базового проекта Azure Spring Cloud;
 > * подготовка экземпляра службы к работе;
 > * сборка и развертывание приложения с общедоступной конечной точкой;
-> * потоковая передача журналов в режиме реального времени.
-## <a name="next-steps"></a>Дальнейшие действия
+> * Потоковая передача журналов в режиме реального времени
+
+Чтобы узнать, как использовать дополнительные возможности Azure Spring, перейдите к серии кратких руководств, в которой описано развертывание примера приложения в Azure Spring Cloud:
+
 > [!div class="nextstepaction"]
 > [Создание и запуск микрослужб](spring-cloud-quickstart-sample-app-introduction.md)
 
-Дополнительные примеры доступны на GitHub: [Примеры для Azure Spring Cloud](https://github.com/Azure-Samples/Azure-Spring-Cloud-Samples/tree/master/service-binding-cosmosdb-sql).
+Дополнительные примеры доступны на GitHub: [Примеры для Azure Spring Cloud](https://github.com/Azure-Samples/Azure-Spring-Cloud-Samples).
