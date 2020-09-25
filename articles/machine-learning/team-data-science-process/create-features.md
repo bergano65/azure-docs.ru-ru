@@ -11,16 +11,16 @@ ms.topic: conceptual
 ms.date: 05/14/2020
 ms.author: tdsp
 ms.custom: seodec18, previous-author=deguhath, previous-ms.author=deguhath, contperfq4
-ms.openlocfilehash: c31cf0e5c655f53e8838c92f5463d3a85c2f6f65
-ms.sourcegitcommit: 0b80a5802343ea769a91f91a8cdbdf1b67a932d3
+ms.openlocfilehash: 5e84a3930d350ec45cef7119342e3e4d2d5daaee
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/25/2020
-ms.locfileid: "83836827"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91250663"
 ---
 # <a name="feature-engineering-in-data-science"></a>Проектирование признаков при обработке и анализе данных
 
-В этой статье вы узнаете о конструировании признаков и его роли в улучшении данных в машинном обучении. Ознакомьтесь с демонстрационными примерами, взятыми из экспериментов [Студия машинного обучения Azure (классическая)](../studio/what-is-ml-studio.md). 
+В этой статье вы узнаете о конструировании признаков и его роли в улучшении данных в машинном обучении. Ознакомьтесь с демонстрационными примерами, взятыми из экспериментов [Студия машинного обучения Azure (классическая)](../overview-what-is-machine-learning-studio.md#ml-studio-classic-vs-azure-machine-learning-studio). 
 
 * **Проектирование признаков**. Процесс создания новых функций из необработанных данных для повышения эффективности возможностей прогнозирования алгоритма обучения. Для конструирования признаков требуется дополнительная информация, которая не так очевидна в исходном наборе признаков.
 * **Выбор признаков**. В этом процессе выбирается ключевое подмножество признаков с целью сокращения размерности задачи обучения.

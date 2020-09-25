@@ -7,12 +7,12 @@ ms.service: application-gateway
 ms.topic: how-to
 ms.date: 03/31/2020
 ms.author: victorh
-ms.openlocfilehash: 27e8eaa7b8171d6ccc43f6abc8a4b3d1017d30cb
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 653e432ca445451fc9da7155137052b9916d0d92
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84804401"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91311603"
 ---
 # <a name="migrate-azure-application-gateway-and-web-application-firewall-from-v1-to-v2"></a>Перенос шлюза приложений Azure и брандмауэра веб-приложения с версии v1 на v2
 
@@ -25,7 +25,7 @@ ms.locfileid: "84804401"
 
 В этой статье рассматривается миграция конфигурации. Миграция трафика клиента зависит от конкретной среды. Однако некоторые общие рекомендации [предоставляются](#migrate-client-traffic)на высоком уровне.
 
-## <a name="migration-overview"></a>Общие сведения о миграции
+## <a name="migration-overview"></a>Общие сведения о переносе
 
 Доступен сценарий Azure PowerShell, который выполняет следующие действия:
 
@@ -36,6 +36,8 @@ ms.locfileid: "84804401"
 
 * Новый шлюз v2 содержит новые общедоступные и частные IP-адреса. Невозможно легко переместить IP-адреса, связанные с существующим шлюзом v1, в версии 2. Однако можно выделить существующий (нераспределенный) общедоступный или частный IP-адрес для нового шлюза v2.
 * Необходимо указать пространство IP-адресов для другой подсети в виртуальной сети, где находится шлюз v1. Скрипт не может создать шлюз v2 в существующих подсетях, где уже есть шлюз v1. Тем не менее, если у существующей подсети уже есть шлюз v2, это может работать при наличии достаточного пространства IP-адресов.
+* Если у вас есть группа безопасности сети или определяемые пользователем маршруты, связанные с подсетью шлюза v2, убедитесь, что они соответствуют [требованиям NSG](../application-gateway/configuration-infrastructure.md#network-security-groups) и [требованиям UDR](../application-gateway/configuration-infrastructure.md#supported-user-defined-routes) для успешной миграции.
+* [Политики конечной точки службы виртуальной сети](../virtual-network/virtual-network-service-endpoint-policies-overview.md) в настоящее время не поддерживаются в подсети шлюза приложений.
 * Чтобы перенести конфигурацию TLS/SSL, необходимо указать все сертификаты TLS/SSL, используемые в шлюзе v1.
 * Если для шлюза v1 включен режим FIPS, он не будет перенесен на новый шлюз v2. Режим FIPS не поддерживается в версии 2.
 * Версия 2 не поддерживает IPv6, поэтому отключенные шлюзы IPv6 не переносятся. Если запустить сценарий, он может не завершиться.
@@ -44,7 +46,7 @@ ms.locfileid: "84804401"
 
 ## <a name="download-the-script"></a>Скачивание скрипта
 
-Скачайте скрипт миграции из [коллекция PowerShell](https://www.powershellgallery.com/packages/AzureAppGWMigration).
+Скачайте скрипт миграции из  [коллекция PowerShell](https://www.powershellgallery.com/packages/AzureAppGWMigration).
 
 ## <a name="use-the-script"></a>Использование скрипта
 
@@ -198,6 +200,6 @@ ms.locfileid: "84804401"
   
 Вы можете обратиться в службу поддержки Azure в разделе "Конфигурация и настройка/миграция на v2 SKU". Дополнительные сведения о [службе поддержки Azure](https://azure.microsoft.com/support/options/)см. здесь.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Дополнительные сведения о шлюзе приложений версии 2](application-gateway-autoscaling-zone-redundant.md)

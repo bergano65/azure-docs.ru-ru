@@ -9,12 +9,12 @@ ms.topic: reference
 ms.date: 08/12/2020
 ms.author: anfeldma
 ms.custom: devx-track-java
-ms.openlocfilehash: 05f81e4d93244db854bf8d0ec254ee647f81d9cc
-ms.sourcegitcommit: 1fe5127fb5c3f43761f479078251242ae5688386
+ms.openlocfilehash: afee95f6a8776c3506e10c29cfd8e776734a915a
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/14/2020
-ms.locfileid: "90069175"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91326683"
 ---
 # <a name="azure-cosmos-db-apache-spark-connector-for-core-sql-api-release-notes-and-resources"></a>Azure Cosmos DB Apache Spark соединителя для API Core (SQL): заметки о выпуске и ресурсы
 > [!div class="op_single_selector"]
@@ -56,19 +56,27 @@ ms.locfileid: "90069175"
 
 | Ресурс | Ссылка |
 |---|---|
-| **Скачивание пакета SDK** | [Скачать с Apache Spark](https://aka.ms/CosmosDB_OLTP_Spark_2.4_LKG) |
+| **Скачивание пакета SDK** | [Скачайте последнюю версию jar-файла](https://aka.ms/CosmosDB_OLTP_Spark_2.4_LKG), [Maven](https://search.maven.org/search?q=a:azure-cosmosdb-spark_2.4.0_2.11) |
 |**Документация по API** | [Справочник по соединителю Spark]() |
 |**Участие в пакете SDK** | [Соединитель Azure Cosmos DB для Apache Spark на GitHub](https://github.com/Azure/azure-cosmosdb-spark) | 
 |**Начало работы** | [Ускорение аналитики больших данных с помощью соединителя Apache Spark для Azure Cosmos DB](https://docs.microsoft.com/azure/cosmos-db/spark-connector#bk_working_with_connector) <br> [Использование структурированной потоковой передачи Apache Spark с Apache Kafka в Azure Cosmos DB](https://docs.microsoft.com/azure/hdinsight/apache-kafka-spark-structured-streaming-cosmosdb?toc=/azure/cosmos-db/toc.json&bc=/azure/cosmos-db/breadcrumb/toc.json) | 
 
 ## <a name="release-history"></a>История выпусков
 
+### <a name="330"></a>3.3.0
+#### <a name="new-features"></a>Новые возможности
+- Добавляет новый параметр конфигурации, `changefeedstartfromdatetime` который можно использовать для указания времени начала обработки пр. Дополнительные сведения см. в разделе [Параметры конфигурации](https://github.com/Azure/azure-cosmosdb-spark/wiki/Configuration-references).
+
+### <a name="320"></a>3.2.0
+#### <a name="key-bug-fixes"></a>Исправления основных ошибок
+- Устраняется регрессия, которая привела к чрезмерному потреблению памяти исполнителям для больших результирующих наборов (например, с миллионами строк), в итоге приводящей к ошибке `java.lang.OutOfMemoryError: GC overhead limit exceeded` .
+
 ### <a name="311"></a>3.1.1
 #### <a name="key-bug-fixes"></a>Исправления основных ошибок
 * Исправляет промежуточный вариант контрольной точки потоковой передачи, в котором параметр `ID` содержит символ вертикальной черты (|) с `ChangeFeedMaxPagesPerBatch` примененной конфигурацией.
 
 ### <a name="310"></a>3.1.0
-#### <a name="new-features"></a>Новые функции
+#### <a name="new-features"></a>Новые возможности
 * Добавляет поддержку для выполнения массовых обновлений при использовании вложенных ключей секционирования.
 * Добавляет поддержку типов данных Decimal и float во время операций записи в Azure Cosmos DB.
 * Добавляет поддержку типов меток времени, если в качестве значения используется Long (эпоха UNIX).
@@ -78,7 +86,7 @@ ms.locfileid: "90069175"
 * Исправляет исключение приведения, возникающее при `WriteThroughputBudget` использовании конфигурации.
 
 ### <a name="307"></a>3.0.7
-#### <a name="new-features"></a>Новые функции
+#### <a name="new-features"></a>Новые возможности
 * Добавляет сведения об ошибке для массовых сбоев в исключения и журнал.
 
 ### <a name="306"></a>3.0.6
@@ -106,7 +114,7 @@ ms.locfileid: "90069175"
 * Устраняет проблему зависимости, которая приводит к сбою прямого транспорта по протоколу TCP с Рекуесттимеаутексцептион.
 
 ### <a name="300"></a>3.0.0
-#### <a name="new-features"></a>Новые функции
+#### <a name="new-features"></a>Новые возможности
 * Улучшает управление подключениями и объединение соединений, чтобы сократить количество вызовов метаданных.
 
 ## <a name="faq"></a>ВОПРОСЫ И ОТВЕТЫ

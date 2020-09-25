@@ -10,14 +10,14 @@ ms.reviewer: craigg
 ms.service: dms
 ms.workload: data-services
 ms.custom: seo-lt-2019
-ms.topic: article
+ms.topic: tutorial
 ms.date: 01/08/2020
-ms.openlocfilehash: 08fa94dbe71299a6653df0b40aa5083375526172
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
-ms.translationtype: MT
+ms.openlocfilehash: b5e335659a26568ae11a17425c4e53c53f02a843
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "78255591"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91282363"
 ---
 # <a name="tutorial-migrate-mongodb-to-azure-cosmos-dbs-api-for-mongodb-offline-using-dms"></a>Руководство. Миграция MongoDB в API Azure Cosmos DB для MongoDB в автономном режиме с помощью DMS
 
@@ -26,10 +26,10 @@ ms.locfileid: "78255591"
 В этом руководстве вы узнаете, как:
 > [!div class="checklist"]
 >
-> * создание экземпляра Azure Database Migration Service;
+> * Создайте экземпляр Azure Database Migration Service.
 > * создание проекта миграции с использованием Azure Database Migration Service.
 > * выполнение миграции.
-> * мониторинг миграции.
+> * Мониторинг миграции.
 
 В этом руководстве показано, как перенести набор данных из базы данных MongoDB, размещенной на виртуальной машине Azure, в API Azure Cosmos DB для MongoDB с помощью Azure Database Migration Service. Если у вас еще не настроен источник MongoDB, обратитесь к статье [Установка и настройка базы данных MongoDB на виртуальной машине Windows в Azure](https://docs.microsoft.com/azure/virtual-machines/windows/install-mongodb).
 
@@ -151,7 +151,7 @@ ms.locfileid: "78255591"
 
    ![Указание сведений об источнике](media/tutorial-mongodb-to-cosmosdb/dms-specify-source.png)
 
-2. Нажмите кнопку **Сохранить**.
+2. Щелкните **Сохранить**.
 
 ## <a name="specify-target-details"></a>Указание сведений о цели
 
@@ -159,7 +159,7 @@ ms.locfileid: "78255591"
 
     ![Указание сведений о цели](media/tutorial-mongodb-to-cosmosdb/dms-specify-target.png)
 
-2. Нажмите кнопку **Сохранить**.
+2. Щелкните **Сохранить**.
 
 ## <a name="map-to-target-databases"></a>Сопоставление с целевыми базами данных
 
@@ -173,7 +173,7 @@ ms.locfileid: "78255591"
 
     ![Сопоставление с целевыми базами данных](media/tutorial-mongodb-to-cosmosdb/dms-map-target-databases.png)
 
-2. Нажмите кнопку **Сохранить**.
+2. Щелкните **Сохранить**.
 3. На экране **Параметр коллекции** разверните список коллекций и просмотрите коллекции, которые будут перенесены.
 
     Azure Database Migration Service автоматически выбирает все коллекции, которые существуют в исходном экземпляре MongoDB и не существуют в целевой учетной записи Azure Cosmos DB. Чтобы повторно перенести коллекции, уже содержащие данные, необходимо явным образом выбрать их в этой колонке.
@@ -187,7 +187,7 @@ ms.locfileid: "78255591"
 
     ![Выбор таблиц коллекций](media/tutorial-mongodb-to-cosmosdb/dms-collection-setting.png)
 
-4. Нажмите кнопку **Сохранить**.
+4. Щелкните **Сохранить**.
 
 5. На экране **Сводка по миграции** в текстовом поле **Имя активности** задайте имя действия миграции.
 
@@ -224,6 +224,6 @@ ms.locfileid: "78255591"
 
 * [Сведения о службе Cosmos DB](https://azure.microsoft.com/services/cosmos-db/)
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Просмотрите другие сценарии в [руководстве по миграции базы данных Майкрософт](https://datamigration.microsoft.com/).

@@ -11,13 +11,13 @@ ms.topic: conceptual
 ms.date: 05/19/2020
 ms.author: qiohu
 zone_pivot_groups: programming-languages-set-two
-ms.custom: devx-track-javascript, devx-track-csharp
-ms.openlocfilehash: 3d761bbad4cb2cd2cdd1c34459f25c811bb41c7e
-ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
+ms.custom: devx-track-js, devx-track-csharp
+ms.openlocfilehash: 820e0b78b986a8836e173513e1508641ac450333
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88918695"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91282935"
 ---
 # <a name="specify-source-language-for-speech-to-text"></a>Укажите исходный язык для перевода речи в текст
 
@@ -199,7 +199,7 @@ SPXSpeechRecognizer* speechRecognizer = [[SPXSpeechRecognizer alloc] initWithSpe
 
 ::: zone-end
 
-## <a name="see-also"></a>См. также
+## <a name="see-also"></a>См. также раздел
 
 * Список поддерживаемых языков и языковых стандартов для распознавания речи в тексте см. в разделе [Поддержка языков](language-support.md).
 

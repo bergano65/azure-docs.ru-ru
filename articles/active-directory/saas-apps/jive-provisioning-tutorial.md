@@ -1,6 +1,6 @@
 ---
 title: Руководство по настройке Jive для автоматической подготовки пользователей с помощью Azure Active Directory | Документация Майкрософт
-description: Узнайте, как настроить единый вход между Azure Active Directory и Jive.
+description: Сведения о действиях, которые необходимо выполнить в Jive и Azure AD для автоматической инициализации и отзыва учетных записей пользователей из Azure AD в Jive.
 services: active-directory
 author: jeevansd
 manager: CelesteDG
@@ -10,12 +10,12 @@ ms.workload: identity
 ms.topic: article
 ms.date: 01/26/2018
 ms.author: jeedes
-ms.openlocfilehash: 351c7e21bfe59b22f451adddad8fed220c218358
-ms.sourcegitcommit: bdd5c76457b0f0504f4f679a316b959dcfabf1ef
+ms.openlocfilehash: fa45ece76499b50694d366ed2dcdd57cc1e0c7dc
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "90983126"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91312102"
 ---
 # <a name="tutorial-configure-jive-for-automatic-user-provisioning"></a>Руководство по настройке Jive для автоматической подготовки пользователей
 
@@ -67,7 +67,7 @@ ms.locfileid: "90983126"
 
 1. В разделе **Учетные данные администратора** укажите следующие параметры конфигурации.
    
-    a. В текстовом поле **Jive Admin User Name** (Имя пользователя администратора Jive) укажите имя учетной записи Jive, которой назначен профиль **System Administrator** (Системный администратор) на сайте Jive.com.
+    а. В текстовом поле **Jive Admin User Name** (Имя пользователя администратора Jive) укажите имя учетной записи Jive, которой назначен профиль **System Administrator** (Системный администратор) на сайте Jive.com.
    
     b. В текстовом поле **Jive Admin Password** (Пароль администратора Jive) введите пароль для этой учетной записи.
    

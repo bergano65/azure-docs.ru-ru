@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.date: 12/03/2019
 ms.author: longl
 ms.custom: devx-track-csharp
-ms.openlocfilehash: da34c2aa8a178a99f325bef8beb4a7e7685b3cbc
-ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
+ms.openlocfilehash: d250fc005c5760a3eecc2793d02b6f2a9161e663
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88931477"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91283043"
 ---
 # <a name="specify-a-face-recognition-model"></a>Указание модели распознавания лиц
 
@@ -35,10 +35,11 @@ ms.locfileid: "88931477"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Вы должны быть знакомы с концепциями обнаружения и идентификации AI-лиц. Если вы не видите, ознакомьтесь с этими руководствами в первую очередь:
+Вы должны быть знакомы с концепциями обнаружения и идентификации AI-лиц. Если вас нет, сначала ознакомьтесь с этими руководствами:
 
+* [Основные понятия обнаружения лиц](../concepts/face-detection.md)
+* [Концепции распознавания лиц](../concepts/face-recognition.md)
 * [Обнаружение лиц в изображении](HowtoDetectFacesinImage.md)
-* [Определение лиц в изображении](HowtoIdentifyFacesinImage.md)
 
 ## <a name="detect-faces-with-specified-model"></a>Обнаружить лица с указанной моделью
 

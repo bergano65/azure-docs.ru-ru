@@ -1,6 +1,6 @@
 ---
 title: Работа со схемами помещений в службе Creator в Azure Maps
-description: В этой статье рассматриваются основные понятия, касающиеся служб Creator в Azure Maps.
+description: В этой статье рассматриваются основные понятия, относящиеся к службам Creator Azure Maps
 author: anastasia-ms
 ms.author: v-stharr
 ms.date: 05/18/2020
@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.service: azure-maps
 services: azure-maps
 manager: philmea
-ms.openlocfilehash: d55a0726000a6ed55f049ac4a4146f66421a7085
-ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
+ms.openlocfilehash: ad1b7ae08e74f455190c44a813dde44b0b683014
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2020
-ms.locfileid: "86242582"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91311365"
 ---
 # <a name="creator-for-indoor-maps"></a>Creator для схем помещений
 

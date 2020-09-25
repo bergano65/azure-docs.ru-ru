@@ -9,16 +9,16 @@ ms.subservice: forms-recognizer
 ms.topic: conceptual
 ms.date: 08/28/2020
 ms.author: egeaney
-ms.openlocfilehash: 86b15b0059c2e3466ef65daeb53780798b3882d0
-ms.sourcegitcommit: 656c0c38cf550327a9ee10cc936029378bc7b5a2
+ms.openlocfilehash: c959231826125349ecd6a62afe529248f7ac2eec
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89079257"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91326802"
 ---
 # <a name="form-recognizer-encryption-of-data-at-rest"></a>Расшифровка неактивных данных распознавателем форм
 
-Средство распознавания форм Azure автоматически шифрует данные при сохранении их в облаке. Шифрование форм обеспечивает защиту данных и помогает удовлетворить ваши обязательства по обеспечению безопасности и соответствия требованиям Организации.
+Средство распознавания форм Azure автоматически шифрует данные при сохранении их в облаке. Шифрование форм защищает ваши данные, чтобы помочь вам удовлетворить ваши обязательства по обеспечению безопасности и соответствия требованиям Организации.
 
 [!INCLUDE [cognitive-services-about-encryption](../includes/cognitive-services-about-encryption.md)]
 

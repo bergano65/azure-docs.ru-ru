@@ -6,13 +6,13 @@ ms.service: cosmos-db
 ms.topic: how-to
 ms.date: 05/28/2020
 ms.author: lbosq
-ms.custom: devx-track-javascript
-ms.openlocfilehash: 7b0ac1e301705b24d706638deb3ee0a15d49c87b
-ms.sourcegitcommit: e71da24cc108efc2c194007f976f74dd596ab013
+ms.custom: devx-track-js
+ms.openlocfilehash: 4b069dea3f07477fcbca21e08166cdfad8cad2cf
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87415097"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91326734"
 ---
 # <a name="use-mongodb-extension-commands-to-manage-data-stored-in-azure-cosmos-dbs-api-for-mongodb"></a>Используйте команды расширения MongoDB для управления данными, хранящимися в API-интерфейсе Azure Cosmos DB для MongoDB 
 
@@ -33,7 +33,7 @@ API Azure Cosmos DB для MongoDB совместим с MongoDB Server верс
 * [Обновить коллекцию](#update-collection)
 * [Получить коллекцию](#get-collection)
 
-## <a name="create-database"></a><a id="create-database"></a>Создание базы данных
+## <a name="create-database"></a><a id="create-database"></a> Создание базы данных
 
 Команда создания расширения базы данных создает новую базу данных MongoDB. Имя базы данных можно использовать из контекста базы данных, установленного `use database` командой. В следующей таблице описаны параметры в команде.
 
@@ -86,7 +86,7 @@ use test
 db.runCommand({customAction: "CreateDatabase", autoScaleSettings: { maxThroughput: 20000 } });
 ```
 
-## <a name="update-database"></a><a id="update-database"></a>Обновить базу данных
+## <a name="update-database"></a><a id="update-database"></a> Обновить базу данных
 
 Команда обновить расширение базы данных обновляет свойства, связанные с указанной базой данных. В следующей таблице описаны параметры в команде.
 
@@ -129,7 +129,7 @@ db.runCommand({customAction: "UpdateDatabase", autoScaleSettings: { maxThroughpu
 ```
 
 
-## <a name="get-database"></a><a id="get-database"></a>Получение базы данных
+## <a name="get-database"></a><a id="get-database"></a> Получение базы данных
 
 Команда получения расширения базы данных возвращает объект базы данных. Имя базы данных используется в контексте базы данных, для которой выполняется команда.
 
@@ -154,7 +154,7 @@ db.runCommand({customAction: "UpdateDatabase", autoScaleSettings: { maxThroughpu
 |---------|---------|---------|
 |  `ok`   |   `int`     |   Состояние ответа. 1 = = успешное завершение. 0 = = сбой.      |
 | `database`    |    `string`        |   Имя базы данных.      |
-|   `provisionedThroughput`  |    `int`      |    Подготовленная пропускная способность, заданная для базы данных, если база данных использует [пропускную способность уровня базы данных вручную](set-throughput.md#set-throughput-on-a-database)     |
+|   `provisionedThroughput`  |    `int`      |    Подготовленная пропускная способность, заданная для базы данных, если база данных использует  [пропускную способность уровня базы данных вручную](set-throughput.md#set-throughput-on-a-database)     |
 | `autoScaleSettings` | `Object` | Этот объект содержит параметры емкости, связанные с базой данных, если она использует [режим автомасштабирования](provision-throughput-autoscale.md). `maxThroughput`Значение описывает наибольшее количество единиц запросов, которое будет динамически увеличиваться в базе данных. |
 
 Если команда завершается ошибкой, возвращается пользовательский ответ команды по умолчанию. Просмотрите [выходные данные пользовательской команды по умолчанию](#default-output) для параметров в выходных данных.
@@ -195,7 +195,7 @@ db.runCommand({customAction: "GetDatabase"});
 }
 ```
 
-## <a name="create-collection"></a><a id="create-collection"></a>Создать коллекцию
+## <a name="create-collection"></a><a id="create-collection"></a> Создать коллекцию
 
 Команда Create Collection создает новую коллекцию MongoDB. Имя базы данных используется из контекста базы данных, установленного `use database` командой. Команда CreateCollection имеет следующий формат:
 
@@ -288,7 +288,7 @@ use test
 db.runCommand({customAction: "CreateCollection", collection: "testCollection", shardKey: "a.b", autoScaleSettings: { maxThroughput: 20000 }});
 ```
 
-## <a name="update-collection"></a><a id="update-collection"></a>Обновить коллекцию
+## <a name="update-collection"></a><a id="update-collection"></a> Обновить коллекцию
 
 Команда Update Collection обновляет свойства, связанные с указанной коллекцией.
 
@@ -324,7 +324,7 @@ use test
 db.runCommand({customAction: "UpdateCollection", collection: "testCollection", offerThroughput: 1200 });
 ```
 
-## <a name="get-collection"></a><a id="get-collection"></a>Получить коллекцию
+## <a name="get-collection"></a><a id="get-collection"></a> Получить коллекцию
 
 Настраиваемая команда Get Collection возвращает объект коллекции.
 
@@ -413,7 +413,7 @@ db.runCommand({customAction: "GetCollection", collection: "testCollection"});
 ```
 
 
-## <a name="default-output-of-a-custom-command"></a><a id="default-output"></a>Выходные данные пользовательской команды по умолчанию
+## <a name="default-output-of-a-custom-command"></a><a id="default-output"></a> Выходные данные пользовательской команды по умолчанию
 
 Если не указано, пользовательский ответ содержит документ со следующими полями:
 

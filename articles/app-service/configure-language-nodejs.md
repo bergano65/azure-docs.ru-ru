@@ -1,23 +1,23 @@
 ---
 title: Настройка Node.js приложений
 description: Узнайте, как настроить Node.js приложение в собственных экземплярах Windows или в предварительно созданном контейнере Linux в службе приложений Azure. В этой статье показаны наиболее распространенные задачи настройки.
-ms.custom: devx-track-javascript
+ms.custom: devx-track-js
 ms.devlang: nodejs
 ms.topic: article
 ms.date: 06/02/2020
 zone_pivot_groups: app-service-platform-windows-linux
-ms.openlocfilehash: e6daf176504427c96f8dce0a4e9a6b6d5e999a0a
-ms.sourcegitcommit: 2ffa5bae1545c660d6f3b62f31c4efa69c1e957f
+ms.openlocfilehash: 48b111966d58af80b6c34fa17231034f4f0cc213
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/11/2020
-ms.locfileid: "88080119"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91311841"
 ---
 # <a name="configure-a-nodejs-app-for-azure-app-service"></a>Настройка приложения Node.js для службы приложений Azure
 
 Node.js приложения должны быть развернуты со всеми необходимыми зависимостями NPM. Модуль развертывания службы приложений автоматически запускается `npm install --production` при развертывании [репозитория Git](deploy-local-git.md)или [ZIP-пакета](deploy-zip.md) с включенной автоматизацией сборок. Однако при развертывании файлов с помощью [FTP/S](deploy-ftp.md)нужные пакеты необходимо загрузить вручную.
 
-Это краткое описание содержит основные понятия и инструкции для Node.js разработчиков, развернутых в службе приложений. Если вы никогда не использовали службу приложений Azure, сначала следуйте инструкциям в [кратком](quickstart-nodejs.md) руководстве поNode.js и [Node.js с MongoDB](tutorial-nodejs-mongodb-app.md) .
+Это краткое описание содержит основные понятия и инструкции для Node.js разработчиков, развернутых в службе приложений. Если вы никогда не использовали службу приложений Azure, сначала следуйте инструкциям в [ кратком](quickstart-nodejs.md) руководстве поNode.js и [Node.js с MongoDB](tutorial-nodejs-mongodb-app.md) .
 
 ## <a name="show-nodejs-version"></a>Показывать Node.js версию
 
@@ -98,7 +98,7 @@ az webapp config set --resource-group <resource-group-name> --name <app-name> --
 1. Запустите пользовательский скрипт, если он указан `POST_BUILD_SCRIPT_PATH`.
 
 > [!NOTE]
-> Как описано в [документах NPM](https://docs.npmjs.com/misc/scripts), скрипты с именами `prebuild` и `postbuild` выполняются до и после `build` , соответственно, если они указаны. `preinstall`и `postinstall` выполняются до и после `install` соответственно.
+> Как описано в [документах NPM](https://docs.npmjs.com/misc/scripts), скрипты с именами `prebuild` и `postbuild` выполняются до и после `build` , соответственно, если они указаны. `preinstall` и `postinstall` выполняются до и после `install` соответственно.
 
 `PRE_BUILD_COMMAND` и `POST_BUILD_COMMAND` являются переменными среды, которые по умолчанию пустые. Чтобы выполнить команды перед сборкой, определите `PRE_BUILD_COMMAND`. Чтобы выполнить команды после сборки, определите `POST_BUILD_COMMAND`.
 

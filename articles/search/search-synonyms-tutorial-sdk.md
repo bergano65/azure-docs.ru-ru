@@ -9,12 +9,12 @@ ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 11/04/2019
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 982aa4bdb37af53999e75b7e33db990adb057938
-ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
+ms.openlocfilehash: 51d6920d9ab52b907f2cb51e29d85f82dc74d45b
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89019765"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91250238"
 ---
 # <a name="example-add-synonyms-for-azure-cognitive-search-in-c"></a>Пример. Добавление синонимов для Когнитивный поиск Azure в C #
 
@@ -33,7 +33,7 @@ ms.locfileid: "89019765"
 > [!NOTE]
 > Синонимы можно создавать программно, но не на портале. Если вы считаете, что нам следует добавить поддержку синонимов на портале Azure, оставьте свой отзыв на [UserVoice](https://feedback.azure.com/forums/263029-azure-search).
 
-## <a name="prerequisites"></a>Обязательные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Ниже приведены предварительные требования, описанные в этом руководстве.
 
@@ -97,7 +97,7 @@ results = indexClient.Documents.Search<Hotel>("economy AND hotel", parameters);
 WriteDocuments(results);
 ```
 Ни в одном из двух индексированных документов нет этих выражений, поэтому мы используем следующие выходные данные из первой функции `RunQueriesWithNonExistentTermsInIndex`.
-~~~
+```
 Search the entire index for the phrase "five star":
 
 no document matched
@@ -109,7 +109,7 @@ no document matched
 Search the entire index for the terms 'economy' AND 'hotel':
 
 no document matched
-~~~
+```
 
 ## <a name="enable-synonyms"></a>Включение поиска синонимов
 
@@ -148,7 +148,7 @@ no document matched
 
 После добавления сопоставления синонимов и обновления индекса, необходимых для использования этого сопоставления, мы получаем следующие выходные данные, вызвав функцию `RunQueriesWithNonExistentTermsInIndex` второй раз:
 
-~~~
+```
 Search the entire index for the phrase "five star":
 
 Name: Fancy Stay        Category: Luxury        Tags: [pool, view, wifi, concierge]
@@ -160,7 +160,7 @@ Name: Fancy Stay        Category: Luxury        Tags: [pool, view, wifi, concier
 Search the entire index for the terms 'economy' AND 'hotel':
 
 Name: Roach Motel       Category: Budget        Tags: [motel, budget]
-~~~
+```
 Первый запрос находит документ из правила `five star=>luxury`. Для второго запроса поиск расширяется с помощью термина `internet,wifi`, а для третьего при поиске соответствующих документов используются оба термина запросов — `hotel, motel` и `economy,inexpensive=>budget`.
 
 Добавление синонимов полностью изменяет возможности поиска. В этом примере исходным запросом не удалось вернуть значимые результаты, даже если документы в нашем индексе оказались релевантными. Включив поиск синонимов, мы можем расширить индекс, чтобы включить распространенные термины, не изменяя при этом базовые данные в индексе.

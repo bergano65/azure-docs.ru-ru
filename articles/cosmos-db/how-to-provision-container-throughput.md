@@ -6,13 +6,13 @@ ms.service: cosmos-db
 ms.topic: how-to
 ms.date: 12/13/2019
 ms.author: mjbrown
-ms.custom: devx-track-javascript, devx-track-azurecli, devx-track-csharp
-ms.openlocfilehash: cf2bd616fc739d233826769baaa14298d0fcec2d
-ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
+ms.custom: devx-track-js, devx-track-azurecli, devx-track-csharp
+ms.openlocfilehash: 8c4259383196734c6e15c4ea261092938b1dd404
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89017130"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91282822"
 ---
 # <a name="provision-standard-manual-throughput-on-an-azure-cosmos-container"></a>Подготовка стандартной (масштабируемой вручную) пропускной способности в контейнере Azure Cosmos
 
@@ -32,7 +32,7 @@ ms.locfileid: "89017130"
    * Укажите подготавливаемую пропускную способность (например, 1000 ЕЗ/с).
    * Щелкните **ОК**.
 
-    :::image type="content" source="./media/how-to-provision-container-throughput/provision-container-throughput-portal-all-api.png" alt-text="Снимок экрана обозревателя данных с выделенным элементом Новая коллекция":::
+    :::image type="content" source="./media/how-to-provision-container-throughput/provision-container-throughput-portal-all-api.png" alt-text="Снимок экрана обозревателя данных с выделенным элементом "Новая коллекция"":::
 
 ## <a name="azure-cli-or-powershell"></a>Azure CLI или Azure PowerShell
 

@@ -6,12 +6,12 @@ ms.service: cosmos-db
 ms.topic: conceptual
 ms.date: 05/03/2020
 ms.author: tisande
-ms.openlocfilehash: b06a8737c1ceb538417f966a989ccb39069f4d4c
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 546b664c74980b3522fefed82c00eec414641eaa
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85116304"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91326632"
 ---
 # <a name="index-geospatial-data-with-azure-cosmos-db"></a>Индексирование геопространственных данных с помощью Azure Cosmos DB
 
@@ -77,15 +77,15 @@ ms.locfileid: "85116304"
 **Политика индексирования контейнеров JSON с пространственным индексированием географии**
 
 ```json
-    {
-       "automatic":true,
-       "indexingMode":"Consistent",
-        "includedPaths": [
+{
+    "automatic": true,
+    "indexingMode": "Consistent",
+    "includedPaths": [
         {
             "path": "/*"
         }
-        ],
-        "spatialIndexes": [
+    ],
+    "spatialIndexes": [
         {
             "path": "/*",
             "types": [
@@ -96,8 +96,8 @@ ms.locfileid: "85116304"
             ]
         }
     ],
-       "excludedPaths":[]
-    }
+    "excludedPaths": []
+}
 ```
 
 > [!NOTE]
@@ -123,7 +123,7 @@ ms.locfileid: "85116304"
 Ниже приведен пример политики индексации, которая индексирует **геометрические** данные с помощью **жеоспатиалконфиг** , для которых задано значение `geometry` :
 
 ```json
- {
+{
     "indexingMode": "consistent",
     "automatic": true,
     "includedPaths": [
@@ -161,7 +161,7 @@ ms.locfileid: "85116304"
 > [!NOTE]
 > Если вы попытаетесь добавить политику индексирования с **BoundingBox** в контейнер с `geography` типом данных, произойдет сбой. **geospatialConfig** `geometry` Перед добавлением **BoundingBox**необходимо изменить жеоспатиалконфиг контейнера. Вы можете добавить данные и изменить оставшуюся часть политики индексирования (например, пути и типы) до или после выбора геопространственного типа данных для контейнера.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Теперь, когда вы ознакомились с предварительными сведениями о поддержке геопространственных данных в Azure Cosmos DB, вы можете сделать следующее:
 

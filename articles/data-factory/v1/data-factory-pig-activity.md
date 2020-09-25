@@ -1,6 +1,6 @@
 ---
 title: Преобразование данных с помощью действия Pig в фабрике данных Azure
-description: Узнайте, как с помощью действия Pig в фабрике данных Azure выполнять запросы Pig к собственному кластеру HDInsight или к кластеру HDInsight по требованию.
+description: Узнайте, как использовать действие Pig в фабрике данных Azure версии 1 для запуска скриптов Pig в вашем кластере HDInsight по требованию или в собственном.
 services: data-factory
 documentationcenter: ''
 author: djpmsft
@@ -12,12 +12,12 @@ ms.service: data-factory
 ms.workload: data-services
 ms.topic: conceptual
 ms.date: 01/10/2018
-ms.openlocfilehash: 5b8e7201a6239ef1fe83fb89d4b361995e305bbf
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 9e20b7a92d054a6664a00064fa7263b1150c3df9
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "74703194"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91282584"
 ---
 # <a name="transform-data-using-pig-activity-in-azure-data-factory"></a>Преобразование данных с помощью действия Pig в фабрике данных Azure
 > [!div class="op_single_selector" title1="Действия преобразования"]
@@ -90,7 +90,7 @@ ms.locfileid: "74703194"
 | Ввод данных |Входные данные, используемые действием Pig. |Нет |
 | outputs |Выходные данные, создаваемые действием Pig. |Да |
 | linkedServiceName |Ссылка на кластер HDInsight, зарегистрированный в качестве связанной службы в фабрике данных. |Да |
-| скрипт |Указывается встроенный сценарий Pig. |Нет |
+| скрипт |Указывается встроенный сценарий Pig. |нет |
 | scriptPath |Путь к файлу сценария Pig в хранилище BLOB-объектов Azure. Можно использовать либо свойство script, либо свойство scriptPath, но не оба сразу. В имени файла учитывается регистр знаков. |Нет |
 | defines |Параметры в виде пары "ключ — значение", ссылки на которые указываются в сценарии Pig. |Нет |
 

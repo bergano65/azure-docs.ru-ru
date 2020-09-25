@@ -5,20 +5,23 @@ description: Начните работу с Cognitive Services Azure, созда
 services: cognitive-services
 author: aahill
 manager: nitinme
+keywords: службы для перестановки, анализа и перестановки, службы AI
 ms.service: cognitive-services
 ms.topic: conceptual
-ms.date: 07/27/2020
+ms.date: 09/14/2020
 ms.author: aahi
-ms.openlocfilehash: 079ab59652c9ba709d8476c33a538b1d4a9f4846
-ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
+ms.openlocfilehash: 623982826f82e44b8d031d19002d33e0a8e798bd
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "90907025"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91326870"
 ---
-# <a name="create-a-cognitive-services-resource-using-the-azure-portal"></a>Создание Cognitive Services ресурса с помощью портал Azure
+# <a name="quickstart-create-a-cognitive-services-resource-using-the-azure-portal"></a>Краткое руководство. Создание Cognitive Services ресурса с помощью портал Azure
 
 Используйте это краткое руководство для начала работы с Azure Cognitive Services. После создания ресурса "поисковой службы" в портал Azure вы получите конечную точку и ключ для проверки подлинности приложений.
+
+Azure Cognitive Services — это облачные службы с REST API и пакетами SDK клиентских библиотек, которые помогают разработчикам без опыта работы со средствами искусственного интеллекта (ИИ) и обработки и анализа данных создавать когнитивные интеллектуальные приложения. С помощью Azure Cognitive Services разработчики могут без усилий добавлять в свои приложения когнитивные функции, создавая когнитивные решения, которые могут видеть, слышать, говорить, понимать и даже в некоторой степени размышлять.
 
 
 [!INCLUDE [cognitive-services-subscription-types](../../includes/cognitive-services-subscription-types.md)]
@@ -56,10 +59,11 @@ ms.locfileid: "90907025"
     | Зрение                      | Речь                  | Язык                          | Решение             | Поиск                 |
     |-----------------------------|-------------------------|-----------------------------------|----------------------|------------------------|
     | [Компьютерное зрение](https://ms.portal.azure.com/#create/Microsoft.CognitiveServicesComputerVision)         | [Речевые службы](https://ms.portal.azure.com/#create/Microsoft.CognitiveServicesSpeechServices)     | [Иммерсивное средство чтения](https://ms.portal.azure.com/#create/Microsoft.CognitiveServicesImmersiveReader)              | [Детектор аномалий](https://ms.portal.azure.com/#create/Microsoft.CognitiveServicesAnomalyDetector) | [Версии 7 API Поиск Bing](https://ms.portal.azure.com/#create/Microsoft.CognitiveServicesBingSearch-v7) |
-    | [Пользовательская служба визуального представления](https://ms.portal.azure.com/#create/Microsoft.CognitiveServicesCustomVision) | [Распознавание говорящего](https://ms.portal.azure.com/#create/Microsoft.CognitiveServicesSpeakerRecognition) | [Language Understanding (LUIS)](https://ms.portal.azure.com/#create/Microsoft.CognitiveServicesLUISAllInOne) | [Content Moderator](https://ms.portal.azure.com/#create/Microsoft.CognitiveServicesContentModerator) | [Пользовательский поиск Bing](https://ms.portal.azure.com/#create/Microsoft.CognitiveServicesBingCustomSearch) |
+    | [Пользовательская служба визуального представления](https://ms.portal.azure.com/#create/Microsoft.CognitiveServicesCustomVision) | [Распознавание говорящего](https://ms.portal.azure.com/#create/Microsoft.CognitiveServicesSpeakerRecognition) | [Распознавание речи (LUIS)](https://ms.portal.azure.com/#create/Microsoft.CognitiveServicesLUISAllInOne) | [Content Moderator](https://ms.portal.azure.com/#create/Microsoft.CognitiveServicesContentModerator) | [Пользовательский поиск Bing](https://ms.portal.azure.com/#create/Microsoft.CognitiveServicesBingCustomSearch) |
     | [Распознавание лиц](https://ms.portal.azure.com/#create/Microsoft.CognitiveServicesFace)                    |                         | [QnA Maker](https://ms.portal.azure.com/#create/Microsoft.CognitiveServicesQnAMaker)                     | [Персонализатор](https://ms.portal.azure.com/#create/Microsoft.CognitiveServicesPersonalizer)     | [Поиск сущностей Bing](https://ms.portal.azure.com/#create/Microsoft.CognitiveServicesBingEntitySearch) |
     | [Распознаватель рукописного текста](https://ms.portal.azure.com/#create/Microsoft.CognitiveServicesInkRecognizer)        |                         | [Анализ текста](https://ms.portal.azure.com/#create/Microsoft.CognitiveServicesTextAnalytics)                |  [Помощник по метрикам](https://go.microsoft.com/fwlink/?linkid=2142156)                    | [Проверка орфографии Bing](https://ms.portal.azure.com/#create/Microsoft.CognitiveServicesBingSpellCheck-v7)   |
     |           |                         | [Переводчик](https://ms.portal.azure.com/#create/Microsoft.CognitiveServicesTextTranslation)               |                      | [Автозаполнение Bing](https://ms.portal.azure.com/#create/Microsoft.CognitiveServicesBingAutosuggest-v7)                       |
+
     ***
 
 3. На странице **Создание** введите приведенные ниже сведения.
@@ -68,29 +72,29 @@ ms.locfileid: "90907025"
 
     |    |    |
     |--|--|
-    | **имя**; | Описательное имя для ресурса Cognitive Services. Например, *микогнитивесервицесресаурце*. |
+    | **Имя** | Описательное имя для ресурса Cognitive Services. Например, *микогнитивесервицесресаурце*. |
     | **Подписка** | Выберите одну из доступных подписок Azure. |
     | **Расположение** | Расположение экземпляра Cognitive Service. Разные расположения могут увеличивать задержку, но не влияют на доступность среды выполнения ресурса. |
     | **Ценовая категория** | Затраты на учетную запись Cognitive Services зависят от выбранных параметров и использования. Дополнительные сведения см. на [странице с ценами](https://azure.microsoft.com/pricing/details/cognitive-services/) API-интерфейсов.
     | **Группа ресурсов** | Группа ресурсов Azure, которая будет содержать ресурс Cognitive Services. Вы можете создать новую группу или добавить к имеющейся группе. |
 
-    ![Снимок экрана создания ресурса](media/cognitive-services-apis-create-account/resource_create_screen-multi.png)
+    ![Экран создания ресурса с несколькими службами](media/cognitive-services-apis-create-account/resource_create_screen-multi.png)
 
-    Щелкните **Создать**.
+    Нажмите кнопку **Создать**.
 
     #### <a name="single-service-resource"></a>[Ресурс с одной службой](#tab/singleservice)
 
     |    |    |
     |--|--|
-    | **имя**; | Описательное имя для ресурса Cognitive Services. Например, *текстаналитиксресаурце*. |
+    | **Имя** | Описательное имя для ресурса Cognitive Services. Например, *текстаналитиксресаурце*. |
     | **Подписка** | Выберите одну из доступных подписок Azure. |
     | **Расположение** | Расположение экземпляра Cognitive Service. Разные расположения могут увеличивать задержку, но не влияют на доступность среды выполнения ресурса. |
     | **Ценовая категория** | Затраты на учетную запись Cognitive Services зависят от выбранных параметров и использования. Дополнительные сведения см. на [странице с ценами](https://azure.microsoft.com/pricing/details/cognitive-services/) API-интерфейсов.
     | **Группа ресурсов** | Группа ресурсов Azure, которая будет содержать ресурс Cognitive Services. Вы можете создать новую группу или добавить к имеющейся группе. |
 
-    ![Экран создания одного ресурса](media/cognitive-services-apis-create-account/resource_create_screen.png)
+    ![Экран создания ресурса с одной службой](media/cognitive-services-apis-create-account/resource_create_screen.png)
 
-    Щелкните **Создать**.
+    Нажмите кнопку **Создать**.
 
     ***
 

@@ -10,13 +10,13 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 07/05/2019
 ms.author: chlandsi
-ms.custom: devx-track-javascript
-ms.openlocfilehash: 80671a40b5933a89962fa07b267d7e99e475657f
-ms.sourcegitcommit: 42107c62f721da8550621a4651b3ef6c68704cd3
+ms.custom: devx-track-js
+ms.openlocfilehash: 0e67d0ae4d875699b26fdcd30093b0c2bf373458
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87406696"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91282992"
 ---
 # <a name="how-to-select-an-audio-input-device-with-the-speech-sdk"></a>Как выбрать устройство ввода звука с помощью пакета SDK для распознавания речи
 
@@ -135,6 +135,10 @@ void ListEndpoints()
 
         // Print endpoint friendly name and endpoint ID.
         printf("Endpoint %d: \"%S\" (%S)\n", i, varName.pwszVal, pwszID);
+
+        CoTaskMemFree(pwszID);
+        pwszID = NULL;
+        PropVariantClear(&varName);
     }
 
 Exit:
@@ -386,7 +390,7 @@ CFArrayRef CreateInputDeviceArray()
 > [!div class="nextstepaction"]
 > [Примеры на сайте GitHub](https://aka.ms/csspeech/samples)
 
-## <a name="see-also"></a>См. также
+## <a name="see-also"></a>См. также раздел
 
 - [Настройка акустических моделей](how-to-customize-acoustic-models.md)
 - [Настройка языковых моделей](how-to-customize-language-model.md)

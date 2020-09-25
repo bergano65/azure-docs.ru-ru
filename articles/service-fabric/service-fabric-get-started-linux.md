@@ -3,13 +3,13 @@ title: Настройка среды разработки в Linux
 description: Установите среду выполнения и пакет SDK, а затем создайте локальный кластер разработки в Linux. По завершении установки вы сможете создавать приложения.
 ms.topic: conceptual
 ms.date: 2/23/2018
-ms.custom: devx-track-javascript
-ms.openlocfilehash: 420284a512147d729db23f3b71cbe8e9f6f050d9
-ms.sourcegitcommit: 0b8320ae0d3455344ec8855b5c2d0ab3faa974a3
+ms.custom: devx-track-js
+ms.openlocfilehash: 211c2c80d0f701176dfcff02872d9f1e30635d94
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/30/2020
-ms.locfileid: "87429041"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91250000"
 ---
 # <a name="prepare-your-development-environment-on-linux"></a>Подготовка среды разработки в Linux
 > [!div class="op_single_selector"]

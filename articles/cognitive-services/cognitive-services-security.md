@@ -9,13 +9,13 @@ ms.service: cognitive-services
 ms.topic: conceptual
 ms.date: 08/28/2020
 ms.author: erhopf
-ms.custom: devx-track-python, devx-track-javascript, devx-track-csharp
-ms.openlocfilehash: d74a2c45c1d2b2b03c35e7235994980a64cba979
-ms.sourcegitcommit: 656c0c38cf550327a9ee10cc936029378bc7b5a2
+ms.custom: devx-track-python, devx-track-js, devx-track-csharp
+ms.openlocfilehash: 9b90d886923f4bbdab3715130bde15ecb5921636
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89072117"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91326819"
 ---
 # <a name="azure-cognitive-services-security"></a>Безопасность Cognitive Services Azure
 
@@ -113,7 +113,7 @@ echo "${ENVIRONMENT_VARIABLE_KEY}"
 
 # <a name="c"></a>[C#](#tab/csharp)
 
-Дополнительные сведения см. на веб-сайте <a href="https://docs.microsoft.com/dotnet/api/system.environment.getenvironmentvariable" target="_blank">`Environment.GetEnvironmentVariable` <span class="docon docon-navigate-external x-hidden-focus"></span></a>.
+Дополнительные сведения см. в <a href="https://docs.microsoft.com/dotnet/api/system.environment.getenvironmentvariable" target="_blank"> `Environment.GetEnvironmentVariable` <span class="docon docon-navigate-external x-hidden-focus"></span> </a>разделе.
 
 ```csharp
 using static System.Environment;
@@ -132,7 +132,7 @@ class Program
 
 # <a name="c"></a>[C++](#tab/cpp)
 
-Дополнительные сведения см. на веб-сайте <a href="https://docs.microsoft.com/cpp/c-runtime-library/reference/getenv-wgetenv" target="_blank">`getenv` <span class="docon docon-navigate-external x-hidden-focus"></span></a>.
+Дополнительные сведения см. в <a href="https://docs.microsoft.com/cpp/c-runtime-library/reference/getenv-wgetenv" target="_blank"> `getenv` <span class="docon docon-navigate-external x-hidden-focus"></span> </a>разделе.
 
 ```cpp
 #include <stdlib.h>
@@ -147,7 +147,7 @@ int main()
 
 # <a name="java"></a>[Java](#tab/java)
 
-Дополнительные сведения см. на веб-сайте <a href="https://docs.oracle.com/javase/7/docs/api/java/lang/System.html#getenv(java.lang.String)" target="_blank">`System.getenv` <span class="docon docon-navigate-external x-hidden-focus"></span></a>.
+Дополнительные сведения см. в <a href="https://docs.oracle.com/javase/7/docs/api/java/lang/System.html#getenv(java.lang.String)" target="_blank"> `System.getenv` <span class="docon docon-navigate-external x-hidden-focus"></span> </a>разделе.
 
 ```java
 import java.lang.*;
@@ -164,7 +164,7 @@ public class Program {
 
 # <a name="nodejs"></a>[Node.js](#tab/node-js)
 
-Дополнительные сведения см. на веб-сайте <a href="https://nodejs.org/api/process.html#process_process_env" target="_blank">`process.env` <span class="docon docon-navigate-external x-hidden-focus"></span></a>.
+Дополнительные сведения см. в <a href="https://nodejs.org/api/process.html#process_process_env" target="_blank"> `process.env` <span class="docon docon-navigate-external x-hidden-focus"></span> </a>разделе.
 
 ```javascript
 // Get the named env var, and assign it to the value variable
@@ -174,7 +174,7 @@ const value =
 
 # <a name="python"></a>[Python](#tab/python)
 
-Дополнительные сведения см. на веб-сайте <a href="https://docs.python.org/2/library/os.html#os.environ" target="_blank">`os.environ` <span class="docon docon-navigate-external x-hidden-focus"></span></a>.
+Дополнительные сведения см. в <a href="https://docs.python.org/2/library/os.html#os.environ" target="_blank"> `os.environ` <span class="docon docon-navigate-external x-hidden-focus"></span> </a>разделе.
 
 ```python
 import os
@@ -185,7 +185,7 @@ value = os.environ['ENVIRONMENT_VARIABLE_KEY']
 
 # <a name="objective-c"></a>[Objective-C](#tab/objective-c)
 
-Дополнительные сведения см. на веб-сайте <a href="https://developer.apple.com/documentation/foundation/nsprocessinfo/1417911-environment?language=objc" target="_blank">`environment` <span class="docon docon-navigate-external x-hidden-focus"></span></a>.
+Дополнительные сведения см. в <a href="https://developer.apple.com/documentation/foundation/nsprocessinfo/1417911-environment?language=objc" target="_blank"> `environment` <span class="docon docon-navigate-external x-hidden-focus"></span> </a>разделе.
 
 ```objectivec
 // Get the named env var, and assign it to the value variable

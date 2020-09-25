@@ -1,6 +1,6 @@
 ---
 title: Развертывание службы диспетчера устройств StorSimple в Azure | Документация Майкрософт
-description: Сведения о создании и удалении службы диспетчера устройств StorSimple на портале Azure, а также об управлении ключом регистрации службы.
+description: Сведения о шагах, необходимых для создания, удаления, миграции службы и управления регистрационным ключом службы.
 services: storsimple
 documentationcenter: ''
 author: alkohli
@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 05/09/2018
 ms.author: alkohli
-ms.openlocfilehash: 1e75acc03209fdd7e613801c9152f24aaecfa6de
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 73373f788a4a87a36a800d69ffcdc646f4cd2084
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85847115"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91249558"
 ---
 # <a name="deploy-the-storsimple-device-manager-service-for-storsimple-8000-series-devices"></a>Развертывание службы диспетчера устройств StorSimple для устройств StorSimple серии 8000
 
@@ -77,7 +77,7 @@ ms.locfileid: "85847115"
 
     ![Поиск службы, которую необходимо удалить](./media/storsimple-8000-manage-service/deletessdevman1.png)
 
-2. Откроется колонка службы диспетчера устройств StorSimple. Щелкните **Delete** (Удалить).
+2. Откроется колонка службы диспетчера устройств StorSimple. Щелкните **Удалить**.
 
     ![Удаление службы](./media/storsimple-8000-manage-service/deletessdevman2.png)
 
@@ -156,7 +156,7 @@ ms.locfileid: "85847115"
 
 #### <a name="to-initiate-the-service-data-encryption-key-change"></a>Запуск изменения ключа шифрования данных службы
 1. Выберите вариант 1, чтобы войти на устройство с правами на полный доступ.
-2. В командной строке введите следующее:
+2. В командной строке введите:
    
      `Invoke-HcsmServiceDataEncryptionKeyChange`
 3. После успешного завершения работы командлета вы получите новый ключ шифрования данных службы. Скопируйте и сохраните этот ключ для использования на шаге 3. Этот ключ будет использоваться для обновления всех остальных устройств, зарегистрированных в службе StorSimple Manager.
@@ -211,7 +211,7 @@ ms.locfileid: "85847115"
 | Включение и выключение контроллеров устройства                                                                                              | Да            |
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 * Узнайте больше о [процессе развертывания StorSimple](storsimple-8000-deployment-walkthrough-u2.md).
 * Узнайте больше об [управлении учетной записью хранения StorSimple](storsimple-8000-manage-storage-accounts.md).
 * Узнайте больше об [использовании службы диспетчера устройств StorSimple для администрирования устройства StorSimple](storsimple-8000-manager-service-administration.md).

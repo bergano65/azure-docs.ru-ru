@@ -8,21 +8,24 @@ ms.topic: conceptual
 ms.service: industrial-iot
 services: iot-industrialiot
 manager: philmea
-ms.openlocfilehash: 3c6385ff804b047cca11587ce5da5a0a682fdce8
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 365cb0912d84f0664b2a5432cd54cd553df62466
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84307934"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91282029"
 ---
 # <a name="build-and-deploy-the-opc-vault-certificate-management-service"></a>Создание и развертывание службы управления сертификатами хранилища OPC
+
+> [!IMPORTANT]
+> Пока мы обновляем эту статью, ознакомьтесь с наиболее актуальными материалами в [Azure для промышленного центра Интернета вещей](https://azure.github.io/Industrial-IoT/) .
 
 В этой статье объясняется, как развернуть службу управления сертификатами хранилища OPC в Azure.
 
 > [!NOTE]
 > Дополнительные сведения см. в [репозитории хранилища GitHub OPC](https://github.com/Azure/azure-iiot-opc-vault-service).
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 ### <a name="install-required-software"></a>Установка необходимого программного обеспечения
 
@@ -75,9 +78,9 @@ cd azure-iiot-opc-vault-service
    > [!NOTE]
    > В случае возникновения проблем см. раздел "Устранение неполадок при развертывании" Далее в этой статье.
 
-8. Откройте свой любимый браузер и откройте страницу приложения:`https://myResourceGroup.azurewebsites.net`
+8. Откройте свой любимый браузер и откройте страницу приложения: `https://myResourceGroup.azurewebsites.net`
 8. Присвойте веб-приложению и микрослужбе хранилища OPC несколько минут, чтобы развернуть после развертывания. Домашняя страница веб-сайта может перестать отвечать на запросы при первом использовании до минуты, пока вы не получите первые ответы.
-11. Чтобы ознакомиться с API Swagger, откройте:`https://myResourceGroup-service.azurewebsites.net`
+11. Чтобы ознакомиться с API Swagger, откройте: `https://myResourceGroup-service.azurewebsites.net`
 13. Чтобы запустить локальный сервер GDS с помощью DotNet, запустите `.\myResourceGroup-gds.cmd` . С помощью DOCKER запустите `.\myResourceGroup-dockergds.cmd` .
 
 Можно повторно развернуть сборку с теми же параметрами. Имейте в виду, что такая операция обновляет секреты всех приложений и может сбрасывать некоторые параметры в Azure Active Directory регистрации приложений (Azure AD).
@@ -88,7 +91,7 @@ cd azure-iiot-opc-vault-service
 
 ## <a name="delete-the-services-from-the-subscription"></a>Удаление служб из подписки
 
-Это делается так.
+Этот процесс описывается далее.
 
 1. Войдите на [портал Azure](https://portal.azure.com).
 2. Перейдите к группе ресурсов, в которой была развернута служба.
@@ -174,7 +177,7 @@ cd azure-iiot-opc-vault-service
 [docker-url]: https://www.docker.com/
 [dotnet-install]: https://www.microsoft.com/net/learn/get-started
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Теперь, когда вы узнали, как развертывать хранилище OPC с нуля, вы можете:
 

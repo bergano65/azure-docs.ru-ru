@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: article
 ms.date: 04/30/2020
 ms.author: Zhchia
-ms.openlocfilehash: e8a64b3f42e52363f70d536963594bb6083a0992
-ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
+ms.openlocfilehash: 03fa13e31724110e2b832cf490af325b8b570807
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88548078"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91312300"
 ---
 # <a name="tutorial-configure-mediusflow-for-automatic-user-provisioning"></a>Руководство по Настройка MediusFlow для автоматической подготовки пользователей
 
@@ -135,11 +135,11 @@ https://success.mediusflow.com/documentation/administration_guide/user_login_and
 
 3. Выберите вкладку **Подготовка**.
 
-    ![Вкладка "Подготовка"](common/provisioning.png)
+    ![Снимок экрана параметров управления с вызываемым параметром подготовки.](common/provisioning.png)
 
 4. Для параметра **Режим подготовки к работе** выберите значение **Automatic** (Автоматически).
 
-    ![Вкладка "Подготовка"](common/provisioning-automatic.png)
+    ![Снимок экрана: раскрывающийся список режима подготовки с вызываемым автоматическим параметром.](common/provisioning-automatic.png)
 
 5. В разделе **Учетные данные администратора** введите в поле **URL-адрес арендатора** значение URL-адреса, полученное ранее. Введите значение секретного токена, полученное ранее на шаге **Секретный токен**. Щелкните **Проверить подключение**, чтобы убедиться, что Azure AD может подключиться к MediusFlow. Если установить подключение не удалось, убедитесь, что у учетной записи MediusFlow есть разрешения администратора, и повторите попытку.
 

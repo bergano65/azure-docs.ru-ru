@@ -11,12 +11,12 @@ ms.author: shipatel
 author: shivp950
 ms.reviewer: larryfr
 ms.date: 05/11/2020
-ms.openlocfilehash: 464d945708fba83877fe6cef9ec1b64ec444bd95
-ms.sourcegitcommit: 271601d3eeeb9422e36353d32d57bd6e331f4d7b
+ms.openlocfilehash: 7b1030c816bff5b50c0c47a16fa5f1812bb16b15
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/20/2020
-ms.locfileid: "88650423"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91250833"
 ---
 # <a name="trigger-applications-processes-or-cicd-workflows-based-on-azure-machine-learning-events-preview"></a>Активация приложений, процессов или процессов CI/CD на основе событий Машинное обучение Azure (Предварительная версия)
 
@@ -62,7 +62,7 @@ ms.locfileid: "88650423"
 
 При настройке событий можно применять фильтры только для запуска на конкретных данных событий. В приведенном ниже примере для событий изменения состояния выполнения можно выполнить фильтрацию по типам выполнения. Это событие активируется только при соблюдении условий. Сведения о данных событий, по которым можно выполнять фильтрацию, см. в статье [Схема сетки событий Машинного обучения Azure](/azure/event-grid/event-schema-machine-learning). 
 
-Подписки на события Машинного обучения Azure событий защищаются с помощью управления доступом на основе ролей (RBAC). Создавать, обновлять и удалять подписки на события могут только [участники или владельцы](how-to-assign-roles.md#default-roles) рабочей области.  Фильтры могут применяться к подпискам на события во время [создания](/cli/azure/eventgrid/event-subscription?view=azure-cli-latest) подписки на событие или позже. 
+Подписки на события Машинного обучения Azure событий защищаются с помощью управления доступом на основе ролей (RBAC). Создавать, обновлять и удалять подписки на события могут только [участники или владельцы](how-to-assign-roles.md#default-roles) рабочей области.  Фильтры могут применяться к подпискам на события во время [создания](/cli/azure/eventgrid/event-subscription?view=azure-cli-latest&preserve-view=true) подписки на событие или позже. 
 
 
 1. Перейдите к порталу Azure, выберите там новую или существующую подписку. 
@@ -126,14 +126,14 @@ ms.locfileid: "88650423"
 
 1. Выберите конечную точку, в которую будет опубликовано событие. На следующем снимке экрана __Концентратор событий__ является выбранной конечной точкой:
 
-    ![select-event-handler](./media/how-to-use-event-grid/select-event-handler.png)
+    ![обработчик событий](./media/how-to-use-event-grid/select-event-handler.png)
 
 После подтверждения выбора щелкните __Создать__. После настройки эти события будут отправлены в конечную точку.
 
 
 ### <a name="set-up-with-the-cli"></a>Настройка с помощью CLI
 
-Можно либо установить последнюю версию [Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest), либо использовать Azure Cloud Shell, предоставляемый в рамках подписки Azure.
+Можно либо установить последнюю версию [Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest&preserve-view=true), либо использовать Azure Cloud Shell, предоставляемый в рамках подписки Azure.
 
 Чтобы установить расширение Сетки событий, выполните следующую команду в CLI:
 
@@ -164,15 +164,15 @@ az eventgrid event-subscription create --name {eventGridFilterName} \
 
 1. На портале Azure перейдите в рабочую область Машинного обучения Azure и выберите вкладку события на панели слева. Там выберите __Logic apps__. 
 
-    ![select-logic-ap](./media/how-to-use-event-grid/select-logic-ap.png)
+    ![SELECT-Logic-App](./media/how-to-use-event-grid/select-logic-ap.png)
 
 1. Войдите в пользовательский интерфейс приложения логики и выберите службу "Машинное обучение" в качестве типа темы. 
 
-    ![select-topic-type](./media/how-to-use-event-grid/select-topic-type.png)
+    ![тип раздела](./media/how-to-use-event-grid/select-topic-type.png)
 
 1. Выберите события, о которых хотите получать уведомления. Для примера посмотрите на снимок экрана __RunCompleted__.
 
-    ![select-event-runcomplete](./media/how-to-use-event-grid/select-event-runcomplete.png)
+    ![Выбор-событие-выполнение-завершение](./media/how-to-use-event-grid/select-event-runcomplete.png)
 
 1. Можно использовать метод фильтрации в приведенном выше разделе или добавить фильтры, чтобы активировать приложение логики только в ответ на подмножество типов событий. На следующем снимке экрана используется __фильтр префикса__ __/datadriftID/runs/__ .
 
@@ -180,15 +180,15 @@ az eventgrid event-subscription create --name {eventGridFilterName} \
 
 1. Затем добавьте шаг для использования этого события и выполните поиск по электронной почте. Существует несколько разных учетных записей почты, которые можно использовать для получения событий. Также можно настроить условия отправки оповещений по электронной почте.
 
-    ![select-email-action](./media/how-to-use-event-grid/select-email-action.png)
+    ![действие электронной почты](./media/how-to-use-event-grid/select-email-action.png)
 
 1. Выберите __Отправить сообщение электронной почты__ и введите параметры. В теме можно указать __Тип события__ и __Тему__, чтобы упростить фильтрацию событий. Также можно включить ссылку на страницу рабочей области для выполнения в тексте сообщения. 
 
-    ![configure-email-body](./media/how-to-use-event-grid/configure-email-body.png)
+    ![Настройка-электронная почта](./media/how-to-use-event-grid/configure-email-body.png)
 
 1. Чтобы сохранить это действие, выберите **Сохранить как** в левом углу страницы. На появившейся правой панели подтвердите создание этого действия.
 
-    ![confirm-logic-app-create](./media/how-to-use-event-grid/confirm-logic-app-create.png)
+    ![Подтверждение создания приложения логики](./media/how-to-use-event-grid/confirm-logic-app-create.png)
 
 
 ### <a name="example-data-drift-triggers-retraining"></a>Пример Переобучение триггеров смещения данных
@@ -204,7 +204,7 @@ az eventgrid event-subscription create --name {eventGridFilterName} \
 
 В этом примере простой конвейер Фабрики данных используется для копирования файлов в хранилище BLOB-объектов и запуска опубликованного конвейера Машинного обучения. Дополнительные сведения об этом сценарии см. в [Этап Машинного обучения в Фабрике данных Azure.](https://docs.microsoft.com/azure/data-factory/transform-data-machine-learning-service)
 
-![adf-mlpipeline-stage](./media/how-to-use-event-grid/adf-mlpipeline-stage.png)
+![ADF-млпипелине](./media/how-to-use-event-grid/adf-mlpipeline-stage.png)
 
 1. Начните с создания приложения логики. Перейдите на [портал Azure](https://portal.azure.com), найдите Logic Apps и выберите "Создать".
 
@@ -212,31 +212,31 @@ az eventgrid event-subscription create --name {eventGridFilterName} \
 
 1. Введите необходимую информацию. Чтобы упростить работу, используйте ту же подписку и группу ресурсов, что и конвейер Фабрики данных Azure, с рабочей областью Машинного обучения Azure.
 
-    ![set-up-logic-app-for-adf](./media/how-to-use-event-grid/set-up-logic-app-for-adf.png)
+    ![Set-up-Logic-App-ADF](./media/how-to-use-event-grid/set-up-logic-app-for-adf.png)
 
 1. После создания приложения логики выберите __При возникновении события ресурса Сетки событий__. 
 
-    ![select-event-grid-trigger](./media/how-to-use-event-grid/select-event-grid-trigger.png)
+    ![SELECT-eventgrid — триггер](./media/how-to-use-event-grid/select-event-grid-trigger.png)
 
 1. Войдите и укажите сведения о событии. В разделе __Имя ресурса__  укажите имя рабочей области. В разделе __Тип события__  укажите __DatasetDriftDetected__.
 
-    ![login-and-add-event](./media/how-to-use-event-grid/login-and-add-event.png)
+    ![имя входа — Добавление события](./media/how-to-use-event-grid/login-and-add-event.png)
 
 1. Добавьте новый шаг и выполните поиск по __Фабрике данных Azure__. Выберите __Создание конвейера__. 
 
-    ![create-adfpipeline-run](./media/how-to-use-event-grid/create-adfpipeline-run.png)
+    ![Create-ADF-конвейер — запуск](./media/how-to-use-event-grid/create-adfpipeline-run.png)
 
 1. Войдите в систему и укажите опубликованный конвейер Фабрики данных Azure, который следует запустить.
 
-    ![specify-adf-pipeline](./media/how-to-use-event-grid/specify-adf-pipeline.png)
+    ![Укажите-адфпипелине](./media/how-to-use-event-grid/specify-adf-pipeline.png)
 
 1. Сохраните и создайте приложение логики с помощью кнопки **Сохранить** в верхнем левом углу страницы. Чтобы просмотреть приложение, перейдите в рабочую область [Портала Azure](https://portal.azure.com) и щелкните **События**.
 
-    ![show-logic-app-webhook](./media/how-to-use-event-grid/show-logic-app-webhook.png)
+    ![показывать-logicapp — веб-перехватчик](./media/how-to-use-event-grid/show-logic-app-webhook.png)
 
 Теперь конвейер Фабрики данных активируется при смещении данных. Сведения о вашем процессе смещения данных и конвейере машинного обучения можно найти на [новом портале рабочей области](https://ml.azure.com). 
 
-![view-in-workspace](./media/how-to-use-event-grid/view-in-workspace.png)
+![представление-Рабочая область](./media/how-to-use-event-grid/view-in-workspace.png)
 
 ### <a name="example-deploy-a-model-based-on-tags"></a>Пример Развертывание модели на основе тегов
 

@@ -1,38 +1,42 @@
 ---
-title: Создание Cognitive Services ресурса с помощью Azure CLI
+title: Создание ресурса Cognitive Services с помощью интерфейса командной строки Azure
 titleSuffix: Azure Cognitive Services
 description: Приступая к работе с Azure Cognitive Services, создав и подпишитесь на ресурс с помощью интерфейса командной строки Azure.
 services: cognitive-services
 author: aahill
 manager: nitinme
 ms.service: cognitive-services
+keywords: службы для перестановки, анализа и перестановки, службы AI
 ms.topic: conceptual
-ms.date: 07/27/2020
+ms.date: 09/14/2020
 ms.author: aahi
-ms.openlocfilehash: 36e21a131181831c2a87c0c6d2c24c9aa6e0acf7
-ms.sourcegitcommit: c293217e2d829b752771dab52b96529a5442a190
+ms.openlocfilehash: 41dc99c206fb66aa87ccca6e40d6e9488f801a22
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/15/2020
-ms.locfileid: "88245015"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91262439"
 ---
-# <a name="create-a-cognitive-services-resource-using-the-azure-command-line-interfacecli"></a>Создание Cognitive Services ресурса с помощью интерфейс командной строки Azure (CLI)
+# <a name="quickstart-create-a-cognitive-services-resource-using-the-azure-command-line-interfacecli"></a>Краткое руководство. Создание Cognitive Services ресурса с помощью интерфейс командной строки Azure (CLI)
 
-Используйте это краткое руководство для начала работы с Azure Cognitive Services с помощью [интерфейса командной строки Azure (CLI)](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest). Cognitive Services представлены [ресурсами](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-portal) Azure, созданными в подписке Azure. После создания ресурса используйте ключи и конечную точку, созданные для проверки подлинности приложений.
+Используйте это краткое руководство для начала работы с Azure Cognitive Services с помощью [интерфейса командной строки Azure (CLI)](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest).
 
+Azure Cognitive Services — это облачные службы с REST API и пакетами SDK клиентских библиотек, которые помогают разработчикам без опыта работы со средствами искусственного интеллекта (ИИ) и обработки и анализа данных создавать когнитивные интеллектуальные приложения. С помощью Azure Cognitive Services разработчики могут без усилий добавлять в свои приложения когнитивные функции, создавая когнитивные решения, которые могут видеть, слышать, говорить, понимать и даже в некоторой степени размышлять.
+
+Cognitive Services представлены [ресурсами](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-portal) Azure, созданными в подписке Azure. После создания ресурса используйте ключи и конечную точку, созданные для проверки подлинности приложений.
 
 В этом кратком руководстве вы узнаете, как зарегистрироваться в Azure Cognitive Services и создать учетную запись с одной или несколькими службами, используя [интерфейс командной строки Azure (CLI)](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest). Эти службы представлены [ресурсами](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-portal)Azure, которые позволяют подключиться к одному или нескольким API-интерфейсы Cognitive Services Azure.
 
 [!INCLUDE [cognitive-services-subscription-types](../../includes/cognitive-services-subscription-types.md)]
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 * Допустимая подписка Azure — [создайте ее](https://azure.microsoft.com/free/cognitive-services) бесплатно.
 * [Интерфейс командной строки Azure (CLI)](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest)
 
 ## <a name="install-the-azure-cli-and-sign-in"></a>Установка Azure CLI и вход в систему
 
-Установите [Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest). Чтобы войти в локальную установку интерфейса командной строки, выполните команду [AZ login](https://docs.microsoft.com/cli/azure/reference-index#az-login) :
+Установка [Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest). Чтобы войти в локальную установку интерфейса командной строки, выполните команду [AZ login](https://docs.microsoft.com/cli/azure/reference-index#az-login) :
 
 ```azurecli-interactive
 az login
@@ -50,7 +54,7 @@ az login
 
 > [!IMPORTANT]
 > * Запомните расположение Azure, так как оно понадобится вам при вызове Cognitive Services Azure.
-> * Доступность некоторых Cognitive Services может варьироваться в зависимости от региона. Дополнительные сведения см. в статье [продукты Azure по регионам](https://azure.microsoft.com/global-infrastructure/services/?products=cognitive-services).  
+> * Доступность некоторых Cognitive Services может варьироваться в зависимости от региона. Дополнительные сведения см. в статье [продукты Azure по регионам](https://azure.microsoft.com/global-infrastructure/services/?products=cognitive-services).
 
 ```azurecli-interactive
 az account list-locations \
@@ -89,8 +93,8 @@ az group create \
 | Служба                    | Вид                      |
 |----------------------------|---------------------------|
 | Компьютерное зрение            | `ComputerVision`          |
-| Прогнозирование Пользовательское визуальное распознавание | `CustomVision.Prediction` |
-| Пользовательское визуальное распознавание обучение   | `CustomVision.Training`   |
+| Ресурс прогнозирования службы "Пользовательское визуальное распознавание" | `CustomVision.Prediction` |
+| Ресурс обучения службы "Пользовательское визуальное распознавание"   | `CustomVision.Training`   |
 | Распознавание лиц                       | `Face`                    |
 | Распознаватель документов            | `FormRecognizer`          |
 | Распознаватель рукописного текста             | `InkRecognizer`           |
@@ -116,7 +120,7 @@ az group create \
 
 | Служба            | Вид                |
 |--------------------|---------------------|
-| Основные сведения о форме | `FormUnderstanding` |
+| Анализ форм | `FormUnderstanding` |
 | LUIS               | `LUIS`              |
 | QnA Maker          | `QnAMaker`          |
 | Анализ текста     | `TextAnalytics`     |
@@ -174,9 +178,9 @@ az login
 
 ## <a name="pricing-tiers-and-billing"></a>Ценовые категории и выставление счетов
 
-Ценовые категории (и сумма, за которую взимается плата) основываются на количестве отправленных вами транзакций с использованием данных проверки подлинности. Каждая ценовая категория определяет:
-* Максимальное число разрешенных транзакций в секунду (TPS).
-* функции службы, включенные в ценовой категории.
+Ценовые категории (и сумма в выставленных счетах) основаны на количестве отправленных вами транзакций с использованием данных аутентификации. Каждая ценовая категория определяет:
+* максимальное количество разрешенных транзакций, обрабатываемых в секунду (TPS);
+* функции службы, включенные в ценовой категории;
 * Стоимость предопределенного количества транзакций. При превышении этого объема взимается плата за дополнительную плату, указанную в [сведениях о ценах](https://azure.microsoft.com/pricing/details/cognitive-services/custom-vision-service/) для вашей службы.
 
 ## <a name="get-current-quota-usage-for-your-resource"></a>Получение сведений об используемой квоте для ресурса
@@ -200,7 +204,7 @@ az cognitiveservices account list-usage \
 az group delete --name cognitive-services-resource-group
 ```
 
-## <a name="see-also"></a>См. также
+## <a name="see-also"></a>См. также раздел
 
 * [Проверка подлинности запросов к Azure Cognitive Services](authentication.md)
 * [Общие сведения об Azure Cognitive Services](Welcome.md)

@@ -4,16 +4,16 @@ description: Узнайте, как добавить мозаичный слой
 author: anastasia-ms
 ms.author: v-stharr
 ms.date: 04/26/2019
-ms.topic: conceptual
+ms.topic: how-to
 ms.service: azure-maps
 services: azure-maps
 manager: philmea
-ms.openlocfilehash: bae1d06f1b5a96ad99d970613d957ce75a0c1393
-ms.sourcegitcommit: bfeae16fa5db56c1ec1fe75e0597d8194522b396
+ms.openlocfilehash: 905085d5b0787697d6094bd1337420ee8ae61d90
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/10/2020
-ms.locfileid: "88037360"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91311096"
 ---
 # <a name="add-a-tile-layer-to-a-map-using-the-azure-maps-android-sdk"></a>Добавление мозаичного слоя в карту с помощью Azure Maps пакет SDK для Android
 
@@ -35,7 +35,7 @@ URL-адрес фрагмента, передаваемый в слой фраг
 * `{z}` — уровень увеличения фрагмента. Также нужны `{x}` и `{y}`.
 * `{quadkey}` — идентификатор quadkey на основе соглашения об именовании системы фрагментов Bing Maps.
 * `{bbox-epsg-3857}` — строка ограничивающего прямоугольника в формате `{west},{south},{east},{north}` в системе пространственных ссылок 3857 EPSG.
-* `{subdomain}`— Заполнитель для значений поддомена, если указано значение поддомена.
+* `{subdomain}` — Заполнитель для значений поддомена, если указано значение поддомена.
 
 ## <a name="prerequisites"></a>Предварительные требования
 

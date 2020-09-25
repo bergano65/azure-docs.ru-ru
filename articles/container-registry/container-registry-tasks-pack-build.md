@@ -3,13 +3,13 @@ title: Создание образа с помощью собственного 
 description: Используйте команду AZ Dockerfile Pack Build, чтобы создать образ контейнера из приложения и отправить его в реестр контейнеров Azure без использования.
 ms.topic: article
 ms.date: 10/24/2019
-ms.custom: devx-track-javascript
-ms.openlocfilehash: f99175165e01a9287a66c59957fc7a239b00393a
-ms.sourcegitcommit: 2ffa5bae1545c660d6f3b62f31c4efa69c1e957f
+ms.custom: devx-track-js
+ms.openlocfilehash: cad7d5c066dd8c8a7468833cb67e6085f067417a
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/11/2020
-ms.locfileid: "88077226"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91262116"
 ---
 # <a name="build-and-push-an-image-from-an-app-using-a-cloud-native-buildpack"></a>Сборка и отправка образа из приложения с помощью собственного облачного Буилдпакк
 

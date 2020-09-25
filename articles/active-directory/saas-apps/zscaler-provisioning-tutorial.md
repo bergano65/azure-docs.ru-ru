@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: article
 ms.date: 03/27/2019
 ms.author: jeedes
-ms.openlocfilehash: a3424a42e86b47d4103dd41ca143b5bc7be3796a
-ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
+ms.openlocfilehash: 52c18f8d51f18b9bc167a99fbafda2365824dfc9
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88545936"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91312147"
 ---
 # <a name="tutorial-configure-zscaler-for-automatic-user-provisioning"></a>Учебник. Настройка Zscaler для автоматической подготовки пользователей
 
@@ -92,63 +92,63 @@ ms.locfileid: "88545936"
 
 3. Выберите вкладку **Подготовка**.
 
-    ![Подготовка Zscaler](./media/zscaler-provisioning-tutorial/provisioning-tab.png)
+    ![Снимок экрана: Боковая панель Zscaler корпоративного приложения с выделенным параметром "подготовка".](./media/zscaler-provisioning-tutorial/provisioning-tab.png)
 
 4. Для параметра **Режим подготовки к работе** выберите значение **Automatic** (Автоматически).
 
-    ![Подготовка Zscaler](./media/zscaler-provisioning-tutorial/provisioning-credentials.png)
+    ![Снимок экрана: страница "подготовка" с режимом подготовки "автоматически".](./media/zscaler-provisioning-tutorial/provisioning-credentials.png)
 
 5. В разделе **учетные данные администратора** введите **URL-адрес клиента** и **маркер секрета** учетной записи Zscaler, как описано в шаге 6.
 
 6. Чтобы получить **URL-адрес клиента** и **маркер секрета**, перейдите в раздел **Администрирование > параметры проверки подлинности** в пользовательском интерфейсе портала Zscaler и щелкните **SAML** в разделе **тип проверки подлинности**.
 
-    ![Подготовка Zscaler](./media/zscaler-provisioning-tutorial/secret-token-1.png)
+    ![Снимок экрана со страницей параметров проверки подлинности.](./media/zscaler-provisioning-tutorial/secret-token-1.png)
 
     Щелкните **настроить SAML** , чтобы открыть параметры **конфигурации SAML** .
 
-    ![Подготовка Zscaler](./media/zscaler-provisioning-tutorial/secret-token-2.png)
+    ![Снимок экрана: диалоговое окно "Настройка S L" с вызываемыми базовыми текстовыми полями U R L и носителя.](./media/zscaler-provisioning-tutorial/secret-token-2.png)
 
     Выберите **включить подготовку на основе scim** , чтобы получить **базовый URL-адрес** и **токен носителя**, а затем сохраните параметры. Скопируйте **базовый URL-адрес** в **URL-адрес клиента**и **токен носителя**  в **секретный токен** в портал Azure.
 
 7. После заполнения полей, показанных на шаге 5, нажмите кнопку **проверить подключение** , чтобы убедиться, что Azure AD может подключиться к Zscaler. Если подключение не выполняется, убедитесь, что у учетной записи Zscaler есть разрешения администратора, и повторите попытку.
 
-    ![Подготовка Zscaler](./media/zscaler-provisioning-tutorial/test-connection.png)
+    ![Снимок экрана раздела "учетные данные администратора" с вызываемым параметром "проверить подключение".](./media/zscaler-provisioning-tutorial/test-connection.png)
 
 8. В поле **Почтовое уведомление** введите адрес электронной почты пользователя или группы, которые должны получать уведомления об ошибках подготовки, а также установите флажок **Send an email notification when a failure occurs** (Отправить уведомление по электронной почте при сбое).
 
-    ![Подготовка Zscaler](./media/zscaler-provisioning-tutorial/notification.png)
+    ![Снимок экрана: текстовое поле уведомления по электронной почте.](./media/zscaler-provisioning-tutorial/notification.png)
 
-9. Нажмите **Сохранить**.
+9. Выберите команду **Сохранить**.
 
 10. В разделе **сопоставления** выберите **синхронизировать Azure Active Directory пользователей с Zscaler**.
 
-    ![Подготовка Zscaler](./media/zscaler-provisioning-tutorial/user-mappings.png)
+    ![Снимок экрана раздела "сопоставления" с выделенным параметром "синхронизировать Azure Active Directory пользователей с Zscaler".](./media/zscaler-provisioning-tutorial/user-mappings.png)
 
 11. Проверьте атрибуты пользователя, которые синхронизированы из Azure AD в Zscaler в разделе **сопоставление атрибутов** . Атрибуты, выбранные как свойства **Matching** , используются для сопоставления учетных записей пользователей в Zscaler для операций обновления. Нажмите кнопку **Сохранить**, чтобы зафиксировать все изменения.
 
-    ![Подготовка Zscaler](./media/zscaler-provisioning-tutorial/user-attribute-mappings.png)
+    ![Снимок экрана раздела "сопоставления атрибутов" с семь отображаемых сопоставлений.](./media/zscaler-provisioning-tutorial/user-attribute-mappings.png)
 
 12. В разделе **сопоставления** выберите **синхронизировать Azure Active Directory группы с Zscaler**.
 
-    ![Подготовка Zscaler](./media/zscaler-provisioning-tutorial/group-mappings.png)
+    ![Снимок экрана раздела "сопоставления" с выделенным параметром "синхронизировать Azure Active Directory группы к Zscaler".](./media/zscaler-provisioning-tutorial/group-mappings.png)
 
 13. Проверьте атрибуты группы, которые синхронизированы из Azure AD в Zscaler в разделе **сопоставление атрибутов** . Атрибуты, выбранные как свойства **Matching** , используются для сопоставления групп в Zscaler для операций обновления. Нажмите кнопку **Сохранить**, чтобы зафиксировать все изменения.
 
-    ![Подготовка Zscaler](./media/zscaler-provisioning-tutorial/group-attribute-mappings.png)
+    ![Снимок экрана раздела "сопоставления атрибутов" с тремя отображаемыми сопоставлениями.](./media/zscaler-provisioning-tutorial/group-attribute-mappings.png)
 
 14. Чтобы настроить фильтры области, ознакомьтесь со следующими инструкциями, предоставленными в [руководстве по фильтрам области](./../active-directory-saas-scoping-filters.md).
 
 15. Чтобы включить службу подготовки Azure AD для Zscaler, измените значение параметра **состояние подготовки** на **включено** в разделе **Параметры** .
 
-    ![Подготовка Zscaler](./media/zscaler-provisioning-tutorial/provisioning-status.png)
+    ![Снимок экрана параметра состояния подготовки, установленного в значение ON.](./media/zscaler-provisioning-tutorial/provisioning-status.png)
 
 16. Определите пользователей и (или) группы, которые вы хотите подготавливать к Zscaler, выбрав нужные значения в **области** в разделе **Параметры** .
 
-    ![Подготовка Zscaler](./media/zscaler-provisioning-tutorial/scoping.png)
+    ![Снимок экрана настройки области с выделенным параметром "синхронизировать только назначенные пользователи и группы".](./media/zscaler-provisioning-tutorial/scoping.png)
 
 17. Когда будете готовы выполнить подготовку, нажмите кнопку **Сохранить**.
 
-    ![Подготовка Zscaler](./media/zscaler-provisioning-tutorial/save-provisioning.png)
+    ![Снимок экрана: Боковая панель корпоративного приложения Zscaler с вызываемым параметром Save.](./media/zscaler-provisioning-tutorial/save-provisioning.png)
 
 После этого начнется начальная синхронизация пользователей и (или) групп, определенных в поле **Область** раздела **Параметры**. Начальная синхронизация занимает больше времени, чем последующие операции синхронизации. Если служба запущена, они выполняются примерно каждые 40 минут. В разделе **сведения о синхронизации** можно отслеживать ход выполнения и переходить по ссылкам для просмотра отчетов по подготовке, в которых описаны все действия, выполняемые службой подготовки Azure AD в Zscaler.
 

@@ -11,14 +11,17 @@ manager: philmea
 ms.custom:
 - amqp
 - mqtt
-ms.openlocfilehash: c664d4859a306387b4eafa2f19ab5877ccf6eb1b
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 6a4b65195488f101d36aaf73956f1422bfccbbf9
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "81686960"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91282142"
 ---
 # <a name="run-opc-publisher"></a>Выполнение издателя OPC
+
+> [!IMPORTANT]
+> Пока мы обновляем эту статью, ознакомьтесь с наиболее актуальными материалами в [Azure для промышленного центра Интернета вещей](https://azure.github.io/Industrial-IoT/) .
 
 В этой статье описано, как запускать и отлаживать издателя OPC. Также здесь представлены рекомендации по производительности и управлению памятью.
 
@@ -713,6 +716,6 @@ current working set in MB: 90
 
 Он реализует несколько тегов, которые генерируют случайные данные и теги с аномальными результатами. Этот пример можно расширить, если потребуется имитировать значения других тегов.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Теперь, когда вы узнали, как запускать издателя OPC, мы рекомендуем перейти к изучению [двойника OPC](overview-opc-twin.md) и [хранилища OPC](overview-opc-vault.md).

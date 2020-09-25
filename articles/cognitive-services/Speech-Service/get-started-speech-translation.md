@@ -10,26 +10,17 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 09/01/2020
 ms.author: trbye
-ms.custom: devx-track-javascript, devx-track-csharp, cog-serv-seo-aug-2020
+ms.custom: devx-track-js, devx-track-csharp, cog-serv-seo-aug-2020
 zone_pivot_groups: programming-languages-set-two-with-js
 keywords: перевод речи
-ms.openlocfilehash: da321e2f259ae6e994cddcb928cc139a28c6d9ae
-ms.sourcegitcommit: 5a3b9f35d47355d026ee39d398c614ca4dae51c6
+ms.openlocfilehash: 855e999feddfa9c87f10115866f9b393e6cecc96
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89394879"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91326937"
 ---
 # <a name="get-started-with-speech-translation"></a>Начало работы с переводом речи
-
-Одной из основных функций речевой службы является возможность распознавания речи и перевода их на другие языки. В этом кратком руководстве вы узнаете, как использовать речевой пакет SDK в приложениях и продуктах для выполнения высококачественного перевода речи. В этом кратком руководстве рассматриваются такие темы, как:
-
-* Преобразование речи в текст
-* Преобразование речи на несколько целевых языков
-* Выполнение прямого перевода речи в речь
-
-> [!TIP]
-> Если вы хотите перейти к примерам кода, см. [примеры для краткого руководства](https://github.com/Azure-Samples/cognitive-services-speech-sdk/tree/master/quickstart) на сайте GitHub.
 
 ::: zone pivot="programming-language-csharp"
 [!INCLUDE [C# Basics include](includes/how-to/speech-translation-basics/speech-translation-basics-csharp.md)]
@@ -57,5 +48,5 @@ ms.locfileid: "89394879"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-* [Использовать сжатые звуковые форматы кодеков](how-to-use-codec-compressed-audio-input-streams.md)
+* [Использование сжатых звуковых форматов кодеков](how-to-use-codec-compressed-audio-input-streams.md)
 * Ознакомьтесь с [примерами](https://github.com/Azure-Samples/cognitive-services-speech-sdk/tree/master/quickstart) быстрого запуска на сайте GitHub.

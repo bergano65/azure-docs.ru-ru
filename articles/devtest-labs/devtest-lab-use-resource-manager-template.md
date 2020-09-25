@@ -3,12 +3,12 @@ title: Просмотр и использование шаблона Azure Resou
 description: Сведения об использовании шаблона Azure Resource Manager виртуальной машины для создания других виртуальных машин.
 ms.topic: article
 ms.date: 06/26/2020
-ms.openlocfilehash: e58b54d61653f1edba3c3893edb902a94fbf9f2b
-ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
+ms.openlocfilehash: 7f969abe1ca903a226e73c5c70781dce512c2926
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87272697"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91282516"
 ---
 # <a name="create-virtual-machines-using-an-azure-resource-manager-template"></a>Создание виртуальных машин с использованием шаблона Azure Resource Manager 
 
@@ -23,7 +23,7 @@ ms.locfileid: "87272697"
 
 - Шаблоны Resource Manager, использующие тип ресурса Microsoft.DevTestLab/labs/virtualmachines (как объявлено в свойстве resource в шаблоне), могут подготовить отдельные виртуальные машины лаборатории. Каждая виртуальная машина затем отображается в виде отдельного элемента в списке виртуальных машин DevTest Labs:
 
-   ![Список виртуальных машин как отдельных элементов в списке виртуальных машин DevTest Labs](./media/devtest-lab-use-arm-template/devtestlab-lab-vm-single-item.png)
+   ![Снимок экрана, показывающий список виртуальных машин в виде отдельных элементов в списке виртуальных машин DevTest Labs.](./media/devtest-lab-use-arm-template/devtestlab-lab-vm-single-item.png)
 
    Этот тип шаблона диспетчер ресурсов можно подготовить с помощью команды Azure PowerShell **New-азресаурцеграупдеплоймент** или команды Azure CLI **AZ Group Deployment Create**. Для это требуется иметь разрешения администратора, поэтому пользователи, которым назначена роль пользователя DevTest Labs, не могут выполнить развертывание. 
 
@@ -40,7 +40,7 @@ ms.locfileid: "87272697"
 ## <a name="view-and-save-a-virtual-machines-resource-manager-template"></a>Просмотр и сохранение шаблона Azure Resource Manager виртуальной машины
 1. Выполните действия, описанные в статье [Создание первой виртуальной машины в лаборатории в Azure DevTest Labs](tutorial-create-custom-lab.md#add-a-vm-to-the-lab), чтобы начать создание виртуальной машины.
 1. Введите необходимые сведения для виртуальной машины и добавьте все необходимые для нее артефакты.
-1. Свтич на вкладку **Дополнительные параметры** . 
+1. Перейдите на вкладку **Дополнительные параметры** . 
 1. В нижней части окна настройки параметров выберите **View ARM template** (Просмотреть шаблон ARM).
 1. Скопируйте и сохраните шаблон Resource Manager, чтобы позже использовать его для создания другой виртуальной машины.
 

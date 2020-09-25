@@ -7,12 +7,12 @@ ms.reviewer: estfan, jonfan, logicappspm
 ms.topic: conceptual
 ms.date: 06/06/2020
 tags: connectors
-ms.openlocfilehash: e500f678d2066d24de12a04f28ccbdb3f76eda3a
-ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
+ms.openlocfilehash: a50a171536d7f81de42da415960398d31ec64827
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87288182"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91326785"
 ---
 # <a name="automate-workflows-for-a-sql-database-by-using-azure-logic-apps"></a>Автоматизация рабочих процессов для базы данных SQL с помощью Azure Logic Apps
 
@@ -71,15 +71,15 @@ ms.locfileid: "87288182"
 
 1. В поле **тип проверки подлинности**выберите необходимую проверку подлинности и включите ее в базе данных SQL azure или управляемый экземпляр SQL Azure:
 
-   | Аутентификация | Описание: |
+   | Аутентификация | Описание |
    |----------------|-------------|
    | [**Интегрированная служба Azure AD**](../azure-sql/database/authentication-aad-overview.md) | — Поддерживает как сторонние, так и ИНТЕГРИРОВАНные в среду SQL Server соединители. <p><p>— Требуется действительное удостоверение в Azure Active Directory (Azure AD), которое имеет доступ к базе данных. <p>Дополнительные сведения см. в следующих статьях: <p>- [Общие сведения о безопасности SQL Azure — проверка подлинности](../azure-sql/database/security-overview.md#authentication) <br>- [Авторизация доступа к базе данных в Azure SQL — проверка подлинности и авторизация](../azure-sql/database/logins-create-manage.md#authentication-and-authorization) <br>- [Azure SQL — встроенная проверка подлинности Azure AD](../azure-sql/database/authentication-aad-overview.md) |
-   | [**Проверка подлинности SQL Server**](/sql/relational-databases/security/choose-an-authentication-mode#connecting-through-sql-server-authentication) | — Поддерживает как сторонние, так и ИНТЕГРИРОВАНные в среду SQL Server соединители. <p><p>— Требуется допустимое имя пользователя и надежный пароль, которые создаются и хранятся в базе данных. <p>Дополнительные сведения см. в следующих статьях: <p>- [Общие сведения о безопасности SQL Azure — проверка подлинности](../azure-sql/database/security-overview.md#authentication) <br>- [Авторизация доступа к базе данных в Azure SQL — проверка подлинности и авторизация](../azure-sql/database/logins-create-manage.md#authentication-and-authorization) |
+   | [**Проверка подлинности SQL Server**](/sql/relational-databases/security/choose-an-authentication-mode#connecting-through-sql-server-authentication) | — Поддерживает как сторонние, так и ИНТЕГРИРОВАНные в среду SQL Server соединители. <p><p>— Требуется допустимое имя пользователя и надежный пароль, которые создаются и хранятся в базе данных. <p>Дополнительные сведения см. в следующих статьях: <p>- [Общие сведения о безопасности SQL Azure — проверка подлинности](../azure-sql/database/security-overview.md#authentication) <br>- [Авторизация доступа к базе данных в Azure SQL — проверка подлинности и авторизация](../azure-sql/database/logins-create-manage.md#authentication-and-authorization) |
    |||
 
    Этот пример продолжит работать с **интегрированной службой Azure AD**:
 
-   ![Выберите тип проверки подлинности для использования](./media/connectors-create-api-sqlazure/select-azure-ad-authentication.png)
+   ![Снимок экрана, на котором показано окно подключения "SQL Server" с открытым списком "тип проверки подлинности" и выбранным параметром "Интеграция с Azure AD".](./media/connectors-create-api-sqlazure/select-azure-ad-authentication.png)
 
 1. Выбрав **интегрированная служба Azure AD**, выберите **Вход**. В зависимости от того, используется ли база данных SQL Azure или Azure SQL Управляемый экземпляр, выберите учетные данные пользователя для проверки подлинности.
 
@@ -87,9 +87,9 @@ ms.locfileid: "87288182"
 
    | Свойство | Обязательно | Описание |
    |----------|----------|-------------|
-   | **Имя сервера** | Да | Адрес для SQL Server, например`Fabrikam-Azure-SQL.database.windows.net` |
-   | **Имя базы данных** | Да | Имя базы данных SQL, например`Fabrikam-Azure-SQL-DB` |
-   | **Имя таблицы** | Да | Таблица, которую необходимо использовать, например`SalesLT.Customer` |
+   | **Имя сервера** | Да | Адрес для SQL Server, например `Fabrikam-Azure-SQL.database.windows.net` |
+   | **Имя базы данных** | Да | Имя базы данных SQL, например `Fabrikam-Azure-SQL-DB` |
+   | **Имя таблицы** | Да | Таблица, которую необходимо использовать, например `SalesLT.Customer` |
    ||||
 
    > [!TIP]
@@ -115,10 +115,10 @@ ms.locfileid: "87288182"
 
 1. В поле **тип проверки подлинности**выберите требуемую и включенную проверку подлинности для SQL Server:
 
-   | Аутентификация | Описание: |
+   | Аутентификация | Описание |
    |----------------|-------------|
    | [**Проверка подлинности Windows**](/sql/relational-databases/security/choose-an-authentication-mode#connecting-through-windows-authentication) | — Поддерживает только соединитель SQL Server, не связанный с ISE, для которого требуется ресурс шлюза данных, созданный ранее в Azure для вашего подключения, независимо от того, используете ли вы Azure или интегрированную среду сценариев (Multi-клиент). <p><p>— Требуется допустимое имя пользователя Windows и пароль для подтверждения личности с помощью учетной записи Windows. <p>Дополнительные сведения см. в статье [Проверка подлинности Windows](/sql/relational-databases/security/choose-an-authentication-mode#connecting-through-windows-authentication) . |
-   | [**Проверка подлинности SQL Server**](/sql/relational-databases/security/choose-an-authentication-mode#connecting-through-sql-server-authentication) | — Поддерживает как сторонние, так и ИНТЕГРИРОВАНные в среду SQL Server соединители. <p><p>— Требуется допустимое имя пользователя и надежный пароль, которые создаются и сохраняются в SQL Server. <p>Дополнительные сведения см. в разделе [SQL Serverная проверка подлинности](/sql/relational-databases/security/choose-an-authentication-mode#connecting-through-sql-server-authentication). |
+   | [**Проверка подлинности SQL Server**](/sql/relational-databases/security/choose-an-authentication-mode#connecting-through-sql-server-authentication) | — Поддерживает как сторонние, так и ИНТЕГРИРОВАНные в среду SQL Server соединители. <p><p>— Требуется допустимое имя пользователя и надежный пароль, которые создаются и сохраняются в SQL Server. <p>Дополнительные сведения см. в разделе [SQL Serverная проверка подлинности](/sql/relational-databases/security/choose-an-authentication-mode#connecting-through-sql-server-authentication). |
    |||
 
    Этот пример продолжит **проверку подлинности Windows**:
@@ -129,8 +129,8 @@ ms.locfileid: "87288182"
 
    | Свойство | Обязательно | Описание |
    |----------|----------|-------------|
-   | **Имя SQL Server** | Да | Адрес для SQL Server, например`Fabrikam-Azure-SQL.database.windows.net` |
-   | **Имя базы данных SQL** | Да | Имя базы данных SQL Server, например`Fabrikam-Azure-SQL-DB` |
+   | **Имя SQL Server** | Да | Адрес для SQL Server, например `Fabrikam-Azure-SQL.database.windows.net` |
+   | **Имя базы данных SQL** | Да | Имя базы данных SQL Server, например `Fabrikam-Azure-SQL-DB` |
    | **Имя пользователя** | Да | Имя пользователя для SQL Server и базы данных |
    | **Пароль** | Да | Пароль для SQL Server и базы данных |
    | **Подписка** |  Да, для проверки подлинности Windows | Подписка Azure для ресурса шлюза данных, созданного ранее в Azure |

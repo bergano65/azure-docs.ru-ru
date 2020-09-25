@@ -3,16 +3,16 @@ title: Подключение учетной записи AWS к центру б
 description: Мониторинг ресурсов AWS из центра безопасности Azure
 author: memildin
 ms.author: memildin
-ms.date: 9/12/2020
+ms.date: 9/22/2020
 ms.topic: how-to
 ms.service: security-center
 manager: rkarlin
-ms.openlocfilehash: ee1b8fe6ed97f3b71cda418cce9e432f7c045447
-ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
+ms.openlocfilehash: 33ff6748eba9d0349df244e70f07ad178f258373
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "90940246"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91250292"
 ---
 #  <a name="connect-your-aws-accounts-to-azure-security-center"></a>Подключение учетных записей AWS к центру безопасности Azure
 
@@ -37,7 +37,7 @@ ms.locfileid: "90940246"
 
 ## <a name="availability"></a>Доступность
 
-|Аспект|Подробнее|
+|Аспект|Подробности|
 |----|:----|
 |Состояние выпуска:|Предварительный просмотр|
 |Цены|Требуется [защитник Azure для серверов](defender-for-servers-introduction.md)|

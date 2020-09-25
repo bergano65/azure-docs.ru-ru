@@ -1,6 +1,6 @@
 ---
 title: Правила именования сущностей фабрики данных Azure (версия 1)
-description: Описывает правила именования для сущностей фабрик данных.
+description: Описывает правила именования для сущностей фабрики данных v1.
 services: data-factory
 documentationcenter: ''
 author: djpmsft
@@ -12,12 +12,12 @@ ms.service: data-factory
 ms.workload: data-services
 ms.topic: conceptual
 ms.date: 01/10/2018
-ms.openlocfilehash: 2b6dc5b89b8c5d691b19e9e3368d805eb59b1db1
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 9a329a9c25b9ea85886938a170eb4194ca84643e
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87082866"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91282601"
 ---
 # <a name="rules-for-naming-azure-data-factory-entities"></a>Правила именования сущностей фабрики данных Azure
 > [!NOTE]

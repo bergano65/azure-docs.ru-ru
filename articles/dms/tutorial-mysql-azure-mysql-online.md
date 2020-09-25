@@ -10,14 +10,14 @@ ms.reviewer: craigg
 ms.service: dms
 ms.workload: data-services
 ms.custom: seo-lt-2019
-ms.topic: article
+ms.topic: tutorial
 ms.date: 01/08/2020
-ms.openlocfilehash: 2ea351fb6b88a020a466849181fed0381baa7f04
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
-ms.translationtype: MT
+ms.openlocfilehash: b7e9491f3ddc49d49cf5301bba9d4f51fc9dd008
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87087753"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91282346"
 ---
 # <a name="tutorial-migrate-mysql-to-azure-database-for-mysql-online-using-dms"></a>Руководство. Перенос MySQL в Базу данных Azure для MySQL по сети с помощью DMS
 
@@ -100,7 +100,7 @@ Azure Database Migration Service можно использовать для пе
 mysqldump -h [servername] -u [username] -p[password] --databases [db name] --no-data > [schema file path]
 ```
 
-Например.
+Пример:
 
 ```
 mysqldump -h 10.10.123.123 -u root -p --databases employees --no-data > d:\employees.sql
@@ -112,7 +112,7 @@ mysqldump -h 10.10.123.123 -u root -p --databases employees --no-data > d:\emplo
 mysql.exe -h [servername] -u [username] -p[password] [database]< [schema file path]
  ```
 
-Например.
+Пример:
 
 ```
 mysql.exe -h shausample.mysql.database.azure.com -u dms@shausample -p employees < d:\employees.sql

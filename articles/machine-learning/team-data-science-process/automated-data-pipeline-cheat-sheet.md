@@ -11,12 +11,12 @@ ms.topic: article
 ms.date: 01/10/2020
 ms.author: tdsp
 ms.custom: seodec18, previous-author=garyericson, previous-ms.author=garye
-ms.openlocfilehash: d09f13a65a72c6c856a7fcd3d943ec116f3da43f
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: f60b62faa36352ab1221b23332fca695f32a3d74
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "76721869"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91250646"
 ---
 # <a name="cheat-sheet-for-an-automated-data-pipeline-for-azure-machine-learning-predictions"></a>Памятка по работе с автоматическим конвейером данных для создания прогнозов машинного обучения Azure
 **Памятка по работе с автоматическим конвейером данных машинного обучения Microsoft Azure** поможет вам разобраться в технологии, которую вы можете использовать для передачи данных в веб-службу машинного обучения и их последующей оценки с помощью модели прогнозной аналитики.
@@ -35,7 +35,6 @@ ms.locfileid: "76721869"
 
 
 ## <a name="more-help-with-machine-learning-studio"></a>Дополнительная справка по Студии машинного обучения
-* Общие сведения о Машинное обучение Microsoft Azure см. в статье [Введение в машинное обучение на Microsoft Azure](../studio/what-is-machine-learning.md).
-* Инструкции по развертыванию веб-службы оценки см. в статье [Развертывание веб-службы машинного обучения Azure](../studio/deploy-a-machine-learning-web-service.md).
-* Обсуждение работы с веб-службой оценки см. в статье [Как использовать веб-службу машинного обучения Azure](../studio/consume-web-services.md).
-
+* Общие сведения о Машинное обучение Microsoft Azure см. в статье [Введение в машинное обучение на Microsoft Azure](../classic/index.yml).
+* Инструкции по развертыванию веб-службы оценки см. в статье [Развертывание веб-службы машинного обучения Azure](../classic/deploy-a-machine-learning-web-service.md).
+* Обсуждение работы с веб-службой оценки см. в статье [Как использовать веб-службу машинного обучения Azure](../classic/consume-web-services.md).

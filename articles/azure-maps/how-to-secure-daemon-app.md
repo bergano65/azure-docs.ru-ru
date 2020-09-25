@@ -5,16 +5,16 @@ description: Используйте портал Azure для управлени
 author: anastasia-ms
 ms.author: v-stharr
 ms.date: 06/12/2020
-ms.topic: conceptual
+ms.topic: how-to
 ms.service: azure-maps
 services: azure-maps
 manager: timlt
-ms.openlocfilehash: 2b09163137bbfb6b8a7b0e2b8ddd6d7cccc52cc5
-ms.sourcegitcommit: 98854e3bd1ab04ce42816cae1892ed0caeedf461
+ms.openlocfilehash: e445f26458d13d28dd4ef50c6c17d434554d9fd5
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "88006644"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91311076"
 ---
 # <a name="secure-a-daemon-application"></a>Защита управляющего приложения
 
@@ -120,14 +120,14 @@ ms.locfileid: "88006644"
     > ![Предоставление доступа с помощью Azure RBAC](./media/how-to-manage-authentication/how-to-grant-rbac.png)
 
 2. На вкладке **назначения ролей** **добавьте** назначение ролей. 
-    
+
     > [!div class="mx-imgBorder"]
     > ![Добавление назначения роли](./media/how-to-manage-authentication/add-role-assignment.png)
 
 3. Выберите встроенное определение роли Azure Maps, например **Azure Maps модуль чтения данных** или **участник данных Azure Maps**. В разделе **назначить доступ к**выберите **пользователь Azure AD, группа или субъект-служба** или управляемое удостоверение с назначенным пользователем управляемым удостоверением назначенная система **управляемого удостоверения**  /  **System assigned Managed identity**. Выберите участника. Затем нажмите кнопку **Save** (Сохранить).
 
     > [!div class="mx-imgBorder"]
-    > ![Добавление назначения роли](./media/how-to-manage-authentication/how-to-add-role-assignment.png)
+    > ![Добавление назначения ролей](./media/how-to-manage-authentication/how-to-add-role-assignment.png)
 
 4. Вы можете подтвердить, что назначение роли было применено на вкладке Назначение ролей.
 
@@ -139,7 +139,7 @@ ms.locfileid: "88006644"
 
 После регистрации приложения и связывания его с Azure Maps можно запросить маркеры доступа.
 
-* Идентификатор ресурса Azure AD`https://atlas.microsoft.com/`
+* Идентификатор ресурса Azure AD `https://atlas.microsoft.com/`
 * Идентификатор приложения Azure AD
 * Идентификатор клиента Azure AD
 * Секрет клиента регистрации Azure AD App

@@ -7,12 +7,12 @@ ms.topic: how-to
 author: AarathiN
 ms.author: aarathin
 ms.date: 07/14/2020
-ms.openlocfilehash: e7e7845b458d6d1a37b65fb79e0e7e9c13b0d07d
-ms.sourcegitcommit: 3be3537ead3388a6810410dfbfe19fc210f89fec
+ms.openlocfilehash: 512f901c33ebce4fef06629fe78976a071820c87
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89646935"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91251445"
 ---
 # <a name="create-an-azure-application-offer"></a>Создание предложения приложения Azure
 
@@ -197,7 +197,7 @@ ms.locfileid: "89646935"
 
 #### <a name="call-out-descriptions"></a>Описания вызова
 
-1. Title
+1. Заголовок
 2. Описание
 3. Полезные ссылки
 4. Снимки экрана
@@ -559,7 +559,7 @@ ms.locfileid: "89646935"
 * **Идентификатор клиента Azure AD** (обязательно) — введите [идентификатор клиента](../../active-directory/develop/howto-create-service-principal-portal.md#get-tenant-and-app-id-values-for-signing-in)Azure Active Directory (AD). Чтобы найти этот идентификатор, войдите на [портал Azure](https://portal.azure.com/), выберите вкладку Azure Active Directory на панели слева, выберите **Свойства**, а затем найдите номер **Идентификатор каталога** (например, 50c464d3-4930-494c-963c-1e951d15360e). Вы также можете найти идентификатор клиента своей организации, используя URL-адрес доменного имени: [https://www.whatismytenantid.com](https://www.whatismytenantid.com).
 * **Имя клиента Azure AD** (обязательно для Dynamic 365) — введите имя Azure Active Directory (AD). Чтобы найти это имя, войдите на [портал Azure](https://portal.azure.com/), в правом верхнем углу имя клиента будет указано под именем учетной записи.
 * **Идентификатор приложения Azure AD** (обязательно) — введите [идентификатор приложения](../../active-directory/develop/howto-create-service-principal-portal.md#get-tenant-and-app-id-values-for-signing-in)Azure Active Directory (AD). Чтобы найти этот идентификатор, войдите на [портал Azure](https://portal.azure.com/), выберите вкладку Azure Active Directory на панели слева, выберите **Регистрация приложений**, а затем найдите номер **Идентификатор приложения** (например, 50c464d3-4930-494c-963c-1e951d15360e).
-* **Azure Active Directory секрет клиента приложения** (обязательно) — введите [секрет клиента](../../active-directory/develop/howto-create-service-principal-portal.md#create-a-new-application-secret)приложения Azure AD. Чтобы найти это значение, войдите на [портал Azure](https://portal.azure.com/). Выберите вкладку **Azure Active Directory** в меню слева, выберите **Регистрация приложений**, а затем выберите приложение тестового выпуска. Затем выберите **Сертификаты и секреты**, выберите **Новый секрет клиента**, введите описание, выберите **Никогда** для параметра **Срок действия истекает**, а затем выберите **Добавить**. Обязательно скопируйте значение, прежде чем покинуть эту страницу.
+* **Azure Active Directory секрет клиента приложения** (обязательно) — введите [секрет клиента](../../active-directory/develop/howto-create-service-principal-portal.md#option-2-create-a-new-application-secret)приложения Azure AD. Чтобы найти это значение, войдите на [портал Azure](https://portal.azure.com/). Выберите вкладку **Azure Active Directory** в меню слева, выберите **Регистрация приложений**, а затем выберите приложение тестового выпуска. Затем выберите **Сертификаты и секреты**, выберите **Новый секрет клиента**, введите описание, выберите **Никогда** для параметра **Срок действия истекает**, а затем выберите **Добавить**. Обязательно скопируйте значение, прежде чем покинуть эту страницу.
 
 Чтобы продолжить, выберите **Сохранить черновик**.
 

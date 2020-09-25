@@ -7,12 +7,12 @@ ms.topic: article
 ms.date: 08/13/2019
 author: keferna
 ms.author: keferna
-ms.openlocfilehash: a7afaf0da3bbb021d76c2d109cb385d86fd7c860
-ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
+ms.openlocfilehash: 9ba3d25a07e4d6c32bd14c315018f0d008032b73
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87319853"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91250493"
 ---
 # <a name="test-drive-technical-configuration"></a>Техническая конфигурация тестового выпуска
 
@@ -74,7 +74,7 @@ ms.locfileid: "87319853"
 
 - **Идентификатор приложения Azure AD** (обязательно) — введите [идентификатор приложения](../active-directory/develop/howto-create-service-principal-portal.md#get-tenant-and-app-id-values-for-signing-in)Azure Active Directory (AD). Чтобы найти этот идентификатор, войдите в [портал Azure](https://portal.azure.com/), выберите вкладку Active Directory в меню слева, выберите **Регистрация приложений**, а затем найдите **идентификатор приложения** в списке (например, `50c464d3-4930-494c-963c-1e951d15360e` ).
 
-- **Секрет клиента приложения Azure AD** (обязательно) — введите [секрет клиента](../active-directory/develop/howto-create-service-principal-portal.md#create-a-new-application-secret)приложения Azure AD. Чтобы найти это значение, войдите на [портал Azure](https://portal.azure.com/). Выберите вкладку **Azure Active Directory** в меню слева, выберите **Регистрация приложений**, а затем выберите приложение тестового выпуска. Затем выберите **Сертификаты и секреты**, выберите **Новый секрет клиента**, введите описание, выберите **Никогда** для параметра **Срок действия истекает**, а затем выберите **Добавить**. Обязательно скопируйте значение. Не выйдите из страницы перед копированием значения.
+- **Секрет клиента приложения Azure AD** (обязательно) — введите [секрет клиента](../active-directory/develop/howto-create-service-principal-portal.md#option-2-create-a-new-application-secret)приложения Azure AD. Чтобы найти это значение, войдите на [портал Azure](https://portal.azure.com/). Выберите вкладку **Azure Active Directory** в меню слева, выберите **Регистрация приложений**, а затем выберите приложение тестового выпуска. Затем выберите **Сертификаты и секреты**, выберите **Новый секрет клиента**, введите описание, выберите **Никогда** для параметра **Срок действия истекает**, а затем выберите **Добавить**. Обязательно скопируйте значение. Не выйдите из страницы перед копированием значения.
 
 ## <a name="test-drive-listings"></a>Списки тестовых дисков
 

@@ -8,14 +8,17 @@ ms.topic: conceptual
 ms.service: industrial-iot
 services: iot-industrialiot
 manager: philmea
-ms.openlocfilehash: b971ec13c71ccfd7d28ae6987593d09201b9b764
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: a4d005b3a4712cfff0321e7a16f49c0e882cc9e0
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "73824120"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91282125"
 ---
 # <a name="deploy-opc-twin-to-an-existing-project"></a>Развертывание OPC двойника в существующем проекте
+
+> [!IMPORTANT]
+> Пока мы обновляем эту статью, ознакомьтесь с наиболее актуальными материалами в [Azure для промышленного центра Интернета вещей](https://azure.github.io/Industrial-IoT/) .
 
 Модуль OPC двойника выполняется на IoT Edge и предоставляет несколько служб пограничных услуг для двойника OPC и служб реестра.
 
@@ -28,7 +31,7 @@ ms.locfileid: "73824120"
 > [!NOTE]
 > Дополнительные сведения о развертывании и инструкциях см. в [репозитории](https://github.com/Azure/azure-iiot-opc-twin-module)GitHub.
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Убедитесь, что установлены расширения PowerShell PowerShell и [AzureRM](https://docs.microsoft.com/powershell/azure/azurerm/install-azurerm-ps) . Клонировать этот репозиторий GitHub, если вы еще этого не сделали. В PowerShell выполните следующие команды:
 
@@ -137,7 +140,7 @@ cd azure-iiot-components
 -credentials
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Теперь, когда вы узнали, как развернуть двойника OPC в существующем проекте, предлагаем следующий шаг:
 

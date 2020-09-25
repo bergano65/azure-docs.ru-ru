@@ -1,6 +1,6 @@
 ---
 title: Управление конечными точками потоковой передачи с помощью пакета SDK для .NET | Документы Майкрософт
-description: В этой статье показано, как управлять конечными точками потоковой передачи с помощью портал Azure.
+description: В этой статье показано, как управлять конечными точками потоковой передачи с помощью пакета SDK для .NET.
 services: media-services
 documentationcenter: ''
 author: Juliako
@@ -16,12 +16,12 @@ ms.topic: article
 ms.date: 03/18/2019
 ms.author: juliako
 ms.custom: devx-track-csharp
-ms.openlocfilehash: c0eceff6ba371cbdd01805a38c56dcc09f0887f9
-ms.sourcegitcommit: bcda98171d6e81795e723e525f81e6235f044e52
+ms.openlocfilehash: faf9acc6e91b43e2dd82589127f8697c666d86e3
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/01/2020
-ms.locfileid: "89266014"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91250558"
 ---
 # <a name="manage-streaming-endpoints-with-net-sdk"></a>Управление конечными точками потоковой передачи с помощью пакета SDK для .NET
 
