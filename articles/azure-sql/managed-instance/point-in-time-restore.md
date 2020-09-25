@@ -10,14 +10,14 @@ ms.devlang: ''
 ms.topic: conceptual
 author: jovanpop-msft
 ms.author: jovanpop
-ms.reviewer: sstein, carlrab, mathoma
+ms.reviewer: sstein, mathoma
 ms.date: 08/25/2019
-ms.openlocfilehash: 407d56c209f64d350906a17c0746b1c43f969d43
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 6c4a538a0dc5447f95152de87f9a19ed57f08359
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84708682"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91325119"
 ---
 # <a name="restore-a-database-in-azure-sql-managed-instance-to-a-previous-point-in-time"></a>Восстановление базы данных в Azure SQL Управляемый экземпляр до предыдущей точки во времени
 [!INCLUDE[appliesto-sqlmi](../includes/appliesto-sqlmi.md)]
@@ -46,7 +46,7 @@ ms.locfileid: "84708682"
 
 |           |Восстановление существующей базы данных в том же экземпляре SQL Управляемый экземпляр| Восстановление существующей базы данных в другой Управляемый экземпляр SQL|Восстановить удаленную базу данных в том же SQL Управляемый экземпляр|Восстановление удаленной базы данных в другой Управляемый экземпляр SQL|
 |:----------|:----------|:----------|:----------|:----------|
-|**Портал Azure**| Да|нет |Да|Нет|
+|**Портал Azure**| Да|Нет |Да|Нет|
 |**Azure CLI**|Да |Да |Нет|Нет|
 |**PowerShell**| Да|Да |Да|Да|
 

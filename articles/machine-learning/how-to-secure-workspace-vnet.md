@@ -11,12 +11,12 @@ author: aashishb
 ms.date: 07/07/2020
 ms.topic: conceptual
 ms.custom: how-to, contperfq4, tracking-python
-ms.openlocfilehash: 4dc1f86ce7dbb060c747c4433f0c2b871ce5582d
-ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
+ms.openlocfilehash: 92975251955b608d9dd888328b54a4b40f4592d5
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "90907646"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91275836"
 ---
 # <a name="secure-an-azure-machine-learning-workspace-with-virtual-networks"></a>Защита рабочей области Машинное обучение Azure с помощью виртуальных сетей
 
@@ -67,7 +67,7 @@ ms.locfileid: "90907646"
 >
 > Учетная запись хранения по умолчанию автоматически подготавливается при создании рабочей области.
 >
-> Для учетных записей хранения, отличных от по умолчанию, параметр `storage_account` в функции [`Workspace.create()`](https://docs.microsoft.com/python/api/azureml-core/azureml.core.workspace(class)?view=azure-ml-py#create-name--auth-none--subscription-id-none--resource-group-none--location-none--create-resource-group-true--sku--basic---friendly-name-none--storage-account-none--key-vault-none--app-insights-none--container-registry-none--cmk-keyvault-none--resource-cmk-uri-none--hbi-workspace-false--default-cpu-compute-target-none--default-gpu-compute-target-none--exist-ok-false--show-output-true-) позволяет указать настраиваемую учетную запись хранения по ИД ресурса Azure.
+> Для учетных записей хранения, отличных от по умолчанию, параметр `storage_account` в функции [`Workspace.create()`](https://docs.microsoft.com/python/api/azureml-core/azureml.core.workspace%28class%29?view=azure-ml-py&preserve-view=true#create-name--auth-none--subscription-id-none--resource-group-none--location-none--create-resource-group-true--sku--basic---friendly-name-none--storage-account-none--key-vault-none--app-insights-none--container-registry-none--cmk-keyvault-none--resource-cmk-uri-none--hbi-workspace-false--default-cpu-compute-target-none--default-gpu-compute-target-none--exist-ok-false--show-output-true-) позволяет указать настраиваемую учетную запись хранения по ИД ресурса Azure.
 
 Чтобы использовать учетную запись хранения Azure для рабочей области в виртуальной сети, выполните следующие действия.
 
@@ -180,6 +180,8 @@ validate=False)
 
     Если ACR находится за виртуальной сетью, Машинное обучение Azure не может использовать его напрямую для создания образов Docker. Вместо этого для построения образов используется кластер вычислений.
 
+* Прежде чем использовать запись контроля доступа с Машинное обучение Azure в виртуальной сети, необходимо открыть инцидент поддержки, чтобы включить эту функцию. Дополнительные сведения см. в статье [Управление квотами и их увеличение](how-to-manage-quotas.md#private-endpoint-and-private-dns-quota-increases).
+
 После выполнения этих требований выполните следующие действия, чтобы включить реестр контейнеров Azure.
 
 1. Найдите имя реестра контейнеров Azure для рабочей области, используя один из следующих методов.
@@ -215,7 +217,7 @@ validate=False)
     > [!IMPORTANT]
     > Учетная запись хранения, кластер вычислений и реестр контейнеров Azure должны находиться в одной подсети виртуальной сети.
     
-    Дополнительную информацию см. в справочном руководстве по методу [update()](https://docs.microsoft.com/python/api/azureml-core/azureml.core.workspace.workspace?view=azure-ml-py#update-friendly-name-none--description-none--tags-none--image-build-compute-none--enable-data-actions-none-).
+    Дополнительную информацию см. в справочном руководстве по методу [update()](https://docs.microsoft.com/python/api/azureml-core/azureml.core.workspace.workspace?view=azure-ml-py&preserve-view=true#update-friendly-name-none--description-none--tags-none--image-build-compute-none--enable-data-actions-none-).
 
 1. Примените следующий шаблон Azure Resource Manager. Этот шаблон позволяет рабочей области взаимодействовать с ACR.
 

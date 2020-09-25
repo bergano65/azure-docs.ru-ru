@@ -1,17 +1,17 @@
 ---
 title: Новая проверка подлинности для виртуальных массивов StorSimple
-description: Из этой статьи вы узнаете, как использовать для службы аутентификацию на основе AAD, создать ключ регистрации и регистрировать устройства вручную.
+description: Сведения о проверке подлинности AAD, связанном новом ключе регистрации службы и изменениях правил брандмауэра, применимых к устройствам StorSimple.
 author: alkohli
 ms.service: storsimple
 ms.topic: conceptual
 ms.date: 07/25/2019
 ms.author: alkohli
-ms.openlocfilehash: 89f367e866c1a794f4359c76b8b8a8a9cfefd50d
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: d750b3a85741bb4761b640848f01e5917760b5aa
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "76273809"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91261096"
 ---
 # <a name="use-the-new-authentication-for-your-storsimple"></a>Использование нового режима аутентификации для StorSimple
 
@@ -84,6 +84,6 @@ ms.locfileid: "76273809"
 
     ![Подтверждение повторного создания](./media/storsimple-virtual-array-aad-registration-key/aad-registration-key2.png)
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Ознакомьтесь с дополнительными сведениями о развертывании [виртуального массива StorSimple](storsimple-virtual-array-deploy1-portal-prep.md).

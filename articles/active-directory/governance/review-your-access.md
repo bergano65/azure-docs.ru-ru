@@ -15,12 +15,12 @@ ms.date: 06/17/2020
 ms.author: barclayn
 ms.reviewer: mwahl
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 0b52830e7cddb01c129df2344e26ac1684a88872
-ms.sourcegitcommit: 58d3b3314df4ba3cabd4d4a6016b22fa5264f05a
+ms.openlocfilehash: 959837ff540fd95d186497858d7b9de1f8b1124d
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89292730"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91274016"
 ---
 # <a name="review-access-for-yourself-to-groups-or-applications-in-azure-ad-access-reviews"></a>Просмотр доступа к группам или приложениям в проверках доступа Azure AD
 
@@ -65,13 +65,13 @@ Azure Active Directory (Azure AD) упрощает управление дост
 
     Если запрос должен проверять доступ для других пользователей, страница будет выглядеть иначе. Дополнительные сведения см. [в разделе Проверка доступа к группам или приложениям](perform-access-review.md).
 
-    ![Открыть проверку доступа с вопросом, нужен ли вам по-прежнему доступ к группе](./media/review-your-access/perform-access-review.png)
+    ![Снимок экрана, на котором показана открытая проверка доступа с вопросом, нужен ли вам по-прежнему доступ к группе.](./media/review-your-access/perform-access-review.png)
 
 1. Нажмите кнопку **Да** , чтобы запретить доступ, или кнопку **нет** , чтобы удалить доступ.
 
 1. При нажатии кнопки **Да**может потребоваться указать обоснование в поле **Причина** .
 
-    ![Завершенная проверка доступа с вопросом, нужен ли вам по-прежнему доступ к группе](./media/review-your-access/perform-access-review-submit.png)
+    ![Снимок экрана, на котором показана завершенная проверка доступа, запрашивающая необходимость доступа к группе с выбранным параметром "Да".](./media/review-your-access/perform-access-review-submit.png)
 
 1. Щелкните **Отправить**.
 

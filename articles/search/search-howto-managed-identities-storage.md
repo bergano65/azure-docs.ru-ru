@@ -9,12 +9,12 @@ ms.devlang: rest-api
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 09/22/2020
-ms.openlocfilehash: c1168602ccb527d8ffb3b64d5437a26490b44a21
-ms.sourcegitcommit: bdd5c76457b0f0504f4f679a316b959dcfabf1ef
+ms.openlocfilehash: 770ded494f050631cd1c373f4b3fa5846c65e01a
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "90971505"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91275138"
 ---
 # <a name="set-up-a-connection-to-an-azure-storage-account-using-a-managed-identity"></a>Настройка подключения к учетной записи хранения Azure с помощью управляемого удостоверения
 
@@ -143,6 +143,10 @@ api-key: [admin key]
 Дополнительные сведения об API создания индексатора см. в разделе [Создание индексатора](/rest/api/searchservice/create-indexer).
 
 Дополнительные сведения об определении расписаний индексаторов для Когнитивного поиска Azure см. [здесь](search-howto-schedule-indexers.md).
+
+## <a name="accessing-secure-data-in-storage-accounts"></a>Доступ к защищенным данным в учетных записях хранения
+
+Учетные записи хранения Azure можно дополнительно защитить с помощью брандмауэров и виртуальных сетей. Если вы хотите индексировать содержимое из учетной записи хранения BLOB-объектов или Data Lake учетной записи хранения Gen2, защищенной с помощью брандмауэра или виртуальной сети, следуйте инструкциям по [безопасному доступу к данным в учетных записях хранения через исключение доверенной службы](search-indexer-howto-access-trusted-service-exception.md).
 
 ## <a name="see-also"></a>См. также раздел
 

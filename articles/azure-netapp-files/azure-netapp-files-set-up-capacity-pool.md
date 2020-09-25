@@ -12,14 +12,14 @@ ms.workload: storage
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: how-to
-ms.date: 04/02/2020
+ms.date: 09/22/2020
 ms.author: b-juche
-ms.openlocfilehash: d76af4901103b0eed8cd1cffac744f8fb41d9689
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 2b52ad50854092cddd7b9e79cbeebd4a83017081
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85483505"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91325422"
 ---
 # <a name="set-up-a-capacity-pool"></a>Настройка пула емкости
 
@@ -41,7 +41,7 @@ ms.locfileid: "85483505"
     Появится окно New Capacity Pool (Новый пул емкости).
 
 3. Укажите следующую информацию для нового пула емкости.  
-   * **Name**  
+   * **Имя**  
      Придумайте название для пула емкости.  
      Название пула емкости должно быть уникальным для каждой учетной записи NetApp.
 
@@ -49,16 +49,27 @@ ms.locfileid: "85483505"
      В этом поле отображается целевая производительность пула емкости.  
      Укажите уровень обслуживания для пула емкости: [**Ultra**](azure-netapp-files-service-levels.md#Ultra), [**Premium**](azure-netapp-files-service-levels.md#Premium)или [**Standard**](azure-netapp-files-service-levels.md#Standard).
 
-   * **Изменять**     
+    * **Изменять**     
      Укажите приобретаемый размер пула емкости.        
      Минимальный размер пула емкости равен 4 ТиБ. Можно создавать пул с размером, кратным 4 ТиБ.   
-      
-     ![Новый пул емкости](../media/azure-netapp-files/azure-netapp-files-new-capacity-pool.png)
 
-4. Нажмите кнопку **ОК**.
+   * **Качество**   
+     Укажите, должен ли пул емкости использовать тип качества обслуживания **вручную** или **автоматически** .  
 
-## <a name="next-steps"></a>Следующие шаги 
+     Сведения о типах QoS см. в разделе [иерархия хранилища](azure-netapp-files-understand-storage-hierarchy.md) и [вопросы производительности](azure-netapp-files-performance-considerations.md) .  
 
+     > [!IMPORTANT] 
+     > Настройка **типа QoS** " **вручную** " является постоянной. Невозможно преобразовать пул емкости QoS вручную для использования автоматического качества обслуживания. Однако можно преобразовать пул автоматического качества обслуживания, чтобы использовать QoS вручную. См. раздел [Изменение пула емкости для использования QoS вручную](manage-manual-qos-capacity-pool.md#change-to-qos).   
+     > Для использования типа QoS вручную для пула ресурсов требуется регистрация. См. раздел [Управление пулом емкости QoS вручную](manage-manual-qos-capacity-pool.md#register-the-feature). 
+
+    ![Новый пул емкости](../media/azure-netapp-files/azure-netapp-files-new-capacity-pool.png)
+
+4. Нажмите кнопку **Создать**.
+
+## <a name="next-steps"></a>Дальнейшие действия 
+
+- [Иерархия хранилища](azure-netapp-files-understand-storage-hierarchy.md) 
 - [Уровни обслуживания для Azure NetApp Files](azure-netapp-files-service-levels.md)
-- Сведения о ценах на разные уровни обслуживания см. на странице [Цены на службу Azure NetApp Files](https://azure.microsoft.com/pricing/details/storage/netapp/)
+- [Страница цен Azure NetApp Files](https://azure.microsoft.com/pricing/details/storage/netapp/)
+- [Управление пулом емкости QoS вручную](manage-manual-qos-capacity-pool.md)
 - [Делегирование подсети службе Azure NetApp Files](azure-netapp-files-delegate-subnet.md)

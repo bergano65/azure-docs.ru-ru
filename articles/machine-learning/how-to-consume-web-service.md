@@ -11,12 +11,12 @@ ms.reviewer: larryfr
 ms.date: 06/17/2020
 ms.topic: conceptual
 ms.custom: how-to, devx-track-python, devx-track-csharp
-ms.openlocfilehash: 5427d62f93eb6284ecda9a0762e3d8c4e99c06e2
-ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
+ms.openlocfilehash: 2e1c7c1ca15d7c47ec8973ac8e93f7391916f5e4
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "90890089"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91302406"
 ---
 # <a name="consume-an-azure-machine-learning-model-deployed-as-a-web-service"></a>Использование модели Машинного обучения Azure, развернутой в качестве веб-службы
 
@@ -39,7 +39,7 @@ ms.locfileid: "90890089"
 > [!NOTE]
 > Для получения информации о веб-службе используется пакет SDK для Машинного обучения Azure. Этот пакет SDK написан на Python. Вы можете использовать любой язык для создания клиента для службы.
 
-Класс [azureml.core.Webservice](https://docs.microsoft.com/python/api/azureml-core/azureml.core.webservice(class)?view=azure-ml-py&preserve-view=true) предоставляет необходимые сведения для создания клиента. Следующие свойства `Webservice` могут быть полезны при создании клиентского приложения:
+Класс [azureml.core.Webservice](https://docs.microsoft.com/python/api/azureml-core/azureml.core.webservice%28class%29?view=azure-ml-py&preserve-view=true) предоставляет необходимые сведения для создания клиента. Следующие свойства `Webservice` могут быть полезны при создании клиентского приложения:
 
 * `auth_enabled` — Если включена проверка подлинности ключа `True` ; в противном случае — значение `False` .
 * `token_auth_enabled` — Если включена проверка подлинности токенов `True` ; в противном случае — значение `False` .
@@ -113,7 +113,7 @@ print(primary)
 ```
 
 > [!IMPORTANT]
-> Если необходимо повторно создать ключ, используйте [`service.regen_key`](https://docs.microsoft.com/python/api/azureml-core/azureml.core.webservice(class)?view=azure-ml-py&preserve-view=true) .
+> Если необходимо повторно создать ключ, используйте [`service.regen_key`](https://docs.microsoft.com/python/api/azureml-core/azureml.core.webservice%28class%29?view=azure-ml-py&preserve-view=true) .
 
 #### <a name="authentication-with-tokens"></a>Аутентификация с помощью токенов
 
@@ -501,7 +501,7 @@ print(resp.text)
 
 ## <a name="web-service-schema-openapi-specification"></a>Схема веб-службы (спецификация OpenAPI)
 
-Если вы использовали автоматическое создание схем в развертывании, можно получить адрес спецификации OpenAPI для службы с помощью [свойства swagger_uri](https://docs.microsoft.com/python/api/azureml-core/azureml.core.webservice.local.localwebservice?view=azure-ml-py#&preserve-view=trueswagger-uri). (Например, `print(service.swagger_uri)` .) Используйте запрос GET или откройте универсальный код ресурса (URI) в браузере, чтобы получить спецификацию.
+Если вы использовали автоматическое создание схем в развертывании, можно получить адрес спецификации OpenAPI для службы с помощью [свойства swagger_uri](https://docs.microsoft.com/python/api/azureml-core/azureml.core.webservice.local.localwebservice?view=azure-ml-py&preserve-view=true#&preserve-view=trueswagger-uri). (Например, `print(service.swagger_uri)` .) Используйте запрос GET или откройте универсальный код ресурса (URI) в браузере, чтобы получить спецификацию.
 
 Следующий документ JSON является примером схемы (спецификации OpenAPI), созданной для развертывания:
 
@@ -643,7 +643,7 @@ print(resp.text)
 
 
 > [!TIP]
-> После развертывания службы можно получить документ JSON схемы. Используйте [свойство swagger_uri](https://docs.microsoft.com/python/api/azureml-core/azureml.core.webservice.local.localwebservice?view=azure-ml-py#&preserve-view=trueswagger-uri) из развернутой веб-службы (например, `service.swagger_uri` ), чтобы получить универсальный код ресурса (URI) для файла Swagger локальной веб-службы.
+> После развертывания службы можно получить документ JSON схемы. Используйте [свойство swagger_uri](https://docs.microsoft.com/python/api/azureml-core/azureml.core.webservice.local.localwebservice?view=azure-ml-py&preserve-view=true#&preserve-view=trueswagger-uri) из развернутой веб-службы (например, `service.swagger_uri` ), чтобы получить универсальный код ресурса (URI) для файла Swagger локальной веб-службы.
 
 ## <a name="consume-the-service-from-power-bi"></a>Consume the service from Power BI (Использование службы из Power BI)
 

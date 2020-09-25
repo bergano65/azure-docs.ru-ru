@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: article
 ms.date: 06/28/2019
 ms.author: zhchia
-ms.openlocfilehash: b16ca0c396e2c406677af351cf6b1de2a3499353
-ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
+ms.openlocfilehash: 06fca39b1170d36f22040ccf48eb02f948e47e41
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88543680"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91304707"
 ---
 # <a name="tutorial-configure-peakon-for-automatic-user-provisioning"></a>Учебник. Настройка Пеакон для автоматической подготовки пользователей
 
@@ -56,11 +56,11 @@ ms.locfileid: "88543680"
 
 2.  Выберите **интеграции**.
     
-    ![Пеакон-Employee-готовить](media/Peakon-provisioning-tutorial/Peakon-select-integration.png)
+    ![Снимок экрана параметров конфигурации с вызываемым параметром интеграции.](media/Peakon-provisioning-tutorial/Peakon-select-integration.png)
 
 3.  Включить **подготовку сотрудников**.
 
-    ![Пеакон-Employee-готовить](media/Peakon-provisioning-tutorial/peakon05.png)
+    ![Снимок экрана раздела подготовки сотрудников с вызываемым параметром enable.](media/Peakon-provisioning-tutorial/peakon05.png)
 
 4.  Скопируйте значения для **URL-адреса SCIM 2,0** и **токена носителя OAuth**. Эти значения будут указаны в поле **URL-адрес клиента** и **секретный токен** на вкладке подготовка приложения пеакон в портал Azure.
 
@@ -105,11 +105,11 @@ ms.locfileid: "88543680"
 
 3. Выберите вкладку **Подготовка**.
 
-    ![Вкладка "Подготовка"](common/provisioning.png)
+    ![Снимок экрана параметров управления с вызываемым параметром подготовки.](common/provisioning.png)
 
 4. Для параметра **Режим подготовки к работе** выберите значение **Automatic** (Автоматически).
 
-    ![Вкладка "Подготовка"](common/provisioning-automatic.png)
+    ![Снимок экрана: раскрывающийся список режима подготовки с вызываемым автоматическим параметром.](common/provisioning-automatic.png)
 
 5. В разделе **учетные данные администратора** введите **URL-адрес scim 2,0** и значения **токена носителя OAuth** , полученные ранее в поле **URL-адрес клиента** и **секретный токен** соответственно. Щелкните **проверить подключение** , чтобы убедиться, что Azure AD может подключиться к пеакон. Если подключение не выполняется, убедитесь, что у учетной записи Пеакон есть разрешения администратора, и повторите попытку.
 
@@ -119,7 +119,7 @@ ms.locfileid: "88543680"
 
     ![Почтовое уведомление](common/provisioning-notification-email.png)
 
-8. Нажмите **Сохранить**.
+8. Выберите команду **Сохранить**.
 
 9. В разделе **сопоставления** выберите **синхронизировать Azure Active Directory пользователей с пеакон**.
 

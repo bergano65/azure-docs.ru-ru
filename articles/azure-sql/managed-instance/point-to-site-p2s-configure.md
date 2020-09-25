@@ -10,14 +10,14 @@ ms.devlang: ''
 ms.topic: conceptual
 author: srdan-bozovic-msft
 ms.author: srbozovi
-ms.reviewer: sstein, carlrab, bonova, jovanpop
+ms.reviewer: sstein, bonova, jovanpop
 ms.date: 03/13/2019
-ms.openlocfilehash: 7b9c9fc6259656af77bf1ba1b95ccf190cbd85da
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: a629d230d63506a163cac0c530a1a8fbfed9627f
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84708662"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91325085"
 ---
 # <a name="quickstart-configure-a-point-to-site-connection-to-azure-sql-managed-instance-from-on-premises"></a>Краткое руководство. Настройка подключения типа "точка — сеть" к Azure SQL Управляемый экземпляр из локальной среды
 [!INCLUDE[appliesto-sqlmi](../includes/appliesto-sqlmi.md)]
@@ -28,7 +28,7 @@ ms.locfileid: "84708662"
 
 В этом кратком руководстве:
 
-- Использует ресурсы, созданные при [создании управляемого экземпляра](instance-create-quickstart.md) в качестве отправной точки.
+- Использует ресурсы, созданные при  [создании управляемого экземпляра](instance-create-quickstart.md) в качестве отправной точки.
 - Требуется PowerShell 5,1 и Azure PowerShell 1.4.0 или более поздней версии на локальном клиентском компьютере. При необходимости ознакомьтесь с инструкциями по [установке модуля PowerShell для Azure](https://docs.microsoft.com/powershell/azure/install-az-ps#install-the-azure-powershell-module).
 - Требуется последняя версия [SQL Server Management Studio](https://docs.microsoft.com/sql/ssms/sql-server-management-studio-ssms) на локальном клиентском компьютере.
 
@@ -83,7 +83,7 @@ ms.locfileid: "84708662"
 1. Перейдите к **VPN** в **сети & Интернет** на локальном клиентском компьютере и выберите ВИРТУАЛЬную сеть управляемый экземпляр SQL, чтобы установить подключение к этой виртуальной сети. На следующем рисунке такая виртуальная сеть называется **MyNewVNet**.
 
     ![VPN-подключение](./media/point-to-site-p2s-configure/vpn-connection.png)  
-2. Выберите **Подключиться**.
+2. Щелкните **Подключить**.
 3. В диалоговом окне выберите **Подключиться**.
 
     ![VPN-подключение](./media/point-to-site-p2s-configure/vpn-connection2.png)  
@@ -104,7 +104,7 @@ ms.locfileid: "84708662"
 
 После подключения можно будет просматривать системные и пользовательские базы данных в узле "Базы данных". Также можно просматривать различные объекты в узлах безопасности, серверных объектов, репликации, управления, агента SQL Server и XEvent Profiler.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Краткое руководство по подключению с виртуальной машины Azure см. в статье о [настройке подключения "точка — сеть"](point-to-site-p2s-configure.md).
 - Обзор вариантов подключения для приложений см. в статье [Подключение приложений к Управляемому экземпляру SQL](connect-application-instance.md).

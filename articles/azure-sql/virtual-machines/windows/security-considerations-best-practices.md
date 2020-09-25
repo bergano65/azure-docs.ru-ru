@@ -8,18 +8,18 @@ editor: ''
 tags: azure-service-management
 ms.assetid: d710c296-e490-43e7-8ca9-8932586b71da
 ms.service: virtual-machines-sql
-ms.topic: article
+ms.topic: conceptual
 ms.tgt_pltfrm: vm-windows-sql-server
 ms.workload: iaas-sql-server
 ms.date: 03/23/2018
 ms.author: mathoma
 ms.reviewer: jroth
-ms.openlocfilehash: 4421b30d672cc026a033febb34b8b31afa0ef3c7
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 04634a6efb6c17a823532a29ec273b088a4ad843
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84668820"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91272401"
 ---
 # <a name="security-considerations-for-sql-server-on-azure-virtual-machines"></a>Вопросы безопасности для SQL Server на виртуальных машинах Azure
 [!INCLUDE[appliesto-sqlvm](../../includes/appliesto-sqlvm.md)]
@@ -106,7 +106,7 @@ Azure соответствует ряду отраслевых норм и ст�
 Дополнительные сведения о средствах защиты виртуальных машин см. в статье [Общие сведения о безопасности при использовании виртуальных машин Azure](/azure/security/fundamentals/virtual-machines-overview).
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Если вы также заинтересованы в рекомендациях по производительности, см. статью рекомендации [по повышению производительности SQL Server на виртуальных машинах Azure](performance-guidelines-best-practices.md).
 

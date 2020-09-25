@@ -16,12 +16,12 @@ ms.date: 05/31/2017
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: f913199e0c0ed438d4b95b879d4defc072c615aa
-ms.sourcegitcommit: f8d2ae6f91be1ab0bc91ee45c379811905185d07
+ms.openlocfilehash: 53a0da5b5db21c9a543d39d1b252b0b4c64e2a56
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89662430"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91306367"
 ---
 # <a name="multiple-domain-support-for-federating-with-azure-ad"></a>Поддержка нескольких доменов для федерации с Azure AD
 В следующей документации приводятся рекомендации по использованию нескольких доменов верхнего уровня и поддоменов при интеграции с Microsoft 365 или доменами Azure AD.
@@ -38,7 +38,7 @@ ms.locfileid: "89662430"
 
 Для просмотра IssuerUri можно воспользоваться командой PowerShell `Get-MsolDomainFederationSettings -DomainName <your domain>`.
 
-![Get-MsolDomainFederationSettings](./media/how-to-connect-install-multiple-domains/MsolDomainFederationSettings.png)
+![Снимок экрана, показывающий результаты после ввода команды "Get-MsolDomainFederationSettings" в PowerShell.](./media/how-to-connect-install-multiple-domains/MsolDomainFederationSettings.png)
 
 Проблема возникает при добавлении нескольких доменов верхнего уровня.  Предположим, что у вас настроена федерация между Azure AD и локальной средой.  В этом документе используется домен bmcontoso.com.  Теперь добавляется второй домен верхнего уровня, bmfabrikam.com.
 
@@ -46,7 +46,7 @@ ms.locfileid: "89662430"
 
 Пр попытке преобразовать домен bmfabrikam.com в федеративный домен происходит ошибка.  Причина в том, что в Azure AD существует ограничение, при котором свойство IssuerUri не может иметь одно и то же значение для нескольких доменов.  
 
-![Ошибка федерации](./media/how-to-connect-install-multiple-domains/error.png)
+![Снимок экрана, на котором показана ошибка Федерации в PowerShell.](./media/how-to-connect-install-multiple-domains/error.png)
 
 ### <a name="supportmultipledomain-parameter"></a>Параметр SupportMultipleDomain
 Чтобы обойти это ограничение, необходимо добавить другой IssuerUri. Это можно сделать с помощью параметра `-SupportMultipleDomain`.  Этот параметр используется со следующими командлетами:
@@ -57,11 +57,11 @@ ms.locfileid: "89662430"
 
 Этот параметр заставляет Azure AD настроить IssuerUri таким образом, чтобы он был основан на имени домена.  Значение IssuerUri будет уникальным в различных каталогах в Azure AD.  Использование параметра позволяет успешно выполнить команду PowerShell.
 
-![Ошибка федерации](./media/how-to-connect-install-multiple-domains/convert.png)
+![Снимок экрана, на котором показано успешное выполнение команды PowerShell.](./media/how-to-connect-install-multiple-domains/convert.png)
 
 Просмотрев параметры домена bmfabrikam.com, вы увидите следующее:
 
-![Ошибка федерации](./media/how-to-connect-install-multiple-domains/settings.png)
+![Снимок экрана, на котором показаны параметры для домена "bmfabrikam.com".](./media/how-to-connect-install-multiple-domains/settings.png)
 
 `-SupportMultipleDomain` не изменяет другие конечные точки, в которых адрес службы федерации по-прежнему задан как adfs.bmcontoso.com.
 
@@ -88,11 +88,11 @@ c:[Type == "http://schemas.xmlsoap.org/claims/UPN"] => issue(Type = "http://sche
 
 Если добавить новый домен на портале Azure AD, а затем попытаться преобразовать его с помощью `Convert-MsolDomaintoFederated -DomainName <your domain>`, то произойдет следующая ошибка.
 
-![Ошибка федерации](./media/how-to-connect-install-multiple-domains/trust1.png)
+![Снимок экрана, на котором показана ошибка Федерации в PowerShell после попытки преобразования нового домена с помощью команды "Convert-MsolDomaintoFederated".](./media/how-to-connect-install-multiple-domains/trust1.png)
 
 При попытке добавить `-SupportMultipleDomain` произойдет следующая ошибка.
 
-![Ошибка федерации](./media/how-to-connect-install-multiple-domains/trust2.png)
+![Снимок экрана, на котором показана ошибка Федерации после добавления параметра "-SupportMultipleDomain".](./media/how-to-connect-install-multiple-domains/trust2.png)
 
 Попытка просто запустить `Update-MsolFederatedDomain -DomainName <your domain> -SupportMultipleDomain` в исходном домене также приведет к ошибке.
 
@@ -121,7 +121,7 @@ c:[Type == "http://schemas.xmlsoap.org/claims/UPN"] => issue(Type = "http://sche
 Выполните следующие действия для добавления нового домена верхнего уровня с помощью Azure AD Connect.
 
 1. Запустите Azure AD Connect на рабочем столе или в меню "Пуск".
-2. Выберите "Добавить дополнительный домен Azure AD" ![Добавить дополнительный домен Azure AD](./media/how-to-connect-install-multiple-domains/add1.png).
+2. Щелкните снимок экрана "добавить дополнительный домен Azure AD" ![ , на котором отображается страница "дополнительные задачи" с выбранным параметром "добавить дополнительный домен Azure AD".](./media/how-to-connect-install-multiple-domains/add1.png)
 3. Введите учетные данные Azure AD и Active Directory.
 4. Выберите второй домен, который необходимо настроить для федерации.
    ![Добавить дополнительный домен Azure AD](./media/how-to-connect-install-multiple-domains/add2.png)
@@ -130,7 +130,7 @@ c:[Type == "http://schemas.xmlsoap.org/claims/UPN"] => issue(Type = "http://sche
 ### <a name="verify-the-new-top-level-domain"></a>Проверка нового домена верхнего уровня
 С помощью команды PowerShell `Get-MsolDomainFederationSettings -DomainName <your domain>`можно просмотреть обновленный IssuerUri.  На приведенном ниже снимке экрана показано, что настройки федерации для исходного домена `http://bmcontoso.com/adfs/services/trust` были обновлены.
 
-![Get-MsolDomainFederationSettings](./media/how-to-connect-install-multiple-domains/MsolDomainFederationSettings.png)
+![Снимок экрана, на котором показаны параметры Федерации, обновленные в исходном домене.](./media/how-to-connect-install-multiple-domains/MsolDomainFederationSettings.png)
 
 И для IssuerUri нового домена задано значение `https://bmfabrikam.com/adfs/services/trust`.
 

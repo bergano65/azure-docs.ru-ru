@@ -8,12 +8,12 @@ ms.topic: article
 ms.date: 05/26/2020
 ms.author: victorh
 ms.custom: references_regions
-ms.openlocfilehash: b55ba6ab73758ed562aaabeef91cf08acf659758
-ms.sourcegitcommit: 3be3537ead3388a6810410dfbfe19fc210f89fec
+ms.openlocfilehash: 11b41f4dcffad2c98ea5d1f70346ba150fd18c17
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89646543"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91278640"
 ---
 # <a name="frequently-asked-questions-about-application-gateway"></a>Часто задаваемые вопросы о Шлюзе приложений
 
@@ -49,7 +49,9 @@ ms.locfileid: "89646543"
 
 ### <a name="in-what-regions-is-application-gateway-available"></a>В каких регионах доступен Шлюз приложений?
 
-Шлюз приложений доступен во всех регионах глобальной платформы Azure. Он также доступен в [Azure для Китая (21Vianet)](https://www.azure.cn/) и [Azure для государственных организаций](https://azure.microsoft.com/overview/clouds/government/).
+Шлюз приложений v1 (Standard и WAF) доступен во всех регионах глобального Azure. Он также доступен в [Azure для Китая (21Vianet)](https://www.azure.cn/) и [Azure для государственных организаций](https://azure.microsoft.com/overview/clouds/government/).
+
+Сведения о доступности шлюза приложений версии 2 (Standard_v2 и WAF_v2) см. в разделе [Поддерживаемые регионы для шлюза приложений версии 2](https://docs.microsoft.com/azure/application-gateway/application-gateway-autoscaling-zone-redundant#supported-regions) .
 
 ### <a name="is-this-deployment-dedicated-for-my-subscription-or-is-it-shared-across-customers"></a>Это специальное развертывание для подписки или общее для всех клиентов?
 
@@ -182,11 +184,15 @@ Set-AzPublicIpAddress -PublicIpAddress $publicIP
 
 ### <a name="are-network-security-groups-supported-on-the-application-gateway-subnet"></a>Поддерживаются ли группы безопасности сети в подсети шлюза приложений?
 
-См. раздел [Группы безопасности сети в подсети Шлюза приложений](https://docs.microsoft.com/azure/application-gateway/configuration-overview#network-security-groups-on-the-application-gateway-subnet).
+См. раздел [Группы безопасности сети в подсети Шлюза приложений](https://docs.microsoft.com/azure/application-gateway/configuration-infrastructure#network-security-groups).
 
 ### <a name="does-the-application-gateway-subnet-support-user-defined-routes"></a>Поддерживает ли подсеть шлюза приложений определяемые пользователем маршруты?
 
 См. раздел [Определяемые пользователем маршруты, поддерживаемые в подсети Шлюза приложений](https://docs.microsoft.com/azure/application-gateway/configuration-infrastructure#supported-user-defined-routes).
+
+### <a name="are-service-endpoint-policies-supported-in-the-application-gateway-subnet"></a>Поддерживаются ли политики конечной точки службы в подсети шлюза приложений?
+
+Нет. [Политики конечных точек службы](https://docs.microsoft.com/azure/virtual-network/virtual-network-service-endpoint-policies-overview) для учетных записей хранения не поддерживаются в подсети шлюза приложений, и их настройка приведет к блокировке трафика инфраструктуры Azure.
 
 ### <a name="what-are-the-limits-on-application-gateway-can-i-increase-these-limits"></a>Какие у шлюза приложений ограничения? Можно ли увеличить предельные значения?
 
@@ -222,7 +228,7 @@ Set-AzPublicIpAddress -PublicIpAddress $publicIP
 
 ### <a name="can-i-allow-application-gateway-access-to-only-a-few-source-ip-addresses"></a>Можно ли разрешить Шлюзу приложений доступ только к некоторым исходным IP-адресам?
 
-Да. См. раздел [Ограничение доступа для определенных исходных IP-адресов](https://docs.microsoft.com/azure/application-gateway/configuration-overview#allow-application-gateway-access-to-a-few-source-ips).
+Да. См. раздел [Ограничение доступа для определенных исходных IP-адресов](https://docs.microsoft.com/azure/application-gateway/configuration-infrastructure#allow-access-to-a-few-source-ips).
 
 ### <a name="can-i-use-the-same-port-for-both-public-facing-and-private-facing-listeners"></a>Можно ли использовать один и тот же порт для прослушивателей общедоступных и частных сетей?
 

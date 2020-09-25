@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: article
 ms.date: 10/29/2019
 ms.author: Zhchia
-ms.openlocfilehash: 1d0f5c974b19b83cdd2fdab832ae0cac0dab9d9a
-ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
+ms.openlocfilehash: 1dd89198fd1c494ef3002fdc222683f56f2d7e3a
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88552872"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91304768"
 ---
 # <a name="tutorial-configure-iprova-for-automatic-user-provisioning"></a>Учебник. Настройка Ипрова для автоматической подготовки пользователей
 
@@ -38,7 +38,7 @@ ms.locfileid: "88552872"
 
 В сценарии, описанном в этом руководстве, предполагается, что у вас уже имеется:
 
-* [Клиент Azure AD](https://docs.microsoft.com/azure/active-directory/develop/quickstart-create-new-tenant).
+* [Клиент Azure AD.](https://docs.microsoft.com/azure/active-directory/develop/quickstart-create-new-tenant)
 * Учетная запись пользователя в Azure AD с [разрешением](https://docs.microsoft.com/azure/active-directory/users-groups-roles/directory-assign-admin-roles) на настройку подготовки (например, администратор приложений, администратор облачных приложений, владелец приложения или глобальный администратор).
 * [Клиент ипрова](https://www.iProva.com/).
 * Учетная запись пользователя в Ипрова с разрешениями администратора.
@@ -96,11 +96,11 @@ ms.locfileid: "88552872"
 
 3. Выберите вкладку **Подготовка**.
 
-    ![Вкладка "Подготовка"](common/provisioning.png)
+    ![Снимок экрана параметров управления с вызываемым параметром подготовки.](common/provisioning.png)
 
 4. Для параметра **Режим подготовки к работе** выберите значение **Automatic** (Автоматически).
 
-    ![Вкладка "Подготовка"](common/provisioning-automatic.png)
+    ![Снимок экрана: раскрывающийся список режима подготовки с вызываемым автоматическим параметром.](common/provisioning-automatic.png)
 
 5. В разделе **учетные данные администратора** введите **базовый URL-адрес scim 2,0 и постоянные значения токена** , полученные ранее в полях **URL-адрес клиента** и **секретный токен** соответственно. Щелкните **проверить подключение** , чтобы убедиться, что Azure AD может подключиться к ипрова. Если подключение не выполняется, убедитесь, что у учетной записи Ипрова есть разрешения администратора, и повторите попытку.
 
@@ -110,7 +110,7 @@ ms.locfileid: "88552872"
 
     ![Почтовое уведомление](common/provisioning-notification-email.png)
 
-7. Нажмите **Сохранить**.
+7. Выберите команду **Сохранить**.
 
 8. В разделе **сопоставления** выберите **синхронизировать Azure Active Directory пользователей с ипрова**.
 
@@ -140,7 +140,7 @@ ms.locfileid: "88552872"
    |externalId|Строка|
    |роли [основной EQ "true"]. Отображение|Строка|
    |роли [основной EQ "true"]. Type|Строка|
-   |роли [первичный EQ "true"]. Value|Строка|
+   |roles[primary eq "True"].value|Строка|
    |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:department|Строка|
    |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:division|Строка|
    |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:costCenter|Строка|

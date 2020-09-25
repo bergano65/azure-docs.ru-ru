@@ -12,12 +12,12 @@ author: MayMSFT
 manager: cgronlun
 ms.reviewer: nibaccam
 ms.date: 07/31/2020
-ms.openlocfilehash: 92394138c5aa20d0abc33387aab1e9c37e6f9cb9
-ms.sourcegitcommit: bdd5c76457b0f0504f4f679a316b959dcfabf1ef
+ms.openlocfilehash: 544cb38876d038bb6cf8bfce19f00f19c1427f72
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "90986386"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91302355"
 ---
 # <a name="create-azure-machine-learning-datasets"></a>Создание наборов данных Машинного обучения Azure
 
@@ -54,7 +54,7 @@ ms.locfileid: "90986386"
     * Поработайте с собственной записной книжкой Jupyter и установите пакет SDK самостоятельно с помощью [этих инструкций](https://docs.microsoft.com/python/api/overview/azure/ml/install?view=azure-ml-py&preserve-view=true).
 
 > [!NOTE]
-> Некоторые классы наборов данных имеют зависимости от пакета [azureml-](https://docs.microsoft.com/python/api/azureml-dataprep/?view=azure-ml-py&preserve-view=true) DataMarket, который совместим только с 64-разрядным Python. Для пользователей Linux эти классы поддерживаются только в следующих дистрибутивах: Red Hat Enterprise Linux (7, 8), Ubuntu (14,04, 16,04, 18,04), Fedora (27, 28), Debian (8, 9) и CentOS (7). Подсистема Windows для Linux в данный момент не поддерживается.
+> Некоторые классы наборов данных имеют зависимости от пакета [azureml-](https://docs.microsoft.com/python/api/azureml-dataprep/?view=azure-ml-py&preserve-view=true) DataMarket, который совместим только с 64-разрядным Python. Для пользователей Linux эти классы поддерживаются только в следующих дистрибутивах: Red Hat Enterprise Linux (7, 8), Ubuntu (14,04, 16,04, 18,04), Fedora (27, 28), Debian (8, 9) и CentOS (7). Если вы используете неподдерживаемый дистрибутивов, воспользуйтесь [этим руководством](https://docs.microsoft.com/dotnet/core/install/linux) , чтобы установить .net Core 2,1, чтобы продолжить. 
 
 ## <a name="compute-size-guidance"></a>Руководство по размеру вычислений
 
@@ -77,7 +77,7 @@ ms.locfileid: "90986386"
 Создайте Филедатасет с помощью [пакета SDK для Python](#create-a-filedataset) или [машинное обучение Azure Studio](how-to-connect-data-ui.md#create-datasets) .
 ### <a name="tabulardataset"></a>Табличный набор данных
 
-[Табулардатасет](https://docs.microsoft.com/python/api/azureml-core/azureml.data.tabulardataset?view=azure-ml-py&preserve-view=true) представляет данные в табличном формате путем синтаксического анализа указанного файла или списка файлов. Это дает возможность материализовать данные в таблицу данных Pandas или Spark, чтобы вы могли работать с привычными библиотеками подготовки и обучения данных, не покидая записной книжки. Вы можете создать `TabularDataset` объект из файлов. csv,. TSV,. Parquet,. JSON и из [результатов SQL-запроса](https://docs.microsoft.com/python/api/azureml-core/azureml.data.dataset_factory.tabulardatasetfactory?view=azure-ml-py#&preserve-view=truefrom-sql-query-query--validate-true--set-column-types-none--query-timeout-30-).
+[Табулардатасет](https://docs.microsoft.com/python/api/azureml-core/azureml.data.tabulardataset?view=azure-ml-py&preserve-view=true) представляет данные в табличном формате путем синтаксического анализа указанного файла или списка файлов. Это дает возможность материализовать данные в таблицу данных Pandas или Spark, чтобы вы могли работать с привычными библиотеками подготовки и обучения данных, не покидая записной книжки. Вы можете создать `TabularDataset` объект из файлов. csv,. TSV,. Parquet,. JSON и из [результатов SQL-запроса](https://docs.microsoft.com/python/api/azureml-core/azureml.data.dataset_factory.tabulardatasetfactory?view=azure-ml-py&preserve-view=true#&preserve-view=truefrom-sql-query-query--validate-true--set-column-types-none--query-timeout-30-).
 
 С помощью Табулардатасетс можно указать отметку времени из столбца данных или из любого места, где хранятся данные шаблона пути, чтобы включить признаки временных рядов. Эта спецификация обеспечивает простую и эффективную фильтрацию по времени. Пример см. в статье [Демонстрация API, относящегося к табличному ряду, с данными о погоде NOAA](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/work-with-data/datasets-tutorial/timeseries-datasets/tabular-timeseries-dataset-filtering.ipynb).
 
@@ -107,7 +107,7 @@ ms.locfileid: "90986386"
 
 ### <a name="create-a-filedataset"></a>Создание FileDataset
 
-Используйте [`from_files()`](https://docs.microsoft.com/python/api/azureml-core/azureml.data.dataset_factory.filedatasetfactory?view=azure-ml-py#&preserve-view=truefrom-files-path--validate-true-) метод `FileDatasetFactory` класса для загрузки файлов в любом формате и создания незарегистрированного филедатасет. 
+Используйте [`from_files()`](https://docs.microsoft.com/python/api/azureml-core/azureml.data.dataset_factory.filedatasetfactory?view=azure-ml-py&preserve-view=true#&preserve-view=truefrom-files-path--validate-true-) метод `FileDatasetFactory` класса для загрузки файлов в любом формате и создания незарегистрированного филедатасет. 
 
 Если хранилище находится за виртуальной сетью или брандмауэром, задайте параметр `validate=False` в `from_files()` методе. Это обходит этап начальной проверки и гарантирует, что вы сможете создать набор данных на основе этих защищенных файлов. Узнайте больше о том, как [использовать хранилища и наборы данных в виртуальной сети](how-to-secure-workspace-vnet.md#secure-datastores-and-datasets).
 
@@ -124,7 +124,7 @@ mnist_ds = Dataset.File.from_files(path=web_paths)
 Для повторного использования наборов данных и совместного использования их в рамках эксперимента в рабочей области [зарегистрируйте свой DataSet](#register-datasets). 
 
 > [!TIP] 
-> Отправьте файлы из локального каталога и создайте Филедатасет в одном методе с помощью общедоступного метода предварительной версии [upload_directory ()](https://docs.microsoft.com/python/api/azureml-core/azureml.data.filedataset?view=azure-ml-py#methods). Этот метод является [экспериментальной](https://docs.microsoft.com/python/api/overview/azure/ml/?view=azure-ml-py#stable-vs-experimental) функцией предварительной версии и может измениться в любое время. 
+> Отправьте файлы из локального каталога и создайте Филедатасет в одном методе с помощью общедоступного метода предварительной версии [upload_directory ()](https://docs.microsoft.com/python/api/azureml-core/azureml.data.filedataset?view=azure-ml-py&preserve-view=true#methods). Этот метод является [экспериментальной](https://docs.microsoft.com/python/api/overview/azure/ml/?view=azure-ml-py&preserve-view=true#stable-vs-experimental) функцией предварительной версии и может измениться в любое время. 
 > 
 >  Этот метод передает данные в базовое хранилище, что приводит к затратам на хранение. 
 ### <a name="create-a-tabulardataset"></a>Создание Табулардатасет
@@ -173,7 +173,7 @@ titanic_ds.take(3).to_pandas_dataframe()
 -|-----------|--------|------|----|---|---|-----|-----|------|----|-----|--------|
 0|1|False|3|Браунд, Mr. О'мэлли Owen Харрис|Мужской|22,0|1|0|A/5 21171|7,2500||S
 1|2|True|1|Кумингс, Mrs. Джон Кирилл (Флоренция Бриггс TH...|Женский|38,0|1|0|PC 17599|71,2833|C85|C
-2|3|Да|3|Хеиккинен, промах. лаина|Женский|26,0|0|0|СТОН/O2. 3101282|7,9250||S
+2|3|Верно|3|Хеиккинен, промах. лаина|Женский|26,0|0|0|СТОН/O2. 3101282|7,9250||S
 
 Чтобы повторно использовать наборы данных и обмениваться ими между экспериментами в рабочей области, [зарегистрируйте свой DataSet](#register-datasets).
 
@@ -208,19 +208,26 @@ dataset = Dataset.Tabular.from_delimited_files(datastore.path('data/prepared.csv
 ```
 
 > [!TIP]
-> Создайте и зарегистрируйте Табулардатасет в кадре данных в памяти Spark или Pandas с помощью одного метода с общедоступными методами предварительной версии [`register_spark_dataframe()`](https://docs.microsoft.com/python/api/azureml-core/azureml.data.tabulardataset?view=azure-ml-py#methods) и [`register_pandas_dataframe()`](https://docs.microsoft.com/python/api/azureml-core/azureml.data.tabulardataset?view=azure-ml-py#methods) . Эти методы регистрации являются [экспериментальными](https://docs.microsoft.com/python/api/overview/azure/ml/?view=azure-ml-py#stable-vs-experimental) функциями предварительной версии и могут быть изменены в любое время. 
+> Создайте и зарегистрируйте Табулардатасет в кадре данных в памяти Spark или Pandas с помощью одного метода с общедоступными методами предварительной версии [`register_spark_dataframe()`](https://docs.microsoft.com/python/api/azureml-core/azureml.data.tabulardataset?view=azure-ml-py&preserve-view=true#methods) и [`register_pandas_dataframe()`](https://docs.microsoft.com/python/api/azureml-core/azureml.data.tabulardataset?view=azure-ml-py&preserve-view=true#methods) . Эти методы регистрации являются [экспериментальными](https://docs.microsoft.com/python/api/overview/azure/ml/?view=azure-ml-py&preserve-view=true#stable-vs-experimental) функциями предварительной версии и могут быть изменены в любое время. 
 > 
 >  Эти методы отправляют данные в базовое хранилище, что приводит к затратам на хранение. 
 
 ## <a name="register-datasets"></a>Регистрация наборов данных
 
-Чтобы завершить процесс создания, зарегистрируйте свои наборы данных в рабочей области. Используйте [`register()`](https://docs.microsoft.com/python/api/azureml-core/azureml.data.abstract_dataset.abstractdataset?view=azure-ml-py#&preserve-view=trueregister-workspace--name--description-none--tags-none--create-new-version-false-) метод для регистрации наборов данных в рабочей области, чтобы поделиться ими с другими пользователями и использовать их в разных экспериментах в рабочей области:
+Чтобы завершить процесс создания, зарегистрируйте свои наборы данных в рабочей области. Используйте [`register()`](https://docs.microsoft.com/python/api/azureml-core/azureml.data.abstract_dataset.abstractdataset?view=azure-ml-py&preserve-view=true#&preserve-view=trueregister-workspace--name--description-none--tags-none--create-new-version-false-) метод для регистрации наборов данных в рабочей области, чтобы поделиться ими с другими пользователями и использовать их в разных экспериментах в рабочей области:
 
 ```Python
 titanic_ds = titanic_ds.register(workspace=workspace,
                                  name='titanic_ds',
                                  description='titanic training data')
 ```
+
+## <a name="create-datasets-using-azure-resource-manager"></a>Создание наборов данных с помощью Azure Resource Manager
+
+Существует ряд шаблонов [https://github.com/Azure/azure-quickstart-templates/tree/master/101-machine-learning-dataset-create-*](https://github.com/Azure/azure-quickstart-templates/tree/master/) , которые можно использовать для создания наборов данных.
+
+Сведения об использовании этих шаблонов см. в разделе [Использование шаблона Azure Resource Manager для создания рабочей области для машинное обучение Azure](how-to-create-workspace-template.md).
+
 
 ## <a name="create-datasets-with-azure-open-datasets"></a>Создание наборов данных с помощью открытых наборов данных Azure
 

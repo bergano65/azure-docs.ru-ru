@@ -1,6 +1,6 @@
 ---
 title: Руководство по настройке Salesforce для автоматической подготовки пользователей с помощью Azure Active Directory | Документация Майкрософт
-description: Узнайте, как настроить единый вход Azure Active Directory в приложении Salesforce.
+description: Сведения о действиях, которые необходимо выполнить в Salesforce и Azure AD для автоматической инициализации и отзыва учетных записей пользователей из Azure AD в Salesforce.
 services: active-directory
 author: jeevansd
 manager: CelesteDG
@@ -10,12 +10,12 @@ ms.workload: identity
 ms.topic: article
 ms.date: 08/01/2019
 ms.author: jeedes
-ms.openlocfilehash: db94c868daecdd82bcf7749f17fc6fde86fac963
-ms.sourcegitcommit: bdd5c76457b0f0504f4f679a316b959dcfabf1ef
+ms.openlocfilehash: a77fa5702b8ab5728f387eae02cc97f997a406a5
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "90979774"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91273302"
 ---
 # <a name="tutorial-configure-salesforce-for-automatic-user-provisioning"></a>Руководство по настройке Salesforce для автоматической подготовки пользователей
 
@@ -71,7 +71,7 @@ ms.locfileid: "90979774"
 
 5. В разделе **Учетные данные администратора** укажите следующие параметры конфигурации.
 
-    a. В текстовом поле **Имя администратора** введите имя учетной записи Salesforce с профилем **системного администратора** в Salesforce.com.
+    а. В текстовом поле **Имя администратора** введите имя учетной записи Salesforce с профилем **системного администратора** в Salesforce.com.
 
     b. В текстовом поле **Пароль администратора** введите пароль для этой учетной записи.
 

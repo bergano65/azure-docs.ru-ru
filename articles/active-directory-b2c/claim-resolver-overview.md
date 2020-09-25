@@ -11,12 +11,12 @@ ms.topic: reference
 ms.date: 04/21/2020
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: 8e575cf9bba02a59179cc70870fb680a27648963
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 466e590ba22efe1c2fbb457c15bc7f979f8a172e
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85201181"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91259642"
 ---
 # <a name="about-claim-resolvers-in-azure-active-directory-b2c-custom-policies"></a>Арбитры утверждений в пользовательских политиках Azure Active Directory B2C
 
@@ -46,16 +46,16 @@ ms.locfileid: "85201181"
 
 ### <a name="culture"></a>culture
 
-| Утверждение | Описание: | Пример |
+| Утверждение | Описание | Пример |
 | ----- | ----------- | --------|
 | {Culture:LanguageName} | Двухбуквенный код ISO для языка. | en |
 | {Culture:LCID}   | Код языка (локаль). | 1033 |
 | {Culture:RegionName} | Двухбуквенный код ISO для региона. | США |
-| {Culture:RFC5646} | Код языка RFC5646. | ru-RU |
+| {Culture:RFC5646} | Код языка RFC5646. | en-US |
 
 ### <a name="policy"></a>Политика
 
-| Утверждение | Описание: | Пример |
+| Утверждение | Описание | Пример |
 | ----- | ----------- | --------|
 | {Policy:PolicyId} | Имя политики проверяющей стороны. | B2C_1A_signup_signin |
 | {Policy:RelyingPartyTenantId} | Идентификатор клиента для политики проверяющей стороны. | your-tenant.onmicrosoft.com |
@@ -64,7 +64,7 @@ ms.locfileid: "85201181"
 
 ### <a name="openid-connect"></a>OpenID Connect
 
-| Утверждение | Описание: | Пример |
+| Утверждение | Описание | Пример |
 | ----- | ----------- | --------|
 | {OIDC:AuthenticationContextReferences} |Параметр `acr_values` строки запроса. | Н/Д |
 | {OIDC:ClientId} |Параметр `client_id` строки запроса. | 00000000-0000-0000-0000-000000000000 |
@@ -81,18 +81,18 @@ ms.locfileid: "85201181"
 
 ### <a name="context"></a>Контекст
 
-| Утверждение | Описание: | Пример |
+| Утверждение | Описание | Пример |
 | ----- | ----------- | --------|
 | {Context:BuildNumber} | Версия инфраструктури процедур идентификации (номер сборки).  | 1.0.507.0 |
 | {Context:CorrelationId} | Идентификатор корреляции.  | 00000000-0000-0000-0000-000000000000 |
 | {Context:DateTimeInUtc} |Дата и время в формате UTC.  | 10/10/2018 12:00:00 |
-| {Context:DeploymentMode} |Режим развертывания политики.  | Производство |
+| {Context:DeploymentMode} |Режим развертывания политики.  | Рабочая среда |
 | {Context:IPAddress} | IP-адрес пользователя. | 11.111.111.11 |
-| {Context: функции "оставаться} | Указывает, установлен ли флажок [оставаться в](custom-policy-keep-me-signed-in.md) системе. |  true |
+| {Context: функции "оставаться} | Указывает, установлен ли флажок [оставаться в](custom-policy-keep-me-signed-in.md) системе. |  Да |
 
 ### <a name="claims"></a>Утверждения 
 
-| Утверждение | Описание: | Пример |
+| Утверждение | Описание | Пример |
 | ----- | ----------- | --------|
 | {Заявка: тип утверждения} | Идентификатор типа утверждения, уже определенного в разделе ClaimsSchema файла политики или родительского файла политики.  Например: `{Claim:displayName}` или `{Claim:objectId}` . | Значение типа утверждения.|
 
@@ -101,7 +101,7 @@ ms.locfileid: "85201181"
 
 Любое имя параметра, включенное в запрос OIDC или OAuth2, можно сопоставить с утверждением в пути взаимодействия пользователя. Например, запрос из приложения может включать в себя параметр строки запроса с именем `app_session`, `loyalty_number` или любую пользовательскую строку запроса.
 
-| Утверждение | Описание: | Пример |
+| Утверждение | Описание | Пример |
 | ----- | ----------------------- | --------|
 | {OAUTH-KV:campaignId} | Параметр строки запроса. | Гавайи |
 | {OAUTH-KV:app_session} | Параметр строки запроса. | A3C5R |
@@ -110,20 +110,21 @@ ms.locfileid: "85201181"
 
 ### <a name="oauth2"></a>OAuth2
 
-| Утверждение | Описание: | Пример |
+| Утверждение | Описание | Пример |
 | ----- | ----------------------- | --------|
 | {oauth2:access_token} | Маркер доступа. | Н/Д |
+| {OAuth2: refresh_token} | Маркер обновления. | Н/Д |
 
 
 ### <a name="saml"></a>SAML
 
-| Утверждение | Описание: | Пример |
+| Утверждение | Описание | Пример |
 | ----- | ----------- | --------|
 | {SAML: Ауснконтекстклассреференцес} | `AuthnContextClassRef`Значение элемента из запроса SAML. | urn: Oasis: Names: TC: SAML: 2.0: AC: Classes: Пассвордпротектедтранспорт |
 | {SAML: Намеидполициформат} | `Format`Атрибут из `NameIDPolicy` элемента запроса SAML. | urn:oasis:names:tc:SAML:1.1:nameid-format:emailAddress |
 | {SAML: Issuer} |  `Issuer`Значение элемента SAML для запроса SAML.| `https://contoso.com` |
-| {SAML: Алловкреате} | `AllowCreate`Значение атрибута из `NameIDPolicy` элемента запроса SAML. | True |
-| {SAML: Форцеаусн} | `ForceAuthN`Значение атрибута из `AuthnRequest` элемента запроса SAML. | True |
+| {SAML: Алловкреате} | `AllowCreate`Значение атрибута из `NameIDPolicy` элемента запроса SAML. | Верно |
+| {SAML: Форцеаусн} | `ForceAuthN`Значение атрибута из `AuthnRequest` элемента запроса SAML. | Верно |
 | {SAML: ProviderName} | `ProviderName`Значение атрибута из `AuthnRequest` элемента запроса SAML.| Contoso.com |
 | {SAML: RelayState} | Параметр `RelayState` строки запроса.| 
 
@@ -131,7 +132,7 @@ ms.locfileid: "85201181"
 
 Вы можете использовать арбитры утверждений со следующими элементами:
 
-| Item | Элемент | Параметры |
+| Элемент | Элемент | Параметры |
 | ----- | ----------------------- | --------|
 |Технический профиль Application Insights |`InputClaim` | |
 |[Azure Active Directory](active-directory-technical-profile.md) технический профиль| `InputClaim`, `OutputClaim`| 1, 2|

@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: article
 ms.date: 09/19/2019
 ms.author: Zhchia
-ms.openlocfilehash: c330d8000825b2e0ccbdab8c5c1cdefa4d3d45c8
-ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
+ms.openlocfilehash: b3fa2996edf5882cc02eeee92bcc3114bcd33348
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88543380"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91273421"
 ---
 # <a name="tutorial-configure-sap-cloud-platform-identity-authentication-for-automatic-user-provisioning"></a>Учебник. Настройка SAP Cloud Platform Identity Authentication для автоматической подготовки пользователей
 
@@ -108,11 +108,11 @@ ms.locfileid: "88543380"
 
 3. Выберите вкладку **Подготовка**.
 
-    ![Вкладка "Подготовка"](common/provisioning.png)
+    ![Снимок экрана параметров управления с вызываемым параметром подготовки.](common/provisioning.png)
 
 4. Для параметра **Режим подготовки к работе** выберите значение **Automatic** (Автоматически).
 
-    ![Вкладка "Подготовка"](common/provisioning-automatic.png)
+    ![Снимок экрана: раскрывающийся список режима подготовки с вызываемым автоматическим параметром.](common/provisioning-automatic.png)
 
 5. В разделе **учетные данные администратора** введите `https://<tenantID>.accounts.ondemand.com/service/scim ` **URL-адрес клиента**. Введите значения **идентификатора пользователя** и **пароля** , полученные ранее в поле **имя администратора** и **пароль администратора** соответственно. Нажмите кнопку **проверить подключение** , чтобы убедиться, что Azure AD может подключиться к SAP Cloud Platform Identity Authentication. В случае сбоя подключения убедитесь, что учетная запись аутентификации SAP Cloud Platform Identity имеет разрешения администратора, и повторите попытку.
 
@@ -122,7 +122,7 @@ ms.locfileid: "88543380"
 
     ![Почтовое уведомление](common/provisioning-notification-email.png)
 
-7. Нажмите **Сохранить**.
+7. Выберите команду **Сохранить**.
 
 8. В разделе " **сопоставления** " выберите **синхронизировать Azure Active Directory пользователей с SAP облачная платформа удостоверение аутентификации**.
 

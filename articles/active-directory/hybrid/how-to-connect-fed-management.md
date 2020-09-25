@@ -18,12 +18,12 @@ ms.subservice: hybrid
 ms.author: billmath
 ms.custom: seohack1
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: dadffd6fe3e6b438b21900f957f0d4ef71bb23cb
-ms.sourcegitcommit: f8d2ae6f91be1ab0bc91ee45c379811905185d07
+ms.openlocfilehash: cc0c8c40e370579100c562e0289c97e3f5ce4236
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89661263"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91274118"
 ---
 # <a name="manage-and-customize-active-directory-federation-services-by-using-azure-ad-connect"></a>Управление службами федерации Active Directory и их настройка с помощью Azure AD Connect
 В этой статье описывается управление службами федерации Active Directory (AD FS) и их настройка с помощью Azure Active Directory (Azure AD) Connect, а также рассматриваются другие стандартные задачи AD FS, которые может потребоваться выполнить для полной настройки фермы AD FS.
@@ -52,11 +52,11 @@ Azure AD Connect может проверить текущую работоспо
    ![Восстановление доверия AAD и ADFS](./media/how-to-connect-fed-management/RepairADTrust1.PNG)
 
 2. На странице **Подключение к Azure AD** укажите учетные данные глобального администратора для Azure AD и нажмите кнопку **Далее**.
-   ![Подключение к Azure AD](./media/how-to-connect-fed-management/RepairADTrust2.PNG)
+   ![Снимок экрана, на котором показана страница "подключение к Azure AD" с указанными учетными данными.](./media/how-to-connect-fed-management/RepairADTrust2.PNG)
 
 3. На странице **Учетные данные для удаленного доступа** введите учетные данные администратора домена.
 
-   ![Учетные данные удаленного доступа](./media/how-to-connect-fed-management/RepairADTrust3.PNG)
+   ![Снимок экрана, на котором показана страница "учетные данные удаленного доступа" с указанными учетными данными.](./media/how-to-connect-fed-management/RepairADTrust3.PNG)
 
     Когда вы нажмете кнопку **Далее**, Azure AD Connect проверит работоспособность сертификата и отобразит возможные проблемы.
 
@@ -64,7 +64,7 @@ Azure AD Connect может проверить текущую работоспо
 
     На странице **Готово к настройке** отобразится список действий, которые будут выполнены для восстановления доверия.
 
-    ![Готово к настройке](./media/how-to-connect-fed-management/RepairADTrust5.PNG)
+    ![Снимок экрана, на котором показана страница "готовность к настройке" со списком действий.](./media/how-to-connect-fed-management/RepairADTrust5.PNG)
 
 4. Чтобы восстановить доверие, нажмите кнопку **Установить** .
 
@@ -98,7 +98,7 @@ Azure AD Connect может проверить текущую работоспо
 
 2. На странице **Подключение к Azure AD** укажите учетные данные глобального администратора для Azure AD и нажмите кнопку **Далее**.
 
-   ![Подключение к Azure AD](./media/how-to-connect-fed-management/AddNewADFSServer2.PNG)
+   ![Снимок экрана, на котором показана страница "подключение к Azure AD" с указанными учетными данными.](./media/how-to-connect-fed-management/AddNewADFSServer2.PNG)
 
 3. Введите учетные данные администратора домена.
 
@@ -106,9 +106,9 @@ Azure AD Connect может проверить текущую работоспо
 
 4. Azure AD Connect запросит пароль PFX-файла, который был указан при настройке новой фермы AD FS с помощью Azure AD Connect. Щелкните **Введите пароль** , чтобы указать пароль для PFX-файла.
 
-   ![Пароль сертификата](./media/how-to-connect-fed-management/AddNewADFSServer4.PNG)
+   ![Снимок экрана, на котором отображается страница "указание SSL-сертификата" с открытым окном "пароль сертификата".](./media/how-to-connect-fed-management/AddNewADFSServer4.PNG)
 
-    ![Укажите сертификат TLS/SSL](./media/how-to-connect-fed-management/AddNewADFSServer5.PNG)
+    ![Снимок экрана, на котором показана страница "указание SSL-сертификата" после ввода пароля для PFX-файла.](./media/how-to-connect-fed-management/AddNewADFSServer5.PNG)
 
 5. На странице **Серверы AD FS** введите имя сервера или IP-адрес, который нужно добавить к ферме AD FS.
 
@@ -116,9 +116,9 @@ Azure AD Connect может проверить текущую работоспо
 
 6. Нажмите кнопку **Далее** и выполните инструкции на последней странице **Настройка**. После того как Azure AD Connect завершит добавление серверов в ферму AD FS, у вас будет возможность проверить подключение.
 
-   ![Готово к настройке](./media/how-to-connect-fed-management/AddNewADFSServer7.PNG)
+   ![Снимок экрана, на котором показана страница "готовность к настройке" со списком действий, которые необходимо выполнить после нажатия кнопки "установить".](./media/how-to-connect-fed-management/AddNewADFSServer7.PNG)
 
-    ![Установка завершена](./media/how-to-connect-fed-management/AddNewADFSServer8.PNG)
+    ![Снимок экрана, на котором отображается страница "Завершение установки" с сообщением "Конфигурация интрасети успешно проверена". ](./media/how-to-connect-fed-management/AddNewADFSServer8.PNG)
 
 ## <a name="add-an-ad-fs-wap-server"></a><a name="addwapserver"></a>Добавление AD FS WAP Server 
 
@@ -131,7 +131,7 @@ Azure AD Connect может проверить текущую работоспо
 
 2. Введите учетные данные глобального администратора Azure.
 
-   ![Подключение к Azure AD](./media/how-to-connect-fed-management/wapserver2.PNG)
+   ![Снимок экрана, на котором показана страница "подключение к Azure AD" с указанным именем пользователя и паролем.](./media/how-to-connect-fed-management/wapserver2.PNG)
 
 3. На странице **Укажите SSL-сертификат** введите пароль для PFX-файла, который использовался при настройке фермы AD FS с помощью Azure AD Connect.
    ![Пароль сертификата](./media/how-to-connect-fed-management/WapServer3.PNG)
@@ -148,7 +148,7 @@ Azure AD Connect может проверить текущую работоспо
 
 6. В мастере на странице **Готово к настройке** отображается список действий, которые будут выполнены.
 
-   ![Готово к настройке](./media/how-to-connect-fed-management/WapServer7.PNG)
+   ![Снимок экрана, на котором показана страница "готовность к настройке" со списком действий для выполнения.](./media/how-to-connect-fed-management/WapServer7.PNG)
 
 7. Чтобы завершить настройку, нажмите кнопку **Установить** . По завершении настройки мастер предоставляет возможность проверить подключение к серверам. Чтобы проверить подключение, щелкните **Проверить** .
 

@@ -1,7 +1,7 @@
 ---
 title: Диагностика проблемы сетевой маршрутизации виртуальной машины — Azure CLI
 titleSuffix: Azure Network Watcher
-description: Из этой статьи вы узнаете, как диагностировать проблему с маршрутизацией в сети виртуальной машины с помощью возможности следующего прыжка в Наблюдателе за сетями Azure.
+description: В этой статье вы узнаете, как использовать Azure CLI для диагностики проблемы сетевой маршрутизации виртуальной машины с помощью возможности следующего прыжка наблюдателя за сетями Azure.
 services: network-watcher
 documentationcenter: network-watcher
 author: damendo
@@ -17,12 +17,12 @@ ms.workload: infrastructure
 ms.date: 04/20/2018
 ms.author: damendo
 ms.custom: ''
-ms.openlocfilehash: 889db5cdcb1807b859339eaf326e3cec7ea64b84
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 5fa083626135170a05844a5e4434b608a1fabe60
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84738810"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91302278"
 ---
 # <a name="diagnose-a-virtual-machine-network-routing-problem---azure-cli"></a>Диагностика проблем с маршрутизацией в сети виртуальной машины с помощью Azure CLI
 

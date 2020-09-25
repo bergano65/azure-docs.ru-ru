@@ -12,23 +12,27 @@ ms.subservice: hybrid
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
+ms.date: 09/24/2020
 ms.topic: how-to
-ms.date: 07/18/2017
 ms.author: billmath
 ms.collection: M365-identity-device-management
 ms.custom: devx-track-azurepowershell
-ms.openlocfilehash: 9e6686c69eb6dababb577e9c556a8a13ec42485a
-ms.sourcegitcommit: 58d3b3314df4ba3cabd4d4a6016b22fa5264f05a
+ms.openlocfilehash: 3b2c89086688451b16a8a6e10c25be65ffd4d9dd
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89296470"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91273863"
 ---
 # <a name="azure-ad-connect-health-agent-installation"></a>Установка агента Azure AD Connect Health
 
 В этом документе описываются этапы установки и настройки агентов Azure AD Connect Health. Загрузить агенты можно [отсюда](how-to-connect-install-roadmap.md#download-and-install-azure-ad-connect-health-agent):
 
 ## <a name="requirements"></a>Требования
+
+
+> [!IMPORTANT]
+> Установка агента Azure AD Connect Health в Windows Server Core не поддерживается.
 
 В таблице ниже приведен список предварительных требований для использования Azure AD Connect Health.
 
@@ -48,7 +52,7 @@ ms.locfileid: "89296470"
 
 > [!NOTE]
 > При наличии сильно заблокированной и очень ограниченной среды вам потребуется добавить URL-адреса, указанные в списках конечных точек службы, в дополнение к тем, которые перечислены в разрешенной выше конфигурации усиленной безопасности IE. 
->
+
 
 ### <a name="outbound-connectivity-to-the-azure-service-endpoints"></a>Исходящие подключения к конечным точкам службы Azure
 
@@ -259,7 +263,7 @@ ms.locfileid: "89296470"
 ### <a name="quick-agent-installation-in-multiple-servers"></a>Быстрая установка агентов на нескольких серверах
 
 1. Создание учетной записи пользователя в Azure AD с паролем.
-2. Назначьте роль **владельца** для этой локальной учетной записи AAD в Azure AD Connect Health через портал. Выполните действия, описанные [здесь](how-to-connect-health-operations.md#manage-access-with-azure-rbac). Назначьте роль всем экземплярам службы. 
+2. Назначьте роль **владельца** для этой локальной учетной записи AAD в Azure AD Connect Health через портал. Следуйте инструкциям, которые приводятся [здесь](how-to-connect-health-operations.md#manage-access-with-azure-rbac). Назначьте роль всем экземплярам службы. 
 3. Скачайте exe MSI файл на локальном контроллере домена для установки.
 4. Выполните следующий скрипт для регистрации. Замените параметры новой созданной учетной записью пользователя и паролем. 
 

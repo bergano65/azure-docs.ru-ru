@@ -9,14 +9,14 @@ ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
-ms.date: 04/13/2020
+ms.date: 09/18/2020
 ms.author: duau
-ms.openlocfilehash: 995b8ab77779f0d3b9e2260ea18aa13aa242db36
-ms.sourcegitcommit: 5a3b9f35d47355d026ee39d398c614ca4dae51c6
+ms.openlocfilehash: 0d669d4232adca3348b51c2a48947e0dabf0a472
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89399741"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91324065"
 ---
 # <a name="frequently-asked-questions-for-azure-front-door"></a>Часто задаваемые вопросы о передней дверце Azure
 
@@ -100,6 +100,31 @@ ms.locfileid: "89399741"
 
 -    Выполните операцию GET на передней дверце с помощью API `2020-01-01` или более поздней версии. В вызове API найдите `frontdoorID` поле. Отфильтруйте входящий заголовок "**X-Azure-ФДИД**", отправленный с передней дверцы на серверную часть, со значением в качестве значения поля `frontdoorID` . Можно также найти `Front Door ID` значение в разделе Обзор на странице портала передней дверцы. 
 
+- Примените фильтрацию правил на внутреннем веб-сервере, чтобы ограничить трафик на основе полученного значения заголовка X-Azure-ФДИД.
+
+  Ниже приведен пример для [Microsoft службы IIS (IIS)](https://www.iis.net/):
+
+    ``` xml
+    <?xml version="1.0" encoding="UTF-8"?>
+    <configuration>
+        <system.webServer>
+            <rewrite>
+                <rules>
+                    <rule name="Filter_X-Azure-FDID" patternSyntax="Wildcard" stopProcessing="true">
+                        <match url="*" />
+                        <conditions>
+                            <add input="{HTTP_X_AZURE_FDID}" pattern="xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx" negate="true" />
+                        </conditions>
+                        <action type="AbortRequest" />
+                    </rule>
+                </rules>
+            </rewrite>
+        </system.webServer>
+    </configuration>
+    ```
+
+
+
 ### <a name="can-the-anycast-ip-change-over-the-lifetime-of-my-front-door"></a>Может ли изменение IP-адреса неразрешенной рассылки в течение времени жизни своей передней дверцы?
 
 IP-адрес недоступности переднего плана для передней дверцы обычно не изменяется и может оставаться статичным в течение времени существования передней дверцы. Однако гарантии для этого **не** существует. При этом не принимаются прямые зависимости от IP-адреса.
@@ -123,7 +148,7 @@ IP-адрес недоступности переднего плана для п
 Любые обновления маршрутов или серверных пулов и т. д. будут беспрепятственно работать, что приведет к нулевому простою (если новая конфигурация верна). Обновления сертификата также являются атомарными и не будут приводить к сбою, если не переключаться с "АФД Managed" на "использовать собственный сертификат" или наоборот.
 
 
-## <a name="configuration"></a>Конфигурация
+## <a name="configuration"></a>Параметр Configuration
 
 ### <a name="can-azure-front-door-load-balance-or-route-traffic-within-a-virtual-network"></a>Может ли балансировка нагрузки для передней дверцы Azure или маршрутизация трафика в виртуальной сети?
 
@@ -132,6 +157,10 @@ IP-адрес недоступности переднего плана для п
 ### <a name="what-are-the-various-timeouts-and-limits-for-azure-front-door"></a>Каковы различные времена ожидания и ограничения для передней дверцы Azure?
 
 Ознакомьтесь с задокументированными [временами ожидания и ограничениями для передней дверцы Azure](https://docs.microsoft.com/azure/azure-resource-manager/management/azure-subscription-service-limits#azure-front-door-service-limits).
+
+### <a name="how-long-does-it-take-for-a-rule-to-take-effect-after-being-added-to-the-front-door-rules-engine"></a>Сколько времени займет действие правила после добавления в обработчик правил передней дверцы?
+
+Для завершения обновления Конфигурация обработчика правил занимает около 10 – 15 минут. Вы можете дождаться, когда правило вступит в силу сразу после завершения обновления. 
 
 ## <a name="performance"></a>Производительность
 

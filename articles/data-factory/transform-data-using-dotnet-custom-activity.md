@@ -1,6 +1,6 @@
 ---
 title: Использование настраиваемых действий в конвейере
-description: Узнайте, как создавать пользовательские действия и использовать их в конвейере фабрики данных Azure.
+description: Узнайте, как создавать настраиваемые действия с помощью .NET, а затем использовать действия в конвейере фабрики данных Azure.
 services: data-factory
 ms.service: data-factory
 author: nabhishek
@@ -10,12 +10,12 @@ ms.workload: data-services
 ms.topic: conceptual
 ms.custom: seo-lt-2019
 ms.date: 11/26/2018
-ms.openlocfilehash: 74e381a9ad32acdaa8cbb719824d74ca6d339f30
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 8b8114a6abf5579ed0750862d59a5d13178339f6
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84019968"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91276507"
 ---
 # <a name="use-custom-activities-in-an-azure-data-factory-pipeline"></a>Использование настраиваемых действий в конвейере фабрики данных Azure
 
@@ -345,7 +345,7 @@ Activity Error section:
 |Обязательный набор данных      |Необязательно      |Является обязательным для создания цепочки действий и передачи данных      |
 |Передача данных из действия в настраиваемую логику      |С помощью ReferenceObjects (LinkedServices и Datasets) и ExtendedProperties (пользовательские свойства)      |С помощью ExtendedProperties (пользовательские свойства), входных и выходных наборов данных      |
 |Извлечение данных в настраиваемой логике      |Анализ файлов activity.json, linkedServices.json и datasets.json, которые хранятся в одной папке с исполняемым файлом.      |С помощью пакета SDK для .NET (.NET Frame 4.5.2)      |
-|Ведение журнала      |Запись непосредственно в STDOUT      |Реализация средства ведения журнала в библиотеке DLL .NET      |
+|Logging      |Запись непосредственно в STDOUT      |Реализация средства ведения журнала в библиотеке DLL .NET      |
 
 Если у вас есть код .NET, написанный для действия DotNet версии 1, необходимо изменить код, чтобы он работал с текущей версией настраиваемого действия. Для этого следует изменить этот код в соответствии со следующими общими рекомендациями.
 

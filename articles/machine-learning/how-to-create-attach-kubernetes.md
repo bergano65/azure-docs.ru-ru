@@ -11,12 +11,12 @@ ms.author: jordane
 author: jpe316
 ms.reviewer: larryfr
 ms.date: 09/01/2020
-ms.openlocfilehash: 034fbf991c97ba7b9f51b5508c35df1889280562
-ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
+ms.openlocfilehash: db14670d19bf6bf0019e1533ebefdc5a47436a1c
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "90897891"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91302372"
 ---
 # <a name="create-and-attach-an-azure-kubernetes-service-cluster"></a>Создание и подключение кластера службы Kubernetes Azure
 
@@ -89,7 +89,7 @@ ms.locfileid: "90897891"
 
 ### <a name="available-and-default-versions"></a>Доступные и версии по умолчанию
 
-Для поиска доступных версий AKS и по умолчанию используйте команду [Azure CLI](/cli/azure/install-azure-cli?view=azure-cli-latest) [AZ AKS get-versions](/cli/azure/aks?view=azure-cli-latest#az_aks_get_versions). Например, следующая команда возвращает версии, доступные в регионе "Западная часть США":
+Для поиска доступных версий AKS и по умолчанию используйте команду [Azure CLI](/cli/azure/install-azure-cli?view=azure-cli-latest&preserve-view=true) [AZ AKS get-versions](/cli/azure/aks?view=azure-cli-latest&preserve-view=true#az_aks_get_versions). Например, следующая команда возвращает версии, доступные в регионе "Западная часть США":
 
 ```azurecli-interactive
 az aks get-versions -l westus -o table
@@ -184,9 +184,9 @@ aks_target.wait_for_completion(show_output = True)
 Дополнительные сведения о классах, методах и параметрах, используемых в этом примере, см. в следующих справочных документах:
 
 * [Акскомпуте. Клустерпурпосе](https://docs.microsoft.com/python/api/azureml-core/azureml.core.compute.aks.akscompute.clusterpurpose?view=azure-ml-py&preserve-view=true)
-* [Акскомпуте. provisioning_configuration](/python/api/azureml-core/azureml.core.compute.akscompute?view=azure-ml-py#attach-configuration-resource-group-none--cluster-name-none--resource-id-none--cluster-purpose-none-)
-* [ComputeTarget. Create](https://docs.microsoft.com/python/api/azureml-core/azureml.core.compute.computetarget?view=azure-ml-py#create-workspace--name--provisioning-configuration-)
-* [ComputeTarget. wait_for_completion](https://docs.microsoft.com/python/api/azureml-core/azureml.core.compute.computetarget?view=azure-ml-py#wait-for-completion-show-output-false-)
+* [Акскомпуте. provisioning_configuration](/python/api/azureml-core/azureml.core.compute.akscompute?view=azure-ml-py&preserve-view=true#attach-configuration-resource-group-none--cluster-name-none--resource-id-none--cluster-purpose-none-)
+* [ComputeTarget. Create](https://docs.microsoft.com/python/api/azureml-core/azureml.core.compute.computetarget?view=azure-ml-py&preserve-view=true#create-workspace--name--provisioning-configuration-)
+* [ComputeTarget. wait_for_completion](https://docs.microsoft.com/python/api/azureml-core/azureml.core.compute.computetarget?view=azure-ml-py&preserve-view=true#wait-for-completion-show-output-false-)
 
 # <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
 
@@ -194,7 +194,7 @@ aks_target.wait_for_completion(show_output = True)
 az ml computetarget create aks -n myaks
 ```
 
-Дополнительные сведения см. в справке по команде [AZ ML computetarget Create AKS](https://docs.microsoft.com/cli/azure/ext/azure-cli-ml/ml/computetarget/create?view=azure-cli-latest#ext-azure-cli-ml-az-ml-computetarget-create-aks) .
+Дополнительные сведения см. в справке по команде [AZ ML computetarget Create AKS](https://docs.microsoft.com/cli/azure/ext/azure-cli-ml/ml/computetarget/create?view=azure-cli-latest&preserve-view=true#ext-azure-cli-ml-az-ml-computetarget-create-aks) .
 
 # <a name="portal"></a>[Портал](#tab/azure-portal)
 
@@ -215,12 +215,12 @@ az ml computetarget create aks -n myaks
 > [!WARNING]
 > Не создавайте несколько одновременных вложений в одном кластере AKS из рабочей области. Например, можно подключить один кластер AKS к рабочей области, используя два разных имени. Каждое новое вложение приведет к нарушению предыдущих существующих вложений.
 >
-> Если требуется повторно подключить кластер AKS, например для изменения настроек TLS или другого кластера, необходимо сначала удалить существующее вложение с помощью [акскомпуте. Detach ()](https://docs.microsoft.com/python/api/azureml-core/azureml.core.compute.akscompute?view=azure-ml-py#detach--).
+> Если требуется повторно подключить кластер AKS, например для изменения настроек TLS или другого кластера, необходимо сначала удалить существующее вложение с помощью [акскомпуте. Detach ()](https://docs.microsoft.com/python/api/azureml-core/azureml.core.compute.akscompute?view=azure-ml-py&preserve-view=true#detach--).
 
 Дополнительные сведения о создании кластера AKS с помощью Azure CLI или портала см. в следующих статьях:
 
-* [Создание кластера AKS с помощью CLI](https://docs.microsoft.com/cli/azure/aks?toc=%2Fazure%2Faks%2FTOC.json&bc=%2Fazure%2Fbread%2Ftoc.json&view=azure-cli-latest#az-aks-create)
-* [Создание кластера AKS (портал)](https://docs.microsoft.com/azure/aks/kubernetes-walkthrough-portal?view=azure-cli-latest)
+* [Создание кластера AKS с помощью CLI](https://docs.microsoft.com/cli/azure/aks?toc=%2Fazure%2Faks%2FTOC.json&bc=%2Fazure%2Fbread%2Ftoc.json&view=azure-cli-latest&preserve-view=true#az-aks-create)
+* [Создание кластера AKS (портал)](https://docs.microsoft.com/azure/aks/kubernetes-walkthrough-portal?view=azure-cli-latest&preserve-view=true)
 * [Создание кластера AKS (шаблон ARM в шаблонах быстрого запуска Azure)](https://github.com/Azure/azure-quickstart-templates/tree/master/101-aks-azml-targetcompute)
 
 В следующем примере показано, как подключить существующий кластер AKS к рабочей области.
@@ -247,9 +247,9 @@ aks_target.wait_for_completion(show_output = True)
 
 Дополнительные сведения о классах, методах и параметрах, используемых в этом примере, см. в следующих справочных документах:
 
-* [Акскомпуте. attach_configuration ()](/python/api/azureml-core/azureml.core.compute.akscompute?view=azure-ml-py#attach-configuration-resource-group-none--cluster-name-none--resource-id-none--cluster-purpose-none-)
+* [Акскомпуте. attach_configuration ()](/python/api/azureml-core/azureml.core.compute.akscompute?view=azure-ml-py&preserve-view=true#attach-configuration-resource-group-none--cluster-name-none--resource-id-none--cluster-purpose-none-)
 * [Акскомпуте. Клустерпурпосе](https://docs.microsoft.com/python/api/azureml-core/azureml.core.compute.aks.akscompute.clusterpurpose?view=azure-ml-py&preserve-view=true)
-* [Акскомпуте. Attach](https://docs.microsoft.com/python/api/azureml-core/azureml.core.compute.computetarget?view=azure-ml-py#attach-workspace--name--attach-configuration-)
+* [Акскомпуте. Attach](https://docs.microsoft.com/python/api/azureml-core/azureml.core.compute.computetarget?view=azure-ml-py&preserve-view=true#attach-workspace--name--attach-configuration-)
 
 # <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
 
@@ -271,7 +271,7 @@ az aks show -n myexistingcluster -g myresourcegroup --query id
 az ml computetarget attach aks -n myaks -i aksresourceid -g myresourcegroup -w myworkspace
 ```
 
-Дополнительные сведения см. в справочнике по команде [AZ ML computetarget Attach AKS](https://docs.microsoft.com/cli/azure/ext/azure-cli-ml/ml/computetarget/attach?view=azure-cli-latest#ext-azure-cli-ml-az-ml-computetarget-attach-aks) .
+Дополнительные сведения см. в справочнике по команде [AZ ML computetarget Attach AKS](https://docs.microsoft.com/cli/azure/ext/azure-cli-ml/ml/computetarget/attach?view=azure-cli-latest&preserve-view=true#ext-azure-cli-ml-az-ml-computetarget-attach-aks) .
 
 # <a name="portal"></a>[Портал](#tab/azure-portal)
 

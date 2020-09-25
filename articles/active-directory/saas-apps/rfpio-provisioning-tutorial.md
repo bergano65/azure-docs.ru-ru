@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: article
 ms.date: 07/26/2019
 ms.author: zhchia
-ms.openlocfilehash: 963f89c99d71afbebbe122e3c7d8b3227dc4a8be
-ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
+ms.openlocfilehash: 98f92a6b0169c573b97788c7ffaf76255796cfa6
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88518415"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91278946"
 ---
 # <a name="tutorial-configure-rfpio-for-automatic-user-provisioning"></a>Учебник. Настройка RFPIO для автоматической подготовки пользователей
 
@@ -66,11 +66,11 @@ ms.locfileid: "88518415"
 
 4.  Убедитесь, что включена **Автоматическая подготовка пользователей** . Щелкните **создать токен API scim**.
 
-    ![RFPIO создание токена](media/rfpio-provisioning-tutorial/generate.png)
+    ![Снимок экрана с разделом S C M с вызываемым параметром "создать токен S C M A P".](media/rfpio-provisioning-tutorial/generate.png)
 
 5.  Сохраните **токен API scim** , так как этот маркер больше не будет отображаться в целях безопасности. Это значение будет указано в поле **секретный токен** на вкладке Подготовка приложения RFPIO в портал Azure.
 
-    ![RFPIO создание токена](media/rfpio-provisioning-tutorial/auth.png)
+    ![Снимок экрана раздела S C M с диалоговым окном "предупреждение", которое появляется после нажатия кнопку "Отправить".](media/rfpio-provisioning-tutorial/auth.png)
 
 ## <a name="add-rfpio-from-the-gallery"></a>Добавление RFPIO из коллекции
 
@@ -113,11 +113,11 @@ ms.locfileid: "88518415"
 
 3. Выберите вкладку **Подготовка**.
 
-    ![Вкладка "Подготовка"](common/provisioning.png)
+    ![Снимок экрана параметров управления с вызываемым параметром подготовки.](common/provisioning.png)
 
 4. Для параметра **Режим подготовки к работе** выберите значение **Automatic** (Автоматически).
 
-    ![Вкладка "Подготовка"](common/provisioning-automatic.png)
+    ![Снимок экрана: раскрывающийся список режима подготовки с вызываемым автоматическим параметром.](common/provisioning-automatic.png)
 
 5. В разделе **учетные данные администратора** введите `https://<RFPIO tenant instance>.rfpio.com/rfpserver/scim/v2 ` **URL-адрес клиента**. Пример значения: `https://Azure-test1.rfpio.com/rfpserver/scim/v2` . Введите значение **токена API scim** , полученное ранее в **маркере секрета**. Щелкните **проверить подключение** , чтобы убедиться, что Azure AD может подключиться к RFPIO. Если подключение не выполняется, убедитесь, что у учетной записи RFPIO есть разрешения администратора, и повторите попытку.
 
@@ -127,7 +127,7 @@ ms.locfileid: "88518415"
 
     ![Почтовое уведомление](common/provisioning-notification-email.png)
 
-7. Нажмите **Сохранить**.
+7. Выберите команду **Сохранить**.
 
 8. В разделе **сопоставления** выберите **синхронизировать Azure Active Directory пользователей с RFPIO**.
 

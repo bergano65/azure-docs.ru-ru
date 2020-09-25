@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: article
 ms.date: 04/15/2020
 ms.author: Zhchia
-ms.openlocfilehash: 83b2a497cbeda188a4329e634256746f48984a89
-ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
+ms.openlocfilehash: a67d61c5a7c8861b1e4462586e1e4dca9149ab4f
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88521940"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91305466"
 ---
 # <a name="tutorial-configure-hootsuite-for-automatic-user-provisioning"></a>Руководство по Настройка Hootsuite для автоматической подготовки пользователей
 
@@ -78,13 +78,13 @@ ms.locfileid: "88521940"
 
 3. Выберите вкладку **Подготовка**. Нажмите кнопку **Начало работы**.
 
-    ![Вкладка "Подготовка"](common/provisioning.png)
+    ![Снимок экрана параметров управления с вызываемым параметром подготовки.](common/provisioning.png)
 
     ![Колонка "Начало работы"](./media/hootsuite-provisioning-tutorial/get-started.png)
 
 4. Для параметра **Режим подготовки к работе** выберите значение **Automatic** (Автоматически).
 
-    ![Вкладка "Подготовка"](common/provisioning-automatic.png)
+    ![Снимок экрана: раскрывающийся список режима подготовки с вызываемым автоматическим параметром.](common/provisioning-automatic.png)
 
 5. В разделе **Учетные данные администратора** введите значение `https://platform.hootsuite.com/scim/v2` в поле "URL-адрес клиента". Введите значение долгосрочного токена секрета, полученное ранее на **шаге 2**. Щелкните **Проверить подключение**, чтобы убедиться, что Azure AD может подключиться к Hootsuite. Если установить подключение не удалось, убедитесь, что у учетной записи Hootsuite есть разрешения администратора, и повторите попытку.
 

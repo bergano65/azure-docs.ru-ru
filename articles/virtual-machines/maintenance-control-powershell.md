@@ -7,12 +7,12 @@ ms.topic: how-to
 ms.workload: infrastructure-services
 ms.date: 01/31/2020
 ms.author: cynthn
-ms.openlocfilehash: 5cb504e10c9a1b10c5bad201f4f599a3c00992fe
-ms.sourcegitcommit: 03662d76a816e98cfc85462cbe9705f6890ed638
+ms.openlocfilehash: efd35cfe2660f4597ec0c95dc29bcb4b839da680
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90530766"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91306945"
 ---
 # <a name="control-updates-with-maintenance-control-and-azure-powershell"></a>Управление обновлениями с помощью управления обслуживанием и Azure PowerShell
 
@@ -66,6 +66,33 @@ $config = New-AzMaintenanceConfiguration `
 ```azurepowershell-interactive
 Get-AzMaintenanceConfiguration | Format-Table -Property Name,Id
 ```
+
+### <a name="create-a-maintenance-configuration-with-scheduled-window-in-preview"></a>Создание конфигурации обслуживания с запланированным окном (Предварительная версия)
+
+
+> [!IMPORTANT]
+> Функция запланированного окна в настоящее время находится в общедоступной предварительной версии.
+> Предварительная версия предоставляется без соглашения об уровне обслуживания. Мы не рекомендуем использовать ее в рабочей среде. Некоторые функции могут не поддерживаться или их возможности могут быть ограничены.
+> Дополнительные сведения см. в статье [Дополнительные условия использования предварительных выпусков Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
+
+Используйте New-Азмаинтенанцеконфигуратион, чтобы создать конфигурацию обслуживания с запланированным окном, когда Azure будет применять обновления к ресурсам. В этом примере создается конфигурация обслуживания с именем myConfig с запланированным периодом 5 часов в четвертом понедельнике каждого месяца. После создания запланированного окна вам больше не нужно применять обновления вручную.
+
+```azurepowershell-interactive
+$config = New-AzMaintenanceConfiguration `
+   -ResourceGroup $RGName `
+   -Name $MaintenanceConfig `
+   -MaintenanceScope Host `
+   -Location $location `
+   -StartDateTime "2020-10-01 00:00" `
+   -TimeZone "Pacific Standard Time" `
+   -Duration "05:00" `
+   -RecurEvery "Month Fourth Monday"
+```
+> [!IMPORTANT]
+> **Длительность** обслуживания должна составлять *2 часа* или больше. Для **периодичности** обслуживания должно быть задано значение по крайней мере один раз в 35 дней.
+
+**Повторение** обслуживания может быть выражено в виде ежедневных, еженедельных или ежемесячных расписаний. Примерами ежедневного расписания являются Рекуревери: Day, Рекуревери: 3Days. Примерами еженедельного расписания являются Рекуревери: 3Weeks, Рекуревери: Week Суббота, воскресенье. Примерами ежемесячного расписания являются Рекуревери: month day23, day24, Рекуревери: месяц прошлого воскресенье, Рекуревери: четвертый понедельник.
+
 
 ## <a name="assign-the-configuration"></a>Назначение конфигурации
 
@@ -235,5 +262,5 @@ Remove-AzMaintenanceConfiguration `
    -Name $config.Name
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 Дополнительные сведения см. в разделе [обслуживание и обновления](maintenance-and-updates.md).

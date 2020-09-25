@@ -3,12 +3,12 @@ title: Управление формулами в Azure DevTest Labs для со
 description: В этой статье показано, как создать формулу из базового образа (пользовательского образа, образа Marketplace или другой формулы) или существующей виртуальной машины.
 ms.topic: article
 ms.date: 06/26/2020
-ms.openlocfilehash: 0a254d306ad2417c500571df4b8f2d852d21e7ae
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: f012a8c59a8e938334c3e1abc4c7b3ccd0e48d3e
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85480411"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91308900"
 ---
 # <a name="manage-azure-devtest-labs-formulas"></a>Управление формулами Azure DevTest Labs
 
@@ -60,7 +60,7 @@ ms.locfileid: "85480411"
     - **Дата и время окончания срока действия** . Вы не можете изменить это поле. 
     - **Make this machine claimable** (Разрешить запрашивать эту виртуальную машину) — этот параметр означает, что при создании виртуальной машины права владения не будут назначаться. Вместо этого пользователи лаборатории смогут становиться владельцами этой виртуальной машины ("запрашивать" ее) на странице лаборатории.  
 
-        ![Страница "Дополнительные параметры"](./media/devtest-lab-create-formulas/advanced-settings.png)
+        ![Снимок экрана, на котором показаны дополнительные параметры для страницы "Создание формулы (базовая)".](./media/devtest-lab-create-formulas/advanced-settings.png)
     - Если в качестве основы выбран общий образ коллекции образов, вы увидите поле **версия изображения** , позволяющее выбрать версию образа из коллекции, которую нужно использовать в качестве основы. 
 
         ![Страница "Дополнительные параметры"](./media/devtest-lab-create-formulas/advanced-settings-shared-image-gallery.png)
@@ -98,7 +98,7 @@ ms.locfileid: "85480411"
 3. Из списка лабораторий выберите нужную лабораторию.  
 4. На странице лаборатории выберите **Formulas (reusable bases)** (Формулы (базовые образы, используемые повторно)).
    
-    ![Меню формулы](./media/devtest-lab-manage-formulas/lab-settings-formulas.png)
+    ![Снимок экрана, на котором показана страница лаборатории с выбранным параметром "формулы (базы с возможностью повторного использования)".](./media/devtest-lab-manage-formulas/lab-settings-formulas.png)
 5. На странице **Lab formulas** (Формулы лаборатории) выберите формулу, которую нужно изменить.
 6. На странице **Изменить формулу** внесите необходимые изменения и щелкните **Обновить**.
 
@@ -113,7 +113,7 @@ ms.locfileid: "85480411"
     ![Меню формулы](./media/devtest-lab-manage-formulas/lab-settings-formulas.png)
 5. На странице **Lab formulas** (Формулы лаборатории) щелкните многоточие справа от формулы, которую нужно удалить.
    
-    ![Меню формулы](./media/devtest-lab-manage-formulas/lab-formulas-blade.png)
+    ![Снимок экрана, на котором показана страница "формулы лаборатории" с многоточием для выделенных параметров формулы.](./media/devtest-lab-manage-formulas/lab-formulas-blade.png)
 6. В контекстном меню формулы выберите **Удалить**.
    
     ![Контекстное меню формулы](./media/devtest-lab-manage-formulas/formula-delete-context-menu.png)
@@ -124,6 +124,6 @@ ms.locfileid: "85480411"
 ## <a name="related-blog-posts"></a>Связанные записи в блогах
 * [Custom images or formulas? (Пользовательские изображения или формулы?)](devtest-lab-faq.md#what-is-the-difference-between-a-custom-image-and-a-formula)
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 После создания формулы, которая служит для создания виртуальных машин, можно [добавить виртуальную машину в лабораторию](devtest-lab-add-vm.md).
 

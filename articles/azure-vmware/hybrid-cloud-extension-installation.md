@@ -1,18 +1,18 @@
 ---
-title: Установка Hybrid Cloud Extension (HCX)
-description: Настройка решения гибридного облака VMware (ХККС) для частного облака решения Azure VMware
+title: Установка VMware ХККС
+description: Настройка решения VMware ХККС для частного облака решения Azure VMware
 ms.topic: how-to
-ms.date: 07/15/2020
-ms.openlocfilehash: fb8497af33b364c1d2ab475233bd2a83ef1befad
-ms.sourcegitcommit: 62717591c3ab871365a783b7221851758f4ec9a4
+ms.date: 09/24/2020
+ms.openlocfilehash: 76a7432b78ec2141039dcdc5dd1d7572335b18e1
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/22/2020
-ms.locfileid: "88752322"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91263208"
 ---
 # <a name="install-hcx-for-azure-vmware-solution"></a>Установка HCX для решения Azure VMware
 
-В этой статье мы рассмотрим процедуры настройки решения гибридного облака VMWare (ХККС) для частного облака решения Azure VMWare. ХККС позволяет выполнять миграцию рабочих нагрузок VMware в облако и другие подключенные сайты через различные встроенные ХККС Поддерживаемые типы миграции.
+В этой статье мы рассмотрим процедуры настройки решения VMWare ХККС для частного облака решения Azure VMWare. ХККС позволяет выполнять миграцию рабочих нагрузок VMware в облако и другие подключенные сайты через различные встроенные ХККС Поддерживаемые типы миграции.
 
 ХККС Advanced, установка по умолчанию, поддерживает до трех подключений к сайту (локально или из облака в облако). Если требуется более трех подключений к сайту, клиенты могут включить надстройку ХККС Enterprise через поддержку, которая в настоящее время доступна в предварительной версии. HCX Enterprise по сравнению с общедоступным решением (GA) будет стоить клиентам дополнительных расходов, но обеспечит [дополнительные функции](https://cloud.vmware.com/community/2019/08/08/introducing-hcx-enterprise/).
 
@@ -40,7 +40,7 @@ ms.locfileid: "88752322"
 
 Изменение размера рабочих нагрузок для ресурсов вычислений и хранилища — важный шаг планирования при подготовке к использованию решения ХККС для решения Azure VMware для частного облака. Разрешать шаг изменения размера как часть первоначального планирования окружения частного облака. 
 
-Вы также можете масштабировать рабочие нагрузки, выполнив оценку решения Azure VMware на портале службы "миграция Azure" ( https://docs.microsoft.com/azure/migrate/how-to-create-azure-vmware-solution-assessment) .
+Вы также можете масштабировать рабочие нагрузки, выполнив [оценку решения Azure VMware](https://docs.microsoft.com/azure/migrate/how-to-create-azure-vmware-solution-assessment) на портале службы "миграция Azure".
 
 ## <a name="software-version-requirements"></a>Требования к версиям программного обеспечения
 
@@ -67,15 +67,13 @@ ms.locfileid: "88752322"
 
 ## <a name="deploy-the-vmware-hcx-ova-on-premises"></a>Развертывание OVA-файла VMware HCX в локальной среде
 
+1. Войдите в Azure VMware Solution ХККС Manager через `https://x.x.x.9` порт 443 с учетными данными пользователя **cloudadmin** , а затем выберите **support**.
+
+1. Выберите ссылку для скачивания файла VMware ХККС OVA. 
+
 1. Войдите в решение Azure VMware с SDDC vCenter и выберите **хккс**.
-
-   :::image type="content" source="media/hybrid-cloud-extension-installation/avs-vsphere-client.png" alt-text="Войдите в решение Azure VMware с SDDC vCenter и выберите ХККС.":::
-
-1. В разделе **Администрирование**выберите **обновления системы** и щелкните **ссылку Запросить скачивание** , чтобы скачать файл VMware хккс OVA.
-
-   :::image type="content" source="media/hybrid-cloud-extension-installation/administration-updates.png" alt-text="В разделе Администрирование выберите обновления системы и щелкните ссылку Запросить скачивание, чтобы скачать файл VMware ХККС OVA.":::
-
-1. Затем перейдите к локальному vCenter и выберите шаблон OVF для развертывания в локальном vCenter.  
+   
+1. Перейдите к локальному vCenter и выберите шаблон OVF для развертывания в локальном vCenter.  
 
    :::image type="content" source="media/hybrid-cloud-extension-installation/select-template.png" alt-text="Затем перейдите к локальному vCenter и выберите шаблон OVF для развертывания в локальном vCenter.":::
 
@@ -95,7 +93,7 @@ ms.locfileid: "88752322"
 
 После установки выполните следующие действия.
 
-1. Войдите в локальный диспетчер ХККС по адресу `https://HCXManagerIP:9443` и выполните вход, используя свое имя пользователя и пароль. 
+1. Войдите в локальный диспетчер ХККС по адресу `https://HCXManagerIP:9443` и выполните вход, используя учетные данные имени пользователя **администратора** . 
 
    > [!IMPORTANT]
    > Не забудьте включить `9443` номер порта с IP-адресом Хккс Manager.
@@ -185,7 +183,7 @@ ms.locfileid: "88752322"
       
    Выберите сетевой профиль, через который будет доступен интерфейс vMotion узлов ESXi. Если вы еще не определили такой сетевой профиль, его можно создать здесь. Если сеть vMotion отсутствует, выберите **сетевой профиль управления**.  
 
-   :::image type="content" source="media/hybrid-cloud-extension-installation/vmotion-network-profile.png" alt-text="Выберите пункт профиль сети vMotion и нажмите кнопку продолжить.":::
+   :::image type="content" source="media/hybrid-cloud-extension-installation/vmotion-network-profile.png" alt-text="Выберите пункт "профиль сети vMotion" и нажмите кнопку продолжить.":::
 
 1. В поле **выберите сетевой профиль для репликации vSphere**выберите профиль сети, vSphere интерфейс репликации узлов ESXi, а затем нажмите кнопку **продолжить**.
       
@@ -193,7 +191,7 @@ ms.locfileid: "88752322"
 
    :::image type="content" source="media/hybrid-cloud-extension-installation/vsphere-replication-network-profile.png" alt-text="В поле выберите сетевой профиль для репликации vSphere выберите профиль сети, vSphere интерфейс репликации узлов ESXi, а затем нажмите кнопку продолжить.":::
 
-1. В окне **Выбор распределенных коммутаторов для сетевых расширений**выберите Программа DVS, в которой находятся сети, на которых будут интегрированы и подключены виртуальные машины.  Выберите пункт **Продолжить**.  
+1. В окне **Выбор распределенных коммутаторов для сетевых расширений**выберите Программа DVS, в которой находятся сети, на которых будут интегрированы и подключены виртуальные машины.  Выберите **Continue** (Продолжить).  
 
    :::image type="content" source="media/hybrid-cloud-extension-installation/distributed-switches.png" alt-text="В окне Выбор распределенных коммутаторов для сетевых расширений выберите Программа DVS, в которой находятся сети, на которых будут интегрированы и подключены виртуальные машины.  Нажмите кнопку продолжить.":::
 

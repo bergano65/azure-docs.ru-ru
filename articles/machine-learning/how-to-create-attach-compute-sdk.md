@@ -11,12 +11,12 @@ ms.subservice: core
 ms.date: 07/08/2020
 ms.topic: conceptual
 ms.custom: how-to, devx-track-python, contperfq1
-ms.openlocfilehash: ac440db4c1dbddd317743e2d681a62251624d9bd
-ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
+ms.openlocfilehash: cc7ca9d217e405b0b39779cf256edcf0669afd6b
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "90898123"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91302440"
 ---
 # <a name="create-compute-targets-for-model-training-and-deployment-with-python-sdk"></a>Создание целевых объектов вычислений для обучения и развертывания моделей с помощью пакета SDK для Python
 
@@ -81,7 +81,7 @@ ms.locfileid: "90898123"
 
 При использовании локального компьютера для **обучения**нет необходимости создавать целевой объект вычислений.  Просто [отправьте обучающий запуск](how-to-set-up-training-targets.md) с локального компьютера.
 
-При использовании локального компьютера для **вывода**необходимо установить DOCKER. Чтобы выполнить развертывание, используйте [локалвебсервице. deploy_configuration ()](https://docs.microsoft.com/python/api/azureml-core/azureml.core.webservice.local.localwebservice?view=azure-ml-py#deploy-configuration-port-none-) , чтобы определить порт, который будет использовать веб-служба. Затем используйте нормальный процесс развертывания, как описано в разделе [Развертывание моделей с помощью машинное обучение Azure](how-to-deploy-and-where.md).
+При использовании локального компьютера для **вывода**необходимо установить DOCKER. Чтобы выполнить развертывание, используйте [локалвебсервице. deploy_configuration ()](https://docs.microsoft.com/python/api/azureml-core/azureml.core.webservice.local.localwebservice?view=azure-ml-py&preserve-view=true#deploy-configuration-port-none-) , чтобы определить порт, который будет использовать веб-служба. Затем используйте нормальный процесс развертывания, как описано в разделе [Развертывание моделей с помощью машинное обучение Azure](how-to-deploy-and-where.md).
 
 ## <a name="azure-machine-learning-compute-cluster"></a><a id="amlcompute"></a>Кластер Машинное обучение Azure COMPUTE
 
@@ -105,8 +105,7 @@ ms.locfileid: "90898123"
     
    [!code-python[](~/aml-sdk-samples/ignore/doc-qa/how-to-set-up-training-targets/amlcompute2.py?name=cpu_cluster)]
 
-   При создании Вычислительной среды машинного обучения Azure вы можете также настроить несколько дополнительных свойств. Эти свойства позволяют создать постоянный кластер фиксированного размера, который может размещаться в существующей виртуальной сети Azure в вашей подписке.  Дополнительные сведения см. в разделе о [классе AmlCompute](https://docs.microsoft.com/python/api/azureml-core/azureml.core.compute.amlcompute.amlcompute?view=azure-ml-py
-    ).
+   При создании Вычислительной среды машинного обучения Azure вы можете также настроить несколько дополнительных свойств. Эти свойства позволяют создать постоянный кластер фиксированного размера, который может размещаться в существующей виртуальной сети Azure в вашей подписке.  Дополнительные сведения см. в разделе о [классе AmlCompute](https://docs.microsoft.com/python/api/azureml-core/azureml.core.compute.amlcompute.amlcompute?view=azure-ml-py&preserve-view=true).
 
     Или вы можете создать и присоединить постоянный ресурс Вычислительной среды Машинного обучения в [Студии машинного обучения Azure](how-to-create-attach-compute-studio.md#portal-create).
 
@@ -276,8 +275,25 @@ ms.locfileid: "90898123"
 
 1. **Настройка**. Создайте конфигурацию запуска для целевого объекта вычислений DSVM. Для создания и настройки среды обучения на DSVM используются Docker и Conda.
 
-   [!code-python[](~/aml-sdk-samples/ignore/doc-qa/how-to-set-up-training-targets/dsvm.py?name=run_dsvm)]
-
+   ```python
+   from azureml.core import ScriptRunConfig
+   from azureml.core.environment import Environment
+   from azureml.core.conda_dependencies import CondaDependencies
+   
+   # Create environment
+   myenv = Environment(name="myenv")
+   
+   # Specify the conda dependencies
+   myenv.python.conda_dependencies = CondaDependencies.create(conda_packages=['scikit-learn'])
+   
+   # If no base image is explicitly specified the default CPU image "azureml.core.runconfig.DEFAULT_CPU_IMAGE" will be used
+   # To use GPU in DSVM, you should specify the default GPU base Docker image or another GPU-enabled image:
+   # myenv.docker.enabled = True
+   # myenv.docker.base_image = azureml.core.runconfig.DEFAULT_GPU_IMAGE
+   
+   # Configure the run configuration with the Linux DSVM as the compute target and the environment defined above
+   src = ScriptRunConfig(source_directory=".", script="train.py", compute_target=compute, environment=myenv) 
+   ```
 
 Теперь, после подключения вычислительной среды и настройки запуска, следующий шаг — [отправить запрос на запуск обучения](how-to-set-up-training-targets.md).
 
@@ -494,7 +510,7 @@ except ComputeTargetException:
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-* Используйте ресурс COMPUTE для [отправки обучающего запуска](how-to-set-up-training-targets.md).
+* Используйте ресурс вычислений для [настройки и отправки обучающего запуска](how-to-set-up-training-targets.md).
 * [Руководство. по обучению модели классификации изображений с помощью Службы машинного обучения Azure](tutorial-train-models-with-aml.md). В нем используется управляемый целевой объект вычислений для обучения модели.
 * Узнайте, как [эффективно настроить гиперпараметры](how-to-tune-hyperparameters.md) для создания улучшенных моделей.
 * После обучения модели узнайте о [способах и расположениях развертывания моделей](how-to-deploy-and-where.md).

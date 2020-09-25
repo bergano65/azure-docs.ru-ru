@@ -1,14 +1,14 @@
 ---
 title: Схема Клаудевентс v 1.0 со службой "Сетка событий Azure"
-description: В этой статье описана установка схемы CloudEvents для событий в службе "Сетка событий Azure". Служба поддерживает события в реализации в JSON CloudEvents.
+description: Описание использования схемы Клаудевентс v 1.0 для событий в службе "Сетка событий Azure". Служба поддерживает события в реализации в JSON CloudEvents.
 ms.topic: conceptual
 ms.date: 07/07/2020
-ms.openlocfilehash: 1c6085c0397f23d44cf11d43a3e1da71f0e728bb
-ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
+ms.openlocfilehash: d17e92c28784ca31f3c9809c93e885b22c6a38d0
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86103081"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91324184"
 ---
 # <a name="cloudevents-v10-schema-with-azure-event-grid"></a>Схема Клаудевентс v 1.0 со службой "Сетка событий Azure"
 

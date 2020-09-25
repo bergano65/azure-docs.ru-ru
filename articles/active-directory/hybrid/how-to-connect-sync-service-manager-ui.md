@@ -17,23 +17,23 @@ ms.subservice: hybrid
 ms.author: billmath
 ms.custom: H1Hack27Feb2017
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: e2975bb95511ba0a0d9f61886109c12715105fd8
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 01d3b8a0ffaef1b1f03f6f9f8dab6af04a965ba9
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85357126"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91306027"
 ---
 # <a name="introduction-to-the-azure-ad-connect-synchronization-service-manager-ui"></a>Общие сведения о пользовательском интерфейсе Synchronization Service Manager Azure AD Connect
 
-![Диспетчер службы синхронизации](./media/how-to-connect-sync-service-manager-ui/ssmui.png)
+![Снимок экрана, на котором показано Synchronization Service Manager U I.](./media/how-to-connect-sync-service-manager-ui/ssmui.png)
 
 Пользовательский интерфейс **Synchronization Service Manager** используется для настройки более сложных аспектов модуля синхронизации и изучения особенностей работы службы.
 
 Пользовательский интерфейс **Synchronization Service Manager** можно запустить из меню "Пуск". Он называется **Служба синхронизации** и находится в группе **Azure AD Connect**.  
 ![Диспетчер службы синхронизации](./media/how-to-connect-sync-service-manager-ui/startmenu.png)
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Описание пользовательского интерфейса Synchronization Service Manager, включая вкладки [Операции](how-to-connect-sync-service-manager-ui-operations.md), [Соединители](how-to-connect-sync-service-manager-ui-connectors.md), [Конструктор метавселенной](how-to-connect-sync-service-manager-ui-mvdesigner.md) и [Поиск в метавселенной](how-to-connect-sync-service-manager-ui-mvsearch.md).
 

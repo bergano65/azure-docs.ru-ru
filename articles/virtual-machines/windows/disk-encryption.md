@@ -2,18 +2,18 @@
 title: Шифрование управляемых дисков Azure на стороне сервера — PowerShell
 description: Служба хранилища Azure защищает ваши данные путем шифрования неактивных данных перед их сохранением в кластерах хранилища. Для шифрования управляемых дисков можно использовать ключи, управляемые корпорацией Майкрософт, или ключи, управляемые клиентом, для управления шифрованием своими собственными ключами.
 author: roygara
-ms.date: 07/10/2020
+ms.date: 09/23/2020
 ms.topic: conceptual
 ms.author: rogarana
 ms.service: virtual-machines
 ms.subservice: disks
 ms.custom: references_regions
-ms.openlocfilehash: 6174fbeb45c23c0ff04597305c6f65aef05bd26e
-ms.sourcegitcommit: d39f2cd3e0b917b351046112ef1b8dc240a47a4f
+ms.openlocfilehash: 49898f2215139c4460c639dc8caa3d2764082e34
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88815595"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91274781"
 ---
 # <a name="server-side-encryption-of-azure-disk-storage-for-powershell"></a>Шифрование Хранилище дисков Azure на стороне сервера для PowerShell
 
@@ -47,6 +47,10 @@ ms.locfileid: "88815595"
 - Если эта функция включена для диска, ее нельзя отключить.
     Если нужно обойти это ограничение, необходимо [скопировать все данные](disks-upload-vhd-to-managed-disk-powershell.md#copy-a-managed-disk) на другой управляемый диск, не использующий ключи, управляемые клиентом.
 [!INCLUDE [virtual-machines-managed-disks-customer-managed-keys-restrictions](../../../includes/virtual-machines-managed-disks-customer-managed-keys-restrictions.md)]
+
+#### <a name="supported-regions"></a>Поддерживаемые регионы
+
+Ключи, управляемые клиентом, доступны во всех регионах, где доступны управляемые диски.
 
 ## <a name="encryption-at-host---end-to-end-encryption-for-your-vm-data"></a>Шифрование на основе сквозного шифрования данных виртуальной машины
 

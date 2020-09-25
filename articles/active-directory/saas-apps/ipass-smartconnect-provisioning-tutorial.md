@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: article
 ms.date: 07/26/2019
 ms.author: zhchia
-ms.openlocfilehash: 533f31882ad06ecc4b411fe0f686ab51f189c0a3
-ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
+ms.openlocfilehash: 0af8df35bc2cc323e5165b973c889a0ab10f4cbb
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88552914"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91304930"
 ---
 # <a name="tutorial-configure-ipass-smartconnect-for-automatic-user-provisioning"></a>Учебник. Настройка Ипасс Смартконнект для автоматической подготовки пользователей
 
@@ -96,11 +96,11 @@ ms.locfileid: "88552914"
 
 3. Выберите вкладку **Подготовка**.
 
-    ![Вкладка "Подготовка"](common/provisioning.png)
+    ![Снимок экрана параметров управления с вызываемым параметром подготовки.](common/provisioning.png)
 
 4. Для параметра **Режим подготовки к работе** выберите значение **Automatic** (Автоматически).
 
-    ![Вкладка "Подготовка"](common/provisioning-automatic.png)
+    ![Снимок экрана: раскрывающийся список режима подготовки с вызываемым автоматическим параметром.](common/provisioning-automatic.png)
 
 5. В разделе **учетные данные администратора** введите `https://openmobile.ipass.com/moservices/scim/v1` **URL-адрес клиента**. Введите токен носителя, полученный ранее в **маркере секрета**. Нажмите кнопку **проверить подключение** , чтобы убедиться, что Azure AD может подключиться к ипасс смартконнект. В случае сбоя подключения убедитесь, что учетная запись Ипасс Смартконнект имеет разрешения администратора, и повторите попытку.
 
@@ -110,7 +110,7 @@ ms.locfileid: "88552914"
 
     ![Почтовое уведомление](common/provisioning-notification-email.png)
 
-7. Нажмите **Сохранить**.
+7. Выберите команду **Сохранить**.
 
 8. В разделе **сопоставления** выберите **синхронизировать Azure Active Directory пользователей с ипасс смартконнект**.
 

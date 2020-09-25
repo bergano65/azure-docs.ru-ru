@@ -1,6 +1,6 @@
 ---
 title: Условный доступ для пользователей службы совместной работы B2B — Azure AD
-description: Служба совместной работы Azure Active Directory B2B поддерживает Многофакторную идентификацию (MFA), которая позволяет предоставлять выборочный доступ к корпоративным приложениям.
+description: Узнайте, как применять политики многофакторной идентификации для пользователей Azure Active Directory B2B.
 services: active-directory
 ms.service: active-directory
 ms.subservice: B2B
@@ -11,19 +11,19 @@ author: msmimart
 manager: celestedg
 ms.reviewer: elisolMS
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c0b6ceba4c3c9202e2024b5c163c0e98bb6cbf55
-ms.sourcegitcommit: 4e5560887b8f10539d7564eedaff4316adb27e2c
+ms.openlocfilehash: b47ec082daa6eee4ab593fdb5523087f9eb5b038
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87910211"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91274152"
 ---
 # <a name="conditional-access-for-b2b-collaboration-users"></a>Условный доступ для пользователей службы совместной работы B2B
 
 ## <a name="multi-factor-authentication-for-b2b-users"></a>Многофакторная идентификация для пользователей B2B
 Благодаря службе совместной работы Azure AD B2B организации могут применять политики многофакторной проверки подлинности (MFA) к пользователям B2B. Эти политики можно применять на уровне клиента, приложения или отдельных пользователей точно так же, как для штатных сотрудников и членов организации. Политики MFA применяются на уровне организации ресурсов.
 
-Пример
+Пример.
 1. Администратор или информационный работник компании А приглашает пользователя из компании Б использовать приложение *Foo*, принадлежащее компании A.
 2. При доступе в приложение *Foo*, принадлежащее компании A, настроено обязательное прохождение MFA.
 3. Когда пользователь из компании Б пытается получить доступ к приложению *Foo*, размещенному в клиенте компании А, ему предлагается пройти многофакторную проверку подлинности.
@@ -63,7 +63,7 @@ ms.locfileid: "87910211"
    Get-MsolUser | where { $_.StrongAuthenticationMethods} | select UserPrincipalName, @{n="Methods";e={($_.StrongAuthenticationMethods).MethodType}}
    ```
 
-3. Сброс метода многофакторной проверки подлинности для определенного пользователя, после которого пользователь службы совместной работы B2B должен заново задать методы проверки. Пример
+3. Сброс метода многофакторной проверки подлинности для определенного пользователя, после которого пользователь службы совместной работы B2B должен заново задать методы проверки. Пример.
 
    ```
    Reset-MsolStrongAuthenticationMethodByUpn -UserPrincipalName gsamoogle_gmail.com#EXT#@ WoodGroveAzureAD.onmicrosoft.com

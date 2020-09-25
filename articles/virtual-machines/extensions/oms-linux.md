@@ -14,12 +14,12 @@ ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure-services
 ms.date: 02/18/2020
 ms.author: akjosh
-ms.openlocfilehash: d24463834a49cdfbdb4599770caf579ae94582d8
-ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
+ms.openlocfilehash: 38bbe52e45c348977cdda02a5399f6c89fb91bcc
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "88999824"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91307455"
 ---
 # <a name="log-analytics-virtual-machine-extension-for-linux"></a>Расширение виртуальной машины Log Analytics для Linux
 
@@ -43,7 +43,7 @@ ms.locfileid: "88999824"
 
 | Версия расширения виртуальной машины Log Analytics для Linux | Версия пакета агента Log Analytics | 
 |--------------------------------|--------------------------|
-| 1.13.13 | [1.13.7-0](https://github.com/microsoft/OMS-Agent-for-Linux/releases/tag/OMSAgent_v1.13.7-0) |
+| 1.13.15 | [1.13.9-0](https://github.com/microsoft/OMS-Agent-for-Linux/releases/tag/OMSAgent_v1.13.9-0) |
 | 1.12.25 | [1.12.15-0](https://github.com/microsoft/OMS-Agent-for-Linux/releases/tag/OMSAgent_v1.12.15-0) |
 | 1.11.15 | [1.11.0-9](https://github.com/microsoft/OMS-Agent-for-Linux/releases/tag/OMSAgent_v1.11.0-9) |
 | 1.10.0 | [1.10.0-1](https://github.com/microsoft/OMS-Agent-for-Linux/releases/tag/OMSAgent_v1.10.0-1) |
@@ -211,7 +211,9 @@ az vm extension list --resource-group myResourceGroup --vm-name myVM -o table
 | 19 | Сбой установки пакета OMI | 
 | 20 | Сбой установки пакета SCX |
 | 51 | Это расширение не поддерживается в операционной системе виртуальной машины | |
-| 55 | Не удается подключиться к службе Azure Monitor, отсутствуют необходимые пакеты или заблокирован менеджер пакетов dpkg| Убедитесь, что система имеет доступ к Интернету или что предоставлен допустимый прокси-сервер HTTP. Кроме того проверьте правильность идентификатора рабочей области и убедитесь, что установлены служебные программы curl и tar. |
+| 52 | Не удалось выполнить это расширение из-за отсутствующей зависимости | Проверьте выходные данные и журналы для получения дополнительных сведений о том, какая зависимость отсутствует. |
+| 53 | Сбой расширения из-за отсутствующих или неверных параметров конфигурации | Проверьте выходные данные и журналы, чтобы получить дополнительные сведения о том, что пошло не так. Кроме того, проверьте правильность идентификатора рабочей области и убедитесь, что компьютер подключен к Интернету. |
+| 55 | Не удается подключиться к службе Azure Monitor, отсутствуют необходимые пакеты или заблокирован менеджер пакетов dpkg| Убедитесь, что система либо имеет доступ к Интернету, либо что предоставлен допустимый прокси-сервер HTTP. Кроме того, проверьте правильность идентификатора рабочей области и убедитесь, что установлены служебные программы для залистывания и tar. |
 
 Дополнительные сведения об устранении неполадок см. в [руководстве по устранению неполадок агента Log Analytics для Linux](../../azure-monitor/platform/vmext-troubleshoot.md).
 

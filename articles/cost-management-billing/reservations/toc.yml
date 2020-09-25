@@ -54,6 +54,7 @@
     - name: Данные об использовании для корпоративных клиентов
       href: understand-reserved-instance-usage-ea.md?toc=/azure/cost-management-billing/reservations/toc.json
 - name: Практические руководства
+  expanded: true
   items:
     - name: Выбор приобретаемых ресурсов
       items:

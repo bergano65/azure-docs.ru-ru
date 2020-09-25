@@ -12,14 +12,14 @@ ms.workload: storage
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 09/10/2020
+ms.date: 09/22/2020
 ms.author: b-juche
-ms.openlocfilehash: 1690a844ff700a2975be8e972fd90ba71eeb937c
-ms.sourcegitcommit: 7374b41bb1469f2e3ef119ffaf735f03f5fad484
+ms.openlocfilehash: f83baf7a038ad8cf17421c778deccbc7dc389d97
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/16/2020
-ms.locfileid: "90707787"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91325561"
 ---
 # <a name="metrics-for-azure-netapp-files"></a>Метрики для Azure NetApp Files
 
@@ -37,21 +37,24 @@ Azure NetApp Files предоставляет метрики для выделе
 - *Размер использованного пула*  
     Общий объем логического пространства (гиб), используемого на томах в пуле емкости.  
 
-- *Общий размер моментального снимка пула*    
-    Сумма размера моментального снимка всех томов в пуле.
+- *Общий размер моментального снимка для пула*    
+    Сумма размера моментального снимка из всех томов в пуле.
 
 ## <a name="usage-metrics-for-volumes"></a><a name="volumes"></a>Показатели использования для томов
 
-<!--
-- *Volume Quota Size*    
-    The quota size (GiB) the volume is provisioned with.   
-    This size is the size you selected during capacity pool creation. 
+<!-- ANF-5023: fixed version: 2020.08, 2020.09
+- *Percentage Volume Consumed Size*    
+    The percentage of the volume consumed, including snapshots.  
 -->
+- *Размер выделенного тома*   
+    Подготовленный размер тома
+- *Размер квоты тома*    
+    Размер квоты (гиб), с которой подготавливается том.   
 - *Объем использованного объема тома*   
-    Общее логическое пространство, используемое в томе (гиб).  
+    Логический размер тома (используется байт).  
     Сюда можно отнести логическое пространство используемое активными файлами системы и моментальными снимками.  
 - *Размер моментального снимка тома*   
-   Добавочное логическое пространство, используемое моментальными снимками в томе.  
+   Размер всех моментальных снимков в томе.  
 
 ## <a name="performance-metrics-for-volumes"></a>Метрики производительности для томов
 
@@ -63,11 +66,28 @@ Azure NetApp Files предоставляет метрики для выделе
     Количество операций чтения в томе в секунду.
 - *Запись в секунду*   
     Число операций записи в том в секунду.
+- *Чтение MiB/s*   
+    Пропускная способность чтения (в байтах в секунду).
+- *Запись MiB/s*   
+    Пропускная способность записи в байтах в секунду.
+
+<!-- ANF-4128; 2020.07
+- *Pool Provisioned Throughput*   
+    The total throughput a capacity pool can provide to its volumes based on "Pool Provisioned Size" and "Service Level".
+- *Pool Allocated to Volume Throughput*   
+    The total throughput allocated to volumes in a given capacity pool (that is, the total of the volumes' allocated throughput in the capacity pool).
+-->
+
+<!-- ANF-6443; future
+- *Pool Consumed Throughput*    
+    The total throughput being consumed by volumes in a given capacity pool.
+-->
+
 
 ## <a name="volume-replication-metrics"></a><a name="replication"></a>Метрики репликации томов
 
 - *Состояние репликации тома — работоспособное*   
-    Условие отношения репликации. 
+    Условие отношения репликации. Работоспособное состояние обозначается `1` . Неработоспособное состояние обозначается `0` .
 
 - *Передача репликации тома*    
     Указывает, является ли состояние репликации тома "передачей". 

@@ -7,12 +7,12 @@ ms.topic: how-to
 author: iqshahmicrosoft
 ms.author: iqshah
 ms.date: 08/14/2020
-ms.openlocfilehash: 2d19098ec82fe9361154d798b981341a86decf97
-ms.sourcegitcommit: 3be3537ead3388a6810410dfbfe19fc210f89fec
+ms.openlocfilehash: 751fbbb83f1ccb75cb84453f8c03296f6d1a786c
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89647815"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91275785"
 ---
 # <a name="azure-virtual-machine-image-validation"></a>Проверка образа виртуальной машины Azure
 
@@ -20,7 +20,7 @@ ms.locfileid: "89647815"
 
 Перед отправкой предложения виртуальной машины выполните следующие шаги:
 
-- Разверните виртуальную машину Azure с помощью универсального образа.
+- Разверните виртуальную машину Azure с помощью универсального образа. Дополнительные сведения об [обобщенных образах](https://docs.microsoft.com/azure/marketplace/partner-center-portal/create-azure-vm-technical-asset#generalize-the-image)см. здесь.
 - Выполните проверки.
 
 ## <a name="deploy-an-azure-vm-using-your-generalized-image"></a>Развертывание виртуальной машины Azure из универсального образа
@@ -599,7 +599,9 @@ New-AzResourceGroupDeployment -Name"dplisvvm$postfix" -ResourceGroupName"$rgName
 
 Последний экран позволяет предоставить дополнительные сведения, такие как сведения о доступе к SSH для образа виртуальной машины Linux, а также пояснения к неудачным оценкам, если вы ищете исключения.
 
-Наконец, щелкните Generate Report (Сформировать отчет), чтобы скачать результаты проверки и файлы журналов по всем выполненным тестам в комплекте с ответами на вопросы анкеты. Сохраните результаты в том же контейнере, что и диски VHD.
+Наконец, щелкните Generate Report (Сформировать отчет), чтобы скачать результаты проверки и файлы журналов по всем выполненным тестам в комплекте с ответами на вопросы анкеты. 
+> [!Note]
+> У нескольких издателей есть сценарии, в которых виртуальные машины должны быть заблокированы, так как на виртуальной машине установлены такие программы, как брандмауэры. В этом случае издатели могут загрузить [сертифицированное средство тестирования](https://aka.ms/AzureCertificationTestTool) и предоставить отчет в [службе поддержки издателей Marketplace](https://aka.ms/marketplacepublishersupport) .
 
 ## <a name="how-to-use-powershell-to-consume-the-self-test-api"></a>Использование PowerShell для использования API самотестирования
 
@@ -734,6 +736,6 @@ CURL POST -H “Content-Type:application/json”
 
 ![Результаты JSON из вызова с ФИГУРным вызовом.](media/vm/test-results-json-viewer-3.png)
 
-## <a name="next-step"></a>Следующий шаг
+## <a name="next-step"></a>Дальнейшие действия
 
 - Считывает [распространенные проблемы и исправления URI SAS](common-sas-uri-issues.md).

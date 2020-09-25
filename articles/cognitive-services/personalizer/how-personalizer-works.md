@@ -1,14 +1,16 @@
 ---
 title: Персонализатор. Принцип его работы
 description: В _цикле_ персонализации используется машинное обучение для создания модели, которая прогнозирует наибольшее действие для содержимого. Модель обучена исключительно для ваших данных, отправленных в нее с помощью вызовов ранжирования и наград.
+ms.service: cognitive-services
+ms.subservice: personalizer
 ms.topic: conceptual
 ms.date: 02/18/2020
-ms.openlocfilehash: 836c207213ac52a60e27da6fc957418187059023
-ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
+ms.openlocfilehash: cfbe5cf8c19bfafb38f6149391e09350785ebf9c
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "77623743"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91303613"
 ---
 # <a name="how-personalizer-works"></a>Принцип работы Персонализатора
 
@@ -30,7 +32,7 @@ ms.locfileid: "77623743"
 
 На следующем изображении показан архитектурный процесс вызовов "Ранг" и "Вознаграждение".
 
-![Замещающий текст](./media/how-personalizer-works/personalization-how-it-works.png "Принцип работы персонализации")
+![замещающий текст](./media/how-personalizer-works/personalization-how-it-works.png "Принцип работы персонализации")
 
 1. Вы отправляете _действия с функциями_ и _контекстными функциями_ в API ранжирования.
 
@@ -54,6 +56,6 @@ ms.locfileid: "77623743"
 
 Персонализатор базируется на новейших научных и исследовательских разработках в области [обучения с подкреплением](concepts-reinforcement-learning.md), включая статьи, исследовательскую деятельность и текущие области исследований в Microsoft Research.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Сведения о [наиболее частых сценариях](where-can-you-use-personalizer.md) для персонализации

@@ -4,22 +4,22 @@ description: Из этой статьи вы узнаете, как отобра
 author: anastasia-ms
 ms.author: v-stharr
 ms.date: 02/27/2020
-ms.topic: conceptual
+ms.topic: how-to
 ms.service: azure-maps
 services: azure-maps
 manager: philmea
-ms.openlocfilehash: 8b07b520dec4e9149c6748777a119b68e56c65e9
-ms.sourcegitcommit: 0e8a4671aa3f5a9a54231fea48bcfb432a1e528c
+ms.openlocfilehash: 93cabb566db02de7ef991fe9cdd293f8c399c3a3
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/24/2020
-ms.locfileid: "87126403"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91272962"
 ---
 # <a name="show-traffic-data-on-the-map-using-azure-maps-android-sdk"></a>Отображение данных трафика на карте с помощью Azure Maps пакет SDK для Android
 
 Данные потока и инциденты — это два типа данных трафика, которые могут отображаться на карте. В этом руководство показано, как отобразить оба типа данных трафика. Данные инцидентов состоят из данных на основе точек и строк для таких вещей, как конструкции, замыкания на пути и всякое. Данные о потоке показывают метрики потока трафика в дороге.
 
-## <a name="prerequisites"></a>Обязательные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Перед отображением трафика на карте необходимо [сделать учетную запись Azure](quick-demo-map-app.md#create-an-azure-maps-account)и [получить ключ подписки](quick-demo-map-app.md#get-the-primary-key-for-your-account). Затем необходимо установить [Azure Maps пакет SDK для Android](https://docs.microsoft.com/azure/azure-maps/how-to-use-android-map-control-library) и загрузить карту.
 

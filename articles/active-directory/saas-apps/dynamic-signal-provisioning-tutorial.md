@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: article
 ms.date: 05/07/2019
 ms.author: jeedes
-ms.openlocfilehash: 4d578e089edbd99f8a0d37d805c297b42f60b3f4
-ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
+ms.openlocfilehash: 9a11ff33245bf92e225f0f2382f6e873eab1338c
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88555670"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91323876"
 ---
 # <a name="tutorial-configure-dynamic-signal-for-automatic-user-provisioning"></a>Учебник. Настройка динамического сигнала для автоматической подготовки пользователей
 
@@ -90,11 +90,11 @@ ms.locfileid: "88555670"
 
 3. Выберите вкладку **Подготовка**.
 
-    ![Вкладка "Подготовка"](common/provisioning.png)
+    ![Снимок экрана параметров управления с вызываемым параметром подготовки.](common/provisioning.png)
 
 4. Для параметра **Режим подготовки к работе** выберите значение **Automatic** (Автоматически).
 
-    ![Вкладка "Подготовка"](common/provisioning-automatic.png)
+    ![Снимок экрана: раскрывающийся список режима подготовки с вызываемым автоматическим параметром.](common/provisioning-automatic.png)
 
 5. В разделе **учетные данные администратора** введите **URL-адрес клиента** и **маркер секрета** учетной записи динамического сигнала, как описано в шаге 6.
 
@@ -114,7 +114,7 @@ ms.locfileid: "88555670"
 
     ![Почтовое уведомление](common/provisioning-notification-email.png)
 
-9. Нажмите **Сохранить**.
+9. Выберите команду **Сохранить**.
 
 10. В разделе **сопоставления** выберите **синхронизировать Azure Active Directory пользователей с динамическим сигналом**.
 

@@ -5,12 +5,12 @@ author: florianborn71
 ms.author: flborn
 ms.date: 02/03/2020
 ms.topic: article
-ms.openlocfilehash: 81480bea735017d3fc59e9c6cf126c2146a0c968
-ms.sourcegitcommit: c5021f2095e25750eb34fd0b866adf5d81d56c3a
+ms.openlocfilehash: 31fde0c7af652bc50eb5f06743c5dd5807a1762e
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88798471"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91323731"
 ---
 # <a name="system-requirements"></a>Требования к системе
 
@@ -64,6 +64,17 @@ ms.locfileid: "88798471"
 
 Сведения об устранении неполадок в сети см. в [руководстве по устранению неполадок](../resources/troubleshoot.md#unstable-holograms).
 
+### <a name="network-ports"></a>Сетевые порты
+
+Убедитесь, что брандмауэры (на устройстве, в маршрутизаторах и т. д.) не блокируют следующие порты:
+
+| Порт              | Протокол | Allow    | Описание |
+|-------------------|----------|----------|-------------|
+| 50051             | TCP      | Исходящий | Начальное соединение (подтверждение HTTP) |
+| 8266              | UDP      | Исходящий | Передача данных |
+| 5000, 5433, 8443  | TCP      | Исходящий | Требуется для [средства арринспектор](../resources/tools/arr-inspector.md)|
+
+
 ## <a name="software"></a>Программное обеспечение
 
 Необходимо установить следующее программное обеспечение:
@@ -71,7 +82,7 @@ ms.locfileid: "88798471"
 * Последняя версия **Visual Studio 2019** [(Загрузка)](https://visualstudio.microsoft.com/vs/older-downloads/)
 * [Средства Visual Studio для службы "Смешанная реальность"](https://docs.microsoft.com/windows/mixed-reality/install-the-tools). В частности, обязательно установить следующие *рабочие нагрузки*:
   * **Разработка классических приложений на C++** .
-  * **Разработка приложений универсальной платформы Windows (UWP)**
+  * **Разработка приложений для универсальной платформы Windows (UWP)** .
 * **Windows SDK 10.0.18362.0** [(Загрузка)](https://developer.microsoft.com/windows/downloads/windows-10-sdk)
 * **Git** [(Загрузка)](https://git-scm.com/downloads)
 * Необязательно. для просмотра видеопотока с сервера на настольном компьютере необходимы **расширения HEVC Video** [(ссылка Microsoft Store)](https://www.microsoft.com/p/hevc-video-extensions/9nmzlz57r3t7). Убедитесь, что установлена последняя версия, проверив наличие обновлений в хранилище.

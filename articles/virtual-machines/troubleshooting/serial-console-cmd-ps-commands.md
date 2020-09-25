@@ -13,12 +13,12 @@ ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure-services
 ms.date: 08/14/2018
 ms.author: alsin
-ms.openlocfilehash: 571df9c07e71682e2be51a73e3837c79cb074c3a
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: ef533b3566ac557b57f1435a2a9b2dbe26896993
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87028470"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91306894"
 ---
 # <a name="windows-commands---cmd-and-powershell"></a>Команды Windows — CMD и PowerShell
 
@@ -34,7 +34,7 @@ SAC позволяет подключаться к вашей операцион
 
 Из-за ограниченного буфера экрана SAC более длинные команды проще вводить в локальном текстовом редакторе, а затем вставлять в SAC.
 
-## <a name="view-and-edit-windows-registry-settings"></a>Просмотр и изменение параметров реестра Windows
+## <a name="view-and-edit-windows-registry-settings-using-cmd"></a>Просмотр и изменение параметров реестра Windows с помощью CMD
 ### <a name="verify-rdp-is-enabled"></a>Проверка включения RDP
 `reg query "HKLM\SYSTEM\CurrentControlSet\Control\Terminal Server" /v fDenyTSConnections`
 
@@ -49,7 +49,7 @@ SAC позволяет подключаться к вашей операцион
 
 Второй ключ (в \Policies) потребуется только в том случае, если настроен соответствующий параметр групповой политики. Значение будет перезаписано при следующем обновлении групповой политики, если оно настроено в групповой политике.
 
-## <a name="manage-windows-services"></a>Управление службами Windows
+## <a name="manage-windows-services-using-cmd"></a>Управление службами Windows с помощью CMD
 
 ### <a name="view-service-state"></a>Отображение состояния службы
 `sc query termservice`
@@ -70,16 +70,16 @@ SAC позволяет подключаться к вашей операцион
 ### <a name="start-service"></a>Запуск службы
 `net start termservice`
 
-or
+или
 
 `sc start termservice`
 ### <a name="stop-service"></a>Остановка службы
 `net stop termservice`
 
-or
+или
 
 `sc stop termservice`
-## <a name="manage-networking-features"></a>Управление компонентами сети
+## <a name="manage-networking-features-using-cmd"></a>Управление сетевыми компонентами с помощью CMD
 ### <a name="show-nic-properties"></a>Отображение свойств сетевого адаптера
 `netsh interface show interface`
 ### <a name="show-ip-properties"></a>Отображение свойств IP
@@ -120,7 +120,7 @@ or
 Вы можете использовать эту команду при устранении неполадок, чтобы временно исключить брандмауэр Windows. Он будет включен при следующей перезагрузке или при включении с помощью приведенной ниже команды. Не останавливайте службу брандмауэра Windows (MPSSVC) или службу "Базовый модуль фильтрации" (BFE), чтобы исключить брандмауэр Windows. Остановка служб MPSSVC или BFE приведет к блокировке всех подключений.
 ### <a name="enable-windows-firewall"></a>Включение брандмауэра Windows
 `netsh advfirewall set allprofiles state on`
-## <a name="manage-users-and-groups"></a>Управление пользователями и группами
+## <a name="manage-users-and-groups-using-cmd"></a>Управление пользователями и группами с помощью CMD
 ### <a name="create-local-user-account"></a>Создание локальной учетной записи пользователя
 `net user /add <username> <password>`
 ### <a name="add-local-user-to-local-group"></a>Добавление локального пользователя в локальную группу
@@ -150,7 +150,7 @@ or
 
 ### <a name="view-local-groups"></a>Отображение локальных групп
 `net localgroup`
-## <a name="manage-the-windows-event-log"></a>Управление журналом событий Windows
+## <a name="manage-the-windows-event-log-using-cmd"></a>Управление журналом событий Windows с помощью CMD
 ### <a name="query-event-log-errors"></a>Запрос ошибок в журнале событий
 `wevtutil qe system /c:10 /f:text /q:"Event[System[Level=2]]" | more`
 
@@ -165,7 +165,7 @@ or
 Используйте `604800000` для поиска за последнюю неделю вместо суток.
 ### <a name="query-event-log-by-event-id-provider-and-eventdata-in-the-last-7-days"></a>Запрос журнала событий по идентификатору события, поставщику и данным событий за последнюю неделю
 `wevtutil qe security /c:1 /f:text /q:"Event[System[Provider[@Name='Microsoft-Windows-Security-Auditing'] and EventID=4624 and TimeCreated[timediff(@SystemTime) <= 604800000]] and EventData[Data[@Name='TargetUserName']='<username>']]" | more`
-## <a name="view-or-remove-installed-applications"></a>Просмотр и удаление установленных приложений
+## <a name="view-or-remove-installed-applications-using-cmd"></a>Просмотр или удаление установленных приложений с помощью CMD
 ### <a name="list-installed-applications"></a>Вывод списка установленных приложений
 `wmic product get Name,InstallDate | sort /r | more`
 
@@ -175,7 +175,7 @@ or
 
 Замените `<name>` именем, возвращенным в приведенной выше команде, для приложения, которое вы хотите удалить.
 
-## <a name="file-system-management"></a>Управление файловой системой
+## <a name="file-system-management-using-cmd"></a>Управление файловой системой с помощью CMD
 ### <a name="get-file-version"></a>Получение версии файла
 `wmic datafile where "drive='C:' and path='\\windows\\system32\\drivers\\' and filename like 'netvsc%'" get version /format:list`
 
@@ -206,15 +206,15 @@ or
 ## <a name="manage-group-policy"></a>Управление групповой политикой
 ### <a name="force-group-policy-update"></a>Принудительное обновление групповой политики
 `gpupdate /force /wait:-1`
-## <a name="miscellaneous-tasks"></a>Прочие задачи
+## <a name="miscellaneous-tasks-using-cmd"></a>Прочие задачи с помощью CMD
 ### <a name="show-os-version"></a>Отображение версии ОС
 `ver`
 
-or
+или
 
 `wmic os get caption,version,buildnumber /format:list`
 
-or
+или
 
 `systeminfo  find /i "os name"`
 
@@ -222,7 +222,7 @@ or
 ### <a name="view-os-install-date"></a>Отображение даты установки ОС
 `systeminfo | find /i "original"`
 
-or
+или
 
 `wmic os get installdate`
 ### <a name="view-last-boot-time"></a>Отображение времени последней загрузки
@@ -230,7 +230,7 @@ or
 ### <a name="view-time-zone"></a>Отображение часового пояса
 `systeminfo | find /i "time zone"`
 
-or
+или
 
 `wmic timezone get caption,standardname /format:list`
 ### <a name="restart-windows"></a>Перезапуск Windows
@@ -259,7 +259,7 @@ or
 
 `remove-module psreadline`
 
-## <a name="view-and-edit-windows-registry-settings"></a>Просмотр и изменение параметров реестра Windows
+## <a name="view-and-edit-windows-registry-settings-using-powershell"></a>Просмотр и изменение параметров реестра Windows с помощью PowerShell
 ### <a name="verify-rdp-is-enabled"></a>Проверка включения RDP
 `get-itemproperty -path 'hklm:\system\curRentcontrolset\control\terminal server' -name 'fdenytsconNections'`
 
@@ -272,7 +272,7 @@ or
 `set-itemproperty -path 'hklm:\software\policies\microsoft\windows nt\terminal services' -name 'fdenytsconNections' 0 -type dword`
 
 Второй ключ (в \Policies) потребуется только в том случае, если настроен соответствующий параметр групповой политики. Значение будет перезаписано при следующем обновлении групповой политики, если оно настроено в групповой политике.
-## <a name="manage-windows-services"></a>Управление службами Windows
+## <a name="manage-windows-services-using-powershell"></a>Управление службами Windows с помощью PowerShell
 ### <a name="view-service-details"></a>Отображение сведений о службе
 `get-wmiobject win32_service -filter "name='termservice'" |  format-list Name,DisplayName,State,StartMode,StartName,PathName,ServiceType,Status,ExitCode,ServiceSpecificExitCode,ProcessId`
 
@@ -291,11 +291,11 @@ or
 `start-service termservice`
 ### <a name="stop-service"></a>Остановка службы
 `stop-service termservice`
-## <a name="manage-networking-features"></a>Управление компонентами сети
+## <a name="manage-networking-features-using-powershell"></a>Управление сетевыми компонентами с помощью PowerShell
 ### <a name="show-nic-properties"></a>Отображение свойств сетевого адаптера
 `get-netadapter | where {$_.ifdesc.startswith('Microsoft Hyper-V Network Adapter')} |  format-list status,name,ifdesc,macadDresS,driverversion,MediaConNectState,MediaDuplexState`
 
-or
+или
 
 `get-wmiobject win32_networkadapter -filter "servicename='netvsc'" |  format-list netenabled,name,macaddress`
 
@@ -305,7 +305,7 @@ or
 ### <a name="enable-nic"></a>Включение сетевого адаптера
 `get-netadapter | where {$_.ifdesc.startswith('Microsoft Hyper-V Network Adapter')} | enable-netadapter`
 
-or
+или
 
 `(get-wmiobject win32_networkadapter -filter "servicename='netvsc'").enable()`
 
@@ -322,7 +322,7 @@ or
 > [!NOTE]
 > Командлет Write-Progress может не работать с этой командой. Чтобы отключить индикатор выполнения, можно использовать PowerShell в качестве меры по устранению рисков `$ProgressPreference = "SilentlyContinue"` .
 
-or
+или
 
 `get-wmiobject Win32_PingStatus -Filter 'Address="8.8.8.8"' | format-table -autosize IPV4Address,ReplySize,ResponseTime`
 
@@ -330,7 +330,7 @@ or
 ### <a name="port-ping"></a>Проверка связи с портом
 `test-netconnection -ComputerName bing.com -Port 80`
 
-or
+или
 
 `(new-object Net.Sockets.TcpClient).BeginConnect('bing.com','80',$null,$null).AsyncWaitHandle.WaitOne(300)`
 
@@ -338,7 +338,7 @@ or
 ### <a name="test-dns-name-resolution"></a>Тестирование разрешений DNS-имен
 `resolve-dnsname bing.com`
 
-or
+или
 
 `[System.Net.Dns]::GetHostAddresses('bing.com')`
 
@@ -348,7 +348,7 @@ or
 ### <a name="show-windows-firewall-rule-by-port"></a>Отображение правила брандмауэра Windows по номеру порта
 `get-netfirewallportfilter | where {$_.localport -eq 3389} | foreach {Get-NetFirewallRule -Name $_.InstanceId} | format-list Name,Enabled,Profile,Direction,Action`
 
-or
+или
 
 `(new-object -ComObject hnetcfg.fwpolicy2).rules | where {$_.localports -eq 3389 -and $_.direction -eq 1} | format-table Name,Enabled`
 
@@ -357,13 +357,13 @@ or
 `Set-NetFirewallProfile -Profile Domain,Public,Private -Enabled False`
 
 Команда `Set-NetFirewallProfile` доступна в версии 2012 и выше. В версии 2008R2 используйте `netsh advfirewall`, как указано в разделе CMD выше.
-## <a name="manage-users-and-groups"></a>Управление пользователями и группами
+## <a name="manage-users-and-groups-using-powershell"></a>Управление пользователями и группами с помощью PowerShell
 ### <a name="create-local-user-account"></a>Создание локальной учетной записи пользователя
 `new-localuser <name>`
 ### <a name="verify-user-account-is-enabled"></a>Проверка включения учетной записи пользователя
 `(get-localuser | where {$_.SID -like "S-1-5-21-*-500"}).Enabled`
 
-or
+или
 
 `(get-wmiobject Win32_UserAccount -Namespace "root\cimv2" -Filter "SID like 'S-1-5-%-500'").Disabled`
 
@@ -377,7 +377,7 @@ or
 ### <a name="view-user-account-properties"></a>Просмотр свойств учетной записи пользователя
 `get-localuser | where {$_.SID -like "S-1-5-21-*-500"} | format-list *`
 
-or
+или
 
 `get-wmiobject Win32_UserAccount -Namespace "root\cimv2" -Filter "SID like 'S-1-5-%-500'" |  format-list Name,Disabled,Status,Lockout,Description,SID`
 
@@ -386,7 +386,7 @@ or
 `(get-localgroup).name | sort` `(get-wmiobject win32_group).Name | sort`
 
 Команда `Get-LocalUser` доступна в версии 2012 и выше. В версии 2008R2 используйте `Get-WmiObject`.
-## <a name="manage-the-windows-event-log"></a>Управление журналом событий Windows
+## <a name="manage-the-windows-event-log-using-powershell"></a>Управление журналом событий Windows с помощью PowerShell
 ### <a name="query-event-log-errors"></a>Запрос ошибок в журнале событий
 `get-winevent -logname system -maxevents 1 -filterxpath "*[System[Level=2]]" | more`
 
@@ -401,12 +401,12 @@ or
 Используйте `604800000` для поиска за последнюю неделю вместо суток. |
 ### <a name="query-event-log-by-event-id-provider-and-eventdata-in-the-last-7-days"></a>Запрос журнала событий по идентификатору события, поставщику и данным событий за последнюю неделю
 `get-winevent -logname system -maxevents 1 -filterxpath "*[System[Provider[@Name='Microsoft-Windows-Security-Auditing'] and EventID=4624 and TimeCreated[timediff(@SystemTime) <= 604800000]] and EventData[Data[@Name='TargetUserName']='<username>']]" | more`
-## <a name="view-or-remove-installed-applications"></a>Просмотр и удаление установленных приложений
+## <a name="view-or-remove-installed-applications-using-powershell"></a>Просмотр и удаление установленных приложений с помощью PowerShell
 ### <a name="list-installed-software"></a>Вывод списка установленного программного обеспечения
 `get-wmiobject win32_product | select installdate,name | sort installdate -descending | more`
 ### <a name="uninstall-software"></a>Удаление программного обеспечения
 `(get-wmiobject win32_product -filter "Name='<name>'").Uninstall()`
-## <a name="file-system-management"></a>Управление файловой системой
+## <a name="file-system-management-using-powershell"></a>Управление файловой системой с помощью PowerShell
 ### <a name="get-file-version"></a>Получение версии файла
 `(get-childitem $env:windir\system32\drivers\netvsc*.sys).VersionInfo.FileVersion`
 
@@ -415,7 +415,7 @@ or
 `$path='c:\bin';md $path;cd $path;(new-object net.webclient).downloadfile( ('htTp:/'+'/download.sysinternals.com/files/SysinternalsSuite.zip'),"$path\SysinternalsSuite.zip");(new-object -com shelL.apPlication).namespace($path).CopyHere( (new-object -com shelL.apPlication).namespace("$path\SysinternalsSuite.zip").Items(),16)`
 
 В этом примере создается папка `c:\bin`, затем загружается и извлекается набор инструментов Sysinternals в `c:\bin`.
-## <a name="miscellaneous-tasks"></a>Прочие задачи
+## <a name="miscellaneous-tasks-using-powershell"></a>Прочие задачи с помощью PowerShell
 ### <a name="show-os-version"></a>Отображение версии ОС
 `get-wmiobject win32_operatingsystem | format-list caption,version,buildnumber`
 ### <a name="view-os-install-date"></a>Отображение даты установки ОС

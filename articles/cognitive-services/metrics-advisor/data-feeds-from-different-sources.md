@@ -6,16 +6,16 @@ services: cognitive-services
 author: aahill
 manager: nitinme
 ms.service: cognitive-services
-ms.subservice: ''
+ms.subservice: metrics-advisor
 ms.topic: conceptual
 ms.date: 09/04/2020
 ms.author: aahi
-ms.openlocfilehash: f9ab340e73ce8d58da63a0089073ac4770bf2d52
-ms.sourcegitcommit: bdd5c76457b0f0504f4f679a316b959dcfabf1ef
+ms.openlocfilehash: 343db078880f55701730e096c3da85a6a7e5428a
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "90973381"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91324473"
 ---
 # <a name="add-data-feeds-from-different-data-sources-to-metrics-advisor"></a>Добавление веб-каналов данных из разных источников данных в помощник по метрикам
 
@@ -37,19 +37,19 @@ ms.locfileid: "90973381"
 
 | Источники данных | Типы проверки подлинности |
 |-------------| ---------------------|
-|[**Azure Application Insights**](#appinsights)|  Базовый |
-|[**Хранилище BLOB-объектов Azure (JSON)**](#blob) | Базовый<br>ManagedIdentity|
-|[**Azure Cosmos DB (SQL)**](#cosmosdb) | Базовый |
-|[**Обозреватель данных Azure (Kusto)**](#kusto) | Базовый<br>ManagedIdentity|
-|[**Azure Data Lake Storage 2-го поколения**](#adl) | Базовый<br>DataLakeGen2SharedKey<br>Субъект-служба<br>Субъект-служба из хранилища ключей<br> |
-|[**База данных SQL Azure/SQL Server**](#sql) | Базовый<br>ManagedIdentity<br>Субъект-служба<br>Субъект-служба из хранилища ключей<br>азуресклконнектионстринг
-|[**Хранилище таблиц Azure**](#table) | Базовый | 
-|[**ElasticSearch**](#es) | Базовый |
-|[**HTTP-запрос**](#http) | Базовый | 
-|[**InfluxDB (Инфлукскл)**](#influxdb) | Базовый |
-|[**MongoDB**](#mongodb) | Базовый |
-|[**MySQL**](#mysql) | Базовый |
-|[**PostgreSQL**](#pgsql)| Базовый|
+|[**Azure Application Insights**](#appinsights)|  Basic |
+|[**Хранилище BLOB-объектов Azure (JSON)**](#blob) | Basic<br>ManagedIdentity|
+|[**Azure Cosmos DB (SQL)**](#cosmosdb) | Basic |
+|[**Обозреватель данных Azure (Kusto)**](#kusto) | Basic<br>ManagedIdentity|
+|[**Azure Data Lake Storage 2-го поколения**](#adl) | Basic<br>DataLakeGen2SharedKey<br>Субъект-служба<br>Субъект-служба из хранилища ключей<br> |
+|[**База данных SQL Azure/SQL Server**](#sql) | Basic<br>ManagedIdentity<br>Субъект-служба<br>Субъект-служба из хранилища ключей<br>азуресклконнектионстринг
+|[**Хранилище таблиц Azure**](#table) | Basic | 
+|[**ElasticSearch**](#es) | Basic |
+|[**HTTP-запрос**](#http) | Basic | 
+|[**InfluxDB (Инфлукскл)**](#influxdb) | Basic |
+|[**MongoDB**](#mongodb) | Basic |
+|[**MySQL**](#mysql) | Basic |
+|[**PostgreSQL**](#pgsql)| Basic|
 
 Создайте **сущность учетных данных** и используйте ее для проверки подлинности в источниках данных. В следующих разделах указываются параметры, необходимые для *обычной* проверки подлинности. 
 
@@ -82,7 +82,7 @@ ms.locfileid: "90973381"
 
 * **Контейнер**: помощник по метрикам ждет, что данные временных рядов хранятся в виде файлов BLOB-объектов (один большой двоичный объект на метку времени) в одном контейнере. Это поле имени контейнера.
 
-* **Шаблон большого двоичного объекта**: это шаблон имен файлов BLOB-объектов. Например: `/%Y/%m/X_%Y-%m-%d-%h-%M.json`. Поддерживаются следующие параметры:
+* **Шаблон большого двоичного объекта**: это шаблон имен файлов BLOB-объектов. Например, так: `/%Y/%m/X_%Y-%m-%d-%h-%M.json`. Поддерживаются следующие параметры:
   * `%Y` год в формате `yyyy`
   * `%m` — месяц в формате `MM`
   * `%d` — день в формате `dd`
@@ -119,7 +119,7 @@ ms.locfileid: "90973381"
 * **Идентификатор коллекции**: идентификатор коллекции для запроса. Это можно найти на странице **Обзор** в разделе **контейнеры** .
 * **SQL**-запрос — запрос SQL, позволяющий получать и формулировать данные в многомерных данных временных рядов. В запросе можно использовать `@StartTime` `@EndTime` переменные и. Они должны быть отформатированы: `yyyy-MM-dd HH:mm:ss` .
 
-    Пример запроса
+    Образец запроса:
     
     ``` mssql
     select StartDate, JobStatusId, COUNT(*) AS JobNumber from IngestionJobs WHERE and StartDate = @StartTime
@@ -198,7 +198,7 @@ The timestamp field must match one of these two formats:
 
   * `@StartTime`: значение типа DateTime в формате `yyyy-MM-dd HH:mm:ss`
 
-    Пример запроса
+    Образец запроса:
     
     ``` mssql
     select StartDate, JobStatusId, COUNT(*) AS JobNumber from IngestionJobs WHERE and StartDate = @StartTime
@@ -232,7 +232,7 @@ The timestamp field must match one of these two formats:
 
 ## <a name="span-idhttphttp-requestspan"></a><span id="http">HTTP-запрос</span>
 
-* **URL-адрес запроса**: URL-адрес HTTP, который может возвращать JSON. Заполнители% Y,% m,% d,% h,% M поддерживаются:% Y = year в формате гггг,% m = месяц в формате MM,% d = день в формате DD,% h = час в формате чч,% M = минута в формате mm. Например: `http://microsoft.com/ProjectA/%Y/%m/X_%Y-%m-%d-%h-%M`.
+* **URL-адрес запроса**: URL-адрес HTTP, который может возвращать JSON. Заполнители% Y,% m,% d,% h,% M поддерживаются:% Y = year в формате гггг,% m = месяц в формате MM,% d = день в формате DD,% h = час в формате чч,% M = минута в формате mm. Например, так: `http://microsoft.com/ProjectA/%Y/%m/X_%Y-%m-%d-%h-%M`.
 * **HTTP-метод запроса**: используйте Get или POST.
 * **Заголовок запроса**: можно добавить обычную проверку подлинности. 
 * **Полезные данные запроса**: поддерживаются только полезные данные JSON. @StartTimeВ полезных данных поддерживается заполнитель. Ответ должен быть в следующем формате JSON: [{"timestamp": "2018-01-01T00:00:00Z", "Market": "en-US", "Count": 11, "доход": 1,23}, {"timestamp": "2018-01-01T00:00:00Z", "DataMarket": "zh-CN", "Count": 22, "доход": 4,56}]. (например, когда принимается значение 2020-06-21T00:00:00Z, @StartTime = 2020-06-21T00:00:00.0000000 + 00:00)
