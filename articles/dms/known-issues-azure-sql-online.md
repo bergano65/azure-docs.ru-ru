@@ -10,14 +10,14 @@ ms.reviewer: craigg
 ms.service: dms
 ms.workload: data-services
 ms.custom: seo-lt-2019
-ms.topic: article
+ms.topic: troubleshooting
 ms.date: 02/20/2020
-ms.openlocfilehash: da0c00f0b4a8f2c49996fbcb9b34ee4a1ab65273
-ms.sourcegitcommit: 9b5c20fb5e904684dc6dd9059d62429b52cb39bc
+ms.openlocfilehash: 6648a20e03facad4b791cacba8513f9f1aa7d2f0
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85856651"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91291917"
 ---
 # <a name="known-issuesmigration-limitations-with-online-migrations-to-azure-sql-database"></a>Известные проблемы и ограничения миграции при оперативной миграции в базу данных SQL Azure
 
@@ -40,7 +40,7 @@ ms.locfileid: "85856651"
 
 **Обходное решение**
 
-Для этого выполните следующие действия:
+Выполните следующие действия.
 
 1. Найдите темпоральные таблицы в схеме источника, используя приведенный ниже запрос.
 
@@ -66,7 +66,7 @@ ms.locfileid: "85856651"
 
 **Обходное решение**
 
-Для этого выполните следующие действия:
+Выполните следующие действия.
 
 1. Найдите таблицы пользователя, включающие столбцы с типом данных hierarchyid, используя приведенный ниже запрос.
 
@@ -82,7 +82,7 @@ ms.locfileid: "85856651"
 
 **Обходное решение**
 
-Для этого выполните следующие действия:
+Выполните следующие действия.
 
 1. В базе данных-источнике найдите триггеры, которые сейчас активны, используя приведенный ниже запрос:
 

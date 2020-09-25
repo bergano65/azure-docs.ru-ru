@@ -1,14 +1,16 @@
 ---
 title: Определение схемы приложения
 description: Приложение LUIS представляется в `.json` или, а также `.lu` включает все объекты, сущности, пример фразы продолжительностью, функции и параметры.
+ms.service: cognitive-services
+ms.subservice: language-understanding
 ms.topic: reference
 ms.date: 08/22/2020
-ms.openlocfilehash: 816a6c50129f37a55ab3dba72319358e832a6b8b
-ms.sourcegitcommit: afa1411c3fb2084cccc4262860aab4f0b5c994ef
+ms.openlocfilehash: db4fd52dad82542f20e58ebb3b8526c5be7f2f88
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/23/2020
-ms.locfileid: "88756794"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91327329"
 ---
 # <a name="app-schema-definition"></a>Определение схемы приложения
 
@@ -63,7 +65,7 @@ ms.locfileid: "88756794"
 }
 ```
 
-| element                  | Комментировать                              |
+| element                  | Комментарий                              |
 |--------------------------|--------------------------------------|
 | "иерархии": [],     | Не рекомендуется, использовать [сущности машинного обучения](luis-concept-entity-types.md).   |
 | "Composite": [],        | Не рекомендуется, использовать [сущности машинного обучения](luis-concept-entity-types.md). Ссылка на [составной объект](reference-entity-composite.md) . |

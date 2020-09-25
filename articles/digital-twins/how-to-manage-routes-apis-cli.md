@@ -7,12 +7,12 @@ ms.author: alkarche
 ms.date: 6/23/2020
 ms.topic: how-to
 ms.service: digital-twins
-ms.openlocfilehash: 27b745353521a44733c46170a5f5952c194c2343
-ms.sourcegitcommit: 58d3b3314df4ba3cabd4d4a6016b22fa5264f05a
+ms.openlocfilehash: 2cde352738c1aa545c77cbcf5d974030cd75b1e8
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89293512"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91326530"
 ---
 # <a name="manage-endpoints-and-routes-in-azure-digital-twins-apis-and-cli"></a>Управление конечными точками и маршрутами в Azure Digital двойников (API и CLI)
 
@@ -27,9 +27,9 @@ ms.locfileid: "89293512"
 ## <a name="prerequisites"></a>Предварительные требования
 
 * Вам потребуется **учетная запись Azure** (вы можете настроить ее [здесь](https://azure.microsoft.com/free/?WT.mc_id=A261C142F)бесплатно).
-* Вам потребуется **экземпляр Azure Digital двойников** в подписке Azure. Если у вас еще нет экземпляра, его можно создать, выполнив действия, описанные в разделе [*инструкции. Настройка экземпляра и проверки подлинности*](how-to-set-up-instance-scripted.md). Используйте следующие значения из программы установки, которые можно использовать далее в этой статье:
+* Вам потребуется **экземпляр Azure Digital двойников** в подписке Azure. Если у вас еще нет экземпляра, его можно создать, выполнив действия, описанные в разделе [*инструкции. Настройка экземпляра и проверки подлинности*](how-to-set-up-instance-portal.md). Используйте следующие значения из программы установки, которые можно использовать далее в этой статье:
     - Имя экземпляра
-    - групп ресурсов;
+    - Группа ресурсов
     
 ## <a name="create-an-endpoint-for-azure-digital-twins"></a>Создание конечной точки для Azure Digital двойников
 
@@ -44,7 +44,7 @@ ms.locfileid: "89293512"
 
 ### <a name="create-an-event-grid-endpoint"></a>Создание конечной точки сетки событий
 
-В следующем примере показано, как создать конечную точку типа "Сетка событий" с помощью Azure CLI. Вы можете использовать [Azure Cloud Shell](https://shell.azure.com)или [установить интерфейс командной строки локально](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest).
+В следующем примере показано, как создать конечную точку типа "Сетка событий" с помощью Azure CLI. Вы можете использовать [Azure Cloud Shell](https://shell.azure.com)или [установить интерфейс командной строки локально](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest&preserve-view=true).
 
 Сначала создайте раздел "Сетка событий". Вы можете использовать следующую команду или просмотреть действия более подробно, перейдя [к разделу *Создание пользовательского раздела* ](../event-grid/custom-event-quickstart-portal.md#create-a-custom-topic) краткого руководства по *событиям* сетки событий.
 
