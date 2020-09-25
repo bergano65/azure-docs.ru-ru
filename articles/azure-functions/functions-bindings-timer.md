@@ -7,16 +7,16 @@ ms.topic: reference
 ms.date: 09/08/2018
 ms.author: cshoe
 ms.custom: devx-track-csharp, devx-track-python
-ms.openlocfilehash: 4b2d882e6956fa23464e620e9820b0616e13b6f6
-ms.sourcegitcommit: 6e1124fc25c3ddb3053b482b0ed33900f46464b3
+ms.openlocfilehash: 69ba8d1735d16791d62b6b04e49c0d2fb7484959
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90563093"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91325799"
 ---
-# <a name="timer-trigger-for-azure-functions"></a>Триггеры таймера для службы "Функции Azure" 
+# <a name="timer-trigger-for-azure-functions"></a>Триггеры таймера для службы "Функции Azure"
 
-В этой статье описывается, как работать с триггерами таймера в службе "Функции Azure". Триггер таймера позволяет выполнять функцию по расписанию. 
+В этой статье описывается, как работать с триггерами таймера в службе "Функции Azure". Триггер таймера позволяет выполнять функцию по расписанию.
 
 [!INCLUDE [intro](../../includes/functions-bindings-intro.md)]
 
@@ -80,6 +80,21 @@ public static void Run(TimerInfo myTimer, ILogger log)
 }
 ```
 
+# <a name="java"></a>[Java](#tab/java)
+
+Следующий пример функции активируется и выполняется каждые пять минут. Аннотация `@TimerTrigger` для функции определяет расписание, используя тот же формат строки, что и [выражения CRON](https://en.wikipedia.org/wiki/Cron#CRON_expression).
+
+```java
+@FunctionName("keepAlive")
+public void keepAlive(
+  @TimerTrigger(name = "keepAliveTrigger", schedule = "0 */5 * * * *") String timerInfo,
+      ExecutionContext context
+ ) {
+     // timeInfo is a JSON string, you can deserialize it to an object using your favorite JSON library
+     context.getLogger().info("Timer is triggered: " + timerInfo);
+}
+```
+
 # <a name="javascript"></a>[JavaScript](#tab/javascript)
 
 В следующем примере показаны привязка триггера таймера в файле *function.json* и [функция JavaScript](functions-reference-node.md), которая использует эту привязку. Эта функция выполняет запись в журнал, указывая, когда ее вызов выполняется из-за пропущенного запуска по расписанию. [Объект Timer](#usage) передается в функцию.
@@ -111,9 +126,44 @@ module.exports = function (context, myTimer) {
 };
 ```
 
+# <a name="powershell"></a>[PowerShell](#tab/powershell)
+
+В следующем примере показано, как настроить *function.js* для и *run.ps1* файла для триггера таймера в [PowerShell](./functions-reference-powershell.md).
+
+```json
+{
+  "bindings": [
+    {
+      "name": "Timer",
+      "type": "timerTrigger",
+      "direction": "in",
+      "schedule": "0 */5 * * * *"
+    }
+  ]
+}
+```
+
+```powershell
+# Input bindings are passed in via param block.
+param($Timer)
+
+# Get the current universal time in the default string format.
+$currentUTCtime = (Get-Date).ToUniversalTime()
+
+# The 'IsPastDue' property is 'true' when the current function invocation is later than scheduled.
+if ($Timer.IsPastDue) {
+    Write-Host "PowerShell timer is running late!"
+}
+
+# Write an information log with the current time.
+Write-Host "PowerShell timer trigger function ran! TIME: $currentUTCtime"
+```
+
+Экземпляр [объекта Timer](#usage) передается в качестве первого аргумента функции.
+
 # <a name="python"></a>[Python](#tab/python)
 
-В следующем примере используется привязка триггера таймера, конфигурация которой описана в *function.js* файле. Фактическая [функция Python](functions-reference-python.md) , использующая привязку, описана в файле * __init__. корректировки* . Объект, переданный в функцию, имеет тип [Azure. functions. тимеррекуест](/python/api/azure-functions/azure.functions.timerrequest). Логика функции записывает в журналы, указывающие, вызван ли текущий вызов из-за пропущенного события расписания. 
+В следующем примере используется привязка триггера таймера, конфигурация которой описана в *function.js* файле. Фактическая [функция Python](functions-reference-python.md) , использующая привязку, описана в файле * __init__. корректировки* . Объект, переданный в функцию, имеет тип [Azure. functions. тимеррекуест](/python/api/azure-functions/azure.functions.timerrequest). Логика функции записывает в журналы, указывающие, вызван ли текущий вызов из-за пропущенного события расписания.
 
 Данные привязки в файле *function.json*:
 
@@ -145,21 +195,6 @@ def main(mytimer: func.TimerRequest) -> None:
     logging.info('Python timer trigger function ran at %s', utc_timestamp)
 ```
 
-# <a name="java"></a>[Java](#tab/java)
-
-Следующий пример функции активируется и выполняется каждые пять минут. Аннотация `@TimerTrigger` для функции определяет расписание, используя тот же формат строки, что и [выражения CRON](https://en.wikipedia.org/wiki/Cron#CRON_expression).
-
-```java
-@FunctionName("keepAlive")
-public void keepAlive(
-  @TimerTrigger(name = "keepAliveTrigger", schedule = "0 */5 * * * *") String timerInfo,
-      ExecutionContext context
- ) {
-     // timeInfo is a JSON string, you can deserialize it to an object using your favorite JSON library
-     context.getLogger().info("Timer is triggered: " + timerInfo);
-}
-```
-
 ---
 
 ## <a name="attributes-and-annotations"></a>Атрибуты и заметки
@@ -188,14 +223,6 @@ public static void Run([TimerTrigger("0 */5 * * * *")]TimerInfo myTimer, ILogger
 
 В скрипте C# атрибуты не поддерживаются.
 
-# <a name="javascript"></a>[JavaScript](#tab/javascript)
-
-В JavaScript атрибуты не поддерживаются.
-
-# <a name="python"></a>[Python](#tab/python)
-
-В Python атрибуты не поддерживаются.
-
 # <a name="java"></a>[Java](#tab/java)
 
 Аннотация `@TimerTrigger` для функции определяет расписание, используя тот же формат строки, что и [выражения CRON](https://en.wikipedia.org/wiki/Cron#CRON_expression).
@@ -210,6 +237,18 @@ public void keepAlive(
      context.getLogger().info("Timer is triggered: " + timerInfo);
 }
 ```
+
+# <a name="javascript"></a>[JavaScript](#tab/javascript)
+
+В JavaScript атрибуты не поддерживаются.
+
+# <a name="powershell"></a>[PowerShell](#tab/powershell)
+
+В PowerShell не поддерживаются атрибуты.
+
+# <a name="python"></a>[Python](#tab/python)
+
+В Python атрибуты не поддерживаются.
 
 ---
 
@@ -229,7 +268,7 @@ public void keepAlive(
 [!INCLUDE [app settings to local.settings.json](../../includes/functions-app-settings-local.md)]
 
 > [!CAUTION]
-> Мы не рекомендуем задавать параметр **runOnStartup** для `true` в рабочей среде. Использование этого параметра заставляет код выполняться в очень непредсказуемое время. В определенных рабочих ситуациях эти дополнительные выполнения могут привести значительно более высоким затратам для приложений, размещенных в планах потребления. Например, при включенном параметре **рунонстартуп** триггер вызывается при каждом масштабировании приложения-функции. Убедитесь, что вы полностью понимаете рабочее поведение своих функций перед включением **runOnStartup** в рабочей среде.   
+> Мы не рекомендуем задавать параметр **runOnStartup** для `true` в рабочей среде. Использование этого параметра заставляет код выполняться в очень непредсказуемое время. В определенных рабочих ситуациях эти дополнительные выполнения могут привести значительно более высоким затратам для приложений, размещенных в планах потребления. Например, при включенном параметре **рунонстартуп** триггер вызывается при каждом масштабировании приложения-функции. Убедитесь, что вы полностью понимаете рабочее поведение своих функций перед включением **runOnStartup** в рабочей среде.
 
 ## <a name="usage"></a>Использование
 
@@ -250,8 +289,7 @@ public void keepAlive(
 
 Значение свойства `IsPastDue` — `true`, когда текущая функция вызывается позже запланированного. Например перезапуск приложения-функции может привести к тому, что вызов будет пропущен.
 
-
-## <a name="ncrontab-expressions"></a>Выражения НКРОНТАБ 
+## <a name="ncrontab-expressions"></a>Выражения НКРОНТАБ
 
 Функции Azure используют библиотеку [нкронтаб](https://github.com/atifaziz/NCrontab) для интерпретации выражений нкронтаб. Выражение НКРОНТАБ аналогично выражению CRON, за исключением того, что оно включает в начало в начале использования для точности времени в секундах дополнительное шестое поле.
 
@@ -300,12 +338,12 @@ public void keepAlive(
 
 Когда значения выражения `hh` в виде стоки меньше 24, `TimeSpan` будет использовать формат `hh:mm:ss`. Когда первые две цифры больше или равны 24, будет использован следующий формат `dd:hh:mm`. Ниже приводится несколько примеров.
 
-|Пример |Когда активируется  |
-|---------|---------|
-|"01:00:00" | каждый час        |
-|"00:01:00"|каждую минуту         |
-|"24:00:00" | каждые 24 дня        |
-|"1,00:00:00" | Каждый день        |
+| Пример      | Когда активируется |
+|--------------|----------------|
+| "01:00:00"   | каждый час     |
+| "00:01:00"   | каждую минуту   |
+| "24:00:00"   | каждые 24 дня  |
+| "1,00:00:00" | Каждый день      |
 
 ## <a name="scale-out"></a>Горизонтальное масштабирование
 

@@ -12,14 +12,14 @@ ms.workload: storage
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 09/09/2020
+ms.date: 09/22/2020
 ms.author: b-juche
-ms.openlocfilehash: 9822d7bd769ea161ddcf195d695f27024351ca4b
-ms.sourcegitcommit: f8d2ae6f91be1ab0bc91ee45c379811905185d07
+ms.openlocfilehash: 4b8c879a89da47a081e4b95382d17b3d2baede9d
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89662455"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91325578"
 ---
 # <a name="faqs-about-azure-netapp-files"></a>Часто задаваемые вопросы о Azure NetApp Files
 
@@ -132,6 +132,12 @@ Azure NetApp Files поддерживает NFSv3 и Нфсв 4.1. Вы може
 
 Можно указать, может ли учетная запись root иметь доступ к тому или нет, используя политику экспорта тома. Дополнительные сведения см. в статье [Настройка политики экспорта для тома NFS](azure-netapp-files-configure-export-policy.md) .
 
+### <a name="can-i-use-the-same-file-path-volume-creation-token-for-multiple-volumes"></a>Можно ли использовать один и тот же путь к файлу (маркер создания тома) для нескольких томов?
+
+Да, можно. Однако путь к файлу должен использоваться либо в другой подписке, либо в другом регионе.   
+
+Например, вы создаете том с именем `vol1` . Затем вы создаете другой том, который также вызывается `vol1` в другом пуле емкости, но в той же подписке и регионе. В этом случае использование одного и того же имени тома `vol1` приведет к ошибке. Чтобы использовать один и тот же путь к файлу, имя должно находиться в другом регионе или подписке.
+
 ## <a name="smb-faqs"></a>Часто задаваемые вопросы о SMB
 
 ### <a name="which-smb-versions-are-supported-by-azure-netapp-files"></a>Какие версии SMB поддерживаются Azure NetApp Files?
@@ -161,12 +167,6 @@ Azure NetApp Files поддерживает версии домен Active Direc
 ### <a name="why-does-the-available-space-on-my-smb-client-not-show-the-provisioned-size"></a>Почему доступное пространство на моем клиенте SMB не показывает подготовленный размер?
 
 Размер тома, сообщаемый SMB-клиентом, — это максимальный размер, который может увеличить Azure NetApp Files том. Размер тома Azure NetApp Files, как показано на SMB-клиенте, не отражен в размере квоты или размера тома. Вы можете получить Azure NetApp Files размер или квоту тома с помощью портал Azure или API.
-
-<!--
-### Does Azure NetApp Files support Kerberos encryption?
-
-Yes, by default, Azure NetApp Files supports both AES-128 and AES-256 encryption for traffic between the service and the targeted Active Directory domain controllers. See [Create an SMB volume for Azure NetApp Files](azure-netapp-files-create-volumes-smb.md) for requirements. 
--->
 
 <!--
 ### Does Azure NetApp Files support LDAP signing? 

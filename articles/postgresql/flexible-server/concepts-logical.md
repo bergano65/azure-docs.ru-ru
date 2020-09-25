@@ -5,20 +5,20 @@ author: rachel-msft
 ms.author: raagyema
 ms.service: postgresql
 ms.topic: conceptual
-ms.date: 09/22/2020
-ms.openlocfilehash: fd0826ad11a153d72ee47f35930d25f0df498418
-ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
+ms.date: 09/23/2020
+ms.openlocfilehash: dd7aed0d23dd657b655e473565611ef36c592562
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "90940739"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91336332"
 ---
 # <a name="logical-replication-and-logical-decoding-in-azure-database-for-postgresql---flexible-server"></a>Логическая репликация и логическая декодирование в базе данных Azure для PostgreSQL — гибкий сервер
 
 > [!IMPORTANT]
 > Гибкий сервер Базы данных Azure для PostgreSQL предоставляется в режиме предварительной версии
 
-Логическая репликация и логические функции декодирования PostgreSQL поддерживаются в базе данных Azure для PostgreSQL-гибкого сервера.
+Логическая репликация и логические функции декодирования PostgreSQL поддерживаются в базе данных Azure для PostgreSQL-гибкого сервера, для postgres версии 11.
 
 ## <a name="comparing-logical-replication-and-logical-decoding"></a>Сравнение логической и логической декодирования
 Логическая репликация и логическое декодирование имеют несколько сходств. Оба они
@@ -43,7 +43,11 @@ ms.locfileid: "90940739"
 1. Задайте для параметра сервера `wal_level` значение `logical` .
 2. Перезапустите сервер, чтобы применить `wal_level` изменение.
 3. Убедитесь, что ваш экземпляр PostgreSQL разрешает сетевой трафик из подключенного ресурса.
-4. Используйте учетную запись администратора при выполнении команд репликации.
+4. Предоставьте администратору разрешения на репликацию пользователя.
+   ```SQL
+   ALTER ROLE <adminname> WITH REPLICATION;
+   ```
+
 
 ## <a name="using-logical-replication-and-logical-decoding"></a>Использование логической репликации и логического декодирования
 
@@ -54,7 +58,7 @@ ms.locfileid: "90940739"
 
 Ниже приведен пример кода, который можно использовать для пробного использования логической репликации.
 
-1. Подключитесь к издателю. Создайте таблицу и добавьте данные.
+1. Подключитесь к базе данных издателя. Создайте таблицу и добавьте данные.
    ```SQL
    CREATE TABLE basic(id SERIAL, name varchar(40));
    INSERT INTO basic(name) VALUES ('apple');
@@ -66,14 +70,14 @@ ms.locfileid: "90940739"
    CREATE PUBLICATION pub FOR TABLE basic;
    ```
 
-3. Подключитесь к подписчику. Создайте таблицу с той же схемой, что и на издателе.
+3. Подключитесь к базе данных подписчика. Создайте таблицу с той же схемой, что и на издателе.
    ```SQL
    CREATE TABLE basic(id SERIAL, name varchar(40));
    ```
 
 4. Создайте подписку, которая будет подключаться к созданной ранее публикации.
    ```SQL
-   CREATE SUBSCRIPTION sub CONNECTION 'host=<server>.postgres.database.azure.com user=<admin> dbname=<dbname>' PUBLICATION pub;
+   CREATE SUBSCRIPTION sub CONNECTION 'host=<server>.postgres.database.azure.com user=<admin> dbname=<dbname> password=<password>' PUBLICATION pub;
    ```
 
 5. Теперь можно выполнить запрос к таблице на подписчике. Вы увидите, что он получил данные от издателя.
@@ -170,8 +174,9 @@ SELECT * FROM pg_replication_slots;
 
 [Настройте оповещения](howto-alert-on-metrics.md) для **максимального числа используемых идентификаторов транзакций** и хранилища, которые **используют** гибкие метрики сервера, чтобы уведомить вас о том, что значения увеличиваются после обычных пороговых значений. 
 
-## <a name="read-replicas"></a>Реплики чтения
-В настоящее время реплики чтения базы данных Azure для PostgreSQL не поддерживаются для гибких серверов.
+## <a name="limitations"></a>Ограничения
+* **Чтение реплик** . в настоящее время реплики чтения базы данных Azure для PostgreSQL не поддерживаются для гибких серверов.
+* **Слоты и отработка отказа с высокой** доступностью — разъемы логических репликаций на сервере-источнике недоступны на резервном сервере во вторичной базе данных AZ. Это относится к вам, если сервер использует параметр высокой доступности с избыточностью зоны. В случае отработки отказа на резервный сервер слоты логических репликаций не будут доступны в режиме ожидания.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 * Дополнительные сведения о [параметрах сети](concepts-networking.md)

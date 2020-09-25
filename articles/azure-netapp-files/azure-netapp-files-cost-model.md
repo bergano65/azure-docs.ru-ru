@@ -12,18 +12,20 @@ ms.workload: storage
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 05/27/2020
+ms.date: 09/22/2020
 ms.author: b-juche
-ms.openlocfilehash: 78af9c12fb54b63e1a94c8b41a7ec2ac5c9b4e27
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 9c4eebae6909c9ef0969bc85bcb9a985db2a7c02
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84142152"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91325612"
 ---
 # <a name="cost-model-for-azure-netapp-files"></a>Модель затрат для Azure NetApp Files 
 
-Понимание модели затрат для Azure NetApp Files помогает управлять расходами службы.
+Понимание модели затрат для Azure NetApp Files помогает управлять расходами службы. 
+
+Сведения о модели затрат, относящейся к репликации между регионами, см. в разделе [модель стоимости для репликации между регионами](cross-region-replication-introduction.md#cost-model-for-cross-region-replication).
 
 ## <a name="calculation-of-capacity-consumption"></a>Вычисление потребления ресурсов
 
@@ -61,6 +63,7 @@ Azure NetApp Files оплачивается по подготовленной е
 * Тиб приращение после первоначальной 4-Тиб минимальной покупки
 * Минимальное число часов выставления счетов, которое составляет один час
 * Размер подготовленного пула не может быть уменьшен до общей используемой емкости в пуле.
+* Для пулов емкости с QoS вручную размер пула можно уменьшить, только если размер и уровень обслуживания обеспечивают большую пропускную способность, чем фактическая назначенная пропускная способность всех томов.
 
 ## <a name="behavior-of-maximum-size-pool-overage"></a>Поведение пула максимального размера   
 
@@ -89,8 +92,9 @@ Azure NetApp Files оплачивается по подготовленной е
 
 Использование емкости моментальных снимков в Azure NetApp Files оценивается по квоте родительского тома.  В результате он использует ту же ставку выставления счетов, что и пул емкости, к которому принадлежит том.  Однако, в отличие от активного тома, использование моментального снимка измеряется в зависимости от используемой добавочной емкости.  Моментальные снимки Azure NetApp Files по сути являются разностными. В зависимости от частоты изменения данных моментальные снимки часто потребляют гораздо меньше ресурсов, чем логическая емкость активного тома. Например, предположим, что имеется моментальный снимок тома 500 гиб, который содержит только 10 гиб разностных данных. Емкость, выплаченная с квотой тома для этого моментального снимка, будет составлять 10 гиб, а не 500 гиб. 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Страница цен Azure NetApp Files](https://azure.microsoft.com/pricing/details/storage/netapp/)
 * [Уровни обслуживания для Azure NetApp Files](azure-netapp-files-service-levels.md)
 * [Ограничения ресурсов для службы Azure NetApp Files](azure-netapp-files-resource-limits.md)
+* [Модель стоимости для репликации между регионами](cross-region-replication-introduction.md#cost-model-for-cross-region-replication)

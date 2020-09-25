@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: nolavime
 ms.author: v-jysur
 ms.date: 05/24/2018
-ms.openlocfilehash: 989399bcc86547b914deb442fa9793f6d79d0606
-ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
+ms.openlocfilehash: 0940521873b8d6746381acbd8e6c4c6d3a273c49
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87325327"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91325765"
 ---
 # <a name="connect-azure-to-itsm-tools-using-it-service-management-connector"></a>Подключение Azure к инструментам ITSM с помощью соединителя управления ИТ-услугами
 
@@ -137,6 +137,10 @@ ms.locfileid: "87325327"
 > [!NOTE]
 >
 > Сведения о ценах на действие ITSM см. на [странице цен](https://azure.microsoft.com/pricing/details/monitor/) для групп действий.
+
+> [!NOTE]
+>
+> Поле краткого описания в определении правила генерации оповещений имеет ограничение в 40 символов при отправке с помощью действия ITSM.
 
 
 ## <a name="visualize-and-analyze-the-incident-and-change-request-data"></a>Визуализация и анализ данных инцидентов и запросов на изменение

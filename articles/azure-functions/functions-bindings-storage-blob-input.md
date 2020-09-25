@@ -1,17 +1,17 @@
 ---
 title: Входная привязка хранилища BLOB-объектов Azure для функций Azure
-description: Узнайте, как предоставить данные хранилища BLOB-объектов Azure функции Azure.
+description: Узнайте, как предоставить входные данные привязки хранилища BLOB-объектов Azure функции Azure.
 author: craigshoemaker
 ms.topic: reference
 ms.date: 02/13/2020
 ms.author: cshoe
 ms.custom: devx-track-csharp, devx-track-python
-ms.openlocfilehash: de590af49e39832a52bf733319b86300ecab2a34
-ms.sourcegitcommit: 4913da04fd0f3cf7710ec08d0c1867b62c2effe7
+ms.openlocfilehash: f5a01724bfefd50297182f998b46f99eacca5843
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88213290"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91325782"
 ---
 # <a name="azure-blob-storage-input-binding-for-azure-functions"></a>Входная привязка хранилища BLOB-объектов Azure для функций Azure
 
@@ -309,7 +309,7 @@ public static void Run(
 |**name** | Недоступно | Имя переменной, представляющей большой двоичный объект в коде функции.|
 |**путь** |**BlobPath** | Путь к BLOB-объекту. |
 |**connection**; |**Соединение**| Имя параметра приложения, содержащего [строку подключения к хранилищу](../storage/common/storage-configure-connection-string.md) , используемую для этой привязки. Если имя параметра приложения начинается с AzureWebJobs, можно указать только остальную часть имени. Например, если задано значение `connection` "MyStorage", среда выполнения функций ищет параметр приложения с именем "азуревебжобсмистораже". Если оставить строку `connection` пустой, среда выполнения службы "Функции" будет использовать строку подключения к службе хранилища по умолчанию для параметра приложения с именем `AzureWebJobsStorage`.<br><br>Строка подключения необходима для учетной записи хранения общего назначения, а не [учетной записи хранения только для больших двоичных объектов](../storage/common/storage-account-overview.md#types-of-storage-accounts).|
-|н/д | **Доступ** | Указывает, какая операция будет выполняться (запись или чтение). |
+|Н/Д | **Доступ** | Указывает, какая операция будет выполняться (запись или чтение). |
 
 [!INCLUDE [app settings to local.settings.json](../../includes/functions-app-settings-local.md)]
 
@@ -337,7 +337,7 @@ public static void Run(
 
 ---
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Выполнение функции при изменении данных хранилища BLOB-объектов](./functions-bindings-storage-blob-trigger.md)
 - [Запись данных хранилища BLOB-объектов из функции](./functions-bindings-storage-blob-output.md)

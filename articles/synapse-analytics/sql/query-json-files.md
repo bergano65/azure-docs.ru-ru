@@ -8,13 +8,13 @@ ms.topic: how-to
 ms.subservice: sql
 ms.date: 05/20/2020
 ms.author: v-stazar
-ms.reviewer: jrasnick, carlrab
-ms.openlocfilehash: 04b2d7842222426010b76a1a7ed4c72ee74e3d87
-ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
+ms.reviewer: jrasnick
+ms.openlocfilehash: 0757c867d46144ac9fb9b9eca8b2a588aeeb15d6
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/31/2020
-ms.locfileid: "87489730"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91288330"
 ---
 # <a name="query-json-files-using-sql-on-demand-preview-in-azure-synapse-analytics"></a>Запрос вложенных типов Parquet с помощью SQL по запросу (предварительная версия) в Azure Synapse Analytics
 
@@ -24,7 +24,7 @@ ms.locfileid: "87489730"
 
 ## <a name="read-json-documents"></a>Чтение документов JSON
 
-Самый простой способ увидеть содержимое файла JSON — предоставить URL-адрес файла для `OPENROWSET` работы, указать CSV `FORMAT` и задать значения `0x0b` для параметров `fieldterminator` и `fieldquote` . Если необходимо считать файлы JSON, разделенные строками, это достаточно. Если у вас есть классический файл JSON, необходимо задать значения `0x0b` для параметра `rowterminator` . `OPENROWSET`функция будет анализировать JSON и возвращать каждый документ в следующем формате:
+Самый простой способ увидеть содержимое файла JSON — предоставить ему URL-адрес файла `OPENROWSET` функции, указать CSV `FORMAT` и задать значения `0x0b` для параметров `fieldterminator` и `fieldquote` . Если необходимо считать файлы JSON, разделенные строками, это достаточно. Если у вас есть классический файл JSON, необходимо задать значения `0x0b` для параметра `rowterminator` . `OPENROWSET` функция будет анализировать JSON и возвращать каждый документ в следующем формате:
 
 | doc |
 | --- |

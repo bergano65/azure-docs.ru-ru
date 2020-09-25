@@ -6,12 +6,12 @@ ms.author: nlarin
 ms.service: postgresql
 ms.topic: conceptual
 ms.date: 09/22/2020
-ms.openlocfilehash: 35e5e688f5589c23c7c583c7bcbca3fd0956eec7
-ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
+ms.openlocfilehash: ffee15776a48b6495f78b6becf81c620e1dc4d69
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "90937250"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91336315"
 ---
 # <a name="scheduled-maintenance-in-azure-database-for-postgresql--flexible-server"></a>Плановое обслуживание в базе данных Azure для PostgreSQL — гибкий сервер
  
@@ -46,5 +46,5 @@ ms.locfileid: "90937250"
 ## <a name="next-steps"></a>Дальнейшие действия
  
 * Узнайте, как [изменить расписание обслуживания](how-to-maintenance-portal.md)
-* Узнайте, как [получать уведомления о предстоящем обслуживании](/azure/service-health/service-notifications.md) с помощью службы работоспособности служб Azure.
-* Узнайте, как [настроить оповещения о предстоящих событиях запланированного обслуживания](/azure/service-health/resource-health-alert-monitor-guide.md)
+* Узнайте, как [получать уведомления о предстоящем обслуживании](../../service-health/service-notifications.md) с помощью службы работоспособности служб Azure.
+* Узнайте, как [настроить оповещения о предстоящих событиях запланированного обслуживания](../../service-health/resource-health-alert-monitor-guide.md)

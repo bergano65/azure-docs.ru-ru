@@ -14,12 +14,12 @@ ms.tgt_pltfrm: vm-windows
 ms.devlang: azurecli
 ms.date: 09/10/2019
 ms.author: v-miegge
-ms.openlocfilehash: 7addc87f3096a75a55d0ea3b5804fd0006d5cb8c
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.openlocfilehash: 66dfd198b543ec49fabe381b50174b182cf070c7
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86526492"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91336043"
 ---
 # <a name="repair-a-windows-vm-by-using-the-azure-virtual-machine-repair-commands"></a>Восстановление виртуальной машины Windows с помощью команд восстановления виртуальной машины Azure
 
@@ -77,7 +77,7 @@ ms.locfileid: "86526492"
 3. Выполните `az vm repair create`. Эта команда создает копию диска ОС для неработающей виртуальной машины, создает виртуальную машину для исправления в новой группе ресурсов и подключает копию диска ОС.  Виртуальная машина для исправления будет иметь тот же размер и регион, что и неработающая виртуальная машина. Используемые здесь группа ресурсов и имя виртуальной машины относятся к неработающей виртуальной машине. Если виртуальная машина использует шифрование дисков Azure, команда будет пытаться разблокировать зашифрованный диск, чтобы он был доступен при подключении к виртуальной машине восстановления.
 
    ```azurecli-interactive
-   az vm repair create -g MyResourceGroup -n myVM --repair-username username --repair-password password!234 --verbose
+   az vm repair create -g MyResourceGroup -n myVM --repair-username username --repair-password 'password!234' --verbose
    ```
 
 4. Выполните `az vm repair run`. Эта команда запустит указанный скрипт исправления на подключенном диске через виртуальную машину для исправления. Если в руководстве по устранению неполадок указан идентификатор запуска, используйте его здесь. В противном случае можно использовать `az vm repair list-scripts`, чтобы просмотреть доступные скрипты исправления. Используемые здесь группа ресурсов и имя виртуальной машины относятся к неработающей виртуальной машине, упоминавшейся на шаге 3.

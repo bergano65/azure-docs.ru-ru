@@ -9,20 +9,20 @@ ms.devlang: ''
 ms.topic: conceptual
 author: aamalvea
 ms.author: aamalvea
-ms.reviewer: jrasnik, carlrab
+ms.reviewer: jrasnik, sstein
 ms.date: 05/04/2020
-ms.openlocfilehash: 2b7457ad5870e31d682f8727901795c9d6d73f06
-ms.sourcegitcommit: bf1340bb706cf31bb002128e272b8322f37d53dd
+ms.openlocfilehash: fdfa709d50f351d3202a01c5d3df65bb3015e887
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/03/2020
-ms.locfileid: "89442689"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91335141"
 ---
 # <a name="create-alerts-for-azure-sql-database-and-azure-synapse-analytics-using-the-azure-portal"></a>Создание оповещений для базы данных SQL Azure и Azure синапсе Analytics с помощью портал Azure
 [!INCLUDE[appliesto-sqldb-asa](../includes/appliesto-sqldb-asa.md)]
 
 
-## <a name="overview"></a>Overview
+## <a name="overview"></a>Обзор
 
 В этой статье показано, как настроить оповещения для баз данных в базе данных SQL Azure и Azure синапсе Analytics (ранее — хранилище данных SQL) с помощью портал Azure. Оповещения могут отправить электронное сообщение или вызвать веб-перехватчик, когда какая-либо метрика достигает порога (например, размер базы данных или использование ЦП).
 
@@ -63,7 +63,7 @@ ms.locfileid: "89442689"
   ![Выберите сигнал](./media/alerts-insights-configure-portal/select-signal.png)
 6. После выбора сигнала, такого как **процент загрузки ЦП**, появляется страница **Настройка логики сигнала** .
   ![Настройка логики сигналов](./media/alerts-insights-configure-portal/configure-signal-logic.png)
-7. На этой странице Настройте этот тип порога, оператор, тип агрегирования, пороговое значение, гранулярность статистической обработки и частоту вычисления. Затем нажмите кнопку **Готово**.
+7. На этой странице Настройте этот тип порога, оператор, тип агрегирования, пороговое значение, гранулярность статистической обработки и частоту вычисления. Затем нажмите кнопку **Done**(Готово).
 8. На странице **Создание правила**выберите существующую **группу действий** или создайте новую. Группа действий позволяет определить действие, выполняемое при возникновении условия оповещения.
   ![Определить группу действий](./media/alerts-insights-configure-portal/action-group.png)
 

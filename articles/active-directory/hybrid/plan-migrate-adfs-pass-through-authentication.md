@@ -12,12 +12,12 @@ ms.date: 05/29/2020
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 7e5a5b06bc95d022cfad66118db4b55e9369b5bd
-ms.sourcegitcommit: f8d2ae6f91be1ab0bc91ee45c379811905185d07
+ms.openlocfilehash: a0ee8661ca985e1882cff54d2fc2cdc5e9ad0a22
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89661901"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91335975"
 ---
 # <a name="migrate-from-federation-to-pass-through-authentication-for-azure-active-directory"></a>Переход с федеративной на сквозную проверку подлинности для Azure Active Directory
 
@@ -92,7 +92,7 @@ ms.locfileid: "89661901"
 Get-MsolDomainFederationSettings -DomainName YourDomain.extention | fl *
 ```
 
-Пример
+Пример.
 
 ``` PowerShell
 Get-MsolDomainFederationSettings -DomainName Contoso.com | fl *
@@ -100,7 +100,7 @@ Get-MsolDomainFederationSettings -DomainName Contoso.com | fl *
 
 Проверьте все параметры, которые могли быть настроены в соответствии с документацией по проектированию и развертыванию федерации, в частности **PreferredAuthenticationProtocol**, **SupportsMfa** и **PromptLoginBehavior**.
 
-Дополнительные сведения см. в следующих статьях:
+Дополнительные сведения вы найдете в следующих статьях:
 
 * [Active Directory Federation Services prompt=login parameter support](/windows-server/identity/ad-fs/operations/ad-fs-prompt-login) (Поддержка параметра prompt=login в службах федерации Active Directory (AD FS))
 * [Set-MsolDomainAuthentication](/powershell/module/msonline/set-msoldomainauthentication?view=azureadps-1.0)
@@ -160,7 +160,7 @@ Get-MsolDomainFederationSettings -DomainName Contoso.com | fl *
 
 Дополнительные сведения см. в статье [Практическое руководство. Планирование реализации гибридного присоединения к Azure Active Directory](../devices/hybrid-azuread-join-plan.md).
 
-#### <a name="branding"></a>Branding
+#### <a name="branding"></a>Фирменная символика
 
 Если в вашей организации [настроены страницы входа AD FS](/windows-server/identity/ad-fs/operations/ad-fs-user-sign-in-customization) для отображения соответствующих сведений, рекомендуем аналогичным образом [настроить страницы входа Azure AD](../fundamentals/customize-branding.md).
 
@@ -283,9 +283,9 @@ Get-MsolDomainFederationSettings -DomainName Contoso.com | fl *
 
 4. Запустите установку агентов проверки подлинности. Во время установки вам потребуется предоставить учетные данные глобального администратора.
 
-   ![Снимок экрана с кнопкой "Установить" на странице пакета для агента проверки подлинности Microsoft Azure AD Connect](media/plan-migrate-adfs-pass-through-authentication/migrating-adfs-to-pta_image11.png)
+   ![Снимок экрана, на котором показана кнопка "установить", используемая для запуска пакета агента проверки подлинности Microsoft Azure AD Connect.](media/plan-migrate-adfs-pass-through-authentication/migrating-adfs-to-pta_image11.png)
 
-   ![Снимок экрана со страницей входа](media/plan-migrate-adfs-pass-through-authentication/migrating-adfs-to-pta_image12.png)
+   ![Снимок экрана, на котором показана страница входа Майкрософт.](media/plan-migrate-adfs-pass-through-authentication/migrating-adfs-to-pta_image12.png)
 
 5. После установки агента проверки подлинности можно вернуться на страницу "Pass-through Authentication Agent health" (Работоспособность агента сквозной проверки подлинности), чтобы проверить состояние дополнительных агентов.
 
@@ -327,7 +327,7 @@ Get-MsolDomainFederationSettings -DomainName Contoso.com | fl *
    * Для параметра **Эффективный единый вход** должно быть установлено значение **Включено**.
    * Для параметра**Сквозная проверка подлинности** должно быть установлено значение **Включено**.
    
-   ![Снимок экрана с параметрами в разделе входа пользователей](media/plan-migrate-adfs-pass-through-authentication/migrating-adfs-to-pta_image19.png)
+   ![Снимок экрана, на котором показаны параметры для проверки в разделе "вход пользователя".](media/plan-migrate-adfs-pass-through-authentication/migrating-adfs-to-pta_image19.png)
 8. Выберите **сквозная проверка подлинности** и убедитесь, что состояние **активно**.<br />
    
    Если агент проверки подлинности неактивен, выполните [действия по устранению неполадок](./tshoot-connect-pass-through-authentication.md), прежде чем перейти к преобразованию доменов на следующем шаге. Вы можете нарушить работу службы проверки подлинности, если преобразуете домены, не убедившись в успешной установке агентов сквозной проверки подлинности и их переходе в состояние **Активно** на портале Azure.
@@ -368,7 +368,7 @@ Get-MsolDomainFederationSettings -DomainName Contoso.com | fl *
    * Для параметра **Эффективный единый вход** должно быть установлено значение **Включено**.
    * Для параметра**Сквозная проверка подлинности** должно быть установлено значение **Включено**.<br />
 
-   ![Снимок экрана с параметрами в разделе входа пользователей](media/plan-migrate-adfs-pass-through-authentication/migrating-adfs-to-pta_image26.png)<br />
+   ![Снимок экрана, показывающий параметры в разделе "вход пользователя" на портале Azure AD.](media/plan-migrate-adfs-pass-through-authentication/migrating-adfs-to-pta_image26.png)<br />
 
 ## <a name="testing-and-next-steps"></a>Тестирование и дальнейшие действия
 
