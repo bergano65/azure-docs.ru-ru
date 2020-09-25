@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: article
 ms.date: 10/15/2019
 ms.author: Zhchia
-ms.openlocfilehash: c889b2c7b11c5e649045e34cdac9e50a3a242b6a
-ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
+ms.openlocfilehash: cf71246caef377fb607a9ca7a765ec9ca5999744
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88524459"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91285972"
 ---
 # <a name="tutorial-configure-storegate-for-automatic-user-provisioning"></a>Учебник. Настройка Сторегате для автоматической подготовки пользователей
 
@@ -130,11 +130,11 @@ ms.locfileid: "88524459"
 
 3. Выберите вкладку **Подготовка**.
 
-    ![Вкладка "Подготовка"](common/provisioning.png)
+    ![Снимок экрана параметров управления с вызываемым параметром подготовки.](common/provisioning.png)
 
 4. Для параметра **Режим подготовки к работе** выберите значение **Automatic** (Автоматически).
 
-    ![Вкладка "Подготовка"](common/provisioning-automatic.png)
+    ![Снимок экрана: раскрывающийся список режима подготовки с вызываемым автоматическим параметром.](common/provisioning-automatic.png)
 
 5. В разделе **учетные данные администратора** введите `https://dialpad.com/scim` **URL-адрес клиента**. Введите значение, полученное и сохраненное ранее из Сторегате в **маркере секрета**. Щелкните **проверить подключение** , чтобы убедиться, что Azure AD может подключиться к сторегате. Если подключение не выполняется, убедитесь, что у учетной записи Сторегате есть разрешения администратора, и повторите попытку.
 
@@ -144,7 +144,7 @@ ms.locfileid: "88524459"
 
     ![Почтовое уведомление](common/provisioning-notification-email.png)
 
-7. Нажмите **Сохранить**.
+7. Выберите команду **Сохранить**.
 
 8. В разделе **сопоставления** выберите **синхронизировать Azure Active Directory пользователей с сторегате**.
 

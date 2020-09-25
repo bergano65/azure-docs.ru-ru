@@ -6,12 +6,12 @@ ms.topic: how-to
 ms.date: 06/05/2020
 ms.author: helohr
 manager: lizross
-ms.openlocfilehash: ced763ca4abd32f3b824f05f2f5786a5d9cfd4c4
-ms.sourcegitcommit: ac7ae29773faaa6b1f7836868565517cd48561b2
+ms.openlocfilehash: 583384d6f0ec71dc724868db61ee07ead7269607
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88825449"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91287327"
 ---
 # <a name="create-a-profile-container-with-azure-files-and-ad-ds"></a>Создание контейнера профиля с помощью файлов и AD DS Azure
 
@@ -19,7 +19,7 @@ ms.locfileid: "88825449"
 
 В этом процессе используются службы домен Active Directory Services (AD DS), которые являются локальными службами каталогов. Дополнительные сведения о создании контейнера Фслогикс Profile с помощью Azure AD DS см. в статье [Создание контейнера профиля фслогикс с помощью службы файлов Azure](create-profile-container-adds.md).
 
-## <a name="prerequisites"></a>Обязательные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Прежде чем приступить к работе, убедитесь, что контроллер домена синхронизирован с Azure и разрешается из виртуальной сети Azure, к которой подключены узлы сеансов.
 
@@ -56,11 +56,11 @@ ms.locfileid: "88825449"
 
 1. Выберите **Перейти к ресурсу**.
 
-2. На странице Обзор выберите **файловые ресурсы**.
+2. На странице Обзор выберите **Общие папки**.
 
 3. Выберите **+ Общие файловые ресурсы**, создайте новый файловый ресурс с именем **Profiles**, а затем введите соответствующую квоту или оставьте поле пустым, чтобы квоты не применялись.
 
-4. Нажмите кнопку **создания**.
+4. Выберите **Создать**.
 
 ## <a name="enable-active-directory-authentication"></a>Включение проверки подлинности Active Directory
 
@@ -131,7 +131,7 @@ ms.locfileid: "88825449"
     - Замените косую черту `/` обратной косой чертой `\` .
     - Добавьте имя общего файлового ресурса, созданного при [создании файлового ресурса Azure](#create-an-azure-file-share) , в конце UNC.
 
-        Пример: `\\customdomain.file.core.windows.net\<fileshare-name>`
+        Например: `\\customdomain.file.core.windows.net\<fileshare-name>`
 
 ### <a name="get-the-storage-account-key"></a>Получение ключа учетной записи хранения
 
@@ -154,7 +154,7 @@ ms.locfileid: "88825449"
 2. Выполните следующую команду, чтобы подключить файловый ресурс Azure и назначить ему букву диска:
 
      ```cmd
-     net use <desired-drive-letter>: <UNC-pat> <SA-key> /user:Azure\<SA-name>
+     net use <desired-drive-letter>: <UNC-path> <SA-key> /user:Azure\<SA-name>
      ```
 
 3. Выполните следующую команду, чтобы проверить разрешения на доступ к общей папке Azure:

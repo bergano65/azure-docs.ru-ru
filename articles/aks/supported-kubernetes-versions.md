@@ -6,12 +6,12 @@ ms.topic: article
 ms.date: 09/08/2020
 author: palma21
 ms.author: jpalma
-ms.openlocfilehash: fb5b9c446ea5574970b14c683fac258c17199fef
-ms.sourcegitcommit: d0541eccc35549db6381fa762cd17bc8e72b3423
+ms.openlocfilehash: a36eb588c7128f13fb21b368d308ed00171fbb4b
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/09/2020
-ms.locfileid: "89565383"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91335540"
 ---
 # <a name="supported-kubernetes-versions-in-azure-kubernetes-service-aks"></a>Поддерживаемые версии Kubernetes в Службе Azure Kubernetes (AKS)
 
@@ -135,14 +135,13 @@ az aks get-versions --location eastus --output table
 
 |  Версия K8s | Вышестоящий выпуск  | Предварительная версия AKS  | AKS ДЖ  | Завершение срока службы |
 |--------------|-------------------|--------------|---------|-------------|
+| 1.16  | Сен-19-19  | Янв 2019   | Мар 2020  | 1,19 ДЖ | 
 | 1,17  | Dec-09-19  | Янв 2019   | Июл 2020  | 1,20 ДЖ | 
 | 1,18  | Мар-23-20  | Май 2020 г.   | Авг 2020  | 1,21 ДЖ | 
-| 1,19  | Авг-04-20  | Авг 2020   | 2020 ноября  | 1,22 ДЖ | 
-| 1,20  | * Ноя 2020    | * Dec 2020   | * Янв 2021  | 1,23 ДЖ | 
+| 1,19  | Авг-04-20  | Sep 2020   | 2020 ноября  | 1,22 ДЖ | 
+| 1,20  | Dec-08-20  | Янв 2021   | Мар 2021  | 1,23 ДЖ | 
 
-\* Подтверждение ожидающей вышестоящей даты выпуска.
-
-## <a name="faq"></a>ВОПРОСЫ И ОТВЕТЫ
+## <a name="faq"></a>Вопросы и ответы
 
 **Как часто следует ждать обновления версий Kubernetes, чтобы поддерживать поддержку?**
 

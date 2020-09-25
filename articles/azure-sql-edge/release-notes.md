@@ -10,12 +10,12 @@ author: VasiyaKrishnan
 ms.author: vakrishn
 ms.reviewer: sstein
 ms.date: 09/22/2020
-ms.openlocfilehash: 3306e51fe2fdbb2586be9684432d8f8c310afe95
-ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
+ms.openlocfilehash: afd78acadf133a9f128eec402eba9d0eed51b8e3
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "90900596"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91284488"
 ---
 # <a name="azure-sql-edge-release-notes"></a>Заметки о выпуске Azure SQL ребра 
 
@@ -23,17 +23,23 @@ ms.locfileid: "90900596"
 
 ## <a name="azure-sql-edge---100-rtm"></a>Azure SQL ребро — 1.0.0 (RTM)
 
-### <a name="sql-engine-build-number---15020001549"></a>Номер сборки для ядра SQL — 15.0.2000.1549
+### <a name="sql-engine-build-number---15020001552"></a>Номер сборки для ядра SQL — 15.0.2000.1552
 
 ### <a name="whats-new"></a>Новые возможности
 1. Образы контейнеров на базе Ubuntu 18,04. 
 2. Поддержка `IGNORE NULL` `RESPECT NULL` синтаксиса и с `LAST_VALUE()` `FIRST_VALUE()` функциями и. 
 3. Улучшения надежности для ПРОГНОЗИРОВАНИя с помощью ONNX.
-4. Поддержка очистки на основе политики хранения данных.      
-   - Поддержка оптимизированной очистки для кластеризованных индексов columnstore.
+4. Поддержка очистки на основе политики хранения данных.
+   - Поддержка кольцевого буфера для задачи очистки хранения для устранения неполадок.
 5. Поддержка новых функций 
    - Быстрое восстановление
    - Автоматическая настройка запросов
+   - Включить сценарии параллельного выполнения
+6. Улучшения энергосбережения в режиме низкого энергопотребления
+7. Поддержка потоковой передачи новых функций 
+   - [Окна моментальных снимков](https://docs.microsoft.com/stream-analytics-query/snapshot-window-azure-stream-analytics) : новый тип окна, позволяющий группировать по событиям, поступающим в одно и то же время. 
+   - Включите [топоне](https://docs.microsoft.com/stream-analytics-query/topone-azure-stream-analytics) и [CollectTop](https://docs.microsoft.com/stream-analytics-query/collecttop-azure-stream-analytics) в качестве аналитической функции. Это позволит возвращать записи, упорядоченные по выбранному столбцу, без необходимости быть частью окна. 
+   - Улучшения в [MATCH_RECOGNIZE](https://docs.microsoft.com/stream-analytics-query/match-recognize-stream-analytics). 
 
 ### <a name="fixes"></a>Исправления
 1. Дополнительные сообщения об ошибках и сведения для устранения неполадок операций потоковой передачи TSQL. 
@@ -41,9 +47,13 @@ ms.locfileid: "90900596"
 3. Исправления обработчика потоковой передачи TSQL: 
    - Очистка задания остановленной потоковой передачи 
    - Исправления для улучшения локализации и обработки Юникода
+   - Улучшайте возможности отладки для пограничных потоков TSQL, позволяя пользователям запрашивать ошибки заданий от get_streaming_job.
 4. Очистка на основе политики хранения данных
    - Исправления для сценариев создания и очистки политик хранения.
 5. Исправления для фоновых задач таймера, позволяющие улучшить энергосбережение в режиме низкого энергопотребления.
+
+### <a name="known-issues"></a>Известные проблемы 
+1. Date_Bucket функцию T-SQL нельзя использовать в вычисляемом столбце.
 
 
 ## <a name="ctp-23"></a>CTP 2.3

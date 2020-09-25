@@ -1,5 +1,5 @@
 ---
-title: Включить имя файла
+title: включить файл
 description: включить файл
 services: digital-twins
 ms.service: digital-twins
@@ -9,31 +9,30 @@ author: deepakpalled
 ms.author: dpalled
 manager: diviso
 ms.custom: include file
-ms.openlocfilehash: 48080bb4d1e24f7f98d3dfe1fd63b65ba46df35e
-ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
+ms.openlocfilehash: 7259e1981f873c8385a02fe4f353dcdda495f823
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87289917"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91287425"
 ---
 ### <a name="property-limits"></a>Ограничения свойств
 
 Ограничения свойств "аналитика временных рядов Azure" увеличились до 1 000 с максимальной закрепления 800 в Gen1. Предоставленные свойства событий имеют соответствующие столбцы JSON, CSV и диаграммы, которые можно просмотреть в [обозревателе Gen2 временных рядов Azure](https://docs.microsoft.com/azure/time-series-insights/time-series-insights-update-quickstart).
 
-| номер SKU | Максимальное число свойств |
+| Номер SKU | Максимальное число свойств |
 | --- | --- |
 | Gen2 (L1) | 1 000 свойства (столбцы) |
 | Gen1 (S1) | 600 свойства (столбцы) |
 | Gen1 (S2) | 800 свойства (столбцы) |
 
-### <a name="event-sources"></a>Источники событий
+### <a name="streaming-ingestion"></a>Потоковый прием
 
-Поддерживается не более двух источников событий на один экземпляр.
+* Для каждой среды существует не более двух [источников событий](../articles/time-series-insights/concepts-streaming-ingestion-event-sources.md) .
 
-* Узнайте, как [Добавить источник концентратора событий](https://docs.microsoft.com/azure/time-series-insights/time-series-insights-how-to-add-an-event-source-eventhub).
-* Настройка [источника центра Интернета вещей](https://docs.microsoft.com/azure/time-series-insights/time-series-insights-how-to-add-an-event-source-iothub).
+* Рекомендации и общие рекомендации для источников событий можно найти [здесь](../articles/time-series-insights/concepts-streaming-ingestion-event-sources.md#streaming-ingestion-best-practices) .
 
-По умолчанию [среды Gen2 поддерживают входящие скорости передачи](https://docs.microsoft.com/azure/time-series-insights/concepts-streaming-ingress-throughput-limits) данных до **1 МБ в секунду на каждую среду**. При необходимости клиенты могут масштабировать свои среды до **16 МБ/с** . Кроме того, существует ограничение в **0,5 МБ/с**для каждого раздела.
+* По умолчанию служба "аналитика временных рядов Azure" Gen2 может принимать входящие данные с частотой **до 1 МБ в секунду (Мбит/с) на среду Gen2 "аналитика временных рядов Azure"**. Существуют дополнительные ограничения [для каждой секции центра](../articles/time-series-insights/concepts-streaming-ingress-throughput-limits.md#hub-partitions-and-per-partition-limits). Для отправки запроса в службу поддержки через портал Azure можно использовать скорости до 8 Мбит/с. Дополнительные сведения см. в статье [ограничения пропускной способности приема потоковой передачи](../articles/time-series-insights/concepts-streaming-ingress-throughput-limits.md).
 
 ### <a name="api-limits"></a>Ограничения API
 

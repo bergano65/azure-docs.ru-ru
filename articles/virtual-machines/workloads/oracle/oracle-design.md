@@ -3,7 +3,7 @@ title: Разработка базы данных Oracle и ее реализа�
 description: Разработка базы данных Oracle и ее реализация в среду Azure.
 services: virtual-machines-linux
 documentationcenter: virtual-machines
-author: rgardler
+author: dbakevlar
 manager: ''
 editor: ''
 tags: azure-resource-manager
@@ -13,13 +13,13 @@ ms.topic: article
 ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure
 ms.date: 08/02/2018
-ms.author: rogardle
-ms.openlocfilehash: 0dd787916159637ce92a29a5d4baa1ffe7a09ba4
-ms.sourcegitcommit: 54d8052c09e847a6565ec978f352769e8955aead
+ms.author: kegorman
+ms.openlocfilehash: 70de7363634cee2790a40ecf056134cf002c762d
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88510017"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91274713"
 ---
 # <a name="design-and-implement-an-oracle-database-in-azure"></a>Разработка базы данных Oracle и ее реализация в Azure
 
@@ -53,7 +53,7 @@ ms.locfileid: "88510017"
 | **Ресурс** |Выделенные  |Совместное использование с другими клиентами|
 | **Регионы** |Центры обработки данных |[Пары регионов](../../regions.md#region-pairs)|
 | **Память** |Сеть SAN и физические диски |[Хранилище под управлением Azure](https://azure.microsoft.com/pricing/details/managed-disks/?v=17.23h)|
-| **Масштаб** |Вертикальное масштабирование |Горизонтальное масштабирование|
+| **Масштабирование** |Вертикальное масштабирование |Горизонтальное масштабирование|
 
 
 ### <a name="requirements"></a>Требования

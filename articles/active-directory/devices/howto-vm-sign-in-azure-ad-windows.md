@@ -12,12 +12,12 @@ manager: daveba
 ms.reviewer: sandeo
 ms.custom: references_regions
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 42b980f809074c275a5e62098d4162e4cb4340a0
-ms.sourcegitcommit: bcda98171d6e81795e723e525f81e6235f044e52
+ms.openlocfilehash: 84e692540d376c95a4a981249eba42060ed4ab80
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/01/2020
-ms.locfileid: "89259376"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91287106"
 ---
 # <a name="sign-in-to-windows-virtual-machine-in-azure-using-azure-active-directory-authentication-preview"></a>Вход в виртуальную машину Windows в Azure с помощью проверки подлинности Azure Active Directory (Предварительная версия)
 
@@ -49,7 +49,7 @@ ms.locfileid: "89259376"
 - Windows 10 1809 и более поздние версии
 
 > [!IMPORTANT]
-> Удаленное подключение к виртуальным машинам, присоединенным к Azure AD, разрешено только с компьютеров Windows 10, присоединенных к Azure AD или гибридных служб Azure AD, присоединенных к **тому каталогу** , что и виртуальная машина 
+> Удаленное подключение к виртуальным машинам, присоединенным к Azure AD, разрешено только с компьютеров Windows 10, которые зарегистрированы в Azure AD (начиная с Windows 10 20H1), присоединенных к Azure AD или гибридной службы Azure AD к тому **же** каталогу, что и виртуальная машина. 
 
 В режиме предварительной версии этой функции сейчас поддерживаются следующие регионы Azure:
 

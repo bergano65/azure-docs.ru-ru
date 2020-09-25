@@ -7,12 +7,12 @@ ms.service: dns
 ms.topic: article
 ms.date: 10/05/2019
 ms.author: rohink
-ms.openlocfilehash: d6faf5bd42c90ea1510d454a2ab7939f121b3d0d
-ms.sourcegitcommit: 4f1c7df04a03856a756856a75e033d90757bb635
+ms.openlocfilehash: 9d183f2da7b916b1547fa1f81aa877b1b5488b41
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87925011"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91308441"
 ---
 # <a name="azure-private-dns-faq"></a>Частная зона DNS: часто задаваемые вопросы
 
@@ -28,7 +28,7 @@ ms.locfileid: "87925011"
 
 Да. Частные зоны поддерживаются для разрешения DNS между виртуальными сетями в разных регионах Azure. Частные зоны работают даже без явной настройки пиринга виртуальных сетей. Все виртуальные сети должны быть связаны с частной зоной DNS.
 
-## <a name="is-connectivity-to-the-internet-from-virtual-networks-required-for-private-zones"></a>Нужно ли подключение к Интернету из виртуальных сетей для работы частных зон?
+## <a name="is-connectivity-to-the-internet-from-virtual-networks-required-for-private-zones"></a>Требуется ли подключение к Интернету из виртуальных сетей, необходимых для частных зон?
 
 Нет. Частные зоны работают вместе с виртуальными сетями. Они используются для управления доменами виртуальных машин или других ресурсов в виртуальных сетях и между ними. Для разрешения имен не нужно подключение к Интернету.
 
@@ -43,6 +43,14 @@ ms.locfileid: "87925011"
 ## <a name="will-the-automatically-registered-virtual-machine-dns-records-in-a-private-zone-be-automatically-deleted-when-you-delete-the-virtual-machine"></a>Будут ли автоматически зарегистрированные записи DNS виртуальных машин в частной зоне автоматически удалены при удалении виртуальной машины?
 
 Да. При удалении виртуальной машины в связанной виртуальной сети с включенной автоматической регистрацией зарегистрированные записи автоматически удаляются.
+
+## <a name="ive-reconfigured-the-os-in-my-virtual-machine-to-have-a-new-host-name-or-static-ip-address-why-dont-i-see-that-change-reflected-in-the-private-zone"></a>Я перестроил ОС в моей виртуальной машине для нового имени узла или статического IP-адреса. Почему я не вижу, что это изменение отражено в частной зоне?
+
+Записи частной зоны заполняются службой DHCP Azure. сообщения регистрации клиента игнорируются. Если вы отключили поддержку DHCP-клиентов на виртуальной машине, настроив статический IP-адрес, изменения имени узла или статического IP-адреса в виртуальной машине не отражаются в зоне.
+
+## <a name="i-have-configured-a-preferred-dns-suffix-in-my-windows-virtual-machine-why-are-my-records-still-registered-in-the-zone-linked-to-the-virtual-network"></a>В виртуальной машине Windows настроен предпочитаемый DNS-суффикс. Почему мои записи все еще зарегистрированы в зоне, связанной с виртуальной сетью?
+
+Служба DHCP Azure при регистрации частной зоны DNS игнорирует все DNS-суффиксы. Например, если виртуальная машина настроена в `contoso.com` качестве основного DNS-суффикса, но виртуальная сеть связана с `fabrikam.com` частной зоной DNS, регистрация виртуальной машины отображается в `fabrikam.com` частной зоне DNS.
 
 ## <a name="can-an-automatically-registered-virtual-machine-record-in-a-private-zone-from-a-linked-virtual-network-be-deleted-manually"></a>Можно ли удалить автоматически зарегистрированную запись виртуальной машины в частной зоне из связанной виртуальной сети вручную?
 

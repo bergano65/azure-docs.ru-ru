@@ -7,24 +7,24 @@ author: MashaMSFT
 editor: monicar
 tags: azure-service-management
 ms.service: virtual-machines-sql
-ms.topic: article
+ms.topic: overview
 ms.tgt_pltfrm: vm-windows-sql-server
 ms.workload: iaas-sql-server
 ms.date: 06/02/2020
 ms.author: mathoma
-ms.openlocfilehash: 6d77855f095c59b47156af735f4581076ce5a09c
-ms.sourcegitcommit: f845ca2f4b626ef9db73b88ca71279ac80538559
-ms.translationtype: MT
+ms.openlocfilehash: a8bfa91ac9b70c0ff4f461bd9e10899d1170b24d
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/09/2020
-ms.locfileid: "89611624"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91272529"
 ---
 # <a name="failover-cluster-instances-with-sql-server-on-azure-virtual-machines"></a>Экземпляры отказоустойчивого кластера с SQL Server на виртуальных машинах Azure
 [!INCLUDE[appliesto-sqlvm](../../includes/appliesto-sqlvm.md)]
 
 В этой статье рассматриваются различия в функциях при работе с экземплярами отказоустойчивого кластера (FCI) для SQL Server на виртуальных машинах Azure. 
 
-## <a name="overview"></a>Overview
+## <a name="overview"></a>Обзор
 
 SQL Server на виртуальных машинах Azure использует функции отказоустойчивой кластеризации Windows Server (WSFC), чтобы обеспечить локальную высокую доступность с помощью избыточности на уровне экземпляра сервера: экземпляр отказоустойчивого кластера. FCI — это единственный экземпляр SQL Server, который устанавливается между узлами WSFC (или просто кластером) и, возможно, между несколькими подсетями. В сети FCI является экземпляром SQL Server, выполняющимся на одном компьютере. Но FCI обеспечивает отработку отказа с одного узла WSFC на другой, если текущий узел становится недоступным.
 
@@ -48,7 +48,7 @@ SQL Server на виртуальных машинах Azure предлагает
 
 ||[Общие диски Azure](../../../virtual-machines/windows/disks-shared.md)|[Общие папки ценовой категории "Премиум"](../../../storage/files/storage-how-to-create-premium-fileshare.md) |[Локальные дисковые пространства (S2D)](/windows-server/storage/storage-spaces/storage-spaces-direct-overview)|
 |---------|---------|---------|---------|
-|**Минимальная версия ОС**| Все |Windows Server 2012|Windows Server 2016|
+|**Минимальная версия ОС**| Все |Windows Server 2012|Windows Server 2016|
 |**Минимальная версия SQL Server**|Все|SQL Server 2012|SQL Server 2016|
 |**Поддерживаемая доступность виртуальной машины** |Группы доступности с группами размещения с учетом расположения |Группы доступности и зоны доступности|Группы доступности |
 |**Поддержка FileStream**|Да|Нет|Да |
@@ -167,7 +167,7 @@ SQL Server на виртуальных машинах Azure предлагает
 
 Ознакомьтесь с рекомендациями по [конфигурации кластера](hadr-cluster-best-practices.md)и [Подготовьте виртуальную машину SQL Server для FCI](failover-cluster-instance-prepare-vm.md). 
 
-Дополнительные сведения см. в разделе: 
+Дополнительные сведения можно найти в разделе 
 
 - [технологии кластера под управлением Windows](/windows-server/failover-clustering/failover-clustering-overview);   
 - [Экземпляры отказоустойчивого кластера SQL Server](/sql/sql-server/failover-clusters/windows/always-on-failover-cluster-instances-sql-server)

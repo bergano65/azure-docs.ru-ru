@@ -8,14 +8,14 @@ ms.custom: sqldbrb=1
 ms.topic: conceptual
 author: srdan-bozovic-msft
 ms.author: srbozovi
-ms.reviewer: vanto, carlrab
+ms.reviewer: vanto, sstein
 ms.date: 05/07/2019
-ms.openlocfilehash: 1c2dd3f93abf6418b99bf28d11f2df254b024971
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 498d00b4f6a0ca16d07663641a46f30109b39d5f
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84708664"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91325068"
 ---
 # <a name="configure-public-endpoint-in-azure-sql-managed-instance"></a>Configure public endpoint in Azure SQL Managed Instance (Настройка общедоступной конечной точки в управляемом экземпляре SQL Azure)
 [!INCLUDE[appliesto-sqlmi](../includes/appliesto-sqlmi.md)]
@@ -40,7 +40,7 @@ ms.locfileid: "84708664"
 
 ## <a name="enabling-public-endpoint-for-a-managed-instance-in-the-azure-portal"></a>Включение общедоступной конечной точки для управляемого экземпляра в портал Azure
 
-1. Запустите портал Azure по адресу<https://portal.azure.com/.>
+1. Запустите портал Azure по адресу <https://portal.azure.com/.>
 1. Откройте группу ресурсов с управляемым экземпляром и выберите **управляемый экземпляр SQL** , для которого требуется настроить общедоступную конечную точку.
 1. В окне Параметры **безопасности** перейдите на вкладку **Виртуальная сеть** .
 1. На странице Конфигурация виртуальной сети выберите **включить** , а затем значок **сохранить** , чтобы обновить конфигурацию.
@@ -82,7 +82,7 @@ Set-AzSqlInstance -PublicDataEndpointEnabled $false -force
 
 ## <a name="allow-public-endpoint-traffic-on-the-network-security-group"></a>Разрешить трафик общедоступной конечной точки в группе безопасности сети
 
-1. Если страница Конфигурация управляемого экземпляра по-прежнему открыта, перейдите на вкладку **Обзор** . в противном случае вернитесь к ресурсу **управляемого экземпляра SQL** . Выберите ссылку **Виртуальная сеть или подсеть** , чтобы перейти на страницу конфигурации виртуальной сети.
+1. Если страница Конфигурация управляемого экземпляра по-прежнему открыта, перейдите на вкладку **Обзор** . В противном случае вернитесь к ресурсу **управляемого экземпляра SQL** . Выберите ссылку **Виртуальная сеть или подсеть** , чтобы перейти на страницу конфигурации виртуальной сети.
 
     ![mi-overview.png](./media/public-endpoint-configure/mi-overview.png)
 
@@ -96,13 +96,13 @@ Set-AzSqlInstance -PublicDataEndpointEnabled $false -force
 
     |Параметр  |Рекомендуемое значение  |Описание  |
     |---------|---------|---------|
-    |**Источник**     |Любой IP-адрес или тег службы         |<ul><li>Для служб Azure, таких как Power BI, выберите тег облачной службы Azure.</li> <li>Для компьютера или виртуальной машины Azure используйте IP-адрес NAT.</li></ul> |
+    |**Source**     |Любой IP-адрес или тег службы         |<ul><li>Для служб Azure, таких как Power BI, выберите тег облачной службы Azure.</li> <li>Для компьютера или виртуальной машины Azure используйте IP-адрес NAT.</li></ul> |
     |**Диапазоны исходных портов**     |* |Оставьте это значение равным * (Any), так как порты источника обычно выделяются динамически и, как таковые, непредсказуемые. |
     |**Назначение**     |Любой         |Запрет места назначения в качестве любого, чтобы разрешить трафик в подсеть управляемого экземпляра |
     |**Диапазоны портов назначения**     |3342         |Порт назначения области 3342, который является общедоступной конечной точкой TDS управляемого экземпляра. |
     |**протокол**;     |TCP         |SQL Управляемый экземпляр использует протокол TCP для TDS |
     |**Действие**     |Allow         |Разрешить входящий трафик к управляемому экземпляру через общедоступную конечную точку |
-    |**Priority**     |1300         |Убедитесь, что это правило имеет более высокий приоритет, чем правило **deny_all_inbound** |
+    |**Приоритет**     |1300         |Убедитесь, что это правило имеет более высокий приоритет, чем правило **deny_all_inbound** |
 
     ![mi-nsg-rules.png](./media/public-endpoint-configure/mi-nsg-rules.png)
 
@@ -116,6 +116,6 @@ Set-AzSqlInstance -PublicDataEndpointEnabled $false -force
 
     ![mi-public-endpoint-conn-string.png](./media/public-endpoint-configure/mi-public-endpoint-conn-string.png)
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Узнайте, как [безопасно использовать Azure SQL управляемый экземпляр с общедоступной конечной точкой](public-endpoint-overview.md).

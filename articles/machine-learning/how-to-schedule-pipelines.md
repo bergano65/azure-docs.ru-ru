@@ -10,12 +10,12 @@ author: lobrien
 ms.date: 11/12/2019
 ms.topic: conceptual
 ms.custom: how-to, devx-track-python
-ms.openlocfilehash: ac1df12b10e32f35e8edbd52c3488b2d38db638a
-ms.sourcegitcommit: 3be3537ead3388a6810410dfbfe19fc210f89fec
+ms.openlocfilehash: df9447160fe6a0aa2a3ae001ad8a337c3ff488f2
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89650806"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91275949"
 ---
 # <a name="schedule-machine-learning-pipelines-with-azure-machine-learning-sdk-for-python"></a>Планирование конвейеров машинного обучения с помощью пакета SDK для Машинное обучение Azure для Python
 
@@ -83,7 +83,7 @@ recurring_schedule = Schedule.create(ws, name="MyRecurringSchedule",
 
 Конвейеры, активируемые изменениями файлов, могут оказаться более эффективными по сравнению с расписаниями, основанными на времени. Например, может потребоваться выполнить шаг предварительной обработки при изменении файла или при добавлении нового файла в каталог данных. Вы можете отслеживать любые изменения в хранилище данных или изменения в определенном каталоге в хранилище данных. При мониторинге определенного каталога изменения в подкаталогах этого каталога _не_ активируют запуск.
 
-Для создания реактивного файла `Schedule` необходимо задать `datastore` параметр в вызове [Schedule. Create](https://docs.microsoft.com/python/api/azureml-pipeline-core/azureml.pipeline.core.schedule.schedule?view=azure-ml-py#&preserve-view=truecreate-workspace--name--pipeline-id--experiment-name--recurrence-none--description-none--pipeline-parameters-none--wait-for-provisioning-false--wait-timeout-3600--datastore-none--polling-interval-5--data-path-parameter-name-none--continue-on-step-failure-none--path-on-datastore-none---workflow-provider-none---service-endpoint-none-). Для наблюдения за папкой задайте `path_on_datastore` аргумент.
+Для создания реактивного файла `Schedule` необходимо задать `datastore` параметр в вызове [Schedule. Create](https://docs.microsoft.com/python/api/azureml-pipeline-core/azureml.pipeline.core.schedule.schedule?view=azure-ml-py&preserve-view=true#&preserve-view=truecreate-workspace--name--pipeline-id--experiment-name--recurrence-none--description-none--pipeline-parameters-none--wait-for-provisioning-false--wait-timeout-3600--datastore-none--polling-interval-5--data-path-parameter-name-none--continue-on-step-failure-none--path-on-datastore-none---workflow-provider-none---service-endpoint-none-). Для наблюдения за папкой задайте `path_on_datastore` аргумент.
 
 `polling_interval`Аргумент позволяет указать в минутах частоту проверки хранилища данных на наличие изменений.
 
@@ -146,7 +146,7 @@ stop_by_schedule_id(ws, schedule_id)
 
 В этой статье вы использовали пакет SDK для Машинное обучение Azure для Python, чтобы запланировать конвейер двумя разными способами. Одно расписание повторяется на основе затраченного времени. Другое расписание выполняется при изменении файла на указанном `Datastore` или в каталоге в этом хранилище. Вы узнали, как использовать портал для проверки конвейера и отдельных запусков. Наконец, вы узнали, как отключить расписание, чтобы остановить выполнение конвейера.
 
-Дополнительные сведения см. в разделе:
+Дополнительные сведения можно найти в разделе
 
 > [!div class="nextstepaction"]
 > [Использование конвейеров Машинного обучения Azure для пакетной оценки](tutorial-pipeline-batch-scoring-classification.md)

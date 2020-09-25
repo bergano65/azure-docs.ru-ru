@@ -7,14 +7,14 @@ titleSuffix: Azure SQL Database and Azure Synapse Analytics (formerly SQL Data W
 ms.topic: conceptual
 author: rohitnayakmsft
 ms.author: rohitna
-ms.reviewer: carlrab, vanto
+ms.reviewer: sstein, vanto
 ms.date: 07/06/2020
-ms.openlocfilehash: f664ffbfc9aa38dcf8eb7736b28613efb95bde63
-ms.sourcegitcommit: bf1340bb706cf31bb002128e272b8322f37d53dd
+ms.openlocfilehash: 431d7ff2631f9b4a0a20db82c40b512c41209b7e
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/03/2020
-ms.locfileid: "89438183"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91325374"
 ---
 # <a name="azure-sql-connectivity-settings"></a>Параметры подключения к SQL Azure
 [!INCLUDE[appliesto-sqldb-asa](../includes/appliesto-sqldb-asa.md)]
@@ -31,7 +31,7 @@ ms.locfileid: "89438183"
 > [!NOTE]
 > После применения этих параметров они вступают в **силу немедленно** и могут привести к утрате подключения для клиентов, если они не соответствуют требованиям для каждого параметра.
 
-## <a name="deny-public-network-access"></a>Запретить доступ к общедоступной сети
+## <a name="deny-public-network-access"></a>Запрет доступа к общедоступной сети
 
 Если параметр **запрета доступа к общедоступной сети** имеет значение **Да**, разрешены только подключения через частные конечные точки. Если для этого параметра задано значение **нет** (по умолчанию), клиенты могут подключаться с помощью общедоступных конечных точек (правила брандмауэра на основе IP-адресов, правила брандмауэра на основе виртуальной сети) или частных конечных точек (с использованием частной ссылки), как описано в статье [Обзор доступа к сети](network-access-controls-overview.md). 
 
@@ -76,7 +76,7 @@ To manage server or database level firewall rules, please enable the public netw
 # Update Public Network Access to Disabled
 $SecureString = ConvertTo-SecureString "password" -AsPlainText -Force
 
-Set-AzSqlServer -ServerName sql-server-name -ResourceGroupName sql-server-group -SqlAdministratorPassword $SecureString -PublicNetworkAccess "Enabled"
+Set-AzSqlServer -ServerName sql-server-name -ResourceGroupName sql-server-group -SqlAdministratorPassword $SecureString -PublicNetworkAccess "Disabled"
 ```
 
 ## <a name="change-public-network-access-via-cli"></a>Изменение доступа к общедоступной сети с помощью интерфейса командной строки

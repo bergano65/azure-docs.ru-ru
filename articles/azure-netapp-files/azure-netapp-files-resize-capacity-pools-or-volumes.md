@@ -12,14 +12,14 @@ ms.workload: storage
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: how-to
-ms.date: 05/14/2019
+ms.date: 09/22/2020
 ms.author: b-juche
-ms.openlocfilehash: 7d1c54d05430600e9fffa2659dbaaf6db0b086b5
-ms.sourcegitcommit: 29400316f0c221a43aff3962d591629f0757e780
+ms.openlocfilehash: 62bf154c1dbf1a0d3f12e2cef916b37059ce985b
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/02/2020
-ms.locfileid: "87512879"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91325510"
 ---
 # <a name="resize-a-capacity-pool-or-a-volume"></a>Изменение размера пула емкости или тома
 При необходимости вы можете изменить размер пула емкости или тома. 
@@ -40,3 +40,8 @@ ms.locfileid: "87512879"
 2. Щелкните правой кнопкой мыши имя тома, размер которого требуется изменить, или щелкните значок "…"в конце строки тома, чтобы открыть контекстное меню.
 3. Используя параметры контекстного меню, измените размер тома или удалите том.
 
+## <a name="next-steps"></a>Дальнейшие действия
+
+- [Настройка пула емкости](azure-netapp-files-set-up-capacity-pool.md)
+- [Управление пулом емкости QoS вручную](manage-manual-qos-capacity-pool.md)
+- [Динамическое изменение уровня обслуживания тома](dynamic-change-volume-service-level.md) 

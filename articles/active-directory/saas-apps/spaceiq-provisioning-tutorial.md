@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: article
 ms.date: 10/07/2019
 ms.author: Zhchia
-ms.openlocfilehash: 1e63dec14db795b2511f4069bb62a7ce1504a1ec
-ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
+ms.openlocfilehash: cd1e9431d7125b405f31cb1ed329e6e264cd247e
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88545052"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91285958"
 ---
 # <a name="tutorial-configure-spaceiq-for-automatic-user-provisioning"></a>Учебник. Настройка SpaceIQ для автоматической подготовки пользователей
 
@@ -109,11 +109,11 @@ ms.locfileid: "88545052"
 
 3. Выберите вкладку **Подготовка**.
 
-    ![Вкладка "Подготовка"](common/provisioning.png)
+    ![Снимок экрана параметров управления с вызываемым параметром подготовки.](common/provisioning.png)
 
 4. Для параметра **Режим подготовки к работе** выберите значение **Automatic** (Автоматически).
 
-    ![Вкладка "Подготовка"](common/provisioning-automatic.png)
+    ![Снимок экрана: раскрывающийся список режима подготовки с вызываемым автоматическим параметром.](common/provisioning-automatic.png)
 
 5. В разделе **учетные данные администратора** введите `https://api.spaceiq.com/scim` **URL-адрес клиента**. Введите значение **маркера проверки подлинности scim** , полученное ранее в **маркере секрета**. Щелкните **проверить подключение** , чтобы убедиться, что Azure AD может подключиться к SpaceIQ. Если подключение не выполняется, убедитесь, что у учетной записи SpaceIQ есть разрешения администратора, и повторите попытку.
 
@@ -123,7 +123,7 @@ ms.locfileid: "88545052"
 
     ![Почтовое уведомление](common/provisioning-notification-email.png)
 
-7. Нажмите **Сохранить**.
+7. Выберите команду **Сохранить**.
 
 8. В разделе **сопоставления** выберите **синхронизировать Azure Active Directory пользователей с SpaceIQ**.
 

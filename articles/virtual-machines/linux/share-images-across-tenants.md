@@ -10,12 +10,12 @@ ms.date: 05/04/2019
 ms.author: akjosh
 ms.reviewer: cynthn
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: d0770cd9e7ec99765b8f201634e6a857b3cf02e4
-ms.sourcegitcommit: 5ed504a9ddfbd69d4f2d256ec431e634eb38813e
+ms.openlocfilehash: f6ffa23818a223ef1c0d46823955668ad96292d9
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89318074"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91307217"
 ---
 # <a name="share-gallery-vm-images-across-azure-tenants---linux-examples"></a>Совместное использование образов виртуальных машин коллекции в клиентах Azure — Примеры Linux
 
@@ -56,4 +56,4 @@ az vm create \
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Если вы столкнетесь с проблемами, обратитесь к статье об [устранении неполадок с коллекциями общих образов](troubleshooting-shared-images.md).
+Если вы столкнетесь с проблемами, обратитесь к статье об [устранении неполадок с коллекциями общих образов](../troubleshooting-shared-images.md).

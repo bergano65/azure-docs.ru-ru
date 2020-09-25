@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 08/31/2020
 ms.author: Zhchia
-ms.openlocfilehash: 1013e7f7fa824a7fef0535b8ab599e2a4e786b40
-ms.sourcegitcommit: 3fc3457b5a6d5773323237f6a06ccfb6955bfb2d
+ms.openlocfilehash: 95ee630c1190167227a4ab3514a0c36db0401e45
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/11/2020
-ms.locfileid: "90032339"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91273370"
 ---
 # <a name="tutorial-configure-coda-for-automatic-user-provisioning"></a>Учебник. Настройка формата Coda для автоматической подготовки пользователей
 
@@ -85,11 +85,11 @@ ms.locfileid: "90032339"
 
 3. Выберите вкладку **Подготовка**.
 
-    ![Вкладка "Подготовка"](common/provisioning.png)
+    ![Снимок экрана параметров управления с вызываемым параметром подготовки.](common/provisioning.png)
 
 4. Для параметра **Режим подготовки к работе** выберите значение **Automatic** (Автоматически).
 
-    ![Вкладка "Подготовка"](common/provisioning-automatic.png)
+    ![Снимок экрана: раскрывающийся список режима подготовки с вызываемым автоматическим параметром.](common/provisioning-automatic.png)
 
 5. В разделе **учетные данные администратора** введите URL-адрес клиента Coda и секретный маркер, полученный ранее на шаге 2. Нажмите кнопку **проверить подключение** , чтобы убедиться, что Azure AD может подключиться к Coda. Если подключение не выполняется, убедитесь, что у учетной записи Coda есть разрешения администратора, и повторите попытку.
 

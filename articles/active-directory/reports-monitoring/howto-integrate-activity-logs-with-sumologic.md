@@ -1,6 +1,6 @@
 ---
 title: Потоковая передача журналов в SumoLogic с помощью Azure Monitor | Документация Майкрософт
-description: Узнайте, как интегрировать журналы Azure Active Directory с SumoLogic с помощью Azure Monitor
+description: Узнайте, как интегрировать журналы Azure Active Directory с SumoLogic с помощью Azure Monitor.
 services: active-directory
 documentationcenter: ''
 author: MarkusVi
@@ -17,20 +17,20 @@ ms.date: 04/18/2019
 ms.author: markvi
 ms.reviewer: dhanyahk
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 4ccdfa99a36635e72fc97820ec6b852e36a50ec2
-ms.sourcegitcommit: d68c72e120bdd610bb6304dad503d3ea89a1f0f7
+ms.openlocfilehash: 51e1f45c787c319c32358e7f310108131647d60e
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/01/2020
-ms.locfileid: "89229792"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91335839"
 ---
 # <a name="integrate-azure-active-directory-logs-with-sumologic-using-azure-monitor"></a>Интеграция журналов Azure Active Directory с SumoLogic с помощью Azure Monitor
 
 Из этой статьи вы узнаете, как интегрировать журналы Azure Active Directory (Azure AD) с SumoLogic с помощью Azure Monitor. Сначала вы направите журналы в концентратор событий Azure, а затем интегрируете этот концентратор событий со SumoLogic.
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
-Чтобы использовать эту функцию, вам понадобится следующее.
+Для использования этой функции необходимо иметь следующее.
 * Концентратор событий Azure, содержащий журналы действий Azure AD. Узнайте, как [настроить потоковую передачу журналов действий в концентратор событий](./tutorial-azure-monitor-stream-logs-to-event-hub.md). 
 * Подписка с поддержкой единого входа SumoLogic.
 
@@ -44,6 +44,6 @@ ms.locfileid: "89229792"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-* [Анализ схемы журналов аудита в Azure Monitor](reference-azure-monitor-audit-log-schema.md)
-* [Анализ схемы журналов входа в Azure Monitor](reference-azure-monitor-sign-ins-log-schema.md)
+* [Interpret the Azure AD audit logs schema in Azure Monitor (preview)](reference-azure-monitor-audit-log-schema.md) (Интерпретация схемы журналов аудита Azure Active Directory в Azure Monitor (предварительная версия))
+* [Interpret the Azure AD sign-in logs schema in Azure Monitor (preview)](reference-azure-monitor-sign-ins-log-schema.md) (Интерпретация схемы журналов входа Azure Active Directory в Azure Monitor (предварительная версия))
 * [Часто задаваемые вопросы и известные проблемы](concept-activity-logs-azure-monitor.md#frequently-asked-questions)

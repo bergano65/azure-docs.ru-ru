@@ -3,12 +3,12 @@ title: Подписки на службу "Сетка событий Azure" че
 description: В этой статье описывается, как создать подписки на сетку событий для поддерживаемых источников, таких как хранилище BLOB-объектов Azure, с помощью портал Azure.
 ms.topic: conceptual
 ms.date: 07/07/2020
-ms.openlocfilehash: acbf83d6df0c7d74da5e561d98d0c3df23d5fbd5
-ms.sourcegitcommit: 03662d76a816e98cfc85462cbe9705f6890ed638
+ms.openlocfilehash: e80e2243c93ab38187646256f567d6ab73c40100
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90526465"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91308509"
 ---
 # <a name="subscribe-to-events-through-portal"></a>Подписка на события через портал
 
@@ -40,7 +40,7 @@ ms.locfileid: "90526465"
 
 1. Укажите дополнительные сведения о подписке на события, например конечной точки для обработки событий и название подписки.
 
-   ![Указание сведений о подписке](./media/subscribe-through-portal/provide-subscription-details.png)
+   ![Снимок экрана, показывающий разделы "сведения о конечной точке" и "сведения о подписке на события" с указанным значением имени подписки.](./media/subscribe-through-portal/provide-subscription-details.png)
 
 1. Чтобы включить сохранение недоставленых событий и настроить политики повтора, выберите **Дополнительные функции**.
 
@@ -60,7 +60,7 @@ ms.locfileid: "90526465"
 
 Портал предоставляет параметры для создания подписки на события, относящиеся к этому источнику.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * См. дополнительные сведения о [доставке сообщений и повторных попытках в Сетке событий](delivery-and-retry.md).
 * Общие сведения о службе "Сетка событий" см. в разделе [Общие сведения о службе "Сетка событий Azure"](overview.md).
