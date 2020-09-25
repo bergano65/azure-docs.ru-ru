@@ -13,15 +13,15 @@ ms.service: virtual-machines-linux
 ms.topic: article
 ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure-services
-ms.date: 09/08/2020
+ms.date: 09/23/2020
 ms.author: juergent
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 986e4fd8c7043f5c01868302ffc2b554e2ce76f7
-ms.sourcegitcommit: d0541eccc35549db6381fa762cd17bc8e72b3423
+ms.openlocfilehash: f778e996eeda0f2b850864c9c90cd522c411b032
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/09/2020
-ms.locfileid: "89567084"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91328026"
 ---
 # <a name="use-azure-to-host-and-run-sap-workload-scenarios"></a>Использование Azure для размещения и выполнения сценариев рабочей нагрузки SAP
 
@@ -82,6 +82,7 @@ Azure для SAP HANA — это предложение, выделяющее A
 
 ## <a name="change-log"></a>Журнал изменений
 
+- 09/02/2020: добавьте новые сертифицированные номера SKU для ХЛИ в [доступных SKU для Хли](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/hana-available-skus) 
 - 09/08/2020: изменение [высокого уровня доступности SAP HANA на виртуальных машинах Azure в SLES](./sap-hana-high-availability.md) для уточнения определений stonith
 - 09/03/2020: измените [SAP HANA конфигурации хранилища виртуальных машин Azure](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/hana-vm-operations-storage) для адаптации к минимальным объемам операций ввода-вывода в 1 ГБ с помощью Ultra Disk
 - 09/02/2020: измените [Доступные номера SKU для Хли](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/hana-available-skus) , чтобы повысить прозрачность в отношении номеров SKU, СЕРТИФИЦИРОВАНных Hana

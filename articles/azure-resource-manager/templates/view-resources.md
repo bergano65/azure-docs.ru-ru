@@ -3,12 +3,12 @@ title: Обнаружение свойств ресурсов
 description: Описание процесса поиска свойств ресурсов.
 ms.topic: conceptual
 ms.date: 06/10/2020
-ms.openlocfilehash: 75c089ac9d0ca08c788fea1ac9011f018ef0195e
-ms.sourcegitcommit: bcb962e74ee5302d0b9242b1ee006f769a94cfb8
+ms.openlocfilehash: c8bbe0dcb1bc9dc9751a1dc0d0b98a6368473546
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "86057081"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91327754"
 ---
 # <a name="discover-resource-properties"></a>Обнаружение свойств ресурсов
 
@@ -74,7 +74,7 @@ Visual Studio Code и расширение Azure Resource Manager Tools помо
 1. Войдите на [портал Azure](https://portal.azure.com).
 1. В поле поиска введите **Обозреватель ресурсов**, а затем выберите **Обозреватель ресурсов**.
 
-    ![портал Azure обозреватель ресурсов](./media/view-resources/azure-portal-resource-explorer.png)
+    ![На снимке экрана показан поиск обозреватель ресурсов в портал Azure.](./media/view-resources/azure-portal-resource-explorer.png)
 
 1. В левой части разверните узел **подписки**, а затем разверните подписку Azure. Вы можете найти учетную запись хранения с помощью **поставщиков** или **ResourceGroups**.
 
@@ -114,6 +114,6 @@ Resources.azure.com — общедоступный веб-сайт, доступ
 
     ![Номер SKU учетной записи хранения портал Azure обозреватель ресурсов](./media/view-resources/azure-portal-resource-explorer-sku.png)
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 В этой статье вы узнали, как найти сведения о схеме шаблона. Дополнительные сведения о создании шаблонов диспетчер ресурсов см. в разделе Общие сведения о [структуре и синтаксисе шаблонов ARM](./template-syntax.md).

@@ -11,12 +11,12 @@ author: stevestein
 ms.author: sstein
 ms.reviewer: ''
 ms.date: 09/19/2018
-ms.openlocfilehash: 9339ed7d0ab122420b37a67a96ee0d9d324e2f15
-ms.sourcegitcommit: bf1340bb706cf31bb002128e272b8322f37d53dd
+ms.openlocfilehash: 446517f56d1f5ba6fa32408489f07411ee1a3e02
+ms.sourcegitcommit: d95cab0514dd0956c13b9d64d98fdae2bc3569a0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/03/2020
-ms.locfileid: "89442911"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91356814"
 ---
 # <a name="cross-tenant-analytics-using-extracted-data---multi-tenant-app"></a>Получение межклиентской аналитики на основе извлеченных с мультитенантного приложения данных
 [!INCLUDE[appliesto-sqldb](../includes/appliesto-sqldb.md)]
@@ -36,7 +36,7 @@ ms.locfileid: "89442911"
 > - запросить базу данных аналитики;
 > - использовать Power BI для визуализации данных, чтобы выделить тренды в данных клиента и составить рекомендации по оптимизации.
 
-![Обзор архитектуры](./media/saas-multitenantdb-tenant-analytics/architectureOverview.png)
+![На схеме показан обзор архитектуры, используемой в этой статье.](./media/saas-multitenantdb-tenant-analytics/architectureOverview.png)
 
 ## <a name="offline-tenant-analytics-pattern"></a>Шаблон аналитики автономного клиента
 
@@ -53,7 +53,7 @@ ms.locfileid: "89442911"
 
 Совместно эти таблицы обеспечивают эффективную аналитическую обработку. Схема типа "звезда", используемая в этом руководстве, показана на рисунке ниже:
  
-![StarSchema](./media/saas-multitenantdb-tenant-analytics/StarSchema.png)
+![На диаграмме базы данных показаны четыре объекта базы данных, подключенные к центральному объекту базы данных.](./media/saas-multitenantdb-tenant-analytics/StarSchema.png)
 
 И наконец, выполняется запрос таблиц схемы типа "звезда". Результаты запроса отображаются визуально, чтобы выделить важные сведения о поведении клиента и о том, как он использует приложение. С такой схемой можно выполнять запросы, которые помогут обнаружить следующее:
 
@@ -64,7 +64,7 @@ ms.locfileid: "89442911"
 
 Понимание того, насколько согласованно каждый клиент использует службу, дает возможность создать планы обслуживания для удовлетворения соответствующих потребностей. В этом руководстве приведены базовые примеры подробных сведений, которые можно получить из данных клиента.
 
-## <a name="setup"></a>Настройка
+## <a name="setup"></a>Установка
 
 ### <a name="prerequisites"></a>Предварительные требования
 
@@ -111,7 +111,7 @@ ms.locfileid: "89442911"
 - Присутствуют таблицы схемы типа "звезда" **fact_Tickets**, **dim_Customers**, **dim_Venues**, **dim_Events** и **dim_Dates**.
 - Хранимая процедура **sp_ShredRawExtractedData** используется для заполнения таблиц схемы типа "звезда" из таблиц с необработанными данными.
 
-![tenantAnalytics](./media/saas-multitenantdb-tenant-analytics/tenantAnalytics.png)
+![На снимке экрана показан обозреватель объектов S s для узла хранилища аналитики, включая таблицы, представления и узлы.](./media/saas-multitenantdb-tenant-analytics/tenantAnalytics.png)
 
 ## <a name="data-extraction"></a>Извлечение данных 
 
@@ -139,7 +139,7 @@ ms.locfileid: "89442911"
 4. Нажмите клавишу **F5** , чтобы запустить сценарий, который создает и запускает задание, которое извлекает данные о билетах и клиентах из каждой базы данных клиента. Это задание сохраняет данные в хранилище аналитики.
 5. Выполните запрос таблицы TicketsRawData в базе данных tenantanalytics, чтобы убедиться, что таблица заполнена сведениями о билетах из всех клиентов.
 
-![ticketExtracts](./media/saas-multitenantdb-tenant-analytics/ticketExtracts.png)
+![На снимке экрана показана база данных Екстракттиккетс с TicketsRawData d b o, выбранной в обозревателе объектов.](./media/saas-multitenantdb-tenant-analytics/ticketExtracts.png)
 
 Повторите предыдущие шаги, но на этот раз замените **\ExtractTickets.sql** на **\ExtractVenuesEvents.sql** на шаге 2.
 
@@ -159,7 +159,7 @@ ms.locfileid: "89442911"
 4. Подождите, пока задание завершится.
     - В таблице jobs.jobs_execution проверьте состояние задания в колонке **Lifecycle**. Чтобы продолжить, дождитесь **успешного завершения** задания. При успешном выполнении будут отображены данные, как на схеме ниже:
 
-![shreddingJob](./media/saas-multitenantdb-tenant-analytics/shreddingJob.PNG)
+![На снимке экрана показан успешный результат выполнения процедуры sp_ShredRawExtractedData.](./media/saas-multitenantdb-tenant-analytics/shreddingJob.PNG)
 
 ## <a name="data-exploration"></a>Исследование данных
 
@@ -174,11 +174,11 @@ ms.locfileid: "89442911"
 3. В окне **получения данных** выберите базу данных SQL Azure.
 4. В окне входа в базу данных введите имя сервера (Catalog-MT- \<User\> . Database.Windows.NET). Выберите **Импорт** для **режима подключения к данным**, а затем нажмите кнопку "ОК". 
 
-    ![powerBISignIn](./media/saas-multitenantdb-tenant-analytics/powerBISignIn.PNG)
+    ![На снимке экрана показано диалоговое окно базы данных SQL Server, в котором можно ввести сервер и базу данных.](./media/saas-multitenantdb-tenant-analytics/powerBISignIn.PNG)
 
-5. Выберите **база данных** на левой панели, введите имя пользователя = *Developer*и введите password = *P \@ ssword1*. Нажмите кнопку **Подключить**.  
+5. Выберите **база данных** на левой панели, введите имя пользователя = *Developer*и введите password = *P \@ ssword1*. Нажмите кнопку **Соединить**.  
 
-    ![DatabaseSignIn](./media/saas-multitenantdb-tenant-analytics/databaseSignIn.PNG)
+    ![На снимке экрана показано диалоговое окно SQL Server базы данных, в котором можно ввести имя пользователя и пароль.](./media/saas-multitenantdb-tenant-analytics/databaseSignIn.PNG)
 
 6. В области **Навигатор** в базе данных аналитики выберите таблицы со схемой «звезда»: fact_Tickets, dim_Events, dim_Venues, dim_Customers и dim_Dates. Затем выберите **Загрузка**. 
 
@@ -186,13 +186,13 @@ ms.locfileid: "89442911"
 
 Для начала мы проанализируем данные о продажах билетов, чтобы отследить различия в использовании для разных мест проведения мероприятий. Выберите следующие параметры в Power BI для построения линейчатой диаграммы общего числа билетов, проданных по каждому месту проведения. Из-за случайных изменений в работе генератора билетов результаты могут отличаться.
  
-![TotalTicketsByVenues](./media/saas-multitenantdb-tenant-analytics/TotalTicketsByVenues.PNG)
+![На снимке экрана показана Power B визуализация и элементы управления для визуализации данных в правой части.](./media/saas-multitenantdb-tenant-analytics/TotalTicketsByVenues.PNG)
 
 Рисунок выше подтверждает, что количество билетов, проданных по различным местам проведения, отличается. Места проведения, в которых продается больше билетов, используют службу более интенсивно. Здесь можно применить настройку выделения ресурсов в соответствии с различными потребностями клиента.
 
 Можно глубже проанализировать данные, чтобы определить изменения в продаже билетов с течением времени. Выберите следующие параметры в Power BI для построения диаграммы общего числа билетов, продаваемых каждый день в течение 60 дней.
  
-![SaleVersusDate](./media/saas-multitenantdb-tenant-analytics/SaleVersusDate.PNG)
+![На снимке экрана показано Power B Визуализация с названием "распределение продаж билетов" и "день продажи".](./media/saas-multitenantdb-tenant-analytics/SaleVersusDate.PNG)
 
 На предыдущей диаграмме отображается пик продажи билетов для некоторых мест проведения. Таким образом, можно предположить, что в некоторых местах проведения происходит непропорциональное использование системных ресурсов. Пока нет явного шаблона в отношении времени возникновения пиков.
 
@@ -228,7 +228,7 @@ AverageTicketsSold = DIVIDE(DIVIDE(COUNTROWS(fact_Tickets),DISTINCT(dim_Venues[V
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-В этом руководстве вы узнали, как:
+В этом руководстве вы узнали, как выполнять следующие задачи:
 
 > [!div class="checklist"]
 > - развернуть клиентскую базу данных аналитики с предварительно определенными таблицами схемы типа "звезда";

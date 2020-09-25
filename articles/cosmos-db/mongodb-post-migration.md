@@ -7,12 +7,12 @@ ms.subservice: cosmosdb-mongo
 ms.topic: how-to
 ms.date: 03/20/2020
 ms.author: lbosq
-ms.openlocfilehash: 055604c399aa1641e823f24af499102bfff3ed0e
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 93a9058dec66ffe2e1c7ad4b15d9bf4eba12c647
+ms.sourcegitcommit: d95cab0514dd0956c13b9d64d98fdae2bc3569a0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85263098"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91358531"
 ---
 # <a name="post-migration-optimization-steps-when-using-azure-cosmos-dbs-api-for-mongodb"></a>Действия по оптимизации после миграции при использовании API Azure Cosmos DB для MongoDB
 
@@ -35,7 +35,7 @@ ms.locfileid: "85263098"
 2. В области слева в [портал Azure](https://www.portal.azure.com/)откройте меню **все ресурсы** и найдите учетную запись Azure Cosmos DB, в которую были перенесены данные.
 3. Откройте колонку **строка подключения** . На правой панели содержатся все сведения, необходимые для успешного подключения к учетной записи.
 4. Используйте сведения о подключении в конфигурации приложения (или в других соответствующих местах), чтобы отразить Azure Cosmos DB API для подключения к MongoDB в приложении.
-:::image type="content" source="./media/mongodb-post-migration/connection-string.png" alt-text="Строка соединения":::
+:::image type="content" source="./media/mongodb-post-migration/connection-string.png" alt-text="На снимке экрана показаны параметры для строки подключения.":::
 
 Дополнительные сведения см. на странице [Подключение приложения MongoDB к Azure Cosmos DB](connect-mongodb-account.md) .
 
@@ -60,12 +60,12 @@ Azure Cosmos DB предлагает 5 четко определенных [ур
 
 Большинство пользователей оставляют свой уровень согласованности при настройке согласованности сеансов по умолчанию. Однако существуют [компромиссы доступности и производительности для различных уровней согласованности](consistency-levels-tradeoffs.md).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Подключение приложения MongoDB к Azure Cosmos DB](connect-mongodb-account.md)
 * [Подключение к учетной записи Azure Cosmos DB с помощью Studio 3T](mongodb-mongochef.md)
 * [Глобальное распространение операций чтения с помощью API Azure Cosmos DB для MongoDB](mongodb-readpreference.md)
 * [Завершение срока действия данных с помощью API Azure Cosmos DB для MongoDB](mongodb-time-to-live.md)
-* [Настраиваемые уровни согласованности данных в Azure Cosmos DB](consistency-levels.md)
+* [Уровни согласованности в Azure Cosmos DB](consistency-levels.md)
 * [Индексирование в Azure Cosmos DB](index-overview.md)
 * [Единицы запросов в Azure Cosmos DB](request-units.md)

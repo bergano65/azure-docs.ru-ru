@@ -5,12 +5,12 @@ author: sideeksh
 manager: rochakm
 ms.topic: how-to
 ms.date: 04/06/2020
-ms.openlocfilehash: 6adfd9bc778318b406d5ce27cadccdad02d73d69
-ms.sourcegitcommit: bf1340bb706cf31bb002128e272b8322f37d53dd
+ms.openlocfilehash: 8be0349bfff9ebc858d76928344039b6879d2b80
+ms.sourcegitcommit: d95cab0514dd0956c13b9d64d98fdae2bc3569a0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/03/2020
-ms.locfileid: "89437468"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91357069"
 ---
 # <a name="troubleshoot-azure-to-azure-vm-network-connectivity-issues"></a>Устранение неполадок с сетевым подключением Azure к виртуальной машине Azure
 
@@ -22,7 +22,7 @@ ms.locfileid: "89437468"
 | ------------------------- | -------------------------------------------- | ---------------------------------------------- | ----------- |
 | Память                   | `*.blob.core.windows.net`                  | `*.blob.core.usgovcloudapi.net`              | Это необходимо, чтобы данные можно было записать в учетную запись хранения кэша в исходном регионе из виртуальной машины. Если вы знакомы со всеми учетными записями хранения кэша для виртуальных машин, вы можете использовать список разрешений для конкретных URL-адресов учетных записей хранения. Например, `cache1.blob.core.windows.net` и `cache2.blob.core.windows.net` вместо `*.blob.core.windows.net` . |
 | Azure Active Directory    | `login.microsoftonline.com`                | `login.microsoftonline.us`                   | Требуется для авторизации и проверки подлинности URL-адресов службы Site Recovery. |
-| Репликация               | `*.hypervrecoverymanager.windowsazure.com` | `*.hypervrecoverymanager.windowsazure.com`   | Требуется для обмена данными между службой Site Recovery и виртуальной машиной. Можно использовать соответствующий _IP-адрес Site Recovery_ , если прокси-сервер брандмауэра поддерживает IP. |
+| Replication               | `*.hypervrecoverymanager.windowsazure.com` | `*.hypervrecoverymanager.windowsazure.com`   | Требуется для обмена данными между службой Site Recovery и виртуальной машиной. Можно использовать соответствующий _IP-адрес Site Recovery_ , если прокси-сервер брандмауэра поддерживает IP. |
 | Служебная шина               | `*.servicebus.windows.net`                 | `*.servicebus.usgovcloudapi.net`             | Необходимые для записи данные наблюдения и диагностики Site Recovery из виртуальной машины. Можно использовать соответствующий _IP-адрес мониторинга Site Recovery_ , если прокси-сервер брандмауэра поддерживает IP. |
 
 ## <a name="outbound-connectivity-for-site-recovery-urls-or-ip-ranges-error-code-151037-or-151072"></a>Исходящие подключения для URL-адресов Site Recovery или IP-диапазонов (код ошибки 151037 или 151072)
@@ -74,11 +74,11 @@ ms.locfileid: "89437468"
 
 1. Создайте правило безопасности для исходящего трафика HTTPS для NSG, как показано на следующем снимке экрана. В этом примере используется **тег целевой службы**: _Storage. EastUS_ и **диапазоны портов назначения**: _443_.
 
-     :::image type="content" source="./media/azure-to-azure-about-networking/storage-tag.png" alt-text="storage-tag":::
+     :::image type="content" source="./media/azure-to-azure-about-networking/storage-tag.png" alt-text="На снимке экрана показана панель Добавление правила безопасности для исходящего трафика для правила безопасности для точки подключения "Восток" (точка).":::
 
 1. Создайте правило безопасности для исходящего трафика HTTPS для NSG, как показано на следующем снимке экрана. В этом примере используется **тег целевой службы**: _AzureActiveDirectory_ и **диапазоны портов назначения**: _443_.
 
-     :::image type="content" source="./media/azure-to-azure-about-networking/aad-tag.png" alt-text="Тег aad":::
+     :::image type="content" source="./media/azure-to-azure-about-networking/aad-tag.png" alt-text="На снимке экрана показана панель Добавление правила безопасности для исходящего трафика для правила безопасности Azure Active Directory.":::
 
 1. Аналогично приведенным выше правилам безопасности, создайте правило безопасности исходящего HTTPS (443) для "EventHub. CentralUS" на NSG, которое соответствует целевому расположению. Это позволяет получить доступ к Site Recovery мониторинга.
 1. Создайте правило безопасности исходящего трафика HTTPS (443) для "Азуреситерековери" на NSG. Это позволяет получить доступ к службам Site Recovery в любом регионе.

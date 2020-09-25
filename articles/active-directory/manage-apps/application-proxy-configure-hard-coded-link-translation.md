@@ -1,6 +1,6 @@
 ---
 title: Преобразование ссылок и URL-адресов прокси приложения Azure AD | Документация Майкрософт
-description: Основные сведения о соединителях прокси приложения Azure AD.
+description: Узнайте, как перенаправить жестко запрограммированные ссылки для приложений, опубликованных с помощью прокси приложения Azure AD.
 services: active-directory
 documentationcenter: ''
 author: kenwith
@@ -16,12 +16,12 @@ ms.author: kenwith
 ms.reviewer: japere
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 563e5e811eec907ba286bdfb264fc51d32137e96
-ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
+ms.openlocfilehash: 544aa1a4a859a9c328eb1d36e72d0f9f9ddb55b2
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87282931"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91327907"
 ---
 # <a name="redirect-hard-coded-links-for-apps-published-with-azure-ad-application-proxy"></a>Перенаправление жестко запрограммированных ссылок для приложений, опубликованных с помощью Azure AD Application Proxy
 
@@ -87,7 +87,7 @@ ms.locfileid: "87282931"
 - **Жестко запрограммированные внутренние ссылки** на другие локальные приложения, такие как `http://expenses` или опубликованные файлы, например `http://expenses/logo.jpg` . Функция преобразования ссылок работает на жестко запрограммированных внутренних ссылках и изменяет их так, чтобы они указывали на внешние URL-адреса, которые должны пройти удаленные пользователи.
 
 Полный список тегов кода HTML, которые прокси приложения поддерживает для включения преобразования ссылок:
-* a
+* а
 * звук
 * base
 * .
@@ -145,7 +145,7 @@ ms.locfileid: "87282931"
 
 Теперь, когда пользователи получают доступ к этому приложению, прокси будет автоматически проверять внутренние ссылки, которые были опубликованы через прокси приложения на вашем клиенте.
 
-## <a name="send-feedback"></a>Отправить отзыв
+## <a name="send-feedback"></a>Отправка отзывов
 
 Нам нужна ваша помощь, чтобы обеспечить работу функции во всех ваших приложениях. Мы поддерживаем поиск более 30 тегов в HTML и CSS. Если у вас есть пример созданных ссылок, которые не были преобразованы, отправьте фрагмент кода [сюда](mailto:aadapfeedback@microsoft.com). 
 

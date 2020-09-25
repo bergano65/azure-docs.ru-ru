@@ -9,14 +9,14 @@ ms.custom: sqldbrb=4
 ms.topic: conceptual
 author: stevestein
 ms.author: sstein
-ms.reviewer: sashan, moslake, carlrab
+ms.reviewer: sashan, moslake
 ms.date: 11/13/2019
-ms.openlocfilehash: b4af9fce3c5ca779866055d2835ebfebe9fbb9cf
-ms.sourcegitcommit: 93462ccb4dd178ec81115f50455fbad2fa1d79ce
+ms.openlocfilehash: f43d03f722617e88e7a00e71798351c88ce10e98
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/06/2020
-ms.locfileid: "85987024"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91327601"
 ---
 # <a name="azure-hybrid-benefit---azure-sql-database--sql-managed-instance"></a>Преимущество гибридного использования Azure — база данных SQL Azure & SQL Управляемый экземпляр
 [!INCLUDE[appliesto-sqldb-sqlmi](includes/appliesto-sqldb-sqlmi.md)]
@@ -26,7 +26,7 @@ ms.locfileid: "85987024"
 > [!NOTE]
 > Переход на Преимущество гибридного использования Azure не требует времени простоя.
 
-![цены](./media/azure-hybrid-benefit/pricing.png)
+![структура цен на виртуальное ядро](./media/azure-hybrid-benefit/pricing.png)
 
 ## <a name="choose-a-license-model"></a>Выбор модели лицензии
 
@@ -94,7 +94,7 @@ ms.locfileid: "85987024"
 |||
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Дополнительные сведения о выборе варианта развертывания SQL Azure см. в разделе [Выбор правильного развертывания в SQL Azure](azure-sql-iaas-vs-paas-what-is-overview.md).
 - Сравнение функций базы данных SQL и Управляемый экземпляр SQL см. в разделе [SQL database & sql управляемый экземпляр Features](database/features-comparison.md).

@@ -7,18 +7,18 @@ ms.author: jpalma
 ms.date: 06/29/2020
 ms.custom: fasttrack-edit
 author: palma21
-ms.openlocfilehash: 00a20ece2358f0054e4490ffb914f78b82d9c509
-ms.sourcegitcommit: 1b320bc7863707a07e98644fbaed9faa0108da97
+ms.openlocfilehash: 236b69b1e10eb80b9c0a5e27b213eb3972209346
+ms.sourcegitcommit: d95cab0514dd0956c13b9d64d98fdae2bc3569a0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/09/2020
-ms.locfileid: "89594265"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91361047"
 ---
 # <a name="control-egress-traffic-for-cluster-nodes-in-azure-kubernetes-service-aks"></a>Управление исходящим трафиком для узлов кластера в службе Azure Kubernetes (AKS)
 
 В этой статье содержатся необходимые сведения, позволяющие защитить исходящий трафик от службы Azure Kubernetes (AKS). Он содержит требования к кластеру для базового развертывания AKS, а также дополнительные требования к дополнительным надстройкам и функциям. В [конце приведен пример того, как настроить эти требования с помощью брандмауэра Azure](#restrict-egress-traffic-using-azure-firewall). Однако эти сведения можно применить к любому методу ограничения или устройству исходящего трафика.
 
-## <a name="background"></a>Фон
+## <a name="background"></a>Историческая справка
 
 Кластеры AKS развертываются в виртуальной сети. Эта сеть может быть управляемой (созданной AKS) или настраиваемой (предварительно настроенной пользователем). В любом случае кластер имеет Исходящие зависимости от служб, **находящихся** за пределами этой виртуальной сети (служба не имеет входящих зависимостей).
 
@@ -766,7 +766,7 @@ az network firewall nat-rule create --collection-name exampleset --destination-a
 Вы должны увидеть приложение для голосования AKS. В этом примере общедоступный IP-адрес брандмауэра был `52.253.228.132` .
 
 
-![AKS — голосование](media/limit-egress-traffic/aks-vote.png)
+![На снимке экрана показано приложение для голосования с кнопками для кошки, собаки и сбросов, а также итоги.](media/limit-egress-traffic/aks-vote.png)
 
 
 ### <a name="clean-up-resources"></a>Очистка ресурсов

@@ -11,19 +11,19 @@ author: stevestein
 ms.author: sstein
 ms.reviewer: ''
 ms.date: 09/24/2018
-ms.openlocfilehash: 368843cf9b6e59497fe00e69433ae0d14b3f3398
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: eb962efd4bcf82518a80eb120579db7835e7115c
+ms.sourcegitcommit: d95cab0514dd0956c13b9d64d98fdae2bc3569a0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84027925"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91356780"
 ---
 # <a name="learn-how-to-provision-new-tenants-and-register-them-in-the-catalog"></a>Сведения о подготовке новых клиентов и их регистрации в каталоге
 [!INCLUDE[appliesto-sqldb](../includes/appliesto-sqldb.md)]
 
 В этом руководстве вы узнаете, как для подготовить и каталогизировать шаблоны SaaS. Вы также узнаете, как они реализуются в приложении SaaS Wingtip Tickets, использующем одну базу данных. Мы создадим и инициализируем базы данных клиента, а также зарегистрируем их в каталоге клиента приложения. Каталог — это база данных, поддерживающая сопоставление между разными клиентами приложений SaaS и их данными. Каталог играет важную роль, направляя запросы приложений и управляющие запросы к надлежащим базам данных.
 
-В этом руководстве вы узнаете, как:
+В этом руководстве описано следующее:
 
 > [!div class="checklist"]
 >
@@ -86,7 +86,7 @@ ms.locfileid: "84027925"
 
 2. Добавьте точку останова, поместив курсор в любом месте строки, содержащей *New-Tenant `*. Нажмите клавишу F9.
 
-   ![Точка останова](./media/saas-dbpertenant-provision-and-catalog/breakpoint.png)
+   ![На снимке экрана показан сценарий с выделенным новым клиентом для добавления точки останова.](./media/saas-dbpertenant-provision-and-catalog/breakpoint.png)
 
 3. Нажмите клавишу F5 для запуска сценария.
 

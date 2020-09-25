@@ -12,12 +12,12 @@ author: VanMSFT
 ms.author: vanto
 ms.reviwer: ''
 ms.date: 04/23/2020
-ms.openlocfilehash: 848a0c9817472086dbaf3973dad9c64e3ed74b10
-ms.sourcegitcommit: 845a55e6c391c79d2c1585ac1625ea7dc953ea89
+ms.openlocfilehash: f47569eef7281840108c32283f664c3218de23dc
+ms.sourcegitcommit: d95cab0514dd0956c13b9d64d98fdae2bc3569a0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/05/2020
-ms.locfileid: "85954253"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91357800"
 ---
 # <a name="configure-always-encrypted-by-using-the-windows-certificate-store"></a>Настройка Always Encrypted с помощью хранилища сертификатов Windows
 
@@ -37,7 +37,7 @@ Always Encrypted — это технология шифрования данны
 * Создавать таблицу базы данных и шифровать столбцы.
 * Создавать приложение, которое вставляет, выбирает и отображает данные зашифрованных столбцов.
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Для работы с этим руководством вам потребуется:
 
@@ -127,7 +127,7 @@ Always Encrypted — это технология шифрования данны
 
 Убедитесь, что все параметры настроены правильно, и нажмите кнопку **Готово** , чтобы завершить настройку Always Encrypted.
 
-![Сводка](./media/always-encrypted-certificate-store-configure/summary.png)
+![На снимке экрана показана страница результатов с задачами, помеченными как пройденные.](./media/always-encrypted-certificate-store-configure/summary.png)
 
 ### <a name="verify-the-wizards-actions"></a>Проверка действий мастера
 
@@ -190,7 +190,7 @@ connStringBuilder.ColumnEncryptionSetting =
 * Вставить данные в зашифрованные столбцы.
 * Выбрать запись, выполнив фильтрацию по конкретному значению в зашифрованном столбце.
 
-Замените содержимое **Program.CS** следующим кодом. Замените строку подключения для глобальной переменной connectionString в строке прямо над методом Main действительной строкой подключения, указанной на портале Azure. Это единственное изменение, которое необходимо внести в этот код.
+Замените содержимое **Program.cs** приведенным ниже кодом. Замените строку подключения для глобальной переменной connectionString в строке прямо над методом Main действительной строкой подключения, указанной на портале Azure. Это единственное изменение, которое необходимо внести в этот код.
 
 Запустите приложение, чтобы увидеть функцию Always Encrypted в действии.
 
@@ -532,7 +532,7 @@ SELECT FirstName, LastName, SSN, BirthDate FROM Patients;
 > [!NOTE]
 > При подключении с другого компьютера SSMS (или любой другой клиент) не сможет получить доступ к ключам шифрования, а значит, и расшифровать данные.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 После создания базы данных с функцией Always Encrypted вы можете сделать следующее:
 
@@ -543,7 +543,7 @@ SELECT FirstName, LastName, SSN, BirthDate FROM Patients;
 
 ## <a name="related-information"></a>Дополнительные сведения
 
-* [Always Encrypted (Разработка клиентов)](https://msdn.microsoft.com/library/mt147923.aspx)
+* [Постоянное шифрование (разработка клиентских приложений)](https://msdn.microsoft.com/library/mt147923.aspx)
 * [прозрачное шифрование данных.](https://msdn.microsoft.com/library/bb934049.aspx)
 * [Шифрование SQL Server](https://msdn.microsoft.com/library/bb510663.aspx)
 * [Мастер постоянного шифрования](https://msdn.microsoft.com/library/mt459280.aspx)

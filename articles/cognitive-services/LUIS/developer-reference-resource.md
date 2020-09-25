@@ -1,15 +1,17 @@
 ---
 title: Ресурсы для разработчиков — Language Understanding
 description: Пакеты SDK, API-интерфейсы RESTFUL, CLI, помогают разрабатывать приложения Language Understanding (LUIS) на языке программирования. Управляйте ресурсами Azure и прогнозами LUIS.
+ms.service: cognitive-services
+ms.subservice: language-understanding
 ms.topic: reference
 ms.date: 05/19/2020
-ms.custom: devx-track-javascript, devx-track-csharp
-ms.openlocfilehash: 43c9ca244f02ffe1485fbd7316901d607d6e2479
-ms.sourcegitcommit: 5ed504a9ddfbd69d4f2d256ec431e634eb38813e
+ms.custom: devx-track-js, devx-track-csharp
+ms.openlocfilehash: e4e43ead957bb6feca09fc8b2a8c16e37821c9b4
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89321231"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91327176"
 ---
 # <a name="sdk-rest-and-cli-developer-resources-for-language-understanding-luis"></a>Ресурсы для разработчиков SDK, RESTFUL и CLI для Language Understanding (LUIS)
 
@@ -70,9 +72,9 @@ ms.locfileid: "89321231"
 |Параметр|Назначение|
 |--|--|
 |`your-resource-name`|Имя ресурса Azure|
-|`q` или `query`|Текст фразы, отправляемый из клиентского приложения, такого как чат-бот|
+|`q` либо `query`|Текст фразы, отправляемый из клиентского приложения, такого как чат-бот|
 |`version`|имя версии с 10 символами|
-|`slot`| `production` или `staging`|
+|`slot`| `production` либо `staging`|
 
 ### <a name="rest-query-string-parameters"></a>Параметры строки запроса RESTFUL
 
@@ -86,11 +88,11 @@ ms.locfileid: "89321231"
 
 |Язык |Справочная документация|Пакет|Краткие руководства|
 |--|--|--|--|
-|C#|[Разработка](https://docs.microsoft.com/dotnet/api/microsoft.azure.cognitiveservices.language.luis.authoring?view=azure-dotnet)</br>[Прогнозирующее](https://docs.microsoft.com/dotnet/api/microsoft.azure.cognitiveservices.language.luis.runtime?view=azure-dotnet)|[Создание NuGet](https://www.nuget.org/packages/Microsoft.Azure.CognitiveServices.Language.LUIS.Authoring/)<br>[Прогнозирование NuGet](https://www.nuget.org/packages/Microsoft.Azure.CognitiveServices.Language.LUIS.Runtime/)|[Разработка](azure-sdk-quickstart.md?pivots=programming-language-csharp)<br>[Прогнозирование запросов](azure-sdk-quickstart.md?pivots=programming-language-csharp)|
+|C#|[Работы](https://docs.microsoft.com/dotnet/api/microsoft.azure.cognitiveservices.language.luis.authoring?view=azure-dotnet)</br>[Прогнозирование](https://docs.microsoft.com/dotnet/api/microsoft.azure.cognitiveservices.language.luis.runtime?view=azure-dotnet)|[Создание NuGet](https://www.nuget.org/packages/Microsoft.Azure.CognitiveServices.Language.LUIS.Authoring/)<br>[Прогнозирование NuGet](https://www.nuget.org/packages/Microsoft.Azure.CognitiveServices.Language.LUIS.Runtime/)|[Работы](azure-sdk-quickstart.md?pivots=programming-language-csharp)<br>[Прогнозирование запросов](azure-sdk-quickstart.md?pivots=programming-language-csharp)|
 |Go|[Создание и прогнозирование](https://godoc.org/github.com/Azure/azure-sdk-for-go/services/cognitiveservices/v2.0/luis)|[Пакет SDK](https://github.com/Azure/azure-sdk-for-go/tree/master/services/cognitiveservices/v2.0/luis)||
 |Java|[Создание и прогнозирование](https://docs.microsoft.com/java/api/overview/azure/cognitiveservices/client/languageunderstanding?view=azure-java-stable)|[Создание Maven](https://search.maven.org/artifact/com.microsoft.azure.cognitiveservices/azure-cognitiveservices-luis-authoring)<br>[Прогноз Maven](https://search.maven.org/artifact/com.microsoft.azure.cognitiveservices/azure-cognitiveservices-luis-runtime)|
-|JavaScript|[Разработка](https://docs.microsoft.com/javascript/api/@azure/cognitiveservices-luis-authoring/?view=azure-node-latest)<br>[Прогнозирующее](https://docs.microsoft.com/javascript/api/@azure/cognitiveservices-luis-runtime/?view=azure-node-latest)|[Создание NPM](https://www.npmjs.com/package/@azure/cognitiveservices-luis-authoring)<br>[Прогноз NPM](https://www.npmjs.com/package/@azure/cognitiveservices-luis-runtime)|[Разработка](azure-sdk-quickstart.md?pivots=programming-language-javascript)<br>[Прогнозирующее](azure-sdk-quickstart.md?pivots=programming-language-javascript)|
-|Python|[Создание и прогнозирование](azure-sdk-quickstart.md?pivots=programming-language-python)|[PIP](https://pypi.org/project/azure-cognitiveservices-language-luis/)|[Разработка](azure-sdk-quickstart.md?pivots=programming-language-python)<br>[Прогнозирующее](azure-sdk-quickstart.md?pivots=programming-language-python)|
+|JavaScript|[Работы](https://docs.microsoft.com/javascript/api/@azure/cognitiveservices-luis-authoring/?view=azure-node-latest)<br>[Прогнозирование](https://docs.microsoft.com/javascript/api/@azure/cognitiveservices-luis-runtime/?view=azure-node-latest)|[Создание NPM](https://www.npmjs.com/package/@azure/cognitiveservices-luis-authoring)<br>[Прогноз NPM](https://www.npmjs.com/package/@azure/cognitiveservices-luis-runtime)|[Работы](azure-sdk-quickstart.md?pivots=programming-language-javascript)<br>[Прогнозирование](azure-sdk-quickstart.md?pivots=programming-language-javascript)|
+|Python|[Создание и прогнозирование](azure-sdk-quickstart.md?pivots=programming-language-python)|[PIP](https://pypi.org/project/azure-cognitiveservices-language-luis/)|[Работы](azure-sdk-quickstart.md?pivots=programming-language-python)<br>[Прогнозирование](azure-sdk-quickstart.md?pivots=programming-language-python)|
 
 
 ### <a name="containers"></a>Контейнеры

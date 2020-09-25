@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 08/20/2020
 ms.author: panosper
-ms.openlocfilehash: a14ac8089aa29a592164168e6ccfc4fd2342f68c
-ms.sourcegitcommit: d18a59b2efff67934650f6ad3a2e1fe9f8269f21
+ms.openlocfilehash: 50ca6eacc7e75a3ff391401e7ced0e3583f1a285
+ms.sourcegitcommit: d95cab0514dd0956c13b9d64d98fdae2bc3569a0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/20/2020
-ms.locfileid: "88661526"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91357579"
 ---
 # <a name="speech-to-text-frequently-asked-questions"></a>Часто задаваемые вопросы о преобразовании речи в текст
 
@@ -29,7 +29,7 @@ ms.locfileid: "88661526"
 
 **Вопрос. С чего лучше начинать работу с базовой моделью?**
 
-**Ответ**. Прежде всего получите [ключ подписки](get-started.md). Если вы хотите использовать вызовы REST к уже развернутым базовым моделям, изучите инструкции [по REST API](rest-apis.md). Если вы планируете использовать WebSocket, скачайте [этот пакет SDK](speech-sdk.md).
+**Ответ**. Прежде всего получите [ключ подписки](overview.md#try-the-speech-service-for-free). Если вы хотите использовать вызовы REST к уже развернутым базовым моделям, изучите инструкции [по REST API](rest-apis.md). Если вы планируете использовать WebSocket, скачайте [этот пакет SDK](speech-sdk.md).
 
 **Вопрос. Всегда ли мне нужна пользовательская модель речи?**
 

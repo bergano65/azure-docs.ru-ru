@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 07/06/2020
 ms.author: Zhchia
-ms.openlocfilehash: 31c0e9a690bde7a52a32fd9194afda76e1aaba8c
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.openlocfilehash: 5bdcf197b4e8a619e55895faf7637ebac0ac12ae
+ms.sourcegitcommit: d95cab0514dd0956c13b9d64d98fdae2bc3569a0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 09/25/2020
-ms.locfileid: "91329148"
+ms.locfileid: "91361136"
 ---
 # <a name="tutorial-configure-webroot-security-awareness-training-for-automatic-user-provisioning"></a>Руководство по настройке службы "осведомленность о безопасности корневого каталога" для автоматической подготовки пользователей
 
@@ -106,7 +106,7 @@ ms.locfileid: "91329148"
 
 5. В разделе **учетные данные администратора** введите `https://awarenessapi.webrootanywhere.com/api/v2/scim` **URL-адрес клиента**. Введите значение секретного токена, полученное ранее на шаге **Секретный токен**. Нажмите кнопку **проверить подключение** , чтобы убедиться, что Azure AD может подключиться к учебному курсу по безопасности веб-корня. В случае сбоя подключения убедитесь, что учетная запись обучения безопасности веб корневого каталога имеет разрешения администратора, и повторите попытку.
 
-    ![Подготовка](./media/webroot-security-awareness-training-provisioning-tutorial/provisioning.png)
+    ![На снимке экрана отображается диалоговое окно учетные данные администратора, в котором можно ввести клиент U R и секретный маркер.](./media/webroot-security-awareness-training-provisioning-tutorial/provisioning.png)
 
 6. В поле **Почтовое уведомление** введите адрес электронной почты пользователя или группы, которые должны получать уведомления об ошибках подготовки, а также установите флажок **Отправить уведомление по электронной почте при сбое**.
 

@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: how-to
 ms.date: 06/19/2018
 ms.author: allensu
-ms.openlocfilehash: fba1f0b1f8160dece41c312b61cbc8ae9571436d
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: ed82adcc1432bde27042d5775c454bfabcdb96ca
+ms.sourcegitcommit: d95cab0514dd0956c13b9d64d98fdae2bc3569a0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84887031"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91358140"
 ---
 # <a name="restrict-azure-cdn-content-by-countryregion"></a>Ограничение Azure CDN содержимого по странам или регионам
 
@@ -38,7 +38,7 @@ ms.locfileid: "84887031"
 ### <a name="define-the-directory-path"></a>Определение пути к каталогу
 Чтобы получить доступ к функции геофильтрации, выберите свою конечную точку CDN на портале, а затем щелкните **Геофильтрация** в разделе параметров в меню слева. 
 
-![Геофильтрация (цен. категория "Стандартный")](./media/cdn-filtering/cdn-geo-filtering-standard.png)
+![Снимок экрана, на котором показана географическая фильтрация, выбранная в меню для конечной точки.](./media/cdn-filtering/cdn-geo-filtering-standard.png)
 
 В поле **Путь** укажите относительный путь к каталогу, доступ к которому будет разрешен или запрещен. 
 
@@ -67,7 +67,7 @@ ms.locfileid: "84887031"
 
 Завершив выбор стран и регионов, нажмите кнопку **сохранить** , чтобы активировать новое правило географической фильтрации. 
 
-![Правила геофильтрации](./media/cdn-filtering/cdn-geo-filtering-rules.png)
+![На снимке экрана показаны коды стран, используемые для блокирования или разрешения стран или регионов.](./media/cdn-filtering/cdn-geo-filtering-rules.png)
 
 ### <a name="clean-up-resources"></a>Очистка ресурсов
 Чтобы удалить правило, выберите его в списке на странице **Фильтрация по странам**, а затем щелкните **Удалить**.
@@ -79,7 +79,7 @@ ms.locfileid: "84887031"
 
 2. На портале Verizon выберите **HTTP Large** (Большой HTTP-объект) и **Country Filtering** (Фильтрация по странам).
 
-    ![Геофильтрация (цен. категория "Стандартный")](./media/cdn-filtering/cdn-geo-filtering-premium.png)
+    ![На снимке экрана показано, как выбрать фильтрацию по странам в Azure C D N.](./media/cdn-filtering/cdn-geo-filtering-premium.png)
 
 3. Нажмите кнопку **Add Country Filter** (Добавить фильтр по странам).
 
@@ -93,12 +93,12 @@ ms.locfileid: "84887031"
     
     Новое правило появится в таблице на странице **Country Filtering** (Фильтрация по странам).
 
-    ![Правила геофильтрации](./media/cdn-filtering/cdn-geo-filtering-premium-rules.png)
+    ![На снимке экрана показано, где правило отображается в поле Фильтрация по странам.](./media/cdn-filtering/cdn-geo-filtering-premium-rules.png)
 
 ### <a name="clean-up-resources"></a>Очистка ресурсов
 В таблице правила фильтрации страны или региона щелкните значок удаления рядом с правилом, чтобы удалить его, или значок редактирования, чтобы изменить его.
 
-## <a name="considerations"></a>Особенности
+## <a name="considerations"></a>Рекомендации
 * Изменения в конфигурации геофильтрации для страны вступают в силу не сразу:
    * Для профилей **Azure CDN категории "Стандартный" от Майкрософт** распространение обычно выполняется в течение 10 минут. 
    * Для профилей **Azure CDN уровня "Стандартный" от Akamai** распространение обычно завершается в течение одной минуты. 

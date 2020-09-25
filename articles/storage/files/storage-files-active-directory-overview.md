@@ -7,12 +7,12 @@ ms.subservice: files
 ms.topic: conceptual
 ms.date: 05/29/2020
 ms.author: rogarana
-ms.openlocfilehash: 04f2b0e989edcb182c6c52ff0479902035137810
-ms.sourcegitcommit: 6e1124fc25c3ddb3053b482b0ed33900f46464b3
+ms.openlocfilehash: 3f2fd9f2b75faeeb2d40bd71d074a929e86eebdf
+ms.sourcegitcommit: d95cab0514dd0956c13b9d64d98fdae2bc3569a0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90561829"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91358378"
 ---
 # <a name="overview-of-azure-files-identity-based-authentication-options-for-smb-access"></a>Обзор параметров проверки подлинности на основе удостоверений службы файлов Azure для доступа к SMB
 [!INCLUDE [storage-files-aad-auth-include](../../../includes/storage-files-aad-auth-include.md)]
@@ -34,7 +34,7 @@ ms.locfileid: "90561829"
 
 -   **Azure Active Directory (Azure AD)**
 
-    Azure Active Directory (Azure AD) — это облачный каталог и служба управления удостоверениями Майкрософт, основанная на нескольких клиентах. Azure AD объединяет в себе базовые службы каталогов, функции управления доступом к приложениям и защиту удостоверений. Виртуальные машины Windows, присоединенные к Azure AD, могут получить доступ к файловым ресурсам Azure с помощью учетных данных Azure AD. Дополнительные сведения см. в разделе [что такое Azure Active Directory?](../../active-directory/fundamentals/active-directory-whatis.md)
+    Azure Active Directory (Azure AD) — это облачный каталог и служба управления удостоверениями Майкрософт, основанная на нескольких клиентах. Azure AD объединяет в себе базовые службы каталогов, функции управления доступом к приложениям и защиту удостоверений. Виртуальные машины Windows, присоединенные к Azure AD, могут получить доступ к файловым ресурсам Azure с помощью учетных данных Azure AD. Дополнительные сведения см. в статье [Что такое Azure Active Directory](../../active-directory/fundamentals/active-directory-whatis.md).
 
 -   **доменные службы Azure Active Directory (Azure AD DS);**
 
@@ -114,7 +114,7 @@ ms.locfileid: "90561829"
 
 - Сначала вам не нужно создавать удостоверение в Azure AD DS для представления учетной записи хранения. Это выполняется процессом включения в фоновом режиме.
 
-- Во вторых, все пользователи, имеющиеся в Azure AD, могут пройти проверку подлинности и авторизоваться. Пользователь может быть только облаком или гибридным. Синхронизация из Azure AD в Azure AD DS управляется платформой без необходимости настройки пользователя. Однако клиент должен быть присоединен к домену Azure AD DS, он не может быть присоединен или зарегистрирован в Azure AD. 
+- Во вторых, все пользователи, которые существуют в Azure AD, могут пройти проверку подлинности и авторизоваться. Пользователь может быть только облаком или гибридным. Синхронизация из Azure AD в Azure AD DS управляется платформой без необходимости настройки пользователя. Однако клиент должен быть присоединен к домену Azure AD DS, он не может быть присоединен или зарегистрирован в Azure AD. 
 
 :::image type="content" source="media/storage-files-active-directory-overview/Files-Azure-AD-DS-Diagram.png" alt-text="Схема":::
 
