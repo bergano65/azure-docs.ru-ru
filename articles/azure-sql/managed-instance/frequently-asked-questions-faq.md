@@ -1,5 +1,5 @@
 ---
-title: Вопросы и ответы
+title: Часто задаваемые вопросы
 titleSuffix: Azure SQL Managed Instance
 description: Часто задаваемые вопросы об Управляемом экземпляре SQL Azure
 services: sql-database
@@ -12,12 +12,12 @@ author: jovanpop-msft
 ms.author: jovanpop
 ms.reviewer: sstein
 ms.date: 09/21/2020
-ms.openlocfilehash: 2e3bf8251cfb5da20cade65831ef34dbc6709b1b
-ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
+ms.openlocfilehash: 74c603576016b72edddb4c0fe7aa970bd8626a4a
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "90887378"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91325221"
 ---
 # <a name="azure-sql-managed-instance-frequently-asked-questions-faq"></a>Часто задаваемые вопросы об Управляемом экземпляре SQL Azure
 [!INCLUDE[appliesto-sqlmi](../includes/appliesto-sqlmi.md)]
@@ -72,7 +72,7 @@ ms.locfileid: "90887378"
 
 Сведения о дефектах продукта и известных проблемах см. в статье [Известные проблемы](../database/doc-changes-updates-release-notes.md#known-issues).
 
-## <a name="new-features"></a>Новые функции
+## <a name="new-features"></a>Новые возможности
 
 **Где можно найти новейшие функции и функции в общедоступной предварительной версии?**
 
@@ -94,7 +94,7 @@ ms.locfileid: "90887378"
 
 **Как масштабировать управляемый экземпляр?**
 
-Вы можете масштабировать управляемый экземпляр на основе шаблонов [портал Azure](../database/service-tiers-vcore.md?tabs=azure-portal#selecting-a-hardware-generation), [PowerShell](https://docs.microsoft.com/archive/blogs/sqlserverstorageengine/change-size-azure-sql-managed-instance-using-powershell), [Azure CLI](https://docs.microsoft.com/cli/azure/sql/mi?view=azure-cli-latest#az-sql-mi-update) или [ARM](https://docs.microsoft.com/archive/blogs/sqlserverstorageengine/updating-azure-sql-managed-instance-properties-using-arm-templates).
+Вы можете масштабировать управляемый экземпляр на основе шаблонов [портал Azure](../database/service-tiers-vcore.md?tabs=azure-portal#selecting-a-hardware-generation), [PowerShell](https://docs.microsoft.com/archive/blogs/sqlserverstorageengine/change-size-azure-sql-managed-instance-using-powershell), [Azure CLI](https://docs.microsoft.com/cli/azure/sql/mi?view=azure-cli-latest#az-sql-mi-update&preserve-view=true) или [ARM](https://docs.microsoft.com/archive/blogs/sqlserverstorageengine/updating-azure-sql-managed-instance-properties-using-arm-templates).
 
 **Можно ли переместить Управляемый экземпляр из одного региона в другой?**
 
@@ -102,7 +102,7 @@ ms.locfileid: "90887378"
 
 **Как удалить Управляемый экземпляр?**
 
-Вы можете удалить управляемые экземпляры с помощью портал Azure, [PowerShell](https://docs.microsoft.com/powershell/module/az.sql/remove-azsqlinstance?view=azps-4.3.0), [Azure CLI](https://docs.microsoft.com/cli/azure/sql/mi?view=azure-cli-latest#az-sql-mi-delete) или [Диспетчер ресурсов интерфейсов API](https://docs.microsoft.com/rest/api/sql/managedinstances/delete).
+Вы можете удалить управляемые экземпляры с помощью портал Azure, [PowerShell](https://docs.microsoft.com/powershell/module/az.sql/remove-azsqlinstance?view=azps-4.3.0&preserve-view=true), [Azure CLI](https://docs.microsoft.com/cli/azure/sql/mi?view=azure-cli-latest#az-sql-mi-delete&preserve-view=true) или [Диспетчер ресурсов интерфейсов API](https://docs.microsoft.com/rest/api/sql/managedinstances/delete).
 
 **Сколько времени занимает создание или обновление экземпляра или восстановление базы данных?**
 
@@ -135,9 +135,9 @@ ms.locfileid: "90887378"
 
 Один из вариантов — [экспортировать базу данных в BACPAC](../database/database-export.md) , а затем [импортировать BACPAC-файл](../database/database-import.md). Этот подход рекомендуется, если размер базы данных меньше 100 ГБ.
 
-[Репликацию транзакций](replication-two-instances-and-sql-server-configure-tutorial.md?view=sql-server-2017) можно использовать, если все таблицы в базе данных имеют *первичные* ключи и в базе данных нет объектов OLTP в памяти.
+[Репликацию транзакций](replication-two-instances-and-sql-server-configure-tutorial.md?view=sql-server-2017&preserve-view=true) можно использовать, если все таблицы в базе данных имеют *первичные* ключи и в базе данных нет объектов OLTP в памяти.
 
-Резервные копии машинного COPY_ONLY, созданные из управляемого экземпляра, не могут быть восстановлены в SQL Server, так как для управляемого экземпляра выше по сравнению с SQL Server. Дополнительные сведения см. в разделе [резервное копирование только для копирования](https://docs.microsoft.com/sql/relational-databases/backup-restore/copy-only-backups-sql-server?view=sql-server-ver15).
+Резервные копии машинного COPY_ONLY, созданные из управляемого экземпляра, не могут быть восстановлены в SQL Server, так как для управляемого экземпляра выше по сравнению с SQL Server. Дополнительные сведения см. в разделе [резервное копирование только для копирования](https://docs.microsoft.com/sql/relational-databases/backup-restore/copy-only-backups-sql-server?view=sql-server-ver15&preserve-view=true).
 
 **Как перенести экземпляр SQL Server в SQL Управляемый экземпляр?**
 
@@ -184,11 +184,11 @@ ms.locfileid: "90887378"
 
 **Можно ли использовать Профайлер SQL для отслеживания производительности?**
 
-Да, SQL Profiler поддерживается или SQL Управляемый экземпляр. Дополнительные сведения см. в разделе [SQL Profiler](https://docs.microsoft.com/sql/tools/sql-server-profiler/sql-server-profiler?view=sql-server-ver15).
+Да, SQL Profiler поддерживается или SQL Управляемый экземпляр. Дополнительные сведения см. в разделе [SQL Profiler](https://docs.microsoft.com/sql/tools/sql-server-profiler/sql-server-profiler?view=sql-server-ver15&preserve-view=true).
 
 **Поддерживаются ли Помощник по базам данных и анализ производительности запросов для баз данных Управляемый экземпляр?**
 
-Нет, они не поддерживаются. Вы можете использовать динамические [административные представления](../database/monitoring-with-dmvs.md) и [хранилище запросов](https://docs.microsoft.com/sql/relational-databases/performance/monitoring-performance-by-using-the-query-store?view=sql-server-ver15) вместе с [SQL Profiler](https://docs.microsoft.com/sql/tools/sql-server-profiler/sql-server-profiler?view=sql-server-ver15) и [XEvents](https://docs.microsoft.com/sql/relational-databases/extended-events/extended-events?view=sql-server-ver15) для мониторинга баз данных.
+Нет, они не поддерживаются. Вы можете использовать динамические [административные представления](../database/monitoring-with-dmvs.md) и [хранилище запросов](https://docs.microsoft.com/sql/relational-databases/performance/monitoring-performance-by-using-the-query-store?view=sql-server-ver15&preserve-view=true) вместе с [SQL Profiler](https://docs.microsoft.com/sql/tools/sql-server-profiler/sql-server-profiler?view=sql-server-ver15&preserve-view=true) и [XEvents](https://docs.microsoft.com/sql/relational-databases/extended-events/extended-events?view=sql-server-ver15&preserve-view=true) для мониторинга баз данных.
 
 **Можно ли создавать оповещения метрик в Управляемый экземпляр SQL?**
 
@@ -228,7 +228,7 @@ ms.locfileid: "90887378"
 
 **Поддерживается ли резервное копирование по запросу?**
 
-Да, можно создать полную резервную копию только для копирования в хранилище BLOB-объектов Azure, но это будет restorable только в Управляемый экземпляр. Дополнительные сведения см. в разделе [резервное копирование только для копирования](https://docs.microsoft.com/sql/relational-databases/backup-restore/copy-only-backups-sql-server?view=sql-server-ver15). Однако резервное копирование только для копирования невозможно, если база данных шифруется с помощью TDE, управляемых службой, так как сертификат, используемый для шифрования, недоступен. В таком случае используйте функцию восстановления до точки во времени, чтобы переместить базу данных в другой Управляемый экземпляр SQL, или переключитесь на ключ, управляемый клиентом.
+Да, можно создать полную резервную копию только для копирования в хранилище BLOB-объектов Azure, но это будет restorable только в Управляемый экземпляр. Дополнительные сведения см. в разделе [резервное копирование только для копирования](https://docs.microsoft.com/sql/relational-databases/backup-restore/copy-only-backups-sql-server?view=sql-server-ver15&preserve-view=true). Однако резервное копирование только для копирования невозможно, если база данных шифруется с помощью TDE, управляемых службой, так как сертификат, используемый для шифрования, недоступен. В таком случае используйте функцию восстановления до точки во времени, чтобы переместить базу данных в другой Управляемый экземпляр SQL, или переключитесь на ключ, управляемый клиентом.
 
 **Является ли собственное восстановление (из BAK-файлов) Управляемый экземпляр поддерживается?**
 
@@ -299,7 +299,7 @@ SQL Управляемый экземпляр отвечает за настро
 
 Нет. Сейчас мы не поддерживаем размещение Управляемый экземпляр в подсети, которая уже содержит другие типы ресурсов.
 
-## <a name="connectivity"></a>Подключение 
+## <a name="connectivity"></a>Соединение 
 
 **Можно ли подключиться к управляемому экземпляру по IP-адресу?**
 
@@ -390,7 +390,7 @@ SQL Управляемый экземпляр отвечает за настро
 
 **Можно ли использовать модель "использование собственного ключа" для TDE?**
 
-Да, Azure Key Vault для сценария BYOK доступен для Управляемый экземпляр SQL Azure. Дополнительные сведения см. [в разделе прозрачное шифрование данных с ключом, управляемым клиентом](https://docs.microsoft.com/azure/sql-database/transparent-data-encryption-azure-sql?view=sql-server-ver15&tabs=azure-portal#customer-managed-transparent-data-encryption---bring-your-own-key).
+Да, Azure Key Vault для сценария BYOK доступен для Управляемый экземпляр SQL Azure. Дополнительные сведения см. [в разделе прозрачное шифрование данных с ключом, управляемым клиентом](https://docs.microsoft.com/azure/sql-database/transparent-data-encryption-azure-sql?view=sql-server-ver15&tabs=azure-portal#customer-managed-transparent-data-encryption---bring-your-own-key&preserve-view=true).
 
 **Можно ли перенести зашифрованную базу данных SQL Server?**
 
@@ -509,6 +509,10 @@ ALTER LOGIN <login_name> WITH CHECK_EXPIRATION = OFF;
 
 
 ## <a name="service-updates"></a>Обновления службы
+
+**Что такое изменение корневого ЦС для базы данных SQL Azure & Управляемый экземпляр SQL?**
+
+См. раздел [Смена сертификатов для базы данных SQL Azure & управляемый экземпляр SQL](https://docs.microsoft.com/azure/azure-sql/updates/ssl-root-certificate-expiring). 
 
 **Что такое событие планового обслуживания для Управляемый экземпляр SQL?**
 

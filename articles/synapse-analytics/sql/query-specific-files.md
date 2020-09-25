@@ -8,13 +8,13 @@ ms.topic: how-to
 ms.subservice: sql
 ms.date: 05/20/2020
 ms.author: v-stazar
-ms.reviewer: jrasnick, carlrab
-ms.openlocfilehash: 04a308805dd69c4d9245d287a391f1e7fa7d50f2
-ms.sourcegitcommit: 420c30c760caf5742ba2e71f18cfd7649d1ead8a
+ms.reviewer: jrasnick
+ms.openlocfilehash: c03051e2c8fddc21e4399375faeff6a40fb4d0d4
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89055572"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91288109"
 ---
 # <a name="use-file-metadata-in-queries"></a>Использование метаданных файла в запросах
 
@@ -22,7 +22,7 @@ SQL по запросу может обращаться к нескольким 
 
 Иногда бывает нужно узнать, какой исходный файл или папка соотносятся с определенной строкой результирующего набора.
 
-Функции `filepath` и `filename` можно применить для получения имен файлов и (или) путей в результирующем наборе. Также вы можете применить их для фильтрации данных по именам файлов и (или) путям к папкам. Эти функции описаны в разделах, посвященных [функции filename](query-data-storage.md#filename-function) и [функции filepath](query-data-storage.md#filepath-function). Ниже вы найдете краткие описания и примеры по ним.
+Функции `filepath` и `filename` можно применить для получения имен файлов и (или) путей в результирующем наборе. Также вы можете применить их для фильтрации данных по именам файлов и (или) путям к папкам. Эти функции описаны в разделах, посвященных [функции filename](query-data-storage.md#filename-function) и [функции filepath](query-data-storage.md#filepath-function). В следующих разделах содержатся краткие описания и примеры.
 
 ## <a name="prerequisites"></a>Предварительные требования
 

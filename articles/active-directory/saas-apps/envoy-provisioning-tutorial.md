@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: article
 ms.date: 06/3/2019
 ms.author: Zhchia
-ms.openlocfilehash: d04e872d42c6134dc82f2ffd02d79fe8e2af5caa
-ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
+ms.openlocfilehash: 15d9504e2a886a66eeb429151305b885275b1f23
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88551608"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91265503"
 ---
 # <a name="tutorial-configure-envoy-for-automatic-user-provisioning"></a>Учебник. Настройка делегата для автоматической подготовки пользователей
 
@@ -92,11 +92,11 @@ ms.locfileid: "88551608"
 
 3. Выберите вкладку **Подготовка**.
 
-    ![Вкладка "Подготовка"](common/provisioning.png)
+    ![Снимок экрана параметров управления с вызываемым параметром подготовки.](common/provisioning.png)
 
 4. Для параметра **Режим подготовки к работе** выберите значение **Automatic** (Автоматически).
 
-    ![Вкладка "Подготовка"](common/provisioning-automatic.png)
+    ![Снимок экрана: раскрывающийся список режима подготовки с вызываемым автоматическим параметром.](common/provisioning-automatic.png)
 
 5. В разделе **учетные данные администратора** введите `https://app.envoy.com/scim/v2` **URL-адрес клиента**. Введите значение **токена носителя OAuth** , полученное ранее в **маркере секрета**. Нажмите кнопку **проверить подключение** , чтобы убедиться, что Azure AD может подключиться к представителю. В случае сбоя подключения убедитесь, что учетная запись делегата имеет разрешения администратора, и повторите попытку.
 

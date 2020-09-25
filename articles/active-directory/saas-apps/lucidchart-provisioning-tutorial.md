@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: article
 ms.date: 01/13/2020
 ms.author: Zhchia
-ms.openlocfilehash: 88c14ef916847b84f881e8da2deda7835df37ffb
-ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
+ms.openlocfilehash: 632330d7c94e145124e202be9050e4e1beeb12b0
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88550292"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91265483"
 ---
 # <a name="tutorial-configure-lucidchart-for-automatic-user-provisioning"></a>Учебник. Настройка LucidChart для автоматической подготовки пользователей
 
@@ -88,11 +88,11 @@ ms.locfileid: "88550292"
 
 3. Выберите вкладку **Подготовка**.
 
-    ![Вкладка "Подготовка"](common/provisioning.png)
+    ![Снимок экрана параметров управления с вызываемым параметром подготовки.](common/provisioning.png)
 
 4. Для параметра **Режим подготовки к работе** выберите значение **Automatic** (Автоматически).
 
-    ![Вкладка "Подготовка"](common/provisioning-automatic.png)
+    ![Снимок экрана: раскрывающийся список режима подготовки с вызываемым автоматическим параметром.](common/provisioning-automatic.png)
 
 5. В разделе **учетные данные администратора** введите значение **токена носителя**  , полученное ранее в поле **секретный токен** . Щелкните **проверить подключение** , чтобы убедиться, что Azure AD может подключиться к LucidChart. Если подключение не выполняется, убедитесь, что у учетной записи LucidChart есть разрешения администратора, и повторите попытку.
 
@@ -121,7 +121,7 @@ ms.locfileid: "88550292"
    |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:organization|Строка|
    |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:employeeNumber|Строка|
    |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:manager|Справочник|
-   |urn: IETF: params: scim: схемы: Extension: LucidChart: 1.0: пользователь: canEdit|Логическое значение|
+   |urn: IETF: params: scim: схемы: Extension: LucidChart: 1.0: пользователь: canEdit|Логическое|
 
 10. В разделе **сопоставления** выберите **синхронизировать Azure Active Directory группы с LucidChart**.
 

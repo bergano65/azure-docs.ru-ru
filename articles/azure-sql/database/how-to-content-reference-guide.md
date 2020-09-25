@@ -9,14 +9,14 @@ ms.devlang: ''
 ms.topic: conceptual
 author: jovanpop-msft
 ms.author: jovanpop
-ms.reviewer: carlr
+ms.reviewer: sstein
 ms.date: 01/14/2020
-ms.openlocfilehash: e5fd842e47c606c8f41aafe72253c1c4a1e885f3
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: fa79af1047862e8694fa6342942ffd0793bafcb6
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84324405"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91335013"
 ---
 # <a name="configure-and-manage-content-reference---azure-sql-database"></a>Настройка и управление ссылкой на содержимое в базе данных SQL Azure
 [!INCLUDE[appliesto-sqldb](../includes/appliesto-sqldb.md)]
@@ -37,8 +37,8 @@ ms.locfileid: "84324405"
 
 - [Настройка проверки подлинности Azure Active Directory (Azure AD)](authentication-aad-configure.md)
 - [Настройка условного доступа](conditional-access-configure.md)
-- [Многофакторная проверка подлинности Azure AD](authentication-mfa-ssms-overview.md)
-- [Настройка Многофакторной идентификации](authentication-mfa-ssms-configure.md)
+- [Многофакторная проверка подлинности Azure AD](authentication-mfa-ssms-overview.md)
+- [Настройка многофакторной проверки подлинности](authentication-mfa-ssms-configure.md)
 - [Настройка политики временного хранения](temporal-tables-retention-policy.md)
 - [Настройка BYOK для TDE](transparent-data-encryption-byok-configure.md)
 - [Смена ключей BYOK для TDE](transparent-data-encryption-byok-key-rotation.md)
@@ -134,6 +134,6 @@ ms.locfileid: "84324405"
 - [Индексатор видео SaaS](saas-tenancy-video-index-wingtip-brk3120-20171011.md)
 - [Безопасность приложений SaaS](saas-tenancy-elastic-tools-multi-tenant-row-level-security.md)
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Дополнительные сведения о [руководствах для управляемый экземпляр Azure SQL](../managed-instance/how-to-content-reference-guide.md)

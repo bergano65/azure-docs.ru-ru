@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 04/15/2020
 ms.author: jrasnick
 ms.reviewer: jrasnick
-ms.openlocfilehash: f4afaf536a9c65758ad030e5cdeeee5fb97074d7
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 7cf9f18701317482284a3f1fa4b69a2c2927f64a
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87046681"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91287718"
 ---
 # <a name="diagnose-azure-synapse-studio-preview-connectivity-issues-with-powershell-script"></a>Диагностика проблем подключения Azure синапсе Studio (Предварительная версия) с помощью сценария PowerShell
 
@@ -27,7 +27,7 @@ Azure синапсе Studio (Предварительная версия) зав
 
 ## <a name="troubleshooting-steps"></a>Действия по устранению неполадок
 
-Щелкните следующую ссылку правой кнопкой мыши и выберите команду "Сохранить объект как":
+Щелкните правой кнопкой мыши следующую ссылку и выберите "Сохранить объект как":
 
 - [Test-AzureSynapse.ps1](https://go.microsoft.com/fwlink/?linkid=2119734)
 
@@ -58,4 +58,4 @@ Azure синапсе Studio (Предварительная версия) зав
 
 
 ## <a name="next-steps"></a>Дальнейшие действия
-Если предыдущие шаги не помогли устранить проблему, создайте запрос [в службу поддержки](../../sql-data-warehouse/sql-data-warehouse-get-started-create-support-ticket.md).
+Если предыдущие шаги не помогли устранить проблему, [Создайте запрос в службу поддержки](../../sql-data-warehouse/sql-data-warehouse-get-started-create-support-ticket.md).

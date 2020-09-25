@@ -9,15 +9,15 @@ ms.devlang: ''
 ms.topic: conceptual
 author: garyericson
 ms.author: garye
-ms.reviewer: carlrab, davidph
+ms.reviewer: sstein, davidph
 manager: cgronlun
 ms.date: 05/27/2020
-ms.openlocfilehash: f267b155fe21e5dee1a7c488c999fe194ed38eb1
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.openlocfilehash: 9ff2de18042c466bdd8fa6c71194fff4286c820d
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86504124"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91325102"
 ---
 # <a name="key-differences-between-machine-learning-services-in-azure-sql-managed-instance-and-sql-server"></a>Основные различия между Службами машинного обучения в Управляемом экземпляре SQL Azure и SQL Server
 
@@ -37,7 +37,7 @@ ms.locfileid: "86504124"
 
 Если вы решите обновить целевой уровень обслуживания, измените его и отправьте запрос в службу поддержки, чтобы восстановить ограничения выделенных ресурсов для R/Python.
 
-## <a name="language-support"></a>Поддержка языков
+## <a name="language-support"></a>Языковая поддержка
 
 Службы машинного обучения в SQL Управляемый экземпляр и SQL Server поддерживают как среду расширения Python, так и [платформу расширяемости](https://docs.microsoft.com/sql/advanced-analytics/concepts/extensibility-framework)R. Ниже описаны основные различия.
 

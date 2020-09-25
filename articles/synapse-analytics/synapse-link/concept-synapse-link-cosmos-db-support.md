@@ -9,12 +9,12 @@ ms.subservice: synapse-link
 ms.date: 09/15/2020
 ms.author: acomet
 ms.reviewer: jrasnick
-ms.openlocfilehash: 336409b8b6f804b224b87d5fb11fded0654b8619
-ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
+ms.openlocfilehash: 0cdc9e242c2254cafaf0af75bcb8f8879cf3eb58
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "90895534"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91287834"
 ---
 # <a name="azure-synapse-link-preview-for-azure-cosmos-db-supported-features"></a>Поддерживаемые функции Azure Synapse Link (предварительная версия) для Azure Cosmos DB
 
@@ -29,7 +29,7 @@ ms.locfileid: "90895534"
 > [!IMPORTANT]
 > Ссылка Azure синапсе для Azure Cosmos DB сейчас поддерживается в рабочих областях синапсе, в которых не включена управляемая виртуальная сеть. 
 
-Вы можете подключиться к контейнеру Azure Cosmos DB без включения Synapse Link. В этом случае вы сможете только считывать и записывать данные в хранилище транзакций. Ниже приведен список поддерживаемых в настоящее время функций в ссылке синапсе для Azure Cosmos DB. 
+Вы можете подключиться к контейнеру Azure Cosmos DB, не включив ссылку синапсе. В этом сценарии можно только считывать и записывать в хранилище транзакций. Ниже приведен список поддерживаемых в настоящее время функций в ссылке синапсе для Azure Cosmos DB. 
 
 | Категория              | Описание |[Spark](https://docs.microsoft.com/azure/synapse-analytics/sql/on-demand-workspace-overview) | [Бессерверная среда SQL](https://docs.microsoft.com/azure/synapse-analytics/sql/on-demand-workspace-overview) |
 | -------------------- | ----------------------------------------------------------- |----------------------------------------------------------- | ----------------------------------------------------------- |
@@ -39,9 +39,9 @@ ms.locfileid: "90895534"
 | **Чтение**    | Тип контейнера Azure Cosmos DB, который можно считать | OLTP/HTAP | HTAP  |
 | **запись**   | Можно ли использовать среду выполнения Azure синапсе для записи данных в контейнер Azure Cosmos DB | Да | Нет |
 
-* При записи данных в контейнер Azure Cosmos DB из Spark это происходит через хранилище транзакций Azure Cosmos DB и влияет на производительность транзакционных рабочих нагрузок на Azure Cosmos DB и на использование единиц запросов.
-* Интеграция пула SQL синапсе с внешними таблицами в настоящее время не поддерживается.
-
+* При записи данных в контейнер Azure Cosmos DB из Spark этот процесс выполняется в хранилище транзакций Azure Cosmos DB. Это влияет на производительность транзакций Azure Cosmos DB путем использования единиц запросов.
+* Интеграция пула SQL с помощью внешних таблиц в настоящее время не поддерживается.
+ 
 ## <a name="supported-code-generated-actions-for-spark"></a>Поддерживаемые действия, создаваемые кодом, для Spark
 
 | Жест              | Описание |OLTP |HTAP  |
@@ -51,7 +51,6 @@ ms.locfileid: "90895534"
 | **Запись DataFrame в контейнер** |Запись данных в контейнер|✓| ✓ |
 | **Загрузка DataFrame для потоковой передачи из контейнера** |Потоковая передача данных с помощью канала изменений Azure Cosmos DB|✓| ✓ |
 | **Запись DataFrame для потоковой передачи в контейнер** |Потоковая передача данных с помощью канала изменений Azure Cosmos DB|✓| ✓ |
-
 
 
 ## <a name="supported-code-generated-actions-for-sql-serverless"></a>Поддерживаемые действия, создаваемые кодом, для бессерверной среды SQL

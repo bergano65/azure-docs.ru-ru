@@ -17,12 +17,12 @@ ms.date: 08/30/2017
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 23bcb63b6b499e72cb43089659e513d276bd8306
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: a8324b82a05d7e78772e0b0b6de3a9bfaa183411
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85358979"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91265397"
 ---
 # <a name="install-azure-ad-connect-using-an-existing-adsync-database"></a>Установка Azure AD Connect с помощью имеющейся базы данных ADSync
 Azure AD Connect требуется база данных SQL Server для хранения данных. Можно использовать выпуск SQL Server 2012 Express LocalDB по умолчанию, установленный с помощью Azure AD Connect, или полную версию SQL Server. Ранее при установке Azure AD Connect всегда создавалась база данных с именем ADSync. В Azure AD Connect версии 1.1.613.0 (или более поздней) имеется возможность установить Azure AD Connect, указав имеющуюся базу данных ADSync.
@@ -58,7 +58,7 @@ Azure AD Connect требуется база данных SQL Server для хр
 ## <a name="steps-to-install-azure-ad-connect-with-use-existing-database-mode"></a>Шаги по установке Azure AD Connect с режимом "Использовать существующую базу данных"
 1.  Скачайте установщик Azure AD Connect (AzureADConnect.MSI) на сервер Windows. Дважды щелкните установщик Azure AD Connect, чтобы начать установку Azure AD Connect.
 2.  По завершении установки MSI мастер Azure AD Connect запускается с настройкой режима Express. Закройте экран, щелкнув значок "Выход".
-![Добро пожаловать!](./media/how-to-connect-install-existing-database/db1.png)
+![Снимок экрана, на котором показана страница "Добро пожаловать в Azure A D Connect" с "Экспресс-параметрами" в выделенном слева меню.](./media/how-to-connect-install-existing-database/db1.png)
 3.  Запустите новую командную строку или сеанс PowerShell. Перейдите в папку "C:\Program Files\Microsoft Azure Active Directory Connect". Выполните команду \AzureADConnect.exe /useexistingdatabase, чтобы запустить мастер Azure AD Connect в режиме установки "Использовать существующую базу данных".
 
 > [!NOTE]
@@ -66,9 +66,9 @@ Azure AD Connect требуется база данных SQL Server для хр
 
 ![PowerShell](./media/how-to-connect-install-existing-database/db2.png)
 1. Появится экран приветствия Azure AD Connect. После принятия условий лицензии и заявления о конфиденциальности, щелкните **Продолжить**.
-   ![Добро пожаловать!](./media/how-to-connect-install-existing-database/db3.png)
+   ![Снимок экрана, показывающий страницу "Добро пожаловать в Azure A D Connect"](./media/how-to-connect-install-existing-database/db3.png)
 1. На экране **Установить требующиеся компоненты** включен параметр **Использовать существующий SQL Server**. Укажите имя сервера SQL, на котором размещена база данных ADSync. Если экземпляр ядра SQL, используемый для размещения базы данных, не является экземпляром по умолчанию сервера SQL, необходимо указать ядро SQL и имя экземпляра. Кроме того, если просмотр SQL не включен, также необходимо указать номер порта экземпляра ядра SQL. Пример:         
-   ![Добро пожаловать!](./media/how-to-connect-install-existing-database/db4.png)           
+   ![Снимок экрана, на котором показана страница "Установка необходимых компонентов".](./media/how-to-connect-install-existing-database/db4.png)           
 
 1. На экране **Подключение к Azure AD** необходимо предоставить учетные данные глобального администратора для каталога Azure AD. Рекомендуется использовать учетную запись в домене onmicrosoft.com по умолчанию. Эта учетная запись используется только для создания учетной записи службы в Azure AD и не используется после завершения работы мастера.
    ![Подключить](./media/how-to-connect-install-existing-database/db5.png)
@@ -77,10 +77,10 @@ Azure AD Connect требуется база данных SQL Server для хр
    ![Directories](./media/how-to-connect-install-existing-database/db6.png)
  
 1. Во всплывающем диалоговом окне можно (а) предоставить учетные данные администратора предприятия и позволить Azure AD Connect создать учетную запись AD DS или (б) создать учетную запись AD DS самостоятельно и предоставить ее учетные данные Azure AD Connect. После выбора варианта и предоставления необходимых учетных данных щелкните **ОК**, чтобы закрыть всплывающее диалоговое окно.
-   ![Добро пожаловать!](./media/how-to-connect-install-existing-database/db7.png)
+   ![Снимок экрана, на котором отображается всплывающее диалоговое окно "учетная запись для леса" с выбранным параметром "создать новую учетную запись D".](./media/how-to-connect-install-existing-database/db7.png)
  
 1. После предоставления учетных данных красный значок с крестиком заменяется зеленым значком с галочкой. Нажмите кнопку **Далее**.
-   ![Добро пожаловать!](./media/how-to-connect-install-existing-database/db8.png)
+   ![Снимок экрана, на котором показана страница "подключение каталогов".](./media/how-to-connect-install-existing-database/db8.png)
  
 1. На экране **все готово для настройки** нажмите кнопку **установить**.
    ![Добро пожаловать!](./media/how-to-connect-install-existing-database/db9.png)
@@ -99,7 +99,7 @@ Azure AD Connect требуется база данных SQL Server для хр
 |Сквозная проверка подлинности и единый вход на рабочий стол|Измените метод входа в соответствии с конфигурацией активного сервера синхронизации.  Если вы не выполните это действие, прежде чем повысить уровень сервера до первичного, сквозная проверка подлинности и простой единый вход будут отключены и ваш клиент не сможет выполнить вход, если не настроена синхронизация паролей как резервный метод входа. Также не забывайте, что при включении сквозной проверки подлинности в промежуточном режиме будет установлен и зарегистрирован новый агент аутентификации, который будет выполняться как агент высокого уровня доступности и принимать запросы на вход.|
 |Федерация с PingFederate|Для проверки подлинности Azure будет и далее использоваться политика PingFederate, настроенная для активного сервера синхронизации.  Вы можете изменить метод входа на PingFederate в процессе подготовки резервного сервера к переключению в режим активного экземпляра синхронизации.  Этот шаг можно отложить до того момента, пока вам понадобится добавить в федерацию с PingFederate дополнительные домены.|
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - После установки Azure AD Connect можно [проверить установку и назначить лицензии](how-to-connect-post-installation.md).
 - См. дополнительные сведения о [предотвращении случайного удаления](how-to-connect-sync-feature-prevent-accidental-deletes.md) и [Azure AD Connect Health](how-to-connect-health-sync.md).

@@ -10,14 +10,14 @@ ms.devlang: ''
 ms.topic: conceptual
 author: MladjoA
 ms.author: mlandzic
-ms.reviewer: vanto, carlrab
+ms.reviewer: vanto, sstein
 ms.date: 08/25/2020
-ms.openlocfilehash: c812dfa0be3e5ced40b7f347639aeb2540b75351
-ms.sourcegitcommit: 927dd0e3d44d48b413b446384214f4661f33db04
+ms.openlocfilehash: 34a849fde315b45bdb1df577cf26c91f458abd72
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88871536"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91323242"
 ---
 # <a name="transparent-data-encryption-in-sql-managed-instance-using-your-own-key-from-azure-key-vault"></a>прозрачное шифрование данных в SQL Управляемый экземпляр с помощью собственного ключа из Azure Key Vault
 
@@ -25,7 +25,7 @@ ms.locfileid: "88871536"
 
 Этот пример сценария PowerShell настраивает прозрачное шифрование данных (TDE) с помощью ключа, управляемого клиентом, для Управляемый экземпляр SQL Azure, используя ключ из Azure Key Vault. Это часто называется сценарием "BYOK" с собственным ключом для TDE. Дополнительные сведения см. в статье [прозрачное шифрование данных Azure SQL с ключом, управляемым клиентом](../../database/transparent-data-encryption-byok-overview.md).
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 - управляемый экземпляр. См. раздел [Использование PowerShell для создания управляемого экземпляра](create-configure-managed-instance-powershell.md).
 

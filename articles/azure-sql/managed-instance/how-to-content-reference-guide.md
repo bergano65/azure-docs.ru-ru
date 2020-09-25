@@ -10,14 +10,14 @@ ms.devlang: ''
 ms.topic: conceptual
 author: jovanpop-msft
 ms.author: jovanpop
-ms.reviewer: sstein, carlr
+ms.reviewer: sstein
 ms.date: 04/16/2019
-ms.openlocfilehash: de8d1b7aba7763799228c831af61bf83a79937bb
-ms.sourcegitcommit: c28fc1ec7d90f7e8b2e8775f5a250dd14a1622a6
+ms.openlocfilehash: 332b5198f046d0096e95e79e27cbc49408e6d136
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/13/2020
-ms.locfileid: "88167986"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91325204"
 ---
 # <a name="azure-sql-managed-instance-content-reference"></a>Справочник по содержимому Управляемый экземпляр Azure SQL
 [!INCLUDE[appliesto-sqlmi](../includes/appliesto-sqlmi.md)]
@@ -48,7 +48,7 @@ ms.locfileid: "88167986"
 
 - [Настройка аутентификации Azure AD](../database/authentication-aad-configure.md)
 - [Настройка условного доступа](../database/conditional-access-configure.md)
-- [Многофакторная проверка подлинности Azure AD](../database/authentication-mfa-ssms-overview.md)
+- [Многофакторная проверка подлинности Azure AD](../database/authentication-mfa-ssms-overview.md)
 - [Настройка многофакторной проверки подлинности](../database/authentication-mfa-ssms-configure.md)
 - [Настройка временной политики хранения](../database/temporal-tables-retention-policy.md)
 - [Настройка BYOK для TDE](../database/transparent-data-encryption-byok-configure.md)
@@ -77,9 +77,9 @@ ms.locfileid: "88167986"
 
 ### <a name="alerting"></a>Оповещение
 
-- [Создание предупреждений на управляемом экземпляре](alerts-create.md)
+- [Создание оповещений об управляемом экземпляре](alerts-create.md)
 
-## <a name="operations"></a>Операции
+## <a name="operations"></a>Operations
 
 - [Ручная отработка отказа, инициированная пользователем в SQL Управляемый экземпляр](user-initiated-failover.md)
 
