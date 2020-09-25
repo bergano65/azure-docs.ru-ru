@@ -2,13 +2,13 @@
 title: Поддержка тегов для ресурсов
 description: В этой статье описываются типы ресурсов Azure, поддерживающие теги, а также приводятся сведения о всех службах Azure.
 ms.topic: conceptual
-ms.date: 09/08/2020
-ms.openlocfilehash: ea46e263d934c327cf6dfa343a5e0b5a170f545e
-ms.sourcegitcommit: 7f62a228b1eeab399d5a300ddb5305f09b80ee14
+ms.date: 09/21/2020
+ms.openlocfilehash: dd991167e703ad9faa7803bcecbbb6dc7eff94e7
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89513920"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91284964"
 ---
 # <a name="tag-support-for-azure-resources"></a>Поддержка тегов для ресурсов Azure
 В этой статье приводятся сведения о поддержке типом ресурса функции [тегов](tag-resources.md). Столбец с подписью **поддерживает теги** . указывает, имеет ли тип ресурса свойство для тега. Столбец с меткой **тег в отчете о затратах** указывает, передает ли этот тип ресурса тег в отчет о затратах. Вы можете просматривать затраты по тегам в [анализе затрат на управление затратами](../../cost-management-billing/costs/group-filter.md) , а также в [счетах на счета и данные о ежедневном использовании в Azure](../../cost-management-billing/manage/download-azure-invoice-daily-usage-date.md).
@@ -21,6 +21,7 @@ ms.locfileid: "89513920"
 > - [Microsoft.Addons](#microsoftaddons)
 > - [Microsoft.ADHybridHealthService](#microsoftadhybridhealthservice)
 > - [Microsoft.Advisor](#microsoftadvisor)
+> - [Microsoft. Агфудплатформ](#microsoftagfoodplatform)
 > - [Microsoft.AlertsManagement](#microsoftalertsmanagement)
 > - [Microsoft.AnalysisServices](#microsoftanalysisservices)
 > - [Microsoft.ApiManagement](#microsoftapimanagement)
@@ -64,6 +65,7 @@ ms.locfileid: "89513920"
 > - [Microsoft.CostManagement](#microsoftcostmanagement)
 > - [Microsoft.CustomerLockbox](#microsoftcustomerlockbox)
 > - [Microsoft.CustomProviders](#microsoftcustomproviders)
+> - [Microsoft. D365CustomerInsights](#microsoftd365customerinsights)
 > - [Microsoft.DataBox](#microsoftdatabox)
 > - [Microsoft.DataBoxEdge](#microsoftdataboxedge)
 > - [Microsoft.Databricks](#microsoftdatabricks)
@@ -154,6 +156,7 @@ ms.locfileid: "89513920"
 > - [Microsoft.ResourceHealth](#microsoftresourcehealth)
 > - [Microsoft.Resources](#microsoftresources)
 > - [Microsoft.SaaS](#microsoftsaas)
+> - [Microsoft. ScVmm](#microsoftscvmm)
 > - [Microsoft.Search](#microsoftsearch)
 > - [Microsoft.Security](#microsoftsecurity)
 > - [Microsoft.SecurityGraph](#microsoftsecuritygraph)
@@ -232,7 +235,14 @@ ms.locfileid: "89513920"
 > | generateRecommendations | Нет | нет |
 > | метаданные | нет | нет |
 > | к просмотру фильмов | нет | нет |
-> | suppressions | нет | нет |
+> | suppressions | нет | Нет |
+
+## <a name="microsoftagfoodplatform"></a>Microsoft. Агфудплатформ
+
+> [!div class="mx-tableFixed"]
+> | Тип ресурса | Поддержка тегов | Тег в отчете о затратах |
+> | ------------- | ----------- | ----------- |
+> | фармбеатс | Да | Да |
 
 ## <a name="microsoftalertsmanagement"></a>Microsoft.AlertsManagement
 
@@ -401,6 +411,7 @@ ms.locfileid: "89513920"
 > | ------------- | ----------- | ----------- |
 > | клаудманифестфилес | Нет | Нет |
 > | еджесубскриптионс | Да | Да |
+> | линкедсубскриптионс | Да | Да |
 > | registrations | Да | Да |
 > | регистрации и Кустомерсубскриптионс | Нет | нет |
 > | registrations / products | нет | нет |
@@ -456,6 +467,7 @@ ms.locfileid: "89513920"
 > | Биллингаккаунтс/Биллингпрофилес/прайс-лист | Нет | Нет |
 > | Биллингаккаунтс/Биллингпрофилес/Прицешитдовнлоадоператионс | Нет | Нет |
 > | Биллингаккаунтс/Биллингпрофилес/Products | Нет | Нет |
+> | Биллингаккаунтс/Биллингпрофилес/резервирования | Нет | Нет |
 > | Биллингаккаунтс/Биллингпрофилес/транзакции | Нет | Нет |
 > | Биллингаккаунтс/Биллингпрофилес/Валидатедетачпайментмесоделигибилити | Нет | Нет |
 > | Биллингаккаунтс/Биллингролеассигнментс | Нет | Нет |
@@ -499,6 +511,7 @@ ms.locfileid: "89513920"
 > | Биллингаккаунтс/Патчоператионс | Нет | Нет |
 > | Биллингаккаунтс/Пайментмесодс | Нет | Нет |
 > | Биллингаккаунтс и продукты | Нет | Нет |
+> | Биллингаккаунтс/резервирования | Нет | Нет |
 > | Биллингаккаунтс/транзакции | Нет | Нет |
 > | billingPeriods | Нет | Нет |
 > | биллингпермиссионс | Нет | Нет |
@@ -580,6 +593,10 @@ ms.locfileid: "89513920"
 > | Redis/Приватиндпоинтконнектионс | Нет | Нет |
 > | Redis/Привателинкресаурцес | Нет | Нет |
 > | редисентерприсе | Да | Да |
+> | Редисентерприсе/Приватиндпоинтконнектионпроксиес | Нет | Нет |
+> | Редисентерприсе/Приватиндпоинтконнектионпроксиес/проверка | Нет | Нет |
+> | Редисентерприсе/Приватиндпоинтконнектионс | Нет | Нет |
+> | Редисентерприсе/Привателинкресаурцес | Нет | Нет |
 
 ## <a name="microsoftcapacity"></a>Microsoft.Capacity
 
@@ -594,6 +611,7 @@ ms.locfileid: "89513920"
 > | catalogs | нет | Нет |
 > | commercialReservationOrders | Нет | нет |
 > | обмен валюты | нет | Нет |
+> | овнресерватионс | Нет | Нет |
 > | плацепурчасеордер | Нет | Нет |
 > | reservationOrders | Нет | Нет |
 > | Ресерватионордерс/Калкулатерефунд | Нет | Нет |
@@ -747,6 +765,11 @@ ms.locfileid: "89513920"
 > | ------------- | ----------- | ----------- |
 > | availabilitySets | Да | Да |
 > | клаудсервицес | Да | Да |
+> | Клаудсервицес/networkInterfaces | Нет | Нет |
+> | Клаудсервицес/publicIPAddresses | Нет | Нет |
+> | Клаудсервицес/Ролеинстанцес | Нет | Нет |
+> | Клаудсервицес/Ролеинстанцес/networkInterfaces | Нет | Нет |
+> | Клаудсервицес и роли | Нет | Нет |
 > | дискакцессес | Да | Да |
 > | diskEncryptionSets | Да | Да |
 > | disks | Да | Да |
@@ -774,7 +797,7 @@ ms.locfileid: "89513920"
 > | virtualMachineScaleSets | Да | Да |
 > | virtualMachineScaleSets и расширения | Нет | Нет |
 > | virtualMachineScaleSets/networkInterfaces | Нет | Нет |
-> | virtualMachineScaleSets/publicIPAddresses | Нет | Нет |
+> | virtualMachineScaleSets/publicIPAddresses | Да | Нет |
 > | virtualMachineScaleSets/virtualMachines | Нет | Нет |
 > | virtualMachineScaleSets/virtualMachines/networkInterfaces | Нет | Нет |
 
@@ -922,6 +945,13 @@ ms.locfileid: "89513920"
 > | associations | нет | Нет |
 > | resourceProviders | Да | Да |
 
+## <a name="microsoftd365customerinsights"></a>Microsoft. D365CustomerInsights
+
+> [!div class="mx-tableFixed"]
+> | Тип ресурса | Поддержка тегов | Тег в отчете о затратах |
+> | ------------- | ----------- | ----------- |
+> | instances | Да | Да |
+
 ## <a name="microsoftdatabox"></a>Microsoft.DataBox
 
 > [!div class="mx-tableFixed"]
@@ -966,7 +996,7 @@ ms.locfileid: "89513920"
 > | factories / integrationRuntimes | Нет | Нет |
 
 > [!NOTE]
-> Если в фабрике данных есть среды выполнения интеграции Azure SSIS, то их стоимость работы будет помечена тегами фабрики данных.  Запуск среды выполнения интеграции Azure SSIS должен быть остановлен и перезапущен для применения новых тегов фабрики данных к их затратам на выполнение.
+> Если в фабрике данных есть среды выполнения интеграции Azure SSIS, то их стоимость работы будет помечена тегами фабрики данных. Запуск среды выполнения интеграции Azure SSIS должен быть остановлен и перезапущен для применения новых тегов фабрики данных к их затратам на выполнение.
 
 ## <a name="microsoftdatalakeanalytics"></a>Microsoft.DataLakeAnalytics
 
@@ -1033,6 +1063,8 @@ ms.locfileid: "89513920"
 > | серверы и Привателинкресаурцес | Нет | Нет |
 > | серверы и Куеритекстс | Нет | Нет |
 > | серверы и Рековераблесерверс | Нет | Нет |
+> | серверы и запуск | Нет | Нет |
+> | серверы/прерывать | Нет | Нет |
 > | серверы и Топкуеристатистикс | Нет | Нет |
 > | servers / virtualNetworkRules | Нет | Нет |
 > | серверы и Ваитстатистикс | Нет | нет |
@@ -1042,6 +1074,7 @@ ms.locfileid: "89513920"
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Поддержка тегов | Тег в отчете о затратах |
 > | ------------- | ----------- | ----------- |
+> | флексиблесерверс | Да | Да |
 > | servers | Да | Да |
 > | servers / advisors | нет | нет |
 > | servers / keys | нет | Нет |
@@ -1050,7 +1083,10 @@ ms.locfileid: "89513920"
 > | серверы и Привателинкресаурцес | Нет | Нет |
 > | серверы и Куеритекстс | Нет | Нет |
 > | серверы и Рековераблесерверс | Нет | Нет |
+> | серверы и запуск | Нет | Нет |
+> | серверы/прерывать | Нет | Нет |
 > | серверы и Топкуеристатистикс | Нет | Нет |
+> | серверы и обновление | Нет | Нет |
 > | servers / virtualNetworkRules | Нет | Нет |
 > | серверы и Ваитстатистикс | Нет | нет |
 
@@ -1224,7 +1260,8 @@ ms.locfileid: "89513920"
 > | namespaces / eventhubs | нет | нет |
 > | namespaces / eventhubs / authorizationrules | нет | нет |
 > | namespaces / eventhubs / consumergroups | нет | нет |
-> | namespaces / networkrulesets | нет | нет |
+> | namespaces / networkrulesets | нет | Нет |
+> | пространства имен/Приватиндпоинтконнектионс | Нет | нет |
 
 ## <a name="microsoftexperimentation"></a>Microsoft.Experimentation
 
@@ -1321,8 +1358,8 @@ ms.locfileid: "89513920"
 > | службы/иомтконнекторс/подключения | Нет | Нет |
 > | службы/иомтконнекторс/сопоставления | Нет | Нет |
 > | службы/Приватиндпоинтконнектионпроксиес | Нет | Нет |
-> | службы/Приватиндпоинтконнектионс | Да | Да |
-> | службы/Привателинкресаурцес | Да | Да |
+> | службы/Приватиндпоинтконнектионс | Нет | Нет |
+> | службы/Привателинкресаурцес | Нет | нет |
 
 ## <a name="microsofthybridcompute"></a>Microsoft.HybridCompute
 
@@ -1330,7 +1367,9 @@ ms.locfileid: "89513920"
 > | Тип ресурса | Поддержка тегов | Тег в отчете о затратах |
 > | ------------- | ----------- | ----------- |
 > | machines | Да | Да |
+> | Machines/Ассесспатчес | Нет | Нет |
 > | machines / extensions | Да | Да |
+> | Machines/Инсталлпатчес | Нет | нет |
 
 ## <a name="microsofthybriddata"></a>Microsoft.HybridData
 
@@ -1427,7 +1466,9 @@ ms.locfileid: "89513920"
 > | манажедхсмс | Да | Да |
 > | vaults | Да | Да |
 > | хранилища и accessPolicies | Нет | Нет |
-> | хранилища и Евентгридфилтерс | Нет | нет |
+> | хранилища и Евентгридфилтерс | Нет | Нет |
+> | хранилища и ключи | Нет | Нет |
+> | хранилища/ключи/версии | Нет | нет |
 > | vaults / secrets | нет | Нет |
 
 ## <a name="microsoftkubernetes"></a>Microsoft.Kubernetes
@@ -1466,7 +1507,7 @@ ms.locfileid: "89513920"
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Поддержка тегов | Тег в отчете о затратах |
 > | ------------- | ----------- | ----------- |
-> | labaccounts | Да | Да |
+> | labaccounts | Да | нет |
 > | users | нет | нет |
 
 ## <a name="microsoftlogic"></a>Microsoft.Logic
@@ -1496,6 +1537,7 @@ ms.locfileid: "89513920"
 > | Тип ресурса | Поддержка тегов | Тег в отчете о затратах |
 > | ------------- | ----------- | ----------- |
 > | workspaces | Да | Да |
+> | рабочие области и Кодежобс | Нет | нет |
 > | workspaces / computes | нет | Нет |
 > | рабочие области и Евентгридфилтерс | Нет | Нет |
 > | рабочие области и Инференцеендпоинтс | Да | Да |
@@ -1705,6 +1747,7 @@ ms.locfileid: "89513920"
 > | frontdoorWebApplicationFirewallPolicies | Да, но ограничено (см. [Примечание ниже](#frontdoor)) | Да |
 > | getDnsResourceReference | Нет | Нет |
 > | internalNotify | Нет | Нет |
+> | ипграупс | Да | Да |
 > | loadBalancers | Да | Да |
 > | localNetworkGateways | Да | Да |
 > | natGateways | Да | Да |
@@ -1874,6 +1917,7 @@ ms.locfileid: "89513920"
 > | Тип ресурса | Поддержка тегов | Тег в отчете о затратах |
 > | ------------- | ----------- | ----------- |
 > | accounts | Да | Да |
+> | делетедаккаунтс | Нет | нет |
 
 ## <a name="microsoftproviderhub"></a>Microsoft.ProviderHub
 
@@ -1971,7 +2015,18 @@ ms.locfileid: "89513920"
 > | Тип ресурса | Поддержка тегов | Тег в отчете о затратах |
 > | ------------- | ----------- | ----------- |
 > | веб-масштабированием; | Да | Да |
-> | saasresources | нет | нет |
+> | saasresources | нет | Нет |
+
+## <a name="microsoftscvmm"></a>Microsoft. ScVmm
+
+> [!div class="mx-tableFixed"]
+> | Тип ресурса | Поддержка тегов | Тег в отчете о затратах |
+> | ------------- | ----------- | ----------- |
+> | облака | Да | Да |
+> | VirtualMachines | Да | Да |
+> | виртуалмачинетемплатес | Да | Да |
+> | VirtualNetworks | Да | Да |
+> | вммсерверс | Да | Да |
 
 ## <a name="microsoftsearch"></a>Microsoft.Search
 
@@ -2004,6 +2059,7 @@ ms.locfileid: "89513920"
 > | discoveredSecuritySolutions | Нет | Нет |
 > | externalSecuritySolutions | Нет | Нет |
 > | InformationProtectionPolicies | Нет | Нет |
+> | иотдефендерсеттингс | Нет | Нет |
 > | иотсекуритисолутионс | Да | Да |
 > | Иотсекуритисолутионс/Аналитиксмоделс | Нет | Нет |
 > | Иотсекуритисолутионс/Аналитиксмоделс/Аггрегатедалертс | Нет | Нет |
@@ -2012,6 +2068,7 @@ ms.locfileid: "89513920"
 > | Иотсекуритисолутионс/Иоталерттипес | Нет | Нет |
 > | Иотсекуритисолутионс/Иотрекоммендатионс | Нет | Нет |
 > | Иотсекуритисолутионс/Иотрекоммендатионтипес | Нет | Нет |
+> | иотсенсорс | Нет | Нет |
 > | jitNetworkAccessPolicies | Нет | Нет |
 > | житполиЦиес | Нет | нет |
 > | политики | нет | нет |
@@ -2030,6 +2087,7 @@ ms.locfileid: "89513920"
 > | securityStatusesSummaries | Нет | Нет |
 > | сервервулнерабилитяссессментс | Нет | нет |
 > | Параметры | нет | Нет |
+> | склвулнерабилитяссессментс | Нет | Нет |
 > | подоценка | Нет | нет |
 > | задачи | нет | нет |
 > | topologies | нет | Нет |
@@ -2080,7 +2138,8 @@ ms.locfileid: "89513920"
 > | namespaces / authorizationrules | нет | нет |
 > | namespaces / disasterrecoveryconfigs | нет | нет |
 > | namespaces / eventgridfilters | нет | нет |
-> | namespaces / networkrulesets | нет | нет |
+> | namespaces / networkrulesets | нет | Нет |
+> | пространства имен/Приватиндпоинтконнектионс | Нет | нет |
 > | namespaces / queues | нет | нет |
 > | namespaces / queues / authorizationrules | нет | нет |
 > | namespaces / topics | нет | нет |
@@ -2201,6 +2260,7 @@ ms.locfileid: "89513920"
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Поддержка тегов | Тег в отчете о затратах |
 > | ------------- | ----------- | ----------- |
+> | делетедаккаунтс | Нет | Нет |
 > | storageAccounts | Да | Да |
 > | storageAccounts / blobServices | Нет | Нет |
 > | storageAccounts / fileServices | Нет | Нет |

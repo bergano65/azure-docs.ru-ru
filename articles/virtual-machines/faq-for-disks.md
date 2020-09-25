@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 06/15/2017
 ms.author: rogarana
 ms.subservice: disks
-ms.openlocfilehash: 0affcb3c1bab6eb5616c69bb15faf423895328b0
-ms.sourcegitcommit: 5ed504a9ddfbd69d4f2d256ec431e634eb38813e
+ms.openlocfilehash: c2589b47c1619dd528ab843dcf4befd0da227d16
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89322523"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91331494"
 ---
 # <a name="frequently-asked-questions-about-azure-iaas-vm-disks-and-managed-and-unmanaged-premium-disks"></a>Часто задаваемые вопросы о дисках виртуальных машин Azure IaaS, а также об управляемых и неуправляемых дисках уровня "Премиум"
 
@@ -491,6 +491,6 @@ ms.locfileid: "89322523"
 
 ## <a name="what-if-my-question-isnt-answered-here"></a>Мне не удалось найти ответ на свой вопрос. Что делать?
 
-Если вашего вопроса нет в списке, сообщите нам об этом, и мы поможем найти ответ. В комментариях в конце этой статьи можно задать вопрос. Чтобы обратиться к команде разработчиков службы хранилища Azure и другим участникам сообщества с вопросом об этой статье, перейдите на [страницу вопросов и ответов о службе хранилища Azure](https://docs.microsoft.com/answers/products/azure?product=storage) на сайте MSDN.
+Если вашего вопроса нет в списке, сообщите нам об этом, и мы поможем найти ответ. В комментариях в конце этой статьи можно задать вопрос. Чтобы привлечься к команде службы хранилища Azure и другим участникам сообщества об этой статье, используйте [страницу Microsoft Q&A вопрос для хранилища Azure](https://docs.microsoft.com/answers/products/azure?product=storage).
 
 Чтобы запросить функции, отправьте свои запросы и предложения на [форум обратной связи по службе хранилища Azure](https://feedback.azure.com/forums/217298-storage).

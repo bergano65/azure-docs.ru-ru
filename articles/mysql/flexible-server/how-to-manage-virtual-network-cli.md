@@ -6,12 +6,12 @@ ms.author: ambhatna
 ms.service: mysql
 ms.topic: how-to
 ms.date: 9/21/2020
-ms.openlocfilehash: 4e7d75bc1a2acd805e573d4c6ad80f9892045551
-ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
+ms.openlocfilehash: 5cd35b896419dd30a8a4a18056ac1ccd48d7df6c
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "90937319"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91331715"
 ---
 # <a name="create-and-manage-virtual-networks-for-azure-database-for-mysql---flexible-server-using-the-azure-cli"></a>Создание виртуальных сетей и управление ими для базы данных Azure для MySQL — гибкого сервера с помощью Azure CLI
 
@@ -33,17 +33,17 @@ ms.locfileid: "90937319"
 
 Чтобы открыть Cloud Shell, просто выберите **Попробовать** в правом верхнем углу блока кода. Кроме того, Cloud Shell можно открыть в отдельной вкладке браузера. Для этого перейдите на страницу [https://shell.azure.com/bash](https://shell.azure.com/bash). Нажмите кнопку **Копировать**, чтобы скопировать блоки кода. Вставьте код в Cloud Shell и нажмите клавишу **ВВОД**, чтобы выполнить его.
 
-Если вы решили установить и использовать CLI локально, для выполнения инструкций, приведенных в этом кратком руководстве, вам потребуется Azure CLI 2.0 или более поздней версии. Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI 2.0](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest).
+Если вы решили установить и использовать CLI локально, для выполнения инструкций, приведенных в этом кратком руководстве, вам потребуется Azure CLI 2.0 или более поздней версии. Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI 2.0](https://docs.microsoft.com/cli/azure/install-azure-cli).
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Вам потребуется войти в учетную запись с помощью команды [az login](https://docs.microsoft.com/cli/azure/reference-index?view=azure-cli-latest#az-login). Обратите внимание на свойство **ID** , которое ОТНОСИТСЯ к **идентификатору подписки** для учетной записи Azure.
+Вам потребуется войти в учетную запись с помощью команды [az login](https://docs.microsoft.com/cli/azure/reference-index#az-login). Обратите внимание на свойство **ID** , которое ОТНОСИТСЯ к **идентификатору подписки** для учетной записи Azure.
 
 ```azurecli-interactive
 az login
 ```
 
-Выберите конкретную подписку вашей учетной записи, выполнив команду [az account set](https://docs.microsoft.com/cli/azure/account?view=azure-cli-latest#az-account-set). Запишите значение **идентификатора** из выходных данных **имени входа AZ** , чтобы использовать его в качестве значения аргумента **Subscription** в команде. Если вы используете несколько подписок, выберите соответствующую, в которой за ресурс будет взиматься плата. Чтобы отобразить все ваши подписки, выполните команду [az account list](https://docs.microsoft.com/cli/azure/account?view=azure-cli-latest#az-account-list).
+Выберите конкретную подписку вашей учетной записи, выполнив команду [az account set](https://docs.microsoft.com/cli/azure/account#az-account-set). Запишите значение **идентификатора** из выходных данных **имени входа AZ** , чтобы использовать его в качестве значения аргумента **Subscription** в команде. Если вы используете несколько подписок, выберите соответствующую, в которой за ресурс будет взиматься плата. Чтобы отобразить все ваши подписки, выполните команду [az account list](https://docs.microsoft.com/cli/azure/account#az-account-list).
 
 ```azurecli
 az account set --subscription <subscription id>
@@ -56,7 +56,7 @@ az account set --subscription <subscription id>
 > С помощью этой команды подсеть делегируется **Microsoft. дбформискл/флексиблесерверс**. Это делегирование означает, что только гибкие серверы Базы данных Azure для MySQL могут использовать эту подсеть. Другие типы ресурсов Azure не могут быть делегированы подсети.
 >
 
-См. справочную документацию по Azure CLI <!--FIXME --> где описаны все настраиваемые параметры для интерфейса командной строки. Например, в приведенных ниже командах можно дополнительно указать группу ресурсов.
+Полный список настраиваемых параметров интерфейса командной строки см. в [справочной документации](/cli/azure/mysql/flexible-server) по Azure CLI. Например, в приведенных ниже командах можно дополнительно указать группу ресурсов.
 
 - Создание гибкого сервера с использованием виртуальной сети по умолчанию, подсети с префиксом адреса по умолчанию
     ```azurecli-interactive
@@ -77,7 +77,7 @@ az account set --subscription <subscription id>
     ```azurecli-interactive
     az mysql flexible-server create --vnet myVnet --vnet-address-prefix 10.0.0.0/24 --subnet mySubnet --subnet-address-prefix 10.0.0.0/24
     ```-->
-См. справочную документацию по Azure CLI <!--FIXME --> где описаны все настраиваемые параметры для интерфейса командной строки.
+Полный список настраиваемых параметров интерфейса командной строки см. в [справочной документации](/cli/azure/mysql/flexible-server) по Azure CLI.
 
 
 ## <a name="next-steps"></a>Дальнейшие действия

@@ -9,12 +9,12 @@ ms.service: azure-arc
 ms.subservice: azure-arc-data
 ms.date: 09/22/2020
 ms.topic: conceptual
-ms.openlocfilehash: 5908083be4e6ed389b606754ffef41a4a371c3e3
-ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
+ms.openlocfilehash: d22976254cc804ca53060fb284abde8e80a684e6
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "90938728"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91319737"
 ---
 # <a name="release-notes---azure-arc-enabled-data-services-preview"></a>Заметки о выпуске — службы данных с поддержкой ARC в Azure (Предварительная версия)
 
@@ -29,18 +29,26 @@ ms.locfileid: "90938728"
 
 Инструкции см. в статье [что такое службы данных с поддержкой дуги Azure?](overview.md)
 
+### <a name="known-issues"></a>Известные проблемы
+
+В этом выпуске действуют следующие проблемы.
+
+* **Удаление группы серверов PostgreSQL Scale**: Если вы изменили конфигурацию группы серверов или экземпляра, дождитесь завершения операции изменения, прежде чем удалить группу серверов PostgreSQL Scale.
+
+* ** `azdata notebook run` может завершиться ошибкой**: чтобы обойти эту проблему, выполните команду `azdata notebook run` в виртуальной среде Python. Эта проблема также возникает при неудачной попытке создать PostgreSQL группу серверов SQL Server с помощью мастера развертывания Azure Data Studio. В этом случае можно открыть записную книжку и нажать кнопку **запустить все** в верхней части записной книжки.
+
 ## <a name="next-steps"></a>Следующие шаги
 
 > **Хотите попробовать?**  
-> Быстро Начните работу с помощью [Azure Arc JumpStart](https://github.com/microsoft/azure_arc#azure-arc-enabled-data-services) в службе Azure Kubernetes Service (AKS), AWS эластичной Kubernetes Service (ЕКС), Google Cloud Kubernetes Engine (гке) или на виртуальной машине Azure.
+> Быстро приступите к работе с [Azure Arc](https://github.com/microsoft/azure_arc#azure-arc-enabled-data-services) в службе Azure Kubernetes Service (AKS), AWS Elastic Kubernetes Service (EKS), Google Cloud Kubernetes Engine (GKE) или на виртуальной машине Azure.
 
 [Установка клиентских средств](install-client-tools.md)
 
-[Создание контроллера данных Arc Azure](create-data-controller.md) (требуется сначала установить клиентские средства)
+[Создание контроллера данных Azure Arc](create-data-controller.md) (сначала необходимо установить клиентские средства)
 
-[Создание управляемого экземпляра SQL Azure в службе "Дуга" Azure](create-sql-managed-instance.md) (сначала требуется создание контроллера данных ARC в Azure)
+[Создание управляемого экземпляра SQL Azure в Azure Arc](create-sql-managed-instance.md) (сначала требуется создать контроллер данных Azure Arc)
 
-[Создание группы горизонтального масштабирования сервера базы данных Azure для PostgreSQL в службе "Дуга Azure](create-postgresql-hyperscale-server-group.md) " (сначала требуется создание контроллера данных Arc Azure)
+[Создание группы серверов с уровнем "Гипермасштабирование" Базы данных Azure для PostgreSQL в Azure Arc ](create-postgresql-hyperscale-server-group.md) (сначала необходимо создать контроллер данных Azure Arc)
 
 ## <a name="known-limitations-and-issues"></a>Известные ограничения и проблемы
 

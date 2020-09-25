@@ -8,12 +8,12 @@ ms.service: storage
 ms.subservice: common
 ms.topic: how-to
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 35a93669bf301b3be1d560a0777751c12f3c9d14
-ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
+ms.openlocfilehash: f18746242ef9f680f44be1fd614c6c769289aadb
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89001915"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91331579"
 ---
 # <a name="use-the-azurite-emulator-for-local-azure-storage-development"></a>Использование эмулятора Азурите для разработки локальных хранилищ Azure
 
@@ -489,7 +489,7 @@ var client = new QueueClient(
 
 Если вы не импортируете сертификат, вы получите следующее сообщение об ошибке:
 
-`unable to verify the first certificate` или `self signed certificate in chain`
+`unable to verify the first certificate` либо `self signed certificate in chain`
 
 ##### <a name="add-azurite-via-https-connection-string"></a>Добавление Азурите с помощью строки подключения HTTPS
 
@@ -499,7 +499,7 @@ var client = new QueueClient(
 1. Выберите **Локальный подключенный &**
 1. Щелкните правой кнопкой мыши **учетные записи хранения** и выберите **подключиться к службе хранилища Azure**.
 1. Выберите **использовать строку подключения**
-1. Нажмите **Далее**.
+1. Выберите **Далее**.
 1. Введите значение в поле **Отображаемое имя** .
 1. Введите [строку подключения HTTPS](#https-connection-strings) из предыдущего раздела этого документа
 1. Щелкните **Далее**.
@@ -555,6 +555,12 @@ var client = new QueueClient(
 Азурите поддерживает геоизбыточную репликацию с доступом на чтение (RA-GRS). Для ресурсов хранилища получите доступ к дополнительному расположению, добавив `-secondary` к имени учетной записи. Например, следующий адрес может использоваться для доступа к большому двоичному объекту с помощью вторичной реплики "только для чтения" в Азурите:
 
 `http://127.0.0.1:10000/devstoreaccount1-secondary/mycontainer/myblob.txt`
+
+### <a name="table-support"></a>Поддержка таблиц
+
+Поддержка таблиц в Азурите в настоящее время находится на стадии разработки и открыта для публикации. Чтобы получить актуальный ход выполнения, проверьте проект [таблицы Азурите v3](https://github.com/Azure/Azurite/wiki/Azurite-V3-Table) .
+
+Для поддержки устойчивых функций требуются таблицы.
 
 ## <a name="azurite-is-open-source"></a>Азурите является открытым кодом
 

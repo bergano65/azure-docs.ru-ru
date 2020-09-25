@@ -1,6 +1,6 @@
 ---
 title: Создание масштабируемого набора из обобщенного образа с помощью Azure PowerShell
-description: Создание масштабируемого набора с помощью обобщенного образа в коллекции общих образов.
+description: Создание масштабируемого набора с помощью обобщенного образа в коллекции общих образов с помощью PowerShell.
 author: cynthn
 ms.service: virtual-machine-scale-sets
 ms.subservice: imaging
@@ -9,14 +9,14 @@ ms.topic: how-to
 ms.date: 05/04/2020
 ms.author: cynthn
 ms.reviewer: akjosh
-ms.openlocfilehash: 3b8c9d46a5bc5dde3e39bfa5673247ca752d2a89
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 22bd1ed88f61689eec9312392f7f58d137f703e0
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87077571"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91331528"
 ---
-# <a name="create-a-scale-set-from-a-generalized-image"></a>Создание масштабируемого набора из обобщенного образа
+# <a name="create-a-scale-set-from-a-generalized-image-using-powershell"></a>Создание масштабируемого набора из обобщенного образа с помощью PowerShell 
 
 Создайте виртуальную машину из универсальной версии образа, хранящейся в [коллекции общих образов](shared-image-galleries.md). Если требуется создать масштабируемый набор с помощью специализированного образа, см. раздел [Создание экземпляров масштабируемых наборов на основе специализированного образа](instance-specialized-image-version-powershell.md).
 
@@ -181,4 +181,4 @@ New-AzVmss `
 - [Создание определения образа в коллекции общих образов](https://azure.microsoft.com/resources/templates/101-sig-image-definition-create/)
 - [Создание версии образа в коллекции общих образов](https://azure.microsoft.com/resources/templates/101-sig-image-version-create/)
 
-Дополнительные сведения о коллекциях общих образов см. в [обзорной статье](shared-image-galleries.md). Если вы столкнетесь с проблемами, обратитесь к статье об [устранении неполадок c коллекциями общих образов](troubleshooting-shared-images.md).
+Дополнительные сведения о коллекциях общих образов см. в [обзорной статье](shared-image-galleries.md). Если вы столкнетесь с проблемами, обратитесь к статье об [устранении неполадок c коллекциями общих образов](../virtual-machines/troubleshooting-shared-images.md).

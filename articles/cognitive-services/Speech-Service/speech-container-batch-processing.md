@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 07/07/2020
 ms.author: aahi
-ms.openlocfilehash: 4d0800ff8a35c5c91b067a85dfcc089f2e343d1f
-ms.sourcegitcommit: 124f7f699b6a43314e63af0101cd788db995d1cb
+ms.openlocfilehash: 3cd6febfc774b214a8c1ae8553e6c127c4f452fa
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86091013"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91319084"
 ---
 # <a name="batch-processing-kit-for-speech-containers"></a>Набор пакетной обработки для речевых контейнеров
 
@@ -23,7 +23,7 @@ ms.locfileid: "86091013"
 
 :::image type="content" source="media/containers/general-diagram.png" alt-text="Схема, на которой показан пример рабочего процесса контейнера пакета пакетной службы.":::
 
-Контейнер пакета пакетной службы доступен бесплатно в [GitHub](https://github.com/microsoft/batch-processing-kit) и [DOCKER Hub](https://hub.docker.com/r/batchkit/speech-batch-kit/tags). [Плата взимается](speech-container-howto.md#billing) только за используемые контейнеры речи.
+Контейнер пакета пакетной службы доступен бесплатно в [GitHub](https://github.com/microsoft/batch-processing-kit) и   [DOCKER Hub](https://hub.docker.com/r/batchkit/speech-batch-kit/tags). [Плата взимается](speech-container-howto.md#billing) только за используемые контейнеры речи.
 
 | Компонент  | Описание  |
 |---------|---------|
@@ -76,6 +76,8 @@ MyContainer3:
 > * В этом примере используется тот же каталог ( `/my_nfs` ) для файла конфигурации, а также каталоги входов, выходов и журналов. Для этих папок можно использовать размещенные или подключенные к NFS каталоги.
 > * При запуске клиента с `–h` будет отображаться список доступных параметров командной строки и их значения по умолчанию. 
 
+
+#### <a name="linux"></a>[Linux](#tab/linux)
 `run`Чтобы запустить контейнер, используйте команду DOCKER. Это приведет к запуску интерактивной оболочки внутри контейнера.
 
 ```Docker
@@ -94,6 +96,18 @@ run-batch-client -config /my_nfs/config.yaml -input_folder /my_nfs/audio
 docker run --rm -ti -v  /mnt/my_nfs:/my_nfs docker.io/batchkit/speech-batch-kit:latest  -config /my_nfs/config.yaml -input_folder /my_nfs/audio_files -output_folder /my_nfs/transcriptions -log_folder  /my_nfs/logs -log_level DEBUG -nbest 1 -m ONESHOT -diarization  None -language en-US -strict_config   
 ```
 
+#### <a name="windows"></a>[Windows](#tab/windows)
+
+Чтобы запустить клиент и контейнер пакетной службы, выполните одну команду:
+
+```Docker
+docker run --rm -ti -v   c:\my_nfs:/my_nfs docker.io/batchkit/speech-batch-kit:latest  -config  /my_nfs/config.yaml -input_folder /my_nfs/audio_files -output_folder /my_nfs/transcriptions -log_folder  /my_nfs/logs -nbest 1 -m ONESHOT -diarization  None -language en-US -strict_config
+
+```
+
+---
+
+
 Клиент начнет работать. Если звуковой файл уже был расшифрованной в предыдущем запуске, клиент будет автоматически пропускать этот файл. При возникновении временных ошибок файлы отправляются с автоматическим повторным выполнением, и вы можете различать ошибки, которые необходимо повторить для клиента. При ошибке транскрипции клиент продолжит запись и может повторить попытку без потери хода выполнения.  
 
 ## <a name="run-modes"></a>Режимы выполнения 
@@ -102,7 +116,7 @@ docker run --rm -ti -v  /mnt/my_nfs:/my_nfs docker.io/batchkit/speech-batc
 
 #### <a name="oneshot"></a>[онешот](#tab/oneshot)
 
-`ONESHOT`режим расшифровывает один пакет звуковых файлов (из входного каталога и необязательного списка файлов) в выходную папку.
+`ONESHOT` режим расшифровывает один пакет звуковых файлов (из входного каталога и необязательного списка файлов) в выходную папку.
 
 :::image type="content" source="media/containers/batch-oneshot-mode.png" alt-text="Схема, показывающая файлы обработки контейнера пакета пакетной службы в режиме онешот.":::
 
@@ -117,7 +131,7 @@ docker run --rm -ti -v  /mnt/my_nfs:/my_nfs docker.io/batchkit/speech-batc
 > [!TIP]
 > Если одновременно к входному каталогу одновременно добавляется несколько файлов, можно повысить производительность, добавив их в обычное время.
 
-`DAEMON`режим расшифровывает существующие файлы в заданной папке и постоянно расшифровывает новые аудиофайлы по мере их добавления.          
+`DAEMON` режим расшифровывает существующие файлы в заданной папке и постоянно расшифровывает новые аудиофайлы по мере их добавления.          
 
 :::image type="content" source="media/containers/batch-daemon-mode.png" alt-text="Схема, показывающая файлы обработки контейнера пакетного пакета в режиме управляющей программы.":::
 
@@ -130,7 +144,7 @@ docker run --rm -ti -v  /mnt/my_nfs:/my_nfs docker.io/batchkit/speech-batc
 
 #### <a name="rest"></a>[REST](#tab/rest)
 
-`REST`Mode — это режим сервера API, предоставляющий базовый набор конечных точек HTTP для отправки пакетов звуковых файлов, проверки состояния и длительного опроса. Также обеспечивает программное использование с помощью расширения модуля Python или импорт в качестве подмодуля.
+`REST` Mode — это режим сервера API, предоставляющий базовый набор конечных точек HTTP для отправки пакетов звуковых файлов, проверки состояния и длительного опроса. Также обеспечивает программное использование с помощью расширения модуля Python или импорт в качестве подмодуля.
 
 :::image type="content" source="media/containers/batch-rest-api-mode.png" alt-text="Схема, показывающая файлы обработки контейнера пакетного пакета в режиме управляющей программы.":::
 
@@ -149,7 +163,7 @@ docker run --rm -ti -v  /mnt/my_nfs:/my_nfs docker.io/batchkit/speech-batc
 
 ---
 
-## <a name="logging"></a>Ведение журнала
+## <a name="logging"></a>Logging
 
 > [!NOTE]
 > Клиент пакетной службы может периодически перезаписывать файл *Run. log* , если он становится слишком большим.
@@ -158,6 +172,6 @@ docker run --rm -ti -v  /mnt/my_nfs:/my_nfs docker.io/batchkit/speech-batc
 
 Выходной каталог, заданный параметром, `-output_folder` будет содержать *run_summary.jsв*   файле, который периодически перезаписывается каждые 30 секунд или каждый раз, когда завершается новая транскрипция. Этот файл можно использовать для проверки хода выполнения пакета. Он также будет содержать окончательную статистику выполнения и окончательное состояние каждого файла по завершении выполнения пакета. Выполнение пакета завершается, когда процесс завершается с помощью чистого выхода. 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Как устанавливать и запускать контейнеры](speech-container-howto.md)

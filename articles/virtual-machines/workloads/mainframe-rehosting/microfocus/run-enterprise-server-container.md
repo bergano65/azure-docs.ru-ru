@@ -12,12 +12,12 @@ ms.date: 06/29/2020
 tags: ''
 keywords: ''
 ms.service: multiple
-ms.openlocfilehash: 3c4afc6c0adb8d499e38abf3d709a951774dda4e
-ms.sourcegitcommit: bdd5c76457b0f0504f4f679a316b959dcfabf1ef
+ms.openlocfilehash: bfd40d39907c4e69ded0fa257305d346ca261836
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "90974068"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91320002"
 ---
 # <a name="run-micro-focus-enterprise-server-50-in-a-docker-container-on-azure"></a>Запуск Micro Focus Enterprise Server 5,0 в контейнере DOCKER в Azure
 
@@ -121,9 +121,9 @@ DOCKER добавляет в приложения переносимость и 
 
 1.  Чтобы запустить Enterprise Server 5,0 и приложение акктдемо, в командной строке введите:
 
-    ~~~
+    ```
     **docker run -p 16002:86/tcp -p 16002:86/udp -p 9040-9050:9040-9050 -p 9000-9010:9000-9010 -ti --network="nat" --rm microfocus/es-acctdemo:win\_5.0\_x64
-    ~~~
+    ```
 
 1.  Установите эмулятор терминала 3270, например [x3270](http://x3270.bgp.nu/) , и используйте его для подключения через порт 9040 к образу, который работает.
 
@@ -133,15 +133,15 @@ DOCKER добавляет в приложения переносимость и 
 
     2.  Чтобы получить IP-адрес для контейнера акктдемо, используйте идентификатор контейнера из предыдущего шага следующим образом:
 
-    ~~~
+    ```
     docker inspect \<containerID\> --format="{{range.NetworkSettings.Networks}}{{.IPAddress}}{{end}}"
-    ~~~
+    ```
 
     Пример:
 
-    ~~~
+    ```
     docker inspect 22a0fe3159d0 --format="{{range.NetworkSettings.Networks}}{{.IPAddress}}{{end}}"
-    ~~~
+    ```
 
 4. Запишите IP-адрес для образа акктдемо. Например, адрес в следующем выводе — 172.19.202.52.
 

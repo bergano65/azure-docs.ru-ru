@@ -5,17 +5,17 @@ description: Как настроить веб-приложение, которо
 author: anastasia-ms
 ms.author: v-stharr
 ms.date: 06/12/2020
-ms.topic: conceptual
+ms.topic: how-to
 ms.service: azure-maps
 services: azure-maps
 manager: timlt
-ms.custom: devx-track-javascript
-ms.openlocfilehash: b86a8f726c039e3fa909cdc6f3f7b33b7c9c01ff
-ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
+ms.custom: devx-track-js
+ms.openlocfilehash: 50194341d1d34da4b02558461f532ae64b941b16
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87279752"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91319628"
 ---
 # <a name="secure-a-web-application-with-user-sign-in"></a>Защита веб-приложения с помощью входа пользователя
 
@@ -96,7 +96,7 @@ var map = new atlas.Map("map", {
 
 [!INCLUDE [grant role access to users](./includes/grant-rbac-users.md)]
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о сценарии веб-приложений:
 > [!div class="nextstepaction"]

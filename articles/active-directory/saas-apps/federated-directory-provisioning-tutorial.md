@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: article
 ms.date: 07/12/2019
 ms.author: zhchia
-ms.openlocfilehash: c083b0ca7fa506bb951a9ef27d2af04d61482eda
-ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
+ms.openlocfilehash: 336c1e78143c09e07b8f05c3dbd10ca647844242
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88555172"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91319951"
 ---
 # <a name="tutorial-configure-federated-directory-for-automatic-user-provisioning"></a>Учебник. Настройка федеративного каталога для автоматической подготовки пользователей
 
@@ -128,11 +128,11 @@ ms.locfileid: "88555172"
 
 3. Выберите вкладку **Подготовка**.
 
-    ![Вкладка "Подготовка"](common/provisioning.png)
+    ![Снимок экрана параметров управления с вызываемым параметром подготовки.](common/provisioning.png)
 
 4. Для параметра **Режим подготовки к работе** выберите значение **Automatic** (Автоматически).
 
-    ![Вкладка "Подготовка"](common/provisioning-automatic.png)
+    ![Снимок экрана: раскрывающийся список режима подготовки с вызываемым автоматическим параметром.](common/provisioning-automatic.png)
 
 5. В разделе **Учетные данные администратора** введите значение `https://api.federated.directory/v2/` в поле "URL-адрес клиента". Введите значение, полученное и сохраненное ранее из федеративного каталога в **маркере секрета**. Нажмите кнопку **проверить подключение** , чтобы убедиться, что Azure AD может подключиться к федеративным каталогу. В случае сбоя подключения убедитесь, что учетная запись федеративного каталога имеет разрешения администратора, и повторите попытку.
 
@@ -142,7 +142,7 @@ ms.locfileid: "88555172"
 
     ![Почтовое уведомление](common/provisioning-notification-email.png)
 
-9. Нажмите **Сохранить**.
+9. Выберите команду **Сохранить**.
 
 10. В разделе **сопоставления** выберите **синхронизировать Azure Active Directory пользователей с федеративным каталогом**.
 

@@ -16,12 +16,12 @@ ms.date: 08/14/2020
 ms.author: barclayn
 ms.reviewer: markwahl-msft
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 7154bc1f033806d359726cff8ed227f2219559ec
-ms.sourcegitcommit: 4a7a4af09f881f38fcb4875d89881e4b808b369b
+ms.openlocfilehash: 51983e52643d587fc497a1a67fcb0cd29dbb7f17
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/04/2020
-ms.locfileid: "89461040"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91306571"
 ---
 # <a name="planning-azure-active-directory-access-reviews-deployment"></a>Планирование развертывания Azure Active Directoryных проверок доступа
 
@@ -37,7 +37,7 @@ ms.locfileid: "89461040"
 
 * Автоматизируйте результаты проверки, например удаление доступа пользователей к ресурсам
 
-  ![Планирование проверок доступа](./media/deploy-access-review/1-planning-review.png)
+  ![Схема, на которой показан поток проверок доступа.](./media/deploy-access-review/1-planning-review.png)
 
 Проверка доступа — это [Azure AD Identity Governanceная](identity-governance-overview.md) возможность. Другие возможности — [Управление](entitlement-management-overview.md)назначением, [Управление привилегированными пользователями](../privileged-identity-management/pim-configure.md) и [условия использования](../conditional-access/terms-of-use.md). Вместе они помогают организациям решать следующие четыре вопроса:
 
@@ -300,7 +300,7 @@ ms.locfileid: "89461040"
 
 Откройте вкладку жизненный цикл, чтобы перейти к проверкам доступа.
 
- ![Изменение политики](./media/deploy-access-review/5-plan-access-packages-admin-ui.png)
+ ![Снимок экрана, показывающий «изменение политики» на вкладке «жизненный цикл».](./media/deploy-access-review/5-plan-access-packages-admin-ui.png)
 
 ## <a name="plan-access-reviews-for-groups"></a>Планирование проверок доступа для групп
 
@@ -446,7 +446,7 @@ ms.locfileid: "89461040"
 
 Чтобы снизить риск, связанный с устаревшими назначениями ролей, следует регулярно проверять доступ к привилегированным ролям Azure AD.
 
-![Проверка ролей Azure AD](./media/deploy-access-review/8-review-azure-ad-roles-picker.png)
+![Снимок экрана, показывающий список ролей Azure A D (членство в проверке).](./media/deploy-access-review/8-review-azure-ad-roles-picker.png)
 
 Следуйте инструкциям по ссылкам ниже:
 

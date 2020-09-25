@@ -6,12 +6,12 @@ ms.author: sumuth
 ms.service: mysql
 ms.topic: how-to
 ms.date: 9/21/2020
-ms.openlocfilehash: 3798396c72bc01bc20f1b4ee3ee66961fe33bff5
-ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
+ms.openlocfilehash: 7701fe91d0e3f78f9596687bf945ba4b11c2d199
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "90937346"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91331698"
 ---
 # <a name="manage-an-azure-database-for-mysql---flexible-server-preview-using-the-azure-cli"></a>Управление базой данных Azure для MySQL — гибким сервером (Предварительная версия) с помощью Azure CLI
 
@@ -40,7 +40,7 @@ az account set --subscription <subscription id>
 
 ## <a name="scale-compute-and-storage"></a>Масштабирование вычислений и хранилища
 
-Вы можете легко масштабировать свой уровень вычислений, виртуальных ядер и хранилище с помощью следующей команды. Вы можете просмотреть все операции сервера, которые можно выполнить с помощью команды [AZ MySQL гибкого сервера сервера обзор](/cli/azure/mysql/server) .
+Вы можете легко масштабировать свой уровень вычислений, виртуальных ядер и хранилище с помощью следующей команды. Вы можете просмотреть все операции сервера, которые можно выполнить [с помощью команды AZ MySQL гибкое обновление сервера](/cli/azure/mysql/flexible-server#az_mysql_flexible_server_update) .
 
 ```azurecli-interactive
 az mysql flexible-server update --resource-group myresourcegroup --name mydemoserver --sku-name Standard_D4ds_v4 --storage-size 6144
@@ -64,10 +64,10 @@ storage-size | 6144 | Объем хранилища сервера (в мега�
 
 | Командлет | Использование| Описание |
 | --- | ---| --- |
-|[AZ MySQL гибкость — серверная база данных создать](/cli/azure/sql/db#az-mysql-flexible-server-db-create)|```az mysql flexible-server db create -g myresourcegroup -s mydemoserver -n mydatabasename``` |Создает базу данных.|
-|[AZ MySQL гибкость — серверная база данных удаление](/cli/azure/sql/db#az-mysql-flexible-server-db-delete)|```az mysql flexible-server db delete -g myresourcegroup -s mydemoserver -n mydatabasename```|Удалите базу данных с сервера. Эта команда не удаляет сервер. |
-|[AZ MySQL гибкий — серверная база данных](/cli/azure/sql/db#az-mysql-flexible-server-db-list)|```az mysql flexible-server db list -g myresourcegroup -s mydemoserver```|Список всех баз данных на сервере|
-|[AZ MySQL гибкость — Серверная БД](/cli/azure/sql/db#az-mysql-flexible-server-db-show)|```az mysql flexible-server db show -g myresourcegroup -s mydemoserver -n mydatabasename```|Отображает дополнительные сведения о базе данных|
+|[AZ MySQL гибкость — серверная база данных создать](/cli/azure/mysql/flexible-server/db#az_mysql_flexible_server_db_create)|```az mysql flexible-server db create -g myresourcegroup -s mydemoserver -n mydatabasename``` |Создает базу данных.|
+|[AZ MySQL гибкость — серверная база данных удаление](/cli/azure/mysql/flexible-server/db#az_mysql_flexible_server_db_delete)|```az mysql flexible-server db delete -g myresourcegroup -s mydemoserver -n mydatabasename```|Удалите базу данных с сервера. Эта команда не удаляет сервер. |
+|[AZ MySQL гибкий — серверная база данных](/cli/azure/mysql/flexible-server/db#az_mysql_flexible_server_db_list)|```az mysql flexible-server db list -g myresourcegroup -s mydemoserver```|Список всех баз данных на сервере|
+|[AZ MySQL гибкость — Серверная БД](/cli/azure/mysql/flexible-server/db#az_mysql_flexible_server_db_show)|```az mysql flexible-server db show -g myresourcegroup -s mydemoserver -n mydatabasename```|Отображает дополнительные сведения о базе данных|
 
 ## <a name="update-admin-password"></a>Обновление пароля администратора
 Вы можете изменить пароль роли администратора с помощью этой команды.
@@ -80,7 +80,7 @@ az mysql flexible-server update --resource-group myresourcegroup --name mydemose
 > Пароль должен содержать символы трех из следующих категорий: прописные буквы английского алфавита, строчные буквы английского алфавита, цифры и символы, отличные от буквенно-цифровых.
 
 ## <a name="delete-a-server"></a>Удаление сервера
-Если вы хотите удалить гибкий сервер MySQL, можно выполнить команду [AZ MySQL гибкий-Server DELETE Server](/cli/azure/mysql/server#az-mysql-flexible-server-delete) .
+Если вы хотите удалить гибкий сервер MySQL, можно выполнить команду [AZ MySQL гибкий-Server DELETE Server](/cli/azure/mysql/flexible-server#az_mysql_flexible_server_delete) .
 
 ```azurecli-interactive
 az mysql flexible-server delete --resource-group myresourcegroup --name mydemoserver

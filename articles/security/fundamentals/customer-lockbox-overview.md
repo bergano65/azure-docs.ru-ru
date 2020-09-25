@@ -7,13 +7,13 @@ ms.subservice: security-fundamentals
 ms.topic: article
 ms.author: terrylan
 manager: rkarlin
-ms.date: 09/09/2020
-ms.openlocfilehash: 5c24bd80721f626e38dcb886e89231c0b86056df
-ms.sourcegitcommit: 3be3537ead3388a6810410dfbfe19fc210f89fec
+ms.date: 09/15/2020
+ms.openlocfilehash: 52cb5ac5423aac0599ba2827667ee670dde286a5
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89650963"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91331664"
 ---
 # <a name="customer-lockbox-for-microsoft-azure"></a>защищенное хранилище для Microsoft Azure
 
@@ -32,22 +32,23 @@ ms.locfileid: "89650963"
 
 - Управление API
 - Служба приложений Azure
+- Cognitive Services
+- Реестр контейнеров
 - База данных Azure для MySQL
 - Azure Databricks
-- Azure Synapse Analytics
-- Службы Cognitive Services
-- Реестр контейнеров
+- Azure Data Box
+- Azure Data Explorer
 - Фабрика данных Azure
 - База данных Azure для PostgreSQL
-- Служба Azure Kubernetes
-- Azure Data Box
+- Функции Azure
 - HDInsight
-- Функции
+- Служба Azure Kubernetes
+- Azure Monitor
 - Хранилище Azure
 - БД SQL Azure
-- Azure Data Explorer
-- Виртуальные машины (теперь также покрывают доступ к дампам памяти и управляемым дискам)
 - Передача подписок Azure
+- Azure Synapse Analytics
+- Виртуальные машины (теперь также покрывают доступ к дампам памяти и управляемым дискам)
 
 Чтобы включить защищенное хранилище для этих предложений предварительной версии в вашей организации, зарегистрируйтесь для использования [защищенное хранилище в общедоступной предварительной версии Azure](https://aka.ms/customerlockbox/insiderprogram).
 

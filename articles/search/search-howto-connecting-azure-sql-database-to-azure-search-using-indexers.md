@@ -9,12 +9,12 @@ ms.devlang: rest-api
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 07/12/2020
-ms.openlocfilehash: a1dd88e9007a878ffdf6e5d836391c30c952c35a
-ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
+ms.openlocfilehash: 631f5afbac4337cd0852f46ac4a336107f042397
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88923030"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91331647"
 ---
 # <a name="connect-to-and-index-azure-sql-content-using-an-azure-cognitive-search-indexer"></a>Подключение к содержимому SQL Azure и его индексирование с помощью индексатора Azure Когнитивный поиск
 
@@ -47,7 +47,7 @@ ms.locfileid: "88923030"
 ## <a name="when-to-use-azure-sql-indexer"></a>Когда следует использовать индексатор SQL Azure
 Уместность использования индексатора Azure SQL зависит от нескольких факторов, связанных с данными. Если данные соответствуют следующим требованиям, вы можете использовать индексатор SQL Azure.
 
-| Критерии | Сведения |
+| Критерии | Подробности |
 |----------|---------|
 | Источником данных является отдельная таблица или представление | Если данные разбиты по нескольким таблицам, можно создать одно представление данных. Однако при использовании представления вы не сможете использовать интегрированное отслеживание изменений SQL Server для обновления индекса с помощью добавочных изменений. Дополнительные сведения см. в разделе [Запись измененных и удаленных строк](#CaptureChangedRows) ниже. |
 | Типы данных совместимы | В индексе Azure Когнитивный поиск поддерживаются большинство типов SQL, но не все. Список см. в разделе [Сопоставление типов данных](#TypeMapping). |
@@ -74,7 +74,9 @@ ms.locfileid: "88923030"
     }
    ```
 
-   Вы можете получить строку подключения на [портале Azure](https://portal.azure.com). Используйте вариант `ADO.NET connection string`.
+   Строка подключения может соответствовать любому из следующих форматов:
+    1. Вы можете получить строку подключения на [портале Azure](https://portal.azure.com). Используйте вариант `ADO.NET connection string`.
+    1. Строка подключения управляемого удостоверения, которая не включает ключ учетной записи в следующем формате: `Initial Catalog|Database=<your database name>;ResourceId=/subscriptions/<your subscription ID>/resourceGroups/<your resource group name>/providers/Microsoft.Sql/servers/<your SQL Server name>/;Connection Timeout=connection timeout length;` . Чтобы использовать эту строку подключения, следуйте инструкциям по [настройке подключения индексатора к базе данных SQL Azure с помощью управляемого удостоверения](search-howto-managed-identities-sql.md).
 
 2. Создайте целевой индекс Azure Когнитивный поиск, если он еще не создан. Создать индекс можно с помощью [портала](https://portal.azure.com) или [API создания индекса](/rest/api/searchservice/Create-Index). Убедитесь, что схема целевого индекса совместима со схемой исходной таблицы. см. раздел [Сопоставление типов данных поиска SQL и Microsoft Azure](#TypeMapping).
 
@@ -325,13 +327,13 @@ ms.locfileid: "88923030"
 | smalldatetime, datetime, datetime2, date, datetimeoffset |Edm.DateTimeOffset, Edm.String | |
 | uniqueidentifer |Edm.String | |
 | geography |Edm.GeographyPoint |Поддерживаются только географические объекты типа POINT с SRID 4326 (значение по умолчанию). |
-| rowversion |н/д |Столбцы версии строк не могут храниться в индексе поиска, но их можно использовать для отслеживания изменений. |
-| time, timespan, binary, varbinary, image, xml, geometry, CLR types |н/д |Не поддерживается |
+| rowversion |Н/Д |Столбцы версии строк не могут храниться в индексе поиска, но их можно использовать для отслеживания изменений. |
+| time, timespan, binary, varbinary, image, xml, geometry, CLR types |Н/Д |Не поддерживается |
 
 ## <a name="configuration-settings"></a>Параметры конфигурации
 Индексатор SQL предоставляет несколько параметров конфигурации.
 
-| Параметр | Тип данных | Цель | Значение по умолчанию |
+| Параметр | Тип данных | Назначение | Значение по умолчанию |
 | --- | --- | --- | --- |
 | queryTimeout |строка |Задает время ожидания для выполнения запроса SQL. |5 мин ("00:05:00") |
 | disableOrderByHighWaterMarkColumn |bool |Указывает SQL-запросу, используемому политикой верхнего предела, опустить предложение ORDER BY. Ознакомьтесь с [политикой верхнего предела](#HighWaterMarkPolicy). |false |
@@ -346,7 +348,7 @@ ms.locfileid: "88923030"
     }
 ```
 
-## <a name="faq"></a>ВОПРОСЫ И ОТВЕТЫ
+## <a name="faq"></a>Вопросы и ответы
 
 **Вопрос. можно ли использовать индексатор SQL Azure с базами данных SQL, работающими на виртуальных машинах IaaS в Azure?**
 

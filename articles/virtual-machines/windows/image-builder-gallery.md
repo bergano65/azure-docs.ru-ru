@@ -7,12 +7,12 @@ ms.date: 05/05/2020
 ms.topic: how-to
 ms.service: virtual-machines-windows
 ms.subservice: imaging
-ms.openlocfilehash: 07b9e3e7529aa867a4baf51ffe5c4bbf23599d32
-ms.sourcegitcommit: 2ff0d073607bc746ffc638a84bb026d1705e543e
+ms.openlocfilehash: 96603d27f53161c72c9e81bb7b84fdc6ab5d1ca2
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87836196"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91320070"
 ---
 # <a name="preview-create-a-windows-image-and-distribute-it-to-a-shared-image-gallery"></a>Предварительный просмотр: Создание образа Windows и его распространение в Общей коллекции образов 
 
@@ -22,7 +22,7 @@ ms.locfileid: "87836196"
 
 С целью распространения образа в Общей коллекции образов для раздела шаблона `distribute` используется значение [sharedImage](../linux/image-builder-json.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json#distribute-sharedimage).
 
-Конструктор образов Azure автоматически выполняет команду sysprep для подготовки образа. Это универсальная команда, которую можно [переопределить](https://github.com/danielsollondon/azvmimagebuilder/blob/master/troubleshootingaib.md#vms-created-from-aib-images-do-not-create-successfully) при необходимости. 
+Конструктор образов Azure автоматически выполняет команду sysprep для подготовки образа. Это универсальная команда, которую можно [переопределить](../linux/image-builder-troubleshoot.md#vms-created-from-aib-images-do-not-create-successfully) при необходимости. 
 
 Учитывайте, сколько раз была произведена настройка. Команду Sysprep для образа Windows можно выполнить до 8 раз. После этого потребуется повторно создать образ Windows. Дополнительные сведения см. в разделе [Ограничения на количество выполнений команды Sysprep](/windows-hardware/manufacture/desktop/sysprep--generalize--a-windows-installation#limits-on-how-many-times-you-can-run-sysprep). 
 

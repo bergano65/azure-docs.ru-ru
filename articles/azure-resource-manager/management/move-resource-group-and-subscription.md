@@ -4,12 +4,12 @@ description: Перемещайте ресурсы в новую группу р
 ms.topic: conceptual
 ms.date: 09/15/2020
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: 43b5cd8c9fa5947ff8f345bd0cd3ad26d9e61923
-ms.sourcegitcommit: 80b9c8ef63cc75b226db5513ad81368b8ab28a28
+ms.openlocfilehash: cd05fe045532ee1b1f1fb88e502d786daabf9365
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/16/2020
-ms.locfileid: "90603158"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91319560"
 ---
 # <a name="move-resources-to-a-new-resource-group-or-subscription"></a>Перемещение ресурсов в новую группу ресурсов или подписку
 
@@ -34,6 +34,10 @@ ms.locfileid: "90603158"
    * [Руководство по перемещению в сети](./move-limitations/networking-move-limitations.md)
    * [Руководство по перемещению служб восстановления](../../backup/backup-azure-move-recovery-services-vault.md?toc=/azure/azure-resource-manager/toc.json)
    * [Руководство по перемещению виртуальных машин](./move-limitations/virtual-machines-move-limitations.md)
+
+1. При перемещении ресурса с ролью Azure, назначенной непосредственно ресурсу (или дочернему ресурсу), назначение роли не перемещается и становится потерянным. После перемещения необходимо повторно создать назначение ролей. В конечном итоге назначение потерянной роли будет автоматически удалено, но рекомендуется удалить назначение ролей перед перемещением ресурса.
+
+    Сведения об управлении назначениями ролей см. в разделе [список назначений ролей Azure](../../role-based-access-control/role-assignments-list-portal.md#list-role-assignments-at-a-scope) и [Добавление или удаление назначений ролей Azure](../../role-based-access-control/role-assignments-portal.md).
 
 1. Исходная и целевая подписки должны быть активными. Если у вас возникла проблема при включении учетной записи, которая была отключена, [создайте запрос на поддержку Azure](../../azure-portal/supportability/how-to-create-azure-support-request.md). Выберите тип проблемы **Управление подпиской**.
 
@@ -194,7 +198,7 @@ Authorization: Bearer <access-token>
 
 После проверки возможности перемещения ресурсов вы увидите уведомление о том, что операция перемещения выполняется.
 
-:::image type="content" source="./media/move-resource-group-and-subscription/move-notification.png" alt-text="уведомление":::
+:::image type="content" source="./media/move-resource-group-and-subscription/move-notification.png" alt-text="уведомлений":::
 
 После ее завершения отобразится уведомление о результате.
 

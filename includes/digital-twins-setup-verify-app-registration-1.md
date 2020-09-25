@@ -5,13 +5,17 @@ ms.service: digital-twins
 ms.topic: include
 ms.date: 7/22/2020
 ms.author: baanders
-ms.openlocfilehash: 041c8851fc5535b9c4494bc5aae618bfbc762086
-ms.sourcegitcommit: 0e8a4671aa3f5a9a54231fea48bcfb432a1e528c
+ms.openlocfilehash: 9d09f29dc5fbe6ed6a358c37a6064319c28e35f8
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/24/2020
-ms.locfileid: "87125308"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91320780"
 ---
-Чтобы проверить, правильно ли настроены разрешения, перейдите на страницу обзора регистрации приложений Azure AD в портал Azure, перейдя по [этой ссылке](https://portal.azure.com/#blade/Microsoft_AAD_IAM/ActiveDirectoryMenuBlade/RegisteredApps) . На этой странице отображаются все регистрации приложений, созданные в вашей подписке.
+Чтобы проверить, правильно ли настроены разрешения, перейдите на [страницу обзора регистрации приложений Azure AD](https://portal.azure.com/#blade/Microsoft_AAD_IAM/ActiveDirectoryMenuBlade/RegisteredApps) в портал Azure. Вы можете перейти на эту страницу самостоятельно, выполнив поиск *Регистрация приложений* на панели поиска портала.
 
-Вы должны увидеть только что созданную регистрацию приложения в списке Обзор. Выберите его, чтобы открыть подробные сведения.
+Перейдите на вкладку *все приложения* , чтобы просмотреть все регистрации приложений, созданные в вашей подписке.
+
+Вы должны увидеть только что созданную регистрацию приложения в списке. Выберите его, чтобы открыть подробные сведения.
+
+:::image type="content" source="../articles/digital-twins/media/how-to-set-up-instance/portal/app-registrations.png" alt-text="Страница Регистрация приложений в портал Azure":::

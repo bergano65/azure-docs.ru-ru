@@ -9,14 +9,14 @@ ms.devlang: ''
 ms.topic: conceptual
 author: danimir
 ms.author: danil
-ms.reviewer: jrasnik, carlrab
+ms.reviewer: jrasnik, sstein
 ms.date: 12/03/2019
-ms.openlocfilehash: e7a3dd1c58f2bddb767dcac4ac2b5e354be77f65
-ms.sourcegitcommit: bdd5c76457b0f0504f4f679a316b959dcfabf1ef
+ms.openlocfilehash: dfd21a38c46238dbd9d58d3eae5b3f9414d3c5fc
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "90981451"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91284505"
 ---
 # <a name="enable-automatic-tuning-in-the-azure-portal-to-monitor-queries-and-improve-workload-performance"></a>Включение автоматической настройки в портал Azure для отслеживания запросов и повышения производительности рабочей нагрузки
 [!INCLUDE[appliesto-sqldb-sqlmi](../includes/appliesto-sqldb-sqlmi.md)]
@@ -28,7 +28,7 @@ ms.locfileid: "90981451"
 
 - [портал Azure](automatic-tuning-enable.md#azure-portal).
 - [REST API](automatic-tuning-enable.md#rest-api) вызовы
-- Команды [T-SQL](/sql/t-sql/statements/alter-database-transact-sql-set-options?view=azuresqldb-current)
+- Команды [T-SQL](/sql/t-sql/statements/alter-database-transact-sql-set-options?view=azuresqldb-current&preserve-view=true)
 
 > [!NOTE]
 > Для Управляемый экземпляр SQL Azure поддерживаемый параметр FORCE_LAST_GOOD_PLAN можно настроить только с помощью [T-SQL](https://azure.microsoft.com/blog/automatic-tuning-introduces-automatic-plan-correction-and-t-sql-management) . Параметры настройки на основе портал Azure и автоматическая настройка индекса, описанные в этой статье, не применяются к Управляемый экземпляр SQL Azure.
@@ -109,7 +109,7 @@ ALTER DATABASE current SET AUTOMATIC_TUNING (FORCE_LAST_GOOD_PLAN = ON, CREATE_I
 > В случае [активной георепликации](auto-failover-group-overview.md)необходимо настроить автоматическую настройку только для базы данных-источника. Автоматически примененные действия настройки, например, например, для создания или удаления индекса, будут автоматически реплицированы на вторичный сервер только для чтения. При попытке включения автоматической настройки с помощью T-SQL для дополнения только для чтения произойдет сбой, поскольку для него не поддерживаются различные конфигурации настроек.
 >
 
-Дополнительные сведения о параметрах T-SQL о для настройки автоматической настройки см. в разделе [Параметры ALTER DATABASE SET (Transact-SQL)](/sql/t-sql/statements/alter-database-transact-sql-set-options?view=azuresqldb-current).
+Дополнительные сведения о параметрах T-SQL о для настройки автоматической настройки см. в разделе [Параметры ALTER DATABASE SET (Transact-SQL)](/sql/t-sql/statements/alter-database-transact-sql-set-options?view=azuresqldb-current&preserve-view=true).
 
 ## <a name="disabled-by-the-system"></a>Отключено системой
 

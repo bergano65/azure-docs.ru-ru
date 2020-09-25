@@ -8,12 +8,12 @@ ms.date: 07/24/2020
 ms.author: normesta
 ms.subservice: common
 ms.reviewer: zezha-msft
-ms.openlocfilehash: 16d7965b8d42a6fdd6ebd68307b01b322cfa7cc6
-ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
+ms.openlocfilehash: ad64d56899a9a54f4c8aede78ba6b4f2b77b8249
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87285243"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91331545"
 ---
 # <a name="azcopy-make"></a>azcopy make
 
@@ -42,19 +42,19 @@ azcopy make "https://[account-name].[blob,file,dfs].core.windows.net/[top-level-
 
 ## <a name="options"></a>Параметры
 
-|Параметр|Описание:|
+|Параметр|Описание|
 |--|--|
 |-h, --help|Отображение содержимого справки для команды make. |
-|--UInt32 с квотой в ГБ|Указывает максимальный размер общей папки в гигабайтах (гиб), ноль означает, что вы принимаете квоту по умолчанию для файловой службы.|
+|--UInt32 с квотой в ГБ|Указывает максимальный размер общей папки в гигабайтах (ГБ), ноль означает, что квота файловой службы по умолчанию принимается.|
 
 ## <a name="options-inherited-from-parent-commands"></a>Параметры, унаследованные от родительских команд
 
-|Параметр|Описание:|
+|Параметр|Описание|
 |---|---|
 |--Cap-Мбит/с, с плавающей запятой|Скорость передачи с прописными буквами в мегабит в секунду. Посекундная пропускная способность может немного отличаться от ограничения. Если этот параметр имеет значение 0 или пропущен, пропускная способность не ограничена.|
 |--строка выходного типа|Формат вывода команды. Среди вариантов: Text, JSON. Значение по умолчанию — "Text".|
 |--Trusted-Microsoft-суффикс строка   |Указывает дополнительные суффиксы домена, в которых могут быть отправлены Azure Active Directory токены входа.  Значение по умолчанию — "*. Core.Windows.NET;*". core.chinacloudapi.cn; *. Core.cloudapi.de;*. core.usgovcloudapi.net ". Все перечисленные здесь значения добавляются к значениям по умолчанию. В целях безопасности следует размещать только Microsoft Azureные домены. Несколько записей разделяются точкой с запятой.|
 
-## <a name="see-also"></a>См. также статью
+## <a name="see-also"></a>См. также раздел
 
 - [azcopy](storage-ref-azcopy.md)

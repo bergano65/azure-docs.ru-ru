@@ -14,12 +14,12 @@ ms.date: 06/10/2020
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 39eb45f4488c0ddc63ab8e7357a122b47777feee
-ms.sourcegitcommit: f8d2ae6f91be1ab0bc91ee45c379811905185d07
+ms.openlocfilehash: aed5dcf98e37b0d075804985355bdabe3b50b712
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89662357"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91295351"
 ---
 # <a name="custom-installation-of-azure-ad-connect"></a>Выборочная установка Azure AD Connect
 **Настраиваемые параметры** в Azure AD Connect используются, когда для установки необходимо указать больше параметров. В частности, если есть несколько лесов или требуется настроить дополнительные компоненты, которые не входят в экспресс-установку. Они также используются в тех случаях, когда [**экспресс-установка**](how-to-connect-install-express.md) не соответствует требованиям развертывания или топологии.
@@ -46,7 +46,7 @@ ms.locfileid: "89662357"
 ### <a name="user-sign-in"></a>Вход пользователя
 После установки необходимых компонентов вам будет предложено выбрать метод единого входа для пользователей. В таблице ниже содержится краткое описание доступных параметров. Полное описание способов входа см. в статье [Параметры входа в Azure AD Connect](plan-connect-user-signin.md).
 
-![Вход пользователя](./media/how-to-connect-install-custom/usersignin4.png)
+![Снимок экрана, на котором показана страница "вход пользователя" с выбранным параметром "Синхронизация хэша паролей".](./media/how-to-connect-install-custom/usersignin4.png)
 
 | Метод единого входа | Описание |
 | --- | --- |
@@ -75,7 +75,7 @@ ms.locfileid: "89662357"
 ### <a name="connect-your-directories"></a>Подключение к каталогам
 Чтобы подключиться к службе домена Active Directory, Azure AD Connect необходимо имя леса и учетные данные учетной записи с достаточными разрешениями.
 
-![Подключение каталога](./media/how-to-connect-install-custom/connectdir01.png)
+![Снимок экрана, на котором показана страница "подключение каталогов".](./media/how-to-connect-install-custom/connectdir01.png)
 
 После входа в лес щелкните **Добавить каталог**. Появится всплывающее диалоговое окно со следующими параметрами:
 
@@ -300,7 +300,7 @@ ms.locfileid: "89662357"
 ### <a name="select-the-azure-ad-domain-that-you-wish-to-federate"></a>Выбор домена Azure AD, который нужно включить в федерацию
 Эта конфигурация используется для установки федеративных отношений между AD FS и Azure AD. Она настраивает службы федерации Active Directory для выдачи маркеров безопасности Azure AD и настраивает Azure AD для доверия маркерам из данного конкретного экземпляра AD FS. Во время первой установки на этой странице можно настроить только один домен. Позже можно настроить дополнительные домены, запустив Azure AD Connect еще раз.
 
-![Домен Azure AD](./media/how-to-connect-install-custom/adfs6.png)
+![Снимок экрана, на котором показана страница "домен Azure AD".](./media/how-to-connect-install-custom/adfs6.png)
 
 ### <a name="verify-the-azure-ad-domain-selected-for-federation"></a>Проверка домена Azure AD, выбранного для включения в федерацию
 При выборе домена, который необходимо включить в федерацию, Azure AD Connect предоставляет необходимые сведения для проверки непроверенного домена. Сведения о том, как использовать эти данные, см. в статье о [добавлении и проверке домена](../fundamentals/add-custom-domain.md).
@@ -320,7 +320,7 @@ ms.locfileid: "89662357"
 ### <a name="verify-the-domain"></a>Проверка домена
 Когда вы выберете вариант федерации с PingFederate, появится предложение проверить домен, для которого вы хотите создать федерацию.  Выберите нужный домен из раскрывающегося списка.
 
-![Проверка домена](./media/how-to-connect-install-custom/ping1.png)
+![Снимок экрана, показывающий "домен Azure AD" с выбранным примером домена "contoso.com".](./media/how-to-connect-install-custom/ping1.png)
 
 ### <a name="export-the-pingfederate-settings"></a>Экспорт параметров PingFederate
 
@@ -394,7 +394,7 @@ Azure AD Connect попробует проверить конечные точк
 ### <a name="the-adsync-database-already-contains-data-and-cannot-be-overwritten"></a>База данных ADSync уже содержит данные и не может быть перезаписана
 Когда вы выполняете выборочную установку Azure AD Connect и выбираете вариант **Use an existing SQL server** (Использовать существующий SQL Server) на странице **Установка обязательных компонентов**, вы можете столкнуться с ошибкой, в которой говорится **База данных ADSync уже содержит данные и не может быть перезаписана. Удалите существующую базу данных и повторите попытку.**
 
-![Error](./media/how-to-connect-install-custom/error1.png)
+![Снимок экрана, на котором показана страница "Установка необходимых компонентов".](./media/how-to-connect-install-custom/error1.png)
 
 Это связано с тем, что база данных с именем **ADSync** уже существует в экземпляре SQL Server, указанном в приведенных выше текстовых окнах.
 

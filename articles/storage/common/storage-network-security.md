@@ -9,12 +9,12 @@ ms.date: 07/16/2020
 ms.author: tamram
 ms.reviewer: santoshc
 ms.subservice: common
-ms.openlocfilehash: 3ec4e6ee49052657210fffa8976b661c1a9e5948
-ms.sourcegitcommit: ac7ae29773faaa6b1f7836868565517cd48561b2
+ms.openlocfilehash: 474b3c4261b412c0c875f7a05802095c9e0c2cd9
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88827466"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91320376"
 ---
 # <a name="configure-azure-storage-firewalls-and-virtual-networks"></a>Настройка брандмауэров службы хранилища Azure и виртуальных сетей
 
@@ -256,7 +256,7 @@ ms.locfileid: "88827466"
 
 Для настройки правил брандмауэра службы хранилища поддерживаются только IPv4-адреса.
 
-Каждая учетная запись хранения поддерживает до 100 сетевых правил для IP-адресов.
+Каждая учетная запись хранения поддерживает до 200 правил сети IP.
 
 ### <a name="configuring-access-from-on-premises-networks"></a>Настройка доступа из локальных сетей
 
@@ -388,7 +388,7 @@ ms.locfileid: "88827466"
 
 | Служба                        | Имя поставщика ресурсов                 | Назначение            |
 | :----------------------------- | :------------------------------------- | :----------------- |
-| Служба управления Azure API           | Microsoft.ApiManagement/service        | Включает доступ службы управления API к учетным записям хранения за брандмауэром с помощью политик. [Подробнее](/azure/api-management/api-management-authentication-policies#use-managed-identity-in-send-request-policy). |
+| Cлужба управления Azure API           | Microsoft.ApiManagement/service        | Включает доступ службы управления API к учетным записям хранения за брандмауэром с помощью политик. [Подробнее](/azure/api-management/api-management-authentication-policies#use-managed-identity-in-send-request-policy). |
 | Когнитивный поиск Azure         | Microsoft.Search/searchServices        | Разрешает службам Когнитивного поиска доступ к учетным записям хранения для индексирования, обработки и выполнения запросов. |
 | Задачи Реестра контейнеров Azure | Microsoft.ContainerRegistry/registries | Задачи Реестра контейнеров Azure могут получать доступ к учетным записям хранения при создании образов контейнеров. |
 | Фабрика данных Azure             | Microsoft.DataFactory/factories;        | Разрешает доступ к учетным записям хранения через среду ADF. |

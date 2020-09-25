@@ -1,6 +1,6 @@
 ---
 title: Рекомендации по безопасности для виртуальных машин Windows в Azure
-description: Используйте эти рекомендации для удовлетворения обязательств по безопасности, описанных в модели общей ответственности, и для повышения общей безопасности развертываний.
+description: Примените эти рекомендации для виртуальных машин Windows в Azure, чтобы удовлетворить обязательства по обеспечению безопасности, описанные в модели общей ответственности, и повысить общую безопасность развертываний.
 author: msmbaldwin
 manager: RKarlin
 ms.service: virtual-machines
@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.date: 11/13/2019
 ms.author: mbaldwin
 ms.custom: security-recommendations
-ms.openlocfilehash: 94da5ebc3094e112e6f6fcbf220fb7b6738686d0
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: e6235524a4fdcb504b3fad1f1dc59036838fa717
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "82100725"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91331426"
 ---
 # <a name="security-recommendations-for-windows-virtual-machines-in-azure"></a>Рекомендации по безопасности для виртуальных машин Windows в Azure
 

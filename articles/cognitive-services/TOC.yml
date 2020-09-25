@@ -23,7 +23,7 @@
       href: cognitive-services-apis-create-account-client-library.md
     - name: Создание ресурса с помощью шаблона Resource Manager
       displayName: Resource Manager
-      href: resource-manager-template.md
+      href: create-account-resource-manager-template.md
     - name: Ведение журнала диагностики
       href: diagnostic-logging.md
 - name: Безопасность

@@ -3,25 +3,25 @@ title: Журнал развертывания
 description: Сведения о просмотре операций развертывания Azure Resource Manager с помощью портала, PowerShell, Azure CLI и REST API.
 tags: top-support-issue
 ms.topic: conceptual
-ms.date: 05/26/2020
-ms.openlocfilehash: b7439a70a3bd802a5f8a7c371fc04ab3eed31a5b
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.date: 09/23/2020
+ms.openlocfilehash: 00e0c51244d5c191d4c9f05f689b90ece81ec5a4
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84117835"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91284624"
 ---
 # <a name="view-deployment-history-with-azure-resource-manager"></a>Просмотр журнала развертываний с помощью Azure Resource Manager
 
 Azure Resource Manager позволяет просматривать журнал развертывания. Вы можете изучить определенные операции в прошлых развертываниях и просмотреть данные о развернутых ресурсах. Этот журнал содержит сведения об ошибках.
 
-Журнал развертывания для группы ресурсов ограничен 800 развертываниями. Как только вы приближаетесь к ограничению, развертывания автоматически удаляются из журнала. Дополнительные сведения см. [в разделе Автоматическое удаление из журнала развертывания](deployment-history-deletions.md).
+Журнал развертывания для группы ресурсов ограничен 800 развертываниями. Как только вы приближаетесь к ограничению, развертывания автоматически удаляются из журнала. См. статью [Автоматическое удаление из журнала развертывания](deployment-history-deletions.md).
 
 Сведения об устранении некоторых ошибок развертывания см. в статье об [устранении распространенных ошибок при развертывании ресурсов в Azure с помощью Azure Resource Manager](common-deployment-errors.md).
 
 ## <a name="get-deployments-and-correlation-id"></a>Получение сведений о развертываниях и идентификатора корреляции
 
-Сведения о развертывании можно получить с помощью портала Azure, PowerShell, Azure CLI или REST API. Каждое развертывание имеет идентификатор корреляции, который используется для отслеживания связанных событий. Это может быть полезным при работе с технической поддержкой над устранением проблемы с развертыванием.
+Сведения о развертывании можно получить с помощью портала Azure, PowerShell, Azure CLI или REST API. Каждое развертывание имеет идентификатор корреляции, который используется для отслеживания связанных событий. При [создании запроса на поддержку Azure](../../azure-portal/supportability/how-to-create-azure-support-request.md)служба поддержки может запросить идентификатор корреляции. Поддержка использует идентификатор корреляции для идентификации операций для неудачного развертывания.
 
 # <a name="portal"></a>[Портал](#tab/azure-portal)
 
@@ -61,13 +61,13 @@ Get-AzResourceGroupDeployment -ResourceGroupName ExampleGroup -DeploymentName Ex
 
 # <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
 
-Список всех развертываний для группы ресурсов можно получить с помощью команды [az deployment group list](/cli/azure/group/deployment?view=azure-cli-latest#az-deployment-group-list).
+Список всех развертываний для группы ресурсов можно получить с помощью команды [az deployment group list](/cli/azure/group/deployment#az-deployment-group-list).
 
 ```azurecli-interactive
 az deployment group list --resource-group ExampleGroup
 ```
 
-Чтобы получить сведения о конкретном развертывании, используйте [az deployment group show](/cli/azure/group/deployment?view=azure-cli-latest#az-deployment-group-show).
+Чтобы получить сведения о конкретном развертывании, используйте [az deployment group show](/cli/azure/group/deployment#az-deployment-group-show).
 
 ```azurecli-interactive
 az deployment group show --resource-group ExampleGroup --name ExampleDeployment

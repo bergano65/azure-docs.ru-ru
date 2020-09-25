@@ -5,14 +5,14 @@ services: firewall
 author: vhorne
 ms.service: firewall
 ms.topic: how-to
-ms.date: 09/02/2020
+ms.date: 09/17/2020
 ms.author: victorh
-ms.openlocfilehash: 92fc4252dd52236e2cc4e8fdfdd2afa32059a721
-ms.sourcegitcommit: 3246e278d094f0ae435c2393ebf278914ec7b97b
+ms.openlocfilehash: 784459282007edab599d54edff0d2b38eed07b34
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89376950"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91320648"
 ---
 # <a name="monitor-azure-firewall-logs-and-metrics"></a>Мониторинг журналов и метрик Брандмауэра Azure
 
@@ -35,17 +35,20 @@ ms.locfileid: "89376950"
 1. В портал Azure откройте группу ресурсов брандмауэра и выберите брандмауэр.
 2. В разделе **Мониторинг** выберите **Параметры диагностики**.
 
-   Для брандмауэра Azure доступны два журнала обслуживания.
+   Для брандмауэра Azure доступны четыре журнала, относящиеся к службе:
 
    * AzureFirewallApplicationRule
    * AzureFirewallNetworkRule
+   * азурефиреваллсреатинтеллог
+   * азурефиреваллднспрокси
+
 
 3. Выберите **Добавить параметр диагностики**. На странице **Параметры диагностики** представлены параметры журналов диагностики.
 5. В этом примере журналы хранятся в Журналах Azure Monitor, поэтому введите имя **Firewall log analytics**.
-6. В разделе **Журнал**выберите **азурефиреваллаппликатионруле** и **азурефиреваллнетворкруле** , чтобы получить журналы для правил приложений и сетей.
+6. В разделе **Журнал**выберите **азурефиреваллаппликатионруле**, **азурефиреваллнетворкруле**, **азурефиреваллсреатинтеллог**и **AzureFirewallDnsProxy** , чтобы получить журналы.
 7. Выберите **отправить log Analytics** , чтобы настроить рабочую область.
 8. Выберите свою подписку.
-9. Выберите **Сохранить**.
+9. Щелкните **Сохранить**.
 
 ## <a name="enable-logging-with-powershell"></a>Включение ведения журнала с помощью PowerShell
 

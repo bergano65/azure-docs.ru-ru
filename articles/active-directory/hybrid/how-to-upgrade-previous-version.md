@@ -16,12 +16,12 @@ ms.date: 04/08/2019
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 69373e039320cd733fb859bb84e03e5493e05403
-ms.sourcegitcommit: c94a177b11a850ab30f406edb233de6923ca742a
+ms.openlocfilehash: b78d3cab17b0cc4085c824cf35d4c6037f0e2af5
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/01/2020
-ms.locfileid: "89277210"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91319866"
 ---
 # <a name="azure-ad-connect-upgrade-from-a-previous-version-to-the-latest"></a>Azure AD Connect: обновление до последней версии
 В этой статье описываются различные варианты обновления установленного экземпляра Azure Active Directory (Azure AD) Connect до последней версии. Мы рекомендуем устанавливать все новые выпуски Azure AD Connect. Действия, описанные в разделе [Обновление со сменой сервера](#swing-migration), можно также использовать при значительных изменениях конфигурации.
@@ -106,7 +106,7 @@ ms.locfileid: "89277210"
 
 1. Во время обновления **снимите флажок** **запустить процесс синхронизации после завершения настройки**. Это отключит планировщик синхронизации и предотвратит автоматическое выполнение цикла синхронизации, прежде чем переопределения будут удалены.
 
-   ![DisableFullSyncAfterUpgrade](./media/how-to-upgrade-previous-version/disablefullsync01.png)
+   ![Снимок экрана, посвященный запуску процесса синхронизации при завершении настройки, которую необходимо очистить.](./media/how-to-upgrade-previous-version/disablefullsync01.png)
 
 2. После завершения обновления выполните следующий командлет, чтобы узнать, какие переопределения были добавлены: `Get-ADSyncSchedulerConnectorOverride | fl`
 
@@ -142,7 +142,7 @@ ms.locfileid: "89277210"
 
 При обновлении предыдущей версии Azure AD Connect в начале этого процесса может произойти приведенная ниже ошибка. 
 
-![Ошибка](./media/how-to-upgrade-previous-version/error1.png)
+![Error](./media/how-to-upgrade-previous-version/error1.png)
 
 Эта ошибка происходит потому, что соединитель Azure Active Directory с идентификатором b891884f-051e-4a83-95af - 2544101c 9083 не существует в текущей конфигурации Azure AD Connect. Чтобы убедиться в этом, откройте окно PowerShell и выполните командлет `Get-ADSyncConnector -Identifier b891884f-051e-4a83-95af-2544101c9083`.
 

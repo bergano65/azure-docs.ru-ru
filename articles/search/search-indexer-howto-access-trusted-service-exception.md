@@ -8,16 +8,19 @@ ms.author: arjagann
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 09/22/2020
-ms.openlocfilehash: 1400f3c3d15698a5f1a145e8e0750ad7c4e9cec8
-ms.sourcegitcommit: bdd5c76457b0f0504f4f679a316b959dcfabf1ef
+ms.openlocfilehash: 30fc71e6f59766a759cdb8e4e503123623f48bd9
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "90971407"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91320478"
 ---
 # <a name="accessing-data-in-storage-accounts-securely-via-trusted-service-exception"></a>Безопасный доступ к данным в учетных записях хранения через исключение доверенной службы
 
 Индексаторы, обращающиеся к данным в учетных записях хранения, могут использовать возможность [исключения доверенной службы](https://docs.microsoft.com/azure/storage/common/storage-network-security#exceptions) для безопасного доступа к данным. Этот механизм предлагает клиентам, которые не могут предоставить [доступ к индексатору через правила брандмауэра IP](search-indexer-howto-access-ip-restricted.md) , простую, безопасную и свободную альтернативу доступу к данным в учетных записях хранения.
+
+> [!NOTE]
+> Поддержка доступа к данным в учетных записях хранения через исключение доверенной службы ограничена хранилищем BLOB-объектов Azure и Azure Data Lake хранилищем Gen2. Хранилище таблиц Azure не поддерживается.
 
 ## <a name="step-1-configure-connection-to-the-storage-account-via-identity"></a>Шаг 1. Настройка подключения к учетной записи хранения с помощью удостоверения
 

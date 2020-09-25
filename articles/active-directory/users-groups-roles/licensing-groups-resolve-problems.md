@@ -15,12 +15,12 @@ ms.author: curtand
 ms.reviewer: sumitp
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: f0d7703af48ba33edea81ca45516191266a79fa4
-ms.sourcegitcommit: c5021f2095e25750eb34fd0b866adf5d81d56c3a
+ms.openlocfilehash: 7006ecd760a886fdebe50becb2ab366ff79cf057
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88799559"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91319815"
 ---
 # <a name="identify-and-resolve-license-assignment-problems-for-a-group-in-azure-active-directory"></a>Определение и устранение проблем назначения лицензий для группы в Azure Active Directory
 
@@ -87,7 +87,7 @@ ms.locfileid: "88799559"
 
 ## <a name="usage-location-isnt-allowed"></a>Место использования запрещено
 
-**Проблема.** Некоторые службы Майкрософт доступны не во всех расположениях из-за требований местного законодательства. Перед тем как назначать лицензию пользователю, задайте для пользователя свойство **Место использования**. Расположение можно указать в разделе " **User**  >  **Profile**  >  **Параметры** профиля пользователя" в портал Azure.
+**Проблема.** Некоторые службы Майкрософт доступны не во всех расположениях из-за требований местного законодательства. Перед тем как назначать лицензию пользователю, задайте для пользователя свойство **Место использования**. Расположение можно указать в разделе " **User**  >  **Profile**  >  **изменение** профиля пользователя" в портал Azure.
 
 При попытке Azure AD назначить групповую лицензию пользователю, место использования которого не поддерживается, данная операция назначения завершится сбоем и пользователь получит состояние ошибки.
 

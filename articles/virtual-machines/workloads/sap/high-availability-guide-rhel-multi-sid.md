@@ -1,6 +1,6 @@
 ---
 title: Высокий уровень доступности виртуальных машин Azure для SAP NW в RHEL Multi-SID | Документация Майкрософт
-description: Обеспечение высокого уровня доступности SAP NetWeaver в виртуальных машинах Azure с Red Hat Enterprise Linux
+description: Установите высокий уровень доступности для SAP NW на виртуальных машинах Azure (VM) RHEL Multi-SID.
 services: virtual-machines-windows,virtual-network,storage
 documentationcenter: saponazure
 author: rdeltcheva
@@ -14,12 +14,12 @@ ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure-services
 ms.date: 08/04/2020
 ms.author: radeltch
-ms.openlocfilehash: 892c45db835457d5f0127d7377d722fc7f0df518
-ms.sourcegitcommit: 5a37753456bc2e152c3cb765b90dc7815c27a0a8
+ms.openlocfilehash: 612bd019dc7a4bdf481fde4511084245fabd1620
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/04/2020
-ms.locfileid: "87760759"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91319968"
 ---
 # <a name="high-availability-for-sap-netweaver-on-azure-vms-on-red-hat-enterprise-linux-for-sap-applications-multi-sid-guide"></a>Высокий уровень доступности SAP NetWeaver на виртуальных машинах Azure на Red Hat Enterprise Linux для многоид безопасности приложений SAP
 
@@ -56,7 +56,7 @@ ms.locfileid: "87760759"
 * **NW2.**: экземпляр ASCS с номером **10** и виртуальным именем узла **msnw2ascs**; Экземпляр ERS номер **12** и имя виртуального узла **msnw2ers**.  
 * **NW3**: экземпляр ASCS с номером **20** и виртуальным именем узла **msnw3ascs**; Экземпляр ERS с номером **22** и именем виртуального узла **msnw3ers**.  
 
-В этой статье не рассматривается уровень базы данных и развертывание общих папок SAP NFS. В примерах, приведенных в этой статье, мы используем [Azure NetApp Files](../../../azure-netapp-files/azure-netapp-files-create-volumes.md) Volume **сапмсид** для общих папок NFS, предполагая, что том уже развернут. Мы также предполагаю, что Azure NetApp Files том развертывается с помощью протокола NFSv3 и что существуют следующие пути к ресурсам кластера для экземпляров ASCS и ERS SAP Systems NW1, NW2. и NW3:  
+В этой статье не рассматривается уровень базы данных и развертывание общих папок SAP NFS. В примерах, приведенных в этой статье, мы используем [Azure NetApp Files](../../../azure-netapp-files/azure-netapp-files-create-volumes.md)  Volume **сапмсид** для общих папок NFS, предполагая, что том уже развернут. Мы также предполагаю, что Azure NetApp Files том развертывается с помощью протокола NFSv3 и что существуют следующие пути к ресурсам кластера для экземпляров ASCS и ERS SAP Systems NW1, NW2. и NW3:  
 
 * Volume Сапмсид (nfs://10.42.0.4/sapmnt<b>NW1</b>)
 * Volume Сапмсид (nfs://10.42.0.4/usrsap<b>NW1</b>ASCS)

@@ -13,12 +13,12 @@ ms.date: 03/21/2019
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: fd16dd5a20a677568c928f805c1aaa5f2c222f24
-ms.sourcegitcommit: c94a177b11a850ab30f406edb233de6923ca742a
+ms.openlocfilehash: a0fc1bc3158e04c9b1f677af7ef2375ac3ed2ce7
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/01/2020
-ms.locfileid: "89279947"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91320053"
 ---
 # <a name="fix-modified-default-rules-in-azure-ad-connect"></a>Исправить измененные правила по умолчанию в Azure AD Connect
 
@@ -73,7 +73,7 @@ Azure Active Directory (Azure AD) Connect использует правила п
 #### <a name="add-an-inbound-sync-rule"></a>Добавление входящего правила синхронизации
 Входящее правило синхронизации означает, что источником атрибута является пространство соединителя, а целевым объектом являются метавселенной. Например, чтобы создать новый поток атрибутов из локальной Active Directory для Azure Active Directory, создайте новое правило синхронизации для входящего трафика. Запустите **Редактор правил синхронизации**, выберите **входящий** в качестве направления и щелкните **Добавить новое правило**. 
 
- ![Редактор правил синхронизации](media/how-to-connect-fix-default-rules/default3a.png)
+ ![Снимок экрана, на котором показан "Редактор правил синхронизации" с выбранным параметром "Входящие" и "добавить новое правило".](media/how-to-connect-fix-default-rules/default3a.png)
 
 Используйте собственное соглашение об именовании, чтобы назвать правило. Здесь мы используем **Custom в из AD-user**. Это означает, что правило является пользовательским правилом и является правилом входящего трафика из пространства Active Directory соединителя в метавселенной.   
 
@@ -176,7 +176,7 @@ Azure AD Sync выполняет большинство объектов. Мож
 
 В окне предварительного просмотра выберите **создать предварительный просмотр** и **Импорт потока атрибутов** в левой области.
 
-![Предварительный просмотр](media/how-to-connect-fix-default-rules/default14.png)
+![Снимок экрана, на котором показано окно "предварительный просмотр" с выбранным параметром "импортировать поток атрибутов" и "создать предварительный просмотр".](media/how-to-connect-fix-default-rules/default14.png)
  
 Обратите внимание, что только что добавленное правило выполняется для объекта и присвойте `cloudFiltered` атрибуту значение true.
 
