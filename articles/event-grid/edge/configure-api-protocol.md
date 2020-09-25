@@ -1,18 +1,18 @@
 ---
 title: Настройка протоколов API в службе "Сетка событий Azure" IoT Edge | Документация Майкрософт
-description: Настройте протоколы API, предоставляемые службой "Сетка событий" для IoT Edge.
+description: Сведения о возможных конфигурациях протокола модуля сетки событий.
 author: VidyaKukke
 manager: rajarv
 ms.author: vkukke
 ms.reviewer: spelluru
 ms.date: 07/08/2020
 ms.topic: article
-ms.openlocfilehash: 801a320fbd66b4b8a46757ba90881da54b2721de
-ms.sourcegitcommit: 1e6c13dc1917f85983772812a3c62c265150d1e7
+ms.openlocfilehash: a9cf6088201ffeaed76d99a9b211e5bcd1ea139a
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/09/2020
-ms.locfileid: "86171726"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91322586"
 ---
 # <a name="configure-event-grid-api-protocols"></a>Настройка протоколов API сетки событий
 
@@ -21,7 +21,7 @@ ms.locfileid: "86171726"
 | Протокол | Порт | Описание |
 | ---------------- | ------------ | ------------ |
 | HTTP | 5888 | Отключено по умолчанию. Используется только во время тестирования. Не подходит для рабочих нагрузок.
-| HTTPS | 4438 | Значение по умолчанию
+| HTTPS | 4438 | По умолчанию
 
 Все возможные конфигурации см. в разделе руководств по [безопасности и проверке подлинности](security-authentication.md) .
 

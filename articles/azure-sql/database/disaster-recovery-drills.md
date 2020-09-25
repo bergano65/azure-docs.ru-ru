@@ -9,14 +9,14 @@ ms.devlang: ''
 ms.topic: conceptual
 author: anosov1960
 ms.author: sashan
-ms.reviewer: mathoma, carlrab
+ms.reviewer: mathoma, sstein
 ms.date: 12/18/2018
-ms.openlocfilehash: e32f2bf6f353e32fe96cd3c8b109d698cd3d40ef
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: f53a08a12c5afda8dbc3f25d9102f52b870ceea4
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84344583"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91321668"
 ---
 # <a name="performing-disaster-recovery-drills"></a>Выполнение отработок аварийного восстановления
 [!INCLUDE[appliesto-sqldb](../includes/appliesto-sqldb.md)]
@@ -31,7 +31,7 @@ ms.locfileid: "84344583"
 
 Рабочий процесс отработки зависит от того, как вы [спроектировали приложение для обеспечения непрерывности бизнес-процессов](business-continuity-high-availability-disaster-recover-hadr-overview.md). В этой статье приведены рекомендации по отработке аварийного восстановления с использованием службы "База данных SQL Azure".
 
-## <a name="geo-restore"></a>геовосстановлением;
+## <a name="geo-restore"></a>Геовосстановление
 
 Чтобы избежать потери данных при отработке аварийного восстановления, выполняйте ее в тестовой среде. Для этого создайте копию рабочей среды и используйте ее для проверки рабочего процесса отработки отказа для приложения.
 
@@ -66,7 +66,7 @@ ms.locfileid: "84344583"
 
 Выполните отработку, проверив целостность приложения после восстановления (в том числе проверьте подключение, протестируйте основные функции или выполните другие проверки, требуемые для утверждения отработки).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Ознакомьтесь со [сценариями обеспечения непрерывности для бизнес-процессов](business-continuity-high-availability-disaster-recover-hadr-overview.md).
 * Чтобы узнать об автоматически создаваемых резервных копиях базы данных SQL Azure, ознакомьтесь с разделом [создаваемых автоматически резервных копий базы данных SQL](automated-backups-overview.md)

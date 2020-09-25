@@ -9,12 +9,12 @@ ms.subservice: general
 ms.topic: how-to
 ms.date: 8/30/2020
 ms.author: mbaldwin
-ms.openlocfilehash: b80b3cf1712fab17b8f626bae5fef97849e44e20
-ms.sourcegitcommit: bdd5c76457b0f0504f4f679a316b959dcfabf1ef
+ms.openlocfilehash: 4f943b11830c19ebb69dd501827deb158cecadf0
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "90972254"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91336757"
 ---
 # <a name="provide-access-to-key-vault-keys-certificates-and-secrets-with-an-azure-role-based-access-control-preview"></a>Предоставление доступа к ключам, сертификатам и секретам Key Vault с помощью управления доступом на основе ролей Azure (Предварительная версия)
 
@@ -45,6 +45,8 @@ Azure RBAC позволяет пользователям управлять ра
 - [Ограничения службы Azure Key Vault](service-limits.md)
 
 ## <a name="azure-built-in-roles-for-key-vault-data-plane-operations-preview"></a>Встроенные роли Azure для Key Vault операций с плоскостью данных (Предварительная версия)
+> [!NOTE]
+> `Key Vault Contributor` роль предназначена для операций плоскости управления, позволяющих управлять хранилищами ключей. Он не разрешает доступ к ключам, секретам и сертификатам.
 
 | Встроенные роли | Описание | ID |
 | --- | --- | --- |
@@ -215,7 +217,7 @@ az role definition create --role-definition '{ \
 
 -   Задержка назначений ролей: в текущей ожидаемой производительности это займет до 10 минут (600 с) после изменения назначения ролей для применения роли.
 
-## <a name="learn-more"></a>Дополнительные сведения
+## <a name="learn-more"></a>Подробнее
 
 - [Обзор Azure RBAC](https://docs.microsoft.com/azure/role-based-access-control/overview)
 - [Учебник по настраиваемым ролям](https://docs.microsoft.com/azure/role-based-access-control/tutorial-custom-role-cli)

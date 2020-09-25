@@ -6,14 +6,14 @@ author: alkohli
 ms.service: databox
 ms.subservice: edge
 ms.topic: conceptual
-ms.date: 08/31/2020
+ms.date: 09/22/2020
 ms.author: alkohli
-ms.openlocfilehash: 1f194424a4030a2b829af6c8f5b97a3c200bd2e6
-ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
+ms.openlocfilehash: 0880ae64520997fc6b41ba4a7e8508d927235a8a
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "90899291"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91320818"
 ---
 # <a name="kubernetes-role-based-access-control-on-your-azure-stack-edge-pro-gpu-device"></a>Kubernetes управление доступом на основе ролей на устройстве с Azure Stack ребра Pro GPU
 
@@ -42,7 +42,7 @@ Kubernetes RBAC позволяет назначать пользователям
     - KUBE — система
     - металлб — система
     - DBE — пространство имен
-    - default
+    - значение по умолчанию
     - kubernetes — панель мониторинга
     - KUBE — Аренда узла
     - KUBE — Открытый
@@ -91,25 +91,7 @@ Kubernetes имеет концепцию привязки ролей и роле
 
 На этой схеме Алиса, Боб и Чак имеют доступ только к назначенным пространствам имен пользователей (в данном случае это `ns1` , `ns2` и соответственно) `ns3` . В этих пространствах имен они имеют доступ администратора. Администратор кластера с другой стороны имеет доступ администратора к системным пространствам имен и ресурсам на уровне кластера.
 
-Команды можно использовать `kubectl` для создания пространств имен и пользователей, назначения пользователям пространств имен или загрузки `kubeconfig` файлов. Ниже приведен рабочий процесс высокого уровня.
-
-1. Создание пространства имен и пользователя.  
-
-    `New-HcsKubernetesNamespace -Namespace`  
-
-2. Создайте пользователя.  
-
-    `New-HcsKubernetesUser -UserName`  
-
-3. Свяжите пространство имен с созданным пользователем.  
-
-    `Grant-HcsKubernetesNamespaceAccess -Namespace -UserName`  
-
-4. Сохраните конфигурацию пользователя в `C:\Users\<username>\.kube` .  
-
-5. Установите `kubectl` и приступите к развертыванию приложений в `kubectl` . 
-
-Подробные пошаговые инструкции см. в статье [доступ к кластеру Kubernetes через куебктл на Azure Stack пограничных Pro](azure-stack-edge-gpu-create-kubernetes-cluster.md).
+Пользователь может создавать пространства имен и пользователей, назначать пользователям пространства имен или скачивать `kubeconfig` файлы. Подробные пошаговые инструкции см. в статье [доступ к кластеру Kubernetes через куебктл на Azure Stack пограничных Pro](azure-stack-edge-gpu-create-kubernetes-cluster.md).
 
 
 При работе с пространствами имен и пользователями на устройствах Azure Stack пограничных Pro необходимо учитывать следующие предостережения.

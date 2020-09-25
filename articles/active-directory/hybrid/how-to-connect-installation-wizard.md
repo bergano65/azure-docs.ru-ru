@@ -17,12 +17,12 @@ ms.date: 07/17/2019
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 900471675c0e77cc5d82641fead3f019a0fa90c8
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 9d81836b47acb19f624075480aafef74c9c0934c
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85358690"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91306129"
 ---
 # <a name="azure-ad-connect-sync-running-the-installation-wizard-a-second-time"></a>Синхронизация Azure AD Connect sync: повторный запуск мастера установки
 При первом запуске мастера установки Azure AD Connect выполняется пошаговая настройка установки. При повторном запуске мастера установки предлагается настроить параметры обслуживания.
@@ -32,7 +32,7 @@ ms.locfileid: "85358690"
 
 Мастер установки можно найти в меню "Пуск" с именем **Azure AD Connect**.
 
-![Меню "Пуск"](./media/how-to-connect-installation-wizard/startmenu.png)
+![Меню «Пуск»](./media/how-to-connect-installation-wizard/startmenu.png)
 
 При запуске мастера установки появится страница со следующими параметрами:
 
@@ -79,7 +79,7 @@ ms.locfileid: "85358690"
 Этот параметр позволяет включить и отключить на сервере промежуточный режим. Дополнительные сведения о промежуточном режиме и его использовании см. [здесь](how-to-connect-sync-staging-server.md).
 
 Рядом с параметром будет показано, включен или отключен промежуточный режим в данный момент:   
-![Параметр, который также отображает текущее состояние промежуточного режима](./media/how-to-connect-installation-wizard/stagingmodecurrentstate.png)
+![Снимок экрана, на котором отключен режим промежуточного хранения.](./media/how-to-connect-installation-wizard/stagingmodecurrentstate.png)
 
 Для изменения состояния выберите этот параметр и установите или снимите флажок.  
 ![Параметр, который также отображает текущее состояние промежуточного режима](./media/how-to-connect-installation-wizard/stagingmodeenable.png)
@@ -89,7 +89,7 @@ ms.locfileid: "85358690"
 
 Дополнительные сведения о входе пользователя см. [здесь](plan-connect-user-signin.md#changing-the-user-sign-in-method).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 * Дополнительные сведения о модели конфигурации, используемой в синхронизации Azure AD Connect, см. в статье о [принципах декларативной подготовки](concept-azure-ad-connect-sync-declarative-provisioning.md).
 
 **Обзорные статьи**

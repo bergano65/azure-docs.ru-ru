@@ -10,12 +10,12 @@ ms.service: machine-learning
 ms.subservice: core
 ms.topic: conceptual
 ms.date: 07/10/2020
-ms.openlocfilehash: 0f6f5d0ca757b10a16b31864124f1bcf1190674a
-ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
+ms.openlocfilehash: 1afa9173c2ca3704bf4408c271e3cf950ef79077
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "90896917"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91302222"
 ---
 # <a name="use-private-python-packages-with-azure-machine-learning"></a>Использование частных пакетов Python с Машинное обучение Azure
 
@@ -36,7 +36,7 @@ ms.locfileid: "90896917"
 
 ## <a name="use-small-number-of-packages-for-development-and-testing"></a>Использование небольшого числа пакетов для разработки и тестирования
 
-Для небольшого числа частных пакетов в одной рабочей области используйте статический [`Environment.add_private_pip_wheel()`](https://docs.microsoft.com/python/api/azureml-core/azureml.core.environment.environment?view=azure-ml-py#&preserve-view=trueadd-private-pip-wheel-workspace--file-path--exist-ok-false-) метод. Такой подход позволяет быстро добавить в рабочую область частный пакет, который хорошо подходит для целей разработки и тестирования.
+Для небольшого числа частных пакетов в одной рабочей области используйте статический [`Environment.add_private_pip_wheel()`](https://docs.microsoft.com/python/api/azureml-core/azureml.core.environment.environment?view=azure-ml-py&preserve-view=true#&preserve-view=trueadd-private-pip-wheel-workspace--file-path--exist-ok-false-) метод. Такой подход позволяет быстро добавить в рабочую область частный пакет, который хорошо подходит для целей разработки и тестирования.
 
 Укажите аргумент пути к файлу в локальном файле колеса и выполните ```add_private_pip_wheel``` команду. Команда возвращает URL-адрес, используемый для наблюдения за расположением пакета в рабочей области. Запишите URL-адрес хранилища и передайте ему `add_pip_package()` метод.
 
@@ -52,13 +52,13 @@ myenv.python.conda_dependencies=conda_dep
 
 ## <a name="use-a-repository-of-packages-from-azure-devops-feed"></a>Использование репозитория пакетов из веб-канала Azure DevOps
 
-Если вы активно разрабатываете пакеты Python для приложения машинного обучения, их можно разместить в репозитории Azure DevOps как артефакты и опубликовать в виде веб-канала. Такой подход позволяет интегрировать рабочий процесс DevOps для создания пакетов с помощью рабочая область машинного обучения Azure. Чтобы узнать, как настроить веб-каналы Python с помощью Azure DevOps, прочитайте статью [Начало работы с пакетами Python в Azure Artifacts](https://docs.microsoft.com/azure/devops/artifacts/quickstarts/python-packages?view=azure-devops)
+Если вы активно разрабатываете пакеты Python для приложения машинного обучения, их можно разместить в репозитории Azure DevOps как артефакты и опубликовать в виде веб-канала. Такой подход позволяет интегрировать рабочий процесс DevOps для создания пакетов с помощью рабочая область машинного обучения Azure. Чтобы узнать, как настроить веб-каналы Python с помощью Azure DevOps, прочитайте статью [Начало работы с пакетами Python в Azure Artifacts](https://docs.microsoft.com/azure/devops/artifacts/quickstarts/python-packages?view=azure-devops&preserve-view=true)
 
 Этот подход использует личный маркер доступа для проверки подлинности в репозитории. Такой же подход применим к другим репозиториям с проверкой подлинности на основе маркеров, например закрытых репозиториях GitHub. 
 
- 1. [Создайте личный маркер доступа (PAT)](https://docs.microsoft.com/azure/devops/organizations/accounts/use-personal-access-tokens-to-authenticate?view=azure-devops&tabs=preview-page#create-a-pat) для своего экземпляра Azure DevOps. Задайте область токена для __упаковки > чтения__. 
+ 1. [Создайте личный маркер доступа (PAT)](https://docs.microsoft.com/azure/devops/organizations/accounts/use-personal-access-tokens-to-authenticate?view=azure-devops&preserve-view=true&tabs=preview-page#create-a-pat) для своего экземпляра Azure DevOps. Задайте область токена для __упаковки > чтения__. 
 
- 2. Добавьте URL-адрес Azure DevOps и PAT как свойства рабочей области с помощью метода [Workspace. set_connection](https://docs.microsoft.com/python/api/azureml-core/azureml.core.workspace.workspace?view=azure-ml-py#&preserve-view=trueset-connection-name--category--target--authtype--value-) .
+ 2. Добавьте URL-адрес Azure DevOps и PAT как свойства рабочей области с помощью метода [Workspace. set_connection](https://docs.microsoft.com/python/api/azureml-core/azureml.core.workspace.workspace?view=azure-ml-py&preserve-view=true#&preserve-view=trueset-connection-name--category--target--authtype--value-) .
 
      ```python
     from azureml.core import Workspace

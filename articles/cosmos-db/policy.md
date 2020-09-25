@@ -1,23 +1,26 @@
 ---
 title: Применение Политики Azure для систем и элементов управления ресурсами Azure Cosmos DB
 description: Сведения о том, как применить Политику Azure для систем и элементов управления ресурсами Azure Cosmos DB.
-author: plzm
-ms.author: paelaz
+author: markjbrown
+ms.author: mjbrown
 ms.service: cosmos-db
 ms.topic: conceptual
-ms.date: 05/20/2020
-ms.openlocfilehash: a1b1c01f7cf720690decd9c7aac5fb14b92121ec
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.date: 09/23/2020
+ms.openlocfilehash: 44519a21296fd658f12b8d7df2191797b16caf7f
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84431972"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91320903"
 ---
 # <a name="use-azure-policy-to-implement-governance-and-controls-for-azure-cosmos-db-resources"></a>Применение Политики Azure для систем и элементов управления ресурсами Azure Cosmos DB
 
 [Политика Azure](../governance/policy/overview.md) помогает поддерживать корпоративные стандарты управления, оценивать соответствие ресурсов и реализовать автоматическое исправление. Типичные цели использования для этого механизма: безопасность, управление затратами, согласованность конфигурации.
 
 Политика Azure предоставляет встроенные определения политик. Но если эти встроенные определения не соответствуют вашим требованиям, вы можете создать пользовательские определения политик. Дополнительные сведения см. в [документации по Политике Azure](../governance/policy/overview.md).
+
+> [!IMPORTANT]
+> Политика Azure применяется на уровне поставщика ресурсов для служб Azure. Cosmos DB пакеты SDK могут выполнять большинство операций управления для баз данных, контейнеров и пропускной способности, которые обходят поставщик ресурсов Cosmos DB, тем самым игнорируя все политики, созданные с помощью политики Azure. Чтобы обеспечить соблюдение политик, см. раздел [предотвращение изменений в Azure Cosmos DBных](role-based-access-control.md#prevent-sdk-changes) пакетах SDK.
 
 ## <a name="assign-a-built-in-policy-definition"></a>Назначение определения политики
 
@@ -127,7 +130,7 @@ az provider show --namespace Microsoft.DocumentDB --expand "resourceTypes/aliase
 
 Сведения об исправлении несоответствующих ресурсов см. в статье [как исправить ресурсы с помощью политики Azure](../governance/policy/how-to/remediate-resources.md).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Ознакомьтесь с примерами определений пользовательских политик для Azure Cosmos DB](https://github.com/Azure/azure-policy/tree/master/samples/CosmosDB), в том числе для нескольких расположений записи и политик фильтрации виртуальной сети, показанных выше.
 - [Создание назначения политики на портале Azure](../governance/policy/assign-policy-portal.md)

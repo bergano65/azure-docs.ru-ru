@@ -1,18 +1,18 @@
 ---
 title: Настройка программы Bot Protection для брандмауэра веб-приложения с помощью передней дверцы Azure (Предварительная версия)
-description: Знакомство с брандмауэром веб-приложения (WAF).
+description: Узнайте, как настроить правило защиты Bot в брандмауэре веб-приложения Azure (WAF) для использования в качестве передней дверцы с помощью портал Azure.
 author: vhorne
 ms.service: web-application-firewall
 ms.topic: article
 services: web-application-firewall
 ms.date: 08/21/2019
 ms.author: victorh
-ms.openlocfilehash: f48b683044bc727cda461fb64a743c055188962a
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 2357c51f47bcb9bd8bbc6c408cb6d8edbab4d10e
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "76934653"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91267012"
 ---
 # <a name="configure-bot-protection-for-web-application-firewall-preview"></a>Настройка программы Bot Protection для брандмауэра веб-приложения (Предварительная версия)
 В этой статье показано, как настроить правило защиты Bot в брандмауэре веб-приложения Azure (WAF) для использования в качестве передней дверцы с помощью портал Azure. Правило защиты Bot можно также настроить с помощью интерфейса командной строки, Azure PowerShell или Azure Resource Manager шаблона.
@@ -20,7 +20,7 @@ ms.locfileid: "76934653"
 > [!IMPORTANT]
 > Сейчас набор правил защиты от ботов предоставляется в общедоступной предварительной версии и поддерживается соглашением об уровне обслуживания для предварительной версии. Некоторые функции могут не поддерживаться или их возможности могут быть ограничены.  См. [дополнительные условия использования для предварительных версий Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Создайте базовую политику WAF для Front двери, следуя инструкциям, описанным в статье [Создание политики WAF для передней дверцы Azure с помощью портал Azure](waf-front-door-create-portal.md).
 
@@ -30,6 +30,6 @@ ms.locfileid: "76934653"
 
    ![Правило защиты Bot](.././media/waf-front-door-configure-bot-protection/botmanager112019.png)
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Узнайте, как [ОТСЛЕЖИВАТЬ WAF](waf-front-door-monitor.md).

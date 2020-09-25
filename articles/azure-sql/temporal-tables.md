@@ -9,14 +9,14 @@ ms.devlang: ''
 ms.topic: conceptual
 author: bonova
 ms.author: bonova
-ms.reviewer: carlrab
+ms.reviewer: sstein
 ms.date: 06/26/2019
-ms.openlocfilehash: 219d3755794a09ef25cdb41afdbe154af3736538
-ms.sourcegitcommit: 93462ccb4dd178ec81115f50455fbad2fa1d79ce
+ms.openlocfilehash: cebdbfc5bb84beb621e27725d0ec58308ba45efd
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/06/2020
-ms.locfileid: "85985488"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91321396"
 ---
 # <a name="getting-started-with-temporal-tables-in-azure-sql-database-and-azure-sql-managed-instance"></a>Начало работы с временными таблицами в базе данных SQL Azure и Azure SQL Управляемый экземпляр
 [!INCLUDE[appliesto-sqldb-sqlmi](includes/appliesto-sqldb-sqlmi.md)]
@@ -195,10 +195,10 @@ ALTER TABLE dbo.WebsiteUserInfo
 
 При использовании временных таблиц с системным управлением версиями таблица журнала может увеличить размер базы данных значительнее, чем обычные таблицы. Большой и постоянно растущий объем таблицы журнала может стать проблемой не только из-за затрат на хранение. Кроме этого, он может повлиять на производительность при выполнении темпоральных запросов. Таким образом, разработка политики хранения данных для управления данными в таблице журнала является важным аспектом планирования и управления жизненным циклом всех темпоральных таблиц. Используя базу данных SQL Azure и Управляемый экземпляр Azure SQL, вы можете использовать следующие подходы для управления историческими данными в темпоральной таблице:
 
-- [Секционирование таблиц](/sql/relational-databases/tables/manage-retention-of-historical-data-in-system-versioned-temporal-tables#using-table-partitioning-approach)
+- [секционирование таблиц;](/sql/relational-databases/tables/manage-retention-of-historical-data-in-system-versioned-temporal-tables#using-table-partitioning-approach)
 - [пользовательский сценарий очистки.](/sql/relational-databases/tables/manage-retention-of-historical-data-in-system-versioned-temporal-tables#using-custom-cleanup-script-approach)
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Дополнительные сведения о временных таблицах см. в разделе Извлечение [временных таблиц](/sql/relational-databases/tables/temporal-tables).
 - Посетите канал 9, чтобы услышать [историю успеха реализации клиента](https://channel9.msdn.com/Blogs/jsturtevant/Azure-SQL-Temporal-Tables-with-RockStep-Solutions) , и просмотрите [действующую временную демонстрацию](https://channel9.msdn.com/Shows/Data-Exposed/Temporal-in-SQL-Server-2016).

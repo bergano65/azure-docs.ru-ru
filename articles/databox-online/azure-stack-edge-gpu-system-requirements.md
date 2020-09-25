@@ -1,6 +1,6 @@
 ---
-title: Требования к системе Microsoft Azure Stack пограничных Pro | Документация Майкрософт
-description: Сведения о требованиях к программному обеспечению и сети для Azure Stack пограничных Pro
+title: Microsoft Azure Stack пограничных требований к системе | Документация Майкрософт
+description: Сведения о требованиях к системе для решения Microsoft Azure Stack пограничной связи и клиентов, подключающихся к Azure Stack границе.
 services: databox
 author: alkohli
 ms.service: databox
@@ -8,12 +8,12 @@ ms.subservice: edge
 ms.topic: conceptual
 ms.date: 08/28/2020
 ms.author: alkohli
-ms.openlocfilehash: 091d272ff00982a0d0a5ae44885a04cc62d7a4b4
-ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
+ms.openlocfilehash: e542480db4ed82cf84c6ce04c62e2a07b6193f4a
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "90899154"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91320733"
 ---
 # <a name="system-requirements-for-azure-stack-edge-pro-with-gpu"></a>Требования к системе для Azure Stack ребра Pro с графическим процессором 
 

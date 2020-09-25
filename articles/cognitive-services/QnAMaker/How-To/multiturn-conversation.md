@@ -3,12 +3,12 @@ title: Множественная перевращение диалогов — 
 description: Используйте приглашения и контекст для управления несколькими процессами, называемыми многоповоротными, для программы-робота с одного вопроса на другой. Множественная передача — это возможность иметь обратную и сквозную беседу, когда контекст предыдущего вопроса влияет на следующий вопрос и ответ.
 ms.topic: conceptual
 ms.date: 04/13/2020
-ms.openlocfilehash: 93bc6201cb627dc27071caf7beded5778b06ccb6
-ms.sourcegitcommit: f7e160c820c1e2eb57dc480b2a8fd6bef7053e91
+ms.openlocfilehash: eff2eccac55bc05784636ecd9d2dfb784f86c4ef
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/10/2020
-ms.locfileid: "86229352"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91322841"
 ---
 # <a name="use-follow-up-prompts-to-create-multiple-turns-of-a-conversation"></a>Использование дальнейших подсказок для создания диалога с несколькими шагами
 
@@ -52,7 +52,7 @@ ms.locfileid: "86229352"
 
 Структура множественной переворачивания может быть выведена только из URL-адресов, PDF-файлов или файлов DOCX. Пример структуры см. в образе [PDF-файла пользовательской документации по Microsoft Surface](https://github.com/Azure-Samples/cognitive-services-sample-data-files/blob/master/qna-maker/data-source-formats/product-manual.pdf).
 
-![! [Пример структуры в руководстве пользователя] (.. /медиа/конверсатионал-контекст/import-file-with-conversational-structure.png)](../media/conversational-context/import-file-with-conversational-structure.png#lightbox)
+:::image type="content" source="../media/conversational-context/import-file-with-conversational-structure.png" alt-text="На снимке экрана показан пример структуры в руководстве пользователя." lightbox="../media/conversational-context/import-file-with-conversational-structure.png":::
 
 ### <a name="building-your-own-multi-turn-document"></a>Создание собственного документа с несколькими переворотами
 
@@ -92,7 +92,7 @@ ms.locfileid: "86229352"
 
 Контекст множественной переворачивания отображается в первом столбце.
 
-![! ["Контекст (Предварительная версия)"] (.. /медиа/конверсатионал-контекст/surface-manual-pdf-follow-up-prompt.png)](../media/conversational-context/surface-manual-pdf-follow-up-prompt.png#lightbox)
+:::image type="content" source="../media/conversational-context/surface-manual-pdf-follow-up-prompt.png" alt-text="На снимке экрана показан выделенный раздел контекста." lightbox="../media/conversational-context/surface-manual-pdf-follow-up-prompt.png":::
 
 На предыдущем рисунке **#1** обозначает полужирный текст в столбце, который обозначает текущий вопрос. Родительский вопрос — это верхний элемент в строке. Все приведенные ниже вопросы являются связанными парами вопросов и ответов. Эти элементы доступны для выбора, поэтому можно сразу же переходить к другим элементам контекста.
 
@@ -167,7 +167,7 @@ ms.locfileid: "86229352"
 
     Родительский вопрос отображает новый вопрос в качестве одного из вариантов.
 
-    ![! [В столбце контекст для обоих вопросов указывается связь с запросом к исполнению] (.. /медиа/конверсатионал-контекст/child-prompt-created.png)](../media/conversational-context/child-prompt-created.png#lightbox)
+    :::image type="content" source="../media/conversational-context/child-prompt-created.png" alt-text="На снимке экрана показан контекстный столбец для обоих вопросов." lightbox="../media/conversational-context/child-prompt-created.png":::
 
 1. После добавления дальнейших действий выберите **сохранить и обучить** на верхней панели навигации.
 

@@ -4,14 +4,14 @@ description: Узнайте, как взаимодействовать с рес
 services: container-service
 author: laurenhughes
 ms.topic: article
-ms.date: 08/11/2020
+ms.date: 09/21/2020
 ms.author: lahugh
-ms.openlocfilehash: 4a0acf284475f3c9119f3b9d012debad656b1faa
-ms.sourcegitcommit: d18a59b2efff67934650f6ad3a2e1fe9f8269f21
+ms.openlocfilehash: 6a9567669445cb5aa94c1108051c961a216fabad
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/20/2020
-ms.locfileid: "88661356"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91335608"
 ---
 # <a name="access-kubernetes-resources-from-the-azure-portal-preview"></a>Доступ к ресурсам Kubernetes из портал Azure (Предварительная версия)
 
@@ -75,11 +75,25 @@ ms.locfileid: "88661356"
 
 Для доступа к ресурсам Kubernetes необходимо иметь доступ к кластеру AKS, API Kubernetes и объектам Kubernetes. Убедитесь, что вы являетесь администратором кластера или пользователем с соответствующими разрешениями для доступа к кластеру AKS. Дополнительные сведения о безопасности кластера см. в разделе [параметры доступа и удостоверений для AKS][concepts-identity].
 
+>[!NOTE]
+> Представление ресурсов kubernetes на портале Azure поддерживается только [управляемыми кластерами с поддержкой AAD](managed-aad.md) или кластерами, не поддерживающими AAD. Если вы используете кластер с поддержкой управляемого AAD, пользователь или удостоверение AAD должны иметь соответствующие роли и привязки ролей для доступа к API kubernetes, а также разрешение на извлечение [пользователя `kubeconfig` ](control-kubeconfig-access.md).
+
 ### <a name="enable-resource-view"></a>Включить представление ресурсов
 
 Для существующих кластеров может потребоваться включить представление ресурсов Kubernetes. Чтобы включить представление ресурсов, следуйте инструкциям на портале для кластера.
 
 :::image type="content" source="media/kubernetes-portal/enable-resource-view.png" alt-text="Портал Azure сообщение, чтобы включить представление ресурсов Kubernetes." lightbox="media/kubernetes-portal/enable-resource-view.png":::
+
+> [!TIP]
+> Для ограничения доступа к серверу API только к общедоступной конечной точке брандмауэра можно добавить функцию AKS для [**IP-адресов разрешенного сервера API**](api-server-authorized-ip-ranges.md) . Другой вариант для таких кластеров — обновление `--api-server-authorized-ip-ranges` для включения доступа к локальному клиентскому компьютеру или диапазону IP-адресов (с которого осуществляется просмотр портала). Чтобы разрешить такой доступ, вам нужно знать общедоступный IPv4-адрес компьютера. Этот адрес можно найти с помощью приведенной ниже команды или путем поиска в веб-браузере «что такое IP-адрес».
+```bash
+# Retrieve your IP address
+CURRENT_IP=$(dig @resolver1.opendns.com ANY myip.opendns.com +short)
+
+# Add to AKS approved list
+az aks update -g $RG -n $AKSNAME --api-server-authorized-ip-ranges $CURRENT_IP/32
+
+```
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

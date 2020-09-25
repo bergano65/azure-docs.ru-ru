@@ -11,12 +11,12 @@ ms.author: mithigpe
 author: minthigpen
 ms.reviewer: Luis.Quintanilla
 ms.date: 07/09/2020
-ms.openlocfilehash: 757646a1630443f297d4b7c538721e9facdc130c
-ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
+ms.openlocfilehash: d063af3ba3b9261100af5e48a2c507a80ac76d98
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "90897440"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91322365"
 ---
 # <a name="model-interpretability-in-azure-machine-learning-preview"></a>Интерпретируемость модели в Машинное обучение Azure (Предварительная версия)
 
@@ -39,20 +39,11 @@ ms.locfileid: "90897440"
 
 ## <a name="interpretability-with-azure-machine-learning"></a>Интерпретируемость с помощью Машинное обучение Azure
 
-Классы интерпретации доступны через несколько пакетов SDK: (Узнайте, как [установить пакеты SDK для машинное обучение Azure](https://docs.microsoft.com/python/api/overview/azure/ml/install?view=azure-ml-py&preserve-view=true)).
+Доступ к классам интерпретации предоставляется через следующий пакет SDK: (сведения об [установке пакетов SDK для машинное обучение Azure](https://docs.microsoft.com/python/api/overview/azure/ml/install?view=azure-ml-py&preserve-view=true))
 
-* `azureml.interpret`— основной пакет, содержащий функциональные возможности, поддерживаемые корпорацией Майкрософт.
+* `azureml.interpret`, содержит функциональные возможности, поддерживаемые корпорацией Майкрософт.
 
-* `azureml.contrib.interpret`, предварительная версия и экспериментальные возможности, которые можно попробовать.
-
-Используйте `pip install azureml-interpret` и `pip install azureml-contrib-interpret` для общего использования.
-
-
-> [!IMPORTANT]
-> Содержимое в `contrib` пространстве имен поддерживается не полностью. По мере того, как экспериментальные функциональные возможности становятся более зрелыми, они постепенно перемещаются в основное пространство имен.
-.
-
-
+Используется `pip install azureml-interpret` для общего использования.
 
 ## <a name="how-to-interpret-your-model"></a>Как интерпретировать модель
 

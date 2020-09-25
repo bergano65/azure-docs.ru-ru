@@ -6,12 +6,12 @@ ms.author: manishku
 ms.service: mysql
 ms.topic: conceptual
 ms.date: 09/02/2020
-ms.openlocfilehash: 4599346cd4538151f6c758253f1f1bf29bafdcbf
-ms.sourcegitcommit: bdd5c76457b0f0504f4f679a316b959dcfabf1ef
+ms.openlocfilehash: d9faa9dcd664f5dc8b7b0b633eedd19431a4b826
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "90985776"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91322212"
 ---
 # <a name="understanding-the-changes-in-the-root-ca-change-for-azure-database-for-mysql"></a>Основные сведения об изменениях в корневом ЦС для базы данных Azure для MySQL
 
@@ -30,6 +30,7 @@ ms.locfileid: "90985776"
 Все приложения, использующие SSL/TLS и проверяющие корневой сертификат, должны обновить корневой сертификат. Вы можете определить, проверяют ли ваши подключения корневой сертификат, просмотрев строку подключения.
 -   Если строка подключения включает `sslmode=verify-ca` или `sslmode=verify-full` , необходимо обновить сертификат.
 -   Если строка подключения включает `sslmode=disable` , `sslmode=allow` , `sslmode=prefer` или `sslmode=require` , не требуется обновлять сертификаты. 
+-  Если используются соединители Java и строка подключения содержит useSSL = false или requireSSL = false, то обновлять сертификаты не требуется.
 -   Если в строке подключения не указано sslmode, обновлять сертификаты не требуется.
 
 Если вы используете клиент, который абстрагирует строку подключения, изучите документацию клиента, чтобы понять, проверяется ли сертификат.

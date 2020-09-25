@@ -1,6 +1,6 @@
 ---
 title: Заметки о выпуске Шлюз Azure Data Box 1905 | Документация Майкрософт
-description: Описание критических открытых проблем и способов их устранения для Шлюз Azure Data Box, в котором выводится общедоступная версия.
+description: Описание критических открытых проблем и способов их устранения для Шлюз Azure Data Box 1905, в котором используется общедоступная версия.
 services: databox
 author: alkohli
 ms.service: databox
@@ -8,12 +8,12 @@ ms.subservice: gateway
 ms.topic: article
 ms.date: 06/12/2019
 ms.author: alkohli
-ms.openlocfilehash: f2843623061e39e8c9c0ebc35b4916bf9bd3b186
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: b97165f19ac07e5a783203ece1a28420f731b649
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "82561863"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91320682"
 ---
 # <a name="azure-data-box-edge-and-azure-data-box-gateway-1905-release-notes"></a>Заметки о выпуске Azure Data Box Edge и Шлюз Azure Data Box 1905
 

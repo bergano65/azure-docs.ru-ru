@@ -7,12 +7,12 @@ ms.reviewer: klam, logicappspm
 ms.topic: conceptual
 ms.date: 11/01/2019
 tags: connectors
-ms.openlocfilehash: cf32938b534272a13af5891d6a31e64b8136a528
-ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
+ms.openlocfilehash: 7717c02fb460c41543ae810820ba01efb13a1ca7
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87281469"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91271194"
 ---
 # <a name="call-rest-endpoints-by-using-azure-logic-apps"></a>Вызов конечных точек REST с помощью Azure Logic Apps
 
@@ -54,17 +54,17 @@ ms.locfileid: "87281469"
 
    `https://westus.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/export?DocumentFormat=Swagger&ApiName=Face%20API%20-%20V1.0`
 
-   ![Ввод URL-адреса для конечной точки Swagger](./media/connectors-native-http-swagger/http-swagger-trigger-parameters.png)
+   ![Снимок экрана, показывающий конструктор приложений логики с триггером "H T T + Swagger" и свойством "конечная точка Swagger U R L", для которого задано значение U R L.](./media/connectors-native-http-swagger/http-swagger-trigger-parameters.png)
 
 1. Когда в конструкторе появятся операции, описанные в файле Swagger, выберите операцию, которую хотите использовать.
 
-   ![Операции в файле Swagger](./media/connectors-native-http-swagger/http-swagger-trigger-operations.png)
+   ![Снимок экрана, на котором показан конструктор приложений логики с триггером "H T T + Swagger" и список, отображающий операции Swagger.](./media/connectors-native-http-swagger/http-swagger-trigger-operations.png)
 
 1. Укажите значения параметров триггера в зависимости от выбранной операции, которую вы хотите включить в вызов конечной точки. Настройте периодичность, с которой триггер должен вызывать целевую конечную точку.
 
    В этом примере триггер переименовывается в "HTTP + Swagger Trigger: Face - Detect", чтобы этот шаг имел более понятное имя.
 
-   ![Сведения об операции](./media/connectors-native-http-swagger/http-swagger-trigger-operation-details.png)
+   ![Снимок экрана, показывающий конструктор приложений логики с триггером "H T T + Swagger", который отображает операцию распознавания лиц.](./media/connectors-native-http-swagger/http-swagger-trigger-operation-details.png)
 
 1. Чтобы добавить другие доступные параметры, откройте список **Добавить новый параметр** и выберите нужные параметры.
 

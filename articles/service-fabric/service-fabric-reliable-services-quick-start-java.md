@@ -1,17 +1,17 @@
 ---
 title: Создание первой надежной службы на Java
-description: Вводные сведения о создании приложения Service Fabric Microsoft Azure со службами с отслеживанием состояния и без него.
+description: Общие сведения о создании Microsoft Azure Service Fabric приложения с помощью служб без отслеживания состояния и с отслеживанием состояния в Java.
 author: suhuruli
 ms.topic: conceptual
 ms.date: 11/02/2017
 ms.custom: devx-track-java
 ms.author: suhuruli
-ms.openlocfilehash: 30797e68081e346ee0f31f77da15f820776337a0
-ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
+ms.openlocfilehash: f74265c7b774e4b471c8621e99377a009f939ee1
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87324511"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91250102"
 ---
 # <a name="get-started-with-reliable-services-in-java"></a>Приступая к работе с Reliable Services в Java
 > [!div class="op_single_selector"]
@@ -226,7 +226,7 @@ return map.computeAsync(tx, "counter", (k, v) -> {
 Операции Reliable HashMap являются *транзакционными*, так что вы можете сохранять согласованное состояние между несколькими службами Reliable HashMap и операциями. Например, вы можете получить рабочий элемент из надежного словаря, выполнить с ним операцию и сохранить результат в другой службе Reliable HashMap, и это все в пределах одной транзакции. Такая операция называется атомарной. Предусматривается, что либо вся операция завершится успешно, либо она будет полностью отменена. Если ошибка возникнет после выведения элемента из очереди, но до сохранения результата, будет выполнен откат всей транзакции, а элемент останется в очереди для обработки.
 
 
-## <a name="build-the-application"></a>Сборка приложения
+## <a name="build-the-application"></a>создание приложения;
 
 Формирование шаблонов Yeoman включает в себя сценарий Gradle, используемый для создания приложения, и сценарии bash, используемые для развертывания и удаления приложения. Чтобы запустить приложение, сначала его нужно создать с помощью следующего скрипта Gradle:
 

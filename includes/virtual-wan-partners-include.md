@@ -1,5 +1,5 @@
 ---
-title: Включить имя файла
+title: включить файл
 description: включить файл
 services: virtual-wan
 author: cherylmc
@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 10/09/2019
 ms.author: cherylmc
 ms.custom: include file
-ms.openlocfilehash: 8039191814243370fec417a3e22fc85f87264790
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 4bf53561e7788b1d4ce9789c3b555cb1e089545b
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85805568"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91267311"
 ---
 В этом разделе вы можете перейти по ссылкам для получения дополнительных сведений об услугах, предлагаемых партнерами. Если ваш партнер устройства филиала отсутствует в указанном ниже разделе, попросите вашего поставщика ресурсов связаться с нами. Он может обратиться к нам, отправив сообщение по адресу azurevirtualwan@microsoft.com.
 
@@ -24,13 +24,15 @@ ms.locfileid: "85805568"
 |[Cisco Meraki]( https://documentation.meraki.com/MX/Deployment_Guides/Cisco_Meraki_MX_Branch_to_Azure_Virtual_WAN_Deployment_Guide)|[Рекомендации по развертыванию Cisco Meraki для виртуальной глобальной сети Azure](https://documentation.meraki.com/MX/Deployment_Guides/Cisco_Meraki_MX_Branch_to_Azure_Virtual_WAN_Deployment_Guide)|
 | [Citrix](https://www.citrix.com/global-partners/microsoft/sd-wan-for-azure-virtual-wan.html);| [Использование Citrix SD-WAN для подключения к Microsoft Azure виртуальной глобальной сети](https://docs.citrix.com/en-us/citrix-sd-wan-center/11/azure-virtual-wan/configure-azure-virtual-wan.html#how-does-microsoft-azure-virtual-wan-work)|
 | [клаудженикс](https://www.cloudgenix.com/microsoft-azure/) |[Клауджениксное развертывание Azure Virtual WAN Клаудбладе](https://sd-wan.cloudgenix.com/Q319ConfigurationGuide_Registration.html)|
-| [Fortinet](https://www.fortinet.com/azure-vwan) |[FortiGate и Microsoft Azure рекомендации по развертыванию виртуальной глобальной сети](https://www.fortinet.com/content/dam/fortinet/assets/deployment-guides/dg-fortigate-azure-wan-integration.pdf),[блог о сценарии маршрутизации](https://www.fortinet.com/blog/business-and-technology/fortinet-secure-sd-wan-enhances-azure-virtual-wan-integrations)|
+| [Fortinet](https://www.fortinet.com/azure-vwan) |[FortiGate и Microsoft Azure рекомендации по развертыванию виртуальной глобальной сети](https://www.fortinet.com/content/dam/fortinet/assets/deployment-guides/dg-fortigate-azure-wan-integration.pdf),[блог о сценарии маршрутизации ](https://www.fortinet.com/blog/business-and-technology/fortinet-secure-sd-wan-enhances-azure-virtual-wan-integrations)|
+|[HPE Aruba]( https://www.arubanetworks.com/microsoft-vwan/)|[Aruba SD-WAN и Microsoft Azure рекомендации по развертыванию виртуальной глобальной сети](https://www.arubanetworks.com/assets/tg/DG_Using-Aruba-SD-WAN-with-Microsoft-Azure-Virtual-WAN.pdf)|
 | [NetFoundry](https://netfoundry.io/solutions/netfoundry-for-microsoft-azure-virtual-wan/)|[Центр поддержки нетфаундри: Виртуальная глобальная сеть Azure](https://support.netfoundry.io/hc/en-us/articles/360018137891-Introduction-to-Azure-Virtual-WAN-sites)|
 |[Нуаже/Nokia (предоставляется только в британском телекоммуникационном)](https://www.nuagenetworks.net/our-partners/nuage-networks-virtualized-cloud-interconnect-for-azure/)|* |
+|[Открытые системы]( https://open-systems.com/solutions/microsoft-azure-virtual-wan)|[Открытые системы и рекомендации по развертыванию виртуальной глобальной сети Azure](https://open-systems.com/wp-content/uploads/2020/07/Azure-Virtual-WAN-UserGuide.pdf)|
 |[Palo Alto Networks](https://researchcenter.paloaltonetworks.com/2018/09/azure-vwan-integration/) |* |
 |[Riverbed Technology](https://www.riverbed.com/go/steelconnect-azurewan.html)|* |
 |[Серебро — пик]( https://www.silver-peak.com/silver-peak-expands-integration-with-microsoft-cloud-services)|[Инструкции по интеграции Еджеконнект и Microsoft Azure Virtual WAN](https://www.silver-peak.com/documentation/edgeconnect-and-azure-vwan-integration-guide)|
 |[Велоклауд — VMWare]( https://wan.velocloud.com/rs/098-RBR-178/images/sdwan-654-connect-azure-vwan-so-0819.pdf)|[Рекомендации по развертыванию Велоклауд для виртуальной глобальной сети Azure](https://kb.vmware.com/s/article/79000)|
 | [Наоборот](https://www.versa-networks.com/partners/microsoft-azure-virtual-WAN) | [Настройка беспроводного SD-WAN и Microsoft Azure Вван (доступно для зарегистрированных клиентов)](https://docs.versa-networks.com/Versa_Director/Versa_Director_Configuration/Integrate_Director_and_Azure_Virtual_WAN) |
 
-*\*Прямая ссылка недоступна. Обратитесь за поддержкой к партнерской компании.*
+*\* Прямая ссылка недоступна. Обратитесь за поддержкой к партнерской компании.*

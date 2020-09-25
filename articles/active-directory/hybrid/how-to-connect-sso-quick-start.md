@@ -16,12 +16,12 @@ ms.date: 04/16/2019
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: f137b61f36ee425bdfecf3135370fded04242335
-ms.sourcegitcommit: f8d2ae6f91be1ab0bc91ee45c379811905185d07
+ms.openlocfilehash: fde2052078e0131e720411f91aa8ae7484338252
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89658754"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91295029"
 ---
 # <a name="azure-active-directory-seamless-single-sign-on-quickstart"></a>Azure Active Directory простой единый вход: Краткое руководство
 
@@ -125,7 +125,7 @@ ms.locfileid: "89658754"
 1. Откройте редактор "Управление групповыми политиками".
 2. Измените групповую политику, которая применяется к некоторым или всем пользователям. В этом примере используется **политика домена по умолчанию**.
 3. Перейдите к **политике конфигурации пользователей**  >  **Policy**  >  **Административные шаблоны**  >  **компоненты Windows**  >  **Internet Explorer**  >  Страница Безопасность**панели управления Интернет**  >  **Security Page**. Выберите **Список назначений зоны для веб-сайтов**.
-    ![Единый вход](./media/how-to-connect-sso-quick-start/sso6.png)
+    ![Снимок экрана, на котором показана страница "безопасность" с выбранным параметром "сайт в список назначений зоны".](./media/how-to-connect-sso-quick-start/sso6.png)
 4. Включите политику и введите следующие значения в диалоговом окне.
    - **Имя значения**. Это URL-адрес Azure AD, на который пересылаются билеты Kerberos.
    - **Значение** (данные). **1** указывает зону интрасети.
@@ -142,15 +142,15 @@ ms.locfileid: "89658754"
 
 5. Щелкните **ОК**, а затем снова **ОК**.
 
-    ![Единый вход](./media/how-to-connect-sso-quick-start/sso7.png)
+    ![Снимок экрана, на котором показано окно "Показать содержимое" с выбранным назначением зоны.](./media/how-to-connect-sso-quick-start/sso7.png)
 
 6. Перейдите к **политике конфигурации пользователей**  >  **Policy**  >  **Административные шаблоны**  >  **компоненты Windows**  >  **Internet Explorer**Интернет  >  **Панель управления**  >  **Страница Безопасность**  >  **зона интрасети**. Выберите **Разрешить обновление строки состояния в сценарии**.
 
-    ![Единый вход](./media/how-to-connect-sso-quick-start/sso11.png)
+    ![Снимок экрана, на котором отображается страница "зона интрасети" с выбранным параметром "разрешить обновления в строке состояния с помощью сценария".](./media/how-to-connect-sso-quick-start/sso11.png)
 
 7. Включите параметр политики и нажмите кнопку **ОК**.
 
-    ![Единый вход](./media/how-to-connect-sso-quick-start/sso12.png)
+    ![Снимок экрана с включенным параметром политики "разрешить обновления в строке состояния с помощью сценария".](./media/how-to-connect-sso-quick-start/sso12.png)
 
 ### <a name="group-policy-preference-option---detailed-steps"></a>Параметр "Предпочтение групповой политики:" подробные инструкции
 
@@ -158,7 +158,7 @@ ms.locfileid: "89658754"
 2. Измените групповую политику, которая применяется к некоторым или всем пользователям. В этом примере используется **политика домена по умолчанию**.
 3. Перейдите к параметрам **конфигурации пользователя**  >  **Preferences**  >  **Параметры Windows**  >  **Реестр**  >  **Новый**  >  **элемент реестра**.
 
-    ![Единый вход](./media/how-to-connect-sso-quick-start/sso15.png)
+    ![Снимок экрана с выбранным параметром "реестр" и выбранным параметром "элемент реестра".](./media/how-to-connect-sso-quick-start/sso15.png)
 
 4. Введите в соответствующие поля приведенные ниже значения и нажмите кнопку **ОК**.
    - **Путь раздела**: ***Software\Microsoft\Windows\CurrentVersion\Internet Settings\ZoneMap\Domains\microsoftazuread-sso.com\autologon***.
@@ -166,7 +166,7 @@ ms.locfileid: "89658754"
    - **Тип значения**: ***REG_DWORD***
    - **Данные значения**: ***00000001*** .
  
-     ![Единый вход](./media/how-to-connect-sso-quick-start/sso16.png)
+     ![Снимок экрана, показывающий окно "Свойства нового реестра".](./media/how-to-connect-sso-quick-start/sso16.png)
  
      ![Единый вход](./media/how-to-connect-sso-quick-start/sso17.png)
 

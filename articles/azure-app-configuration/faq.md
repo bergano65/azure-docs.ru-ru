@@ -7,12 +7,12 @@ ms.service: azure-app-configuration
 ms.topic: conceptual
 ms.date: 02/19/2020
 ms.author: lcozzens
-ms.openlocfilehash: b1483230313b9e1b8e59cafea478b14ba0dfcc70
-ms.sourcegitcommit: 02ca0f340a44b7e18acca1351c8e81f3cca4a370
+ms.openlocfilehash: 10510774409a6b75687086290b32885b30d9131a
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/19/2020
-ms.locfileid: "88587350"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91335387"
 ---
 # <a name="azure-app-configuration-faq"></a>Вопросы и ответы по настройке приложений Azure
 
@@ -42,6 +42,10 @@ ms.locfileid: "88587350"
 ## <a name="does-app-configuration-encrypt-my-data"></a>Шифрует ли данные в конфигурации приложения?
 
 Да. Конфигурация приложения шифрует все значения ключей, которые он содержит, и шифрует сетевое взаимодействие. Имена и метки ключей используются в качестве индексов для получения данных конфигурации и не шифруются.
+
+## <a name="where-does-data-stored-in-app-configuration-reside"></a>Где находятся данные, хранящиеся в конфигурации приложения? 
+
+Данные клиента, хранящиеся в конфигурации приложения, находятся в регионе, в котором было создано хранилище конфигураций приложений клиента. Конфигурация приложения может реплицировать данные в [парные регионы](https://docs.microsoft.com/azure/best-practices-availability-paired-regions) для обеспечения устойчивости данных, но не реплицирует или не перемещает данные клиентов за пределами географической информации, как определено [местонахождение данных в Azure](https://azure.microsoft.com/global-infrastructure/data-residency/). Клиенты и конечные пользователи могут по всему миру перемещать, копировать или получать доступ к своим пользовательским данным из любого расположения.
 
 ## <a name="how-is-app-configuration-different-from-azure-app-service-settings"></a>Чем отличается Конфигурация приложения от параметров службы приложений Azure?
 

@@ -5,19 +5,19 @@ services: active-directory
 ms.service: active-directory
 ms.subservice: B2B
 ms.topic: reference
-ms.date: 03/19/2020
+ms.date: 09/23/2020
 ms.author: mimart
 author: msmimart
 manager: celestedg
 ms.reviewer: mal
 ms.custom: it-pro, seo-update-azuread-jan
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 92c3e0d77a26db406e24d6d2fa07e96349613634
-ms.sourcegitcommit: 4e5560887b8f10539d7564eedaff4316adb27e2c
+ms.openlocfilehash: 158caf3a6c4cc0efc2f89e18d065a0112b481ee9
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87910145"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91274050"
 ---
 # <a name="azure-active-directory-b2b-collaboration-faqs"></a>Часто задаваемые вопросы о службе совместной работы Azure Active Directory B2B
 
@@ -116,6 +116,9 @@ Azure AD имеет единые требования в отношении фи
 
 ### <a name="i-thought-azure-ad-b2b-didnt-accept-gmailcom-and-outlookcom-email-addresses-and-that-b2c-was-used-for-those-kinds-of-accounts"></a>Действительно ли служба Azure AD B2B не поддерживает электронные адреса gmail.com и outlook.com, ведь для этих типов учетных записей используется служба B2C?
 Мы устраняем различия между службами совместной работы B2B и B2C в поддерживаемых удостоверениях. Используемое удостоверение не является веской причиной в пользу выбора B2B или B2C. Дополнительные сведения о выборе варианта совместной работы см. в статье [Сравнение службы совместной работы B2B и B2C в Azure Active Directory](compare-with-b2c.md).
+
+### <a name="can-an-azure-ad-b2c-local-account-be-invited-to-an-azure-ad-tenant-for-b2b-collaboration"></a>Можно ли пригласить Azure AD B2C локальную учетную запись в клиент Azure AD для службы совместной работы B2B?
+Нет. Локальную учетную запись Azure AD B2C можно использовать только для входа в клиент Azure AD B2C. Учетную запись нельзя использовать для входа в клиент Azure AD. Приглашение Azure AD B2C локальной учетной записи в клиент Azure AD для службы совместной работы B2B не поддерживается.
 
 ### <a name="what-applications-and-services-support-azure-b2b-guest-users"></a>Какие приложения и службы поддерживают гостевых пользователей Azure B2B?
 Все приложения, интегрированные с Azure AD, могут поддерживать гостевых пользователей Azure B2B, но они должны использовать конечную точку, настроенную в качестве клиента для проверки подлинности гостевых пользователей. Кроме того, может потребоваться [настроить утверждения](claims-mapping.md) в токене SAML, который создается, когда гостевой пользователь проходит проверку подлинности в приложении. 

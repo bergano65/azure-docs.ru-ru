@@ -9,14 +9,14 @@ ms.reviewer: douglasl
 ms.service: data-factory
 ms.workload: data-services
 ms.topic: conceptual
-ms.date: 05/06/2020
+ms.date: 09/23/2020
 ms.author: jingwang
-ms.openlocfilehash: a1527195296237eb8c9c309f8ac4a5911136cf77
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: a96b04df56dc7d5ea26463073d673275b8a4a8c4
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "82891751"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91324303"
 ---
 #  <a name="preserve-metadata-and-acls-using-copy-activity-in-azure-data-factory"></a>Сохранение метаданных и ACL с помощью действия копирования в фабрике данных Azure
 
@@ -24,18 +24,18 @@ ms.locfileid: "82891751"
 
 При использовании действия копирования фабрики данных Azure для копирования данных из источника в приемник в следующих сценариях можно также сохранить метаданные и списки ACL.
 
-## <a name="preserve-metadata-for-lake-migration"></a><a name="preserve-metadata"></a>Сохранение метаданных для Lake Migration
+## <a name="preserve-metadata-for-lake-migration"></a><a name="preserve-metadata"></a> Сохранение метаданных для Lake Migration
 
-При переносе данных из одного Data Lake в другой, включая [Amazon S3](connector-amazon-simple-storage-service.md), [большой двоичный объект Azure](connector-azure-blob-storage.md)и [Azure Data Lake Storage 2-го поколения](connector-azure-data-lake-storage.md), можно сохранить метаданные файла вместе с данными.
+При переносе данных из одного Data Lake в другой, включая [Amazon S3](connector-amazon-simple-storage-service.md), [большой двоичный объект Azure](connector-azure-blob-storage.md), [Azure Data Lake Storage 2-го поколения](connector-azure-data-lake-storage.md)и [хранилище файлов Azure](connector-azure-file-storage.md), можно сохранить метаданные файла вместе с данными.
 
 Действие копирования поддерживает сохранение следующих атрибутов во время копирования данных:
 
 - **Все указанные клиентом метаданные** 
 - И следующие **пять встроенных системных свойств хранилища данных**: `contentType` , `contentLanguage` (за исключением Amazon S3),, `contentEncoding` `contentDisposition` `cacheControl` .
 
-**Обработку различий в метаданных:** Amazon S3 и служба хранилища Azure позволяют использовать разные наборы символов в ключах указанных пользователем метаданных. Если вы решили сохранить метаданные с помощью команды Copy действий, ADF автоматически заменит недопустимые символы символом "_".
+**Обработку различий в метаданных:** Amazon S3 и служба хранилища Azure позволяют использовать разные наборы символов в ключах указанных пользователем метаданных. Если вы решили сохранить метаданные с помощью действия копирования, ADF автоматически заменит недопустимые символы символом "_".
 
-При копировании файлов "как есть" из Amazon S3/Azure Data Lake Storage 2-го поколения или большого двоичного объекта Azure в Azure Data Lake Storage 2-го поколения или BLOB-объект Azure с двоичным форматом можно найти параметр " **сохранить** " на вкладке "Параметры **действия копирования**  >  **Settings** " для создания действий или на странице " **Параметры** " в копирование данных средстве.
+При копировании файлов "как есть" из Amazon S3/Azure Data Lake Storage 2-го поколения/BLOB-объекта Azure или хранилища файлов Azure в Azure Data Lake Storage 2-го поколения/BLOB-объект Azure или хранилище файлов Azure с двоичным форматом можно найти параметр " **сохранить** " на вкладке "Параметры **действия копирования**  >  **Settings** " для создания действий или на странице " **Параметры** " в копирование данных средстве.
 
 ![Сохранить метаданные действия копирования](./media/copy-activity-preserve-metadata/copy-activity-preserve-metadata.png)
 
@@ -80,7 +80,7 @@ ms.locfileid: "82891751"
 ]
 ```
 
-## <a name="preserve-acls-from-data-lake-storage-gen1gen2-to-gen2"></a><a name="preserve-acls"></a>Сохранение списков управления доступом из Data Lake Storage 1-го поколения или Gen2 в Gen2
+## <a name="preserve-acls-from-data-lake-storage-gen1gen2-to-gen2"></a><a name="preserve-acls"></a> Сохранение списков управления доступом из Data Lake Storage 1-го поколения или Gen2 в Gen2
 
 При обновлении с Azure Data Lake Storage 1-го поколения до Gen2 или копировании данных между ADLS 2-го поколения можно сохранить списки управления доступом (ACL) POSIX вместе с файлами данных. Дополнительные сведения об управлении доступом см. в разделе [Контроль доступа в Azure Data Lake Storage 1-го поколения](../data-lake-store/data-lake-store-access-control.md) и [управление доступом в Azure Data Lake Storage 2-го поколения](../storage/blobs/data-lake-storage-access-control.md).
 

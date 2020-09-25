@@ -3,13 +3,13 @@ title: Мониторинг служб Node.js с помощью Azure Applicati
 description: Используйте Application Insights для мониторинга производительности и диагностики проблем в службах Node.js.
 ms.topic: conceptual
 ms.date: 06/01/2020
-ms.custom: devx-track-javascript
-ms.openlocfilehash: c6a1a030829f128c4369e99efcd56a416390afc6
-ms.sourcegitcommit: f353fe5acd9698aa31631f38dd32790d889b4dbb
+ms.custom: devx-track-js
+ms.openlocfilehash: 982adf6c6d7cd825d185802321ce30a04bd2f216
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87371623"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91323300"
 ---
 # <a name="monitor-your-nodejs-services-and-apps-with-application-insights"></a>Мониторинг служб и приложений Node.js с помощью Application Insights
 
@@ -32,7 +32,7 @@ ms.locfileid: "87371623"
 [azure-free-offer]: https://azure.microsoft.com/free/
 [add-aad-user]: ../../active-directory/fundamentals/add-users-azure-active-directory.md
 
-### <a name="set-up-an-application-insights-resource"></a><a name="resource"></a>Настройка ресурса Application Insights
+### <a name="set-up-an-application-insights-resource"></a><a name="resource"></a> Настройка ресурса Application Insights
 
 1. Войдите на [портал Azure][portal].
 2. [Создание ресурса Application Insights](create-new-resource.md)
@@ -59,7 +59,7 @@ ms.locfileid: "87371623"
    ```javascript
    let appInsights = require('applicationinsights');
    ```
-4.  Вы также можете предоставить iKey через переменную среды `APPINSIGHTS_INSTRUMENTATIONKEY` вместо передачи ее вручную в `setup()` или `new appInsights.TelemetryClient()` . Это позволит хранить ключи ikey вне выделенного исходного кода, и вы можете указать различные ключи ikey для разных сред. Для настройки вызова вручную `appInsights.setup('[your ikey]');` .
+4.  Вы также можете предоставить iKey через переменную среды `APPINSIGHTS_INSTRUMENTATIONKEY` вместо передачи ее вручную в  `setup()` или `new appInsights.TelemetryClient()` . Это позволит хранить ключи ikey вне выделенного исходного кода, и вы можете указать различные ключи ikey для разных сред. Для настройки вызова вручную `appInsights.setup('[your ikey]');` .
 
     Дополнительные параметры конфигурации приведены в указанных ниже разделах.
 
@@ -67,7 +67,7 @@ ms.locfileid: "87371623"
 
 5. Запустите автоматическую сбор и отправку данных путем вызова `appInsights.start();` .
 
-### <a name="monitor-your-app"></a><a name="monitor"></a>Мониторинг приложения
+### <a name="monitor-your-app"></a><a name="monitor"></a> Мониторинг приложения
 
 Пакет SDK автоматически собирает данные телеметрии о среде выполнения Node.js и некоторых распространенных модулях сторонних разработчиков. Используйте приложение для создания этих данных.
 
@@ -110,7 +110,7 @@ appInsights.setup("[your ikey]").start();
 В общем случае можно выполнить миграцию следующим образом:
 
 - Замените ссылки на `appInsights.client` `appInsights.defaultClient` .
-- Заменить `appInsights.getClient()` ссылки на`new appInsights.TelemetryClient()`
+- Заменить `appInsights.getClient()` ссылки на `new appInsights.TelemetryClient()`
 - Замените все аргументы на методы Client. Track * одним объектом, содержащим именованные свойства, в качестве аргументов. См. подсказку встроенного типа интегрированной среды разработки или [телеметритипес](https://github.com/Microsoft/ApplicationInsights-node.js/tree/develop/Declarations/Contracts/TelemetryTypes) для каждого типа телеметрии, кроме объекта.
 
 При доступе к функциям конфигурации пакета SDK без их объединения в можно `appInsights.setup()` найти эти функции в `appInsights.Configurations` (например, `appInsights.Configuration.setAutoCollectDependencies(true)` ). Ознакомьтесь с изменениями конфигурации по умолчанию в следующем разделе.

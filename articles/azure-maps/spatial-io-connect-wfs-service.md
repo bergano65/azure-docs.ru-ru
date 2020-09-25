@@ -8,13 +8,13 @@ ms.topic: conceptual
 ms.service: azure-maps
 services: azure-maps
 manager: philmea
-ms.custom: devx-track-javascript
-ms.openlocfilehash: 890bf60ac794740716817094a60f2b4cb4ba5835
-ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
+ms.custom: devx-track-js
+ms.openlocfilehash: ab6eb4851b9f2574fc235056f8f512edcb2054bd
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87282795"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91321787"
 ---
 # <a name="connect-to-a-wfs-service"></a>Подключение службе WFS
 
@@ -22,7 +22,7 @@ ms.locfileid: "87282795"
 
 Класс поддерживает следующие функции `WfsClient` :
 
-- Поддерживаемые версии: `1.0.0` , `1.1.0` и`2.0.0`
+- Поддерживаемые версии: `1.0.0` , `1.1.0` и `2.0.0`
 - Поддерживаемые операторы фильтров: двоичные сравнения, логические, математические, значения и `bbox` .
 - Запросы выполняются только с помощью `HTTP GET` .
 - Поддерживаемые операции:

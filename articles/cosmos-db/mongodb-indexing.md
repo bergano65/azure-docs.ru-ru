@@ -8,13 +8,13 @@ ms.topic: how-to
 ms.date: 08/07/2020
 author: timsander1
 ms.author: tisande
-ms.custom: devx-track-javascript
-ms.openlocfilehash: fb90390814af39b240c9a157f490ee9390afeb8f
-ms.sourcegitcommit: bfeae16fa5db56c1ec1fe75e0597d8194522b396
+ms.custom: devx-track-js
+ms.openlocfilehash: abd6d6379fba1efac20255ca97e66e6b2d7e72ee
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/10/2020
-ms.locfileid: "88030509"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91324414"
 ---
 # <a name="manage-indexing-in-azure-cosmos-dbs-api-for-mongodb"></a>Управление индексированием в API Azure Cosmos DB для MongoDB
 
@@ -50,7 +50,7 @@ API Azure Cosmos DB для MongoDB поддерживает составные �
 
 `db.coll.find().sort({name:1,age:1})`
 
-Можно также использовать предыдущий составной индекс для эффективной сортировки запроса с противоположным порядком сортировки для всех полей. Ниже приведен пример.
+Можно также использовать предыдущий составной индекс для эффективной сортировки запроса с противоположным порядком сортировки для всех полей. Пример:
 
 `db.coll.find().sort({name:-1,age:-1})`
 
@@ -222,7 +222,7 @@ globaldb:PRIMARY> db.coll.createIndex( { "student_id" : 1, "university" : 1 }, {
 
 Чтобы включить истечение срока действия документа в определенной коллекции, необходимо создать индекс срока [жизни (TTL)](../cosmos-db/time-to-live.md). Индекс TTL — это индекс `_ts` поля со `expireAfterSeconds` значением.
 
-Пример
+Пример.
 
 ```JavaScript
 globaldb:PRIMARY> db.coll.createIndex({"_ts":1}, {expireAfterSeconds: 10})

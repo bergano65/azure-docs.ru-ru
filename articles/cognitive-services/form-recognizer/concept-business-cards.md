@@ -10,12 +10,12 @@ ms.subservice: forms-recognizer
 ms.topic: conceptual
 ms.date: 08/17/2019
 ms.author: pafarley
-ms.openlocfilehash: 1163531fb5a6aa7158bd81ff9095ed1ee29e73c1
-ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
+ms.openlocfilehash: f8f173291448d9da4d8967ff56b0fa027ca73409
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89004907"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91334554"
 ---
 # <a name="business-card-concepts"></a>Сведения о визитных карточках
 
@@ -88,8 +88,8 @@ API визитной карточки также может вернуть ве�
                 "width": 4032,
                 "height": 3024,
                 "unit": "pixel",
-                "lines": 
-                          {
+                   "lines": 
+                             {
                         "text": "Dr. Avery Smith",
                         "boundingBox": [
                             419.3,
@@ -389,7 +389,9 @@ API-интерфейс визитной карточки также работа
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- Ознакомьтесь с кратким руководством по началу работы с [API Python для визитных карточек](./quickstarts/python-business-cards.md)
-- Дополнительные сведения о [распознавателе форм REST API](https://westcentralus.dev.cognitive.microsoft.com/docs/services/form-recognizer-api-v2-1-preview-1/operations/AnalyzeBusinessCardAsync)
-- Дополнительные сведения о [распознавателе форм](overview.md)
+- Чтобы приступить к распознаванию визитных карточек, следуйте инструкциям из [руководства по API для визитных карточек Python](./quickstarts/python-business-cards.md) .
 
+## <a name="see-also"></a>См. также
+
+* [Что такое Распознаватель документов?](./overview.md)
+* [Справочная документация по REST API](https://westcentralus.dev.cognitive.microsoft.com/docs/services/form-recognizer-api-v2-1-preview-1/operations/AnalyzeBusinessCardAsync)

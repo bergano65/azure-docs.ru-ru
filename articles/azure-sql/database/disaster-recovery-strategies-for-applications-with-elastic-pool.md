@@ -9,14 +9,14 @@ ms.devlang: ''
 ms.topic: conceptual
 author: anosov1960
 ms.author: sashan
-ms.reviewer: carlrab
+ms.reviewer: sstein
 ms.date: 01/25/2019
-ms.openlocfilehash: 8ba9edc129cc169ccc146c7bc314d8f5ffe573b9
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 6887371e50f5b7e8706cac0a0700873c42bdac06
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84038775"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91321651"
 ---
 # <a name="disaster-recovery-strategies-for-applications-using-azure-sql-database-elastic-pools"></a>Стратегии аварийного восстановления для приложений, использующих эластичные пулы базы данных SQL Azure
 [!INCLUDE[appliesto-sqldb](../includes/appliesto-sqldb.md)]
@@ -183,7 +183,7 @@ ms.locfileid: "84038775"
 
 Эта статья посвящена стратегиям аварийного восстановления баз данных для мультитенантного приложения независимых поставщиков программного обеспечения SaaS. Выбранная стратегия зависит от потребностей приложения, таких как бизнес-модель, соглашение об уровне обслуживания, которое вы хотите предложить клиентам, Бюджетное ограничение и т. д. Каждая описанная стратегия описывает преимущества и компромиссы, чтобы вы могли принять обоснованное решение. Вероятно, ваше приложение включает другие компоненты Azure. Изучите руководство по обеспечению непрерывности бизнес-процессов для этих компонентов и выполните восстановление на уровне базы данных. Дополнительные сведения об управлении восстановлением приложений базы данных в Azure см. в статье [Разработка службы высокой доступности с помощью базы данных SQL Azure](designing-cloud-solutions-for-disaster-recovery.md).  
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Дополнительные сведения об автоматизированных резервных копиях базы данных SQL Azure см. в статье [Автоматическое резервное копирование базы данных SQL Azure](automated-backups-overview.md).
 * Общие сведения о непрерывности бизнес-процессов и сценарии см. в статье [Обзор непрерывности бизнес-процессов](business-continuity-high-availability-disaster-recover-hadr-overview.md).

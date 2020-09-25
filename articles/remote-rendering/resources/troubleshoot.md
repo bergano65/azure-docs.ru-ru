@@ -5,12 +5,12 @@ author: florianborn71
 ms.author: flborn
 ms.date: 02/25/2020
 ms.topic: troubleshooting
-ms.openlocfilehash: a5b625ea2b5b76d0938ac62be2202127ff0af66e
-ms.sourcegitcommit: bdd5c76457b0f0504f4f679a316b959dcfabf1ef
+ms.openlocfilehash: f82ea8361cef76b2030e5b257b3d3351968d8050
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "90982966"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91322195"
 ---
 # <a name="troubleshoot"></a>Диагностика
 
@@ -23,11 +23,7 @@ ms.locfileid: "90982966"
 
 ## <a name="client-cant-connect-to-server"></a>Клиенту не удается подключиться к серверу
 
-Убедитесь, что брандмауэры (на устройстве, в маршрутизаторах и т. д.) не блокируют следующие порты:
-
-* **50051 (TCP)** — требуется для начального подключения (подтверждение HTTP);
-* **8266 (TCP+UDP)** — требуется для передачи данных;
-* **5000 (TCP)** , **5433 (TCP)** , **8443 (TCP)** — требуется для [ArrInspector](tools/arr-inspector.md).
+Убедитесь, что брандмауэры (на устройстве, внутри маршрутизаторов и т. д.) не блокируют порты, указанные в [требованиях к системе](../overview/system-requirements.md#network-ports).
 
 ## <a name="error-disconnected-videoformatnotavailable"></a>Ошибка " `Disconnected: VideoFormatNotAvailable` "
 
@@ -152,7 +148,7 @@ ms.locfileid: "90982966"
 
 Модуль удаленного рендеринга Azure подключается к конвейеру рендеринга Unity, чтобы выполнить композицию кадров с видео и репроекцию. Чтобы убедиться, что эти обработчики существуют, откройте меню *:::no-loc text="Window > Analysis > Frame debugger":::* . Включите его и убедитесь, что для `HolographicRemotingCallbackPass` в конвейере есть две записи:
 
-![Отладчик фреймов Unity](./media/troubleshoot-unity-pipeline.png)
+![Конвейер прорисовки Unity](./media/troubleshoot-unity-pipeline.png)
 
 ## <a name="checkerboard-pattern-is-rendered-after-model-loading"></a>Шаблон шахматной доски отображается после загрузки модели
 
@@ -184,6 +180,12 @@ ms.locfileid: "90982966"
 ### <a name="arm64-builds-for-unity-projects-fail-because-audiopluginmshrtfdll-is-missing"></a>Не удается выполнить сборки Arm64 для проектов Unity, так как отсутствует AudioPluginMsHRTF.dll
 
 `AudioPluginMsHRTF.dll`Для Arm64 был добавлен в пакет *Windows Mixed Reality* *(com. Unity. XR. виндовсмр. Metro)* в версии 3.0.1. Убедитесь, что установлена версия 3.0.1 или более поздняя с помощью диспетчера пакетов Unity. В строке меню Unity перейдите к *окну > диспетчер пакетов* и найдите пакет *Windows Mixed Reality* .
+
+## <a name="native-c-based-application-does-not-compile"></a>Собственное приложение на основе C++ не компилируется
+
+### <a name="library-not-found-error-for-uwp-application-or-dll"></a>Ошибка "Библиотека не найдена" для приложения UWP или библиотеки DLL
+
+В пакете NuGet C++ есть файл `microsoft.azure.remoterendering.Cpp.targets` , который определяет, какую из двоичных версий следует использовать. Для обнаружения `UWP` условий в файле проверяется на наличие `ApplicationType == 'Windows Store'` . Поэтому необходимо убедиться, что этот тип задан в проекте. Это следует учитывать при создании приложения UWP или библиотеки DLL с помощью мастера проектов Visual Studio.
 
 ## <a name="unstable-holograms"></a>Нестабильная голограмма
 

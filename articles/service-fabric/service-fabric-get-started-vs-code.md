@@ -5,13 +5,13 @@ author: peterpogorski
 ms.topic: article
 ms.date: 06/29/2018
 ms.author: pepogors
-ms.custom: devx-track-javascript
-ms.openlocfilehash: 1480b5e1ddab86761adb1c7caef808de89a3d947
-ms.sourcegitcommit: 0b8320ae0d3455344ec8855b5c2d0ab3faa974a3
+ms.custom: devx-track-js
+ms.openlocfilehash: a2ac8a84b4df4a241665e7f4269803908733ca82
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/30/2020
-ms.locfileid: "87428997"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91249915"
 ---
 # <a name="service-fabric-for-visual-studio-code"></a>Service Fabric для Visual Studio Code
 
@@ -51,7 +51,7 @@ ms.locfileid: "87428997"
 * [.NET Core](https://www.microsoft.com/net/learn/get-started) (версия 2.0.0 или более новая)
 * [Расширение VS Code C# для Visual Studio Code (на платформе OmniSharp)](https://marketplace.visualstudio.com/items?itemName=ms-dotnettools.csharp). Необходимо для отладки служб C#. Для установки воспользуйтесь VS Code Marketplace или щелкните значок "Расширения" на **панели действий** в VS Code и выполните поиск расширения.
 
-## <a name="setup"></a>Настройка
+## <a name="setup"></a>Установка
 
 1. Откройте VS Code.
 2. Щелкните значок "Расширения" на **панели действий** в левой части VS Code. Выполните поиск словосочетания "Service Fabric". Нажмите кнопку **Установить** для расширения Reliable Services на платформе Service Fabric.

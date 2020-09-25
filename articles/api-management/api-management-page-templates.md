@@ -1,6 +1,6 @@
 ---
 title: Шаблоны страниц в службе управления API Azure | Документация Майкрософт
-description: Сведения о настройке содержимого страниц портала разработчика с использованием набора шаблонов в службе управления API Azure.
+description: Узнайте, как настроить содержимое шаблонов страниц портала разработчика в службе управления API Azure.
 services: api-management
 documentationcenter: ''
 author: vladvino
@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.topic: article
 ms.date: 11/04/2019
 ms.author: apimpm
-ms.openlocfilehash: 78866804f10d12beda46f1fab9c8c78509a5a0b2
-ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
+ms.openlocfilehash: 24d026785025dba4ae45de404edec67c2cf3871a
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2020
-ms.locfileid: "86249977"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91335591"
 ---
 # <a name="page-templates-in-azure-api-management"></a>Шаблоны страниц в службе управления API Azure
 Служба управления API Azure позволяет настраивать содержимое страниц портала разработчика с помощью набора шаблонов. С помощью этих шаблонов вы можете гибко настраивать содержимое страниц, используя синтаксис [DotLiquid](http://dotliquidmarkup.org/), любой удобный текстовый редактор, например [DotLiquid для разработчиков](https://github.com/dotliquid/dotliquid/wiki/DotLiquid-for-Designers), и предоставленный набор локализованных [строковых ресурсов](api-management-template-resources.md#strings), [ресурсов глифов](api-management-template-resources.md#glyphs), а также [элементов управления страницы](api-management-page-controls.md).  
@@ -38,7 +38,7 @@ ms.locfileid: "86249977"
 
 [!INCLUDE [premium-dev-standard-basic.md](../../includes/api-management-availability-premium-dev-standard-basic.md)]
   
-##  <a name="sign-in"></a><a name="SignIn"></a>Войти  
+##  <a name="sign-in"></a><a name="SignIn"></a> Войти  
  Шаблон **входа** позволяет настроить страницу входа на портале разработчика.  
   
  ![Страница входа](./media/api-management-page-templates/APIM-Sign-In-Page-Developer-Portal-Templates.png "Шаблоны портала разработчика для страницы входа в APIM")  
@@ -137,7 +137,7 @@ ms.locfileid: "86249977"
 }
 ```  
   
-##  <a name="sign-up"></a><a name="SignUp"></a>Регистрация  
+##  <a name="sign-up"></a><a name="SignUp"></a> Регистрация  
  Шаблон **регистрации** позволяет настроить страницу регистрации на портале разработчика.  
   
  ![Страница регистрации](./media/api-management-page-templates/APIM-Sign-Up-Page-Developer-Portal-Templates.png "Шаблоны портала разработчика страницы регистрации APIM")  
@@ -185,7 +185,7 @@ ms.locfileid: "86249977"
 }  
 ```  
   
-##  <a name="page-not-found"></a><a name="PageNotFound"></a>Страница не найдена  
+##  <a name="page-not-found"></a><a name="PageNotFound"></a> Страница не найдена  
  Шаблон страницы с ошибкой **Страница не найдена** позволяет настроить страницу с ошибкой "Страница не найдена" на портале разработчика.  
   
  ![Страница "не найдено"](./media/api-management-page-templates/APIM-Not-Found-Page-Developer-Portal-Templates.png "Шаблоны портала разработчика для APIM не найденных страниц")  

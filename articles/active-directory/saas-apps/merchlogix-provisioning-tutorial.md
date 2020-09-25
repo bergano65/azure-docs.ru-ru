@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: article
 ms.date: 03/27/2019
 ms.author: zhchia
-ms.openlocfilehash: 6fe256660dc73aa411cf06e2b56ce9ef26934e2f
-ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
+ms.openlocfilehash: 9be2205ad0664d58c7a2ef0c07481b1c7aa02402
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88548008"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91273353"
 ---
 # <a name="tutorial-configure-merchlogix-for-automatic-user-provisioning"></a>Учебник. Настройка MerchLogix для автоматической подготовки пользователей
 
@@ -55,7 +55,7 @@ ms.locfileid: "88548008"
 
 5. На панели результатов выберите **MerchLogix**и нажмите кнопку **Добавить** , чтобы добавить MerchLogix в список приложений SaaS.
 
-    ![Подготовка MerchLogix][4]
+    ![Снимок экрана: Добавление из раздела "Гранки" с именем, вызываемым в текстовом поле введите имя.][4]
 
 ## <a name="assigning-users-to-merchlogix"></a>Назначение пользователей в MerchLogix
 
@@ -88,7 +88,7 @@ ms.locfileid: "88548008"
 
 4. Для параметра **Режим подготовки к работе** выберите значение **Automatic** (Автоматически).
 
-    ![Подготовка MerchLogix](./media/merchlogix-provisioning-tutorial/Merchlogix1.png)
+    ![Снимок экрана раздела MerchLogix-Присионинг с вызываемым параметром подготовки, режимом подготовки со значением "автоматически" и параметром "проверить подключение" вызываемый.](./media/merchlogix-provisioning-tutorial/Merchlogix1.png)
 
 5. В разделе **учетные данные администратора** :
 
@@ -100,7 +100,7 @@ ms.locfileid: "88548008"
 
 7. В поле **Почтовое уведомление** введите адрес электронной почты пользователя или группы, которые должны получать уведомления об ошибках подготовки, а также установите флажок **Send an email notification when a failure occurs** (Отправить уведомление по электронной почте при сбое).
 
-8. Нажмите **Сохранить**.
+8. Выберите команду **Сохранить**.
 
 9. В разделе **сопоставления** выберите **синхронизировать Azure Active Directory пользователей с MerchLogix**.
 

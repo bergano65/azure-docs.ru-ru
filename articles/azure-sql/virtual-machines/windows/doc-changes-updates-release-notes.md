@@ -7,16 +7,16 @@ ms.author: mathoma
 tags: azure-service-management
 ms.assetid: 2fa5ee6b-51a6-4237-805f-518e6c57d11b
 ms.service: virtual-machines-sql
-ms.topic: conceptual
+ms.topic: reference
 ms.tgt_pltfrm: vm-windows-sql-server
 ms.workload: iaas-sql-server
 ms.date: 08/20/2020
-ms.openlocfilehash: 5f0ba27a0964f08b32e1af19d6f578b3f41ee300
-ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
+ms.openlocfilehash: a596a57b2b4ac914514fcdefe77106c311e53c44
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89006420"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91272673"
 ---
 # <a name="documentation-changes-for-sql-server-on-azure-virtual-machines"></a>Изменения в документации по SQL Server на виртуальных машинах Azure
 [!INCLUDE[appliesto-sqlvm](../../includes/appliesto-sqlvm.md)]
@@ -39,7 +39,7 @@ Azure позволяет развертывать виртуальные маш�
 | **Создание группы доступности с помощью PowerShell** | Теперь можно упростить создание группы доступности с помощью [PowerShell](availability-group-az-commandline-configure.md) , а также Azure CLI. | 
 
 
-## <a name="june-2020"></a>июнь 2020 г.
+## <a name="june-2020"></a>Июнь 2020 г.
 
 | Изменения | Сведения |
 | --- | --- |
@@ -49,7 +49,7 @@ Azure позволяет развертывать виртуальные маш�
 | &nbsp; | &nbsp; |
 
 
-## <a name="may-2020"></a>Май 2020 г. 
+## <a name="may-2020"></a>Май 2020 г. 
 
 | Изменения | Сведения |
 | --- | --- |

@@ -8,14 +8,14 @@ ms.devlang: ''
 ms.topic: conceptual
 author: danimir
 ms.author: danil
-ms.reviewer: douglas, carlrab, sstein
+ms.reviewer: douglas, sstein
 ms.date: 08/31/2020
-ms.openlocfilehash: 0d5390beff6c3e0045c6b887f0262a54a737a851
-ms.sourcegitcommit: 3fb5e772f8f4068cc6d91d9cde253065a7f265d6
+ms.openlocfilehash: e805de26b7d2e5ec8d29801a05291acfe086bb1a
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89181771"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91323164"
 ---
 # <a name="user-initiated-manual-failover-on-sql-managed-instance"></a>Ручная отработка отказа, инициированная пользователем в SQL Управляемый экземпляр
 
@@ -94,7 +94,7 @@ az sql mi failover -g myresourcegroup -n myinstancename
 az sql mi failover -g myresourcegroup -n myinstancename --replica-type ReadableSecondary
 ```
 
-### <a name="using-rest-api"></a>Использование API-интерфейса RESTful
+### <a name="using-rest-api"></a>Использование REST API
 
 Для опытных пользователей, которым, возможно, потребуется автоматизировать отработку отказа управляемых экземпляров SQL в целях реализации непрерывного конвейера тестирования или автоматизированного механизма снижения производительности, эту функцию можно выполнить, инициируя отработку отказа через вызов API. Дополнительные сведения см. в разделе [управляемые экземпляры — REST API отработки отказа](https://docs.microsoft.com/rest/api/sql/managed%20instances%20-%20failover/failover) .
 

@@ -1,14 +1,14 @@
 ---
 title: Импорт из источников данных — QnA Maker
-description: База знаний QnA Maker состоит из набора пар вопросов и ответов (QnA) и необязательных метаданных, связанных с каждой парой QnA.
+description: Узнайте, как импортировать пары вопросов и ответов из источников данных — QnA Maker.
 ms.topic: conceptual
 ms.date: 03/16/2020
-ms.openlocfilehash: eaa19cb2abf84f31cda9d8894e91ec1540980b27
-ms.sourcegitcommit: fc718cc1078594819e8ed640b6ee4bef39e91f7f
+ms.openlocfilehash: c66f81ccabd77e49ba1c492db25ad9e9edd34e93
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "83993105"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91334639"
 ---
 # <a name="importing-from-data-sources"></a>Импорт из источников данных
 
