@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: article
 ms.date: 08/30/2019
 ms.author: Zhchia
-ms.openlocfilehash: 5090741b6e7c50e7a3179fb2fdd84fa19ddf657c
-ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
+ms.openlocfilehash: bb6ad9aae5f92f03ea5bfacc028973e4c4a6dbea
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88554918"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91312626"
 ---
 # <a name="tutorial-configure-flock-for-automatic-user-provisioning"></a>Учебник. Настройка Флокк для автоматической подготовки пользователей
 
@@ -106,11 +106,11 @@ ms.locfileid: "88554918"
 
 3. Выберите вкладку **Подготовка**.
 
-    ![Вкладка "Подготовка"](common/provisioning.png)
+    ![Снимок экрана параметров управления с вызываемым параметром подготовки.](common/provisioning.png)
 
 4. Для параметра **Режим подготовки к работе** выберите значение **Automatic** (Автоматически).
 
-    ![Вкладка "Подготовка"](common/provisioning-automatic.png)
+    ![Снимок экрана: раскрывающийся список режима подготовки с вызываемым автоматическим параметром.](common/provisioning-automatic.png)
 
 5. В разделе Учетные данные администратора введите `https://api.flock-staging.com/v2/scim` значения **токена API** и, полученные ранее в поле **URL-адрес клиента** и **секретный токен** , соответственно. Щелкните **проверить подключение** , чтобы убедиться, что Azure AD может подключиться к флокк. Если подключение не выполняется, убедитесь, что у учетной записи Флокк есть разрешения администратора, и повторите попытку.
 
@@ -120,7 +120,7 @@ ms.locfileid: "88554918"
 
     ![Почтовое уведомление](common/provisioning-notification-email.png)
 
-7. Нажмите **Сохранить**.
+7. Выберите команду **Сохранить**.
 
 8. В разделе **сопоставления** выберите **синхронизировать Azure Active Directory пользователей с флокк**.
 

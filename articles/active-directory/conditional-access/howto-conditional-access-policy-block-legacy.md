@@ -5,18 +5,18 @@ services: active-directory
 ms.service: active-directory
 ms.subservice: conditional-access
 ms.topic: how-to
-ms.date: 08/07/2020
+ms.date: 09/22/2020
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: calebb, rogoya
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 7b4a0a411f51eed3a262ee59eb8e93b983755af3
-ms.sourcegitcommit: 80b9c8ef63cc75b226db5513ad81368b8ab28a28
+ms.openlocfilehash: 2499a89907eb63f01adbc80a6d206911c09c1259
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/16/2020
-ms.locfileid: "90601560"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91265958"
 ---
 # <a name="conditional-access-block-legacy-authentication"></a>Условный доступ: Блокировка устаревших методов проверки подлинности
 
@@ -26,7 +26,7 @@ ms.locfileid: "90601560"
 
 Выполните следующие действия, чтобы создать политику условного доступа для блокировки устаревших запросов проверки подлинности. Эта политика помещается в [режим "Только отчет"](howto-conditional-access-insights-reporting.md), чтобы администраторы могли определить влияние на существующих пользователей. Когда администраторы проверят действие политики, они могут **включить** ее или выполнить промежуточное развертывание, добавляя определенные группы и исключая другие.
 
-1. Войдите на **портал Azure** как глобальный администратор.
+1. Войдите на **портал Azure** в качестве глобального администратора, администратора безопасности или администратора условного доступа.
 1. Выберите **Azure Active Directory** > **Безопасность** > **Условный доступ**.
 1. Выберите **Новая политика**.
 1. Присвойте политике имя. Мы рекомендуем организациям присваивать политикам понятные имена.

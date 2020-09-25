@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: spunukol, rosssmi
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 1a3cdb851ca00300d995bcf2075252a360242197
-ms.sourcegitcommit: 80b9c8ef63cc75b226db5513ad81368b8ab28a28
+ms.openlocfilehash: 122cc6a2be17cb35e77b638a60fc5fa4f035c0d4
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/16/2020
-ms.locfileid: "90601968"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91266145"
 ---
 # <a name="how-to-require-approved-client-apps-for-cloud-app-access-with-conditional-access"></a>Как запросить утвержденные клиентские приложения для доступа к облачным приложениям с помощью условного доступа
 
@@ -47,7 +47,7 @@ ms.locfileid: "90601968"
 1. В разделе **Назначения** выберите **Пользователи и группы**.
    1. В разделе **Включить** выберите **Все пользователи** или конкретные **Пользователи и группы**, к которым вы хотите применить эту политику. 
    1. Нажмите кнопку **Готово**.
-1. В разделе **Облачные приложения или действия**  >  **Включить** выберите **Office 365 (предварительная версия)** .
+1. В разделе **облачные приложения или действия**  >  **Include**выберите **Office 365**.
 1. В разделе **Условия**выберите **Платформы устройств**.
    1. Задайте для параметра **Настроить** значение **Да**.
    1. Включите **Android** и **iOS**.

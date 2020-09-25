@@ -1,20 +1,22 @@
 ---
 title: Управление версиями и ветви разработки — LUIS
 description: Сведения о поддержке приложения Language Understanding (LUIS) в системе управления версиями. Как применить обновления к приложению LUIS при работе в ветви разработки.
+ms.service: cognitive-services
+ms.subservice: language-understanding
 ms.topic: conceptual
 ms.date: 05/28/2020
-ms.openlocfilehash: 2d060fefbd32ecea1f91e6b062da7606699a63c4
-ms.sourcegitcommit: 52d2f06ecec82977a1463d54a9000a68ff26b572
+ms.openlocfilehash: 25f2c4f4698785326f80c24d3749e7585e85d5bb
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/15/2020
-ms.locfileid: "84783676"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91309512"
 ---
 # <a name="devops-practices-for-luis"></a>Рекомендации по DevOps для LUIS
 
 Разработчики программного обеспечения, которые разрабатывают приложение Language Understanding (LUIS), могут применять DevOps рекомендации по управлению [версиями](luis-concept-devops-sourcecontrol.md), [автоматизированным сборкам](luis-concept-devops-automation.md), [тестированию](luis-concept-devops-testing.md)и [управлению выпусками](luis-concept-devops-automation.md#release-management) , следуя этим рекомендациям.
 
-## <a name="source-control-and-branch-strategies-for-luis"></a>Управление версиями и стратегии ветвления для LUIS
+## <a name="source-control-and-branch-strategies-for-luis"></a>Управление исходным кодом и стратегии создания ветвей для LUIS
 
 Одним из ключевых факторов успешности DevOps зависит от [системы управления версиями](https://docs.microsoft.com/azure/devops/user-guide/source-control?view=azure-devops). Система управления версиями позволяет разработчикам совместно работать над кодом и отслеживанию изменений. Использование ветвей позволяет разработчикам переключаться между различными версиями базы кода и работать независимо от других членов группы. Когда разработчики создают [запрос на вытягивание](https://help.github.com/github/collaborating-with-issues-and-pull-requests/about-pull-requests) (PR) для предложения обновлений из одной ветви в другую или при слиянии изменений, они могут быть триггерами для [автоматизированных сборок](luis-concept-devops-automation.md) для создания и непрерывного тестирования кода.
 
@@ -40,7 +42,7 @@ ms.locfileid: "84783676"
 
 ## <a name="source-control"></a>Система управления версиями
 
-Чтобы сохранить [Определение схемы приложения](https://docs.microsoft.com/azure/cognitive-services/luis/app-schema-definition) Luis в системе управления исходным кодом, используйте представление приложения в [формате лудовн ( `.lu` )](https://docs.microsoft.com/azure/bot-service/file-format/bot-builder-lu-file-format?view=azure-bot-service-4.0) . `.lu`формат является предпочтительным для `.json` форматирования, так как он удобен для чтения, что упрощает внесение и проверку изменений в вытягивание.
+Чтобы сохранить [Определение схемы приложения](https://docs.microsoft.com/azure/cognitive-services/luis/app-schema-definition) Luis в системе управления исходным кодом, используйте представление приложения в [формате лудовн ( `.lu` )](https://docs.microsoft.com/azure/bot-service/file-format/bot-builder-lu-file-format?view=azure-bot-service-4.0)  . `.lu` формат является предпочтительным для `.json` форматирования, так как он удобен для чтения, что упрощает внесение и проверку изменений в вытягивание.
 
 ### <a name="save-a-luis-app-using-the-ludown-format"></a>Сохранение приложения LUIS в формате Лудовн
 
@@ -52,7 +54,7 @@ ms.locfileid: "84783676"
 
 > [!TIP]
 > Если вы работаете с экспортом JSON приложения LUIS, [его можно преобразовать в лудовн](https://github.com/microsoft/botframework-cli/tree/master/packages/luis#bf-luisconvert) с помощью [BotBuilder-Tools Luis CLI](https://github.com/microsoft/botbuilder-tools/tree/master/packages/LUIS). Используйте `--sort` параметр, чтобы обеспечить сортировку целей и фразы продолжительностью в алфавитном порядке.  
-> Обратите внимание, что **. **Функция экспорта Lu, встроенная в портал Luis, уже Сортирует выходные данные.
+> Обратите внимание, что **. ** Функция экспорта Lu, встроенная в портал Luis, уже Сортирует выходные данные.
 
 ### <a name="build-the-luis-app-from-source"></a>Создание приложения LUIS из источника
 
@@ -66,7 +68,7 @@ ms.locfileid: "84783676"
 
 Следующие типы файлов для приложения LUIS должны поддерживаться в системе управления версиями:
 
-- `.lu`файл для приложения LUIS
+- `.lu` файл для приложения LUIS
 
 - [Файлы определения модульных тестов](luis-concept-devops-testing.md#writing-tests) (фразы продолжительностью и ожидаемые результаты)
 
@@ -199,7 +201,7 @@ ms.locfileid: "84783676"
 
 Определив номер версии для последней редакции приложения Master LUIS, необходимо создать и протестировать новую версию приложения и опубликовать ее в конечной точке, где ее можно использовать в различных средах сборки, например в контроле качества или в рабочей среде. Настоятельно рекомендуется автоматизировать все эти действия в рабочем процессе непрерывной интеграции (CI).
 
-Пример
+См.
 - [Рабочие процессы автоматизации](luis-concept-devops-automation.md) . подробные сведения о реализации рабочего процесса CI для тестирования и выпуска приложения Luis.
 - [Release Management](luis-concept-devops-automation.md#release-management) сведения о развертывании приложения Luis.
 

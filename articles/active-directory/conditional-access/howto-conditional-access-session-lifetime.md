@@ -5,18 +5,18 @@ services: active-directory
 ms.service: active-directory
 ms.subservice: conditional-access
 ms.topic: how-to
-ms.date: 06/29/2020
+ms.date: 09/22/2020
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: jlu, calebb
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 034d2410b97562946216815e5bdafd35fe1bc40b
-ms.sourcegitcommit: 80b9c8ef63cc75b226db5513ad81368b8ab28a28
+ms.openlocfilehash: 672918280a988771431dccc81f042226addf029d
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/16/2020
-ms.locfileid: "90601679"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91265941"
 ---
 # <a name="configure-authentication-session-management-with-conditional-access"></a>Настройка управления сеансом проверки подлинности с условным доступом.
 
@@ -89,6 +89,8 @@ ms.locfileid: "90601679"
 
 > [!WARNING]
 > Если вы используете [настраиваемую функцию времени существования маркера](../develop/active-directory-configurable-token-lifetimes.md) в настоящее время в общедоступной предварительной версии, то обратите внимание, что мы не поддерживаем создание двух разных политик для одного сочетания пользователя или приложения: один с этой функцией и другой с настраиваемой функцией срока действия маркера. Корпорация Майкрософт планирует снять с учета настраиваемую функцию срока действия маркера 1 мая 2020 и заменить ее на функцию управления сеансом проверки подлинности с условным доступом.  
+>
+> Прежде чем включать частоту входа, убедитесь, что в клиенте отключены другие параметры повторной проверки подлинности. Если параметр "запомнить MFA на доверенных устройствах" включен, обязательно отключите его перед использованием частоты входа, так как использование этих двух параметров может привести к непредвиденному появлению запросов к пользователям. Дополнительные сведения о запросах повторной проверки подлинности и времени существования сеанса см. в статье [Оптимизация запросов повторной проверки подлинности и изучение времени жизни сеанса для многофакторной идентификации Azure](../authentication/concepts-azure-multi-factor-authentication-prompts-session-lifetime.md).
 
 ### <a name="policy-1-sign-in-frequency-control"></a>Политика 1. Управление частотой входа
 
