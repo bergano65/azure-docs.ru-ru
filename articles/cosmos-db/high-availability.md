@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 06/29/2020
 ms.author: mjbrown
 ms.reviewer: sngun
-ms.openlocfilehash: c357720c937a5b63944b7fc598eaff428f85bfb6
-ms.sourcegitcommit: 7374b41bb1469f2e3ef119ffaf735f03f5fad484
+ms.openlocfilehash: d6222c9275dfe022e897bb6324df5bb30e1a8905
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/16/2020
-ms.locfileid: "90706821"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91276821"
 ---
 # <a name="high-availability-with-azure-cosmos-db"></a>Высокий уровень доступности при использовании Azure Cosmos DB
 
@@ -129,6 +129,8 @@ az cosmosdb create \
 
 ## <a name="building-highly-available-applications"></a>Создание высокодоступных приложений
 
+- Изучите ожидаемое [поведение пакетов SDK Azure Cosmos](troubleshoot-sdk-availability.md) во время этих событий и какие конфигурации влияют на нее.
+
 - Чтобы обеспечить высокую доступность для записи и чтения, настройте учетную запись Azure Cosmos, чтобы она занимала как минимум два региона с несколькими регионами записи. Эта конфигурация обеспечит наивысшую доступность, наименьшую задержку и лучшую масштабируемость для операций чтения и записи по соглашениям об уровне обслуживания. Дополнительные сведения см. в статье [Настройка учетной записи Azure Cosmos с несколькими регионами записи](tutorial-global-distribution-sql-api.md).
 
 - Для учетных записей Azure Cosmos с несколькими регионами, настроенных с помощью региона с одной записью, [включите автоматическую отработку отказа с помощью Azure CLI или портал Azure](how-to-manage-database-account.md#automatic-failover). При включенной автоматической отработке отказа в случае регионального сбоя Cosmos DB будет автоматически выполнять отработку отказа вашей учетной записи.  
@@ -146,3 +148,4 @@ az cosmosdb create \
 - [Глобальное распределение (взгляд изнутри)](global-dist-under-the-hood.md)
 - [Уровни согласованности для Azure Cosmos DB](consistency-levels.md)
 - [Настройка учетной записи Cosmos с несколькими регионами записи](how-to-multi-master.md)
+- [Поведение пакета SDK в многорегионовых средах](troubleshoot-sdk-availability.md)

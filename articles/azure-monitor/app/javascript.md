@@ -3,13 +3,13 @@ title: Application Insights Azure для веб-приложений JavaScript
 description: Получение количества просмотров страниц и сеансов, данных веб-клиента, одностраничных приложений (SPA) и отслеживании закономерностей использования. Выявляйте исключения и проблемы с производительностью на веб-страницах JavaScript.
 ms.topic: conceptual
 ms.date: 08/06/2020
-ms.custom: devx-track-javascript
-ms.openlocfilehash: 9f335ca6912545b39fb8276f5895f98e653735d0
-ms.sourcegitcommit: f8d2ae6f91be1ab0bc91ee45c379811905185d07
+ms.custom: devx-track-js
+ms.openlocfilehash: ddbdeaed1cf3f69c20c272ea3e9dde405119bc24
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89656951"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91328910"
 ---
 # <a name="application-insights-for-web-pages"></a>Application Insights для веб-страниц
 
@@ -115,7 +115,7 @@ cfg: { // Application Insights Configuration
 
 ### <a name="sending-telemetry-to-the-azure-portal"></a>Отправка данных телеметрии в портал Azure
 
-По умолчанию в Application Insights SDK для JavaScript выполняется Автосбор нескольких элементов телеметрии, которые полезны для определения работоспособности приложения и базового интерфейса пользователя. Сюда входит следующее.
+По умолчанию в Application Insights SDK для JavaScript выполняется Автосбор нескольких элементов телеметрии, которые полезны для определения работоспособности приложения и базового интерфейса пользователя. Они перечислены ниже.
 
 - **Неперехваченные исключения** в приложении, включая сведения о
     - Трассировка стека
@@ -150,7 +150,7 @@ appInsights.addTelemetryInitializer(() => false); // Nothing is sent after this 
 appInsights.trackTrace({message: 'this message will not be sent'}); // Not sent
 ```
 
-## <a name="configuration"></a>Конфигурация
+## <a name="configuration"></a>Параметр Configuration
 Большинство полей конфигурации называются так, чтобы их можно было по умолчанию иметь значение false. Все поля являются необязательными, за исключением `instrumentationKey` .
 
 | Имя | По умолчанию | Описание |
@@ -220,7 +220,7 @@ appInsights.trackTrace({message: 'this message will not be sent'}); // Not sent
 | [React Native](javascript-react-native-plugin.md)|
 | [Angular](https://github.com/microsoft/ApplicationInsights-JS/tree/master/extensions/applicationinsights-angularplugin-js) |
 
-## <a name="correlation"></a>Корреляция
+## <a name="correlation"></a>Correlation
 
 Корреляция между клиентом и сервером поддерживается для следующих компонентов:
 

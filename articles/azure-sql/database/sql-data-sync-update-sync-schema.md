@@ -9,14 +9,14 @@ ms.devlang: ''
 ms.topic: conceptual
 author: stevestein
 ms.author: sstein
-ms.reviewer: carlrab
+ms.reviewer: ''
 ms.date: 11/14/2018
-ms.openlocfilehash: 4d0800d109d17c1233a18966d84a498596e8e834
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: b42624506b3fe3a40cd19353c0dc25ecd8a5da02
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84188197"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91328808"
 ---
 # <a name="automate-the-replication-of-schema-changes-in-azure-sql-data-sync"></a>Автоматическая репликация изменений схемы при синхронизации данных SQL Azure
 [!INCLUDE[appliesto-sqldb](../includes/appliesto-sqldb.md)]
@@ -201,7 +201,7 @@ END
 
 Если вы хотите очистить записи в таблице отслеживания изменений схемы, используйте команду DELETE вместо TRUNCATE. Никогда не обновляйте столбец идентификатора в таблице отслеживания изменений схемы с помощью DBCC CHECKIDENT. Вы можете создавать таблицы отслеживания изменений схемы и обновить имя таблицы в триггере DDL, если требуется повторное обновление.
 
-## <a name="other-considerations"></a><a name="other"></a>Другие рекомендации
+## <a name="other-considerations"></a><a name="other"></a> Другие рекомендации
 
 -   Пользователи базы данных, которые настраивают концентратор и рядовые базы данных, должны иметь достаточные разрешения для выполнения команд изменения схемы.
 
@@ -219,7 +219,7 @@ END
 
 -   Не используйте TRUNCATE для очистки данных в таблице отслеживания изменений схемы.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о синхронизации данных SQL:
 

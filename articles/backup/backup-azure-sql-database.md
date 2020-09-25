@@ -3,12 +3,12 @@ title: Резервное копирование баз данных SQL Server 
 description: В этой статье объясняется, как создать резервную копию SQL Server в Azure. Здесь также описывается восстановление SQL Server.
 ms.topic: conceptual
 ms.date: 06/18/2019
-ms.openlocfilehash: 3627162ef2f4330a4b6a78625b5e07bdcf56419b
-ms.sourcegitcommit: 3246e278d094f0ae435c2393ebf278914ec7b97b
+ms.openlocfilehash: 510d9637031928e31abaa5f82a5bf58c6ef44719
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89376542"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91316853"
 ---
 # <a name="about-sql-server-backup-in-azure-vms"></a>Сведения о резервном копировании SQL Server на виртуальных машинах Azure
 
@@ -33,7 +33,7 @@ ms.locfileid: "89376542"
 * Подключаемый модуль отправляет данные непосредственно в хранилище служб восстановления, тем самым устраняя необходимость в промежуточном расположении. Данные зашифрованы и хранятся службой Azure Backup в учетных записях хранения.
 * Когда передача данных завершается, координатор подтверждает фиксацию с помощью службы резервного копирования.
 
-  ![Архитектура службы резервного копирования SQL](./media/backup-azure-sql-database/backup-sql-overview.png)
+  ![Архитектура службы резервного копирования SQL](./media/backup-azure-sql-database/azure-backup-sql-overview.png)
 
 ## <a name="before-you-start"></a>Перед началом работы
 

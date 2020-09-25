@@ -7,12 +7,12 @@ ms.author: baanders
 ms.date: 7/23/2020
 ms.topic: how-to
 ms.service: digital-twins
-ms.openlocfilehash: 605df0f26600f962bda7a0a0def800a91d74b022
-ms.sourcegitcommit: 6e1124fc25c3ddb3053b482b0ed33900f46464b3
+ms.openlocfilehash: 83741f5bc55eb222b379a274ef403f766553b21f
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90563001"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91328651"
 ---
 # <a name="set-up-an-azure-digital-twins-instance-and-authentication-scripted"></a>Настройка экземпляра Azure Digital двойников и проверки подлинности (с помощью сценария)
 
@@ -26,15 +26,19 @@ ms.locfileid: "90563001"
 
 [!INCLUDE [digital-twins-setup-steps-prereq.md](../../includes/digital-twins-setup-steps-prereq.md)]
 
+## <a name="prerequisites-download-the-script"></a>Предварительные требования: скачивание скрипта
+
+Пример скрипта написан на PowerShell. Она входит в [**примеры цифровых двойников Azure**](https://docs.microsoft.com/samples/azure-samples/digital-twins-samples/digital-twins-samples/), которые можно загрузить на компьютер, перейдя по этой ссылке и нажав кнопку *скачать ZIP-файл* под заголовком.
+
+При этом пример проекта будет скачан на компьютер как _**Azure_Digital_Twins_samples.zip**_. Перейдите в папку на компьютере и распакуйте ее, чтобы извлечь файлы.
+
+В распакованной папке скрипт развертывания находится в каталоге _Azure_Digital_Twins_samples > скрипты > **deploy.ps1** _.
+
 [!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
 
 ## <a name="run-the-deployment-script"></a>Выполнение скрипта развертывания
 
 В этой статье используется пример кода Azure Digital двойников для развертывания экземпляра цифрового двойников Azure и автоматической проверки подлинности. Его также можно использовать в качестве отправной точки для написания собственных взаимодействий со сценариями.
-
-Пример скрипта написан на PowerShell. Она входит в [примеры цифровых двойников Azure](https://docs.microsoft.com/samples/azure-samples/digital-twins-samples/digital-twins-samples/), которые можно загрузить на компьютер, перейдя по этой ссылке и нажав кнопку *скачать ZIP-файл* под заголовком.
-
-В скачанной папке примера скрипт развертывания находится в каталоге _Azure_Digital_Twins_samples.zip > скрипты > **deploy.ps1** _.
 
 Ниже приведены действия по запуску скрипта развертывания в Cloud Shell.
 1. Перейдите в окно [Azure Cloud Shell](https://shell.azure.com/) в браузере. Выполните вход с помощью следующей команды:
@@ -43,13 +47,23 @@ ms.locfileid: "90563001"
     ```
     Если в CLI можно запустить браузер по умолчанию, откроется браузер со страницей входа. В противном случае самостоятельно откройте в браузере страницу *https://aka.ms/devicelogin* и введите код авторизации, отображаемый в терминале.
  
-2. После входа Найдите панель значков окна Cloud Shell. Выберите значок "Отправить/скачать файлы" и нажмите кнопку "Отправить".
+2. На панели значков Cloud Shell убедитесь, что Cloud Shell настроена для запуска версии PowerShell.
 
-    :::image type="content" source="media/how-to-set-up-instance/cloud-shell/cloud-shell-upload.png" alt-text="Окно Cloud Shell, в котором отображается выбор параметра отправки":::
+    :::image type="content" source="media/how-to-set-up-instance/cloud-shell/cloud-shell-powershell.png" alt-text="Окно Cloud Shell, в котором отображается выбор версии PowerShell":::
 
-    Перейдите к файлу _**deploy.ps1**_ на компьютере и нажмите кнопку "Открыть". Файл будет отправлен в Cloud Shell, чтобы его можно было запустить в окне Cloud Shell.
+1. Выберите значок "Отправить/скачать файлы" и нажмите кнопку "Отправить".
 
-3. Запустите сценарий, отправив `./deploy.ps1` команду в окне Cloud Shell. Так как сценарий выполняется с помощью действий автоматической установки, вам будет предложено передать следующие значения:
+    :::image type="content" source="media/how-to-set-up-instance/cloud-shell/cloud-shell-upload.png" alt-text="Окно Cloud Shell, показывающее значок отправки":::
+
+    Перейдите в файл _**deploy.ps1**_ на компьютере (в _Azure_Digital_Twins_samples > сценарии > **deploy.ps1** _) и нажмите кнопку "Открыть". Файл будет отправлен в Cloud Shell, чтобы его можно было запустить в окне Cloud Shell.
+
+4. Запустите сценарий, отправив `./deploy.ps1` команду в окне Cloud Shell. (Напомним, что для вставки в Cloud Shell можно использовать **сочетание клавиш CTRL + SHIFT + v** в Windows и Linux или **CMD + SHIFT + v** в macOS. Также можно использовать контекстное меню.)
+
+    ```azurecli
+    ./deploy.ps1
+    ```
+
+    Так как сценарий выполняется с помощью действий автоматической установки, вам будет предложено передать следующие значения:
     * Для экземпляра: *идентификатор подписки* Azure для использования.
     * Для экземпляра: *Расположение* , в котором вы хотите развернуть экземпляр. Чтобы узнать, какие регионы поддерживают Azure Digital двойников, посетите страницу [*продукты Azure, доступные по регионам*](https://azure.microsoft.com/global-infrastructure/services/?products=digital-twins).
     * Для экземпляра: имя *группы ресурсов* . Вы можете использовать существующую группу ресурсов или ввести новое имя, чтобы создать его.
@@ -107,9 +121,15 @@ ms.locfileid: "90563001"
 
 Если вы хотите проверить создание ресурсов и разрешений, настроенных сценарием, можно просмотреть их в [портал Azure](https://portal.azure.com).
 
+Если вы не можете проверить успешность какого бы то ни было действия, повторите шаг. Эти действия можно выполнить по отдельности с помощью [портал Azure](how-to-set-up-instance-portal.md) или инструкций [CLI](how-to-set-up-instance-cli.md) .
+
 ### <a name="verify-instance"></a>Проверить экземпляр
 
-Чтобы проверить, создан ли экземпляр, перейдите на [страницу цифровой двойников Azure](https://ms.portal.azure.com/#blade/HubsExtension/BrowseResource/resourceType/Microsoft.DigitalTwins%2FdigitalTwinsInstances) в портал Azure. На этой странице перечислены все экземпляры Azure Digital двойников. Найдите имя созданного экземпляра в списке.
+Чтобы проверить, создан ли экземпляр, перейдите на [страницу цифровой двойников Azure](https://ms.portal.azure.com/#blade/HubsExtension/BrowseResource/resourceType/Microsoft.DigitalTwins%2FdigitalTwinsInstances) в портал Azure. Вы можете перейти на эту страницу самостоятельно, выполнив поиск по запросу *Azure Digital двойников* на панели поиска портала.
+
+На этой странице перечислены все экземпляры Azure Digital двойников. Найдите имя созданного экземпляра в списке.
+
+Если проверка завершилась неудачно, можно повторить попытку создания экземпляра с помощью [портала](how-to-set-up-instance-portal.md#create-the-azure-digital-twins-instance) или [интерфейса командной строки](how-to-set-up-instance-cli.md#create-the-azure-digital-twins-instance).
 
 ### <a name="verify-user-role-assignment"></a>Проверка назначения роли пользователя
 
@@ -117,16 +137,18 @@ ms.locfileid: "90563001"
 
 > [!NOTE]
 > Помните, что сценарий в настоящее время назначает эту требуемую роль тому же пользователю, который запускает скрипт из Cloud Shell. Если вам нужно назначить эту роль другому пользователю, который будет управлять экземпляром, это можно сделать сейчас с помощью портал Azure ([инструкции](how-to-set-up-instance-portal.md#set-up-user-access-permissions)) или CLI ([инструкции](how-to-set-up-instance-cli.md#set-up-user-access-permissions)).
->
-> Можно также использовать портал или CLI для повторного назначения ролей, если возникли проблемы с установкой сценариев.
+
+Если проверка завершилась неудачно, можно также повторить собственное назначение ролей с помощью [портала](how-to-set-up-instance-portal.md#set-up-user-access-permissions) или [интерфейса командной строки](how-to-set-up-instance-cli.md#set-up-user-access-permissions).
 
 ### <a name="verify-app-registration"></a>Проверка регистрации приложения
 
 [!INCLUDE [digital-twins-setup-verify-app-registration-1.md](../../includes/digital-twins-setup-verify-app-registration-1.md)]
 
-Сначала убедитесь, что параметры разрешений Azure Digital двойников были правильно установлены для регистрации. Для этого в строке меню выберите *Манифест* , чтобы просмотреть код манифеста регистрации приложения. Прокрутите окно кода вниз и найдите эти поля в разделе `requiredResourceAccess` . Значения должны соответствовать приведенным на снимке экрана ниже:
+Затем убедитесь, что параметры разрешений Azure Digital двойников были правильно установлены для регистрации. Для этого в строке меню выберите *Манифест* , чтобы просмотреть код манифеста регистрации приложения. Прокрутите окно кода вниз и найдите эти поля в разделе `requiredResourceAccess` . Значения должны соответствовать приведенным на снимке экрана ниже:
 
 [!INCLUDE [digital-twins-setup-verify-app-registration-2.md](../../includes/digital-twins-setup-verify-app-registration-2.md)]
+
+Если один или оба этих шага проверки завершились неудачно, повторите попытку создания регистрации приложения с помощью [портала](how-to-set-up-instance-portal.md#set-up-access-permissions-for-client-applications) или инструкций [CLI](how-to-set-up-instance-cli.md#set-up-access-permissions-for-client-applications) .
 
 ## <a name="other-possible-steps-for-your-organization"></a>Другие возможные действия для вашей организации
 
@@ -135,7 +157,7 @@ ms.locfileid: "90563001"
 ## <a name="next-steps"></a>Дальнейшие действия
 
 Вытестируйте отдельные REST API вызовы в экземпляре с помощью команд CLI Azure Digital двойников: 
-* [AZ DT Справочник](https://docs.microsoft.com/cli/azure/ext/azure-iot/dt?view=azure-cli-latest)
+* [AZ DT Справочник](https://docs.microsoft.com/cli/azure/ext/azure-iot/dt?view=azure-cli-latest&preserve-view=true)
 * [*Практическое руководство. Использование CLI для Azure Digital Twins*](how-to-use-cli.md)
 
 Или см. раздел как подключить клиентское приложение к экземпляру, написав код проверки подлинности клиентского приложения:

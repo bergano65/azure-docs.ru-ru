@@ -1,6 +1,6 @@
 ---
 title: Настройка сетевых конечных точек для службы "Синхронизация файлов Azure" | Документация Майкрософт
-description: Общие сведения о параметрах сети службы "Синхронизация файлов Azure".
+description: Узнайте, как настроить сетевые конечные точки Синхронизация файлов Azure.
 author: roygara
 ms.service: storage
 ms.topic: how-to
@@ -8,12 +8,12 @@ ms.date: 5/11/2020
 ms.author: rogarana
 ms.subservice: files
 ms.custom: devx-track-azurepowershell
-ms.openlocfilehash: 7210d414c06f154395b9128be6ed10175ad1e838
-ms.sourcegitcommit: 656c0c38cf550327a9ee10cc936029378bc7b5a2
+ms.openlocfilehash: 747d03b228d41066cfc834b4a9c044b16c767622
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89077064"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91329369"
 ---
 # <a name="configuring-azure-file-sync-network-endpoints"></a>Настройка сетевых конечных точек для службы "Синхронизация файлов Azure"
 Службы "Файлы Azure" и "Синхронизация файлов Azure" предоставляют два основных типа конечных точек для доступа к общим папкам Azure: 

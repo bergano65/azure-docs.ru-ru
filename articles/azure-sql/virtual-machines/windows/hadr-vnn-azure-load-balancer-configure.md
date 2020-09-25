@@ -8,18 +8,18 @@ manager: jroth
 tags: azure-resource-manager
 ms.service: virtual-machines-sql
 ms.devlang: na
-ms.topic: conceptual
+ms.topic: how-to
 ms.tgt_pltfrm: vm-windows-sql-server
 ms.workload: iaas-sql-server
 ms.date: 06/02/2020
 ms.author: mathoma
 ms.reviewer: jroth
-ms.openlocfilehash: 10ff324e85082a4a5911e2c949744e7df1d9ad0b
-ms.sourcegitcommit: 845a55e6c391c79d2c1585ac1625ea7dc953ea89
+ms.openlocfilehash: 2f36e568603ded5a89f88cf11627a09a5a240fac
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/05/2020
-ms.locfileid: "85965619"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91316993"
 ---
 # <a name="configure-vnn-with-azure-load-balancer-sql-server-on-azure-vms"></a>Настройка VNN с помощью Azure Load Balancer (SQL Server на виртуальных машинах Azure)
 [!INCLUDE[appliesto-sqlvm](../../includes/appliesto-sqlvm.md)]
@@ -92,7 +92,7 @@ ms.locfileid: "85965619"
    - **Интервал**: 5 секунд.
    - **Пороговое значение сбоя**: 2 последовательных сбоя.
 
-1. Нажмите кнопку **ОК**.
+1. Щелкните **ОК**.
 
 ## <a name="set-load-balancing-rules"></a>Задание правил балансировки нагрузки
 
@@ -157,7 +157,7 @@ Get-ClusterResource $IPResourceName | Get-ClusterParameter
 
 # <a name="failover-cluster-instance"></a>[Экземпляр отказоустойчивого кластера](#tab/fci)
 
-Сделайте следующее:
+Выполните следующие шаги:
 
 1. Подключитесь к одному из SQL Server узлов кластера по протоколу RDP.
 1. Откройте **диспетчер отказоустойчивости кластеров**. Выберите **Роли**. Обратите внимание, какой узел является владельцем роли SQL Server FCI.
@@ -170,7 +170,7 @@ Get-ClusterResource $IPResourceName | Get-ClusterParameter
 
 # <a name="ag-listener"></a>[Прослушиватель группы доступности](#tab/ag)
 
-Сделайте следующее:
+Выполните следующие шаги:
 
 1. Откройте [SQL Server Management Studio)](/sql/ssms/download-sql-server-management-studio-ssms) и подключитесь к прослушивателю группы доступности. 
 
@@ -191,7 +191,7 @@ Get-ClusterResource $IPResourceName | Get-ClusterParameter
 
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о SQL Serverии функций HADR в Azure см. в разделе [группы доступности](availability-group-overview.md) и [экземпляр отказоустойчивого кластера](failover-cluster-instance-overview.md). Вы также [можете ознакомиться с рекомендациями](hadr-cluster-best-practices.md) по настройке среды для обеспечения высокого уровня доступности и аварийного восстановления. 
 

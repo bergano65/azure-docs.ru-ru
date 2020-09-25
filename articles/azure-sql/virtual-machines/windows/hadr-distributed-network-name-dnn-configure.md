@@ -8,18 +8,18 @@ manager: jroth
 tags: azure-resource-manager
 ms.service: virtual-machines-sql
 ms.devlang: na
-ms.topic: conceptual
+ms.topic: how-to
 ms.tgt_pltfrm: vm-windows-sql-server
 ms.workload: iaas-sql-server
 ms.date: 06/02/2020
 ms.author: mathoma
 ms.reviewer: jroth
-ms.openlocfilehash: 8eb9caf466148e43266c4be9cf1308da15fb67f2
-ms.sourcegitcommit: c293217e2d829b752771dab52b96529a5442a190
+ms.openlocfilehash: ce3261eca8697ae1fabc07785353a4e845dadeba
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/15/2020
-ms.locfileid: "88245542"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91317010"
 ---
 # <a name="configure-a-distributed-network-name-for-an-fci"></a>Настройка имени распределенной сети для FCI 
 [!INCLUDE[appliesto-sqlvm](../../includes/appliesto-sqlvm.md)]
@@ -126,7 +126,7 @@ Start-ClusterResource -Name dnn-demo
 
 ## <a name="restart-sql-server-instance"></a>Перезапустить SQL Server экземпляр 
 
-Используйте диспетчер отказоустойчивости кластеров, чтобы перезапустить экземпляр SQL Server. Выполните следующие действия:
+Используйте диспетчер отказоустойчивости кластеров, чтобы перезапустить экземпляр SQL Server. Выполните следующие действия.
 
 1. Перейдите к ресурсу SQL Server в диспетчер отказоустойчивости кластеров.
 1. Щелкните правой кнопкой мыши ресурс SQL Server и переведите его в режим «вне сети». 
@@ -186,7 +186,7 @@ Get-ClusterResource "virtual IP address" | Set-ClusterParameter
 - В настоящее время DNN поддерживается только для экземпляров отказоустойчивого кластера с SQL Server на виртуальных машинах Azure. Используйте имя виртуальной сети с Azure Load Balancer для прослушивателей групп доступности.
 - При работе с другими функциями SQL Server и FCI с DNN могут возникнуть дополнительные соображения. Дополнительные сведения см. в разделе [FCI with DNN, взаимодействие](failover-cluster-instance-dnn-interoperability.md). 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о SQL Serverии функций HADR в Azure см. в разделе [группы доступности](availability-group-overview.md) и [экземпляр отказоустойчивого кластера](failover-cluster-instance-overview.md). Вы также [можете ознакомиться с рекомендациями](hadr-cluster-best-practices.md) по настройке среды для обеспечения высокого уровня доступности и аварийного восстановления. 
 

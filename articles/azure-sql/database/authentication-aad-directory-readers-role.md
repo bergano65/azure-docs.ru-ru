@@ -1,6 +1,6 @@
 ---
-title: Роль "читатели каталога" в Azure Active Directory для Azure SQL
-description: Приложения Azure AD (субъекты-службы) поддерживают создание пользователей Azure AD в базе данных SQL Azure, Управляемый экземпляр Azure SQL и Azure синапсе Analytics.
+title: Роль "Читатели каталогов" в Azure Active Directory для Azure SQL
+description: Сведения о роли читателя каталога в Azure AD для SQL Azure.
 ms.service: sql-db-mi
 ms.subservice: security
 ms.custom: azure-synapse
@@ -9,14 +9,14 @@ author: GithubMirek
 ms.author: mireks
 ms.reviewer: vanto
 ms.date: 08/14/2020
-ms.openlocfilehash: a517a4b14a64be2b9bf12270eef3d08e14d8f3c8
-ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
+ms.openlocfilehash: 5a6fb2c1c539c5b8e353f5c3720cb9d001dcbbc9
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88556328"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91277960"
 ---
-# <a name="directory-readers-role-in-azure-active-directory-for-azure-sql"></a>Роль "читатели каталога" в Azure Active Directory для Azure SQL
+# <a name="directory-readers-role-in-azure-active-directory-for-azure-sql"></a>Роль "Читатели каталогов" в Azure Active Directory для Azure SQL
 
 [!INCLUDE[appliesto-sqldb-sqlmi-asa](../includes/appliesto-sqldb-sqlmi-asa.md)]
 
@@ -39,9 +39,9 @@ Azure Active Directory (Azure AD) предоставила [Использова
 
 Чтобы назначить роль " [**читатели каталога**](../../active-directory/users-groups-roles/directory-assign-admin-roles.md#directory-readers) " удостоверению, требуется пользователь с разрешениями администратора [глобального администратора](../../active-directory/users-groups-roles/directory-assign-admin-roles.md#global-administrator--company-administrator) или [привилегированной роли](../../active-directory/users-groups-roles/directory-assign-admin-roles.md#privileged-role-administrator) . Пользователи, которые часто управляют или развертывают базу данных SQL, SQL Управляемый экземпляр или Azure синапсе, могут не иметь доступа к этим ролям с высоким уровнем привилегий. Это часто может привести к осложнениям для пользователей, которые создают незапланированные ресурсы SQL Azure или нуждаются в помощи членов ролей с высоким уровнем привилегий, которые часто недоступны в крупных организациях.
 
-Для Управляемый экземпляр SQL роль " **читатели каталога** " должна быть назначена удостоверению управляемого экземпляра, прежде чем вы сможете [настроить администратора Azure AD для управляемого экземпляра](authentication-aad-configure.md#provision-azure-ad-admin-sql-managed-instance). 
+Чтобы [настроить администратора Azure AD для Управляемого экземпляра SQL](authentication-aad-configure.md#provision-azure-ad-admin-sql-managed-instance), удостоверению управляемого экземпляра необходимо назначить роль **Читатели каталогов**. 
 
-Назначение роли " **чтение каталога** " идентификатору сервера не требуется для базы данных SQL или Azure синапсе при настройке администратора Azure AD для логического сервера. Однако, чтобы включить создание объектов Azure AD в базе данных SQL или Azure синапсе от имени приложения Azure AD, требуется роль " **читатели каталога** ". Если роль не назначена удостоверению логического сервера SQL, создание пользователей Azure AD в Azure SQL завершится ошибкой. Дополнительные сведения см. в статье [Субъект-служба Azure Active Directory с SQL Azure](authentication-aad-service-principal.md).
+Для Базы данных SQL или Azure Synapse при настройке администратора Azure AD для логического сервера назначение роли **Читатели каталогов** удостоверению сервера не требуется. Однако для создания объекта Azure AD в Базе данных SQL или Azure Synapse от имени приложения Azure AD требуется роль **Читатели каталогов**. Если роль удостоверению логического сервера SQL не назначена, создание пользователей Azure AD в Azure SQL завершится ошибкой. Дополнительные сведения см. в статье [Субъект-служба Azure Active Directory с SQL Azure](authentication-aad-service-principal.md).
 
 ## <a name="granting-the-directory-readers-role-to-an-azure-ad-group"></a>Предоставление роли "читатели каталога" группе Azure AD
 
@@ -52,4 +52,4 @@ Azure Active Directory (Azure AD) предоставила [Использова
 ## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
-> [Руководство. Назначение роли "читатели каталога" группе Azure AD и управление назначениями ролей](authentication-aad-directory-readers-role-tutorial.md)
+> [Руководство по назначению роли "Читатели каталогов" группе Azure AD и управлению назначениями ролей](authentication-aad-directory-readers-role-tutorial.md)

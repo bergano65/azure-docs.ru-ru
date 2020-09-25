@@ -2,13 +2,13 @@
 title: Настройка операций Вреализе для решения VMware для Azure
 description: Узнайте, как настроить операции Вреализе для частного облака решения Azure VMware.
 ms.topic: how-to
-ms.date: 08/06/2020
-ms.openlocfilehash: 729ee5c64776d7d04f702af62451175f7c53421b
-ms.sourcegitcommit: 62717591c3ab871365a783b7221851758f4ec9a4
+ms.date: 09/22/2020
+ms.openlocfilehash: 06b88eb610c4633018889315ab1cfd340d3f4b57
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/22/2020
-ms.locfileid: "88750404"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91293169"
 ---
 # <a name="set-up-vrealize-operations-for-azure-vmware-solution"></a>Настройка операций Вреализе для решения VMware для Azure
 
@@ -21,7 +21,7 @@ ms.locfileid: "88750404"
 > * [Локальные операции Вреализе Управление развертыванием решения Azure VMware](#on-premises-vrealize-operations-managing-azure-vmware-solution-deployment)
 > * [Операции Вреализе, выполняемые в развертывании решения VMware в Azure](#vrealize-operations-running-on-azure-vmware-solution-deployment)
 
-## <a name="before-you-begin"></a>Подготовка к работе
+## <a name="before-you-begin"></a>Перед началом
 * Ознакомьтесь с [документацией по вреализе Operations Manager](https://docs.vmware.com/en/vRealize-Operations-Manager/8.1/com.vmware.vcom.vapp.doc/GUID-7FFC61A0-7562-465C-A0DC-46D092533984.html) , чтобы узнать больше о развертывании операций вреализе. 
 * Ознакомьтесь с основными [сериями руководств](tutorial-network-checklist.md)по решению Azure VMware по определению программного обеспечения центра обработки данных (SDDC).
 * При необходимости ознакомьтесь с документацией по продукту [Вреализе Operations Remote Controller](https://docs.vmware.com/en/vRealize-Operations-Manager/8.1/com.vmware.vcom.vapp.doc/GUID-263F9219-E801-4383-8A59-E84F3D01ED6B.html) для локальных операций вреализе, управляющих развертыванием решения VMware в Azure. 
@@ -58,7 +58,23 @@ ms.locfileid: "88750404"
 > Пошаговое руководство по установке Вреализе Operations Manager см. в [документации по VMware](https://docs.vmware.com/en/vRealize-Operations-Manager/8.1/com.vmware.vcom.vapp.doc/GUID-7FFC61A0-7562-465C-A0DC-46D092533984.html) .
 
 
+## <a name="known-limitations"></a>Известные ограничения
 
+- **cloudadmin@vsphere.local**Пользователь в решении Azure VMware имеет [ограниченные привилегии](concepts-rbac.md). Сбор гостевых памяти с помощью средств VMware не поддерживается для виртуальных машин в решении VMware для Azure. В этом случае продолжают работать активные и потребленные использования памяти.
+- Оптимизация рабочей нагрузки для бизнеса на основе узла не работает, так как решения VMware для Azure управляют конфигурациями кластера, включая параметры DRS.
+- Оптимизация рабочей нагрузки для размещения между кластерами в SDDC с использованием бизнеса на основе кластера полностью поддерживается с Вреализе Operations Manager 8,0 и выше. Однако оптимизация рабочей нагрузки не учитывает пулы ресурсов и размещает виртуальные машины на уровне кластера. Пользователь может вручную исправить это в интерфейсе vCenter Server решения Azure VMware.
+- Вы не можете войти в Вреализе Operations Manager с помощью решения Azure VMware vCenter Server учетные данные. 
+- Решение VMware для Azure не поддерживает подключаемый модуль Operations Manager Вреализе.
+
+При подключении службы vCenter для Azure VMware к Вреализе Operations Manager с помощью vCenter Server облачной учетной записи вы увидите следующее предупреждение:
+
+:::image type="content" source="./media/vrealize-operations-manager/warning-adapter-instance-creation-succeeded.png" alt-text="Экземпляр адаптера предупреждений создан":::
+
+Это предупреждение возникает, если **cloudadmin@vsphere.local** пользователь в решении Azure VMware не имеет достаточных привилегий для выполнения всех vCenter Server действий, необходимых для регистрации. Однако привилегии достаточно для того, чтобы экземпляр адаптера произйдет сбор данных, как показано ниже:
+
+:::image type="content" source="./media/vrealize-operations-manager/adapter-instance-to-perform-data-collection.png" alt-text="Экземпляр адаптера для выполнения сбора данных":::
+
+Дополнительные сведения см. в разделе [привилегии, необходимые для настройки экземпляра адаптера vCenter](https://docs.vmware.com/en/vRealize-Operations-Manager/8.1/com.vmware.vcom.core.doc/GUID-3BFFC92A-9902-4CF2-945E-EA453733B426.html).
 
 <!-- LINKS - external -->
 

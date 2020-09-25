@@ -3,14 +3,14 @@ title: Запрос журналов Управления обновлениям
 description: В этой статье рассказывается, как запрашивать журналы Управления обновлениями в рабочей области Log Analytics.
 services: automation
 ms.subservice: update-management
-ms.date: 07/28/2020
+ms.date: 09/24/2020
 ms.topic: conceptual
-ms.openlocfilehash: 290fb0165038eea8740361a12a6d4bfe2c1bf138
-ms.sourcegitcommit: cee72954f4467096b01ba287d30074751bcb7ff4
+ms.openlocfilehash: 777d794716c7c17caf8d4c73007b91a625f40043
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/30/2020
-ms.locfileid: "87450414"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91264309"
 ---
 # <a name="query-update-management-logs"></a>Запрос на получение журналов Управления обновлениями
 
@@ -110,7 +110,7 @@ ms.locfileid: "87450414"
 | Компьютер | Полное доменное имя компьютера. |
 | ComputerEnvironment | Среда. Значения: "Azure" или "Не относящаяся к Azure". |
 | CorrelationId | Уникальный идентификатор выполнения задания runbook для обновления. |
-| EndTime | Время завершения процесса синхронизации. |
+| EndTime | Время завершения процесса синхронизации. *Это свойство в настоящее время не используется. См. TimeGenerated.* |
 | ErrorResult | Код ошибки Центра обновления Windows, генерируемый при сбое установки обновления. |
 | InstallationStatus | Возможные состояния установки обновления на клиентском компьютере:<br> `NotStarted` — задание еще не активировано.<br> `FailedToStart` — не удается запустить задание на компьютере.<br> `Failed` — задание запущено, но завершилось с исключением.<br> `InProgress` — задание выполняется.<br> `MaintenanceWindowExceeded` — выполнение не завершилось, но период обслуживания истек.<br> `Succeeded` — задание успешно выполнено.<br> `InstallFailed` — не удалось успешно установить обновление.<br> `NotIncluded`<br> `Excluded` |
 | KBID | Идентификатор статьи базы знаний об обновлении Windows. |
@@ -122,13 +122,13 @@ ms.locfileid: "87450414"
 | ResourceProvider | Поставщик ресурса. |
 | ResourceType | Тип ресурса. |
 | SourceComputerId | Уникальный идентификатор, представляющий исходный компьютер. |
-| SourceSystem | Исходная система записи. Значение — `OperationsManager`. |
-| StartTime | Запланированное время установки обновления. |
-| SubscriptionId | Уникальный идентификатор подписки Azure. | 
+| SourceSystem | Исходная система записи. Значение равно `OperationsManager`. |
+| StartTime | Запланированное время установки обновления. *Это свойство в настоящее время не используется. См. TimeGenerated.* |
+| SubscriptionId | Уникальный идентификатор подписки Azure. |
 | SucceededOnRetry | Значение, указывающее, произошла ли ошибка при первой попытке выполнения обновления и является ли текущая операция повторной попыткой. |
 | TimeGenerated | Дата и время создания записи. |
 | Title | Название обновления. |
-| Тип | Тип обновления. Значение — `UpdateRunProgress`. |
+| Тип | Тип обновления. Значение равно `UpdateRunProgress`. |
 | UpdateId | Уникальный идентификатор обновления программного обеспечения. |
 | VMUUID | Уникальный идентификатор виртуальной машины. |
 | ResourceId | Уникальный идентификатор ресурса, связанного с записью. |
@@ -156,7 +156,7 @@ ms.locfileid: "87450414"
 | RestartPending | Значение true, если ожидается перезапуск, или false в противном случае. |
 | SecurityUpdatesMissing | Число отсутствующих применимых обновлений для системы безопасности.|
 | SourceComputerId | Уникальный идентификатор виртуальной машины. |
-| SourceSystem | Исходная система записи. Значение — `OpsManager`. |
+| SourceSystem | Исходная система записи. Значение равно `OpsManager`. |
 | SubscriptionId | Уникальный идентификатор подписки Azure. |
 | TimeGenerated | Дата и время создания записи. |
 | TotalUpdatesMissing | Общее число отсутствующих применимых обновлений. |

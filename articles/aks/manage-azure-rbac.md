@@ -4,15 +4,15 @@ titleSuffix: Azure Kubernetes Service
 description: Узнайте, как использовать Azure RBAC для авторизации Kubernetes в службе Kubernetes Azure (AKS).
 services: container-service
 ms.topic: article
-ms.date: 07/20/2020
+ms.date: 09/21/2020
 ms.author: jpalma
 author: palma21
-ms.openlocfilehash: c1222f671c95d4475de93b9c9e085a94f864b2ae
-ms.sourcegitcommit: 98854e3bd1ab04ce42816cae1892ed0caeedf461
+ms.openlocfilehash: 15bd917a16c250807d6848f7bc0ffbdba06b4019
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "88003097"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91329097"
 ---
 # <a name="use-azure-rbac-for-kubernetes-authorization-preview"></a>Использование Azure RBAC для авторизации Kubernetes (предварительная версия)
 
@@ -21,14 +21,13 @@ ms.locfileid: "88003097"
 
 В этом документе рассматривается новый подход, обеспечивающий унифицированный контроль и управление доступом к ресурсам Azure, AKS и Kubernetes.
 
-## <a name="before-you-begin"></a>Подготовка
+## <a name="before-you-begin"></a>Перед началом
 
 Возможность управления RBAC для ресурсов Kubernetes из Azure дает возможность управлять RBAC для ресурсов кластера с помощью Azure или собственных механизмов Kubernetes. Если этот параметр включен, субъекты Azure AD будут проверяться исключительно в Azure RBAC, а обычные пользователи Kubernetes и учетные записи служб будут проверены только с помощью Kubernetes RBAC. Дополнительные сведения о проверке подлинности, авторизации и RBAC в AKS см. [здесь](concepts-identity.md#azure-rbac-for-kubernetes-authorization-preview).
 
 [!INCLUDE [preview features callout](./includes/preview/preview-callout.md)]
 
 ### <a name="prerequisites"></a>Предварительные требования 
-- Зарегистрируйтесь для просмотра <https://aka.ms/aad-rbac-sign-up-form> .
 - Убедитесь, что у вас Azure CLI версии 2.9.0 или более поздней.
 - Убедитесь, что `EnableAzureRBACPreview` включен флаг компонента.
 - Убедитесь, что установлено `aks-preview` [расширение CLI][az-extension-add] v 0.4.55 или более поздней версии.
@@ -44,7 +43,7 @@ ms.locfileid: "88003097"
 az feature register --namespace "Microsoft.ContainerService" --name "EnableAzureRBACPreview"
 ```
 
-Необходимо будет получить утверждение после отправки предварительной версии формы, прежде чем можно будет зарегистрировать флаг. Состояние регистрации можно проверить с помощью команды [az feature list][az-feature-list].
+ Состояние регистрации можно проверить с помощью команды [az feature list][az-feature-list].
 
 ```azurecli-interactive
 az feature list -o table --query "[?contains(name, 'Microsoft.ContainerService/EnableAzureRBACPreview')].{Name:name,State:properties.state}"
@@ -188,7 +187,7 @@ az role definition create --role-definition @deploy-view.json
 az role assignment create --role "AKS Deployment Viewer" --assignee <AAD-ENTITY-ID> --scope $AKS_ID
 ```
 
-## <a name="use-azure-rbac-for-kubernetes-authorization-with-kubectl"></a>Использование Azure RBAC для авторизации Kubernetes с помощью`kubectl`
+## <a name="use-azure-rbac-for-kubernetes-authorization-with-kubectl"></a>Использование Azure RBAC для авторизации Kubernetes с помощью `kubectl`
 
 > [!NOTE]
 > Убедитесь, что у вас есть последняя версия kubectl, выполнив следующую команду:
@@ -222,7 +221,7 @@ aks-nodepool1-93451573-vmss000002   Ready    agent   3h6m   v1.15.11
 ```
 
 
-## <a name="use-azure-rbac-for-kubernetes-authorization-with-kubelogin"></a>Использование Azure RBAC для авторизации Kubernetes с помощью`kubelogin`
+## <a name="use-azure-rbac-for-kubernetes-authorization-with-kubelogin"></a>Использование Azure RBAC для авторизации Kubernetes с помощью `kubelogin`
 
 Чтобы разблокировать дополнительные сценарии, такие как неинтерактивные входы в систему, старые `kubectl` версии или использование единого входа в нескольких кластерах без необходимости входа в новый кластер, при этом AKS создал подключаемый модуль exec [`kubelogin`](https://github.com/Azure/kubelogin) .
 
@@ -285,4 +284,4 @@ az group delete -n MyResourceGroup
 [az-extension-update]: /cli/azure/extension#az-extension-update
 [az-feature-list]: /cli/azure/feature#az-feature-list
 [az-feature-register]: /cli/azure/feature#az-feature-register
-[az-aks-install-cli]: /cli/azure/aks?view=azure-cli-latest#az-aks-install-cli
+[az-aks-install-cli]: /cli/azure/aks?view=azure-cli-latest#az-aks-install-cli&preserve-view=true

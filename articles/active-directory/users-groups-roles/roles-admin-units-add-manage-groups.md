@@ -1,5 +1,5 @@
 ---
-title: Добавление, удаление и вывод списка групп в административной единице (предварительная версия) — Azure Active Directory | Документация Майкрософт
+title: Добавление, удаление и перечисление групп в административной единице Azure Active Directory | Документация Майкрософт
 description: Управление группами и их разрешениями ролей в административной единице в Azure Active Directory
 services: active-directory
 documentationcenter: ''
@@ -9,17 +9,17 @@ ms.service: active-directory
 ms.topic: how-to
 ms.subservice: users-groups-roles
 ms.workload: identity
-ms.date: 06/23/2020
+ms.date: 09/22/2020
 ms.author: curtand
 ms.reviewer: anandy
 ms.custom: oldportal;it-pro;
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 76026313eea8c8fbb2f3e55321e2e4ebbe5dcfc7
-ms.sourcegitcommit: cec9676ec235ff798d2a5cad6ee45f98a421837b
+ms.openlocfilehash: 324d0ff0659270c6f2e90c0456ded83344f73936
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85850924"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91265038"
 ---
 # <a name="add-and-manage-groups-in-administrative-units-in-azure-active-directory"></a>Добавление и управление группами в административных единицах в Azure Active Directory
 
@@ -31,7 +31,7 @@ ms.locfileid: "85850924"
 
 ### <a name="azure-portal"></a>Портал Azure
 
-В предварительной версии можно назначать группы для административной единицы только по отдельности. Невозможно выполнить массовое назначение групп административной единице. Вы можете назначить группу административной единице на портале одним из двух способов.
+Группы можно назначать только по отдельности административной единице. В административную единицу нельзя назначить группы. Вы можете назначить группу административной единице на портале одним из двух способов.
 
 1. На странице **Azure AD > Группы**
 

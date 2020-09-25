@@ -6,13 +6,13 @@ ms.author: mamccrea
 ms.reviewer: mamccrea
 ms.service: stream-analytics
 ms.topic: conceptual
-ms.date: 08/25/2020
-ms.openlocfilehash: ef5802d0c5e35b9c12db1f40782ba5f190ad1883
-ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
+ms.date: 09/23/2020
+ms.openlocfilehash: cc09912bb0c9ab553d180ff5cc06fc52c4c5cc0c
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "90907183"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91261068"
 ---
 # <a name="service-bus-topics-output-from-azure-stream-analytics"></a>Разделы служебной шины, выводимые из Azure Stream Analytics
 
@@ -46,6 +46,22 @@ ms.locfileid: "90907183"
 ## <a name="custom-metadata-properties-for-output"></a>Свойства пользовательских метаданных для выходных данных
 
 Столбцы запросов можно прикреплять к исходящим сообщениям как пользовательские свойства. Эти столбцы не переходят в полезные данные. Свойства представлены в виде словаря в выходном сообщении. *Ключ* — это имя столбца, а *значение* — это значение столбца в словаре свойств. Поддерживаются все типы данных Stream Analytics, кроме записи и массива.
+
+В следующем примере поля `DeviceId` и `DeviceStatus` добавляются в метаданные.
+
+1. Используйте следующий запрос:
+
+   ```sql
+   select *, DeviceId, DeviceStatus from iotHubInput
+   ```
+
+1. Настройте `DeviceId,DeviceStatus` в выходных данных столбцы свойств.
+
+   :::image type="content" source="media/service-bus-topics-output/property-columns.png" alt-text="Столбцы свойств":::
+
+На следующем рисунке изображены ожидаемые свойства выходного сообщения, проверенные в EventHub с помощью [обозревателя служебной шины](https://github.com/paolosalvatori/ServiceBusExplorer).
+
+:::image type="content" source="media/service-bus-topics-output/custom-properties.png" alt-text="Настраиваемые свойства события":::
 
 ## <a name="system-properties"></a>Свойства системы
 

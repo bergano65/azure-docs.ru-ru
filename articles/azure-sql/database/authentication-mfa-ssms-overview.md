@@ -13,12 +13,12 @@ ms.author: mireks
 ms.reviewer: vanto
 ms.date: 07/27/2020
 tags: azure-synapse
-ms.openlocfilehash: b2d179121b05d7bf3493937a9ff72e302fd31f3d
-ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
+ms.openlocfilehash: 15289727c3ee4d498fa50058ef98f0ae5b3d1b12
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87281146"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91277807"
 ---
 # <a name="using-multi-factor-azure-active-directory-authentication"></a>Использование многофакторной проверки подлинности Azure Active Directory
 [!INCLUDE[appliesto-sqldb-sqlmi-asa](../includes/appliesto-sqldb-sqlmi-asa.md)]
@@ -29,7 +29,7 @@ ms.locfileid: "87281146"
 
 Для всех функций, описанных в этой статье, используйте по крайней мере версию 17.2 за июль 2017 года. Диалоговое окно "Последнее подключение" должно выглядеть следующим образом:
 
-  ![1mfa-universal-connect](./media/authentication-mfa-ssms-overview/1mfa-universal-connect.png "Заполнит поле имени пользователя.")  
+  ![Снимок экрана: диалоговое окно подключения к серверу в SQL Server Management Studio, в котором отображаются параметры типа сервера, имени сервера и проверки подлинности.](./media/authentication-mfa-ssms-overview/1mfa-universal-connect.png)  
 
 ## <a name="authentication-options"></a>Параметры проверки подлинности
 
@@ -57,11 +57,11 @@ Azure MFA помогает защитить доступ к данным и пр
 1. Откройте подключение в среде SSMS. Введите имя сервера и выберите **Azure Active Directory-Universal с** проверкой подлинности mfa. Добавьте **имя пользователя** , с которым хотите войти.
 1. Выберите поле **Параметры** и перейдите на вкладку **Свойства подключения** . В диалоговом окне **Подключение к базе данных** заполните диалоговое окно для своей базы данных. Установите флажок **Доменное имя AD или идентификатор клиента** и укажите центр аутентификации, введя доменное имя (**contosotest.onmicrosoft.com**) или GUID идентификатора клиента. 
 
-   ![mfa-tenant-ssms](./media/authentication-mfa-ssms-overview/mfa-tenant-ssms.png)
+   ![Снимок экрана: вкладка "Свойства подключения", в которой выделяются параметры подключения к базе данных, доменному имени AD или ИДЕНТИФИКАТОРу клиента.](./media/authentication-mfa-ssms-overview/mfa-tenant-ssms.png)
 
 Если вы используете SSMS 18. x или более поздней версии, имя домена AD или идентификатор клиента больше не требуется для гостевых пользователей, поскольку 18. x или более поздней версии автоматически распознает его.
 
-   ![mfa-tenant-ssms](./media/authentication-mfa-ssms-overview/mfa-no-tenant-ssms.png)
+   ![Снимок экрана: вкладка "Свойства подключения" диалогового окна "соединение с сервером" в s м S. в поле "подключение к базе данных" выбрано значение "MyDatabase".](./media/authentication-mfa-ssms-overview/mfa-no-tenant-ssms.png)
 
 ### <a name="azure-ad-business-to-business-support"></a>Поддержка Azure AD B2B
 

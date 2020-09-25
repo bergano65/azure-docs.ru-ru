@@ -9,14 +9,14 @@ ms.devlang: ''
 ms.topic: conceptual
 author: GithubMirek
 ms.author: mireks
-ms.reviewer: vanto, carlrab
+ms.reviewer: vanto, sstein
 ms.date: 04/23/2020
-ms.openlocfilehash: 943569a16101ac170d01d08250b31ba67c0e590e
-ms.sourcegitcommit: bf1340bb706cf31bb002128e272b8322f37d53dd
+ms.openlocfilehash: 8221c77c0e6adeabe869a088089733d289a2f6ca
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/03/2020
-ms.locfileid: "89434288"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91277953"
 ---
 # <a name="use-azure-active-directory-authentication"></a>Использовать проверку подлинности Azure Active Directory
 
@@ -168,7 +168,7 @@ ms.locfileid: "89434288"
 - Общие сведения о именах входа, пользователях, ролях базы данных и разрешениях в базе данных SQL см. в разделе [имена входа, пользователи, роли базы данных и разрешения](logins-create-manage.md).
 - Дополнительные сведения о субъектах базы данных см. в [этой статье](https://msdn.microsoft.com/library/ms181127.aspx).
 - Дополнительные сведения о ролях баз данных см. в статье [Роли уровня базы данных](https://msdn.microsoft.com/library/ms189121.aspx).
-- Синтаксис создания субъектов-серверов Azure AD (имен входа) для SQL Управляемый экземпляр см. в разделе  [Создание имени входа](/sql/t-sql/statements/create-login-transact-sql?view=azuresqldb-mi-current).
+- Синтаксис создания субъектов-серверов Azure AD (имен входа) для SQL Управляемый экземпляр см. в разделе  [Создание имени входа](/sql/t-sql/statements/create-login-transact-sql?view=azuresqldb-mi-current&preserve-view=true).
 - Дополнительные сведения о правилах брандмауэра см. в статье [Обзор правил брандмауэра базы данных SQL Azure](firewall-configure.md).
 
 <!--Image references-->

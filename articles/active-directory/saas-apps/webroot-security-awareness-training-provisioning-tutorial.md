@@ -2,21 +2,25 @@
 title: Руководство по настройке службы "осведомленность о безопасности корневого каталога" для автоматической подготовки пользователей с помощью Azure Active Directory | Документация Майкрософт
 description: Узнайте, как автоматически подготавливать и отзывать учетные записи пользователей из Azure AD в обучающие материалы по безопасности в корневых каталогах.
 services: active-directory
+documentationcenter: ''
 author: Zhchia
 writer: Zhchia
-manager: CelesteDG
+manager: beatrizd
+ms.assetid: 455f4396-930e-4db5-a167-d3ea6a860a17
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
+ms.tgt_pltfrm: na
+ms.devlang: na
 ms.topic: article
 ms.date: 07/06/2020
 ms.author: Zhchia
-ms.openlocfilehash: 9345aaac306c8c009d6fc0a01c57beed3a22b10b
-ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
+ms.openlocfilehash: 31c0e9a690bde7a52a32fd9194afda76e1aaba8c
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88523496"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91329148"
 ---
 # <a name="tutorial-configure-webroot-security-awareness-training-for-automatic-user-provisioning"></a>Руководство по настройке службы "осведомленность о безопасности корневого каталога" для автоматической подготовки пользователей
 
@@ -61,7 +65,7 @@ ms.locfileid: "88523496"
 
 4. Скопируйте и сохраните **секретный токен**. Это значение будет указано в поле Секретный токен на вкладке Подготовка приложения для обучения безопасности корневого каталога в портал Azure.
 
-5. Нажмите кнопку **Готово**.
+5. Нажмите кнопку **Done**(Готово).
 
     ![Копировать токен секрета](./media/webroot-security-awareness-training-provisioning-tutorial/copy-secret-token.png)
 
@@ -94,11 +98,11 @@ ms.locfileid: "88523496"
 
 3. Выберите вкладку **Подготовка**.
 
-    ![Вкладка "Подготовка"](common/provisioning.png)
+    ![Снимок экрана параметров управления с вызываемым параметром подготовки.](common/provisioning.png)
 
 4. Для параметра **Режим подготовки к работе** выберите значение **Automatic** (Автоматически).
 
-    ![Вкладка "Подготовка"](common/provisioning-automatic.png)
+    ![Снимок экрана: раскрывающийся список режима подготовки с вызываемым автоматическим параметром.](common/provisioning-automatic.png)
 
 5. В разделе **учетные данные администратора** введите `https://awarenessapi.webrootanywhere.com/api/v2/scim` **URL-адрес клиента**. Введите значение секретного токена, полученное ранее на шаге **Секретный токен**. Нажмите кнопку **проверить подключение** , чтобы убедиться, что Azure AD может подключиться к учебному курсу по безопасности веб-корня. В случае сбоя подключения убедитесь, что учетная запись обучения безопасности веб корневого каталога имеет разрешения администратора, и повторите попытку.
 

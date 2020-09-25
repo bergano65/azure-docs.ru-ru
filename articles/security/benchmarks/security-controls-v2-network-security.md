@@ -4,17 +4,17 @@ description: Безопасность сети, производительнос
 author: msmbaldwin
 ms.service: security
 ms.topic: conceptual
-ms.date: 09/13/2020
+ms.date: 09/20/2020
 ms.author: mbaldwin
 ms.custom: security-benchmark
-ms.openlocfilehash: 184416794011d259af3568c81e4648d822a2c4a5
-ms.sourcegitcommit: 94c750edd4d755d6ecee50ac977328098a277479
+ms.openlocfilehash: 9833f63d999ab7c24174853bd37f4e7a76f6dfbf
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/13/2020
-ms.locfileid: "90059439"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91329437"
 ---
-# <a name="security-control-network-security"></a>Управление безопасностью: Сетевая безопасность
+# <a name="security-control-v2-network-security"></a>Управление безопасностью версии 2: Сетевая безопасность
 
 Безопасность сети охватывает элементы управления для защиты и защиты сетей Azure. Сюда входит защита виртуальных сетей, установка частных подключений, предотвращение и устранение внешних атак, а также защита DNS.
 
@@ -30,15 +30,19 @@ ms.locfileid: "90059439"
 
 Используйте Адаптивное усиление защиты сети в центре безопасности Azure, чтобы рекомендовать конфигурации групп безопасности сети, ограничивающие порты и исходные IP-адреса в соответствии со ссылками на правила внешнего сетевого трафика.
 
+Используйте метку Azure для обнаружения использования устаревших небезопасных протоколов, таких как SSL/TLSv1, SMBv1, LM/аутентификация ntlmv1, wDigest, неподписанные привязки LDAP и слабые шифры в Kerberos.
+
 - [Создание группы безопасности сети с правилами безопасности](../../virtual-network/tutorial-filter-network-traffic.md)
 
 - [Развертывание и настройка брандмауэра Azure](../../firewall/tutorial-firewall-deploy-portal.md)
 
 - [Адаптивное усиление защиты сети в центре безопасности Azure](../../security-center/security-center-adaptive-network-hardening.md)
 
+- [Книга незащищенных протоколов Azure Sentinel](../../sentinel/quickstart-get-visibility.md#use-built-in-workbooks)
+
 **Ответственность**: Customer
 
-**Заинтересованные лица по безопасности клиентов**:
+**Заинтересованные лица по безопасности клиентов** (дополнительные[сведения](/azure/cloud-adoption-framework/organize/cloud-security#security-functions)):
 
 - [Архитектура безопасности](/azure/cloud-adoption-framework/organize/cloud-security-architecture) 
 
@@ -50,11 +54,11 @@ ms.locfileid: "90059439"
 
 | Идентификатор Azure | ИДЕНТИФИКАТОРы элементов управления CIS v 7.1 | ИДЕНТИФИКАТОРы для директивы NIST SP800-53 |
 |--|--|--|--|
-| NS-2 | Недоступно | ЦС-3, AC-17, MA-4 |
+| NS-2 | Н/Д | ЦС-3, AC-17, MA-4 |
 
 Используйте Azure ExpressRoute или виртуальную частную сеть Azure (VPN) для создания частных подключений между центрами обработки данных Azure и локальной инфраструктурой в среде совместного размещения. Подключения ExpressRoute не проходят через общедоступный Интернет и обеспечивают повышенную надежность, скорость и задержку, чем обычные подключения к Интернету. Для VPN-подключения типа "точка — сеть" и VPN-подключения типа "сеть — сеть" можно подключить локальные устройства или сети к виртуальной сети, используя любое сочетание параметров VPN и Azure ExpressRoute.
 
-Для совместного подключения нескольких виртуальных сетей в Azure используйте пиринг виртуальных сетей. Сетевой трафик между одноранговыми виртуальными сетями является частным и хранится в магистральной сети Azure. 
+Для совместного подключения нескольких виртуальных сетей в Azure используйте пиринг виртуальных сетей или частную ссылку. Сетевой трафик между одноранговыми виртуальными сетями является частным и хранится в магистральной сети Azure. 
 
 - [Что такое модели подключения ExpressRoute](../../expressroute/expressroute-connectivity-models.md) 
 
@@ -62,9 +66,11 @@ ms.locfileid: "90059439"
 
 - [Пиринг виртуальной сети](../../virtual-network/virtual-network-peering-overview.md)
 
+- [Приватный канал Azure](../../private-link/private-link-service-overview.md)
+
 **Ответственность**: Customer
 
-**Заинтересованные лица по безопасности клиентов**:
+**Заинтересованные лица по безопасности клиентов** (дополнительные[сведения](/azure/cloud-adoption-framework/organize/cloud-security#security-functions)):
 
 - [Архитектура безопасности](/azure/cloud-adoption-framework/organize/cloud-security-architecture) 
 
@@ -88,7 +94,7 @@ ms.locfileid: "90059439"
 
 **Ответственность**: Customer
 
-**Заинтересованные лица по безопасности клиентов**:
+**Заинтересованные лица по безопасности клиентов** (дополнительные[сведения](/azure/cloud-adoption-framework/organize/cloud-security#security-functions)):
 
 - [Архитектура безопасности](/azure/cloud-adoption-framework/organize/cloud-security-architecture) 
 
@@ -108,6 +114,7 @@ ms.locfileid: "90059439"
 -   Используйте возможности брандмауэра веб-приложения (WAF) в шлюзе приложений Azure, в передней дверце Azure и сети доставки содержимого (CDN) Azure для защиты приложений, служб и интерфейсов API от атак уровня приложения. 
 
 -   Защитите свои ресурсы от атак от атак DDoS, включив стандартную защиту от атак DDoS в виртуальных сетях Azure. 
+-   Используйте центр безопасности Azure для обнаружения рисков с несоответствующими настройками, связанными с указанным выше. 
 
 - [Документации по Брандмауэру Azure](/azure/firewall/)
 
@@ -117,7 +124,7 @@ ms.locfileid: "90059439"
 
 **Ответственность**: Customer
 
-**Заинтересованные лица по безопасности клиентов**:
+**Заинтересованные лица по безопасности клиентов** (дополнительные[сведения](/azure/cloud-adoption-framework/organize/cloud-security#security-functions)):
 
 None
 
@@ -139,7 +146,7 @@ None
 
 **Ответственность**: Customer
 
-**Заинтересованные лица по безопасности клиентов**:
+**Заинтересованные лица по безопасности клиентов** (дополнительные[сведения](/azure/cloud-adoption-framework/organize/cloud-security#security-functions)):
 
 - [Архитектура безопасности](/azure/cloud-adoption-framework/organize/cloud-security-architecture) 
 
@@ -165,7 +172,7 @@ None
 
 **Ответственность**: Customer
 
-**Заинтересованные лица по безопасности клиентов**:
+**Заинтересованные лица по безопасности клиентов** (дополнительные[сведения](/azure/cloud-adoption-framework/organize/cloud-security#security-functions)):
 
 - [Архитектура безопасности](/azure/cloud-adoption-framework/organize/cloud-security-architecture) 
 
@@ -177,7 +184,7 @@ None
 
 | Идентификатор Azure | ИДЕНТИФИКАТОРы элементов управления CIS v 7.1 | ИДЕНТИФИКАТОРы для директивы NIST SP800-53 |
 |--|--|--|--|
-| NS-7 | Недоступно | SC-20, SC-21 |
+| NS-7 | Н/Д | SC-20, SC-21 |
 
 Следуйте рекомендациям по обеспечению безопасности DNS, чтобы устранить распространенные атаки, такие как висячие DNS, атаки несанкционированного доступа к DNS, неустранение и подмена DNS и т. д. 
 
@@ -191,7 +198,7 @@ None
 
 **Ответственность**: Customer
 
-**Заинтересованные лица по безопасности клиентов**:
+**Заинтересованные лица по безопасности клиентов** (дополнительные[сведения](/azure/cloud-adoption-framework/organize/cloud-security#security-functions)):
 
 - [Архитектура безопасности](/azure/cloud-adoption-framework/organize/cloud-security-architecture) 
 

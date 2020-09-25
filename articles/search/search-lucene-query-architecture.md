@@ -8,12 +8,12 @@ ms.author: jlembicz
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 11/04/2019
-ms.openlocfilehash: c2d5b4758f80d07516500c663762d7c8607e2a30
-ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
+ms.openlocfilehash: 50a1656fcb92d9777d4a9476ef2a4c1fd2f2efc6
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88917964"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91329488"
 ---
 # <a name="full-text-search-in-azure-cognitive-search"></a>Полнотекстовый поиск в Azure Когнитивный поиск
 
@@ -51,7 +51,7 @@ ms.locfileid: "88917964"
 
 В следующем примере показан поисковый запрос, который можно отправить в Azure Когнитивный поиск с помощью [REST API](/rest/api/searchservice/search-documents).  
 
-~~~~
+```
 POST /indexes/hotels/docs/search?api-version=2020-06-30
 {
     "search": "Spacious, air-condition* +\"Ocean view\"",
@@ -61,7 +61,7 @@ POST /indexes/hotels/docs/search?api-version=2020-06-30
     "orderby": "geo.distance(location, geography'POINT(-159.476235 22.227659)')", 
     "queryType": "full" 
 }
-~~~~
+```
 
 Для этого запроса, предназначенного для поиска отелей, поисковая система выполняет следующее:
 
@@ -76,9 +76,9 @@ POST /indexes/hotels/docs/search?api-version=2020-06-30
 
 Как было отмечено, строка запроса — это первая строка. 
 
-~~~~
+```
  "search": "Spacious, air-condition* +\"Ocean view\"", 
-~~~~
+```
 
 Средство синтаксического анализа запросов отделяет операторы (`*` и `+` в нашем примере) от поисковых терминов, а затем заново формирует поисковый запрос, создавая *вложенные запросы* поддерживаемого типа: 
 
@@ -104,9 +104,9 @@ POST /indexes/hotels/docs/search?api-version=2020-06-30
 
 Если используется значение по умолчанию `searchMode=any`, разделителем пространства между spacious и air-condition является OR (`||`). Вот как выглядит пример текста запроса в таком случае: 
 
-~~~~
+```
 Spacious,||air-condition*+"Ocean view" 
-~~~~
+```
 
 Явные операторы, например `+` в `+"Ocean view"`, являются однозначными в конструкции логического запроса (для *обязательного* соответствия). Но как же будут интерпретироваться оставшиеся термины: spacious и air-condition? Нужно ли поисковой системе искать соответствия, где содержатся все термины: ocean view, *spacious**и* air-condition? Или же нужно найти ocean view и *какой-либо* из оставшихся терминов? 
 
@@ -114,9 +114,9 @@ Spacious,||air-condition*+"Ocean view"
 
 Предположим, что мы задали параметр `searchMode=all`. В этом случае пробел интерпретируется как оператор and. Каждый из оставшихся терминов обязательно должен находиться в документе для соответствия запросу. Результирующий пример запроса будет интерпретирован следующим образом: 
 
-~~~~
+```
 +Spacious,+air-condition*+"Ocean view"
-~~~~
+```
 
 Измененное дерево запроса в этом случае будет выглядеть, как показано ниже. Соответствующий документ здесь представляет пересечение всех трех вложенных запросов. 
 
@@ -152,16 +152,16 @@ Spacious,||air-condition*+"Ocean view"
 
 Поведение анализатора можно проверить с помощью [API анализа](/rest/api/searchservice/test-analyzer). Укажите текст, который необходимо проанализировать, чтобы увидеть, какие термины создаст анализатор. Например, чтобы увидеть, каким образом стандартный анализатор будет обрабатывать текст "air-condition", вы можете использовать запрос ниже.
 
-~~~~
+```json
 {
     "text": "air-condition",
     "analyzer": "standard"
 }
-~~~~
+```
 
 Стандартный анализатор разбивает входной текст на два следующих маркера, создавая для них атрибуты — startOffset и endOffset (используемые для выделения совпадений), а также атрибут position (для поиска совпадения фразы).
 
-~~~~
+```json
 {
   "tokens": [
     {
@@ -178,7 +178,7 @@ Spacious,||air-condition*+"Ocean view"
     }
   ]
 }
-~~~~
+```
 
 <a name="exceptions"></a>
 
@@ -192,7 +192,7 @@ Spacious,||air-condition*+"Ocean view"
 
 Извлечение документа относится к поиску документов с совпадающими терминами в индексе. Лучше всего этот этап рассмотреть на примере. Начнем с индекса отелей. Итак, у нас есть следующая схема: 
 
-~~~~
+```json
 {
     "name": "hotels",
     "fields": [
@@ -201,11 +201,11 @@ Spacious,||air-condition*+"Ocean view"
         { "name": "description", "type": "Edm.String", "searchable": true }
     ] 
 } 
-~~~~
+```
 
 Предположим, что этот индекс содержит следующие четыре документа: 
 
-~~~~
+```json
 {
     "value": [
         {
@@ -230,7 +230,7 @@ Spacious,||air-condition*+"Ocean view"
         }
     ]
 }
-~~~~
+```
 
 **Как индексируются термины**
 
@@ -321,10 +321,12 @@ Spacious,||air-condition*+"Ocean view"
 ### <a name="scoring-example"></a>Пример оценки
 
 Вспомните три документа, которые соответствовали примеру запроса:
-~~~~
+
+```
 search=Spacious, air-condition* +"Ocean view"  
-~~~~
-~~~~
+```
+
+```json
 {
   "value": [
     {
@@ -347,7 +349,7 @@ search=Spacious, air-condition* +"Ocean view"
     }
   ]
 }
-~~~~
+```
 
 Документ 1 лучше всего соответствовал запросу, так как в его поле описания содержится и термин *spacious*, и обязательная фраза *ocean view*. Следующие два документа содержат только фразу *ocean view*. Наверное, неожиданно, что оценка релевантности для документов 2 и 3 различна, хотя они одинаковым образом соответствовали запросу. Так произошло из-за того, что формула оценки не ограничивается лишь компонентом TF-IDF. В этом случае документу 3 была присвоена оценка выше, так как его описание короче. Ознакомьтесь с [практической формулой оценки Lucene](https://lucene.apache.org/core/6_6_1/core/org/apache/lucene/search/similarities/TFIDFSimilarity.html), чтобы узнать, как длина поля и другие факторы влияют на оценку релевантности.
 
@@ -391,7 +393,7 @@ search=Spacious, air-condition* +"Ocean view"
 
 + [Настройте пользовательские анализаторы](/rest/api/searchservice/custom-analyzers-in-azure-search) для минимальной или специализированной обработки определенных полей.
 
-## <a name="see-also"></a>См. также
+## <a name="see-also"></a>См. также раздел
 
 [Поиск документов REST API](/rest/api/searchservice/search-documents) 
 

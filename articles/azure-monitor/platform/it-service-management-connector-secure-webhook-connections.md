@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: nolavime
 ms.author: v-jysur
 ms.date: 09/08/2020
-ms.openlocfilehash: 39f277fffbb9a76a4be4bfa8aaedeaf3479a989f
-ms.sourcegitcommit: 1fe5127fb5c3f43761f479078251242ae5688386
+ms.openlocfilehash: 9b6180f2480d8a92dc0ebdd2cad474a9eef3cbe4
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/14/2020
-ms.locfileid: "90068889"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91328859"
 ---
 # <a name="connect-azure-to-itsm-tools-by-using-secure-export"></a>Подключение Azure к средствам ITSM с помощью безопасного экспорта
 
@@ -68,7 +68,7 @@ ITSMC использует учетные данные пользователя 
 1. Выберите **задать** для **URI идентификатора приложения**.
 
    [![Снимок экрана с параметром для задания U R I для приложения I D.](media/it-service-management-connector-secure-webhook-connections/azure-ad.png)](media/it-service-management-connector-secure-webhook-connections/azure-ad-expand.png#lightbox)
-1. Выберите **Сохранить**.
+1. Щелкните **Сохранить**.
 
 ## <a name="create-a-secure-webhook-action-group"></a>Создание безопасной группы действий веб-перехватчика
 
@@ -107,16 +107,18 @@ ITSMC использует учетные данные пользователя 
 
 В следующих разделах содержатся сведения о подключении продукта Хеликс BMC и безопасном экспорте в Azure.
 
-### <a name="prerequisites"></a>Предварительные условия
+### <a name="prerequisites"></a>Предварительные требования
 
 Убедитесь, что выполнены следующие предварительные требования:
 
 * Служба Azure AD зарегистрирована.
-* У вас установлена поддерживаемая версия BMC Хеликс для управления облачными службами (версии 20,02 или более поздней).
+* У вас установлена поддерживаемая версия BMC Хеликс для управления облачными службами (версии 19,08 или более поздней).
 
 ### <a name="configure-the-bmc-helix-connection"></a>Настройка подключения Хеликс BMC
 
-1. Следуйте инструкциям в разделе [Включение предварительно собранной интеграции с Azure Monitor для версии 20,02](https://docs.bmc.com/docs/multicloud/enabling-prebuilt-integration-with-azure-monitor-879728195.html).
+1. Следуйте инструкциям, аккоринг к версии:
+   * [Включение предварительно построенной интеграции с Azure Monitor для версии 20,02](https://docs.bmc.com/docs/multicloud/enabling-prebuilt-integration-with-azure-monitor-879728195.html).
+   * [Включение предварительно построенной интеграции с Azure Monitor для версии 19,11](https://docs.bmc.com/docs/multicloudprevious/enabling-prebuilt-integration-with-azure-monitor-904157623.html).
 
 1. В рамках настройки подключения в BMC Хеликс перейдите к экземпляру BMC Integration и выполните следующие инструкции:
 
@@ -138,4 +140,4 @@ ITSMC использует учетные данные пользователя 
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-* [Создание рабочих элементов ITSM из оповещений Azure](./itsmc-overview.md#create-itsm-work-items-from-azure-alerts)
+* [Создание рабочих элементов ITSM из оповещений Azure](https://docs.microsoft.com/azure/azure-monitor/platform/itsmc-overview)
