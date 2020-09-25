@@ -4,12 +4,12 @@ description: В этой статье содержатся сведения об
 ms.topic: conceptual
 ms.date: 06/03/2020
 ms.asset: 0c4127f2-d936-48ef-b430-a9198e425d81
-ms.openlocfilehash: 884e850255856b39ccbe52544a47a7453e975960
-ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
+ms.openlocfilehash: 87bc415c125a387d98ac88255d77fb1867564acf
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89017946"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91254267"
 ---
 # <a name="release-notes-for-microsoft-azure-backup-server"></a>Заметки о выпуске Microsoft Azure Backup Server
 
@@ -60,7 +60,7 @@ ms.locfileid: "89017946"
 4. [Установите](/sql/ssms/download-sql-server-management-studio-ssms) SQL Server Management Studio (SSMS).
 5. Настройте отчетность с использованием параметров, как описано в разделе о [настройке SSRS с помощью SQL 2017](./backup-azure-microsoft-azure-backup.md#upgrade-mabs).
 6. [Установите](backup-azure-microsoft-azure-backup.md) MABS версии 3.
-7. [Восстановите](/sql/relational-databases/backup-restore/restore-a-database-backup-using-ssms) SQL с помощью SSMS и запустите средство DPM-Sync, как описано [здесь](/system-center/dpm/back-up-the-dpm-server?view=sc-dpm-2019#using-dpmsync).
+7. [Восстановите](/sql/relational-databases/backup-restore/restore-a-database-backup-using-ssms) SQL с помощью SSMS и запустите средство DPM-Sync, как описано [здесь](/system-center/dpm/back-up-the-dpm-server#using-dpmsync).
 8. Обновите свойство DataBaseVersion в таблице dbo.tbl_DLS_GlobalSetting, используя следующую команду:
 
     ```sql
@@ -97,7 +97,7 @@ ms.locfileid: "89017946"
 
     Последние файлы отчетов можно найти по пути `<MABS Installation Directory>\Program Files\Microsoft Azure Backup Server\DPM\DPM\bin\DpmReports`
 
-    Пример: `C:\Program Files\Microsoft Azure Backup Server\DPM\DPM\bin\DpmReports`
+    Например: `C:\Program Files\Microsoft Azure Backup Server\DPM\DPM\bin\DpmReports`
 
     ![Замена файлов последними файлами отчетов](./media/backup-mabs-release-notes-v3/replace-files.png)
 

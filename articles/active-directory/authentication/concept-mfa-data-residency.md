@@ -5,18 +5,18 @@ services: multi-factor-authentication
 ms.service: active-directory
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 09/15/2020
+ms.date: 09/24/2020
 ms.author: iainfou
 author: iainfoulds
 manager: daveba
 ms.reviewer: inbarc
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 0e5d8dc60ee0a1f4742382b1cec8ef3ed60e8fb3
-ms.sourcegitcommit: bdd5c76457b0f0504f4f679a316b959dcfabf1ef
+ms.openlocfilehash: 1b8673dd98ab66714c54720ea1d909a90e117c18
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "90970660"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91266434"
 ---
 # <a name="data-residency-and-customer-data-for-azure-multi-factor-authentication"></a>Место расположения данных и данные клиентов для многофакторной идентификации Azure
 
@@ -28,7 +28,7 @@ ms.locfileid: "90970660"
 
 * Многофакторная идентификация, использующая телефонные звонки, исходит от центров обработки данных США и направляется глобальными поставщиками.
 * Запросы проверки подлинности пользователей общего назначения из других регионов, таких как Европа или Австралия, в настоящее время обрабатываются в зависимости от местонахождения пользователя.
-* Push-уведомления, использующие приложение Microsoft Authenticator, берут региональные центры обработки данных на основе расположения пользователя.
+* Push-уведомления, использующие приложение Microsoft Authenticator, в настоящее время обрабатываются в региональных центрах обработки данных на основе расположения пользователя.
     * Службы, зависящие от поставщика устройств, такие как push-уведомления Apple, могут находиться за пределами расположения пользователя.
 
 ## <a name="personal-data-stored-by-azure-multi-factor-authentication"></a>Персональные данные, хранящиеся в службе многофакторной идентификации Azure

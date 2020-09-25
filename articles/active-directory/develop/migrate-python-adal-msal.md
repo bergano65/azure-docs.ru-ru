@@ -1,8 +1,8 @@
 ---
 title: Инструкции по миграции для Python ADAL в MSAL | Службы
+titleSuffix: Microsoft identity platform
 description: Узнайте, как перенести приложение Python для библиотеки проверки подлинности Azure Active Directory (ADAL) в библиотеку проверки подлинности Майкрософт (MSAL) для Python.
 services: active-directory
-titleSuffix: Microsoft identity platform
 author: rayluo
 manager: CelesteDG
 ms.service: active-directory
@@ -12,14 +12,14 @@ ms.tgt_pltfrm: Python
 ms.workload: identity
 ms.date: 11/11/2019
 ms.author: rayluo
-ms.reviewer: rayluo, nacanuma, twhitney
+ms.reviewer: rayluo, nacanuma
 ms.custom: aaddev, devx-track-python
-ms.openlocfilehash: 8dcd2b55d177c533336842293b2aedaef6b4222c
-ms.sourcegitcommit: b8702065338fc1ed81bfed082650b5b58234a702
+ms.openlocfilehash: 574615a6b6e4b399605ca1863c0f764f814b2bd9
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/11/2020
-ms.locfileid: "88119918"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91258308"
 ---
 # <a name="adal-to-msal-migration-guide-for-python"></a>Руководством по миграции ADAL в MSAL для Python
 
@@ -50,7 +50,7 @@ ADAL Python получает маркеры для ресурсов, но MSAL P
 
 ### <a name="error-handling"></a>Обработка ошибок
 
-Azure Active Directory Библиотека проверки подлинности (ADAL) для Python использует исключение `AdalError` , чтобы указать, что возникла проблема. MSAL для Python обычно использует коды ошибок. Дополнительные сведения см. в разделе [MSAL for Python Error обработка ошибок](./msal-handling-exceptions.md?tabs=python).
+Azure Active Directory Библиотека проверки подлинности (ADAL) для Python использует исключение `AdalError` , чтобы указать, что возникла проблема. MSAL для Python обычно использует коды ошибок. Дополнительные сведения см. в разделе  [MSAL for Python Error обработка ошибок](./msal-handling-exceptions.md?tabs=python).
 
 ### <a name="api-changes"></a>Изменения API
 

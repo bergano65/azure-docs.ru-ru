@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.date: 09/03/2020
 ms.author: aahi
 ms.custom: seodec18
-ms.openlocfilehash: 674c906a4316ec92101f3f2028a57aa82db3f504
-ms.sourcegitcommit: bdd5c76457b0f0504f4f679a316b959dcfabf1ef
+ms.openlocfilehash: a2469768c2207210e17035a67d4b05fb0cc6bb6c
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "90981997"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91254182"
 ---
 # <a name="configure-computer-vision-docker-containers"></a>Настройка Компьютерное зрение контейнеров DOCKER
 
@@ -62,7 +62,7 @@ ms.locfileid: "90981997"
 
 |Обязательно| Имя | Тип данных | Описание |
 |--|------|-----------|-------------|
-|Да| `Billing` | Строка | URI конечной точки выставления счетов<br><br>Пример:<br>`Billing=https://westcentralus.api.cognitive.microsoft.com/vision/v1.0` |
+|Да| `Billing` | Строка | URI конечной точки выставления счетов<br><br>Пример.<br>`Billing=https://westcentralus.api.cognitive.microsoft.com/vision/v1.0` |
 
 ## <a name="eula-setting"></a>Параметр Eula
 
@@ -90,8 +90,8 @@ ms.locfileid: "90981997"
 
 |Необязательно| Имя | Тип данных | Описание |
 |-------|------|-----------|-------------|
-|Не разрешено| `Input` | Тип String | Контейнеры API компьютерного зрения не используют этот элемент.|
-|Необязательный| `Output` | Строка | Цель выходного подключения. Значение по умолчанию — `/output`. Это расположение файлов журналов. Сюда входят журналы контейнера. <br><br>Пример:<br>`--mount type=bind,src=c:\output,target=/output`|
+|Не разрешено| `Input` | Строка | Контейнеры API компьютерного зрения не используют этот элемент.|
+|Необязательный| `Output` | Строка | Цель выходного подключения. Значение по умолчанию — `/output`. Это расположение файлов журналов. Сюда входят журналы контейнера. <br><br>Пример.<br>`--mount type=bind,src=c:\output,target=/output`|
 
 ## <a name="example-docker-run-commands"></a>Примеры команд docker run
 
@@ -124,7 +124,7 @@ ms.locfileid: "90981997"
 
 ```bash
 docker run --rm -it -p 5000:5000 --memory 18g --cpus 8 \
-mcr.microsoft.com/azure-cognitive-services/vision/read:3.0 \
+mcr.microsoft.com/azure-cognitive-services/vision/read:3.0-preview \
 Eula=accept \
 Billing={ENDPOINT_URI} \
 ApiKey={API_KEY}
@@ -134,7 +134,7 @@ ApiKey={API_KEY}
 
 ```bash
 docker run --rm -it -p 5000:5000 --memory 18g --cpus 8 \
-mcr.microsoft.com/azure-cognitive-services/vision/read:3.0 \
+mcr.microsoft.com/azure-cognitive-services/vision/read:3.0-preview \
 Eula=accept \
 Billing={ENDPOINT_URI} \
 ApiKey={API_KEY}

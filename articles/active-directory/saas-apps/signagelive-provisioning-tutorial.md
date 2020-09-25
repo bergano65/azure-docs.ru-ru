@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: article
 ms.date: 07/23/2019
 ms.author: Zhchia
-ms.openlocfilehash: 7bf9e7a4c17134a47cbaafbc2bde25d467c6a978
-ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
+ms.openlocfilehash: f6bb119e5e82ce642722d0f739177fc1e4c06c25
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88548554"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91255740"
 ---
 # <a name="tutorial-configure-signagelive--for-automatic-user-provisioning"></a>Учебник. Настройка Сигнажеливе для автоматической подготовки пользователей
 
@@ -95,11 +95,11 @@ ms.locfileid: "88548554"
 
 3. Выберите вкладку **Подготовка**.
 
-    ![Вкладка "Подготовка"](common/provisioning.png)
+    ![Снимок экрана параметров управления с вызываемым параметром подготовки.](common/provisioning.png)
 
 4. Для параметра **Режим подготовки к работе** выберите значение **Automatic** (Автоматически).
 
-    ![Вкладка "Подготовка"](common/provisioning-automatic.png)
+    ![Снимок экрана: раскрывающийся список режима подготовки с вызываемым автоматическим параметром.](common/provisioning-automatic.png)
 
 5. В разделе Учетные данные администратора введите ` https://samlapi.signagelive.com/scim/v2` **URL-адрес клиента**. В поле **секретный токен** введите значение **маркера носителя** , предоставленное командой инженерной разработки. Щелкните **проверить подключение** , чтобы убедиться, что Azure AD может подключиться к сигнажеливе. Если подключение не выполняется, убедитесь, что у учетной записи Сигнажеливе есть разрешения администратора, и повторите попытку.
     ![URL-адрес клиента + токен](common/provisioning-testconnection-tenanturltoken.png)
@@ -108,23 +108,23 @@ ms.locfileid: "88548554"
 
     ![Почтовое уведомление](common/provisioning-notification-email.png)
 
-7. Нажмите **Сохранить**.
+7. Выберите команду **Сохранить**.
 
 8. В разделе **сопоставления** выберите **синхронизировать Azure Active Directory пользователей с сигнажеливе**.
 
-    ![Сопоставления пользователей сигнажеливе](media/signagelive-provisioning-tutorial/usermapping.png)
+    ![Снимок экрана раздела "сопоставления" с вызываемым параметром Synchronize Azure Active Directory Users to Сигнажеливе.](media/signagelive-provisioning-tutorial/usermapping.png)
 
 9. Проверьте атрибуты пользователя, которые синхронизированы из Azure AD в Сигнажеливе в разделе **сопоставление атрибутов** . Атрибуты, выбранные как свойства **Matching** , используются для сопоставления учетных записей пользователей в сигнажеливе для операций обновления. Нажмите кнопку **Сохранить**, чтобы зафиксировать все изменения.
 
-    ![Атрибуты пользователя сигнажеливе](media/signagelive-provisioning-tutorial/userattribute.png)
+    ![Снимок экрана раздела "сопоставления атрибутов" с семь отображаемых сопоставлений.](media/signagelive-provisioning-tutorial/userattribute.png)
 
 10. В разделе **сопоставления** выберите **синхронизировать Azure Active Directory группу с сигнажеливе**.
 
-    ![Сопоставления пользователей сигнажеливе](media/signagelive-provisioning-tutorial/groupmapping.png)
+    ![Снимок экрана раздела "сопоставления" с вызываемым параметром Synchronize Azure Active Directory Group to Сигнажеливе.](media/signagelive-provisioning-tutorial/groupmapping.png)
 
 11. Проверьте атрибуты группы, которые синхронизированы из Azure AD в Сигнажеливе в разделе **сопоставление атрибутов** . Атрибуты, выбранные как свойства **Matching** , используются для сопоставления учетных записей групп в сигнажеливе для операций обновления. Нажмите кнопку **Сохранить**, чтобы зафиксировать все изменения.
 
-    ![Атрибуты пользователя сигнажеливе](media/signagelive-provisioning-tutorial/groupattribute.png)
+    ![Снимок экрана раздела "сопоставления атрибутов" с тремя отображаемыми сопоставлениями.](media/signagelive-provisioning-tutorial/groupattribute.png)
 
 12. Чтобы настроить фильтры области, ознакомьтесь со следующими инструкциями, предоставленными в [руководстве по фильтрам области](../app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 

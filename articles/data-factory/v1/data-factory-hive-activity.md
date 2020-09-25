@@ -1,6 +1,6 @@
 ---
 title: Преобразование данных с помощью действия Hive — Azure
-description: Узнайте, как с помощью действия Hive в фабрике данных Azure выполнять запросы Hive к кластеру HDInsight по требованию или собственному кластеру HDInsight.
+description: Узнайте, как использовать действие Hive в фабрике данных Azure версии 1 для выполнения запросов Hive в вашем кластере HDInsight по запросу или в собственном проекте.
 services: data-factory
 documentationcenter: ''
 author: djpmsft
@@ -12,12 +12,12 @@ ms.service: data-factory
 ms.workload: data-services
 ms.topic: conceptual
 ms.date: 01/10/2018
-ms.openlocfilehash: d153f8c316cbb76e063f07f7f823c8d9c4a21f87
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 41f570f93e95e9801b08c06cacc0423b1bf3b8e5
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "74703354"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91252789"
 ---
 # <a name="transform-data-using-hive-activity-in-azure-data-factory"></a>Преобразование данных с помощью действия Hive в фабрике данных Azure 
 > [!div class="op_single_selector" title1="Действия преобразования"]
@@ -80,7 +80,7 @@ ms.locfileid: "74703354"
 | Ввод данных |Входные данные, используемые действием Hive |Нет |
 | outputs |Выходные данные, создаваемые действием Hive |Да |
 | linkedServiceName |Ссылка на кластер HDInsight, зарегистрированный в качестве связанной службы в фабрике данных. |Да |
-| скрипт |Указывается встроенный сценарий Hive. |Нет |
+| скрипт |Указывается встроенный сценарий Hive. |нет |
 | scriptPath |Путь к файлу сценария Hive в хранилище BLOB-объектов Azure. Можно использовать либо свойство script, либо свойство scriptPath, но не оба сразу. В имени файла учитывается регистр знаков. |Нет |
 | defines |Параметры в виде пары "ключ-значение", ссылки на которые указываются в сценарии Hive с помощью элемента hiveconf. |Нет |
 

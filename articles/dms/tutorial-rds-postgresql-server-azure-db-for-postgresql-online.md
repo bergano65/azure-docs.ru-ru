@@ -10,14 +10,14 @@ ms.reviewer: craigg
 ms.service: dms
 ms.workload: data-services
 ms.custom: seo-lt-2019
-ms.topic: article
+ms.topic: tutorial
 ms.date: 04/11/2020
-ms.openlocfilehash: 725b466a42e1e232d35bd7bd70c8943a254b026f
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
-ms.translationtype: MT
+ms.openlocfilehash: 627c03409b0808ff2bcdbb24e961800e944dcfc8
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87087702"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91291305"
 ---
 # <a name="tutorial-migrate-rds-postgresql-to-azure-db-for-postgresql-online-using-dms"></a>Руководство. Миграция RDS PostgreSQL в базу данных Azure для PostgreSQL Online с помощью DMS
 
@@ -65,9 +65,9 @@ ms.locfileid: "87087702"
 2. Используйте имя главного пользователя, чтобы подключиться к источнику из Azure Database Migration Service. Если вы используете учетную запись, отличную от учетной записи главного пользователя, она должна иметь роли rds_superuser и rds_replication. Роль rds_replication предоставляет разрешения на управление логическими слотами и потоковую передачу данных через логические слоты.
 3. Создайте группу параметров со следующей конфигурацией:
 
-    А. Для параметра rds.logical_replication в группе параметров базы данных задайте значение 1.
+    а. Для параметра rds.logical_replication в группе параметров базы данных задайте значение 1.
 
-    Б. max_wal_senders = [количество параллельных задач]. Параметр max_wal_senders задает число параллельных задач, которые можно выполнить, рекомендуемое значение — 10 задач.
+    b. max_wal_senders = [количество параллельных задач]. Параметр max_wal_senders задает число параллельных задач, которые можно выполнить, рекомендуемое значение — 10 задач.
 
     c. max_replication_slots = [количество слотов], рекомендуемое значение — до 5 слотов.
 
@@ -100,7 +100,7 @@ ms.locfileid: "87087702"
     psql -h hostname -U db_username -d db_name < your_schema.sql
     ```
 
-    Например.
+    Пример:
 
     ```
     psql -h mypgserver-20170401.postgres.database.azure.com  -U postgres -d dvdrental < dvdrentalSchema.sql

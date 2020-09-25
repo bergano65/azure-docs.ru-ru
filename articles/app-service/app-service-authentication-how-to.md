@@ -4,12 +4,12 @@ description: Научитесь настраивать функцию прове
 ms.topic: article
 ms.date: 07/08/2020
 ms.custom: seodec18
-ms.openlocfilehash: 2fa2e3463e057062ba743c2f6989aa571c85c983
-ms.sourcegitcommit: 648c8d250106a5fca9076a46581f3105c23d7265
+ms.openlocfilehash: a5d81d99759c972d91f66ec75c482e08826a8e07
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "88962474"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91255219"
 ---
 # <a name="advanced-usage-of-authentication-and-authorization-in-azure-app-service"></a>Расширенное использование проверки подлинности и авторизации в Службе приложений Azure
 
@@ -64,7 +64,7 @@ Content-Type: application/json
 {"id_token":"<token>","access_token":"<token>"}
 ```
 
-Формат токена незначительно отличается в соответствии с поставщиком. Дополнительные сведения см. в таблице, приведенной ниже.
+Формат токена незначительно отличается в соответствии с поставщиком. Подробности см. в следующей таблице:
 
 | Значение поставщика | Требуется в тексте запроса | Комментарии |
 |-|-|-|
@@ -443,7 +443,7 @@ az webapp auth update --resource-group <group_name> --name <app_name> --token-re
                 }
             },
             "preserveUrlFragmentsForLogins": <true|false>,
-            "allowedExternalRedirectUrls": [
+            "allowedExternalRedirectUri": [
                 "https://uri1.azurewebsites.net/",
                 "https://uri2.azurewebsites.net/"
             ],
@@ -532,7 +532,7 @@ az webapp auth update --name <my_app_name> \
 
 Эту команду можно выполнить в [Azure Cloud Shell](../cloud-shell/overview.md), выбрав **Попробовать** в предыдущем примере кода. Также можно использовать [Azure CLI локально](/cli/azure/install-azure-cli) для выполнения этой команды после выполнения команды [az login](/cli/azure/reference-index#az-login) для входа.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Руководство. Сквозная аутентификация и авторизация пользователей](tutorial-auth-aad.md)

@@ -4,12 +4,12 @@ description: Отслеживайте вызовы зависимостей из
 ms.topic: conceptual
 ms.date: 08/26/2020
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 3d98fe91994c992d11fc58e3fec42d1796c0c966
-ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
+ms.openlocfilehash: df13042656aa077b30bf144aab0a47d9fc0a0662
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88936543"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91263935"
 ---
 # <a name="dependency-tracking-in-azure-application-insights"></a>Отслеживание зависимостей в Azure Application Insights 
 
@@ -21,7 +21,7 @@ Application Insights пакеты SDK для .NET и .NET Core входят в �
 
  `DependencyTrackingTelemetryModule` в настоящее время отслеживает следующие зависимости автоматически:
 
-|Зависимости |Сведения|
+|Зависимости |Подробности|
 |---------------|-------|
 |HTTP/HTTPS | Локальные или удаленные вызовы HTTP/HTTPS |
 |Вызовы WCF| Отслеживание выполняется автоматически только при использовании привязок на основе HTTP.|
@@ -101,9 +101,10 @@ services.ConfigureTelemetryModule<DependencyTrackingTelemetryModule>((module, o)
 | Платформа | Шаг (ы), необходимый для получения полного SQL-запроса |
 | --- | --- |
 | Веб-приложение Azure |На панели управления веб-приложения [откройте колонку Application Insights](../../azure-monitor/app/azure-web-apps.md) и включите команды SQL в разделе .NET. |
-| Сервер IIS (виртуальная машина Azure, локальная сеть и т. д.) | Либо используйте пакет NuGet [Microsoft. Data. SqlClient](https://www.nuget.org/packages/Microsoft.Data.SqlClient) , либо используйте модуль монитор состояния PowerShell, чтобы [установить модуль инструментирования](../../azure-monitor/app/status-monitor-v2-api-reference.md) и перезапустить службы IIS. |
+| Сервер IIS (виртуальная машина Azure, локальная сеть и т. д.) | Либо используйте пакет NuGet [Microsoft. Data. SqlClient](https://www.nuget.org/packages/Microsoft.Data.SqlClient) , либо используйте модуль монитор состояния PowerShell, чтобы [установить модуль инструментирования](../../azure-monitor/app/status-monitor-v2-api-reference.md#enable-instrumentationengine) и перезапустить службы IIS. |
 | Облачная служба Azure | Добавление [задачи запуска для установки статусмонитор](../../azure-monitor/app/cloudservices.md#set-up-status-monitor-to-collect-full-sql-queries-optional) <br> Приложение следует подключить к пакету SDK для ApplicationInsights во время сборки, установив пакеты NuGet для приложений [ASP.NET](./asp-net.md) или [ASP.NET Core](./asp-net-core.md) |
 | IIS Express | Используйте пакет NuGet [Microsoft. Data. SqlClient](https://www.nuget.org/packages/Microsoft.Data.SqlClient) .
+| Веб-задания Azure | Используйте пакет NuGet [Microsoft. Data. SqlClient](https://www.nuget.org/packages/Microsoft.Data.SqlClient) .
 
 В дополнение к описанным выше действиям для платформы, **необходимо явно включить коллекцию команд SQL** , изменив файл applicationInsights.config следующим образом:
 

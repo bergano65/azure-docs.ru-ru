@@ -12,12 +12,12 @@ ms.workload: identity
 ms.date: 07/15/2020
 ms.author: jmprieur
 ms.custom: aaddev
-ms.openlocfilehash: 5953e5d5f6bc50c913c3e92aa92775c34c0fd170
-ms.sourcegitcommit: 8791f69d44150767807d215cafc4076f3ed43f9f
+ms.openlocfilehash: 613ba527c8f86257dd271d3cc9e43c97fc475068
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89512340"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91257458"
 ---
 # <a name="protected-web-api-code-configuration"></a>Защищенный веб-API: конфигурация кода
 
@@ -111,6 +111,12 @@ HttpResponseMessage response = await _httpClient.GetAsync(apiUri);
 
 При вызове приложения в действии контроллера, которое содержит атрибут **[Authorization]** , ASP.NET и ASP.NET Core извлекают маркер доступа из токена носителя заголовка авторизации. Затем маркер доступа перенаправляется в по промежуточного слоя JwtBearer, который вызывает расширения Microsoft IdentityModel для .NET.
 
+#### <a name="microsoftidentityweb"></a>Microsoft. Identity. Web
+
+Корпорация Майкрософт рекомендует использовать пакет NuGet [Microsoft. Identity. Web](https://www.nuget.org/packages/Microsoft.Identity.Web) при разработке веб-API с ASP.NET Core.
+
+_Microsoft. Identity. Web_ обеспечивает связь между ASP.NET Core, по промежуточного слоя для проверки подлинности и [библиотекой проверки подлинности Майкрософт (MSAL)](msal-overview.md) для .NET. Она обеспечивает более четкий и надежный опыт разработки и использует мощь платформы идентификации Майкрософт и Azure AD B2C.
+
 #### <a name="using-microsoftidentityweb-templates"></a>Использование шаблонов Microsoft. Identity. Web
 
 Вы можете создать веб-API с нуля с помощью шаблонов проектов Microsoft. Identity. Web. Дополнительные сведения см. в [статье шаблон проекта Microsoft. Identity. Web-Web API](https://aka.ms/ms-id-web/webapi-project-templates) .
@@ -134,7 +140,7 @@ public void ConfigureServices(IServiceCollection services)
 }
 ```
 
- В настоящее время шаблоны ASP.NET Core создают веб-интерфейсы API Azure Active Directory (Azure AD), которые входят в состав пользователей вашей организации или в любой организации. Они не входят в систему пользователей с личными учетными записями. Однако можно изменить шаблоны для использования конечной точки платформы идентификации Майкрософт с помощью [Microsoft. Identity. Web](https://www.nuget.org/packages/Microsoft.Identity.Web), доступного в качестве пакета NuGet, заменив код в *Startup.CS*:
+ В настоящее время шаблоны ASP.NET Core создают веб-интерфейсы API Azure Active Directory (Azure AD), которые входят в состав пользователей вашей организации или в любой организации. Они не входят в систему пользователей с личными учетными записями. Однако можно изменить шаблоны для использования конечной точки платформы идентификации Майкрософт с помощью [Microsoft. Identity. Web](https://www.nuget.org/packages/Microsoft.Identity.Web) замените код в *Startup.CS*:
 
 ```csharp
 using Microsoft.Identity.Web;

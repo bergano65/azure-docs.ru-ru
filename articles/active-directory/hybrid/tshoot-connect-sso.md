@@ -13,12 +13,12 @@ ms.date: 10/07/2019
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: bdaa84d54bbd5558c995014aa4621b0051a36e97
-ms.sourcegitcommit: 43558caf1f3917f0c535ae0bf7ce7fe4723391f9
+ms.openlocfilehash: 60f23efa4f46849e1fe8b0ebe05cdd83ec16f49e
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/11/2020
-ms.locfileid: "90016271"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91294824"
 ---
 # <a name="troubleshoot-azure-active-directory-seamless-single-sign-on"></a>Устранение неполадок с простым единым входом Azure Active Directory
 
@@ -37,6 +37,7 @@ ms.locfileid: "90016271"
 - При синхронизации 30 лесов Active Directory или больше простой единый вход через Azure AD Connect включить невозможно. Чтобы избежать этого, можно [вручную включить](#manual-reset-of-the-feature) эту функцию на своем клиенте.
 - Добавление URL-адреса службы Azure AD ( `https://autologon.microsoftazuread-sso.com` ) в зону "надежные сайты" вместо зоны "Местная интрасеть" *блокирует вход пользователей*.
 - Простой единый вход поддерживает AES256_HMAC_SHA1, AES128_HMAC_SHA1 и RC4_HMAC_MD5 типы шифрования для Kerberos. Рекомендуется, чтобы для учетной записи AzureADSSOAcc $ было задано значение AES256_HMAC_SHA1 или один из типов AES vs. RC4 для дополнительной защиты. Тип шифрования хранится в атрибуте msDS-Суппортеденкриптионтипес учетной записи в Active Directory.  Если для параметра Тип шифрования учетной записи AzureADSSOAcc $ задано значение RC4_HMAC_MD5 и вы хотите изменить его на один из типов шифрования AES, убедитесь, что вы сначала перейдете за ключ расшифровки Kerberos учетной записи AzureADSSOAcc $, как описано в [документе вопросы и ответы](how-to-connect-sso-faq.md) по соответствующему вопросу, в противном случае простой единый вход не будет выполняться.
+-  Если у вас есть несколько лесов с доверием лесов, включив единый вход в одном из лесов, включит единый вход во всех доверенных лесах. Если вы включили единый вход в лесу, в котором уже включен единый вход, вы получите сообщение об ошибке, сообщающее, что единый вход уже включен в лесу.
 
 ## <a name="check-status-of-feature"></a>Проверка состояния функции
 

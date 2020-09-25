@@ -3,12 +3,12 @@ title: Устранение неполадок при входе в реестр
 description: Симптомы, причины и способы устранения распространенных проблем при входе в реестр контейнеров Azure
 ms.topic: article
 ms.date: 08/11/2020
-ms.openlocfilehash: 8fbb96be8223001ac52db47788c31609e9b86e35
-ms.sourcegitcommit: 152c522bb5ad64e5c020b466b239cdac040b9377
+ms.openlocfilehash: d5071a1e759d26ce43d2eb5d9b8215781d813d33
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88227484"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91253360"
 ---
 # <a name="troubleshoot-registry-login"></a>Устранение неполадок при входе в реестр
 
@@ -56,13 +56,13 @@ ms.locfileid: "88227484"
 
 ### <a name="specify-correct-registry-name"></a>Укажите правильное имя реестра
 
-При использовании `docker login` Укажите полное имя сервера входа в реестр, например *myregistry.azurecr.IO*. Убедитесь, что используются только строчные буквы. Пример
+При использовании `docker login` Укажите полное имя сервера входа в реестр, например *myregistry.azurecr.IO*. Убедитесь, что используются только строчные буквы. Пример.
 
 ```console
 docker login myregistry.azurecr.io
 ```
 
-При использовании команды [AZ контроля учетных записей](/cli/azure/acr#az-acr-login) с удостоверением Azure Active Directory сначала [Войдите в Azure CLI](/cli/azure/authenticate-azure-cli), а затем укажите имя ресурса Azure реестра. Имя ресурса — это имя, указанное при создании реестра, например *myregistry* (без суффикса домена). Пример
+При использовании команды [AZ контроля учетных записей](/cli/azure/acr#az-acr-login) с удостоверением Azure Active Directory сначала [Войдите в Azure CLI](/cli/azure/authenticate-azure-cli), а затем укажите имя ресурса Azure реестра. Имя ресурса — это имя, указанное при создании реестра, например *myregistry* (без суффикса домена). Пример.
 
 ```azurecli
 az acr login --name myregistry
@@ -107,7 +107,7 @@ az acr login --name myregistry
 * [Вход с использованием маркера области репозитория](container-registry-repository-scoped-permissions.md)
 * [Добавление и удаление назначений ролей Azure с помощью портала Azure](../role-based-access-control/role-assignments-portal.md)
 * [Создание приложения Azure AD и субъекта-службы, который может получить доступ к ресурсам, с помощью портала](../active-directory/develop/howto-create-service-principal-portal.md)
-* [Создание секрета приложения](../active-directory/develop/howto-create-service-principal-portal.md#create-a-new-application-secret)
+* [Создание секрета приложения](../active-directory/develop/howto-create-service-principal-portal.md#option-2-create-a-new-application-secret)
 * [Коды проверки подлинности и авторизации Azure AD](../active-directory/develop/reference-aadsts-error-codes.md)
 
 ### <a name="check-that-credentials-arent-expired"></a>Убедитесь, что срок действия учетных данных не истек
@@ -140,9 +140,9 @@ az acr login --name myregistry
 
 * Другие разделы по устранению неполадок в реестре:
   * [Устранение проблем с сетью с помощью реестра](container-registry-troubleshoot-access.md)
-  * [Устранение неполадок с производительностью реестра](container-registry-troubleshoot-performance.md)
+  * [Устранение проблем с производительностью реестра](container-registry-troubleshoot-performance.md)
 * Варианты [поддержки сообщества](https://azure.microsoft.com/support/community/)
-* [Майкрософт: вопросы и ответы](https://docs.microsoft.com/answers/products/)
+* [Вопросы и ответы от Майкрософт](https://docs.microsoft.com/answers/products/)
 * [Откройте запрос в службу поддержки](https://azure.microsoft.com/support/create-ticket/) . на основе предоставленных сведений можно выполнить быструю диагностику ошибок проверки подлинности в реестре.
 
 

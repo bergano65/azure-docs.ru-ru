@@ -3,15 +3,15 @@ title: Устранение неполадок оповещений метрик
 description: Распространенные проблемы с Azure Monitor оповещениями о метриках и возможными решениями.
 author: harelbr
 ms.author: harelbr
-ms.topic: reference
+ms.topic: troubleshooting
 ms.date: 09/14/2020
 ms.subservice: alerts
-ms.openlocfilehash: b0e39982b3d62e0ef722a139024b499efc254f5f
-ms.sourcegitcommit: 1fe5127fb5c3f43761f479078251242ae5688386
+ms.openlocfilehash: f9003aa7b9b2c28e443485484ccd4eb50fa6e0dd
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/14/2020
-ms.locfileid: "90068768"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91294231"
 ---
 # <a name="troubleshooting-problems-in-azure-monitor-metric-alerts"></a>Устранение неполадок в Azure Monitor оповещениях метрик 
 
@@ -193,7 +193,7 @@ Azure Monitor оповещения заблаговременно уведомл
 - Командлеты PowerShell для оповещений метрик доступны в модуле [Az.Monitor](/powershell/module/az.monitor/?view=azps-3.6.1)
 - Обязательно используйте командлеты, которые заканчиваются на "v2", для новых (не классической) оповещений метрик (например, [Add-AzMetricAlertRuleV2](/powershell/module/az.monitor/add-azmetricalertrulev2?view=azps-3.6.1)).
 
-### <a name="azure-cli"></a>Azure CLI;
+### <a name="azure-cli"></a>Azure CLI
 
 Убедитесь, что вы используете команды CLI правой кнопкой мыши для оповещений метрик:
 
@@ -253,6 +253,6 @@ Azure Monitor оповещения заблаговременно уведомл
     - Так как метрики **транзакций** и **SuccessE2ELatency** поддерживают измерение **ApiName** , мне нужно обновить оба условия, и оба они задают измерение **ApiName** со значением *"BLOB"* .
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Общие сведения об устранении неполадок с предупреждениями и уведомлениями см. [в разделе Устранение неполадок в Azure Monitor оповещениях](alerts-troubleshoot.md).

@@ -8,13 +8,13 @@ ms.topic: how-to
 ms.subservice: sql
 ms.date: 04/15/2020
 ms.author: v-stazar
-ms.reviewer: jrasnick, carlrab
-ms.openlocfilehash: 6c61bd420121800ade48de88cbcaadf37343262d
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.reviewer: jrasnick
+ms.openlocfilehash: 54ef116878dee2ed1c351fac3dacdf359abbe574
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85207637"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91288347"
 ---
 # <a name="query-folders-and-multiple-files"></a>Запрашивание папок и нескольких файлов  
 
@@ -24,7 +24,7 @@ SQL по запросу поддерживает чтение нескольки
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Для начала **создайте базу данных**, в которой будут выполняться запросы. Затем инициализируйте объекты, выполнив [скрипт настройки](https://github.com/Azure-Samples/Synapse/blob/master/SQL/Samples/LdwSample/SampleDB.sql) для этой базы данных. Этот сценарий установки создает источники данных, учетные данные области базы данных и форматы внешних файлов, которые используются в этих примерах.
+Первым шагом является **Создание базы данных** , в которой будут выполняться запросы. Затем инициализируйте объекты, выполнив [скрипт настройки](https://github.com/Azure-Samples/Synapse/blob/master/SQL/Samples/LdwSample/SampleDB.sql) для этой базы данных. Этот сценарий установки создает источники данных, учетные данные области базы данных и форматы внешних файлов, которые используются в этих примерах.
 
 Для выполнения примеров запросов вы будете использовать *CSV-файл или каталог такси* . В нем содержится Нью такси (желтый), который записывает данные с 2016 июля по 2018 июня. Файлы в *формате CSV или такси* именуются по годам и месяцу с использованием следующего шаблона: yellow_tripdata_ <year> - <month> . csv.
 
@@ -230,6 +230,6 @@ ORDER BY
 
 Так как у вас есть только одна папка, соответствующая критериям, результат запроса будет таким же, как и для [чтения подмножества файлов в папке](#read-subset-of-files-in-folder) , и для [чтения всех файлов из указанной папки](#read-all-files-from-specific-folder). Более сложные сценарии использования подстановочных знаков рассматриваются в разделе [файлы Parquet запросов](query-parquet-files.md).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
-Дополнительные сведения можно найти в статье о [файлах запроса](query-specific-files.md) .
+Дополнительные сведения можно найти в статье о [файлах, связанных с запросом](query-specific-files.md) .

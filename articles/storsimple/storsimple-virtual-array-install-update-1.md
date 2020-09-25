@@ -1,6 +1,6 @@
 ---
 title: Установка обновления 1.0 для виртуального массива StorSimple | Документация Майкрософт
-description: В этой статье объясняется, как установить обновления на виртуальный массив StorSimple с помощью локального пользовательского веб-интерфейса и портала Azure.
+description: Описывает, как использовать веб-интерфейс виртуального массива StorSimple для применения обновления 1,0 с помощью метода портал Azure и горячего исправления.
 services: storsimple
 documentationcenter: NA
 author: alkohli
@@ -14,12 +14,12 @@ ms.tgt_pltfrm: NA
 ms.workload: TBD
 ms.date: 11/02/2017
 ms.author: alkohli
-ms.openlocfilehash: 41546a449165951cd7b462d1db2b1b58ae74e407
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 5bb6b61bb7d9392984bf5c308ce7ee039234461e
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85508101"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91295572"
 ---
 # <a name="install-update-10-on-your-storsimple-virtual-array"></a>Установка обновления 1.0 для виртуального массива StorSimple
 
@@ -128,6 +128,6 @@ ms.locfileid: "85508101"
 > [!NOTE]
 > Если вы непосредственно применили обновление 1 к устройству, использующему версию до обновления 0.6, некоторые обновления будут отсутствовать. Обратитесь в службу поддержки Майкрософт, чтобы узнать, что делать дальше.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения см. в статье [Использование пользовательского веб-интерфейса для администрирования виртуального массива StorSimple](storsimple-ova-web-ui-admin.md).

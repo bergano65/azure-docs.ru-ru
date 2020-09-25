@@ -1,14 +1,14 @@
 ---
 title: Сетевая безопасность для Azure Relay
-description: В этой статье описывается настройка доступа из частных конечных точек
+description: В этой статье описывается, как использовать правила брандмауэра IP и частные конечные точки с Azure Relay.
 ms.topic: conceptual
 ms.date: 06/23/2020
-ms.openlocfilehash: bf49eff29385b5b72639420416df87b9187845e8
-ms.sourcegitcommit: 3d56d25d9cf9d3d42600db3e9364a5730e80fa4a
+ms.openlocfilehash: 3aa3ffd119f65ec5181b0c382472cc4ef3c8bac4
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87532991"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91263731"
 ---
 # <a name="network-security-for-azure-relay"></a>Сетевая безопасность для Azure Relay 
 В этой статье описывается, как использовать следующие функции безопасности с Azure Relay. 

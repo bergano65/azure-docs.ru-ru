@@ -10,12 +10,12 @@ ms.subservice: computer-vision
 ms.topic: conceptual
 ms.date: 09/01/2020
 ms.author: aahi
-ms.openlocfilehash: 5955bc35acfaf8f877e68db083871c353a3ce326
-ms.sourcegitcommit: bdd5c76457b0f0504f4f679a316b959dcfabf1ef
+ms.openlocfilehash: f9df17afe8b6d25df3d9dcc5f4eec0b9a028404f
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "90984934"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91254012"
 ---
 # <a name="spatial-analysis-operations"></a>Операции пространственного анализа
 
@@ -644,7 +644,7 @@ ms.locfileid: "90984934"
 
 ## <a name="deploying-spatial-analysis-operations-at-scale-multiple-cameras"></a>Развертывание операций пространственного анализа в масштабе (несколько камер)
 
-Чтобы обеспечить оптимальную производительность и использование графических процессоров, можно развернуть любые операции пространственного анализа на нескольких камерах с помощью экземпляров графа. Ниже приведен пример выполнения операции cognitiveservices. видение. спатиаланалисис-персонкаунт на пяти камерах (5).
+Чтобы обеспечить максимальную производительность и использование графических процессоров, можно развернуть любые операции пространственного анализа на нескольких камерах с помощью экземпляров графа. Ниже приведен пример выполнения `cognitiveservices.vision.spatialanalysis-personcount` операции на пяти камерах.
 
 ```json
  "properties.desired": {
@@ -727,7 +727,7 @@ ms.locfileid: "90984934"
   ```
 | Имя | Тип| Описание|
 |---------|---------|---------|
-| `batch_size` | INT | Указывает количество камер, которые будут использоваться в этой операции.|
+| `batch_size` | INT | Указывает число камер, которые будут использоваться в операции. |
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

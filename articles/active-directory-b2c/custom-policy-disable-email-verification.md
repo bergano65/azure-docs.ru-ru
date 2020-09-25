@@ -1,7 +1,7 @@
 ---
 title: Отключить проверку электронной почты во время регистрации клиента с помощью настраиваемой политики
 titleSuffix: Azure AD B2C
-description: Узнайте, как отключить проверку электронной почты во время регистрации клиента в Azure Active Directory B2C.
+description: Узнайте, как отключить проверку электронной почты во время регистрации клиента с помощью настраиваемой политики в Azure Active Directory B2C.
 services: active-directory-b2c
 author: msmimart
 manager: celestedg
@@ -11,12 +11,12 @@ ms.topic: how-to
 ms.date: 03/11/2020
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: 29426f8e3797c89deb712e89e0d972dd1ac8028e
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 9372a9caff5aefb53bfa8adf7eb1c68d2a3b7b2e
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85389315"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91259623"
 ---
 # <a name="disable-email-verification-during-customer-sign-up-using-a-custom-policy-in-azure-active-directory-b2c"></a>Отключить проверку электронной почты во время регистрации клиента с помощью настраиваемой политики в Azure Active Directory B2C
 
@@ -58,6 +58,6 @@ ms.locfileid: "85389315"
 3. Вы можете зарегистрироваться, используя адрес электронной почты без проверки.
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Дополнительные сведения о [самостоятельно утвержденном техническом профиле](self-asserted-technical-profile.md) см. в справочнике по инфраструктура процедур идентификации.

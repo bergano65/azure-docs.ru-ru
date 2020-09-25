@@ -9,14 +9,14 @@ ms.devlang: ''
 ms.topic: conceptual
 author: anosov1960
 ms.author: sashan
-ms.reviewer: mathoma, carlrab
+ms.reviewer: mathoma, sstein
 ms.date: 02/13/2019
-ms.openlocfilehash: 1beb2065f1823135981545e42d499c5429b87c0f
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: cf7e4da2051ab84cebff5aae857c02907f7b58e0
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84031615"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91263629"
 ---
 # <a name="tutorial-configure-active-geo-replication-and-failover-in-the-azure-portal-azure-sql-database"></a>Руководство. Настройка активной георепликации и отработки отказа в портал Azure (база данных SQL Azure)
 
@@ -28,7 +28,7 @@ ms.locfileid: "84031615"
 
 
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Для настройки активной георепликации с помощью портала Azure необходим приведенный ниже ресурс.
 
@@ -55,12 +55,12 @@ ms.locfileid: "84031615"
     ![Настройка георепликации](./media/active-geo-replication-configure-portal/configure-geo-replication.png)
 3. Выберите или настройте сервер и ценовую категорию для базы данных-получателя.
 
-    ![Настройка базы данных-получателя](./media/active-geo-replication-configure-portal/create-secondary.png)
+    ![создать вторичную форму](./media/active-geo-replication-configure-portal/create-secondary.png)
 4. По желанию добавьте базу данных-получатель в пул эластичных баз данных. Чтобы создать базу данных-получатель, щелкните **Пул эластичных БД** и выберите пул на целевом сервере. Пул должен быть создан на целевом сервере заранее. Этот рабочий процесс не создает пул.
 5. Щелкните **Создать** , чтобы добавить базу данных-получатель.
 6. После создания базы данных-получателя начнется процесс заполнения.
 
-    ![Настройка базы данных-получателя](./media/active-geo-replication-configure-portal/seeding0.png)
+    ![Схема вторичной реплики](./media/active-geo-replication-configure-portal/seeding0.png)
 7. Как только процесс заполнения будет закончен, отобразится состояние базы данных-получателя.
 
     ![Заполнение завершено](./media/active-geo-replication-configure-portal/seeding-complete.png)
@@ -95,7 +95,7 @@ ms.locfileid: "84031615"
     ![Удаление базы данных-получателя](./media/active-geo-replication-configure-portal/remove-secondary.png)
 5. Откроется окно подтверждения. Нажмите кнопку **Да**, чтобы удалить базу данных из партнерства георепликации (и сделать ее доступной для чтения и записи и не используемой в репликации).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Дополнительные сведения об активной георепликации см. в разделе [Активная Георепликация](active-geo-replication-overview.md).
 * Сведения о группах автоматической отработки отказа см. в [этой статье](auto-failover-group-overview.md).

@@ -6,15 +6,15 @@ services: virtual-wan
 author: cherylmc
 ms.service: virtual-wan
 ms.topic: conceptual
-ms.date: 08/06/2020
+ms.date: 09/22/2020
 ms.author: cherylmc
 ms.custom: fasttrack-edit
-ms.openlocfilehash: f233aedf8b51967264994f5a4081f8f4cd99df01
-ms.sourcegitcommit: 5a3b9f35d47355d026ee39d398c614ca4dae51c6
+ms.openlocfilehash: e1cf9faeab60264d491539256828151e496ade8f
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89400013"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91267505"
 ---
 # <a name="scenario-route-traffic-through-nvas---custom-preview"></a>Сценарий: маршрутизация трафика через NVA — пользовательский (Предварительная версия)
 
@@ -33,7 +33,7 @@ ms.locfileid: "89400013"
 
 **Матрица подключения**
 
-| Исходный тип          | В:|*NVA спицы*|*Виртуальная сеть службы*|*Виртуальная сеть DMZ*|*Статические ветви*|
+| От          | В:|*NVA спицы*|*Виртуальная сеть службы*|*Виртуальная сеть DMZ*|*Статические ветви*|
 |---|---|---|---|---|---|
 | **NVA спицы**| &#8594;|      X |            X |   Пиринг |    Статические    |
 | **Виртуальная сеть службы**| &#8594;|    X |            X |      X    |      X       |

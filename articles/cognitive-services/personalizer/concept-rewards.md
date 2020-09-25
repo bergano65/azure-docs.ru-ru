@@ -1,14 +1,16 @@
 ---
 title: Оценка вознаграждения (Персонализатор)
 description: Оценка вознаграждения указывает, насколько хорошо подходит пользователю выбор персонализации RewardActionID. Значение оценки вознаграждения определяется бизнес-логикой, основанной на наблюдении за поведением пользователей. Персонализатор обучает свои модели машинного обучения, оценивая вознаграждения.
+ms.service: cognitive-services
+ms.subservice: personalizer
 ms.date: 02/20/2020
 ms.topic: conceptual
-ms.openlocfilehash: 734e4d0fdcec25884f8535ec61ccd10569fa8890
-ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
+ms.openlocfilehash: 58ce4d7593b23807f4b31e3e71cbfdcd873b1fcc
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "79219371"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91253502"
 ---
 # <a name="reward-scores-indicate-success-of-personalization"></a>Оценки вознаграждения демонстрируют успешность персонализации
 
@@ -105,7 +107,7 @@ ms.locfileid: "79219371"
 
 * Время ожидания не должно меньшим, чем требуется для получения отклика. Например, если некоторая часть вознаграждения присуждается за 1 минуту просмотра, длительность эксперимента должна быть по меньшей мере вдвое дольше.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Обучение с подкреплением](concepts-reinforcement-learning.md)
 * [Работа с API ранжирования](https://westus2.dev.cognitive.microsoft.com/docs/services/personalizer-api/operations/Rank/console)

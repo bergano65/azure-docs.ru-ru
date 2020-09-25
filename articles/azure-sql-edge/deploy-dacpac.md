@@ -9,18 +9,18 @@ author: SQLSourabh
 ms.author: sourabha
 ms.reviewer: sstein
 ms.date: 09/03/2020
-ms.openlocfilehash: 6c8be6e67b1d7b919d6ea221c473c8975e559658
-ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
+ms.openlocfilehash: e9c8c58c6be8d2c2a85e56690903e6b54f0e4a0d
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "90887495"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91293906"
 ---
 # <a name="sql-database-dacpac-and-bacpac-packages-in-sql-edge"></a>Пакеты DACPAC и BACPAC базы данных SQL в SQL Server ребра
 
 SQL Azure для пограничных вычислений — это оптимизированное ядро реляционной СУБД, предназначенное для развертываний в Интернете вещей и пограничных средах. Он основан на последних версиях ядро СУБД Microsoft SQL, что обеспечивает ведущие в отрасли функции повышения производительности, безопасности и обработки запросов. Наряду с передовыми возможностями управления реляционными базами данных, которые предоставляются в SQL Server, SQL Azure для пограничных вычислений предоставляет встроенные функции аналитики в реальном времени и сложной обработки событий.
 
-Azure SQL Server также предоставляет собственную реализацию SqlPackage.exe, которая позволяет развертывать пакеты [DACPAC и пакета BACPAC базы данных SQL](https://docs.microsoft.com/sql/relational-databases/data-tier-applications/data-tier-applications) во время развертывания SQL Server. 
+Azure SQL ребро предоставляет собственный механизм, позволяющий развертывать пакеты [DACPAC и пакета BACPAC базы данных SQL](https://docs.microsoft.com/sql/relational-databases/data-tier-applications/data-tier-applications) во время выполнения или после развертывания SQL Server.
 
 Пакеты DACPAC и пакета BACPAC базы данных SQL можно развернуть в SQL Server с помощью `MSSQL_PACKAGE` переменной среды. Переменную среды можно настроить с помощью любого из следующих элементов.  
 - Расположение локальной папки в контейнере SQL, содержащем файлы DACPAC и BACPAC. Эту папку можно сопоставить с Томом узла с помощью точек подключения или контейнеров томов данных. 
@@ -64,6 +64,10 @@ Azure SQL Server также предоставляет собственную р
 5. После обновления модуля файлы пакета будут скачаны, распакованы и развернуты для экземпляра SQL Server.
 
 При каждом перезапуске контейнера Azure SQL ребро SQL Server пытается загрузить сжатый пакет файла и оценить изменения. Если обнаруживается новая версия файла, изменения развертываются в базе данных SQL для пограничных вычислений.
+
+## <a name="known-issue"></a>Известная проблема
+
+Во время некоторых развертываний DACPAC или BACPAC пользователи могут столкнуться со временем ожидания команды, что приведет к сбою операции развертывания DACPAC. Если вы столкнулись с этой проблемой, используйте SQLPackage.exe (или клиентские средства SQL) для применения пакета DACPAC или BACPAC NIC. 
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

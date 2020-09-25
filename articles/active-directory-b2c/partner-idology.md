@@ -11,12 +11,12 @@ ms.topic: how-to
 ms.date: 06/08/2020
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: 7567302be8d717cda3627af303128bfb704bd014
-ms.sourcegitcommit: 1e6c13dc1917f85983772812a3c62c265150d1e7
+ms.openlocfilehash: cfce5b42d37908d0ba89cff9c4831cb25b968524
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/09/2020
-ms.locfileid: "86170145"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91259328"
 ---
 # <a name="tutorial-for-configuring-idology-with-azure-active-directory-b2c"></a>Руководство по настройке Идологи с помощью Azure Active Directory B2C 
 
@@ -67,7 +67,7 @@ ms.locfileid: "86170145"
 
 ### <a name="part-1---deploy-the-api"></a>Часть 1. Развертывание API
 
-Разверните предоставленный код API в службе Azure. Код можно опубликовать из Visual Studio, следуя этим [инструкциям](https://docs.microsoft.com/visualstudio/deployment/quickstart-deploy-to-azure?view=vs-2019).
+Разверните предоставленный [код API](https://github.com/azure-ad-b2c/partner-integrations/tree/master/samples/IDology/Api) в службе Azure. Код можно опубликовать из Visual Studio, следуя этим [инструкциям](https://docs.microsoft.com/visualstudio/deployment/quickstart-deploy-to-azure?view=vs-2019).
 
 Вам потребуется URL-адрес развернутой службы, чтобы настроить Azure AD с использованием требуемых параметров.
 
@@ -75,7 +75,7 @@ ms.locfileid: "86170145"
 
 Параметры приложения можно [настроить в службе приложений в Azure](https://docs.microsoft.com/azure/app-service/configure-common#configure-app-settings). С помощью этого метода параметры можно безопасно настроить без их возврата в репозиторий. Необходимо предоставить следующие параметры для API-интерфейса RESTful:
 
-| Параметры приложения | Источник | Примечания |
+| Параметры приложений | Источник | Примечания |
 | :-------- | :------------| :-----------|
 |Идологисеттингс: Апиусернаме | Конфигурация учетной записи Идологи |     |
 |Идологисеттингс: Апипассворд | Конфигурация учетной записи Идологи |     |
@@ -139,7 +139,7 @@ ms.locfileid: "86170145"
 
 7. После ввода **продолжения**появится головоломка идологи.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения см. в следующих статьях:
 

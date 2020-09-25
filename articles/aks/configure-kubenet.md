@@ -5,12 +5,12 @@ services: container-service
 ms.topic: article
 ms.date: 06/02/2020
 ms.reviewer: nieberts, jomore
-ms.openlocfilehash: 6f773f57bea40ba87f35ca2bbefe424d084afb2e
-ms.sourcegitcommit: 4a7a4af09f881f38fcb4875d89881e4b808b369b
+ms.openlocfilehash: c30b82e44833e413c1576bf64e8fef263c58b246
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/04/2020
-ms.locfileid: "89462145"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91264615"
 ---
 # <a name="use-kubenet-networking-with-your-own-ip-address-ranges-in-azure-kubernetes-service-aks"></a>Использование сети kubenet с пользовательскими диапазонами IP-адресов в Службе Azure Kubernetes (AKS)
 
@@ -162,7 +162,7 @@ az role assignment create --assignee <appId> --scope $VNET_ID --role "Network Co
 
 Приведенные ниже диапазоны IP-адресов также определяются в процессе создания кластера:
 
-* *--service-cidr* используется для назначения IP-адреса внутренним службам в кластере AKS. Этот диапазон IP-адресов не должен использоваться где-либо еще в сетевой среде. Этот диапазон включает в себя любые локальные сетевые диапазоны при подключении или планировании подключения к виртуальным сетям Azure с помощью Express Route или VPN-подключения типа "сеть — сеть".
+* *--service-cidr* используется для назначения IP-адреса внутренним службам в кластере AKS. Этот диапазон IP-адресов должен быть адресным пространством, которое не используется в сетевом окружении, включая любые локальные сети при подключении или планировании подключения к виртуальным сетям Azure с помощью Express Route или VPN-подключения типа "сеть — сеть".
 
 * Адрес *--dns-service-ip* должен быть адресом *.10* диапазона IP-адресов вашей службы.
 

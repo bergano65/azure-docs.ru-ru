@@ -3,12 +3,12 @@ title: Резервное копирование фермы SharePoint в Azure 
 description: В этой статье описывается защита фермы SharePoint в Azure с помощью DPM или сервера службы архивации Azure
 ms.topic: conceptual
 ms.date: 03/09/2020
-ms.openlocfilehash: a667626fb53920150a4b5a16759228aacbfae75d
-ms.sourcegitcommit: 3246e278d094f0ae435c2393ebf278914ec7b97b
+ms.openlocfilehash: 7661d64e487c8b8badca240852d17bcf736ba8cf
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89375250"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91254437"
 ---
 # <a name="back-up-a-sharepoint-farm-to-azure-with-dpm"></a>Резервное копирование фермы SharePoint в Azure с помощью DPM
 
@@ -18,7 +18,7 @@ ms.locfileid: "89375250"
 
 ## <a name="sharepoint-supported-versions-and-related-protection-scenarios"></a>Поддерживаемые версии SharePoint и соответствующие сценарии защиты
 
-Список поддерживаемых версий SharePoint и версий DPM, необходимых для их резервного копирования, см. в статье [Данные, поддерживаемые для резервного копирования с помощью DPM](/system-center/dpm/dpm-protection-matrix?view=sc-dpm-2019#applications-backup).
+Список поддерживаемых версий SharePoint и версий DPM, необходимых для их резервного копирования, см. в статье [Данные, поддерживаемые для резервного копирования с помощью DPM](/system-center/dpm/dpm-protection-matrix#applications-backup).
 
 ## <a name="before-you-start"></a>Перед началом работы
 
@@ -28,19 +28,19 @@ ms.locfileid: "89375250"
 
 Прежде чем продолжить, выполните все [предварительные требования по использованию службы Microsoft Azure Backup](backup-azure-dpm-introduction.md#prerequisites-and-limitations) для защиты рабочих нагрузок. В частности, необходимо создать хранилище резервных копий, скачать учетные данные хранилища, установить агент службы Azure Backup и зарегистрировать DPM и Azure Backup Server в хранилище.
 
-Дополнительные предварительные требования и ограничения можно найти в статье [резервное копирование SharePoint с помощью DPM](/system-center/dpm/back-up-sharepoint?view=sc-dpm-2019#prerequisites-and-limitations) .
+Дополнительные предварительные требования и ограничения можно найти в статье [резервное копирование SharePoint с помощью DPM](/system-center/dpm/back-up-sharepoint#prerequisites-and-limitations) .
 
 ## <a name="configure-backup"></a>Настройка резервного копирования
 
-Для реализации резервного копирования фермы SharePoint необходимо настроить защиту для SharePoint с помощью средства ConfigureSharePoint.exe, а затем создать группу защиты в DPM. Инструкции см. в разделе [Настройка резервного копирования](/system-center/dpm/back-up-sharepoint?view=sc-dpm-2019#configure-backup) в документации по DPM.
+Для реализации резервного копирования фермы SharePoint необходимо настроить защиту для SharePoint с помощью средства ConfigureSharePoint.exe, а затем создать группу защиты в DPM. Инструкции см. в разделе [Настройка резервного копирования](/system-center/dpm/back-up-sharepoint#configure-backup) в документации по DPM.
 
 ## <a name="monitoring"></a>Наблюдение
 
-Чтобы отслеживать задание резервного копирования, следуйте инструкциям в разделе [мониторинг резервного копирования DPM](/system-center/dpm/back-up-sharepoint?view=sc-dpm-2019#monitoring) .
+Чтобы отслеживать задание резервного копирования, следуйте инструкциям в разделе [мониторинг резервного копирования DPM](/system-center/dpm/back-up-sharepoint#monitoring) .
 
 ## <a name="restore-sharepoint-data"></a>Восстановление данных SharePoint
 
-Сведения о восстановлении элемента SharePoint с диска с помощью DPM см. в разделе [RESTORE SharePoint Data](/system-center/dpm/back-up-sharepoint?view=sc-dpm-2019#restore-sharepoint-data).
+Сведения о восстановлении элемента SharePoint с диска с помощью DPM см. в разделе [RESTORE SharePoint Data](/system-center/dpm/back-up-sharepoint#restore-sharepoint-data).
 
 ## <a name="restore-a-sharepoint-database-from-azure-by-using-dpm"></a>Восстановление базы данных SharePoint из Azure с помощью DPM
 
@@ -71,7 +71,7 @@ ms.locfileid: "89375250"
 
 ## <a name="switching-the-front-end-web-server"></a>Переключение интерфейсного веб-сервера
 
-Если у вас есть несколько интерфейсных веб-серверов и вы хотите переключить сервер, используемый DPM для защиты фермы, следуйте инструкциям в разделе [Переключение внешнего веб-сервера](/system-center/dpm/back-up-sharepoint?view=sc-dpm-2019#switching-the-front-end-web-server).
+Если у вас есть несколько интерфейсных веб-серверов и вы хотите переключить сервер, используемый DPM для защиты фермы, следуйте инструкциям в разделе [Переключение внешнего веб-сервера](/system-center/dpm/back-up-sharepoint#switching-the-front-end-web-server).
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

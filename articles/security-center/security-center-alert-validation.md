@@ -11,14 +11,14 @@ ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 11/04/2019
+ms.date: 09/22/2020
 ms.author: memildin
-ms.openlocfilehash: cf73b3949b0a0dc1e76ebdebb191af0a33ce22ff
-ms.sourcegitcommit: 3fb5e772f8f4068cc6d91d9cde253065a7f265d6
+ms.openlocfilehash: ac76ce5d4fb788e6c2fb3dc9ec01c8d88bfb55cb
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89180479"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91268083"
 ---
 # <a name="alert-validation-in-azure-security-center"></a>Проверка предупреждений в центре безопасности Azure
 Этот документ содержит информацию о том, как убедиться, что ваша система правильно настроена для оповещений центра безопасности Azure.
@@ -62,16 +62,16 @@ ms.locfileid: "89180479"
 
 ## <a name="validate-alerts-on-kubernetes"></a>Проверка оповещений в Kubernetes <a name="validate-kubernetes"></a>
 
-Если вы используете предварительную версию центра безопасности для интеграции службы Kubernetes Azure, выполните следующую команду kubectl, чтобы проверить работоспособность ваших оповещений:
+Если вы интегрируете службу Kubernetes Azure с центром безопасности, вы можете проверить, работают ли оповещения с помощью следующей команды kubectl:
 
 ```kubectl get pods --namespace=asc-alerttest-662jfi039n```
 
-Дополнительные сведения об интеграции службы Azure Kubernetes и центра безопасности Azure см. в [этой статье](azure-kubernetes-service-integration.md).
+Дополнительные сведения о защите узлов и кластеров Kubernetes см. [в статье Введение в защитник Azure для Kubernetes](defender-for-kubernetes-introduction.md) .
 
 ## <a name="next-steps"></a>Дальнейшие действия
 В этой статье представлен процесс проверки оповещений. Теперь, когда вы знакомы с проверкой, ознакомьтесь с такими статьями:
 
 * [Проверка Azure Key Vault обнаружения угроз в центре безопасности Azure](https://techcommunity.microsoft.com/t5/azure-security-center/validating-azure-key-vault-threat-detection-in-azure-security/ba-p/1220336)
-* [Управление оповещениями безопасности в центре безопасности Azure и реагирование](https://docs.microsoft.com/azure/security-center/security-center-managing-and-responding-alerts) на них — Узнайте, как управлять оповещениями и реагировать на инциденты безопасности в центре безопасности.
+* [Управление оповещениями безопасности в центре безопасности Azure и реагирование](security-center-managing-and-responding-alerts.md) на них — Узнайте, как управлять оповещениями и реагировать на инциденты безопасности в центре безопасности.
 * [Наблюдение за работоспособностью системы безопасности в Центре безопасности Azure](security-center-monitoring.md). Узнайте, как отслеживать работоспособность ресурсов Azure.
-* Сведения об [оповещениях системы безопасности в центре безопасности Azure](https://docs.microsoft.com/azure/security-center/security-center-alerts-type) — сведения о различных типах оповещений системы безопасности.
+* Сведения об [оповещениях системы безопасности в центре безопасности Azure](security-center-alerts-type.md) — сведения о различных типах оповещений системы безопасности.

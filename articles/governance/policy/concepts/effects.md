@@ -1,14 +1,14 @@
 ---
 title: Принцип работы эффектов
 description: Определения политик Azure содержат различные действия, влияющие на управление соответствием требованиям и отчеты о нем.
-ms.date: 08/27/2020
+ms.date: 09/15/2020
 ms.topic: conceptual
-ms.openlocfilehash: d2ea27ceda36d2feebcf12cc47ac741093b0729c
-ms.sourcegitcommit: ac5cbef0706d9910a76e4c0841fdac3ef8ed2e82
+ms.openlocfilehash: b6622796ab0554f692a3b64e0b41d60f49c561b1
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/03/2020
-ms.locfileid: "89425540"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91252010"
 ---
 # <a name="understand-azure-policy-effects"></a>Сведения о действии политик Azure
 
@@ -22,7 +22,7 @@ ms.locfileid: "89425540"
 - [Запретить](#deny)
 - [DeployIfNotExists](#deployifnotexists)
 - [Отключено](#disabled)
-- [Изменить](#modify)
+- [Изменение](#modify)
 
 Следующие эффекты являются _устаревшими_:
 
@@ -374,8 +374,8 @@ ms.locfileid: "89425540"
 
 Это действие используется с определением политики _mode_ из `Microsoft.Kubernetes.Data`. Оно используется для передачи правил управления допуском Gatekeeper v3, определенных с помощью [OPA Constraint Framework](https://github.com/open-policy-agent/frameworks/tree/master/constraint#opa-constraint-framework), [Open Policy Agent](https://www.openpolicyagent.org/) (OPA) в кластерах Kubernetes в Azure.
 
-> [!NOTE]
-> [Политика Azure для Kubernetes](./policy-for-kubernetes.md) доступна в предварительной версии и поддерживает только пулы узлов Linux и встроенные определения политик. Определения встроенных политик находятся в категории **Kubernetes**. Определения политики ограниченного просмотра с **енфорцеопаконстраинтным** результатом и связанная категория **службы Kubernetes** являются _устаревшими_. Вместо этого используйте режим "эффекты _аудита_ " и " _запретить_ " с помощью поставщика ресурсов `Microsoft.Kubernetes.Data` .
+> [!IMPORTANT]
+> Определения политик ограниченного просмотра с **енфорцеопаконстраинт** и связанными категориями **служб Kubernetes** являются _устаревшими_. Вместо этого используйте режим "эффекты _аудита_ " и " _запретить_ " с помощью поставщика ресурсов `Microsoft.Kubernetes.Data` .
 
 ### <a name="enforceopaconstraint-evaluation"></a>Оценка EnforceOPAConstraint
 
@@ -430,8 +430,8 @@ ms.locfileid: "89425540"
 
 Это действие используется с определением политики _mode_ из `Microsoft.ContainerService.Data`. Оно используется для передачи правил управления допуском Gatekeeper v2, определенных с помощью [Rego](https://www.openpolicyagent.org/docs/latest/policy-language/#what-is-rego), [Open Policy Agent](https://www.openpolicyagent.org/) (OPA) в [службе AzureKubernetes](../../../aks/intro-kubernetes.md).
 
-> [!NOTE]
-> [Политика Azure для Kubernetes](./policy-for-kubernetes.md) доступна в предварительной версии и поддерживает только пулы узлов Linux и встроенные определения политик. Определения встроенных политик находятся в категории **Kubernetes**. Определения политик ограниченного просмотра с помощью действия **EnforceRegoPolicy**, а также связанная категория **Kubernetes Service** _являются устаревшими_. Вместо этого используйте режим "эффекты _аудита_ " и " _запретить_ " с помощью поставщика ресурсов `Microsoft.Kubernetes.Data` .
+> [!IMPORTANT]
+> Определения политик ограниченного просмотра с помощью действия **EnforceRegoPolicy**, а также связанная категория **Kubernetes Service** являются _устаревшими_. Вместо этого используйте режим "эффекты _аудита_ " и " _запретить_ " с помощью поставщика ресурсов `Microsoft.Kubernetes.Data` .
 
 ### <a name="enforceregopolicy-evaluation"></a>Оценка EnforceRegoPolicy
 

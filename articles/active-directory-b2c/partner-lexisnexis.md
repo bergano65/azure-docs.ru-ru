@@ -10,12 +10,12 @@ ms.topic: how-to
 ms.date: 07/22/2020
 ms.author: gasinh
 ms.subservice: B2C
-ms.openlocfilehash: 6f5b6bfdb523a22fc4dd9593bfec556da7493aa9
-ms.sourcegitcommit: f353fe5acd9698aa31631f38dd32790d889b4dbb
+ms.openlocfilehash: c753e9a18f9869e1bf11aa437fb60484f2553e17
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87371198"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91259260"
 ---
 # <a name="tutorial-for-configuring-lexisnexis-with-azure-active-directory-b2c"></a>Руководство по настройке Лексиснексис с помощью Azure Active Directory B2C
 
@@ -23,7 +23,7 @@ ms.locfileid: "87371198"
 
 Эта интеграция выполняет профилирование на основе нескольких частей сведений о пользователях, которые предоставляются пользователем во время процесса регистрации. Среатметрикс определяет, должен ли пользователь продолжать входить в систему или нет. В анализе рисков Среатметрикс рассматриваются следующие атрибуты:
 
-- Адрес эл. почты
+- Адрес электронной почты
 - номер телефона;
 - Сведения о профилировании, собранные с компьютера пользователя
 
@@ -49,7 +49,7 @@ ms.locfileid: "87371198"
 
 ![снимок экрана для лексиснексис — схема архитектуры](media/partner-lexisnexis/lexisnexis-architecture-diagram.png)
 
-|Шаг | Описание: |
+|Шаг | Описание |
 |:--------------|:-------------|
 |1. | Пользователь прибывает на странице входа. Пользователь нажимает кнопку Регистрация для создания новой учетной записи и ввода данных на странице. Azure AD B2C собирает атрибуты пользователя.
 | 2. | Azure AD B2C вызывает API среднего уровня и передает атрибуты пользователя.
@@ -73,7 +73,7 @@ ms.locfileid: "87371198"
 
 ### <a name="part-1---deploy-the-api"></a>Часть 1. Развертывание API
 
-Разверните предоставленный код API в службе Azure. Код можно опубликовать из Visual Studio, следуя этим [инструкциям](https://docs.microsoft.com/visualstudio/deployment/quickstart-deploy-to-azure?view=vs-2019).
+Разверните предоставленный [код API](https://github.com/azure-ad-b2c/partner-integrations/tree/master/samples/ThreatMetrix/Api) в службе Azure. Код можно опубликовать из Visual Studio, следуя этим [инструкциям](https://docs.microsoft.com/visualstudio/deployment/quickstart-deploy-to-azure?view=vs-2019).
 
 >[!NOTE]
 >Вам потребуется URL-адрес развернутой службы, чтобы настроить Azure AD с использованием требуемых параметров.
@@ -82,7 +82,7 @@ ms.locfileid: "87371198"
 
 Параметры приложения можно [настроить в службе приложений в Azure](https://docs.microsoft.com/azure/app-service/configure-common#configure-app-settings).  С помощью этого метода параметры можно безопасно настроить без их возврата в репозиторий. Необходимо предоставить следующие параметры для API-интерфейса RESTful:
 
-| Параметры приложения | Источник | Примечания |
+| Параметры приложений | Источник | Примечания |
 | :-------- | :------------| :-----------|
 |Среатметрикс: URL-адрес | Конфигурация учетной записи Среатметрикс |     |
 |Среатметрикс: OrgId | Конфигурация учетной записи Среатметрикс |     |
@@ -95,9 +95,9 @@ ms.locfileid: "87371198"
 
 В этом решении используются пользовательские шаблоны пользовательского интерфейса, загружаемые Azure AD B2C. Эти шаблоны пользовательского интерфейса выполняют профилирование, которое отправляется непосредственно в службу Среатметрикс.
 
-Инструкции по развертыванию включенных файлов пользовательского интерфейса в учетную запись хранения BLOB-объектов см. в этих [инструкциях](https://docs.microsoft.com/azure/active-directory-b2c/custom-policy-ui-customization#custom-page-content-walkthrough) . Инструкции включают настройку учетной записи хранения BLOB-объектов, настройку CORS и предоставление общего доступа.
+Инструкции по развертыванию включенных [файлов пользовательского интерфейса](https://github.com/azure-ad-b2c/partner-integrations/tree/master/samples/ThreatMetrix/ui-template) в учетную запись хранения BLOB-объектов см. в этих [инструкциях](https://docs.microsoft.com/azure/active-directory-b2c/custom-policy-ui-customization#custom-page-content-walkthrough) . Инструкции включают настройку учетной записи хранения BLOB-объектов, настройку CORS и предоставление общего доступа.
 
-Пользовательский интерфейс основан на шаблоне синего цвета страницы. Все ссылки в пользовательском интерфейсе должны быть обновлены для ссылки на развернутое расположение. В папке пользовательского интерфейса найдите и замените на https://yourblobstorage/blobcontainer развернутое расположение.
+Пользовательский интерфейс основан на [шаблоне «морской цвета](https://github.com/azure-ad-b2c/partner-integrations/tree/master/samples/ThreatMetrix/ui-template/ocean_blue)». Все ссылки в пользовательском интерфейсе должны быть обновлены для ссылки на развернутое расположение. В папке пользовательского интерфейса найдите и замените на https://yourblobstorage/blobcontainer развернутое расположение.
 
 ### <a name="part-4---create-api-policy-keys"></a>Часть 4. Создание ключей политики API
 
@@ -111,21 +111,21 @@ ms.locfileid: "87371198"
 
 ### <a name="part-5---update-the-api-url"></a>Часть 5. Обновление URL-адреса API
 
-В указанной политике TrustFrameworkExtensions найдите технический профиль с именем `Rest-LexisNexus-SessionQuery` и обновите `ServiceUrl` элемент метаданных, УКАЗАВ расположение API, развернутого выше.
+В указанной [политике TrustFrameworkExtensions](https://github.com/azure-ad-b2c/partner-integrations/blob/master/samples/ThreatMetrix/policy/TrustFrameworkExtensions.xml)найдите технический профиль с именем `Rest-LexisNexus-SessionQuery` и обновите `ServiceUrl` элемент МЕТАДАННЫХ, указав расположение API, развернутого выше.
 
 ### <a name="part-6---update-ui-url"></a>Часть 6. Обновление URL-адреса пользовательского интерфейса
 
-В указанной политике TrustFrameworkExtensions выполните поиск и замену, чтобы найти https://yourblobstorage/blobcontainer/ расположение, в котором развернуты файлы пользовательского интерфейса.
-
-### <a name="part-7---configure-the-azure-ad-b2c-policy"></a>Часть 7. Настройка политики Azure AD B2C
-
-Обратитесь к этому [документу](https://docs.microsoft.com/azure/active-directory-b2c/custom-policy-get-started?tabs=applications#custom-policy-starter-pack) , чтобы скачать файл [Local Accounts Starter Pack](https://github.com/Azure-Samples/active-directory-b2c-custom-policy-starterpack/tree/master/LocalAccounts) и настроить политику для клиента Azure AD B2C.
-
->[!NOTE]
->Обновите указанные политики, чтобы они были связаны с конкретным клиентом.
+В указанной [политике TrustFrameworkExtensions](https://github.com/azure-ad-b2c/partner-integrations/blob/master/samples/ThreatMetrix/policy/TrustFrameworkExtensions.xml)выполните поиск и замену, чтобы найти https://yourblobstorage/blobcontainer/ расположение, в котором развернуты файлы пользовательского интерфейса.
 
 >[!NOTE]
 > Рекомендуется, чтобы клиенты добавили уведомление о согласия на страницу коллекции атрибутов. Уведомлять пользователей о том, что сведения будут отправляться сторонним службам для проверки личности.
+
+### <a name="part-7---configure-the-azure-ad-b2c-policy"></a>Часть 7. Настройка политики Azure AD B2C
+
+Обратитесь к этому [документу](https://docs.microsoft.com/azure/active-directory-b2c/custom-policy-get-started?tabs=applications#custom-policy-starter-pack) , чтобы скачать файл [Local Accounts Starter Pack](https://github.com/Azure-Samples/active-directory-b2c-custom-policy-starterpack/tree/master/LocalAccounts) и настроить [политику](https://github.com/azure-ad-b2c/partner-integrations/tree/master/samples/ThreatMetrix/policy) для клиента Azure AD B2C.
+
+>[!NOTE]
+>Обновите указанные политики, чтобы они были связаны с конкретным клиентом.
 
 ## <a name="test-the-user-flow"></a>Тестирование потока пользователя
 
@@ -135,7 +135,7 @@ ms.locfileid: "87371198"
 
 3. Выберите **запустить поток пользователя** и выберите параметры:
 
-   a. **Приложение**: выберите зарегистрированное приложение (пример — JWT)
+   а. **Приложение**: выберите зарегистрированное приложение (пример — JWT)
 
    b. **URL-адрес ответа**: выберите **URL-адрес перенаправления**
 

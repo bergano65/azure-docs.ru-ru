@@ -5,15 +5,15 @@ services: virtual-wan
 author: cherylmc
 ms.service: virtual-wan
 ms.topic: conceptual
-ms.date: 02/12/2020
+ms.date: 09/22/2020
 ms.author: cherylmc
 Customer intent: As someone with a networking background, I want to find a Virtual WAN partner
-ms.openlocfilehash: 2f3641bf540b188ce3d2333ccd6bcf4a926ba130
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 928a68cff5dc8043e69c25be3dcfa3510a7d3a2a
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85565089"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91267312"
 ---
 # <a name="virtual-wan-partners-and-virtual-hub-locations"></a>Расположения партнеров и виртуального концентратора Виртуальной глобальной сети
 
@@ -23,7 +23,7 @@ ms.locfileid: "85565089"
 
 Подключение к виртуальному концентратору с локального устройства устанавливается автоматически. Виртуальный концентратор — это виртуальная сеть, управляемая корпорацией Майкрософт. Концентратор содержит разные конечные точки службы, чтобы обеспечить подключения с локальной сетью (vpnsite). Может быть только один концентратор на регион.
 
-## <a name="automation-from-connectivity-partners"></a><a name="automation"></a>Автоматизация от партнеров по подключению
+## <a name="branch-ipsec-connectivity-automation-from-partners"></a><a name="automation"></a>Автоматизация подключения IPSec от партнеров
 
 Устройства, которые подключаются к Виртуальной глобальной сети Azure, обладают встроенной службой автоматизации для подключения. Обычно это настраивается в пользовательском интерфейсе управления устройством (или в его эквиваленте), который устанавливает управление подключением и конфигурацией между VPN-устройством ветви и конечной точкой VPN виртуального концентратора Azure (VPN-шлюз).
 
@@ -36,17 +36,37 @@ ms.locfileid: "85565089"
 
 Некоторые партнеры по подключению могут расширить автоматизацию, включив в нее создание виртуального концентратора виртуальной сети Azure и VPN-шлюз. Если вы хотите получить дополнительные сведения об автоматизации, см. статью [рекомендации по автоматизации для виртуальных сетей WAN](virtual-wan-configure-automation-providers.md).
 
-## <a name="connectivity-through-partners"></a><a name="partners"></a>Подключение через партнеров
+## <a name="branch-ipsec-connectivity-partners"></a><a name="partners"></a>Партнеры подключения IPSec для филиалов
 
 [!INCLUDE [partners](../../includes/virtual-wan-partners-include.md)]
 
-Следующие партнеры посвящены нашей стратегии в ближайшем будущем: 128 технологиях, Ариста, Aruba HPE, Cisco Systems (Виптела), F5 Networks, Open Systems, Oracle SD-WAN и Шарплинк.
+Следующие партнеры посвящены нашей стратегии в ближайшем будущем: 128 технологии, Ариста, Cisco Systems (Виптела), сети F5, Oracle SD-WAN и Шарплинк.
+
+## <a name="partners-with-integrated-virtual-hub-offerings"></a>Партнеры с интегрированными предложениями виртуальных концентраторов
+Помимо автоматического подключения по протоколу IPSec в филиалах, некоторые партнеры предлагают **Виртуальные сетевые устройства (NVA)** , которые можно интегрировать непосредственно в виртуальный концентратор глобальной сети Azure.  Благодаря этому клиенты могут прерывать подключения филиалов в совместимом устройстве сторонних производителей в виртуальном концентраторе.  
+
+Партнеры, предлагающие NVA в виртуальном концентраторе глобальной сети, должны:
+
+* Реализуют автоматизацию подключения IPSec от устройства филиала и имеют встроенное предложение NVA в виртуальном концентраторе глобальной сети Azure.
+* Вы можете использовать существующее предложение сетевого виртуального устройства в Azure Marketplace.
+
+Если вы являетесь партнером и у вас есть вопросы об управляемых NVAах в предложении виртуального концентратора, свяжитесь с нами, отправив сообщение электронной почты по адресу. vwannvaonboarding@microsoft.com
+
+## <a name="integrated-virtual-hub-nva-partners"></a>Интегрированные партнеры NVA виртуальных концентраторов
+У этих партнеров есть предложения по **управлению приложениями** , которые теперь доступны для развертывания в виртуальном КОНЦЕНТРАТОРЕ глобальной сети.
+
+|Участники|Руководство по настройке и развертыванию|
+|---|---|
+|[Barracuda Networks](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/barracudanetworks.barracuda_cloudgenwan_gateway?tab=Overviewus/marketplace/apps/barracudanetworks.barracuda_cloudgenwan_gateway?tab=Overview)| [Инструкции по развертыванию Barracuda Клауджен WAN](https://campus.barracuda.com/product/cloudgenwan/doc/91980640/deployment/)|
+|[Маршрутизатор облачной службы Cisco (CSR) ВВАН](https://aka.ms/ciscoMarketPlaceOffer)| [Рекомендации по развертыванию маршрутизатора облачной службы Cisco (CSR) ВВАН]()
+
+Следующие партнеры приносят NVA в виртуальные концентраторы в ближайшем будущем: Citrix, беспроводные сети и Велоклауд.
 
 ## <a name="locations"></a><a name="locations"></a>Расположения
 
 [!INCLUDE [regions](../../includes/virtual-wan-regions-include.md)]
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Дополнительные сведения о Виртуальной глобальной сети см. в статье [Часто задаваемые вопросы по виртуальным глобальным сетям (предварительная версия)](virtual-wan-faq.md).
 

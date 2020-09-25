@@ -8,12 +8,12 @@ ms.subservice: security
 ms.date: 04/15/2020
 ms.author: ronytho
 ms.reviewer: jrasnick
-ms.openlocfilehash: 17636bf993df5105093ca690e36db22493a2472e
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: ea791e4fc1031c0a5c041119c409f8623ce7aee9
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87005979"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91260382"
 ---
 # <a name="connect-to-your-azure-synapse-workspace-using-private-links-preview"></a>Подключение к рабочей области Azure Synapse с использованием частных каналов (предварительная версия)
 
@@ -21,7 +21,7 @@ ms.locfileid: "87005979"
 
 ## <a name="step-1-register-network-resource-provider"></a>Шаг 1. Зарегистрируйте поставщик сетевых ресурсов
 
-Зарегистрируйте поставщик сетевых ресурсов, если вы еще этого не сделали. Регистрация поставщика ресурсов настраивает подписку для работы с поставщиком ресурсов. В процессе *регистрации* выберите значение [Microsoft.Network](https://docs.microsoft.com/azure/azure-resource-manager/management/resource-providers-and-types) из списка поставщиков ресурсов. Если поставщик сетевых ресурсов уже зарегистрирован, перейдите к шагу 2.
+Если вы еще не сделали этого, зарегистрируйте поставщик сетевых ресурсов. Регистрация поставщика ресурсов настраивает подписку для работы с поставщиком ресурсов. В процессе *регистрации* выберите значение [Microsoft.Network](https://docs.microsoft.com/azure/azure-resource-manager/management/resource-providers-and-types) из списка поставщиков ресурсов. Если поставщик сетевых ресурсов уже зарегистрирован, перейдите к шагу 2.
 
 
 ## <a name="step-2-open-your-azure-synapse-workspace-in-azure-portal"></a>Шаг 2. Откройте рабочую область Synapse на портале Azure
@@ -34,7 +34,7 @@ ms.locfileid: "87005979"
 На вкладке **Базовые** в окне **Создание частной конечной точки** выберите **подписку** и **группу ресурсов**. Присвойте **имя** частной конечной точке, которую вы хотите создать. Выберите **регион**, в котором требуется создать частную конечную точку.
 
 Частные конечные точки создаются в подсети. Выбранные подписка, группа ресурсов и регион отфильтруют подсети частных конечных точек. По завершении выберите **Далее: Ресурс**.
-![Выбор подписки и сведений о регионе](./media/how-to-connect-to-workspace-with-private-links/private-endpoint-2.png)
+![Выберите сведения о подписке и регионе 1](./media/how-to-connect-to-workspace-with-private-links/private-endpoint-2.png)
 
 ## <a name="step-4-select-your-azure-synapse-workspace-details"></a>Шаг 4. Выберите сведения о рабочей области Azure Synapse
 
@@ -43,17 +43,17 @@ ms.locfileid: "87005979"
 Выберите свою рабочую область Azure Synapse в качестве **ресурса**. У каждой рабочей области Azure Synapse есть три **целевых подресурса**, для которых можно создать частную конечную точку: Sql, SqlOnDemand и Dev.
 
 По завершении выберите **Далее: Конфигурация**, чтобы перейти к следующей части установки.
-![Выбор подписки и сведений о регионе](./media/how-to-connect-to-workspace-with-private-links/private-endpoint-3.png)
+![Выбор сведений о подписке и регионе 2](./media/how-to-connect-to-workspace-with-private-links/private-endpoint-3.png)
 
 На вкладке **Конфигурация** выберите **виртуальную сеть** и **подсеть** для создания частной конечной точки. Также необходимо создать запись DNS, которая сопоставляется с этой частной конечной точкой.
 
 Выберите значение **Да** для параметра **Интеграция с частной зоной DNS**, если вы хотите интегрировать частную конечную точку с частной зоной DNS. Если у вас нет частной зоны DNS, связанной с виртуальная сеть Microsoft Azure, создается новая частная зона DNS. По завершении выберите **Проверка и создание**.
 
-![Выбор подписки и сведений о регионе](./media/how-to-connect-to-workspace-with-private-links/private-endpoint-4.png)
+![Выберите сведения о подписке и регионе 3](./media/how-to-connect-to-workspace-with-private-links/private-endpoint-4.png)
 
 После завершения развертывания откройте свою рабочую область Azure Synapse на портале Azure и выберите **Подключения частных конечных точек**. Отобразятся имена новой частной конечной точки и подключения, связанного с этой частной конечной точкой.
 
-![Выбор подписки и сведений о регионе](./media/how-to-connect-to-workspace-with-private-links/private-endpoint-5.png)
+![Выберите сведения о подписке и регионе 4](./media/how-to-connect-to-workspace-with-private-links/private-endpoint-5.png)
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

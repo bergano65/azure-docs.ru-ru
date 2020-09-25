@@ -4,12 +4,12 @@ description: Как управлять пользователями в Azure Blo
 ms.date: 07/15/2020
 ms.topic: how-to
 ms.reviewer: ravastra
-ms.openlocfilehash: 541d5b2fa3d1a0cd5c4beba65cfe5ff3bdc3124a
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.openlocfilehash: be078e7149ba008ab8b7ad44a016a0d1cf82df0e
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86538264"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91263017"
 ---
 # <a name="manage-users-in-azure-blockchain-workbench"></a>Управление пользователями в Azure Blockchain Workbench
 
@@ -29,7 +29,7 @@ Azure Blockchain Workbench использует Azure Active Directory (Azure AD
 1. В правом верхнем углу выберите свою учетную запись, а затем перейдите в клиент Azure AD, связанный с Blockchain Workbench.
 1. Выберите **Azure Active Directory > Пользователи**. Просмотрите список пользователей в каталоге.
 1. Чтобы добавить пользователей в каталог, выберите **Новый пользователь**. Для внешних пользователей выберите **Новый гостевой пользователь**.
-1. Заполните обязательные поля для нового пользователя. Нажмите кнопку **создания**.
+1. Заполните обязательные поля для нового пользователя. Выберите **Создать**.
 
 Дополнительные сведения о том, как управлять пользователями в Azure AD, см. в документации по [Azure AD](../../active-directory/fundamentals/add-users-azure-active-directory.md).
 
@@ -79,9 +79,9 @@ Azure Blockchain Workbench использует Azure Active Directory (Azure AD
 1. Выберите плитку участника, чтобы отобразить список текущих участников.
 1. Выберите **Добавить участников**.
 
-    ![Добавление членов](./media/manage-users/application-add-members.png)
+    ![На снимке экрана показано окно членства в приложении с выделенной кнопкой Добавить элемент.](./media/manage-users/application-add-members.png)
 
-1. Найдите имя пользователя.  В списке будут представлены только пользователи Azure AD, которые есть в клиенте Blockchain Workbench. Если пользователь не найден, вам необходимо [добавить пользователей Azure AD](#add-azure-ad-users).
+1. Найдите имя пользователя.  В списке будут представлены только пользователи Azure AD, которые есть в клиенте Blockchain Workbench. Если пользователь не найден, необходимо [Добавить пользователей Azure AD](#add-azure-ad-users).
 
     ![Добавление членов](./media/manage-users/find-user.png)
 

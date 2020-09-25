@@ -1,6 +1,6 @@
 ---
 title: Как единый вход для локальных ресурсов работает на подключенных к Azure AD устройствах | Документация Майкрософт
-description: Сведения о настройке гибридных устройств, присоединенных к Azure Active Directory.
+description: Узнайте, как расширить возможности единого входа, настроив гибридные Azure Active Directory присоединенные устройства.
 services: active-directory
 ms.service: active-directory
 ms.subservice: devices
@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: ravenn
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 149b01401cd6feb7610510efeb1ad9a3c69f3ecf
-ms.sourcegitcommit: 0100d26b1cac3e55016724c30d59408ee052a9ab
+ms.openlocfilehash: ba802cb86d68298cd4dfff94162069590744833c
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "86024049"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91256468"
 ---
 # <a name="how-sso-to-on-premises-resources-works-on-azure-ad-joined-devices"></a>Как единый вход для локальных ресурсов работает на подключенных к Azure AD устройствах
 
@@ -24,7 +24,7 @@ ms.locfileid: "86024049"
 
 В этой статье описано, как это работает.
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
  Если компьютеры, присоединенные к Azure AD, не подключены к сети организации, требуется VPN или другая сетевая инфраструктура. Для локального единого входа необходимо понимание сетевого взаимодействия с локальными контроллерами домена AD DS.
 
@@ -62,7 +62,7 @@ ms.locfileid: "86024049"
 - Оснастку "Active Directory — пользователи и компьютеры (ADUC)" для администрирования любых объектов AD. Но для этого нужно вручную указать домен, к которому вы хотите подключиться.
 - Оснастку DHCP для администрирования сервера DHCP, присоединенного к домену AD. Но для этого нужно указать имя или адрес DHCP-сервера.
  
-## <a name="what-you-should-know"></a>Необходимая информация
+## <a name="what-you-should-know"></a>Учитываемые аспекты
 
 Возможно, вам нужно будет дополнительно настроить [фильтрацию по доменам](../hybrid/how-to-connect-sync-configure-filtering.md#domain-based-filtering) в Azure AD Connect, чтобы синхронизировать данные об используемых доменах.
 
@@ -70,6 +70,6 @@ ms.locfileid: "86024049"
 
 Вы не сможете совместно с другими пользователями работать с файлами на устройстве, присоединенном к AAD.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения см. в статье [Что такое управление устройствами в Azure Active Directory](overview.md). 

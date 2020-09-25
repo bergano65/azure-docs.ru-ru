@@ -5,14 +5,14 @@ services: virtual-wan
 author: cherylmc
 ms.service: virtual-wan
 ms.topic: conceptual
-ms.date: 10/07/2019
+ms.date: 09/22/2020
 ms.author: cherylmc
-ms.openlocfilehash: 784f43cfa259ad7bdf161aea8e9b1ce559855db7
-ms.sourcegitcommit: 4913da04fd0f3cf7710ec08d0c1867b62c2effe7
+ms.openlocfilehash: 30c58a26a326370a2566bc9ebbec33bfbd4b3173
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88213895"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91267369"
 ---
 # <a name="virtual-wan-default-policies-for-ipsec-connectivity"></a>Политики виртуальной глобальной сети по умолчанию для подключений IPsec
 
@@ -26,7 +26,7 @@ ms.locfileid: "88213895"
 
 [!INCLUDE [IPsec](../../includes/virtual-wan-ipsec-custom-include.md)]
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Действия по настройке настраиваемой политики IPsec см. в статье [Настройка настраиваемой политики IPSec для виртуальной глобальной сети](virtual-wan-custom-ipsec-portal.md).
 Дополнительные сведения о Виртуальной глобальной сети см. в разделе [Сведения о Виртуальной глобальной сети Azure](virtual-wan-about.md) и [Часто задаваемые вопросы о Виртуальной глобальной сети Azure (WAN)](virtual-wan-faq.md).

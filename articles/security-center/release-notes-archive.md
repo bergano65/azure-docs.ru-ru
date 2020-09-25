@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 05/11/2020
 ms.author: memildin
-ms.openlocfilehash: 2012f590aa833bea1b49955958095917a6479665
-ms.sourcegitcommit: bf1340bb706cf31bb002128e272b8322f37d53dd
+ms.openlocfilehash: 09b23e9951c6da597b82d2e012a57f2c93410a5d
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/03/2020
-ms.locfileid: "89438574"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91289809"
 ---
 # <a name="archive-for-whats-new-in-azure-security-center"></a>Архив новых возможностей Центра безопасности Azure
 
@@ -76,7 +76,7 @@ Kubernetes — известная платформа с открытым код
 - **Рекомендации по безопасности**. Это практические рекомендации, которые помогут внедрить лучшие методики обеспечения безопасности для AKS. Они включены в вашу оценку безопасности и поэтому отображаются в сведениях о состоянии безопасности вашей организации. Вот одна из возможных рекомендаций для AKS: "Использование управления доступом на основе ролей (RBAC) для ограничения доступа к кластеру службы Kubernetes".
 - **Защита от угроз**. Благодаря непрерывному анализу развернутой службы AKS Центр безопасности предупреждает об угрозах и вредоносных действиях, обнаруженных на уровне узла и кластера AKS.
 
-См. дополнительные сведения об [интеграции Службы Azure Kubernetes с Центром безопасности](azure-kubernetes-service-integration.md).
+См. дополнительные сведения об [интеграции Службы Azure Kubernetes с Центром безопасности](defender-for-kubernetes-introduction.md).
 
 См. дополнительные сведения о [возможностях защиты контейнеров в Центре безопасности](container-security.md).
 

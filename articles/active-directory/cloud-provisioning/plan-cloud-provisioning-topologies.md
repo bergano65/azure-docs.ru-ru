@@ -11,12 +11,12 @@ ms.date: 02/26/2020
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d442c980ad5bbe3b56eae127b6e9eaeddf380a4e
-ms.sourcegitcommit: 03662d76a816e98cfc85462cbe9705f6890ed638
+ms.openlocfilehash: 172e836a212f9ce097c2c4e392a7386a510c2c6b
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90526856"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91266298"
 ---
 # <a name="azure-ad-connect-cloud-provisioning-supported-topologies-and-scenarios"></a>Azure AD Connect поддерживаемые топологии и сценарии для подготовки облака
 В этой статье описываются различные локальные и Azure Active Directory (Azure AD) топологии, в которых используется облачная подготовка Azure AD Connect. Эта статья содержит только поддерживаемые конфигурации и сценарии.
@@ -34,7 +34,7 @@ ms.locfileid: "90526856"
 - Нельзя изменить атрибут, используемый для привязки к источнику.
 
 ## <a name="single-forest-single-azure-ad-tenant"></a>Один лес, один клиент Azure AD
-![Топология для одного леса и одного клиента](media/plan-cloud-provisioning-topologies/single-forest.png)
+![Схема, на которой показана топология для одного леса и одного клиента.](media/plan-cloud-provisioning-topologies/single-forest.png)
 
 Простейшая топология — это один локальный лес с одним или несколькими доменами и одним клиентом Azure AD.  Пример этого сценария см [. в разделе Учебник. один лес с одним клиентом Azure AD.](tutorial-single-forest.md)
 
@@ -45,7 +45,7 @@ ms.locfileid: "90526856"
 Общая топология — это несколько лесов AD с одним или несколькими доменами и одним клиентом Azure AD.  
 
 ## <a name="existing-forest-with-azure-ad-connect-new-forest-with-cloud-provisioning"></a>Существующий лес с Azure AD Connect, новый лес с подготовкой облачных сред
-![Топология для одного леса и одного клиента](media/plan-cloud-provisioning-topologies/existing-forest-new-forest.png)
+![Схема, на которой показана топология для существующего леса и нового леса.](media/plan-cloud-provisioning-topologies/existing-forest-new-forest.png)
 
 Этот сценарий аналогичен сценарию с несколькими лесами, однако в нем используется существующая Azure AD Connect среда, а затем идет перенос в новый лес с помощью Azure AD Connect подготовки облачных ресурсов.  Пример этого сценария см. в разделе [учебник. существующий лес с одним клиентом Azure AD.](tutorial-existing-forest.md)
 

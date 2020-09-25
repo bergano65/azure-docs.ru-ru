@@ -9,13 +9,13 @@ services: iot-hub
 ms.devlang: nodejs
 ms.topic: conceptual
 ms.date: 08/16/2019
-ms.custom: mqtt, devx-track-javascript
-ms.openlocfilehash: 16e6c72f9fbb710524752c2d220d442735d809b7
-ms.sourcegitcommit: e71da24cc108efc2c194007f976f74dd596ab013
+ms.custom: mqtt, devx-track-js
+ms.openlocfilehash: 2c5ce219e40117a2b656b7acab6dd68a1d20dffb
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87420776"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91251938"
 ---
 # <a name="schedule-and-broadcast-jobs-nodejs"></a>Планирование и вещание заданий (Node.js)
 
@@ -37,7 +37,7 @@ ms.locfileid: "87420776"
 
 [!INCLUDE [iot-hub-basic](../../includes/iot-hub-basic-whole.md)]
 
-В этом учебнике описаны следующие процедуры.
+В этом учебнике демонстрируется выполнение следующих действий:
 
 * Создание приложения Node.js имитации устройства с прямым методом, который позволяет выполнить действие **lockDoor** путем вызова из серверной части решения.
 

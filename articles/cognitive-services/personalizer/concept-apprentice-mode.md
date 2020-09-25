@@ -1,14 +1,16 @@
 ---
 title: Режим области — Персонализация
 description: ''
+ms.service: cognitive-services
+ms.subservice: personalizer
 ms.topic: conceptual
 ms.date: 05/01/2020
-ms.openlocfilehash: 5ee8242fbc9ab5bed4e3eed8997feb122b131062
-ms.sourcegitcommit: 124f7f699b6a43314e63af0101cd788db995d1cb
+ms.openlocfilehash: f793535f04b36d231cec384b7acd66e38a7eb039
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86087203"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91253536"
 ---
 # <a name="use-apprentice-mode-to-train-personalizer-without-affecting-your-existing-application"></a>Использование режима области для обучения персонализации без влияния на существующее приложение
 
@@ -88,8 +90,8 @@ ms.locfileid: "86087203"
 
 Даже если персонализация является просто сложной _задачей, то_при проверке данных хорошо подходит для персонализации. Вместо этого можно использовать режим области с 100% трафика, а все пользователи получают возможность управления (без изменений).
 
-Если у вас есть вариант использования, используя средства персонализации и обучения в Интернете, эксперименты/B позволяют управлять когорты и экспоненциальным сравнением результатов, которые могут быть более сложными, чем сигналы, используемые для вознаграждения. Ниже приведен пример вопроса, на который может ответить тест A/B:`In a retail website, Personalizer optimizes a layout and gets more users to _check out_ earlier, but does this reduce total revenue per transaction?`
+Если у вас есть вариант использования, используя средства персонализации и обучения в Интернете, эксперименты/B позволяют управлять когорты и экспоненциальным сравнением результатов, которые могут быть более сложными, чем сигналы, используемые для вознаграждения. Ниже приведен пример вопроса, на который может ответить тест A/B: `In a retail website, Personalizer optimizes a layout and gets more users to _check out_ earlier, but does this reduce total revenue per transaction?`
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Сведения об [активных и неактивных событиях](concept-active-inactive-events.md)

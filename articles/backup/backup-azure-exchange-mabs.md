@@ -4,12 +4,12 @@ description: Узнайте, как выполнить резервное коп
 ms.reviewer: kasinh
 ms.topic: conceptual
 ms.date: 03/24/2017
-ms.openlocfilehash: eff702cb50317e6b685e19e7df1ffc99b5fc1736
-ms.sourcegitcommit: 3246e278d094f0ae435c2393ebf278914ec7b97b
+ms.openlocfilehash: 86389ef89ced74905db0fc8bfeaabcea6140762a
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89377631"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91263000"
 ---
 # <a name="back-up-an-exchange-server-to-azure-with-azure-backup-server"></a>Резервное копирование сервера Exchange Server в Azure с помощью Azure Backup Server
 
@@ -23,8 +23,8 @@ ms.locfileid: "89377631"
 
 Чтобы установить агент защиты MABS на сервер Exchange Server, выполните следующее.
 
-1. Убедитесь, что брандмауэры настроены правильно. Ознакомьтесь со статьей [Настройка исключений брандмауэра для агента](/system-center/dpm/configure-firewall-settings-for-dpm?view=sc-dpm-2019).
-2. Установите агент на сервере Exchange Server, выбрав **Management > агенты > установить** в MABS консоль администратора. Подробные инструкции см. в статье [Установка агента защиты DPM](/system-center/dpm/deploy-dpm-protection-agent?view=sc-dpm-2019).
+1. Убедитесь, что брандмауэры настроены правильно. Ознакомьтесь со статьей [Настройка исключений брандмауэра для агента](/system-center/dpm/configure-firewall-settings-for-dpm).
+2. Установите агент на сервере Exchange Server, выбрав **Management > агенты > установить** в MABS консоль администратора. Подробные инструкции см. в статье [Установка агента защиты DPM](/system-center/dpm/deploy-dpm-protection-agent).
 
 ## <a name="create-a-protection-group-for-the-exchange-server"></a>Создание группы защиты для сервера Exchange Server
 

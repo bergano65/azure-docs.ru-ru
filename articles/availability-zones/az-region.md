@@ -7,12 +7,12 @@ ms.topic: article
 ms.date: 09/18/2020
 ms.author: cynthn
 ms.custom: fasttrack-edit, mvc, references_regions
-ms.openlocfilehash: d7a158d91295aedc14f1f913ae152c496066fab5
-ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
+ms.openlocfilehash: b2143e4a9e4c24291ca2840f51e1b63c12017b04
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "90891681"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91264245"
 ---
 # <a name="regions-that-support-availability-zones-in-azure"></a>Регионы, поддерживающие Зоны доступности в Azure
 
@@ -44,8 +44,8 @@ ms.locfileid: "90891681"
 | Брандмауэр Azure                     | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
 | **Базы данных** |  |  |  |  |
 | Azure Data Explorer                | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
-| База данных SQL                       | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | : heavy_check_mark: (Предварительная версия) | :heavy_check_mark: |
-| Кэш Azure для Redis              | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
+| База данных SQL                       | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
+| Кэш Redis для Azure              | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
 | Azure Cosmos DB                    | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
 | **Аналитика** |  |  |  |  |
 | Центры событий                         | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
@@ -77,8 +77,8 @@ ms.locfileid: "90891681"
 | Брандмауэр Azure                     | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
 | **Базы данных** |  |  |  |  |
 | Azure Data Explorer                | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
-| База данных SQL                       | :heavy_check_mark: | : heavy_check_mark: (Предварительная версия) | :heavy_check_mark: | :heavy_check_mark: |
-| Кэш Azure для Redis              | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
+| База данных SQL                       | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
+| Кэш Redis для Azure              | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
 | Azure Cosmos DB                    | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
 | **Аналитика** |  |  |  |  |
 | Центры событий                         | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
@@ -111,7 +111,7 @@ ms.locfileid: "90891681"
 | **Базы данных** |  |  |  |
 | Azure Data Explorer                | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
 | База данных SQL                       | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
-| Кэш Azure для Redis              | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
+| Кэш Redis для Azure              | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
 | Azure Cosmos DB                    | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
 | **Аналитика** |  |  |  |
 | Центры событий                         | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |

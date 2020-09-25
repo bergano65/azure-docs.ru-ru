@@ -11,19 +11,19 @@ ms.date: 04/15/2020
 ms.author: fipopovi
 ms.reviewer: jrasnick
 ms.custom: ''
-ms.openlocfilehash: ad2b13fbfbd9871a55efb1826fa1e978d4eeb453
-ms.sourcegitcommit: 3fc3457b5a6d5773323237f6a06ccfb6955bfb2d
+ms.openlocfilehash: 0d9d28bacac02326ee781ca56309b7a72e921960
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/11/2020
-ms.locfileid: "90032305"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91289175"
 ---
 # <a name="group-by-options-in-synapse-sql"></a>ГРУППИРОВАНие по параметрам в синапсе SQL
 Синапсе SQL позволяет разрабатывать решения путем реализации различных параметров GROUP BY. 
 
 ## <a name="what-does-group-by-do"></a>Что делает GROUP BY
 
-Предложение T-SQL [GROUP BY](/sql/t-sql/queries/select-group-by-transact-sql?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest) используется для объединения данных в сводный набор строк.
+Предложение T-SQL [GROUP BY](/sql/t-sql/queries/select-group-by-transact-sql?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true) используется для объединения данных в сводный набор строк.
 
 SQL по запросу поддерживает весь диапазон параметров GROUP BY. Пул SQL поддерживает ограниченное число вариантов GROUP BY.
 
@@ -57,7 +57,7 @@ GROUP BY ROLLUP (
 Используя ROLLUP, приведенный выше пример запрашивает следующие объединения.
 
 * Страна и регион
-* Страна или регион
+* Country
 * Grand Total
 
 Чтобы получить те же результаты без ROLLUP, можно использовать оператор UNION ALL и явным образом указать требуемые объединения.
@@ -124,7 +124,7 @@ SELECT Cols
 FROM GrpCube;
 ```
 
-На следующем рисунке показаны результаты [CREATE TABLE как SELECT](/sql/t-sql/statements/create-table-as-select-azure-sql-data-warehouse?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest):
+На следующем рисунке показаны результаты [CREATE TABLE как SELECT](/sql/t-sql/statements/create-table-as-select-azure-sql-data-warehouse?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true):
 
 ![GROUP BY с CUBE](./media/develop-group-by-options/develop-group-by-cube.png)
 

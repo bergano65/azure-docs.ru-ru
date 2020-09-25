@@ -6,17 +6,20 @@ ms.author: andrela
 ms.service: mysql
 ms.topic: conceptual
 ms.date: 9/21/2020
-ms.openlocfilehash: e630ccec744c4edf0dc80d374ecc93526f960d44
-ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
+ms.openlocfilehash: 00d0808e83a888a39f9268328feb209167c9b644
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "90938948"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91295995"
 ---
 # <a name="track-database-activity-with-audit-logs-in-azure-database-for-mysql-flexible-server"></a>Мониторинг активности базы данных с помощью журналов аудита в базе данных Azure для гибкого сервера MySQL
 
 > [!IMPORTANT] 
 > Сейчас предоставляется общедоступная предварительная версия Гибкого сервера Базы данных Azure для MySQL.
+
+> [!NOTE]
+> Интеграция с Azure Monitor параметрами диагностики для доступа к журналам в ближайшее время будет доступна для развертывания и полной функциональности.
 
 База данных Azure для гибкого сервера MySQL предоставляет пользователям возможность настраивать журналы аудита. Журналы аудита можно использовать для наблюдения за действиями на уровне базы данных, включая события подключения, администратора, DDL и DML. Эти типы журналов обычно используются для обеспечения соответствия требованиям.
 
@@ -49,6 +52,9 @@ ms.locfileid: "90938948"
 | `TABLE_ACCESS` | — Доступно только для MySQL 5,7 <br> — Инструкции чтения таблицы, такие как SELECT или INSERT INTO... МЕТЬТЕ <br> — Инструкции DELETE таблицы, такие как DELETE или TRUNCATE TABLE <br> — Табличные инструкции INSERT, такие как INSERT или Replace <br> -Табличные инструкции UPDATE, например UPDATE |
 
 ## <a name="access-audit-logs"></a>Доступ к журналам аудита
+
+> [!NOTE]
+> Интеграция с Azure Monitor параметрами диагностики для доступа к журналам в ближайшее время будет доступна для развертывания и полной функциональности.
 
 Журналы аудита интегрируются с Azure Monitor параметрами диагностики. После включения журналов аудита на гибком сервере MySQL их можно отправить в журналы Azure Monitor, концентраторы событий или службу хранилища Azure. Дополнительные сведения о параметрах диагностики см. в [документации по журналам диагностики](../../azure-monitor/platform/platform-logs-overview.md). Дополнительные сведения о включении параметров диагностики в портал Azure см. в [статье о портале журналов аудита](how-to-configure-audit-logs-portal.md#set-up-diagnostics).
 

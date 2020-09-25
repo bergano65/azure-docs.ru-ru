@@ -1,5 +1,5 @@
 ---
-title: Добавление и удаление административных единиц (Предварительная версия) — Azure Active Directory | Документация Майкрософт
+title: Добавление и удаление административных единиц — Azure Active Directory | Документация Майкрософт
 description: Используйте административные единицы, чтобы ограничить область разрешений роли в Azure Active Directory.
 services: active-directory
 documentationcenter: ''
@@ -9,17 +9,17 @@ ms.service: active-directory
 ms.topic: how-to
 ms.subservice: users-groups-roles
 ms.workload: identity
-ms.date: 04/16/2020
+ms.date: 09/22/2020
 ms.author: curtand
 ms.reviewer: anandy
 ms.custom: oldportal;it-pro;
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 977a90419c142e576fcf484562875d12c8dad451
-ms.sourcegitcommit: cec9676ec235ff798d2a5cad6ee45f98a421837b
+ms.openlocfilehash: 30b673994e20f01dde504adb438aa1b199c96d88
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85851769"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91264736"
 ---
 # <a name="manage-administrative-units-in-azure-active-directory"></a>Управление административными единицами в Azure Active Directory
 
@@ -45,7 +45,7 @@ ms.locfileid: "85851769"
 
 1. В портал Azure перейдите в Azure AD, а затем в левой области выберите **административные единицы**.
 
-    ![Снимок экрана: ссылка на административные единицы (Предварительная версия) в Azure AD](./media/roles-admin-units-manage/nav-to-admin-units.png)
+    ![Снимок экрана с административным унитслинк в Azure AD](./media/roles-admin-units-manage/nav-to-admin-units.png)
 
 1. Выберите **Добавить** , а затем введите имя административной единицы. При необходимости добавьте описание административной единицы.
 
@@ -106,7 +106,7 @@ Request body
 {}
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Управление пользователями в административной единице](roles-admin-units-add-manage-users.md)
 * [Управление группами в административной единице](roles-admin-units-add-manage-groups.md)

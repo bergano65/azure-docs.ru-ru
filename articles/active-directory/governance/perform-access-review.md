@@ -15,12 +15,12 @@ ms.date: 06/17/2020
 ms.author: barclayn
 ms.reviewer: mwahl
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: efab031ac2ad96524ce12e6d1c4a942f01ce2344
-ms.sourcegitcommit: 58d3b3314df4ba3cabd4d4a6016b22fa5264f05a
+ms.openlocfilehash: 7e03ba5e7a4a24ee3114946230f78a64ea3d42cf
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89299972"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91265687"
 ---
 # <a name="review-access-to-groups-and-applications-in-azure-ad-access-reviews"></a>Просмотр доступа к группам и приложениям в проверках доступа Azure AD
 
@@ -37,7 +37,7 @@ Azure Active Directory (Azure AD) упрощает управление дост
 
 1. Найдите сообщение электронной почты от Майкрософт, предлагающее проверить доступ. Ниже приведен пример электронного письма для проверки доступа к группе.
 
-    ![Пример электронного письма от Майкрософт для проверки доступа к группе](./media/perform-access-review/access-review-email.png)
+    ![Снимок экрана, на котором показан пример электронного сообщения от Майкрософт для проверки доступа к группе.](./media/perform-access-review/access-review-email.png)
 
 1. Щелкните ссылку **начать проверку** , чтобы открыть проверку доступа.
 
@@ -54,7 +54,7 @@ Azure Active Directory (Azure AD) упрощает управление дост
         > [!NOTE]
         > Если плитка проверки **доступа** не отображается, для этой Организации нет проверок доступа, и в настоящее время никаких действий не требуется.
 
-        ![Список ожидающих проверок доступа для приложений и групп](./media/perform-access-review/access-reviews-list.png)
+        ![Снимок экрана, показывающий список ожидающих проверок доступа для приложений и групп.](./media/perform-access-review/access-reviews-list.png)
 
     1. Щелкните ссылку **начать проверку** для проверки доступа, которую требуется выполнить.
 
@@ -99,7 +99,7 @@ Azure Active Directory (Azure AD) упрощает управление дост
 
 1. В синей строке в нижней части страницы щелкните **принять рекомендации**.
 
-    ![Открытие списка проверки доступа с кнопкой "принять рекомендации"](./media/perform-access-review/accept-recommendations.png)
+    ![Снимок экрана, на котором показан список открытых проверок доступа с выбранной кнопкой "принять рекомендации".](./media/perform-access-review/accept-recommendations.png)
 
     Вы увидите сводку рекомендуемых действий.
 

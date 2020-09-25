@@ -7,12 +7,12 @@ ms.author: baanders
 ms.date: 06/04/2020
 ms.topic: how-to
 ms.service: digital-twins
-ms.openlocfilehash: aac5c937ab2f80dcbe1567a3817b056a6285cf17
-ms.sourcegitcommit: 07166a1ff8bd23f5e1c49d4fd12badbca5ebd19c
+ms.openlocfilehash: 9812724b62717440160b9db8604a65ab787f3a9d
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90086680"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91252669"
 ---
 # <a name="use-the-azure-digital-twins-apis-and-sdks"></a>Использование интерфейсов API и пакетов SDK для Azure Digital Twins
 
@@ -61,6 +61,8 @@ API-интерфейсы плоскости данных — это API-инте
 * Вы можете использовать пакет SDK для **JavaScript** . Для использования пакета SDK для JavaScript...
    - Вы можете просмотреть и установить пакет из NPM: [Клиентская библиотека Azure Azure Digital двойников для JavaScript](https://www.npmjs.com/package/@azure/digital-twins/v/1.0.0-preview.1).
    - Вы можете просмотреть [справочную документацию по пакету SDK](https://docs.microsoft.com/javascript/api/@azure/digital-twins/?view=azure-node-latest&preserve-view=true).
+* Вы можете использовать пакет SDK для **JavaScript** . Для использования пакета SDK для JavaScript...
+   - Вы можете просмотреть и установить пакет из Maven: [`com.azure:azure-digitaltwins-core`](https://search.maven.org/artifact/com.azure/azure-digitaltwins-core/1.0.0-beta.1/jar)
 * Вы можете создать пакет SDK для другого языка с помощью функции автоотдыха. Следуйте инструкциям в разделе [*инструкции по созданию настраиваемых пакетов SDK для Azure Digital двойников с помощью автоrestful*](how-to-create-custom-sdks.md).
 
 Вы также можете использовать API-интерфейсы плоскости с датами, взаимодействуя с Azure Digital двойников через интерфейс [командной строки](how-to-use-cli.md).
@@ -291,14 +293,14 @@ client.UpdateDigitalTwin("myTwin", uou.Serialize());
 
 На домашней странице портала найдите свой экземпляр Azure Digital двойников, чтобы получить сведения о нем. Выберите параметр **метрики** в меню экземпляра Azure Digital двойников, чтобы открыть страницу *метрики* .
 
-:::image type="content" source="media/troubleshoot-metrics/azure-digital-twins-metrics.png" alt-text="Снимок экрана со страницей метрики для Azure Digital двойников":::
+:::image type="content" source="media/troubleshoot-metrics/azure-digital-twins-metrics.png" alt-text="Снимок экрана со страницей "метрики" для Azure Digital двойников":::
 
 Здесь можно просмотреть метрики для своего экземпляра и создать пользовательские представления.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Сведения об использовании API для настройки экземпляра и проверки подлинности Azure Digital двойников:
-* [*Пошаговое руководство. Настройка экземпляра и проверки подлинности*](how-to-set-up-instance-scripted.md)
+* [*Пошаговое руководство. Настройка экземпляра и проверки подлинности*](how-to-set-up-instance-portal.md)
 
 Или пошаговые инструкции по созданию клиентского приложения, такого как, которое использовалось в этом пошаговом руководстве:
 * [*Руководство. Написание кода для клиентского приложения*](tutorial-code.md)

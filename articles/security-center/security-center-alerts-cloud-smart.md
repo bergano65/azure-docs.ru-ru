@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 07/02/2019
 ms.author: memildin
-ms.openlocfilehash: b26f0bab073ce248ca23bb8a815fa3e293ddba51
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: b60798ad1fab0ed66f3d4a39b2fd7faf79fd515e
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "73686495"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91268076"
 ---
 # <a name="cloud-smart-alert-correlation-in-azure-security-center-incidents"></a>Корреляция облачных интеллектуальных оповещений в центре безопасности Azure (инциденты)
 
@@ -38,5 +38,5 @@ ms.locfileid: "73686495"
 
 ![Снимок экрана с отчетом об обнаруженных инцидентах безопасности](./media/security-center-alerts-cloud-smart/security-incident.png)
 
-Чтобы лучше понять инциденты безопасности, см. статью [как управлять инцидентами безопасности в центре безопасности Azure](https://docs.microsoft.com/azure/security-center/security-center-incident).
+Чтобы лучше понять инциденты безопасности, см. статью [как управлять инцидентами безопасности в центре безопасности Azure](security-center-incident.md).
 

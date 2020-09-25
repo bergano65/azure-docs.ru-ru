@@ -10,14 +10,14 @@ ms.reviewer: craigg
 ms.service: dms
 ms.workload: data-services
 ms.custom: seo-lt-2019
-ms.topic: article
+ms.topic: troubleshooting
 ms.date: 02/27/2020
-ms.openlocfilehash: ae5d5f2d282c546f5172ca1c8cb0e420d3b6e96b
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: be6d9d3b8a20e11c874234baae26629ce0187e4f
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "80878057"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91291816"
 ---
 # <a name="known-issuesmigration-limitations-with-migrations-from-mongodb-to-azure-cosmos-dbs-api-for-mongodb"></a>Известные проблемы/ограничения миграции при миграции с MongoDB на API Azure Cosmos DB для MongoDB
 
@@ -47,7 +47,7 @@ ms.locfileid: "80878057"
 | ------------- | ------------- |
 | Попытка перехода на Azure Cosmos DB из неподдерживаемой версии MongoDB. | По мере выпуска новых версий MongoDB они тестируются для обеспечения совместимости с Azure Database Migration Service, а служба периодически обновляется для принятия последних версий. Если необходимо выполнить миграцию немедленно, в качестве обходного пути можно экспортировать базы данных или коллекции в службу хранилища Azure, а затем указать источник результирующего дампа. Создайте SAS в контейнере больших двоичных объектов в Обозреватель службы хранилища, а затем используйте URL-адрес со сведениями о SAS контейнера в качестве подробной строки подключения к источнику.<br><br> |
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Ознакомьтесь с руководством [Миграция MongoDB в API Azure Cosmos DB для MongoDB Online с помощью DMS](tutorial-mongodb-cosmos-db-online.md).
 * Ознакомьтесь с руководством [Миграция MongoDB в API Azure Cosmos DB для MongoDB в автономном режиме с помощью DMS](tutorial-mongodb-cosmos-db.md).

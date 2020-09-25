@@ -10,12 +10,12 @@ ms.service: data-factory
 ms.workload: data-services
 ms.topic: conceptual
 ms.date: 11/25/2019
-ms.openlocfilehash: 81a83c629a1cdcde77ec43751f32ebfe1dfb3425
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 79cc17ba4f845e2263d1a09af4a3f9ae4150f362
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84266854"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91292223"
 ---
 # <a name="expressions-and-functions-in-azure-data-factory"></a>Выражения и функции в фабрике данных Azure
 
@@ -68,7 +68,7 @@ ms.locfileid: "84266854"
 ### <a name="complex-expression-example"></a>Пример сложных выражений
 Приведенный ниже пример содержит сложное выражение, которое ссылается на глубоко вложенное поле в выходных данных действия. Чтобы создать ссылку на параметр конвейера, который вычисляет вложенное поле, используйте синтаксис [] вместо оператора точки (.) (как subfield1 и subfield2 в нашем примере).
 
-@activity('{activityName}').output.{subfield1}.{subfield2}[pipeline().parameters.subfield3].{subfield4}
+@activity('*activityName*'). Output. *subfield1*. *subfield2*[конвейер (). parameters.* subfield3*]. *subfield4*
 
 ### <a name="a-dataset-with-a-parameter"></a>Набор данных с параметром
 В следующем примере BlobDataset принимает параметр с именем **path**. Его значение используется для задания значения свойства **folderPath** с помощью выражения: `dataset().path`. 

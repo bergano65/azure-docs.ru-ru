@@ -10,12 +10,12 @@ ms.subservice: computer-vision
 ms.topic: conceptual
 ms.date: 09/11/2020
 ms.author: aahi
-ms.openlocfilehash: 2d19c061ad1e5cf033d2801df64a0ae37736c418
-ms.sourcegitcommit: bdd5c76457b0f0504f4f679a316b959dcfabf1ef
+ms.openlocfilehash: f85a7e2acf911772ecc6562217918352e909fcbb
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "90983024"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91254080"
 ---
 # <a name="telemetry-and-troubleshooting"></a>Данные телеметрии и устранение неполадок
 
@@ -313,8 +313,7 @@ az ad sp create-for-rbac --role="Monitoring Metrics Publisher" --name "<principa
 
 "Контейнер находится в недопустимом состоянии. Сбой проверки подписки с состоянием "несоответствие". Ключ API не предназначен для данного типа контейнера. "
 
-Дополнительные сведения см. в статье [запрос утверждения для запуска контейнера](spatial-analysis-container.md#request-approval-to-run-the-container). 
-
+Дополнительные сведения см. в статье [запрос утверждения для запуска контейнера](spatial-analysis-container.md#request-approval-to-run-the-container).
 
 ## <a name="troubleshooting-the-azure-stack-edge-device"></a>Устранение неполадок устройства Azure Stack пограничных устройств
 

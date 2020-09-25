@@ -11,12 +11,12 @@ ms.date: 08/29/2018
 ms.author: anjangsh
 ms.reviewer: igorstan
 ms.custom: seo-lt-2019
-ms.openlocfilehash: f8dc7be63506e586b90d1e389d26ac591dce9c3b
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 62db1acd704aeb563c5644d7c963c65a3abdfd0c
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87075875"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91289656"
 ---
 # <a name="restore-an-existing-sql-pool"></a>Восстановление существующего пула SQL
 
@@ -69,7 +69,7 @@ Get-AzSubscription
 Select-AzSubscription -SubscriptionName $SubscriptionName
 
 # Or list all restore points
-Get-AzSqlDatabaseRestorePoints -ResourceGroupName $ResourceGroupName -ServerName $ServerName -DatabaseName $DatabaseName
+Get-AzSqlDatabaseRestorePoint -ResourceGroupName $ResourceGroupName -ServerName $ServerName -DatabaseName $DatabaseName
 
 # Get the specific database to restore
 $Database = Get-AzSqlDatabase -ResourceGroupName $ResourceGroupName -ServerName $ServerName -DatabaseName $DatabaseName
@@ -100,7 +100,7 @@ $RestoredDatabase.status
 
     ![Точки автоматического восстановления](./media/sql-data-warehouse-restore-active-paused-dw/restoring-11.png)
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Next Steps
 
 - [Восстановление удаленного пула SQL](sql-data-warehouse-restore-deleted-dw.md)
 - [Восстановление из пула SQL с географическим резервным копированием](sql-data-warehouse-restore-from-geo-backup.md)
