@@ -3,12 +3,12 @@ title: Управление подписанными образами
 description: Узнайте, как включить доверие к содержимому в Реестре контейнеров Azure, а также отправлять и извлекать подписанные образы. Отношение доверия содержимого — это функция уровня служб Premium.
 ms.topic: article
 ms.date: 09/06/2019
-ms.openlocfilehash: 34bb56bab869cb1f12541b65c59b06a73b215377
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 36d2a8ddef184804facdace2d517d7e2fdf1b24c
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87076855"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91253485"
 ---
 # <a name="content-trust-in-azure-container-registry"></a>Доверие к содержимому в Реестре контейнеров Azure
 
@@ -40,7 +40,7 @@ ms.locfileid: "87076855"
 
 Сначала перейдите в реестр на портале Azure. В разделе **Политики** последовательно выберите **Доверие к содержимому** > **Включено** > **Сохранить**. Можно также выполнить команду [az acr config content-trust update][az-acr-config-content-trust-update] в Azure CLI.
 
-![Включение доверия к содержимому в реестре на портале Azure][content-trust-01-portal]
+![Снимок экрана, показывающий включение отношения доверия содержимого для реестра в портал Azure.][content-trust-01-portal]
 
 ## <a name="enable-client-content-trust"></a>Включение доверия к содержимому в клиенте
 

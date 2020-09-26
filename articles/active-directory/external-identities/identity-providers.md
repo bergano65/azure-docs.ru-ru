@@ -1,6 +1,6 @@
 ---
 title: Поставщики удостоверений для внешних удостоверений — Azure AD
-description: Служба совместной работы Azure Active Directory B2B поддерживает Многофакторную идентификацию (MFA), которая позволяет предоставлять выборочный доступ к корпоративным приложениям.
+description: Узнайте, как использовать Azure AD в качестве поставщика удостоверений по умолчанию для совместного использования с внешними пользователями.
 services: active-directory
 ms.service: active-directory
 ms.subservice: B2B
@@ -11,12 +11,12 @@ author: msmimart
 manager: celestedg
 ms.reviewer: elisolMS
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 2284d015b451872753dd0855cac42e6f1926545c
-ms.sourcegitcommit: 4e5560887b8f10539d7564eedaff4316adb27e2c
+ms.openlocfilehash: a61eca3340985886ef782b28a59a1283c5f473ce
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87909388"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91265720"
 ---
 # <a name="identity-providers-for-external-identities"></a>Поставщики удостоверений для внешних удостоверений
 

@@ -4,12 +4,12 @@ description: Узнайте о поддерживаемых службах и с
 ms.subservice: logs
 ms.topic: reference
 ms.date: 09/01/2020
-ms.openlocfilehash: d0f78b858da51838aacd9e3be9b0a069918710a7
-ms.sourcegitcommit: 9c262672c388440810464bb7f8bcc9a5c48fa326
+ms.openlocfilehash: 17b4b161e76f018d8f669ee7e9b5dd578bb3e035
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/03/2020
-ms.locfileid: "89421923"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91278402"
 ---
 # <a name="common-and-service-specific-schema-for-azure-resource-logs"></a>Распространенная и зависящая от службы схема для журналов ресурсов Azure
 
@@ -23,7 +23,7 @@ ms.locfileid: "89421923"
 
 ## <a name="top-level-common-schema"></a>Общая схема верхнего уровня
 
-| name | Обязательный/необязательный | Описание |
+| Имя | Обязательный/необязательный | Описание |
 |---|---|---|
 | time | Обязательно | Метка времени события (UTC). |
 | resourceId | Обязательно | Идентификатор ресурса, создавшего событие. Для служб клиента он имеет формат "/tenants/ИД_клиента/providers/имя_поставщика". |
@@ -54,13 +54,13 @@ ms.locfileid: "89421923"
 | Шлюзы приложений |[Ведение журнала для шлюза приложений](../../application-gateway/application-gateway-diagnostics.md) |
 | Служба автоматизации Azure |[Log Analytics для службы автоматизации Azure](../../automation/automation-manage-send-joblogs-log-analytics.md) |
 | Пакетная служба Azure |[Ведение журнала пакетной службы Azure](../../batch/batch-diagnostics.md) |
-| Службы Cognitive Services | [Ведение журнала для Cognitive Services Azure](../../cognitive-services/diagnostic-logging.md) |
+| Cognitive Services | [Ведение журнала для Cognitive Services Azure](../../cognitive-services/diagnostic-logging.md) |
 | Реестр контейнеров | [Ведение журнала для реестра контейнеров Azure](../../container-registry/container-registry-diagnostics-audit-logs.md) |
 | Сеть доставки содержимого | [Журналы Azure для CDN](../../cdn/cdn-azure-diagnostic-logs.md) |
 | Cosmos DB | [Журнал ведения диагностики Azure Cosmos DB](../../cosmos-db/monitor-cosmos-db.md) |
 | Фабрика данных | [Мониторинг фабрик данных с помощью Azure Monitor](../../data-factory/monitor-using-azure-monitor.md) |
 | Data Lake Analytics |[Доступ к журналам для Azure Data Lake Analytics](../../data-lake-analytics/data-lake-analytics-diagnostic-logs.md) |
-| Data Lake Store |[Доступ к журналам для Azure Data Lake Store](../../data-lake-store/data-lake-store-diagnostic-logs.md) |
+| Data Lake Storage |[Доступ к журналам для Azure Data Lake Store](../../data-lake-store/data-lake-store-diagnostic-logs.md) |
 | Azure Data Explorer | [Журналы обозреватель данных Azure](/azure/data-explorer/using-diagnostic-logs) |
 | База данных Azure для MySQL | [Журналы сервера в базе данных Azure для MySQL](../../mysql/concepts-server-logs.md#diagnostic-logs) |
 | База данных Azure для PostgreSQL | [Журналы базы данных Azure для PostgreSQL](../../postgresql/concepts-server-logs.md#resource-logs) |
@@ -69,6 +69,7 @@ ms.locfileid: "89421923"
 | Центры событий |[Журналы концентраторов событий Azure](../../event-hubs/event-hubs-diagnostic-logs.md) |
 | ExpressRoute | Схема недоступна. |
 | Брандмауэр Azure | Схема недоступна. |
+| Front Door | [Ведение журнала для передней дверцы](../../frontdoor/front-door-diagnostics.md) |
 | Центр Интернета вещей | [Использование Azure Monitor](../../iot-hub/iot-hub-monitor-resource-health.md#use-azure-monitor) |
 | Key Vault |[Ведение журнала хранилища ключей Azure](../../key-vault/general/logging.md) |
 | Служба Kubernetes |[Ведение журнала Kubernetes для Azure](../../aks/view-master-logs.md#log-event-schema) |
