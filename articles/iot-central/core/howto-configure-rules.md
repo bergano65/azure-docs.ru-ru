@@ -8,12 +8,12 @@ ms.topic: how-to
 ms.service: iot-central
 services: iot-central
 manager: philmea
-ms.openlocfilehash: c4d0639831d2f6f60a719637c5158fba5caf6f43
-ms.sourcegitcommit: fdec8e8bdbddcce5b7a0c4ffc6842154220c8b90
+ms.openlocfilehash: 8391202e991c240b03bd79b947c1c3c6dcc9afd7
+ms.sourcegitcommit: d95cab0514dd0956c13b9d64d98fdae2bc3569a0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83659351"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91362543"
 ---
 # <a name="configure-rules"></a>Настройка правил
 
@@ -33,7 +33,7 @@ ms.locfileid: "83659351"
 
 На следующем снимке экрана условия проверяют, когда температура превышает 70&deg; Фаренгейта (21 градус Цельсия), а влажность меньше 10. Если оба этих оператора имеют значение True, правило принимает значение True и активирует действие.
 
-![Условия](media/howto-configure-rules/conditions.png)
+![На снимке экрана показан монитор холодильника с условиями, заданными для температуры и влажности.](media/howto-configure-rules/conditions.png)
 
 ### <a name="use-a-cloud-property-in-a-value-field"></a>Использование облачного свойства в поле значения
 

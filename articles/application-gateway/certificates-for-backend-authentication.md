@@ -8,12 +8,12 @@ ms.service: application-gateway
 ms.topic: how-to
 ms.date: 06/17/2020
 ms.author: absha
-ms.openlocfilehash: 64f2abd2a42fb15b994803a48b97679ee8927233
-ms.sourcegitcommit: 1b320bc7863707a07e98644fbaed9faa0108da97
+ms.openlocfilehash: 69d388b12e564b307cd117c3a86ae960dabaa937
+ms.sourcegitcommit: d95cab0514dd0956c13b9d64d98fdae2bc3569a0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/09/2020
-ms.locfileid: "89594430"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91362718"
 ---
 # <a name="create-certificates-to-allow-the-backend-with-azure-application-gateway"></a>Создание сертификатов, разрешающих серверную часть с помощью шлюза приложений Azure
 
@@ -37,7 +37,7 @@ ms.locfileid: "89594430"
 
 1. Чтобы получить из сертификата CER-файл, откройте раздел **Управление сертификатами пользователей**. Выберите сертификат (обычно в поле Certificates-Current User\Personal\Certificates) и щелкните его правой кнопкой мыши. Щелкните **Все задачи** > **Экспорт**. Откроется **мастера экспорта сертификатов**. Если не удается найти сертификат в разделе <текущий_пользователь>\Personal\Certificates, возможно, вы случайно открыли "Certificates — Local Computer"вместо "Certificates— <текущий_пользователь>". Если вы хотите открыть диспетчер сертификатов в области текущего пользователя с помощью PowerShell, выполните команду *certmgr* в окне консоли.
 
-   ![Экспорт](./media/certificates-for-backend-authentication/export.png)
+   ![На снимке экрана показан Диспетчер сертификатов с выбранными сертификатами и контекстное меню со всеми задачами, а затем Экспорт выбранных.](./media/certificates-for-backend-authentication/export.png)
 
 2. В окне мастера нажмите **Далее**.
 
@@ -53,19 +53,19 @@ ms.locfileid: "89594430"
 
 5. На странице **Имя экспортируемого файла** нажмите кнопку **Обзор**, чтобы перейти в расположение для экспорта сертификата. В поле **Имя файла**введите имя для файла сертификата. Затем щелкните **Далее**.
 
-   ![Просмотреть](./media/certificates-for-backend-authentication/browse.png)
+   ![На снимке экрана показан мастер экспорта сертификатов, в котором указывается файл для экспорта.](./media/certificates-for-backend-authentication/browse.png)
 
 6. Нажмите кнопку **Готово**, чтобы выполнить экспорт сертификата.
 
-   ![Готово](./media/certificates-for-backend-authentication/finish.png)
+   ![На снимке экрана показан мастер экспорта сертификатов после завершения экспорта файла.](./media/certificates-for-backend-authentication/finish.png)
 
 7. Сертификат успешно экспортирован.
 
-   ![Успешно](./media/certificates-for-backend-authentication/success.png)
+   ![На снимке экрана показан мастер экспорта сертификатов с сообщением об успешном выполнении.](./media/certificates-for-backend-authentication/success.png)
 
    Экспортированный сертификат выглядит примерно так:
 
-   ![Экспортированный сертификат](./media/certificates-for-backend-authentication/exported.png)
+   ![На снимке экрана показан символ сертификата.](./media/certificates-for-backend-authentication/exported.png)
 
 8. Если открыть экспортированный сертификат в Блокноте, результат будет приблизительно таким, как в приведенном ниже примере. В разделе Blue содержатся сведения, которые передаются в шлюз приложений. Если открыть сертификат в блокноте и он не похож на этот, обычно это означает, что вы не экспортируете его с помощью кодировки X. 509, основанной на Base-64. CER). Кроме того, при использовании другого текстового редактора следует учитывать, что в некоторых редакторах может выполняться непреднамеренное форматирование в фоновом режиме. Это может вызвать проблемы при передаче текста из этого сертификата в Azure.
 

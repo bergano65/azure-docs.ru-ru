@@ -11,16 +11,16 @@ ms.subservice: studio
 ms.workload: data-services
 ms.topic: how-to
 ms.date: 01/12/2017
-ms.openlocfilehash: 1af3ce5af2425c1403d7591853cb31b4ca3db132
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.openlocfilehash: 1a4e4e8f97f543132e4295cca59312b0e78a6637
+ms.sourcegitcommit: d95cab0514dd0956c13b9d64d98fdae2bc3569a0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 09/25/2020
-ms.locfileid: "91346158"
+ms.locfileid: "91362844"
 ---
 # <a name="use-azure-machine-learning-studio-classic-web-service-parameters"></a>Использование параметров веб-службы Машинное обучение Azure Studio (классическая модель)
 
-**ПРИМЕНИМО К:** ![да](../../../includes/media/aml-applies-to-skus/yes.png)Студия машинного обучения (классическая) ![нет](../../../includes/media/aml-applies-to-skus/no.png)[Машинное обучение Azure](../compare-azure-ml-to-studio-classic.md)
+**применимо к:** ![ Применяется к. ](../../../includes/media/aml-applies-to-skus/yes.png) Машинное обучение Studio (классическая модель) ![ не применяется к.](../../../includes/media/aml-applies-to-skus/no.png)[ Машинное обучение Azure](../compare-azure-ml-to-studio-classic.md)  
 
 
 Веб-служба машинного обучения Azure создается при публикации эксперимента, содержащего модули с настраиваемыми параметрами. В некоторых случаях может потребоваться изменение поведения модуля, пока веб-служба выполняется. *Параметры веб-службы* позволяют это сделать. 

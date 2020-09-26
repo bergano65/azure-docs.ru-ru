@@ -11,16 +11,16 @@ ms.subservice: studio
 ms.topic: how-to
 ms.date: 03/28/2017
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 7b1d8f939e403c795effeca14943791d1554742f
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.openlocfilehash: a963a9f10ee23c50f50e66191e92f0839c457d9c
+ms.sourcegitcommit: d95cab0514dd0956c13b9d64d98fdae2bc3569a0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 09/25/2020
-ms.locfileid: "91347540"
+ms.locfileid: "91362854"
 ---
 # <a name="deploy-azure-machine-learning-studio-classic-web-services-that-use-data-import-and-data-export-modules"></a>Развертывание веб-служб Студии машинного обучения Azure (классическая), использующих модули импорта и экспорта данных
 
-**ПРИМЕНИМО К:** ![да](../../../includes/media/aml-applies-to-skus/yes.png)Студия машинного обучения (классическая) ![нет](../../../includes/media/aml-applies-to-skus/no.png)[Машинное обучение Azure](../compare-azure-ml-to-studio-classic.md)
+**применимо к:** ![ Применяется к. ](../../../includes/media/aml-applies-to-skus/yes.png) Машинное обучение Studio (классическая модель) ![ не применяется к.](../../../includes/media/aml-applies-to-skus/no.png)[ Машинное обучение Azure](../compare-azure-ml-to-studio-classic.md)  
 
 
 При создании прогнозного эксперимента обычно добавляются вход и выход веб-службы. Если вы развернете эксперимент, то пользователи смогут отправлять и получать данные из веб-службы через входы и выходы. В некоторых приложениях данные пользователя могут быть доступны через веб-канал данных или уже находиться во внешнем источнике данных, таком как хранилище BLOB-объектов Azure. В этих случаях для чтения и записи данных им не требуются входы и выходы веб-службы. Вместо этого они могут использовать службу выполнения пакетов (BES) для чтения из источника данных с помощью модуля импорта данных, а записывать результаты оценки в другое расположение с помощью модуля экспорта данных.

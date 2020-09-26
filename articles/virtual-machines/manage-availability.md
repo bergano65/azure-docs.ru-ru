@@ -7,12 +7,12 @@ ms.workload: infrastructure-services
 ms.topic: conceptual
 ms.date: 09/22/2020
 ms.author: cynthn
-ms.openlocfilehash: 4dc3e128ac1c611a8527c3044bfac566edc24c74
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.openlocfilehash: fe89b58f71b14b211863fd46ba523e8c866764f1
+ms.sourcegitcommit: d95cab0514dd0956c13b9d64d98fdae2bc3569a0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 09/25/2020
-ms.locfileid: "91346952"
+ms.locfileid: "91361795"
 ---
 # <a name="manage-the-availability-of-linux-virtual-machines"></a>Управление доступностью виртуальных машин Linux
 
@@ -36,7 +36,7 @@ ms.locfileid: "91346952"
 
 * Использование зон новой для защиты от сбоев центра обработки данных
 * Настройка нескольких виртуальных машин в группе доступности для обеспечения избыточности
-* Использование управляемых дисков для виртуальных машин в группе доступности]
+* Использование управляемых дисков для виртуальных машин в группе доступности
 * Использование запланированных событий для упреждающего ответа, влияющие на события виртуальных машин
 * Настройка каждого уровня приложений в отдельных группах доступности
 * Объединение подсистемы балансировки нагрузки с зонами или группами доступности

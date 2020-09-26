@@ -9,16 +9,16 @@ ms.service: azure-maps
 services: azure-maps
 manager: cpendle
 ms.custom: ''
-ms.openlocfilehash: 9f7f44e053cfb26cbf7d897b8a1df1ad2861fd07
-ms.sourcegitcommit: 1b2d1755b2bf85f97b27e8fbec2ffc2fcd345120
+ms.openlocfilehash: aecda5ed9b87ba2345a52923a574919d6a08594f
+ms.sourcegitcommit: d95cab0514dd0956c13b9d64d98fdae2bc3569a0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/04/2020
-ms.locfileid: "87552005"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91362677"
 ---
 # <a name="getting-started-with-the-azure-maps-power-bi-visual"></a>Начало работы с Azure Maps Power BI Visual
 
-<Token>**применимо к:** ![ Да ](media/power-bi-visual/yes.png) Служба Power BI для ***потребителей*** ![ да ](media/power-bi-visual/yes.png) служба Power BI для разработчиков & ![ Да ](media/power-bi-visual/yes.png) Power BI Desktop ![ не ](media/power-bi-visual/no.png) требуется лицензия Pro или Premium.</Token>
+<Token>**применимо к:** ![ Зеленая галочка. ](media/power-bi-visual/yes.png) Служба Power BI для ***потребителей*** ![ зеленая галочка. ](media/power-bi-visual/yes.png) Служба Power BI для конструкторов, & разработчикам зеленые галочки ![ . ](media/power-bi-visual/yes.png) Power BI Desktop ![ X, указывающее на отсутствие. ](media/power-bi-visual/no.png) Требуется лицензия Pro или Premium </Token>
 
 В этой статье показано, как использовать визуальный элемент карт Microsoft Azure для Power BI.
 
@@ -133,7 +133,7 @@ Azure Maps визуальный элемент доступен в следую�
 | Power BI Desktop                         | Да          |
 | Служба Power BI (app.powerbi.com)       | Да          |
 | Мобильные приложения Power BI             | Да          |
-| Публикация в Интернете через Power BI                  | нет           |
+| Публикация в Интернете через Power BI                  | Нет           |
 | Power BI Embedded                        | Нет           |
 | Внедрение службы Power BI (PowerBI.com) | Да          |
 

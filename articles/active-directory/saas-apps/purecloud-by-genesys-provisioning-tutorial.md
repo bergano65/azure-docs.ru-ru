@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: article
 ms.date: 02/05/2020
 ms.author: Zhchia
-ms.openlocfilehash: 8917343175dd5ed8f82c1929683de98034323163
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.openlocfilehash: 8548e6c4c3e2b31d9fb16273bcc441ca38127831
+ms.sourcegitcommit: d95cab0514dd0956c13b9d64d98fdae2bc3569a0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 09/25/2020
-ms.locfileid: "91321923"
+ms.locfileid: "91361829"
 ---
 # <a name="tutorial-configure-purecloud-by-genesys-for-automatic-user-provisioning"></a>Учебник. Настройка Пуреклауд с помощью Женесис для автоматической подготовки пользователей
 
@@ -88,7 +88,7 @@ ms.locfileid: "91321923"
 
 5. В разделе **учетные данные администратора** введите URL-адрес ПУРЕКЛАУД по интерфейсу API Женесис и маркер OAuth в полях **URL-адрес клиента** и **секретный токен** соответственно. URL-адрес API будет структурирован как `{{API Url}}/api/v2/scim/v2` , используя URL-адрес API для региона пуреклауд в [центре разработчиков пуреклауд](https://developer.mypurecloud.com/api/rest/index.html). Нажмите кнопку **проверить подключение** , чтобы убедиться, что Azure AD может подключиться к Пуреклауд by женесис. Если подключение не выполняется, убедитесь, что у учетной записи Пуреклауд by Женесис есть разрешения администратора, и повторите попытку.
 
-    ![Подготовка](./media/purecloud-by-genesys-provisioning-tutorial/provisioning.png)
+    ![На снимке экрана отображается диалоговое окно учетные данные администратора, в котором можно ввести клиент U R и секретный маркер.](./media/purecloud-by-genesys-provisioning-tutorial/provisioning.png)
 
 6. В поле **Почтовое уведомление** введите адрес электронной почты пользователя или группы, которые должны получать уведомления об ошибках подготовки, а также установите флажок **Отправить уведомление по электронной почте при сбое**.
 
