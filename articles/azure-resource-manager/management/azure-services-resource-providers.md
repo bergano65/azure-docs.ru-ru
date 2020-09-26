@@ -3,12 +3,12 @@ title: Поставщики ресурсов по службам Azure
 description: Выводит список всех пространств имен поставщиков ресурсов для Azure Resource Manager и отображает службу Azure для этого пространства имен.
 ms.topic: conceptual
 ms.date: 09/04/2020
-ms.openlocfilehash: 34b2476b8194b8ad6f8e7e86e2644a1c0d0bbb4b
-ms.sourcegitcommit: de2750163a601aae0c28506ba32be067e0068c0c
+ms.openlocfilehash: b740c8ee7c28bfeeaecc42121d0c7ce4a323ab3e
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/04/2020
-ms.locfileid: "89484007"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91330831"
 ---
 # <a name="resource-providers-for-azure-services"></a>Поставщики ресурсов для служб Azure
 
@@ -98,7 +98,7 @@ ms.locfileid: "89484007"
 | Microsoft.HealthcareApis | [Azure API для FHIR](../../healthcare-apis/index.yml) |
 | Microsoft.HybridCompute | [Azure Arc](../../azure-arc/index.yml) |
 | Microsoft.HybridData | [StorSimple](../../storsimple/index.yml) |
-| Microsoft. Хибриднетворк  | Поддержка краев стека |
+| Microsoft. Хибриднетворк  | [Зоны частного периметра](../../networking/edge-zones-overview.md) |
 | Microsoft.ImportExport | [Импорт и экспорт Microsoft Azure](../../storage/common/storage-import-export-service.md) |
 | microsoft.insights | [Azure Monitor](../../azure-monitor/index.yml) |
 | Microsoft.IoTCentral | [Azure IoT Central](../../iot-central/index.yml) |
@@ -158,14 +158,14 @@ ms.locfileid: "89484007"
 | Microsoft.ServiceFabric | [Service Fabric](../../service-fabric/index.yml) |
 | Microsoft.ServiceFabricMesh | [Служба Microsoft Azure Service Fabric](../../service-fabric-mesh/index.yml) |
 | Microsoft.Services | core |
-| Microsoft.SignalRService | [Служба Azure SignalR](../../azure-signalr/index.yml) |
+| Microsoft.SignalRService | [Служба SignalR Azure](../../azure-signalr/index.yml) |
 | Microsoft.SoftwarePlan | Лицензия |
 | Microsoft.Solutions | [Управляемые приложения Azure](../managed-applications/index.yml) |
 | Microsoft.Sql | [База данных SQL Azure](../../azure-sql/database/index.yml)<br /> [Управляемый экземпляр SQL Azure](../../azure-sql/managed-instance/index.yml) <br />[Azure Synapse Analytics](/azure/sql-data-warehouse/) |
 | Microsoft.SqlVirtualMachine | [SQL Server на виртуальных машинах Azure](../../azure-sql/virtual-machines/windows/sql-server-on-azure-vm-iaas-what-is-overview.md) |
-| Microsoft.Storage; | [Хранилище](../../storage/index.yml) |
+| Microsoft.Storage; | [Память](../../storage/index.yml) |
 | Microsoft.StorageCache | [Azure HPC Cache](../../hpc-cache/index.yml) |
-| Microsoft.StorageSync | [Хранилище](../../storage/index.yml) |
+| Microsoft.StorageSync | [Память](../../storage/index.yml) |
 | Microsoft.StorSimple | [StorSimple](../../storsimple/index.yml) |
 | Microsoft.StreamAnalytics | [Azure Stream Analytics](../../stream-analytics/index.yml) |
 | Microsoft.Subscription | core |
@@ -188,4 +188,4 @@ ms.locfileid: "89484007"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Дополнительные сведения о поставщиках ресурсов, включая регистрацию поставщика ресурсов, см. в статье [поставщики и типы ресурсов Azure](resource-providers-and-types.md) .
+Дополнительные сведения о поставщиках ресурсов, включая регистрацию поставщика ресурсов, см. в статье [поставщики и типы ресурсов Azure](resource-providers-and-types.md).

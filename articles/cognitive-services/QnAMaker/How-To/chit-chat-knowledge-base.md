@@ -9,12 +9,12 @@ ms.subservice: qna-maker
 ms.topic: conceptual
 ms.date: 11/04/2019
 ms.custom: seodec18
-ms.openlocfilehash: 0aca072a9e659d242dec9dd45a12f9568d419599
-ms.sourcegitcommit: 0e8a4671aa3f5a9a54231fea48bcfb432a1e528c
+ms.openlocfilehash: 3d5c47d3e3e9485c3a6de8f93782c654fb34a516
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/24/2020
-ms.locfileid: "87124431"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91330644"
 ---
 # <a name="add-chit-chat-to-a-knowledge-base"></a>Добавление беседы в базу знаний
 
@@ -37,11 +37,11 @@ ms.locfileid: "87124431"
 ||
 
 
-## <a name="language-support"></a>Поддержка языков
+## <a name="language-support"></a>Языковая поддержка
 
 Наборы данных ХИ2ТЕСТ-Chat поддерживаются на следующих языках:
 
-|Language|
+|Язык|
 |--|
 |Китайский|
 |Английский|
@@ -72,7 +72,7 @@ ms.locfileid: "87124431"
 ## <a name="add-additional-chit-chat-questions-and-answers"></a>Добавление в беседу дополнительных вопросов и ответов
 Можно добавить новую пару QnA "ХИ2ТЕСТ-Chat", которая не входит в предопределенный набор данных. Убедитесь, что вы не дублируете пару вопрос-ответ, которая уже включена в набор. При добавлении любая новая пара вопрос-ответ также будет добавлена в **Editorial** (редакционный) источник. Чтобы убедиться в том, что он понимает, что это «ХИ2ТЕСТ-Chat», добавьте пару «ключ-значение» метаданных «редакцион: читчат», как показано на следующем рисунке:
 
-![! [Add ХИ2ТЕСТ-Chat QnA] (.. /медиа/кнамакер-хов-то-чит-чат/add-new-chit-chat.png)](../media/qnamaker-how-to-chit-chat/add-new-chit-chat.png#lightbox)
+:::image type="content" source="../media/qnamaker-how-to-chit-chat/add-new-chit-chat.png" alt-text="Добавление вопросов и ответов беседы" lightbox="../media/qnamaker-how-to-chit-chat/add-new-chit-chat.png":::
 
 ## <a name="delete-chit-chat-from-an-existing-kb"></a>Удаление беседы из существующей базы знаний
 Выберите базу знаний и перейдите на страницу **Параметры**. Конкретный источник беседы указан как файл с именем выбранного персонажа. Вы можете удалить его как исходный файл.
@@ -84,6 +84,6 @@ ms.locfileid: "87124431"
 > [!div class="nextstepaction"]
 > [Импорт базы знаний](../Tutorials/migrate-knowledge-base.md)
 
-## <a name="see-also"></a>См. также статью
+## <a name="see-also"></a>См. также раздел
 
 [Общие сведения о QnA Maker](../Overview/overview.md)

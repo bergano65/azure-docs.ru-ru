@@ -11,13 +11,13 @@ ms.topic: conceptual
 ms.date: 09/01/2020
 ms.author: trbye
 ms.custom: cog-serv-seo-aug-2020
-keywords: преобразование речи в текст, речь по тексту
-ms.openlocfilehash: 804acd17f3df91cc3df949d6d9ccac0450bb225f
-ms.sourcegitcommit: d0541eccc35549db6381fa762cd17bc8e72b3423
+keywords: преобразование речи в текст, программа для преобразования речи в текст
+ms.openlocfilehash: f4392881c2f572b1e53d7c283ef5c1debc1d20ea
+ms.sourcegitcommit: d95cab0514dd0956c13b9d64d98fdae2bc3569a0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/09/2020
-ms.locfileid: "89569226"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91359942"
 ---
 # <a name="what-is-speech-to-text"></a>Что такое преобразование речи в текст?
 
@@ -58,5 +58,5 @@ ms.locfileid: "89569226"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- [Try the Speech service for free](get-started.md) (Бесплатное использование службы "Речь")
+- [Try the Speech service for free](overview.md#try-the-speech-service-for-free) (Бесплатное использование службы "Речь")
 - [Получение пакета SDK для службы "Речь"](speech-sdk.md)

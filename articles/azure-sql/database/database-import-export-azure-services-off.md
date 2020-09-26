@@ -11,12 +11,12 @@ author: stevestein
 ms.author: sstein
 ms.reviewer: ''
 ms.date: 01/08/2020
-ms.openlocfilehash: ea5f2d5838c926fa8ee7b92278b0854264346a7b
-ms.sourcegitcommit: 8def3249f2c216d7b9d96b154eb096640221b6b9
+ms.openlocfilehash: 7d36984e7117305b22381e4266575e998c080ae5
+ms.sourcegitcommit: d95cab0514dd0956c13b9d64d98fdae2bc3569a0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87543764"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91360197"
 ---
 # <a name="import-or-export-an-azure-sql-database-without-allowing-azure-services-to-access-the-server"></a>Импорт или экспорт базы данных SQL Azure без предоставления службам Azure доступа к серверу
 [!INCLUDE[appliesto-sqldb](../includes/appliesto-sqldb.md)]
@@ -34,7 +34,7 @@ ms.locfileid: "87543764"
 Этот шаблон позволяет развернуть простую виртуальную машину Windows, используя несколько различных параметров для версии Windows, используя последнюю исправленную версию. Это позволит развернуть виртуальную машину размера a2 в расположении группы ресурсов и вернуть полное доменное имя виртуальной машины.
 <br><br>
 
-[![Изображение, показывающее кнопку "развернуть в Azure".](https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/1-CONTRIBUTION-GUIDE/images/deploytoazure.png)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-quickstart-templates%2Fmaster%2F101-vm-simple-windows%2Fazuredeploy.json)
+[![Изображение с кнопкой "Развернуть в Azure".](https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/1-CONTRIBUTION-GUIDE/images/deploytoazure.png)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-quickstart-templates%2Fmaster%2F101-vm-simple-windows%2Fazuredeploy.json)
 
 Дополнительные сведения см. в статье [очень простое развертывание виртуальной машины Windows](https://github.com/Azure/azure-quickstart-templates/tree/master/101-vm-simple-windows).
 
@@ -44,15 +44,15 @@ ms.locfileid: "87543764"
 
 1. После завершения развертывания перейдите в ресурс виртуальной машины.
 
-   ![ВМ](./media/database-import-export-azure-services-off/vm.png)  
+   ![На снимке экрана показана страница обзора виртуальной машины с кнопкой подключить.](./media/database-import-export-azure-services-off/vm.png)  
 
-2. Нажмите кнопку **Подключиться**.
+2. Щелкните **Подключить**.
 
    Для виртуальной машины отобразится форма файла протокола удаленного рабочего стола (RDP-файл), а также общедоступный IP-адрес и номер порта.
 
    ![Форма RDP](./media/database-import-export-azure-services-off/rdp.png)  
 
-3. Щелкните **Скачать RDP-файл**.
+3. Выберите **Скачать RDP-файл**.
 
    > [!NOTE]
    > Вы также можете подключаться к виртуальной машине по протоколу SSH.
@@ -151,7 +151,7 @@ sqlpackage.exe /a:Import /sf:testExport.bacpac /tdn:NewDacFX /tsn:apptestserver.
 
 В зависимости от среды может потребоваться [настроить брандмауэры службы хранилища Azure и виртуальные сети](../../storage/common/storage-network-security.md).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Сведения о подключении к импортированной базе данных SQL и выполнении запросов к ней см. в разделе [Краткое руководство по базе данных SQL Azure: использование SQL Server Management Studio для подключения и запроса данных](connect-query-ssms.md).
 - Сведения о миграции из SQL Server в Базу данных SQL Azure с использованием BACPAC-файлов см. в [блоге группы консультирования клиентов SQL Server](https://techcommunity.microsoft.com/t5/DataCAT/Migrating-from-SQL-Server-to-Azure-SQL-Database-using-Bacpac/ba-p/305407).

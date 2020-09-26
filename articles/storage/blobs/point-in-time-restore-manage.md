@@ -6,15 +6,15 @@ services: storage
 author: tamram
 ms.service: storage
 ms.topic: how-to
-ms.date: 09/18/2020
+ms.date: 09/23/2020
 ms.author: tamram
 ms.subservice: blobs
-ms.openlocfilehash: 226e35452e4b266c3c0a698505d47ab9a53b9761
-ms.sourcegitcommit: bdd5c76457b0f0504f4f679a316b959dcfabf1ef
+ms.openlocfilehash: 828b5c34aaccf2a53aa197f921a8ef02d46821ae
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "90984377"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91280476"
 ---
 # <a name="perform-a-point-in-time-restore-on-block-blob-data"></a>Выполнение восстановления на момент времени в данных блочного BLOB-объекта
 
@@ -54,9 +54,7 @@ ms.locfileid: "90984377"
 
 Чтобы настроить восстановление на момент времени с помощью PowerShell, сначала установите модуль [AZ. Storage](https://www.powershellgallery.com/packages/Az.Storage) 2.6.0 или более поздней версии. Затем вызовите команду Enable-Азсторажеблобрестореполици, чтобы включить восстановление на момент времени для учетной записи хранения.
 
-В следующем примере активируется обратимое удаление и устанавливается срок хранения обратимого удаления, включается веб-канал изменений, а затем включается восстановление на момент времени. Перед выполнением примера используйте портал Azure или шаблон Azure Resource Manager, чтобы включить управление версиями BLOB-объектов.
-
-При выполнении примера не забудьте заменить значения в угловых скобках собственными значениями:
+В следующем примере активируется обратимое удаление и устанавливается срок хранения обратимого удаления, включается веб-канал изменений и управление версиями, а затем включается восстановление на момент времени.    При выполнении примера не забудьте заменить значения в угловых скобках собственными значениями:
 
 ```powershell
 # Sign in to your Azure account.
@@ -71,10 +69,11 @@ Enable-AzStorageBlobDeleteRetentionPolicy -ResourceGroupName $rgName `
     -StorageAccountName $accountName `
     -RetentionDays 14
 
-# Enable change feed.
+# Enable change feed and versioning.
 Update-AzStorageBlobServiceProperty -ResourceGroupName $rgName `
     -StorageAccountName $accountName `
-    -EnableChangeFeed $true
+    -EnableChangeFeed $true `
+    -IsVersioningEnabled $true
 
 # Enable point-in-time restore with a retention period of 7 days.
 # The retention period for point-in-time restore must be at least
@@ -250,5 +249,5 @@ $restoreOperation.Parameters.BlobRanges
 
 - [Восстановление до точки во времени для блочных BLOB-объектов](point-in-time-restore-overview.md)
 - [Обратимое удаление](soft-delete-overview.md)
-- [Веб-канал изменений](storage-blob-change-feed.md)
+- [Канал изменений](storage-blob-change-feed.md)
 - [Управление версиями BLOB-объектов](versioning-overview.md)

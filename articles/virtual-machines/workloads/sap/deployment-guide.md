@@ -15,12 +15,12 @@ ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure-services
 ms.date: 07/16/2020
 ms.author: sedusch
-ms.openlocfilehash: 6b66db639e0b22a7e0c45486465a1fa395aba33d
-ms.sourcegitcommit: 271601d3eeeb9422e36353d32d57bd6e331f4d7b
+ms.openlocfilehash: 4494af89ac35a391f7dc6097b14d135a911d99dd
+ms.sourcegitcommit: d95cab0514dd0956c13b9d64d98fdae2bc3569a0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/20/2020
-ms.locfileid: "88653517"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91359619"
 ---
 # <a name="azure-virtual-machines-deployment-for-sap-netweaver"></a>Развертывание виртуальных машин Azure для SAP NetWeaver
 
@@ -543,11 +543,11 @@ ms.locfileid: "88653517"
 Процедуры создания частного образа в Windows и в Linux отличаются.
 
 ---
-> ![Windows][Logo_Windows] Windows
+> ![Эмблема Windows.][Logo_Windows] Windows
 >
 > Чтобы подготовить образ Windows, который можно использовать для развертывания нескольких виртуальных машин, необходимо задать абстрагированные или обобщенные параметры Windows (например, ИД безопасности Windows и имя узла) на локальной виртуальной машине. Это можно сделать с помощью инструмента [Sysprep](/previous-versions/windows/it-pro/windows-8.1-and-8/hh825084(v=win.10)).
 >
-> ![Linux][Logo_Linux] Linux
+> ![Логотип Linux.][Logo_Linux] Linux
 >
 > Чтобы подготовить образ Linux, который можно использовать для развертывания нескольких виртуальных машин, необходимо задать некоторые абстрагированные или обобщенные параметры Linux на локальной виртуальной машине. Это можно сделать с помощью команды `waagent -deprovision`. Дополнительные сведения см. в статье [Запись виртуальной машины Linux, работающей в Azure][virtual-machines-linux-capture-image] и в [руководстве пользователя агента Linux для Azure][virtual-machines-linux-agent-user-guide-command-line-options].
 >
@@ -683,11 +683,11 @@ ms.locfileid: "88653517"
 Дополнительные сведения об агенте виртуальной машины Azure см. в следующих ресурсах:
 
 ---
-> ![Windows][Logo_Windows] Windows
+> ![Эмблема Windows.][Logo_Windows] Windows
 >
 > [Обзор агента виртуальной машины Azure][virtual-machines-windows-agent-user-guide]
 >
-> ![Linux][Logo_Linux] Linux
+> ![Логотип Linux.][Logo_Linux] Linux
 >
 > [Руководство пользователя агента Linux для Azure][virtual-machines-linux-agent-user-guide]
 >
@@ -1059,14 +1059,14 @@ az --version
 
 1. Чтобы включить управляемое удостоверение для виртуальной машины, выполните действия, описанные в статье [Настройка управляемых удостоверений для ресурсов Azure на виртуальной машине Azure с помощью Azure CLIной][qs-configure-cli-windows-vm] статьи. Назначенные пользователем управляемые удостоверения не поддерживаются расширением виртуальной машины для SAP. Однако можно включить и то, и другое, назначенное системой и назначенное пользователю удостоверение.
 
-   Пример
+   Пример.
    ```azurecli
    az vm identity assign -g <resource-group-name> -n <vm name>
    ```
 
 1. Назначьте управляемому удостоверению доступ к группе ресурсов виртуальной машины или ко всем сетевым интерфейсам, управляемым дискам и самой виртуальной машине, как описано в статье [назначение управляемого удостоверения доступ к ресурсу с помощью Azure CLI][howto-assign-access-cli]
 
-    Пример
+    Пример.
 
     ```azurecli
     spID=$(az resource show -g <resource-group-name> -n <vm name> --query identity.principalId --out tsv --resource-type Microsoft.Compute/virtualMachines)
@@ -1309,7 +1309,7 @@ XML-файл, к которому можно получить доступ, http
 > [!NOTE]
 > Существует две версии расширения виртуальной машины. В этой главе рассматривается расширение виртуальной машины по умолчанию. Если вы установили новое расширение виртуальной машины, обратитесь к разделу [Устранение неполадок с новым расширением Azure для SAP][deployment-guide-5.3-new].
 
-#### <a name="windowslogo_windows-azure-performance-counters-do-not-show-up-at-all"></a>![Windows][Logo_Windows] Счетчики производительности Azure вообще не отображаются
+#### <a name="windows-logologo_windows-azure-performance-counters-do-not-show-up-at-all"></a>![Эмблема Windows.][Logo_Windows] Счетчики производительности Azure вообще не отображаются
 
 Сбор показателей производительности в Azure выполняет служба расширенного мониторинга Azure для Windows. Если она установлена неправильно или не запущена на виртуальной машине, сбор метрик производительности невозможен.
 
@@ -1350,13 +1350,13 @@ XML-файл, к которому можно получить доступ, http
 
 Недопустимая конфигурация. Перезапустите расширение Azure для SAP на виртуальной машине, как описано в разделе [Настройка расширения Azure для SAP][deployment-guide-4.5].
 
-#### <a name="windowslogo_windows-some-azure-performance-counters-are-missing"></a>![Windows][Logo_Windows] Отсутствуют некоторые счетчики производительности Azure
+#### <a name="windows-logologo_windows-some-azure-performance-counters-are-missing"></a>![Эмблема Windows.][Logo_Windows] Отсутствуют некоторые счетчики производительности Azure
 
 Сбор показателей производительности в Azure выполняет служба расширенного мониторинга Azure для Windows. Она получает данные из нескольких источников. Некоторые данные конфигурации собираются локально, метрики производительности считываются из системы диагностики Azure, а счетчики хранилища используются из журналов на уровне подписки в хранилище.
 
 Если после устранения неполадок с использованием примечания к SAP [1999351] проблема не исчезла, повторно запустите скрипт конфигурации `Set-AzVMAEMExtension`. Необходимо подождать час, так как счетчики аналитики или диагностики хранилищ создаются не сразу после включения. Если проблема не исчезла, откройте сообщение о поддержке клиентов SAP в компоненте BC-OP-NT-AZR для виртуальной машины Windows или BC-OP-LNX-AZR для виртуальной машины Linux.
 
-#### <a name="linuxlogo_linux-azure-performance-counters-do-not-show-up-at-all"></a>![Linux][Logo_Linux] Счетчики производительности Azure вообще не отображаются
+#### <a name="linux-logologo_linux-azure-performance-counters-do-not-show-up-at-all"></a>![Логотип Linux.][Logo_Linux] Счетчики производительности Azure вообще не отображаются
 
 Сбор показателей производительности в Azure выполняет управляющая программа. Если она не запущена, сбор метрик производительности не выполняется.
 
@@ -1389,7 +1389,7 @@ WARNING: [WARN] Standard Managed Disks are not supported. Extension will be inst
 Сообщения вызваны тем фактом, что Управляемые диски (цен. категория "Стандартный") не предоставляют API-интерфейсы, используемые расширением Azure для SAP для проверки статистики учетных записей хранения Azure (цен. категория "Стандартный"). Это не повод для беспокойства. Причина введения данных для стандартных учетных записей Хранилище дисков — регулирование входов и выходов, которые происходят часто. Управляемые диски позволяют избежать такого регулирования за счет ограничения количества дисков в учетной записи хранилища. Поэтому отсутствие этого типа данных не является критическим.
 
 
-#### <a name="linuxlogo_linux-some-azure-performance-counters-are-missing"></a>![Linux][Logo_Linux] Отсутствуют некоторые счетчики производительности Azure
+#### <a name="linux-logologo_linux-some-azure-performance-counters-are-missing"></a>![Логотип Linux.][Logo_Linux] Отсутствуют некоторые счетчики производительности Azure
 
 Сбор показателей производительности в Azure выполняет управляющая программа, которая получает данные из нескольких источников. Некоторые данные конфигурации собираются локально, метрики производительности считываются из системы диагностики Azure, а счетчики хранилища используются из журналов на уровне подписки в хранилище.
 
@@ -1402,7 +1402,7 @@ WARNING: [WARN] Standard Managed Disks are not supported. Extension will be inst
 > [!NOTE]
 > Существует две версии расширения виртуальной машины. В этой главе рассматривается новое расширение виртуальной машины. Если вы установили расширение виртуальной машины по умолчанию, см. раздел [Устранение неполадок расширения Azure для SAP][deployment-guide-5.3].
 
-#### <a name="windowslogo_windows-azure-performance-counters-do-not-show-up-at-all"></a>![Windows][Logo_Windows] Счетчики производительности Azure вообще не отображаются
+#### <a name="windows-logologo_windows-azure-performance-counters-do-not-show-up-at-all"></a>![Эмблема Windows.][Logo_Windows] Счетчики производительности Azure вообще не отображаются
 
 Процесс AzureEnhancedMonitoring собирает метрики производительности в Azure. Если процесс не выполняется на виртуальной машине, сбор метрик производительности невозможен.
 
@@ -1416,13 +1416,13 @@ WARNING: [WARN] Standard Managed Disks are not supported. Extension will be inst
 
 Расширение не установлено. Определите, связано ли это с неполадками прокси (как описано выше). Возможно, потребуется перезапустить компьютер или снова установить расширение виртуальной машины.
 
-#### <a name="windowslogo_windows-some-azure-performance-counters-are-missing"></a>![Windows][Logo_Windows] Отсутствуют некоторые счетчики производительности Azure
+#### <a name="windows-logologo_windows-some-azure-performance-counters-are-missing"></a>![Эмблема Windows.][Logo_Windows] Отсутствуют некоторые счетчики производительности Azure
 
 Процесс Windows AzureEnhancedMonitoring собирает метрики производительности в Azure. Процесс получает данные из нескольких источников. Некоторые данные конфигурации собираются локально, а некоторые метрики производительности считываются из Azure Monitor.
 
 Если устранение неполадок с помощью SAP Note [1999351] не устраняет проблему, откройте сообщение поддержки клиентов SAP в компоненте BC-Op-NT-AZR для Windows или BC-Op-LNX-AZR для виртуальной машины Linux. Присоедините файл журнала C: \\ packages \\ подключаемые модули \\ Microsoft. AzureCAT. AzureEnhancedMonitoring. MonitorX64Windows \\ &lt; версии>\\logapp.txt к инциденту.
 
-#### <a name="linuxlogo_linux-azure-performance-counters-do-not-show-up-at-all"></a>![Linux][Logo_Linux] Счетчики производительности Azure вообще не отображаются
+#### <a name="linux-logologo_linux-azure-performance-counters-do-not-show-up-at-all"></a>![Логотип Linux.][Logo_Linux] Счетчики производительности Azure вообще не отображаются
 
 Сбор показателей производительности в Azure выполняет управляющая программа. Если она не запущена, сбор метрик производительности не выполняется.
 
@@ -1436,7 +1436,7 @@ WARNING: [WARN] Standard Managed Disks are not supported. Extension will be inst
 
 Расширение не установлено. Определите, связано ли это с неполадками прокси (как описано выше). Возможно, потребуется перезапустить компьютер и/или установить расширение виртуальной машины еще раз.
 
-#### <a name="linuxlogo_linux-some-azure-performance-counters-are-missing"></a>![Linux][Logo_Linux] Отсутствуют некоторые счетчики производительности Azure
+#### <a name="linux-logologo_linux-some-azure-performance-counters-are-missing"></a>![Логотип Linux.][Logo_Linux] Отсутствуют некоторые счетчики производительности Azure
 
 Сбор показателей производительности в Azure выполняет управляющая программа, которая получает данные из нескольких источников. Некоторые данные конфигурации собираются локально, а некоторые метрики производительности считываются из Azure Monitor.
 
@@ -1495,7 +1495,7 @@ WARNING: [WARN] Standard Managed Disks are not supported. Extension will be inst
 
 Если ошибки не исчезнут, обратитесь в [службу поддержки][deployment-guide-contact-support].
 
-#### <a name="contact-support"></a><a name="3ba34cfc-c9bb-4648-9c3c-88e8b9130ca2"></a>Обращение в службу поддержки
+#### <a name="contact-support"></a><a name="3ba34cfc-c9bb-4648-9c3c-88e8b9130ca2"></a>Обратитесь в службу поддержки
 
 Непредвиденная ошибка, или нет известного решения. Собирайте файл AzureEnhancedMonitoring_service. log, расположенный в папке К:\паккажес\плугинс\микрософт.азурекат.азуринханцедмониторинг.азурекатекстенсионхандлер \\ \<version\> \Drop (Windows) или/var/log/Azure/Microsoft.OSTCExtensions.AzureEnhancedMonitorForLinux (Linux), и обратитесь в службу поддержки SAP для получения дополнительной помощи.
 

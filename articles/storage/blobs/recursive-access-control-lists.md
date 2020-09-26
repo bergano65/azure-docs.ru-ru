@@ -5,16 +5,16 @@ author: normesta
 ms.subservice: data-lake-storage-gen2
 ms.service: storage
 ms.topic: how-to
-ms.date: 08/26/2020
+ms.date: 09/21/2020
 ms.author: normesta
 ms.reviewer: prishet
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 71c470bd1bb71b55d6643ac6305a054f1c934948
-ms.sourcegitcommit: d68c72e120bdd610bb6304dad503d3ea89a1f0f7
+ms.openlocfilehash: 88349e90102bf3b0e4dc2868d5f65d476aac51f7
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/01/2020
-ms.locfileid: "89229045"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91280374"
 ---
 # <a name="set-access-control-lists-acls-recursively-for-azure-data-lake-storage-gen2"></a>Рекурсивное задание списков управления доступом (ACL) для Azure Data Lake Storage 2-го поколения
 
@@ -55,7 +55,7 @@ ms.locfileid: "89229045"
    echo $PSVersionTable.PSVersion.ToString() 
    ```
     
-   Сведения об обновлении версии PowerShell см. в разделе [обновление существующих Windows PowerShell](https://docs.microsoft.com/powershell/scripting/install/installing-windows-powershell?view=powershell-6#upgrading-existing-windows-powershell) .
+   Сведения об обновлении версии PowerShell см. в разделе [обновление существующих Windows PowerShell](https://docs.microsoft.com/powershell/scripting/install/installing-windows-powershell) .
     
 3. Установите последнюю версию модуля PowershellGet.
 
@@ -71,7 +71,7 @@ ms.locfileid: "89229045"
    Install-Module Az.Storage -Repository PsGallery -RequiredVersion 2.5.2-preview -AllowClobber -AllowPrerelease -Force  
    ```
 
-   Дополнительные сведения об установке модулей PowerShell см. [в статье Установка модуля Azure PowerShell](https://docs.microsoft.com/powershell/azure/install-az-ps?view=azps-3.0.0) .
+   Дополнительные сведения об установке модулей PowerShell см. [в статье Установка модуля Azure PowerShell](https://docs.microsoft.com/powershell/azure/install-az-ps) .
 
 ### <a name="net"></a>[.NET](#tab/dotnet)
 
@@ -279,7 +279,9 @@ except Exception as e:
 
 ## <a name="set-an-acl-recursively"></a>Рекурсивное задание списка ACL
 
-Списки ACL можно задать рекурсивно.  
+При *задании* ACL **заменяется** весь список ACL, включая все его записи. Если вы хотите изменить уровень разрешений субъекта безопасности или добавить новый субъект безопасности в список управления доступом, не затрагивая другие существующие записи, следует *Обновить* список управления доступом. Чтобы обновить список управления доступом вместо его замены, см. раздел [Обновление списка ACL в рекурсивной](#update-an-acl-recursively) области этой статьи.   
+
+Этот раздел содержит примеры настройки ACL 
 
 ### <a name="powershell"></a>[PowerShell](#tab/azure-powershell)
 
@@ -367,13 +369,17 @@ def set_permission_recursively():
 
 ## <a name="update-an-acl-recursively"></a>Рекурсивное обновление списка ACL
 
-Существующий список ACL можно обновить рекурсивно.
+При *обновлении* списка управления доступом необходимо изменить список управления доступом вместо замены списка управления доступом. Например, можно добавить нового субъекта безопасности в список управления доступом, не затрагивая другие субъекты безопасности, перечисленные в списке ACL.  Чтобы заменить список управления доступом вместо обновления, см. раздел [Настройка списка ACL в рекурсивном](#set-an-acl-recursively) руководстве этой статьи. 
+
+Чтобы обновить список управления доступом, создайте новый объект ACL с записью ACL, которую требуется обновить, а затем используйте этот объект в операции Update ACL. Не изменяйте существующий список ACL, просто предоставьте записи ACL для обновления.
+
+В этом разделе содержатся примеры обновления списка управления доступом.
 
 ### <a name="powershell"></a>[PowerShell](#tab/azure-powershell)
 
 Рекурсивно обновите список ACL с помощью командлета  **Update-AzDataLakeGen2AclRecursive** . 
 
-В этом примере обновляется запись ACL с разрешением на запись.
+В этом примере обновляется запись ACL с разрешением на запись. 
 
 ```powershell
 $filesystemName = "my-container"
@@ -445,7 +451,9 @@ def update_permission_recursively():
 
 ## <a name="remove-acl-entries-recursively"></a>Рекурсивное удаление записей ACL
 
-Можно рекурсивно удалить одну или несколько записей списка ACL.
+Можно рекурсивно удалить одну или несколько записей списка ACL. Чтобы удалить запись ACL, создайте новый объект ACL для удаляемой записи ACL, а затем используйте этот объект в операции удаления списка ACL. Не изменяйте существующий список ACL, просто предоставьте записи ACL для удаления. 
+
+В этом разделе содержатся примеры удаления ACL.
 
 ### <a name="powershell"></a>[PowerShell](#tab/azure-powershell)
 
@@ -642,7 +650,7 @@ def resume_set_acl_recursive(continuation_token):
 
 Вы можете отправить отзыв или сообщить о вопросе по адресу  [recursiveACLfeedback@microsoft.com](mailto:recursiveACLfeedback@microsoft.com) .
 
-## <a name="see-also"></a>См. также
+## <a name="see-also"></a>См. также раздел
 
 - [Контроль доступа в Azure Data Lake Storage 2-го поколения](https://docs.microsoft.com/azure/storage/blobs/data-lake-storage-access-control)
 - [Известные проблемы](data-lake-storage-known-issues.md)

@@ -7,16 +7,16 @@ ms.service: web-application-firewall
 ms.topic: article
 ms.date: 09/06/2019
 ms.author: victorh
-ms.openlocfilehash: 22273cf23e48de62d99a8c149ae3e2b1c05db3af
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 733a9af589718e9abe8736491023003744428cd6
+ms.sourcegitcommit: d95cab0514dd0956c13b9d64d98fdae2bc3569a0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87005435"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91361054"
 ---
 # <a name="use-log-analytics-to-examine-application-gateway-web-application-firewall-waf-logs"></a>Использование Log Analytics для проверки журналов брандмауэра веб-приложения шлюза приложений (WAF)
 
-После работоспособности WAF шлюза приложений можно включить журналы, чтобы проверить, что происходит с каждым запросом. Журналы брандмауэра дают представление об оценке, сопоставлении и блокировке WAF. С помощью Azure Monitor Log Analytics можно просмотреть данные в журналах брандмауэра, чтобы получить еще больше ценных сведений. Дополнительные сведения о создании рабочей области Log Analytics см. в разделе [создание log Analytics рабочей области на портал Azure](../../azure-monitor/learn/quick-create-workspace.md). Дополнительные сведения о запросах журналов см. [в разделе Общие сведения о запросах журналов в Azure Monitor](../../azure-monitor/log-query/log-query-overview.md).
+После работоспособности WAF шлюза приложений можно включить журналы, чтобы проверить, что происходит с каждым запросом. Журналы брандмауэра дают представление об оценке, сопоставлении и блокировке WAF. С помощью Azure Monitor Log Analytics можно просмотреть данные в журналах брандмауэра, чтобы получить еще больше ценных сведений. Дополнительные сведения о создании рабочей области Log Analytics см. в разделе [создание log Analytics рабочей области на портал Azure](../../azure-monitor/learn/quick-create-workspace.md). Дополнительные сведения о запросах журналов см. в разделе [Общие сведения о запросах журналов в Azure Monitor](../../azure-monitor/log-query/log-query-overview.md).
 
 ## <a name="import-waf-logs"></a>Импорт журналов WAF
 
@@ -79,7 +79,7 @@ AzureDiagnostics
 
 После создания запроса его можно добавить на панель мониторинга.  Выберите **закрепить на панели мониторинга** в правом верхнем углу рабочей области log Analytics. С помощью предыдущих четырех запросов, закрепленных на примере панели мониторинга, можно быстро увидеть данные:
 
-![Панель мониторинга](../media/log-analytics/dashboard.png)
+![На снимке экрана показана панель мониторинга Azure, на которой можно добавить запрос.](../media/log-analytics/dashboard.png)
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

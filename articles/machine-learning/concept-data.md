@@ -11,12 +11,12 @@ author: nibaccam
 ms.author: nibaccam
 ms.date: 08/31/2020
 ms.custom: devx-track-python
-ms.openlocfilehash: 85aa78223b8db76cfb430341b19878bc6bbe87d7
-ms.sourcegitcommit: 3be3537ead3388a6810410dfbfe19fc210f89fec
+ms.openlocfilehash: ac0b3c151b379096ffb60e049d18b8f6219b1445
+ms.sourcegitcommit: d95cab0514dd0956c13b9d64d98fdae2bc3569a0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89651175"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91359687"
 ---
 # <a name="secure-data-access-in-azure-machine-learning"></a>Защита доступа к данным в Машинное обучение Azure
 
@@ -48,7 +48,7 @@ ms.locfileid: "89651175"
 
 На следующей схеме показана визуальная демонстрация этого рекомендуемого рабочего процесса.
 
-![Схема концепции данных](./media/concept-data/data-concept-diagram.svg)
+![На схеме показана служба хранилища Azure, которая помещается в хранилище данных, которое передается в DataSet. Набор данных передается в обучение модели, которое передается обратно в набор данных.](./media/concept-data/data-concept-diagram.svg)
 
 ## <a name="datastores"></a>Хранилища данных
 

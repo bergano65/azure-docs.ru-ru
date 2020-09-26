@@ -7,15 +7,15 @@ ms.subservice: elastic-pools
 ms.topic: conceptual
 author: oslake
 ms.author: moslake
-ms.reviewer: carlrab
+ms.reviewer: sstein
 ms.date: 03/12/2019
 ms.custom: seoapril2019 sqldbrb=1
-ms.openlocfilehash: e87a083f5b31237c00bc8421774c14d3ef8ef33f
-ms.sourcegitcommit: bf1340bb706cf31bb002128e272b8322f37d53dd
+ms.openlocfilehash: bd3917c42859d4240fbb3a75f951ff38a548e204
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/03/2020
-ms.locfileid: "89439754"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91330814"
 ---
 # <a name="manage-elastic-pools-in-azure-sql-database"></a>Управление эластичными пулами в базе данных SQL Azure
 [!INCLUDE[appliesto-sqldb](../includes/appliesto-sqldb.md)]
@@ -88,7 +88,7 @@ ms.locfileid: "89439754"
 > С помощью Transact-SQL невозможно создать, обновить или удалить пул эластичных баз данных SQL Azure. Вы можете добавить или удалить базы данных из эластичного пула, а также вернуть сведения о существующих эластичных пулах, используя динамические административные представления.
 >
 
-| Get-Help | Описание |
+| Команда | Описание |
 | --- | --- |
 |[CREATE DATABASE (база данных SQL Azure)](/sql/t-sql/statements/create-database-azure-sql-database)|Создает новую базу данных в существующем пуле или отдельную базу данных. Для создания новой базы данных необходимо подключение к базе данных master.|
 | [CREATE DATABASE (база данных SQL Azure)](/sql/t-sql/statements/alter-database-azure-sql-database) |Перемещает базы данных из, в или между эластичными пулами.|
@@ -100,7 +100,7 @@ ms.locfileid: "89439754"
 
 Для создания эластичных пулов и баз данных в пуле для базы данных SQL и управления ими используйте эти запросы REST API.
 
-| Get-Help | Описание |
+| Команда | Описание |
 | --- | --- |
 |[Создание или обновление эластичных пулов](https://docs.microsoft.com/rest/api/sql/elasticpools/createorupdate)|Создает эластичный пул или обновляет имеющийся.|
 |[Пулы эластичных БД — удаление](https://docs.microsoft.com/rest/api/sql/elasticpools/delete)|Удаляет эластичный пул.|
