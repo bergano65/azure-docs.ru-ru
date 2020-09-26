@@ -8,14 +8,14 @@ ms.custom: sqldbrb=1
 ms.topic: conceptual
 author: srdan-bozovic-msft
 ms.author: srbozovi
-ms.reviewer: vanto, carlrab
+ms.reviewer: vanto, sstein
 ms.date: 05/08/2019
-ms.openlocfilehash: a3339d03607c2286dabbac73fd0b683c61552dc0
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: d9c1828732b9a4e0e85c3af2263f097edd54437d
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84708609"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91332854"
 ---
 # <a name="use-azure-sql-managed-instance-securely-with-public-endpoints"></a>Безопасное использование Azure SQL Управляемый экземпляр с общедоступными конечными точками
 [!INCLUDE[appliesto-sqlmi](../includes/appliesto-sqlmi.md)]
@@ -52,6 +52,6 @@ ms.locfileid: "84708609"
 
 Если подключения запускаются из Azure, мы рекомендуем использовать трафик, полученный с помощью известного назначенного [виртуального IP-адреса](/previous-versions/azure/virtual-network/virtual-networks-reserved-public-ip) (например, виртуальной машины). Чтобы упростить управление виртуальными IP-адресами, может потребоваться использовать [префиксы общедоступного IP-адреса](../../virtual-network/public-ip-address-prefix.md).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Узнайте, как настроить общедоступную конечную точку для управления экземплярами: [Настройка общедоступной конечной точки](public-endpoint-configure.md)

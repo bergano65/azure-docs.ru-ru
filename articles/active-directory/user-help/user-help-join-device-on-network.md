@@ -12,12 +12,12 @@ ms.topic: end-user-help
 ms.date: 08/03/2018
 ms.author: curtand
 ms.reviewer: jairoc
-ms.openlocfilehash: 17c0b7bd802d4a50343f88b9517313489943e10c
-ms.sourcegitcommit: c5021f2095e25750eb34fd0b866adf5d81d56c3a
+ms.openlocfilehash: 146b867f1075a7eac1b6817f5fc8dbcd7ba04b02
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88799491"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91333415"
 ---
 # <a name="join-your-work-device-to-your-organizations-network"></a>Присоединения рабочего устройства к сети организации
 Присоедините свое рабочее устройство Windows 10 к сети вашей организации, чтобы вы могли получать доступ к потенциально ограниченным ресурсам.
@@ -54,7 +54,7 @@ ms.locfileid: "88799491"
 
     Теперь ваше устройство присоединено к сети вашей организации.
 
-## <a name="to-make-sure-youre-joined"></a>Проверка состояния присоединения
+## <a name="to-make-sure-youre-joined-new-device"></a>Чтобы убедиться, что вы присоединились (новое устройство)
 Чтобы убедиться, что присоединение прошло успешно, нужно взглянуть на параметры.
 
 1. Откройте **Параметры** и выберите **Учетные записи**.

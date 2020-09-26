@@ -3,12 +3,12 @@ title: Резервное копирование рабочих нагрузок
 description: Из этой статьи вы узнаете, как настроить Microsoft Azure Backup Server (MABS) для защиты баз данных SQL Server на Azure Stack.
 ms.topic: conceptual
 ms.date: 06/08/2018
-ms.openlocfilehash: 912e6f10b689217303786b20ec6315fca595a8c2
-ms.sourcegitcommit: 3246e278d094f0ae435c2393ebf278914ec7b97b
+ms.openlocfilehash: 80de7913b010fca69c3703e423109f2ede653590
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89376338"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91332820"
 ---
 # <a name="back-up-sql-server-on-azure-stack"></a>Резервное копирование SQL Server в Azure Stack
 
@@ -24,10 +24,10 @@ ms.locfileid: "89376338"
 
 * Если у вас есть база данных, файлы которой расположены на удаленном файловом ресурсе, то при включении защиты произойдет сбой с кодом ошибки 104. MABS не поддерживает защиту данных SQL Server на удаленном файловом ресурсе.
 * MABS не может защищать базы данных, хранящиеся на удаленных общих ресурсах SMB.
-* Убедитесь, что для [реплик группы обеспечения доступности установлен режим "только для чтения"](/sql/database-engine/availability-groups/windows/configure-read-only-access-on-an-availability-replica-sql-server?view=sql-server-ver15).
+* Убедитесь, что для [реплик группы обеспечения доступности установлен режим "только для чтения"](/sql/database-engine/availability-groups/windows/configure-read-only-access-on-an-availability-replica-sql-server).
 * Необходимо явно добавить системную учетную запись **NTAuthority\System** в группу Sysadmin на SQL Server.
-* При восстановлении частично автономной базы данных в альтернативное расположение убедитесь в том, что в целевом экземпляре SQL активирован параметр [Автономные базы данных](/sql/relational-databases/databases/migrate-to-a-partially-contained-database?view=sql-server-ver15#enable).
-* При восстановлении базы данных файлового потока в альтернативное расположение убедитесь в том, что в целевом экземпляре SQL активирован параметр [База данных файлового потока](/sql/relational-databases/blob/enable-and-configure-filestream?view=sql-server-ver15).
+* При восстановлении частично автономной базы данных в альтернативное расположение убедитесь в том, что в целевом экземпляре SQL активирован параметр [Автономные базы данных](/sql/relational-databases/databases/migrate-to-a-partially-contained-database#enable).
+* При восстановлении базы данных файлового потока в альтернативное расположение убедитесь в том, что в целевом экземпляре SQL активирован параметр [База данных файлового потока](/sql/relational-databases/blob/enable-and-configure-filestream).
 * Защита для SQL Server AlwaysOn.
   * MABS обнаруживает группы доступности при выполнении запроса при создании группы защиты.
   * MABS обнаруживает отработку отказа и возобновляет защиту базы данных.
@@ -45,7 +45,7 @@ ms.locfileid: "89376338"
     * Если резервное копирование на выбранном узле завершается сбоем, операция резервного копирования завершается сбоем.
     * Восстановление в исходное расположение не поддерживается.
 * Проблемы при резервном копировании SQL Server 2014 или выше
-  * В SQL Server 2014 добавлена новая функция для создания [базы данных для локального экземпляра SQL Server в хранилище BLOB-объектов Azure](/sql/relational-databases/databases/sql-server-data-files-in-microsoft-azure?view=sql-server-ver15). MABS нельзя использовать для защиты этой конфигурации.
+  * В SQL Server 2014 добавлена новая функция для создания [базы данных для локального экземпляра SQL Server в хранилище BLOB-объектов Azure](/sql/relational-databases/databases/sql-server-data-files-in-microsoft-azure). MABS нельзя использовать для защиты этой конфигурации.
   * Существуют некоторые известные проблемы с предпочтениями резервного копирования "предпочитать вторичные" для параметра SQL AlwaysOn. MABS всегда выполняет резервное копирование из базы данных-получателя. Если не удается найти базу данных-получатель, произойдет сбой резервного копирования.
 
 ## <a name="before-you-start"></a>Перед началом работы

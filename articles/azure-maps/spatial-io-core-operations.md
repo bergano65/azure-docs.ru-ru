@@ -8,13 +8,13 @@ ms.topic: conceptual
 ms.service: azure-maps
 services: azure-maps
 manager: philmea
-ms.custom: devx-track-javascript
-ms.openlocfilehash: 021680a81cc5f97bb92c3a9e14036e1a88dae278
-ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
+ms.custom: devx-track-js
+ms.openlocfilehash: 1689ff4d24b3bf82298041fbb84d759b451d8eab
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87279514"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91321770"
 ---
 # <a name="core-io-operations"></a>Основные операции ввода-вывода
 
@@ -31,7 +31,7 @@ ms.locfileid: "87279514"
 
 По умолчанию модуль чтения будет использовать в качестве разделителя символ запятой. Однако разделитель можно изменить на любой отдельный символ или установить в значение `'auto'` . Если задано значение `'auto'` , средство чтения анализирует первую строку текста в строке. Затем он выбирает наиболее распространенный символ из приведенной ниже таблицы для использования в качестве разделителя.
 
-| Разделитель | Символ |
+| Разделитель | Знак |
 | :-- | :-- |
 | Запятая | `,` |
 | Вкладка | `\t` |
@@ -131,19 +131,14 @@ var xmlString = writer.toString();
 
 Дополнительные сведения о классах и методах, которые используются в этой статье:
 
-> [!div class="nextstepaction"]
-> [ксвреадер](https://docs.microsoft.com/javascript/api/azure-maps-spatial-io/atlas.io.core.csvreader)
+[ксвреадер](https://docs.microsoft.com/javascript/api/azure-maps-spatial-io/atlas.io.core.csvreader)
 
-> [!div class="nextstepaction"]
-> [ксввритер](https://docs.microsoft.com/javascript/api/azure-maps-spatial-io/atlas.io.core.csvwriter)
+[ксввритер](https://docs.microsoft.com/javascript/api/azure-maps-spatial-io/atlas.io.core.csvwriter)
 
-> [!div class="nextstepaction"]
-> [симплексмлреадер](https://docs.microsoft.com/javascript/api/azure-maps-spatial-io/atlas.io.core.simplexmlreader)
+[симплексмлреадер](https://docs.microsoft.com/javascript/api/azure-maps-spatial-io/atlas.io.core.simplexmlreader)
 
-> [!div class="nextstepaction"]
-> [симплексмлвритер](https://docs.microsoft.com/javascript/api/azure-maps-spatial-io/atlas.io.core.simplexmlwriter)
+[симплексмлвритер](https://docs.microsoft.com/javascript/api/azure-maps-spatial-io/atlas.io.core.simplexmlwriter)
 
 Дополнительные примеры кода для добавления в карты см. в следующих статьях:
 
-> [!div class="nextstepaction"]
-> [Сведения о поддерживаемых форматах данных](spatial-io-supported-data-format-details.md)
+[Сведения о поддерживаемых форматах данных](spatial-io-supported-data-format-details.md)

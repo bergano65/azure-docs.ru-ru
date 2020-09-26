@@ -9,14 +9,14 @@ ms.devlang: ''
 ms.topic: conceptual
 author: stevestein
 ms.author: sstein
-ms.reviewer: carlrab
+ms.reviewer: ''
 ms.date: 08/20/2019
-ms.openlocfilehash: 7f5ce25edfc4c3afd8a30528396f1f285b9af571
-ms.sourcegitcommit: 2ffa5bae1545c660d6f3b62f31c4efa69c1e957f
+ms.openlocfilehash: f7d2351fdc39ec4600cbca2e436cdcd527157275
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/11/2020
-ms.locfileid: "88080700"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91332970"
 ---
 # <a name="what-is-sql-data-sync-for-azure"></a>Что такое синхронизация данных SQL для Azure?
 
@@ -63,7 +63,7 @@ ms.locfileid: "88080700"
 | Аварийное восстановление | [Геоизбыточные резервные копии Azure](automated-backups-overview.md) |
 | масштаб чтения; | [Использование реплик только для чтения для распределения рабочих нагрузок запросов только для чтения (предварительная версия)](read-scale-out.md) |
 | ETL (OLTP в OLAP); | [Фабрика данных Azure](https://azure.microsoft.com/services/data-factory/) или [SQL Server Integration Services](https://docs.microsoft.com/sql/integration-services/sql-server-integration-services) |
-| Миграция с SQL Server в базу данных SQL Azure | [Azure Database Migration Service](https://azure.microsoft.com/services/database-migration/) |
+| Миграция с SQL Server в базу данных SQL Azure | [Миграция баз данных Azure](https://azure.microsoft.com/services/database-migration/) |
 |||
 
 

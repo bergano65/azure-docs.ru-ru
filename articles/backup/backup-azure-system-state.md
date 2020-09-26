@@ -3,12 +3,12 @@ title: Резервное копирование состояния систем
 description: Узнайте, как выполнить резервное копирование состояния системы компьютеров Windows Server в Azure.
 ms.topic: conceptual
 ms.date: 05/23/2018
-ms.openlocfilehash: ebe527ef7ddb32d46c2f39970f74b64c2594bf60
-ms.sourcegitcommit: bdd5c76457b0f0504f4f679a316b959dcfabf1ef
+ms.openlocfilehash: 1b3573d757d2f7b1ffec9ae718aa791488960f3b
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "90975492"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91332901"
 ---
 # <a name="back-up-windows-system-state-to-azure"></a>Резервное копирование состояния системы Windows в Azure
 
@@ -38,7 +38,7 @@ ms.locfileid: "90975492"
     ![Настройка конфигурации для нового хранилища](./media/backup-try-azure-backup-in-10-mins/set-storage-configuration.png)
 4. Выберите нужный тип репликации для хранилища.
 
-    ![Варианты конфигурации хранилища](./media/backup-try-azure-backup-in-10-mins/choose-storage-configuration.png)
+    ![Варианты конфигурации хранилища](./media/backup-try-azure-backup-in-10-mins/choose-storage-configuration-for-vault.png)
 
     По умолчанию это геоизбыточное хранилище. Если в качестве конечной точки основного хранилища службы архивации используется Azure, выберите **геоизбыточное хранилище**, а если нет, — **локально избыточное** (это позволит снизить плату за хранилище Azure). Дополнительные сведения о [геоизбыточных](../storage/common/storage-redundancy.md#geo-redundant-storage), [локально избыточных](../storage/common/storage-redundancy.md#locally-redundant-storage) и избыточных в [зонах](../storage/common/storage-redundancy.md#zone-redundant-storage) вариантах хранения [см. в](../storage/common/storage-redundancy.md)этой статье.
 

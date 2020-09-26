@@ -14,12 +14,12 @@ ms.custom:
 - it-pro
 - seo-update-azuread-jan"
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: eb81e5a72ff1f5a8d4442e6e1f211ad2368f6277
-ms.sourcegitcommit: 4913da04fd0f3cf7710ec08d0c1867b62c2effe7
+ms.openlocfilehash: 10c396c4e4b4eac83f08ae0cbbe565f8621688a4
+ms.sourcegitcommit: d95cab0514dd0956c13b9d64d98fdae2bc3569a0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88206285"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91354978"
 ---
 # <a name="troubleshooting-azure-active-directory-b2b-collaboration"></a>Устранение неполадок службы совместной работы Azure Active Directory B2B
 
@@ -107,6 +107,20 @@ ms.locfileid: "88206285"
 
 В облаке Azure для государственных организаций США служба совместной работы B2B поддерживается только между клиентами, которые находятся в облаке Azure для государственных организаций США и поддерживают службу совместной работы B2B. Если вы приглашаете пользователя в клиенте, который не входит в облако Azure для государственных организаций США или что еще не поддерживает службу совместной работы B2B, вы получите сообщение об ошибке. Дополнительные сведения и ограничения см. в разделе [варианты Azure Active Directory Premium P1 и P2](https://docs.microsoft.com/azure/azure-government/documentation-government-services-securityandidentity#azure-active-directory-premium-p1-and-p2).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="i-receive-the-error-that-azure-ad-cannot-find-the-aad-extensions-app-in-my-tenant"></a>Я получаю сообщение об ошибке, в которой Azure AD не удается найти приложение AAD-Extensions-App в моем клиенте
+
+При использовании функций самостоятельной регистрации, таких как пользовательские атрибуты пользователя или потоки пользователей, автоматически создается приложение с именем `aad-extensions-app. Do not modify. Used by AAD for storing user data.` . Он используется внешними удостоверениями Azure AD для хранения сведений о пользователях, которые подписываются и собирают настраиваемые атрибуты.
+
+Если вы случайно удалили `aad-extensions-app` , то можете восстановить его через 30 дней. Вы можете восстановить приложение с помощью модуля Azure AD PowerShell.
+
+1. Запустите модуль Azure AD PowerShell и запустите `Connect-AzureAD` .
+1. Войдите в систему как глобальный администратор для клиента Azure AD, для которого требуется восстановить удаленное приложение.
+1. Выполните команду PowerShell `Get-AzureADDeletedApplication` .
+1. Найдите в списке приложение, в котором начинается отображаемое имя, `aad-extensions-app` и скопируйте его `ObjectId` значение свойства.
+1. Выполните команду PowerShell `Restore-AzureADDeletedApplication -ObjectId {id}` . Замените `{id}` часть команды на `ObjectId` из предыдущего шага.
+
+Теперь восстановленное приложение появится в портал Azure.
+
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Получение поддержки для службы совместной работы B2B](https://docs.microsoft.com/azure/active-directory/fundamentals/active-directory-troubleshooting-support-howto)

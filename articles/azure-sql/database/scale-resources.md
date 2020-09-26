@@ -9,14 +9,14 @@ ms.devlang: ''
 ms.topic: conceptual
 author: jovanpop-msft
 ms.author: jovanpop
-ms.reviewer: jrasnik, carlrab
+ms.reviewer: jrasnik, sstein
 ms.date: 06/25/2019
-ms.openlocfilehash: 180fca9ae40bc07be762665a3d16270e905d2e02
-ms.sourcegitcommit: 93462ccb4dd178ec81115f50455fbad2fa1d79ce
+ms.openlocfilehash: 026c2b7b57929d31fbbf776d81ee41eb73b73d44
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/06/2020
-ms.locfileid: "85984164"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91321523"
 ---
 # <a name="dynamically-scale-database-resources-with-minimal-downtime"></a>Динамическое масштабирование ресурсов базы данных с минимальным временем простоя
 [!INCLUDE[appliesto-sqldb-sqlmi](../includes/appliesto-sqldb-sqlmi.md)]
@@ -71,7 +71,7 @@ ms.locfileid: "85984164"
 - Функция [горизонтального масштабирования для чтения](read-scale-out.md) — это доступная для чтения реплика данных, которая позволяет выполнять ресурсоемкие запросы только для чтения, например отчеты. Реплика только для чтения будет работать с рабочей нагрузкой только для чтения, не влияя на использование ресурсов в базе данных-источнике.
 - [Сегментирование базы данных](elastic-scale-introduction.md) — это набор методов, который позволяет разделять данные по нескольким базам данных и масштабировать их независимо друг от друга.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Сведения о повышении производительности базы данных путем изменения кода базы данных см. в статье [Поиск и применение рекомендаций по производительности](database-advisor-find-recommendations-portal.md).
 - Сведения об оптимизации базы данных с помощью встроенной системы аналитики см. в статье [Автоматическая настройка базы данных SQL Azure](automatic-tuning-overview.md).

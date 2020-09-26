@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: article
 ms.date: 12/27/2019
 ms.author: jeedes
-ms.openlocfilehash: 14418d4d280f4da629aecd5a95b5a49e6856e2c1
-ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
+ms.openlocfilehash: ca2284e3e2f581d1935a8978d26fd674154d581b
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88549395"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91333526"
 ---
 # <a name="tutorial-configure-atlassian-cloud-for-automatic-user-provisioning"></a>Руководство. Настройка Atlassian Cloud для автоматической подготовки пользователей
 
@@ -35,7 +35,7 @@ ms.locfileid: "88549395"
 
 В сценарии, описанном в этом руководстве, предполагается, что у вас уже имеется:
 
-* [Клиент Azure AD](https://docs.microsoft.com/azure/active-directory/develop/quickstart-create-new-tenant).
+* [Клиент Azure AD.](https://docs.microsoft.com/azure/active-directory/develop/quickstart-create-new-tenant)
 * Учетная запись пользователя в Azure AD с [разрешением](https://docs.microsoft.com/azure/active-directory/users-groups-roles/directory-assign-admin-roles) на настройку подготовки (например, администратор приложений, администратор облачных приложений, владелец приложения или глобальный администратор).
 * [Клиент Atlassian Cloud](https://www.atlassian.com/licensing/cloud)
 * Учетная запись пользователя в Atlassian Cloud с разрешениями администратора.
@@ -49,11 +49,12 @@ ms.locfileid: "88549395"
 
 1. Перейдите в [Atlassian Organization Manager](https://admin.atlassian.com) **> выберите каталог >** Организации.
 
-    ![Подготовка облака Atlassian](./media/atlassian-cloud-provisioning-tutorial/select-directory.png)
+    ![Снимок экрана страницы администрирования с вызываемым параметром каталога.](./media/atlassian-cloud-provisioning-tutorial/select-directory.png)
 
 2. Щелкните **подготовка пользователей** и щелкните **создать каталог**. Скопируйте **базовый URL-адрес каталога** и **токен носителя** , которые будут указаны в полях **URL-адрес клиента** и **секретный токен** на вкладке Подготовка облачного приложения Atlassian на портале Azure AD соответственно.
 
-    ![Подготовка облачной подготовки Atlassian облачная подготовка ](./media/atlassian-cloud-provisioning-tutorial/secret-token-1.png) ![ ](./media/atlassian-cloud-provisioning-tutorial/secret-token-2.png) ![ Atlassian облачной подготовки в Atlassian](./media/atlassian-cloud-provisioning-tutorial/secret-token-3.png)
+    ![Снимок экрана страницы администрирования с вызываемым параметром подготовки пользователей. ](./media/atlassian-cloud-provisioning-tutorial/secret-token-1.png) ![Снимок экрана со страницей создания токена.](./media/atlassian-cloud-provisioning-tutorial/secret-token-2.png)
+    ![Снимок экрана со страницей маркера времени демонстрационного каталога.](./media/atlassian-cloud-provisioning-tutorial/secret-token-3.png)
 
 
 ## <a name="step-3-add-atlassian-cloud-from-the-azure-ad-application-gallery"></a>Шаг 3. Добавление Atlassian Cloud из коллекции приложений Azure AD
@@ -85,11 +86,11 @@ ms.locfileid: "88549395"
 
 3. Выберите вкладку **Подготовка**.
 
-    ![Вкладка "Подготовка"](common/provisioning.png)
+    ![Снимок экрана параметров управления с вызываемым параметром подготовки.](common/provisioning.png)
 
 4. Для параметра **Режим подготовки к работе** выберите значение **Automatic** (Автоматически).
 
-    ![Вкладка "Подготовка"](common/provisioning-automatic.png)
+    ![Снимок экрана: раскрывающийся список режима подготовки с вызываемым автоматическим параметром.](common/provisioning-automatic.png)
 
 5. В разделе **учетные данные администратора** введите **URL-адрес клиента** и **маркер секрета** , полученные ранее из учетной записи облака Atlassian. Нажмите кнопку **проверить подключение** , чтобы убедиться, что Azure AD может подключиться к Atlassian Cloud. В случае сбоя подключения убедитесь, что у учетной записи Atlassian Cloud есть разрешения администратора, и повторите попытку.
 
@@ -99,7 +100,7 @@ ms.locfileid: "88549395"
 
     ![Почтовое уведомление](common/provisioning-notification-email.png)
 
-7. Нажмите **Сохранить**.
+7. Выберите команду **Сохранить**.
 
 8. В разделе **сопоставления** выберите **синхронизировать Azure Active Directory пользователей с Atlassian Cloud**.
 

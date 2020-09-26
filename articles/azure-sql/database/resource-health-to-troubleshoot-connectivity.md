@@ -9,14 +9,14 @@ ms.devlang: ''
 ms.topic: conceptual
 author: aamalvea
 ms.author: aamalvea
-ms.reviewer: jrasnik, carlrab
+ms.reviewer: jrasnik, sstein
 ms.date: 02/26/2019
-ms.openlocfilehash: 27865afd356be9eac64083c1ebdeb6ced43dbd18
-ms.sourcegitcommit: 93462ccb4dd178ec81115f50455fbad2fa1d79ce
+ms.openlocfilehash: 8be537fd28adce45b7fc106cc3798688ee4c54ae
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/06/2020
-ms.locfileid: "85986958"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91321583"
 ---
 # <a name="use-resource-health-to-troubleshoot-connectivity-for-azure-sql-database-and-azure-sql-managed-instance"></a>Использование Работоспособность ресурсов для устранения неполадок подключения к базе данных SQL Azure и Azure SQL Управляемый экземпляр
 [!INCLUDE[appliesto-sqldb-sqlmi](../includes/appliesto-sqldb-sqlmi.md)]
@@ -39,7 +39,7 @@ ms.locfileid: "85986958"
 
 ### <a name="degraded"></a>Деградация
 
-Состояние " **снижение работоспособности** " означает, что работоспособность ресурсов обнаружила большую часть успешных входов, но также некоторые сбои. Это скорее всего временные ошибки входа. Чтобы снизить влияние проблем с подключением, вызванных временными ошибками входа, реализуйте [логику повторных попыток](troubleshoot-common-connectivity-issues.md#retry-logic-for-transient-errors) в коде.
+Состояние **Деградация** означает, что служба "Работоспособность ресурсов Azure" обнаружила большую часть успешных и некоторые неудачные операции входа. Это скорее всего временные ошибки входа. Чтобы снизить влияние проблем с подключением, вызванных временными ошибками входа, реализуйте [логику повторных попыток](troubleshoot-common-connectivity-issues.md#retry-logic-for-transient-errors) в коде.
 
 ![Деградация](./media/resource-health-to-troubleshoot-connectivity/sql-resource-health-degraded.jpg)
 
@@ -47,7 +47,7 @@ ms.locfileid: "85986958"
 
 Состояние **Недоступно** означает, что служба "Работоспособность ресурсов Azure" обнаружила согласованные неудачные операции входа в ресурс SQL. Если ресурс остается в этом состоянии в течение продолжительного периода времени, обратитесь в службу поддержки.
 
-![Рекомендации недоступны](./media/resource-health-to-troubleshoot-connectivity/sql-resource-health-unavailable.jpg)
+![Недоступно](./media/resource-health-to-troubleshoot-connectivity/sql-resource-health-unavailable.jpg)
 
 ### <a name="unknown"></a>Неизвестно
 
@@ -71,7 +71,7 @@ ms.locfileid: "85986958"
 
 Перенастройки рассматриваются как временные условия, и их ожидаемое время. Эти события могут запускаться при балансировке нагрузки или сбоях оборудования и программного обеспечения. Любое клиентское рабочее приложение, которое подключается к облачной базе данных, должно реализовывать надежную [логику повторных подключений](troubleshoot-common-connectivity-issues.md#retry-logic-for-transient-errors). Это поможет устранить такие ситуации и сделает эти ошибки прозрачными для пользователя.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Дополнительные сведения о [логике повторных попыток для временных ошибок](troubleshoot-common-connectivity-issues.md#retry-logic-for-transient-errors).
 - [Устранение неполадок, диагностика и предотвращение ошибок подключения SQL](troubleshoot-common-connectivity-issues.md).

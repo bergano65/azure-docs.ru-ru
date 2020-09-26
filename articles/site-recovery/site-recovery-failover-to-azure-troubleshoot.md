@@ -9,12 +9,12 @@ ms.topic: article
 ms.workload: storage-backup-recovery
 ms.date: 01/08/2020
 ms.author: mayg
-ms.openlocfilehash: 39a92dbdc0bdcd0fdd2bb06efe3fbd4bfe33069d
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: e2ab52120e2a5db6648caac61f0228cb0be7e67b
+ms.sourcegitcommit: d95cab0514dd0956c13b9d64d98fdae2bc3569a0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87071188"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91355046"
 ---
 # <a name="troubleshoot-errors-when-failing-over-vmware-vm-or-physical-machine-to-azure"></a>Устранение ошибок при отработке отказа виртуальной машины VMware или физического компьютера в Azure
 
@@ -84,8 +84,8 @@ ms.locfileid: "87071188"
 
 Если кнопка **Подключиться** на виртуальной машине, для которой выполнена отработка отказа, неактивна и вы не подключены к Azure через Express Route или VPN-подключение типа "сеть — сеть".
 
-1. Перейдите в раздел **Виртуальная машина** > **Сеть** и нажмите на имя необходимого сетевого интерфейса.  ![сетевой интерфейс](media/site-recovery-failover-to-azure-troubleshoot/network-interface.PNG)
-2. Откройте раздел **Конфигурации IP** и нажмите на поле имени необходимой конфигурации IP. ![Конфигурации IP](media/site-recovery-failover-to-azure-troubleshoot/IpConfigurations.png)
+1. Перейдите в раздел **Виртуальная машина** > **Сеть** и нажмите на имя необходимого сетевого интерфейса.  ![На снимке экрана показана страница сети для виртуальной машины с выбранным именем сетевого интерфейса.](media/site-recovery-failover-to-azure-troubleshoot/network-interface.PNG)
+2. Откройте раздел **Конфигурации IP** и нажмите на поле имени необходимой конфигурации IP. ![На снимке экрана показана страница конфигурации I P для сетевого интерфейса с выбранным именем I P конфигурации.](media/site-recovery-failover-to-azure-troubleshoot/IpConfigurations.png)
 3. Чтобы включить общедоступный IP-адрес, нажмите **Включить**. ![Включить IP](media/site-recovery-failover-to-azure-troubleshoot/Enable-Public-IP.png)
 4. Нажмите **Настроить обязательные параметры** > **Создать**. ![Создать](media/site-recovery-failover-to-azure-troubleshoot/Create-New-Public-IP.png)
 5. Введите имя общедоступного адреса, выберите параметры по умолчанию для элементов **SKU** и **назначение** и нажмите **OK**.
@@ -102,7 +102,7 @@ ms.locfileid: "87071188"
 
     а. Создайте виртуальную машину в той же сети.
 
-    Б.  Убедитесь, что ее можно присоединить к тому же домену, где должна находиться виртуальная машина, для которой выполнена отработка отказа.
+    b.  Убедитесь, что ее можно присоединить к тому же домену, где должна находиться виртуальная машина, для которой выполнена отработка отказа.
 
     c. Если контроллер домена работает **неправильно**, попробуйте войти на виртуальную машину, для которой выполнена отработка отказа, используя учетную запись локального администратора.
 4. Если вы работаете с пользовательским DNS-сервером, убедитесь, что он доступен. Следуйте приведенным инструкциям.

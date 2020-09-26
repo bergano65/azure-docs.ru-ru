@@ -9,14 +9,14 @@ ms.devlang: ''
 ms.topic: conceptual
 author: stevestein
 ms.author: sstein
-ms.reviewer: carlrab
+ms.reviewer: ''
 ms.date: 12/20/2018
-ms.openlocfilehash: 8033e64924b5faa1cfdc9c04cdd8711850185dca
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 74fc317dbb97c14c27e6355e100a6e6b5e767363
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84195461"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91333024"
 ---
 # <a name="data-sync-agent-for-sql-data-sync"></a>Агент синхронизации данных для синхронизация данных SQL
 [!INCLUDE[appliesto-sqldb](../includes/appliesto-sqldb.md)]
@@ -96,7 +96,7 @@ msiexec /i "SQLDataSyncAgent-2.0-x86-ENU.msi" TARGETDIR="C:\Program Files (x86)\
 
 - [Приложение локального агента синхронизации не может подключиться к локальной службе синхронизации](#agent-connect)
 
-### <a name="the-client-agent-install-uninstall-or-repair-fails"></a><a name="agent-install"></a>Сбой установки, удаления или восстановления агента клиента
+### <a name="the-client-agent-install-uninstall-or-repair-fails"></a><a name="agent-install"></a> Сбой установки, удаления или восстановления агента клиента
 
 - **Причина**. Этот сбой может произойти во множестве случаев. Чтобы определить конкретную причину этого сбоя, просмотрите журналы.
 
@@ -118,7 +118,7 @@ msiexec /i "SQLDataSyncAgent-2.0-x86-ENU.msi" TARGETDIR="C:\Program Files (x86)\
     -   Используйте services.msc для повторного ввода учетных данных агента клиента.
     -   Удалите этот агент клиента и установите его заново. Скачайте и установите последний агент клиента из [центра загрузки](https://www.microsoft.com/download/details.aspx?id=27693).
 
-### <a name="my-database-isnt-listed-in-the-agent-list"></a><a name="agent-list"></a>Моя база данных отсутствует в списке агентов
+### <a name="my-database-isnt-listed-in-the-agent-list"></a><a name="agent-list"></a> Моя база данных отсутствует в списке агентов
 
 При попытке добавить существующую базу данных SQL Server в группу синхронизации база данных не отображается в списке агентов.
 
@@ -148,7 +148,7 @@ msiexec /i "SQLDataSyncAgent-2.0-x86-ENU.msi" TARGETDIR="C:\Program Files (x86)\
 - **Решение**. Обновите пароль агента до текущего пароля сервера.
 
   1. Найдите службу агента клиента синхронизации данных SQL.  
-    а. Щелкните **Запуск**.  
+    а. Выберите команду **Запустить**.  
     b. В поле поиска введите **services.msc**.  
     c. В результатах поиска выберите **службы**.  
     d. В окне **Службы** прокрутите список до записи **Агент синхронизации данных SQL**.  
@@ -194,7 +194,7 @@ msiexec /i "SQLDataSyncAgent-2.0-x86-ENU.msi" TARGETDIR="C:\Program Files (x86)\
   1. Откройте приложение SqlAzureDataSyncAgent.
   1. Щелкните **Submit Agent Key** (Отправить ключ агента).
   1. Вставьте ключ из буфера обмена в соответствующем поле.
-  1. Нажмите кнопку **ОК**.
+  1. Щелкните **ОК**.
   1. Закройте программу.
 
 ### <a name="the-client-agent-cant-be-deleted-from-the-portal-if-its-associated-on-premises-database-is-unreachable"></a><a name="agent-delete"></a> Агент клиента невозможно удалить с портала, если связанная с ним локальная база данных недоступна
@@ -208,7 +208,7 @@ msiexec /i "SQLDataSyncAgent-2.0-x86-ENU.msi" TARGETDIR="C:\Program Files (x86)\
 > [!NOTE]
 > Если таблицы метаданных синхронизации остаются после принудительного удаления, используйте `deprovisioningutil.exe`, чтобы очистить их.
 
-### <a name="local-sync-agent-app-cant-connect-to-the-local-sync-service"></a><a name="agent-connect"></a>Приложению локального агента синхронизации не удается подключиться к локальной службе синхронизации
+### <a name="local-sync-agent-app-cant-connect-to-the-local-sync-service"></a><a name="agent-connect"></a> Приложению локального агента синхронизации не удается подключиться к локальной службе синхронизации
 
 - **Решение**. Попробуйте сделать следующее.
 
@@ -315,7 +315,7 @@ SqlDataSyncAgentCommand.exe -action "updatecredential" -serverName localhost -da
 SqlDataSyncAgentCommand.exe -action "updatecredential" -serverName localhost -databaseName testdb -authentication windows -encryption true
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о Синхронизации данных SQL см. в следующих статьях:
 

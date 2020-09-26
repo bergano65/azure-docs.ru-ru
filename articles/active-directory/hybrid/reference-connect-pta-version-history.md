@@ -12,12 +12,12 @@ ms.date: 04/14/2020
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 3e5e6afef70ee3d4f4d84cb6b867a916ae57da5a
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 854931273ffebd653615a44dbfa9ce1b846655c2
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85356310"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91333432"
 ---
 # <a name="azure-ad-pass-through-authentication-agent-version-release-history"></a>Агент сквозной аутентификации Azure AD: журнал выпусков версий 
  
@@ -55,21 +55,16 @@ ms.locfileid: "85356310"
 ## <a name="154050"></a>1.5.405.0 
 ### <a name="release-status"></a>Состояние выпуска 
 1/31/2018: выпущено для скачивания  
-### <a name="fixed-issues"></a>Исправленные проблемы 
-
+### <a name="fixed-issues"></a>Устраненные проблемы 
 - Исправлена ошибка, которая привела к утечке памяти в агенте. 
 - Обновлена версия служебной шины Azure, которая включает исправление ошибки для проблем с временем ожидания соединителя. 
- 
-## <a name="154050"></a>1.5.405.0 
-### <a name="release-status"></a>Состояние выпуска 
-11/26/2017: выпущено для скачивания  
 ### <a name="new-features-and-improvements"></a>Новые функции и внесенные улучшения 
-- Добавлена поддержка подключений на основе WebSocket между агентом и службами Azure AD для повышения устойчивости подключений. 
+- Добавлена поддержка подключений на основе WebSocket между агентом и службами Azure AD для повышения устойчивости подключений.
 
 ## <a name="154020"></a>1.5.402.0 
 ### <a name="release-status"></a>Состояние выпуска 
 11/25/2017: выпущено для скачивания  
-### <a name="fixed-issues"></a>Исправленные проблемы 
+### <a name="fixed-issues"></a>Устраненные проблемы 
 - Исправлены ошибки, связанные с кэшем DNS для сценариев прокси-сервера по умолчанию. 
  
 ## <a name="153890"></a>1.5.389.0 
@@ -84,6 +79,6 @@ ms.locfileid: "85356310"
 ### <a name="new-features-and-improvements"></a>Новые функции и внесенные улучшения 
 - Общедоступная версия агента сквозной аутентификации Azure AD 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Вход пользователей с помощью сквозной проверки подлинности Azure Active Directory](how-to-connect-pta.md)

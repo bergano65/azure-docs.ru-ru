@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 03/11/2020
 ms.author: erhopf
-ms.openlocfilehash: 4ec153a9c770b0001888c972dc44414470e3ddbf
-ms.sourcegitcommit: c4ad4ba9c9aaed81dfab9ca2cc744930abd91298
+ms.openlocfilehash: 560c156c8e2c3d69c099b2ad573fa0d214f3f80b
+ms.sourcegitcommit: d95cab0514dd0956c13b9d64d98fdae2bc3569a0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/12/2020
-ms.locfileid: "84730311"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91355080"
 ---
 # <a name="what-is-the-speech-devices-sdk"></a>Что такое пакет SDK для речевых устройств?
 
@@ -55,9 +55,9 @@ ms.locfileid: "84730311"
 
 Предоставляются дополнительные двоичные файлы для поддержки предстоящих устройств, [Рубо v2 DDK](https://aka.ms/sdsdk-download-roobov2), [урбеттер DDK](https://aka.ms/sdsdk-download-urbetter), [ГЖЕК докладчика](https://aka.ms/sdsdk-download-speaker), [Linux ARM32](https://aka.ms/sdsdk-download-linux-arm32)и [Linux ARM64](https://aka.ms/sdsdk-download-linux-arm64).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Выберите свое речевое устройство](get-speech-devices-sdk.md)
 > [!div class="nextstepaction"]
-> [Try the Speech service for free](get-started.md) (Бесплатное использование службы "Речь")
+> [Try the Speech service for free](overview.md#try-the-speech-service-for-free) (Бесплатное использование службы "Речь")

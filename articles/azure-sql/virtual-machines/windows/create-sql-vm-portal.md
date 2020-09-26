@@ -7,19 +7,19 @@ author: MashaMSFT
 tags: azure-resource-manager
 ms.assetid: 1aff691f-a40a-4de2-b6a0-def1384e086e
 ms.service: virtual-machines-sql
-ms.topic: article
+ms.topic: how-to
 ms.tgt_pltfrm: vm-windows-sql-server
 ms.workload: infrastructure-services
 ms.date: 11/07/2019
 ms.author: mathoma
 ms.reviewer: jroth
 ms.custom: seo-lt-2019
-ms.openlocfilehash: e315f49cb0b78e13c4b6132f844397d1261ff0f9
-ms.sourcegitcommit: 271601d3eeeb9422e36353d32d57bd6e331f4d7b
+ms.openlocfilehash: a7cd15bab0b26a13f9ffb818aa29e8e262c0bd06
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/20/2020
-ms.locfileid: "88652023"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91332922"
 ---
 # <a name="how-to-use-the-azure-portal-to-provision-a-windows-virtual-machine-with-sql-server"></a>Использование портал Azure для инициализации виртуальной машины Windows с SQL Server
 
@@ -115,7 +115,7 @@ ms.locfileid: "88652023"
 
 * Создайте новую **виртуальную сеть** или используйте существующую виртуальную сеть для SQL Server виртуальной машины. Также выберите значение для параметра **Подсеть**. 
 
-* В разделе **Сетевая группа безопасности сети**выберите базовую группу безопасности или расширенную группу безопасности. Выбор параметра "базовый" позволяет выбрать входящие порты для SQL Server виртуальной машины, для которых заданы одинаковые значения, настроенные на вкладке " **основные** ". Выбор параметра "Дополнительно" позволяет выбрать существующую группу безопасности сети или создать новую. 
+* В разделе **Сетевая группа безопасности сети**выберите базовую группу безопасности или расширенную группу безопасности. Выбор параметра "базовый" позволяет выбрать входящие порты для SQL Server виртуальной машины, которые имеют одинаковые значения, настроенные на вкладке " **основные** ". Выбор параметра дополнительно позволяет выбрать существующую группу безопасности сети или создать новую. 
 
 * Вы можете изменить другие параметры сети или оставить их значения по умолчанию.
 

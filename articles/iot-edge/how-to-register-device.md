@@ -10,12 +10,12 @@ ms.reviewer: menchi
 ms.service: iot-edge
 ms.custom: devx-track-azurecli
 services: iot-edge
-ms.openlocfilehash: 0f41dbb4e6231e804249c3fce3dfc8275dcc00aa
-ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
+ms.openlocfilehash: adbded5a577a6bca42f2894a1a846993ca2330fe
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/31/2020
-ms.locfileid: "87489016"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91297000"
 ---
 # <a name="register-an-azure-iot-edge-device"></a>Регистрация устройства Azure IoT Edge
 
@@ -149,10 +149,10 @@ VS Code позволяет выполнять большинство опера�
 
 ### <a name="retrieve-the-connection-string-with-the-azure-cli"></a>Получение строки подключения с помощью Azure CLI
 
-Когда все будет готово к настройке устройства, вам понадобится строка подключения, которая связывает физическое устройство с его идентификатором в Центре Интернета вещей. Чтобы вернуть строку подключения для одного устройства, используйте команду [az iot hub device-identity show-connection-string](https://docs.microsoft.com/cli/azure/ext/azure-iot/iot/hub/device-identity?view=azure-cli-latest#ext-azure-iot-az-iot-hub-device-identity-show-connection-string).
+Когда все будет готово к настройке устройства, вам понадобится строка подключения, которая связывает физическое устройство с его идентификатором в Центре Интернета вещей. Чтобы вернуть строку подключения для одного устройства, воспользуйтесь командой [AZ IOT концентратора подключение — строка-идентификация](https://docs.microsoft.com/cli/azure/ext/azure-iot/iot/hub/device-identity/connection-string?view=azure-cli-latest#ext_azure_iot_az_iot_hub_device_identity_connection_string_show) .
 
    ```azurecli
-   az iot hub device-identity show-connection-string --device-id [device id] --hub-name [hub name]
+   az iot hub device-identity connection-string show --device-id [device id] --hub-name [hub name]
    ```
 
 В параметре `device-id` учитывается регистр. Копируйте строку подключения без кавычек.

@@ -8,14 +8,14 @@ ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: Infrastructure-services
-ms.date: 05/29/2020
+ms.date: 09/24/2020
 ms.author: derekol
-ms.openlocfilehash: 012468ea16a9d1125bbcc93333eb8dad586aa502
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 4b034c2657cd1bddd696b40738d51c8a3e6c9798
+ms.sourcegitcommit: d95cab0514dd0956c13b9d64d98fdae2bc3569a0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84871424"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91355258"
 ---
 # <a name="peering-service-partners"></a>Партнеры по службам пиринга
 
@@ -33,8 +33,8 @@ ms.locfileid: "84871424"
 | [CenturyLink](https://www.ctl.io/microsoft-azure-peering-services/) |США|
 | [BBIX](https://www.bbix.net/en/service/) |Япония |
 | [ккл](https://concepts.co.nz/news/general-news/) |Океания |
-| [Colt](https://www.colt.net/why-colt/strategic-alliances/microsoft-partnership/)|Европа|
-| [DE-CIX](https://www.de-cix.net/microsoft)|Европа, Северная Америка |
+| [Colt](https://www.colt.net/why-colt/strategic-alliances/microsoft-partnership/)|Европа, Азия|
+| [DE-CIX](https://www.de-cix.net/microsoft)|Европа |
 | [IIJ](https://www.iij.ad.jp/en/) | Япония |
 | [Intercloud](https://intercloud.com/microsoft-saas-applications/)|Европа  |
 | [Kordia](https://www.kordia.co.nz/cloudconnect) |Океания  |
@@ -47,7 +47,7 @@ ms.locfileid: "84871424"
 >Дополнительные сведения о прикреплении к партнерской программе службы пиринга см. в статье peeringservice@microsoft.com .
 >
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Дополнительные сведения о службе пиринга см. в статье [Общие сведения о службе пиринга](about.md).
 - Дополнительные сведения о вопросах пиринга см. в статье [часто задаваемые вопросы о службе пиринга](faq.md).

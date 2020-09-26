@@ -2,14 +2,14 @@
 title: Коллекция IP-адресов Application Insights Azure | Документация Майкрософт
 description: Основные сведения об обработке IP-адресов и географического расположения с помощью Azure Application Insights
 ms.topic: conceptual
-ms.date: 09/11/2020
-ms.custom: devx-track-javascript
-ms.openlocfilehash: b702494347874a1b4977179ba882490223bdf924
-ms.sourcegitcommit: 3fc3457b5a6d5773323237f6a06ccfb6955bfb2d
+ms.date: 09/23/2020
+ms.custom: devx-track-js
+ms.openlocfilehash: 6131105ef78a8559b0fb95043a87e562e887ebfd
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/11/2020
-ms.locfileid: "90032832"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91333313"
 ---
 # <a name="geolocation-and-ip-address-handling"></a>Обработка геолокации и IP-адресов
 
@@ -62,9 +62,7 @@ ms.locfileid: "90032832"
 
 Если необходимо изменить поведение только для одного Application Insights ресурса, используйте портал Azure. 
 
-1. Перейдите к Application Insights ресурсу > **Параметры**  >  **Экспорт шаблона** 
-
-    ![Экспорт шаблона](media/ip-collection/export-template.png)
+1. Выберите Application Insights ресурс > **Automation**  >  **шаблон экспорта** службы автоматизации 
 
 2. Выбор **развертывания**
 
