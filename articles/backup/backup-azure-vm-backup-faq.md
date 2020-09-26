@@ -4,22 +4,28 @@ description: В этой статье вы найдете ответы на ча
 ms.reviewer: sogup
 ms.topic: conceptual
 ms.date: 09/17/2019
-ms.openlocfilehash: 7206a62e3148c1bbb8d2e3704d991025deeece37
-ms.sourcegitcommit: 3246e278d094f0ae435c2393ebf278914ec7b97b
+ms.openlocfilehash: 8813794d44803a32bc6e156d3ca76360d84604c5
+ms.sourcegitcommit: 5dbea4631b46d9dde345f14a9b601d980df84897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89377324"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91370833"
 ---
 # <a name="frequently-asked-questions-back-up-azure-vms"></a>Часто задаваемые вопросы. Резервное копирование виртуальных машин Azure
 
 В этой статье содержатся ответы на часто задаваемые вопросы о резервном копировании виртуальных машин Azure со службой [Azure Backup](./backup-overview.md) .
 
-## <a name="backup"></a>Backup
+## <a name="backup"></a>Резервное копирование
 
 ### <a name="which-vm-images-can-be-enabled-for-backup-when-i-create-them"></a>Какие образы виртуальных машин можно включить для резервного копирования при их создании?
 
 При создании виртуальной машины можно включить резервное копирование для виртуальных машин, работающих под управлением [поддерживаемых операционных систем](backup-support-matrix-iaas.md#supported-backup-actions).
+
+### <a name="why-initial-backup-is-taking-lot-of-time-to-complete"></a>Зачем нужно выполнять начальное резервное копирование?
+
+Начальное резервное копирование всегда является полной резервной копией и зависит от размера данных и времени обработки резервной копии. <br>
+Чтобы повысить производительность резервного копирования, ознакомьтесь с рекомендациями по [резервному копированию](https://docs.microsoft.com/azure/backup/backup-azure-vms-introduction#best-practices). [Вопросы резервного копирования](https://docs.microsoft.com/azure/backup/backup-azure-vms-introduction#backup-and-restore-considerations) и [производительность резервного копирования](https://docs.microsoft.com/azure/backup/backup-azure-vms-introduction#backup-performance)<br>
+Хотя для добавочных резервных копий общая продолжительность резервного копирования составляет менее 24 часов, на создание первой резервной копии может затрачиваться больше времени.
 
 ### <a name="is-the-backup-cost-included-in-the-vm-cost"></a>Стоимость резервного копирования включена в стоимость виртуальной машины?
 
@@ -154,6 +160,10 @@ Azure Backup теперь поддерживает выборочное резе
 ### <a name="can-i-access-the-vm-once-restored-due-to-a-vm-having-broken-relationship-with-domain-controller"></a>Можно ли получить доступ к виртуальной машине после восстановления из-за неработающего отношения виртуальной машины с контроллером домена?
 
 Да, вы получите доступ к виртуальной машине после восстановления из-за неработающего отношения виртуальной машины с контроллером домена. Дополнительные сведения см. в [этой статье](./backup-azure-arm-restore-vms.md#post-restore-steps).
+
+### <a name="why-restore-operation-is-taking-long-time-to-complete"></a>Почему выполнение операции восстановления занимает много времени?
+
+Общее время восстановления зависит от количества операций ввода-вывода в секунду и пропускной способности учетной записи хранения. Общее время восстановления может быть затронуто, если Целевая учетная запись хранения загружена с другими операциями чтения и записи приложения. Чтобы улучшить операцию восстановления, выберите учетную запись хранения, которая не загружена с другими данными приложений.
 
 ## <a name="manage-vm-backups"></a>Управление резервным копированием виртуальных машин
 

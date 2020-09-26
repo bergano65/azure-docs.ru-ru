@@ -7,12 +7,12 @@ ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: how-to
 ms.date: 11/13/2019
-ms.openlocfilehash: 313b6afb8bd96f8ae507118cd552110d5f07ff78
-ms.sourcegitcommit: 124f7f699b6a43314e63af0101cd788db995d1cb
+ms.openlocfilehash: 26dfe8d134f9f38d8272895583ba2eff614d78e4
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86087525"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91308390"
 ---
 # <a name="migrate-azure-hdinsight-36-hive-workloads-to-hdinsight-40"></a>Перенос рабочих нагрузок Hive из Azure HDInsight 3.6 в HDInsight 4.0
 
@@ -70,7 +70,7 @@ select * from dbo.version
 
 По умолчанию управляемые таблицы должны быть совместимы с ACID в HDInsight 4,0. После завершения миграции хранилище метаданных запустите средство после обновления, чтобы сделать ранее не совместимые с кластером HDInsight 4,0 таблицы, отличные от ACID. Это средство будет применять следующее преобразование:
 
-|3.6 |4.0 |
+|3,6 |4,0 |
 |---|---|
 |Внешние таблицы|Внешние таблицы|
 |Таблицы, не являющиеся управляемыми ACID|Внешние таблицы со свойством "External. Table. unочисткой" = "true"|
@@ -79,7 +79,7 @@ select * from dbo.version
 Выполните средство после обновления Hive из кластера HDInsight 4,0 с помощью оболочки SSH:
 
 1. Подключитесь к кластеру головного узла с помощью SSH. Инструкции см. [в статье подключение к HDInsight с помощью SSH](../hdinsight-hadoop-linux-use-ssh-unix.md) .
-1. Откройте оболочку входа от имени пользователя Hive, выполнив`sudo su - hive`
+1. Откройте оболочку входа от имени пользователя Hive, выполнив `sudo su - hive`
 1. Выполните следующую команду из оболочки.
 
     ```bash
@@ -208,32 +208,11 @@ select * from dbo.version
 
 ## <a name="query-execution-across-hdinsight-versions"></a>Выполнение запросов в версиях HDInsight
 
-Существует два способа выполнения и отладки запросов Hive/LLAP в кластере HDInsight 3,6. Хивекли предоставляет возможности командной строки, а представление представления/Hive Tez предоставляет рабочий процесс на основе графического пользовательского интерфейса.
+Существует два способа выполнения и отладки запросов Hive/LLAP в кластере HDInsight 3,6. Хивекли предоставляет возможности командной строки, а представление [представления/Hive Tez](https://docs.microsoft.com/azure/hdinsight/hadoop/apache-hadoop-use-hive-ambari-view) предоставляет рабочий процесс на основе графического пользовательского интерфейса.
 
-В HDInsight 4,0 Хивекли был заменен на Beeline. Хивекли — это Thrift клиент для Hiveserver 1, а Beeline — клиент JDBC, предоставляющий доступ к Hiveserver 2. Beeline также можно использовать для подключения к любой другой конечной точке базы данных, совместимой с JDBC. Beeline доступен в HDInsight 4,0 без необходимости установки.
+В HDInsight 4,0 Хивекли был заменен на Beeline. Представление Tez/Hive предоставляет рабочий процесс на основе графического пользовательского интерфейса. Хивекли — это Thrift клиент для Hiveserver 1, а Beeline — клиент JDBC, предоставляющий доступ к Hiveserver 2. Beeline также можно использовать для подключения к любой другой конечной точке базы данных, совместимой с JDBC. Beeline доступен в HDInsight 4,0 без необходимости установки.
 
-В HDInsight 3,6 клиент GUI для взаимодействия с сервером Hive является представлением Hive Ambari. HDInsight 4,0 не поставляется с Ambari представлением. Мы предоставили нашим клиентам способ использования Data Analytics Studio (DAS), который не является основной службой HDInsight. DAS не поставляется с кластерами HDInsight и не является официально поддерживаемым пакетом. Однако DAS можно установить в кластере с помощью [действия сценария](../hdinsight-hadoop-customize-cluster-linux.md) следующим образом:
-
-|Свойство | Значение |
-|---|---|
-|Тип скрипта|- Custom|
-|Имя|DAS|
-|URI bash-скрипта|`https://hdiconfigactions.blob.core.windows.net/dasinstaller/LaunchDASInstaller.sh`|
-|Типы узлов|Head|
-
-Подождите 10 – 15 минут, а затем запустите Data Analytics Studio с помощью этого URL-адреса: `https://CLUSTERNAME.azurehdinsight.net/das/` .
-
-Перед доступом к DAS может потребоваться обновить пользовательский интерфейс Ambari и (или) перезапустить все компоненты Ambari.
-
-После установки DAS, если вы не видите запросы, которые вы выполняли в средстве просмотра запросов, выполните следующие действия.
-
-1. Задайте конфигурации для Hive, TEZ и DAS, как описано в [этом разделе руководства по устранению неполадок установки Das](https://docs.hortonworks.com/HDPDocuments/DAS/DAS-1.2.0/troubleshooting/content/das_queries_not_appearing.html).
-2. Убедитесь, что следующие конфигурации каталога службы хранилища Azure являются страничными BLOB-объектами и перечислены в разделе `fs.azure.page.blob.dirs` :
-    * `hive.hook.proto.base-directory`
-    * `tez.history.logging.proto-base-dir`
-3. Перезапустите HDFS, Hive, TEZ и DAS в обоих головных узлах.
-
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Объявление о HDInsight 4,0](../hdinsight-version-release.md)
 * [HDInsight 4,0. подробное углубление](https://azure.microsoft.com/blog/deep-dive-into-azure-hdinsight-4-0/)

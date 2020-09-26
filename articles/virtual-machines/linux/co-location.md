@@ -1,18 +1,18 @@
 ---
 title: Совместное размещение виртуальных машин Linux
-description: Узнайте, как совместное размещение ресурсов виртуальных машин Azure может повысить задержку.
+description: Узнайте, как совместное размещение ресурсов виртуальных машин Azure для Linux может повысить задержку.
 ms.service: virtual-machines
 ms.topic: conceptual
 ms.date: 10/30/2019
 ms.author: zivr
-ms.openlocfilehash: 000c8c8955314060ae9bdedb96b086a509fb3e96
-ms.sourcegitcommit: f353fe5acd9698aa31631f38dd32790d889b4dbb
+ms.openlocfilehash: 6bf01f4da6ce96b413c87b81c14a998603cebd6b
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87368648"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91279729"
 ---
-# <a name="co-locate-resources-for-improved-latency"></a>Совместное размещение ресурсов для повышения задержки
+# <a name="co-locate-resources-for-improved-latency"></a>Совместное размещение ресурсов для уменьшения задержки
 
 При развертывании приложения в Azure распределение экземпляров по регионам или зонам доступности создает задержку в сети, что может повлиять на общую производительность приложения. 
 

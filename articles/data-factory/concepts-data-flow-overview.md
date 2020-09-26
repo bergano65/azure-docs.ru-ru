@@ -8,12 +8,12 @@ ms.service: data-factory
 ms.topic: conceptual
 ms.custom: references_regions
 ms.date: 09/02/2020
-ms.openlocfilehash: b5042eb86f5d534655fd831147a9ab4ebb094e9b
-ms.sourcegitcommit: 9c262672c388440810464bb7f8bcc9a5c48fa326
+ms.openlocfilehash: 7d73d832f96d087964c46c6c735c0385832c08db
+ms.sourcegitcommit: 5dbea4631b46d9dde345f14a9b601d980df84897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/03/2020
-ms.locfileid: "89419986"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91370918"
 ---
 # <a name="mapping-data-flows-in-azure-data-factory"></a>Сопоставление потоков данных в фабрике данных Azure
 
@@ -61,7 +61,7 @@ ms.locfileid: "89419986"
 
 Вкладка **Оптимизация** содержит параметры для настройки схем секционирования. Чтобы узнать больше о том, как оптимизировать потоки данных, см. [руководство по повышению производительности потока данных сопоставления](concepts-data-flow-performance.md).
 
-![Optimize](media/data-flow/optimize.png "Оптимизация") (Оптимизация)
+![На снимке экрана показана вкладка "оптимизация", включающая параметр секции, тип секции и число секций.](media/data-flow/optimize.png)
 
 #### <a name="inspect"></a>Изучение
 
@@ -110,7 +110,7 @@ ms.locfileid: "89419986"
 | Южная Бразилия  | ✓ |  |
 | Центральная Канада | ✓ |  |
 | Центральная Индия | ✓ |   ✓ |
-| Центральная часть США    | ✓ |   ✓ |
+| Центральная часть США    | ✓ |   ✓ |
 | Восточный Китай |      | ✓ |
 | Восточный Китай 2  |   |    |
 | Китай не региональный | | |
@@ -155,7 +155,7 @@ ms.locfileid: "89419986"
 | Западная Европа   | ✓ |   ✓ |
 | Западная Индия | | |
 | западная часть США   | ✓ |   |
-| западная часть США 2 | ✓ |   ✓ | 
+| Западная часть США 2 | ✓ |   ✓ | 
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

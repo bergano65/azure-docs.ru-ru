@@ -9,12 +9,12 @@ ms.date: 07/23/2020
 ms.author: normesta
 ms.reviewer: fryu
 ms.custom: monitoring, devx-track-csharp
-ms.openlocfilehash: 7010e47dd9272ce620f8e057fbfb36e1fd5b26c9
-ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
+ms.openlocfilehash: 5b4e2fa95b9a5eebf393d7c64feecd3997b7ecfd
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89021176"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91280034"
 ---
 # <a name="azure-storage-analytics-logging"></a>Ведение журнала Аналитики Службы хранилища Azure
 
@@ -206,7 +206,7 @@ azcopy copy 'https://mystorageaccount.blob.core.windows.net/$logs/queue' 'C:\Log
 
 Дополнительные сведения о скачивании конкретных файлов см. в [этом разделе](https://docs.microsoft.com/azure/storage/common/storage-use-azcopy-blobs?toc=%2fazure%2fstorage%2fblobs%2ftoc.json#download-specific-files).
 
-После скачивания данных журнала можно просматривать записи журнала в файлах. Эти файлы имеют текстовый формат с разделителями-запятыми, совместимый со многими средствами чтения журналов, включая Microsoft Message Analyzer (подробные сведения см. в руководстве [Мониторинг, диагностика и устранение неполадок службы хранилища Microsoft Azure](storage-monitoring-diagnosing-troubleshooting.md)). Такие средства предоставляют различные возможности форматирования, фильтрации, сортировки и поиска содержимого файлов журнала. Дополнительные сведения о формате и содержимом файлов журнала службы хранилища см. в статьях [Формат журнала Аналитики Службы хранилища](/rest/api/storageservices/storage-analytics-log-format) и [Операции и сообщения о состоянии, заносимые в журнал Аналитики Службы хранилища](/rest/api/storageservices/storage-analytics-logged-operations-and-status-messages).
+После скачивания данных журнала можно просматривать записи журнала в файлах. В этих файлах журнала используется текстовый формат с разделителями, в котором могут анализироваться многие средства чтения журнала (Дополнительные сведения см. в разделе Руководство по [мониторингу, диагностике и устранению неполадок служба хранилища Microsoft Azure](storage-monitoring-diagnosing-troubleshooting.md)). Такие средства предоставляют различные возможности форматирования, фильтрации, сортировки и поиска содержимого файлов журнала. Дополнительные сведения о формате и содержимом файлов журнала службы хранилища см. в статьях [Формат журнала Аналитики Службы хранилища](/rest/api/storageservices/storage-analytics-log-format) и [Операции и сообщения о состоянии, заносимые в журнал Аналитики Службы хранилища](/rest/api/storageservices/storage-analytics-logged-operations-and-status-messages).
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
