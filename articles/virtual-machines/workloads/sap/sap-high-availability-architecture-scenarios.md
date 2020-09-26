@@ -16,12 +16,12 @@ ms.workload: infrastructure-services
 ms.date: 02/26/2020
 ms.author: radeltch
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: a4ab403ebafbf078accd2ee2256c0c5bb69548e9
-ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
+ms.openlocfilehash: c837a4020ab1aaad1798d6b19e72e09edafea1f5
+ms.sourcegitcommit: d95cab0514dd0956c13b9d64d98fdae2bc3569a0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87288267"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91360358"
 ---
 # <a name="high-availability-architecture-and-scenarios-for-sap-netweaver"></a>Высокодоступная архитектура и сценарии для SAP NetWeaver
 
@@ -344,7 +344,7 @@ Azure находится в процессе развертывания конц
 
 > Этот раздел касается:
 >
-> ![Windows][Logo_Windows] Windows и ![Linux][Logo_Linux] Linux
+> ![Эмблема Windows.][Logo_Windows] Windows и ![Логотип Linux.][Logo_Linux] Linux
 >
 
 Как правило, для экземпляров серверов приложений или диалоговых экземпляров SAP специальное решение для обеспечения высокой доступности не требуется. Высокий уровень доступности достигается за счет избыточности, то есть на разных экземплярах виртуальных машин Azure настраиваются различные диалоговые экземпляры. Необходимо установить как минимум два экземпляра приложения SAP на два экземпляра виртуальных машин Azure.
@@ -382,7 +382,7 @@ _**Рис. 2.** Высокий уровень доступности серве
 
 ### <a name="high-availability-architecture-for-an-sap-ascsscs-instance-on-windows"></a>Архитектура высокой доступности для экземпляра SAP ASCS/SCS на Windows
 
-> ![Windows][Logo_Windows] Windows
+> ![Эмблема Windows.][Logo_Windows] Windows
 >
 
 Решение WSFC можно использовать для защиты экземпляра SAP ASCS/SCS. Решение содержит два варианта:
@@ -395,7 +395,7 @@ _**Рис. 2.** Высокий уровень доступности серве
 
 ### <a name="high-availability-architecture-for-an-sap-ascsscs-instance-on-linux"></a>Архитектура высокой доступности для экземпляра SAP ASCS/SCS на Linux
 
-> ![Linux][Logo_Linux] Linux
+> ![Логотип Linux.][Logo_Linux] Linux
 > 
 > Дополнительные сведения о кластеризации экземпляра SAP ASCS/SCS с помощью платформы кластера SLES см. в статье [Обеспечение высокого уровня доступности SAP NetWeaver на виртуальных машинах Azure в SUSE Linux Enterprise Server для приложений SAP][sap-suse-ascs-ha]. Сведения об альтернативной высокодоступной архитектуре в SLES, для которой не требуется высокодоступная NFS, см. в статье [Обеспечение высокого уровня доступности SAP NetWeaver в SUSE Linux Enterprise Server для приложений SAP с помощью Azure NetApp Files][sap-suse-ascs-ha-anf].
 
@@ -404,7 +404,7 @@ _**Рис. 2.** Высокий уровень доступности серве
 
 ### <a name="sap-netweaver-multi-sid-configuration-for-a-clustered-sap-ascsscs-instance"></a>Конфигурации SAP NetWeaver с несколькими идентификаторами безопасности для кластеризованного экземпляра SAP ASCS/SCS
 
-> ![Windows][Logo_Windows] Windows
+> ![Эмблема Windows.][Logo_Windows] Windows
 > 
 > Несколько идентификаторов безопасности поддерживается c WSFC при использовании общей папки и общего диска.
 > 
@@ -414,7 +414,7 @@ _**Рис. 2.** Высокий уровень доступности серве
 
 * [Обеспечение высокого уровня доступности с несколькими ИД безопасности для экземпляра SAP ASCS/SCS с помощью отказоустойчивой кластеризации Windows Server и общего диска в Azure][sap-ascs-ha-multi-sid-wsfc-shared-disk]
 
-> ![Linux][Logo_Linux] Linux
+> ![Логотип Linux.][Logo_Linux] Linux
 > 
 > Кластеризация с несколькими ИД безопасности поддерживается в кластерах Pacemaker Linux для SAP ASCS/ERS, но в одном кластере может быть только **пять** идентификаторов безопасности SAP.
 > Дополнительные сведения об использовании архитектуры высокого уровня доступности с несколькими идентификаторами безопасности в Linux см. в следующих статьях:

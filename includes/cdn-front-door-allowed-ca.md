@@ -1,5 +1,5 @@
 ---
-title: Включить имя файла
+title: включить файл
 description: включить файл
 services: multiple
 author: sharad4u
@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 05/09/2019
 ms.author: sharadag
 ms.custom: include file
-ms.openlocfilehash: 9397c5f075c1d6653920d19766d5d6a740294ec7
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 68d0459153fbdb34216c1313f70e292119b93a7c
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "67330761"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91269814"
 ---
 При создании собственного сертификата разрешены следующие ЦС:
 
@@ -23,6 +23,7 @@ ms.locfileid: "67330761"
 - ЦС 02 AME Infra
 - Ameroot
 - APCA-DM3P
+- Атос Трустедрут 2011
 - Autopilot Root CA
 - Baltimore CyberTrust Root
 - Class 3 Public Primary Certification Authority
@@ -52,8 +53,12 @@ ms.locfileid: "67330761"
 - GlobalSign Root CA
 - Корневой ЦС Go Daddy — G2
 - Защищенный ЦС Go Daddy — G2
+- Давайте шифровать центр X3
 - QuoVadis Root CA2 G3
 - ЦС RSA RapidSSL 2018
+- RootCA1 Communication Security
+- RootCA2 Communication Security
+- RootCA3 Communication Security
 - Symantec Class 3 EV SSL CA - G3
 - Symantec Class 3 Secure Server CA - G4
 - Symantec Enterprise Mobile Root for Microsoft

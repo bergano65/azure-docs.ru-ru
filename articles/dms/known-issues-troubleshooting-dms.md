@@ -9,14 +9,14 @@ ms.reviewer: craigg
 ms.service: dms
 ms.workload: data-services
 ms.custom: seo-lt-2019
-ms.topic: article
+ms.topic: troubleshooting
 ms.date: 02/20/2020
-ms.openlocfilehash: 40c7b1b0ae2065ed00cf21f99ab2046e25970237
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: f0ec9d2a3794ea910339b4d329bb28f23c5a76b1
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84609443"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91297364"
 ---
 # <a name="troubleshoot-common-azure-database-migration-service-issues-and-errors"></a>Устранение распространенных проблем и ошибок Azure Database Migration Service
 
@@ -130,7 +130,7 @@ ms.locfileid: "84609443"
 * [Известные проблемы и ограничения миграции при оперативной миграции в базу данных Azure для MySQL](https://docs.microsoft.com/azure/dms/known-issues-azure-mysql-online)
 * [Известные проблемы и ограничения миграции при оперативной миграции в базу данных Azure для PostgreSQL](https://docs.microsoft.com/azure/dms/known-issues-azure-postgresql-online)
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Просмотрите статью [Azure Database Migration Service PowerShell](https://docs.microsoft.com/powershell/module/azurerm.datamigration/?view=azurermps-6.13.0#data_migration).
 * Ознакомьтесь со статьей [Настройка параметров сервера в базе данных Azure для MySQL с помощью портал Azure](https://docs.microsoft.com/azure/mysql/howto-server-parameters).

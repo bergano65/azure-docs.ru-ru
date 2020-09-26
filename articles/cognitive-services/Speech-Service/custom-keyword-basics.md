@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.date: 07/20/2019
 ms.author: trbye
 ms.custom: devx-track-csharp
-ms.openlocfilehash: d80f244f7b5e17d730451093070b971e9aa041b9
-ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
+ms.openlocfilehash: 188824b9c43387cf106a3cdd53a09fd6bcb198b8
+ms.sourcegitcommit: d95cab0514dd0956c13b9d64d98fdae2bc3569a0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88919018"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91360673"
 ---
 # <a name="custom-keyword-basics"></a>Общие сведения об использовании настраиваемых ключевых слов
 
@@ -24,7 +24,7 @@ ms.locfileid: "88919018"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Для выполнения действий, описанных в этой статье, требуется подписка на речь и речевой пакет SDK. Если у вас еще нет подписки, [попробуйте службу распознавания речи бесплатно](get-started.md). Чтобы получить пакет SDK, ознакомьтесь с [руководством по установке](quickstarts/setup-platform.md) платформы.
+Для выполнения действий, описанных в этой статье, требуется подписка на речь и речевой пакет SDK. Если у вас еще нет подписки, [попробуйте службу распознавания речи бесплатно](overview.md#try-the-speech-service-for-free). Чтобы получить пакет SDK, ознакомьтесь с [руководством по установке](quickstarts/setup-platform.md) платформы.
 
 ## <a name="create-a-keyword-in-speech-studio"></a>Создание ключевого слова в Speech Studio
 
