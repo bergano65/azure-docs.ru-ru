@@ -16,12 +16,12 @@ ms.date: 01/15/2018
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 268cf61596366d451057861db1fa5ac2d35e87d0
-ms.sourcegitcommit: f8d2ae6f91be1ab0bc91ee45c379811905185d07
+ms.openlocfilehash: d1d364089d5df24cfc4e7a75c3fd6b81248f0cd6
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89662399"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91313320"
 ---
 # <a name="identity-synchronization-and-duplicate-attribute-resiliency"></a>Синхронизация удостоверений и устойчивость повторяющихся атрибутов
 Устойчивость повторяющихся атрибутов — это функция в Azure Active Directory, которая устраняет трение, вызванное **userPrincipalName** и **proxyAddress** конфликтов SMTP при выполнении одного из средств синхронизации Майкрософт.
@@ -101,7 +101,7 @@ _** \<OriginalPrefix> + \<4DigitNumber> \@ \<InitialTenantDomain> . onmicrosoft.
 
 `Get-MsolDirSyncProvisioningError -ErrorCategory PropertyConflict -PropertyName UserPrincipalName`
 
-Или
+либо
 
 `Get-MsolDirSyncProvisioningError -ErrorCategory PropertyConflict -PropertyName ProxyAddresses`
 
@@ -124,7 +124,7 @@ _** \<OriginalPrefix> + \<4DigitNumber> \@ \<InitialTenantDomain> . onmicrosoft.
 ## <a name="microsoft-365-admin-center"></a>Центр администрирования Microsoft 365
 Ошибки синхронизации службы каталогов можно просмотреть в центре администрирования Microsoft 365. В отчете в центре администрирования Microsoft 365 отображаются только те объекты **пользователя** , которые содержат эти ошибки. Этот отчет не содержит сведений о конфликтах между такими объектами, как **Группы** и **Контакты**.
 
-![Активные пользователи](./media/how-to-connect-syncservice-duplicate-attribute-resiliency/1234.png "Активные пользователи")
+![Снимок экрана, на котором показаны ошибки синхронизации каталогов в центре администрирования Microsoft 365.](./media/how-to-connect-syncservice-duplicate-attribute-resiliency/1234.png "Активные пользователи")
 
 Инструкции по просмотру ошибок синхронизации каталогов в центре администрирования Microsoft 365 см. в разделе [Определение ошибок синхронизации каталогов в Microsoft 365](https://support.office.com/article/Identify-directory-synchronization-errors-in-Office-365-b4fc07a5-97ea-4ca6-9692-108acab74067).
 
@@ -132,7 +132,7 @@ _** \<OriginalPrefix> + \<4DigitNumber> \@ \<InitialTenantDomain> . onmicrosoft.
 Когда объект с конфликтом повторяющихся атрибутов обрабатывается с помощью нового поведения, в электронное письмо, содержащее стандартный отчет об ошибках синхронизации удостоверений, добавляется уведомление. Это письмо отправляется контакту клиента, предназначенному для технических уведомлений. Но в этом поведении есть важные изменения. Раньше сведения о конфликте повторяющихся атрибутов включались в каждый отчет об ошибках до тех пор, пока конфликт не разрешался. После включения нового поведения уведомление об ошибке, связанное с тем или иным конфликтом, отображается только один раз: когда конфликтующий атрибут помещается на карантин.
 
 Вот как выглядит уведомление электронной почты о конфликте ProxyAddress:   
-    ![Активные пользователи](./media/how-to-connect-syncservice-duplicate-attribute-resiliency/6.png "Активные пользователи")  
+    ![Снимок экрана, на котором показан пример уведомления по электронной почте о конфликте ProxyAddress.](./media/how-to-connect-syncservice-duplicate-attribute-resiliency/6.png "Активные пользователи")  
 
 ## <a name="resolving-conflicts"></a>Разрешение конфликтов
 Стратегия устранения неполадок и методика разрешения этих ошибок не должны отличаться от того, как ошибки повторяющихся атрибутов обрабатывались раньше. Единственное различие заключается в том, что задача таймера переходит через клиент на стороне службы и автоматически добавляет спорный атрибут в правильный объект после разрешения конфликта.

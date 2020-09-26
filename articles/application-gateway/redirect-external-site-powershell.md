@@ -6,14 +6,14 @@ services: application-gateway
 author: vhorne
 ms.service: application-gateway
 ms.topic: how-to
-ms.date: 11/14/2019
+ms.date: 09/24/2020
 ms.author: victorh
-ms.openlocfilehash: 55b5b5419734999ebd50ca364251602112e29987
-ms.sourcegitcommit: 1b320bc7863707a07e98644fbaed9faa0108da97
+ms.openlocfilehash: 5b2bb50fc2ad8084d79097fe7acb449821d0a4da
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/09/2020
-ms.locfileid: "89594294"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91331069"
 ---
 # <a name="create-an-application-gateway-with-external-redirection-using-azure-powershell"></a>Создание шлюза приложений с перенаправлением внешнего трафика с помощью Azure PowerShell
 
@@ -156,9 +156,4 @@ Get-AzPublicIPAddress -ResourceGroupName myResourceGroupAG -Name myAGPublicIPAdd
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Из этой статьи вы узнали, как выполнять следующие задачи:
-
-> [!div class="checklist"]
-> * Настройка сети
-> * создание прослушивателя и правила перенаправления;
-> * Создание шлюза приложений
+- [Создание шлюза приложений с перенаправлением внутреннего трафика с помощью Azure PowerShell](redirect-internal-site-powershell.md)

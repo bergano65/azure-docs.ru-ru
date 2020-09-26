@@ -9,12 +9,12 @@ ms.topic: how-to
 ms.date: 05/04/2020
 ms.author: cynthn
 ms.reviewer: akjosh
-ms.openlocfilehash: 68a0db9113c705134084fb5291eb267b7a31fba0
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.openlocfilehash: 2e3861cf3df11fa147814fc80246fe2714653b30
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86525812"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91331392"
 ---
 # <a name="create-a-vm-using-a-generalized-image"></a>Создание виртуальной машины с помощью обобщенного образа 
 
@@ -154,4 +154,4 @@ New-AzVM `
 - [Создание версии образа в коллекции общих образов](https://azure.microsoft.com/resources/templates/101-sig-image-version-create/)
 - [Создание виртуальной машины из версии образа](https://azure.microsoft.com/resources/templates/101-vm-from-sig/)
 
-Дополнительные сведения о коллекциях общих образов см. в [обзорной статье](./windows/shared-image-galleries.md). Если вы столкнетесь с проблемами, обратитесь к статье об [устранении неполадок c коллекциями общих образов](./windows/troubleshooting-shared-images.md).
+Дополнительные сведения о коллекциях общих образов см. в [обзорной статье](./windows/shared-image-galleries.md). Если вы столкнетесь с проблемами, обратитесь к статье об [устранении неполадок c коллекциями общих образов](troubleshooting-shared-images.md).

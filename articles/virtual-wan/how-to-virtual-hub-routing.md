@@ -6,14 +6,14 @@ services: virtual-wan
 author: cherylmc
 ms.service: virtual-wan
 ms.topic: how-to
-ms.date: 07/07/2020
+ms.date: 09/22/2020
 ms.author: cherylmc
-ms.openlocfilehash: 00d79f8058d7d478f7fe97ba9677e47098b70e1b
-ms.sourcegitcommit: d7352c07708180a9293e8a0e7020b9dd3dd153ce
+ms.openlocfilehash: cae74a5f4859d208765c9a7e5cde05ff3c0c3096
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/30/2020
-ms.locfileid: "89145932"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91313694"
 ---
 # <a name="how-to-configure-virtual-hub-routing"></a>Настройка маршрутизации для виртуального концентратора
 
@@ -30,9 +30,9 @@ ms.locfileid: "89145932"
 3. Выберите **+ создать таблицу маршрутов** , чтобы открыть страницу **Создание таблицы маршрутов** .
 4. На вкладке " **Основные сведения** " страницы Создание таблицы маршрутов заполните следующие поля.
 
-   :::image type="content" source="./media/how-to-virtual-hub-routing/basics.png" alt-text="Вкладка Основные сведения":::
+   :::image type="content" source="./media/how-to-virtual-hub-routing/basics.png" alt-text="Вкладка "Основные сведения"":::
 
-   * **имя**;
+   * **Имя**
    * **Маршруты**
    * **Имя маршрута**
    * **Конечный тип**

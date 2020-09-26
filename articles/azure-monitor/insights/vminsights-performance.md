@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 05/31/2020
-ms.openlocfilehash: 1ea6d09609d1b7b3f7ba7297a040447d1fc24756
-ms.sourcegitcommit: 50673ecc5bf8b443491b763b5f287dde046fdd31
+ms.openlocfilehash: f9578fadfbe057b723af63e338bf8bda63cf6f21
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/20/2020
-ms.locfileid: "83684393"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91330916"
 ---
 # <a name="how-to-chart-performance-with-azure-monitor-for-vms"></a>Создание диаграммы производительности с помощью службы Azure Monitor для виртуальных машин
 
@@ -21,7 +21,7 @@ ms.locfileid: "83684393"
 Ниже приведены ограничения, применимые к сбору сведений о производительности в Azure Monitor для виртуальных машин.
 
 - Метрика **Доступная память** недоступна для виртуальных машин под управлением ОС Red Hat Linux (RHEL) 6. Эта метрика вычисляется на основе функции **MemAvailable**, которая появилась в [версии ядра 3.14](http://www.man7.org/linux/man-pages/man1/free.1.html).
-- Метрики доступны только для дисков данных на виртуальных машинах Linux с файловой системой семейства EXT (EXT2, EXT3, EXT4).
+- Метрики доступны только для дисков данных на виртуальных машинах Linux с использованием файловой системы XFS или семейства EXT FileSystem (EXT2, EXT3, EXT4).
 
 ## <a name="multi-vm-perspective-from-azure-monitor"></a>Перспективное представление нескольких виртуальных машин в Azure Monitor
 

@@ -5,21 +5,24 @@ services: virtual-wan
 author: cherylmc
 ms.service: virtual-wan
 ms.topic: how-to
-ms.date: 07/14/2020
+ms.date: 09/22/2020
 ms.author: cherylmc
 Customer intent: As someone with a networking background, I want to create a Network Virtual Appliance (NVA) in my Virtual WAN hub.
-ms.openlocfilehash: c5f120d6d9d80db4eaa9cf6f68e8dd27d45c8aea
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 83267b1bebd501871277ea3e40b7fa9ba38f33cd
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87098592"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91313762"
 ---
 # <a name="how-to-create-a-network-virtual-appliance-in-an-azure-virtual-wan-hub-preview"></a>Создание сетевого виртуального устройства в виртуальном концентраторе глобальной сети Azure (Предварительная версия)
 
 В этом руководстве показано, как использовать виртуальную глобальную сеть для подключения к ресурсам в Azure с помощью **сетевого виртуального** модуля (NVA) в Azure. Для этого типа подключения требуется локальное VPN-устройство, которому назначен внешний общедоступный IP-адрес. Дополнительные сведения о Виртуальной глобальной сети см. в [этой статье](virtual-wan-about.md).
 
 Действия, описанные в этой статье, помогут создать виртуальное устройство **Barracuda КЛАУДЖЕН WAN** Network в виртуальном КОНЦЕНТРАТОРе глобальной сети. Для выполнения этого упражнения необходимо иметь Barracuda Cloud Device (CPE) и лицензию для устройства Barracuda Клауджен WAN, которое развертывается в концентраторе перед началом работы.
+
+Документацию по развертыванию **Cisco SD-WAN** в виртуальной глобальной сети Azure см. по следующему адресу электронной почты: vwan_public_preview@cisco.com .
+
 
 ## <a name="before-you-begin"></a>Перед началом
 

@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 04/03/2018
 ms.author: memildin
-ms.openlocfilehash: 3a3dd1c0df32e7d6a67e63c9e148327d30f0082c
-ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
+ms.openlocfilehash: 52ea6f862b7ef6190348743a128912131e6a9609
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "90904724"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91314493"
 ---
 # <a name="azure-security-center-readiness-roadmap"></a>План готовности центра безопасности Azure
 Этот документ содержит план подготовки, который поможет вам приступить к работе с центром безопасности Azure.
@@ -29,8 +29,8 @@ ms.locfileid: "90904724"
 Используйте следующие ресурсы для начала работы с центром безопасности.
 
 Статьи
-- [Введение в Центр безопасности Azure](https://docs.microsoft.com/azure/security-center/security-center-intro)
-- [Краткое руководство по центру безопасности Azure](https://docs.microsoft.com/azure/security-center/security-center-get-started)
+- [Введение в Центр безопасности Azure](security-center-introduction.md)
+- [Краткое руководство по центру безопасности Azure](security-center-get-started.md)
 
 Видео
 - [Introduction to Azure Security Center](https://azure.microsoft.com/resources/videos/introduction-to-azure-security-center/) (Ознакомительное видео о центре безопасности Azure)
@@ -42,7 +42,7 @@ ms.locfileid: "90904724"
 
 Следующие ресурсы пригодятся вам в процессе планирования и эксплуатации.
 
-- [Руководство по планированию использования центра безопасности Azure и работе в нем](https://docs.microsoft.com/azure/security-center/security-center-planning-and-operations-guide)
+- [Руководство по планированию использования центра безопасности Azure и работе в нем](security-center-planning-and-operations-guide.md)
 
 
 ### <a name="onboarding-computers-to-security-center"></a>Подключение компьютеров к центру безопасности

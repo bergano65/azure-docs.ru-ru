@@ -7,12 +7,12 @@ ms.reviewer: jonfan, logicappspm
 ms.topic: conceptual
 ms.date: 09/14/2020
 tags: connectors
-ms.openlocfilehash: 5f6328144760b3c55c55fbef13917359fa9e1a62
-ms.sourcegitcommit: 03662d76a816e98cfc85462cbe9705f6890ed638
+ms.openlocfilehash: f005bdfa5643ea187fb2973cac065563c4cc2ee6
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90526758"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91292461"
 ---
 # <a name="call-service-endpoints-over-http-or-https-from-azure-logic-apps"></a>Вызов конечных точек службы по HTTP или HTTPS из Azure Logic Apps
 
@@ -247,7 +247,7 @@ ms.locfileid: "90526758"
 
 Если триггер или действие HTTP включает эти заголовки, Logic Apps удаляет эти заголовки из созданного сообщения запроса без отображения предупреждения или ошибки:
 
-* `Accept-*`
+* `Accept-*` заголовки, за исключением `Accept-version`
 * `Allow`
 * `Content-*` со следующими исключениями: `Content-Disposition`, `Content-Encoding` и `Content-Type`
 * `Cookie`
@@ -267,7 +267,7 @@ ms.locfileid: "90526758"
 * [Параметры триггера HTTP](../logic-apps/logic-apps-workflow-actions-triggers.md#http-trigger)
 * [Параметры действия HTTP](../logic-apps/logic-apps-workflow-actions-triggers.md#http-action)
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Безопасный доступ и доступ к данным для исходящих вызовов других служб и систем](../logic-apps/logic-apps-securing-a-logic-app.md#secure-outbound-requests)
 * [Соединители для Logic Apps](../connectors/apis-list.md)

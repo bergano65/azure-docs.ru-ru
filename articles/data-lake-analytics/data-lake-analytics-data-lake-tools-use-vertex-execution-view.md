@@ -6,12 +6,12 @@ ms.service: data-lake-analytics
 ms.assetid: 5366d852-e7d6-44cf-a88c-e9f52f15f7df
 ms.topic: how-to
 ms.date: 10/13/2016
-ms.openlocfilehash: 2fdce38b19cd38439baa5d640707d159cd713657
-ms.sourcegitcommit: 0e8a4671aa3f5a9a54231fea48bcfb432a1e528c
+ms.openlocfilehash: b8688af24e2b67f0e21de8344188b9a946f3258b
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/24/2020
-ms.locfileid: "87125622"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91331953"
 ---
 # <a name="use-the-vertex-execution-view-in-data-lake-tools-for-visual-studio"></a>Использование представления выполнения вершин в инструментах Data Lake для Visual Studio
 Сведения об использовании представления выполнения вершин для изучения заданий Data Lake Analytics.
@@ -20,20 +20,20 @@ ms.locfileid: "87125622"
 ## <a name="open-the-vertex-execution-view"></a>Открытие представления выполнения вершин
 Откройте задание U-SQL в Средствах Data Lake для Visual Studio. В левом верхнем углу щелкните **Представление выполнения вершин**. Возможно, будет предложено сначала загрузить профили. На это может уйти некоторое время в зависимости от качества подключения к сети.
 
-![Представление выполнения вершин средств Data Lake Analytics](./media/data-lake-analytics-data-lake-tools-use-vertex-execution-view/data-lake-tools-open-vertex-execution-view.png)
+![Снимок экрана, на котором показано представление выполнения вершин Data Lake Analytics инструментов](./media/data-lake-analytics-data-lake-tools-use-vertex-execution-view/data-lake-tools-open-vertex-execution-view.png)
 
 ## <a name="understand-vertex-execution-view"></a>Сведения о представлении выполнения вершин
 Представление выполнения вершин состоит из трех частей.
 
-![Представление выполнения вершин средств Data Lake Analytics](./media/data-lake-analytics-data-lake-tools-use-vertex-execution-view/data-lake-tools-vertex-execution-view.png)
+![Снимок экрана, на котором показано представление выполнения вершин с выделенными панелями "селектор вершин" и "центр-верхняя и Центральная-Нижняя".](./media/data-lake-analytics-data-lake-tools-use-vertex-execution-view/data-lake-tools-vertex-execution-view.png)
 
 В области **Селектор вершины** слева можно выбирать вершины по характеристикам (например, первые 10 прочитанных наборов данных или выбор по этапам). Одним из наиболее часто используемых фильтров является **критический путь**. **Критический путь** — это самая длинная цепочка вершин в задании U-SQL. Определение критического пути позволяет оптимизировать задания путем проверки того, какая вершина занимает больше всего времени.
   
-![Представление выполнения вершин средств Data Lake Analytics](./media/data-lake-analytics-data-lake-tools-use-vertex-execution-view/data-lake-tools-vertex-execution-view-pane2.png)
+![Снимок экрана, на котором показана верхняя центральная панель представления выполнения вершин, в которой отображается состояние "выполняется все вершины".](./media/data-lake-analytics-data-lake-tools-use-vertex-execution-view/data-lake-tools-vertex-execution-view-pane2.png)
 
 В центральной верхней области показано **состояние выполнения всех вершин**.
   
-![Представление выполнения вершин средств Data Lake Analytics](./media/data-lake-analytics-data-lake-tools-use-vertex-execution-view/data-lake-tools-vertex-execution-view-pane3.png)
+![Снимок экрана, на котором показана нижняя Центральная панель представления выполнения вершин, на которой отображаются сведения о каждой вершине.](./media/data-lake-analytics-data-lake-tools-use-vertex-execution-view/data-lake-tools-vertex-execution-view-pane3.png)
 
 В центральной нижней области приводятся сведения о каждой вершине.
 * Имя процесса — имя экземпляра вершины. Оно состоит из различных частей в StageName|VertexName|VertexRunInstance. Например, вершина SV7_Split[62].v1 означает второй запущенный экземпляр (индекс (.v1) начинается с 0) вершины номер 62 в стадии SV7_Split.
