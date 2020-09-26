@@ -5,13 +5,13 @@ author: rachel-msft
 ms.author: raagyema
 ms.service: postgresql
 ms.topic: conceptual
-ms.date: 09/22/2020
-ms.openlocfilehash: 1126c218f8e80b7d89183746890a3fae1357d29d
-ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
+ms.date: 09/23/2020
+ms.openlocfilehash: f38006e83be47142a6d7a6db25eefb3daccd0d92
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "90938519"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91307591"
 ---
 # <a name="postgresql-extensions-in-azure-database-for-postgresql---flexible-server"></a>Расширения PostgreSQL в базе данных Azure для PostgreSQL-гибкого сервера
 
@@ -33,6 +33,8 @@ PostgreSQL предоставляет возможность расширить 
 > [!div class="mx-tableFixed"]
 > | **Расширение**| **версия расширения;** | **Описание** |
 > |---|---|---|
+> |[address_standardizer](http://postgis.net/docs/Address_Standardizer.html)         | 3.0.0           | Используются для анализа адреса в составных элементы. |
+> |[address_standardizer_data_us](http://postgis.net/docs/Address_Standardizer.html) | 3.0.0           | Пример набора данных для стандартизации адресов США|
 > |[амчекк](https://www.postgresql.org/docs/12/amcheck.html)                    | 1.2             | функции для проверки целостности отношений|
 > |[раскрытия](https://www.postgresql.org/docs/12/bloom.html)                    | 1.0             | метод доступа раскрытия — индекс на основе файла сигнатуры|
 > |[btree_gin](https://www.postgresql.org/docs/12/btree-gin.html)                    | 1,3             | Поддержка индексирования общих типов в Ло|
@@ -49,11 +51,11 @@ PostgreSQL предоставляет возможность расширить 
 > |[intarray](https://www.postgresql.org/docs/12/intarray.html)                     | 1.2             | функции, операторы и поддержка индексов для 1-D массивов целых чисел|
 > |[isn](https://www.postgresql.org/docs/12/isn.html)                          | 1.2             | типы данных для международных стандартов нумерации продуктов|
 > |[ltree](https://www.postgresql.org/docs/12/ltree.html)                        | 1,1             | тип данных для иерархических структур, схожих с деревом|
-> |[пажеинспект](https://www.postgresql.org/docs/12/pageinspect.html)                        | 1,7             | Проверка содержимого страниц базы данных на низком уровне|
+> |[пажеинспект](https://www.postgresql.org/docs/12/pageinspect.html)                        | 1.7             | Проверка содержимого страниц базы данных на низком уровне|
 > |[pg_buffercache](https://www.postgresql.org/docs/12/pgbuffercache.html)               | 1,3             | Проверка общего кэша буфера|
 > |[pg_freespacemap](https://www.postgresql.org/docs/12/pgfreespacemap.html)               | 1.2             | изучение схемы свободного места (FSM)|
 > |[pg_prewarm](https://www.postgresql.org/docs/12/pgprewarm.html)                   | 1.2             | предтеплое отношение данных|
-> |[pg_stat_statements](https://www.postgresql.org/docs/12/pgstatstatements.html)           | 1,7             | Трассировка статистики выполнения всех выполненных инструкций SQL|
+> |[pg_stat_statements](https://www.postgresql.org/docs/12/pgstatstatements.html)           | 1.7             | Трассировка статистики выполнения всех выполненных инструкций SQL|
 > |[pg_trgm](https://www.postgresql.org/docs/12/pgtrgm.html)                      | 1.4             | измерение подобия текста и поиск по индексу на основе триграммов|
 > |[pg_visibility](https://www.postgresql.org/docs/12/pgvisibility.html)                      | 1.2             | Проверка сведений о видимости (на виртуальной машине) и видимости на уровне страницы|
 > |[пгаудит](https://www.pgaudit.org/)                     | 1.4             | предоставляет функции аудита|
@@ -61,7 +63,11 @@ PostgreSQL предоставляет возможность расширить 
 > |[pgrowlocks](https://www.postgresql.org/docs/12/pgrowlocks.html)                   | 1.2             | показывать сведения о блокировке на уровне строк|
 > |[pgstattuple](https://www.postgresql.org/docs/12/pgstattuple.html)                  | 1.5             | Отображение статистики на уровне кортежей|
 > |[plpgsql](https://www.postgresql.org/docs/12/plpgsql.html)                      | 1.0             | Процедурный язык PL/pgSQL|
-> |[PostGIS](https://www.postgis.net/)                      | 3.0.0           | PostGISие геометрических, географических и растровых пространственных типов и функций|
+> |[PostGIS](https://www.postgis.net/)                      | 3.0.0           | PostGIS геометрия, география |
+> |[postgis_raster](https://www.postgis.net/)               | 3.0.0           | Растровые типы и функции PostGIS| 
+> |[postgis_sfcgal](https://www.postgis.net/)               | 3.0.0           | Функции СФКГАЛ PostGIS|
+> |[postgis_tiger_geocoder](https://www.postgis.net/)       | 3.0.0           | PostGIS Tiger для геокодирования и инвертированного геокодирования|
+> |[postgis_topology](https://postgis.net/docs/Topology.html)             | 3.0.0           | Пространственные типы и функции топологии PostGIS|
 > |[postgres_fdw](https://www.postgresql.org/docs/12/postgres-fdw.html)                 | 1.0             | оболочка внешних данных для удаленных серверов PostgreSQL|
 > |[сслинфо](https://www.postgresql.org/docs/12/sslinfo.html)                    | 1.2             | сведения о SSL-сертификатах|
 > |[tsm_system_rows](https://www.postgresql.org/docs/12/tsm-system-rows.html)                    | 1.0             |  Метод TABLESAMPLE, который принимает число строк в качестве ограничения|
@@ -76,6 +82,8 @@ PostgreSQL предоставляет возможность расширить 
 > [!div class="mx-tableFixed"]
 > | **Расширение**| **версия расширения;** | **Описание** |
 > |---|---|---|
+> |[address_standardizer](http://postgis.net/docs/Address_Standardizer.html)         | 2.5.1           | Используются для анализа адреса в составных элементы. |
+> |[address_standardizer_data_us](http://postgis.net/docs/Address_Standardizer.html) | 2.5.1           | Пример набора данных для стандартизации адресов США|
 > |[амчекк](https://www.postgresql.org/docs/11/amcheck.html)                    | 1,1             | функции для проверки целостности отношений|
 > |[раскрытия](https://www.postgresql.org/docs/11/bloom.html)                    | 1.0             | метод доступа раскрытия — индекс на основе файла сигнатуры|
 > |[btree_gin](https://www.postgresql.org/docs/11/btree-gin.html)                    | 1,3             | Поддержка индексирования общих типов в Ло|
@@ -92,7 +100,7 @@ PostgreSQL предоставляет возможность расширить 
 > |[intarray](https://www.postgresql.org/docs/11/intarray.html)                     | 1.2             | функции, операторы и поддержка индексов для 1-D массивов целых чисел|
 > |[isn](https://www.postgresql.org/docs/11/isn.html)                          | 1.2             | типы данных для международных стандартов нумерации продуктов|
 > |[ltree](https://www.postgresql.org/docs/11/ltree.html)                        | 1,1             | тип данных для иерархических структур, схожих с деревом|
-> |[пажеинспект](https://www.postgresql.org/docs/11/pageinspect.html)                        | 1,7             | Проверка содержимого страниц базы данных на низком уровне|
+> |[пажеинспект](https://www.postgresql.org/docs/11/pageinspect.html)                        | 1.7             | Проверка содержимого страниц базы данных на низком уровне|
 > |[pg_buffercache](https://www.postgresql.org/docs/11/pgbuffercache.html)               | 1,3             | Проверка общего кэша буфера|
 > |[pg_freespacemap](https://www.postgresql.org/docs/11/pgfreespacemap.html)               | 1.2             | изучение схемы свободного места (FSM)|
 > |[pg_prewarm](https://www.postgresql.org/docs/11/pgprewarm.html)                   | 1.2             | предтеплое отношение данных|
@@ -105,6 +113,9 @@ PostgreSQL предоставляет возможность расширить 
 > |[pgstattuple](https://www.postgresql.org/docs/11/pgstattuple.html)                  | 1.5             | Отображение статистики на уровне кортежей|
 > |[plpgsql](https://www.postgresql.org/docs/11/plpgsql.html)                      | 1.0             | Процедурный язык PL/pgSQL|
 > |[PostGIS](https://www.postgis.net/)                      | 2.5.1           | PostGISие геометрических, географических и растровых пространственных типов и функций|
+> |[postgis_sfcgal](https://www.postgis.net/)               | 2.5.1           | Функции СФКГАЛ PostGIS|
+> |[postgis_tiger_geocoder](https://www.postgis.net/)       | 2.5.1           | PostGIS Tiger для геокодирования и инвертированного геокодирования|
+> |[postgis_topology](https://postgis.net/docs/Topology.html)             | 2.5.1           | Пространственные типы и функции топологии PostGIS|
 > |[postgres_fdw](https://www.postgresql.org/docs/11/postgres-fdw.html)                 | 1.0             | оболочка внешних данных для удаленных серверов PostgreSQL|
 > |[сслинфо](https://www.postgresql.org/docs/11/sslinfo.html)                    | 1.2             | сведения о SSL-сертификатах|
 > |[tablefunc](https://www.postgresql.org/docs/11/tablefunc.html)                    | 1.0             | функции, управляющие целыми таблицами, включая перекрестный|
@@ -114,9 +125,21 @@ PostgreSQL предоставляет возможность расширить 
 > |[uuid-ossp](https://www.postgresql.org/docs/11/uuid-ossp.html)                    | 1,1             | создать универсальные уникальные идентификаторы (UUID)|
 
 
+## <a name="dblink-and-postgres_fdw"></a>дблинк и postgres_fdw
+[дблинк](https://www.postgresql.org/docs/current/contrib-dblink-function.html) и [postgres_fdw](https://www.postgresql.org/docs/current/postgres-fdw.html) позволяют подключаться с одного сервера PostgreSQL к другому или к другой базе данных на том же сервере. Отправляющий сервер должен разрешать исходящие подключения к принимающему серверу. Принимающий сервер должен разрешать соединения от отправляющего сервера.
+
+Если вы планируете использовать эти два расширения, рекомендуется развернуть серверы с помощью [интеграции с виртуальной](concepts-networking.md) сетью. По умолчанию интеграция с виртуальной сетью разрешает подключения между серверами в виртуальной сети. Для настройки доступа можно также использовать [группы безопасности сети VNet](../../virtual-network/manage-network-security-group.md) .
+
+
 ## <a name="pg_prewarm"></a>pg_prewarm
 
 Расширение pg_prewarm загружает реляционные данные в кэш. Предварительная подготовка кэшей означает, что запросы имеют лучшее время ответа при первом запуске после перезагрузки. Функция автоматического предгорячего использования в настоящее время недоступна в базе данных Azure для PostgreSQL-гибкого сервера.
+
+## <a name="pg_stat_statements"></a>pg_stat_statements
+[Расширение pg_stat_statements](https://www.postgresql.org/docs/current/pgstatstatements.html) предварительно загружается на каждом гибком сервере базы данных Azure для PostgreSQL, чтобы обеспечить возможность отслеживания статистики выполнения инструкций SQL.
+Параметр `pg_stat_statements.track`, который управляет тем, какие инструкции учитываются расширением, по умолчанию имеет значение `top`. Это означает, что все инструкции, выпущенные непосредственно клиентами, отслеживаются. Два других уровня отслеживания: `none` и `all`. Этот параметр можно настроить в качестве параметра сервера.
+
+Существует компромисс между информацией о выполнении запроса, предоставляемой pg_stat_statements, и воздействием на производительность сервера при регистрации каждой инструкции SQL. Если расширение pg_stat_statements не используется активно, рекомендуется задать для параметра `pg_stat_statements.track` значение `none`. Обратите внимание, что некоторые сторонние службы мониторинга могут зависеть от pg_stat_statements при предоставлении информации о производительности запроса, поэтому подтвердите ваш ли это случай.
 
 
 ## <a name="next-steps"></a>Дальнейшие действия

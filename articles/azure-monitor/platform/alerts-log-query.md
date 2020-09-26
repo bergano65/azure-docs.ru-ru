@@ -1,217 +1,218 @@
 ---
-title: Запросы оповещений журналов в Azure Monitor | Документация Майкрософт
-description: Рекомендации по написанию эффективных запросов для оповещений журналов в обновлениях Azure Monitor и по преобразованию существующих запросов.
-author: yossi-y
-ms.author: yossiy
+title: Оптимизация запросов предупреждений журнала | Документация Майкрософт
+description: Рекомендации по написанию эффективных запросов оповещений
+author: yanivlavi
+ms.author: yalavi
 ms.topic: conceptual
 ms.date: 02/19/2019
 ms.subservice: alerts
-ms.openlocfilehash: be2d49a824066b8926ae455978facb34c0b44310
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.openlocfilehash: 7f03858b2427b2a2069ebe2c9d06425e7a741e2b
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86505471"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91294365"
 ---
-# <a name="log-alert-queries-in-azure-monitor"></a>Запросы оповещений журналов в Azure Monitor
-[Правила генерации оповещений на основе журналов Azure Monitor](alerts-unified-log.md) выполняются с регулярными интервалами, поэтому следует убедиться, что они написаны так, чтобы минимизировать накладные расходы и задержку. В этой статье приводятся рекомендации по написанию эффективных запросов для оповещений журналов и по преобразованию существующих запросов. 
+# <a name="optimizing-log-alert-queries"></a>Оптимизация запросов предупреждений журнала
+В этой статье описывается написание и преобразование запросов [предупреждений журнала](alerts-unified-log.md) для достижения оптимальной производительности. Оптимизированные запросы уменьшают задержку и нагрузку на предупреждения, которые выполняются часто.
 
-## <a name="types-of-log-queries"></a>Типы запросов к журналу
-[Запросы к журналу в Azure Monitor](../log-query/log-query-overview.md) начинаются с оператора "Таблица" или " [Поиск](/azure/kusto/query/searchoperator) " или " [объединение](/azure/kusto/query/unionoperator) ".
+## <a name="how-to-start-writing-an-alert-log-query"></a>Начало записи запроса в журнал предупреждений
 
-Например, следующий запрос к таблице _SecurityEvent_ ищет определенный идентификатор события. Это единственная таблица, которую должен обработать запрос.
+Запросы предупреждений начинаются с [запроса данных журнала в log Analytics](alerts-log.md#create-a-log-alert-rule-with-the-azure-portal) , указывающих на ошибку. Вы можете ознакомиться с [разделом примеры запросов предупреждений](../log-query/saved-queries.md) , чтобы понять, что можно обнаружить. Вы также можете приступить [к написанию собственного запроса](../log-query/get-started-portal.md). 
+
+### <a name="queries-that-indicate-the-issue-and-not-the-alert"></a>Запросы, указывающие на ошибку, а не на предупреждение
+
+Поток предупреждений был создан для преобразования результатов, указывающих на ошибку в предупреждении. Например, в случае запроса:
 
 ``` Kusto
-SecurityEvent | where EventID == 4624 
+SecurityEvent
+| where EventID == 4624
 ```
 
-Запросы, которые начинаются с `search` или `union`, позволяют выполнять поиск по нескольким столбцам в таблице или даже по нескольким таблицам. В следующих примерах показано несколько методов поиска термина _Memory_:
+Если предполагается, что пользователь получит предупреждение, то при возникновении этого события логика предупреждений добавляется `count` к запросу. Будет выполнен запрос:
 
-```Kusto
-search "Memory"
-search * | where == "Memory"
-search ObjectName: "Memory"
-search ObjectName == "Memory"
-union * | where ObjectName == "Memory"
+``` Kusto
+SecurityEvent
+| where EventID == 4624
+| count
 ```
 
-Несмотря на то что `search` и `union` полезны при исследовании данных и поиске терминов по всей модели данных, они менее эффективны, чем использование имени таблицы, так как сканируют несколько таблиц. Запросы в правилах генерации оповещений выполняются с регулярными интервалами, что может привести к чрезмерным накладным расходам, которые добавляют задержку к оповещению. Из-за этих накладных расходов запросы правил генерации оповещений журнала в Azure всегда должны начинаться с имени таблицы, чтобы задать четкую область. Это повышает как производительность запросов, так и релевантность результатов.
+Нет необходимости добавлять в запрос логику предупреждений, и это может вызвать проблемы. В приведенном выше примере, если включить `count` в запрос, всегда будет получено значение 1, так как служба оповещений будет делать `count` `count` .
 
-## <a name="unsupported-queries"></a>Неподдерживаемые запросы
-Начиная с 11 января 2019 года создание или изменение правил генерации оповещений журнала, которые используют операторы `search` или `union`, перестанет поддерживаться на портале Azure. Использование этих операторов в правилах генерации оповещений приведет к появлению сообщения об ошибке. Этому изменению не подвержены существующие правила генерации оповещений, а также правила, созданные и измененные с помощью API Log Analytics. Вам все равно следует рассмотреть возможность изменения любых правил генерации оповещений, которые используют эти типы запросов, хотя бы для повышения их эффективности.  
+### <a name="avoid-limit-and-take-operators"></a>Избегайте `limit` `take` операторов and
 
-Правила генерации оповещений журнала, которые используют [запросы между ресурсами](../log-query/cross-workspace-query.md), не подвержены этому изменению, так как такие запросы используют оператор `union`, который ограничивает область запроса к определенным ресурсам. Это не эквивалентно оператору `union *`, который нельзя использовать.  Следующий пример будет действительным в правиле генерации оповещений журнала:
+Использование `limit` и `take` в запросах может увеличить задержку и нагрузку на предупреждения, так как результаты не согласуются со временем. Рекомендуется использовать его только при необходимости.
+
+## <a name="log-query-constraints"></a>Регистрация ограничений запросов
+[Запросы к журналу в Azure Monitor](../log-query/log-query-overview.md) начинаются с оператора таблицы, [`search`](/azure/kusto/query/searchoperator) или [`union`](/azure/kusto/query/unionoperator) .
+
+Запросы для правил генерации оповещений журнала должны всегда начинаться с таблицы для определения области видимости, что повышает производительность запросов и релевантность результатов. Запросы в правилах генерации оповещений выполняются часто, поэтому использование `search` и `union` может привести к чрезмерному увеличению нагрузки на предупреждение, так как оно требует сканирования в нескольких таблицах. Эти операторы также снижают возможность службы предупреждений оптимизировать запрос.
+
+Мы не поддерживаем создание или изменение правил генерации оповещений журнала, использующих `search` `union` операторы или, в ожидании запросов между ресурсами.
+
+Например, следующий запрос оповещения ограничивается таблицей _SecurityEvent_ и выполняет поиск конкретного идентификатора события. Это единственная таблица, которую должен обработать запрос.
+
+``` Kusto
+SecurityEvent
+| where EventID == 4624
+```
+
+Это изменение не затрагивает правила генерации оповещений журнала с помощью [межресурсных запросов](../log-query/cross-workspace-query.md) , так как запросы между ресурсами используют тип `union` , который ограничивает область запроса конкретными ресурсами. В следующем примере будет использоваться допустимый запрос оповещения журнала:
 
 ```Kusto
-union 
-app('Contoso-app1').requests, 
-app('Contoso-app2').requests, 
+union
+app('Contoso-app1').requests,
+app('Contoso-app2').requests,
 workspace('Contoso-workspace1').Perf 
 ```
 
 >[!NOTE]
->[Запрос между разными ресурсами](../log-query/cross-workspace-query.md) в оповещениях журнала поддерживается в новом API [правил запросов по расписанию](/rest/api/monitor/scheduledqueryrules). По умолчанию Azure Monitor использует [устаревшие API оповещения Log Analytics](api-alerts.md) для создания любого нового правила генерации оповещений на портале Azure, пока вы не переключаетесь с [устаревших API оповещений журнала](alerts-log-api-switch.md#process-of-switching-from-legacy-log-alerts-api). После переключения новый API используется по умолчанию для новых правил генерации оповещений на портале Azure и позволяет создавать правила генерации оповещений журнала запроса между разными ресурсами. Вы можете создать правила генерации оповещений журнала [запросов между разными ресурсами](../log-query/cross-workspace-query.md), не переключаясь, с помощью [шаблона ARM для API правил запросов по расписанию](alerts-log.md#log-alert-with-cross-resource-query-using-azure-resource-template), но этим правилом оповещения можно управлять с помощью [API правил запросов по расписанию](/rest/api/monitor/scheduledqueryrules), а не с помощью портала Azure.
+> [Запросы между ресурсами](../log-query/cross-workspace-query.md) поддерживаются в новом [API счедуледкуерирулес](/rest/api/monitor/scheduledqueryrules). Если вы по-прежнему используете [устаревший API предупреждений log Analytics](api-alerts.md) для создания оповещений журнала, см. сведения о переключении [здесь](alerts-log-api-switch.md).
 
 ## <a name="examples"></a>Примеры
-Следующие примеры включают запросы журнала, которые используют операторы `search` и `union`, и предоставляют шаги по изменению этих запросов для использования их с правилами генерации оповещений.
+Следующие примеры включают в себя запросы журналов, в которых используются `search` и `union` , а также шаги, с помощью которых можно изменить эти запросы для использования в правилах генерации оповещений.
 
 ### <a name="example-1"></a>Пример 1
-Вы хотите создать правило генерации оповещений журнала, используя следующий запрос, который извлекает информацию о производительности с помощью `search`: 
+Вы хотите создать правило генерации оповещений журнала, используя следующий запрос, который получает сведения о производительности с помощью `search` : 
 
 ``` Kusto
-search * | where Type == 'Perf' and CounterName == '% Free Space' 
-| where CounterValue < 30 
-| summarize count()
+search *
+| where Type == 'Perf' and CounterName == '% Free Space'
+| where CounterValue < 30
 ```
-  
 
 Чтобы изменить этот запрос, нужно определить таблицу, к которой относятся свойства. Это делает следующий запрос:
 
 ``` Kusto
-search * | where CounterName == '% Free Space'
+search *
+| where CounterName == '% Free Space'
 | summarize by $table
 ```
- 
 
-В результате запроса будет показано, что свойство _CounterName_ получено из таблицы _Perf_. 
+В результате запроса будет показано, что свойство _CounterName_ получено из таблицы _Perf_.
 
-С учетом этого имени таблицы вы можете создать следующий запрос, который можно использовать для правила генерации оповещений:
+Этот результат можно использовать для создания следующего запроса, который будет использоваться для правила оповещения:
 
 ``` Kusto
-Perf 
-| where CounterName == '% Free Space' 
-| where CounterValue < 30 
-| summarize count()
+Perf
+| where CounterName == '% Free Space'
+| where CounterValue < 30
 ```
-
 
 ### <a name="example-2"></a>Пример 2
-Вы хотите создать правило генерации оповещений журнала, используя следующий запрос, который извлекает информацию о производительности с помощью `search`: 
+Вы хотите создать правило генерации оповещений журнала, используя следующий запрос, который получает сведения о производительности с помощью `search` : 
 
 ``` Kusto
-search ObjectName =="Memory" and CounterName=="% Committed Bytes In Use"  
-| summarize Avg_Memory_Usage =avg(CounterValue) by Computer 
+search ObjectName =="Memory" and CounterName=="% Committed Bytes In Use"
+| summarize Avg_Memory_Usage =avg(CounterValue) by Computer
 | where Avg_Memory_Usage between(90 .. 95)  
-| count 
 ```
-  
 
 Чтобы изменить этот запрос, нужно определить таблицу, к которой относятся свойства. Это делает следующий запрос:
 
 ``` Kusto
-search ObjectName=="Memory" and CounterName=="% Committed Bytes In Use" 
-| summarize by $table 
+search ObjectName=="Memory" and CounterName=="% Committed Bytes In Use"
+| summarize by $table
 ```
- 
 
-В результате запроса будет показано, что свойства _ObjectName_ и _CounterName_ получены из таблицы _Perf_. 
+В результате запроса будет показано, что свойства _ObjectName_ и _CounterName_ получены из таблицы _Perf_.
 
-С учетом этого имени таблицы вы можете создать следующий запрос, который можно использовать для правила генерации оповещений:
+Этот результат можно использовать для создания следующего запроса, который будет использоваться для правила оповещения:
 
 ``` Kusto
-Perf 
-| where ObjectName =="Memory" and CounterName=="% Committed Bytes In Use" 
-| summarize Avg_Memory_Usage=avg(CounterValue) by Computer 
-| where Avg_Memory_Usage between(90 .. 95)  
-| count 
+Perf
+| where ObjectName =="Memory" and CounterName=="% Committed Bytes In Use"
+| summarize Avg_Memory_Usage=avg(CounterValue) by Computer
+| where Avg_Memory_Usage between(90 .. 95)
 ```
- 
 
 ### <a name="example-3"></a>Пример 3
 
-Вы хотите создать правило генерации оповещений журнала, используя следующий запрос, который извлекает информацию о производительности с помощью `search` и `union`: 
+Вы хотите создать правило генерации оповещений журнала, используя следующий запрос, который использует `search` и `union` для получения сведений о производительности: 
 
 ``` Kusto
-search (ObjectName == "Processor" and CounterName == "% Idle Time" and InstanceName == "_Total")  
-| where Computer !in ((union * | where CounterName == "% Processor Utility" | summarize by Computer))
-| summarize Avg_Idle_Time = avg(CounterValue) by Computer|  count  
+search (ObjectName == "Processor" and CounterName == "% Idle Time" and InstanceName == "_Total")
+| where Computer !in (
+    union *
+    | where CounterName == "% Processor Utility"
+    | summarize by Computer)
+| summarize Avg_Idle_Time = avg(CounterValue) by Computer
 ```
- 
 
 Чтобы изменить этот запрос, нужно определить таблицу, к которой относятся свойства в первой части запроса: 
 
 ``` Kusto
-search (ObjectName == "Processor" and CounterName == "% Idle Time" and InstanceName == "_Total")  
-| summarize by $table 
+search (ObjectName == "Processor" and CounterName == "% Idle Time" and InstanceName == "_Total")
+| summarize by $table
 ```
 
-В результате запроса будет показано, что все свойства получены из таблицы _Perf_. 
+В результате запроса будет показано, что все свойства получены из таблицы _Perf_.
 
 Теперь используйте `union` с командой `withsource`, чтобы определить исходную таблицу, которая повлияла на каждую запись.
 
 ``` Kusto
-union withsource=table * | where CounterName == "% Processor Utility" 
-| summarize by table 
+union withsource=table *
+| where CounterName == "% Processor Utility"
+| summarize by table
 ```
- 
 
-В результате запроса будет показано, что эти свойства также получены из таблицы _Perf_. 
+В результате запроса будет показано, что эти свойства также получены из таблицы _Perf_.
 
-Эти результаты можно учесть для создания следующего запроса, который можно использовать для правила генерации оповещений: 
+Эти результаты можно использовать для создания следующего запроса, который будет использоваться для правила оповещения: 
 
 ``` Kusto
-Perf 
-| where ObjectName == "Processor" and CounterName == "% Idle Time" and InstanceName == "_Total" 
-| where Computer !in ( 
-    (Perf 
-    | where CounterName == "% Processor Utility" 
-    | summarize by Computer)) 
-| summarize Avg_Idle_Time = avg(CounterValue) by Computer 
-| count 
+Perf
+| where ObjectName == "Processor" and CounterName == "% Idle Time" and InstanceName == "_Total"
+| where Computer !in (
+    (Perf
+    | where CounterName == "% Processor Utility"
+    | summarize by Computer))
+| summarize Avg_Idle_Time = avg(CounterValue) by Computer
 ``` 
 
 ### <a name="example-4"></a>Пример 4
-Вы хотите создать правило генерации оповещений журнала, используя следующий запрос, который объединяет результаты двух запросов `search`:
+Вы хотите создать правило генерации оповещений журнала, используя следующий запрос, который соединяет результаты двух `search` запросов:
 
 ```Kusto
-search Type == 'SecurityEvent' and EventID == '4625' 
-| summarize by Computer, Hour = bin(TimeGenerated, 1h) 
-| join kind = leftouter ( 
-    search in (Heartbeat) OSType == 'Windows' 
-    | summarize arg_max(TimeGenerated, Computer) by Computer , Hour = bin(TimeGenerated, 1h) 
-    | project Hour , Computer  
-)  
-on Hour 
-| count 
+search Type == 'SecurityEvent' and EventID == '4625'
+| summarize by Computer, Hour = bin(TimeGenerated, 1h)
+| join kind = leftouter (
+    search in (Heartbeat) OSType == 'Windows'
+    | summarize arg_max(TimeGenerated, Computer) by Computer , Hour = bin(TimeGenerated, 1h)
+    | project Hour , Computer
+) on Hour
 ```
- 
 
 Чтобы изменить этот запрос, нужно определить таблицу, которая содержит свойства в левой части объединения: 
 
 ``` Kusto
-search Type == 'SecurityEvent' and EventID == '4625' 
-| summarize by $table 
+search Type == 'SecurityEvent' and EventID == '4625'
+| summarize by $table
 ```
- 
 
 В результате показано, что свойства в левой части объединения принадлежат таблице _SecurityEvent_. 
 
 Теперь используйте следующий запрос, чтобы определить таблицу, которая содержит свойства в правой части объединения: 
-
  
 ``` Kusto
-search in (Heartbeat) OSType == 'Windows' 
-| summarize by $table 
+search in (Heartbeat) OSType == 'Windows'
+| summarize by $table
 ```
-
  
-В результате показано, что свойства в правой части объединения принадлежат таблице Heartbeat. 
+Результат указывает, что свойства в правой части соединения принадлежат таблице _пульса_ .
 
-Эти результаты можно учесть для создания следующего запроса, который можно использовать для правила генерации оповещений: 
-
+Эти результаты можно использовать для создания следующего запроса, который будет использоваться для правила оповещения: 
 
 ``` Kusto
 SecurityEvent
 | where EventID == '4625'
 | summarize by Computer, Hour = bin(TimeGenerated, 1h)
 | join kind = leftouter (
-    Heartbeat  
-    | where OSType == 'Windows' 
-    | summarize arg_max(TimeGenerated, Computer) by Computer , Hour = bin(TimeGenerated, 1h) 
-    | project Hour , Computer  
-)  
-on Hour 
-| count 
+    Heartbeat
+    | where OSType == 'Windows'
+    | summarize arg_max(TimeGenerated, Computer) by Computer , Hour = bin(TimeGenerated, 1h)
+    | project Hour , Computer
+) on Hour
 ```
 
 ## <a name="next-steps"></a>Дальнейшие действия

@@ -9,12 +9,12 @@ ms.service: cognitive-services
 ms.topic: reference
 ms.date: 08/31/2020
 ms.author: aahi
-ms.openlocfilehash: 5d2ff25762f28c19b6d389a779fb455de3c84f3e
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.openlocfilehash: 2a24433389e738bf5d0ecb7ecac6bf369c8ba183
+ms.sourcegitcommit: 5dbea4631b46d9dde345f14a9b601d980df84897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 09/25/2020
-ms.locfileid: "91253774"
+ms.locfileid: "91369490"
 ---
 # <a name="azure-cognitive-services-container-image-tags"></a>Теги образа контейнера Cognitive Services Azure
 
@@ -1131,22 +1131,22 @@ Azure Cognitive Services предлагает множество образов 
 | Теги изображений                                  | Примечания                                                                      |
 |---------------------------------------------|:---------------------------------------------------------------------------|
 | `latest`                                    | Образ контейнера с `en-US` локальным и `en-US-AriaNeural` голосовым языком.      |
-| `1.1.0-amd64-de-de-katjaneural-preview`     | Образ контейнера с `de-DE` локальным и `de-DE-KatjaNeural` голосовым языком.     |
-| `1.1.0-amd64-en-au-natashaneural-preview`   | Образ контейнера с `en-AU` локальным и `en-AU-NatashaNeural` голосовым языком.   |
-| `1.1.0-amd64-en-ca-claraneural-preview`     | Образ контейнера с `en-CA` локальным и `en-CA-ClaraNeural` голосовым языком.     |
-| `1.1.0-amd64-en-gb-libbyneural-preview`     | Образ контейнера с `en-GB` локальным и `en-GB-LibbyNeural` голосовым языком.     |
-| `1.1.0-amd64-en-gb-mianeural-preview`       | Образ контейнера с `en-GB` локальным и `en-GB-MiaNeural` голосовым языком.       |
-| `1.1.0-amd64-en-us-arianeural-preview`      | Образ контейнера с `en-US` локальным и `en-US-AriaNeural` голосовым языком.      |
-| `1.1.0-amd64-en-us-guyneural-preview`       | Образ контейнера с `en-US` локальным и `en-US-GuyNeural` голосовым языком.       |
-| `1.1.0-amd64-es-es-elviraneural-preview`    | Образ контейнера с `es-ES` локальным и `es-ES-ElviraNeural` голосовым языком.    |
-| `1.1.0-amd64-es-mx-dalianeural-preview`     | Образ контейнера с `es-MX` локальным и `es-MX-DaliaNeural` голосовым языком.     |
-| `1.1.0-amd64-fr-ca-sylvieneural-preview`    | Образ контейнера с `fr-CA` локальным и `fr-CA-SylvieNeural` голосовым языком.    |
-| `1.1.0-amd64-fr-fr-deniseneural-preview`    | Образ контейнера с `fr-FR` локальным и `fr-FR-DeniseNeural` голосовым языком.    |
-| `1.1.0-amd64-it-it-elsaneural-preview`      | Образ контейнера с `it-IT` локальным и `it-IT-ElsaNeural` голосовым языком.      |
-| `1.1.0-amd64-ja-jp-nanamineural-preview`    | Образ контейнера с `ja-JP` локальным и `ja-JP-NanamiNeural` голосовым языком.    |
-| `1.1.0-amd64-ko-kr-sunhineural-preview`     | Образ контейнера с `ko-KR` локальным и `ko-KR-SunHiNeural` голосовым языком.     |
-| `1.1.0-amd64-pt-br-franciscaneural-preview` | Образ контейнера с `pt-BR` локальным и `pt-BR-FranciscaNeural` голосовым языком. |
-| `1.1.0-amd64-zh-cn-xiaoxiaoneural-preview`  | Образ контейнера с `zh-CN` локальным и `zh-CN-XiaoxiaoNeural` голосовым языком.  |
+| `1.2.0-amd64-de-de-katjaneural-preview`     | Образ контейнера с `de-DE` локальным и `de-DE-KatjaNeural` голосовым языком.     |
+| `1.2.0-amd64-en-au-natashaneural-preview`   | Образ контейнера с `en-AU` локальным и `en-AU-NatashaNeural` голосовым языком.   |
+| `1.2.0-amd64-en-ca-claraneural-preview`     | Образ контейнера с `en-CA` локальным и `en-CA-ClaraNeural` голосовым языком.     |
+| `1.2.0-amd64-en-gb-libbyneural-preview`     | Образ контейнера с `en-GB` локальным и `en-GB-LibbyNeural` голосовым языком.     |
+| `1.2.0-amd64-en-gb-mianeural-preview`       | Образ контейнера с `en-GB` локальным и `en-GB-MiaNeural` голосовым языком.       |
+| `1.2.0-amd64-en-us-arianeural-preview`      | Образ контейнера с `en-US` локальным и `en-US-AriaNeural` голосовым языком.      |
+| `1.2.0-amd64-en-us-guyneural-preview`       | Образ контейнера с `en-US` локальным и `en-US-GuyNeural` голосовым языком.       |
+| `1.2.0-amd64-es-es-elviraneural-preview`    | Образ контейнера с `es-ES` локальным и `es-ES-ElviraNeural` голосовым языком.    |
+| `1.2.0-amd64-es-mx-dalianeural-preview`     | Образ контейнера с `es-MX` локальным и `es-MX-DaliaNeural` голосовым языком.     |
+| `1.2.0-amd64-fr-ca-sylvieneural-preview`    | Образ контейнера с `fr-CA` локальным и `fr-CA-SylvieNeural` голосовым языком.    |
+| `1.2.0-amd64-fr-fr-deniseneural-preview`    | Образ контейнера с `fr-FR` локальным и `fr-FR-DeniseNeural` голосовым языком.    |
+| `1.2.0-amd64-it-it-elsaneural-preview`      | Образ контейнера с `it-IT` локальным и `it-IT-ElsaNeural` голосовым языком.      |
+| `1.2.0-amd64-ja-jp-nanamineural-preview`    | Образ контейнера с `ja-JP` локальным и `ja-JP-NanamiNeural` голосовым языком.    |
+| `1.2.0-amd64-ko-kr-sunhineural-preview`     | Образ контейнера с `ko-KR` локальным и `ko-KR-SunHiNeural` голосовым языком.     |
+| `1.2.0-amd64-pt-br-franciscaneural-preview` | Образ контейнера с `pt-BR` локальным и `pt-BR-FranciscaNeural` голосовым языком. |
+| `1.2.0-amd64-zh-cn-xiaoxiaoneural-preview`  | Образ контейнера с `zh-CN` локальным и `zh-CN-XiaoxiaoNeural` голосовым языком.  |
 
 ## <a name="key-phrase-extraction"></a>Извлечение ключевых фраз
 
