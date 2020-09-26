@@ -11,12 +11,12 @@ ms.date: 04/27/2018
 ms.author: jrasnick
 ms.reviewer: igorstan
 ms.custom: seo-lt-2019, azure-synapse
-ms.openlocfilehash: 11cb0c30a1a6ed70cca82e494fcec73936975f39
-ms.sourcegitcommit: bf1340bb706cf31bb002128e272b8322f37d53dd
+ms.openlocfilehash: 0e14bba7b2982dd12fcca0d7aedc864b2a65288f
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/03/2020
-ms.locfileid: "89442228"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91259957"
 ---
 # <a name="use-azure-functions-to-manage-compute-resources-in-azure-synapse-analytics-sql-pool"></a>Использование функций Azure для управления ресурсами вычислений в пуле SQL Azure синапсе Analytics
 
@@ -124,10 +124,10 @@ ms.locfileid: "89442228"
        "operationType": "PauseDw"
    }
 
-   // Scale the SQL pool instance to DW600
+   // Scale the SQL pool instance to DW600c
    var operation = {
        "operationType": "ScaleDw",
-       "ServiceLevelObjective": "DW600"
+       "ServiceLevelObjective": "DW600c"
    }
    ```
 
@@ -137,33 +137,33 @@ ms.locfileid: "89442228"
 
 ### <a name="example-1"></a>Пример 1
 
-Ежедневное увеличение масштаба до значения DW600 в 8:00 и уменьшение масштаба до DW200 в 20:00.
+Ежедневное увеличение масштаба в 8:00 до DW600c и уменьшение масштаба в 20:00 до DW200c.
 
-| Функция  | Расписание     | Операция                                |
+| Компонент  | Расписание     | Операция                                |
 | :-------- | :----------- | :--------------------------------------- |
-| Функция 1 | 0 0 8 * * *  | `var operation = {"operationType": "ScaleDw",    "ServiceLevelObjective": "DW600"}` |
-| Функция 2 | 0 0 20 * * * | `var operation = {"operationType": "ScaleDw", "ServiceLevelObjective": "DW200"}` |
+| Функция 1 | 0 0 8 * * *  | `var operation = {"operationType": "ScaleDw",    "ServiceLevelObjective": "DW600c"}` |
+| Функция 2 | 0 0 20 * * * | `var operation = {"operationType": "ScaleDw", "ServiceLevelObjective": "DW200c"}` |
 
 ### <a name="example-2"></a>Пример 2
 
-Ежедневное увеличение масштаба в 8:00 до DW1000, однократное уменьшение до DW600 в 16:00 и уменьшение масштаба в 22:00 до DW200.
+Ежедневное увеличение масштаба в 8:00 до DW1000c, уменьшение масштаба до DW600 в 16:00 и масштабирование в 10pm до DW200c.
 
-| Функция  | Расписание     | Операция                                |
+| Компонент  | Расписание     | Операция                                |
 | :-------- | :----------- | :--------------------------------------- |
-| Функция 1 | 0 0 8 * * *  | `var operation = {"operationType": "ScaleDw",    "ServiceLevelObjective": "DW1000"}` |
-| Функция 2 | 0 0 16 * * * | `var operation = {"operationType": "ScaleDw", "ServiceLevelObjective": "DW600"}` |
-| Функция 3 | 0 0 22 * * * | `var operation = {"operationType": "ScaleDw", "ServiceLevelObjective": "DW200"}` |
+| Функция 1 | 0 0 8 * * *  | `var operation = {"operationType": "ScaleDw",    "ServiceLevelObjective": "DW1000c"}` |
+| Функция 2 | 0 0 16 * * * | `var operation = {"operationType": "ScaleDw", "ServiceLevelObjective": "DW600c"}` |
+| Функция 3 | 0 0 22 * * * | `var operation = {"operationType": "ScaleDw", "ServiceLevelObjective": "DW200c"}` |
 
 ### <a name="example-3"></a>Пример 3
 
-Увеличение масштаба до DW1000 в 8:00 и уменьшение масштаба до DW600 один раз в 16:00 в рабочие дни. Приостановка работы в пятницу в 23:00 и возобновление работы в понедельник в 7:00.
+Увеличьте масштаб в 8:00 до DW1000c, прокрутите один раз на DW600c в 16:00 по рабочим дням. Приостановка работы в пятницу в 23:00 и возобновление работы в понедельник в 7:00.
 
-| Функция  | Расписание       | Операция                                |
+| Компонент  | Расписание       | Операция                                |
 | :-------- | :------------- | :--------------------------------------- |
-| Функция 1 | 0 0 8 * * 1-5  | `var operation = {"operationType": "ScaleDw",    "ServiceLevelObjective": "DW1000"}` |
-| Функция 2 | 0 0 16 * * 1-5 | `var operation = {"operationType": "ScaleDw", "ServiceLevelObjective": "DW600"}` |
+| Функция 1 | 0 0 8 * * 1-5  | `var operation = {"operationType": "ScaleDw",    "ServiceLevelObjective": "DW1000c"}` |
+| Функция 2 | 0 0 16 * * 1-5 | `var operation = {"operationType": "ScaleDw", "ServiceLevelObjective": "DW600c"}` |
 | Функция 3 | 0 0 23 * * 5   | `var operation = {"operationType": "PauseDw"}` |
-| Функция 4 | 0 0 7 * * 0    | `var operation = {"operationType": "ResumeDw"}` |
+| Функция 4 | 0 0 7 * * 1    | `var operation = {"operationType": "ResumeDw"}` |
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

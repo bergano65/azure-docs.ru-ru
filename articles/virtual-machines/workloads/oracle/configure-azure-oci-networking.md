@@ -2,7 +2,7 @@
 title: Подключение Azure ExpressRoute к облачной инфраструктуре Oracle | Документация Майкрософт
 description: Подключение Azure ExpressRoute с помощью Oracle Cloud Infrastructure (OCI) Фастконнект для включения решений для приложений Oracle в разных облаках
 documentationcenter: virtual-machines
-author: rgardler
+author: dbakevlar
 manager: ''
 editor: ''
 tags: azure-resource-manager
@@ -13,12 +13,12 @@ ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure
 ms.date: 03/16/2020
 ms.author: rogardle
-ms.openlocfilehash: 95f1f7b42b88baaab6d89192f226ca67962544fb
-ms.sourcegitcommit: f844603f2f7900a64291c2253f79b6d65fcbbb0c
+ms.openlocfilehash: 7f5f3f4edccc6d23b8041051028273559bcffecd
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/10/2020
-ms.locfileid: "86220479"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91325935"
 ---
 # <a name="set-up-a-direct-interconnection-between-azure-and-oracle-cloud-infrastructure"></a>Настройка прямого взаимодействия между Azure и облачной инфраструктурой Oracle  
 
@@ -36,7 +36,7 @@ ms.locfileid: "86220479"
 
 ![Сетевое подключение между облаками](media/configure-azure-oci-networking/azure-oci-connect.png)
 
-## <a name="prerequisites"></a>Обязательные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 * Чтобы установить подключение между Azure и OCI, необходимо иметь активную подписку Azure и активную службу OCI.
 
@@ -66,7 +66,7 @@ ms.locfileid: "86220479"
     * В поле **ключ службы поставщика**вставьте ключ службы ExpressRoute.
     * Используйте пространство частных IP-адресов First/30, отрезать пространство на предыдущем шаге для **основного IP-адреса BGP** и второго/30-адресного пространства для **дополнительного IP-адреса BGP** .
         * Назначьте первый пригодный для использования адрес из двух диапазонов для IP-адреса Oracle BGP (первичного и вторичного) и второго адреса для IP-адреса клиента BGP (с точки зрения Фастконнект). Первый пригодный IP-адрес — это второй IP-адрес в адресном пространстве/30 (первый IP-адрес зарезервирован корпорацией Майкрософт).
-    * Нажмите **Создать**.
+    * Нажмите кнопку **Создать**.
 1. Завершите связывание Фастконнект с виртуальной облачной сетью в клиенте Oracle через шлюз динамической маршрутизации, используя таблицу маршрутов.
 1. Перейдите в Azure и убедитесь, что **состояние поставщика** для канала ExpressRoute изменилось на " **подготовлено** " и что пиринг типа "частный" **Azure** был подготовлен. Это предварительные требования для следующих шагов.
 
@@ -82,13 +82,13 @@ ms.locfileid: "86220479"
 
 После завершения настройки сети можно проверить допустимость конфигурации, щелкнув ссылку **получить записи ARP** и **получить таблицу маршрутов** в колонке частного пиринга ExpressRoute в портал Azure.
 
-## <a name="automation"></a>Служба автоматизации
+## <a name="automation"></a>Автоматизация
 
 Корпорация Майкрософт создала сценарии terraform, чтобы включить автоматическое развертывание сетевого соединения. Перед выполнением скрипты terraform должны пройти проверку подлинности в Azure, так как для них требуются соответствующие разрешения в подписке Azure. Проверку подлинности можно выполнить с помощью [субъекта-службы Azure Active Directory](../../../active-directory/develop/app-objects-and-service-principals.md#service-principal-object) или с помощью Azure CLI. Дополнительные сведения см. в [документации по terraform](https://www.terraform.io/docs/providers/azurerm/auth/azure_cli.html).
 
 Сценарии terraform и связанная документация по развертыванию межподключения можно найти в этом [репозитории GitHub](https://aka.ms/azureociinterconnecttf).
 
-## <a name="monitoring"></a>Мониторинг
+## <a name="monitoring"></a>Наблюдение
 
 Установив агенты в обоих облаках, вы можете использовать Azure [Монитор производительности сети (NPM)](../../../expressroute/how-to-npm.md) для мониторинга производительности сквозной сети. NPM помогает легко выявление сетевых проблем и помогает устранить их.
 

@@ -9,12 +9,12 @@ ms.subservice: security
 ms.date: 04/15/2020
 ms.author: mahi
 ms.reviewer: jrasnick
-ms.openlocfilehash: 6b1fe78ac00b57d7627a64970e84ae8b717ae5c3
-ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
+ms.openlocfilehash: 35fb8adaa5f7c0fff1c6d967f0136736b8071ce4
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/31/2020
-ms.locfileid: "87501922"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91260161"
 ---
 # <a name="secure-your-synapse-workspace-preview"></a>Защита рабочей области Synapse (предварительная версия)
 
@@ -97,8 +97,8 @@ ms.locfileid: "87501922"
 
 - Откройте портал Azure.
 - Перейдите к WS1.
-- В разделе **Параметры** выберите **Администратор Active Directory для SQL**.
-- Щелкните **Задать администратора** и выберите WS1\_SQLAdmins.
+- В разделе **Параметры**выберите **Администратор Active Directory SQL** .
+- Щелкните **Set Admin (задать администратора** ) и выберите WS1 \_ складминс
 
 ## <a name="step-6-maintain-access-control"></a>Шаг 6. поддержание контроля доступа
 
@@ -112,7 +112,7 @@ ms.locfileid: "87501922"
 
 Пользователям в каждой роли необходимо выполнить следующие действия:
 
-| Number | Шаг | Администраторы рабочей области | Администраторы Spark | Администраторы SQL |
+| Номер | Шаг | Администраторы рабочей области | Администраторы Spark | Администраторы SQL |
 | --- | --- | --- | --- | --- |
 | 1 | Отправка файла Parquet в CNT1 | YES | YES | YES |
 | 2 | Чтение файла Parquet с помощью SQL по запросу | YES | NO | YES |
@@ -123,8 +123,9 @@ ms.locfileid: "87501922"
 
 > [!NOTE]
 > [1] Для создания пулов SQL или Spark пользователь должен иметь по крайней мере роль участника в рабочей области Synapse.
-> [!TIP]
 >
+ 
+>[!TIP]
 > - В зависимости от роли некоторые шаги намеренно не будут разрешены.
 > - Помните, что выполнение некоторых задач может завершиться ошибкой, если безопасность не была полностью настроена. Эти задачи указаны в таблице.
 

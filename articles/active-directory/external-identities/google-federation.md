@@ -12,12 +12,12 @@ manager: celestedg
 ms.reviewer: mal
 ms.custom: it-pro, seo-update-azuread-jan
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: eef04be1891eac35577a5f4cb18d5b83b8d0f301
-ms.sourcegitcommit: 5d7f8c57eaae91f7d9cf1f4da059006521ed4f9f
+ms.openlocfilehash: 6dba592417ca07d1858a7942b162b4dfa6a85680
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89669394"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91273999"
 ---
 # <a name="add-google-as-an-identity-provider-for-b2b-guest-users"></a>Добавление Google в качестве поставщика удостоверений для гостевых пользователей B2B
 
@@ -78,10 +78,10 @@ ms.locfileid: "89669394"
 
 11. В разделе **Тип приложения**выберите **веб-приложение** и присвойте приложению подходящее имя, например "Azure AD B2B", а затем в разделе "допустимые **URI перенаправления**" введите следующие URI:
     - `https://login.microsoftonline.com` 
-    - `https://login.microsoftonline.com/te/<directory id>/oauth2/authresp` <br>(где `<directory id>` является идентификатором каталога).
+    - `https://login.microsoftonline.com/te/<tenant id>/oauth2/authresp` <br>(где `<tenant id>` — идентификатор клиента)
    
     > [!NOTE]
-    > Чтобы найти идентификатор каталога, перейдите к https://portal.azure.com, в разделе **Azure Active Directory** выберите **Свойства** и скопируйте **идентификатор каталога**.
+    > Чтобы найти идентификатор клиента, перейдите на страницу https://portal.azure.com и в разделе **Azure Active Directory**выберите **Свойства** и скопируйте **идентификатор клиента**.
 
     ![Снимок экрана, показывающий раздел "Авторизованные URI-коды перенаправления"](media/google-federation/google-create-oauth-client-id.png)
 

@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: how-to
 ms.date: 02/28/2018
 ms.author: allensu
-ms.openlocfilehash: bd32bbb5957832629fa19eb756b95356c0292ef1
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 3b8ce5b82b7d2022fd7feea1cd9efe8d524ee6a4
+ms.sourcegitcommit: d95cab0514dd0956c13b9d64d98fdae2bc3569a0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84887694"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91358293"
 ---
 # <a name="improve-performance-by-compressing-files-in-azure-cdn"></a>Повышение производительности за счет сжатия файлов в Azure CDN
 Сжатие файлов — это простой и эффективный способ, который позволяет повысить скорость передачи файлов и увеличить производительность загрузки страницы за счет уменьшения размера файлов перед их отправкой с сервера. Этот способ позволяет снизить потребление пропускной способности и обеспечивает более высокую скорость работы для пользователей.
@@ -53,12 +53,12 @@ ms.locfileid: "84887694"
     Откроется страница конечной точки CDN.
 2. Выберите **Сжатие**.
 
-    ![Выбор сжатия CDN](./media/cdn-file-compression/cdn-compress-select-std.png)
+    ![На снимке экрана показана конечная точка с сжатием, выбранным в меню портала.](./media/cdn-file-compression/cdn-compress-select-std.png)
 
     Откроется страница сжатия.
 3. Чтобы включить сжатие, выберите значение **Вкл.**
 
-    ![Параметры сжатия файла CDN](./media/cdn-file-compression/cdn-compress-standard.png)
+    ![На снимке экрана показано включение сжатия.](./media/cdn-file-compression/cdn-compress-standard.png)
 4. Используйте типы MIME по умолчанию либо измените список, удалив или добавив типы MIME.
 
    > [!TIP]
@@ -165,6 +165,6 @@ ms.locfileid: "84887694"
 - application/vnd.apple.mpegurl;
 - application/f4m+xml 
 
-## <a name="see-also"></a>См. также
+## <a name="see-also"></a>См. также раздел
 * [Устранение неполадок со сжатием файлов CDN](cdn-troubleshoot-compression.md)    
 

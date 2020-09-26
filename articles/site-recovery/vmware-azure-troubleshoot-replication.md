@@ -7,12 +7,12 @@ ms.service: site-recovery
 ms.topic: article
 ms.date: 08/2/2019
 ms.author: mayg
-ms.openlocfilehash: e9e66cbb024aa64e8c4cb5db9fc1c172fdc573fc
-ms.sourcegitcommit: e995f770a0182a93c4e664e60c025e5ba66d6a45
+ms.openlocfilehash: 8b44a1d6119cc658b9460e0a52fa0629f759964a
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86135358"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91336211"
 ---
 # <a name="troubleshoot-replication-issues-for-vmware-vms-and-physical-servers"></a>Устранение неполадок с репликацией виртуальных машин VMware и физических серверов
 
@@ -192,6 +192,24 @@ Site Recovery использует [сервер обработки](vmware-phys
         - служба VSS;
         - поставщик VSS Azure Site Recovery.
         - служба VDS.
+
+## <a name="error-id-95001---insufficient-permissions-found"></a>Идентификатор ошибки 95001-не удалось найти необходимые разрешения
+
+Эта ошибка возникает при попытке включить репликацию, и папки приложения не имеют достаточных разрешений.
+
+**Как исправить**. чтобы устранить эту проблему, убедитесь, что пользователь IUSR имеет роль владельца для всех перечисленных ниже папок.
+
+- *К\програмдата\микрософт Azure site Рековери\привате*
+- Каталог установки. Например, если каталогом установки является F Drive, предоставьте правильные разрешения для-
+    - *Ф:\програм Files (x86) \Microsoft Azure site Рековери\хоме\свсистемс*
+- Папка *\пушинсталлсвк* в каталоге установки. Например, если каталогом установки является диск F, предоставьте правильные разрешения для.
+    - *Ф:\програм Files (x86) \Microsoft Azure site Рековери\хоме\свсистемс\пушинсталлсвк*
+- Папка *\етк* в каталоге установки. Например, если каталогом установки является диск F, предоставьте правильные разрешения для.
+    - *Ф:\програм Files (x86) \Microsoft Azure site Рековери\хоме\свсистемс\етк*
+- *C:\Temp*
+- *C:\thirdparty\php5nts*
+- Все элементы по указанному ниже пути
+    - *C:\thirdparty\rrdtool-1.2.15-win32-perl58\rrdtool\Release\**
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

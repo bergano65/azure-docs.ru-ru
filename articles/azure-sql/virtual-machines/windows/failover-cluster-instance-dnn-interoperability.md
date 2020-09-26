@@ -7,17 +7,17 @@ author: MashaMSFT
 editor: monicar
 tags: azure-service-management
 ms.service: virtual-machines-sql
-ms.topic: article
+ms.topic: how-to
 ms.tgt_pltfrm: vm-windows-sql-server
 ms.workload: iaas-sql-server
 ms.date: 06/02/2020
 ms.author: mathoma
-ms.openlocfilehash: f9c4f58c3318d9d030637f85f3c1597b98d458c7
-ms.sourcegitcommit: 845a55e6c391c79d2c1585ac1625ea7dc953ea89
+ms.openlocfilehash: ca782e9949f990857db408919cac342d7f712d2b
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/05/2020
-ms.locfileid: "85965595"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91272622"
 ---
 # <a name="feature-interoperability-with-sql-server-fci--dnn"></a>Взаимодействие функций с SQL Server FCI & DNN
 [!INCLUDE[appliesto-sqlvm](../../includes/appliesto-sqlvm.md)]
@@ -67,7 +67,7 @@ READ_ONLY_ROUTING_URL = 'TCP://dnnlsnr:1444'
 
 Вы можете опустить порт в URL-адресе, если это порт 1433 по умолчанию. Для именованного экземпляра настройте статический порт для именованного экземпляра и укажите его в URL-адресе маршрутизации только для чтения.  
 
-## <a name="replication"></a>Репликация
+## <a name="replication"></a>Replication
 
 Репликация включает три компонента: издатель, распространитель, подписчик. Любой из этих компонентов может быть экземпляром отказоустойчивого кластера. Поскольку FCI VNN интенсивно используется в конфигурации репликации, как явно, так и неявно, для работы репликации может потребоваться сетевой псевдоним, который сопоставляет VNN с DNN. 
 
@@ -75,8 +75,8 @@ READ_ONLY_ROUTING_URL = 'TCP://dnnlsnr:1444'
 
 | **Компонент репликации (FCI с DNN)** | **Удаленный компонент** | **Сетевая схема псевдонима** | **Сервер с картой сети**| 
 |---------|---------|---------|-------- | 
-|Publisher | Распространитель | Издатель VNN к издателю DNN| Распространитель| 
-|Распространитель|Subscriber |Распространитель VNN к распространителю DNN| Subscriber | 
+|Издатель | Распространитель | Издатель VNN к издателю DNN| Распространитель| 
+|Распространитель|Подписчик |Распространитель VNN к распространителю DNN| Подписчик | 
 |Распространитель|Издатель | Распространитель VNN к распространителю DNN | Издатель| 
 |Подписчик| Распространитель| Подписчик VNN подписчику DNN | Распространитель| 
 

@@ -8,12 +8,12 @@ ms.workload: infrastructure-services
 ms.topic: conceptual
 ms.date: 02/10/2020
 ms.author: tagore
-ms.openlocfilehash: 7f2db507176d65e7794607e83db8605b2f892c1c
-ms.sourcegitcommit: 3be3537ead3388a6810410dfbfe19fc210f89fec
+ms.openlocfilehash: c9277f510e71e4d6ecb6595aa2d67d16c2ac5695
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89646625"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91326034"
 ---
 # <a name="migrate-your-iaas-resources-to-azure-resource-manager-by-march-1-2023"></a>Перенос ресурсов IaaS в Azure Resource Manager с 1 марта 2023 г. 
 
@@ -65,7 +65,7 @@ ms.locfileid: "89646625"
 
 - [Поддержка миграции Azure](https://ms.portal.azure.com/#create/Microsoft.Support/Parameters/{"pesId":"6f16735c-b0ae-b275-ad3a-03479cfa1396","supportTopicId":"1135e3d0-20e2-aec5-4ef0-55fd3dae2d58"}): Специальная группа поддержки для технической помощи во время миграции.
 
-- [Microsoft Fast Track](https://www.microsoft.com/fasttrack): группа, которая может предоставить техническую поддержку во время миграции на соответствующих клиентах. 
+- [Microsoft Fast Track](https://www.microsoft.com/fasttrack): Быстрая запись помогает соответствующим клиентам планировать & выполнения этой миграции. [Назначить себе себя](https://nam06.safelinks.protection.outlook.com/?url=https%3A%2F%2Fazure.microsoft.com%2Fen-us%2Fprograms%2Fazure-fasttrack%2F%23nomination&data=02%7C01%7CTanmay.Gore%40microsoft.com%7C3e75bbf3617944ec663a08d85c058340%7C72f988bf86f141af91ab2d7cd011db47%7C1%7C0%7C637360526032558561&sdata=CxWTVQQPVWNwEqDZKktXzNV74pX91uyJ8dY8YecIgGc%3D&reserved=0).  
 
-Если ваша компания или организация взаимодействуют с корпорацией Майкрософт или работают с представителями корпорации Майкрософт (например, архитекторами облачных решений (КСАС) или диспетчерами технических учетных записей (ТАМС)), обратитесь к ним за дополнительными ресурсами для миграции. 
+- Если ваша компания или организация взаимодействуют с корпорацией Майкрософт или работают с представителями корпорации Майкрософт (например, архитекторами облачных решений (КСАС) или диспетчерами технических учетных записей (ТАМС)), обратитесь к ним за дополнительными ресурсами для миграции. 
 

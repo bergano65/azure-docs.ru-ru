@@ -15,12 +15,12 @@ ms.workload: infrastructure-services
 ms.date: 09/02/2020
 ms.author: kirpas
 ms.subservice: disks
-ms.openlocfilehash: 3f1c7fb08c3dcaa078de8f1ee0b90409289cfb43
-ms.sourcegitcommit: 4feb198becb7a6ff9e6b42be9185e07539022f17
+ms.openlocfilehash: b739bb94911e24002b359aabfa23583ecfc9de85
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/04/2020
-ms.locfileid: "89469259"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91336009"
 ---
 # <a name="how-to-expand-the-os-drive-of-a-virtual-machine"></a>Расширение диска ОС виртуальной машины
 
@@ -30,7 +30,7 @@ ms.locfileid: "89469259"
 - Перенос физического компьютера или виртуальной машины из локальной среды с более крупным диском операционной системы.
 
 > [!IMPORTANT]
-> Для изменения размера диска ОС для виртуальной машины Azure ее выделение должно быть отменено.
+> Для изменения размера операционной системы или диска данных виртуальной машины Azure требуется освободить виртуальную машину.
 >
 > После расширения диска необходимо [расширить том ОС](#expand-the-volume-within-the-os), чтобы использовать преимущества диска большего размера.
 > 
@@ -40,7 +40,7 @@ ms.locfileid: "89469259"
 1. В [портал Azure](https://portal.azure.com)перейдите к виртуальной машине, в которой нужно расширить диск. Выберите пункт " **прерывать** ", чтобы освободить виртуальную машину.
 2. Когда виртуальная машина будет остановлена, в меню слева в разделе **Параметры**выберите **диски**.
 
-    :::image type="content" source="./media/expand-os-disk/select-disks.png" alt-text="Снимок экрана, показывающий параметр диски, выбранный в разделе Параметры меню.":::
+    :::image type="content" source="./media/expand-os-disk/select-disks.png" alt-text="Снимок экрана, показывающий параметр "диски", выбранный в разделе "Параметры" меню.":::
 
  
 3. В разделе **имя диска**выберите диск, размер которого нужно изменить.
@@ -49,7 +49,7 @@ ms.locfileid: "89469259"
 
 4. В меню слева в разделе **Параметры**выберите **Конфигурация**.
 
-    :::image type="content" source="./media/expand-os-disk/configuration.png" alt-text="Снимок экрана, на котором показан параметр конфигурации, выбранный в разделе Параметры меню.":::
+    :::image type="content" source="./media/expand-os-disk/configuration.png" alt-text="Снимок экрана, на котором показан параметр конфигурации, выбранный в разделе "Параметры" меню.":::
 
 5. В поле **Размер (гиб)** выберите нужный размер диска.
    
@@ -59,9 +59,9 @@ ms.locfileid: "89469259"
 
     :::image type="content" source="./media/expand-os-disk/size.png" alt-text="Снимок экрана, на котором показана панель конфигурации с выбранным размером диска.":::
 
-6. Выберите **Сохранить**.
+6. Щелкните **Сохранить**.
 
-    :::image type="content" source="./media/expand-os-disk/save.png" alt-text="Снимок экрана, на котором показана панель конфигурации с выбранной кнопкой Сохранить.":::
+    :::image type="content" source="./media/expand-os-disk/save.png" alt-text="Снимок экрана, на котором показана панель конфигурации с выбранной кнопкой "Сохранить".":::
 
 
 ## <a name="resize-a-managed-disk-by-using-powershell"></a>Изменение размера управляемого диска с помощью PowerShell

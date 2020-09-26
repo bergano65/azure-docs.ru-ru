@@ -1,30 +1,21 @@
 ---
 title: Подключение общей папки Azure через протокол SMB в macOS | Документация Майкрософт
 description: Узнайте, как подключить файловый ресурс Azure через SMB с помощью macOS, используя Finder или Terminal. Файлы Azure — это простая в использовании облачная файловая система от корпорации Майкрософт.
-author: RenaShahMSFT
+author: roygara
 ms.service: storage
 ms.topic: how-to
-ms.date: 09/19/2017
-ms.author: renash
+ms.date: 09/23/2020
+ms.author: rogarana
 ms.subservice: files
-ms.openlocfilehash: 2cddf8a7d3dbc7abcc25fb76aba8a0af1790fe4d
-ms.sourcegitcommit: bfeae16fa5db56c1ec1fe75e0597d8194522b396
+ms.openlocfilehash: 119f4c0ea434bc431b40c905d9142e187b7d9474
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/10/2020
-ms.locfileid: "88034453"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91326071"
 ---
 # <a name="mount-azure-file-share-over-smb-with-macos"></a>Подключение общей папки Azure через протокол SMB в macOS
-[Файлы Azure](storage-files-introduction.md) — это простая в использовании облачная файловая система от корпорации Майкрософт. Общие папки Azure можно подключить с помощью стандартного отраслевого протокола SMB 3 в macOS El Capitan 10.11 и более поздней версии. В этой статье описываются два разных способа подключения общей папки Azure в macOS: с помощью пользовательского интерфейса поиска и терминала.
-
-> [!Note]  
-> Перед подключением общей папки Azure через протокол SMB мы рекомендуем отключить подпись SMB-пакетов. Если этого не сделать, это может вызвать снижение производительности при получении доступа к общей папке Azure в macOS. Ваше подключение SMB будет зашифровано, поэтому на безопасность подключения это не повлияет. Выполнив следующие команды из терминала, вы отключите подпись SMB-пакетов, как описано на странице об [отключении подписи пакета для подключений протоколов SMB 2 и SMB 3](https://support.apple.com/HT205926):  
->    ```
->    sudo -s
->    echo "[default]" >> /etc/nsmb.conf
->    echo "signing_required=no" >> /etc/nsmb.conf
->    exit
->    ```
+[Файлы Azure](storage-files-introduction.md) — это простая в использовании облачная файловая система от корпорации Майкрософт. Файловые ресурсы Azure можно подключить к стандартному промышленному протоколу SMB 3, macOS High 10.13 +. В этой статье описываются два разных способа подключения общей папки Azure в macOS: с помощью пользовательского интерфейса поиска и терминала.
 
 ## <a name="prerequisites-for-mounting-an-azure-file-share-on-macos"></a>Предварительные требования для подключения общей папки Azure в macOS
 * **Имя учетной записи хранения**. Чтобы подключить общую папку Azure, вам понадобится имя учетной записи хранения.
@@ -46,10 +37,10 @@ ms.locfileid: "88034453"
     ![Снимок подключенной общей папки Azure](./media/storage-how-to-use-files-mac/mount-via-finder-3.png)
 
 ## <a name="mount-an-azure-file-share-via-terminal"></a>Подключение общей папки Azure через терминал
-1. Замените `<storage-account-name>`  именем вашей учетной записи хранения. При появлении запроса укажите ключ учетной записи хранения в качестве пароля. 
+1. Замените  `<storage-account-name>` , `<storage-account-key>` и `<share-name>`   соответствующими значениями для вашей среды.
 
     ```
-    mount_smbfs //<storage-account-name>@<storage-account-name>.file.core.windows.net/<share-name> <desired-mount-point>
+    open smb://<storage-account-name>:<storage-account-key>@<storage-account-name>.file.core.windows.net/<share-name>
     ```
 
 2. **Используйте файловый ресурс Azure по желанию**: файловый ресурс Azure будет подключен в точке подключения, указанной в предыдущей команде.  
@@ -57,9 +48,4 @@ ms.locfileid: "88034453"
     ![Снимок подключенной общей папки Azure](./media/storage-how-to-use-files-mac/mount-via-terminal-1.png)
 
 ## <a name="next-steps"></a>Дальнейшие действия
-Дополнительную информацию о службе файлов Azure см. по следующим ссылкам.
-
-* [Использование функции общего доступа к файлам на компьютере Mac](https://support.apple.com/HT204445)
-* [Часто задаваемые вопросы](../storage-files-faq.md)
-* [Troubleshoot Azure File storage problems in Windows](storage-troubleshoot-windows-file-connection-problems.md) (Устранение неполадок хранилища файлов Azure в Windows)      
-* [Troubleshoot Azure File storage problems in Linux](storage-troubleshoot-linux-file-connection-problems.md) (Устранение неполадок хранилища файлов Azure в Linux)    
+* [Подключение компьютера Mac к общим компьютерам и серверам — поддержка Apple](https://support.apple.com/guide/mac-help/connect-mac-shared-computers-servers-mchlp1140/mac)

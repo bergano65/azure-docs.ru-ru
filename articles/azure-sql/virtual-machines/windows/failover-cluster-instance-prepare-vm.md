@@ -7,17 +7,17 @@ author: MashaMSFT
 editor: monicar
 tags: azure-service-management
 ms.service: virtual-machines-sql
-ms.topic: article
+ms.topic: how-to
 ms.tgt_pltfrm: vm-windows-sql-server
 ms.workload: iaas-sql-server
 ms.date: 06/02/2020
 ms.author: mathoma
-ms.openlocfilehash: 7e62e414182d95a445f37c1c97cdef8aff6a587a
-ms.sourcegitcommit: 845a55e6c391c79d2c1585ac1625ea7dc953ea89
+ms.openlocfilehash: f42d6c8015061406958bdc16473dc0f042d3143a
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/05/2020
-ms.locfileid: "85965554"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91272507"
 ---
 # <a name="prepare-virtual-machines-for-an-fci-sql-server-on-azure-vms"></a>Подготовка виртуальных машин для FCI (SQL Server на виртуальных машинах Azure)
 [!INCLUDE[appliesto-sqlvm](../../includes/appliesto-sqlvm.md)]
@@ -26,9 +26,9 @@ ms.locfileid: "85965554"
 
 Дополнительные сведения см. в обзоре [FCI с SQL Server на виртуальных машинах Azure и в](failover-cluster-instance-overview.md) разделе рекомендации по работе с [кластерами](hadr-cluster-best-practices.md). 
 
-## <a name="prerequisites"></a>Предварительные условия 
+## <a name="prerequisites"></a>Предварительные требования 
 
-- подписка Microsoft Azure; Начните работу [бесплатно](https://azure.microsoft.com/free/). 
+- Подписка Microsoft Azure. Начните работу [бесплатно](https://azure.microsoft.com/free/). 
 - Домен Windows на виртуальных машинах Azure или локальный центр обработки данных, который был расширен в Azure с помощью связывания виртуальных сетей.
 - Учетная запись с разрешениями на создание объектов на виртуальных машинах Azure и в Active Directory.
 - виртуальная сеть и подсеть Azure с достаточным пространством IP-адресов для следующих компонентов:
@@ -105,7 +105,7 @@ SQL Server образы виртуальных машин из Azure Marketplace
 
 В этой таблице содержатся сведения о портах, которые может потребоваться открыть, в зависимости от конфигурации FCI: 
 
-   | Цель | Port | Примечания
+   | Назначение | Порт | Примечания
    | ------ | ------ | ------
    | SQL Server | TCP 1433 | Обычный порт для экземпляров SQL Server по умолчанию. Если используется образ из коллекции, этот порт будет автоматически открыт. </br> </br> **Используется**: всеми конфигурациями FCI. |
    | Проверка работоспособности | TCP 59999 | Любой открытый TCP-порт. Настройте [проверку работоспособности](hadr-vnn-azure-load-balancer-configure.md#configure-health-probe) балансировщика нагрузки и кластер для использования этого порта. </br> </br> **Используется**: FCI с подсистемой балансировки нагрузки. |
@@ -120,7 +120,7 @@ SQL Server образы виртуальных машин из Azure Marketplace
 Виртуальные машины, созданные из Azure Marketplace, имеют подключенное хранилище. Если вы планируете настроить хранилище FCI с помощью файловых ресурсов уровня "Премиум" или общих дисков Azure, можно удалить подключенное хранилище, чтобы сэкономить на затратах, поскольку локальное хранилище не используется для экземпляра отказоустойчивого кластера. Однако можно использовать подключенное хранилище для Локальные дисковые пространства решений FCI, поэтому их удаление в этом случае может оказаться неполезным. Ознакомьтесь с решением хранилища FCI, чтобы определить, оптимально ли удаление подключенного хранилища для экономии затрат. 
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Теперь, когда вы подготовили среду виртуальной машины, вы можете настроить экземпляр отказоустойчивого кластера. 
 

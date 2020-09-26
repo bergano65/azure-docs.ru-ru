@@ -16,12 +16,12 @@ ms.topic: reference
 ms.date: 07/18/2017
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d15b12b758adbf99ddabc88eb06be9daba1ece3e
-ms.sourcegitcommit: c94a177b11a850ab30f406edb233de6923ca742a
+ms.openlocfilehash: 6140f5fd431a0b089b45892130e075bde02a2eb2
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/01/2020
-ms.locfileid: "89276207"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91299771"
 ---
 # <a name="azure-ad-connect-health-frequently-asked-questions"></a>Часто задаваемые вопросы об Azure AD Connect Health
 Эта статья содержит ответы на часто задаваемые вопросы о расширении Azure Active Directory (Azure AD) Connect Health. Здесь представлены сведения об использовании службы, в частности о модели выставления счетов, возможностях, ограничениях и поддержке.
@@ -37,9 +37,9 @@ ms.locfileid: "89276207"
 
 |Роль| Версия операционной системы|
 |--|--|
-|Службы федерации Active Directory (AD FS)| <ul><li> Windows Server 2012  </li> <li>Windows Server 2012 R2 </li> <li> Windows Server 2016  </li> <li> Windows Server 2019  </li> </ul>|
+|Службы федерации Active Directory (AD FS)| <ul><li> Windows Server 2012  </li> <li>Windows Server 2012 R2 </li> <li> Windows Server 2016  </li> <li> Windows Server 2019  </li> </ul>|
 |Azure AD Connect | Версия 1.0.9125 или более поздняя|
-|Доменные службы Active Directory (AD DS)| <ul><li> Windows Server 2012  </li> <li>Windows Server 2012 R2 </li> <li> Windows Server 2016  </li> <li> Windows Server 2019  </li> </ul>|
+|Доменные службы Active Directory (AD DS)| <ul><li> Windows Server 2012  </li> <li>Windows Server 2012 R2 </li> <li> Windows Server 2016  </li> <li> Windows Server 2019  </li> </ul>|
 
 Установки Windows Server Core не поддерживаются.
 
@@ -54,7 +54,7 @@ ms.locfileid: "89276207"
 
 Сведения о лицензировании также приведены на [странице Azure AD](https://aka.ms/aadpricing).
 
-Пример
+Пример.
 
 | Зарегистрированные агенты | Необходимые лицензии | Пример конфигурации мониторинга |
 | ------ | --------------- | --- |
@@ -129,6 +129,10 @@ Azure AD Connect Health не поддерживается в облаке для
 
 В этом случае вручную удалите запись, которая относится к старому серверу. Данные для этого сервера устарели.
 
+**Вопрос. можно ли установить агент работоспособности Azure AD Connect в Windows Server Core?**
+
+Нет.  Установка на Server Core не поддерживается.
+
 ## <a name="health-agent-registration-and-data-freshness"></a>Регистрация агента работоспособности и актуальность данных
 
 **Вопрос. Каковы общие причины сбоев при регистрации агента работоспособности и как их устранить?**
@@ -198,6 +202,7 @@ CheckForMS17-010
 
 **Вопрос. когда будет автоматически продлен сертификат агента до истечения срока действия?**
 Сертификация агента будет автоматически продлена **6 месяцев** до даты окончания срока ее действия. Если он не продлен, убедитесь, что сетевое подключение агента стабильно. Может также решить проблему, перезапустить службы агента или обновить последнюю версию.
+
 
 
 ## <a name="related-links"></a>Связанные ссылки

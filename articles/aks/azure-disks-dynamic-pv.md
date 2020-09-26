@@ -4,20 +4,20 @@ titleSuffix: Azure Kubernetes Service
 description: Узнайте, как динамически создать постоянный том с помощью дисков Azure в службе Kubernetes Azure (AKS).
 services: container-service
 ms.topic: article
-ms.date: 07/10/2020
-ms.openlocfilehash: 06aad076836c0f6fdc59c4ed5d0116231080d15c
-ms.sourcegitcommit: 56cbd6d97cb52e61ceb6d3894abe1977713354d9
+ms.date: 09/21/2020
+ms.openlocfilehash: fd2bc698a107599dccf8f142b0d318400b40aaf3
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/20/2020
-ms.locfileid: "88683612"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91299329"
 ---
 # <a name="dynamically-create-and-use-a-persistent-volume-with-azure-disks-in-azure-kubernetes-service-aks"></a>Динамическое создание и использование постоянного тома с дисками Azure в службе Azure Kubernetes (AKS)
 
 Постоянный том — это часть хранилища, которая подготовлена к использованию для модулей pod Kubernetes. Постоянный том может использоваться одним или несколькими модулями и может быть подготовлен динамически или статически. В этой статье описывается динамическое создание постоянных томов с дисками Azure, используемых одним модулем pod в кластере службы Azure Kubernetes (AKS).
 
 > [!NOTE]
-> Диск Azure можно подключить только в *режиме доступа**ReadWriteOnce*, то есть он будет доступен только для одного модуля pod AKS. Если потребуется предоставить общий доступ для постоянного тома, используемого несколькими модулями pod, можно применить [Файлы Azure][azure-files-pvc].
+> Диск Azure может быть подключен только с типом *доступа* *реадвритеонце*, что делает его доступным для одного узла в AKS. Если необходимо совместно использовать постоянный том на нескольких узлах, используйте службу [файлов Azure][azure-files-pvc].
 
 Дополнительные сведения о томах Kubernetes см. в статье, [посвященной возможностям хранения данных приложений в AKS][concepts-storage].
 
