@@ -6,12 +6,12 @@ ms.suite: integration
 ms.reviewer: jonfan, logicappspm
 ms.topic: conceptual
 ms.date: 06/03/2020
-ms.openlocfilehash: b2a45218118282f4f1cadb29c9022fc05b30f907
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 1c2f0a2c54be7adbc7b8babd596f18e08c67a024
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87078731"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91269562"
 ---
 # <a name="export-flows-from-power-automate-and-deploy-to-azure-logic-apps"></a>Экспорт потоков из Power Automate и их развертывание в Azure Logic Apps
 
@@ -24,7 +24,7 @@ ms.locfileid: "87078731"
 >
 > * Чтобы узнать, какие соединители Logic Apps не имеют эквивалентов Power автоматизировать, см. раздел [Logic Apps Connectors](/connectors/connector-reference/connector-reference-powerautomate-connectors).
 
-## <a name="prerequisites"></a>Обязательные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 * Подписка Azure. Если у вас еще нет подписки Azure, [зарегистрируйтесь для получения бесплатной учетной записи Azure](https://azure.microsoft.com/free/).
 
@@ -76,7 +76,7 @@ ms.locfileid: "87078731"
       | <*имя соединения*> | Одно или несколько имен для ранее созданных подключений, которые может использовать приложение логики <p><p>**Примечание**. Если это приложение логики является первым, все подключения создаются как новые, поэтому можно принять имена по умолчанию. В противном случае можно указать имена для ранее созданных подключений, которые можно использовать в нескольких приложениях логики. |
       |||
 
-      Например.
+      Пример:
 
       ![Укажите входные параметры для шаблона](./media/export-from-microsoft-flow-logic-app-template/template-input-parameters.png)
 
@@ -96,7 +96,7 @@ ms.locfileid: "87078731"
 
    1. Для каждого шага, для которого требуется авторизация подключения, разверните этот шаг и выберите **Добавить новый**.
 
-      ![Добавить новое подключение](./media/export-from-microsoft-flow-logic-app-template/add-new-connection.png)
+      ![Снимок экрана, на котором показана кнопка "добавить новое", выбранная в окне "подключения" Outlook.](./media/export-from-microsoft-flow-logic-app-template/add-new-connection.png)
 
    1. Войдите в каждую службу или предоставьте необходимые учетные данные для авторизации подключения.
 
@@ -156,7 +156,7 @@ ms.locfileid: "87078731"
 
    ![Изменить параметры развертывания](./media/export-from-microsoft-flow-logic-app-template/edit-parameters-deployment.png)
 
-   При запуске развертывания его состояние отобразится в окне **Выходные данные** Visual Studio. Если состояние не отображается, откройте список **Показать вывод из** и выберите свою группу ресурсов Azure. Например.
+   При запуске развертывания его состояние отобразится в окне **Выходные данные** Visual Studio. Если состояние не отображается, откройте список **Показать вывод из** и выберите свою группу ресурсов Azure. Пример:
 
    ![окно выходных данных](./media/export-from-microsoft-flow-logic-app-template/output-window.png)
 

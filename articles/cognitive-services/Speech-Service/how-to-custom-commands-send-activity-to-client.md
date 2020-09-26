@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 06/18/2020
 ms.author: xiaojul
-ms.openlocfilehash: 520b38f4c733e7bf28a2a06429ad14d016c5bd28
-ms.sourcegitcommit: 0100d26b1cac3e55016724c30d59408ee052a9ab
+ms.openlocfilehash: 6e8e6feb064a5d26eb6cb72b521d3f9df0380086
+ms.sourcegitcommit: d95cab0514dd0956c13b9d64d98fdae2bc3569a0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "86027619"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91360112"
 ---
 # <a name="send-custom-commands-activity-to-client-application"></a>Отправка действия настраиваемых команд клиентскому приложению
 
@@ -26,11 +26,11 @@ ms.locfileid: "86027619"
 - Определение и Отправка пользовательских полезных данных JSON из приложения пользовательских команд
 - Получение и визуализация содержимого настраиваемой полезной нагрузки JSON из клиентского приложения SDK для языка C# UWP
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 > [!div class = "checklist"]
 > * [Visual Studio 2019](https://visualstudio.microsoft.com/downloads/) или более поздней версии. В этом руководством используется Visual Studio 2019
-> * Ключ подписки Azure для службы речи: [получите бесплатную](get-started.md) или создайте ее на [портал Azure](https://portal.azure.com)
-> * Ранее [созданное приложение пользовательских команд](quickstart-custom-commands-application.md)
+> * Ключ подписки Azure для служб "Речь". [Получите бесплатно](overview.md#try-the-speech-service-for-free) или создайте его на [портале Azure](https://portal.azure.com).
+> * Предварительно [созданное приложение Пользовательских голосовых команд](quickstart-custom-commands-application.md).
 > * Клиентское приложение с поддержкой Speech SDK: [практические руководства. Интеграция с клиентским приложением с помощью пакета SDK для речи](./how-to-custom-commands-setup-speech-sdk.md)
 
 ## <a name="setup-send-activity-to-client"></a>Настройка отправки действия клиенту 
@@ -149,14 +149,14 @@ connector.ActivityReceived += async (sender, activityReceivedEventArgs) =>
 ## <a name="try-it-out"></a>Попробуйте!
 
 1. Запуск приложения
-1. Выберите включить микрофон
-1. Нажмите кнопку "разговор"
-1. Пишут`turn on the tv`
+1. Выберите "Enable microphone" (Включить микрофон).
+1. Нажмите кнопку речи.
+1. Скажите `turn on the tv`.
 1. Визуальное состояние телевизора должно измениться на "вкл."
    > [!div class="mx-imgBorder"]
    > ![Отправка полезных данных действия](media/custom-commands/send-activity-to-client-turn-on-tv.png)
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Как настроить конечные веб-точки (Предварительная версия)](./how-to-custom-commands-setup-web-endpoints.md)

@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: article
 ms.date: 01/24/2020
 ms.author: Zhchia
-ms.openlocfilehash: 00e5f750c1acfa49aea2caadbc95fd75cef0b24b
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.openlocfilehash: d37034057f7d1bc39c065110b20a8a2cdce13b62
+ms.sourcegitcommit: d95cab0514dd0956c13b9d64d98fdae2bc3569a0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 09/25/2020
-ms.locfileid: "91256052"
+ms.locfileid: "91360503"
 ---
 # <a name="tutorial-configure-mixpanel-for-automatic-user-provisioning"></a>Учебник. Настройка Mixpanel для автоматической подготовки пользователей
 
@@ -88,7 +88,7 @@ ms.locfileid: "91256052"
 
 5. В разделе **учетные данные администратора** введите **URL-адрес клиента** Mixpanel и **маркер секрета**. Щелкните **проверить подключение** , чтобы убедиться, что Azure AD может подключиться к Mixpanel. Если подключение не выполняется, убедитесь, что у учетной записи Mixpanel есть разрешения администратора, и повторите попытку.
 
-    ![Подготовка](./media/mixpanel-provisioning-tutorial/provisioning.png)
+    ![На снимке экрана отображается диалоговое окно учетные данные администратора, в котором можно ввести клиент U R и секретный маркер.](./media/mixpanel-provisioning-tutorial/provisioning.png)
 
 6. В поле **Почтовое уведомление** введите адрес электронной почты пользователя или группы, которые должны получать уведомления об ошибках подготовки, а также установите флажок **Отправить уведомление по электронной почте при сбое**.
 

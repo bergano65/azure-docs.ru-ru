@@ -12,12 +12,12 @@ ms.date: 05/29/2020
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: afef3d41212c9366aa696bfcd0abff6c8cfc4eb3
-ms.sourcegitcommit: f8d2ae6f91be1ab0bc91ee45c379811905185d07
+ms.openlocfilehash: 3e85d2ef9d75bbff6357466e76ffcf60e3716e78
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89662413"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91273680"
 ---
 # <a name="migrate-from-federation-to-password-hash-synchronization-for-azure-active-directory"></a>Переход с федеративной аутентификации на синхронизацию хэша паролей для Azure Active Directory
 
@@ -104,7 +104,7 @@ ms.locfileid: "89662413"
 Get-MsolDomainFederationSettings -DomainName YourDomain.extention | fl *
 ```
 
-Пример
+Пример.
 
 ``` PowerShell
 Get-MsolDomainFederationSettings -DomainName Contoso.com | fl *
@@ -112,7 +112,7 @@ Get-MsolDomainFederationSettings -DomainName Contoso.com | fl *
 
 Проверьте все параметры, которые могли быть настроены в соответствии с документацией по проектированию и развертыванию федерации, в частности **PreferredAuthenticationProtocol**, **SupportsMfa** и **PromptLoginBehavior**.
 
-Дополнительные сведения см. в следующих статьях:
+Дополнительные сведения вы найдете в следующих статьях:
 
 * [Active Directory Federation Services prompt=login parameter support](/windows-server/identity/ad-fs/operations/ad-fs-prompt-login) (Поддержка параметра prompt=login в службах федерации Active Directory (AD FS))
 * [Set-MsolDomainAuthentication](/powershell/module/msonline/set-msoldomainauthentication?view=azureadps-1.0)
@@ -172,7 +172,7 @@ Get-MsolDomainFederationSettings -DomainName Contoso.com | fl *
 
 Дополнительные сведения см. в статье [Практическое руководство. Планирование реализации гибридного присоединения к Azure Active Directory](../devices/hybrid-azuread-join-plan.md).
 
-#### <a name="branding"></a>Branding
+#### <a name="branding"></a>Фирменная символика
 
 Если в вашей организации [настроены страницы входа AD FS](/windows-server/identity/ad-fs/operations/ad-fs-user-sign-in-customization) для отображения соответствующих сведений, рекомендуем аналогичным образом [настроить страницы входа Azure AD](../fundamentals/customize-branding.md).
 
@@ -302,7 +302,7 @@ Get-MsolDomainFederationSettings -DomainName Contoso.com | fl *
 
 5. На странице **Включить единый вход** введите учетные данные администратора домена и щелкните **Далее**.
 
-   ![Снимок экрана со страницей "Включить единый вход"](media/plan-migrate-adfs-password-hash-sync/migrating-adfs-to-phs_image9.png)<br />
+   ![Снимок экрана: страница "Включение единого входа", на которой можно ввести учетные данные администратора домена.](media/plan-migrate-adfs-password-hash-sync/migrating-adfs-to-phs_image9.png)<br />
 
    > [!NOTE]
    > Учетные данные администратора домена нужны для включения эффективного единого входа. Этот процесс включает описанные ниже действия, требующие повышенных привилегий. Учетные данные администратора домена не хранятся в Azure AD Connect или в Azure AD. Они используются только для того, чтобы включить эту функцию, и отменяются после успешного выполнения процесса.
@@ -324,7 +324,7 @@ Get-MsolDomainFederationSettings -DomainName Contoso.com | fl *
    * Для параметра **Эффективный единый вход** должно быть установлено значение **Включено**.
    * Для параметра **Синхронизация паролей** установите значение **Включено**.<br /> 
 
-   ![Снимок экрана с параметрами в разделе входа пользователей](media/plan-migrate-adfs-password-hash-sync/migrating-adfs-to-phs_image11.png)<br />
+   ![Снимок экрана, на котором показаны параметры в разделе "вход пользователя" на портале Azure AD.](media/plan-migrate-adfs-password-hash-sync/migrating-adfs-to-phs_image11.png)<br />
 
 Перейдите к разделу [Тестирование и дальнейшие действия](#testing-and-next-steps).
 

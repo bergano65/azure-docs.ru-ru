@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.date: 06/18/2020
 ms.author: xiaojul
 ms.custom: devx-track-csharp
-ms.openlocfilehash: f3a8cafa907cb66832faf033f7b62e68bf859097
-ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
+ms.openlocfilehash: 49922599adb30e6c631f29b4831fda60cc000a40
+ms.sourcegitcommit: d95cab0514dd0956c13b9d64d98fdae2bc3569a0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88918831"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91360129"
 ---
 # <a name="integrate-with-a-client-application-using-speech-sdk"></a>Интеграция с клиентским приложением с помощью речевого пакета SDK
 
@@ -34,7 +34,7 @@ ms.locfileid: "88918831"
 Вам также потребуется:
 > [!div class = "checklist"]
 > * [Visual Studio 2019](https://visualstudio.microsoft.com/downloads/) или более поздней версии. Это руководством основано на Visual Studio 2019.
-> * Ключ подписки Azure для служб "Речь". [Получите его бесплатно](get-started.md) или создайте его на [портал Azure](https://portal.azure.com)
+> * Ключ подписки Azure для служб "Речь". [Получите его бесплатно](overview.md#try-the-speech-service-for-free) или создайте его на [портал Azure](https://portal.azure.com)
 > * [Включение устройства для разработки](https://docs.microsoft.com/windows/uwp/get-started/enable-your-device-for-development)
 
 ## <a name="step-1-publish-custom-commands-application"></a>Шаг 1. Публикация приложения настраиваемых команд

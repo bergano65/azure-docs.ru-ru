@@ -1,24 +1,24 @@
 ---
 title: Не удалось создать записную книжку Jupyter в Azure HDInsight
-description: Описывает шаги по устранению неполадок и возможные способы решения проблем при взаимодействии с кластерами Azure HDInsight.
+description: Сведения о действиях по устранению неполадок и возможных способах устранения проблем при взаимодействии с кластерами Azure HDInsight.
 author: hrasheed-msft
 ms.author: hrasheed
 ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: troubleshooting
 ms.date: 02/11/2020
-ms.openlocfilehash: 61e7cd8d37108b8f4eea88c4f6b6b2a8cdbfd605
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: e4f4fcfa52733ec8f1f0ceedc669b8307efabf3c
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "77186805"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91324014"
 ---
 # <a name="unable-to-create-jupyter-notebook-in-azure-hdinsight"></a>Не удалось создать записную книжку Jupyter в Azure HDInsight
 
 В этой статье описываются действия по устранению неполадок и возможные способы решения проблем при взаимодействии с кластерами Azure HDInsight.
 
-## <a name="issue"></a>Проблемы
+## <a name="issue"></a>Проблема
 
 При запуске записной книжки Jupyter появляется сообщение об ошибке, содержащее следующее:
 
@@ -26,7 +26,7 @@ ms.locfileid: "77186805"
 Cannot convert notebook to v5 because that version doesn't exist
 ```
 
-## <a name="cause"></a>Причина:
+## <a name="cause"></a>Причина
 
 Несовпадение версий.
 

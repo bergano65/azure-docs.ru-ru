@@ -4,17 +4,17 @@ ms.service: azure-communication-services
 ms.topic: include
 ms.date: 9/1/2020
 ms.author: mikben
-ms.openlocfilehash: c0213b050745712a5c77d4861b9cfba4fc953dfd
-ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
+ms.openlocfilehash: aec9d2049a69aebc7102a70274e5fb2a3ef865a8
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "90940078"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91377281"
 ---
 ## <a name="prerequisites"></a>Предварительные требования
 
 - Учетная запись Azure с активной подпиской. [Создайте учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) бесплатно. 
-- Развернутый ресурс служб связи. [Создайте ресурс служб связи](../../create-communication-resource.md).
+- Развернутый ресурс Служб коммуникации. [Создайте ресурс Служб коммуникации.](../../create-communication-resource.md)
 - Объект `User Access Token` для включения клиента вызова. Дополнительные сведения о [том, `User Access Token` как получить](../../access-tokens.md)
 - Необязательно. Выполните инструкции из краткого руководства по [началу работы с добавлением вызова в приложение](../getting-started-with-calling.md) .
 
@@ -23,7 +23,7 @@ ms.locfileid: "90940078"
 ### <a name="install-the-package"></a>Установка пакета
 
 <!-- TODO: update with instructions on how to download, install and add package to project -->
-Выберите проект Build. gradle на уровне проекта и убедитесь, что `mavenCentral()` он добавлен в список репозиториев в `buildscript` и `allprojects`
+Выберите build.gradle на уровне проекта и добавьте `mavenCentral()` в список репозиториев в разделах `buildscript` и `allprojects`.
 ```groovy
 buildscript {
     repositories {
@@ -56,13 +56,13 @@ dependencies {
 
 ## <a name="object-model"></a>Объектная модель
 
-Следующие классы и интерфейсы обрабатывали некоторые основные функции вызывающей клиентской библиотеки служб связи Azure:
+Следующие классы и интерфейсы реализуют некоторые основные функции клиентской библиотеки Служб коммуникации Azure для вызовов:
 
 | Имя                                  | Описание                                                  |
 | ------------------------------------- | ------------------------------------------------------------ |
-| каллклиент| Каллклиент — это Главная точка входа в вызывающую клиентскую библиотеку.|
-| каллажент | Каллажент используется для запуска вызовов и управления ими. |
-| коммуникатионусеркредентиал | Коммуникатионусеркредентиал используется в качестве учетных данных маркера для создания экземпляра Каллажент.|
+| CallClient| CallClient — это основная точка входа в клиентскую библиотеку для вызовов.|
+| CallAgent | CallAgent используется для инициирования вызовов и управления ими. |
+| CommunicationUserCredential | CommunicationUserCredential используется в качестве учетных данных маркера для создания экземпляра CallAgent.|
 
 ## <a name="initialize-the-callclient-create-a-callagent-and-access-the-devicemanager"></a>Инициализация Каллклиент, создание Каллажент и доступ к Девицеманажер
 
@@ -81,8 +81,8 @@ DeviceManage deviceManager = await callClient.getDeviceManager().get();
 
 ## <a name="place-an-outgoing-call-and-join-a-group-call"></a>Размещение исходящего вызова и присоединение к группе
 
-Чтобы создать и запустить вызов, необходимо вызвать `CallClient.call()` метод и предоставить `Identifier` вызываемые объекты.
-Чтобы присоединиться к групповому вызову, необходимо вызвать `CallClient.join()` метод и предоставить объект groupId. Идентификаторы групп должны быть в формате GUID или UUID.
+Чтобы создать и запустить вызов, необходимо вызвать `CallAgent.call()` метод и предоставить `Identifier` вызываемые объекты.
+Чтобы присоединиться к групповому вызову, необходимо вызвать `CallAgent.join()` метод и предоставить объект groupId. Идентификаторы групп должны быть в формате GUID или UUID.
 
 Создание и запуск вызываются синхронно. Экземпляр Call позволяет подписываться на все события в вызове.
 
@@ -106,7 +106,7 @@ PhoneNumber acsUser2 = new PhoneNumber("<PHONE_NUMBER>");
 CommunicationIdentifier participants[] = new CommunicationIdentifier[]{ acsUser1, acsUser2 };
 StartCallOptions startCallOptions = new StartCallOptions();
 Context appContext = this.getApplicationContext();
-Call groupCall = callClient.call(participants, startCallOptions);
+Call groupCall = callAgent.call(participants, startCallOptions);
 ```
 
 ### <a name="place-a-11-call-with-with-video-camera"></a>Поместите вызов 1:1 с помощью видеокамеры
@@ -266,7 +266,7 @@ catch(Exception e) {
 
 ### <a name="unregister-push-notification"></a>Отмена регистрации push-уведомления
 
-- Приложения могут отменить регистрацию push-уведомлений в любое время. Просто вызовите `unregisterPushNotification()` метод для каллажент.
+- Приложения могут отменить регистрацию push-уведомлений в любое время. Вызовите `unregisterPushNotification()` метод для каллажент, чтобы отменить регистрацию.
 
 ```java
 try {
@@ -300,7 +300,7 @@ CommunicationIdentifier callerId = call.getCallerId();
 ```java
 CallState callState = call.getState();
 ```
-Он возвращает строку, репренстинг текущее состояние вызова:
+Он возвращает строку, представляющую текущее состояние вызова:
 * "None" — состояние начального вызова
 * "Входящий" — указывает, что вызов является входящим, он должен быть либо принят, либо отклонен.
 * "Подключение" — начальное состояние перехода, когда вызов помещается или принимается
@@ -354,7 +354,7 @@ Future startVideoFuture = call.startVideo(currentVideoStream);
 startVideoFuture.get();
 ```
 
-Когда вы успешно начнете отправлять видео, `LocalVideoStream` экземпляр будет добавлен в `localVideoStreams` коллекцию в экземпляре вызова.
+После успешного начала отправки видео `LocalVideoStream` экземпляр будет добавлен в `localVideoStreams` коллекцию в экземпляре вызова.
 ```java
 currentVideoStream == call.getLocalVideoStreams().get(0);
 ```
@@ -385,7 +385,7 @@ List<RemoteParticipant> remoteParticipants = call.getRemoteParticipants(); // [r
 * Получите идентификатор для этого удаленного участника.
 Идентификатором является один из типов "идентификатор"
 ```java
-CommunicationIdentifier participantIdentity = remoteParticipant.getId();
+CommunicationIdentifier participantIdentity = remoteParticipant.getIdentifier();
 ```
 
 * Получение состояния удаленного участника.
@@ -397,7 +397,7 @@ ParticipantState state = remoteParticipant.getState();
 * "Connected" — состояние перехода во время подключения участника к вызову
 * "Connected" — участник подключен к вызову
 * "Удержание"-участник находится в удержании
-* "Еарлимедиа" — объявлении воспроизводится до того, как участник подключен к вызову
+* "Еарлимедиа" — объявление воспроизводится до того, как участник подключен к вызову
 * "Disconnected" — конечное состояние — участник отключен от вызова
 
 

@@ -14,12 +14,12 @@ ms.tgt_pltfrm: vm-linux
 ms.devlang: azurecli
 ms.date: 05/21/2020
 ms.author: arremana
-ms.openlocfilehash: 079574ab4c5846eae6266d1e13240baf99428a69
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 7ed355f82b88f460ff4b372484a690f166a15550
+ms.sourcegitcommit: d95cab0514dd0956c13b9d64d98fdae2bc3569a0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84449249"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91359517"
 ---
 # <a name="upgrade-azure-vm-with-sles-12-to-sles-15-sp1"></a>Обновление виртуальной машины Azure с SLES 12 до SLES 15 с пакетом обновления 1 (SP1)
 
@@ -66,11 +66,11 @@ ms.locfileid: "84449249"
 
 6. Перейдите на [портал Azure](https://portal.azure.com), выберите виртуальную машину, а затем — **Последовательная консоль**. Вы увидите, что система остановится и отобразится сообщение reboot: Restarting system (Перезагрузка: перезапуск системы). Это займет около 15–45 минут. Виртуальная машина поколения 2 может зависнуть с сообщением reboot: Restarting system (Перезагрузка: перезапуск системы). В этом случае подождите около 45 минут. Если это не помогло, перейдите к странице **обзора** виртуальной машины на портале Azure, а затем остановите и перезапустите виртуальную машину.
 
-     ![Снимок экрана с сообщениями в Серийной консоли](./media/linux-upgrade-suse-15sp1/reboot-message.png)
+     ![Снимок экрана, посвященный сообщениям в последовательной консоли.](./media/linux-upgrade-suse-15sp1/reboot-message.png)
 
 8. После перезапуска системы с новым ядром вы увидите следующее сообщение.
 
-     ![Снимок экрана с сообщениями в Серийной консоли](./media/linux-upgrade-suse-15sp1/output-message.png)
+     ![Снимок экрана, посвященный сообщениям в последовательной консоли после перезапуска системы с новым ядром.](./media/linux-upgrade-suse-15sp1/output-message.png)
 9. Проверьте версию ядра и ОС, чтобы убедиться в успешности обновления системы.
 
     ```
