@@ -1,18 +1,18 @@
 ---
 title: Настройка перенаправления DNS для Файлов Azure | Документация Майкрософт
-description: Общие сведения о параметрах сети службы "Файлы Azure".
+description: Узнайте, как настроить пересылку DNS для службы файлов Azure.
 author: roygara
 ms.service: storage
 ms.topic: how-to
 ms.date: 3/19/2020
 ms.author: rogarana
 ms.subservice: files
-ms.openlocfilehash: 6404115e64ba0ac1f65ba1cfc8d26604f1ce9cfa
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
-ms.translationtype: HT
+ms.openlocfilehash: 4b5ce48cf15c890fbdb3dfd90d9d0ab922a2f4b2
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85509971"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91320274"
 ---
 # <a name="configuring-dns-forwarding-for-azure-files"></a>Настройка перенаправления DNS для Файлов Azure
 Файлы Azure позволяют создавать частные конечные точки для учетных записей хранения, содержащих общие папки. Частные конечные точки используются для разных приложений — в частности для подключения к общим папкам Azure из локальной сети через подключения VPN или ExpressRoute с использованием частного пиринга. 

@@ -10,14 +10,14 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 06/09/2020
 ms.author: kaprochi
-ms.openlocfilehash: 463f5d5360e19fdd7f49139aea4c6dc65baf903c
-ms.sourcegitcommit: 971a3a63cf7da95f19808964ea9a2ccb60990f64
+ms.openlocfilehash: 46bdc314e7aa0002937e808d7982f43c8e725d6f
+ms.sourcegitcommit: d95cab0514dd0956c13b9d64d98fdae2bc3569a0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/19/2020
-ms.locfileid: "85081197"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91357477"
 ---
-# <a name="cicd-for-custom-speech"></a>CI/CD для Пользовательское распознавание речи
+# <a name="cicd-for-custom-speech"></a>CI/CD для набора средств "Пользовательское распознавание речи"
 
 Реализуйте автоматизированное обучение, тестирование и управление выпусками, чтобы обеспечить непрерывное улучшение моделей Пользовательское распознавание речи при применении обновлений для обучающих и проверочных данных. С помощью эффективной реализации рабочих процессов CI/CD можно обеспечить постоянную доступность конечной точки для наиболее производительной Пользовательское распознавание речиной модели.
 
@@ -74,7 +74,7 @@ ms.locfileid: "85081197"
 Используйте следующие средства для рабочих процессов автоматизации CI/CD для Пользовательское распознавание речи:
 
 - [Azure CLI](https://docs.microsoft.com/cli/azure/?view=azure-cli-latest) , чтобы создать проверку подлинности субъекта-службы Azure, запросить подписки Azure и сохранить результаты тестов в большом двоичном объекте Azure.
-- [Azure Speech CLI](https://github.com/msimecek/Azure-Speech-CLI) для взаимодействия со службой речи из командной строки или автоматизированного рабочего процесса.
+- [Azure Speech CLI](spx-overview.md) для взаимодействия со службой речи из командной строки или автоматизированного рабочего процесса.
 
 ## <a name="devops-solution-for-custom-speech-using-github-actions"></a>Решение DevOps для Пользовательское распознавание речи с помощью действий GitHub
 
@@ -88,7 +88,7 @@ ms.locfileid: "85081197"
 - Выполните автоматическую проверку точности, чтобы установить [частоту погрешности слов](how-to-custom-speech-evaluate-data.md#what-is-word-error-rate-wer) в модели (WER). Сохраните результаты теста в большом двоичном объекте Azure.
 - Выполните рабочий процесс CD, чтобы создать конечную точку после улучшения WER.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о DevOps с помощью речи:
 

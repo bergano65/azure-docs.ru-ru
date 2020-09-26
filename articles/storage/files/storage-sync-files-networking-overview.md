@@ -1,18 +1,18 @@
 ---
 title: Рекомендации по настройке сети для службы "Синхронизация файлов Azure" | Документация Майкрософт
-description: Общие сведения о параметрах сети службы "Синхронизация файлов Azure".
+description: Узнайте, как настроить сеть для использования Синхронизация файлов Azure локального кэша файлов.
 author: roygara
 ms.service: storage
 ms.topic: conceptual
 ms.date: 06/03/2020
 ms.author: rogarana
 ms.subservice: files
-ms.openlocfilehash: af5561a010ca1c2d45cf10a37a3b302d5e224158
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
-ms.translationtype: HT
+ms.openlocfilehash: b291bd45b4003dd2241f40c810ed9d78af9f8bc9
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85512569"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91267794"
 ---
 # <a name="azure-file-sync-networking-considerations"></a>Рекомендации по настройке сети для службы "Синхронизация файлов Azure"
 Подключиться к общей папке Azure можно двумя способами:

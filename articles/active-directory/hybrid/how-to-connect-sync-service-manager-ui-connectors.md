@@ -17,25 +17,25 @@ ms.subservice: hybrid
 ms.author: billmath
 ms.custom: H1Hack27Feb2017
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a013af680ecc84a2a981341ba4bb95148adc799f
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: d215c2e200308664f24daa28a0054c8f1bcfc09c
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85357262"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91319883"
 ---
 # <a name="using-connectors-with-the-azure-ad-connect-sync-service-manager"></a>Использование соединителей с Synchronization Service Manager Azure AD Connect
 
-![Диспетчер службы синхронизации](./media/how-to-connect-sync-service-manager-ui-connectors/connectors.png)
+![Снимок экрана, на котором показана Service Manager синхронизации.](./media/how-to-connect-sync-service-manager-ui-connectors/connectors.png)
 
 Вкладка "Соединители" используется для управления всеми системами, к которым подключен модуль синхронизации.
 
 ## <a name="connector-actions"></a>Действия соединителя
-| Действие | Комментировать |
+| Действие | Комментарий |
 | --- | --- |
-| Создание |Не используйте. Для подключения к дополнительным лесам AD используйте мастер установки. |
-| Элемент Property |Используется для фильтрации доменов и подразделений. |
-| [Удалить](#delete) |Используется для удаления данных в пространстве соединителя или удаления подключения к лесу. |
+| Создать |Не используйте. Для подключения к дополнительным лесам AD используйте мастер установки. |
+| Свойства |Используется для фильтрации доменов и подразделений. |
+| [Удаление](#delete) |Используется для удаления данных в пространстве соединителя или удаления подключения к лесу. |
 | [Настройка профилей выполнения](#configure-run-profiles) |Ничего настраивать не требуется, кроме фильтрации домена. Это действие можно использовать для просмотра уже настроенных профилей выполнения. |
 | Выполнить |Используется для одноразового запуска профиля. |
 | Остановить |Останавливает соединитель, на котором в настоящее время запущен профиль. |
@@ -47,7 +47,7 @@ ms.locfileid: "85357262"
 
 ### <a name="delete"></a>Удалить
 Действие удаления используется в двух разных целях.  
-![Диспетчер службы синхронизации](./media/how-to-connect-sync-service-manager-ui-connectors/connectordelete.png)
+![Снимок экрана, на котором показано окно "Удаление соединителя" с выбранным параметром "удалить только пространство соединителя".](./media/how-to-connect-sync-service-manager-ui-connectors/connectordelete.png)
 
 Параметр **Delete connector space only** (Удалить только пространство соединителя) позволяет удалить все данные, но оставить конфигурацию.
 
@@ -58,17 +58,17 @@ ms.locfileid: "85357262"
 ### <a name="configure-run-profiles"></a>Настройка профилей выполнения
 Этот параметр позволяет просматривать профили выполнения, настроенные для соединителя.
 
-![Диспетчер службы синхронизации](./media/how-to-connect-sync-service-manager-ui-connectors/configurerunprofiles.png)
+![Снимок экрана, показывающий окно "Настройка профилей выполнения" с выбранным параметром "Импорт изменений".](./media/how-to-connect-sync-service-manager-ui-connectors/configurerunprofiles.png)
 
 ### <a name="search-connector-space"></a>Пространство поиска соединителя
 Действие поиска пространства соединителя полезно для поиска объектов и устранения проблем с данными.
 
-![Диспетчер службы синхронизации](./media/how-to-connect-sync-service-manager-ui-connectors/cssearch.png)
+![Снимок экрана, показывающий окно "поиск пространства соединителя".](./media/how-to-connect-sync-service-manager-ui-connectors/cssearch.png)
 
 Начните с выбора **пространства**. Можно выполнять поиск на основе данных (RDN DN, привязка, поддерево) или состояния объекта (все другие параметры).  
-![Диспетчер службы синхронизации](./media/how-to-connect-sync-service-manager-ui-connectors/cssearchscope.png)  
+![Снимок экрана, показывающий раскрывающееся меню "область".](./media/how-to-connect-sync-service-manager-ui-connectors/cssearchscope.png)  
  Если, к примеру, выполняется поиск в поддереве, вы получаете все объекты в одном подразделении.  
-![Диспетчер службы синхронизации](./media/how-to-connect-sync-service-manager-ui-connectors/cssearchsubtree.png)  
+![Снимок экрана, на котором показан пример поиска "поддерева".](./media/how-to-connect-sync-service-manager-ui-connectors/cssearchsubtree.png)  
 Здесь можно выбрать объект и **свойства**, а также [отслеживать объект](tshoot-connect-object-not-syncing.md) из исходного пространства соединителя через метавселенную до целевого пространства соединителя.
 
 ### <a name="changing-the-ad-ds-account-password"></a>Изменение пароля учетной записи AD DS
@@ -93,7 +93,7 @@ ms.locfileid: "85357262"
 
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 Узнайте больше о настройке [службы синхронизации Azure AD Connect](how-to-connect-sync-whatis.md) .
 
 Узнайте больше об [интеграции локальных удостоверений с Azure Active Directory](whatis-hybrid-identity.md).

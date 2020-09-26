@@ -5,12 +5,12 @@ author: srrengar
 ms.topic: conceptual
 ms.date: 1/17/2019
 ms.author: srrengar
-ms.openlocfilehash: 4b4e454532dec31cbcc92269d63c8be1ff92a9f6
-ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
+ms.openlocfilehash: 25a50a2841a03929804be45be8012f9b5d0457ff
+ms.sourcegitcommit: d95cab0514dd0956c13b9d64d98fdae2bc3569a0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2020
-ms.locfileid: "86247529"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91357137"
 ---
 # <a name="monitoring-and-diagnostics-for-azure-service-fabric"></a>Мониторинг и диагностика для Azure Service Fabric
 
@@ -39,7 +39,7 @@ Service Fabric предоставляет широкий набор готовы
 
 * EventStore — это функция, предлагаемая этой платформой. Она предоставляет события платформы Service Fabric, доступные в Service Fabric Explorer, а также через REST API. Вы можете просмотреть моментальный снимок происходящих действий в кластере для каждой сущности, например для узла, службы или приложения, а также отправить запрос с учетом времени возникновения события. Дополнительные сведения о Евентсторе см. в статье [Обзор евентсторе](service-fabric-diagnostics-eventstore.md).    
 
-![EventStore](media/service-fabric-diagnostics-overview/eventstore.png)
+![На снимке экрана показана вкладка события на панели узлы с несколькими событиями, включая событие Нодедовн.](media/service-fabric-diagnostics-overview/eventstore.png)
 
 Предоставляемые данные диагностики имеют форму исчерпывающего набора событий. Эти [Service Fabric события](service-fabric-diagnostics-events.md) иллюстрируют действия, выполняемые платформой в различных сущностях, таких как узлы, приложения, службы, секции и т. д. В последнем сценарии, если узел был остановлен, платформа выдавала `NodeDown` событие, и вы можете немедленно получить уведомления от выбранного средства мониторинга. Также во время отработки отказа часто издаются события `ApplicationUpgradeRollbackStarted` и `PartitionReconfigured`. **Эти события доступны как для кластеров Windows, так и для кластеров Linux.**
 

@@ -7,12 +7,12 @@ ms.subservice: files
 ms.topic: how-to
 ms.date: 09/13/2020
 ms.author: rogarana
-ms.openlocfilehash: 1a517b5eeac12f7d1ff342206300831d7c38ed28
-ms.sourcegitcommit: 6e1124fc25c3ddb3053b482b0ed33900f46464b3
+ms.openlocfilehash: f64cad731998fefb2cfa694314e42f0dfb629eb4
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90563409"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91322076"
 ---
 # <a name="overview---on-premises-active-directory-domain-services-authentication-over-smb-for-azure-file-shares"></a>Обзор: локальная проверка подлинности домен Active Directory служб по протоколу SMB для файловых ресурсов Azure
 
@@ -24,7 +24,7 @@ ms.locfileid: "90563409"
 
 - AD DS удостоверения, используемые для локальных AD DS проверки подлинности в службе файлов Azure, должны быть синхронизированы с Azure AD. Синхронизация хэша паролей является необязательной. 
 - Поддерживает общие файловые ресурсы Azure, управляемые Синхронизация файлов Azure.
-- Поддерживает проверку подлинности Kerberos с помощью службы AD с шифрованием RC4-HMAC и AES 256. Шифрование AES 128 Kerberos пока не поддерживается.
+- Поддерживает проверку подлинности Kerberos с помощью службы AD с шифрованием RC4-HMAC и [AES 256](https://docs.microsoft.com/azure/storage/files/storage-troubleshoot-windows-file-connection-problems#azure-files-on-premises-ad-ds-authentication-support-for-aes-256-kerberos-encryption). Шифрование AES 128 Kerberos пока не поддерживается.
 - Поддерживает единый вход.
 - Поддерживается только на клиентах, работающих в версиях ОС более поздних, чем Windows 7 или Windows Server 2008 R2.
 - Поддерживается только для леса AD, на который зарегистрирована учетная запись хранения. Вы можете получить доступ к общим файловым ресурсам Azure только с помощью AD DS учетных данных из одного леса по умолчанию. Если вам нужно получить доступ к файловому ресурсу Azure из другого леса, убедитесь, что настроено правильное доверие леса. Дополнительные сведения см. в разделе " [вопросы и ответы](storage-files-faq.md#ad-ds--azure-ad-ds-authentication) ".
@@ -38,7 +38,7 @@ ms.locfileid: "90563409"
 > - [Замена локальных файловых серверов файлами Azure (включая установку на частном канале для файлов и аутентификации Active Directory)](https://sec.ch9.ms/ch9/3358/0addac01-3606-4e30-ad7b-f195f3ab3358/ITOpsTalkAzureFiles_high.mp4)
 > - [Использование файлов Azure в качестве контейнера профилей для виртуальных рабочих столов Windows (включая установку на основе проверки подлинности AD и конфигурации Фслогикс)](https://www.youtube.com/embed/9S5A1IJqfOQ)
 
-## <a name="prerequisites"></a>предварительные требования 
+## <a name="prerequisites"></a>Предварительные требования 
 
 Перед включением проверки подлинности AD DS для файловых ресурсов Azure убедитесь, что выполнены следующие предварительные требования: 
 

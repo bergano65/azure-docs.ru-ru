@@ -1,6 +1,6 @@
 ---
 title: Установка обновления 0.6 для виртуального массива StorSimple | Документы Майкрософт
-description: В этой статье объясняется, как установить обновления на виртуальный массив StorSimple с помощью локального пользовательского веб-интерфейса и портала Azure.
+description: Описывает, как использовать веб-интерфейс виртуального массива StorSimple для применения обновления 0,6 с помощью метода портал Azure и горячего исправления.
 services: storsimple
 documentationcenter: NA
 author: alkohli
@@ -14,12 +14,12 @@ ms.tgt_pltfrm: NA
 ms.workload: TBD
 ms.date: 05/18/2017
 ms.author: alkohli
-ms.openlocfilehash: 02b85cb90948f35cb6f6c855cfbe81fd58301de0
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 917af7ea1789394ddba5d349d631018e2b620216
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85513579"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91295691"
 ---
 # <a name="install-update-06-on-your-storsimple-virtual-array"></a>Установка обновления 0.6 для виртуального массива StorSimple
 
@@ -124,7 +124,7 @@ ms.locfileid: "85513579"
 
 7. Повторите шаги 2–4 для установки исправлений системы безопасности Windows с помощью файлов `windows8.1-kb4012213-x64`, `windows8.1-kb3205400-x64` и `windows8.1-kb4019213-x64`. Виртуальный массив перезапускается после каждой установки, и вам потребуется войти в локальной веб-интерфейс.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения см. в статье [Использование пользовательского веб-интерфейса для администрирования виртуального массива StorSimple](storsimple-ova-web-ui-admin.md).
 

@@ -9,14 +9,14 @@ ms.devlang: ''
 ms.topic: conceptual
 author: danimir
 ms.author: danil
-ms.reviewer: douglas, carlrab, sstein
+ms.reviewer: douglas, sstein
 ms.date: 06/26/2019
-ms.openlocfilehash: 87e73ed25ac33777c19c561223f0361d589282b9
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 07534b834fb0b882d3c37b670f93d2a00296a248
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84697006"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91323283"
 ---
 # <a name="delete-a-subnet-after-deleting-a-managed-instance-of-sql-managed-instance"></a>Удаление подсети после удаления управляемого экземпляра SQL Управляемый экземпляр
 [!INCLUDE[appliesto-sqlmi](../includes/appliesto-sqlmi.md)]
@@ -50,7 +50,7 @@ ms.locfileid: "84697006"
 
 Чтобы удалить виртуальный кластер с помощью API, используйте параметры URI, указанные в [методе Delete виртуальных кластеров](https://docs.microsoft.com/rest/api/sql/virtualclusters/delete).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Общие сведения см. в статье [что такое Azure SQL управляемый экземпляр?](sql-managed-instance-paas-overview.md).
 - Узнайте о [архитектуре подключения в управляемый экземпляр SQL](connectivity-architecture-overview.md).

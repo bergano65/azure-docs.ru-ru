@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 03/11/2020
 ms.author: travisw
-ms.openlocfilehash: 0800a287b747a8a421958d20f0b1ce56247d6d01
-ms.sourcegitcommit: f98ab5af0fa17a9bba575286c588af36ff075615
+ms.openlocfilehash: c9f7168bc0524b483413ade9792af18ff9cfebfa
+ms.sourcegitcommit: d95cab0514dd0956c13b9d64d98fdae2bc3569a0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/25/2020
-ms.locfileid: "85362165"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91358548"
 ---
 # <a name="what-is-custom-commands"></a>Что собой представляют пользовательские команды?
 
@@ -52,7 +52,7 @@ ms.locfileid: "85362165"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-* [Try the Speech service for free](get-started.md) (Бесплатное использование службы "Речь")
+* [Try the Speech service for free](overview.md#try-the-speech-service-for-free) (Бесплатное использование службы "Речь")
 * [Примеры см. в репозитории по голосовым помощникам на GitHub](https://aka.ms/speech/cc-samples)
 * [Перейдите в Speech Studio, чтобы испытать пользовательские команды.](https://speech.microsoft.com/customcommands)
 * [Получение пакета SDK для службы "Речь"](speech-sdk.md)

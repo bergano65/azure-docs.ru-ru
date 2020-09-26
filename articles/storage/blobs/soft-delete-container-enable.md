@@ -9,12 +9,12 @@ ms.topic: how-to
 ms.date: 08/10/2020
 ms.author: tamram
 ms.subservice: blobs
-ms.openlocfilehash: c2ce40f7d8a8d08e191fce11c98bd780e0c2fda1
-ms.sourcegitcommit: d68c72e120bdd610bb6304dad503d3ea89a1f0f7
+ms.openlocfilehash: 4b25458cc934097b5477c174ae7ecc47762e2929
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/01/2020
-ms.locfileid: "89230081"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91280306"
 ---
 # <a name="enable-and-manage-soft-delete-for-containers-preview"></a>Включение и управление обратимым удалением для контейнеров (Предварительная версия)
 
@@ -93,7 +93,7 @@ ms.locfileid: "89230081"
 Вы можете восстановить Обратимо удаленный контейнер и его содержимое в течение срока хранения. Чтобы восстановить обратимо удаленное контейнер в портал Azure, выполните следующие действия.
 
 1. Перейдите к своей учетной записи хранения в портал Azure и просмотрите список контейнеров.
-1. Откройте контекстное меню для контейнера, который необходимо удалить, и выберите в меню пункт **Отменить удаление** .
+1. Откройте контекстное меню для восстанавливаемого контейнера и выберите в меню пункт **Отменить удаление** .
 
     :::image type="content" source="media/soft-delete-container-enable/soft-delete-container-portal-restore.png" alt-text="Снимок экрана, показывающий, как восстановить обратимо удаленное контейнер в портал Azure":::
 

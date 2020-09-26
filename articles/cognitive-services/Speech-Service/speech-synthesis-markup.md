@@ -10,13 +10,13 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 03/23/2020
 ms.author: trbye
-ms.custom: devx-track-javascript, devx-track-csharp
-ms.openlocfilehash: d924c019d5ee231f3c9d66a56c4d98857bc89abc
-ms.sourcegitcommit: 420c30c760caf5742ba2e71f18cfd7649d1ead8a
+ms.custom: devx-track-js, devx-track-csharp
+ms.openlocfilehash: 5b3ea0a2037ae80116e9578999414677db1089ef
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89055555"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91319033"
 ---
 # <a name="improve-synthesis-with-speech-synthesis-markup-language-ssml"></a>Улучшение синтеза с помощью языка разметки речи (SSML)
 
@@ -112,7 +112,7 @@ ms.locfileid: "89055555"
 
 # <a name="c"></a>[C#](#tab/csharp)
 
-Дополнительные сведения см. на веб-сайте <a href="https://docs.microsoft.com/dotnet/api/microsoft.cognitiveservices.speech.speechconfig.setproperty?view=azure-dotnet" target="_blank"> `SetProperty` <span class="docon docon-navigate-external x-hidden-focus"></span></a>.
+Дополнительные сведения см. в <a href="https://docs.microsoft.com/dotnet/api/microsoft.cognitiveservices.speech.speechconfig.setproperty?view=azure-dotnet" target="_blank"> `SetProperty` <span class="docon docon-navigate-external x-hidden-focus"></span> </a>разделе.
 
 ```csharp
 speechConfig.SetProperty(
@@ -121,7 +121,7 @@ speechConfig.SetProperty(
 
 # <a name="c"></a>[C++](#tab/cpp)
 
-Дополнительные сведения см. на веб-сайте <a href="https://docs.microsoft.com/cpp/cognitive-services/speech/speechconfig#setproperty" target="_blank"> `SetProperty` <span class="docon docon-navigate-external x-hidden-focus"></span></a>.
+Дополнительные сведения см. в <a href="https://docs.microsoft.com/cpp/cognitive-services/speech/speechconfig#setproperty" target="_blank"> `SetProperty` <span class="docon docon-navigate-external x-hidden-focus"></span> </a>разделе.
 
 ```cpp
 speechConfig->SetProperty(
@@ -130,7 +130,7 @@ speechConfig->SetProperty(
 
 # <a name="java"></a>[Java](#tab/java)
 
-Дополнительные сведения см. на веб-сайте <a href="https://docs.microsoft.com/java/api/com.microsoft.cognitiveservices.speech.speechconfig.setproperty?view=azure-java-stable#com_microsoft_cognitiveservices_speech_SpeechConfig_setProperty_String_String_" target="_blank"> `setProperty` <span class="docon docon-navigate-external x-hidden-focus"></span></a>.
+Дополнительные сведения см. в <a href="https://docs.microsoft.com/java/api/com.microsoft.cognitiveservices.speech.speechconfig.setproperty?view=azure-java-stable#com_microsoft_cognitiveservices_speech_SpeechConfig_setProperty_String_String_" target="_blank"> `setProperty` <span class="docon docon-navigate-external x-hidden-focus"></span> </a>разделе.
 
 ```java
 speechConfig.setProperty(
@@ -139,7 +139,7 @@ speechConfig.setProperty(
 
 # <a name="python"></a>[Python](#tab/python)
 
-Дополнительные сведения см. на веб-сайте <a href="https://docs.microsoft.com/python/api/azure-cognitiveservices-speech/azure.cognitiveservices.speech.speechconfig?view=azure-python#set-property-by-name-property-name--str--value--str-" target="_blank"> `set_property_by_name` <span class="docon docon-navigate-external x-hidden-focus"></span></a>.
+Дополнительные сведения см. в <a href="https://docs.microsoft.com/python/api/azure-cognitiveservices-speech/azure.cognitiveservices.speech.speechconfig?view=azure-python#set-property-by-name-property-name--str--value--str-" target="_blank"> `set_property_by_name` <span class="docon docon-navigate-external x-hidden-focus"></span> </a>разделе.
 
 ```python
 speech_config.set_property_by_name(
@@ -148,7 +148,7 @@ speech_config.set_property_by_name(
 
 # <a name="javascript"></a>[JavaScript](#tab/javascript)
 
-Дополнительные сведения см. на веб-сайте <a href="https://docs.microsoft.com/javascript/api/microsoft-cognitiveservices-speech-sdk/speechconfig?view=azure-node-latest#setproperty-string--string-" target="_blank"> `setProperty` <span class="docon docon-navigate-external x-hidden-focus"></span></a>.
+Дополнительные сведения см. в <a href="https://docs.microsoft.com/javascript/api/microsoft-cognitiveservices-speech-sdk/speechconfig?view=azure-node-latest#setproperty-string--string-" target="_blank"> `setProperty` <span class="docon docon-navigate-external x-hidden-focus"></span> </a>разделе.
 
 ```javascript
 speechConfig.setProperty(
@@ -157,7 +157,7 @@ speechConfig.setProperty(
 
 # <a name="objective-c"></a>[Objective-C](#tab/objectivec)
 
-Дополнительные сведения см. на веб-сайте <a href="https://docs.microsoft.com/objectivec/cognitive-services/speech/spxspeechconfiguration#setpropertytobyname" target="_blank"> `setPropertyTo` <span class="docon docon-navigate-external x-hidden-focus"></span></a>.
+Дополнительные сведения см. в <a href="https://docs.microsoft.com/objectivec/cognitive-services/speech/spxspeechconfiguration#setpropertytobyname" target="_blank"> `setPropertyTo` <span class="docon docon-navigate-external x-hidden-focus"></span> </a>разделе.
 
 ```objectivec
 [speechConfig setPropertyTo:@"false" byName:@"SpeechServiceResponse_Synthesis_WordBoundaryEnabled"];
@@ -165,7 +165,7 @@ speechConfig.setProperty(
 
 # <a name="swift"></a>[Swift](#tab/swift)
 
-Дополнительные сведения см. на веб-сайте <a href="https://docs.microsoft.com/objectivec/cognitive-services/speech/spxspeechconfiguration#setpropertytobyname" target="_blank"> `setPropertyTo` <span class="docon docon-navigate-external x-hidden-focus"></span></a>.
+Дополнительные сведения см. в <a href="https://docs.microsoft.com/objectivec/cognitive-services/speech/spxspeechconfiguration#setpropertytobyname" target="_blank"> `setPropertyTo` <span class="docon docon-navigate-external x-hidden-focus"></span> </a>разделе.
 
 ```swift
 speechConfig!.setPropertyTo(
@@ -520,12 +520,12 @@ speechConfig!.setPropertyTo(
 
 | attribute | Описание | Обязательный или необязательный |
 |-----------|-------------|---------------------|
-| `pitch` | Указывает шаг по базовому плану для текста. Вы можете выразить тон следующим образом:<ul><li>Абсолютное значение, выраженное в виде числа, за которым следует "Гц" (герц). Например, 600 Гц.</li><li>Относительное значение, выраженное в виде числа, начинающегося с "+" или "-" и заканчивающееся на "Гц" или "St", которое указывает величину изменения высоты. Например: + 80 Гц или-2st. "St" означает, что единица изменения — полтона, то есть половина тона (половина шага) на стандартной диатоник шкале.</li><li>Значение константы:<ul><li>x-низкий</li><li>low</li><li>средняя</li><li>high</li><li>x-высокий</li><li>default</li></ul></li></ul>. | Необязательно |
+| `pitch` | Указывает шаг по базовому плану для текста. Вы можете выразить тон следующим образом:<ul><li>Абсолютное значение, выраженное в виде числа, за которым следует "Гц" (герц). Например, 600 Гц.</li><li>Относительное значение, выраженное в виде числа, начинающегося с "+" или "-" и заканчивающееся на "Гц" или "St", которое указывает величину изменения высоты. Например: + 80 Гц или-2st. "St" означает, что единица изменения — полтона, то есть половина тона (половина шага) на стандартной диатоник шкале.</li><li>Значение константы:<ul><li>x-низкий</li><li>low</li><li>средняя</li><li>high</li><li>x-высокий</li><li>значение по умолчанию</li></ul></li></ul>. | Необязательно |
 | `contour` |Профиль теперь поддерживает как нейронные, так и стандартные голоса. Контур представляет изменения по шагам. Эти изменения представлены в виде массива целевых объектов в определенные позиции времени в выходных данных речи. Каждый целевой объект определяется набором пар параметров. Пример: <br/><br/>`<prosody contour="(0%,+20Hz) (10%,-2st) (40%,+10Hz)">`<br/><br/>Первое значение в каждом наборе параметров указывает расположение изменения высоты в процентах от длительности текста. Второе значение задает величину, которую нужно увеличить или уменьшить, используя относительное значение или значение перечисления для высоты (см `pitch` .). | Необязательно |
 | `range` | Значение, представляющее диапазон высоты для текста. `range`Для описания можно использовать те же абсолютные значения, относительные значения или значения перечисления `pitch` . | Необязательно |
-| `rate` | Указывает интенсивность речи текста. Вы можете выразить `rate` следующим образом:<ul><li>Относительное значение, выраженное в виде числа, которое выступает в качестве множителя по умолчанию. Например, значение *1* приводит к отсутствию изменений в скорости. Значение *0,5* приводит к половине скорости. Значение *3* приводит к утраиваетсяу скорости.</li><li>Значение константы:<ul><li>x-замедляют</li><li>медленный</li><li>средняя</li><li>быстрая</li><li>x-Fast</li><li>default</li></ul></li></ul> | Необязательно |
+| `rate` | Указывает интенсивность речи текста. Вы можете выразить `rate` следующим образом:<ul><li>Относительное значение, выраженное в виде числа, которое выступает в качестве множителя по умолчанию. Например, значение *1* приводит к отсутствию изменений в скорости. Значение *0,5* приводит к половине скорости. Значение *3* приводит к утраиваетсяу скорости.</li><li>Значение константы:<ul><li>x-замедляют</li><li>медленный</li><li>средняя</li><li>быстрая</li><li>x-Fast</li><li>значение по умолчанию</li></ul></li></ul> | Необязательно |
 | `duration` | Период времени, в течение которого служба синтеза речи (TTS) считывает текст в секундах или миллисекундах. Например, *2S* или *1800ms*. | Необязательно |
-| `volume` | Указывает уровень громкости речи. Том можно выразить следующим образом:<ul><li>Абсолютное значение, выраженное в виде числа в *диапазоне от 0,0* до 100,0, от самого дальнего к *громкости*. Например, 75. Значение по умолчанию — 100,0.</li><li>Относительное значение, выраженное в виде числа с префиксом "+" или "-", которое указывает количество изменений в томе. Например, + 10 или-5,5.</li><li>Значение константы:<ul><li>silent</li><li>x — Soft</li><li>мягкий</li><li>средняя</li><li>сделать</li><li>x-вслух</li><li>default</li></ul></li></ul> | Необязательно |
+| `volume` | Указывает уровень громкости речи. Том можно выразить следующим образом:<ul><li>Абсолютное значение, выраженное в виде числа в *диапазоне от 0,0* до 100,0, от самого дальнего к *громкости*. Например, 75. Значение по умолчанию — 100,0.</li><li>Относительное значение, выраженное в виде числа с префиксом "+" или "-", которое указывает количество изменений в томе. Например, + 10 или-5,5.</li><li>Значение константы:<ul><li>silent</li><li>x — Soft</li><li>мягкий</li><li>средняя</li><li>сделать</li><li>x-вслух</li><li>значение по умолчанию</li></ul></li></ul> | Необязательно |
 
 ### <a name="change-speaking-rate"></a>Изменение скорости речи
 
@@ -702,7 +702,7 @@ speechConfig!.setPropertyTo(
 | attribute | Описание | Обязательный или необязательный |
 |-----------|-------------|---------------------|
 | `src` | Указывает расположение или URL-адрес фонового звукового файла. | Требуется при использовании фонового звука в документе SSML. |
-| `volume` | Указывает громкость фонового звукового файла. **Допустимые значения**: `0` в `100` включительно. Значение по умолчанию — `1`. | Необязательно |
+| `volume` | Указывает громкость фонового звукового файла. **Допустимые значения**: `0` в `100` включительно. Значение по умолчанию — `1`. | Необязательно |
 | `fadein` | Задает время, в течение которого фоновый звук постепенно передается в миллисекундах. Значение по умолчанию — `0` , что эквивалентно отсутствию появления. **Допустимые значения**: `0` в `10000` включительно.  | Необязательно |
 | `fadeout` | Указывает длительность фонового исчезновения в миллисекундах. Значение по умолчанию — `0` , что эквивалентно значению без затухания. **Допустимые значения**: `0` в `10000` включительно.  | Необязательно |
 

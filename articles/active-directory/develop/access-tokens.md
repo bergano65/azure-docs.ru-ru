@@ -9,16 +9,16 @@ ms.service: active-directory
 ms.subservice: develop
 ms.workload: identity
 ms.topic: conceptual
-ms.date: 08/24/2020
+ms.date: 09/18/2020
 ms.author: hirsin
 ms.reviewer: hirsin
 ms.custom: aaddev, identityplatformtop40, fasttrack-edit
-ms.openlocfilehash: 9aa5eb54d79d98627697c51ee7dcb16a44fccb60
-ms.sourcegitcommit: 814778c54b59169c5899199aeaa59158ab67cf44
+ms.openlocfilehash: c59dbe9464e70c1a071b64fabf91ce56f409d8d7
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/13/2020
-ms.locfileid: "90053214"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91258527"
 ---
 # <a name="microsoft-identity-platform-access-tokens"></a>Маркеры доступа платформы удостоверений Майкрософт
 
@@ -266,9 +266,17 @@ https://login.microsoftonline.com/common/v2.0/.well-known/openid-configuration
 | Администратор отменяет все маркеры обновления для пользователя [с помощью PowerShell](/powershell/module/azuread/revoke-azureaduserallrefreshtoken) | Отменен | Отменен |Отменен | Отменен | Отменен |
 | Единый выход ([v 1.0](../azuread-dev/v1-protocols-openid-connect-code.md#single-sign-out), [v 2.0](v2-protocols-oidc.md#single-sign-out)) в Интернете | Отменен | Остается активным | Отменен | Остается активным | Остается активным |
 
+#### <a name="non-password-based"></a>Не на основе пароля
+
+Имя входа, *не основанное на пароле* , является одним из тех, для которых пользователь не напечатал пароль, чтобы получить его. Примеры входа, не основанные на пароле, включают:
+
+- Использование вашего лица с Windows Hello
+- Ключ FIDO2
+- SMS
+- Голосовая связь
+- Пин-код 
+
 > [!NOTE]
-> Вход без пароля означает, что пользователь не вводит пароль, чтобы войти. Например, он может использовать лицо в Windows Hello, ключ FIDO2 или ПИН-код.
->
 > Основные маркеры обновления (PRT) в Windows 10 разделены на основе учетных данных. Например, Windows Hello и пароль имеют собственные основные маркеры обновления, изолированные друг от друга. Когда пользователь входит в систему с помощью учетных данных Hello (ПИН-код или биометрия), а затем изменяет пароль, PRT на основе пароля, полученный ранее, будет отозван. Повторный вход с помощью пароля делает недействительным старый PRT и запрашивает новый.
 >
 > Маркеры обновления не аннулируются и не отзываются, если они используются для получения нового маркера доступа и маркера обновления.  Однако приложение должно удалить старый маркер, как только он будет использован, и заменить его новым, так как новый маркер имеет новый срок действия. 

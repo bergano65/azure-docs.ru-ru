@@ -3,13 +3,13 @@ title: Azure Application Insights переопределить конечные 
 description: Измените Azure Monitor по умолчанию конечные точки пакета SDK Application Insights для регионов, таких как Azure для государственных организаций.
 ms.topic: conceptual
 ms.date: 07/26/2019
-ms.custom: references_regions, devx-track-javascript
-ms.openlocfilehash: 22f81b327c161df4f6605cfcb64b48b8d75beed3
-ms.sourcegitcommit: f353fe5acd9698aa31631f38dd32790d889b4dbb
+ms.custom: references_regions, devx-track-js
+ms.openlocfilehash: d6cea9044cd4898480fcc30532a05e6c8a407012
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87373136"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91333296"
 ---
 # <a name="application-insights-overriding-default-endpoints"></a>Application Insights переопределение конечных точек по умолчанию
 
@@ -79,7 +79,7 @@ using Microsoft.ApplicationInsights.Extensibility.PerfCounterCollector.QuickPuls
 
 Для функций Azure теперь рекомендуется использовать [строки подключения](./sdk-connection-string.md?tabs=net) , заданные в параметрах приложения функции. Чтобы получить доступ к параметрам приложения для функции, в области функции выберите **Параметры**  >  **Конфигурация**  >  **приложения параметры**. 
 
-Имя: `APPLICATIONINSIGHTS_CONNECTION_STRING` значение:`Connection String Value`
+Имя: `APPLICATIONINSIGHTS_CONNECTION_STRING` значение: `Connection String Value`
 
 # <a name="java"></a>[Java](#tab/java)
 
