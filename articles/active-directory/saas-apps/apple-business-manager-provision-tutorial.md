@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 09/08/2020
 ms.author: Zhchia
-ms.openlocfilehash: c4ac4a17e577ea69f4359e1e9b321e5fcc839697
-ms.sourcegitcommit: 4ce82b6df65ebd81157b6168d3aa4e7323355022
+ms.openlocfilehash: 7d946c2b1d6e13897667fd58b784575e6f44aa1d
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90761537"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91333534"
 ---
 # <a name="tutorial-configure-apple-business-manager-for-automatic-user-provisioning"></a>Учебник. Настройка Apple Business Manager для автоматической подготовки пользователей
 
@@ -38,7 +38,7 @@ ms.locfileid: "90761537"
 
 В сценарии, описанном в этом руководстве, предполагается, что у вас уже имеется:
 
-* [Клиент Azure AD](https://docs.microsoft.com/azure/active-directory/develop/quickstart-create-new-tenant).
+* [Клиент Azure AD.](https://docs.microsoft.com/azure/active-directory/develop/quickstart-create-new-tenant)
 * Учетная запись пользователя в Azure AD с [разрешением](https://docs.microsoft.com/azure/active-directory/users-groups-roles/directory-assign-admin-roles) настраивать подготовку (например, администратор приложений, администратор облачных приложений, владелец приложения или глобальный администратор).
 * Учетная запись Apple Business Manager с ролью администратора или менеджера людей.
 
@@ -103,7 +103,7 @@ ms.locfileid: "90761537"
 
     ![Почтовое уведомление](common/provisioning-notification-email.png)
 
-7. Нажмите **Сохранить**.
+7. Выберите команду **Сохранить**.
 
 8. В разделе **сопоставления** выберите **синхронизировать Azure Active Directory пользователей с Apple Business Manager**.
 
@@ -158,7 +158,8 @@ ms.locfileid: "90761537"
 * [Удаление учетных записей Azure AD, которые отображаются в Apple Business Manager](URL=https://support.apple.com/guide/apple-business-manager/apdaa5798fbe)
 * [Просмотр действий SCIM в Apple Business Manager](URL=https://support.apple.com/guide/apple-business-manager/apd1bfd8dfde)
 * [Управление существующими маркерами SCIM и подключениями в Apple Business Manager](URL=https://support.apple.com/guide/apple-business-manager/apdc9a823611)
-* [Отключение подключения scim в Apple Business Manager](URL=https://support.apple.com/guide/apple-business-manager/apd609be3a61) *  [Управление существующими маркерами scim и подключениями в Apple Business Manager](URL=https://support.apple.com/guide/apple-business-manager/apdc9a8236e9)
+* [Отключение подключения SCIM в Apple Business Manager](URL=https://support.apple.com/guide/apple-business-manager/apd609be3a61)
+* [Управление существующими маркерами SCIM и подключениями в Apple Business Manager](URL=https://support.apple.com/guide/apple-business-manager/apdc9a8236e9)
 * [Устранение неполадок подключения SCIM в Apple Business Manager](URL=https://support.apple.com/guide/apple-business-manager/apd403a0f3bd)
 
 ## <a name="next-steps"></a>Дальнейшие действия

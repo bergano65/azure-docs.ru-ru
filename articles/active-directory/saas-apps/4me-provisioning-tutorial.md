@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: article
 ms.date: 06/3/2019
 ms.author: jeedes
-ms.openlocfilehash: beb580a02e1db80cf2d74f8167a98c9ead170810
-ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
+ms.openlocfilehash: a6dc9aa70c55a0ed511a73570274c68708988451
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88538763"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91331239"
 ---
 # <a name="tutorial-configure-4me-for-automatic-user-provisioning"></a>Учебник. Настройка 4ME для автоматической подготовки пользователей
 
@@ -90,11 +90,11 @@ ms.locfileid: "88538763"
 
 3. Выберите вкладку **Подготовка**.
 
-    ![Вкладка "Подготовка"](common/provisioning.png)
+    ![Снимок экрана параметров управления с вызываемым параметром подготовки.](common/provisioning.png)
 
 4. Для параметра **Режим подготовки к работе** выберите значение **Automatic** (Автоматически).
 
-    ![Вкладка "Подготовка"](common/provisioning-automatic.png)
+    ![Снимок экрана: раскрывающийся список режима подготовки с вызываемым автоматическим параметром.](common/provisioning-automatic.png)
 
 5. Чтобы получить **URL-адрес клиента** и **маркер секрета** учетной записи 4ME, выполните пошаговое руководство, как описано в шаге 6.
 
@@ -118,7 +118,7 @@ ms.locfileid: "88538763"
 
     ![Почтовое уведомление](common/provisioning-notification-email.png)
 
-9. Нажмите **Сохранить**.
+9. Выберите команду **Сохранить**.
 
 10. В разделе **сопоставления** выберите **синхронизировать Azure Active Directory пользователей с 4ME**.
 

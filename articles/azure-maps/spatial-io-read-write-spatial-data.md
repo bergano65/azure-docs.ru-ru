@@ -8,13 +8,13 @@ ms.topic: conceptual
 ms.service: azure-maps
 services: azure-maps
 manager: philmea
-ms.custom: devx-track-javascript
-ms.openlocfilehash: 7c588e1db7cbf35d2a5192805674f88905599e8e
-ms.sourcegitcommit: 07166a1ff8bd23f5e1c49d4fd12badbca5ebd19c
+ms.custom: devx-track-js
+ms.openlocfilehash: dd4a02ffdc062ed1940d35ca64e02a5e0a88a248
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90085148"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91333330"
 ---
 # <a name="read-and-write-spatial-data"></a>Чтение и запись пространственных данных
 
@@ -160,38 +160,31 @@ GML — это спецификация пространственных XML-ф�
 - EPSG: 4269, EPSG: 4283, EPSG: 4258, EPSG: 4308, EPSG: 4230, EPSG: 4272, EPSG: 4271, EPSG: 4267, EPSG: 4608, EPSG: 4674, возможно, с небольшим полем ошибки.
 - EPSG: 3857:, EPSG: 102100, EPSG: 3785, EPSG: 900913, EPSG: 102113, EPSG: 41001, EPSG: 54004
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="more-resources"></a>Дополнительные ресурсы
 
 Дополнительные сведения о классах и методах, которые используются в этой статье:
 
-> [!div class="nextstepaction"]
-> [статические функции atlas.io](https://docs.microsoft.com/javascript/api/azure-maps-spatial-io/atlas.io)
+[статические функции atlas.io](https://docs.microsoft.com/javascript/api/azure-maps-spatial-io/atlas.io)
 
-> [!div class="nextstepaction"]
-> [спатиалдатасет](https://docs.microsoft.com/javascript/api/azure-maps-spatial-io/atlas.spatialdataset)
+[спатиалдатасет](https://docs.microsoft.com/javascript/api/azure-maps-spatial-io/atlas.spatialdataset)
 
-> [!div class="nextstepaction"]
-> [спатиалдатасетстатс](https://docs.microsoft.com/javascript/api/azure-maps-spatial-io/atlas.spatialdatasetstats)
+[спатиалдатасетстатс](https://docs.microsoft.com/javascript/api/azure-maps-spatial-io/atlas.spatialdatasetstats)
 
-> [!div class="nextstepaction"]
-> [гмлреадер](https://docs.microsoft.com/javascript/api/azure-maps-spatial-io/atlas.io.core.gmlreader)
+[гмлреадер](https://docs.microsoft.com/javascript/api/azure-maps-spatial-io/atlas.io.core.gmlreader)
 
-> [!div class="nextstepaction"]
-> [гмлвритер](https://docs.microsoft.com/javascript/api/azure-maps-spatial-io/atlas.io.core.gmlwriter)
+[гмлвритер](https://docs.microsoft.com/javascript/api/azure-maps-spatial-io/atlas.io.core.gmlwriter)
 
-> [!div class="nextstepaction"]
-> [функции Atlas. IO. OGC. WKT](https://docs.microsoft.com/javascript/api/azure-maps-spatial-io/atlas.io.ogc.wkt)
+[функции Atlas. IO. OGC. WKT](https://docs.microsoft.com/javascript/api/azure-maps-spatial-io/atlas.io.ogc.wkt)
+
+[Подключение службе WFS](spatial-io-connect-wfs-service.md)
+
+[Использование основных операций](spatial-io-core-operations.md)
+
+[Сведения о поддерживаемых форматах данных](spatial-io-supported-data-format-details.md)
+
+
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные примеры кода для добавления в карты см. в следующих статьях:
 
-> [!div class="nextstepaction"]
-> [Добавление слоя карты OGC](spatial-io-add-ogc-map-layer.md)
-
-> [!div class="nextstepaction"]
-> [Подключение службе WFS](spatial-io-connect-wfs-service.md)
-
-> [!div class="nextstepaction"]
-> [Использование основных операций](spatial-io-core-operations.md)
-
-> [!div class="nextstepaction"]
-> [Сведения о поддерживаемых форматах данных](spatial-io-supported-data-format-details.md)
+[Добавление слоя карты OGC](spatial-io-add-ogc-map-layer.md)

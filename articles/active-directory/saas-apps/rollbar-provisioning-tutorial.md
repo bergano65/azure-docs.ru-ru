@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: article
 ms.date: 07/26/2019
 ms.author: Zhchia
-ms.openlocfilehash: fcfb071c0e65e9275e2d7bb4362d9812d91f8f08
-ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
+ms.openlocfilehash: 507ef3cffb2570ad759445fd80c513ea2b08d994
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88548736"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91333483"
 ---
 # <a name="tutorial-configure-rollbar-for-automatic-user-provisioning"></a>Учебник. Настройка Rollbar для автоматической подготовки пользователей
 
@@ -91,11 +91,11 @@ ms.locfileid: "88548736"
 
 3. Выберите вкладку **Подготовка**.
 
-    ![Вкладка "Подготовка"](common/provisioning.png)
+    ![Снимок экрана параметров управления с вызываемым параметром подготовки.](common/provisioning.png)
 
 4. Для параметра **Режим подготовки к работе** выберите значение **Automatic** (Автоматически).
 
-    ![Вкладка "Подготовка"](common/provisioning-automatic.png)
+    ![Снимок экрана: раскрывающийся список режима подготовки с вызываемым автоматическим параметром.](common/provisioning-automatic.png)
 
 5. В разделе **учетные данные администратора** введите значение маркера доступа, полученное ранее в **маркере секрета**. Щелкните **проверить подключение** , чтобы убедиться, что Azure AD может подключиться к Rollbar. Если подключение не выполняется, убедитесь, что у учетной записи Rollbar есть разрешения администратора, и повторите попытку.
 

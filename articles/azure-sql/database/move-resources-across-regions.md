@@ -10,14 +10,14 @@ ms.devlang: ''
 ms.topic: conceptual
 author: MashaMSFT
 ms.author: mathoma
-ms.reviewer: carlrab
+ms.reviewer: sstein
 ms.date: 06/25/2019
-ms.openlocfilehash: 46b95c438830a488494d50308d71a115d6f0da42
-ms.sourcegitcommit: 93462ccb4dd178ec81115f50455fbad2fa1d79ce
+ms.openlocfilehash: 9e7d2d08c7041b23f0eb02328367d07e72fe35eb
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/06/2020
-ms.locfileid: "85982192"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91333075"
 ---
 # <a name="move-resources-to-new-region---azure-sql-database--azure-sql-managed-instance"></a>Перемещение ресурсов в новый регион — база данных SQL Azure & Управляемый экземпляр SQL Azure
 [!INCLUDE[appliesto-sqldb-sqlmi](../includes/appliesto-sqldb-sqlmi.md)]
@@ -77,7 +77,7 @@ ms.locfileid: "85982192"
 
 После **ReplicationState** `2` подключитесь к каждой базе данных или подмножеству баз данных с помощью вторичной конечной точки `<fog-name>.secondary.database.windows.net` и выполните любой запрос к базам данных, чтобы обеспечить подключение, правильную конфигурацию безопасности и репликацию данных.
 
-### <a name="initiate-the-move"></a>Начать перемещение
+### <a name="initiate-the-move"></a>Начало перемещения
 
 1. Подключитесь к целевому серверу с помощью вторичной конечной точки `<fog-name>.secondary.database.windows.net` .
 1. Используйте [параметр Switch-азсклдатабасефаиловерграуп](/powershell/module/az.sql/switch-azsqldatabasefailovergroup) , чтобы перевести вторичный управляемый экземпляр в основной с полной синхронизацией. Эта операция завершится с ошибкой или будет отменена.
@@ -131,7 +131,7 @@ ms.locfileid: "85982192"
 
 После **ReplicationState** `2` подключитесь к каждой базе данных или подмножеству баз данных с помощью вторичной конечной точки `<fog-name>.secondary.database.windows.net` и выполните любой запрос к базам данных, чтобы обеспечить подключение, правильную конфигурацию безопасности и репликацию данных.
 
-### <a name="initiate-the-move"></a>Начать перемещение
+### <a name="initiate-the-move"></a>Начало перемещения
 
 1. Подключитесь к целевому серверу с помощью вторичной конечной точки `<fog-name>.secondary.database.windows.net` .
 1. Используйте [параметр Switch-азсклдатабасефаиловерграуп](/powershell/module/az.sql/switch-azsqldatabasefailovergroup) , чтобы перевести вторичный управляемый экземпляр в основной с полной синхронизацией. Эта операция либо будет выполнена, либо будет отменена.
@@ -179,7 +179,7 @@ ms.locfileid: "85982192"
 
 После **ReplicationState** `2` подключитесь к каждой базе данных или подмножеству баз данных с помощью вторичной конечной точки `<fog-name>.secondary.database.windows.net` и выполните любой запрос к базам данных, чтобы обеспечить подключение, правильную конфигурацию безопасности и репликацию данных.
 
-### <a name="initiate-the-move"></a>Начать перемещение
+### <a name="initiate-the-move"></a>Начало перемещения
 
 1. Подключитесь к целевому управляемому экземпляру с помощью вторичной конечной точки `<fog-name>.secondary.database.windows.net` .
 1. Используйте [параметр Switch-азсклдатабасефаиловерграуп](/powershell/module/az.sql/switch-azsqldatabasefailovergroup?view=azps-2.3.2) , чтобы перевести вторичный управляемый экземпляр в основной с полной синхронизацией. Эта операция будет выполнена, или будет выполнен откат.
@@ -193,6 +193,6 @@ ms.locfileid: "85982192"
 1. Удалите исходный управляемый экземпляр с помощью [Remove-азсклинстанце](/powershell/module/az.sql/remove-azsqlinstance).
 1. Удалите все дополнительные ресурсы в группе ресурсов, такие как виртуальный кластер, виртуальная сеть и группа безопасности.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Управление](manage-data-after-migrating-to-database.md) базой данных после ее переноса.

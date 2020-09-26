@@ -12,12 +12,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 12/06/2018
 ms.author: mbaldwin
-ms.openlocfilehash: 06cd02177d7d5c478f3378eb05517f1a37297e92
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 3764b261b491c660da16d7989be20742fead1fbf
+ms.sourcegitcommit: d95cab0514dd0956c13b9d64d98fdae2bc3569a0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84300738"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91359160"
 ---
 # <a name="azure-dedicated-hsm-networking"></a>Сеть для выделенного устройства HSM Azure
 
@@ -83,11 +83,11 @@ ms.locfileid: "84300738"
 > [!NOTE]
 > На данный момент глобальный пиринг между виртуальными сетями недоступен в сценариях с возможностью межрегионального подключения с помощью выделенных HSM, вместо него следует использовать VPN-шлюз. 
 
-![global-vnet](media/networking/global-vnet.png)
+![На схеме показаны два региона, Соединенных двумя шлюзами V P N. Каждый регион содержит одноранговые виртуальные сети.](media/networking/global-vnet.png)
 
 ## <a name="next-steps"></a>Дальнейшие шаги
 
-- [Вопросы и ответы](faq.md)
+- [Часто задаваемые вопросы по Аналитике компьютеров](faq.md)
 - [Возможности поддержки](supportability.md)
 - [Высокая доступность](high-availability.md)
 - [Физическая безопасность](physical-security.md)

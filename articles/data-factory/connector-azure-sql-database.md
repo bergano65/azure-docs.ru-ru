@@ -10,13 +10,13 @@ ms.service: data-factory
 ms.workload: data-services
 ms.topic: conceptual
 ms.custom: seo-lt-2019
-ms.date: 08/25/2020
-ms.openlocfilehash: e12c072cf5e734d734ca63c546ad8e4ae4de2d0f
-ms.sourcegitcommit: d39f2cd3e0b917b351046112ef1b8dc240a47a4f
+ms.date: 09/21/2020
+ms.openlocfilehash: 7cfb47ad4cad600f06aba2039f4b6a4b04722085
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88815510"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91332140"
 ---
 # <a name="copy-and-transform-data-in-azure-sql-database-by-using-azure-data-factory"></a>Копирование и преобразование данных в базе данных SQL Azure с помощью фабрики данных Azure
 
@@ -45,7 +45,7 @@ ms.locfileid: "88815510"
 - В качестве приемника автоматически создает целевую таблицу, если она не существует на основе исходной схемы. Добавление данных в таблицу или вызов хранимой процедуры с пользовательской логикой во время копирования.
 
 >[!NOTE]
-> [Always encrypted](https://docs.microsoft.com/sql/relational-databases/security/encryption/always-encrypted-database-engine?view=azuresqldb-current) базы данных SQL Azure сейчас не поддерживается этим соединителем. Для решения этой проблемы можно использовать [универсальный соединитель ODBC](connector-odbc.md) и драйвер SQL Server ODBC через локальную среду выполнения интеграции. Дополнительные сведения см. в разделе [Always encrypted](#using-always-encrypted) . 
+> [Always encrypted](https://docs.microsoft.com/sql/relational-databases/security/encryption/always-encrypted-database-engine) базы данных SQL Azure сейчас не поддерживается этим соединителем. Для решения этой проблемы можно использовать [универсальный соединитель ODBC](connector-odbc.md) и драйвер SQL Server ODBC через локальную среду выполнения интеграции. Дополнительные сведения см. в разделе [Always encrypted](#using-always-encrypted) . 
 
 > [!IMPORTANT]
 > При копировании данных с помощью среды выполнения интеграции Azure настройте [правило брандмауэра на уровне сервера](https://docs.microsoft.com/azure/sql-database/sql-database-firewall-configure) , чтобы службы Azure могли получить доступ к серверу.
@@ -144,7 +144,7 @@ ms.locfileid: "88815510"
     CREATE USER [your application name] FROM EXTERNAL PROVIDER;
     ```
 
-4. Предоставьте субъекту-службе необходимые разрешения точно так же, как вы предоставляете разрешения пользователям SQL или другим пользователям. Выполните следующий код. Дополнительные параметры см. в [этом документе](https://docs.microsoft.com/sql/relational-databases/system-stored-procedures/sp-addrolemember-transact-sql?view=sql-server-2017).
+4. Предоставьте субъекту-службе необходимые разрешения точно так же, как вы предоставляете разрешения пользователям SQL или другим пользователям. Выполните следующий код. Дополнительные параметры см. в [этом документе](https://docs.microsoft.com/sql/relational-databases/system-stored-procedures/sp-addrolemember-transact-sql).
 
     ```sql
     ALTER ROLE [role name] ADD MEMBER [your application name];
@@ -190,7 +190,7 @@ ms.locfileid: "88815510"
     CREATE USER [your Data Factory name] FROM EXTERNAL PROVIDER;
     ```
 
-3. Предоставьте управляемому удостоверению фабрики данных необходимые разрешения, как обычно для пользователей SQL и других. Выполните следующий код. Дополнительные параметры см. в [этом документе](https://docs.microsoft.com/sql/relational-databases/system-stored-procedures/sp-addrolemember-transact-sql?view=sql-server-2017).
+3. Предоставьте управляемому удостоверению фабрики данных необходимые разрешения, как обычно для пользователей SQL и других. Выполните следующий код. Дополнительные параметры см. в [этом документе](https://docs.microsoft.com/sql/relational-databases/system-stored-procedures/sp-addrolemember-transact-sql).
 
     ```sql
     ALTER ROLE [role name] ADD MEMBER [your Data Factory name];
@@ -472,9 +472,10 @@ GO
 
 | Сценарий                                                     | Предлагаемые параметры                                           |
 | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| Полная загрузка из большой таблицы с физическими секциями.        | **Параметр секции**: физические разделы таблицы. <br><br/>Во время выполнения фабрика данных автоматически обнаруживает физические секции и копирует данные по секциям. |
+| Полная загрузка из большой таблицы с физическими секциями.        | **Параметр секции**: физические разделы таблицы. <br><br/>Во время выполнения фабрика данных автоматически обнаруживает физические секции и копирует данные по секциям. <br><br/>Чтобы проверить, имеет ли таблица физическую секцию, можно обратиться к [этому запросу](#sample-query-to-check-physical-partition). |
 | Полная загрузка из большой таблицы без физических секций, в то время как со столбцом типа Integer или DateTime для секционирования данных. | **Partition options** (Параметры секционирования): динамический диапазон.<br>**Столбец секционирования** (необязательно): укажите столбец, используемый для секционирования данных. Если не указано, используется индекс или столбец первичного ключа.<br/>**Верхняя граница секции** и **Нижняя граница секции** (необязательно): укажите, нужно ли определить шаг секционирования. Это не предназначено для фильтрации строк в таблице, все строки в таблице будут секционированы и скопированы. Если значение не указано, действие копирования автоматически определяет значения.<br><br>Например, если столбец секции "ID" имеет диапазон значений от 1 до 100, а нижняя граница равна 20, а верхняя граница — 80, то при параллельном копировании как 4 фабрика данных извлекает данные по 4 секциям в диапазоне <= 20, [21, 50], [51, 80] и >= 81 соответственно. |
-| Загрузка большого объема данных с помощью пользовательского запроса без физических секций, в то время как со столбцом типа Integer или Date/DateTime для секционирования данных. | **Partition options** (Параметры секционирования): динамический диапазон.<br>**Запрос**: `SELECT * FROM <TableName> WHERE ?AdfDynamicRangePartitionCondition AND <your_additional_where_clause>`.<br>**Столбец секционирования**: укажите столбец для секционирования данных.<br>**Верхняя граница секции** и **Нижняя граница секции** (необязательно): укажите, нужно ли определить шаг секционирования. Это не предназначено для фильтрации строк в таблице, все строки в результатах запроса будут секционированы и скопированы. Если не указано, действие копирования автоматически определяет значение.<br><br>Во время выполнения фабрика данных заменяет `?AdfRangePartitionColumnName` фактические имена столбцов и диапазоны значений для каждой секции и отправляет данные в базу данных SQL Azure. <br>Например, если столбец секции "ID" имеет диапазон значений от 1 до 100, а нижняя граница равна 20, а верхняя граница — 80, то при параллельном копировании как 4 фабрика данных извлекает данные по 4 секциям в диапазоне <= 20, [21, 50], [51, 80] и >= 81 соответственно. |
+| Загрузка большого объема данных с помощью пользовательского запроса без физических секций, в то время как со столбцом типа Integer или Date/DateTime для секционирования данных. | **Partition options** (Параметры секционирования): динамический диапазон.<br>**Запрос**: `SELECT * FROM <TableName> WHERE ?AdfDynamicRangePartitionCondition AND <your_additional_where_clause>`.<br>**Столбец секционирования**: укажите столбец для секционирования данных.<br>**Верхняя граница секции** и **Нижняя граница секции** (необязательно): укажите, нужно ли определить шаг секционирования. Это не предназначено для фильтрации строк в таблице, все строки в результатах запроса будут секционированы и скопированы. Если не указано, действие копирования автоматически определяет значение.<br><br>Во время выполнения фабрика данных заменяет `?AdfRangePartitionColumnName` фактические имена столбцов и диапазоны значений для каждой секции и отправляет данные в базу данных SQL Azure. <br>Например, если столбец секции "ID" имеет диапазон значений от 1 до 100, а нижняя граница равна 20, а верхняя граница — 80, то при параллельном копировании как 4 фабрика данных извлекает данные по 4 секциям в диапазоне <= 20, [21, 50], [51, 80] и >= 81 соответственно. <br><br>Ниже приведены дополнительные примеры запросов для различных сценариев.<br> 1. запросите всю таблицу: <br>`SELECT * FROM <TableName> WHERE ?AdfDynamicRangePartitionCondition`<br> 2. запрос из таблицы с выделением столбцов и дополнительными фильтрами WHERE-Order: <br>`SELECT <column_list> FROM <TableName> WHERE ?AdfDynamicRangePartitionCondition AND <your_additional_where_clause>`<br> 3. запрос с вложенными запросами: <br>`SELECT <column_list> FROM (<your_sub_query>) AS T WHERE ?AdfDynamicRangePartitionCondition AND <your_additional_where_clause>`<br> 4. запрос с Секцией во вложенном запросе: <br>`SELECT <column_list> FROM (SELECT <your_sub_query_column_list> FROM <TableName> WHERE ?AdfDynamicRangePartitionCondition) AS T`
+|
 
 Рекомендации по загрузке данных с параметром секции:
 
@@ -507,6 +508,25 @@ GO
 }
 ```
 
+### <a name="sample-query-to-check-physical-partition"></a>Пример запроса для проверки физической секции
+
+```sql
+SELECT DISTINCT s.name AS SchemaName, t.name AS TableName, pf.name AS PartitionFunctionName, c.name AS ColumnName, iif(pf.name is null, 'no', 'yes') AS HasPartition
+FROM sys.tables AS t
+LEFT JOIN sys.objects AS o ON t.object_id = o.object_id
+LEFT JOIN sys.schemas AS s ON o.schema_id = s.schema_id
+LEFT JOIN sys.indexes AS i ON t.object_id = i.object_id 
+LEFT JOIN sys.index_columns AS ic ON ic.partition_ordinal > 0 AND ic.index_id = i.index_id AND ic.object_id = t.object_id 
+LEFT JOIN sys.columns AS c ON c.object_id = ic.object_id AND c.column_id = ic.column_id 
+LEFT JOIN sys.partition_schemes ps ON i.data_space_id = ps.data_space_id 
+LEFT JOIN sys.partition_functions pf ON pf.function_id = ps.function_id 
+WHERE s.name='[your schema]' AND t.name = '[your table name]'
+```
+
+Если таблица имеет физическую секцию, вы увидите «Хаспартитион» как «Да», как показано ниже.
+
+![Результат SQL запроса](./media/connector-azure-sql-database/sql-query-result.png)
+
 ## <a name="best-practice-for-loading-data-into-azure-sql-database"></a>Рекомендации по загрузке данных в базу данных SQL Azure
 
 При копировании данных в базу данных SQL Azure может потребоваться другое поведение при записи.
@@ -524,7 +544,7 @@ GO
 
 ### <a name="upsert-data"></a>Операция upsert с данными
 
-**Вариант 1.** При наличии большого объема данных для копирования можно выполнить загрузку всех записей в промежуточную таблицу с помощью действия копирования, а затем запустить действие хранимой процедуры, чтобы применить инструкцию [Merge](https://docs.microsoft.com/sql/t-sql/statements/merge-transact-sql?view=azuresqldb-current) или INSERT или Update в одном снимке. 
+**Вариант 1.** При наличии большого объема данных для копирования можно выполнить загрузку всех записей в промежуточную таблицу с помощью действия копирования, а затем запустить действие хранимой процедуры, чтобы применить инструкцию [Merge](https://docs.microsoft.com/sql/t-sql/statements/merge-transact-sql) или INSERT или Update в одном снимке. 
 
 В настоящее время действие копирования не поддерживает загрузку данных во временную таблицу базы данных. Существует более сложный способ настройки с помощью сочетания нескольких действий. см. статью [Оптимизация Upsert сценариев для базы данных SQL Azure](https://github.com/scoriani/azuresqlbulkupsert). Ниже показан пример использования постоянной таблицы в качестве промежуточного.
 
@@ -713,13 +733,13 @@ END
 
 ## <a name="using-always-encrypted"></a>Использование Always Encrypted
 
-При копировании данных из базы данных SQL Azure или в нее с [Always encrypted](https://docs.microsoft.com/sql/relational-databases/security/encryption/always-encrypted-database-engine?view=azuresqldb-current)используйте [универсальный соединитель ODBC](connector-odbc.md) и SQL Server драйвер ODBC через локально размещенную Integration Runtime. Этот соединитель базы данных SQL Azure не поддерживает Always Encrypted сейчас. 
+При копировании данных из базы данных SQL Azure или в нее с [Always encrypted](https://docs.microsoft.com/sql/relational-databases/security/encryption/always-encrypted-database-engine)используйте [универсальный соединитель ODBC](connector-odbc.md) и SQL Server драйвер ODBC через локально размещенную Integration Runtime. Этот соединитель базы данных SQL Azure не поддерживает Always Encrypted сейчас. 
 
 В частности:
 
 1. Настройте автономную Integration Runtime, если у вас ее нет. Дополнительные сведения см. в статье [Создание и настройка локальной среды выполнения интеграции](create-self-hosted-integration-runtime.md).
 
-2. Скачайте 64-разрядный драйвер ODBC для SQL Server [отсюда](https://docs.microsoft.com/sql/connect/odbc/download-odbc-driver-for-sql-server?view=azuresqldb-current)и установите на компьютер Integration Runtime. Дополнительные сведения о том, как работает этот драйвер, см. в статье [использование Always encrypted с драйвером ODBC для SQL Server](https://docs.microsoft.com/sql/connect/odbc/using-always-encrypted-with-the-odbc-driver?view=azuresqldb-current#using-the-azure-key-vault-provider).
+2. Скачайте 64-разрядный драйвер ODBC для SQL Server [отсюда](https://docs.microsoft.com/sql/connect/odbc/download-odbc-driver-for-sql-server)и установите на компьютер Integration Runtime. Дополнительные сведения о том, как работает этот драйвер, см. в статье [использование Always encrypted с драйвером ODBC для SQL Server](https://docs.microsoft.com/sql/connect/odbc/using-always-encrypted-with-the-odbc-driver#using-the-azure-key-vault-provider).
 
 3. Создание связанной службы с типом ODBC для подключения к базе данных SQL см. следующие примеры:
 
