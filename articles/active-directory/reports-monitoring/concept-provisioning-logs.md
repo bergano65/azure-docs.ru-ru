@@ -17,12 +17,12 @@ ms.date: 09/02/2020
 ms.author: markvi
 ms.reviewer: arvinh
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a15024362b31d49e51b291c10401bbf2965f1d82
-ms.sourcegitcommit: 4feb198becb7a6ff9e6b42be9185e07539022f17
+ms.openlocfilehash: 8aa31c6e196f916b4c7633da0c54a30ab9d7b548
+ms.sourcegitcommit: d95cab0514dd0956c13b9d64d98fdae2bc3569a0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/04/2020
-ms.locfileid: "89469870"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91361285"
 ---
 # <a name="provisioning-reports-in-the-azure-active-directory-portal-preview"></a>Подготовка отчетов на портале Azure Active Directory (Предварительная версия)
 
@@ -127,11 +127,11 @@ ms.locfileid: "89469870"
 
 Фильтр **действий** позволяет фильтровать:
 
-- Создание 
+- Создать 
 - Update
 - DELETE
 - Отключить
-- Другие
+- Другое
 
 Кроме того, в фильтры представления по умолчанию можно также задать следующие фильтры:
 
@@ -140,7 +140,7 @@ ms.locfileid: "89469870"
 - Идентификатор изменения
 - Идентификатор источника
 - Идентификатор целевого объекта
-- Развертывание
+- Приложение
 
 
 ![Выбор поля](./media/concept-provisioning-logs/add-filter.png "Выбор поля")
@@ -190,7 +190,7 @@ ms.locfileid: "89469870"
 
 
 
-![Шаги](./media/concept-provisioning-logs/steps.png "Фильтр")
+![На снимке экрана показана вкладка действия, на которой показаны этапы подготовки.](./media/concept-provisioning-logs/steps.png "Фильтр")
 
 
 ### <a name="troubleshoot-and-recommendations"></a>Устранение неполадок и рекомендации

@@ -11,12 +11,12 @@ ms.topic: how-to
 ms.date: 08/20/2020
 ms.author: gasinh
 ms.subservice: B2C
-ms.openlocfilehash: 36a402669f8af465a1cedbf1585e16c972b18015
-ms.sourcegitcommit: 58d3b3314df4ba3cabd4d4a6016b22fa5264f05a
+ms.openlocfilehash: 4e5becdd026b0a1c9e848b183ebeee5833654461
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89293121"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91259277"
 ---
 # <a name="tutorial-for-configuring-jumio-with-azure-active-directory-b2c"></a>Руководство по настройке Жумио с помощью Azure Active Directory B2C
 
@@ -28,7 +28,7 @@ ms.locfileid: "89293121"
 
 - Подписка Azure AD. Если у вас нет подписки, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/).
 
-- [Azure AD B2C клиент](https://review.docs.microsoft.com/azure/active-directory-b2c/tutorial-create-tenant) , связанный с подпиской Azure.
+- [Azure AD B2C клиент](https://docs.microsoft.com/azure/active-directory-b2c/tutorial-create-tenant) , связанный с подпиской Azure.
 
 ## <a name="scenario-description"></a>Описание сценария
 

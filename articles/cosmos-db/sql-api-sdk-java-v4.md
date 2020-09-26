@@ -9,12 +9,12 @@ ms.topic: reference
 ms.date: 08/12/2020
 ms.author: anfeldma
 ms.custom: devx-track-java
-ms.openlocfilehash: aabd52d47bfc59de7a1d79bbe5ffbdda90d099bf
-ms.sourcegitcommit: 51df05f27adb8f3ce67ad11d75cb0ee0b016dc5d
+ms.openlocfilehash: 92f1b722e39083463fd7fa57fdf8508c2c4084cd
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/14/2020
-ms.locfileid: "90060702"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91326649"
 ---
 # <a name="azure-cosmos-db-java-sdk-v4-for-core-sql-api-release-notes-and-resources"></a>Azure Cosmos DB: заметки о выпуске и материалы по пакету SDK Java версии 4 для API-интерфейса Core (SQL)
 > [!div class="op_single_selector"]
@@ -51,7 +51,7 @@ ms.locfileid: "90060702"
 
 ## <a name="helpful-content"></a>Полезное содержимое
 
-| Content | Ссылка |
+| Содержимое | Ссылка |
 |---|---|
 |**Скачивание пакета SDK**| [Maven](https://mvnrepository.com/artifact/com.azure/azure-cosmos) |
 |**Документация по API** | [Справочная документация по API Java](https://docs.microsoft.com/java/api/overview/azure/cosmosdb/client?view=azure-java-stable) |
@@ -66,131 +66,10 @@ ms.locfileid: "90060702"
 | **Минимальная поддерживаемая среда выполнения**|[JDK 8](/java/azure/jdk/?view=azure-java-stable); | 
 | **Семинары и лабораторные занятия по Azure Cosmos DB** |[Домашняя страница семинаров по Cosmos DB](https://aka.ms/cosmosworkshop)
 
-## <a name="release-history"></a>История выпусков
-
-### <a name="450-beta1-unreleased"></a>4.5.0-Beta. 1 (не выпущено)
-
-### <a name="440-2020-09-12"></a>4.4.0 (2020-09-12)
-#### <a name="key-bug-fixes"></a>Исправления основных ошибок
-* Исправлена Рекуесттимеаутексцептион при включении `netty-tcnative-boringssl` зависимости.
-* Исправлена ошибка утечки памяти в `Delete` операциях в `GATEWAY` режиме.
-* Исправлена утечка `CosmosClient` при создании экземпляра, если URI конечной точки является недопустимым.
-* Улучшенная `CPU History` Диагностика.
-
-### <a name="431-2020-08-13"></a>4.3.1 (2020-08-13)
-#### <a name="key-bug-fixes"></a>Исправления основных ошибок
-* Исправлена проблема с `GROUP BY` запросом, где возвращалась только одна страница.
-* Исправлен формат строки агента пользователя для соответствия рекомендациям центрального пакета SDK.
-* Улучшенная диагностическая информация для включения диагностики планов запросов.
-
-### <a name="430-2020-07-29"></a>4.3.0 (2020-07-29)
-#### <a name="new-features"></a>Новые функции
-* Обновлена версия библиотеки реактора-Core до `3.3.8.RELEASE` . 
-* Обновлена версия библиотеки реактора-NETTY до `0.9.10.RELEASE` . 
-* Версия библиотеки NETTY обновлена до версии `4.1.51.Final` . 
-* Добавлены новые API перегрузки для `upsertItem` с `partitionKey` . 
-* Добавлена поддержка открытой трассировки телеметрии. 
-#### <a name="key-bug-fixes"></a>Исправления основных ошибок
-* Исправлена проблема, при которой Сслексцептион возникает в случае отмены запросов в режиме ШЛЮЗа.
-* Исправлена политика повторных попыток регулирования ресурсов при выполнении хранимых процедур.
-* Исправлена проблема, когда пакет SDK зависает в режиме отладки на уровне журнала. 
-* Исправлены периодические пиковые пики в задержке в режиме прямого подключения. 
-* Исправлена проблема высокой длительности инициализации клиента. 
-* Исправлена ошибка прокси-сервера HTTP при настройке клиента в режиме Direct и шлюза. 
-* Исправленные потенциальные НПЕ в пользователях передают параметры null. 
-* `requestLatency`В строку диагностики Добавлено тимеунит.
-* Удалена повторяющаяся строка URI из строки диагностики. 
-* Исправлена строка диагностики в правильном формате JSON для операций с точками.
-* Исправлена проблема с `.single()` оператором, вызывающий срабатывание цепочки реактора в случае возникновения исключения "не найдено". 
-
-### <a name="420-2020-07-14"></a>4.2.0 (2020-07-14)
-#### <a name="new-features"></a>Новые функции
-* Добавлен API с поддержкой регистрации скриптов в `CosmosStoredProcedureRequestOptions` .
-* `DirectConnectionConfig`По умолчанию изменено `idleEndpointTimeout` на 1 ч, а по умолчанию — `connectTimeout` на 5S.
-#### <a name="key-bug-fixes"></a>Исправления основных ошибок
-* Исправлена проблема `GatewayConnectionConfig` `idleConnectionTimeout` переопределения `DirectConnectionConfig` `idleConnectionTimeout` .
-* Исправлены `responseContinuationTokenLimitInKb` API-интерфейсы Get и Set в `CosmosQueryRequestOptions` .
-* Исправлена проблема в веб-канале запросов и изменений при повторном создании коллекции с тем же именем.
-* Исправлена проблема с первым созданием запроса Класскастексцептион.
-* Исправлена проблема с последовательностью вызова запроса Нуллпоинтерексцептион.
-* Исправлена проблема с обработкой отмененных запросов в режиме прямого подключения, вызывающих `onErrorDropped` вызов реактора. 
-
-### <a name="410-2020-06-25"></a>4.1.0 (2020-06-25)
-#### <a name="new-features"></a>Новые функции
-* Добавлена поддержка `GROUP BY` запроса.
-* Увеличено значение по умолчанию Максконнектионсперендпоинт до 130 в Директконнектионконфиг.
-* Увеличено значение по умолчанию Максрекуестсперконнектион до 30 в Директконнектионконфиг.
-#### <a name="key-bug-fixes"></a>Исправления основных ошибок
-* Исправлены проблемы с сортировкой по запросу, возвращающие дублирующиеся результаты при возобновлении с помощью токена продолжения. 
-* Исправлены проблемы с запросом значений, возвращающими значения NULL для вложенного объекта.
-* Исправлено исключение пустого указателя в диспетчере запросов в Рнтбдклиентчаннелпул.
-
-### <a name="401-2020-06-10"></a>4.0.1 (2020-06-10)
-#### <a name="new-features"></a>Новые функции
-* `QueryRequestOptions` переименован в `CosmosQueryRequestOptions`.
-* Обновлен `ChangeFeedProcessorBuilder` шаблон построителя.
-* Добавлены `CosmosPermissionProperties` новые интерфейсы API имени контейнера и дочерних ресурсов.
-* Добавлены дополнительные примеры & обогащенных документов `CosmosClientBuilder` . 
-* Обновленные `CosmosDatabase`  &  `CosmosContainer` API с сраугхпутпропертиес для поддержки автомасштабирования и автопилотного развертывания. 
-* `CosmosClientException` переименован в `CosmosException`. 
-* Заменены `AccessCondition`  &  `AccessConditionType` `ifMatchETag()`  &  `ifNoneMatchETag()` API. 
-* Объединяет все `Cosmos*AsyncResponse`  &  `CosmosResponse` типы в один `CosmosResponse` тип.
-* `CosmosResponseDiagnostics` переименован в `CosmosDiagnostics`.  
-* Упаковано `FeedResponseDiagnostics` в `CosmosDiagnostics` . 
-* Удалена `jackson` зависимость от Azure-cosmos & полагается на Azure-Core. 
-* Заменяется `CosmosKeyCredential` на `AzureKeyCredential` тип. 
-* Добавлены `ProxyOptions` API в `GatewayConnectionConfig` . 
-* Обновленный пакет SDK для использования `Instant` типа вместо `OffsetDateTime` . 
-* Добавлен новый тип перечисления `OperationKind` . 
-* `FeedOptions` переименован в `QueryRequestOptions`. 
-* Добавлены `getETag()`  &  `getTimestamp()` API-интерфейсы в `Cosmos*Properties` типы. 
-* Добавлены `userAgent` сведения в `CosmosException`  &  `CosmosDiagnostics` . 
-* Обновлен символ новой строки в `Diagnostics` до системной новой строки. 
-* Удалены `readAll*` API, используйте вместо этого запрос выбрать все API.
-* Добавлен `ChangeFeedProcessor` API запаздывания оценки.   
-* Добавлена поддержка подготовки пропускной способности автомасштабирования и автопилота для пакета SDK.  
-* Заменяются `ConnectionPolicy` новыми конфигурациями соединения. Предоставляемые `DirectConnectionConfig`  &  `GatewayConnectionConfig` API-интерфейсы посредством `CosmosClientBuilder` для прямого & конфигурации подключения в режиме шлюза.
-* Перемещено `JsonSerializable`  &  `Resource` в пакет реализации. 
-* Добавлен `contentResponseOnWriteEnabled` API в космосклиентбуилдер, который отключает полное содержимое ответа при операциях записи.
-* Предоставляемые `getETag()` API для типов ответов.
-* Перемещено `CosmosAuthorizationTokenResolver` в реализацию. 
-* Переименованный `preferredLocations`  &  `multipleWriteLocations` API в `preferredRegions`  &  `multipleWriteRegions` . 
-* Обновлен `reactor-core` до версии 3.3.5. Release, `reactor-netty` до 0.9.7. Release & `netty` до 4.1.49. Final. 
-* Добавлена поддержка `analyticalStoreTimeToLive` в пакете SDK.     
-* `CosmosClientException` расширяет `AzureException` . 
-* Удалены `maxItemCount`  &  `requestContinuationToken` API из `FeedOptions` вместо этого с помощью `byPage()` интерфейсов API из `CosmosPagedFlux`  &  `CosmosPagedIterable` .
-* Появилось `CosmosPermissionProperties` в общедоступной области для `Permission` API-интерфейсов.
-* Удаленный `SqlParameterList` тип & заменен на `List`
-* Исправлено несколько утечек памяти в прямом TCP-клиенте. 
-* Добавлена поддержка `DISTINCT` запросов. 
-* Внешние зависимости удалены `fasterxml.uuid, guava, commons-io, commons-collection4, commons-text` .  
-* Перемещено `CosmosPagedFlux`  &  `CosmosPagedIterable` в `utils` пакет. 
-* Обновлен NETTY до 4.1.45. Final & проект реактора до 3.3.3 версии.
-* Обновлены общедоступные контракты RESTful для `Final` классов.
-* Добавлена поддержка расширенной диагностики для операций с точками.
-* Пакет обновлен до `com.azure.cosmos`
-* Добавлен `models` пакет для контрактов Model/RESTful
-* Добавлен `utils` пакет для `CosmosPagedFlux`  &  `CosmosPagedIterable` типов. 
-* Обновлены общедоступные API для использования в `Duration` пакете SDK.
-* Добавлены все контракты RESTful в `models` пакет.
-* Аргумент `RetryOptions` переименован в `ThrottlingRetryOptions`.
-* Добавлены `CosmosPagedFlux`  &  `CosmosPagedIterable` типы разбивки на страницы для API запросов. 
-* Добавлена поддержка совместного использования Транспортклиент в нескольких экземплярах Космосклиентс с помощью нового API в `CosmosClientBuilder#connectionSharingAcrossClientsEnabled(true)`
-* Оптимизации запросов путем удаления двойной сериализации и десериализации. 
-* Оптимизации заголовков ответов путем удаления ненужных копий. 
-* Оптимизированная `ByteBuffer` сериализация и десериализация путем удаления промежуточных экземпляров строк.
-
-#### <a name="key-bug-fixes"></a>Исправления основных ошибок
-* Исправлено `toString()` исключение пустого указателя ConnectionPolicy.
-* Исправлена проблема с анализом результатов запроса в случае упорядочения значений по запросам. 
-* Устранены проблемы утечки сокетов с прямым клиентом TCP.
-* Исправлена `orderByQuery` Ошибка токена продолжения.
-* `ChangeFeedProcessor` Исправление ошибки для обработки разбиений секций &, когда раздел не найден.
-* `ChangeFeedProcessor` Исправление ошибки при синхронизации обновлений аренды в разных потоках.
-* Исправлено состояние гонки, вызывающее `ArrayIndexOutOfBound` исключение в сторереадер
+[!INCLUDE[Release notes](~/azure-sdk-for-java-cosmos-db/sdk/cosmos/azure-cosmos/CHANGELOG.md)]
 
 ## <a name="faq"></a>ВОПРОСЫ И ОТВЕТЫ
-[!INCLUDE [cosmos-db-sdk-faq](../../includes/cosmos-db-sdk-faq.md)]
+[!INCLUDE [cosmos-db-sdk-faq](../../includes/cosmos-db-sdk-faq.md)] 
 
 ## <a name="next-steps"></a>Дальнейшие действия
 Дополнительные сведения о Cosmos DB см. на странице службы [Microsoft Azure Cosmos DB](https://azure.microsoft.com/services/cosmos-db/).

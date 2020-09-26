@@ -1,6 +1,6 @@
 ---
 title: Обновление Windows Server или System Center VMM 2012 R2 до Windows Server 2016-Azure Site Recovery
-description: Узнайте, как настраивать аварийное восстановление в Azure для виртуальных машин Azure Stack с помощью службы Azure Site Recovery.
+description: Узнайте, как обновить узлы Windows Server 2012 R2 & SCVMM 2012 R2, настроенные с Azure Site Recovery, на Windows Server 2016 & SCVMM 2016.
 services: site-recovery
 author: Sharmistha-Rai
 manager: gaggupta
@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.service: site-recovery
 ms.date: 12/03/2018
 ms.author: sharrai
-ms.openlocfilehash: 82e178d37074b22cd170d6b2478525dd2ea7ddf1
-ms.sourcegitcommit: e71da24cc108efc2c194007f976f74dd596ab013
+ms.openlocfilehash: b9869ae7dfbf5afd6b8d3b870a2ad4e56fd54c1a
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87424330"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91250076"
 ---
 # <a name="upgrade-windows-server-serversystem-center-2012-r2-vmm-to-windows-servervmm-2016"></a>Обновление Windows Server Server/System Center 2012 R2 VMM до Windows Server или VMM 2016 
 
@@ -78,7 +78,7 @@ ms.locfileid: "87424330"
 3. В разделе **Установка и удаление программ** выберите **VMM** > **Удаление**. b. Щелкните **Удалить компоненты**, а затем выберите **Сервер управления и консоль VMM**. c. В разделе **Параметры базы данных** выберите **Сохранить базу данных**. d. Просмотрите итоги и нажмите кнопку **Удалить**.
 
 4. [Установка VMM 2016](/system-center/vmm/upgrade-vmm?view=sc-vmm-2016#install-vmm-2016)
-5. Запустите SCVMM и проверьте состояние каждого узла на вкладке **структуры** . чтобы получить Последнее состояние, нажмите кнопку " **Обновить** ". Должно отобразиться состояние "Требует внимания". 
+5. Запустите SCVMM и проверьте состояние каждого узла на вкладке **структуры** . Нажмите кнопку **Обновить** , чтобы получить самое последнее состояние. Должно отобразиться состояние "Требует внимания". 
 17. Установите последнюю версию [Microsoft Azure Site Recovery Provider](https://aka.ms/downloaddra) на сервер SCVMM.
 16. Установите последнюю версию агента [Microsoft Azure Recovery Service (MARS)](https://aka.ms/latestmarsagent) на каждом узле кластера. Обновите, чтобы убедиться, что SCVMM успешно может запрашивать узлы.
 
@@ -96,7 +96,7 @@ ms.locfileid: "87424330"
 
 1.  Чтобы удалить поставщик ASR, в Панели управления выберите "Программы -> Программы и компоненты ->Microsoft Azure Site Recovery" и нажмите "Удалить"
 2. В зависимости от выбранного режима обновления, выполните шаги, описанные [здесь](/system-center/vmm/upgrade-vmm?view=sc-vmm-2016#upgrade-a-standalone-vmm-server).
-3. Запустите консоль SCVMM и проверьте состояние каждого узла на вкладке **структуры** . Нажмите кнопку " **Обновить** ", чтобы получить самое последнее состояние. Должно отобразиться состояние "Требует внимания".
+3. Запустите консоль SCVMM и проверьте состояние каждого узла на вкладке **структуры** . Нажмите кнопку **Обновить** , чтобы получить самое последнее состояние. Должно отобразиться состояние "Требует внимания".
 4. Установите последнюю версию [Microsoft Azure Site Recovery Provider](https://aka.ms/downloaddra) на сервер SCVMM.
 5. Обновите последнюю версию [агента Microsoft Azure Recovery Service (MARS)](https://aka.ms/latestmarsagent) на каждом узле кластера. Обновите, чтобы убедиться, что SCVMM успешно может запрашивать узлы.
 

@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.date: 02/25/2020
 ms.author: trbye
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 2806ce18cc9febfdf15d48052d301da48b3c226f
-ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
+ms.openlocfilehash: 3b0c85f2c9ba04ac999911e534b906c634d457b8
+ms.sourcegitcommit: d95cab0514dd0956c13b9d64d98fdae2bc3569a0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88934469"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91360962"
 ---
 # <a name="tutorial-voice-enable-your-bot-using-the-speech-sdk"></a>Учебник. Включение программы-робота с помощью речевого пакета SDK
 
@@ -109,7 +109,7 @@ ms.locfileid: "88934469"
 
 | Имя | Тип  | Расположение |
 |------|-------|----------|
-| Спичечоботтуториал — речь | Службы Cognitive Services | западная часть США |
+| Спичечоботтуториал — речь | Cognitive Services | западная часть США |
 
 ### <a name="create-an-azure-app-service-plan"></a>Создание плана службы приложений Azure
 
@@ -131,7 +131,7 @@ ms.locfileid: "88934469"
 | Имя | Тип  | Расположение |
 |------|-------|----------|
 | Спичечоботтуториал — AppServicePlan | План службы приложений | западная часть США |
-| Спичечоботтуториал — речь | Службы Cognitive Services | западная часть США |
+| Спичечоботтуториал — речь | Cognitive Services | западная часть США |
 
 ## <a name="build-an-echo-bot"></a>Создание эхо-робота
 
@@ -158,7 +158,7 @@ ms.locfileid: "88934469"
 4. После загрузки проекта нажмите клавишу <kbd>F5</kbd> , чтобы построить и запустить проект.
 5. Будет запущен браузер, и появится экран, аналогичный приведенному выше.
     > [!div class="mx-imgBorder"]
-    > [![ечобот — работает на локальном компьютере](media/tutorial-voice-enable-your-bot-speech-sdk/echobot-running-on-localhost.png "Ечобот, выполняемый на localhost")](media/tutorial-voice-enable-your-bot-speech-sdk/echobot-running-on-localhost.png#lightbox)
+    > [![На снимке экрана показана страница Ечобот с сообщением о готовности ленты.](media/tutorial-voice-enable-your-bot-speech-sdk/echobot-running-on-localhost.png "Ечобот, выполняемый на localhost")](media/tutorial-voice-enable-your-bot-speech-sdk/echobot-running-on-localhost.png#lightbox)
 
 ### <a name="test-the-bot-sample-with-the-bot-framework-emulator"></a>Тестирование образца Bot с помощью эмулятора Bot Framework
 
@@ -167,14 +167,14 @@ ms.locfileid: "88934469"
 1. Установка [эмулятора Bot Framework](https://github.com/Microsoft/BotFramework-Emulator/releases/latest) версии 4.3.0 или более поздней
 2. Запустите эмулятор Bot Framework и откройте программу Bot:
    * **Файл**  ->  **Откройте Bot**.
-3. Введите URL-адрес для Bot. Например:
+3. Введите URL-адрес для Bot. Пример:
 
    ```
    http://localhost:3978/api/messages
    ```
    и нажмите кнопку "подключить".
 4. Программа-робот должна greet вас с «Привет и Добро пожаловать!». !". Введите любое текстовое сообщение и подтвердите получение ответа от программы-робота.
-5. В этом случае обмен данными с экземпляром Echo Bot может выглядеть так: [ ![Bot-Framework-Emulator](media/tutorial-voice-enable-your-bot-speech-sdk/bot-framework-emulator.png "Эмулятор Bot Framework") .](media/tutorial-voice-enable-your-bot-speech-sdk/bot-framework-emulator.png#lightbox)
+5. Вот как может выглядеть обмен данными с экземпляром эхо-робота: [ ![на снимке экрана показан эмулятор ленты.](media/tutorial-voice-enable-your-bot-speech-sdk/bot-framework-emulator.png "Эмулятор Bot Framework")](media/tutorial-voice-enable-your-bot-speech-sdk/bot-framework-emulator.png#lightbox)
 
 ## <a name="deploy-your-bot-to-an-azure-app-service"></a>Развертывание программы Bot в службе приложений Azure
 
@@ -217,7 +217,7 @@ ms.locfileid: "88934469"
 |------|-------|----------|
 | EchoBot20190805125647 | Служба приложений | западная часть США |
 | Спичечоботтуториал — AppServicePlan | План службы приложений | западная часть США |
-| Спичечоботтуториал — речь | Службы Cognitive Services | западная часть США |
+| Спичечоботтуториал — речь | Cognitive Services | западная часть США |
 
 ## <a name="enable-web-sockets"></a>Включение протокола WebSocket
 
@@ -255,7 +255,7 @@ ms.locfileid: "88934469"
 | EchoBot20190805125647 | Служба приложений | западная часть США |
 | Спичечоботтуториал — AppServicePlan | План службы приложений | западная часть США |
 | Спичечоботтуториал-Ботрегистратион-8726 | Регистрация каналов Bot | Глобальный |
-| Спичечоботтуториал — речь | Службы Cognitive Services | западная часть США |
+| Спичечоботтуториал — речь | Cognitive Services | западная часть США |
 
 > [!IMPORTANT]
 > В ресурсе регистрации каналов Bot будет показан глобальный регион, даже если вы выбрали "Западная часть США". Это ожидаемое поведение.
@@ -323,7 +323,7 @@ ms.locfileid: "88934469"
 
 Если в главном окне приложения появляется сообщение об ошибке, используйте следующую таблицу для обнаружения и устранения ошибки:
 
-| Ошибка | Что следует сделать? |
+| Error | Что следует сделать? |
 |-------|----------------------|
 |Ошибка (Аусентикатионфаилуре): сбой обновления WebSocket с ошибкой проверки подлинности (401). Проверьте правильность ключа подписки (или маркера авторизации) и имя региона.| На странице Параметры приложения убедитесь, что вы правильно указали ключ подписки на речь и его регион.<br>Убедитесь, что ваш ключ речи и область ключей введены правильно. |
 |Ошибка (Коннектионфаилуре): соединение было закрыто удаленным узлом. Код ошибки: 1011. Сведения об ошибке: не удалось подключиться к Bot перед отправкой сообщения | Убедитесь, что [установлен флажок "включить конечную точку потоковой передачи"](#register-the-direct-line-speech-channel) и/или [переключаемые **веб-сокеты** ](#enable-web-sockets) .<br>Убедитесь, что служба приложений Azure запущена. Если это так, попробуйте перезапустить службу приложений.|
@@ -472,7 +472,7 @@ ms.locfileid: "88934469"
 > [!div class="nextstepaction"]
 > [Создание собственного клиентского приложения с помощью пакета SDK для распознавания речи](quickstart-voice-assistant-csharp-uwp.md)
 
-## <a name="see-also"></a>См. также
+## <a name="see-also"></a>См. также раздел
 
 * Развертывание в [регионе Azure рядом с вами](https://azure.microsoft.com/global-infrastructure/locations/) , чтобы увидеть улучшение времени ответа Bot
 * Развертывание в [регионе Azure, поддерживающем высококачественные голосовые нейроны TTS](https://docs.microsoft.com/azure/cognitive-services/speech-service/regions#standard-and-neural-voices)

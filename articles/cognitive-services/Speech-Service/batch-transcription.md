@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.date: 08/28/2020
 ms.author: wolfma
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 3b9a491f7546fbaa8722498b164bfa56353dfcfc
-ms.sourcegitcommit: 8a7b82de18d8cba5c2cec078bc921da783a4710e
+ms.openlocfilehash: fe864212eaccb67335586ef8b25049529ab36b81
+ms.sourcegitcommit: d95cab0514dd0956c13b9d64d98fdae2bc3569a0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89050188"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91360758"
 ---
 # <a name="how-to-use-batch-transcription"></a>Использование записи пакетов
 
@@ -43,7 +43,7 @@ ms.locfileid: "89050188"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Как и для всех функций службы "Речь", вам необходимо создать ключ подписки на [портале Azure](https://portal.azure.com), следуя [руководству по началу работы](get-started.md).
+Как и для всех функций службы "Речь", вам необходимо создать ключ подписки на [портале Azure](https://portal.azure.com), следуя [руководству по началу работы](overview.md#try-the-speech-service-for-free).
 
 >[!NOTE]
 > Для использования записи пакетов требуется стандартная подписка (S0) для службы речи. Ключи бесплатной подписки (F0) не работают. Дополнительные сведения см. в разделе [цены и ограничения](https://azure.microsoft.com/pricing/details/cognitive-services/speech-services/).
@@ -63,7 +63,7 @@ API-интерфейс для транскрипции пакетов подде
 Для звуковых потоков стереозвука левый и правый каналы разбиваются во время транскрипции. Файл результатов JSON создается для каждого канала.
 Чтобы создать упорядоченную конечную запись, используйте метки времени, созданные для каждого utterance.
 
-### <a name="configuration"></a>Конфигурация
+### <a name="configuration"></a>Параметр Configuration
 
 Параметры конфигурации предоставляются в виде JSON (один или несколько отдельных файлов):
 

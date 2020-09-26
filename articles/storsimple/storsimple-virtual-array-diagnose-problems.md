@@ -1,6 +1,6 @@
 ---
 title: Устранение неполадок виртуального массива StorSimple | Документация Майкрософт
-description: В статье описываются возможности диагностики диспетчера устройств StorSimple и способы его использования для устранения неполадок в виртуальном массиве StorSimple.
+description: Узнайте о возможности самостоятельного устранения неполадок, предоставляемой в службе Device Manager StorSimple.
 services: storsimple
 documentationcenter: ''
 author: manuaery
@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 11/21/2016
 ms.author: manuaery
-ms.openlocfilehash: 684554c5eaf3f5fa2701bad2d49c082595552adb
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 6cb78a7042ca3acbb27f510207783b97f733cfb0
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85515185"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91249541"
 ---
 # <a name="use-the-storsimple-device-manager-service-to-troubleshoot-the-storsimple-virtual-array"></a>Устранение неполадок виртуального массива StorSimple с помощью диспетчера устройств StorSimple
 ## <a name="overview"></a>Обзор
@@ -42,6 +42,6 @@ ms.locfileid: "85515185"
 
 3. Если не удается найти справочные материалы о проблеме и ее устранении, обратитесь за помощью в службу технической поддержки Майкрософт.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 [Инструкции по регистрации запроса в службу поддержки](storsimple-virtual-array-log-support-ticket.md)
 
