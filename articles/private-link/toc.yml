@@ -24,6 +24,10 @@
     - name: Создание экземпляра службы "Приватный канал" с помощью шаблона ARM
       displayName: Resource Manager
       href: create-private-link-service-template.md
+- name: Учебники
+  items:
+    - name: подключение к учетной записи хранения
+      href: tutorial-private-endpoint-storage-portal.md
 - name: Основные понятия
   items:
     - name: Частная конечная точка
@@ -38,8 +42,6 @@
           href: security-baseline.md
 - name: Практическое руководство
   items:
-    - name: Частное подключение к учетной записи хранения
-      href: create-private-endpoint-storage-portal.md
     - name: "Частное подключение к учетной записи Cosmos\_DB"
       href: create-private-endpoint-cosmosdb-portal.md
     - name: Частное подключение к веб-приложению
@@ -60,7 +62,7 @@
           href: troubleshoot-private-link-connectivity.md
 - name: Справочник
   items:
-    - name: Azure CLI;
+    - name: Azure CLI
       href: /cli/azure/network
     - name: Azure PowerShell
       href: /powershell/module/az.network

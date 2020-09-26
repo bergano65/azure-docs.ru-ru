@@ -112,7 +112,7 @@
     - name: Операции с поставщиками ресурсов
       href: resource-provider-operations.md
     - name: Ограничения Azure RBAC
-      href: ../azure-resource-manager/management/azure-subscription-service-limits.md#role-based-access-control-limits
+      href: ../azure-resource-manager/management/azure-subscription-service-limits.md#azure-role-based-access-control-limits
     - name: Azure PowerShell
       href: /powershell/module/az.resources
     - name: Azure CLI

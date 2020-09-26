@@ -34,7 +34,7 @@
       items:
         - name: ASP.NET
           href: quickstart-v2-aspnet-webapp.md
-        - name: ASP.NET Core
+        - name: "ASP.NET\_Core"
           href: quickstart-v2-aspnet-core-webapp.md
         - name: Node.js
           href: quickstart-v2-nodejs-webapp.md
@@ -81,6 +81,8 @@
       items:
         - name: ASP.NET
           href: tutorial-v2-asp-webapp.md
+        - name: Blazor Server
+          href: tutorial-blazor-server.md
     - name: Мобильные и классические приложения
       items:
         - name: Android
