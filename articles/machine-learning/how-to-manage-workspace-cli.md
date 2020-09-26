@@ -10,12 +10,12 @@ author: Blackmist
 ms.date: 07/28/2020
 ms.topic: conceptual
 ms.custom: how-to
-ms.openlocfilehash: cd9af35e5b616f3f4d72405078782e1e88414c98
-ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
+ms.openlocfilehash: 0919e2b0703d56c61bd9ee37cb70021de4deff45
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "90897339"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91322280"
 ---
 # <a name="create-a-workspace-for-azure-machine-learning-with-azure-cli"></a>Создание рабочей области для Машинного обучения Azure с помощью Azure CLI
 
@@ -26,7 +26,7 @@ ms.locfileid: "90897339"
 
 * **Подписка Azure**. Если у вас ее нет, используйте [бесплатную или платную версию Машинного обучения Azure](https://aka.ms/AMLFree).
 
-* Чтобы выполнять приведенные в этом документе команды CLI в **локальной среде**, вам потребуется [Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest).
+* Чтобы выполнять приведенные в этом документе команды CLI в **локальной среде**, вам потребуется [Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest&preserve-view=true).
 
     Если вы используете [Azure Cloud Shell](https://azure.microsoft.com//features/cloud-shell/), интерфейс командной строки доступен через браузер и находится в облаке.
 
@@ -45,7 +45,7 @@ az login
 
 [!INCLUDE [select-subscription](../../includes/machine-learning-cli-subscription.md)] 
 
-Другие методы аутентификации см. в статье [Вход с помощью Azure CLI](https://docs.microsoft.com/cli/azure/authenticate-azure-cli?view=azure-cli-latest).
+Другие методы аутентификации см. в статье [Вход с помощью Azure CLI](https://docs.microsoft.com/cli/azure/authenticate-azure-cli?view=azure-cli-latest&preserve-view=true).
 
 ## <a name="install-the-machine-learning-extension"></a>Установка расширения машинного обучения
 
@@ -103,7 +103,7 @@ az group create --name <resource-group-name> --location <location>
 }
 ```
 
-Дополнительные сведения о работе с группами ресурсов см. в разделе [az group](https://docs.microsoft.com//cli/azure/group?view=azure-cli-latest).
+Дополнительные сведения о работе с группами ресурсов см. в разделе [az group](https://docs.microsoft.com//cli/azure/group?view=azure-cli-latest&preserve-view=true).
 
 ### <a name="automatically-create-required-resources"></a>Автоматическое создание необходимых ресурсов
 
@@ -142,7 +142,21 @@ az ml workspace create -w <workspace-name> -g <resource-group-name>
 ### <a name="virtual-network-and-private-endpoint"></a>Виртуальная сеть и частная конечная точка
 
 > [!IMPORTANT]
-> Использование частной связи Azure с Машинное обучение Azure рабочей областью в настоящее время находится в общедоступной предварительной версии. Эта функция доступна только в регионах **Восточная часть США** и **Западная часть США 2** . Эта предварительная версия предоставляется без соглашения об уровне обслуживания и не рекомендуется для рабочих нагрузок в рабочей среде. Некоторые функции могут не поддерживаться или их возможности могут быть ограничены. Дополнительные сведения см. в статье [Дополнительные условия использования предварительных выпусков Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
+> Использование частной связи Azure с Машинное обучение Azure рабочей областью в настоящее время находится в общедоступной предварительной версии. Эта функция доступна только в следующих регионах:
+>
+> * **Восточная часть США**
+> * **Центрально-южная часть США**
+> * **западная часть США**
+> * **Западная часть США 2**
+> * **Центральная Канада**
+> * **Юго-Восточная Азия**
+> * **Восточная Япония**
+> * **Северная Европа**
+> * **Восточная Австралия**
+> * **южная часть Соединенного Королевства**
+>
+> Эта предварительная версия предоставляется без соглашения об уровне обслуживания и не рекомендуется для рабочих нагрузок в рабочей среде. Некоторые функции могут не поддерживаться или их возможности могут быть ограничены. 
+> Дополнительные сведения см. в статье [Дополнительные условия использования предварительных выпусков Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
 
 Если вы хотите ограничить доступ к рабочей области виртуальной сети, можно использовать следующие параметры:
 
@@ -150,7 +164,7 @@ az ml workspace create -w <workspace-name> -g <resource-group-name>
 * `--pe-auto-approval`— Следует ли автоматически утверждать подключения частной конечной точки к рабочей области.
 * `--pe-resource-group`: Группа ресурсов для создания частной конечной точки в. Должна быть той же группой, которая содержит виртуальную сеть.
 * `--pe-vnet-name`— Существующая виртуальная сеть для создания частной конечной точки в.
-* `--pe-subnet-name`— Имя подсети, в которой создается частная конечная точка. Значение по умолчанию — `default`.
+* `--pe-subnet-name`— Имя подсети, в которой создается частная конечная точка. Значение по умолчанию — `default`.
 
 Дополнительные сведения об использовании частной конечной точки и виртуальной сети с рабочей областью см. в статье [Общие сведения о изоляции и конфиденциальности виртуальной сети](how-to-network-security-overview.md).
 
@@ -283,7 +297,7 @@ az ml workspace list
 ]
 ```
 
-Дополнительные сведения см. в документации по команде [az ml workspace list](https://docs.microsoft.com/cli/azure/ext/azure-cli-ml/ml/workspace?view=azure-cli-latest#ext-azure-cli-ml-az-ml-workspace-list).
+Дополнительные сведения см. в документации по команде [az ml workspace list](https://docs.microsoft.com/cli/azure/ext/azure-cli-ml/ml/workspace?view=azure-cli-latest&preserve-view=true#ext-azure-cli-ml-az-ml-workspace-list).
 
 ## <a name="get-workspace-information"></a>Получение сведений о рабочей области
 
@@ -316,7 +330,7 @@ az ml workspace show -w <workspace-name> -g <resource-group-name>
 }
 ```
 
-Дополнительные сведения см. в документации по команде [az ml workspace show](https://docs.microsoft.com/cli/azure/ext/azure-cli-ml/ml/workspace?view=azure-cli-latest#ext-azure-cli-ml-az-ml-workspace-show).
+Дополнительные сведения см. в документации по команде [az ml workspace show](https://docs.microsoft.com/cli/azure/ext/azure-cli-ml/ml/workspace?view=azure-cli-latest&preserve-view=true#ext-azure-cli-ml-az-ml-workspace-show).
 
 ## <a name="update-a-workspace"></a>Обновление рабочей области
 
@@ -349,7 +363,7 @@ az ml workspace update -w <workspace-name> -g <resource-group-name>
 }
 ```
 
-Дополнительные сведения см. в документации по команде [az ml workspace update](https://docs.microsoft.com/cli/azure/ext/azure-cli-ml/ml/workspace?view=azure-cli-latest#ext-azure-cli-ml-az-ml-workspace-update).
+Дополнительные сведения см. в документации по команде [az ml workspace update](https://docs.microsoft.com/cli/azure/ext/azure-cli-ml/ml/workspace?view=azure-cli-latest&preserve-view=true#ext-azure-cli-ml-az-ml-workspace-update).
 
 ## <a name="share-a-workspace-with-another-user"></a>Использование рабочей области совместно с другим пользователем
 
@@ -361,7 +375,7 @@ az ml workspace share -w <workspace-name> -g <resource-group-name> --user <user>
 
 Дополнительные сведения об управлении доступом на основе ролей (RBAC) в Машинном обучении Azure см. в разделе [Управление пользователями и ролями](how-to-assign-roles.md).
 
-Дополнительные сведения см. в документации по команде [az ml workspace share](https://docs.microsoft.com/cli/azure/ext/azure-cli-ml/ml/workspace?view=azure-cli-latest#ext-azure-cli-ml-az-ml-workspace-share).
+Дополнительные сведения см. в документации по команде [az ml workspace share](https://docs.microsoft.com/cli/azure/ext/azure-cli-ml/ml/workspace?view=azure-cli-latest&preserve-view=true#ext-azure-cli-ml-az-ml-workspace-share).
 
 ## <a name="sync-keys-for-dependent-resources"></a>Ключи синхронизации для зависимых ресурсов
 
@@ -373,7 +387,7 @@ az ml workspace sync-keys -w <workspace-name> -g <resource-group-name>
 
 Дополнительные сведения об изменении ключей см. в разделе [Повторное создание ключей доступа к хранилищу](how-to-change-storage-access-key.md).
 
-Дополнительные сведения см. в документации по команде [az ml workspace sync-keys](https://docs.microsoft.com/cli/azure/ext/azure-cli-ml/ml/workspace?view=azure-cli-latest#ext-azure-cli-ml-az-ml-workspace-sync-keys).
+Дополнительные сведения см. в документации по команде [az ml workspace sync-keys](https://docs.microsoft.com/cli/azure/ext/azure-cli-ml/ml/workspace?view=azure-cli-latest&preserve-view=true#ext-azure-cli-ml-az-ml-workspace-sync-keys).
 
 ## <a name="delete-a-workspace"></a>Удаление рабочей области
 
@@ -392,7 +406,7 @@ az ml workspace delete -w <workspace-name> -g <resource-group-name>
 az group delete -g <resource-group-name>
 ```
 
-Дополнительные сведения см. в документации по команде [az ml workspace delete](https://docs.microsoft.com/cli/azure/ext/azure-cli-ml/ml/workspace?view=azure-cli-latest#ext-azure-cli-ml-az-ml-workspace-delete).
+Дополнительные сведения см. в документации по команде [az ml workspace delete](https://docs.microsoft.com/cli/azure/ext/azure-cli-ml/ml/workspace?view=azure-cli-latest&preserve-view=true#ext-azure-cli-ml-az-ml-workspace-delete).
 
 ## <a name="troubleshooting"></a>Устранение неполадок
 
@@ -413,4 +427,4 @@ az group delete -g <resource-group-name>
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Дополнительные сведения о расширении Azure CLI для машинного обучения см. в документации по [az ml](https://docs.microsoft.com/cli/azure/ext/azure-cli-ml/ml?view=azure-cli-latest).
+Дополнительные сведения о расширении Azure CLI для машинного обучения см. в документации по [az ml](https://docs.microsoft.com/cli/azure/ext/azure-cli-ml/ml?view=azure-cli-latest&preserve-view=true).

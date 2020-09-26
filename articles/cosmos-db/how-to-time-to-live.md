@@ -6,17 +6,19 @@ ms.service: cosmos-db
 ms.topic: how-to
 ms.date: 03/27/2020
 ms.author: anfeldma
-ms.custom: devx-track-javascript, devx-track-azurecli, devx-track-csharp
-ms.openlocfilehash: 75299ab83543b0f28f4cf8f02e41b692c32d19ed
-ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
+ms.custom: devx-track-js, devx-track-azurecli, devx-track-csharp
+ms.openlocfilehash: 5a310dca40b8f5fea074c0cd3c75751d62ccb8f5
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "88997274"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91297901"
 ---
 # <a name="configure-time-to-live-in-azure-cosmos-db"></a>Настройка срока жизни в Azure Cosmos DB
 
 В Azure Cosmos DB вы можете настроить срок жизни (TTL) на уровне контейнера или переопределить его на уровне элемента, когда он будет настроен для контейнера. Срок жизни для контейнера можно настроить с помощью портала Azure или пакетов SDK для конкретных языков. Переопределение срока жизни на уровне элемента можно настроить с использованием пакетов SDK.
+
+> Это содержимое связано с Azure Cosmos DB сроком жизни хранилища транзакций. Если вы ищете срок жизни хранилища аналитикал, который включает сценарии Ноетл HTAP с помощью [ссылки Azure синапсе](https://docs.microsoft.com/azure/cosmos-db/synapse-link), щелкните [здесь](https://docs.microsoft.com/azure/cosmos-db/analytical-store-introduction#analytical-ttl).
 
 ## <a name="enable-time-to-live-on-a-container-using-azure-portal"></a>Включение срока жизни для контейнера с помощью портала Azure
 

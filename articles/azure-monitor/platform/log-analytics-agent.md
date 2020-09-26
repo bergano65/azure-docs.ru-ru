@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 08/21/2020
-ms.openlocfilehash: 8a086830398555d962bb13d1d9b0fea3554f7924
-ms.sourcegitcommit: 3fc3457b5a6d5773323237f6a06ccfb6955bfb2d
+ms.openlocfilehash: 9f0a7b6f68c5a3adeb320fd18bec2f195a833dbf
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/11/2020
-ms.locfileid: "90032526"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91310005"
 ---
 # <a name="log-analytics-agent-overview"></a>Общие сведения об агенте Log Analytics
 Агент Log Analytics Azure собирает данные телеметрии с виртуальных машин Windows и Linux в любом облаке, локальных компьютерах, а также в тех, которые отслеживаются [System Center Operations Manager](/system-center/scom/) и отправляет собранные в log Analytics рабочую область в Azure Monitor. Агент Log Analytics также поддерживает аналитику и другие службы в Azure Monitor, такие как [Azure Monitor для виртуальных машин](../insights/vminsights-enable-overview.md), [Центр безопасности Azure](../../security-center/index.yml) и [Служба автоматизации Azure](../../automation/automation-intro.md). В этой статье приводятся подробные сведения о требованиях к агенту, системе и сети и методах развертывания.
@@ -59,7 +59,7 @@ ms.locfileid: "90032526"
 
 * Агенты Windows могут подключаться к четырем рабочим областям, даже если они подключены к группе управления System Center Operations Manager.
 * Агент Linux не поддерживает несколько сетевых интерфейсов и может подключаться только к одной рабочей области или группе управления.
-  
+
 
 ## <a name="security-limitations"></a>Ограничения безопасности
 
@@ -69,6 +69,8 @@ ms.locfileid: "90032526"
 ## <a name="installation-options"></a>Варианты установки
 
 Существует несколько методов установки агента Log Analytics и подключения компьютера к Azure Monitor в зависимости от ваших требований. В следующих разделах перечислены возможные методы для различных типов виртуальных машин.
+> [!NOTE]
+> Клонирование компьютера с уже настроенным агентом Log Analytics не поддерживается. Если агент уже связан с рабочей областью, это не будет работать для "золотых образов".
 
 ### <a name="azure-virtual-machine"></a>Виртуальная машина Azure
 

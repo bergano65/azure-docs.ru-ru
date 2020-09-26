@@ -9,14 +9,14 @@ ms.topic: how-to
 ms.reviewer: larryfr
 ms.author: aashishb
 author: aashishb
-ms.date: 07/16/2020
+ms.date: 09/24/2020
 ms.custom: contperfq4, tracking-python
-ms.openlocfilehash: 359c2a27099ca298076edc255b8c30e226af0a18
-ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
+ms.openlocfilehash: 07f5fef0103e674af1c5f73b3f09bdf759e592cb
+ms.sourcegitcommit: d95cab0514dd0956c13b9d64d98fdae2bc3569a0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "90882942"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91355981"
 ---
 # <a name="secure-an-azure-machine-learning-inferencing-environment-with-virtual-networks"></a>Обеспечение безопасности Машинное обучение Azure окружения с помощью виртуальных сетей
 
@@ -108,11 +108,24 @@ aks_target = ComputeTarget.create(workspace=ws,
 
 Когда завершится процесс создания, вы сможете выполнять анализ или оценку моделей в кластере AKS за виртуальной сетью. Дополнительные сведения см. в статье [о развертывании в Службе Azure Kubernetes](how-to-deploy-and-where.md).
 
-## <a name="private-aks-cluster"></a>Частный кластер AKS
+## <a name="secure-vnet-traffic"></a>Безопасный трафик виртуальной сети
+
+Существует два подхода к изоляции трафика от кластера AKS к виртуальной сети.
+
+* __Частный кластер AKS__. Этот подход использует частную связь Azure для создания частной конечной точки для кластера AKS в виртуальной сети.
+* __Внутренняя подсистема балансировки нагрузки AKS__. Этот подход настраивает балансировщик нагрузки для кластера на использование внутреннего IP-адреса в виртуальной сети.
+
+> [!WARNING]
+> Обе конфигурации — это разные способы достижения одной цели (защита трафика в кластере AKS в виртуальной сети). **Используйте один или другой, но не оба**.
+
+### <a name="private-aks-cluster"></a>Частный кластер AKS
 
 По умолчанию кластеры AKS имеют плоскость управления или сервер API с общедоступными IP-адресами. Вы можете настроить AKS для использования закрытой плоскости управления, создав частный кластер AKS. Дополнительные сведения см. [в статье Создание частного кластера службы Kubernetes Azure](../aks/private-clusters.md).
 
 После создания частного кластера AKS [Подключите кластер к виртуальной сети](how-to-create-attach-kubernetes.md) для использования с машинное обучение Azure.
+
+> [!IMPORTANT]
+> Прежде чем использовать AKS кластер с включенной частной связью с Машинное обучение Azure, необходимо открыть обращение в службу поддержки, чтобы включить эту функцию. Дополнительные сведения см. в статье [Управление квотами и их увеличение](how-to-manage-quotas.md#private-endpoint-and-private-dns-quota-increases).
 
 ## <a name="internal-aks-load-balancer"></a>Внутренняя подсистема балансировки нагрузки AKS
 
@@ -120,7 +133,7 @@ aks_target = ComputeTarget.create(workspace=ws,
 
 Частный балансировщик нагрузки включается путем настройки AKS для использования _внутренней подсистемы балансировки нагрузки_. 
 
-### <a name="network-contributor-role"></a>Роль "участник сети"
+#### <a name="network-contributor-role"></a>Роль "участник сети"
 
 > [!IMPORTANT]
 > Если вы создаете или подключаете кластер AKS, предоставив ранее созданную виртуальную сеть, необходимо предоставить субъекту-службе (SP) или управляемому удостоверению для кластера AKS роль " _участник сети_ " для группы ресурсов, содержащей виртуальную сеть. Это необходимо сделать, прежде чем пытаться изменить внутреннюю подсистему балансировки нагрузки на частный IP-адрес.
@@ -152,16 +165,17 @@ aks_target = ComputeTarget.create(workspace=ws,
     ```
 Дополнительные сведения об использовании внутреннего балансировщика нагрузки с AKS см. в разделе [Использование внутреннего балансировщика нагрузки со службой Azure Kubernetes](/azure/aks/internal-lb).
 
-### <a name="enable-private-load-balancer"></a>Включить частную подсистему балансировки нагрузки
+#### <a name="enable-private-load-balancer"></a>Включить частную подсистему балансировки нагрузки
 
 > [!IMPORTANT]
-> Невозможно включить частный IP-адрес при создании кластера службы Azure Kubernetes. Он должен быть включен в качестве обновления существующего кластера.
+> Вы не можете включить частный IP-адрес при создании кластера службы Kubernetes Azure в Машинное обучение Azure Studio. Вы можете создать его с внутренней подсистемой балансировки нагрузки при использовании пакета SDK для Python или расширения Azure CLI для машинного обучения.
 
-В следующем фрагменте кода показано, как __создать новый кластер AKS__, а затем обновить его для использования частного IP-адреса или внутреннего балансировщика нагрузки:
+В следующих примерах показано, как __создать новый кластер AKS с частным IP-или внутренней подсистемой балансировки нагрузки__ с помощью пакета SDK и CLI:
+
+# <a name="python"></a>[Python](#tab/python)
 
 ```python
 import azureml.core
-from azureml.core.compute.aks import AksUpdateConfiguration
 from azureml.core.compute import AksCompute, ComputeTarget
 
 # Verify that cluster does not exist already
@@ -175,7 +189,7 @@ except:
     # Subnet to use for AKS
     subnet_name = "default"
     # Create AKS configuration
-    prov_config = AksCompute.provisioning_configuration(location = "eastus2")
+    prov_config=AksCompute.provisioning_configuration(load_balancer_type="InternalLoadBalancer")
     # Set info for existing virtual network to create the cluster in
     prov_config.vnet_resourcegroup_name = "myvnetresourcegroup"
     prov_config.vnet_name = "myvnetname"
@@ -188,44 +202,21 @@ except:
     aks_target = ComputeTarget.create(workspace = ws, name = "myaks", provisioning_configuration = prov_config)
     # Wait for the operation to complete
     aks_target.wait_for_completion(show_output = True)
-    
-    # Update AKS configuration to use an internal load balancer
-    update_config = AksUpdateConfiguration(None, "InternalLoadBalancer", subnet_name)
-    aks_target.update(update_config)
-    # Wait for the operation to complete
-    aks_target.wait_for_completion(show_output = True)
 ```
 
-__Azure CLI__
+# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
 
-```azurecli-interactive
-az rest --method put --uri https://management.azure.com/subscriptions/<subscription-id>/resourceGroups/<resource-group>/providers/Microsoft.MachineLearningServices/workspaces/<workspace>/computes/<compute>?api-version=2018-11-19 --body @body.json
+```azurecli
+az ml computetarget create aks -n myaks --load-balancer-type InternalLoadBalancer
 ```
 
-Содержимое файла `body.json`, на которое ссылается команда, аналогично следующему документу JSON:
+Дополнительные сведения см. в справке по команде [AZ ML computetarget Create AKS](https://docs.microsoft.com/cli/azure/ext/azure-cli-ml/ml/computetarget/create?view=azure-cli-latest&preserve-view=true#ext-azure-cli-ml-az-ml-computetarget-create-aks) .
 
-```json
-{ 
-    "location": "<region>", 
-    "properties": { 
-        "resourceId": "/subscriptions/<subscription-id>/resourcegroups/<resource-group>/providers/Microsoft.ContainerService/managedClusters/<aks-resource-name>", 
-        "computeType": "AKS", 
-        "provisioningState": "Succeeded", 
-        "properties": { 
-            "loadBalancerType": "InternalLoadBalancer", 
-            "agentCount": <agent-count>, 
-            "agentVmSize": "vm-size", 
-            "clusterFqdn": "<cluster-fqdn>" 
-        } 
-    } 
-} 
-```
+---
 
-При __присоединении существующего кластера__ к рабочей области необходимо подождать, пока не будет выполнена операция присоединения для настройки балансировщика нагрузки.
+При __присоединении существующего кластера__ к рабочей области необходимо подождать, пока не будет выполнена операция присоединения для настройки балансировщика нагрузки. Сведения о присоединении кластера см. в разделе [Подключение существующего кластера AKS](how-to-create-attach-kubernetes.md).
 
-Сведения о присоединении кластера см. в разделе [Подключение существующего кластера AKS](how-to-create-attach-kubernetes.md).
-
-После присоединения существующего кластера можно обновить кластер, чтобы использовать частный IP-адрес.
+После присоединения существующего кластера можно обновить кластер, чтобы использовать внутренний балансировщик нагрузки или частный IP-адрес:
 
 ```python
 import azureml.core
@@ -260,7 +251,7 @@ aks_target.wait_for_completion(show_output = True)
     > [!IMPORTANT]
     > При включении делегирования используйте `Microsoft.ContainerInstance/containerGroups` в качестве значения __Делегировать подсеть службе__.
 
-2. Разверните модель с помощью [AciWebservice.deploy_configuration()](https://docs.microsoft.com/python/api/azureml-core/azureml.core.webservice.aci.aciwebservice?view=azure-ml-py#deploy-configuration-cpu-cores-none--memory-gb-none--tags-none--properties-none--description-none--location-none--auth-enabled-none--ssl-enabled-none--enable-app-insights-none--ssl-cert-pem-file-none--ssl-key-pem-file-none--ssl-cname-none--dns-name-label-none--primary-key-none--secondary-key-none--collect-model-data-none--cmk-vault-base-url-none--cmk-key-name-none--cmk-key-version-none--vnet-name-none--subnet-name-none-&preserve-view=true), используйте параметры `vnet_name` и `subnet_name`. Задайте для этих параметров имя виртуальной сети и подсеть, в которой включено делегирование.
+2. Разверните модель с помощью [AciWebservice.deploy_configuration()](https://docs.microsoft.com/python/api/azureml-core/azureml.core.webservice.aci.aciwebservice?view=azure-ml-py&preserve-view=true#deploy-configuration-cpu-cores-none--memory-gb-none--tags-none--properties-none--description-none--location-none--auth-enabled-none--ssl-enabled-none--enable-app-insights-none--ssl-cert-pem-file-none--ssl-key-pem-file-none--ssl-cname-none--dns-name-label-none--primary-key-none--secondary-key-none--collect-model-data-none--cmk-vault-base-url-none--cmk-key-name-none--cmk-key-version-none--vnet-name-none--subnet-name-none-&preserve-view=true), используйте параметры `vnet_name` и `subnet_name`. Задайте для этих параметров имя виртуальной сети и подсеть, в которой включено делегирование.
 
 
 ## <a name="next-steps"></a>Дальнейшие действия

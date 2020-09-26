@@ -1,6 +1,6 @@
 ---
 title: Преобразование данных с помощью скрипта U-SQL — Azure
-description: Узнайте, как обрабатывать и преобразовывать данные с помощью сценариев U-SQL в службе вычислений Azure Data Lake Analytics.
+description: Узнайте, как обрабатывать или преобразовывать данные, выполняя скрипты U-SQL в Azure Data Lake Analytics службы вычислений версии 1.
 services: data-factory
 documentationcenter: ''
 ms.assetid: e17c1255-62c2-4e2e-bb60-d25274903e80
@@ -13,12 +13,12 @@ ms.author: abnarain
 ms.custom: devx-track-csharp
 manager: anandsub
 robots: noindex
-ms.openlocfilehash: a4ae575984badb2b03f72a77aaf580012a1fc002
-ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
+ms.openlocfilehash: 17e5b5eaea90b5f67ad91f0b09a51b2f1aeffd68
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "88997138"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91322621"
 ---
 # <a name="transform-data-by-running-u-sql-scripts-on-azure-data-lake-analytics"></a>Преобразование данных с помощью сценариев U-SQL в Azure Data Lake Analytics 
 > [!div class="op_single_selector" title1="Выберите используемую версию службы "Фабрика данных":"]
@@ -212,7 +212,7 @@ if (linkedService.Properties.TypeProperties is AzureDataLakeStoreLinkedService |
 | linkedServiceName   | Ссылка на службу Azure Data Lake Analytics, зарегистрированную в качестве связанной службы в фабрике данных | Да                                      |
 | scriptPath          | Путь к папке, содержащей скрипт U-SQL В имени файла учитывается регистр. | Нет (если используется скрипт)                   |
 | scriptLinkedService | Связанная служба, которая связывает хранилище, содержащее скрипт, с фабрикой данных | Нет (если используется скрипт)                   |
-| скрипт              | Указание сценария непосредственно в строке вместо использования scriptPath и scriptLinkedService. Например: `"script": "CREATE DATABASE test"`. | Нет (при использовании scriptPath и scriptLinkedService) |
+| скрипт              | Указание сценария непосредственно в строке вместо использования scriptPath и scriptLinkedService. Например, так: `"script": "CREATE DATABASE test"`. | Нет (при использовании scriptPath и scriptLinkedService) |
 | degreeOfParallelism | Максимальное количество узлов, используемых одновременно для выполнения задания. | Нет                                       |
 | priority            | Определяет, какие задания из всех в очереди должны запускаться в первую очередь. Чем меньше число, тем выше приоритет. | Нет                                       |
 | параметры          | Параметры скрипта U-SQL          | Нет                                       |

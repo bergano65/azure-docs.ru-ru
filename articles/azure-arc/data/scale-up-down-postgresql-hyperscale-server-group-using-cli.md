@@ -9,12 +9,12 @@ ms.author: jeanyd
 ms.reviewer: mikeray
 ms.date: 09/22/2020
 ms.topic: how-to
-ms.openlocfilehash: b96f38d04fe3e3cb59fa75424ae588fe0e38f510
-ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
+ms.openlocfilehash: dc77b3c8bc357b63047d20afa9493bbaaff77113
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "90938078"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91285321"
 ---
 # <a name="scale-up-and-down-an-azure-database-for-postgresql-hyperscale-server-group-using-cli-azdata-or-kubectl"></a>Увеличение и уменьшение масштаба для группы горизонтального масштабирования базы данных Azure для PostgreSQL с помощью интерфейса командной строки (аздата или kubectl)
 
@@ -84,7 +84,7 @@ kubectl describe postgresql-12/<server group name> [-n <namespace name>]
 
 Параметры, которые вы собираетесь настроить, должны быть учтены в конфигурации, заданной для кластера Kubernetes. Убедитесь, что не заданы значения, которые кластеру Kubernetes не удастся удовлетворить. Это может привести к ошибкам или непредсказуемому поведению. Например, если после изменения конфигурации состояние группы серверов постоянно _обновляется_ , это может означать, что параметры, указанные ниже, задаются для тех значений, которые кластеру Kubernetes не соответствует. Если это так, отмените изменения или прочтите _troubleshooting_section.
 
-Предположим, что вы хотите увеличить масштаб определения группы серверов, чтобы:
+Например, предположим, что вы хотите увеличить масштаб определения группы серверов, чтобы:
 
 - Min Виртуальное ядро = 2
 - Max Виртуальное ядро = 4
@@ -94,6 +94,13 @@ kubectl describe postgresql-12/<server group name> [-n <namespace name>]
 Используйте один из следующих подходов:
 
 ### <a name="cli-with-azdata"></a>CLI с аздата
+
+```console
+azdata arc postgres server edit -n <name of your server group> --cores-request <# core-request>  --cores-limit <# core-limit>  --memory-request <# memory-request>Mi  --memory-limit <# memory-limit>Mi
+```
+
+> [!CAUTION]
+> Ниже приведен пример, демонстрирующий использование команды. Перед выполнением команды Edit убедитесь, что для параметров заданы значения, которые могут соблюдаться в кластере Kubernetes.
 
 ```console
 azdata arc postgres server edit -n <name of your server group> --cores-request 2  --cores-limit 4  --memory-request 512Mi  --memory-limit 1024Mi
@@ -116,6 +123,10 @@ kubectl edit postgresql-12/<server group name> [-n <namespace name>]
 
 Откроется редактор VI, где можно перемещаться и изменять конфигурацию. Используйте следующую команду, чтобы связать требуемый параметр с именем поля в спецификации:
 
+> [!CAUTION]
+> Ниже приведен пример, демонстрирующий, как можно изменить конфигурацию. Перед обновлением конфигурации убедитесь, что для параметров заданы значения, которые могут соблюдаться в кластере Kubernetes.
+
+Пример:
 - Min Виртуальное ядро = 2 — > счедулинг\дефаулт\ресаурцес\рекуестс\кпу
 - Max Виртуальное ядро = 4 — > счедулинг\дефаулт\ресаурцес\лимитс\кпу
 - Min memory = 512 МБ — > счедулинг\дефаулт\ресаурцес\рекуестс\кпу

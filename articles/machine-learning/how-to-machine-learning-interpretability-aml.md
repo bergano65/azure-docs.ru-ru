@@ -11,12 +11,12 @@ ms.reviewer: Luis.Quintanilla
 ms.date: 07/09/2020
 ms.topic: conceptual
 ms.custom: how-to, devx-track-python
-ms.openlocfilehash: dc07d2826d3c27fad1eee644da36cb7b4f85ea3c
-ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
+ms.openlocfilehash: c23522911bd0c8dc9726a62cced839a1c4be37a6
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "90897467"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91333840"
 ---
 # <a name="use-the-interpretability-package-to-explain-ml-models--predictions-in-python-preview"></a>Использование пакета интерпретации для объяснения моделей машинного обучения & прогнозах в Python (Предварительная версия)
 
@@ -42,10 +42,9 @@ ms.locfileid: "90897467"
 ## <a name="generate-feature-importance-value-on-your-personal-machine"></a>Создание значения важности функции на личном компьютере 
 В следующем примере показано, как использовать пакет интерпретации на персональном компьютере без обращения к службам Azure.
 
-1. Установка `azureml-interpret` и `azureml-contrib-interpret` пакеты.
+1. Установите пакет `azureml-interpret`.
     ```bash
     pip install azureml-interpret
-    pip install azureml-contrib-interpret
     ```
 
 2. Обучение образца модели в локальной записной книжке Jupyter.
@@ -86,7 +85,7 @@ ms.locfileid: "90897467"
                                  classes=classes)
     ```
 
-    или диспетчер конфигурации служб
+    или
 
     ```python
 
@@ -112,7 +111,7 @@ ms.locfileid: "90897467"
                                classes=classes)
     ```
 
-    или диспетчер конфигурации служб
+    или
 
     ```python
     from interpret.ext.blackbox import PFIExplainer
@@ -239,15 +238,14 @@ tabular_explainer = TabularExplainer(clf.steps[-1][1],
 * Используйте `ExplanationClient` в удаленном запуске, чтобы передать контекст интерпретации.
 * Скачайте контекст позже в локальной среде.
 
-1. Установка `azureml-interpret` и `azureml-contrib-interpret` пакеты.
+1. Установите пакет `azureml-interpret`.
     ```bash
     pip install azureml-interpret
-    pip install azureml-contrib-interpret
     ```
 1. Создайте сценарий обучения в локальной записной книжке Jupyter. Например, `train_explain.py`.
 
     ```python
-    from azureml.contrib.interpret.explanation.explanation_client import ExplanationClient
+    from azureml.interpret import ExplanationClient
     from azureml.core.run import Run
     from interpret.ext.blackbox import TabularExplainer
 
@@ -280,7 +278,7 @@ tabular_explainer = TabularExplainer(clf.steps[-1][1],
 1. Скачайте пояснение в локальной записной книжке Jupyter.
 
     ```python
-    from azureml.contrib.interpret.explanation.explanation_client import ExplanationClient
+    from azureml.interpret import ExplanationClient
     
     client = ExplanationClient.from_run(run)
     
@@ -332,29 +330,12 @@ tabular_explainer = TabularExplainer(clf.steps[-1][1],
 
 [![Графики панели мониторинга визуализации](./media/how-to-machine-learning-interpretability-aml/ice-plot.png)](./media/how-to-machine-learning-interpretability-aml/ice-plot.png#lightbox)
 
-> [!NOTE]
-> Перед запуском ядра Jupyter убедитесь, что вы включили расширения мини-приложений для панели мониторинга визуализации.
-
-* Записные книжки Jupyter
-
-    ```shell
-    jupyter nbextension install --py --sys-prefix azureml.contrib.interpret.visualize
-    jupyter nbextension enable --py --sys-prefix azureml.contrib.interpret.visualize
-    ```
-
-* JupyterLab
-
-    ```shell
-    jupyter labextension install @jupyter-widgets/jupyterlab-manager
-    jupyter labextension install microsoft-mli-widget
-    ```
-
 Чтобы загрузить панель мониторинга визуализации, используйте следующий код.
 
 ```python
 from interpret_community.widget import ExplanationDashboard
 
-ExplanationDashboard(global_explanation, model, dataset=x_test)
+ExplanationDashboard(global_explanation, model, datasetX=x_test)
 ```
 
 ### <a name="visualization-in-azure-machine-learning-studio"></a>Визуализация в Машинное обучение Azure Studio
@@ -370,7 +351,7 @@ ExplanationDashboard(global_explanation, model, dataset=x_test)
   1. Выберите конкретный эксперимент, чтобы просмотреть все запуски в этом эксперименте.
   1. Выберите выполнение, а затем на вкладке **пояснения** на панели мониторинга визуализации объяснение.
 
-   [![Важность локального компонента панели мониторинга визуализации](./media/how-to-machine-learning-interpretability-aml/amlstudio-experiments.png)](./media/how-to-machine-learning-interpretability-aml/amlstudio-experiments.png#lightbox)
+   [![Важность локального компонента панели мониторинга визуализации в AzureML Studio в экспериментах](./media/how-to-machine-learning-interpretability-aml/amlstudio-experiments.png)](./media/how-to-machine-learning-interpretability-aml/amlstudio-experiments.png#lightbox)
 
 * Панель « **модели** »
   1. Если вы зарегистрировали исходную модель, выполнив действия, описанные в разделе [Развертывание моделей с помощью машинное обучение Azure](https://docs.microsoft.com/azure/machine-learning/how-to-deploy-and-where), можно выбрать **модели** в левой области, чтобы просмотреть их.

@@ -9,12 +9,12 @@ ms.topic: how-to
 ms.service: azure-maps
 services: azure-maps
 manager: timlt
-ms.openlocfilehash: e445f26458d13d28dd4ef50c6c17d434554d9fd5
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.openlocfilehash: 5af7645db662a238099e013f84b0dc0fee2af62c
+ms.sourcegitcommit: d95cab0514dd0956c13b9d64d98fdae2bc3569a0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 09/25/2020
-ms.locfileid: "91311076"
+ms.locfileid: "91355862"
 ---
 # <a name="secure-a-daemon-application"></a>Защита управляющего приложения
 
@@ -122,7 +122,7 @@ ms.locfileid: "91311076"
 2. На вкладке **назначения ролей** **добавьте** назначение ролей. 
 
     > [!div class="mx-imgBorder"]
-    > ![Добавление назначения роли](./media/how-to-manage-authentication/add-role-assignment.png)
+    > ![На снимке экрана показаны назначений «рулон» с выбранным параметром Добавить.](./media/how-to-manage-authentication/add-role-assignment.png)
 
 3. Выберите встроенное определение роли Azure Maps, например **Azure Maps модуль чтения данных** или **участник данных Azure Maps**. В разделе **назначить доступ к**выберите **пользователь Azure AD, группа или субъект-служба** или управляемое удостоверение с назначенным пользователем управляемым удостоверением назначенная система **управляемого удостоверения**  /  **System assigned Managed identity**. Выберите участника. Затем нажмите кнопку **Save** (Сохранить).
 

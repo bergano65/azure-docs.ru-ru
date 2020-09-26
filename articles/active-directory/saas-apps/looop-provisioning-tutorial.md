@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: article
 ms.date: 09/19/2019
 ms.author: Zhchia
-ms.openlocfilehash: f8bec6b3065cc58f9589cfba0d6f494a9d065355
-ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
+ms.openlocfilehash: b81a0fc81478fb50c356a92371ece2e79ff417ab
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88549693"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91333568"
 ---
 # <a name="tutorial-configure-looop-for-automatic-user-provisioning"></a>Учебник. Настройка Луоп для автоматической подготовки пользователей
 
@@ -113,11 +113,11 @@ ms.locfileid: "88549693"
 
 3. Выберите вкладку **Подготовка**.
 
-    ![Вкладка "Подготовка"](common/provisioning.png)
+    ![Снимок экрана параметров управления с вызываемым параметром подготовки.](common/provisioning.png)
 
 4. Для параметра **Режим подготовки к работе** выберите значение **Automatic** (Автоматически).
 
-    ![Вкладка "Подготовка"](common/provisioning-automatic.png)
+    ![Снимок экрана: раскрывающийся список режима подготовки с вызываемым автоматическим параметром.](common/provisioning-automatic.png)
 
 5. В разделе **учетные данные администратора** введите `https://<organisation_domain>.looop.co/scim/v2` **URL-адрес клиента**. Например, `https://demo.looop.co/scim/v2`. Введите значение, полученное и сохраненное ранее из Луоп в **маркере секрета**. Щелкните **проверить подключение** , чтобы убедиться, что Azure AD может подключиться к луоп. Если подключение не выполняется, убедитесь, что у учетной записи Луоп есть разрешения администратора, и повторите попытку.
 
@@ -127,7 +127,7 @@ ms.locfileid: "88549693"
 
     ![Почтовое уведомление](common/provisioning-notification-email.png)
 
-7. Нажмите **Сохранить**.
+7. Выберите команду **Сохранить**.
 
 8. В разделе **сопоставления** выберите **синхронизировать Azure Active Directory пользователей с луоп**.
 

@@ -9,18 +9,18 @@ ms.author: jeanyd
 ms.reviewer: mikeray
 ms.date: 09/22/2020
 ms.topic: how-to
-ms.openlocfilehash: b166348031e9f72e8005e866a198855db9c01a9c
-ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
+ms.openlocfilehash: 4f89ace7130e95ba109edcf6becca1e15c8d32c1
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "90939209"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91273206"
 ---
 # <a name="configure-security-for-your-azure-arc-enabled-postgresql-hyperscale-server-group"></a>Настройка безопасности для группы PostgreSQL "масштабируемый сервер" в службе "Дуга Azure"
 
 В этом документе описаны различные аспекты, связанные с безопасностью группы серверов.
 - Шифрование при хранении
-- Управление пользователями
+- управление пользователями;
    - Общие перспективы
    - Изменение пароля администратора _postgres_
 
@@ -148,7 +148,7 @@ select * from mysecrets;
 
 В этом небольшом примере показано, как можно зашифровать неактивные данные (хранить зашифрованные данные) в PostgreSQL с помощью расширения postgres, `pgcrypto` а приложения могут использовать функции, предложенные `pgcrypto` для управления этими зашифрованными данными.
 
-## <a name="user-management"></a>Управление пользователями
+## <a name="user-management"></a>управление пользователями;
 ### <a name="general-perspectives"></a>Общие перспективы
 Вы можете использовать стандартный postgres способ создания пользователей или ролей. Однако при этом эти артефакты будут доступны только для роли координатора. На этапе предварительной версии эти пользователи и роли не смогут получить доступ к данным, которые распространяются за пределы узла координатора и рабочих узлов группы серверов. Причина в том, что в предварительной версии определение пользователя не реплицируется на рабочие узлы.
 
@@ -156,14 +156,66 @@ select * from mysecrets;
 В PostgreSQL для службы "Дуга Azure" включена стандартная postgres административный пользователь _postgres_ , для которого задается пароль при создании группы серверов.
 Общий формат команды для изменения пароля:
 ```console
-azdata arc postgres server edit --name <server group name> --admin-password <new password>
+azdata arc postgres server edit --name <server group name> --admin-password
 ```
-Для пароля будет задано значение переменной среды **сеанса**AZDATA_PASSWORD, если она существует. В противном случае пользователю будет предложено ввести значение.
-Чтобы проверить, существует ли переменная среды сеанса AZDATA_PASSWORD и какое значение она задается, выполните:
-```console
-printenv AZDATA_PASSWORD
-```
-Если вы хотите получить запрос на ввод нового пароля, вы можете удалить его значение.
+
+Где--Admin-Password — это логическое значение, связанное с присутствием значения в переменной среды **сеанса**AZDATA_PASSWORD.
+Если переменная среды **сеанса**AZDATA_PASSWORD существует и имеет значение, выполнение приведенной выше команды установит для пароля пользователя postgres значение этой переменной среды.
+
+Если переменная среды **сеанса**AZDATA_PASSWORD существует, но не имеет значения или переменная среды **сеанса**AZDATA_PASSWORD не существует, то при выполнении указанной выше команды пользователю будет предложено ввести пароль в интерактивном режиме.
+
+#### <a name="changing-the-password-of-the-postgres-administrative-user-in-an-interactive-way"></a>Изменение пароля пользователя postgres с помощью интерактивного способа:
+1. Удалите переменную среды **сеанса**AZDATA_PASSWORD или удалите ее значение
+2. Выполните приведенную ниже команду.
+   ```console
+   azdata arc postgres server edit --name <server group name> --admin-password
+   ```
+   Например.
+   ```console
+   azdata arc postgres server edit -n postgres01 --admin-password
+   ```
+   Вам будет предложено ввести пароль и подтвердить его:
+   ```console
+   Postgres Server password:
+   Confirm Postgres Server password:
+   ```
+   При обновлении пароля выходные данные команды показывают:
+   ```console
+   Updating password
+   Updating postgres01 in namespace `arc`
+   postgres01 is Ready
+   ```
+   
+#### <a name="changing-the-password-of-the-postgres-administrative-user-using-the-azdata_password-sessions-environment-variable"></a>Изменение пароля администратора postgres с помощью переменной среды **сеанса**AZDATA_PASSWORD:
+1. Задайте для переменной среды **сеанса**AZDATA_PASSWORD значение, которое вы хотите использовать для пароля.
+2. Выполните команду:
+   ```console
+   azdata arc postgres server edit --name <server group name> --admin-password
+   ```
+   Например.
+   ```console
+   azdata arc postgres server edit -n postgres01 --admin-password
+   ```
+   
+   При обновлении пароля выходные данные команды показывают:
+   ```console
+   Updating password
+   Updating postgres01 in namespace `arc`
+   postgres01 is Ready
+   ```
+
+> [!NOTE]
+> Чтобы проверить, существует ли переменная среды сеанса AZDATA_PASSWORD и какое значение она имеет, выполните:
+> - На клиенте Linux:
+> ```console
+> printenv AZDATA_PASSWORD
+> ```
+>
+> - В клиенте Windows с помощью PowerShell:
+> ```console
+> echo $env:AZDATA_PASSWORD
+> ```
+
 
 
 ## <a name="next-steps"></a>Дальнейшие действия

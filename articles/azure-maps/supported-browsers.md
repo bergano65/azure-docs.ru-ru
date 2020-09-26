@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.service: azure-maps
 services: azure-maps
 manager: cpendle
-ms.openlocfilehash: 73d875e32f4fcf22551cf6b0946e49c2f826e523
-ms.sourcegitcommit: 07166a1ff8bd23f5e1c49d4fd12badbca5ebd19c
+ms.openlocfilehash: 5b186901551e421ba365b97a6de6a55ff791e5e9
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90085031"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91310192"
 ---
 # <a name="web-sdk-supported-browsers"></a>Браузеры, поддерживаемые в веб-пакетах SDK
 
@@ -29,7 +29,7 @@ if (!atlas.isSupported()) {
 }
 ```
 
-## <a name="desktop"></a>Классические приложения
+## <a name="desktop"></a>Настольные
 
 Веб-пакет SDK Azure Maps поддерживает следующие браузеры для настольных систем:
 
@@ -72,12 +72,10 @@ if (!atlas.isSupported()) {
 </iframe>
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о веб-пакете SDK для Azure Maps:
 
-> [!div class="nextstepaction"]
-> [Элемент управления картой](how-to-use-map-control.md)
+[Элемент управления картой](how-to-use-map-control.md)
 
-> [!div class="nextstepaction"]
-> [Модуль служб](how-to-use-services-module.md)
+[Модуль служб](how-to-use-services-module.md)

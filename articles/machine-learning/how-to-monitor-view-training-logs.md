@@ -11,12 +11,12 @@ ms.subservice: core
 ms.date: 07/30/2020
 ms.topic: conceptual
 ms.custom: how-to
-ms.openlocfilehash: 6f557ac8476224cdb8414b2a45952d8f7d34513d
-ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
+ms.openlocfilehash: aa4b55cb0700a47d9235a1d526ef1b1678d6db8b
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "90905022"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91333823"
 ---
 # <a name="monitor-and-view-ml-run-logs-and-metrics"></a>Мониторинг и просмотр журналов и метрик выполнения машинного обучения
 
@@ -93,7 +93,7 @@ RunDetails(run).show()
 
 ## <a name="show-output-upon-completion"></a>Показывать выходные данные после завершения
 
-При использовании **ScriptRunConfig** можно указать ```run.wait_for_completion(show_output = True)```, чтобы узнать, когда обучение модели будет завершено. Флаг ```show_output``` предоставляет подробные выходные данные. Дополнительные сведения см. в разделе Скриптрунконфиг, [посвященном включению ведения журнала](how-to-track-experiments.md#scriptrunconfig-logs).
+При использовании **ScriptRunConfig** можно указать ```run.wait_for_completion(show_output = True)```, чтобы узнать, когда обучение модели будет завершено. Флаг ```show_output``` предоставляет подробные выходные данные. Дополнительные сведения см. в разделе Скриптрунконфиг, [посвященном включению ведения журнала](how-to-track-experiments.md#scriptrun-logs).
 
 <a id="queryrunmetrics"></a>
 ## <a name="query-run-metrics"></a>Запрос метрик выполнения

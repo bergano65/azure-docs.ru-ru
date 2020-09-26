@@ -1,6 +1,6 @@
 ---
 title: Руководство по настройке Salesforce Sandbox для автоматической подготовки пользователей с помощью Azure Active Directory | Документация Майкрософт
-description: Узнайте, как настроить единый вход Azure Active Directory в Salesforce Sandbox.
+description: Сведения о действиях, которые необходимо выполнить в Salesforce Sandbox и Azure AD, чтобы автоматически подготавливать и отзывать учетные записи пользователей из Azure AD в песочницу Salesforce.
 services: active-directory
 author: jeevansd
 manager: CelesteDG
@@ -10,12 +10,12 @@ ms.workload: identity
 ms.topic: article
 ms.date: 01/26/2018
 ms.author: jeedes
-ms.openlocfilehash: 5fa40e954c84d4d2d70974bc799a198c6bf7d3e9
-ms.sourcegitcommit: bdd5c76457b0f0504f4f679a316b959dcfabf1ef
+ms.openlocfilehash: ae8bc3ce5822b8d49db0fdc6e611badd75b0d27b
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "90979758"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91273319"
 ---
 # <a name="tutorial-configure-salesforce-sandbox-for-automatic-user-provisioning"></a>Руководство по настройке Salesforce Sandbox для автоматической подготовки пользователей
 
@@ -67,7 +67,7 @@ ms.locfileid: "90979758"
 
 1. В разделе **Учетные данные администратора** укажите следующие параметры конфигурации.
    
-    a. В текстовом поле **Имя администратора** введите имя учетной записи Salesforce Sandbox с профилем **системного администратора** в Salesforce.com.
+    а. В текстовом поле **Имя администратора** введите имя учетной записи Salesforce Sandbox с профилем **системного администратора** в Salesforce.com.
    
     b. В текстовом поле **Пароль администратора** введите пароль для этой учетной записи.
 

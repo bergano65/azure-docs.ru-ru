@@ -9,12 +9,12 @@ ms.author: twright
 ms.reviewer: mikeray
 ms.date: 09/22/2020
 ms.topic: conceptual
-ms.openlocfilehash: 44c1c1860cbea20a7a00da5a396e4d82d79efd8b
-ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
+ms.openlocfilehash: 4364ed916e2b2783ab09f9d61ae63197d001ad42
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "90940006"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91273187"
 ---
 # <a name="connectivity-modes-and-requirements"></a>Режимы и требования к подключениям
 
@@ -43,7 +43,7 @@ ms.locfileid: "90940006"
 
 ## <a name="feature-availability-by-connectivity-mode"></a>Доступность функций по режиму подключения
 
-|**Компонент**|**Косвенное соединение**|**Подключено напрямую**|
+|**Возможность**|**Косвенное соединение**|**Подключено напрямую**|
 |---|---|---|
 |**Автоматическое обеспечение высокого уровня доступности**|Поддерживается|Поддерживается|
 |**Самостоятельная подготовка**|Поддерживается<br/>Создание можно выполнить с помощью Azure Data Studio, интерфейса командной строки Azure или собственных средств Kubernetes (Helm, kubectl, OC и т. д.) или с помощью службы Arc Azure, поддерживающей Kubernetes Гитопс.|Поддерживается<br/>В дополнение к параметрам создания в режиме косвенного подключения можно также создать с помощью портал Azure, Azure Resource Manager API, Azure CLI или шаблонов ARM. **Ожидание доступности непосредственно подключенного режима**
@@ -80,12 +80,13 @@ ms.locfileid: "90940006"
 
 В настоящее время на этапе предварительной версии поддерживается только непрямо подключенный режим.  В этом режиме для служб, доступных в Интернете, требуется только три подключения.  Все подключения по протоколу HTTPS к Azure и реестр контейнеров Майкрософт шифруются с помощью SSL/TLS с помощью официально подписанных и проверяемых сертификатов.
 
-|**имя**;|**Источник подключения**|**Цель подключения**|**Протокол**|**порт**.|**Может использовать прокси-сервер**|**Аутентификация**|**Примечания**|
+|**Имя**|**Источник подключения**|**Цель подключения**|**Протокол**|**порт**.|**Может использовать прокси-сервер**|**Аутентификация**|**Примечания**|
 |---|---|---|---|---|---|---|---|
-|**Реестр контейнеров (Майкрософт) (мкр)**|Kubernetes kubelet на каждом из узлов Kubernetes извлекает образы контейнеров.|`mcr.microsoft.com`|HTTPS|443|Да|Нет|В реестре контейнеров Майкрософт размещаются образы контейнеров служб данных, включенные в службу "Дуга Azure".  Вы можете извлечь эти образы из мкр и отправить их в частный реестр контейнеров и настроить процесс развертывания контроллера данных на извлечение образов контейнеров из этого закрытого реестра контейнеров.|
+|**Реестр контейнеров (Майкрософт) (мкр)**|Kubernetes kubelet на каждом из узлов Kubernetes извлекает образы контейнеров.|`mcr.microsoft.com`|HTTPS|443|Да|None|В реестре контейнеров Майкрософт размещаются образы контейнеров служб данных, включенные в службу "Дуга Azure".  Вы можете извлечь эти образы из мкр и отправить их в частный реестр контейнеров и настроить процесс развертывания контроллера данных на извлечение образов контейнеров из этого закрытого реестра контейнеров.|
 |**Azure Resource Manager API**|Компьютер, на котором работает Azure Data Studio, Azure Data CLI или Azure CLI, который подключается к Azure.|`login.microsoftonline.com`<br/>`management.azure.com`<br/>`san-af-eastus-prod.azurewebsites.net`<br/>`san-af-eastus2-prod.azurewebsites.net`<br/>`san-af-australiaeast-prod.azurewebsites.net`<br/>`san-af-centralus-prod.azurewebsites.net`<br/>`san-af-westus2-prod.azurewebsites.net`<br/>`san-af-westeurope-prod.azurewebsites.net`<br/>`san-af-southeastasia-prod.azurewebsites.net`<br/>`san-af-koreacentral-prod.azurewebsites.net`<br/>`san-af-northeurope-prod.azurewebsites.net`<br/>`san-af-westeurope-prod.azurewebsites.net`<br/>`san-af-uksouth-prod.azurewebsites.net`<br/>`san-af-francecentral-prod.azurewebsites.net`|HTTPS|443|Да|Azure Active Directory|Azure Data Studio, интерфейс командной строки Azure и Azure CLI подключаются к Azure Resource Manager API для отправки и извлечения данных в Azure и обратно для некоторых функций.|
 |**Azure Monitor API**|Компьютер, на котором выполняется интерфейс командной строки Azure Data CLI или Azure CLI, который отправляет метрики мониторинга или журналы в Azure Monitor.|`login.microsoftonline.com`<br/>`management.azure.com`<br/>`*.ods.opinsights.azure.com`<br/>`*.oms.opinsights.azure.com`<br/>`*.monitoring.azure.com`|HTTPS|443|Да|Azure Active Directory|Azure Data Studio, интерфейс командной строки Azure и Azure CLI подключаются к Azure Resource Manager API для отправки и извлечения данных в Azure и обратно для некоторых функций.|
 
-> **Примечание.** Сейчас все подключения в браузере HTTPS/443 к панелям мониторинга Grafana и Kibana и из интерфейса командной строки Azure для API контроллера данных являются SSL-шифрованием с помощью самозаверяющих сертификатов.  В будущем будет доступна функция, которая позволит вам предоставлять собственные сертификаты для шифрования этих SSL-подключений.
+> [!NOTE]
+> Сейчас все подключения в браузере HTTPS/443 к панелям мониторинга Grafana и Kibana и из интерфейса командной строки Azure для API контроллера данных являются SSL-шифрованием с помощью самозаверяющих сертификатов.  В будущем будет доступна функция, которая позволит вам предоставлять собственные сертификаты для шифрования этих SSL-подключений.
 
 Подключение из Azure Data Studio и CLI данных Azure к серверу API Kubernetes использует установленную проверку подлинности и шифрование Kubernetes.  Каждый пользователь, использующий Azure Data Studio и CLI данных Azure, должен иметь проверенное подключение к API Kubernetes для выполнения многих действий, связанных со службами данных, включенными в службу Arc Azure.

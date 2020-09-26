@@ -1,17 +1,17 @@
 ---
 title: Выходная привязка хранилища BLOB-объектов Azure для функций Azure
-description: Узнайте, как предоставить данные хранилища BLOB-объектов Azure функции Azure.
+description: Узнайте, как предоставить данные выходной привязки хранилища BLOB-объектов Azure функции Azure.
 author: craigshoemaker
 ms.topic: reference
 ms.date: 02/13/2020
 ms.author: cshoe
 ms.custom: devx-track-csharp, devx-track-python
-ms.openlocfilehash: 9596e6a6fd32994f782125c9bd4b8ca6d5a94b03
-ms.sourcegitcommit: 4913da04fd0f3cf7710ec08d0c1867b62c2effe7
+ms.openlocfilehash: 56d8078347b5de775b30c8db2c9412598070046c
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88213058"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91285372"
 ---
 # <a name="azure-blob-storage-output-binding-for-azure-functions"></a>Выходная привязка хранилища BLOB-объектов Azure для функций Azure
 
@@ -357,7 +357,7 @@ public static void Run(
 |**name** | Недоступно | Имя переменной, представляющей большой двоичный объект в коде функции.  Задайте значение `$return`, ссылающееся на возвращаемое значение функции.|
 |**путь** |**BlobPath** | Путь к контейнеру больших двоичных объектов. |
 |**connection**; |**Соединение**| Имя параметра приложения, содержащего строку подключения к службе хранилища, используемой для этой привязки. Если имя параметра приложения начинается с AzureWebJobs, можно указать только остальную часть имени. Например, если задать для `connection` значение MyStorage, среда выполнения службы "Функции" будет искать параметр приложения с именем AzureWebJobsMyStorage. Если оставить строку `connection` пустой, среда выполнения службы "Функции" будет использовать строку подключения к службе хранилища по умолчанию для параметра приложения с именем `AzureWebJobsStorage`.<br><br>Строка подключения необходима для учетной записи хранения общего назначения, а не [учетной записи хранения только для больших двоичных объектов](../storage/common/storage-account-overview.md#types-of-storage-accounts).|
-|н/д | **Доступ** | Указывает, какая операция будет выполняться (запись или чтение). |
+|Н/Д | **Доступ** | Указывает, какая операция будет выполняться (запись или чтение). |
 
 [!INCLUDE [app settings to local.settings.json](../../includes/functions-app-settings-local.md)]
 
@@ -392,7 +392,7 @@ public static void Run(
 
 ## <a name="exceptions-and-return-codes"></a>Исключения и коды возврата
 
-| Привязка |  Ссылка |
+| Привязка |  Справочник |
 |---|---|
 | BLOB-объект | [Коды ошибок больших двоичных объектов](/rest/api/storageservices/fileservices/blob-service-error-codes) |
 | Большой двоичный объект, таблица, очередь |  [Коды ошибок хранилища](/rest/api/storageservices/fileservices/common-rest-api-error-codes) |

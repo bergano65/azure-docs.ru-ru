@@ -17,12 +17,12 @@ ms.date: 05/18/2020
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 28fc05be7a5b54713aec8c4f830eeb2f7e6a251c
-ms.sourcegitcommit: f8d2ae6f91be1ab0bc91ee45c379811905185d07
+ms.openlocfilehash: a1efafd353bea20ea1ada0b5e92a9e6df00deb78
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89662332"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91273606"
 ---
 # <a name="azure-ad-connect-accounts-and-permissions"></a>Azure AD Connect выполняет следующие функции: Учетные записи и разрешения
 
@@ -115,7 +115,7 @@ Azure AD Connect использует 3 учетные записи, чтобы 
 
 Ниже приведена сводная информация о страницах мастера выборочной установки, собираемых учетных данных и их области использования.
 
-![Экспресс-установка](./media/reference-connect-accounts-permissions/customize.png)
+![Снимок экрана, на котором показаны страницы мастера пользовательской установки.](./media/reference-connect-accounts-permissions/customize.png)
 
 | Страница мастера | Собираемые учетные данные | Необходимые разрешения | Область использования |
 | --- | --- | --- | --- |
@@ -208,7 +208,7 @@ Azure AD Connect использует 3 учетные записи, чтобы 
 #### <a name="virtual-service-account"></a>Учетная запись виртуальной службы
 Учетная запись виртуальной службы — особый тип учетной записи, которая не имеет пароля и управляется ОС Windows.
 
-![VSA](./media/reference-connect-accounts-permissions/aadsyncvsa.png)
+![Снимок экрана, на котором показана учетная запись виртуальной службы (VSA).](./media/reference-connect-accounts-permissions/aadsyncvsa.png)
 
 Учетная запись VSA предназначена для использования в сценариях, когда модуль синхронизации и SQL находятся на одном сервере. Если используется удаленный сервер SQL, то вместо нее рекомендуется использовать групповую управляемую учетную запись службы.
 
@@ -241,7 +241,7 @@ Azure AD Connect использует 3 учетные записи, чтобы 
 ### <a name="azure-ad-connector-account"></a>Учетная запись соединителя Azure AD
 Создается учетная запись в Azure AD для использования службой синхронизации. Эту учетную запись можно определить по ее отображаемому имени.
 
-![Учетная запись AD](./media/reference-connect-accounts-permissions/aadsyncserviceaccount2.png)
+![Снимок экрана, на котором показана учетная запись Azure AD.](./media/reference-connect-accounts-permissions/aadsyncserviceaccount2.png)
 
 Имя сервера, на котором используется учетная запись, можно определить по второй части имени пользователя. На этом рисунке серверу присвоено имя DC1. При наличии промежуточных серверов каждый из них имеет собственную учетную запись.
 

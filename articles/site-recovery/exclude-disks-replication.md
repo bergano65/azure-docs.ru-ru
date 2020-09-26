@@ -3,12 +3,12 @@ title: Исключение дисков из репликации с помощ
 description: Как исключить диски из репликации в Azure с помощью Azure Site Recovery.
 ms.topic: conceptual
 ms.date: 12/17/2019
-ms.openlocfilehash: 778bb030d9768c5fbe1cb8aeba0becfc68c00629
-ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
+ms.openlocfilehash: 15989fbfd65f758eb777c5170c217aba8707e0be
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2020
-ms.locfileid: "86245404"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91333670"
 ---
 # <a name="exclude-disks-from-disaster-recovery"></a>Исключение дисков из аварийного восстановления
 
@@ -207,7 +207,7 @@ DB-Disk3 | Диск 3 | F:\ | Пользовательские данные 2
 
 Ниже приведены параметры файла подкачки на исходной виртуальной машине.
 
-![Параметры файла подкачки на исходной виртуальной машине](./media/exclude-disks-replication/pagefile-d-drive-source-vm.png)
+![Снимок экрана: диалоговое окно виртуальной памяти с выделенной строкой D: диск [файл подкачки] с размером файла подкачки (МБ), равным 3000-7000.](./media/exclude-disks-replication/pagefile-d-drive-source-vm.png)
 
 1. Мы включили репликацию для виртуальной машины.
 2. Мы исключили диск DB-Disk1 из репликации.
@@ -260,7 +260,7 @@ DB-Disk3 | Диск 3 | F:\ | Пользовательские данные 2
 
 Ниже приведены параметры файла подкачки на виртуальной машине Azure.
 
-![Параметры файла подкачки на виртуальной машине Azure](./media/exclude-disks-replication/pagefile-azure-vm-after-failover-2.png)
+![Снимок экрана: диалоговое окно виртуальной памяти с выделенной строкой диска C:, показывающая параметр размера файла подкачки "управляется системой".](./media/exclude-disks-replication/pagefile-azure-vm-after-failover-2.png)
 
 
 ## <a name="next-steps"></a>Дальнейшие действия

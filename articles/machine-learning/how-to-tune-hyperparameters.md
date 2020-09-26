@@ -11,12 +11,12 @@ ms.subservice: core
 ms.date: 03/30/2020
 ms.topic: conceptual
 ms.custom: how-to, devx-track-python
-ms.openlocfilehash: 04942c745548903a5f8092bc5b04ea2152029726
-ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
+ms.openlocfilehash: 44616d5d90f9c5c3a4f3abf8b8cf2128dc4f0585
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "90885927"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91333806"
 ---
 # <a name="tune-hyperparameters-for-your-model-with-azure-machine-learning"></a>Настройка параметров для модели с помощью Машинное обучение Azure
 
@@ -167,7 +167,7 @@ primary_metric_goal=PrimaryMetricGoal.MAXIMIZE
 
 Запуски оптимизируются для максимизации точности.  Не забудьте, что это значение нужно сохранять в скрипте обучения.
 
-### <a name="specify-primary-metric"></a><a name="log-metrics-for-hyperparameter-tuning"></a> Укажите основную метрику
+### <a name="log-metrics-for-hyperparameter-tuning"></a><a name="log-metrics-for-hyperparameter-tuning"></a>Ведение журнала метрик для настройки гиперпараметров
 
 Скрипт обучения для модели должен сохранять значения соответствующих метрик в процессе обучения модели. В конфигурации для настройки гиперпараметров вы указываете основную метрику, по которой будет оцениваться производительность выполнения. (См. раздел [Указание основной метрики для оптимизации](#specify-primary-metric-to-optimize).)  В сценарии обучения необходимо зарегистрировать эту метрику, чтобы она была доступна процессу настройки параметров.
 
@@ -194,7 +194,7 @@ run_logger.log("accuracy", float(val_accuracy))
 
 ### <a name="bandit-policy"></a>Политика Bandit
 
-[Бандит](https://docs.microsoft.com/python/api/azureml-train-core/azureml.train.hyperdrive.banditpolicy?view=azure-ml-py#&preserve-view=truedefinition) — это политика завершения, основанная на значении коэффициента резервного времени и времени временного резерва и интервале оценки. Эта политика досрочно завершает все запуски, где основная метрика не находится в пределах указанного коэффициента или количества резерва времени в отношении учебного запуска с самой высокой эффективностью. Эта политика принимает следующие параметры конфигурации:
+[Бандит](https://docs.microsoft.com/python/api/azureml-train-core/azureml.train.hyperdrive.banditpolicy?view=azure-ml-py&preserve-view=true#&preserve-view=truedefinition) — это политика завершения, основанная на значении коэффициента резервного времени и времени временного резерва и интервале оценки. Эта политика досрочно завершает все запуски, где основная метрика не находится в пределах указанного коэффициента или количества резерва времени в отношении учебного запуска с самой высокой эффективностью. Эта политика принимает следующие параметры конфигурации:
 
 * `slack_factor` или `slack_amount`: резерв времени, допустимый в отношении обучающего прогона с самой высокой эффективностью. `slack_factor` задает допустимый резерв времени как коэффициент. `slack_amount` указывает допустимый резерв времени как абсолютную величину, а не коэффициент.
 
@@ -285,29 +285,29 @@ max_concurrent_runs=4
 
 ## <a name="configure-experiment"></a>Настройка эксперимента
 
-[Настройте эксперимент настройки параметров](https://docs.microsoft.com/python/api/azureml-train-core/azureml.train.hyperdrive.hyperdriverunconfig?view=azure-ml-py&preserve-view=true) с помощью определенного пространства поиска параметров, политики раннего завершения, основной метрики и выделения ресурсов из приведенных выше разделов. Также нужно предоставить средство оценки (`estimator`), которое будет вызываться с отобранными гиперпараметрами. `estimator` описывает выполняемый сценарий обучения, ресурсы на каждое задание (один или несколько GPU) и целевой объект вычисления. Так как параллелизм для эксперимента по настройке гиперпараметров ограничивается объемом доступных ресурсов, обеспечьте в целевом объекте вычисления, который вы указали в `estimator`, достаточное количество ресурсов для желаемого уровня параллелизма. (Дополнительные сведения об инструментах оценки см. в статье [Как обучать модели машинного обучения с помощью Машинного обучения Azure](how-to-train-ml-models.md)).
+[Настройте эксперимент настройки параметров](https://docs.microsoft.com/python/api/azureml-train-core/azureml.train.hyperdrive.hyperdriverunconfig?view=azure-ml-py&preserve-view=true) с помощью определенного пространства поиска параметров, политики раннего завершения, основной метрики и выделения ресурсов из приведенных выше разделов. Кроме того, укажите Скриптрунконфиг `src` для запуска, который будет вызываться с помощью образцов параметров. Скриптрунконфиг определяет обучающий сценарий для выполнения, ресурсы на задание (один или несколько узлов) и целевой объект вычислений для использования. Так как параллелизм для вашего эксперимента по настройке параметров настраивается на доступ к доступным ресурсам, убедитесь, что целевой объект вычислений, указанный в, `src` имеет достаточно ресурсов для требуемого параллелизма. (Дополнительные сведения о Скриптрунконфиг см. в разделе [Настройка обучающих запусков](how-to-set-up-training-targets.md).)
 
 Конфигурация эксперимента по настройке гиперпараметров:
 
 ```Python
 from azureml.train.hyperdrive import HyperDriveConfig
-hyperdrive_run_config = HyperDriveConfig(estimator=estimator,
-                          hyperparameter_sampling=param_sampling, 
-                          policy=early_termination_policy,
-                          primary_metric_name="accuracy", 
-                          primary_metric_goal=PrimaryMetricGoal.MAXIMIZE,
-                          max_total_runs=100,
-                          max_concurrent_runs=4)
+hd_config = HyperDriveConfig(run_config=src,
+                             hyperparameter_sampling=param_sampling,
+                             policy=early_termination_policy,
+                             primary_metric_name="accuracy",
+                             primary_metric_goal=PrimaryMetricGoal.MAXIMIZE,
+                             max_total_runs=100,
+                             max_concurrent_runs=4)
 ```
 
 ## <a name="submit-experiment"></a>Отправка эксперимента
 
-Определив конфигурацию настройки параметров, [отправьте эксперимент](https://docs.microsoft.com/python/api/azureml-core/azureml.core.experiment%28class%29?view=azure-ml-py#&preserve-view=truesubmit-config--tags-none----kwargs-):
+Определив конфигурацию настройки параметров, [отправьте эксперимент](https://docs.microsoft.com/python/api/azureml-core/azureml.core.experiment%28class%29?view=azure-ml-py&preserve-view=true#&preserve-view=truesubmit-config--tags-none----kwargs-):
 
 ```Python
 from azureml.core.experiment import Experiment
 experiment = Experiment(workspace, experiment_name)
-hyperdrive_run = experiment.submit(hyperdrive_run_config)
+hyperdrive_run = experiment.submit(hd_config)
 ```
 
 `experiment_name` — Это имя, которое назначается эксперименту настройки параметров и `workspace` является рабочей областью, в которой вы хотите создать эксперимент (Дополнительные сведения о экспериментах см. в разделе [как работает машинное обучение Azure?](concept-azure-machine-learning-architecture.md))
@@ -341,15 +341,15 @@ child_runs_to_resume = [resume_child_run_1, resume_child_run_2]
 ```Python
 from azureml.train.hyperdrive import HyperDriveConfig
 
-hyperdrive_run_config = HyperDriveConfig(estimator=estimator,
-                          hyperparameter_sampling=param_sampling, 
-                          policy=early_termination_policy,
-                          resume_from=warmstart_parents_to_resume_from, 
-                          resume_child_runs=child_runs_to_resume,
-                          primary_metric_name="accuracy", 
-                          primary_metric_goal=PrimaryMetricGoal.MAXIMIZE,
-                          max_total_runs=100,
-                          max_concurrent_runs=4)
+hd_config = HyperDriveConfig(run_config=src,
+                             hyperparameter_sampling=param_sampling,
+                             policy=early_termination_policy,
+                             resume_from=warmstart_parents_to_resume_from,
+                             resume_child_runs=child_runs_to_resume,
+                             primary_metric_name="accuracy",
+                             primary_metric_goal=PrimaryMetricGoal.MAXIMIZE,
+                             max_total_runs=100,
+                             max_concurrent_runs=4)
 ```
 
 ## <a name="visualize-experiment"></a>Визуализация эксперимента
@@ -377,7 +377,7 @@ RunDetails(hyperdrive_run).show()
 
 ## <a name="find-the-best-model"></a>Поиск наиболее эффективной модели
 
-После завершения настройки параметров, [выполнив настройку, найдите наиболее подходящую конфигурацию](/python/api/azureml-train-core/azureml.train.hyperdrive.hyperdriverun?view=azure-ml-py#&preserve-view=trueget-best-run-by-primary-metric-include-failed-true--include-canceled-true--include-resume-from-runs-true-----typing-union-azureml-core-run-run--nonetype-) и соответствующие значения параметров.
+После завершения настройки параметров, [выполнив настройку, найдите наиболее подходящую конфигурацию](/python/api/azureml-train-core/azureml.train.hyperdrive.hyperdriverun?view=azure-ml-py&preserve-view=true#&preserve-view=trueget-best-run-by-primary-metric-include-failed-true--include-canceled-true--include-resume-from-runs-true-----typing-union-azureml-core-run-run--nonetype-) и соответствующие значения параметров.
 
 ```Python
 best_run = hyperdrive_run.get_best_run_by_primary_metric()
@@ -393,7 +393,7 @@ print('\n batch size:',parameter_values[7])
 
 ## <a name="sample-notebook"></a>Пример записной книжки
 См. Дополнительные сведения в записных книжках в этой папке:
-* [how-to-use-azureml/training-with-deep-learning](https://github.com/Azure/MachineLearningNotebooks/tree/master/how-to-use-azureml/training-with-deep-learning)
+* [how-to-use-azureml/ml-frameworks](https://github.com/Azure/MachineLearningNotebooks/tree/master/how-to-use-azureml/ml-frameworks)
 
 [!INCLUDE [aml-clone-in-azure-notebook](../../includes/aml-clone-for-examples.md)]
 
