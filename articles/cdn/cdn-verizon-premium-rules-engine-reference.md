@@ -7,12 +7,12 @@ ms.service: azure-cdn
 ms.topic: article
 ms.date: 05/26/2020
 ms.author: allensu
-ms.openlocfilehash: 75633521474ec3bcbc35cea49ea7a2da6a271e01
-ms.sourcegitcommit: 64fc70f6c145e14d605db0c2a0f407b72401f5eb
+ms.openlocfilehash: 295bc0a20a547bf944f48af6711b18af34571b02
+ms.sourcegitcommit: d95cab0514dd0956c13b9d64d98fdae2bc3569a0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "83872494"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91362586"
 ---
 # <a name="azure-cdn-from-verizon-premium-rules-engine-reference"></a>Справочник по обработчику правил Azure CDN Verizon Premium
 
@@ -41,7 +41,7 @@ ms.locfileid: "83872494"
 - Набор функций, определяющих, как CDN будет выполнять указанные выше запросы.
 Эти элементы показаны на следующем рисунке.
 
-![Рабочий процесс развертывания политики](./media/cdn-verizon-premium-rules-engine-reference/verizon-rules-engine-reference.png)
+![Снимок экрана с метками показывает условное выражение, соответствие и функции правила.](./media/cdn-verizon-premium-rules-engine-reference/verizon-rules-engine-reference.png)
 
 ### <a name="policy"></a>Политика
 Политика, состоящая из набора правил только для чтения, позволяет:

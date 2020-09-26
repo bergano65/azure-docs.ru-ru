@@ -10,14 +10,14 @@ ms.reviewer: craigg
 ms.service: dms
 ms.workload: data-services
 ms.custom: seo-lt-2019
-ms.topic: article
+ms.topic: tutorial
 ms.date: 01/08/2020
-ms.openlocfilehash: 20ca7f1d9c8322fe9a4d5dd784768bdaaf7cd0d7
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
-ms.translationtype: MT
+ms.openlocfilehash: 12725c28c3e128317301bc51f9ce93f76021cc2b
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85314936"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91291373"
 ---
 # <a name="tutorial-migrate-rds-sql-server-to-azure-sql-database-or-an-azure-sql-managed-instance-online-using-dms"></a>Руководство по переносу SQL Server RDS в базу данных SQL Azure или Azure SQL Управляемый экземпляр Online с помощью DMS
 
@@ -30,7 +30,7 @@ ms.locfileid: "85314936"
 > * создание экземпляра Azure Database Migration Service;
 > * создание проекта миграции с помощью Azure Database Migration Service;
 > * выполнение миграции.
-> * мониторинг миграции.
+> * Мониторинг миграции.
 > * скачивание отчета о миграции.
 
 > [!NOTE]
@@ -209,7 +209,7 @@ ms.locfileid: "85314936"
     > [!NOTE]
     > Кроме того, вы можете выбрать **Создать только проект**, чтобы создать проект миграции для отложенного выполнения.
 
-6. Нажмите кнопку **Сохранить**.
+6. Щелкните **Сохранить**.
 
 7. Выберите **Создать и выполнить действие**, чтобы создать проект и выполнить действие миграции.
 
@@ -250,7 +250,7 @@ ms.locfileid: "85314936"
 
 4. Установите перечисленные ниже **расширенные параметры миграции по сети** и нажмите кнопку **Сохранить**.
 
-    | Параметр | Описание: |
+    | Параметр | Описание |
     | ------------- | ------------- |
     | **Максимальное число параллельно загружаемых таблиц** | Определяет, сколько таблиц служба DMS обрабатывает параллельно во время миграции. Значение по умолчанию — 5, но можно установить другое значение, которое будет оптимально соответствовать особым требованиям, определенным на этапе тестовых миграций (если такие проводились). |
     | **При усечении исходной таблицы** | Определяет, усекает ли служба DMS целевую таблицу во время миграции. Этот параметр может быть полезен, если таблицы усекаются во время миграции. |
@@ -292,7 +292,7 @@ ms.locfileid: "85314936"
 
     ![Состояние действия — завершено](media/tutorial-rds-sql-to-azure-sql-and-managed-instance/dms-activity-completed.png)
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Сведения об известных проблемах и ограничениях при выполнении оперативной миграции в Azure см. в статье [Известные проблемы и решения для оперативной миграции](known-issues-azure-sql-online.md).
 * Дополнительные сведения о Database Migration Service см. в статье [что такое Database Migration Service?](https://docs.microsoft.com/azure/dms/dms-overview).

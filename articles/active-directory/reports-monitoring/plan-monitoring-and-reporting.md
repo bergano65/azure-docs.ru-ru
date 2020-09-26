@@ -12,12 +12,12 @@ ms.date: 11/13/2018
 ms.author: baselden
 ms.reviewer: plenzke
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a75cc77b45d41d7fd63eadce34265ca54b663e14
-ms.sourcegitcommit: 3fc3457b5a6d5773323237f6a06ccfb6955bfb2d
+ms.openlocfilehash: cf8ceb308fbcc2156a6df43e0167f4cb544b2d3d
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/11/2020
-ms.locfileid: "90030996"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91331205"
 ---
 # <a name="plan-an-azure-active-directory-reporting-and-monitoring-deployment"></a>Планирование развертывания Azure Active Directory отчетов и мониторинга
 
@@ -91,7 +91,7 @@ ms.locfileid: "90030996"
 
 ## <a name="plan-an-azure-ad-reporting-and-monitoring-deployment"></a>Планирование развертывания отчетов и мониторинга Azure AD
 
-Отчеты и мониторинг используются для удовлетворения ваших бизнес-требований, получения ценных сведений о закономерностях использования, а t повышает уровень безопасности в организациях.
+Отчеты и мониторинг используются для удовлетворения бизнес-требований, получения подробных сведений о шаблонах использования и повышения безопасности вашей организации.
 
 ### <a name="business-use-cases"></a>Варианты использования для бизнеса
 
@@ -175,7 +175,7 @@ ms.locfileid: "90030996"
 
 [Анализ журналов действий Azure AD с помощью журналов Azure Monitor](./howto-analyze-activity-logs-log-analytics.md)
 
-* [Анализ схемы журналов аудита в Azure Monitor](./reference-azure-monitor-audit-log-schema.md)
+* [Interpret the Azure AD audit logs schema in Azure Monitor (preview)](./reference-azure-monitor-audit-log-schema.md) (Интерпретация схемы журналов аудита Azure Active Directory в Azure Monitor (предварительная версия))
 
 * [Анализ схемы журналов входа в Azure Monitor](./reference-azure-monitor-sign-ins-log-schema.md)
 

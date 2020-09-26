@@ -11,12 +11,12 @@ ms.topic: article
 ms.date: 01/10/2020
 ms.author: tdsp
 ms.custom: seodec18, previous-author=deguhath, previous-ms.author=deguhath
-ms.openlocfilehash: 047915874dfd81fdf68dc97ac217274b2439d726
-ms.sourcegitcommit: 0100d26b1cac3e55016724c30d59408ee052a9ab
+ms.openlocfilehash: d7c02e413fdaa54db431cdac7a3cf7af0bddeb98
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "86027483"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91331902"
 ---
 # <a name="the-team-data-science-process-in-action-using-sql-server"></a>Процесс обработки и анализа данных группы на практике: использование SQL Server
 В этом руководстве представлено пошаговое руководство по процессу создания и развертывания модели машинного обучения с помощью SQL Server и общедоступного набора данных [NYC Taxi Trips](https://www.andresmh.com/nyctaxitrips/). Процедура соответствует стандартному рабочему процессу обработки и аналитики данных: прием и анализ данных, разработка функций для упрощения обучения, а затем сборка и развертывание модели.
@@ -83,7 +83,7 @@ ms.locfileid: "86027483"
 Чтобы настроить среду научной обработки данных в Azure, выполните следующие действия.
 
 1. [создать учетную запись хранения;](../../storage/common/storage-account-create.md)
-2. [Создание рабочей области машинного обучения Azure](../studio/create-workspace.md)
+2. [Создание рабочей области машинного обучения Azure](../classic/create-workspace.md)
 3. [Подготовьте виртуальную машину для обработки и анализа данных](../data-science-virtual-machine/setup-sql-server-virtual-machine.md), которая будет служить сервером SQL Server и сервером IPython Notebook.
    
    > [!NOTE]
@@ -175,8 +175,8 @@ ms.locfileid: "86027483"
 
 Быстрая проверка числа строк и столбцов в таблицах, заполненных ранее с помощью параллельного массового импорта:
 
-- Отчет число строк в таблице nyctaxi_trip без просмотра таблицы:`SELECT SUM(rows) FROM sys.partitions WHERE object_id = OBJECT_ID('nyctaxi_trip')`
-- Отчет число столбцов в nyctaxi_trip таблицы:`SELECT COUNT(*) FROM information_schema.columns WHERE table_name = 'nyctaxi_trip'`
+- Отчет число строк в таблице nyctaxi_trip без просмотра таблицы: `SELECT SUM(rows) FROM sys.partitions WHERE object_id = OBJECT_ID('nyctaxi_trip')`
+- Отчет число столбцов в nyctaxi_trip таблицы: `SELECT COUNT(*) FROM information_schema.columns WHERE table_name = 'nyctaxi_trip'`
 
 #### <a name="exploration-trip-distribution-by-medallion"></a>Просмотр: распределение поездок по параметру medallion
 В этом примере определяются медальоны (номера такси) с более чем 100 поездками за заданный период времени. Запрос будет использовать секционированный доступ к таблице, так как он обусловлен схемой секционирования **pickup\_datetime**. При запросе к полному набору данных также будет задействовано сканирование секционированной таблицы и/или индекса.
@@ -626,9 +626,9 @@ pd.read_sql(query,conn)
 3. Задача регрессии: Спрогнозировать сумму чаевых, выплаченных за поездку.  
 
 ## <a name="building-models-in-azure-machine-learning"></a><a name="mlmodel"></a>Построение моделей в машинном обучении Azure
-Чтобы начать упражнение по моделированию, войдите в рабочую область машинного обучения Azure. Если вы еще не создали рабочую область машинного обучения, см. статью [Создание рабочей области машинного обучения Azure и предоставление к ней общего доступа](../studio/create-workspace.md).
+Чтобы начать упражнение по моделированию, войдите в рабочую область машинного обучения Azure. Если вы еще не создали рабочую область машинного обучения, см. статью [Создание рабочей области машинного обучения Azure и предоставление к ней общего доступа](../classic/create-workspace.md).
 
-1. Чтобы приступить к работе с машинным обучением Azure, см. статью [Что такое студия машинного обучения Azure?](../studio/what-is-ml-studio.md)
+1. Чтобы приступить к работе с машинным обучением Azure, см. статью [Что такое студия машинного обучения Azure?](../overview-what-is-machine-learning-studio.md#ml-studio-classic-vs-azure-machine-learning-studio)
 2. Войдите в [Студию машинного обучения Azure](https://studio.azureml.net).
 3. На главной странице Студии содержится множество информации, видеороликов, учебников, ссылок на справочник модулей и другие ресурсы. Дополнительные сведения о Машинном обучении Azure см. в [центре документации по машинному обучению Azure](https://azure.microsoft.com/documentation/services/machine-learning/).
 
@@ -668,7 +668,7 @@ pd.read_sql(query,conn)
 > 
 
 ## <a name="deploying-models-in-azure-machine-learning"></a><a name="mldeploy"></a>Развертывание моделей в машинном обучении Azure
-Когда модель готова, ее можно легко развернуть в виде веб-службы непосредственно из эксперимента. Дополнительные сведения см. в статье [Развертывание веб-службы машинного обучения Azure](../studio/deploy-a-machine-learning-web-service.md).
+Когда модель готова, ее можно легко развернуть в виде веб-службы непосредственно из эксперимента. Дополнительные сведения см. в статье [Развертывание веб-службы машинного обучения Azure](../classic/deploy-a-machine-learning-web-service.md).
 
 Чтобы развернуть новую веб-службу, необходимо выполнить такие действия.
 
@@ -698,8 +698,8 @@ pd.read_sql(query,conn)
 
 ### <a name="references"></a>Ссылки
 •    [Страница Андреса Монройя для скачивания данных о поездках в такси Нью-Йорка](https://www.andresmh.com/nyctaxitrips/)  
-• [Данные о поездках в такси получение Нью от Крис whong)](https://chriswhong.com/open-data/foil_nyc_taxi/)   
-• [Исследование и статистика Нью такси и лимузинов](https://www1.nyc.gov/site/tlc/about/tlc-trip-record-data.page)
+•    [Данные о поездках в такси получение Нью от Крис whong)](https://chriswhong.com/open-data/foil_nyc_taxi/)   
+•    [Исследование и статистика Нью такси и лимузинов](https://www1.nyc.gov/site/tlc/about/tlc-trip-record-data.page)
 
 [1]: ./media/sql-walkthrough/sql-walkthrough_26_1.png
 [2]: ./media/sql-walkthrough/sql-walkthrough_28_1.png

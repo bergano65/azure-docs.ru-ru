@@ -4,12 +4,12 @@ description: Из этой статьи вы узнаете, как восста
 ms.topic: conceptual
 ms.date: 03/01/2019
 ms.custom: references_regions
-ms.openlocfilehash: fd68c33e4425d717837923b90119d42569a1f003
-ms.sourcegitcommit: 3fb5e772f8f4068cc6d91d9cde253065a7f265d6
+ms.openlocfilehash: 3f26f761b3d683be71f7f6d900d91dd432ceefc8
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89178526"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91292971"
 ---
 # <a name="recover-files-from-azure-virtual-machine-backup"></a>Восстановление файлов из резервной копии виртуальной машины Azure
 
@@ -303,16 +303,16 @@ mount [RAID Disk Path] [/mountpath]
 
 - `download.microsoft.com`
 - URL-адреса службы восстановления (географическое имя относится к региону, в котором находится хранилище служб восстановления)
-  - `https://pod01-rec2.geo-name.backup.windowsazure.com` (Для общедоступных регионов Azure)
-  - `https://pod01-rec2.geo-name.backup.windowsazure.cn` (Azure для Китая (21Vianet));
-  - `https://pod01-rec2.geo-name.backup.windowsazure.us` (Azure для государственных организаций США);
-  - `https://pod01-rec2.geo-name.backup.windowsazure.de` (Azure для Германии).
+  - `https://pod01-rec2.GEO-NAME.backup.windowsazure.com` (Для общедоступных регионов Azure)
+  - `https://pod01-rec2.GEO-NAME.backup.windowsazure.cn` (Azure для Китая (21Vianet));
+  - `https://pod01-rec2.GEO-NAME.backup.windowsazure.us` (Azure для государственных организаций США);
+  - `https://pod01-rec2.GEO-NAME.backup.windowsazure.de` (Azure для Германии).
 - Исходящие порты 53 (DNS), 443, 3260.
 
 > [!NOTE]
 >
-> - Имя скачанного файла скрипта будет содержать **географическое имя**, которое необходимо указать в URL-адресе. Например: имя скачанного скрипта начинается с \' VMname \' \_ \' геоимени \' _ \' GUID \' , например *ContosoVM_wcus_12345678*
-> - URL-адрес будет выглядеть так: <https://pod01-rec2.wcus.backup.windowsazure.com>".
+> Файл скрипта, скачанный на шаге 5 [выше](#mount-the-volume-and-copy-files) , будет содержать **географическое имя** в имени файла. Используйте это **географическое имя** для заполнения URL-адреса. Имя скачанного скрипта будет начинаться с: \' VMname \' \_ \' геоимя \' _ \' GUID \' .<br><br>
+> Например, если имя файла скрипта — *ContosoVM_wcus_12345678*, **географическое имя** — *вкус* , а URL-адрес будет выглядеть так:<br> <https://pod01-rec2.wcus.backup.windowsazure.com>
 >
 
 Для Linux сценарию требуются компоненты open-iscsi и lshw для подключения к точке восстановления. Если на компьютере, где выполняется скрипт, отсутствуют компоненты, скрипт запрашивает разрешение на их установку. Согласитесь на установку необходимых компонентов.
