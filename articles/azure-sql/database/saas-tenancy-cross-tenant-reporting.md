@@ -11,12 +11,12 @@ author: stevestein
 ms.author: sstein
 ms.reviewers: ''
 ms.date: 01/25/2019
-ms.openlocfilehash: fe4b25dfd8bf96d1ed6dab189543e0e1b810ecd8
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 3542bb502bbb0d41ff6a35902bc38262c26876de
+ms.sourcegitcommit: d95cab0514dd0956c13b9d64d98fdae2bc3569a0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84026935"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91361778"
 ---
 # <a name="cross-tenant-reporting-using-distributed-queries"></a>Отчеты по всем клиентам с использованием распределенных запросов
 [!INCLUDE[appliesto-sqldb](../includes/appliesto-sqldb.md)]
@@ -93,7 +93,7 @@ ms.locfileid: "84026935"
 
 1. В **обозревателе объектов** разверните узел **contosoconcerthall** > **Представления**:
 
-   ![узел "Представления"](./media/saas-tenancy-cross-tenant-reporting/views.png)
+   ![На снимке экрана показано содержимое узла views, включая четыре типа места проведения d b o.](./media/saas-tenancy-cross-tenant-reporting/views.png)
 
 2. Щелкните **dbo.Venues** правой кнопкой мыши.
 3. Выберите создать **скрипт для представления**"  >  **Создание в**  >  **новом окне редактора запросов** ".

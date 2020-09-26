@@ -16,12 +16,12 @@ ms.workload: infrastructure-services
 ms.date: 05/05/2017
 ms.author: radeltch
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: f43ba78bc9c48b003d4718945dc47b0a076a048f
-ms.sourcegitcommit: e995f770a0182a93c4e664e60c025e5ba66d6a45
+ms.openlocfilehash: 82b0b53b1933a7ca08163a12b2b7649b7b9538f4
+ms.sourcegitcommit: d95cab0514dd0956c13b9d64d98fdae2bc3569a0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86134540"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91361642"
 ---
 # <a name="utilize-azure-infrastructure-vm-restart-to-achieve-higher-availability-of-an-sap-system"></a>Использование перезапуска виртуальной машины в инфраструктуре Azure для косвенного повышения доступности системы SAP
 
@@ -210,7 +210,7 @@ ms.locfileid: "86134540"
 
 > Этот раздел касается:
 >
-> ![Windows][Logo_Windows] Windows и ![Linux][Logo_Linux] Linux
+> ![Эмблема Windows.][Logo_Windows] Windows и ![Логотип Linux.][Logo_Linux] Linux
 >
 
 Если вы решили не применять такие функции, как отказоустойчивый кластер Windows Server (WSFC) или Pacemaker в Linux (в настоящее время поддерживается только для SUSE Linux Enterprise Server (SLES) 12 или более поздней версии), используйте перезапуск виртуальной машины Azure. Это защищает системы SAP от запланированных и незапланированных простоев инфраструктуры физического сервера Azure и всей базовой платформы Azure.

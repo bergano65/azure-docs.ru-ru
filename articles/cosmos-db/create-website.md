@@ -6,12 +6,12 @@ ms.service: cosmos-db
 ms.topic: how-to
 ms.date: 06/19/2020
 ms.author: mjbrown
-ms.openlocfilehash: 5038d9968e37b956774d1c5f8abdb14865422e8b
-ms.sourcegitcommit: 0100d26b1cac3e55016724c30d59408ee052a9ab
+ms.openlocfilehash: 8e6a6d1c557a765e55152685f08e80ad54bbd903
+ms.sourcegitcommit: d95cab0514dd0956c13b9d64d98fdae2bc3569a0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "86027752"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91362016"
 ---
 # <a name="deploy-azure-cosmos-db-and-azure-app-service-with-a-web-app-from-github-using-an-azure-resource-manager-template"></a>Развертывание Azure Cosmos DB и службы приложений Azure с помощью веб-приложения из GitHub с использованием шаблона Azure Resource Manager
 
@@ -27,7 +27,7 @@ ms.locfileid: "86027752"
 
 Полученное развертывание имеет полностью функциональное веб-приложение, которое может подключаться к Azure Cosmos DB без необходимости вырезания и вставки URL-адреса конечной точки Azure Cosmos DB или ключей проверки подлинности из портал Azure.
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 > [!TIP]
 > Хотя это руководство не требует наличия опыта работы с шаблонами Azure Resource Manager или JSON, если возникнет необходимость изменить ссылки шаблонов или варианты развертывания, потребуются знания в каждой из этих областей.
@@ -98,7 +98,7 @@ ms.locfileid: "86027752"
 
 Сначала приложению необходимо запросить конечную точку и ключ Cosmos DB в `Startup` классе в веб-приложении MVC ASP.NET. [Пример Cosmos DB to do](https://github.com/Azure-Samples/cosmos-dotnet-core-todo-app) можно запустить локально, где можно ввести сведения о подключении в appsettings.js. Однако при развертывании этот файл развертывается вместе с приложением. Если эти линии красными не могут получить доступ к параметрам, указанным в appsettings.js, то будет предпринята попытка использовать параметры приложения в службе приложений Azure.
 
-:::image type="content" source="./media/create-website/startup.png" alt-text="Запуск":::
+:::image type="content" source="./media/create-website/startup.png" alt-text="На снимке экрана показан метод с несколькими строковыми переменными, отмеченными красным, включая databaseName, containerName, Account и Key.":::
 
 ### <a name="using-special-azure-resource-management-functions"></a>Использование специальных функций управления ресурсами Azure
 

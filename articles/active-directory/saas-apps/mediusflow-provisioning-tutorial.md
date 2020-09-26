@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: article
 ms.date: 04/30/2020
 ms.author: Zhchia
-ms.openlocfilehash: 03fa13e31724110e2b832cf490af325b8b570807
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.openlocfilehash: fae6c9f76f5c502d3a31c76330bd5b348d523e37
+ms.sourcegitcommit: d95cab0514dd0956c13b9d64d98fdae2bc3569a0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 09/25/2020
-ms.locfileid: "91312300"
+ms.locfileid: "91360622"
 ---
 # <a name="tutorial-configure-mediusflow-for-automatic-user-provisioning"></a>Руководство по Настройка MediusFlow для автоматической подготовки пользователей
 
@@ -143,7 +143,7 @@ https://success.mediusflow.com/documentation/administration_guide/user_login_and
 
 5. В разделе **Учетные данные администратора** введите в поле **URL-адрес арендатора** значение URL-адреса, полученное ранее. Введите значение секретного токена, полученное ранее на шаге **Секретный токен**. Щелкните **Проверить подключение**, чтобы убедиться, что Azure AD может подключиться к MediusFlow. Если установить подключение не удалось, убедитесь, что у учетной записи MediusFlow есть разрешения администратора, и повторите попытку.
 
-      ![Подготовка](./media/mediusflow-provisioning-tutorial/provisioning.png)
+      ![На снимке экрана отображается диалоговое окно учетные данные администратора, в котором можно ввести клиент U R и секретный маркер.](./media/mediusflow-provisioning-tutorial/provisioning.png)
 
 6. В поле **Электронная почта для уведомлений** введите адрес электронной почты пользователя или группы, которые должны получать уведомления об ошибках подготовки, а также установите флажок **Отправить уведомление по электронной почте при сбое**.
 

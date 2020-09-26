@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: article
 ms.date: 01/24/2020
 ms.author: Zhchia
-ms.openlocfilehash: bb010ea7262de4498d25250845eebaec8606c707
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.openlocfilehash: b45c7fcbc4e3c0eda4f2e8d3eb21a81428dee39d
+ms.sourcegitcommit: d95cab0514dd0956c13b9d64d98fdae2bc3569a0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 09/25/2020
-ms.locfileid: "91327992"
+ms.locfileid: "91361251"
 ---
 # <a name="tutorial-configure-zapier-for-automatic-user-provisioning"></a>Учебник. Настройка Zapier для автоматической подготовки пользователей
 
@@ -95,7 +95,7 @@ ms.locfileid: "91327992"
 
 5. В разделе **учетные данные администратора** введите **URL-адрес клиента** Zapier и **маркер секрета**. Щелкните **проверить подключение** , чтобы убедиться, что Azure AD может подключиться к Zapier. Если подключение не выполняется, убедитесь, что у учетной записи Zapier есть разрешения администратора, и повторите попытку.
 
-   ![Подготовка](./media/zapier-provisioning-tutorial/provisioning.png)
+   ![На снимке экрана отображается диалоговое окно учетные данные администратора, в котором можно ввести клиент U R и секретный маркер.](./media/zapier-provisioning-tutorial/provisioning.png)
 
 6. В поле **Почтовое уведомление** введите адрес электронной почты пользователя или группы, которые должны получать уведомления об ошибках подготовки, а также установите флажок **Отправить уведомление по электронной почте при сбое**.
 

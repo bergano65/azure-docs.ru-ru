@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: article
 ms.date: 05/15/2020
 ms.author: Zhchia
-ms.openlocfilehash: 41ffd7606cb4c01cd8c2da56898b67cf177c358e
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.openlocfilehash: 850db53cbf88968a413d72527d76463e17aa8f5d
+ms.sourcegitcommit: d95cab0514dd0956c13b9d64d98fdae2bc3569a0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 09/25/2020
-ms.locfileid: "91329182"
+ms.locfileid: "91361710"
 ---
 # <a name="tutorial-configure-8x8-for-automatic-user-provisioning"></a>Руководство по Настройка 8x8 для автоматической подготовки пользователей
 
@@ -104,7 +104,7 @@ ms.locfileid: "91329182"
 
 5. В разделе **Учетные данные администратора** скопируйте **URL-адрес 8x8** из Configuration Manager в поле **URL-адрес клиента**. Скопируйте **маркер API 8x8** из Configuration Manager в поле **Секретный маркер**. Щелкните **Проверить подключение**, чтобы убедиться, что Azure AD может подключиться к 8x8. Если установить подключение не удалось, убедитесь, что у учетной записи 8x8 есть разрешения администратора, и повторите попытку.
 
-    ![Подготовка](./media/8x8-provisioning-tutorial/provisioning.png)
+    ![На снимке экрана отображается диалоговое окно учетные данные администратора, в котором можно ввести клиент U R и секретный маркер.](./media/8x8-provisioning-tutorial/provisioning.png)
 
 6. В поле **Почтовое уведомление** введите адрес электронной почты пользователя или группы, которые должны получать уведомления об ошибках подготовки, а также установите флажок **Отправить уведомление по электронной почте при сбое**.
 

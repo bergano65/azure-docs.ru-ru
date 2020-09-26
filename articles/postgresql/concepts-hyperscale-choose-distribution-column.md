@@ -1,22 +1,22 @@
 ---
 title: Выбор столбцов распределения — масштабирование (Цитус) — база данных Azure для PostgreSQL
-description: Узнайте, как выбрать столбцы распределения в общих сценариях масштабирования в базе данных Azure для PostgreSQL.
+description: Узнайте, как выбрать столбцы распределения в типичных сценариях в базе данных Azure для PostgreSQL-Scale (Цитус).
 author: jonels-msft
 ms.author: jonels
 ms.service: postgresql
 ms.subservice: hyperscale-citus
 ms.topic: conceptual
 ms.date: 05/06/2019
-ms.openlocfilehash: 8ced9767d81affceef851820ee587f4f3dd24deb
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: f3c86f4b194e6d3935434b35cae958dfcf772986
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "74975675"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91314918"
 ---
 # <a name="choose-distribution-columns-in-azure-database-for-postgresql--hyperscale-citus"></a>Выбор столбцов распределения в базе данных Azure для PostgreSQL — масштабирование (Цитус)
 
-Выбор столбца распределения каждой таблицы является одним из наиболее важных решений моделирования, которые вы хотите внести. Служба "база данных Azure для PostgreSQL — масштабирование" (Цитус) хранит строки в сегментах на основе значения столбца распределения строк.
+Выбор столбца распределения каждой таблицы является одним из важнейших решений при моделировании, принимаемых вами. Служба "база данных Azure для PostgreSQL — масштабирование" (Цитус) хранит строки в сегментах на основе значения столбца распределения строк.
 
 Правильные группы выбора связывают данные на одних и тех же физических узлах, что делает запросы быстрыми и добавляет поддержку всех функций SQL. Неверный вариант заставляет систему работать медленно и не поддерживать все функции SQL на всех узлах.
 
@@ -74,5 +74,5 @@ ms.locfileid: "74975675"
 
 Прочтите [учебник по временным циклам](https://aka.ms/hyperscale-tutorial-timeseries) , чтобы получить пример того, как создать приложение такого типа.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 - Узнайте, как совместное [Размещение](concepts-hyperscale-colocation.md) между распределенными данными помогает быстро выполнять запросы.

@@ -9,16 +9,16 @@ author: peterclu
 ms.author: peterlu
 ms.custom: seodec18, previous-ms.author=yahajiza, previous-author=YasinMSFT, devx-track-csharp
 ms.date: 02/14/2019
-ms.openlocfilehash: dfc959984147d89ca5bfe68ed103a89b22f75501
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.openlocfilehash: 0064509c1158d8b016413046cb528bfd125b5f2f
+ms.sourcegitcommit: d95cab0514dd0956c13b9d64d98fdae2bc3569a0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 09/25/2020
-ms.locfileid: "91347187"
+ms.locfileid: "91362322"
 ---
 # <a name="retrain-and-deploy-a-classic-studio-classic-web-service"></a>Повторное обучение и развертывание классической веб-службы (классическая модель)
 
-**ПРИМЕНИМО К:** ![да](../../../includes/media/aml-applies-to-skus/yes.png)Студия машинного обучения (классическая) ![нет](../../../includes/media/aml-applies-to-skus/no.png)[Машинное обучение Azure](../compare-azure-ml-to-studio-classic.md)
+**применимо к:** ![ Зеленая галочка. ](../../../includes/media/aml-applies-to-skus/yes.png) Машинное обучение Studio (классическая модель) ![ X, указывающее на отсутствие.](../../../includes/media/aml-applies-to-skus/no.png)[машинное обучение Azure](../compare-azure-ml-to-studio-classic.md)  
 
 
 Повторное обучение моделей машинного обучения является одним из способов обеспечения точности и основывается на самых актуальных доступных данных. В этой статье показано, как переучить классическую веб-службу Studio (классической). Инструкции по переучению новой веб-службы Studio (классической) см [. в этой статье.](retrain-machine-learning-model.md)

@@ -9,12 +9,12 @@ ms.topic: conceptual
 author: luisquintanilla
 ms.author: luquinta
 ms.date: 08/06/2020
-ms.openlocfilehash: 3c2934c92be668d4b4c05f97a98395e2e219b7dc
-ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
+ms.openlocfilehash: a16a8432f61e39a3e36aeb748cabfa2c4b60d796
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "90907612"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91315360"
 ---
 # <a name="interactive-debugging-with-visual-studio-code"></a>Интерактивная Отладка с помощью Visual Studio Code
 
@@ -281,7 +281,7 @@ ip_address: 10.3.0.5
 В некоторых случаях может потребоваться интерактивная отладка кода Python, содержащегося в развертывании модели. Например, если начальный сценарий не работает и причину невозможно определить с помощью дополнительного ведения журнала. С помощью VS Code и дебугпи можно присоединяться к коду, выполняющемуся в контейнере DOCKER.
 
 > [!IMPORTANT]
-> Этот метод отладки не работает при использовании `Model.deploy()` и `LocalWebservice.deploy_configuration` для развертывания модели в локальной среде. В этом случае необходимо создать образ, используя метод [Model.package()](https://docs.microsoft.com/python/api/azureml-core/azureml.core.model.model?view=azure-ml-py#&preserve-view=truepackage-workspace--models--inference-config-none--generate-dockerfile-false-).
+> Этот метод отладки не работает при использовании `Model.deploy()` и `LocalWebservice.deploy_configuration` для развертывания модели в локальной среде. В этом случае необходимо создать образ, используя метод [Model.package()](https://docs.microsoft.com/python/api/azureml-core/azureml.core.model.model?view=azure-ml-py&preserve-view=true#&preserve-view=truepackage-workspace--models--inference-config-none--generate-dockerfile-false-).
 
 Для локальных развертываний веб-службы требуется рабочая установка Docker в локальной системе. Дополнительные сведения об использовании Docker см. в [соответствующей документации](https://docs.docker.com/). Обратите внимание, что при работе с экземплярами вычислений DOCKER уже установлен.
 
@@ -416,7 +416,7 @@ ip_address: 10.3.0.5
 
 На этом этапе VS Code подключается к дебугпи в контейнере DOCKER и останавливается в точке останова, заданной ранее. Теперь вы можете пошагово выполнять код, просматривать переменные и т. д.
 
-Дополнительные сведения об использовании VS Code для отладки Python см. на странице [Отладка кода Python](https://docs.microsoft.com/visualstudio/python/debugging-python-in-visual-studio?view=vs-2019).
+Дополнительные сведения об использовании VS Code для отладки Python см. на странице [Отладка кода Python](https://docs.microsoft.com/visualstudio/python/debugging-python-in-visual-studio?view=vs-2019&preserve-view=true).
 
 ### <a name="stop-the-container"></a>Остановка контейнера
 

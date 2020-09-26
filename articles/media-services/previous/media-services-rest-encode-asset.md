@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 03/20/2019
 ms.author: juliako
-ms.openlocfilehash: d2e7be89b3319445a69d5b91990e9888cccd484a
-ms.sourcegitcommit: bcda98171d6e81795e723e525f81e6235f044e52
+ms.openlocfilehash: b0bff0c6b3ef7934188b548bd06c35d83b323fde
+ms.sourcegitcommit: d95cab0514dd0956c13b9d64d98fdae2bc3569a0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/01/2020
-ms.locfileid: "89268627"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91359603"
 ---
 # <a name="how-to-encode-an-asset-by-using-media-encoder-standard"></a>Как закодировать ресурс с помощью Media Encoder Standard
 
@@ -101,7 +101,7 @@ HTTP/1.1 201 Created
 { "TaskBody" : "<?xml version=\"1.0\" encoding=\"utf-8\"?><taskBody><inputAsset>JobInputAsset(0)</inputAsset><outputAsset assetName=\"CustomOutputAssetName\">JobOutputAsset(0)</outputAsset></taskBody>"}`
 ```
 
-## <a name="considerations"></a>Рекомендации
+### <a name="considerations"></a>Рекомендации
 * Чтобы определить количество входных или выходных ресурсов, используемых задачей, в свойствах TaskBody необходимо использовать XML-литерал. В статье о задаче приведено определение схемы XML.
 * В определении TaskBody каждое внутреннее значение `<inputAsset>` и `<outputAsset>` необходимо установить как JobInputAsset(value) или JobOutputAsset(value).
 * В задаче может содержаться несколько выходных ресурсов. Значение JobOutputAsset(x) может использоваться только один раз в качестве выходных данных задачи в задании.
@@ -295,5 +295,5 @@ HTTP/1.1 201 Created
 ## <a name="next-steps"></a>Дальнейшие действия
 Теперь, когда вы узнали, как создать задание для кодирования ресурса, ознакомьтесь со статьей [Практическое руководство. Проверка хода выполнения задания](media-services-rest-check-job-progress.md).
 
-## <a name="see-also"></a>См. также
+## <a name="see-also"></a>См. также раздел
 [Получение обработчиков мультимедиа](media-services-rest-get-media-processor.md)

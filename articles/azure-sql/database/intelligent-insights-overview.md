@@ -9,14 +9,14 @@ ms.devlang: ''
 ms.topic: conceptual
 author: danimir
 ms.author: danil
-ms.reviewer: jrasnik, carlrab
+ms.reviewer: jrasnik, sstein
 ms.date: 06/12/2020
-ms.openlocfilehash: 96557a6049b316a69c32e96012206eab128e024a
-ms.sourcegitcommit: 93462ccb4dd178ec81115f50455fbad2fa1d79ce
+ms.openlocfilehash: 4f6bbbdbbee6cf83a6bea463cf200be0cf671897
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/06/2020
-ms.locfileid: "85986510"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91317061"
 ---
 # <a name="intelligent-insights-using-ai-to-monitor-and-troubleshoot-database-performance-preview"></a>Intelligent Insights использование искусственного интеллекта для отслеживания и устранения неполадок производительности базы данных (Предварительная версия)
 [!INCLUDE[appliesto-sqldb-sqlmi](../includes/appliesto-sqldb-sqlmi.md)]
@@ -49,7 +49,7 @@ Intelligent Insights анализирует производительность
 
 Выявленные снижения производительности базы данных записываются в журнал SQLInsights с помощью интеллектуальных записей, состоящих из следующих свойств:
 
-| Свойство. | Сведения |
+| Свойство | Подробности |
 | :------------------- | ------------------- |
 | сведения о базе данных; | Метаданные базы данных, для которой была обнаружена аналитика. Например, URI ресурса. |
 | Наблюдаемый диапазон времени | Время начала и окончания периода обнаруженной аналитики. |
@@ -185,7 +185,7 @@ Intelligent Insights неисправностей обнаружения и ус
 
 Если какое-либо из отслеживаемых критических исключений превышает абсолютное пороговое значение, управляемое системой, создается ценная аналитика, содержащая сведения о критическом исключении.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Узнайте, как [осуществлять мониторинг баз данных с помощью SQL Analytics](../../azure-monitor/insights/azure-sql.md).
 - Узнайте, как [устранять проблемы с производительностью Intelligent Insights](intelligent-insights-troubleshoot-performance.md).

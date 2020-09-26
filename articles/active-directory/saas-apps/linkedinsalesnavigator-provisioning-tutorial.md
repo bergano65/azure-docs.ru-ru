@@ -10,12 +10,12 @@ ms.workload: identity
 ms.topic: article
 ms.date: 03/28/2019
 ms.author: arvinh
-ms.openlocfilehash: ef87a1c7163825fcee8f4a27408719839d8a6d43
-ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
+ms.openlocfilehash: e908c8d19a4640995c536580b6584558212ada3e
+ms.sourcegitcommit: d95cab0514dd0956c13b9d64d98fdae2bc3569a0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88549710"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91361583"
 ---
 # <a name="tutorial-configure-linkedin-sales-navigator-for-automatic-user-provisioning"></a>Руководство по настройке LinkedIn Sales Navigator для автоматической подготовки пользователей
 
@@ -71,12 +71,12 @@ ms.locfileid: "88549710"
     > [!NOTE]
     > Если автоматическое назначение лицензии отключено, синхронизируются только данные пользователя.
 
-    ![Подготовка LinkedIn Sales Navigator](./media/linkedinsalesnavigator-provisioning-tutorial/linkedin_1.PNG)
+    ![На снимке экрана показаны глобальные параметры центра учетных записей LinkedIn.](./media/linkedinsalesnavigator-provisioning-tutorial/linkedin_1.PNG)
 
     > [!NOTE]
     > При автоматическом назначении лицензии необходимо отметить экземпляр приложения и тип лицензии. Лицензии назначаются по мере получения запросов до тех пор, пока все лицензии не будут заняты.
 
-    ![Подготовка LinkedIn Sales Navigator](./media/linkedinsalesnavigator-provisioning-tutorial/linkedin_2.PNG)
+    ![На снимке экрана показана страница настройки S C M.](./media/linkedinsalesnavigator-provisioning-tutorial/linkedin_2.PNG)
 
 5. Щелкните **Создать токен**. Токен доступа должен появиться в поле **Токен доступа**.
 
@@ -90,7 +90,7 @@ ms.locfileid: "88549710"
 
 10. Для параметра **Режим подготовки к работе** выберите значение **Automatic** (Автоматически).
 
-    ![Подготовка LinkedIn Sales Navigator](./media/linkedinsalesnavigator-provisioning-tutorial/linkedin_3.PNG)
+    ![На снимке экрана показана страница подготовки к повышению привилегий LinkedIn.](./media/linkedinsalesnavigator-provisioning-tutorial/linkedin_3.PNG)
 
 11. Заполните следующие поля в разделе **Учетные данные администратора**:
 
@@ -102,15 +102,15 @@ ms.locfileid: "88549710"
 
 12. В поле **Почтовое уведомление** введите адрес электронной почты пользователя или группы, которые должны получать уведомления об ошибках подготовки, а также установите флажок ниже.
 
-13. Нажмите **Сохранить**.
+13. Выберите команду **Сохранить**.
 
 14. В разделе **Сопоставления атрибутов** просмотрите атрибуты пользователей и групп, которые будут синхронизированы из Azure AD в LinkedIn Sales Navigator. Обратите внимание, что атрибуты, которые выбраны в качестве свойств **сопоставления**, будут использоваться для сопоставления учетных записей пользователей и групп для операций обновления в LinkedIn Sales Navigator. Нажмите кнопку "Сохранить", чтобы подтвердить все изменения.
 
-    ![Подготовка LinkedIn Sales Navigator](./media/linkedinsalesnavigator-provisioning-tutorial/linkedin_4.PNG)
+    ![На снимке экрана показаны сопоставления, включая сопоставления атрибутов.](./media/linkedinsalesnavigator-provisioning-tutorial/linkedin_4.PNG)
 
 15. Чтобы включить службу подготовки Azure AD для LinkedIn Sales Navigator, в разделе **Параметры** установите переключатель **Состояние подготовки** в положение **Включено**.
 
-16. Нажмите **Сохранить**.
+16. Выберите команду **Сохранить**.
 
 После этого будет запущена начальная синхронизация всех пользователей и групп, назначенных в разделе "Пользователи и группы" LinkedIn Sales Navigator. Обратите внимание, что начальная синхронизация будет занимать больше времени, чем последующие операции синхронизации. Если служба запущена, они выполняются примерно каждые 40 минут. В разделе **Сведения о синхронизации** можно отслеживать ход синхронизации и с помощью ссылок просматривать журналы действий, в которых описаны все действия, выполняемые службой подготовки в отношении приложения LinkedIn Sales Navigator.
 

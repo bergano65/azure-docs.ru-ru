@@ -6,13 +6,13 @@ ms.topic: conceptual
 description: Проверка и проверка изменений в запросе на вытягивание непосредственно в службе Kubernetes Azure с помощью действий GitHub и Azure Dev Spaces
 keywords: DOCKER, Kubernetes, Azure, AKS, служба Kubernetes Azure, контейнеры, действия GitHub, Helm, сеть службы, маршрутизация в сети службы, kubectl, K8S
 manager: gwallace
-ms.custom: devx-track-javascript
-ms.openlocfilehash: 5e3417f16791b71d53a0eec9263532219c779440
-ms.sourcegitcommit: 4913da04fd0f3cf7710ec08d0c1867b62c2effe7
+ms.custom: devx-track-js
+ms.openlocfilehash: 25cb0de10e83069514c7918a5a2cdac019fe1ebb
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88212496"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91316109"
 ---
 # <a name="github-actions--azure-kubernetes-service-preview"></a>Действия GitHub & службы Azure Kubernetes (Предварительная версия)
 
@@ -170,7 +170,7 @@ az group delete --name MyResourceGroup --yes --no-wait
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Дополнительные сведения о работе Azure Dev Spaces.
+Узнайте больше о принципах работы Azure Dev Spaces.
 
 > [!div class="nextstepaction"]
 > [Принцип работы Azure Dev Spaces](../how-dev-spaces-works.md)

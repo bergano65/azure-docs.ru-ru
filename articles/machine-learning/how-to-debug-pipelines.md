@@ -10,12 +10,12 @@ ms.author: laobri
 ms.date: 08/28/2020
 ms.topic: conceptual
 ms.custom: troubleshooting, devx-track-python
-ms.openlocfilehash: 616cdb1d0940ea6f64c3be3d687adaa9c2a98cc2
-ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
+ms.openlocfilehash: be68ad35deca754df70bb51e83929e73ff132ba6
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "90889966"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91315411"
 ---
 # <a name="debug-and-troubleshoot-machine-learning-pipelines"></a>Отладка и устранение неполадок в конвейерах машинного обучения
 
@@ -69,9 +69,9 @@ ms.locfileid: "90889966"
 
 В таблице ниже приведены сведения о различных параметрах отладки для конвейеров. Он не является исчерпывающим списком, так как существуют другие варианты, кроме только Машинное обучение Azure, Python и Опенценсус, показанных здесь.
 
-| Библиотека                    | Тип   | Пример                                                          | Назначение                                  | Ресурсы                                                                                                                                                                                                                                                                                                                    |
+| Библиотека                    | Тип   | Пример                                                          | Destination                                  | Ресурсы                                                                                                                                                                                                                                                                                                                    |
 |----------------------------|--------|------------------------------------------------------------------|----------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| пакет SDK для Машинного обучения Azure; | Метрика | `run.log(name, val)`                                             | Пользовательский интерфейс портала Машинное обучение Azure             | [Как отвести эксперименты](how-to-track-experiments.md)<br>[класс azureml. Core. Run](https://docs.microsoft.com/python/api/azureml-core/azureml.core.run(class)?view=experimental)                                                                                                                                                 |
+| пакет SDK для Машинного обучения Azure; | Метрика | `run.log(name, val)`                                             | Пользовательский интерфейс портала Машинное обучение Azure             | [Как отвести эксперименты](how-to-track-experiments.md)<br>[класс azureml. Core. Run](https://docs.microsoft.com/python/api/azureml-core/azureml.core.run%28class%29?view=azure-ml-py&preserve-view=true)                                                                                                                                                 |
 | Печать и ведение журнала Python    | Журнал    | `print(val)`<br>`logging.info(message)`                          | Журналы драйверов, конструктор Машинное обучение Azure | [Как отвести эксперименты](how-to-track-experiments.md)<br><br>[Ведение журнала Python](https://docs.python.org/2/library/logging.html)                                                                                                                                                                       |
 | Python для OpenCensus          | Журнал    | `logger.addHandler(AzureLogHandler())`<br>`logging.log(message)` | Application Insights трассировки                | [Отладка конвейеров в Application Insights](how-to-debug-pipelines-application-insights.md)<br><br>[Агенты OpenCensus Azure Monitor Exporter](https://github.com/census-instrumentation/opencensus-python/tree/master/contrib/opencensus-ext-azure)<br>[Cookbook ведения журнала Python](https://docs.python.org/3/howto/logging-cookbook.html) |
 

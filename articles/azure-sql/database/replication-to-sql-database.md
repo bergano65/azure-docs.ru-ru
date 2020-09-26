@@ -11,12 +11,12 @@ author: stevestein
 ms.author: sstein
 ms.reviewer: mathoma
 ms.date: 04/28/2020
-ms.openlocfilehash: 6f1eb48655c4e38e2cf0520409e5e2b38750baf5
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 079d187f66cf77585121198df06cabafc454fea1
+ms.sourcegitcommit: d95cab0514dd0956c13b9d64d98fdae2bc3569a0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84324153"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91362135"
 ---
 # <a name="replication-to-azure-sql-database"></a>Репликация в базу данных SQL Azure
 [!INCLUDE[appliesto-sqldb](../includes/appliesto-sqldb.md)]
@@ -52,18 +52,18 @@ ms.locfileid: "84324153"
 
 Существуют разные [типы репликации](https://docs.microsoft.com/sql/relational-databases/replication/types-of-replication).
 
-| Репликация | База данных SQL Azure | Управляемый экземпляр SQL Azure |
+| Replication | База данных SQL Azure | Управляемый экземпляр SQL Azure |
 | :----| :------------- | :--------------- |
 | [**Стандартная транзакционная**](https://docs.microsoft.com/sql/relational-databases/replication/transactional/transactional-replication) | Да (только в качестве подписчика) | Да | 
-| [**Снимок**](https://docs.microsoft.com/sql/relational-databases/replication/snapshot-replication) | Да (только в качестве подписчика) | Да|
+| [**Моментальный снимок**](https://docs.microsoft.com/sql/relational-databases/replication/snapshot-replication) | Да (только в качестве подписчика) | Да|
 | [**Репликация слиянием**](https://docs.microsoft.com/sql/relational-databases/replication/merge/merge-replication) | Нет | Нет|
-| [**Одноранговая**](https://docs.microsoft.com/sql/relational-databases/replication/transactional/peer-to-peer-transactional-replication) | Нет | Нет|
-| [**Двунаправленная**](https://docs.microsoft.com/sql/relational-databases/replication/transactional/bidirectional-transactional-replication) | Нет | Да|
+| [**Одноранговой**](https://docs.microsoft.com/sql/relational-databases/replication/transactional/peer-to-peer-transactional-replication) | Нет | Нет|
+| [**Двунаправленная репликация**](https://docs.microsoft.com/sql/relational-databases/replication/transactional/bidirectional-transactional-replication) | Нет | Да|
 | [**Обновляемые подписки**](https://docs.microsoft.com/sql/relational-databases/replication/transactional/updatable-subscriptions-for-transactional-replication) | Нет | Нет|
 | &nbsp; | &nbsp; | &nbsp; |
 
   
-## <a name="remarks"></a>Комментарии
+## <a name="remarks"></a>Remarks
 
 - В Базе данных SQL Azure поддерживаются только принудительные подписки.  
 - Репликацию можно настроить с помощью [SQL Server Management Studio](/sql/ssms/download-sql-server-management-studio-ssms) или путем выполнения инструкций Transact-SQL в издателе. Репликацию невозможно настроить с помощью портала Azure.  
@@ -78,7 +78,7 @@ ms.locfileid: "84324153"
 
 ## <a name="replication-architecture"></a>Архитектура репликации  
 
-![Репликация в Базу данных SQL](./media/replication-to-sql-database/replication-to-sql-database.png)  
+![На схеме показана архитектура репликации с базой данных SQL Azure, которая содержит несколько кластеров подписчиков в разных регионах, а также локальные виртуальные машины Azure, которые содержат издатель, исполняемый файл программу logread и исполняемые файлы распространителя, подключающиеся к удаленным кластерам.](./media/replication-to-sql-database/replication-to-sql-database.png)  
 
 ## <a name="scenarios"></a>Сценарии  
 

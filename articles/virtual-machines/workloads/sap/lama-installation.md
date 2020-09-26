@@ -14,12 +14,12 @@ ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure-services
 ms.date: 07/29/2019
 ms.author: sedusch
-ms.openlocfilehash: fda62ff0af29c7cf681d9438b02420d299535701
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 5e20863cd971a55142283676fe035d3238520ae1
+ms.sourcegitcommit: d95cab0514dd0956c13b9d64d98fdae2bc3569a0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "80293947"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91361370"
 ---
 # <a name="sap-lama-connector-for-azure"></a>Соединитель SAP LaMa для Azure
 
@@ -260,14 +260,14 @@ SAP LaMa не может перемещать сам SQL Server, поэтому 
 
 Перед запуском SAP Software Provisioning Manager (SWPM) вам необходимо подключить IP-адрес виртуального имени узла ASCS. Рекомендуется использовать sapacext. Если вы подключаете IP-адрес с помощью sapacext, после перезагрузки его нужно подключить заново.
 
-![Linux][Logo_Linux] Linux
+![Логотип Linux.][Logo_Linux] Linux
 
 ```bash
 # /usr/sap/hostctrl/exe/sapacext -a ifup -i <network interface> -h <virtual hostname or IP address> -n <subnet mask>
 /usr/sap/hostctrl/exe/sapacext -a ifup -i eth0 -h ah1-ascs -n 255.255.255.128
 ```
 
-![Windows][Logo_Windows] Windows
+![Эмблема Windows.][Logo_Windows] Windows
 
 ```bash
 # C:\Program Files\SAP\hostctrl\exe\sapacext.exe -a ifup -i <network interface> -h <virtual hostname or IP address> -n <subnet mask>
@@ -276,7 +276,7 @@ C:\Program Files\SAP\hostctrl\exe\sapacext.exe -a ifup -i "Ethernet 3" -h ah1-as
 
 Запустите SWPM и используйте *ah1-ascs* в качестве *имени узла экземпляра ASCS*.
 
-![Linux][Logo_Linux] Linux  
+![Логотип Linux.][Logo_Linux] Linux  
 Добавьте следующий параметр профиля в профиль агента узла SAP, расположенный в /usr/sap/hostctrl/exe/host_profile. Дополнительные сведения см. в примечании к SAP [2628497].
 ```
 acosprep/nfs_paths=/home/ah1adm,/usr/sap/trans,/sapmnt/AH1,/usr/sap/AH1
@@ -387,14 +387,14 @@ mkdir -p /usr/sap/trans
 
 Перед запуском SAP Software Provisioning Manager (SWPM) вам необходимо подключить IP-адрес имени виртуального узла сервера приложений. Рекомендуется использовать sapacext. Если вы подключаете IP-адрес с помощью sapacext, после перезагрузки его нужно подключить заново.
 
-![Linux][Logo_Linux] Linux
+![Логотип Linux.][Logo_Linux] Linux
 
 ```bash
 # /usr/sap/hostctrl/exe/sapacext -a ifup -i <network interface> -h <virtual hostname or IP address> -n <subnet mask>
 /usr/sap/hostctrl/exe/sapacext -a ifup -i eth0 -h ah1-di-0 -n 255.255.255.128
 ```
 
-![Windows][Logo_Windows] Windows
+![Эмблема Windows.][Logo_Windows] Windows
 
 ```bash
 # C:\Program Files\SAP\hostctrl\exe\sapacext.exe -a ifup -i <network interface> -h <virtual hostname or IP address> -n <subnet mask>
@@ -438,7 +438,7 @@ C:\Program Files\SAP\hostctrl\exe\sapacext.exe -a ifup -i "Ethernet 3" -h as1-as
 
 Запустите SWPM и используйте *as1-ascs* в качестве *имени узла экземпляра ASCS*.
 
-#### <a name="install-sql-server"></a>Установите SQL Server
+#### <a name="install-sql-server"></a>Установка SQL Server
 
 Необходимо добавить IP-адрес имени виртуального узла базы данных в сетевой интерфейс. Рекомендуется использовать sapacext. Если вы подключаете IP-адрес с помощью sapacext, после перезагрузки его нужно подключить заново.
 

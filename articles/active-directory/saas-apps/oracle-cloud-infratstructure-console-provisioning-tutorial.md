@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: article
 ms.date: 01/16/2020
 ms.author: Zhchia
-ms.openlocfilehash: 7efe58081604708ff090d28f7274c738406c5007
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.openlocfilehash: 665e4870619751bbda062473d0c2549b26352d94
+ms.sourcegitcommit: d95cab0514dd0956c13b9d64d98fdae2bc3569a0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 09/25/2020
-ms.locfileid: "91255929"
+ms.locfileid: "91361608"
 ---
 # <a name="tutorial-configure-oracle-cloud-infrastructure-console-for-automatic-user-provisioning"></a>Руководство. Настройка консоли облачной инфраструктуры Oracle для автоматической подготовки пользователей
 
@@ -108,7 +108,7 @@ ms.locfileid: "91255929"
 
 5. В разделе **учетные данные администратора** введите **URL-адрес клиента** в формате `https://<IdP ID>.identity.oraclecloud.com/admin/v1` . Например, `https://idcs-0bfd023ff2xx4a98a760fa2c31k92b1d.identity.oraclecloud.com/admin/v1`. Введите значение секретного токена, полученное ранее на шаге **Секретный токен**. Нажмите кнопку **проверить подключение** , чтобы убедиться, что Azure AD может подключиться к консоли облачной инфраструктуры Oracle. В случае сбоя подключения убедитесь, что учетная запись консоли облачной инфраструктуры Oracle имеет разрешения администратора, и повторите попытку.
 
-    ![Подготовка](./media/oracle-cloud-infratstructure-console-provisioning-tutorial/provisioning.png)
+    ![На снимке экрана отображается диалоговое окно учетные данные администратора, в котором можно ввести клиент U R и секретный маркер.](./media/oracle-cloud-infratstructure-console-provisioning-tutorial/provisioning.png)
 
 6. В поле **Почтовое уведомление** введите адрес электронной почты пользователя или группы, которые должны получать уведомления об ошибках подготовки, а также установите флажок **Отправить уведомление по электронной почте при сбое**.
 

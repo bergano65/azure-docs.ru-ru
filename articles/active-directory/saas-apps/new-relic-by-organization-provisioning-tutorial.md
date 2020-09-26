@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: article
 ms.date: 04/14/2020
 ms.author: Zhchia
-ms.openlocfilehash: 7031bc0398e77dc308f9c08180338975831b411e
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.openlocfilehash: c8934e1344ff2d7df97c3854f4e025f19fb37f1e
+ms.sourcegitcommit: d95cab0514dd0956c13b9d64d98fdae2bc3569a0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 09/25/2020
-ms.locfileid: "91321957"
+ms.locfileid: "91361625"
 ---
 # <a name="tutorial-configure-new-relic-by-organization-for-automatic-user-provisioning"></a>Руководство по настройке новых Relic по организации для автоматической подготовки пользователей
 
@@ -97,7 +97,7 @@ ms.locfileid: "91321957"
 
 5. В разделе **Учетные данные администратора** введите значение `https://scim-provisioning.service.newrelic.com/scim/v2` в поле "URL-адрес клиента". Введите значение маркера проверки подлинности SCIM, полученное ранее в **маркере секрета**. Нажмите кнопку **проверить подключение** , чтобы убедиться, что Azure AD может подключиться к новому Relic. В случае сбоя подключения убедитесь, что у новой учетной записи Relic есть разрешения администратора, и повторите попытку.
 
-    ![Подготовка](./media/new-relic-by-organization-provisioning-tutorial/provisioning.png)
+    ![На снимке экрана отображается диалоговое окно учетные данные администратора, в котором можно ввести клиент U R и секретный маркер.](./media/new-relic-by-organization-provisioning-tutorial/provisioning.png)
 
 6. В поле **Почтовое уведомление** введите адрес электронной почты пользователя или группы, которые должны получать уведомления об ошибках подготовки, а также установите флажок **Отправить уведомление по электронной почте при сбое**.
 

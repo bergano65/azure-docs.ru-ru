@@ -7,12 +7,12 @@ ms.service: postgresql
 ms.subservice: hyperscale-citus
 ms.topic: conceptual
 ms.date: 07/09/2020
-ms.openlocfilehash: de2579868ad72bdf4cf78c552e9553f289ecabd0
-ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
+ms.openlocfilehash: ed023f17e19c6a018f55cb95df6447c6e5474ce8
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2020
-ms.locfileid: "86259061"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91314884"
 ---
 # <a name="postgresql-extensions-in-azure-database-for-postgresql--hyperscale-citus"></a>Расширения PostgreSQL в базе данных Azure для PostgreSQL — масштабирование (Цитус)
 
@@ -74,7 +74,7 @@ PostgreSQL предоставляет возможность расширени�
 > | [тиметравел](https://www.postgresql.org/docs/current/contrib-spi.html#id-1.11.7.45.6) | Функции для реализации поездок по времени. |
 > | [uuid-ossp](https://www.postgresql.org/docs/current/static/uuid-ossp.html) | Создает глобально уникальные идентификаторы (UUID). |
 
-### <a name="hyperscale-extensions"></a>Расширения с масштабированием
+### <a name="hyperscale-citus-extensions"></a>Расширения с масштабированием (Цитус)
 
 > [!div class="mx-tableFixed"]
 > | **Расширение** | **Описание** |
