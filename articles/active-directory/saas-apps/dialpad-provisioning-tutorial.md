@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: article
 ms.date: 06/28/2019
 ms.author: zhchia
-ms.openlocfilehash: 86fedfc75d95ef8d864a50d2425e329cec3ec84f
-ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
+ms.openlocfilehash: dee9ca2879d456270cfed667b8a02a6e5c4f100b
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88536584"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91328077"
 ---
 # <a name="tutorial-configure-dialpad-for-automatic-user-provisioning"></a>Учебник. Настройка поднимая для автоматической подготовки пользователей
 
@@ -119,11 +119,11 @@ ms.locfileid: "88536584"
 
 3. Выберите вкладку **Подготовка**.
 
-    ![Вкладка "Подготовка"](common/provisioning.png)
+    ![Снимок экрана параметров управления с вызываемым параметром подготовки.](common/provisioning.png)
 
 4. Для параметра **Режим подготовки к работе** выберите значение **Automatic** (Автоматически).
 
-    ![Вкладка "Подготовка"](common/provisioning-automatic.png)
+    ![Снимок экрана: раскрывающийся список режима подготовки с вызываемым автоматическим параметром.](common/provisioning-automatic.png)
 
 5. В разделе **учетные данные администратора** введите `https://dialpad.com/scim` **URL-адрес клиента**. Введите значение, полученное и сохраненное ранее из поднимая в **маркере секрета**. Щелкните **проверить подключение** , чтобы убедиться, что Azure AD может подключиться к поднимая. Если подключение не выполняется, убедитесь, что у учетной записи поднимая есть разрешения администратора, и повторите попытку.
 
@@ -133,7 +133,7 @@ ms.locfileid: "88536584"
 
     ![Почтовое уведомление](common/provisioning-notification-email.png)
 
-7. Нажмите **Сохранить**.
+7. Выберите команду **Сохранить**.
 
 8. В разделе **сопоставления** выберите **синхронизировать Azure Active Directory пользователей с поднимая**.
 

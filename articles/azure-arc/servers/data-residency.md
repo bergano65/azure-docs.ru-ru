@@ -2,20 +2,20 @@
 title: Местонахождение данных
 description: Местонахождение данных и сведения о серверах с поддержкой Arc Azure.
 ms.topic: reference
-ms.date: 09/02/2020
+ms.date: 09/22/2020
 ms.custom: references_regions
-ms.openlocfilehash: 8b4b8171bd7133e52928a5227c488bd6234ce686
-ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
+ms.openlocfilehash: 73acb07b8caa3c1368c936463f04969c29d37985
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "90908130"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91327771"
 ---
 # <a name="azure-arc-enabled-servers-data-residency"></a>Серверы с поддержкой дуги Azure: местонахождение данных
 
 В этой статье объясняется понятие местонахождение данных и их применение к серверам с поддержкой ARC в Azure.
 
-Серверы с поддержкой Arc Azure **[доступны](https://azure.microsoft.com/global-infrastructure/services/?products=azure-arc)** в **США, Европе или Азиатско-Тихоокеанский регион**.
+Серверы с поддержкой Arc Azure **[доступны](https://azure.microsoft.com/global-infrastructure/services/?products=azure-arc)** в **США, Европе, Великобритании или Азиатско-Тихоокеанский регион**.
 
 ## <a name="data-residency"></a>Местонахождение данных
 

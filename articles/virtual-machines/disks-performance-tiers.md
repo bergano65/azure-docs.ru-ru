@@ -4,16 +4,16 @@ description: Сведения о уровнях производительнос
 author: roygara
 ms.service: virtual-machines
 ms.topic: how-to
-ms.date: 09/22/2020
+ms.date: 09/24/2020
 ms.author: rogarana
 ms.subservice: disks
 ms.custom: references_regions
-ms.openlocfilehash: aa188babf56d4a825059fe6103e2e07745eb134f
-ms.sourcegitcommit: bdd5c76457b0f0504f4f679a316b959dcfabf1ef
+ms.openlocfilehash: 3d6b243ab517f3663f779d01569acf3d46ad8411
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "90974132"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91328128"
 ---
 # <a name="performance-tiers-for-managed-disks-preview"></a>Уровни производительности для управляемых дисков (Предварительная версия)
 
@@ -21,7 +21,9 @@ ms.locfileid: "90974132"
 
 ## <a name="how-it-works"></a>Принцип работы
 
-При первом развертывании или подготовке диска базовый уровень производительности для этого диска задается в зависимости от размера подготовленного диска. Можно выбрать более высокий уровень производительности, чтобы удовлетворить более высокие требования, и если эта производительность больше не нужна, можно вернуться к исходному базовому уровню производительности. Например, если вы подготавливаете диск P10 (128 гиб), базовый уровень производительности задается как P10 (500 операций ввода-вывода в секунду и 100 МБ/с). Уровень можно обновить в соответствии с производительностью P50 (7500 операций ввода-вывода в секунду и 250 МБ/с) без увеличения размера диска и возврата в P10, если более высокая производительность больше не нужна.
+При первом развертывании или подготовке диска базовый уровень производительности для этого диска задается в зависимости от размера подготовленного диска. Можно выбрать более высокий уровень производительности, чтобы удовлетворить более высокие требования, и если эта производительность больше не нужна, можно вернуться к исходному базовому уровню производительности.
+
+Изменения в оплате по мере изменения уровня. Например, если вы подготавливаете диск P10 (128 гиб), базовый уровень производительности задается как P10 (500 операций ввода-вывода в секунду и 100 МБ/с), и счет будет взиматься по тарифу P10. Уровень можно обновить в соответствии с производительностью P50 (7500 операций ввода-вывода в секунду и 250 МБ/с) без увеличения размера диска, в течение которого будет взиматься плата по тарифу P50. Если более высокая производительность больше не нужна, вы можете вернуться на уровень P10, и на диск будет взиматься плата по тарифу P10.
 
 | Размер диска | Базовый уровень производительности | Можно обновить до |
 |----------------|-----|-------------------------------------|
@@ -35,75 +37,68 @@ ms.locfileid: "90974132"
 | 512 ГиБ | P20 | P30, P40, P50 |
 | 1 ТиБ | P30 | P40, P50 |
 | 2 ТиБ | P40 | P50 |
-| 4 ТиБ | P50 | Отсутствуют |
+| 4 ТиБ | P50 | None |
 | 8 ТиБ | P60 |  P70, P80 |
 | 16 ТиБ | P70 | P80 |
-| 32 ТиБ | P80 | Отсутствуют |
+| 32 ТиБ | P80 | None |
+
+Сведения о выставлении счетов см. в разделе [цены на управляемые диски](https://azure.microsoft.com/pricing/details/managed-disks/).
 
 ## <a name="restrictions"></a>Ограничения
 
 - Сейчас поддерживается только для твердотельных накопителей уровня "Премиум".
 - Диски должны быть отсоединены от работающей виртуальной машины перед изменением уровней.
 - Использование уровней производительности P60, P70 и P80 ограничено дисками 4096 гиб и выше.
+- Уровень производительности дисков можно изменить каждые 24 часа.
 
 ## <a name="regional-availability"></a>Доступность по регионам
 
 Настройка уровня производительности управляемого диска сейчас доступна только для твердотельных накопителей класса Premium в следующих регионах:
 
 - центрально-западная часть США 
-- Восток 2 США 
-- Западная Европа
-- Восточная Австралия 
-- Юго-Восточная Австралия 
-- Южная Индия
 
-## <a name="createupdate-a-data-disk-with-a-tier-higher-than-the-baseline-tier"></a>Создание или обновление диска данных с уровнем выше базового уровня
+## <a name="create-an-empty-data-disk-with-a-tier-higher-than-the-baseline-tier"></a>Создание пустого диска данных с уровнем выше базового уровня
 
-1. Создайте пустой диск данных с уровнем выше базового уровня или обновите уровень диска выше базового уровня, используя пример шаблона [CreateUpdateDataDiskWithTier.jsна](https://github.com/Azure/azure-managed-disks-performance-tiers/blob/main/CreateUpdateDataDiskWithTier.json)
+```azurecli
+subscriptionId=<yourSubscriptionIDHere>
+resourceGroupName=<yourResourceGroupNameHere>
+diskName=<yourDiskNameHere>
+diskSize=<yourDiskSizeHere>
+performanceTier=<yourDesiredPerformanceTier>
+region=westcentralus
 
-     ```cli
-     subscriptionId=<yourSubscriptionIDHere>
-     resourceGroupName=<yourResourceGroupNameHere>
-     diskName=<yourDiskNameHere>
-     diskSize=<yourDiskSizeHere>
-     performanceTier=<yourDesiredPerformanceTier>
-     region=<yourRegionHere>
-    
-     az login
-    
-     az account set --subscription $subscriptionId
-    
-     az group deployment create -g $resourceGroupName \
-     --template-uri "https://raw.githubusercontent.com/Azure/azure-managed-disks-performance-tiers/main/CreateUpdateDataDiskWithTier.json" \
-     --parameters "region=$region" "diskName=$diskName" "performanceTier=$performanceTier" "dataDiskSizeInGb=$diskSize"
-     ```
+az login
 
-1. Подтвердите уровень диска
+az account set --subscription $subscriptionId
 
-    ```cli
-    az resource show -n $diskName -g $resourceGroupName --namespace Microsoft.Compute --resource-type disks --api-version 2020-06-30 --query [properties.tier] -o tsv
-     ```
+az disk create -n $diskName -g $resourceGroupName -l $region --sku Premium_LRS --size-gb $diskSize --tier $performanceTier
+```
+## <a name="create-an-os-disk-with-a-tier-higher-than-the-baseline-tier-from-an-azure-marketplace-image"></a>Создание диска ОС с уровнем выше базового уровня из образа Azure Marketplace
 
-## <a name="createupdate-an-os-disk-with-a-tier-higher-than-the-baseline-tier"></a>Создание или обновление диска ОС с уровнем выше базового уровня
+```azurecli
+resourceGroupName=<yourResourceGroupNameHere>
+diskName=<yourDiskNameHere>
+performanceTier=<yourDesiredPerformanceTier>
+region=westcentralus
+image=Canonical:UbuntuServer:18.04-LTS:18.04.202002180
 
-1. Создайте диск ОС из образа Marketplace или обновите уровень диска ОС, превышающий базовый, используя пример шаблона [CreateUpdateOSDiskWithTier.jsна](https://github.com/Azure/azure-managed-disks-performance-tiers/blob/main/CreateUpdateOSDiskWithTier.json)
+az disk create -n $diskName -g $resourceGroupName -l $region --image-reference $image --sku Premium_LRS --tier $performanceTier
+```
+     
+## <a name="update-the-tier-of-a-disk"></a>Обновление уровня диска
 
-     ```cli
-     resourceGroupName=<yourResourceGroupNameHere>
-     diskName=<yourDiskNameHere>
-     performanceTier=<yourDesiredPerformanceTier>
-     region=<yourRegionHere>
-    
-     az group deployment create -g $resourceGroupName \
-     --template-uri "https://raw.githubusercontent.com/Azure/azure-managed-disks-performance-tiers/main/CreateUpdateOSDiskWithTier.json" \
-     --parameters "region=$region" "diskName=$diskName" "performanceTier=$performanceTier"
-     ```
- 
- 1. Подтвердите уровень диска
- 
-     ```cli
-     az resource show -n $diskName -g $resourceGroupName --namespace Microsoft.Compute --resource-type disks --api-version 2020-06-30 --query [properties.tier] -o tsv
-     ```
+```azurecli
+resourceGroupName=<yourResourceGroupNameHere>
+diskName=<yourDiskNameHere>
+performanceTier=<yourDesiredPerformanceTier>
+
+az disk update -n $diskName -g $resourceGroupName --set tier=$performanceTier
+```
+## <a name="show-the-tier-of-a-disk"></a>Отображение уровня диска
+
+```azurecli
+az disk show -n $diskName -g $resourceGroupName --query [tier] -o tsv
+```
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

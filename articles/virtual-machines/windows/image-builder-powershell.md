@@ -8,12 +8,12 @@ ms.topic: how-to
 ms.service: virtual-machines-windows
 ms.subservice: imaging
 ms.custom: devx-track-azurepowershell
-ms.openlocfilehash: e25b2b53acdfb05af8572a01109961bf3002e429
-ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
+ms.openlocfilehash: a221ba8fe14db37729183774197bfc2db8bf2baa
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/31/2020
-ms.locfileid: "87499438"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91328111"
 ---
 # <a name="preview-create-a-windows-vm-with-azure-image-builder-using-powershell"></a>Предварительная версия: создание виртуальной машины Windows с помощью Azure Image Builder с использованием PowerShell
 
@@ -37,7 +37,7 @@ ms.locfileid: "87499438"
 
 [!INCLUDE [cloud-shell-try-it](../../../includes/cloud-shell-try-it.md)]
 
-Если вы используете несколько подписок Azure, выберите ту, за ресурсы в которой будут выставляться счета. Выберите определенную подписку с помощью командлета [Set-азконтекст](/powershell/module/az.accounts/set-azcontext) .
+Если вы используете несколько подписок Azure, выберите ту, за ресурсы в которой будут выставляться счета. Выберите требуемую подписку с помощью командлета [Set-AzContext](/powershell/module/az.accounts/set-azcontext).
 
 ```azurepowershell-interactive
 Set-AzContext -SubscriptionId 00000000-0000-0000-0000-000000000000
@@ -75,7 +75,7 @@ Get-AzResourceProvider -ProviderNamespace Microsoft.Compute, Microsoft.KeyVault,
 
 ## <a name="define-variables"></a>Определение переменных
 
-Несколько фрагментов данных будут многократно использоваться. Создайте переменные для хранения информации.
+Некоторый фрагменты данных будут многократно использоваться. Создайте переменные для хранения информации.
 
 ```azurepowershell-interactive
 # Destination image resource group name
@@ -103,7 +103,7 @@ Write-Output $subscriptionID
 
 Создайте [группу ресурсов Azure](../../azure-resource-manager/management/overview.md) с помощью командлета [New-AzResourceGroup](/powershell/module/az.resources/new-azresourcegroup). Группа ресурсов — это логический контейнер, в котором ресурсы Azure развертываются и администрируются как группа.
 
-В следующем примере создается группа ресурсов на основе имени в `$imageResourceGroup` переменной в регионе, указанном в `$location` переменной. Эта группа ресурсов используется для хранения артефакта шаблона конфигурации образа и образа.
+В следующем примере создается группа ресурсов на основе имени в переменной `$imageResourceGroup` в регионе, указанном в переменной `$location`. Эта группа ресурсов используется для хранения артефакта шаблона конфигурации образа и образа.
 
 ```azurepowershell-interactive
 New-AzResourceGroup -Name $imageResourceGroup -Location $location
@@ -271,7 +271,7 @@ Get-AzImageBuilderTemplate -ImageTemplateName $imageTemplateName -ResourceGroupN
 
 Если служба сообщает о сбое во время отправки шаблона конфигурации образа:
 
-- См. раздел [Устранение неполадок сборки образа виртуальной машины Azure (AIB)](https://github.com/danielsollondon/azvmimagebuilder/blob/master/troubleshootingaib.md#template-submission-errors--troubleshooting).
+- См. раздел [Устранение неполадок сборки образа виртуальной машины Azure (AIB)](../linux/image-builder-troubleshoot.md).
 - Удалите шаблон, используя следующий пример, прежде чем повторять попытку.
 
 ```azurepowershell-interactive
@@ -288,11 +288,11 @@ Start-AzImageBuilderTemplate -ResourceGroupName $imageResourceGroup -Name $image
 
 Дождитесь завершения процесса сборки образа. Этот шаг может занять до часа.
 
-При возникновении ошибок ознакомьтесь с [разрешениями по устранению неполадок сборки образа виртуальной машины Azure (AIB)](https://github.com/danielsollondon/azvmimagebuilder/blob/master/troubleshootingaib.md#image-build-errors--troubleshooting).
+При возникновении ошибок ознакомьтесь с [разрешениями по устранению неполадок сборки образа виртуальной машины Azure (AIB)](../linux/image-builder-troubleshoot.md).
 
 ## <a name="create-a-vm"></a>Создание виртуальной машины
 
-Сохраните учетные данные входа для виртуальной машины в переменной. Пароль должен быть сложным.
+Сохраните в переменной учетные данные входа для виртуальной машины. Пароль должен быть сложным.
 
 ```azurepowershell-interactive
 $Cred = Get-Credential
@@ -334,7 +334,7 @@ Remove-AzImageBuilderTemplate -ResourceGroupName $imageResourceGroup -Name $imag
 
 > [!CAUTION]
 > Следующий пример удаляет указанную группу ресурсов и все содержащиеся в ней ресурсы.
-> Если ресурсы за пределами области этой статьи находятся в указанной группе ресурсов, они также будут удалены.
+> Если в указанной группе ресурсов существуют другие ресурсы, кроме созданных для этой статьи, они также будут удалены.
 
 ```azurepowershell-interactive
 Remove-AzResourceGroup -Name $imageResourceGroup

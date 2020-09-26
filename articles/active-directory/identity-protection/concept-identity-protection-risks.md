@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: sahandle
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: e3dd4d5f413238e0d0da79ff43deeee6245681f4
-ms.sourcegitcommit: 43558caf1f3917f0c535ae0bf7ce7fe4723391f9
+ms.openlocfilehash: 7bc7b0ce521522e677e0dc53809c8c33e0743f0d
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/11/2020
-ms.locfileid: "90016407"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91327924"
 ---
 # <a name="what-is-risk"></a>Что такое риск?
 
@@ -30,7 +30,7 @@ ms.locfileid: "90016407"
 
 Существует два типа риска: **пользователь** и **Вход** , а также два типа обнаружения или вычисления в **режиме реального времени** и в **режиме «вне сети**».
 
-Обнаружение в реальном времени может не отображаться в отчетах в течение 5 – 10 минут. Обнаружение в автономном режиме может не отображаться в отчетах в течение двух – четырех часов.
+Обнаружение в реальном времени может не отображаться в отчетах в течение 5 – 10 минут. Обнаружение в автономном режиме может не отображаться в отчетах в течение двух – двадцати четырех часов.
 
 ### <a name="user-risk"></a>Риск пользователя
 

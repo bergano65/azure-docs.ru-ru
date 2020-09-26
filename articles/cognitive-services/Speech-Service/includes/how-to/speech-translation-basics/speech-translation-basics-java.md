@@ -5,13 +5,23 @@ ms.topic: include
 ms.date: 04/13/2020
 ms.custom: devx-track-java
 ms.author: trbye
-ms.openlocfilehash: d04a13dae78057dfca52ed82bed278a8b132ded1
-ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
+ms.openlocfilehash: df9ef2610b0a51489c5f752e67fa146cd181fad8
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87375380"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91326971"
 ---
+Одной из основных функций речевой службы является возможность распознавания речи и перевода их на другие языки. В этом кратком руководстве вы узнаете, как использовать речевой пакет SDK в приложениях и продуктах для выполнения высококачественного перевода речи. В этом кратком руководстве рассматриваются такие темы, как:
+
+* Преобразование речи в текст
+* Преобразование речи на несколько целевых языков
+* Выполнение прямого перевода речи в речь
+
+## <a name="skip-to-samples-on-github"></a>Перейти к примерам на GitHub
+
+Если вы хотите перейти непосредственно к образцу кода, ознакомьтесь с [примерами](https://github.com/Azure-Samples/cognitive-services-speech-sdk/tree/master/quickstart/java/jre/translate-speech-to-text) быстрого запуска Java на сайте GitHub.
+
 ## <a name="prerequisites"></a>Предварительные требования
 
 В этой статье предполагается, что у вас есть учетная запись Azure и подписка на службу "Речь". Если у вас нет учетной записи и подписки, [попробуйте службу "Речь" бесплатно](../../../get-started.md).
@@ -22,7 +32,7 @@ ms.locfileid: "87375380"
 
 ## <a name="import-dependencies"></a>Импорт зависимостей
 
-Чтобы выполнить примеры в этой статье, включите следующие `import` инструкции в начало **. *Файл кода Java.
+Чтобы выполнить примеры в этой статье, включите следующие `import` инструкции в начало **. * Файл кода Java.
 
 ```java
 package speech;

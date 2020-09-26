@@ -13,12 +13,12 @@ ms.devlang: ne
 ms.topic: conceptual
 ms.date: 08/31/2020
 ms.author: inhenkel
-ms.openlocfilehash: 23898969f254063ee9e5385fee577661871ccf45
-ms.sourcegitcommit: 58d3b3314df4ba3cabd4d4a6016b22fa5264f05a
+ms.openlocfilehash: 0eb814ea0d941ca01d3a21db1cb507ef273a1a18
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89298986"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91328349"
 ---
 # <a name="live-streaming-with-azure-media-services-v3"></a>Потоковая трансляция в Службах мультимедиа Azure версии 3
 
@@ -60,7 +60,7 @@ ms.locfileid: "89298986"
 
 ### <a name="pass-through"></a>Сквозной режим
 
-![Сквозной режим](./media/live-streaming/pass-through.svg)
+![Схема приема и обработки видео-и звуковых каналов из транзитного мероприятия.](./media/live-streaming/pass-through.svg)
 
 При использовании сквозного мероприятия в **реальном**времени вы используете локальный динамический кодировщик для создания видеопотока с несколькими скоростями и отправляете его в интерактивное событие (используя RTMP или фрагментированный протокол ввода MP4). Затем событие в реальном времени передается через входящие потоки видео в динамический упаковщик (конечную точку потоковой передачи) без дальнейшей перекодировки. Такое событие сквозной передачи оптимизировано для долго выполняющихся интерактивных событий или 24x365 линейной потоковой передачи. 
 

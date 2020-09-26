@@ -4,16 +4,16 @@ description: Настройка управляемого диска Azure с о�
 author: roygara
 ms.service: virtual-machines
 ms.topic: how-to
-ms.date: 08/21/2020
+ms.date: 09/22/2020
 ms.author: rogarana
 ms.subservice: disks
 ms.custom: references_regions
-ms.openlocfilehash: ad70aa1d044649a0ca61060fff9880d4ef1e34c1
-ms.sourcegitcommit: 62717591c3ab871365a783b7221851758f4ec9a4
+ms.openlocfilehash: 447380c7aed7e765695ea5389f0b3f2973a16b0d
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/22/2020
-ms.locfileid: "88752041"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91328145"
 ---
 # <a name="enable-shared-disk"></a>Включить общий диск
 
@@ -147,7 +147,7 @@ New-AzDisk -ResourceGroupName 'myResourceGroup' -DiskName 'mySharedDisk' -Disk $
 После развертывания общего диска с помощью его `maxShares>1` можно подключить к одной или нескольким виртуальным машинам.
 
 > [!NOTE]
-> При развертывании Ultra Disk убедитесь, что он соответствует необходимым требованиям. Дополнительные сведения см. в разделе [PowerShell](disks-enable-ultra-ssd.md#enable-ultra-disk-compatibility-on-an-existing-vm-1) или [CLI](disks-enable-ultra-ssd.md#enable-ultra-disk-compatibility-on-an-existing-vm) в статье о Ultra Disk.
+> При развертывании Ultra Disk убедитесь, что он соответствует необходимым требованиям. Дополнительные сведения см. [в статье Использование Ultra Disks для Azure](disks-enable-ultra-ssd.md) .
 
 ```azurepowershell-interactive
 

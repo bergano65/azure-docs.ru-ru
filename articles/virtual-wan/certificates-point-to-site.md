@@ -1,18 +1,18 @@
 ---
 title: Создание и экспорт сертификатов для VPN-подключений пользователей | Виртуальная глобальная сеть Azure
-description: Создание самозаверяющего корневого сертификата, экспорт открытого ключа и создание сертификатов клиента с помощью PowerShell в Windows 10 или Windows Server 2016.
+description: Создайте самозаверяющий корневой сертификат, экспортируйте открытый ключ и создайте сертификаты клиентов для VPN-подключений пользователей с помощью PowerShell в Windows 10 или Windows Server 2016.
 services: virtual-wan
 author: cherylmc
 ms.service: virtual-wan
 ms.topic: how-to
-ms.date: 03/18/2020
+ms.date: 09/22/2020
 ms.author: cherylmc
-ms.openlocfilehash: a5361df9e9cfc9f5d299d494ed634dcaaaf2e707
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 2205f170ee846d4db94db7f524a1c424cfbc8f7b
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84753623"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91328044"
 ---
 # <a name="generate-and-export-certificates-for-user-vpn-connections"></a>Создание и экспорт сертификатов для VPN-подключений пользователей
 
@@ -22,6 +22,6 @@ ms.locfileid: "84753623"
 
 [!INCLUDE [Export public key](../../includes/vpn-gateway-generate-export-certificates-include.md)]
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Выполните [шаги виртуальной глобальной сети для VPN-подключения пользователя](virtual-wan-about.md) .

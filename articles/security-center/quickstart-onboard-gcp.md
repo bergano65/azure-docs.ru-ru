@@ -3,16 +3,16 @@ title: Подключение учетной записи обеспечить �
 description: Мониторинг ресурсов обеспечить из центра безопасности Azure
 author: memildin
 ms.author: memildin
-ms.date: 9/12/2020
+ms.date: 9/22/2020
 ms.topic: how-to
 ms.service: security-center
 manager: rkarlin
-ms.openlocfilehash: d5f478c279eb4c07332d047935f7c5dab89fd4b7
-ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
+ms.openlocfilehash: c4020bc5e96ff35fa2d04a872216e43abbba5323
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "90940211"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91328315"
 ---
 #  <a name="connect-your-gcp-accounts-to-azure-security-center"></a>Подключение учетных записей обеспечить к центру безопасности Azure
 
@@ -34,7 +34,7 @@ ms.locfileid: "90940211"
 
 ## <a name="availability"></a>Доступность
 
-|Аспект|Подробнее|
+|Аспект|Подробности|
 |----|:----|
 |Состояние выпуска:|Предварительный просмотр|
 |Цены|Требуется [защитник Azure для серверов](defender-for-servers-introduction.md)|

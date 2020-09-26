@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 03/30/2019
-ms.openlocfilehash: efbc0ba4ef39be6a2a8598ad006cb3aea090974c
-ms.sourcegitcommit: 3fb5e772f8f4068cc6d91d9cde253065a7f265d6
+ms.openlocfilehash: 31b1ff3324c610c385ad793f124735be30cab9f9
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89177749"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91327720"
 ---
 # <a name="optimize-log-queries-in-azure-monitor"></a>Оптимизация запросов журналов в Azure Monitor
 Azure Monitor журналы используют [Azure обозреватель данных (ADX)](/azure/data-explorer/) для хранения данных журнала и выполнения запросов для анализа этих данных. Он создает, управляет и обслуживает кластеры ADX, а также оптимизирует их для рабочей нагрузки анализа журналов. При выполнении запроса он оптимизирован и направляется в соответствующий кластер ADX, в котором хранятся данные рабочей области. В обоих журналах Azure Monitor и Azure обозреватель данных используется множество механизмов автоматического оптимизации запросов. Хотя автоматическая оптимизация обеспечивает значительное повышение производительности, в некоторых случаях можно значительно повысить производительность запросов. В этой статье описываются вопросы производительности и несколько способов их устранения.
@@ -98,18 +98,34 @@ SecurityEvent
 
 ```Kusto
 //less efficient
-Heartbeat 
-| extend IPRegion = iif(RemoteIPLongitude  < -94,"WestCoast","EastCoast")
-| where IPRegion == "WestCoast"
-| summarize count(), make_set(IPRegion) by Computer
+Syslog
+| extend Msg = strcat("Syslog: ",SyslogMessage)
+| where  Msg  has "Error"
+| count 
 ```
 ```Kusto
 //more efficient
-Heartbeat 
-| where RemoteIPLongitude  < -94
-| extend IPRegion = iif(RemoteIPLongitude  < -94,"WestCoast","EastCoast")
-| summarize count(), make_set(IPRegion) by Computer
+Syslog
+| where  SyslogMessage  has "Error"
+| count 
 ```
+
+В некоторых случаях вычисляемый столбец создается неявно Енине обработки запроса, так как фильтрация выполняется не только для поля:
+```Kusto
+//less efficient
+SecurityEvent
+| where tolower(Process) == "conhost.exe"
+| count 
+```
+```Kusto
+//more efficient
+SecurityEvent
+| where Process =~ "conhost.exe"
+| count 
+```
+
+
+
 
 ### <a name="use-effective-aggregation-commands-and-dimensions-in-summarize-and-join"></a>Использование эффективных статистических команд и измерений в итогах и объединении
 
@@ -279,7 +295,7 @@ SecurityEvent
 | distinct FilePath, CallerProcessName1
 ```
 
-Если приведенный выше элемент не допускает использования вложенных запросов, другой прием заключается в указании обработчика запросов, в котором есть один источник данных, используемый в каждом из них с помощью [функции материализации ()](/azure/data-explorer/kusto/query/materializefunction?pivots=azuremonitor). Это полезно, когда исходные данные поступают из функции, которая используется в запросе несколько раз.
+Если приведенный выше элемент не допускает использования вложенных запросов, другой прием заключается в указании обработчика запросов, в котором есть один источник данных, используемый в каждом из них с помощью [функции материализации ()](/azure/data-explorer/kusto/query/materializefunction?pivots=azuremonitor). Это полезно, когда исходные данные поступают из функции, которая используется в запросе несколько раз. Материализация вступает в силу, когда выходные данные вложенного запроса намного меньше, чем входное значение. Обработчик запросов будет кэшировать и повторно использовать выходные данные во всех экземплярах.
 
 
 
