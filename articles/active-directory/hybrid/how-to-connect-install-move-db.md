@@ -11,12 +11,12 @@ ms.date: 04/29/2019
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: bdc8b68206161abdd1782561c904d4e670ecca22
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 94710e99fa7d04d757f2ad5fd7b2d3f6e01371d1
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85358962"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91306348"
 ---
 # <a name="move-azure-ad-connect-database-from-sql-server-express-to-sql-server"></a>Перемещение базы данных Azure AD Connect с SQL Server Express на SQL Server 
 
@@ -41,13 +41,13 @@ ms.locfileid: "85358962"
 
 8. После присоединения базы данных вернитесь на сервер Azure AD Connect и установите базу данных Azure AD Connect.
 9. По завершении установки MSI мастер Azure AD Connect запускается с настройкой режима Express. Закройте экран, щелкнув значок "Выход".
-   ![Добро пожаловать!](./media/how-to-connect-install-move-db/db1.png)
+   ![Снимок экрана, на котором показана страница "Добро пожаловать в Azure A D Connect" с "Экспресс-параметрами" в выделенном слева меню.](./media/how-to-connect-install-move-db/db1.png)
 10. Запустите новую командную строку или сеанс PowerShell. Перейдите к папке \<drive>\Program Files\Microsoft Azure AD Connect. Выполните команду \AzureADConnect.exe /useexistingdatabase, чтобы запустить мастер Azure AD Connect в режиме установки "Использовать существующую базу данных".
     ![PowerShell](./media/how-to-connect-install-move-db/db2.png)
 11. Появится экран приветствия Azure AD Connect. После принятия условий лицензии и заявления о конфиденциальности, щелкните **Продолжить**.
-    ![Добро пожаловать!](./media/how-to-connect-install-move-db/db3.png)
+    ![Снимок экрана, показывающий страницу "Добро пожаловать в Azure A D Connect"](./media/how-to-connect-install-move-db/db3.png)
 12. На экране **Установить требующиеся компоненты** включен параметр **Использовать существующий SQL Server**. Укажите имя сервера SQL, на котором размещена база данных ADSync. Если экземпляр ядра SQL, используемый для размещения базы данных, не является экземпляром по умолчанию сервера SQL, необходимо указать ядро SQL и имя экземпляра. Кроме того, если просмотр SQL не включен, также необходимо указать номер порта экземпляра ядра SQL. Пример:         
-    ![Добро пожаловать!](./media/how-to-connect-install-move-db/db4.png)           
+    ![Снимок экрана, на котором показана страница "Установка необходимых компонентов".](./media/how-to-connect-install-move-db/db4.png)           
 
 13. На экране **Подключение к Azure AD** необходимо предоставить учетные данные глобального администратора для каталога Azure AD. Рекомендуется использовать учетную запись в домене onmicrosoft.com по умолчанию. Эта учетная запись используется только для создания учетной записи службы в Azure AD и не используется после завершения работы мастера.
     ![Подключить](./media/how-to-connect-install-move-db/db5.png)
@@ -57,11 +57,11 @@ ms.locfileid: "85358962"
  
 
 15. Во всплывающем диалоговом окне можно (а) предоставить учетные данные администратора предприятия и позволить Azure AD Connect создать учетную запись AD DS или (б) создать учетную запись AD DS самостоятельно и предоставить ее учетные данные Azure AD Connect. После выбора варианта и предоставления необходимых учетных данных щелкните **ОК**, чтобы закрыть всплывающее диалоговое окно.
-    ![Добро пожаловать!](./media/how-to-connect-install-move-db/db7.png)
+    ![Снимок экрана всплывающего диалогового окна "учетная запись для леса" с выбранным параметром "создать новую учетную запись D".](./media/how-to-connect-install-move-db/db7.png)
  
 
 16. После предоставления учетных данных красный значок с крестиком заменяется зеленым значком с галочкой. Нажмите кнопку **Далее**.
-    ![Добро пожаловать!](./media/how-to-connect-install-move-db/db8.png)
+    ![Снимок экрана, на котором показана страница "подключение каталогов" после ввода учетных данных учетной записи.](./media/how-to-connect-install-move-db/db8.png)
  
 
 17. На экране **все готово для настройки** нажмите кнопку **установить**.
