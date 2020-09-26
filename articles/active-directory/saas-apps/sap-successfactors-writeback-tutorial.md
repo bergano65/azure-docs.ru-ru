@@ -10,12 +10,12 @@ ms.topic: article
 ms.workload: identity
 ms.date: 08/05/2020
 ms.author: chmutali
-ms.openlocfilehash: b185f29cea61b9c366714a1af72648aeee35b61c
-ms.sourcegitcommit: 43558caf1f3917f0c535ae0bf7ce7fe4723391f9
+ms.openlocfilehash: 5ec06960e695abfa4bf004633b1f171214a5d29a
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/11/2020
-ms.locfileid: "90017937"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91286656"
 ---
 # <a name="tutorial-configure-attribute-write-back-from-azure-ad-to-sap-successfactors"></a>Руководство. Настройка атрибута обратной записи из Azure AD в SAP SuccessFactors
 Цель этого учебника — продемонстрировать действия, которые необходимо выполнить с помощью атрибутов обратной записи из Azure AD в службу SAP SuccessFactors Employee Central. 
@@ -125,68 +125,97 @@ ms.locfileid: "90017937"
 
 ## <a name="preparing-for-successfactors-writeback"></a>Подготовка к обратной записи SuccessFactors
 
-Приложение подготовки обратной записи SuccessFactors использует определенные значения *кода* для настройки электронной почты и номеров телефонов в центре сотрудников. Эти значения *кода* задаются как постоянные значения в таблице сопоставления атрибутов и отличаются для каждого экземпляра SuccessFactors. В этом разделе используется [процедура POST](https://www.postman.com/downloads/) для выборки значений кода. Для отправки HTTP-запросов [можно использовать](https://curl.haxx.se/) [Fiddler](https://www.telerik.com/fiddler) или любое другое аналогичное средство. 
+Приложение подготовки обратной записи SuccessFactors использует определенные значения *кода* для настройки электронной почты и номеров телефонов в центре сотрудников. Эти значения *кода* задаются как постоянные значения в таблице сопоставления атрибутов и отличаются для каждого экземпляра SuccessFactors. В этом разделе приводятся шаги для записи этих *кодовых* значений.
 
-### <a name="download-and-configure-postman-with-your-successfactors-tenant"></a>Скачайте и настройте POST с помощью клиента SuccessFactors.
+   > [!NOTE]
+   > Чтобы выполнить действия, описанные в этом разделе, обратитесь к администратору SuccessFactors. 
 
-1. Загрузка [публикации](https://www.postman.com/downloads/)
-1. Создайте новую коллекцию в приложении POST. Вызовите его «SuccessFactors». 
+### <a name="identify-email-and-phone-number-picklist-names"></a>Выявление имен адреса электронной почты и номера телефона 
+
+В SAP SuccessFactors поле *выбора* — это настраиваемый набор параметров, из которого пользователь может сделать выбор. Различные типы электронной почты и номера телефонов (например, «предприятие», «личное», «другое») представлены с помощью поля выбора. На этом шаге мы выявлением списков выбора, настроенных в клиенте SuccessFactors для хранения значений электронной почты и номеров телефонов. 
+ 
+1. В центре администрирования SuccessFactors выполните поиск по запросу *Управление бизнес-конфигурацией*. 
 
    > [!div class="mx-imgBorder"]
-   > ![Новая коллекция POST](./media/sap-successfactors-inbound-provisioning/new-postman-collection.png)
+   > ![Управление бизнес-конфигурацией](./media/sap-successfactors-inbound-provisioning/manage-business-config.png)
 
-1. На вкладке "Авторизация" введите учетные данные пользователя API, настроенного в предыдущем разделе. Настройте тип "Обычная проверка подлинности". 
+1. В разделе **элементы информационной**выберите **Емаилинфо** и щелкните *сведения* в поле **тип электронной почты** .
 
    > [!div class="mx-imgBorder"]
-   > ![Авторизация после авторизации](./media/sap-successfactors-inbound-provisioning/postman-authorization.png)
+   > ![Получение сведений об электронной почте](./media/sap-successfactors-inbound-provisioning/get-email-info.png)
 
-1. Сохраните конфигурацию. 
+1. На странице сведения о **типе электронной почты** запишите имя поля выбора, связанного с этим полем. По умолчанию это **ецемаилтипе**. Однако он может отличаться в вашем клиенте. 
+
+   > [!div class="mx-imgBorder"]
+   > ![Выбрать адрес электронной почты для выбора](./media/sap-successfactors-inbound-provisioning/identify-email-picklist.png)
+
+1. В разделе **элементы информационной**выберите **Фонеинфо** и щелкните *сведения* для поля **тип телефона** .
+
+   > [!div class="mx-imgBorder"]
+   > ![Получить сведения о телефоне](./media/sap-successfactors-inbound-provisioning/get-phone-info.png)
+
+1. На странице сведений о **типе телефона** запишите имя поля выбора, связанного с этим полем. По умолчанию это **екфонетипе**. Однако он может отличаться в вашем клиенте. 
+
+   > [!div class="mx-imgBorder"]
+   > ![Выявление поля выбора телефона](./media/sap-successfactors-inbound-provisioning/identify-phone-picklist.png)
 
 ### <a name="retrieve-constant-value-for-emailtype"></a>Получение постоянного значения для Емаилтипе
 
-1. В окне POST щелкните многоточие (...), связанный с коллекцией SuccessFactors, и добавьте "новый запрос", именуемый "получение типов электронной почты", как показано ниже. 
+1. В центре администрирования SuccessFactors найдите и откройте *центр выбора*. 
+1. Используйте имя поля выбора электронной почты, полученное из предыдущего раздела (например, Ецемаилтипе), чтобы найти поле выбора адреса электронной почты. 
 
    > [!div class="mx-imgBorder"]
-   > ![Отправить запрос по электронной почте ](./media/sap-successfactors-inbound-provisioning/postman-email-request.png)
+   > ![Поиск типа сообщения электронной почты](./media/sap-successfactors-inbound-provisioning/find-email-type-picklist.png)
 
-1. Откройте панель запроса "получение типа электронной почты". 
-1. В поле получить URL-адрес добавьте следующий URL-адрес, заменив `successFactorsAPITenantName` его клиентом API для экземпляра SuccessFactors. 
-   `https://<successfactorsAPITenantName>/odata/v2/Picklist('ecEmailType')?$expand=picklistOptions&$select=picklistOptions/id,picklistOptions/externalCode&$format=json`
+1. Откройте поле выбора активного сообщения электронной почты. 
 
    > [!div class="mx-imgBorder"]
-   > ![Тип электронной почты после получения сообщения](./media/sap-successfactors-inbound-provisioning/postman-get-email-type.png)
+   > ![Открыть поле выбора типа активного сообщения электронной почты](./media/sap-successfactors-inbound-provisioning/open-active-email-type-picklist.png)
 
-1. Вкладка "Авторизация" будет наследовать проверку подлинности, настроенную для коллекции. 
-1. Нажмите кнопку "Отправить", чтобы вызвать API. 
-1. В тексте ответа просмотрите результирующий набор JSON и найдите идентификатор, соответствующий `externalCode = B` . 
+1. На странице выбора типа электронной почты выберите тип *бизнес-* почты.
 
    > [!div class="mx-imgBorder"]
-   > ![Ответ типа электронной почты](./media/sap-successfactors-inbound-provisioning/postman-email-type-response.png)
+   > ![Выбор типа бизнес-сообщения](./media/sap-successfactors-inbound-provisioning/select-business-email-type.png)
 
-1. Запишите это значение в качестве константы для использования с *емаилтипе* в таблице сопоставления атрибутов.
+1. Запишите **идентификатор параметра** , связанный с *бизнес-* электронной почтой. Это код, который мы будем использовать с *емаилтипе* в таблице сопоставления атрибутов.
+
+   > [!div class="mx-imgBorder"]
+   > ![Получение кода типа электронной почты](./media/sap-successfactors-inbound-provisioning/get-email-type-code.png)
+
+   > [!NOTE]
+   > Удалите символ запятой при копировании значения. Например, если значение **идентификатора параметра** — *8 448*, задайте для *емаилтипе* в Azure AD константное значение *8448* (без символа запятой). 
 
 ### <a name="retrieve-constant-value-for-phonetype"></a>Получение постоянного значения для Фонетипе
 
-1. В окне POST щелкните многоточие (...), связанный с коллекцией SuccessFactors, и добавьте "новый запрос", именуемый "получение типов телефонов", как показано ниже. 
+1. В центре администрирования SuccessFactors найдите и откройте *центр выбора*. 
+1. Используйте имя поля выбора телефона, зарегистрированное в предыдущем разделе, чтобы найти поле выбора телефона. 
 
    > [!div class="mx-imgBorder"]
-   > ![Отправить запрос по телефону](./media/sap-successfactors-inbound-provisioning/postman-phone-request.png)
+   > ![Найти поле выбора типа телефона](./media/sap-successfactors-inbound-provisioning/find-phone-type-picklist.png)
 
-1. Откройте панель запроса "получение типа телефона". 
-1. В поле получить URL-адрес добавьте следующий URL-адрес, заменив `successFactorsAPITenantName` его клиентом API для экземпляра SuccessFactors. 
-   `https://<successfactorsAPITenantName>/odata/v2/Picklist('ecPhoneType')?$expand=picklistOptions&$select=picklistOptions/id,picklistOptions/externalCode&$format=json`
+1. Откройте поле выбора активного телефона. 
 
    > [!div class="mx-imgBorder"]
-   > ![Тип телефона получения сообщения](./media/sap-successfactors-inbound-provisioning/postman-get-phone-type.png)
+   > ![Открыть поле выбора типа активного телефона](./media/sap-successfactors-inbound-provisioning/open-active-phone-type-picklist.png)
 
-1. Вкладка "Авторизация" будет наследовать проверку подлинности, настроенную для коллекции. 
-1. Нажмите кнопку "Отправить", чтобы вызвать API. 
-1. В тексте ответа просмотрите результирующий набор JSON и найдите *идентификатор* , соответствующий `externalCode = B` и `externalCode = C` . 
+1. На странице выбора типа телефона проверьте различные типы телефонов в списке **значения поля выбора**.
 
    > [!div class="mx-imgBorder"]
-   > ![POST-Phone](./media/sap-successfactors-inbound-provisioning/postman-phone-type-response.png)
+   > ![Проверка типов телефонов](./media/sap-successfactors-inbound-provisioning/review-phone-types.png)
 
-1. Запишите эти значения как константы для использования с *бусинессфонетипе* и *целлфонетипе* в таблице сопоставления атрибутов.
+1. Запишите **идентификатор параметра** , связанный с *рабочим* телефоном. Это код, который мы будем использовать с *бусинессфонетипе* в таблице сопоставления атрибутов.
+
+   > [!div class="mx-imgBorder"]
+   > ![Получение кода рабочего телефона](./media/sap-successfactors-inbound-provisioning/get-business-phone-code.png)
+
+1. Запишите **идентификатор параметра** , связанный с *сотовым* телефоном. Это код, который мы будем использовать с *целлфонетипе* в таблице сопоставления атрибутов.
+
+   > [!div class="mx-imgBorder"]
+   > ![Получение кода сотового телефона](./media/sap-successfactors-inbound-provisioning/get-cell-phone-code.png)
+
+   > [!NOTE]
+   > Удалите символ запятой при копировании значения. Например, если значение **идентификатора параметра** — *10 606*, задайте для *целлфонетипе* в Azure AD константное значение *10606* (без символа запятой). 
+
 
 ## <a name="configuring-successfactors-writeback-app"></a>Настройка приложения обратной записи SuccessFactors
 

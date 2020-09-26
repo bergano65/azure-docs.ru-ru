@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: article
 ms.date: 07/23/2019
 ms.author: Zhchia
-ms.openlocfilehash: 083bb7549bb555cbbefaf680d401696ecd64b9c9
-ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
+ms.openlocfilehash: 7b4a5e76ec8dad66bf300cc3e1d55471383f83ff
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88544916"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91285848"
 ---
 # <a name="tutorial-configure-symantec-web-security-service-wss-for-automatic-user-provisioning"></a>Учебник. Настройка Symantec Web Security Service (WSS) для автоматической подготовки пользователей
 
@@ -62,11 +62,11 @@ ms.locfileid: "88544916"
 
 3.  Выберите сторонние **пользователи & группы синхронизация**. 
 
-    ![Symantec Web Security Service](media/symantec-web-security-service/third-party-users.png)
+    ![Снимок экрана с параметром синхронизации сторонних пользователей & Groups.](media/symantec-web-security-service/third-party-users.png)
 
 4.  Скопируйте **URL-адрес** и **токен**scim. Эти значения будут указаны в поле **URL-адрес клиента** и **секретный токен** на вкладке Подготовка приложения Symantec Web Security Service (WSS) в портал Azure.
 
-    ![Symantec Web Security Service](media/symantec-web-security-service/scim.png)
+    ![Снимок экрана: диалоговое окно "Создание интеграции" с вызываемыми текстовыми полями S C I M U R L и токеном.](media/symantec-web-security-service/scim.png)
 
 ## <a name="add-symantec-web-security-service-wss-from-the-gallery"></a>Добавление Symantec Web Security Service (WSS) из коллекции
 
@@ -109,11 +109,11 @@ ms.locfileid: "88544916"
 
 3. Выберите вкладку **Подготовка**.
 
-    ![Вкладка "Подготовка"](common/provisioning.png)
+    ![Снимок экрана параметров управления с вызываемым параметром подготовки.](common/provisioning.png)
 
 4. Для параметра **Режим подготовки к работе** выберите значение **Automatic** (Автоматически).
 
-    ![Вкладка "Подготовка"](common/provisioning-automatic.png)
+    ![Снимок экрана: раскрывающийся список режима подготовки с вызываемым автоматическим параметром.](common/provisioning-automatic.png)
 
 5. В разделе Учетные данные администратора введите **URL-адрес scim** и значения **токена** , полученные ранее в поле **URL-адрес клиента** и **секретный токен** соответственно. Нажмите кнопку **проверить подключение** , чтобы убедиться, что Azure AD может подключиться к службе веб-безопасности Symantec. Если подключение не выполняется, убедитесь, что учетная запись Symantec Web Security Service (WSS) имеет разрешения администратора, и повторите попытку.
 
@@ -123,23 +123,23 @@ ms.locfileid: "88544916"
 
     ![Почтовое уведомление](common/provisioning-notification-email.png)
 
-7. Нажмите **Сохранить**.
+7. Выберите команду **Сохранить**.
 
 8. В разделе **сопоставления** выберите **синхронизировать Azure Active Directory пользователей с Symantec Web Security Service (WSS)**.
 
-    ![Сопоставления пользователей в службе веб-безопасности Symantec (WSS)](media/symantec-web-security-service/usermapping.png)
+    ![Снимок экрана раздела "сопоставления" с вызываемым параметром "синхронизировать Azure Active Directory пользователей с Symantec Web Security Service S".](media/symantec-web-security-service/usermapping.png)
 
 9. Проверьте атрибуты пользователя, которые синхронизированы из Azure AD в Symantec Web Security Service (WSS) в разделе **сопоставление атрибутов** . Атрибуты, выбранные как свойства **Matching** , используются для сопоставления учетных записей пользователей в Symantec Web Security Service (WSS) для операций обновления. Нажмите кнопку **Сохранить**, чтобы зафиксировать все изменения.
 
-    ![Сопоставления пользователей в службе веб-безопасности Symantec (WSS)](media/symantec-web-security-service/userattribute.png)
+    ![Снимок экрана раздела сопоставления сопоставлений, отображающего 16 соответствующих свойств.](media/symantec-web-security-service/userattribute.png)
 
 10. В разделе **сопоставления** выберите **синхронизировать Azure Active Directory группы с Symantec Web Security Service**.
 
-    ![Сопоставления пользователей в службе веб-безопасности Symantec (WSS)](media/symantec-web-security-service/groupmapping.png)
+    ![Снимок экрана раздела "сопоставления" с вызываемым параметром "синхронизировать Azure Active Directoryные группы с Symantec Web Security Service S".](media/symantec-web-security-service/groupmapping.png)
 
 11. В разделе **сопоставление атрибутов** Проверьте атрибуты группы, которые синхронизированы из Azure AD в Symantec Web Security Service (WSS). Атрибуты, выбранные как свойства **Matching** , используются для сопоставления групп в Symantec Web Security Service (WSS) для операций обновления. Нажмите кнопку **Сохранить**, чтобы зафиксировать все изменения.
 
-    ![Сопоставления пользователей в службе веб-безопасности Symantec (WSS)](media/symantec-web-security-service/groupattribute.png)
+    ![Снимок экрана раздела сопоставления сопоставлений с тремя свойствами сопоставления.](media/symantec-web-security-service/groupattribute.png)
 
 12. Чтобы настроить фильтры области, ознакомьтесь со следующими инструкциями, предоставленными в [руководстве по фильтрам области](../app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 

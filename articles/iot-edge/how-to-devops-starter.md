@@ -2,17 +2,17 @@
 title: Конвейер CI/CD с Azure DevOps Starter-Azure IoT Edge | Документация Майкрософт
 description: Служба Azure DevOps Starter позволяет быстро приступить к работе с Azure. В этой статье вы узнаете, как запустить необходимое приложение Azure IoT Edge за несколько быстрых шагов.
 author: shizn
-ms.author: xshi
+ms.author: kgremban
 ms.date: 08/25/2020
 ms.topic: conceptual
 ms.service: iot-edge
 services: iot-edge
-ms.openlocfilehash: 7251e84af001422de2c0e33ca04fdfdb309f7afd
-ms.sourcegitcommit: 58d3b3314df4ba3cabd4d4a6016b22fa5264f05a
+ms.openlocfilehash: f0f0452854ef7456d1bdf7caf0674fab5bd14557
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89303696"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91297136"
 ---
 # <a name="create-a-cicd-pipeline-for-iot-edge-with-azure-devops-starter"></a>Создание конвейера CI/CD для IoT Edge с помощью Azure DevOps Starter
 

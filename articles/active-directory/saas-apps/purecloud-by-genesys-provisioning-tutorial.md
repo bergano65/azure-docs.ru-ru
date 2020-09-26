@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: article
 ms.date: 02/05/2020
 ms.author: Zhchia
-ms.openlocfilehash: 4983a4a637ae636c6a3ef4a485c1777fc9b8a77a
-ms.sourcegitcommit: 43558caf1f3917f0c535ae0bf7ce7fe4723391f9
+ms.openlocfilehash: 8917343175dd5ed8f82c1929683de98034323163
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/11/2020
-ms.locfileid: "90015183"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91321923"
 ---
 # <a name="tutorial-configure-purecloud-by-genesys-for-automatic-user-provisioning"></a>Учебник. Настройка Пуреклауд с помощью Женесис для автоматической подготовки пользователей
 
@@ -80,11 +80,11 @@ ms.locfileid: "90015183"
 
 3. Выберите вкладку **Подготовка**.
 
-    ![Вкладка "Подготовка"](common/provisioning.png)
+    ![Снимок экрана параметров управления с вызываемым параметром подготовки.](common/provisioning.png)
 
 4. Для параметра **Режим подготовки к работе** выберите значение **Automatic** (Автоматически).
 
-    ![Вкладка "Подготовка"](common/provisioning-automatic.png)
+    ![Снимок экрана: раскрывающийся список режима подготовки с вызываемым автоматическим параметром.](common/provisioning-automatic.png)
 
 5. В разделе **учетные данные администратора** введите URL-адрес ПУРЕКЛАУД по интерфейсу API Женесис и маркер OAuth в полях **URL-адрес клиента** и **секретный токен** соответственно. URL-адрес API будет структурирован как `{{API Url}}/api/v2/scim/v2` , используя URL-адрес API для региона пуреклауд в [центре разработчиков пуреклауд](https://developer.mypurecloud.com/api/rest/index.html). Нажмите кнопку **проверить подключение** , чтобы убедиться, что Azure AD может подключиться к Пуреклауд by женесис. Если подключение не выполняется, убедитесь, что у учетной записи Пуреклауд by Женесис есть разрешения администратора, и повторите попытку.
 

@@ -7,14 +7,14 @@ ms.topic: reference
 ms.workload: identity
 author: rolyon
 ms.author: rolyon
-ms.date: 09/04/2020
+ms.date: 09/22/2020
 ms.custom: generated
-ms.openlocfilehash: 25c231265bb4ec497af5559624b7228167add76d
-ms.sourcegitcommit: de2750163a601aae0c28506ba32be067e0068c0c
+ms.openlocfilehash: f5d5b4f801dd406518a6ba516bf2e38e01cb96ac
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/04/2020
-ms.locfileid: "89483462"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91275274"
 ---
 # <a name="azure-built-in-roles"></a>Встроенные роли Azure
 
@@ -113,6 +113,8 @@ ms.locfileid: "89483462"
 > | [Участник доменных служб HDInsight](#hdinsight-domain-services-contributor) | Позволяет читать, создавать, изменять и удалять операции, связанные с доменными службами, необходимыми для Корпоративного пакета безопасности HDInsight | 8d8d5a11-05d3-4bda-a417-a08778121c7c |
 > | [Участник Log Analytics](#log-analytics-contributor) | Участник Log Analytics может считывать все данные мониторинга и изменять параметры мониторинга. Изменение параметров мониторинга подразумевает добавление расширений в виртуальные машины, чтение ключей учетной записи хранения для настройки коллекции журналов в службе хранилища Azure, создание и настройку учетных записей службы автоматизации, добавление решений и настройку диагностики Azure во всех ресурсах Azure. | 92aaf0da-9dab-42b6-94a3-d43ce8d16293 |
 > | [Читатель Log Analytics](#log-analytics-reader) | Читатель Log Analytics может просматривать все данные мониторинга, выполнять по ним поиск и просматривать параметры мониторинга, в том числе конфигурацию системы диагностики Azure для всех ресурсов Azure. | 73c42c96-874c-492b-b04d-ab87d138a893 |
+> | [Участник реестра схемы (Предварительная версия)](#schema-registry-contributor-preview) | Чтение, запись и удаление групп и схем реестра схемы. | 5dffeca3-4936-4216-b2bc-10343a5abb25 |
+> | [Средство чтения реестра схемы (Предварительная версия)](#schema-registry-reader-preview) | Чтение и перечисление групп и схем реестра схемы. | 2c56ea50-c6b3-40a6-83c0-9d98858bc7d2 |
 > | **Блокчейн** |  |  |
 > | [Доступ к узлам элементов блокчейна (предварительная версия)](#blockchain-member-node-access-preview) | Разрешает доступ к узлам элементов блокчейна. | 31a002a1-acaf-453e-8a5b-297c9ca1ea24 |
 > | **ИИ и машинное обучение** |  |  |
@@ -3849,6 +3851,7 @@ ms.locfileid: "89483462"
 > | /Аваилабилитистатусес/Реад [Microsoft. ресаурцехеалс](resource-provider-operations.md#microsoftresourcehealth) | Возвращает состояния доступности для всех ресурсов в указанной области. |
 > | [Microsoft. Resources](resource-provider-operations.md#microsoftresources)/деплойментс/* | Создание развертывания и управление им |
 > | /Субскриптионс/ресаурцеграупс/Реад [Microsoft. Resources](resource-provider-operations.md#microsoftresources) | Возвращает группы ресурсов или выводит их список. |
+> | /Локатионс/администраторазуреасинкоператион/Реад [Microsoft. SQL](resource-provider-operations.md#microsoftsql) |  |
 > | [Microsoft. SQL](resource-provider-operations.md#microsoftsql)/манажединстанцес/датабасес/куррентсенситивитилабелс/* |  |
 > | [Microsoft. SQL](resource-provider-operations.md#microsoftsql)/манажединстанцес/датабасес/рекоммендедсенситивитилабелс/* |  |
 > | [Microsoft. SQL](resource-provider-operations.md#microsoftsql)/манажединстанцес/датабасес/счемас/таблес/колумнс/сенситивитилабелс/* |  |
@@ -3886,6 +3889,8 @@ ms.locfileid: "89483462"
 > | [Microsoft. SQL](resource-provider-operations.md#microsoftsql)/серверс/секуритялертполиЦиес/* | Создание политик оповещения системы безопасности SQL Server и управление ими |
 > | [Microsoft. SQL](resource-provider-operations.md#microsoftsql)/серверс/вулнерабилитяссессментс/* |  |
 > | [Microsoft. support](resource-provider-operations.md#microsoftsupport)/* | Создание и обновление запроса в службу поддержки |
+> | /Серверс/администраторс/Реад [Microsoft. SQL](resource-provider-operations.md#microsoftsql) | Возвращает конкретный объект Azure Active Directory администратора |
+> | [Microsoft. SQL](resource-provider-operations.md#microsoftsql)/серверс/азуреадонляусентикатионс/* |  |
 > | **NotActions** |  |
 > | *Нет* |  |
 > | **Действия с данными** |  |
@@ -3910,6 +3915,7 @@ ms.locfileid: "89483462"
         "Microsoft.ResourceHealth/availabilityStatuses/read",
         "Microsoft.Resources/deployments/*",
         "Microsoft.Resources/subscriptions/resourceGroups/read",
+        "Microsoft.Sql/locations/administratorAzureAsyncOperation/read",
         "Microsoft.Sql/managedInstances/databases/currentSensitivityLabels/*",
         "Microsoft.Sql/managedInstances/databases/recommendedSensitivityLabels/*",
         "Microsoft.Sql/managedInstances/databases/schemas/tables/columns/sensitivityLabels/*",
@@ -3946,7 +3952,9 @@ ms.locfileid: "89483462"
         "Microsoft.Sql/servers/read",
         "Microsoft.Sql/servers/securityAlertPolicies/*",
         "Microsoft.Sql/servers/vulnerabilityAssessments/*",
-        "Microsoft.Support/*"
+        "Microsoft.Support/*",
+        "Microsoft.Sql/servers/administrators/read",
+        "Microsoft.Sql/servers/azureADOnlyAuthentications/*"
       ],
       "notActions": [],
       "dataActions": [],
@@ -4005,6 +4013,8 @@ ms.locfileid: "89483462"
 > | [Microsoft. SQL](resource-provider-operations.md#microsoftsql)/серверс/екстендедаудитингсеттингс/* |  |
 > | [Microsoft. SQL](resource-provider-operations.md#microsoftsql)/серверс/секуритялертполиЦиес/* | Изменение политик оповещения системы безопасности SQL Server. |
 > | [Microsoft. SQL](resource-provider-operations.md#microsoftsql)/серверс/вулнерабилитяссессментс/* |  |
+> | /Серверс/азуреадонляусентикатионс/делете [Microsoft. SQL](resource-provider-operations.md#microsoftsql) | Удаляет конкретный сервер Azure Active Directory только объект проверки подлинности |
+> | /Серверс/азуреадонляусентикатионс/Врите [Microsoft. SQL](resource-provider-operations.md#microsoftsql) | Добавляет или обновляет конкретный сервер Azure Active Directory только объект проверки подлинности |
 > | **Действия с данными** |  |
 > | *Нет* |  |
 > | **NotDataActions** |  |
@@ -4060,7 +4070,9 @@ ms.locfileid: "89483462"
         "Microsoft.Sql/servers/databases/vulnerabilityAssessmentSettings/*",
         "Microsoft.Sql/servers/extendedAuditingSettings/*",
         "Microsoft.Sql/servers/securityAlertPolicies/*",
-        "Microsoft.Sql/servers/vulnerabilityAssessments/*"
+        "Microsoft.Sql/servers/vulnerabilityAssessments/*",
+        "Microsoft.Sql/servers/azureADOnlyAuthentications/delete",
+        "Microsoft.Sql/servers/azureADOnlyAuthentications/write"
       ],
       "dataActions": [],
       "notDataActions": []
@@ -4503,6 +4515,88 @@ ms.locfileid: "89483462"
     }
   ],
   "roleName": "Log Analytics Reader",
+  "roleType": "BuiltInRole",
+  "type": "Microsoft.Authorization/roleDefinitions"
+}
+```
+
+### <a name="schema-registry-contributor-preview"></a>Участник реестра схемы (Предварительная версия)
+
+Чтение, запись и удаление групп и схем реестра схемы.
+
+> [!div class="mx-tableFixed"]
+> | Действия | Описание |
+> | --- | --- |
+> | [Microsoft. EventHub](resource-provider-operations.md#microsofteventhub)/намеспацес/счемаграупс/* |  |
+> | **NotActions** |  |
+> | *Нет* |  |
+> | **Действия с данными** |  |
+> | [Microsoft. EventHub](resource-provider-operations.md#microsofteventhub)/намеспацес/счемас/* |  |
+> | **NotDataActions** |  |
+> | *Нет* |  |
+
+```json
+{
+  "assignableScopes": [
+    "/"
+  ],
+  "description": "Read, write, and delete Schema Registry groups and schemas.",
+  "id": "/subscriptions/{subscriptionId}/providers/Microsoft.Authorization/roleDefinitions/5dffeca3-4936-4216-b2bc-10343a5abb25",
+  "name": "5dffeca3-4936-4216-b2bc-10343a5abb25",
+  "permissions": [
+    {
+      "actions": [
+        "Microsoft.EventHub/namespaces/schemagroups/*"
+      ],
+      "notActions": [],
+      "dataActions": [
+        "Microsoft.EventHub/namespaces/schemas/*"
+      ],
+      "notDataActions": []
+    }
+  ],
+  "roleName": "Schema Registry Contributor (Preview)",
+  "roleType": "BuiltInRole",
+  "type": "Microsoft.Authorization/roleDefinitions"
+}
+```
+
+### <a name="schema-registry-reader-preview"></a>Средство чтения реестра схемы (Предварительная версия)
+
+Чтение и перечисление групп и схем реестра схемы.
+
+> [!div class="mx-tableFixed"]
+> | Действия | Описание |
+> | --- | --- |
+> | [Microsoft. EventHub](resource-provider-operations.md#microsofteventhub)/намеспацес/счемаграупс/Реад | Получение списка описаний ресурсов Счемаграуп |
+> | **NotActions** |  |
+> | *Нет* |  |
+> | **Действия с данными** |  |
+> | [Microsoft. EventHub](resource-provider-operations.md#microsofteventhub)/намеспацес/счемас/Реад | Получение схем |
+> | **NotDataActions** |  |
+> | *Нет* |  |
+
+```json
+{
+  "assignableScopes": [
+    "/"
+  ],
+  "description": "Read and list Schema Registry groups and schemas.",
+  "id": "/subscriptions/{subscriptionId}/providers/Microsoft.Authorization/roleDefinitions/2c56ea50-c6b3-40a6-83c0-9d98858bc7d2",
+  "name": "2c56ea50-c6b3-40a6-83c0-9d98858bc7d2",
+  "permissions": [
+    {
+      "actions": [
+        "Microsoft.EventHub/namespaces/schemagroups/read"
+      ],
+      "notActions": [],
+      "dataActions": [
+        "Microsoft.EventHub/namespaces/schemas/read"
+      ],
+      "notDataActions": []
+    }
+  ],
+  "roleName": "Schema Registry Reader (Preview)",
   "roleType": "BuiltInRole",
   "type": "Microsoft.Authorization/roleDefinitions"
 }
@@ -5376,7 +5470,7 @@ ms.locfileid: "89483462"
 > [!div class="mx-tableFixed"]
 > | Действия | Описание |
 > | --- | --- |
-> | /Еджесубскриптионс/Реад [Microsoft. AzureStack](resource-provider-operations.md#microsoftazurestack) | Получение свойств подписки Azure Stack пограничных устройств |
+> | /Еджесубскриптионс/Реад [Microsoft. AzureStack](resource-provider-operations.md#microsoftazurestack) |  |
 > | [Microsoft. AzureStack](resource-provider-operations.md#microsoftazurestack)/регистратионс/Продуктс/*/Action |  |
 > | /Регистратионс/Продуктс/Реад [Microsoft. AzureStack](resource-provider-operations.md#microsoftazurestack) | Получает свойства продукта из Azure Stack Marketplace. |
 > | /Регистратионс/Реад [Microsoft. AzureStack](resource-provider-operations.md#microsoftazurestack) | Получает свойства регистрации Azure Stack. |
@@ -6151,6 +6245,7 @@ ms.locfileid: "89483462"
 > | --- | --- |
 > | [Microsoft. секуритинсигхтс](resource-provider-operations.md#microsoftsecurityinsights)/*/Реад |  |
 > | /Датаконнекторсчеккрекуирементс/Актион [Microsoft. секуритинсигхтс](resource-provider-operations.md#microsoftsecurityinsights) | Проверка авторизации и лицензии пользователя |
+> | /Среатинтеллиженце/индикаторс/куери/Актион [Microsoft. секуритинсигхтс](resource-provider-operations.md#microsoftsecurityinsights) | Запрос индикаторов аналитики угроз |
 > | /Воркспацес/Аналитикс/куери/Актион [Microsoft. OperationalInsights](resource-provider-operations.md#microsoftoperationalinsights) | Поиск с помощью нового механизма. |
 > | [Microsoft. OperationalInsights](resource-provider-operations.md#microsoftoperationalinsights)/воркспацес/*/Реад | Просмотр данных Log Analytics |
 > | /Воркспацес/линкедсервицес/Реад [Microsoft. OperationalInsights](resource-provider-operations.md#microsoftoperationalinsights) | Получение связанных служб в заданной рабочей области. |
@@ -6185,6 +6280,7 @@ ms.locfileid: "89483462"
       "actions": [
         "Microsoft.SecurityInsights/*/read",
         "Microsoft.SecurityInsights/dataConnectorsCheckRequirements/action",
+        "Microsoft.SecurityInsights/threatIntelligence/indicators/query/action",
         "Microsoft.OperationalInsights/workspaces/analytics/query/action",
         "Microsoft.OperationalInsights/workspaces/*/read",
         "Microsoft.OperationalInsights/workspaces/LinkedServices/read",
@@ -6222,6 +6318,12 @@ ms.locfileid: "89483462"
 > | /Датаконнекторсчеккрекуирементс/Актион [Microsoft. секуритинсигхтс](resource-provider-operations.md#microsoftsecurityinsights) | Проверка авторизации и лицензии пользователя |
 > | [Microsoft. секуритинсигхтс](resource-provider-operations.md#microsoftsecurityinsights)/Касес/* |  |
 > | [Microsoft. секуритинсигхтс](resource-provider-operations.md#microsoftsecurityinsights)/инЦидентс/* |  |
+> | /Среатинтеллиженце/индикаторс/аппендтагс/Актион [Microsoft. секуритинсигхтс](resource-provider-operations.md#microsoftsecurityinsights) | Добавление тегов к индикатору аналитики угроз |
+> | /Среатинтеллиженце/индикаторс/куери/Актион [Microsoft. секуритинсигхтс](resource-provider-operations.md#microsoftsecurityinsights) | Запрос индикаторов аналитики угроз |
+> | /Среатинтеллиженце/булктаг/Актион [Microsoft. секуритинсигхтс](resource-provider-operations.md#microsoftsecurityinsights) | Аналитика больших тегов с анализом угроз |
+> | /Среатинтеллиженце/индикаторс/аппендтагс/Актион [Microsoft. секуритинсигхтс](resource-provider-operations.md#microsoftsecurityinsights) | Добавление тегов к индикатору аналитики угроз |
+> | /Среатинтеллиженце/индикаторс/реплацетагс/Актион [Microsoft. секуритинсигхтс](resource-provider-operations.md#microsoftsecurityinsights) | Замена тегов индикатора анализа угроз |
+> | /Среатинтеллиженце/куериндикаторс/Актион [Microsoft. секуритинсигхтс](resource-provider-operations.md#microsoftsecurityinsights) | Запрос индикаторов аналитики угроз |
 > | /Воркспацес/Аналитикс/куери/Актион [Microsoft. OperationalInsights](resource-provider-operations.md#microsoftoperationalinsights) | Поиск с помощью нового механизма. |
 > | [Microsoft. OperationalInsights](resource-provider-operations.md#microsoftoperationalinsights)/воркспацес/*/Реад | Просмотр данных Log Analytics |
 > | /Воркспацес/датасаурцес/Реад [Microsoft. OperationalInsights](resource-provider-operations.md#microsoftoperationalinsights) | Возвращает источники данных в рабочей области. |
@@ -6258,6 +6360,12 @@ ms.locfileid: "89483462"
         "Microsoft.SecurityInsights/dataConnectorsCheckRequirements/action",
         "Microsoft.SecurityInsights/cases/*",
         "Microsoft.SecurityInsights/incidents/*",
+        "Microsoft.SecurityInsights/threatIntelligence/indicators/appendTags/action",
+        "Microsoft.SecurityInsights/threatIntelligence/indicators/query/action",
+        "Microsoft.SecurityInsights/threatIntelligence/bulkTag/action",
+        "Microsoft.SecurityInsights/threatIntelligence/indicators/appendTags/action",
+        "Microsoft.SecurityInsights/threatIntelligence/indicators/replaceTags/action",
+        "Microsoft.SecurityInsights/threatIntelligence/queryIndicators/action",
         "Microsoft.OperationalInsights/workspaces/analytics/query/action",
         "Microsoft.OperationalInsights/workspaces/*/read",
         "Microsoft.OperationalInsights/workspaces/dataSources/read",
@@ -6420,6 +6528,7 @@ ms.locfileid: "89483462"
 > | **NotActions** |  |
 > | /Локатионс/делетедваултс/пурже/Актион [Microsoft. KeyVault](resource-provider-operations.md#microsoftkeyvault) | Очищает обратимо удаленное хранилище Key Vault. |
 > | [Microsoft. KeyVault](resource-provider-operations.md#microsoftkeyvault)/хсмпулс/* |  |
+> | [Microsoft. KeyVault](resource-provider-operations.md#microsoftkeyvault)/манажедхсмс/* |  |
 > | **Действия с данными** |  |
 > | *Нет* |  |
 > | **NotDataActions** |  |
@@ -6445,7 +6554,8 @@ ms.locfileid: "89483462"
       ],
       "notActions": [
         "Microsoft.KeyVault/locations/deletedVaults/purge/action",
-        "Microsoft.KeyVault/hsmPools/*"
+        "Microsoft.KeyVault/hsmPools/*",
+        "Microsoft.KeyVault/managedHsms/*"
       ],
       "dataActions": [],
       "notDataActions": []
@@ -6785,6 +6895,7 @@ ms.locfileid: "89483462"
 > | [Microsoft. Authorization](resource-provider-operations.md#microsoftauthorization)/*/Реад | Чтение ролей и назначений ролей |
 > | [Microsoft. Authorization](resource-provider-operations.md#microsoftauthorization)/полициассигнментс/* | Создание назначений политик и управление ими |
 > | [Microsoft. Authorization](resource-provider-operations.md#microsoftauthorization)/полицидефинитионс/* | Создание определений политик и управление ими |
+> | [Microsoft. Authorization](resource-provider-operations.md#microsoftauthorization)/полициексемптионс/* |  |
 > | [Microsoft. Authorization](resource-provider-operations.md#microsoftauthorization)/полицисетдефинитионс/* | Создание наборов политик и управление ими |
 > | [Microsoft. Insights](resource-provider-operations.md#microsoftinsights)/алертрулес/* | Создание классического оповещения метрики и управление им |
 > | /Манажементграупс/Реад [Microsoft. Management](resource-provider-operations.md#microsoftmanagement) | Вывод списка групп управления для пользователя, прошедшего проверку подлинности. |
@@ -6814,6 +6925,7 @@ ms.locfileid: "89483462"
         "Microsoft.Authorization/*/read",
         "Microsoft.Authorization/policyAssignments/*",
         "Microsoft.Authorization/policyDefinitions/*",
+        "Microsoft.Authorization/policyExemptions/*",
         "Microsoft.Authorization/policySetDefinitions/*",
         "Microsoft.Insights/alertRules/*",
         "Microsoft.Management/managementGroups/read",
@@ -8483,6 +8595,7 @@ ms.locfileid: "89483462"
 > | --- | --- |
 > | [Microsoft. Authorization](resource-provider-operations.md#microsoftauthorization)/полициассигнментс/Реад | Возвращает сведения о назначении политики. |
 > | [Microsoft. Authorization](resource-provider-operations.md#microsoftauthorization)/полицидефинитионс/Реад | Возвращает сведения об определении политики. |
+> | [Microsoft. Authorization](resource-provider-operations.md#microsoftauthorization)/полициексемптионс/Реад | Получение сведений об исключении политики. |
 > | [Microsoft. Authorization](resource-provider-operations.md#microsoftauthorization)/полицисетдефинитионс/Реад | Получение сведений об определении набора политик. |
 > | **NotActions** |  |
 > | *Нет* |  |
@@ -8505,6 +8618,7 @@ ms.locfileid: "89483462"
       "actions": [
         "Microsoft.Authorization/policyassignments/read",
         "Microsoft.Authorization/policydefinitions/read",
+        "Microsoft.Authorization/policyexemptions/read",
         "Microsoft.Authorization/policysetdefinitions/read"
       ],
       "notActions": [],
@@ -8531,6 +8645,7 @@ ms.locfileid: "89483462"
 > | */чтение | Чтение ресурсов всех типов, кроме секретов. |
 > | [Microsoft. Authorization](resource-provider-operations.md#microsoftauthorization)/полициассигнментс/* | Создание назначений политик и управление ими |
 > | [Microsoft. Authorization](resource-provider-operations.md#microsoftauthorization)/полицидефинитионс/* | Создание определений политик и управление ими |
+> | [Microsoft. Authorization](resource-provider-operations.md#microsoftauthorization)/полициексемптионс/* |  |
 > | [Microsoft. Authorization](resource-provider-operations.md#microsoftauthorization)/полицисетдефинитионс/* | Создание наборов политик и управление ими |
 > | [Microsoft. Полициинсигхтс](resource-provider-operations.md#microsoftpolicyinsights)/* |  |
 > | [Microsoft. support](resource-provider-operations.md#microsoftsupport)/* | Создание и обновление запроса в службу поддержки |
@@ -8555,6 +8670,7 @@ ms.locfileid: "89483462"
         "*/read",
         "Microsoft.Authorization/policyassignments/*",
         "Microsoft.Authorization/policydefinitions/*",
+        "Microsoft.Authorization/policyexemptions/*",
         "Microsoft.Authorization/policysetdefinitions/*",
         "Microsoft.PolicyInsights/*",
         "Microsoft.Support/*"

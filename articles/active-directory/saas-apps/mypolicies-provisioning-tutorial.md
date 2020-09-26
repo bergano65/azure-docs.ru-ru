@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: article
 ms.date: 07/26/2019
 ms.author: zhchia
-ms.openlocfilehash: fe85dfb39a9787376221cb9beeea11bec35293f4
-ms.sourcegitcommit: 80b9c8ef63cc75b226db5513ad81368b8ab28a28
+ms.openlocfilehash: a6db1866c42dbb90d6ea0f288aceed4672424fe0
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/16/2020
-ms.locfileid: "90604467"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91321991"
 ---
 # <a name="tutorial-configure-mypolicies-for-automatic-user-provisioning"></a>Учебник. Настройка myPolicies для автоматической подготовки пользователей
 
@@ -97,11 +97,11 @@ ms.locfileid: "90604467"
 
 3. Выберите вкладку **Подготовка**.
 
-    ![Вкладка "Подготовка"](common/provisioning.png)
+    ![Снимок экрана параметров управления с вызываемым параметром подготовки.](common/provisioning.png)
 
 4. Для параметра **Режим подготовки к работе** выберите значение **Automatic** (Автоматически).
 
-    ![Автоматическая вкладка подготовки](common/provisioning-automatic.png)
+    ![Снимок экрана: раскрывающийся список режима подготовки с вызываемым автоматическим параметром.](common/provisioning-automatic.png)
 
 5. В разделе **учетные данные администратора** введите `https://<myPoliciesCustomDomain>.mypolicies.com/scim` **URL-адрес клиента** , где `<myPoliciesCustomDomain>` — это пользовательский домен myPolicies. Вы можете получить домен клиента myPolicies из URL-адреса.
 Пример: `<demo0-qa>` . mypolicies.com.
@@ -114,7 +114,7 @@ ms.locfileid: "90604467"
 
     ![Почтовое уведомление](common/provisioning-notification-email.png)
 
-8. Нажмите **Сохранить**.
+8. Выберите команду **Сохранить**.
 
 9. В разделе **сопоставления** выберите **синхронизировать Azure Active Directory пользователей с myPolicies**.
 

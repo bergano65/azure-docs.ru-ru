@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: article
 ms.date: 06/07/2019
 ms.author: jeedes
-ms.openlocfilehash: f323b563d90de315bdbb317f88d7f9449be6c008
-ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
+ms.openlocfilehash: 623ec6999add175e85f117e547fba61734d2b892
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88546702"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91286018"
 ---
 # <a name="tutorial-configure-smartsheet-for-automatic-user-provisioning"></a>Учебник. Настройка Smartsheet для автоматической подготовки пользователей
 
@@ -37,7 +37,7 @@ ms.locfileid: "88546702"
 
 В сценарии, описанном в этом руководстве, предполагается, что у вас уже имеется:
 
-* [Клиент Azure AD](https://docs.microsoft.com/azure/active-directory/develop/quickstart-create-new-tenant).
+* [Клиент Azure AD.](https://docs.microsoft.com/azure/active-directory/develop/quickstart-create-new-tenant)
 * Учетная запись пользователя в Azure AD с [разрешением](https://docs.microsoft.com/azure/active-directory/users-groups-roles/directory-assign-admin-roles) на настройку подготовки (например, администратор приложений, администратор облачных приложений, владелец приложения или глобальный администратор).
 * [Клиент Smartsheet](https://www.smartsheet.com/pricing).
 * Учетная запись пользователя на корпоративном плане Smartsheet Enterprise или Enterprise с разрешениями системного администратора.
@@ -69,15 +69,15 @@ ms.locfileid: "88546702"
 
 5. Создайте **маркер секрета** , необходимый для настройки автоматической подготовки пользователей с помощью Azure AD, перейдя к **приложениям и интеграции**.
 
-    ![Установка Smartsheet](media/smartsheet-provisioning-tutorial/Smartsheet05.png)
+    ![Снимок экрана со страницей администрирования Smartsheet с именем аватара пользователя и параметром интеграции приложений &.](media/smartsheet-provisioning-tutorial/Smartsheet05.png)
 
 6. Выберите **доступ через API**. Щелкните **создать новый маркер доступа**.
 
-    ![Установка Smartsheet](media/smartsheet-provisioning-tutorial/Smartsheet06.png)
+    ![Снимок экрана с диалоговым окном "личные настройки" с доступом к API и созданием новых параметров маркера доступа, вызываемых.](media/smartsheet-provisioning-tutorial/Smartsheet06.png)
 
 7. Определите имя маркера доступа API. Нажмите кнопку **ОК**.
 
-    ![Установка Smartsheet](media/smartsheet-provisioning-tutorial/Smartsheet07.png)
+    ![Снимок экрана шага 1 из 2: создание маркера доступа API с параметром "ОК", вызываемым "out".](media/smartsheet-provisioning-tutorial/Smartsheet07.png)
 
 8. Скопируйте маркер доступа API и сохраните его, так как это будет единственный момент, когда вы сможете его просмотреть. Это необходимо в поле **секретного токена** в Azure AD.
 
@@ -117,11 +117,11 @@ ms.locfileid: "88546702"
 
 3. Выберите вкладку **Подготовка**.
 
-    ![Вкладка "Подготовка"](common/provisioning.png)
+    ![Снимок экрана параметров управления с вызываемым параметром подготовки.](common/provisioning.png)
 
 4. Для параметра **Режим подготовки к работе** выберите значение **Automatic** (Автоматически).
 
-    ![Вкладка "Подготовка"](common/provisioning-automatic.png)
+    ![Снимок экрана: раскрывающийся список режима подготовки с вызываемым автоматическим параметром.](common/provisioning-automatic.png)
 
 5. В разделе **учетные данные администратора** введите **базовый URL-адрес scim 2,0 и значения маркера доступа** , полученные ранее из Smartsheet в **URL-адресе клиента** и **секретном токене** соответственно. Щелкните **проверить подключение** , чтобы убедиться, что Azure AD может подключиться к Smartsheet. Если подключение не выполняется, убедитесь, что у учетной записи Smartsheet есть разрешения SysAdmin, и повторите попытку.
 
@@ -131,7 +131,7 @@ ms.locfileid: "88546702"
 
     ![Почтовое уведомление](common/provisioning-notification-email.png)
 
-7. Нажмите **Сохранить**.
+7. Выберите команду **Сохранить**.
 
 8. В разделе **сопоставления** выберите **синхронизировать Azure Active Directory пользователей с Smartsheet**.
 
@@ -150,7 +150,7 @@ ms.locfileid: "88546702"
    |externalId|Строка|
    |роли [основной EQ "true"]. Отображение|Строка|
    |роли [основной EQ "true"]. Type|Строка|
-   |роли [первичный EQ "true"]. Value|Строка|
+   |roles[primary eq "True"].value|Строка|
    |Роли|Строка|
    urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:department|Строка|
    |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:division|Строка|
