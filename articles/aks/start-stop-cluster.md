@@ -5,12 +5,12 @@ services: container-service
 ms.topic: article
 ms.date: 09/24/2020
 author: palma21
-ms.openlocfilehash: 460b592924a19449d77ce8d45f470f3e3129f4a6
-ms.sourcegitcommit: d95cab0514dd0956c13b9d64d98fdae2bc3569a0
+ms.openlocfilehash: 4a814d575e0879daec64ebfdabc1539219bea250
+ms.sourcegitcommit: 5dbea4631b46d9dde345f14a9b601d980df84897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 09/25/2020
-ms.locfileid: "91357953"
+ms.locfileid: "91368946"
 ---
 # <a name="stop-and-start-an-azure-kubernetes-service-aks-cluster-preview"></a>Останавливает и запускает кластер Azure Kubernetes Service (AKS) (Предварительная версия)
 
@@ -28,6 +28,7 @@ ms.locfileid: "91357953"
 При использовании функции запуска и окончания кластера действуют следующие ограничения.
 
 - Эта функция поддерживается только для кластеров с поддержкой масштабируемых наборов виртуальных машин.
+- На этапе предварительной версии эта функция не поддерживается для частных кластеров.
 - Состояние кластера остановленного кластера AKS сохраняется в течение 12 месяцев. Если кластер остановлен более 12 месяцев, состояние кластера восстановить нельзя. Дополнительные сведения см. в разделе [политики поддержки AKS](support-policies.md).
 - Вы можете запустить или удалить остановленный кластер AKS. Чтобы выполнить любые операции, такие как масштабирование или обновление, сначала запустите кластер.
 

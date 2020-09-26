@@ -12,12 +12,12 @@ author: VanMSFT
 ms.author: vanto
 ms.reviewer: ''
 ms.date: 04/23/2020
-ms.openlocfilehash: ab1865608146880bbf612b7cb08c2a673c93b31f
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: fa60d6127a42f0118df152e5b3081751c595dbcf
+ms.sourcegitcommit: d95cab0514dd0956c13b9d64d98fdae2bc3569a0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87087969"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91362637"
 ---
 # <a name="configure-always-encrypted-by-using-azure-key-vault"></a>Настройка Always Encrypted с помощью Azure Key Vault 
 
@@ -159,7 +159,7 @@ GO
 
 Для каждого пациента необходимо зашифровать данные в столбцах **SSN** и **BirthDate**. Для столбца SSN будет использоваться детерминированное шифрование, которое поддерживает уточняющие запросы на соответствие условию, операции объединения и группировки, а для столбца BirthDate — случайное шифрование, которое не поддерживает какие-либо операции.
 
-Задайте для параметра **Тип шифрования** столбца SSN значение **Детерминированное**, а для столбца BirthDate — **Случайное**. Щелкните **Далее**.
+Задайте для параметра **Тип шифрования** столбца SSN значение **Детерминированное**, а для столбца BirthDate — **Случайное**. Нажмите кнопку **Далее**.
 
 ![Шифрование столбцов…](./media/always-encrypted-azure-key-vault-configure/column-selection.png)
 
@@ -171,7 +171,7 @@ GO
 
 1. Выберите **Хранилище ключей Azure**.
 2. Из раскрывающегося списка выберите нужное хранилище ключей.
-3. Щелкните **Далее**.
+3. Нажмите кнопку **Далее**.
 
 ![Настройка главного ключа](./media/always-encrypted-azure-key-vault-configure/master-key-configuration.png)
 
@@ -183,7 +183,7 @@ GO
 
 Убедитесь, что все параметры настроены правильно, и нажмите кнопку **Готово** , чтобы завершить настройку Always Encrypted.
 
-![Сводка](./media/always-encrypted-azure-key-vault-configure/summary.png)
+![На снимке экрана показана страница результатов с задачами, помеченными как пройденные.](./media/always-encrypted-azure-key-vault-configure/summary.png)
 
 ### <a name="verify-the-wizards-actions"></a>Проверка действий мастера
 
@@ -266,7 +266,7 @@ static void InitializeAzureKeyVaultProvider() {
 - Вставить данные в зашифрованные столбцы.
 - Выбрать запись, выполнив фильтрацию по конкретному значению в зашифрованном столбце.
 
-Замените содержимое *Program.CS* следующим кодом. Замените строку подключения для глобальной переменной connectionString, расположенную в строке прямо над методом Main, действительной строкой подключения с портала Azure. Это единственное изменение, которое необходимо внести в этот код.
+Замените содержимое *Program.cs* приведенным ниже кодом. Замените строку подключения для глобальной переменной connectionString, расположенную в строке прямо над методом Main, действительной строкой подключения с портала Azure. Это единственное изменение, которое необходимо внести в этот код.
 
 Запустите приложение, чтобы увидеть функцию Always Encrypted в действии.
 
@@ -605,7 +605,7 @@ SELECT FirstName, LastName, SSN, BirthDate FROM Patients;
 
 ## <a name="related-information"></a>Дополнительные сведения
 
-- [Always Encrypted (Разработка клиентов)](https://msdn.microsoft.com/library/mt147923.aspx)
+- [Постоянное шифрование (разработка клиентских приложений)](https://msdn.microsoft.com/library/mt147923.aspx)
 - [Прозрачное шифрование данных](https://msdn.microsoft.com/library/bb934049.aspx)
 - [Шифрование SQL Server](https://msdn.microsoft.com/library/bb510663.aspx)
 - [Мастер Always Encrypted](https://msdn.microsoft.com/library/mt459280.aspx)

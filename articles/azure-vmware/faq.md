@@ -2,187 +2,185 @@
 title: Часто задаваемые вопросы
 description: Содержит ответы на некоторые распространенные вопросы о решении Azure VMware.
 ms.topic: conceptual
-ms.date: 05/04/2020
+ms.date: 09/25/2020
 ms.author: dikamath
-ms.openlocfilehash: 7b4abc2d711a3da6a6df125854759e083d7e04a7
-ms.sourcegitcommit: 0fd1f3fe7817ad44d878d580ec167e1508051795
+ms.openlocfilehash: 4bb713b3d50fa92728baf7b1fff1e6e65c48ed92
+ms.sourcegitcommit: 5dbea4631b46d9dde345f14a9b601d980df84897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/19/2020
-ms.locfileid: "90817842"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91368742"
 ---
-# <a name="frequently-asked-questions-about-azure-vmware-solution-preview"></a>Часто задаваемые вопросы о предварительной версии решения Azure VMware
+# <a name="frequently-asked-questions-about-azure-vmware-solution"></a>Часто задаваемые вопросы о решении Azure VMware
 
 Ответы на часто задаваемые вопросы о решении Azure VMware.
 
-## <a name="general"></a>Общие
+## <a name="general"></a>Общие сведения
 
-### <a name="what-is-azure-vmware-solution"></a>Что такое Решение Azure VMware?
+#### <a name="what-is-azure-vmware-solution"></a>Что такое Решение Azure VMware?
 
 Гибридные облачные платформы появились как важнейшие решения для поддержки цифровых преобразований клиентских систем на фоне развития стратегий модернизации, нацеленных на повышение гибкости бизнеса, снижение затрат и ускорение инноваций на предприятиях. Решение VMware для Azure объединяет программное обеспечение программного обеспечения центра обработки данных (SDDC) VMware с Microsoft Azure глобальной экосистемой облачных служб. Решение Azure VMware управляется в соответствии с требованиями к производительности, доступности, безопасности и соответствию.
 
 ## <a name="azure-vmware-solution-service"></a>Служба решения Azure VMware
 
-### <a name="where-is-azure-vmware-solution-available-today"></a>Где находится решение Azure VMware, доступное сегодня?
+#### <a name="where-is-azure-vmware-solution-available-today"></a>Где находится решение Azure VMware, доступное сегодня?
 
 Служба постоянно добавляется в новые регионы, поэтому для получения дополнительных сведений просмотрите [последние сведения о доступности службы](https://azure.microsoft.com/global-infrastructure/services/?products=azure-vmware) . 
 
-### <a name="can-workloads-running-in-an-azure-vmware-solution-instance-consume-or-integrate-with-azure-services"></a>Могут ли рабочие нагрузки, работающие в экземпляре решения Azure VMware, использовать или интегрировать со службами Azure?
+#### <a name="can-workloads-running-in-an-azure-vmware-solution-instance-consume-or-integrate-with-azure-services"></a>Могут ли рабочие нагрузки, работающие в экземпляре решения Azure VMware, использовать или интегрировать со службами Azure?
 
 Все службы Azure будут доступны клиентам Azure VMware. Ограничения производительности и доступности для конкретных служб следует решать на индивидуальной основе.
 
-### <a name="do-i-use-the-same-tools-that-i-use-now-to-manage-private-cloud-resources"></a>Будут ли у меня те же средства, которые я использую сейчас, для управления ресурсами частного облака?
+#### <a name="do-i-use-the-same-tools-that-i-use-now-to-manage-private-cloud-resources"></a>Будут ли у меня те же средства, которые я использую сейчас, для управления ресурсами частного облака?
 
 Да. Для развертывания и многих операций управления используется портал Azure. Для управления ресурсами vSphere и NSX-T используются соответственно vCenter и NSX Manager.
 
-### <a name="can-i-manage-a-private-cloud-with-my-on-premises-vcenter"></a>Можно ли управлять частным облаком через локальный vCenter?
+#### <a name="can-i-manage-a-private-cloud-with-my-on-premises-vcenter"></a>Можно ли управлять частным облаком через локальный vCenter?
 
 При запуске решение Azure VMware не поддерживает единый интерфейс управления в локальных и частных облачных средах. Для управления кластерами частного облака будут применяться vCenter и NSX Manager, расположенные в частном облаке.
 
-### <a name="can-i-use-vrealize-suite-running-on-premises"></a>Можно ли использовать vRealize Suite, работающий в локальной среде? 
+#### <a name="can-i-use-vrealize-suite-running-on-premises"></a>Можно ли использовать vRealize Suite, работающий в локальной среде? 
 
 Конкретные сценарии интеграции и использования могут оцениваться индивидуально.
 
-### <a name="can-i-migrate-vsphere-vms-from-on-premises-environments-to-azure-vmware-solution-private-clouds"></a>Можно ли перенести виртуальные машины vSphere из локальных сред в частные облака решения Azure VMware?
+#### <a name="can-i-migrate-vsphere-vms-from-on-premises-environments-to-azure-vmware-solution-private-clouds"></a>Можно ли перенести виртуальные машины vSphere из локальных сред в частные облака решения Azure VMware?
 
 Да. Миграцию виртуальных машин и vMotion можно использовать для перемещения виртуальных машин в частное облако, если выполняются стандартные требования Cross vCenter [VMotion](https://kb.vmware.com/s/article/210695) .
 
-### <a name="is-a-specific-version-of-vsphere-required-in-on-premises-environments"></a>Требуется ли определенная версия vSphere в локальных средах?
+#### <a name="is-a-specific-version-of-vsphere-required-in-on-premises-environments"></a>Требуется ли определенная версия vSphere в локальных средах?
 
-Так как во всех облачных средах установлен HCX, в локальных средах для vMotion требуется vSphere 5.5 или более поздней версии.
+Так как все облачные среды поставляются с VMware ХККС, vSphere 5,5 или более поздней версии в локальных средах для vMotion.
 
-### <a name="what-does-the-change-control-process-look-like"></a>Как выглядит процесс управления изменениями?
+#### <a name="what-does-the-change-control-process-look-like"></a>Как выглядит процесс управления изменениями?
 
 Обновления, вносимые в саму службу, будут соответствовать стандартному процессу управления изменениями Microsoft Azure. За любые задачи администрирования рабочей нагрузки и связанные процессы управления изменениями клиенты отвечают самостоятельно.
 
-### <a name="how-is-this-different-from-azure-vmware-solution-by-cloudsimple"></a>Чем это решение отличается от Решения Azure VMware от CloudSimple?
+#### <a name="how-is-this-different-from-azure-vmware-solution-by-cloudsimple"></a>Чем это решение отличается от Решения Azure VMware от CloudSimple?
 
 Новое решение Azure VMware — это результат прямого сотрудничества корпорации Майкрософт и VMware на уровне поставщиков облачных служб. Новое решение полностью разработано, создано и поддерживается корпорацией Майкрософт, и оно было реализовано в VMware. Для решений используется согласованная архитектура, при этом стек технологий VMware выполняется в выделенной инфраструктуре Azure.
 
-### <a name="if-im-an-existing-azure-vmware-solution-customer-what-does-this-preview-mean-for-me"></a>Если я уже являюсь клиентом решения Azure VMware, как на меня повлияет эта предварительная версия?
+#### <a name="are-red-hat-solutions-supported-on-azure-vmware-solution"></a>Поддерживаются ли решения Red Hat в решении VMware для Azure?
 
-Она никак не повлияет на имеющееся Решение Azure VMware от CloudSimple. Мы продолжаем поддерживать это решение в Azure. Решение Azure VMware поддерживается нашим [соглашением об уровне обслуживания](https://aka.ms/CSVMwareSLA). Клиентам следует использовать имено эту службу для рабочих нагрузок. Это доступное решение, на которое распространяются [условия обслуживания Майкрософт](https://azure.microsoft.com/support/legal/).
+Корпорация Майкрософт и Red Hat совместно используют интегрированную совместую службу поддержки, которая предоставляет единую контактную точку для экосистемы Red Hat, работающей на платформе Azure.  Как и другие службы платформы Azure, работающие с Red Hat Enterprise Linux, решение Azure VMware распространяется на облачный доступ и интегрированный тег поддержки, и Red Hat Enterprise Linux поддерживается для работы на основе решения Azure VMware в Azure.
 
-### <a name="can-i-migrate-from-azure-vmware-solution-by-cloudsimple-to-this-new-solution"></a>Могу ли я перейти с Решения Azure VMware от CloudSimple на новое решение?
+#### <a name="is-vmware-hcx-enterprise-edition-available-and-if-so-how-much-does-it-cost"></a>Доступна ли версия VMware ХККС Enterprise, и если да, то сколько ИТ стоит?
 
-Да, решение Azure VMware поддерживает миграцию с использованием привычных средств VMware, таких как HCX. Для клиентов, заинтересованных в переходе к новому решению, обратитесь к группе учетная запись Майкрософт, чтобы узнать о доступных вариантах и поддержке.
-
-
+VMware ХККС Enterprise Edition (EE) доступен в составе решения Azure VMware в виде *предварительной версии* функции или службы. Хотя VMware ХККС EE для Azure VMware находится на этапе предварительной версии, это бесплатная функция или служба, которая подлежит предварительной версии условий обслуживания. Когда служба VMware ХККС EE станет общедоступной, вы получите 30-дневное уведомление о том, что выставление счетов будет переключаться. Вы также можете отключить или отказаться от использования службы.
 
 ## <a name="compute-network-and-storage"></a>Вычисления, сеть и хранилище
 
-### <a name="is-there-more-than-one-type-of-host-available"></a>Доступно ли более одного типа узлов?
+#### <a name="is-there-more-than-one-type-of-host-available"></a>Доступно ли более одного типа узлов?
 
 Существует только один доступный тип узлов.
 
-### <a name="what-are-the-cpu-specifications-in-each-type-of-host"></a>Каковы спецификации ЦП для каждого типа узла?
+#### <a name="what-are-the-cpu-specifications-in-each-type-of-host"></a>Каковы спецификации ЦП для каждого типа узла?
 
 На серверах установлены по два 18-ядерных ЦП Intel с частотой 2,3 ГГц.
 
-### <a name="how-much-memory-is-in-each-host"></a>Какой объем памяти на каждом узле?
+#### <a name="how-much-memory-is-in-each-host"></a>Какой объем памяти на каждом узле?
 
 На серверах установлено по 576 ГБ ОЗУ.
 
-### <a name="what-is-the-storage-capacity-of-each-host"></a>Какая емкость хранилища на каждом узле?
+#### <a name="what-is-the-storage-capacity-of-each-host"></a>Какая емкость хранилища на каждом узле?
 
-Каждый узел ESXi имеет два vSAN дискграупс с уровнем емкости 15,2 ТБ и уровнем кэша NVMe размером 3,2 ТБ (1,6 ТБ в каждом дискграуп).
+Каждый узел ESXi имеет два vSAN дискграупс с уровнем емкости 15,2 ТБ и уровнем кэша NVMe 3,2 ТБ (1,6 ТБ в каждом дискграуп).
 
-### <a name="how-much-network-bandwidth-is-available-in-each-esxi-host"></a>Какой объем пропускной способности сети доступен на каждом узле ESXi?
+#### <a name="how-much-network-bandwidth-is-available-in-each-esxi-host"></a>Какой объем пропускной способности сети доступен на каждом узле ESXi?
 
-Каждый узел ESXi — это решение Azure VMware с сетевыми адаптерами 4 25 Гбит/с, подготовленными для трафика ESXi системы и двумя сетевыми картами, подготовленными для трафика рабочей нагрузки. 
+Каждый узел ESXi — это решение Azure VMware с сетевыми картами 4 25 Гбит/с с поддержкой двух сетевых адаптеров для ESXi системного трафика и двух сетевых адаптеров, подготовленных для трафика рабочей нагрузки. 
 
-### <a name="is-data-stored-on-the-vsan-datastores-encrypted-at-rest"></a>Хранятся ли данные в хранилищах данных vSAN, зашифрованных при хранении?
+#### <a name="is-data-stored-on-the-vsan-datastores-encrypted-at-rest"></a>Хранятся ли данные в хранилищах данных vSAN, зашифрованных при хранении?
 
 Да, все данные vSAN шифруются по умолчанию с помощью ключей, хранящихся в Azure Key Vault.
 
 ## <a name="hosts-clusters-and-private-clouds"></a>Узлы, кластеры и частные облака
 
-### <a name="is-the-underlying-infrastructure-shared"></a>Базовая инфраструктура используется совместно с другими?
+#### <a name="is-the-underlying-infrastructure-shared"></a>Базовая инфраструктура используется совместно с другими?
 
 Нет, узлы и кластеры частного облака выделяются эксклюзивно и безопасно очищаются до и после использования.
 
-### <a name="what-are-the-minimum-and-maximum-number-of-hosts-per-cluster"></a>Какое минимальное и максимальное число узлов на один кластер?
+#### <a name="what-are-the-minimum-and-maximum-number-of-hosts-per-cluster"></a>Какое минимальное и максимальное число узлов на один кластер?
 
 Кластеры могут масштабироваться в диапазоне от 3 до 16 узлов ESXi. Пробные кластеры ограничены тремя узлами.
 
-### <a name="can-i-scale-my-private-cloud-clusters"></a>Можно ли масштабировать кластеры частного облака?
+#### <a name="can-i-scale-my-private-cloud-clusters"></a>Можно ли масштабировать кластеры частного облака?
 
 Да, кластеры масштабируются в диапазоне от минимального до максимального числа узлов ESXi. Пробные кластеры ограничены тремя узлами.
 
-### <a name="what-are-trial-clusters"></a>Что такое пробные кластеры?
+#### <a name="what-are-trial-clusters"></a>Что такое пробные кластеры?
 
 Пробные кластеры — это три кластера узлов, которые используются для оценки частных облаков решения Azure VMware в течение месяца.
 
-### <a name="can-i-use-high-end-hosts-for-trial-clusters"></a>Можно ли использовать высокопроизводительные узлы для пробных кластеров?
+#### <a name="can-i-use-high-end-hosts-for-trial-clusters"></a>Можно ли использовать высокопроизводительные узлы для пробных кластеров?
 
 Нет. Высокопроизводительные узлы ESXi зарезервированы для использования в рабочих кластерах.
 
 ## <a name="azure-vmware-solution-and-vmware-software"></a>Решение Azure VMware и программное обеспечение VMware
 
-### <a name="what-versions-of-vmware-software-is-used-in-private-clouds"></a>Какие версии программного обеспечения VMware используются в частных облаках?
+#### <a name="what-versions-of-vmware-software-is-used-in-private-clouds"></a>Какие версии программного обеспечения VMware используются в частных облаках?
 
-В частных облаках используется vSphere 6.7, vSAN 6.7, HCX и NSX-T версии 2.5.  
+В частных облаках используется vSphere 6,7, vSAN 6,7, VMware ХККС и версия 2,5 НСКС-T.  
 
-### <a name="do-private-clouds-use-vmware-nsx"></a>Используется ли VMware NSX в частных облаках?
+#### <a name="do-private-clouds-use-vmware-nsx"></a>Используется ли VMware NSX в частных облаках?
 
 Да, НСКС-T 2,5 используется для программно определяемой сети в частных облаках решения Azure VMware.
 
-### <a name="can-i-use-vmware-nsx-v-in-a-private-cloud"></a>Можно ли использовать VMware NSX-V в частном облаке?
+#### <a name="can-i-use-vmware-nsx-v-in-a-private-cloud"></a>Можно ли использовать VMware NSX-V в частном облаке?
 
 Нет. В настоящее время поддерживается только версия NSX-T.
 
-### <a name="is-nsx-required-in-on-premises-environments-or-networks-that-connect-to-a-private-cloud"></a>Требуется ли НСКС в локальных средах или сетях, которые подключаются к частному облаку?
+#### <a name="is-nsx-required-in-on-premises-environments-or-networks-that-connect-to-a-private-cloud"></a>Требуется ли НСКС в локальных средах или сетях, которые подключаются к частному облаку?
 
 Нет, вам не обязательно использовать NSX локально.
 
-### <a name="what-is-the-upgrade-and-update-schedule-for-vmware-software-in-a-private-cloud"></a>Что такое расписание обновлений для программного обеспечения VMware в частном облаке?
+#### <a name="what-is-the-upgrade-and-update-schedule-for-vmware-software-in-a-private-cloud"></a>Что такое расписание обновлений для программного обеспечения VMware в частном облаке?
 
 Обновления пакета по частного облака предназначены для сохранения программного обеспечения в рамках одной версии последнего выпуска пакета программного обеспечения из VMware. Версии программного обеспечения частного облака могут отличаться от самых последних версий отдельных программных компонентов (ESXi, НСКС-T, vCenter, vSAN).
 
-### <a name="how-often-will-the-private-cloud-software-stack-be-updated"></a>Как часто будет обновляться стек программного обеспечения частного облака?
+#### <a name="how-often-will-the-private-cloud-software-stack-be-updated"></a>Как часто будет обновляться стек программного обеспечения частного облака?
 
 Программное обеспечение частного облака обновляется по графику, согласованному с выпуском пакетов программного обеспечения VMware. Для обновления частного облака не требуется время простоя.
 
 ## <a name="connectivity"></a>Соединение
 
-### <a name="what-network-ip-address-planning-is-required-to-incorporate-private-clouds-with-on-premises-environments"></a>Какие действия по планированию IP-адресов в сети потребуются для внедрения частных облаков в локальные среды?
+#### <a name="what-network-ip-address-planning-is-required-to-incorporate-private-clouds-with-on-premises-environments"></a>Какие действия по планированию IP-адресов в сети потребуются для внедрения частных облаков в локальные среды?
 
 Для развертывания частного облака решения Azure VMware требуется частная сеть/22-адресное пространство. Это частное адресное пространство не должно пересекаться с другими виртуальными сетями в подписке или с локальными сетями.
  
-### <a name="how-do-i-connect-from-on-premises-environments-to-an-azure-vmware-solution-private-cloud"></a>Разделы справки подключиться из локальных сред к частному облаку решения Azure VMware?
+#### <a name="how-do-i-connect-from-on-premises-environments-to-an-azure-vmware-solution-private-cloud"></a>Разделы справки подключиться из локальных сред к частному облаку решения Azure VMware?
 
 Подключиться к службе можно одним из двух способов: 
 
 - Через виртуальную машину или шлюз приложений, развернутые в виртуальной сети Azure, для которой настроен пиринг с частным облаком через ExpressRoute.
 - Через канал ExpressRoute Global Reach от локального центра обработки данных к каналу Azure ExpressRoute.
 
-### <a name="how-do-i-connect-a-workload-vm-to-the-internet-or-an-azure-service-endpoint"></a>Как подключить виртуальную машину с рабочей нагрузкой к Интернету или к конечной точке службы Azure?
+#### <a name="how-do-i-connect-a-workload-vm-to-the-internet-or-an-azure-service-endpoint"></a>Как подключить виртуальную машину с рабочей нагрузкой к Интернету или к конечной точке службы Azure?
 
 Включите подключение к Интернету для частного облака на портале Azure. С помощью NSX-T Manager создайте маршрутизатор NSX-T T1 и логический коммутатор. Затем с помощью vCenter разверните виртуальную машину в том сегменте сети, который определен этим логическим коммутатором. Эта виртуальная машина получит сетевой доступ к Интернету и к службам Azure.
 
-### <a name="do-i-need-to-restrict-access-from-the-internet-to-vms-on-logical-networks-in-a-private-cloud"></a>Нужно ли ограничивать доступ из Интернета к виртуальным машинам в логических сетях частного облака?
+#### <a name="do-i-need-to-restrict-access-from-the-internet-to-vms-on-logical-networks-in-a-private-cloud"></a>Нужно ли ограничивать доступ из Интернета к виртуальным машинам в логических сетях частного облака?
 
 Нет. Сетевой трафик из Интернета напрямую в частные облака не пропускается.
 
-### <a name="do-i-need-to-restrict-internet-access-from-vms-on-logical-networks-to-the-internet"></a>Нужно ли ограничивать доступ к Интернету из виртуальных машин в логических сетях?
+#### <a name="do-i-need-to-restrict-internet-access-from-vms-on-logical-networks-to-the-internet"></a>Нужно ли ограничивать доступ к Интернету из виртуальных машин в логических сетях?
 
 Да. Вам нужно с помощью NSX-T Manager создать брандмауэр, который ограничивает доступ к Интернету из виртуальных машин.
 
 ## <a name="accounts-and-privileges"></a>Учетные записи и привилегии
 
-### <a name="what-accounts-and-privileges-will-i-get-with-my-new-azure-vmware-solution-private-cloud"></a>Какие учетные записи и привилегии получит мое новое частное облако решения Azure VMware?
+#### <a name="what-accounts-and-privileges-will-i-get-with-my-new-azure-vmware-solution-private-cloud"></a>Какие учетные записи и привилегии получит мое новое частное облако решения Azure VMware?
 
 Вам предоставляются учетные данные для пользователя cloudadmin в vCenter и административный доступ к NSX-T Manager. Также доступна группа CloudAdmin, которую можно использовать для внедрения Azure Active Directory. Подробнее о концепциях доступа и удостоверений см. [здесь](concepts-identity.md).
 
-### <a name="can-have-administrator-access-to-esxi-hosts"></a>Если ли у меня доступ администратора к узлам ESXi?
+#### <a name="can-have-administrator-access-to-esxi-hosts"></a>Если ли у меня доступ администратора к узлам ESXi?
 
 Нет, доступ администратора к узлам ESXi ограничен в соответствии с требованиями к безопасности этого решения.
 
-### <a name="what-privileges-and-permissions-will-i-have-in-vcenter"></a>Какие привилегии и разрешения я получу в vCenter?
+#### <a name="what-privileges-and-permissions-will-i-have-in-vcenter"></a>Какие привилегии и разрешения я получу в vCenter?
 
 У вас будут права группы CloudAdmin. Подробнее о концепциях доступа и удостоверений см. [здесь](concepts-identity.md).
 
-### <a name="what-privileges-and-permissions-will-i-have-on-the-nsx-t-manager"></a>Какие привилегии и разрешения я получу в NSX-T Manager?
+#### <a name="what-privileges-and-permissions-will-i-have-on-the-nsx-t-manager"></a>Какие привилегии и разрешения я получу в NSX-T Manager?
 
 У вас будут полные права администратора в NSX-T и возможность управления доступом на основе ролей (аналогично при использовании NSX-T Data Center в локальной среде). Подробнее о концепциях доступа и удостоверений см. [здесь](concepts-identity.md).
 
@@ -191,23 +189,19 @@ ms.locfileid: "90817842"
 
 ## <a name="billing-and-support"></a>Выставление счетов и поддержка
 
-### <a name="how-will-i-be-billed-during-the-preview-of-azure-vmware-solution"></a>Как будет взиматься плата за использование предварительной версии решения VMware для Azure?
+#### <a name="how-will-pricing-be-structured-for-azure-vmware-solution"></a>Как будут структурированы цены для решения Azure VMware?
 
-Выставление счетов за решение Azure VMware во время предварительной версии осуществляется ежемесячно с оплатой по мере использования. С выходом общедоступной версии появятся дополнительные варианты.
+Общие вопросы по ценам см. на странице [цен](https://azure.microsoft.com/pricing/details/azure-vmware) на решения VMware для Azure. 
 
-### <a name="how-will-pricing-be-structured-during-the-preview-of-azure-vmware-solution"></a>Как будут структурированы цены во время предварительной версии решения VMware для Azure?
+#### <a name="who-supports-azure-vmware-solution"></a>Кто поддерживает решение Azure VMware?
 
-Общие вопросы по ценам см. на странице [цен на решение Azure VMware](https://azure.microsoft.com/pricing/details/azure-vmware). Сведения о ценах на предварительную версию доступны по запросу, обратитесь в службу поддержки вашей учетной записи или перейдите по ссылке на странице цен, чтобы обратиться в отдел продаж.
+Поддержка решения VMware для Azure поставляется корпорацией Майкрософт. Вы можете отправить [запрос в службу поддержки](https://portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade/newsupportrequest).
 
-### <a name="who-supports-azure-vmware-solution"></a>Кто поддерживает решение Azure VMware?
-
-Поддержка решения VMware для Azure поставляется корпорацией Майкрософт. Обратите внимание, что согласно нашим рекомендациям по предварительной версии, мы предоставляем поддержку в течение 9 – 5 РМ PST-часов с понедельника по пятницу. Чтобы создать запрос в службу поддержки, воспользуйтесь [этой ссылкой](https://portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade/newsupportrequest).
-
-### <a name="what-accounts-do-i-need-to-create-an-azure-vmware-solution-private-cloud"></a>Какие учетные записи нужно создать в частном облаке решения Azure VMware?
+#### <a name="what-accounts-do-i-need-to-create-an-azure-vmware-solution-private-cloud"></a>Какие учетные записи нужно создать в частном облаке решения Azure VMware?
 
 Вам потребуется учетная запись Azure в подписке Azure.
 
-### <a name="how-do-i-request-a-host-quota-increase-for-azure-vmware-solution"></a>Разделы справки запросить увеличение квоты узла для решения VMware для Azure?
+#### <a name="how-do-i-request-a-host-quota-increase-for-azure-vmware-solution"></a>Разделы справки запросить увеличение квоты узла для решения VMware для Azure?
 
 * Вам потребуется [Соглашение Enterprise Azure (EA)](https://docs.microsoft.com/azure/cost-management-billing/manage/ea-portal-agreements) с корпорацией Майкрософт.
 * Вам потребуется учетная запись Azure в подписке Azure.
