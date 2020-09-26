@@ -11,12 +11,12 @@ ms.date: 04/15/2020
 ms.author: kevin
 ms.reviewer: igorstan
 ms.custom: azure-synapse
-ms.openlocfilehash: 25ab7d275957aff03ad76bf2e946a98fc6cd8821
-ms.sourcegitcommit: 3fc3457b5a6d5773323237f6a06ccfb6955bfb2d
+ms.openlocfilehash: fecb78b240f5c983580d4bdb34535a879ffe3e2e
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/11/2020
-ms.locfileid: "90032968"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91289282"
 ---
 # <a name="maximize-rowgroup-quality-for-columnstore-index-performance"></a>Максимальное качество группы строк для производительности индекса columnstore
 
@@ -26,7 +26,7 @@ ms.locfileid: "90032968"
 
 Так как индекс columnstore обрабатывает таблицу, сканируя сегменты столбцов отдельных групп строк, увеличение максимального числа строк в каждой группе строк повышает производительность запросов. Если группы включают большое число строк, сжатие данных также оптимизируется, так как с диска считывается меньше данных.
 
-Дополнительные сведения о группах строк см. в [руководстве по индексам сolumnstore](/sql/relational-databases/indexes/columnstore-indexes-overview?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest).
+Дополнительные сведения о группах строк см. в [руководстве по индексам сolumnstore](/sql/relational-databases/indexes/columnstore-indexes-overview?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true).
 
 ## <a name="target-size-for-rowgroups"></a>Целевой размер для групп строк
 
@@ -34,15 +34,15 @@ ms.locfileid: "90032968"
 
 ## <a name="rowgroups-can-get-trimmed-during-compression"></a>Группы строк при сжатии можно обрезать
 
-Во время массовой загрузки или повторном создании индекса columnstore для сжатия всех строк, назначенных каждой группе строк, иногда не хватает доступной памяти. Из-за нехватки памяти индексы columnstore обрезают размеры групп строк, обеспечивая выполнение сжатия в columnstore.
+Во время выполнения групповой загрузки или перестроения индекса columnstore иногда недостаточно памяти для сжатия всех строк, назначенных для каждого группы строк. Из-за нехватки памяти индексы columnstore обрезают размеры групп строк, обеспечивая выполнение сжатия в columnstore.
 
 Если недостаточно памяти для сжатия по крайней мере 10 000 строк в каждом группы строк, будет сформирована ошибка.
 
-Дополнительные сведения о выполнении массовой загрузки см. в статье [Загрузка данных индексов ColumnStore](/sql/relational-databases/indexes/columnstore-indexes-data-loading-guidance?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest#Bulk ).
+Дополнительные сведения о выполнении массовой загрузки см. в статье [Загрузка данных индексов ColumnStore](/sql/relational-databases/indexes/columnstore-indexes-data-loading-guidance?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest#Bulk&preserve-view=true ).
 
 ## <a name="how-to-monitor-rowgroup-quality"></a>Мониторинг качества групп строк
 
-Динамическое административное представление sys. dm_pdw_nodes_db_column_store_row_group_physical_stats ([sys. dm_db_column_store_row_group_physical_stats](/sql/relational-databases/system-dynamic-management-views/sys-dm-db-column-store-row-group-physical-stats-transact-sql?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest) содержит определение представления, соответствующее базе данных SQL), которое предоставляет полезную информацию, например число строк в групп строк, и причину усечения при усечении. Вы можете создать следующее представление для удобства выполнения запросов к этому динамическому административному представлению, чтобы получить сведения об усечении групп строк.
+Динамическое административное представление sys. dm_pdw_nodes_db_column_store_row_group_physical_stats ([sys. dm_db_column_store_row_group_physical_stats](/sql/relational-databases/system-dynamic-management-views/sys-dm-db-column-store-row-group-physical-stats-transact-sql?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true) содержит определение представления, соответствующее базе данных SQL), которое предоставляет полезную информацию, например число строк в групп строк, и причину усечения при усечении. Вы можете создать следующее представление для удобства выполнения запросов к этому динамическому административному представлению, чтобы получить сведения об усечении групп строк.
 
 ```sql
 create view dbo.vCS_rg_physical_stats
@@ -77,14 +77,15 @@ from cte;
 
 ## <a name="how-to-estimate-memory-requirements"></a>Как рассчитать требования к памяти
 
-Максимальный объем памяти, требуемый для сжатия одной группы строк, составляет приблизительно
+Максимальный объем памяти, необходимый для сжатия одного группы строк, примерно следующий:
 
 - 72 МБ +
 - \#\* \# столбцы строк \* 8 байт +
 - \#строки \* \# короткие-строковые столбцы \* 32 байт +
 - \#столбцы длинных строк \* 16 МБ для словаря сжатия
 
-где столбцы коротких строк используют типы строковых данных размером <= 32 байта, а столбцы длинных строк используют типы строковых данных размером > 32 байта.
+> [!NOTE]
+> Если в коротких строках используются строковые типы данных <= 32 байт, а в строковых столбцах используются строковые типы данных > 32 байт.
 
 Используемый метод сжатия длинных строк предназначен для сжатия текста. Этот метод сжатия использует *словари* для хранения текстовых шаблонов. Максимальный размер словаря составляет 16 МБ. Для каждого столбца длинной строки в группе строк используется только один словарь.
 
@@ -121,7 +122,7 @@ from cte;
 
 ### <a name="adjust-maxdop"></a>Настройка MAXDOP
 
-В рамках каждого распределения группы строк сжимаются в columnstore параллельно, если для распределения доступно более одного ядра ЦП. Параллелизм потребляет дополнительную память, что может привести к ее нехватке и усечению строк.
+Каждое распределение сжимает групп строк в columnstore параллельно, когда доступно более одного ядра ЦП для каждого распределения. Параллелизм потребляет дополнительную память, что может привести к ее нехватке и усечению строк.
 
 Чтобы избежать этого, можно использовать указание запроса MAXDOP для принудительного выполнения загрузки в последовательном режиме в рамках каждого распределения.
 

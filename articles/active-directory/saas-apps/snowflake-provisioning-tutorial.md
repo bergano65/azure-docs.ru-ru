@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: article
 ms.date: 07/26/2019
 ms.author: zhchia
-ms.openlocfilehash: 7fbf7743eb1c037a364e1004fc3be30db6777bb0
-ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
+ms.openlocfilehash: f4c6eb8ad8e3d69d2b3545bc5754e1a632f5cc8c
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88546650"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91285832"
 ---
 # <a name="tutorial-configure-snowflake-for-automatic-user-provisioning"></a>Учебник. Настройка снежинки для автоматической подготовки пользователей
 
@@ -38,7 +38,7 @@ ms.locfileid: "88546650"
 
 В сценарии, описанном в этом руководстве, предполагается, что у вас уже имеется:
 
-* [Клиент Azure AD](https://docs.microsoft.com/azure/active-directory/develop/quickstart-create-new-tenant).
+* [Клиент Azure AD.](https://docs.microsoft.com/azure/active-directory/develop/quickstart-create-new-tenant)
 * Учетная запись пользователя в Azure AD с [разрешением](https://docs.microsoft.com/azure/active-directory/users-groups-roles/directory-assign-admin-roles) на настройку подготовки (например, администратор приложений, администратор облачных приложений, владелец приложения или глобальный администратор).
 * [Клиент «снежинка](https://www.Snowflake.com/pricing/)».
 * Учетная запись пользователя в снежинке с разрешениями администратора.
@@ -58,11 +58,11 @@ ms.locfileid: "88546650"
 
 2.  Для клиента снежинки будет создан маркер доступа SCIM. Чтобы получить его, щелкните ссылку, выделенную ниже.
 
-    ![«Снежинка» Add SCIM](media/Snowflake-provisioning-tutorial/image01.png)
+    ![Снимок экрана листа на странице «снежинка» U I с вызываемым маркером доступа S C M.](media/Snowflake-provisioning-tutorial/image01.png)
 
 3. Скопируйте созданное значение маркера и нажмите кнопку **Готово**. Это значение будет указано в поле **секретный токен** на вкладке Подготовка приложения "Снежинка" в портал Azure.
 
-    ![«Снежинка» Add SCIM](media/Snowflake-provisioning-tutorial/image02.png)
+    ![Снимок экрана с областью сведений, в которой показан маркер, скопированный в текстовое поле, и параметр Done, вызываемый.](media/Snowflake-provisioning-tutorial/image02.png)
 
 ## <a name="step-3-add-snowflake-from-the-azure-ad-application-gallery"></a>Шаг 3. Добавление снежинки из коллекции приложений Azure AD
 
@@ -93,11 +93,11 @@ ms.locfileid: "88546650"
 
 3. Выберите вкладку **Подготовка**.
 
-    ![Вкладка "Подготовка"](common/provisioning.png)
+    ![Снимок экрана параметров управления с вызываемым параметром подготовки.](common/provisioning.png)
 
 4. Для параметра **Режим подготовки к работе** выберите значение **Automatic** (Автоматически).
 
-    ![Вкладка "Подготовка"](common/provisioning-automatic.png)
+    ![Снимок экрана: раскрывающийся список режима подготовки с вызываемым автоматическим параметром.](common/provisioning-automatic.png)
 
 5. В разделе Учетные данные администратора введите **базовый URL-адрес SCIM 2,0 и значения маркера проверки подлинности** , полученные ранее в полях **URL-адрес клиента** и **секретный токен** соответственно. Нажмите кнопку **проверить подключение** , чтобы убедиться, что Azure AD может подключиться к снежинки. В случае сбоя подключения убедитесь, что учетная запись снежинки имеет разрешения администратора, и повторите попытку.
 
@@ -107,7 +107,7 @@ ms.locfileid: "88546650"
 
     ![Почтовое уведомление](common/provisioning-notification-email.png)
 
-8. Нажмите **Сохранить**.
+8. Выберите команду **Сохранить**.
 
 9. В разделе **сопоставления** выберите **синхронизировать Azure Active Directory пользователей с снежинкой**.
 

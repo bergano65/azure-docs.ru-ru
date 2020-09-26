@@ -8,18 +8,18 @@ ms.service: hdinsight
 ms.topic: how-to
 ms.custom: hdinsightactive,seoapr2020
 ms.date: 08/12/2020
-ms.openlocfilehash: 9454cb83d535d97a3dd95cd9f5d0636769797d08
-ms.sourcegitcommit: c28fc1ec7d90f7e8b2e8775f5a250dd14a1622a6
+ms.openlocfilehash: eb62cf099d7ccc133a207a843a8be3debf5c5454
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/13/2020
-ms.locfileid: "88166949"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91308424"
 ---
 # <a name="use-apache-spark-to-read-and-write-apache-hbase-data"></a>Чтение и запись данных Apache HBase с помощью Apache Spark
 
 Обычно для запроса Apache HBase применяется низкоуровневый API (сканирует, получает и помещает) или синтаксис SQL, использующий Apache Phoenix. Apache также предоставляет соединитель Apache Spark HBase. Соединитель — это удобная и эффективная альтернатива для запроса и изменения данных, хранящихся в HBase.
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 * Два отдельных кластера HDInsight развернуты в одной [виртуальной сети](./hdinsight-plan-virtual-network-deployment.md). Одна HBase и одна Spark с установленным как минимум Spark 2,1 (HDInsight 3,6). Дополнительные сведения см. в статье [Создание кластеров под управлением Linux в HDInsight с помощью портала Azure](hdinsight-hadoop-create-linux-clusters-portal.md).
 
@@ -98,7 +98,7 @@ __Примечание__. прежде чем продолжать, убедит
     |Параметры|`-s SECONDARYS_STORAGE_URL`|
     |Persisted|да|
 
-    * `SECONDARYS_STORAGE_URL`URL-адрес хранилища по умолчанию на стороне Spark. Пример параметра:`-s wasb://sparkcon-2020-08-03t18-17-37-853z@sparkconhdistorage.blob.core.windows.net`
+    * `SECONDARYS_STORAGE_URL` URL-адрес хранилища по умолчанию на стороне Spark. Пример параметра: `-s wasb://sparkcon-2020-08-03t18-17-37-853z@sparkconhdistorage.blob.core.windows.net`
 
 
 2.  Используйте действие сценария в кластере Spark, чтобы применить изменения со следующими соображениями.
@@ -107,7 +107,7 @@ __Примечание__. прежде чем продолжать, убедит
     |---|---|
     |URI bash-скрипта|`https://hdiconfigactions.blob.core.windows.net/hbasesparkconnectorscript/connector-spark.sh`|
     |Типы узлов|Головной, Рабочий, Zookeeper|
-    |Параметры|`-s "SPARK-CRON-SCHEDULE"`(необязательно) `-h "HBASE-CRON-SCHEDULE"` используемых|
+    |Параметры|`-s "SPARK-CRON-SCHEDULE"` (необязательно) `-h "HBASE-CRON-SCHEDULE"` используемых|
     |Persisted|да|
 
 
@@ -160,10 +160,10 @@ __Примечание.__ Эти действия должны выполнят�
 
 1. В открытом сеансе SSH в кластере Spark введите следующую команду, чтобы запустить оболочку Spark:
 
-    |Версия Spark| Версия HDI HBase  | Версия шк    |  Get-Help  |
+    |Версия Spark| Версия HDI HBase  | Версия шк    |  Команда  |
     | :-----------:| :----------: | :-----------: |:----------- |
-    |      2.1    | HDI 3,6 (HBase 1,1) | 1.1.0.3.1.2.2-1    | `spark-shell --packages com.hortonworks:shc-core:1.1.1-2.1-s_2.11 --repositories https://repo.hortonworks.com/content/groups/public/` |
-    |      2.4    | HDI 4,0 (HBase 2,0) | 1.1.1-2.1-s_2.11  | `spark-shell --packages com.hortonworks.shc:shc-core:1.1.0.3.1.2.2-1 --repositories http://repo.hortonworks.com/content/groups/public/` |
+    |      2.1    | HDI 3,6 (HBase 1,1) | 1.1.1-2.1-s_2.11    | `spark-shell --packages com.hortonworks:shc-core:1.1.1-2.1-s_2.11 --repositories https://repo.hortonworks.com/content/groups/public/` |
+    |      2.4    | HDI 4,0 (HBase 2,0) | 1.1.0.3.1.2.2-1  | `spark-shell --packages com.hortonworks.shc:shc-core:1.1.0.3.1.2.2-1 --repositories http://repo.hortonworks.com/content/groups/public/` |
 
 2. Не закрывайте этот экземпляр оболочки Spark и продолжайте [определять каталог и запрос](#define-a-catalog-and-query). Если вы не нашли JAR, соответствующие вашим версиям в репозитории ШК Core, продолжите чтение. 
 

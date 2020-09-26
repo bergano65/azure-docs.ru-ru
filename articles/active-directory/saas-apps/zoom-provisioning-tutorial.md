@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: article
 ms.date: 06/3/2019
 ms.author: Zhchia
-ms.openlocfilehash: 15e3d72661ad35335c744fbaf0ab39627d254750
-ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
+ms.openlocfilehash: f5d76168b75d9352898d8f0abf80a6ccfb83af30
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88545987"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91333449"
 ---
 # <a name="tutorial-configure-zoom-for-automatic-user-provisioning"></a>Учебник. Настройка масштабирования для автоматической подготовки пользователей
 
@@ -34,7 +34,7 @@ ms.locfileid: "88545987"
 
 В сценарии, описанном в этом руководстве, предполагается, что у вас уже имеется:
 
-* [Клиент Azure AD](https://docs.microsoft.com/azure/active-directory/develop/quickstart-create-new-tenant).
+* [Клиент Azure AD.](https://docs.microsoft.com/azure/active-directory/develop/quickstart-create-new-tenant)
 * Учетная запись пользователя в Azure AD с [разрешением](https://docs.microsoft.com/azure/active-directory/users-groups-roles/directory-assign-admin-roles) на настройку подготовки (например, администратор приложений, администратор облачных приложений, владелец приложения или глобальный администратор). 
 * [Клиент масштабирования](https://zoom.us/pricing).
 * Учетная запись пользователя в масштабе с разрешениями администратора.
@@ -52,19 +52,19 @@ ms.locfileid: "88545987"
 
 2. Перейдите к элементу **Управление** в правом верхнем углу страницы. 
 
-    ![Масштаб установки](media/zoom-provisioning-tutorial/zoom02.png)
+    ![Снимок экрана: масштаб магазина приложений с вызываемым параметром управления.](media/zoom-provisioning-tutorial/zoom02.png)
 
 3. Перейдите к созданному приложению Azure AD. 
     
-    ![Масштаб приложения](media/zoom-provisioning-tutorial/zoom03.png)
+    ![Снимок экрана созданного раздела приложений с вызываемым приложением Azure A D.](media/zoom-provisioning-tutorial/zoom03.png)
 
 4. Выберите **учетные данные приложения** в левой области навигации.
 
-    ![Масштаб приложения](media/zoom-provisioning-tutorial/zoom04.png)
+    ![Снимок экрана левой панели навигации с выделенным параметром "учетные данные приложения".](media/zoom-provisioning-tutorial/zoom04.png)
 
 5. Скопируйте и сохраните **маркер JWT**. Это значение будет указано в поле **секретный токен** на вкладке Подготовка приложения масштабирования в портал Azure. Если вам нужен новый маркер без срока действия, необходимо будет перенастроить время окончания срока действия, при котором будет автоматически создан новый маркер. 
 
-    ![Масштаб установки](media/zoom-provisioning-tutorial/zoom05.png)
+    ![Снимок экрана со страницей учетных данных приложения.](media/zoom-provisioning-tutorial/zoom05.png)
 
 ## <a name="step-3-add-zoom-from-the-azure-ad-application-gallery"></a>Шаг 3. Добавление масштаба из коллекции приложений Azure AD
 
@@ -95,11 +95,11 @@ ms.locfileid: "88545987"
 
 3. Выберите вкладку **Подготовка**.
 
-    ![Вкладка "Подготовка"](common/provisioning.png)
+    ![Снимок экрана параметров управления с вызываемым параметром подготовки.](common/provisioning.png)
 
 4. Для параметра **Режим подготовки к работе** выберите значение **Automatic** (Автоматически).
 
-    ![Вкладка "Подготовка"](common/provisioning-automatic.png)
+    ![Снимок экрана: раскрывающийся список режима подготовки с вызываемым автоматическим параметром.](common/provisioning-automatic.png)
 
 5. В разделе **учетные данные администратора** введите `https://api.zoom.us/scim` **URL-адрес клиента**. Введите значение **токена JWT** , полученное ранее в **маркере секрета**. Нажмите кнопку **проверить подключение** , чтобы убедиться, что Azure AD может подключиться для масштабирования. В случае сбоя подключения убедитесь, что учетная запись масштабирования имеет разрешения администратора, и повторите попытку.
 

@@ -1,0 +1,68 @@
+---
+title: Система состояния ошибки завершения Windows завершила системный процесс
+description: В этой статье приводятся инструкции по устранению проблем, при которых операционная система обнаруживает ошибку «Ошибка», которая предотвращает загрузку виртуальной машины Azure.
+services: virtual-machines-windows, azure-resource-manager
+documentationcenter: ''
+author: v-miegge
+manager: dcscontentpm
+editor: ''
+tags: azure-resource-manager
+ms.assetid: 037d0858-4611-4707-bd46-cc8085d011ed
+ms.service: virtual-machines-windows
+ms.workload: na
+ms.tgt_pltfrm: vm-windows
+ms.topic: troubleshooting
+ms.date: 09/21/2020
+ms.author: v-mibufo
+ms.openlocfilehash: b07033f96402edc24edd51de57661603e57472bc
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.translationtype: MT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91347768"
+---
+# <a name="windows-stop-error---0xc000021a-status-system-process-terminated"></a>Ошибка при прекращении работы Windows — системный процесс состояния 0xC000021A завершен
+
+В этой статье приводятся инструкции по устранению проблем, в которых операционная система (ОС) встречает ошибку «Ошибка», которая позволяет предотвратить загрузку виртуальной машины Azure.
+
+## <a name="symptom"></a>Симптом
+
+При использовании [диагностики загрузки](https://docs.microsoft.com/azure/virtual-machines/troubleshooting/boot-diagnostics) для просмотра снимка экрана виртуальной машины на снимке экрана отображается сообщение о том, что ОС обнаружила ошибку во время загрузки, со следующим сообщением:
+
+**Ваш компьютер столкнулся с проблемой и должен перезапуститься. Мы собираем некоторые сведения об ошибках, после чего вы можете перезапустить. (# #% завершено) Если вы хотите узнать больше, вы можете выполнить поиск этой ошибки в Интернете позже: 0xC000021a**.
+
+  ![На рис. 1 отображается код ошибки, #0xC000021A с сообщением "ваш компьютер столкнулся с проблемой и должен быть перезагружен. Мы собираем некоторые сведения об ошибках, после чего вы можете перезапустить ".](./media/windows-stop-error-system-process-terminated/1-pc-problem-restart.png)
+
+## <a name="cause"></a>Причина
+
+Ошибка 0xC000021A означает **STATUS_SYSTEM_PROCESS_TERMINATED**.
+
+Эта ошибка возникает, когда происходит сбой критического процесса, например WinLogon (winlogon.exe) или подсистемы времени выполнения сервера клиента (csrss.exe). После того как ядро обнаружит, что любая из этих служб остановлена, возникает ошибка " **остановить 0xC000021A** ". Эта ошибка может иметь несколько причин, включая следующие:
+
+- Установлены несоответствующие системные файлы.
+- Произошел сбой при установке пакета обновления или обновления KB.
+- Программа резервного копирования, используемая для восстановления жесткого диска, не могла правильно восстановить файлы, которые могли использоваться.
+- Установлена Несовместимая программа стороннего производителя.
+
+## <a name="solution"></a>Решение
+
+### <a name="collect-the-memory-dump-file"></a>Получение файла дампа памяти
+
+Чтобы устранить эту проблему, необходимо проанализировать аварийный дамп. Собирайте файл дампа памяти для сбоя и обратитесь в службу поддержки. Чтобы получить файл дампа, выполните следующие действия.
+
+### <a name="attach-the-os-disk-to-a-new-repair-vm"></a>Подключение диска ОС к новой виртуальной машине восстановления
+
+1.  Выполните шаги 1–3 из списка [команд для восстановления виртуальной машины](https://docs.microsoft.com/azure/virtual-machines/troubleshooting/repair-windows-vm-using-azure-virtual-machine-repair-commands), чтобы подготовить виртуальную машину для восстановления.
+2.  С помощью **Подключение к удаленному рабочему столу**подключитесь к виртуальной машине восстановления.
+
+### <a name="locate-the-dump-file-and-submit-a-support-ticket"></a>Размещение файла дампа и отправка запроса в службу поддержки
+
+1.  На виртуальной машине восстановления перейдите в папку Windows на подключенном диске ОС. Если буква драйвера, назначенная подключенному диску ОС, — F, перейдите по адресу Ф:\виндовс.
+2.  Найдите файл Memory. dmp и отправьте запрос в [службу поддержки](https://portal.azure.com/?#blade/Microsoft_Azure_Support/HelpAndSupportBlade) с файлом дампа памяти.
+3.  Если при поиске файла Memory. dmp возникают проблемы, можно использовать [вызовы прерываний (NMI) в последовательной консоли](https://docs.microsoft.com/azure/virtual-machines/troubleshooting/serial-console-windows#use-the-serial-console-for-nmi-calls) . Вы можете воспользоваться [руководством по созданию файла аварийного дампа с помощью вызовов NMI](https://docs.microsoft.com/windows/client-management/generate-kernel-or-complete-crash-dump).
+
+## <a name="next-steps"></a>Next Steps
+
+- Дополнительные сведения об устранении неполадок см. в статьях [Устранение распространенных ошибок загрузки](https://docs.microsoft.com/azure/virtual-machines/troubleshooting/boot-error-troubleshoot) или [Устранение неполадок виртуальной машины Windows путем подключения диска ОС к виртуальной машине восстановления](https://docs.microsoft.com/azure/virtual-machines/troubleshooting/troubleshoot-recovery-disks-windows). Кроме того, следует ознакомиться с [использованием диагностики загрузки для устранения неполадок виртуальной машины](https://docs.microsoft.com/azure/virtual-machines/troubleshooting/boot-diagnostics).
+- Дополнительные сведения об использовании Resource Manager вы найдете в статье [Общие сведения об Azure Resource Manager](https://docs.microsoft.com/azure/azure-resource-manager/management/overview).
+- Если вы не можете подключиться к виртуальной машине, см. статью [Устранение неполадок подключения RDP к виртуальной машине Azure](https://docs.microsoft.com/azure/virtual-machines/troubleshooting/troubleshoot-rdp-connection).
