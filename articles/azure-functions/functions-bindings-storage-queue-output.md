@@ -6,12 +6,12 @@ ms.topic: reference
 ms.date: 02/18/2020
 ms.author: cshoe
 ms.custom: devx-track-csharp, cc996988-fb4f-47, devx-track-python
-ms.openlocfilehash: 06d9ea895607332c8de25176376d52987ceed7a1
-ms.sourcegitcommit: 4913da04fd0f3cf7710ec08d0c1867b62c2effe7
+ms.openlocfilehash: 1d86009d593ef7e594ec2981132bcfb856569c31
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88212269"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91317231"
 ---
 # <a name="azure-queue-storage-output-bindings-for-azure-functions"></a>Выходные привязки хранилища очередей Azure для функций Azure
 
@@ -301,7 +301,7 @@ public class HttpTriggerQueueOutput {
 }
 ```
 
-| Свойство.    | Описание |
+| Свойство    | Описание |
 |-------------|-----------------------------|
 |`name`       | Объявляет имя параметра в сигнатуре функции. При активации функции значение этого параметра будет иметь содержимое сообщения очереди. |
 |`queueName`  | Объявляет имя очереди в учетной записи хранения. |
@@ -365,7 +365,7 @@ public class HttpTriggerQueueOutput {
 
 # <a name="python"></a>[Python](#tab/python)
 
-Существует два варианта вывода сообщения концентратора событий из функции:
+Существует два варианта вывода сообщения очереди из функции:
 
 - **Возвращаемое значение**: установите `name` свойство в *function.jsна* `$return` . В этой конфигурации возвращаемое значение функции сохраняется как сообщение хранилища очереди.
 
@@ -373,17 +373,17 @@ public class HttpTriggerQueueOutput {
 
 # <a name="java"></a>[Java](#tab/java)
 
-Существует два варианта вывода сообщения концентратора событий из функции с помощью аннотации [куеуеаутпут](/java/api/com.microsoft.azure.functions.annotation.queueoutput) :
+Существует два варианта вывода сообщения очереди из функции с помощью аннотации [куеуеаутпут](/java/api/com.microsoft.azure.functions.annotation.queueoutput) :
 
-- **Возвращаемое значение**: применяя заметку к самой функции, возвращаемое значение функции сохраняется как сообщение концентратора событий.
+- **Возвращаемое значение**: применяя заметку к самой функции, возвращаемое значение функции сохраняется как сообщение очереди.
 
-- **Императивное**: чтобы явно задать значение сообщения, примените заметку к конкретному параметру типа [`OutputBinding<T>`](/java/api/com.microsoft.azure.functions.outputbinding) , где `T` — это POJO или любой собственный тип Java. При такой конфигурации передача значения `setValue` методу сохраняет значение в виде сообщения концентратора событий.
+- **Императивное**: чтобы явно задать значение сообщения, примените заметку к конкретному параметру типа [`OutputBinding<T>`](/java/api/com.microsoft.azure.functions.outputbinding) , где `T` — это POJO или любой собственный тип Java. При такой конфигурации передача значения `setValue` методу сохраняет значение в виде сообщения очереди.
 
 ---
 
 ## <a name="exceptions-and-return-codes"></a>Исключения и коды возврата
 
-| Привязка |  Ссылка |
+| Привязка |  Справочник |
 |---|---|
 | Очередь | [Коды ошибок очередей](/rest/api/storageservices/queue-service-error-codes) |
 | Большой двоичный объект, таблица, очередь | [Коды ошибок хранилища](/rest/api/storageservices/fileservices/common-rest-api-error-codes) |
@@ -421,7 +421,7 @@ public class HttpTriggerQueueOutput {
 |maxDequeueCount|5|Число повторных попыток обработки сообщения, прежде чем поместить его в очередь подозрительных сообщений.|
 |newBatchThreshold|batchSize/2|Каждый раз, когда количество сообщений, обрабатываемых параллельно, достигает этого числа, среда выполнения получает другой пакет.|
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Выполнение функции как изменения данных хранилища очередей (триггер)](./functions-bindings-storage-queue-trigger.md)
 
