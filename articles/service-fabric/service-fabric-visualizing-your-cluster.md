@@ -5,12 +5,12 @@ author: mikkelhegn
 ms.topic: conceptual
 ms.date: 01/24/2019
 ms.author: mikhegn
-ms.openlocfilehash: 92f6f495f6aac23785dd2a21672747bffb07e2e3
-ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
+ms.openlocfilehash: 5c1a7de386baeb4b89fd12bd89236ea2e0348a57
+ms.sourcegitcommit: d95cab0514dd0956c13b9d64d98fdae2bc3569a0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2020
-ms.locfileid: "86256260"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91357222"
 ---
 # <a name="visualize-your-cluster-with-service-fabric-explorer"></a>Визуализация кластера с помощью обозревателя Service Fabric
 
@@ -106,7 +106,7 @@ Service Fabric Explorer также размещается в конечной т
 ## <a name="event-store"></a>EventStore
 EventStore — это функция, предлагаемая этой платформой. Она предоставляет события платформы Service Fabric, доступные в Service Fabric Explorer, а также через REST API. Вы можете просмотреть моментальный снимок происходящих действий в кластере для каждой сущности, например для узла, службы или приложения, а также отправить запрос с учетом времени возникновения события. Вы также можете получить дополнительные сведения об EventStore, ознакомившись со статьей [Общие сведения о службе EventStore](service-fabric-diagnostics-eventstore.md).   
 
-![EventStore][sfx-eventstore]
+![На снимке экрана показана область узлы с выбранными СОБЫТИЯми.][sfx-eventstore]
 
 >[!NOTE]
 >Начиная с версии Service Fabric 6.4 EventStore не включена по умолчанию. Ее необходимо включить в шаблон Resource Manager.

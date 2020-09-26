@@ -4,12 +4,12 @@ description: Узнайте, как выполнить резервное коп
 ms.reviewer: kasinh
 ms.topic: conceptual
 ms.date: 01/31/2019
-ms.openlocfilehash: 02d1cde7ab48aa951c47cfbfea29c90c3f53f768
-ms.sourcegitcommit: 3246e278d094f0ae435c2393ebf278914ec7b97b
+ms.openlocfilehash: ee89af311619922fa6ca585381d70ca66955f36a
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89378395"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91271653"
 ---
 # <a name="back-up-an-exchange-server-to-azure-backup-with-system-center-2012-r2-dpm"></a>Резервное копирование Exchange Server в службу архивации Azure с помощью System Center 2012 R2 DPM
 
@@ -38,8 +38,8 @@ ms.locfileid: "89378395"
 
 Чтобы установить агент защиты DPM на сервере Exchange, выполните следующие действия.
 
-1. Убедитесь, что брандмауэры настроены правильно. Ознакомьтесь со статьей [Настройка исключений брандмауэра для агента](/system-center/dpm/configure-firewall-settings-for-dpm?view=sc-dpm-2019).
-2. Установите агент на сервере Exchange Server, выбрав **Management > агенты > установить** в консоль администрирования DPM. Подробные инструкции см. в статье [Установка агента защиты DPM](/system-center/dpm/deploy-dpm-protection-agent?view=sc-dpm-2019).
+1. Убедитесь, что брандмауэры настроены правильно. Ознакомьтесь со статьей [Настройка исключений брандмауэра для агента](/system-center/dpm/configure-firewall-settings-for-dpm).
+2. Установите агент на сервере Exchange Server, выбрав **Management > агенты > установить** в консоль администрирования DPM. Подробные инструкции см. в статье [Установка агента защиты DPM](/system-center/dpm/deploy-dpm-protection-agent).
 
 ## <a name="create-a-protection-group-for-the-exchange-server"></a>Создание группы защиты для сервера Exchange Server
 

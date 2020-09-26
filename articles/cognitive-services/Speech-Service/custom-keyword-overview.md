@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.date: 04/06/2020
 ms.author: hasshah
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 8c19650a8f36181e3e003414ff15add071e9a8ac
-ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
+ms.openlocfilehash: b2763372cc63637f73610e1936e3ea54a4524e7d
+ms.sourcegitcommit: d95cab0514dd0956c13b9d64d98fdae2bc3569a0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88918899"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91356610"
 ---
 # <a name="what-is-a-keyword"></a>Что такое ключевое слово?
 
@@ -61,6 +61,6 @@ ms.locfileid: "88918899"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-* [Try the Speech service for free](get-started.md) (Бесплатное использование службы "Речь")
+* [Try the Speech service for free](overview.md#try-the-speech-service-for-free) (Бесплатное использование службы "Речь")
 * [Получение пакета SDK для службы "Речь"](speech-sdk.md)
 * [Дополнительные сведения о голосовых помощниках](voice-assistants.md)

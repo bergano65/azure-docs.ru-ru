@@ -8,12 +8,12 @@ ms.topic: how-to
 ms.date: 05/28/2019
 ms.author: sngun
 ms.custom: devx-track-java
-ms.openlocfilehash: c9abc4dc89651eec7df635fb415314b2c12da3a6
-ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
+ms.openlocfilehash: b1de0fa2e6601e4350b52caea32f8bc379909f85
+ms.sourcegitcommit: d95cab0514dd0956c13b9d64d98fdae2bc3569a0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87319768"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91356372"
 ---
 # <a name="use-azure-cosmos-db-change-feed-to-visualize-real-time-data-analytics"></a>Использование канала изменений Azure Cosmos DB для визуализации аналитики данных в реальном времени
 
@@ -255,7 +255,7 @@ Power BI — набор средств бизнес-аналитики для а
 
 7. Теперь, если вы хотите визуализировать больше метрики, можете вернуться к **streamjob1** и создать еще три набора выходных данных со следующими полями.
 
-   a. **Выходной псевдоним** — incomingRevenueOutput, имя набора данных — incomingRevenue, имя таблицы — incomingRevenue.  
+   а. **Выходной псевдоним** — incomingRevenueOutput, имя набора данных — incomingRevenue, имя таблицы — incomingRevenue.  
    b. **Выходной псевдоним** — top5Output, имя набора данных — top5, имя таблицы — top5.  
    c. **Выходной псевдоним** — uniqueVisitorCountOutput, имя набора данных — uniqueVisitorCount, имя таблицы — uniqueVisitorCount.
 
@@ -315,7 +315,7 @@ Power BI — набор средств бизнес-аналитики для а
 
    Так выглядит пример панели мониторинга с этими диаграммами:
 
-   :::image type="content" source="./media/changefeed-ecommerce-solution/visualizations.png" alt-text="визуализации":::
+   :::image type="content" source="./media/changefeed-ecommerce-solution/visualizations.png" alt-text="На снимке экрана показан пример панели мониторинга с диаграммами с средней ценой за действия, уникальные посетители, доходы и пять ведущих приобретенных товаров.":::
 
 ## <a name="optional-visualize-with-an-e-commerce-site"></a>Дополнительно: визуализация с использованием сайта электронной коммерции
 

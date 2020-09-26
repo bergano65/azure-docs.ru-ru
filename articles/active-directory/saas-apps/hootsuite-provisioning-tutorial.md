@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: article
 ms.date: 04/15/2020
 ms.author: Zhchia
-ms.openlocfilehash: a67d61c5a7c8861b1e4462586e1e4dca9149ab4f
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.openlocfilehash: c4c040c6d5b8eb4041db3ffaaab58657a9f9c7da
+ms.sourcegitcommit: d95cab0514dd0956c13b9d64d98fdae2bc3569a0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 09/25/2020
-ms.locfileid: "91305466"
+ms.locfileid: "91358072"
 ---
 # <a name="tutorial-configure-hootsuite-for-automatic-user-provisioning"></a>Руководство по Настройка Hootsuite для автоматической подготовки пользователей
 
@@ -88,7 +88,7 @@ ms.locfileid: "91305466"
 
 5. В разделе **Учетные данные администратора** введите значение `https://platform.hootsuite.com/scim/v2` в поле "URL-адрес клиента". Введите значение долгосрочного токена секрета, полученное ранее на **шаге 2**. Щелкните **Проверить подключение**, чтобы убедиться, что Azure AD может подключиться к Hootsuite. Если установить подключение не удалось, убедитесь, что у учетной записи Hootsuite есть разрешения администратора, и повторите попытку.
 
-    ![Подготовка](./media/hootsuite-provisioning-tutorial/provisioning.png)
+    ![На снимке экрана отображается диалоговое окно учетные данные администратора, в котором можно ввести клиент U R и секретный маркер.](./media/hootsuite-provisioning-tutorial/provisioning.png)
 
 6. В поле **Почтовое уведомление** введите адрес электронной почты пользователя или группы, которые должны получать уведомления об ошибках подготовки, а также установите флажок **Отправить уведомление по электронной почте при сбое**.
 

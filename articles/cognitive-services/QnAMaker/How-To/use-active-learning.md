@@ -1,14 +1,14 @@
 ---
 title: Использование активного обучения с базой знаний — QnA Maker
-description: Улучшите качество базы знаний с помощью активного обучения. Просмотр, принятие или отклонение, добавление без удаления или изменения существующих вопросов.
+description: Узнайте, как улучшить качество базы знаний с помощью активного обучения. Просмотр, принятие или отклонение, добавление без удаления или изменения существующих вопросов.
 ms.topic: conceptual
 ms.date: 03/18/2020
-ms.openlocfilehash: 004ee9d4cced0116831718b1601d5d510dea5a4d
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 32dfe6a274889181410ab5f800ac595ee81c148c
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87090932"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91298151"
 ---
 # <a name="use-active-learning-to-improve-your-knowledge-base"></a>Использование активного обучения для расширения базы знаний
 

@@ -6,12 +6,12 @@ ms.topic: conceptual
 ms.date: 12/09/2018
 ms.author: mavane
 ms.custom: seodec18
-ms.openlocfilehash: 9355482c26cabb96fc6292bab5d542f36aec6a8c
-ms.sourcegitcommit: 54d8052c09e847a6565ec978f352769e8955aead
+ms.openlocfilehash: 72f9e332a4faa98a8a86ef7b6edbefe20357e33f
+ms.sourcegitcommit: d95cab0514dd0956c13b9d64d98fdae2bc3569a0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88509762"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91356891"
 ---
 # <a name="develop-arm-templates-for-cloud-consistency"></a>Разработка шаблонов ARM для согласованности в облаке
 
@@ -487,7 +487,7 @@ Azure предоставляет широкий выбор образов вир
 az vm image list -all
 ```
 
-Тот же список можно получить с помощью командлета Azure PowerShell [Get-AzureRmVMImagePublisher](/powershell/module/az.compute/get-azvmimagepublisher), указав расположение с помощью параметра `-Location`. Например:
+Тот же список можно получить с помощью командлета Azure PowerShell [Get-AzureRmVMImagePublisher](/powershell/module/az.compute/get-azvmimagepublisher), указав расположение с помощью параметра `-Location`. Пример:
 
 ```azurepowershell-interactive
 Get-AzureRmVMImagePublisher -Location "West Europe" | Get-AzureRmVMImageOffer | Get-AzureRmVMImageSku | Get-AzureRmVMImage
@@ -590,7 +590,7 @@ Get-AzureRmVMSize -Location "West Europe"
 az vm extension image list --location myLocation
 ```
 
-Вы также можете выполнить командлет Azure PowerShell [Get-AzureRmVmImagePublisher](/powershell/module/az.compute/get-azvmimagepublisher) и использовать `-Location` для указания расположения образа виртуальной машины. Например:
+Вы также можете выполнить командлет Azure PowerShell [Get-AzureRmVmImagePublisher](/powershell/module/az.compute/get-azvmimagepublisher) и использовать `-Location` для указания расположения образа виртуальной машины. Пример:
 
 ```azurepowershell-interactive
 Get-AzureRmVmImagePublisher -Location myLocation | Get-AzureRmVMExtensionImageType | Get-AzureRmVMExtensionImage | Select Type, Version
@@ -655,7 +655,7 @@ Get-AzureRmVMExtensionImage -Location myLocation -PublisherName Microsoft.PowerS
 
 Ниже показан типичный пример процесса разработки для команды, использующей интегрированную среду разработки (IDE). На разных этапах временной шкалы выполняются разные типы тестов. Здесь два разработчика работают над одним решением, однако этот сценарий в равной степени применим к одному разработчику или большой рабочей группе. Каждый разработчик, как правило, создает локальную копию центрального репозитория, что позволяет разработчикам работать со своей локальной копией, не пересекаясь с другими участниками команды, которые работают над теми же файлами.
 
-![Рабочий процесс](./media/templates-cloud-consistency/workflow.png)
+![На диаграмме показаны два набора модульных тестов и интеграционные тесты параллельно с локальным I D E, которые объединяются в потоке разработки C I/C D в модульные тесты, затем — тесты интеграции, затем тестирование развертывания, а затем развертывание.](./media/templates-cloud-consistency/workflow.png)
 
 Примите во внимание следующие советы по тестированию и автоматизации.
 

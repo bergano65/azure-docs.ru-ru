@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 04/11/2019
 ms.author: asrastog
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: af8bd9a0420c90df4dea16fa8ebacbf4ea6494db
-ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
+ms.openlocfilehash: 815dc0a90d79323fb88c98867b5540105a6fa8cc
+ms.sourcegitcommit: d95cab0514dd0956c13b9d64d98fdae2bc3569a0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/31/2020
-ms.locfileid: "87488134"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91356202"
 ---
 # <a name="order-device-connection-events-from-azure-iot-hub-using-azure-cosmos-db"></a>Упорядочение событий изменения состояния подключения устройства из Центра Интернета вещей Azure с использованием Azure Cosmos DB
 
@@ -227,11 +227,11 @@ ms.locfileid: "87488134"
 
 5. Выберите **Добавить новый параметр**. В открывшемся раскрывающемся списке установите флажки **Ключ секции** и **Параметры для хранимой процедуры**, а затем щелкните в любом месте экрана. Будет добавлено поле для значения ключа секции и поле для параметров хранимой процедуры.
 
-   ![Заполнение действия приложения логики](./media/iot-hub-how-to-order-connection-state-events/logicapp-stored-procedure.png)
+   ![На снимке экрана показан элемент "выполнить хранимую процедуру" с выбранным параметром "добавить новый".](./media/iot-hub-how-to-order-connection-state-events/logicapp-stored-procedure.png)
 
 6. Введите значение ключа секции и параметры, как показано ниже. Обязательно поместите их в квадратные скобки и двойные кавычки, как показано ниже. Может потребоваться щелкнуть **Добавить динамическое содержимое**, чтобы получить допустимые значения, которые можно использовать здесь.
 
-   ![Заполнение действия приложения логики](./media/iot-hub-how-to-order-connection-state-events/logicapp-stored-procedure-2.png)
+   ![На снимке экрана показан элемент выполнения хранимой процедуры с указанными параметрами.](./media/iot-hub-how-to-order-connection-state-events/logicapp-stored-procedure-2.png)
 
 7. В верхней части панели, где отображается **Для каждого**, в разделе **Выберите выходные данные предыдущих шагов** убедитесь, что выбрано **Тело**.
 

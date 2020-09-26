@@ -11,12 +11,12 @@ author: stevestein
 ms.author: sstein
 ms.reviewer: ''
 ms.date: 09/24/2018
-ms.openlocfilehash: 88f1e40101b807e82eaf69be6c167cd4aa2e2831
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.openlocfilehash: 4413a987af7a4802366556fb86c0c55e7b401776
+ms.sourcegitcommit: d95cab0514dd0956c13b9d64d98fdae2bc3569a0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86539199"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91356806"
 ---
 # <a name="provision-and-catalog-new-tenants-in-a-saas-application-using-a-sharded-multi-tenant-azure-sql-database"></a>Предоставление и каталогизация новых клиентов в приложении SaaS с помощью сегментированной многоклиентской базы данных SQL Azure
 [!INCLUDE[appliesto-sqldb](../includes/appliesto-sqldb.md)]
@@ -169,7 +169,7 @@ ms.locfileid: "86539199"
 
 4. После остановки выполнения скрипта в точке останова нажмите клавишу **F11**, чтобы пошагово выполнить код.
 
-   ![debug](./media/saas-multitenantdb-provision-and-catalog/debug.png)
+   ![Снимок экрана: интегрированная среда сценариев Windows PowerShell с меню Отладка открыть и шаг с заходом выбран.](./media/saas-multitenantdb-provision-and-catalog/debug.png)
 
 5. Отслеживайте выполнение скрипта и используйте клавиши **F10** и **F11** (меню **Отладка**), чтобы обойти вызываемые функции или перейти в них по очереди.
 
@@ -237,7 +237,7 @@ ms.locfileid: "86539199"
 - Имя клиента хранится в таблице клиентов.
 - Имя базы данных хранится в таблицах управления сегментами.
 
-1. В SQL Server Management Studio (SSMS) подключитесь к серверу клиентов по адресу **Catalog-MT. \<USER\> . Database.Windows.NET**, указав для входа значение **Developer**и password = **P \@ ssword1**
+1. В SQL Server Management Studio (SSMS) подключитесь к серверу клиентов в **каталоге-MT. \<USER\> database.windows.net**, с именем входа **Developer**и password = **P \@ ssword1**
 
     ![Диалоговое окно подключения SSMS](./media/saas-multitenantdb-provision-and-catalog/SSMSConnection.png)
 
