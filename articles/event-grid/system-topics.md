@@ -2,13 +2,13 @@
 title: Разделы о системе в службе "Сетка событий Azure"
 description: Описание системных разделов в службе "Сетка событий Azure".
 ms.topic: conceptual
-ms.date: 08/27/2020
-ms.openlocfilehash: f5ca472ab5141207222987d476284813c2aacf56
-ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
+ms.date: 09/24/2020
+ms.openlocfilehash: b3a6e7528da2a11c2f91007425ab8beecaf920c3
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89019102"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91297289"
 ---
 # <a name="system-topics-in-azure-event-grid"></a>Разделы о системе в службе "Сетка событий Azure"
 Системный раздел в службе "Сетка событий" представляет одно или несколько событий, опубликованных службами Azure, такими как служба хранилища Azure и концентраторы событий Azure. Например, системный раздел может представлять **все события больших двоичных объектов** или только **созданные BLOB** -объекты, а также события, которые были **удалены** , опубликованные для **конкретной учетной записи хранения**. В этом примере при передаче большого двоичного объекта в учетную запись хранения служба хранилища Azure публикует событие **создания большого двоичного объекта** в системном разделе в службе "Сетка событий", который затем перенаправляет события [подписчикам](event-handlers.md) раздела, которые получают и обрабатывают событие. 
@@ -22,6 +22,7 @@ ms.locfileid: "89019102"
 - [Конфигурация приложений Azure](event-schema-app-configuration.md)
 - [Служба приложений Azure](event-schema-app-service.md)
 - [Хранилище BLOB-объектов Azure](event-schema-blob-storage.md)
+- [Службы коммуникации Azure](event-schema-communication-services.md) 
 - [Реестр контейнеров Azure](event-schema-container-registry.md)
 - [Центры событий Azure](event-schema-event-hubs.md)
 - [Центр Интернета вещей Azure](event-schema-iot-hub.md)

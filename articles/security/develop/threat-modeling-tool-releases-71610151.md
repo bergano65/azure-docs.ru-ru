@@ -1,24 +1,24 @@
 ---
 title: Microsoft Threat Modeling Tool выпуск 10/16/2019 — Azure
-description: Документирование заметок о выпуске средства моделирования угроз
+description: Документирование заметок о выпуске для 7.1.61015.1 выпуска средства моделирования угроз.
 author: jegeib
 ms.author: jegeib
 ms.service: security
 ms.topic: article
 ms.date: 10/16/2019
-ms.openlocfilehash: 410da29d8c119111d1ec9b4e60bf8fb1ca661f70
-ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
+ms.openlocfilehash: e45d1347993611130d1bb5036ad4638210c15517
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2020
-ms.locfileid: "86259389"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91317945"
 ---
 # <a name="threat-modeling-tool-update-release-71610151---10162019"></a>Threat Modeling Tool, выпуск обновления 7.1.61015.1 от 16.10.2019
 
 Версия 7.1.61015.1 Microsoft Threat Modeling Tool (ТМТ) была выпущена 16 2019 октября и содержит следующие изменения:
 
-- Улучшение специальных возможностей
-- Исправленные ошибки
+- Улучшения специальных возможностей
+- Исправления ошибок
 - Новые наборы элементов для Azure Logic Apps и Azure обозреватель данных
 
 ## <a name="notable-bug-fixes"></a>Исправления важных ошибок

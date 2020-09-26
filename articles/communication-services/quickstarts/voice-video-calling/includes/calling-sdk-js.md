@@ -4,17 +4,17 @@ ms.service: azure-communication-services
 ms.topic: include
 ms.date: 9/1/2020
 ms.author: mikben
-ms.openlocfilehash: 6922ab2aac8529da8ba55a98f465e3c0e3123b53
-ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
+ms.openlocfilehash: 5542ca2f50152e7588f32e9ac8717f691fdb4d63
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "90940079"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91376330"
 ---
 ## <a name="prerequisites"></a>Предварительные требования
 
 - Учетная запись Azure с активной подпиской. [Создайте учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) бесплатно. 
-- Развернутый ресурс служб связи. [Создайте ресурс служб связи](../../create-communication-resource.md).
+- Развернутый ресурс Служб коммуникации. [Создайте ресурс Служб коммуникации.](../../create-communication-resource.md)
 - Объект `User Access Token` для включения клиента вызова. Дополнительные сведения о [том, `User Access Token` как получить](../../access-tokens.md)
 - Необязательно. Выполните инструкции из краткого руководства по [началу работы с добавлением вызова в приложение](../getting-started-with-calling.md) .
 
@@ -33,13 +33,13 @@ npm install @azure/communication-calling --save
 
 ## <a name="object-model"></a>Объектная модель
 
-Следующие классы и интерфейсы обрабатывали некоторые основные функции вызывающей клиентской библиотеки служб связи Azure:
+Следующие классы и интерфейсы реализуют некоторые основные функции клиентской библиотеки Служб коммуникации Azure для вызовов:
 
 | Имя                             | Описание                                                                                                                                 |
 | ---------------------------------| ------------------------------------------------------------------------------------------------------------------------------------------- |
-| каллклиент                       | Каллклиент — это Главная точка входа в вызывающую клиентскую библиотеку.                                                                       |
-| каллажент                        | Каллажент используется для запуска вызовов и управления ими.                                                                                            |
-| азурекоммуникатионусеркредентиал | Класс Азурекоммуникатионусеркредентиал реализует интерфейс Коммуникатионусеркредентиал, который используется для создания экземпляра Каллажент. |
+| CallClient                       | CallClient — это основная точка входа в клиентскую библиотеку для вызовов.                                                                       |
+| CallAgent                        | CallAgent используется для инициирования вызовов и управления ими.                                                                                            |
+| AzureCommunicationUserCredential | Класс AzureCommunicationUserCredential реализует интерфейс CommunicationUserCredential, который используется для создания экземпляра CallAgent. |
 
 
 ## <a name="initialize-the-callclient-create-callagent-and-access-devicemanager"></a>Инициализация Каллклиент, создание Каллажент и доступ к Девицеманажер
@@ -80,11 +80,11 @@ const oneToOneCall = callAgent.call([CommunicationUser]);
 
 const userCallee = { communicationUserId: <ACS_USER_ID> }
 const pstnCallee = { phoneNumber: <PHONE_NUMBER>};
-const groupCall = callClient.call([userCallee, pstnCallee], placeCallOptions);
+const groupCall = callAgent.call([userCallee, pstnCallee], placeCallOptions);
 
 ```
 
-### <a name="place-a-11-call-with-with-video-camera"></a>Поместите вызов 1:1 с помощью видеокамеры
+### <a name="place-a-11-call-with-video-camera"></a>Размещение 1:1 звонка с помощью видеокамеры
 > [!WARNING]
 > Сейчас может быть не более одного исходящего локального потока видео.
 Чтобы поместить видеовызов, необходимо перечислить локальные камеры с помощью `getCameraList` API девицеманажер.
@@ -95,7 +95,7 @@ const deviceManager = await callClient.getDeviceManager();
 const videoDeviceInfo = deviceManager.getCameraList()[0];
 localVideoStream = new LocalVideoStream(videoDeviceInfo);
 const placeCallOptions = {videoOptions: {localVideoStreams:[localVideoStream]}};
-const call = callClient.call(['acsUserId'], placeCallOptions);
+const call = callAgent.call(['acsUserId'], placeCallOptions);
 
 ```
 
@@ -104,7 +104,7 @@ const call = callClient.call(['acsUserId'], placeCallOptions);
 ```js
 
 const context = { groupId: <GUID>}
-const call = callClient.join(context);
+const call = callAgent.join(context);
 
 ```
 
@@ -113,19 +113,19 @@ const call = callClient.join(context);
 Вы можете получить доступ к свойствам вызова и выполнить различные операции во время вызова для управления параметрами, связанными с видео и аудио.
 
 ### <a name="call-properties"></a>Свойства вызова
-* Получите уникальный идентификатор для этого вызова.
+* Получите уникальный идентификатор (String) для этого вызова.
 ```js
 
 const callId: string = call.id;
 
 ```
 
-* Чтобы узнать о других участниках вызова, просмотрите `remoteParticipant` коллекцию в `call` экземпляре.
+* Чтобы узнать о других участниках вызова, просмотрите `remoteParticipant` коллекцию в `call` экземпляре. Массив содержит `RemoteParticipant` объекты списка
 ```js
-const remoteParticipants: RemoteParticipants = call.remoteParticipants;
+const remoteParticipants = call.remoteParticipants;
 ```
 
-* Удостоверение вызывающего объекта, если вызов является входящим.
+* Удостоверение вызывающего объекта, если вызов является входящим. Identity является одним из `Identifier` типов
 ```js
 
 const callerIdentity = call.callerIdentity;
@@ -135,7 +135,7 @@ const callerIdentity = call.callerIdentity;
 * Возвращает состояние вызова.
 ```js
 
-const callState: CallState = call.state;
+const callState = call.state;
 
 ```
 Возвращает строку, представляющую текущее состояние вызова:
@@ -153,35 +153,34 @@ const callState: CallState = call.state;
 * Чтобы увидеть, почему заданный вызов завершен, проверьте `callEndReason` свойство.
 ```js
 
-const callEndReason: CallEndReason = call.callEndReason;
+const callEndReason = call.callEndReason;
+// callEndReason.code (number) code associated with the reason
+// callEndReason.subCode (number) subCode associated with the reason
+```
+
+* Чтобы узнать, является ли текущий вызов входящим вызовом, проверьте `isIncoming` свойство, возвращаемое `Boolean` .
+```js
+const isIncoming = call.isIncoming;
+```
+
+*  Чтобы проверить, отключен ли текущий микрофон, проверьте `muted` свойство, которое возвращается `Boolean` .
+```js
+
+const muted = call.isMicrophoneMuted;
 
 ```
 
-* Чтобы узнать, является ли текущий вызов входящим вызовом, проверьте `isIncoming` свойство
+* Чтобы узнать, отправляется ли поток обмена на экран из данной конечной точки, проверьте `isScreenSharingOn` свойство, возвращаемое `Boolean` .
 ```js
 
-const isIncoming: boolean = call.isIncoming;
+const isScreenSharingOn = call.isScreenSharingOn;
 
 ```
 
-*  Чтобы проверить, отключен ли текущий микрофон, проверьте `muted` свойство:
+* Чтобы проверить активные видеопотоки, проверьте `localVideoStreams` коллекцию, содержащую `LocalVideoStream` объекты
 ```js
 
-const muted: boolean = call.isMicrophoneMuted;
-
-```
-
-* Чтобы узнать, отправляется ли поток с общим экраном из данной конечной точки, проверьте `isScreenSharingOn` свойство:
-```js
-
-const isScreenSharingOn: boolean = call.isScreenSharingOn;
-
-```
-
-* Чтобы проверить активные видеопотоки, проверьте `localVideoStreams` коллекцию:
-```js
-
-const localVideoStreams: LocalVideoStream[] = call.localVideoStreams;
+const localVideoStreams = call.localVideoStreams;
 
 ```
 
@@ -194,7 +193,7 @@ const localVideoStreams: LocalVideoStream[] = call.localVideoStreams;
 //mute local device 
 await call.mute();
 
-//unmute device 
+//unmute local device 
 await call.unmute();
 
 ```
@@ -206,7 +205,7 @@ await call.unmute();
 
 
 ```js
-const localVideoStream = new SDK.LocalVideoStream(videoDeviceInfo);
+const localVideoStream = new LocalVideoStream(videoDeviceInfo);
 await call.startVideo(localVideoStream);
 
 ```
@@ -254,49 +253,49 @@ call.remoteParticipants; // [remoteParticipant, remoteParticipant....]
 * Получите идентификатор для этого удаленного участника.
 Identity является одним из типов "identifier":
 ```js
-
-const identity: CommunicationUser | PhoneNumber | CallingApplication | UnknownIdentifier;
-
+const identifier = remoteParticipant.identifier;
+//It can be one of:
+// { communicationUserId: '<ACS_USER_ID'> } - object representing ACS User
+// { phoneNumber: '<E.164>' } - object representing phone number in E.164 format
 ```
 
 * Получение состояния удаленного участника.
 ```js
 
-const state: RemoteParticipantState = remoteParticipant.state;
+const state = remoteParticipant.state;
 ```
 Состояние может быть одним из
 * "Idle" — начальное состояние
 * "Connected" — состояние перехода во время подключения участника к вызову
 * "Connected" — участник подключен к вызову
 * "Удержание"-участник находится в удержании
-* "Еарлимедиа" — объявлении воспроизводится до того, как участник подключен к вызову
+* "Еарлимедиа" — объявление воспроизводится до того, как участник подключен к вызову
 * "Disconnected" — конечное состояние — участник отключен от вызова
 
 Чтобы узнать, почему участник оставил вызов, проверьте `callEndReason` свойство:
 ```js
 
-const callEndReason: CallEndReason = remoteParticipant.callEndReason;
+const callEndReason = remoteParticipant.callEndReason;
+// callEndReason.code (number) code associated with the reason
+// callEndReason.subCode (number) subCode associated with the reason
+```
+
+* Чтобы проверить, не отключен ли удаленный участник, проверьте `isMuted` свойство, возвращаемое значение `Boolean`
+```js
+const isMuted = remoteParticipant.isMuted;
+```
+
+* Чтобы проверить, говорит ли этот удаленный участник, проверьте `isSpeaking` возвращаемое свойство. `Boolean`
+```js
+
+const isSpeaking = remoteParticipant.isSpeaking;
 
 ```
 
-* Чтобы проверить, отключен ли удаленный участник, проверьте `isMuted` свойство:
+* Чтобы проверить все потоки видео, отправляемые данным участником в этом вызове, проверьте `videoStreams` коллекцию, содержащую `RemoteVideoStream` объекты
 ```js
 
-const isMuted: boolean = remoteParticipant.isMuted;
-
-```
-
-* Чтобы проверить, говорит ли этот удаленный участник, проверьте `isSpeaking` свойство:
-```js
-
-const isSpeaking: boolean = remoteParticipant.isSpeaking;
-
-```
-
-* Чтобы проверить все потоки видео, отправляемые данным участником в этом вызове, проверьте `videoStreams` коллекцию:
-```js
-
-const videoStreams: RemoteVideoStream[] = remoteParticipant.videoStreams; // [RemoteVideoStream, ...]
+const videoStreams = remoteParticipant.videoStreams; // [RemoteVideoStream, ...]
 
 ```
 
@@ -312,7 +311,6 @@ const userIdentifier = { communicationUserId: <ACS_USER_ID> };
 const pstnIdentifier = { phoneNumber: <PHONE_NUMBER>}
 const remoteParticipant = call.addParticipant(userIdentifier);
 const remoteParticipant = call.addParticipant(pstnIdentifier);
-
 ```
 
 ### <a name="remove-participant-from-a-call"></a>Удалить участника из вызова
@@ -333,7 +331,6 @@ await call.removeParticipant(pstnIdentifier);
 Чтобы получить список потоков видео и потоков, использующих удаленные участники, просмотрите `videoStreams` коллекции:
 
 ```js
-
 const remoteVideoStream: RemoteVideoStream = call.remoteParticipants[0].videoStreams[0];
 const streamType: MediaStreamType = remoteVideoStream.type;
 ```

@@ -11,13 +11,13 @@ author: linda33wj
 manager: shwang
 ms.reviewer: douglasl
 ms.custom: seo-lt-2019
-ms.date: 06/10/2020
-ms.openlocfilehash: 54aac9fda42a867ab66d631279efbca4f812b01a
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.date: 09/23/2020
+ms.openlocfilehash: 942cbda3652692acc8eedf2ec9508bb501a60547
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86497627"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91332106"
 ---
 # <a name="copy-data-from-and-to-dynamics-365-common-data-service-or-dynamics-crm-by-using-azure-data-factory"></a>Копирование данных из Dynamics 365 (Common Data Service) или Dynamics CRM и в эти решения с помощью фабрики данных Azure
 [!INCLUDE[appliesto-adf-asa-md](includes/appliesto-adf-asa-md.md)]
@@ -43,7 +43,7 @@ ms.locfileid: "86497627"
 
 | Версии Dynamics | Типы проверки подлинности | Примеры связанной службы |
 |:--- |:--- |:--- |
-| Common Data Service <br/><br/> Dynamics 365 Online <br/><br/> Dynamics CRM Online | Субъект-служба Azure Active Directory (Azure AD) <br/><br/> Office 365 | [Служба Dynamics Online и Azure AD — проверка подлинности субъекта или Office 365](#dynamics-365-and-dynamics-crm-online) |
+| Common Data Service <br/><br/> Dynamics 365 Online <br/><br/> Dynamics CRM Online | Субъект-служба Azure Active Directory (Azure AD) <br/><br/> Office 365 | [Служба Dynamics Online и Azure AD — проверка подлинности субъекта или Office 365](#dynamics-365-and-dynamics-crm-online) |
 | Локальная среда Dynamics 365 с развертыванием с выходом в Интернет (IFD) <br/><br/> Dynamics CRM 2016 (локальная версия) с IFD <br/><br/> Dynamics CRM 2015 (локальная версия) с IFD | IFD | [Локальная среда Dynamics с IFD и IFD Authentication](#dynamics-365-and-dynamics-crm-on-premises-with-ifd) |
 
 В частности, для Dynamics 365 поддерживаются следующие типы приложений:
@@ -81,7 +81,7 @@ ms.locfileid: "86497627"
 |:--- |:--- |:--- |
 | type | Свойство Type должно иметь значение "Dynamics", "Динамикскрм" или "Коммондатасервицефораппс". | Да |
 | deploymentType | Тип развертывания для экземпляра Dynamics. Для Dynamics Online значение должно быть "Online". | Да |
-| serviceUri | URL-адрес службы экземпляра Dynamics. Например, https://www.crmdynamics.com. | Да |
+| serviceUri | URL-адрес службы экземпляра Dynamics, к которому вы обращаетесь из браузера. Пример: "https:// \<organization-name> . CRM [x]. Dynamics. com". | Да |
 | authenticationType | Тип проверки подлинности для подключения к серверу Dynamics. Допустимые значения: "АадсервицепринЦипал" и "Office 365". | Да |
 | servicePrincipalId | Идентификатор клиента приложения Azure AD. | Да, если проверка подлинности — "АадсервицепринЦипал" |
 | сервицепринЦипалкредентиалтипе | Тип учетных данных, используемый для проверки подлинности субъекта-службы. Допустимые значения: "СервицепринЦипалкэй" и "СервицепринЦипалцерт". | Да, если проверка подлинности — "АадсервицепринЦипал" |
@@ -102,7 +102,7 @@ ms.locfileid: "86497627"
         "type": "Dynamics",  
         "typeProperties": {  
             "deploymentType": "Online",  
-            "serviceUri": "https://www.crmdynamics.com",  
+            "serviceUri": "https://<organization-name>.crm[x].dynamics.com",  
             "authenticationType": "AADServicePrincipal",  
             "servicePrincipalId": "<service principal id>",  
             "servicePrincipalCredentialType": "ServicePrincipalKey",  
@@ -124,7 +124,7 @@ ms.locfileid: "86497627"
         "type": "Dynamics", 
         "typeProperties": { 
             "deploymentType": "Online", 
-            "serviceUri": "https://www.crmdynamics.com", 
+            "serviceUri": "https://<organization-name>.crm[x].dynamics.com", 
             "authenticationType": "AADServicePrincipal", 
             "servicePrincipalId": "<service principal id>", 
             "servicePrincipalCredentialType": "ServicePrincipalCert", 
@@ -154,7 +154,7 @@ ms.locfileid: "86497627"
         "type": "Dynamics",
         "typeProperties": {
             "deploymentType": "Online",
-            "serviceUri": "https://www.crmdynamics.com",
+            "serviceUri": "https://<organization-name>.crm[x].dynamics.com",
             "authenticationType": "Office365",
             "username": "test@contoso.onmicrosoft.com",
             "password": {
@@ -378,20 +378,20 @@ ms.locfileid: "86497627"
 | Тип данных Dynamics | Тип промежуточных данных фабрики данных | Поддерживается в качестве источника | Поддерживается в качестве приемника |
 |:--- |:--- |:--- |:--- |
 | AttributeTypeCode.BigInt | Long | ✓ | ✓ |
-| AttributeTypeCode.Boolean | Логический | ✓ | ✓ |
-| AttributeType.Customer | Идентификатор GUID | ✓ | ✓ (См. [руководство](#writing-data-to-a-lookup-field)) |
+| AttributeTypeCode.Boolean | Логическое | ✓ | ✓ |
+| AttributeType.Customer | GUID | ✓ | ✓ (См. [руководство](#writing-data-to-a-lookup-field)) |
 | AttributeType.DateTime | Datetime | ✓ | ✓ |
 | AttributeType.Decimal | Decimal | ✓ | ✓ |
 | AttributeType.Double | Тип Double | ✓ | ✓ |
 | AttributeType.EntityName | Строка | ✓ | ✓ |
 | AttributeType.Integer | Int32 | ✓ | ✓ |
-| AttributeType.Lookup | Идентификатор GUID | ✓ | ✓ (См. [руководство](#writing-data-to-a-lookup-field)) |
-| AttributeType.ManagedProperty | Логический | ✓ | |
+| AttributeType.Lookup | GUID | ✓ | ✓ (См. [руководство](#writing-data-to-a-lookup-field)) |
+| AttributeType.ManagedProperty | Логическое | ✓ | |
 | AttributeType.Memo | Строка | ✓ | ✓ |
 | AttributeType.Money | Decimal | ✓ | ✓ |
-| AttributeType.Owner | Идентификатор GUID | ✓ | ✓ (См. [руководство](#writing-data-to-a-lookup-field)) |
+| AttributeType.Owner | GUID | ✓ | ✓ (См. [руководство](#writing-data-to-a-lookup-field)) |
 | AttributeType.Picklist | Int32 | ✓ | ✓ |
-| AttributeType.Uniqueidentifier | Идентификатор GUID | ✓ | ✓ |
+| AttributeType.Uniqueidentifier | GUID | ✓ | ✓ |
 | AttributeType.String | Строка | ✓ | ✓ |
 | AttributeType.State | Int32 | ✓ | ✓ |
 | AttributeType.Status | Int32 | ✓ | ✓ |

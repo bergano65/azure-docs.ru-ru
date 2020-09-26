@@ -4,12 +4,12 @@ description: Из этой статьи вы узнаете, как управл
 ms.topic: conceptual
 ms.date: 08/21/2018
 ms.assetid: e54750b4-4518-4262-8f23-ca2f0c7c0439
-ms.openlocfilehash: d0baac97b7a1bfb5ac55ee8cacc40dc8f13994a5
-ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
+ms.openlocfilehash: a37808548ec58977b7d6af16c75b94b7b5efe446
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89012608"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91271602"
 ---
 # <a name="create-azure-recovery-services-vault-using-rest-api"></a>Создание хранилища служб восстановления Azure с помощью REST API
 
@@ -23,7 +23,7 @@ PUT https://management.azure.com/subscriptions/{subscriptionId}/resourceGroups/{
 
 ## <a name="create-a-request"></a>Создание запроса
 
-Для создания запроса *PUT* требуется параметр `{subscription-id}`. Если у вас несколько подписок, см. раздел [Работа с несколькими подписками](/cli/azure/manage-azure-subscriptions-azure-cli?view=azure-cli-latest). Для ваших ресурсов параметры `{resourceGroupName}` и `{vaultName}` определяются вместе с параметром `api-version`. Для этой статьи используется `api-version=2016-06-01`.
+Для создания запроса *PUT* требуется параметр `{subscription-id}`. Если у вас несколько подписок, см. раздел [Работа с несколькими подписками](/cli/azure/manage-azure-subscriptions-azure-cli). Для ваших ресурсов параметры `{resourceGroupName}` и `{vaultName}` определяются вместе с параметром `api-version`. Для этой статьи используется `api-version=2016-06-01`.
 
 Ниже приведены обязательные заголовки.
 
@@ -66,7 +66,7 @@ PUT https://management.azure.com/subscriptions/{subscriptionId}/resourceGroups/{
 
 Есть два успешных ответа для операции по созданию или обновлению хранилища Служб восстановления:
 
-|Имя  |Type  |Описание  |
+|Имя  |Тип  |Описание  |
 |---------|---------|---------|
 |200 ОК     |   [Хранилище](/rest/api/recoveryservices/vaults/createorupdate#vault)      | ОК        |
 |201 Создано     | [Хранилище](/rest/api/recoveryservices/vaults/createorupdate#vault)        |   Создание      |

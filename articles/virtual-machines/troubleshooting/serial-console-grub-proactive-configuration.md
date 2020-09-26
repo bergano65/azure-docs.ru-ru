@@ -14,12 +14,12 @@ ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure-services
 ms.date: 07/10/2019
 ms.author: mimckitt
-ms.openlocfilehash: c48ef0321ece2e7e0ffcdfcb8c0907c5f839e738
-ms.sourcegitcommit: 2ff0d073607bc746ffc638a84bb026d1705e543e
+ms.openlocfilehash: aba47500400004c1d6a7044a266bad6f20d5d9c9
+ms.sourcegitcommit: d95cab0514dd0956c13b9d64d98fdae2bc3569a0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87831368"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91360554"
 ---
 # <a name="proactively-ensuring-you-have-access-to-grub-and-sysrq-could-save-you-lots-of-down-time"></a>Предварительная настройка доступа к GRUB и sysrq может сэкономить много времени.
 
@@ -210,11 +210,11 @@ Ubuntu 12.04 разрешает доступ к серийной консоли,
 
 Выберите "Advanced Options for Ubuntu" и нажмите клавишу ВВОД.
 
-![ubunturec1](./media/virtual-machines-serial-console/ubunturec1.png)
+![Снимок экрана показывает Серийная консоль с дополнительными параметрами для выбранной Ubuntu.](./media/virtual-machines-serial-console/ubunturec1.png)
 
 Выберите строку с надписью *(recovery mode)* . Не нажимайте клавишу ВВОД, а нажмите клавишу Е.
 
-![ubunturec2](./media/virtual-machines-serial-console/ubunturec2.png)
+![Снимок экрана показывает Серийная консоль с выбранной версией режима восстановления.](./media/virtual-machines-serial-console/ubunturec2.png)
 
 Найдите строку, которая загружает ядро, и замените последний параметр **nomodeset** на **console=ttyS0**.
 
@@ -226,12 +226,12 @@ change to
 linux /boot/vmlinuz-4.15.0-1023-azure root=UUID=21b294f1-25bd-4265-9c4e-d6e4aeb57e97 ro recovery console=ttyS0
 ```
 
-![ubunturec3](./media/virtual-machines-serial-console/ubunturec3.png)
+![На снимке экрана показан Серийная консоль с измененным значением.](./media/virtual-machines-serial-console/ubunturec3.png)
 
 Нажмите **CTRL+Х**, чтобы запустить и загрузить ядро.
 Если все получится, вы увидите дополнительные параметры для других вариантов восстановления.
 
-![ubunturec4](./media/virtual-machines-serial-console/ubunturec4.png)
+![На снимке экрана показан Серийная консоль в меню восстановления, в котором предлагаются дополнительные варианты восстановления.](./media/virtual-machines-serial-console/ubunturec4.png)
 
 
 ## <a name="red-hat-grub-configuration"></a>Настройка GRUB для Red Hat
@@ -337,11 +337,11 @@ terminal --timeout=5 serial console
 
 Последняя строка *terminal –-timeout=5 serial console* увеличивает время ожидания **GRUB**, добавляя запрос **Press any key to continue**, отображаемый в течение 5 секунд.
 
-![rh6-1](./media/virtual-machines-serial-console/rh6-1.png)
+![На снимке экрана показана консоль с выходными данными.](./media/virtual-machines-serial-console/rh6-1.png)
 
 Меню GRUB должно отображаться на экране в течение заданного времени ожидания (timeout=15) без необходимости нажатия клавиши ESC. Не забудьте щелкнуть "Консоль в браузере", чтобы сделать активным меню и выбрать необходимое ядро.
 
-![rh6-2](./media/virtual-machines-serial-console/rh6-2.png)
+![На снимке экрана показана консоль с двумя вариантами Linux.](./media/virtual-machines-serial-console/rh6-2.png)
 
 ## <a name="suse"></a>SuSE
 
@@ -405,18 +405,18 @@ kernel /boot/vmlinuz-3.0.101-108.74-default root=/dev/disk/by-uuid/ab6b62bb--
 Наличие доступа к GRUB позволяет прерывать процесс инициализации. Такая возможность может быть полезна для многих процедур восстановления.
 Если у вас нет пароля для доступа с правами root, который требуется для однопользовательского режима, можно загрузить ядро, заменив программу init командной строкой bash. Для этого необходимо добавить команду init=/bin/bash в строку загрузки ядра.
 
-![bash1](./media/virtual-machines-serial-console/bash1.png)
+![На снимке экрана показана консоль с обновленной строкой загрузки.](./media/virtual-machines-serial-console/bash1.png)
 
 Переподключите файловую систему / (root) с правами на чтение и запись (RW) с помощью следующей команды:
 
 `mount -o remount,rw /`
 
-![bash2](./media/virtual-machines-serial-console/bash2.png)
+![На снимке экрана показана консоль с действием повторного подключения.](./media/virtual-machines-serial-console/bash2.png)
 
 
 Теперь можно изменить пароль для доступа с правами root и внести множество других изменений в конфигурацию Linux.
 
-![bash3](./media/virtual-machines-serial-console/bash3.png)
+![На снимке экрана показана консоль, на которой можно изменить пароль root и другую конфигурацию.](./media/virtual-machines-serial-console/bash3.png)
 
 Перезапустите виртуальную машину с помощью следующей команды: 
 

@@ -4,12 +4,12 @@ description: Наблюдение за производительностью п
 ms.topic: conceptual
 ms.date: 04/16/2020
 ms.custom: devx-track-java
-ms.openlocfilehash: 561a6405a49d8f15affbf6d8d4de1a7f4886826a
-ms.sourcegitcommit: 814778c54b59169c5899199aeaa59158ab67cf44
+ms.openlocfilehash: 93b0b89cff7e48ddc4eb9173c9423961f96ec4bb
+ms.sourcegitcommit: 5dbea4631b46d9dde345f14a9b601d980df84897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/13/2020
-ms.locfileid: "90056104"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91371309"
 ---
 # <a name="configuration-options---java-standalone-agent-for-azure-monitor-application-insights"></a>Параметры конфигурации — автономный агент Java для Azure Monitor Application Insights
 
@@ -49,7 +49,18 @@ ms.locfileid: "90056104"
 
 :::image type="content" source="media/java-ipa/connection-string.png" alt-text="Строка подключения Application Insights":::
 
+
+```json
+{
+  "instrumentationSettings": {
+    "connectionString": "InstrumentationKey=00000000-0000-0000-0000-000000000000"
+  }
+}
+```
+
 Можно также задать строку подключения с помощью переменной среды `APPLICATIONINSIGHTS_CONNECTION_STRING` .
+
+Если не задать строку подключения, агент Java будет отключен.
 
 ## <a name="cloud-role-name"></a>Имя облачной роли
 
@@ -93,7 +104,7 @@ ms.locfileid: "90056104"
 
 Application Insights Предварительная версия Java 3,0 автоматически захватывает ведение журнала приложений с помощью log4j, Logback и Java. util. Logging.
 
-По умолчанию он собирает все записи журнала, выполненные на `WARN` уровне или выше.
+По умолчанию он собирает все записи журнала, выполненные на `INFO` уровне или выше.
 
 Если вы хотите изменить это пороговое значение:
 
@@ -103,13 +114,15 @@ Application Insights Предварительная версия Java 3,0 авт
     "preview": {
       "instrumentation": {
         "logging": {
-          "threshold": "ERROR"
+          "threshold": "WARN"
         }
       }
     }
   }
 }
 ```
+
+Можно также задать пороговое значение ведения журнала с помощью переменной среды `APPLICATIONINSIGHTS_LOGGING_THRESHOLD` .
 
 Это допустимые `threshold` значения, которые можно указать в `ApplicationInsights.json` файле и их соответствие уровням ведения журнала в разных платформах ведения журналов.
 
@@ -136,9 +149,9 @@ Application Insights Предварительная версия Java 3,0 авт
     "preview": {
       "jmxMetrics": [
         {
-          "objectName": "java.lang:type=ClassLoading",
-          "attribute": "LoadedClassCount",
-          "display": "Loaded Class Count"
+          "objectName": "java.lang:type=Runtime",
+          "attribute": "Uptime",
+          "display": "JVM uptime (millis)"
         },
         {
           "objectName": "java.lang:type=MemoryPool,name=Code Cache",
@@ -150,6 +163,10 @@ Application Insights Предварительная версия Java 3,0 авт
   }
 }
 ```
+
+Метрики JMX также можно задать с помощью переменной среды `APPLICATIONINSIGHTS_JMX_METRICS` .
+
+Это содержимое переменной среды должно быть данными JSON, соответствующим приведенной выше структуре, например `[{"objectName": "java.lang:type=Runtime", "attribute": "Uptime", "display": "JVM uptime (millis)"}, {"objectName": "java.lang:type=MemoryPool,name=Code Cache", "attribute": "Usage.used", "display": "Code Cache Used"}]`
 
 ## <a name="micrometer-including-metrics-from-spring-boot-actuator"></a>Микрометер (включая метрики с пружинного загрузочного выключателя)
 
@@ -214,6 +231,8 @@ Application Insights Предварительная версия Java 3,0 авт
   }
 }
 ```
+
+Можно также задать процент выборки с помощью переменной среды `APPLICATIONINSIGHTS_SAMPLING_PERCENTAGE` .
 
 ## <a name="http-proxy"></a>Прокси-сервер HTTP
 

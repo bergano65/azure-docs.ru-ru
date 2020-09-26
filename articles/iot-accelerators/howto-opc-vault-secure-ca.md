@@ -8,14 +8,17 @@ ms.topic: conceptual
 ms.service: industrial-iot
 services: iot-industrialiot
 manager: philmea
-ms.openlocfilehash: 88f8188779c5fb6b3cd07c67e9f35a6b8f9ad97d
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: d702a3cca6a24819d2d184dc6df09153c9dcc860
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84687078"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91281887"
 ---
 # <a name="run-the-opc-vault-certificate-management-service-securely"></a>Безопасное выполнение службы управления сертификатами хранилища OPC
+
+> [!IMPORTANT]
+> Пока мы обновляем эту статью, ознакомьтесь с наиболее актуальными материалами в [Azure для промышленного центра Интернета вещей](https://azure.github.io/Industrial-IoT/) .
 
 В этой статье объясняется, как безопасно запустить службу управления сертификатами хранилища OPC в Azure и просмотреть другие рекомендации по обеспечению безопасности.
 
@@ -237,7 +240,7 @@ ms.locfileid: "84687078"
   - Подготовка материалов для хранения.
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Теперь, когда вы узнали, как безопасно управлять хранилищем OPC, вы можете:
 

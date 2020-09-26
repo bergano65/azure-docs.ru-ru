@@ -3,12 +3,12 @@ title: Функции шаблонов — ресурсы
 description: Описывает функции, используемые в шаблоне Azure Resource Manager для получения значений ресурсов.
 ms.topic: conceptual
 ms.date: 09/03/2020
-ms.openlocfilehash: 3f916be4431aa6b2b100967465450447ecc1d626
-ms.sourcegitcommit: 4feb198becb7a6ff9e6b42be9185e07539022f17
+ms.openlocfilehash: 4f788af065db5ef5f23f9a8e96c2d45405959614
+ms.sourcegitcommit: 5dbea4631b46d9dde345f14a9b601d980df84897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/04/2020
-ms.locfileid: "89468680"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91369201"
 ---
 # <a name="resource-functions-for-arm-templates"></a>Функции ресурсов для шаблонов ARM
 
@@ -235,10 +235,10 @@ Resource Manager предоставляет следующие функции д
 | Microsoft.Relay/namespaces/WcfRelays/authorizationRules | [listkeys](/rest/api/relay/wcfrelays/listkeys) |
 | Microsoft.Search/searchServices | [listAdminKeys](/rest/api/searchmanagement/adminkeys/get) |
 | Microsoft.Search/searchServices | [listQueryKeys](/rest/api/searchmanagement/querykeys/listbysearchservice) |
-| Microsoft.ServiceBus/namespaces/authorizationRules | [listkeys](/rest/api/servicebus/namespaces/listkeys) |
-| Microsoft.ServiceBus/namespaces/disasterRecoveryConfigs/authorizationRules | [listkeys](/rest/api/servicebus/disasterrecoveryconfigs/listkeys) |
-| Microsoft.ServiceBus/namespaces/queues/authorizationRules | [listkeys](/rest/api/servicebus/queues/listkeys) |
-| Microsoft.ServiceBus/namespaces/topics/authorizationRules | [listkeys](/rest/api/servicebus/topics/listkeys) |
+| Microsoft.ServiceBus/namespaces/authorizationRules | [listkeys](/rest/api/servicebus/stable/namespaces%20-%20authorization%20rules/listkeys) |
+| Microsoft.ServiceBus/namespaces/disasterRecoveryConfigs/authorizationRules | [listkeys](/rest/api/servicebus/stable/disasterrecoveryconfigs/listkeys) |
+| Microsoft.ServiceBus/namespaces/queues/authorizationRules | [listkeys](/rest/api/servicebus/stable/queues%20-%20authorization%20rules/listkeys) |
+| Microsoft.ServiceBus/namespaces/topics/authorizationRules | [listkeys](/rest/api/servicebus/stable/topics%20–%20authorization%20rules/listkeys) |
 | Microsoft.SignalRService/SignalR | [listkeys](/rest/api/signalr/signalr/listkeys) |
 | Microsoft.Storage/storageAccounts | [listAccountSas](/rest/api/storagerp/storageaccounts/listaccountsas) |
 | Microsoft.Storage/storageAccounts | [listkeys](/rest/api/storagerp/storageaccounts/listkeys) |
@@ -352,7 +352,7 @@ Resource Manager предоставляет следующие функции д
 | пространство_имен_поставщика | Да | строка | Пространство имен поставщика ресурсов для типа ресурса, для которого проверяется поддержка зоны. |
 | тип_ресурса | Да | строка | Тип ресурса для проверки поддержки зоны. |
 | location | Да | строка | Регион, в котором проверяется поддержка зоны. |
-| нумберофзонес | Нет | Целое число | Число возвращаемых логических зон. Значение по умолчанию — 1. Число должно быть целым положительным числом от 1 до 3.  Используйте 1 для ресурсов с одной зоной. Для ресурсов с несколькими зонами значение должно быть меньше или равно числу поддерживаемых зон. |
+| нумберофзонес | Нет | Целое число | Число возвращаемых логических зон. Значение по умолчанию — 1. Число должно быть целым положительным числом от 1 до 3.  Используйте 1 для ресурсов с одной зоной. Для ресурсов с несколькими зонами значение должно быть меньше или равно числу поддерживаемых зон. |
 | offset | Нет | Целое число | Смещение от начальной логической зоны. Функция возвращает ошибку, если смещение плюс Нумберофзонес превышает число поддерживаемых зон. |
 
 ### <a name="return-value"></a>Возвращаемое значение

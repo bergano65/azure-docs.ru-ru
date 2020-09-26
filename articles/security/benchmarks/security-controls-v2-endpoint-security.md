@@ -4,17 +4,17 @@ description: Безопасность конечных точек системы
 author: msmbaldwin
 ms.service: security
 ms.topic: conceptual
-ms.date: 09/13/2020
+ms.date: 09/20/2020
 ms.author: mbaldwin
 ms.custom: security-benchmark
-ms.openlocfilehash: c04e4233ded34ceaeec9cd9afb240d3d1ac864e0
-ms.sourcegitcommit: 94c750edd4d755d6ecee50ac977328098a277479
+ms.openlocfilehash: 3eab0080f80b26fc7074d8a64885148c0568d8b1
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/13/2020
-ms.locfileid: "90059385"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91280629"
 ---
-# <a name="security-control-endpoint-security"></a>Управление безопасностью: безопасность конечных точек
+# <a name="security-control-v2-endpoint-security"></a>Управление безопасностью v2: безопасность конечных точек
 
 Безопасность конечных точек охватывает элементы управления при обнаружении и отклике конечных точек. Сюда входит использование функции обнаружения конечных точек и реагирования (ЕДР) и службы защиты от вредоносных программ для конечных точек в средах Azure.
 
@@ -36,7 +36,7 @@ ms.locfileid: "90059385"
 
 **Ответственность**: Customer
 
-**Заинтересованные лица по безопасности клиентов**:
+**Заинтересованные лица по безопасности клиентов** (дополнительные[сведения](/azure/cloud-adoption-framework/organize/cloud-security#security-functions)):
 
 - [Безопасность инфраструктуры и конечных точек](/azure/cloud-adoption-framework/organize/cloud-security)
 
@@ -64,7 +64,7 @@ ms.locfileid: "90059385"
 
 **Ответственность**: Customer
 
-**Заинтересованные лица по безопасности клиентов**:
+**Заинтересованные лица по безопасности клиентов** (дополнительные[сведения](/azure/cloud-adoption-framework/organize/cloud-security#security-functions)):
 
 - [Безопасность инфраструктуры и конечных точек](/azure/cloud-adoption-framework/organize/cloud-security)
 
@@ -88,7 +88,7 @@ ms.locfileid: "90059385"
 
 **Ответственность**: Customer
 
-**Заинтересованные лица по безопасности клиентов**:
+**Заинтересованные лица по безопасности клиентов** (дополнительные[сведения](/azure/cloud-adoption-framework/organize/cloud-security#security-functions)):
 
 - [Безопасность инфраструктуры и конечных точек](/azure/cloud-adoption-framework/organize/cloud-security)
 

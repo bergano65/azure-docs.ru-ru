@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: article
 ms.date: 05/07/2019
 ms.author: jeedes
-ms.openlocfilehash: a9ca77a059625ace13e6798e3fde84f11f3fe1db
-ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
+ms.openlocfilehash: 26f12b18e2199fb45e6eb94f2a136d2af2b1576c
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88546800"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91317605"
 ---
 # <a name="tutorial-configure-keeper-password-manager--digital-vault-for-automatic-user-provisioning"></a>Учебник. Настройка диспетчера паролей для автоматической подготовки пользователей & Digital Vault
 
@@ -90,11 +90,11 @@ ms.locfileid: "88546800"
 
 3. Выберите вкладку **Подготовка**.
 
-    ![Вкладка "Подготовка"](common/provisioning.png)
+    ![Снимок экрана параметров управления с вызываемым параметром подготовки.](common/provisioning.png)
 
 4. Для параметра **Режим подготовки к работе** выберите значение **Automatic** (Автоматически).
 
-    ![Вкладка "Подготовка"](common/provisioning-automatic.png)
+    ![Снимок экрана: раскрывающийся список режима подготовки с вызываемым автоматическим параметром.](common/provisioning-automatic.png)
 
 5. В разделе **учетные данные администратора** введите **URL-адрес клиента** и **маркер секрета** для диспетчера паролей службы & учетной записи Digital Vault, как описано в шаге 6.
 
@@ -122,7 +122,7 @@ ms.locfileid: "88546800"
 
     ![Почтовое уведомление](common/provisioning-notification-email.png)
 
-9. Нажмите **Сохранить**.
+9. Выберите команду **Сохранить**.
 
 10. В разделе **сопоставления** выберите **синхронизировать Azure Active Directory пользователей с диспетчером паролей & Digital Vault**.
 

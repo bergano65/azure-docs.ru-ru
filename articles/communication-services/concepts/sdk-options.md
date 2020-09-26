@@ -9,14 +9,14 @@ ms.author: mikben
 ms.date: 03/18/2020
 ms.topic: conceptual
 ms.service: azure-communication-services
-ms.openlocfilehash: f39aa76e4bd2ce3d298e555f56b09d0218ef0862
-ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
+ms.openlocfilehash: 2d5637be547b28c231ef757b5dd4355692dab88f
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "90937865"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91318829"
 ---
-# <a name="client-libraries-and-rest-apis"></a>Клиентские библиотеки и API-интерфейсы RESTFUL
+# <a name="client-libraries-and-rest-apis"></a>Клиентские библиотеки и интерфейсы REST API
 
 [!INCLUDE [Public Preview Notice](../includes/public-preview-include.md)]
 
@@ -28,9 +28,9 @@ ms.locfileid: "90937865"
 | ---------------------- | --------------------- | ---|-------------------------- | --------------------------------------------------------------------------- |
 | Azure Resource Manager | REST | Открыть            | Azure. ResourceManager. Обмен данными | Подготавливайте ресурсы служб связи и управляйте ими             |
 | Распространенные                 | REST | Открыть               | Azure. Communication. Common          | Предоставляет базовые типы для других клиентских библиотек |
-| Администрирование         | REST |                | Azure. Communication. admin  | Управление пользователями, маркерами доступа и номерами телефонов, выделение соответствующих стандартам СТУН и включение серверов |
+| Администрирование         | REST | Открыть               | Azure. Communication. admin  | Управление пользователями, маркерами доступа и номерами телефонов, выделение соответствующих стандартам СТУН и включение серверов |
 | Чат                   | ПРОЧее с собственными сигнализациями | Открыть с помощью пакета сигнальных пакетов с закрытым источником    | Azure. Communication. чат            | Добавление в приложения текста, основанного на режиме реального времени  |
-| SMS                    | REST | Открыть              | Azure. Communication. SMS             | Отправка и получение сообщений SMS |
+| SMS                    | REST | Открыть              | Azure. Communication. SMS             | Отправка и получение текстовых сообщений |
 | Вызов                | Собственный транспорт | Закрытое |Azure. Communication. вызов         | Использование голоса, видео, совместного использования экрана и других возможностей обмена данными в реальном времени          |
 
 ### <a name="client-library-language-support"></a>Поддержка языка клиентской библиотеки

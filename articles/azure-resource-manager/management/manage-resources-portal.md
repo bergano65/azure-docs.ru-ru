@@ -5,12 +5,12 @@ author: mumian
 ms.topic: conceptual
 ms.date: 02/11/2019
 ms.author: jgao
-ms.openlocfilehash: 051361860a6a2d9ad70aa81e313857ec86cacfb4
-ms.sourcegitcommit: 2ff0d073607bc746ffc638a84bb026d1705e543e
+ms.openlocfilehash: 266ad613a4966b26fc4a6ddffbb7b4196aa937b1
+ms.sourcegitcommit: 5dbea4631b46d9dde345f14a9b601d980df84897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87827052"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91372108"
 ---
 # <a name="manage-azure-resources-by-using-the-azure-portal"></a>Управление ресурсами Azure с помощью портал Azure
 
@@ -63,7 +63,7 @@ ms.locfileid: "87827052"
 ## <a name="delete-resources"></a>Удаление ресурсов
 
 1. Откройте ресурс на портале. Инструкции см. в разделе [Открытие ресурсов](#open-resources).
-2. Выберите **Удалить**. На следующем снимке экрана показаны параметры управления для виртуальной машины.
+2. Выберите команду **Удалить**. На следующем снимке экрана показаны параметры управления для виртуальной машины.
 
     ![Удаление ресурса Azure](./media/manage-resources-portal/manage-azure-resources-portal-delete-resource.png)
 3. Введите имя ресурса, чтобы подтвердить удаление, а затем выберите **Удалить**.
@@ -97,7 +97,7 @@ ms.locfileid: "87827052"
 Теги позволяют логически упорядочивать группы ресурсов и ресурсы. 
 
 1. Откройте ресурс на портале. Инструкции см. в разделе [Открытие ресурсов](#open-resources).
-2. Нажмите **Теги**. На следующем снимке экрана показаны параметры управления для учетной записи хранения.
+2. Выберите **Теги**. На следующем снимке экрана показаны параметры управления для учетной записи хранения.
 
     ![Тег ресурса Azure](./media/manage-resources-portal/manage-azure-resources-portal-tag-resource.png)
 3. Укажите свойства тега и нажмите кнопку **сохранить**.
@@ -114,7 +114,7 @@ ms.locfileid: "87827052"
 
 ## <a name="manage-access-to-resources"></a>Управление доступом к ресурсам
 
-Управление [доступом на основе ролей в Azure (Azure RBAC)](../../role-based-access-control/overview.md) — это способ управления доступом к ресурсам в Azure. Дополнительные сведения см. в статье [Управление доступом с помощью RBAC и портала Azure](../../role-based-access-control/role-assignments-portal.md).
+Управление [доступом на основе ролей в Azure (Azure RBAC)](../../role-based-access-control/overview.md) — это способ управления доступом к ресурсам в Azure. Дополнительные сведения см. в статье о [добавлении и удалении назначений ролей Azure с помощью портала Azure](../../role-based-access-control/role-assignments-portal.md).
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

@@ -15,12 +15,12 @@ ms.date: 01/31/2019
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 1111b56a08343f1e12c3b2d582e350907ab37b46
-ms.sourcegitcommit: c94a177b11a850ab30f406edb233de6923ca742a
+ms.openlocfilehash: a6df1347eab57a6971fe2e39c0a55869c8f23939
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/01/2020
-ms.locfileid: "89276037"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91317493"
 ---
 # <a name="troubleshoot-an-attribute-not-synchronizing-in-azure-ad-connect"></a>Устранение неполадок атрибута, связанных с отсутствием синхронизации в Azure AD Connect
 
@@ -67,7 +67,7 @@ ms.locfileid: "89276037"
 
 * Дважды щелкните **соединитель Active Directory**, чтобы просмотреть атрибуты **пространства соединителя**. Нажмите кнопку **Предварительный просмотр**. В открывшемся диалоговом окне нажмите кнопку **Generate Preview** (Создать предварительный просмотр).
 
-  ![Атрибуты пространства соединителя](media/tshoot-connect-attribute-not-syncing/tshoot-connect-attribute-not-syncing/csattributes.png)
+  ![Снимок экрана, на котором показан экран свойств объекта пространства соединителя с выделенной кнопкой "предварительный просмотр".](media/tshoot-connect-attribute-not-syncing/tshoot-connect-attribute-not-syncing/csattributes.png)
 
 * Теперь щелкните **Import Attribute Flow** (Поток атрибутов импорта). Этот параметр позволяет просмотреть поток атрибутов из **пространства соединителя Active Directory** в **метавселенную**. В столбце **Sync Rule** (Правило синхронизации) показано, какое **правило синхронизации** влияет на этот атрибут. В столбце **Источник данных** показаны атрибуты из **пространства соединителя**. Столбец **Metaverse Attribute** (Атрибут метавселенной) содержит атрибуты, находящиеся в **метавселенной**. В нем вы можете найти атрибут, который не синхронизируется. Если вам не удается найти атрибут в этом столбце, это значит, что он не сопоставлен. Чтобы сопоставить этот атрибут, вам необходимо создать настраиваемое **правило синхронизации**.
 
@@ -75,7 +75,7 @@ ms.locfileid: "89276037"
 
 * Щелкните **Export Attribute Flow** (Поток атрибутов экспорта) в области слева, чтобы просмотреть обратный поток атрибутов из **метавселенной** в **пространство соединителя Active Directory**, использующий **правила исходящей синхронизации**.
 
-  ![Атрибуты пространства соединителя](media/tshoot-connect-attribute-not-syncing/tshoot-connect-attribute-not-syncing/mvtocsattributeflow.png)
+  ![Снимок экрана, показывающий поток атрибутов из метавселенной обратно в Active Directory пространство соединителя с использованием правил исходящей синхронизации.](media/tshoot-connect-attribute-not-syncing/tshoot-connect-attribute-not-syncing/mvtocsattributeflow.png)
 
 * Аналогичным образом вы можете просмотреть объект **пространства соединителя Azure Active Directory** и создать **предварительный просмотр**, чтобы просмотреть поток атрибутов из **метавселенной** в **пространство соединителя** и обратно. Таким образом вы можете выяснить, почему атрибут не синхронизируется.
 

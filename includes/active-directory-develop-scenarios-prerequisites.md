@@ -1,31 +1,39 @@
 ---
-title: Включить имя файла
+title: включить файл
 description: включить файл
 services: active-directory
-documentationcenter: dev-center-name
 author: jmprieur
 manager: CelesteDG
-editor: ''
 ms.service: active-directory
-ms.devlang: na
 ms.topic: include
-ms.tgt_pltfrm: na
 ms.workload: identity
-ms.date: 05/07/2019
+ms.date: 09/25/2020
 ms.author: jmprieur
 ms.custom: include file
-ms.openlocfilehash: e52433cfae1e889f07818f582fc3aef0752932ea
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 79952ad04df4780e1b30eb9cf5c7a35f49cc34c2
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "74482493"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91257081"
 ---
-Прежде чем читать эту статью, необходимо ознакомиться со следующими понятиями.
+Если вы не знакомы с управлением удостоверениями и доступом (IAM) с OAuth 2,0 и OpenID Connect Connect или даже просто не знакомы с IAM на платформе Microsoft Identity, то в списке для чтения должен быть указан высокий уровень статей.
 
-- [Общие сведения о платформе удостоверений Майкрософт](../articles/active-directory/develop/v2-overview.md)
-- [Основные сведения об аутентификации](../articles/active-directory/develop/authentication-scenarios.md)
-- [Аудитории](../articles/active-directory/develop/v2-supported-account-types.md)
-- [Приложения и субъекты-службы](../articles/active-directory/develop/app-objects-and-service-principals.md)
-- [Разрешения и согласие](../articles/active-directory/develop/v2-permissions-and-consent.md)
-- [Маркеры доступа](../articles/active-directory/develop/id-tokens.md) и [маркеры идентификации](../articles/active-directory/develop/access-tokens.md)
+Хотя не требуется чтение перед завершением первого руководства или руководства, они охватывают целую платформу для платформы, и их знакомство с ними поможет вам в вашем пути при создании более сложных сценариев.
+
+:::row:::
+    :::column:::
+        **Аутентификация и авторизация**
+
+        - [Основные сведения об аутентификации](../articles/active-directory/develop/authentication-vs-authorization.md)
+        - [Маркеры идентификации](../articles/active-directory/develop/id-tokens.md)
+        - [Маркеры доступа в Azure Active Directory](../articles/active-directory/develop/access-tokens.md)
+    :::column-end:::
+    :::column:::
+        **Платформа удостоверений Майкрософт**
+
+        - [Аудитории](../articles/active-directory/develop/v2-supported-account-types.md)
+        - [Приложения и субъекты-службы](../articles/active-directory/develop/app-objects-and-service-principals.md)
+        - [Разрешения и согласие](../articles/active-directory/develop/v2-permissions-and-consent.md)
+    :::column-end:::
+:::row-end:::

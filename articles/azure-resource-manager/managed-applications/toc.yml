@@ -13,8 +13,6 @@
       href: deploy-service-catalog-quickstart.md
 - name: Учебники
   items:
-    - name: Публикация приложения из marketplace
-      href: publish-marketplace-app.md
     - name: Создание управляемого приложения с настраиваемого поставщика
       href: tutorial-create-managed-app-with-custom-provider.md
 - name: Примеры
@@ -41,6 +39,8 @@
           href: create-uidefinition-overview.md
         - name: Тестирование интерфейса портала
           href: test-createuidefinition.md
+        - name: Создание предложения приложения Azure
+          href: ../../marketplace/partner-center-portal/create-new-azure-apps-offer.md?toc=/azure/azure-resource-manager/managed-applications/toc.json
         - name: Запрос JIT-доступа
           href: request-just-in-time-access.md
         - name: Использование имеющейся виртуальной сети

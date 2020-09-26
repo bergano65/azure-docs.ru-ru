@@ -16,18 +16,18 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 05/17/2019
 ms.author: kumud
-ms.openlocfilehash: 73036ba1a72d657fd07a826bbee8651781f70e9b
-ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
+ms.openlocfilehash: 706379649b47846b5c020dc76493a98e346c4a8f
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88931970"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91317690"
 ---
 # <a name="manage-azure-ddos-protection-standard-using-the-azure-portal"></a>Управление защитой от атак DDoS Azure уровня "Стандартный" с помощью портала Azure
 
 Узнайте, как включить и отключить защиту от распределенных атак типа "отказ в обслуживании" (DDoS), а также использовать телеметрию для снижения риска DDoS-атак с помощью защиты Azure уровня "Стандартный". Защита от атак DDoS уровня "Стандартный" защищает ресурсы Azure, такие как виртуальные машины, подсистемы балансировки нагрузки и шлюзы приложений, которым назначен [общедоступный IP-адрес](virtual-network-public-ip-address.md) Azure. Дополнительные сведения о защите от атак DDoS уровня "Стандартный" и ее возможностях см. в статье [Общие сведения о защите от атак DDoS Azure уровня "Стандартный"](ddos-protection-overview.md).
 
-Прежде чем выполнять указания в этом руководстве, войдите на портал Azure (https://portal.azure.com) с учетной записью, которой назначена роль [Участник сетей](../role-based-access-control/built-in-roles.md?toc=%2fazure%2fvirtual-network%2ftoc.json#network-contributor) или [пользовательская роль](../role-based-access-control/custom-roles.md?toc=%2fazure%2fvirtual-network%2ftoc.json), которой назначены соответствующие действия, перечисленные в таблице [Разрешения](#permissions).
+Прежде чем выполнять указания в этом руководстве, войдите на портал Azure (https://portal.azure.com) с учетной записью, которой назначена роль [Участник сетей](../role-based-access-control/built-in-roles.md?toc=%2fazure%2fvirtual-network%2ftoc.json#network-contributor) или [пользовательская роль](../role-based-access-control/custom-roles.md?toc=%2fazure%2fvirtual-network%2ftoc.json), которой назначены соответствующие действия, перечисленные в таблице [Разрешения](#permissions-and-restrictions).
 
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
@@ -39,7 +39,7 @@ ms.locfileid: "88931970"
 
 1. Выберите **создать ресурс** в левом верхнем углу портал Azure.
 2. Выполните поиск *DDoS*. Когда в результатах поиска появится **план защиты от атак DDoS** , выберите его.
-3. Нажмите кнопку **Создать**.
+3. Выберите **Создать**.
 4. Введите или выберите собственные значения либо введите или выберите значения из примера, а затем щелкните **Создать**.
 
     |Параметр        |Значение                                              |
@@ -191,7 +191,7 @@ ms.locfileid: "88931970"
     - **Archive to a storage account** (Архивация в учетную запись хранения). Запись данных в учетную запись хранения Azure. Дополнительные сведения об этом параметре см. в разделе [архивирование журналов ресурсов](../azure-monitor/platform/archive-diagnostic-logs.md?toc=%2fazure%2fvirtual-network%2ftoc.json).
     - **Stream to an event hub** (Потоковая передача в концентратор событий). Позволяет получателю журнала принимать журналы с помощью концентратора событий Azure. Центры событий обеспечивают интеграцию со Splunk или другими системами SIEM. Дополнительные сведения об этом параметре см. в статье [потоковая передача журналов ресурсов в концентратор событий](../azure-monitor/platform/resource-logs-stream-event-hubs.md?toc=%2fazure%2fvirtual-network%2ftoc.json).
     - **Send to log Analytics**: записывает журналы в службу Azure Monitor. Дополнительные сведения об этом параметре см. [в разделе Получение журналов для использования в журналах Azure Monitor](../azure-monitor/platform/collect-azure-metrics-logs.md?toc=%2fazure%2fvirtual-network%2ftoc.json).
-1. Чтобы просматривать данные журналов потоков на панели мониторинга Аналитики Azure, вы можете импортировать пример панели мониторинга из https://github.com/Anupamvi/Azure-DDoS-Protection/raw/master/flowlogsbyip.zip.
+1. Чтобы просмотреть данные журналов потоков в книге аналитики Azure, можно импортировать пример панели мониторинга из https://github.com/Azure/Azure-Network-Security/tree/master/Azure%20DDoS%20Protection/Azure%20DDoS%20Protection%20Workbook
 
 Журналы потоков будут содержать следующие поля: 
 - Исходный IP-адрес
@@ -225,7 +225,7 @@ ms.locfileid: "88931970"
 
 В число оповещений входят общие сведения об общедоступном IP-адресе, которые относятся к атакам, сведениям об аналитике и анализу угроз и действиям по исправлению.
 
-## <a name="permissions"></a>Разрешения
+## <a name="permissions-and-restrictions"></a>Разрешения и ограничения
 
 Для работы с планами защиты от атак DDoS учетной записи должна быть назначена роль [Участник сетей](../role-based-access-control/built-in-roles.md?toc=%2fazure%2fvirtual-network%2ftoc.json#network-contributor) или [пользовательская](../role-based-access-control/custom-roles.md?toc=%2fazure%2fvirtual-network%2ftoc.json) роль, которой назначены соответствующие разрешения, перечисленные в таблице ниже.
 
@@ -237,6 +237,9 @@ ms.locfileid: "88931970"
 | Microsoft.Network/ddosProtectionPlans/join/action | Присоединение плана защиты от атак DDoS.              |
 
 Чтобы включить защиту от атак DDoS для виртуальной сети, учетной записи также должны быть назначены соответствующие [действия для виртуальных сетей](manage-virtual-network.md#permissions).
+
+### <a name="azure-policy"></a>Политика Azure
+Для клиентов, которые имеют различные подписки и хотят, чтобы один план для стандарта защиты Azure от атак DDoS был развернут в своем клиенте для управления затратами, можно использовать политику Azure для [ограничения создания планов защиты Azure от атак DDoS Standard](https://github.com/Azure/Azure-Network-Security/tree/master/Azure%20DDoS%20Protection/Restrict%20creation%20of%20Azure%20DDoS%20Protection%20Standard%20Plans%20with%20Azure%20Policy). Эта политика будет блокировать создание планов от атак DDoS, если подписка ранее не была помечена как исключение. Эта политика также будет показывать список всех подписок, которые развернули план от атак DDoS, но не должны помечать их как несоответствие. 
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
