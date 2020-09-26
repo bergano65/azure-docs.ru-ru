@@ -17,12 +17,12 @@ ms.date: 04/18/2019
 ms.author: markvi
 ms.reviewer: dhanyahk
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 56eee39a9e99e9d6752d1b4f6eb7182043ff14d6
-ms.sourcegitcommit: d68c72e120bdd610bb6304dad503d3ea89a1f0f7
+ms.openlocfilehash: 168b41534f6ea6055294cc9e9cec139853904fea
+ms.sourcegitcommit: d95cab0514dd0956c13b9d64d98fdae2bc3569a0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/01/2020
-ms.locfileid: "89230591"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91358905"
 ---
 # <a name="install-and-use-the-log-analytics-views-for-azure-active-directory"></a>Установка и использование представлений Log Analytics для Azure Active Directory
 
@@ -56,7 +56,7 @@ ms.locfileid: "89230591"
 
 3. Выберите любое из этих представлений для перехода к отдельным отчетам. Можно также настроить оповещения для любого из параметров отчета. Например, давайте настроим оповещение, срабатывающее каждый раз, когда происходит ошибка входа в систему. Для этого сначала выберите представление **Sign-ins Events** (События входа в систему), выберите отчет **Sign-in errors over time** (Ошибки входа в систему со временем), а затем выберите **Аналитика**, чтобы открыть страницу сведений, содержащую также фактический запрос, формирующий этот отчет. 
 
-    ![Сведения](./media/howto-install-use-log-analytics-views/details.png)
+    ![На снимке экрана показана страница сведений аналитики с запросом отчета.](./media/howto-install-use-log-analytics-views/details.png)
 
 
 4. Выберите **Задание оповещения** и в разделе **Критерии оповещения** выберите **Whenever the Custom log search is &lt;logic undefined&gt;** (Всякий раз, когда логика пользовательского поиска по журналу не определена). Так как оповещение должно срабатывать каждый раз, когда происходит ошибка входа в систему, установите для **порогового значения** логики оповещений по умолчанию значение **1**, а затем щелкните **Готово**. 

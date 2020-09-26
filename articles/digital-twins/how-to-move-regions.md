@@ -8,12 +8,12 @@ ms.date: 08/26/2020
 ms.topic: how-to
 ms.custom: subject-moving-resources
 ms.service: digital-twins
-ms.openlocfilehash: e2cb8ee282666d7a9a567ca04762b26de3b3b9bd
-ms.sourcegitcommit: bf1340bb706cf31bb002128e272b8322f37d53dd
+ms.openlocfilehash: 1725c3ff162e4f6b7ac3a5ea1ede6976c827b510
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/03/2020
-ms.locfileid: "89443047"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91328502"
 ---
 # <a name="move-an-azure-digital-twins-instance-to-a-different-azure-region"></a>Перемещение экземпляра Azure Digital двойников в другой регион Azure
 
@@ -88,7 +88,7 @@ ms.locfileid: "89443047"
 
 Чтобы проверить соединение, можно нажать кнопку *выполнить запрос* , чтобы запустить запрос по умолчанию, отображающий все двойников и связи в графе в окне *Обозреватель графов* .
 
-:::image type="content" source="media/how-to-move-regions/run-query.png" alt-text="Выделенная кнопка Выполнить запрос рядом с верхней частью окна" lightbox="media/how-to-move-regions/run-query.png":::
+:::image type="content" source="media/how-to-move-regions/run-query.png" alt-text="Выделенная кнопка "Выполнить запрос" рядом с верхней частью окна" lightbox="media/how-to-move-regions/run-query.png":::
 
 Можно оставить обозреватель ADT запущенным, так как он будет использоваться позже в этой статье для повторной отправки этих элементов в новый экземпляр в целевом регионе.
 
@@ -113,7 +113,7 @@ ms.locfileid: "89443047"
 
 ### <a name="create-a-new-instance"></a>Создание нового экземпляра
 
-Сначала **Создайте новый экземпляр Azure Digital двойников в целевом регионе**. Для этого выполните действия, описанные в разделе [*как настроить экземпляр и проверку подлинности*](how-to-set-up-instance-scripted.md), сохранив следующие указатели:
+Сначала **Создайте новый экземпляр Azure Digital двойников в целевом регионе**. Для этого выполните действия, описанные в разделе [*как настроить экземпляр и проверку подлинности*](how-to-set-up-instance-portal.md), сохранив следующие указатели:
 * Вы можете использовать одно и то же имя для нового экземпляра, **Если** он находится в другой группе ресурсов. Если необходимо использовать ту же группу ресурсов, которая содержит исходный экземпляр, то новому экземпляру потребуется собственное уникальное имя.
 * Введите целевой новый регион при появлении запроса на расположение.
 * Повторное создание регистрации приложения **не требуется** . Новый экземпляр может повторно использовать уже имеющуюся регистрацию приложения.
@@ -136,7 +136,7 @@ ms.locfileid: "89443047"
 
 В настоящее время ADT Explorer подключен к исходному экземпляру Azure Digital двойников. Переключите подключение, чтобы оно указывало на новый экземпляр, нажав кнопку *Вход в* верхней части окна. 
 
-:::image type="content" source="media/how-to-move-regions/sign-in.png" alt-text="ADT Explorer с выделенным значком Войти в верхней части окна. На значке изображен простой силуэт человека, перекрытый силуэтом ключа." lightbox="media/how-to-move-regions/sign-in.png":::
+:::image type="content" source="media/how-to-move-regions/sign-in.png" alt-text="ADT Explorer с выделенным значком "Войти" в верхней части окна. На значке изображен простой силуэт человека, перекрытый силуэтом ключа." lightbox="media/how-to-move-regions/sign-in.png":::
 
 Так как вы повторно используете регистрацию приложения, необходимо заменить *URL-адрес ADT*. Измените это значение на "чтение *https://{новое имя узла}*".
 
@@ -148,7 +148,7 @@ ms.locfileid: "89443047"
 
 Чтобы передать **модели, двойников и Graph**, нажмите значок *Импорт графа* в поле *представление графа* . Этот параметр отправит все три из этих компонентов одновременно (даже модели, которые в данный момент не используются в графе).
 
-:::image type="content" source="media/how-to-move-regions/import-graph.png" alt-text="В окне Представление графа выделен значок. В нем отображается стрелка, указывающая на облако." lightbox="media/how-to-move-regions/import-graph.png":::
+:::image type="content" source="media/how-to-move-regions/import-graph.png" alt-text="В окне "Представление графа" выделен значок. В нем отображается стрелка, указывающая на облако." lightbox="media/how-to-move-regions/import-graph.png":::
 
 В поле выбора файла перейдите к загруженному графу. Выберите файл Graph *. JSON* и нажмите кнопку *Открыть*.
 
@@ -158,7 +158,7 @@ ms.locfileid: "89443047"
 
 :::row:::
     :::column:::
-        :::image type="content" source="media/how-to-move-regions/graph-preview-save.png" alt-text="Выделенный значок Сохранить на панели предварительного просмотра графа" lightbox="media/how-to-move-regions/graph-preview-save.png":::
+        :::image type="content" source="media/how-to-move-regions/graph-preview-save.png" alt-text="Выделенный значок "Сохранить" на панели предварительного просмотра графа" lightbox="media/how-to-move-regions/graph-preview-save.png":::
     :::column-end:::
     :::column:::
     :::column-end:::
@@ -168,7 +168,7 @@ ADT Explorer теперь будет отправлять модели и гра
 
 :::row:::
     :::column:::
-        :::image type="content" source="media/how-to-move-regions/import-success.png" alt-text="Диалоговое окно, указывающее на успешность импорта графа. Он считывает Импорт выполнен успешно. 2 импортированные модели. 4 двойников импортированы. два импортированных отношения. " lightbox="media/how-to-move-regions/import-success.png":::
+        :::image type="content" source="media/how-to-move-regions/import-success.png" alt-text="Диалоговое окно, указывающее на успешность импорта графа. Он считывает "Импорт выполнен успешно. 2 импортированные модели. 4 двойников импортированы. два импортированных отношения. "" lightbox="media/how-to-move-regions/import-success.png":::
     :::column-end:::
     :::column:::
     :::column-end:::
@@ -178,11 +178,11 @@ ADT Explorer теперь будет отправлять модели и гра
 
 Чтобы убедиться, что все отправлено успешно, нажмите кнопку *выполнить запрос* в окне *Graph Explorer* , чтобы запустить запрос по умолчанию, отображающий все двойников и связи в графе. Это также приведет к обновлению списка моделей в *представлении модели*.
 
-:::image type="content" source="media/how-to-move-regions/run-query.png" alt-text="Обратите внимание на ту же кнопку выполнить запрос, расположенную ранее, в верхней части окна" lightbox="media/how-to-move-regions/run-query.png":::
+:::image type="content" source="media/how-to-move-regions/run-query.png" alt-text="Обратите внимание на ту же кнопку "выполнить запрос", расположенную ранее, в верхней части окна" lightbox="media/how-to-move-regions/run-query.png":::
 
 Вы должны увидеть граф со всеми ее двойниковми и связями, отображаемыми в окне *Обозреватель графов* . Вы также должны увидеть модели, перечисленные в поле *представление модели* .
 
-:::image type="content" source="media/how-to-move-regions/post-upload.png" alt-text="Представление обозревателя ADT, отображающее 2 модели, выделенные в поле представление модели, и диаграмму, выделенную в поле Обозреватель диаграмм" lightbox="media/how-to-move-regions/post-upload.png":::
+:::image type="content" source="media/how-to-move-regions/post-upload.png" alt-text="Представление обозревателя ADT, отображающее 2 модели, выделенные в поле "представление модели", и диаграмму, выделенную в поле "Обозреватель диаграмм"" lightbox="media/how-to-move-regions/post-upload.png":::
 
 Это подтверждает, что модели, двойников и Graph были повторно переданы в новый экземпляр в целевом регионе.
 
@@ -234,4 +234,4 @@ ADT Explorer теперь будет отправлять модели и гра
 
 Нажмите кнопку *Удалить* и следуйте инструкциям на экране, чтобы завершить удаление.
 
-:::image type="content" source="media/how-to-move-regions/delete-instance.png" alt-text="Просмотрите сведения об экземпляре Digital двойников для Azure в портал Azure на вкладке Обзор. Кнопка Удалить выделена":::
+:::image type="content" source="media/how-to-move-regions/delete-instance.png" alt-text="Просмотрите сведения об экземпляре Digital двойников для Azure в портал Azure на вкладке Обзор. Кнопка "Удалить" выделена":::

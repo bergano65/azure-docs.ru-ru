@@ -1,6 +1,6 @@
 ---
-title: Сервер платформы Oracle в решениях Azure
-description: Сведения о том, как выполнять Oracle WebLogic Server в Microsoft Azure
+title: Что такое решения для запуска сервера платформы Oracle на виртуальных машинах Azure
+description: Узнайте, как запускать сервер Виртуальные машины Microsoft Azure Oracle.
 services: virtual-machines-linux
 documentationcenter: ''
 author: rezar
@@ -11,16 +11,16 @@ ms.service: virtual-machines-windows
 ms.topic: article
 ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure-services
-ms.date: 05/11/2020
+ms.date: 09/23/2020
 ms.author: rezar
-ms.openlocfilehash: e408f9e245fb78b475a194bc0db6f1edfdf85b41
-ms.sourcegitcommit: 1fe5127fb5c3f43761f479078251242ae5688386
+ms.openlocfilehash: e8f1b115f8a52b4352478f91dd5849c45bfebdc1
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/14/2020
-ms.locfileid: "90069733"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91274373"
 ---
-# <a name="solutions-for-running-oracle-weblogic-server-on-azure"></a>Решения для запуска сервера платформы Oracle в Azure
+# <a name="what-are-solutions-for-running-oracle-weblogic-server-on-azure-virtual-machines"></a>Что такое решения для запуска сервера платформы Oracle на виртуальных машинах Azure?
 
 На этой странице описаны решения для запуска сервера веб-логики Oracle (WLS) на виртуальных машинах Azure. Эти решения совместно разработаны корпорацией Oracle и корпорацией Майкрософт.
 
@@ -60,7 +60,7 @@ _Если вы заинтересованы в тесном взаимодейс
 
 Помимо тех, которые автоматически подготавливаются решениями, клиенты имеют полную гибкость в настройке своих развертываний. Скорее всего, на самом верху развертывания приложений клиенты будут интегрировать дополнительные ресурсы Azure с их развертываниями. Пользователям рекомендуется предоставить отзыв о дальнейших улучшениях решений.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Изучите предложения в Azure.
 

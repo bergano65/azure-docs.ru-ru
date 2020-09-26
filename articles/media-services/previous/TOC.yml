@@ -115,8 +115,6 @@
     - name: Кодирование контента
       href: media-services-encode-asset.md
       items:
-        - name: Сравнение кодировщиков
-          href: media-services-compare-encoders.md
         - name: Управление скоростью и параллелизмом кодирования
           href: media-services-manage-encoding-speed.md
         - name: Media Encoder Standard (MES)
@@ -205,20 +203,6 @@
                   href: media-services-mes-preset-H264-Single-Bitrate-High-Quality-SD-for-Android.md
                 - name: H264 Single Bitrate Low Quality SD для Android
                   href: media-services-mes-preset-H264-Single-Bitrate-Low-Quality-SD-for-Android.md
-        - name: Media Encoder Premium Workflow
-          items:
-            - name: Форматы и кодеки Media Encoder Premium Workflow
-              href: media-services-premium-workflow-encoder-formats.md
-            - name: Кодирование с помощью Media Encoder Premium Workflow
-              items:
-                - name: Media Encoder Premium Workflow
-                  href: media-services-encode-with-premium-workflow.md
-                - name: Учебники по Media Encoder Premium Workflow
-                  href: media-services-media-encoder-premium-workflow-tutorials.md
-                - name: Создание рабочих процессов расширенного кодирования с помощью конструктора рабочих процессов
-                  href: media-services-workflow-designer.md
-                - name: Рабочий процесс Premium с несколькими элементами входных данных
-                  href: media-services-media-encoder-premium-workflow-multiplefilesinput.md
         - name: 'Создание задачи, генерирующей блоки fMP4'
           href: media-services-generate-fmp4-chunks.md
         - name: Обработчики мультимедиа

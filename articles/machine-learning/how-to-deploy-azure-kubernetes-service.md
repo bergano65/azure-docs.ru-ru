@@ -11,12 +11,12 @@ ms.author: jordane
 author: jpe316
 ms.reviewer: larryfr
 ms.date: 09/01/2020
-ms.openlocfilehash: c7c3825d97a5566a43346febc7bbf86a4b242b54
-ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
+ms.openlocfilehash: fc9d38f2e34e0b01183441fd48e39976d18a50e6
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "90905689"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91328468"
 ---
 # <a name="deploy-a-model-to-an-azure-kubernetes-service-cluster"></a>Развертывание модели в кластере службы Azure Kubernetes
 
@@ -123,8 +123,8 @@ print(service.get_logs())
 
 * [акскомпуте](https://docs.microsoft.com/python/api/azureml-core/azureml.core.compute.aks.akscompute?view=azure-ml-py&preserve-view=true)
 * [Аксвебсервице. deploy_configuration](https://docs.microsoft.com/python/api/azureml-core/azureml.core.webservice.aks.aksservicedeploymentconfiguration?view=azure-ml-py&preserve-view=true)
-* [Модель. Развертывание](https://docs.microsoft.com/python/api/azureml-core/azureml.core.model.model?view=azure-ml-py#&preserve-view=truedeploy-workspace--name--models--inference-config-none--deployment-config-none--deployment-target-none--overwrite-false-)
-* [WebService. wait_for_deployment](https://docs.microsoft.com/python/api/azureml-core/azureml.core.webservice%28class%29?view=azure-ml-py#&preserve-view=truewait-for-deployment-show-output-false-)
+* [Модель. Развертывание](https://docs.microsoft.com/python/api/azureml-core/azureml.core.model.model?view=azure-ml-py&preserve-view=true#&preserve-view=truedeploy-workspace--name--models--inference-config-none--deployment-config-none--deployment-target-none--overwrite-false-)
+* [WebService. wait_for_deployment](https://docs.microsoft.com/python/api/azureml-core/azureml.core.webservice%28class%29?view=azure-ml-py&preserve-view=true#&preserve-view=truewait-for-deployment-show-output-false-)
 
 # <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
 
@@ -136,7 +136,7 @@ az ml model deploy -ct myaks -m mymodel:1 -n myservice -ic inferenceconfig.json 
 
 [!INCLUDE [deploymentconfig](../../includes/machine-learning-service-aks-deploy-config.md)]
 
-Дополнительные сведения см. в справочнике по [развертыванию модели языка AZ ML](https://docs.microsoft.com/cli/azure/ext/azure-cli-ml/ml/model?view=azure-cli-latest#ext-azure-cli-ml-az-ml-model-deploy) .
+Дополнительные сведения см. в справочнике по [развертыванию модели языка AZ ML](https://docs.microsoft.com/cli/azure/ext/azure-cli-ml/ml/model?view=azure-cli-latest&preserve-view=true#ext-azure-cli-ml-az-ml-model-deploy) .
 
 # <a name="visual-studio-code"></a>[Visual Studio Code](#tab/visual-studio-code)
 
@@ -188,7 +188,7 @@ concurrentRequests = targetRps * reqTime / targetUtilization
 replicas = ceil(concurrentRequests / maxReqPerContainer)
 ```
 
-Дополнительные сведения о настройке `autoscale_target_utilization` , `autoscale_max_replicas` и см `autoscale_min_replicas` . в справочнике по модулю [аксвебсервице](https://docs.microsoft.com/python/api/azureml-core/azureml.core.webservice.akswebservice?view=azure-ml-py) .
+Дополнительные сведения о настройке `autoscale_target_utilization` , `autoscale_max_replicas` и см `autoscale_min_replicas` . в справочнике по модулю [аксвебсервице](https://docs.microsoft.com/python/api/azureml-core/azureml.core.webservice.akswebservice?view=azure-ml-py&preserve-view=true) .
 
 ## <a name="deploy-models-to-aks-using-controlled-rollout-preview"></a>Развертывание моделей в AKS с помощью контролируемого развертывания (Предварительная версия)
 
@@ -302,7 +302,7 @@ print(primary)
 ```
 
 > [!IMPORTANT]
-> Если необходимо повторно создать ключ, используйте [`service.regen_key`](https://docs.microsoft.com/python/api/azureml-core/azureml.core.webservice(class)?view=azure-ml-py&preserve-view=true)
+> Если необходимо повторно создать ключ, используйте [`service.regen_key`](https://docs.microsoft.com/python/api/azureml-core/azureml.core.webservice%28class%29?view=azure-ml-py&preserve-view=true)
 
 ### <a name="authentication-with-tokens"></a>Аутентификация с помощью токенов
 
@@ -324,7 +324,12 @@ print(token)
 >
 > Корпорация Майкрософт настоятельно рекомендует создать рабочую область Машинное обучение Azure в том же регионе, что и кластер службы Azure Kubernetes. Для проверки подлинности с помощью маркера веб-служба выполняет вызов в регион, в котором создана рабочая область Машинного обучения Azure. Если регион рабочей области недоступен, вы не сможете получить маркер для веб-службы даже в том случае, если кластер находится в регионе, отличном от региона рабочей области. Это фактически приводит к недоступности проверки подлинности на основе маркеров, пока регион рабочей области не будет снова доступен. Кроме того, чем больше расстояние между регионом кластера и регионом рабочей области, тем дольше будет получена лексема.
 >
-> Чтобы получить маркер, необходимо использовать пакет SDK для Машинное обучение Azure или команду [AZ ML Service Get-Access-Token](https://docs.microsoft.com/cli/azure/ext/azure-cli-ml/ml/service?view=azure-cli-latest#ext-azure-cli-ml-az-ml-service-get-access-token) .
+> Чтобы получить маркер, необходимо использовать пакет SDK для Машинное обучение Azure или команду [AZ ML Service Get-Access-Token](https://docs.microsoft.com/cli/azure/ext/azure-cli-ml/ml/service?view=azure-cli-latest&preserve-view=true#ext-azure-cli-ml-az-ml-service-get-access-token) .
+
+
+### <a name="vulnerability-scanning"></a>Сканирование уязвимостей
+
+Центр безопасности Azure обеспечивает унифицированное управление безопасностью и расширенную защиту от угроз для гибридных облачных рабочих нагрузок. Вы должны разрешить центру безопасности Azure проверять ресурсы и следовать рекомендациям. Дополнительные сведения см. в статье [Интеграция Azure Kubernetes Services с центром безопасности](https://docs.microsoft.com/azure/security-center/azure-kubernetes-service-integration).
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
