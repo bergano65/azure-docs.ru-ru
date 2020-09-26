@@ -9,14 +9,14 @@ ms.reviewer: craigg
 ms.service: dms
 ms.workload: data-services
 ms.custom: mvc
-ms.topic: article
+ms.topic: troubleshooting
 ms.date: 02/20/2020
-ms.openlocfilehash: 871ea665d23a5fba644448ddb6c596179d47bb3f
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 6393624cb4520ccd28dff41dd97746873bc13f59
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85106381"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91330304"
 ---
 # <a name="known-issuesmigration-limitations-with-online-migrations-to-azure-sql-managed-instance"></a>Известные проблемы и ограничения миграции при оперативной миграции на Azure SQL Управляемый экземпляр
 
@@ -38,7 +38,7 @@ ms.locfileid: "85106381"
 
     При использовании автономных миграций, если выбрать параметр **я буду позволять Azure Database Migration Service...**, после чего Azure Database Migration Service будет использовать резервную копию базы данных с включенной контрольной суммой.
 
-- **Тип носителя резервной копии**
+- **Носитель резервной копии**
 
     Обязательно выполните каждую резервную копию на отдельном носителе резервных копий (файлы резервных копий). Azure Database Migration Service не поддерживает резервные копии, добавляемые в один файл резервной копии. Создание полных резервных копий и резервные копии журналов для отдельных файлов резервных копий.
 
@@ -48,7 +48,7 @@ ms.locfileid: "85106381"
 
     Azure Database Migration Service не поддерживает базы данных с несколькими файлами журналов. Если у вас есть несколько файлов журналов, сократите их и выполните их реорганизацию в один файл журнала транзакций. Так как вы не можете удаленно записывать в журнал непустые файлы, необходимо сначала создать резервную копию файла журнала.
 
-## <a name="sql-server-features"></a>Компоненты SQL Server
+## <a name="sql-server-features"></a>функции SQL Server
 
 - **Файловый поток/таблицы FileTable**
 

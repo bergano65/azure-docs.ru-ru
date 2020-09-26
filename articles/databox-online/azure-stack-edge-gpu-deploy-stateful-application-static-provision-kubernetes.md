@@ -6,20 +6,22 @@ author: alkohli
 ms.service: databox
 ms.subservice: edge
 ms.topic: how-to
-ms.date: 08/18/2020
+ms.date: 09/22/2020
 ms.author: alkohli
-ms.openlocfilehash: 8366c5b7a05b35891bcf87e446229357a5511359
-ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
+ms.openlocfilehash: 6949b2265e1b22d924b67d0d46e5b2f2bf9c23ac
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "90899535"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91330406"
 ---
 # <a name="use-kubectl-to-run-a-kubernetes-stateful-application-with-a-persistentvolume-on-your-azure-stack-edge-pro-device"></a>Использование kubectl для запуска приложения Kubernetes с отслеживанием состояния с помощью Персистентволуме на устройстве Azure Stack ребра Pro
 
 В этой статье показано, как развернуть приложение с отслеживанием состояния с одним экземпляром в Kubernetes с помощью Персистентволуме (ПС) и развертывания. Развертывание использует `kubectl` команды в существующем кластере Kubernetes и развертывает приложение MySQL. 
 
 Эта процедура предназначена для тех, кто проверил [хранилище Kubernetes на устройстве с Azure Stack пограничным Pro](azure-stack-edge-gpu-kubernetes-storage.md) и знаком с концепциями [хранилища Kubernetes](https://kubernetes.io/docs/concepts/storage/).
+
+Azure Stack пограничной Pro также поддерживает запуск контейнеров Azure SQL, которые можно развернуть подобным образом, как описано в разделе MySQL. Дополнительные сведения см. в разделе [Azure SQL ребр](../azure-sql-edge/overview.md).
 
 
 ## <a name="prerequisites"></a>Предварительные требования

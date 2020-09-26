@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.author: sgilley
 author: sdgilley
 ms.date: 07/27/2020
-ms.openlocfilehash: 3e1832d656ea2bad772a686e52a357c1daf0ded5
-ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
+ms.openlocfilehash: f75853a66c43c69ec191f28951f8f6ffc4353f93
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "90883200"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91330168"
 ---
 #  <a name="what-are-compute-targets-in-azure-machine-learning"></a>Что такое целевые показатели вычислений в Машинное обучение Azure? 
 
@@ -51,7 +51,7 @@ ms.locfileid: "90883200"
 Вы можете создавать Машинное обучение Azureные или расчетные кластеры из:
 * [Студия машинного обучения Azure.](how-to-create-attach-compute-studio.md)
 * Портал Azure
-* Классы [компутеинстанце](https://docs.microsoft.com/python/api/azureml-core/azureml.core.compute.computeinstance(class)?view=azure-ml-py&preserve-view=true) и [амлкомпуте](https://docs.microsoft.com/python/api/azureml-core/azureml.core.compute.amlcompute(class)?view=azure-ml-py&preserve-view=true) пакета SDK для Python
+* Классы [компутеинстанце](https://docs.microsoft.com/python/api/azureml-core/azureml.core.compute.computeinstance%28class%29?view=azure-ml-py&preserve-view=true) и [амлкомпуте](https://docs.microsoft.com/python/api/azureml-core/azureml.core.compute.amlcompute%28class%29?view=azure-ml-py&preserve-view=true) пакета SDK для Python
 * [Пакет SDK для R](https://azure.github.io/azureml-sdk-for-r/reference/index.html#section-compute-targets) (Предварительная версия)
 * Шаблон диспетчер ресурсов. Пример шаблона см. в статье [Создание шаблона вычислений машинное обучение Azure](https://github.com/Azure/azure-quickstart-templates/tree/master/101-machine-learning-compute-create-amlcompute).
 * Расширение машинного обучения [для Azure CLI](reference-azure-machine-learning-cli.md#resource-management).  
@@ -82,19 +82,21 @@ ms.locfileid: "90883200"
 
 | **Поддерживаемые серии виртуальных машин**  | **Ограничения** |
 |------------|------------|
-| D | Нет |
-| Dv2 | Нет |  
-| DSv2 | Нет |  
-| Серия fsv2 | Нет | 
+| D | None |
+| Dv2 | None |  
+| Dv3 | None|
+| DSv2 | None | 
+| DSv3 | None|
+| Серия fsv2 | None | 
 | HBv2 | Запрос утверждения |  
 | HCS | Запрос утверждения |  
 | M | Запрос утверждения |
-| NC | Нет |    
+| NC | None |    
 | NCsv2 | Запрос утверждения |
 | NCsv3 | Запрос утверждения |  
 | Структура | Запрос утверждения |
 | NDv2 | Запрос утверждения |
-| NV | Нет |
+| NV | None |
 | NVv3 | Запрос утверждения | 
 
 

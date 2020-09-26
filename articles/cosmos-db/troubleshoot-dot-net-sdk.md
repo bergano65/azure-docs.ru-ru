@@ -9,12 +9,12 @@ ms.subservice: cosmosdb-sql
 ms.topic: troubleshooting
 ms.reviewer: sngun
 ms.custom: devx-track-dotnet
-ms.openlocfilehash: d7ed48354b3666a3ec544ffb66724bc605041c90
-ms.sourcegitcommit: 07166a1ff8bd23f5e1c49d4fd12badbca5ebd19c
+ms.openlocfilehash: 3093996156a31d4a06f0d91dbca1bd00d58eacdb
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90086993"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91330457"
 ---
 # <a name="diagnose-and-troubleshoot-issues-when-using-azure-cosmos-db-net-sdk"></a>Diagnose and troubleshoot issues when using Azure Cosmos DB .NET SDK (Диагностика и устранение неполадок при использовании пакета SDK Azure Cosmos DB для .NET)
 
@@ -110,7 +110,9 @@ ResponseTime: 2020-03-09T22:44:49.9279906Z, StoreResult: StorePhysicalAddress: r
     > [!NOTE]
     > Для повышения производительности рекомендуется использовать обработку узлов 64-разрядной версии Windows. Пакет SDK для SQL содержит собственный файл ServiceInterop.dll для локального анализа и оптимизации запросов. ServiceInterop.dll поддерживается только на платформе Windows x64. Для Linux и других неподдерживаемых платформ, где ServiceInterop.dll недоступен, чтобы получить оптимизированный запрос, будет выполнен дополнительный сетевой вызов шлюза.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+Если возникла следующая ошибка: `Unable to load DLL 'Microsoft.Azure.Cosmos.ServiceInterop.dll' or one of its dependencies:` и используют Windows, следует выполнить обновление до последней версии Windows.
+
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Сведения о рекомендациях по производительности для [.NET v3](performance-tips-dotnet-sdk-v3-sql.md) и [.NET v2](performance-tips.md)
 * Узнайте о [пакетах средств разработки Java на основе Reactor](https://github.com/Azure-Samples/azure-cosmos-java-sql-api-samples/blob/master/reactor-pattern-guide.md).
