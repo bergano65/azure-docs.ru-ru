@@ -7,12 +7,12 @@ ms.service: postgresql
 ms.subservice: hyperscale-citus
 ms.topic: conceptual
 ms.date: 11/04/2019
-ms.openlocfilehash: dcce4485e00415f9caa706966cac1c936c1f15f6
-ms.sourcegitcommit: 56cbd6d97cb52e61ceb6d3894abe1977713354d9
+ms.openlocfilehash: 9a6d8843acf27a53e261d9c7180906b15d05cc33
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/20/2020
-ms.locfileid: "88690414"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91314816"
 ---
 # <a name="monitor-and-tune-azure-database-for-postgresql---hyperscale-citus"></a>Мониторинг и Настройка базы данных Azure для PostgreSQL — масштабирование (Цитус)
 
@@ -28,11 +28,11 @@ ms.locfileid: "88690414"
 
 Эти метрики доступны для узлов с горизонтальным масштабированием (Цитус):
 
-|Метрика|Отображаемое имя метрики|Единицы|Описание|
+|Метрика|Отображаемое имя метрики|Единица измерения|Описание|
 |---|---|---|---|
 |active_connections|Активные подключения|Count|Число активных подключений к серверу.|
 |cpu_percent|Нагрузка ЦП|Процент|Процент используемого ЦП.|
-|iops|ОПЕРАЦИЙ ВВОДА-ВЫВОДА|Count|Ознакомьтесь с [определением операций ввода-вывода](../virtual-machines/premium-storage-performance.md#iops) и [пропускной способностью масштабирования](concepts-hyperscale-configuration-options.md)|
+|iops|ОПЕРАЦИЙ ВВОДА-ВЫВОДА|Count|См. пропускную способность для [определения операций ввода-вывода](../virtual-machines/premium-storage-performance.md#iops) и [масштабирования (Цитус)](concepts-hyperscale-configuration-options.md)|
 |memory_percent|Процент памяти|Процент|Процент используемой памяти.|
 |network_bytes_ingress|Сеть (входящий трафик)|Байты|Входящий сетевой трафик по активным подключениям.|
 |network_bytes_egress|Сеть (исходящий трафик)|Байты|Исходящий сетевой трафик по активным подключениям.|

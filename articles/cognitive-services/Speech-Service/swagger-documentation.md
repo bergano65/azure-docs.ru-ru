@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: reference
 ms.date: 07/05/2019
 ms.author: erhopf
-ms.openlocfilehash: fcc43caf895dadfaf832a47c3254f9b828bcb71a
-ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
+ms.openlocfilehash: e42d9713d1d61bb681c0ee51e46cc52eb0bcc807
+ms.sourcegitcommit: d95cab0514dd0956c13b9d64d98fdae2bc3569a0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "77430811"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91363194"
 ---
 # <a name="swagger-documentation"></a>Документация по Swagger
 
@@ -32,7 +32,7 @@ ms.locfileid: "77430811"
 
 1. Перейдите на сайт https://editor.swagger.io.
 2. В меню **File** (Файл) выберите **Import** (Импортировать).
-3. Введите URL-адрес Swagger, включая регион для подписки на службу речи`https://<your-region>.cris.ai/docs/v2.0/swagger`
+3. Введите URL-адрес Swagger, включая регион для подписки на службу речи `https://<your-region>.cris.ai/docs/v2.0/swagger`
 4. Щелкните **создать клиент** и выберите Python.
 5. Сохраните клиентскую библиотеку.
 
@@ -44,7 +44,7 @@ ms.locfileid: "77430811"
 * [REST API: Преобразование речи в текст](rest-speech-to-text.md)
 * [REST API: Преобразование текста в речь](rest-text-to-speech.md)
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Примеры речевых служб на GitHub](https://aka.ms/csspeech/samples).
-* [Try the Speech service for free](get-started.md) (Бесплатное использование службы "Речь")
+* [Try the Speech service for free](overview.md#try-the-speech-service-for-free) (Бесплатное использование службы "Речь")

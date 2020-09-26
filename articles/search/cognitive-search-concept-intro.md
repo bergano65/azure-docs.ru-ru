@@ -8,12 +8,12 @@ ms.author: heidist
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 06/18/2020
-ms.openlocfilehash: 1c041d594b29c6e93b73eb1b0c623b3e566ceef5
-ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
+ms.openlocfilehash: 2195ac4e5753addaee9e13c368b6e6a1b94354ff
+ms.sourcegitcommit: d95cab0514dd0956c13b9d64d98fdae2bc3569a0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88935506"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91363143"
 ---
 # <a name="ai-enrichment-in-azure-cognitive-search"></a>Обогащение с помощью ИИ в службе "Когнитивный поиск Azure"
 
@@ -69,7 +69,7 @@ ms.locfileid: "88935506"
 
 ![Этап распознавания документов](./media/cognitive-search-intro/document-cracking-phase-blowup.png "распознавание документов")
 
- В качестве источников данных поддерживаются хранилища больших двоичных объектов Azure, хранилища таблиц Azure, база данных SQL Azure и Azure Cosmos DB. Текстовое содержимое можно извлечь из файлов следующих типов: PDF, Word, PowerPoint и CSV. Дополнительные сведения см. в разделе [Поддерживаемые форматы документов](search-howto-indexing-azure-blob-storage.md#supported-document-formats). Индексирование занимает немало времени, поэтому лучше начать с небольшого репрезентативного набора данных, который вы будете поэтапно развивать параллельно с разработкой решения.
+ В качестве источников данных поддерживаются хранилища больших двоичных объектов Azure, хранилища таблиц Azure, база данных SQL Azure и Azure Cosmos DB. Текстовое содержимое можно извлечь из файлов следующих типов: PDF, Word, PowerPoint и CSV. Дополнительные сведения см. в разделе [Поддерживаемые форматы документов](search-howto-indexing-azure-blob-storage.md#SupportedFormats). Индексирование занимает немало времени, поэтому лучше начать с небольшого репрезентативного набора данных, который вы будете поэтапно развивать параллельно с разработкой решения.
 
 ### <a name="step-2-cognitive-skills-and-enrichment-phase"></a>Шаг 2. развитие навыков и фаза обогащения
 

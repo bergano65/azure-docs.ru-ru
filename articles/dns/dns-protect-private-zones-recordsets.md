@@ -7,12 +7,12 @@ ms.service: dns
 ms.topic: how-to
 ms.date: 02/18/2020
 ms.author: allensu
-ms.openlocfilehash: 1bbb410b3aac7d1e30db075003eb30ec27b11a38
-ms.sourcegitcommit: 4f1c7df04a03856a756856a75e033d90757bb635
+ms.openlocfilehash: 20e20968b6367e0a8c0131d6e7e8d15e56c06d63
+ms.sourcegitcommit: d95cab0514dd0956c13b9d64d98fdae2bc3569a0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87926592"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91363228"
 ---
 # <a name="how-to-protect-private-dns-zones-and-records"></a>Как защитить частные зоны и записи DNS
 
@@ -102,9 +102,9 @@ az role assignment create \
 
 Разрешения RBAC на уровне набора записей можно настроить с помощью портал Azure, используя кнопку **управления доступом (IAM)** на странице "набор записей":
 
-![Назначение разрешений RBAC на уровне набора записей через портал Azure](./media/dns-protect-private-zones-recordsets/rbac3.png)
+![На снимке экрана показана кнопка управления доступом (I M).](./media/dns-protect-private-zones-recordsets/rbac3.png)
 
-![Назначение разрешений RBAC на уровне набора записей через портал Azure](./media/dns-protect-private-zones-recordsets/rbac4.png)
+![Снимок экрана показывает управление доступом с выбранным добавлением назначения ролей.](./media/dns-protect-private-zones-recordsets/rbac4.png)
 
 Разрешения RBAC на уровне набора записей также можно [предоставить с помощью Azure PowerShell](../role-based-access-control/role-assignments-powershell.md):
 
@@ -165,7 +165,7 @@ az role assignment create \
 Свойство Actions определяет следующие разрешения для DNS:
 
 * `Microsoft.Network/privateDnsZones/CNAME/*` предоставляет полный контроль над записями CNAME.
-* `Microsoft.Network/privateDNSZones/read`предоставляет разрешение на чтение частных зон DNS, но не на их изменение, позволяя увидеть зону, в которой создается запись CNAME.
+* `Microsoft.Network/privateDNSZones/read` предоставляет разрешение на чтение частных зон DNS, но не на их изменение, позволяя увидеть зону, в которой создается запись CNAME.
 
 > [!NOTE]
 > Использование настраиваемой роли Azure для предотвращения удаления наборов записей с тем, чтобы разрешить их обновление, не является эффективным элементом управления. Наборы записей нельзя удалить, но ничто не препятствует их изменению.  К разрешенным изменениям относятся добавление и удаление записей из набора записей, включая удаление всех записей (при этом остается "пустой" набор записей). Это действует так же, как удаление набора записей с точки зрения разрешения DNS.
