@@ -1,19 +1,19 @@
 ---
-title: Развертывание виртуальных машин Linux в выделенных узлах с помощью CLI
-description: Развертывайте виртуальные машины в выделенных узлах с помощью Azure CLI.
+title: Развертывание виртуальных машин и экземпляров масштабируемых наборов на выделенных узлах с помощью интерфейса командной строки
+description: Развертывание виртуальных машин и экземпляров масштабируемых наборов на выделенные узлы с помощью Azure CLI.
 author: cynthn
-ms.service: virtual-machines-linux
+ms.service: virtual-machines
 ms.topic: how-to
-ms.date: 01/09/2020
+ms.date: 09/25/2020
 ms.author: cynthn
-ms.openlocfilehash: 9435764d99476584680734817d55086f47e8216b
-ms.sourcegitcommit: f353fe5acd9698aa31631f38dd32790d889b4dbb
+ms.openlocfilehash: a85f5cb9cc519b180354445ca9ca2f8dd0354c23
+ms.sourcegitcommit: 5dbea4631b46d9dde345f14a9b601d980df84897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87373629"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91370205"
 ---
-# <a name="deploy-vms-to-dedicated-hosts-using-the-azure-cli"></a>Развертывание виртуальных машин в выделенных узлах с помощью Azure CLI
+# <a name="deploy-to-dedicated-hosts-using-the-azure-cli"></a>Развертывание на выделенных узлах с помощью Azure CLI
  
 
 В этой статье рассказывается, как создать [выделенный узел](dedicated-hosts.md) Azure для размещения виртуальных машин. 
@@ -23,22 +23,22 @@ ms.locfileid: "87373629"
 
 ## <a name="limitations"></a>Ограничения
 
-- Масштабируемые наборы виртуальных машин в настоящее время не поддерживаются в выделенных узлах.
 - Размеры и типы оборудования, доступные для выделенных узлов, зависят от региона. Дополнительные сведения см. на [странице с ценами узлов](https://aka.ms/ADHPricing).
 
 ## <a name="create-resource-group"></a>Создать группу ресурсов 
 Группа ресурсов Azure является логическим контейнером, в котором происходит развертывание ресурсов Azure и управление ими. Создайте группу ресурсов с помощью команды az group create. В приведенном ниже примере создается группа ресурсов с именем *myDHResourceGroup* в расположении *Восточная часть США*.
 
-```bash
+```azurecli-interactive
 az group create --name myDHResourceGroup --location eastus 
 ```
  
 ## <a name="list-available-host-skus-in-a-region"></a>Получение списка доступных номеров SKU узлов в регионе
+
 Не все номера SKU узлов доступны во всех регионах и зонах доступности. 
 
 Перед тем как приступать к подготовке выделенных узлов, получите сведения о доступности узлов и ограничениях предложений. 
 
-```bash
+```azurecli-interactive
 az vm list-skus -l eastus2  -r hostGroups/hosts  -o table  
 ```
  
@@ -52,9 +52,10 @@ az vm list-skus -l eastus2  -r hostGroups/hosts  -o table
 
 Можно также использовать как зоны доступности, так и домены сбоя. 
 
+
 В этом примере мы используем команду [az vm host group create](/cli/azure/vm/host/group#az-vm-host-group-create) для создания группы узлов с использованием как зон доступности, так и доменов сбоя. 
 
-```bash
+```azurecli-interactive
 az vm host group create \
    --name myHostGroup \
    -g myDHResourceGroup \
@@ -62,11 +63,22 @@ az vm host group create \
    --platform-fault-domain-count 2 
 ``` 
 
+Добавьте `--automatic-placement true` параметр, чтобы виртуальные машины и экземпляры масштабируемых наборов автоматически размещались на узлах в группе узлов. Дополнительные сведения см. в разделе [Ручное и автоматическое размещение ](../dedicated-hosts.md#manual-vs-automatic-placement).
+
+> [!IMPORTANT]
+> В настоящее время автоматическое размещение находится в общедоступной предварительной версии.
+>
+> Чтобы принять участие в предварительной версии, выполните предварительный просмотр опроса по адресу [https://aka.ms/vmss-adh-preview](https://aka.ms/vmss-adh-preview) .
+>
+> Эта предварительная версия предоставляется без соглашения об уровне обслуживания и не рекомендована для использования рабочей среде. Некоторые функции могут не поддерживаться или их возможности могут быть ограничены. 
+>
+> Дополнительные сведения см. в статье [Дополнительные условия использования предварительных выпусков Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
+
 ### <a name="other-examples"></a>Другие примеры
 
 Вы также можете использовать команду [az vm host group create](/cli/azure/vm/host/group#az-vm-host-group-create) для создания группы узлов в зоне доступности 1 (без доменов сбоя).
 
-```bash
+```azurecli-interactive
 az vm host group create \
    --name myAZHostGroup \
    -g myDHResourceGroup \
@@ -76,7 +88,7 @@ az vm host group create \
  
 В приведенном ниже примере команда [az vm host group create](/cli/azure/vm/host/group#az-vm-host-group-create) применяется для создания группы узлов с использованием только доменов сбоя (для регионов, где зоны доступности не поддерживаются). 
 
-```bash
+```azurecli-interactive
 az vm host group create \
    --name myFDHostGroup \
    -g myDHResourceGroup \
@@ -91,7 +103,7 @@ az vm host group create \
 
 Создайте узел с помощью команды [az vm host create](/cli/azure/vm/host#az-vm-host-create). Если для группы узлов задано число доменов сбоя, вам будет предложено указать домен сбоя для узла.  
 
-```bash
+```azurecli-interactive
 az vm host create \
    --host-group myHostGroup \
    --name myHost \
@@ -105,28 +117,57 @@ az vm host create \
 ## <a name="create-a-virtual-machine"></a>Создание виртуальной машины 
 Создайте виртуальную машину в выделенном узле с помощью команды [az vm create](/cli/azure/vm#az-vm-create). Если при создании группы узлов была указана зона доступности, то при создании виртуальной машины необходимо использовать ту же зону.
 
-```bash
+```azurecli-interactive
 az vm create \
    -n myVM \
    --image debian \
-   --generate-ssh-keys \
    --host-group myHostGroup \
-   --host myHost \
    --generate-ssh-keys \
    --size Standard_D4s_v3 \
    -g myDHResourceGroup \
    --zone 1
 ```
+
+Чтобы разместить виртуальную машину на определенном узле, используйте `--host` вместо указания группы узлов с помощью `--host-group` .
  
 > [!WARNING]
 > Если виртуальная машина создается в узле, в котором недостаточно ресурсов, она будет создана в состоянии сбоя. 
+
+## <a name="create-a-scale-set-preview"></a>Создание масштабируемого набора (Предварительная версия)
+
+> [!IMPORTANT]
+> Масштабируемые наборы виртуальных машин на выделенных узлах в настоящее время находятся в общедоступной предварительной версии.
+>
+> Чтобы принять участие в предварительной версии, выполните предварительный просмотр опроса по адресу [https://aka.ms/vmss-adh-preview](https://aka.ms/vmss-adh-preview) .
+>
+> Эта предварительная версия предоставляется без соглашения об уровне обслуживания и не рекомендована для использования рабочей среде. Некоторые функции могут не поддерживаться или их возможности могут быть ограничены. 
+>
+> Дополнительные сведения см. в статье [Дополнительные условия использования предварительных выпусков Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
+
+При развертывании масштабируемого набора указывается группа узлов.
+
+```azurecli-interactive
+az vmss create \
+  --resource-group myResourceGroup \
+  --name myScaleSet \
+  --image UbuntuLTS \
+  --upgrade-policy-mode automatic \
+  --admin-username azureuser \
+  --host-group myHostGroup \
+  --generate-ssh-keys \
+  --size Standard_D4s_v3 \
+  -g myDHResourceGroup \
+  --zone 1
+```
+
+Если вы хотите вручную выбрать узел для развертывания масштабируемого набора, добавьте `--host` и имя узла.
 
 
 ## <a name="check-the-status-of-the-host"></a>Проверка состояния узла
 
 Вы можете проверить состояние работоспособности узла и оставшееся количество виртуальных машин, которое можно развернуть в нем, с помощью команды [az vm host get-instance-view](/cli/azure/vm/host#az-vm-host-get-instance-view).
 
-```bash
+```azurecli-interactive
 az vm host get-instance-view \
    -g myDHResourceGroup \
    --host-group myHostGroup \
@@ -233,7 +274,7 @@ az vm host get-instance-view \
 ## <a name="export-as-a-template"></a>Экспорт в качестве шаблона 
 Вы можете экспортировать шаблон, если вам требуется создать дополнительную среду разработки с теми же параметрами или соответствующую рабочую среду. Resource Manager использует шаблоны JSON, которые определяют все параметры среды. Можно полностью создавать среды, ссылаясь на этот шаблон JSON. Вы можете создавать шаблоны JSON вручную или экспортировать существующую среду для создания шаблона JSON автоматически. Чтобы экспортировать группу ресурсов, используйте команду [az group export](/cli/azure/group#az-group-export).
 
-```bash
+```azurecli-interactive
 az group export --name myDHResourceGroup > myDHResourceGroup.json 
 ```
 
@@ -241,7 +282,7 @@ az group export --name myDHResourceGroup > myDHResourceGroup.json
  
 Чтобы создать среду с помощью шаблона, используйте команду [az group deployment create](/cli/azure/group/deployment#az-group-deployment-create).
 
-```bash
+```azurecli-interactive
 az group deployment create \ 
     --resource-group myNewResourceGroup \ 
     --template-file myDHResourceGroup.json 
@@ -254,25 +295,25 @@ az group deployment create \
 
 Узел можно удалить только в том случае, если он больше не используется виртуальными машинами. Удалите виртуальные машины с помощью команды [az vm delete](/cli/azure/vm#az-vm-delete).
 
-```bash
+```azurecli-interactive
 az vm delete -n myVM -g myDHResourceGroup
 ```
 
 После удаления виртуальных машин можно удалить узел с помощью команды [az vm host delete](/cli/azure/vm/host#az-vm-host-delete).
 
-```bash
+```azurecli-interactive
 az vm host delete -g myDHResourceGroup --host-group myHostGroup --name myHost 
 ```
  
 После удаления всех узлов можно удалить группу узлов с помощью команды [az vm host group delete](/cli/azure/vm/host/group#az-vm-host-group-delete).  
  
-```bash
+```azurecli-interactive
 az vm host group delete -g myDHResourceGroup --host-group myHostGroup  
 ```
  
 Вы также можете удалить всю группу ресурсов одной командой. Это приведет к удалению всех ресурсов, созданных в группе, включая все виртуальные машины, узлы и группы узлов.
  
-```bash
+```azurecli-interactive
 az group delete -n myDHResourceGroup 
 ```
 

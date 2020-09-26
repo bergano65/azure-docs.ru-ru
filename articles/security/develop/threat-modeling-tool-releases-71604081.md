@@ -1,19 +1,19 @@
 ---
 title: Microsoft Threat Modeling Tool выпуск 4/9/2019
 titleSuffix: Azure
-description: Документирование заметок о выпуске средства моделирования угроз
+description: Документирование заметок о выпуске для 7.1.60408.1 выпуска средства моделирования угроз.
 author: jegeib
 ms.author: jegeib
 ms.service: security
 ms.subservice: security-develop
 ms.topic: article
 ms.date: 04/03/2019
-ms.openlocfilehash: 59d385ba7de5bf7bceae4dc8ddadbca813046094
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 8d24eb868a13e7b2d9ff3d2b625302c1c1fcb908
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "78269730"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91318013"
 ---
 # <a name="threat-modeling-tool-update-release-71604081---492019"></a>Threat Modeling Tool обновления выпуска 7.1.60408.1 — 4/9/2019
 
@@ -22,7 +22,7 @@ ms.locfileid: "78269730"
 - Новые наборы элементов для Azure Key Vault и диспетчера трафика Azure
 - Номер версии ТМТ теперь отображается на начальном экране
 - Ссылки на поддержку обновлены
-- Исправленные ошибки
+- Исправления ошибок
 
 ## <a name="feature-changes"></a>Изменения функций
 
@@ -55,6 +55,6 @@ ms.locfileid: "78269730"
 
 - Документация по Threat Modeling Tool находится на сайте [docs.microsoft.com](threat-modeling-tool.md) и содержит информацию [об использовании средства](threat-modeling-tool-getting-started.md).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Скачайте последнюю версию [Microsoft Threat Modeling Tool](https://aka.ms/threatmodelingtool).

@@ -9,12 +9,12 @@ ms.author: jeanyd
 ms.reviewer: mikeray
 ms.date: 09/22/2020
 ms.topic: how-to
-ms.openlocfilehash: e845136c4fed5a3d2e6863fdab0aa9f70fb30b5d
-ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
+ms.openlocfilehash: fb628df5151f9124d7b7f319ff109ffca030ee90
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "90939922"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91317350"
 ---
 # <a name="create-an-azure-arc-enabled-postgresql-hyperscale-server-group"></a>Создание группы серверов PostgreSQL в службе "Дуга Azure" с поддержкой геомасштабирования
 
@@ -59,7 +59,7 @@ Logged in successfully to `https://10.0.0.4:30080` in namespace `arc`. Setting a
 Реализуйте этот шаг перед переходом к следующему шагу. Чтобы развернуть группу серверов PostgreSQL в Red Hat OpenShift в проекте, отличном от используемого по умолчанию, необходимо выполнить следующие команды в кластере, чтобы обновить ограничения безопасности. Эта команда предоставляет необходимые привилегии учетным записям служб, которые будут выполнять группу серверов PostgreSQL. Ограничение контекста безопасности (SCC) **_Arc-Data-SCC_** добавляется при развертывании контроллера данных ARC в Azure.
 
 ```console
-oc adm policy add-scc-to-group arc-data-scc -z <server-group-name> -n <namespace name>
+oc adm policy add-scc-to-user arc-data-scc -z <server-group-name> -n <namespace name>
 ```
 
 _**Server-Group-Name** — это имя группы серверов, которая будет создана на следующем шаге._
@@ -72,7 +72,7 @@ _**Server-Group-Name** — это имя группы серверов, кото
 Чтобы создать группу серверов "база данных Azure для PostgreSQL" в службе "Дуга" Azure, используйте следующую команду:
 
 ```console
-azdata arc postgres server create -n <name> --workers 2 --storage-class-data <storage class name> --storage-class-logs <storage class name> --storage-class-backups <storage class name>
+azdata arc postgres server create -n <name> --workers <# worker nodes with #>=2> --storage-class-data <storage class name> --storage-class-logs <storage class name> --storage-class-backups <storage class name>
 
 #Example
 #azdata arc postgres server create -n postgres01 --workers 2
@@ -80,25 +80,14 @@ azdata arc postgres server create -n <name> --workers 2 --storage-class-data <st
 
 > [!NOTE]
 > - **Доступны другие параметры командной строки.  Просмотрите полный список параметров, выполнив `azdata arc postgres server create --help` .**
-> - В предварительной версии для резервного копирования и восстановления необходимо указать класс хранения для резервных копий (_--Storage-класса-Backups-СКБ_) во время создания группы серверов.
+> - Класс хранения, используемый для резервного копирования (_--Storage-Class-Backups-СКБ_), по умолчанию использует класс хранения данных контроллера данных, если он не указан.
 > - Единица, принимаемая параметрами--Volume-Size-*, — это Kubernetes ресурсное количество (целое число, за которым следует одно из этих данных, достаточное (T, G, M, K, M) или их степень-два эквивалента (Ti, МВт, MI, KI)).
-> - Длина имен не должна превышать 10 символов и соответствовать соглашениям об именах DNS.
+> - Длина имени не должна превышать 12 символов и соответствовать соглашениям об именовании DNS.
 > - Вам будет предложено ввести пароль для пользователя с правами администратора _postgres_ Standard.  Интерактивную строку можно пропустить, задав `AZDATA_PASSWORD` переменную среды сеанса перед выполнением команды Create.
-> - Если контроллер данных развернут с помощью AZDATA_USERNAME и AZDATA_PASSWORD в том же сеансе терминала, то значения AZDATA_USERNAME и AZDATA_PASSWORD будут использоваться для развертывания группы серверов PostgreSQL в масштабе. Имя пользователя-администратора по умолчанию для ядра СУБД PostgreSQL _PostgreSQL_ не может быть изменено на этом этапе.
+> - Если контроллер данных развернут с помощью AZDATA_USERNAME и AZDATA_PASSWORD переменных среды сеанса в одном сеансе терминала, то значения AZDATA_PASSWORD будут использоваться для развертывания группы серверов PostgreSQL. Если вы предпочитаете использовать другой пароль, то либо (1) обновите значение для AZDATA_PASSWORD или (2) удалите переменную среды AZDATA_PASSWORD или удалите ее значение, при создании группы серверов вам будет предложено ввести пароль в интерактивном режиме.
+> - Имя пользователя-администратора по умолчанию для ядра СУБД PostgreSQL _postgres_ не может быть изменено на этом этапе.
 > - Создание группы серверов PostgreSQL Scale не приводит к немедленной регистрации ресурсов в Azure. В рамках процесса отправки данных [инвентаризации](upload-metrics-and-logs-to-azure-monitor.md)  или [использования](view-billing-data-in-azure.md) ресурсов в Azure ресурсы будут созданы в Azure, а ресурсы будут доступны в портал Azure.
-> - На этом этапе невозможно изменить параметр--Port.
-> - Если в кластере Kubernetes нет класса хранения по умолчанию, необходимо использовать параметр--Метадатасторажекласс, чтобы указать его. Это приведет к сбою команды Create. Чтобы проверить наличие класса хранилища по умолчанию, объявленного в кластере Kubernetes, обзваниваются следующую команду: 
->
->   ```console
->   kubectl get sc
->   ```
->
-> - Если существует класс хранения, настроенный как класс хранения по умолчанию, будет добавлено имя класса хранения **(по умолчанию)** . Пример:
->
->   ```output
->   NAME                       PROVISIONER                        AGE
->   local-storage (default)    kubernetes.io/no-provisioner       4d18h
->   ```
+
 
 
 ## <a name="list-your-azure-database-for-postgresql-server-groups-created-in-your-arc-setup"></a>Вывод списка групп серверов базы данных Azure для PostgreSQL, созданных в вашей настройке Arc

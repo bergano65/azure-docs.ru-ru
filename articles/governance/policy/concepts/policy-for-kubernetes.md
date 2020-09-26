@@ -3,12 +3,12 @@ title: Сведения о политике Azure для Kubernetes
 description: Узнайте, как Политика Azure использует Rego и Open Policy Agent для управления кластерами, работающими под управлением Kubernetes в Azure или в локальной среде.
 ms.date: 09/22/2020
 ms.topic: conceptual
-ms.openlocfilehash: dbe7257b577f0526e0d34c13e0102305e58cc656
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.openlocfilehash: bb4345426eddb8b0b5250980eb46cf0509a22cff
+ms.sourcegitcommit: 5dbea4631b46d9dde345f14a9b601d980df84897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 09/25/2020
-ms.locfileid: "91322467"
+ms.locfileid: "91370000"
 ---
 # <a name="understand-azure-policy-for-kubernetes-clusters"></a>Общие сведения о политике Azure для кластеров Kubernetes
 
@@ -85,9 +85,6 @@ ms.locfileid: "91322467"
 ## <a name="install-azure-policy-add-on-for-aks"></a>Установка надстройки Политики Azure для AKS
 
 Прежде чем устанавливать надстройку Политики Azure или включать какие-либо функции службы, ваша подписка должна включить поставщики ресурсов **Microsoft.PolicyInsights** и **Microsoft.PolicyInsights**.
-
-> [!IMPORTANT]
-> Общедоступная версия политики Azure в AKS активно выпускается во всех регионах. Ожидаемое глобальное завершение общедоступного выпуска — 9/29/2020. Для использования в регионах без общедоступного выпуска требуются предварительные действия по регистрации. Однако это автоматически обновится до общедоступного выпуска, если он доступен в регионе.
 
 1. Требуется Azure CLI версии 2.12.0 или более поздней. Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI](/cli/azure/install-azure-cli).
 

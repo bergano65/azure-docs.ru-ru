@@ -16,12 +16,12 @@ ms.date: 03/13/2017
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: dbc9e5a9187f9ef16ea03cfa6c97e438c2b26c99
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 77271679306b0fbde10c748afc7535f3ad3d0945
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85807610"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91317571"
 ---
 # <a name="troubleshoot-password-hash-synchronization-with-azure-ad-connect-sync"></a>Устранение неполадок синхронизации хэшированных паролей в службе синхронизации Azure AD Connect
 
@@ -120,7 +120,7 @@ ms.locfileid: "85807610"
 
 Если учетная запись AD DS, используемая локальным соединителем Active Directory для синхронизации хэшей паролей, не содержит соответствующих разрешений, возвращается следующая ошибка:
 
-![Неверные учетные данные](./media/tshoot-connect-password-hash-synchronization/phsglobalaccountincorrectpermission.png)
+![Снимок экрана, показывающий ошибку, которая возвращается, если учетная запись AD DS имеет неверное имя пользователя или пароль.](./media/tshoot-connect-password-hash-synchronization/phsglobalaccountincorrectpermission.png)
 
 #### <a name="incorrect-ad-ds-account-username-or-password"></a>Неправильный пароль или имя пользователя учетной записи AD DS
 
@@ -227,7 +227,7 @@ ms.locfileid: "85807610"
 
 2. Запустите `Set-ExecutionPolicy RemoteSigned` или `Set-ExecutionPolicy Unrestricted`.
 
-3. Выполните `Import-Module ADSyncDiagnostics`.
+3. Запустите `Import-Module ADSyncDiagnostics`.
 
 4. Выполните следующий командлет:
 
@@ -338,11 +338,11 @@ ms.locfileid: "85807610"
 
     i. Щелкните **Metaverse Object Properties** (Свойства объекта метавселенной), чтобы показать список атрибутов пользователя.  
 
-    ![Сведения метавселенной](./media/tshoot-connect-password-hash-synchronization/mvpasswordsync.png)  
+    ![Снимок экрана, на котором показан список атрибутов пользователя для свойств объекта метавселенной.](./media/tshoot-connect-password-hash-synchronization/mvpasswordsync.png)  
 
     Атрибут **cloudFiltered** должен отсутствовать. Убедитесь, что атрибуты домена (domainFQDN и domainNetBios) имеют ожидаемые значения.
 
-    j. Перейдите на вкладку **соединители** . Убедитесь, что вы видите соединители как в локальной Active Directory, так и в Azure AD.
+    j. Перейдите на вкладку **соединители** . Убедитесь, что вы видите соединители как в локальные Active Directory, так и в Azure AD.
 
     ![Сведения метавселенной](./media/tshoot-connect-password-hash-synchronization/mvconnectors.png)  
 
@@ -356,13 +356,13 @@ ms.locfileid: "85807610"
 
 | Состояние | Описание |
 | --- | --- |
-| Успех |Пароль успешно синхронизирован |
+| Успешно |Пароль успешно синхронизирован |
 | FilteredByTarget |Для пароля установлено значение **Пользователь должен изменить пароль при следующем входе**. Пароль не синхронизирован. |
 | NoTargetConnection |Объект отсутствует в метавселенной или в пространстве соединителя Azure AD. |
 | SourceConnectorNotPresent |Объект не найден в локальном пространстве соединителя Active Directory. |
 | TargetNotExportedToDirectory |Объект в пространстве соединителя Azure AD еще не экспортирован. |
 | MigratedCheckDetailsForMoreInfo |Запись журнала создана до выхода версии 1.0.9125.0 и отображается в исходном состоянии. |
-| Ошибка |Служба вернула неизвестную ошибку. |
+| Error |Служба вернула неизвестную ошибку. |
 | Неизвестно |Произошла ошибка при попытке обработать пакет хэшей паролей.  |
 | MissingAttribute |Недоступны определенные атрибуты (например, хэш Kerberos), необходимые доменным службам Azure AD. |
 | RetryRequestedByTarget |Ранее были недоступны определенные атрибуты (например, хэш Kerberos), необходимые доменным службам Azure AD. Предпринята попытка повторно синхронизировать хэш пароля пользователя. |
@@ -445,7 +445,7 @@ Set-ADSyncAADPasswordSyncConfiguration -SourceConnector $adConnector -TargetConn
 Set-ADSyncAADPasswordSyncConfiguration -SourceConnector $adConnector -TargetConnector $aadConnector -Enable $true
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Реализация синхронизации хэшированных паролей в службе синхронизации Azure AD Connect](how-to-connect-password-hash-synchronization.md)
 * [Службы синхронизации Azure AD Connect: общие сведений о синхронизации и ее настройка](how-to-connect-sync-whatis.md)

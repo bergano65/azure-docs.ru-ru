@@ -5,12 +5,12 @@ author: florianborn71
 ms.author: flborn
 ms.date: 02/11/2020
 ms.topic: how-to
-ms.openlocfilehash: cf74322725c6e86ee455f83aadc4aade07000835
-ms.sourcegitcommit: bcb962e74ee5302d0b9242b1ee006f769a94cfb8
+ms.openlocfilehash: 7a4e6d80d80441a1b94c1fb2bd8f82f247235fe3
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "86057676"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91318098"
 ---
 # <a name="create-an-azure-remote-rendering-account"></a>Создание учетной записи для Удаленной отрисовки Azure
 
@@ -83,7 +83,7 @@ ms.locfileid: "86057676"
 
  Нажмите кнопку **Добавить** на плитке "Добавление назначения роли", чтобы добавить первую роль:
 
-![Контроль доступа учетных записей хранения](./media/azure-add-role-assignment.png)
+![Добавление роли в учетной записи хранения IAM](./media/azure-add-role-assignment.png)
 
 * Первая назначаемая роль — **владелец**, как показано на снимках экрана выше.
 * Выберите **Учетная запись удаленной отрисовки** в раскрывающемся списке **Назначить доступ**.
@@ -100,6 +100,8 @@ ms.locfileid: "86057676"
 Значения в других раскрывающихся списках выбираются, как на первом шаге.
 
 Если вы добавили все три роли, у вашей учетной записи удаленной отрисовки Azure будет доступ к вашей учетной записи хранения. Для этого будут использоваться удостоверения управляемой службы, назначенные системой.
+> [!IMPORTANT]
+> Назначения ролей Azure кэшируются службой хранилища Azure, поэтому при предоставлении доступа к учетной записи удаленной подготовки к просмотру и их использовании для доступа к учетной записи хранения возможна задержка до 30 минут. Дополнительные сведения см. в [документации по контролю доступа к базовой роли](https://docs.microsoft.com/azure/role-based-access-control/troubleshooting#role-assignment-changes-are-not-being-detected) .
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

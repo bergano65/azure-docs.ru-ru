@@ -7,12 +7,12 @@ ms.topic: conceptual
 author: keferna
 ms.author: keferna
 ms.date: 09/11/2020
-ms.openlocfilehash: fa8ee205952d1bd39e932ca6c91e3cffe608bf95
-ms.sourcegitcommit: 3fc3457b5a6d5773323237f6a06ccfb6955bfb2d
+ms.openlocfilehash: 5bf94faff86edf954c687ca3024c63229829ca04
+ms.sourcegitcommit: 5dbea4631b46d9dde345f14a9b601d980df84897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/11/2020
-ms.locfileid: "90032118"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91369728"
 ---
 # <a name="common-questions-about-the-microsoft-commercial-marketplace"></a>Распространенные вопросы о коммерческом магазине Майкрософт
 
@@ -229,7 +229,7 @@ Microsoft AppSource поддерживает платежи с помощью к
 
 Приобретать решения с коммерческой платформы могут клиенты из 141 страны или региона по всему миру.
 
-Чтобы просмотреть список стран и регионов, перейдите на страницу [Сведения о налогах для издателей Marketplace](partner-center-portal/tax-details-paid-transactions.md).
+Чтобы просмотреть список стран и регионов, перейдите на страницу [Сведения о налогах для издателей Marketplace](/partner-center/tax-details-marketplace?context=/azure/marketplace/context/context).
 
 ### <a name="what-currencies-are-supported-with-the-commercial-marketplace"></a>Какие валюты поддерживаются на коммерческой платформе?
 
@@ -274,32 +274,32 @@ Microsoft AppSource поддерживает платежи с помощью к
 
 ### <a name="how-often-will-i-receive-payouts-for-sales-through-the-commercial-marketplace"></a>Как часто я буду получать выплаты по продажам через коммерческую платформу?
 
-Выплаты происходят ежемесячно. Дополнительные сведения о графиках платежей, поиске предстоящих выплат в центре партнеров и о том, как мы работаем с неоплатой клиентов, см. в разделе [сведения о политике выплаты](partner-center-portal/payout-policy-details.md).
+Выплаты происходят ежемесячно. Дополнительные сведения о графиках платежей, поиске предстоящих выплат в центре партнеров и о том, как мы работаем с неоплатой клиентов, см. в разделе [сведения о политике выплаты](/partner-center/payout-policy-details?context=/azure/marketplace/context/context).
 
 - Для транзакций, в которых клиент использовал Соглашение Enterprise, выплата выдается в следующем цикле выплаты 30 дней после счета клиента. 
 - Для транзакций, в которых клиент использовал кредитную карту, после получения платежа для гарантии того, что деньги были ясными и нет гибких или потенциально мошенничества, взимается дополнительная 30-дневная отсрочка.
 
 Выплата выдается, только если для продаж достигнуто минимальное объединенное значение $50,00.
 
-Подробные сведения см. в разделе [Минимальные суммы, способы и временные рамки платежей](partner-center-portal/payment-thresholds-methods-timeframes.md).
+Подробные сведения см. в разделе [Минимальные суммы, способы и временные рамки платежей](/partner-center/payment-thresholds-methods-timeframes?context=/azure/marketplace/context/context).
 
 ### <a name="in-what-countriesregions-are-taxes-managed-on-my-behalf"></a>В каких странах или регионах налоги управляются от моего имени?
 
 Клиенты могут найти решения из коммерческого рынка по всему миру и управлять налогами во многих местах. 
 
-Чтобы просмотреть полный список стран и регионов, перейдите на страницу [Сведения о налогах для издателей Marketplace](partner-center-portal/tax-details-paid-transactions.md).
+Чтобы просмотреть полный список стран и регионов, перейдите на страницу [Сведения о налогах для издателей Marketplace](/partner-center/tax-details-marketplace?context=/azure/marketplace/context/context).
 
 ### <a name="where-can-i-find-payout-reporting-for-the-commercial-marketplace"></a>Где можно найти отчеты о выплатах для коммерческой платформы?
 
 В Центре партнеров пользователь с разрешениями *владельца* или *финансового донора* может просматривать отчеты о выплатах. Эти пользователи могут получить доступ к отчетам в правом верхнем углу, щелкнув значок с изображением руки, держащей счет.
 
-Дополнительные сведения см. в разделе [отчеты о выплатах](partner-center-portal/payout-summary.md).
+Дополнительные сведения см. в разделе [заявления о выплатах](/partner-center/payout-statement?context=/azure/marketplace/context/context).
 
 ### <a name="how-do-i-configure-my-payout-method-and-destination"></a>Как мне настроить метод и назначение выплаты?
 
 В Центре партнеров пользователи с разрешениями *владельца* могут настроить выплаты и налоговые формы. Пользователи могут сделать это, нажав кнопку **Параметры** (значок шестеренки) в правом верхнем углу.
 
-Дополнительные сведения см. в статье [Настройка счета для выплат и налоговых форм](partner-center-portal/set-up-your-payout-account-tax-forms.md).
+Дополнительные сведения см. в разделе [Настройка учетной записи выплата и налоговых форм](/partner-center/set-up-your-payout-account?context=/azure/marketplace/context/context).
 
 ### <a name="are-returns-and-refunds-supported-with-the-commercial-marketplace"></a>Поддерживаются ли на коммерческой платформе возвраты денежных средств?
 

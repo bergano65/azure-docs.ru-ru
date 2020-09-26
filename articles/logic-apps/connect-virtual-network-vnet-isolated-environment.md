@@ -5,13 +5,13 @@ services: logic-apps
 ms.suite: integration
 ms.reviewer: jonfan, logicappspm
 ms.topic: conceptual
-ms.date: 09/10/2020
-ms.openlocfilehash: 41fdc342d82b07e82bb6e7b32e1a4f98f94d2a8e
-ms.sourcegitcommit: 3be3537ead3388a6810410dfbfe19fc210f89fec
+ms.date: 09/25/2020
+ms.openlocfilehash: 49248575cb10f3df746b9ba484244e4702fb5d72
+ms.sourcegitcommit: 5dbea4631b46d9dde345f14a9b601d980df84897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89647553"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91369014"
 ---
 # <a name="connect-to-azure-virtual-networks-from-azure-logic-apps-by-using-an-integration-service-environment-ise"></a>Подключение к виртуальным сетям Azure из Azure Logic Apps с помощью среды службы интеграции (ISE)
 
@@ -168,6 +168,8 @@ ms.locfileid: "89647553"
 
 * [Logic Apps входящих и исходящих адресов для региона ISE](../logic-apps/logic-apps-limits-and-config.md#firewall-configuration-ip-addresses-and-service-tags)
 
+* [IP-адреса Azure для соединителей в регионе ISE, которые находятся в этом файле загрузки](https://www.microsoft.com/download/details.aspx?id=56519)
+
 * Необходимо включить конечные точки службы для Azure SQL, хранилища, служебной шины и концентратора событий, так как вы не можете отправить трафик через брандмауэр к этим службам.
 
 <a name="create-environment"></a>
@@ -282,6 +284,21 @@ ms.locfileid: "89647553"
 
    > [!IMPORTANT]
    > Управляемые соединители среды службы интеграции, которые становятся доступными после создания среды службы интеграции, не отображаются автоматически в средстве выбора соединителя в конструкторе приложений логики. Прежде чем использовать эти соединители среды службы интеграции, необходимо вручную [добавить эти соединители в среду службы интеграции](../logic-apps/add-artifacts-integration-service-environment-ise.md#add-ise-connectors-environment), чтобы они отображались в конструкторе приложений логики.
+
+   > [!IMPORTANT]
+   > Управляемые соединители ISE в настоящее время не поддерживают [теги](../azure-resource-manager/management/tag-support.md). Если вы настроили политику, которая применяет теги, пытается добавить соединители ISE  
+   > может завершиться ошибкой, как показано в следующем примере: 
+   > 
+   > ```json
+   > {
+   >    "error": { 
+   >       "code": "IntergrationServiceEnvironmentManagedApiDefinitionTagsNotSupported", 
+   >       "message": "The tags are not supported in the managed API 'azureblob'."
+   >    }
+   > }
+   > ```
+   > Чтобы добавить соединители ISE, необходимо отключить или удалить политику.
+   > 
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

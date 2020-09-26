@@ -8,12 +8,12 @@ ms.workload: infrastructure
 ms.date: 08/01/2019
 ms.author: cynthn
 ms.reviewer: zivr
-ms.openlocfilehash: 599d13daac2e062c8f71f5f7d7133646a1447123
-ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
+ms.openlocfilehash: ac915aa3baba910895e10d21148b899347e8ae4e
+ms.sourcegitcommit: 5dbea4631b46d9dde345f14a9b601d980df84897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87266594"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91370493"
 ---
 # <a name="deploy-vms-to-dedicated-hosts-using-the-azure-powershell"></a>Развертывание виртуальных машин на выделенных узлах с помощью Azure PowerShell
 
@@ -49,6 +49,14 @@ $hostGroup = New-AzHostGroup `
    -ResourceGroupName $rgName `
    -Zone 1
 ```
+
+
+Добавьте `-SupportAutomaticPlacement true` параметр, чтобы виртуальные машины и экземпляры масштабируемых наборов автоматически размещались на узлах в группе узлов. Дополнительные сведения см. в разделе [Ручное и автоматическое размещение ](../dedicated-hosts.md#manual-vs-automatic-placement).
+
+> [!IMPORTANT]
+> В настоящее время автоматическое размещение находится в общедоступной предварительной версии.
+> Чтобы принять участие в предварительной версии, выполните предварительный просмотр опроса по адресу [https://aka.ms/vmss-adh-preview](https://aka.ms/vmss-adh-preview) .
+> Эта предварительная версия предоставляется без соглашения об уровне обслуживания и не рекомендована для использования рабочей среде. Некоторые функции могут не поддерживаться или их возможности могут быть ограничены. Дополнительные сведения см. в статье [Дополнительные условия использования предварительных выпусков Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
 
 ## <a name="create-a-host"></a>Создание узла
 
@@ -164,6 +172,32 @@ Name                   : myHost
 Location               : eastus
 Tags                   : {}
 ```
+
+## <a name="create-a-scale-set-preview"></a>Создание масштабируемого набора (Предварительная версия)
+
+> [!IMPORTANT]
+> Масштабируемые наборы виртуальных машин на выделенных узлах в настоящее время находятся в общедоступной предварительной версии.
+> Чтобы принять участие в предварительной версии, выполните предварительный просмотр опроса по адресу [https://aka.ms/vmss-adh-preview](https://aka.ms/vmss-adh-preview) .
+> Эта предварительная версия предоставляется без соглашения об уровне обслуживания и не рекомендована для использования рабочей среде. Некоторые функции могут не поддерживаться или их возможности могут быть ограничены. Дополнительные сведения см. в статье [Дополнительные условия использования предварительных выпусков Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
+
+При развертывании масштабируемого набора указывается группа узлов.
+
+```azurepowershell-interactive
+New-AzVmss `
+  -ResourceGroupName "myResourceGroup" `
+  -Location "EastUS" `
+  -VMScaleSetName "myDHScaleSet" `
+  -VirtualNetworkName "myVnet" `
+  -SubnetName "mySubnet" `
+  -PublicIpAddressName "myPublicIPAddress" `
+  -LoadBalancerName "myLoadBalancer" `
+  -UpgradePolicyMode "Automatic"`
+  -HostGroupId $hostGroup.Id
+```
+
+Если вы хотите вручную выбрать узел для развертывания масштабируемого набора, добавьте `--host` и имя узла.
+
+
 
 ## <a name="add-an-existing-vm"></a>Добавление существующей виртуальной машины 
 
