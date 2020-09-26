@@ -5,12 +5,12 @@ ms.topic: conceptual
 author: mrbullwinkle
 ms.author: mbullwin
 ms.date: 05/04/2020
-ms.openlocfilehash: e2603d921973aefdcc1a6f4a76bdf70d69dcb68f
-ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
+ms.openlocfilehash: 7c7aba1c1f091efa0ddd4417ef0a03f3f4ca4d36
+ms.sourcegitcommit: d95cab0514dd0956c13b9d64d98fdae2bc3569a0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87320635"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91361013"
 ---
 # <a name="create-and-run-custom-availability-tests-using-azure-functions"></a>Создание и запуск пользовательских тестов доступности с помощью функций Azure
 
@@ -32,7 +32,7 @@ ms.locfileid: "87320635"
 
             ![Выбор существующего Application Insights ресурса](media/availability-azure-functions/app-insights-resource.png)
 
-        - Выберите **Проверка и создать** .
+        - Нажмите **Проверить и создать**.
 - Если у вас еще нет созданного ресурса Application Insights для функции, активируемой с помощью таймера:
     - По умолчанию при создании приложения "функции Azure" будет создан ресурс Application Insights.
     - Следуйте инструкциям, чтобы [создать ресурс функций Azure и функцию, активируемую с помощью таймера](../../azure-functions/functions-create-scheduled-function.md) (до завершения очистки).
@@ -183,7 +183,7 @@ public async static Task RunAvailbiltyTestAsync(ILogger log)
 >![Результаты доступности](media/availability-azure-functions/availabilityresults.png)
 
 >[!div class="mx-imgBorder"]
->![Зависимости](media/availability-azure-functions/dependencies.png)
+>![Снимок экрана показывает новую вкладку запросов с зависимостями, ограниченными 50.](media/availability-azure-functions/dependencies.png)
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

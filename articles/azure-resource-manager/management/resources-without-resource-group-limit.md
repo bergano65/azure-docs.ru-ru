@@ -2,13 +2,13 @@
 title: Ресурсы без ограничения числа 800
 description: Список типов ресурсов Azure, которые могут иметь более 800 экземпляров в группе ресурсов.
 ms.topic: conceptual
-ms.date: 05/04/2020
-ms.openlocfilehash: 6f7b45ec3691bc3a48d9aa3dfa072c1c68189007
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.date: 09/21/2020
+ms.openlocfilehash: e7a15607b144f1d7916f310948f15dc28d76a205
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87040762"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91330763"
 ---
 # <a name="resources-not-limited-to-800-instances-per-resource-group"></a>Ресурсы, не ограниченные 800 экземплярами на группу ресурсов
 
@@ -16,12 +16,15 @@ ms.locfileid: "87040762"
 
 Для некоторых типов ресурсов необходимо обратиться в службу поддержки, чтобы снять ограничение на число экземпляров 800. Эти типы ресурсов указаны в этой статье.
 
+
 ## <a name="microsoftautomation"></a>Microsoft.Automation
 
 * automationAccounts
 
 ## <a name="microsoftazurestack"></a>Microsoft.AzureStack
 
+* еджесубскриптионс
+* линкедсубскриптионс
 * registrations
 * registrations/customerSubscriptions
 * registrations/products
@@ -38,6 +41,7 @@ ms.locfileid: "87040762"
 * galleries/images/versions
 * images
 * snapshots
+* virtualMachineScaleSets — по умолчанию ограничено до 800 экземпляров. Это ограничение можно увеличить, обратившись в службу поддержки.
 * virtualMachines
 
 ## <a name="microsoftcontainerinstance"></a>Microsoft.ContainerInstance
@@ -55,24 +59,29 @@ ms.locfileid: "87040762"
 * registries/tasks
 * registries/webhooks
 
+## <a name="microsoftd365customerinsights"></a>Microsoft. D365CustomerInsights
+
+* instances
+
 ## <a name="microsoftdbformariadb"></a>Microsoft.DBforMariaDB
 
 * servers
 
 ## <a name="microsoftdbformysql"></a>Microsoft.DBforMySQL
 
+* флексиблесерверс
 * servers
 
 ## <a name="microsoftdbforpostgresql"></a>Microsoft.DBforPostgreSQL
 
+* флексиблесерверс
 * серверграупс
 * servers
 * serversv2
-* синглесерверс
 
 ## <a name="microsoftdevtestlab"></a>Microsoft.DevTestLab
 
-* расписания — по умолчанию ограничено до 800 экземпляров. Это ограничение можно увеличить, обратившись в службу поддержки.
+* schedules
 
 ## <a name="microsoftenterpriseknowledgegraph"></a>Microsoft.EnterpriseKnowledgeGraph
 
@@ -104,6 +113,10 @@ ms.locfileid: "87040762"
 
 * integrationAccounts
 * workflows
+
+## <a name="microsoftmedia"></a>Microsoft.Media
+
+* mediaservices/liveEvents
 
 ## <a name="microsoftnetapp"></a>Microsoft.NetApp
 

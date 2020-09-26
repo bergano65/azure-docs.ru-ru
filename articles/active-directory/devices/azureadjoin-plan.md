@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: sandeo
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: f0863a782b7f4531b900bc3c005a39387c83d983
-ms.sourcegitcommit: bcda98171d6e81795e723e525f81e6235f044e52
+ms.openlocfilehash: a8a70097cbae3bc5ebf48c0358faa32aea0a6be5
+ms.sourcegitcommit: 5dbea4631b46d9dde345f14a9b601d980df84897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/01/2020
-ms.locfileid: "89268233"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91370183"
 ---
 # <a name="how-to-plan-your-azure-ad-join-implementation"></a>Инструкции. Планирование реализации присоединения к Azure AD
 
@@ -184,7 +184,7 @@ ms.locfileid: "89268233"
 
 Для подключения к удаленным рабочим столам на устройствах, подключенных к Azure AD, хост-компьютер должен быть присоединен либо к Azure AD, либо к гибридной службе Azure AD. Удаленные рабочие столы устройств, которые не присоединены к этой службе или на которых не установлена ОС Windows, не поддерживаются. Дополнительные сведения см. в статье [Подключение к удаленному компьютеру, присоединенному к Azure Active Directory](/windows/client-management/connect-to-remote-aadj-pc)
 
-Начиная с обновления Windows 10 2004, пользователи могут Ало использовать удаленный рабочий стол из зарегистрированного устройства с Windows 10 Azure AD на устройстве, присоединенном к Azure AD. 
+Начиная с обновления Windows 10 2004, пользователи также могут использовать удаленный рабочий стол из зарегистрированного устройства Windows 10 Azure AD на устройстве, присоединенном к Azure AD. 
 
 ## <a name="understand-your-provisioning-options"></a>Изучение вариантов подготовки
 

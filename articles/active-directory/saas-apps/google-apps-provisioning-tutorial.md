@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: article
 ms.date: 01/06/2020
 ms.author: Zhchia
-ms.openlocfilehash: 27e34a66bb6dfa642b84bd8997b2b02c4981788e
-ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
+ms.openlocfilehash: 3f2f62fe158b946e00c7f81d0cb7eeb0d8f09437
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88551563"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91331137"
 ---
 # <a name="tutorial-configure-g-suite-for-automatic-user-provisioning"></a>Руководство по настройке G Suite для автоматической подготовки пользователей
 
@@ -133,19 +133,19 @@ ms.locfileid: "88551563"
 
 3. Выберите вкладку **Подготовка**. Нажмите кнопку **Начало работы**.
 
-    ![Вкладка "Подготовка"](common/provisioning.png)
+    ![Снимок экрана параметров управления с вызываемым параметром подготовки.](common/provisioning.png)
 
       ![Колонка "Начало работы"](./media/google-apps-provisioning-tutorial/get-started.png)
 
 4. Для параметра **Режим подготовки к работе** выберите значение **Automatic** (Автоматически).
 
-    ![Вкладка "Подготовка"](common/provisioning-automatic.png)
+    ![Снимок экрана: раскрывающийся список режима подготовки с вызываемым автоматическим параметром.](common/provisioning-automatic.png)
 
 5. В разделе **учетные данные администратора** щелкните **авторизовать**. Вы будете перенаправлены в диалоговое окно "Авторизация Google" в новом окне браузера.
 
       ![Разрешающий G Suite](./media/google-apps-provisioning-tutorial/authorize-1.png)
 
-6. Подтвердите, что вы хотите предоставить разрешения Azure AD на внесение изменений в клиент G Suite. Нажмите кнопку **Принять**.
+6. Подтвердите, что вы хотите предоставить разрешения Azure AD на внесение изменений в клиент G Suite. Выберите **Принять**.
 
      ![Проверка подлинности клиента G Suite](./media/google-apps-provisioning-tutorial/gapps-auth.png)
 

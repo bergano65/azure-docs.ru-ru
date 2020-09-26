@@ -10,12 +10,12 @@ author: srdan-bozovic-msft
 ms.author: srbozovi
 ms.reviewer: vanto, sstein
 ms.date: 05/07/2019
-ms.openlocfilehash: 498d00b4f6a0ca16d07663641a46f30109b39d5f
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.openlocfilehash: a9bf3fbf28d8ac525f2937812742e850a5427cc9
+ms.sourcegitcommit: d95cab0514dd0956c13b9d64d98fdae2bc3569a0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 09/25/2020
-ms.locfileid: "91325068"
+ms.locfileid: "91360826"
 ---
 # <a name="configure-public-endpoint-in-azure-sql-managed-instance"></a>Configure public endpoint in Azure SQL Managed Instance (Настройка общедоступной конечной точки в управляемом экземпляре SQL Azure)
 [!INCLUDE[appliesto-sqlmi](../includes/appliesto-sqlmi.md)]
@@ -45,7 +45,7 @@ ms.locfileid: "91325068"
 1. В окне Параметры **безопасности** перейдите на вкладку **Виртуальная сеть** .
 1. На странице Конфигурация виртуальной сети выберите **включить** , а затем значок **сохранить** , чтобы обновить конфигурацию.
 
-![mi-vnet-config.png](./media/public-endpoint-configure/mi-vnet-config.png)
+![На снимке экрана показана страница виртуальной сети управляемого экземпляра SQL с включенной общедоступной конечной точкой.](./media/public-endpoint-configure/mi-vnet-config.png)
 
 ## <a name="enabling-public-endpoint-for-a-managed-instance-using-powershell"></a>Включение общедоступной конечной точки для управляемого экземпляра с помощью PowerShell
 
@@ -84,11 +84,11 @@ Set-AzSqlInstance -PublicDataEndpointEnabled $false -force
 
 1. Если страница Конфигурация управляемого экземпляра по-прежнему открыта, перейдите на вкладку **Обзор** . В противном случае вернитесь к ресурсу **управляемого экземпляра SQL** . Выберите ссылку **Виртуальная сеть или подсеть** , чтобы перейти на страницу конфигурации виртуальной сети.
 
-    ![mi-overview.png](./media/public-endpoint-configure/mi-overview.png)
+    ![На снимке экрана показана страница конфигурации виртуальной сети, на которой можно найти значение виртуальной сети или подсети.](./media/public-endpoint-configure/mi-overview.png)
 
 1. Выберите вкладку **подсети** в левой области конфигурации виртуальной сети и запишите **группу безопасности** для управляемого экземпляра.
 
-    ![mi-vnet-subnet.png](./media/public-endpoint-configure/mi-vnet-subnet.png)
+    ![На снимке экрана показана вкладка подсеть, на которой можно получить группу безопасности для управляемого экземпляра.](./media/public-endpoint-configure/mi-vnet-subnet.png)
 
 1. Вернитесь к группе ресурсов, содержащей управляемый экземпляр. Вы должны увидеть имя **группы безопасности сети** , указанное выше. Выберите имя для перехода на страницу Конфигурация группы безопасности сети.
 
@@ -104,7 +104,7 @@ Set-AzSqlInstance -PublicDataEndpointEnabled $false -force
     |**Действие**     |Allow         |Разрешить входящий трафик к управляемому экземпляру через общедоступную конечную точку |
     |**Приоритет**     |1300         |Убедитесь, что это правило имеет более высокий приоритет, чем правило **deny_all_inbound** |
 
-    ![mi-nsg-rules.png](./media/public-endpoint-configure/mi-nsg-rules.png)
+    ![На снимке экрана показаны правила безопасности для входящего трафика с новым правилом public_endpoint_inbound над правилом deny_all_inbound.](./media/public-endpoint-configure/mi-nsg-rules.png)
 
     > [!NOTE]
     > Порт 3342 используется для подключений к общедоступной конечной точке к управляемому экземпляру и не может быть изменен на этом этапе.
@@ -114,7 +114,7 @@ Set-AzSqlInstance -PublicDataEndpointEnabled $false -force
 1. Перейдите на страницу "Конфигурация управляемого экземпляра", для которой была включена общедоступная конечная точка. Перейдите на вкладку **строки подключения** в разделе Конфигурация **параметров** .
 1. Обратите внимание, что имя узла общедоступной конечной точки имеет формат <mi_name>. **Public**. <dns_zone>. Database.Windows.NET и порт, используемый для соединения, — 3342.
 
-    ![mi-public-endpoint-conn-string.png](./media/public-endpoint-configure/mi-public-endpoint-conn-string.png)
+    ![На снимке экрана показаны строки подключения для общедоступных и частных конечных точек.](./media/public-endpoint-configure/mi-public-endpoint-conn-string.png)
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

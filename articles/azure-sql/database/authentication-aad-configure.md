@@ -10,14 +10,14 @@ ms.devlang: ''
 ms.topic: conceptual
 author: GithubMirek
 ms.author: mireks
-ms.reviewer: vanto, carlrab
+ms.reviewer: vanto, sstein
 ms.date: 08/17/2020
-ms.openlocfilehash: 22ed36213c932c7e202817fd093e1ec96aec94fd
-ms.sourcegitcommit: bf1340bb706cf31bb002128e272b8322f37d53dd
+ms.openlocfilehash: f354cb25c93826b50c0094e75ef7a1756f7625b7
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/03/2020
-ms.locfileid: "89434407"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91278181"
 ---
 # <a name="configure-and-manage-azure-ad-authentication-with-azure-sql"></a>Настройка и администрирование проверки подлинности Azure Active Directory с помощью Azure SQL
 
@@ -89,19 +89,19 @@ ms.locfileid: "89434407"
 
 3. Перейдите к Управляемый экземпляр SQL, который вы хотите использовать для интеграции Azure AD.
 
-   ![aad](./media/authentication-aad-configure/aad.png)
+   ![Снимок экрана с портал Azure отображением страницы администратора Active Directory, открытой для выбранного управляемого экземпляра SQL.](./media/authentication-aad-configure/aad.png)
 
 4. Выберите баннер в верхней части страницы администрирования Active Directory и предоставьте разрешение текущему пользователю.
 
-    ![Предоставление разрешений на портале](./media/authentication-aad-configure/grant-permissions.png)
+    ![Снимок экрана диалогового окна для предоставления разрешений управляемому экземпляру SQL для доступа к Active Directory. Выбрана кнопка предоставить разрешения.](./media/authentication-aad-configure/grant-permissions.png)
 
 5. После выполнения операции в правом верхнем углу отобразится следующее уведомление:
 
-    ![Успешное завершение](./media/authentication-aad-configure/success.png)
+    ![Снимок экрана уведомления о том, что разрешения на чтение Active Directory успешно обновлены для управляемого экземпляра.](./media/authentication-aad-configure/success.png)
 
 6. Теперь вы можете выбрать администратора Azure AD для Управляемый экземпляр SQL. Для этого на странице "Администратор Active Directory" щелкните **Задать администратора**.
 
-    ![Задание администратора](./media/authentication-aad-configure/set-admin.png)
+    ![Снимок экрана, на котором показана команда "задать Администратор", выделенная на странице администрирования Active Directory для выбранного управляемого экземпляра SQL.](./media/authentication-aad-configure/set-admin.png)
 
 7. На странице Администратор Azure AD найдите пользователя, выберите пользователя или группу в качестве администратора, а затем нажмите **кнопку Выбрать**.
 
@@ -111,7 +111,7 @@ ms.locfileid: "89434407"
 
 8. В верхней части страницы Администратор Active Directory нажмите кнопку **Сохранить**.
 
-    ![Сохранить](./media/authentication-aad-configure/save.png)
+    ![Снимок экрана со страницей администрирования Active Directory с кнопкой "Сохранить" в верхней строке рядом с кнопками "задать администратора" и "удалить Администрирование".](./media/authentication-aad-configure/save.png)
 
     Изменение администратора может занять несколько минут. После этого новый администратор появится в поле "Администратор Active Directory".
 
@@ -218,7 +218,7 @@ Remove-AzSqlInstanceActiveDirectoryAdministrator -ResourceGroupName "ResourceGro
 
 Вы также можете подготавливать администратора Azure AD для Управляемый экземпляр SQL, вызвав следующие команды интерфейса командной строки:
 
-| Get-Help | Описание |
+| Команда | Описание |
 | --- | --- |
 |[AZ SQL MI AD — создание администратора](/cli/azure/sql/mi/ad-admin#az-sql-mi-ad-admin-create) | Подготавливает администратора Azure Active Directory для Управляемый экземпляр SQL (должен быть из текущей подписки). |
 |[AZ SQL MI AD — администратор удаление](/cli/azure/sql/mi/ad-admin#az-sql-mi-ad-admin-delete) | Удаляет Azure Active Directory администратора для Управляемый экземпляр SQL. |
@@ -324,7 +324,7 @@ Remove-AzSqlServerActiveDirectoryAdministrator -ResourceGroupName "Group-23" -Se
 
 Вы можете подготавливать администратора Azure AD, вызвав следующие команды интерфейса командной строки:
 
-| Get-Help | Описание |
+| Команда | Описание |
 | --- | --- |
 |[az sql server ad-admin create](/cli/azure/sql/server/ad-admin#az-sql-server-ad-admin-create) | Подготавливает администратора Azure Active Directory для сервера, на котором размещена база данных SQL или Azure синапсе. (Должно быть из текущей подписки) |
 |[az sql server ad-admin delete](/cli/azure/sql/server/ad-admin#az-sql-server-ad-admin-delete) | Удаляет Azure Active Directory администратора для сервера, на котором размещена база данных SQL или Azure синапсе. |

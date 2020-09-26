@@ -7,12 +7,12 @@ ms.service: site-recovery
 ms.topic: conceptual
 ms.date: 04/28/2019
 ms.author: ramamill
-ms.openlocfilehash: ef16e3b75ca8e051b1b7abb1a92843279884c697
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: a547a874c42d06d8453b154847561d8b5f0dabb8
+ms.sourcegitcommit: d95cab0514dd0956c13b9d64d98fdae2bc3569a0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85846563"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91361400"
 ---
 # <a name="manage-process-servers"></a>Управление серверами обработки
 
@@ -41,11 +41,11 @@ ms.locfileid: "85846563"
 2. Щелкните сервер конфигурации, на котором зарегистрированы серверы обработки.
 3. Щелкните сервер обработки, для которого требуется балансировка нагрузки трафика.
 
-    ![LoadBalance](media/vmware-azure-manage-process-server/LoadBalance.png)
+    ![На снимке экрана показан сервер обработки, для которого можно распределить нагрузку по трафику.](media/vmware-azure-manage-process-server/LoadBalance.png)
 
 4. Щелкните **Балансировка нагрузки**, выберите целевой сервер обработки, на который требуется переместить компьютеры. Затем нажмите кнопку **ОК** .
 
-    ![LoadPS](media/vmware-azure-manage-process-server/LoadPS.PNG)
+    ![На снимке экрана показана панель балансировки нагрузки с выбранным целевым сервером обработки.](media/vmware-azure-manage-process-server/LoadPS.PNG)
 
 2. Щелкните **выбрать компьютеры**и выберите компьютеры, которые требуется переместить с текущего на целевой сервер обработки. Сведения о среднем значении изменения данных отображаются возле каждой виртуальной машины. Нажмите кнопку **ОК**. 
 3. В хранилище отслеживайте ход выполнения задания в разделе **наблюдение за**  >  **site Recoveryными заданиями**.
@@ -61,7 +61,7 @@ ms.locfileid: "85846563"
 3. Щелкните сервер обработки, с которого необходимо переключить рабочую нагрузку.
 4. Щелкните **переключатель**, выберите целевой сервер обработки, на который требуется переместить рабочую нагрузку. Затем нажмите кнопку **ОК** .
 
-    ![Параметр](media/vmware-azure-manage-process-server/Switch.PNG)
+    ![На снимке экрана показана область Выбор целевого сервера обработки.](media/vmware-azure-manage-process-server/Switch.PNG)
 
 5. В хранилище отслеживайте ход выполнения задания в разделе **наблюдение за**  >  **site Recoveryными заданиями**.
 

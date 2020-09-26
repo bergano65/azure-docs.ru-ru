@@ -7,12 +7,12 @@ ms.service: application-gateway
 services: application-gateway
 ms.topic: conceptual
 ms.date: 11/16/2019
-ms.openlocfilehash: baa02c4d946a121f26f421af99835ae2bea18847
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 59ca7708b24d2e75381290b80adeb671e2b49822
+ms.sourcegitcommit: d95cab0514dd0956c13b9d64d98fdae2bc3569a0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "74130328"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91362701"
 ---
 # <a name="overview-of-websocket-support-in-application-gateway"></a>Общие сведения о поддержке WebSocket в шлюзе приложений
 
@@ -28,7 +28,7 @@ ms.locfileid: "74130328"
 
 Чтобы установить соединение WebSocket, между клиентом и сервером осуществляется обмен конкретными подтверждениями на основе HTTP. В случае успешного выполнения протокол прикладного уровня "обновляется" с HTTP до WebSocket, используя ранее установленное соединение TCP. После этого HTTP больше не задействован. Данные могут быть отправлены или получены с использованием протокола WebSocket любой конечной точкой в любое время до завершения подключения WebSocket. 
 
-![WebSocket](./media/application-gateway-websocket/websocket.png)
+![На схеме сравнивается клиент, взаимодействующий с веб-сервером, который дважды подключается для получения двух ответов с помощью взаимодействия WebSocket, когда клиент подключается к серверу один раз для получения нескольких ответов.](./media/application-gateway-websocket/websocket.png)
 
 ### <a name="listener-configuration-element"></a>Элемент конфигурации прослушивателя
 
@@ -121,6 +121,6 @@ ms.locfileid: "74130328"
 
 Другой причиной является то, что проверка работоспособности серверного шлюза приложений поддерживает только протоколы HTTP и HTTPS. Если внутренний сервер не отвечает на проверки по протоколу HTTP или HTTPS, он удаляется из внутреннего пула.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Ознакомившись с поддержкой протокола WebSocket, приступите к [созданию шлюза приложений](quick-create-powershell.md) , чтобы начать работу с веб-приложением с поддержкой WebSocket.
