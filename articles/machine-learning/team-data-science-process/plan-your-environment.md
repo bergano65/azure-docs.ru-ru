@@ -11,12 +11,12 @@ ms.topic: article
 ms.date: 01/10/2020
 ms.author: tdsp
 ms.custom: seodec18, previous-author=deguhath, previous-ms.author=deguhath
-ms.openlocfilehash: 29190cee748db17caee32497de5512bee736bae0
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 603628e24d7ccdffeafea392ab56aa7e47781a37
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87047711"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91296490"
 ---
 # <a name="how-to-identify-scenarios-and-plan-for-advanced-analytics-data-processing"></a>Как определить сценарии и план для расширенной аналитической обработки данных
 
@@ -66,7 +66,7 @@ ms.locfileid: "87047711"
 Процедуры и ресурсы, необходимые для приема и загрузки данных в различные среды хранения и обработки, описаны в следующих статьях:
 
 * [Загрузка данных в среды хранения для аналитики](ingest-data.md)
-* [Импорт обучающих данных в Машинное обучение Azure Studio (классическая модель) из различных источников данных](../studio/import-data.md)
+* [Импорт обучающих данных в Машинное обучение Azure Studio (классическая модель) из различных источников данных](../classic/import-data.md)
 
 ### <a name="does-the-data-need-to-be-moved-on-a-regular-schedule-or-modified-during-migration"></a>Требуется ли перемещать данные регулярно или менять их во время переноса?
 
@@ -108,7 +108,7 @@ ms.locfileid: "87047711"
 
 Возьмем среду Машинное обучение Azure Studio (классическая модель), например:
 
-* Список форматов и типов данных, поддерживаемых Студией машинного обучения Azure, см. в разделе [Поддерживаемые форматы и типы данных](../studio/import-data.md#supported-data-formats-and-data-types).
+* Список форматов и типов данных, поддерживаемых Студией машинного обучения Azure, см. в разделе [Поддерживаемые форматы и типы данных](../classic/import-data.md#supported-data-formats-and-data-types).
 * Дополнительные сведения об ограничениях других служб Azure, используемых в процессе аналитики, см. в статье [Подписка Azure, границы, квоты и ограничения службы](../../azure-resource-manager/management/azure-subscription-service-limits.md).
 
 ## <a name="data-quality-questions-exploration-and-pre-processing"></a>Вопросы, касающиеся качества данных: просмотр и предварительная обработка
@@ -146,7 +146,7 @@ ms.locfileid: "87047711"
 ### <a name="what-tools-should-you-use-for-data-analysis"></a>Какие средства следует использовать для анализа данных?
 
 * [Microsoft Azure PowerShell](/powershell/azure/) — язык сценариев, используемый для администрирования ресурсов Azure на языке сценариев
-* [Студия машинного обучения Azure](../studio/what-is-ml-studio.md)
+* [Студия машинного обучения Azure](../overview-what-is-machine-learning-studio.md#ml-studio-classic-vs-azure-machine-learning-studio)
 * [Revolution Analytics](https://www.microsoft.com/sql-server/machinelearningserver)
 * [RStudio](https://www.rstudio.com)
 * [Инструменты Python для Visual Studio](https://aka.ms/ptvsdocs)

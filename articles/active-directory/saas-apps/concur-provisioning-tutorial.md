@@ -10,12 +10,12 @@ ms.workload: identity
 ms.topic: article
 ms.date: 01/26/2018
 ms.author: jeedes
-ms.openlocfilehash: 678b7571d54c8938c163801a584ad813c6e5963f
-ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
+ms.openlocfilehash: 9e7ac5afb176e58ce47f918ddcbab742ecb90baf
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88551172"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91317452"
 ---
 # <a name="tutorial-configure-concur-for-automatic-user-provisioning"></a>Руководство по настройке Concur для автоматической подготовки пользователей
 
@@ -96,7 +96,7 @@ ms.locfileid: "88551172"
 
 9. Для параметра **Режим подготовки к работе** выберите значение **Automatic** (Автоматически). 
  
-    ![Подготовка](./media/concur-provisioning-tutorial/provisioning.png)
+    ![Снимок экрана: вкладка "подготовка" для Concur в портал Azure. Режим подготовки имеет значение автоматически, а кнопка Проверить подключение выделена.](./media/concur-provisioning-tutorial/provisioning.png)
 
 10. В разделе **Учетные данные администратора** введите **имя пользователя** и **пароль** вашего администратора Concur.
 

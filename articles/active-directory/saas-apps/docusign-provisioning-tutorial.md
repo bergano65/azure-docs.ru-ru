@@ -10,12 +10,12 @@ ms.workload: identity
 ms.topic: article
 ms.date: 01/26/2018
 ms.author: jeedes
-ms.openlocfilehash: 5b4e74d5db2d1454360370c05d75cdf826875143
-ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
+ms.openlocfilehash: d56f9890396d0381d24676964dabc57e2020ec28
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88535940"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91317435"
 ---
 # <a name="tutorial-configure-docusign-for-automatic-user-provisioning"></a>Руководство по настройке DocuSign для автоматической подготовки пользователей
 
@@ -65,7 +65,7 @@ ms.locfileid: "88535940"
 
 1. Для параметра **Режим подготовки к работе** выберите значение **Automatic** (Автоматически). 
 
-    ![Подготовка](./media/docusign-provisioning-tutorial/provisioning.png)
+    ![Снимок экрана: вкладка "подготовка" для DocuSign в портал Azure. Для режима подготовки задано значение автоматически и имя пользователя администратора, подключение пароля и тестового подключения выделены.](./media/docusign-provisioning-tutorial/provisioning.png)
 
 1. В разделе **Учетные данные администратора** укажите следующие параметры конфигурации.
    

@@ -17,12 +17,12 @@ ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
 ms.custom: has-adal-ref
-ms.openlocfilehash: 897c0f3c51d6d9bea1f90a66ccf50aa51e22f118
-ms.sourcegitcommit: 07166a1ff8bd23f5e1c49d4fd12badbca5ebd19c
+ms.openlocfilehash: c46d977b6ce4eaa62aefc6874ce2b855a4711670
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90088312"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91317518"
 ---
 # <a name="troubleshoot-azure-ad-connectivity"></a>Устранение неполадок с подключением к Azure AD
 В этой статье рассказывается, как работает подключение между Azure AD Connect и Azure AD и как устранять неполадки подключения. Как правило, проблемы возникают в среде с прокси-сервером.
@@ -85,7 +85,7 @@ Azure AD Connect использует для аутентификации сов
 
 Для связи с прокси-сервером PowerShell использует конфигурацию в файле machine.config. Параметры в winhttp/netsh не должны влиять на эти командлеты.
 
-Если прокси-сервер настроен правильно, то вы должны получить успешное состояние: ![proxy200](./media/tshoot-connect-connectivity/invokewebrequest200.png).
+Если прокси-сервер настроен правильно, вы должны получить состояние успеха: ![ снимок экрана, показывающий состояние успеха при правильной настройке прокси-сервера.](./media/tshoot-connect-connectivity/invokewebrequest200.png)
 
 Если вы получаете команду **не удается подключиться к удаленному серверу**, то PowerShell пытается выполнить прямой вызов без использования прокси-сервера или неправильно настроенной службы DNS. Убедитесь, что файл **machine.config** настроен правильно.
 ![unabletoconnect](./media/tshoot-connect-connectivity/invokewebrequestunable.png)
@@ -93,7 +93,7 @@ Azure AD Connect использует для аутентификации сов
 Если прокси-сервер настроен неправильно, то появляется ошибка: ![proxy200](./media/tshoot-connect-connectivity/invokewebrequest403.png)
 ![proxy407](./media/tshoot-connect-connectivity/invokewebrequest407.png).
 
-| Ошибка | Текст сообщения об ошибке | Комментировать |
+| Error | Текст сообщения об ошибке | Комментарий |
 | --- | --- | --- |
 | 403 |Запрещено |Прокси-сервер не был открыт для запрошенного URL-адреса. Проверьте конфигурацию прокси-сервера и убедитесь, что [URL-адреса](https://support.office.com/article/Office-365-URLs-and-IP-address-ranges-8548a211-3fe7-47cb-abb1-355ea5aa88a2) открыты. |
 | 407 |Требуется проверка подлинности прокси-сервера |Для прокси-сервера требуется имя входа, которое не было указано. Если для прокси-сервера требуется проверка подлинности, убедитесь, что этот параметр настроен в machine.config. Также убедитесь, что вы используете учетные записи домена для пользователя, запустившего мастер, и для учетной записи службы. |

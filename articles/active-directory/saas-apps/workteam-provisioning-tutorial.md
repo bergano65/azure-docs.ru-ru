@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: article
 ms.date: 08/17/2019
 ms.author: Zhchia
-ms.openlocfilehash: aa11cd9dedc2446b3952378e53b1f7248abbfa47
-ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
+ms.openlocfilehash: 3c2fba1cba2c06e07b262e37eac651afb5c102cf
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88526233"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91317550"
 ---
 # <a name="tutorial-configure-workteam--for-automatic-user-provisioning"></a>Учебник. Настройка Ворктеам для автоматической подготовки пользователей
 
@@ -54,15 +54,15 @@ ms.locfileid: "88526233"
 
 1. Войдите в [ворктеам](https://app.workte.am/account/signin). Щелкните Параметры **Параметры организации**  >  **SETTINGS**.
 
-    ![Workteam](media/workteam-provisioning-tutorial/settings.png)
+    ![Снимок экрана Ворктеам U I с параметрами организации и параметрами, вызываемыми.](media/workteam-provisioning-tutorial/settings.png)
 
 2. Прокрутите вниз и включите возможности подготовки Ворктеам.
 
-    ![Workteam](media/workteam-provisioning-tutorial/icon.png)
+    ![Снимок экрана с нижней частью раздела "Параметры" с вызываемым значком "подготавливается к работе" для пользователя S C M.](media/workteam-provisioning-tutorial/icon.png)
 
 3. Скопируйте **базовый URL-адрес** и **токен носителя**. Эти значения будут указаны в поле **URL-адрес клиента**и **секретный токен** на вкладке подготовка приложения ворктеам в портал Azure.
 
-    ![Workteam](media/workteam-provisioning-tutorial/scim.png)
+    ![Снимок экрана: диалоговое окно параметров S C M с вызываемыми БАЗОВыми текстовыми полями U R L и носителя.](media/workteam-provisioning-tutorial/scim.png)
 
 
 ## <a name="add-workteam--from-the-gallery"></a>Добавление Ворктеам из коллекции
@@ -106,11 +106,11 @@ ms.locfileid: "88526233"
 
 3. Выберите вкладку **Подготовка**.
 
-    ![Вкладка "Подготовка"](common/provisioning.png)
+    ![Снимок экрана параметров управления с вызываемым параметром подготовки.](common/provisioning.png)
 
 4. Для параметра **Режим подготовки к работе** выберите значение **Automatic** (Автоматически).
 
-    ![Вкладка "Подготовка"](common/provisioning-automatic.png)
+    ![Снимок экрана: раскрывающийся список режима подготовки с вызываемым автоматическим параметром.](common/provisioning-automatic.png)
 
 5. В разделе Учетные данные администратора введите **базовый URL-адрес** и значения **токена носителя** , полученные ранее в **URL-адресе клиента** и **маркере секрета** соответственно. Щелкните **проверить подключение** , чтобы убедиться, что Azure AD может подключиться к ворктеам. Если подключение не выполняется, убедитесь, что у учетной записи Ворктеам есть разрешения администратора, и повторите попытку.
 
@@ -120,7 +120,7 @@ ms.locfileid: "88526233"
 
     ![Почтовое уведомление](common/provisioning-notification-email.png)
 
-7. Нажмите **Сохранить**.
+7. Выберите команду **Сохранить**.
 
 8. В разделе **сопоставления** выберите **синхронизировать Azure Active Directory пользователей с ворктеам**.
 

@@ -1,23 +1,23 @@
 ---
 title: Microsoft Threat Modeling Tool выпуск 02/11/2020 — Azure
-description: Документирование заметок о выпуске средства моделирования угроз
+description: Документирование заметок о выпуске для 7.3.00206.1 выпуска средства моделирования угроз.
 author: jegeib
 ms.author: jegeib
 ms.service: security
 ms.topic: article
 ms.date: 02/25/2020
-ms.openlocfilehash: da4e61d6c89e62c3598570b30ce749390915ca1b
-ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
+ms.openlocfilehash: fa89ffcfd37629f95fbf281a6a703a173acd5d48
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2020
-ms.locfileid: "86259324"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91317928"
 ---
 # <a name="threat-modeling-tool-update-release-73002061---02112020"></a>Threat Modeling Tool обновления выпуска 7.3.00206.1 — 02/11/2020
 
 Версия 7.3.00206.1 Microsoft Threat Modeling Tool (ТМТ) была выпущена 11 2020 февраля и содержит следующие изменения:
 
-- Исправленные ошибки
+- Исправления ошибок
 
 ## <a name="notable-bug-fixes"></a>Исправления важных ошибок
 

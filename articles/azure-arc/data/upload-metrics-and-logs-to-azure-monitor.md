@@ -1,6 +1,6 @@
 ---
-title: Отправка сведений об использовании, метриках и журналах ресурсов для Azure Monitor
-description: Отправка сведений об использовании, метриках и журналах ресурсов для Azure Monitor
+title: Передача данных об использовании, метрик и журналов в Azure Monitor
+description: Отправляйте данные инвентаризации ресурсов, сведения об использовании, метрики и журналы в Azure Monitor
 services: azure-arc
 ms.service: azure-arc
 ms.subservice: azure-arc-data
@@ -9,25 +9,59 @@ ms.author: twright
 ms.reviewer: mikeray
 ms.date: 09/22/2020
 ms.topic: how-to
-ms.openlocfilehash: ac6ffd2b5bf48079db6a0cd261dbe2535e1821ac
-ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
+ms.openlocfilehash: 7c8e92604cc6188d17411a266f8b27db55c8fbad
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "90939108"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91317282"
 ---
-# <a name="upload-resource-inventory-usage-data-metrics-and-logs-to-azure-monitor"></a>Отправка сведений об использовании, метриках и журналах ресурсов для Azure Monitor
+# <a name="upload-usage-data-metrics-and-logs-to-azure-monitor"></a>Передача данных об использовании, метрик и журналов в Azure Monitor
 
-С помощью служб данных Arc Azure можно *Дополнительно* передать метрики и журналы в Azure Monitor, чтобы можно было выполнять статистическую обработку и анализ метрик, журналов, создавать оповещения, отправлять уведомления или запускать автоматические действия. Отправляя данные в Azure Monitor, вы также можете хранить данные мониторинга и журналов на уровне сайта и в огромном масштабе, обеспечивая долгосрочное хранение данных для расширенной аналитики.  Если у вас есть несколько сайтов со службами данных Arc Azure, вы можете использовать Azure Monitor в качестве центрального расположения для сбора всех журналов и метрик на сайтах.
+Мониторинг — это одна из многих встроенных возможностей, которые службы данных, включенные в службу "Дуга Azure", вместе с ней. 
 
-[!INCLUDE [azure-arc-data-preview](../../../includes/azure-arc-data-preview.md)]
+## <a name="upload-usage-data"></a>Отправка данных об использовании
 
-## <a name="before-you-begin"></a>Перед началом
+Сведения об использовании, такие как Инвентаризация и использование ресурсов, можно отправить в Azure следующим образом:
+
+1. Экспортируйте данные об использовании с помощью ```azdata export``` команды следующим образом:
+
+   ```console
+   #login to the data controller and enter the values at the prompt
+   azdata login
+
+   #run the export command
+   azdata arc dc export --type usage --path usage.json
+   ```
+   Эта команда создает `usage.json` файл со всеми ресурсами данных, включенными в дугу Azure, такими как управляемые экземпляры SQL и PostgreSQL экземпляров для масштабирования и т. д., которые создаются на контроллере данных.
+
+2. Отправка данных об использовании с помощью ```azdata upload``` команды
+
+   > [!NOTE]
+   > Подождите по крайней мере 24 часа после создания контроллера данных ARC в Azure до запуска отправки.
+
+   ```console
+   #login to the data controller and enter the values at the prompt
+   azdata login
+
+   #run the upload command
+   azdata arc dc upload --path usage.json
+   ```
+
+## <a name="upload-metrics-and-logs"></a>Отправка метрик и журналов
+
+С помощью служб данных Arc Azure можно дополнительно передать метрики и журналы в Azure Monitor, чтобы можно было выполнять статистическую обработку и анализ метрик, журналов, создавать оповещения, отправлять уведомления или запускать автоматические действия. 
+
+Отправляя данные в Azure Monitor, вы также можете хранить данные мониторинга и журналы за пределами сайта и в огромном масштабе, обеспечивая долгосрочное хранение данных для расширенной аналитики.
+
+Если у вас есть несколько сайтов со службами данных Arc Azure, вы можете использовать Azure Monitor в качестве центрального расположения для сбора всех журналов и метрик на сайтах.
+
+### <a name="before-you-begin"></a>Перед началом
 
 Чтобы включить сценарии отправки журналов и метрик, необходимо выполнить несколько однократных действий по настройке.
 
-1) Создание субъекта-службы/Azure Active Directory приложения, включая создание секрета клиентского доступа и назначение субъекта-службы роли "издатель метрик мониторинга" в подписках, где находятся ресурсы экземпляра базы данных.
-2) Создайте рабочую область log Analytics и получите ключи и задайте сведения в переменных среды.
+1. Создание субъекта-службы/Azure Active Directory приложения, включая создание секрета клиентского доступа и назначение субъекта-службы роли "издатель метрик мониторинга" в подписках, где находятся ресурсы экземпляра базы данных.
+2. Создайте рабочую область log Analytics и получите ключи и задайте сведения в переменных среды.
 
 Первый элемент необходим для передачи метрик, а второй — для отправки журналов.
 
@@ -51,7 +85,7 @@ az ad sp create-for-rbac --name <a name you choose>
 
 Выходные данные примера:
 
-```console
+```output
 "appId": "2e72adbf-de57-4c25-b90d-2f73f126e123",
 "displayName": "azure-arc-metrics",
 "name": "http://azure-arc-metrics",
@@ -59,36 +93,47 @@ az ad sp create-for-rbac --name <a name you choose>
 "tenant": "72f988bf-85f1-41af-91ab-2d7cd01ad1234"
 ```
 
-Сохраните значения appId и клиента в переменной среды для последующего использования:
+Сохраните значения appId и клиента в переменной среды для последующего использования. 
 
-```console
-#PowerShell
+Чтобы сохранить значения appId и клиента с помощью PowerShell, выполните приведенный ниже пример.
 
+```powershell
 $Env:SPN_CLIENT_ID='<the 'appId' value from the output of the 'az ad sp create-for-rbac' command above>'
 $Env:SPN_CLIENT_SECRET='<the 'password' value from the output of the 'az ad sp create-for-rbac' command above>'
 $Env:SPN_TENANT_ID='<the 'tenant' value from the output of the 'az ad sp create-for-rbac' command above>'
-
-#Linux/macOS
-
-export SPN_CLIENT_ID='<the 'appId' value from the output of the 'az ad sp create-for-rbac' command above>'
-export SPN_CLIENT_SECRET='<the 'password' value from the output of the 'az ad sp create-for-rbac' command above>'
-export SPN_TENANT_ID='<the 'tenant' value from the output of the 'az ad sp create-for-rbac' command above>'
-
-#Example (using Linux):
-export SPN_CLIENT_ID='2e72adbf-de57-4c25-b90d-2f73f126e123'
-export SPN_CLIENT_SECRET='5039d676-23f9-416c-9534-3bd6afc78123'
-export SPN_TENANT_ID='72f988bf-85f1-41af-91ab-2d7cd01ad1234'
 ```
+
+Кроме того, в Linux или macOS можно сохранить значения appId и клиента в этом примере:
+
+   ```console
+   export SPN_CLIENT_ID='<the 'appId' value from the output of the 'az ad sp create-for-rbac' command above>'
+   export SPN_CLIENT_SECRET='<the 'password' value from the output of the 'az ad sp create-for-rbac' command above>'
+   export SPN_TENANT_ID='<the 'tenant' value from the output of the 'az ad sp create-for-rbac' command above>'
+
+   #Example (using Linux):
+   export SPN_CLIENT_ID='2e72adbf-de57-4c25-b90d-2f73f126e123'
+   export SPN_CLIENT_SECRET='5039d676-23f9-416c-9534-3bd6afc78123'
+   export SPN_TENANT_ID='72f988bf-85f1-41af-91ab-2d7cd01ad1234'
+   ```
 
 Выполните эту команду, чтобы назначить субъекту-службе роль "издатель метрик мониторинга" в подписке, в которой находятся ресурсы экземпляра базы данных:
 
+
+> [!NOTE]
+> При запуске из среды Windows необходимо использовать двойные кавычки для имен ролей.
+
+
 ```console
-az role assignment create --assignee <appId value from output above> --role 'Monitoring Metrics Publisher' --scope subscriptions/<sub ID>
+az role assignment create --assignee <appId value from output above> --role "Monitoring Metrics Publisher" --scope subscriptions/<sub ID>
 az role assignment create --assignee <appId value from output above> --role 'Contributor' --scope subscriptions/<sub ID>
 
 #Example:
-#az role assignment create --assignee 2e72adbf-de57-4c25-b90d-2f73f126ede5 --role 'Monitoring Metrics Publisher' --scope subscriptions/182c901a-129a-4f5d-56e4-cc6b29459123
+#az role assignment create --assignee 2e72adbf-de57-4c25-b90d-2f73f126ede5 --role "Monitoring Metrics Publisher" --scope subscriptions/182c901a-129a-4f5d-56e4-cc6b29459123
 #az role assignment create --assignee 2e72adbf-de57-4c25-b90d-2f73f126ede5 --role 'Contributor' --scope subscriptions/182c901a-129a-4f5d-56e4-cc6b29459123
+
+#On Windows environment
+#az role assignment create --assignee 2e72adbf-de57-4c25-b90d-2f73f126ede5 --role "Monitoring Metrics Publisher" --scope subscriptions/182c901a-129a-4f5d-56e4-cc6b29459123
+#az role assignment create --assignee 2e72adbf-de57-4c25-b90d-2f73f126ede5 --role "Contributor" --scope subscriptions/182c901a-129a-4f5d-56e4-cc6b29459123
 ```
 
 Выходные данные примера:
@@ -96,12 +141,12 @@ az role assignment create --assignee <appId value from output above> --role 'Con
 ```console
 {
   "canDelegate": null,
-  "id": "/subscriptions/182c901a-129a-4f5d-86e4-cc6b29459123/providers/Microsoft.Authorization/roleAssignments/f82b7dc6-17bd-4e78-93a1-3fb733b912d",
+  "id": "/subscriptions/<Subscription ID>/providers/Microsoft.Authorization/roleAssignments/f82b7dc6-17bd-4e78-93a1-3fb733b912d",
   "name": "f82b7dc6-17bd-4e78-93a1-3fb733b9d123",
   "principalId": "5901025f-0353-4e33-aeb1-d814dbc5d123",
   "principalType": "ServicePrincipal",
-  "roleDefinitionId": "/subscriptions/182c901a-129a-4f5d-86e4-cc6b29459123/providers/Microsoft.Authorization/roleDefinitions/3913510d-42f4-4e42-8a64-420c39005123",
-  "scope": "/subscriptions/182c901a-129a-4f5d-86e4-cc6b29459123",
+  "roleDefinitionId": "/subscriptions/<Subscription ID>/providers/Microsoft.Authorization/roleDefinitions/3913510d-42f4-4e42-8a64-420c39005123",
+  "scope": "/subscriptions/<Subscription ID>",
   "type": "Microsoft.Authorization/roleAssignments"
 }
 ```
@@ -114,19 +159,19 @@ az role assignment create --assignee <appId value from output above> --role 'Con
 > Пропустите этот шаг, если у вас уже есть рабочая область.
 
 ```console
-az monitor log-analytics workspace create --resource-group <resource group name> --name <some name you choose>
+az monitor log-analytics workspace create --resource-group <resource group name> --workspace-name <some name you choose>
 
 #Example:
-#az monitor log-analytics workspace create --resource-group MyResourceGroup --name MyLogsWorkpace
+#az monitor log-analytics workspace create --resource-group MyResourceGroup --workspace-name MyLogsWorkpace
 ```
 
 Выходные данные примера:
 
-```console
+```output
 {
   "customerId": "d6abb435-2626-4df1-b887-445fe44a4123",
   "eTag": null,
-  "id": "/subscriptions/182c901a-129a-4f5d-86e4-cc6b29459123/resourcegroups/user-arc-demo/providers/microsoft.operationalinsights/workspaces/user-logworkspace",
+  "id": "/subscriptions/<Subscription ID>/resourcegroups/user-arc-demo/providers/microsoft.operationalinsights/workspaces/user-logworkspace",
   "location": "eastus",
   "name": "user-logworkspace",
   "portalUrl": null,
@@ -162,7 +207,7 @@ export WORKSPACE_ID='<the customerId from the 'log-analytics workspace create' c
 Эта команда выведет на печать ключи доступа, необходимые для подключения к рабочей области log Analytics:
 
 ```console
-az monitor log-analytics workspace get-shared-keys --resource-group MyResourceGroup --name MyLogsWorkpace
+az monitor log-analytics workspace get-shared-keys --resource-group MyResourceGroup --workspace-name MyLogsWorkpace
 ```
 
 Выходные данные примера:
@@ -222,25 +267,61 @@ echo $SPN_AUTHORITY
 
 ## <a name="upload-metrics-to-azure-monitor"></a>Отправка метрик в Azure Monitor
 
-Чтобы передать метрики для управляемых экземпляров SQL Azure и баз данных Azure для PostgreSQL в группы серверов масштабирования, выполните следующие команды интерфейса командной строки:
+Чтобы передать метрики для управляемых экземпляров SQL, включенных в службу "Дуга Azure", и службы "Дуга" PostgreSQL, выполните следующие команды интерфейса командной строки:
 
-Все метрики будут экспортированы в указанный файл:
+1. Экспортировать все метрики в указанный файл:
+
+   ```console
+   #login to the data controller and enter the values at the prompt
+   azdata login
+
+   #export the metrics
+   azdata arc dc export --type metrics --path metrics.json
+   ```
+
+2. Отправка метрик в Azure Monitor:
+
+   ```console
+   #login to the data controller and enter the values at the prompt
+   azdata login
+
+   #upload the metrics
+   azdata arc dc upload --path metrics.json
+   ```
+
+   >[!NOTE]
+   >Подождите не менее 30 минут после создания экземпляров данных с поддержкой Arc Azure для первой отправки.
+   >
+   >Убедитесь `upload` , что метрики сразу после `export` Azure Monitor принимают только метрики за последние 30 минут. [Дополнительные сведения](../../azure-monitor/platform/metrics-store-custom-rest-api.md#troubleshooting)
+
+
+Если при экспорте отображаются ошибки, указывающие на неудачу получения метрик, ```true``` выполните следующую команду:
 
 ```console
-azdata arc dc export -t metrics --path metrics.json
+azdata arc dc config show
 ```
 
-Метрики будут отправлены в Azure Monitor:
+и в разделе "раздел безопасности"
 
-```console
-azdata arc dc upload --path metrics.json
+```output
+ "security": {
+      "allowDumps": true,
+      "allowNodeMetricsCollection": true,
+      "allowPodMetricsCollection": true,
+      "allowRunAsRoot": false
+    },
 ```
+
+Проверьте, `allowNodeMetricsCollection` установлены ли `allowPodMetricsCollection` для свойств и значение `true` .
 
 ## <a name="view-the-metrics-in-the-portal"></a>Просмотр метрик на портале
 
-После отправки метрик вы сможете визуализировать их на портале Azure.
+После отправки метрик можно просмотреть в портал Azure.
+> [!NOTE]
+> Обратите внимание, что перед просмотром метрик на портале может потребоваться несколько минут для обработки отправленных данных.
 
-Чтобы просмотреть метрики на портале, используйте эту специальную ссылку, чтобы открыть портал. <https://portal.azure.com> затем выполните поиск экземпляра базы данных по имени в строке поиска:
+
+Чтобы просмотреть метрики на портале, используйте эту ссылку, чтобы открыть портал. <https://portal.azure.com> затем выполните поиск экземпляра базы данных по имени в строке поиска:
 
 Вы можете просмотреть загрузку ЦП на странице "Обзор" или, если вы хотите получить более подробные метрики, щелкнув метрики на левой навигационной панели.
 
@@ -255,19 +336,27 @@ azdata arc dc upload --path metrics.json
 
 ## <a name="upload-logs-to-azure-monitor"></a>Отправка журналов в Azure Monitor
 
- Чтобы отправить журналы для управляемых экземпляров SQL Azure и группы серверов масштабирования базы данных Azure для PostgreSQL, выполните следующие команды интерфейса командной строки:
+ Чтобы отправить журналы для управляемых экземпляров SQL, включенных в службу "Дуга Azure", и Азуреарк Enabled PostgreSQL. группы серверов масштабирования выполняют следующие команды CLI
 
-Все журналы будут экспортированы в указанный файл:
+1. Экспортировать все журналы в указанный файл:
 
-```console
-azdata arc dc export -t logs --path logs.json
-```
+   ```console
+   #login to the data controller and enter the values at the prompt
+   azdata login
 
-Журналы будут отправлены в рабочую область Azure Monitor Analytics.
+   #export the logs
+   azdata arc dc export --type logs --path logs.json
+   ```
 
-```console
-azdata arc dc upload --path logs.json
-```
+2. Отправка журналов в рабочую область журнала Azure Monitor Analytics:
+
+   ```console
+   #login to the data controller and enter the values at the prompt
+   azdata login
+
+   #Upload the logs
+   azdata arc dc upload --path logs.json
+   ```
 
 ## <a name="view-your-logs-in-azure-portal"></a>Просмотр журналов в портал Azure
 
@@ -276,18 +365,18 @@ azdata arc dc upload --path logs.json
 1. Откройте портал Azure и найдите рабочую область по имени на панели поиска вверху, а затем выберите ее.
 2. На панели слева щелкните "Журналы".
 3. Щелкните "Начало работы" (или щелкните ссылки на странице начало работы, чтобы узнать больше о Log Analytics, если вы еще не знакомы с ней).
-4. Следуйте указаниям в этом учебнике, чтобы получить дополнительные сведения о Log Analytics, если первый раз
+4. Следуйте указаниям в этом учебнике, чтобы узнать больше о Log Analytics при первом использовании Log Analytics
 5. Разверните раздел "Пользовательские журналы" в нижней части списка таблиц. Вы увидите таблицу с именем sql_instance_logs_CL.
 6. Щелкните значок с изображением глаза рядом с именем таблицы.
 7. Нажмите кнопку "Просмотреть в редакторе запросов".
-8. Вы увидите запрос в редакторе запросов, где отображаются последние 10 событий в журнале.
+8. Теперь у вас есть запрос в редакторе запросов, который будет отображать последние 10 событий в журнале.
 9. Здесь можно поэкспериментировать с отправкой запросов к журналам с помощью редактора запросов, настроить оповещения и т. д.
 
-## <a name="automating-metrics-and-logs-uploads-optional"></a>Автоматизация отправки метрик и журналов (необязательно)
+## <a name="automating-uploads-optional"></a>Автоматизация отправки (необязательно)
 
-Если вы хотите постоянно отправлять метрики и журналы, можно создать сценарий и запустить его через таймер каждые несколько минут.  Ниже приведен пример автоматизации отправки с помощью сценария оболочки Linux.
+Если вы хотите отправлять метрики и журналы по расписанию, можно создать сценарий и запустить его через таймер каждые несколько минут. Ниже приведен пример автоматизации отправки с помощью сценария оболочки Linux.
 
-В любом редакторе текста или кода добавьте следующий код в содержимое скрипта в файл и сохраните его как исполняемый файл сценария, например. sh (Linux/Mac) или. cmd,. bat,. ps1.
+В любом редакторе текста или кода добавьте следующий скрипт в файл и сохраните его как исполняемый файл сценария, например. sh (Linux/Mac) или. cmd,. bat,. ps1.
 
 ```console
 azdata arc dc export --type metrics --path metrics.json --force
@@ -300,10 +389,24 @@ azdata arc dc upload --path metrics.json
 chmod +x myuploadscript.sh
 ```
 
-Запускать скрипт каждые 2 минуты:
+Запускать скрипт каждые 20 минут:
 
 ```console
-watch -n 120 ./myuploadscript.sh
+watch -n 1200 ./myuploadscript.sh
 ```
 
 Можно также использовать планировщик заданий, например cron или Windows планировщик задач или Orchestrator, например Ansible, Puppet или Chef.
+
+## <a name="general-guidance-on-exporting-and-uploading-usage-metrics"></a>Общие рекомендации по экспорту и передаче сведений об использовании, метриках
+
+Операции создания, чтения, обновления и удаления (CRUD) в службе данных с включенной службой Arc Azure регистрируются в целях выставления счетов и мониторинга. Существуют фоновые службы, которые отслеживают эти операции CRUD и вычисляют потребление соответствующим образом. Фактическое вычисление использования или потребления происходит по расписанию и выполняется в фоновом режиме. 
+
+Во время действия предварительной версии этот процесс происходит ночью. Общее руководство заключается в передаче сведений об использовании только один раз в день. Если сведения об использовании экспортируются и передаются несколько раз в течение одного 24-часового периода, то в портал Azure, но не на использование ресурсов обновляется только Инвентаризация ресурсов.
+
+Для отправки метрик Azure Monitor принимает только последние 30 минут данных (дополнительные[сведения](../../azure-monitor/platform/metrics-store-custom-rest-api.md#troubleshooting)). Рекомендации по передаче метрик можно передать сразу после создания файла экспорта, чтобы вы могли просмотреть весь набор данных в портал Azure. Например, если вы экспортировали метрики в 2:00 PM и выполнили команду upload в 2:50 РМ. Поскольку Azure Monitor принимает данные только за последние 30 минут, на портале могут не отображаться данные. 
+
+## <a name="next-steps"></a>Дальнейшие действия
+
+[Отправьте данные о выставлении счетов в Azure и просмотрите их в портал Azure](view-billing-data-in-azure.md)
+
+[Просмотр ресурса контроллера данных Arc Azure в портал Azure](view-data-controller-in-azure-portal.md)

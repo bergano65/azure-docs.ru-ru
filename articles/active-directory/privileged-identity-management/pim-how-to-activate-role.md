@@ -14,12 +14,12 @@ ms.date: 07/06/2020
 ms.author: curtand
 ms.custom: pim
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 0306ae3193dc53f25a1e82eae1eb09c7d26ba9b6
-ms.sourcegitcommit: 814778c54b59169c5899199aeaa59158ab67cf44
+ms.openlocfilehash: 2a2c3c112183e102f6c3c4a0bebb83376c7e8d85
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/13/2020
-ms.locfileid: "90055458"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91317544"
 ---
 # <a name="activate-my-azure-ad-roles-in-pim"></a>Активация ролей Azure AD в PIM
 
@@ -40,7 +40,7 @@ Azure Active Directory (Azure AD) управление привилегиров�
 
 # <a name="new-version"></a>[Новая версия](#tab/new)
 
-## <a name="activate-a-role"></a>Активация роли
+## <a name="activate-a-role-for-new-version"></a>Активация роли для новой версии
 
 Если вам нужно предположить роль Azure AD, вы можете запросить активацию, открыв **Мои роли** в Управление привилегированными пользователями.
 
@@ -80,7 +80,7 @@ Azure Active Directory (Azure AD) управление привилегиров�
 
     ![Запрос на активацию ожидает уведомления об утверждении](./media/pim-resource-roles-activate-your-roles/resources-my-roles-activate-notification.png)
 
-## <a name="view-the-status-of-your-requests"></a>Просмотр состояния запросов
+## <a name="view-the-status-of-your-requests-for-new-version"></a>Просмотр состояния запросов для новой версии
 
 Вы можете просмотреть состояние запросов, ожидающих активации.
 
@@ -92,7 +92,7 @@ Azure Active Directory (Azure AD) управление привилегиров�
 
 1. Прокрутите вправо, чтобы увидеть столбец **Состояние запроса**.
 
-## <a name="cancel-a-pending-request"></a>Отмена ожидающего запроса
+## <a name="cancel-a-pending-request-for-new-version"></a>Отмена ожидающего запроса на новую версию
 
 Если вы не активируете роль, требующую утверждения, вы можете в любой момент отменить запрос, ожидающий утверждения.
 
@@ -106,7 +106,7 @@ Azure Active Directory (Azure AD) управление привилегиров�
 
    ![Мой список запросов с выделенным действием отмены](./media/pim-resource-roles-activate-your-roles/resources-my-requests-cancel.png)
 
-## <a name="troubleshoot"></a>Диагностика
+## <a name="troubleshoot-for-new-version"></a>Устранение неполадок в новой версии
 
 ### <a name="permissions-are-not-granted-after-activating-a-role"></a>Разрешения не предоставляются после активации роли
 

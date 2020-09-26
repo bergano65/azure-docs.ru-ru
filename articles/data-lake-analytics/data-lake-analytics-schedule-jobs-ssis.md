@@ -8,18 +8,18 @@ ms.service: data-lake-analytics
 ms.topic: how-to
 ms.workload: big-data
 ms.date: 07/17/2018
-ms.openlocfilehash: ac747b87cf1a0f2d7c85d05975a31f953bfa5aae
-ms.sourcegitcommit: 0e8a4671aa3f5a9a54231fea48bcfb432a1e528c
+ms.openlocfilehash: a5c7b9fb6a3431534d743f1ebd0b21f1da9fab7b
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/24/2020
-ms.locfileid: "87132506"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91318710"
 ---
 # <a name="schedule-u-sql-jobs-using-sql-server-integration-services-ssis"></a>Планирование заданий U-SQL с использованием служб Integration Services (SSIS)
 
 Этот документ содержит сведения о координации и создании задания U-SQL с помощью службы Integration Service (SSIS). 
 
-## <a name="prerequisites"></a>Обязательные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 [Пакет дополнительных компонентов Azure для служб Integration Services](https://docs.microsoft.com/sql/integration-services/azure-feature-pack-for-integration-services-ssis?view=sql-server-2017#scenario-managing-data-in-the-cloud) предоставляет [задачу Azure Data Lake Analytics](https://docs.microsoft.com/sql/integration-services/control-flow/azure-data-lake-analytics-task?view=sql-server-2017) и [диспетчер подключений Azure Data Lake Analytics](https://docs.microsoft.com/sql/integration-services/connection-manager/azure-data-lake-analytics-connection-manager?view=sql-server-2017), что позволяет подключиться к службе Azure Data Lake Analytics. Чтобы использовать эту задачу, убедитесь, что установлено следующее ПО.
 
@@ -56,7 +56,7 @@ ms.locfileid: "87132506"
 
 В представлении конструктора пакетов SSIS добавьте **задачу файловой системы Azure Data Lake Store**, **контейнер "Цикл по каждому элементу"** и **задачу аналитики Azure Data Lake** в контейнере "Цикл по каждому элементу". Задача файловой системы Azure Data Lake Store позволяет загружать файлы во временную папку U-SQL в учетной записи ADLS. Контейнер "Цикл по каждому элементу" и задача Azure Data Lake Analytics помогают отправлять каждый файл U-SQL во временную папку учетной записи Azure Data Lake Analytics как задание U-SQL.
 
-![Использование файлов U-SQL в хранилище Azure Data Lake Store](./media/data-lake-analytics-schedule-jobs-ssis/use-u-sql-files-in-azure-data-lake-store.png)
+![Схема, на которой показана задача «Azure Data Lake Store файловая система», добавляемая в контейнер «цикл по каждому элементу».](./media/data-lake-analytics-schedule-jobs-ssis/use-u-sql-files-in-azure-data-lake-store.png)
 
 ### <a name="configure-azure-data-lake-store-file-system-task"></a>Настройка задачи файловой системы Azure Data Lake Store
 
@@ -77,7 +77,7 @@ ms.locfileid: "87132506"
 
 3. Задайте **Файлы** в разделе **Конфигурация перечислителя** для `*.usql` таким образом, чтобы контейнер цикла получал только файлы с расширением `.usql`.
 
-    ![Настройка контейнера "Цикл по каждому элементу"](./media/data-lake-analytics-schedule-jobs-ssis/configure-foreach-loop-container-collection.png)
+    ![Снимок экрана, на котором показан редактор циклов по каждому элементу с выбранным параметром "Коллекция" и выделенные разделы конфигурации перечислителя и перечислителя.](./media/data-lake-analytics-schedule-jobs-ssis/configure-foreach-loop-container-collection.png)
 
 4. На странице **Сопоставления переменной** добавьте определенную пользователем переменную для получения имени файла для каждого файла U-SQL. Установите значение 0 для параметра **Индекс**, чтобы получить имя файла. В этом примере определяется переменная с именем `User::FileName`. Эта переменная будет использоваться для получения динамического файла подключения скрипта U-SQL и задаст имя задания U-SQL в задаче Azure Data Lake Analytics.
 
@@ -94,7 +94,7 @@ ms.locfileid: "87132506"
    1. Выберите **\<New Connection...>** параметр FileConnection.
    2. Задайте параметру **Тип использования** значение **Существующий файл**, а параметру **Файл** — любой путь к существующему файлу.
 
-       ![Настройка контейнера "Цикл по каждому элементу"](./media/data-lake-analytics-schedule-jobs-ssis/configure-file-connection-for-foreach-loop-container.png)
+       ![Снимок экрана, на котором показан редактор диспетчера подключения файлов с "существующим файлом", выбранным для "тип использования".](./media/data-lake-analytics-schedule-jobs-ssis/configure-file-connection-for-foreach-loop-container.png)
 
    3. В представлении **Диспетчер подключений** щелкните правой кнопкой мыши недавно созданное подключение файла и выберите **Свойства**.
 

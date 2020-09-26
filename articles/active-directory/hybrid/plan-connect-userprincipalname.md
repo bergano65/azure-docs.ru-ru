@@ -10,12 +10,12 @@ ms.workload: identity
 ms.service: active-directory
 manager: daveba
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: e105d4909705622a931c51bcb7cf0a9db4179525
-ms.sourcegitcommit: c94a177b11a850ab30f406edb233de6923ca742a
+ms.openlocfilehash: 58b4bbcac110398ee4ff132b76ce8c4868ee17f8
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/01/2020
-ms.locfileid: "89279607"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91317597"
 ---
 # <a name="azure-ad-userprincipalname-population"></a>Указание атрибута UserPrincipalName в Azure AD
 
@@ -54,7 +54,7 @@ UserPrincipalName — это атрибут, который является и�
 
 Чтобы включить альтернативное имя пользователя в Azure AD, не нужно дополнительно ничего настраивать, если включен Azure AD Connect. Альтернативное имя пользователя можно настроить непосредственно из мастера. Сведения о настройке входа в Azure AD для пользователей см. в разделе Синхронизация. В раскрывающемся списке **имя участника-пользователя** выберите атрибут для альтернативного идентификатора входа.
 
-![Непроверенные домены](./media/plan-connect-userprincipalname/altloginid.png)  
+![Снимок экрана, в котором выделяется список имен участников-пользователей, в котором выбирается альтернативный атрибут идентификатора имени входа.](./media/plan-connect-userprincipalname/altloginid.png)  
 
 Дополнительные сведения см. в статье [Configuring Alternate Login ID](/windows-server/identity/ad-fs/operations/configuring-alternate-login-id) (Настройка альтернативного имени пользователя) и разделе [Конфигурация входа в Azure AD](how-to-connect-install-custom.md#azure-ad-sign-in-configuration).
 

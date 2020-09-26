@@ -5,14 +5,14 @@ services: virtual-wan
 author: cherylmc
 ms.service: virtual-wan
 ms.topic: how-to
-ms.date: 03/19/2020
+ms.date: 09/22/2020
 ms.author: cherylmc
-ms.openlocfilehash: d3a2c85540a4efa2f934605c4c056b458e2879ca
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: fe8cf0da6cb6542646f3107980b49fb6fef9cb45
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84749596"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91317639"
 ---
 # <a name="expressroute-encryption-ipsec-over-expressroute-for-virtual-wan"></a>Шифрование ExpressRoute: IPsec через ExpressRoute для виртуальной глобальной сети
 
@@ -110,7 +110,7 @@ ms.locfileid: "84749596"
 
    ![Настройка для использования частного IP-адреса для VPN-подключения](./media/vpn-over-expressroute/vpn-link-configuration.png)
    
-1. Нажмите кнопку **Сохранить**.
+1. Щелкните **Сохранить**.
 
 После сохранения изменений VPN-шлюз концентратора будет использовать частные IP-адреса VPN-шлюза, чтобы установить подключения IPsec/IKE к локальному VPN-устройству через ExpressRoute.
 
@@ -222,7 +222,7 @@ ms.locfileid: "84749596"
 ## <a name="5-view-your-virtual-wan"></a><a name="viewwan"></a>5. Просмотр виртуальной глобальной сети
 
 1. Перейдите к виртуальной глобальной сети.
-1. На странице **Обзор** каждая точка на карте представляет концентратор.
+1. На странице **Обзор** каждая точка на карте представляет собой концентратор.
 1. В разделе **концентраторы и подключения** можно просматривать состояние концентратора, сайта, региона и VPN-подключения. Кроме того, можно просматривать и исходящие байты.
 
 ## <a name="7-monitor-a-connection"></a><a name="connectmon"></a>7. Мониторинг подключения
@@ -237,6 +237,6 @@ ms.locfileid: "84749596"
 Remove-AzResourceGroup -Name myResourceGroup -Force
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Эта статья поможет вам создать VPN-подключение через частный пиринг ExpressRoute с помощью виртуальной глобальной сети. Дополнительные сведения о виртуальной глобальной сети и связанных с ней функциях см. в [обзоре виртуальной глобальной сети](virtual-wan-about.md).

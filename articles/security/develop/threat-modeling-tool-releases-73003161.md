@@ -1,24 +1,24 @@
 ---
 title: Microsoft Threat Modeling Tool выпуск 03/22/2020 — Azure
-description: Документирование заметок о выпуске средства моделирования угроз
+description: Документирование заметок о выпуске для 7.3.00316.1 выпуска средства моделирования угроз.
 author: jegeib
 ms.author: jegeib
 ms.service: security
 ms.topic: article
 ms.date: 03/22/2020
-ms.openlocfilehash: 6fea4d48b62d6ea429d37924ffd15855db6294cc
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 39963e9dadca0ee0be7bb8ad0ebf824c287bfee0
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "80146866"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91317911"
 ---
 # <a name="threat-modeling-tool-update-release-73003161---03222020"></a>Threat Modeling Tool обновления выпуска 7.3.00316.1 — 03/22/2020
 
 Версия 7.3.00316.1 Microsoft Threat Modeling Tool (ТМТ) была выпущена 22 2020 марта и содержит следующие изменения:
 
-- Улучшение специальных возможностей
-- Исправленные ошибки
+- Улучшения специальных возможностей
+- Исправления ошибок
 - Новая функция Диаграмреадер
 
 ## <a name="notable-bug-fixes"></a>Исправления важных ошибок
@@ -32,7 +32,7 @@ ms.locfileid: "80146866"
 - Меню справки в основном рабочем процессе (создание, открытие и анализ) и интерфейс редактора шаблонов теперь имеют единообразные параметры меню.
 - На панели "наборы элементов" теперь имеется стандартный курсор и добавлены соответствующие метки.
 
-## <a name="new-features"></a>новые функции;
+## <a name="new-features"></a>Новые возможности
 
 ### <a name="diagramreader-feature-has-been-added"></a>Добавлена функция Диаграмреадер
 
