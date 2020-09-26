@@ -1,6 +1,6 @@
 ---
-title: Использование индекса больших двоичных объектов для поиска данных и управления ими в хранилище BLOB-объектов Azure
-description: Примеры использования тегов индекса больших двоичных объектов для классификации больших двоичных объектов, управления ими и выполнения запросов для их обнаружения.
+title: Использование тегов индекса больших двоичных объектов для управления и поиска данных в хранилище BLOB-объектов Azure
+description: См. примеры использования тегов индекса больших двоичных объектов для категоризации, управления и запроса объектов BLOB.
 author: mhopkins-msft
 ms.author: mhopkins
 ms.date: 04/24/2020
@@ -9,29 +9,29 @@ ms.subservice: blobs
 ms.topic: how-to
 ms.reviewer: hux
 ms.custom: devx-track-csharp
-ms.openlocfilehash: adc510ef89a912e6d76949794aacbf130a8f066d
-ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
+ms.openlocfilehash: 41a21545939c5d15c8e2c4034a9648e98aa5a73e
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89018881"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91280289"
 ---
-# <a name="utilize-blob-index-tags-preview-to-manage-and-find-data-on-azure-blob-storage"></a>Использование тегов индекса больших двоичных объектов (предварительная версия) для поиска данных и управления ими в хранилище BLOB-объектов Azure
+# <a name="utilize-blob-index-tags-preview-to-manage-and-find-data-on-azure-blob-storage"></a>Использование тегов индекса больших двоичных объектов (Предварительная версия) для управления и поиска данных в хранилище BLOB-объектов Azure
 
-Теги индекса больших двоичных объектов классифицируют данные в учетной записи хранения с помощью атрибутов тегов типа "ключ-значение". Эти теги автоматически индексируются и представляются в виде многомерного индекса с поддержкой запросов для упрощения поиска данных. В этой статье показано, как задавать, получать и находить данные с помощью тегов индекса больших двоичных объектов.
+Теги индекса больших двоичных объектов классифицируют данные в учетной записи хранения, используя атрибуты тегов ключ-значение. Эти теги автоматически индексируются и представляются в виде многомерного индекса с поддержкой запросов для упрощения поиска данных. В этой статье показано, как задавать, получать и находить данные с помощью тегов индекса больших двоичных объектов.
 
-Дополнительные сведения об индексе больших двоичных объектов см. в статье [Управление данными в хранилище BLOB-объектов Azure и их поиск с помощью индекса больших двоичных объектов (предварительная версия)](storage-manage-find-blobs.md).
+Дополнительные сведения о функции индекса больших двоичных объектов см. в статье [Управление и поиск данных в хранилище BLOB-объектов Azure с помощью индекса больших двоичных объектов (Предварительная версия)](storage-manage-find-blobs.md).
 
 > [!NOTE]
-> Индекс больших двоичных объектов доступен в общедоступной предварительной версии и доступен в регионах " **Центральная Канада**", " **Восточная Канада**", " **Франция** " и " **Франция** ". Дополнительные сведения об этой функции, а также известных проблемах и ограничениях см. в статье [Управление данными в хранилище BLOB-объектов Azure и их поиск с помощью индекса больших двоичных объектов (предварительная версия)](storage-manage-find-blobs.md).
+> Индекс больших двоичных объектов доступен в общедоступной предварительной версии и доступен в регионах " **Центральная Канада**", " **Восточная Канада**", " **Франция** " и " **Франция** ". Дополнительные сведения об этой функции и известных проблемах и ограничениях см. в статье [Управление и поиск данных в хранилище BLOB-объектов Azure с помощью индекса больших двоичных объектов (Предварительная версия)](storage-manage-find-blobs.md).
 
 ## <a name="prerequisites"></a>Предварительные требования
 # <a name="portal"></a>[Портал](#tab/azure-portal)
-- Зарегистрированная подписка с утвержденным доступом к предварительной версии индекса больших двоичных объектов
+- Подписка зарегистрирована и утверждена для доступа к предварительной версии индекса больших двоичных объектов
 - Доступ к [порталу Azure](https://portal.azure.com/)
 
 # <a name="net"></a>[.NET](#tab/net)
-Так как индекс больших двоичных объектов находится в стадии общедоступной предварительной версии, пакет хранилища .NET выпускается в предварительной версии канала NuGet. Эта библиотека может быть изменена до выхода окончательной версии. 
+Так как индекс больших двоичных объектов находится в общедоступной предварительной версии, пакет хранилища .NET выпускается в предварительной версии веб-канала NuGet. Эта библиотека может быть изменена до выхода окончательной версии. 
 
 1. Настройте проект Visual Studio, чтобы начать работу с клиентской библиотекой версии 12 для хранилища BLOB-объектов Azure для .NET. Дополнительные сведения см. в разделе [Краткое руководство по .NET](storage-quickstart-blobs-dotnet.md) .
 
@@ -56,7 +56,7 @@ using System.Threading.Tasks;
 
 1. Выберите свою учетную запись хранения на [портале Azure](https://portal.azure.com/). 
 
-2. Перейдите к параметру **Контейнеры** в разделе **Служба BLOB-объектов** и выберите контейнер.
+2. Перейдите к параметру **контейнеры** в разделе **Служба BLOB-объектов**, выберите контейнер.
 
 3. Нажмите кнопку **Отправить**, чтобы открыть колонку отправки и в локальной файловой системе найти файл для передачи в виде блочного BLOB-объекта.
 
@@ -86,7 +86,7 @@ static async Task BlobIndexTagsOnCreate()
           // Create an append blob
           AppendBlobClient appendBlobWithTags = container.GetAppendBlobClient("myAppendBlob0.logs");
 
-          // Blob Index tags to upload
+          // Blob index tags to upload
           CreateAppendBlobOptions appendOptions = new CreateAppendBlobOptions();
           appendOptions.Tags = new Dictionary<string, string>
           {
@@ -139,7 +139,7 @@ static async Task BlobIndexTagsExample()
           AppendBlobClient appendBlob = container.GetAppendBlobClient("myAppendBlob1.logs");
           await appendBlob.CreateAsync();
 
-          // Set or Update Blob Index tags on existing blob
+          // Set or update blob index tags on existing blob
           Dictionary<string, string> tags = new Dictionary<string, string>
           {
               { "Project", "Contoso" },
@@ -148,7 +148,7 @@ static async Task BlobIndexTagsExample()
           };
           await appendBlob.SetTagsAsync(tags);
 
-          // Get Blob Index tags
+          // Get blob index tags
           Response<IDictionary<string, string>> tagsResponse = await appendBlob.GetTagsAsync();
           Console.WriteLine(appendBlob.Name);
           foreach (KeyValuePair<string, string> tag in tagsResponse.Value)
@@ -156,7 +156,7 @@ static async Task BlobIndexTagsExample()
               Console.WriteLine($"{tag.Key}={tag.Value}");
           }
 
-          // List Blobs with all options returned including Blob Index tags
+          // List blobs with all options returned including blob index tags
           await foreach (BlobItem blobItem in container.GetBlobsAsync(BlobTraits.All))
           {
               Console.WriteLine(Environment.NewLine + blobItem.Name);
@@ -166,7 +166,7 @@ static async Task BlobIndexTagsExample()
               }
           }
 
-          // Delete existing Blob Index tags by replacing all tags
+          // Delete existing blob index tags by replacing all tags
           Dictionary<string, string> noTags = new Dictionary<string, string>();
           await appendBlob.SetTagsAsync(noTags);
 
@@ -179,19 +179,19 @@ static async Task BlobIndexTagsExample()
 
 ---
 
-## <a name="filter-and-find-data-with-blob-index-tags"></a>Фильтрация и поиск данных с тегами индекса больших двоичных объектов
+## <a name="filter-and-find-data-with-blob-index-tags"></a>Фильтрация и поиск данных с помощью тегов индекса больших двоичных объектов
 
 # <a name="portal"></a>[Портал](#tab/azure-portal)
 
-На портале Azure фильтр тегов индекса больших двоичных объектов автоматически применяет параметр `@container` для ограничения области выбранным контейнером. Если необходимо отфильтровать и найти данные с тегами во всей учетной записи хранения, используйте REST API, пакеты SDK или другие средства.
+В портал Azure фильтр тегов индекса больших двоичных объектов автоматически применяет `@container` параметр к области действия выбранного контейнера. Если необходимо отфильтровать и найти данные с тегами во всей учетной записи хранения, используйте REST API, пакеты SDK или другие средства.
 
 1. Выберите свою учетную запись хранения на [портале Azure](https://portal.azure.com/). 
 
-2. Перейдите к параметру **Контейнеры** в разделе **Служба BLOB-объектов** и выберите контейнер.
+2. Перейдите к параметру **контейнеры** в разделе **Служба BLOB-объектов**, выберите контейнер.
 
 3. Нажмите кнопку **Фильтр тегов индекса больших двоичных объектов** для фильтрации в выбранном контейнере.
 
-4. Введите ключ и значение тега индекса больших двоичных объектов.
+4. Введите ключ тега индекса BLOB-объекта и значение тега
 
 5. Нажмите кнопку **Фильтр тегов индекса больших двоичных объектов**, чтобы добавить дополнительные фильтры тегов (до 10).
 
@@ -205,7 +205,7 @@ static async Task FindBlobsByTagsExample()
       BlobContainerClient container1 = serviceClient.GetBlobContainerClient("mycontainer");
       BlobContainerClient container2 = serviceClient.GetBlobContainerClient("mycontainer2");
 
-      // Blob Index queries and selection
+      // Blob index queries and selection
       String singleEqualityQuery = @"""Archive"" = 'false'";
       String andQuery = @"""Archive"" = 'false' AND ""Priority"" = '01'";
       String rangeQuery = @"""Date"" >= '2020-04-20' AND ""Date"" <= '2020-04-30'";
@@ -227,7 +227,7 @@ static async Task FindBlobsByTagsExample()
           AppendBlobClient appendBlobWithTags4 = container2.GetAppendBlobClient("myAppendBlob04.logs");
           AppendBlobClient appendBlobWithTags5 = container2.GetAppendBlobClient("myAppendBlob05.logs");
            
-          // Blob Index tags to upload
+          // Blob index tags to upload
           CreateAppendBlobOptions appendOptions = new CreateAppendBlobOptions();
           appendOptions.Tags = new Dictionary<string, string>
           {
@@ -286,19 +286,18 @@ static async Task FindBlobsByTagsExample()
 
 3. Выберите *Добавить правило*, а затем заполните поля формы набора действий.
 
-4. Выберите элемент "Набор фильтров", чтобы добавить дополнительный фильтр для сопоставления префиксов и индексов больших двоичных объектов ![Добавление фильтров тегов индекса больших двоичных объектов для управления жизненным циклом](media/storage-blob-index-concepts/blob-index-match-lifecycle-filter-set.png).
+4. Выберите **Фильтр** установить, чтобы добавить необязательный фильтр для сопоставления префиксов и индексов больших двоичных объектов ![ Добавление фильтров тегов индекса BLOB-объектов для управления жизненным циклом](media/storage-blob-index-concepts/blob-index-match-lifecycle-filter-set.png)
 
 5. Выберите команду **Просмотреть и добавить**, чтобы проверить параметры правила ![Пример правила управления жизненным циклом с фильтром тегов индекса больших двоичных объектов](media/storage-blob-index-concepts/blob-index-lifecycle-management-example.png).
 
 6. Выберите **Добавить**, чтобы применить новое правило к политике управления жизненным циклом.
 
 # <a name="net"></a>[.NET](#tab/net)
-Политики [управления жизненным циклом](storage-lifecycle-management-concepts.md) применяются к каждой учетной записи хранения на уровне управления. Для .NET установите [библиотеку Microsoft Azure Management Storage версии 16.0.0](https://www.nuget.org/packages/Microsoft.Azure.Management.Storage/) или более поздней, чтобы получить возможность использовать фильтр сопоставления индексов больших двоичных объектов в правиле управления жизненным циклом.
+Политики [управления жизненным циклом](storage-lifecycle-management-concepts.md) применяются к каждой учетной записи хранения на уровне управления. Для .NET установите [библиотеку хранилища Microsoft Azure Management 16.0.0](https://www.nuget.org/packages/Microsoft.Azure.Management.Storage/) или более поздней версии, чтобы воспользоваться фильтром совпадения больших двоичных объектов в правиле управления жизненным циклом.
 
 ---
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Узнайте больше об индексе больших двоичных объектов. См. статью [Управление данными в хранилище BLOB-объектов Azure и их поиск с помощью индекса больших двоичных объектов (предварительная версия)](storage-manage-find-blobs.md ).
-
-Узнайте больше об управлении жизненным циклом. См. статью [Управление жизненным циклом хранилища BLOB-объектов Azure](storage-lifecycle-management-concepts.md).
+ - Дополнительные сведения о индексе больших двоичных объектов см. [в статье управление и поиск данных в хранилище BLOB-объектов Azure с помощью индекса BLOB (Предварительная версия)](storage-manage-find-blobs.md )
+ - Узнайте больше об управлении жизненным циклом. См. статью [Управление жизненным циклом хранилища BLOB-объектов Azure](storage-lifecycle-management-concepts.md).

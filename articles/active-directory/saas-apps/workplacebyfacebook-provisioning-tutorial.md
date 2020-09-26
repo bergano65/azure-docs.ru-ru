@@ -1,6 +1,6 @@
 ---
 title: Руководство по настройке Workplace by Facebook для автоматической подготовки пользователей с помощью Azure Active Directory | Документация Майкрософт
-description: Сведения о настройке единого входа между Azure Active Directory и Workplace by Facebook.
+description: Дополнительные сведения о том, как настроить автоматическую подготовку пользователей, см. в статье как на рабочем месте, так и в Azure Active Directory (Azure AD).
 services: active-directory
 author: jeevansd
 manager: CelesteDG
@@ -10,12 +10,12 @@ ms.workload: identity
 ms.topic: article
 ms.date: 04/28/2020
 ms.author: jeedes
-ms.openlocfilehash: ae13e062f50e1e8eefeaa886c67c636cf6230c18
-ms.sourcegitcommit: bdd5c76457b0f0504f4f679a316b959dcfabf1ef
+ms.openlocfilehash: c72ca7cb521c5c7e7ed33e9a0539de0df252ac92
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "90973884"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91321906"
 ---
 # <a name="tutorial-configure-workplace-by-facebook-for-automatic-user-provisioning"></a>Руководство по настройке Workplace by Facebook для автоматической подготовки пользователей
 
@@ -81,11 +81,11 @@ ms.locfileid: "90973884"
 
 3. Выберите вкладку **Подготовка**.
 
-    ![Вкладка "Подготовка"](common/provisioning.png)
+    ![Снимок экрана параметров управления с вызываемым параметром подготовки.](common/provisioning.png)
 
 4. Для параметра **Режим подготовки к работе** выберите значение **Automatic** (Автоматически).
 
-    ![Вкладка "Подготовка"](common/provisioning-automatic.png)
+    ![Снимок экрана: раскрывающийся список режима подготовки с вызываемым автоматическим параметром.](common/provisioning-automatic.png)
 
 5. В разделе **учетные данные администратора** щелкните **авторизовать**. Вы будете перенаправлены на страницу авторизации Facebook на рабочем месте. Введите имя вашего рабочего места в Facebook и нажмите кнопку **продолжить** . Нажмите кнопку **проверить подключение** , чтобы убедиться, что Azure AD может подключаться к рабочему месту с помощью Facebook. В случае сбоя подключения убедитесь, что учетная запись вашего рабочего места имеет разрешения администратора, и повторите попытку.
 
@@ -108,7 +108,7 @@ ms.locfileid: "90973884"
    |userName|Строка|
    |displayName|Строка|
    |active|Логическое|
-   |title|Логическое значение|
+   |title|Логическое|
    |emails[type eq "work"].value|Строка|
    |name.givenName|Строка|
    |name.familyName|Строка|
@@ -131,9 +131,9 @@ ms.locfileid: "90973884"
    |urn:scim:schemas:extension:enterprise:1.0.organization|Строка|
    |urn:scim:schemas:extension:enterprise:1.0.costCenter|Строка|
    |urn:scim:schemas:extension:enterprise:1.0.employeeNumber|Строка|
-   |urn: scim: schemas: расширение: Facebook: auth_method: 1.0: auth_method|Тип String|
-   |urn: scim: schemas: расширение: Facebook: оказался: 1.0. is_frontline|Логическое значение|
-   |urn: scim: schemas: расширение: Facebook: старттермдатес: 1.0. startDate|Тип Integer|
+   |urn: scim: schemas: расширение: Facebook: auth_method: 1.0: auth_method|Строка|
+   |urn: scim: schemas: расширение: Facebook: оказался: 1.0. is_frontline|Логическое|
+   |urn: scim: schemas: расширение: Facebook: старттермдатес: 1.0. startDate|Целое число|
 
 
 10. Чтобы настроить фильтры области, ознакомьтесь со следующими инструкциями, предоставленными в [руководстве по фильтрам области](../manage-apps/define-conditional-rules-for-provisioning-user-accounts.md).
