@@ -5,13 +5,13 @@ ms.topic: conceptual
 author: MSNev
 ms.author: newylie
 ms.date: 06/05/2020
-ms.custom: devx-track-javascript
-ms.openlocfilehash: 83f518326b38e9832c46997a0a2791eb9f35705e
-ms.sourcegitcommit: f353fe5acd9698aa31631f38dd32790d889b4dbb
+ms.custom: devx-track-js
+ms.openlocfilehash: 30c7caef4143b1a7cdba959971ff7689f986cb9e
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87371640"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91333262"
 ---
 # <a name="troubleshooting-sdk-load-failure-for-javascript-web-apps"></a>Устранение неполадок при загрузке пакета SDK для веб-приложений JavaScript
 
@@ -30,7 +30,7 @@ Editor Note: This link name above "SDK Load Failure" has a direct references by 
 
 Сведения о стеке включают основные сведения с URL-адресами, используемыми конечным пользователем.
 
-| Имя                      | Описание:                                                                                                  |
+| Имя                      | Описание                                                                                                  |
 |---------------------------|--------------------------------------------------------------------------------------------------------------|
 | &lt;&nbsp;Конечная точка CDN&gt; | URL-адрес, который был использован (и не пройден) для загрузки пакета SDK.                                                      |
 | &lt;Ссылка на справку &nbsp;&gt;    | URL-адрес, ссылающийся на документацию по устранению неполадок (на этой странице).                                              |
@@ -115,7 +115,7 @@ Editor Note: This link name above "SDK Load Failure" has a direct references by 
 
 Если исключение исчезнет, то, скорее всего, причиной проблемы является несоответствие типов или непредвиденное значение. Начните добавлять параметры конфигурации обратно в одну и ту же проверку, пока не возникнет исключение. Затем проверьте документацию по элементу, вызвавшему ошибку. Если документация непонятна или вам нужна помощь, обратитесь к [вопросу на GitHub](https://github.com/Microsoft/ApplicationInsights-JS/issues).
 
-Если конфигурация была ранее развернута и работала, но только что начали сообщать об этом исключении, это может быть вызвано проблемой с новой развернутой версией, проверять, влияет ли она только на небольшое число пользователей или браузеров, и как либо задействовать [на GitHub](https://github.com/Microsoft/ApplicationInsights-JS/issues) , либо [создать новый запрос в службу поддержки](https://azure.microsoft.com/support/create-ticket/).
+Если конфигурация была ранее развернута и работала, но только что начали сообщать об этом исключении, это может быть вызвано проблемой с новой развернутой версией, проверять, влияет ли она только на небольшое число пользователей или браузеров, и как либо задействовать [на GitHub](https://github.com/Microsoft/ApplicationInsights-JS/issues) , либо  [создать новый запрос в службу поддержки](https://azure.microsoft.com/support/create-ticket/).
 
 ### <a name="enable-console-debugging"></a>Включить отладку консоли
 

@@ -1,19 +1,19 @@
 ---
 title: Перенаправление HTTP в HTTPS с помощью интерфейса командной строки
 titleSuffix: Azure Application Gateway
-description: Узнайте, как создать шлюз приложений и добавить сертификат для завершения TLS с помощью Azure CLI.
+description: Узнайте, как создать перенаправление HTTP-HTTPS и добавить сертификат для завершения TLS с помощью Azure CLI.
 services: application-gateway
 author: vhorne
 ms.service: application-gateway
 ms.topic: how-to
-ms.date: 11/15/2019
+ms.date: 09/24/2020
 ms.author: victorh
-ms.openlocfilehash: 828012e7e41f8710dc57f1c830b81d403507d27d
-ms.sourcegitcommit: 1b320bc7863707a07e98644fbaed9faa0108da97
+ms.openlocfilehash: 7dbfa877f634256c86166892a38d048a95e56baa
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/09/2020
-ms.locfileid: "89594275"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91331035"
 ---
 # <a name="create-an-application-gateway-with-http-to-https-redirection-using-the-azure-cli"></a>Создание шлюза приложений с сертификатом с помощью Azure CLI
 
@@ -223,13 +223,6 @@ az network public-ip show \
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-В этом руководстве вы узнали, как:
-
-> [!div class="checklist"]
-> * Создание самозаверяющего сертификата
-> * настройка сети;
-> * создание шлюза приложений с сертификатом;
-> * добавление прослушивателя и правила перенаправления;
-> * создание масштабируемого набора виртуальных машин с серверным пулом, используемым по умолчанию.
+- [Создание шлюза приложений с перенаправлением внутреннего трафика при помощи Azure CLI](redirect-internal-site-cli.md)
 
 

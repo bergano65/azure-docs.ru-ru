@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 08/06/2020
 ms.author: memildin
-ms.openlocfilehash: bbabceeea2fd009efe1098e37a0b1c9dcb8a48aa
-ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
+ms.openlocfilehash: 17a3d0364f3085e4baf4e0faa40f117d9fbbb04f
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "90894726"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91268168"
 ---
 # <a name="use-adaptive-application-controls-to-reduce-your-machines-attack-surfaces"></a>Использование адаптивных элементов управления приложениями для сокращения поверхностей атак на компьютерах
 
@@ -48,7 +48,7 @@ ms.locfileid: "90894726"
 
 ## <a name="availability"></a>Доступность
 
-|Аспект|Подробнее|
+|Аспект|Подробности|
 |----|:----|
 |Состояние выпуска:|Общедоступная версия (GA)|
 |Цены|Требуется [защитник Azure для серверов](defender-for-servers-introduction.md)|
@@ -229,4 +229,4 @@ ms.locfileid: "90894726"
 В этом документе вы узнали, как использовать адаптивное управление приложениями в центре безопасности Azure для определения списков разрешенных приложений, выполняющихся на компьютерах с Azure и без Azure. Дополнительные сведения о других функциях защиты облачной рабочей нагрузки центра безопасности см. в следующих статьях:
 
 * [Основные сведения о JIT-доступе к виртуальной машине](just-in-time-explained.md)
-* [Защита кластеров Azure Kubernetes](azure-kubernetes-service-integration.md)
+* [Защита кластеров Azure Kubernetes](defender-for-kubernetes-introduction.md)

@@ -7,12 +7,12 @@ ms.service: vpn-gateway
 ms.topic: troubleshooting
 ms.date: 03/27/2018
 ms.author: alzam
-ms.openlocfilehash: 33e67df5ad68a78cc35f7168813716d1d794d527
-ms.sourcegitcommit: bf1340bb706cf31bb002128e272b8322f37d53dd
+ms.openlocfilehash: be7b6349a7bf51a4fb99e3604a04f9d95403b74f
+ms.sourcegitcommit: d95cab0514dd0956c13b9d64d98fdae2bc3569a0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/03/2020
-ms.locfileid: "89442808"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91359330"
 ---
 # <a name="troubleshoot-point-to-site-vpn-connections-from-mac-os-x-vpn-clients"></a>Устранение неполадок VPN-подключений "точка — сеть" для клиентов Mac OS X
 
@@ -34,7 +34,7 @@ ms.locfileid: "89442808"
 4. **Локальный идентификатор** должен совпадать со значением **субъекта** в сертификате клиента.
 5. Щелкните **Authentication Settings** (Параметры проверки подлинности), чтобы открыть соответствующую страницу.
 
-   ![Параметры проверки подлинности](./media/vpn-gateway-troubleshoot-point-to-site-osx-ikev2/ikev2auth2.jpg)
+   ![На снимке экрана отображается диалоговое окно Параметры проверки подлинности с выбранным сертификатом.](./media/vpn-gateway-troubleshoot-point-to-site-osx-ikev2/ikev2auth2.jpg)
 6. Убедитесь, что в раскрывающемся списке выбран вариант **Сертификат**.
 7. Щелкните **Выбрать** и убедитесь, что выбран правильный сертификат. Щелкните **OK**, чтобы сохранить изменения.
 
@@ -48,7 +48,7 @@ ms.locfileid: "89442808"
 4. Поле **локального идентификатора** можно оставить пустым.
 5. Нажмите кнопку **Authentication Setting** (Параметры проверки подлинности) и убедитесь, что в раскрывающемся списке выбран вариант Username (Имя пользователя).
 
-   ![Параметры проверки подлинности](./media/vpn-gateway-troubleshoot-point-to-site-osx-ikev2/ikev2auth4.png)
+   ![На снимке экрана отображается диалоговое окно Параметры проверки подлинности с выбранным именем пользователя.](./media/vpn-gateway-troubleshoot-point-to-site-osx-ikev2/ikev2auth4.png)
 6. Убедитесь, что введены правильные учетные данные.
 
 ## <a name="additional-steps"></a><a name="additional"></a>Дополнительные действия

@@ -9,14 +9,14 @@ ms.devlang: ''
 ms.topic: conceptual
 author: stevestein
 ms.author: sstein
-ms.reviewer: carlrab
+ms.reviewer: ''
 ms.date: 12/20/2018
-ms.openlocfilehash: 307e501743d01b94cfca3692cc09c05cc90ed3ce
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: bd2f0a3e41508dd41dc0e5b62532e21677987845
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84343240"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91332939"
 ---
 # <a name="monitor-sql-data-sync-with-azure-monitor-logs"></a>Мониторинг синхронизации данных SQL с помощью журналов Azure Monitor 
 
@@ -61,7 +61,7 @@ ms.locfileid: "84343240"
 
 -   [Представление Azure Monitor синхронизации данных](https://github.com/Microsoft/sql-server-samples/blob/master/samples/features/sql-data-sync/DataSyncLogOmsView.omsview)
 
-### <a name="prerequisites"></a>Предварительные условия
+### <a name="prerequisites"></a>Предварительные требования
 
 Настройте следующие компоненты:
 
@@ -149,7 +149,7 @@ ms.locfileid: "84343240"
 
 5.  В разделе **действия**задайте для **уведомления по электронной почте** значение "Да". Введите необходимые электронные адреса получателей.
 
-6.  Нажмите кнопку **Сохранить**. Теперь при возникновении ошибок заданные получатели будут получать уведомления по электронной почте.
+6.  Выберите команду **Сохранить**. Теперь при возникновении ошибок заданные получатели будут получать уведомления по электронной почте.
 
 ## <a name="create-an-azure-monitor-view-for-monitoring"></a>Создание представления Azure Monitor для мониторинга
 
@@ -197,7 +197,7 @@ ms.locfileid: "84343240"
 
 -   [Представление Azure Monitor синхронизации данных](https://github.com/Microsoft/sql-server-samples/blob/master/samples/features/sql-data-sync/DataSyncLogOmsView.omsview)
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 Дополнительные сведения о синхронизации данных SQL:
 
 -   Обзор. [Синхронизация данных в нескольких облачных и локальных базах данных с помощью синхронизации данных SQL в Azure](sql-data-sync-data-sql-server-sql-database.md)

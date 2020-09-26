@@ -4,14 +4,14 @@ description: Узнайте, как управлять ресурсами Azure 
 author: markjbrown
 ms.service: cosmos-db
 ms.topic: how-to
-ms.date: 04/30/2020
+ms.date: 09/18/2020
 ms.author: mjbrown
-ms.openlocfilehash: 35659eba274b4b93ca74e480f6ad2b5edfd2e293
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 6b09c51c68586f6e55b4238b7420460f3f2b4ac3
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85116763"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91330576"
 ---
 # <a name="manage-an-azure-cosmos-account"></a>Управление учетной записью Azure Cosmos
 
@@ -153,7 +153,7 @@ ms.locfileid: "85116763"
 
 3. На панели **Автоматический переход на другой ресурс** убедитесь, что для параметра **Включить автоматическую отработку отказа** установлено значение **ВКЛ**. 
 
-4. Нажмите кнопку **Сохранить**.
+4. Щелкните **Сохранить**.
 
    :::image type="content" source="./media/how-to-manage-database-account/automatic-failover.png" alt-text="Меню автоматического перехода на другой ресурс на портале":::
 
@@ -184,7 +184,7 @@ ms.locfileid: "85116763"
 
 4. Чтобы изменить приоритет при отработке отказа, щелкните и перетащите регионы чтения, щелкнув три точки в левой части строки, которые появляются при наведении указателя мыши на строку.
 
-5. Нажмите кнопку **Сохранить**.
+5. Щелкните **Сохранить**.
 
    :::image type="content" source="./media/how-to-manage-database-account/automatic-failover.png" alt-text="Меню автоматического перехода на другой ресурс на портале":::
 
@@ -228,7 +228,7 @@ ms.locfileid: "85116763"
 
 См. раздел [Активация перехода на другой ресурс вручную с помощью PowerShell](manage-with-powershell.md#trigger-manual-failover) .
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения и примеры по управлению учетной записью Azure Cosmos, а также базами данных и контейнерами см. в следующих статьях:
 

@@ -5,12 +5,12 @@ author: srrengar
 ms.topic: conceptual
 ms.date: 6/6/2019
 ms.author: srrengar
-ms.openlocfilehash: e2fcbd07c105885da4180b06fa27ec13045940a6
-ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
+ms.openlocfilehash: 0b6258e160794eaf7d0c05775f8fd3b796e3ba47
+ms.sourcegitcommit: d95cab0514dd0956c13b9d64d98fdae2bc3569a0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2020
-ms.locfileid: "86247648"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91354825"
 ---
 # <a name="eventstore-overview"></a>Обзор Евентсторе
 
@@ -26,7 +26,7 @@ EventStore — это служба Service Fabric с отслеживанием
 * Проверить, правильно ли обрабатываются действия управления, предпринимаемые в кластере.
 * Получить моментальный снимок взаимодействия Service Fabric с конкретной сущностью.
 
-![EventStore](media/service-fabric-diagnostics-eventstore/eventstore.png)
+![На снимке экрана показана вкладка события на панели узлы с несколькими событиями, включая событие Нодедовн.](media/service-fabric-diagnostics-eventstore/eventstore.png)
 
 Полный список событий, доступных в EventStore, см. в [этом](service-fabric-diagnostics-event-generation-operational.md) разделе.
 

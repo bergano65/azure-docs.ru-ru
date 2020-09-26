@@ -10,14 +10,14 @@ ms.devlang: ''
 ms.topic: conceptual
 author: stevestein
 ms.author: sstein
-ms.reviewer: carlrab
+ms.reviewer: ''
 ms.date: 02/11/2019
-ms.openlocfilehash: 106337fb4756052ee682624290620093bf4a70b3
-ms.sourcegitcommit: 124f7f699b6a43314e63af0101cd788db995d1cb
+ms.openlocfilehash: 275ad3f2dfa04241b1f2a5687cb5dc32b7a31e75
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86081950"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91333177"
 ---
 # <a name="sql-server-database-migration-to-azure-sql-database"></a>Перенос базы данных SQL Server в Базу данных SQL Azure
 [!INCLUDE[appliesto-sqldb](../includes/appliesto-sqldb.md)]
@@ -84,14 +84,14 @@ ms.locfileid: "86081950"
 > Используйте последнюю версию SQL Server Management Studio, чтобы сохранить синхронизацию с обновлениями для Azure и базы данных SQL. Более старые версии SQL Server Management Studio не позволяют настроить Базу данных SQL как подписчика. [Обновите среду SQL Server Management Studio](/sql/ssms/download-sql-server-management-studio-ssms).
 
 1. Настройка распространения
-   - [С помощью SQL Server Management Studio (SSMS)](/sql/relational-databases/replication/configure-publishing-and-distribution/).
+   - [Использование среды SQL Server Management Studio (SSMS)](/sql/relational-databases/replication/configure-publishing-and-distribution/)
    - [Использование Transact-SQL](/sql/relational-databases/replication/configure-publishing-and-distribution/)
 
 2. Создание публикации
-   - [С помощью SQL Server Management Studio (SSMS)](/sql/relational-databases/replication/configure-publishing-and-distribution/).
+   - [Использование среды SQL Server Management Studio (SSMS)](/sql/relational-databases/replication/configure-publishing-and-distribution/)
    - [Использование Transact-SQL](/sql/relational-databases/replication/configure-publishing-and-distribution/)
 3. Создавать подписку
-   - [С помощью SQL Server Management Studio (SSMS)](/sql/relational-databases/replication/create-a-push-subscription/).
+   - [Использование среды SQL Server Management Studio (SSMS)](/sql/relational-databases/replication/create-a-push-subscription/)
    - [Использование Transact-SQL](/sql/relational-databases/replication/create-a-push-subscription/)
 
 Некоторые советы и описание различий при миграции в базу данных SQL
@@ -119,7 +119,7 @@ ms.locfileid: "86081950"
 > [!IMPORTANT]
 > Управляемый экземпляр Azure SQL позволяет перенести существующий экземпляр SQL Server и его базы данных с минимальными затратами на проблемы с совместимостью. См. раздел [что такое управляемый экземпляр](../managed-instance/sql-managed-instance-paas-overview.md).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Воспользуйтесь скриптом в блоге разработчиков EMEA SQL Azure для [отслеживания использования базы данных TempDB во время миграции](https://blogs.msdn.microsoft.com/azuresqlemea/2016/12/28/lesson-learned-10-monitoring-tempdb-usage/).
 - Воспользуйтесь скриптом в блоге разработчиков EMEA SQL Azure, чтобы [отслеживать объем, занимаемый журналом транзакций в базе данных, во время миграции](https://docs.microsoft.com/archive/blogs/azuresqlemea/lesson-learned-7-monitoring-the-transaction-log-space-of-my-database).

@@ -10,12 +10,12 @@ ms.author: jeanyd
 ms.reviewer: mikeray
 ms.date: 09/22/2020
 ms.topic: how-to
-ms.openlocfilehash: 93b0547ba25f6534593a0a016ebfa5cbe4d2be2e
-ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
+ms.openlocfilehash: 4087d618209ab4db46f89ef4e6db7ac87ca4cf57
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "90940798"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91331018"
 ---
 # <a name="get-connection-endpoints-and-form-connection-strings-for-your-arc-enabled-postgresql-hyperscale-server-group"></a>Получение конечных точек подключения и формы строки подключения для PostgreSQL группы серверов с поддержкой Arc
 
@@ -77,7 +77,7 @@ postgres=#
 ```
 > [!NOTE]
 >
-> - Пароль пользователя _PostgreSQL_ , указанный в конечной точке с именем «_PostgreSQL instance_ », — это пароль, выбранный при создании группы серверов.
+> - Пароль пользователя _postgres_ , указанный в конечной точке с именем "_PostgreSQL instance_", — это пароль, выбранный при развертывании группы серверов.
 > - О аздата. Аренда, связанная с вашим подключением, длится примерно 10 часов. После этого необходимо выполнить повторное подключение. Если срок аренды истек, вы получите следующее сообщение об ошибке при попытке выполнить команду с аздата (кроме аздата login): _Ошибка: (401)_ 
 >  _Причина: неавторизованные_ 
 >  _заголовки ответа HTTP: хттфеадердикт ({' date ': ' Sun, 06 Sep 2020 16:58:38 GMT "," Content-Length ":" 0 "," www-Аутентификация ":"_ 
