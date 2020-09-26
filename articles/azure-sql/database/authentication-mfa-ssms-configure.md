@@ -12,12 +12,12 @@ author: GithubMirek
 ms.author: mireks
 ms.reviewer: vanto
 ms.date: 08/27/2019
-ms.openlocfilehash: b1dbd66e34790599020233c5b1249593a4c0472d
-ms.sourcegitcommit: bf1340bb706cf31bb002128e272b8322f37d53dd
+ms.openlocfilehash: 8f72b9e9dfc2aa35960f9f81219a4c8973e2fe5b
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/03/2020
-ms.locfileid: "89442655"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91277933"
 ---
 # <a name="configure-multi-factor-authentication-for-sql-server-management-studio-and-azure-ad"></a>Настройка Многофакторной идентификации для SQL Server Management Studio и Azure AD
 [!INCLUDE[appliesto-sqldb-sqlmi-asa](../includes/appliesto-sqldb-sqlmi-asa.md)]
@@ -40,22 +40,22 @@ ms.locfileid: "89442655"
 
 1. Чтобы подключиться с помощью универсальной проверки подлинности, в диалоговом окне **Подключение к серверу** в SQL Server Management Studio (SSMS) выберите **Active Directory-Universal с поддержкой MFA**. (Если отображается параметр **Универсальная проверка подлинности Active Directory**, значит, у вас не самая последняя версия SSMS.)
 
-   ![1mfa-universal-connect](./media/authentication-mfa-ssms-configure/mfa-no-tenant-ssms.png)  
+   ![Снимок экрана: вкладка "Свойства подключения" в диалоговом окне "соединение с сервером" в s м S. в раскрывающемся списке подключение к базе данных выбрано значение "MyDatabase".](./media/authentication-mfa-ssms-configure/mfa-no-tenant-ssms.png)  
 2. Заполните поле **Имя пользователя** учетными данными Azure Active Directory в формате `user_name@domain.com`.
 
-   ![1mfa-universal-connect-user](./media/authentication-mfa-ssms-configure/1mfa-universal-connect-user.png)
+   ![Снимок экрана: параметры диалогового окна "подключение к серверу" для типа сервера, имени сервера, проверки подлинности и имени пользователя.](./media/authentication-mfa-ssms-configure/1mfa-universal-connect-user.png)
 3. Если вы подключаетесь от имени гостевого пользователя, вам больше не нужно заполнять поле доменного имени AD или идентификатора клиента для гостевых пользователей, так как SSMS 18. x или более поздней версии автоматически распознает его. Дополнительные сведения см. в статьях [Универсальная проверка подлинности с базой данных SQL, sql управляемый экземпляр и Azure синапсе (поддержка SSMS для MFA)](../database/authentication-mfa-ssms-overview.md).
 
-   ![MFA-No-клиент-SSMS](./media/authentication-mfa-ssms-configure/mfa-no-tenant-ssms.png)
+   ![Снимок экрана: вкладка "Свойства подключения" в диалоговом окне "соединение с сервером" в s м S. в раскрывающемся списке подключение к базе данных выбрано значение "MyDatabase".](./media/authentication-mfa-ssms-configure/mfa-no-tenant-ssms.png)
 
    Однако если вы подключаетесь от имени гостевого пользователя с помощью SSMS 17. x или более ранней версии, необходимо нажать кнопку **Параметры**и в диалоговом окне **Свойства соединения** и заполнить поле **доменное имя AD или идентификатор клиента** .
 
-   ![mfa-tenant-ssms](./media/authentication-mfa-ssms-configure/mfa-tenant-ssms.png)
+   ![Снимок экрана: вкладка "Свойства подключения" диалогового окна "соединение с сервером" в s м S. поле "параметр доменное имя AD" или "идентификатор клиента" заполнено.](./media/authentication-mfa-ssms-configure/mfa-tenant-ssms.png)
 
 4. Выберите **Параметры** и укажите базу данных в диалоговом окне **Параметры** . (Если подключенный пользователь является гостевым пользователем (т. е. joe@outlook.com ), необходимо установить флажок и добавить текущее доменное имя AD или идентификатор клиента как часть параметров. См. статью [Универсальная проверка подлинности с помощью базы данных SQL и Azure синапсе Analytics (поддержка SSMS для MFA)](../database/authentication-mfa-ssms-overview.md). Щелкните **Подключить**.  
 5. Когда откроется диалоговое окно **Вход в учетную запись** , укажите учетную запись и пароль своего удостоверения Azure Active Directory. Пароль не требуется, если пользователь является частью домена в федерации с Azure AD.
 
-   ![2mfa-sign-in](./media/authentication-mfa-ssms-configure/2mfa-sign-in.png)  
+   ![Снимок экрана: диалоговое окно входа в учетную запись для базы данных SQL Azure и хранилища данных. Учетная запись и пароль заполняются.](./media/authentication-mfa-ssms-configure/2mfa-sign-in.png)  
 
    > [!NOTE]
    > Если для этой учетной записи не требуется MFA, то на этом этапе универсальной аутентификации устанавливается подключение. Пользователям, которым требуется MFA, следует выполнить приведенные ниже действия.
@@ -63,14 +63,14 @@ ms.locfileid: "89442655"
 
 6. Могут отобразиться два диалоговых окна настройки MFA. Эта одноразовая операция зависит от параметра администратора MFA, то есть может быть необязательной. Для домена с поддержкой MFA этот шаг иногда бывает предварительно определен (например, домен требует от пользователя использовать смарт-карту и ПИН-код).
 
-   ![3mfa-setup](./media/authentication-mfa-ssms-configure/3mfa-setup.png)
+   ![Снимок экрана: диалоговое окно входа в учетную запись для базы данных SQL Azure и хранилища данных с запросом на настройку дополнительной проверки безопасности.](./media/authentication-mfa-ssms-configure/3mfa-setup.png)
   
 7. В диалоговом окне второй одноразовой операции можно выбрать параметры метода аутентификации. Возможные параметры настраиваются администратором.
 
-   ![4mfa-verify-1](./media/authentication-mfa-ssms-configure/4mfa-verify-1.png)  
+   ![Снимок экрана: диалоговое окно дополнительной проверки безопасности с параметрами выбора и настройки метода проверки подлинности.](./media/authentication-mfa-ssms-configure/4mfa-verify-1.png)  
 8. Azure Active Directory отправляет вам информациею о подтверждении. Получив код проверки, введите его в поле **Введите проверочный код** и нажмите кнопку **Вход**.
 
-   ![5mfa-verify-2](./media/authentication-mfa-ssms-configure/5mfa-verify-2.png)  
+   ![Снимок экрана: диалоговое окно входа в учетную запись для базы данных SQL Azure и хранилища данных с запросом на ввод кода проверки.](./media/authentication-mfa-ssms-configure/5mfa-verify-2.png)  
 
 Обычно по завершении проверки выполняется подключение SSMS при условии, что указаны действительные учетные данные и в брандмауэре разрешен доступ.
 

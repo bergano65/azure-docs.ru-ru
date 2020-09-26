@@ -6,13 +6,13 @@ ms.service: cosmos-db
 ms.topic: how-to
 ms.date: 06/10/2020
 ms.author: anfeldma
-ms.custom: devx-track-javascript, devx-track-csharp
-ms.openlocfilehash: 85c99892a225de933da337e748ebde3370b6f7a3
-ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
+ms.custom: devx-track-js, devx-track-csharp
+ms.openlocfilehash: 7a07a42e208cb0f6fe91f6a65777fd28155106a1
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89019612"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91330593"
 ---
 # <a name="manage-consistency-levels-in-azure-cosmos-db"></a>Управление уровнями согласованности в Azure Cosmos DB
 
@@ -287,7 +287,7 @@ item = client.ReadItem(doc_link, options)
 
 Узнайте больше о том, как управлять конфликтами данных, или перейдите к следующей ключевой концепции в Azure Cosmos DB. См. следующие статьи:
 
-* [Настраиваемые уровни согласованности данных в Azure Cosmos DB](consistency-levels.md)
+* [Уровни согласованности в Azure Cosmos DB](consistency-levels.md)
 * [Управление конфликтами между регионами](how-to-manage-conflicts.md)
 * [Секционирование и масштабирование в Azure Cosmos DB](partition-data.md)
 * [Компромиссы согласованности в современных распределенных системах баз данных](https://www.computer.org/csdl/magazine/co/2012/02/mco2012020037/13rRUxjyX7k)

@@ -10,14 +10,14 @@ ms.reviewer: craigg
 ms.service: dms
 ms.workload: data-services
 ms.custom: seo-lt-2019
-ms.topic: article
+ms.topic: how-to
 ms.date: 02/20/2020
-ms.openlocfilehash: 13fcda03f3ccd0c28e1dce594c46b8c0d9449054
-ms.sourcegitcommit: 124f7f699b6a43314e63af0101cd788db995d1cb
+ms.openlocfilehash: 7f7bc16658733a7200d29fae22d96a2157b73065
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86086574"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91292138"
 ---
 # <a name="migrate-sql-server-integration-services-packages-to-an-azure-sql-managed-instance"></a>Перенос пакетов SQL Server Integration Services в Управляемый экземпляр SQL Azure
 Если вы используете SQL Server Integration Services (SSIS) и хотите перенести проекты или пакеты служб SSIS из исходной SSISDB, размещенной SQL Server, в целевую SSISDB, размещенную Управляемый экземпляр Azure SQL, можно использовать Azure Database Migration Service.
@@ -126,7 +126,7 @@ ms.locfileid: "86086574"
 
    ![Сведения об источнике](media/how-to-migrate-ssis-packages-mi/dms-source-details1.png)
 
-3. Нажмите кнопку **Сохранить**.
+3. Щелкните **Сохранить**.
 
 ## <a name="specify-target-details"></a>Указание сведений о цели
 
@@ -150,6 +150,6 @@ ms.locfileid: "86086574"
 
 * Выберите **Запустить миграцию**.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Просмотрите [руководство по миграции базы данных Майкрософт](https://datamigration.microsoft.com/).

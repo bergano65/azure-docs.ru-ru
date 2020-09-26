@@ -68,7 +68,7 @@
             - name: Основы
               href: data-lake-analytics-u-sql-get-started.md
             - name: Справочник по языку
-              href: 'https://msdn.microsoft.com/library/azure/mt591959'
+              href: 'https://docs.microsoft.com/u-sql/'
             - name: Каталог
               href: data-lake-analytics-u-sql-catalog.md
             - name: Определяемые пользователем операторы
@@ -159,7 +159,7 @@
       href: /azure/templates/microsoft.datalakeanalytics/allversions
     - name: Azure CLI
       href: 'https://docs.microsoft.com/cli/azure/dla'
-    - name: Встроенные политики службы "Политика Azure"
+    - name: Встроенные компоненты Политики Azure
       displayName: 'samples, policies, definitions'
       href: ./policy-reference.md
 - name: Ресурсы

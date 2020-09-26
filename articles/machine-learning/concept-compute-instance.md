@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.author: sgilley
 author: sdgilley
 ms.date: 08/25/2020
-ms.openlocfilehash: ec7fc5cec7d8ba63d9a628c3ede978818a2c3012
-ms.sourcegitcommit: 3fc3457b5a6d5773323237f6a06ccfb6955bfb2d
+ms.openlocfilehash: 14229af9766f6604e71713f835935d43f6c7fcc6
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/11/2020
-ms.locfileid: "90031030"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91330151"
 ---
 # <a name="what-is-an-azure-machine-learning-compute-instance"></a>Сведения о вычислительном экземпляре Машинного обучения Azure
 
@@ -69,7 +69,7 @@ ms.locfileid: "90031030"
 |Anaconda Python||
 |Jupyter и расширения||
 |Jupyterlab и расширения||
-[Пакет SDK службы "Машинное обучение Azure" для Python](https://docs.microsoft.com/python/api/overview/azure/ml/intro?view=azure-ml-py)</br>из PyPI|Включает большинство дополнительных пакетов azureml.  Чтобы просмотреть полный список, [откройте окно терминала в вычислительном экземпляре](how-to-run-jupyter-notebooks.md#terminal) и выполните команду <br/> `conda list -n azureml_py36 azureml*` |
+[Пакет SDK службы "Машинное обучение Azure" для Python](https://docs.microsoft.com/python/api/overview/azure/ml/intro?view=azure-ml-py&preserve-view=true)</br>из PyPI|Включает большинство дополнительных пакетов azureml.  Чтобы просмотреть полный список, [откройте окно терминала в вычислительном экземпляре](how-to-run-jupyter-notebooks.md#terminal) и выполните команду <br/> `conda list -n azureml_py36 azureml*` |
 |Другие пакеты PyPI|`jupytext`</br>`tensorboard`</br>`nbconvert`</br>`notebook`</br>`Pillow`|
 |Пакеты Conda|`cython`</br>`numpy`</br>`ipykernel`</br>`scikit-learn`</br>`matplotlib`</br>`tqdm`</br>`joblib`</br>`nodejs`</br>`nb_conda_kernels`|
 |Пакеты глубокого обучения|`PyTorch`</br>`TensorFlow`</br>`Keras`</br>`Horovod`</br>`MLFlow`</br>`pandas-ml`</br>`scrapbook`|
@@ -91,6 +91,30 @@ ms.locfileid: "90031030"
 * Jupyter Lab:  выберите плитку **Terminal** (Терминал) под заголовком **Other** (Другое) на вкладке Launcher (Средства запуска).
 * Jupyter:  на вкладке Files (Файлы) в правом верхнем углу выберите **New > Terminal** (Создать > Терминал).
 * Подключитесь к компьютеру по протоколу SSH.  Установите пакеты Python в среде **Python 3.6 — AzureML**.  Установите пакеты R в среде **R**.
+
+### <a name="add-new-kernels"></a>Добавление новых ядер
+
+Добавление нового ядра Jupyter в вычислительный экземпляр:
+
+1. Создайте новый терминал из панели записных книжек Jupyter, JupyterLab или из Блокнота или SSH в вычислительный экземпляр.
+2. Создайте новую среду с помощью терминала.  Например, приведенный ниже код создает `newenv` :
+    ```shell
+    conda create --name newenv
+    ```
+3. Активируйте среду.  Например, после создания среды `newenv`:
+
+    ```shell
+    conda activate newenv
+    ```
+4. Установите PIP и пакет ипикернел в новой среде и создайте ядро для этого conda env.
+
+    ```shell
+    conda install pip
+    conda install ipykernel
+    python -m ipykernel install --user --name newenv --display-name "Python (newenv)"
+    ```
+
+Можно установить любое из [доступных ядер Jupyter](https://github.com/jupyter/jupyter/wiki/Jupyter-kernels).
 
 ## <a name="accessing-files"></a>Доступ к файлам
 
@@ -136,7 +160,7 @@ ms.locfileid: "90031030"
 * *Microsoft. Мачинелеарнингсервицес/рабочие области/вычислений/действие*
 * *Microsoft. Мачинелеарнингсервицес/рабочие области/вычислений/перезагрузка/действие*
 
-### <a name="create-a-compute-instance"></a><a name="create"></a>Создание вычислительного экземпляра
+### <a name="create-a-compute-instance"></a><a name="create"></a>Создание экземпляра вычислений
 
 В рабочей области Машинное обучение Azure Studio [Создайте новый вычислительный экземпляр](how-to-create-attach-compute-studio.md#compute-instance) из раздела **вычислений** или **записных книжек** , когда будете готовы запустить одну из ваших записных книжек. 
 
@@ -153,7 +177,7 @@ ms.locfileid: "90031030"
 ### <a name="create-on-behalf-of-preview"></a>Создание от имени (Предварительная версия)
 
 Как администратор вы можете создать вычислительный экземпляр от имени анализу данных и присвоить ему экземпляр с помощью:
-* [Шаблон Azure Resource Manager](https://docs.microsoft.com/azure/templates/microsoft.machinelearningservices/2020-06-01/workspaces/computes).  Дополнительные сведения о том, как найти ИД клиента и идентификатор объекта, необходимые в этом шаблоне, см. в разделе [Поиск кодов объектов удостоверений для конфигурации проверки подлинности](../healthcare-apis/find-identity-object-ids.md).  Эти значения также можно найти на портале Azure Active Directory.
+* [Шаблон Azure Resource Manager](https://github.com/Azure/azure-rest-api-specs/blob/master/specification/machinelearningservices/resource-manager/Microsoft.MachineLearningServices/preview/2020-09-01-preview/examples/createComputeInstance.json).  Дополнительные сведения о том, как найти ИД клиента и идентификатор объекта, необходимые в этом шаблоне, см. в разделе [Поиск кодов объектов удостоверений для конфигурации проверки подлинности](../healthcare-apis/find-identity-object-ids.md).  Эти значения также можно найти на портале Azure Active Directory.
 * REST API
 
 Анализу данных, для которых создается вычислительный экземпляр, требуются следующие разрешения RBAC: 
