@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: article
 ms.date: 04/16/2020
 ms.author: Zhchia
-ms.openlocfilehash: aa875877d4017409b961eedda2af281622c45cf9
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.openlocfilehash: cb4dd6646eceaa6028dca4e04e9cddced487de3e
+ms.sourcegitcommit: d95cab0514dd0956c13b9d64d98fdae2bc3569a0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 09/25/2020
-ms.locfileid: "91312368"
+ms.locfileid: "91361676"
 ---
 # <a name="tutorial-configure-juno-journey-for-automatic-user-provisioning"></a>Руководство по Настройка Juno Journey для автоматической подготовки пользователей
 
@@ -85,7 +85,7 @@ ms.locfileid: "91312368"
 
 5. В разделе **Учетные данные администратора** введите в поле **URL-адрес арендатора** значение URL-адреса, полученное ранее. Введите значение секретного токена, полученное ранее на шаге **Секретный токен**. Щелкните **Проверить подключение** и убедитесь, что Azure AD может подключиться к Juno Journey. Если подключение установить не удалось, убедитесь, что у учетной записи Juno Journey есть разрешения администратора, и повторите попытку.
 
-    ![Подготовка](./media/juno-journey-provisioning-tutorial/provisioning.png)
+    ![На снимке экрана отображается диалоговое окно учетные данные администратора, в котором можно ввести клиент U R и секретный маркер.](./media/juno-journey-provisioning-tutorial/provisioning.png)
 
 6. В поле **Электронная почта для уведомлений** введите адрес электронной почты пользователя или группы, которые должны получать уведомления об ошибках подготовки, а также установите флажок **Отправить уведомление по электронной почте при сбое**.
 

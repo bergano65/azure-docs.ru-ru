@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: article
 ms.date: 07/26/2019
 ms.author: zhchia
-ms.openlocfilehash: 08fe2cd87200e1a22f36ab01b58c6cf82fd1f007
-ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
+ms.openlocfilehash: 3c6288cd071e7c94026a0eb58c6b60ecd91d9137
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88550829"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91312708"
 ---
 # <a name="tutorial-configure-fuze-for-automatic-user-provisioning"></a>Учебник. Настройка Fuze для автоматической подготовки пользователей
 
@@ -37,7 +37,7 @@ ms.locfileid: "88550829"
 
 В сценарии, описанном в этом руководстве, предполагается, что у вас уже имеется:
 
-* [Клиент Azure AD](https://docs.microsoft.com/azure/active-directory/develop/quickstart-create-new-tenant).
+* [Клиент Azure AD.](https://docs.microsoft.com/azure/active-directory/develop/quickstart-create-new-tenant)
 * Учетная запись пользователя в Azure AD с [разрешением](https://docs.microsoft.com/azure/active-directory/users-groups-roles/directory-assign-admin-roles) на настройку подготовки (например, администратор приложений, администратор облачных приложений, владелец приложения или глобальный администратор).
 * [Клиент Fuze](https://www.fuze.com/).
 * Учетная запись пользователя в Fuze с разрешениями администратора.
@@ -90,11 +90,11 @@ ms.locfileid: "88550829"
 
 3. Выберите вкладку **Подготовка**.
 
-    ![Вкладка "Подготовка"](common/provisioning.png)
+    ![Снимок экрана параметров управления с вызываемым параметром подготовки.](common/provisioning.png)
 
 4. Для параметра **Режим подготовки к работе** выберите значение **Automatic** (Автоматически).
 
-    ![Вкладка "Подготовка"](common/provisioning-automatic.png)
+    ![Снимок экрана: раскрывающийся список режима подготовки с вызываемым автоматическим параметром.](common/provisioning-automatic.png)
 
 5. В разделе **учетные данные администратора** введите **базовый URL-адрес scim 2,0 и значение маркера проверки ПОдлинности scim** , полученное ранее от представителя Fuze в поле **URL-адрес клиента** и **секретный маркер**. Щелкните **проверить подключение** , чтобы убедиться, что Azure AD может подключиться к Fuze. Если подключение не выполняется, убедитесь, что у учетной записи Fuze есть разрешения администратора, и повторите попытку.
 
@@ -104,7 +104,7 @@ ms.locfileid: "88550829"
 
     ![Почтовое уведомление](common/provisioning-notification-email.png)
 
-7. Нажмите **Сохранить**.
+7. Выберите команду **Сохранить**.
 
 8. В разделе **сопоставления** выберите **синхронизировать Azure Active Directory пользователей с Fuze**.
 

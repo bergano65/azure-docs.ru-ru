@@ -1,18 +1,18 @@
 ---
 title: Перенаправление внешнего трафика с помощью интерфейса командной строки (шлюз приложений Azure)
-description: Узнайте, как создать шлюз приложений, который перенаправляет внутренний веб-трафик в соответствующий пул с помощью Azure CLI.
+description: Узнайте, как создать шлюз приложений, который перенаправляет внешний веб-трафик в соответствующий пул, используя Azure CLI.
 services: application-gateway
 author: vhorne
 ms.service: application-gateway
 ms.topic: how-to
-ms.date: 11/13/2019
+ms.date: 09/24/2020
 ms.author: victorh
-ms.openlocfilehash: 7566122e4edf4357562e830197fade746f18a16f
-ms.sourcegitcommit: 1b320bc7863707a07e98644fbaed9faa0108da97
+ms.openlocfilehash: 5a8d7aff6a030b3adbb5370caa166bbd290e09bc
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/09/2020
-ms.locfileid: "89594272"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91331055"
 ---
 # <a name="create-an-application-gateway-with-external-redirection-using-the-azure-cli"></a>Создание шлюза приложений с перенаправлением внешнего трафика с помощью Azure CLI
 
@@ -131,8 +131,4 @@ az network application-gateway rule create \
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-В этом руководстве вы узнали, как:
-
-> * Настройка сети
-> * создание прослушивателя и правила перенаправления;
-> * Создание шлюза приложений
+- [Создание шлюза приложений с перенаправлением внутреннего трафика при помощи Azure CLI](redirect-internal-site-cli.md)

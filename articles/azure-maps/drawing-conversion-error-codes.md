@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.service: azure-maps
 services: azure-maps
 manager: philMea
-ms.openlocfilehash: d79c42f3bdf84efcdf2187741ac270087be05272
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 14cf5238d29ede1ea229604316eee875b417e50e
+ms.sourcegitcommit: d95cab0514dd0956c13b9d64d98fdae2bc3569a0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "83682012"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91361540"
 ---
 # <a name="drawing-conversion-errors-and-warnings"></a>Ошибки и предупреждения, связанные с преобразованием рисунков
 
@@ -35,9 +35,9 @@ ms.locfileid: "83682012"
 
 * На двух рисунках ниже показаны примеры самопересекающихся многоугольников.
 
-     ![Пример самопересекающегося многоугольника](./media/drawing-conversion-error-codes/geometry-warning-1.png)
+     ![Пример самопересекающегося многоугольника, например один.](./media/drawing-conversion-error-codes/geometry-warning-1.png)
 
-     ![Пример самопересекающегося многоугольника](./media/drawing-conversion-error-codes/geometry-warning-2.png)
+     ![Пример самопересекающегося многоугольника, например два.](./media/drawing-conversion-error-codes/geometry-warning-2.png)
 
 * Ниже приведен рисунок, на котором показана незамкнутая ломаная линия. Допустим, что слой поддерживает только замкнутую геометрию.
 

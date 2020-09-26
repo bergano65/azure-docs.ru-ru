@@ -17,12 +17,12 @@ ms.date: 03/24/2020
 ms.author: markvi
 ms.reviewer: dhanyahk
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 99e15c6d1ca33623151b7a2d75e3e28878f673ef
-ms.sourcegitcommit: 80b9c8ef63cc75b226db5513ad81368b8ab28a28
+ms.openlocfilehash: 2791b62d8abb1ade199ae3eb72deaf4db56f3725
+ms.sourcegitcommit: d95cab0514dd0956c13b9d64d98fdae2bc3569a0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/16/2020
-ms.locfileid: "90603600"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91361302"
 ---
 # <a name="sign-in-activity-reports-in-the-azure-active-directory-portal"></a>Отчеты о действиях входа на портале Azure Active Directory
 
@@ -37,7 +37,7 @@ ms.locfileid: "90603600"
 
 В этой статье приводятся общие сведения о отчете о входе в систему.
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 ### <a name="who-can-access-the-data"></a>Кто имеет доступ к данным?
 
@@ -124,7 +124,7 @@ ms.locfileid: "90603600"
 
 **Расположение** — расположение, из которого было инициировано подключение:
 
-- Город
+- City
 
 - Штат или провинция
 
@@ -142,18 +142,18 @@ ms.locfileid: "90603600"
 ![Фильтр клиентского приложения](./media/concept-sign-ins/client-app-filter.png)
 
 
-|name|Современная проверка подлинности|Описание|
+|Имя|Современная проверка подлинности|Описание|
 |---|:-:|---|
 |SMTP с проверкой подлинности| |Используется клиентом POP и IMAP для отправки сообщений электронной почты.|
 |Ошибоч| |Используется клиентами Outlook и EAS для поиска почтовых ящиков в Exchange Online и подключения к ним.|
 |Exchange ActiveSync| |Этот фильтр показывает все попытки входа в систему, в которых была предпринята попытка использования протокола EAS.|
-|Браузер|![Флажок](./media/concept-sign-ins/check.png)|Отображение всех попыток входа пользователей с помощью веб-браузеров|
+|Браузер|![Синяя галочка.](./media/concept-sign-ins/check.png)|Отображение всех попыток входа пользователей с помощью веб-браузеров|
 |Exchange ActiveSync| | Отображение всех попыток входа пользователей с клиентскими приложениями с помощью Exchange ActiveSync для подключения к Exchange Online|
 |Exchange Online PowerShell| |Используется для подключения к Exchange Online с помощью удаленной PowerShell. Если вы блокируете обычную проверку подлинности для Exchange Online PowerShell, для подключения необходимо использовать модуль Exchange Online PowerShell. Инструкции см. в статье [Подключение к PowerShell Exchange Online с помощью многофакторной проверки подлинности](/powershell/exchange/exchange-online/connect-to-exchange-online-powershell/mfa-connect-to-exchange-online-powershell).|
 |Веб-службы Exchange| |Программный интерфейс, используемый Outlook, Outlook для Mac и сторонние приложения.|
 |IMAP4| |Устаревший почтовый клиент, использующий IMAP для получения электронной почты.|
 |MAPI через HTTP| |Используется в Outlook 2010 и более поздних версиях.|
-|Мобильные приложения и настольные клиенты|![Синяя галочка](./media/concept-sign-ins/check.png)|Показывает все попытки входа пользователей с помощью мобильных приложений и настольных клиентов.|
+|Мобильные приложения и настольные клиенты|![Синяя галочка.](./media/concept-sign-ins/check.png)|Показывает все попытки входа пользователей с помощью мобильных приложений и настольных клиентов.|
 |Автономная адресная книга| |Копия коллекций списков адресов, которые загружаются и используются в Outlook.|
 |Мобильный Outlook (RPC через HTTP)| |Используется в Outlook 2016 и более ранних версиях.|
 |Служба Outlook| |Используется приложением "почта и календарь" для Windows 10.|
@@ -194,7 +194,7 @@ ms.locfileid: "90603600"
 
 Щелкните " **скачать** ", чтобы создать CSV-файл или формат JSON для последних 250 000 записей. Начните с [загрузки данных входа,](quickstart-download-sign-in-report.md) если вы хотите работать с ним за пределами портал Azure.  
 
-![Загрузить](./media/concept-sign-ins/71.png "Скачивание")
+![Загрузить](./media/concept-sign-ins/71.png "Скачать")
 
 > [!IMPORTANT]
 > На число записей, которые можно скачать, влияют особенности [политики хранения отчетов Azure Active Directory](reference-reports-data-retention.md).  
@@ -226,7 +226,7 @@ Azure AD и портал Azure предоставляют дополнитель
 
 Щелкнув элемент, вы получите более подробную информацию об операции входа:
 
-- Идентификатор пользователя.
+- User ID
 - Пользователь
 - Имя пользователя
 - Идентификатор приложения

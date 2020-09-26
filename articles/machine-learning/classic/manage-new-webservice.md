@@ -9,16 +9,16 @@ author: likebupt
 ms.author: keli19
 ms.custom: previous-ms.author=yahajiza, previous-author=YasinMSFT
 ms.date: 02/28/2017
-ms.openlocfilehash: d40d67b40d9e269f9ed6552467918cc878ffd197
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.openlocfilehash: caaf8e25cdf43602fda8fc72caf7d16b7b56c06a
+ms.sourcegitcommit: d95cab0514dd0956c13b9d64d98fdae2bc3569a0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 09/25/2020
-ms.locfileid: "91346779"
+ms.locfileid: "91361897"
 ---
 # <a name="manage-a-web-service-using-the-azure-machine-learning-studio-classic-web-services-portal"></a>Управление веб-службой с помощью портала веб-служб Машинное обучение Azure Studio (классическая модель)
 
-**ПРИМЕНИМО К:** ![да](../../../includes/media/aml-applies-to-skus/yes.png)Студия машинного обучения (классическая) ![нет](../../../includes/media/aml-applies-to-skus/no.png)[Машинное обучение Azure](../compare-azure-ml-to-studio-classic.md)
+**применимо к:** ![ Применяется к. ](../../../includes/media/aml-applies-to-skus/yes.png) Машинное обучение Studio (классическая модель) ![ не применяется к.](../../../includes/media/aml-applies-to-skus/no.png)[ Машинное обучение Azure](../compare-azure-ml-to-studio-classic.md)  
 
 
 С помощью портала веб-служб машинного обучения Microsoft Azure можно управлять новыми и классическими веб-службами машинного обучения. Так как классические и новые веб-службы основаны на различных базовых технологиях, возможности управления для них слегка различаются.

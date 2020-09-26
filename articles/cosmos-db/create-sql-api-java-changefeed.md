@@ -9,12 +9,12 @@ ms.topic: how-to
 ms.date: 06/11/2020
 ms.author: anfeldma
 ms.custom: devx-track-java
-ms.openlocfilehash: 3f2dcefa8ed2f4b80ec66851cdc67ee2283a6ac7
-ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
-ms.translationtype: HT
+ms.openlocfilehash: 86fcdde72145cf25ee289ef3869976fecd628707
+ms.sourcegitcommit: d95cab0514dd0956c13b9d64d98fdae2bc3569a0
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87322828"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91362050"
 ---
 # <a name="how-to-create-a-java-application-that-uses-azure-cosmos-db-sql-api-and-change-feed-processor"></a>Создание приложения Java, которое использует API SQL Azure Cosmos DB и обработчик канала изменений
 
@@ -110,11 +110,11 @@ mvn clean package
 
 1. Теперь в обозревателе данных перейдите в раздел **InventoryContainer-pktype > элементы**. Это материализованное представление. Элементы в этом контейнере являются зеркальным отображением **InventoryContainer**, так как они были вставлены программными средствами с помощью канала изменений. Обратите внимание на ключ секции (```type```). Таким образом, это материализованное представление оптимизировано для фильтрации запросов по ```type```, что будет неэффективным для контейнера **InventoryContainer**, так как он секционирован по ```id```.
 
-    :::image type="content" source="media/create-sql-api-java-changefeed/cosmos_materializedview2.JPG" alt-text="Материализованное представление":::
+    :::image type="content" source="media/create-sql-api-java-changefeed/cosmos_materializedview2.JPG" alt-text="На снимке экрана показана обозреватель данных страница для учетной записи Azure Cosmos D B с выбранными элементами.":::
 
 1. Мы удалим документ из **InventoryContainer** и **InventoryContainer-pktype** с помощью одного вызова ```upsertItem()```. Сначала обратите внимание на обозреватель данных на портале Azure. Мы удалим документ, для которого ```/type == "plums"```. Он обведен красной рамкой.
 
-    :::image type="content" source="media/create-sql-api-java-changefeed/cosmos_materializedview-emph-todelete.JPG" alt-text="Материализованное представление":::
+    :::image type="content" source="media/create-sql-api-java-changefeed/cosmos_materializedview-emph-todelete.JPG" alt-text="На снимке экрана показана обозреватель данных страница для учетной записи Azure Cosmos D B с выбранным элементом I D.":::
 
     Нажмите клавишу ВВОД еще раз, чтобы вызвать функцию ```deleteDocument()``` в примере кода. Эта функция, показанная ниже, выполняет для новой версии документа операцию upsert, устанавливая ```/ttl == 5```. Теперь срок жизни документа равен 5 секундам. 
     

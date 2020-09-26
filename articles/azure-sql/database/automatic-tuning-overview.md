@@ -9,14 +9,14 @@ ms.devlang: ''
 ms.topic: conceptual
 author: danimir
 ms.author: danil
-ms.reviewer: jrasnik, carlrab
+ms.reviewer: jrasnik, sstein
 ms.date: 03/30/2020
-ms.openlocfilehash: d2a00be4d08a7a2dfa8e11a22593d017d184a368
-ms.sourcegitcommit: 93462ccb4dd178ec81115f50455fbad2fa1d79ce
+ms.openlocfilehash: 4c2faa6f015a8c1ce8f360155abdc14367d3057b
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/06/2020
-ms.locfileid: "85982717"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91330746"
 ---
 # <a name="automatic-tuning-in-azure-sql-database-and-azure-sql-managed-instance"></a>Автоматическая настройка в базе данных SQL Azure и Управляемый экземпляр Azure SQL
 [!INCLUDE[appliesto-sqldb-sqlmi](../includes/appliesto-sqldb-sqlmi.md)]
@@ -92,7 +92,7 @@ ms.locfileid: "85982717"
 
 Автоматическая настройка SQL Управляемый экземпляр поддерживает только **последний хороший план**. Дополнительные сведения о настройке параметров автоматической настройки с помощью T-SQL см. в разделе [Автоматическая настройка содержит автоматическое исправление плана](https://azure.microsoft.com/blog/automatic-tuning-introduces-automatic-plan-correction-and-t-sql-management/) и [Автоматическое исправление плана](https://docs.microsoft.com/sql/relational-databases/automatic-tuning/automatic-tuning?view=sql-server-ver15#automatic-plan-correction).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Дополнительные сведения о встроенных аналитических аналитиках, используемых в автоматической настройке, см. в статье [искусственный интеллект — Настройка базы данных SQL Azure](https://azure.microsoft.com/blog/artificial-intelligence-tunes-azure-sql-databases/).
 - Чтобы узнать, как работает автоматическая настройка, см. статью [Автоматическое индексирование миллионов баз данных в база данных SQL Microsoft Azure](https://www.microsoft.com/research/uploads/prod/2019/02/autoindexing_azuredb.pdf).

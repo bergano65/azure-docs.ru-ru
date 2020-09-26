@@ -8,12 +8,12 @@ ms.service: site-recovery
 ms.topic: article
 ms.date: 3/13/2020
 ms.author: harshacs
-ms.openlocfilehash: 0a2763beec9fed9025198ca283f7746286875512
-ms.sourcegitcommit: 03662d76a816e98cfc85462cbe9705f6890ed638
+ms.openlocfilehash: db4c3be7c79448e4cf0df39688959ae09a671dbd
+ms.sourcegitcommit: d95cab0514dd0956c13b9d64d98fdae2bc3569a0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90527383"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91361421"
 ---
 # <a name="about-networking-in-azure-vm-disaster-recovery"></a>Сведения о сетях в аварийном восстановлении виртуальной машины Azure
 
@@ -82,11 +82,11 @@ login.microsoftonline.com | Требуется для авторизации и 
 
 1. Создайте правило безопасности исходящих подключений HTTPS (443) для Storage.EastUS в NSG, как показано на снимке экрана ниже.
 
-      ![storage-tag](./media/azure-to-azure-about-networking/storage-tag.png)
+      ![На снимке экрана показано добавление правила безопасности для исходящего трафика для группы безопасности сети в качестве точки подключения "Восток" для Storage Dot.](./media/azure-to-azure-about-networking/storage-tag.png)
 
 2. Создайте правило безопасности исходящих подключений HTTPS (443) для AzureActiveDirectory в NSG, как показано на снимке экрана ниже.
 
-      ![Тег aad](./media/azure-to-azure-about-networking/aad-tag.png)
+      ![На снимке экрана показано добавление правила безопасности для исходящего трафика для группы безопасности сети для Azure A D.](./media/azure-to-azure-about-networking/aad-tag.png)
 
 3. Аналогично приведенным выше правилам безопасности, создайте правило безопасности исходящего HTTPS (443) для "EventHub. CentralUS" на NSG, которое соответствует целевому расположению. Это позволяет получить доступ к Site Recovery мониторинга.
 
@@ -125,7 +125,7 @@ login.microsoftonline.com | Требуется для авторизации и 
 
 Вы можете переопределить системный маршрут Azure по умолчанию для префикса адреса 0.0.0.0/0, указав [настраиваемый маршрут](../virtual-network/virtual-networks-udr-overview.md#custom-routes), и перенаправить трафик виртуальных машин на локальный сетевой виртуальный модуль (NVA), но такая конфигурация не рекомендуется для репликации Site Recovery. При использовании настраиваемых маршрутов рекомендуется создать в виртуальной сети для хранилища [конечную точку службы для виртуальной сети](azure-to-azure-about-networking.md#create-network-service-endpoint-for-storage), чтобы трафик репликации не покидал границ Azure.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 - Включите защиту рабочих нагрузок, [выполнив репликацию виртуальных машин Azure](./azure-to-azure-quickstart.md).
 - Узнайте больше о [сохранении IP-адресов](site-recovery-retain-ip-azure-vm-failover.md) при отработке отказа виртуальных машин Azure.
 - Узнайте больше об аварийном восстановлении [виртуальных машин Azure с помощью ExpressRoute](azure-vm-disaster-recovery-with-expressroute.md).

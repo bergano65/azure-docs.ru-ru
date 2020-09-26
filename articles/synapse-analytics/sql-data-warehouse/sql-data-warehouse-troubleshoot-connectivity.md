@@ -11,12 +11,12 @@ ms.date: 03/27/2019
 ms.author: anjangsh
 ms.reviewer: igorstan
 ms.custom: seo-lt-2019, azure-synapse, devx-track-csharp
-ms.openlocfilehash: 2edb3060437080e528d41d4af5f4affd4fbf3316
-ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
+ms.openlocfilehash: d32a51e391edbfd32cf57265562d4e0cb8fe0681
+ms.sourcegitcommit: d95cab0514dd0956c13b9d64d98fdae2bc3569a0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89010194"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91362186"
 ---
 # <a name="troubleshooting-connectivity-issues-in-synapse-sql-pool"></a>Устранение неполадок с подключением в пуле Synapse SQL
 
@@ -34,13 +34,14 @@ ms.locfileid: "89010194"
 
 Если в сведениях о работоспособности ресурса указано, что экземпляр пула SQL приостановлен или масштабируется, следуйте указаниям по возобновлению работы экземпляра.
 
-![Служба приостановлена](./media/sql-data-warehouse-troubleshoot-connectivity/resource-health-pausing.png). Дополнительные сведения о работоспособности ресурса можно найти здесь.
+![На снимке экрана показан экземпляр хранилища данных SQL, который приостановлен или масштабируется.](./media/sql-data-warehouse-troubleshoot-connectivity/resource-health-pausing.png)
+Дополнительные сведения о Работоспособность ресурсов можно найти здесь.
 
 ## <a name="check-for-paused-or-scaling-operation"></a>Проверка на наличие приостановленных или масштабируемых операций
 
 На портале проверьте наличие приостановленного или масштабируемого экземпляра пула SQL.
 
-![Служба приостановлена](./media/sql-data-warehouse-troubleshoot-connectivity/overview-paused.png)
+![На снимке экрана показано, как проверить, приостановлено ли хранилище данных.](./media/sql-data-warehouse-troubleshoot-connectivity/overview-paused.png)
 
 Если вы видите, что служба приостановлена или масштабируется, проверьте, не происходит ли это во время запланированного обслуживания. На портале в *обзоре* пула SQL приводится выбранное расписание обслуживания.
 
