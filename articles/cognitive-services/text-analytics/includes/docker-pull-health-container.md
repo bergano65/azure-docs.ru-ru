@@ -9,14 +9,14 @@ ms.service: cognitive-services
 ms.topic: include
 ms.date: 07/07/2020
 ms.author: aahi
-ms.openlocfilehash: b9452baf0301233a1cd6e05621a89d013d32c9e0
-ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
+ms.openlocfilehash: b28049f1854494b61d63824334b986d814a641cd
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "90906011"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91309322"
 ---
-Заполните и отправьте [форму запроса Cognitive Services контейнеров](https://aka.ms/cognitivegate) , чтобы запросить доступ к контейнеру.
+Заполните и отправьте [форму запроса Cognitive Services контейнеров](https://aka.ms/csgate) , чтобы запросить доступ к контейнеру.
 В форме нужно указать сведения о себе, компании и пользовательском сценарии, для которого будет использоваться контейнер. После отправки формы команда Azure Cognitive Services просматривает ее и проверяет, соответствуете ли вы критериям доступа к частному реестру контейнеров.
 
 > [!IMPORTANT]

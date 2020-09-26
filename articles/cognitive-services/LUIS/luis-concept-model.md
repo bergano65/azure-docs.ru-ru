@@ -1,16 +1,18 @@
 ---
 title: Проектирование с моделями — LUIS
 description: Понимание языка предоставляет несколько типов моделей. Некоторые модели могут использоваться несколькими способами.
+ms.service: cognitive-services
+ms.subservice: language-understanding
 ms.topic: conceptual
 ms.date: 04/30/2020
-ms.openlocfilehash: bbb1f0d43b2a3fd2e8a2dff2201a09622ecaf977
-ms.sourcegitcommit: 50673ecc5bf8b443491b763b5f287dde046fdd31
+ms.openlocfilehash: 576ba945018d13db9cd24888f3c41a2215857694
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/20/2020
-ms.locfileid: "83683932"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91316517"
 ---
-# <a name="design-with-intent-and-entity-models"></a>Проектирование с намерениями и моделями сущностей
+# <a name="design-with-intent-and-entity-models"></a>Проектирование с помощью моделей намерения и сущности
 
 Понимание языка предоставляет два типа моделей для определения схемы приложения. Схема приложения определяет, какие сведения будут получены от прогноза нового пользователя utterance.
 

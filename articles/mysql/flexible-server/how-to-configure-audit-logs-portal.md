@@ -6,12 +6,12 @@ ms.author: andrela
 ms.service: mysql
 ms.topic: how-to
 ms.date: 9/21/2020
-ms.openlocfilehash: 1d0687e6cdcc8208218183cb873f9620a5525d37
-ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
+ms.openlocfilehash: b8fe32a079358fda48c6f5ee0c7eec9894a543a5
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "90940511"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91295912"
 ---
 # <a name="configure-and-access-audit-logs-for-azure-database-for-mysql---flexible-server-using-the-azure-portal"></a>Настройка и доступ к журналам аудита для базы данных Azure для MySQL — гибкого сервера с помощью портал Azure
 
@@ -50,6 +50,9 @@ ms.locfileid: "90940511"
     <!--:::image type="content" source="./media/howto-configure-audit-logs-portal/save-parameters.png" alt-text="Save":::-->
 
 ## <a name="set-up-diagnostics"></a>Настройка диагностики
+
+> [!NOTE]
+> Интеграция с Azure Monitor параметрами диагностики для доступа к журналам в ближайшее время будет доступна для развертывания и полной функциональности.
 
 Журналы аудита интегрируются с Azure Monitor параметрами диагностики, что позволяет передавать журналы в Azure Monitor журналы, концентраторы событий или службу хранилища Azure.
 

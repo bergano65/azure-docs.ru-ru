@@ -1,14 +1,16 @@
 ---
 title: Проверка пользователя utterance — LUIS
 description: Чтобы применить активное обучение, вам нужно проверить фразы конечной точки и убедиться в правильности намерений и сущности. Служба LUIS выбирает фразы конечной точки, в правильности которых она не уверена.
+ms.service: cognitive-services
+ms.subservice: language-understanding
 ms.topic: conceptual
 ms.date: 04/01/2020
-ms.openlocfilehash: 8d267fc441dc2cbf7f8ae3746486d5e7be55f135
-ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
+ms.openlocfilehash: 82f228d5e6f801539c549e16faea371782ad4b59
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "80546848"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91316449"
 ---
 # <a name="concepts-for-enabling-active-learning-by-reviewing-endpoint-utterances"></a>Основные сведения о включении активного обучения путем проверки фраз конечной точки
 Активное обучение является одной из трех стратегий повышения точности прогнозов, при этом самой простой в реализации. Чтобы применить активное обучение, вам нужно проверить фразы конечной точки и убедиться в правильности намерений и сущности. Служба LUIS выбирает фразы конечной точки, в правильности которых она не уверена.
@@ -35,8 +37,8 @@ ms.locfileid: "80546848"
 
 ## <a name="enable-active-learning"></a>Включить активное обучение
 
-Чтобы включить активное обучение, необходимо вести журнал запросов пользователей. Это достигается путем вызова [запроса конечной точки](luis-get-started-create-app.md#query-the-v3-api-prediction-endpoint) с параметром `log=true` QueryString и значением.
+Чтобы включить активное обучение, необходимо вести журнал запросов пользователей. Это достигается путем вызова [запроса конечной точки](luis-get-started-create-app.md#query-the-v3-api-prediction-endpoint) с `log=true` параметром QueryString и значением.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Сведения о [проверке](luis-how-to-review-endpoint-utterances.md) фрагментов речи конечной точки

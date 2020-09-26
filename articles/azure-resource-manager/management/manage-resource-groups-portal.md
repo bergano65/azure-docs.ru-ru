@@ -5,12 +5,12 @@ author: mumian
 ms.topic: conceptual
 ms.date: 03/26/2019
 ms.author: jgao
-ms.openlocfilehash: feee3a0d6de97ac6aaa1f9a92f20860f3f461ae3
-ms.sourcegitcommit: 2ff0d073607bc746ffc638a84bb026d1705e543e
+ms.openlocfilehash: 6086dffaefba003461a6edd8177afab05377103d
+ms.sourcegitcommit: 5dbea4631b46d9dde345f14a9b601d980df84897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87827237"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91371258"
 ---
 # <a name="manage-azure-resource-manager-resource-groups-by-using-the-azure-portal"></a>Управление группами ресурсов Azure Resource Manager с помощью портала Azure.
 
@@ -36,7 +36,7 @@ ms.locfileid: "87827237"
 2. Выбор **групп ресурсов**
 
     ![добавление группы ресурсов](./media/manage-resource-groups-portal/manage-resource-groups-add-group.png)
-3. Щелкните **Добавить**.
+3. Выберите **Добавить**.
 4. Введите следующие значения.
 
    - **Подписка**. Выберите подписку Azure. 
@@ -45,7 +45,7 @@ ms.locfileid: "87827237"
 
      ![Создать группу ресурсов](./media/manage-resource-groups-portal/manage-resource-groups-create-group.png)
 5. Выберите **Просмотреть и создать**.
-6. Нажмите кнопку **создания**. Создание группы ресурсов займет несколько секунд.
+6. Выберите **Создать**. Создание группы ресурсов займет несколько секунд.
 7. Выберите **Обновить** в верхнем меню, чтобы обновить список Группа ресурсов, а затем выберите только что созданную группу ресурсов, чтобы открыть ее. Или щелкните **уведомление**(значок колокольчика) вверху, а затем выберите **Перейти к группе ресурсов** , чтобы открыть только что созданную группу ресурсов.
 
     ![Переход к группе ресурсов](./media/manage-resource-groups-portal/manage-resource-groups-add-group-go-to-resource-group.png)
@@ -105,7 +105,7 @@ ms.locfileid: "87827237"
 
 ## <a name="manage-access-to-resource-groups"></a>Управление доступом к группам ресурсов
 
-Управление [доступом на основе ролей в Azure (Azure RBAC)](../../role-based-access-control/overview.md) — это способ управления доступом к ресурсам в Azure. Дополнительные сведения см. в статье [Управление доступом с помощью RBAC и портала Azure](../../role-based-access-control/role-assignments-portal.md).
+Управление [доступом на основе ролей в Azure (Azure RBAC)](../../role-based-access-control/overview.md) — это способ управления доступом к ресурсам в Azure. Дополнительные сведения см. в статье о [добавлении и удалении назначений ролей Azure с помощью портала Azure](../../role-based-access-control/role-assignments-portal.md).
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

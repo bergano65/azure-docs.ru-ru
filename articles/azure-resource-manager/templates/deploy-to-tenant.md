@@ -3,12 +3,12 @@ title: Развертывание ресурсов в клиенте
 description: В этой статье объясняется, как развертывать ресурсы в клиенте в шаблоне Azure Resource Manager.
 ms.topic: conceptual
 ms.date: 09/24/2020
-ms.openlocfilehash: af75e4f0e51ac685986e57b3b92a23dd37174460
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.openlocfilehash: 48b3fbcedb119ae699624e79f83297f4ecbc9ede
+ms.sourcegitcommit: 5dbea4631b46d9dde345f14a9b601d980df84897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 09/25/2020
-ms.locfileid: "91284765"
+ms.locfileid: "91372397"
 ---
 # <a name="create-resources-at-the-tenant-level"></a>Создание ресурсов на уровне клиента
 
@@ -24,7 +24,7 @@ ms.locfileid: "91284765"
 * [policyDefinitions](/azure/templates/microsoft.authorization/policydefinitions);
 * [policySetDefinitions](/azure/templates/microsoft.authorization/policysetdefinitions);
 
-Для управления доступом на основе ролей используйте:
+Для управления доступом на основе ролей Azure (Azure RBAC) используйте:
 
 * [roleAssignments](/azure/templates/microsoft.authorization/roleassignments);
 

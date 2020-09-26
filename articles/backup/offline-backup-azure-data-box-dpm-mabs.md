@@ -3,12 +3,12 @@ title: Автономная архивация с Azure Data Box для DPM и M
 description: Вы можете использовать Azure Data Box для заполнения начальных резервных копий данных в автономном режиме из DPM и MABS.
 ms.topic: conceptual
 ms.date: 08/12/2020
-ms.openlocfilehash: 3755a4cc77455b37ae1545247992a3c8c4f25653
-ms.sourcegitcommit: 3fb5e772f8f4068cc6d91d9cde253065a7f265d6
+ms.openlocfilehash: 2fd8a137abf8b76d1587894bfa3fe8447e0d646b
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89177692"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91271500"
 ---
 # <a name="offline-seeding-using-azure-data-box-for-dpm-and-mabs-preview"></a>Автономное заполнение с помощью Azure Data Box для DPM и MABS (Предварительная версия)
 
@@ -110,7 +110,7 @@ ms.locfileid: "89177692"
 
 ## <a name="transfer-initial-backup-data-to-azure-data-box-devices"></a>Перенос данных начального резервного копирования на устройства Azure Data Box
 
-1. На сервере DPM/MABS выполните действия по [созданию новой группы защиты](https://docs.microsoft.com/system-center/dpm/create-dpm-protection-groups?view=sc-dpm-2019). Если вы добавляете оперативную защиту в существующую группу защиты, щелкните правой кнопкой мыши существующую группу защиты и выберите команду **Добавить оперативную защиту** и начать с **шага 8**.
+1. На сервере DPM/MABS выполните действия по [созданию новой группы защиты](https://docs.microsoft.com/system-center/dpm/create-dpm-protection-groups). Если вы добавляете оперативную защиту в существующую группу защиты, щелкните правой кнопкой мыши существующую группу защиты и выберите команду **Добавить оперативную защиту** и начать с **шага 8**.
 2. На странице **Выбор элементов группы** укажите компьютеры и источники, для которых требуется выполнить резервное копирование.
 3. На странице **Выбор метода защиты данных** укажите способ обработки краткосрочного и долгосрочного резервного копирования. Обязательно установите флажок **Мне нужна оперативная защита.**
 

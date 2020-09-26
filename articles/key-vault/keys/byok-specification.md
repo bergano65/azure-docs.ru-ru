@@ -10,12 +10,12 @@ ms.subservice: keys
 ms.topic: conceptual
 ms.date: 05/29/2020
 ms.author: ambapat
-ms.openlocfilehash: 80796d852c07952b7100c6dd7802bc9279f3218c
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: feef35ef86a933f32949468366fea85eb87d4866
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84198791"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91315785"
 ---
 # <a name="bring-your-own-key-specification"></a>Спецификация BYOK
 
@@ -31,11 +31,11 @@ Key Vault клиент хочет безопасно передавать клю
 
 ## <a name="terminology"></a>Терминология
 
-|Имя ключа|Тип ключа|Исходный домен|Описание:|
+|Имя ключа|Тип ключа|Исходный домен|Описание|
 |---|---|---|---|
-|Ключ обмена ключами (KEK)|RSA|Azure Key Vault HSM|Пара ключей RSA с защитой HSM, созданная в Azure Key Vault
-Перенос ключа|AES|HSM поставщика|Ключ AES [эфемерного], созданный HSM в локальной системе
-Целевой ключ|RSA, EC, AES|HSM поставщика|Ключ для передачи в модуль HSM Azure Key Vault
+|Ключ обмена ключами (KEK)|RSA|HSM Azure Key Vault|Пара ключей RSA с защитой HSM, созданная в Azure Key Vault
+Перенос ключа|AES|HSM от поставщика|Ключ AES [эфемерного], созданный HSM в локальной системе
+Целевой ключ|RSA, EC, AES|HSM от поставщика|Ключ для передачи в модуль HSM Azure Key Vault
 
 Ключ **обмена ключами**: ключ, поддерживающий аппаратный модуль HSM, созданный клиентом в хранилище ключей, в котором будет ИМПОРТИРОВАН ключ BYOK. Этот KEK должен иметь следующие свойства:
 
@@ -119,7 +119,7 @@ az keyvault key download --name KEKforBYOK --vault-name ContosoKeyVaultHSM --fil
 
 ```
 
-* Детская = идентификатор ключа KEK. Для Key Vaultных ключей он выглядит следующим образом:https://ContosoKeyVaultHSM.vault.azure.net/keys/mykek/eba63d27e4e34e028839b53fac905621
+* Детская = идентификатор ключа KEK. Для Key Vaultных ключей он выглядит следующим образом: https://ContosoKeyVaultHSM.vault.azure.net/keys/mykek/eba63d27e4e34e028839b53fac905621
 * ALG = алгоритм. 
 * dir = прямой режим, т. е. для непосредственной защиты зашифрованного текста, который является точным представлением CKM_RSA_AES_KEY_WRAP
 * Generator — информационное поле, определяющее имя и версию средства BYOK, а также изготовителя и модель исходного модуля HSM. Эти сведения предназначены для использования при устранении неполадок и поддержке.
@@ -159,20 +159,8 @@ PUT https://contosokeyvaulthsm.vault.azure.net/keys/ContosoFirstHSMKey?api-versi
 значение "key_hsm" — это все содержимое KeyTransferPackage-ContosoFirstHSMkey. byok, закодированное в формате Base64.
 
 ## <a name="references"></a>Ссылки
+- [Руководство разработчика Azure Key Vault](../general/developers-guide.md)
 
-### <a name="azure-key-vault-rest-api"></a>REST API для Azure Key Vault
-
-* [Создание ключа](https://docs.microsoft.com/rest/api/keyvault/createkey/createkey)
-* [Получить ключ (только ключевые атрибуты и только открытый ключ)](https://docs.microsoft.com/rest/api/keyvault/getkey/getkey)
-* [Ключ импорта](https://docs.microsoft.com/rest/api/keyvault/importkey/importkey)
-
-
-### <a name="azure-cli-commands"></a>Команды интерфейса командной строки Azure
-* [az keyvault key create](https://docs.microsoft.com/cli/azure/keyvault/key?view=azure-cli-latest#az-keyvault-key-create)
-* [AZ keyvault Key download](https://docs.microsoft.com/cli/azure/keyvault/key?view=azure-cli-latest#az-keyvault-key-download)
-* [AZ keyvault Key Import](https://docs.microsoft.com/cli/azure/keyvault/key?view=azure-cli-latest#az-keyvault-key-import)
-
-
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 * Пошаговые инструкции BYOK: [Импорт ключей, защищенных с помощью HSM, в Key Vault (BYOK)](hsm-protected-keys-byok.md)
 

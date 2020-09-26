@@ -2,13 +2,13 @@
 title: Использование концентратора событий из приложения Apache Kafka — Центры событий Azure | Документация Майкрософт
 description: В этой статье содержатся сведения о поддержке Apache Kafka в службе "Центры событий Azure".
 ms.topic: article
-ms.date: 07/20/2020
-ms.openlocfilehash: 29850e89d1cccf7708e5cca8eaf58afee8157890
-ms.sourcegitcommit: 51df05f27adb8f3ce67ad11d75cb0ee0b016dc5d
+ms.date: 09/25/2020
+ms.openlocfilehash: 2c552c9f901fdb886a7ddc3e71505e8e46717c03
+ms.sourcegitcommit: 5dbea4631b46d9dde345f14a9b601d980df84897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/14/2020
-ms.locfileid: "90061413"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91371496"
 ---
 # <a name="use-azure-event-hubs-from-apache-kafka-applications"></a>Использование Центров событий Azure из приложений Apache Kafka
 Концентраторы событий предоставляют конечную точку, совместимую с интерфейсами API Apache Kafka® производителя и потребителя, которые могут использоваться большинством существующих Apache Kafka клиентских приложений в качестве альтернативы запуску собственного кластера Apache Kafka. Концентраторы событий поддерживают клиентские API-интерфейсы производителя и потребителя Apache Kafka в версии 1,0 и более поздних.
@@ -100,7 +100,7 @@ sasl.jaas.config=org.apache.kafka.common.security.plain.PlainLoginModule require
 
 Как упоминалось [выше](#is-apache-kafka-the-right-solution-for-your-workload), парк обмена сообщениями Azure предоставляет широкие возможности для разнообразных ситуаций обмена сообщениями, и хотя в настоящее время в службе поддержки концентраторов событий для Apache Kafka API не поддерживаются следующие функции, мы указывали, где и как будет доступна нужная возможность.
 
-### <a name="transactions"></a>Transactions
+### <a name="transactions"></a>Транзакции
 
 В [служебной шине Azure](../service-bus-messaging/service-bus-transactions.md) поддерживается устойчивая поддержка транзакций, которая позволяет получать и назначать сообщения и сеансы при отправке исходящих сообщений, полученных от обработки сообщений, к нескольким целевым сущностям при защите согласованности транзакций. Набор функций обеспечивает не только однократную обработку каждого сообщения в последовательности, но также позволяет избежать риска непреднамеренной повторной обработки тех же сообщений другим потребителем, так как это было бы в случае с Apache Kafka. Служебная шина является рекомендуемой службой для рабочих нагрузок транзакционных сообщений.
 
@@ -128,7 +128,7 @@ Apache Kafka сжатие журнала — это функция, котора
 
 - [Azure Stream Analytics](../stream-analytics/stream-analytics-introduction.md)
 - [Azure синапсе Analytics (через захват концентраторов событий)](../event-grid/event-grid-event-hubs-integration.md)
-- [Azure Databricks](/azure/databricks/scenarios/databricks-stream-from-eventhubs.md)
+- [Azure Databricks](/databricks/scenarios/databricks-stream-from-eventhubs)
 - [Apache Samza](https://samza.apache.org/learn/documentation/latest/connectors/eventhubs)
 - [Apache Storm](event-hubs-storm-getstarted-receive.md)
 - [Apache Spark](event-hubs-kafka-spark-tutorial.md)
@@ -139,5 +139,5 @@ Apache Kafka сжатие журнала — это функция, котора
 
 Если вам необходимо использовать платформу Kafka Streams в Azure, [Apache Kafka в HDInsight](../hdinsight/kafka/apache-kafka-introduction.md) предоставит этот вариант. Apache Kafka в HDInsight предоставляет полный контроль над всеми аспектами настройки Apache Kafka, в то время как полная интеграция с различными аспектами платформы Azure — от сбоя или обновления домена до сетевой изоляции до наблюдения за интеграцией. 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 В этой статье приведены ознакомительные сведения о Центрах событий для компонента Kafka. См. сведения в [руководстве для разработчиков Apache Kafka по Центрам событий Azure](apache-kafka-developer-guide.md).

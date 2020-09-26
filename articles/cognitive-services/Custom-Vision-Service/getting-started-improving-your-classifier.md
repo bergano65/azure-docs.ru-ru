@@ -10,12 +10,13 @@ ms.subservice: custom-vision
 ms.topic: conceptual
 ms.date: 03/21/2019
 ms.author: pafarley
-ms.openlocfilehash: c2858d5f9bca662cbbcd48b2345a7dc2c7ae48b2
-ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
+ms.custom: cog-serv-seo-aug-2020
+ms.openlocfilehash: a77d3d5c1225fdd85e27db20cdae23e0c77a5e28
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "73718547"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91271364"
 ---
 # <a name="how-to-improve-your-classifier"></a>Как улучшить классификатор
 
@@ -106,7 +107,7 @@ ms.locfileid: "73718547"
 
 В некоторых случаях визуальная проверка позволяет заметить в этих ошибках закономерность и исправить ее, добавив дополнительные обучающие данные или изменив существующие данные. Например, классификатор яблок и лаймов может неправильно отметить все зеленые яблоки и обозначить их как лаймы. Чтобы устранить эту проблему, следует добавить и применить обучающие данные с отмеченными тегом изображениями зеленых яблок.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 В этом руководстве вы изучили несколько методик, позволяющих повысить точность модели классификации изображений. Далее вы можете узнать, как программно тестировать изображения, отправляя их в API прогнозирования.
 
