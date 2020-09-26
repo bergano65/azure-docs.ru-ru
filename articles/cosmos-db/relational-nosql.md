@@ -8,12 +8,12 @@ ms.subservice: cosmosdb-sql
 ms.topic: conceptual
 ms.date: 12/16/2019
 ms.reviewer: sngun
-ms.openlocfilehash: d6be74e5748d364fd9f56f4af96bb3229ddb61c3
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 50d077c1d7c9e4e421a43a4e0379b57608d1192c
+ms.sourcegitcommit: d95cab0514dd0956c13b9d64d98fdae2bc3569a0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85113695"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91361772"
 ---
 # <a name="understanding-the-differences-between-nosql-and-relational-databases"></a>Основные сведения о различиях между NoSQL и реляционными базами данных
 
@@ -29,7 +29,7 @@ ms.locfileid: "85113695"
 
 Если транзакционные тома достигли экстремальных уровней, например, количество тысяч транзакций в секунду, следует рассмотреть распределенную базу данных NoSQL. Рассмотрите возможность Azure Cosmos DB для максимальной эффективности, простоты обслуживания и снижения совокупной стоимости владения.
 
-:::image type="content" source="./media/relational-or-nosql/backend-scaled.png" alt-text="Фонов" border="false":::
+:::image type="content" source="./media/relational-or-nosql/backend-scaled.png" alt-text="Серверная часть" border="false":::
 
 ## <a name="hierarchical-data"></a>Иерархические данные
 
@@ -49,7 +49,7 @@ ms.locfileid: "85113695"
 
 Если вы обслуживаете сложную сеть связей в базе данных, вам может потребоваться рассмотреть базу данных Graph, например [Azure Cosmos DB API Gremlin](https://docs.microsoft.com/azure/cosmos-db/graph-introduction) для управления этими данными.
 
-:::image type="content" source="./media/relational-or-nosql/graph.png" alt-text="Graph":::
+:::image type="content" source="./media/relational-or-nosql/graph.png" alt-text="На диаграмме базы данных отображается несколько сотрудников и отделов, Соединенных друг с другом.":::
 
 Azure Cosmos DB — это многомодельная служба базы данных, которая предоставляет проекцию API для всех основных типов моделей NoSQL; Семейство столбцов, документ, граф и ключ-значение. Уровни API документов [Gremlin (Graph)](https://docs.microsoft.com/azure/cosmos-db/gremlin-support) и SQL (Core) полностью совместимы. Это дает преимущества для переключения между различными моделями на уровне программирования. Хранилища графов можно запрашивать в виде как сложных обходов сети, так и транзакций, смоделированных как записи документов в одном хранилище.
 
@@ -88,7 +88,7 @@ Azure Cosmos DB — это многомодельная служба базы д
 
 Опять же, Azure Cosmos DB предлагает больше гибкости, чем реляционные базы данных, для различных компромиссов, которые важны здесь, но для небольших реализаций такой подход может добавить дополнительные рекомендации по проектированию. Дополнительные сведения по этой теме см. в нашей статье о [согласованности, доступности и компромиссах производительности](https://docs.microsoft.com/azure/cosmos-db/consistency-levels-tradeoffs) .
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Узнайте, как управлять учетной записью Azure Cosmos и другими концепциями:
 

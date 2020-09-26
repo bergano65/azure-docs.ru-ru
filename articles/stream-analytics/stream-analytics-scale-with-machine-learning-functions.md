@@ -7,12 +7,12 @@ ms.reviewer: mamccrea
 ms.service: stream-analytics
 ms.topic: how-to
 ms.date: 03/16/2020
-ms.openlocfilehash: 1493a15a97ca88d0ed914f78b1906088c03dff10
-ms.sourcegitcommit: e132633b9c3a53b3ead101ea2711570e60d67b83
+ms.openlocfilehash: a0cc70f5bf994e03088511a0d10796746a434bd7
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "86037415"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91300315"
 ---
 # <a name="scale-your-stream-analytics-job-with-azure-machine-learning-studio-classic-functions"></a>Масштабирование заданий Stream Analytics с помощью функций Студии машинного обучения Azure (классической)
 
@@ -25,7 +25,7 @@ ms.locfileid: "86037415"
 
 Функция машинного обучения в Stream Analytics может использоваться как обычный вызов функции в языке запросов Stream Analytics. Однако на самом же деле вызовы функций являются запросами веб-службы машинного обучения Azure.
 
-Пропускную способность запросов веб-службы машинного обучения можно повысить, выполнив пакетную обработку сразу нескольких строк в одном вызове API веб-службы. Такая группировка называется мини-пакетом. Дополнительные сведения см. в разделе [Веб-службы Студии машинного обучения Azure Studio (классической)](../machine-learning/studio/consume-web-services.md). Поддержка Студии машинного обучения Azure (классической) в Stream Analytics доступна только в предварительной версии.
+Пропускную способность запросов веб-службы машинного обучения можно повысить, выполнив пакетную обработку сразу нескольких строк в одном вызове API веб-службы. Такая группировка называется мини-пакетом. Дополнительные сведения см. в разделе [Веб-службы Студии машинного обучения Azure Studio (классической)](../machine-learning/classic/consume-web-services.md). Поддержка Студии машинного обучения Azure (классической) в Stream Analytics доступна только в предварительной версии.
 
 ## <a name="configure-a-stream-analytics-job-with-machine-learning-functions"></a>Настройка задания Stream Analytics с помощью функций машинного обучения
 
@@ -58,7 +58,7 @@ ms.locfileid: "86037415"
 
 Вы также можете настроить параметр "Макс. количество одновременных вызовов" в веб-службе машинного обучения. Рекомендуется использовать для этого параметра максимальное значение (сейчас это 200).
 
-Дополнительные сведения об этом параметре см. в статье [Масштабирование веб-службы машинного обучения](../machine-learning/studio/create-endpoint.md).
+Дополнительные сведения об этом параметре см. в статье [Масштабирование веб-службы машинного обучения](../machine-learning/classic/create-endpoint.md).
 
 ## <a name="example--sentiment-analysis"></a>Пример: анализ мнений
 В следующем примере показано задание Stream Analytics с функцией машинного обучения для анализа мнений, как описано в руководстве [Общие сведения о Stream Analytics и интеграции машинного обучения](stream-analytics-machine-learning-integration-tutorial.md).

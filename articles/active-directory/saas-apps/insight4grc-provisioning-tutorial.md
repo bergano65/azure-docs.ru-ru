@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: article
 ms.date: 02/04/2020
 ms.author: Zhchia
-ms.openlocfilehash: 86927a525fbfcb6a252d8e3d214733a0f1e83ed1
-ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
+ms.openlocfilehash: 60bf2034f1e6404f3f09bf25a66c497dbbaf4d05
+ms.sourcegitcommit: d95cab0514dd0956c13b9d64d98fdae2bc3569a0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88550383"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91361661"
 ---
 # <a name="tutorial-configure-insight4grc-for-automatic-user-provisioning"></a>Учебник. Настройка Insight4GRC для автоматической подготовки пользователей
 
@@ -80,15 +80,15 @@ ms.locfileid: "88550383"
 
 3. Выберите вкладку **Подготовка**.
 
-    ![Вкладка "Подготовка"](common/provisioning.png)
+    ![Снимок экрана параметров управления с вызываемым параметром подготовки.](common/provisioning.png)
 
 4. Для параметра **Режим подготовки к работе** выберите значение **Automatic** (Автоматически).
 
-    ![Вкладка "Подготовка"](common/provisioning-automatic.png)
+    ![Снимок экрана: раскрывающийся список режима подготовки с вызываемым автоматическим параметром.](common/provisioning-automatic.png)
 
 5. В разделе **учетные данные администратора** введите URL-адрес КОНЕЧНОЙ точки scim в поле **URL-адрес клиента**. URL-адрес енпоинт должен быть в формате, `https://<Insight4GRC Domain Name>.insight4grc.com/public/api/scim/v2 ` где **Insight4GRC доменное имя** — это значение, полученное на предыдущих шагах. Введите значение токена носителя, полученное ранее в **маркере секрета**. Щелкните **проверить подключение** , чтобы убедиться, что Azure AD может подключиться к Insight4GRC. Если подключение не выполняется, убедитесь, что у учетной записи Insight4GRC есть разрешения администратора, и повторите попытку.
 
-    ![Подготовка](./media/insight4grc-provisioning-tutorial/provisioning.png)
+    ![На снимке экрана отображается диалоговое окно учетные данные администратора, в котором можно ввести клиент U R и секретный маркер.](./media/insight4grc-provisioning-tutorial/provisioning.png)
 
 6. В поле **Почтовое уведомление** введите адрес электронной почты пользователя или группы, которые должны получать уведомления об ошибках подготовки, а также установите флажок **Отправить уведомление по электронной почте при сбое**.
 

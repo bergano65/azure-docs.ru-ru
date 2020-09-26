@@ -1,19 +1,19 @@
 ---
 title: Непрерывная интеграция и непрерывное развертывание на Azure IoT Edge устройствах (классический редактор) — Azure IoT Edge
 description: Настройка непрерывной интеграции и непрерывного развертывания с помощью классического редактора — Azure IoT Edge с Azure DevOps, Azure Pipelines
-author: shizn
+author: kgremban
 manager: philmea
-ms.author: xshi
+ms.author: kgremban
 ms.date: 08/26/2020
 ms.topic: conceptual
 ms.service: iot-edge
 services: iot-edge
-ms.openlocfilehash: 9cb1a2074e7ec64ed16f1f7c9a1f70bf2307b5c3
-ms.sourcegitcommit: 3fc3457b5a6d5773323237f6a06ccfb6955bfb2d
+ms.openlocfilehash: 427d72b2a8531fa4dafa0040266249b138b6edf3
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/11/2020
-ms.locfileid: "90033495"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91291084"
 ---
 # <a name="continuous-integration-and-continuous-deployment-to-azure-iot-edge-devices-classic-editor"></a>Непрерывная интеграция и непрерывное развертывание на Azure IoT Edge устройствах (классический редактор)
 

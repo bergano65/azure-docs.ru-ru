@@ -14,12 +14,12 @@ ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure-services
 ms.date: 11/24/2019
 ms.author: vilibert
-ms.openlocfilehash: 03e6f51d2ab7138675f7d79c04faa2e4dffec60c
-ms.sourcegitcommit: 2ff0d073607bc746ffc638a84bb026d1705e543e
+ms.openlocfilehash: 98514bad6a04e0c3058faf3133fc44333039ce53
+ms.sourcegitcommit: d95cab0514dd0956c13b9d64d98fdae2bc3569a0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87825690"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91361472"
 ---
 # <a name="troubleshooting-a-linux-vm-when-there-is-no-access-to-the-azure-serial-console-and-the-disk-layout-is-using-lvm-logical-volume-manager"></a>Устранение неполадок в виртуальной машине Linux при отсутствии доступа к последовательной консоли Azure и разметке диска с использованием LVM (Диспетчер логических томов)
 
@@ -88,7 +88,7 @@ lsblk
 
 Чтобы подключить логический том, содержащий раздел/(корневой), необходимо указать путь к нему. Он содержит файлы конфигурации, такие как/etc/default/grub
 
-В этом примере получение выходных данных из предыдущей **лсблк** команды **рутвг-рутлв** является правильным **корневым** параметром lv для подключения и может использоваться в следующей команде.
+В этом примере получение выходных данных из предыдущей **лсблк** команды  **рутвг-рутлв** является правильным **корневым** параметром lv для подключения и может использоваться в следующей команде.
 
 В выходных данных следующей команды будет показан путь для подключения к **корневой** странице lv.
 
@@ -143,7 +143,7 @@ mount  /dev/mapper/rootvg-usrlv /rescue/usr
 Команды можно использовать для установки, удаления и обновления программного обеспечения. Устраните неполадки виртуальных машин, чтобы устранить ошибки.
 
 
-Выполните команду лсблк, а/Рескуе — Now/,/Рескуе/Бут —/Boot ![ чрутед](./media/chroot-logical-volume-manager/chrooted.png)
+Выполните команду лсблк, а/Рескуе — на снимке экрана, а/Рескуе/Бут —/Boot. в нем ![ отображается окно консоли с командой l s BLK и ее выходным деревом.](./media/chroot-logical-volume-manager/chrooted.png)
 
 ## <a name="perform-fixes"></a>Выполнение исправлений
 
@@ -169,7 +169,7 @@ grub2-mkconfig -o /boot/grub2/grub.cfg
 *руководством*
 
 Команда **grep** перечисляет ядра, о которых имеет значение **GRUB. cfg** .
-![Ядра](./media/chroot-logical-volume-manager/kernels.png)
+![На снимке экрана показано окно консоли, в котором отображается результат поиска в ядрах grep.](./media/chroot-logical-volume-manager/kernels.png)
 
 **grub2-едитенв** отображает, какой ядро будет загружаться при следующей загрузке ![ ядра по умолчанию](./media/chroot-logical-volume-manager/kernel-default.png)
 
@@ -190,7 +190,7 @@ grub2-mkconfig -o /boot/grub2/grub.cfg
 
 Выйдите из среды **чрут** и подключите требуемую **LV**
 
-![Дополнительно](./media/chroot-logical-volume-manager/advanced.png)
+![На снимке экрана показано окно консоли с командой l v, а затем подключение L V.](./media/chroot-logical-volume-manager/advanced.png)
 
 Теперь снова получите доступ к среде **чрут** , выполнив
 
@@ -198,11 +198,11 @@ grub2-mkconfig -o /boot/grub2/grub.cfg
 
 Все LVs должны быть видимыми в виде подключенных секций.
 
-![Дополнительно](./media/chroot-logical-volume-manager/chroot-all-mounts.png)
+![Продвинутый уровень](./media/chroot-logical-volume-manager/chroot-all-mounts.png)
 
 Запрос установленного **ядра**
 
-![Дополнительно](./media/chroot-logical-volume-manager/rpm-kernel.png)
+![Продвинутый уровень](./media/chroot-logical-volume-manager/rpm-kernel.png)
 
 При необходимости удалите или обновите **kernel** 
  ![ расширение ядра.](./media/chroot-logical-volume-manager/rpm-remove-kernel.png)

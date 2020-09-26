@@ -1,5 +1,5 @@
 ---
-title: Синтаксис запроса поиска графа
+title: Синтаксис поискового запроса графа
 titleSuffix: Azure Machine Learning
 description: Узнайте, как использовать синтаксис поисковых запросов для поиска узлов в на графе конвейера.
 services: machine-learning
@@ -9,14 +9,14 @@ ms.topic: reference
 author: xiaoharper
 ms.author: zhanxia
 ms.date: 8/24/2020
-ms.openlocfilehash: 122da78206ef2055b4867727b174293e74133c05
-ms.sourcegitcommit: d39f2cd3e0b917b351046112ef1b8dc240a47a4f
+ms.openlocfilehash: 166b87159b5ac2434c3ce7a7c66529a4b61ee565
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88817809"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91290506"
 ---
-# <a name="graph-search-query-syntax"></a>Синтаксис запроса поиска графа
+# <a name="graph-search-query-syntax"></a>Синтаксис поискового запроса графа
 
 В этой статье вы узнаете о синтаксисе запросов поиска графа в Машинное обучение Azure. Функция поиска графа позволяет искать узел по его имени и свойствам. 
 
@@ -49,7 +49,7 @@ ms.locfileid: "88817809"
  
 - Сопоставление с подстановочными знаками: 
     - `machi?e learning`
-    -   `mach*ing`
+    - `mach*ing`
  
 >[!NOTE]
 > Нельзя запустить запрос Lucene с символом "*".
@@ -59,7 +59,7 @@ ms.locfileid: "88817809"
  
 Фильтрация запросов использует следующий шаблон:
  
-    **[key1] [operator1] [value1]; [key2] [operator1] [value2];**
+`**[key1] [operator1] [value1]; [key2] [operator1] [value2];**`
 
  
 В качестве ключей можно использовать следующие свойства узла:

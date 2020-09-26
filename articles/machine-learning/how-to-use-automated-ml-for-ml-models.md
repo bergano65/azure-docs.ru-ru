@@ -11,12 +11,12 @@ ms.reviewer: nibaccam
 ms.date: 07/10/2020
 ms.topic: conceptual
 ms.custom: how-to
-ms.openlocfilehash: 3214ce260fa4981b8ac970bdf3520ecd7de59e18
-ms.sourcegitcommit: bdd5c76457b0f0504f4f679a316b959dcfabf1ef
+ms.openlocfilehash: 47df04a0195c4cfcc4e40db5bf21387a284f682c
+ms.sourcegitcommit: d95cab0514dd0956c13b9d64d98fdae2bc3569a0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "90985565"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91362254"
 ---
 # <a name="create-review-and-deploy-automated-machine-learning-models-with-azure-machine-learning"></a>Создание, проверка и развертывание моделей автоматизированного машинного обучения с помощью Машинного обучения Azure
 
@@ -143,7 +143,7 @@ ms.locfileid: "90985565"
 
 1. Используемых Просмотреть параметры Добавление признаков: Если вы решили включить **Автоматическое добавление признаков** в форме **дополнительных параметров конфигурации** , применяются методики Добавление признаков по умолчанию. В окне **Просмотр параметров Добавление признаков** можно изменить эти значения по умолчанию и соответствующим образом настроить. Узнайте, как [настроить феатуризатионс](#customize-featurization). 
 
-    ![Форма типа задачи «Машинное обучение Azure Studio»](media/how-to-use-automated-ml-for-ml-models/view-featurization-settings.png)
+    ![На снимке экрана показано диалоговое окно Выбор типа задачи с вызываемыми параметрами View Добавление признаков.](media/how-to-use-automated-ml-for-ml-models/view-featurization-settings.png)
 
 ## <a name="customize-featurization"></a>Настройка Добавление признаков
 

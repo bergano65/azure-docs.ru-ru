@@ -11,12 +11,12 @@ ms.date: 10/10/2019
 ms.author: xiaoyul
 ms.reviewer: nidejaco;
 ms.custom: azure-synapse
-ms.openlocfilehash: 2c29ad48e8dc626617786e519e84c92875bc6170
-ms.sourcegitcommit: 3246e278d094f0ae435c2393ebf278914ec7b97b
+ms.openlocfilehash: aeeca38afb82e2dcd86e111d1ae5dcb2e7499f42
+ms.sourcegitcommit: d95cab0514dd0956c13b9d64d98fdae2bc3569a0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89378531"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91362271"
 ---
 # <a name="performance-tuning-with-result-set-caching"></a>Настройка производительности путем кэширования результирующего набора
 
@@ -56,11 +56,11 @@ WHERE request_id  = <'request_id'>;
 
 Ниже приведен пример выходных данных запроса, выполненного с отключенным кэшированием результирующего набора.
 
-![Query-steps-with-rsc-disabled](./media/performance-tuning-result-set-caching/query-steps-with-rsc-disabled.png)
+![На снимке экрана показаны результаты запроса, включая тип расположения и команду.](./media/performance-tuning-result-set-caching/query-steps-with-rsc-disabled.png)
 
 А вот пример выходных данных запроса, выполненного с включенным кэшированием результирующего набора.
 
-![Query-steps-with-rsc-enabled](./media/performance-tuning-result-set-caching/query-steps-with-rsc-enabled.png)
+![На снимке экрана показаны результаты запроса с выбранной командой * from [D W Ресулткаче D b] Dot D b OED.](./media/performance-tuning-result-set-caching/query-steps-with-rsc-enabled.png)
 
 ## <a name="when-cached-results-are-used"></a>Когда используются кэшированные результаты
 

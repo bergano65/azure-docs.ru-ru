@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 04/03/2020
 ms.author: nitinme
-ms.openlocfilehash: 7b78bdb070cdf1364fe7fbdc75f175be7ce145ff
-ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
+ms.openlocfilehash: 43679c52727f8cc84c7292592b68dddae7f1ea68
+ms.sourcegitcommit: d95cab0514dd0956c13b9d64d98fdae2bc3569a0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "80656447"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91362084"
 ---
 # <a name="migrate-from-bing-speech-to-the-speech-service"></a>Миграция с Распознавание речи Bing в службу речи
 
@@ -37,7 +37,7 @@ ms.locfileid: "80656447"
 
 Служба распознавания речи во многом схожа с Распознавание речи Bing, со следующими отличиями.
 
-| Компонент | API распознавания речи Bing | Служба "Речь" | Сведения |
+| Компонент | API распознавания речи Bing | Служба "Речь" | Подробности |
 |--|--|--|--|
 | Пакет SDK для C# | :heavy_check_mark: | :heavy_check_mark: | Служба речи поддерживает Windows 10, универсальная платформа Windows (UWP) и .NET Standard 2,0. |
 | SDK C++ | :heavy_minus_sign: | :heavy_check_mark: | Служба речи поддерживает Windows и Linux. |
@@ -51,7 +51,7 @@ ms.locfileid: "80656447"
 | Простое распознавание намерений говорящего | :heavy_minus_sign: | :heavy_check_mark: |
 | Пакетная расшифровка длинных аудиофайлов | :heavy_minus_sign: | :heavy_check_mark: |
 | Режим распознавания | Вручную через URI конечной точки | Автоматически | Режим распознавания недоступен в службе речи. |
-| Расположение конечной точки | Global | Региональные | Региональные конечные точки сокращают задержку. |
+| Расположение конечной точки | Глобальный | Региональные | Региональные конечные точки сокращают задержку. |
 | Интерфейсы REST API | :heavy_check_mark: | :heavy_check_mark: | Интерфейсы API-интерфейсов службы распознавания речи совместимы с Распознавание речи Bing (другой конечной точкой). Интерфейсы REST API поддерживают преобразование текста в речь и ограниченные функциональные возможности преобразования речи в текст. |
 | Протоколы WebSocket | :heavy_check_mark: | :heavy_check_mark: | API WebSocket службы речи совместим с Распознавание речи Bing (другой конечной точкой). Если возможно, перейдите на пакет SDK для службы "Речь", чтобы упростить код. |
 | Вызовы API между службами | :heavy_check_mark: | :heavy_minus_sign: | Предоставляются в службе "Распознавание речи Bing" через библиотеку для служб C#. |
@@ -85,12 +85,12 @@ ms.locfileid: "80656447"
 
 Сведения о службе поддержки речи, SDK и API см. на [странице поддержки](support.md)речевых услуг.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
-* [Бесплатная пробная служба для речи](get-started.md)
+* [Бесплатная пробная служба для речи](overview.md#try-the-speech-service-for-free)
 * [Краткое руководство. Распознавание речи в приложении UWP с помощью пакета SDK для службы "Речь"](~/articles/cognitive-services/Speech-Service/quickstarts/speech-to-text-from-microphone.md?pivots=programming-language-csharp&tabs=uwp)
 
-## <a name="see-also"></a>См. также
+## <a name="see-also"></a>См. также раздел
 * [Заметки о выпуске речевых служб](releasenotes.md)
 * [Что такое служба распознавания речи](overview.md)
 * [Документация по речевой службе и речевому пакету SDK](speech-sdk.md#get-the-speech-sdk)

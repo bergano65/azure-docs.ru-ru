@@ -12,12 +12,12 @@ ms.date: 05/19/2020
 ms.author: qiohu
 zone_pivot_groups: programming-languages-set-two
 ms.custom: devx-track-js, devx-track-csharp
-ms.openlocfilehash: 820e0b78b986a8836e173513e1508641ac450333
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.openlocfilehash: 1b134fd3d09eeda340e7323638a36b68336242c2
+ms.sourcegitcommit: d95cab0514dd0956c13b9d64d98fdae2bc3569a0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 09/25/2020
-ms.locfileid: "91282935"
+ms.locfileid: "91362033"
 ---
 # <a name="specify-source-language-for-speech-to-text"></a>Укажите исходный язык для перевода речи в текст
 
@@ -27,20 +27,20 @@ ms.locfileid: "91282935"
 
 ## <a name="how-to-specify-source-language-in-c"></a>Как указать исходный язык на языке C #
 
-В этом примере исходный язык предоставляется явно в качестве параметра с помощью `SpeechRecognizer` конструкции.
+В следующем примере исходный язык явно указывается в качестве параметра с помощью `SpeechRecognizer` конструкции.
 
 ```csharp
 var recognizer = new SpeechRecognizer(speechConfig, "de-DE", audioConfig);
 ```
 
-В этом примере исходный язык предоставляется с помощью `SourceLanguageConfig` . Затем объект `sourceLanguageConfig` передается в качестве параметра для `SpeechRecognizer` создания.
+В следующем примере исходный язык предоставляется с помощью `SourceLanguageConfig` . Затем объект `sourceLanguageConfig` передается в качестве параметра для `SpeechRecognizer` создания.
 
 ```csharp
 var sourceLanguageConfig = SourceLanguageConfig.FromLanguage("de-DE");
 var recognizer = new SpeechRecognizer(speechConfig, sourceLanguageConfig, audioConfig);
 ```
 
-В этом примере исходный язык и Пользовательская конечная точка предоставляются с помощью `SourceLanguageConfig` . Затем объект `sourceLanguageConfig` передается в качестве параметра для `SpeechRecognizer` создания.
+В следующем примере исходный язык и Пользовательская конечная точка предоставляются с помощью `SourceLanguageConfig` . Затем объект `sourceLanguageConfig` передается в качестве параметра для `SpeechRecognizer` создания.
 
 ```csharp
 var sourceLanguageConfig = SourceLanguageConfig.FromLanguage("de-DE", "The Endpoint ID for your custom model.");
@@ -57,20 +57,20 @@ var recognizer = new SpeechRecognizer(speechConfig, sourceLanguageConfig, audioC
 
 ## <a name="how-to-specify-source-language-in-c"></a>Как указать исходный язык в C++
 
-В этом примере исходный язык явно указывается в качестве параметра с помощью `FromConfig` метода.
+В следующем примере исходный язык явно указывается в качестве параметра с помощью `FromConfig` метода.
 
 ```C++
 auto recognizer = SpeechRecognizer::FromConfig(speechConfig, "de-DE", audioConfig);
 ```
 
-В этом примере исходный язык предоставляется с помощью `SourceLanguageConfig` . Затем объект `sourceLanguageConfig` передается в качестве параметра `FromConfig` при создании `recognizer` .
+В следующем примере исходный язык предоставляется с помощью `SourceLanguageConfig` . Затем объект `sourceLanguageConfig` передается в качестве параметра `FromConfig` при создании `recognizer` .
 
 ```C++
 auto sourceLanguageConfig = SourceLanguageConfig::FromLanguage("de-DE");
 auto recognizer = SpeechRecognizer::FromConfig(speechConfig, sourceLanguageConfig, audioConfig);
 ```
 
-В этом примере исходный язык и Пользовательская конечная точка предоставляются с помощью `SourceLanguageConfig` . `sourceLanguageConfig`Передается в качестве параметра `FromConfig` при создании `recognizer` .
+В следующем примере исходный язык и Пользовательская конечная точка предоставляются с помощью `SourceLanguageConfig` . `sourceLanguageConfig`Передается в качестве параметра `FromConfig` при создании `recognizer` .
 
 ```C++
 auto sourceLanguageConfig = SourceLanguageConfig::FromLanguage("de-DE", "The Endpoint ID for your custom model.");
@@ -86,20 +86,20 @@ auto recognizer = SpeechRecognizer::FromConfig(speechConfig, sourceLanguageConfi
 
 ## <a name="how-to-specify-source-language-in-java"></a>Как указать исходный язык в Java
 
-В этом примере исходный язык предоставляется явно при создании нового `SpeechRecognizer` .
+В следующем примере исходный язык предоставляется явно при создании нового `SpeechRecognizer` .
 
 ```Java
 SpeechRecognizer recognizer = new SpeechRecognizer(speechConfig, "de-DE", audioConfig);
 ```
 
-В этом примере исходный язык предоставляется с помощью `SourceLanguageConfig` . Затем объект `sourceLanguageConfig` передается в качестве параметра при создании нового `SpeechRecognizer` .
+В следующем примере исходный язык предоставляется с помощью `SourceLanguageConfig` . Затем объект `sourceLanguageConfig` передается в качестве параметра при создании нового `SpeechRecognizer` .
 
 ```Java
 SourceLanguageConfig sourceLanguageConfig = SourceLanguageConfig.fromLanguage("de-DE");
 SpeechRecognizer recognizer = new SpeechRecognizer(speechConfig, sourceLanguageConfig, audioConfig);
 ```
 
-В этом примере исходный язык и Пользовательская конечная точка предоставляются с помощью `SourceLanguageConfig` . Затем объект `sourceLanguageConfig` передается в качестве параметра при создании нового `SpeechRecognizer` .
+В следующем примере исходный язык и Пользовательская конечная точка предоставляются с помощью `SourceLanguageConfig` . Затем объект `sourceLanguageConfig` передается в качестве параметра при создании нового `SpeechRecognizer` .
 
 ```Java
 SourceLanguageConfig sourceLanguageConfig = SourceLanguageConfig.fromLanguage("de-DE", "The Endpoint ID for your custom model.");
@@ -115,14 +115,14 @@ SpeechRecognizer recognizer = new SpeechRecognizer(speechConfig, sourceLanguageC
 
 ## <a name="how-to-specify-source-language-in-python"></a>Как указать исходный язык в Python
 
-В этом примере исходный язык предоставляется явно в качестве параметра с помощью `SpeechRecognizer` конструкции.
+В следующем примере исходный язык явно указывается в качестве параметра с помощью `SpeechRecognizer` конструкции.
 
 ```Python
 speech_recognizer = speechsdk.SpeechRecognizer(
         speech_config=speech_config, language="de-DE", audio_config=audio_config)
 ```
 
-В этом примере исходный язык предоставляется с помощью `SourceLanguageConfig` . Затем объект `SourceLanguageConfig` передается в качестве параметра для `SpeechRecognizer` создания.
+В следующем примере исходный язык предоставляется с помощью `SourceLanguageConfig` . Затем объект `SourceLanguageConfig` передается в качестве параметра для `SpeechRecognizer` создания.
 
 ```Python
 source_language_config = speechsdk.languageconfig.SourceLanguageConfig("de-DE")
@@ -130,7 +130,7 @@ speech_recognizer = speechsdk.SpeechRecognizer(
         speech_config=speech_config, source_language_config=source_language_config, audio_config=audio_config)
 ```
 
-В этом примере исходный язык и Пользовательская конечная точка предоставляются с помощью `SourceLanguageConfig` . Затем объект `SourceLanguageConfig` передается в качестве параметра для `SpeechRecognizer` создания.
+В следующем примере исходный язык и Пользовательская конечная точка предоставляются с помощью `SourceLanguageConfig` . Затем объект `SourceLanguageConfig` передается в качестве параметра для `SpeechRecognizer` создания.
 
 ```Python
 source_language_config = speechsdk.languageconfig.SourceLanguageConfig("de-DE", "The Endpoint ID for your custom model.")
@@ -139,7 +139,7 @@ speech_recognizer = speechsdk.SpeechRecognizer(
 ```
 
 >[!Note]
-> `speech_recognition_language``endpoint_id`Свойства и являются устаревшими из `SpeechConfig` класса в Python. Использовать эти свойства не рекомендуется, и их не следует использовать при создании `SpeechRecognizer` .
+> `speech_recognition_language``endpoint_id`Свойства и являются устаревшими из `SpeechConfig` класса в Python. Использовать эти свойства не рекомендуется, и они не должны использоваться при создании `SpeechRecognizer` .
 
 ::: zone-end
 
@@ -167,14 +167,14 @@ speechConfig.endpointId = "The Endpoint ID for your custom model.";
 
 ## <a name="how-to-specify-source-language-in-objective-c"></a>Как указать исходный язык в цели-C
 
-В этом примере исходный язык предоставляется явно в качестве параметра с помощью `SPXSpeechRecognizer` конструкции.
+В следующем примере исходный язык явно указывается в качестве параметра с помощью `SPXSpeechRecognizer` конструкции.
 
 ```Objective-C
 SPXSpeechRecognizer* speechRecognizer = \
     [[SPXSpeechRecognizer alloc] initWithSpeechConfiguration:speechConfig language:@"de-DE" audioConfiguration:audioConfig];
 ```
 
-В этом примере исходный язык предоставляется с помощью `SPXSourceLanguageConfiguration` . Затем объект `SPXSourceLanguageConfiguration` передается в качестве параметра для `SPXSpeechRecognizer` создания.
+В следующем примере исходный язык предоставляется с помощью `SPXSourceLanguageConfiguration` . Затем объект `SPXSourceLanguageConfiguration` передается в качестве параметра для `SPXSpeechRecognizer` создания.
 
 ```Objective-C
 SPXSourceLanguageConfiguration* sourceLanguageConfig = [[SPXSourceLanguageConfiguration alloc]init:@"de-DE"];
@@ -183,7 +183,7 @@ SPXSpeechRecognizer* speechRecognizer = [[SPXSpeechRecognizer alloc] initWithSpe
                                                                               audioConfiguration:audioConfig];
 ```
 
-В этом примере исходный язык и Пользовательская конечная точка предоставляются с помощью `SPXSourceLanguageConfiguration` . Затем объект `SPXSourceLanguageConfiguration` передается в качестве параметра для `SPXSpeechRecognizer` создания.
+В следующем примере исходный язык и Пользовательская конечная точка предоставляются с помощью `SPXSourceLanguageConfiguration` . Затем объект `SPXSourceLanguageConfiguration` передается в качестве параметра для `SPXSpeechRecognizer` создания.
 
 ```Objective-C
 SPXSourceLanguageConfiguration* sourceLanguageConfig = \
@@ -195,7 +195,7 @@ SPXSpeechRecognizer* speechRecognizer = [[SPXSpeechRecognizer alloc] initWithSpe
 ```
 
 >[!Note]
-> `speechRecognitionLanguage``endpointId`Свойства и являются устаревшими из `SPXSpeechConfiguration` класса в цели-C. Использовать эти свойства не рекомендуется, и их не следует использовать при создании `SPXSpeechRecognizer` .
+> `speechRecognitionLanguage``endpointId`Свойства и являются устаревшими из `SPXSpeechConfiguration` класса в цели-C. Использовать эти свойства не рекомендуется, и они не должны использоваться при создании `SPXSpeechRecognizer` .
 
 ::: zone-end
 

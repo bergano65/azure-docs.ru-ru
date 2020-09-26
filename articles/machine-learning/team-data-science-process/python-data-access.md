@@ -11,12 +11,12 @@ ms.topic: article
 ms.date: 01/10/2020
 ms.author: tdsp
 ms.custom: seodec18, devx-track-python, previous-author=deguhath, previous-ms.author=deguhath
-ms.openlocfilehash: dcbaaeb2868a421a41227e1b5d9fdd84a96248eb
-ms.sourcegitcommit: 7fe8df79526a0067be4651ce6fa96fa9d4f21355
+ms.openlocfilehash: 6c8e6fee2b9f01b8d7ab48990760aa4c4d6e11b2
+ms.sourcegitcommit: d95cab0514dd0956c13b9d64d98fdae2bc3569a0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87852367"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91361506"
 ---
 # <a name="access-datasets-with-python-using-the-azure-machine-learning-python-client-library"></a>Доступ к наборам данных через Python с помощью клиентской библиотеки Python для машинного обучения Azure
 Предварительная версия клиентской библиотеки Python для машинного обучения Microsoft Azure может обеспечить безопасный доступ к наборам данных машинного обучения Azure из локальной среды Python. Она также позволяет создавать наборы данных и управлять ими в рабочей области.
@@ -71,7 +71,7 @@ pip install git+https://github.com/Azure/Azure-MachineLearning-ClientLibrary-Pyt
 
 По соображениям безопасности функциональность фрагмента кода доступна только пользователям с ролью **Владелец** для рабочей области. Ваша роль отображается в Машинное обучение Azure Studio (классическая модель) на странице " **Пользователи** " в разделе " **Параметры**".
 
-![Безопасность][security]
+![На снимке экрана показаны параметры на странице "Пользователи" Машинное обучение Azure Studio.][security]
 
 Если ваша роль не **Владелец**, то вы можете запросить приглашение в качестве владельца или обратиться к владельцу рабочей области за предоставлением фрагмента кода.
 
@@ -92,7 +92,7 @@ pip install git+https://github.com/Azure/Azure-MachineLearning-ClientLibrary-Pyt
 2. Выберите набор данных, к которому хотите получить доступ. Вы можете выбрать любой из наборов данных в списке **My datasets** (Мои наборы данных) или **Примеры**.
 3. На нижней панели инструментов щелкните **Generate Data Access Code**(Создать код доступа к данным). Эта кнопка отключена, если данные хранятся в формате, несовместимом с клиентской библиотекой Python.
    
-    ![Наборы данных][datasets]
+    ![На снимке экрана показаны наборы данных с кодом создания кода доступа к данным.][datasets]
 4. Выберите фрагмент кода в появившемся окне и скопируйте его в буфер обмена.
    
     ![Кнопка "Generate Data Access Code File" (Создать файл кода доступа к данным)][dataset-access-code]

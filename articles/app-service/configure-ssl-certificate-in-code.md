@@ -2,15 +2,15 @@
 title: Использование сертификата TLS/SSL в коде
 description: Узнайте, как использовать сертификаты клиента в коде. Проверяйте подлинность с помощью удаленных ресурсов с помощью сертификата клиента или выполните с ними задачи шифрования.
 ms.topic: article
-ms.date: 11/04/2019
+ms.date: 09/22/2020
 ms.reviewer: yutlin
 ms.custom: seodec18
-ms.openlocfilehash: b62352d09419de11135f4d7a2740e0e74b80255d
-ms.sourcegitcommit: 648c8d250106a5fca9076a46581f3105c23d7265
+ms.openlocfilehash: e791e4ca3481bc0aea931abe946751415f1e1614
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "88962134"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91311824"
 ---
 # <a name="use-a-tlsssl-certificate-in-your-code-in-azure-app-service"></a>Использование TLS/SSL-сертификата в коде в Службе приложений Azure
 
@@ -107,29 +107,6 @@ PrivateKey privKey = (PrivateKey) ks.getKey("<subject-cn>", ("<password>").toCha
 
 Дополнительные сведения о языках, которые не поддерживают или предлагают недостаточную поддержку хранилища сертификатов Windows, см. [в разделе Загрузка сертификата из файла](#load-certificate-from-file).
 
-## <a name="load-certificate-in-linux-apps"></a>Загрузка сертификата в приложениях Linux
-
-`WEBSITE_LOAD_CERTIFICATES`Параметры приложения делают указанные сертификаты доступными для размещенных в Linux приложений (включая пользовательские приложения-контейнеры) в виде файлов. Файлы находятся в следующих каталогах:
-
-- Частные сертификаты `/var/ssl/private` ( `.p12` файлы)
-- Общедоступные сертификаты — `/var/ssl/certs` ( `.der` файлы)
-
-Имена файлов сертификатов — это отпечатки сертификата. В следующем коде C# показано, как загрузить открытый сертификат в приложение Linux.
-
-```csharp
-using System;
-using System.IO;
-using System.Security.Cryptography.X509Certificates;
-
-...
-var bytes = File.ReadAllBytes("/var/ssl/certs/<thumbprint>.der");
-var cert = new X509Certificate2(bytes);
-
-// Use the loaded certificate
-```
-
-Чтобы узнать, как загрузить сертификат TLS/SSL из файла в Node.js, PHP, Python, Java или Ruby, см. документацию по соответствующему языку или веб-платформе.
-
 ## <a name="load-certificate-from-file"></a>Загрузить сертификат из файла
 
 Если вам нужно загрузить файл сертификата, который вы перегрузили вручную, лучше передать сертификат с помощью [FTPS](deploy-ftp.md) вместо [Git](deploy-local-git.md), например. Конфиденциальные данные следует учитывать как закрытый сертификат из системы управления версиями.
@@ -152,6 +129,39 @@ using System.Security.Cryptography.X509Certificates;
 
 ...
 var bytes = File.ReadAllBytes("~/<relative-path-to-cert-file>");
+var cert = new X509Certificate2(bytes);
+
+// Use the loaded certificate
+```
+
+Чтобы узнать, как загрузить сертификат TLS/SSL из файла в Node.js, PHP, Python, Java или Ruby, см. документацию по соответствующему языку или веб-платформе.
+
+## <a name="load-certificate-in-linuxwindows-containers"></a>Загрузка сертификата в контейнерах Linux или Windows
+
+`WEBSITE_LOAD_CERTIFICATES`Параметры приложения делают указанные сертификаты доступными для приложений-контейнеров Windows или Linux (включая встроенные контейнеры Linux) в виде файлов. Файлы находятся в следующих каталогах:
+
+| Платформа контейнера | Открытые сертификаты | Закрытые сертификаты |
+| - | - | - |
+| Контейнер Windows | `C:\appservice\certificates\public` | `C:\appservice\certificates\private` |
+| Контейнер Linux | `/var/ssl/certs` | `/var/ssl/private` |
+
+Имена файлов сертификатов — это отпечатки сертификата. 
+
+> [!NOTE]
+> Служба приложений внедряет пути к сертификатам в контейнеры Windows в виде следующих переменных среды: `WEBSITE_PRIVATE_CERTS_PATH` `WEBSITE_INTERMEDIATE_CERTS_PATH` ,, `WEBSITE_PUBLIC_CERTS_PATH` и `WEBSITE_ROOT_CERTS_PATH` . Лучше сослаться на путь к сертификату с помощью переменных среды, а не прописано путь к сертификату в случае, если пути сертификатов изменятся в будущем.
+>
+
+Кроме того, [контейнеры Windows Server Core](configure-custom-container.md#supported-parent-images) автоматически загружают сертификаты в хранилище сертификатов в **LocalMachine\My**. Чтобы загрузить сертификаты, используйте тот же шаблон, что и для [загрузки сертификата в приложениях Windows](#load-certificate-in-windows-apps). Для контейнеров на основе Windows Nano используйте приведенные выше пути к файлам, чтобы [загрузить сертификат непосредственно из файла](#load-certificate-from-file).
+
+В следующем коде C# показано, как загрузить открытый сертификат в приложение Linux.
+
+```csharp
+using System;
+using System.IO;
+using System.Security.Cryptography.X509Certificates;
+
+...
+var bytes = File.ReadAllBytes("/var/ssl/certs/<thumbprint>.der");
 var cert = new X509Certificate2(bytes);
 
 // Use the loaded certificate

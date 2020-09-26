@@ -10,12 +10,12 @@ ms.subservice: sql
 ms.date: 04/15/2020
 ms.author: xiaoyul
 ms.reviewer: igorstan
-ms.openlocfilehash: d38029284a05ce3b8f9e9af96d3f632e874f874c
-ms.sourcegitcommit: 3fc3457b5a6d5773323237f6a06ccfb6955bfb2d
+ms.openlocfilehash: fe00d7f107911e2245041419c20f86e2e32a0480
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/11/2020
-ms.locfileid: "90032277"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91289265"
 ---
 # <a name="development-best-practices-for-synapse-sql"></a>Рекомендации по разработке для Synapse SQL
 В этой статье приводятся руководство и рекомендации по разработке решения хранилища данных. 
@@ -28,22 +28,22 @@ ms.locfileid: "90032277"
 
 ### <a name="maintain-statistics"></a>Обеспечение статистики
 
-Убедитесь, что статистика обновляется ежедневно или после каждой загрузки.  Однако всегда есть компромиссы между производительностью и затратами на создание и обновление статистики. Если ведение статистики занимает слишком много времени, выбирайте отдельные столбцы, для которых необходимо создавать статистику, или столбцы, требующие частого обновления статистики.  
+Убедитесь, что вы обновляете статистику ежедневно или после каждой нагрузки.  Однако всегда есть компромиссы между производительностью и затратами на создание и обновление статистики. Если вы обнаружите слишком много времени для поддержания всей статистики, более избирательно выбирать, какие столбцы имеют статистику или какие столбцы нуждаются в частом обновлении.  
 
-Например, можно ежедневно обновлять столбцы дат, в которые добавляются новые значения. 
+Например, может потребоваться обновить столбцы даты, где новые значения могут добавляться ежедневно. 
 
 > [!NOTE]
 > Статистику рекомендуется вести в столбцах, которые являются частью объединения, используются в предложении WHERE или GROUP BY.
 
-Дополнительные сведения см. в статьях [Управление статистикой таблиц в хранилище данных SQL](develop-tables-statistics.md), [CREATE STATISTICS](/sql/t-sql/statements/create-statistics-transact-sql?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest) и [UPDATE STATISTICS](/sql/t-sql/statements/update-statistics-transact-sql?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest).
+Дополнительные сведения см. в статьях [Управление статистикой таблиц в хранилище данных SQL](develop-tables-statistics.md), [CREATE STATISTICS](/sql/t-sql/statements/create-statistics-transact-sql?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true) и [UPDATE STATISTICS](/sql/t-sql/statements/update-statistics-transact-sql?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true).
 
 ### <a name="hash-distribute-large-tables"></a>Хэш-распределение больших таблиц
 
-По умолчанию таблицы распределяются по методу циклического перебора.  Это позволяет упростить процесс создания таблиц, так как пользователям не нужно принимать решение о типе распределения.  Таблицы с циклическим перебором могут быть достаточно эффективными для некоторых рабочих нагрузок. Но в большинстве случаев выбор столбца распределения будет выполняться гораздо лучше.  
+По умолчанию таблицы распределяются по методу циклического перебора. Эта возможность позволяет пользователям легко начать создавать таблицы, не принимая решение о том, как следует распределять их таблицы.  Таблицы с циклическим перебором могут быть достаточно эффективными для некоторых рабочих нагрузок. Но в большинстве случаев выбор столбца распределения будет выполняться гораздо лучше.  
 
 Наглядно это превосходство можно увидеть при объединении больших таблиц фактов.  
 
-Например, во время выполнения запроса на объединение таблицы Orders, распределенной по идентификатору order_id, с таблицей Transactions, распределенной по тому же идентификатору, этот запрос превращается в запрос к серверу. 
+Например, если имеется таблица Orders, распределенная по order_id, и таблица Transactions, также распространяемая order_id, при присоединении таблицы Orders к таблице Transactions на order_id этот запрос превращается в сквозной запрос. 
 
 Это исключает выполнение операций перемещения данных.  Чем меньше в запросе действий, тем быстрее он выполняется.  Скорость выполнения запроса также зависит от объема перемещаемых данных.
 
@@ -52,7 +52,7 @@ ms.locfileid: "90032277"
 
 Ниже приведены ссылки на дополнительные разделы, содержащие сведения о том, как с помощью столбца распределения можно улучшить производительность и как определить распределенную таблицу в предложение WITH инструкции CREATE TABLES.
 
-Дополнительные сведения см. в статьях [Общие сведения о таблицах](develop-tables-overview.md), [Распределение таблиц](../sql-data-warehouse/sql-data-warehouse-tables-distribute.md?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json), [Выбор распределения таблиц](https://blogs.msdn.microsoft.com/sqlcat/20../../choosing-hash-distributed-table-vs-round-robin-distributed-table-in-azure-sql-dw-service/), [CREATE TABLE](/sql/t-sql/statements/create-table-azure-sql-data-warehouse?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest) и [CREATE TABLE AS SELECT](/sql/t-sql/statements/create-table-as-select-azure-sql-data-warehouse?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest).
+Дополнительные сведения см. в статьях [Общие сведения о таблицах](develop-tables-overview.md), [Распределение таблиц](../sql-data-warehouse/sql-data-warehouse-tables-distribute.md?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json), [Выбор распределения таблиц](https://blogs.msdn.microsoft.com/sqlcat/20../../choosing-hash-distributed-table-vs-round-robin-distributed-table-in-azure-sql-dw-service/), [CREATE TABLE](/sql/t-sql/statements/create-table-azure-sql-data-warehouse?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true) и [CREATE TABLE AS SELECT](/sql/t-sql/statements/create-table-as-select-azure-sql-data-warehouse?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true).
 
 ### <a name="do-not-over-partition"></a>Недопущение избыточного секционирования
 Несмотря на то, что секционирование данных — это эффективный способ управления данными, который реализуется благодаря переключению секций или оптимизации сканирования путем исключения секций, наличие большого количества секций может повлиять на производительность запросов.  Стратегия разделения данных на большое количество секций, как правило, эффективна в SQL Server, но не всегда работает в пуле SQL.  
@@ -81,17 +81,17 @@ ms.locfileid: "90032277"
 
 Например, вместо выполнения инструкции DELETE для удаления всех строк в таблице, упорядоченной по идентификатору order_date (октябрь 2001 г.), данные можно секционировать ежемесячно, а потом переключить секцию с данными на пустую секцию из другой таблицы (см. примеры использования инструкции ALTER TABLE).  
 
-Используя инструкцию CTAS вместо DELETE, можно записать данные, которые необходимо сохранить в несекционированной таблице.  Если на выполнение этих двух инструкций требуется одинаковое количество времени, целесообразно использовать инструкцию CTAS, так как для ее выполнения необходима минимальная нагрузка ведения журнала транзакций, и ее можно быстро отменить.
+Используя инструкцию CTAS вместо DELETE, можно записать данные, которые необходимо сохранить в несекционированной таблице.  Выполнение CTAS займет столько же времени, и эта инструкция намного безопаснее, так как она выполняет мало записей в журнал о транзакциях и при необходимости ее можно быстро отменить.
 
-Дополнительные сведения см. в статьях [Сведения о транзакциях](develop-transactions.md), [Оптимизация транзакций](../sql-data-warehouse/sql-data-warehouse-develop-best-practices-transactions.md?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json), [Секционирование таблиц](../sql-data-warehouse/sql-data-warehouse-tables-partition.md?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json), [TRUNCATE TABLE](/sql/t-sql/statements/truncate-table-transact-sql?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest), [ALTER TABLE](/sql/t-sql/statements/alter-table-transact-sql?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest) и [Функция Create Table As Select (CTAS)](../sql-data-warehouse/sql-data-warehouse-develop-ctas.md?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json).
+Дополнительные сведения см. в статьях [Сведения о транзакциях](develop-transactions.md), [Оптимизация транзакций](../sql-data-warehouse/sql-data-warehouse-develop-best-practices-transactions.md?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json), [Секционирование таблиц](../sql-data-warehouse/sql-data-warehouse-tables-partition.md?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json), [TRUNCATE TABLE](/sql/t-sql/statements/truncate-table-transact-sql?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true), [ALTER TABLE](/sql/t-sql/statements/alter-table-transact-sql?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true) и [Функция Create Table As Select (CTAS)](../sql-data-warehouse/sql-data-warehouse-develop-ctas.md?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json).
 
 ### <a name="use-the-smallest-possible-column-size"></a>Использование минимального размера столбца
 
-При определении DDL рекомендуется использовать поддерживаемый тип данных с наименьшим размером. Это позволит повысить производительность запросов.  Это особенно важно для столбцов CHAR и VARCHAR.  
+При определении DDL рекомендуется использовать поддерживаемый тип данных с наименьшим размером. Это позволит повысить производительность запросов. Это действие особенно важно для столбцов CHAR и VARCHAR.  
 
-Если самое длинное значение в столбце состоит из 25 знаков, столбец необходимо определить как VARCHAR(25).  Не рекомендуется использовать по умолчанию длинные значения столбцов.  Кроме того, по возможности определяйте столбцы как VARCHAR, а не NVARCHAR.
+Если самое длинное значение в столбце состоит из 25 знаков, столбец необходимо определить как VARCHAR(25).  Не рекомендуется использовать по умолчанию длинные значения столбцов.  Кроме того, определяйте столбцы как VARCHAR, если это все, что необходимо, а не использовать NVARCHAR.
 
-Дополнительные сведения см. в статьях, посвященных [общим сведениям о таблицах](develop-tables-overview.md), [типам данных таблиц](develop-tables-data-types.md) и [инструкции CREATE TABLE](/sql/t-sql/statements/create-table-azure-sql-data-warehouse?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest).
+Дополнительные сведения см. в статьях, посвященных [общим сведениям о таблицах](develop-tables-overview.md), [типам данных таблиц](develop-tables-data-types.md) и [инструкции CREATE TABLE](/sql/t-sql/statements/create-table-azure-sql-data-warehouse?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true).
 
 ### <a name="optimize-clustered-columnstore-tables"></a>Оптимизация таблиц с кластеризованными индексами columnstore
 
@@ -99,28 +99,28 @@ ms.locfileid: "90032277"
 
 Качество кластеризованного сегмента Columnstore существенно влияет на эффективность выполнения запросов в таблицах с кластеризованными индексами Columnstore.  Если во время записи строк в таблицы Columnstore возникает нехватка памяти, качество сегмента Columnstore может ухудшиться.  
 
-Качество сегмента можно изменить по числу строк в сжатой группе строк.  Дополнительные сведения об определении и улучшении качества сегмента для таблиц с кластеризованными индексами columnstore см. в разделах [Причины низкого качества индекса Columnstore](../sql-data-warehouse/sql-data-warehouse-tables-index.md?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json#causes-of-poor-columnstore-index-quality) и [Индексы таблиц](../sql-data-warehouse/sql-data-warehouse-tables-index.md?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json).  
+Качество сегмента можно изменить по числу строк в сжатой группе строк.  Пошаговые инструкции по обнаружению и улучшению качества сегментов для кластеризованных таблиц columnstore см. в статьях [причины низкого качества индекса columnstore](../sql-data-warehouse/sql-data-warehouse-tables-index.md?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json#causes-of-poor-columnstore-index-quality) и [табличных индексов](../sql-data-warehouse/sql-data-warehouse-tables-index.md?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json) .  
 
-Так как высококачественные сегменты columnstore важны, рекомендуется использовать идентификаторы пользователей, которым назначен класс ресурсов среднего или большого размера для загрузки данных. Использование [единиц использования хранилища данных](resource-consumption-models.md) меньшего размера требует присвоения пользователю загрузки класса ресурсов большего размера.
+Так как высококачественные сегменты columnstore важны, рекомендуется использовать для загрузки данных идентификаторы пользователей, которым назначен класс ресурсов среднего или большого размера. Использование [единиц использования хранилища данных](resource-consumption-models.md) меньшего размера требует присвоения пользователю загрузки класса ресурсов большего размера.
 
 В основном таблицы Columnstore не передают данные в сжатый сегмент Columnstore, пока количество строк в каждой таблице не превысит миллион, а каждая таблица пула SQL не будет секционирована на 60 таблиц. Поэтому нецелесообразно применять к таблицам Columnstore запросы до тех пор, пока количество строк в таблице не превысит 60 миллионов.  
 
 > [!TIP]
 > Для таблиц, в которых менее 60 миллионов строк, индекс сolumstore, как правило, лучше не использовать.  
 
-Более того, чтобы воспользоваться преимуществами кластеризованного индекса Columnstore при секционировании данных, каждая секция должна состоять из миллиона строк.  Если таблица состоит из 100 секций, то, чтобы использовать кластеризованный индекс columnstore, она должна состоять как минимум из 6 миллиардов строк (60 распределений *100 секций* 1 миллион строк).  
+Кроме того, при секционировании данных необходимо учитывать, что каждая секция должна иметь 1 000 000 строк, чтобы получить преимущество от кластеризованного индекса columnstore.  Если таблица состоит из 100 секций, то, чтобы использовать кластеризованный индекс columnstore, она должна состоять как минимум из 6 миллиардов строк (60 распределений *100 секций* 1 миллион строк).  
 
 Если таблица не содержит такого количества строк, рекомендуется уменьшить количество секций или использовать таблицу без кластеризованных индексов (кучу).  Чтобы получить более высокую производительность, возможно, вместо кластеризованной таблицы стоит использовать таблицу без кластеризованных индексов, содержащую вторичные индексы.
 
 Если выбрать только необходимые столбцы, запросы к таблице ColumnStore будут выполняться быстрее.  
 
-Ознакомьтесь также со статьями [Индексирование таблиц](../sql-data-warehouse/sql-data-warehouse-tables-index.md?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json), [Руководство по индексам Columnstore](/sql/relational-databases/indexes/columnstore-indexes-overview?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest) и [Перестроение индексов Columnstore](../sql-data-warehouse/sql-data-warehouse-tables-index.md?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json#rebuilding-indexes-to-improve-segment-quality).
+Ознакомьтесь также со статьями [Индексирование таблиц](../sql-data-warehouse/sql-data-warehouse-tables-index.md?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json), [Руководство по индексам Columnstore](/sql/relational-databases/indexes/columnstore-indexes-overview?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true) и [Перестроение индексов Columnstore](../sql-data-warehouse/sql-data-warehouse-tables-index.md?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json#rebuilding-indexes-to-improve-segment-quality).
 
 ## <a name="sql-on-demand-development-best-practices"></a>Рекомендации по безопасной разработке SQL по запросу
 
 ### <a name="general-considerations"></a>Общие рекомендации
 
-SQL по запросу позволяет запрашивать файлы в учетных записях хранения Azure. У него нет возможностей локального хранилища или приема, то есть все файлы, к которым обращается запрос, хранятся за пределами SQL по запросу. Поэтому все, что связано с чтением файлов из хранилища, может оказать влияние на производительность запросов.
+SQL по запросу позволяет запрашивать файлы в учетных записях хранения Azure. У него нет возможностей локального хранилища или приема, то есть все файлы, к которым обращается запрос, хранятся за пределами SQL по запросу. Таким образом, все, что связано с чтением файлов из хранилища, может оказать влияние на производительность запросов.
 
 ### <a name="colocate-azure-storage-account-and-sql-on-demand"></a>Совместное размещение учетной записи хранения Azure и SQL по запросу
 
@@ -130,11 +130,11 @@ SQL по запросу позволяет запрашивать файлы в 
 
 ### <a name="azure-storage-throttling"></a>Регулирование службы хранилища Azure
 
-Несколько приложений и служб могут получить доступ к вашей учетной записи хранения. Когда общая скорость операций ввода-вывода в секунду или пропускная способность приложений, служб и рабочей нагрузки SQL по запросу превышают ограничения учетной записи хранения, происходит регулирование хранилища. Регулирование хранилища существенно снижает производительность запросов.
+Несколько приложений и служб могут получить доступ к вашей учетной записи хранения. При объединении операций ввода-вывода или пропускной способности, создаваемой приложениями, службами и рабочей нагрузкой SQL по запросу, превышены ограничения учетной записи хранения, выполняется регулирование хранилища. Регулирование хранилища существенно снижает производительность запросов.
 
 После обнаружения регулирования в SQL по запросу предусмотрена встроенная обработка этого сценария. SQL по запросу будет выполнять запросы к хранилищу в более низком темпе, пока регулирование не будет завершено. 
 
-Для оптимальной производительности не следует усложнять работу учетной записи хранения другими рабочими нагрузками во время выполнения запроса.
+Однако для оптимального выполнения запросов рекомендуется не перегрузить учетную запись хранения другими рабочими нагрузками во время выполнения запроса.
 
 ### <a name="prepare-files-for-querying"></a>Подготовка файлов к запросам
 
@@ -148,7 +148,7 @@ SQL по запросу позволяет запрашивать файлы в 
 
 ### <a name="use-fileinfo-and-filepath-functions-to-target-specific-partitions"></a>Использование функций fileinfo и filepath для назначения конкретных разделов
 
-Данные часто организованы в разделы. Вы можете указать, чтобы служба "SQL по запросу" запрашивала определенные папки и файлы. Это сокращает количество файлов и объем данных для чтения и обработки запросов. 
+Данные часто организованы в разделы. Вы можете указать, чтобы служба "SQL по запросу" запрашивала определенные папки и файлы. Это позволит сократить количество файлов и объем данных, необходимых для чтения и обработки запроса. 
 
 Следовательно, производительность будет выше. Дополнительные сведения см. в разделах о функциях [filename](query-data-storage.md#filename-function) и [filepath](query-data-storage.md#filepath-function), а также в примерах [запрашивания конкретных файлов](query-specific-files.md).
 
@@ -162,11 +162,11 @@ SQL по запросу позволяет запрашивать файлы в 
 
 CETAS можно использовать для сохранения часто используемых частей запросов (например, соединенных ссылочных таблиц) в новый набор файлов. Позже можно выполнить соединение с этой отдельной внешней таблицей вместо повторного выполнения операций соединений в нескольких запросах. 
 
-Так как CETAS создает файлы Parquet, статистика создается автоматически, когда первый запрос направляется в эту внешнюю таблицу, что приводит к повышению производительности.
+Поскольку CETAS создает файлы Parquet, статистика будет создана автоматически, когда первый запрос обращается к этой внешней таблице, и вы получите повышенную производительность.
 
 ### <a name="next-steps"></a>Дальнейшие действия
 
-Если вам нужна информация, не указанная в этой статье, используйте поиск по документации в левой части этой страницы, чтобы найти все документы о пуле SQL.  На [странице вопросов и ответов Майкрософт для пула SQL](https://docs.microsoft.com/answers/topics/azure-synapse-analytics.html) можно задавать вопросы другим пользователям и группе разработчиков пула SQL.  
+Если вам нужна информация, не указанная в этой статье, используйте функцию **поиска doc** в левой части этой страницы, чтобы найти все документы пула SQL.  На [странице вопросов и ответов Майкрософт для пула SQL](https://docs.microsoft.com/answers/topics/azure-synapse-analytics.html) можно задавать вопросы другим пользователям и группе разработчиков пула SQL.  
 
 Мы регулярно просматриваем этот форум и следим за тем, чтобы другие пользователи или наши специалисты ответили на интересующие вас вопросы.  Вопросы также можно задавать на [форуме по пулу SQL Azure](https://stackoverflow.com/questions/tagged/azure-sqldw) на сайте Stack Overflow.
  

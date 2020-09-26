@@ -6,14 +6,14 @@ ms.service: site-recovery
 ms.topic: conceptual
 ms.date: 04/15/2019
 ms.author: ramamill
-ms.openlocfilehash: 83535fde7f577c4cd5d0b3866afcc0a916c16337
-ms.sourcegitcommit: e995f770a0182a93c4e664e60c025e5ba66d6a45
+ms.openlocfilehash: 5748ff87e94daef80b140e015371eb7a334fffac
+ms.sourcegitcommit: d95cab0514dd0956c13b9d64d98fdae2bc3569a0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86134817"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91361489"
 ---
-# <a name="manage-the-configuration-server-for-vmware-vmphysical-server-disaster-recovery"></a>Управление сервером конфигурации для аварийного восстановления виртуальной машины VMware или физического сервера
+# <a name="manage-the-configuration-server-for-vmware-vmphysical-server-disaster-recovery"></a>Управление сервером конфигурации для аварийного восстановления виртуальных машин и физических серверов VMware
 
 При использовании [Azure Site Recovery](site-recovery-overview.md) для аварийного восстановления виртуальных машин VMware и физических серверов в Azure настраивается локальный сервер конфигурации. Сервер конфигурации используется для управления обменом данными между локальной средой VMware и Azure, а также репликацией данных. В этой статье перечислены распространенные задачи управления сервером конфигурации после его развертывания.
 
@@ -71,7 +71,7 @@ ms.locfileid: "86134817"
 
 1. После [входа](#access-configuration-server) выберите **Управление учетными данными виртуальной машины**.
 2. Щелкните **Добавить учетные данные виртуальной машины**.
-    ![добавить-учетные-данные-мобильности](media/vmware-azure-manage-configuration-server/add-mobility-credentials.png)
+    ![Снимок экрана: Управление панелью учетных данных виртуальной машины с помощью ссылки "добавить учетные данные виртуальной машины".](media/vmware-azure-manage-configuration-server/add-mobility-credentials.png)
 3. Введите новые учетные данные и щелкните **Добавить**.
 
 Учетные данные также можно добавить с помощью CSPSConfigtool.exe.

@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 09/22/2020
 ms.author: memildin
-ms.openlocfilehash: 3cb35cdf217d497b612dee12aedb869b0583e464
-ms.sourcegitcommit: bdd5c76457b0f0504f4f679a316b959dcfabf1ef
+ms.openlocfilehash: 556177b0f3eb156f5b128995cb81555aa77bc8d2
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "90986689"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91289911"
 ---
 # <a name="whats-new-in-azure-security-center"></a>Новые возможности в Центре безопасности Azure
 
@@ -288,7 +288,7 @@ Azure Key Vault — это облачная служба, которая обе
 
 Центр безопасности теперь предоставляет рекомендации по безопасности, если она определяет подписку Azure без включенных по умолчанию параметров безопасности. До настоящего момента Центр безопасности рекомендует включить многофакторную проверку подлинности с помощью условного доступа, который является частью лицензии Azure Active Directory (AD) Premium. Для клиентов, использующих Azure AD бесплатно, рекомендуется включить параметры безопасности по умолчанию. 
 
-Наша цель — порекомендовать большему числу клиентов защищать свои облачные среды с помощью MFA и снизить одну из самых высоких рисков, которые также наиболее эффективны для [оценки безопасности](https://docs.microsoft.com/azure/security-center/secure-score-security-controls).
+Наша цель — порекомендовать большему числу клиентов защищать свои облачные среды с помощью MFA и снизить одну из самых высоких рисков, которые также наиболее эффективны для [оценки безопасности](secure-score-security-controls.md).
 
 Дополнительные сведения о параметрах [безопасности по умолчанию](https://docs.microsoft.com/azure/active-directory/fundamentals/concept-fundamentals-security-defaults).
 
@@ -429,7 +429,7 @@ Azure Key Vault — это облачная служба, которая обе
 
 Дополнительные сведения о каждом из них см. на [странице справки по рекомендациям по безопасности](recommendations-reference.md).
 
-Узнайте больше о [защите от угроз в центре безопасности Azure](https://docs.microsoft.com/azure/security-center/threat-protection).
+Узнайте больше о [защите от угроз в центре безопасности Azure](azure-defender.md).
 
 
 
@@ -442,13 +442,13 @@ Azure Key Vault — это облачная служба, которая обе
 
 Дополнительные сведения о безопасности контейнеров центра безопасности см. в следующих статьях:
 
-- [Общие сведения о функциях безопасности контейнеров в центре безопасности](https://docs.microsoft.com/azure/security-center/container-security)
-- [Сведения об интеграции с реестром контейнеров Azure](https://docs.microsoft.com/azure/security-center/azure-container-registry-integration)
-- [Сведения об интеграции со службой Kubernetes Azure](https://docs.microsoft.com/azure/security-center/azure-kubernetes-service-integration)
-- [Проверка реестров и защита узлов DOCKER](https://docs.microsoft.com/azure/security-center/monitor-container-security)
-- [Оповещения системы безопасности от функций защиты от угроз для кластеров службы Kubernetes Azure](https://docs.microsoft.com/azure/security-center/alerts-reference#alerts-akscluster)
-- [Оповещения системы безопасности от функций защиты от угроз для узлов службы Kubernetes Azure](https://docs.microsoft.com/azure/security-center/alerts-reference#alerts-containerhost)
-- [Рекомендации по безопасности для контейнеров](https://docs.microsoft.com/azure/security-center/recommendations-reference#recs-containers)
+- [Общие сведения о функциях безопасности контейнеров в центре безопасности](container-security.md)
+- [Сведения об интеграции с реестром контейнеров Azure](defender-for-container-registries-introduction.md)
+- [Сведения об интеграции со службой Kubernetes Azure](defender-for-kubernetes-introduction.md)
+- [Проверка реестров и защита узлов DOCKER](container-security.md)
+- [Оповещения системы безопасности от функций защиты от угроз для кластеров службы Kubernetes Azure](alerts-reference.md#alerts-akscluster)
+- [Оповещения системы безопасности от функций защиты от угроз для узлов службы Kubernetes Azure](alerts-reference.md#alerts-containerhost)
+- [Рекомендации по безопасности для контейнеров](recommendations-reference.md#recs-containers)
 
 
 
@@ -537,10 +537,9 @@ Azure Key Vault — это облачная служба, которая обе
 
 Дополнительные сведения об этих двух новых рекомендациях см. в таблице [рекомендации по вычислению и использованию приложений](recommendations-reference.md#recs-computeapp) .
 
-Дополнительные сведения об использовании агента в центре безопасности Azure см. в статье [что такое агент log Analytics?](https://docs.microsoft.com/azure/security-center/faq-data-collection-agents#what-is-the-log-analytics-agent).
+Дополнительные сведения об использовании агента в центре безопасности Azure см. в статье [что такое агент log Analytics?](faq-data-collection-agents.md#what-is-the-log-analytics-agent).
 
-Узнайте больше о [расширениях для компьютеров ARC в Azure](https://docs.microsoft.com/azure/azure-arc/servers/manage-vm-extensions#enable-extensions-from-the-portal).
-
+Узнайте больше о [расширениях для компьютеров ARC в Azure](../azure-arc/servers/manage-vm-extensions.md#enable-extensions-from-the-portal).
 
 
 ### <a name="new-policies-to-create-continuous-export-and-workflow-automation-configurations-at-scale"></a>Новые политики для создания непрерывного экспорта и конфигураций автоматизации рабочих процессов в масштабе
@@ -597,7 +596,7 @@ Azure Key Vault — это облачная служба, которая обе
 | [На виртуальных машинах должна быть включена Расширенная защита от угроз](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2fproviders%2fMicrosoft.Authorization%2fpolicyDefinitions%2f4da35fc9-c9e7-4960-aec9-797fe7d9051d)           | 4da35fc9-c9e7-4960-aec9-797fe7d9051d |
 |                                                                                                                                                                                                                                                                       |                                      |
 
-Узнайте больше о [защите от угроз в центре безопасности Azure](https://docs.microsoft.com/azure/security-center/threat-protection).
+Узнайте больше о [защите от угроз в центре безопасности Azure](azure-defender.md).
 
 
 
@@ -721,7 +720,7 @@ Azure Key Vault — это облачная служба, которая обе
 
 ### <a name="crash-dump-analysis-capabilities-migrating-to-fileless-attack-detection"></a>Возможности анализа аварийного дампа перенесены в компонент обнаружения бесфайловых атак 
 
-Возможности анализа аварийного дампа Windows (CDA) интегрированы в компонент [обнаружения бесфайловых атак](https://docs.microsoft.com/azure/security-center/threat-protection#windows-fileless). Аналитика обнаружения бесфайловых атак обеспечивает улучшенные версии следующих оповещений системы безопасности для компьютеров с Windows: обнаружено внедрение кода, обнаружена маскировка под модуль Windows, обнаружен код оболочки, обнаружен подозрительный сегмент кода.
+Возможности анализа аварийного дампа Windows (CDA) интегрированы в компонент [обнаружения бесфайловых атак](defender-for-servers-introduction.md#what-are-the-benefits-of-azure-defender-for-servers). Аналитика обнаружения бесфайловых атак обеспечивает улучшенные версии следующих оповещений системы безопасности для компьютеров с Windows: обнаружено внедрение кода, обнаружена маскировка под модуль Windows, обнаружен код оболочки, обнаружен подозрительный сегмент кода.
 
 Вот некоторые из преимуществ этого переноса:
 

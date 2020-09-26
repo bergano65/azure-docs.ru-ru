@@ -3,12 +3,12 @@ title: Получение данных о соответствии полити�
 description: Соответствие определяется оценками и действиями Политики Azure. Узнайте о том, как получить подробные сведения о соответствии для ресурсов Azure.
 ms.date: 09/22/2020
 ms.topic: how-to
-ms.openlocfilehash: 2ab75bdab0dcf910da91eb60b5f0cf23892d6c51
-ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
+ms.openlocfilehash: 83bf00710346193a89b59c6a72a0e4840dd5abfb
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "90895431"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91291031"
 ---
 # <a name="get-compliance-data-of-azure-resources"></a>Получение данных о соответствии для ресурсов Azure
 
@@ -605,12 +605,17 @@ PolicyDefinitionAction     : deny
 PolicyDefinitionCategory   : tbd
 ```
 
-Пример Получение событий, связанных с несоответствующими ресурсами виртуальной сети и произошедших после указанной даты.
+Пример. получение событий, связанных с несоответствующими ресурсами виртуальной сети, которые произошли после определенной даты, преобразование в объект CSV и экспорт в файл.
 
 ```azurepowershell-interactive
-PS> Get-AzPolicyEvent -Filter "ResourceType eq '/Microsoft.Network/virtualNetworks'" -From '2018-05-19'
+$policyEvents = Get-AzPolicyEvent -Filter "ResourceType eq '/Microsoft.Network/virtualNetworks'" -From '2020-09-19'
+$policyEvents | ConvertTo-Csv | Out-File 'C:\temp\policyEvents.csv'
+```
 
-Timestamp                  : 5/19/2018 5:18:53 AM
+Выходные данные `$policyEvents` объекта выглядят следующим образом:
+
+```output
+Timestamp                  : 9/19/2020 5:18:53 AM
 ResourceId                 : /subscriptions/{subscriptionId}/resourceGroups/RG-Tags/providers/Mi
                              crosoft.Network/virtualNetworks/RG-Tags-vnet
 PolicyAssignmentId         : /subscriptions/{subscriptionId}/resourceGroups/RG-Tags/providers/Mi
@@ -642,7 +647,7 @@ Trent Baker
 
 ## <a name="azure-monitor-logs"></a>Журналы Azure Monitor
 
-Если у вас есть [рабочая область Log Analytics](../../../azure-monitor/log-query/log-query-overview.md) с `AzureActivity` из связанного с подпиской [решения Аналитики журнала действий](../../../azure-monitor/platform/activity-log.md), вы также можете просмотреть результаты несоответствия из циклов оценки, используя простые запросы Kusto и таблицу `AzureActivity`. С учетом подробных сведений о несоответствии в журналах Azure Monitor вы также можете настроить оповещения для отслеживания несоответствия.
+Если у вас есть [Рабочая область log Analytics](../../../azure-monitor/log-query/log-query-overview.md) с `AzureActivity` [аналитика журнала действий решением](../../../azure-monitor/platform/activity-log.md) , привязанным к вашей подписке, можно также просмотреть результаты несоответствия на основе оценки новых и обновленных ресурсов с помощью простых запросов Kusto и `AzureActivity` таблицы. С учетом подробных сведений о несоответствии в журналах Azure Monitor вы также можете настроить оповещения для отслеживания несоответствия.
 
 :::image type="content" source="../media/getting-compliance-data/compliance-loganalytics.png" alt-text="Снимок экрана Azure Monitor журналов, демонстрирующих действия политики Azure в таблице AzureActivity." border="false":::
 

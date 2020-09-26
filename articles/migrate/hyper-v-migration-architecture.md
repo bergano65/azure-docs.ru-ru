@@ -6,12 +6,12 @@ ms.service: azure-migrate
 ms.topic: conceptual
 ms.date: 11/19/2019
 ms.author: raynew
-ms.openlocfilehash: 8bca88fc63a7fc04a22d2a68adbe59259b07f50e
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 390a8a49e9a47ee5e6845d85fe4fe02f514708e8
+ms.sourcegitcommit: d95cab0514dd0956c13b9d64d98fdae2bc3569a0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "74185878"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91362203"
 ---
 # <a name="how-does-hyper-v-replication-work"></a>Как работает репликация Hyper-V?
 
@@ -30,11 +30,11 @@ ms.locfileid: "74185878"
 
 ## <a name="architectural-components"></a>Компоненты архитектуры
 
-![Architecture](./media/hyper-v-replication-architecture/architecture.png)
+![На схеме показана исходная сеть Hyper-V с каналом данных H T T S для Microsoft Azure, а также сведения, описанные в таблице.](./media/hyper-v-replication-architecture/architecture.png)
 
 
 
-**Компонент** | **Развертывание** | 
+**Компонент** | **Deployment** | 
 --- | --- 
 **Поставщик репликации** | Поставщик Microsoft Azure Site Recovery установлен на узлах Hyper-V и зарегистрирован в миграции сервера миграции Azure.<br/> Поставщик управляет репликацией для виртуальных машин Hyper-V.
 **Агент служб восстановления** | Агент службы восстановления Microsoft Azure обрабатывает репликацию данных. Он работает с поставщиком для репликации данных с виртуальных машин Hyper-V в Azure.<br/> Реплицированные данные передаются в учетную запись хранения в подписке Azure. Средство миграции сервера обрабатывает реплицированные данные и применяет их к репликам дисков в подписке. Диски реплики используются для создания виртуальных машин Azure при миграции.
@@ -86,6 +86,6 @@ I
 
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Попробуйте выполнить [миграцию Hyper-V](tutorial-migrate-hyper-v.md) с помощью миграции сервера миграция Azure.

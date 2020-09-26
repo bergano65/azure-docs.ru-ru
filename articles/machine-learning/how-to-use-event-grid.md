@@ -11,12 +11,12 @@ ms.author: shipatel
 author: shivp950
 ms.reviewer: larryfr
 ms.date: 05/11/2020
-ms.openlocfilehash: 7b1030c816bff5b50c0c47a16fa5f1812bb16b15
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.openlocfilehash: e033f00f7657f7f4e5e63509672e924979ce03e7
+ms.sourcegitcommit: d95cab0514dd0956c13b9d64d98fdae2bc3569a0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 09/25/2020
-ms.locfileid: "91250833"
+ms.locfileid: "91362522"
 ---
 # <a name="trigger-applications-processes-or-cicd-workflows-based-on-azure-machine-learning-events-preview"></a>Активация приложений, процессов или процессов CI/CD на основе событий Машинное обучение Azure (Предварительная версия)
 
@@ -126,7 +126,7 @@ ms.locfileid: "91250833"
 
 1. Выберите конечную точку, в которую будет опубликовано событие. На следующем снимке экрана __Концентратор событий__ является выбранной конечной точкой:
 
-    ![обработчик событий](./media/how-to-use-event-grid/select-event-handler.png)
+    ![На снимке экрана показана панель Создание подписки на события с открытым окном выбора концентратора событий.](./media/how-to-use-event-grid/select-event-handler.png)
 
 После подтверждения выбора щелкните __Создать__. После настройки эти события будут отправлены в конечную точку.
 
@@ -164,15 +164,15 @@ az eventgrid event-subscription create --name {eventGridFilterName} \
 
 1. На портале Azure перейдите в рабочую область Машинного обучения Azure и выберите вкладку события на панели слева. Там выберите __Logic apps__. 
 
-    ![SELECT-Logic-App](./media/how-to-use-event-grid/select-logic-ap.png)
+    ![На снимке экрана показана страница событий Машинное обучение Workspace с Logic Apps.](./media/how-to-use-event-grid/select-logic-ap.png)
 
 1. Войдите в пользовательский интерфейс приложения логики и выберите службу "Машинное обучение" в качестве типа темы. 
 
-    ![тип раздела](./media/how-to-use-event-grid/select-topic-type.png)
+    ![На снимке экрана показано диалоговое окно при возникновении события ресурса с выбранным в качестве типа ресурса машинным обучением.](./media/how-to-use-event-grid/select-topic-type.png)
 
 1. Выберите события, о которых хотите получать уведомления. Для примера посмотрите на снимок экрана __RunCompleted__.
 
-    ![Выбор-событие-выполнение-завершение](./media/how-to-use-event-grid/select-event-runcomplete.png)
+    ![На снимке экрана показано диалоговое окно при возникновении события ресурса с выбранным типом события.](./media/how-to-use-event-grid/select-event-runcomplete.png)
 
 1. Можно использовать метод фильтрации в приведенном выше разделе или добавить фильтры, чтобы активировать приложение логики только в ответ на подмножество типов событий. На следующем снимке экрана используется __фильтр префикса__ __/datadriftID/runs/__ .
 
@@ -180,15 +180,15 @@ az eventgrid event-subscription create --name {eventGridFilterName} \
 
 1. Затем добавьте шаг для использования этого события и выполните поиск по электронной почте. Существует несколько разных учетных записей почты, которые можно использовать для получения событий. Также можно настроить условия отправки оповещений по электронной почте.
 
-    ![действие электронной почты](./media/how-to-use-event-grid/select-email-action.png)
+    ![На снимке экрана показано диалоговое окно Выбор действия с адресом электронной почты, указанным в строке поиска.](./media/how-to-use-event-grid/select-email-action.png)
 
 1. Выберите __Отправить сообщение электронной почты__ и введите параметры. В теме можно указать __Тип события__ и __Тему__, чтобы упростить фильтрацию событий. Также можно включить ссылку на страницу рабочей области для выполнения в тексте сообщения. 
 
-    ![Настройка-электронная почта](./media/how-to-use-event-grid/configure-email-body.png)
+    ![На снимке экрана отображается диалоговое окно Отправка сообщения электронной почты с разделом и типом события, добавленным в строку Тема из списка справа.](./media/how-to-use-event-grid/configure-email-body.png)
 
 1. Чтобы сохранить это действие, выберите **Сохранить как** в левом углу страницы. На появившейся правой панели подтвердите создание этого действия.
 
-    ![Подтверждение создания приложения логики](./media/how-to-use-event-grid/confirm-logic-app-create.png)
+    ![На снимке экрана показаны кнопки Сохранить как и создать в конструкторе Logic Apps.](./media/how-to-use-event-grid/confirm-logic-app-create.png)
 
 
 ### <a name="example-data-drift-triggers-retraining"></a>Пример Переобучение триггеров смещения данных
@@ -204,7 +204,7 @@ az eventgrid event-subscription create --name {eventGridFilterName} \
 
 В этом примере простой конвейер Фабрики данных используется для копирования файлов в хранилище BLOB-объектов и запуска опубликованного конвейера Машинного обучения. Дополнительные сведения об этом сценарии см. в [Этап Машинного обучения в Фабрике данных Azure.](https://docs.microsoft.com/azure/data-factory/transform-data-machine-learning-service)
 
-![ADF-млпипелине](./media/how-to-use-event-grid/adf-mlpipeline-stage.png)
+![На снимке экрана показан конвейер обучения в ресурсах фабрики с копией файл1, показывающий M L Execute Pipeline1.](./media/how-to-use-event-grid/adf-mlpipeline-stage.png)
 
 1. Начните с создания приложения логики. Перейдите на [портал Azure](https://portal.azure.com), найдите Logic Apps и выберите "Создать".
 
@@ -212,31 +212,31 @@ az eventgrid event-subscription create --name {eventGridFilterName} \
 
 1. Введите необходимую информацию. Чтобы упростить работу, используйте ту же подписку и группу ресурсов, что и конвейер Фабрики данных Azure, с рабочей областью Машинного обучения Azure.
 
-    ![Set-up-Logic-App-ADF](./media/how-to-use-event-grid/set-up-logic-app-for-adf.png)
+    ![На снимке экрана показана панель создания приложения логики.](./media/how-to-use-event-grid/set-up-logic-app-for-adf.png)
 
 1. После создания приложения логики выберите __При возникновении события ресурса Сетки событий__. 
 
-    ![SELECT-eventgrid — триггер](./media/how-to-use-event-grid/select-event-grid-trigger.png)
+    ![На снимке экрана показан конструктор Logic Apps с общими параметрами триггера, включая время возникновения события ресурса сетки событий.](./media/how-to-use-event-grid/select-event-grid-trigger.png)
 
 1. Войдите и укажите сведения о событии. В разделе __Имя ресурса__  укажите имя рабочей области. В разделе __Тип события__  укажите __DatasetDriftDetected__.
 
-    ![имя входа — Добавление события](./media/how-to-use-event-grid/login-and-add-event.png)
+    ![На снимке экрана показано событие при возникновении события ресурса с выбранным элементом типа события.](./media/how-to-use-event-grid/login-and-add-event.png)
 
 1. Добавьте новый шаг и выполните поиск по __Фабрике данных Azure__. Выберите __Создание конвейера__. 
 
-    ![Create-ADF-конвейер — запуск](./media/how-to-use-event-grid/create-adfpipeline-run.png)
+    ![На снимке экрана показана панель Выбор действия с выбранным параметром создать выполнение конвейера.](./media/how-to-use-event-grid/create-adfpipeline-run.png)
 
 1. Войдите в систему и укажите опубликованный конвейер Фабрики данных Azure, который следует запустить.
 
-    ![Укажите-адфпипелине](./media/how-to-use-event-grid/specify-adf-pipeline.png)
+    ![На снимке экрана показано, как создать панель выполнения конвейера с различными значениями.](./media/how-to-use-event-grid/specify-adf-pipeline.png)
 
 1. Сохраните и создайте приложение логики с помощью кнопки **Сохранить** в верхнем левом углу страницы. Чтобы просмотреть приложение, перейдите в рабочую область [Портала Azure](https://portal.azure.com) и щелкните **События**.
 
-    ![показывать-logicapp — веб-перехватчик](./media/how-to-use-event-grid/show-logic-app-webhook.png)
+    ![На снимке экрана показаны события с выделенным приложением логики.](./media/how-to-use-event-grid/show-logic-app-webhook.png)
 
 Теперь конвейер Фабрики данных активируется при смещении данных. Сведения о вашем процессе смещения данных и конвейере машинного обучения можно найти на [новом портале рабочей области](https://ml.azure.com). 
 
-![представление-Рабочая область](./media/how-to-use-event-grid/view-in-workspace.png)
+![На снимке экрана показаны конечные точки конвейера.](./media/how-to-use-event-grid/view-in-workspace.png)
 
 ### <a name="example-deploy-a-model-based-on-tags"></a>Пример Развертывание модели на основе тегов
 
